@@ -36,39 +36,39 @@ func int DIA_Addon_WispDetector_DetectItems_Condition()
 
 func void DIA_Addon_WispDetector_DetectItems_Info()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_15_00");	//Начинай поиски...
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_15_00");	//Search for everything you can find...
 	Info_ClearChoices(DIA_Addon_WispDetector_DetectItems);
 
 	if(PLAYER_TALENT_WISPDETECTOR[WISPSKILL_RUNE] == TRUE)
 	{
-		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Поиск магических свитков",DIA_Addon_WispDetector_DetectItems_RUNE);
+		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Find Magic Scrolls",DIA_Addon_WispDetector_DetectItems_RUNE);
 	};
 	if(PLAYER_TALENT_WISPDETECTOR[WISPSKILL_NONE] == TRUE)
 	{
-		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Поиск золота и различной утвари",DIA_Addon_WispDetector_DetectItems_NONE);
+		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Search for gold and various utensils",DIA_Addon_WispDetector_DetectItems_NONE);
 	};
 	if(PLAYER_TALENT_WISPDETECTOR[WISPSKILL_FF] == TRUE)
 	{
-		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Поиск оружия дальнего боя, стрел и болтов",DIA_Addon_WispDetector_DetectItems_FF);
+		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Search for ranged weapons, arrows and bolts",DIA_Addon_WispDetector_DetectItems_FF);
 	};
 	if(PLAYER_TALENT_WISPDETECTOR[WISPSKILL_NF] == TRUE)
 	{
-		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Поиск оружия ближнего боя",DIA_Addon_WispDetector_DetectItems_NF);
+		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Find Melee Weapons",DIA_Addon_WispDetector_DetectItems_NF);
 	};
 	if(PLAYER_TALENT_WISPDETECTOR[WISPSKILL_FOOD] == TRUE)
 	{
-		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Поиск еды и растений",DIA_Addon_WispDetector_DetectItems_FOOD);
+		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Food and Plant Search",DIA_Addon_WispDetector_DetectItems_FOOD);
 	};
 	if(PLAYER_TALENT_WISPDETECTOR[WISPSKILL_MAGIC] == TRUE)
 	{
-		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Поиск магических колец и амулетов",DIA_Addon_WispDetector_DetectItems_MAGIC);
+		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Finding Magic Rings and Amulets",DIA_Addon_WispDetector_DetectItems_MAGIC);
 	};
 	if(PLAYER_TALENT_WISPDETECTOR[WISPSKILL_POTIONS] == TRUE)
 	{
-		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Поиск магических зелий",DIA_Addon_WispDetector_DetectItems_POTIONS);
+		Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Finding Magic Potions",DIA_Addon_WispDetector_DetectItems_POTIONS);
 	};
 
-	Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Поиск любых предметов",DIA_Addon_WispDetector_DetectItems_ALL);
+	Info_AddChoice(DIA_Addon_WispDetector_DetectItems,"Search for everything you can find",DIA_Addon_WispDetector_DetectItems_ALL);
 };
 
 func void DIA_Addon_WispDetector_DetectItems_ALL()
