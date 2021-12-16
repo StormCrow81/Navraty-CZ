@@ -1,12 +1,12 @@
 
 func void B_KommMit()
 {
-	AI_Output(other,self,"DIA_AkilsSchaf_KommMit_15_00");	//Иди за мной!
+	AI_Output(other,self,"DIA_AkilsSchaf_KommMit_15_00");	//Follow me!
 };
 
 func void b_biff_verarschen()
 {
-	AI_Output(self,other,"DIA_Biff_ARBEITEN_lebenlassen_07_01");	//Я не хочу, чтобы ты делал из меня дурака.
+	AI_Output(self,other,"DIA_Biff_ARBEITEN_lebenlassen_07_01");	//I don't want to be humiliated by you.
 };
 
 func void B_BiffsAnteil_Berechnung()
@@ -70,7 +70,7 @@ instance DIA_Biff_HALLO(C_Info)
 	nr = 5;
 	condition = DIA_Biff_HALLO_Condition;
 	information = DIA_Biff_HALLO_Info;
-	description = "Что ты делаешь здесь?";
+	description = "What are you doing here?";
 };
 
 
@@ -81,23 +81,23 @@ func int DIA_Biff_HALLO_Condition()
 
 func void DIA_Biff_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Biff_HALLO_07_01");	//Давно уже не слышал такого тупого вопроса. А что, по-твоему?
-	Info_AddChoice(DIA_Biff_HALLO,"Я ничего не могу понять из-за твоего идиотского выражения лица.",DIA_Biff_HALLO_spott);
-	Info_AddChoice(DIA_Biff_HALLO,"Совершенно не представляю.",DIA_Biff_HALLO_keineAhnung);
-	Info_AddChoice(DIA_Biff_HALLO,"Ладно, забудь.",DIA_Biff_HALLO_doof);
+	AI_Output(other,self,"DIA_Biff_HALLO_15_00");	//What are you doing here?
+	AI_Output(self,other,"DIA_Biff_HALLO_07_01");	//What a stupid question. What do you think?
+	Info_AddChoice(DIA_Biff_HALLO,"I can't stand the dumb look on your face.",DIA_Biff_HALLO_spott);
+	Info_AddChoice(DIA_Biff_HALLO,"I have no idea,.",DIA_Biff_HALLO_keineAhnung);
+	Info_AddChoice(DIA_Biff_HALLO,"Ok, forget it.",DIA_Biff_HALLO_doof);
 };
 
 func void DIA_Biff_HALLO_doof()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_doof_15_00");	//Ладно, забудь.
+	AI_Output(other,self,"DIA_Biff_HALLO_doof_15_00");	//Nevermind.
 	Info_ClearChoices(DIA_Biff_HALLO);
 };
 
 func void DIA_Biff_HALLO_spott()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_spott_15_00");	//Я ничего не могу понять из-за твоего идиотского выражения лица. Вот почему я и спросил.
-	AI_Output(self,other,"DIA_Biff_HALLO_spott_07_01");	//У тебя слишком длинный язык. Я думаю, пришло время подрезать его.
+	AI_Output(other,self,"DIA_Biff_HALLO_spott_15_00");	//I only asked because of that dumb look on your face.
+	AI_Output(self,other,"DIA_Biff_HALLO_spott_07_01");	//I think its time to shut that mouth of yours.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 	DJG_BiffParty_nomore = DJG_BiffParty_nomore + 1;
@@ -105,36 +105,36 @@ func void DIA_Biff_HALLO_spott()
 
 func void DIA_Biff_HALLO_keineAhnung()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_15_00");	//Совершенно не представляю.
-	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_07_01");	//Я жду, когда что-нибудь, наконец, произойдет.
+	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_15_00");	//I have no idea.
+	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_07_01");	//I'm waiting for something to finally happen.
 	Info_AddChoice(DIA_Biff_HALLO,"А что должно произойти?",DIA_Biff_HALLO_keineAhnung_was);
 };
 
 func void DIA_Biff_HALLO_keineAhnung_was()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_was_15_00");	//А что должно произойти?
-	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_was_07_01");	//Ох, да ты еще более тупой, чем я думал. Если бы я знал это, я бы не ждал.
-	Info_AddChoice(DIA_Biff_HALLO,"А что может произойти?",DIA_Biff_HALLO_keineAhnung_was_was2);
+	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_was_15_00");	//What might happen?
+	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_was_07_01");	//If I knew that, I wouldn't be waiting, would I?
+	Info_AddChoice(DIA_Biff_HALLO,"What might happen?",DIA_Biff_HALLO_keineAhnung_was_was2);
 };
 
 func void DIA_Biff_HALLO_keineAhnung_was_was2()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_was_was2_15_00");	//А что может произойти?
-	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_was_was2_07_01");	//Ты начинаешь действовать мне на нервы. Послушай, меня не волнует, что произойдет. Мне нужно, чтобы что-нибудь произошло.
-	Info_AddChoice(DIA_Biff_HALLO,"А почему ты тогда ничего не делаешь?",DIA_Biff_HALLO_keineAhnung_was_was2_was3);
+	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_was_was2_15_00");	//What could possibly happen?
+	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_was_was2_07_01");	//Your'e starting to get on my last nerve. I don't care what happens, as long as something does!
+	Info_AddChoice(DIA_Biff_HALLO,"Why aren't you doing anything then?",DIA_Biff_HALLO_keineAhnung_was_was2_was3);
 };
 
 func void DIA_Biff_HALLO_keineAhnung_was_was2_was3()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_was_was2_was3_15_00");	//А почему ты тогда ничего не делаешь?
-	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_was_was2_was3_07_01");	//Если ты не перестанешь задавать идиотские вопросы, я подрежу твой длинный язык.
-	Info_AddChoice(DIA_Biff_HALLO,"Если ты будешь просто ждать здесь, ничего и не произойдет!",DIA_Biff_HALLO_keineAhnung_was_was2_was3_was4);
+	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_was_was2_was3_15_00");	//Why don't you do anything then?
+	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_was_was2_was3_07_01");	//If you don't quit it with the stupid questions, I'll shut you up myself.
+	Info_AddChoice(DIA_Biff_HALLO,"Nothing will happen if you just stand here!",DIA_Biff_HALLO_keineAhnung_was_was2_was3_was4);
 };
 
 func void DIA_Biff_HALLO_keineAhnung_was_was2_was3_was4()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_was_was2_was3_was4_15_00");	//Если ты будешь просто ждать здесь, ничего и не произойдет!
-	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_was_was2_was3_was4_07_01");	//Ты достал меня!
+	AI_Output(other,self,"DIA_Biff_HALLO_keineAhnung_was_was2_was3_was4_15_00");	//Nothing will happen if you just stand here!
+	AI_Output(self,other,"DIA_Biff_HALLO_keineAhnung_was_was2_was3_was4_07_01");	//I'm sick of you!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 	DJG_BiffParty_nomore = DJG_BiffParty_nomore + 1;
@@ -147,7 +147,7 @@ instance DIA_Biff_WASHIERIMTAL(C_Info)
 	nr = 7;
 	condition = DIA_Biff_WASHIERIMTAL_Condition;
 	information = DIA_Biff_WASHIERIMTAL_Info;
-	description = "Что ты надеешься найти здесь, в Долине Рудников?";
+	description = "What are you hoping to find here in the Valley of the mines?";
 };
 
 
@@ -161,24 +161,24 @@ func int DIA_Biff_WASHIERIMTAL_Condition()
 
 func void DIA_Biff_WASHIERIMTAL_Info()
 {
-	AI_Output(other,self,"DIA_Biff_WASHIERIMTAL_15_00");	//Что ты надеешься найти здесь, в Долине Рудников?
-	AI_Output(self,other,"DIA_Biff_WASHIERIMTAL_07_01");	//Золото и славу. Что же еще? Когда я покончу с драконами, я буду купаться в золоте.
-	AI_Output(self,other,"DIA_Biff_WASHIERIMTAL_07_02");	//У меня будет достаточно, чтобы провести остаток своей жизни, пытаясь посетить все таверны и бордели в стране.
-	Info_AddChoice(DIA_Biff_WASHIERIMTAL,"Что ж, тогда я желаю тебе удачи.",DIA_Biff_WASHIERIMTAL_vielglueck);
-	Info_AddChoice(DIA_Biff_WASHIERIMTAL,"Ну да, либо это, либо ты станешь трупом!",DIA_Biff_WASHIERIMTAL_ihrtot);
+	AI_Output(other,self,"DIA_Biff_WASHIERIMTAL_15_00");	//What are you hoping to find here in the Valley of the mines?
+	AI_Output(self,other,"DIA_Biff_WASHIERIMTAL_07_01");	//Glory and riches, what else? When I'm done with those dragons I'll be swimming in gold.
+	AI_Output(self,other,"DIA_Biff_WASHIERIMTAL_07_02");	//I'll spend the rest of my days touring every tavern and brothel in the country.
+	Info_AddChoice(DIA_Biff_WASHIERIMTAL,"Well then good luck to you.",DIA_Biff_WASHIERIMTAL_vielglueck);
+	Info_AddChoice(DIA_Biff_WASHIERIMTAL,"Well, sure, either that or you end up as dragon dung!",DIA_Biff_WASHIERIMTAL_ihrtot);
 };
 
 func void DIA_Biff_WASHIERIMTAL_ihrtot()
 {
-	AI_Output(other,self,"DIA_Biff_WASHIERIMTAL_ihrtot_15_00");	//Ну да, либо это, либо ты станешь трупом!
-	AI_Output(self,other,"DIA_Biff_WASHIERIMTAL_ihrtot_07_01");	//И что? Это часть игры. Если ты хочешь стать богатым, ты должен рисковать.
+	AI_Output(other,self,"DIA_Biff_WASHIERIMTAL_ihrtot_15_00");	//Well, sure, either that or you end up as dragon dung!
+	AI_Output(self,other,"DIA_Biff_WASHIERIMTAL_ihrtot_07_01");	//So what? That's what adventuring is all about.
 	Info_ClearChoices(DIA_Biff_WASHIERIMTAL);
 };
 
 func void DIA_Biff_WASHIERIMTAL_vielglueck()
 {
-	AI_Output(other,self,"DIA_Biff_WASHIERIMTAL_vielglueck_15_00");	//Что ж, тогда я желаю тебе удачи.
-	AI_Output(self,other,"DIA_Biff_WASHIERIMTAL_vielglueck_07_01");	//Мне не нужна удача. Достаточно моего топора.
+	AI_Output(other,self,"DIA_Biff_WASHIERIMTAL_vielglueck_15_00");	//Well then, I wish you the best.
+	AI_Output(self,other,"DIA_Biff_WASHIERIMTAL_vielglueck_07_01");	//I don't need luck while I have my trusty axe.
 	Info_ClearChoices(DIA_Biff_WASHIERIMTAL);
 };
 
@@ -190,7 +190,7 @@ instance DIA_Biff_ARBEITEN(C_Info)
 	condition = DIA_Biff_ARBEITEN_Condition;
 	information = DIA_Biff_ARBEITEN_Info;
 	permanent = TRUE;
-	description = "Ты бы не хотел поработать на меня?";
+	description = "Would you like to work for me?";
 };
 
 
@@ -204,29 +204,29 @@ func int DIA_Biff_ARBEITEN_Condition()
 
 func void DIA_Biff_ARBEITEN_Info()
 {
-	AI_Output(other,self,"DIA_Biff_ARBEITEN_15_00");	//Ты бы не хотел поработать на меня?
-	B_LogEntry(TOPIC_Dragonhunter,"Охотник на драконов Бифф - типичный наемник. Если я заплачу ему, он будет сражаться вместе со мной.");
+	AI_Output(other,self,"DIA_Biff_ARBEITEN_15_00");	//Would you like to work for me?
+	B_LogEntry(TOPIC_Dragonhunter,"Dragon Hunter Biff is a born merc. I pay him enough, he'll do what I say.");
 	if(DJG_BiffParty_nomore >= 6)
 	{
-		AI_Output(self,other,"DIA_Biff_ARBEITEN_07_01");	//Мы уже как-то пытались. Из этого не вышло ничего хорошего. Так что спасибо, не хочу.
+		AI_Output(self,other,"DIA_Biff_ARBEITEN_07_01");	//We already tried, and nothing good came of it. I want no part of this.
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Biff_ARBEITEN_07_02");	//Ммм. Почему бы и нет? Как будешь платить?
+		AI_Output(self,other,"DIA_Biff_ARBEITEN_07_02");	//Hmm, why not? How are you paying?
 	};
 	Info_ClearChoices(DIA_Biff_ARBEITEN);
-	Info_AddChoice(DIA_Biff_ARBEITEN,"Считай, что тебе повезло, если я оставлю тебя в живых.",DIA_Biff_ARBEITEN_lebenlassen);
-	Info_AddChoice(DIA_Biff_ARBEITEN,"Ты получишь половину добычи.",DIA_Biff_ARBEITEN_HalbeHalbe);
-	Info_AddChoice(DIA_Biff_ARBEITEN,"Я заплачу тебе сто золотых.",DIA_Biff_ARBEITEN_100);
+	Info_AddChoice(DIA_Biff_ARBEITEN,"Consider yourself lucky that I don't kill you.",DIA_Biff_ARBEITEN_lebenlassen);
+	Info_AddChoice(DIA_Biff_ARBEITEN,"Half the loot is yours.",DIA_Biff_ARBEITEN_HalbeHalbe);
+	Info_AddChoice(DIA_Biff_ARBEITEN,"I will pay you a hundred gold pieces.",DIA_Biff_ARBEITEN_100);
 };
 
 func void DIA_Biff_ARBEITEN_100()
 {
-	AI_Output(other,self,"DIA_Biff_ARBEITEN_100_15_00");	//Я заплачу тебе сто золотых.
+	AI_Output(other,self,"DIA_Biff_ARBEITEN_100_15_00");	//I will pay you a hundred gold pieces..
 	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
-		AI_Output(self,other,"DIA_Biff_ARBEITEN_100_07_01");	//Хорошо! Меня устраивает. Иди вперед. Я пойду за тобой.
+		AI_Output(self,other,"DIA_Biff_ARBEITEN_100_07_01");	//Works for me. Lead on, I'm right behind you.
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Follow");
 		B_Biff_SetRefuseTalk();
@@ -243,9 +243,9 @@ func void DIA_Biff_ARBEITEN_100()
 
 func void DIA_Biff_ARBEITEN_HalbeHalbe()
 {
-	AI_Output(other,self,"DIA_Biff_ARBEITEN_HalbeHalbe_15_00");	//Ты получишь половину добычи.
-	AI_Output(self,other,"DIA_Biff_ARBEITEN_HalbeHalbe_07_01");	//Звучит заманчиво. Но предупреждаю тебя: не пытайся обмануть меня. Ты пожалеешь об этом.
-	AI_Output(self,other,"DIA_Biff_ARBEITEN_HalbeHalbe_07_02");	//И еще одно: мне не нужно оружие и другое барахло, что ты соберешь там. Меня интересует только золото. Понятно?
+	AI_Output(other,self,"DIA_Biff_ARBEITEN_HalbeHalbe_15_00");	//Half the loot is yours.
+	AI_Output(self,other,"DIA_Biff_ARBEITEN_HalbeHalbe_07_01");	//Sounds tempting. But I warn you. Try do betray me and you'll regret it
+	AI_Output(self,other,"DIA_Biff_ARBEITEN_HalbeHalbe_07_02");	//Oh, and one more thing: I'm not interested in junk or trinkets, only gold. Clear?
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Follow");
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -259,13 +259,13 @@ func void DIA_Biff_ARBEITEN_HalbeHalbe()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Biff_ARBEITEN_HalbeHalbe_07_03");	//Но что я говорю. Ты уже знаешь все это.
+		AI_Output(self,other,"DIA_Biff_ARBEITEN_HalbeHalbe_07_03");	//But you already know all this.
 	};
 };
 
 func void DIA_Biff_ARBEITEN_lebenlassen()
 {
-	AI_Output(other,self,"DIA_Biff_ARBEITEN_lebenlassen_15_00");	//Считай, что тебе повезло, если я оставлю тебя в живых.
+	AI_Output(other,self,"DIA_Biff_ARBEITEN_lebenlassen_15_00");	//Consider yourself lucky that I don't kill you.
 	b_biff_verarschen();
 	AI_StopProcessInfos(self);
 	DJG_BiffParty_nomore = DJG_BiffParty_nomore + 1;
@@ -296,18 +296,18 @@ func int DIA_Biff_GELDEINTREIBEN_Condition()
 
 func void DIA_Biff_GELDEINTREIBEN_Info()
 {
-	AI_Output(self,other,"DIA_Biff_GELDEINTREIBEN_07_00");	//Минутку! Разве ты не говорил, что половина трофеев принадлежит мне? Давай ее сюда!
+	AI_Output(self,other,"DIA_Biff_GELDEINTREIBEN_07_00");	//Hold on! Half of this shit is mine! Hand it over!
 	B_BiffsAnteil_Berechnung();
 	B_BiffsAnteil_PrintScreen();
 	Info_ClearChoices(DIA_Biff_GELDEINTREIBEN);
-	Info_AddChoice(DIA_Biff_GELDEINTREIBEN,"Я не могу платить тебе.",DIA_Biff_GELDEINTREIBEN_zuTeuer);
-	Info_AddChoice(DIA_Biff_GELDEINTREIBEN,"Вот твоя доля.",DIA_Biff_GELDEINTREIBEN_geben);
+	Info_AddChoice(DIA_Biff_GELDEINTREIBEN,"I can't pay you.",DIA_Biff_GELDEINTREIBEN_zuTeuer);
+	Info_AddChoice(DIA_Biff_GELDEINTREIBEN,"Here's your cut.",DIA_Biff_GELDEINTREIBEN_geben);
 };
 
 func void DIA_Biff_GELDEINTREIBEN_geben()
 {
-	AI_Output(other,self,"DIA_Biff_GELDEINTREIBEN_geben_15_00");	//Вот твоя доля.
-	AI_Output(self,other,"DIA_Biff_GELDEINTREIBEN_geben_07_01");	//Хорошо. Тогда в путь.
+	AI_Output(other,self,"DIA_Biff_GELDEINTREIBEN_geben_15_00");	//Here's your cut.
+	AI_Output(self,other,"DIA_Biff_GELDEINTREIBEN_geben_07_01");	//Good. Let's go.
 	AI_StopProcessInfos(self);
 	B_GiveInvItems(other,self,ItMi_Gold,BiffsAnteil);
 	B_Biff_SetRefuseTalk();
@@ -317,17 +317,17 @@ func void DIA_Biff_GELDEINTREIBEN_geben()
 
 func void DIA_Biff_GELDEINTREIBEN_zuTeuer()
 {
-	AI_Output(other,self,"DIA_Biff_GELDEINTREIBEN_zuTeuer_15_00");	//Я не могу позволить себе такие расходы.
-	AI_Output(self,other,"DIA_Biff_GELDEINTREIBEN_zuTeuer_07_01");	//Хватит ныть. Мы договорились на половину.
+	AI_Output(other,self,"DIA_Biff_GELDEINTREIBEN_zuTeuer_15_00");	//Um, I'm a little light on gold right now.
+	AI_Output(self,other,"DIA_Biff_GELDEINTREIBEN_zuTeuer_07_01");	//I don't care, we agreed on half.
 	Info_ClearChoices(DIA_Biff_GELDEINTREIBEN);
-	Info_AddChoice(DIA_Biff_GELDEINTREIBEN,"Боюсь, дальше наши пути расходятся.",DIA_Biff_GELDEINTREIBEN_zuTeuer_trennen);
-	Info_AddChoice(DIA_Biff_GELDEINTREIBEN,"Вот твоя доля.",DIA_Biff_GELDEINTREIBEN_geben);
+	Info_AddChoice(DIA_Biff_GELDEINTREIBEN,"This is where we go our separate ways.",DIA_Biff_GELDEINTREIBEN_zuTeuer_trennen);
+	Info_AddChoice(DIA_Biff_GELDEINTREIBEN,"Here's your cut.",DIA_Biff_GELDEINTREIBEN_geben);
 };
 
 func void DIA_Biff_GELDEINTREIBEN_zuTeuer_trennen()
 {
-	AI_Output(other,self,"DIA_Biff_GELDEINTREIBEN_zuTeuer_trennen_15_00");	//Боюсь, дальше наши пути расходятся.
-	AI_Output(self,other,"DIA_Biff_GELDEINTREIBEN_zuTeuer_trennen_07_01");	//Как скажешь. Тогда я заберу свою долю.
+	AI_Output(other,self,"DIA_Biff_GELDEINTREIBEN_zuTeuer_trennen_15_00");	//This is where we go our separate ways.
+	AI_Output(self,other,"DIA_Biff_GELDEINTREIBEN_zuTeuer_trennen_07_01");	//Fine. Give me my share.
 	BIFF_LABERT_GELDEINTREIBEN = FALSE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
@@ -360,7 +360,7 @@ func int DIA_Biff_ICHBLEIBHIER_Condition()
 
 func void DIA_Biff_ICHBLEIBHIER_Info()
 {
-	AI_Output(self,other,"DIA_Biff_ICHBLEIBHIER_07_00");	//Очень опасная местность. Ты иди первым. А я буду прикрывать тебя сзади.
+	AI_Output(self,other,"DIA_Biff_ICHBLEIBHIER_07_00");	//This place is dangerous. You lead and I'll follow.
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,300);
 	if(Npc_GetDistToWP(self,"OW_SWAMPDRAGON_01") < 10000)
@@ -395,7 +395,7 @@ instance DIA_Biff_Stay_AwayFromOC(C_Info)
 	information = DIA_Biff_Stay_AwayFromOC_Info;
 	nr = 3;
 	permanent = TRUE;
-	description = "(Опять взять с собой Биффа)";
+	description = "(Take Biff with you)";
 };
 
 
@@ -439,8 +439,8 @@ func int DIA_Biff_KOHLEWEGGEBEN_Condition()
 
 func void DIA_Biff_KOHLEWEGGEBEN_Info()
 {
-	AI_Output(self,other,"DIA_Biff_KOHLEWEGGEBEN_07_00");	//Не разбрасывай свое золото.
-	AI_Output(self,other,"DIA_Biff_KOHLEWEGGEBEN_07_01");	//Лучше дай мне его сюда.
+	AI_Output(self,other,"DIA_Biff_KOHLEWEGGEBEN_07_00");	//Don't drop your gold.
+	AI_Output(self,other,"DIA_Biff_KOHLEWEGGEBEN_07_01");	//Better let me hang on to it.
 	AI_StopProcessInfos(self);
 	DJG_Biff_SCGold = Npc_HasItems(hero,ItMi_Gold);
 };
@@ -453,7 +453,7 @@ instance DIA_Biff_BIFFLOSWERDEN(C_Info)
 	condition = DIA_Biff_BIFFLOSWERDEN_Condition;
 	information = DIA_Biff_BIFFLOSWERDEN_Info;
 	permanent = TRUE;
-	description = "Я думаю, на этом наше сотрудничество можно считать оконченным.";
+	description = "This is where we go our separate ways.";
 };
 
 
@@ -467,8 +467,8 @@ func int DIA_Biff_BIFFLOSWERDEN_Condition()
 
 func void DIA_Biff_BIFFLOSWERDEN_Info()
 {
-	AI_Output(other,self,"DIA_Biff_BIFFLOSWERDEN_15_00");	//Я думаю, на этом наше сотрудничество можно считать оконченным.
-	AI_Output(self,other,"DIA_Biff_BIFFLOSWERDEN_07_01");	//Как знаешь. Я найду себе работу и получше. Бывай.
+	AI_Output(other,self,"DIA_Biff_BIFFLOSWERDEN_15_00");	//This is the end of our little partnership.
+	AI_Output(self,other,"DIA_Biff_BIFFLOSWERDEN_07_01");	//I'll find myself a better job, don't you worry.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
@@ -502,32 +502,32 @@ var int DIA_Biff_MEHRGELD_Info_OneTime;
 
 func void DIA_Biff_MEHRGELD_Info()
 {
-	AI_Output(self,other,"DIA_Biff_MEHRGELD_07_00");	//Мне почему-то кажется, что я должен получить с тебя больше денег.
+	AI_Output(self,other,"DIA_Biff_MEHRGELD_07_00");	//I think you owe me a little bit more, don't you?
 	if(DJG_Biff_HalbeHalbe == TRUE)
 	{
-		AI_Output(self,other,"DIA_Biff_MEHRGELD_07_01");	//Сто золотых будет достаточно.
+		AI_Output(self,other,"DIA_Biff_MEHRGELD_07_01");	//One hundred gold should be enough.
 		if(DIA_Biff_MEHRGELD_Info_OneTime == FALSE)
 		{
-			AI_Output(self,other,"DIA_Biff_MEHRGELD_07_02");	//Не бойся. Я не забыл, что мы делим трофеи поровну.
-			AI_Output(self,other,"DIA_Biff_MEHRGELD_07_03");	//Вот почему я не приставал к тебе с просьбами дать мне еще денег.
+			AI_Output(self,other,"DIA_Biff_MEHRGELD_07_02");	//Don't worry, I haven't forgotten our deal.
+			AI_Output(self,other,"DIA_Biff_MEHRGELD_07_03");	//That's why I didn't bother asking for more money.
 			DIA_Biff_MEHRGELD_Info_OneTime = TRUE;
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Biff_MEHRGELD_07_04");	//Я хочу еще сто золотых.
+		AI_Output(self,other,"DIA_Biff_MEHRGELD_07_04");	//I want another hundred gold.
 	};
 	Info_ClearChoices(DIA_Biff_MEHRGELD);
-	Info_AddChoice(DIA_Biff_MEHRGELD,"Я не могу платить тебе.",DIA_Biff_MEHRGELD_zuTeuer);
-	Info_AddChoice(DIA_Biff_MEHRGELD,"Хорошо. Ты этого стоишь.",DIA_Biff_MEHRGELD_ok);
+	Info_AddChoice(DIA_Biff_MEHRGELD,"I can't pay you.",DIA_Biff_MEHRGELD_zuTeuer);
+	Info_AddChoice(DIA_Biff_MEHRGELD,"Sounds good to me.",DIA_Biff_MEHRGELD_ok);
 };
 
 func void DIA_Biff_MEHRGELD_ok()
 {
-	AI_Output(other,self,"DIA_Biff_MEHRGELD_ok_15_00");	//Хорошо. Ты этого стоишь.
+	AI_Output(other,self,"DIA_Biff_MEHRGELD_ok_15_00");	//Sounds good to me.
 	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
-		AI_Output(self,other,"DIA_Biff_MEHRGELD_ok_07_01");	//Да уж, это точно. Теперь, пошли дальше.
+		AI_Output(self,other,"DIA_Biff_MEHRGELD_ok_07_01");	//Yeah, that's for sure. Let's move.
 		AI_StopProcessInfos(self);
 		if(DJG_Biff_HalbeHalbe == TRUE)
 		{
@@ -537,8 +537,8 @@ func void DIA_Biff_MEHRGELD_ok()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Biff_MEHRGELD_ok_07_02");	//Ах ты ничтожество! Ты даже не можешь заплатить компаньону.
-		AI_Output(self,other,"DIA_Biff_MEHRGELD_ok_07_03");	//Я думаю, мне стоит поискать другого партнера.
+		AI_Output(self,other,"DIA_Biff_MEHRGELD_ok_07_02");	//You're pathetic. You can't even pay your partner.
+		AI_Output(self,other,"DIA_Biff_MEHRGELD_ok_07_03");	//I think I should find another partner.
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Start");
 		self.aivar[AIV_PARTYMEMBER] = FALSE;
@@ -550,8 +550,8 @@ func void DIA_Biff_MEHRGELD_ok()
 
 func void DIA_Biff_MEHRGELD_zuTeuer()
 {
-	AI_Output(other,self,"DIA_Biff_MEHRGELD_zuTeuer_15_00");	//Я не могу платить тебе.
-	AI_Output(self,other,"DIA_Biff_MEHRGELD_zuTeuer_07_01");	//Тогда тебе придется дальше топать в одиночку.
+	AI_Output(other,self,"DIA_Biff_MEHRGELD_zuTeuer_15_00");	//I can't pay you.
+	AI_Output(self,other,"DIA_Biff_MEHRGELD_zuTeuer_07_01");	//Then you're on your own.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
@@ -567,7 +567,7 @@ instance DIA_Biff_HEILUNG(C_Info)
 	condition = DIA_Biff_HEILUNG_Condition;
 	information = DIA_Biff_HEILUNG_Info;
 	permanent = TRUE;
-	description = "Тебе нужно лечебное зелье?";
+	description = "Do you need a healing potion?";
 };
 
 
@@ -581,12 +581,12 @@ func int DIA_Biff_HEILUNG_Condition()
 
 func void DIA_Biff_HEILUNG_Info()
 {
-	AI_Output(other,self,"DIA_Biff_HEILUNG_15_00");	//Тебе нужно лечебное зелье?
-	AI_Output(self,other,"DIA_Biff_HEILUNG_07_01");	//Конечно. Не помешает.
+	AI_Output(other,self,"DIA_Biff_HEILUNG_15_00");	//Do you need a healing potion??
+	AI_Output(self,other,"DIA_Biff_HEILUNG_07_01");	//Damn right!
 	Info_ClearChoices(DIA_Biff_HEILUNG);
-	Info_AddChoice(DIA_Biff_HEILUNG,"Я дам тебе что-нибудь позже.",DIA_Biff_HEILUNG_spaeter);
-	Info_AddChoice(DIA_Biff_HEILUNG,"(самое маленькое лечебное зелье)",DIA_Biff_HEILUNG_heiltrankLow);
-	Info_AddChoice(DIA_Biff_HEILUNG,"(лучшее лечебное зелье)",DIA_Biff_HEILUNG_heiltrank);
+	Info_AddChoice(DIA_Biff_HEILUNG,"I'll give you something later.",DIA_Biff_HEILUNG_spaeter);
+	Info_AddChoice(DIA_Biff_HEILUNG,"(Smallest Healing Potion)",DIA_Biff_HEILUNG_heiltrankLow);
+	Info_AddChoice(DIA_Biff_HEILUNG,"(Best Healing Potion)",DIA_Biff_HEILUNG_heiltrank);
 };
 
 func void DIA_Biff_HEILUNG_heiltrank()
@@ -605,7 +605,7 @@ func void DIA_Biff_HEILUNG_heiltrank()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Biff_HEILUNG_heiltrank_07_00");	//Я думаю, я могу подождать, когда ты раздобудешь его для меня.
+		AI_Output(self,other,"DIA_Biff_HEILUNG_heiltrank_07_00");	//I'll wait for you to bring me one.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -626,15 +626,15 @@ func void DIA_Biff_HEILUNG_heiltrankLow()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Biff_HEILUNG_heiltrankLow_07_00");	//К сожалению, его у тебя нет. Вернемся к этому вопросу позже.
+		AI_Output(self,other,"DIA_Biff_HEILUNG_heiltrankLow_07_00");	//So you don't have it. We'll discuss it later.
 	};
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Biff_HEILUNG_spaeter()
 {
-	AI_Output(other,self,"DIA_Biff_HEILUNG_spaeter_15_00");	//Я дам тебе что-нибудь позже.
-	AI_Output(self,other,"DIA_Biff_HEILUNG_spaeter_07_01");	//Только не забудь.
+	AI_Output(other,self,"DIA_Biff_HEILUNG_spaeter_15_00");	//I'll give you something later.
+	AI_Output(self,other,"DIA_Biff_HEILUNG_spaeter_07_01");	//Don't forget!
 	AI_StopProcessInfos(self);
 };
 
@@ -645,7 +645,7 @@ instance DIA_Biff_DRACHENTOT(C_Info)
 	nr = 5;
 	condition = DIA_Biff_DRACHENTOT_Condition;
 	information = DIA_Biff_DRACHENTOT_Info;
-	description = "Вот так. Все драконы мертвы.";
+	description = "That's it. All the dragons are dead.";
 };
 
 
@@ -659,11 +659,11 @@ func int DIA_Biff_DRACHENTOT_Condition()
 
 func void DIA_Biff_DRACHENTOT_Info()
 {
-	AI_Output(other,self,"DIA_Biff_DRACHENTOT_15_00");	//Вот так. Все драконы мертвы.
-	AI_Output(self,other,"DIA_Biff_DRACHENTOT_07_01");	//Да. И я все еще жив.
-	AI_Output(self,other,"DIA_Biff_DRACHENTOT_07_02");	//Ты уверен, что это был последний?
-	AI_Output(other,self,"DIA_Biff_DRACHENTOT_15_03");	//Думаю, да.
-	AI_Output(self,other,"DIA_Biff_DRACHENTOT_07_04");	//Жаль. А я только размялся.
+	AI_Output(other,self,"DIA_Biff_DRACHENTOT_15_00");	//The dragons are all dead.
+	AI_Output(self,other,"DIA_Biff_DRACHENTOT_07_01");	//And we're both still breathing.
+	AI_Output(self,other,"DIA_Biff_DRACHENTOT_07_02");	//Are you sure it was the last one?
+	AI_Output(other,self,"DIA_Biff_DRACHENTOT_15_03");	//I'm sure of it.
+	AI_Output(self,other,"DIA_Biff_DRACHENTOT_07_04");	//Too bad. I just got warmed up.
 	B_GivePlayerXP(XP_BiffSurvivedLastDragon);
 };
 
@@ -675,7 +675,7 @@ instance DIA_Biff_KnowWhereEnemy(C_Info)
 	condition = DIA_Biff_KnowWhereEnemy_Condition;
 	information = DIA_Biff_KnowWhereEnemy_Info;
 	permanent = TRUE;
-	description = "Ты не хотел бы совершить небольшое путешествие по миру?";
+	description = "Fancy a trip around the world?";
 };
 
 
@@ -689,33 +689,33 @@ func int DIA_Biff_KnowWhereEnemy_Condition()
 
 func void DIA_Biff_KnowWhereEnemy_Info()
 {
-	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_15_00");	//Ты не хотел бы совершить небольшое путешествие по миру?
-	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_07_01");	//Что?
+	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_15_00");	//Fancy a trip around the world??
+	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_07_01");	//What?
 	if(Crewmember_Count >= Max_Crew)
 	{
-		AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_15_02");	//Ничего. Мой корабль все равно полон.
-		AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_07_03");	//Тогда не беспокой меня попусту.
+		AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_15_02");	//Nothing. My ship is overloaded anyway.
+		AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_07_03");	//Then don't bother me for nothing.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_15_04");	//Я собираюсь покинуть Хоринис и отправиться на другой остров. Там должны быть еще враги.
+		AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_15_04");	//I'm leaving Khorinis and heading for another island. There must be more battles to fight out there.
 		Info_ClearChoices(DIA_Biff_KnowWhereEnemy);
-		Info_AddChoice(DIA_Biff_KnowWhereEnemy,"Мне казалось, я уже говорил об этом.",DIA_Biff_KnowWhereEnemy_No);
-		Info_AddChoice(DIA_Biff_KnowWhereEnemy,"Ты не хочешь присоединиться?",DIA_Biff_KnowWhereEnemy_Yes);
+		Info_AddChoice(DIA_Biff_KnowWhereEnemy,"I thought I already talked about this.",DIA_Biff_KnowWhereEnemy_No);
+		Info_AddChoice(DIA_Biff_KnowWhereEnemy,"Would you like to join?",DIA_Biff_KnowWhereEnemy_Yes);
 	};
 };
 
 func void DIA_Biff_KnowWhereEnemy_Yes()
 {
-	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_Yes_15_00");	//Ты не хочешь присоединиться?
-	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_Yes_07_01");	//Меня не волнуют враги. Мне нужно...
-	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_Yes_15_02");	//Там куда мы направляемся, больше золота, чем ты сможешь унести.
-	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_Yes_07_03");	//В таком случае я в деле. Куда мы направляемся?
-	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_Yes_15_04");	//Сначала нам нужно выбраться из Долины Рудников.
-	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_Yes_07_05");	//Нет проблем. Я уже в пути. Встретимся у Прохода.
+	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_Yes_15_00");	//Would you like to join?
+	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_Yes_07_01");	//I don't care about fighting. I need...
+	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_Yes_15_02");	//Where we're going, there's more gold than you can carry.
+	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_Yes_07_03");	//Then I accept. Where are we going?
+	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_Yes_15_04");	//First we need to get out of the valley.
+	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_Yes_07_05");	//No problem. I'm in. Meet me at the Passage.
 	Log_CreateTopic(Topic_Crew,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Crew,LOG_Running);
-	B_LogEntry(Topic_Crew,"Перспектива разбогатеть убедила Биффа присоединиться ко мне. Пока он получает достаточно золота, я могу рассчитывать на него.");
+	B_LogEntry(Topic_Crew,"The prospect of riches beyond counting convinced Biff to join me.");
 	B_GivePlayerXP(XP_Crewmember_Success);
 	Biff_IsOnBoard = LOG_SUCCESS;
 	Crewmember_Count = Crewmember_Count + 1;
@@ -727,8 +727,8 @@ func void DIA_Biff_KnowWhereEnemy_Yes()
 
 func void DIA_Biff_KnowWhereEnemy_No()
 {
-	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_No_15_00");	//Мне казалось, я уже говорил об этом.
-	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_No_07_01");	//Да, да. Тогда повеселимся.
+	AI_Output(other,self,"DIA_Biff_KnowWhereEnemy_No_15_00");	//I thought I already talked about this.
+	AI_Output(self,other,"DIA_Biff_KnowWhereEnemy_No_07_01");	//Yeah yeah. Let's have some fun.
 	Biff_IsOnBoard = LOG_OBSOLETE;
 	Info_ClearChoices(DIA_Biff_KnowWhereEnemy);
 };
@@ -741,7 +741,7 @@ instance DIA_Biff_Pass(C_Info)
 	condition = DIA_Biff_Pass_Condition;
 	information = DIA_Biff_Pass_Info;
 	permanent = TRUE;
-	description = "Ты пройдешь сам через Проход?";
+	description = "Will you go through the pass yourself?";
 };
 
 
@@ -755,8 +755,8 @@ func int DIA_Biff_Pass_Condition()
 
 func void DIA_Biff_Pass_Info()
 {
-	AI_Output(other,self,"DIA_Biff_Pass_15_00");	//Ты пройдешь сам через Проход?
-	AI_Output(self,other,"DIA_Biff_Pass_07_01");	//Хватит болтать. Пошли. Я хочу, наконец, опять начать действовать.
+	AI_Output(other,self,"DIA_Biff_Pass_15_00");	//Will you go through the pass yourself?
+	AI_Output(self,other,"DIA_Biff_Pass_07_01");	//Less talk, more action. Go!
 	AI_StopProcessInfos(self);
 };
 
