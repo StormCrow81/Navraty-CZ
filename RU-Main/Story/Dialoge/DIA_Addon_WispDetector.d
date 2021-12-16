@@ -73,7 +73,7 @@ func void DIA_Addon_WispDetector_DetectItems_Info()
 
 func void DIA_Addon_WispDetector_DetectItems_ALL()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_ALL_15_00");	//Ищи все, что ты можешь найти.
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_ALL_15_00");	//Search for everything you can find.
 	WispSearching = WispSearch_ALL;
 	B_IrrlichtBeep();
 	AI_StopProcessInfos(self);
@@ -81,7 +81,7 @@ func void DIA_Addon_WispDetector_DetectItems_ALL()
 
 func void DIA_Addon_WispDetector_DetectItems_POTIONS()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_POTIONS_15_00");	//Ищи любые зелья.
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_POTIONS_15_00");	//Look for any potions.
 	WispSearching = WispSearch_POTIONS;
 	B_IrrlichtBeep();
 	AI_StopProcessInfos(self);
@@ -89,7 +89,7 @@ func void DIA_Addon_WispDetector_DetectItems_POTIONS()
 
 func void DIA_Addon_WispDetector_DetectItems_MAGIC()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_MAGIC_15_00");	//Ищи кольца и амулеты.
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_MAGIC_15_00");	//Look for rings and amulets.
 	WispSearching = WispSearch_MAGIC;
 	B_IrrlichtBeep();
 	AI_StopProcessInfos(self);
@@ -97,7 +97,7 @@ func void DIA_Addon_WispDetector_DetectItems_MAGIC()
 
 func void DIA_Addon_WispDetector_DetectItems_FOOD()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_FOOD_15_00");	//Ищи еду и растения.
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_FOOD_15_00");	//Look for food and plants.
 	WispSearching = WispSearch_FOOD;
 	B_IrrlichtBeep();
 	AI_StopProcessInfos(self);
@@ -105,7 +105,7 @@ func void DIA_Addon_WispDetector_DetectItems_FOOD()
 
 func void DIA_Addon_WispDetector_DetectItems_NF()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_NF_15_00");	//Ищи оружие ближнего боя.
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_NF_15_00");	//Look for Melee weapons.
 	WispSearching = WispSearch_NF;
 	B_IrrlichtBeep();
 	AI_StopProcessInfos(self);
@@ -113,7 +113,7 @@ func void DIA_Addon_WispDetector_DetectItems_NF()
 
 func void DIA_Addon_WispDetector_DetectItems_FF()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_FF_15_00");	//Ищи оружие дальнего боя и боеприпасы.
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_FF_15_00");	//Look for ranged weapons and ammo.
 	WispSearching = WispSearch_FF;
 	B_IrrlichtBeep();
 	AI_StopProcessInfos(self);
@@ -121,7 +121,7 @@ func void DIA_Addon_WispDetector_DetectItems_FF()
 
 func void DIA_Addon_WispDetector_DetectItems_NONE()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_NONE_15_00");	//Ищи золото, ключи и прочую утварь.
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_NONE_15_00");	//Look for gold, keys and other utensils.
 	WispSearching = WispSearch_NONE;
 	B_IrrlichtBeep();
 	AI_StopProcessInfos(self);
@@ -129,7 +129,7 @@ func void DIA_Addon_WispDetector_DetectItems_NONE()
 
 func void DIA_Addon_WispDetector_DetectItems_RUNE()
 {
-	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_RUNE_15_00");	//Ищи руны и свитки.
+	AI_Output(other,self,"DIA_Addon_WispDetector_DetectItems_RUNE_15_00");	//Look for runes and scrolls.
 	WispSearching = WispSearch_RUNE;
 	B_IrrlichtBeep();
 	AI_StopProcessInfos(self);
