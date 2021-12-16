@@ -26,7 +26,7 @@ instance DIA_Addon_WispDetector_DetectItems(C_Info)
 	condition = DIA_Addon_WispDetector_DetectItems_Condition;
 	information = DIA_Addon_WispDetector_DetectItems_Info;
 	permanent = TRUE;
-	description = "Начинай поиски...";
+	description = "Start searching...";
 };
 
 func int DIA_Addon_WispDetector_DetectItems_Condition()
