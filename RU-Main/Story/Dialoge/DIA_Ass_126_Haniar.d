@@ -41,7 +41,7 @@ func int dia_Ass_126_Haniar_PreHALLO_condition()
 
 func void dia_Ass_126_Haniar_PreHALLO_info()
 {
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreHALLO_01_00");	//Зачем ты меня беспокоишь?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreHALLO_01_00");	//Why are you bothering me?
 };
 
 instance DIA_Ass_126_Haniar_PreHALLO_Kill(C_Info)
@@ -89,36 +89,36 @@ func int dia_Ass_126_Haniar_hallo_condition()
 
 func void dia_Ass_126_Haniar_hallo_info()
 {
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_01");	//Постой, послушник. До меня дошли слухи, что мастер Тиамант сделал тебя своим мюридом. Это правда?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_01_02");	//(молча кивает)
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_01");	//Wait, novice. I have heard rumors that Master Tiamant has made you his murid. It's true?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_01_02");	//(nods silently)
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_03");	//Что же, видимо, ты действительно произвел на него сильное впечатление, раз он удостоил тебя подобной чести.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_04");	//И, по правде говоря, я рад тому, что у нас наконец-то появился достойный претендент на звание Тени.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_05");	//Но не будем больше об этом. Это только его решение, и ничье больше.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_06");	//Давай лучше поговорим о тебе.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_07");	//Уверен, что сейчас ты задаешься одним и тем же вопросом - что же я от тебя хочу в данный момент? И почему заговорил с тобой.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_01_08");	//(молча кивает)
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_03");	//Well, apparently, you really made a strong impression on him, for him to honor you in such a way.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_04");	//And in truth, I'm glad we finally have a worthy contender for the title of Shadow.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_05");	//But let's not talk about that anymore. This is his decision, and no one else's.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_06");	//But back to you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_07");	//I'm sure you are asking yourself why I wanted to speak to you.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_01_08");	//(nods silently)
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_09");	//Это и неудивительно! Ты обратил на себя внимание трех приоров Масиаф, а это не может пройти мимо меня бесследно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_10");	//Поэтому я и заговорил с тобой, чтобы дать тебе шанс вновь проявить себя. 
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_11");	//Но на этот раз оценивать твои деяния буду я сам.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_12");	//Ну а теперь к делу. Готов ли ты принять мое испытание?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_09");	//Well, don't be surprised. You have attracted the attention of three Masiaf Priests, and this did not slip by me.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_10");	//I offer you a chance to prove yourself to me, now.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_11");	//It is time for me to evaluate you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_01_12");	//Are you ready to take my test?
 	Info_ClearChoices(DIA_Ass_126_Haniar_HALLO);
-	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"(молча кивнуть)",DIA_Ass_126_Haniar_HALLO_M1);
-	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"Я не уверен, что справлюсь.",DIA_Ass_126_Haniar_HALLO_M2);
-	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"Нет, я не готов к этому.",DIA_Ass_126_Haniar_HALLO_M3);
-	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"Конечно, я готов!",DIA_Ass_126_Haniar_HALLO_M4);
+	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"(nod silently)",DIA_Ass_126_Haniar_HALLO_M1);
+	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"I'm not sure I can handle it.",DIA_Ass_126_Haniar_HALLO_M2);
+	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"No, I'm not ready for this.",DIA_Ass_126_Haniar_HALLO_M3);
+	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"Of course I'm ready!",DIA_Ass_126_Haniar_HALLO_M4);
 };
 
 func void DIA_Ass_126_Haniar_HALLO_M2()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M2_01_01");	//Я не уверен, что справлюсь.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M2_01_02");	//Ты разочаровал меня, послушник. Честно говоря, я ожидал от тебя большего.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M2_01_03");	//Но раз так, то ты должен знать, что нашему Братству не нужны слабые духом.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M2_01_04");	//Уверен, что ты и сам прекрасно понимаешь, что это для тебя означает.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M2_01_01");	//I'm not sure if I can handle it.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M2_01_02");	//You disappoint me, acolyte. I expected more from you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M2_01_03");	//But if so, then you should know that our Brotherhood has no room for the weak.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M2_01_04");	//I'm sure you understand what this means for you. Prepare yourself.
 	MIS_HasimKill = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+	B_LogEntry(TOPIC_HasimKill," Haniar was not too happy with my explanations. Now I have only one thing left - to fight for my life against the Brotherhood! " );
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -126,12 +126,12 @@ func void DIA_Ass_126_Haniar_HALLO_M2()
 
 func void DIA_Ass_126_Haniar_HALLO_M3()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M3_01_01");	//Нет, я не готов к этому.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M3_01_02");	//Ну, раз так... как говорится, на нет и суда нет.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M3_01_03");	//Его и не будет. Ты просто сейчас умрешь за свою дерзость!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M3_01_01");	//No, I'm not ready for this.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M3_01_02");	//That is... unfortunate.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M3_01_03");	//This is where you die, weak one!
 	MIS_HasimKill = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+	B_LogEntry(TOPIC_HasimKill," Haniar was not too happy with my explanations. Now I have only one thing left - to fight for my life against the Brotherhood! " );
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -139,38 +139,38 @@ func void DIA_Ass_126_Haniar_HALLO_M3()
 
 func void DIA_Ass_126_Haniar_HALLO_M4()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M4_01_01");	//Конечно, я готов!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_02");	//Мне казалось, что ты должен знать наши правила.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_03");	//И то, что за подобный ответ приору Масиаф полагается только одно - смерть.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_04");	//Но, учитывая твои былые заслуги перед Братством, так уж и быть...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_05");	//...на первый раз я прощаю тебе подобную дерзость!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_06");	//Однако в будущем будь более осторожным в выборе своих слов.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M4_01_01");	//Of course I'm ready!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_02");	//Have you forgotten our rules so soon?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_03");	//For an undiscipled answer like that, there can be only one response: Death.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_04");	//However, given your past service to the Brotherhood...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_05");	//...I will forgive your insolence this once!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M4_01_06");	//However, in the future, choose your words more carefully.
 };
 
 func void DIA_Ass_126_Haniar_HALLO_M1()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M1_01_01");	//(молча кивает)
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M1_01_01");	//(nods silently)
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M1_01_02");	//Очень хорошо! Теперь слушай меня внимательно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M1_01_03");	//Совсем недавно был убит один из наших братьев. Его звали Хасим Клыколом. 
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M1_01_04");	//Ты что-нибудь слышал об этом?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M1_01_02");	//Very good! Now listen to me carefully.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M1_01_03");	//One of our brothers was killed recently. His name was Hasim Klykol.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M1_01_04");	//Have you heard anything about this?
 	Info_ClearChoices(DIA_Ass_126_Haniar_HALLO);
-	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"Конечно. Ведь это я убил его.",DIA_Ass_126_Haniar_HALLO_M6);
-	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"Я знаю о том, что он мертв.",DIA_Ass_126_Haniar_HALLO_Ok);
-	Info_AddChoice(DIA_Ass_126_Haniar_HALLO,"Нет, ничего такого.",DIA_Ass_126_Haniar_HALLO_M5);
+	Info_AddChoice(DIA_Ass_126_Haniar_HALLO," Of course. I killed him. ",DIA_Ass_126_Haniar_HALLO_M6);
+	Info_AddChoice(DIA_Ass_126_Haniar_HALLO," I know he's dead. ",DIA_Ass_126_Haniar_HALLO_Ok);
+	Info_AddChoice(DIA_Ass_126_Haniar_HALLO," No, I haven't. ",DIA_Ass_126_Haniar_HALLO_M5);
 };
 
 func void DIA_Ass_126_Haniar_HALLO_M5()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M5_01_01");	//Нет, ничего такого.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_02");	//Убит один из самых уважаемых братьев, а тебе, выходит, и дела нет до этого?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_03");	//Это звучит крайне странно, ведь об этом знают абсолютно ВСЕ. Все, кроме тебя.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_04");	//Следовательно, ты либо глухой слепец, либо попросту сейчас пытаешься меня обмануть или что-то скрыть.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_05");	//А это, как ты сам понимаешь, может означать только одно - что тебе нельзя доверять.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_06");	//Сейчас я покажу тебе, что мы обычно делаем со лгунами...
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M5_01_01");	//No, I haven't.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_02");	//One of the most respected brothers has been killed, and you don't even know about it?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_03");	//I find that quite strange, since absolutely EVERYONE knows about it. Everyone but you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_04");	//So either you are deaf and blind, an idiot, or a liar.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_05");	//All this tells me only one thing: You cannot be trusted.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M5_01_06");	//Observe what we do with those unworthy of our trust...
 	MIS_HasimKill = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+	B_LogEntry(TOPIC_HasimKill," Haniar was not too happy with my explanations. Now I have only one thing left - to fight for my life with all the Brotherhood! " );
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -179,34 +179,34 @@ func void DIA_Ass_126_Haniar_HALLO_M5()
 func void DIA_Ass_126_Haniar_HALLO_M6()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M6_01_01");	//Конечно. Ведь это я убил его.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_02");	//Ты?! Ты убил элитную тень Масиафа? Знаешь, мне в это как-то трудно поверить.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_03");	//Хасим был сильным воином и никогда не отличался особой глупостью и неосторожностью.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_04");	//Но хорошо, допустим, я тебе поверил. Тогда ответь мне на вопрос: зачем тебе понадобилось его убивать?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M6_01_05");	//Я сделал это по приказу приора Тиаманта.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_06");	//Тиаманта? Знаешь, все, что ты сейчас здесь сказал, крайне интересно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_07");	//Думаю, ты понимаешь, что, произнося такое вслух, ты очень сильно рискуешь своей головой.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_08");	//Хотя, с другой стороны, ты не производишь впечатление безумца, готового с легкостью расстаться со своей жизнью.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_09");	//Поэтому мне нужно время, чтобы разобраться со всем этим.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M6_01_12");	//(молча кивает)
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M6_01_01");	//Of course. I killed him.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_02");	//You? You killed the elite shadow of Masyaf? You expect me to believe that?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_03");	//Hasim was a great warrior. Neither careless nor stupid.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_04");	//But okay, let's say I believed you. Answer me this: why did you need to kill him?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M6_01_05");	//I did it by order of Prior Tiamant.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_06");	//Tiamant? Very interesting.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_07");	//You are either very brave to admit this to me, or you are a madman.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_08");	//Although, on the other hand, you do not give the impression of a madman, ready to easily part with your life.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_09");	//I will need some time to think on this.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_M6_01_12");	//(nods silently)
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_10");	//Ты же пока ступай и помолись Белиару, чтобы твои слова не оказались ложью!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_M6_01_10");	//For now, go pray to Beliar to assuage your guilt.
 	MIS_HasimKill = LOG_SUCCESS;
 	HaniarKnowKiller = TRUE;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар стал расспрашивать меня о судьбе Хасима, и я решил рассказать ему правду. Конечно, это может стоить мне головы, однако, если Ханиар все-таки удостоверится в правдивости моих слов, возможно, это больше сыграет мне на руку. Теперь, чтобы хоть как-то сгладить свою вину, мне следует помолиться Белиару за душу убитого мною Хасима. Уверен, и Гонсалесу будет интересно узнать, чем закончилась вся эта история.");	
+	B_LogEntry(TOPIC_HasimKill," Haniar began to ask me about Hasim's fate, and I decided to tell him the truth. Of course, it may cost me my head, however, if Haniar does make sure that my words are true, perhaps it will play into my hands more. Now, in order to somehow smooth out my guilt, I should pray to Beliar for the soul of Hasim. I'm sure Gonzalez will be interested to know how the whole story ended. ");	
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_126_Haniar_HALLO_Ok()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_Ok_01_01");	//Я знаю о том, что он мертв.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_02");	//Само собой. И, как ты понимаешь, я не в восторге от этой новости.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_03");	//Но главное, что еще хуже, - я сам об этом абсолютно ничего не знаю. А такого быть не должно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_04");	//Поэтому твоя первоочередная задача - выяснить, кто стоит за этим убийством. И как можно быстрее.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_05");	//Конечно, это будет нелегко, но я в тебя верю. Иначе ты бы не стал мюридом трех приоров.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_06");	//Теперь ступай. И если что-нибудь узнаешь, то первым делом сообщи мне.
-	B_LogEntry(TOPIC_HasimKill,"Ханиар стал расспрашивать меня о судьбе Хасима, однако я не стал раскрывать ему всю правду, опасаясь последствий. Теперь мне поручено найти убийцу, и это даже немного забавно - искать самого себя. Пожалуй, стоит посоветоваться об этом с Гонсалесом.");	
+	AI_Output(other,self,"DIA_Ass_126_Haniar_HALLO_Ok_01_01");	//I know he's dead.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_02");	//Of course, and as you can imagine, I am not pleased.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_03");	//But what concerns me most is that I knew nothing about it. That is unacceptable.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_04");	//Therefore, your first priority is to find out who is behind this murder. And as quickly as possible.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_05");	//Of course it won't be easy, but I believe in you. Otherwise, you would not have become the murid of the three priori.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_HALLO_Ok_01_06");	//Now go. Come to me first if you discover anything.
+	B_LogEntry(TOPIC_HasimKill," Haniar began to ask me about Hasim's fate, but I did not disclose the whole truth to him, fearing the consequences. Now I am tasked with finding the killer, and it’s even a little fun looking for myself. Perhaps it is worth consulting with Gonzalez about this. " );		
 	HaniarSeekKiller = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -218,7 +218,7 @@ instance DIA_Ass_126_Haniar_Quest1(C_Info)
 	condition = DIA_Ass_126_Haniar_Quest1_condition;
 	information = DIA_Ass_126_Haniar_Quest1_info;
 	permanent = FALSE;
-	description = "Насчет убийцы Хасима...";
+	description = " About Hasim's killer ... ";
 };
 
 func int DIA_Ass_126_Haniar_Quest1_condition()
@@ -231,16 +231,16 @@ func int DIA_Ass_126_Haniar_Quest1_condition()
 	
 func void DIA_Ass_126_Haniar_Quest1_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_01_01");	//Насчет убийцы Хасима...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_01_02");	//Хорошо. Только говори быстро и по существу!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_01_01");	//About Hasim's killer ...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_01_02");	//Good, tell me everything you know!
 
 	Info_ClearChoices(DIA_Ass_126_Haniar_Quest1);
-	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Я ничего не смог узнать об этом.",DIA_Ass_126_Haniar_Quest1_M1);
-	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Это я убил Хасима.",DIA_Ass_126_Haniar_Quest1_M2);
+	Info_AddChoice(DIA_Ass_126_Haniar_Quest1," I couldn't find out anything about this. ",DIA_Ass_126_Haniar_Quest1_M1);
+	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"I killed Hasim.",DIA_Ass_126_Haniar_Quest1_M2);
 
 	if(Npc_HasItems(other,ItWr_TiamantPaperToHaniar) >= 1)
 	{
-		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"У меня для вас письмо от приора Тиаманта, мастер.",DIA_Ass_126_Haniar_Quest1_Ok);
+		Info_AddChoice(DIA_Ass_126_Haniar_Quest1," I have a letter for you from Prior Tiamant, master. ",DIA_Ass_126_Haniar_Quest1_Ok);
 	};
 };
 
@@ -248,33 +248,33 @@ func void DIA_Ass_126_Haniar_Quest1_info()
 func void DIA_Ass_126_Haniar_Quest1_Ok()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_Ok_01_01");	//У меня для вас письмо от приора Тиаманта, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_Ok_01_02");	//Письмо? Дай мне взглянуть.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_Ok_01_01");	//I have a letter for you from Prior Tiamant, Master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_Ok_01_02");	//Letter? Let me see.
 	B_GiveInvItems(other,self,ItWr_TiamantPaperToHaniar,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_Ok_01_03");	//А ты умеешь заводить себе влиятельных друзей, если сам Тиамант вступился за тебя.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_Ok_01_04");	//Ну хорошо, оставим пока в стороне убийство Хасима.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_Ok_01_05");	//Лучше ответь мне на один вопрос: почему ты сразу все мне не рассказал?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_Ok_01_03");	//So Tiamant himself is standing up for you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_Ok_01_04");	//All right, we will set this matter aside for now.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_Ok_01_05");	//But first I must know.Why did you hide this from me?
 	Info_ClearChoices(DIA_Ass_126_Haniar_Quest1);
-	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Приор Тиамант попросил меня об этом.",DIA_Ass_126_Haniar_Quest1_M3);	
-	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"В отличие от слов Тиаманта, мое слово мало что стоит.",DIA_Ass_126_Haniar_Quest1_M7);
-	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Я просто побоялся сказать правду.",DIA_Ass_126_Haniar_Quest1_M4);	
-	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Я немного растерялся. Но больше такое не повторится.",DIA_Ass_126_Haniar_Quest1_M5);	
-	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Я решил сначала разобраться в ситуации.",DIA_Ass_126_Haniar_Quest1_M6);
+	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"The order came from Prior Tiamant.",DIA_Ass_126_Haniar_Quest1_M3);	
+	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Unlike Prior Tiamant's, my word is worth little.",DIA_Ass_126_Haniar_Quest1_M7);
+	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"I was afraid to tell the truth.",DIA_Ass_126_Haniar_Quest1_M4);	
+	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"I made a mistake. It won't happen again.",DIA_Ass_126_Haniar_Quest1_M5);	
+	Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"I decided to investigate the situation first.",DIA_Ass_126_Haniar_Quest1_M6);
 };
 
 
 func void DIA_Ass_126_Haniar_Quest1_M1()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M1_01_01");	//Я ничего не смог узнать об этом, приор.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M1_01_02");	//Тогда позволь поинтересоваться, какого Белиара ты пришел ко мне?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M1_01_03");	//Или, быть может, ты считаешь, что меня можно отвлекать по всяким пустякам?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M1_01_04");	//Но я...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M1_01_04");	//Послушник, ты не смог выполнить элементарного поручения! И к тому же повел себя крайне дерзко.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M1_01_05");	//За это ты умрешь! Во имя Белиара!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M1_01_01");	//I couldn't find out anything about this, prior.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M1_01_02");	//Then wy bother me with this?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M1_01_03");	//Is my time a trifling thing to be wasted?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M1_01_04");	//But I...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M1_01_04");	//You are clearly an incompetent fool.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M1_01_05");	//In the name of Beliar, you must die!
 	MIS_HasimKill = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+	B_LogEntry(TOPIC_HasimKill," Haniar was not too happy with my explanation. Now I have only one thing left - to fight for my life with all the Brotherhood! " );	
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -282,40 +282,40 @@ func void DIA_Ass_126_Haniar_Quest1_M1()
 
 func void DIA_Ass_126_Haniar_Quest1_M2()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M2_01_01");	//Это я убил Хасима.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_02");	//Ты? Ты убил элитную тень Масиафа? Знаешь, мне в это как-то трудно поверить.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_03");	//Хасим был сильным воином и никогда не отличался особой глупостью и неосторожностью.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_04");	//Но хорошо, допустим, я тебе поверил. Тогда ответь мне на вопрос: зачем тебе понадобилось его убивать?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M2_01_05");	//Я сделал это по приказу приора Тиаманта.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_06");	//Тиаманта? (задумчиво) И где доказательства того, что это был его приказ?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M2_01_01");	//I killed Hasim.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_02");	//You? You killed the elite shadow of Masyaf? You expect me to believe that?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_03");	//Hasim was a great warrior. Neither careless nor stupid.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_04");	//But okay, let's say I believed you. Answer me this: why did you need to kill him?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M2_01_05");	//I did it by order of Prior Tiamant.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_06");	//Tiamant? (thoughtfully) Can you prove this?
 
 	if(Npc_HasItems(other,ItWr_TiamantPaperToHaniar) >= 1)
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M2_01_07");	//У меня для вас письмо от приора Тиаманта, мастер.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_08");	//Письмо? Дай мне взглянуть.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M2_01_07");	//I have a letter for you from Prior Tiamant, Master.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_08");	//Letter? Let me see.
 		B_GiveInvItems(other,self,ItWr_TiamantPaperToHaniar,1);
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_09");	//А ты умеешь заводить себе влиятельных друзей, если сам Тиамант вступился за тебя.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_10");	//Ну хорошо, оставим пока в стороне убийство Хасима.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_11");	//Лучше ответь мне на один вопрос: почему ты сразу все мне не рассказал?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_09");	//So Tiamant himself is standing up for you.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_10");	//All right, we will set this matter aside for now.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_11");	//But first I must know.Why did you hide this from me?
 		Info_ClearChoices(DIA_Ass_126_Haniar_Quest1);
-		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Приор Тиамант попросил меня об этом.",DIA_Ass_126_Haniar_Quest1_M3);	
-		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"В отличие от слов Тиаманта, мое слово мало что стоит.",DIA_Ass_126_Haniar_Quest1_M7);
-		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Я просто побоялся сказать правду.",DIA_Ass_126_Haniar_Quest1_M4);	
-		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Я немного растерялся. Но больше такое не повторится.",DIA_Ass_126_Haniar_Quest1_M5);	
-		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Я решил сначала разобраться в ситуации.",DIA_Ass_126_Haniar_Quest1_M6);
+		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"The order came from Prior Tiamant.",DIA_Ass_126_Haniar_Quest1_M3);	
+		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"Unlike Prior Tiamant's, my word is worth little.",DIA_Ass_126_Haniar_Quest1_M7);
+		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"I was afraid to tell the truth.",DIA_Ass_126_Haniar_Quest1_M4);	
+		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"I made a mistake. It won't happen again..",DIA_Ass_126_Haniar_Quest1_M5);	
+		Info_AddChoice(DIA_Ass_126_Haniar_Quest1,"I decided to investigate the situation first.",DIA_Ass_126_Haniar_Quest1_M6);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M2_01_12");	//Сейчас у меня их нет, но если бы вы дали мне время...
-		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_13");	//Я сожалею, послушник. Но, кажется, твое время уже подошло к концу.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_14");	//Никому не позволено без моего ведома и разрешения убивать кого-либо в нашем Братстве.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_15");	//Это закон Масиафа. Поэтому тебе придется понести суровое наказание за свое неразумное деяние.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_16");	//Во имя Белиара!
+		AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M2_01_12");	//I... I'm going to need more time...
+		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_13");	//I'm sorry novice, but time is the one thing you no longer have.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_14");	//No one is allowed to kill anyone in our Brotherhood without my knowledge and permission.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_15");	//This is Masyaf's law. The punisment is death.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M2_01_16");	//In the name of Beliar!
 		MIS_HasimKill = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-		B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+		B_LogEntry(TOPIC_HasimKill," Haniar was not too happy with my explanations. Now I have only one thing left - to fight for my life against the Brotherhood! " );
 		PlayerIsPrioratFakeTemp = TRUE;
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_KILL,1);
@@ -324,13 +324,13 @@ func void DIA_Ass_126_Haniar_Quest1_M2()
 	
 func void DIA_Ass_126_Haniar_Quest1_M6()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M6_01_01");	//Я решил сначала разобраться в ситуации.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M6_01_02");	//Разобраться в ситуации? Поэтому ты решил, что лучший способ для этого это морочить мне голову?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M6_01_03");	//Тогда позволь мне, в свою очередь, тоже разобраться в ситуации, но по-своему.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M6_01_04");	//Во имя Белиара!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M6_01_01");	//I decided to investigate the situation first.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M6_01_02");	//"Investigate the situation"? Is that what betrayal is called nowadays?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M6_01_03");	//Then let me "investigate the situation" in my own way.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M6_01_04");	//In the name of Beliar!
 	MIS_HasimKill = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+	B_LogEntry(TOPIC_HasimKill," Haniar was not too happy with my explanations. Now I have only one thing left - to fight for my life against the Brotherhood! " );
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -338,17 +338,17 @@ func void DIA_Ass_126_Haniar_Quest1_M6()
 	
 func void DIA_Ass_126_Haniar_Quest1_M5()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M5_01_01");	//Я немного растерялся. Но больше такое не повторится.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_02");	//Интересно... Но мне всегда казалось, что уверенность - это то качество, которое и отличает воина Масиаф от простого наемного убийцы.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_03");	//Если ты в себе не уверен, то сможешь легко поступиться своими принципами и, главное, своей верой!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_04");	//А таким людям не место в нашем Братстве. Уверен, что ты понимаешь, о чем я!
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M5_01_05");	//Но мастер...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_06");	//Ведь твоя секундная слабость, случившись раз, может повториться. И кто знает, какие еще беды она принесет.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_07");	//Так что лучше сейчас убить одного барана, чем потом потерять всю паству.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_08");	//Во имя Белиара!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M5_01_01");	//I made a mistake. It won't happen again.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_02");	//Interesting ... But it always seemed to me that competence is the quality that distinguishes a masyaf warrior from a simple assassin.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_03");	//The incompetent and untrustworthy can so easily betray their principles and, most importantly, their faith.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_04");	//There is no room in the brotherhood for such people, I'm sure you understand.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M5_01_05");	//But master...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_06");	//After all, weakness, once it has shown itself, usually returns again.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_07");	//Better to kill you now, than risk your incompetence later.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M5_01_08");	//In the name of Beliar!
 	MIS_HasimKill = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+	B_LogEntry(TOPIC_HasimKill," Haniar was not too happy with my explanations. Now I have only one thing left - to fight for my life against the Brotherhood! " );
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -356,15 +356,15 @@ func void DIA_Ass_126_Haniar_Quest1_M5()
 
 func void DIA_Ass_126_Haniar_Quest1_M4()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M4_01_01");	//Я просто побоялся сказать правду.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_02");	//Выходит, что ты просто-напросто испугался!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_03");	//Но ты должен был знать, что это непростительная вещь для любого из членов нашего Братства.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_04");	//Крепость духа и бесстрашие перед лицом опасности - вот то, что отличает воина Масиаф от простого наемного убийцы.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_05");	//Ну а слабым духом и трусам нет места среди нас. Так что не обижайся.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_06");	//Во имя Белиара!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M4_01_01");	//I was afraid to tell the truth.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_02");	//So you let fear guide you?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_03");	//You know well that this is an unforgivable sin in our Brotherhood.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_04");	//Fortress of spirit and fearlessness in the face of danger - this is what distinguishes the Masiaf warrior from a simple hired killer.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_05");	//There is no place for cowards among us. Do not take this too personally.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M4_01_06");	//In the name of Beliar!
 	MIS_HasimKill = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+	B_LogEntry(TOPIC_HasimKill,	" Haniar was not too happy with my explanations. Now I have only one thing left - to fight for my life against the Brotherhood! " );
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -372,14 +372,15 @@ func void DIA_Ass_126_Haniar_Quest1_M4()
 
 func void DIA_Ass_126_Haniar_Quest1_M3()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M3_01_01");	//Приор Тиамант попросил меня об этом.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M3_01_02");	//(гневно) ЧТО?! Что за чушь ты несешь, послушник?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M3_01_03");	//Тиамант никогда бы не попросил подобного у мюрида. Как и ни один из других приоров нашего Братства.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M3_01_04");	//Однако, мне кажется, что ты принял меня за полного идиота, если подумал, что я куплюсь на эту ложь. 
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M3_01_05");	//А такого я никому не прощаю! Во имя Белиара! Умри, ублюдок!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M3_01_01");	//Prior Tiamant asked me to do this.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M3_01_02");	//(angrily) WHAT ?! What the hell are you talking about, novice?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M3_01_03");	//No prior of the Brotherhood would ever ask a Murid to do such a thing.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M3_01_04");	//You must take me for a complete idiot if you thought I would believe such garbage.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M3_01_05");	//This is beyond forgiveness. Die, in the name of Beliar!
 	MIS_HasimKill = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Ханиар остался не слишком доволен моими объяснениями. Теперь мне осталось только одно - сражаться за свою жизнь со всем Братством!");	
+	B_LogEntry(TOPIC_HasimKill,	" Haniar was not too happy with my explanations. Now I have only one thing left - to fight for my life against the Brotherhood! " );
+	PlayerIsPrioratFakeTemp = TRUE;
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -387,23 +388,23 @@ func void DIA_Ass_126_Haniar_Quest1_M3()
 
 func void DIA_Ass_126_Haniar_Quest1_M7()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M7_01_01");	//Боюсь, в отличие от слов Тиаманта, мое слово мало что стоит.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M7_01_02");	//Да и расскажи я тебе все сразу, скорее всего, ты бы убил меня на месте.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M7_01_03");	//Хотя это и ваше право, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_04");	//(пристально вглядываясь) А ты вовсе не глуп, мюрид.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_05"); 	//Признаюсь честно: в любом бы другом случае я снес бы твою голову, не сходя с этого места.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_06");	//Даже несмотря на то, что тебе покровительствует сам Тиамант.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_07");	//Однако твоя убедительная речь пока что заставила меня повременить с этим.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_08");	//Возможно, ты действительно будешь мне полезен, но сейчас пока еще рано говорить об этом.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_09");	//На твоем же месте я бы сейчас лучше сходил и помолился Белиару за душу нашего брата Хасима.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_10");	//Это лучшее, что ты можешь сейчас сделать, дабы хоть как-то загладить свою вину.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M7_01_12");	//(молча кивает)
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M7_01_01");	//Unlike Prior Tiamant's, my word is worth little.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M7_01_02");	//And if I had told you everything, most likely you would have killed me on the spot.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M7_01_03");	//Although it would have been your right, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_04");	//(staring intently) You're not stupid after all, murid.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_05"); 	//I should kill you on the spot.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_06");	//Even though Tiamant protects you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_07");	//I will put any rash action off for now.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_08");	//You may still prove useful to me, in time.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_09");	//If I were you I would pray to Beliar for guidance.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_10");	//This is the best thing you can do right now as a form of penance.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Quest1_M7_01_12");	//(nods silently)
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_11");	//Тогда не стой истуканом! Ступай уже.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Quest1_M7_01_11");	//Then go.
 	MIS_HasimKill = LOG_SUCCESS;
 	HaniarKnowKiller = TRUE;
 	Log_SetTopicStatus(TOPIC_HasimKill,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HasimKill,"Это было непросто, но мне удалось избежать гнева Ханиара. Чтобы хоть как-то сгладить свою вину, мне следует помолиться Белиару за душу убитого мною Хасима. Уверен, и Гонсалесу будет интересно узнать, чем закончилась вся эта история.");	
+	B_LogEntry(TOPIC_HasimKill," It was not easy, but I managed to avoid Haniar's wrath. In order to somehow mitigate my guilt, I should pray to Beliar for the soul of Hasim I killed. I'm sure Gonzalez will be interested to know how this whole story ended. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -428,9 +429,9 @@ func int dia_Ass_126_Haniar_FollowMe_condition()
 
 func void dia_Ass_126_Haniar_FollowMe_info()
 {
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FollowMe_01_01");	//Хорошо, что ты тут. Нам как раз необходимо кое-что обсудить. 
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FollowMe_01_02");	//Но не здесь. Следуй за мной, послушник.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_FollowMe_01_03");	//(молча кивает)
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FollowMe_01_01");	//It's good you're here. We need to discuss something.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FollowMe_01_02");	//But not here. Follow me, novice.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_FollowMe_01_03");	//(nods silently
 	AI_PlayAni(other,"T_YES");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"HideMeet");
@@ -455,50 +456,50 @@ func int DIA_Ass_126_Haniar_ANGEKOMMEN_Condition()
 
 func void DIA_Ass_126_Haniar_ANGEKOMMEN_Info()
 {
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_01_00");	//Отлично. Здесь нам никто не помешает.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_01_00");	//Good, no one will bother us here.
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_01_01");	//Теперь ответь мне на вопрос: ты боишься смерти, послушник?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_01_01");	//Now answer my question: are you afraid of death, novice?
 	Info_ClearChoices(DIA_Ass_126_Haniar_ANGEKOMMEN);
-	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,"Нет.",DIA_Ass_126_Haniar_ANGEKOMMEN_No);	
-	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,"Да, боюсь.",DIA_Ass_126_Haniar_ANGEKOMMEN_Yes);
-};
+	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,	" No.", DIA_Ass_126_Haniar_ANGEKOMMEN_No);
+	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN," Yes, I am.", DIA_Ass_126_Haniar_ANGEKOMMEN_Yes);
+		       ;
 
 func void DIA_Ass_126_Haniar_ANGEKOMMEN_No()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_01");	//Нет.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_01");	//No.
 	AI_RemoveWeapon(self);
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_02");	//Хорошо. Это я от тебя и хотел услышать.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_03");	//Теперь же давай снова вернемся к убийству Хасима.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_04");	//Как ты уже знаешь, его смерть не слишком обрадовала меня.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_05");	//И дело даже не в том, что он был одним из наших братьев...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_06");	//...ко всему прочему, Хасим был моим соглядатаем и доверенным лицом.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_07");	//Через него я был в курсе всех событий, происходящих в Братстве и среди Теней.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_08");	//К тому же он умел выудить любую нужную мне информацию, не вызывая при этом каких-либо подозрений.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_09");	//Что делало его крайне полезным человеком как для меня, так и для самого Братства Масиаф.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_10");	//Его же смерть стала серьезной потерей.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_11");	//Я не знал об этом, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_12");	//Естественно ты не знал! Об этом никто не знал, кроме меня.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_13");	//Ты же стал просто слепым орудием в руках Белиара. Но это уже не важно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_14");	//Меня сейчас беспокоит другой факт.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_15");	//Какой?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_16");	//(задумчиво) Последнее время Хасим занимался тем, что как раз копался в 'грязном белье' приора Тиаманта.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_17");	//И, мне думается, его смерть не была случайной. Он явно что-то нашел!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_18");	//А вот что именно? Это я предлагаю выяснить тебе.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_19");	//То есть ты предлагаешь мне работать на тебя?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_20");	//Можно сказать и так. Ты смел, сообразителен и, главное, что у тебя есть подход к приору Тиаманту.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_21");	//Он тебе доверяет - в этом нет сомнений.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_22");	//Так что было бы глупо не воспользоваться этим. Ну, что скажешь?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_02");	//Good. This is what I wanted to hear from you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_03");	//Now let's get back to the murder of Hasim again.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_04");	//As you already know, his death did not make me very happy.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_05");	//Not only was he one of our brothers...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_06");	//...but he was also my own personal spy and confidant.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_07");	//Through him, I was aware of all the events taking place in the Brotherhood and among the Shadows.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_08");	//He was able to extract any information I might have needed without raising suspicion.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_09");	//Which made him an extremely useful person both for me and for the Masiaf Brotherhood itself.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_10");	//His death was a serious loss.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_11");	//I didn't know about this, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_12");	//Of course you didn't. No one did.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_13");	//You have become a blunt instrument in the hands of Beliar.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_14");	//Something else is bothering me right now.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_15");	//What?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_16");	//(thoughtfully) Recently, Hasim was busy digging through Prior Tiamant's dirty laundry.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_17");	// And I think his death was not accidental. He clearly found something!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_18");	//You will find out what.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_19");	//You want me to work for you?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_20");	//You could say so. You are brave, quick-witted and, most importantly, you have access to Prior Tiamant.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_21");	//He trusts you - no doubt about that.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_No_01_22");	//So it would be foolish not to take advantage of this. So what do you say?
 	Info_ClearChoices(DIA_Ass_126_Haniar_ANGEKOMMEN);
-	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,"Меня это не интересует.",DIA_Ass_126_Haniar_ANGEKOMMEN_None);	
-	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,"А что я буду с этого иметь?",DIA_Ass_126_Haniar_ANGEKOMMEN_What);	
-	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,"Хорошо, я согласен.",DIA_Ass_126_Haniar_ANGEKOMMEN_Ok);
+	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,"I'm not interested in this.",DIA_Ass_126_Haniar_ANGEKOMMEN_None);	
+	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,"What will I get from this?",DIA_Ass_126_Haniar_ANGEKOMMEN_What);	
+	Info_AddChoice(DIA_Ass_126_Haniar_ANGEKOMMEN,"Okay, I agree.",DIA_Ass_126_Haniar_ANGEKOMMEN_Ok);
 };
 
 func void DIA_Ass_126_Haniar_ANGEKOMMEN_Yes()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_Yes_01_01");	//Да, боюсь.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Yes_01_02");	//Значит, я все-таки ошибся в тебе. Что же, это случается со всеми.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Yes_01_03");	//Не бойся! Больно не будет.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_Yes_01_01");	//Yes, I am.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Yes_01_02");	//So I was wrong about you after all. Well, it happens to everyone.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Yes_01_03");	//I'll make this quick. You won't suffer.
 	PlayerIsPrioratFake = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -506,8 +507,8 @@ func void DIA_Ass_126_Haniar_ANGEKOMMEN_Yes()
 
 func void DIA_Ass_126_Haniar_ANGEKOMMEN_None()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_None_01_01");	//Меня это не интересует.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_None_01_02");	//(мрачно)Что же, тогда ты не оставляешь мне выбора.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_None_01_01");	//I'm not interested in this.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_None_01_02");	//(grimly) Well, then you leave me no choice.
 	PlayerIsPrioratFake = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -515,31 +516,31 @@ func void DIA_Ass_126_Haniar_ANGEKOMMEN_None()
 
 func void DIA_Ass_126_Haniar_ANGEKOMMEN_What()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_01");	//А что я буду с этого иметь?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_02");	//Логичный вопрос. Я его ждал. Что же, отвечу на него довольно просто - немало!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_03");	//Для начала ты во всем сможешь рассчитывать на мою поддержку. 
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_04");	//А это, как ты понимаешь, я предлагаю не всем подряд.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_05");	//Во-вторых, ты станешь моим мюридом и, естественно, получишь мое согласие на возведение тебя в ранг Тени.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_06");	//Ну а если же тебя интересует исключительно золото, то я всегда хорошо платил Хасиму за предоставленную информацию.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_07");	//Тебя я тоже не собираюсь обделять, ведь хорошая информация всегда дорого стоит.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_08");	//Ну так как, этого для тебя достаточно?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_01");	//What will I get from this?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_02");	//A logical, and expected question. In simple terms: a lot.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_03");	//For a start, you can count on my support in everything.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_04");	//And this, as you know, I do not offer to everyone.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_05");	//Secondly, you will become my murid and, naturally, you will receive my consent to elevate you to the rank of Shadow.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_06");	//Well, if you are only interested in gold, then I have always paid Hasim well for the information provided.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_07");	//I'm not going to cheat you either, because good information is priceless in our line of work.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_What_01_08");	//Is that good enough for you?
 };
 
 func void DIA_Ass_126_Haniar_ANGEKOMMEN_Ok()
 {
 	HaniarMurid = TRUE;
 	MasiafShadowRitual = Wld_GetDay();
-	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_01");	//Хорошо, я согласен.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_02");	//(властно) Что же, тогда, согласно закону Масиафа, я нарекаю тебя своим мюридом!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_03");	//Отныне ты мой избранник из числа послушников, а я - твой наставник.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_04");	//Ну а поскольку ты являешься мюридом и у остальных приоров Братства...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_05");	//...то тебе уже не придется проходить испытания на вступление в ранг Тени.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_06");	//Однако сам ритуал посвящения мы проведем уже тогда, когда вернемся обратно в храм.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_07");	//Это будет завтра, а пока же можешь немного отдохнуть. 
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_08");	//Что же касается твоих новых обязанностей, вот - возьми это письмо.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_01");	//Ok, I agree.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_02");	//(imperiously) Well, then, according to the law of Masyaf, I call you my murid!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_03");	//From now on, you are my chosen one from among the novices, and I am your mentor.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_04");	//Well, since you are also a murid among the rest of the Priors of the Brotherhood ...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_05");	//... then you will no longer have to pass the tests to enter the rank of the Shadow.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_06");	//We will perform the initiation ritual itself when we return back to the temple.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_07");	//For now, go and rest.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_08");	//As for your new responsibilities, here - take this letter.
 	B_GiveInvItems(self,other,ItWr_HaniarOrder,1);
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_09");	//Почитай на досуге, и ты найдешь все необходимые инструкции для твоего следующего задания.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_10");	//Все, ступай.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_09");	//Read it at your leisure and you will find all the instructions you need for your next assignment.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_ANGEKOMMEN_Ok_01_10");	//Now go.
 	B_LogEntry(TOPIC_MasiafStory,"Итак, теперь я мюрид самого Ханиара Слепца, а завтра он и его приоры возведут меня в ранг Тени. Я стану одним из полноправных членов Братства Масиаф. Думаю, что после этого стоит поговорить с Гонсалесом и обсудить с ним дальнейший план наших действий.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
@@ -554,7 +555,7 @@ instance DIA_Ass_126_Haniar_MasiafShadowRitual(C_Info)
 	condition = DIA_Ass_126_Haniar_MasiafShadowRitual_condition;
 	information = DIA_Ass_126_Haniar_MasiafShadowRitual_info;
 	permanent = TRUE;
-	description = "Я готов стать Тенью Масиаф.";
+	description = " I am ready to become the Shadow of the Masiaf. " ;
 };
 
 func int DIA_Ass_126_Haniar_MasiafShadowRitual_condition()
@@ -571,16 +572,16 @@ func int DIA_Ass_126_Haniar_MasiafShadowRitual_condition()
 	
 func void DIA_Ass_126_Haniar_MasiafShadowRitual_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_01");	//Я готов стать Тенью Масиаф.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_01");	//I am ready to become the Shadow of Masiaf.
 
  	if(Wld_IsTime(10,0,20,0))
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_02");	//(властно) Хорошо. Однако для начала надо дождаться всех приоров.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_03");	//Я уже послал за приором Осаиром. Он скоро прибудет.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_04");	//Когда все будут на месте, мы начнем твое посвящение. 
-		AI_Output(other,self,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_05");	//А что мне нужно будет делать?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_06");	//Ничего! Просто, когда все соберутся, встань в круг власти Масиаф.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_07");	//Если что, это то место, где сейчас стою я.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_02");	//(domineering) Okay. However, first you need to wait for all the priors.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_03");	//I have already sent for Prior Osair. He will be arriving soon.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_04");	//When everyone is in place, we will begin your initiation.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_05");	//What do I need to do?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_06");	//When everyone has gathered, stand in the circle of power.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_07");	//Understood?
 		PriorDipost = TRUE;
 		Info_ClearChoices(DIA_Ass_126_Haniar_MasiafShadowRitual);
 		Info_AddChoice(DIA_Ass_126_Haniar_MasiafShadowRitual,Dialog_Ende,DIA_Ass_126_Haniar_MasiafShadowRitual_Ok);	
@@ -588,10 +589,10 @@ func void DIA_Ass_126_Haniar_MasiafShadowRitual_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_08");	//(раздраженно) Ты бы еще в полночь заявился! Видишь, уже почти ночь на дворе.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_09");	//Так что отложим церемонию посвящения на завтра.
-		AI_Output(other,self,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_10");	//Когда?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_11");	//Около полудня. Так что лучше займись пока чем-нибудь полезным.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_08");	//(irritated) You should have showed up at midnight! The sun will rise soon.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_09");	//So let's postpone the initiation ceremony until tomorrow.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_10");	//When?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_01_11");	//Around noon. Until then, keep yourself busy.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -640,21 +641,21 @@ func void DIA_Ass_126_Haniar_MasiafShadowRitual_Done_info()
 	Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 	AI_Wait(self,25);
 	Snd_Play("LEVELUP");
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_01");	//Братья! Сегодня мы собрались здесь, чтобы возвести этого послушника в ранг Тени!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_02");	//Сразу оговорюсь, что подобного случая посвящения я уже давно не припомню.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_03");	//А именно того, чтобы претендент был принят в ряды Братства без прохождения испытания.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_04");	//Но, учитывая тот факт, что он является мюридом каждого из присутствующих здесь приоров...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_05");	//...и единственным претендентом на вступление - то все это освобождает его от подобной необходимости.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_06");	//Поэтому властью, данной мне высшим советом приоров Масиафа, я нарекаю его именем Тени!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_07");	//Отныне твоя судьба неразрывно связана с этим Братством, его законами и порядками.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_08");	//Следуй им и чти их! И пусть будет крепка твоя вера и точен твой клинок, разя врагов во имя Белиара!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_09");	//А эти доспехи и клинок Теней носи как символ того, что теперь ты один из нас.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_01");	//Brothers! We are gathered here today to elevate this acolyte to the rank of Shadow!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_02");	//What will happen here today is unheard of in the history of our brotherhhod.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_03");	//Namely, that the applicant was accepted into the ranks of the Brotherhood without passing the test.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_04");	//But given the fact that he is the murid of every prior present here ...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_05");	//...as well as the only candidate for membership.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_06");	//Therefore, by the authority given to me by the supreme council of Masyaf's priori, I bestow upon him the title of Shadow!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_07");	//From now on, your fate is inextricably linked with this Brotherhood, its laws and orders.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_08");	//Follow them and honor them! And may your faith be strong and your blade sharp, smashing our enemies in the name of Beliar!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_09");	//Wear this armor and blade of Shadows as a symbol of the fact that you are now one of us.
 	CreateInvItems(hero,ItMw_1H_AssBlade_Hero,1);
 	CreateInvItems(hero,ITAR_ASSASINS_04,1);
 	AI_EquipArmor(hero,ITAR_ASSASINS_04);
 	Npc_RemoveInvItems(other,ITAR_ASSASINS_03,1);
-	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_10");	//...Лер Илах Ил Альу Та Масиаф Масули Белиар!...
-	B_LogEntry(TOPIC_MasiafStory,"Приоры посвятили меня в статус Тени Масиаф. И это означает, что я теперь один из них. Надо сообщить эту новость Гонсалесу - уверен, это произведет на него впечатление.");
+	AI_Output(self,other,"DIA_Ass_126_Haniar_MasiafShadowRitual_Done_01_10");	//... Ler Ilah Il Alu Ta Masiaf Masuli Beliar! ...
+	B_LogEntry(TOPIC_MasiafStory,"The Priors have ordained me to the Shadow Masiaf status. Which means that I am now one of them. I need to bring this news to Gonzalez - I am sure it will impress him. " );
 	PlayerIsAssNow = TRUE;
 	Info_ClearChoices(DIA_Ass_126_Haniar_MasiafShadowRitual_Done);
 	Info_AddChoice(DIA_Ass_126_Haniar_MasiafShadowRitual_Done,Dialog_Ende,DIA_Ass_126_Haniar_MasiafShadowRitual_Done_Ok);	
@@ -687,7 +688,7 @@ instance DIA_Ass_126_Haniar_BlameTiamant(C_Info)
 	condition = DIA_Ass_126_Haniar_BlameTiamant_condition;
 	information = DIA_Ass_126_Haniar_BlameTiamant_info;
 	permanent = TRUE;
-	description = "Насчет вашего поручения, мастер.";
+	description = " About your assignment, master. " ;
 };
 
 func int DIA_Ass_126_Haniar_BlameTiamant_condition()
@@ -700,25 +701,25 @@ func int DIA_Ass_126_Haniar_BlameTiamant_condition()
 	
 func void DIA_Ass_126_Haniar_BlameTiamant_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_01_01");	//Насчет вашего поручения, мастер.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_01_01");	//About your assignment, master.
 
 	if(Wld_IsTime(9,0,10,0) || Wld_IsTime(21,0,22,0))
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_01_02");	//Хорошо. Я тебя слушаю.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_01_02");	//I'm listening?
 		Info_ClearChoices(DIA_Ass_126_Haniar_BlameTiamant);
-		Info_AddChoice(DIA_Ass_126_Haniar_BlameTiamant,"Пока мне нечего вам сообщить.",DIA_Ass_126_Haniar_BlameTiamant_None);
+		Info_AddChoice(DIA_Ass_126_Haniar_BlameTiamant," I have nothing to tell you yet. ",DIA_Ass_126_Haniar_BlameTiamant_None);
 
 		if((HaniarKnowOsair == FALSE) && (KnowOsairToTiamant == TRUE))
 		{
-			Info_AddChoice(DIA_Ass_126_Haniar_BlameTiamant,"Мне стало известно кое-что о приоре Осаире.",DIA_Ass_126_Haniar_BlameTiamant_Osair);	
+			Info_AddChoice(DIA_Ass_126_Haniar_BlameTiamant," I learned something about Prior Osair. ",DIA_Ass_126_Haniar_BlameTiamant_Osair);	
 		};
 		if((HaniarKnowNrozas == FALSE) && (KnowNrozasToTiamant == TRUE))
 		{
-			Info_AddChoice(DIA_Ass_126_Haniar_BlameTiamant,"У меня есть информация о приоре Нрозасе.",DIA_Ass_126_Haniar_BlameTiamant_Nrozas);	
+			Info_AddChoice(DIA_Ass_126_Haniar_BlameTiamant," I have information about Prior Nrozas. ",DIA_Ass_126_Haniar_BlameTiamant_Nrozas);	
 		};
 		if((HaniarKnowHasim == FALSE) && (KnowWhyHasimDead == TRUE) && (Npc_HasItems(other,ItWr_Luka) >= 1))
 		{
-			Info_AddChoice(DIA_Ass_126_Haniar_BlameTiamant,"Я знаю, почему убили Хасима.",DIA_Ass_126_Haniar_BlameTiamant_Hasim);
+			Info_AddChoice(DIA_Ass_126_Haniar_BlameTiamant," I know why Hasim was killed. ",DIA_Ass_126_Haniar_BlameTiamant_Hasim);
 		};
 	}
 	else
@@ -726,15 +727,15 @@ func void DIA_Ass_126_Haniar_BlameTiamant_info()
 		if(HaniarRefuseFirstTime == FALSE)
 		{
 			AI_PlayAni(self,"T_SEARCH");
-			AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_01_03");	//(раздраженно) Мне кажется, что ты нашел не самое подходящее место для подобного рода разговоров.
-			AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_01_04");	//Так что обсудим это в другой раз, когда нас никто не услышит.
-			B_LogEntry(TOPIC_Intriges,"Ханиар не стал меня слушать. Мне надо дождаться момента, когда рядом с ним никого не будет. Кажется, Ханиар иногда выходит из храма подышать свежим воздухом.");
+			AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_01_03");	//(Irritated) This is not the place to discuss this.
+			AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_01_04");	//We will talk about this another time, out of earshot.
+			B_LogEntry(TOPIC_Intriges," Haniar didn’t listen to me. I have to wait for the moment when no one will be near him. It seems that Haniar sometimes comes out of the temple to get some fresh air. " );
 			HaniarRefuseFirstTime = TRUE;
 			AI_StopProcessInfos(self);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_01_05");	//Что тебе было непонятно из того, что я сказал?
+			AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_01_05");	//What did you not understand from what I said?
 			AI_StopProcessInfos(self);
 		};
 	};
@@ -742,48 +743,48 @@ func void DIA_Ass_126_Haniar_BlameTiamant_info()
 
 func void DIA_Ass_126_Haniar_BlameTiamant_None()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_None_01_01");	//Пока мне нечего вам сообщить.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_None_01_02");	//(гневно) Тогда зачем ты попросту тратишь мое время?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_None_01_03");	//Прошу простить меня, мастер. Я уже ухожу.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_None_01_01");	//I have nothing to tell you yet.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_None_01_02");	//(angrily) Then why are you wasting my time?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_None_01_03");	//Forgive me master. I will go.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_126_Haniar_BlameTiamant_Osair()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_01");	//Мне стало известно кое-что о приоре Осаире.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_02");	//Что именно?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_03");	//В последние дни он очень зол на приора Тиаманта за то, что тот не смог обеспечить безопасность рудной шахты.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_04");	//А теперь вновь просит у Осаира новых рабов, чтобы возобновить там работы.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_05");	//А разве на шахту кто-то нападал?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_06");	//Все рабы и охранник шахты были сожраны ползунами.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_07");	//Ах вот оно как. Мне об этом ничего не известно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_08");	//Выходит, что Тиамант скрыл от меня этот факт. Не очень умно с его стороны.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_01");	//I learned something about Prior Osair.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_02");	//What, exactly?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_03");	//Recently, he has been very angry with Prior Tiamant for failing to keep the ore mine safe.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_04");	//And now he is asking Osair for new slaves to get the ore flowing again.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_05");	//Did someone attack the mine?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_06");	//All the slaves and the mine guard were devoured by Crawlers.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_07");	//This is news to me.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_08");	//Tiamant hid this from me. Very foolish of him.
 	HaniarKnowOsair = TRUE;
 
 	if((HaniarKnowOsair == TRUE) && (HaniarKnowNrozas == TRUE) && (HaniarKnowHasim == TRUE))
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_09");	//Ладно, разберемся с этим потом. Еще есть новости?
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_10");	//Это все, мастер.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_11");	//Ну что же, хорошая работа. Значит, не зря я тебе доверился.
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_12");	//И что будет теперь?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_13");	//(мрачно) Ничего хорошего. По крайней мере, для Тиаманта.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_14");	//Судя по тому, что ты мне рассказал, - и половины хватит для того, чтобы, по законам Масиафа, он был приговорен к смерти!
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_15");	//Значит, мне нужно будет его убить?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_16");	//Нет конечно. Во-первых, по законам Масиаф, ты на это просто не имеешь права.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_17");	//Бросить вызов может только ему равный.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_18");	//А во-вторых, у тебя пока что не хватит силенок, чтобы совладать с лучшим бойцом Масиафа!
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_19");	//Или ты думаешь, что он просто так занимается подготовкой Теней Братства?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_20");	//Нет. Тут твоя помощь мне не потребуется.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_21");	//Я все сделаю сам. Ты сможешь только понаблюдать за сражением.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_22");	//А сейчас пока что ты свободен. Можешь немного отдохнуть.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_23");	//И вот, возьми это золото. Я не обманывал тебя, когда говорил, что хорошо плачу своим людям.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_09");	//Okay, we'll figure it out later. Any more news?
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_10");	//That's all, master.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_11");	//Good work. My trust in you seems to be well placed.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_12");	//And what will happen now?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_13");	//(grim) Nothing good. At least for Tiamant.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_14");	//If only half of what you have told me is true, a death sentence is warranted according to the laws of Masyaf!
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_15");	//Shall I kill him, my master?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_16");	//No. You do not have the right, according to the law.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_17");	//He shall die at the hands of an equal.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_18");	//Besides, he is one of the best fighters of Masyaf, you are no match for him!
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_19");	//Or do you think he trains Shadows for nothing?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_20");	//No, I shan't need your help here.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_21");	//I will handle this personally. You may sit back and enjoy the show.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_22");	//You are free for now. Go rest.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_23");	//Take this gold. I meant it when I said I pay my people well.
 		B_GiveInvItems(self,other,ItMi_HaniarPurse,1);
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_24");	//Теперь все, ступай.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_24");	//Now, leave me.
 		HaniarBlameTiamant = TRUE;
 		MIS_Intriges = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_Intriges,LOG_SUCCESS);
-		B_LogEntry(TOPIC_Intriges,"Я сообщил Ханиару обо всем, что смог узнать о приоре Тиаманте. Похоже, Тиаманту в скором времени придется ответить за все свои промахи. Такой поворот событий мне только на руку.");
+		B_LogEntry(TOPIC_Intriges," I told Haniar everything I could find out about Prior Tiamant. It looks like Tiamant will soon have to answer for all his mistakes. This turn of events only suits me. " );
 		AI_StopProcessInfos(self);
 		Wld_InsertNpc(SEK_186_SLAVEOBSSEK,"PW_GROT_GOLDORE_SLAVE_01");
 		Wld_InsertNpc(SEK_387_SLAVEOBSSEK,"PW_GROT_GOLDORE_SLAVE_02");
@@ -796,7 +797,7 @@ func void DIA_Ass_126_Haniar_BlameTiamant_Osair()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_25");	//Ладно, разберемся с этим потом. Еще есть новости?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_25");	//Okay, we'll figure it out later. Any more news?
 	};
 };
 
@@ -804,41 +805,41 @@ func void DIA_Ass_126_Haniar_BlameTiamant_Osair()
 func void DIA_Ass_126_Haniar_BlameTiamant_Nrozas()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_01");	//У меня есть информация о приоре Нрозасе.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_02");	//Что с ним?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_03");	//Похоже, Нрозас и Тиамант не очень-то ладят между собой.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_04");	//Особенно после того случая, когда Тиамант отказал Нрозасу в одной просьбе.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_05");	//Интересно. А в чем суть дела?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_06");	//Нрозасу понадобился редкий яд из клыка муритана. У Тиаманта был один такой, но он не стал с ним делиться.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_07");	//Теперь Нрозас только и ждет случая вернуть ему должок.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_08");	//Что же, Тиамант, по всей видимости, недалекий человек, если решил поссориться с мастером ядов.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_09");	//Чего уж скрывать, даже я подчас иду Нрозасу навстречу, не имея при этом особого желания.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_10");	//Поскольку именно таких людей, как Нрозас, и стоит опасаться больше всего.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_01");	//I have information about Prior Nrozas.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_02");	//What, exactly?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_03");	//It looks like Nrozas and Tiamant don't get along very well.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_04");	//Especially since Tiamant refused one of Nrozas's requests recently.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_05");	//Interesting. What happened?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_06");	//Nrozas needs a rare muritan fang poison. Tiamant had one, but he elected not to share it.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_07");	//Now Nrozas is just waiting for an opportunity to make his displeasure felt.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_08");	//Tiamant is quite foolish to incur the wrath of the master of poisons.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_09");	//Even I go to see Nrozas occasionally.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_10");	//Men like him are to be feared most.
 	HaniarKnowNrozas = TRUE;
 
 	if((HaniarKnowOsair == TRUE) && (HaniarKnowNrozas == TRUE) && (HaniarKnowHasim == TRUE))
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_11");	//Но хватит об этом. У тебя еще есть что-нибудь для меня?
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_12");	//Это все, мастер.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_13");	//Ну что же, хорошая работа. Значит, не зря я тебе доверился.
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_14");	//И что будет теперь?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_15");	//(мрачно) Ничего хорошего. По крайней мере, для Тиаманта.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_16");	//Судя по тому, что ты мне рассказал, - и половины хватит для того, чтобы, по законам Масиафа, он был приговорен к смерти!
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_17");	//Значит, мне нужно будет его убить?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_18");	//Нет конечно. Во-первых, по законам Масиаф, ты на это просто не имеешь права.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_19");	//Бросить вызов может только ему равный.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_20");	//А во-вторых, у тебя пока что не хватит силенок, чтобы совладать с лучшим бойцом Масиафа!
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_21");	//Или ты думаешь, что он просто так занимается подготовкой Теней Братства?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_22");	//Нет. Тут твоя помощь мне не потребуется.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_23");	//Я все сделаю сам. Ты сможешь только понаблюдать за сражением.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_24");	//А сейчас пока что ты свободен. Можешь немного отдохнуть.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_25");	//И вот, возьми это золото. Я не обманывал тебя, когда говорил, что хорошо плачу своим людям.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_11");	//Okay, we'll figure it out later. Any more news?
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_12");	//That's all, master.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_13");	//Good work. My trust in you seems to be well placed.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_14");	//And what will happen now?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_15");	//(grim) Nothing good. At least for Tiamant.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_16");	//If only half of what you have told me is true, a death sentence is warranted according to the laws of Masyaf!
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_17");	//Shall I kill him, my master?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_18");	//No. You do not have the right, according to the law.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_19");	//He shall die at the hands of an equal.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_20");	//Besides, he is one of the best fighters of Masyaf, you are no match for him!
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_21");	//Or do you think he trains Shadows for nothing?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_22");	//No, I shan't need your help here.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_23");	//I will handle this personally. You may sit back and enjoy the show.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_24");	//You are free for now. Go rest.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_25");	//Take this gold. I meant it when I said I pay my people well.
 		B_GiveInvItems(self,other,ItMi_HaniarPurse,1);
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_26");	//Теперь все, ступай.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_26");	//Now, leave me.
 		HaniarBlameTiamant = TRUE;
 		MIS_Intriges = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_Intriges,LOG_SUCCESS);
-		B_LogEntry(TOPIC_Intriges,"Я сообщил Ханиару обо всем, что смог узнать о приоре Тиаманте. Похоже, Тиаманту в скором времени придется ответить за все свои промахи. Такой поворот событий мне только на руку.");
+		B_LogEntry(TOPIC_Intriges," I told Haniar everything I could find out about Prior Tiamant. It looks like Tiamant will soon have to answer for all his mistakes. This turn of events only suits me. " );
 		AI_StopProcessInfos(self);
 		Wld_InsertNpc(SEK_186_SLAVEOBSSEK,"PW_GROT_GOLDORE_SLAVE_01");
 		Wld_InsertNpc(SEK_387_SLAVEOBSSEK,"PW_GROT_GOLDORE_SLAVE_02");
@@ -851,7 +852,7 @@ func void DIA_Ass_126_Haniar_BlameTiamant_Nrozas()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_27");	//Но хватит об этом. У тебя еще есть что-нибудь для меня?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Nrozas_01_27");	//But enough about that. Do you have anything else for me?
 	};
 };
 
@@ -859,42 +860,42 @@ func void DIA_Ass_126_Haniar_BlameTiamant_Nrozas()
 func void DIA_Ass_126_Haniar_BlameTiamant_Hasim()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_01");	//Я знаю, почему убили Хасима.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_02");	//Тогда рассказывай все что знаешь.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_03");	//В подгорном проходе есть большой золотой рудник.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_04");	//Однако до текущего момента никто, кроме Тиаманта, о нем не знал.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_05");	//Скорее всего, он решил приберечь его исключительно для себя, но Хасим что-то пронюхал про эту маленькую тайну приора.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_06");	//Но не успел рассказать вам об этом... Благодаря мне.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_07");	//Сначала Тиамант хотел поручить это дело своему человеку по имени Лука.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_08");	//Но потом решил использовать для этого меня. Ну а дальше вы и так знаете.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_09");	//А в качестве доказательства моих слов - вот это письмо.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_01");	//I know why Hasim had to die.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_02");	//Tell me everything you know.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_03");	//There is a large gold mine in the foothill pass.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_04");	//However, only Tiamant was aware of its existence.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_05");	//Most likely he wished to keep it that way, however, Hasim caught wind of it.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_06");	//Thanks to me, he never had the time to report it to you.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_07");	//At first, Tiamant would have asked Luke to kill Hasim.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_08");	//But then decided to use me, as you already know.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_09");	//And as proof: this letter.
 	B_GiveInvItems(other,self,ItWr_Luka,1);
 	B_UseFakeScroll();
 	HaniarKnowHasim = TRUE;
 
 	if((HaniarKnowOsair == TRUE) && (HaniarKnowNrozas == TRUE) && (HaniarKnowHasim == TRUE))
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_11");	//Хммм... Что-нибудь еще?
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_12");	//Это все, мастер.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_13");	//Ну что же, хорошая работа. Значит, не зря я тебе доверился.
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_14");	//И что будет теперь?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_15");	//(мрачно) Ничего хорошего. По крайней мере, для Тиаманта.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_16");	//Судя по тому, что ты мне рассказал, - и половины хватит для того, чтобы, по законам Масиафа, он был приговорен к смерти!
-		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_17");	//Значит, мне нужно будет его убить?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_18");	//Нет конечно. Во-первых, по законам Масиаф, ты на это просто не имеешь права.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_19");	//Бросить вызов может только ему равный.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_20");	//А во-вторых, у тебя пока что не хватит силенок, чтобы совладать с лучшим бойцом Масиафа!
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_21");	//Или ты думаешь, что он просто так занимается подготовкой Теней Братства?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_22");	//Нет. Тут твоя помощь мне не потребуется.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_23");	//Я все сделаю сам. Ты сможешь только понаблюдать за сражением.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_24");	//А сейчас пока что ты свободен. Можешь немного отдохнуть.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_25");	//И вот, возьми это золото. Я не обманывал тебя, когда говорил, что хорошо плачу своим людям.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_11");	//Hmmm ... Anything else?
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_12");	//That's all, master.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_13");	//Good work. My trust in you seems to be well placed.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_14");	//And what will happen now?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_15");	//(grim) Nothing good. At least for Tiamant.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_16");	//If only half of what you have told me is true, a death sentence is warranted according to the laws of Masyaf!
+		AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_17");	//Shall I kill him, my master?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_18");	//No. You do not have the right, according to the law.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_19");	//He shall die at the hands of an equal.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_20");	//Besides, he is one of the best fighters of Masyaf, you are no match for him!
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_21");	//Or do you think he trains Shadows for nothing?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_22");	//No, I shan't need your help here.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_23");	//I will handle this personally. You may sit back and enjoy the show.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_24");	//You are free for now. Go rest.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_25");	//Take this gold. I meant it when I said I pay my people well.
 		B_GiveInvItems(self,other,ItMi_HaniarPurse,1);
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_26");	//Теперь все, ступай.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_26");	//Now, leave me.
 		HaniarBlameTiamant = TRUE;
 		MIS_Intriges = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_Intriges,LOG_SUCCESS);
-		B_LogEntry(TOPIC_Intriges,"Я сообщил Ханиару обо всем, что смог узнать о приоре Тиаманте. Похоже, Тиаманту в скором времени придется ответить за все свои промахи. Такой поворот событий мне только на руку.");
+		B_LogEntry(TOPIC_Intriges," I told Haniar everything I could find out about Prior Tiamant. It looks like Tiamant will soon have to answer for all his mistakes. This turn of events only suits me. " );
 		AI_StopProcessInfos(self);
 		Wld_InsertNpc(SEK_186_SLAVEOBSSEK,"PW_GROT_GOLDORE_SLAVE_01");
 		Wld_InsertNpc(SEK_387_SLAVEOBSSEK,"PW_GROT_GOLDORE_SLAVE_02");
@@ -907,7 +908,7 @@ func void DIA_Ass_126_Haniar_BlameTiamant_Hasim()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_27");	//(мрачно) Что-нибудь еще?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Hasim_01_27");	//(grimly) Anything else?
 	};
 };
 
@@ -918,7 +919,7 @@ instance DIA_Ass_126_Haniar_DeadTiamant(C_Info)
 	condition = DIA_Ass_126_Haniar_DeadTiamant_condition;
 	information = DIA_Ass_126_Haniar_DeadTiamant_info;
 	permanent = FALSE;
-	description = "Это было впечатляюще, мастер!";
+	description = " That was impressive, master! " ;
 };
 
 func int DIA_Ass_126_Haniar_DeadTiamant_condition()
@@ -932,16 +933,16 @@ func int DIA_Ass_126_Haniar_DeadTiamant_condition()
 func void DIA_Ass_126_Haniar_DeadTiamant_info()
 {
 	OsairSeekYou = TRUE;
-	AI_Output(other,self,"DIA_Ass_126_Haniar_DeadTiamant_01_01");	//Это было впечатляюще, мастер!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_02");	//(мрачно) Возможно. Только не думай, что я рад этому.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_03");	//Потеря одного из приоров, тем более такого, как Тиамант, безусловно, скажется на Братстве.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_04");	//И, естественно, не в лучшую сторону.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_05");	//(властно) Но я должен был это сделать, ибо того требовали законы Масиафа. И все это прекрасно понимают.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_DeadTiamant_01_06");	//И что будет теперь?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_07");	//Пока ничего. Со временем мы выберем нового приора из тех братьев, кто будет этого достоин.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_08");	//Пока же приор Осаир возьмет на себя обязанности Тиаманта. 
-	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_09");	//Кстати. Кажется, он искал тебя. Уверен, что не стоит заставлять его ждать.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_10");	//Так что ступай.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_DeadTiamant_01_01");	//That was impressive, master!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_02");	//(grimly) Maybe. Though I take no joy from it.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_03");	//The loss of one of the Priors, especially one like Tiamant, will certainly affect the Brotherhood.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_04");	//And certainly not for the better.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_05");	//(imperiously) But I had to do it, for it was required by the laws of Masyaf. Everyone understands this.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_DeadTiamant_01_06");	//What happens now?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_07");	//Nothing yet. Over time, we will select a new Prior from among those brothers who will be worthy of it.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_08");	//In the meantime, Prior Osair will take over Tiamant's duties 
+	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_09");	//By the way. It seems he was looking for you. You should not keep him waiting.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_DeadTiamant_01_10");	//Off you go.
 	AI_StopProcessInfos(self);
 };
 
@@ -965,7 +966,7 @@ func int dia_Ass_126_Haniar_TrueBattle_condition()
 
 func void dia_Ass_126_Haniar_TrueBattle_info()
 {
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_01_00");	//Не сейчас! Поговорим после поединка.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_01_00");	// Not now! Let's talk after the fight.
 	AI_StopProcessInfos(self);
 };
 
@@ -976,7 +977,7 @@ instance DIA_Ass_126_Haniar_NrozasPoisonGift(C_Info)
 	condition = DIA_Ass_126_Haniar_NrozasPoisonGift_condition;
 	information = DIA_Ass_126_Haniar_NrozasPoisonGift_info;
 	permanent = FALSE;
-	description = "Вы хотели видеть меня, мастер?";
+	description = " You wanted to see me, master? " ;
 };
 
 func int DIA_Ass_126_Haniar_NrozasPoisonGift_condition()
@@ -989,58 +990,58 @@ func int DIA_Ass_126_Haniar_NrozasPoisonGift_condition()
 	
 func void DIA_Ass_126_Haniar_NrozasPoisonGift_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_01");	//Вы хотели видеть меня, мастер?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_02");	//Ах, хорошо что ты тут. Я слышал, что ты помог приору Нрозасу в его исследованиях.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_03");	//Это так. Я опробовал для него один очень сильный и быстродействующий яд.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_04");	//И как все прошло?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_05");	//Как нельзя лучше. Он за считанные секунды свалил с ног огромного горного тролля.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_06");	//Что же. Меня, если честно, радуют последние успехи Нрозаса.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_07");	//Но они как и радуют, так и... одновременно немного пугают.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_01");	//You wanted to see me, master?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_02");	//Ah, it's good that you're here. I heard that you helped Prior Nrozas in his research.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_03");	//That's right. I tried one very strong and fast-acting poison for him.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_04");	//And how did it go?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_05");	//It took down a huge mountain troll in a matter of seconds.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_06");	//Good. His success pleases me.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_07");	//Yet it also causes me concern.
 	AI_PlayAni(other,"T_SEARCH");
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_08");	//Что вы имеете в виду, мастер?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_09");	//Я, конечно, не сомневаюсь в намерениях Нрозаса, однако, обладая таким весомым аргументом, как это зелье...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_10");	//...возможно, он захочет использовать его не только во благо Братства.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_11");	//Ведь соблазн иногда настолько велик, что порой даже самые стойкие поддаются искушению.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_12");	//К тому же в последнее время в Братстве творятся довольно странные вещи.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_13");	//Порой у меня складывается такое впечатление, что какая-то неведомая сила стала вмешиваться в наши дела.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_14");	//Поведение многих братьев вызывает у меня серьезные опасения.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_15");	//Еще этот случай с Тиамантом! Такого я уже давно не припомню.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_16");	//(отвлеченно) Кстати. У тебя сейчас нет никаких поручений?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_17");	//Я как раз должен отнести бутылку вина Нрозасу.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_18");	//Бутылку вина?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_19");	//Ее дал мне приор Осаир в знак благодарности за пузырек с ядом.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_20");	//(удивленно) Выходит, что Осаир проявил заинтересованность в нем?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_21");	//Думаю, он хочет заказать у Нрозаса еще больше этого зелья.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_22");	//Странно... мне об этом ничего не было известно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_23");	//А он, случайно, не обмолвился, для чего ему этот яд?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_24");	//Этот яд для его людей. По его мнению, с ним они будут непобедимы.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_25");	//Я, конечно, не хочу делать пока поспешных выводов...
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_26");	//Но, мне кажется, что наше Братство в большой опасности.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_27");	//Если Нрозасу интересны только его склянки, то Осаир - это совсем иное дело.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_28");	//Его всегда интересовала только власть.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_29");	//Даже когда мы прибыли сюда, он намеренно поселился в отдельной пещере.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_30");	//И я даже не сомневаюсь в том, что он бы с радостью занял мое место.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_31");	//(серьезно) Послушай, эта бутылка вина - она у тебя с собой?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_08");	//What do you mean, master?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_09");	//I do not doubt Nrozas's loyalty, however with a weapon as powerful as this new poison...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_10");	//... perhaps he will want to use it for more than just the good of the Brotherhood.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_11");	//Temptation comes for us all, at one time or another.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_12");	//Besides, starnge things have been happening in the Brotherhood lately.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_13");	//Sometimes I get the impression that some unknown force has begun to interfere in our affairs.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_14");	//The behavior of many of the brothers is causing me serious concern.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_15");	//As in the case of Tiamant! A betrayal never even thoght possible!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_16");	//(abstractly) By the way. Do you have any assignments right now?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_17");	//I just have to take this bottle of wine to Nrozas.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_18");	//Bottle of wine?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_19");	//Prior Osair gave it to me as a token of gratitude for the vial of poison.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_20");	//(surprised) So Osair showed interest in him?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_21");	//I think he wants to order more of this poison from Nrozas.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_22");	//Strange ... I didn't know anything about this.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_23");	//Did he mention why he might need this poison?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_24");	//It's for his men. He reckons it will make them invincible killers.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_25");	//I certainly don't want to jump to conclusions yet...
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_26");	//But it seems to me that our Brotherhood is in great danger.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_27");	//Nrozas may onle be interested in his concoctions, but Osair is a completely different matter.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_28");	//His drug of choice has always been... power.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_29");	//Even when we arrived here, he chose to settle in a separate cave.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_30");	//And I have no doubt that he would gladly take my place.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_31");	//(seriously) Listen, is this bottle of wine with you?
 
 	if(Npc_HasItems(other,ItFo_BeliarTear) >= 1)
 	{
-		AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_32");	//Да, вот она.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_33");	//Дай мне ее!
-		AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_34");	//Конечно. Вот, возьмите, мастер.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_32");	//Yes, here it is.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_33");	//Show it to me!
+		AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_34");	//Of course master. Here it is.
 		B_GiveInvItems(other,self,ItFo_BeliarTear,1);
 		Npc_RemoveInvItems(self,ItFo_BeliarTear,1);
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_35");	//'Слеза Белиара'? Такого рода вино пьют только короли!
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_36");	//Неужели Осаир так легко расстался с таким сокровищем только для того, чтобы отблагодарить Нрозаса?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_37");	//Это все выглядит довольно странно. Мне надо подумать.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_38");	//Поговорим позже, когда нам никто не помешает.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_35");	//'Beliar's Tear'? This wine is fit for kings!
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_36");	//Did Osair part with such a treasure so easily just to thank Nrozas?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_37");	//This is all very odd. I need to think on this.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_38");	//Lets talk later, in private.
 		HaniarGetGift = TRUE;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_39");	//У меня ее нет.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_40");	//Интересно, что ты тогда несешь Нрозасу?
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_41");	//Принеси мне эту бутылку вина. Немедленно!
+		AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_39");	//I don't have it.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_40");	//What are you carrying to Osair then?
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_41");	//Bring me that bottle! Immediately!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -1065,15 +1066,15 @@ func int DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_condition()
 	
 func void DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_01");	//Вот бутылка вина Осаира, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_02");	//Дай мне ее!
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_03");	//Конечно. Вот, возьмите, мастер.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_01");	//Here's a bottle of Osair's wine, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_02");	//Give it here!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_03");	//Of course, here it is.
 	B_GiveInvItems(other,self,ItFo_BeliarTear,1);
 	Npc_RemoveInvItems(self,ItFo_BeliarTear,1);
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_04");	//'Слеза Белиара'? Такого рода вино пьют только короли!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_05");	//Неужели Осаир так легко расстался с таким сокровищем только для того, чтобы отблагодарить Нрозаса?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_06");	//Это все выглядит довольно странно. Мне надо подумать.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_07");	//Поговорим позже, когда нам никто не помешает.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_04");	//'Beliar's Tear'? This wine is fit for kings!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_05");	//Did Osair part with such a treasure so easily just to thank Nrozas?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_06");	//This is all very odd. I need to think on this.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Lol_01_07");	//Lets talk later, in private.
 	HaniarGetGift = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -1099,46 +1100,46 @@ func int DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_condition()
 func void DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_01");	//(мрачно) Итак. Мои опасения полностью подтвердились. То вино было отравлено.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_02");	//Правда?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_03");	//Тебе еще повезло, что ты не успел отдать его Нрозасу. Точнее, повезло вам обоим.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_04");	//Этот глупец наверняка также испил бы это вино, даже не задумываясь о последствиях.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_05");	//Благодарю вас, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_06");	//Не стоит. Но, по всей видимости, Осаир затеял довольно опасную игру. А смерть Тиаманта лишь развязала ему руки.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_07");	//Убив Нрозаса и свалив всю ответственность на тебя, он легко бы решил этот вопрос в свою пользу.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_08");	//И на его пути, по сути, остался бы только я!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_09");	//Однако он делает большую ошибку, если считает, что сможет совладать со мной.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_10");	//Это властолюбец даже не догадывается, насколько могущественная сила мне покровительствует!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_11");	//Но угрозу Осаира также не стоит недооценивать, поскольку в этой резне могут пострадать наши братья.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_12");	//А я не допущу, чтобы чьи-то амбиции вмиг разрушили все то, что создавалось веками.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_13");	//Что вы собираетесь делать, мастер?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_14");	//Я не могу сейчас обвинить в чем-то Осаира, не имея при этом существенных доказательств.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_15");	//Поэтому надо заставить его самого открыть свои планы и сделать первый шаг навстречу своей смерти.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_16");	//И ты поможешь мне в этом.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_17");	//Я сделаю все, что в моих силах.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_18");	//Отлично! Для начала я позабочусь о Нрозасе. И его смерть сыграет нам на руку.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_19");	//Вы убьете его?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_20");	//Не совсем. К тому же Нрозас слишком ценен своими знаниями, чтобы его просто так можно было убить.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_21");	//Я отправлю Нрозаса во внутреннее святилище нашего храма, где он сможет в одиночестве продолжить свои эксперименты на блага Братства.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_22");	//Но для остальных Нрозас умрет. В том числе и для Осаира.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_23");	//Внутреннее святилище?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_24");	//Я понимаю твое удивление. О его существовании знаю только я.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_25");	//Это то место, где можно спрятать свои самые страшные тайны.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_26");	//А что там находится?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_27");	//То, с чем тебе лучше никогда не сталкиваться. Большего знать об этом не нужно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_28");	//Что касается Осаира, я напишу ему письмо, которое ты ему и отнесешь.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_29");	//Я предложу ему обсудить ситуацию в Братстве с глазу на глаз.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_30");	//Уверен, что он не упустит такой возможности разделаться со мной.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_31");	//И вот тогда ему наступит конец!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_32");	//Однако мне нужно время, чтобы написать это письмо.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_33");	//А ты пока сходи к Нрозасу и отнеси ему вот это вино.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_01");	//(grim) So. My fears were fully confirmed. That wine was poisoned.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_02");	//Really
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_03");	//You're lucky you didn't have time to give it to Nrozas. More precisely, you are both lucky.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_04");	//The fool would surely have drunk it it, oblivious to the fact that the poisoner could also be the poisoned.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_05");	//Thank you, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_06");	//Osair has begun a very dangerous game, and it seems Tiamant's death has only emboldened him.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_07");	//Nrozas's death would have been blamed on you, and thus Osair would have removed two threats to his power in one fell swoop.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_08");	//And then only I would have been left to stand in his way.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_09");	//But if he thinks me weak, he is dearly mistaken.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_10");	//He has no inkling of the powers that protect me!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_11");	//But Osair's threat should not be underestimated either, as our brothers may suffer in this massacre.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_12");	//And I will not allow someone's ambitions to instantly destroy what has taken centuries to create.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_13");	//What are you going to do, master?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_14");	//I cannot accuse Osair of anything without substantial evidence.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_15");	//Therefore, we must force him to show his hand, and thus start on the path to his own downfall.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_16");	//You will help me in this.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_17");	//I will do my best.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_18");	//Great! First, I'll take care of Nrozas. And his death will play into our hands.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_19");	//You're going to kill him?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_20");	//No, Nrozas is too valuable to lose.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_21");	//I will send Nrozas to the inner sanctum of our temple, where he can continue his experiments on his own for the benefit of the Brotherhood.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_22");	//But as far as the brotherhood is concerned, he will be dead.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_23");	//Inner sanctum?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_24");	//I understand your surprise. It is a secret known only to me.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_25");	//It is a place of dark secrets.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_26");	//What's in there
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_27");	//Something you better pray you never face. You need know no more.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_28");	//As for Osair, I will write him a letter, which you will take to him.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_29");	//I will invite him to discuss the situation in the Brotherhood in private.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_30");	//I'm sure he will not miss this opportunity to deal with me.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_31");	//And then it will end!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_32");	//However, I need some time to write this letter.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_33");	//In the meantime, go to Nrozas and take this wine to him.
 	B_GiveInvItems(self,other,ItFo_BeliarTear_Haniar,1); 
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_34");	//И, естественно, преподнеси его, как подарок от Осаира.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_35");	//А оно его не убьет?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_36");	//Не беспокойся. Оно теперь абсолютно безопасно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_37");	//Пусть старик напоследок побалует себя этим божественным нектаром.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_38");	//Все, ступай. Увидимся позже.
-	B_LogEntry(TOPIC_NrozasPoisonGift,"Ханиар сказал, что вино было отравлено. Похоже, Осаир хотел убить Нрозаса моими руками, а заодно и меня. Ведь все подозрения сразу же падут на меня. По всей видимости, Осаир хочет разделаться со всеми приорами Братства, чтобы прибрать власть в свои руки. Однако Ханиар предвидел это и придумал некий план, чтобы остановить Осаира.");
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_34");	//And, of course, present it as a gift from Osair.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_35");	//Won't it kill him?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_36");	//Don't worry. It is now completely safe.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_37");	//Let the old man finally indulge himself with this divine nectar.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_38");	//Go, now. I will see you later.
+	B_LogEntry(TOPIC_NrozasPoisonGift," Haniar said that the wine was poisoned. It looks like Osair wanted to kill Nrozas with my hands, and at the same time me. After all, all suspicions will immediately fall on me. Apparently, Osair wants to deal with all the Priors of the Brotherhood in order to clean up power into their own hands. However, Haniar foresaw this and came up with some plan to stop Osair. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -1163,19 +1164,19 @@ func int DIA_Ass_126_Haniar_NrozasPoisonGift_Done_condition()
 	
 func void DIA_Ass_126_Haniar_NrozasPoisonGift_Done_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_01");	//Я передал вино Нрозасу, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_02");	//Отлично! Там, где он сейчас, ему будет куда спокойней.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_03");	//Я же тем временем написал письмо. Вот, возьми его и отнеси Осаиру.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_01");	//I gave the wine to Nrozas, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_02");	//Good.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_03");	//Here is the letter for Osair. Take it to him.
 	B_GiveInvItems(self,other,ItWr_HaniarToOsair,1); 
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_04");	//Полагаю, он не слишком будет рад видеть меня.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_05");	//Не волнуйся. Он не посмеет тронуть моего посыльного.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_06");	//А что насчет вас? Вы пойдете туда один?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_07");	//Абсолютно верно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_08");	//Иное просто может спугнуть Осаира и он не станет раскрывать передо мной все свои карты.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_09");	//Мне кажется, что для боя вас одного будет маловато против всех его головорезов.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_10");	//Я надеюсь, что сам Осаир подумает точно так же, как и ты сейчас. Очень надеюсь!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_11");	//Но хватит уже болтать. Ступай и отнеси ему письмо.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_12");	//Само собой, мастер.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_04");	//I guess he won't be too happy to see me.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_05");	//Don't worry. He won't dare touch my messenger.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_06");	//What about you? Will you go there alone?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_07");	//Exactly.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_08");	//Otherwise, he will not be comfortable enough to reveal his plans to me.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_09");	//Will you be able to fight him and all his men?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_10");	//I truly hope Osair thinks the same.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_11");	//Enough talk. Take him the letter.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_Done_01_12");	//Of course master.
 	AI_StopProcessInfos(self);
 };
 
@@ -1199,10 +1200,10 @@ func int dia_Ass_126_Haniar_TrueBattle_Done_condition()
 
 func void dia_Ass_126_Haniar_TrueBattle_Done_info()
 {
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Done_01_00");	//Что же. Нрозас проиграл. Кто бы мог подумать.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Done_01_01");	//Значит, по всей видимости, правда была на твоей стороне.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Done_01_02");	//Однако я не сомневаюсь в том, что его потеря еще аукнется нам в будущем.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Done_01_03");	//Но что сделано, то сделано.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Done_01_00");	//Well. Nrozas lost. Who would have thought.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Done_01_01");	//So, apparently, the truth was on your side.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Done_01_02");	//I have no doubt that these events will come back to haunt us.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Done_01_03");	//But what's done is done.
 	AI_StopProcessInfos(self);
 	B_StartOtherRoutine(Ass_126_Haniar,"Start");
 };
@@ -1214,7 +1215,7 @@ instance DIA_Ass_126_Haniar_TrueBattle_Next(C_Info)
 	condition = dia_Ass_126_Haniar_TrueBattle_Next_condition;
 	information = dia_Ass_126_Haniar_TrueBattle_Next_info;
 	permanent = FALSE;
-	description = "Для меня еще будут поручения, мастер?";
+	description = " Will there be more errands for me, master? " ;
 };
 
 func int dia_Ass_126_Haniar_TrueBattle_Next_condition()
@@ -1227,19 +1228,19 @@ func int dia_Ass_126_Haniar_TrueBattle_Next_condition()
 
 func void dia_Ass_126_Haniar_TrueBattle_Next_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_TrueBattle_Next_01_00");	//Для меня еще будут поручения, мастер?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_01");	//Да, будут. Мне необходимо, чтобы ты сходил к алтарю Белиара.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_02");	//Я дам тебе с собой золото, которое ты должен будешь преподнести ему в качестве дара.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_03");	//В последнее время дела в Братстве идут не важно. В том числе и благодаря тебе.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_04");	//Так что, возможно, это подношение позволит нам рассчитывать на его помощь.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_05");	//Только не вздумай присвоить это золото себе, иначе я с тебя шкуру живьем спущу!
-	AI_Output(other,self,"DIA_Ass_126_Haniar_TrueBattle_Next_01_06");	//Уверен, что с этим проблем не будет.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_07");	//Для тебя же лучше. Тогда вот, возьми его и ступай.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_TrueBattle_Next_01_00");	//Will there be more errands for me, master?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_01");	//Yes. I need you to go to Beliar's altar.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_02");	//I will give you gold to make as an offering.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_03");	//The Brotherhood is facing a storm right now, unlike any we've seen.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_04");	//Perhaps this offering will make the Dark One notice us again.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_05");	//If you take this gold for yourself, you will be flayed alive.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_TrueBattle_Next_01_06");	//I understand.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_TrueBattle_Next_01_07");	//Take it and go.
 	B_GiveInvItems(self,other,ItMi_Gold,2000); 
 	MIS_BeliarTribe = LOG_Running;
 	Log_CreateTopic(TOPIC_BeliarTribe,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BeliarTribe,LOG_Running);
-	B_LogEntry(TOPIC_BeliarTribe,"Мне необходимо отправиться к алтарю Белиара и принести ему в дар золото Ханиара Слепца.");
+	B_LogEntry(TOPIC_BeliarTribe," I need to go to Beliar's altar and bring him the gold of Haniar the Blind. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -1250,7 +1251,7 @@ instance DIA_Ass_126_Haniar_BeliarTribe(C_Info)
 	condition = dia_Ass_126_Haniar_BeliarTribe_condition;
 	information = dia_Ass_126_Haniar_BeliarTribe_info;
 	permanent = FALSE;
-	description = "Белиар принял ваш дар, мастер.";
+	description = " Beliar has accepted your gift, master. " ;
 };
 
 func int dia_Ass_126_Haniar_BeliarTribe_condition()
@@ -1264,8 +1265,8 @@ func int dia_Ass_126_Haniar_BeliarTribe_condition()
 func void dia_Ass_126_Haniar_BeliarTribe_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_BeliarTribe_01_00");	//Белиар принял ваш дар, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BeliarTribe_01_01");	//Рад это слышать. Надеюсь, это поможет нам.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_BeliarTribe_01_00");	//Beliar has accepted your gift, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BeliarTribe_01_01");	//Good. May darkness shield us.
 };
 
 instance DIA_Ass_126_Haniar_OsairTrait(C_Info)
@@ -1275,7 +1276,7 @@ instance DIA_Ass_126_Haniar_OsairTrait(C_Info)
 	condition = dia_Ass_126_Haniar_OsairTrait_condition;
 	information = dia_Ass_126_Haniar_OsairTrait_info;
 	permanent = FALSE;
-	description = "У меня для вас плохие новости, мастер.";
+	description = " I have bad news for you, master. " ;
 };
 
 func int dia_Ass_126_Haniar_OsairTrait_condition()
@@ -1289,35 +1290,35 @@ func int dia_Ass_126_Haniar_OsairTrait_condition()
 func void dia_Ass_126_Haniar_OsairTrait_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_00");	//У меня для вас плохие новости, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_01");	//О чем идет речь?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_02");	//Кажется, приор Осаир собирает верных ему людей, чтобы напасть на храм.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_00");	//I have bad news for you, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_01");	//What are you talking about?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_02");	//Prior Osair seems to be gathering his loyalists to attack the temple.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_03");	//Ты говоришь очень опасные вещи, брат. Ты в этом уверен?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_04");	//Осаир лично говорил со мной и пытался склонить на свою сторону.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_05");	//И что, ему это удалось?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_06");	//Ну, пришлось сделать вид, что я согласился.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_07");	//Ладно, это не столь важно. Одно то, что ты тут, уже говорит о многом.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_08");	//И хорошо, что тебе хватило ума сообщить мне об этом, когда нас никто не услышит.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_09");	//Значит, по всей видимости, Осаир затеял довольно опасную игру. А смерти Тиаманта и Нрозаса лишь развязали ему руки.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_10");	//И на его пути, по сути, остался только я.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_11");	//Выходит, что так.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_12");	//Но он делает большую ошибку, если считает что сможет совладать со мной.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_13");	//Это властолюбец даже не догадывается, насколько могущественная сила мне покровительствует!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_14");	//Но угрозу Осаира также не стоит недооценивать, поскольку в этой резне могут пострадать наши братья.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_15");	//А я не допущу, чтобы чьи-то амбиции вмиг разрушили все то, что создавалось веками!
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_16");	//Что вы собираетесь делать, мастер?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_17");	//Я не могу сейчас обвинить в чем то Осаира, не имея при этом существенных доказательств.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_18");	//Поэтому надо заставить его самого открыть свои планы и сделать первый шаг навстречу своей смерти.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_19");	//И ты поможешь мне в этом.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_20");	//Я сделаю все, что в моих силах.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_21");	//Я напишу ему письмо, которое ты ему и отнесешь.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_22");	//Я предложу ему обсудить ситуацию в Братстве с глазу на глаз.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_23");	//Уверен, что он не упустит такой возможности разделаться со мной.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_24");	//И вот тогда, ему наступит конец!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_25");	//Однако мне нужно время, чтобы написать это письмо.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_26");	//Так что подожди тут минутку. 
-	B_LogEntry(TOPIC_OsairTrait,"Я рассказал Ханиару о планах Осаира. Однако Ханиар предвидел это и придумал некий план, чтобы остановить его. Мне надо немного подождать, пока Ханиар напишет письмо Осаиру.");
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_03");	//You are saying very dangerous things, brother. Are you sure?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_04");	//Osair spoke to me personally and tried to win me over to his side.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_05");	//Did he succeed?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_06");	//I pretended to agree.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_07");	//Well, you are here. That speaks volumes.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_08");	//And it's good that you were smart enough to tell me about this in private.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_09");	//Osair has begun a very dangerous game, and it seems Tiamant's death has only emboldened him.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_10");	//And then only I would have been left to stand in his way.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_11");	//So this is how it all has turned out.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_12");	//But if he thinks me weak, he is dearly mistaken.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_13");	//He has no inkling of the powers that protect me!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_14");	//But Osair's threat should not be underestimated either, as our brothers may suffer in this massacre.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_15");	//And I will not allow someone's ambitions to instantly destroy what has taken centuries to create.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_16");	//What are you going to do, master?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_17");	//I cannot blame Osair for something without substantial evidence.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_18");	//Therefore, we must force him to show his hand, and thus start on the path to his own downfall.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_19");	//You will help me in this.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_20");	//I will do my best.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_21");	//I will write him a letter, which you will take to him.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_22");	//I will invite him to discuss the situation in the Brotherhood in private.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_23");	//I'm sure he will not miss this opportunity to deal with me.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_24");	//And then, it will end!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_25");	//However, I need some time to write this letter.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_26");	//So wait a minute here.
+	B_LogEntry(TOPIC_OsairTrait," I told Haniar about Osair's plans. However, Haniar foresaw this and came up with a plan to stop him. I have to wait a little while Haniar writes a letter to Osair. " );
 	HaniarWriteLetter = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"LetterWrite");
@@ -1343,17 +1344,17 @@ func int DIA_Ass_126_Haniar_OsairTrait_Done_condition()
 	
 func void DIA_Ass_126_Haniar_OsairTrait_Done_info()
 {
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_01");	//Вот, возьми его и отнеси Осаиру.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_01");	//Here is the letter for Osair. Take it to him.
 	B_GiveInvItems(self,other,ItWr_HaniarToOsair,1); 
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_Done_01_02");	//Полагаю, он не слишком будет рад видеть меня с ним.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_03");	//Не волнуйся. Он не посмеет тронуть моего посыльного.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_Done_01_04");	//А что насчет вас? Вы пойдете туда один?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_05");	//(спокойно) Абсолютно верно.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_06");	//Иное просто может спугнуть Осаира и он не станет раскрывать передо мной все свои карты.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_Done_01_07");	//Мне кажется, что для боя вас одного будет маловато против всех его головорезов.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_08");	//Я надеюсь, что сам Осаир подумает точно также, как и ты сейчас. Очень надеюсь!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_09");	//Но хватит уже болтать. Ступай и отнеси ему письмо.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_Done_01_10");	//Само собой, мастер.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_Done_01_02");	//I guess he won't be too happy to see me.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_03");	//Don't worry. He won't dare touch my messenger.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_Done_01_04");	//What about you? Will you go there alone?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_05");	//Exactly.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_06");	//Otherwise, he will not be comfortable enough to reveal his plans to me.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_Done_01_07");	//Will you be able to fight him and all his men?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_08");	//I truly hope Osair thinks the same.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_Done_01_09");	//Enough talk. Take him the letter.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_Done_01_10");	//Of course master.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
@@ -1365,7 +1366,7 @@ instance DIA_Ass_126_Haniar_PRETEACH_MANA(C_Info)
 	condition = dia_Ass_126_Haniar_preteach_mana_condition;
 	information = dia_Ass_126_Haniar_preteach_mana_info;
 	permanent = FALSE;
-	description = "Чему я смогу научиться у вас, мастер?";
+	description = " What can I learn from you, master? " ;
 };
 
 func int dia_Ass_126_Haniar_preteach_mana_condition()
@@ -1378,18 +1379,18 @@ func int dia_Ass_126_Haniar_preteach_mana_condition()
 
 func void dia_Ass_126_Haniar_preteach_mana_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_PreTeach_Mana_01_00");	//Чему я смогу научиться у вас, мастер?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_01");	//(серьезно) Моя стезя обучения наших братьев - это их духовная сила.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_02");	//Мы, конечно, сами по себе не практикуем магию Белиара, как это делают темные маги Варанта.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_03");	//Но это еще не означает, что крепость духа абсолютно бесполезная для нас вещь.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_04");	//Так что, если захочешь, я могу потренировать и тебя.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_05");	//Ко всему прочему, мои тренировки смогут закалить твое тело и повысить его выносливость.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_06");	//При условии, конечно, что у тебя будет достаточно для этого опыта.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_07");	//Если же хочешь получше овладеть навыкам ведения боя, то тебе лучше обратиться к Тиаманту.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_08");	//Боевой подготовкой наших братьев занимается только он.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_PreTeach_Mana_01_00");	//What can I learn from you, master?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_01");	//(seriously) My path of teaching our brothers is their spiritual strength.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_02");	//We certainly do not practice Beliar's magic on our own, as the dark mages of Varant do.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_03");	//But this does not mean that the fortress of the spirit is absolutely useless for us.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_04");	//So if you want, I can train you too.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_05");	//In addition, my training will be able to temper your body and increase its endurance.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_06");	//Provided, of course, that you have enough experience for this.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_07");	//If you want to better master the skills of fighting, then you better turn to Tiamant.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_08");	//Only he is engaged in the combat training of our brothers.
 	HaniarTeachMe = TRUE;
 	Log_CreateTopic(TOPIC_PrioratTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_PrioratTeacher,"Приор Ханиар поможет мне повысить мою духовную силу, жизненную энергию и выносливость.");
+	B_LogEntry(TOPIC_PrioratTeacher," Prior Haniar will help me increase my spiritual strength, vitality and stamina. " );
 };
 
 
@@ -1400,7 +1401,7 @@ instance DIA_Ass_126_Haniar_TEACH_MANA(C_Info)
 	condition = dia_Ass_126_Haniar_teach_mana_condition;
 	information = dia_Ass_126_Haniar_teach_mana_info;
 	permanent = TRUE;
-	description = "Я хочу тренироваться.";
+	description = " I want to train. " ;
 };
 
 func int dia_Ass_126_Haniar_teach_mana_condition()
@@ -1413,7 +1414,7 @@ func int dia_Ass_126_Haniar_teach_mana_condition()
 
 func void dia_Ass_126_Haniar_teach_mana_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_TEACH_MANA_01_00");	//Я хочу тренироваться.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_TEACH_MANA_01_00");	//I want to exercise.
 	Info_ClearChoices(dia_Ass_126_Haniar_teach_mana);
 	Info_AddChoice(dia_Ass_126_Haniar_teach_mana,Dialog_Back,dia_Ass_126_Haniar_teach_mana_back);
 	Info_AddChoice(dia_Ass_126_Haniar_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_Ass_126_Haniar_teach_mana_1);
@@ -1425,7 +1426,7 @@ func void dia_Ass_126_Haniar_teach_mana_info()
 
 	if(VATRAS_TEACHREGEN == FALSE)
 	{
-		Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA,"Регенерация здоровья (Очки обучения: 5)",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
+		Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA," Health Regeneration (Training Points: 5) ",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
 	};
 };
 
@@ -1438,8 +1439,7 @@ func void DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth()
 {
 	var int kosten;
 
-	AI_Output(other,self,"DIA_Vatras_Teach_regen_15_04");	//Научи меня регенерации здоровья.
-
+	AI_Output(other,self,"DIA_Vatras_Teach_regen_15_04");	//Teach me how to regenerate health.
 	kosten = 5;
 
 	if(hero.lp < kosten)
@@ -1452,7 +1452,7 @@ func void DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth()
 	{
 		hero.lp = hero.lp - kosten;
 		RankPoints = RankPoints + kosten;
-		AI_Print("Обучение: Регенерация здоровья");
+		AI_Print(" Training: Health Regeneration " );
 		VATRAS_TEACHREGEN = TRUE;
 		Snd_Play("LevelUP");
 	};
@@ -1481,7 +1481,7 @@ func void dia_Ass_126_Haniar_teach_mana_1()
 
 	if(VATRAS_TEACHREGEN == FALSE)
 	{
-		Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA,"Регенерация здоровья (Очки обучения: 5)",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
+		Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA," Health Regeneration (Training Points: 5) ",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
 	};
 };
 
@@ -1499,7 +1499,7 @@ func void dia_Ass_126_Haniar_teach_mana_5()
 
 	if(VATRAS_TEACHREGEN == FALSE)
 	{
-		Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA,"Регенерация здоровья (Очки обучения: 5)",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
+		Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA," Health Regeneration (Training Points: 5) ",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
 	};
 };
 
@@ -1518,7 +1518,7 @@ func void dia_Ass_126_Haniar_teach_mana_stamina_1()
 
 		if(VATRAS_TEACHREGEN == FALSE)
 		{
-			Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA,"Регенерация здоровья (Очки обучения: 10)",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
+			Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA," Health Regeneration (Training Points: 10) ",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
 		};
 	};
 };
@@ -1538,7 +1538,7 @@ func void dia_Ass_126_Haniar_teach_mana_stamina_5()
 
 		if(VATRAS_TEACHREGEN == FALSE)
 		{
-			Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA,"Регенерация здоровья (Очки обучения: 10)",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
+			Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA," Health Regeneration (Training Points: 10) ",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
 		};
 	};
 };
@@ -1558,7 +1558,7 @@ func void dia_Ass_126_Haniar_teach_mana_hp_1()
 
 		if(VATRAS_TEACHREGEN == FALSE)
 		{
-			Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA,"Регенерация здоровья (Очки обучения: 10)",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
+			Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA," Health Regeneration (Training Points: 10) ",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
 		};
 	};
 };
@@ -1578,7 +1578,7 @@ func void dia_Ass_126_Haniar_teach_mana_hp_5()
 
 		if(VATRAS_TEACHREGEN == FALSE)
 		{
-			Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA,"Регенерация здоровья (Очки обучения: 10)",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
+			Info_AddChoice(DIA_Ass_126_Haniar_TEACH_MANA," Health Regeneration (Training Points: 10) ",DIA_Ass_126_Haniar_TEACH_MANA_RegenHealth);
 		};
 	};
 };
@@ -1591,7 +1591,7 @@ instance DIA_Ass_126_Haniar_FinalHaniar(C_Info)
 	condition = DIA_Ass_126_Haniar_FinalHaniar_condition;
 	information = DIA_Ass_126_Haniar_FinalHaniar_info;
 	permanent = FALSE;
-	description = "Приор Осаир согласился на встречу, мастер.";
+	description = " Prior Osair has agreed to a meeting, Master. " ;
 };
 
 func int DIA_Ass_126_Haniar_FinalHaniar_condition()
@@ -1605,12 +1605,12 @@ func int DIA_Ass_126_Haniar_FinalHaniar_condition()
 func void DIA_Ass_126_Haniar_FinalHaniar_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalHaniar_01_01");	//Приор Осаир согласился на встречу, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_02");	//(зловеще) Что же, отлично. Хотя другого я и не ожидал.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_03");	//Надеюсь, что он все-таки сделает ту ошибку, на которую я так рассчитываю.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_04");	//Что же касается тебя, то ты хорошо поработал.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_05");	//Теперь можешь немного отдохнуть и заняться своими делами.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_06");	//А после того как я улажу дело с Осаиром, возможно, у меня еще будут для тебя поручения.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalHaniar_01_01");	//Prior Osair agreed to a meeting, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_02");	//(зловеще) I expected nothing less.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_03");	//May he keep making such mistakes.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_04");	//As for you, good work.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_05");	//Rest for now, and go about your business.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalHaniar_01_06");	//Ater I settle the matter with Osair, I may have more assignments for you.
 
 	if(MIS_OsairTrait == LOG_Running)
 	{
@@ -1618,7 +1618,7 @@ func void DIA_Ass_126_Haniar_FinalHaniar_info()
 		Log_SetTopicStatus(TOPIC_OsairTrait,LOG_Success);
 	};
 
-	B_LogEntry(TOPIC_MasiafStory,"Мне надо рассказать Гонсалесу о встрече Осаира и Ханиара. Думаю, что в Братстве назревает серьезная заварушка.");
+	B_LogEntry(TOPIC_MasiafStory," I need to tell Gonzalez about the meeting between Osair and Haniar. I think a serious mess is brewing in the Brotherhood. " );
 	HaniarReadyMeeting = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -1631,7 +1631,7 @@ instance DIA_Ass_126_Haniar_Meeting(C_Info)
 	condition = DIA_Ass_126_Haniar_Meeting_condition;
 	information = DIA_Ass_126_Haniar_Meeting_info;
 	permanent = FALSE;
-	description = "Могу ли я вам помочь разобраться с людьми Осаира?";
+	description = " Can I help you deal with Osair's people? " ;
 };
 
 func int DIA_Ass_126_Haniar_Meeting_condition()
@@ -1644,9 +1644,9 @@ func int DIA_Ass_126_Haniar_Meeting_condition()
 	
 func void DIA_Ass_126_Haniar_Meeting_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_Meeting_01_01");	//Могу ли я помочь вам разобраться с людьми Осаира?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Meeting_01_02");	//Если тебе дорога твоя жизнь, то лучше держись подальше от всего этого.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_Meeting_01_03");	//Это единственное, что я могу тебе сказать.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_Meeting_01_01");	//Can I help you deal with Osair's people?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Meeting_01_02");	//If you value your life, stay out of this.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_Meeting_01_03");	//That is the only thing I can tell you.
 };
 
 instance DIA_Ass_126_Haniar_CareOsair(C_Info)
@@ -1656,7 +1656,7 @@ instance DIA_Ass_126_Haniar_CareOsair(C_Info)
 	condition = DIA_Ass_126_Haniar_CareOsair_condition;
 	information = DIA_Ass_126_Haniar_CareOsair_info;
 	permanent = FALSE;
-	description = "У меня есть новость, которая вас заинтересует.";
+	description = " I have news that will interest you. " ;
 };
 
 func int DIA_Ass_126_Haniar_CareOsair_condition()
@@ -1670,16 +1670,16 @@ func int DIA_Ass_126_Haniar_CareOsair_condition()
 func void DIA_Ass_126_Haniar_CareOsair_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_01");	//У меня есть новость, которая вас заинтересует, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_02");	//(с интересом) Продолжай.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_03");	//Приор Осаир дал мне поручение заручиться поддержкой нескольких Теней.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_04");	//(задумчиво) Их имена?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_05");	//Фамид, Рафат, Назим и Кудир.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_06");	//Очень интересно. Он, случайно, не обмолвился, зачем это все ему понадобилось?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_07");	//Я думал, что ВЫ ответите на этот вопрос.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_08");	//Нет конечно...(мрачно) Но всех, кого ты назвал, Осаир выбрал, думаю, неспроста.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_09");	//Попробуй разузнать это, если представится такая возможность. Это может быть важным.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_10");	//Хорошо. Я сделаю все, что в моих силах.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_01");	//I have news that will interest you, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_02");	//(with interest) Continue.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_03");	//Prior Osair has instructed me to enlist the support of several Shadows.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_04");	//(thoughtfully) Their names?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_05");	//Famid, Rafat, Nazim and Kudir.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_06");	//Very interesting. He, by chance, did not mention why he needed these men?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_07");	//I thought YOU would might know that.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_08");	//No... but he chose those specific men for a reason.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_CareOsair_01_09");	//Try to find out if the opportunity presents itself. This can be important.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_CareOsair_01_10");	//I will do my best.
 	HaniarKnowsOsairPlans_01 = TRUE;
 };
 
@@ -1690,7 +1690,7 @@ instance DIA_Ass_126_Haniar_NazimNeedGetOutCave(C_Info)
 	condition = DIA_Ass_126_Haniar_NazimNeedGetOutCave_condition;
 	information = DIA_Ass_126_Haniar_NazimNeedGetOutCave_info;
 	permanent = FALSE;
-	description = "Можно ли заменить Назима в шахте?";
+	description = " Can you replace Nazim in the mine? " ;
 };
 
 func int DIA_Ass_126_Haniar_NazimNeedGetOutCave_condition()
@@ -1703,50 +1703,50 @@ func int DIA_Ass_126_Haniar_NazimNeedGetOutCave_condition()
 	
 func void DIA_Ass_126_Haniar_NazimNeedGetOutCave_info()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_01_01");	//Можно ли заменить Назима в шахте?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_01_02");	//(удивленно) А чем вызвано столь сильное беспокойство за него?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_01_01");	//Is it possible to replace Nazim in the mine?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_01_02");	//(surprised) What do you even care?
 	Info_ClearChoices(DIA_Ass_126_Haniar_NazimNeedGetOutCave);
-	Info_AddChoice(DIA_Ass_126_Haniar_NazimNeedGetOutCave,"Ему просто не по душе подобное занятие.",DIA_Ass_126_Haniar_NazimNeedGetOutCave_None);
-	Info_AddChoice(DIA_Ass_126_Haniar_NazimNeedGetOutCave,"Мне нужна его помощь.",DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help);
-	Info_AddChoice(DIA_Ass_126_Haniar_NazimNeedGetOutCave,"Он серьезно болен, мастер.",DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill);
-	Info_AddChoice(DIA_Ass_126_Haniar_NazimNeedGetOutCave,"Его хочет видеть у себя приор Осаир.",DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair);
+	Info_AddChoice(DIA_Ass_126_Haniar_NazimNeedGetOutCave," He just doesn't like this activity. " , DIA_Ass_126_Haniar_NazimNeedGetOutCave_None);
+	Info_AddChoice(DIA_Ass_126_Haniar_NazimNeedGetOutCave," I need his help. ",DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help);
+	Info_AddChoice(DIA_Ass_126_Haniar_NazimNeedGetOutCave, " He's seriously ill, master. ",DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill);
+	Info_AddChoice(DIA_Ass_126_Haniar_NazimNeedGetOutCave," Prior Osair wants to see him. ",DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair);
 };
 
 func void DIA_Ass_126_Haniar_NazimNeedGetOutCave_None()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_None_01_01");	//Ему просто не по душе подобное занятие.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_None_01_02");	//Тогда ему придется смириться с ним. Потому как он останется там же, где и сейчас.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_None_01_03");	//И, судя по всему, на более длительный срок, чем планировал.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_None_01_04");	//Эммм... я понял.
-	B_LogEntry(TOPIC_CareOsair,"Кажется, я только что усугубил ситуацию Назима. Надеюсь, он не узнает об этом разговоре с Ханиаром.");
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_None_01_01");	//He just doesn't like this activity.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_None_01_02");	//Then he will have to put up with it. Because he will remain where he is now.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_None_01_03");	//And, apparently, for a longer period than planned.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_None_01_04");	//I understand.
+	B_LogEntry(TOPIC_CareOsair,"I think I just made Nazim's situation worse. I hope he doesn't know about this conversation with Haniar. " );
 	NazimPissOff = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_01");	//Мне нужна его помощь.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_02");	//Правда? Интересно, в чем?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_01");	//I need his help.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_02");	//Truly? Why might that be?
 
 	if(HaniarKnowsOsairPlans_01 == TRUE)
 	{
-		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_03");	//В том, что нам обоим будет интересно узнать.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_04");	//Понимаю... хорошо.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_05");	//Ты можешь передать Назиму, что он может пока оставить свой пост в шахте.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_06");	//Надеюсь, что я не пожалею о своем решении.
-		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_07");	//Можете не сомневаться, мастер.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_03");	//Something that would be interesting for both of us to know.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_04");	//I see.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_05");	//You can tell Nazim that he can leave his post in the mine for now.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_06");	//Don't make me regret this decision.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_07");	//Rest assured, master.
 		NazimGetOutCave = TRUE;
-		B_LogEntry(TOPIC_CareOsair,"Ханиар согласился отпустить Назима с рудника. Нужно сообщить ему эту радостную весть.");
+		B_LogEntry(TOPIC_CareOsair," Haniar has agreed to release Nazim from the mine. We need to tell him this good news. " );
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_08");	//Просто я решил поохотиться на диких зверей.
-		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_09");	//И мне нужен кто-то, кто бы прикрыл мою спину.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_10");	//А мне кажется, что такому опытному бойцу, как ты, особо не нужна помощь.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_11");	//Так что лучше Назим останется там, где и сейчас.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_08");	//I want to go hunting.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_09");	//And I need someone to watch my back.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_10");	//An experienced fightern like you needs no help.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_11");	//Nazim stays where he is.
 		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help_01_12");	//Будет больше толку.
  		NazimStayInCave = TRUE;
-		B_LogEntry(TOPIC_CareOsair,"Ханиар отказался отпустить Назима с рудника. Думаю, что теперь он не сможет поработать на Осаира.");
+		B_LogEntry(TOPIC_CareOsair," Haniar refused to let Nazim leave the mine. I think that now he will not be able to work for Osair. " );
 	};
 	
 	AI_StopProcessInfos(self);
@@ -1754,37 +1754,37 @@ func void DIA_Ass_126_Haniar_NazimNeedGetOutCave_Help()
 
 func void DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_01");	//Он серьезно болен, мастер.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_02");	//Правда? И что же с ним?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_03");	//Похоже, что эта болезнь может на всю жизнь изуродовать его лицо.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_04");	//Всего-то? Но ведь оно ему и не нужно, не правда ли?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_05");	//Тень никогда не показывает своего истинного лица. Это закон Масиаф.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_06");	//Так что пусть он остается там, где и сейчас.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_07");	//А об остальном волноваться не стоит. Так ему и передай.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_01");	//He's seriously ill, master.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_02");	//Really? What is wrong with him?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_03");	//It is a disease that could disfigure him for life.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_04");	//Disfigure his face? Luckily he doesn't need it.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_05");	//The shadow never shows its true face. This is the Masiaf law.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_06");	//He will stay where he is.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Ill_01_07");	//Go and tell him that.
 	NazimStayInCave = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Ханиар отказался отпустить Назима с рудника. Думаю, что теперь он не сможет поработать на Осаира.");
+	B_LogEntry(TOPIC_CareOsair," Haniar refused to let Nazim leave the mine. I think that now he will not be able to work for Osair. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair()
 {
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_01");	//Его хочет видеть у себя приор Осаир.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_01");	//Prior Osair wants to see him.
 
 	if(HaniarKnowsOsairPlans_01 == TRUE)
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_02");	//Хммм... хорошо.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_03");	//Ты можешь передать Назиму, что он может пока оставить свой пост в шахте.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_04");	//Надеюсь, это пойдет ему только на пользу.
-		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_05");	//Несомненно, мастер.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_02");	//Hmmm... alright.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_03");	//You can tell Nazim that he can leave his post in the mine for now.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_04");	//Perhaps it will do him good.
+		AI_Output(other,self,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_05");	//Undoubtedly, master.
 		NazimGetOutCave = TRUE;
-		B_LogEntry(TOPIC_CareOsair,"Ханиар согласился отпустить Назима с рудника. Нужно сообщить ему эту радостную весть.");
+		B_LogEntry(TOPIC_CareOsair," Haniar has agreed to release Nazim from the mine. We need to tell him this good news. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_06");	//Если Осаир так хочет его видеть, пусть сам придет в шахту.
-		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_07");	//Назим мой человек и останется там, где и сейчас! Так ему и передай.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_06");	//If Osair wants to see him so much, let him come to the mine himself.
+		AI_Output(self,other,"DIA_Ass_126_Haniar_NazimNeedGetOutCave_Osair_01_07");	//Nazim stays where he is.
  		NazimStayInCave = TRUE;
-		B_LogEntry(TOPIC_CareOsair,"Ханиар отказался отпустить Назима с рудника. Думаю, что теперь он не сможет поработать на Осаира.");
+		B_LogEntry(TOPIC_CareOsair," Haniar refused to let Nazim leave the mine. I think that now he will not be able to work for Osair. " );
 	};
 
 	AI_StopProcessInfos(self);
@@ -1810,22 +1810,22 @@ func int DIA_Ass_126_Haniar_FinalTalk_condition()
 	
 func void DIA_Ass_126_Haniar_FinalTalk_info()
 {
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_01");	//Так значит, ты все-таки осмелился появиться тут. Я же тебя предупреждал!
-	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_02");	//Как видишь, меня это не остановило.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_03");	//Да, это несколько меня удивляет. Постой, а кто это с тобой?
-	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_04");	//Мне кажется, вы должны быть знакомы.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_05");	//Ах вот оно что. Ну конечно! Мой старый друг Гонсалес тоже тут.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_06");	//Теперь мне понятно, каким образом ты смог справиться с моими слугами.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_07");	//А ты, Гонсалес, все так же мечтаешь о том, чтобы отомстить мне?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_08");	//Вижу по глазам, что так оно и есть. Но, боюсь, я тебя огорчу.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_09");	//Если и раньше ты в мне в подметки не годился, то теперь я запросто сокрушу тебя безо всяких усилий.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_10");	//Ну, это мы еще посмотрим.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_11");	//Твоя самоуверенность лишь показывает твою глупость!
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_12");	//Что же, тогда ты на своей же шкуре ощутишь всю мощь моего повелителя.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_13");	//Так ты, оказывается, сам лишь слуга? И где же твой хозяин?
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_14");	//Его покои находятся во внутреннем святилище храма. Но тебе туда никогда не попасть.
-	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_15");	//Если я тебя убью, это может сработать.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_16");	//Жалкий червяк! Тогда попробуй это сделать. Во имя Белиара!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_01");	//You dare appear before me? I warned you!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_02");	//As you can see, it didn't stop me..
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_03");	//Insolent fool. Wait, who is that with you?
+	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_04");	//Don't you recognise him?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_05");	//Ah, my old friend Gonzalez. So you are here too?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_06");	//Now I understand how you were able to deal with my servants.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_07");	//And you, Gonzalez, still dream of revenge on me?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_08");	//I can see it in your eyes. However, I must dissapoint you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_09");	//I am still your superior, and can crush you both with no effort.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_10");	//We'll see about that.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_11");	//Your overconfidence betrays your stupidity!
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_12");	//Soon you will feel my master's wrath!
+	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_13");	//So you are nothing but a servant yourself? Where is this master of yours?
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_14");	//His chambers are in the inner sanctuary of the temple. But you'll never get there.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_FinalTalk_01_15");	//We shall see, after I kill you.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_FinalTalk_01_16");	//Miserable worm! Then come and get me! In the name of Beliar!
 	PlayerIsPrioratFake = TRUE;
 	self.flags = FALSE;
 	self.aivar[AIV_EnemyOverride] = FALSE;
