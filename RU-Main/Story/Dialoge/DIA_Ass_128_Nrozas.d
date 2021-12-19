@@ -1,7 +1,7 @@
 instance DIA_Ass_128_Nrozas_EXIT(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 999;
+	No. = 999 ;
 	condition = dia_Ass_128_Nrozas_exit_condition;
 	information = dia_Ass_128_Nrozas_exit_info;
 	permanent = TRUE;
@@ -21,7 +21,7 @@ func void dia_Ass_128_Nrozas_exit_info()
 instance DIA_Ass_128_Nrozas_PreHALLO(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_PreHALLO_condition;
 	information = dia_Ass_128_Nrozas_PreHALLO_info;
 	permanent = TRUE;
@@ -42,14 +42,14 @@ func int dia_Ass_128_Nrozas_PreHALLO_condition()
 
 func void dia_Ass_128_Nrozas_PreHALLO_info()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PreHALLO_01_00");	//(раздраженно) Зачем ты беспокоишь меня?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PreHALLO_01_00 " );	// (irritated) Why are you bothering me?
 };
 
 
 instance DIA_Ass_128_Nrozas_PreHALLO_Kill(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_PreHALLO_Kill_condition;
 	information = dia_Ass_128_Nrozas_PreHALLO_Kill_info;
 	permanent = TRUE;
@@ -75,10 +75,10 @@ func void dia_Ass_128_Nrozas_PreHALLO_Kill_info()
 instance DIA_Ass_128_Nrozas_HALLO(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_hallo_condition;
 	information = dia_Ass_128_Nrozas_hallo_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
@@ -93,56 +93,56 @@ func int dia_Ass_128_Nrozas_hallo_condition()
 func void dia_Ass_128_Nrozas_hallo_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_01_00");	//(довольно) А, мой новый раб! Ну наконец-то. Иди сюда, не бойся.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_01_01");	//Что касается тебя, послушник, - больше не заставляй меня ждать. Иначе окажешься на его месте!
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_01_02");	//А сейчас, чтобы хоть как-то сгладить свою вину, ты поможешь мне.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_01_03");	//У меня заканчиваются целебные травы и листья серафиса.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_01_04");	//Так что сходи и принеси мне по десятку стеблей каждого растения. Тебе все ясно?
-	B_LogEntry(TOPIC_MasiafStory,"Кажется, мне удалось проникнуть в Храм. При случае надо будет сообщить об этом Гонсалесу.");
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_01_00 " );	// (enough) Ah, my new slave! Finally. Come here, don't be afraid.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_01_01 " );	// As for you, novice, don't keep me waiting any longer. Otherwise, you will find yourself in his place!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_01_02 " );	// And now, you will serve me too.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_01_03 " );	// I am running out of healing herbs and seraphis leaves.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_01_04 " );	// So go and get me a dozen stems of each plant. Is that clear?
+	B_LogEntry (TOPIC_MasiafStory, "I think I managed to get into the Temple. I should trturn to Gonzalez on occasion. " );
 	Info_ClearChoices(DIA_Ass_128_Nrozas_HALLO);
-	Info_AddChoice(DIA_Ass_128_Nrozas_HALLO,"...(молчать)",DIA_Ass_128_Nrozas_HALLO_Molchat);
-	Info_AddChoice(DIA_Ass_128_Nrozas_HALLO,"...(молча кивнуть)",DIA_Ass_128_Nrozas_HALLO_Kivok);
-	Info_AddChoice(DIA_Ass_128_Nrozas_HALLO,"Да, я все понял.",DIA_Ass_128_Nrozas_HALLO_Yes);
+	Info_AddChoice(DIA_Ass_128_Nrozas_HALLO,"...(silence)",DIA_Ass_128_Nrozas_HALLO_Molchat);
+	Info_AddChoice (DIA_Ass_128_Nrozas_HALLO, " ... (nod silently) " , DIA_Ass_128_Nrozas_HALLO_Kivok);
+	Info_AddChoice (DIA_Ass_128_Nrozas_HALLO, " Yes, I understand. " , DIA_Ass_128_Nrozas_HALLO_Yes);
 };
 
-func void DIA_Ass_128_Nrozas_HALLO_Molchat()
+func void DIA_Ass_128_Nrozas_HALLO_Molchat ()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Molchat_01_00");	//И? Что ты уставился на меня, как тупой баран?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Molchat_01_00 " );	// And? Why are you staring at me like an idiot?
 };
 
 func void DIA_Ass_128_Nrozas_HALLO_Kivok()
 {
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Kivok_01_00");	//Хорошо. И вот еще что...
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Kivok_01_01");	//Если будешь поблизости от пещеры Осаира, передай ему, чтобы в следующий раз прислал мне более крепких рабов.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_HALLO_Kivok_01_02");	//(молча кивает)
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Kivok_01_00 " );	// Good. There's another thing I need from you ...
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Kivok_01_01 " );	// If you are near Osaira's cave, tell him to send me stronger slaves next time.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_HALLO_Kivok_01_02 " );	// (nods silently)
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Kivok_01_03");	//А то последние и двух дней не протянули. Мрут как мухи!
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Kivok_01_04");	//Если так дальше пойдет, то мне в скором времени не на ком уже будет ставить свои эксперименты с ядами.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Kivok_01_05");	//Теперь все. Ступай!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Kivok_01_03 " );	// The last batch barely survived for two days. They die like flies!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Kivok_01_04 " );	// If it goes on like this, I will have no more test subjects. That would be... unfortunate.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Kivok_01_05 " );	// Now get out of here.
 	MIS_NrozasFl = LOG_Running;
 	MIS_NrozasToOsair = LOG_Running;
 	Log_CreateTopic(TOPIC_NrozasFl,LOG_MISSION);
 	Log_CreateTopic(TOPIC_NrozasToOsair,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NrozasFl,LOG_Running);
 	Log_SetTopicStatus(TOPIC_NrozasToOsair,LOG_Running);
-	B_LogEntry(TOPIC_NrozasFl,"Мастер ядов Нрозас дал мне поручение принести ему по десятку стеблей целебной травы и серафиса.");
-	B_LogEntry_Quiet(TOPIC_NrozasToOsair,"Нрозас попросил меня заглянуть в пещеру к приору Осаиру и передать ему, чтобы в следующий раз он прислал Нрозасу более крепких рабов для его экспериментов с ядами.");
+	B_LogEntry (TOPIC_NrozasFl, " Poison Master Nrozas gave me an order to bring him ten stalks of healing herbs and seraphis. " );
+	B_LogEntry_Quiet (TOPIC_NrozasToOsair, " Nrozas told me to ask Prior Osair for stronger slaves to test his poisons on. " );
 	MeetNrozas = TRUE;
 	AI_StopProcessInfos(self);
-	SEK_168_SLAVEOBSSEK.aivar[AIV_PARTYMEMBER] = FALSE;
+	SEK_168_SLAVEOBSSEK .aivar [ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(SEK_168_SLAVEOBSSEK,"Nrozas");
 };
 
 func void DIA_Ass_128_Nrozas_HALLO_Yes()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_HALLO_Yes_01_00");	//Да, я все понял.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Yes_01_01");	//Ты посмел заговорить со мной без разрешения?!
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Yes_01_02");	//Что-то мне подсказывает, что ты вовсе не тот, за кого себя выдаешь.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HALLO_Yes_01_03");	//Ну что же, тогда это будет стоить тебе жизни. Зря ты пришел сюда!
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_HALLO_Yes_01_00 " );	// Yes, I got it.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Yes_01_01 " );	// You dare to speak to me without permission?!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Yes_01_02 " );	// Something tells me that you are not who you say you are.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HALLO_Yes_01_03 " );	// Well, then it will cost you your life. You shouldn't have come here!
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
-	SEK_168_SLAVEOBSSEK.aivar[AIV_PARTYMEMBER] = FALSE;
+	SEK_168_SLAVEOBSSEK .aivar [ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(SEK_168_SLAVEOBSSEK,"Nrozas");
 	B_Attack(self,other,AR_KILL,1);
 };
@@ -150,11 +150,11 @@ func void DIA_Ass_128_Nrozas_HALLO_Yes()
 instance DIA_Ass_128_Nrozas_NrozasFl(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_NrozasFl_condition;
 	information = dia_Ass_128_Nrozas_NrozasFl_info;
-	permanent = FALSE;
-	description = "(отдать все растения)";
+	permanent = FALSE ;
+	description = " (give all plants) " ;
 };
 
 func int dia_Ass_128_Nrozas_NrozasFl_condition()
@@ -171,14 +171,14 @@ func void dia_Ass_128_Nrozas_NrozasFl_info()
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(other,ItPl_Blueplant,10);
 	Npc_RemoveInvItems(other,ItPl_Health_Herb_01,10);
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasFl_01_01");	//Отлично! Как раз то, что мне было нужно.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasFl_01_02");	//А ты не так и безнадежен, как мне показалось на первый взгляд.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasFl_01_03");	//Возможно, из тебя выйдет хороший помощник.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_NrozasFl_01_04");	//(молча кивает)
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasFl_01_01 " );	// Great! Just what I needed.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasFl_01_02 " );	// And you are not as hopeless as it seemed to me at first glance.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasFl_01_03 " );	// Perhaps you will make a decent servant.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_NrozasFl_01_04 " );	// (nods silently)
 	AI_PlayAni(other,"T_YES");
 	MIS_NrozasFl = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_NrozasFl,LOG_SUCCESS);
-	B_LogEntry(TOPIC_NrozasFl,"Я принес Нрозасу все растения, которые он хотел. Кажется, он остался доволен моей работой.");
+	B_LogEntry (TOPIC_NrozasFl, " I brought all the plants he wanted to Nrozas. He seems satisfied with my work. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -186,11 +186,11 @@ func void dia_Ass_128_Nrozas_NrozasFl_info()
 instance DIA_Ass_128_Nrozas_NrozasToOsair(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_NrozasToOsair_condition;
 	information = dia_Ass_128_Nrozas_NrozasToOsair_info;
-	permanent = FALSE;
-	description = "(отдать письмо)";
+	permanent = FALSE ;
+	description = " (deliver letter) " ;
 };
 
 func int dia_Ass_128_Nrozas_NrozasToOsair_condition()
@@ -206,19 +206,19 @@ func void dia_Ass_128_Nrozas_NrozasToOsair_info()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ItWr_Osair,1);
 	Npc_RemoveInvItems(self,ItWr_Osair,1);
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_00");	//Что это? А, письмо от Осаира.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_01");	//Хорошо, давай его сюда. Посмотрим, что он тут пишет.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasToOsair_01_00 " );	// What is this? Ah, a letter from Osair.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasToOsair_01_01 " );	// Ok, give it here. Let's see what he wants.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_02");	//Хммм...(задумчиво) И он полагает, что я соглашусь с этим? Ну да ладно.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_03");	//Когда он пришлет ко мне своего человека за новой порцией отравленных стрел, я напомню ему об этом письме.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_04");	//Что касается тебя, то ты хорошо поработал.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_05");	//Если и дальше будешь так же точно исполнять мои распоряжения, я позабочусь о твоей судьбе послушника.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_06");	//Теперь ступай. Ты пока что мне не нужен.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_NrozasToOsair_01_07");	//(молча кивает)
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasToOsair_01_02 " );	// Hmmm ... (thoughtfully) And he thinks I will agree to this? Bah.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasToOsair_01_03 " );	// When he sends his men to me for a new batch of poisoned arrows, I will remind him of this letter.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasToOsair_01_04 " );	// As for you, you did a good job.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasToOsair_01_05 " );	// If you continue to carry out my orders in the same way, I will see to your future prospects here.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NrozasToOsair_01_06 " );	// Now go. I don't need you yet.
+	AI_Output(other,self,"DIA_Ass_128_Nrozas_NrozasToOsair_01_07");	//(nods)
 	AI_PlayAni(other,"T_YES");
 	MIS_NrozasToOsair = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_NrozasToOsair,LOG_SUCCESS);
-	B_LogEntry(TOPIC_NrozasToOsair,"Я принес Нрозасу ответ от Осаира. Письмо явно не пришлось ему по душе, но свою работу я сделал.");
+	B_LogEntry (TOPIC_NrozasToOsair, " I brought Nrozas an answer from Osair. The letter obviously did not suit him, but I did my part. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertItem(ItWr_Osair_Read,"FP_ITEM_NROZAS_LETTER");
 };
@@ -226,10 +226,10 @@ func void dia_Ass_128_Nrozas_NrozasToOsair_info()
 instance DIA_Ass_128_Nrozas_NewSlaves(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_NewSlaves_condition;
 	information = dia_Ass_128_Nrozas_NewSlaves_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
@@ -244,46 +244,46 @@ func int dia_Ass_128_Nrozas_NewSlaves_condition()
 func void dia_Ass_128_Nrozas_NewSlaves_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_01");	//(серьезно) Стой, послушник. Ответь мне на один вопрос.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_02");	//Я слышал, что ты принес Осаиру шкуру черного пещерного тролля.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_03");	//Откуда ты узнал, что он хотел заполучить ее? Ты что, прочитал его письмо, присланное мне?
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_NewSlaves_01_04");	//(молча кивает)
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_01 " );	// (seriously) Stop, novice. Answer me truthfully.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_02 " );	// I heard that you brought Osair the hide of a black cave troll.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_03 " );	// How did you know he wanted one? Did you read the letter he sent to me?
+	AI_Output(other,self,"DIA_Ass_128_Nrozas_NewSlaves_01_04");	//(nods)
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_05");	//Хватит этих кивков! Отвечай нормально, и не вздумай мне солгать!
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_NewSlaves_01_06");	//Да, я его прочитал.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_07");	//Хммм. А ты, однако, храбрец! У других бы духу не хватило на такое, а ты смог.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_08");	//Конечно, за такую дерзость тебя стоило бы прикончить прямо на месте.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_09");	//Но благодаря твоей услуге Осаир сегодня прислал мне целую партию новых рабов.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_10");	//И это, как ты понимаешь, немного меняет обстоятельства дела.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_11");	//Ты оказался не только полезен нам обоим, но и помог разрешить нам очень давний спор.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_12");	//Поэтому я принял решение. Отныне ты - мой мюрид! Избранный из числа послушников.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_13");	//Надеюсь, ты понимаешь, что это большая честь. Так что не подведи меня.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_NewSlaves_01_14");	//Благодарю тебя, мастер.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_15");	//Не стоит. Ты это заслужил.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_05 " );	// Stop with the nodding! Answer normally, and don't try to lie to me!
+	AI_Output(other,self,"DIA_Ass_128_Nrozas_NewSlaves_01_06");	//Yes, I read it.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_07 " );	// Hmmm. You are brave! Others wouldn’t have had the courage to do that.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_08 " );	// Of course, for such insolence you should be killed on the spot.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_09 " );	// But thanks to your mistake, Osair sent me a whole batch of new slaves today.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_10 " );	// This pleases me. I am feeling... generous.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_11 " );	// You were not only helpful to both of us, but also helped resolve a very longstanding dispute.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_12 " );	// So I made a decision. From now on you are my murid! Chosen from among the novices.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_13 " );	// I hope you understand that this is a great honor. So don't let me down.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_NewSlaves_01_14 " );	// Thank you, master.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_15 " );	// Don't thank me yet.
 	NrozasMurid = TRUE;
 	Snd_Play("LevelUP");
-	B_LogEntry(TOPIC_MasiafStory,"Нрозас был очень доволен тем, что я смог разрешить его давний спор с Осаиром, и в то же время оказался полезен обоим. За это он назначил меня своим мюридом - избранным послушником.");
+	B_LogEntry (TOPIC_MasiafStory, " Nrozas was very pleased that I was able to resolve his longstanding dispute with Osair, and at the same time proved to be useful to both. For this he appointed me his murid - chosen novice. " );
 
 	if((OsairMurid == TRUE) && (PlayerSendToTiamant == FALSE))
 	{
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_16");	//Да, и еще кое-что...
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_17");	//Раз ты смог одолеть пещерного тролля, то я смею предположить, что ты довольно искусный боец.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_18");	//Приор Тиамант занимается боевой подготовкой Теней, и наверняка его заинтересует этот факт.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_NewSlaves_01_19");	//Поговори с ним. А если у него возникнут какие-то вопросы, просто скажи, что я тебя прислал.
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_NewSlaves_01_20");	//Хорошо, мастер.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_16 " );	// Yes, and one more thing ...
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_17 " );	// Since you were able to defeat the cave troll, I must assume you are quite a skilled fighter.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_18 " );	// Prior Tiamant is engaged in combat training of the Shadows, and might see potential in you.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_NewSlaves_01_19 " );	// Talk to him. And if he has any questions, just tell me that I sent you.
+		AI_Output(other,self,"DIA_Ass_128_Nrozas_NewSlaves_01_20");	//Alright, master.
 		PlayerSendToTiamant = TRUE;
 	};
 };
 
 
-instance DIA_Ass_128_Nrozas_Murid(C_Info)
+instance DIA_Ass_128_Nrozas_Murid (C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_Murid_condition;
 	information = dia_Ass_128_Nrozas_Murid_info;
-	permanent = FALSE;
-	description = "Что значит быть избранным, мастер?";
+	permanent = FALSE ;
+	description = " What does it mean to be the chosen one, master? " ;
 };
 
 func int dia_Ass_128_Nrozas_Murid_condition()
@@ -296,31 +296,31 @@ func int dia_Ass_128_Nrozas_Murid_condition()
 
 func void dia_Ass_128_Nrozas_Murid_info()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Murid_01_01");	//Что значит быть избранным, мастер?
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_02");	//Давай я кое-что тебе объясню. Слушай внимательно.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_03");	//Раз в четыре года один из наших послушников удостаивается чести обратиться в Тень Масиаф.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_04");	//Тенями мы зовем своих воинов, несущих смерть всем тем, кто сомневается в нашем могуществе и, главное, в могуществе самого Белиара!
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_05");	//Каждый приор Масиаф, и я в том числе, выбирает из числа послушников того, кто, по его мнению, достоин этого.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_06");	//И назначает его своим мюридом, тем самым предлагая его в качестве кандидата для ритуала обращения.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_07");	//Когда наступает срок, все мюриды подвергаются ряду очень сложных и смертельных испытаний.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_08");	//И тот единственный, кто останется жив, в конце концов проходит обряд посвящения в воина Белиара.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_09");	//Я выбрал тебя в качестве своего мюрида. Однако другие, насколько мне известно, еще не сделали свой выбор.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Murid_01_10");	//А если все приоры выберут одного и того же послушника?
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_11");	//Хммм. Насколько мне известно, такого еще никогда не было.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_12");	//Но, скорее всего, его судьбу уже будет решать сам Ханиар Слепец, как самый могущественный и мудрый из нас.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Murid_01_13");	//А что он решит, известно только самому Белиару.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Murid_01_14");	//Понимаю.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Murid_01_01 " );	// What does it mean to be the chosen one, master?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_02 " );	// Let me explain something to you. Listen carefully.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_03 " );	// Once every four years, one of our novices is honored ascend to the rank of Shadow of Masiaf.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_04 " );	// Shadows are what we call our warriors, bringing death to all those who doubt our power and, most importantly, the power of Beliar himself!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_05 " );	// Each Masiaf Prior, including myself, chooses from among the novices one who is worthy of it.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_06 " );	// And appoints him as his murid, thereby proposing him as a candidate for the ritual of conversion.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_07 " );	// When the time comes, all murids undergo a series of very difficult and deadly tests.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_08 " );	// And the one who remains alive, in the end, undergoes the rite of initiation into the chosen warrior of Beliar.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_09 " );	// I chose you as my murid. However, others, as far as I know, have not yet made their choice.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Murid_01_10 " );	// What if all the priests choose the same novice?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_11 " );	// Hmmm. As far as I know, this has never happened before.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_12 " );	// But, most likely, his fate will then be decided by Haniar the Blind himself, as the most powerful and wise of us.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Murid_01_13 " );	// And what he decides is known only to Beliar himself.
+	AI_Output(other,self,"DIA_Ass_128_Nrozas_Murid_01_14");	//I understand.
 	MuridTells = TRUE;
-	B_LogEntry(TOPIC_MasiafStory,"Нрозас рассказал мне о ритуале обращения избранных послушников в ряды Теней, воинов Братства Масиафа. Каждый приор должен выбрать себе мюрида, а потом уже те соревнуются между собой. Если все приоры выберут одного и того же человека, судьбу этого мюрида будет решать самый мудрый из них - Ханиар Слепец.");
+	B_LogEntry (TOPIC_MasiafStory, " Nrozas told me about the ritual of converting selected novices to the ranks of the Shadows, warriors of the Brotherhood of Masiaf. Each prior must choose a murid, and then they compete with each other. If all the priors choose the same person, the fate of this murid will be up to the wisest of them: Haniar the Blind. " );
 };
 
 instance DIA_Ass_128_Nrozas_HasimVine(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_HasimVine_condition;
 	information = dia_Ass_128_Nrozas_HasimVine_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
@@ -334,15 +334,15 @@ func int dia_Ass_128_Nrozas_HasimVine_condition()
 
 func void dia_Ass_128_Nrozas_HasimVine_info()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_01_01");	//А, мюрид! Хорошо, что ты здесь.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_01_02");	//Мне нужно, чтобы ты сходил в кладовую и принес мне пакет с серой и углем.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_01_03");	//Вот тебе ключ. Но смотри больше ничего там не трогай!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_01_01 " );	// Ah, murid! It's good that you're here.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_01_02 " );	// I need you to go to the pantry and bring me a bag of sulfur and coal.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_01_03 " );	// Here's the key. But don't touch anything else!
 	B_GiveInvItems(self,other,ItKe_PW_Sklad,1);
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_HasimVine_01_04");	//Конечно, мастер.
+	AI_Output(other,self,"DIA_Ass_128_Nrozas_HasimVine_01_04");	//Of course, master.
 	MIS_NrozasPacket = LOG_Running;
 	Log_CreateTopic(TOPIC_NrozasPacket,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NrozasPacket,LOG_Running);
-	B_LogEntry(TOPIC_NrozasPacket,"Мне необходимо сходить на склад и принести пакет с серой и углем мастеру Нрозасу.");
+	B_LogEntry (TOPIC_NrozasPacket, " I need to go to the warehouse and bring a bag of sulfur and coal to Master Nrozas. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -350,11 +350,11 @@ func void dia_Ass_128_Nrozas_HasimVine_info()
 instance DIA_Ass_128_Nrozas_HasimVine_Done(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_HasimVine_Done_condition;
 	information = dia_Ass_128_Nrozas_HasimVine_Done_info;
-	permanent = FALSE;
-	description = "Я принес пакет с серой и углем.";
+	permanent = FALSE ;
+	description = " I brought a bag of sulfur and coal. " ;
 };
 
 func int dia_Ass_128_Nrozas_HasimVine_Done_condition()
@@ -368,8 +368,8 @@ func int dia_Ass_128_Nrozas_HasimVine_Done_condition()
 func void dia_Ass_128_Nrozas_HasimVine_Done_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_HasimVine_Done_01_01");	//Я принес пакет с серой и углем.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_Done_01_02");	//Так, хорошо. Давай его сюда.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_HasimVine_Done_01_01 " );	// I brought a bag of sulfur and coal.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_Done_01_02 " );	// Okay, good. Give it here.
 	B_GiveInvItems(other,self,ItMi_PacketColesulfur,1);
 
 	if(Npc_HasItems(other,ItKe_PW_Sklad) >= 1)
@@ -377,15 +377,15 @@ func void dia_Ass_128_Nrozas_HasimVine_Done_info()
 		Npc_RemoveInvItems(other,ItKe_PW_Sklad,1);
 	};
 
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_Done_01_03");	//Посмотрим. Хммм... ну да, я так и думал.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_Done_01_04");	//Этого количества серы мне совершенно не хватит для моих экспериментов.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_Done_01_05");	//Мне нужно еще как минимум два десятка кусков этого материала.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_HasimVine_Done_01_06");	//А где я смогу достать ее для вас, мастер?
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_Done_01_07");	//Я точно не смогу сказать. Но, кажется, в подгорном проходе были небольшие залежи серных копий. 
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_HasimVine_Done_01_08");	//Поищи ее там. Правда, можешь особо не спешить. Того количества, что ты принес, мне пока хватит на некоторое время.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_HasimVine_Done_01_09");	//Я все понял, мастер.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_Done_01_03 " );	// Let's see. Hmmm ... it is as I thought.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_Done_01_04 " );	// This amount of sulfur will not be enough for my experiments.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_Done_01_05 " );	// I need at least two dozen more pieces.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_HasimVine_Done_01_06 " );	// Where can I get it for you, master?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_Done_01_07 " );	// I can't say for sure. But it seems that in the foothill passage there were once small deposits of sulfur spears.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_HasimVine_Done_01_08 " );	// Look for it there. No need to rush. The amount that you brought will be enough for me for a while.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_HasimVine_Done_01_09 " );	// I got it, master.
 	NrozasNeedMoreSulfur = TRUE;
-	B_LogEntry(TOPIC_NrozasPacket,"Я отдал Нрозасу пакет, однако серы оказалось недостаточно. Мне нужно накопать еще пару десятков кусков этого материала. По словам Нрозаса, в подгорном проходе были несколько серных копий.");
+	B_LogEntry (TOPIC_NrozasPacket, " I gave Nrozas the package, but the sulfur was not enough. I need to dig up a couple dozen more pieces of this material. According to Nrozas, there were several sulfur deposits in the foothill pass. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -393,11 +393,11 @@ func void dia_Ass_128_Nrozas_HasimVine_Done_info()
 instance DIA_Ass_128_Nrozas_Sulfur_Done(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_Sulfur_Done_condition;
 	information = dia_Ass_128_Nrozas_Sulfur_Done_info;
-	permanent = FALSE;
-	description = "Вот два десятка кусков серной породы.";
+	permanent = FALSE ;
+	description = " Here are two dozen pieces of sulfuric rock. " ;
 };
 
 func int dia_Ass_128_Nrozas_Sulfur_Done_condition()
@@ -411,27 +411,27 @@ func int dia_Ass_128_Nrozas_Sulfur_Done_condition()
 func void dia_Ass_128_Nrozas_Sulfur_Done_info()
 {
 	B_GivePlayerXP(450);
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Sulfur_Done_01_01");	//Вот два десятка кусков серной породы.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Sulfur_Done_01_01 " );	// Here are two dozen pieces of sulfur.
 	B_GiveInvItems(other,self,ItMi_Sulfur,20);
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Sulfur_Done_01_02");	//Отлично. Вот это совсем другое дело.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Sulfur_Done_01_03");	//С таким количеством мне больше не о чем беспокоиться в моих экспериментах.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Sulfur_Done_01_04");	//Ты хорошо поработал, мюрид. Теперь ступай.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Sulfur_Done_01_05");	//Если ты мне вдруг понадобишься, я дам тебе знать.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Sulfur_Done_01_06");	//Да, мастер.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Sulfur_Done_01_02 " );	// Great. This is more than enough.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Sulfur_Done_01_03 " );	// This will last me for the forseeable future.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Sulfur_Done_01_04 " );	// You did a good job, murid. Now go.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Sulfur_Done_01_05 " );	// If I need you, I'll let you know.
+	AI_Output(other,self,"DIA_Ass_128_Nrozas_Sulfur_Done_01_06");	//Yes, master.
 	MIS_NrozasPacket = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_NrozasPacket,LOG_SUCCESS);
-	B_LogEntry(TOPIC_NrozasPacket,"Я принес Нрозасу серу. Он остался доволен моей работой.");
+	B_LogEntry (TOPIC_NrozasPacket, " I brought Sulfur to Nrozas. He was pleased with my work. " );
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Ass_128_Nrozas_Poison(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_Poison_condition;
 	information = dia_Ass_128_Nrozas_Poison_info;
-	permanent = FALSE;
-	description = "У меня к вам одно дело, мастер.";
+	permanent = FALSE ;
+	description = " I have business with you, master. " ;
 };
 
 func int dia_Ass_128_Nrozas_Poison_condition()
@@ -444,42 +444,42 @@ func int dia_Ass_128_Nrozas_Poison_condition()
 
 func void dia_Ass_128_Nrozas_Poison_info()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_01_01");	//У меня к вам одно дело, мастер.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_02");	//(удивленно) Дело ко мне? Довольно редко можно услышать о том, что у кого ко мне дело.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_03");	//И в чем же оно заключается?
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_01_04");	//Приор Осаир рассказал мне, что вам удалось приготовить один очень сильный яд.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_05");	//(довольно) Ага. Значит, его все-таки заинтересовала эта тема!
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_01_06");	//Да, и поэтому он хотел бы получить образец этого зелья. Разумеется, с вашего разрешения.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_07");	//Хммм. Почему бы и нет. Однако для начала мне необходимо испытать его действие.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_08");	//Если вдруг что-то пойдет не так, то сам понимаешь - моя репутация в Братстве довольно сильно пострадает.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_09");	//А я этого допустить не могу.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_01_10");	//Само собой.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_11");	//Я уже давно хотел отправить с этим заданием моего помощника Кадуина.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_12");	//Однако сейчас мне пришла идея получше. Это сделаешь ты.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_13");	//Помоги мне опробовать этот яд на каком-нибудь очень могучем существе.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_14");	//И Осаир, в знак моей благодарности, получит свой экземпляр этого зелья.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_15");	//Только это должна быть по-настоящему сильная и крайне выносливая тварь.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_16");	//Например, горный тролль. Ну или что-то подобное этому.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_17");	//И не смей опробовать его на рабах. Эти никчемные скоты подохнут от одного его запаха.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_18");	//А мне необходимо как можно тщательней оценить его действие.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_19");	//Ну и, наверное, не стоит говорить о том, что мне нужны вещественные доказательства использования моего яда.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_01_20");	//Конечно. Я все понял, мастер. Можете на меня положиться.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_21");	//Хорошо. Тогда вот, возьми этот пузырек.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_01_01 " );	// There is a matter I would like to discuss, master.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_02 " );	// (surprised) And what might that be?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_03 " );	// Out with it, fool.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_01_04 " );	// Prior Osair told me that you managed to prepare a very powerful poison.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_05 " );	// The man has eyes and ears everywhere it seems...
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_01_06 " );	// Yes, and he would like to get a sample of this poison. With your permission, of course.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_07 " );	// Hmmm. Why not. However, first I need to experience its effect.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_08 " );	// If something goes wrong, understand - my reputation in the Brotherhood will suffer.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_09 " );	// And I can't let that happen.
+	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_01_10");	//Of course.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_11 " );	// I've wanted to send my assistant Kaduin on this mission for a while now.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_12 " );	// But I have a better idea. You will do it.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_13 " );	// Help me test this poison on some very powerful creature.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_14 " );	// And Osair, as a token of my gratitude, will receive his sample.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_15 " );	// Only it should be a truly strong and extremely hardy creature.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_16 " );	// For example, a mountain troll. Or a dragon! No... a troll will do...
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_17 " );	// And don't you dare try it on slaves. Those worthless brutes will die from the vapors alone.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_18 " );	// And I need to evaluate its effects as carefully as possible.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_19 " );	// It's probably not worth mentioning that I need physical evidence of its use on the creature.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_01_20 " );	// Of course. I understood everything, master. You can rely on me.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_21 " );	// Good. Then take this vial.
 	B_GiveInvItems(self,other,ItMi_NrozasPoison,1);
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_22");	//Будь с ним осторожен! Если, конечно, не хочешь стать мертвецом.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_01_23");	//Все, ступай. Я жду от тебя отчета как можно скорее.
-	B_LogEntry(TOPIC_PW_PoisonNrozas,"Нрозасу нужно испытать действие созданного им яда. Если я справлюсь с этим заданием, он даст мне экземпляр этого зелья для приора Осаира. Мне необходимо испытать действие яда на каком-нибудь очень сильном и выносливом существе, например, на горном тролле. Но как заставить тролля проглотить пузырек с ядом? Может, стоит поговорить об этом с Гонсалесом?");
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_22 " );	// Be careful with that! Unless, of course, you want to join your ancestors.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_01_23 " );	// Now go. I expect your report as soon as possible.
+	B_LogEntry (TOPIC_PW_PoisonNrozas, " Nrozas needs to test the effect of the poison he has created. If I complete this task, he will give me a copy of this potion for Prior Osair. I need to test the effect of the poison on some very strong and hardy creature, for example, a mountain troll . But how to get the troll to swallow a bottle of poison? Maybe it is worth talking about it with Gonzalez? " );
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Ass_128_Nrozas_Poison_Done(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_Poison_Done_condition;
 	information = dia_Ass_128_Nrozas_Poison_Done_info;
-	permanent = FALSE;
-	description = "По поводу вашего яда, мастер.";
+	permanent = FALSE ;
+	description = " About your poison, master. " ;
 };
 
 func int dia_Ass_128_Nrozas_Poison_Done_condition()
@@ -492,59 +492,59 @@ func int dia_Ass_128_Nrozas_Poison_Done_condition()
 
 func void dia_Ass_128_Nrozas_Poison_Done_info()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_00");	//По поводу вашего яда, мастер.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_01");	//Я тебя слушаю. Тебе удалось испытать мой яд?
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_00 " );	// About your poison, master.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_01 " );	// I'm listening. Have you managed to test my poison?
 
 	if(PoisonDoneFull == TRUE)
 	{
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_02");	//К сожалению, я не смог этого сделать.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_03");	//Что? Болван! Неужели с таким простым делом могли возникнуть какие-то трудности?
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_04");	//Эх, зря я, видимо, тебе доверился! Ладно, отдай мне мой пузырек с ядом и проваливай с глаз моих.
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_05");	//Боюсь, что яда у меня тоже нет.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_06");	//(гневно) Как так?  И где же он?
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_07");	//Я... я случайно пролил его.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_08");	//Ты что, держишь меня за идиота?!
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_09");	//Ну, просто так тебе это с рук не сойдет!
-		B_LogEntry(TOPIC_PW_PoisonNrozas,"Как и ожидалось, Нрозас был в гневе. Теперь мне остается только сражаться со всем Братством.");
+		AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_02 " );	// Sorry, I couldn't do it.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_03 " );	// What? Fool! You failed such a middling task?
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_04 " );	// I should never have trusted such a simpleton. Give me the vial back and get out of my sight.
+		AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_05 " );	// I'm afraid I have no poison either.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_06 " );	// (angrily) Say that again. Slowly.
+		AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_07 " );	// I ... I accidentally spilled it.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_08 " );	// Do you take me for a fool?!
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_09 " );	// Death is too good for you!
+		B_LogEntry (TOPIC_PW_PoisonNrozas, " As expected, Nrozas was not pleased. Now I have fight the entire Brotherhood. " );
 		PlayerIsPrioratFakeTemp = TRUE;
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_KILL,1);
 	}
 	else if(PoisonDoneHalf == TRUE)
 	{
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_10");	//Как вы и приказали. Я испытал его на молодом горном тролле.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_11");	//Хммм. Лучше, конечно, было бы испытать его на взрослой особи, но и это сойдет.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_12");	//Ну и что случилось далее?
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_13");	//Тролль мгновенно умер.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_14");	//А где доказательства?
+		AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_10 " );	// As you ordered. I tested it on a young mountain troll.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_11 " );	// Hmmm. An adult nwould have been better, but that will do.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_12 " );	// So what happened?
+		AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_13 " );	// The troll died instantly.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_14 " );	// Where is the evidence?
 
 		if(Npc_HasItems(other,ItAt_TrollPoisonTongue) >= 1)
 		{	
 			B_GivePlayerXP(1000);
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_15");	//Вот его язык.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_16");	//Хммм... Да, похоже он действительно умер от отравления.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_17");	//Ну что же, отличная работа, брат! Ты как всегда меня не подвел.
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_18");	//А что насчет небольшой порции яда для Осаира?
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_19");	//(пытливо) А моего яда у тебя, случайно, не осталось?
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_20");	//Прошу простить меня, мастер. Но я использовал весь яд, что был в пузырьке.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_21");	//Ладно. Как я и обещал, будет Осаиру этот яд.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_22");	//Но мне нужно некоторое время, чтобы приготовить новую порцию.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_23");	//Это все займет около суток. Так что приходи завтра.
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_24");	//Как скажете, мастер.
+			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_15");	//Here is its tongue.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_16 " );	// Hmmm ... Yes, it looks like it did die of poisoning.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_17 " );	// Well, great job, brother! You, as usual, did not disappoint me.
+			AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_18 " );	// What about a small dose of poison for Osair?
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_19 " );	// (inquiringly) You wouldn't, by any chance, have any poison left?
+			AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_20 " );	// Please forgive me, master. But I used all the poison in the vial.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_21 " );	// Fine. Osair will have his sample.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_22 " );	// But I need some time to prepare a new batch.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_23 " );	// This will take about a day. So come back tomorrow.
+			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_24");	//As you wish, master.
 			DayOsairPoisonReady = Wld_GetDay();
-			B_LogEntry(TOPIC_PW_PoisonNrozas,"Как и ожидалось, Нрозас был доволен моим успехом. Теперь мне остается только дождаться, пока он сварит новый яд, а затем отнести его Осаиру.");
+			B_LogEntry (TOPIC_PW_PoisonNrozas, " As expected, Nrozas was pleased with my success. Now I just have to wait for him to brew new poison and then take it to Osair. " );
 			AI_StopProcessInfos(self);
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_25");	//Эммм... У меня их нет.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_26");	//(гневно) Как так? Я же, вроде бы, сказал, чтобы ты принес доказательства действия яда!
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_27");	//Или ты хочешь просто меня обмануть?
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_28");	//Нет, ни в коем случае.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_29");	//Знаешь, я люблю, когда мои приказы выполняются с надлежащей точностью. 
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_30");	//И терпеть не могу, когда меня пытаются держать за идиота!
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_31");	//Так что извини.
-			B_LogEntry(TOPIC_PW_PoisonNrozas,"Нрозас был в гневе от того, что я не принес ему доказательства применения яда. Моя беспечность теперь может стоить мне жизни.");
+			AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_25 " );	// Ummm ... I don't have them.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_26 " );	// (angrily) How so? I thought I told you to bring evidence of the poison!
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_27 " );	// Or do you just want to trick me?
+			AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_28 " );	// No, by no means.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_29 " );	// You know, I appreciate it when my orders are carried out with the proper precision.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_30 " );	// And I hate it when they are not.
+			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_31");	//Such a pity. You had potential.
+			B_LogEntry (TOPIC_PW_PoisonNrozas, " Nrozas was angry that I did not bring him proof of the use of poison. My carelessness could now cost me my life. " );
 			PlayerIsPrioratFakeTemp = TRUE;
 			AI_StopProcessInfos(self);
 			B_Attack(self,other,AR_KILL,1);
@@ -552,27 +552,27 @@ func void dia_Ass_128_Nrozas_Poison_Done_info()
 	}
 	else if(PoisonDoneOneTear == TRUE)
 	{
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_32");	//К сожалению, я не смог этого сделать.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_33");	//Что? Болван! Неужели с таким простым делом могли возникнуть какие-то трудности?
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_34");	//Эх, зря я, видимо, тебе доверился. Ладно, отдай мне мой пузырек с ядом и проваливай с глаз моих.
+		AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_32 " );	// Sorry, I couldn't do it.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_33 " );	// What? Fool! You failed such a middling task?
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_34 " );	// I should never have trusted such a simpleton. Give me the vial back and get out of my sight.
 		
 		if(Npc_HasItems(other,ItMi_NrozasPoison) >= 1)
 		{	
 			B_GivePlayerXP(100);
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_35");	//Вот он.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_36");	//(раздраженно) Ну, хоть мой яд цел. Все, теперь пошел вон!
+			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_35");	//Here it is.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_36 " );	// (irritated) Well, at least my poison is intact. Leave now, or die!
 			PlayerSafeFromNrozasNo = TRUE;
-			B_LogEntry(TOPIC_PW_PoisonNrozas,"Нрозас был в гневе от того, что мне не удалось испытать его яд. Хвала Инносу, мне удалось сохранить голову на плечах.");
+			B_LogEntry (TOPIC_PW_PoisonNrozas, " Nrozas was angry that I was not able to test his poison. Praise Innos, I managed to keep my head on my shoulders. " );
 			AI_StopProcessInfos(self);
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_37");	//У меня нет его при себе.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_38");	//Как так?! И где же он?
-			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_39");	//Я не помню, куда его дел.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_40");	//Хммм...(гневно вглядываясь) Ты что, держишь меня за идиота?
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_41");	//Ну, просто так тебе это с рук не сойдет...
-			B_LogEntry(TOPIC_PW_PoisonNrozas,"Нрозас был в гневе. Я не смог отдать ему яд, поскольку его у меня с собой нет. Теперь мне остается только сражаться со всем Братством.");
+			AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_37 " );	// I don't have it with me.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_38 " );	// How so? Where is it? Grew legs and ran off did it?
+			AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_Done_01_39 " );	// I... lost it, master.
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_40 " );	// Hmmm ...you think me stupid, do you?
+			AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_Done_01_41 " );	// Unfortunate. You had SOME potential at least.
+			B_LogEntry (TOPIC_PW_PoisonNrozas, " Nrozas was angry. I couldn’t give him the poison, since I don’t have it with me. Now I must fight the entire Brotherhood. " );
 			PlayerIsPrioratFakeTemp = TRUE;
 			AI_StopProcessInfos(self);
 			B_Attack(self,other,AR_KILL,1);
@@ -585,10 +585,10 @@ func void dia_Ass_128_Nrozas_Poison_Done_info()
 instance DIA_Ass_128_Nrozas_Poison_DoneForOsair(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_Poison_DoneForOsair_condition;
 	information = dia_Ass_128_Nrozas_Poison_DoneForOsair_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
@@ -606,22 +606,22 @@ func int dia_Ass_128_Nrozas_Poison_DoneForOsair_condition()
 
 func void dia_Ass_128_Nrozas_Poison_DoneForOsair_info()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_DoneForOsair_01_00");	//Постой. Вот, возьми эту склянку.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_DoneForOsair_01_00 " );	// Wait. Here, take this bottle.
 	B_GiveInvItems(self,other,ItMi_NrozasPoisonOsair,1);
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_DoneForOsair_01_01");	//Тут достаточно яда, чтобы порадовать Осаира.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_DoneForOsair_01_02");	//Благодарю, мастер.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_DoneForOsair_01_03");	//Ладно уже, ступай.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_DoneForOsair_01_01 " );	// There is enough poison here to satisfy Osair.
+	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_DoneForOsair_01_02");	//Thank you, master.
+	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_DoneForOsair_01_03");	//No need for that.
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Ass_128_Nrozas_Poison_NoDone(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_Poison_NoDone_condition;
 	information = dia_Ass_128_Nrozas_Poison_NoDone_info;
-	permanent = FALSE;
-	description = "По поводу вашего яда, мастер.";
+	permanent = FALSE ;
+	description = " About your poison, master. " ;
 };
 
 func int dia_Ass_128_Nrozas_Poison_NoDone_condition()
@@ -634,29 +634,29 @@ func int dia_Ass_128_Nrozas_Poison_NoDone_condition()
 
 func void dia_Ass_128_Nrozas_Poison_NoDone_info()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_NoDone_01_00");	//По поводу вашего яда, мастер.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_01");	//Я тебя слушаю. Тебе удалось испытать мой яд?
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_NoDone_01_02");	//К сожалению, я не смог этого сделать.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_03");	//Что? Болван! Неужели с таким простым делом могли возникнуть какие-то трудности?
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_04");	//Эх, зря я, видимо, тебе доверился! Ладно, отдай мне мой пузырек с ядом - и проваливай с глаз моих.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_NoDone_01_00 " );	// About your poison, master.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_NoDone_01_01 " );	// I'm listening. Have you managed to test my poison?
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_NoDone_01_02 " );	// Sorry, I couldn't do it.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_NoDone_01_03 " );	// What? Fool! You failed such a middling task?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_NoDone_01_04 " );	// I should never have trusted such a simpleton. Give me the vial back and get out of my sight.
 		
 	if(Npc_HasItems(other,ItMi_NrozasPoison) >= 1)
 	{	
 		B_GivePlayerXP(100);
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_NoDone_01_05");	//Вот он.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_06");	//(раздраженно) Ну, хоть мой яд цел. Все, теперь пошел вон!
+		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_NoDone_01_05");	//Here it is.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_NoDone_01_06 " );	// (irritated) Well, at least my poison is intact. Leave now, or die!
 		PlayerSafeFromNrozasNo = TRUE;
-		B_LogEntry(TOPIC_PW_PoisonNrozas,"Нрозас был в гневе от того, что мне не удалось испытать его яд. Хвала Инносу, мне удалось сохранить голову на плечах.");
+		B_LogEntry (TOPIC_PW_PoisonNrozas, " Nrozas was angry that I was not able to test his poison. Praise Innos, I managed to keep my head on my shoulders. " );
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_NoDone_01_07");	//У меня нет его при себе.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_08");	//Как так?! И где же он?
-		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_NoDone_01_09");	//Я не помню, куда его дел.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_10");	//Хммм...(гневно вглядываясь) Ты что, держишь меня за идиота?
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_11");	//Ну, просто так тебе это с рук не сойдет...
-		B_LogEntry(TOPIC_PW_PoisonNrozas,"Нрозас был в гневе. Я не смог отдать ему яд, поскольку его у меня с собой нет. Теперь мне остается только сражаться со всем Братством.");
+		AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_NoDone_01_07 " );	// I don't have it with me.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_NoDone_01_08 " );	// How so? Where is it? Grew legs and ran off did it?
+		AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_NoDone_01_09 " );	// I... lost it, master.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_NoDone_01_10 " );	// Hmmm ...you think me stupid, do you?
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_NoDone_01_11 " );	// Unfortunate. You had SOME potential at least.
+		B_LogEntry (TOPIC_PW_PoisonNrozas, " Nrozas was angry. I couldn’t give him the poison, since I don’t have it with me. Now I must fight the whole Brotherhood. " );
 		PlayerIsPrioratFakeTemp = TRUE;
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_KILL,1);
@@ -668,10 +668,10 @@ func void dia_Ass_128_Nrozas_Poison_NoDone_info()
 instance DIA_Ass_128_Nrozas_PoisonGiveOsair(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_PoisonGiveOsair_condition;
 	information = dia_Ass_128_Nrozas_PoisonGiveOsair_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
@@ -685,8 +685,8 @@ func int dia_Ass_128_Nrozas_PoisonGiveOsair_condition()
 
 func void dia_Ass_128_Nrozas_PoisonGiveOsair_info()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonGiveOsair_01_01");	//Как ты посмел отдать мой яд Осаиру без моего разрешения?!
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonGiveOsair_01_02");	//За подобную дерзость ты умрешь в муках, доселе тебе неизвестных...
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonGiveOsair_01_01 " );	// How dare you give my poison to Osair without my permission?!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonGiveOsair_01_02 " );	// For such insolence you will die in agony, hitherto unimaginable to you ...
 	PlayerIsPrioratFakeTemp = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -696,10 +696,10 @@ func void dia_Ass_128_Nrozas_PoisonGiveOsair_info()
 instance DIA_Ass_128_Nrozas_PoisonTellOsair(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_PoisonTellOsair_condition;
 	information = dia_Ass_128_Nrozas_PoisonTellOsair_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
@@ -713,25 +713,25 @@ func int dia_Ass_128_Nrozas_PoisonTellOsair_condition()
 
 func void dia_Ass_128_Nrozas_PoisonTellOsair_info()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_01");	//Постой!
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_02");	//Ответь мне: это, случаем, не ты тот ублюдок, что пустил слух о моей неудаче с ядом?
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_03");	//Нет, это был не я.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_04");	//Ты пытаешься меня обмануть?!
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_05");	//А я ведь точно знаю, что это был ТЫ! Больше просто некому.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_06");	//И теперь все в Братстве только и говорят обо мне как о неудачнике-хвастуне.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_07");	//Тогда попробуй докажи это.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_08");	//(гневно) Что? Ах ты мерзкий щенок! Я сейчас вырву твое сердце и скормлю его шакалам!
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_09");	//Не думаю, что подобный подход придется по душе остальным приорам.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_10");	//Белиар бы тебя побрал! Ты, конечно, прав, но я знаю другой способ заткнуть твою лживую пасть. 
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_11");	//Поэтому я вызываю тебя на поединок Истины! Приор Ханиар нас рассудит.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_12");	//И что это такое?
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_13");	//Все очень просто. Ты должен будешь доказать свою правоту в битве со мной, либо сдохнуть со своей ложью у себя в глотке.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_14");	//Я буду ждать тебя на арене Братства. Надеюсь, что у тебя хватит смелости прийти туда.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_16");	//А если нет, то мои братья найдут тебя и сделают с тобой такое, что даже Белиару не снилось!
+	AI_Output(self,other,"DIA_Ass_128_Nrozas_PoisonTellOsair_01_01");	//Wait!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_02 " );	// Tell me, scruffy  looking one, are you the bastard who started the rumor about the failure of my latest poison?
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_03 " );	// No, it wasn't me.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_04 " );	// Are you lying to me?!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_05 " );	// I know it was YOU! There is simply no one mistake.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_06 " );	// And now everyone in the Brotherhood is laughing at me behind my back!
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_07 " );	// Prove it, oh master of poisons.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_08 " );	// (angrily) What? You bastard, I will rip out your heart and feed it to the slaves!
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_09 " );	// I don't think the rest of the priori will like that very much.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_10 " );	// Beliar take you! However, I know how to silence you permanently.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_11 " );	// I challenge you to the duel of Truth! Prior Haniar will judge us.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_12 " );	// What is that?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_13 " );	// It's very simple. You will have to prove your innocence in battle with me, or die as the lying dog you are.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_14 " );	// I will wait for you in the arena of the Brotherhood. I hope you have the backbone to face me.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PoisonTellOsair_01_16 " );	// And if not, then my brothers will find you and show you pleasures even Beliar could not imagine!
 	MIS_TrueBattle = LOG_Running;
 	Log_CreateTopic(TOPIC_TrueBattle,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TrueBattle,LOG_Running);
-	B_LogEntry(TOPIC_TrueBattle,"За мою ложь Нрозас вызвал меня на поединок Истины. Теперь все зависит от меня.");
+	B_LogEntry (TOPIC_TrueBattle, " For my lies, Nrozas challenged me to a duel of Truth. Now everything depends on me. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(Ass_128_Nrozas,"TrueBattle");
 	Npc_ExchangeRoutine(Ass_126_Haniar,"TrueBattle");
@@ -750,7 +750,7 @@ func void dia_Ass_128_Nrozas_PoisonTellOsair_info()
 instance DIA_Ass_128_Nrozas_TrueBattle(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 2;
+	no. = 2 ;
 	condition = dia_Ass_128_Nrozas_TrueBattle_condition;
 	information = dia_Ass_128_Nrozas_TrueBattle_info;
 	permanent = TRUE;
@@ -767,17 +767,17 @@ func int dia_Ass_128_Nrozas_TrueBattle_condition()
 
 func void dia_Ass_128_Nrozas_TrueBattle_info()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TrueBattle_01_00");	//Скоро ты утонешь в луже своей кровавой блевотины, ублюдок!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TrueBattle_01_00 " );	// Soon you'll drown in your bloody vomit, bastard!
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Ass_128_Nrozas_TrueBattle_Ready(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_TrueBattle_Ready_condition;
 	information = dia_Ass_128_Nrozas_TrueBattle_Ready_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
@@ -791,10 +791,10 @@ func int dia_Ass_128_Nrozas_TrueBattle_Ready_condition()
 
 func void dia_Ass_128_Nrozas_TrueBattle_Ready_info()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TrueBattle_Ready_01_00");	//Вижу, что тебе все-таки хватило смелости появиться здесь.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TrueBattle_Ready_01_01");	//Тогда давай посмотрим, настолько же хорош твой меч, как твой гнилой язык.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TrueBattle_Ready_01_02");	//И да... если покинешь пределы арены - ты проиграл! Что равносильно для тебя смерти.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TrueBattle_Ready_01_03");	//А теперь умри, шелудивый пес!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TrueBattle_Ready_01_00 " );	// I see that you had the courage to face me.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TrueBattle_Ready_01_01 " );	// Now let's see if your sword is as sharp as your rotten tongue.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TrueBattle_Ready_01_02 " );	// And yes ... if you leave the arena, you lose! Which will be tantamount to death.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TrueBattle_Ready_01_03 " );	// Now die, syphilitic dog!
 	NrozasStartTrueBattle = TRUE;
 	AI_StopProcessInfos(self);
 	Wld_SendTrigger("EVT_TRUEBATTLE_DEATHMATCH");
@@ -804,7 +804,7 @@ func void dia_Ass_128_Nrozas_TrueBattle_Ready_info()
 instance DIA_Ass_128_Nrozas_TrueBattle_Repeat(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_TrueBattle_Repeat_condition;
 	information = dia_Ass_128_Nrozas_TrueBattle_Repeat_info;
 	permanent = TRUE;
@@ -821,7 +821,7 @@ func int dia_Ass_128_Nrozas_TrueBattle_Repeat_condition()
 
 func void dia_Ass_128_Nrozas_TrueBattle_Repeat_info()
 {
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TrueBattle_Repeat_01_01");	//Иди сюда, подлый шакал!
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TrueBattle_Repeat_01_01 " );	// Come here, scum!
 	NrozasStartTrueBattle = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
@@ -830,11 +830,11 @@ func void dia_Ass_128_Nrozas_TrueBattle_Repeat_info()
 instance DIA_Ass_128_Nrozas_Poison_KillNrozas(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_128_Nrozas_Poison_KillNrozas_condition;
 	information = dia_Ass_128_Nrozas_Poison_KillNrozas_info;
-	permanent = FALSE;
-	description = "Приор Осаир посылает вам бутылку вина, мастер.";
+	permanent = FALSE ;
+	description = " Prior Osair is sending you a bottle of wine, master. " ;
 };
 
 func int dia_Ass_128_Nrozas_Poison_KillNrozas_condition()
@@ -847,30 +847,30 @@ func int dia_Ass_128_Nrozas_Poison_KillNrozas_condition()
 
 func void dia_Ass_128_Nrozas_Poison_KillNrozas_info()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_00");	//Приор Осаир посылает вам бутылку вина, мастер.
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_01");	//В знак благодарности за ваш яд.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_00 " );	// Prior Osair sends you a bottle of wine, master.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_01 " );	// In gratitude for the poison.
 
 	if(HaniarGetGift == FALSE)
 	{
 		B_GivePlayerXP(300);
 		B_GiveInvItems(other,self,ItFo_BeliarTear,1);
 		Npc_RemoveInvItems(self,ItFo_BeliarTear,1);
-		B_LogEntry(TOPIC_NrozasPoisonGift,"Я отнес бутылку вина, которую Осаир передал для Нрозаса.");
+		B_LogEntry (TOPIC_NrozasPoisonGift, " I took the bottle of wine that Osair gave to Nrozas. " );
 	}
 	else
 	{
 		B_GivePlayerXP(500);
 		B_GiveInvItems(other,self,ItFo_BeliarTear_Haniar,1);
 		Npc_RemoveInvItems(self,ItFo_BeliarTear_Haniar,1);
-		B_LogEntry(TOPIC_NrozasPoisonGift,"Я отнес бутылку вина, которую Осаир передал для Нрозаса, как меня и просил Ханиар.");
+		B_LogEntry (TOPIC_NrozasPoisonGift, " I took the bottle of wine that Osair handed over to Nrozas as Haniar asked me to. " );
 	};
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_02");	//(восхищенно) Я не верю своим глазам! Неужели это 'Слеза Белиара'?
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_03");	//Я не очень-то разбираюсь в винах.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_04");	//(небрежно) Это заметно. Ведь 'Слеза Белиара' - это не просто какое-то там вино.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_05");	//Оно сродни божественному нектару! Такие напитки достойны пить лишь избранные.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_06");	//Даже сам Зубен позавидовал бы такому.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_07");	//Видимо, Осаир окончательно признал мой гений, раз решился на такой дорогой подарок.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_KillNrozas_01_08");	//Что же, за такое и выпить не грех! Не так ли?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_02 " );	// (admiringly) I can't believe my eyes! Is this 'Beliar's Tear'?
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_03 " );	// I don't really know wine. I just drink it.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_04 " );	// (casually) It's noticeable. After all, 'Beliar's Tear' is not just any wine.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_05 " );	// It is akin to divine nectar! Only a select few are worthy of such ambrosia.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_06 " );	// Even Zuben himself would have envied me this.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_07 " );	// Apparently, Osair finally recognized my genius, and realises I am worthy of such a gift.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_Poison_KillNrozas_01_08 " );	// To my genius!
 	MIS_NrozasPoisonGift = LOG_Success;
 	Log_SetTopicStatus(TOPIC_NrozasPoisonGift,LOG_Success);
 	AI_StopProcessInfos(self);
@@ -880,14 +880,14 @@ func void dia_Ass_128_Nrozas_Poison_KillNrozas_info()
 instance DIA_Ass_128_Nrozas_PRETEACH(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 10;
+	No. = 10 ;
 	condition = DIA_Ass_128_Nrozas_PRETEACH_Condition;
 	information = DIA_Ass_128_Nrozas_PRETEACH_Info;
-	permanent = FALSE;
-	description = "Могу я чему-нибудь научиться у вас, мастер?";
+	permanent = FALSE ;
+	description = " Can I learn something from you, master? " ;
 };
 
-func int DIA_Ass_128_Nrozas_PRETEACH_Condition()
+func int DIA_Ass_128_Nrozas_PRETEACH_Condition ()
 {
 	if(PlayerIsAssNow == TRUE)
 	{
@@ -895,25 +895,25 @@ func int DIA_Ass_128_Nrozas_PRETEACH_Condition()
 	};
 };
 
-func void DIA_Ass_128_Nrozas_PRETEACH_Info()
+func void DIA_Ass_128_Nrozas_PRETEACH_Info ()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_PRETEACH_01_00");	//Могу я чему-нибудь научиться у вас, мастер?
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PRETEACH_01_01");	//Конечно. Я могу обучить тебя секретам такого величайшего искусства, как алхимия.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PRETEACH_01_02");	//Однако тебе понадобится иметь некоторый опыт для ее освоения. 
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_PRETEACH_01_03");	//Иначе из наших занятий ничего толкового не выйдет.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_PRETEACH_01_00 " );	// Can I learn something from you, master?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PRETEACH_01_01 " );	// Of course. I can teach you the secrets of alchemy.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PRETEACH_01_02 " );	// However, you will need some experience to master it.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_PRETEACH_01_03 " );	// Otherwise, nothing I teach you will make sense.
 	NrozasTeachMe = TRUE;
 	Log_CreateTopic(TOPIC_PrioratTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_PrioratTeacher,"Приор Нрозас сможет обучить меня искусству алхимии.");
+	B_LogEntry (TOPIC_PrioratTeacher, " Prior Nrozas can teach me the art of alchemy. " );
 };
 
 instance DIA_Ass_128_Nrozas_TEACH(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 10;
+	No. = 10 ;
 	condition = DIA_Ass_128_Nrozas_TEACH_Condition;
 	information = DIA_Ass_128_Nrozas_TEACH_Info;
 	permanent = TRUE;
-	description = "Обучите меня алхимии, мастер.";
+	description = " Teach me alchemy, master. " ;
 };
 
 func int DIA_Ass_128_Nrozas_TEACH_Condition()
@@ -926,8 +926,8 @@ func int DIA_Ass_128_Nrozas_TEACH_Condition()
 
 func void DIA_Ass_128_Nrozas_TEACH_Info()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_TEACH_01_00");	//Обучите меня алхимии, мастер.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TEACH_01_01");	//Хорошо. Что ты хочешь узнать?
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_TEACH_01_00 " );	// Teach me alchemy, master.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TEACH_01_01 " );	// Good. What do you want to know?
 
 	Info_ClearChoices(DIA_Ass_128_Nrozas_TEACH);
 	Info_AddChoice(DIA_Ass_128_Nrozas_TEACH,Dialog_Back,DIA_Ass_128_Nrozas_TEACH_BACK);
@@ -1062,7 +1062,7 @@ func void DIA_Ass_128_Nrozas_TEACH_perm_stamina()
 instance Ass_129_DeadNrozas_PreHALLO(C_Info)
 {
 	npc = Ass_129_DeadNrozas;
-	nr = 1;
+	no. = 1 ;
 	condition = Ass_129_DeadNrozas_PreHALLO_condition;
 	information = Ass_129_DeadNrozas_PreHALLO_info;
 	permanent = TRUE;
@@ -1088,11 +1088,11 @@ var int NrozasTeachMakePoison;
 instance DIA_Ass_128_Nrozas_TeachPoisonMake(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 10;
+	No. = 10 ;
 	condition = DIA_Ass_128_Nrozas_TeachPoisonMake_Condition;
 	information = DIA_Ass_128_Nrozas_TeachPoisonMake_Info;
-	permanent = FALSE;
-	description = "А есть ли что-то особенное, чему я смогу научиться только у вас?";
+	permanent = FALSE ;
+	description = " Is there anything special that I can only learn from you? " ;
 };
 
 func int DIA_Ass_128_Nrozas_TeachPoisonMake_Condition()
@@ -1105,26 +1105,26 @@ func int DIA_Ass_128_Nrozas_TeachPoisonMake_Condition()
 
 func void DIA_Ass_128_Nrozas_TeachPoisonMake_Info()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_00");	//А есть ли что-то особенное, чему я смогу научиться только у вас?
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_01");	//Хммм...(оценивающе) Как ты, наверное, уже знаешь, мой конек - это приготовление различных ядов.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_02");	//В этом мне нет равных, ибо любой из моих ядов это настоящее произведение искусства.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_03");	//Тебе же я могу показать, как можно изготовить самые простые из них.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_04");	//Либо научить тебя покрывать им клинки или стрелы.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_05");	//Но все это потребует от тебя предельного внимания.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_06");	//Поскольку любая ошибка в этом деле может запросто убить тебя.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_TeachPoisonMake_01_00 " );	// Is there anything special that I can only learn from you?
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoisonMake_01_01 " );	// Hmmm ... (appraising) As you probably already know, my true talent is the preparation of various poisons.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoisonMake_01_02 " );	// I have no equal in this, for any of my poisons is a work of art.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoisonMake_01_03 " );	// I can show you how you can make the simplest of them.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoisonMake_01_04 " );	// Or teach you how to cover blades or arrows with it.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoisonMake_01_05 " );	// But all of this will require your utmost attention.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoisonMake_01_06 " );	// Because the slightest mistake can easily kill you.
 	NrozasTeachMakePoison = TRUE;
 	Log_CreateTopic(TOPIC_PrioratTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_PrioratTeacher,"Приор Нрозас может научить меня изготавливать яды, а также показать, как покрывать ядом клинки или стрелы.");
+	B_LogEntry (TOPIC_PrioratTeacher, " Prior Nrozas can teach me how to make poisons, and also show me how to coat blades or arrows with poison. " );
 };
 
 instance DIA_Ass_128_Nrozas_TeachPoison(C_Info)
 {
 	npc = Ass_128_Nrozas;
-	nr = 800;
+	n ° = 800 ;
 	condition = dia_Ass_128_Nrozas_TeachPoison_condition;
 	information = dia_Ass_128_Nrozas_TeachPoison_info;
 	permanent = TRUE;
-	description = "Научи меня обращаться с ядами.";
+	description = " Teach me how to handle poisons. " ;
 };
 
 func int dia_Ass_128_Nrozas_TeachPoison_condition()
@@ -1137,26 +1137,26 @@ func int dia_Ass_128_Nrozas_TeachPoison_condition()
 
 func void dia_Ass_128_Nrozas_TeachPoison_info()
 {
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_TeachPoison_01_01");	//Научи меня обращаться с ядами.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_01_02");	//Что ты хочешь узнать?
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_TeachPoison_01_01 " );	// Teach me how to handle poisons.
+	AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_01_02 " );	// What do you want to know?
 	Info_ClearChoices(DIA_Ass_128_Nrozas_TeachPoison);
 	Info_AddChoice(DIA_Ass_128_Nrozas_TeachPoison,Dialog_Back,DIA_Ass_128_Nrozas_TeachPoison_BACK);
 	
 	if(PoisonArrowKnow == FALSE)
 	{
-		Info_AddChoice(DIA_Ass_128_Nrozas_TeachPoison,"Изготовление отравленных стрел (Очки обучения: 5, Цена: 2500 монет)",DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow);
+		Info_AddChoice (DIA_Ass_128_Nrozas_TeachPoison, " Making Poisoned Arrows (Training Points: 5, Cost: 2500 Coins) " , DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow);
 	};
 	if(PoisonBladeKnow == FALSE)
 	{
-		Info_AddChoice(DIA_Ass_128_Nrozas_TeachPoison,"Покрывать лезвие оружия ядом (Очки обучения: 5, Цена: 3000 монет)",DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade);
+		Info_AddChoice (DIA_Ass_128_Nrozas_TeachPoison, " Cover the blade of my weapon with poison (Training points: 5, Cost: 3000 coins) " , DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade);
 	};
 	if(MakePoisonKnow == FALSE)
 	{
-		Info_AddChoice(DIA_Ass_128_Nrozas_TeachPoison,"Научи меня готовить яды (Очки обучения: 3, Цена: 1500 монет)",DIA_Ass_128_Nrozas_TeachPoison_MakePoison);
+		Info_AddChoice (DIA_Ass_128_Nrozas_TeachPoison, " Teach me to cook poisons (Training points: 3, Cost: 1500 coins) " , DIA_Ass_128_Nrozas_TeachPoison_MakePoison);
 	};
 	if(ResistPoisonKnow == FALSE)
 	{
-		Info_AddChoice(DIA_Ass_128_Nrozas_TeachPoison,"Научи меня сопротивлению яду (Очки обучения: 10, Цена: 3000 монет)",DIA_Ass_128_Nrozas_TeachPoison_Resist);
+		Info_AddChoice (DIA_Ass_128_Nrozas_TeachPoison, " Teach Me To Resist Poison (Training Points: 10, Cost: 3000 Coins) " , DIA_Ass_128_Nrozas_TeachPoison_Resist);
 	};
 };
 
@@ -1167,35 +1167,35 @@ func void DIA_Ass_128_Nrozas_TeachPoison_BACK()
 
 func void DIA_Ass_128_Nrozas_TeachPoison_Resist()
 {
-	var int kosten;
+	var int diet;
 	var int money;
 
-	AI_Output(other,self,"DIA_Constantino_TeachPoison_Resist_01_00");	//Научи меня сопротивлению яду.
+	AI_Output (other, self, " DIA_Constantino_TeachPoison_Resist_01_00 " );	// Teach me to resist poison.
 
-	kosten = 10;
+	cost = 10 ;
 	money = 3000;
 
 	if(hero.lp < kosten)
 	{
 		AI_Print(PRINT_NotEnoughLearnPoints);
-		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_01");	//Извини, но для этого у тебя еще не хватает опыта!
+		AI_Output (self, other, " DIA_Constantino_TeachPoison_Resist_01_01 " );	// Sorry, but you don't have enough experience for this yet!
 		AI_StopProcessInfos(self);
 	};
 	if(Npc_HasItems(hero,ItMi_Gold) < money)
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_02");	//Извини, но бесплатно я этого делать не стану!
+		AI_Output (self, other, " DIA_Constantino_TeachPoison_Resist_01_02 " );	// Sorry, but I won't do this for free!
 		AI_StopProcessInfos(self);
 	};
 	if((hero.lp >= kosten) && (Npc_HasItems(hero,ItMi_Gold) >= money))
 	{
-		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_03");	//Яд - дело плохое. Особенно если он попал в твой организм.
-		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_04");	//Ты должен позаботиться о том, чтобы твой организм как можно быстрее разложил яд.
-		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_05");	//Непрерывно двигайся и больше потей! Тогда отравление ядом не причинит тебе вреда.
+		AI_Output (self, other, " DIA_Constantino_TeachPoison_Resist_01_03 " );	// Poison takes time to work its deadly magic.
+		AI_Output (self, other, " DIA_Constantino_TeachPoison_Resist_01_04 " );	// You must make sure that your body expels it as quickly as possible.
+		AI_Output (self, other, " DIA_Constantino_TeachPoison_Resist_01_05 " );	// Keep moving and sweat more! Then you increase your chance of survival.
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_RemoveInvItems(hero,ItMi_Gold,money);
-		AI_Print("Изучено: сопротивление яду");
+		AI_Print ( " Learned : Poison Resistance " );
 		ResistPoisonKnow = TRUE;
 		Snd_Play("LevelUP");
 	};
@@ -1203,122 +1203,122 @@ func void DIA_Ass_128_Nrozas_TeachPoison_Resist()
 
 func void DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow()
 {
-	var int kosten;
+	var int diet;
 	var int money;
 
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_00");	//Научи меня делать отравленные стрелы.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_00 " );	// Teach me how to make poison arrows.
 
-	kosten = 5;
+	cost = 5 ;
 	money = 2500;
 
 	if(hero.lp < kosten)
 	{
 		AI_Print(PRINT_NotEnoughLearnPoints);
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_01");	//У тебя недостаточно опыта!
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_01 " );	// You don't have enough experience!
 		AI_StopProcessInfos(self);
 	};
 	if(Npc_HasItems(hero,ItMi_Gold) < money)
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_02");	//У тебя мало золота!
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_02 " );	// You are low on gold!
 		AI_StopProcessInfos(self);
 	};
 	if((hero.lp >= kosten) && (Npc_HasItems(hero,ItMi_Gold) >= money))
 	{
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_03");	//Тебе нужен яд и несколько стрел.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_04");	//Осторожно окунаешь наконечники стрел в колбу.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_05");	//Рука не должна дрожать. Поэтому не торопись.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_03 " );	// You need poison and some arrows.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_04 " );	// Carefully dip the arrowheads into the flask.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_05 " );	// You need a steady hand. So be careful.
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_RemoveInvItems(hero,ItMi_Gold,money);
-		AI_Print("Изучен рецепт изготовления - 'Отравленные стрелы'");
+		AI_Print ( " Crafting recipe studied - 'Poisoned Arrows' " );
 		PoisonArrowKnow = TRUE;
 		Snd_Play("LevelUP");
 		Log_CreateTopic(TOPIC_TalentAlchemy,LOG_NOTE);
-		B_LogEntry(TOPIC_TalentAlchemy,"Ингредиенты для изготовления отравленных стрел: двадцать стрел и пузырек с ядом.");
+		B_LogEntry (TOPIC_TalentAlchemy, " Ingredients for making poison arrows: twenty arrows and a bottle of poison. " );
 	};
 };
 
 func void DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade()
 {
-	var int kosten;
+	var int diet;
 	var int money;
 
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_00");	//Научи меня покрывать оружие ядом.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_00 " );	// Teach me to cover weapons with poison.
 
-	kosten = 5;
+	cost = 5 ;
 	money = 3000;
 
 	if(hero.lp < kosten)
 	{
 		AI_Print(PRINT_NotEnoughLearnPoints);
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_01");	//У тебя недостаточно опыта!
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_01 " );	// You don't have enough experience!
 		AI_StopProcessInfos(self);
 	};
 	if(Npc_HasItems(hero,ItMi_Gold) < money)
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_02");	//У тебя мало золота!
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_02 " );	// You are low on gold!
 		AI_StopProcessInfos(self);
 	};
 	if((hero.lp >= kosten) && (Npc_HasItems(hero,ItMi_Gold) >= money))
 	{
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_03");	//Прежде всего тебе нужны яд и оружие.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_04");	//Не погружай в яд весь клинок.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_05");	//Нанеси его тонким слоем на лезвие и его кончик.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_06");	//И смотри не порежься!
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_03 " );	// First of all, you need poison and weapons.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_04 " );	// Don't put the whole blade in the poison.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_05 " );	// Apply it thinly to the blade and tip.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade_01_06 " );	// And don't cut yourself!
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_RemoveInvItems(hero,ItMi_Gold,money);
-		AI_Print("Изучено: изготовление отравленного оружия");
+		AI_Print ( " Learned : Poisoned Weapon Making " );
 		PoisonBladeKnow = TRUE;
 		Snd_Play("LevelUP");
 		Log_CreateTopic(TOPIC_TalentAlchemy,LOG_NOTE);
-		B_LogEntry(TOPIC_TalentAlchemy,"Ингредиенты для изготовления отравленного оружия: клинок и пузырек с ядом.");
+		B_LogEntry (TOPIC_TalentAlchemy, " Ingredients for making poisoned weapons: blade and poison bottle. " );
 	};
 };
 
 func void DIA_Ass_128_Nrozas_TeachPoison_MakePoison()
 {
-	var int kosten;
+	var int diet;
 	var int money;
 
-	AI_Output(other,self,"DIA_Ass_128_Nrozas_TeachPoison_MakePoison_01_00");	//Научи меня делать яды.
+	AI_Output (other, self, " DIA_Ass_128_Nrozas_TeachPoison_MakePoison_01_00 " );	// Teach me how to make poisons.
 
-	kosten = 3;
+	cost = 3 ;
 	money = 1500;
 
 	if(hero.lp < kosten)
 	{
 		AI_Print(PRINT_NotEnoughLearnPoints);
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_01");	//У тебя недостаточно опыта!
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_01 " );	// You don't have enough experience!
 		AI_StopProcessInfos(self);
 	};
 	if(Npc_HasItems(hero,ItMi_Gold) < money)
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_02");	//У тебя мало золота!
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_PoisonArrow_01_02 " );	// You are low on gold!
 		AI_StopProcessInfos(self);
 	};
 	if((hero.lp >= kosten) && (Npc_HasItems(hero,ItMi_Gold) >= money))
 	{
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_MakePoison_01_03");	//По сути дела, яд - это не что иное, как обычное целебное снадобье.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_MakePoison_01_04");	//Тебе нужен рецепт и ингредиенты.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoison_MakePoison_01_05");	//Хорошенько смешиваешь все вместе. Когда смесь станет липкой - готово.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_MakePoison_01_03 " );	// In fact, poison is nothing more than an ordinary healing potion, corrupted.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_MakePoison_01_04 " );	// You need a recipe and ingredients.
+		AI_Output (self, other, " DIA_Ass_128_Nrozas_TeachPoison_MakePoison_01_05 " );	// Mix everything together well. When the mixture becomes sticky, you're done.
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_RemoveInvItems(hero,ItMi_Gold,money);
-		AI_Print("Изучен алхимический рецепт - 'Яд'");
+		AI_Print ( " Alchemy recipe researched - 'Poison' " );
 		MakePoisonKnow = TRUE;
 		Snd_Play("LevelUP");
 		Log_CreateTopic(TOPIC_TalentAlchemy,LOG_NOTE);
-		B_LogEntry(TOPIC_TalentAlchemy,"Ингредиенты для изготовления яда: бутылка воды, стебель болотной травы, мандибулы паука или жало кровяной мухи.");
+		B_LogEntry (TOPIC_TalentAlchemy, " Ingredients for making poison: bottle of water, stem of marsh grass, spider mandible, or blood fly sting. " );
 	
 		if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW) || (hero.guild == GIL_NOV))
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(hero,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
+			AI_Print ( " Intellect + 1 " );
 		};
 	};
 };
