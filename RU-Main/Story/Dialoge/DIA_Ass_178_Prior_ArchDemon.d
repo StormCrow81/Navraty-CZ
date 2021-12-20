@@ -1,7 +1,7 @@
 instance DIA_Ass_178_Prior_ArchDemon_EXIT(C_Info)
 {
 	npc = Ass_178_Prior_ArchDemon;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Ass_178_Prior_ArchDemon_exit_condition;
 	information = DIA_Ass_178_Prior_ArchDemon_exit_info;
 	permanent = TRUE;
@@ -23,10 +23,10 @@ var int GonsHere;
 instance DIA_Ass_178_Prior_ArchDemon_Hello(C_Info)
 {
 	npc = Ass_178_Prior_ArchDemon;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_178_Prior_ArchDemon_hello_condition;
 	information = DIA_Ass_178_Prior_ArchDemon_hello_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important= TRUE;
 };
 	
@@ -46,17 +46,17 @@ func void DIA_Ass_178_Prior_ArchDemon_hello_info()
 		AI_Wait(self,20);
 	};
 
-	AI_Output(self,other,"DIA_Ass_178_Prior_ArchDemon_hello_01_00");	//Итак, ты все-таки смог добраться до этого места. Что же, тем хуже для тебя.
-	AI_Output(other,self,"DIA_Ass_178_Prior_ArchDemon_hello_01_01");	//Тебе от меня не скрыться.
-	AI_Output(self,other,"DIA_Ass_178_Prior_ArchDemon_hello_01_02");	//Ты, видимо, глупец, раз с таким упорством ищещь своей смерти.
-	AI_Output(self,other,"DIA_Ass_178_Prior_ArchDemon_hello_01_03");	//Правда, повелитель упоминал о том, что когда-то ты был великим воином, сразившим очень могучего демона.
-	AI_Output(self,other,"DIA_Ass_178_Prior_ArchDemon_hello_01_04");	//Но в этот раз тебе не победить. Ибо со мной сила и могущество самого Белиара!
+	AI_Output (self, other, " DIA_Ass_178_Prior_ArchDemon_hello_01_00 " );	// So, you managed to find this holy place. Well, so much the worse for you.
+	AI_Output (other, self, " DIA_Ass_178_Prior_ArchDemon_hello_01_01 " );	// You can't hide from me.
+	AI_Output (self, other, " DIA_Ass_178_Prior_ArchDemon_hello_01_02 " );	// Why do you seek your death with such persistance, little insect?
+	AI_Output (self, other, " DIA_Ass_178_Prior_ArchDemon_hello_01_03 " );	// True, the Overlord told me to be wary of your prowess. But the world's mightiest gnat is still just a gnat.
+	AI_Output (self, other, " DIA_Ass_178_Prior_ArchDemon_hello_01_04 " );	// I am the chosen of Beliar! Come, you have finally found the death you long for.
 
 	if(GonsHere == TRUE)
 	{
-		AI_Output(self,other,"DIA_Ass_178_Prior_ArchDemon_hello_01_05");	//А-ха. Я смотрю и твой друг Гонсалес тоже тут.
-		AI_Output(self,other,"DIA_Ass_178_Prior_ArchDemon_hello_01_06");	//Это жалкое ничтожество тебе не поможет!
-		AI_Output(self,other,"DIA_Ass_178_Prior_ArchDemon_hello_01_07");	//Он умрет вместе с тобой, за то что когда-то предал наше Братство!
+		AI_Output (self, other, " DIA_Ass_178_Prior_ArchDemon_hello_01_05 " );	// A-ha. I see your friend Gonzalez is here too.
+		AI_Output (self, other, " DIA_Ass_178_Prior_ArchDemon_hello_01_06 " );	// This pathetic worm won't help you!
+		AI_Output (self, other, " DIA_Ass_178_Prior_ArchDemon_hello_01_07 " );	// He will die with you, for betraying our Brotherhood!
 	};
 	if(MIS_RebelsWeapon == LOG_RUNNING)
 	{
@@ -65,7 +65,7 @@ func void DIA_Ass_178_Prior_ArchDemon_hello_info()
 	};
 
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Ass_178_Prior_ArchDemon_hello_01_08");	//Но хватит болтать. Во имя Белиара!
+	AI_Output (self, other, " DIA_Ass_178_Prior_ArchDemon_hello_01_08 " );	// Enough talking. In the name of Beliar!
 	Info_ClearChoices(DIA_Ass_178_Prior_ArchDemon_hello);
 	Info_AddChoice(DIA_Ass_178_Prior_ArchDemon_hello,Dialog_Ende,DIA_Ass_178_Prior_ArchDemon_hello_Exit);
 };
@@ -76,7 +76,7 @@ func void DIA_Ass_178_Prior_ArchDemon_hello_Exit()
 
 	Gonsales = Hlp_GetNpc(NONE_1190_Assasin);
 	Gonsales.attribute[ATR_HITPOINTS] = Gonsales.attribute[ATR_HITPOINTS_MAX];
-	Gonsales.aivar[AIV_PARTYMEMBER] = TRUE;
+	Gonsales.aivar [ AIV_PARTYMEMBER ] = TRUE ;
 	PlayerIsPrioratFake = TRUE;
 	HaniarOrderKill = TRUE;
 	AI_StopProcessInfos(self);
