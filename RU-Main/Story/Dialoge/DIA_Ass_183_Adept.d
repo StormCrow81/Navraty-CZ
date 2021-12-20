@@ -1,7 +1,7 @@
 instance DIA_Ass_183_Adept_EXIT(C_Info)
 {
 	npc = Ass_183_Adept;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Ass_183_Adept_exit_condition;
 	information = DIA_Ass_183_Adept_exit_info;
 	permanent = TRUE;
@@ -21,10 +21,10 @@ func void DIA_Ass_183_Adept_exit_info()
 instance DIA_Ass_183_Adept_Hello(C_Info)
 {
 	npc = Ass_183_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_183_Adept_hello_condition;
 	information = DIA_Ass_183_Adept_hello_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	description = "Кто ты?";
 };
 	
@@ -35,21 +35,21 @@ func int DIA_Ass_183_Adept_hello_condition()
 	
 func void DIA_Ass_183_Adept_hello_info()
 {
-	AI_Output(other,self,"DIA_Ass_183_Adept_hello_01_01");	//Кто ты?
-	AI_Output(self,other,"DIA_Ass_183_Adept_hello_01_02");	//Меня зовут Каду ибн Акбар ибн Имам ибн Хасим ибн Салим ибн Аман ибн Джадир ибн Омар ибн Халид бен Хаджи аль Мудари.
-	AI_Output(other,self,"DIA_Ass_183_Adept_hello_01_03");	//Ого! А покороче никак?
-	AI_Output(self,other,"DIA_Ass_183_Adept_hello_01_04");	//Можно и покороче. Братья меня зовут просто Кадуином.
-	AI_Output(other,self,"DIA_Ass_183_Adept_hello_01_05");	//Так намного лучше.
+	AI_Output(other,self,"DIA_Ass_183_Adept_hello_01_01");	//Who are you?
+	AI_Output (self, other, " DIA_Ass_183_Adept_hello_01_02 " );	// My name is Kadu ibn Akbar ibn Imam ibn Hasim ibn Salim ibn Aman ibn Jadir ibn Omar ibn Khalid bin Haji al Mudari.
+	AI_Output (other, self, " DIA_Ass_183_Adept_hello_01_03 " );	// Um...?
+	AI_Output (self, other, " DIA_Ass_183_Adept_hello_01_04 " );	// My brothers just call me Caduin for short.
+	AI_Output(other,self,"DIA_Ass_183_Adept_hello_01_05");	//Thank Beliar for that.
 };	
 
 instance DIA_Ass_183_Adept_WhatDo(C_Info)
 {
 	npc = Ass_183_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_183_Adept_WhatDo_condition;
 	information = DIA_Ass_183_Adept_WhatDo_info;
-	permanent = FALSE;
-	description = "И чем ты тут занимаешься?";
+	permanent = FALSE ;
+	description = " What are you doing here? " ;
 };
 	
 func int DIA_Ass_183_Adept_WhatDo_condition()
@@ -62,20 +62,20 @@ func int DIA_Ass_183_Adept_WhatDo_condition()
 	
 func void DIA_Ass_183_Adept_WhatDo_info()
 {
-	AI_Output(other,self,"DIA_Ass_183_Adept_WhatDo_01_01");	//И чем ты тут занимаешься?
-	AI_Output(self,other,"DIA_Ass_183_Adept_WhatDo_01_02");	//Обычно я тут на побегушках у мастера Нрозаса.
-	AI_Output(self,other,"DIA_Ass_183_Adept_WhatDo_01_03");	//Достаю для него разного рода ингредиенты, которые он обычно использует в своих экспериментах с ядами.
-	AI_Output(self,other,"DIA_Ass_183_Adept_WhatDo_01_04");	//Но тебе, я думаю, будет не слишком интересно слушать про все это.
+	AI_Output (other, self, " DIA_Ass_183_Adept_WhatDo_01_01 " );	// What are you doing here?
+	AI_Output (self, other, " DIA_Ass_183_Adept_WhatDo_01_02 " );	// I'm usually here running errands for Master Nrozas.
+	AI_Output (self, other, " DIA_Ass_183_Adept_WhatDo_01_03 " );	// I get him all sorts of ingredients that he usually uses in his experiments with poisons.
+	AI_Output (self, other, " DIA_Ass_183_Adept_WhatDo_01_04 " );	// But you, I think, will not be too interested in hearing about all that.
 };
 	
 instance DIA_Ass_183_Adept_TalkAboutJoin(C_Info)
 {
 	npc = Ass_183_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_183_Adept_TalkAboutJoin_condition;
 	information = DIA_Ass_183_Adept_TalkAboutJoin_info;
-	permanent = FALSE;
-	description = "Ты выглядишь немного расстроенным.";
+	permanent = FALSE ;
+	description = " You look a little upset. " ;
 };
 	
 func int DIA_Ass_183_Adept_TalkAboutJoin_condition()
@@ -88,23 +88,23 @@ func int DIA_Ass_183_Adept_TalkAboutJoin_condition()
 	
 func void DIA_Ass_183_Adept_TalkAboutJoin_info()
 {
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_01_00");	//Ты выглядишь немного расстроенным.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_01");	//(удрученно) Это что, так заметно? Хотя, ты прав. У меня действительно есть небольшая проблемка.
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_01_02");	//В чем дело?
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_03");	//Дело в том, что мастер Нрозас послал меня достать редкий ядовитый экстракт из сердцевины клыка муритана.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_04");	//Но я и понятия не имею, где мне искать его.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_05");	//К тому же я слышал, что эта тварь крайне опасна, и встреча с ним может стоить мне жизни.
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_01_06");	//В этом ты можешь не сомневаться.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_07");	//Тем более. Вот только если я вернусь к Нрозасу ни с чем, он просто живьем сдерет с меня шкуру.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_08");	//Чего, как ты понимаешь, мне вовсе не хочется. Он крайне не любит, когда ему в чем-то отказывают.
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_01_09");	//Может, я смогу помочь тебе в этом деле?
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_01_10");	//Я слышал, что у приора Тиаманта есть один клык муритана.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_11");	//В том-то и дело. Нрозас уже общался на эту тему с Тиамантом, но тот ему отказал.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_12");	//Тогда Нрозас пришел в такую ярость, что чуть не отправил к Белиару пару послушников Братства.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_13");	//После чего послал меня искать этот проклятый клык.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_01_14");	//Так что теперь все их дерьмо приходится разгребать мне.
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_01_00 " );	// You look a little upset.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_01 " );	// (dejected) Is it that noticeable? Although, you're right. I really have a little problem.
+	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_01_02");	//What's the matter?
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_03 " );	// The fact is that Master Nrozas sent me to retrieve a rare poisonous extract from the core of a muritan's fang.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_04 " );	// But I have no idea where to look for it.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_05 " );	// Besides, I heard that this creature is extremely dangerous, and finding one could cost me my life.
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_01_06 " );	// You can be sure of that.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_07 " );	// see my problem? But if I return to Nrozas with nothing, he will skin me alive.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_08 " );	// He doesn't like to be dissapointed.
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_01_09 " );	// Maybe I can help you in this matter?
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_01_10 " );	// I heard that Prior Tiamant has a Muritan fang.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_11 " );	// That's just the point. Nrozas had already talked about it with Tiamant, but he refused.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_12 " );	// Nrozas was then so furious that he nearly killed a few of his own men!
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_13 " );	// Then he sent me to look for the cursed thing.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_01_14 " );	// What did I do to deserve this?
 	MIS_KaduinTooth = LOG_Running;
-	B_LogEntry(TOPIC_Intriges,"Мастер Нрозас приказал этому бедолаге Кадуину достать ядовитый клык Муритана. Нрозас уже обращался по этому вопросу к приору Тиаманту, у которого есть один экземпляр, но тот ему отказал. Если я помогу Кадуину, это будет хорошим моментом, когда можно будет разузнать про Нрозаса и Тиаманта поподробней.");
+	B_LogEntry (TOPIC_Intriges, " Master Nrozas ordered poor Caduin to retrieve a Muritan's poisonous fang. Nrozas has already approached Prior Tiamant, who has one, but refused him. If I help Caduin, it will help me find out more about Nrozas and Tiamant. " );
 	Wld_InsertNpc(Muritan_PW_02,"PW_MURITAN_02");
 };	
 
@@ -112,11 +112,11 @@ func void DIA_Ass_183_Adept_TalkAboutJoin_info()
 instance DIA_Ass_183_Adept_TalkAboutJoin_Done(C_Info)
 {
 	npc = Ass_183_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_183_Adept_TalkAboutJoin_Done_condition;
 	information = DIA_Ass_183_Adept_TalkAboutJoin_Done_info;
-	permanent = FALSE;
-	description = "У меня есть с собой клык муритана.";
+	permanent = FALSE ;
+	description = " I have a Muritan's Fang with me. " ;
 };
 	
 func int DIA_Ass_183_Adept_TalkAboutJoin_Done_condition()
@@ -130,19 +130,19 @@ func int DIA_Ass_183_Adept_TalkAboutJoin_Done_condition()
 func void DIA_Ass_183_Adept_TalkAboutJoin_Done_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_00");	//У меня есть с собой клык муритана. И я бы мог отдать его тебе.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_01");	//Что? Ты не шутишь, приятель?
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_02");	//Какие шутки! Совсем недавно я лично прикончил одну из этих тварей.
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_03");	//Мне он без надобности, а тебе мог бы пригодиться.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_04");	//(растерянно) Ну, раз так... Тогда я готов отдать за него... все, что угодно!
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_05");	//Не сомневаюсь. Но мне будет достаточно, если ты просто ответишь на один мой вопрос.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_06");	//Договорились. Спрашивай! Я постараюсь ответить тебе на него.
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_07");	//Вот что меня интересует: как приор Нрозас относится к приору Тиаманту?
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_08");	//Да как... Они и до последнего времени не очень-то ладили.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_09");	//А после того разговора Нрозас, кажется, затаил очень сильную обиду на Тиаманта.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_10");	//По крайней мере, мне так показалось, поскольку Нрозас постоянно бормочет про себя, что когда-нибудь отомстит тому.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_11");	//Ну а больше я ничего об этом не знаю.
-	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_12");	//Этого достаточно. Вот, держи свой клык.
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_00 " );	// I have a muritan fang with me. And I could give it to you.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_01 " );	// What? Are you kidding me, buddy?
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_02 " );	// I personally finished off one of these critters.
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_03 " );	// I don't need it, but it could be useful to you.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_04 " );	// (confused) Well, it would literally save my hide! What do you want for it?
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_05 " );	// It will be enough for me if you just answer one of my questions.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_06 " );	// Agreed. Ask me anything!
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_07 " );	// Here's what I'm interested in: How does Prior Nrozas feel about Prior Tiamant?
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_08 " );	// How ... They didn't get along very well until recently.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_09 " );	// And after the whole "fang" conversation, Nrozas seems to harbor an even stronger grudge against Tiamant.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_10 " );	// At least that's what It seems like, since Nrozas constantly mutters to himself that someday he will have his revenge.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_11 " );	// I don't really know anything more.
+	AI_Output (other, self, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_12 " );	// That will do. Here, don't cut yourself, I hear its quite poisonous.
 	B_GiveInvItems(other,self,ItAt_PW_MuritanTooth,1);
 	Npc_RemoveInvItems(self,ItAt_PW_MuritanTooth,1);
 
@@ -156,21 +156,21 @@ func void DIA_Ass_183_Adept_TalkAboutJoin_Done_info()
 		};
 	};
 
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_13");	//Спасибо, приятель! Ты просто спас меня.
+	AI_Output (self, other, " DIA_Ass_183_Adept_TalkAboutJoin_Done_01_13 " );	// Thanks buddy! You just saved me.
 	MIS_KaduinTooth = LOG_SUCCESS;
 	KnowNrozasToTiamant = TRUE;
-	B_LogEntry(TOPIC_Intriges,"Кажется, Нрозас затаил большую обиду на Тиаманта и жаждет ему отомстить. Уверен, это сильно заинтересует Ханиара.");
+	B_LogEntry (TOPIC_Intriges, " Nrozas seems to harbor a deep grudge against Tiamant and wants revenge on him. I'm sure Haniar will be greatly interested in that. " );
 };	
 
 instance DIA_Ass_183_Adept_Trade(C_Info)
 {
 	npc = Ass_183_Adept;
-	nr = 80;
+	n ° = 80 ;
 	condition = DIA_Ass_183_Adept_Trade_Condition;
 	information = DIA_Ass_183_Adept_Trade_Info;
 	trade = TRUE;
 	permanent = TRUE;
-	description = "Что ты можешь предложить?";
+	description = " What can you suggest? " ;
 };
 
 func int DIA_Ass_183_Adept_Trade_Condition()
@@ -189,6 +189,6 @@ func void DIA_Ass_183_Adept_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Addon_Martin_Trade_15_00");	//Что ты можешь предложить?
+	AI_Output (other, self, " DIA_Addon_Martin_Trade_15_00 " );	// What can you suggest?
 	B_GiveTradeInv(self);
 };
