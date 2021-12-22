@@ -1,7 +1,7 @@
 instance DIA_Ass_185_Adept_EXIT(C_Info)
 {
 	npc = Ass_185_Adept;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Ass_185_Adept_exit_condition;
 	information = DIA_Ass_185_Adept_exit_info;
 	permanent = TRUE;
@@ -15,10 +15,10 @@ func int DIA_Ass_185_Adept_exit_condition()
 
 func void DIA_Ass_185_Adept_exit_info()
 {
-	AI_Output(self,other,"DIA_Ass_185_Adept_exit_01_01");	//(мрачно) Извини, приятель. Но, к сожалению, я просто так тебя отпустить не смогу.
-	AI_Output(self,other,"DIA_Ass_185_Adept_exit_01_02");	//Это, конечно, не моя тайна, однако мой хозяин будет недоволен, если ты всем разболтаешь про этот рудник.
-	AI_Output(self,other,"DIA_Ass_185_Adept_exit_01_03");	//Не волнуйся, я убью тебя быстро.
-	B_LogEntry(TOPIC_Intriges,"Лука задумал меня убить. Как всегда, я оказался не в том месте и не в то время.");
+	AI_Output (self, other, " DIA_Ass_185_Adept_exit_01_01 " );	// (grim) Sorry pal. But, unfortunately, I can't let you go.
+	AI_Output (self, other, " DIA_Ass_185_Adept_exit_01_02 " );	// My master doesn't want word spreading around about this mine.
+	AI_Output (self, other, " DIA_Ass_185_Adept_exit_01_03 " );	// Don't worry, I'll kill you quickly.
+	B_LogEntry (TOPIC_Intriges, " Luca planned to kill me. As always, I was in the wrong place at the wrong time. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(Ass_184_Adept,"Pray");
 	B_Attack(self,other,AR_KILL,1);
@@ -27,10 +27,10 @@ func void DIA_Ass_185_Adept_exit_info()
 instance DIA_Ass_185_Adept_Hello(C_Info)
 {
 	npc = Ass_185_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_185_Adept_hello_condition;
 	information = DIA_Ass_185_Adept_hello_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 	
@@ -41,26 +41,26 @@ func int DIA_Ass_185_Adept_hello_condition()
 	
 func void DIA_Ass_185_Adept_hello_info()
 {
-	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_01");	//Так-так. Кто это у нас здесь?
-	AI_Output(other,self,"DIA_Ass_185_Adept_hello_01_02");	//А кто спрашивает?
-	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_03");	//Братья зовут меня Лука, но, думаю, мое имя тебе мало что сейчас говорит.
-	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_04");	//(оценивающе) Хммм. А ты не производишь впечатление особо сильного человека.
-	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_05");	//Хотя, насколько мне известно, довольно лихо разделался с Хасимом.
-	AI_Output(other,self,"DIA_Ass_185_Adept_hello_01_06");	//А откуда тебе это известно?
-	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_07");	//Как откуда? Потому что это я должен был позаботиться о нем.
-	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_08");	//Но приор Тиамант почему-то решил доверить это дело тебе.
-	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_09");	//И ты, как ни странно, свой шанс не упустил.
-	B_LogEntry(TOPIC_Intriges,"В золотом руднике я повстречал Тень по имени Лука. Кажется, эта встреча не случайна, поскольку он работает на приора Тиаманта. Надо разузнать у него обо всем поподробней.");
+	AI_Output (self, other, " DIA_Ass_185_Adept_hello_01_01 " );	// Well, well. What do we have here?
+	AI_Output(other,self,"DIA_Ass_185_Adept_hello_01_02");	//Who's asking?
+	AI_Output (self, other, " DIA_Ass_185_Adept_hello_01_03 " );	// My brothers call me Luca, not that it tells you much about me.
+	AI_Output (self, other, " DIA_Ass_185_Adept_hello_01_04 " );	// (appraisingly) Hmmm. You don't strike me as particularly strong.
+	AI_Output (self, other, " DIA_Ass_185_Adept_hello_01_05 " );	// Although, I heard you dealt with Hasim quite famously.
+	AI_Output (other, self, " DIA_Ass_185_Adept_hello_01_06 " );	// How do you know this?
+	AI_Output (self, other, " DIA_Ass_185_Adept_hello_01_07 " );	// How? Because I had to dispose of the corpse.
+	AI_Output (self, other, " DIA_Ass_185_Adept_hello_01_08 " );	// Prior Tiamant for has decided to entrust this matter to you.
+	AI_Output (self, other, " DIA_Ass_185_Adept_hello_01_09 " );	// And you jumped at the chance, didn't you.
+	B_LogEntry (TOPIC_Intriges, " I met a Shadow named Luca in the gold mine. It seems that this meeting is not accidental, works for Prior Tiamant. I'll need to find out more from him. " );
 };	
 
 instance DIA_Ass_185_Adept_Tiamant(C_Info)
 {
 	npc = Ass_185_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_185_Adept_Tiamant_condition;
 	information = DIA_Ass_185_Adept_Tiamant_info;
-	permanent = FALSE;
-	description = "Почему Тиамант приказал его убить?";
+	permanent = FALSE ;
+	description = " Why did Tiamant order him to be killed? " ;
 };
 	
 func int DIA_Ass_185_Adept_Tiamant_condition()
@@ -74,19 +74,19 @@ func int DIA_Ass_185_Adept_Tiamant_condition()
 func void DIA_Ass_185_Adept_Tiamant_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Ass_185_Adept_Tiamant_01_01");	//Почему Тиамант приказал его убить?
-	AI_Output(self,other,"DIA_Ass_185_Adept_Tiamant_01_02");	//Просто парень влез не в свое дело. А остальное тебя волновать не должно.
-	AI_Output(self,other,"DIA_Ass_185_Adept_Tiamant_01_03");	//Иначе можешь кончить так же, как и он.
+	AI_Output (other, self, " DIA_Ass_185_Adept_Tiamant_01_01 " );	// Why did Tiamant order him to be killed?
+	AI_Output (self, other, " DIA_Ass_185_Adept_Tiamant_01_02 " );	// The guy got into his business. That's all you need to know.
+	AI_Output (self, other, " DIA_Ass_185_Adept_Tiamant_01_03 " );	// Do the same and you'll share his fate.
 };	
 
 instance DIA_Ass_185_Adept_WhatDo(C_Info)
 {
 	npc = Ass_185_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_185_Adept_WhatDo_condition;
 	information = DIA_Ass_185_Adept_WhatDo_info;
-	permanent = FALSE;
-	description = "А что ты здесь делаешь?";
+	permanent = FALSE ;
+	description = " What are you doing here? " ;
 };
 	
 func int DIA_Ass_185_Adept_WhatDo_condition()
@@ -100,28 +100,28 @@ func int DIA_Ass_185_Adept_WhatDo_condition()
 func void DIA_Ass_185_Adept_WhatDo_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_01");	//А что ты здесь делаешь?
-	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_02");	//Я и сам толком не знаю. Но раз ты сюда пришел, то, наверное, жду тебя.
-	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_03");	//Интересно, зачем?
-	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_04");	//Тот же вопрос я могу задать и тебе. Что тебе тут понадобилось, раз ты сюда явился?
-	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_05");	//Я выполняю приказ приора Осаира. Он полагает, что тут где-то есть большой золотой рудник.
-	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_06");	//И, по всей видимости, он тут действительно есть!
-	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_07");	//Правда?
-	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_08");	//Ну да, он как раз позади тебя.
-	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_09");	//Эх...(ехидно) Видимо, не заметил.
-	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_10");	//Это довольно странно, ведь чуть ли не вся пещера блестит золотом.
-	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_11");	//Ну, с кем не бывает.
+	AI_Output (other, self, " DIA_Ass_185_Adept_WhatDo_01_01 " );	// What are you doing here?
+	AI_Output (self, other, " DIA_Ass_185_Adept_WhatDo_01_02 " );	// I don't really know myself. But since you came here, I’m probably waiting for you.
+	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_03");	//Why might that be?
+	AI_Output (self, other, " DIA_Ass_185_Adept_WhatDo_01_04 " );	// You first. Why did you come here?
+	AI_Output (other, self, " DIA_Ass_185_Adept_WhatDo_01_05 " );	// I am following orders from Prior Osair. He thinks there's gold mine here somewhere.
+	AI_Output (other, self, " DIA_Ass_185_Adept_WhatDo_01_06 " );	// And, apparently, it really is!
+	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_07");	//Any idea where?
+	AI_Output (other, self, " DIA_Ass_185_Adept_WhatDo_01_08 " );	// Behind you.
+	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_09");	//Ah.
+	AI_Output (other, self, " DIA_Ass_185_Adept_WhatDo_01_10 " );	// I'ts literally glistening with gold. Are you blind?
+	AI_Output (self, other, " DIA_Ass_185_Adept_WhatDo_01_11 " );	// I must be preoccupied.
 };	
 
 
 instance DIA_Ass_185_Adept_StrangeGuy(C_Info)
 {
 	npc = Ass_185_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_185_Adept_StrangeGuy_condition;
 	information = DIA_Ass_185_Adept_StrangeGuy_info;
-	permanent = FALSE;
-	description = "Так ты работаешь на приора Тиаманта?";
+	permanent = FALSE ;
+	description = " So you work for Prior Tiamant? " ;
 };
 	
 func int DIA_Ass_185_Adept_StrangeGuy_condition()
@@ -135,16 +135,16 @@ func int DIA_Ass_185_Adept_StrangeGuy_condition()
 func void DIA_Ass_185_Adept_StrangeGuy_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Ass_185_Adept_StrangeGuy_01_01");	//Так ты работаешь на приора Тиаманта?
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_02");	//Да, это так. А тебя это удивляет?
-	AI_Output(other,self,"DIA_Ass_185_Adept_StrangeGuy_01_03");	//Почему в деле с Хасимом он решил довериться новичку, а не тебе?
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_04");	//Это легко объяснить.
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_05");	//Если бы ты наломал дров, ни у кого и мысли не возникло бы, что это сделано по его приказу.
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_06");	//Тебе попросту никто не поверил бы.
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_07");	//А с лгунами у нас разговор короткий. Чик - и ты уже у Белиара!
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_08");	//Но ты, по всей видимости, не из числа тех тупых баранов, что сами суют свою голову в петлю. 
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_09");	//Хасим был крепким орешком, и я был очень сильно удивлен, когда узнал, что у тебя получилось его убить.
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_10");	//Надеюсь, что ты вновь подтвердишь свою репутацию. Иначе будет не очень интересно!
-	AI_Output(other,self,"DIA_Ass_185_Adept_StrangeGuy_01_11");	//Ты это о чем?
-	AI_Output(self,other,"DIA_Ass_185_Adept_StrangeGuy_01_12");	//Не переживай, скоро ты сам обо всем узнаешь.
+	AI_Output (other, self, " DIA_Ass_185_Adept_StrangeGuy_01_01 " );	// So you work for Prior Tiamant?
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_02 " );	// Does that surprise you?
+	AI_Output (other, self, " DIA_Ass_185_Adept_StrangeGuy_01_03 " );	// Why do you think decided to trust me with Hasim, and not you?
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_04 " );	// That's easy to explain.
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_05 " );	// If you messed things up, no one would even think that it was done on his orders.
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_06 " );	// You simply would not be believed.
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_07 " );	// And we deal with liars quickly and efficiently. Tiamant wins either way.
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_08 " );	// But you, apparently, are no pushover.
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_09 " );	// Hasim was a tough nut to crack, and I was very surprised when I found out that you managed to kill him.
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_10 " );	// I hope you reaffirm this new reputation of yours, otherwise this won't be very interesting!
+	AI_Output(other,self,"DIA_Ass_185_Adept_StrangeGuy_01_11");	//What are you talking about?
+	AI_Output (self, other, " DIA_Ass_185_Adept_StrangeGuy_01_12 " );	// Don't worry, you will soon find out.
 };	
