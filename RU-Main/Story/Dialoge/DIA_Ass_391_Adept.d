@@ -5,7 +5,7 @@ var int FazimFirstMeet;
 instance DIA_Ass_391_Adept_EXIT(C_Info)
 {
 	npc = Ass_391_Adept;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Ass_391_Adept_exit_condition;
 	information = DIA_Ass_391_Adept_exit_info;
 	permanent = TRUE;
@@ -25,11 +25,11 @@ func void DIA_Ass_391_Adept_exit_info()
 instance DIA_Ass_391_Adept_Hello(C_Info)
 {
 	npc = Ass_391_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_391_Adept_hello_condition;
 	information = DIA_Ass_391_Adept_hello_info;
-	permanent = FALSE;
-	description = "Тебя зовут Фамид?";
+	permanent = FALSE ;
+	description = " Is your name Famid? " ;
 };
 	
 func int DIA_Ass_391_Adept_hello_condition()
@@ -42,122 +42,122 @@ func int DIA_Ass_391_Adept_hello_condition()
 	
 func void DIA_Ass_391_Adept_hello_info()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_01_01");	//Тебя зовут Фамид?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_01_02");	//Да, брат. Именно такое имя мне дали при рождении.
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_01_03");	//У меня к тебе одно небольшое дельце.
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_01_04");	//Что же, я тебя слушаю.
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_01_05");	//Ты бы не хотел немного поработать на приора Осаира?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_01_06");	//А разве у Осаира мало своих людей, что ему понадобился я?
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_01_07");	//Достаточно. Но лишние люди ему никогда не помешают. Так тебя это интересует?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_01_08");	//Хммм. Предложение довольно интересное. Учитывая, что другие приоры не очень-то меня жалуют.
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_01_09");	//Но моя верность напрямую будет зависеть от его щедрости.
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_01_10");	//Ты имеешь в виду золото?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_01_11");	//Именно его, брат. Поскольку единственное, что меня интересует в жизни, это золото. Причем в любом виде!
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_01_12");	//И чем больше его у меня, тем лучше я себя чувствую.
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_01_13");	//То есть предложение тебя устраивает, и остается лишь сойтись в цене?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_01_14");	//Это самое важное, брат.
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_01_01 " );	// Is your name Famid?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_01_02 " );	// Yes, brother. That is what they call me.
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_01_03 " );	// I have a little business for you.
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_01_04 " );	// I'm listening?
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_01_05 " );	// Would you like to do some work for Prior Osair?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_01_06 " );	// What happened to his people? Did he finally kill them all?
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_01_07 " );	// Not yet, but he does find himself in need of extra muscle.
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_01_08 " );	// This proposal is interesting, considering that other priors don't really like me.
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_01_09 " );	// But my loyalty will directly depend on his generosity.
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_01_10 " );	// Do you mean gold?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_01_11 " );	// Exactly. brother. Because the only thing that interests me in this life is gold. 
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_01_12 " );	// And the more I have, the happier I am.
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_01_13 " );	// Then all that remains is to agree on the price?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_01_14 " );	// As with all things, brother.
 	FazimFirstMeet = TRUE;
 	Info_ClearChoices(DIA_Ass_391_Adept_hello);
 
 	if(Npc_HasItems(other,ItMi_Gold) < 100)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_hello,"Давай вернемся к этому вопросу позже.",DIA_Ass_391_Adept_hello_NoGold);
+		Info_AddChoice (DIA_Ass_391_Adept_hello, " Let's come back to this later. " , DIA_Ass_391_Adept_hello_NoGold);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 5000)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_hello,"Как насчет пяти тысяч золотых?",DIA_Ass_391_Adept_hello_5000);
+		Info_AddChoice (DIA_Ass_391_Adept_hello, " How about five thousand gold? " , DIA_Ass_391_Adept_hello_5000);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 3000)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_hello,"Как насчет трех тысяч золотых?",DIA_Ass_391_Adept_hello_3000);
+		Info_AddChoice (DIA_Ass_391_Adept_hello, " How about three thousand gold? " , DIA_Ass_391_Adept_hello_3000);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 1000)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_hello,"Как насчет тысячи золотых?",DIA_Ass_391_Adept_hello_1000);
+		Info_AddChoice (DIA_Ass_391_Adept_hello, " How about a thousand gold? " , DIA_Ass_391_Adept_hello_1000);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 500)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_hello,"Как насчет пятиста золотых монет?",DIA_Ass_391_Adept_hello_500);
+		Info_AddChoice (DIA_Ass_391_Adept_hello, " How about five hundred gold coins? " , DIA_Ass_391_Adept_hello_500);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 100)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_hello,"Как насчет сотни золотых монет?",DIA_Ass_391_Adept_hello_100);
+		Info_AddChoice (DIA_Ass_391_Adept_hello, " How about a hundred gold coins? " , DIA_Ass_391_Adept_hello_100);
 	};
 };
 
 func void DIA_Ass_391_Adept_hello_5000()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_5000_01_01");	//Как насчет пяти тысяч золотых?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_5000_01_02");	//О, отец щедрости. Конечно, я с радостью приму твое предложение!
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_5000_01_01 " );	// How about five thousand gold?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_5000_01_02 " );	// Oh, father of generosity. I gladly accept your offer!
 	B_GiveInvItems(other,self,ItMi_Gold,5000);
 	Npc_RemoveInvItems(self,ItMi_Gold,5000);
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_5000_01_03");	//Так что можешь передать приору, что у него появился новый, крайне преданный человек!
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_5000_01_04");	//Ну да, конечно.
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_5000_01_03 " );	// So you can tell the Prior that he has a new, extremely loyal acolyte!
+	AI_Output(other,self,"DIA_Ass_391_Adept_hello_5000_01_04");	//He will be overjoyed to hear it.
 	FazimAgreed = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я купил верность Фамида. Теперь он будет работать на приора Осаира.");
+	B_LogEntry (TOPIC_CareOsair, " I bought Famid's loyalty. Now he will work for Prior Osair. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_391_Adept_hello_3000()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_3000_01_01");	//Как насчет трех тысяч золотых?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_3000_01_02");	//Что же, вполне реальная цена за мои услуги. Хорошо, я согласен работать на приора Осаира.
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_3000_01_01 " );	// How about three thousand gold?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_3000_01_02 " );	// Well, a very realistic price for my services. Okay, I agree to work for Prior Osair.
 	B_GiveInvItems(other,self,ItMi_Gold,3000);
 	Npc_RemoveInvItems(self,ItMi_Gold,3000);
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_3000_01_03");	//Можешь так ему и передать.
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_3000_01_03 " );	// You can tell him so.
 	FazimAgreed = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я купил верность Фамида. Теперь он будет работать на приора Осаира.");
+	B_LogEntry (TOPIC_CareOsair, " I bought Famid's loyalty. Now he will work for Prior Osair. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_391_Adept_hello_1000()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_1000_01_01");	//Как насчет тысячи золотых?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_1000_01_02");	//Маловато будет, брат. Это совершенно не так сумма золота, на которую я рассчитывал.
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_1000_01_03");	//Но это же целая куча золота!
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_1000_01_04");	//Извини, брат. Но я ничем не смогу тебе помочь. 
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_1000_01_01 " );	// How about a thousand gold?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_1000_01_02 " );	// Sorry brother, it seems you undervalue my services.
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_1000_01_03 " );	// But this is a fortune!
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_1000_01_04 " );	// Not to me.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_391_Adept_hello_500()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_500_01_01");	//Как насчет пятиста золотых монет?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_500_01_02");	//(презрительно) Хммм. За такие деньги ты можешь сам пойти поработать на Осаира!
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_500_01_03");	//Так что, считай, наша сделка не состоялась.
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_500_01_01 " );	// How about five hundred gold coins?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_500_01_02 " );	// (scornfully) Hmmm. For that kind of money, you can go work for Osair yourself!
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_500_01_03 " );	// You insult me.
 	FazimRefuseTalk = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я не смог договориться с Фамидом. Осаир будет не слишком этим доволен.");
+	B_LogEntry (TOPIC_CareOsair, " I could not agree with Famid. Osair will not be too happy with this. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_391_Adept_hello_100()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_100_01_01");	//Как насчет сотни золотых монет?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_100_01_02");	//(гневно) Ты, видимо, решил немного подшутить надо мной, да?
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_100_01_03");	//Хорошо, брат. Тогда сейчас я тоже немного пошучу...
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_100_01_01 " );	// How about a hundred gold coins?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_100_01_02 " );	// (angrily) Is this a joke?
+	AI_Output (self, other, " DIA_Ass_391_Adept_hello_100_01_03 " );	// You know, I'm something of a joker myself. Want to see?
 	FazimRefuseTalk = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я не смог договориться с Фамидом. Да еще и оскорбил его. Осаир будет не слишком этим доволен.");
+	B_LogEntry (TOPIC_CareOsair, " I could not agree with Famid. It lead to violence. Osair will not be too happy with this. " );
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
 };
 
 func void DIA_Ass_391_Adept_hello_NoGold()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_hello_NoGold_01_01");	//Давай вернемся к этому вопросу позже.
-	AI_Output(self,other,"DIA_Ass_391_Adept_hello_NoGold_01_02");	//Как скажешь, брат.
+	AI_Output (other, self, " DIA_Ass_391_Adept_hello_NoGold_01_01 " );	// Let's come back to this later.
+	AI_Output(self,other,"DIA_Ass_391_Adept_hello_NoGold_01_02");	//Whatever you say, brother.
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Ass_391_Adept_FazimRefuseTalk(C_Info)
 {
 	npc = Ass_391_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_391_Adept_FazimRefuseTalk_condition;
 	information = DIA_Ass_391_Adept_FazimRefuseTalk_info;
 	permanent = TRUE;
@@ -174,18 +174,18 @@ func int DIA_Ass_391_Adept_FazimRefuseTalk_condition()
 	
 func void DIA_Ass_391_Adept_FazimRefuseTalk_info()
 {
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimRefuseTalk_01_01");	//Нам с тобой больше нечего обсуждать! Проваливай.
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimRefuseTalk_01_01 " );	// You and I have nothing more to discuss! Get out.
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Ass_391_Adept_FazimFirstMeet(C_Info)
 {
 	npc = Ass_391_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_391_Adept_FazimFirstMeet_condition;
 	information = DIA_Ass_391_Adept_FazimFirstMeet_info;
 	permanent = TRUE;
-	description = "Насчет моего предложения...";
+	description = " About my offer ... " ;
 };
 	
 func int DIA_Ass_391_Adept_FazimFirstMeet_condition()
@@ -198,109 +198,109 @@ func int DIA_Ass_391_Adept_FazimFirstMeet_condition()
 	
 func void DIA_Ass_391_Adept_FazimFirstMeet_info()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_01_01");	//Насчет моего предложения поработать на приора Осаира...
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_01_02");	//(с интересом) Так-так... А что у тебя есть предложить мне?
+	AI_Output (other, self, " DIA_Ass_391_Adept_FazimFirstMeet_01_01 " );	// About my offer to work for Prior Osair ...
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_01_02 " );	// (with interest) Well, well ... What do you have to offer me?
 	Info_ClearChoices(DIA_Ass_391_Adept_FazimFirstMeet);
 
 	if(Npc_HasItems(other,ItMi_Gold) < 100)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_FazimFirstMeet,"Давай вернемся к этому вопросу позже.",DIA_Ass_391_Adept_FazimFirstMeet_NoGold);
+		Info_AddChoice (DIA_Ass_391_Adept_FazimFirstMeet, " Let's come back to this question later. " , DIA_Ass_391_Adept_FazimFirstMeet_NoGold);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 5000)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_FazimFirstMeet,"Как насчет пяти тысяч золотых?",DIA_Ass_391_Adept_FazimFirstMeet_5000);
+		Info_AddChoice (DIA_Ass_391_Adept_FazimFirstMeet, " How about five thousand gold? " , DIA_Ass_391_Adept_FazimFirstMeet_5000);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 3000)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_FazimFirstMeet,"Как насчет трех тысяч золотых?",DIA_Ass_391_Adept_FazimFirstMeet_3000);
+		Info_AddChoice (DIA_Ass_391_Adept_FazimFirstMeet, " How about three thousand gold? " , DIA_Ass_391_Adept_FazimFirstMeet_3000);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 1000)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_FazimFirstMeet,"Как насчет тысячи золотых?",DIA_Ass_391_Adept_FazimFirstMeet_1000);
+		Info_AddChoice (DIA_Ass_391_Adept_FazimFirstMeet, " How about a thousand gold? " , DIA_Ass_391_Adept_FazimFirstMeet_1000);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 500)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_FazimFirstMeet,"Как насчет пятиста золотых монет?",DIA_Ass_391_Adept_FazimFirstMeet_500);
+		Info_AddChoice (DIA_Ass_391_Adept_FazimFirstMeet, " How about five hundred gold coins? " , DIA_Ass_391_Adept_FazimFirstMeet_500);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 100)
 	{
-		Info_AddChoice(DIA_Ass_391_Adept_FazimFirstMeet,"Как насчет сотни золотых монет?",DIA_Ass_391_Adept_FazimFirstMeet_100);
+		Info_AddChoice (DIA_Ass_391_Adept_FazimFirstMeet, " How about a hundred gold coins? " , DIA_Ass_391_Adept_FazimFirstMeet_100);
 	};
 };
 
 func void DIA_Ass_391_Adept_FazimFirstMeet_5000()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_5000_01_01");	//Как насчет пяти тысяч золотых?
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_5000_01_02");	//О, отец щедрости. Конечно, я с радостью приму твое предложение!
+	AI_Output (other, self, " DIA_Ass_391_Adept_FazimFirstMeet_5000_01_01 " );	// How about five thousand gold?
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_5000_01_02 " );	// Oh, father of generosity. Of course, I gladly accept your offer!
 	B_GiveInvItems(other,self,ItMi_Gold,5000);
 	Npc_RemoveInvItems(self,ItMi_Gold,5000);
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_5000_01_03");	//Так что можешь передать приору, что у него появился новый, крайне преданный человек!
-	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_5000_01_04");	//Ну да, конечно.
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_5000_01_03 " );	// So you can tell the Prior that he has a new, extremely loyal acolyte!
+	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_5000_01_04");	//He will be overjoyed to hear it.
 	FazimAgreed = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я купил верность Фамида. Теперь он будет работать на приора Осаира.");
+	B_LogEntry (TOPIC_CareOsair, " I bought Famid's loyalty. Now he will work for Prior Osair. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_391_Adept_FazimFirstMeet_3000()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_3000_01_01");	//Как насчет трех тысяч золотых?
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_3000_01_02");	//Что же, вполне реальная цена за мои услуги. Хорошо, я согласен работать на приора Осаира.
+	AI_Output (other, self, " DIA_Ass_391_Adept_FazimFirstMeet_3000_01_01 " );	// How about three thousand gold?
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_3000_01_02 " );	// Well, a very realistic price for my services. Okay, I agree to work for Prior Osair.
 	B_GiveInvItems(other,self,ItMi_Gold,3000);
 	Npc_RemoveInvItems(self,ItMi_Gold,3000);
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_3000_01_03");	//Можешь так ему и передать.
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_3000_01_03 " );	// You can tell him so.
 	FazimAgreed = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я купил верность Фамида. Теперь он будет работать на приора Осаира.");
+	B_LogEntry (TOPIC_CareOsair, " I bought Famid's loyalty. Now he will work for Prior Osair. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_391_Adept_FazimFirstMeet_1000()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_1000_01_01");	//Как насчет тысячи золотых?
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_1000_01_02");	//Ты не понял с первого раза, да? Очень жаль!
+	AI_Output (other, self, " DIA_Ass_391_Adept_FazimFirstMeet_1000_01_01 " );	// How about a thousand gold?
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_1000_01_02 " );	// Sorry brother, it seems you undervalue my services.
 	FazimRefuseTalk = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я не смог договориться с Фамидом. Осаир будет не слишком этим доволен.");
+	B_LogEntry (TOPIC_CareOsair, " I could not agree with Famid. Osair will not be too happy with this. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_391_Adept_FazimFirstMeet_500()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_500_01_01");	//Как насчет пятиста золотых монет?
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_500_01_02");	//(презрительно) Хммм. За такие деньги ты можешь сам пойти поработать на Осаира!
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_500_01_03");	//Так что, считай, наша сделка не состоялась.
+	AI_Output (other, self, " DIA_Ass_391_Adept_FazimFirstMeet_500_01_01 " );	// How about five hundred gold coins?
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_500_01_02 " );	// (scornfully) Hmmm. For that kind of money, you can go work for Osair yourself!
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_500_01_03 " );	// You insult me.
 	FazimRefuseTalk = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я не смог договориться с Фамидом. Осаир будет не слишком этим доволен.");
+	B_LogEntry (TOPIC_CareOsair, " I could not agree with Famid. Osair will not be too happy with this. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ass_391_Adept_FazimFirstMeet_100()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_100_01_01");	//Как насчет сотни золотых монет?
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_100_01_02");	//(гневно) Ты, видимо, решил немного подшутить надо мной, да?
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_100_01_03");	//Хорошо, брат. Тогда сейчас я тоже немного пошучу...
+	AI_Output (other, self, " DIA_Ass_391_Adept_FazimFirstMeet_100_01_01 " );	// How about a hundred gold coins?
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_100_01_02 " );	// (angrily) Is this a joke?
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimFirstMeet_100_01_03 " );	// You know, I'm something of a joker myself. Want to see?
 	FazimRefuseTalk = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я не смог договориться с Фамидом. Да еще и оскорбил его. Осаир будет не слишком этим доволен.");
+	B_LogEntry (TOPIC_CareOsair, " I could not agree with Famid. It lead to violence. Osair will not be too happy with this. " );
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,1);
 };
 
 func void DIA_Ass_391_Adept_FazimFirstMeet_NoGold()
 {
-	AI_Output(other,self,"DIA_Ass_391_Adept_FazimFirstMeet_NoGold_01_01");	//Давай вернемся к этому вопросу позже.
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_NoGold_01_02");	//Как скажешь, брат.
+	AI_Output (other, self, " DIA_Ass_391_Adept_FazimFirstMeet_NoGold_01_01 " );	// Let's come back to this question later.
+	AI_Output(self,other,"DIA_Ass_391_Adept_FazimFirstMeet_NoGold_01_02");	//Whatever you say, brother.
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Ass_391_Adept_FazimAgreed(C_Info)
 {
 	npc = Ass_391_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_391_Adept_FazimAgreed_condition;
 	information = DIA_Ass_391_Adept_FazimAgreed_info;
 	permanent = TRUE;
@@ -317,6 +317,6 @@ func int DIA_Ass_391_Adept_FazimAgreed_condition()
 	
 func void DIA_Ass_391_Adept_FazimAgreed_info()
 {
-	AI_Output(self,other,"DIA_Ass_391_Adept_FazimAgreed_01_01");	//Поговорим позже, брат.
+	AI_Output (self, other, " DIA_Ass_391_Adept_FazimAgreed_01_01 " );	// Let's talk later, brother.
 	AI_StopProcessInfos(self);
 };
