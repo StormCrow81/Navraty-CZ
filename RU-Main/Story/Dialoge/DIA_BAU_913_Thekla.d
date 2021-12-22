@@ -1,8 +1,7 @@
-
 instance DIA_Thekla_EXIT(C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Thekla_EXIT_Condition;
 	information = DIA_Thekla_EXIT_Info;
 	permanent = TRUE;
@@ -15,63 +14,63 @@ func int DIA_Thekla_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Thekla_EXIT_Info()
+func void DIA_Thekla_EXIT_Info ()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Thekla_HALLO(C_Info)
+instance DIA_Thekla_HALLO (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Thekla_HALLO_Condition;
 	information = DIA_Thekla_HALLO_Info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
 
-func int DIA_Thekla_HALLO_Condition()
+func int DIA_Thekla_HELLO_Condition()
 {
 	return TRUE;
 };
 
-func void DIA_Thekla_HALLO_Info()
+func void DIA_Thekla_HELLO_Info()
 {
-	AI_Output(self,other,"DIA_Thekla_HALLO_17_00");	//Что ты делаешь здесь, на моей кухне?
+	AI_Output (self, other, " DIA_Thekla_HALLO_17_00 " );	// What are you doing here in my kitchen?
 };
 
-instance DIA_Thekla_Lecker(C_Info)
+instance DIA_Thekla_Lecker (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 2;
+	no. = 2 ;
 	condition = DIA_Thekla_Lecker_Condition;
 	information = DIA_Thekla_Lecker_Info;
-	permanent = FALSE;
-	description = "Как у тебя здесь вкусно пахнет!";
+	permanent = FALSE ;
+	description = " How delicious you smell here! " ;
 };
 
-func int DIA_Thekla_Lecker_Condition()
+func int DIA_Thekla_Lecker_Condition ()
 {
 	return TRUE;
 };
 
-func void DIA_Thekla_Lecker_Info()
+func void DIA_Thekla_Lecker_Info ()
 {
-	AI_Output(other,self,"DIA_Thekla_Lecker_15_00");	//Как у тебя здесь вкусно пахнет!
-	AI_Output(self,other,"DIA_Thekla_Lecker_17_01");	//Не подлизывайся! Я знаю таких, как ты, как облупленных! Вон их сколько вокруг бродит!
-	AI_Output(self,other,"DIA_Thekla_Lecker_17_02");	//Сначала вы пытаетесь подхалимничать, а затем, когда от вас что-то нужно, то никого не найдешь!
+	AI_Output (other, self, " DIA_Thekla_Lecker_15_00 " );	// It smells fantastic in here!
+	AI_Output (self, other, " DIA_Thekla_Lecker_17_01 " );	// Don't suck up to me! I know your type! There are so many of you wandering around!
+	AI_Output (self, other, " DIA_Thekla_Lecker_17_02 " );	// First you try to kiss my behind, and then when I need something from you, you dissapear!
 };
 
-instance DIA_Thekla_Baker(C_Info)
+instance DIA_Thekla_Baker (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 3;
+	No. = 3 ;
 	condition = DIA_Thekla_Baker_Condition;
 	information = DIA_Thekla_Baker_Info;
-	permanent = FALSE;
-	description = "Это твоя печь?";
+	permanent = FALSE ;
+	description = " Is this your oven? " ;
 };
 
 func int DIA_Thekla_Baker_Condition()
@@ -82,31 +81,31 @@ func int DIA_Thekla_Baker_Condition()
 	};
 };
 
-func void DIA_Thekla_Baker_Info()
+func void DIA_Thekla_Baker_Info ()
 {
-	AI_Output(other,self,"DIA_Thekla_Baker_01_00");	//Это твоя печь?
-	AI_Output(self,other,"DIA_Thekla_Baker_01_01");	//Да, моя.
-	AI_Output(other,self,"DIA_Thekla_Baker_01_02");	//И что ты в ней готовишь?
-	AI_Output(self,other,"DIA_Thekla_Baker_01_03");	//Обычно я пеку хлеб и пироги. Но в ней можно пожарить и мясо, если понадобится.
-	AI_Output(other,self,"DIA_Thekla_Baker_01_04");	//А я могу ей воспользоваться?
-	AI_Output(self,other,"DIA_Thekla_Baker_01_05");	//Можешь. Но только если я буду уверена, что ты ее не испортишь.
-	AI_Output(other,self,"DIA_Thekla_Baker_01_06");	//И как мне тебя в этом убедить?
-	AI_Output(self,other,"DIA_Thekla_Baker_01_07");	//Ну, например...(задумчиво) Скажи, ты умеешь печь пироги?
-	AI_Output(other,self,"DIA_Thekla_Baker_01_08");	//К сожалению, нет.
-	AI_Output(self,other,"DIA_Thekla_Baker_01_09");	//Вот...(улыбаясь) Когда научишься, тогда я и позволю тебе ею пользоваться.
+	AI_Output (other, self, " DIA_Thekla_Baker_01_00 " );	// Is this your oven?
+	AI_Output(self,other,"DIA_Thekla_Baker_01_01");	//Who else?
+	AI_Output (other, self, " DIA_Thekla_Baker_01_02 " );	// And what do you cook in it?
+	AI_Output (self, other, " DIA_Thekla_Baker_01_03 " );	// I usually bake bread and cakes. But you can also fry meat in it, if necessary.
+	AI_Output (other, self, " DIA_Thekla_Baker_01_04 " );	// Can I use it?
+	AI_Output (self, other, " DIA_Thekla_Baker_01_05 " );	// You can. But only if I'm sure you won't ruin it.
+	AI_Output (other, self, " DIA_Thekla_Baker_01_06 " );	// And how can I convince you of this?
+	AI_Output (self, other, " DIA_Thekla_Baker_01_07 " );	// Well, for example ... (thoughtfully) Tell me, can you bake pies?
+	AI_Output (other, self, " DIA_Thekla_Baker_01_08 " );	// Unfortunately not.
+	AI_Output (self, other, " DIA_Thekla_Baker_01_09 " );	// Here ... (smiling) When you learn, then I'll let you use it.
 };
 
-instance DIA_Thekla_BakerDo(C_Info)
+instance DIA_Thekla_BakerDo (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 3;
+	No. = 3 ;
 	condition = DIA_Thekla_BakerDo_Condition;
 	information = DIA_Thekla_BakerDo_Info;
-	permanent = FALSE;
-	description = "А ты меня можешь научить печь пироги?";
+	permanent = FALSE ;
+	description = " Can you teach me how to bake pies? " ;
 };
 
-func int DIA_Thekla_BakerDo_Condition()
+func int DIA_Thekla_BakerDo_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Thekla_Baker) == TRUE)
 	{
@@ -114,23 +113,23 @@ func int DIA_Thekla_BakerDo_Condition()
 	};
 };
 
-func void DIA_Thekla_BakerDo_Info()
+func void DIA_Thekla_BakerDo_Info ()
 {
-	AI_Output(other,self,"DIA_Thekla_BakerDo_01_00");	//А меня ты можешь научить печь пироги?
-	AI_Output(self,other,"DIA_Thekla_BakerDo_01_01");	//Конечно. Но не за спасибо. Также тебе понадобится некоторый опыт в кулинарном деле.
+	AI_Output (other, self, " DIA_Thekla_BakerDo_01_00 " );	// Can you teach me how to bake pies?
+	AI_Output (self, other, " DIA_Thekla_BakerDo_01_01 " );	// Of course. But not for nothing. You will also need some culinary experience.
 	TheklaTeachMe = TRUE;
 	Log_CreateTopic(TOPIC_COOK,LOG_NOTE);
-	B_LogEntry(TOPIC_COOK,"Текла может научить меня печь пироги.");
+	B_LogEntry ( TOPIC_COOK , " Tekla can teach me how to bake pies. " );
 };
 
 instance DIA_Thekla_TeachCookDone(C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 6;
+	No. = 6 ;
 	condition = DIA_Thekla_TeachCookDone_Condition;
 	information = DIA_Thekla_TeachCookDone_Info;
 	permanent = TRUE;
-	description = "Научи меня печь пироги.";
+	description = " Teach me to bake pies. " ;
 };
 
 func int DIA_Thekla_TeachCookDone_Condition()
@@ -153,32 +152,32 @@ func int DIA_Thekla_TeachCookDone_Condition()
 
 func void DIA_Thekla_TeachCookDone_Info()
 {
-	AI_Output(other,self,"DIA_Thekla_TeachCookDone_01_00");	//Научи меня печь пироги.
-	AI_Output(self,other,"DIA_Thekla_TeachCookDone_01_01");	//Так...(вытирая руки) И что ты хочешь испечь?
+	AI_Output (other, self, " DIA_Thekla_TeachCookDone_01_00 " );	// Teach me to bake pies.
+	AI_Output (self, other, " DIA_Thekla_TeachCookDone_01_01 " );	// So ... (wiping his hands) What do you want to bake?
 	Info_ClearChoices(DIA_Thekla_TeachCookDone);
 	Info_AddChoice(DIA_Thekla_TeachCookDone,Dialog_Back,DIA_Thekla_TeachCookDone_back);
 
 	if(Thekla_Cake_01 == FALSE)
 	{
-		Info_AddChoice(DIA_Thekla_TeachCookDone,"Яблочный пирог (Очки обучения: 1, Цена: 250 монет)",DIA_Thekla_TeachCookDone_Apple);
+		Info_AddChoice (DIA_Thekla_TeachCookDone, " Apple Pie (Learning Points: 1, Price: 250 Coins) " , DIA_Thekla_TeachCookDone_Apple);
 	};
 	if((Thekla_Cake_01 == TRUE) && (Thekla_Cake_02 == FALSE))
 	{
-		Info_AddChoice(DIA_Thekla_TeachCookDone,"Мясной пирог (Очки обучения: 3, Цена: 500 монет)",DIA_Thekla_TeachCookDone_Meat);
+		Info_AddChoice (DIA_Thekla_TeachCookDone, " Meat Pie (Learning Points: 3, Price: 500 Coins) " , DIA_Thekla_TeachCookDone_Meat);
 	};
 	if((Thekla_Cake_01 == TRUE) && (Thekla_Cake_03 == FALSE))
 	{
-		Info_AddChoice(DIA_Thekla_TeachCookDone,"Грибной пирог (Очки обучения: 3, Цена: 750 монет)",DIA_Thekla_TeachCookDone_Mushroom);
+		Info_AddChoice (DIA_Thekla_TeachCookDone, " Mushroom Pie (Learning Points: 3, Cost: 750 Coins) " , DIA_Thekla_TeachCookDone_Mushroom);
 	};
 	if((Thekla_Cake_01 == TRUE) && (Thekla_Cake_04 == FALSE))
 	{
-		Info_AddChoice(DIA_Thekla_TeachCookDone,"Рыбный пирог (Очки обучения: 3, Цена: 1000 монет)",DIA_Thekla_TeachCookDone_Fish);
+		Info_AddChoice (DIA_Thekla_TeachCookDone, " Fish Pie (Learning Points: 3, Price: 1000 Coins) " , DIA_Thekla_TeachCookDone_Fish);
 	};
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR) || (other.guild == GIL_NOV) || (other.guild == GIL_NDW) || (other.guild == GIL_NDM))
 	{
 		if((Thekla_Cake_01 == TRUE) && (Thekla_Cake_03 == TRUE) && (Thekla_Cake_05 == FALSE))
 		{
-			Info_AddChoice(DIA_Thekla_TeachCookDone,"Медовый пирог (Очки обучения: 5, Цена: 1500 монет)",DIA_Thekla_TeachCookDone_Honey);
+			Info_AddChoice (DIA_Thekla_TeachCookDone, " Honey Pie (Learning Points: 5, Price: 1500 coins) " , DIA_Thekla_TeachCookDone_Honey);
 		};
 	};
 };
@@ -190,18 +189,18 @@ func void DIA_Thekla_TeachCookDone_back()
 
 func void DIA_Thekla_TeachCookDone_Apple()
 {
-	AI_Output(other,self,"DIA_Thekla_TeachCookDone_Apple_01_00");	//Научи меня печь яблочный пирог.
+	AI_Output (other, self, " DIA_Thekla_TeachCookDone_Apple_01_00 " );	// Teach me to bake an apple pie.
 
 	if((Npc_HasItems(hero,ItMi_Gold) >= 250) && (hero.lp >= 1))
 	{
 		hero.lp = hero.lp - 1;
 		Npc_RemoveInvItems(hero,ItMi_Gold,250);
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Apple_01_01");	//Тебе понадобится двадцать пять яблок, пять кусков хлеба, кусок сыра, серафис и бутылка чистой воды.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Apple_01_02");	//Делаешь из яблок пюре, замешиваешь его с хлебом, добавляешь тертый сыр и приправляешь серафисом.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Apple_01_03");	//Ставишь все в печь, и через несколько минут пирог готов!
-		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Apple_01_04");	//Благодарю.
-		AI_Print("Изучен рецепт готовки еды - 'Яблочный пирог'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить яблочный пирог. Для этого мне понадобится: двадцать пять яблок, пять кусков хлеба, кусок сыра, серафис и бутылка чистой воды.");
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Apple_01_01 " );	// You will need twenty-five apples, five slices of bread, a piece of cheese, a seraphis, and a bottle of clean water.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Apple_01_02 " );	// You make puree from apples, knead it with bread, add grated cheese and season with seraphis.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Apple_01_03 " );	// You put everything in the oven, and in a few minutes the pie is ready!
+		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Apple_01_04");	//Thank you.
+		AI_Print ( " Learned recipe for cooking - 'Apple Pie' " );
+		B_LogEntry ( TOPIC_COOK , " Now I can make an apple pie. For this I need: twenty-five apples, five slices of bread, a piece of cheese, a seraphis and a bottle of clean water. " );
 		Snd_Play("LevelUP");
 		Thekla_Cake_01 = TRUE;
 		Thekla_Areed = TRUE;
@@ -210,13 +209,13 @@ func void DIA_Thekla_TeachCookDone_Apple()
 	{
 		if(Npc_HasItems(hero,ItMi_Gold) < 250)
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Apple_01_05");	//Извини, но бесплатно я этого делать не стану.
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Apple_01_06");	//Сначала принеси золото.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Apple_01_05 " );	// Sorry, but I won't do this for free.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Apple_01_06 " );	// Bring the gold first.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Apple_01_07");	//Извини, но тебе не хватает для этого опыта.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Apple_01_07 " );	// Sorry, but you don't have enough experience for this.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		};
 	};
@@ -224,18 +223,18 @@ func void DIA_Thekla_TeachCookDone_Apple()
 
 func void DIA_Thekla_TeachCookDone_Meat()
 {
-	AI_Output(other,self,"DIA_Thekla_TeachCookDone_Meat_01_00");	//Научи меня печь мясной пирог.
+	AI_Output (other, self, " DIA_Thekla_TeachCookDone_Meat_01_00 " );	// Teach me to bake a meat pie.
 
 	if((Npc_HasItems(hero,ItMi_Gold) >= 500) && (hero.lp >= 3))
 	{
 		hero.lp = hero.lp - 3;
 		Npc_RemoveInvItems(hero,ItMi_Gold,500);
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Meat_01_01");	//Тебе понадобится двадцать пять кусков сырого мяса, пять кусков хлеба, две бутылки молока, бутылка шнапса и два куска сыра.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Meat_01_02");	//Делаешь из мяса молочный фарш, замешиваешь его с хлебом и добавляешь немного шнапса для привкуса.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Meat_01_03");	//Потом ставишь все в печь, и через несколько минут пирог готов.
-		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Meat_01_04");	//Благодарю.
-		AI_Print("Изучен рецепт готовки еды - 'Мясной пирог'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить мясной пирог. Для этого мне понадобится: двадцать пять кусков сырого мяса, пять кусков хлеба, две бутылки молока, бутылка шнапса и два куска сыра.");
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Meat_01_01 " );	// You will need twenty-five pieces of raw meat, five pieces of bread, two bottles of milk, a bottle of schnapps, and two pieces of cheese.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Meat_01_02 " );	// You make minced milk from the meat, knead it with bread and add some schnapps for flavor.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Meat_01_03 " );	// Then you put everything in the oven, and in a few minutes the pie is ready.
+		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Meat_01_04");	//Thank you.
+		AI_Print ( " Meal recipe studied - 'Meat Pie' " );
+		B_LogEntry ( TOPIC_COOK , " Now I can make a meat pie. For this I need: twenty-five pieces of raw meat, five pieces of bread, two bottles of milk, a bottle of schnapps and two pieces of cheese. " );
 		Snd_Play("LevelUP");
 		Thekla_Cake_02 = TRUE;
 		Thekla_Areed = TRUE;
@@ -244,13 +243,13 @@ func void DIA_Thekla_TeachCookDone_Meat()
 	{
 		if(Npc_HasItems(hero,ItMi_Gold) < 500)
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Meat_01_05");	//Извини, но бесплатно я этого делать не стану.
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Meat_01_06");	//Сначала принеси золото.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Meat_01_05 " );	// Sorry, but I won't do this for free.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Meat_01_06 " );	// Bring the gold first.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Meat_01_07");	//Извини, но тебе не хватает для этого опыта.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Meat_01_07 " );	// Sorry, but you don't have enough experience for this.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		};
 	};
@@ -258,18 +257,18 @@ func void DIA_Thekla_TeachCookDone_Meat()
 
 func void DIA_Thekla_TeachCookDone_Mushroom()
 {
-	AI_Output(other,self,"DIA_Thekla_TeachCookDone_Mushroom_01_00");	//Научи меня печь грибной пирог.
+	AI_Output (other, self, " DIA_Thekla_TeachCookDone_Mushroom_01_00 " );	// Teach me to bake a mushroom pie.
 
 	if((Npc_HasItems(hero,ItMi_Gold) >= 750) && (hero.lp >= 3))
 	{
 		hero.lp = hero.lp - 3;
 		Npc_RemoveInvItems(hero,ItMi_Gold,500);
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Mushroom_01_01");	//Тебе понадобится двадцать пять мясных грибов, пять кусков хлеба, три куска сыра и бутылка вина.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Mushroom_01_02");	//Делаешь из грибов пасту, замешиваешь ее с хлебом, обкатываешь в сыре и добавляешь немного вина, чтобы отбить резкий привкус грибов.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Mushroom_01_03");	//Потом ставишь все в печь, и через несколько минут пирог готов.
-		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Mushroom_01_04");	//Благодарю.
-		AI_Print("Изучен рецепт готовки еды - 'Грибной пирог'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить грибной пирог. Для этого мне понадобится: двадцать пять мясных грибов, пять кусков хлеба, три куска сыра и бутылка вина.");
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Mushroom_01_01 " );	// You will need twenty-five meat mushrooms, five slices of bread, three slices of cheese, and a bottle of wine.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Mushroom_01_02 " );	// You make a mushroom paste, knead it with bread, roll it in cheese and add a little wine to disguise the harsh mushroom taste.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Mushroom_01_03 " );	// Then you put everything in the oven, and in a few minutes the pie is ready.
+		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Mushroom_01_04");	//Thank you.
+		AI_Print ( " Learned recipe for cooking - 'Mushroom Pie' " );
+		B_LogEntry ( TOPIC_COOK , " Now I can make a mushroom pie. For this I need: twenty-five meat mushrooms, five slices of bread, three slices of cheese and a bottle of wine. " );
 		Snd_Play("LevelUP");
 		Thekla_Cake_03 = TRUE;
 		Thekla_Areed = TRUE;
@@ -278,13 +277,13 @@ func void DIA_Thekla_TeachCookDone_Mushroom()
 	{
 		if(Npc_HasItems(hero,ItMi_Gold) < 750)
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Mushroom_01_05");	//Извини, но бесплатно я этого делать не стану.
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Mushroom_01_06");	//Сначала принеси золото.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Mushroom_01_05 " );	// Sorry, but I won't do this for free.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Mushroom_01_06 " );	// Bring the gold first.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Mushroom_01_07");	//Извини, но тебе не хватает для этого опыта.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Mushroom_01_07 " );	// Sorry, but you don't have enough experience for this.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		};
 	};
@@ -292,18 +291,18 @@ func void DIA_Thekla_TeachCookDone_Mushroom()
 
 func void DIA_Thekla_TeachCookDone_Fish()
 {
-	AI_Output(other,self,"DIA_Thekla_TeachCookDone_Fish_01_00");	//Научи меня печь рыбный пирог.
+	AI_Output (other, self, " DIA_Thekla_TeachCookDone_Fish_01_00 " );	// Teach me to bake a fish pie.
 
 	if((Npc_HasItems(hero,ItMi_Gold) >= 1000) && (hero.lp >= 3))
 	{
 		hero.lp = hero.lp - 3;
 		Npc_RemoveInvItems(hero,ItMi_Gold,1000);
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Fish_01_01");	//Тебе понадобится два десятка рыб, пять кусков хлеба, два серафиса и бутылка шнапса.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Fish_01_02");	//Делаешь из рыбы нарезку, добавляя туда толченый серафис, замешиваешь его с хлебом и заправляешь шнапсом.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Fish_01_03");	//Потом ставишь все в печь, и через несколько минут пирог готов.
-		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Fish_01_04");	//Благодарю.
-		AI_Print("Изучен рецепт готовки еды - 'Рыбный пирог'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить рыбный пирог. Для этого мне понадобится: два десятка рыб, пять кусков хлеба, два серафиса и бутылка шнапса.");
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Fish_01_01 " );	 // You will need two dozen fish, five slices of bread, two seraphises and a bottle of schnapps.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Fish_01_02 " );	 // You make slices of fish, add pounded seraphis there, knead it with bread and season with schnapps.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Fish_01_03 " );	// Then you put everything in the oven, and in a few minutes the pie is ready.
+		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Fish_01_04");	//Thank you.
+		AI_Print ( " Learned recipe for cooking food - 'Fish Pie' " );
+		B_LogEntry ( TOPIC_COOK , " Now I can make a fish pie. For this I need: two dozen fish, five slices of bread, two seraphises and a bottle of schnapps. " );
 		Snd_Play("LevelUP");
 		Thekla_Cake_04 = TRUE;
 		Thekla_Areed = TRUE;
@@ -312,13 +311,13 @@ func void DIA_Thekla_TeachCookDone_Fish()
 	{
 		if(Npc_HasItems(hero,ItMi_Gold) < 1000)
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Fish_01_05");	//Извини, но бесплатно я этого делать не стану.
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Fish_01_06");	//Сначала принеси золото.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Fish_01_05 " );	// Sorry, but I won't do this for free.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Fish_01_06 " );	// Bring the gold first.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Fish_01_07");	//Извини, но тебе не хватает для этого опыта.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Fish_01_07 " );	// Sorry, but you don't have enough experience for this.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		};
 	};
@@ -326,18 +325,18 @@ func void DIA_Thekla_TeachCookDone_Fish()
 
 func void DIA_Thekla_TeachCookDone_Honey()
 {
-	AI_Output(other,self,"DIA_Thekla_TeachCookDone_Honey_01_00");	//Научи меня печь медовый пирог.
+	AI_Output (other, self, " DIA_Thekla_TeachCookDone_Honey_01_00 " );	// Teach me to bake a honey cake.
 
 	if((Npc_HasItems(hero,ItMi_Gold) >= 1500) && (hero.lp >= 5))
 	{
 		hero.lp = hero.lp - 5;
 		Npc_RemoveInvItems(hero,ItMi_Gold,1500);
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Honey_01_01");	//Тебе понадобится пять горшков меда, пять кусков хлеба, три куска сыра, виноград, молоко и бутылка вина.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Honey_01_02");	//Замешиваешь молочный хлеб с медом и сыром, добавляешь туда виноградины и приправляешь вином.
-		AI_Output(self,other,"DIA_Thekla_TeachCookDone_Honey_01_03");	//Потом ставишь все в печь, и через несколько минут пирог готов.
-		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Honey_01_04");	//Благодарю.
-		AI_Print("Изучен рецепт готовки еды - 'Медовый пирог'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить медовый пирог. Для этого мне понадобится: пять горшков меда, пять кусков хлеба, три куска сыра, виноград, молоко и бутылка вина.");
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Honey_01_01 " );	// You will need five pots of honey, five slices of bread, three slices of cheese, grapes, milk and a bottle of wine.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Honey_01_02 " );	// Knead milk bread with honey and cheese, add grapes and season with wine.
+		AI_Output (self, other, " DIA_Thekla_TeachCookDone_Honey_01_03 " );	// Then you put everything in the oven, and in a few minutes the pie is ready.
+		AI_Output(other,self,"DIA_Thekla_TeachCookDone_Honey_01_04");	//Thank you.
+		AI_Print ( " Learned recipe for cooking - 'Honey Pie' " );
+		B_LogEntry ( TOPIC_COOK , " Now I can make a honey cake. For this I need: five pots of honey, five slices of bread, three slices of cheese, grapes, milk and a bottle of wine. " );
 		Snd_Play("LevelUP");
 		Thekla_Cake_05 = TRUE;
 		Thekla_Areed = TRUE;
@@ -346,13 +345,13 @@ func void DIA_Thekla_TeachCookDone_Honey()
 	{
 		if(Npc_HasItems(hero,ItMi_Gold) < 1500)
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Honey_01_05");	//Извини, но бесплатно я этого делать не стану.
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Honey_01_06");	//Сначала принеси золото.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Honey_01_05 " );	// Sorry, but I won't do this for free.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Honey_01_06 " );	// Bring the gold first.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Thekla_TeachCookDone_Honey_01_07");	//Извини, но тебе не хватает для этого опыта.
+			AI_Output (self, other, " DIA_Thekla_TeachCookDone_Honey_01_07 " );	// Sorry, but you don't have enough experience for this.
 			Info_ClearChoices(DIA_Thekla_TeachCookDone);
 		};
 	};
@@ -360,18 +359,18 @@ func void DIA_Thekla_TeachCookDone_Honey()
 
 var int Thekla_GaveStew;
 
-instance DIA_Thekla_Hunger(C_Info)
+instance DIA_Thekla_Hunger (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 3;
+	No. = 3 ;
 	condition = DIA_Thekla_Hunger_Condition;
 	information = DIA_Thekla_Hunger_Info;
-	permanent = FALSE;
-	description = "Я голоден!";
+	permanent = FALSE ;
+	description = " I'm hungry! " ;
 };
 
 
-func int DIA_Thekla_Hunger_Condition()
+func int DIA_Thekla_Hunger_Condition ()
 {
 	if(Thekla_GaveStew == FALSE)
 	{
@@ -379,61 +378,61 @@ func int DIA_Thekla_Hunger_Condition()
 	};
 };
 
-func void DIA_Thekla_Hunger_Info()
+func void DIA_Thekla_Hunger_Info ()
 {
-	AI_Output(other,self,"DIA_Thekla_Hunger_15_00");	//Я голоден!
+	AI_Output(other,self,"DIA_Thekla_Hunger_15_00");	//I'm hungry!
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Thekla_Hunger_17_01");	//Я не кормлю бродяг. Я кормлю только тех, кто работает.
-		AI_Output(self,other,"DIA_Thekla_Hunger_17_02");	//(презрительно) И этот сброд, наемников, конечно.
+		AI_Output (self, other, " DIA_Thekla_Hunger_17_01 " );	// I don't feed vagrants. I only feed those who work.
+		AI_Output (self, other, " DIA_Thekla_Hunger_17_02 " );	// (contemptuously) And this rabble of mercenaries, of course.
 	}
 	else if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Thekla_Hunger_17_03");	//Вот твоя еда.
+		AI_Output(self,other,"DIA_Thekla_Hunger_17_03");	//Here's your food.
 		B_GiveInvItems(self,other,ItFo_XPStew,1);
 		Thekla_GaveStew = TRUE;
 	}
 	else if(other.guild == GIL_MIL)
 	{
-		AI_Output(self,other,"DIA_Thekla_Hunger_17_04");	//Мы не обслуживаем здесь ополчение.
+		AI_Output (self, other, " DIA_Thekla_Hunger_17_04 " );	// We don't serve the militia here.
 	}
 	else if((other.guild == GIL_NOV) || (other.guild == GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Thekla_Hunger_17_05");	//Как я могу отказать в просьбе поверенному Инноса?
+		AI_Output (self, other, " DIA_Thekla_Hunger_17_05 " );	// How can I refuse a request to Innos's representative?
 		B_GiveInvItems(self,other,ItFo_XPStew,1);
 		Thekla_GaveStew = TRUE;
 	}
 	else if((other.guild == GIL_NDW) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Thekla_Hunger_17_06");	//Как я могу отказать в просьбе поверенному Аданоса?
+		AI_Output (self, other, " DIA_Thekla_Hunger_17_06 " );	// How can I refuse a request to Adanos' representative?
 		B_GiveInvItems(self,other,ItFo_XPStew,1);
 		Thekla_GaveStew = TRUE;
 	}
 	else if((other.guild == GIL_NDM) || (other.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Thekla_Hunger_17_07");	//Вот...(дрожащими руками)
+		AI_Output(self,other,"DIA_Thekla_Hunger_17_07");	//Here...(with trembling hands)
 		B_GiveInvItems(self,other,ItFo_XPStew,1);
 		Thekla_GaveStew = TRUE;
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Thekla_Hunger_17_01");	//Я не кормлю бродяг. Я кормлю только тех, кто работает.
+		AI_Output (self, other, " DIA_Thekla_Hunger_17_01 " );	// I don't feed vagrants. I only feed those who work.
 	};
 };
 
 
-instance DIA_Thekla_Arbeit(C_Info)
+instance DIA_Thekla_Arbeit (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 4;
+	No. = 4 ;
 	condition = DIA_Thekla_Arbeit_Condition;
 	information = DIA_Thekla_Arbeit_Info;
-	permanent = FALSE;
-	description = "Я ищу работу.";
+	permanent = FALSE ;
+	description = " I am looking for a job. " ;
 };
 
 
-func int DIA_Thekla_Arbeit_Condition()
+func int DIA_Thekla_Arbeit_Condition ()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -441,22 +440,22 @@ func int DIA_Thekla_Arbeit_Condition()
 	};
 };
 
-func void DIA_Thekla_Arbeit_Info()
+func void DIA_Thekla_Arbeit_Info ()
 {
-	AI_Output(other,self,"DIA_Thekla_Arbeit_15_00");	//Я ищу работу...
-	AI_Output(self,other,"DIA_Thekla_Arbeit_17_01");	//Ты хочешь работать здесь, на ферме?
-	AI_Output(self,other,"DIA_Thekla_Arbeit_17_02");	//Этот вопрос может решить только Онар. Эта ферма его, как и вся долина.
+	AI_Output (other, self, " DIA_Thekla_Arbeit_15_00 " );	// I'm looking for a job ...
+	AI_Output (self, other, " DIA_Thekla_Arbeit_17_01 " );	// Do you want to work here on the farm?
+	AI_Output (self, other, " DIA_Thekla_Arbeit_17_02 " );	// Only Onar can give you a job. This farm is his, like the whole valley.
 };
 
 
 instance DIA_Thekla_WannaJoin(C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 5;
+	No. = 5 ;
 	condition = DIA_Thekla_WannaJoin_Condition;
 	information = DIA_Thekla_WannaJoin_Info;
-	permanent = FALSE;
-	description = "Вообще-то я планировал присоединиться к наемникам...";
+	permanent = FALSE ;
+	description = " Actually, I was planning to join the mercenaries ... " ;
 };
 
 
@@ -470,24 +469,24 @@ func int DIA_Thekla_WannaJoin_Condition()
 
 func void DIA_Thekla_WannaJoin_Info()
 {
-	AI_Output(other,self,"DIA_Thekla_WannaJoin_15_00");	//Вообще-то я планировал присоединиться к наемникам...
-	AI_Output(self,other,"DIA_Thekla_WannaJoin_17_01");	//Так ты тоже преступник из колонии?
-	AI_Output(self,other,"DIA_Thekla_WannaJoin_17_02");	//Я могла бы догадаться! Оставь меня в покое! Здесь вашего брата уже и так хватает!
+	AI_Output (other, self, " DIA_Thekla_WannaJoin_15_00 " );	// Actually, I was planning to join the mercenaries ...
+	AI_Output (self, other, " DIA_Thekla_WannaJoin_17_01 " );	// So you are also a criminal from the colony?
+	AI_Output (self, other, " DIA_Thekla_WannaJoin_17_02 " );	// I could have guessed! Leave me alone! There is already enough of your kind around here!
 };
 
 
-instance DIA_Thekla_Schlafen(C_Info)
+instance DIA_Thekla_Schlafen (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 6;
+	No. = 6 ;
 	condition = DIA_Thekla_Schlafen_Condition;
 	information = DIA_Thekla_Schlafen_Info;
-	permanent = FALSE;
-	description = "Где тут можно поспать?";
+	permanent = FALSE ;
+	description = " Where can I sleep here? " ;
 };
 
 
-func int DIA_Thekla_Schlafen_Condition()
+func int DIA_Thekla_Schlafen_Condition ()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -495,21 +494,21 @@ func int DIA_Thekla_Schlafen_Condition()
 	};
 };
 
-func void DIA_Thekla_Schlafen_Info()
+func void DIA_Thekla_Schlafen_Info ()
 {
-	AI_Output(other,self,"DIA_Thekla_Schlafen_15_00");	//Где тут можно поспать?
-	AI_Output(self,other,"DIA_Thekla_Schlafen_17_01");	//Даже не думай спать в моей кухне. Найди себе место в сарае.
+	AI_Output (other, self, " DIA_Thekla_Schlafen_15_00 " );	// Where can I sleep here?
+	AI_Output (self, other, " DIA_Thekla_Schlafen_17_01 " );	// Don't even think about sleeping in my kitchen. Find yourself a place in the barn.
 };
 
 
 instance DIA_Thekla_Problem(C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 7;
+	No. = 7 ;
 	condition = DIA_Thekla_Problem_Condition;
 	information = DIA_Thekla_Problem_Info;
-	permanent = FALSE;
-	description = "Почему ты не любишь наемников?";
+	permanent = FALSE ;
+	description = " Why don't you like mercenaries? " ;
 };
 
 
@@ -523,26 +522,26 @@ func int DIA_Thekla_Problem_Condition()
 
 func void DIA_Thekla_Problem_Info()
 {
-	AI_Output(other,self,"DIA_Thekla_Problem_15_00");	//Почему ты не любишь наемников?
-	AI_Output(self,other,"DIA_Thekla_Problem_17_01");	//Ах, эти кретины действуют мне на нервы! Особенно Сильвио и его жирный приятель Булко.
-	AI_Output(self,other,"DIA_Thekla_Problem_17_02");	//Эти двое сидят вон там, в углу, целыми днями напролет и отравляют мне жизнь.
-	AI_Output(self,other,"DIA_Thekla_Problem_17_03");	//То суп им слишком горячий, то мясо слишком жесткое, ну и все тому подобное...
+	AI_Output (other, self, " DIA_Thekla_Problem_15_00 " );	// Why don't you like mercenaries?
+	AI_Output (self, other, " DIA_Thekla_Problem_17_01 " );	// Ah, these cretins get on my nerves! Especially Silvio and his fat buddy Bulko.
+	AI_Output (self, other, " DIA_Thekla_Problem_17_02 " );	// Those two sit over there in the corner all day long and complicate my life.
+	AI_Output (self, other, " DIA_Thekla_Problem_17_03 " );	// The soup is too hot for them, the meat is too tough, and so on ...
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(other,self,"DIA_Thekla_Problem_15_04");	//А почему ты ничего не делаешь с этим?
-		AI_Output(self,other,"DIA_Thekla_Problem_17_05");	//А что я могу сделать, мистер Остряк-Самоучка? Врезать им своей скалкой? Да, с фермерами это проходит, но ведь эти ублюдки недолго думая ответят мечом!
+		AI_Output (other, self, " DIA_Thekla_Problem_15_04 " );	// Why don't you do anything about it?
+		AI_Output (self, other, " DIA_Thekla_Problem_17_05 " );	// What can I do, Mr. Meat-pie-for-brains? Hit them with my rolling pin? They'll kill me!
 	};
 };
 
 
-instance DIA_Thekla_Manieren(C_Info)
+instance DIA_Thekla_Manieren (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 7;
+	No. = 7 ;
 	condition = DIA_Thekla_Manieren_Condition;
 	information = DIA_Thekla_Manieren_Info;
-	permanent = FALSE;
-	description = "Хочешь, я научу этих двоих хорошим манерам?";
+	permanent = FALSE ;
+	description = " Do you want me to teach those two some manners? " ;
 };
 
 
@@ -556,20 +555,20 @@ func int DIA_Thekla_Manieren_Condition()
 
 func void DIA_Thekla_Manieren_Info()
 {
-	AI_Output(other,self,"DIA_Thekla_Manieren_15_00");	//Хочешь, я научу этих двоих хорошим манерам?
-	AI_Output(self,other,"DIA_Thekla_Manieren_17_01");	//Тебе лучше не связываться с ними. Как я знаю, у Сильвио магические доспехи. Его нельзя победить.
-	AI_Output(other,self,"DIA_Thekla_Manieren_15_02");	//А что насчет Булко?
-	AI_Output(self,other,"DIA_Thekla_Manieren_17_03");	//Этот парень силен как бык. Пока он легко справлялся со всеми, кто пытался выступить против него или Сильвио.
+	AI_Output (other, self, " DIA_Thekla_Manieren_15_00 " );	// Do you want me to teach those two some manners?
+	AI_Output (self, other, " DIA_Thekla_Manieren_17_01 " );	// You better not mess with them. As far as I know, Silvio has magic armor. He cannot be defeated.
+	AI_Output (other, self, " DIA_Thekla_Manieren_15_02 " );	// What about Bulko?
+	AI_Output (self, other, " DIA_Thekla_Manieren_17_03 " );	// This guy is strong as a bull. He easily deals with everyone who tries to oppose him or Silvio.
 };
 
 
 instance DIA_Thekla_AfterFight(C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 7;
+	No. = 7 ;
 	condition = DIA_Thekla_AfterFight_Condition;
 	information = DIA_Thekla_AfterFight_Info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 
@@ -586,30 +585,30 @@ func void DIA_Thekla_AfterFight_Info()
 {
 	if(Bullco.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
-		AI_Output(self,other,"DIA_Thekla_AfterFight_17_00");	//Ты действительно смог выбить дурь из этого Булко.
-		AI_Output(self,other,"DIA_Thekla_AfterFight_17_01");	//Должно быть, ты очень устал, пока молотил эту жирную свинью.
+		AI_Output (self, other, " DIA_Thekla_AfterFight_17_00 " );	// You really were able to beat the shit out of Bulko.
+		AI_Output (self, other, " DIA_Thekla_AfterFight_17_01 " );	// You must be very tired from thrashing that fat pig.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Thekla_AfterFight_17_02");	//Ну что, получил по полной программе?
-		AI_Output(self,other,"DIA_Thekla_AfterFight_17_03");	//Я же тебя предупреждала! Теперь ты понимаешь, что я имела в виду?
-		AI_Output(other,self,"DIA_Thekla_AfterFight_15_04");	//Я рад, что доставил этим тебе удовольствие.
-		AI_Output(self,other,"DIA_Thekla_AfterFight_17_05");	//Не расстраивайся так. Ты далеко не первый, кто пострадал от этой сволочи.
+		AI_Output (self, other, " DIA_Thekla_AfterFight_17_02 " );	// Well, had enough?
+		AI_Output (self, other, " DIA_Thekla_AfterFight_17_03 " );	// I warned you! Now do you understand what I mean?
+		AI_Output (other, self, " DIA_Thekla_AfterFight_15_04 " );	// I'm glad I gave you a show.
+		AI_Output (self, other, " DIA_Thekla_AfterFight_17_05 " );	// Don't sulk. You are far from the first one to be beaten by this bastard.
 	};
-	AI_Output(self,other,"DIA_Thekla_AfterFight_17_06");	//Вот, поешь немного. Это восстановит твои силы.
+	AI_Output (self, other, " DIA_Thekla_AfterFight_17_06 " );	// Here, eat a little. It will help you feel better.
 	B_GiveInvItems(self,other,ItFo_XPStew,1);
 	Thekla_GaveStew = TRUE;
 };
 
 
-instance DIA_Thekla_SagittaPaket(C_Info)
+instance DIA_Thekla_SagittaPackage (C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 4;
+	No. = 4 ;
 	condition = DIA_Thekla_SagittaPaket_Condition;
-	information = DIA_Thekla_SagittaPaket_Info;
+	information = DIA_Thekla_SagittaPackage_Info;
 	permanent = TRUE;
-	description = "Вот пакет от Сагитты.";
+	description = " Here is a package from Sagitta. " ;
 };
 
 
@@ -625,9 +624,9 @@ func void DIA_Thekla_SagittaPaket_Info()
 {
 	B_GiveInvItems(other,self,ItMi_TheklasPaket,1);
 	Npc_RemoveInvItems(self,ItMi_TheklasPaket,1);
-	AI_Output(other,self,"DIA_Thekla_SagittaPaket_15_00");	//Вот пакет от Сагитты.
-	AI_Output(self,other,"DIA_Thekla_SagittaPaket_17_01");	//Огромное спасибо! От тебя есть хоть какая-то польза в отличие от других.
-	MIS_Thekla_Paket = LOG_SUCCESS;
+	AI_Output (other, self, " DIA_Thekla_SagittaPaket_15_00 " );	// Here is the package from Sagitta.
+	AI_Output (self, other, " DIA_Thekla_SagittaPaket_17_01 " );	// Thanks a lot! You at least mean something to us, unlike these other layabouts.
+	MIS_Thekla_Paket = LOG_SUCCESS ;
 	B_GivePlayerXP(XP_TheklasPaket);
 };
 
@@ -639,11 +638,11 @@ var int Thekla_MehrEintopfKap5;
 instance DIA_Thekla_PERM(C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 900;
+	NO = 900 ;
 	condition = DIA_Thekla_PERM_Condition;
 	information = DIA_Thekla_PERM_Info;
 	permanent = TRUE;
-	description = "Ты мне не дашь еще своей похлебки?";
+	description = " Can you give me some stew yet? " ;
 };
 
 
@@ -657,77 +656,77 @@ func int DIA_Thekla_PERM_Condition()
 
 func void DIA_Thekla_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Thekla_PERM_15_00");	//Ты мне не дашь еще своей похлебки?
+	AI_Output (other, self, " DIA_Thekla_PERM_15_00 " );	// Won't you give me some stew yet?
 
-	if(MIS_Thekla_Paket == FALSE)
+	if (MIS_Thekla_Paket ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Thekla_PERM_17_01");	//Она закончилась.
-		AI_Output(other,self,"DIA_Thekla_PERM_15_02");	//Не осталось даже маленькой миски?
-		AI_Output(self,other,"DIA_Thekla_PERM_17_03");	//Нет.
-		AI_Output(other,self,"DIA_Thekla_PERM_15_04");	//А могу облизать горшок, а?
-		AI_Output(self,other,"DIA_Thekla_PERM_17_05");	//Прекрати!
-		AI_Output(self,other,"DIA_Thekla_PERM_17_06");	//Если тебе так понравилась моя похлебка, тебе придется сделать кое-что, чтобы получить ее.
-		AI_Output(other,self,"DIA_Thekla_PERM_15_07");	//Что?
-		AI_Output(self,other,"DIA_Thekla_PERM_17_08");	//Сходи к Сагитте, знахарке, что живет за фермой Секоба, и принеси мне от нее пакет с травой.
-		AI_Output(self,other,"DIA_Thekla_PERM_17_09");	//Если ты принесешь мне эти травы, я сварю похлебку для тебя.
+		AI_Output (self, other, " DIA_Thekla_PERM_17_01 " );	// It's all gone.
+		AI_Output (other, self, " DIA_Thekla_PERM_15_02 " );	// Not even a small bowl left?
+		AI_Output(self,other,"DIA_Thekla_PERM_17_03");	//Nope.
+		AI_Output (other, self, " DIA_Thekla_PERM_15_04 " );	// Can I lick the pot, then?
+		AI_Output(self,other,"DIA_Thekla_PERM_17_05");	//Stop!
+		AI_Output (self, other, " DIA_Thekla_PERM_17_06 " );	// If you like my stew so much, you have to do something to get it.
+		AI_Output(other,self,"DIA_Thekla_PERM_15_07");	//What?
+		AI_Output (self, other, " DIA_Thekla_PERM_17_08 " );	// Go to Sagitta, the healer who lives behind Secoba's farm, and bring me a bag of herbs from her.
+		AI_Output (self, other, " DIA_Thekla_PERM_17_09 " );	// If you bring me the herbs, I will make some stew for you.
 		MIS_Thekla_Paket = LOG_Running;
 		Log_CreateTopic(TOPIC_TheklaEintopf,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_TheklaEintopf,LOG_Running);
-		B_LogEntry(TOPIC_TheklaEintopf,"Если я принесу Текле травы от знахарки Сагитты, она сварит еще одну похлебку для меня. Сагитта живет за фермой Секоба.");
+		B_LogEntry (TOPIC_TheklaEintopf, " If I bring Tekla some herbs from the healer Sagitta, she will cook another stew for me. Sagitta lives behind Sekoba's farm. " );
 	}
-	else if(MIS_Thekla_Paket == LOG_SUCCESS)
+	else  if (MIS_Thekla_Paket ==  LOG_SUCCESS )
 	{
 		if(Kapitel <= 2)
 		{
-			if(Thekla_MehrEintopfKap1 == FALSE)
+			if (Thekla_MehrEintopfKap1 ==  FALSE )
 			{
-				AI_Output(self,other,"DIA_Thekla_PERM_17_10");	//Хорошо. Я сжалюсь над тобой. Вот, держи. Не могу смотреть, как ты умираешь от голода у меня на глазах.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_10 " );	// Good. I feel sorry for you. Here you are. I can't watch you starving to death in front of my eyes.
 				B_GiveInvItems(self,other,ItFo_XPStew,1);
-				Thekla_MehrEintopfKap1 = TRUE;
+				Thekla_MehrEintopfKap1 = TRUE ;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Thekla_PERM_17_11");	//Эй, эй, эй! Не будь таким жадным! Я дам тебе знать, если у меня найдется еще работа для тебя.
-				AI_Output(self,other,"DIA_Thekla_PERM_17_12");	//И ТОГДА ты получишь еще этой похлебки, понятно?
+				AI_Output (self, other, " DIA_Thekla_PERM_17_11 " );	// Hey hey hey! Don't be so greedy! I'll let you know if I have more work for you.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_12 " );	// AND THEN you'll get more of this stew, okay?
 			};
 		};
-		if((Kapitel == 3) || (Kapitel == 4))
+		if ((Chapter ==  3 ) || (Chapter ==  4 ))
 		{
 			if((Thekla_MehrEintopfKap3 == FALSE) && (MIS_RescueBennet == LOG_SUCCESS))
 			{
-				AI_Output(self,other,"DIA_Thekla_PERM_17_13");	//Я слышала, ты помог Беннету выбраться из тюрьмы. Отличная работа, парень.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_13 " );	// I heard you helped Bennett get out of jail. Great job, boy.
 				B_GiveInvItems(self,other,ItFo_XPStew,1);
-				Thekla_MehrEintopfKap3 = TRUE;
+				Thekla_MehrEintopfKap3 = TRUE ;
 			}
 			else if(MIS_RescueBennet != LOG_SUCCESS)
 			{
-				AI_Output(self,other,"DIA_Thekla_PERM_17_14");	//Эти ублюдки из ополчения бросили Беннета за решетку.
-				AI_Output(self,other,"DIA_Thekla_PERM_17_15");	//Окажи мне услугу, вызволи его оттуда, хорошо? А тем временем я сварю для тебя очень вкусную похлебку.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_14 " );	// Those militia bastards threw Bennett behind bars.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_15 " );	// Do me a favor, get him out of there, okay? In the meantime, I’ll cook a delicious stew for you.
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Thekla_PERM_17_16");	//У меня ничего не осталось. Заходи позже.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_16 " );	// I have nothing left. Come back later.
 			};
 		};
 		if(Kapitel >= 5)
 		{
-			if(Thekla_MehrEintopfKap5 == FALSE)
+			if (Thekla_MehrEintopfKap5 ==  FALSE )
 			{
-				AI_Output(self,other,"DIA_Thekla_PERM_17_17");	//Ты что, всегда такой голодный? А что ты делал все это время?
-				AI_Output(other,self,"DIA_Thekla_PERM_15_18");	//Я прикончил нескольких драконов.
-				AI_Output(self,other,"DIA_Thekla_PERM_17_19");	//Ох! Тогда тебе действительно не повредит миска хорошей похлебки.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_17 " );	// Are you always so hungry? What have you been doing all this time?
+				AI_Output (other, self, " DIA_Thekla_PERM_15_18 " );	// I killed several dragons.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_19 " );	// Oh! I suppose that WOULD make you work up an appetite...
 				B_GiveInvItems(self,other,ItFo_XPStew,1);
-				Thekla_MehrEintopfKap5 = TRUE;
+				Thekla_MehrEintopfKap5 = TRUE ;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Thekla_PERM_17_20");	//Все! Похлебка вся закончилась.
+				AI_Output (self, other, " DIA_Thekla_PERM_17_20 " );	// The soup's all gone.
 			};
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Thekla_PERM_17_21");	//Нет трав, нет похлебки - понятно?
+		AI_Output (self, other, " DIA_Thekla_PERM_17_21 " );	// No herbs, no stew - okay?
 	};
 };
 
@@ -735,7 +734,7 @@ func void DIA_Thekla_PERM_Info()
 instance DIA_Thekla_PICKPOCKET(C_Info)
 {
 	npc = BAU_913_Thekla;
-	nr = 900;
+	NO = 900 ;
 	condition = DIA_Thekla_PICKPOCKET_Condition;
 	information = DIA_Thekla_PICKPOCKET_Info;
 	permanent = TRUE;
@@ -745,19 +744,19 @@ instance DIA_Thekla_PICKPOCKET(C_Info)
 
 func int DIA_Thekla_PICKPOCKET_Condition()
 {
-	return C_Beklauen(53,60);
+	return  C_Beklauen ( 53 , 60 );
 };
 
 func void DIA_Thekla_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Thekla_PICKPOCKET);
-	Info_AddChoice(DIA_Thekla_PICKPOCKET,Dialog_Back,DIA_Thekla_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Thekla_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Thekla_PICKPOCKET_DoIt);
+	Info_AddChoice (DIA_Thekla_PICKPOCKET, Dialog_Back, DIA_Thekla_PICKPOCKET_BACK);
+	Info_AddChoice (DIA_Thekla_PICKPOCKET, DIALOG_PICKPOCKET , DIA_Thekla_PICKPOCKET_DoIt);
 };
 
-func void DIA_Thekla_PICKPOCKET_DoIt()
+func void DIA_Thekla_PICKPOCKET_DoIt ()
 {
-	B_Beklauen();
+	B_Beklauen ();
 	Info_ClearChoices(DIA_Thekla_PICKPOCKET);
 };
 
@@ -765,4 +764,3 @@ func void DIA_Thekla_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Thekla_PICKPOCKET);
 };
-
