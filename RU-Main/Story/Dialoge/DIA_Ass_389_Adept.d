@@ -1,7 +1,7 @@
 instance DIA_Ass_389_Adept_EXIT(C_Info)
 {
 	npc = Ass_389_Adept;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Ass_389_Adept_exit_condition;
 	information = DIA_Ass_389_Adept_exit_info;
 	permanent = TRUE;
@@ -21,10 +21,10 @@ func void DIA_Ass_389_Adept_exit_info()
 instance DIA_Ass_389_Adept_Hello(C_Info)
 {
 	npc = Ass_389_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_389_Adept_hello_condition;
 	information = DIA_Ass_389_Adept_hello_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	important = TRUE;
 };
 	
@@ -35,9 +35,9 @@ func int DIA_Ass_389_Adept_hello_condition()
 	
 func void DIA_Ass_389_Adept_hello_info()
 {
-	AI_Output(self,other,"DIA_Ass_389_Adept_hello_01_01");	//Эй, брат. Нас прислал приор Осаир.
-	AI_Output(self,other,"DIA_Ass_389_Adept_hello_01_02");	//Отправляйся к нему и доложи, что шахта теперь под охраной.
-	B_LogEntry(TOPIC_PW_FollowGoldOre,"Я дождался людей Осаира. Все рабы целы, и можно отправляться обратно к приору с докладом.");
+	AI_Output (self, other, " DIA_Ass_389_Adept_hello_01_01 " );	// Hail brother. Prior Osair sent us.
+	AI_Output (self, other, " DIA_Ass_389_Adept_hello_01_02 " );	// Go to him and report that the mine is now under guard.
+	B_LogEntry (TOPIC_PW_FollowGoldOre, " I waited for Osair's people. All slaves are safe, and I can go back to the prior with a report. " );
 	self.npcType = NPCTYPE_AMBIENT;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(Ass_388_Adept,"GuardShaht");
