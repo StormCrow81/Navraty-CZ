@@ -3,7 +3,7 @@ const string Ass_395_CHECKPOINT = "PW_OSAIR_MEET_GUARD_05";
 instance DIA_Ass_395_Adept_EXIT(C_Info)
 {
 	npc = Ass_395_Adept;
-	nr = 999;
+	No. = 999 ;
 	condition = dia_Ass_395_Adept_exit_condition;
 	information = dia_Ass_395_Adept_exit_info;
 	permanent = TRUE;
@@ -24,7 +24,7 @@ func void dia_Ass_395_Adept_exit_info()
 instance DIA_Ass_395_Adept_FIRSTWARN(C_Info)
 {
 	npc = Ass_395_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = dia_Ass_395_Adept_firstwarn_condition;
 	information = dia_Ass_395_Adept_firstwarn_info;
 	permanent = TRUE;
@@ -41,14 +41,14 @@ func int dia_Ass_395_Adept_firstwarn_condition()
 
 func void dia_Ass_395_Adept_firstwarn_info()
 {
-	AI_Output(self,other,"DIA_Ass_395_Adept_FirstWarn_01_00");	//Стой, брат!  Дальше идти нельзя.
-	AI_Output(other,self,"DIA_Ass_395_Adept_FirstWarn_01_01");	//Это еще почему?
-	AI_Output(self,other,"DIA_Ass_395_Adept_FirstWarn_01_02");	//Приказ приора Осаира - никого не впускать в пещеру.
-	AI_Output(self,other,"DIA_Ass_395_Adept_FirstWarn_01_03");	//Так что лучше не искушай судьбу и уходи.
+	AI_Output (self, other, " DIA_Ass_395_Adept_FirstWarn_01_00 " );	// Stop, brother! You can't go further.
+	AI_Output(other,self,"DIA_Ass_395_Adept_FirstWarn_01_01");	//Why not?
+	AI_Output (self, other, " DIA_Ass_395_Adept_FirstWarn_01_02 " );	// Order of Prior Osair - we're to let no one into the cave.
+	AI_Output (self, other, " DIA_Ass_395_Adept_FirstWarn_01_03 " );	// So don't even try to get in, for your own sake.
 
 	if(MIS_HaniarSecret == LOG_Running)
 	{
-		B_LogEntry(TOPIC_HaniarSecret,"Люди Осаира заблокировали вход в подгорную пещеру. Должно быть, неспроста. Надо рассказать об этом Гонсалесу.");
+		B_LogEntry (TOPIC_HaniarSecret, " Osair's men blocked the entrance to the foothill cave. It must have been for a reason. I need to tell Gonzalez about this. " );
 	};
 
 	KnowPlaceMeeting = TRUE;
