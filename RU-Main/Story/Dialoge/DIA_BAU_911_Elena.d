@@ -1,8 +1,7 @@
-
 instance DIA_Elena_EXIT(C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Elena_EXIT_Condition;
 	information = DIA_Elena_EXIT_Info;
 	permanent = TRUE;
@@ -15,54 +14,54 @@ func int DIA_Elena_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Elena_EXIT_Info()
+func void DIA_Elena_EXIT_Info ()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Elena_HALLO(C_Info)
+instance DIA_Elena_HALLO (C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Elena_HALLO_Condition;
 	information = DIA_Elena_HALLO_Info;
-	permanent = FALSE;
-	description = "Привет, красавица.";
+	permanent = FALSE ;
+	description = " Hello, beautiful. " ;
 };
 
 
-func int DIA_Elena_HALLO_Condition()
+func int DIA_Elena_HALLO_Condition ()
 {
 	return TRUE;
 };
 
-func void DIA_Elena_HALLO_Info()
+func void DIA_Elena_HELLO_Info()
 {
-	AI_Output(other,self,"DIA_Elena_HALLO_15_00");	//Привет, красавица.
+	AI_Output (other, self, " DIA_Elena_HALLO_15_00 " );	// Hello, beautiful.
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Elena_HALLO_16_01");	//Хм. Откуда это ты сбежал?
+		AI_Output (self, other, " DIA_Elena_HALLO_16_01 " );	// Hmm. Where did you come from?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Elena_HALLO_16_02");	//Что тебе нужно?
+		AI_Output (self, other, " DIA_Elena_HALLO_16_02 " );	// What do you need?
 	};
 };
 
 
-instance DIA_Elena_Aufstand(C_Info)
+instance DIA_Elena_Aufstand (C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 2;
+	no. = 2 ;
 	condition = DIA_Elena_Aufstand_Condition;
 	information = DIA_Elena_Aufstand_Info;
-	permanent = FALSE;
-	description = "Говорят, что вы восстали против короля?";
+	permanent = FALSE ;
+	description = " They say you rebelled against the king? " ;
 };
 
 
-func int DIA_Elena_Aufstand_Condition()
+func int DIA_Elena_Aufstand_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Elena_HALLO))
 	{
@@ -70,29 +69,29 @@ func int DIA_Elena_Aufstand_Condition()
 	};
 };
 
-func void DIA_Elena_Aufstand_Info()
+func void DIA_Elena_Aufstand_Info ()
 {
-	AI_Output(other,self,"DIA_Elena_Aufstand_15_00");	//Говорят, что вы восстали против короля?
-	AI_Output(self,other,"DIA_Elena_Aufstand_16_01");	//Мой отец решил, что пришло время защищать себя самим.
+	AI_Output (other, self, " DIA_Elena_Aufstand_15_00 " );	// They say you rebelled against the king?
+	AI_Output (self, other, " DIA_Elena_Aufstand_16_01 " );	// My father decided it was time to defend himself.
 	if(other.guild != GIL_MIL)
 	{
-		AI_Output(self,other,"DIA_Elena_Aufstand_16_02");	//Ополчение никогда не помогало нам. Они приходили сюда только, чтобы забрать провизию.
+		AI_Output (self, other, " DIA_Elena_Aufstand_16_02 " );	// The militia never helped us. They only came here to pick up provisions.
 	};
 };
 
 
-instance DIA_Elena_Arbeit(C_Info)
+instance DIA_Elena_Arbeit (C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 3;
+	No. = 3 ;
 	condition = DIA_Elena_Arbeit_Condition;
-	information = DIA_Elena_Arbeit_Info;
-	permanent = FALSE;
-	description = "Здесь, на ферме, есть какая-нибудь работа?";
+	information = DIA_Elena_Work_Info;
+	permanent = FALSE ;
+	description = " Is there any work here on the farm? " ;
 };
 
 
-func int DIA_Elena_Arbeit_Condition()
+func int DIA_Elena_Arbeit_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Elena_HALLO) && (other.guild == GIL_NONE))
 	{
@@ -100,29 +99,29 @@ func int DIA_Elena_Arbeit_Condition()
 	};
 };
 
-func void DIA_Elena_Arbeit_Info()
+func void DIA_Elena_Arbeit_Info ()
 {
-	AI_Output(other,self,"DIA_Elena_Arbeit_15_00");	//Здесь, на ферме, есть какая-нибудь работа?
-	AI_Output(self,other,"DIA_Elena_Arbeit_16_01");	//Мой отец хорошо платит всем, кто помогает защищать ферму.
-	AI_Output(self,other,"DIA_Elena_Arbeit_16_02");	//Тебе это интересно? Ты не похож на человека, привычного к работе в поле.
-	AI_Output(other,self,"DIA_Elena_Arbeit_15_03");	//Сколько платит твой отец?
-	AI_Output(self,other,"DIA_Elena_Arbeit_16_04");	//Тебе лучше обсудить этот вопрос с ним.
-	AI_Output(self,other,"DIA_Elena_Arbeit_16_05");	//Я знаю только, что наемникам платят ежедневно.
+	AI_Output (other, self, " DIA_Elena_Arbeit_15_00 " );	// Is there any work here on the farm?
+	AI_Output (self, other, " DIA_Elena_Arbeit_16_01 " );	// My father pays well everyone who helps protect the farm.
+	AI_Output (self, other, " DIA_Elena_Arbeit_16_02 " );	// Are you interested in this? You don't look like a person used to working in the field.
+	AI_Output (other, self, " DIA_Elena_Arbeit_15_03 " );	// How much does your father pay?
+	AI_Output (self, other, " DIA_Elena_Arbeit_16_04 " );	// You'd better discuss this with him.
+	AI_Output (self, other, " DIA_Elena_Arbeit_16_05 " );	// All I know is that the mercenaries are paid daily.
 };
 
 
 instance DIA_Elena_Regeln(C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 4;
+	No. = 4 ;
 	condition = DIA_Elena_Regeln_Condition;
 	information = DIA_Elena_Regeln_Info;
-	permanent = FALSE;
-	description = "Здесь есть какие-нибудь правила, которых мне нужно придерживаться?";
+	permanent = FALSE ;
+	description = " Are there any rules that I need to follow? " ;
 };
 
 
-func int DIA_Elena_Regeln_Condition()
+func int DIA_Elena_Regeln_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Elena_HALLO) && (other.guild == GIL_NONE))
 	{
@@ -130,28 +129,28 @@ func int DIA_Elena_Regeln_Condition()
 	};
 };
 
-func void DIA_Elena_Regeln_Info()
+func void DIA_Elena_Regeln_Info ()
 {
-	AI_Output(other,self,"DIA_Elena_Regeln_15_00");	//Здесь есть какие-нибудь правила, которых мне нужно придерживаться?
-	AI_Output(self,other,"DIA_Elena_Regeln_16_01");	//Не трогай того, что тебе не принадлежит.
-	AI_Output(self,other,"DIA_Elena_Regeln_16_02");	//Не суй свой нос в чужие дела.
-	AI_Output(self,other,"DIA_Elena_Regeln_16_03");	//А если тебе хочется подраться, дерись с наемниками.
-	AI_Output(self,other,"DIA_Elena_Regeln_16_04");	//Если ты начнешь драку с фермером, все здесь будут против тебя.
+	AI_Output (other, self, " DIA_Elena_Regeln_15_00 " );	// Are there any rules here that I need to follow?
+	AI_Output (self, other, " DIA_Elena_Regeln_16_01 " );	// Don't touch what doesn't belong to you.
+	AI_Output (self, other, " DIA_Elena_Regeln_16_02 " );	// Don't stick your nose into other people's business.
+	AI_Output (self, other, " DIA_Elena_Regeln_16_03 " );	// And if you feel like fighting, fight the mercenaries.
+	AI_Output (self, other, " DIA_Elena_Regeln_16_04 " );	// If you start a fight with the farmers, everyone here will be against you.
 };
 
 
-instance DIA_Elena_AUFGABE(C_Info)
+instance DIA_Elena_AUFGABE (C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 5;
+	No. = 5 ;
 	condition = DIA_Elena_AUFGABE_Condition;
 	information = DIA_Elena_AUFGABE_Info;
-	permanent = FALSE;
-	description = "А чем ты занимаешься?";
+	permanent = FALSE ;
+	description = " What do you do? " ;
 };
 
 
-func int DIA_Elena_AUFGABE_Condition()
+func int DIA_Elena_AUFGABE_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Elena_HALLO))
 	{
@@ -159,13 +158,13 @@ func int DIA_Elena_AUFGABE_Condition()
 	};
 };
 
-func void DIA_Elena_AUFGABE_Info()
+func void DIA_Elena_AUFGABE_Info ()
 {
-	AI_Output(other,self,"DIA_Elena_AUFGABE_15_00");	//А чем ты занимаешься?
-	AI_Output(self,other,"DIA_Elena_AUFGABE_16_01");	//Я продаю то, что мы выращиваем на ферме. Если захочешь купить что-нибудь, дай мне знать.
-	AI_Output(self,other,"DIA_Elena_AUFGABE_16_02");	//Но я хочу предупредить тебя. Я не люблю торговаться и не потерплю воровства. Понятно?
+	AI_Output (other, self, " DIA_Elena_AUFGABE_15_00 " );	// What are you doing?
+	AI_Output (self, other, " DIA_Elena_AUFGABE_16_01 " );	// I sell what we grow on the farm. If you want to buy anything, let me know.
+	AI_Output (self, other, " DIA_Elena_AUFGABE_16_02 " );	// But I want to warn you. I do not like to bargain and will not tolerate theft. Clear?
 	Log_CreateTopic(Topic_SoldierTrader,LOG_NOTE);
-	B_LogEntry(Topic_SoldierTrader,"Елена продает товары на ферме Онара.");
+	B_LogEntry (Topic_SoldierTrader, " Elena sells goods at Onara 's farm. " );
 };
 
 
@@ -174,18 +173,18 @@ var int Elena_Trade_mit_mir;
 instance DIA_Elena_TRADE(C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 7;
+	No. = 7 ;
 	condition = DIA_Elena_TRADE_Condition;
 	information = DIA_Elena_TRADE_Info;
 	permanent = TRUE;
-	description = "Покажи мне свои товары! ";
+	description = " Show me your products! " ;
 	trade = TRUE;
 };
 
 
 func int DIA_Elena_TRADE_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Elena_AUFGABE) || (Elena_Trade_mit_mir == TRUE))
+	if (Npc_KnowsInfo (other, DIA_Elena_AUFGABE) || (Elena_Trade_mit_mir ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -198,8 +197,8 @@ func void DIA_Elena_TRADE_Info()
 		AI_Standup(self);
 		AI_TurnToNPC(self,other);
 	};
-	AI_Output(other,self,"DIA_Elena_TRADE_15_00");	//Покажи мне свои товары!
-	AI_Output(self,other,"DIA_Elena_TRADE_16_01");	//Выбирай.
+	AI_Output (other, self, " DIA_Elena_TRADE_15_00 " );	// Show me your items!
+	AI_Output(self,other,"DIA_Elena_TRADE_16_01");	//Take your pick.
 	B_GiveTradeInv(self);
 };
 
@@ -207,11 +206,11 @@ func void DIA_Elena_TRADE_Info()
 instance DIA_Elena_PERM(C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 900;
+	NO = 900 ;
 	condition = DIA_Elena_PERM_Condition;
 	information = DIA_Elena_PERM_Info;
 	permanent = TRUE;
-	description = "Ничего интересного последнее время не было?";
+	description = " Anything interesting lately? " ;
 };
 
 
@@ -225,28 +224,28 @@ func int DIA_Elena_PERM_Condition()
 
 func void DIA_Elena_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Elena_PERM_15_00");	//Ничего интересного последнее время не было?
+	AI_Output (other, self, " DIA_Elena_PERM_15_00 " );	// Anything interesting lately?
 	if(Kapitel <= 1)
 	{
-		AI_Output(self,other,"DIA_Elena_PERM_16_01");	//Несколько дней назад мой отец объявил, что нам больше нельзя ничего продавать городу.
-		AI_Output(self,other,"DIA_Elena_PERM_16_02");	//Поэтому я теперь все время на ферме и продаю товары только здесь.
-		Elena_Trade_mit_mir = TRUE;
+		AI_Output (self, other, " DIA_Elena_PERM_16_01 " );	// A few days ago my father announced that we could no longer sell anything to the city.
+		AI_Output (self, other, " DIA_Elena_PERM_16_02 " );	// So I am now on the farm all the time and only sell goods here.
+		Elena_Trade_mit_mir = TRUE ;
 	}
 	else if(Kapitel == 2)
 	{
-		AI_Output(self,other,"DIA_Elena_PERM_16_03");	//Нападения ополчения на соседние фермы происходят все чаще и чаще. Это только вопрос времени, когда мой отец вмешается.
+		AI_Output (self, other, " DIA_Elena_PERM_16_03 " );	// Militia attacks on neighboring farms are happening more and more often. It's only a matter of time before my father intervenes.
 	}
 	else if(Kapitel == 3)
 	{
-		AI_Output(self,other,"DIA_Elena_PERM_16_04");	//Жизнь здесь стала такой опасной. Никто не осмеливается далеко отходить от своего поля. Уже давно никто из нас не был в городе.
+		AI_Output (self, other, " DIA_Elena_PERM_16_04 " );	// Life has become so dangerous here. No one dares to stray far from their field. None of us have been in the city for a long time.
 	}
 	else if(Kapitel == 4)
 	{
-		AI_Output(self,other,"DIA_Elena_PERM_16_05");	//Наемники становятся все более и более нервными. Но с тех пор, как ушел Сильвио со своими парнями, они вроде немного успокоились.
+		AI_Output (self, other, " DIA_Elena_PERM_16_05 " );	// The mercenaries are getting more and more nervous. But since Silvio left with his men, they seem to have calmed down a bit.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Elena_PERM_16_06");	//Все только и говорят, что о скором нападении орков. Но я не очень-то верю в это. Я думаю, что здесь, на ферме, мы в безопасности.
+		AI_Output (self, other, " DIA_Elena_PERM_16_06 " );	// Everyone is just talking about the imminent attack of the orcs. But I don't really believe it will happen. I think we are safe here on the farm.
 	};
 };
 
@@ -254,14 +253,14 @@ func void DIA_Elena_PERM_Info()
 instance DIA_Elena_MINENANTEIL(C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 2;
+	no. = 2 ;
 	condition = DIA_Elena_MINENANTEIL_Condition;
 	information = DIA_Elena_MINENANTEIL_Info;
-	description = "Ты продаешь акции?";
+	description = " Are you selling stocks? " ;
 };
 
 
-func int DIA_Elena_MINENANTEIL_Condition()
+func int DIA_Elena_MINENANTEIL_Condition ()
 {
 	if((hero.guild == GIL_KDF) && (MIS_Serpentes_MinenAnteil_KDF == LOG_Running) && Npc_KnowsInfo(other,DIA_Elena_HALLO))
 	{
@@ -269,10 +268,10 @@ func int DIA_Elena_MINENANTEIL_Condition()
 	};
 };
 
-func void DIA_Elena_MINENANTEIL_Info()
+func void DIA_Elena_MINENANTEIL_Info ()
 {
-	AI_Output(other,self,"DIA_Elena_MINENANTEIL_15_00");	//Ты продаешь акции шахт?
-	AI_Output(self,other,"DIA_Elena_MINENANTEIL_16_01");	//Ну и что? Я сама их купила у другого торговца.
+	AI_Output (other, self, " DIA_Elena_MINENANTEIL_15_00 " );	// Are you selling shares in any mines?
+	AI_Output (self, other, " DIA_Elena_MINENANTEIL_16_01 " );	// So what? I bought them myself from another merchant.
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -280,7 +279,7 @@ func void DIA_Elena_MINENANTEIL_Info()
 instance DIA_Elena_PICKPOCKET(C_Info)
 {
 	npc = BAU_911_Elena;
-	nr = 900;
+	NO = 900 ;
 	condition = DIA_Elena_PICKPOCKET_Condition;
 	information = DIA_Elena_PICKPOCKET_Info;
 	permanent = TRUE;
@@ -290,19 +289,19 @@ instance DIA_Elena_PICKPOCKET(C_Info)
 
 func int DIA_Elena_PICKPOCKET_Condition()
 {
-	return C_Beklauen(30,35);
+	return  C_Beklauen ( 30 , 35 );
 };
 
 func void DIA_Elena_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Elena_PICKPOCKET);
-	Info_AddChoice(DIA_Elena_PICKPOCKET,Dialog_Back,DIA_Elena_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Elena_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Elena_PICKPOCKET_DoIt);
+	Info_AddChoice (DIA_Elena_PICKPOCKET, Dialog_Back, DIA_Elena_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Elena_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Elena_PICKPOCKET_DoIt);
 };
 
-func void DIA_Elena_PICKPOCKET_DoIt()
+func void DIA_Elena_PICKPOCKET_DoIt ()
 {
-	B_Beklauen();
+	B_Beklauen ();
 	Info_ClearChoices(DIA_Elena_PICKPOCKET);
 };
 
@@ -310,4 +309,3 @@ func void DIA_Elena_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Elena_PICKPOCKET);
 };
-
