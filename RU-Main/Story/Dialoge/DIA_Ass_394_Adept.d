@@ -1,7 +1,7 @@
 instance DIA_Ass_394_Adept_EXIT(C_Info)
 {
 	npc = Ass_394_Adept;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Ass_394_Adept_exit_condition;
 	information = DIA_Ass_394_Adept_exit_info;
 	permanent = TRUE;
@@ -21,10 +21,10 @@ func void DIA_Ass_394_Adept_exit_info()
 instance DIA_Ass_394_Adept_Hello(C_Info)
 {
 	npc = Ass_394_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_394_Adept_hello_condition;
 	information = DIA_Ass_394_Adept_hello_info;
-	permanent = FALSE;
+	permanent = FALSE ;
 	description = "Кудир?";
 };
 	
@@ -38,54 +38,55 @@ func int DIA_Ass_394_Adept_hello_condition()
 	
 func void DIA_Ass_394_Adept_hello_info()
 {
-	AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_01");	//Кудир?
-	AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_02");	//Да, это я. Что привело тебя ко мне, брат?
-	AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_03");	//Тебя было довольно трудно отыскать.
-	AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_04");	//Не сомневаюсь. Тебе еще повезло, что ты смог меня застать тут. Обычно я редко бываю в храме.
-	AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_05");	//А чем ты занимаешься?
+	AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_01");	//Kudir?
+	AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_02 " );	// Yes, it's me. What brings you to me, brother?
+	AI_Output (other, self, " DIA_Ass_394_Adept_hello_01_03 " );	// You were pretty hard to find.
+	AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_04 " );	// Purposefully. You're lucky that you were able to find me here. Usually I rarely go to the temple.
+	AI_Output (other, self, " DIA_Ass_394_Adept_hello_01_05 " );	// What are you doing?
 
 	if(NrozasIsDead == FALSE)
 	{
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_06");	//В основном я собираю редкие травы и ингредиенты для мастера Нрозаса.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_07");	//Правда, в этой долине нечасто можно найти действительно ценный экземпляр.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_08");	//Поэтому большую часть времени я путешествую по всему острову.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_09");	//Кстати, зачем ты искал меня?
-		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_10");	//У меня к тебе есть одно небольшое предложение.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_11");	//Интересно, какое?
-		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_12");	//Приор Осаир ищет себе новых людей. Я подумал, что тебя это заинтересует.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_13");	//(надменно) Осаир? Хммм. Боюсь, что ты обратился не по адресу, брат.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_14");	//Я уже работаю на приора Нрозаса. И пока что меня все устраивает.
-		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_15");	//А я могу как-нибудь переубедить тебя?
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_16");	//Хммм. А ты умеешь заинтересовать людей, да?
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_17");	//Если хорошенько подумать, то действительно есть одна вещь, которую бы я хотел получить.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_18");	//Так что, если сможешь достать ее для меня, то, считай, мы договорились.
-		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_19");	//И что это?
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_20");	//Одно очень редкое растение. Его еще называют вишней тролля.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_21");	//Я как-то пытался самостоятельно отыскать его, но все безрезультатно.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_22");	//Судя по названию, оно должно произрастать в месте обитания троллей.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_23");	//Но я не больной, чтобы ошиваться рядом с этими парнями. Они просто в два счета оставят от меня мокрое место!
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_24");	//Ну а ты можешь попробовать. Если, конечно, хочешь, чтобы я принял предложение Осаира.
-		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_25");	//Ладно, я попробую.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_06 " );	// Mainly I collect rare herbs and ingredients for Master Nrozas.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_07 " );	// But this valley isn't exactly covered in rare specimens.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_08 " );	// So I usually travel all over the island.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_09 " );	// By the way, why were you looking for me?
+		AI_Output (other, self, " DIA_Ass_394_Adept_hello_01_10 " );	// I have a proposition for you.
+		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_11");	//Yeah?
+		AI_Output (other, self, " DIA_Ass_394_Adept_hello_01_12 " );	// Prior Osair is looking for new people. I thought you might be interested.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_13 " );	// (arrogantly) Osair? Hmmm. I'm afraid you're barking up the wrong tree, brother.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_14 " );	// I already work for Prior Nrozas. And so far, the arrangement suits me just fine.
+		AI_Output (other, self, " DIA_Ass_394_Adept_hello_01_15 " );	// Can I somehow convince you?
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_16 " );	// Hmmm. I've heard about you. You're a real go getter.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_17 " );	// There is something I want.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_18 " );	// So, if you can get it for me, we might just have a deal.
+		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_19");	//What exactly are we talking about?
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_20 " );	// One very rare plant. It's called Troll Cherry.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_21 " );	// I've tried to find it myself many times, but no luck.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_22 " );	// As the name suggests, it should grow in a troll habitat.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_23 " );	// But I,m not as young, and therfore not as crazy, as I once was!
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_24 " );	// You seem resourceful enough. Gonna give it a try?
+		AI_Output (other, self, " DIA_Ass_394_Adept_hello_01_25 " );	// Ok, I'll see what I can do.
 		KudirNeedTrollPlant = TRUE;
-		B_LogEntry(TOPIC_CareOsair,"Кудир попросил меня найти для него редкое растение - вишню тролля. Тогда он согласится поработать на Осаира.");
+		B_LogEntry (TOPIC_CareOsair, " Kudir asked me to find a rare plant for him - troll cherry. Then he will agree to work for Osair. " );
 		AI_StopProcessInfos(self);
 		Wld_InsertItem(ITPL_SUPER_HERB,"FP_ITEMSPAWN_KUDIR_PLANT");
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_26");	//До последнего времени я занимался сбором редких трав и ингредиентов для мастера Нрозаса.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_27");	//Но теперь я работаю на приора Ханиара. Выполняю для него различную работенку.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_28");	//Кстати, зачем ты искал меня?
-		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_29");	//У меня к тебе есть одно небольшое предложение.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_30");	//Интересно, какое?
-		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_31");	//Приор Осаир ищет себе новых людей. Я подумал, что тебя это заинтересует.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_32");	//(надменно) Осаир? Хммм. Боюсь, что ты обратился не по адресу, брат.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_33");	//Это самое последнее, что сможет меня заинтересовать в этой жизни.
-		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_34");	//Это почему?
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_35");	//Потому что никогда не знаешь, что от него можно ожидать. Он слишком хитер и непредсказуем.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_36");	//Я никогда не доверял ему - и тебе не советую.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_26 " );	// Mainly I collect rare herbs and ingredients for Master Nrozas.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_27 " );	// But now I work for Prior Haniar. I do various jobs for him.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_28 " );	// By the way, why were you looking for me?
+		AI_Output (other, self, " DIA_Ass_394_Adept_hello_01_29 " );	// I have a proposition for you.
+		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_30");	//Yeah?
+		AI_Output (other, self, " DIA_Ass_394_Adept_hello_01_31 " );	// Prior Osair is looking for new people. I thought you might be interested.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_32 " );	// (arrogantly) Osair? Hmmm. I'm afraid you're barking up the wrong tree, brother.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_33 " );	// That would be the last thing Id ever want to do.
+		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_34");	//Why?
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_35 " );	// Because you never know what to expect from him. A real viper, that one.
+		AI_Output (self, other, " DIA_Ass_394_Adept_hello_01_36 " );	// I never trusted him - and I don't advise you do either.
+		
 		KudirPissOff = TRUE;
-		B_LogEntry(TOPIC_CareOsair,"Кудир теперь работает на приора Ханиара. Вряд ли он согласится на мое предложение.");
+		B_LogEntry (TOPIC_CareOsair, " Kudir now works for Prior Haniar. He is unlikely to agree to my proposal. " );
 		AI_StopProcessInfos(self);
 	};
 
@@ -94,11 +95,11 @@ func void DIA_Ass_394_Adept_hello_info()
 instance DIA_Ass_394_Adept_GetPlant(C_Info)
 {
 	npc = Ass_394_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_394_Adept_GetPlant_condition;
 	information = DIA_Ass_394_Adept_GetPlant_info;
-	permanent = FALSE;
-	description = "Я принес тебе вишню троллей.";
+	permanent = FALSE ;
+	description = " I brought you troll cherries. " ;
 };
 	
 func int DIA_Ass_394_Adept_GetPlant_condition()
@@ -112,16 +113,16 @@ func int DIA_Ass_394_Adept_GetPlant_condition()
 func void DIA_Ass_394_Adept_GetPlant_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Ass_394_Adept_GetPlant_01_01");	//Я принес тебе вишню троллей.
-	AI_Output(self,other,"DIA_Ass_394_Adept_GetPlant_01_02");	//Неужели ты смог ее отыскать?
-	AI_Output(other,self,"DIA_Ass_394_Adept_GetPlant_01_03");	//Как видишь. Вот, держи.
+	AI_Output (other, self, " DIA_Ass_394_Adept_GetPlant_01_01 " );	// I brought you troll cherries.
+	AI_Output (self, other, " DIA_Ass_394_Adept_GetPlant_01_02 " );	// You actually found some?
+	AI_Output (other, self, " DIA_Ass_394_Adept_GetPlant_01_03 " );	// Naturally. Here.
 	B_GiveInvItems(other,self,ITPL_SUPER_HERB,1);
 	Npc_RemoveInvItems(self,ITPL_SUPER_HERB,1);
-	AI_Output(self,other,"DIA_Ass_394_Adept_GetPlant_01_04");	//Отлично! Что же, ты выполнил свою часть сделки.
-	AI_Output(self,other,"DIA_Ass_394_Adept_GetPlant_01_05");	//Теперь пришло время мне выполнить свою.
-	AI_Output(self,other,"DIA_Ass_394_Adept_GetPlant_01_06");	//Поэтому можешь передать Осаиру, что отныне я его человек.
+	AI_Output (self, other, " DIA_Ass_394_Adept_GetPlant_01_04 " );	// Great! Well, you've fulfilled your end of the bargain.
+	AI_Output (self, other, " DIA_Ass_394_Adept_GetPlant_01_05 " );	// Now it's time for me to keep mine.
+	AI_Output (self, other, " DIA_Ass_394_Adept_GetPlant_01_06 " );	// So you can tell Osair that I am his man from now on.
 	KudirGetTrollPlant = TRUE;
-	B_LogEntry(TOPIC_CareOsair,"Я принес Кудиру вишню троллей. Теперь он человек Осаира.");
+	B_LogEntry (TOPIC_CareOsair, " I brought the troll cherries to Kudir. He is Osair's man now. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -129,7 +130,7 @@ func void DIA_Ass_394_Adept_GetPlant_info()
 instance DIA_Ass_394_Adept_KadirPissOff(C_Info)
 {
 	npc = Ass_394_Adept;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Ass_394_Adept_KadirPissOff_condition;
 	information = DIA_Ass_394_Adept_KadirPissOff_info;
 	permanent = TRUE;
@@ -146,6 +147,6 @@ func int DIA_Ass_394_Adept_KadirPissOff_condition()
 	
 func void DIA_Ass_394_Adept_KadirPissOff_info()
 {
-	AI_Output(self,other,"DIA_Ass_394_Adept_KadirPissOff_01_01");	//Извини, брат. Но я занят.
+	AI_Output (self, other, " DIA_Ass_394_Adept_KadirPissOff_01_01 " );	// Sorry, brother, I'm busy.
 	AI_StopProcessInfos(self);
 };
