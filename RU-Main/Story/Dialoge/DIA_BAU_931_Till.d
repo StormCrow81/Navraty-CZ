@@ -1,8 +1,7 @@
-
 instance DIA_Till_EXIT(C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Till_EXIT_Condition;
 	information = DIA_Till_EXIT_Info;
 	permanent = TRUE;
@@ -21,17 +20,17 @@ func void DIA_Till_EXIT_Info()
 };
 
 
-instance DIA_Till_HALLO(C_Info)
+instance DIA_Till_HALLO (C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 3;
+	No. = 3 ;
 	condition = DIA_Till_HALLO_Condition;
 	information = DIA_Till_HALLO_Info;
-	description = "Привет.";
+	description = "Hey.";
 };
 
 
-func int DIA_Till_HALLO_Condition()
+func int DIA_Till_HALLO_Condition ()
 {
 	if(Kapitel < 5)
 	{
@@ -39,53 +38,53 @@ func int DIA_Till_HALLO_Condition()
 	};
 };
 
-func void DIA_Till_HALLO_Info()
+func void DIA_Till_HALLO_Info ()
 {
-	AI_Output(other,self,"DIA_Till_HALLO_15_00");	//Привет.
-	AI_Output(self,other,"DIA_Till_HALLO_03_01");	//Я не разговариваю с рабочими. Сколько тебе это повторять?
+	AI_Output(other,self,"DIA_Till_HALLO_15_00");	//Hey.
+	AI_Output (self, other, " DIA_Till_HALLO_03_01 " );	// I don't talk to workers. 
 	B_StartOtherRoutine(Till,"Start");
 	Info_ClearChoices(DIA_Till_HALLO);
 
 	if(Kapitel < 5)
 	{
-		Info_AddChoice(DIA_Till_HALLO,"Я не рабочий.",DIA_Till_HALLO_keinervoneuch);
+		Info_AddChoice (DIA_Till_HALLO, " I'm not a worker. " , DIA_Till_HALLO_keinervoneuch);
 
 		if(Npc_IsDead(Sekob) == FALSE)
 		{
-			Info_AddChoice(DIA_Till_HALLO,"Ты командуешь здесь?",DIA_Till_HALLO_selber);
+			Info_AddChoice (DIA_Till_HALLO, " Are you a commander here? " , DIA_Till_HALLO_selber);
 		};
 	};
 };
 
-func void DIA_Till_HALLO_selber()
+func void DIA_Till_HALLO_selber ()
 {
-	AI_Output(other,self,"DIA_Till_HALLO_selber_15_00");	//Ты командуешь здесь?
-	AI_Output(self,other,"DIA_Till_HALLO_selber_03_01");	//Э-э... нет, я всего лишь сын Секоба! Но когда старика больше не будет с нами, все земля, что ты видишь вокруг, перейдет ко мне.
-	AI_Output(other,self,"DIA_Till_HALLO_selber_15_02");	//Потрясающе!
-	AI_Output(other,self,"DIA_Till_FELDARBEITER_15_00");	//Вы так всегда обращаетесь со своими работниками?
-	AI_Output(self,other,"DIA_Till_FELDARBEITER_03_01");	//Конечно! Иначе нельзя. Если не поддерживать дисциплину, никто не будет - это известное правило.
-	AI_Output(other,self,"DIA_Till_HALLO_keinervoneuch_15_00");	//Я не рабочий.
-	AI_Output(self,other,"DIA_Till_HALLO_keinervoneuch_03_01");	//А чего тебе тогда надо? У нас ничего нет. Так что лучше уходи.
+	AI_Output (other, self, " DIA_Till_HALLO_selber_15_00 " );	// Are you in command here?
+	AI_Output (self, other, " DIA_Till_HALLO_selber_03_01 " );	// Uh ... no, I'm just Secob's son! But when the old man is no longer with us, everything you see around you will pass to me.
+	AI_Output(other,self,"DIA_Till_HALLO_selber_15_02");	//Very nice!
+	AI_Output (other, self, " DIA_Till_FELDARBEITER_15_00 " );	// Is this how you always treat your employees?
+	AI_Output (self, other, " DIA_Till_FELDARBEITER_03_01 " );	// Of course! There's no other way. If you do not maintain discipline, no one will.
+	AI_Output (other, self, " DIA_Till_HALLO_keinervoneuch_15_00 " );	// I'm not a worker.
+	AI_Output (self, other, " DIA_Till_HALLO_keinervoneuch_03_01 " );	// What do you want then? 
 	AI_StopProcessInfos(self);
 };
 
-func void DIA_Till_HALLO_keinervoneuch()
+func void DIA_Till_HALLO_keinervoneuch ()
 {
-	AI_Output(other,self,"DIA_Till_HALLO_keinervoneuch_15_00");	//Я не рабочий.
-	AI_Output(self,other,"DIA_Till_HALLO_keinervoneuch_03_01");	//А чего тебе тогда надо? У нас ничего нет. Так что лучше уходи.
+	AI_Output (other, self, " DIA_Till_HALLO_keinervoneuch_15_00 " );	// I'm not a worker.
+	AI_Output (self, other, " DIA_Till_HALLO_keinervoneuch_03_01 " );	// What do you want then? 
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Till_SEKOB(C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 9;
+	No. = 9 ;
 	condition = DIA_Till_SEKOB_Condition;
 	information = DIA_Till_SEKOB_Info;
-	description = "Мне нужно поговорить с твоим отцом.";
+	description = " I need to talk to your father. " ;
 };
 
-func int DIA_Till_SEKOB_Condition()
+func int DIA_Till_SEKOB_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Till_HALLO) && (Npc_KnowsInfo(other,DIA_Sekob_HALLO) == FALSE) && (Kapitel < 3) && (Npc_IsDead(Sekob) == FALSE))
 	{
@@ -93,26 +92,26 @@ func int DIA_Till_SEKOB_Condition()
 	};
 };
 
-func void DIA_Till_SEKOB_Info()
+func void DIA_Till_SEKOB_Info ()
 {
-	AI_Output(other,self,"DIA_Till_SEKOB_15_00");	//Мне нужно поговорить с твоим отцом.
-	AI_Output(self,other,"DIA_Till_SEKOB_03_01");	//У него нет на это времени. Я его представитель. Чем я могу помочь тебе?
-	AI_Output(other,self,"DIA_Till_SEKOB_15_02");	//Поможешь, если отведешь к своему отцу.
-	AI_Output(self,other,"DIA_Till_SEKOB_03_03");	//Ты считаешь себя крепким парнем и хорошим бойцом, да?
-	AI_Output(other,self,"DIA_Till_SEKOB_15_04");	//Лучшим.
-	AI_Output(self,other,"DIA_Till_SEKOB_03_05");	//Возможно, тогда стоит позвать его.
-	AI_Output(other,self,"DIA_Till_SEKOB_15_06");	//Не беспокойся, мальчик. Я найду его сам.
-	AI_Output(self,other,"DIA_Till_SEKOB_03_07");	//Как скажешь.
+	AI_Output (other, self, " DIA_Till_SEKOB_15_00 " );	// I need to talk to your father.
+	AI_Output (self, other, " DIA_Till_SEKOB_03_01 " );	// He doesn't have time for this. I am his representative. How can I help you?
+	AI_Output (other, self, " DIA_Till_SEKOB_15_02 " );	// Help if you take me to your father.
+	AI_Output (self, other, " DIA_Till_SEKOB_03_03 " );	// You consider yourself a tough guy and a good fighter, right?
+	AI_Output(other,self,"DIA_Till_SEKOB_15_04");	//The best.
+	AI_Output (self, other, " DIA_Till_SEKOB_03_05 " );	// Look for him yourself then.
+	AI_Output (other, self, " DIA_Till_SEKOB_15_06 " );	// I suppose I will.
+	AI_Output(self,other,"DIA_Till_SEKOB_03_07");	//Good luck.
 	AI_StopProcessInfos(self);
 };
 
 instance DIA_Till_WASMACHSTDU(C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 10;
+	No. = 10 ;
 	condition = DIA_Till_WASMACHSTDU_Condition;
 	information = DIA_Till_WASMACHSTDU_Info;
-	description = "Чем ты занимаешься?";
+	description = " What are you doing? " ;
 };
 
 func int DIA_Till_WASMACHSTDU_Condition()
@@ -125,26 +124,26 @@ func int DIA_Till_WASMACHSTDU_Condition()
 
 func void DIA_Till_WASMACHSTDU_Info()
 {
-	AI_Output(other,self,"DIA_Till_WASMACHSTDU_15_00");	//А что ты делаешь, когда не играешь в хозяина этой фермы?
-	AI_Output(self,other,"DIA_Till_WASMACHSTDU_03_01");	//Стою на страже.
-	AI_Output(self,other,"DIA_Till_WASMACHSTDU_03_02");	//Грязные ополченцы из города все чаще забредают на наши земли и воруют все, что плохо лежит.
-	AI_Output(self,other,"DIA_Till_WASMACHSTDU_03_03");	//Эти ублюдки были здесь только на прошлой неделе, они украли наших овец.
-	AI_Output(self,other,"DIA_Till_WASMACHSTDU_03_04");	//Если бы я добрался до одного из них, ему бы не поздоровилось.
-	AI_Output(other,self,"DIA_Till_WASMACHSTDU_15_05");	//Конечно!
+	AI_Output (other, self, " DIA_Till_WASMACHSTDU_15_00 " );	// What do you do when you are not playing as the owner of this farm?
+	AI_Output(self,other,"DIA_Till_WASMACHSTDU_03_01");	//I stand guard.
+	AI_Output (self, other, " DIA_Till_WASMACHSTDU_03_02 " );	// Gods damned militia members from the city are increasingly wandering into our lands and stealing everything that isn't nailed down.
+	AI_Output (self, other, " DIA_Till_WASMACHSTDU_03_03 " );	// The bastards were here just last week, they stole some sheep.
+	AI_Output (self, other, " DIA_Till_WASMACHSTDU_03_04 " );	// If I got to one of them, I'd have ripped him apart.
+	AI_Output(other,self,"DIA_Till_WASMACHSTDU_15_05");	//Certainly!
 };
 
 
 instance DIA_Till_WARUMNICHTSLD(C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 11;
+	No. = 11 ;
 	condition = DIA_Till_WARUMNICHTSLD_Condition;
 	information = DIA_Till_WARUMNICHTSLD_Info;
-	description = "А разве наемники не помогают вам защищаться от ополчения?";
+	description = " Don't the mercenaries help you defend against the militia? " ;
 };
 
 
-func int DIA_Till_WARUMNICHTSLD_Condition()
+func int DIA_Till_WARUMNICHTSLD_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Till_WASMACHSTDU) && (hero.guild != GIL_MIL) && (Kapitel < 5))
 	{
@@ -152,20 +151,20 @@ func int DIA_Till_WARUMNICHTSLD_Condition()
 	};
 };
 
-func void DIA_Till_WARUMNICHTSLD_Info()
+func void DIA_Till_WARUMNICHTSLD_Info ()
 {
-	AI_Output(other,self,"DIA_Till_WARUMNICHTSLD_15_00");	//А разве наемники не помогают вам защищаться от ополчения?
-	AI_Output(self,other,"DIA_Till_WARUMNICHTSLD_03_01");	//Да пока наемники почешутся, я уже успеваю прогнать всех воров.
+	AI_Output (other, self, " DIA_Till_WARUMNICHTSLD_15_00 " );	// Don't the mercenaries help you defend against the militia?
+	AI_Output (self, other, " DIA_Till_WARUMNICHTSLD_03_01 " );	// Yes, while the mercenaries scratch their asses, I drive thieves and goblins away.
 };
 
 
 instance DIA_Till_BRONKO(C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 5;
+	No. = 5 ;
 	condition = DIA_Till_BRONKO_Condition;
 	information = DIA_Till_BRONKO_Info;
-	description = "(спросить о Бронко)";
+	description = " (ask about Bronco) " ;
 };
 
 
@@ -179,32 +178,32 @@ func int DIA_Till_BRONKO_Condition()
 
 func void DIA_Till_BRONKO_Info()
 {
-	AI_Output(other,self,"DIA_Till_BRONKO_15_00");	//Это ваш работник требует плату со всех проходящих мимо, утверждая, что ОН тут фермер!
-	AI_Output(self,other,"DIA_Till_BRONKO_03_01");	//(робко) Эээ. Да. Я знаю. Это Бронко. Он делает то, что хочет.
-	AI_Output(self,other,"DIA_Till_BRONKO_03_02");	//Я уже столько раз задавал ему трепку, чтобы он взялся за ум и начал работать, но все без толку...
+	AI_Output (other, self, " DIA_Till_BRONKO_15_00 " );	// You have a worker who demands payment from everyone passing by, claiming that he is a farmer!
+	AI_Output (self, other, " DIA_Till_BRONKO_03_01 " );	// (timidly) Uh. Yes. I know. That's Bronco. He does what he wants.
+	AI_Output (self, other, " DIA_Till_BRONKO_03_02 " );	// I've slapped him around about it so much I've given up now.
 	AI_Output(other,self,"DIA_Till_BRONKO_15_03");	//Да?
-	AI_Output(self,other,"DIA_Till_BRONKO_03_04");	//Он все равно не хочет работать.
+	AI_Output (self, other, " DIA_Till_BRONKO_03_04 " );	// He hates honest work.
 	if(Npc_IsDead(Sekob) == FALSE)
 	{
-		AI_Output(self,other,"DIA_Till_BRONKO_03_05");	//Моему отцу очень не нравится, что мне все еще не удалось убедить его вернуться к работе.
+		AI_Output (self, other, " DIA_Till_BRONKO_03_05 " );	// My dad really hates that I still haven't been able to convince him to go back to work.
 	};
 };
 
 
-instance DIA_Till_BRONKOZURARBEIT(C_Info)
+instance DIA_Till_BRONKOZURARBEIT (C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 6;
+	No. = 6 ;
 	condition = DIA_Till_BRONKOZURARBEIT_Condition;
 	information = DIA_Till_BRONKOZURARBEIT_Info;
 	permanent = TRUE;
-	description = "Возможно, я смогу помочь тебе.";
+	description = " Maybe I can help you. " ;
 };
 
 
 var int DIA_Till_BRONKOZURARBEIT_noPerm;
 
-func int DIA_Till_BRONKOZURARBEIT_Condition()
+func int DIA_Till_BRONKOZURARBEIT_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Till_BRONKO) && (DIA_Till_BRONKOZURARBEIT_noPerm == FALSE) && (Kapitel < 5))
 	{
@@ -212,131 +211,131 @@ func int DIA_Till_BRONKOZURARBEIT_Condition()
 	};
 };
 
-func void DIA_Till_BRONKOZURARBEIT_Info()
+func void DIA_Till_BRONKOZURARBEIT_Info ()
 {
-	AI_Output(other,self,"DIA_Till_BRONKOZURARBEIT_15_00");	//Может быть, я смогу помочь.
-	AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_03_01");	//Что ты хочешь сказать этим? Хорошо, послушай, если ты сможешь заставить Бронко работать, я заплачу тебе, скажем, десять золотых монет. Что скажешь?
-	Till_Angebot = 10;
-	Info_ClearChoices(DIA_Till_BRONKOZURARBEIT);
-	Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Нет проблем. Но мне нужно больше денег.",DIA_Till_BRONKOZURARBEIT_mehr);
-	Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Хорошо. Я посмотрю, что можно сделать.",DIA_Till_BRONKOZURARBEIT_ok);
-	Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Я подумаю над этим.",DIA_Till_BRONKOZURARBEIT_nochnicht);
+	AI_Output (other, self, " DIA_Till_BRONKOZURARBEIT_15_00 " );	// Maybe I can help.
+	AI_Output (self, other, " DIA_Till_BRONKOZURARBEIT_03_01 " );	// What do you mean? Okay, listen, if you can get Bronco to work, I'll pay you, say, ten gold coins. What do you say?
+	Till_Angebot = 10 ;
+	Info_ClearChoices (DIA_Till_BRONKOZURARBEIT);
+	Info_AddChoice (DIA_Till_BRONKOZURARBEIT, " No problem. But I need more money. " , DIA_Till_BRONKOZURARBEIT_mehr);
+	Info_AddChoice (DIA_Till_BRONKOZURARBEIT, " Ok. I'll see what I can do. " , DIA_Till_BRONKOZURARBEIT_ok);
+	Info_AddChoice (DIA_Till_BRONKOZURARBEIT, " I'll think about it. " , DIA_Till_BRONKOZURARBEIT_nochnicht);
 };
 
-func void DIA_Till_BRONKOZURARBEIT_nochnicht()
+func void DIA_Till_BRONKOZURARBEIT_nochnicht ()
 {
-	AI_Output(other,self,"DIA_Till_BRONKOZURARBEIT_nochnicht_15_00");	//Я подумаю над этим.
-	AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_nochnicht_03_01");	//Как хочешь.
-	Info_ClearChoices(DIA_Till_BRONKOZURARBEIT);
+	AI_Output (other, self, " DIA_Till_BRONKOZURARBEIT_nochnicht_15_00 " );	// I'll think about it.
+	AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_nochnicht_03_01");	//All I ask.
+	Info_ClearChoices (DIA_Till_BRONKOZURARBEIT);
 	AI_StopProcessInfos(self);
 };
 
-func void DIA_Till_BRONKOZURARBEIT_ok()
+func void DIA_Till_BRONKOZURARBEIT_ok ()
 {
-	AI_Output(other,self,"DIA_Till_BRONKOZURARBEIT_ok_15_00");	//Хорошо. Я посмотрю, что можно сделать.
-	AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_ok_03_01");	//Но поторопись с этим.
-	DIA_Till_BRONKOZURARBEIT_noPerm = TRUE;
+	AI_Output (other, self, " DIA_Till_BRONKOZURARBEIT_ok_15_00 " );	// Good. I'll see what i can do.
+	AI_Output (self, other, " DIA_Till_BRONKOZURARBEIT_ok_03_01 " );	// Please hurry up with this.
+	DIA_Till_BRONKOZURARBEIT_noPerm = TRUE ;
 	MIS_Sekob_Bronko_eingeschuechtert = LOG_Running;
 	Log_CreateTopic(TOPIC_Bronkoeingeschuechtert,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Bronkoeingeschuechtert,LOG_Running);
-	B_LogEntry(TOPIC_Bronkoeingeschuechtert,"Тилл не может заставить Бронко работать. Тилл хочет, чтобы это попробовал сделать я.");
+	B_LogEntry (TOPIC_Bronkoeingeschuechtert, " Till can't get Bronco to work. He'd like me to try. " );
 	AI_StopProcessInfos(self);
 };
 
-func void DIA_Till_BRONKOZURARBEIT_mehr()
+func void DIA_Till_BRONKOZURARBEIT_more ()
 {
 	if(Till_IchMachsNurEinmal == TRUE)
 	{
-		AI_Output(other,self,"DIA_Till_BRONKOZURARBEIT_mehr_15_00");	//Я хочу больше.
+		AI_Output (other, self, " DIA_Till_BRONKOZURARBEIT_mehr_15_00 " );	// I want more.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Till_BRONKOZURARBEIT_mehr_15_01");	//Нет проблем. Но мне нужно больше денег.
+		AI_Output (other, self, " DIA_Till_BRONKOZURARBEIT_mehr_15_01 " );	// No problem. But I need more money.
 		Till_IchMachsNurEinmal = TRUE;
 	};
-	if(Till_Angebot == 10)
+	if (Till_Angebot ==  10 )
 	{
-		AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_mehr_03_02");	//Хорошо! Двадцать золотых монет.
-		Info_ClearChoices(DIA_Till_BRONKOZURARBEIT);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Я хочу больше.",DIA_Till_BRONKOZURARBEIT_mehr);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Хорошо. Я посмотрю, что можно сделать.",DIA_Till_BRONKOZURARBEIT_ok);
-		Till_Angebot = 20;
+		AI_Output (self, other, " DIA_Till_BRONKOZURARBEIT_mehr_03_02 " );	// Twenty gold coins?
+		Info_ClearChoices (DIA_Till_BRONKOZURARBEIT);
+		Info_AddChoice (DIA_Till_BRONKOZURBEIT, " More, I think " , DIA_Till_BRONKOZURARBEIT_more);
+		Info_AddChoice (DIA_Till_BRONKOZURARBEIT, " Ok. I'll see what I can do. " , DIA_Till_BRONKOZURARBEIT_ok);
+		Till_Angebot = 20 ;
 	}
-	else if(Till_Angebot == 20)
+	else  if (Till_Angebot ==  20 )
 	{
-		AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_mehr_03_03");	//Тридцать?
-		Info_ClearChoices(DIA_Till_BRONKOZURARBEIT);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Я хочу больше.",DIA_Till_BRONKOZURARBEIT_mehr);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Хорошо. Я посмотрю, что можно сделать.",DIA_Till_BRONKOZURARBEIT_ok);
-		Till_Angebot = 30;
+		AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_mehr_03_03");	//Thirty?
+		Info_ClearChoices (DIA_Till_BRONKOZURARBEIT);
+		Info_AddChoice (DIA_Till_BRONKOZURBEIT, " Not enough. " , DIA_Till_BRONKOZURARBEIT_more);
+		Info_AddChoice (DIA_Till_BRONKOZURARBEIT, " Ok. I'll see what I can do. " , DIA_Till_BRONKOZURARBEIT_ok);
+		Till_Angebot = 30 ;
 	}
-	else if(Till_Angebot == 30)
+	else  if (Till_Angebot ==  30 )
 	{
-		AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_mehr_03_04");	//Может быть...полсотни?
-		Info_ClearChoices(DIA_Till_BRONKOZURARBEIT);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Я хочу больше.",DIA_Till_BRONKOZURARBEIT_mehr);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Хорошо. Я посмотрю, что можно сделать.",DIA_Till_BRONKOZURARBEIT_ok);
-		Till_Angebot = 50;
+		AI_Output (self, other, " DIA_Till_BRONKOZURARBEIT_mehr_03_04 " );	// Maybe ... fifty?
+		Info_ClearChoices (DIA_Till_BRONKOZURARBEIT);
+		Info_AddChoice (DIA_Till_BRONKOZURBEIT, " Not enough. " , DIA_Till_BRONKOZURARBEIT_more);
+		Info_AddChoice (DIA_Till_BRONKOZURARBEIT, " Ok. I'll see what I can do. " , DIA_Till_BRONKOZURARBEIT_ok);
+		Till_Angebot = 50 ;
 	}
-	else if(Till_Angebot == 50)
+	else  if (Till_Angebot ==  50 )
 	{
-		AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_mehr_03_05");	//Хорошо. Семьдесят?
-		Info_ClearChoices(DIA_Till_BRONKOZURARBEIT);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Я хочу больше.",DIA_Till_BRONKOZURARBEIT_mehr);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Хорошо. Я посмотрю, что можно сделать.",DIA_Till_BRONKOZURARBEIT_ok);
-		Till_Angebot = 70;
+		AI_Output (self, other, " DIA_Till_BRONKOZURARBEIT_mehr_03_05 " );	// Good. Seventy?
+		Info_ClearChoices (DIA_Till_BRONKOZURARBEIT);
+		Info_AddChoice (DIA_Till_BRONKOZURBEIT, " Not enough. " , DIA_Till_BRONKOZURARBEIT_more);
+		Info_AddChoice (DIA_Till_BRONKOZURARBEIT, " Ok. I'll see what I can do. " , DIA_Till_BRONKOZURARBEIT_ok);
+		Till_Angebot = 70 ;
 	}
-	else if(Till_Angebot == 70)
+	else  if (Till_Angebot ==  70 )
 	{
-		AI_Output(self,other,"DIA_Till_BRONKOZURARBEIT_mehr_03_06");	//Хорошо, хорошо! Я дам тебе сто золотых монет. Но это все, что у меня есть.
+		AI_Output (self, other, " DIA_Till_BRONKOZURARBEIT_mehr_03_06 " );	// Okay, okay! I will give you one hundred gold coins. But that's all I have.
 
 		if(RhetorikSkillValue[1] < 100)
 		{
 			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			AI_Print ( " Rhetoric + 1 " );
 		};
 
-		Info_ClearChoices(DIA_Till_BRONKOZURARBEIT);
-		Info_AddChoice(DIA_Till_BRONKOZURARBEIT,"Хорошо! Я посмотрю, что можно сделать.",DIA_Till_BRONKOZURARBEIT_ok);
-		Till_Angebot = 100;
+		Info_ClearChoices (DIA_Till_BRONKOZURARBEIT);
+		Info_AddChoice (DIA_Till_BRONKOZURARBEIT, " Ok! I'll see what I can do. " , DIA_Till_BRONKOZURARBEIT_ok);
+		Till_Angebot = 100 ;
 	};
 };
 
 
-instance DIA_Till_BRONKOWIEDERANARBEIT(C_Info)
+instance DIA_Till_BRONKOWIEDERANARBEIT (C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 7;
+	No. = 7 ;
 	condition = DIA_Till_BRONKOWIEDERANARBEIT_Condition;
 	information = DIA_Till_BRONKOWIEDERANARBEIT_Info;
-	description = "Бронко вернулся к работе!";
+	description = " Bronco is back to work! " ;
 };
 
 
-func int DIA_Till_BRONKOWIEDERANARBEIT_Condition()
+func int DIA_Till_BRONKOWIEDERANARBEIT_Condition ()
 {
-	if((MIS_Sekob_Bronko_eingeschuechtert == LOG_SUCCESS) && (DIA_Till_BRONKOZURARBEIT_noPerm == TRUE) && (Kapitel < 5))
+	if ((MIS_Sekob_Bronko_eingeschuechtert ==  LOG_SUCCESS ) && (DIA_Till_BRONKOZURARBEIT_noPerm ==  TRUE ) && (Chapter <  5 ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Till_BRONKOWIEDERANARBEIT_Info()
+func void DIA_Till_BRONKOWIEDERANARBEIT_Info ()
 {
-	AI_Output(other,self,"DIA_Till_BRONKOWIEDERANARBEIT_15_00");	//Бронко вернулся к работе!
-	AI_Output(self,other,"DIA_Till_BRONKOWIEDERANARBEIT_03_01");	//Правда? Это превосходно.
-	AI_Output(other,self,"DIA_Till_BRONKOWIEDERANARBEIT_15_02");	//Да! И тепрь я хочу получить мои деньги.
-	IntToFloat(Till_Angebot);
-	if(Till_Angebot <= 50)
+	AI_Output (other, self, " DIA_Till_BRONKOWIEDERANARBEIT_15_00 " );	// Bronco is back to work!
+	AI_Output (self, other, " DIA_Till_BRONKOWIEDERANARBEIT_03_01 " );	// Really? Excellent.
+	AI_Output (other, self, " DIA_Till_BRONKOWIEDERANARBEIT_15_02 " );	// Yes! And now I want to get my money.
+	IntToFloat (Till_Angebot);
+	if (Till_Angebot <=  50 )
 	{
-		AI_Output(self,other,"DIA_Till_BRONKOWIEDERANARBEIT_03_03");	//Мммм...(колеблясь) Хорошо! Сделка есть сделка, правда?
+		AI_Output (self, other, " DIA_Till_BRONKOWIEDERANARBEIT_03_03 " );	// Mmmm ... (hesitating) Okay! A deal is a deal, right?
 		CreateInvItems(self,ItMi_Gold,Till_Angebot);
 		B_GiveInvItems(self,other,ItMi_Gold,Till_Angebot);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Till_BRONKOWIEDERANARBEIT_03_04");	//К сожалению, у меня нет такой суммы! Но я очень благодарен тебе за помощь.
-		Till_HatSeinGeldBehalten = TRUE;
+		AI_Output (self, other, " DIA_Till_BRONKOWIEDERANARBEIT_03_04 " );	// Sorry, I don't have that much! But I am very grateful for your help.
+		Till_HatSeinGeldBehalten = TRUE ;
 	};
 	B_GivePlayerXP(XP_BronkoGehtAnDieArbeit);
 	AI_StopProcessInfos(self);
@@ -346,15 +345,15 @@ func void DIA_Till_BRONKOWIEDERANARBEIT_Info()
 instance DIA_Till_PERMKAP1(C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 99;
+	NO = 99 ;
 	condition = DIA_Till_PERMKAP1_Condition;
 	information = DIA_Till_PERMKAP1_Info;
 	permanent = TRUE;
-	description = "(подразнить Тилла)";
+	description = " (tease Till) " ;
 };
 
 
-func int DIA_Till_PERMKAP1_Condition()
+func int DIA_Till_PERMKAP1_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Till_HALLO) || (Kapitel >= 5))
 	{
@@ -368,37 +367,37 @@ func void DIA_Till_PERMKAP1_Info()
 	{
 		if((MIS_bringRosiBackToSekob != LOG_SUCCESS) && (Rosi_FleeFromSekob_Kap5 == TRUE))
 		{
-			AI_Output(other,self,"DIA_Till_PERMKAP1_15_00");	//А до дома-то далеко, да? Папочка не сможет помочь тебе здесь.
-			AI_Output(self,other,"DIA_Till_PERMKAP1_03_01");	//Когда-нибудь я набью тебе морду.
+			AI_Output (other, self, " DIA_Till_PERMKAP1_15_00 " );	// A long way from home, aren't you? Daddy can't help you here.
+			AI_Output (self, other, " DIA_Till_PERMKAP1_03_01 " );	// Someday I'll kick your ass.
 		};
 
-		AI_Output(other,self,"DIA_Till_PERMKAP1_15_02");	//Ты, трус, радуйся, если я оставлю тебя в живых!
-		AI_Output(self,other,"DIA_Till_PERMKAP1_03_03");	//Тогда оставь меня в покое.
+		AI_Output (other, self, " DIA_Till_PERMKAP1_15_02 " );	// Just be glad I don't kill you!
+		AI_Output (self, other, " DIA_Till_PERMKAP1_03_03 " );	// Then leave me alone.
 		AI_StopProcessInfos(self);
 	}
 	else if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
-		AI_Output(other,self,"DIA_Till_PERMKAP1_15_04");	//Может, тебе стоит питаться получше, чтобы ты вырос большим и сильным!
-		AI_Output(self,other,"DIA_Till_PERMKAP1_03_05");	//Когда-нибудь я поквитаюсь с тобой.
+		AI_Output (other, self, " DIA_Till_PERMKAP1_15_04 " );	// You need to eat more vegetables little man!
+		AI_Output (self, other, " DIA_Till_PERMKAP1_03_05 " );	// Someday I'll get you.
 		AI_StopProcessInfos(self);
 	}
 	else if(Till_HatSeinGeldBehalten == TRUE)
 	{
-		AI_Output(other,self,"DIA_Till_PERMKAP1_15_06");	//Ах ты жалкий, маленький...
-		AI_Output(self,other,"DIA_Till_PERMKAP1_03_07");	//Уходи.
+		AI_Output (other, self, " DIA_Till_PERMKAP1_15_06 " );	// Oh, you pathetic little...
+		AI_Output(self,other,"DIA_Till_PERMKAP1_03_07");	//Get out of here.
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Till_PERMKAP1_15_08");	//Тебе сегодня никто еще не бил в морду?!
-		AI_Output(self,other,"DIA_Till_PERMKAP1_03_09");	//Оставь меня в покое, ты, идиот!
+		AI_Output (other, self, " DIA_Till_PERMKAP1_15_08 " );	// When's the last time you got punched in the face?
+		AI_Output (self, other, " DIA_Till_PERMKAP1_03_09 " );	// Leave me alone, you idiot!
 	};
 };
 
 instance DIA_Till_PICKPOCKET(C_Info)
 {
 	npc = BAU_931_Till;
-	nr = 900;
+	NO = 900 ;
 	condition = DIA_Till_PICKPOCKET_Condition;
 	information = DIA_Till_PICKPOCKET_Info;
 	permanent = TRUE;
@@ -408,19 +407,19 @@ instance DIA_Till_PICKPOCKET(C_Info)
 
 func int DIA_Till_PICKPOCKET_Condition()
 {
-	return C_Beklauen(36,40);
+	return  C_Beklauen ( 36 , 40 );
 };
 
 func void DIA_Till_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Till_PICKPOCKET);
-	Info_AddChoice(DIA_Till_PICKPOCKET,Dialog_Back,DIA_Till_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Till_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Till_PICKPOCKET_DoIt);
+	Info_AddChoice (DIA_Till_PICKPOCKET, Dialog_Back, DIA_Till_PICKPOCKET_BACK);
+	Info_AddChoice (DIA_Till_PICKPOCKET, DIALOG_PICKPOCKET , DIA_Till_PICKPOCKET_DoIt);
 };
 
-func void DIA_Till_PICKPOCKET_DoIt()
+func void DIA_Till_PICKPOCKET_DoIt ()
 {
-	B_Beklauen();
+	B_Beklauen ();
 	Info_ClearChoices(DIA_Till_PICKPOCKET);
 };
 
