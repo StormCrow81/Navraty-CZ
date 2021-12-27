@@ -1,8 +1,8 @@
 
-instance DIA_Rega_EXIT(C_Info)
+instance DIA_Rega_EXIT (C_Info)
 {
 	npc = BAU_933_Rega;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Rega_EXIT_Condition;
 	information = DIA_Rega_EXIT_Info;
 	permanent = TRUE;
@@ -15,67 +15,67 @@ func int DIA_Rega_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Rega_EXIT_Info()
+func void DIA_Rega_EXIT_Info ()
 {
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Rega_HALLO(C_Info)
+instance DIA_Rega_HALLO (C_Info)
 {
 	npc = BAU_933_Rega;
-	nr = 3;
+	No. = 3 ;
 	condition = DIA_Rega_HALLO_Condition;
 	information = DIA_Rega_HALLO_Info;
 	description = "Как дела?";
 };
 
-func int DIA_Rega_HALLO_Condition()
+func int DIA_Rega_HALLO_Condition ()
 {
 	return TRUE;
 };
 
-func void DIA_Rega_HALLO_Info()
+func void DIA_Rega_HELLO_Info()
 {
-	AI_Output(other,self,"DIA_Rega_HALLO_15_00");	//Как дела?
+	AI_Output(other,self,"DIA_Rega_HALLO_15_00");	//How are you?
 
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Rega_HALLO_17_01");	//Ты из города, да?
+		AI_Output (self, other, " DIA_Rega_HALLO_17_01 " );	// You're from the city, right?
 	}
 	else if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Rega_HALLO_17_02");	//Ты один из наемников Онара, да?
+		AI_Output (self, other, " DIA_Rega_HALLO_17_02 " );	// You're one of Onar's mercenaries, aren't you?
 	}
 	else if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_GUR) || (hero.guild == GIL_KDM) || (hero.guild == GIL_NOV) || (hero.guild == GIL_NDW) || (hero.guild == GIL_NDM))
 	{
-		AI_Output(self,other,"DIA_Rega_HALLO_17_03");	//Ты маг, да?
+		AI_Output(self,other,"DIA_Rega_HALLO_17_03");	//You are a wizard, yes?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Rega_HALLO_17_04");	//Ты нездешний, да?
+		AI_Output (self, other, " DIA_Rega_HALLO_17_04 " );	// You're not from here, are you?
 	};
 
-	AI_Output(self,other,"DIA_Rega_HALLO_17_05");	//На твоем месте, я бы убиралась отсюда побыстрее.
-	AI_Output(other,self,"DIA_Rega_HALLO_15_06");	//Почему?
-	AI_Output(self,other,"DIA_Rega_HALLO_17_07");	//Это место и раньше-то не было раем. Но мы хотя бы жили в мире и спокойствии, пока работали на Секоба.
-	AI_Output(self,other,"DIA_Rega_HALLO_17_08");	//Но последнее время жить здесь стало просто невыносимо.
+	AI_Output (self, other, " DIA_Rega_HALLO_17_05 " );	// If I were you, I would get out of here quickly.
+	AI_Output(other,self,"DIA_Rega_HALLO_15_06");	//Why?
+	AI_Output (self, other, " DIA_Rega_HALLO_17_07 " );	// This place has never been paradise, but at least we lived in peace and tranquility while working for Sekoba.
+	AI_Output (self, other, " DIA_Rega_HALLO_17_08 " );	// But lately, living here has become a living hell.
 
 	if(Kapitel < 3)
 	{
-		AI_Output(self,other,"DIA_Rega_HALLO_17_09");	//Бандиты повсюду, полевые хищники уничтожают наш урожай, а Онар совсем озверел!
+		AI_Output (self, other, " DIA_Rega_HALLO_17_09 " );	// Bandits are everywhere, predators of the field are destroying our crops, and Onar is completely brutal!
 	};
 };
 
-instance DIA_Rega_ONAR(C_Info)
+instance DIA_Rega_ONAR (C_Info)
 {
 	npc = BAU_933_Rega;
-	nr = 4;
+	No. = 4 ;
 	condition = DIA_Rega_ONAR_Condition;
 	information = DIA_Rega_ONAR_Info;
-	description = "Ты боишься Онара?";
+	description = " Are you afraid of Onar? " ;
 };
 
-func int DIA_Rega_ONAR_Condition()
+func int DIA_Rega_ONAR_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Rega_HALLO) && ((hero.guild != GIL_SLD) && (hero.guild != GIL_DJG)) && (Kapitel < 3))
 	{
@@ -85,18 +85,18 @@ func int DIA_Rega_ONAR_Condition()
 
 func void DIA_Rega_ONAR_Info()
 {
-	AI_Output(other,self,"DIA_Rega_ONAR_15_00");	//Ты боишься Онара?
-	AI_Output(self,other,"DIA_Rega_ONAR_17_01");	//Конечно. Если ему кто-то не понравится, он посылает своих наемников и больше этого человека никто не видит.
-	AI_Output(self,other,"DIA_Rega_ONAR_17_02");	//Так что мы предпочитаем помалкивать.
+	AI_Output (other, self, " DIA_Rega_ONAR_15_00 " );	// Are you afraid of Onar?
+	AI_Output (self, other, " DIA_Rega_ONAR_17_01 " );	// Of course. If he doesn't like someone, he sends his mercenaries over and the person dissapears forever.
+	AI_Output (self, other, " DIA_Rega_ONAR_17_02 " );	// So we just shut our mouths.
 };
 
 instance DIA_Rega_SLD(C_Info)
 {
 	npc = BAU_933_Rega;
-	nr = 5;
+	No. = 5 ;
 	condition = DIA_Rega_SLD_Condition;
 	information = DIA_Rega_SLD_Info;
-	description = "Разве наемники не должны уничтожать полевых хищников?";
+	description = " Aren't mercenaries supposed to take out raptors in the field? " ;
 };
 
 func int DIA_Rega_SLD_Condition()
@@ -109,21 +109,21 @@ func int DIA_Rega_SLD_Condition()
 
 func void DIA_Rega_SLD_Info()
 {
-	AI_Output(other,self,"DIA_Rega_SLD_15_00");	//Разве наемники не должны уничтожать полевых хищников?
-	AI_Output(self,other,"DIA_Rega_SLD_17_01");	//Я не знаю, за что там платят, но уж точно не за то, чтобы они помогали простым людям.
-	AI_Output(self,other,"DIA_Rega_SLD_17_02");	//А проблему с полевыми хищниками мелким фермерам, арендующим у него землю, приходится решать самим.
+	AI_Output (other, self, " DIA_Rega_SLD_15_00 " );	// Shouldn't the mercenaries take out the field predators?
+	AI_Output (self, other, " DIA_Rega_SLD_17_01 " );	// I don't know what they are being paid for, but its certainly not for helping ordinary people.
+	AI_Output (self, other, " DIA_Rega_SLD_17_02 " );	// As for problems with field predators, the small farmers who rent land from him, have to solve it themselves.
 };
 
-instance DIA_Rega_BANDITEN(C_Info)
+instance DIA_Rega_BANDITEN (C_Info)
 {
 	npc = BAU_933_Rega;
-	nr = 6;
+	No. = 6 ;
 	condition = DIA_Rega_BANDITEN_Condition;
 	information = DIA_Rega_BANDITEN_Info;
-	description = "Как вы защищаетесь от бандитов?";
+	description = " How do you protect yourself from bandits? " ;
 };
 
-func int DIA_Rega_BANDITEN_Condition()
+func int DIA_Rega_BANDITEN_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Rega_HALLO))
 	{
@@ -131,19 +131,19 @@ func int DIA_Rega_BANDITEN_Condition()
 	};
 };
 
-func void DIA_Rega_BANDITEN_Info()
+func void DIA_Rega_BANDITEN_Info ()
 {
-	AI_Output(other,self,"DIA_Rega_BANDITEN_15_00");	//Как вы защищаетесь от бандитов?
-	AI_Output(self,other,"DIA_Rega_BANDITEN_17_01");	//Мы не защищаемся! Мы бежим! А что еще нам остается?
+	AI_Output (other, self, " DIA_Rega_BANDITEN_15_00 " );	// How do you protect yourself from bandits?
+	AI_Output (self, other, " DIA_Rega_BANDITEN_17_01 " );	// We don't even try! We simply flee before them. What choice do we have?
 };
 
-instance DIA_Rega_BRONKO(C_Info)
+instance DIA_Rega_BRONKO (C_Info)
 {
 	npc = BAU_933_Rega;
-	nr = 7;
+	No. = 7 ;
 	condition = DIA_Rega_BRONKO_Condition;
 	information = DIA_Rega_BRONKO_Info;
-	description = "(спросить о Бронко)";
+	description = " (ask about Bronco) " ;
 };
 
 func int DIA_Rega_BRONKO_Condition()
@@ -156,20 +156,20 @@ func int DIA_Rega_BRONKO_Condition()
 
 func void DIA_Rega_BRONKO_Info()
 {
-	AI_Output(other,self,"DIA_Rega_BRONKO_15_00");	//А кто этот противный тип вон там?
-	AI_Output(self,other,"DIA_Rega_BRONKO_17_01");	//Не пойми меня неправильно, но мне не нужны проблемы. Спроси кого-нибудь еще.
+	AI_Output (other, self, " DIA_Rega_BRONKO_15_00 " );	// Who is that nasty piece of work over there?
+	AI_Output (self, other, " DIA_Rega_BRONKO_17_01 " );	// I don't need any trouble. Ask someone else.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Rega_PERMKAP1(C_Info)
+instance DIA_Rega_PERMKAP1 (C_Info)
 {
 	npc = BAU_933_Rega;
-	nr = 7;
+	No. = 7 ;
 	condition = DIA_Rega_PERMKAP1_Condition;
 	information = DIA_Rega_PERMKAP1_Info;
 	permanent = TRUE;
-	description = "Выше нос!";
+	description = "Cheer up!";
 };
 
 func int DIA_Rega_PERMKAP1_Condition()
@@ -182,32 +182,32 @@ func int DIA_Rega_PERMKAP1_Condition()
 
 func void DIA_Rega_PERMKAP1_Info()
 {
-	AI_Output(other,self,"DIA_Rega_PERMKAP1_15_00");	//Выше нос!
+	AI_Output(other,self,"DIA_Rega_PERMKAP1_15_00");	//Cheer up!
 
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Rega_PERMKAP1_17_01");	//Тебе легко говорить! Ты ведь живешь в городе.
+		AI_Output (self, other, " DIA_Rega_PERMKAP1_17_01 " );	// Easy for you to say! You live in the city.
 	}
 	else if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Rega_PERMKAP1_17_02");	//Если бы вы, наемники, не доставляли нам столько проблем, жизнь здесь была бы не такой уж плохой.
+		AI_Output (self, other, " DIA_Rega_PERMKAP1_17_02 " );	// If you mercenaries didn't give us so many problems, life here would be so bearable.
 	}
 	else if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Rega_PERMKAP1_17_03");	//Магов вокруг становится все меньше и меньше. Надеюсь, ты не последний из них. Вы нужны нам - и сейчас как никогда.
+		AI_Output (self, other, " DIA_Rega_PERMKAP1_17_03 " );	// There are fewer and fewer mages around. I hope you are not the last of them. We need you - now more than ever.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Rega_PERMKAP1_17_04");	//Это не так-то легко, работая на этого душегуба Секоба.
+		AI_Output (self, other, " DIA_Rega_PERMKAP1_17_04 " );	// It's not easy working for that murderer Secob.
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Rega_PICKPOCKET(C_Info)
+instance DIA_Rega_PICKPOCKET (C_Info)
 {
 	npc = BAU_933_Rega;
-	nr = 900;
+	NO = 900 ;
 	condition = DIA_Rega_PICKPOCKET_Condition;
 	information = DIA_Rega_PICKPOCKET_Info;
 	permanent = TRUE;
@@ -217,19 +217,19 @@ instance DIA_Rega_PICKPOCKET(C_Info)
 
 func int DIA_Rega_PICKPOCKET_Condition()
 {
-	return C_Beklauen(25,40);
+	return  C_Beklauen ( 25 , 40 );
 };
 
 func void DIA_Rega_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Rega_PICKPOCKET);
 	Info_AddChoice(DIA_Rega_PICKPOCKET,Dialog_Back,DIA_Rega_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Rega_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Rega_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Rega_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Rega_PICKPOCKET_DoIt);
 };
 
-func void DIA_Rega_PICKPOCKET_DoIt()
+func void DIA_Rega_PICKPOCKET_DoIt ()
 {
-	B_Beklauen();
+	B_Beklauen ();
 	Info_ClearChoices(DIA_Rega_PICKPOCKET);
 };
 
