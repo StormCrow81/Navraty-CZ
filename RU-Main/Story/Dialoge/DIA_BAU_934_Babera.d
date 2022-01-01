@@ -2,7 +2,7 @@
 instance DIA_Babera_EXIT(C_Info)
 {
 	npc = BAU_934_Babera;
-	nr = 999;
+	No. = 999 ;
 	condition = DIA_Babera_EXIT_Condition;
 	information = DIA_Babera_EXIT_Info;
 	permanent = TRUE;
@@ -21,39 +21,39 @@ func void DIA_Babera_EXIT_Info()
 };
 
 
-instance DIA_Babera_HALLO(C_Info)
+instance DIA_Babera_HALLO (C_Info)
 {
 	npc = BAU_934_Babera;
-	nr = 1;
+	no. = 1 ;
 	condition = DIA_Babera_HALLO_Condition;
 	information = DIA_Babera_HALLO_Info;
-	description = "Привет, красавица.";
+	description = " Hello, beautiful. " ;
 };
 
 
-func int DIA_Babera_HALLO_Condition()
+func int DIA_Babera_HALLO_Condition ()
 {
 	return TRUE;
 };
 
-func void DIA_Babera_HALLO_Info()
+func void DIA_Babera_HELLO_Info()
 {
-	AI_Output(other,self,"DIA_Babera_HALLO_15_00");	//Привет, красавица.
-	AI_Output(self,other,"DIA_Babera_HALLO_16_01");	//Хватит клеиться ко мне. Скажи лучше сразу, что тебе нужно. Я занята.
+	AI_Output (other, self, " DIA_Babera_HALLO_15_00 " );	// Hello beautiful.
+	AI_Output (self, other, " DIA_Babera_HALLO_16_01 " );	// Stop bothering me you lecher. Tell me what you want or get lost. I'm busy.
 };
 
 
 instance DIA_Babera_WIESIEHTSAUS(C_Info)
 {
 	npc = BAU_934_Babera;
-	nr = 2;
+	no. = 2 ;
 	condition = DIA_Babera_WIESIEHTSAUS_Condition;
 	information = DIA_Babera_WIESIEHTSAUS_Info;
-	description = "Как идет работа в поле?";
+	description = " How is the fieldwork going? " ;
 };
 
 
-func int DIA_Babera_WIESIEHTSAUS_Condition()
+func int DIA_Babera_WIESIEHTSAUS_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Babera_HALLO))
 	{
@@ -61,47 +61,47 @@ func int DIA_Babera_WIESIEHTSAUS_Condition()
 	};
 };
 
-func void DIA_Babera_WIESIEHTSAUS_Info()
+func void DIA_Babera_WIESIEHTSAUS_Info ()
 {
-	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_15_00");	//Как идет работа в поле?
-	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_16_01");	//Посмотри на эти огромные поля, которые нм нужно обработать, и ты сам все поймешь.
-	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_16_02");	//Ты хочешь поработать на поле?
+	AI_Output (other, self, " DIA_Babera_WIESIEHTSAUS_15_00 " );	// How is the fieldwork going?
+	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_16_01 " );	// Look at the size of these fields. How do you think its going?
+	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_16_02 " );	// Do you need a job by any chance?
 	Info_ClearChoices(DIA_Babera_WIESIEHTSAUS);
 	if(hero.guild == GIL_NONE)
 	{
-		Info_AddChoice(DIA_Babera_WIESIEHTSAUS,"Вообще-то нет. Я хочу стать наемником.",DIA_Babera_WIESIEHTSAUS_Nein);
-		Info_AddChoice(DIA_Babera_WIESIEHTSAUS,"Может быть.",DIA_Babera_WIESIEHTSAUS_Vielleicht);
+		Info_AddChoice (DIA_Babera_WIESIEHTSAUS, " Not really. I want to become a mercenary. " , DIA_Babera_WIESIEHTSAUS_Nein);
+		Info_AddChoice (DIA_Babera_WIESIEHTSAUS, " Maybe. " , DIA_Babera_WIESIEHTSAUS_Perhaps);
 	};
 };
 
-func void DIA_Babera_WIESIEHTSAUS_Vielleicht()
+func void DIA_Babera_WIESIEHTSAUS_Vielleicht ()
 {
-	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_Vielleicht_15_00");	//Может быть.
-	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_01");	//Тогда тебе лучше поговорить с нашим фермером, Секобом. Может, у него найдется работа для тебя.
-	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_02");	//Ну, или попробуй найти работу на ферме Онара. Она находится в конце этой дороги.
-	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_03");	//Но только будь повежливее с наемниками. Они не любят чужаков.
+	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_Vielleicht_15_00");	//Мaybe.
+	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_Vielleicht_16_01 " );	// Then you better talk to the farmer, Sekob. Maybe he has a job for you.
+	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_Vielleicht_16_02 " );	// Or try to find a job at Onar's farm. She is at the end of this road.
+	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_Vielleicht_16_03 " );	// for your own sake, be nice to the mercenaries. They don't like outsiders.
 	Info_ClearChoices(DIA_Babera_WIESIEHTSAUS);
 };
 
-func void DIA_Babera_WIESIEHTSAUS_Nein()
+func void DIA_Babera_WIESIEHTSAUS_Nein ()
 {
-	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_Nein_15_00");	//Вообще-то нет. Я хочу стать наемником.
-	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Nein_16_01");	//Тогда ты зря сюда пришел. Все наемники на ферме Онара.
+	AI_Output (other, self, " DIA_Babera_WIESIEHTSAUS_Nein_15_00 " );	// Not really. I want to become a mercenary.
+	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_Nein_16_01 " );	// Then you shouldn't have come here. All the mercenaries are on Onar's farm.
 	Info_ClearChoices(DIA_Babera_WIESIEHTSAUS);
 };
 
 
-instance DIA_Babera_BRONKO(C_Info)
+instance DIA_Babera_BRONKO (C_Info)
 {
 	npc = BAU_934_Babera;
-	nr = 3;
+	No. = 3 ;
 	condition = DIA_Babera_BRONKO_Condition;
 	information = DIA_Babera_BRONKO_Info;
-	description = "(спросить о Бронко)";
+	description = " (ask about Bronco) " ;
 };
 
 
-func int DIA_Babera_BRONKO_Condition()
+func int DIA_Babera_BRONKO_Condition ()
 {
 	if(Npc_KnowsInfo(other,DIA_Bronko_HALLO) && Npc_KnowsInfo(other,DIA_Babera_WIESIEHTSAUS))
 	{
@@ -109,36 +109,36 @@ func int DIA_Babera_BRONKO_Condition()
 	};
 };
 
-func void DIA_Babera_BRONKO_Info()
+func void DIA_Babera_BRONKO_Info ()
 {
-	AI_Output(other,self,"DIA_Babera_BRONKO_15_00");	//Скажи, вон тот тип, что стоит там...
-	AI_Output(self,other,"DIA_Babera_BRONKO_16_01");	//Это Бронко. Зачем он тебе?
-	AI_Output(other,self,"DIA_Babera_BRONKO_15_02");	//Это ваш фермер?
-	AI_Output(self,other,"DIA_Babera_BRONKO_16_03");	//(смеется) Это он сказал тебе? Наш фермер Секоб. А Бронко просто болтун и бездельник. Но сильный как бык.
-	AI_Output(self,other,"DIA_Babera_BRONKO_16_04");	//Вот почему никто не протестует против того, что он не работает.
+	AI_Output (other, self, " DIA_Babera_BRONKO_15_00 " );	// Tell me, the guy over there ...
+	AI_Output (self, other, " DIA_Babera_BRONKO_16_01 " );	// Bronco? What about him?
+	AI_Output (other, self, " DIA_Babera_BRONKO_15_02 " );	// Is he the farmer here?
+	AI_Output (self, other, " DIA_Babera_BRONKO_16_03 " );	// (laughs) Did he tell you that? Our farmer is Sekob. And Bronco is just a strong moron with a big mouth.
+	AI_Output (self, other, " DIA_Babera_BRONKO_16_04 " );	// Most people are afraid of him, though.
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Babera_BRONKO_16_05");	//Он никого не боится. Только наемников.
+		AI_Output (self, other, " DIA_Babera_BRONKO_16_05 " );	// He's not afraid of anyone. Only the mercenaries.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Babera_BRONKO_16_06");	//Только наемники могут заставить его работать. Он очень боится их.
+		AI_Output (self, other, " DIA_Babera_BRONKO_16_06 " );	// Bronco is only afraid of the mercenaries.
 	};
-	Babera_BronkoKeinBauer = TRUE;
+	Babera_BronkoKeinBauer = TRUE ;
 };
 
 
-instance DIA_Babera_Rosi(C_Info)
+instance DIA_Babera_Rosi (C_Info)
 {
 	npc = BAU_934_Babera;
-	nr = 3;
+	No. = 3 ;
 	condition = DIA_Babera_Rosi_Condition;
 	information = DIA_Babera_Rosi_Info;
 	description = "А где Рози?";
 };
 
 
-func int DIA_Babera_Rosi_Condition()
+func int DIA_Babera_Rosi_Condition ()
 {
 	if((MIS_bringRosiBackToSekob == LOG_Running) && (Kapitel >= 5) && (RosiFoundKap5 == FALSE))
 	{
@@ -146,23 +146,23 @@ func int DIA_Babera_Rosi_Condition()
 	};
 };
 
-func void DIA_Babera_Rosi_Info()
+func void DIA_Babera_Rosi_Info ()
 {
-	AI_Output(other,self,"DIA_Babera_Rosi_15_00");	//А где Рози?
-	AI_Output(self,other,"DIA_Babera_Rosi_16_01");	//Она больше не могла выносить такую жизнь и ушла на север, в лес.
-	B_LogEntry(TOPIC_RosisFlucht,"Рози сбежала с фермы Секоба. Бабера говорит, что она направилась на север, в лес.");
-	B_LogEntry(TOPIC_bringRosiBackToSekob,"Рози сбежала с фермы Секоба. Бабера говорит, что она направилась на север, в лес.");
+	AI_Output(other,self,"DIA_Babera_Rosi_15_00");	//Where is Rosie?
+	AI_Output (self, other, " DIA_Babera_Rosi_16_01 " );	// She got tired of this life and went north, into the forest.
+	B_LogEntry (TOPIC_RosisFlucht, " Rosie escaped Secob's farm. Babera says she headed north into the forest. " );
+	B_LogEntry (TOPIC_bringRosiBackToSekob, " Rosie escaped Sekob's farm. Babera says she headed north into the forest. " );
 };
 
 
 instance DIA_Babera_DUSTOERST(C_Info)
 {
 	npc = BAU_934_Babera;
-	nr = 10;
+	No. = 10 ;
 	condition = DIA_Babera_DUSTOERST_Condition;
 	information = DIA_Babera_DUSTOERST_Info;
 	permanent = TRUE;
-	description = "А кроме этого?";
+	description = " Anything else? " ;
 };
 
 
@@ -176,8 +176,8 @@ func int DIA_Babera_DUSTOERST_Condition()
 
 func void DIA_Babera_DUSTOERST_Info()
 {
-	AI_Output(other,self,"DIA_Babera_DUSTOERST_15_00");	//Есть что-нибудь еще?
-	AI_Output(self,other,"DIA_Babera_DUSTOERST_16_01");	//Я занята.
+	AI_Output (other, self, " DIA_Babera_DUSTOERST_15_00 " );	// Anything else?
+	AI_Output(self,other,"DIA_Babera_DUSTOERST_16_01");	//I'm busy.
 	AI_StopProcessInfos(self);
 };
 
@@ -185,7 +185,7 @@ func void DIA_Babera_DUSTOERST_Info()
 instance DIA_Babera_PICKPOCKET(C_Info)
 {
 	npc = BAU_934_Babera;
-	nr = 900;
+	NO = 900 ;
 	condition = DIA_Babera_PICKPOCKET_Condition;
 	information = DIA_Babera_PICKPOCKET_Info;
 	permanent = TRUE;
@@ -193,21 +193,21 @@ instance DIA_Babera_PICKPOCKET(C_Info)
 };
 
 
-func int DIA_Babera_PICKPOCKET_Condition()
+func int DIA_Babera_PICKPOCKET_Condition ()
 {
-	return C_Beklauen(20,30);
+	return  C_Beklauen ( 20 , 30 );
 };
 
 func void DIA_Babera_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Babera_PICKPOCKET);
 	Info_AddChoice(DIA_Babera_PICKPOCKET,Dialog_Back,DIA_Babera_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Babera_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Babera_PICKPOCKET_DoIt);
+	Info_AddChoice (DIA_Babera_PICKPOCKET, DIALOG_PICKPOCKET , DIA_Babera_PICKPOCKET_DoIt);
 };
 
-func void DIA_Babera_PICKPOCKET_DoIt()
+func void DIA_Babera_PICKPOCKET_DoIt ()
 {
-	B_Beklauen();
+	B_Beklauen ();
 	Info_ClearChoices(DIA_Babera_PICKPOCKET);
 };
 
@@ -215,4 +215,3 @@ func void DIA_Babera_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Babera_PICKPOCKET);
 };
-
