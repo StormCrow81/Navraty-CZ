@@ -39,33 +39,32 @@ func int DIA_Addon_10019_Wache_Hi_Condition()
 
 func void DIA_Addon_10019_Wache_Hi_Info()
 {
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_06_00");	//Направляешься в шахту?
+	AI_Output(self,other, " DIA_Addon_BDT_10019_Wache_Hi_06_00 " );	// Heading to the mine?
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);
-	Info_AddChoice(DIA_Addon_BDT_10019_Wache_Hi,"Вообще-то я хотел увидеть Ворона.",DIA_Addon_BDT_10019_Wache_Hi_Raven);
+	Info_AddChoice(DIA_Addon_BDT_10019_Wache_Hi, " Actually, I wanted to see Raven. " ,DIA_Addon_BDT_10019_Wache_Hi_Raven);
 	Info_AddChoice(DIA_Addon_BDT_10019_Wache_Hi,"Хорошо.",DIA_Addon_BDT_10019_Wache_Hi_Ja);
 };
 
-func void B_Say_Wache_kaputt()
+func void B_Say_Guard_broken()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_kaputt_15_00");	//Почему они умерли?
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_kaputt_06_01");	//(злобно смеется) Заработались до смерти.
+	AI_Output(other,self, " DIA_Addon_BDT_10019_Wache_kaputt_15_00 " );	// Why did they die?
+	AI_Output(self,other, " DIA_Addon_BDT_10019_Wache_kaputt_06_01 " );	// (laughs viciously) Worked to death.
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);
 };
 
 func void DIA_Addon_BDT_10019_Wache_Hi_Raven()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_Hi_Raven_15_00");	//Вообще-то я хотел увидеть Ворона.
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Raven_06_01");	//(предупреждая) Эй! Только попробуй войти в храм - и ты погибнешь так же, как эти заключенные.
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Raven_06_02");	//Давай-ка лучше двигай в шахту.
-	B_Say_Wache_kaputt();
+	AI_Output(other,self, " DIA_Addon_BDT_10019_Wache_Hi_Raven_15_00 " );	// Actually, I wanted to see Raven.
+	AI_Output(self,other, " DIA_Addon_BDT_10019_Wache_Hi_Raven_06_01 " );	// (warning) Hey! Just try to enter the temple - and you will perish just like these prisoners.
+	AI_Output(self,other, " DIA_Addon_BDT_10019_Wache_Hi_Raven_06_02 " );	// Let's better move into the mine.
+	B_Say_Guard_broken();
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);
 };
 
 func void DIA_Addon_BDT_10019_Wache_Hi_Ja()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_Hi_Ja_15_00");	//Хорошо.
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Ja_06_01");	//Тогда постарайся быть осторожнее, чем эти бедняги.
-	B_Say_Wache_kaputt();
+	AI_Output(self,other, " DIA_Addon_BDT_10019_Wache_Hi_Ja_06_01 " );	// Then try to be more careful than those poor guys.
+	B_Say_Guard_broken();
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);
 };
-
