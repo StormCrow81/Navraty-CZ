@@ -9,28 +9,28 @@ var int Dar_Bonus_4;
 func void B_DaronSegen()
 {
 	var string concatText;
-	var int DarBonMana;
+	var int DarBonMan;
 
 	Daron_Segen = TRUE;
-	DarBonMana = SBMODE * 2;
+	DoBonMan = SBMODE  *  2 ;
 
-	if((Daron_Spende >= 250) && (Dar_Bonus_1 == FALSE))
+	if ((Give_Spend >=  250 ) && (Give_Bonus_1 ==  FALSE ))
 	{
-		B_RaiseAttribute_Bonus(other,ATR_MANA_MAX,DarBonMana);
+		B_RaiseAttribute_Bonus(other, ATR_MANA_MAX ,DarBonMana);
 		other.attribute[ATR_MANA] = other.attribute[ATR_MANA_MAX];
-		Dar_Bonus_1 = TRUE;
+		But_Bonus_1 = TRUE ;
 	}
 	else if((Daron_Spende >= 500) && (Dar_Bonus_1 == TRUE) && (Dar_Bonus_2 == FALSE))
 	{
 		B_GivePlayerXP(XP_Ambient);
-		Dar_Bonus_2 = TRUE;
+		But_Bonus_2 = TRUE ;
 	}
 	else if((Daron_Spende >= 750) && (Dar_Bonus_2 == TRUE) && (Dar_Bonus_3 == FALSE))
 	{
 		other.lp = other.lp + SBMODE;
 		concatText = ConcatStrings(PRINT_LearnLP,IntToString(SBMODE));
 		AI_Print(concatText);
-		Dar_Bonus_3 = TRUE;
+		But_Bonus_3 = TRUE ;
 	}
 	else if((Daron_Spende >= 1000) && (Dar_Bonus_3 == TRUE) && (Dar_Bonus_4 == FALSE))
 	{
@@ -40,7 +40,7 @@ func void B_DaronSegen()
 		concatText = ConcatStrings(PRINT_Learnhitpoints_MAX,IntToString(SBMODE * 5));
 		AI_Print(concatText);
 		INNOSPRAYCOUNT = INNOSPRAYCOUNT + 10;
-		Dar_Bonus_4 = TRUE;
+		But_Bonus_4 = TRUE ;
 	}
 	else
 	{
@@ -73,7 +73,7 @@ func void DIA_Daron_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Daron_Hallo(C_Info)
+instance DIA_Daron_Hello (C_Info)
 {
 	npc = KDF_511_Daron;
 	nr = 2;
@@ -94,8 +94,8 @@ func int DIA_Daron_Hallo_Condition()
 
 func void DIA_Daron_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Daron_Hallo_10_00");	//Что я могу сделать для тебя? Ты ищешь душевного комфорта?
-	AI_Output(self,other,"DIA_Daron_Hallo_10_01");	//Ты хочешь помолиться нашему владыке Инносу, или, может, хочешь пожертвовать золото его церкви?
+	AI_Output(self,other, " DIA_Daron_Hallo_10_00 " );	// What can I do for you? Are you looking for peace of mind?
+	AI_Output(self,other, " DIA_Daron_Hallo_10_01 " );	// Do you want to pray to our lord Innos, or maybe you want to donate gold to his church?
 };
 
 
@@ -106,13 +106,13 @@ instance DIA_Daron_Paladine(C_Info)
 	condition = DIA_Daron_Paladine_Condition;
 	information = DIA_Daron_Paladine_Info;
 	permanent = FALSE;
-	description = "Мне нужно поговорить с паладинами.";
+	description = " I need to talk to the paladins. " ;
 };
 
 
 func int DIA_Daron_Paladine_Condition()
 {
-	if((other.guild != GIL_KDF) && (Kapitel < 2))
+	if ((other.guild !=  GIL_KDF ) && (Chapter <  2 )) .
 	{
 		return TRUE;
 	};
@@ -120,12 +120,12 @@ func int DIA_Daron_Paladine_Condition()
 
 func void DIA_Daron_Paladine_Info()
 {
-	AI_Output(other,self,"DIA_Daron_Paladine_15_00");	//Мне нужно поговорить с паладинами. Ты можешь помочь мне в этом?
-	AI_Output(self,other,"DIA_Daron_Paladine_10_01");	//Ну, для этого ты должен иметь доступ в верхний квартал города. Однако входить туда позволено только гражданам и городской страже.
-	AI_Output(self,other,"DIA_Daron_Paladine_10_02");	//Ну и, конечно же, нам, Магам Огня.
-	AI_Output(other,self,"DIA_Daron_Paladine_15_03");	//Как я могу стать Магом Огня?
-	AI_Output(self,other,"DIA_Daron_Paladine_10_04");	//Ты должен вступить в наш орден в качестве послушника. А по прошествии некоторого времени, возможно, ты будешь принят в ряды магов.
-	AI_Output(self,other,"DIA_Daron_Paladine_10_05");	//Однако этот путь долог, полон тяжелой работы и утомительного обучения.
+	AI_Output(other,self, " DIA_Daron_Paladine_15_00 " );	// I need to talk to the paladins. Can you help me with this?
+	AI_Output(self,other, " DIA_Daron_Paladine_10_01 " );	// Well, for this you must have access to the upper quarter of the city. However, only citizens and city guards are allowed to enter there.
+	AI_Output(self,other, " DIA_Daron_Paladine_10_02 " );	// And, of course, us Fire Mages.
+	AI_Output(other,self, " DIA_Daron_Paladine_15_03 " );	// How can I become a Fire Mage?
+	AI_Output(self,other, " DIA_Daron_Paladine_10_04 " );	// You must join our order as an acolyte. And after some time, perhaps you will be accepted into the ranks of magicians.
+	AI_Output(self,other, " DIA_Daron_Paladine_10_05 " );	// However, this path is long, full of hard work and tedious learning.
 };
 
 
@@ -136,7 +136,7 @@ instance DIA_Daron_AboutSegen(C_Info)
 	condition = DIA_Daron_AboutSegen_Condition;
 	information = DIA_Daron_AboutSegen_Info;
 	permanent = FALSE;
-	description = "Я пришел, чтобы получить твое благословение!";
+	description = " I've come to receive your blessing! " ;
 };
 
 
@@ -150,31 +150,31 @@ func int DIA_Daron_AboutSegen_Condition()
 
 func void DIA_Daron_AboutSegen_Info()
 {
-	AI_Output(other,self,"DIA_Daron_AboutSegen_15_00");	//Я пришел, чтобы получить твое благословение!
-	AI_Output(self,other,"DIA_Daron_AboutSegen_10_01");	//Это хорошо - тогда ты, вероятно, захочешь пожертвовать золото святой церкви Инноса, правда?
-	AI_Output(other,self,"DIA_Daron_AboutSegen_15_02");	//Вообще-то, я хотел получить твое благословение, чтобы поступить в ученики к одному из мастеров в нижней части города...
+	AI_Output(other,self, " DIA_Daron_AboutSegen_15_00 " );	// I've come to receive your blessing!
+	AI_Output(self,other, " DIA_Daron_AboutSegen_10_01 " );	// That's good - then you'll probably want to donate gold to the holy church of Innos, right?
+	AI_Output(other,self, " DIA_Daron_AboutSegen_15_02 " );	// Actually, I wanted to get your blessing so that I could become an apprentice to one of the masters in the lower part of the city...
 
 	if(Daron_Segen == TRUE)
 	{
-		AI_Output(self,other,"DIA_Daron_AboutSegen_10_03");	//Но я уже дал тебе мое благословение, сын мой.
-		AI_Output(self,other,"DIA_Daron_AboutSegen_10_04");	//Ступай с Инносом, сын мой!
+		AI_Output(self,other, " DIA_Daron_AboutSegen_10_03 " );	// But I already gave you my blessing, my son.
+		AI_Output(self,other, " DIA_Daron_AboutSegen_10_04 " );	// Go with Innos, my son!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Daron_AboutSegen_10_05");	//Но, сын мой! Без скромного пожертвования церкви я не считаю для себя возможным благословить тебя.
-		AI_Output(self,other,"DIA_Daron_AboutSegen_10_06");	//Как еще могу я увериться в твоих добрых намерениях по отношению к святой церкви Инноса?
+		AI_Output(self,other, " DIA_Daron_AboutSegen_10_05 " );	// But, my son! Without a modest donation to the church, I do not consider it possible for me to bless you.
+		AI_Output(self,other, " DIA_Daron_AboutSegen_10_06 " );	// How else can I be sure of your good intentions towards the holy church of Innos?
 	};
 };
 
 
-instance DIA_Daron_Spenden(C_Info)
+instance DIA_Daron_Spenden (C_Info)
 {
 	npc = KDF_511_Daron;
 	nr = 3;
 	condition = DIA_Daron_Spenden_Condition;
 	information = DIA_Daron_Spenden_Info;
 	permanent = FALSE;
-	description = "И какое пожертвование обычно считается достаточным?";
+	description = " And what kind of donation is usually considered sufficient? " ;
 };
 
 
@@ -188,66 +188,66 @@ func int DIA_Daron_Spenden_Condition()
 
 func void DIA_Daron_Spenden_Info()
 {
-	AI_Output(other,self,"DIA_Daron_Spenden_15_00");	//И какое пожертвование обычно считается достаточным?
-	AI_Output(self,other,"DIA_Daron_Spenden_10_01");	//Ну, это зависит от того, чем ты располагаешь. Давай посмотрим, что у тебя есть.
-	AI_Output(self,other,"DIA_Daron_Spenden_10_02");	//(смотрит в кошелек с деньгами) М-м-м хмм...
+	AI_Output(other,self, " DIA_Daron_Spenden_15_00 " );	// And what kind of donation is usually considered sufficient?
+	AI_Output(self,other, " DIA_Daron_Spenden_10_01 " );	// Well, it depends on what you have. Let's see what you have.
+	AI_Output(self,other, " DIA_Daron_Spenden_10_02 " );	// (looks into a wallet full of money) Mmm hmm...
 
 	if(Npc_HasItems(other,ItMi_Gold) < 10)
 	{
-		AI_Output(self,other,"DIA_Daron_Spenden_10_03");	//Хм, ты ведь бедняк, да? Оставь себе то немногое, что у тебя есть.
+		AI_Output(self,other, " DIA_Daron_Spenden_10_03 " );	// Hmm, you're poor, aren't you? Keep what little you have.
 
 		if((MIS_Thorben_GetBlessings == LOG_Running) && (DaronBlessMe == FALSE))
 		{
 			DaronBlessMe = TRUE;
-			B_LogEntry(TOPIC_Thorben,"Маг огня Дарон не благословил меня. Мне кажется, это означает, что я должен пожертвовать ему немного золота. Без этого он не благословит меня.");
+			B_LogEntry(TOPIC_Thorben, "The fire mage Daron didn't bless me. I think that means I should donate some gold to him. Without it, he won't bless me. " );
 		};
 	}
 	else
 	{
 		if(Npc_HasItems(other,ItMi_Gold) < 50)
 		{
-			AI_Output(self,other,"DIA_Daron_Spenden_10_04");	//Ну, ты не богат, но и не беден. Десять золотых для Инноса - мы живем скромной жизнью.
+			AI_Output(self,other, " DIA_Daron_Spenden_10_04 " );	// Well, you're not rich, but you're not poor either. Ten gold for Innos - we live a modest life.
 			B_GiveInvItems(other,self,ItMi_Gold,10);
 			Npc_RemoveInvItems(self,ItMi_Gold,10);
 		}
 		else if(Npc_HasItems(other,ItMi_Gold) < 100)
 		{
-			AI_Output(self,other,"DIA_Daron_Spenden_10_05");	//У тебя больше полсотни золотых монет. Пожертвуй двадцать пять монет Инносу и получи мое благословение.
+			AI_Output(self,other, " DIA_Daron_Spenden_10_05 " );	// You have over fifty gold coins. Donate twenty-five coins to Innos and receive my blessing.
 			B_GiveInvItems(other,self,ItMi_Gold,25);
 			Npc_RemoveInvItems(self,ItMi_Gold,25);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Daron_Spenden_10_06");	//У тебя больше ста золотых монет - Владыка говорит: 'Делись, если можешь'.
-			AI_Output(self,other,"DIA_Daron_Spenden_10_07");	//Церковь примет твое щедрое подношение.
+			AI_Output(self,other, " DIA_Daron_Spenden_10_06 " );	// You have more than a hundred gold coins - the Lord says: 'Share if you can'.
+			AI_Output(self,other, " DIA_Daron_Spenden_10_07 " );	// The Church will accept your generous offering.
 			B_GiveInvItems(other,self,ItMi_Gold,50);
 			Npc_RemoveInvItems(self,ItMi_Gold,50);
 		};
-		AI_Output(self,other,"DIA_Daron_Spenden_10_08");	//Благословляю тебя от имени Инноса. Он несет в этот мир свет и справедливость.
+		AI_Output(self,other, " DIA_Daron_Spenden_10_08 " );	// I bless you on behalf of Innos. He brings light and justice to this world.
 		Daron_Segen = TRUE;
 		B_GivePlayerXP(XP_InnosSegen);
 
 		if((MIS_Thorben_GetBlessings == LOG_Running) && (DaronBlessMe == FALSE))
 		{
 			DaronBlessMe = TRUE;
-			B_LogEntry(TOPIC_Thorben,"Маг огня Дарон благословил меня.");
+			B_LogEntry(TOPIC_Thorben, "The fire mage Daron has blessed me. " );
 		};
 	};
 };
 
 
-instance DIA_Daron_Woher(C_Info)
+instance DIA_Daron_Where (C_Info)
 {
 	npc = KDF_511_Daron;
 	nr = 9;
-	condition = DIA_Daron_Woher_Condition;
-	information = DIA_Daron_Woher_Info;
+	condition = DIA_Daron_Where_Condition;
+	information = DIA_Daron_Where_Info;
 	permanent = FALSE;
-	description = "Откуда ты?";
+	description = " Where are you from? " ;
 };
 
 
-func int DIA_Daron_Woher_Condition()
+func int DIA_Daron_Where_Condition()
 {
 	if((other.guild != GIL_KDF) && (other.guild != GIL_NOV))
 	{
@@ -255,13 +255,13 @@ func int DIA_Daron_Woher_Condition()
 	};
 };
 
-func void DIA_Daron_Woher_Info()
+func void DIA_Daron_Where_Info()
 {
-	AI_Output(other,self,"DIA_Daron_Woher_15_00");	//Откуда ты пришел?
-	AI_Output(self,other,"DIA_Daron_Woher_10_01");	//Я пришел из монастыря магов, находящегося в горах.
+	AI_Output(other,self, " DIA_Daron_Woher_15_00 " );	// Where did you come from?
+	AI_Output(self,other, " DIA_Daron_Woher_10_01 " );	// I came from the monastery of magicians, located in the mountains.
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Daron_Woher_10_02");	//Мы принимаем к себе всех, кто чист сердцем и ощущает желание служить нашему всемогущему владыке Инносу.
+		AI_Output(self,other, " DIA_Daron_Woher_10_02 " );	// We accept all who are pure in heart and feel the desire to serve our almighty lord Innos.
 	};
 };
 
@@ -273,13 +273,13 @@ instance DIA_Daron_Innos(C_Info)
 	condition = DIA_Daron_Innos_Condition;
 	information = DIA_Daron_Innos_Info;
 	permanent = FALSE;
-	description = "Расскажи мне об Инносе.";
+	description = " Tell me about Innos. " ;
 };
 
 
 func int DIA_Daron_Innos_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Daron_Woher) && (other.guild == GIL_NONE))
+	if ( Npc_KnowsInfo ( other , DIA_Daron_Woher ) && ( other . guild ==  GIL_NONE ))
 	{
 		return TRUE;
 	};
@@ -287,10 +287,10 @@ func int DIA_Daron_Innos_Condition()
 
 func void DIA_Daron_Innos_Info()
 {
-	AI_Output(other,self,"DIA_Daron_Innos_15_00");	//Расскажи мне об Инносе.
-	AI_Output(self,other,"DIA_Daron_Innos_10_01");	//Иннос, наш всемогущий владыка, - наш свет и огонь.
-	AI_Output(self,other,"DIA_Daron_Innos_10_02");	//Он выбирал людей в качестве проводников своей воли на земле. Он дает им магию и законы.
-	AI_Output(self,other,"DIA_Daron_Innos_10_03");	//Мы говорим и действуем от его имени. Мы осуществляем правосудие согласно его воле и проповедуем его слово.
+	AI_Output(other,self, " DIA_Daron_Innos_15_00 " );	// Tell me about Innos.
+	AI_Output(self,other, " DIA_Daron_Innos_10_01 " );	// Innos, our almighty lord, is our light and fire.
+	AI_Output(self,other, " DIA_Daron_Innos_10_02 " );	// He chose people as the conductors of his will on earth. He gives them magic and laws.
+	AI_Output(self,other, " DIA_Daron_Innos_10_03 " );	// We speak and act on his behalf. We administer justice according to his will and preach his word.
 };
 
 
@@ -301,13 +301,13 @@ instance DIA_Daron_Kloster(C_Info)
 	condition = DIA_Daron_Kloster_Condition;
 	information = DIA_Daron_Kloster_Info;
 	permanent = FALSE;
-	description = "Расскажи мне подробнее о монастыре.";
+	description = " Tell me more about the monastery. " ;
 };
 
 
 func int DIA_Daron_Kloster_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Daron_Woher) || (Npc_KnowsInfo(other,DIA_Daron_Paladine) && (other.guild == GIL_NONE)))
+	if ( Npc_KnowsInfo ( other , DIA_Daron_Woher ) || ( Npc_Knows Info ( other , DIA_Daron_Paladine ) && ( other . guild ==  GIL_NONE )))
 	{
 		return TRUE;
 	};
@@ -315,27 +315,27 @@ func int DIA_Daron_Kloster_Condition()
 
 func void DIA_Daron_Kloster_Info()
 {
-	AI_Output(other,self,"DIA_Daron_Kloster_15_00");	//Расскажи мне подробнее о монастыре.
-	AI_Output(self,other,"DIA_Daron_Kloster_10_01");	//Мы обучаем наших студентов всем формам магии. Но сила Магов Огня не ограничивается только магией.
-	AI_Output(self,other,"DIA_Daron_Kloster_10_02");	//Мы также хорошо разбираемся в искусстве алхимии и создании рун.
-	AI_Output(self,other,"DIA_Daron_Kloster_10_03");	//Еще мы делаем превосходное вино.
+	AI_Output(other,self, " DIA_Daron_Kloster_15_00 " );	// Tell me more about the monastery.
+	AI_Output(self,other, " DIA_Daron_Kloster_10_01 " );	// We teach our students all forms of magic. But the power of the Fire Mages is not limited to magic.
+	AI_Output(self,other, " DIA_Daron_Kloster_10_02 " );	// We are also well versed in the art of alchemy and runemaking.
+	AI_Output(self,other, " DIA_Daron_Kloster_10_03 " );	// We also make excellent wine.
 };
 
 
-instance DIA_Daron_Stadt(C_Info)
+instance DIA_Daron_Stadt (C_Info)
 {
 	npc = KDF_511_Daron;
 	nr = 99;
 	condition = DIA_Daron_Stadt_Condition;
 	information = DIA_Daron_Stadt_Info;
 	permanent = FALSE;
-	description = "А что ты делаешь в городе?";
+	description = " What are you doing in the city? " ;
 };
 
 
 func int DIA_Daron_Stadt_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Daron_Woher))
+	if ( Npc_KnowsInfo ( other , DIA_Daron_Woher ) )
 	{
 		return TRUE;
 	};
@@ -343,9 +343,9 @@ func int DIA_Daron_Stadt_Condition()
 
 func void DIA_Daron_Stadt_Info()
 {
-	AI_Output(other,self,"DIA_Daron_Stadt_15_00");	//А что ты делаешь в городе?
-	AI_Output(self,other,"DIA_Daron_Stadt_10_01");	//Я просвещаю паладинов и поддерживаю горожан своими советами и ободряющими словами.
-	AI_Output(self,other,"DIA_Daron_Stadt_10_02");	//В эти тяжелые времена наш долг быть среди народа и помогать бедным.
+	AI_Output(other,self, " DIA_Daron_Stadt_15_00 " );	// What are you doing in the city?
+	AI_Output(self,other, " DIA_Daron_Stadt_10_01 " );	// I enlighten the paladins and support the townspeople with my advice and words of encouragement.
+	AI_Output(self,other, " DIA_Daron_Stadt_10_02 " );	// In these difficult times, it is our duty to be among the people and help the poor.
 };
 
 
@@ -355,7 +355,7 @@ instance DIA_Addon_Daron_GuildHelp(C_Info)
 	nr = 2;
 	condition = DIA_Addon_Daron_GuildHelp_Condition;
 	information = DIA_Addon_Daron_GuildHelp_Info;
-	description = "Я слышал, у вас пропала ценная статуэтка.";
+	description = " I heard you lost a valuable figurine. " ;
 };
 
 
@@ -369,58 +369,58 @@ func int DIA_Addon_Daron_GuildHelp_Condition()
 
 func void DIA_Addon_Daron_GuildHelp_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Daron_GuildHelp_15_00");	//Я слышал, у вас пропала ценная статуэтка.
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_10_01");	//Неужели? Об этом знал только маг воды Ватрас.
-	AI_Output(other,self,"DIA_Addon_Daron_GuildHelp_15_02");	//В чем проблема?
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_10_03");	//С континента в монастырь была отправлена драгоценная статуэтка. Но до нас она так и не дошла.
-	AI_Output(other,self,"DIA_Addon_Daron_GuildHelp_15_04");	//Корабль был ограблен?
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_10_05");	//Нет. Он в целости и сохранности прибыл в Хоринис. Я встретил его и забрал статуэтку.
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_10_06");	//Но когда я возвращался в монастырь, на меня напали гоблины и отобрали ее у меня.
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_10_07");	//(сердито) И не надо на меня так смотреть. Маги, к твоему сведению, тоже люди.
+	AI_Output(other,self, " DIA_Addon_Daron_GuildHelp_15_00 " );	// I heard you lost a valuable figurine.
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_10_01 " );	// Really? Only the water mage Vatras knew about this.
+	AI_Output(other,self, " DIA_Addon_Daron_GuildHelp_15_02 " );	// What's the problem?
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_10_03 " );	// A precious figurine was sent to the monastery from the continent. But it never reached us.
+	AI_Output(other,self, " DIA_Addon_Daron_GuildHelp_15_04 " );	// Was the ship robbed?
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_10_05 " );	// No. He arrived safe and sound in Khorinis. I met him and took the figurine.
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_10_06 " );	// But when I was returning to the monastery, the goblins attacked me and took it from me.
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_10_07 " );	// (angrily) And don't look at me like that. Wizards, for your information, are people too.
 	MIS_Addon_Vatras_Go2Daron = LOG_SUCCESS;
 	MIS_Addon_Daron_GetStatue = LOG_Running;
 	Info_ClearChoices(DIA_Addon_Daron_GuildHelp);
-	Info_AddChoice(DIA_Addon_Daron_GuildHelp,"Значит, сейчас она у гоблинов?",DIA_Addon_Daron_GuildHelp_gobbos);
-	Info_AddChoice(DIA_Addon_Daron_GuildHelp,"Где именно ты потерял статуэтку?",DIA_Addon_Daron_GuildHelp_wo);
-	Info_AddChoice(DIA_Addon_Daron_GuildHelp,"Ты не пытался вернуть статуэтку?",DIA_Addon_Daron_GuildHelp_wiederholen);
+	Info_AddChoice(DIA_Addon_Daron_GuildHelp, " So the goblins have it now? " ,DIA_Addon_Daron_GuildHelp_gobbos);
+	Info_AddChoice(DIA_Addon_Daron_GuildHelp, " Where exactly did you lose the figurine? " ,DIA_Addon_Daron_GuildHelp_wo);
+	Info_AddChoice(DIA_Addon_Daron_GuildHelp, " Did you try to return the figurine? " ,DIA_Addon_Daron_GuildHelp_wiederholen);
 };
 
 func void DIA_Addon_Daron_GuildHelp_wiederholen()
 {
-	AI_Output(other,self,"DIA_Addon_Daron_GuildHelp_wiederholen_15_00");	//Ты не пытался вернуть статуэтку?
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_wiederholen_10_01");	//Конечно, пытался! Я везде ее искал. Но увы, безрезультатно.
+	AI_Output(other,self, " DIA_Addon_Daron_GuildHelp_wiederholen_15_00 " );	// Did you try to return the figurine?
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_wiederholen_10_01 " );	// Of course I tried! I looked for her everywhere. But alas, to no avail.
 };
 
 func void DIA_Addon_Daron_GuildHelp_gobbos()
 {
-	AI_Output(other,self,"DIA_Addon_Daron_GuildHelp_gobbos_15_00");	//Значит, сейчас она у гоблинов?
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_gobbos_10_01");	//Когда она оказалась у них в руках, они скрылись в кустарнике.
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_gobbos_10_02");	//Больше я их не видел. Наверное, они живут в какой-нибудь пещере.
+	AI_Output(other,self, " DIA_Addon_Daron_GuildHelp_gobbos_15_00 " );	// So the goblins have it now?
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_gobbos_10_01 " );	// When she was in their hands, they disappeared into the bushes.
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_gobbos_10_02 " );	// I didn't see them again. They must be living in a cave somewhere.
 };
 
 func void DIA_Addon_Daron_GuildHelp_wo()
 {
-	AI_Output(other,self,"DIA_Addon_Daron_GuildHelp_wo_15_00");	//Где именно ты потерял статуэтку?
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_wo_10_01");	//На пути в монастырь, неподалеку от таверны Орлана.
-	Info_AddChoice(DIA_Addon_Daron_GuildHelp,"Я услышал достаточно. Я найду статуэтку.",DIA_Addon_Daron_GuildHelp_auftrag);
-	Info_AddChoice(DIA_Addon_Daron_GuildHelp,"Таверна Орлана? Где она находится?",DIA_Addon_Daron_GuildHelp_woTaverne);
+	AI_Output(other,self, " DIA_Addon_Daron_GuildHelp_wo_15_00 " );	// Where exactly did you lose the figurine?
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_wo_10_01 " );	// On the way to the monastery, not far from Orlan's tavern.
+	Info_AddChoice(DIA_Addon_Daron_GuildHelp, " I've heard enough. I'll find the figurine. " ,DIA_Addon_Daron_GuildHelp_auftrag);
+	Info_AddChoice(DIA_Addon_Daron_GuildHelp, " Orlan's Tavern? Where is it? " ,DIA_Addon_Daron_GuildHelp_woTaverne);
 };
 
 func void DIA_Addon_Daron_GuildHelp_woTaverne()
 {
-	AI_Output(other,self,"DIA_Addon_Daron_GuildHelp_woTaverne_15_00");	//Таверна Орлана? Где она находится?
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_woTaverne_10_01");	//Если ты выйдешь из города через эти ворота и пойдешь прямо по дороге, ты дойдешь до отдельно стоящего дома.
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_woTaverne_10_02");	//Это и есть таверна Орлана, 'Мертвая Гарпия'.
+	AI_Output(other,self, " DIA_Addon_Daron_GuildHelp_woTaverne_15_00 " );	// Orlan's tavern? Where is she?
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_woTaverne_10_01 " );	// If you leave the city through this gate and go straight along the road, you will reach a detached house.
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_woTaverne_10_02 " );	// This is Orlan's tavern, the 'Dead Harpy'.
 };
 
 func void DIA_Addon_Daron_GuildHelp_auftrag()
 {
-	AI_Output(other,self,"DIA_Addon_Daron_GuildHelp_auftrag_15_00");	//Я услышал достаточно. Я найду статуэтку.
-	AI_Output(self,other,"DIA_Addon_Daron_GuildHelp_auftrag_10_01");	//Да направит тебя Иннос, и да защитит он тебя от опасностей, подстерегающих тебя за воротами города.
+	AI_Output(other,self, " DIA_Addon_Daron_GuildHelp_auftrag_15_00 " );	// I've heard enough. I will find the statue.
+	AI_Output(self,other, " DIA_Addon_Daron_GuildHelp_auftrag_10_01 " );	// May Innos guide you, and may he protect you from the dangers that lie in wait for you outside the gates of the city.
 	Info_ClearChoices(DIA_Addon_Daron_GuildHelp);
 	Log_CreateTopic(TOPIC_Addon_RangerHelpKDF,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_RangerHelpKDF,LOG_Running);
-	B_LogEntry(TOPIC_Addon_RangerHelpKDF,"Дарон был ограблен мерзкими гоблинами. У него пропала ценная статуэтка, которую он должен был доставить в монастырь. Эти гоблины, похоже, скрываются в пещере около таверны 'Мертвая Гарпия'.");
+	B_LogEntry(TOPIC_Addon_RangerHelpKDF, " Daron has been robbed by vile goblins. He has lost a valuable figurine he was supposed to deliver to the monastery. These goblins seem to be hiding in a cave near the Dead Harpy tavern. " );
 };
 
 
@@ -430,7 +430,7 @@ instance DIA_Addon_Daron_FoundStatue(C_Info)
 	nr = 2;
 	condition = DIA_Addon_Daron_FoundStatue_Condition;
 	information = DIA_Addon_Daron_FoundStatue_Info;
-	description = "Я нашел статуэтку.";
+	description = " I found the figurine. " ;
 };
 
 func int DIA_Addon_Daron_FoundStatue_Condition()
@@ -443,17 +443,17 @@ func int DIA_Addon_Daron_FoundStatue_Condition()
 
 func void DIA_Addon_Daron_FoundStatue_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Daron_FoundStatue_15_00");	//Я нашел статуэтку.
-	AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_01");	//Хвала Инносу!
-	AI_Output(other,self,"DIA_Addon_Daron_FoundStatue_15_02");	//Что ты будешь с ней делать?
-	AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_03");	//Я? Ничего. До сих пор она приносила мне лишь несчастья.
-	AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_04");	//ТЫ отнесешь ее в монастырь, сынок.
+	AI_Output(other,self, " DIA_Addon_Daron_FoundStatue_15_00 " );	// I found the figurine.
+	AI_Output(self,other, " DIA_Addon_Daron_FoundStatue_10_01 " );	// Praise to Innos!
+	AI_Output(other,self, " DIA_Addon_Daron_FoundStatue_15_02 " );	// What are you going to do with it?
+	AI_Output(self,other, " DIA_Addon_Daron_FoundStatue_10_03 " );	// Me? Nothing. So far, it has only brought me misfortune.
+	AI_Output(self,other, " DIA_Addon_Daron_FoundStatue_10_04 " );	// YOU will take her to the monastery, son.
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_05");	//Конечно, тебя не пропустят внутрь, если ты не согласишься посвятить оставшуюся жизнь служению монастырю.
-		AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_06");	//Но я уверен, что ты не откажешься. Ведь ты можешь оказать услугу МНЕ, верно?
+		AI_Output(self,other, " DIA_Addon_Daron_FoundStatue_10_05 " );	// Of course, you won't be allowed inside unless you agree to devote the rest of your life to serving the monastery.
+		AI_Output(self,other, " DIA_Addon_Daron_FoundStatue_10_06 " );	// But I'm sure you won't refuse. After all, you can do a favor for ME, right?
 	};
-	AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_07");	//Ступай, сынок! Да пребудет с тобой Иннос.
+	AI_Output(self,other, " DIA_Addon_Daron_FoundStatue_10_07 " );	// Go, son! May Innos be with you.
 };
 
 instance DIA_Addon_Daron_ReturnedStatue(C_Info)
@@ -462,7 +462,7 @@ instance DIA_Addon_Daron_ReturnedStatue(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Daron_ReturnedStatue_Condition;
 	information = DIA_Addon_Daron_ReturnedStatue_Info;
-	description = "Я отнес твою статуэтку в монастырь.";
+	description = " I took your figurine to the monastery. " ;
 };
 
 func int DIA_Addon_Daron_ReturnedStatue_Condition()
@@ -475,9 +475,9 @@ func int DIA_Addon_Daron_ReturnedStatue_Condition()
 
 func void DIA_Addon_Daron_ReturnedStatue_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Daron_ReturnedStatue_15_00");	//Я отнес твою статуэтку в монастырь. Можешь быть спокоен.
-	AI_Output(self,other,"DIA_Addon_Daron_ReturnedStatue_10_01");	//Это прекрасная новость! Да хранит тебя Иннос.
-	AI_Output(self,other,"DIA_Addon_Daron_ReturnedStatue_10_02");	//Прими вот это в знак моей благодарности.
+	AI_Output(other,self, " DIA_Addon_Daron_ReturnedStatue_15_00 " );	// I took your figurine to the monastery. You can be calm.
+	AI_Output(self,other, " DIA_Addon_Daron_ReturnedStatue_10_01 " );	// That's great news! May Innos keep you.
+	AI_Output(self,other, " DIA_Addon_Daron_ReturnedStatue_10_02 " );	// Take this as a token of my gratitude.
 	CreateInvItems(self,ItMi_Gold,150);
 	B_GiveInvItems(self,other,ItMi_Gold,150);
 	TOPIC_End_RangerHelpKDF = TRUE;
@@ -492,12 +492,12 @@ instance DIA_Daron_arm(C_Info)
 	condition = DIA_Daron_arm_Condition;
 	information = DIA_Daron_arm_Info;
 	permanent = FALSE;
-	description = "Я как раз бедный!";
+	description = " I'm just poor! " ;
 };
 
 func int DIA_Daron_arm_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Daron_Stadt) && (Npc_HasItems(other,ItMi_Gold) < 10) && (other.guild == GIL_NONE))
+	if ( Npc_KnowsInfo ( other , DIA_Daron_Stadt ) && ( Npc_HasItems ( other , It'sMy_Gold ) <  10 ) && ( other . guild ==  GIL_NONE )) ;
 	{
 		return TRUE;
 	};
@@ -505,15 +505,15 @@ func int DIA_Daron_arm_Condition()
 
 func void DIA_Daron_arm_Info()
 {
-	AI_Output(other,self,"DIA_Daron_arm_15_00");	//Я как раз бедный!
-	AI_Output(self,other,"DIA_Daron_arm_10_01");	//Да, ты доведен до нищеты. Это неудивительно в эти тяжелые времена. Возьми это золото, надеюсь, оно поможет тебе.
-	AI_Output(self,other,"DIA_Daron_arm_10_02");	//Но ты должен найти себе работу, и тогда у тебя не будет недостатка в золоте. И ты сможешь пожертвовать это золото церкви Инноса, помня о том, как она помогала тебе.
+	AI_Output(other,self, " DIA_Daron_arm_15_00 " );	// I'm just poor!
+	AI_Output(self,other, " DIA_Daron_arm_10_01 " );	// Yes, you are reduced to poverty. This is not surprising in these difficult times. Take this gold, I hope it helps you.
+	AI_Output(self,other, " DIA_Daron_arm_10_02 " );	// But you must find yourself a job, and then you will not lack gold. And you can donate this gold to the church of Innos, remembering how she helped you.
 	B_GiveInvItems(self,other,ItMi_Gold,20);
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 };
 
@@ -525,7 +525,7 @@ instance DIA_DARON_CANTHAR(C_Info)
 	condition = dia_daron_canthar_condition;
 	information = dia_daron_canthar_info;
 	permanent = TRUE;
-	description = "Здесь творится несправедливость!";
+	description = " This is not fair! " ;
 };
 
 func int dia_daron_canthar_condition()
@@ -540,42 +540,42 @@ func void dia_daron_canthar_info()
 {
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(other,self,"DIA_Daron_Canthar_15_00");	//Здесь творится несправедливость, брат!
+		AI_Output(other, self, " DIA_Daron_Canthar_15_00 " );	// This is not fair, brother!
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Daron_Canthar_15_01");	//Здесь творится несправедливость, отец!
+		AI_Output(other,self, " DIA_Daron_Canthar_15_01 " );	// There is injustice here, father!
 	};
-	if(Canthar_Ausgeliefert == TRUE)
+	if (Canthar_Ausgeliefer ==  TRUE )
 	{
-		AI_Output(other,self,"DIA_Daron_Canthar_15_02");	//Торговец Кантар, пользуясь продажностью стражи, вышел на свободу и очерняет мое имя!
+		AI_Output(other,self, " DIA_Daron_Canthar_15_02 " );	// Merchant Kantar, taking advantage of the venality of the guards, went free and denigrates my name!
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Daron_Canthar_15_03");	//Торговец Кантар очерняет мое имя!
+		AI_Output(other,self, " DIA_Daron_Canthar_15_03 " );	// Merchant Kantar denigrates my name!
 	};
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Daron_Canthar_10_04");	//Как он посмел?
+		AI_Output(self,other, " DIA_Daron_Canthar_10_04 " );	// How dare he?
 	}
 	else if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Daron_Canthar_10_05");	//Как он посмел наговаривать на паладина?!
+		AI_Output(self,other, " DIA_Daron_Canthar_10_05 " );	// How dare he slander a paladin?!
 	}
 	else if(Daron_Spende >= 750)
 	{
-		AI_Output(self,other,"DIA_Daron_Canthar_10_06");	//Как он посмел наговаривать на столь верного почитателя Инноса?!
+		AI_Output(self,other, " DIA_Daron_Canthar_10_06 " );	// How dare he slander such a faithful admirer of Innos?!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Daron_Canthar_10_07");	//К сожалению, я не так хорошо знаю тебя, чтобы судить - кто здесь прав.
+		AI_Output(self,other, " DIA_Daron_Canthar_10_07 " );	// Unfortunately, I don't know you well enough to judge who's right here.
 		return;
 	};
-	AI_Output(self,other,"DIA_Daron_Canthar_10_08");	//Я немедленно поговорю об этом с лордом Андрэ.
-	Canthar_Sperre = FALSE;
+	AI_Output(self,other, " DIA_Daron_Canthar_10_08 " );	// I will speak to Lord Andre about this immediately.
+	Canthar_Lock = FALSE ;
 };
 
-var int DIA_Daron_Spende_permanent;
+var int DIA_Daron_Spend_permanent;
 
 instance DIA_Daron_Spende(C_Info)
 {
@@ -584,12 +584,12 @@ instance DIA_Daron_Spende(C_Info)
 	condition = DIA_Daron_Spende_Condition;
 	information = DIA_Daron_Spende_Info;
 	permanent = TRUE;
-	description = "Я хочу сделать пожертвование...";
+	description = " I want to make a donation... " ;
 };
 
 func int DIA_Daron_Spende_Condition()
 {
-	if((DIA_Daron_Spende_permanent == FALSE) && Npc_KnowsInfo(other,DIA_Daron_Spenden) && (hero.guild != GIL_KDF) && (hero.guild != GIL_KDW) && (hero.guild != GIL_KDM))
+	if ((DIA_Daron_Spending_Permanent ==  FALSE ) && Npc_KnowsInfo(other,DIA_Daron_Spending) && (hero.guild !=  GIL_KDF ) && (hero.guild !=  GIL_KDW ) && (hero.guild !=  GIL_KDM )) ;
 	{
 		return TRUE;
 	};
@@ -597,28 +597,28 @@ func int DIA_Daron_Spende_Condition()
 
 func void DIA_Daron_Spende_Info()
 {
-	AI_Output(other,self,"DIA_Daron_Spende_15_00");	//Я хочу сделать пожертвование...
+	AI_Output(other,self, " DIA_Daron_Spende_15_00 " );	// I want to donate...
 	Info_ClearChoices(DIA_Daron_Spende);
 
-	if(Dar_Bonus_4 == FALSE)
+	if (But_Bonus_4 ==  FALSE )
 	{
-		Info_AddChoice(DIA_Daron_Spende,"Но у меня недостаточно золота.",DIA_Daron_Spende_BACK);
-		Info_AddChoice(DIA_Daron_Spende,"Тут пятьдесят золотых монет.",DIA_Daron_Spende_50);
-		Info_AddChoice(DIA_Daron_Spende,"Вот сто золотых монет.",DIA_Daron_Spende_100);
-		Info_AddChoice(DIA_Daron_Spende,"Здесь двести золотых монет.",DIA_Daron_Spende_200);
+		Info_AddChoice(DIA_Daron_Spende, " But I don't have enough gold. " ,DIA_Daron_Spende_BACK);
+		Info_AddChoice(DIA_Daron_Spende, " There are fifty gold coins here. " ,DIA_Daron_Spende_50);
+		Info_AddChoice(DIA_Daron_Spende, " Here's one hundred gold coins. " ,DIA_Daron_Spende_100);
+		Info_AddChoice(DIA_Daron_Spende, " There are two hundred gold coins here. " ,DIA_Daron_Spende_200);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Daron_Spende_10_01");	//Ты уже пожертвовал мне более тысячи золотых монет.
-		AI_Output(self,other,"DIA_Daron_Spende_10_02");	//Благословение Инноса всегда пребудет с тобой!
-		DIA_Daron_Spende_permanent = TRUE;
+		AI_Output(self,other, " DIA_Daron_Spende_10_01 " );	// You have already donated over a thousand gold coins to me.
+		AI_Output(self,other, " DIA_Daron_Spende_10_02 " );	// The blessing of Innos will always be with you!
+		DIA_Daron_Spend_permanent = TRUE ;
 	};
 };
 
 func void DIA_Daron_Spende_BACK()
 {
-	AI_Output(other,self,"DIA_Daron_Spende_BACK_15_00");	//Но у меня недостаточно золота...
-	AI_Output(self,other,"DIA_Daron_Spende_BACK_10_01");	//Это не имеет значения, сын мой. Ты можешь принести пожертвование позже.
+	AI_Output(other,self, " DIA_Daron_Spende_BACK_15_00 " );	// But I don't have enough gold...
+	AI_Output(self,other, " DIA_Daron_Spende_BACK_10_01 " );	// It doesn't matter, my son. You can donate later.
 	Info_ClearChoices(DIA_Daron_Spende);
 };
 
@@ -626,24 +626,24 @@ func void DIA_Daron_Spende_50()
 {
 	if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
-		AI_Output(self,other,"DIA_Daron_Spende_50_10_00");	//Благословляю тебя от имени Инноса. Он несет в этот мир свет и справедливость.
+		AI_Output(self,other, " DIA_Daron_Spende_50_10_00 " );	// I bless you on behalf of Innos. He brings light and justice to this world.
 		Npc_RemoveInvItems(self,ItMi_Gold,50);
-		if(SPENDEDAY != Wld_GetDay())
+		if ( SPENDDAY  != Wld_GetDay())
 		{
-			Daron_Spende = Daron_Spende + 50;
+			daron_donation = daron_donation +  50 ;
 			B_DaronSegen();
 			Daron_Segen = TRUE;
-			SPENDEDAY = Wld_GetDay();
+			SPENDAY = Wld_GetDay();
 		};
 		if((MIS_Thorben_GetBlessings == LOG_Running) && (DaronBlessMe == FALSE))
 		{
 			DaronBlessMe = TRUE;
-			B_LogEntry(TOPIC_Thorben,"Маг огня Дарон благословил меня.");
+			B_LogEntry(TOPIC_Thorben, "The fire mage Daron has blessed me. " );
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Daron_Spende_50_10_01");	//Ты можешь жертвовать несколько раз понемногу, если у тебя сейчас недостаточно золота.
+		AI_Output(self,other, " DIA_Daron_Spende_50_10_01 " );	// You can donate a few times a little if you don't have enough gold right now.
 	};
 	Info_ClearChoices(DIA_Daron_Spende);
 };
@@ -652,22 +652,22 @@ func void DIA_Daron_Spende_100()
 {
 	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
-		AI_Output(self,other,"DIA_Daron_Spende_100_10_00");	//Иннос, ты свет, озаряющий путь праведников.
-		AI_Output(self,other,"DIA_Daron_Spende_100_10_01");	//Я благословляю этого человека от твоего имени. Да будет твой свет сиять над ним вечно.
+		AI_Output(self,other, " DIA_Daron_Spende_100_10_00 " );	// Innos, you are the light that illuminates the path of the righteous.
+		AI_Output(self,other, " DIA_Daron_Spende_100_10_01 " );	// I bless this person on your behalf. May your light shine upon him forever.
 		Npc_RemoveInvItems(self,ItMi_Gold,100);
-		Daron_Spende = Daron_Spende + 100;
+		daron_donation = daron_donation +  100 ;
 		B_DaronSegen();
 		Daron_Segen = TRUE;
 
 		if((MIS_Thorben_GetBlessings == LOG_Running) && (DaronBlessMe == FALSE))
 		{
 			DaronBlessMe = TRUE;
-			B_LogEntry(TOPIC_Thorben,"Маг огня Дарон благословил меня.");
+			B_LogEntry(TOPIC_Thorben, "The fire mage Daron has blessed me. " );
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Daron_Spende_100_10_02");	//Иннос говорит - если хочешь молиться, открой свою душу. А если ты хочешь пожертвовать, принеси свой дар.
+		AI_Output(self,other, " DIA_Daron_Spende_100_10_02 " );	// Innos says - if you want to pray, open your soul. And if you want to donate, bring your gift.
 	};
 	Info_ClearChoices(DIA_Daron_Spende);
 };
@@ -676,22 +676,22 @@ func void DIA_Daron_Spende_200()
 {
 	if(B_GiveInvItems(other,self,ItMi_Gold,200))
 	{
-		AI_Output(self,other,"DIA_Daron_Spende_200_10_00");	//Иннос, благослови этого человека. Да будет твой свет сиять над ним вечно.
-		AI_Output(self,other,"DIA_Daron_Spende_200_10_01");	//Придай ему силы жить праведной жизнью.
+		AI_Output(self,other, " DIA_Daron_Spende_200_10_00 " );	// Innos, bless this man. May your light shine upon him forever.
+		AI_Output(self,other, " DIA_Daron_Spende_200_10_01 " );	// Give him the strength to live a righteous life.
 		Npc_RemoveInvItems(self,ItMi_Gold,200);
-		Daron_Spende = Daron_Spende + 200;
+		daron_donation = daron_donation +  200 ;
 		B_DaronSegen();
 		Daron_Segen = TRUE;
 
 		if((MIS_Thorben_GetBlessings == LOG_Running) && (DaronBlessMe == FALSE))
 		{
 			DaronBlessMe = TRUE;
-			B_LogEntry(TOPIC_Thorben,"Маг огня Дарон благословил меня.");
+			B_LogEntry(TOPIC_Thorben, "The fire mage Daron has blessed me. " );
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Daron_Spende_200_10_02");	//Если ты хочешь пожертвовать столько золота, оно у тебя должно хотя бы быть.
+		AI_Output(self,other, " DIA_Daron_Spende_200_10_02 " );	// If you want to donate that much gold, you must at least have it.
 	};
 	Info_ClearChoices(DIA_Daron_Spende);
 };
@@ -703,7 +703,7 @@ instance DIA_DARON_RUNEMAGICNOTWORK(C_Info)
 	condition = dia_daron_runemagicnotwork_condition;
 	information = dia_daron_runemagicnotwork_info;
 	permanent = FALSE;
-	description = "Твои магические руны - они все еще работают?";
+	description = " Your magic runes - do they still work? " ;
 };
 
 
@@ -718,11 +718,11 @@ func int dia_daron_runemagicnotwork_condition()
 func void dia_daron_runemagicnotwork_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Daron_RuneMagicNotWork_01_00");	//Твои магические руны - они все еще работают?
-	AI_Output(self,other,"DIA_Daron_RuneMagicNotWork_01_01");	//В том то и дело, что нет! И я никак не пойму причину, по которой не могу их использовать.
-	AI_Output(other,self,"DIA_Daron_RuneMagicNotWork_01_02");	//А что насчет остальных?
-	AI_Output(self,other,"DIA_Daron_RuneMagicNotWork_01_03");	//По всей видимости, это коснулось нас всех. У других магов Огня тоже ничего не получается.
-	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Рунические камни остальных магов Огня тоже потеряли свою силу.");
+	AI_Output(other,self, " DIA_Daron_RuneMagicNotWork_01_00 " );	// Your magic runes - do they still work?
+	AI_Output(self,other, " DIA_Daron_RuneMagicNotWork_01_01 " );	// That's just the point, no! And I can't understand why I can't use them.
+	AI_Output(other,self, " DIA_Daron_RuneMagicNotWork_01_02 " );	// What about the rest?
+	AI_Output(self,other, " DIA_Daron_RuneMagicNotWork_01_03 " );	// Apparently, it affected us all. Other Fire Mages also fail.
+	B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " The runestones of the other Firebenders have also lost their power. " );
 	FIREMAGERUNESNOT = TRUE;
 };
 
@@ -746,18 +746,18 @@ func int DIA_DARON_RING_TEST_condition()
 
 func void DIA_DARON_RING_TEST_info()
 {
-	AI_Output(self,other,"DIA_DARON_RING_TEST_01_01");	//Постой! У меня есть к тебе одно интересное предложение.
-	AI_Output(other,self,"DIA_DARON_RING_TEST_01_02");	//И какое же?
-	AI_Output(self,other,"DIA_DARON_RING_TEST_01_03");	//Дело в том, что недавно я нашел одно магическое кольцо.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_01_04");	//Я хотел его уже было примерить, но потом заметил довольно странные символы на его огранке.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_01_05");	//И теперь я в некой растерянности. Даже и не знаю, как поступить.
-	AI_Output(other,self,"DIA_DARON_RING_TEST_01_06");	//А что тебя смущает?
-	AI_Output(self,other,"DIA_DARON_RING_TEST_01_07");	//Понимаешь, я довольно осторожно отношусь к магии, смысла которой не могу понять полностью.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_01_08");	//И мне нужен кто-то, кто сможет использовать это кольцо вместо меня.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_01_09");	//Вот я и подумал...
-	AI_Output(other,self,"DIA_DARON_RING_TEST_01_10");	//...что я могу быть тем самым человеком, который это сделает.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_01_11");	//Ты абсолютно прав! Естественно, я не останусь в долгу и отблагодарю тебя за твою помощь.
-	AI_Output(other,self,"DIA_DARON_RING_TEST_01_12");	//Ладно, я подумаю над твоим предложением.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_01_01 " );	// Wait! I have an interesting offer for you.
+	AI_Output(other,self, " DIA_DARON_RING_TEST_01_02 " );	// And what is it?
+	AI_Output(self,other, " DIA_DARON_RING_TEST_01_03 " );	// The fact is that recently I found one magic ring.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_01_04 " );	// I was about to try it on, but then I noticed rather strange symbols on its cut.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_01_05 " );	// And now I'm kind of confused. I don't even know what to do.
+	AI_Output(other,self, " DIA_DARON_RING_TEST_01_06 " );	// What's bothering you?
+	AI_Output(self,other, " DIA_DARON_RING_TEST_01_07 " );	// You see, I'm pretty cautious about magic, the meaning of which I can not fully understand.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_01_08 " );	// And I need someone to use this ring for me.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_01_09 " );	// So I thought...
+	AI_Output(other,self, " DIA_DARON_RING_TEST_01_10 " );	// ...that I might be the one to do it.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_01_11 " );	// You're absolutely right! Naturally, I will not remain in debt and thank you for your help.
+	AI_Output(other,self, " DIA_DARON_RING_TEST_01_12 " );	// Okay, I'll think about your suggestion.
 	DARON_RING = TRUE;
 };
 
@@ -769,7 +769,7 @@ instance DIA_DARON_RING_TEST_Take(C_Info)
 	condition = DIA_DARON_RING_TEST_Take_condition;
 	information = DIA_DARON_RING_TEST_Take_info;
 	permanent = FALSE;
-	description = "Хорошо, давай сюда это кольцо.";
+	description = " Okay, give me that ring here. " ;
 };
 
 func int DIA_DARON_RING_TEST_Take_condition()
@@ -782,15 +782,15 @@ func int DIA_DARON_RING_TEST_Take_condition()
 
 func void DIA_DARON_RING_TEST_Take_info()
 {
-	AI_Output(other,self,"DIA_DARON_RING_TEST_Take_01_01");	//Хорошо, давай сюда это кольцо.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_Take_01_02");	//Ты в этом точно уверен?
-	AI_Output(other,self,"DIA_DARON_RING_TEST_Take_01_03");	//Иначе я не просил бы его у тебя.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_Take_01_04");	//Как скажешь. Вот, держи.
+	AI_Output(other,self, " DIA_DARON_RING_TEST_Take_01_01 " );	// Okay, give this ring here.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_Take_01_02 " );	// Are you sure about this?
+	AI_Output(other,self, " DIA_DARON_RING_TEST_Take_01_03 " );	// Otherwise, I wouldn't ask you for it.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_Take_01_04 " );	// As you say. Here you are.
 	B_GiveInvItems(self,other,ItRi_UnknownRing,1);
 	Log_CreateTopic(TOPIC_DARON_RING_TEST,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DARON_RING_TEST,LOG_Running);
 	MIS_DARON_RING_TEST = LOG_Running;
-	B_LogEntry(TOPIC_DARON_RING_TEST,"Дарон предложил испытать мне одно странного вида кольцо. Я согласился сделать это.");
+	B_LogEntry( TOPIC_DARON_RING_TEST , " Daron offered to test a strange looking ring for me. I agreed to do so. " );
 };
 
 
@@ -801,7 +801,7 @@ instance DIA_DARON_RING_TEST_Done(C_Info)
 	condition = DIA_DARON_RING_TEST_Done_condition;
 	information = DIA_DARON_RING_TEST_Done_info;
 	permanent = FALSE;
-	description = "Я использовал твое кольцо.";
+	description = " I used your ring. " ;
 };
 
 func int DIA_DARON_RING_TEST_Done_condition()
@@ -815,18 +815,18 @@ func int DIA_DARON_RING_TEST_Done_condition()
 func void DIA_DARON_RING_TEST_Done_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_DARON_RING_TEST_Done_01_01");	//Я использовал твое кольцо.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_02");	//И что произошло?
-	AI_Output(other,self,"DIA_DARON_RING_TEST_Done_01_03");	//Ничего особенного. Оно перенесло меня прямо к Кругу Солнца.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_04");	//Так, значит, это просто кольцо телепортации? По правде говоря, я рассчитывал на большее.
-	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_05");	//В любом случае спасибо, что помог мне разобраться с этим.
-	AI_Output(other,self,"DIA_DARON_RING_TEST_Done_01_06");	//А что мне делать с кольцом?
-	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_07");	//Его можешь оставить себе. Оно мне не нужно.
+	AI_Output(other,self, " DIA_DARON_RING_TEST_Done_01_01 " );	// I used your ring.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_Done_01_02 " );	// And what happened?
+	AI_Output(other,self, " DIA_DARON_RING_TEST_Done_01_03 " );	// Nothing special. It took me straight to the Circle of the Sun.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_Done_01_04 " );	// So it's just a teleportation ring, then? To be honest, I expected more.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_Done_01_05 " );	// Anyway, thanks for helping me figure this out.
+	AI_Output(other,self, " DIA_DARON_RING_TEST_Done_01_06 " );	// What should I do with the ring?
+	AI_Output(self,other, " DIA_DARON_RING_TEST_Done_01_07 " );	// You can keep it for yourself. I don't need it.
 	Npc_RemoveInvItems(hero,ItRi_UnknownRing,Npc_HasItems(hero,ItRi_UnknownRing));
 	CreateInvItems(hero,ItRi_Teleport_Ring,1);
-	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_08");	//Возьми также несколько целебных напитков в качестве благодарности.
+	AI_Output(self,other, " DIA_DARON_RING_TEST_Done_01_08 " );	// Grab a few health drinks as a thank you too.
 	B_GiveInvItems(self,other,ItPo_Health_03,3);
-	B_LogEntry(TOPIC_DARON_RING_TEST,"Я сообщил Дарону о том, что случилось, когда я одел кольцо. Разочаровавшись его действием, он позволил мне оставить его себе.");
+	B_LogEntry( TOPIC_DARON_RING_TEST , " I informed Daron of what happened when I put the ring on. Disappointed with his performance, he let me keep it. " );
 	Log_CreateTopic(TOPIC_DARON_RING_TEST,LOG_SUCCESS);
 	MIS_DARON_RING_TEST = LOG_SUCCESS;
 };
@@ -839,7 +839,7 @@ instance DIA_DARON_GoldForGorax(C_Info)
 	condition = DIA_DARON_GoldForGorax_condition;
 	information = DIA_DARON_GoldForGorax_info;
 	permanent = FALSE;
-	description = "Могу ли я что-нибудь сделать для тебя?";
+	description = " Is there anything I can do for you? " ;
 };
 
 func int DIA_DARON_GoldForGorax_condition()
@@ -852,24 +852,24 @@ func int DIA_DARON_GoldForGorax_condition()
 
 func void DIA_DARON_GoldForGorax_info()
 {
-	AI_Output(other,self,"DIA_DARON_GoldForGorax_01_00");	//Могу ли я что-нибудь сделать для тебя?
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_01");	//Твое стремление помогать служителям Инноса похвально, сын мой, и я с радостью доверюсь тебе. 
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_02");	//Ибо своими деяниями ты уже доказал, что ты достоин этого.
-	AI_Output(other,self,"DIA_DARON_GoldForGorax_01_03");	//Рад это слышать.
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_04");	//Итак, мне необходимо доставить собранные пожертвования в монастырь.
-	AI_Output(other,self,"DIA_DARON_GoldForGorax_01_05");	//Ты хочешь, чтобы я сопровождал тебя?
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_06");	//К сожалению, я не могу сейчас отлучиться из города.
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_07");	//Поэтому я просто дам тебе сумку с пожертвованиями, а ты отнесешь его в монастырь.
+	AI_Output(other,self, " DIA_DARON_GoldForGorax_01_00 " );	// Is there anything I can do for you?
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_01 " );	// Your desire to help the servants of Innos is commendable, my son, and I will gladly trust you.
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_02 " );	// For by your deeds you have already proved that you are worthy of it.
+	AI_Output(other,self, " DIA_DARON_GoldForGorax_01_03 " );	// Glad to hear it.
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_04 " );	// So, I need to deliver the collected donations to the monastery.
+	AI_Output(other,self, " DIA_DARON_GoldForGorax_01_05 " );	// Do you want me to accompany you?
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_06 " );	// Unfortunately, I can't leave town right now.
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_07 " );	// So I'll just give you a donation bag and you'll take it to the monastery.
 	B_GiveInvItems(self,other,itmi_daron_suma,1);
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_08");	//Передай его там мастеру Гораксу. Помимо виноделия, он занимается учетом средств в нашей сокровищнице.
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_09");	//Ты все понял?
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_08 " );	// Give it to Master Gorax there. In addition to winemaking, he keeps track of the funds in our treasury.
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_09 " );	// Do you understand?
 	AI_Output(other,self,"DIA_DARON_GoldForGorax_01_10");	//Конечно.
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_11");	//Хорошо. Надеюсь, что ты доставишь золото в целости и сохранности.
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_12");	//(серьезно) И не вздумай прикарманить золото себе и сбежать. Этим ты навлечешь на себя гнев Инноса!
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_11 " );	// Good. I hope you deliver the gold safe and sound.
+	AI_Output(self,other, " DIA_DARON_GoldForGorax_01_12 " );	// (seriously) And don't try to pocket the gold for yourself and run away. By this you will incur the wrath of Innos!
 	Log_CreateTopic(TOPIC_DARON_GIVEGOLD,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DARON_GIVEGOLD,LOG_Running);
 	MIS_DARON_GIVEGOLD = LOG_Running;
-	B_LogEntry(TOPIC_DARON_GIVEGOLD,"Дарон поручил мне доставить сумку с пожертвованиями в монастырь мастеру Гораксу.");
+	B_LogEntry( TOPIC_DARON_GIVEGOLD , " Daron has instructed me to deliver a donation bag to Master Gorax's monastery. " );
 	Wld_InsertNpc(bdt_darongivegold_mis_1,"NW_FOREST_CONNECT_MONASTERY");
 	Wld_InsertNpc(bdt_darongivegold_mis_2,"NW_PATH_TO_MONASTERY_03");
 	Wld_InsertNpc(bdt_darongivegold_mis_3,"NW_PATH_TO_MONASTERY_05");
@@ -885,7 +885,7 @@ instance DIA_DARON_GoldForGoraxOk(C_Info)
 	condition = DIA_DARON_GoldForGoraxOk_condition;
 	information = DIA_DARON_GoldForGoraxOk_info;
 	permanent = FALSE;
-	description = "Я передал сумку с пожертвованиями мастеру Гораксу.";
+	description = " I gave the donation bag to Master Gorax. " ;
 };
 
 func int DIA_DARON_GoldForGoraxOk_condition()
@@ -898,14 +898,14 @@ func int DIA_DARON_GoldForGoraxOk_condition()
 
 func void DIA_DARON_GoldForGoraxOk_info()
 {
-	AI_Output(other,self,"DIA_DARON_GoldForGoraxOk_01_01");	//Я передал сумку с пожертвованиями мастеру Гораксу.
-	AI_Output(self,other,"DIA_DARON_GoldForGoraxOk_01_02");	//Да, я уже знаю об этом. Хорошая работа!
-	AI_Output(self,other,"DIA_DARON_GoldForGoraxOk_01_03");	//Но, что самое главное, ты не поддался соблазну золота. Это не может не вызывать уважения!
-	AI_Output(self,other,"DIA_DARON_GoldForGoraxOk_01_04");	//И, дабы ты не счел меня неблагодарным, - вот, возьми этот свиток в качестве своей награды.
-	AI_Output(self,other,"DIA_DARON_GoldForGoraxOk_01_05");	//Уверен, что ты найдешь ему достойное применение.
-	AI_Output(other,self,"DIA_DARON_GoldForGoraxOk_01_06");	//Благодарю тебя.
+	AI_Output(other,self, " DIA_DARON_GoldForGoraxOk_01_01 " );	// I handed over the donation bag to Master Gorax.
+	AI_Output(self,other, " DIA_DARON_GoldForGoraxOk_01_02 " );	// Yes, I already know about it. Good job!
+	AI_Output(self,other, " DIA_DARON_GoldForGoraxOk_01_03 " );	// But, most importantly, you did not succumb to the lure of gold. This cannot but inspire respect!
+	AI_Output(self,other, " DIA_DARON_GoldForGoraxOk_01_04 " );	// And lest you think me ungrateful, here, take this scroll as your reward.
+	AI_Output(self,other, " DIA_DARON_GoldForGoraxOk_01_05 " );	// I'm sure you'll find a worthy use for it.
+	AI_Output(other,self, " DIA_DARON_GoldForGoraxOk_01_06 " );	// Thank you.
 
-	if(Npc_IsDead(bdt_darongivegold_mis_1) && Npc_IsDead(bdt_darongivegold_mis_2) && Npc_IsDead(bdt_darongivegold_mis_3) && Npc_IsDead(bdt_darongivegold_mis_4) && Npc_IsDead(bdt_darongivegold_mis_5))
+	if (Npc_IsDead(bdt_darongivegold_mis_1) && Npc_IsDead(bdt_darongivegold_mis_2) && Npc_IsDead(bdt_darongivegold_mis_3) && Npc_IsDead(bdt_darongivegold_mis_4) && Npc_IsDead(bdt_darongivegold_mis_5))
 	{
 		B_GiveInvItems(self,other,ItSc_Firerain,1);
 	}
@@ -922,7 +922,7 @@ instance DIA_DARON_PICKPOCKET(C_Info)
 	condition = DIA_DARON_pickpocket_condition;
 	information = DIA_DARON_pickpocket_info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его руну)";
+	description = " (Try to steal his rune) " ;
 };
 
 func int DIA_DARON_pickpocket_condition()
@@ -978,3 +978,4 @@ func void DIA_DARON_pickpocket_back()
 {
 	Info_ClearChoices(DIA_DARON_pickpocket);
 };
+Footer
