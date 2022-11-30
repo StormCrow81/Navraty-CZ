@@ -1,5 +1,5 @@
 
-instance DIA_Talamon_KAP1_EXIT(C_Info)
+instance DIA_Talamon_CHAP1_EXIT (C_Info) .
 {
 	npc = KDF_507_Talamon;
 	nr = 999;
@@ -20,7 +20,7 @@ func void DIA_Talamon_KAP1_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Talamon_NoEnter_PissOff(C_Info)
+instances of DIA_Talamon_NoEnter_PissOff (C_Info)
 {
 	npc = KDF_507_Talamon;
 	nr = 1;
@@ -32,7 +32,7 @@ instance DIA_Talamon_NoEnter_PissOff(C_Info)
 
 func int DIA_Talamon_NoEnter_PissOff_Condition()
 {
-	if((CanEnterKloster == FALSE) && (other.guild != GIL_MEATBUG))
+	if ((CanEnterMonastery ==  FALSE ) && (other.guild !=  GIL_MEATBUG ))
 	{
 		return TRUE;
 	};
@@ -60,7 +60,7 @@ instance DIA_KDF_507_Talamon_FirstWarn(C_Info)
 
 func int DIA_KDF_507_Talamon_FirstWarn_Condition()
 {
-	if((Pyrokar_LetYouPassTalamon == FALSE) && (CanEnterKloster == TRUE) && (Kapitel < 6) && (Npc_RefuseTalk(self) == FALSE) && (hero.guild != GIL_KDF) && (self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (other.guild != GIL_MEATBUG))
+	if ((Pyrokar_LetYouPassTalamon ==  FALSE ) && (CanEnterMonastery ==  TRUE ) && (Chapter <  6 ) && (Npc_RefuseTalk(self) ==  FALSE ) && (hero.guild !=  GIL_KDF ) && (self.aivar[AIV_Guardpassage_Status] ==  GP_NONE ) && ( self . aivar [ AIV_PASSGATE ] ==  FALSE ) && ( other . guild !=  GIL_MEATBUG ))
 	{
 		return TRUE;
 	};
@@ -69,24 +69,24 @@ func int DIA_KDF_507_Talamon_FirstWarn_Condition()
 func void DIA_KDF_507_Talamon_FirstWarn_Info()
 {
 	AI_TurnToNPC(hero,Garwig);
-	AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_04_00");	//Тебе нельзя идти дальше. Поворачивай назад!
+	AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_04_00 " );	// You can't go any further. Turn back!
 
 	if(TalamonFM == FALSE)
 	{
-		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_00");	//Признайся, мастер, тяжко стоять здесь без перерывов и отдыха?
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_01");	//Жаловаться на порученную Инносом миссию - не удел настоящего мага Огня.
-		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_02");	//На порученную Инносом или Высшим советом?
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_03");	//С уст членов Высшего совета сходит воля Инноса.
-		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_04");	//Да-да, глас Бога - оправдание всему. Но, по-моему, из тебя наглым образом сделали козла отпущения.
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_05");	//Я не уполномочен обсуждать с тобой эту тему.
-		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_06");	//Твои братья сидят наверху, в церкви, и отпускают благословения. Ты же - стоишь здесь и обрастаешь паутиной, а ведь ты тоже высший маг.
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_07");	//(вне себя) Да, черт возьми! Но ты немного ошибся: не я обрастаю паутиной и увядаю здесь, а эти сидни, которые только и могут, что делать умный вид - врастают в свои троны.
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_04_08");	//Я же стою, как нерушимая скала, и рано или поздно выйду, чтоб посмотреть в их бесстыжие, молящие лица, когда они поймут, что ничего не могут без меня.
-		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_09");	//Ничего не могут? В каком смысле?
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_10");	//...(опомнившись) О чем это ты, сын мой?
-		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_11");	//Ну, о высших магах, которые рано или поздно поймут...
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_12");	//Ты здоров? Если нет, то советую обратиться к мастеру Неорасу, алхимику. Он в противоположной части подземелья.
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_13");	//В эту его часть проход закрыт. Уходи!
+		AI_Output(other,self, " DIA_KDF_507_Talamon_FirstWarn_01_00 " );	// Admit it, master, is it hard to stand here without breaks and rest?
+		AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_01_01 " );	// Complaining about the mission entrusted by Innos is not the lot of a true Firebender.
+		AI_Output(other,self, " DIA_KDF_507_Talamon_FirstWarn_01_02 " );	// As assigned by Innos or by the High Council?
+		AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_01_03 " );	// The will of Innos descends from the lips of the members of the High Council.
+		AI_Output(other,self, " DIA_KDF_507_Talamon_FirstWarn_01_04 " );	// Yes, yes, the voice of God is the justification for everything. But I think you've been brazenly made into a scapegoat.
+		AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_01_05 " );	// I'm not authorized to discuss this subject with you.
+		AI_Output(other,self, " DIA_KDF_507_Talamon_FirstWarn_01_06 " );	// Your brothers sit upstairs in the church and release blessings. You - you are standing here and overgrown with cobwebs, and you are also the highest magician.
+		AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_01_07 " );	// (besides himself) Damn it! But you are a little mistaken: I am not overgrown with cobwebs and wither here, but these Sidneys, who can only pretend to be smart, grow into their thrones.
+		AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_04_08 " );	// I stand like an unbreakable rock, and sooner or later I will go out to look into their shameless, pleading faces, when they realize that they can do nothing without me.
+		AI_Output(other,self, " DIA_KDF_507_Talamon_FirstWarn_01_09 " );	// Can't do anything? In what sense?
+		AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_01_10 " );	// ...(recovering) What are you talking about, my son?
+		AI_Output(other,self, " DIA_KDF_507_Talamon_FirstWarn_01_11 " );	// Well, about higher magicians who sooner or later will understand...
+		AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_01_12 " );	// Are you healthy? If not, then I advise you to contact the master Neoras, an alchemist. He's on the opposite side of the dungeon.
+		AI_Output(self,other, " DIA_KDF_507_Talamon_FirstWarn_01_13 " );	// This part of the passage is closed. Leave!
 		TalamonFM = TRUE;
 	};
 
@@ -98,12 +98,12 @@ func void DIA_KDF_507_Talamon_FirstWarn_Info()
 };
 
 
-instance DIA_KDF_507_Talamon_SecondWarn(C_Info)
+instance DIA_KDF_507_Second_Warn (C_Info) .
 {
 	npc = KDF_507_Talamon;
 	nr = 2;
 	condition = DIA_KDF_507_Talamon_SecondWarn_Condition;
-	information = DIA_KDF_507_Talamon_SecondWarn_Info;
+	information = DIA_KDF_507_Second_Warn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
@@ -111,7 +111,7 @@ instance DIA_KDF_507_Talamon_SecondWarn(C_Info)
 
 func int DIA_KDF_507_Talamon_SecondWarn_Condition()
 {
-	if((Pyrokar_LetYouPassTalamon == FALSE) && (Kapitel < 6) && (Npc_RefuseTalk(self) == FALSE) && (hero.guild != GIL_KDF) && (self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (other.guild != GIL_MEATBUG))
+	if ((Pyrokar_LetYouPassTalamon ==  FALSE ) && (Chapter <  6 ) && (Npc_RefuseTalk(self) ==  FALSE ) && (hero.guild !=  GIL_KDF ) && (self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar [ AIV_PASSGATE ] ==  FALSE ) && ( other . guild !=  GIL_MEATBUG ))
 	{
 		return TRUE;
 	};
@@ -120,7 +120,7 @@ func int DIA_KDF_507_Talamon_SecondWarn_Condition()
 func void DIA_KDF_507_Talamon_SecondWarn_Info()
 {
 	AI_TurnToNPC(hero,Garwig);
-	AI_Output(self,other,"DIA_KDF_507_Talamon_SecondWarn_04_00");	//Иннос обратит свой гнев против тебя, если ты не повернешь назад!
+	AI_Output(self,other, " DIA_KDF_507_Talamon_SecondWarn_04_00 " );	// Innos will turn his wrath against you if you don't turn back!
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,KDF_507_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_TurnAway(other,self);
@@ -142,7 +142,7 @@ instance DIA_KDF_507_Talamon_Attack(C_Info)
 
 func int DIA_KDF_507_Talamon_Attack_Condition()
 {
-	if((Pyrokar_LetYouPassTalamon == FALSE) && (Kapitel < 6) && (Npc_RefuseTalk(self) == FALSE) && (hero.guild != GIL_KDF) && (self.aivar[AIV_Guardpassage_Status] == GP_SecondWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (other.guild != GIL_MEATBUG))
+	if ((Pyrokar_LetYouPassTalamon ==  FALSE ) && (Chapter <  6 ) && (Npc_RefuseTalk(self) ==  FALSE ) && (hero.guild !=  GIL_KDF ) && (self.aivar[AIV_Guardpassage_Status] == GP_SecondWarningGiven) && (self.aivar [ AIV_PASSGATE ] ==  FALSE ) && ( other . guild !=  GIL_MEATBUG ))
 	{
 		return TRUE;
 	};
@@ -151,9 +151,9 @@ func int DIA_KDF_507_Talamon_Attack_Condition()
 func void DIA_KDF_507_Talamon_Attack_Info()
 {
 	AI_TurnToNPC(hero,Garwig);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	other.aivar[AIV_LastDistToWP] = 0;
-	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
 	AI_TurnAway(other,self);
 	AI_GotoWP(other,"NW_MONASTERY_CELLAR_14");
 	AI_StopProcessInfos(self);
@@ -161,19 +161,19 @@ func void DIA_KDF_507_Talamon_Attack_Info()
 };
 
 
-instance DIA_Talamon_IgaranzNew(C_Info)
+instance DIA_State_IgaranzNew ( C_Info ) .
 {
 	npc = KDF_507_Talamon;
 	nr = 1;
 	condition = DIA_Talamon_IgaranzNew_condition;
 	information = DIA_Talamon_IgaranzNew_info;
 	permanent = FALSE;
-	description = "Мне нужна твоя помощь.";
+	description = " I need your help. " ;
 };
 
 func int DIA_Talamon_IgaranzNew_condition()
 {
-	if((Kapitel >= 2) && (MIS_Igaraz_OneMoreChance == LOG_Running) && (IS_PYROKAR_IGORANZINFO == TRUE))
+	if ((Kapitel >=  2 ) && (MIS_Igaraz_OneMoreChance == LOG_Running) && ( IS_PYROKAR_IGORANZINFO  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -181,36 +181,36 @@ func int DIA_Talamon_IgaranzNew_condition()
 
 func void DIA_Talamon_IgaranzNew_info()
 {
-	AI_Output(other,self,"DIA_Talamon_IgaranzNew_01_01");	//Мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_01_02");	//В чем дело, брат?
-	AI_Output(other,self,"DIA_Talamon_IgaranzNew_01_03");	//Послушник Игарац полон решимости стать магом Огня, и я уверен, что он достоин получить еще один шанс.
-	AI_Output(other,self,"DIA_Talamon_IgaranzNew_01_04");	//Пирокар сказал мне, что это должен решать ты.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_01_05");	//Хммм...(задумчиво) Очень давно никто не пользовался этим законом.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_01_06");	//Тут надо подумать. С одной стороны, Игарац уже однажды не справился с испытанием.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_01_07");	//С другой стороны, я его очень давно знаю, как способного ученика и верного слугу Инноса.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_01_09");	//Ну хорошо. Пускай у него будет еще один шанс, но на этот раз - последний!
-	AI_Output(other,self,"DIA_Talamon_IgaranzNew_01_10");	//Я тебя понял. А какое задание ты ему дашь?
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_01_11");	//Непростое. Пусть послушник Игарац принесет мне сердце демона.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_01_12");	//И только пройдя это испытание, он сможет вступить в круг Огня.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_01_13");	//Я буду весьма признателен, если ты передашь ему эти условия.
+	AI_Output(other,self, " DIA_Talamon_IgaranzNew_01_01 " );	// I need your help.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_01_02 " );	// What's the matter, brother?
+	AI_Output(other,self, " DIA_Talamon_IgaranzNew_01_03 " );	// Acolyte Igaraz is determined to become a Firebender, and I'm sure he deserves another chance.
+	AI_Output(other,self, " DIA_Talamon_IgaranzNew_01_04 " );	// Pyrocar told me that it's up to you to decide.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_01_05 " );	// Hmmm...(thoughtfully) No one used this law for a very long time.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_01_06 " );	// Here you need to think. On the one hand, Igarats has already failed the test once.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_01_07 " );	// On the other hand, I have known him for a very long time, as a capable student and faithful servant of Innos.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_01_09 " );	// Okay. Let him have another chance, but this time - the last!
+	AI_Output(other,self, " DIA_Talamon_IgaranzNew_01_10 " );	// I understand you. What task will you give him?
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_01_11 " );	// Not easy. Let the acolyte Igaraz bring me the heart of a demon.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_01_12 " );	// And only after passing this test, he will be able to enter the circle of Fire.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_01_13 " );	// I'll be very grateful if you convey these terms to him.
 	IS_TALAMON_IGORANZCONDITION = TRUE;
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Таламон приказал Игарацу добыть сердце демона. Мне надо передать ему эти условия.");
+	B_LogEntry( TOPIC_IGARANZ_NEW , " Talamon ordered Igaratsu to retrieve the Demon Heart. I need to pass these conditions on to him. " );
 };
 
-instance DIA_Talamon_IgaranzNew_DemonHeart(C_Info)
+instance DIA_Talamon_IgaranzNew_DemonHeart (C_Info);
 {
 	npc = KDF_507_Talamon;
 	nr = 1;
 	condition = DIA_Talamon_IgaranzNew_DemonHeart_condition;
-	information = DIA_Talamon_IgaranzNew_DemonHeart_info;
+	information = DIA_GuaranteedNew_DemonHeart_info;
 	permanent = FALSE;
-	description = "Послушник Игарац просил передать тебе это сердце.";
+	description = " Acolyte of Igaraz asked me to give you this heart. " ;
 };
 
 
 func int DIA_Talamon_IgaranzNew_DemonHeart_condition()
 {
-	if((Kapitel >= 2) && (MIS_Igaraz_OneMoreChance == LOG_Running) && Npc_HasItems(hero,ItAt_DemonHeart) && ((IgaranzMakeHappyGold == TRUE) || (IgaranzMakeHappyMagic == TRUE)))
+	if ((Chapter >=  2 ) && (MYGuaranteed_OneMoreChance == LOG_Running) && Npc_HasItems(hero,ItAt_DemonHeart) && ((MyGuaranteedMakeHappyGold ==  TRUE ) || (MyGuaranteedMakeHappyMagic ==  TRUE )))
 	{
 		return TRUE;
 	};
@@ -219,17 +219,17 @@ func int DIA_Talamon_IgaranzNew_DemonHeart_condition()
 func void DIA_Talamon_IgaranzNew_DemonHeart_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Talamon_IgaranzNew_DemonHeart_01_01");	//Послушник Игарац просил передать тебе это сердце.
+	AI_Output(other,self, " DIA_Talamon_IgaranzNew_DemonHeart_01_01 " );	// Acolyte Igaraz asked me to give you this heart.
 	B_GiveInvItems(other,self,ItAt_DemonHeart,1);
 	Npc_RemoveInvItem(self,ItAt_DemonHeart);
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_02");	//(удивленно) Надеюсь, ты ему не помогал достать его?
-	AI_Output(other,self,"DIA_Talamon_IgaranzNew_DemonHeart_01_03");	//Нет. Я лишь согласился передать это сердце тебе.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_04");	//Ну хорошо. Раз он прошел мое испытание, то может с этого момента носить робу мага Огня.
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_05");	//Вот, передай ему это.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_DemonHeart_01_02 " );	// (surprised) I hope you didn't help him get it?
+	AI_Output(other,self, " DIA_Talamon_IgaranzNew_DemonHeart_01_03 " );	// No. I only agreed to give this heart to you.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_DemonHeart_01_04 " );	// Okay. Since he passed my test, he can wear the robe of a Firebender from now on.
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_DemonHeart_01_05 " );	// Here, give him this.
 	B_GiveInvItems(self,other,itar_kdf_m_new,1);
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_06");	//Все остальное он должен выяснить у мастера Парлана.
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Я занес Таламону сердце демона. Теперь можно сообщить радостную новость Игарацу и, наконец, отдать ему робу мага Огня.");
-	IgaranzMakeHappyOk = TRUE;
+	AI_Output(self,other, " DIA_Talamon_IgaranzNew_DemonHeart_01_06 " );	// Everything else he must ask Master Parlan.
+	B_LogEntry( TOPIC_IGARANZ_NEW , " I gave Talamon the heart of a demon. Now I can tell Igaratsu the good news and finally give him the Fire Mage Robe. " );
+	IgaranzMakeHappyOk = TRUE ;
 };
 
 
@@ -253,11 +253,11 @@ func int DIA_Talamon_KAP5_Stop_Condition()
 
 func void DIA_Talamon_KAP5_Stop_Info()
 {
-	AI_Output(self,other,"DIA_Talamon_KAP5_Stop_04_00");	//Тебе нельзя идти дальше - поворачивай назад!
-	AI_Output(other,self,"DIA_Talamon_KAP5_Stop_15_01");	//Пирокар сказал, что мне можно взять книгу Ксардаса.
-	AI_Output(self,other,"DIA_Talamon_KAP5_Stop_04_02");	//Ну, если он это сказал. Хорошо, ты можешь войти. Книга, которую ты ищешь, находится вон там, на алхимическом столе.
-	B_LogEntry(TOPIC_BuchHallenVonIrdorath,"Таламон хранит книгу Ксардаса на алхимическом столе в подвале. ");
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	AI_Output(self,other, " DIA_Talamon_KAP5_Stop_04_00 " );	// You can't go any further - turn back!
+	AI_Output(other,self, " DIA_Talamon_KAP5_Stop_15_01 " );	// The pyrocar said I could take the book of Xardas.
+	AI_Output(self,other, " DIA_Talamon_KAP5_Stop_04_02 " );	// Well, if he said it. Okay, you can come in. The book you're looking for is over there on the alchemy table.
+	B_LogEntry(TOPIC_BuchHallenVonIrdorath, " Talamon keeps the book of Xardas on the alchemy table in the basement. " );
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
 
 
@@ -268,7 +268,7 @@ instance DIA_Talamon_FoundSecretDoor(C_Info)
 	condition = DIA_Talamon_FoundSecretDoor_Condition;
 	information = DIA_Talamon_FoundSecretDoor_Info;
 	permanent = FALSE;
-	description = "Я нашел секретную дверь.";
+	description = " I found a secret door. " ;
 };
 
 
@@ -282,13 +282,13 @@ func int DIA_Talamon_FoundSecretDoor_Condition()
 
 func void DIA_Talamon_FoundSecretDoor_Info()
 {
-	AI_Output(other,self,"DIA_Talamon_FoundSecretDoor_15_00");	//Я нашел секретную дверь.
-	AI_Output(self,other,"DIA_Talamon_FoundSecretDoor_04_01");	//(удивленно) Что? Где?
-	AI_Output(other,self,"DIA_Talamon_FoundSecretDoor_15_02");	//За книжной полкой.
-	AI_Output(self,other,"DIA_Talamon_FoundSecretDoor_04_03");	//А что за дверью?
-	AI_Output(other,self,"DIA_Talamon_FoundSecretDoor_15_04");	//Похоже, там старый подвал.
-	AI_Output(self,other,"DIA_Talamon_FoundSecretDoor_04_05");	//Это важная новость, я должен немедленно сообщить об этом Пирокару.
-	AI_Output(self,other,"DIA_Talamon_FoundSecretDoor_04_06");	//А пока ты должен выяснить, что там в этом подвале.
+	AI_Output(other,self, " DIA_Talamon_FoundSecretDoor_15_00 " );	// I found a secret door.
+	AI_Output(self,other, " DIA_Talamon_FoundSecretDoor_04_01 " );	// (surprised) What? Where?
+	AI_Output(other,self, " DIA_Talamon_FoundSecretDoor_15_02 " );	// Behind the bookshelf.
+	AI_Output(self,other, " DIA_Talamon_FoundSecretDoor_04_03 " );	// What's behind the door?
+	AI_Output(other,self, " DIA_Talamon_FoundSecretDoor_15_04 " );	// Looks like it's an old basement.
+	AI_Output(self,other, " DIA_Talamon_FoundSecretDoor_04_05 " );	// This is important news, I must inform the Pyrocar immediately.
+	AI_Output(self,other, " DIA_Talamon_FoundSecretDoor_04_06 " );	// In the meantime, you must find out what's in that basement.
 	MIS_ScoutLibrary = LOG_Running;
 };
 
@@ -300,7 +300,7 @@ instance DIA_Talamon_ScoutSecretLibrary(C_Info)
 	condition = DIA_Talamon_ScoutSecretLibrary_Condition;
 	information = DIA_Talamon_ScoutSecretLibrary_Info;
 	permanent = TRUE;
-	description = "Я был в этом подвале.";
+	description = " I've been to this basement. " ;
 };
 
 
@@ -314,20 +314,20 @@ func int DIA_Talamon_ScoutSecretLibrary_Condition()
 
 func void DIA_Talamon_ScoutSecretLibrary_Info()
 {
-	AI_Output(other,self,"DIA_Talamon_ScoutSecretLibrary_15_00");	//Я был в этом подвале.
-	AI_Output(self,other,"DIA_Talamon_ScoutSecretLibrary_04_01");	//И что ты там нашел?
-	if(Npc_IsDead(SecretLibrarySkeleton))
+	AI_Output(other,self, " DIA_Talamon_ScoutSecretLibrary_15_00 " );	// I was in this basement.
+	AI_Output(self,other, " DIA_Talamon_ScoutSecretLibrary_04_01 " );	// And what did you find there?
+	if (Npc_IsDead(SecretLibrarySkeleton))
 	{
-		AI_Output(other,self,"DIA_Talamon_ScoutSecretLibrary_15_02");	//Там был скелет воина, охраняющий дверь. Я убил его.
-		AI_Output(self,other,"DIA_Talamon_ScoutSecretLibrary_04_03");	//Отлично.
-		AI_Output(self,other,"DIA_Talamon_ScoutSecretLibrary_04_04");	//Мы разберемся с этим подвалом, когда победим Зло.
+		AI_Output(other,self, " DIA_Talamon_ScoutSecretLibrary_15_02 " );	// There was a warrior skeleton guarding the door. I killed him.
+		AI_Output(self,other, " DIA_Talamon_ScoutSecretLibrary_04_03 " );	// Great.
+		AI_Output(self,other, " DIA_Talamon_ScoutSecretLibrary_04_04 " );	// We'll deal with this basement when Evil is defeated.
 		MIS_ScoutLibrary = LOG_SUCCESS;
 		B_GivePlayerXP(XP_ScoutSecretLibrary);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Talamon_ScoutSecretLibrary_15_05");	//Там, внизу, толпы монстров.
-		AI_Output(self,other,"DIA_Talamon_ScoutSecretLibrary_04_06");	//Там должно что-то быть, продолжай искать. И уничтожай этих монстров без всякой жалости.
+		AI_Output(other,self, " DIA_Talamon_ScoutSecretLibrary_15_05 " );	// Down there, crowds of monsters.
+		AI_Output(self,other, " DIA_Talamon_ScoutSecretLibrary_04_06 " );	// There should be something there, keep looking. And destroy these monsters without any pity.
 	};
 };
 
@@ -345,7 +345,7 @@ instance DIA_Talamon_PICKPOCKET(C_Info)
 
 func int DIA_Talamon_PICKPOCKET_Condition()
 {
-	return C_Beklauen(87,140);
+	return  C_Robbery ( 87 , 140 );
 };
 
 func void DIA_Talamon_PICKPOCKET_Info()
@@ -397,7 +397,7 @@ instance DIA_TALAMON_RUNEMAGICNOTWORK(C_Info)
 	condition = dia_talamon_runemagicnotwork_condition;
 	information = dia_talamon_runemagicnotwork_info;
 	permanent = FALSE;
-	description = "Твои магические руны - они все еще работают?";
+	description = " Your magic runes - do they still work? " ;
 };
 
 
@@ -412,12 +412,12 @@ func int dia_talamon_runemagicnotwork_condition()
 func void dia_talamon_runemagicnotwork_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Talamon_RuneMagicNotWork_01_00");	//Твои магические руны - они все еще работают?
-	AI_Output(self,other,"DIA_Talamon_RuneMagicNotWork_01_01");	//Пока я стоял на страже в подземелье монастыря и редко ими пользовался, они работали. Теперь же, когда появилась острая нужда в них, - они вдруг отказали!
-	AI_Output(other,self,"DIA_Talamon_RuneMagicNotWork_01_02");	//А что насчет остальных?
-	AI_Output(self,other,"DIA_Talamon_RuneMagicNotWork_01_03");	//Этот проблемный вопрос глобален и стоит он перед всеми. Обессилеть в этом плане довелось каждому.
-	AI_Output(other,self,"DIA_Talamon_RuneMagicNotWork_01_04");	//Понятно.
-	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Рунические камни остальных магов Огня тоже потеряли свою силу.");
+	AI_Output(other,self, " DIA_Talamon_RuneMagicNotWork_01_00 " );	// Your magic runes - do they still work?
+	AI_Output(self,other, " DIA_Talamon_RuneMagicNotWork_01_01 " );	// While I stood guard in the dungeon of the monastery and rarely used them, they worked. Now, when there was an urgent need for them, they suddenly refused!
+	AI_Output(other,self, " DIA_Talamon_RuneMagicNotWork_01_02 " );	// What about the rest?
+	AI_Output(self,other, " DIA_Talamon_RuneMagicNotWork_01_03 " );	// This problematic issue is global and everyone faces it. Everyone has had a chance to be exhausted in this regard.
+	AI_Output(other,self, " DIA_Talamon_RuneMagicNotWork_01_04 " );	// Got it.
+	B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " The runestones of the other Firebenders have also lost their power. " );
 	FIREMAGERUNESNOT = TRUE;
 };
 
@@ -431,7 +431,7 @@ instance DIA_TALAMON_TEACHBLROBS(C_Info)
 	condition = dia_talamon_teachblrobs_condition;
 	information = dia_talamon_teachblrobs_info;
 	permanent = TRUE;
-	description = "Ты можешь чему-нибудь меня научить?";
+	description = " Can you teach me something? " ;
 };
 
 func int dia_talamon_teachblrobs_condition()
@@ -445,10 +445,10 @@ func int dia_talamon_teachblrobs_condition()
 func void dia_talamon_teachblrobs_info()
 {
 	TALAMON_TEACH_D_1 = TRUE;
-	AI_Output(other,self,"DIA_Talamon_TeachBlRobs_01_01");	//Ты можешь чему-нибудь меня научить?
-	AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_02");	//Если ты имеешь в виду магию, то нет, брат.
-	AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_03");	//Я не обучаю новичков нашего ордена. Однако я могу рассказать тебе о старинном обряде освящения робы мага Огня.
-	AI_Output(other,self,"DIA_Talamon_TeachBlRobs_01_04");	//Интересно...
+	AI_Output(other,self, " DIA_Talamon_TeachBlRobs_01_01 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_02 " );	// If you mean magic, then no, brother.
+	AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_03 " );	// I don't teach newcomers to our order. However, I can tell you about the ancient rite of consecration of the Firebender's robe.
+	AI_Output(other,self, " DIA_Talamon_TeachBlRobs_01_04 " );	// Interesting...
 };
 
 
@@ -459,13 +459,13 @@ instance DIA_TALAMON_TEACHBLROBS2(C_Info)
 	condition = dia_talamon_teachblrobs2_condition;
 	information = dia_talamon_teachblrobs2_info;
 	permanent = TRUE;
-	description = "Научи меня освящать робу мага Огня. (Очки обучения: 5, Цена: 2000 монет)";
+	description = " Teach me how to consecrate Firemage's robes. (Learning points: 5, Cost: 2000 coins) " ;
 };
 
 
 func int dia_talamon_teachblrobs2_condition()
 {
-	if((hero.guild == GIL_KDF) && (TALAMON_TEACH_D_1 == TRUE) && (HEROKNOWS_BLESSED_ROBS == FALSE))
+	if ((hero.guild ==  GIL_KDF ) && ( TALAMON_TEACH_D_1  ==  TRUE ) && ( HEROKNOWS_BLESSED_ROBS  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -476,13 +476,13 @@ func void dia_talamon_teachblrobs2_info()
 	if((Npc_HasItems(hero,ItMi_Gold) >= 2000) && (hero.lp >= 5))
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_05");	//Издавна высшие маги Огня освящали свои робы, кропя их святой водой.
-		AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_06");	//Для того, чтобы провести обряд, тебе необходимо только найти статую нашего господина - Инноса.
-		AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_07");	//Если Иннос будет достаточно благосклонен к тебе, твоя роба станет крепче и будет лучше тебя защищать.
-		AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_08");	//Помни, ты можешь освятить одну робу только один раз, но попытаться никогда не поздно.
-		AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_09");	//Это все, что тебе следует знать. Теперь ступай, брат, и да пребудет с тобой священный огонь Инноса!
+		AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_05 " );	// Since ancient times, the highest magicians of Fire consecrated their robes, sprinkling them with holy water.
+		AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_06 " );	// In order to perform the ceremony, you only need to find the statue of our master - Innos.
+		AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_07 " );	// If Innos is kind enough to you, your robe will become stronger and better protect you.
+		AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_08 " );	// Remember, you can only bless one robe once, but it's never too late to try.
+		AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_09 " );	// That's all you need to know. Now go, brother, and may the sacred fire of Innos be with you!
 		Log_CreateTopic(Topic_Bonus,LOG_NOTE);
-		B_LogEntry(Topic_Bonus,"Теперь я знаю, что мне понадобится для освящения робы: тридцать пять бутылей святой воды.");
+		B_LogEntry(Topic_Bonus, " Now I know what I need to bless my robe: thirty-five bottles of holy water. " );
 		hero.lp = hero.lp - 5;
 		RankPoints = RankPoints + 5;
 		B_GiveInvItems(hero,self,ItMi_Gold,2000);
@@ -492,12 +492,13 @@ func void dia_talamon_teachblrobs2_info()
 	}
 	else if(Npc_HasItems(hero,ItMi_Gold) <= 2000)
 	{
-		AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_10");	//Сначала принеси мне небольшое пожертвование.
+		AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_10 " );	// Bring me a small donation first.
 		AI_StopProcessInfos(self);
 	}
 	else if(hero.lp < 5)
 	{
-		AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_11");	//Сначала ты должен набраться опыта.
+		AI_Output(self,other, " DIA_Talamon_TeachBlRobs_01_11 " );	// You must gain experience first.
 		AI_StopProcessInfos(self);
 	};
 };
+Footer
