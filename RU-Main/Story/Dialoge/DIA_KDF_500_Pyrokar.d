@@ -12,7 +12,7 @@ instance DIA_Pyrokar_EXIT(C_Info)
 
 func int DIA_Pyrokar_EXIT_Condition()
 {
-	if(Kapitel < 3)
+	if (chapter <  3 )
 	{
 		return TRUE;
 	};
@@ -23,7 +23,7 @@ func void DIA_Pyrokar_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Pyrokar_NoEnter_PissOff(C_Info)
+instance DIA_Pyrokar_NoEnter_PissOff (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 1;
@@ -69,8 +69,8 @@ func int DIA_Pyrokar_WELCOME_Condition()
 
 func void DIA_Pyrokar_WELCOME_Info()
 {
-	AI_Output(self,other,"DIA_Pyrokar_WELCOME_11_00");	//Итак, у нас новый послушник. Я полагаю, ты уже получил задание у мастера Парлана.
-	AI_Output(self,other,"DIA_Pyrokar_WELCOME_11_01");	//Ты же знаешь, что все в монастыре должны выполнять свои обязанности согласно воле Инноса.
+	AI_Output(self,other, " DIA_Pyrokar_WELCOME_11_00 " );	// So, we have a new novice. I believe you have already received the task from Master Parlan.
+	AI_Output(self,other, " DIA_Pyrokar_WELCOME_11_01 " );	// You know that everyone in the monastery must fulfill their duties according to the will of Innos.
 };
 
 
@@ -81,7 +81,7 @@ instance DIA_Pyrokar_Hagen(C_Info)
 	condition = DIA_Pyrokar_Hagen_Condition;
 	information = DIA_Pyrokar_Hagen_Info;
 	permanent = FALSE;
-	description = "Я должен поговорить с паладинами! Это срочно.";
+	description = " I need to talk to the paladins! It's urgent. " ;
 };
 
 
@@ -95,29 +95,29 @@ func int DIA_Pyrokar_Hagen_Condition()
 
 func void DIA_Pyrokar_Hagen_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Hagen_15_00");	//Я должен поговорить с паладинами! Это срочно.
-	AI_Output(self,other,"DIA_Pyrokar_Hagen_11_01");	//Ты кажешь нам, о чем ты собираешься говорить с ними?
-	AI_Output(other,self,"DIA_Pyrokar_Hagen_15_02");	//У меня для них важное сообщение.
-	AI_Output(self,other,"DIA_Pyrokar_Hagen_11_03");	//Что это за сообщение?
-	AI_Output(other,self,"DIA_Pyrokar_Hagen_15_04");	//Армия зла собирается в Долине Рудников. Ее возглавляют драконы! Мы должны остановить их, пока это еще возможно.
-	AI_Output(self,other,"DIA_Pyrokar_Hagen_11_05");	//Хм. Мы должны обдумать твои слова, послушник. Когда придет время, мы дадим тебе знать, что по этому поводу решил Совет.
-	AI_Output(self,other,"DIA_Pyrokar_Hagen_11_06");	//А пока тебе лучше уделить самое пристальное внимание своим обязанностям послушника.
+	AI_Output(other,self, " DIA_Pyrokar_Hagen_15_00 " );	// I need to talk to the paladins! This is urgent.
+	AI_Output(self,other, " DIA_Pyrokar_Hagen_11_01 " );	// Are you telling us what you're going to talk to them about?
+	AI_Output(other,self, " DIA_Pyrokar_Hagen_15_02 " );	// I have an important message for them.
+	AI_Output(self,other, " DIA_Pyrokar_Hagen_11_03 " );	// What is this message?
+	AI_Output(other,self, " DIA_Pyrokar_Hagen_15_04 " );	// An army of evil is gathering in the Valley of Mines. It's led by dragons! We must stop them while we still can.
+	AI_Output(self,other, " DIA_Pyrokar_Hagen_11_05 " );	// Hmm. We must consider your words, novice. When the time is right, we will let you know what the Council has decided on this matter.
+	AI_Output(self,other, " DIA_Pyrokar_Hagen_11_06 " );	// In the meantime, you'd better pay close attention to your duties as an acolyte.
 	if(Npc_KnowsInfo(other,DIA_Pyrokar_Auge))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_ALL_11_07");	//Мы больше не будем отрывать тебя от работы - ты можешь идти.
+		AI_Output(self,other, " DIA_Pyrokar_ALL_11_07 " );	// We won't interrupt your work anymore - you can go.
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_Pyrokar_Auge(C_Info)
+instance DIA_Pyrokar_Eye (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 10;
 	condition = DIA_Pyrokar_Auge_Condition;
-	information = DIA_Pyrokar_Auge_Info;
+	information = DIA_Pyrokar_Eye_Info;
 	permanent = FALSE;
-	description = "Я ищу Глаз Инноса.";
+	description = " I'm looking for the Eye of Innos. " ;
 };
 
 
@@ -129,17 +129,17 @@ func int DIA_Pyrokar_Auge_Condition()
 	};
 };
 
-func void DIA_Pyrokar_Auge_Info()
+func void DIA_Pyrokar_Eye_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Auge_15_00");	//Я ищу Глаз Инноса.
-	AI_Output(self,other,"DIA_Pyrokar_Auge_11_01");	//Любой, кто полагает, что он может не только найти этот священный амулет, но также и носить его - идиот.
-	AI_Output(self,other,"DIA_Pyrokar_Auge_11_02");	//Этот амулет сам выбирает своего хозяина - только тот, кто судьбой предназначен для этого, способен носить его.
-	AI_Output(other,self,"DIA_Pyrokar_Auge_15_03");	//Я все же хотел бы попробовать.
-	AI_Output(self,other,"DIA_Pyrokar_Auge_11_04");	//Обязанность послушника проявлять смирение - не желания.
-	B_LogEntry(TOPIC_INNOSEYE,"Я не думал, что это будет так непросто, но Пирокар не отдаст Глаз добровольно, здесь не обойтись без помощи паладинов.");
+	AI_Output(other,self, " DIA_Pyrokar_Auge_15_00 " );	// I'm looking for the Eye of Innos.
+	AI_Output(self,other, " DIA_Pyrokar_Auge_11_01 " );	// Anyone who thinks they can not only find this sacred amulet but also wear it is an idiot.
+	AI_Output(self,other, " DIA_Pyrokar_Auge_11_02 " );	// This amulet chooses its owner by itself - only those who are destined for this are able to wear it.
+	AI_Output(other,self, " DIA_Pyrokar_Auge_15_03 " );	// I'd still like to try.
+	AI_Output(self,other, " DIA_Pyrokar_Auge_11_04 " );	// The obligation of a novice to show humility is not desire.
+	B_LogEntry( TOPIC_INNOSEYE , " I didn't think it would be so difficult, but Pyrokar won't give up the Eye voluntarily, paladins help here. " );
 	if(Npc_KnowsInfo(other,DIA_Pyrokar_Hagen))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_ALL_11_05");	//Что ж, мы больше не будем отрывать тебя от работы - ты можешь идти.
+		AI_Output(self,other, " DIA_Pyrokar_ALL_11_05 " );	// Well, we won't interrupt your work anymore - you can go.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -151,13 +151,13 @@ instance DIA_Addon_Pyrokar_MissingPeople(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Pyrokar_MissingPeople_Condition;
 	information = DIA_Addon_Pyrokar_MissingPeople_Info;
-	description = "Жители Хориниса таинственным образом исчезают.";
+	description = " Citizens of Khorinis mysteriously disappear. " ;
 };
 
 
 func int DIA_Addon_Pyrokar_MissingPeople_Condition()
 {
-	if((SC_HearedAboutMissingPeople == TRUE) && (Sklaven_Flucht == FALSE))
+	if ((SC_HearedAboutMissingPeople ==  TRUE ) && (slave_escape ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -165,15 +165,15 @@ func int DIA_Addon_Pyrokar_MissingPeople_Condition()
 
 func void DIA_Addon_Pyrokar_MissingPeople_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Pyrokar_MissingPeople_15_00");	//Жители Хориниса таинственным образом исчезают.
-	AI_Output(self,other,"DIA_Addon_Pyrokar_MissingPeople_11_01");	//Мне это известно, и я глубоко опечален этими исчезновениями. Но этим делом занимаются маги воды.
-	AI_Output(self,other,"DIA_Addon_Pyrokar_MissingPeople_11_02");	//Они же пытаются выяснить причины странных землетрясений, происходящих в северо-восточной части Хориниса.
-	AI_Output(self,other,"DIA_Addon_Pyrokar_MissingPeople_11_03");	//До сих пор они не давали мне понять, что им требуется наша помощь. Поэтому мы не предпринимаем никаких действий.
+	AI_Output(other,self, " DIA_Addon_Pyrokar_MissingPeople_15_00 " );	// The inhabitants of Khorinis mysteriously disappear.
+	AI_Output(self,other, " DIA_Addon_Pyrokar_MissingPeople_11_01 " );	// I know this and am deeply saddened by these disappearances. But this is what waterbenders do.
+	AI_Output(self,other, " DIA_Addon_Pyrokar_MissingPeople_11_02 " );	// They are also trying to find out the causes of strange earthquakes occurring in the northeastern part of Khorinis.
+	AI_Output(self,other, " DIA_Addon_Pyrokar_MissingPeople_11_03 " );	// So far, they haven't let me know they need our help. Therefore, we are not taking any action.
 	AI_Output(other,self,"DIA_Addon_Pyrokar_MissingPeople_15_04");	//Да, но...
-	AI_Output(self,other,"DIA_Addon_Pyrokar_MissingPeople_11_05");	//Никаких 'но'! Мы будем поступать так, как считаем нужным, и я надеюсь, что ты это поймешь.
+	AI_Output(self,other, " DIA_Addon_Pyrokar_MissingPeople_11_05 " );	// No 'buts'! We will do as we see fit, and I hope you understand that.
 	Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_WhoStolePeople,LOG_Running);
-	B_LogEntry(TOPIC_Addon_WhoStolePeople,"Маги Огня огорчены исчезновениями горожан. Однако они говорят, что этим должны заниматься маги Воды. В монастыре мне не удастся найти помощь по этому вопросу.");
+	B_LogEntry(TOPIC_Addon_WhoStolePeople, "The Fire Mages are saddened by the disappearance of the townspeople. However, they say that it is up to the Water Mages to deal with this. I can't find help on this issue in the monastery. " );
 	if((other.guild == GIL_NOV) && (KNOWS_FIRE_CONTEST == FALSE))
 	{
 		AI_StopProcessInfos(self);
@@ -196,9 +196,9 @@ func int DIA_Pyrokar_GOAWAY_Condition()
 {
 	if((Npc_KnowsInfo(other,DIA_Addon_Pyrokar_MissingPeople) == FALSE) && (SC_HearedAboutMissingPeople == TRUE))
 	{
-		return FALSE;
+		return  FALSE ;
 	};
-	if(Npc_IsInState(self,ZS_Talk) && Npc_KnowsInfo(other,DIA_Pyrokar_Hagen) && Npc_KnowsInfo(other,DIA_Pyrokar_Auge) && (KNOWS_FIRE_CONTEST == FALSE) && (other.guild == GIL_NOV))
+	if ( Npc_IsInState ( self , ZS_Talk ) && Npc_KnowsInfo ( other , DIA_Pyrokar_Hagen ) && Npc_KnowsInfo ( other , DIA_Pyrokar_Auge ) && ( KNOWS_FIRE_CONTEST  ==  FALSE ) && ( other . guild ==  GIL_NOV )) ;
 	{
 		return TRUE;
 	};
@@ -206,7 +206,7 @@ func int DIA_Pyrokar_GOAWAY_Condition()
 
 func void DIA_Pyrokar_GOAWAY_Info()
 {
-	AI_Output(self,other,"DIA_Pyrokar_GOAWAY_11_00");	//(раздраженно) Смирение - благодетель, которой тебе еще предстоит научиться. Так или иначе.
+	AI_Output(self,other, " DIA_Pyrokar_GOAWAY_11_00 " );	// (irritated) Humility is a virtue you have yet to learn. Anyway.
 	AI_StopProcessInfos(self);
 };
 
@@ -218,13 +218,13 @@ instance DIA_Pyrokar_FIRE(C_Info)
 	condition = DIA_Pyrokar_FIRE_Condition;
 	information = DIA_Pyrokar_FIRE_Info;
 	permanent = FALSE;
-	description = "Я хочу пройти Испытание Огнем!";
+	description = " I want to take the Trial by Fire! " ;
 };
 
 
 func int DIA_Pyrokar_FIRE_Condition()
 {
-	if((KNOWS_FIRE_CONTEST == TRUE) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,DIA_Pyrokar_Hagen))
+	if (( KNOWS_FIRE_CONTEST  ==  TRUE ) && ( other . guild ==  GIL_NOV ) && Npc_KnowsInfo ( other , DIA_Pyrokar_Hagen ) ) .
 	{
 		return TRUE;
 	};
@@ -232,16 +232,16 @@ func int DIA_Pyrokar_FIRE_Condition()
 
 func void DIA_Pyrokar_FIRE_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_00");	//Я хочу пройти Испытание Огнем!
-	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_01");	//Так ты знаешь о...(удивленно) Ты хочешь пройти Испытание Огнем?
-	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_02");	//Да, я ссылаюсь на Закон Огня, который гласит...
-	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_03");	//(резко прерывает) Мы знаем Закон Огня. Мы также видели, как множество послушников погибли при прохождении этого испытания. Ты должен пересмотреть свое решение.
-	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_04");	//Я хочу пройти это испытание - и я пройду его.
-	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_05");	//(предупреждающе) Если ты категорически настаиваешь, Высший Совет подвергнет тебя этому испытанию.
-	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_06");	//Я настаиваю на прохождении Испытания Огнем.
-	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_07");	//В таком случае - так тому и быть. Когда ты будешь готов, каждый из магов Высшего Совета даст тебе задание, которое ты должен будешь выполнить.
-	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_08");	//Да сжалится Иннос над твоей душой.
-	B_LogEntry(TOPIC_FireContest,"Я потребовал у Пирокара пройти Испытание Огнем. Теперь я должен выполнить три задания Высшего совета.");
+	AI_Output(other,self, " DIA_Pyrokar_FIRE_15_00 " );	// I want to take the Trial by Fire!
+	AI_Output(self,other, " DIA_Pyrokar_FIRE_11_01 " );	// So you know about...(surprised) Do you want to take the Trial by Fire?
+	AI_Output(other,self, " DIA_Pyrokar_FIRE_15_02 " );	// Yes, I'm referring to the Law of Fire, which says...
+	AI_Output(self,other, " DIA_Pyrokar_FIRE_11_03 " );	// (abruptly interrupts) We know the Law of Fire. We also saw how many novices died in this test. You must reconsider your decision.
+	AI_Output(other,self, " DIA_Pyrokar_FIRE_15_04 " );	// I want to pass this test - and I will pass it.
+	AI_Output(self,other, " DIA_Pyrokar_FIRE_11_05 " );	// (warning) If you categorically insist, the High Council will subject you to this test.
+	AI_Output(other,self, " DIA_Pyrokar_FIRE_15_06 " );	// I insist on passing the Trial by Fire.
+	AI_Output(self,other, " DIA_Pyrokar_FIRE_11_07 " );	// In that case, so be it. When you are ready, each of the mages of the High Council will give you a task to complete.
+	AI_Output(self,other, " DIA_Pyrokar_FIRE_11_08 " );	// May Innos have mercy on your soul.
+	B_LogEntry(TOPIC_FireContest, " I requested the Pyrocar to complete the Trial of Fire. Now I must complete three High Council tasks. " );
 };
 
 
@@ -252,13 +252,13 @@ instance DIA_Pyrokar_TEST(C_Info)
 	condition = DIA_Pyrokar_TEST_Condition;
 	information = DIA_Pyrokar_TEST_Info;
 	permanent = FALSE;
-	description = "Я готов пройти твое испытание, мастер.";
+	description = " I'm ready to take your test, master. " ;
 };
 
 
 func int DIA_Pyrokar_TEST_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Pyrokar_FIRE) && (MIS_SCHNITZELJAGD == FALSE) && (hero.guild == GIL_NOV))
+	if ( Npc_KnowsInfo ( other , DIA_Pyrokar_FIRE ) && ( MIS_SCHNITZELJAGD  ==  FALSE ) && ( hero . guild ==  GIL_NOV )) .
 	{
 		return TRUE;
 	};
@@ -266,35 +266,35 @@ func int DIA_Pyrokar_TEST_Condition()
 
 func void DIA_Pyrokar_TEST_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_TEST_15_00");	//Я готов пройти испытание, Мастер.
-	AI_Output(self,other,"DIA_Pyrokar_TEST_11_01");	//И только одному Инносу ведомо, пройдешь ли ты его. Ты будешь подвергнут тому же испытанию, что и избранные послушники.
-	AI_Output(self,other,"DIA_Pyrokar_TEST_11_02");	//Испытанию Огнем!...(надменно) Ты, вероятно, знаешь, что только ОДИН из послушников сможет пройти это испытание.
-	AI_Output(other,self,"DIA_Pyrokar_TEST_15_03");	//Понимаю. А кто мои соперники?
-	AI_Output(self,other,"DIA_Pyrokar_TEST_11_04");	//Иннос в своей мудрости выбрал троих послушников, которые должны подвергнуться этому испытанию: Агон, Игарац и Ульф. Они уже приступили к поискам.
-	AI_Output(self,other,"DIA_Pyrokar_TEST_11_05");	//Но хватит об этом! Услышь слова этого испытания: 'Следуй знакам Инноса и принеси то, что верующий находит в конце пути'.
-	AI_Output(self,other,"DIA_Pyrokar_TEST_11_06");	//Тебе понадобится этот ключ.
-	Log_CreateTopic(TOPIC_Schnitzeljagd,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_Schnitzeljagd,LOG_Running);
-	B_LogEntry(TOPIC_Schnitzeljagd,"Пирокар дает мне Испытание Огня. Это то же самое испытание, что должны пройти избранные послушники Ульф, Игарац и Агон.");
-	B_LogEntry_Quiet(TOPIC_Schnitzeljagd,"Я должен следовать знакам Инноса и 'принести то, что верующий находит в конце пути'. Также он дал мне ключ.");
+	AI_Output(other,self, " DIA_Pyrokar_TEST_15_00 " );	// I'm ready to take the test, Master.
+	AI_Output(self,other, " DIA_Pyrokar_TEST_11_01 " );	// And only Innos knows whether you will pass it. You will be subjected to the same test as the chosen novices.
+	AI_Output(self,other, " DIA_Pyrokar_TEST_11_02 " );	// Trial by Fire!...(haughtily) You probably know that only ONE of the acolytes can pass this test.
+	AI_Output(other,self, " DIA_Pyrokar_TEST_15_03 " );	// I understand. And who are my rivals?
+	AI_Output(self,other, " DIA_Pyrokar_TEST_11_04 " );	// Innos, in his wisdom, chose three novices to be subjected to this test: Agon, Igaraz, and Ulf. They have already begun searching.
+	AI_Output(self,other, " DIA_Pyrokar_TEST_11_05 " );	// But enough about that! Hear the words of this test: 'Follow the signs of Innos and bring what the believer finds at the end of the path'.
+	AI_Output(self,other, " DIA_Pyrokar_TEST_11_06 " );	// You will need this key.
+	Log_CreateTopic(TOPIC_scavenger hunt, LOG_MISSION );
+	Log_SetTopicStatus(TOPIC_Scavenger Hunt,LOG_Running);
+	B_LogEntry(TOPIC_Schnitzeljagd, "The Pyrocar is giving me a Trial of Fire. This is the same trial that the chosen acolytes of Ulf, Igaraz, and Agon must pass. " );
+	B_LogEntry_Quiet(TOPIC_Schnitzeljagd, " I must follow the signs of Innos and 'bring what the believer finds at the end of the path'. He also gave me a key. " );
 	CreateInvItems(self,ItKe_MagicChest,1);
 	B_GiveInvItems(self,other,ItKe_MagicChest,1);
 	B_StartOtherRoutine(Igaraz,"CONTEST");
 	AI_Teleport(Igaraz,"NW_TAVERNE_BIGFARM_05");
 	CreateInvItems(Igaraz,ItKe_MagicChest,1);
-	Igaraz.aivar[AIV_DropDeadAndKill] = TRUE;
-	Igaraz.aivar[AIV_NewsOverride] = TRUE;
+	Igaraz.aivar[AIV_DropDeadAndKill] = TRUE ;
+	Igaraz.aivar[AIV_NewsOverride] = TRUE ;
 	B_StartOtherRoutine(Nov607,"EXCHANGE");
 	B_StartOtherRoutine(Agon,"GOLEMDEAD");
 	AI_Teleport(Agon,"NW_MAGECAVE_RUNE");
 	CreateInvItems(Agon,ItKe_MagicChest,1);
-	Agon.aivar[AIV_DropDeadAndKill] = TRUE;
-	Agon.aivar[AIV_NewsOverride] = TRUE;
+	Agon.aivar[AIV_DropDeadAndKill] = TRUE ;
+	Agon.aivar[AIV_NewsOverride] = TRUE ;
 	B_StartOtherRoutine(Ulf,"SUCHE");
 	AI_Teleport(Ulf,"NW_TROLLAREA_PATH_42");
 	CreateInvItems(Ulf,ItKe_MagicChest,1);
-	Ulf.aivar[AIV_DropDeadAndKill] = TRUE;
-	Ulf.aivar[AIV_NewsOverride] = TRUE;
+	Ulf.aivar[AIV_DropDeadAndKill] = TRUE ;
+	Ulf.aivar[AIV_NewsOverride] = TRUE ;
 	MIS_SCHNITZELJAGD = LOG_Running;
 	AI_StopProcessInfos(self);
 };
@@ -311,7 +311,7 @@ instance DIA_Pyrokar_RUNNING(C_Info)
 
 func int DIA_Pyrokar_RUNNING_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_Running) && Npc_IsInState(self,ZS_Talk) && (other.guild == GIL_NOV) && Mob_HasItems("MAGICCHEST",ItMi_RuneBlank))
+	if (( MIS_SCHNITZELJAGD  == LOG_Running) && Npc_IsInState(self,ZS_Talk) && (other.guild ==  GIL_NOV ) && Mob_HasItems( " MAGICCHEST " ,ItMi_RuneBlank));
 	{
 		return TRUE;
 	};
@@ -323,15 +323,15 @@ func void DIA_Pyrokar_RUNNING_Info()
 	randomizer = Hlp_Random(3);
 	if(randomizer == 0)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_RUNNING_11_00");	//Пока ты не пройдешь это испытание, нам нечего сказать тебе.
+		AI_Output(self,other, " DIA_Pyrokar_RUNNING_11_00 " );	// Until you pass this test, we have nothing to tell you.
 	}
 	else if(randomizer == 1)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_RUNNING_11_01");	//Чего ты ждешь? Иди, проходи испытание!
+		AI_Output(self,other, " DIA_Pyrokar_RUNNING_11_01 " );	// What are you waiting for? Go take the test!
 	}
 	else if(randomizer == 2)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_RUNNING_11_02");	//Пришло время подтвердить твои громкие слова делами. Тебе так не кажется, послушник?
+		AI_Output(self,other, " DIA_Pyrokar_RUNNING_11_02 " );	// It's time to back up your big words with deeds. Don't you think so, novice?
 	};
 	AI_StopProcessInfos(self);
 };
@@ -344,12 +344,12 @@ instance DIA_Pyrokar_SUCCESS(C_Info)
 	condition = DIA_Pyrokar_SUCCESS_Condition;
 	information = DIA_Pyrokar_SUCCESS_Info;
 	permanent = FALSE;
-	description = "Я нашел рунный камень.";
+	description = " I found a runestone. " ;
 };
 
 func int DIA_Pyrokar_SUCCESS_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_Running) && (MageFireChestOpen == TRUE) && (hero.guild == GIL_NOV) && !Mob_HasItems("MAGICCHEST",ItMi_RuneBlank) && ((Npc_HasItems(other,ItMi_RuneBlank) >= 1) || (Npc_HasItems(other,ItRu_FireBolt) >= 1)))
+	if (( MIS_SCHNITZELJAGD  == LOG_Running) && (MageFireChestOpen ==  TRUE ) && (hero.guild ==  GIL_NOV ) &&  ! Mob_HasItems( " MAGICCHEST " ,ItMi_RuneBlank) && ((Npc_HasItems(other,ItMi_RuneBlank) > =  1 ) || Npc_HasItems ( other , ItRu_FireBolt ) >=  1 ))) ;
 	{
 		return TRUE;
 	};
@@ -357,27 +357,27 @@ func int DIA_Pyrokar_SUCCESS_Condition()
 
 func void DIA_Pyrokar_SUCCESS_Info()
 {
-	B_GivePlayerXP(XP_SCHNITZELJAGD);
-	AI_Output(other,self,"DIA_Pyrokar_SUCCESS_15_00");	//Я нашел рунный камень.
-	AI_Output(self,other,"DIA_Pyrokar_SUCCESS_11_01");	//(недоверчиво) Ты сделал это? Ты следовал знакам и нашел скрытый портал...
-	AI_Output(other,self,"DIA_Pyrokar_SUCCESS_15_02");	//...и одной левой победил всех тех монстров, что уже считали меня своей добычей.
-	AI_Output(self,other,"DIA_Pyrokar_SUCCESS_11_03");	//А другие послушники? Что насчет Агона? Они не опередили тебя?
-	AI_Output(other,self,"DIA_Pyrokar_SUCCESS_15_04");	//Они не смогли. Я думаю, им было не суждено пройти это испытание.
-	AI_Output(self,other,"DIA_Pyrokar_SUCCESS_11_05");	//Что ж, в таком случае мы объявляем, что ты прошел это испытание. А этот рунный камень теперь твой.
-	MIS_SCHNITZELJAGD = LOG_SUCCESS;
-	Log_SetTopicStatus(TOPIC_Schnitzeljagd,LOG_SUCCESS);
-	B_LogEntry(TOPIC_Schnitzeljagd,"Я прошел Испытание Огнем, которое дал мне Пирокар!");
+	B_GivePlayerXP( XP_SCHNITZELJAGD );
+	AI_Output(other,self, " DIA_Pyrokar_SUCCESS_15_00 " );	// I found a runestone.
+	AI_Output(self,other, " DIA_Pyrokar_SUCCESS_11_01 " );	// (in disbelief) Did you do it? You followed the signs and found the hidden portal...
+	AI_Output(other,self, " DIA_Pyrokar_SUCCESS_15_02 " );	// ...and defeated all those monsters that already considered me their prey with one left hand.
+	AI_Output(self,other, " DIA_Pyrokar_SUCCESS_11_03 " );	// And the other acolytes? What about Agon? Did they get ahead of you?
+	AI_Output(other,self, " DIA_Pyrokar_SUCCESS_15_04 " );	// They couldn't. I think they were not destined to pass this test.
+	AI_Output(self,other, " DIA_Pyrokar_SUCCESS_11_05 " );	// Well, in that case, we announce that you have passed this test. And this runestone is now yours.
+	MIS_SCHNITZELJAGD = LOG_SUCCESS ;
+	Log_SetTopicStatus(TOPIC_scavenger hunt, LOG_SUCCESS );
+	B_LogEntry(TOPIC_Schnitzeljagd, " I passed the Trial of Fire that the Pyrocar gave me! " );
 	AI_StopProcessInfos(self);
 	B_StartOtherRoutine(Igaraz,"Start");
-	Igaraz.aivar[AIV_DropDeadAndKill] = FALSE;
-	Igaraz.aivar[AIV_NewsOverride] = FALSE;
+	Igaraz.aivar[AIV_DropDeadAndKill] = FALSE ;
+	Igaraz.aivar[AIV_NewsOverride] = FALSE ;
 	B_StartOtherRoutine(Nov607,"Start");
 	B_StartOtherRoutine(Agon,"Start");
-	Agon.aivar[AIV_DropDeadAndKill] = FALSE;
-	Agon.aivar[AIV_NewsOverride] = FALSE;
+	Agon.aivar[AIV_DropDeadAndKill] = FALSE ;
+	Agon.aivar[AIV_NewsOverride] = FALSE ;
 	B_StartOtherRoutine(Ulf,"Start");
-	Ulf.aivar[AIV_DropDeadAndKill] = FALSE;
-	Ulf.aivar[AIV_NewsOverride] = FALSE;
+	Ulf.aivar[AIV_DropDeadAndKill] = FALSE ;
+	Ulf.aivar[AIV_NewsOverride] = FALSE ;
 };
 
 instance DIA_Pyrokar_Todo(C_Info)
@@ -400,16 +400,16 @@ func int DIA_Pyrokar_Todo_Condition()
 
 func void DIA_Pyrokar_Todo_Info()
 {
-	AI_Output(self,other,"DIA_Pyrokar_Todo_11_00");	//Ты прошел испытание, которому подверг тебя я.
+	AI_Output(self,other, " DIA_Pyrokar_Todo_11_00 " );	// You passed the test I put you through.
 	AI_Output(self,other,"DIA_Pyrokar_Todo_11_01");	//Но...
 
 	if(MIS_RUNE != LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_Todo_11_02");	//... тебе еще необходимо пройти испытание Ультара.
+		AI_Output(self,other, " DIA_Pyrokar_Todo_11_02 " );	// ... you still need to pass Ulthar's test.
 	};
 	if(MIS_GOLEM != LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_Todo_11_03");	//... тебе еще необходимо выполнить задание Серпентеса.
+		AI_Output(self,other, " DIA_Pyrokar_Todo_11_03 " );	// ... you still need to complete Serpentes' quest.
 	};
 
 	AI_StopProcessInfos(self);
@@ -422,7 +422,7 @@ instance DIA_Pyrokar_MAGICAN(C_Info)
 	condition = DIA_Pyrokar_MAGICAN_Condition;
 	information = DIA_Pyrokar_MAGICAN_Info;
 	permanent = FALSE;
-	description = "Теперь я буду принят в Гильдию Магов?";
+	description = " Will I be accepted into the Mages Guild now? " ;
 };
 
 func int DIA_Pyrokar_MAGICAN_Condition()
@@ -435,15 +435,15 @@ func int DIA_Pyrokar_MAGICAN_Condition()
 
 func void DIA_Pyrokar_MAGICAN_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_MAGICAN_15_00");	//Теперь я буду принят в Гильдию Магов?
-	AI_Output(self,other,"DIA_Pyrokar_MAGICAN_11_01");	//Ты сделал это. Ты прошел Испытание Огнем. Мы с самого начала были уверены, что ты преуспеешь в этом.
-	AI_Output(self,other,"DIA_Pyrokar_MAGICAN_11_02");	//(настойчиво) Мы также уверены, что ты продолжишь прилагать все усилия, чтобы стать ДОСТОЙНЫМ слугой Инноса.
-	AI_Output(self,other,"DIA_Pyrokar_MAGICAN_11_03");	//Итак, если ты готов принять Клятву Огня, ты будешь принят в наши ряды.
-	AI_Output(self,other,"DIA_Pyrokar_MAGICAN_100_01");	//Но прежде у меня есть последнее задание для тебя, как избранного послушника Инноса. Иди к Каррасу, он все расскажет тебе в подробностях!
+	AI_Output(other,self, " DIA_Pyrokar_MAGICAN_15_00 " );	// Will I be accepted into the Mages Guild now?
+	AI_Output(self,other, " DIA_Pyrokar_MAGICAN_11_01 " );	// You did it. You have passed the Trial by Fire. From the very beginning we were sure that you would succeed in this.
+	AI_Output(self,other, " DIA_Pyrokar_MAGICAN_11_02 " );	// (persistently) We are also confident that you will continue to do your best to become a WORTHY servant of Innos.
+	AI_Output(self,other, " DIA_Pyrokar_MAGICAN_11_03 " );	// So, if you're ready to accept the Oath of Fire, you'll be accepted into our ranks.
+	AI_Output(self,other, " DIA_Pyrokar_MAGICAN_100_01 " );	// But first, I have one last task for you, as the chosen acolyte of Innos. Go to Karras, he will tell you everything in detail!
 	MIS_KARRAS_BOOKS = LOG_Running;
 	Log_CreateTopic(TOPIC_HELPKARRASBOOKS,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HELPKARRASBOOKS,LOG_Running);
-	B_LogEntry(TOPIC_HELPKARRASBOOKS,"Пирокар сказал, что меня примут в маги только после выполнения последнего задания. Что именно нужно делать он не сказал, но от правил меня к Каррасу.");
+	; _ _ _ _ _ _
 };
 
 instance DIA_Pyrokar_OATH(C_Info)
@@ -453,12 +453,12 @@ instance DIA_Pyrokar_OATH(C_Info)
 	condition = DIA_Pyrokar_OATH_Condition;
 	information = DIA_Pyrokar_OATH_Info;
 	permanent = FALSE;
-	description = "Я готов вступить в Круг Огня.";
+	description = " I'm ready to enter the Circle of Fire. " ;
 };
 
 func int DIA_Pyrokar_OATH_Condition()
 {
-	if((hero.guild == GIL_NOV) && (MIS_KARRAS_BOOKS == LOG_SUCCESS))
+	if ((hero.guild ==  GIL_NOV ) && ( MIS_KARRAS_BOOKS  ==  LOG_SUCCESS ))
 	{
 		return TRUE;
 	};
@@ -466,14 +466,14 @@ func int DIA_Pyrokar_OATH_Condition()
 
 func void DIA_Pyrokar_OATH_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_OATH_15_00");	//Я готов вступить в Круг Огня.
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_01");	//Хорошо, тогда принеси Клятву Огня.
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_02");	//(торжественно) Клянешься ли ты, перед лицом Инноса Всемогущего, его слуг и Священного Огня...
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_03");	//... что с этого момента и до конца дней вся жизнь твоя будет едина с огнем...
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_04");	//... до тех пор пока твое тело и душа не найдут покой в этих священных чертогах и пламя твоей жизни не угаснет?
-	AI_Output(other,self,"DIA_Pyrokar_OATH_15_05");	//Клянусь.
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_06");	//Произнеся слова этой клятвы, ты присоединился к Соглашению Огня.
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_07");	//Носи эту робу в знак этих вечных уз.
+	AI_Output(other,self, " DIA_Pyrokar_OATH_15_00 " );	// I'm ready to enter the Circle of Fire.
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_01 " );	// Okay, then take the Oath of Fire.
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_02 " );	// (solemnly) Do you swear, in the face of Innos the Almighty, his servants and the Holy Fire...
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_03 " );	// ... that from this moment until the end of your days, your whole life will be one with fire...
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_04 " );	// ...until your body and soul find rest in these sacred halls and the flame of your life is extinguished?
+	AI_Output(other,self, " DIA_Pyrokar_OATH_15_05 " );	// I swear.
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_06 " );	// By uttering the words of this oath, you have joined the Covenant of Fire.
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_07 " );	// Wear this robe as a sign of this eternal bond.
 	CreateInvItems(self,ItAr_KDF_L,1);
 	B_GiveInvItems(self,other,ItAr_KDF_L,1);
 
@@ -485,16 +485,16 @@ func void DIA_Pyrokar_OATH_Info()
 	other.guild = GIL_KDF;
 	other.protection[PROT_FIRE] += 10;
 	REALPROTFIRE += 10;
-	AI_PrintClr("Защита от огня + 10",83,152,48);
+	AI_PrintClr( " Fire protection + 10 " , 83 , 152 , 48 );
 	CheckHeroGuild[0] = TRUE;
 	Mdl_ApplyOverlayMds(hero,"Humans_Mage.mds");
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_1A");	//Также прими от меня этот посох. Только нам - магам Огня - дарована честь обладать им и распоряжаться его силой!
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_1A " );	// Also accept this staff from me. Only we - the magicians of Fire - have been granted the honor to possess it and control its power!
 	Npc_ExchangeRoutine(Lothar,"START");
 	Fire_Contest = TRUE;
 	Snd_Play("GUILD_INV");
-	KDF_Aufnahme = LOG_SUCCESS;
-	SLD_Aufnahme = LOG_OBSOLETE;
-	MIL_Aufnahme = LOG_OBSOLETE;
+	KDF_Recording = LOG_SUCCESS ;
+	SLD_recording = LOG_OBSOLETE ;
+	MIL_recording = LOG_OBSOLETE ;
 	MIS_PSICAMPJOIN = LOG_OBSOLETE;
 	MIS_BECOMEKDW = LOG_OBSOLETE;
 	MIS_BECOMEKDM = LOG_OBSOLETE;
@@ -502,20 +502,20 @@ func void DIA_Pyrokar_OATH_Info()
 	B_GivePlayerXP(XP_BecomeMage);
 	CreateInvItems(self,ITMW_2H_G3_STAFFFIRE_01,1);
 	B_GiveInvItems(self,other,ITMW_2H_G3_STAFFFIRE_01,1);
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_08");	//Теперь, когда ты был принят в наши ряды, ты можешь поговорить с лордом Хагеном, главнокомандующим паладинов.
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_09");	//Нам также очень интересно знать, как он оценивает ситуацию. Так что ты теперь можешь отправляться в Хоринис.
-	AI_Output(self,other,"DIA_Pyrokar_OATH_11_10");	//Мы ожидаем, что ты принесешь его ответ немедленно.
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_08 " );	// Now that you've been accepted into our ranks, you can speak to Lord Hagen, Commander-in-Chief of the Paladins.
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_09 " );	// We're also very interested to know how he views the situation. So you can now go to Khorinis.
+	AI_Output(self,other, " DIA_Pyrokar_OATH_11_10 " );	// We expect you to bring his answer immediately.
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Pyrokar_Lernen(C_Info)
+instance DIA_Pyrokar_Lernen (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 2;
 	condition = DIA_Pyrokar_Lernen_Condition;
 	information = DIA_Pyrokar_Lernen_Info;
 	permanent = FALSE;
-	description = "Что я могу изучить теперь?";
+	description = " What can I learn now? " ;
 };
 
 
@@ -529,29 +529,29 @@ func int DIA_Pyrokar_Lernen_Condition()
 
 func void DIA_Pyrokar_Lernen_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Lernen_15_00");	//Что я могу изучить теперь?
-	AI_Output(self,other,"DIA_Pyrokar_Lernen_11_01");	//Прежде всего, теперь ты имеешь право изучать Круги магии. Они дадут тебе власть над рунами.
-	AI_Output(self,other,"DIA_Pyrokar_Lernen_11_02");	//Чем выше ты будешь подниматься в шести Кругах магии, тем более сильными заклинаниями ты сможешь овладеть.
-	AI_Output(self,other,"DIA_Pyrokar_Lernen_11_10");	//Брат Парлан введет тебя в первый Круг магии и научит созданию рун. И не забывай также повышать свою магическую силу!
+	AI_Output(other,self, " DIA_Pyrokar_Lernen_15_00 " );	// What can I learn now?
+	AI_Output(self,other, " DIA_Pyrokar_Lernen_11_01 " );	// First of all, now you have the right to learn Circles of Magic. They will give you power over the runes.
+	AI_Output(self,other, " DIA_Pyrokar_Lernen_11_02 " );	// The higher you climb in the six Circles of Magic, the more powerful spells you can master.
+	AI_Output(self,other, " DIA_Pyrokar_Lernen_11_10 " );	// Brother Parlan will introduce you to the first Circle of Magic and teach you how to make runes. And don't forget to increase your magic power as well!
 	Log_CreateTopic(Topic_KlosterTeacher,LOG_NOTE);
-	B_LogEntry(Topic_KlosterTeacher,"Брат Парлан введет меня в первый Круг магии и может посвятить меня в тайны Огня.");
+	B_LogEntry(Topic_KlosterTeacher, " Brother Parlan will introduce me to the first Circle of Magic and may initiate me into the mysteries of Fire. " );
 };
 
 
-instance DIA_Pyrokar_Wunsch(C_Info)
+instance DIA_Pyrokar_Wunsch (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 2;
 	condition = DIA_Pyrokar_Wunsch_Condition;
 	information = DIA_Pyrokar_Wunsch_Info;
 	permanent = FALSE;
-	description = "Я хотел бы высказать пожелание...";
+	description = " I'd like to make a wish... " ;
 };
 
 
 func int DIA_Pyrokar_Wunsch_Condition()
 {
-	if((other.guild == GIL_KDF) && (Kapitel < 2))
+	if ((other.guild ==  GIL_KDF ) && (Chapter <  2 )) .
 	{
 		return TRUE;
 	};
@@ -559,30 +559,30 @@ func int DIA_Pyrokar_Wunsch_Condition()
 
 func void DIA_Pyrokar_Wunsch_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Wunsch_15_00");	//Я хотел бы высказать пожелание...
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_11_01");	//После принятия в наши ряды, каждый маг обладает правом на первый шаг.
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_11_02");	//Итак, каким же будет твой первый шаг в качестве мага?
+	AI_Output(other,self, " DIA_Pyrokar_Wunsch_15_00 " );	// I'd like to make a wish...
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_11_01 " );	// Once accepted into our ranks, every mage has the right to take the first step.
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_11_02 " );	// So, what will be your first step as a mage?
 	Info_ClearChoices(DIA_Pyrokar_Wunsch);
-	Info_AddChoice(DIA_Pyrokar_Wunsch,"Ничего.",DIA_Pyrokar_Wunsch_Nothing);
+	Info_AddChoice(DIA_Pyrokar_Wunsch, " Ничего. " ,DIA_Pyrokar_Wunsch_Nothing);
 	if(MIS_HelpBabo == LOG_Running)
 	{
-		Info_AddChoice(DIA_Pyrokar_Wunsch,"Позволь послушнику Бабо возглавить монастырский сад.",DIA_Pyrokar_Wunsch_Babo);
+		Info_AddChoice(DIA_Pyrokar_Wunsch, " Let novice Babo lead the monastery garden. " ,DIA_Pyrokar_Wunsch_Babo);
 	};
 	if(MIS_HelpOpolos == LOG_Running)
 	{
-		Info_AddChoice(DIA_Pyrokar_Wunsch,"Позволь послушнику Ополосу получить доступ в библиотеку.",DIA_Pyrokar_Wunsch_Opolos);
+		Info_AddChoice(DIA_Pyrokar_Wunsch, " Allow Acolyte Opolos to access the library. " ,DIA_Pyrokar_Wunsch_Opolos);
 	};
 	if(MIS_HelpDyrian == LOG_Running)
 	{
-		Info_AddChoice(DIA_Pyrokar_Wunsch,"Позволь послушнику Дуриану остаться в монастыре.",DIA_Pyrokar_Wunsch_Dyrian);
+		Info_AddChoice(DIA_Pyrokar_Wunsch, " Let novice Durian stay at the monastery. " ,DIA_Pyrokar_Wunsch_Dyrian);
 	};
 };
 
 func void DIA_Pyrokar_Wunsch_Nothing()
 {
 	AI_Teleport(Dyrian,"TAVERNE");
-	AI_Output(other,self,"DIA_Pyrokar_Wunsch_Nothing_15_00");	//Никаким.
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_Nothing_11_01");	//(удивленно) Да будет так. Новый маг отказывается от первого шага.
+	AI_Output(other,self, " DIA_Pyrokar_Wunsch_Nothing_15_00 " );	// None.
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_Nothing_11_01 " );	// (surprised) So be it. The new magician refuses the first step.
 	B_StartOtherRoutine(Dyrian,"NOFAVOUR");
 
 	if(MIS_HelpDyrian == LOG_Running)
@@ -605,9 +605,9 @@ func void DIA_Pyrokar_Wunsch_Nothing()
 
 func void DIA_Pyrokar_Wunsch_Dyrian()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Wunsch_Dyrian_15_00");	//Позволь послушнику Дуриану остаться в монастыре.
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_Dyrian_11_01");	//Да будет так.
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_Dyrian_11_02");	//Этому послушнику будет позволено остаться в монастыре, и он займет место садовника, которое сейчас вакантно.
+	AI_Output(other,self, " DIA_Pyrokar_Wunsch_Dyrian_15_00 " );	// Let novice Durian stay at the monastery.
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_Dyrian_11_01 " );	// So be it.
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_Dyrian_11_02 " );	// This acolyte will be allowed to stay at the monastery and take the gardener's position, which is currently vacant.
 	B_GivePlayerXP(XP_HelpDyrian);
 	B_StartOtherRoutine(Dyrian,"FAVOUR");
 	MIS_HelpDyrian = LOG_SUCCESS;
@@ -627,9 +627,9 @@ func void DIA_Pyrokar_Wunsch_Dyrian()
 func void DIA_Pyrokar_Wunsch_Babo()
 {
 	AI_Teleport(Dyrian,"TAVERNE");
-	AI_Output(other,self,"DIA_Pyrokar_Wunsch_Babo_15_00");	//Позволь послушнику Бабо возглавить монастырский сад.
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_Babo_11_01");	//Да будет так.
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_Babo_11_02");	//С сего момента, послушник Бабо будет отвечать за монастырский сад.
+	AI_Output(other,self, " DIA_Pyrokar_Wunsch_Babo_15_00 " );	// Let the novice Babo lead the monastery garden.
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_Babo_11_01 " );	// So be it.
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_Babo_11_02 " );	// From now on, novice Babo will be in charge of the monastery garden.
 	B_GivePlayerXP(XP_HelpBabo);
 	B_StartOtherRoutine(Babo,"FAVOUR");
 	B_StartOtherRoutine(Dyrian,"NOFAVOUR");
@@ -650,9 +650,9 @@ func void DIA_Pyrokar_Wunsch_Babo()
 func void DIA_Pyrokar_Wunsch_Opolos()
 {
 	AI_Teleport(Dyrian,"TAVERNE");
-	AI_Output(other,self,"DIA_Pyrokar_Wunsch_Opolos_15_00");	//Позволь послушнику Ополосу получить доступ в библиотеку.
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_Opolos_11_01");	//Да будет так.
-	AI_Output(self,other,"DIA_Pyrokar_Wunsch_Opolos_11_02");	//С сего момента послушнику Ополосу будет позволено изучать писания Инноса.
+	AI_Output(other,self, " DIA_Pyrokar_Wunsch_Opolos_15_00 " );	// Allow Acolyte Opolos to access the library.
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_Opolos_11_01 " );	// So be it.
+	AI_Output(self,other, " DIA_Pyrokar_Wunsch_Opolos_11_02 " );	// From now on, the novice Opolos will be allowed to study the writings of Innos.
 	B_GivePlayerXP(XP_HelpOpolos);
 	B_StartOtherRoutine(Opolos,"FAVOUR");
 	B_StartOtherRoutine(Dyrian,"NOFAVOUR");
@@ -671,43 +671,43 @@ func void DIA_Pyrokar_Wunsch_Opolos()
 };
 
 
-instance DIA_Pyrokar_Nachricht(C_Info)
+instance DIA_Pyrokar_Message (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 2;
-	condition = DIA_Pyrokar_Nachricht_Condition;
-	information = DIA_Pyrokar_Nachricht_Info;
+	condition = DIA_Pyrokar_Message_Condition;
+	information = DIA_pyrocar_message_info;
 	permanent = FALSE;
-	description = "Я принес новости от лорда Хагена.";
+	description = " I bring news from Lord Hagen. " ;
 };
 
 
-func int DIA_Pyrokar_Nachricht_Condition()
+func int DIA_Pyrokar_Message_Condition()
 {
-	if((MIS_OLDWORLD == LOG_Running) && (other.guild == GIL_KDF))
+	if (( MY_OLDWORLD  == LOG_Running ) && ( other . guild ==  GIL_KDF ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Pyrokar_Nachricht_Info()
+func void DIA_pyrocar_message_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Nachricht_15_00");	//Я принес новости от лорда Хагена. Он хочет получить доказательства присутствия драконов и армии Зла.
-	if(EnterOW_Kapitel2 == FALSE)
+	AI_Output(other,self, " DIA_Pyrokar_Nachricht_15_00 " );	// I brought news from Lord Hagen. He wants to get evidence of the presence of dragons and the army of Evil.
+	if (EnterOW_Chapter2 ==  FALSE )
 	{
 		AI_Teleport(Sergio,"NW_MONASTERY_PLACE_09");
-		AI_Output(other,self,"DIA_Pyrokar_Nachricht_15_01");	//Поэтому я должен отправиться в Долину Рудников и доставить ему эти доказательства.
-		AI_Output(self,other,"DIA_Pyrokar_Nachricht_11_02");	//Хорошо. Ты выполнишь этот приказ. Паладин Сержио сопроводит тебя к Проходу.
-		AI_Output(self,other,"DIA_Pyrokar_Nachricht_11_03");	//Да хранит тебя Иннос.
+		AI_Output(other,self, " DIA_Pyrokar_Nachricht_15_01 " );	// Therefore, I must go to the Valley of Mines and deliver this evidence to him.
+		AI_Output(self,other, " DIA_Pyrokar_Nachricht_11_02 " );	// Good. You will follow this order. Paladin Sergio will escort you to the Passage.
+		AI_Output(self,other, " DIA_Pyrokar_Nachricht_11_03 " );	// May Innos keep you.
 		Sergio_Follow = TRUE;
 		AI_StopProcessInfos(self);
 		B_StartOtherRoutine(Sergio,"WAITFORPLAYER");
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Pyrokar_Nachricht_15_04");	//Я отправляюсь в Долину Рудников.
-		AI_Output(self,other,"DIA_Pyrokar_Nachricht_11_05");	//Хорошо. Так как ты уже знаешь путь в долину, тебе не нужен эскорт.
-		AI_Output(self,other,"DIA_Pyrokar_Nachricht_11_06");	//Выполни это задание лорда Хагена - да хранит тебя Иннос.
+		AI_Output(other,self, " DIA_Pyrokar_Nachricht_15_04 " );	// I'm going to the Valley of Mines.
+		AI_Output(self,other, " DIA_Pyrokar_Nachricht_11_05 " );	// Good. Since you already know the way to the valley, you don't need an escort.
+		AI_Output(self,other, " DIA_Pyrokar_Nachricht_11_06 " );	// Complete this task from Lord Hagen - may Innos keep you.
 	};
 };
 
@@ -718,12 +718,12 @@ instance DIA_Pyrokar_TEACH(C_Info)
 	condition = DIA_Pyrokar_TEACH_Condition;
 	information = DIA_Pyrokar_TEACH_Info;
 	permanent = TRUE;
-	description = "Обучи меня шестому Кругу магии. (Очков обучения: 100)";
+	description = " Teach me the sixth Circle of Magic. (Training Points: 100) " ;
 };
 
 func int DIA_Pyrokar_TEACH_Condition()
 {
-	if((hero.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && (Kapitel >= 5) && Npc_KnowsInfo(other,DIA_Pyrokar_Parlan))
+	if ((hero.guild ==  GIL_KDF ) && (Npc_GetTalentSkill(other, NPC_TALENT_MAGE ) ==  5 ) && (Chapter >=  5 ) && Npc_KnowsInfo(other,DIA_Pyrokar_Language));
 	{
 		if((MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS))
 		{
@@ -734,28 +734,28 @@ func int DIA_Pyrokar_TEACH_Condition()
 
 func void DIA_Pyrokar_TEACH_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_TEACH_15_00");	//Обучи меня последнему Кругу Магии.
+	AI_Output(other,self, " DIA_Pyrokar_TEACH_15_00 " );	// Teach me the last Circle of Magic.
 
 	if(MIS_SCKnowsWayToIrdorath == TRUE)
 	{
 		if(B_TeachMagicCircle(self,other,6))
 		{
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_01");	//Много времени прошло с тех пор, как ты связал себя с Огнем. Многое произошло с тех пор, но покоя все нет.
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_02");	//Ты Избранный Инноса. И тебе понадобятся все твои силы, чтобы победить в этой битве.
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_03");	//Я посвящаю тебя, о, Избранный. Ты входишь в шестой Круг - да принесешь ты с собой свет и рассеешь тьму.
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_04");	//Теперь ты можешь узнать формулы этого последнего круга от меня, если ты того желаешь.
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_05");	//Ох - и еще одно. Мне понадобилось некоторое время, чтобы признать тебя.
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_06");	//Ты получил это письмо от меня, когда они швырнули тебя за Барьер.
-			AI_Output(other,self,"DIA_Pyrokar_TEACH_15_07");	//Да, ты таким образом избавил меня от пустой болтовни судьи.
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_08");	//И ты Избранный Инноса.
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_09");	//Получи же теперь мое благословение, о Избранный!
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_10");	//Иннос, свет солнца и огонь дерева, благослови этого человека, твоего избранного слугу.
-			AI_Output(self,other,"DIA_Pyrokar_TEACH_11_11");	//Дай ему мужество, силу и мудрость следовать по пути, который ты предначертал ему.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_01 " );	// A lot of time has passed since you bonded with Fire. Much has happened since then, but there is still no rest.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_02 " );	// You are the Chosen One of Innos. And you will need all your strength to win this battle.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_03 " );	// I initiate you, oh Chosen One. You enter the sixth Circle - may you bring light with you and dispel the darkness.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_04 " );	// Now you can learn the formulas for this last circle from me, if you so desire.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_05 " );	// Oh - and one more thing. It took me a while to recognize you.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_06 " );	// You received this letter from me when they threw you over the Barrier.
+			AI_Output(other,self, " DIA_Pyrokar_TEACH_15_07 " );	// Yes, you thus saved me from the idle chatter of the judge.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_08 " );	// And you are the Chosen One of Innos.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_09 " );	// Receive my blessing now, O Chosen One!
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_10 " );	// Innos, light of the sun and fire of the tree, bless this man, your chosen servant.
+			AI_Output(self,other, " DIA_Pyrokar_TEACH_11_11 " );	// Give him courage, strength, and wisdom to follow the path you have set for him.
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_TEACH_11_12");	//Время для этого еще не пришло. Когда ты пройдешь чуть дальше по пути, который Иннос покажет тебе, я обучу тебя.
+		AI_Output(self,other, " DIA_Pyrokar_TEACH_11_12 " );	// The time has not yet come for this. When you have gone a little further down the path that Innos will show you, I will teach you.
 	};
 };
 
@@ -767,12 +767,12 @@ instance DIA_Pyrokar_SPELLS(C_Info)
 	condition = DIA_Pyrokar_SPELLS_Condition;
 	information = DIA_Pyrokar_SPELLS_Info;
 	permanent = TRUE;
-	description = "Научи меня создавать руны.";
+	description = " Teach me how to make runes. " ;
 };
 
 func int DIA_Pyrokar_SPELLS_Condition()
 {
-	if((hero.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 6) && Npc_KnowsInfo(other,DIA_Pyrokar_Parlan) && ((PLAYER_TALENT_RUNES[SPL_Firerain] == FALSE) || (PLAYER_TALENT_RUNES[SPL_FireMeteor] == FALSE)))
+	if ((hero.guild ==  GIL_KDF ) && ( Npc_GetTalentSkill (other, NPC_TALENT_MAGE ) >=  6 ) && Npc_KnowsInfo(other,DIA_Pyrokar_Speak ) && ( ( PLAYER_TALENT_RUNES [ SPL_Firerain ] ==  FALSE ) || ))) 
 	{
 		return TRUE;
 	};
@@ -809,19 +809,19 @@ func void DIA_Pyrokar_SPELLS_FireMeteor()
 	B_TeachPlayerTalentRunes(self,other,SPL_FireMeteor);
 };
 
-instance DIA_Pyrokar_Parlan(C_Info)
+instances of DIA_Pyrokar_Parlan (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 99;
 	condition = DIA_Pyrokar_Parlan_Condition;
 	information = DIA_Pyrokar_Parlan_Info;
 	permanent = FALSE;
-	description = "Меня прислал Парлан.";
+	description = " Parlan sent me. " ;
 };
 
 func int DIA_Pyrokar_Parlan_Condition()
 {
-	if((hero.guild == GIL_KDF) && (Parlan_Sends == TRUE))
+	if (( hero . guild ==  GIL_KDF ) && ( Talk_Sends ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -829,8 +829,8 @@ func int DIA_Pyrokar_Parlan_Condition()
 
 func void DIA_Pyrokar_Parlan_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Parlan_15_00");	//Меня прислал Парлан. Я хочу повысить мои магические способности
-	AI_Output(self,other,"DIA_Pyrokar_Parlan_11_01");	//Что ж, ты многое узнал, и твоя сила выросла. С этого момента ты будешь учиться у меня.
+	AI_Output(other,self, " DIA_Pyrokar_Parlan_15_00 " );	// Parlan sent me. I want to increase my magical abilities
+	AI_Output(self,other, " DIA_Pyrokar_Parlan_11_01 " );	// Well, you've learned a lot and your strength has grown. From now on, you will learn from me.
 };
 
 
@@ -841,13 +841,13 @@ instance DIA_Pyrokar_TEACH_MANA(C_Info)
 	condition = DIA_Pyrokar_TEACH_MANA_Condition;
 	information = DIA_Pyrokar_TEACH_MANA_Info;
 	permanent = TRUE;
-	description = "Я хочу повысить мои магические способности.";
+	description = " I want to increase my magical abilities. " ;
 };
 
 
 func int DIA_Pyrokar_TEACH_MANA_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pyrokar_Parlan))
+	if ((hero.guild ==  GIL_KDF ) && Npc_KnowsInfo(other,DIA_Pyrokar_Speech))
 	{
 		return TRUE;
 	};
@@ -855,7 +855,7 @@ func int DIA_Pyrokar_TEACH_MANA_Condition()
 
 func void DIA_Pyrokar_TEACH_MANA_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_TEACH_MANA_15_00");	//Я хочу повысить мои магические способности.
+	AI_Output(other,self, " DIA_Pyrokar_TEACH_MANA_15_00 " );	// I want to increase my magical abilities.
 	Info_ClearChoices(DIA_Pyrokar_TEACH_MANA);
 	Info_AddChoice(DIA_Pyrokar_TEACH_MANA,Dialog_Back,DIA_Pyrokar_TEACH_MANA_BACK);
 	Info_AddChoice(DIA_Pyrokar_TEACH_MANA,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Pyrokar_TEACH_MANA_1);
@@ -866,7 +866,7 @@ func void DIA_Pyrokar_TEACH_MANA_BACK()
 {
 	if(other.attribute[ATR_MANA_MAX] >= 250)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_TEACH_MANA_11_00");	//Я чувствую, как магическая энергия течет через тебя, не зная преград. Даже я не могу показать тебе, как повысить ее еще больше.
+		AI_Output(self,other, " DIA_Pyrokar_TEACH_MANA_11_00 " );	// I can feel the magical energy flowing through you without any barriers. Even I can't show you how to increase it even more.
 	};
 	Info_ClearChoices(DIA_Pyrokar_TEACH_MANA);
 };
@@ -897,13 +897,13 @@ instance DIA_Pyrokar_PERM(C_Info)
 	condition = DIA_Pyrokar_PERM_Condition;
 	information = DIA_Pyrokar_PERM_Info;
 	permanent = TRUE;
-	description = "(благословение)";
+	description = " (blessing) " ;
 };
 
 
 func int DIA_Pyrokar_PERM_Condition()
 {
-	if(Kapitel >= 2)
+	if (Chapter >=  2 )
 	{
 		return TRUE;
 	};
@@ -913,19 +913,19 @@ func void DIA_Pyrokar_PERM_Info()
 {
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(other,self,"DIA_Pyrokar_PERM_15_00");	//Благослови меня, мастер.
+		AI_Output(other,self, " DIA_Pyrokar_PERM_15_00 " );	// Bless me, master.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Pyrokar_PERM_15_01");	//Как насчет благословения? Мне оно не помешало бы.
+		AI_Output(other,self, " DIA_Pyrokar_PERM_15_01 " );	// How about a blessing? It wouldn't bother me.
 	};
 	if((Kapitel == 5) && (MIS_PyrokarClearDemonTower == LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_PERM_11_02");	//Да увенчается успехом твоя последняя битва против нашего заклятого врага. Да пребудет с тобой Иннос.
+		AI_Output(self,other, " DIA_Pyrokar_PERM_11_02 " );	// May your final battle against our sworn enemy be crowned with success. May Innos be with you.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_PERM_11_03");	//Да встанет Иннос между тобой и болью на всех нечестивых путях, по которым тебе суждено пройти.
+		AI_Output(self,other, " DIA_Pyrokar_PERM_11_03 " );	// May Innos stand between you and the pain in all the unholy paths you are destined to walk.
 	};
 };
 
@@ -943,7 +943,7 @@ instance DIA_Pyrokar_KAP3_EXIT(C_Info)
 
 func int DIA_Pyrokar_KAP3_EXIT_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
@@ -961,12 +961,12 @@ instance DIA_Pyrokar_BACKFROMOW(C_Info)
 	nr = 30;
 	condition = DIA_Pyrokar_BACKFROMOW_Condition;
 	information = DIA_Pyrokar_BACKFROMOW_Info;
-	description = "Я пришел из старой Долины Рудников.";
+	description = " I come from the old Valley of Mines. " ;
 };
 
 func int DIA_Pyrokar_BACKFROMOW_Condition()
 {
-	if((Kapitel >= 3) && (Kapitel < 6) && (MIS_OLDWORLD == LOG_SUCCESS) && (DarkPathStart == FALSE))
+	if ((Chapter >=  3 ) && (Chapter <  6 ) && ( MIS_OLDWORLD  ==  LOG_SUCCESS ) && (DarkPathStart ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -974,30 +974,30 @@ func int DIA_Pyrokar_BACKFROMOW_Condition()
 
 func void DIA_Pyrokar_BACKFROMOW_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_BACKFROMOW_15_00");	//Я пришел из старой Долины Рудников.
-	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_01");	//Что ты можешь доложить?
-	AI_Output(other,self,"DIA_Pyrokar_BACKFROMOW_15_02");	//Враг сформировал там армию из орков и драконов.
-	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_03");	//Мы уже узнали это от Милтена - но что насчет королевского груза руды?
-	AI_Output(other,self,"DIA_Pyrokar_BACKFROMOW_15_04");	//Шахты, в которых идет добыча в долине, не могут удовлетворить потребности короля.
-	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_05");	//Дни становятся темнее, а свет солнца все тусклее.
-	AI_Output(other,self,"DIA_Pyrokar_BACKFROMOW_15_06");	//На меня напали люди в черных рясах.
-	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_07");	//Я знаю! Это темные маги, приспешники Белиара. Остерегайся их! Они попытаются овладеть тобой.
-	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_08");	//Будучи одержимым, ты больше не будешь самим собой. Только здесь, в монастыре сможешь ты найти помощь. Так что будь осторожен.
+	AI_Output(other,self, " DIA_Pyrokar_BACKFROMOW_15_00 " );	// I come from the old Valley of Mines.
+	AI_Output(self,other, " DIA_Pyrokar_BACKFROMOW_11_01 " );	// What can you report?
+	AI_Output(other,self, " DIA_Pyrokar_BACKFROMOW_15_02 " );	// The enemy has formed an army of orcs and dragons there.
+	AI_Output(self,other, " DIA_Pyrokar_BACKFROMOW_11_03 " );	// We already learned this from Milten - but what about the royal cargo of ore?
+	AI_Output(other,self, " DIA_Pyrokar_BACKFROMOW_15_04 " );	// The mines that mine in the valley can't satisfy the needs of the king.
+	AI_Output(self,other, " DIA_Pyrokar_BACKFROMOW_11_05 " );	// The days are getting darker and the light of the sun is getting dimmer.
+	AI_Output(other,self, " DIA_Pyrokar_BACKFROMOW_15_06 " );	// I was attacked by people in black cassocks.
+	AI_Output(self,other, " DIA_Pyrokar_BACKFROMOW_11_07 " );	// I know! These are dark magicians, minions of Beliar. Beware of them! They will try to possess you.
+	AI_Output(self,other, " DIA_Pyrokar_BACKFROMOW_11_08 " );	// By being possessed, you will no longer be yourself. Only here, in the monastery, can you find help. So be careful.
 
 	if(hero.guild == GIL_KDF)
 	{
 		Log_CreateTopic(TOPIC_DEMENTOREN,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_DEMENTOREN,LOG_Running);
-		B_LogEntry(TOPIC_DEMENTOREN,"Пирокар рассказал мне о людях в черных рясах. Это приспешники Белиара. Он предупредил меня, что они могут сделать меня одержимым. Если это произойдет, я должен немедленно возвращаться в монастырь.");
+		; _ _ _ _ _ _
 	};
-	if((Npc_IsDead(Karras) == FALSE) && (hero.guild == GIL_KDF))
+	if (( Npc_IsDead( Karras ) ==  FALSE ) && ( hero . guild ==  GIL_KDF ))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_09");	//Я попросил Карраса заняться этим вопросом. Ему наверняка скоро удастся лучше понять эту проблему, что позволит нам видеть яснее.
+		AI_Output(self,other, " DIA_Pyrokar_BACKFROMOW_11_09 " );	// I asked Karras to look into this issue. He will surely soon be able to better understand this problem, which will allow us to see more clearly.
 		PyrokarToldKarrasToResearchDMT = TRUE;
-		B_LogEntry(TOPIC_DEMENTOREN,"Пирокар приказал Каррасу ликвидировать угрозу, исходящую от темных магов.");
+		B_LogEntry( TOPIC_DEMENTOREN , " Pyrokar ordered Karras to eliminate the threat posed by the dark mages. " );
 	};
 
-	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_10");	//Помни, мы должны сопротивляться, иначе нам всем настанет конец.
+	AI_Output(self,other, " DIA_Pyrokar_BACKFROMOW_11_10 " );	// Remember, we must resist or we'll all be finished.
 };
 
 
@@ -1007,13 +1007,13 @@ instance DIA_Pyrokar_GIVEINNOSEYE(C_Info)
 	nr = 31;
 	condition = DIA_Pyrokar_GIVEINNOSEYE_Condition;
 	information = DIA_Pyrokar_GIVEINNOSEYE_Info;
-	description = "Я пришел, чтобы забрать Глаз Инноса.";
+	description = " I've come to take the Eye of Innos. " ;
 };
 
 
 func int DIA_Pyrokar_GIVEINNOSEYE_Condition()
 {
-	if((Kapitel == 3) && (Npc_HasItems(hero,ItWr_PermissionToWearInnosEye_MIS) >= 1))
+	if ((Chapter ==  3 ) && (Npc_HasItems(hero,ItWr_PermissionToWearInnosEye_MY) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -1021,34 +1021,34 @@ func int DIA_Pyrokar_GIVEINNOSEYE_Condition()
 
 func void DIA_Pyrokar_GIVEINNOSEYE_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_GIVEINNOSEYE_15_00");	//Я пришел, чтобы забрать Глаз Инноса.
+	AI_Output(other,self, " DIA_Pyrokar_GIVEINNOSEYE_15_00 " );	// I've come to take the Eye of Innos.
 	B_GiveInvItems(other,self,ItWr_PermissionToWearInnosEye_MIS,1);
-	AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_11_01");	//Я вижу, ты получил позволение лично от лорда Хагена носить Глаз Инноса.
+	AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_11_01 " );	// I see you've received permission personally from Lord Hagen to wear the Eye of Innos.
 
 	if(DarkPathStartPyr == FALSE)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_11_02");	//Но боюсь, мне придется разочаровать тебя. Мы стали жертвами вероломного плана врага.
-		AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_11_03");	//Глаз Инноса был нагло украден из этих священных стен.
+		AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_11_02 " );	// But I'm afraid I'll have to disappoint you. We have become victims of the treacherous plan of the enemy.
+		AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_11_03 " );	// The Eye of Innos was brazenly stolen from these sacred walls.
 
 		if(hero.guild == GIL_KDF)
 		{
-			Info_AddChoice(DIA_Pyrokar_GIVEINNOSEYE,"Кто мог совершить столь дерзкий поступок, мастер?",DIA_Pyrokar_GIVEINNOSEYE_wer);
+			Info_AddChoice(DIA_Pyrokar_GIVEINNOSEYE, " Who could do such a daring thing, master? " ,DIA_Pyrokar_GIVEINNOSEYE_wer);
 		}
 		else
 		{
-			Info_AddChoice(DIA_Pyrokar_GIVEINNOSEYE,"Кто это сделал?",DIA_Pyrokar_GIVEINNOSEYE_wer);
+			Info_AddChoice(DIA_Pyrokar_GIVEINNOSEYE, " Who did this? " ,DIA_Pyrokar_GIVEINNOSEYE_wer);
 		};
 	}
 	else
 	{
 		B_GivePlayerXP(300);
-		AI_Output(other,self,"DIA_Pyrokar_GIVEINNOSEYE_Bad_01_01");	//Как видишь.
-		AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_Bad_01_02");	//Хорошо! Тогда ты можешь его забрать. Вот, теперь он твой.
+		AI_Output(other,self, " DIA_Pyrokar_GIVEINNOSEYE_Bad_01_01 " );	// As you can see.
+		AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_Bad_01_02 " );	// Good! Then you can take it. Here, now it's yours.
 		B_GiveInvItems(self,other,ItMi_InnosEye_Bad,1);
-		AI_Output(other,self,"DIA_Pyrokar_GIVEINNOSEYE_Bad_01_03");	//Благодарю тебя, мастер.
-		AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_Bad_01_04");	//Храни его! И помни, что подобные вещи никогда не должны попасть в руки зла.
-		AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_Bad_01_05");	//Теперь ступай. Да освятит твой путь Иннос, сын мой...
-		B_LogEntry(TOPIC_INNOSEYE,"Пирокар отдал мне артефакт Инноса. Теперь мне стоит отправиться к кругу Солнца и передать его Темному вестнику. Этим я докажу, что достоин служить Белиару!");
+		AI_Output(other,self, " DIA_Pyrokar_GIVEINNOSEYE_Bad_01_03 " );	// Thank you, master.
+		AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_Bad_01_04 " );	// Save it! And remember that such things must never fall into the hands of evil.
+		AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_Bad_01_05 " );	// Now go. May Innos sanctify your path, my son...
+		; _ _ _ _ _ _
 		AI_StopProcessInfos(self);
 		B_StartOtherRoutine(DMT_2200_DarkSpeaker,"Circle");
 	};
@@ -1058,41 +1058,41 @@ func void DIA_Pyrokar_GIVEINNOSEYE_wer()
 {
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(other,self,"DIA_Pyrokar_GIVEINNOSEYE_wer_15_00");	//Кто мог совершить столь дерзкий поступок, мастер?
+		AI_Output(other,self, " DIA_Pyrokar_GIVEINNOSEYE_wer_15_00 " );	// Who could do such a daring thing, master?
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Pyrokar_GIVEINNOSEYE_wer_15_01");	//Кто сделал это?
+		AI_Output(other,self, " DIA_Pyrokar_GIVEINNOSEYE_wer_15_01 " );	// Who did this?
 	};
 
-	AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_wer_11_02");	//Зло коварно, и обычно действует тайно. Крайне редко можно видеть, как оно выползает на свет божий, чтобы открыто проводить в жизнь свои махинации.
-	AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_wer_11_03");	//Но в эти дни все стало по-другому. Враг теперь действует в открытую на каждой улице, в каждом доме и на каждой площади.
-	AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_wer_11_04");	//Это может означать только, что он больше не боится своего противника, и не собирается отступать ни перед чем.
-	AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_wer_11_05");	//Один из наших самых верных последователей, кандидат на священную робу Мага Огня, неожиданно изменил свою веру и сделал это в вызывающе дьявольской манере. Это Педро.
-	AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_wer_11_06");	//Враг овладел им, нанеся тем самым ужасное поражение всем нам.
-	AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_wer_11_07");	//Педро пробил себе дорогу мечом в наши самые священные покои и украл Глаз.
-	AI_Output(self,other,"DIA_Pyrokar_GIVEINNOSEYE_wer_11_08");	//Я боюсь, что он просто слишком много времени проводил наедине, за воротами и защитными стенами монастыря, открытый для опасностей всякого рода.
+	AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_wer_11_02 " );	// Evil is insidious, and usually operates in secret. It is extremely rare to see how it crawls into the light of day to openly carry out its machinations.
+	AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_wer_11_03 " );	// But things are different these days. The enemy now operates openly on every street, in every house and in every square.
+	AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_wer_11_04 " );	// This can only mean that he is no longer afraid of his opponent, and is not going to back down from anything.
+	AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_wer_11_05 " );	// One of our most loyal followers, a candidate for the sacred robe of the Fire Mage, suddenly changed his faith and did so in a defiantly diabolical manner. This is Pedro.
+	AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_wer_11_06 " );	// The enemy has taken possession of it, thus inflicting a terrible defeat on all of us.
+	AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_wer_11_07 " );	// Pedro cut his way with his sword into our most sacred chambers and stole the Eye.
+	AI_Output(self,other, " DIA_Pyrokar_GIVEINNOSEYE_wer_11_08 " );	// I'm afraid he just spent too much time alone, behind the gates and protective walls of the monastery, open to dangers of all kinds.
 	Pedro.flags = 0;
 	Pedro_Traitor = TRUE;
-	B_LogEntry(TOPIC_INNOSEYE,"Невероятно. Хотя я ожидал чего-то подобного. Я опоздал, эти тупицы из монастыря позволили какому-то послушнику украсть Глаз, и теперь мне придется гнаться за предателем Педро и надеяться, что он еще не продал Глаз кому-нибудь.");
+	B_LogEntry( TOPIC_INNOSEYE , " Incredible. Although I expected something like this. I'm too late, those stupid people from the monastery allowed some acolyte to steal the Eye, and now I have to chase the traitor Pedro and hope he hasn't sold the Eye to someone yet . " );
 	MIS_TraitorPedro = LOG_Running;
 	Log_SetTopicStatus(TOPIC_TraitorPedro,LOG_Running);
-	B_LogEntry(TOPIC_TraitorPedro,"Предатель Педро украл Глаз Инноса из монастыря. Как я понимаю, маги Огня теперь из кожи вон лезут, чтобы найти этого предателя.");
+	B_LogEntry(TOPIC_TraitorPedro, " The traitor Pedro stole the Eye of Innos from the monastery. I understand the Firebenders are now going out of their way to find this traitor. " );
 };
 
-instance DIA_Pyrokar_NOVIZENCHASE(C_Info)
+instance DIA_Pyrokar_NOVIZENCHASE (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 34;
 	condition = DIA_Pyrokar_NOVIZENCHASE_Condition;
 	information = DIA_Pyrokar_NOVIZENCHASE_Info;
-	description = "Куда побежал этот вор?";
+	description = " Where did this thief go? " ;
 };
 
 
 func int DIA_Pyrokar_NOVIZENCHASE_Condition()
 {
-	if((Kapitel == 3) && (Pedro_Traitor == TRUE))
+	if ((Capital ==  3 ) && (Peter_Traitor ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1100,11 +1100,11 @@ func int DIA_Pyrokar_NOVIZENCHASE_Condition()
 
 func void DIA_Pyrokar_NOVIZENCHASE_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_NOVIZENCHASE_15_00");	//Куда побежал этот вор?
-	AI_Output(self,other,"DIA_Pyrokar_NOVIZENCHASE_11_01");	//Педро убил несколько послушников, пытавшихся остановить его, и растворился в утреннем тумане.
-	AI_Output(self,other,"DIA_Pyrokar_NOVIZENCHASE_11_02");	//Многие послушники бросились за ним в погоню, чтобы вернуть Глаз назад, на его законное место.
-	AI_Output(self,other,"DIA_Pyrokar_NOVIZENCHASE_11_03");	//Если ты хочешь догнать их, то поторопись, пока Педро не стал недосягаемым.
-	MIS_NovizenChase = LOG_Running;
+	AI_Output(other,self, " DIA_Pyrokar_NOVIZENCHASE_15_00 " );	// Where did this thief run?
+	AI_Output(self,other, " DIA_Pyrokar_NOVIZENCHASE_11_01 " );	// Pedro killed several acolytes who tried to stop him and vanished into the morning mist.
+	AI_Output(self,other, " DIA_Pyrokar_NOVIZENCHASE_11_02 " );	// Many acolytes chase after him to bring the Eye back to its rightful place.
+	AI_Output(self,other, " DIA_Pyrokar_NOVIZENCHASE_11_03 " );	// If you want to catch up with them, hurry up before Pedro gets out of reach.
+	MIS_NoviceChase = LOG_Running;
 };
 
 
@@ -1114,12 +1114,12 @@ instance DIA_Pyrokar_FOUNDINNOSEYE(C_Info)
 	nr = 35;
 	condition = DIA_Pyrokar_FOUNDINNOSEYE_Condition;
 	information = DIA_Pyrokar_FOUNDINNOSEYE_Info;
-	description = "Я нашел Глаз Инноса.";
+	description = " I found the Eye of Innos. " ;
 };
 
 func int DIA_Pyrokar_FOUNDINNOSEYE_Condition()
 {
-	if((Kapitel == 3) && (MIS_NovizenChase == LOG_Running) && (Npc_HasItems(hero,ItMi_InnosEye_Broken_Mis) >= 1))
+	if ((Kapitel ==  3 ) && (MIS_NovizenChase == LOG_Running) && (Npc_HasItems(hero,ItMi_InnosEye_Broken_Mis) >=  1 ))
 	{
 		return TRUE;
 	};
@@ -1127,50 +1127,50 @@ func int DIA_Pyrokar_FOUNDINNOSEYE_Condition()
 
 func void DIA_Pyrokar_FOUNDINNOSEYE_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_FOUNDINNOSEYE_15_00");	//Я нашел Глаз Инноса. Он поврежден.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_11_01");	//Но... этого не может быть. Что произошло?
-	AI_Output(other,self,"DIA_Pyrokar_FOUNDINNOSEYE_15_02");	//Его заполучили в свои руки заказчики весьма отвратительного вида. Так получилось, что я прибыл слишком поздно.
-	AI_Output(other,self,"DIA_Pyrokar_FOUNDINNOSEYE_15_03");	//Они выполняли странный обряд на пьедестале в форме полумесяца в здешнем лесу.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_11_04");	//Да пребудет с нами Иннос! Они осквернили наш Круг Солнца.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_11_05");	//Даже в своих худших кошмарах не мог я представить, что они обладают такой силой.
+	AI_Output(other,self, " DIA_Pyrokar_FOUNDINNOSEYE_15_00 " );	// I found the Eye of Innos. He's damaged.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_11_01 " );	// But... that can't be. What happened?
+	AI_Output(other,self, " DIA_Pyrokar_FOUNDINNOSEYE_15_02 " );	// He got his hands on the customers of a very disgusting kind. It so happened that I arrived too late.
+	AI_Output(other,self, " DIA_Pyrokar_FOUNDINNOSEYE_15_03 " );	// They performed a strange rite on a crescent-shaped pedestal in the forest here.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_11_04 " );	// May Innos be with us! They have desecrated our Circle of the Sun.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_11_05 " );	// Even in my worst nightmares, I could not imagine that they had such power.
 	MIS_SCKnowsInnosEyeIsBroken = TRUE;
-	MIS_NovizenChase = LOG_SUCCESS;
+	MIS_NoviceChase = LOG_SUCCESS ;
 	B_GivePlayerXP(XP_Ambient);
 	Info_ClearChoices(DIA_Pyrokar_FOUNDINNOSEYE);
-	Info_AddChoice(DIA_Pyrokar_FOUNDINNOSEYE,"Что мы теперь можем сделать?",DIA_Pyrokar_FOUNDINNOSEYE_was);
+	Info_AddChoice(DIA_Pyrokar_FOUNDINNOSEYE, " What can we do now? " ,DIA_Pyrokar_FOUNDINNOSEYE_was);
 };
 
 func void DIA_Pyrokar_FOUNDINNOSEYE_was()
 {
-	AI_Output(other,self,"DIA_Pyrokar_FOUNDINNOSEYE_was_15_00");	//Что мы теперь можем сделать?
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_was_11_01");	//Враг стал очень силен. Но все же, этот древний артефакт представлял серьезную угрозу для него.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_was_11_02");	//Мы должны исцелить Глаз и восстановить его былую силу. Но время работает против нас.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_was_11_03");	//Я даже представить себе не могу, что теперь ждет всех нас. Без защиты Глаза, мы беспомощны и находимся полностью в руках врага.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_was_11_04");	//Иди в город, к Ватрасу, магу Воды. В этой ужасной ситуации, только он знает, что нужно делать. Отнеси Глаз ему, и поторопись.
+	AI_Output(other,self, " DIA_Pyrokar_FOUNDINNOSEYE_was_15_00 " );	// What can we do now?
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_was_11_01 " );	// The enemy has become very strong. But still, this ancient artifact posed a serious threat to him.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_was_11_02 " );	// We must heal the Eye and restore its former strength. But time is working against us.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_was_11_03 " );	// I can't even imagine what awaits all of us now. Without the protection of the Eye, we are helpless and completely in the hands of the enemy.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_was_11_04 " );	// Go to the city, to Vatras, the mage of Water. In this terrible situation, only he knows what to do. Take the Eye to him, and hurry.
 	Info_AddChoice(DIA_Pyrokar_FOUNDINNOSEYE,Dialog_Back,DIA_Pyrokar_FOUNDINNOSEYE_weiter);
 	if(hero.guild == GIL_KDF)
 	{
-		Info_AddChoice(DIA_Pyrokar_FOUNDINNOSEYE,"Почему Ватрас?",DIA_Pyrokar_FOUNDINNOSEYE_was_vatras);
+		Info_AddChoice(DIA_Pyrokar_FOUNDINNOSEYE, " Why Watras? " ,DIA_Pyrokar_FOUNDINNOSEYE_was_vatras);
 	};
-	Info_AddChoice(DIA_Pyrokar_FOUNDINNOSEYE,"Что такое Круг Солнца?",DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis);
-	B_LogEntry(TOPIC_INNOSEYE,"Пирокар хочет, чтобы я спросил у мага воды Ватраса, находящегося в городе, совета о том, что можно сделать с поврежденным Глазом.");
+	Info_AddChoice(DIA_Pyrokar_FOUNDINNOSEYE, " What is the Circle of the Sun? " ,DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis);
+	B_LogEntry( TOPIC_INNOSEYE , " Pyrocar wants me to ask the watermage Vatras in town for advice on what to do about the damaged Eye. " );
 	MIS_Pyrokar_GoToVatrasInnoseye = LOG_Running;
 };
 
 func void DIA_Pyrokar_FOUNDINNOSEYE_was_vatras()
 {
-	AI_Output(other,self,"DIA_Pyrokar_FOUNDINNOSEYE_was_vatras_15_00");	//Почему Ватрас?
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_was_vatras_11_01");	//Привилегия ношения робы мага не дает тебе права обсуждать мои приказы, брат.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_was_vatras_11_02");	//Ватрас слуга Аданоса. Только знания Магов Воды могут принести нам прояснение в этот мрачный час.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_was_vatras_11_03");	//Это все, что тебе нужно знать.
+	AI_Output(other,self, " DIA_Pyrokar_FOUNDINNOSEYE_was_vatras_15_00 " );	// Why Vatras?
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_was_vatras_11_01 " );	// The privilege of wearing a mage's robe doesn't give you the right to discuss my orders, brother.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_was_vatras_11_02 " );	// Vatras servant of Adanos. Only the knowledge of the Water Mages can bring us clarity in this dark hour.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_was_vatras_11_03 " );	// That's all you need to know.
 };
 
 func void DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis()
 {
-	AI_Output(other,self,"DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis_15_00");	//Что такое Круг Солнца?
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis_11_01");	//Каждый год все маги и послушники монастыря отправляются к этому месту во время солнцестояния, чтобы отметить начало нового цикла.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis_11_02");	//Это место наполняется безмерной силой солнца.
-	AI_Output(self,other,"DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis_11_03");	//У меня никогда даже мысль такая не появлялась, что эту силу можно обратить. И все же это произошло.
+	AI_Output(other,self, " DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis_15_00 " );	// What is the Circle of the Sun?
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis_11_01 " );	// Every year, all the magicians and novices of the monastery go to this place during the solstice to mark the beginning of a new cycle.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis_11_02 " );	// This place is filled with the immeasurable power of the sun.
+	AI_Output(self,other, " DIA_Pyrokar_FOUNDINNOSEYE_sonnenkreis_11_03 " );	// I never even had such an idea that this force can be reversed. And yet it happened.
 };
 
 func void DIA_Pyrokar_FOUNDINNOSEYE_weiter()
@@ -1179,13 +1179,13 @@ func void DIA_Pyrokar_FOUNDINNOSEYE_weiter()
 };
 
 
-instance DIA_Pyrokar_SPOKETOVATRAS(C_Info)
+instance DIA_Pyrokar_SPOKETOVATRAS (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 30;
 	condition = DIA_Pyrokar_SPOKETOVATRAS_Condition;
 	information = DIA_Pyrokar_SPOKETOVATRAS_Info;
-	description = "Я говорил с Ватрасом.";
+	description = " I spoke to Vatras. " ;
 };
 
 
@@ -1199,17 +1199,17 @@ func int DIA_Pyrokar_SPOKETOVATRAS_Condition()
 
 func void DIA_Pyrokar_SPOKETOVATRAS_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_SPOKETOVATRAS_15_00");	//Я говорил с Ватрасом.
-	AI_Output(self,other,"DIA_Pyrokar_SPOKETOVATRAS_11_01");	//Ах, хорошо. Где он?
-	AI_Output(other,self,"DIA_Pyrokar_SPOKETOVATRAS_15_02");	//Он готовит ритуал в Круге Солнца, чтобы исцелить Глаз Инноса.
-	AI_Output(self,other,"DIA_Pyrokar_SPOKETOVATRAS_11_03");	//Если это правда, то, может быть, у нас все же сеть надежда.
-	AI_Output(other,self,"DIA_Pyrokar_SPOKETOVATRAS_15_04");	//Ватрас хочет, чтобы Ксардас и ты помогли ему в этом.
-	AI_Output(self,other,"DIA_Pyrokar_SPOKETOVATRAS_11_05");	//ЧТО? Ксардас тоже будет там? Ты ведь это не серьезно.
-	AI_Output(other,self,"DIA_Pyrokar_SPOKETOVATRAS_15_06");	//Послушай. Это не мое решение. Ватрас настаивает.
-	AI_Output(self,other,"DIA_Pyrokar_SPOKETOVATRAS_11_07");	//Всегда и всюду этот Ксардас. Я устал от этого. Ничего не может быть хуже.
-	AI_Output(self,other,"DIA_Pyrokar_SPOKETOVATRAS_11_08");	//Откуда мне знать, что этот Ксардас не в союзе с нашим врагом?
-	AI_Output(self,other,"DIA_Pyrokar_SPOKETOVATRAS_11_09");	//Я не могу доверять Ксардасу. И не важно, что мы так нуждаемся в нем.
-	AI_Output(self,other,"DIA_Pyrokar_SPOKETOVATRAS_11_10");	//Извини, но я не могу помочь Ватрасу при таких условиях.
+	AI_Output(other,self, " DIA_Pyrokar_SPOKETOVATRAS_15_00 " );	// I spoke with Vatras.
+	AI_Output(self,other, " DIA_Pyrokar_SPOKETOVATRAS_11_01 " );	// Ah, good. Where is he?
+	AI_Output(other,self, " DIA_Pyrokar_SPOKETOVATRAS_15_02 " );	// He prepares a ritual in the Circle of the Sun to heal the Eye of Innos.
+	AI_Output(self,other, " DIA_Pyrokar_SPOKETOVATRAS_11_03 " );	// If this is true, then maybe we still have a network of hope.
+	AI_Output(other,self, " DIA_Pyrokar_SPOKETOVATRAS_15_04 " );	// Vatras wants Xardas and you to help him with this.
+	AI_Output(self,other, " DIA_Pyrokar_SPOKETOVATRAS_11_05 " );	// WHAT? Will Xardas be there too? You are not serious.
+	AI_Output(other,self, " DIA_Pyrokar_SPOKETOVATRAS_15_06 " );	// Listen. This is not my decision. Vatras insists.
+	AI_Output(self,other, " DIA_Pyrokar_SPOKETOVATRAS_11_07 " );	// Always and everywhere this Xardas. I'm tired of this. Nothing could be worse.
+	AI_Output(self,other, " DIA_Pyrokar_SPOKETOVATRAS_11_08 " );	// How do I know this Xardas is not in league with our enemy?
+	AI_Output(self,other, " DIA_Pyrokar_SPOKETOVATRAS_11_09 " );	// I can't trust Xardas. And it doesn't matter that we need it so much.
+	AI_Output(self,other, " DIA_Pyrokar_SPOKETOVATRAS_11_10 " );	// Sorry, but I can't help Vatras under these conditions.
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -1220,13 +1220,13 @@ instance DIA_Pyrokar_XARDASVERTRAUEN(C_Info)
 	nr = 30;
 	condition = DIA_Pyrokar_XARDASVERTRAUEN_Condition;
 	information = DIA_Pyrokar_XARDASVERTRAUEN_Info;
-	description = "Без тебя ничего не получится!";
+	description = " It won't work without you! " ;
 };
 
 
 func int DIA_Pyrokar_XARDASVERTRAUEN_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Pyrokar_SPOKETOVATRAS) && (Kapitel == 3))
+	if ( Npc_KnowsInfo ( other , DIA_Pyrokar_BACK_SPOKE ) && ( Capital ==  3 )) .
 	{
 		return TRUE;
 	};
@@ -1234,13 +1234,13 @@ func int DIA_Pyrokar_XARDASVERTRAUEN_Condition()
 
 func void DIA_Pyrokar_XARDASVERTRAUEN_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_XARDASVERTRAUEN_15_00");	//Без тебя ничего не получится! Ватрас не сможет провести этот ритуал.
-	AI_Output(other,self,"DIA_Pyrokar_XARDASVERTRAUEN_15_01");	//Ты должен довериться Ксардасу.
-	AI_Output(self,other,"DIA_Pyrokar_XARDASVERTRAUEN_11_02");	//Я ничего не могу поделать, ты слышишь? У меня нет ни малейшего доказательства, что Ксардас не работает против нас. Я не могу сделать это.
-	AI_Output(other,self,"DIA_Pyrokar_XARDASVERTRAUEN_15_03");	//А что если я принесу тебе доказательство?
-	AI_Output(self,other,"DIA_Pyrokar_XARDASVERTRAUEN_11_04");	//Боюсь, это невозможно. Это должно быть что-то, что действительно потрясет меня.
-	AI_Output(self,other,"DIA_Pyrokar_XARDASVERTRAUEN_11_05");	//Что касается Ксардаса, то у меня большие сомнения насчет того, что он вообще может произвести на меня впечатление.
-	B_LogEntry(TOPIC_INNOSEYE,"Пирокара прямо в дрожь бросает, когда он слышит о Ксардасе. Я должен обсудить с Ксардасом, как заставить Пирокара принять участие в ритуале в Круге Солнца.");
+	AI_Output(other,self, " DIA_Pyrokar_XARDASVERTRAUEN_15_00 " );	// It won't work without you! Vatras will not be able to perform this ritual.
+	AI_Output(other,self, " DIA_Pyrokar_XARDASVERTRAUEN_15_01 " );	// You must trust Xardas.
+	AI_Output(self,other, " DIA_Pyrokar_XARDASVERTRAUEN_11_02 " );	// I can't help it, do you hear? I don't have the slightest proof that Xardas isn't working against us. I can not do it.
+	AI_Output(other,self, " DIA_Pyrokar_XARDASVERTRAUEN_15_03 " );	// What if I bring you proof?
+	AI_Output(self,other, " DIA_Pyrokar_XARDASVERTRAUEN_11_04 " );	// I'm afraid that's not possible. It must be something that will really shock me.
+	AI_Output(self,other, " DIA_Pyrokar_XARDASVERTRAUEN_11_05 " );	// As for Xardas, I have serious doubts that he can impress me at all.
+	B_LogEntry( TOPIC_INNOSEYE , "The Pyrocar gets shivers when he hears about Xardas. I should discuss with Xardas how to get the Pyrocar to participate in the Circle of the Sun ritual. " );
 	Pyrokar_DeniesInnosEyeRitual = TRUE;
 };
 
@@ -1251,13 +1251,13 @@ instance DIA_Pyrokar_BUCHZURUECK(C_Info)
 	nr = 30;
 	condition = DIA_Pyrokar_BUCHZURUECK_Condition;
 	information = DIA_Pyrokar_BUCHZURUECK_Info;
-	description = "Я принес эту книгу от Ксардаса.";
+	description = " I brought this book from Xardas. " ;
 };
 
 
 func int DIA_Pyrokar_BUCHZURUECK_Condition()
 {
-	if(Npc_HasItems(other,ItWr_XardasBookForPyrokar_Mis) && (Kapitel == 3))
+	if (Npc_HasItems(other,ItWr_XardasBookForPyrokar_Mis) && (Kapitel ==  3 ))
 	{
 		return TRUE;
 	};
@@ -1265,35 +1265,35 @@ func int DIA_Pyrokar_BUCHZURUECK_Condition()
 
 func void DIA_Pyrokar_BUCHZURUECK_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_BUCHZURUECK_15_00");	//Я принес эту книгу от Ксардаса.
-	AI_Output(other,self,"DIA_Pyrokar_BUCHZURUECK_15_01");	//Это знак его доверия.
+	AI_Output(other,self, " DIA_Pyrokar_BUCHZURUECK_15_00 " );	// I brought this book from Xardas.
+	AI_Output(other,self, " DIA_Pyrokar_BUCHZURUECK_15_01 " );	// This is a sign of his trust.
 	AI_Output(self,other,"DIA_Pyrokar_BUCHZURUECK_11_02");	//Покажи.
 	B_GiveInvItems(other,self,ItWr_XardasBookForPyrokar_Mis,1);
 	Npc_RemoveInvItems(self,ItWr_XardasBookForPyrokar_Mis,1);
-	AI_Output(self,other,"DIA_Pyrokar_BUCHZURUECK_11_03");	//(пораженно) Но это невероятно! Ты имеешь хоть малейшее представление о том, что ты только что дал мне?
-	AI_Output(other,self,"DIA_Pyrokar_BUCHZURUECK_15_04");	//Ээээ. Нет.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHZURUECK_11_05");	//(сердито) Это древний, давно потерянный том из давно прошедших дней.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHZURUECK_11_06");	//Мы все думали, что он утерян навсегда, и теперь я узнаю, что Ксардас все это время знал, что сталось с ним.
-	AI_Output(other,self,"DIA_Pyrokar_BUCHZURUECK_15_07");	//Так ты будешь присутствовать на ритуале?
-	AI_Output(self,other,"DIA_Pyrokar_BUCHZURUECK_11_08");	//Да, я отправляюсь в Круг Солнца, но, конечно, не потому, что я убедился в добрых намерениях Ксардаса.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHZURUECK_11_09");	//На самом деле, я собираюсь заставить этого шакала объяснить, где он прятал эту книгу столько долгих лет. На этот раз он, определенно, зашел слишком далеко.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHZURUECK_11_10");	//Увидимся в Круге Солнца.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHZURUECK_11_03 " );	// (amazed) But this is unbelievable! Do you have any idea what you just gave me?
+	AI_Output(other,self, " DIA_Pyrokar_BUCHZURUECK_15_04 " );	// Eee. No.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHZURUECK_11_05 " );	// (angrily) This is an ancient, long-lost tome from days long past.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHZURUECK_11_06 " );	// We all thought he was lost forever, and now I find out that Xardas knew all along what became of him.
+	AI_Output(other,self, " DIA_Pyrokar_BUCHZURUECK_15_07 " );	// So you'll be attending the ritual?
+	AI_Output(self,other, " DIA_Pyrokar_BUCHZURUECK_11_08 " );	// Yes, I'm going to the Circle of the Sun, but certainly not because I'm convinced of the good intentions of Xardas.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHZURUECK_11_09 " );	// Actually, I'm going to have this jackal explain where he hid this book for so many years. This time he definitely went too far.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHZURUECK_11_10 " );	// See you in the Circle of the Sun.
 	AI_StopProcessInfos(self);
 	AI_UseMob(self,"THRONE",-1);
 	Npc_ExchangeRoutine(self,"RitualInnosEyeRepair");
-	B_LogEntry(TOPIC_INNOSEYE,"Пирокар, наконец, согласился отправиться к Кругу Солнца.");
+	B_LogEntry( TOPIC_INNOSEYE , " Pyrocar has finally agreed to go to the Circle of the Sun. " );
 	Pyrokar_GoesToRitualInnosEye = TRUE;
 };
 
 
-instance DIA_Pyrokar_PRERITUAL(C_Info)
+instance DIA_Pyrokar_PRERITUAL (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 30;
 	condition = DIA_Pyrokar_PRERITUAL_Condition;
 	information = DIA_Pyrokar_PRERITUAL_Info;
 	permanent = TRUE;
-	description = "Ты думаешь, вы сможете восстановить Глаз?";
+	description = " Do you think you can repair the Eye? " ;
 };
 
 
@@ -1307,18 +1307,18 @@ func int DIA_Pyrokar_PRERITUAL_Condition()
 
 func void DIA_Pyrokar_PRERITUAL_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PRERITUAL_15_00");	//Ты думаешь, вы сможете восстановить Глаз?
-	AI_Output(self,other,"DIA_Pyrokar_PRERITUAL_11_01");	//Трудно сказать. Поживем - увидим.
+	AI_Output(other,self, " DIA_Pyrokar_PRERITUAL_15_00 " );	// Do you think you can restore the Eye?
+	AI_Output(self,other, " DIA_Pyrokar_PRERITUAL_11_01 " );	// Hard to say. Wait and see.
 };
 
 
-instance DIA_Pyrokar_AUGEGEHEILT(C_Info)
+instance DIA_Pyrokar_EYE HEALED (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 30;
 	condition = DIA_Pyrokar_AUGEGEHEILT_Condition;
-	information = DIA_Pyrokar_AUGEGEHEILT_Info;
-	description = "Вы сделали это. Глаз Инноса исцелен.";
+	information = DIA_Pyrokar_EYEHEALED_Info;
+	description = " You did it. Innos' eye is healed. " ;
 };
 
 func int DIA_Pyrokar_AUGEGEHEILT_Condition()
@@ -1329,17 +1329,17 @@ func int DIA_Pyrokar_AUGEGEHEILT_Condition()
 	};
 };
 
-func void DIA_Pyrokar_AUGEGEHEILT_Info()
+func void DIA_Pyrokar_EYEHEALED_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_AUGEGEHEILT_15_00");	//Вы сделали это! Глаз Инноса исцелен.
-	AI_Output(self,other,"DIA_Pyrokar_AUGEGEHEILT_11_01");	//Я почти не верил, что это возможно.
+	AI_Output(other,self, " DIA_Pyrokar_AUGEGEHEILT_15_00 " );	// You did it! Innos' eye is healed.
+	AI_Output(self,other, " DIA_Pyrokar_AUGEGEHEILT_11_01 " );	// I almost didn't believe it was possible.
 
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(other,self,"DIA_Pyrokar_AUGEGEHEILT_15_02");	//Да, мастер.
-		AI_Output(self,other,"DIA_Pyrokar_AUGEGEHEILT_11_03");	//Ты уже неоднократно доказал, что готов к вступлению в Высший Орден Магов Огня.
-		AI_Output(self,other,"DIA_Pyrokar_AUGEGEHEILT_11_04");	//С этого дня ты являешься членом Совета и будешь представлять наш Орден по всему свету. Теперь ты один из высших Магов Огня.
-		AI_Output(self,other,"DIA_Pyrokar_AUGEGEHEILT_11_05");	//Носи эту священную робу и магический посох с достоинством. Неси в мир порядок, честь и славу, брат мой!
+		AI_Output(other,self, " DIA_Pyrokar_AUGEGEHEILT_15_02 " );	// Yes, master.
+		AI_Output(self,other, " DIA_Pyrokar_AUGEGEHEILT_11_03 " );	// You've proven time and time again that you're ready to join the Supreme Order of the Firebenders.
+		AI_Output(self,other, " DIA_Pyrokar_AUGEGEHEILT_11_04 " );	// From this day forward, you are a member of the Council and will represent our Order around the world. Now you are one of the highest Fire Mages.
+		AI_Output(self,other, " DIA_Pyrokar_AUGEGEHEILT_11_05 " );	// Wear this sacred robe and magical staff with dignity. Bring order, honor and glory to the world, my brother!
 		CreateInvItem(hero,ItMW_Addon_Stab01);
 		CreateInvItems(self,ItAr_KDF_H,1);
 		B_GiveInvItems(self,other,ItAr_KDF_H,1);
@@ -1353,12 +1353,12 @@ instance DIA_Pyrokar_KAP3_READY(C_Info)
 	nr = 30;
 	condition = DIA_Pyrokar_KAP3_READY_Condition;
 	information = DIA_Pyrokar_KAP3_READY_Info;
-	description = "Что мне остается сделать здесь?";
+	description = " What's left for me to do here? " ;
 };
 
 func int DIA_Pyrokar_KAP3_READY_Condition()
 {
-	if((Kapitel == 3) && Npc_KnowsInfo(other,DIA_Pyrokar_AUGEGEHEILT))
+	if ((Capital ==  3 ) && Npc_KnowsInfo(other,DIA_Pyrokar_AUGEGEHEILT)) .
 	{
 		return TRUE;
 	};
@@ -1366,48 +1366,48 @@ func int DIA_Pyrokar_KAP3_READY_Condition()
 
 func void DIA_Pyrokar_KAP3_READY_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_KAP3_READY_15_00");	//Что мне остается сделать здесь?
-	AI_Output(self,other,"DIA_Pyrokar_KAP3_READY_11_01");	//Не трать свое время на тривиальные вещи. Иди и уничтожь драконов! Вот, возьми Глаз.
+	AI_Output(other,self, " DIA_Pyrokar_KAP3_READY_15_00 " );	// What do I have to do here?
+	AI_Output(self,other, " DIA_Pyrokar_KAP3_READY_11_01 " );	// Don't waste your time on trivial things. Go and destroy the dragons! Here, take the Eye.
 	CreateInvItems(self,ItMi_InnosEye_MIS,1);
 	B_GiveInvItems(self,other,ItMi_InnosEye_MIS,1);
-	AI_Output(self,other,"DIA_Pyrokar_KAP3_READY_11_02");	//Помни, что тебе нужно сначала поговорить с драконом, прежде чем ты сможешь атаковать его.
-	AI_Output(self,other,"DIA_Pyrokar_Add_11_01");	//Сила Глаза заставит драконов говорить с тобой, и говорить правду.
-	AI_Output(self,other,"DIA_Pyrokar_Add_11_02");	//Кроме того, он даст защиту от их атак.
-	AI_Output(self,other,"DIA_Pyrokar_KAP3_READY_11_05");	//Однако его сила не вечна. Тебе придется снова пополнять его магической энергией.
-	AI_Output(self,other,"DIA_Pyrokar_KAP3_READY_11_06");	//Для этого тебе понадобится эссенция из сердца дракона, которую нужно объединить с Глазом на алхимическом столе.
-	AI_Output(self,other,"DIA_Pyrokar_KAP3_READY_11_07");	//Только тогда ты сможешь приблизиться к очередному дракону.
-	AI_Output(other,self,"DIA_Pyrokar_KAP3_READY_15_08");	//Спасибо. Я запомню это.
-	AI_Output(self,other,"DIA_Pyrokar_KAP3_READY_11_09");	//Теперь у тебя есть все необходимое. Иди же, у тебя не так много времени!
+	AI_Output(self,other, " DIA_Pyrokar_KAP3_READY_11_02 " );	// Remember that you need to talk to the dragon first before you can attack it.
+	AI_Output(self,other, " DIA_Pyrokar_Add_11_01 " );	// The power of the Eye will make the dragons speak to you, and speak the truth.
+	AI_Output(self,other, " DIA_Pyrokar_Add_11_02 " );	// In addition, it will give protection from their attacks.
+	AI_Output(self,other, " DIA_Pyrokar_KAP3_READY_11_05 " );	// However, its power is not eternal. You will have to replenish it again with magical energy.
+	AI_Output(self,other, " DIA_Pyrokar_KAP3_READY_11_06 " );	// To do this, you'll need an Essence from the Dragon's Heart, which you need to combine with the Eye on the Alchemy Table.
+	AI_Output(self,other, " DIA_Pyrokar_KAP3_READY_11_07 " );	// Only then will you be able to approach the next dragon.
+	AI_Output(other,self, " DIA_Pyrokar_KAP3_READY_15_08 " );	// Thank you. I will remember this.
+	AI_Output(self,other, " DIA_Pyrokar_KAP3_READY_11_09 " );	// Now you have everything you need. Come on, you don't have much time!
 	PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] = TRUE;
 	TOPIC_END_INNOSEYE = TRUE;
 	B_GivePlayerXP(XP_Ambient);
 	CreateInvItems(Gorax,ItMi_RuneBlank,1);
 	Log_CreateTopic(TOPIC_DRACHENJAGD,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DRACHENJAGD,LOG_Running);
-	B_LogEntry(TOPIC_DRACHENJAGD,"Теперь я готов к встрече с драконами. Глаз Инноса поможет мне уничтожить их. Но прежде чем вступать в битву с драконами, я должен не забыть надеть его. Я должен поговорить с драконами, прежде чем начинать сражение. Проблема состоит в том, что Глаз теряет свою силу каждый раз, когда я разговариваю с одним из них. Чтобы восстановить силу этого амулета, мне необходимо сердце дракона и пустая мензурка. Я должен объединить ослабленный камень и экстракт из драконьего сердца на алхимическом столе, прежде чем противостоять другому дракону.");
+	B_LogEntry( TOPIC_DRACHENJAGD , " Now I'm ready to face the dragons. The eye of Innos will help me destroy them. But before I fight the dragons, I must remember to put it on. I must talk to the dragons before I start the fight. The problem is that the Eye loses its power every time I talk to one of them.To restore the power of this amulet, I need the heart of the dragon and an empty beaker.I must combine the weakened stone and the extract from the dragon's heart on the alchemy table before confronting the other dragon. " );
 	MIS_ReadyforChapter4 = TRUE;
 	B_NPC_IsAliveCheck(NEWWORLD_ZEN);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(KDF_500_Pyrokar,"Start");
-	B_Kapitelwechsel(4,NEWWORLD_ZEN);
+	B_Chapter Change( 4 , NEWWORLD_ZEN );
 	B_Chapter4_OneTime = TRUE;
 	IntroduceCH_04 = TRUE;
 };
 
 
-instance DIA_Pyrokar_BUCHDERBESSENEN(C_Info)
+instance DIA_Pyrokar_BUCHDERBESSENEN (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 39;
 	condition = DIA_Pyrokar_BUCHDERBESSENEN_Condition;
-	information = DIA_Pyrokar_BUCHDERBESSENEN_Info;
-	description = "Я нашел странный альманах.";
+	information = DIA_Pyrokar_BOOKOFBESSENEN_Info;
+	description = " I found a strange almanac. " ;
 };
 
 
 func int DIA_Pyrokar_BUCHDERBESSENEN_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Pyrokar_BACKFROMOW) && Npc_HasItems(other,ITWR_DementorObsessionBook_MIS) && (DarkPathStart == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Pyrokar_BACKFROMOW ) & & Npc_HasItems ( other , ITWR_DementorObsessionBook_MIS ) & & ( DarkPathStart == FALSE  ) ) ;
 	{
 		return TRUE;
 	};
@@ -1415,38 +1415,38 @@ func int DIA_Pyrokar_BUCHDERBESSENEN_Condition()
 
 func void DIA_Pyrokar_BUCHDERBESSENEN_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_BUCHDERBESSENEN_15_00");	//Я нашел странный альманах.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_01");	//Да? Что это за альманах?
-	AI_Output(other,self,"DIA_Pyrokar_BUCHDERBESSENEN_15_02");	//Я не уверен. Я думал, ты можешь знать, что делать с ним.
+	AI_Output(other,self, " DIA_Pyrokar_BUCHDERBESSENEN_15_00 " );	// I found a strange almanac.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSENEN_11_01 " );	// Yes? What is an almanac?
+	AI_Output(other,self, " DIA_Pyrokar_BUCHDERBESSENEN_15_02 " );	// I'm not sure. I thought you might know what to do with it.
 	B_GiveInvItems(other,self,ITWR_DementorObsessionBook_MIS,1);
-	AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_03");	//Воистину, это очень тревожный знак. Я рад, что ты принес его мне. Это было мудро.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSENEN_11_03 " );	// Truly, this is a very disturbing sign. I'm glad you brought it to me. It was wise.
 	B_GivePlayerXP(XP_Ambient);
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_04");	//Я полагаю, что он не единственный. Иди и найди еще эти книги проклятия.
-		AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_05");	//Я подозреваю, что это инструмент темных магов.
-		AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_06");	//Они используют его, чтобы контролировать потерянные души своих жертв.
-		AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_07");	//Они, очевидно, записывают имена тех, кем они планируют овладеть, в эти книги.
-		AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_08");	//Послушай. Я дам тебе это магическое письмо. Оно покажет тебе имена, записанные в этих книгах.
+		AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSENEN_11_04 " );	// I guess it's not the only one. Go and find some more of these curse books.
+		AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSEN_11_05 " );	// I suspect this is a tool of the dark magicians.
+		AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSENEN_11_06 " );	// They use it to control the lost souls of their victims.
+		AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSEN_11_07 " );	// They apparently write the names of those they plan to possess in these books.
+		AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSENEN_11_08 " );	// Listen. I will give you this magical letter. It will show you the names written in these books.
 		CreateInvItems(self,ItWr_PyrokarsObsessionList,1);
 		B_GiveInvItems(self,other,ItWr_PyrokarsObsessionList,1);
-		AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_09");	//Найди этих жертв и принеси мне их книги. Я избавлюсь от них.
-		if(Npc_IsDead(Karras) == FALSE)
+		AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSENEN_11_09 " );	// Find these victims and bring me their books. I will get rid of them.
+		if (Npc_IsDead(Karras) ==  FALSE )
 		{
-			AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_10");	//Но сначала ты должен показать хотя бы одну из них Каррасу. Может, это поможет ему в его исследованиях.
+			AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSEN_11_10 " );	// But first you must show at least one of them to Karras. Maybe it will help him in his research.
 		};
-		AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_11");	//И не сделай ошибку, попытавшись уничтожить их самостоятельно. Ты еще не готов выдержать их силу.
-		B_LogEntry(TOPIC_DEMENTOREN,"Пирокар хочет, чтобы Альманах Одержимых не принес вреда. Он дал мне список всех, кого темные маги планируют сделать одержимыми. В этом списке Пирокара позднее могут появиться новые имена.");
+		AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSEN_11_11 " );	// And don't make the mistake of trying to destroy them yourself. You are not yet ready to withstand their power.
+		; _ _ _ _ _ _
 	};
-	AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_12");	//Не приближайся к ним, иначе они овладеют тобой.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_13");	//Если ты все же поймешь, что не в состоянии сопротивляться их зову, возвращайся ко мне как можно скорее.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_14");	//Только здесь, в монастыре, твоя душа может быть спасена.
-	if((Npc_IsDead(Karras) == FALSE) && (hero.guild == GIL_KDF))
+	AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSEN_11_12 " );	// Don't get close to them or they'll take you.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSEN_11_13 " );	// If you find yourself unable to resist their call, return to me as soon as possible.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSEN_11_14 " );	// Only here, in the monastery, can your soul be saved.
+	if (( Npc_IsDead( Karras ) ==  FALSE ) && ( hero . guild ==  GIL_KDF ))
 	{
-		AI_Output(other,self,"DIA_Pyrokar_BUCHDERBESSENEN_15_15");	//А от их ментальных атак нет никакой защиты?
-		AI_Output(self,other,"DIA_Pyrokar_BUCHDERBESSENEN_11_16");	//Защита возможна. Каррас может знать что-нибудь об этом.
+		AI_Output(other,self, " DIA_Pyrokar_BUCHDERBESSENEN_15_15 " );	// Is there any defense against their mental attacks?
+		AI_Output(self,other, " DIA_Pyrokar_BUCHDERBESSEN_11_16 " );	// Protection possible. Karras might know something about it.
 		Pyrokar_AskKarrasAboutDMTAmulett = TRUE;
-		B_LogEntry(TOPIC_DEMENTOREN,"Каррас должен помочь мне найти защиту от ментальных атак темных странников.");
+		B_LogEntry( TOPIC_DEMENTOREN , " Karras should help me find protection against the dark wanderers' mental attacks. " );
 	};
 };
 
@@ -1457,7 +1457,7 @@ instance DIA_Pyrokar_SCOBSESSED(C_Info)
 	condition = DIA_Pyrokar_SCOBSESSED_Condition;
 	information = DIA_Pyrokar_SCOBSESSED_Info;
 	permanent = TRUE;
-	description = "Я думаю, я одержим. Ты можешь исцелить меня?";
+	description = " I think I'm possessed. Can you heal me? " ;
 };
 
 func int DIA_Pyrokar_SCOBSESSED_Condition()
@@ -1477,13 +1477,13 @@ func void DIA_Pyrokar_SCOBSESSED_Info()
 	{
 		if(hero.guild == GIL_KDF)
 		{
-			AI_Output(other,self,"DIA_Pyrokar_SCOBSESSED_15_00");	//Исцели меня, мастер, ибо я одержим.
-			AI_Output(self,other,"DIA_Pyrokar_SCOBSESSED_11_01");	//Да будет так! Возьми это зелье. Оно избавит тебя от ночных кошмаров.
-			AI_Output(self,other,"DIA_Pyrokar_SCOBSESSED_11_02");	//Да избавит тебя Иннос от этой напасти.
-			AI_Output(self,other,"DIA_Pyrokar_SCOBSESSED_11_03");	//Действуй от его имени и остерегайся черного взгляда врага.
+			AI_Output(other,self, " DIA_Pyrokar_SCOBSESSED_15_00 " );	// Heal me, master, for I am possessed.
+			AI_Output(self,other, " DIA_Pyrokar_SCOBSESSED_11_01 " );	// So be it! Take this potion. It will save you from nightmares.
+			AI_Output(self,other, " DIA_Pyrokar_SCOBSESSED_11_02 " );	// May Innos deliver you from this misfortune.
+			AI_Output(self,other, " DIA_Pyrokar_SCOBSESSED_11_03 " );	// Act on his behalf and beware of the enemy's black gaze.
 			if(SC_ObsessionTimes > 3)
 			{
-				AI_Output(self,other,"DIA_Pyrokar_SCOBSESSED_11_04");	//Но я предостерегаю тебя - если ты будешь попадать в их сети слишком часто, может статься так, что возврата уже не будет. Всегда помни об этом.
+				AI_Output(self,other, " DIA_Pyrokar_SCOBSESSED_11_04 " );	// But I warn you - if you fall into their web too often, there may be no return. Always remember this.
 			};
 			CreateInvItems(self,ItPo_HealObsession_MIS,10);
 			B_GiveInvItems(self,other,ItPo_HealObsession_MIS,10);
@@ -1491,40 +1491,40 @@ func void DIA_Pyrokar_SCOBSESSED_Info()
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Pyrokar_SCOBSESSED_15_05");	//Я думаю, я одержим. Ты можешь исцелить меня?
-			AI_Output(self,other,"DIA_Pyrokar_SCOBSESSED_11_06");	//При условии проявления твоего уважения к этому монастырю, сын мой. Триста золотых монет!
+			AI_Output(other,self, " DIA_Pyrokar_SCOBSESSED_15_05 " );	// I think I'm obsessed. Can you heal me?
+			AI_Output(self,other, " DIA_Pyrokar_SCOBSESSED_11_06 " );	// Subject to your respect for this monastery, my son. Three hundred gold coins!
 			Info_ClearChoices(DIA_Pyrokar_SCOBSESSED);
-			Info_AddChoice(DIA_Pyrokar_SCOBSESSED,"Это слишком много.",DIA_Pyrokar_SCOBSESSED_nein);
-			Info_AddChoice(DIA_Pyrokar_SCOBSESSED,"Отлично! Вот деньги.",DIA_Pyrokar_SCOBSESSED_ok);
+			Info_AddChoice(DIA_Pyrokar_SCOBSESSED, " This is too much. " ,DIA_Pyrokar_SCOBSESSED_nein);
+			Info_AddChoice(DIA_Pyrokar_SCOBSESSED, " Great! Here's the money. " ,DIA_Pyrokar_SCOBSESSED_ok);
 		};
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Pyrokar_SCOBSESSED_15_05");	//Я думаю, я одержим. Ты можешь исцелить меня?
-		AI_Output(self,other,"DIA_Pyrokar_SCOBSESSED_11_07");	//Но ты только что получил исцеляющее зелье. Обратись ко мне, только если тебе действительно понадобится помощь.
+		AI_Output(other,self, " DIA_Pyrokar_SCOBSESSED_15_05 " );	// I think I'm obsessed. Can you heal me?
+		AI_Output(self,other, " DIA_Pyrokar_SCOBSESSED_11_07 " );	// But you just got a healing potion. Only contact me if you really need help.
 	};
 };
 
 func void DIA_Pyrokar_SCOBSESSED_ok()
 {
-	AI_Output(other,self,"DIA_Pyrokar_SCOBSESSED_ok_15_00");	//Отлично! Вот деньги.
+	AI_Output(other,self, " DIA_Pyrokar_SCOBSESSED_ok_15_00 " );	// Great! Here's the money.
 	if(B_GiveInvItems(other,self,ItMi_Gold,300))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_SCOBSESSED_ok_11_01");	//Вот, выпей это. Да избавит тебя Иннос от этой напасти.
+		AI_Output(self,other, " DIA_Pyrokar_SCOBSESSED_ok_11_01 " );	// Here, drink this. May Innos deliver you from this misfortune.
 		CreateInvItems(self,ItPo_HealObsession_MIS,10);
 		B_GiveInvItems(self,other,ItPo_HealObsession_MIS,10);
 		Got_HealObsession_Day = Wld_GetDay();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_SCOBSESSED_ok_11_02");	//Принеси мне деньги, и я смогу помочь тебе.
+		AI_Output(self,other, " DIA_Pyrokar_SCOBSESSED_ok_11_02 " );	// Bring me the money and I can help you.
 	};
 	Info_ClearChoices(DIA_Pyrokar_SCOBSESSED);
 };
 
-func void DIA_Pyrokar_SCOBSESSED_nein()
+func void DIA_Pyrokar_SCOBSESSED_no()
 {
-	AI_Output(other,self,"DIA_Pyrokar_SCOBSESSED_nein_15_00");	//Это слишком много.
+	AI_Output(other,self, " DIA_Pyrokar_SCOBSESSED_nein_15_00 " );	// This is too much.
 	Info_ClearChoices(DIA_Pyrokar_SCOBSESSED);
 };
 
@@ -1536,7 +1536,7 @@ instance DIA_PYROKAR_GIVEHEALPOTIONS(C_Info)
 	condition = dia_pyrokar_givehealpotions_condition;
 	information = dia_pyrokar_givehealpotions_info;
 	permanent = TRUE;
-	description = "Мне нужно лекарство от головных болей.";
+	description = " I need medicine for headaches. " ;
 };
 
 func int dia_pyrokar_givehealpotions_condition()
@@ -1549,77 +1549,77 @@ func int dia_pyrokar_givehealpotions_condition()
 
 func void dia_pyrokar_givehealpotions_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_GiveHealPotions_01_00");	//Мне нужно лекарство от головных болей.
+	AI_Output(other,self, " DIA_Pyrokar_GiveHealPotions_01_00 " );	// I need medicine for headaches.
 	if(FIRSTGIVEHEALPOTIONS == FALSE)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_01_01");	//(раздраженно) А разве при входе в монастырь висит вывеска целителя?
-		AI_Output(other,self,"DIA_Pyrokar_GiveHealPotions_01_02");	//Мне кажется, это не просто головные боли. Это больше напоминает первые признаки одержимости!
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_01_03");	//Ну, если так, то тогда ты пришел по адресу. У нас действительно есть одно средство, которое может избавить тебя от этой болезни.
-		AI_Output(other,self,"DIA_Pyrokar_GiveHealPotions_01_04");	//Ну, не совсем меня. Думаю, мне понадобится большое количество этого лекарcтва.
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_01_05");	//Хорошо! Но тебе придется заплатить за него, в знак твоего почтения этому монастырю.
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_01_01 " );	// (irritated) Is there a sign of a healer at the entrance to the monastery?
+		AI_Output(other,self, " DIA_Pyrokar_GiveHealPotions_01_02 " );	// I don't think these are just headaches. This is more like the first signs of possession!
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_01_03 " );	// Well, if so, then you've come to the right place. We really have one remedy that can save you from this disease.
+		AI_Output(other,self, " DIA_Pyrokar_GiveHealPotions_01_04 " );	// Well, not exactly me. I think I will need a large amount of this medicine.
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_01_05 " );	// Good! But you will have to pay for it, as a token of your respect for this monastery.
 		AI_Output(other,self,"DIA_Pyrokar_GiveHealPotions_01_06");	//Сколько?
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_01_07");	//По триста монет за один напиток.
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_01_07 " );	// Three hundred coins per drink.
 		FIRSTGIVEHEALPOTIONS = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_01_08");	//Как я уже тебе сказал, это стоит триста монет за один напиток.
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_01_08 " );	// Like I told you, it costs three hundred coins for one drink.
 	};
 	Info_ClearChoices(dia_pyrokar_givehealpotions);
-	Info_AddChoice(dia_pyrokar_givehealpotions,"Это слишком много!",dia_pyrokar_givehealpotions_nein);
-	Info_AddChoice(dia_pyrokar_givehealpotions,"Хорошо! Я возьму одну штуку.",dia_pyrokar_givehealpotions_ok_1);
-	Info_AddChoice(dia_pyrokar_givehealpotions,"Хорошо! Я возьму пять штук.",dia_pyrokar_givehealpotions_ok_5);
-	Info_AddChoice(dia_pyrokar_givehealpotions,"Хорошо! Я возьму десять штук.",dia_pyrokar_givehealpotions_ok_10);
+	Info_AddChoice(dia_pyrokar_givehealpotions, " That's too much! " ,dia_pyrokar_givehealpotions_nein);
+	Info_AddChoice(dia_pyrokar_givehealpotions, " Ok! I'll take one. " ,dia_pyrokar_givehealpotions_ok_1);
+	Info_AddChoice(dia_pyrokar_givehealpotions, " Okay! I'll take five. " ,dia_pyrokar_givehealpotions_ok_5);
+	Info_AddChoice(dia_pyrokar_givehealpotions, " Ok! I'll take ten. " ,dia_pyrokar_givehealpotions_ok_10);
 };
 
-func void dia_pyrokar_givehealpotions_nein()
+func void dia_pyrokar_givehealpotions_no()
 {
-	AI_Output(other,self,"DIA_Pyrokar_GiveHealPotions_nein_01_00");	//Это слишком много!
-	AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_nein_01_01");	//Как скажешь.
+	AI_Output(other,self, " DIA_Pyrokar_GiveHealPotions_nein_01_00 " );	// That's too much!
+	AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_nein_01_01 " );	// As you say.
 	Info_ClearChoices(dia_pyrokar_givehealpotions);
 };
 
 func void dia_pyrokar_givehealpotions_ok_1()
 {
-	AI_Output(other,self,"DIA_Pyrokar_GiveHealPotions_ok_1_01_00");	//Хорошо! Я возьму одну штуку.
+	AI_Output(other,self, " DIA_Pyrokar_GiveHealPotions_ok_1_01_00 " );	// Good! I'll take one.
 	if(B_GiveInvItems(other,self,ItMi_Gold,300))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_ok_1_01_01");	//Вот, возьми этот напиток. Он избавит страждующего от этой черной заразы!
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_ok_1_01_01 " );	// Here, take this drink. He will deliver the sufferer from this black infection!
 		B_GiveInvItems(self,other,ItPo_HealObsession_MIS,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_ok_1_01_02");	//Принеси мне деньги и получишь помощь.
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_ok_1_01_02 " );	// Bring me money and you'll get help.
 	};
 	Info_ClearChoices(dia_pyrokar_givehealpotions);
 };
 
 func void dia_pyrokar_givehealpotions_ok_5()
 {
-	AI_Output(other,self,"DIA_Pyrokar_GiveHealPotions_ok_5_01_00");	//Хорошо! Я возьму пять штук.
+	AI_Output(other,self, " DIA_Pyrokar_GiveHealPotions_ok_5_01_00 " );	// Good! I'll take five.
 	if(B_GiveInvItems(other,self,ItMi_Gold,1500))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_ok_5_01_01");	//Вот, возьми эти напитки. Они избавят страждующих от этой черной заразы!
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_ok_5_01_01 " );	// Here, take these drinks. They will save the sufferers from this black infection!
 		B_GiveInvItems(self,other,ItPo_HealObsession_MIS,5);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_ok_5_01_02");	//Принеси мне деньги и получишь помощь.
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_ok_5_01_02 " );	// Bring me money and you'll get help.
 	};
 	Info_ClearChoices(dia_pyrokar_givehealpotions);
 };
 
 func void dia_pyrokar_givehealpotions_ok_10()
 {
-	AI_Output(other,self,"DIA_Pyrokar_GiveHealPotions_ok_10_01_00");	//Хорошо! Я возьму десять штук.
+	AI_Output(other,self, " DIA_Pyrokar_GiveHealPotions_ok_10_01_00 " );	// Good! I'll take ten.
 	if(B_GiveInvItems(other,self,ItMi_Gold,3000))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_ok_10_01_01");	//Вот, возьми эти напитки. Они избавят страждующих от этой черной заразы!
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_ok_10_01_01 " );	// Here, take these drinks. They will save the sufferers from this black infection!
 		B_GiveInvItems(self,other,ItPo_HealObsession_MIS,10);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_GiveHealPotions_ok_10_01_02");	//Принеси мне деньги и получишь помощь.
+		AI_Output(self,other, " DIA_Pyrokar_GiveHealPotions_ok_10_01_02 " );	// Bring me money and you'll get help.
 	};
 	Info_ClearChoices(dia_pyrokar_givehealpotions);
 };
@@ -1632,65 +1632,65 @@ instance DIA_Pyrokar_AlmanachBringen(C_Info)
 	condition = DIA_Pyrokar_AlmanachBringen_Condition;
 	information = DIA_Pyrokar_AlmanachBringen_Info;
 	permanent = TRUE;
-	description = "Я могу рассказать еще кое-что об этих одержимых.";
+	description = " I can tell you one more thing about these Possessed. " ;
 };
 
 
 func int DIA_Pyrokar_AlmanachBringen_Condition()
 {
-	if((Kapitel >= 3) && (DarkPathStart == FALSE) && (Npc_HasItems(other,ITWR_DementorObsessionBook_MIS) >= 1) && Npc_KnowsInfo(other,DIA_Pyrokar_BUCHDERBESSENEN))
+	if ((Chapter >=  3 ) && (DarkPathStart ==  FALSE ) && (Npc_HasItems(other,ITWR_DementorObsessionBook_MIS) >=  1 ) && Npc_KnowsInfo(other,DIA_Pyrokar_BOOKTHEREISSUES));
 	{
 		return TRUE;
 	};
 };
 
 
-var int AlmanachCounter;
+var int AlmanacCounter;
 var int DIA_Pyrokar_AlmanachBringen_OneTime;
 
 func void DIA_Pyrokar_AlmanachBringen_Info()
 {
-	var int AlmanachCount;
-	var int XP_KDF_BringAlmanachs;
+	var int AlmanacCount;
+	var int XP_KDF_BringAlmanacs;
 	var int AlmanachGeld;
-	var int PyrokarsAlmanachOffer;
-	AI_Output(other,self,"DIA_Pyrokar_AlmanachBringen_15_00");	//Я могу рассказать еще кое-что об этих одержимых.
-	AI_Output(self,other,"DIA_Pyrokar_AlmanachBringen_11_01");	//Говори, брат.
+	be int PyrokarsAlmanachOffer;
+	AI_Output(other,self, " DIA_Pyrokar_AlmanachBringen_15_00 " );	// I can tell you a few more things about these Possessed.
+	AI_Output(self,other, " DIA_Pyrokar_AlmanachBringen_11_01 " );	// Speak, brother.
 	PyrokarsAlmanachOffer = 400;
 	AlmanachCount = Npc_HasItems(other,ITWR_DementorObsessionBook_MIS);
 	if(AlmanachCount == 1)
 	{
-		AI_Output(other,self,"DIA_Pyrokar_AlmanachBringen_15_02");	//Я нашел еще один альманах.
+		AI_Output(other,self, " DIA_Pyrokar_AlmanachBringen_15_02 " );	// I found another almanac.
 		B_GivePlayerXP(XP_KDF_BringAlmanach);
 		B_GiveInvItems(other,self,ITWR_DementorObsessionBook_MIS,1);
 		AlmanachCounter = AlmanachCounter + 1;
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Pyrokar_AlmanachBringen_15_03");	//Я нашел еще несколько книг темных странников.
+		AI_Output(other,self, " DIA_Pyrokar_AlmanachBringen_15_03 " );	// I found some more dark wanderer books.
 		B_GiveInvItems(other,self,ITWR_DementorObsessionBook_MIS,AlmanachCount);
-		XP_KDF_BringAlmanachs = AlmanachCount * XP_KDF_BringAlmanach;
+		XP_KDF_BringAlmanachs = AlmanacCount * XP_KDF_BringAlmanach;
 		AlmanachCounter = AlmanachCounter + AlmanachCount;
-		B_GivePlayerXP(XP_KDF_BringAlmanachs);
+		B_GivePlayerXP(XP_KDF_BringAlmanacs);
 	};
 	if(AlmanachCounter <= 5)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_AlmanachBringen_11_04");	//Это хорошо. Боюсь, впрочем, что это далеко не все. Продолжай поиски.
+		AI_Output(self,other, " DIA_Pyrokar_AlmanachBringen_11_04 " );	// This is good. I'm afraid, however, that this is not all. Keep looking.
 	}
 	else if(AlmanachCounter <= 8)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_AlmanachBringen_11_05");	//Многие из них уже найдены. Но я не думаю, что мы изъяли их все.
+		AI_Output(self,other, " DIA_Pyrokar_AlmanachBringen_11_05 " );	// Many of them have already been found. But I don't think we've seized them all.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_AlmanachBringen_11_06");	//Ты уже принес целую кучу этих вражеских книг.
-		AI_Output(self,other,"DIA_Pyrokar_AlmanachBringen_11_07");	//Я буду удивлен, если тебе удастся найти еще.
+		AI_Output(self,other, " DIA_Pyrokar_AlmanachBringen_11_06 " );	// You've already brought a whole bunch of those enemy books.
+		AI_Output(self,other, " DIA_Pyrokar_AlmanachBringen_11_07 " );	// I'll be surprised if you can find more.
 	};
-	AI_Output(self,other,"DIA_Pyrokar_AlmanachBringen_11_08");	//Вот, возьми. Это дар от монастыря, который поможет тебе противостоять злу.
+	AI_Output(self,other, " DIA_Pyrokar_AlmanachBringen_11_08 " );	// Here, take this. This is a gift from the monastery that will help you resist evil.
 	if(DIA_Pyrokar_AlmanachBringen_OneTime == FALSE)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_AlmanachBringen_11_09");	//И не забывай время от времени заглядывать в мое магическое письмо.
-		AI_Output(self,other,"DIA_Pyrokar_AlmanachBringen_11_10");	//Возможно, они попытаются проделать это с другими, чьи имена пока еще не вписаны в альманахи.
+		AI_Output(self,other, " DIA_Pyrokar_AlmanachBringen_11_09 " );	// And don't forget to check my magic letter from time to time.
+		AI_Output(self,other, " DIA_Pyrokar_AlmanachBringen_11_10 " );	// Perhaps they will try to do this with others whose names are not yet inscribed in the almanacs.
 		DIA_Pyrokar_AlmanachBringen_OneTime = TRUE;
 	};
 	AlmanachGeld = AlmanachCount * PyrokarsAlmanachOffer;
@@ -1712,7 +1712,7 @@ instance DIA_Pyrokar_KAP4_EXIT(C_Info)
 
 func int DIA_Pyrokar_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -1737,7 +1737,7 @@ instance DIA_Pyrokar_KAP5_EXIT(C_Info)
 
 func int DIA_Pyrokar_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -1755,13 +1755,13 @@ instance DIA_Pyrokar_DRACHENTOT(C_Info)
 	nr = 2;
 	condition = DIA_Pyrokar_DRACHENTOT_Condition;
 	information = DIA_Pyrokar_DRACHENTOT_Info;
-	description = "Все драконы мертвы.";
+	description = " All dragons are dead. " ;
 };
 
 
 func int DIA_Pyrokar_DRACHENTOT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -1769,10 +1769,10 @@ func int DIA_Pyrokar_DRACHENTOT_Condition()
 
 func void DIA_Pyrokar_DRACHENTOT_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_DRACHENTOT_15_00");	//Все драконы мертвы.
-	AI_Output(self,other,"DIA_Pyrokar_DRACHENTOT_11_01");	//Это воистину хорошие новости. Но это совершенно не меняет наше положение, которое кажется безнадежным.
-	AI_Output(self,other,"DIA_Pyrokar_DRACHENTOT_11_02");	//Темные странники все еще не ушли. Скорее наоборот! Я слышу все больше и больше сообщений о том, что за последние несколько дней, их численность даже увеличилась.
-	AI_Output(self,other,"DIA_Pyrokar_DRACHENTOT_11_03");	//Уничтожение драконов нанесло врагу серьезный удар, но этого недостаточно. Нам нужно вырвать это зло с корнем.
+	AI_Output(other,self, " DIA_Pyrokar_DRACHENTOT_15_00 " );	// All dragons are dead.
+	AI_Output(self,other, " DIA_Pyrokar_DRACHENTOT_11_01 " );	// This is really good news. But this does not change our situation at all, which seems hopeless.
+	AI_Output(self,other, " DIA_Pyrokar_DRACHENTOT_11_02 " );	// The dark wanderers still haven't left. Rather the opposite! I hear more and more reports that over the past few days, their numbers have even increased.
+	AI_Output(self,other, " DIA_Pyrokar_DRACHENTOT_11_03 " );	// Destroying the dragons has dealt a serious blow to the enemy, but it's not enough. We need to root out this evil.
 };
 
 
@@ -1782,13 +1782,13 @@ instance DIA_Pyrokar_DERMEISTER(C_Info)
 	nr = 2;
 	condition = DIA_Pyrokar_DERMEISTER_Condition;
 	information = DIA_Pyrokar_DERMEISTER_Info;
-	description = "Я говорил с драконами.";
+	description = " I've spoken to dragons. " ;
 };
 
 
 func int DIA_Pyrokar_DERMEISTER_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -1796,26 +1796,26 @@ func int DIA_Pyrokar_DERMEISTER_Condition()
 
 func void DIA_Pyrokar_DERMEISTER_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_DERMEISTER_15_00");	//Я говорил с драконами.
-	AI_Output(self,other,"DIA_Pyrokar_DERMEISTER_11_01");	//Что они сказали?
-	AI_Output(other,self,"DIA_Pyrokar_DERMEISTER_15_02");	//Они все время говорили о силе их хозяина и о том, что он находится в Чертогах Ирдората.
-	AI_Output(self,other,"DIA_Pyrokar_DERMEISTER_11_03");	//Да пребудет с нами Иннос. Черный Храм восстановил свою силу и теперь отправляет своих приспешников в наш мир.
+	AI_Output(other,self, " DIA_Pyrokar_DERMEISTER_15_00 " );	// I spoke with dragons.
+	AI_Output(self,other, " DIA_Pyrokar_DERMEISTER_11_01 " );	// What did they say?
+	AI_Output(other,self, " DIA_Pyrokar_DERMEISTER_15_02 " );	// They kept talking about their master's power and that he was in the Halls of Irdorath.
+	AI_Output(self,other, " DIA_Pyrokar_DERMEISTER_11_03 " );	// May Innos be with us. The Black Temple has regained its strength and is now sending its minions to our world.
 };
 
 
-instance DIA_Pyrokar_WASISTIRDORATH(C_Info)
+instance DIA_Pyrokar_WASISTIRDORATH (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 2;
 	condition = DIA_Pyrokar_WASISTIRDORATH_Condition;
 	information = DIA_Pyrokar_WASISTIRDORATH_Info;
-	description = "Что такое эти Чертоги Ирдората?";
+	description = " What are these Halls of Irdorath? " ;
 };
 
 
 func int DIA_Pyrokar_WASISTIRDORATH_Condition()
 {
-	if((Kapitel == 5) && Npc_KnowsInfo(other,DIA_Pyrokar_DERMEISTER))
+	if ((Capital ==  5 ) && Npc_KnowsInfo(other,DIA_Pyrokar_DERMEISTER))
 	{
 		return TRUE;
 	};
@@ -1823,18 +1823,18 @@ func int DIA_Pyrokar_WASISTIRDORATH_Condition()
 
 func void DIA_Pyrokar_WASISTIRDORATH_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_WASISTIRDORATH_15_00");	//Что такое эти Чертоги Ирдората?
-	AI_Output(self,other,"DIA_Pyrokar_WASISTIRDORATH_11_01");	//Восточный храм вызова бога Белиара. Всего на земле Миртаны их четыре. Но этот, вероятно, самый ужасный храм из всех.
-	AI_Output(self,other,"DIA_Pyrokar_WASISTIRDORATH_11_02");	//Около сорока лет назад северный и западный храмы этого ужасного божества были уничтожены.
-	AI_Output(self,other,"DIA_Pyrokar_WASISTIRDORATH_11_03");	//Мужественные рыцари того времени отдали все, чтобы сравнять эти величественные сооружения с землей.
-	AI_Output(self,other,"DIA_Pyrokar_WASISTIRDORATH_11_04");	//Тогда черные орды врага были бессильны против превосходящих их мужеством и числом рыцарей и паладинов.
-	AI_Output(self,other,"DIA_Pyrokar_WASISTIRDORATH_11_05");	//Было бы несложно уничтожить и оставшиеся два храма, чтобы избавить землю от зла навсегда...
-	AI_Output(self,other,"DIA_Pyrokar_WASISTIRDORATH_11_06");	//... но после того как пал второй храм, они просто растворились.
-	AI_Output(other,self,"DIA_Pyrokar_WASISTIRDORATH_15_07");	//(насмешливо) Растворился. Целый храм. Да, точно.
-	AI_Output(self,other,"DIA_Pyrokar_WASISTIRDORATH_11_08");	//Не смейся. Ситуация серьезная. Чертоги Ирдората действительно восстановили свою силу, и теперь врага будет победить очень трудно.
-	AI_Output(self,other,"DIA_Pyrokar_WASISTIRDORATH_11_09");	//Поэтому, сначала ты должен найти этот храм, и я думаю, это будет твоя следующая и самая тяжелая задача.
-	AI_Output(other,self,"DIA_Pyrokar_WASISTIRDORATH_15_10");	//Посмотрим.
-	B_LogEntry(TOPIC_BuchHallenVonIrdorath,"Согласно Пирокару, Чертоги Ирдората - это забытый храм вызова бога Белиара. Я должен найти этот храм.");
+	AI_Output(other,self, " DIA_Pyrokar_WASISTIRDORATH_15_00 " );	// What are these Halls of Irdorath?
+	AI_Output(self,other, " DIA_Pyrokar_WASISTIRDORATH_11_01 " );	// Eastern temple of summoning the god Beliar. In total, there are four of them on the land of Myrtana. But this one is probably the most terrible temple of all.
+	AI_Output(self,other, " DIA_Pyrokar_WASISTIRDORATH_11_02 " );	// About forty years ago, the northern and western temples of this terrible deity were destroyed.
+	AI_Output(self,other, " DIA_Pyrokar_WASISTIRDORATH_11_03 " );	// Courageous knights of that time gave everything to raze these majestic structures to the ground.
+	AI_Output(self,other, " DIA_Pyrokar_WASISTIRDORATH_11_04 " );	// Then the black hordes of the enemy were powerless against their superior courage and number of knights and paladins.
+	AI_Output(self,other, " DIA_Pyrokar_WASISTIRDORATH_11_05 " );	// It would be easy to destroy the remaining two temples to rid the land of evil forever...
+	AI_Output(self,other, " DIA_Pyrokar_WASISTIRDORATH_11_06 " );	// ... but after the second temple fell, they simply dissolved.
+	AI_Output(other,self, " DIA_Pyrokar_WASISTIRDORATH_15_07 " );	// (mockingly) Dissolved. The whole temple. Yes exactly.
+	AI_Output(self,other, " DIA_Pyrokar_WASISTIRDORATH_11_08 " );	// Don't laugh. The situation is serious. The halls of Irdorath have indeed regained their strength, and now it will be very difficult to defeat the enemy.
+	AI_Output(self,other, " DIA_Pyrokar_WASISTIRDORATH_11_09 " );	// Therefore, first you must find this temple, and I think this will be your next and hardest task.
+	AI_Output(other,self, " DIA_Pyrokar_WASISTIRDORATH_15_10 " );	// Let's see.
+	B_LogEntry(TOPIC_BuchHallenVonIrdorath, " According to the Pyrokar, the Halls of Irdorath is a forgotten temple to summon the god Beliar. I must find this temple. " );
 };
 
 
@@ -1844,13 +1844,13 @@ instance DIA_Pyrokar_BUCHIRDORATH(C_Info)
 	nr = 54;
 	condition = DIA_Pyrokar_BUCHIRDORATH_Condition;
 	information = DIA_Pyrokar_BUCHIRDORATH_Info;
-	description = "Книга Ксардаса, которую считали потерянной - где она?";
+	description = " The book of Xardas that was thought to be lost - where is it? " ;
 };
 
 
 func int DIA_Pyrokar_BUCHIRDORATH_Condition()
 {
-	if((Kapitel == 5) && (ItWr_HallsofIrdorathIsOpen == FALSE) && Npc_KnowsInfo(other,DIA_Pyrokar_WASISTIRDORATH))
+	if ((Capital ==  5 ) && (ItWr_HallsofIrdorathIsOpen ==  FALSE ) && Npc_KnowsInfo(other,DIA_Pyrokar_HOUSE OFIRDORATH))
 	{
 		return TRUE;
 	};
@@ -1858,14 +1858,14 @@ func int DIA_Pyrokar_BUCHIRDORATH_Condition()
 
 func void DIA_Pyrokar_BUCHIRDORATH_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_BUCHIRDORATH_15_00");	//Книга Ксардаса, которую считали потерянной - где она?
-	AI_Output(self,other,"DIA_Pyrokar_BUCHIRDORATH_11_01");	//Я ожидал, что ты спросишь это. Но, боюсь, она будет бесполезной для тебя.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHIRDORATH_11_02");	//Она закрыта при помощи магии. Я отнес ее в один из наших подвалов, но сколько мы не пытались открыть ее - все тщетно.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHIRDORATH_11_03");	//Этот проклятый Ксардас сыграл с нами грязную шутку.
-	AI_Output(other,self,"DIA_Pyrokar_BUCHIRDORATH_15_04");	//Могу я увидеть эту книгу?
-	AI_Output(self,other,"DIA_Pyrokar_BUCHIRDORATH_11_05");	//Будь моим гостем. Но я представить себе не могу, что тебе удастся преуспеть там, где потерпели поражение величайшие маги нашего монастыря.
-	AI_Output(self,other,"DIA_Pyrokar_BUCHIRDORATH_11_06");	//Но все же ты можешь попытаться, Таламон не будет препятствовать тебе.
-	B_LogEntry(TOPIC_BuchHallenVonIrdorath,"Книга Ксардаса 'ЧЕРТОГИ ИРДОРАТА' находится в нижних подвалах монастыря. Ее охраняет Таламон. Маги не смогли открыть эту книгу. Она закрыта при помощи магии и они обвиняют в этом Ксардаса.");
+	AI_Output(other,self, " DIA_Pyrokar_BUCHIRDORATH_15_00 " );	// The book of Xardas that was thought to be lost - where is it?
+	AI_Output(self,other, " DIA_Pyrokar_BUCHIRDORATH_11_01 " );	// I expected you to ask this. But I'm afraid it will be of no use to you.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHIRDORATH_11_02 " );	// It's closed with magic. I took it to one of our cellars, but no matter how much we tried to open it, all in vain.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHIRDORATH_11_03 " );	// That damned Xardas played a dirty trick on us.
+	AI_Output(other,self, " DIA_Pyrokar_BUCHIRDORATH_15_04 " );	// Can I see this book?
+	AI_Output(self,other, " DIA_Pyrokar_BUCHIRDORATH_11_05 " );	// Be my guest. But I cannot imagine that you will succeed where the greatest mages of our monastery have failed.
+	AI_Output(self,other, " DIA_Pyrokar_BUCHIRDORATH_11_06 " );	// But still you can try, Talamon won't stop you.
+	B_LogEntry(TOPIC_BuchHallenVonIrdorath, " Xardas' book 'HALLS OF IRDORATH' is in the lower cellars of the monastery. It is guarded by Talamon. The magicians could not open this book. It is closed with magic and they blame Xardas for this. " );
 	Pyrokar_LetYouPassTalamon = TRUE;
 };
 
@@ -1876,13 +1876,13 @@ instance DIA_Pyrokar_IRDORATHBOOKOPEN(C_Info)
 	nr = 3;
 	condition = DIA_Pyrokar_IRDORATHBOOKOPEN_Condition;
 	information = DIA_Pyrokar_IRDORATHBOOKOPEN_Info;
-	description = "Я смог открыть книгу Ксардаса.";
+	description = " I was able to open the book of Xardas. " ;
 };
 
 
 func int DIA_Pyrokar_IRDORATHBOOKOPEN_Condition()
 {
-	if((ItWr_HallsofIrdorathIsOpen == TRUE) && (Kapitel == 5))
+	if ((ItWr_HallsofIrdorathIsOpen ==  TRUE ) && (Chapter ==  5 ))
 	{
 		return TRUE;
 	};
@@ -1890,76 +1890,76 @@ func int DIA_Pyrokar_IRDORATHBOOKOPEN_Condition()
 
 func void DIA_Pyrokar_IRDORATHBOOKOPEN_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_IRDORATHBOOKOPEN_15_00");	//Я смог открыть книгу Ксардаса.
-	AI_Output(self,other,"DIA_Pyrokar_IRDORATHBOOKOPEN_11_01");	//Что?! Как у тебя это получилось? Это все сведет меня с ума!
+	AI_Output(other,self, " DIA_Pyrokar_IRDORATHBOOKOPEN_15_00 " );	// I was able to open the book of Xardas.
+	AI_Output(self,other, " DIA_Pyrokar_IRDORATHBOOKOPEN_11_01 " );	// What?! How did you do it? This is all driving me crazy!
 	Info_ClearChoices(DIA_Pyrokar_IRDORATHBOOKOPEN);
-	Info_AddChoice(DIA_Pyrokar_IRDORATHBOOKOPEN,"Ксардас рассказал мне секрет.",DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas);
-	Info_AddChoice(DIA_Pyrokar_IRDORATHBOOKOPEN,"Просто слепая удача, я думаю.",DIA_Pyrokar_IRDORATHBOOKOPEN_glueck);
+	Info_AddChoice(DIA_Pyrokar_IRDORATHBOOKOPEN, " Xardas told me a secret. " ,DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas);
+	Info_AddChoice(DIA_Pyrokar_IRDORATHBOOKOPEN, " Just blind luck I guess. " ,DIA_Pyrokar_IRDORATHBOOKOPEN_glueck);
 };
 
 func void DIA_Pyrokar_IRDORATHBOOKOPEN_glueck()
 {
-	AI_Output(other,self,"DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_15_00");	//Просто слепая удача, я думаю.
-	AI_Output(self,other,"DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_11_01");	//Не говори чепухи. Удача!
-	AI_Output(self,other,"DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_11_02");	//Если даже я не смог открыть эту книгу, а затем приходит кто-то вроде тебя и играючи открывает ее...
-	AI_Output(self,other,"DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_11_03");	//... это наводит меня на грустные размышления...
-	AI_Output(self,other,"DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_11_04");	//Ладно. Так как ты, очевидно, единственный, кто смог открыть эту книгу, то я, пожалуй, позволю тебе держать ее у себя. По крайней мере, пока мы не разрешили этот кризис.
+	AI_Output(other,self, " DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_15_00 " );	// Just blind luck, I guess.
+	AI_Output(self,other, " DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_11_01 " );	// Don't talk nonsense. Luck!
+	AI_Output(self,other, " DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_11_02 " );	// Even if I couldn't open this book, and then someone like you comes along and playfully opens it...
+	AI_Output(self,other, " DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_11_03 " );	// ... this makes me sad...
+	AI_Output(self,other, " DIA_Pyrokar_IRDORATHBOOKOPEN_glueck_11_04 " );	// Okay. Since you are obviously the only one who has been able to open this book, I would rather let you keep it. At least until we resolve this crisis.
 	B_GivePlayerXP(XP_Ambient);
 	Info_ClearChoices(DIA_Pyrokar_IRDORATHBOOKOPEN);
 };
 
 func void DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas()
 {
-	AI_Output(other,self,"DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas_15_00");	//Ксардас рассказал мне секрет.
-	AI_Output(self,other,"DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas_11_01");	//Ах, вот оно что. Как интересно. Мне остается только надеяться, что пагубное влияние Ксардаса не отравит твою душу.
-	AI_Output(self,other,"DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas_11_02");	//Я предостерегаю тебя. Не поддавайся на уловки этого старого дьявола. Ты можешь пожалеть об этом.
+	AI_Output(other,self, " DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas_15_00 " );	// Xardas told me a secret.
+	AI_Output(self,other, " DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas_11_01 " );	// Ah, that's it. How interesting. I can only hope that the evil influence of Xardas does not poison your soul.
+	AI_Output(self,other, " DIA_Pyrokar_IRDORATHBOOKOPEN_Xardas_11_02 " );	// I warn you. Don't fall for this old devil's tricks. You may regret this.
 	B_GivePlayerXP(XP_Ambient);
 	Info_ClearChoices(DIA_Pyrokar_IRDORATHBOOKOPEN);
 };
 
 
-instance DIA_Pyrokar_GEHEIMEBIBLIOTHEK(C_Info)
+instance DIA_Pyrokar_SECRET LIBRARY (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 3;
 	condition = DIA_Pyrokar_GEHEIMEBIBLIOTHEK_Condition;
-	information = DIA_Pyrokar_GEHEIMEBIBLIOTHEK_Info;
-	description = "В этой книге упоминается секретная библиотека.";
+	information = DIA_Pyrokar_SECRET LIBRARY_Info;
+	description = " This book mentions a secret library. " ;
 };
 
 
 func int DIA_Pyrokar_GEHEIMEBIBLIOTHEK_Condition()
 {
-	if((ItWr_SCReadsHallsofIrdorath == TRUE) && (Kapitel == 5) && (MIS_SCKnowsWayToIrdorath == FALSE) && Npc_KnowsInfo(other,DIA_Pyrokar_IRDORATHBOOKOPEN))
+	if ((ItWr_SCReadsHallsofIrdorath ==  TRUE ) && (Chapter ==  5 ) && (MY_SCKnowsWayToIrdorath ==  FALSE ) && Npc_KnowsInfo(other,DAY_Pyrokar_IRDORATHBOOK))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Pyrokar_GEHEIMEBIBLIOTHEK_Info()
+func void DIA_Pyrokar_SECRETLIBRARY_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_GEHEIMEBIBLIOTHEK_15_00");	//В этой книге упоминается секретная библиотека.
-	AI_Output(self,other,"DIA_Pyrokar_GEHEIMEBIBLIOTHEK_11_01");	//О чем это ты?
-	AI_Output(other,self,"DIA_Pyrokar_GEHEIMEBIBLIOTHEK_15_02");	//О библиотеке, находящейся под этими стенами. Тебе это ни о чем не говорит?
-	AI_Output(self,other,"DIA_Pyrokar_GEHEIMEBIBLIOTHEK_11_03");	//Нет. Где эта библиотека должна быть, ты сказал?
-	AI_Output(other,self,"DIA_Pyrokar_GEHEIMEBIBLIOTHEK_15_04");	//Понятно. Ты ничего не знаешь о ней. Ммм.
-	B_LogEntry(TOPIC_BuchHallenVonIrdorath,"Пирокар ничего не знает о тайной библиотеке. Похоже, только Ксардас бывал в ней.");
+	AI_Output(other,self, " DIA_Pyrokar_GEHEIMEBIBLIOTHEK_15_00 " );	// This book mentions a secret library.
+	AI_Output(self,other, " DIA_Pyrokar_GEHEIMEBIBLIOTHEK_11_01 " );	// What are you talking about?
+	AI_Output(other,self, " DIA_Pyrokar_GEHEIMEBIBLIOTHEK_15_02 " );	// About the library under these walls. Doesn't that mean anything to you?
+	AI_Output(self,other, " DIA_Pyrokar_GEHEIMEBIBLIOTHEK_11_03 " );	// No. Where is this library supposed to be, you said?
+	AI_Output(other,self, " DIA_Pyrokar_GEHEIMEBIBLIOTHEK_15_04 " );	// Got it. You don't know anything about her. Mmm.
+	B_LogEntry(TOPIC_BuchHallenVonIrdorath, " Pyrocar doesn't know anything about the secret library. Looks like only Xardas has been there. " );
 };
 
 
-instance DIA_Pyrokar_SCKNOWSWAYTOIRDORATH(C_Info)
+instance DIA_Pyrokar_SCKNOWSWAYTOIRDORATH (C_Info) .
 {
 	npc = KDF_500_Pyrokar;
 	nr = 2;
 	condition = DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_Condition;
 	information = DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_Info;
-	description = "Я знаю, где нужно искать Чертоги Ирдората.";
+	description = " I know where to look for the Halls of Irdorath. " ;
 };
 
 
 func int DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_Condition()
 {
-	if((Kapitel == 5) && (MIS_SCKnowsWayToIrdorath == TRUE) && Npc_KnowsInfo(other,DIA_Pyrokar_IRDORATHBOOKOPEN))
+	if ((Chapter ==  5 ) && (MIS_SCKnowsWayToIrdorath ==  TRUE ) && Npc_KnowsInfo(other,DAY_Pyrokar_IRDORATHBOOK))
 	{
 		return TRUE;
 	};
@@ -1967,15 +1967,15 @@ func int DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_Condition()
 
 func void DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_15_00");	//Я знаю, где нужно искать Чертоги Ирдората.
-	AI_Output(other,self,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_15_01");	//Этот храм находится на острове. Я нашел морскую карту, которая покажет путь.
-	AI_Output(self,other,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_02");	//Это великолепно. Тогда тебе понадобится корабль и команда, чтобы добраться до этого врага.
-	AI_Output(self,other,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_03");	//Но помни, что ты должен хорошо подготовиться, если хочешь уничтожить Повелителя Ирдората.
-	AI_Output(other,self,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_15_04");	//Где мне найти команду?
-	AI_Output(self,other,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_05");	//Твоя команда должна состоять из людей, которым ты можешь доверять.
-	AI_Output(self,other,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_06");	//Поговори со своими друзьями и подумай о том, кто может быть полезен тебе на этом острове.
-	AI_Output(self,other,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_07");	//Тебе там, наверняка, понадобится маг. Но, к сожалению, я не могу выделить ни одного человека из монастыря.
-	AI_Output(self,other,"DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_08");	//Тебе придется поискать мага за пределами наших стен.
+	AI_Output(other,self, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_15_00 " );	// I know where to look for the Halls of Irdorath.
+	AI_Output(other,self, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_15_01 " );	// This temple is on an island. I found a nautical chart that will show the way.
+	AI_Output(self,other, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_02 " );	// This is great. Then you'll need a ship and a crew to get to that enemy.
+	AI_Output(self,other, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_03 " );	// But remember that you must prepare well if you want to destroy the Lord of Irdorath.
+	AI_Output(other,self, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_15_04 " );	// Where can I find the command?
+	AI_Output(self,other, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_05 " );	// Your team should be made up of people you can trust.
+	AI_Output(self,other, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_06 " );	// Talk to your friends and think about who can be useful to you on this island.
+	AI_Output(self,other, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_07 " );	// You'll probably need a mage there. But, unfortunately, I cannot single out a single person from the monastery.
+	AI_Output(self,other, " DIA_Pyrokar_SCKNOWSWAYTOIRDORATH_11_08 " );	// You'll have to look for the mage outside of our walls.
 };
 
 
@@ -1985,13 +1985,13 @@ instance DIA_Pyrokar_SCWILLJORGEN(C_Info)
 	nr = 59;
 	condition = DIA_Pyrokar_SCWILLJORGEN_Condition;
 	information = DIA_Pyrokar_SCWILLJORGEN_Info;
-	description = "Йорген - опытный моряк.";
+	description = " Jorgen is an experienced sailor. " ;
 };
 
 
 func int DIA_Pyrokar_SCWILLJORGEN_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Jorgen_Home) && Npc_KnowsInfo(other,DIA_Pyrokar_SCKNOWSWAYTOIRDORATH) && (Kapitel == 5))
+	if ( Npc_KnowsInfo ( other , DIA_Jorgen_Home ) && Npc_KnowsInfo ( other , DIA_Pyrokar_SCKNOWSWAYTOIRDORATH ) && ( Capital ==  5 )) ;
 	{
 		return TRUE;
 	};
@@ -1999,13 +1999,13 @@ func int DIA_Pyrokar_SCWILLJORGEN_Condition()
 
 func void DIA_Pyrokar_SCWILLJORGEN_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_SCWILLJORGEN_15_00");	//Йорген - опытный моряк. Он мог бы помочь мне добраться до Острова Ирдорат.
-	AI_Output(self,other,"DIA_Pyrokar_SCWILLJORGEN_11_01");	//Боюсь, это будет не так уж просто.
-	AI_Output(self,other,"DIA_Pyrokar_SCWILLJORGEN_11_02");	//Он попросился работать в нашем монастыре. Но он не платил вступительного взноса и не привел овцы.
-	AI_Output(self,other,"DIA_Pyrokar_SCWILLJORGEN_11_03");	//Йорген должен сначала закончить свою работу, а потом ты можешь забрать его, если пожелаешь.
-	AI_Output(other,self,"DIA_Pyrokar_SCWILLJORGEN_15_04");	//Сколько времени это займет?
-	AI_Output(self,other,"DIA_Pyrokar_SCWILLJORGEN_11_05");	//Он в первый же день съел целую гору продуктов. Этой провизии обычному послушнику хватило бы на три недели.
-	AI_Output(self,other,"DIA_Pyrokar_SCWILLJORGEN_11_06");	//Поэтому я не могу отпустить его, пока он не отработает три месяца в наших садах.
+	AI_Output(other,self, " DIA_Pyrokar_SCWILLJORGEN_15_00 " );	// Jorgen is an experienced sailor. He could help me get to Irdorath Island.
+	AI_Output(self,other, " DIA_Pyrokar_SCWILLJORGEN_11_01 " );	// I'm afraid it won't be that easy.
+	AI_Output(self,other, " DIA_Pyrokar_SCWILLJORGEN_11_02 " );	// He asked to work in our monastery. But he did not pay the entrance fee and did not bring the sheep.
+	AI_Output(self,other, " DIA_Pyrokar_SCWILLJORGEN_11_03 " );	// Jorgen must finish his work first, and then you can take him if you wish.
+	AI_Output(other,self, " DIA_Pyrokar_SCWILLJORGEN_15_04 " );	// How long will it take?
+	AI_Output(self,other, " DIA_Pyrokar_SCWILLJORGEN_11_05 " );	// He ate a mountain of food the first day. This provision would have been enough for an ordinary novice for three weeks.
+	AI_Output(self,other, " DIA_Pyrokar_SCWILLJORGEN_11_06 " );	// So I can't let him go until he's done three months in our gardens.
 };
 
 
@@ -2015,13 +2015,13 @@ instance DIA_Pyrokar_MACHDTFREI(C_Info)
 	nr = 59;
 	condition = DIA_Pyrokar_MACHDTFREI_Condition;
 	information = DIA_Pyrokar_MACHDTFREI_Info;
-	description = "А что можно сделать, чтобы я мог забрать Йоргена с собой СЕЙЧАС?";
+	description = " What can I do so I can take Jorgen with me NOW? " ;
 };
 
 
 func int DIA_Pyrokar_MACHDTFREI_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Pyrokar_SCWILLJORGEN) && (Kapitel == 5))
+	if ( Npc_KnowsInfo ( other , DIA_Pyrokar_SCWILLJORGEN ) && ( Chapter ==  5 )) .
 	{
 		return TRUE;
 	};
@@ -2029,16 +2029,16 @@ func int DIA_Pyrokar_MACHDTFREI_Condition()
 
 func void DIA_Pyrokar_MACHDTFREI_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_MACHDTFREI_15_00");	//А что можно сделать, чтобы я мог забрать Йоргена с собой СЕЙЧАС?
-	AI_Output(self,other,"DIA_Pyrokar_MACHDTFREI_11_01");	//Ммм. Действительно, есть кое-что, что ты мог бы сделать для меня. Твои хорошие отношения с Ксардасом могли бы помочь тебе в этом.
-	AI_Output(self,other,"DIA_Pyrokar_MACHDTFREI_11_02");	//Мое внимание привлекло то, что последние несколько дней в его башне творятся странные вещи.
-	AI_Output(self,other,"DIA_Pyrokar_MACHDTFREI_11_03");	//Много людей слышало громкие вопли в ночи, исходящие оттуда, и видели странный свет, пляшущий над этой башней.
-	AI_Output(self,other,"DIA_Pyrokar_MACHDTFREI_11_04");	//Только этого нам еще не хватало. Иди, проверь что там происходит и прекрати это безобразие.
-	AI_Output(self,other,"DIA_Pyrokar_MACHDTFREI_11_05");	//Тогда ты сможешь забрать Йоргена.
+	AI_Output(other,self, " DIA_Pyrokar_MACHDTFREI_15_00 " );	// What can I do so I can take Jorgen with me NOW?
+	AI_Output(self,other, " DIA_Pyrokar_MACHDTFREI_11_01 " );	// Mmm. Indeed, there is something you could do for me. Your good relationship with Xardas could help you with that.
+	AI_Output(self,other, " DIA_Pyrokar_MACHDTFREI_11_02 " );	// Strange things have been going on in his tower for the past few days.
+	AI_Output(self,other, " DIA_Pyrokar_MACHDTFREI_11_03 " );	// Many people heard loud screams in the night coming from there, and saw a strange light dancing above this tower.
+	AI_Output(self,other, " DIA_Pyrokar_MACHDTFREI_11_04 " );	// Only this was not enough for us yet. Go check what's going on there and stop this mess.
+	AI_Output(self,other, " DIA_Pyrokar_MACHDTFREI_11_05 " );	// Then you can take Jorgen.
 	MIS_PyrokarClearDemonTower = LOG_Running;
 	Log_CreateTopic(TOPIC_PyrokarClearDemonTower,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PyrokarClearDemonTower,LOG_Running);
-	B_LogEntry(TOPIC_PyrokarClearDemonTower,"Странные вещи творятся с башней Ксардаса. Если я соберусь выяснить, что там происходит, я могу взять с собой Йоргена.");
+	B_LogEntry(TOPIC_PyrokarClearDemonTower, " Strange things are going on with Xardas' tower. If I'm going to find out what's going on there, I can take Jorgen with me. " );
 };
 
 
@@ -2048,13 +2048,13 @@ instance DIA_Pyrokar_DTCLEARED(C_Info)
 	nr = 59;
 	condition = DIA_Pyrokar_DTCLEARED_Condition;
 	information = DIA_Pyrokar_DTCLEARED_Info;
-	description = "Башня Ксардаса больше никого не будет беспокоить.";
+	description = " The tower of Xardas won't bother anyone anymore. " ;
 };
 
 
 func int DIA_Pyrokar_DTCLEARED_Condition()
 {
-	if(Npc_IsDead(Xardas_DT_Demon1) && Npc_IsDead(Xardas_DT_Demon2) && Npc_IsDead(Xardas_DT_Demon3) && Npc_IsDead(Xardas_DT_Demon4) && Npc_IsDead(Xardas_DT_Demon5) && Npc_IsDead(Xardas_DT_DemonLord) && (MIS_PyrokarClearDemonTower == LOG_Running))
+	if (Npc_IsDead(Xardas_DT_Demon1) && Npc_IsDead(Xardas_DT_Demon2) && Npc_IsDead(Xardas_DT_Demon3) && Npc_IsDead(Xardas_DT_Demon4) && Npc_IsDead(Xardas_DT_Demon5) && Npc_IsDead(Xardas_DT_DemonLord) && (MIS_PyrokarLog_RunningDemonTower ) == ClearLog
 	{
 		return TRUE;
 	};
@@ -2062,10 +2062,10 @@ func int DIA_Pyrokar_DTCLEARED_Condition()
 
 func void DIA_Pyrokar_DTCLEARED_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_DTCLEARED_15_00");	//Башня Ксардаса больше никого не будет беспокоить.
-	AI_Output(self,other,"DIA_Pyrokar_DTCLEARED_11_01");	//Так что там было... нет, подожди, я не хочу даже знать.
-	AI_Output(self,other,"DIA_Pyrokar_DTCLEARED_11_02");	//Если Йорген тебе все еще нужен, можешь забрать его из монастыря.
-	AI_Output(self,other,"DIA_Pyrokar_DTCLEARED_11_03");	//Да хранит тебя Иннос.
+	AI_Output(other,self, " DIA_Pyrokar_DTCLEARED_15_00 " );	// The Tower of Xardas won't bother anyone anymore.
+	AI_Output(self,other, " DIA_Pyrokar_DTCLEARED_11_01 " );	// So there was... no, wait, I don't even want to know.
+	AI_Output(self,other, " DIA_Pyrokar_DTCLEARED_11_02 " );	// If you still need Jorgen, you can pick him up from the monastery.
+	AI_Output(self,other, " DIA_Pyrokar_DTCLEARED_11_03 " );	// May Innos keep you.
 	MIS_PyrokarClearDemonTower = LOG_SUCCESS;
 	B_GivePlayerXP(XP_PyrokarClearDemonTower);
 };
@@ -2080,7 +2080,7 @@ instance DIA_Pyrokar_AmulettofDeath(C_Info)
 	condition = DIA_Pyrokar_AmulettofDeath_Condition;
 	information = DIA_Pyrokar_AmulettofDeath_Info;
 	permanent = TRUE;
-	description = "В пророчестве упоминается священная Аура Инноса.";
+	description = " The prophecy mentions the sacred Aura of Innos. " ;
 };
 
 func int DIA_Pyrokar_AmulettofDeath_Condition()
@@ -2093,12 +2093,12 @@ func int DIA_Pyrokar_AmulettofDeath_Condition()
 
 func void DIA_Pyrokar_AmulettofDeath_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_AmulettofDeath_15_00");	//В пророчестве упоминается священная Аура Инноса.
-	AI_Output(self,other,"DIA_Pyrokar_AmulettofDeath_11_01");	//Аура Инноса - это амулет, который могут носить только величайшие маги всех времен и народов.
+	AI_Output(other,self, " DIA_Pyrokar_AmulettofDeath_15_00 " );	// The prophecy mentions the sacred Aura of Innos.
+	AI_Output(self,other, " DIA_Pyrokar_AmulettofDeath_11_01 " );	// The Aura of Innos is an amulet that only the greatest magicians of all times and peoples can wear.
 	Info_ClearChoices(DIA_Pyrokar_AmulettofDeath);
 	Info_AddChoice(DIA_Pyrokar_AmulettofDeath,Dialog_Back,DIA_Pyrokar_AmulettofDeath_BAck);
-	Info_AddChoice(DIA_Pyrokar_AmulettofDeath,"Могу я взять его?",DIA_Pyrokar_AmulettofDeath_CanHaveIt);
-	Info_AddChoice(DIA_Pyrokar_AmulettofDeath,"Что делает этот амулет?",DIA_Pyrokar_AmulettofDeath_Amulett);
+	Info_AddChoice(DIA_Pyrokar_AmulettofDeath, " Can I have him? " ,DIA_Pyrokar_AmulettofDeath_CanHaveIt);
+	Info_AddChoice(DIA_Pyrokar_AmulettofDeath, " What does this amulet do? " ,DIA_Pyrokar_AmulettofDeath_Amulett);
 };
 
 func void DIA_Pyrokar_AmulettofDeath_BAck()
@@ -2108,13 +2108,13 @@ func void DIA_Pyrokar_AmulettofDeath_BAck()
 
 func void DIA_Pyrokar_AmulettofDeath_CanHaveIt()
 {
-	AI_Output(other,self,"DIA_Pyrokar_AmulettofDeath_CanHaveIt_15_00");	//Могу я взять его?
-	AI_Output(self,other,"DIA_Pyrokar_AmulettofDeath_CanHaveIt_11_01");	//Что? Что ты с ним собираешься делать?
-	AI_Output(other,self,"DIA_Pyrokar_AmulettofDeath_CanHaveIt_15_02");	//Выступить против драконов.
-	AI_Output(self,other,"DIA_Pyrokar_AmulettofDeath_CanHaveIt_11_03");	//Да, конечно. Я дам тебе этот амулет, но обращайся с ним бережно.
-	AI_Output(other,self,"DIA_Pyrokar_AmulettofDeath_CanHaveIt_15_04");	//Да, конечно.
-	AI_Output(self,other,"DIA_Pyrokar_AmulettofDeath_CanHaveIt_11_05");	//Я не хочу, чтобы мне потом пришлось выкупать его назад у какого-нибудь торговца.
-	AI_Output(self,other,"DIA_Pyrokar_AmulettofDeath_CanHaveIt_11_06");	//Используй его разумно, и да хранит тебя Иннос.
+	AI_Output(other,self, " DIA_Pyrokar_AmulettofDeath_CanHaveIt_15_00 " );	// Can I have it?
+	AI_Output(self,other, " DIA_Pyrokar_AmulettofDeath_CanHaveIt_11_01 " );	// What? What are you going to do with it?
+	AI_Output(other,self, " DIA_Pyrokar_AmulettofDeath_CanHaveIt_15_02 " );	// Take on the dragons.
+	AI_Output(self,other, " DIA_Pyrokar_AmulettofDeath_CanHaveIt_11_03 " );	// Yes, of course. I will give you this amulet, but handle it with care.
+	AI_Output(other,self, " DIA_Pyrokar_AmulettofDeath_CanHaveIt_15_04 " );	// Yes, of course.
+	AI_Output(self,other, " DIA_Pyrokar_AmulettofDeath_CanHaveIt_11_05 " );	// I don't want to have to buy it back from some merchant later.
+	AI_Output(self,other, " DIA_Pyrokar_AmulettofDeath_CanHaveIt_11_06 " );	// Use it wisely, and may Innos keep you.
 	CreateInvItems(self,ItAm_AmulettOfDeath_Mis,1);
 	B_GiveInvItems(self,other,ItAm_AmulettOfDeath_Mis,1);
 	Pyro_Gives_Aura = TRUE;
@@ -2122,9 +2122,9 @@ func void DIA_Pyrokar_AmulettofDeath_CanHaveIt()
 
 func void DIA_Pyrokar_AmulettofDeath_Amulett()
 {
-	AI_Output(other,self,"DIA_Pyrokar_AmulettofDeath_Amulett_15_00");	//Что делает этот амулет?
-	AI_Output(self,other,"DIA_Pyrokar_AmulettofDeath_Amulett_11_01");	//Говорят, что Иннос самолично выковал его и передал человечеству.
-	AI_Output(self,other,"DIA_Pyrokar_AmulettofDeath_Amulett_11_02");	//Он защищает своего владельца от всех типов урона.
+	AI_Output(other,self, " DIA_Pyrokar_AmulettofDeath_Amulett_15_00 " );	// What does this amulet do?
+	AI_Output(self,other, " DIA_Pyrokar_AmulettofDeath_Amulett_11_01 " );	// It is said that Innos personally forged it and gave it to mankind.
+	AI_Output(self,other, " DIA_Pyrokar_AmulettofDeath_Amulett_11_02 " );	// It protects its wearer from all types of damage.
 };
 
 
@@ -2135,7 +2135,7 @@ instance DIA_Pyrokar_PotionofDeath(C_Info)
 	condition = DIA_Pyrokar_PotionofDeath_Condition;
 	information = DIA_Pyrokar_PotionofDeath_Info;
 	permanent = TRUE;
-	description = "Что такое Слезы Инноса?";
+	description = " What are the Tears of Innos? " ;
 };
 
 
@@ -2149,32 +2149,32 @@ func int DIA_Pyrokar_PotionofDeath_Condition()
 
 func void DIA_Pyrokar_PotionofDeath_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_15_00");	//Что такое Слезы Инноса?
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_11_01");	//Слезы Инноса - это не более чем старые детские сказки. В них говорится, как в начале времен разгорелась битва между Инносом и Белиаром.
+	AI_Output(other,self, " DIA_Pyrokar_PotionofDeath_15_00 " );	// What are Tears of Innos?
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_11_01 " );	// Tears of Innos are nothing more than old children's tales. They say how at the beginning of time a battle broke out between Innos and Beliar.
 	Info_ClearChoices(DIA_Pyrokar_PotionofDeath);
-	Info_AddChoice(DIA_Pyrokar_PotionofDeath,"Понимаю.",DIA_Pyrokar_PotionofDeath_Aha);
-	Info_AddChoice(DIA_Pyrokar_PotionofDeath,"Я нашел это зелье.",DIA_Pyrokar_PotionofDeath_Potion);
+	Info_AddChoice(DIA_Pyrokar_PotionofDeath, " I understand. " ,DIA_Pyrokar_PotionofDeath_Aha);
+	Info_AddChoice(DIA_Pyrokar_PotionofDeath, " I found this potion. " ,DIA_Pyrokar_PotionofDeath_Potion);
 };
 
 func void DIA_Pyrokar_PotionofDeath_Aha()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_Aha_15_00");	//Понимаю.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Aha_11_01");	//Я не знаю, понимаешь ли ты всю серьезность нашей ситуации, но я очень сомневаюсь, что нашего врага можно победить при помощи детских сказок.
+	AI_Output(other,self, " DIA_Pyrokar_PotionofDeath_Aha_15_00 " );	// I understand.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Aha_11_01 " );	// I don't know if you understand the gravity of our situation, but I doubt very much that our enemy can be defeated with children's stories.
 	Info_ClearChoices(DIA_Pyrokar_PotionofDeath);
 };
 
 func void DIA_Pyrokar_PotionofDeath_Potion()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_Potion_15_00");	//Я нашел это зелье.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Potion_11_01");	//Этого не может быть! Не могу поверить в это!
-	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_Potion_15_02");	//В чем дело?
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Potion_11_03");	//Если это действительно настоящие Слезы Инноса, то...
+	AI_Output(other,self, " DIA_Pyrokar_PotionofDeath_Potion_15_00 " );	// I found this potion.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Potion_11_01 " );	// This can't be! I can not believe it!
+	AI_Output(other,self, " DIA_Pyrokar_PotionofDeath_Potion_15_02 " );	// What's wrong?
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Potion_11_03 " );	// If these are indeed the Tears of Innos, then...
 	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_Potion_15_04");	//Вряд ли.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Potion_11_05");	//Не прерывай меня! Если это действительно настоящие Слезы Инноса, то мы получили грозное оружие против врага.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Potion_11_05 " );	// Don't interrupt me! If these are indeed the Tears of Innos, then we have received a formidable weapon against the enemy.
 	Info_ClearChoices(DIA_Pyrokar_PotionofDeath);
 	Info_AddChoice(DIA_Pyrokar_PotionofDeath,Dialog_Back,DIA_Pyrokar_PotionofDeath_BACK);
-	Info_AddChoice(DIA_Pyrokar_PotionofDeath,"Так что такое эти Слезы Инноса?",DIA_Pyrokar_PotionofDeath_Teardrops);
-	Info_AddChoice(DIA_Pyrokar_PotionofDeath,"Что ты имеешь в виду под 'оружием'?",DIA_Pyrokar_PotionofDeath_Weapon);
+	Info_AddChoice(DIA_Pyrokar_PotionofDeath, " So what are those Tears of Innos? " ,DIA_Pyrokar_PotionofDeath_Teardrops);
+	Info_AddChoice(DIA_Pyrokar_PotionofDeath, " What do you mean by 'weapon'? " ,DIA_Pyrokar_PotionofDeath_Weapon);
 };
 
 func void DIA_Pyrokar_PotionofDeath_BACK()
@@ -2184,24 +2184,24 @@ func void DIA_Pyrokar_PotionofDeath_BACK()
 
 func void DIA_Pyrokar_PotionofDeath_Teardrops()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_Teardrops_15_00");	//Так что такое эти Слезы Инноса?
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Teardrops_11_01");	//Когда Иннос осознал, что ему придется сражаться с Белиаром, своим собственным братом, чтобы сохранить созданное, его печаль была велика.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Teardrops_11_02");	//Слезы потекли из глаз его и упали в наш мир. Их было много, ибо сердце его было переполнено печалью, и плакал он тринадцать лет.
-	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_Teardrops_15_03");	//Ближе к делу.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Teardrops_11_04");	//Люди, нашедшие его слезы и попробовавшие их, обретали сверхъестественную силу и ясность ума. Они признавали мудрость Инноса, Создателя, и начинали служить ему.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Teardrops_11_05");	//Они стали первыми членами Братства Огня! Эти слезы давали им силу, мужество и мудрость. Но это было давным-давно, и прошло уже более двузсот пятидесяти лет с тех пор, как последний раз видели Слезы Инноса.
+	AI_Output(other,self, " DIA_Pyrokar_PotionofDeath_Teardrops_15_00 " );	// So what are these Tears of Innos?
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Teardrops_11_01 " );	// When Innos realized that he would have to fight Beliar, his own brother, in order to save what had been created, his sadness was great.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Teardrops_11_02 " );	// Tears flowed from his eyes and fell into our world. There were many of them, for his heart was filled with sorrow, and he wept for thirteen years.
+	AI_Output(other,self, " DIA_Pyrokar_PotionofDeath_Teardrops_15_03 " );	// Get to the point.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Teardrops_11_04 " );	// People who found his tears and tasted them gained supernatural strength and clarity of mind. They recognized the wisdom of Innos, the Creator, and began to serve him.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Teardrops_11_05 " );	// They became the first members of the Brotherhood of Fire! These tears gave them strength, courage and wisdom. But that was a long time ago, and more than two hundred and fifty years have passed since the Tears of Innos were last seen.
 	Info_ClearChoices(DIA_Pyrokar_PotionofDeath);
 };
 
 func void DIA_Pyrokar_PotionofDeath_Weapon()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_Weapon_15_00");	//Что ты имеешь в виду под оружием?
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Weapon_11_01");	//Легенда гласит, что под воздействием этой субстанции, воины Инноса могли вершить почти сверхъестественные дела.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Weapon_11_02");	//Им была неведома усталость, и они обладали силой двух медведей.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Weapon_11_03");	//Величайшие героические подвиги прошлых дней стали возможны только благодаря Слезам Инноса.
+	AI_Output(other,self, " DIA_Pyrokar_PotionofDeath_Weapon_15_00 " );	// What do you mean by weapon?
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Weapon_11_01 " );	// Legend says that under the influence of this substance, the warriors of Innos could perform almost supernatural deeds.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Weapon_11_02 " );	// They knew no fatigue, and they had the strength of two bears.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Weapon_11_03 " );	// The greatest heroic deeds of yesteryear were only made possible by the Tears of Innos.
 	AI_Output(other,self,"DIA_Pyrokar_PotionofDeath_Weapon_15_04");	//Понятно.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Weapon_11_05");	//Но эти слезы могут также приносить страдания и смерть. Только члены нашего ордена могут пить их.
-	AI_Output(self,other,"DIA_Pyrokar_PotionofDeath_Weapon_11_06");	//Любого другого - даже паладина нашего Владыки - ожидает мучительная смерть.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Weapon_11_05 " );	// But these tears can also bring suffering and death. Only members of our order may drink them.
+	AI_Output(self,other, " DIA_Pyrokar_PotionofDeath_Weapon_11_06 " );	// Any other - even our Lord's paladin - will face a painful death.
 	Npc_RemoveInvItems(hero,ItPo_PotionOfDeath_01_Mis,1);
 	CreateInvItems(hero,ItPo_PotionOfDeath_02_Mis,1);
 };
@@ -2219,7 +2219,7 @@ instance DIA_Pyrokar_KAP6_EXIT(C_Info)
 
 func int DIA_Pyrokar_KAP6_EXIT_Condition()
 {
-	if(Kapitel == 6)
+	if (chapter ==  6 )
 	{
 		return TRUE;
 	};
@@ -2244,7 +2244,7 @@ instance DIA_Pyrokar_PICKPOCKET(C_Info)
 
 func int DIA_Pyrokar_PICKPOCKET_Condition()
 {
-	return C_Beklauen(108,550);
+	return  C_Robbery ( 108 , 550 );
 };
 
 func void DIA_Pyrokar_PICKPOCKET_Info()
@@ -2256,7 +2256,7 @@ func void DIA_Pyrokar_PICKPOCKET_Info()
 
 func void DIA_Pyrokar_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Pyrokar_PICKPOCKET);
 };
@@ -2272,7 +2272,7 @@ instance DIA_PYROKAR_KAPITELORCATTACK(C_Info)
 	npc = KDF_500_Pyrokar;
 	nr = 57;
 	condition = dia_pyrokar_kapitelorcattack_condition;
-	information = dia_pyrokar_kapitelorcattack_info;
+	info = dia_pyrokar_kapitelorcattack_info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -2288,128 +2288,128 @@ func int dia_pyrokar_kapitelorcattack_condition()
 
 func void dia_pyrokar_kapitelorcattack_info()
 {
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_01_00");	//Хвала Инносу! Наконец-то вы объявились!
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_01_01");	//А то я уж начал подумывать, что этого никогда больше не произойдет.
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_01_02");	//Ну, честно говоря, мы и не собирались возвращаться на остров - так уж получилось.
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_01_04");	//У нас есть очень важные новости для паладинов. Поэтому мне как можно быстрее надо поговорить с лордом Хагеном!
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_01_08");	//За время вашего отсутствия тут произошли просто ужасные вещи.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_01_00 " );	// Praise to Innos! Finally you showed up!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_01_01 " );	// And then I began to think that this would never happen again.
+	AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_01_02 " );	// Well, to be honest, we were not going to return to the island - it just so happened.
+	AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_01_04 " );	// We have some very important news for paladins. Therefore, I need to speak to Lord Hagen as soon as possible!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_01_08 " );	// Terrible things have happened here in your absence.
 	Info_ClearChoices(dia_pyrokar_kapitelorcattack);
-	Info_AddChoice(dia_pyrokar_kapitelorcattack,"А что здесь случилось?",dia_pyrokar_kapitelorcattack_what);
+	Info_AddChoice(dia_pyrokar_kapitelorcattack, " What happened here? " ,dia_pyrokar_kapitelorcattack_what);
 };
 
 func void dia_pyrokar_kapitelorcattack_what()
 {
 	PlayVideo("RET2_OrcSiege.BIK");
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_01");	//(обреченно) Хоринис пал! Теперь там всем заправляют орки.
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_What_01_02");	//Что? Но как это произошло?
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_03");	//Через несколько дней после вашего отплытия их орды прошли через проход и атаковали город!
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_04");	//Вначале они просто взяли его в кольцо, а уже следующей ночью - пошли на штурм.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_05");	//Ты просто не представляешь, что там творилось. Это был даже не бой, а просто кровавая резня!
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_07");	//Лорд Хаген и его люди сделали все, что смогли... Они храбро сражались до последнего, но численный перевес был просто ужасающим.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_08");	//В конце концов, те, кому все-таки удалось выжить, отошли на позиции в форт Азган, а город перешел в лапы орков.
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_What_01_09");	//М-да... Ничего себе! Выходит, ситуация полностью вышла из-под контроля!
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_12");	//Это только малая часть того ужаса, что здесь посеяли орки!
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_13");	//Монастырь магов Огня уже давно находится под их осадой, и только Иннос знает - сколько мы еще сможем продержаться.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_14");	//Все дороги контролируют военные патрули орков, а большинство крестьянских ферм просто захвачено!
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_What_01_15");	//А что с фермой Онара?
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_16");	//До нее орки пока что еще не добрались! Но думаю, что это лишь вопрос времени.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_17");	//Они разбили большой лагерь возле самой фермы и, по всей видимости, скоро пойдут на штурм.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_18");	//Правда, еще, конечно, остается надежда на форт Азган, в котором сосредоточены остатки отряда паладинов.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_19");	//Но от них нет пока никаких вестей!
-	KAPITELORCATC = TRUE;
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_01 " );	// (doomed) Khorinis has fallen! Now it's all about the orcs.
+	AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_What_01_02 " );	// What? But how did it happen?
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_03 " );	// A few days after you sailed, their hordes passed through the pass and attacked the city!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_04 " );	// At first, they just took him into the ring, and the next night they went on the assault.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_05 " );	// You just have no idea what was going on there. It was not even a battle, but just a bloody massacre!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_07 " );	// Lord Hagen and his men did their best... They fought bravely to the last, but the numbers were overwhelming.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_08 " );	// In the end, those who still managed to survive retreated to positions in Fort Azgan, and the city passed into the clutches of the orcs.
+	AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_What_01_09 " );	// M-yes... Wow! It turns out that the situation is completely out of control!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_12 " );	// This is only a small part of the horror that the orcs have sown here!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_13 " );	// The Firebenders' monastery has been under their siege for a long time, and only Innos knows how much longer we can hold out.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_14 " );	// All roads are controlled by orc war patrols, and most of the peasant farms are simply captured!
+	AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_What_01_15 " );	// And what about Onar's farm?
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_16 " );	// Orcs haven't gotten to her yet! But I think it's only a matter of time.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_17 " );	// They have set up a large camp near the farm itself, and, apparently, will soon storm.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_18 " );	// True, of course, there is still hope for Fort Azgan, in which the remnants of a squad of paladins are concentrated.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_What_01_19 " );	// But we haven't heard from them yet!
+	KAPITELORCATC = TRUE ;
 	MIS_ORсGREATWAR = LOG_Running;
 	Log_CreateTopic(TOPIC_ORсGREATWAR,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ORсGREATWAR,LOG_Running);
-	B_LogEntry(TOPIC_ORсGREATWAR,"Пирокар сообщил мне ужасные новости: сразу после нашего отплытия на Ирдорат, орды орков прошли через проход и атаковали Хоринис! Битва за город была довольно жаркая, но силы противостоящих сторон оказались слишком неравными. Лорду Хагену пришлось сдать свои позиции и отступить в королевский форт Азган со своими людьми. Город пал. Теперь там заправляют орки.");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Сами маги Огня находятся не в лучшем положении - их монастырь уже несколько недель осаждают орки. Более или менее стабильное положение на ферме Онара - туда орки пока что не добрались. Правда, они разбили небольшой лагерь рядом с фермой, и, по всей видимости, ждут удобного момента для атаки.");
+	B_LogEntry( TOPIC_OR with GREATWAR , " The pyrocar told me the terrible news: just after we sailed to Irdorath, hordes of orcs came through the pass and attacked Khorinis! The battle for the city was quite heated, but the forces of the opposing sides were too unequal. Lord Hagen had to give up his positions and retreat to the royal fort Azgan with his people. The city has fallen. Orcs now rule there. " );
+	Log_AddEntry( TOPIC_OR with GREATWAR , " The Firebenders themselves are not in the best position - their monastery has been besieged by the orcs for several weeks now. More or less stable position at Onar's farm - the orcs have not yet reached there. True, they set up a small camp near the farm, and, apparently, they are waiting for the right moment to attack. " );
 	Info_ClearChoices(dia_pyrokar_kapitelorcattack);
-	Info_AddChoice(dia_pyrokar_kapitelorcattack,"И что мы теперь будем делать?",dia_pyrokar_kapitelorcattack_do);
+	Info_AddChoice(dia_pyrokar_kapitelorcattack, " What are we going to do now? " ,dia_pyrokar_kapitelorcattack_do);
 };
 
 func void dia_pyrokar_kapitelorcattack_do()
 {
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_Do_01_01");	//И что будем делать?
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_02");	//Этого точно я пока не знаю. Но, думаю, что для начала нам надо как-то попытаться исправить сложившуюся ситуацию.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_07");	//Думаю, что прежде всего тебе следует немедленно отправиться к лорду Хагену! Это первое, что надо сделать.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_11");	//Отправляйся в королевский форт Азган как можно скорее и выясни, какова там ситуация.
+	AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_Do_01_01 " );	// And what are we going to do?
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_02 " );	// I don't know for sure yet. But I think that first we need to somehow try to rectify the current situation.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_07 " );	// I think the first thing you should do is go to Lord Hagen immediately! This is the first thing to do.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_11 " );	// Go to Azgan Royal Fort as soon as possible and find out what the situation is there.
 	B_GiveInvItems(self,other,itwr_pyrorderfort,1);
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_12");	//(серьезно) И еще кое-что...
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_13");	//Как ты уже наверняка понял, в городе полно орков, и выбраться отсюда будет для вас крайне сложно.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_15");	//Я уверен, что ты сможешь как-нибудь выбраться из этой тяжелой ситуации.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_16");	//Но большинство из тех, кто приплыл вместе с тобой, фактически оказались в западне.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_17");	//Не ровен час, когда орки пожалуют на ваш корабль, и тогда... Думаю, ты и сам все понимаешь.
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_Do_01_18");	//Понимаю. И что ты предлагаешь?
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_19");	//Единственное, что мне сейчас приходит в голову, это использовать магические руны телепортации.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_20");	//Думаю, это самый простой способ беспрепятственно уйти отсюда.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_99");	//Вот, возьми. Это все, что у меня сейчас есть.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_12 " );	// (seriously) And one more thing...
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_13 " );	// As you probably already understood, the city is full of orcs, and it will be extremely difficult for you to get out of here.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_15 " );	// I'm sure you can somehow get out of this difficult situation.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_16 " );	// But most of those who sailed with you were actually trapped.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_17 " );	// The hour is not even when the orcs come to your ship, and then... I think you yourself understand everything.
+	AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_Do_01_18 " );	// I understand. And what do you suggest?
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_19 " );	// The only thing that comes to my mind right now is to use magical teleportation runes.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_20 " );	// I think this is the easiest way to get out of here unhindered.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_99 " );	// Here, take this. This is all I have now.
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(other,ItMi_TeleportFarm,1);
 	CreateInvItems(other,ItMi_TeleportTaverne,1);
 	CreateInvItems(other,ItMi_TeleportPsicamp,1);
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_21");	//Однако я также понимаю, что, возможно, рун на всех не хватит, и многим все-таки придется пробиваться через город с боем.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_22");	//Поэтому прежде, чем решить, кому их отдать, - хорошенько подумай над этим.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_23");	//Да, и еще. Не вздумай им предлагать руны телепортации к монастырю или к проходу в Долину Рудников!
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_24");	//Тем самым ты подпишешь им смертный приговор!
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_26");	//Выход из долины, как и местность рядом с монастырем, хорошо охраняется орками.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_21 " );	// However, I also understand that there may not be enough runes for everyone, and many still have to fight their way through the city.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_22 " );	// Therefore, before deciding who to give them to, think carefully about this.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_23 " );	// Yes, and more. Do not try to offer them the runes of teleportation to the monastery or to the passage to the Valley of Mines!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_24 " );	// By doing so, you will sign their death warrant!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_26 " );	// The exit from the valley, like the area near the monastery, is heavily guarded by orcs.
 	if((VATRASBACKNW == TRUE) || (MAGEBACKNW == TRUE))
 	{
 		if((VATRASBACKNW == TRUE) && (MAGEBACKNW == TRUE))
 		{
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_29");	//Хорошо. Кстати, насчет Ватраса и Милтена можешь не беспокоиться. Маги сами смогут о себе позаботиться.
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_30");	//Они отправятся вместе со мной в монастырь - их место сейчас там.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_29 " );	// Good. By the way, don't worry about Vatras and Milten. Wizards can take care of themselves.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_30 " );	// They will go with me to the monastery - their place is now there.
 		}
 		else if((VATRASBACKNW == FALSE) && (MAGEBACKNW == TRUE))
 		{
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_31");	//Хорошо. Кстати, насчет Милтена можешь не беспокоиться. Маг сам сможет о себе позаботиться.
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_32");	//Он отправится вместе со мной в монастырь - его место сейчас там.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_31 " );	// Good. By the way, don't worry about Milten. The Magician can take care of himself.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_32 " );	// He will go with me to the monastery - his place is now there.
 		}
 		else if((VATRASBACKNW == TRUE) && (MAGEBACKNW == FALSE))
 		{
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_33");	//Хорошо. Кстати, насчет Ватраса можешь не беспокоиться. Маг сам сможет о себе позаботиться.
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_34");	//Он отправится вместе со мной в монастырь - его место сейчас там.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_33 " );	// Good. By the way, don't worry about Vatras. The Magician can take care of himself.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_34 " );	// He will go with me to the monastery - his place is now there.
 		};
 	};
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_35");	//Хорошо. Что же касательно остальных - думаю, что тебе в любом случае надо поговорить с ними.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_36");	//Это наверняка придаст им хоть немного уверенности в своих силах!
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_35 " );	// Good. As for the others, I think you should talk to them anyway.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_36 " );	// This will surely give them some confidence in their abilities!
 	if(PEDROBACKNW == TRUE)
 	{
-		AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_Do_01_37");	//А что насчет послушника Педро?
-		AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_38");	//Что?! (гневно) Этот предатель тоже с вами? Я думал, что он погиб.
-		AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_Do_01_39");	//Я нашел его в одной из пещер на острове Ирдорат. Он был в плену у орков.
-		AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_40");	//Ну раз так, то тогда, пожалуй, я заберу его вместе с собой в монастырь.
-		AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_41");	//Там он свое получит!
+		AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_Do_01_37 " );	// What about acolyte Pedro?
+		AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_38 " );	// What?! (angrily) Is that traitor with you too? I thought he was dead.
+		AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_Do_01_39 " );	// I found it in one of the caves on the island of Irdorath. He was a prisoner of the orcs.
+		AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_40 " );	// Well, if so, then, perhaps, I will take him with me to the monastery.
+		AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_41 " );	// There he will get his!
 		if(MIS_HELPPEDRO == LOG_Running)
 		{
 			B_GivePlayerXP(150);
-			AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_Do_01_42");	//Только постарайся быть с ним немного помягче.
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_43");	//Это еще почему?!
-			AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_Do_01_44");	//Я уверен, что парень не особо виноват в том, что произошло.
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_45");	//Да? И почему же ты так считаешь?
-			AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_Do_01_46");	//Давай я расскажу тебе об этом чуть позже. Сейчас для этого не самое подходящее время.
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_47");	//Хммм. Ну хорошо.
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_48");	//Но учти, что потом ты в любом случае будешь должен доказать мне его невиновность!
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_49");	//В ином же случае ты и сам знаешь, какое наказание его ожидает в монастыре.
-			PEDROCANSAVE = TRUE;
-			Log_AddEntry(TOPIC_HELPPEDRO,"Как и обещал, я замолвил словечко за послушника Педро перед Пирокаром. Правда, теперь мне еще нужно будет объяснить и доказать ему, почему я считаю его невиновным.");
+			AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_Do_01_42 " );	// Just try to be a little gentler with him.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_43 " );	// Why is that?!
+			AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_Do_01_44 " );	// I'm sure the guy isn't particularly to blame for what happened.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_45 " );	// Yes? And why do you think so?
+			AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_Do_01_46 " );	// Let me tell you about it a little later. Now is not the right time for this.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_47 " );	// Hmmm. OK then.
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_48 " );	// But keep in mind that later on you will have to prove his innocence to me anyway!
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_49 " );	// Otherwise, you yourself know what punishment awaits him in the monastery.
+			PEDROCANSAVE = TRUE ;
+			Log_AddEntry( TOPIC_HELPPEDRO , " As promised, I put in a good word for the acolyte Pedro in front of the Pyrocar. However, now I still need to explain and prove to him why I think he is innocent. " );
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_50");	//Что же касается тебя, то мне добавить больше нечего. Теперь все зависит от твоих действий!
+			AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_50 " );	// As for you, I have nothing more to add. Now everything depends on your actions!
 		};
 	};
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_Do_01_51");	//Хорошо, я все понял.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_52");	//(серьезно) Хорошо. Я же тогда отправляюсь обратно в монастырь.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_53");	//Если захочешь поговорить со мной о чем-то еще, - ты знаешь, где меня найти.
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_54");	//Да хранит тебя Иннос!
+	AI_Output(other,self, " DIA_Pyrokar_KapitelOrcAttack_Do_01_51 " );	// Okay, I got it.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_52 " );	// (seriously) Good. I then go back to the monastery.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_53 " );	// If you want to talk to me about anything else, you know where to find me.
+	AI_Output(self,other, " DIA_Pyrokar_KapitelOrcAttack_Do_01_54 " );	// May Innos protect you!
 	MIS_HELPCREW = LOG_Running;
-	PYROKARSENTTOHAGEN = TRUE;
+	PYROKARSENTTOHAGEN = TRUE ;
 	Log_CreateTopic(TOPIC_HELPCREW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HELPCREW,LOG_Running);
-	B_LogEntry(TOPIC_HELPCREW,"Пирокар попросил меня помочь остальным членам экипажа выбраться из Хориниса, захваченного орками. Он дал мне несколько рун телепортации. Они помогут остальным беспрепятственно уйти из города. Но на всех рун не хватит, да и пробиваться через толпы орков с боем смогут не все. Думаю, мне стоит обязательно поговорить с каждым из членов моей команды.");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Похоже, мне снова придется взять на себя роль спасителя этого мира. По мнению Пирокара, я единственный, кому это под силу. Надеюсь, он прав.");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Для начала я должен как можно скорее отправиться в королевский форт Азган и выяснить у лорда Хагена, в каком состоянии находятся его войска. Ведь паладины - единственная сила на острове, способная хоть как-то противостоять оркам.");
+	B_LogEntry( TOPIC_HELPCREW , " Pyrokar asked me to help the rest of the crew get out of Khorinis, which was captured by the orcs. He gave me some teleportation runes. They will help the rest of them to leave the city without hindrance. But there will not be enough runes for all, and they will be able to fight their way through the crowds of orcs not all. I think I should definitely talk to each of the members of my team. " );
+	Log_AddEntry( TOPIC_OR with GREATWAR , " Looks like I'm going to have to take on the role of savior of the world again. According to Pyrocar, I'm the only one who can. I hope he's right. " );
+	Log_AddEntry( TOPIC_OR with GREATWAR , " First, I should go to the Royal Fort Azgan as soon as possible and ask Lord Hagen about the state of his troops. After all, the paladins are the only force on the island that can somehow resist the orcs. " ) ;
 	Info_ClearChoices(dia_pyrokar_kapitelorcattack);
-	Info_AddChoice(dia_pyrokar_kapitelorcattack,"(закончить разговор)",dia_pyrokar_kapitelorcattack_away);
+	Info_AddChoice(dia_pyrokar_kapitelorcattack, " (end call) " ,dia_pyrokar_kapitelorcattack_away);
 };
 
 func void dia_pyrokar_kapitelorcattack_away()
@@ -2454,13 +2454,13 @@ instance DIA_PYROKAR_PEDROCANSAVE(C_Info)
 	condition = dia_pyrokar_pedrocansave_condition;
 	information = dia_pyrokar_pedrocansave_info;
 	permanent = FALSE;
-	description = "Поговорим насчет Педро.";
+	description = " Let's talk about Pedro. " ;
 };
 
 
 func int dia_pyrokar_pedrocansave_condition()
 {
-	if((MIS_HELPPEDRO == LOG_Running) && (PEDROCANSAVE == TRUE))
+	if (( MY_HELPPEDRO  == LOG_Running) && ( PEDROCANSAVE  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -2468,19 +2468,19 @@ func int dia_pyrokar_pedrocansave_condition()
 
 func void dia_pyrokar_pedrocansave_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_01_00");	//Поговорим насчет Педро.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_01_01");	//Хорошо. И что ты можешь сказать в его оправдание?
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_01_00 " );	// Let's talk about Pedro.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_01_01 " );	// Good. And what can you say in his defense?
 	Info_ClearChoices(dia_pyrokar_pedrocansave);
-	Info_AddChoice(dia_pyrokar_pedrocansave,"Я не знаю.",dia_pyrokar_pedrocansave_dontknow);
-	Info_AddChoice(dia_pyrokar_pedrocansave,"Полагаю, что он не виновен.",dia_pyrokar_pedrocansave_innocent);
-	Info_AddChoice(dia_pyrokar_pedrocansave,"Поверь мне на слово.",dia_pyrokar_pedrocansave_trustme);
+	Info_AddChoice(dia_pyrokar_pedrocansave, " Я не знаю. " ,dia_pyrokar_pedrocansave_dontknow);
+	Info_AddChoice(dia_pyrokar_pedrocansave, " I believe he is not guilty. " ,dia_pyrokar_pedrocansave_innocent);
+	Info_AddChoice(dia_pyrokar_pedrocansave, " Trust me. " ,dia_pyrokar_pedrocansave_trustme);
 };
 
 func void dia_pyrokar_pedrocansave_dontknow()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_DontKnow_01_00");	//Я не знаю.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_DontKnow_01_01");	//В таком случае нам и разговаривать не о чем...(властно) Я не изменю своего решения!
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_DontKnow_01_02");	//Послушник Педро будет сурово наказан за свое предательство, и сам Иннос будет тому свидетелем.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_DontKnow_01_00 " );	// I don't know.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_DontKnow_01_01 " );	// In that case, we have nothing to talk about... (imperiously) I won't change my mind!
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_DontKnow_01_02 " );	// Novice Pedro will be severely punished for his betrayal, and Innos himself will be a witness.
 	Info_ClearChoices(dia_pyrokar_pedrocansave);
 	MIS_HELPPEDRO = LOG_FAILED;
 	B_LogEntry_Failed(TOPIC_HELPPEDRO);
@@ -2489,59 +2489,59 @@ func void dia_pyrokar_pedrocansave_dontknow()
 func void dia_pyrokar_pedrocansave_trustme()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_TrustMe_01_02");	//Просто поверь мне на слово, - он невиновен.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_TrustMe_01_03");	//(гневно) Что? Да ты в своем уме, чтобы предлагать мне такое?
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_TrustMe_01_05");	//Твоя дерзость на сей раз просто не знает своего предела! У тебя нет никакого права решать за меня судьбу этого вора и предателя!
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_TrustMe_01_06");	//Вы мне многим обязаны! Неужели нельзя оказать мне такую маленькую услугу?
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_TrustMe_01_09");	//Мне кажется, что ты просишь слишком много!
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_TrustMe_01_10");	//Просто сними с Педро все обвинения и отпусти его - это все, о чем я тебя прошу.
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_TrustMe_01_11");	//Я же в свою очередь готов за него поручиться. Или тебе этого недостаточно?
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_TrustMe_01_12");	//(скрепя сердце) Ну хорошо! Если ты так слепо ручаешься за него, то я готов пойти на подобную уступку.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_TrustMe_01_13");	//В конце концов, мы действительно много чем тебе обязаны и не имеем права ставить под сомнения какие-либо твои действия.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_TrustMe_01_14");	//С послушника Педро сняты все обвинения в предательстве и воровстве.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_TrustMe_01_02 " );	// Just take my word for it, he's innocent.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_TrustMe_01_03 " );	// (angrily) What? Are you out of your mind to suggest this to me?
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_TrustMe_01_05 " );	// Your audacity just knows no limits this time! You have no right to decide for me the fate of this thief and traitor!
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_TrustMe_01_06 " );	// You owe me a lot! Can't you do me such a small favor?
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_TrustMe_01_09 " );	// I think you're asking too much!
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_TrustMe_01_10 " );	// Just drop all the charges against Pedro and let him go - that's all I ask of you.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_TrustMe_01_11 " );	// I, in turn, am ready to vouch for him. Or is that not enough for you?
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_TrustMe_01_12 " );	// (reluctantly) All right! If you so blindly vouch for him, then I am ready to make such a concession.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_TrustMe_01_13 " );	// After all, we really owe you a lot and have no right to question any of your actions.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_TrustMe_01_14 " );	// Acolyte Pedro is cleared of all charges of betrayal and theft.
 	MIS_HELPPEDRO = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HELPPEDRO,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HELPPEDRO,"Как и обещал, я помог Педро спасти его жизнь, использовав свое влияние на Пирокара.");
+	B_LogEntry( TOPIC_HELPPEDRO , " As promised, I helped Pedro save his life by using my influence with the Pyrocar. " );
 	Info_ClearChoices(dia_pyrokar_pedrocansave);
 };
 
 func void dia_pyrokar_pedrocansave_innocent()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_Innocent_01_00");	//Полагаю, что он не виновен.
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_Innocent_01_03");	//Уверен, что его просто заставили это сделать.
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_Innocent_01_04");	//Обычный послушник слишком слаб для того, чтобы сопротивляться темной магии Ищущих.
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_Innocent_01_08");	//Дай ему шанс вернуть себе веру!
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_Innocent_01_10");	//Но воровство у своих братьев достойно самого сурового наказания!
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_Innocent_01_11");	//Неужели ты полагаешь, что я способен закрыть глаза на это?!
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_Innocent_01_12");	//Я не прошу тебя этого делать. Я лишь хочу, чтобы ты сохранил ему жизнь!
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_Innocent_01_17");	//Ну хорошо...(серьезно) Если ты так горячо просишь об этом, я готов пойти на подобную уступку.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_Innocent_01_18");	//Однако за его жизнь тебе придется заплатить!
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_Innocent_01_19");	//Полагаю, что небольшое пожертвование нашему монастырю немного смягчит негодование остальных по поводу принятия подобного решения.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_Innocent_01_00 " );	// I guess he's not guilty.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_Innocent_01_03 " );	// Pretty sure he was just forced to do it.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_Innocent_01_04 " );	// A normal acolyte is too weak to resist Seekers' dark magic.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_Innocent_01_08 " );	// Give him a chance to regain his faith!
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_Innocent_01_10 " );	// But stealing from your brothers is worthy of the most severe punishment!
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_Innocent_01_11 " );	// Do you really think that I can turn a blind eye to this?!
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_Innocent_01_12 " );	// I'm not asking you to do this. I just want you to keep him alive!
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_Innocent_01_17 " );	// Okay...(seriously) If you're asking this so passionately, I'm willing to make that concession.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_Innocent_01_18 " );	// However, you will have to pay for his life!
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_Innocent_01_19 " );	// I believe that a small donation to our monastery will soften the indignation of others a little about making such a decision.
 	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_Innocent_01_20");	//Сколько?
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_Innocent_01_21");	//(властно) Пять тысяч золотых монет. Уверен, что этого вполне хватит.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_Innocent_01_21 " );	// (imperiously) Five thousand gold coins. I'm sure this will be enough.
 	Info_ClearChoices(dia_pyrokar_pedrocansave);
-	Info_AddChoice(dia_pyrokar_pedrocansave,"У меня недостаточно золота.",dia_pyrokar_pedrocansave_nomoney);
-	Info_AddChoice(dia_pyrokar_pedrocansave,"Это дело не стоит того.",dia_pyrokar_pedrocansave_tomuch);
+	Info_AddChoice(dia_pyrokar_pedrocansave, " I don't have enough gold. " ,dia_pyrokar_pedrocansave_nomoney);
+	Info_AddChoice(dia_pyrokar_pedrocansave, " This is not worth it. " ,dia_pyrokar_pedrocansave_tomuch);
 	if(Npc_HasItems(other,ItMi_Gold) >= 5000)
 	{
-		Info_AddChoice(dia_pyrokar_pedrocansave,"Вот твое золото.",dia_pyrokar_pedrocansave_money);
+		Info_AddChoice(dia_pyrokar_pedrocansave, " Here's your gold. " ,dia_pyrokar_pedrocansave_money);
 	};
 };
 
 func void dia_pyrokar_pedrocansave_nomoney()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_NoMoney_01_00");	//У меня недостаточно золота.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_NoMoney_01_01");	//Тогда поговорим об этом, когда оно у тебя будет.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_NoMoney_01_00 " );	// I don't have enough gold.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_NoMoney_01_01 " );	// Then we'll talk about it when you have it.
 	GIVEPEDROCHANCE = TRUE;
-	B_LogEntry(TOPIC_HELPPEDRO,"Пирокар согласился снять все обвинения с Педро, но только если я пожертвую его монастырю пять тысяч золотых.");
+	B_LogEntry( TOPIC_HELPPEDRO , " Pyrocar has agreed to drop all charges against Pedro, but only if I donate five thousand gold to his monastery. " );
 	Info_ClearChoices(dia_pyrokar_pedrocansave);
 };
 
 func void dia_pyrokar_pedrocansave_tomuch()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_ToMuch_01_00");	//Я не буду терять время на такие мелочи.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_ToMuch_01_01");	//В таком случае нам и разговаривать не о чем...(властно) Я не изменю своего решения!
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_ToMuch_01_02");	//Послушник Педро будет сурово наказан за свое предательство, и сам Иннос будет тому свидетелем.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_ToMuch_01_00 " );	// I won't waste time on such trifles.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_ToMuch_01_01 " );	// In that case, we have nothing to talk about... (imperiously) I won't change my mind!
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_ToMuch_01_02 " );	// Novice Pedro will be severely punished for his betrayal, and Innos himself will be a witness.
 	MIS_HELPPEDRO = LOG_FAILED;
 	B_LogEntry_Failed(TOPIC_HELPPEDRO);
 	Info_ClearChoices(dia_pyrokar_pedrocansave);
@@ -2550,13 +2550,13 @@ func void dia_pyrokar_pedrocansave_tomuch()
 func void dia_pyrokar_pedrocansave_money()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSave_Money_01_00");	//Вот твое золото.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSave_Money_01_00 " );	// Here's your gold.
 	B_GiveInvItems(other,self,ItMi_Gold,5000);
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_Money_01_01");	//Хорошо. В таком случае можешь считать, что с Педро отныне сняты все обвинения в предательстве и воровстве.
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSave_Money_01_02");	//И я очень надеюсь на то, что в дальнейшем не пожалею об этом своем решении.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_Money_01_01 " );	// Good. In this case, you can consider that all charges of betrayal and theft are now cleared from Pedro.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSave_Money_01_02 " );	// And I really hope that in the future I will not regret this decision of mine.
 	MIS_HELPPEDRO = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HELPPEDRO,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HELPPEDRO,"Как и обещал, я помог Педро спасти ему свою жизнь, купив для него индульгенцию магов Огня за огромную сумму золота.");
+	B_LogEntry( TOPIC_HELPPEDRO , " As promised, I helped Pedro save his life by buying him a Firebender indulgence for a huge amount of gold. " );
 	Info_ClearChoices(dia_pyrokar_pedrocansave);
 };
 
@@ -2568,13 +2568,13 @@ instance DIA_PYROKAR_PEDROCANSAVEFORMONEY(C_Info)
 	condition = dia_pyrokar_pedrocansaveformoney_condition;
 	information = dia_pyrokar_pedrocansaveformoney_info;
 	permanent = FALSE;
-	description = "Я хочу внести пожертвование за послушника Педро.";
+	description = " I want to make a donation for acolyte Pedro. " ;
 };
 
 
 func int dia_pyrokar_pedrocansaveformoney_condition()
 {
-	if((MIS_HELPPEDRO == LOG_Running) && (GIVEPEDROCHANCE == TRUE) && (Npc_HasItems(other,ItMi_Gold) >= 5000))
+	if (( MY_HELPER  == LOG_Running ) && ( GIVEPEDROCHANCE  ==  TRUE ) && ( Npc_HasItems ( other , ItMy_Gold ) >=  5000 )) ;
 	{
 		return TRUE;
 	};
@@ -2583,12 +2583,12 @@ func int dia_pyrokar_pedrocansaveformoney_condition()
 func void dia_pyrokar_pedrocansaveformoney_info()
 {
 	B_GivePlayerXP(400);
-	AI_Output(other,self,"DIA_Pyrokar_PedroCanSaveForMoney_01_00");	//Я хочу внести пожертвование за послушника Педро.
+	AI_Output(other,self, " DIA_Pyrokar_PedroCanSaveForMoney_01_00 " );	// I want to make a donation for acolyte Pedro.
 	B_GiveInvItems(other,self,ItMi_Gold,5000);
-	AI_Output(self,other,"DIA_Pyrokar_PedroCanSaveForMoney_01_03");	//Ну что же...(немного удивленно) В таком случае можешь считать, что с Педро отныне сняты все обвинения в предательстве и воровстве.
+	AI_Output(self,other, " DIA_Pyrokar_PedroCanSaveForMoney_01_03 " );	// Well... (a little surprised) In this case, you can consider that all charges of betrayal and theft are now cleared from Pedro.
 	MIS_HELPPEDRO = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HELPPEDRO,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HELPPEDRO,"Как и обещал, я помог Педро спасти ему свою жизнь, купив для него индульгенцию магов Огня за огромную сумму золота.");
+	B_LogEntry( TOPIC_HELPPEDRO , " As promised, I helped Pedro save his life by buying him a Firebender indulgence for a huge amount of gold. " );
 };
 
 
@@ -2599,13 +2599,13 @@ instance DIA_PYROKAR_ABOUTGUARDIANS(C_Info)
 	condition = dia_pyrokar_aboutguardians_condition;
 	information = dia_pyrokar_aboutguardians_info;
 	permanent = FALSE;
-	description = "Что тебе известно о Хранителях?";
+	description = " What do you know about Guardians? " ;
 };
 
 
 func int dia_pyrokar_aboutguardians_condition()
 {
-	if(KAPITELORCATC == TRUE)
+	if ( KAPITELORCATC  ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -2613,13 +2613,13 @@ func int dia_pyrokar_aboutguardians_condition()
 
 func void dia_pyrokar_aboutguardians_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_AboutGuardians_01_00");	//Что тебе известно о Хранителях?
-	AI_Output(self,other,"DIA_Pyrokar_AboutGuardians_01_01");	//Хранителях? (задумчиво) Боюсь, я не так много знаю об этих древних созданиях.
-	AI_Output(self,other,"DIA_Pyrokar_AboutGuardians_01_02");	//И большая часть этих знаний, скорее всего, - слухи или вымысел других людей, нежели правда.
-	AI_Output(self,other,"DIA_Pyrokar_AboutGuardians_01_04");	//Многие из тех, кто когда-либо слышал о Хранителях, полагают, что они были порождены самими богами!
-	AI_Output(self,other,"DIA_Pyrokar_AboutGuardians_01_05");	//Однако есть и те, кто считает их творением более могущественных сил, существовавших еще задолго до появления этого мира.
-	AI_Output(self,other,"DIA_Pyrokar_AboutGuardians_01_06");	//Что из всего этого есть правда, а что нет - мне, конечно, неизвестно.
-	AI_Output(self,other,"DIA_Pyrokar_AboutGuardians_01_07");	//Истинный факт существования Хранителей никому неизвестен и является большей частью мифом.
+	AI_Output(other,self, " DIA_Pyrokar_AboutGuardians_01_00 " );	// What do you know about Guardians?
+	AI_Output(self,other, " DIA_Pyrokar_AboutGuardians_01_01 " );	// Keepers? (thoughtfully) I'm afraid I don't know much about these ancient creatures.
+	AI_Output(self,other, " DIA_Pyrokar_AboutGuardians_01_02 " );	// And most of this knowledge, most likely, is rumors or fiction of other people, rather than the truth.
+	AI_Output(self,other, " DIA_Pyrokar_AboutGuardians_01_04 " );	// Many who have ever heard of Guardians believe they were spawned by the gods themselves!
+	AI_Output(self,other, " DIA_Pyrokar_AboutGuardians_01_05 " );	// However, there are those who consider them the creation of more powerful forces that existed long before the appearance of this world.
+	AI_Output(self,other, " DIA_Pyrokar_AboutGuardians_01_06 " );	// What of all this is true and what is not - I, of course, do not know.
+	AI_Output(self,other, " DIA_Pyrokar_AboutGuardians_01_07 " );	// The true fact of the existence of the Guardians is unknown to anyone and is mostly a myth.
 };
 
 
@@ -2630,7 +2630,7 @@ instance DIA_PYROKAR_GUARDIANSEXISTS(C_Info)
 	condition = dia_pyrokar_guardiansexists_condition;
 	information = dia_pyrokar_guardiansexists_info;
 	permanent = FALSE;
-	description = "Хранители вовсе не миф!";
+	description = " The Guardians are not a myth at all! " ;
 };
 
 
@@ -2645,35 +2645,35 @@ func int dia_pyrokar_guardiansexists_condition()
 func void dia_pyrokar_guardiansexists_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_00");	//Хранители вовсе не миф!
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_02");	//Я лично повстречал одного из них в храме Ирдората.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_03");	//(задумчиво) По правде говоря, мне в это очень трудно поверить. Ибо никто до этого времени не встречал их в этом мире!
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_06");	//И что же хранителю было нужно от тебя?!
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_07");	//Он хотел убить меня.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_08");	//Убить? (растерянно) Это достаточно неожиданный поворот событий.
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_14");	//Перед тем как атаковать, хранитель поведал мне их истинный смысл появления в этом мире.
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_15");	//И, по всей видимости, мое присутствие здесь может помешать им осуществить задуманное.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_16");	//И каков же их замысел?
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_17");	//Они хотят уничтожить всех богов. А вместе с ними и все остальное в этом мире!
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_18");	//О милосердный Иннос! Но как такое может быть? Зачем им это делать?!
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_19");	//Хранители полагают, что извечная борьба между Инносом и Белиаром несет лишь одно разрушение и хаос в этот мир.
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_20");	//Они хотят покончить с этой враждой раз и навсегда.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_21");	//Но неужели они думают, что боги позволят им это сделать?
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_22");	//Боюсь, что боги сейчас слишком слабы, чтобы противостоять могуществу Хранителей.
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_23");	//И отчасти все сложилось так именно по моей вине. Хранители просто использовали меня...
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_24");	//Сам не осознавая того, я каждым своим действием понемногу ослаблял их власть в этом мире.
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_25");	//И теперь они вряд ли смогут чем-то нам помочь!
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_26");	//О Иннос! Все, что ты сказал, это просто немыслимо...(растерянно) Кто бы мог подумать, что все наши действия обернутся против нас.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_27");	//И, если это действительно так, то тогда, боюсь, что мы все обречены. Нам самим никогда не одолеть Хранителей без помощи со стороны богов.
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_28");	//К тому же нельзя также забывать и об орках.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_29");	//Ах да, еще эти чертовы орки...(гневно) Мы даже с ними справиться не можем, не говоря уже об этой новой угрозе!
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_30");	//Ты еще не знаешь того, что сами Хранители помогают этим тварям!
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_31");	//Именно с их помощью они хотят уничтожить людей и, тем самым, еще больше ослабить силу богов.
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_32");	//И вот почему все усилия паладинов в войне с ними так тщетны!
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_33");	//Что?! Только этого нам еще не хватало! Все повернулось против нас и, кажется, этот мир действительно обречен.
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_34");	//Я что-нибудь придумаю.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_35");	//А что тут можно придумать? Все наши усилия будут напрасны, если уж сами Хранители жаждут нашей смерти.
-	B_LogEntry(TOPIC_GUARDIANS,"Я рассказал Пирокару о моей встрече с Хранителем Даготом в храме Ирдората и о том, что нам всем теперь угрожает. Нам необходимо подумать, как противостоять угрозе со стороны Хранителей.");
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_00 " );	// Guardians are not a myth at all!
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_02 " );	// I personally met one of them in the temple of Irdorath.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_03 " );	// (thoughtfully) To be honest, I find this very hard to believe. For no one has ever met them in this world before!
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_06 " );	// And what did the keeper want from you?!
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_07 " );	// He wanted to kill me.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_08 " );	// Kill? (bewildered) This is a rather unexpected turn of events.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_14 " );	// Before attacking, the guardian told me the true meaning of their appearance in this world.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_15 " );	// And, apparently, my presence here may prevent them from carrying out their plans.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_16 " );	// And what is their intention?
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_17 " );	// They want to destroy all gods. And with them, everything else in this world!
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_18 " );	// O merciful Innos! But how can this be? Why would they do it?!
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_19 " );	// Keepers believe that the eternal struggle between Innos and Beliar brings only one destruction and chaos to this world.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_20 " );	// They want to end this feud once and for all.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_21 " );	// But do they really think the gods will let them do it?
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_22 " );	// I'm afraid that the gods are now too weak to resist the might of the Guardians.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_23 " );	// And in part, everything turned out this way precisely because of my fault. The Guardians were just using me...
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_24 " );	// Without realizing it myself, with each of my actions, I gradually weakened their power in this world.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_25 " );	// And now they are unlikely to be able to help us with anything!
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_26 " );	// O Innos! Everything you said is simply unthinkable... (confused) Who would have thought that all our actions would turn against us.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_27 " );	// And if that's true, then I'm afraid we're all doomed. We ourselves will never defeat the Guardians without the help of the gods.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_28 " );	// Also, don't forget about orcs.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_29 " );	// Oh yeah, and those damn orcs... (angrily) We can't even deal with them, let alone this new threat!
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_30 " );	// You don't know yet that the Guardians themselves help these creatures!
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_31 " );	// It is with their help that they want to destroy people and, thereby, further weaken the power of the gods.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_32 " );	// And that's why all the efforts of the paladins in the war with them are so futile!
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_33 " );	// What?! We just didn't have enough! Everything turned against us and it seems that this world is really doomed.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansExists_01_34 " );	// I'll think of something.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansExists_01_35 " );	// What can you think of here? All our efforts will be in vain if the Guardians themselves want our death.
+	) ; _ _ _ _ _
 };
 
 instance DIA_PYROKAR_WHATDOUS(C_Info)
@@ -2683,7 +2683,7 @@ instance DIA_PYROKAR_WHATDOUS(C_Info)
 	condition = dia_pyrokar_whatdous_condition;
 	information = dia_pyrokar_whatdous_info;
 	permanent = FALSE;
-	description = "У тебя есть мысли насчет того, как нам одолеть Хранителей?";
+	description = " Do you have any idea how we can defeat the Guardians? " ;
 };
 
 func int dia_pyrokar_whatdous_condition()
@@ -2696,12 +2696,12 @@ func int dia_pyrokar_whatdous_condition()
 
 func void dia_pyrokar_whatdous_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_WhatDoUs_01_00");	//У тебя есть какие-нибудь мысли насчет того, как нам одолеть Хранителей?
-	AI_Output(self,other,"DIA_Pyrokar_WhatDoUs_01_01");	//Боюсь, что пока нет...(серьезно) И я даже представить себе не могу, как это сделать.
-	AI_Output(self,other,"DIA_Pyrokar_WhatDoUs_01_02");	//Единственное, что сейчас мне приходит в голову, так это обратиться к древним рукописям, что хранятся в тайной библиотеке монастыря.
-	AI_Output(self,other,"DIA_Pyrokar_WhatDoUs_01_03");	//Возможно, в них мне все-таки удастся найти ответы на интересующий нас вопрос.
-	AI_Output(self,other,"DIA_Pyrokar_WhatDoUs_01_04");	//Но мне понадобится некоторое время. По меньшей мере два дня.
-	B_LogEntry(TOPIC_GUARDIANS,"Пирокар отправится в тайную библиотеку монастыря, чтобы изучить древние рукописи. Возможно, в них он найдет нечто такое, что поможет нам одолеть Хранителей. Мне стоит узнать результат его поисков не раньше, чем через два дня.");
+	AI_Output(other,self, " DIA_Pyrokar_WhatDoUs_01_00 " );	// Do you have any thoughts on how we can defeat the Guardians?
+	AI_Output(self,other, " DIA_Pyrokar_WhatDoUs_01_01 " );	// I'm afraid not yet...(seriously) And I can't even imagine how to do it.
+	AI_Output(self,other, " DIA_Pyrokar_WhatDoUs_01_02 " );	// The only thing that comes to my mind now is to turn to the ancient manuscripts that are stored in the secret library of the monastery.
+	AI_Output(self,other, " DIA_Pyrokar_WhatDoUs_01_03 " );	// Perhaps, in them I will still be able to find answers to the question that interests us.
+	AI_Output(self,other, " DIA_Pyrokar_WhatDoUs_01_04 " );	// But I'll need some time. At least two days.
+	B_LogEntry( TOPIC_GUARDIANS , " Pyrocar will go to the secret library of the monastery to study the ancient manuscripts. Perhaps he will find something in them that will help us defeat the Guardians. I should not know the result of his search until two days later. " );
 	DAYDISCOVERANSWER = Wld_GetDay();
 	PYROKARBEGINSEARCH = TRUE;
 	AI_StopProcessInfos(self);
@@ -2715,12 +2715,12 @@ instance DIA_PYROKAR_WHATDOUSNOT(C_Info)
 	condition = dia_pyrokar_whatdousnot_condition;
 	information = dia_pyrokar_whatdousnot_info;
 	permanent = TRUE;
-	description = "Тебе что-нибудь удалось выяснить насчет Хранителей?";
+	description = " Have you found out anything about Guardians? " ;
 };
 
 func int dia_pyrokar_whatdousnot_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 
 	if(((daynow - 2) >= DAYDISCOVERANSWER) && (PYROKARBEGINSEARCH == TRUE) && (GATHERALLONBIGFARM == FALSE))
@@ -2731,32 +2731,32 @@ func int dia_pyrokar_whatdousnot_condition()
 
 func void dia_pyrokar_whatdousnot_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_WhatDoUsNot_01_00");	//Тебе удалось что-нибудь выяснить насчет Хранителей?
+	AI_Output(other,self, " DIA_Pyrokar_WhatDoUsNot_01_00 " );	// Did you manage to find out anything about the Guardians?
 
 	if(PYROKARMESSAGEPAL == FALSE)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_01");	//Пока нет...(серьезно) Полагаю, что это займет еще больше времени, чем я думал.
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_01 " );	// Not yet...(seriously) Guess this will take even longer than I thought.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_04");	//Да! Я исследовал несколько древних рукописей, касательно этих древних созданий, и пришел к выводу, что их все-таки можно уничтожить.
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_05");	//Точнее, не уничтожить, ибо они бессмертные существа. (серьезно) А просто лишить их части божественной силы, дабы потом изгнать из этого мира.
-		AI_Output(other,self,"DIA_Pyrokar_WhatDoUsNot_01_06");	//И как же нам это сделать?
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_07");	//Поскольку Хранители по своей сути не являются частью этого мира и их истинная обитель - некие священные чертоги Вакхана...
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_08");	//...то и их власть здесь не так безгранична, как на самом деле может показаться.
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_09");	//И, видимо, поэтому Хранители пытались ослабить богов, зная, что в своем могуществе им здесь не сравниться с тем же Инносом или Белиаром.
-		AI_Output(other,self,"DIA_Pyrokar_WhatDoUsNot_01_10");	//То есть именно сами боги могут их уничтожить?
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_11");	//В этом вся и проблема. Они могли, пока были в состоянии это сделать. Но теперь ситуация изменилась!
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_12");	//Они сами скоро могут пасть жертвой собственной непредусмотрительности, и надеяться на их помощь мы сейчас никак не можем.
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_17");	//Возможно, как раз именно тебе удастся отыскать какую-нибудь зацепку во всем этом.
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_18");	//Ведь не просто так Хранители хотели тебя убить. Выходит, что ты для них тоже представляешь серьезную угрозу!
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_19");	//А значит, пока ты жив, у нас есть призрачный шанс на спасение.
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_04 " );	// Yes! I have researched several ancient writings regarding these ancient creatures, and have come to the conclusion that they can still be destroyed.
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_05 " );	// More precisely, do not destroy, because they are immortal beings. (seriously) And just deprive them of part of the divine power, in order to then expel them from this world.
+		AI_Output(other,self, " DIA_Pyrokar_WhatDoUsNot_01_06 " );	// And how do we do this?
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_07 " );	// Since the Guardians are not inherently part of this world and their true abode is some sacred halls of Wakhan...
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_08 " );	// ...then their power here is not as limitless as it might actually seem.
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_09 " );	// And, apparently, that is why the Keepers tried to weaken the gods, knowing that in their power they cannot be compared here with the same Innos or Beliar.
+		AI_Output(other,self, " DIA_Pyrokar_WhatDoUsNot_01_10 " );	// That is, it is the gods themselves who can destroy them?
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_11 " );	// That's the whole problem. They could, as long as they were able to do it. But now the situation has changed!
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_12 " );	// They themselves may soon fall victim to their own hindsight, and we cannot hope for their help now.
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_17 " );	// You may be the one who can find some clue in all this.
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_18 " );	// It's not just that the Guardians wanted to kill you. It turns out that you are a serious threat to them too!
+		AI_Output(self,other, " DIA_Pyrokar_WhatDoUsNot_01_19 " );	// So, as long as you're alive, we have a ghostly chance of salvation.
 		GATHERALLONBIGFARM = TRUE;
-		B_LogEntry(TOPIC_GUARDIANS,"Пирокар поведал мне обо всем, что смог найти в древних рукописях касательно Хранителей. Их могущество не столь безгранично, как мы полагали ранее - сила богов вполне способна их уничтожить. Именно поэтому они так жаждали ослабить влияние Инноса, Белиара и Аданоса в этом мире. Думаю, нападение орков на Хоринис тоже как-то с этим связано. Мне стоит поискать ответ также и на этот вопрос.");
+		B_LogEntry( TOPIC_GUARDIANS , " Pyrokar told me everything he could find in the ancient manuscripts regarding the Guardians. Their power is not as limitless as we previously believed - the power of the gods is quite capable of destroying them. That is why they were so eager to weaken the influence of Innos, Beliar and Adanos in this world. I think the orc attack on Khorinis is also something to do with this. I should look for an answer to this question as well. " );
 
 		if(PyrokarTellAboutCreatures == TRUE)
 		{
-			B_LogEntry_Quiet(TOPIC_GUARDIANS,"Единственный шанс одолеть Хранителей - попытаться отыскать еще какое-нибудь божество, способное противостоять их мощи.");
+			B_LogEntry_Quiet( TOPIC_GUARDIANS , " The only way to defeat the Guardians is to try to find another deity that can withstand their power. " );
 		};
 
 		Npc_ExchangeRoutine(self,"Start");
@@ -2770,7 +2770,7 @@ instance DIA_PYROKAR_ORCSECRET(C_Info)
 	condition = DIA_PYROKAR_ORCSECRET_condition;
 	information = DIA_PYROKAR_ORCSECRET_info;
 	permanent = FALSE;
-	description = "Меня прислал Ли.";
+	description = " Lee sent me. " ;
 };
 
 func int DIA_PYROKAR_ORCSECRET_condition()
@@ -2784,35 +2784,35 @@ func int DIA_PYROKAR_ORCSECRET_condition()
 func void DIA_PYROKAR_ORCSECRET_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_01");	//Меня прислал Ли.
-	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_02");	//В последней стычке с орками он обратил внимание, что некоторые из них были почти неуязвимы.
-	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_04");	//Это его очень беспокоит, поскольку у людей в таком случае не будет ни единого шанса против орков в предстоящей битве.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_05");	//(задумчиво) На мой взгляд, это все звенья одной цепи!
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_06");	//Наверняка и тут не обошлось без вмешательства со стороны Хранителей.
-	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_07");	//Значит, пока мы их не уничтожим, все наши действия будут бессмысленными?
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_08");	//Боюсь, что так.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_09");	//Однако ты должен понимать, что Хранители - это все-таки божественные создания.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_10");	//Они настолько же могущественны, насколько и тщеславны!
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_11");	//Так что вряд ли они снизойдут до того, чтобы самолично явиться в этот мир, чтобы начать помогать этим зеленокожим тварям.
-	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_12");	//Они уже это делали! Я это точно знаю, потому что...
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_13");	//Ты - совсем другое дело. По сути, ты стал их камнем преткновения в желании повелевать этим миром.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_14");	//Но сейчас им нет особого смысла являть свое вмешательство столь явно.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_15");	//Ведь боги этого мира все еще слишком сильны, и Хранители пока что не готовы открыто бросить им вызов.
-	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_16");	//Тогда каким образом они помогают оркам?
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_17");	//Возможно, посредством своих слуг в этом мире...(задумчиво) Например, каковыми в свое время являлись драконы в Долине Рудников.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_18");	//Магическая аура, окружавшая эти древние и могущественные создания, вполне бы могла сделать орков еще более сильными и опасными врагами.
-	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_19");	//Опять драконы?
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_20");	//Ты меня не совсем понял. Их я привел лишь в качестве примера.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_21");	//На самом деле, это могут быть любые другие существа, подчиняющиеся воле Хранителей.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_22");	//Правда, это всего лишь мое предположение. Поэтому я бы не стал утверждать это с абсолютной уверенностью.
-	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_23");	//Что же это за существа и где их найти?
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_24");	//Извини, но я не знаю ответа на этот вопрос. Попробуй его поискать в другом месте.
-	B_LogEntry(TOPIC_ORCSECRET,"Пирокар предположил, что Хранители даровали защиту оркам посредством каких-то могущественных созданий.");
+	AI_Output(other,self, " DIA_PYROKAR_ORCSECRET_01_01 " );	// Lee sent me.
+	AI_Output(other,self, " DIA_PYROKAR_ORCSECRET_01_02 " );	// In the last skirmish with the orcs, he noticed that some of them were almost invulnerable.
+	AI_Output(other,self, " DIA_PYROKAR_ORCSECRET_01_04 " );	// This worries him very much, since the humans will not stand a chance against the orcs in the upcoming battle.
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_05 " );	// (thoughtfully) In my opinion, these are all links of the same chain!
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_06 " );	// For sure, and here it was not without interference from the Guardians.
+	AI_Output(other,self, " DIA_PYROKAR_ORCSECRET_01_07 " );	// So, until we destroy them, all our actions will be meaningless?
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_08 " );	// I'm afraid so.
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_09 " );	// However, you must understand that Guardians are still divine beings.
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_10 " );	// They are as powerful as they are vain!
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_11 " );	// So it's unlikely they'll condescend to personally appear in this world to start helping these green-skinned creatures.
+	AI_Output(other,self, " DIA_PYROKAR_ORCSECRET_01_12 " );	// They already did it! I know this for sure because...
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_13 " );	// You are a completely different matter. In fact, you have become their stumbling block in their desire to rule this world.
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_14 " );	// But it doesn't make much sense for them to make their intervention so obvious right now.
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_15 " );	// After all, the gods of this world are still too strong, and the Guardians are not yet ready to openly challenge them.
+	AI_Output(other,self, " DIA_PYROKAR_ORCSECRET_01_16 " );	// Then how do they help the orcs?
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_17 " );	// Perhaps through their servants in this world... (thoughtfully) For example, what were the dragons in their time in the Valley of Mines.
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_18 " );	// The magical aura that surrounded these ancient and powerful creatures could well have made the orcs even more powerful and dangerous enemies.
+	AI_Output(other,self, " DIA_PYROKAR_ORCSECRET_01_19 " );	// Dragons again?
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_20 " );	// You misunderstood me. I gave them only as an example.
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_21 " );	// In fact, it can be any other creatures that obey the will of the Guardians.
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_22 " );	// True, this is just my guess. So I wouldn't say this with absolute certainty.
+	AI_Output(other,self, " DIA_PYROKAR_ORCSECRET_01_23 " );	// What are these creatures and where to find them?
+	AI_Output(self,other, " DIA_PYROKAR_ORCSECRET_01_24 " );	// Sorry, but I don't know the answer to this question. Try looking for it elsewhere.
+	B_LogEntry( TOPIC_ORCSECRET , "The Pyrokar suggested that the Guardians granted protection to the orcs through some powerful creature. " );
 	PyrokarTellAboutCreatures = TRUE;
 
 	if(GATHERALLONBIGFARM == TRUE)
 	{
-		B_LogEntry_Quiet(TOPIC_GUARDIANS,"Возможно, единственный шанс одолеть Хранителей - попытаться отыскать еще какое-нибудь божество, способное противостоять их мощи.");
+		B_LogEntry_Quiet( TOPIC_GUARDIANS , " Perhaps the only chance to defeat the Guardians is to try to find another deity that can withstand their power. " );
 	};
 };
 
@@ -2823,7 +2823,7 @@ instance DIA_PYROKAR_GATHERALLONBIGFARMTWO(C_Info)
 	condition = dia_pyrokar_gatherallonbigfarmtwo_condition;
 	information = dia_pyrokar_gatherallonbigfarmtwo_info;
 	permanent = FALSE;
-	description = "У меня есть для тебя новость.";
+	description = " I have some news for you. " ;
 };
 
 func int dia_pyrokar_gatherallonbigfarmtwo_condition()
@@ -2837,11 +2837,11 @@ func int dia_pyrokar_gatherallonbigfarmtwo_condition()
 func void dia_pyrokar_gatherallonbigfarmtwo_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Pyrokar_GatherAllOnBigFarmTwo_01_00");	//У меня есть для тебя новость.
-	AI_Output(other,self,"DIA_Pyrokar_GatherAllOnBigFarmTwo_01_02");	//Паладины готовы выступить на позиции в Хоринис. Лорд Хаген со своими людьми встанет лагерем недалеко от фермы Онара, и просит тебя быть готовым присоединиться к нему.
-	AI_Output(self,other,"DIA_Pyrokar_GatherAllOnBigFarmTwo_01_03");	//Но почему он решил именно там занять оборону?
-	AI_Output(other,self,"DIA_Pyrokar_GatherAllOnBigFarmTwo_01_04");	//По его сведениям, орки стягивают свои основные силы именно к этой ферме. Поэтому глава паладинов уверен, что они именно туда нанесут свой удар!
-	AI_Output(self,other,"DIA_Pyrokar_GatherAllOnBigFarmTwo_01_05");	//Все ясно...(серьезно) Тогда в скором времени мы присоединимся к его армии.
+	AI_Output(other,self, " DIA_Pyrokar_GatherAllOnBigFarmTwo_01_00 " );	// I have news for you.
+	AI_Output(other,self, " DIA_Pyrokar_GatherAllOnBigFarmTwo_01_02 " );	// The paladins are ready to move into position in Khorinis. Lord Hagen and his men will camp near Onar's farm, and asks you to be ready to join him.
+	AI_Output(self,other, " DIA_Pyrokar_GatherAllOnBigFarmTwo_01_03 " );	// But why did he decide to take up defense there?
+	AI_Output(other,self, " DIA_Pyrokar_GatherAllOnBigFarmTwo_01_04 " );	// According to his information, the orcs are concentrating their main forces precisely to this farm. Therefore, the head of the paladins is sure that they will strike there!
+	AI_Output(self,other, " DIA_Pyrokar_GatherAllOnBigFarmTwo_01_05 " );	// All right...(seriously) Then we'll join his army soon.
 	PYROKARMESSAGEPAL = TRUE;
 };
 
@@ -2853,13 +2853,13 @@ instance DIA_PYROKAR_TELLTOHAGENFORT(C_Info)
 	condition = dia_pyrokar_telltohagenfort_condition;
 	information = dia_pyrokar_telltohagenfort_info;
 	permanent = FALSE;
-	description = "Я говорил с главой паладинов.";
+	description = " I spoke to the head of the paladins. " ;
 };
 
 
 func int dia_pyrokar_telltohagenfort_condition()
 {
-	if((KAPITELORCATC == TRUE) && (TELLTOHAGENFORT == TRUE) && (HAGENNOMORETIMEWAIT == FALSE))
+	if (( CAPITELORCATC  ==  TRUE ) && ( TELLTOHAGENFORT  ==  TRUE ) && ( HAGENNOMORETIMEWAIT  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -2868,11 +2868,11 @@ func int dia_pyrokar_telltohagenfort_condition()
 func void dia_pyrokar_telltohagenfort_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_TellToHagenFort_01_00");	//Я говорил с главой паладинов.
-	AI_Output(self,other,"DIA_Pyrokar_TellToHagenFort_01_01");	//И что сказал лорд Хаген? (взволнованно) Как он сам оценивает сложившуюся ситуацию?
-	AI_Output(other,self,"DIA_Pyrokar_TellToHagenFort_01_02");	//Ситуация хуже некуда! Паладины понесли огромные потери при защите города, и теперь вряд ли смогут открыто выступить против орков.
-	AI_Output(other,self,"DIA_Pyrokar_TellToHagenFort_01_03");	//Поэтому он и его люди пока останутся в форте и будут готовить план контратаки.
-	AI_Output(self,other,"DIA_Pyrokar_TellToHagenFort_01_12");	//Эх. Надеюсь он понимает, что делает.
+	AI_Output(other,self, " DIA_Pyrokar_TellToHagenFort_01_00 " );	// I spoke to the head of the paladins.
+	AI_Output(self,other, " DIA_Pyrokar_TellToHagenFort_01_01 " );	// And what did Lord Hagen say? (excitedly) How does he himself assess the current situation?
+	AI_Output(other,self, " DIA_Pyrokar_TellToHagenFort_01_02 " );	// The situation couldn't be worse! The paladins have suffered huge losses while defending the city, and now they are unlikely to be able to openly oppose the orcs.
+	AI_Output(other,self, " DIA_Pyrokar_TellToHagenFort_01_03 " );	// Therefore, he and his men will stay at the fort for the time being and plan a counterattack.
+	AI_Output(self,other, " DIA_Pyrokar_TellToHagenFort_01_12 " );	// Eh. I hope he understands what he's doing.
 };
 
 
@@ -2883,13 +2883,13 @@ instance DIA_PYROKAR_KDFANSWER(C_Info)
 	condition = dia_pyrokar_kdfanswer_condition;
 	information = dia_pyrokar_kdfanswer_info;
 	permanent = FALSE;
-	description = "Паладинам нужна ваша помощь!";
+	description = "The paladins need your help! " ;
 };
 
 
 func int dia_pyrokar_kdfanswer_condition()
 {
-	if((HAGENOTHERSAGREED == TRUE) && (KDF_JOINHAGEN == FALSE))
+	if (( HAGENOTHERSAGREED  ==  TRUE ) && ( KDF_JOINHAGEN  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -2898,13 +2898,13 @@ func int dia_pyrokar_kdfanswer_condition()
 func void dia_pyrokar_kdfanswer_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_KDFAnswer_01_00");	//Паладинам нужна ваша помощь!
-	AI_Output(other,self,"DIA_Pyrokar_KDFAnswer_01_02");	//Лорд Хаген хочет выступить против орков, и сейчас собирает под свои знамена всех людей, готовых поддержать его в этом.
-	AI_Output(self,other,"DIA_Pyrokar_KDFAnswer_01_03");	//Что же, это хорошая новость. И мы, безусловно, окажем ему всяческую поддержку в борьбе с этими тварями.
-	AI_Output(self,other,"DIA_Pyrokar_KDFAnswer_01_04");	//Однако все-таки не стоит забывать, что орки - это сейчас не самый главный наш враг. Хранители - вот истинная угроза этого мира!
-	AI_Output(self,other,"DIA_Pyrokar_KDFAnswer_01_05");	//Поэтому, прежде всего, мы должны решить именно эту проблему. Иначе, все будет напрасно.
+	AI_Output(other,self, " DIA_Pyrokar_KDFAnswer_01_00 " );	// Paladins need your help!
+	AI_Output(other,self, " DIA_Pyrokar_KDFAnswer_01_02 " );	// Lord Hagen wants to oppose the orcs, and now gathers under his banner all the people who are ready to support him in this.
+	AI_Output(self,other, " DIA_Pyrokar_KDFAnswer_01_03 " );	// Well, that's good news. And we will certainly give him every support in the fight against these creatures.
+	AI_Output(self,other, " DIA_Pyrokar_KDFAnswer_01_04 " );	// However, we should not forget that the orcs are not our main enemy now. The Guardians are the true threat to this world!
+	AI_Output(self,other, " DIA_Pyrokar_KDFAnswer_01_05 " );	// Therefore, first of all, we must solve this particular problem. Otherwise, everything will be in vain.
 	KDF_JOINHAGEN = TRUE;
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Маги Огня поддержат паладинов в сражении с орками.");
+	Log_AddEntry( TOPIC_OR with GREATWAR , " The Fire Mages will support the paladins against the orcs. " );
 };
 
 
@@ -2915,7 +2915,7 @@ instance DIA_PYROKAR_STRANGETHINGS(C_Info)
 	condition = dia_pyrokar_strangethings_condition;
 	information = dia_pyrokar_strangethings_info;
 	permanent = FALSE;
-	description = "Стали происходить довольно странные вещи...";
+	description = " Strange things started to happen... " ;
 };
 
 
@@ -2929,28 +2929,28 @@ func int dia_pyrokar_strangethings_condition()
 
 func void dia_pyrokar_strangethings_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_00");	//Стали происходить довольно странные вещи...
-	AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_01");	//Какие именно?
+	AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_00 " );	// Strange things started to happen...
+	AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_01 " );	// Which ones exactly?
 
 	if((FIRSTLOOKONTOTEM == TRUE) && (FIRSTSTRIKEME == TRUE))
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_02");	//Путешествуя по острову, я случайно наткнулся на огромную и необычного вида статую.
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_03");	//Могу поспорить, что раньше я никогда ее там не видел!
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_04");	//(задумчиво) Это действительно странно, поскольку недалеко от монастыря появилась точно такая же.
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_05");	//Еще мне показалось, что она излучает какую-то очень странную магическую энергию, от которой, если честно, мне становится немного не по себе.
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_06");	//Ты не знаешь, что бы это все могло значить?
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_07");	//Боюсь, что нет. Но полагаю, что тебе пока следует держаться подальше от них. Еще неизвестно, какими именно магическими свойствами они обладают.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_08");	//Возможно, это дело рук Хранителей.
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_09");	//Но это еще не все.
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_10");	//Недавно, когда я попытался атаковать одного из орков, в меня ударил сильный разряд молнии, чуть не убивший меня.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_12");	//(задумчиво) Кажется, я начинаю кое-что понимать.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_15");	//Я предполагаю, что те необычные статуи, которые ты повстречал на острове, служат оркам в качестве некоторого рода защитных тотемов.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_16");	//И судя по всему, в их близи эти твари практически непобедимы!
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_17");	//А если учесть, что сами орки вряд ли обладают такими познаниями в магии, то из всего этого можно сделать только один вывод - за всем этим стоят именно Хранители!
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_20");	//И теперь наш единственный шанс одолеть орков - это лишить их поддержки Хранителей.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_23");	//Мне пока неизвестно, насколько велико влияние этих древних артефактов и дальность их действия.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_24");	//Так что, думаю, будет лучше, если ты пока будешь обходить стороной большие скопления орков.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_02 " );	// Traveling around the island, I accidentally stumbled upon a huge and unusual-looking statue.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_03 " );	// I bet I've never seen her there before!
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_04 " );	// (thoughtfully) It's really strange, because not far from the monastery appeared exactly the same.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_05 " );	// I also thought she was emitting some kind of very strange magical energy, which, to be honest, makes me a little uncomfortable.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_06 " );	// You don't know what all this could mean?
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_07 " );	// I'm afraid not. But I think you should stay away from them for now. It is still unknown exactly what magical properties they possess.
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_08 " );	// Perhaps this is the work of the Guardians.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_09 " );	// But that's not all.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_10 " );	// Recently, when I tried to attack one of the orcs, I was hit by a strong bolt of lightning, almost killing me.
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_12 " );	// (thoughtfully) I seem to be starting to understand something.
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_15 " );	// I assume that those unusual statues you met on the island serve the orcs as some sort of protective totems.
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_16 " );	// And by the looks of things, these creatures are practically invincible at close range!
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_17 " );	// And given that the orcs themselves are unlikely to have such knowledge of magic, then only one conclusion can be drawn from all this - it is the Guardians who are behind all this!
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_20 " );	// And now our only chance to defeat the orcs is to deprive them of the support of the Guardians.
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_23 " );	// I don't yet know how much influence these ancient artifacts have and their range.
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_24 " );	// So I think it's best if you stay away from large concentrations of orcs for the time being.
 		MIS_STRANGETHINGS = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_STRANGETHINGS,LOG_SUCCESS);
 	}
@@ -2959,24 +2959,24 @@ func void dia_pyrokar_strangethings_info()
 		if(FIRSTLOOKONTOTEM == TRUE)
 		{
 			B_GivePlayerXP(200);
-			AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_27");	//Путешествуя по острову, я случайно наткнулся на огромного и необычного вида статую.
-			AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_28");	//Могу поспорить, что раньше ее там я не никогда видел!
-			AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_29");	//(задумчиво) Это действительно странно, поскольку недалеко от монастыря появилась точно такая же.
-			AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_30");	//И еще мне показалось, что она излучает какую-то очень странную магическую энергию, от которой, если честно, мне становится немного не по себе.
-			AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_31");	//Ты не знаешь, что бы это все могло значить?
-			AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_32");	//Боюсь, что нет. Но полагаю, что тебе пока следует держаться подальше от них. Еще неизвестно, какими именно магическими свойствами они обладают.
-			AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_33");	//Возможно, это дело рук Хранителей.
-			AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_34");	//Хорошо, мне все ясно.
+			AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_27 " );	// Traveling around the island, I accidentally stumbled upon a huge and unusual-looking statue.
+			AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_28 " );	// I bet I've never seen her there before!
+			AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_29 " );	// (thoughtfully) It's really strange, because not far from the monastery appeared exactly the same.
+			AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_30 " );	// And it also seemed to me that she emits some very strange magical energy, which, to be honest, makes me a little uncomfortable.
+			AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_31 " );	// You don't know what all this could mean?
+			AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_32 " );	// I'm afraid not. But I think you should stay away from them for now. It is still unknown exactly what magical properties they possess.
+			AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_33 " );	// Perhaps this is the work of the Guardians.
+			AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_34 " );	// Okay, I'm clear.
 			STRIKENODISCOVER = TRUE;
-			B_LogEntry(TOPIC_STRANGETHINGS,"Я рассказал Пирокару о странных статуях, которые встретил на острове. Он посоветовал мне держаться от них подальше, поскольку не исключает, что все это дело рук Хранителей, а с их древней магией лучше связываться.");
+			B_LogEntry( TOPIC_STRANGETHINGS , " I told Pyrokar about the strange statues I saw on the island. He advised me to stay away from them, as he does not exclude that all this is the work of the Guardians, and it is better to mess with their ancient magic. " );
 		};
 		if(FIRSTSTRIKEME == TRUE)
 		{
 			B_GivePlayerXP(200);
-			AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_35");	//Недавно, когда я попытался атаковать одного из орков, в меня ударил сильный разряд молнии, чуть не убивший меня.
-			AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_37");	//(задумчиво) Это действительно крайне неожиданно! Я даже и не знаю, что тебе сказать на это.
-			AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_38");	//В любом случае постарайся пока обходить стороной патрули орков.
-			B_LogEntry(TOPIC_STRANGETHINGS,"Я рассказал Пирокару о своей попытке атаковать орков и том, что из всего этого получилось. Он посоветовал мне держаться от них подальше, пока не откроются все обстоятельства этого необычного поворота дел.");
+			AI_Output(other,self, " DIA_Pyrokar_StrangeThings_01_35 " );	// Recently, when I tried to attack one of the orcs, I was hit by a strong bolt of lightning, almost killing me.
+			AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_37 " );	// (thoughtfully) This is really quite unexpected! I don't even know what to say to you.
+			AI_Output(self,other, " DIA_Pyrokar_StrangeThings_01_38 " );	// In any case, try to avoid orc patrols for now.
+			B_LogEntry( TOPIC_STRANGETHINGS , " I told Pyrokar about my attempt to attack the orcs and what came of it. He advised me to stay away from them until the full circumstances of this unusual turn of events were revealed. " );
 		};
 	};
 };
@@ -2988,7 +2988,7 @@ instance DIA_PYROKAR_STRANGETHINGSAGAIN(C_Info)
 	condition = dia_pyrokar_strangethingsagain_condition;
 	information = dia_pyrokar_strangethingsagain_info;
 	permanent = FALSE;
-	description = "По поводу странных вещей...";
+	description = " About strange things... " ;
 };
 
 func int dia_pyrokar_strangethingsagain_condition()
@@ -3002,28 +3002,28 @@ func int dia_pyrokar_strangethingsagain_condition()
 func void dia_pyrokar_strangethingsagain_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_StrangeThingsAgain_01_00");	//По поводу странных вещей...
-	AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_01");	//Да? Случилось что-нибудь еще?
+	AI_Output(other,self, " DIA_Pyrokar_StrangeThingsAgain_01_00 " );	// About strange things...
+	AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_01 " );	// Yes? Has anything else happened?
 	if(STRIKENODISCOVER == TRUE)
 	{
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThingsAgain_01_02");	//Недавно, когда я попытался атаковать одного из орков, в меня ударил сильный разряд молнии, чуть не убивший меня.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_04");	//(задумчиво) Кажется, я начинаю кое-что понимать.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThingsAgain_01_02 " );	// Recently, when I tried to attack one of the orcs, I was hit by a strong bolt of lightning, almost killing me.
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_04 " );	// (thoughtfully) I seem to be starting to understand something.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThingsAgain_01_06");	//Путешествуя по острову, я случайно наткнулся на огромную и необычного вида статую.
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThingsAgain_01_07");	//Могу поспорить, что раньше ее там я не никогда видел!
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_08");	//(задумчиво) Это действительно странно, поскольку недалеко от монастыря появилась точно такая же.
-		AI_Output(other,self,"DIA_Pyrokar_StrangeThingsAgain_01_09");	//И еще мне показалось, что эта статуя излучает какую-то очень странную магическую энергию, от которой, если честно, мне становится немного не по себе.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_10");	//(задумчиво) Кажется, я начинаю кое-что понимать.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThingsAgain_01_06 " );	// Traveling around the island, I accidentally stumbled upon a huge and unusual-looking statue.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThingsAgain_01_07 " );	// I bet I've never seen her there before!
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_08 " );	// (thoughtfully) It's really strange, because not far from the monastery appeared exactly the same.
+		AI_Output(other,self, " DIA_Pyrokar_StrangeThingsAgain_01_09 " );	// And I also thought that this statue emits some very strange magical energy, which, to be honest, makes me a little uncomfortable.
+		AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_10 " );	// (thoughtfully) I seem to be starting to understand something.
 	};
-	AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_13");	//Я предполагаю, что те необычные статуи, которые ты повстречал на острове, служат оркам в качестве некоторого рода защитных тотемов.
-	AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_14");	//И судя по всему, в их близи эти твари практически непобедимы!
-	AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_15");	//А если учесть, что сами орки навряд ли обладают такими познаниями в магии, то из всего этого можно сделать только один вывод - за всем этим стоят именно Хранители!
-	AI_Output(other,self,"DIA_Pyrokar_StrangeThingsAgain_01_16");	//И как же нам теперь быть со всем этим?
-	AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_18");	//Не знаю, но я уверен, что теперь наш единственный шанс одолеть орков - это лишить их поддержки Хранителей.
-	AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_21");	//Мне пока неизвестно, насколько велико влияние этих древних артефактов и дальность их действия.
-	AI_Output(self,other,"DIA_Pyrokar_StrangeThingsAgain_01_22");	//Так что, думаю, будет лучше, если ты пока будешь обходить стороной большие скопления орков.
+	AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_13 " );	// I assume that those unusual statues you met on the island serve the orcs as some sort of protective totems.
+	AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_14 " );	// And by the looks of things, these creatures are practically invincible at close range!
+	AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_15 " );	// And given that the orcs themselves are unlikely to have such knowledge of magic, then only one conclusion can be drawn from all this - the Guardians are behind all this!
+	AI_Output(other,self, " DIA_Pyrokar_StrangeThingsAgain_01_16 " );	// And how do we deal with all this now?
+	AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_18 " );	// I don't know, but I'm sure our only chance to defeat the orcs now is to deprive them of the support of the Guardians.
+	AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_21 " );	// I don't yet know how much influence these ancient artifacts have and their range.
+	AI_Output(self,other, " DIA_Pyrokar_StrangeThingsAgain_01_22 " );	// So I think it's best if you stay away from large concentrations of orcs for the time being.
 	MIS_STRANGETHINGS = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_STRANGETHINGS,LOG_SUCCESS);
 };
@@ -3035,7 +3035,7 @@ instance DIA_PYROKAR_TRANSENERGY(C_Info)
 	condition = dia_pyrokar_transenergy_condition;
 	information = dia_pyrokar_transenergy_info;
 	permanent = FALSE;
-	description = "Мне нужна твоя помощь.";
+	description = " I need your help. " ;
 };
 
 func int dia_pyrokar_transenergy_condition()
@@ -3049,16 +3049,16 @@ func int dia_pyrokar_transenergy_condition()
 func void dia_pyrokar_transenergy_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_TransEnergy_01_00");	//Мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_Pyrokar_TransEnergy_01_01");	//Помощь? Какая именно?
-	AI_Output(other,self,"DIA_Pyrokar_TransEnergy_01_02");	//Мне срочно необходим свиток с заклинанием, способным перенести энергию из одного предмета в другой.
-	AI_Output(other,self,"DIA_Pyrokar_TransEnergy_01_03");	//Ты сможешь сделать для меня такой?
-	AI_Output(self,other,"DIA_Pyrokar_TransEnergy_01_04");	//(задумчиво) Это будет непросто.
-	AI_Output(self,other,"DIA_Pyrokar_TransEnergy_01_07");	//Все это займет у меня кое-какое время.
-	AI_Output(self,other,"DIA_Pyrokar_TransEnergy_01_12");	//Формула нужного тебе заклинания достаточно сложна, поэтому спешка в его расчетах может повлечь за собой непредсказуемые последствия.
-	AI_Output(self,other,"DIA_Pyrokar_TransEnergy_01_15");	//Мне потребуется около суток на это.
+	AI_Output(other,self, " DIA_Pyrokar_TransEnergy_01_00 " );	// I need your help.
+	AI_Output(self,other, " DIA_Pyrokar_TransEnergy_01_01 " );	// Help? Which one?
+	AI_Output(other,self, " DIA_Pyrokar_TransEnergy_01_02 " );	// I urgently need a scroll with a spell that can transfer energy from one item to another.
+	AI_Output(other,self, " DIA_Pyrokar_TransEnergy_01_03 " );	// Can you make one for me?
+	AI_Output(self,other, " DIA_Pyrokar_TransEnergy_01_04 " );	// (thoughtfully) It won't be easy.
+	AI_Output(self,other, " DIA_Pyrokar_TransEnergy_01_07 " );	// This will take me a while.
+	AI_Output(self,other, " DIA_Pyrokar_TransEnergy_01_12 " );	// The formula for the spell you need is quite complicated, so rushing to calculate it can have unpredictable consequences.
+	AI_Output(self,other, " DIA_Pyrokar_TransEnergy_01_15 " );	// It will take me about a day to do this.
 	TRANSENERGYDAY = Wld_GetDay();
-	B_LogEntry(TOPIC_GUARDIANS,"Я обратился к Пирокару за помощью в создании свитка с заклинанием, способным перенести всю энергию магических артефактов в рудный клинок. Как и ожидалось, создание подобного заклинания для верховного мага Огня не составит особых проблем, однако придется подождать около суток.");
+	B_LogEntry( TOPIC_GUARDIANS , " I asked Pyrokar for help in creating a scroll with a spell that could transfer all the energy of magical artifacts into an ore blade. As expected, creating such a spell for the archmage of Fire will not be too much of a problem, but it will take about a day. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -3074,7 +3074,7 @@ instance DIA_PYROKAR_TRANSENERGYDONE(C_Info)
 
 func int dia_pyrokar_transenergydone_condition()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -3087,8 +3087,8 @@ func int dia_pyrokar_transenergydone_condition()
 func void dia_pyrokar_transenergydone_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_Pyrokar_TransEnergyDone_01_00");	//Свиток с нужным тебе заклинанием уже готов!
-	AI_Output(self,other,"DIA_Pyrokar_TransEnergyDone_01_01");	//Вот, возьми его. И главное, помни, что обращаться с ним нужно предельно аккуратно.
+	AI_Output(self,other, " DIA_Pyrokar_TransEnergyDone_01_00 " );	// The scroll with the spell you need is ready!
+	AI_Output(self,other, " DIA_Pyrokar_TransEnergyDone_01_01 " );	// Here, take it. And most importantly, remember that you need to handle it with extreme care.
 	B_GiveInvItems(self,other,itwr_transferenergy,1);
 };
 
@@ -3113,17 +3113,17 @@ func int dia_pyrokar_runemagic_condition()
 
 func void dia_pyrokar_runemagic_info()
 {
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagic_01_00");	//(облегченно) Хвала Инносу - ты жив!
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagic_01_01");	//А то я уже начал опасаться, что этим тварям все-таки удалось добраться и до тебя.
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagic_01_02");	//Нет, все в полном порядке.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagic_01_00 " );	// (relieved) Praise Innos - you're alive!
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagic_01_01 " );	// And then I already began to fear that these creatures still managed to get to you.
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagic_01_02 " );	// No, everything is fine.
 
  	if(HERONOTJOINBIGBATTLE == FALSE)
 	{
-		AI_Output(other,self,"DIA_Pyrokar_RuneMagic_01_03");	//Между прочим, думаю, ты наверняка заметил - мы только что разбили огромную армию орков!
+		AI_Output(other,self, " DIA_Pyrokar_RuneMagic_01_03 " );	// By the way, I think you must have noticed - we just defeated a huge army of orcs!
 	};
 
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagic_01_04");	//Так что у меня есть для тебя новости на этот счет.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagic_01_06");	//Да? O каких новостях ты говоришь?
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagic_01_04 " );	// So I have some news for you on this.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagic_01_06 " );	// Yes? What news are you talking about?
 };
 
 instance DIA_PYROKAR_GUARDIANSKILLED(C_Info)
@@ -3133,7 +3133,7 @@ instance DIA_PYROKAR_GUARDIANSKILLED(C_Info)
 	condition = dia_pyrokar_guardianskilled_condition;
 	information = dia_pyrokar_guardianskilled_info;
 	permanent = FALSE;
-	description = "Угрозы со стороны Хранителей больше нет!";
+	description = " The Guardian threat is gone! " ;
 };
 
 func int dia_pyrokar_guardianskilled_condition()
@@ -3147,13 +3147,13 @@ func int dia_pyrokar_guardianskilled_condition()
 func void dia_pyrokar_guardianskilled_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansKilled_01_00");	//Угрозы со стороны Хранителей больше нет!
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansKilled_01_01");	//(очень удивленно) Что ты хочешь этим сказать?
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansKilled_01_02");	//Я смог одержать над ними верх и изгнать их из этого мира.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansKilled_01_03");	//О Иннос! Неужели все это правда?
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansKilled_01_05");	//Тогда это самая лучшая новость, которую ты только мог мне сообщить.
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansKilled_01_11");	//Теперь этот мир спасен, как и мы все!
-	AI_Output(self,other,"DIA_Pyrokar_GuardiansKilled_01_12");	//Так что прими от меня мою глубочайшую благодарность за все, что ты для нас сделал.
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansKilled_01_00 " );	// Threat from the Keepers no more!
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansKilled_01_01 " );	// (very surprised) What do you mean by that?
+	AI_Output(other,self, " DIA_Pyrokar_GuardiansKilled_01_02 " );	// I was able to defeat them and drive them out of this world.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansKilled_01_03 " );	// O Innos! Is it all true?
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansKilled_01_05 " );	// Then this is the best news you could have given me.
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansKilled_01_11 " );	// Now this world is saved, as are we all!
+	AI_Output(self,other, " DIA_Pyrokar_GuardiansKilled_01_12 " );	// So please accept my deepest gratitude for everything you've done for us.
 };
 
 instance DIA_PYROKAR_LOOKUNUSUAL(C_Info)
@@ -3163,7 +3163,7 @@ instance DIA_PYROKAR_LOOKUNUSUAL(C_Info)
 	condition = dia_pyrokar_lookunusual_condition;
 	information = dia_pyrokar_lookunusual_info;
 	permanent = FALSE;
-	description = "Ты как-то странно на меня смотришь.";
+	description = " You look at me strangely. " ;
 };
 
 func int dia_pyrokar_lookunusual_condition()
@@ -3176,18 +3176,18 @@ func int dia_pyrokar_lookunusual_condition()
 
 func void dia_pyrokar_lookunusual_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_LookUnusual_01_00");	//Ты как-то странно на меня смотришь.
-	AI_Output(self,other,"DIA_Pyrokar_LookUnusual_01_04");	//У меня возникло такое чувство, что со времени нашей последней встречи в тебе что-то изменилось.
-	AI_Output(self,other,"DIA_Pyrokar_LookUnusual_01_05");	//Я вдруг стал ощущать в тебе огромную силу, которой не чувствовал ранее.
-	AI_Output(self,other,"DIA_Pyrokar_LookUnusual_01_06");	//Как-будто передо мной сейчас стоит не простой человек...(неуверенно) А сам Иннос!
-	AI_Output(other,self,"DIA_Pyrokar_LookUnusual_01_07");	//Хммм... По всей видимости, от тебя действительно ничего не сможет ускользнуть.
-	AI_Output(other,self,"DIA_Pyrokar_LookUnusual_01_08");	//Ты прав! Сами боги даровали мне свое могущество для того, чтобы я мог сразиться с нашим врагом.
-	AI_Output(other,self,"DIA_Pyrokar_LookUnusual_01_09");	//Причем все без исключения.
-	AI_Output(self,other,"DIA_Pyrokar_LookUnusual_01_10");	//И даже сам Белиар? Бог Тьмы?
-	AI_Output(self,other,"DIA_Pyrokar_LookUnusual_01_12");	//Невероятно! Я и представить себе не мог, что подобное возможно!
-	AI_Output(self,other,"DIA_Pyrokar_LookUnusual_01_16");	//Боги сделали тебя своим избранным, дабы именно ты защитил их мир от постигшего его зла!
-	AI_Output(self,other,"DIA_Pyrokar_LookUnusual_01_17");	//И судя по всему, они не ошиблись в свое выборе.
-	AI_Output(self,other,"DIA_Pyrokar_LookUnusual_01_19");	//Мне лишь только остается вновь преклонить свои колени перед тобой, герой.
+	AI_Output(other,self, " DIA_Pyrokar_LookUnusual_01_00 " );	// You look at me strangely.
+	AI_Output(self,other, " DIA_Pyrokar_LookUnusual_01_04 " );	// I have the feeling that something has changed in you since we last met.
+	AI_Output(self,other, " DIA_Pyrokar_LookUnusual_01_05 " );	// I suddenly began to feel a huge power in you, which I did not feel before.
+	AI_Output(self,other, " DIA_Pyrokar_LookUnusual_01_06 " );	// It's as if it's not just a simple person standing in front of me now... (uncertainly) But Innos himself!
+	AI_Output(other,self, " DIA_Pyrokar_LookUnusual_01_07 " );	// Hmmm... Apparently, nothing can really escape you.
+	AI_Output(other,self, " DIA_Pyrokar_LookUnusual_01_08 " );	// You're right! The gods themselves gave me their power so that I could fight our enemy.
+	AI_Output(other,self, " DIA_Pyrokar_LookUnusual_01_09 " );	// And all without exception.
+	AI_Output(self,other, " DIA_Pyrokar_LookUnusual_01_10 " );	// And even Beliar himself? Dark God?
+	AI_Output(self,other, " DIA_Pyrokar_LookUnusual_01_12 " );	// Incredible! I never imagined that such a thing was possible!
+	AI_Output(self,other, " DIA_Pyrokar_LookUnusual_01_16 " );	// The gods made you their chosen ones, so that it was you who protected their world from the evil that befell it!
+	AI_Output(self,other, " DIA_Pyrokar_LookUnusual_01_17 " );	// And apparently, they were not mistaken in their choice.
+	AI_Output(self,other, " DIA_Pyrokar_LookUnusual_01_19 " );	// All I have to do is kneel before you again, hero.
 };
 
 instance DIA_PYROKAR_WHATDO(C_Info)
@@ -3197,7 +3197,7 @@ instance DIA_PYROKAR_WHATDO(C_Info)
 	condition = dia_pyrokar_whatdo_condition;
 	information = dia_pyrokar_whatdo_info;
 	permanent = FALSE;
-	description = "И что теперь?";
+	description = " So what now? " ;
 };
 
 func int dia_pyrokar_whatdo_condition()
@@ -3210,54 +3210,54 @@ func int dia_pyrokar_whatdo_condition()
 
 func void dia_pyrokar_whatdo_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_WhatDo_01_00");	//И что теперь?
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_01_01");	//Я и все оставшиеся в живых маги должны будем теперь вернуться в монастырь!
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_01_02");	//Он до сих пор находится под осадой орков, и мы не можем надолго покидать его стены.
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_01_03");	//Поскольку те послушники, которые остались там, вряд ли смогут сдержать этих тварей, если те решат вновь его штурмовать!
+	AI_Output(other,self, " DIA_Pyrokar_WhatDo_01_00 " );	// And now what?
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_01_01 " );	// Me and all the surviving magicians will now have to return to the monastery!
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_01_02 " );	// It's still under orc siege, and we can't leave its walls for long.
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_01_03 " );	// Since the acolytes who remain there are unlikely to be able to hold off these creatures if they decide to storm it again!
 	RUNEMAGICNOTWORK = TRUE;
 	Info_ClearChoices(dia_pyrokar_whatdo);
-	Info_AddChoice(dia_pyrokar_whatdo,"(закончить разговор)",dia_pyrokar_whatdo_away);
+	Info_AddChoice(dia_pyrokar_whatdo, " (end call) " ,dia_pyrokar_whatdo_away);
 };
 
 func void dia_pyrokar_whatdo_away()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_00");	//Черт! Что происходит? Я не понимаю!
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_02");	//Моя руна телепортации - она не работает!
-	AI_Output(other,self,"DIA_Pyrokar_WhatDo_Away_01_03");	//То есть как не работает?
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_04");	//Я уже несколько секунд назад должен был оказаться во дворе монастыря.
-	AI_Output(other,self,"DIA_Pyrokar_WhatDo_Away_01_08");	//Тогда попробуй еще раз. Может быть, сейчас все получится.
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_00 " );	// Damn! What's happening? I do not understand!
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_02 " );	// My teleportation rune - it doesn't work!
+	AI_Output(other,self, " DIA_Pyrokar_WhatDo_Away_01_03 " );	// That is, how does it not work?
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_04 " );	// I should have been in the courtyard of the monastery a few seconds ago.
+	AI_Output(other,self, " DIA_Pyrokar_WhatDo_Away_01_08 " );	// Then try again. Maybe everything will work out now.
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_10");	//Нет! Ничего не выходит...(растерянно) Но как вообще такое возможно?
-	AI_Output(other,self,"DIA_Pyrokar_WhatDo_Away_01_12");	//А что насчет других рун?
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_13");	//(задумчиво) Хммм.
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_10 " );	// No! Nothing comes out... (bewildered) But how is this even possible?
+	AI_Output(other,self, " DIA_Pyrokar_WhatDo_Away_01_12 " );	// What about other runes?
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_13 " );	// (thoughtfully) Hmmm.
 	AI_PlayAni(self,"T_PRACTICEMAGIC4");
 	AI_PlayAni(self,"T_PRACTICEMAGIC3");
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_14");	//Нет, то же самое! Я не могу воспользоваться ни одной магической руной.
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_15");	//Кажется, что они все потеряли свою магию!
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_17");	//О Иннос! Только этого нам сейчас не хватало!
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_14 " );	// No, the same! I can't use any magic rune.
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_15 " );	// They all seem to have lost their magic!
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_17 " );	// O Innos! This is the only thing we need right now!
 	if(MONASTERYISFREE == FALSE)
 	{
-		AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_18");	//Без этой магии у нас нет ни единого шанса защитить наш монастырь от орков.
+		AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_18 " );	// Without this magic, we have no chance of protecting our monastery from the orcs.
 	};
-	AI_Output(other,self,"DIA_Pyrokar_WhatDo_Away_01_19");	//И что теперь будем делать?
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_20");	//Слушай меня внимательно. Найди кого-нибудь из магов и спроси у них, работают ли их магические руны.
-	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_21");	//Узнай это также и у паладинов. Мы должны как можно быстрее понять, что здесь творится.
+	AI_Output(other,self, " DIA_Pyrokar_WhatDo_Away_01_19 " );	// And what are we going to do now?
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_20 " );	// Listen to me carefully. Find one of the magicians and ask them if their magic runes work.
+	AI_Output(self,other, " DIA_Pyrokar_WhatDo_Away_01_21 " );	// Ask paladins for this too. We need to figure out what's going on here as soon as possible.
 	AI_Output(self,other,"DIA_Pyrokar_WhatDo_Away_01_24");	//Ступай!
 	MIS_RUNEMAGICNOTWORK = LOG_Running;
 	Log_CreateTopic(TOPIC_RUNEMAGICNOTWORK,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RUNEMAGICNOTWORK,LOG_Running);
-	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Странно - по непонятной причине Пирокару теперь не удается использовать рунную магию. Ни одно из его заклинаний так и не сработало. Необходимо срочно выяснить, как с этим обстоят дела у других магов и паладинов.");
+	B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " Strange - for some unknown reason, Pyrokar is now unable to use rune magic. None of his spells have worked. It is urgent to find out how other mages and paladins are doing with this. " );
 	AI_StopProcessInfos(self);
 };
 
 
-var int frdnw;
-var int wrdnw;
+where int frdnw;
+where int wrdnw;
 var int grdnw;
-var int prdnw;
+where int prdnw;
 
 instance DIA_PYROKAR_RUNEMAGICNOTWORKDONE(C_Info)
 {
@@ -3266,7 +3266,7 @@ instance DIA_PYROKAR_RUNEMAGICNOTWORKDONE(C_Info)
 	condition = dia_pyrokar_runemagicnotworkdone_condition;
 	information = dia_pyrokar_runemagicnotworkdone_info;
 	permanent = TRUE;
-	description = "Мне удалось узнать кое-что насчет рунной магии.";
+	description = " I managed to learn something about runic magic. " ;
 };
 
 
@@ -3280,96 +3280,96 @@ func int dia_pyrokar_runemagicnotworkdone_condition()
 
 func void dia_pyrokar_runemagicnotworkdone_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_01_00");	//Мне удалось кое-что узнать насчет рунной магии.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_01_01");	//(нетерпеливо) Что именно?  Говори же!
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_01_00 " );	// I managed to learn something about runic magic.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_01_01 " );	// (impatiently) What exactly? Speak now!
 	Info_ClearChoices(dia_pyrokar_runemagicnotworkdone);
 	if((FIREMAGERUNESNOT == TRUE) && (FRDNW == FALSE))
 	{
-		Info_AddChoice(dia_pyrokar_runemagicnotworkdone,"Остальные маги Огня также не могут ее больше использовать.",dia_pyrokar_runemagicnotworkdone_fire);
+		Info_AddChoice(dia_pyrokar_runemagicnotworkdone, " Other Firebenders can no longer use it either. " ,dia_pyrokar_runemagicnotworkdone_fire);
 	};
 	if((WATERMAGERUNESNOT == TRUE) && (WRDNW == FALSE))
 	{
-		Info_AddChoice(dia_pyrokar_runemagicnotworkdone,"Маги Воды лишились возможности управлять своими рунами.",dia_pyrokar_runemagicnotworkdone_water);
+		Info_AddChoice(dia_pyrokar_runemagicnotworkdone, " Water Mages have lost the ability to control their runes. " ,dia_pyrokar_runemagicnotworkdone_water);
 	};
 	if((GURUMAGERUNESNOT == TRUE) && (GRDNW == FALSE))
 	{
-		Info_AddChoice(dia_pyrokar_runemagicnotworkdone,"Гуру Братства больше не обладают силой творить заклинания с помощью рун.",dia_pyrokar_runemagicnotworkdone_guru);
+		Info_AddChoice(dia_pyrokar_runemagicnotworkdone, " Brotherhood gurus no longer have the power to cast spells with runes. " ,dia_pyrokar_runemagicnotworkdone_guru);
 	};
 	if((PALADINRUNESNOT == TRUE) && (PRDNW == FALSE))
 	{
-		Info_AddChoice(dia_pyrokar_runemagicnotworkdone,"Магия паладинов больше не работает!",dia_pyrokar_runemagicnotworkdone_paladin);
+		Info_AddChoice(dia_pyrokar_runemagicnotworkdone, " Paladin magic no longer works! " ,dia_pyrokar_runemagicnotworkdone_paladin);
 	};
-	Info_AddChoice(dia_pyrokar_runemagicnotworkdone,"Пока это все, что я узнал.",dia_pyrokar_runemagicnotworkdone_no);
+	Info_AddChoice(dia_pyrokar_runemagicnotworkdone, " That's all I've learned so far. " ,dia_pyrokar_runemagicnotworkdone_no);
 };
 
 func void dia_pyrokar_runemagicnotworkdone_fire()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_Fire_01_00");	//Остальные маги Огня также не могут ее больше использовать.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_Fire_01_01");	//(задумчиво) Этого я и опасался. Что-нибудь еще?
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_Fire_01_00 " );	// Other Firebenders can no longer use it either.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_Fire_01_01 " );	// (thoughtfully) That's what I was afraid of. Anything else?
 	FRDNW = TRUE;
 };
 
 func void dia_pyrokar_runemagicnotworkdone_water()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_Water_01_00");	//Маги Воды лишились возможности управлять своими рунами.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_Water_01_01");	//Это еще более странно, чем я предполагал. Еще что-то удалось выяснить?
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_Water_01_00 " );	// Water Mages have lost the ability to control their runes.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_Water_01_01 " );	// This is even weirder than I thought. Did you manage to find out anything else?
 	WRDNW = TRUE;
 };
 
 func void dia_pyrokar_runemagicnotworkdone_guru()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_Guru_01_00");	//Гуру Братства больше не обладают силой творить заклинания с помощью рун.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_Guru_01_01");	//Даже так! Хммм...(задумчиво) Есть еще новости?
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_Guru_01_00 " );	// Gurus of the Brotherhood no longer have the power to cast spells using runes.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_Guru_01_01 " );	// Even so! Hmmm... (thoughtfully) Any more news?
 	GRDNW = TRUE;
 };
 
 func void dia_pyrokar_runemagicnotworkdone_paladin()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_Paladin_01_00");	//Магия паладинов больше не работает.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_Paladin_01_01");	//Так я и думал...(задумчиво) Тогда, по всей видимости, у нас очень серьезные проблемы.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_Paladin_01_02");	//Это все, что тебе удалось узнать?
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_Paladin_01_00 " );	// Paladin magic no longer works.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_Paladin_01_01 " );	// I thought so... (thoughtfully) Then, apparently, we have very serious problems.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_Paladin_01_02 " );	// Is that all you've been able to find out?
 	PRDNW = TRUE;
 };
 
 func void dia_pyrokar_runemagicnotworkdone_no()
 {
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_00");	//Пока это все, что я узнал.
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_00 " );	// So far this is all I've learned.
 	if((FRDNW == TRUE) && (WRDNW == TRUE) && (GRDNW == TRUE) && (PRDNW == TRUE))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_01");	//Хорошо. Думаю, этого достаточно.
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_02");	//И судя по всему, я, кажется, начинаю понимать, что именно произошло.
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_03");	//Но прежде чем окончательно удостовериться в верности своих суждений...
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_04");	//...я хочу попросить тебя выполнить еще одну мою небольшую просьбу.
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_06");	//Ты должен сам попробовать использовать любую магическую руну.
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_07");	//И после этого рассказать мне, что у тебя получилось.
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_01 " );	// Good. I think that's enough.
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_02 " );	// And by the looks of it, I seem to be beginning to understand what exactly happened.
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_03 " );	// But before you finally make sure of the correctness of your judgments...
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_04 " );	// ...I want to ask you to fulfill one more small request of mine.
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_06 " );	// You should try to use any magic rune yourself.
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_07 " );	// And then tell me what you got.
 		ALLMAGESRUNEMAGICNOTWORK = TRUE;
-		if(TESTRUNEME == TRUE)
+		if ( TESTRUNEME  ==  TRUE )
 		{
 			B_GivePlayerXP(200);
-			AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_08");	//Я уже это делал!
+			AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_08 " );	// I already did it!
 			AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_09");	//И?
-			AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_10");	//Мне до сих пор удается использовать рунную магию.
-			AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_11");	//Так я и думал! Теперь мне все ясно.
+			AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_10 " );	// I still manage to use rune magic.
+			AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_11 " );	// That's what I thought! Now everything is clear to me.
 			KNOWNHOWDESTROYRUNE = TRUE;
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Кажется, я сообщил Пирокару все, что мог о рунной магии. Узнав о том, что сам я до сих пор могу использовать силу рун, - ему, наконец, стало ясно, что произошло.");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " I think I've told Pyrokar all I can about rune magic. After learning that I myself can still use runic power, he finally understood what happened. " );
 			Info_ClearChoices(dia_pyrokar_runemagicnotworkdone);
 		}
 		else
 		{
 			B_GivePlayerXP(100);
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Кажется, я сообщил Пирокару все, что мог о рунной магии. Теперь верховный маг попросил меня лично попробовать воспользоваться силой своих рун, а затем сообщить ему результаты.");
-			AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_12");	//Ладно, попробую.
-			AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_13");	//В таком случае я жду от тебя ответа.
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " I seem to have told Pyrokar everything I could about rune magic. Now the archmage has asked me to personally try out the power of my runes and then report back to him. " );
+			AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_12 " );	// Okay, I'll try.
+			AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_13 " );	// In that case, I'm waiting for your answer.
 			AI_StopProcessInfos(self);
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDone_No_01_14");	//Хорошо. Однако этого мало! Постарайся выяснить еще что-нибудь.
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDone_No_01_14 " );	// Good. However, this is not enough! Try to find out something else.
 	};
 	Info_ClearChoices(dia_pyrokar_runemagicnotworkdone);
 };
@@ -3382,7 +3382,7 @@ instance DIA_PYROKAR_RUNEMAGICNOTWORKDONEAFTER(C_Info)
 	condition = dia_pyrokar_runemagicnotworkdoneafter_condition;
 	information = dia_pyrokar_runemagicnotworkdoneafter_info;
 	permanent = FALSE;
-	description = "Дай мне какую-нибудь руну.";
+	description = " Give me some rune. " ;
 };
 
 
@@ -3396,15 +3396,15 @@ func int dia_pyrokar_runemagicnotworkdoneafter_condition()
 
 func void dia_pyrokar_runemagicnotworkdoneafter_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicNotWorkDoneAfter_01_00");	//Дай мне какую-нибудь руну, чтобы я мог попробовать.
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicNotWorkDoneAfter_01_00 " );	// Give me some rune so I can try.
 
-	if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_GUR) || (hero.guild == GIL_KDM))
+	if ((hero.guild ==  GIL_KDF ) || (hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_GUR ) || (hero.guild ==  GIL_KDM ))
 	{
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDoneAfter_01_01");	//Воспользуйся своей руной.
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDoneAfter_01_01 " );	// Use your rune.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_RuneMagicNotWorkDoneAfter_01_03");	//(задумчиво) Хорошо. Вот, возьми эту.
+		AI_Output(self,other, " DIA_Pyrokar_RuneMagicNotWorkDoneAfter_01_03 " );	// (thoughtfully) Good. Here, take this.
 		B_GiveInvItems(self,other,ItRu_Light_Pyr,1);
 	};
 	AI_StopProcessInfos(self);
@@ -3418,7 +3418,7 @@ instance DIA_PYROKAR_RUNEMAGICTESTMERESULT(C_Info)
 	condition = dia_pyrokar_runemagictestmeresult_condition;
 	information = dia_pyrokar_runemagictestmeresult_info;
 	permanent = FALSE;
-	description = "Я сделал то, о чем ты просил.";
+	description = " I did what you asked for. " ;
 };
 
 
@@ -3433,11 +3433,11 @@ func int dia_pyrokar_runemagictestmeresult_condition()
 func void dia_pyrokar_runemagictestmeresult_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicTestMeResult_01_00");	//Я сделал то, о чем ты просил.
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicTestMeResult_01_00 " );	// I did what you asked.
 	AI_Output(self,other,"DIA_Pyrokar_RuneMagicTestMeResult_01_01");	//И?
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicTestMeResult_01_02");	//Мне до сих пор удается использовать рунную магию.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicTestMeResult_01_03");	//Так я и думал! Теперь мне все ясно.
-	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Я рассказал Пирокару о том, что мне до сих пор удается использовать силу рун. Теперь ему стало ясно, что произошло.");
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicTestMeResult_01_02 " );	// I still manage to use rune magic.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicTestMeResult_01_03 " );	// That's what I thought! Now everything is clear to me.
+	B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " I've told Pyrokar that I'm still able to use the power of runes. Now it's clear to him what happened. " );
 	KNOWNHOWDESTROYRUNE = TRUE;
 };
 
@@ -3449,7 +3449,7 @@ instance DIA_PYROKAR_RUNEMAGICEXPLAIN(C_Info)
 	condition = dia_pyrokar_runemagicexplain_condition;
 	information = dia_pyrokar_runemagicexplain_info;
 	permanent = FALSE;
-	description = "Так что же на самом деле произошло?";
+	description = " So what really happened? " ;
 };
 
 
@@ -3463,24 +3463,24 @@ func int dia_pyrokar_runemagicexplain_condition()
 
 func void dia_pyrokar_runemagicexplain_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicExplain_01_00");	//Так что же на самом деле произошло?
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicExplain_01_01");	//Почему вы больше не можете использовать свою рунную магию?
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_02");	//Потому что ее больше не существует в том виде, в котором она была подвластна нам ранее.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_03");	//И я боюсь, что отчасти в этом есть и твоя вина.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_05");	//Полагаю, что, наделив тебя своим могуществом, боги отдали тебе большую часть своей силы.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_06");	//Однако тем самым они практически лишились возможности являть ту свою божественную сущность, которая и давала нам возможность использовать их магию.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_07");	//Сама структура магической связи между людьми и богами стала крайне хрупкой и неустойчивой.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_08");	//И любое небольшое магическое волнение в этом мире вполне было способно ее окончательно уничтожить!
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_11");	//Но, по всей видимости, именно твоя победа над Хранителями и явилась причиной всех этих последствий.
-	AI_Output(other,self,"DIA_Pyrokar_RuneMagicExplain_01_13");	//Но почему тогда я могу использовать магические руны?
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_14");	//Это довольно легко объяснить. В тебе сейчас сосредоточена огромная божественная сила!
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_15");	//И твоя связь с самими богами куда намного больше, чем ты можешь себе представить.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_16");	//Все это и дает тебе возможность использовать магию рун!
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_23");	//Да, и еще кое-что. Прошу тебя, сообщи лорду Хагену о том, что наша рунная магия уничтожена.
-	AI_Output(self,other,"DIA_Pyrokar_RuneMagicExplain_01_24");	//Безусловно, это будут для него тяжелые новости, но глава паладинов должен знать об этом!
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicExplain_01_00 " );	// So what actually happened?
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicExplain_01_01 " );	// Why can't you use your rune magic anymore?
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_02 " );	// Because it no longer exists in the form in which it was subject to us before.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_03 " );	// And I'm afraid it's partly your fault.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_05 " );	// I believe that by endowing you with their power, the gods gave you most of their power.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_06 " );	// However, by doing so, they practically lost the opportunity to show their divine essence, which gave us the opportunity to use their magic.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_07 " );	// The very structure of the magical connection between humans and gods has become extremely fragile and unstable.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_08 " );	// And any little magical disturbance in this world was quite capable of completely destroying her!
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_11 " );	// But, apparently, it was your victory over the Guardians that caused all these consequences.
+	AI_Output(other,self, " DIA_Pyrokar_RuneMagicExplain_01_13 " );	// But why can I use magic runes then?
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_14 " );	// This is pretty easy to explain. You now have a huge divine power!
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_15 " );	// And your connection to the gods themselves is far greater than you can imagine.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_16 " );	// All this gives you the ability to use rune magic!
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_23 " );	// Yes, and one more thing. Please inform Lord Hagen that our rune magic has been destroyed.
+	AI_Output(self,other, " DIA_Pyrokar_RuneMagicExplain_01_24 " );	// Of course, this will be hard news for him, but the head of the paladins needs to know about this!
 	MIS_RUNEMAGICNOTWORK = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_RUNEMAGICNOTWORK,LOG_SUCCESS);
-	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Отдав мне часть своей божественной силы, боги ослабили магическую связь между ними и людьми, что и повлекло за собой ее окончательное уничтожение. Изгнание мною Хранителей из этого мира тоже наложило отпечаток на все происходящее, но с этим ничего уже поделаешь.");
+	B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " By giving me part of their divine power, the gods weakened the magical connection between them and people, which led to its final destruction. The expulsion of the Guardians from this world by me also left its mark on everything that happens, but there's nothing to be done about it. " );
 	if(MONASTERYISFREE == TRUE)
 	{
 		AI_StopProcessInfos(self);
@@ -3496,7 +3496,7 @@ instance DIA_PYROKAR_MONASTERYSIEDGE(C_Info)
 	condition = dia_pyrokar_monasterysiedge_condition;
 	information = dia_pyrokar_monasterysiedge_info;
 	permanent = FALSE;
-	description = "Как вы теперь попадете обратно в монастырь?";
+	description = " How will you get back to the monastery now? " ;
 };
 
 
@@ -3510,23 +3510,23 @@ func int dia_pyrokar_monasterysiedge_condition()
 
 func void dia_pyrokar_monasterysiedge_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_MonasterySiedge_01_00");	//Как вы теперь попадете обратно в монастырь?
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_01");	//Да, это действительно большая проблема, поскольку без нашей магии мы и близко к нему не подойдем.
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_02");	//Орки до сих пор осаждают его со всех сторон!
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_03");	//И если они вдруг пронюхают, что там сейчас нет ни одного мага, способного противостоять им, то обязательно постараются его захватить.
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_04");	//О Иннос! Мне даже и подумать страшно, что будет со всеми нашими послушниками!
-	AI_Output(other,self,"DIA_Pyrokar_MonasterySiedge_01_05");	//И что мы будем делать?
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_06");	//Я не знаю. Как ты понимаешь, нам самим теперь его никак не защитить.
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_07");	//Поэтому вся наша надежда остается только на тебя!
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_09");	//Уверен, что тебе как избраннику богов это вполне по силам!
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_10");	//Тем более сейчас, когда эти твари лишились поддержки со стороны Хранителей.
-	AI_Output(other,self,"DIA_Pyrokar_MonasterySiedge_01_14");	//Я посмотрю, что можно сделать.
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_15");	//В таком случае поторопись! Сейчас дорога каждая минута.
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedge_01_18");	//Надеюсь, что у тебя все получится, сын мой...(с надеждой) И да хранит тебя Иннос!
+	AI_Output(other,self, " DIA_Pyrokar_MonasterySiedge_01_00 " );	// How do you get back to the monastery now?
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_01 " );	// Yes, that's a really big problem, because without our magic we won't even get close to it.
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_02 " );	// The orcs are still besieging it from all sides!
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_03 " );	// And if they suddenly sniff out that there is not a single magician there now who can resist them, then they will definitely try to capture him.
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_04 " );	// O Innos! I'm even afraid to think what will happen to all our novices!
+	AI_Output(other,self, " DIA_Pyrokar_MonasterySiedge_01_05 " );	// And what are we going to do?
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_06 " );	// I don't know. As you can imagine, there is no way we can protect him now.
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_07 " );	// Therefore, all our hope remains only on you!
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_09 " );	// I'm sure that you, as the chosen one of the gods, are quite capable of this!
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_10 " );	// Especially now, when these creatures have lost the support of the Guardians.
+	AI_Output(other,self, " DIA_Pyrokar_MonasterySiedge_01_14 " );	// I'll see what I can do.
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_15 " );	// In that case, hurry up! Now every minute counts.
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedge_01_18 " );	// I hope that everything will work out for you, my son... (hopefully) And may Innos keep you!
 	MIS_MONASTERYSIEDGE = LOG_Running;
 	Log_CreateTopic(TOPIC_MONASTERYSIEDGE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MONASTERYSIEDGE,LOG_Running);
-	B_LogEntry(TOPIC_MONASTERYSIEDGE,"После того как все маги на острове лишились возможности использовать рунную магию, Пирокар попросил меня помочь защитить их монастырь. Мне придется самому разобраться со всеми орками, осаждающими его.");
+	) ; _ _ _ _ _
 	AI_StopProcessInfos(self);
 };
 
@@ -3538,7 +3538,7 @@ instance DIA_PYROKAR_MONASTERYSIEDGEDONE(C_Info)
 	condition = dia_pyrokar_monasterysiedgedone_condition;
 	information = dia_pyrokar_monasterysiedgedone_info;
 	permanent = FALSE;
-	description = "Осада с монастыря снята!";
+	description = " The monastery is under siege! " ;
 };
 
 
@@ -3553,15 +3553,15 @@ func int dia_pyrokar_monasterysiedgedone_condition()
 func void dia_pyrokar_monasterysiedgedone_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Pyrokar_MonasterySiedgeDone_01_00");	//Осада с монастыря снята!
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedgeDone_01_02");	//О Иннос! Наконец-то это случилось.
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedgeDone_01_03");	//Теперь всем нашим послушникам ничего не угрожает, и я собираюсь незамедлительно последовать к ним.
-	AI_Output(self,other,"DIA_Pyrokar_MonasterySiedgeDone_01_04");	//Спасибо, сын мой, за все, что ты для нас сделал. Мы никогда этого не забудем.
+	AI_Output(other,self, " DIA_Pyrokar_MonasterySiedgeDone_01_00 " );	// The monastery is under siege!
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedgeDone_01_02 " );	// O Innos! Finally it happened.
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedgeDone_01_03 " );	// All of our acolytes are safe now, and I'm going to follow them immediately.
+	AI_Output(self,other, " DIA_Pyrokar_MonasterySiedgeDone_01_04 " );	// Thank you, my son, for all that you have done for us. We will never forget this.
 	if((MIS_RUNEMAGICNOTWORK == FALSE) && (RUNEMAGICNOTWORK == FALSE))
 	{
 		RUNEMAGICNOTWORK = TRUE;
 		Info_ClearChoices(dia_pyrokar_monasterysiedgedone);
-		Info_AddChoice(dia_pyrokar_monasterysiedgedone,"(закончить разговор)",dia_pyrokar_whatdo_away);
+		Info_AddChoice(dia_pyrokar_monasterysiedgedone, " (end call) " ,dia_pyrokar_whatdo_away);
 	}
 	else
 	{
@@ -3578,7 +3578,7 @@ instance DIA_PYROKAR_ALLGREATVICTORY(C_Info)
 	condition = dia_pyrokar_allgreatvictory_condition;
 	information = dia_pyrokar_allgreatvictory_info;
 	permanent = FALSE;
-	description = "Я уничтожил всех орков в Хоринисе!";
+	description = " I destroyed all the orcs in Khorinis! " ;
 };
 
 
@@ -3593,16 +3593,16 @@ func int dia_pyrokar_allgreatvictory_condition()
 func void dia_pyrokar_allgreatvictory_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_AllGreatVictory_01_00");	//Я уничтожил всех орков в Хоринисе! А те, что остались, не представляют существенной угрозы.
-	AI_Output(self,other,"DIA_Pyrokar_AllGreatVictory_01_03");	//Это радостное известие, сын мой...(улыбаясь) Хотя, глядя на тебя, я в этом нисколько не сомневался!
-	AI_Output(self,other,"DIA_Pyrokar_AllGreatVictory_01_04");	//Уверен, что каждый человек на этом острове будет благодарен тебе за все, что ты для нас сделал.
-	AI_Output(self,other,"DIA_Pyrokar_AllGreatVictory_01_05");	//Ведь ты подарил всем хоть и небольшую, но все-таки надежду на благополучный исход в этой долгой и кровопролитной войне.
-	AI_Output(self,other,"DIA_Pyrokar_AllGreatVictory_01_07");	//Спасибо. И да хранит тебя Иннос!
+	AI_Output(other,self, " DIA_Pyrokar_AllGreatVictory_01_00 " );	// I destroyed all the orcs in Khorinis! And those that remain do not pose a significant threat.
+	AI_Output(self,other, " DIA_Pyrokar_AllGreatVictory_01_03 " );	// This is good news, my son... (smiling) Although, looking at you, I did not doubt it at all!
+	AI_Output(self,other, " DIA_Pyrokar_AllGreatVictory_01_04 " );	// I'm sure that every person on this island will be grateful to you for everything you've done for us.
+	AI_Output(self,other, " DIA_Pyrokar_AllGreatVictory_01_05 " );	// After all, you gave everyone, though small, but still hope for a successful outcome in this long and bloody war.
+	AI_Output(self,other, " DIA_Pyrokar_AllGreatVictory_01_07 " );	// Thank you. May Innos protect you!
 	if((MIS_RUNEMAGICNOTWORK == FALSE) && (RUNEMAGICNOTWORK == FALSE))
 	{
 		RUNEMAGICNOTWORK = TRUE;
 		Info_ClearChoices(dia_pyrokar_allgreatvictory);
-		Info_AddChoice(dia_pyrokar_allgreatvictory,"(закончить разговор)",dia_pyrokar_whatdo_away);
+		Info_AddChoice(dia_pyrokar_allgreatvictory, " (end call) " ,dia_pyrokar_whatdo_away);
 	}
 	else
 	{
@@ -3619,13 +3619,13 @@ instance DIA_PYROKAR_BELIARCURSE(C_Info)
 	condition = dia_pyrokar_beliarcurse_condition;
 	information = dia_pyrokar_beliarcurse_info;
 	permanent = FALSE;
-	description = "На мне проклятье Белиара!";
+	description = " I'm under the curse of Beliar! " ;
 };
 
 
 func int dia_pyrokar_beliarcurse_condition()
 {
-	if((MIS_BELIARCURSE == LOG_Running) && (BELIARCURSEYOU == TRUE))
+	if (( MY_BELIARCURSE  == LOG_Running ) && ( BELIARCURSEYOU  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -3634,18 +3634,18 @@ func int dia_pyrokar_beliarcurse_condition()
 func void dia_pyrokar_beliarcurse_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_BeliarCurse_01_00");	//На мне проклятие Белиара! Ты можешь мне помочь?
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_01");	//Что?! (задумчиво вглядываясь) Если ты говоришь правду, тогда это очень серьезно!
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_02");	//Я даже теряюсь в догадках - что ты мог натворить, если Белиар решил наложить на тебя проклятие.
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_03");	//Однако, как служитель Инноса, я не могу остаться в стороне и подскажу тебе способ, как избавиться от проклятья Бога Тьмы.
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_05");	//Тебе нужно получить благословление самого Инноса, чтобы проклятие Белиара потеряло свою силу!
-	AI_Output(other,self,"DIA_Pyrokar_BeliarCurse_01_06");	//А ты не можешь благословить меня?
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_07");	//Нет, это не поможет...(серьезно) Только сам Иннос может спасти тебя!
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_08");	//Так что отправляйся и преклони колени перед любым из его алтарей.
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_09");	//А после молись до тех пор, пока Иннос не станет к тебе благосклонен настолько, чтобы помочь тебе.
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_12");	//Я уверен, что тебе предстоит провести в молитве немало дней и ночей, прежде чем это произойдет.
-	AI_Output(other,self,"DIA_Pyrokar_BeliarCurse_01_14");	//Хорошо, я все понял.
-	B_LogEntry(TOPIC_BELIARCURSE,"Верховный маг круга Огня подсказал мне способ, как избавиться от нависшего надо мной проклятия. Для этого мне необходимо отправиться к любому алтарю Инноса и молить его о том, чтобы он спас меня. Пирокар предупредил, что Иннос должен быть ко мне более чем благосклонен, чтобы откликнуться на мои мольбы.");
+	AI_Output(other,self, " DIA_Pyrokar_BeliarCurse_01_00 " );	// Beliar's curse on me! Can you help me?
+	AI_Output(self,other, " DIA_Pyrokar_BeliarCurse_01_01 " );	// What?! (looking thoughtfully) If you're telling the truth, then it's very serious!
+	AI_Output(self,other, " DIA_Pyrokar_BeliarCurse_01_02 " );	// I even wonder what you could do if Beliar decided to put a curse on you.
+	AI_Output(self,other, " DIA_Pyrokar_BeliarCurse_01_03 " );	// However, as a servant of Innos, I cannot stand aside and tell you a way to get rid of the curse of the God of Darkness.
+	AI_Output(self,other, " DIA_Pyrokar_BeliarCurse_01_05 " );	// You need to get the blessing of Innos himself for Beliar's curse to lose its power!
+	AI_Output(other,self, " DIA_Pyrokar_BeliarCurse_01_06 " );	// Can't you bless me?
+	AI_Output(self,other, " DIA_Pyrokar_BeliarCurse_01_07 " );	// No, that won't help... (seriously) Only Innos himself can save you!
+	AI_Output(self,other, " DIA_Pyrokar_BeliarCurse_01_08 " );	// So go and kneel before any of his altars.
+	AI_Output(self,other, " DIA_Pyrokar_BeliarCurse_01_09 " );	// And then pray until Innos is favorable to you enough to help you.
+	AI_Output(self,other, " DIA_Pyrokar_BeliarCurse_01_12 " );	// I'm sure you'll have many days and nights to pray before that happens.
+	AI_Output(other,self, " DIA_Pyrokar_BeliarCurse_01_14 " );	// Okay, I got it.
+	B_LogEntry( TOPIC_BELIARCURSE , " The Archmage of the Circle of Fire told me a way to get rid of the curse hanging over me. To do this, I need to go to any altar of Innos and pray to him to save me. The pyrocar warned that Innos should be with me more than gracious to answer my pleas. " );
 	PYRIKARSENDALTAR = TRUE;
 };
 
@@ -3657,12 +3657,12 @@ instance DIA_Pyrokar_IgaranzNew(C_Info)
 	condition = DIA_Pyrokar_IgaranzNew_condition;
 	information = DIA_Pyrokar_IgaranzNew_info;
 	permanent = FALSE;
-	description = "Послушник Игарац полон решимости стать магом Огня.";
+	description = " Acolyte of Igaraz is determined to become a Fire Mage. " ;
 };
 
 func int DIA_Pyrokar_IgaranzNew_condition()
 {
-	if((hero.guild == GIL_KDF) && (Kapitel >= 2) && (MIS_Igaraz_OneMoreChance == LOG_Running) && (IgarazIsDead == FALSE))
+	if ((hero.guild ==  GIL_KDF ) && (Chapter >=  2 ) && (MY_Igaraz_OneMoreChance == LOG_Running) && (IgarazIsDead ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -3671,15 +3671,15 @@ func int DIA_Pyrokar_IgaranzNew_condition()
 func void DIA_Pyrokar_IgaranzNew_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Pyrokar_IgaranzNew_01_01");	//Послушник Игарац полон решимости стать магом Огня.
-	AI_Output(other,self,"DIA_Pyrokar_IgaranzNew_01_02");	//Я уверен, что он достоин получить еще один шанс.
-	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_03");	//(задумчиво) Игарац? Возможно, он и достоин, но мне сейчас некогда это выяснять.
-	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_04");	//В исключительных ситуациях испытание можно назначить повторно, это правда.
-	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_05");	//В таких случаях задание послушнику должен дать четвертый член совета - страж покоев монастыря.
-	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_06");	//Как ты уже наверное понял, я говорю о Таламоне. К нему и обратись.
-	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_07");	//Теперь ступай, - не отвлекай меня больше по таким пустякам.
-	IS_PYROKAR_IGORANZINFO = TRUE;
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Пирокар согласился провести испытание для Игараца еще раз. Обычаи монастыря указывают на то, что задание в таком случае должен дать именно Таламон. Стоит теперь проведать старика.");
+	AI_Output(other,self, " DIA_Pyrokar_IgaranzNew_01_01 " );	// Acolyte Igaraz is determined to become a Firebender.
+	AI_Output(other,self, " DIA_Pyrokar_IgaranzNew_01_02 " );	// I'm sure he deserves another chance.
+	AI_Output(self,other, " DIA_Pyrokar_IgaranzNew_01_03 " );	// (thoughtfully) Igarats? Perhaps he is worthy, but I have no time to find out now.
+	AI_Output(self,other, " DIA_Pyrokar_IgaranzNew_01_04 " );	// In exceptional situations, the test can be re-assigned, that's true.
+	AI_Output(self,other, " DIA_Pyrokar_IgaranzNew_01_05 " );	// In such cases, the assignment to the novice should be given by the fourth member of the council - the guardian of the monastery's chambers.
+	AI_Output(self,other, " DIA_Pyrokar_IgaranzNew_01_06 " );	// As you probably already understood, I'm talking about Talamone. And turn to him.
+	AI_Output(self,other, " DIA_Pyrokar_IgaranzNew_01_07 " );	// Now go, - do not distract me anymore on such trifles.
+	IS_PYROKAR_IGORANZINFO = TRUE ;
+	; _ _ _ _ _ _
 };
 
 instance DIA_PYROKAR_PiratePray(C_Info)
@@ -3689,7 +3689,7 @@ instance DIA_PYROKAR_PiratePray(C_Info)
 	condition = dia_pyrokar_PiratePray_condition;
 	information = dia_pyrokar_PiratePray_info;
 	permanent = FALSE;
-	description = "Мне нужна ваша помощь.";
+	description = " I need your help. " ;
 };
 
 func int dia_pyrokar_PiratePray_condition()
@@ -3702,40 +3702,40 @@ func int dia_pyrokar_PiratePray_condition()
 
 func void dia_pyrokar_PiratePray_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_00");		//Мне нужна ваша помощь.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_01");		//О чем идет речь?
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_02");		//Дело очень щекотливое! Необходимо помолиться о душах людей, чьи преступления перед Инносом были довольно велики.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_03");		//А что это за люди?
+	AI_Output(other,self, " DIA_Pyrokar_PiratePray_01_00 " );		// I need your help.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_01 " );		// What are we talking about?
+	AI_Output(other,self, " DIA_Pyrokar_PiratePray_01_02 " );		// It's a very delicate matter! It is necessary to pray for the souls of people whose crimes against Innos were quite great.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_03 " );		// What kind of people are these?
 
 	if(RhetorikSkillValue[1] >= 60)
 	{
-		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_04");		//Пираты. Но они хотят начать новую жизнь и, прежде всего, замолить свои грехи.
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_05");		//Безусловно, это похвальное рвение с их стороны...
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_06");		//Но люди такого рода обычно слишком сильно отягощены грузом своих преступлений.
-		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_07");		//Неужели ничего нельзя сделать?
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_08");		//Ну почему же, можно, конечно. Но тебе придется внести очень щедрое пожертвование монастырю.
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_09");		//Чтобы Иннос принял эту искупительную молитву за их души.
+		AI_Output(other,self, " DIA_Pyrokar_PiratePray_01_04 " );		// Pirates. But they want to start a new life and, above all, to atone for their sins.
+		AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_05 " );		// Of course, this is a commendable zeal on their part...
+		AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_06 " );		// But people of this kind are usually too heavily burdened by the burden of their crimes.
+		AI_Output(other,self, " DIA_Pyrokar_PiratePray_01_07 " );		// Can't do anything?
+		AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_08 " );		// Well, why, you can, of course. But you will have to make a very generous donation to the monastery.
+		AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_09 " );		// For Innos to accept this expiatory prayer for their souls.
 		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_10");		//Сколько?
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_11");		//Все зависит от твоей щедрости, сын мой. Но это пожертвование должно быть не меньше тысячи золотых монет!
+		AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_11 " );		// It all depends on your generosity, my son. But this donation must be no less than a thousand gold coins!
 		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_12");		//Понимаю.
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		PyrAgreePray = TRUE;
-		B_LogEntry(TOPIC_PiratePray,"Пирокар согласился помолиться за души людей Грэга. Но сперва я должен внести щедрое пожертвование монастырю - не менее тысячи монет золотом.");
+		B_LogEntry(TOPIC_PiratePray, " Pyrocar has agreed to pray for the souls of Greg's people. But first I must make a generous donation to the monastery - at least a thousand gold pieces. " );
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_13");		//Пираты. Но они хотят начать новую жизнь и, прежде всего, замолить свои грехи.
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_14");		//Пираты? Об этом не может идти и речи!
+		AI_Output(other,self, " DIA_Pyrokar_PiratePray_01_13 " );		// Pirates. But they want to start a new life and, above all, to atone for their sins.
+		AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_14 " );		// Pirates? This is out of the question!
 		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_15");		//Но...
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_16");		//Никаких 'но'! И больше не смей меня просить о таком!
+		AI_Output(self,other, " DIA_Pyrokar_PiratePray_01_16 " );		// No 'buts'! And don't you dare ask me for this again!
 		PyrNotAgreePray = TRUE;
-		B_LogEntry(TOPIC_PiratePray,"Пирокар отказался молиться за души людей Грэга. Придется его расстроить.");
+		B_LogEntry(TOPIC_PiratePray, " Pyrocar refused to pray for the souls of Greg's people. Will have to upset him. " );
 		AI_StopProcessInfos(self);
 	};
 };
@@ -3747,7 +3747,7 @@ instance DIA_PYROKAR_PiratePray_Gold(C_Info)
 	condition = dia_pyrokar_PiratePray_Gold_condition;
 	information = dia_pyrokar_PiratePray_Gold_info;
 	permanent = TRUE;
-	description = "Тогда помолитесь за них.";
+	description = " Then pray for them. " ;
 };
 
 func int dia_pyrokar_PiratePray_Gold_condition()
@@ -3760,29 +3760,29 @@ func int dia_pyrokar_PiratePray_Gold_condition()
 
 func void dia_pyrokar_PiratePray_Gold_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_Gold_01_00");		//Тогда помолитесь за них. Я внесу пожертвование.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_01_01");		//И сколько ты сможешь внести золота на это благое дело?
+	AI_Output(other,self, " DIA_Pyrokar_PiratePray_Gold_01_00 " );		// Then pray for them. I will make a donation.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_Gold_01_01 " );		// And how much gold can you contribute to this good cause?
 	Info_ClearChoices(DIA_Pyrokar_PiratePray_Gold);
-	Info_AddChoice(DIA_Pyrokar_PiratePray_Gold,"Я пока подумаю над этим.",DIA_Pyrokar_PiratePray_Gold_Back);
+	Info_AddChoice(DIA_Pyrokar_PiratePray_Gold, " I'll think about it. " ,DIA_Pyrokar_PiratePray_Gold_Back);
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 1000)
 	{
-		Info_AddChoice(DIA_Pyrokar_PiratePray_Gold,"Тысячу золотых монет.",DIA_Pyrokar_PiratePray_Gold_One);
+		Info_AddChoice(DIA_Pyrokar_PiratePray_Gold, " A thousand gold coins. " ,DIA_Pyrokar_PiratePray_Gold_One);
 	};
 	if(Npc_HasItems(hero,ItMi_Gold) >= 2000)
 	{
-		Info_AddChoice(DIA_Pyrokar_PiratePray_Gold,"Две тысячи золотых монет.",DIA_Pyrokar_PiratePray_Gold_Two);
+		Info_AddChoice(DIA_Pyrokar_PiratePray_Gold, " Two thousand gold coins. " ,DIA_Pyrokar_PiratePray_Gold_Two);
 	};
 	if(Npc_HasItems(hero,ItMi_Gold) >= 3000)
 	{
-		Info_AddChoice(DIA_Pyrokar_PiratePray_Gold,"Три тысячи золотых монет.",DIA_Pyrokar_PiratePray_Gold_Three);
+		Info_AddChoice(DIA_Pyrokar_PiratePray_Gold, " Three thousand gold coins. " ,DIA_Pyrokar_PiratePray_Gold_Three);
 	};
 };
 
 func void DIA_Pyrokar_PiratePray_Gold_Back()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_Gold_Back_01_00");		//Я пока подумаю над этим.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_Back_01_01");		//Хорошо, сын мой. Как надумаешь, обращайся.
+	AI_Output(other,self, " DIA_Pyrokar_PiratePray_Gold_Back_01_00 " );		// I'll think about it for now.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_Gold_Back_01_01 " );		// All right, my son. Whatever you think, get in touch.
 	AI_StopProcessInfos(self);
 };
 
@@ -3790,11 +3790,11 @@ func void DIA_Pyrokar_PiratePray_Gold_One()
 {
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMi_Gold,1000);
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_Gold_One_01_00");		//Тысячу золотых монет.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_One_01_01");		//Хорошо, сын мой.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_One_01_02");		//Я принимаю твой дар, и нами будет проведена молитва об очищении душ этих людей.
+	AI_Output(other,self, " DIA_Pyrokar_PiratePray_Gold_One_01_00 " );		// A thousand gold coins.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_Gold_One_01_01 " );		// All right, my son.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_Gold_One_01_02 " );		// I accept your gift, and we will hold a prayer for the purification of the souls of these people.
 	GregBonusPray = 1;
-	B_LogEntry(TOPIC_PiratePray,"Пирокар помолиться за души людей Грэга.");
+	B_LogEntry(TOPIC_PiratePray, " Pyrocar pray for the souls of Greg's people. " );
 	MIS_PiratePray = LOG_Success;
 	Log_SetTopicStatus(TOPIC_PiratePray,LOG_Success);
 	AI_StopProcessInfos(self);
@@ -3804,11 +3804,11 @@ func void DIA_Pyrokar_PiratePray_Gold_Two()
 {
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ItMi_Gold,2000);
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_Gold_Two_01_00");		//Две тысячи золотых монет.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_Two_01_01");		//Это очень щедро с твоей стороны, сын мой.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_Two_01_02");		//Я принимаю твой дар, и нами будет проведена молитва об очищении душ этих людей.
+	AI_Output(other,self, " DIA_Pyrokar_PiratePray_Gold_Two_01_00 " );		// Two thousand gold coins.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_Gold_Two_01_01 " );		// That's very generous of you, my son.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_Gold_Two_01_02 " );		// I accept your gift, and we will hold a prayer for the purification of the souls of these people.
 	GregBonusPray = 2;
-	B_LogEntry(TOPIC_PiratePray,"Пирокар помолится за души людей Грэга.");
+	B_LogEntry(TOPIC_PiratePray, " Pyrocar will pray for the souls of Greg's people. " );
 	MIS_PiratePray = LOG_Success;
 	Log_SetTopicStatus(TOPIC_PiratePray,LOG_Success);
 	AI_StopProcessInfos(self);
@@ -3818,11 +3818,11 @@ func void DIA_Pyrokar_PiratePray_Gold_Three()
 {
 	B_GivePlayerXP(300);
 	B_GiveInvItems(other,self,ItMi_Gold,3000);
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_Gold_Three_01_00");		//Три тысячи золотых монет.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_Three_01_01");		//(с уважением) Что же, я от всей души благодарю тебя, сын мой, за столь щедрое пожертвование!
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_Three_01_02");		//Я тот же час распоряжусь, чтобы нами немедленно была проведена молитва об очищении душ этих людей.
+	AI_Output(other,self, " DIA_Pyrokar_PiratePray_Gold_Three_01_00 " );		// Three thousand gold coins.
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_Gold_Three_01_01 " );		// (respectfully) Well, I thank you from the bottom of my heart, my son, for such a generous donation!
+	AI_Output(self,other, " DIA_Pyrokar_PiratePray_Gold_Three_01_02 " );		// I will immediately order that we immediately conduct a prayer for the purification of the souls of these people.
 	GregBonusPray = 3;
-	B_LogEntry(TOPIC_PiratePray,"Пирокар помолится за души людей Грэга.");
+	B_LogEntry(TOPIC_PiratePray, " Pyrocar will pray for the souls of Greg's people. " );
 	MIS_PiratePray = LOG_Success;
 	Log_SetTopicStatus(TOPIC_PiratePray,LOG_Success);
 	AI_StopProcessInfos(self);
@@ -3835,7 +3835,7 @@ instance DIA_PYROKAR_DarkOrden(C_Info)
 	condition = dia_pyrokar_DarkOrden_condition;
 	information = dia_pyrokar_DarkOrden_info;
 	permanent = FALSE;
-	description = "Меня прислал лорд Хаген.";
+	description = " Lord Hagen sent me. " ;
 };
 
 func int dia_pyrokar_DarkOrden_condition()
@@ -3849,23 +3849,23 @@ func int dia_pyrokar_DarkOrden_condition()
 func void dia_pyrokar_DarkOrden_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_01_00");		//Меня прислал лорд Хаген.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_01");		//Можешь не продолжать. Я уже догадываюсь, о чем пойдет речь.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_01_02");		//Тогда мне нужен твой мудрый совет!
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_03");		//По правде говоря, я даже не знаю, чем я смогу тебе помочь. 
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_04");		//Все наши собственные изыскания на предмет происходящего не дали нам никаких точных ответов на этот вопрос.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_05");		//Однако, все-таки есть одна вещь, которая, возможно, тебя заинтересует.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_07");		//В древних рукописях, что нам удалось отыскать в библиотеке, говорится, что нечто подобное происходило уже и ранее.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_08");		//Тогда причиной всему стал один очень могущественный артефакт, который пробудил к жизни некое страшное Зло!
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_01_09");		//Что это за артефакт?
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_10");		//Судя по всему, это просто обычная книга...(загадочно) В тех рукописях ее называют Хроманином.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_01_11");		//Кажется, что я уже слышал об этой вещи. Правда, не помню, где.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_12");		//Как бы то ни было, это наша единственная зацепка. Так что тебе придется выяснить о ней все, что только сможешь.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_01_13");		//И как это сделать? Ведь я даже не знаю, где мне ее искать.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_14");		//Я тоже. Однако этот артефакт, вне сомнений, порождение Белиара и его слуг!
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_15");		//Так что, если и искать ответы на интересующие нас вопросы, то только у одного из них.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_01_00 " );		// Lord Hagen sent me.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_01 " );		// You don't have to continue. I can already guess what we're talking about.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_01_02 " );		// Then I need your wise advice!
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_03 " );		// To be honest, I don't even know how I can help you.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_04 " );		// All of our own research into what's going on hasn't given us any definitive answers to this question.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_05 " );		// However, there is one thing that might be of interest to you.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_07 " );		// In the ancient manuscripts that we managed to find in the library, it is said that something similar happened already before.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_08 " );		// Then the reason for everything was one very powerful artifact that awakened some terrible Evil to life!
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_01_09 " );		// What is this artifact?
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_10 " );		// Apparently, it's just an ordinary book... (cryptically) In those manuscripts, it's called Chromanin.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_01_11 " );		// Seems like I've heard about this thing before. Honestly, I don't remember where.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_12 " );		// Anyway, this is our only clue. So you'll have to find out everything you can about her.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_01_13 " );		// And how to do it? I don't even know where to look for her.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_14 " );		// Me too. However, this artifact is without a doubt the product of Beliar and his servants!
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_01_15 " );		// So, if we look for answers to questions that interest us, then only one of them.
 	DO_SendToKriol = TRUE; 
-	B_LogEntry(TOPIC_DarkOrden,"Пирокар не смог толком ответить, почему в Хоринис вторглась нежить, однако сказал мне, что некогда подобное уже случалось. И причиной тому явился древний артефакт - книга, которую Древние называли Хроманин. Пирокар посоветовал мне выяснить все, что касается этой книги. Согласно ему, этот артефакт порожден самим Белиаром, и искать ответы следует у кого-то из его служителей.");
+	B_LogEntry(TOPIC_DarkOrden, " Pyrokar could not really answer why the undead invaded Khorinis, but told me that something like this had happened before. And the reason for this was an ancient artifact - a book that the Ancients called Chromanin. Pyrokar advised me to find out everything related to this books According to him, this artifact was generated by Beliar himself, and answers should be sought from one of his servants. " );
 };
 
 instance DIA_PYROKAR_DarkOrdenKnown(C_Info)
@@ -3875,7 +3875,7 @@ instance DIA_PYROKAR_DarkOrdenKnown(C_Info)
 	condition = dia_pyrokar_DarkOrdenKnown_condition;
 	information = dia_pyrokar_DarkOrdenKnown_info;
 	permanent = FALSE;
-	description = "Я узнал причину нашествия нежити.";
+	description = " I found out the cause of the undead invasion. " ;
 };
 
 func int dia_pyrokar_DarkOrdenKnown_condition()
@@ -3889,29 +3889,29 @@ func int dia_pyrokar_DarkOrdenKnown_condition()
 func void dia_pyrokar_DarkOrdenKnown_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_00");		//Я узнал причину нашествия нежити.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_01");		//Что же, это хорошие новости! Расскажи мне все, что знаешь, сын мой.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_02");		//Хорошо, но прежде ответь мне на один вопрос. Сколько знатных паладинов похоронено в Хоринисе?
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_03");		//Ты задал довольно непростой вопрос. Дай мне подумать...
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_04");		//(задумчиво) На моей памяти их было только трое - лорды Инубис, Мират и Ульзар.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_05");		//Все они были достопочтенными членами ордена паладинов. И их усыпальницы находятся здесь, на острове.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_06");		//А почему ты спрашиваешь об этом?
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_07");		//После своей смерти эти паладины восстали в виде могущественной нежити.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_08");		//Именно они насылают на Хоринис орды нежити. И только упокоив их души, мы сможем остановить вторжение.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_09");		//Ты в своем уме? О Иннос, это же чистой воды святотатство!
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_10");		//Я понимаю твои чувства, но иного пути у нас нет.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_11");		//Нам необходимо проверить эти усыпальницы. Иначе будет слишком поздно!
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_12");		//(взволнованно) Я наверно сошел с ума, если позволяю тебе делать это.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_13");		//Но по всей видимости, ты прав и мы не можем позволить себе так рисковать.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_14");		//Ключи, отпирающие эти усыпальницы, находятся тут, в монастыре. 
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_15");		//Вот, возьми их себе.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrdenKnown_01_00 " );		// I found out the reason for the undead invasion.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_01 " );		// Well, that's good news! Tell me everything you know, my son.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrdenKnown_01_02 " );		// Okay, but first answer me one question. How many noble paladins are buried in Khorinis?
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_03 " );		// You asked a rather difficult question. Let me think...
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_04 " );		// (thoughtfully) In my memory there were only three of them - lords Inubis, Mirath and Ulzar.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_05 " );		// They were all honored members of the paladin order. And their tombs are here on the island.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_06 " );		// Why are you asking about this?
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrdenKnown_01_07 " );		// After their death, these paladins rose up as powerful undead.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrdenKnown_01_08 " );		// It is they who send hordes of the undead to Khorinis. And only by putting their souls to rest can we stop the invasion.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_09 " );		// Are you out of your mind? O Innos, this is pure sacrilege!
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrdenKnown_01_10 " );		// I understand your feelings, but we have no other way.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrdenKnown_01_11 " );		// We need to check these tombs. Otherwise it will be too late!
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_12 " );		// (excitedly) I must be crazy to let you do this.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_13 " );		// But apparently you're right and we can't afford to take that risk.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_14 " );		// The keys that unlock these tombs are here, in the monastery.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_15 " );		// Here, take them.
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(other,ItKe_Hagen_Innubis,1);
 	CreateInvItems(other,ItKe_Hagen_DarkOrder_01,1);
 	CreateInvItems(other,ItKe_Hagen_DarkOrder_02,1);
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_16");		//Однако я все-таки надеюсь, что ты ошибся в своих расчетах, и эти благородные люди ни в чем не виноваты.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_17");		//Хотелось бы в это верить.
-	B_LogEntry(TOPIC_DarkOrden,"Скрепя сердце, Пирокар дал мне ключи от усыпальниц паладинов. Пора нанести им визит.");
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenKnown_01_16 " );		// However, I still hope that you made a mistake in your calculations, and these noble people are not to blame for anything.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrdenKnown_01_17 " );		// I would like to believe it.
+	B_LogEntry(TOPIC_DarkOrden, " Reluctantly, Pyrokar gave me the keys to the paladin tombs. Time to pay them a visit. " );
 	AI_StopProcessInfos(self);
 
 	Wld_InsertNpc(DARKTOWER_SKELETON_LORD,"NW_FARM2_TAVERNCAVE1_09");
@@ -3972,12 +3972,12 @@ instance DIA_PYROKAR_DarkOrdenWhere(C_Info)
 	condition = dia_pyrokar_DarkOrdenWhere_condition;
 	information = dia_pyrokar_DarkOrdenWhere_info;
 	permanent = FALSE;
-	description = "Где мне искать эти усыпальницы?";
+	description = " Where can I find these tombs? " ;
 };
 
 func int dia_pyrokar_DarkOrdenWhere_condition()
 {
-	if((MIS_DarkOrden == LOG_Running) && (Npc_KnowsInfo(other,DIA_Pyrokar_DarkOrdenKnown) == TRUE) && (KillDeadPalAll == FALSE))
+	if ((MIS_DarkOrder == LOG_Running) && (Npc_KnowsInfo(other,DIA_Pyrokar_DarkOrderKnown) ==  TRUE ) && (KillDeadPalAll ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -3985,20 +3985,20 @@ func int dia_pyrokar_DarkOrdenWhere_condition()
 
 func void dia_pyrokar_DarkOrdenWhere_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenWhere_01_00");		//Где мне искать эти усыпальницы?
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenWhere_01_01");		//Одна из них находится недалеко от фермы Онара.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenWhere_01_02");		//Вторая у развилки, в пещере, что вблизи таверны 'Мертвая Гарпия'.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenWhere_01_03");		//Третью ты найдешь рядом с Кругом Солнца, в небольшой лощине.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrdenWhere_01_00 " );		// Where can I find these tombs?
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenWhere_01_01 " );		// One of them is near Onar's farm.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenWhere_01_02 " );		// The second one is at the fork, in the cave near the Dead Harpy tavern.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrdenWhere_01_03 " );		// You'll find the third one near the Circle of the Sun, in a small hollow.
 };
 
-instance DIA_PYROKAR_DarkOrden_SLK(C_Info)
+instances DIA_PYROKAR_DarkOrden_SLK (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 1;
 	condition = dia_pyrokar_DarkOrden_SLK_condition;
 	information = dia_pyrokar_DarkOrden_SLK_info;
 	permanent = FALSE;
-	description = "Я побывал во всех трех усыпальницах.";
+	description = " I have visited all three tombs. " ;
 };
 
 func int dia_pyrokar_DarkOrden_SLK_condition()
@@ -4012,27 +4012,27 @@ func int dia_pyrokar_DarkOrden_SLK_condition()
 func void dia_pyrokar_DarkOrden_SLK_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_SLK_01_00");		//Я побывал во всех трех усыпальницах.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_01");		//И что тебе удалось выяснить?
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_SLK_01_02");		//Как и ожидалось, все они просто кишели нежитью. Так что пришлось произвести там небольшую уборку.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_03");		//О Иннос! Значит, твои опасения все-таки подтвердились. А что с самими паладинами?
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_SLK_01_04");		//Надеюсь, что я навсегда упокоил их души. Больше они не побеспокоят жителей этого острова.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_05");		//Да благословит их Иннос. Все-таки при жизни они были достойными людьми!
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_06");		//Однако радоваться нам что пока рано. Недавно я получил сообщение от лорда Хагена.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_07");		//По его словам, город все так же постоянно подвергается атакам со стороны нежити. 
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_08");		//И по всей видимости, ее становится все больше и больше!
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_SLK_01_09");		//Как так? Неужели наш план не сработал?
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_10");		//У меня нет ответа на этот вопрос.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_11");		//Но судя по всему, наши действия заставили врага еще с большим усердием обрушить на нас всю свою ярость.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_12");		//Если так пойдет и дальше, то вскоре город падет. А следом за ним и весь остров.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_SLK_01_13");		//Тогда что мы сможем сейчас предпринять?
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_14");		//(подавленно) Мне кажется, что мы действовали в правильном направлении. Однако, все-таки что-то упустили.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_15");		//Нечто такое, что смогло скрыться от наших глаз, не дав нам до конца разобраться в сложившейся ситуации.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_16");		//Так что единственное, что мне сейчас приходит в голову, так это отправиться в город и поговорить с самим лордом Хагеном.
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_17");		//Все-таки он является главой ордена паладинов! И наверняка сможет больше рассказать нам о тех людях.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_SLK_01_18");		//Хорошо, я немедленно отправляюсь к нему.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_SLK_01_00 " );		// I have visited all three tombs.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_01 " );		// And what did you find out?
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_SLK_01_02 " );		// As expected, they were all just swarming with the undead. So I had to do some cleaning up there.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_03 " );		// O Innos! So your fears have been confirmed. What about the paladins themselves?
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_SLK_01_04 " );		// I hope I put their souls to rest forever. They will no longer disturb the inhabitants of this island.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_05 " );		// May Innos bless them. All the same, during their lifetime they were worthy people!
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_06 " );		// However, it's too early for us to rejoice. I recently received a message from Lord Hagen.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_07 " );		// According to him, the city is still constantly under attack from the undead.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_08 " );		// And it seems to be getting bigger and bigger!
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_SLK_01_09 " );		// How so? Did our plan not work?
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_10 " );		// I don't have an answer to this question.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_11 " );		// But apparently, our actions made the enemy even more zealous to unleash all his fury on us.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_12 " );		// If this continues, the city will soon fall. And then the whole island.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_SLK_01_13 " );		// Then what can we do now?
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_14 " );		// (depressed) I think we're on the right track. However, they still missed something.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_15 " );		// Something that could hide from our eyes, not allowing us to fully understand the current situation.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_16 " );		// So the only thing that comes to my mind now is to go to the city and talk to Lord Hagen himself.
+	AI_Output(self,other, " DIA_Pyrokar_DarkOrden_SLK_01_17 " );		// After all, he is the head of the paladin order! And he will probably be able to tell us more about those people.
+	AI_Output(other,self, " DIA_Pyrokar_DarkOrden_SLK_01_18 " );		// Okay, I'm heading to him immediately.
 	DO_SendToHagen = TRUE;
-	B_LogEntry(TOPIC_DarkOrden,"Я сообщил Пирокару об очищении гробниц от нежити и упокоении душ проклятых паладинов. Но атаки нежити на этом не прекратились. Такое чувство, что мы ранили зверя, и сейчас он крайне опасен в своей агонии. Мне надо поговорить о тех паладинах с лордом Хагеном - возможно, он знает о них что-то, чего не знаем мы.");
+	B_LogEntry(TOPIC_DarkOrden, " I informed the Pyrocar about clearing the tombs of the undead and resting the souls of the damned paladins. But the undead attacks didn't stop there. It feels like we've hurt the beast, and now it's extremely dangerous in its agony. I need to talk about those paladins with Lord Hagen - perhaps he knows something about them that we don't. " );
 	AI_StopProcessInfos(self);
 
 	if(SBMODE == TRUE)
@@ -4061,12 +4061,12 @@ instance DIA_Pyrokar_MAXROBE(C_Info)
 	condition = DIA_Pyrokar_MAXROBE_condition;
 	information = DIA_Pyrokar_MAXROBE_info;
 	permanent = FALSE;
-	description = "Как насчет робы получше?";
+	description = " How about a better robe? " ;
 };
 
 func int DIA_Pyrokar_MAXROBE_condition()
 {
-	if((hero.guild == GIL_KDF) && (Kapitel >= 5) && (Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 6) && (LastRobeKDF == FALSE) && (MAXROBE_Permanent == FALSE))
+	if ((hero.guild ==  GIL_KDF ) && (Chapter >=  5 ) && (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) ==  6 ) && (LastRobeKDF ==  FALSE ) && (MAXROBE_Permanent ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -4074,9 +4074,9 @@ func int DIA_Pyrokar_MAXROBE_condition()
 
 func void DIA_Pyrokar_MAXROBE_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_MAXROBE_01_00");	//Как насчет робы получше?
-	AI_Output(self,other,"DIA_Pyrokar_MAXROBE_01_01");	//Поскольку ты владеешь всеми шестью Кругами магии, ты достоин носить робу архимага Огня!
-	AI_Output(self,other,"DIA_Pyrokar_MAXROBE_01_02");	//Однако тебе придется за нее заплатить. Ее изготовление обходится нам недешево, поэтому мы не можем отдать ее даром.
+	AI_Output(other,self, " DIA_Pyrokar_MAXROBE_01_00 " );	// How about a better robe?
+	AI_Output(self,other, " DIA_Pyrokar_MAXROBE_01_01 " );	// Since you are proficient with all six Circles of Magic, you are worthy to wear the Robe of the Fire Archmage!
+	AI_Output(self,other, " DIA_Pyrokar_MAXROBE_01_02 " );	// However, you will have to pay for it. Its production costs us dearly, so we cannot give it away for free.
 	LastRobeKDF = TRUE;
 };
 
@@ -4087,12 +4087,12 @@ instance DIA_Pyrokar_MAXROBE_Buy(C_Info)
 	condition = DIA_Pyrokar_MAXROBE_Buy_condition;
 	information = DIA_Pyrokar_MAXROBE_Buy_info;
 	permanent = TRUE;
-	description = "Продай мне робу архимага Огня. (Цена: 25000 монет)";
+	description = " Sell me the Robe of the Fire Archmage. (Price: 25,000 coins) " ;
 };
 
 func int DIA_Pyrokar_MAXROBE_Buy_condition()
 {
-	if((hero.guild == GIL_KDF) && (LastRobeKDF == TRUE) && (MAXROBE_Permanent == FALSE))
+	if (( hero . guild ==  GIL_KDF ) && ( LastRobeKDF ==  TRUE ) && ( MAXROBE_Permanent ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -4100,32 +4100,32 @@ func int DIA_Pyrokar_MAXROBE_Buy_condition()
 
 func void DIA_Pyrokar_MAXROBE_Buy_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_MAXROBE_Buy_01_00");	//Продай мне робу архимага Огня.
+	AI_Output(other,self, " DIA_Pyrokar_MAXROBE_Buy_01_00 " );	// Sell me the Robe of the Fire Archmage.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 25000)
 	{
 		B_GiveInvItems(other,self,ItMi_Gold,25000);
 		Npc_RemoveInvItems(self,ItMi_Gold,25000);
-		AI_Output(self,other,"DIA_Pyrokar_MAXROBE_Buy_01");	//Хорошо. Вот, держи ее.
-		AI_Output(self,other,"DIA_Pyrokar_MAXROBE_Buy_02");	//Это огромная честь носить подобное одеяние. Помни об этом.
+		AI_Output(self,other, " DIA_Pyrokar_MAXROBE_Buy_01 " );	// Good. Here, hold her.
+		AI_Output(self,other, " DIA_Pyrokar_MAXROBE_Buy_02 " );	// It's a great honor to wear such an attire. Remember this.
 		CreateInvItems(self,itar_kdf_sh,1);
 		B_GiveInvItems(self,other,itar_kdf_sh,1);
 		MAXROBE_Permanent = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pyrokar_MAXROBE_Buy_01_03");	//Извини, но у тебя недостаточно для этого золота.
+		AI_Output(self,other, " DIA_Pyrokar_MAXROBE_Buy_01_03 " );	// Sorry, but you don't have enough gold for this.
 	};
 };
 	
-instance DIA_Pyrokar_Fregarah(C_Info)
+instance DIA_Pyrokar_Fregarah (C_Info)
 {
 	npc = KDF_500_Pyrokar;
 	nr = 1;
 	condition = DIA_Pyrokar_Fregarah_Condition;
 	information = DIA_Pyrokar_Fregarah_Info;
 	permanent = FALSE;
-	description = "У меня есть один вопрос.";
+	description = " I have one question. " ;
 };
 
 func int DIA_Pyrokar_Fregarah_Condition()
@@ -4139,23 +4139,23 @@ func int DIA_Pyrokar_Fregarah_Condition()
 func void DIA_Pyrokar_Fregarah_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_01_00");	//У меня есть один вопрос.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_01");	//Спрашивай.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_01_02");	//В библиотеке монастыря мной была обнаружена запись об экспедиции в горы Хориниса.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_01_03");	//И как я понял, несколько магов Огня, в том числе и ты, принимали в ней участие.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_04");	//Да, ты прав. Эта экспедиция состоялась по решению Высшего Совета магов Огня.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_05");	//Нам предстояло выяснить, насколько эта местность была богата залежами магической руды.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_06");	//А также немного обрисовать общую картину тех земель, доселе нам неизвестных.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_01_07");	//В записях было сказано, что вы нашли какой-то древний храм, который охранял каменный голем.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_08");	//Это был не просто голем, а настоящий оживший скальный утес!
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_09");	//Который, ко всему прочему, обладал еще и невероятной силой.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_10");	//Паладины, сопровождавшие меня и других магов Огня, пытались остановить его. 
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_11");	//Но тому хватило лишь одного удара, чтобы отправить большинство из них в царство Инноса.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_01_12");	//И что же было дальше?
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_13");	//Лишь чудо тогда спасло нас от гибели! Я вовремя успел прочитать заклинание телепортации, которое перенесло нас обратно в Хоринис. 
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_14");	//С тех пор об этом инциденте мы больше не вспоминаем.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_01_15");	//Правда, образ того каменного великана у меня до сих пор в голове!
-	B_LogEntry(TOPIC_XRANFREG,"Пирокар рассказал мне об экспедиции и каменном исполине. По его словам, тот был невероятных размеров и обладал громаднейшей силой.");
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_01_00 " );	// I have one question.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_01 " );	// Ask.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_01_02 " );	// In the library of the monastery, I found a record about an expedition to the mountains of Khorinis.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_01_03 " );	// And as I understand it, several Firebenders, including you, took part in it.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_04 " );	// Yes, you're right. This expedition took place by decision of the High Council of the Firebenders.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_05 " );	// We had to find out how rich this area was in magical ore deposits.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_06 " );	// And also to describe a little the general picture of those lands hitherto unknown to us.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_01_07 " );	// The notes said you found some ancient temple guarded by a stone golem.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_08 " );	// It was not just a golem, but a real rock cliff come to life!
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_09 " );	// Which, on top of everything else, also possessed incredible power.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_10 " );	// The paladins accompanying me and the other Firebenders tried to stop him.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_11 " );	// But only one blow was enough for him to send most of them to the realm of Innos.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_01_12 " );	// And what happened next?
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_13 " );	// Only a miracle then saved us from death! I managed to cast a teleportation spell just in time, which took us back to Khorinis.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_14 " );	// Since then, we no longer remember this incident.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_01_15 " );	// True, the image of that stone giant is still in my head!
+	B_LogEntry( TOPIC_XRANFREG , " Pyrocar told me about the expedition and the stone giant. According to him, he was of incredible size and had tremendous power. " );
 };
 	
 instance DIA_Pyrokar_Fregarah_Mage(C_Info)
@@ -4165,12 +4165,12 @@ instance DIA_Pyrokar_Fregarah_Mage(C_Info)
 	condition = DIA_Pyrokar_Fregarah_Mage_Condition;
 	information = DIA_Pyrokar_Fregarah_Mage_Info;
 	permanent = FALSE;
-	description = "Кто еще из магов знал об этой экспедиции?";
+	description = " Which other mages knew about this expedition? " ;
 };
 
 func int DIA_Pyrokar_Fregarah_Mage_Condition()
 {
-	if((MIS_XRANFREG == LOG_Running) && (Npc_KnowsInfo(other,DIA_Pyrokar_Fregarah) == TRUE))
+	if (( MIS_XRANFREG  == LOG_Running ) && ( Npc_KnowsInfo ( other , DIA_Pyrokar_Fregarah ) ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -4178,14 +4178,14 @@ func int DIA_Pyrokar_Fregarah_Mage_Condition()
 
 func void DIA_Pyrokar_Fregarah_Mage_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Mage_01_00");	//Кто еще из магов знает об этой экспедиции?
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Mage_01_01");	//Их не так уж и много. Корристо, Дамарок, Драго и этот отступник Ксардас!
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Mage_01_02");	//Но большинство из них оказались запертыми в Долине Рудников после сотворения магического барьера.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Mage_01_03");	//Так что из ныне живущих только я один знаю, что случилось в тот день.
-	B_LogEntry(TOPIC_XRANFREG,"Из слов Пирокара я сделал вывод, что из ныне живущих лишь он и Ксардас были в курсе произошедшего тогда.");
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Mage_01_00 " );	// Who else among the magicians knows about this expedition?
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Mage_01_01 " );	// There aren't too many of them. Corristo, Damarok, Drago and that renegade Xardas!
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Mage_01_02 " );	// But most of them ended up trapped in the Valley of Mines after the magic barrier was cast.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Mage_01_03 " );	// So I'm the only one alive today who knows what happened that day.
+	B_LogEntry( TOPIC_XRANFREG , " From Pyrokar's words, I deduced that he and Xardas were the only ones alive today who were aware of what happened then. " );
 	XRANFREGXAR = TRUE;
 
-	if((Kapitel >= 5) && (XarGiveFirstTome == FALSE))
+	if ((Chapter >=  5 ) && (XarGiveFirstTome ==  FALSE ))
 	{
 		Wld_InsertItem(ItWr_Fregarah,"FP_ITEM_XARDAS_07");
 		Wld_InsertItem(itke_xardasowt,"FP_ITEM_XARDAS_05");
@@ -4202,12 +4202,12 @@ instance DIA_Pyrokar_Fregarah_Know(C_Info)
 	condition = DIA_Pyrokar_Fregarah_Know_Condition;
 	information = DIA_Pyrokar_Fregarah_Know_Info;
 	permanent = FALSE;
-	description = "Насчет того каменного голема.";
+	description = " About that stone golem. " ;
 };
 
 func int DIA_Pyrokar_Fregarah_Know_Condition()
 {
-	if((MIS_XRANFREG == LOG_Running) && (StonnosHrAll == TRUE))
+	if (( MY_XRANFREG  == LOG_Running ) && ( StonnosHrAll ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -4216,39 +4216,39 @@ func int DIA_Pyrokar_Fregarah_Know_Condition()
 func void DIA_Pyrokar_Fregarah_Know_Info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_00");	//Насчет того каменного голема.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_01");	//Я узнал, что это было за создание и откуда оно взялось.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_02");	//Ты и вправду узнал обо всем? Но как?
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_03");	//Это долго объяснять. Просто поверь мне на слово.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_04");	//Так вот, то существо имеет под собой божественное происхождение.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_05");	//А источник его силы - всего лишь обыкновенная магическая руда.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_06");	//О Иннос...(замявшись) А ты ведь прав!
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_07");	//Насколько я помню, все его основание действительно было покрыто породой, очень сильно напоминавшей эту руду.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_08");	//Мы тогда не придали этому особого значения, но теперь мне все становится ясно.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_09");	//Ясно и то, что у вас тогда не было ни единого шанса противостоять ему.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_10");	//Только огромнейший поток магической энергии, обладающей теми же свойствами, способен причинить ему вред.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_11");	//Ты имеешь в виду магию, содержащуюся в самой руде?
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_12");	//Абсолютно верно. Только ее должно быть очень много. Но и это еще не все...
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_13");	//Остается главный вопрос - какой предмет способен вобрать в себя такое огромное количество магической энергии?
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_14");	//Только магическая руна...(уверенно) И только она.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_15");	//А что насчет оружия?
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_16");	//Я не уверен в том, что на свете существует подобное оружие.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_17");	//Но, даже если оно и существует, то ему все равно придется использовать руну в качестве емкости для хранения магической энергии. 
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_18");	//Без нее мечу просто негде будет ее хранить.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_19");	//А ты можешь для меня сделать такую руну?
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_20");	//Так ты что, всерьез вознамерился потягаться силами с тем каменным великаном?
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_00 " );	// About that stone golem.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_01 " );	// I found out what this creature was and where it came from.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_02 " );	// Did you really know about everything? But how?
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_03 " );	// This is too long to explain. Just take my word for it.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_04 " );	// So, that creature has a divine origin under it.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_05 " );	// And the source of his power is just an ordinary magic ore.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_06 " );	// Oh Innos... (hesitantly) And you're right!
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_07 " );	// As far as I remember, its entire base was indeed covered with rock that very much resembled this ore.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_08 " );	// We did not attach much importance to this then, but now everything becomes clear to me.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_09 " );	// It's also clear that you didn't have a single chance to resist him back then.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_10 " );	// Only a huge flow of magical energy that has the same properties can harm him.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_11 " );	// You mean the magic contained in the ore itself?
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_12 " );	// Absolutely right. Only it should be a lot. But that's not all...
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_13 " );	// The main question remains - what object is capable of absorbing such a huge amount of magical energy?
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_14 " );	// Only a magic rune... (confidently) And only it.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_15 " );	// What about weapons?
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_16 " );	// I'm not sure if there is such a weapon in the world.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_17 " );	// But, even if it exists, it will still have to use the rune as a container to store magical energy.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_18 " );	// Without it, the sword simply has nowhere to store it.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_19 " );	// Can you make this rune for me?
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_20 " );	// So are you seriously going to compete with that stone giant?
 	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_21");	//Возможно.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_22");	//Но это же чистой воды безумие!
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_23");	//Так сделаешь для меня эту руну или нет?
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_24");	//Ладно, дело твое...(качая головой) Конечно сделаю! И скажу даже больше.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_25");	//Тебе ведь понадобится не только руна, но и свиток с заклинанием переноса энергии.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_26");	//Я сделаю тебе руну, способную самостоятельно поглощать ее.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_27");	//Главное, находиться поблизости от самого источника магии!
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_28");	//Отлично. А сколько времени займет ее изготовление?
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_29");	//Полагаю, что к завтрашнему утру она будет уже готова.
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_Know_01_30");	//Хорошо, тогда я загляну к тебе завтра.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_Know_01_31");	//Как скажешь, сын мой.
-	B_LogEntry(TOPIC_XRANFREG,"Я рассказал Пирокару обо всем, что мне удалось узнать о каменном големе. Он пообещал мне сделать руну, способную вобрать в себя огромное количество магической энергии и с помощью которой я смогу сразить то создание, - если, конечно, мне представится шанс его встретить.");
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_22 " );	// But this is pure madness!
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_23 " );	// So will you make this rune for me or not?
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_24 " );	// Okay, it's up to you... (shaking his head) Of course I will! And I will say even more.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_25 " );	// You'll need not only a rune, but also a scroll with an energy transfer spell.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_26 " );	// I'll make you a rune that can absorb it on its own.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_27 " );	// The main thing is to be close to the very source of magic!
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_28 " );	// Great. And how long will it take to make it?
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_29 " );	// I believe that by tomorrow morning it will be ready.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_Know_01_30 " );	// Okay, then I'll visit you tomorrow.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_Know_01_31 " );	// As you say, my son.
+	B_LogEntry( TOPIC_XRANFREG , " I told Pyrokar everything I could find out about the stone golem. He promised me to make a rune that can absorb a huge amount of magical energy and with which I can defeat that creature - if, of course, I present myself a chance to meet him. " );
 	PyrokarRuneDay = Wld_GetDay();
 	PyrokarRuneDo = TRUE;
 };
@@ -4260,12 +4260,12 @@ instance DIA_Pyrokar_Fregarah_RuneDo(C_Info)
 	condition = DIA_Pyrokar_Fregarah_RuneDo_Condition;
 	information = DIA_Pyrokar_Fregarah_RuneDo_Info;
 	permanent = FALSE;
-	description = "Как поживает моя руна?";
+	description = " How is my rune doing? " ;
 };
 
 func int DIA_Pyrokar_Fregarah_RuneDo_Condition()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -4277,12 +4277,13 @@ func int DIA_Pyrokar_Fregarah_RuneDo_Condition()
 
 func void DIA_Pyrokar_Fregarah_RuneDo_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_RuneDo_01_00");	//Как поживает моя руна?
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_RuneDo_01_01");	//Она готова. Вот, возьми ее.
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_RuneDo_01_00 " );	// How's my rune doing?
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_RuneDo_01_01 " );	// She's ready. Here, take her.
 	B_GiveInvItems(self,other,ItMi_PyroRune,1);
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_RuneDo_01_02");	//Однако я все-таки хочу остановить тебя, пока еще не поздно.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_RuneDo_01_03");	//Встреча с этим созданием может стоить тебе жизни!
-	AI_Output(other,self,"DIA_Pyrokar_Fregarah_RuneDo_01_04");	//Я подумаю над твоими словами. И, конечно, спасибо за руну.
-	AI_Output(self,other,"DIA_Pyrokar_Fregarah_RuneDo_01_05");	//(вздыхая) Не за что, сын мой...
-	B_LogEntry(TOPIC_XRANFREG,"Пирокар отдал мне руну. Осталось найти огромную гору магической руды и использовать рядом с ней этот камень, чтобы поглотить ее энергию. Что-то мне подсказывает, что придется найти и не одну такую гору...");
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_RuneDo_01_02 " );	// However, I still want to stop you before it's too late.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_RuneDo_01_03 " );	// Meeting this creature could cost you your life!
+	AI_Output(other,self, " DIA_Pyrokar_Fregarah_RuneDo_01_04 " );	// I'll think about your words. And, of course, thanks for the rune.
+	AI_Output(self,other, " DIA_Pyrokar_Fregarah_RuneDo_01_05 " );	// (sighing) No way, my son...
+	; _ _ _ _ _ _
 };
+Footer
