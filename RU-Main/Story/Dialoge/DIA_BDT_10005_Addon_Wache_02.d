@@ -34,7 +34,7 @@ instance DIA_Addon_Wache_02_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Wache_02_PICKPOCKET_Condition()
 {
-	return C_Beklauen(38,101);
+	return  C_Robbery ( 38 , 101 );
 };
 
 func void DIA_Addon_Wache_02_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_Wache_02_PICKPOCKET_Info()
 
 func void DIA_Addon_Wache_02_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Wache_02_PICKPOCKET);
 };
 
@@ -63,7 +63,7 @@ instance DIA_Addon_Wache_02_Hi(C_Info)
 	condition = DIA_Addon_Wache_02_Hi_Condition;
 	information = DIA_Addon_Wache_02_Hi_Info;
 	permanent = FALSE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -74,10 +74,10 @@ func int DIA_Addon_Wache_02_Hi_Condition()
 
 func void DIA_Addon_Wache_02_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Wache_02_Hi_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_Wache_02_Hi_13_01");	//Подожди-ка, а мы с тобой не знакомы?
+	AI_Output(other,self, " DIA_Addon_Wache_02_Hi_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Addon_Wache_02_Hi_13_01 " );	// Wait a minute, don't we know each other?
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Addon_Wache_02_Hi_13_02");	//Хммм...(оценивающе) Нет, ты не похож! Проходи, не задерживайся.
+	AI_Output(self,other, " DIA_Addon_Wache_02_Hi_13_02 " );	// Hmmm...(assessing) No, you don't! Come on, don't linger.
 };
 
 
@@ -88,24 +88,24 @@ instance DIA_Addon_Wache_02_Attentat(C_Info)
 	condition = DIA_Addon_Wache_02_Attentat_Condition;
 	information = DIA_Addon_Wache_02_Attentat_Info;
 	permanent = FALSE;
-	description = "Что тебе известно о нападении?";
+	description = " What do you know about the attack? " ;
 };
 
 
 func int DIA_Addon_Wache_02_Attentat_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Wache_02_Hi) && (MIS_Judas == LOG_Running))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Wache_02_Hi ) && ( MY_Judas == LOG_Running ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Wache_02_Attentat_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Wache_02_Attentat_15_00");	//Что ты знаешь о нападении?
-	AI_Output(self,other,"DIA_Addon_Wache_02_Attentat_13_01");	//Что я знаю о нем? (смеется) Я сломал этому парню ноги.
-	AI_Output(self,other,"DIA_Addon_Wache_02_Attentat_13_02");	//(угрожающе) И я сделаю это с каждым, кто попробует напасть на Эстебана...
+	AI_Output(other,self, " DIA_Addon_Wache_02_Attentat_15_00 " );	// What do you know about the attack?
+	AI_Output(self,other, " DIA_Addon_Wache_02_Attentat_13_01 " );	// What do I know about him? (laughs) I broke this guy's legs.
+	AI_Output(self,other, " DIA_Addon_Wache_02_Attentat_13_02 " );	// (threateningly) And I'll do it to anyone who tries to attack Esteban...
 };
 
 
@@ -116,25 +116,25 @@ instance DIA_Addon_Wache_02_perm(C_Info)
 	condition = DIA_Addon_Wache_02_perm_Condition;
 	information = DIA_Addon_Wache_02_perm_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
 func int DIA_Addon_Wache_02_perm_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Wache_02_Hi))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Wache_02_Hi ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Wache_02_perm_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Wache_02_perm_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_Wache_02_perm_13_01");	//Пока что тихо.
+	AI_Output(other,self, " DIA_Addon_Wache_02_perm_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Addon_Wache_02_perm_13_01 " );	// Quiet for now.
 	if(MIS_Judas == LOG_Running)
 	{
-		AI_Output(self,other,"DIA_Addon_Wache_02_perm_13_02");	//Ты найдешь предателя - мы позаботимся о нем...
+		AI_Output(self,other, " DIA_Addon_Wache_02_perm_13_02 " );	// You will find the traitor - we will take care of him...
 	};
 };
