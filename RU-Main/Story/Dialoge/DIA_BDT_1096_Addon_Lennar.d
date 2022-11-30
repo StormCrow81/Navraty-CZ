@@ -34,7 +34,7 @@ instance DIA_Addon_Lennar_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Lennar_PICKPOCKET_Condition()
 {
-	return C_Beklauen(65,100);
+	return  C_Robbery ( 65 , 100 );
 };
 
 func void DIA_Addon_Lennar_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_Lennar_PICKPOCKET_Info()
 
 func void DIA_Addon_Lennar_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Lennar_PICKPOCKET);
 };
 
@@ -63,7 +63,7 @@ instance DIA_Addon_Lennar_Hi(C_Info)
 	condition = DIA_Addon_Lennar_Hi_Condition;
 	information = DIA_Addon_Lennar_Hi_Info;
 	permanent = FALSE;
-	description = "Привет.";
+	description = " Hello " ;
 };
 
 
@@ -75,9 +75,9 @@ func int DIA_Addon_Lennar_Hi_Condition()
 func void DIA_Addon_Lennar_Hi_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Lennar_Hi_15_00");	//Привет.
-	AI_Output(self,other,"DIA_Addon_Lennar_Hi_01_01");	//Привет. Меня зовут Леннар. Добро пожаловать в лагерь рудокопов.
-	AI_Output(other,self,"DIA_Addon_Lennar_Hi_15_02");	//Рудокопов? Я думал, это бандитский лагерь...
-	AI_Output(self,other,"DIA_Addon_Lennar_Hi_01_03");	//Верно, но бандиты здесь только для того, чтобы добывать руду. (пожимает плечами) Так что...
+	AI_Output(self,other, " DIA_Addon_Lennar_Hi_01_01 " );	// Hello. My name is Lennar. Welcome to the miner's camp.
+	AI_Output(other,self, " DIA_Addon_Lennar_Hi_15_02 " );	// Rudokopov? I thought it was a bandit camp...
+	AI_Output(self,other, " DIA_Addon_Lennar_Hi_01_03 " );	// True, but the bandits are only here to mine the ore. (shrugs) So...
 };
 
 
@@ -88,7 +88,7 @@ instance DIA_Addon_Lennar_Attentat(C_Info)
 	condition = DIA_Addon_Lennar_Attentat_Condition;
 	information = DIA_Addon_Lennar_Attentat_Info;
 	permanent = FALSE;
-	description = "Насчет попытки покушения на Эстебана...";
+	description = " About the assassination attempt on Esteban... " ;
 };
 
 
@@ -98,32 +98,32 @@ func int DIA_Addon_Lennar_Attentat_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Lennar_Attentat_Info()
 {
 	B_Say(other,self,"$ATTENTAT_ADDON_DESCRIPTION2");
 	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_00");	//Слушаю?
-	AI_Output(other,self,"DIA_Addon_Lennar_ATTENTAT_15_01");	//У тебя есть предположения насчет того, кто за этим стоит?
+	AI_Output(other,self, " DIA_Addon_Lennar_ATTENTAT_15_01 " );	// Do you have any idea who's behind this?
 	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_02");	//Конечно!
-	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_03");	//(возбужденно) Я уверен, что во всем виноват Эмилио!
-	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_04");	//(возбужденно) Он всегда рвался в шахту, как ужаленный, и копал до изнеможения.
-	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_05");	//Но с момента нападения он только и делает, что сидит на скамейке.
-	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_06");	//Это же очевидно! Чтобы попасть в шахту, он должен получить у Эстебана красную табличку.
-	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_07");	//(шепотом) Думаю, он просто не в силах посмотреть ему в глаза.
-	B_LogEntry(Topic_Addon_Esteban,"Леннар подозревает Эмилио, потому что он больше не ходит к Эстебану.");
+	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_03 " );	// (excitedly) I'm pretty sure it's Emilio's fault!
+	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_04 " );	// (excitedly) He always rushed into the mine, as if stung, and dug to the point of exhaustion.
+	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_05 " );	// But since the attack, all he's been doing is sitting on the bench.
+	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_06 " );	// It's obvious! To get into the mine, he must get a red tablet from Esteban.
+	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_07 " );	// (whispers) I guess he just can't look him in the eyes.
+	B_LogEntry(Topic_Addon_Esteban, " Lennar suspects Emilio because he doesn't go to Esteban anymore. " );
 };
 
 
-instance DIA_Addon_Lennar_Inspektor(C_Info)
+instance DIA_Addon_Lennar_Inspector (C_Info) .
 {
 	npc = BDT_1096_Addon_Lennar;
 	nr = 3;
 	condition = DIA_Addon_Lennar_Inspektor_Condition;
 	information = DIA_Addon_Lennar_Inspektor_Info;
 	permanent = FALSE;
-	description = "Но что получил бы Эмилио от смерти Эстебана?";
+	description = " But what would Emilio gain from Esteban's death? " ;
 };
 
 
@@ -133,14 +133,14 @@ func int DIA_Addon_Lennar_Inspektor_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Lennar_Inspektor_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Lennar_Inspektor_15_00");	//Но что получил бы Эмилио от смерти Эстебана?
-	AI_Output(self,other,"DIA_Addon_Lennar_Inspektor_01_01");	//Откуда мне знать? Может, у него есть приятель, который бы занял место Эстебана.
-	AI_Output(self,other,"DIA_Addon_Lennar_Inspektor_01_02");	//Да, это звучит довольно логично...
+	AI_Output(other,self, " DIA_Addon_Lennar_Inspektor_15_00 " );	// But what would Emilio gain from Esteban's death?
+	AI_Output(self,other, " DIA_Addon_Lennar_Inspektor_01_01 " );	// How should I know? Maybe he has a friend who would take Esteban's place.
+	AI_Output(self,other, " DIA_Addon_Lennar_Inspektor_01_02 " );	// Yes, that sounds pretty logical...
 };
 
 
@@ -161,15 +161,15 @@ func int DIA_Addon_Lennar_Mine_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Lennar_Mine_Info()
 {
 	B_Say(other,self,"$MINE_ADDON_DESCRIPTION");
 	B_GiveInvItems(other,self,ItMi_Addon_Stone_01,1);
-	AI_Output(self,other,"DIA_Addon_Lennar_Mine_01_00");	//У тебя действительно есть красная плитка для меня?
-	AI_Output(self,other,"DIA_Addon_Lennar_Mine_01_01");	//Великолепно. Сейчас я всю эту породу на куски переработаю - я знаю точно, куда идти!
+	AI_Output(self,other, " DIA_Addon_Lennar_Mine_01_00 " );	// Do you really have a red tile for me?
+	AI_Output(self,other, " DIA_Addon_Lennar_Mine_01_01 " );	// Great. Now I will process all this rock into pieces - I know exactly where to go!
 	Player_SentBuddler = Player_SentBuddler + 1;
 	B_GivePlayerXP(XP_Addon_MINE);
 	AI_StopProcessInfos(self);
@@ -184,7 +184,7 @@ instance DIA_Addon_Lennar_Hacker(C_Info)
 	condition = DIA_Addon_Lennar_Hacker_Condition;
 	information = DIA_Addon_Lennar_Hacker_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -199,6 +199,6 @@ func int DIA_Addon_Lennar_Hacker_Condition()
 func void DIA_Addon_Lennar_Hacker_Info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10004_Lennar_Hacker_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Lennar_Hacker_01_01");	//Все спокойно.
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Lennar_Hacker_01_01 " );	// Everything is calm.
 };
 
