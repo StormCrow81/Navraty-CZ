@@ -34,7 +34,7 @@ instance DIA_Addon_Juan_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Juan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(65,73);
+	return  C_Robbery ( 65 , 73 );
 };
 
 func void DIA_Addon_Juan_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_Juan_PICKPOCKET_Info()
 
 func void DIA_Addon_Juan_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Juan_PICKPOCKET);
 };
 
@@ -56,14 +56,14 @@ func void DIA_Addon_Juan_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Addon_Juan_HI(C_Info)
+instances DIA_Addon_Juan_HI (C_Info)
 {
 	npc = BDT_10017_Addon_Juan;
 	nr = 2;
 	condition = DIA_Addon_Juan_HI_Condition;
 	information = DIA_Addon_Juan_HI_Info;
 	permanent = FALSE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -75,54 +75,54 @@ func int DIA_Addon_Juan_HI_Condition()
 func void DIA_Addon_Juan_HI_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Juan_HI_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_Juan_HI_13_01");	//Что тебе нужно? Если тебе нечего мне сказать, проходи мимо.
-	if(!Npc_IsDead(Freund))
+	AI_Output(self,other, " DIA_Addon_Juan_HI_13_01 " );	// What do you need? If you have nothing to say to me, move on.
+	if ( ! Npc_IsDead(friend))
 	{
-		AI_Output(self,other,"DIA_Addon_Juan_HI_13_02");	//Иначе мой приятель сделает из тебя фарш. Так что тебе нужно?
+		AI_Output(self,other, " DIA_Addon_Juan_HI_13_02 " );	// Otherwise my buddy will make mincemeat out of you. So what do you need?
 		B_StartOtherRoutine(Freund,"STAND");
 	};
 };
 
 
-instance DIA_Addon_Juan_Losung(C_Info)
+instance DIA_Addon_Juan_Solution (C_Info)
 {
 	npc = BDT_10017_Addon_Juan;
 	nr = 2;
 	condition = DIA_Addon_Juan_Losung_Condition;
-	information = DIA_Addon_Juan_Losung_Info;
+	information = DIA_Addon_Juan_Solution_Info;
 	permanent = FALSE;
-	description = "Говорят, у тебя есть интересные вещи...";
+	description = " They say you have interesting things... " ;
 };
 
 
 func int DIA_Addon_Juan_Losung_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Juan_HI) && ((Tom_Tells == TRUE) || (MIS_Huno_Stahl == LOG_Running)))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Juan_HI ) && ( ( Tom_Tells ==  TRUE ) || ( MIS_Huno_Stahl == LOG_Running )))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void DIA_Addon_Juan_Losung_Info()
+func void DIA_Addon_Juan_Solution_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Juan_Losung_15_00");	//Говорят, у тебя есть интересные вещи...
-	AI_Output(self,other,"DIA_Addon_Juan_Losung_13_01");	//И что? Эстебан хочет меня обуть? Я все время работаю, целыми днями не выхожу из этой жалкой дыры...
-	AI_Output(self,other,"DIA_Addon_Juan_Losung_13_02");	//...а он просто посылает кого-то, чтобы забрать мои вещи? Я же не склад!
-	AI_Output(other,self,"DIA_Addon_Juan_Losung_15_03");	//Ну и что? Это не мои проблемы.
-	AI_Output(self,other,"DIA_Addon_Juan_Losung_13_04");	//Это Я создаю тебе проблемы. Ты хочешь доставить товары - отлично, заплати за них!
-	AI_Output(self,other,"DIA_Addon_Juan_Losung_13_05");	//Возьми золото у Эстебана или у Ворона, или я не знаю где еще. Мне без разницы. Если кому-то нужны эти товары, за них придется заплатить!
+	AI_Output(other,self, " DIA_Addon_Juan_Losung_15_00 " );	// They say you have interesting things...
+	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_01 " );	// So what? Esteban wants to put on my shoes? I work all the time, I don't leave this miserable hole all day long...
+	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_02 " );	// ...and he just sends someone to pick up my stuff? I'm not a warehouse!
+	AI_Output(other,self, " DIA_Addon_Juan_Losung_15_03 " );	// So what? These are not my problems.
+	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_04 " );	// It's me who's causing you trouble. You want to deliver goods - great, pay for them!
+	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_05 " );	// Take the gold from Esteban or Raven, or I don't know where else. I do not care. If someone needs these goods, they will have to pay for them!
 };
 
 
-instance DIA_Addon_Juan_AufsMaul(C_Info)
+instance DIA_Addon_Juan_AufsMaul (C_Info)
 {
 	npc = BDT_10017_Addon_Juan;
 	nr = 2;
 	condition = DIA_Addon_Juan_AufsMaul_Condition;
-	information = DIA_Addon_Juan_AufsMaul_Info;
+	information = DIA_Addon_John_AufsMaul_Info;
 	permanent = FALSE;
-	description = "Я пришел не от Эстебана!";
+	description = " I didn't come from Esteban! " ;
 };
 
 func int DIA_Addon_Juan_AufsMaul_Condition()
@@ -131,13 +131,13 @@ func int DIA_Addon_Juan_AufsMaul_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Juan_AufsMaul_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Juan_AufsMaul_15_00");	//Я пришел не от Эстебана!
-	AI_Output(self,other,"DIA_Addon_Juan_AufsMaul_13_01");	//Да? Ну тогда... э-э... Секундочку! Замри! У тебя на плече какая-то мошка.
+	AI_Output(other,self, " DIA_Addon_Juan_AufsMaul_15_00 " );	// I didn't come from Esteban!
+	AI_Output(self,other, " DIA_Addon_Juan_AufsMaul_13_01 " );	// Yes? Well then... uh... Wait a second! Freeze! You have a midge on your shoulder.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -160,7 +160,7 @@ func int DIA_Addon_Juan_Trade_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Juan_Trade_Info()
