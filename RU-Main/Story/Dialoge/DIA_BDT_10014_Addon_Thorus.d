@@ -34,7 +34,7 @@ instance DIA_Addon_BDT_10014_Thorus_Hi(C_Info)
 
 func int DIA_Addon_Thorus_Hi_Condition()
 {
-	if((RavenAway == FALSE) && (THORUS_TP == FALSE))
+	if ((RavenAway ==  FALSE ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -42,13 +42,13 @@ func int DIA_Addon_Thorus_Hi_Condition()
 
 func void DIA_Addon_Thorus_Hi_Info()
 {
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Hi_12_00");	//Ты знаешь правила. Никто не может попасть в шахту, если у него нет красной каменной плитки.
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Hi_15_01");	//Дело не в шахте - мне нужно увидеть Ворона.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Hi_12_02");	//Это ничего не меняет. Правила есть правила, они относятся ко всем. И даже к тебе.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Hi_12_03");	//Возвращайся. Если ты попытаешься пробраться на верхний этаж без разрешения, стража убьет тебя. Таковы правила.
-	if(!Npc_IsDead(Esteban))
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Hi_12_00 " );	// You know the rules. No one can get into the mine unless they have a red stone tile.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Hi_15_01 " );	// It's not about the mine - I need to see Raven.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Hi_12_02 " );	// This doesn't change anything. Rules are rules, they apply to everyone. And even to you.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Hi_12_03 " );	// Come back. If you try to get to the top floor without permission, the guards will kill you. Those are the rules.
+	if ( ! Npc_IsDead(Esteban))
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Hi_12_04");	//Если тебе это не нравится, можешь поговорить с Эстебаном. Он ответственный за лагерь.
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Hi_12_04 " );	// If you don't like it, you can talk to Esteban. He is in charge of the camp.
 	};
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"START");
@@ -62,13 +62,13 @@ instance DIA_Addon_BDT_10014_Thorus_Raven(C_Info)
 	condition = DIA_Addon_Thorus_Raven_Condition;
 	information = DIA_Addon_Thorus_Raven_Info;
 	permanent = FALSE;
-	description = "Это очень важно, мне нужно попасть к Ворону...";
+	description = " This is very important, I need to get to Raven... " ;
 };
 
 
 func int DIA_Addon_Thorus_Raven_Condition()
 {
-	if((RavenAway == FALSE) && (THORUS_TP == FALSE))
+	if ((RavenAway ==  FALSE ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -76,30 +76,30 @@ func int DIA_Addon_Thorus_Raven_Condition()
 
 func void DIA_Addon_Thorus_Raven_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raven_15_00");	//Это очень важно, мне нужно попасть к Ворону...
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raven_12_01");	//Правда? Ты действительно думаешь, что сможешь пройти к нему?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raven_12_02");	//Его охранники твердо выполняют приказ не пускать НИКОГО. Ты умрешь даже раньше, чем сможешь его увидеть.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raven_12_03");	//Так что лучше выкинь эту идею из своей головы.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raven_15_00 " );	// This is very important, I need to get to Raven...
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raven_12_01 " );	// True? Do you really think you can get through to him?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raven_12_02 " );	// His guards are firmly following orders to keep ANYONE out. You will die before you even see it.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raven_12_03 " );	// So you better get that idea out of your head.
 	Log_CreateTopic(TOPIC_Addon_RavenKDW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_RavenKDW,LOG_Running);
-	B_LogEntry(TOPIC_Addon_RavenKDW,"Ворон - предводитель бандитов. Чтобы добраться до него, мне придется убить тех, кто встанет у меня на пути.");
+	B_LogEntry(TOPIC_Addon_RavenKDW, " Raven is the leader of the bandits. To get to him, I will have to kill those who stand in my way. " );
 };
 
 
-instance DIA_Addon_BDT_10014_Thorus_Zeit(C_Info)
+instance DIA_Addon_BDT_10014_Thorus_Zeit (C_Info)
 {
 	npc = BDT_10014_Addon_Thorus;
 	nr = 4;
 	condition = DIA_Addon_Thorus_Zeit_Condition;
 	information = DIA_Addon_Thorus_Zeit_Info;
 	permanent = FALSE;
-	description = "Ты не помнишь меня? Я из Старого Лагеря...";
+	description = " Don't you remember me? I'm from the Old Camp... " ;
 };
 
 
 func int DIA_Addon_Thorus_Zeit_Condition()
 {
-	if((RavenAway == FALSE) && (THORUS_TP == FALSE))
+	if ((RavenAway ==  FALSE ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -107,15 +107,15 @@ func int DIA_Addon_Thorus_Zeit_Condition()
 
 func void DIA_Addon_Thorus_Zeit_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Zeit_15_00");	//Ты не помнишь меня? Я из Старого Лагеря...
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Zeit_12_01");	//Ты был одним из заключенных?! Возможно, ты был одним из моих стражников. И... это делает нас теперь друзьями?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Zeit_12_02");	//Нет, не делает.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Zeit_12_03");	//Может быть, ты тот, кто уничтожил Барьер, а может - тот, кто убил моих приятелей.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Zeit_15_00 " );	// You don't remember me? I'm from the Old Camp...
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_01 " );	// Were you one of the prisoners?! Perhaps you were one of my guards. And... that makes us friends now?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_02 " );	// No, it doesn't.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_03 " );	// Maybe you're the one who destroyed the Barrier, or maybe you're the one who killed my buddies.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Zeit_12_04");	//И что?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Zeit_12_05");	//Эти времена прошли.
-	if(!Npc_IsDead(Esteban))
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_05 " );	// Those days are over.
+	if ( ! Npc_IsDead(Esteban))
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Zeit_12_06");	//Ты хочешь войти? Тогда достань себе красный камень и больше не трать мое время.
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_06 " );	// Do you want to enter? Then get yourself a red stone and don't waste my time again.
 	};
 };
 
@@ -129,13 +129,13 @@ instance DIA_Addon_BDT_10014_Thorus_GoodOldPerm(C_Info)
 	condition = DIA_Addon_Thorus_GoodOldPerm_Condition;
 	information = DIA_Addon_Thorus_GoodOldPerm_Info;
 	permanent = TRUE;
-	description = "Ну ладно тебе, впусти меня. Во имя старых добрых времен.";
+	description = " Come on, let me in. For the good old days. " ;
 };
 
 
 func int DIA_Addon_Thorus_GoodOldPerm_Condition()
 {
-	if((MIS_Send_Buddler != LOG_SUCCESS) && Npc_KnowsInfo(other,DIA_Addon_BDT_10014_Thorus_Zeit) && (RavenAway == FALSE))
+	if ((MIS_Send_Buddler !=  LOG_SUCCESS ) && Npc_KnowsInfo(other,DIA_Addon_BDT_10014_Thorus_Zeit) && (RavenAway ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -143,13 +143,13 @@ func int DIA_Addon_Thorus_GoodOldPerm_Condition()
 
 func void DIA_Addon_Thorus_GoodOldPerm_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Thorus_Add_15_00");	//Ну ладно тебе, впусти меня. Во имя старых добрых времен.
+	AI_Output(other,self, " DIA_Addon_Thorus_Add_15_00 " );	// All right, let me in. In the name of the good old days.
 	if(Thorus_GoodOldPerm == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Thorus_Add_12_01");	//Давай-ка я объясню тебе кое-что. Ты знаешь, почему я до сих пор жив?
-		AI_Output(self,other,"DIA_Addon_Thorus_Add_12_02");	//Потому что я всегда был верен своим людям.
-		AI_Output(self,other,"DIA_Addon_Thorus_Add_12_03");	//Я согласен не со всем, что делает Ворон. Но я всегда выполняю правила.
-		AI_Output(self,other,"DIA_Addon_Thorus_Add_12_04");	//И ты тоже будешь это делать!
+		AI_Output(self,other, " DIA_Addon_Thorus_Add_12_01 " );	// Let me explain something to you. Do you know why I'm still alive?
+		AI_Output(self,other, " DIA_Addon_Thorus_Add_12_02 " );	// Because I've always been loyal to my people.
+		AI_Output(self,other, " DIA_Addon_Thorus_Add_12_03 " );	// I don't agree with everything Raven does. But I always follow the rules.
+		AI_Output(self,other, " DIA_Addon_Thorus_Add_12_04 " );	// And you will do it too!
 		Thorus_GoodOldPerm = TRUE;
 	}
 	else
@@ -174,13 +174,13 @@ instance DIA_Addon_BDT_10014_Thorus_Stein(C_Info)
 	condition = DIA_Addon_Thorus_Stein_Condition;
 	information = DIA_Addon_Thorus_Stein_Info;
 	permanent = TRUE;
-	description = "Вот, у меня есть каменная плитка...";
+	description = " Here, I have a stone tile... " ;
 };
 
 
 func int DIA_Addon_Thorus_Stein_Condition()
 {
-	if((C_PlayerHasWrongToken() == TRUE) && (RavenAway == FALSE) && (MIS_Send_Buddler != LOG_Running) && (MIS_Send_Buddler != LOG_SUCCESS) && (THORUS_TP == FALSE))
+	if ((C_PlayerHasWrongToken() ==  TRUE ) && (RavenAway ==  FALSE ) && (MY_Send_Buddler != LOG_Running) && (MY_Send_Buddler !=  LOG_SUCCESS ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -188,8 +188,8 @@ func int DIA_Addon_Thorus_Stein_Condition()
 
 func void DIA_Addon_Thorus_Stein_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Stein_15_00");	//Вот, у меня есть каменная плитка...
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Stein_12_01");	//Это неправильный камень. Только красные камни являются пропуском.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Stein_15_00 " );	// Here, I have a stone tile...
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Stein_12_01 " );	// This is the wrong stone. Only red stones are a pass.
 };
 
 
@@ -200,13 +200,13 @@ instance DIA_Addon_BDT_10014_Thorus_Rein(C_Info)
 	condition = DIA_Addon_Thorus_Rein_Condition;
 	information = DIA_Addon_Thorus_Rein_Info;
 	permanent = FALSE;
-	description = "Вот, у меня есть красная каменная табличка...";
+	description = " Here, I have a red stone tablet... " ;
 };
 
 
 func int DIA_Addon_Thorus_Rein_Condition()
 {
-	if((Npc_HasItems(other,ItMi_Addon_Stone_01) >= 1) && (RavenAway == FALSE) && (THORUS_TP == FALSE))
+	if ((Npc_HasItems(other,ItMy_Addon_Stone_01) >=  1 ) && (RavenAway ==  FALSE ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -214,17 +214,17 @@ func int DIA_Addon_Thorus_Rein_Condition()
 
 func void DIA_Addon_Thorus_Rein_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Rein_15_00");	//Вот, у меня есть красная каменная табличка...
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Rein_15_00 " );	// Here, I have a red stone tablet...
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_01");	//Хорошо.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_02");	//Ты убил Эстебана - так что ТЫ теперь будешь делать его работу.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_03");	//У них возникли проблемы с ползунами в шахте.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_04");	//Три работника уже погибли. Твоя задача - найти им замену.
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Rein_15_05");	//И когда я, наконец, смогу попасть в эту чертову шахту?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_06");	//Делай свою работу - а после можешь заниматься, чем хочешь.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Rein_12_02 " );	// You killed Esteban - so YOU ​​will now do his job.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Rein_12_03 " );	// They're having trouble with the sliders in the shaft.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Rein_12_04 " );	// Three workers have already died. Your task is to find a replacement for them.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Rein_15_05 " );	// And when will I finally be able to get into this damn mine?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Rein_12_06 " );	// Do your job - and then you can do whatever you want.
 	MIS_Send_Buddler = LOG_Running;
 	Log_CreateTopic(Topic_Addon_Buddler,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Addon_Buddler,LOG_Running);
-	B_LogEntry(Topic_Addon_Buddler,"Я занял место Эстебана, и теперь мне нужно послать в шахту трех шахтеров.");
+	B_LogEntry(Topic_Addon_Buddler, " I took Esteban's place, and now I need to send three miners to the mine. " );
 };
 
 
@@ -235,13 +235,13 @@ instance DIA_Addon_BDT_10014_Thorus_Sent(C_Info)
 	condition = DIA_Addon_Thorus_Sent_Condition;
 	information = DIA_Addon_Thorus_Sent_Info;
 	permanent = FALSE;
-	description = "Я послал трех новых ребят.";
+	description = " I sent three new guys. " ;
 };
 
 
 func int DIA_Addon_Thorus_Sent_Condition()
 {
-	if((Player_SentBuddler >= 3) && (RavenAway == FALSE) && (THORUS_TP == FALSE))
+	if (( Player_SentBuddler >=  3 ) && ( RavenAway ==  FALSE ) && ( THORUS_TP  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -249,8 +249,8 @@ func int DIA_Addon_Thorus_Sent_Condition()
 
 func void DIA_Addon_Thorus_Sent_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Sent_15_00");	//Я послал трех новых ребят.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Sent_12_01");	//Хорошо. Тогда у меня нет повода тебя не пускать.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Sent_15_00 " );	// I sent three new guys.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Sent_12_01 " );	// Good. Then I have no reason not to let you in.
 	MIS_Send_Buddler = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Ambient);
 };
@@ -263,13 +263,13 @@ instance DIA_Addon_BDT_10014_Thorus_Armor(C_Info)
 	condition = DIA_Addon_Thorus_Armor_Condition;
 	information = DIA_Addon_Thorus_Armor_Info;
 	permanent = FALSE;
-	description = "Эй, а что на тебе за доспехи? Где я могу достать такие же?";
+	description = " Hey, what kind of armor are you wearing? Where can I get the same ones? " ;
 };
 
 
 func int DIA_Addon_Thorus_Armor_Condition()
 {
-	if((RavenAway == FALSE) && (THORUS_TP == FALSE))
+	if ((RavenAway ==  FALSE ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -277,44 +277,44 @@ func int DIA_Addon_Thorus_Armor_Condition()
 
 func void DIA_Addon_Thorus_Armor_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Armor_15_00");	//Эй, а что на тебе за доспехи? Где я могу достать такие же?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Armor_12_01");	//Нигде. Эти доспехи сделаны специально для охранников Ворона.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Armor_12_02");	//Полагаю, что нет никакого вступительного экзамена для новых людей. Но окончательное решение принимаю не я, а Ворон.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Armor_15_00 " );	// Hey, what's that armor you're wearing? Where can I get the same ones?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Armor_12_01 " );	// Nowhere. This armor is made especially for the guards of the Raven.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Armor_12_02 " );	// I guess there is no entrance exam for new people. But the final decision is not made by me, but by Raven.
 	THORUSACCEPTMEGUARD = LOG_Running;
 	Log_CreateTopic(TOPIC_THORUSGUARD,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_THORUSGUARD,LOG_Running);
-	B_LogEntry(TOPIC_THORUSGUARD,"Торус сказал, что я должен стать гвардейцем Ворона, чтобы заполучить такие же доспехи, как и у него. Вот только Ворон вряд ли будет рад моей кандидатуре на это место.");
+	; _ _ _ _ _ _
 };
 
 
-instance DIA_Addon_Thorus_Gefangene(C_Info)
+instance DIA_Addon_Thorus_Prisoners (C_Info)
 {
 	npc = BDT_10014_Addon_Thorus;
 	nr = 88;
-	condition = DIA_Addon_Thorus_Gefangene_Condition;
-	information = DIA_Addon_Thorus_Gefangene_Info;
+	condition = DIA_Addon_Thorus_Prisoners_Condition;
+	information = DIA_Addon_Thorus_Prisoners_Info;
 	permanent = FALSE;
-	description = "Как там заключенные?";
+	description = " How are the prisoners? " ;
 };
 
 
-func int DIA_Addon_Thorus_Gefangene_Condition()
+func int DIA_Addon_Thorus_Prisoners_Condition()
 {
-	if(!Npc_IsDead(Bloodwyn) && Npc_KnowsInfo(other,DIA_Addon_Patrick_Hi) && (THORUS_TP == FALSE))
+	if ( ! Npc_IsDead(Bloodwyn) && Npc_KnowsInfo(other,DIA_Addon_Patrick_Hi) && ( THORUS_TP  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Addon_Thorus_Gefangene_Info()
+func void DIA_Addon_Thorus_Prisoners_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Gefangene_15_00");	//Как там заключенные?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_01");	//Они сделали свою работу! Насколько мне известно, они должны сейчас искать золото.
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Gefangene_15_02");	//А что, если они убегут?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_03");	//Бладвин пошлет стражников за ними. Но я сильно сомневаюсь, что они настолько глупы, чтобы бежать.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_04");	//Если только...(задумчиво)
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Gefangene_15_05");	//Если только - что?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_06");	//...кто-нибудь не подобьет их на это! Но я не знаю никого, кто был бы достаточно глуп для этого. По крайней мере, пока Бладвин здесь!
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Gefangene_15_00 " );	// How are the prisoners?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_01 " );	// They did their job! As far as I know, they should be looking for gold now.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Gefangene_15_02 " );	// What if they run away?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_03 " );	// Bloodwyn will send guards after them. But I highly doubt they are stupid enough to run.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_04 " );	// If only... (thoughtfully)
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Gefangene_15_05 " );	// If only - what?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_06 " );	// ...someone won't beat them to this! But I don't know anyone who would be stupid enough for that. At least as long as Bloodwin is here!
 	B_Say(other,self,"$VERSTEHE");
 };
 
@@ -332,7 +332,7 @@ instance DIA_Addon_Thorus_Speech(C_Info)
 
 func int DIA_Addon_Thorus_Speech_Condition()
 {
-	if(Npc_IsDead(Bloodwyn) && (THORUS_TP == FALSE))
+	if (Npc_IsDead(Bloodwyn) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -340,22 +340,22 @@ func int DIA_Addon_Thorus_Speech_Condition()
 
 func void DIA_Addon_Thorus_Speech_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_00");	//Что ты затеваешь?
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_00 " );	// What are you up to?
 	AI_Output(other,self,"DIA_Addon_Thorus_Speech_15_01");	//Что???
 	if(RavenAway == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_02");	//Теперь ты убрал с дороги и Бладвина. Я уже задаюсь вопросом, кто будет следующим. Ворон? Или, может быть, я?
+		AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_02 " );	// Now you've got Bloodwin out of the way too. I'm already wondering who will be next. Crow? Or maybe me?
 		AI_Output(other,self,"DIA_Addon_Thorus_Speech_15_03");	//Ты боишься?
-		AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_04");	//Драки я не боюсь. Но я боюсь того, к чему могут привести твои действия.
+		AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_04 " );	// I'm not afraid of fights. But I'm afraid of what your actions might lead to.
 	};
-	AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_05");	//Этот лагерь - все, что у нас осталось.
-	AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_06");	//Может быть, он не всегда работал идеально, но он работает.
-	AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_07");	//Но с каждым человеком, которого ты убиваешь, исчезает кусочек нашего общества.
-	AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_08");	//Мы - бандиты. Головорезы, преступники, изгнанники.
-	AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_09");	//Куда бы мы ни пошли, нас выследят, поймают и убьют.
-	AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_10");	//Для нас нет лучшего места, чем это, и нет лучшего времени, чем сейчас.
-	AI_Output(other,self,"DIA_Addon_Thorus_Speech_15_11");	//Куда ты клонишь?
-	AI_Output(self,other,"DIA_Addon_Thorus_Speech_12_12");	//Этим людям нужен лидер. Кто способен им стать? Может быть, ты? Ты, человек, который никогда долго не остается на одном месте?
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_05 " );	// This camp is all we have left.
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_06 " );	// Maybe it didn't always work perfectly, but it works.
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_07 " );	// But with every person you kill, a piece of our society disappears.
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_08 " );	// We are bandits. Thugs, criminals, exiles.
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_09 " );	// Wherever we go, we'll be hunted down, caught, and killed.
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_10 " );	// There's no better place for us than this, and there's no better time than now.
+	AI_Output(other,self, " DIA_Addon_Thorus_Speech_15_11 " );	// Where are you going?
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_12 " );	// These people need a leader. Who is capable of becoming one? Maybe you? You, the person who never stays in one place for long?
 };
 
 
@@ -366,13 +366,13 @@ instance DIA_Addon_Thorus_Answer(C_Info)
 	condition = DIA_Addon_Thorus_Answer_Condition;
 	information = DIA_Addon_Thorus_Answer_Info;
 	permanent = FALSE;
-	description = "Тогда почему бы тебе не стать старшим в лагере?";
+	description = " Then why don't you become the head of the camp? " ;
 };
 
 
 func int DIA_Addon_Thorus_Answer_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Thorus_Speech) && (THORUS_TP == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Thorus_Speech ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -380,41 +380,41 @@ func int DIA_Addon_Thorus_Answer_Condition()
 
 func void DIA_Addon_Thorus_Answer_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Answer_15_00");	//Тогда почему бы тебе не стать старшим в лагере?
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Answer_15_00 " );	// Then why don't you become the head of the camp?
 	if(RavenAway == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Answer_12_01");	//Допустим, а что с Вороном?
-		AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Answer_15_02");	//У Ворона скоро будут другие заботы. Я позабочусь об этом.
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Answer_12_01 " );	// Let's say, what about Raven?
+		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Answer_15_02 " );	// Raven will soon have other things to worry about. I will take care of it.
 	};
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Answer_15_03");	//Ах, да... И позаботься о том, чтобы заключенные покинули лагерь спокойно.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Answer_12_04");	//Хорошо, я разберусь с охраной.
-	B_LogEntry(TOPIC_Addon_Sklaven,"Бладвин мертв и Торус позаботится о том, чтобы рабы смогли покинуть лагерь.");
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Answer_15_03 " );	// Oh, yes... And make sure the prisoners leave the camp quietly.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Answer_12_04 " );	// Okay, I'll deal with the guards.
+	B_LogEntry(TOPIC_Addon_Sklaven, " Bloodwin is dead and Thorus will make sure the slaves can leave the camp. " );
 
-	if(!Npc_IsDead(PrisonGuard))
+	if ( ! Npc_IsDead(PrisonGuard))
 	{
-		B_LogEntry(TOPIC_Addon_Sklaven,"Теперь надо еще раз поговорить с охранником рабов. После чего Патрик и его ребята смогут бесприпятственно покинуть это место.");
+		B_LogEntry(TOPIC_Addon_Sklaven, " Now we need to talk to the slave guard again. After that, Patrick and his guys will be able to leave this place unhindered. " );
 	}
 	else
 	{
-		B_LogEntry(TOPIC_Addon_Sklaven,"Рабов больше никто не охраняет! Теперь Патрик и его ребята смогут бесприпятственно покинуть это место.");
+		B_LogEntry(TOPIC_Addon_Sklaven, "The slaves are no longer guarded! Now Patrick and his guys can leave this place unhindered. " );
 	};
 };
 
 
-instance DIA_Addon_Thorus_Raventot(C_Info)
+instance DIA_Addon_Thorus_Raventot (C_Info)
 {
 	npc = BDT_10014_Addon_Thorus;
 	nr = 99;
 	condition = DIA_Addon_Thorus_Raventot_Condition;
 	information = DIA_Addon_Thorus_Raventot_Info;
 	permanent = FALSE;
-	description = "Ворон исчез!";
+	description = " The raven is gone! " ;
 };
 
 
 func int DIA_Addon_Thorus_Raventot_Condition()
 {
-	if((RavenAway == TRUE) && (THORUS_TP == FALSE))
+	if (( RavenAway ==  TRUE ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -422,13 +422,13 @@ func int DIA_Addon_Thorus_Raventot_Condition()
 
 func void DIA_Addon_Thorus_Raventot_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_98");	//Ворон исчез!
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_99");	//(удивленно) Что ты хочешь этим сказать? Хотя Белиар с ним! Без него всем нам будет лучше.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_02");	//Теперь ты пойдешь дальше?
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_97");	//Ты ведь меня знаешь.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_04");	//(смеется) Да, ты постоянно куда-то движешься. Счастливого тебе пути!
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_05");	//Кто знает, может наши пути еще пересекутся.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_06");	//Кто знает! У тебя на пути будет много ворот и много переходов. И на одном из них ты можешь встретить меня.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raventot_15_98 " );	// The raven is gone!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_99 " );	// (surprised) What do you mean by that? Although Beliar is with him! We would all be better off without him.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_02 " );	// Will you move on now?
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raventot_15_97 " );	// You know me.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_04 " );	// (laughs) Yes, you are constantly moving somewhere. Happy journey!
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raventot_15_05 " );	// Who knows, maybe our paths will cross again.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_06 " );	// Who knows! You will have many gates and many crossings on your way. And on one of them you can meet me.
 	THORUSACCEPTME = TRUE;
 };
 
@@ -439,7 +439,7 @@ instance DIA_ADDON_THORUS_PICKPOCKET(C_Info)
 	condition = dia_addon_thorus_pickpocket_condition;
 	information = dia_addon_thorus_pickpocket_info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его ключ)";
+	description = " (Try to steal his key) " ;
 };
 
 func int dia_addon_thorus_pickpocket_condition()
@@ -498,7 +498,7 @@ instance DIA_ADDON_THORUS_ORCINVASION(C_Info)
 
 func int dia_addon_thorus_orcinvasion_condition()
 {
-	if((RavenAway == TRUE) && (THORUS_TP == TRUE) && !Npc_KnowsInfo(other,dia_addon_thorus_orcinvasion))
+	if (( RavenAway ==  TRUE ) && ( THORUS_TP  ==  TRUE ) &&  !
 	{
 		return TRUE;
 	};
@@ -506,39 +506,39 @@ func int dia_addon_thorus_orcinvasion_condition()
 
 func void dia_addon_thorus_orcinvasion_info()
 {
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_00");	//(удивленно) Опять ты! Иногда мне кажется, нет такого места, где тебя нельзя было бы встретить.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_00 " );	// (surprised) You again! Sometimes it seems to me that there is no such place where you could not be met.
 	if(ORCSHAMAN4ISDEAD == TRUE)
 	{
-		AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_02");	//Торус, что ты здесь делаешь?! Я думал, орки всех перебили в лагере.
-		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_03");	//Мне и еще нескольким парням из лагеря все-таки удалось выбраться живыми из той переделки.
+		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_02 " );	// Torus, what are you doing here?! I thought the orcs killed everyone in the camp.
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_03 " );	// Me and a few other guys from the camp still managed to get out of that mess alive.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_05");	//Торус, что ты здесь делаешь?!
-		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_06");	//А ты что, не знаешь? Наш лагерь атаковали орки.
-		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_07");	//Эти зеленокожие твари напали на нас так неожиданно, что у нас даже не было времени подготовиться к обороне!
-		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_08");	//Но мне и еще нескольким парням из лагеря все-таки удалось выбраться живыми из той переделки.
+		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_05 " );	// Torus, what are you doing here?!
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_06 " );	// Don't you know? Our camp was attacked by orcs.
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_07 " );	// These green-skinned creatures attacked us so unexpectedly that we didn't even have time to prepare for defense!
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_08 " );	// But me and a few other guys from the camp still managed to get out of that mess alive.
 	};
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_10");	//Если бы не один парнишка по имени Том, нам бы всем настал конец. Но он знал тайную тропу, ведущую из лагеря - ей то мы и ушли оттуда.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_11");	//До сих пор не понимаю, как нам это удалось!
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_13");	//А где все остальные?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_14");	//Там в пещере, что позади меня. Там все, что осталось от нашего лагеря...(с грустью)
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_15");	//Понятно. И что теперь собираетесь делать?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_16");	//Теперь уж даже не знаю. Одно точно могу сказать: все парни, так же как и я, думаем побыстрее свалить отсюда.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_17");	//Рано или поздно орки доберутся и сюда. И тогда точно нас уже никто не спасет.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_10 " );	// If it wasn't for one kid named Tom, we'd all be finished. But he knew the secret path leading out of the camp - that's why we left from there.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_11 " );	// I still don't understand how we did it!
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_13 " );	// Where's everyone else?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_14 " );	// There in the cave behind me. There is all that remains of our camp ... (with sadness)
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_15 " );	// Got it. And what are you going to do now?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_16 " );	// Now I don't even know. One thing I can say for sure: all the guys, just like me, are thinking of getting out of here as soon as possible.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_17 " );	// Sooner or later, the orcs will get here. And then surely no one will save us.
 	if(AWORCINVASIONSTOP == TRUE)
 	{
 		B_GivePlayerXP(150);
-		AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_18");	//Орки уже не опасны! Их лидеры мертвы, и, скорее всего, они скоро покинут долину.
-		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_19");	//Это хорошая новость. Но в лагерь все равно уже бессмысленно возвращаться. Нас слишком мало, да и не факт, что вторжение не повторится вновь.
+		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_18 " );	// Orcs are no longer dangerous! Their leaders are dead, and most likely they will leave the valley soon.
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_19 " );	// This is good news. But it's pointless to return to the camp anyway. There are too few of us, and it is not a fact that the invasion will not happen again.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_21");	//Все возможно.
+		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_21 " );	// All possible.
 	};
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_22");	//И что теперь собираетесь делать?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_23");	//Не знаю. Думаю поговорить с пиратами. Я слышал, иногда они плавают на другую часть острова.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_24");	//А насколько я помню, золото они все еще любят. Может, они и согласятся отвезти нас туда.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_22 " );	// And what are you going to do now?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_23 " );	// I don't know. I think to talk to the pirates. I heard sometimes they swim to another part of the island.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_24 " );	// As far as I remember, they still love gold. Maybe they'll agree to take us there.
 	AI_StopProcessInfos(self);
 };
 
@@ -550,13 +550,13 @@ instance DIA_ADDON_THORUS_RAVENGUARD(C_Info)
 	condition = dia_addon_thorus_ravenguard_condition;
 	information = dia_addon_thorus_ravenguard_info;
 	permanent = FALSE;
-	description = "Еще одно дело...";
+	description = " One more thing... " ;
 };
 
 
 func int dia_addon_thorus_ravenguard_condition()
 {
-	if((RavenAway == TRUE) && (THORUSACCEPTME == TRUE) && (THORUS_TP == FALSE))
+	if (( RavenAway ==  TRUE ) && ( THORUSACCEPTME  ==  TRUE ) && ( THORUS_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -564,13 +564,13 @@ func int dia_addon_thorus_ravenguard_condition()
 
 func void dia_addon_thorus_ravenguard_info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_02");	//Теперь, когда Ворон исчез, как насчет того, чтобы принять меня в СВОЮ гвардию. Теперь ты принимаешь решение по этому вопросу. Не так ли?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_05");	//Ох, парень. Ты ведь не отстанешь, да?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_06");	//Ладно. Считай, что ты прошел свой вступительный экзамен. (смеется)
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_07");	//Вот, держи свои доспехи. В общем, ты их честно заслужил.
-	AI_Print("Получены Тяжелые доспехи стражника");
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_02 " );	// Now that the Raven is gone, how about taking me into YOUR guard. Now you make a decision on this matter. Is not it?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_05 " );	// Oh boy. You won't leave, will you?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_06 " );	// Okay. Consider that you have passed your entrance exam. (laughs)
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_07 " );	// Here, take your armor. In general, you honestly deserve them.
+	AI_Print( " Received Guard Heavy Armor " );
 	CreateInvItems(other,ITAR_Thorus_Addon,1);
 	THORUSACCEPTMEGUARD = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_THORUSGUARD,LOG_SUCCESS);
-	B_LogEntry(TOPIC_THORUSGUARD,"В знак признательности за освобождение от Ворона Торус приравнял меня к своим помощникам и выдал мне тяжелые доспехи стражника.");
+	B_LogEntry( TOPIC_THORUSGUARD , " In gratitude for being freed from the Raven, Thorus made me one of his lieutenants and gave me heavy guard armor. " );
 };
