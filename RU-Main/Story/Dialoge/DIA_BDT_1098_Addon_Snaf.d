@@ -34,7 +34,7 @@ instance DIA_Addon_Snaf_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Snaf_PICKPOCKET_Condition()
 {
-	return C_Beklauen(49,56);
+	return  C_Robbery ( 49 , 56 );
 };
 
 func void DIA_Addon_Snaf_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_Snaf_PICKPOCKET_Info()
 
 func void DIA_Addon_Snaf_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Snaf_PICKPOCKET);
 };
 
@@ -73,12 +73,12 @@ func int DIA_Addon_Snaf_Hi_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Snaf_Hi_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Snaf_Hi_01_00");	//Хочешь жрать или болтать?
+	AI_Output(self,other, " DIA_Addon_Snaf_Hi_01_00 " );	// Would you like to eat or chat?
 };
 
 instance DIA_Addon_Snaf_Cook(C_Info)
@@ -88,7 +88,7 @@ instance DIA_Addon_Snaf_Cook(C_Info)
 	condition = DIA_Addon_Snaf_Cook_Condition;
 	information = DIA_Addon_Snaf_Cook_Info;
 	permanent = FALSE;
-	description = "А что у вас в меню, сэр?";
+	description = " What's on the menu, sir? " ;
 };
 
 func int DIA_Addon_Snaf_Cook_Condition()
@@ -98,32 +98,32 @@ func int DIA_Addon_Snaf_Cook_Condition()
 
 func void DIA_Addon_Snaf_Cook_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Cook_15_00");	//А что у вас в меню, сэр?
-	AI_Output(self,other,"DIA_Addon_Snaf_Cook_01_01");	//Советовал бы попробовать наше новое блюдо, умник. Оно называется 'Пламенная нарезка в соусе 'Плавленые зубы'.
+	AI_Output(other,self, " DIA_Addon_Snaf_Cook_15_00 " );	// What's on your menu, sir?
+	AI_Output(self,other, " DIA_Addon_Snaf_Cook_01_01 " );	// Would recommend trying our new dish, smart guy. It's called 'Flame Cut in Melted Teeth' Sauce.
 	Info_ClearChoices(DIA_Addon_Snaf_Cook);
-	Info_AddChoice(DIA_Addon_Snaf_Cook,"Пламенная нарезка?",DIA_Addon_Snaf_Cook_FEUER);
-	Info_AddChoice(DIA_Addon_Snaf_Cook,"А что за соус такой - 'Плавленые зубы'?",DIA_Addon_Snaf_Cook_HAMMER);
+	Info_AddChoice(DIA_Addon_Snaf_Cook, " Flame Sliced? " ,DIA_Addon_Snaf_Cook_FEUER);
+	Info_AddChoice(DIA_Addon_Snaf_Cook, " What kind of sauce is 'Melted Teeth'? " ,DIA_Addon_Snaf_Cook_HAMMER);
 };
 
 func void DIA_Addon_Snaf_Cook_FEUER()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Cook_FEUER_15_00");	//Пламенная нарезка?
-	AI_Output(self,other,"DIA_Addon_Snaf_Cook_FEUER_01_01");	//Это хрустящее, слегка поджаренное мясо с маринованными корешками огненной травы.
-	AI_Output(self,other,"DIA_Addon_Snaf_Cook_FEUER_01_02");	//Но ты не волнуйся. Все ингредиенты уже в наличии.
+	AI_Output(other,self, " DIA_Addon_Snaf_Cook_FEUER_15_00 " );	// flame slicing?
+	AI_Output(self,other, " DIA_Addon_Snaf_Cook_FEUER_01_01 " );	// This is a crispy, lightly fried meat with marinated fire grass roots.
+	AI_Output(self,other, " DIA_Addon_Snaf_Cook_FEUER_01_02 " );	// But don't worry. All ingredients are already in stock.
 };
 
 func void DIA_Addon_Snaf_Cook_HAMMER()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Cook_HAMMER_15_00");	//А что за соус такой - 'Плавленые зубы'?
-	AI_Output(self,other,"DIA_Addon_Snaf_Cook_HAMMER_01_01");	//Соус, приготовленный из такого крепкого пойла, что зубы плавятся. Достал рецепт у парнишки по имени Лу.
-	AI_Output(self,other,"DIA_Addon_Snaf_Cook_HAMMER_01_02");	//Ты достаешь нужные ингредиенты, гонишь горилку на алхимических инструментах, и я тебе делаю соус. Ну как?
-	Info_AddChoice(DIA_Addon_Snaf_Cook,"У меня нет времени на это.",DIA_Addon_Snaf_Cook_NO);
-	Info_AddChoice(DIA_Addon_Snaf_Cook,"Собственно, почему бы и нет?",DIA_Addon_Snaf_Cook_YES);
+	AI_Output(other,self, " DIA_Addon_Snaf_Cook_HAMMER_15_00 " );	// And what kind of sauce is this - 'Melted teeth'?
+	AI_Output(self,other, " DIA_Addon_Snaf_Cook_HAMMER_01_01 " );	// Sauce made from a liquor so strong it melts teeth. Got the recipe from a kid named Lou.
+	AI_Output(self,other, " DIA_Addon_Snaf_Cook_HAMMER_01_02 " );	// You get the right ingredients, make vodka on alchemy tools, and I make sauce for you. Well, how?
+	Info_AddChoice(DIA_Addon_Snaf_Cook, " I don't have time for this. " ,DIA_Addon_Snaf_Cook_NO);
+	Info_AddChoice(DIA_Addon_Snaf_Cook, " Actually, why not? " ,DIA_Addon_Snaf_Cook_YES);
 };
 
 func void DIA_Addon_Snaf_Cook_NO()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Cook_HAMMER_NO_15_00");	//Все, конечно, хорошо, но мне не до этого.
+	AI_Output(other,self, " DIA_Addon_Snaf_Cook_HAMMER_NO_15_00 " );	// Everything is fine, of course, but I'm not up to it.
 	AI_Output(self,other,"DIA_Addon_Snaf_Cook_HAMMER_NO_01_01");	//Ну, дело твое.
 	MIS_SnafHammer = LOG_OBSOLETE;
 	Info_ClearChoices(DIA_Addon_Snaf_Cook);
@@ -131,14 +131,14 @@ func void DIA_Addon_Snaf_Cook_NO()
 
 func void DIA_Addon_Snaf_Cook_YES()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Cook_HAMMER_YES_15_00");	//Собственно, почему бы и нет?
-	AI_Output(self,other,"DIA_Addon_Snaf_Cook_HAMMER_YES_01_01");	//Отлично. Вот рецепт.
+	AI_Output(other,self, " DIA_Addon_Snaf_Cook_HAMMER_YES_15_00 " );	// Actually, why not?
+	AI_Output(self,other, " DIA_Addon_Snaf_Cook_HAMMER_YES_01_01 " );	// Great. Here is the prescription.
 	B_GiveInvItems(self,other,ITWr_Addon_Lou_Rezept,1);
 	MIS_SnafHammer = LOG_Running;
 	Info_ClearChoices(DIA_Addon_Snaf_Cook);
 	Log_CreateTopic(Topic_Addon_Hammer,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Addon_Hammer,LOG_Running);
-	B_LogEntry(Topic_Addon_Hammer,"Снафу нужен ингредиент для соуса. Он дал мне рецепт напитка 'Молот', который я могу приготовить на алхимическом столе.");
+	B_LogEntry(Topic_Addon_Hammer, " Snaf needs a sauce ingredient. He gave me a Hammer drink recipe that I can make at the alchemy table. " );
 };
 
 var int Snaf_Tip_Kosten;
@@ -150,7 +150,7 @@ instance DIA_Addon_Snaf_Booze(C_Info)
 	condition = DIA_Addon_Snaf_Booze_Condition;
 	information = DIA_Addon_Snaf_Booze_Info;
 	permanent = FALSE;
-	description = "Вот твой самогон, приятель.";
+	description = " Here's your moonshine, buddy. " ;
 };
 
 func int DIA_Addon_Snaf_Booze_Condition()
@@ -159,22 +159,22 @@ func int DIA_Addon_Snaf_Booze_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Snaf_Booze_Info()
 {
 	B_GivePlayerXP(XP_Addon_Loushammer);
-	AI_Output(other,self,"DIA_Addon_Snaf_Booze_15_00");	//Вот твой самогон, приятель.
+	AI_Output(other,self, " DIA_Addon_Snaf_Booze_15_00 " );	// Here's your moonshine, buddy.
 	B_GiveInvItems(other,self,ItFo_Addon_LousHammer,1);
-	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_01");	//Прекрасно, позволь мне приготовить соус.
-	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_02");	//Вот, готово! Можешь попробовать прямо сейчас. Силушки-то в ручонках прибавится, спору нет!
-	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_03");	//А еще если тебе понадобится моя помощь - теперь и вся информация для тебя бесплатно!
-	Snaf_Tip_Kosten = 0;
+	AI_Output(self,other, " DIA_Addon_Snaf_Booze_01_01 " );	// Fine, let me make the sauce.
+	AI_Output(self,other, " DIA_Addon_Snaf_Booze_01_02 " );	// Here, it's done! You can try right now. There will be more strength in the little hands, no doubt!
+	AI_Output(self,other, " DIA_Addon_Snaf_Booze_01_03 " );	// And if you need my help - now all the information is free for you!
+	Snaf_Tip_Cost = 0 ;
 	B_GiveInvItems(self,other,ItFo_Addon_FireStew,1);
 	MIS_SnafHammer = LOG_SUCCESS;
 	Log_SetTopicStatus(Topic_Addon_Hammer,LOG_SUCCESS);
-	B_LogEntry(Topic_Addon_Hammer,"Я принес Снафу самогон.");
+	B_LogEntry(Topic_Addon_Hammer, " I brought moonshine to Snafu. " );
 };
 
 instance DIA_Addon_Snaf_Attentat(C_Info)
@@ -184,7 +184,7 @@ instance DIA_Addon_Snaf_Attentat(C_Info)
 	condition = DIA_Addon_Snaf_Attentat_Condition;
 	information = DIA_Addon_Snaf_Attentat_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о нападении?";
+	description = " What do you know about the attack? " ;
 };
 
 
@@ -194,128 +194,128 @@ func int DIA_Addon_Snaf_Attentat_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Snaf_Attentat_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Attentat_15_00");	//Что ты знаешь о нападении?
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_01_01");	//Ты говоришь про нападение на Эстебана?
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_01_02");	//Ну, ты меня понимаешь, хозяин таверны слышит все, но не утверждает, что все, что он слышал, - правда.
+	AI_Output(other,self, " DIA_Addon_Snaf_Attentat_15_00 " );	// What do you know about the attack?
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_01_01 " );	// Are you talking about attacking Esteban?
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_01_02 " );	// Well, you understand me, the tavern owner hears everything, but does not claim that everything he heard is true.
 	Info_ClearChoices(DIA_Addon_Snaf_Attentat);
-	Info_AddChoice(DIA_Addon_Snaf_Attentat,"Скажи хоть, к кому я могу с этим обратиться.",DIA_Addon_Snaf_Attentat_GoWhere);
-	Info_AddChoice(DIA_Addon_Snaf_Attentat,"А что ты бы сделал, будь ты на моем месте?",DIA_Addon_Snaf_Attentat_YouBeingMe);
-	Info_AddChoice(DIA_Addon_Snaf_Attentat,"Значит, все же тебе что-то известно?",DIA_Addon_Snaf_Attentat_Something);
+	Info_AddChoice(DIA_Addon_Snaf_Attentat, " Tell me who I can contact with this. " ,DIA_Addon_Snaf_Attentat_GoWhere);
+	Info_AddChoice(DIA_Addon_Snaf_Attentat, " What would you do if you were me? " ,DIA_Addon_Snaf_Attentat_YouBeingMe);
+	Info_AddChoice(DIA_Addon_Snaf_Attentat, " So, do you still know something? " ,DIA_Addon_Snaf_Attentat_Something);
 };
 
 func void DIA_Addon_Snaf_Attentat_Something()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Attentat_Something_15_00");	//Значит, все же тебе что-то известно?
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_Something_01_01");	//Ну, я этого не говорил.
+	AI_Output(other,self, " DIA_Addon_Snaf_Attentat_Something_15_00 " );	// So, do you still know something?
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_Something_01_01 " );	// Well, I didn't say that.
 };
 
 func void DIA_Addon_Snaf_Attentat_GoWhere()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Attentat_GoWhere_15_00");	//Скажи хоть, к кому я могу с этим обратиться.
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_GoWhere_01_01");	//Какое тебе до этого дело, друг? Брось ты все это.
+	AI_Output(other,self, " DIA_Addon_Snaf_Attentat_GoWhere_15_00 " );	// Tell me at least who I can contact with this.
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_GoWhere_01_01 " );	// What do you care, friend? Drop it all.
 };
 
 func void DIA_Addon_Snaf_Attentat_YouBeingMe()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Attentat_YouBeingMe_15_00");	//А что ты бы сделал, будь ты на моем месте?
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_01");	//Я бы задумался над тем, что я знаю о человеке, который стоял за нападением.
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_02");	//Во-первых, вероятнее всего это разбойник, и это означает, что он здесь, в лагере.
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_03");	//Во-вторых, он наверняка за тобой наблюдает.
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_04");	//И в-третьих, пока он считает, что ты на стороне Эстебана, он ни за что не раскроет себя тебе.
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_05");	//Самое время задать вопрос: каковы твои шансы найти этого человека?
+	AI_Output(other,self, " DIA_Addon_Snaf_Attentat_YouBeingMe_15_00 " );	// What would you do if you were me?
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_YouBeingMe_01_01 " );	// I'd wonder what I know about the man behind the attack.
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_YouBeingMe_01_02 " );	// First, it's most likely a rogue, which means he's here in the camp.
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_YouBeingMe_01_03 " );	// Second, he's probably watching you.
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_YouBeingMe_01_04 " );	// And third, as long as he thinks you're on Esteban's side, there's no way he'll reveal himself to you.
+	AI_Output(self,other, " DIA_Addon_Snaf_Attentat_YouBeingMe_01_05 " );	// It's time to ask the question: what are your chances of finding this person?
 	Info_ClearChoices(DIA_Addon_Snaf_Attentat);
 };
 
 
-instance DIA_Addon_Snaf_Abrechnung(C_Info)
+instance DIA_Addon_Snaf_Abrechnung (C_Info)
 {
 	npc = BDT_1098_Addon_Snaf;
 	nr = 5;
 	condition = DIA_Addon_Snaf_Abrechnung_Condition;
 	information = DIA_Addon_Snaf_Abrechnung_Info;
 	permanent = TRUE;
-	description = "Ну и каковы же?";
+	description = " So what are they? " ;
 };
 
 
 func int DIA_Addon_Snaf_Abrechnung_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Snaf_Attentat) && (MIS_Judas == LOG_Running) && (Huno_zuSnaf == FALSE))
+	if (Npc_KnowsInfo(other,DIA_Addon_Snaf_Attempt) && (MY_Judas == LOG_Running) && (Who_is_Snafing ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Snaf_Abrechnung_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Abrechnung_15_00");	//Ну и каковы же?
+	AI_Output(other,self, " DIA_Addon_Snaf_Abrechnung_15_00 " );	// Well, what are they?
 	AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_01");	//Хм...
 	if((Senyan_Erpressung == LOG_Running) && !Npc_IsDead(Senyan))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_02");	//Невысоки, я бы сказал. Некоторые уже заметили, что у тебя общие дела с Сеньяном.
-		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_03");	//Тебе нужно срочно исправить это и порвать с ним, иначе не видать тебе человека, что стоял за нападением.
-		if(Snaf_Tip_Senyan == FALSE)
+		AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_02 " );	// Not high, I would say. Some have already noticed that you have common affairs with Senyang.
+		AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_03 " );	// You need to urgently fix this and break up with him, otherwise you will not see the person behind the attack.
+		if (Snaf_Tip_Senyan ==  FALSE )
 		{
-			B_LogEntry(Topic_Addon_Senyan,"Я должен порвать отношения с Сеньяном. Нападать на него напрямую было бы глупо, поэтому я должен сначала с ним поговорить.");
+			B_LogEntry(Topic_Addon_Senyan, " I should cut ties with Senyan. Attacking him directly would be stupid, so I should talk to him first. " );
 			Snaf_Tip_Senyan = TRUE;
 		};
 	}
-	else if(Npc_IsDead(Senyan))
+	 else if ( Npc_IsDead (Senyan))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_04");	//Ты прибил одного из парней Эстебана. Я полагаю, тот, кого ты ищешь, будет больше тебе доверять, когда ты его встретишь.
-		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_05");	//Но он вряд ли так просто раскроется. Тебе нужно узнать больше.
+		AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_04 " );	// You nailed one of Esteban's guys. I guess the one you're looking for will trust you more when you meet him.
+		AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_05 " );	// But it's unlikely to open up that easily. You need to know more.
 	}
 	else
 	{
-		if(Finn_Petzt == TRUE)
+		if (Finn_Petzt ==  TRUE )
 		{
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_06");	//Финн заметно взволнован с тех пор, как ты с ним поговорил.
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_07");	//И все здесь знают, что он хорошо ладит с Эстебаном.
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_08");	//Это значит, что ты сказал ему что-то, чего он явно не хотел слышать.
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_09");	//Это наверняка понравится тому, кого ты ищешь.
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_10");	//Хотя вполне возможно, что он бросится к Эстебану с этой информацией. (ухмыляется) Ну, хотя ты сам все прекрасно понимаешь.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_06 " );	// Finn has been visibly flustered since you talked to him.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_07 " );	// And everyone here knows that he gets along well with Esteban.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_08 " );	// It means you said something to him that he obviously didn't want to hear.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_09 " );	// This is sure to please whoever you're looking for.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_10 " );	// Though it's entirely possible that he'll rush to Esteban with this information. (grins) Well, although you yourself understand everything perfectly.
 		};
 		if(Finn_TellAll == TRUE)
 		{
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_11");	//Говорят, ты сболтнул Финну, что работаешь на Эстебана.
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_12");	//Не знаю, чего ты там задумал, но теперь человек, которого ты ищешь, наверняка станет осторожней.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_11 " );	// They say you told Finn you were working for Esteban.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_12 " );	// I don't know what you're up to, but now the person you're looking for will probably be more careful.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_13");	//Ну, хотя вряд ли можно говорить об этом с уверенностью.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abrechnung_01_13 " );	// Well, although we can hardly talk about it with certainty.
 		};
 	};
-	if(Snaf_Rechnung == FALSE)
+	if (Snaf_Rechnung ==  FALSE )
 	{
-		if(Snaf_Einmal == FALSE)
+		if (Snaf_Once ==  FALSE )
 		{
-			AI_Output(other,self,"DIA_Addon_Snaf_Abschied_15_14");	//Спасибо тебе.
-			AI_Output(self,other,"DIA_Addon_Snaf_Abschied_01_15");	//(резко) Эй! Ты от меня ничего не слышал, ясно?!
-			Snaf_Einmal = TRUE;
+			AI_Output(other,self, " DIA_Addon_Snaf_Abschied_15_14 " );	// Thank you.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abschied_01_15 " );	// (sharply) Hey! You didn't hear anything from me, okay?!
+			Snaf_Once = TRUE ;
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Addon_Snaf_Abschied_15_16");	//Само собой.
-			AI_Output(self,other,"DIA_Addon_Snaf_Abschied_01_17");	//Вот именно.
+			AI_Output(other,self, " DIA_Addon_Snaf_Abschied_15_16 " );	// Of course.
+			AI_Output(self,other, " DIA_Addon_Snaf_Abschied_01_17 " );	// That's it.
 		};
 	};
 };
 
 
-instance DIA_Addon_Snaf_HOCH(C_Info)
+instance DIA_Addon_Snaf_HIGH (C_Info)
 {
 	npc = BDT_1098_Addon_Snaf;
 	nr = 6;
 	condition = DIA_Addon_Snaf_HOCH_Condition;
-	information = DIA_Addon_Snaf_HOCH_Info;
+	information = DIA_Addon_Snaf_HIGH_Info;
 	permanent = FALSE;
-	description = "Я от Хуно.";
+	description = " I'm from Huno. " ;
 };
 
 
@@ -325,22 +325,22 @@ func int DIA_Addon_Snaf_HOCH_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void DIA_Addon_Snaf_HOCH_Info()
+func void DIA_Addon_Snaf_HIGH_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_HOCH_15_00");	//Я от Хуно.
-	AI_Output(self,other,"DIA_Addon_Snaf_HOCH_01_01");	//Гляжу, ты нашел того, кого искал.
-	AI_Output(self,other,"DIA_Addon_Snaf_HOCH_01_02");	//Поднимись наверх, тебя там ждут.
+	AI_Output(other,self, " DIA_Addon_Snaf_HOCH_15_00 " );	// I'm from Huno.
+	AI_Output(self,other, " DIA_Addon_Snaf_HOCH_01_01 " );	// I see you found the one you were looking for.
+	AI_Output(self,other, " DIA_Addon_Snaf_HOCH_01_02 " );	// Go upstairs, they are waiting for you there.
 	AI_StopProcessInfos(self);
 	AI_Teleport(Fisk,"BL_INN_UP_06");
 	B_StartOtherRoutine(Fisk,"MEETING");
-	B_GivePlayerXP(XP_Addon_Auftraggeber);
+	B_GivePlayerXP(XP_Addon_Client);
 };
 
 
-var int Kosten_Einmal;
+var int cost_once;
 
 instance DIA_Addon_Snaf_People(C_Info)
 {
@@ -349,38 +349,38 @@ instance DIA_Addon_Snaf_People(C_Info)
 	condition = DIA_Addon_Snaf_People_Condition;
 	information = DIA_Addon_Snaf_People_Info;
 	permanent = TRUE;
-	description = "Что местные думают об Эстебане?";
+	description = " What do the locals think of Esteban? " ;
 };
 
 
 func int DIA_Addon_Snaf_People_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Snaf_Attentat) && !Npc_IsDead(Esteban))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Snaf_Attempt ) &&  ! Npc_IsDead ( Stephen ) ) .
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Snaf_People_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_People_15_00");	//Что местные думают об Эстебане?
-	AI_Output(self,other,"DIA_Addon_Snaf_People_01_01");	//Тебе следует быть более точным в своих вопросах...
-	if((Kosten_Einmal == FALSE) && (MIS_SnafHammer != LOG_SUCCESS))
+	AI_Output(other,self, " DIA_Addon_Snaf_People_15_00 " );	// What do the locals think of Esteban?
+	AI_Output(self,other, " DIA_Addon_Snaf_People_01_01 " );	// You should be more precise in your questions...
+	if ((Cost_Once ==  FALSE ) && (MIS_SnafHammer !=  LOG_SUCCESS ))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_People_01_02");	//Информация стоит денег, приятель...
-		AI_Output(other,self,"DIA_Addon_Snaf_People_15_03");	//Ну, и сколько же она стоит?
-		AI_Output(self,other,"DIA_Addon_Snaf_People_01_04");	//Десятка вполне сойдет.
-		Snaf_Tip_Kosten = 10;
-		Kosten_Einmal = TRUE;
+		AI_Output(self,other, " DIA_Addon_Snaf_People_01_02 " );	// Information costs money, mate...
+		AI_Output(other,self, " DIA_Addon_Snaf_People_15_03 " );	// Well, how much does it cost?
+		AI_Output(self,other, " DIA_Addon_Snaf_People_01_04 " );	// Ten is fine.
+		Snaf_Tip_Cost = 10 ;
+		cost_once = TRUE ;
 	};
 	Info_ClearChoices(DIA_Addon_Snaf_People);
 	Info_AddChoice(DIA_Addon_Snaf_People,Dialog_Back,DIA_Addon_Snaf_People_BACK);
 	Info_AddChoice(DIA_Addon_Snaf_People,"Пол.",DIA_Addon_Snaf_People_Paul);
 	Info_AddChoice(DIA_Addon_Snaf_People,"Хуно.",DIA_Addon_Snaf_People_Huno);
 	Info_AddChoice(DIA_Addon_Snaf_People,"Фиск.",DIA_Addon_Snaf_People_Fisk);
-	Info_AddChoice(DIA_Addon_Snaf_People,"Эмилио.",DIA_Addon_Snaf_People_Emilio);
-	if(!Npc_IsDead(Senyan))
+	Info_AddChoice(DIA_Addon_Snaf_People, " male. " ,DIA_Addon_Snaf_People_Emilio);
+	if ( ! Npc_IsDead(Senyan))
 	{
 		Info_AddChoice(DIA_Addon_Snaf_People,"Сеньян.",DIA_Addon_Snaf_People_Senyan);
 	};
@@ -390,7 +390,7 @@ func void DIA_Addon_Snaf_People_Info()
 
 func void B_Addon_Snaf_NotEnough()
 {
-	AI_Output(self,other,"DIA_Addon_Snaf_NotEnough_01_00");	//Да у тебя золота не хватает, парень!
+	AI_Output(self,other, " DIA_Addon_Snaf_NotEnough_01_00 " );	// You don't have enough gold, boy!
 };
 
 func void DIA_Addon_Snaf_People_BACK()
@@ -404,7 +404,7 @@ func void DIA_Addon_Snaf_People_Paul()
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,Snaf_Tip_Kosten))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_People_Paul_01_01");	//Не думаю, что он без ума от Эстебана. Из-за того, что он работает на Хуно, в шахту ему никогда не попасть.
+		AI_Output(self,other, " DIA_Addon_Snaf_People_Paul_01_01 " );	// I don't think he's crazy about Esteban. Due to the fact that he works for Huno, he will never get into the mine.
 	}
 	else
 	{
@@ -414,9 +414,9 @@ func void DIA_Addon_Snaf_People_Paul()
 
 func void DIA_Addon_Snaf_People_Huno()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_People_Huno_15_00");	//Что Хуно думает об Эстебане?
-	AI_Output(self,other,"DIA_Addon_Snaf_People_Huno_01_01");	//А, Хуно! Я про него почти ничего не знаю.
-	AI_Output(self,other,"DIA_Addon_Snaf_People_Huno_01_02");	//(ухмыляется) Конечно, денег я за это с тебя не возьму.
+	AI_Output(other,self, " DIA_Addon_Snaf_People_Huno_15_00 " );	// What does Huno think of Esteban?
+	AI_Output(self,other, " DIA_Addon_Snaf_People_Huno_01_01 " );	// Ah, Huno! I know almost nothing about him.
+	AI_Output(self,other, " DIA_Addon_Snaf_People_Huno_01_02 " );	// (grins) Of course, I won't charge you for this.
 };
 
 func void DIA_Addon_Snaf_People_Fisk()
@@ -424,8 +424,8 @@ func void DIA_Addon_Snaf_People_Fisk()
 	AI_Output(other,self,"DIA_Addon_Snaf_People_Fisk_15_00");	//А Фиск?
 	if(B_GiveInvItems(other,self,ItMi_Gold,Snaf_Tip_Kosten))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_People_Fisk_01_01");	//Фиск есть Фиск. От платит долю Эстебану и перепродает добро, которое он, в основном, получает от пиратов.
-		AI_Output(self,other,"DIA_Addon_Snaf_People_Fisk_01_02");	//По мне, так он вряд ли питает добрые чувства к Эстебану.
+		AI_Output(self,other, " DIA_Addon_Snaf_People_Fisk_01_01 " );	// Fisk is Fisk. From pays a share to Esteban and resells the good that he mainly receives from the pirates.
+		AI_Output(self,other, " DIA_Addon_Snaf_People_Fisk_01_02 " );	// I don't think he has any kind feelings for Esteban.
 	}
 	else
 	{
@@ -435,10 +435,10 @@ func void DIA_Addon_Snaf_People_Fisk()
 
 func void DIA_Addon_Snaf_People_Emilio()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_People_Emilio_15_00");	//Как Эмилио относится к Эстебану?
+	AI_Output(other,self, " DIA_Addon_Snaf_People_Emilio_15_00 " );	// How does Emilio feel about Esteban?
 	if(B_GiveInvItems(other,self,ItMi_Gold,Snaf_Tip_Kosten))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_People_Emilio_01_01");	//Ну, свечку за его душу он вряд ли когда-нибудь поставит, это точно.
+		AI_Output(self,other, " DIA_Addon_Snaf_People_Emilio_01_01 " );	// Well, he's unlikely to ever light a candle for his soul, that's for sure.
 	}
 	else
 	{
@@ -451,7 +451,7 @@ func void DIA_Addon_Snaf_People_Senyan()
 	AI_Output(other,self,"DIA_Addon_Snaf_People_Senyan_15_00");	//А Сеньян?
 	if(B_GiveInvItems(other,self,ItMi_Gold,Snaf_Tip_Kosten))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_People_Senyan_01_01");	//Сеньян - один из ребят Эстебана. Довольно давно работает на него.
+		AI_Output(self,other, " DIA_Addon_Snaf_People_Senyan_01_01 " );	// Senyan is one of Esteban's guys. Been working for him for quite some time.
 	}
 	else
 	{
@@ -461,17 +461,17 @@ func void DIA_Addon_Snaf_People_Senyan()
 
 func void DIA_Addon_Snaf_People_Lennar()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_People_Lennar_15_00");	//Какого мнения об Эстебане Леннар?
-	AI_Output(self,other,"DIA_Addon_Snaf_People_Lennar_01_01");	//Насколько я могу сказать, он не имеет никакого мнения об Эстебане.
+	AI_Output(other,self, " DIA_Addon_Snaf_People_Lennar_15_00 " );	// What do you think of Esteban Lennar?
+	AI_Output(self,other, " DIA_Addon_Snaf_People_Lennar_01_01 " );	// As far as I can tell, he has no opinion of Esteban.
 };
 
 func void DIA_Addon_Snaf_People_Finn()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_People_Finn_15_00");	//А что с Финном?
+	AI_Output(other,self, " DIA_Addon_Snaf_People_Finn_15_00 " );	// What about Finn?
 	if(B_GiveInvItems(other,self,ItMi_Gold,Snaf_Tip_Kosten))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_People_Finn_01_01");	//Отличный рудокоп. Он золото носом чует.
-		AI_Output(self,other,"DIA_Addon_Snaf_People_Finn_01_02");	//Эстебан высоко его за это ценит. Так что они друг с другом отлично ладят.
+		AI_Output(self,other, " DIA_Addon_Snaf_People_Finn_01_01 " );	// Excellent miner. He smells gold with his nose.
+		AI_Output(self,other, " DIA_Addon_Snaf_People_Finn_01_02 " );	// Esteban appreciates him highly for this. So they get along great with each other.
 	}
 	else
 	{
@@ -487,13 +487,13 @@ instance DIA_Addon_Snaf_Himself(C_Info)
 	condition = DIA_Addon_Snaf_Himself_Condition;
 	information = DIA_Addon_Snaf_Himself_Info;
 	permanent = FALSE;
-	description = "А ты? Что ты думаешь об Эстебане?";
+	description = " And you? What do you think of Esteban? " ;
 };
 
 
 func int DIA_Addon_Snaf_Himself_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Snaf_Attentat) && !Npc_IsDead(Esteban))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Snaf_Attempt ) &&  ! Npc_IsDead ( Stephen ) ) .
 	{
 		return TRUE;
 	};
@@ -501,8 +501,8 @@ func int DIA_Addon_Snaf_Himself_Condition()
 
 func void DIA_Addon_Snaf_Himself_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Himself_15_00");	//А ты? Что ты думаешь об Эстебане?
-	AI_Output(self,other,"DIA_Addon_Snaf_Himself_01_01");	//Я думаю, что нам не стоит о нем трепаться, а то мало ли...
+	AI_Output(other,self, " DIA_Addon_Snaf_Himself_15_00 " );	// And you? What do you think of Esteban?
+	AI_Output(self,other, " DIA_Addon_Snaf_Himself_01_01 " );	// I think we shouldn't talk about him, otherwise you never know...
 };
 
 
@@ -513,13 +513,13 @@ instance DIA_Addon_Snaf_PERM(C_Info)
 	condition = DIA_Addon_Snaf_PERM_Condition;
 	information = DIA_Addon_Snaf_PERM_Info;
 	permanent = TRUE;
-	description = "Как работается?";
+	description = " How does it work? " ;
 };
 
 
 func int DIA_Addon_Snaf_PERM_Condition()
 {
-	if(Npc_IsDead(Esteban) && (SNAF_TP == FALSE))
+	if ( Npc_IsDead ( Stephen ) && ( SNAF_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -527,15 +527,15 @@ func int DIA_Addon_Snaf_PERM_Condition()
 
 func void DIA_Addon_Snaf_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_PERM_15_00");	//Как работается?
-	if(Kapitel <= 3)
+	AI_Output(other,self, " DIA_Addon_Snaf_PERM_15_00 " );	// How does it work?
+	if (chapter <=  3 )
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_PERM_01_01");	//Лучше некуда! Смерть Эстебана для меня - праздник.
+		AI_Output(self,other, " DIA_Addon_Snaf_PERM_01_01 " );	// Better than ever! Esteban's death is a holiday for me.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_PERM_01_02");	//После смерти Эстебана тут стало легче дышать.
-		AI_Output(self,other,"DIA_Addon_Snaf_PERM_01_03");	//У ребят больше золота, и потихоньку восстанавливается торговля с пиратами.
+		AI_Output(self,other, " DIA_Addon_Snaf_PERM_01_02 " );	// After Esteban's death, it's easier to breathe here.
+		AI_Output(self,other, " DIA_Addon_Snaf_PERM_01_03 " );	// The guys have more gold, and trade with the pirates is slowly recovering.
 	};
 };
 
@@ -558,7 +558,7 @@ func int dia_addon_snaf_orcinvasion_condition()
 
 func void dia_addon_snaf_orcinvasion_info()
 {
-	AI_Output(self,other,"DIA_Addon_Snaf_OrcInvasion_01_00");	//Ох, не приставай ко мне, приятель! Мне сейчас не до разговоров.
+	AI_Output(self,other, " DIA_Addon_Snaf_OrcInvasion_01_00 " );	// Oh, don't bother me, mate! I don't have time to talk right now.
 	AI_StopProcessInfos(self);
 	SNAF_TP = TRUE;
 };
@@ -572,7 +572,7 @@ instance DIA_Addon_Snaf_TeachCook(C_Info)
 	condition = DIA_Addon_Snaf_TeachCook_Condition;
 	information = DIA_Addon_Snaf_TeachCook_Info;
 	permanent = FALSE;
-	description = "Ты сам готовишь свои похлебки?";
+	description = " Do you make your own stews? " ;
 };
 
 func int DIA_Addon_Snaf_TeachCook_Condition()
@@ -585,14 +585,14 @@ func int DIA_Addon_Snaf_TeachCook_Condition()
 
 func void DIA_Addon_Snaf_TeachCook_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_TeachCook_01_00");	//Ты сам готовишь свою похлебку?
-	AI_Output(self,other,"DIA_Addon_Snaf_TeachCook_01_01");	//Конечно. Еще бы я кому-то доверил ее приготовление!
-	AI_Output(other,self,"DIA_Addon_Snaf_TeachCook_01_02");	//Может, и меня научишь?
-	AI_Output(self,other,"DIA_Addon_Snaf_TeachCook_01_03");	//Готовке-то? Хммм... Ну ладно, по старой памяти я готов это сделать.
-	AI_Output(self,other,"DIA_Addon_Snaf_TeachCook_01_04");	//Но даже не надейся, что бесплатно.
+	AI_Output(other,self, " DIA_Addon_Snaf_TeachCook_01_00 " );	// Do you make your own soup?
+	AI_Output(self,other, " DIA_Addon_Snaf_TeachCook_01_01 " );	// Of course. I wish I could trust someone to cook it!
+	AI_Output(other,self, " DIA_Addon_Snaf_TeachCook_01_02 " );	// Maybe you can teach me too?
+	AI_Output(self,other, " DIA_Addon_Snaf_TeachCook_01_03 " );	// Cooking something? Hmmm... Well, for good measure, I'm ready to do it.
+	AI_Output(self,other, " DIA_Addon_Snaf_TeachCook_01_04 " );	// But don't even think it's free.
 	SnafTeachCook = TRUE;
 	Log_CreateTopic(TOPIC_COOK,LOG_NOTE);
-	B_LogEntry(TOPIC_COOK,"Снаф может научить меня делать похлебки.");
+	B_LogEntry( TOPIC_COOK , " Snaf can teach me how to make chowder. " );
 };
 
 instance DIA_Addon_Snaf_TeachCookDone(C_Info)
@@ -602,7 +602,7 @@ instance DIA_Addon_Snaf_TeachCookDone(C_Info)
 	condition = DIA_Addon_Snaf_TeachCookDone_Condition;
 	information = DIA_Addon_Snaf_TeachCookDone_Info;
 	permanent = TRUE;
-	description = "Научи меня готовить похлебки.";
+	description = " Teach me how to cook chowder. " ;
 };
 
 func int DIA_Addon_Snaf_TeachCookDone_Condition()
@@ -615,22 +615,22 @@ func int DIA_Addon_Snaf_TeachCookDone_Condition()
 
 func void DIA_Addon_Snaf_TeachCookDone_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_TeachCookDone_01_00");	//Научи меня готовить похлебки.
-	AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_01_01");	//Хорошо. С чего начнем?
+	AI_Output(other,self, " DIA_Addon_Snaf_TeachCookDone_01_00 " );	// Teach me how to cook stews.
+	AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_01_01 " );	// Good. Where do we start?
 	Info_ClearChoices(DIA_Addon_Snaf_TeachCookDone);
 	Info_AddChoice(DIA_Addon_Snaf_TeachCookDone,Dialog_Back,DIA_Addon_Snaf_TeachCookDone_back);
 
 	if(Snaf_Meal_01 == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Snaf_TeachCookDone,"Черная грибная похлебка (Цена: 500 монет)",DIA_Addon_Snaf_TeachCookDone_BlackMeal);
+		Info_AddChoice(DIA_Addon_Snaf_TeachCookDone, " Black Mushroom Chowder (Price: 500 coins) " ,DIA_Addon_Snaf_TeachCookDone_BlackMeal);
 	};
 	if(Snaf_Meal_02 == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Snaf_TeachCookDone,"Матерая грибная похлебка (Цена: 750 монет)",DIA_Addon_Snaf_TeachCookDone_HotMeal);
+		Info_AddChoice(DIA_Addon_Snaf_TeachCookDone, " Seasoned Mushroom Chowder (Price: 750 coins) " ,DIA_Addon_Snaf_TeachCookDone_HotMeal);
 	};
 	if(Snaf_Meal_03 == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Snaf_TeachCookDone,"Мясное рагу (Цена: 250 монет)",DIA_Addon_Snaf_TeachCookDone_MeatMeal);
+		Info_AddChoice(DIA_Addon_Snaf_TeachCookDone, " Subject(s: 250 words) " ,DIA_Addon_Snaf_TeachCookDone_MeatMeal);
 	};
 };
 
@@ -641,47 +641,47 @@ func void DIA_Addon_Snaf_TeachCookDone_back()
 
 func void DIA_Addon_Snaf_TeachCookDone_BlackMeal()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_00");	//Черная грибная похлебка.
+	AI_Output(other,self, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_00 " );	// Black mushroom soup.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 500)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,500);
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_01");	//Нет ничего проще. Для начала тебе понадобится примерно полсотни темных грибов.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_02");	//Положи их в чан с водой и вари до тех пор, пока вода не приобретет черный цвет.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_03");	//Потом добавь лист огненной травы. Это собьет горечь самого супа!
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_01 " );	// There is nothing easier. To start, you will need about fifty dark mushrooms.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_02 " );	// Put them in a vat of water and boil until the water turns black.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_03 " );	// Then add a leaf of fire grass. This will take the bitterness out of the soup itself!
 		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_04");	//Вот и все.
-		AI_Print("Изучен рецепт готовки еды - 'Черная грибная похлебка'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить черную грибную похлебку. Для этого мне понадобится полсотни темных грибов и лист огненной травы.");
+		AI_Print( " Learned the recipe for cooking food - 'Black Mushroom Stew' " );
+		B_LogEntry( TOPIC_COOK , " Now I can cook black mushroom stew. For this I need fifty dark mushrooms and a leaf of fire grass. " );
 		Snd_Play("LevelUP");
 		Snaf_Meal_01 = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_05");	//Ты держишь меня за дурака?
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_06");	//Я ничему не буду тебя учить, пока не увижу золота.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_05 " );	// Are you taking me for a fool?
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_06 " );	// I won't teach you anything until I see the gold.
 		Info_ClearChoices(DIA_Addon_Snaf_TeachCookDone);
 	};
 };
 
 func void DIA_Addon_Snaf_TeachCookDone_HotMeal()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_00");	//Матерая грибная похлебка.
+	AI_Output(other,self, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_00 " );	// Materaya mushroom soup.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 750)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,750);
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_01");	//Чтобы похлебка получилась наваристая, главное, не жалей для нее грибов.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_02");	//Кладешь полсотни штук в котел, добавляешь огненный корень для остроты и медленно все это варишь в котле.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_03");	//Не пройдет и получаса, как похлебка будет готова.
-		AI_Print("Изучен рецепт готовки еды - 'Матерая грибная похлебка'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить матерую грибную похлебку. Для этого мне понадобится полсотни мясных грибов и огненный корешок.");
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_01 " );	// To make the stew rich, the main thing is not to spare mushrooms for it.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_02 " );	// Put fifty pieces in a cauldron, add fireroot for a spicy kick, and slowly boil it all in the cauldron.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_03 " );	// In less than half an hour, the stew will be ready.
+		AI_Print( " Learned the recipe for cooking food - 'Mushroom Chowder' " );
+		B_LogEntry( TOPIC_COOK , " Now I can cook seasoned mushroom stew. For this I will need fifty meat mushrooms and a fire root. " );
 		Snd_Play("LevelUP");
 		Snaf_Meal_02 = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_04");	//Ты держишь меня за дурака?
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_05");	//Я ничему не буду тебя учить, пока не увижу золота.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_04 " );	// Are you taking me for a fool?
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_05 " );	// I won't teach you anything until I see the gold.
 		Info_ClearChoices(DIA_Addon_Snaf_TeachCookDone);
 	};
 };
@@ -694,23 +694,23 @@ func void DIA_Addon_Snaf_TeachCookDone_MeatMeal()
 	if(Npc_HasItems(hero,ItMi_Gold) >= 250)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,250);
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_01");	//(гордо) Это мой собственный рецепт! Ничего лишнего.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_02");	//Только пара мясных грибов и мясо жука.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_03");	//Бросаешь все в котел, варишь - и получаешь самое вкусное блюдо из всех, что мне доводилось пробовать.
-		AI_Print("Изучен рецепт готовки еды - 'Мясное рагу'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить мясное рагу. Для этого мне понадобится пара темных грибов и мясо жука.");
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_01 " );	// (proudly) This is my own recipe! Nothing extra.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_02 " );	// Just a couple of meat mushrooms and beetle meat.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_03 " );	// You throw everything into the cauldron, boil it - and you get the most delicious dish I have ever tasted.
+		AI_Print( " Recipe for 'Meat Stew' has been learned " );
+		B_LogEntry( TOPIC_COOK , " Now I know how to cook meat stew. For this I need a couple of dark mushrooms and beetle meat. " );
 		Snd_Play("LevelUP");
 		Snaf_Meal_03 = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_04");	//Ты держишь меня за дурака?
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_05");	//Я ничему не буду тебя учить, пока не увижу золота.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_04 " );	// Are you taking me for a fool?
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_05 " );	// I won't teach you anything until I see the gold.
 		Info_ClearChoices(DIA_Addon_Snaf_TeachCookDone);
 	};
 };
 
-//----------------------------------кости---------------------------------
+// ----------------------------------bones------------- --------------------
 
 instance DIA_BDT_1098_Addon_Snaf_Game(C_Info)
 {
@@ -718,7 +718,7 @@ instance DIA_BDT_1098_Addon_Snaf_Game(C_Info)
 	nr = 3;
 	condition = DIA_BDT_1098_Addon_Snaf_Game_condition;
 	information = DIA_BDT_1098_Addon_Snaf_Game_info;
-	description = "Не хочешь сыграть в кости?";
+	description = " Do you want to play some dice? " ;
 };
 
 func int DIA_BDT_1098_Addon_Snaf_Game_condition()
@@ -731,9 +731,9 @@ func int DIA_BDT_1098_Addon_Snaf_Game_condition()
 
 func void DIA_BDT_1098_Addon_Snaf_Game_info()
 {
- 	AI_Output(other,self,"DIA_BDT_1098_Addon_Snaf_Game_01_00"); //Не хочешь сыграть в кости?
- 	AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_Game_01_01"); //С тобой? Хммм...(оценивающе) А ты не производишь впечатление опытного игрока.
- 	AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_Game_01_02"); //Хотя почему бы и нет. В конце концов, от лишних денег я никогда не отказывался!
+ 	AI_Output(other,self, " DIA_BDT_1098_Addon_Snaf_Game_01_00 " ); // Would you like to play some dice?
+ 	AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_Game_01_01 " ); // With you? Hmmm... (assessing) You don't seem like a skilled player.
+ 	AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_Game_01_02 " ); // But why not. In the end, I never refused extra money!
 	SnafPlayResult = 100;
 	Menu_WriteInt("AST","SysTimer05",0);
 };
@@ -745,12 +745,12 @@ instance DIA_BDT_1098_Addon_Snaf_GamePlay(C_Info)
 	condition = DIA_BDT_1098_Addon_Snaf_GamePlay_condition;
 	information = DIA_BDT_1098_Addon_Snaf_GamePlay_info;
 	permanent = TRUE;
-	description = "Сыграем в кости!";
+	description = " Let's play dice! " ;
 };
 
 func int DIA_BDT_1098_Addon_Snaf_GamePlay_condition()
 {
-	if((Npc_KnowsInfo(other,DIA_BDT_1098_Addon_Snaf_Game) == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE))
+	if ((Npc_KnowsInfo(other,DIA_BDT_1098_Addon_Snaf_Game) ==  TRUE ) && (Mount_Up ==  FALSE ) && (FlyCarpetIsOn ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -768,21 +768,21 @@ func void DIA_BDT_1098_Addon_Snaf_GamePlay_info()
 		CheckLastSum = CheckLastGame - SnafPlayResult;
 	};
 
-	AI_Output(other,self,"DIA_BDT_1098_Addon_Snaf_GamePlay_01_00");	//Сыграем в кости!
+	AI_Output(other,self, " DIA_BDT_1098_Addon_Snaf_GamePlay_01_00 " );	// Let's play dice!
 
 	if(SnafPlayResult >= CheckLastGame)
 	{
 		if((SnafPlayResult > 0) && (SnafDayFlag == FALSE))
 		{
-			AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_GamePlay_01_01");	//Ну давай, покажи, на что ты способен.
+			AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_GamePlay_01_01 " );	// Come on, show me what you're capable of.
 			PlayPocker(1,self);
 		}
 		else
 		{
 			if(SnafDayFlag == FALSE)
 			{
-				AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_GamePlay_01_02");	//Нет, приятель! Хорошего понемногу.  
-				SnafDayPlay = Wld_GetDay();
+				AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_GamePlay_01_02 " );	// No, mate! Good things come in small packages.  
+				SnapDayPlay = Wld_GetDay();
 				SnafDayFlag = TRUE;
 			}
 			else
@@ -793,8 +793,8 @@ func void DIA_BDT_1098_Addon_Snaf_GamePlay_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_GamePlay_01_04");	//В последний раз ты задолжал мне приличную сумму за игру.
-		AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_GamePlay_01_05");	//Так что придется сначала ее отдать.
+		AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_GamePlay_01_04 " );	// The last time you owed me a decent amount for a game.
+		AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_GamePlay_01_05 " );	// So we'll have to give it away first.
 		Info_ClearChoices(DIA_BDT_1098_Addon_Snaf_GamePlay);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= CheckLastSum)
@@ -802,7 +802,7 @@ func void DIA_BDT_1098_Addon_Snaf_GamePlay_info()
 			Info_AddChoice(DIA_BDT_1098_Addon_Snaf_GamePlay,"Вот твои деньги.",DIA_BDT_1098_Addon_Snaf_GamePlay_Here);
 		};
 
-		Info_AddChoice(DIA_BDT_1098_Addon_Snaf_GamePlay,"У меня нет столько денег.",DIA_BDT_1098_Addon_Snaf_GamePlay_No);
+		Info_AddChoice(DIA_BDT_1098_Addon_Snaf_GamePlay, " I don't have that much money. " ,DIA_BDT_1098_Addon_Snaf_GamePlay_No);
 	};
 };
 
@@ -811,15 +811,15 @@ func void DIA_BDT_1098_Addon_Snaf_GamePlay_Here()
 	Snd_Play("Geldbeutel");
 	Npc_RemoveInvItems(hero,ItMi_Gold,CheckLastSum);
 	SnafPlayResult = CheckLastGame;
-	AI_Output(other,self,"DIA_BDT_1098_Addon_Snaf_GamePlay_Here_01_01");	//Вот твои деньги.
-	AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_GamePlay_Here_01_02");	//Вот и отлично! Теперь можно и сыграть.
+	AI_Output(other,self, " DIA_BDT_1098_Addon_Snaf_GamePlay_Here_01_01 " );	// Here's your money.
+	AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_GamePlay_Here_01_02 " );	// That's great! Now you can play.
 	PlayPocker(1,self);
 };
 
 func void DIA_BDT_1098_Addon_Snaf_GamePlay_No()
 {
-	AI_Output(other,self,"DIA_BDT_1098_Addon_Snaf_GamePlay_No_01_01");	//У меня нет столько денег.
-	AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_GamePlay_No_01_02");	//Тогда ничем не могу помочь.
+	AI_Output(other,self, " DIA_BDT_1098_Addon_Snaf_GamePlay_No_01_01 " );	// I don't have that much money.
+	AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_GamePlay_No_01_02 " );	// Then I can't help you.
 	Info_ClearChoices(DIA_BDT_1098_Addon_Snaf_GamePlay);
 };
 
@@ -845,12 +845,12 @@ func void DIA_BDT_1098_Addon_Snaf_GameEnd_info()
 {
 	if(SnafLost == TRUE)
 	{
-		AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_GameEnd_00");	//Невероятно! Ты обыграл меня! Не ожидал...
-		SnafLost = FALSE;
+		AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_GameEnd_00 " );	// Incredible! You beat me! Not expected...
+		SnafLost = FALSE ;
 	}
 	else if(SnafWon == TRUE)
 	{
-		AI_Output(self,other,"DIA_BDT_1098_Addon_Snaf_GameEnd_01");	//Лучше твое золото побудет у меня. Ты ведь не против?
+		AI_Output(self,other, " DIA_BDT_1098_Addon_Snaf_GameEnd_01 " );	// I'd rather have your gold. You don't mind, do you?
 		SnafWon = TRUE;
 	};
 
