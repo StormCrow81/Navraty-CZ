@@ -1,7 +1,7 @@
 
 instance DIA_Bodo_EXIT(C_Info)
 {
-	npc = Bau_903_Bodo;
+	npc = Smell_903_Bodo;
 	nr = 999;
 	condition = DIA_Bodo_EXIT_Condition;
 	information = DIA_Bodo_EXIT_Info;
@@ -21,14 +21,14 @@ func void DIA_Bodo_EXIT_Info()
 };
 
 
-instance DIA_Bodo_Hallo(C_Info)
+instances DIA_Bodo_Hallo (C_Info)
 {
-	npc = Bau_903_Bodo;
+	npc = Smell_903_Bodo;
 	nr = 1;
 	condition = DIA_Bodo_Hallo_Condition;
-	information = DIA_Bodo_Hallo_Info;
+	information = DIA_Bodo_Hello_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -37,50 +37,50 @@ func int DIA_Bodo_Hallo_Condition()
 	return TRUE;
 };
 
-func void DIA_Bodo_Hallo_Info()
+func void DIA_Bodo_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Bodo_Hallo_15_00");	//Как дела?
+	AI_Output(other,self, " DIA_Bodo_Hallo_15_00 " );	// How are you?
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_01");	//Ополчение достаточно попило нашей крови. Теперь, когда на нашей стороне наемники, они не осмелятся даже показаться здесь.
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_02");	//Король, вероятно, думает, что может позволить себе все. Но мы больше не будем терпеть это!
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_01 " );	// The militia has drunk enough of our blood. Now that the mercenaries are on our side, they won't even dare to show themselves here.
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_02 " );	// The king probably thinks he can afford everything. But we won't take it anymore!
 	};
 	if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_03");	//Хорошо. Если увидишь ополчение, задай им хорошую трепку.
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_03 " );	// Good. If you see the militia, give them a good beating.
 	};
 	if((other.guild == GIL_NOV) || (other.guild == GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_04");	//Хорошо. Да пребудет с тобой Иннос.
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_04 " );	// Good. May Innos be with you.
 	};
 	if((other.guild == GIL_MIL) || (other.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_05");	//Люди короля здесь не ко двору.
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_06");	//Многие все же поговорят с тобой, но вряд ли ты заслужишь их расположение.
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_05 " );	// The King's people are out of place here.
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_06 " );	// Many will still talk to you, but you are unlikely to earn their favor.
 	};
 	if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_07");	//С каких пор парни вроде тебя стали интересоваться проблемами других? У вас же только болотник на уме!
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_07 " );	// Since when did guys like you get interested in other people's problems? You only have a swamp on your mind!
 	};
 	if((other.guild == GIL_NDW) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_08");	//Все хорошо. Аданос с тобой!
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_08 " );	// All is well. Adanos with you!
 	};
 	if((other.guild == GIL_NDM) || (other.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Bodo_Hallo_12_09");	//(заикаясь) Все хорошо. Все просто замечательно! Ну, я пойду, ладно?
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_09 " );	// (stuttering) All is well. All just great! Well, I'll go, okay?
 	};
 };
 
 
-instance DIA_Bodo_Bauernaufstand(C_Info)
+instance DIA_Bodo_Bauernaufstand (C_Info)
 {
-	npc = Bau_903_Bodo;
+	npc = Smell_903_Bodo;
 	nr = 2;
 	condition = DIA_Bodo_Bauernaufstand_Condition;
 	information = DIA_Bodo_Bauernaufstand_Info;
 	permanent = FALSE;
-	description = "В городе говорят о восстании фермеров!";
+	description = " The town is talking about the farmers' uprising! " ;
 };
 
 
@@ -91,20 +91,20 @@ func int DIA_Bodo_Bauernaufstand_Condition()
 
 func void DIA_Bodo_Bauernaufstand_Info()
 {
-	AI_Output(other,self,"DIA_Bodo_Bauernaufstand_15_00");	//В городе говорят о восстании фермеров!
-	AI_Output(self,other,"DIA_Bodo_Bauernaufstand_12_01");	//Чушь. Мы не делаем ничего такого. Только защищаем то, что заработали тяжелым трудом.
-	AI_Output(self,other,"DIA_Bodo_Bauernaufstand_12_02");	//Воистину правда, что войны выигрываются на спинах крестьян. Но Онар больше не собирается просто стоять и смотреть, как король пьет нашу кровь.
+	AI_Output(other,self, " DIA_Bodo_Bauernaufstand_15_00 " );	// There's talk of a farmers' rebellion in town!
+	AI_Output(self,other, " DIA_Bodo_Bauernaufstand_12_01 " );	// Nonsense. We don't do anything like that. We only protect what we have earned with hard work.
+	AI_Output(self,other, " DIA_Bodo_Bauernaufstand_12_02 " );	// It is truly true that wars are won on the backs of peasants. But Onar is no longer going to just stand by and watch the king drink our blood.
 };
 
 
-instance DIA_Bodo_Bett(C_Info)
+instances of DIA_Bodo_Bett (C_Info)
 {
-	npc = Bau_903_Bodo;
+	npc = Smell_903_Bodo;
 	nr = 3;
 	condition = DIA_Bodo_Bett_Condition;
 	information = DIA_Bodo_Bett_Info;
 	permanent = FALSE;
-	description = "Могу я где-нибудь здесь отдохнуть?";
+	description = " Can I rest here somewhere? " ;
 };
 
 
@@ -113,22 +113,22 @@ func int DIA_Bodo_Bett_Condition()
 	return TRUE;
 };
 
-func void DIA_Bodo_Bett_Info()
+func void DIA_Bodo_Bed_Info()
 {
-	AI_Output(other,self,"DIA_Bodo_Bett_15_00");	//Могу я где-нибудь здесь отдохнуть?
-	AI_Output(self,other,"DIA_Bodo_Bett_12_01");	//Если ты ищешь, где можно поспать, иди в сарай. Но только не приляг по ошибке на кровать наемника.
-	AI_Output(self,other,"DIA_Bodo_Bett_12_02");	//Онар следит, чтобы они не трогали нас, фермеров, но это не касается чужаков, не работающих на ферме. С ними наемники могут делать все, что пожелают.
+	AI_Output(other,self, " DIA_Bodo_Bett_15_00 " );	// Can I rest here somewhere?
+	AI_Output(self,other, " DIA_Bodo_Bett_12_01 " );	// If you're looking for a place to sleep, go to the barn. But just do not lie down on the bed of a mercenary by mistake.
+	AI_Output(self,other, " DIA_Bodo_Bett_12_02 " );	// Onar makes sure they don't touch us farmers, but that doesn't apply to strangers who don't work on the farm. Mercenaries can do whatever they want with them.
 };
 
 
-instance DIA_Bodo_Cipher(C_Info)
+instances of DIA_Bodo_Cipher (C_Info)
 {
-	npc = Bau_903_Bodo;
+	npc = Smell_903_Bodo;
 	nr = 4;
 	condition = DIA_Bodo_Cipher_Condition;
 	information = DIA_Bodo_Cipher_Info;
 	permanent = FALSE;
-	description = "Сайфер сказал мне, что кто-то украл у него тюк болотной травы.";
+	description = " Cypher told me that someone stole a bale of swamp grass from him. " ;
 };
 
 
@@ -142,23 +142,23 @@ func int DIA_Bodo_Cipher_Condition()
 
 func void DIA_Bodo_Cipher_Info()
 {
-	AI_Output(other,self,"DIA_Bodo_Cipher_15_00");	//Сайфер сказал мне, что кто-то украл у него тюк болотной травы.
+	AI_Output(other,self, " DIA_Bodo_Cipher_15_00 " );	// Cypher told me that someone stole a bale of swamp grass from him.
 	AI_Output(self,other,"DIA_Bodo_Cipher_12_01");	//И?
-	AI_Output(other,self,"DIA_Bodo_Cipher_15_02");	//Он думает, что это сделал ты.
-	AI_Output(self,other,"DIA_Bodo_Cipher_12_03");	//Ох, ВОТ почему этот парень все время так пялится на меня.
-	AI_Output(self,other,"DIA_Bodo_Cipher_12_04");	//Я стараюсь быть с ним максимально дружелюбным последнее время, потому что, похоже, ему вожжа попала под хвост.
-	AI_Output(self,other,"DIA_Bodo_Cipher_12_05");	//Но я ничего не могу поделать. Я стараюсь улыбаться ему, а ан в ответ смотрит так, как будто хочет убить меня.
+	AI_Output(other,self, " DIA_Bodo_Cipher_15_02 " );	// He thinks you did it.
+	AI_Output(self,other, " DIA_Bodo_Cipher_12_03 " );	// Oh, THIS is why this guy is staring at me like that all the time.
+	AI_Output(self,other, " DIA_Bodo_Cipher_12_04 " );	// I've been trying to be as friendly as possible with him lately, because it looks like he's got the reins under his tail.
+	AI_Output(self,other, " DIA_Bodo_Cipher_12_05 " );	// But I can't do anything. I try to smile at him, and in response, an looks as if he wants to kill me.
 };
 
 
-instance DIA_Bodo_WeedOrElse(C_Info)
+instances of DIA_Bodo_WeedOrElse (C_Info)
 {
-	npc = Bau_903_Bodo;
+	npc = Smell_903_Bodo;
 	nr = 5;
 	condition = DIA_Bodo_WeedOrElse_Condition;
 	information = DIA_Bodo_WeedOrElse_Info;
 	permanent = FALSE;
-	description = "Отдай мне эту траву или.";
+	description = " Give me this herb or. " ;
 };
 
 
@@ -172,25 +172,25 @@ func int DIA_Bodo_WeedOrElse_Condition()
 
 func void DIA_Bodo_WeedOrElse_Info()
 {
-	AI_Output(other,self,"DIA_Bodo_WeedOrElse_15_00");	//Отдай мне эту траву или.
-	AI_Output(self,other,"DIA_Bodo_WeedOrElse_12_01");	//Послушай, все, что у меня есть - это один косяк из болотной травы. Возьми его и оставь меня в покое.
+	AI_Output(other,self, " DIA_Bodo_WeedOrElse_15_00 " );	// Give me this herb or.
+	AI_Output(self,other, " DIA_Bodo_WeedOrElse_12_01 " );	// Look, all I have is one shoal of swamp grass. Take it and leave me alone.
 	B_GiveInvItems(self,other,ItMi_Joint,1);
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Bodo_WeedOrElse_12_02");	//Ты знаешь, как наемники Онара защищают нас, а?
-		AI_Output(self,other,"DIA_Bodo_WeedOrElse_12_03");	//Так что даже не пытайся сделать какую-нибудь глупость!
+		AI_Output(self,other, " DIA_Bodo_WeedOrElse_12_02 " );	// You know how Onar's mercenaries protect us, don't you?
+		AI_Output(self,other, " DIA_Bodo_WeedOrElse_12_03 " );	// So don't even try to do something stupid!
 	};
 };
 
 
 instance DIA_Bodo_WeedPERM(C_Info)
 {
-	npc = Bau_903_Bodo;
+	npc = Smell_903_Bodo;
 	nr = 6;
 	condition = DIA_Bodo_WeedPERM_Condition;
 	information = DIA_Bodo_WeedPERM_Info;
 	permanent = TRUE;
-	description = "Я не верю ни одному твоему слову. Отдай мне эту траву!";
+	description = " I don't believe a word you say. Give me that herb! " ;
 };
 
 
@@ -204,14 +204,14 @@ func int DIA_Bodo_WeedPERM_Condition()
 
 func void DIA_Bodo_WeedPERM_Info()
 {
-	AI_Output(other,self,"DIA_Bodo_WeedPERM_15_00");	//Я не верю ни одному твоему слову. Отдай мне эту траву!
-	AI_Output(self,other,"DIA_Bodo_WeedPERM_12_01");	//У меня ее нет. Честно.
+	AI_Output(other,self, " DIA_Bodo_WeedPERM_15_00 " );	// I don't believe a single word you say. Give me that weed!
+	AI_Output(self,other, " DIA_Bodo_WeedPERM_12_01 " );	// I don't have it. Honestly.
 };
 
 
-instance DIA_Bodo_PICKPOCKET(C_Info)
+instances DIA_Bodo_PICKPOCKET (C_Info)
 {
-	npc = Bau_903_Bodo;
+	npc = Smell_903_Bodo;
 	nr = 900;
 	condition = DIA_Bodo_PICKPOCKET_Condition;
 	information = DIA_Bodo_PICKPOCKET_Info;
@@ -222,7 +222,7 @@ instance DIA_Bodo_PICKPOCKET(C_Info)
 
 func int DIA_Bodo_PICKPOCKET_Condition()
 {
-	return C_Beklauen(30,60);
+	return  C_Robbery ( 30 , 60 );
 };
 
 func void DIA_Bodo_PICKPOCKET_Info()
@@ -234,7 +234,7 @@ func void DIA_Bodo_PICKPOCKET_Info()
 
 func void DIA_Bodo_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Bodo_PICKPOCKET);
 };
 
