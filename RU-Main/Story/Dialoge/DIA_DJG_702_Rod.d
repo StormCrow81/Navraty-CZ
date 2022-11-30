@@ -21,12 +21,12 @@ func void DIA_RodDJG_EXIT_Info()
 };
 
 
-instance DIA_RodDJG_HALLO(C_Info)
+instance DIA_RodDJG_HELLO (C_Info)
 {
 	npc = DJG_702_Rod;
 	condition = DIA_RodDJG_HALLO_Condition;
 	information = DIA_RodDJG_HALLO_Info;
-	description = "С тобой все в порядке?";
+	description = " Are you all right? " ;
 };
 
 
@@ -40,72 +40,72 @@ func int DIA_RodDJG_HALLO_Condition()
 
 func void DIA_RodDJG_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_RodDJG_HALLO_15_00");	//С тобой все в порядке?
-	AI_Output(self,other,"DIA_RodDJG_HALLO_06_01");	//Эти сапоги доконают меня! Эти новые доспехи очень хороши, но почему застежки на этих сапогах должны быть такими тугими?
-	AI_Output(self,other,"DIA_RodDJG_HALLO_06_02");	//А если я чуть ослаблю их, сапоги начинают сваливаться с моих ног.
-	if((Npc_IsDead(SwampDragon) == FALSE) && (DJG_SwampParty == FALSE))
+	AI_Output(other,self, " DIA_RodDJG_HALLO_15_00 " );	// Are you all right?
+	AI_Output(self,other, " DIA_RodDJG_HALLO_06_01 " );	// These boots will kill me! This new armor is very good, but why do the buckles on these boots have to be so tight?
+	AI_Output(self,other, " DIA_RodDJG_HALLO_06_02 " );	// And if I loosen them a little, the boots start to fall off my feet.
+	if ((Npc_IsDead(SwampDragon) ==  FALSE ) && (DJG_SwampParty ==  FALSE ))
 	{
-		Info_AddChoice(DIA_RodDJG_HALLO,"Чего ты ждешь? ",DIA_RodDJG_HALLO_warten);
+		Info_AddChoice(DIA_RodDJG_HALLO, " What are you waiting for? " ,DIA_RodDJG_HALLO_warten);
 	};
-	Info_AddChoice(DIA_RodDJG_HALLO,"Где ты взял эти сапоги?",DIA_RodDJG_HALLO_Woher);
+	Info_AddChoice(DIA_RodDJG_HALLO, " Where did you get those boots? " ,DIA_RodDJG_HALLO_Woher);
 };
 
-func void DIA_RodDJG_HALLO_Woher()
+func void DIA_RodDJG_HELLO_Where from()
 {
-	AI_Output(other,self,"DIA_RodDJG_HALLO_Woher_15_00");	//Где ты взял эти сапоги?
-	AI_Output(self,other,"DIA_RodDJG_HALLO_Woher_06_01");	//Старый работяга Беннет сделал их для нас, охотников на драконов, и заставил нас хорошо заплатить за эти дерьмовые сапоги.
-	AI_Output(self,other,"DIA_RodDJG_HALLO_Woher_06_02");	//Если я когда-нибудь доберусь до него, я сначала заставлю его съесть их, а затем выбью из него мои деньги назад.
+	AI_Output(other,self, " DIA_RodDJG_HALLO_Woher_15_00 " );	// Where did you get those boots?
+	AI_Output(self,other, " DIA_RodDJG_HALLO_Woher_06_01 " );	// Hardworking old Bennet made them for us dragon hunters and made us pay well for those crappy boots.
+	AI_Output(self,other, " DIA_RodDJG_HALLO_Woher_06_02 " );	// If I ever get to him, I'll make him eat them first and then beat my money back out of him.
 };
 
-func void DIA_RodDJG_HALLO_warten()
+func void DIA_RodDJG_HELLO_wait()
 {
-	AI_Output(other,self,"DIA_RodDJG_HALLO_warten_15_00");	//Чего ты ждешь?
+	AI_Output(other,self, " DIA_RodDJG_HALLO_warten_15_00 " );	// What are you waiting for?
 	Info_ClearChoices(DIA_RodDJG_HALLO);
-	if(Npc_IsDead(DJG_Cipher) == FALSE)
+	if (Npc_IsDead(DJG_Cipher) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_RodDJG_HALLO_warten_06_01");	//Когда Сайфер, наконец, соизволит поднять свою задницу. Нам уже пора отправляться в путь.
+		AI_Output(self,other, " DIA_RodDJG_HALLO_warten_06_01 " );	// When Cypher finally deigns to get his ass up. It's time for us to hit the road.
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_RodDJG_HALLO_warten_06_02");	//Я хочу обследовать эту болотистую местность вон там.
-		AI_Output(self,other,"DIA_RodDJG_HALLO_warten_06_03");	//Как думаешь, может нам пойти туда вместе? Посмотрим, что там такое?
-		Info_AddChoice(DIA_RodDJG_HALLO,"Я пойду один.",DIA_RodDJG_HALLO_warten_allein);
-		Info_AddChoice(DIA_RodDJG_HALLO,"Что ты знаешь об этой болотистой местности?",DIA_RodDJG_HALLO_warten_wasweisstdu);
-		Info_AddChoice(DIA_RodDJG_HALLO,"Пойдем вместе.",DIA_RodDJG_HALLO_warten_zusammen);
+		AI_Output(self,other, " DIA_RodDJG_HALLO_warten_06_02 " );	// I want to explore that swampy area over there.
+		AI_Output(self,other, " DIA_RodDJG_HALLO_warten_06_03 " );	// Do you think we can go there together? Let's see what is there?
+		Info_AddChoice(DIA_RodDJG_HALLO, " I'll go alone. " ,DIA_RodDJG_HALLO_warten_allein);
+		Info_AddChoice(DIA_RodDJG_HALLO, " What do you know about this marshland? " ,DIA_RodDJG_HALLO_warten_wasweisstdu);
+		Info_AddChoice(DIA_RodDJG_HALLO, " Let's go together. " ,DIA_RodDJG_HALLO_warten_zusammen);
 	};
 };
 
-func void DIA_RodDJG_HALLO_warten_zusammen()
+func void DIA_RodDJG_HELLO_wait_together()
 {
-	AI_Output(other,self,"DIA_RodDJG_HALLO_warten_zusammen_15_00");	//Пойдем вместе.
-	AI_Output(self,other,"DIA_RodDJG_HALLO_warten_zusammen_06_01");	//Хорошо. Тогда иди за мной.
+	AI_Output(other,self, " DIA_RodDJG_HALLO_warten_zusammen_15_00 " );	// Let's go together.
+	AI_Output(self,other, " DIA_RodDJG_HALLO_warten_zusammen_06_01 " );	// Good. Then follow me.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"SwampWait2");
 };
 
-func void DIA_RodDJG_HALLO_warten_wasweisstdu()
+func void DIA_RodDJG_HELLO_wait_whatdoyouknow()
 {
-	AI_Output(other,self,"DIA_RodDJG_HALLO_warten_wasweisstdu_15_00");	//Что ты знаешь об этой болотистой местности?
-	AI_Output(self,other,"DIA_RodDJG_HALLO_warten_wasweisstdu_06_01");	//Только что вонь от нее поднимается до небес и что там, вероятно, спрятана куча золота. Разве этого мало?
+	AI_Output(other,self, " DIA_RodDJG_HALLO_warten_wasweisstdu_15_00 " );	// What do you know about this swampy area?
+	AI_Output(self,other, " DIA_RodDJG_HALLO_warten_wasweisstdu_06_01 " );	// Just now the stench of it rises to the skies and that there is probably a pile of gold hidden there. Is this not enough?
 };
 
-func void DIA_RodDJG_HALLO_warten_allein()
+func void DIA_RodDJG_HELLO_waiting_alone()
 {
-	AI_Output(other,self,"DIA_RodDJG_HALLO_warten_allein_15_00");	//Я пойду один.
-	AI_Output(self,other,"DIA_RodDJG_HALLO_warten_allein_06_01");	//Что ж, тогда я желаю тебе удачи.
+	AI_Output(other,self, " DIA_RodDJG_HALLO_warten_allein_15_00 " );	// I'll go alone.
+	AI_Output(self,other, " DIA_RodDJG_HALLO_warten_allein_06_01 " );	// Well, then I wish you good luck.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_RodDJG_WARTEMAL(C_Info)
+instances DIA_RodDJG_WARTEMAL (C_Info)
 {
 	npc = DJG_702_Rod;
 	condition = DIA_RodDJG_WARTEMAL_Condition;
 	information = DIA_RodDJG_WARTEMAL_Info;
 	permanent = TRUE;
-	description = "Что с тобой?";
+	description = " What's wrong with you? " ;
 };
 
 
@@ -119,24 +119,24 @@ func int DIA_RodDJG_WARTEMAL_Condition()
 
 func void DIA_RodDJG_WARTEMAL_Info()
 {
-	AI_Output(other,self,"DIA_RodDJG_WARTEMAL_15_00");	//Что с тобой?
+	AI_Output(other,self, " DIA_RodDJG_WARTEMAL_15_00 " );	// What's wrong with you?
 	if(((DJG_SwampParty == TRUE) || (Npc_GetDistToWP(self,"OW_DJG_SWAMP_WAIT2_02") < 1000)) && Npc_IsDead(DJG_Cipher))
 	{
-		AI_Output(self,other,"DIA_RodDJG_WARTEMAL_06_01");	//Послушай, парень. Я думаю, эта тварь немного нам не по зубам. Я, пожалуй, попробую тихонько смыться.
+		AI_Output(self,other, " DIA_RodDJG_WARTEMAL_06_01 " );	// Listen, boy. I think this creature is a little too tough for us. I'll probably try to slip away quietly.
 		DJG_SwampParty = FALSE;
-		self.aivar[AIV_PARTYMEMBER] = FALSE;
+		self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Start");
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_RodDJG_WARTEMAL_06_02");	//(чертыхается) Эти сапоги! Эти чертовы сапоги!
+		AI_Output(self,other, " DIA_RodDJG_WARTEMAL_06_02 " );	// (cursing) Those boots! Those damn boots!
 	};
-	if(Npc_IsDead(SwampDragon))
+	if (Npc_IsDead(SwampDragon))
 	{
-		AI_Output(other,self,"DIA_RodDJG_WARTEMAL_15_03");	//И что ты собираешься делать дальше?
-		AI_Output(self,other,"DIA_RodDJG_WARTEMAL_06_04");	//Ты еще спрашиваешь! Прежде всего, я куплю себе новые сапоги!
-		self.aivar[AIV_PARTYMEMBER] = FALSE;
+		AI_Output(other,self, " DIA_RodDJG_WARTEMAL_15_03 " );	// And what are you going to do next?
+		AI_Output(self,other, " DIA_RodDJG_WARTEMAL_06_04 " );	// You're still asking! First of all, I will buy myself new boots!
+		self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Start");
 	};
@@ -157,7 +157,7 @@ instance DIA_Rod_PICKPOCKET(C_Info)
 
 func int DIA_Rod_PICKPOCKET_Condition()
 {
-	return C_Beklauen(16,320);
+	return  C_Robbery ( 16 , 320 );
 };
 
 func void DIA_Rod_PICKPOCKET_Info()
@@ -169,7 +169,7 @@ func void DIA_Rod_PICKPOCKET_Info()
 
 func void DIA_Rod_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Rod_PICKPOCKET);
 };
 
@@ -204,4 +204,3 @@ func void dia_rod_fuckoff_info()
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,300);
 };
-
