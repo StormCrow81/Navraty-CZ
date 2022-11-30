@@ -21,13 +21,13 @@ func void DIA_Rethon_EXIT_Info()
 };
 
 
-instance DIA_Rethon_HALLO(C_Info)
+instance DIA_Rethon_HELLO (C_Info)
 {
 	npc = DJG_709_Rethon;
 	nr = 5;
 	condition = DIA_Rethon_HALLO_Condition;
-	information = DIA_Rethon_HALLO_Info;
-	description = "Что ты делаешь здесь?";
+	information = DIA_Rethon_HELLO_Info;
+	description = " What are you doing here? " ;
 };
 
 
@@ -38,18 +38,18 @@ func int DIA_Rethon_HALLO_Condition()
 
 func void DIA_Rethon_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Rethon_HALLO_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Rethon_HALLO_12_01");	//Готовлюсь к сражению, что же еще?
+	AI_Output(other,self, " DIA_Rethon_HALLO_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Rethon_HALLO_12_01 " );	// Preparing for battle, what else?
 };
 
 
-instance DIA_Rethon_KAMPF(C_Info)
+instance DIA_Rethon_KAMPF (C_Info)
 {
 	npc = DJG_709_Rethon;
 	nr = 6;
 	condition = DIA_Rethon_KAMPF_Condition;
 	information = DIA_Rethon_KAMPF_Info;
-	description = "С кем ты собрался сражаться?";
+	description = " Who are you going to fight? " ;
 };
 
 
@@ -61,11 +61,11 @@ func int DIA_Rethon_KAMPF_Condition()
 	};
 };
 
-func void DIA_Rethon_KAMPF_Info()
+func void DIA_Rethon_FIGHT_Info()
 {
-	AI_Output(other,self,"DIA_Rethon_KAMPF_15_00");	//С кем ты собрался сражаться?
-	AI_Output(self,other,"DIA_Rethon_KAMPF_12_01");	//Я хочу вызвать на бой паладинов и показать этим жирным лентяям, где раки зимуют.
-	AI_Output(self,other,"DIA_Rethon_KAMPF_12_02");	//Идиот. С драконами, конечно же. А ты что подумал?
+	AI_Output(other,self, " DIA_Rethon_KAMPF_15_00 " );	// Who are you going to fight?
+	AI_Output(self,other, " DIA_Rethon_KAMPF_12_01 " );	// I want to challenge the paladins and show these fat lazy people where the crayfish hibernate.
+	AI_Output(self,other, " DIA_Rethon_KAMPF_12_02 " );	// Idiot. With dragons, of course. And what did you think?
 };
 
 
@@ -75,7 +75,7 @@ instance DIA_Rethon_PALADINE(C_Info)
 	nr = 6;
 	condition = DIA_Rethon_PALADINE_Condition;
 	information = DIA_Rethon_PALADINE_Info;
-	description = "Паладины не против того, что вы здесь?";
+	description = " Paladins okay with you here? " ;
 };
 
 
@@ -89,21 +89,21 @@ func int DIA_Rethon_PALADINE_Condition()
 
 func void DIA_Rethon_PALADINE_Info()
 {
-	AI_Output(other,self,"DIA_Rethon_PALADINE_15_00");	//Паладины не против того, что вы здесь?
-	AI_Output(self,other,"DIA_Rethon_PALADINE_12_01");	//Чушь. У них совсем другие проблемы. Большинство из них рады, что вообще живы.
-	AI_Output(self,other,"DIA_Rethon_PALADINE_12_02");	//Боевой дух у них ни к черту. Это начало их конца.
-	AI_Output(self,other,"DIA_Rethon_PALADINE_12_03");	//Я хочу сказать, ты только посмотри на эти их старые зазубренные клинки, которые они постоянно чинят.
-	AI_Output(self,other,"DIA_Rethon_PALADINE_12_04");	//Любой разумный воин давно бы сбежал отсюда.
+	AI_Output(other,self, " DIA_Rethon_PALADINE_15_00 " );	// Paladins don't mind you being here?
+	AI_Output(self,other, " DIA_Rethon_PALADINE_12_01 " );	// Nonsense. They have very different problems. Most of them are glad to be alive at all.
+	AI_Output(self,other, " DIA_Rethon_PALADINE_12_02 " );	// They don't have morale. This is the beginning of their end.
+	AI_Output(self,other, " DIA_Rethon_PALADINE_12_03 " );	// I mean, just look at those old jagged blades of theirs that they keep repairing.
+	AI_Output(self,other, " DIA_Rethon_PALADINE_12_04 " );	// Any reasonable warrior would have fled from here long ago.
 };
 
 
-instance DIA_Rethon_WOGRUPPE(C_Info)
+instance DIA_Rethon_WOGRUPPE (C_Info)
 {
 	npc = DJG_709_Rethon;
 	nr = 7;
 	condition = DIA_Rethon_WOGRUPPE_Condition;
 	information = DIA_Rethon_WOGRUPPE_Info;
-	description = "Ты отстал от своей группы?";
+	description = " Are you behind your group? " ;
 };
 
 
@@ -117,19 +117,19 @@ func int DIA_Rethon_WOGRUPPE_Condition()
 
 func void DIA_Rethon_WOGRUPPE_Info()
 {
-	AI_Output(other,self,"DIA_Rethon_WOGRUPPE_15_00");	//Ты отстал от своей группы?
-	AI_Output(self,other,"DIA_Rethon_WOGRUPPE_12_01");	//Моей группы? У меня нет группы. Я охотник за трофеями.
-	AI_Output(self,other,"DIA_Rethon_WOGRUPPE_12_02");	//Если я вернусь домой без трофея, никто не поймет, зачем я ходил сюда. Поэтому я не хочу ни с кем делиться.
+	AI_Output(other,self, " DIA_Rethon_WOGRUPPE_15_00 " );	// Have you fallen behind your group?
+	AI_Output(self,other, " DIA_Rethon_WOGRUPPE_12_01 " );	// My group? I don't have a group. I am a trophy hunter.
+	AI_Output(self,other, " DIA_Rethon_WOGRUPPE_12_02 " );	// If I return home without a trophy, no one will understand why I came here. That's why I don't want to share with anyone.
 };
 
 
-instance DIA_Rethon_DRACHENGESEHEN(C_Info)
+instance DIA_Rethon_SEEN DRAGON (C_Info)
 {
 	npc = DJG_709_Rethon;
 	nr = 8;
 	condition = DIA_Rethon_DRACHENGESEHEN_Condition;
-	information = DIA_Rethon_DRACHENGESEHEN_Info;
-	description = "Ты уже видел дракона?";
+	information = DIA_Rethon_SEEN DRAGONS_Info;
+	description = " Have you seen the dragon yet? " ;
 };
 
 
@@ -141,20 +141,20 @@ func int DIA_Rethon_DRACHENGESEHEN_Condition()
 	};
 };
 
-func void DIA_Rethon_DRACHENGESEHEN_Info()
+func void DIA_Rethon_SEEN_DRAGON_Info()
 {
-	AI_Output(other,self,"DIA_Rethon_DRACHENGESEHEN_15_00");	//Ты уже видел дракона?
-	AI_Output(self,other,"DIA_Rethon_DRACHENGESEHEN_12_01");	//Нет. Я хочу привести свое оружие в порядок, прежде чем отправлюсь охотиться на него.
+	AI_Output(other,self, " DIA_Rethon_DRACHENGESEHEN_15_00 " );	// Have you seen the dragon yet?
+	AI_Output(self,other, " DIA_Rethon_DRACHENGESEHEN_12_01 " );	// No. I want to get my weapon in order before I go hunting for it.
 };
 
 
-instance DIA_Rethon_ANGST(C_Info)
+instance DIA_Rethon_ANGST (C_Info)
 {
 	npc = DJG_709_Rethon;
 	nr = 9;
 	condition = DIA_Rethon_ANGST_Condition;
 	information = DIA_Rethon_ANGST_Info;
-	description = "А ты не боишься, что кто-нибудь может тебя опередить?";
+	description = " Aren't you afraid that someone might get ahead of you? " ;
 };
 
 
@@ -168,27 +168,27 @@ func int DIA_Rethon_ANGST_Condition()
 
 func void DIA_Rethon_ANGST_Info()
 {
-	AI_Output(other,self,"DIA_Rethon_ANGST_15_00");	//А ты не боишься, что кто-нибудь может тебя опередить?
-	AI_Output(self,other,"DIA_Rethon_ANGST_12_01");	//Что? Кто? Сильвио?
+	AI_Output(other,self, " DIA_Rethon_ANGST_15_00 " );	// Aren't you afraid that someone might get ahead of you?
+	AI_Output(self,other, " DIA_Rethon_ANGST_12_01 " );	// What? Who? Silvio?
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Rethon_ANGST_12_02");	//Твой босс действительно думает, что ему здесь что-то светит, ха?
-		AI_Output(other,self,"DIA_Rethon_ANGST_15_03");	//Я не из людей Сильвио. Я работаю сам на себя.
-		AI_Output(self,other,"DIA_Rethon_ANGST_12_04");	//Ох. Это хорошо. Забудь о том, что я говорил.
+		AI_Output(self,other, " DIA_Rethon_ANGST_12_02 " );	// Your boss really thinks he's up to something here, huh?
+		AI_Output(other,self, " DIA_Rethon_ANGST_15_03 " );	// I'm not one of Silvio's people. I work for myself.
+		AI_Output(self,other, " DIA_Rethon_ANGST_12_04 " );	// Oh. This is good. Forget what I said.
 	};
-	AI_Output(self,other,"DIA_Rethon_ANGST_12_05");	//Ты видел этих жалких трусов, что он привел с собой?
-	AI_Output(self,other,"DIA_Rethon_ANGST_12_06");	//Сильвио должен радоваться, если ему удастся выбраться отсюда живым.
-	if(Npc_IsDead(DJG_Sylvio))
+	AI_Output(self,other, " DIA_Rethon_ANGST_12_05 " );	// Did you see those pathetic cowards he brought with him?
+	AI_Output(self,other, " DIA_Rethon_ANGST_12_06 " );	// Silvio should be glad if he gets out of here alive.
+	if (Npc_IsDead(DJG_Sylvio))
 	{
-		AI_Output(other,self,"DIA_Rethon_ANGST_15_07");	//Не удастся. Он мертв.
+		AI_Output(other,self, " DIA_Rethon_ANGST_15_07 " );	// Fail. He is dead.
 		AI_Output(self,other,"DIA_Rethon_ANGST_12_08");	//Я рад.
 	}
 	else
 	{
 		Info_AddChoice(DIA_Rethon_ANGST,Dialog_Back,DIA_Rethon_ANGST_weiter);
-		Info_AddChoice(DIA_Rethon_ANGST,"Похоже, ты не особенно-то любишь его.",DIA_Rethon_ANGST_sylviomoegen);
-		Info_AddChoice(DIA_Rethon_ANGST,"И где сейчас Сильвио?",DIA_Rethon_ANGST_woSylvio);
-		Info_AddChoice(DIA_Rethon_ANGST,"Сильвио был здесь?",DIA_Rethon_ANGST_sylviohier);
+		Info_AddChoice(DIA_Rethon_ANGST, " You don't seem to like him very much. " ,DIA_Rethon_ANGST_sylviomoegen);
+		Info_AddChoice(DIA_Rethon_ANGST, " Where is Silvio now? " ,DIA_Rethon_ANGST_woSylvio);
+		Info_AddChoice(DIA_Rethon_ANGST, " Was Silvio here? " ,DIA_Rethon_ANGST_sylviohier);
 	};
 };
 
@@ -199,36 +199,36 @@ func void DIA_Rethon_ANGST_weiter()
 
 func void DIA_Rethon_ANGST_sylviohier()
 {
-	AI_Output(other,self,"DIA_Rethon_ANGST_sylviohier_15_00");	//Сильвио был здесь?
-	AI_Output(self,other,"DIA_Rethon_ANGST_sylviohier_12_01");	//Здесь, в замке, ты хочешь сказать? Да, был. Но очень недолго.
-	AI_Output(self,other,"DIA_Rethon_ANGST_sylviohier_12_02");	//Он поболтал с несколькими парнями здесь, а затем опять исчез.
+	AI_Output(other,self, " DIA_Rethon_ANGST_sylviohier_15_00 " );	// Was Silvio here?
+	AI_Output(self,other, " DIA_Rethon_ANGST_sylviohier_12_01 " );	// Here in the castle, you mean? Yes, there was. But for a very short time.
+	AI_Output(self,other, " DIA_Rethon_ANGST_sylviohier_12_02 " );	// He chatted with a few guys here and then disappeared again.
 };
 
 func void DIA_Rethon_ANGST_sylviomoegen()
 {
-	AI_Output(other,self,"DIA_Rethon_ANGST_sylviomoegen_15_00");	//Похоже, ты не особенно-то любишь его.
-	AI_Output(self,other,"DIA_Rethon_ANGST_sylviomoegen_12_01");	//Что ты хочешь этим сказать - любишь? Было бы лучше, если бы я его вообще не знал.
-	AI_Output(self,other,"DIA_Rethon_ANGST_sylviomoegen_12_02");	//У Сильвио нет друзей. Ему нужны люди, которые идут за ним и не задают вопросов.
-	AI_Output(self,other,"DIA_Rethon_ANGST_sylviomoegen_12_03");	//Это не по мне. Я работаю один.
+	AI_Output(other,self, " DIA_Rethon_ANGST_sylviomoegen_15_00 " );	// You don't seem to like him very much.
+	AI_Output(self,other, " DIA_Rethon_ANGST_sylviomoegen_12_01 " );	// What do you want to say by this - love? It would be better if I didn't know him at all.
+	AI_Output(self,other, " DIA_Rethon_ANGST_sylviomoegen_12_02 " );	// Silvio has no friends. He needs people who follow him and don't ask questions.
+	AI_Output(self,other, " DIA_Rethon_ANGST_sylviomoegen_12_03 " );	// This is not for me. I work alone.
 };
 
 func void DIA_Rethon_ANGST_woSylvio()
 {
-	AI_Output(other,self,"DIA_Rethon_ANGST_woSylvio_15_00");	//И где сейчас Сильвио?
-	AI_Output(self,other,"DIA_Rethon_ANGST_woSylvio_12_01");	//Паладины говорили, что-то о ледяном драконе на западе. Он, по слухам, самый опасный и сильный из всех драконов.
-	AI_Output(self,other,"DIA_Rethon_ANGST_woSylvio_12_02");	//Ты бы видел блеск в глазах Сильвио, когда он услышал об этом. Даже гадать не нужно, куда он пошел.
-	B_LogEntry(TOPIC_DRACHENJAGD,"Охотник на драконов Ретон бормотал что-то о ледяном драконе.");
-	B_LogEntry(TOPIC_Dragonhunter,"Сильвио был в замке, а затем отправился на поиски ледяного дракона.");
+	AI_Output(other,self, " DIA_Rethon_ANGST_woSylvio_15_00 " );	// And where is Silvio now?
+	AI_Output(self,other, " DIA_Rethon_ANGST_woSylvio_12_01 " );	// Paladins said something about an ice dragon in the west. He is rumored to be the most dangerous and powerful of all dragons.
+	AI_Output(self,other, " DIA_Rethon_ANGST_woSylvio_12_02 " );	// You should have seen the sparkle in Silvio's eyes when he heard about it. You don't even have to guess where he went.
+	B_LogEntry( TOPIC_DRACHENJAGD , " Dragon Hunter Reton was mumbling something about an ice dragon. " );
+	B_LogEntry(TOPIC_Dragonhunter, " Silvio was at the castle and then went looking for the ice dragon. " );
 };
 
 
-instance DIA_Rethon_MEINEWAFFE(C_Info)
+instance DIA_Rethon_MYWAFFE (C_Info)
 {
 	npc = DJG_709_Rethon;
 	nr = 10;
 	condition = DIA_Rethon_MEINEWAFFE_Condition;
-	information = DIA_Rethon_MEINEWAFFE_Info;
-	description = "Ты можешь помочь мне улучшить мое оружие?";
+	information = DIA_Rethon_MYWAFFE_Info;
+	description = " Can you help me upgrade my weapon? " ;
 };
 
 
@@ -240,11 +240,11 @@ func int DIA_Rethon_MEINEWAFFE_Condition()
 	};
 };
 
-func void DIA_Rethon_MEINEWAFFE_Info()
+func void DIA_Rethon_MYWEAPON_Info()
 {
-	AI_Output(other,self,"DIA_Rethon_MEINEWAFFE_15_00");	//Ты можешь помочь мне улучшить мое оружие?
-	AI_Output(self,other,"DIA_Rethon_MEINEWAFFE_12_01");	//Улучшить? Лучше купи что-нибудь новое и выброси этот хлам, что ты носишь с собой.
-	AI_Output(self,other,"DIA_Rethon_MEINEWAFFE_12_02");	//Возможно, у меня найдется что-нибудь для тебя. Тебе это интересно?
+	AI_Output(other,self, " DIA_Rethon_MEINEWAFFE_15_00 " );	// Can you help me improve my weapon?
+	AI_Output(self,other, " DIA_Rethon_MEINEWAFFE_12_01 " );	// Improve? Better buy something new and throw away this junk that you carry with you.
+	AI_Output(self,other, " DIA_Rethon_MEINEWAFFE_12_02 " );	// Maybe I have something for you. You're interested?
 };
 
 
@@ -256,7 +256,7 @@ instance DIA_Rethon_TRADE(C_Info)
 	information = DIA_Rethon_TRADE_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Что ты можешь продать мне?";
+	description = " What can you sell me? " ;
 };
 
 
@@ -276,24 +276,24 @@ func void DIA_Rethon_TRADE_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Rethon_TRADE_15_00");	//Что ты можешь продать мне?
+	AI_Output(other,self, " DIA_Rethon_TRADE_15_00 " );	// What can you sell me?
 	B_GiveTradeInv(self);
 
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Rethon_TRADE_12_01");	//Ох, как низко я опустился! Теперь я даже продаю мое оружие паладину!
+		AI_Output(self,other, " DIA_Rethon_TRADE_12_01 " );	// Oh, how low I've sunk! Now I even sell my weapons to a paladin!
 	}
-	else if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR))
+	else  if ((hero.guild ==  GIL_KDF ) || (hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_KDM ) || (hero.guild ==  GIL_GUR ))
 	{
-		AI_Output(self,other,"DIA_Rethon_TRADE_12_02");	//У меня мало что есть для мага, но все же ты можешь взглянуть.
+		AI_Output(self,other, " DIA_Rethon_TRADE_12_02 " );	// I don't have much for a mage, but you can still take a look.
 	}
 	else if((hero.guild == GIL_SEK) || (hero.guild == GIL_TPL))
 	{
-		AI_Output(self,other,"DIA_Rethon_TRADE_12_02A");	//Для вас, парней из Братства, по-моему, главное - это травка...(смеется) Ну взгляни, может, пара косячков и завалялась.
+		AI_Output(self,other, " DIA_Rethon_TRADE_12_02A " );	// For you guys from the Brotherhood, in my opinion, the main thing is weed ... (laughs) Well, look, maybe there are a couple of joints lying around.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Rethon_TRADE_12_03");	//Думаю, у меня есть именно то, что тебе нужно, приятель.
+		AI_Output(self,other, " DIA_Rethon_TRADE_12_03 " );	// I think I have exactly what you need, mate.
 	};
 
 	Npc_RemoveInvItems(self,itmiswordblade_1,Npc_HasItems(self,itmiswordblade_1));
@@ -313,7 +313,7 @@ instance DIA_Rethon_PICKPOCKET(C_Info)
 
 func int DIA_Rethon_PICKPOCKET_Condition()
 {
-	return C_Beklauen(78,230);
+	return  C_Robbery ( 78 , 230 );
 };
 
 func void DIA_Rethon_PICKPOCKET_Info()
@@ -325,7 +325,7 @@ func void DIA_Rethon_PICKPOCKET_Info()
 
 func void DIA_Rethon_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Rethon_PICKPOCKET);
 };
 
@@ -333,4 +333,3 @@ func void DIA_Rethon_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Rethon_PICKPOCKET);
 };
-
