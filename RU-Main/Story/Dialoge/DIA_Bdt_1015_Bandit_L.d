@@ -42,7 +42,7 @@ func int DIA_1015_BANDIT_AMBUSH_Condition()
 
 func void DIA_1015_BANDIT_AMBUSH_Info()
 {
-	AI_Output(self,other,"DIA_1015_BANDIT_AMBUSH_06_00");	//Эй, я нигде не видел твою рожу раньше?
+	AI_Output(self,other, " DIA_1015_BANDIT_AMBUSH_06_00 " );	// Hey, I haven't seen your face anywhere before?
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_SuddenEnemyInferno,0);
 };
