@@ -21,13 +21,13 @@ func void DIA_Ehnim_EXIT_Info()
 };
 
 
-instance DIA_Ehnim_HALLO(C_Info)
+instance DIA_Ehnim_HALLO (C_Info)
 {
 	npc = BAU_944_Ehnim;
 	nr = 3;
 	condition = DIA_Ehnim_HALLO_Condition;
 	information = DIA_Ehnim_HALLO_Info;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -39,28 +39,28 @@ func int DIA_Ehnim_HALLO_Condition()
 func void DIA_Ehnim_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Ehnim_HALLO_15_00");	//Кто ты?
-	AI_Output(self,other,"DIA_Ehnim_HALLO_12_01");	//Меня зовут Эним. Я работаю здесь.
+	AI_Output(self,other, " DIA_Ehnim_HALLO_12_01 " );	// My name is Enim. I work here.
 	if(Hlp_IsValidNpc(Egill) && !C_NpcIsDown(Egill))
 	{
-		AI_Output(self,other,"DIA_Ehnim_HALLO_12_02");	//А коротышка вон там - мой брат Эгилл.
+		AI_Output(self,other, " DIA_Ehnim_HALLO_12_02 " );	// And the short one over there is my brother Egill.
 	};
-	AI_Output(self,other,"DIA_Ehnim_HALLO_12_03");	//Мы работаем здесь, на ферме Акила, уже несколько лет.
+	AI_Output(self,other, " DIA_Ehnim_HALLO_12_03 " );	// We have been working here at Akila Farm for several years.
 };
 
 
-instance DIA_Ehnim_FELDARBEIT(C_Info)
+instance DIA_Ehnim_FELDARBEIT (C_Info)
 {
 	npc = BAU_944_Ehnim;
 	nr = 4;
 	condition = DIA_Ehnim_FELDARBEIT_Condition;
 	information = DIA_Ehnim_FELDARBEIT_Info;
-	description = "Как идет работа в поле?";
+	description = " How is the work going in the field? " ;
 };
 
 
 func int DIA_Ehnim_FELDARBEIT_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Ehnim_HALLO))
+	if ( Npc_KnowsInfo ( other , DIA_Knows_HELLO ))
 	{
 		return TRUE;
 	};
@@ -68,9 +68,9 @@ func int DIA_Ehnim_FELDARBEIT_Condition()
 
 func void DIA_Ehnim_FELDARBEIT_Info()
 {
-	AI_Output(other,self,"DIA_Ehnim_FELDARBEIT_15_00");	//Как идет работа?
-	AI_Output(self,other,"DIA_Ehnim_FELDARBEIT_12_01");	//Ты хочешь помочь? Тут есть еще одна мотыга. Бери ее и выходи в поле.
-	AI_Output(self,other,"DIA_Ehnim_FELDARBEIT_12_02");	//Нужно только быть осторожным, чтобы полевые хищники не подкрались к тебе незаметно. Они сожрут тебя, даже моргнуть не успеешь.
+	AI_Output(other,self, " DIA_Ehnim_FELDARBEIT_15_00 " );	// How is work going?
+	AI_Output(self,other, " DIA_Ehnim_FELDARBEIT_12_01 " );	// Do you want to help? There is another hoe here. Take it and go out into the field.
+	AI_Output(self,other, " DIA_Ehnim_FELDARBEIT_12_02 " );	// You just need to be careful that the field predators do not sneak up on you unnoticed. They will eat you before you even blink.
 };
 
 
@@ -80,13 +80,13 @@ instance DIA_Ehnim_FELDRAEUBER(C_Info)
 	nr = 5;
 	condition = DIA_Ehnim_FELDRAEUBER_Condition;
 	information = DIA_Ehnim_FELDRAEUBER_Info;
-	description = "Почему вы ничего не делаете с этими полевыми хищниками?";
+	description = " Why aren't you doing anything to these field predators? " ;
 };
 
 
 func int DIA_Ehnim_FELDRAEUBER_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Ehnim_FELDARBEIT))
+	if (Npc_KnowsInfo(other,DIA_Ehnim_FELDARBEIT))
 	{
 		return TRUE;
 	};
@@ -94,18 +94,18 @@ func int DIA_Ehnim_FELDRAEUBER_Condition()
 
 func void DIA_Ehnim_FELDRAEUBER_Info()
 {
-	AI_Output(other,self,"DIA_Ehnim_FELDRAEUBER_15_00");	//Почему вы ничего не делаете с этими полевыми хищниками?
-	AI_Output(self,other,"DIA_Ehnim_FELDRAEUBER_12_01");	//Я убил их столько, что уже сбился со счета. Но проблема в том, что на место убитых приходят новые.
+	AI_Output(other,self, " DIA_Ehnim_FELDRAEUBER_15_00 " );	// Why aren't you doing anything to these field predators?
+	AI_Output(self,other, " DIA_Ehnim_FELDRAEUBER_12_01 " );	// I've killed so many of them I've lost count. But the problem is that new ones take the place of the dead.
 };
 
 
-instance DIA_Ehnim_STREIT1(C_Info)
+instance DIA_Ehnim_STREIT1 (C_Info)
 {
 	npc = BAU_944_Ehnim;
 	nr = 6;
 	condition = DIA_Ehnim_STREIT1_Condition;
 	information = DIA_Ehnim_STREIT1_Info;
-	description = "Твой брат сказал мне то же самое.";
+	description = " Your brother told me the same thing. " ;
 };
 
 
@@ -119,19 +119,19 @@ func int DIA_Ehnim_STREIT1_Condition()
 
 func void DIA_Ehnim_STREIT1_Info()
 {
-	AI_Output(other,self,"DIA_Ehnim_STREIT1_15_00");	//Твой брат сказал мне то же самое.
-	AI_Output(self,other,"DIA_Ehnim_STREIT1_12_01");	//Что? Этот трус? Да он всегда исчезает, как только эти твари хотя бы приблизятся к нашей земле.
-	AI_Output(self,other,"DIA_Ehnim_STREIT1_12_02");	//Ему не стоит нести такую чушь.
+	AI_Output(other,self, " DIA_Ehnim_STREIT1_15_00 " );	// Your brother told me the same thing.
+	AI_Output(self,other, " DIA_Ehnim_STREIT1_12_01 " );	// What? This coward? Yes, he always disappears as soon as these creatures even come close to our land.
+	AI_Output(self,other, " DIA_Ehnim_STREIT1_12_02 " );	// He shouldn't spout such nonsense.
 };
 
 
-instance DIA_Ehnim_STREIT3(C_Info)
+instance DIA_Ehnim_STREIT3 (C_Info)
 {
 	npc = BAU_944_Ehnim;
 	nr = 7;
 	condition = DIA_Ehnim_STREIT3_Condition;
 	information = DIA_Ehnim_STREIT3_Info;
-	description = "Твой брат думает, что ты хвастун.";
+	description = " Your brother thinks you're a braggart. " ;
 };
 
 
@@ -145,30 +145,30 @@ func int DIA_Ehnim_STREIT3_Condition()
 
 func void DIA_Ehnim_STREIT3_Info()
 {
-	AI_Output(other,self,"DIA_Ehnim_STREIT3_15_00");	//Твой брат думает, что ты хвастун.
-	AI_Output(self,other,"DIA_Ehnim_STREIT3_12_01");	//Что? У него действительно хватило мужества сказать это?
-	AI_Output(self,other,"DIA_Ehnim_STREIT3_12_02");	//Ему лучше следить за своим языком, а то мне придется опять преподать ему урок.
-	AI_Output(self,other,"DIA_Ehnim_STREIT3_12_03");	//Иди, и скажи ему это.
+	AI_Output(other,self, " DIA_Ehnim_STREIT3_15_00 " );	// Your brother thinks you're a braggart.
+	AI_Output(self,other, " DIA_Ehnim_STREIT3_12_01 " );	// What? Did he really have the courage to say that?
+	AI_Output(self,other, " DIA_Ehnim_STREIT3_12_02 " );	// He'd better watch his tongue or I'll have to teach him a lesson again.
+	AI_Output(self,other, " DIA_Ehnim_STREIT3_12_03 " );	// Go and tell him this.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Ehnim_STREIT5(C_Info)
+instance DIA_Ehnim_STREIT5 (C_Info)
 {
 	npc = BAU_944_Ehnim;
 	nr = 8;
 	condition = DIA_Ehnim_STREIT5_Condition;
 	information = DIA_Ehnim_STREIT5_Info;
 	permanent = TRUE;
-	description = "Я думаю, вам двоим нужно просто остыть.";
+	description = " I think you two should just chill. " ;
 };
 
 
-var int DIA_Ehnim_STREIT5_noPerm;
+var int DIA_Equal_STREET5_noPerm;
 
 func int DIA_Ehnim_STREIT5_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Egill_STREIT4) && (Hlp_IsValidNpc(Egill) && !C_NpcIsDown(Egill)) && (DIA_Ehnim_STREIT5_noPerm == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Egill_STREIT4 ) && ( Hlp_IsValidNpc ( Egill ) &&  ! C_ Npc IsDown ( Egill )) && ( DIA_Ehnim_STREIT5_noPerm ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -176,29 +176,29 @@ func int DIA_Ehnim_STREIT5_Condition()
 
 func void DIA_Ehnim_STREIT5_Info()
 {
-	AI_Output(other,self,"DIA_Ehnim_STREIT5_15_00");	//Я думаю, вам двоим нужно просто остыть.
-	AI_Output(self,other,"DIA_Ehnim_STREIT5_12_01");	//Этот ублюдок не отказался от своих слов, я прав?
-	AI_Output(self,other,"DIA_Ehnim_STREIT5_12_02");	//Я ему пасть порву. Сажи ему это.
+	AI_Output(other,self, " DIA_Ehnim_STREIT5_15_00 " );	// I think you two should just chill.
+	AI_Output(self,other, " DIA_Ehnim_STREIT5_12_01 " );	// That bastard didn't go back on his word, am I right?
+	AI_Output(self,other, " DIA_Ehnim_STREIT5_12_02 " );	// I'll tear his mouth. Give it to him.
 	Info_ClearChoices(DIA_Ehnim_STREIT5);
-	Info_AddChoice(DIA_Ehnim_STREIT5,"Делай, что хочешь. А я ухожу.",DIA_Ehnim_STREIT5_gehen);
-	Info_AddChoice(DIA_Ehnim_STREIT5,"Почему ты не скажешь это ему сам?",DIA_Ehnim_STREIT5_Attack);
+	Info_AddChoice(DIA_Ehnim_STREIT5, " Do whatever you want. I'm leaving. " ,DIA_Ehnim_STREIT5_gehen);
+	Info_AddChoice(DIA_Ehnim_STREIT5, " Why don't you tell him yourself? " ,DIA_Ehnim_STREIT5_Attack);
 };
 
 func void DIA_Ehnim_STREIT5_Attack()
 {
-	AI_Output(other,self,"DIA_Ehnim_STREIT5_Attack_15_00");	//Почему ты не скажешь это ему сам?
-	AI_Output(self,other,"DIA_Ehnim_STREIT5_Attack_12_01");	//Сейчас пойду и сделаю это.
+	AI_Output(other,self, " DIA_Ehnim_STREIT5_Attack_15_00 " );	// Why don't you tell him yourself?
+	AI_Output(self,other, " DIA_Ehnim_STREIT5_Attack_12_01 " );	// Now I'll go and do it.
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 
 	AI_StopProcessInfos(self);
-	DIA_Ehnim_STREIT5_noPerm = TRUE;
+	DIA_Ehnim_STREIT5_noPerm = TRUE ;
 	other.aivar[AIV_INVINCIBLE] = FALSE;
 	B_Attack(self,Egill,AR_NONE,0);
 	B_GivePlayerXP(XP_EgillEhnimStreit);
@@ -206,13 +206,13 @@ func void DIA_Ehnim_STREIT5_Attack()
 
 func void DIA_Ehnim_STREIT5_gehen()
 {
-	AI_Output(other,self,"DIA_Ehnim_STREIT5_gehen_15_00");	//Делай, что хочешь. А я ухожу.
-	AI_Output(self,other,"DIA_Ehnim_STREIT5_gehen_12_01");	//Да, уходи отсюда.
+	AI_Output(other,self, " DIA_Ehnim_STREIT5_gehen_15_00 " );	// Do whatever you want. And I'm leaving.
+	AI_Output(self,other, " DIA_Ehnim_STREIT5_gehen_12_01 " );	// Yes, get out of here.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Ehnim_PERMKAP1(C_Info)
+instances DIA_Ehnim_PERMKAP1 (C_Info)
 {
 	npc = BAU_944_Ehnim;
 	condition = DIA_Ehnim_PERMKAP1_Condition;
@@ -224,7 +224,7 @@ instance DIA_Ehnim_PERMKAP1(C_Info)
 
 func int DIA_Ehnim_PERMKAP1_Condition()
 {
-	if((DIA_Ehnim_STREIT5_noPerm == TRUE) && Npc_IsInState(self,ZS_Talk))
+	if (( DIA_Ehnim_STREIT5_noPerm ==  TRUE ) && Npc_IsInState ( self , ZS_Talk ) ) ;
 	{
 		return TRUE;
 	};
@@ -232,7 +232,7 @@ func int DIA_Ehnim_PERMKAP1_Condition()
 
 func void DIA_Ehnim_PERMKAP1_Info()
 {
-	AI_Output(self,other,"DIA_Ehnim_PERMKAP1_12_00");	//Тебе мало того, что ты натворил? Я думаю, тебе лучше уйти.
+	AI_Output(self,other, " DIA_Ehnim_PERMKAP1_12_00 " );	// It's not enough for you what you've done? I think you'd better leave.
 	AI_StopProcessInfos(self);
 };
 
@@ -247,7 +247,7 @@ instance DIA_Ehnim_MoleRatFett(C_Info)
 
 func int DIA_Ehnim_MoleRatFett_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Ehnim_PERMKAP1) && (DIA_Ehnim_STREIT5_noPerm == TRUE) && Npc_IsInState(self,ZS_Talk) && ((hero.guild != GIL_KDF) || (hero.guild != GIL_KDW)))
+	if (Npc_KnowsInfo(other,DIA_Ehnim_PERMKAP1) && (DIA_Ehnim_STREIT5_noPerm ==  TRUE ) && Npc_IsInState(self,ZS_Talk) && ((hero.guild !=  GIL_KDF ) || (hero.guild !=  GIL_KDW ))) ;
 	{
 		return TRUE;
 	};
@@ -255,44 +255,44 @@ func int DIA_Ehnim_MoleRatFett_Condition()
 
 func void DIA_Ehnim_MoleRatFett_Info()
 {
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_12_00");	//Ты ВСЕ ЕЩЕ здесь?
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_15_01");	//Ну да. Все еще ссоритесь?
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_12_02");	//Не твое дело. Забудь об этом. Скажи, ты не был недавно на ферме Лобарта?
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_15_03");	//Может быть. А что?
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_12_04");	//Ох, ничего такого. Я просто хотел поговорить с Вино о его винокурне.
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_12_00 " );	// Are you STILL here?
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_15_01 " );	// Well, yes. Are you still fighting?
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_12_02 " );	// None of your business. Forget it. Tell me, have you been to Lobart's farm lately?
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_15_03 " );	// Maybe. And what?
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_12_04 " );	// Oh, nothing like that. I just wanted to talk to Vino about his distillery.
 	Info_ClearChoices(DIA_Ehnim_MoleRatFett);
-	Info_AddChoice(DIA_Ehnim_MoleRatFett,"У меня сейчас нет времени на это.",DIA_Ehnim_MoleRatFett_nein);
-	Info_AddChoice(DIA_Ehnim_MoleRatFett,"Винокурня? Какая винокурня?",DIA_Ehnim_MoleRatFett_was);
-	if(Npc_IsDead(Vino))
+	Info_AddChoice(DIA_Ehnim_MoleRatFett, " I don't have time for this right now. " ,DIA_Ehnim_MoleRatFett_nein);
+	Info_AddChoice(DIA_Ehnim_MoleRatFett, " Distillery? Which distillery? " ,DIA_Ehnim_MoleRatFett_was);
+	if (Npc_IsDead(Vino))
 	{
-		Info_AddChoice(DIA_Ehnim_MoleRatFett,"Вино мертв.",DIA_Ehnim_MoleRatFett_tot);
+		Info_AddChoice(DIA_Ehnim_MoleRatFett, " Wine is dead. " ,DIA_Ehnim_MoleRatFett_tot);
 	};
 };
 
 func void DIA_Ehnim_MoleRatFett_tot()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_tot_15_00");	//Вино мертв.
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_tot_12_01");	//О боже. Ужас-то какой.
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_tot_15_00 " );	// Wine is dead.
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_tot_12_01 " );	// Oh god. What a horror.
 };
 
 func void DIA_Ehnim_MoleRatFett_was()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_15_00");	//Винокурня? Какая винокурня?
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_12_01");	//Ох. Мне, наверное, не стоило говорить об этом. Вино всегда так трепетно относился к этому своему маленькому секрету.
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_12_02");	//Ну ладно, все равно уже я проболтался. В лесу, неподалеку от фермы, Вино устроил секретную винокурню.
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_12_03");	//Несколько дней назад, он попросил меня дать ему что-нибудь, чтобы смазать механизм решетки, установленной там.
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_12_04");	//Последнее время шли дожди, и она заржавела. Лебедку заклинило, и он не может поднять решетку.
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_was_15_00 " );	// Distillery? What distillery?
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_12_01 " );	// Oh. I probably shouldn't have talked about it. Vino was always so reverent about this little secret of his.
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_12_02 " );	// Well, anyway, I already blabbed. In the forest, not far from the farm, Vino set up a secret distillery.
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_12_03 " );	// A few days ago, he asked me to give him something to lubricate the mechanism of the grate set there.
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_12_04 " );	// It's been raining lately and it's rusty. The winch is jammed and he can't lift the grate.
 	Log_CreateTopic(TOPIC_FoundVinosKellerei,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FoundVinosKellerei,LOG_Running);
-	B_LogEntry(TOPIC_FoundVinosKellerei,"Эним рассказал мне, что Вино содержит секретный винокуренный завод в лесу около фермы Акила. Но механизм, открывающий дверь, заклинило, и починить его можно только смазав шестеренки жиром кротокрыса.");
-	Info_AddChoice(DIA_Ehnim_MoleRatFett,"И? Ты достал смазку?",DIA_Ehnim_MoleRatFett_was_Fett);
+	; _ _ _ _
+	Info_AddChoice(DIA_Ehnim_MoleRatFett, " And? Did you get some lube? " ,DIA_Ehnim_MoleRatFett_was_Fett);
 };
 
 func void DIA_Ehnim_MoleRatFett_was_Fett()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_Fett_15_00");	//И? Ты достал смазку?
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_12_01");	//Да, конечно. Самую лучшую. Жир крысокрота! Потрясающая вещь, скажу я тебе. Ее используют даже для смазки корабельных пушек.
-	Info_AddChoice(DIA_Ehnim_MoleRatFett,"Продай мне этого жира.",DIA_Ehnim_MoleRatFett_was_Fett_habenwill);
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_was_Fett_15_00 " );	// And? Did you get lube?
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_Fett_12_01 " );	// Yes, of course. The very best. Rat mole fat! Amazing stuff, let me tell you. It is even used to lubricate ship cannons.
+	Info_AddChoice(DIA_Ehnim_MoleRatFett, " Sell me that fat. " ,DIA_Ehnim_MoleRatFett_was_Fett_habenwill);
 };
 
 
@@ -300,38 +300,38 @@ var int Ehnim_MoleRatFettOffer;
 
 func void DIA_Ehnim_MoleRatFett_was_Fett_habenwill()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_15_00");	//Продай мне этого жира.
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_12_01");	//Это обойдется тебе недешево, приятель. Он очень редко встречается в этой части страны.
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_15_00 " );	// Sell me that fat.
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_12_01 " );	// It's going to cost you a lot, mate. It is very rare in this part of the country.
 	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_15_02");	//Сколько?
 	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_12_03");	//Ммм...Сто золотых?
-	Ehnim_MoleRatFettOffer = 100;
+	Ehnim_MoleRatFettOffer = 100 ;
 	Info_ClearChoices(DIA_Ehnim_MoleRatFett);
-	Info_AddChoice(DIA_Ehnim_MoleRatFett,"Это слишком дорого!",DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel);
-	Info_AddChoice(DIA_Ehnim_MoleRatFett,"Договорились. ",DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja);
+	Info_AddChoice(DIA_Ehnim_MoleRatFett, " It's too expensive! " ,DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel);
+	Info_AddChoice(DIA_Ehnim_MoleRatFett, " Agreed. " ,DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja);
 };
 
 func void DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_15_00");	//Договорились.
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_15_00 " );	// Agreed.
 	if(B_GiveInvItems(other,self,ItMi_Gold,Ehnim_MoleRatFettOffer))
 	{
-		AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_01");	//Хорошо! Вот, держи.
+		AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_01 " );	// Good! Here you are.
 
 		if(Npc_HasItems(self,ItMi_Moleratlubric_MIS))
 		{
 			B_GiveInvItems(self,other,ItMi_Moleratlubric_MIS,1);
-			if(Npc_IsDead(Vino) == FALSE)
+			if ( Npc_IsDead ( Wine ) ==  FALSE )
 			{
-				AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_02");	//(себе под нос) Вино убьет меня за это!
+				AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_02 " );	// (to himself) The wine will kill me for this!
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_03");	//Черт, и куда же она подевалась? Что за досада. Извини. Похоже, у меня ее не осталось. Вот, возьми свои деньги назад.
+			AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_03 " );	// Damn, where did she go? What a shame. I'm sorry. Looks like I don't have it. Here, take your money back.
 			B_GiveInvItems(self,other,ItMi_Gold,Ehnim_MoleRatFettOffer);
-			if(Npc_IsDead(Egill) == FALSE)
+			if (Npc_IsDead(Egill) ==  FALSE )
 			{
-				AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_04");	//Готов поклясться, это проделки моего брата. Вот ублюдок!
+				AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_04 " );	// I bet this is my brother's trick. Here's the bastard!
 				AI_StopProcessInfos(self);
 				other.aivar[AIV_INVINCIBLE] = FALSE;
 				B_Attack(self,Egill,AR_NONE,0);
@@ -340,39 +340,39 @@ func void DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_05");	//Так, вообще-то не поступают. Сначала ты договариваешься о сделке, а затем оказывается, что у тебя даже нет денег! Уходи, я не хочу тебя видеть!
+		AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_05 " );	// Well, they don't actually do it. First you negotiate a deal and then it turns out you don't even have the money! Go away, I don't want to see you!
 	};
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel_15_00");	//Это слишком много!
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel_12_01");	//Хорошо, хорошо! Семьдесят золотых. Но это мое последняя цена!
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel_15_00 " );	// That's too much!
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel_12_01 " );	// Good, good! Seventy gold. But this is my last price!
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
-	Ehnim_MoleRatFettOffer = 70;
+	Ehnim_MoleRatFettOffer = 70 ;
 	Info_ClearChoices(DIA_Ehnim_MoleRatFett);
-	Info_AddChoice(DIA_Ehnim_MoleRatFett,"Это все равно слишком много.",DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel_immernoch);
-	Info_AddChoice(DIA_Ehnim_MoleRatFett,"Договорились. ",DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja);
+	Info_AddChoice(DIA_Ehnim_MoleRatFett, " That's too much anyway. " ,DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel_immernoch);
+	Info_AddChoice(DIA_Ehnim_MoleRatFett, " Agreed. " ,DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja);
 };
 
 func void DIA_Ehnim_MoleRatFett_was_Fett_habenwill_zuviel_immernoch()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_immernoch_15_00");	//Это все равно слишком много.
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_immernoch_12_01");	//Тогда забудь об этом...(сердито) Прощай!
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_was_immernoch_15_00 " );	// That's still too much.
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_was_immernoch_12_01 " );	// Then forget about it... (angrily) Goodbye!
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Ehnim_MoleRatFett_nein()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_nein_15_00");	//У меня сейчас нет времени на это.
-	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_nein_12_01");	//Тогда ее буду отвлекать тебя, парень.
+	AI_Output(other,self, " DIA_Ehnim_MoleRatFett_nein_15_00 " );	// I don't have time for this right now.
+	AI_Output(self,other, " DIA_Ehnim_MoleRatFett_nein_12_01 " );	// Then I'll distract you, boy.
 	AI_StopProcessInfos(self);
 };
 
@@ -397,7 +397,7 @@ func int DIA_Ehnim_PERMKAP3_Condition()
 
 func void DIA_Ehnim_PERMKAP3_Info()
 {
-	AI_Output(self,other,"DIA_Ehnim_PERMKAP3_12_00");	//У меня нет времени на тебя.
+	AI_Output(self,other, " DIA_Ehnim_PERMKAP3_12_00 " );	// I don't have time for you.
 	AI_StopProcessInfos(self);
 };
 
@@ -415,7 +415,7 @@ instance DIA_Ehnim_PICKPOCKET(C_Info)
 
 func int DIA_Ehnim_PICKPOCKET_Condition()
 {
-	return C_Beklauen(76,35);
+	return  C_Robbery ( 76 , 35 );
 };
 
 func void DIA_Ehnim_PICKPOCKET_Info()
@@ -427,7 +427,7 @@ func void DIA_Ehnim_PICKPOCKET_Info()
 
 func void DIA_Ehnim_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Ehnim_PICKPOCKET);
 };
 
@@ -435,4 +435,3 @@ func void DIA_Ehnim_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Ehnim_PICKPOCKET);
 };
-
