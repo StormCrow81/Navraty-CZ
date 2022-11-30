@@ -1,4 +1,5 @@
 
+
 var int crontr;
 
 instance DIA_Addon_Cronos_ADW_EXIT(C_Info)
@@ -22,21 +23,21 @@ func void DIA_Addon_Cronos_ADW_EXIT_Info()
 	if((MIS_PirateDeal == LOG_Success) && (MIS_EscortToPirate == FALSE))
 	{
 		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_00");	//Постой.
-		AI_Output(other,self,"DIA_Addon_Cronos_EscortToPirate_01_01");	//Что еще?
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_02");	//Я тут подумал и уже решил, кого послать к пиратам.
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_03");	//Но я сомневаюсь, что он сам отыщет дорогу в их лагерь.
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_04");	//Поэтому я попрошу тебя самому отвести его к ним. Ведь ты уже бывал там.
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_05");	//И надеюсь, что он доберется туда целым и невредимым.
-		AI_Output(other,self,"DIA_Addon_Cronos_EscortToPirate_01_06");	//Ну, обещать ничего не могу. Эти места довольно опасные.
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_07");	//Но ты все-таки постарайся. Это очень важно для всех нас.
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_08");	//Моего человека зовут Норт.
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_09");	//Ты найдешь его недалеко от большого храма, что на другом краю этого плато.
+		AI_Output(other,self, " DIA_Addon_Cronos_EscortToPirate_01_01 " );	// What else?
+		AI_Output(self,other, " DIA_Addon_Cronos_EscortToPirate_01_02 " );	// I've been thinking about it and I've already decided who to send to the pirates.
+		AI_Output(self,other, " DIA_Addon_Cronos_EscortToPirate_01_03 " );	// But I doubt he'll find his own way to their camp.
+		AI_Output(self,other, " DIA_Addon_Cronos_EscortToPirate_01_04 " );	// Therefore, I will ask you to take him to them yourself. After all, you've been there before.
+		AI_Output(self,other, " DIA_Addon_Cronos_EscortToPirate_01_05 " );	// And I hope he gets there safe and sound.
+		AI_Output(other,self, " DIA_Addon_Cronos_EscortToPirate_01_06 " );	// Well, I can't promise anything. These places are quite dangerous.
+		AI_Output(self,other, " DIA_Addon_Cronos_EscortToPirate_01_07 " );	// But you still try. This is very important for all of us.
+		AI_Output(self,other, " DIA_Addon_Cronos_EscortToPirate_01_08 " );	// My man's name is North.
+		AI_Output(self,other, " DIA_Addon_Cronos_EscortToPirate_01_09 " );	// You'll find him near the big temple on the other side of this plateau.
 		MIS_EscortToPirate = LOG_Running;
 		Log_CreateTopic(TOPIC_EscortToPirate,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_EscortToPirate,LOG_Running);
-		B_LogEntry(TOPIC_EscortToPirate,"Кронос попросил меня отвести его человека в лагерь пиратов.");
+		B_LogEntry(TOPIC_EscortToPirate, " Kronos asked me to take his man to the pirate camp. " );
 		AI_StopProcessInfos(self);
-		Wld_InsertNpc(NDW_8161_Nort,"ADW_ENTRANCE_PLATEAU_15");
+		Wld_InsertNpc(NDW_8161_North, " ADW_ENTRANCE_PLATE_15 " );
 	}
 	else
 	{
@@ -56,7 +57,7 @@ instance DIA_Addon_Cronos_ADW_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Cronos_ADW_PICKPOCKET_Condition()
 {
-	return C_Beklauen(49,35);
+	return  C_Robbery ( 49 , 35 );
 };
 
 func void DIA_Addon_Cronos_ADW_PICKPOCKET_Info()
@@ -68,7 +69,7 @@ func void DIA_Addon_Cronos_ADW_PICKPOCKET_Info()
 
 func void DIA_Addon_Cronos_ADW_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Cronos_ADW_PICKPOCKET);
 };
 
@@ -78,7 +79,7 @@ func void DIA_Addon_Cronos_ADW_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Addon_Cronos_ADWHello(C_Info)
+instance DIA_Addon_Cronos_ADWHello (C_Info)
 {
 	npc = KDW_14010_Addon_Cronos_ADW;
 	nr = 1;
@@ -481,11 +482,11 @@ func void DIA_NDW_8161_Nort_Perm_Info()
 {
 	if(KronosKnowEscort == FALSE)
 	{
-		AI_Output(self,other,"DIA_NDW_8161_Nort_Perm_01_00");	//На твоем месте я бы сообщил Кроносу о том, что мы успешно добрались сюда.
+		AI_Output(self,other, " DIA_NDW_8161_Nort_Perm_01_00 " );	// If I were you, I'd tell Kronos that we made it here successfully.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_NDW_8161_Nort_Perm_01_01");	//Не сейчас!
+		AI_Output(self,other, " DIA_NDW_8161_Nort_Perm_01_01 " );	// Not now!
 	};
 
 	AI_StopProcessInfos(self);
