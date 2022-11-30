@@ -34,7 +34,7 @@ instance DIA_Addon_Tom_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Tom_PICKPOCKET_Condition()
 {
-	return C_Beklauen(40,52);
+	return  C_Robbery ( 40 , 52 );
 };
 
 func void DIA_Addon_Tom_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_Tom_PICKPOCKET_Info()
 
 func void DIA_Addon_Tom_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Tom_PICKPOCKET);
 };
 
@@ -63,7 +63,7 @@ instance DIA_Addon_Tom_HI(C_Info)
 	condition = DIA_Addon_Tom_HI_Condition;
 	information = DIA_Addon_Tom_HI_Info;
 	permanent = FALSE;
-	description = "Почему ты торчишь здесь?";
+	description = " Why are you hanging around here? " ;
 };
 
 
@@ -77,44 +77,44 @@ func int DIA_Addon_Tom_HI_Condition()
 
 func void DIA_Addon_Tom_HI_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Tom_HI_15_00");	//Почему ты торчишь здесь?
-	AI_Output(self,other,"DIA_Addon_Tom_HI_11_01");	//У меня проблемы. В данный момент мне лучше не показываться в лагере.
+	AI_Output(other,self, " DIA_Addon_Tom_HI_15_00 " );	// Why are you stuck here?
+	AI_Output(self,other, " DIA_Addon_Tom_HI_11_01 " );	// I'm in trouble. For now, I'd better not show up at the camp.
 	AI_Output(other,self,"DIA_Addon_Tom_HI_15_02");	//Что не так?
-	AI_Output(self,other,"DIA_Addon_Tom_HI_11_03");	//У меня были хорошие отношения с пиратами, понимаешь?
-	AI_Output(self,other,"DIA_Addon_Tom_HI_11_04");	//Я всегда встречал ребят возле лагеря и торговал с ними.
-	AI_Output(self,other,"DIA_Addon_Tom_HI_11_05");	//Я отоварил половину лагеря! 'Том, принеси мне то, Том, принеси мне это'.
-	AI_Output(self,other,"DIA_Addon_Tom_HI_11_06");	//А потом вмешался этот ублюдок Эстебан.
+	AI_Output(self,other, " DIA_Addon_Tom_HI_11_03 " );	// I had a good relationship with the pirates, you know?
+	AI_Output(self,other, " DIA_Addon_Tom_HI_11_04 " );	// I always met the guys near the camp and traded with them.
+	AI_Output(self,other, " DIA_Addon_Tom_HI_11_05 " );	// I bought half of the camp! 'Tom bring me that, Tom bring me that'.
+	AI_Output(self,other, " DIA_Addon_Tom_HI_11_06 " );	// And then that bastard Esteban intervened.
 };
 
 
-instance DIA_Addon_Tom_Juan(C_Info)
+instances of DIA_Addon_Tom_Juan (C_Info)
 {
 	npc = BDT_1080_Addon_Tom;
 	nr = 2;
 	condition = DIA_Addon_Tom_Juan_Condition;
 	information = DIA_Addon_Tom_Juan_Info;
 	permanent = FALSE;
-	description = "Что произошло?";
+	description = " What happened? " ;
 };
 
 
 func int DIA_Addon_Tom_Juan_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Tom_HI) && (TOM_TP == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Tom_HI ) && ( TOM_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Tom_Juan_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Tom_Juan_15_00");	//Что случилось?
-	AI_Output(self,other,"DIA_Addon_Tom_Juan_11_01");	//Эстебан послал одного из своих ребят - Хуана. Этот мерзавец устроил нам засаду.
-	AI_Output(self,other,"DIA_Addon_Tom_Juan_11_02");	//Я как раз собирался заключить сделку с пиратами, когда он выскочил из темноты и сбил меня с ног двумя ударами!
-	AI_Output(self,other,"DIA_Addon_Tom_Juan_11_03");	//Этот парень очень быстр! Но недостаточно быстр. Мне удалось убежать от него.
+	AI_Output(other,self, " DIA_Addon_Tom_Juan_15_00 " );	// What happened?
+	AI_Output(self,other, " DIA_Addon_Tom_Juan_11_01 " );	// Esteban sent one of his guys - Juan. This bastard ambushed us.
+	AI_Output(self,other, " DIA_Addon_Tom_Juan_11_02 " );	// I was just about to make a deal with the pirates when he popped out of the darkness and knocked me down with two punches!
+	AI_Output(self,other, " DIA_Addon_Tom_Juan_11_03 " );	// This guy is very fast! But not fast enough. I managed to get away from him.
 	SC_Knows_JuanMurderedAngus = TRUE;
-	B_LogEntry(TOPIC_Addon_KillJuan,"Хэнка и Ангуса подстерег и убил Хуан.");
+	B_LogEntry(TOPIC_Addon_KillJuan, " Hank and Angus were waylaid and killed by Juan. " );
 };
 
 
@@ -125,26 +125,26 @@ instance DIA_Addon_Tom_Esteban(C_Info)
 	condition = DIA_Addon_Tom_Esteban_Condition;
 	information = DIA_Addon_Tom_Esteban_Info;
 	permanent = FALSE;
-	description = "И с тех пор ты сидишь здесь?";
+	description = " And you've been sitting here since then? " ;
 };
 
 
 func int DIA_Addon_Tom_Esteban_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Tom_Juan) && (TOM_TP == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Tom_Juan ) && ( TOM_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Tom_Esteban_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Tom_Esteban_15_00");	//И с тех пор ты сидишь здесь?
-	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_01");	//Сначала я зашел в лагерь и сказал Фиску, Хуно и другим, что они могут забыть про свои заказы.
-	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_02");	//И что виноват Эстебан.
-	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_03");	//И если Эстебан узнает, что это я сказал всем, что ОН виноват, я могу прощаться с жизнью.
-	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_04");	//Поэтому я и не могу вернуться в лагерь.
+	AI_Output(other,self, " DIA_Addon_Tom_Esteban_15_00 " );	// And since then you've been sitting here?
+	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_01 " );	// First I went to the camp and told Fisk, Huno and the others that they might forget their orders.
+	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_02 " );	// And that Esteban is to blame.
+	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_03 " );	// And if Esteban finds out that it was me who told everyone that HE was to blame, I can say goodbye to life.
+	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_04 " );	// That's why I can't go back to the camp.
 	Tom_Tells = TRUE;
 };
 
@@ -156,26 +156,26 @@ instance DIA_Addon_Tom_Dead(C_Info)
 	condition = DIA_Addon_Tom_Dead_Condition;
 	information = DIA_Addon_Tom_Dead_Info;
 	permanent = FALSE;
-	description = "Эстебан мертв.";
+	description = " Esteban is dead. " ;
 };
 
 
 func int DIA_Addon_Tom_Dead_Condition()
 {
-	if(Npc_IsDead(Esteban) && Npc_KnowsInfo(other,DIA_Addon_Tom_Esteban) && (TOM_TP == FALSE))
+	if ( Npc_IsDead ( Stephen ) && Npc_KnowsInfo ( other , DIA_Addon_Tom_Stephen ) & & ( TOM_TP  ==  FALSE )) .
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Tom_Dead_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Tom_Dead_15_00");	//Эстебан мертв.
-	AI_Output(self,other,"DIA_Addon_Tom_Dead_11_01");	//Правда? Приятель, вот это УДАЧА!
-	AI_Output(self,other,"DIA_Addon_Tom_Dead_11_02");	//Кто сделал это?
-	AI_Output(other,self,"DIA_Addon_Tom_Dead_15_03");	//(игриво) Ну, скажем, некто, кого ты знаешь...
-	AI_Output(self,other,"DIA_Addon_Tom_Dead_11_04");	//Спасибо, что пришел ко мне. Теперь я могу вернуться в лагерь...
+	AI_Output(other,self, " DIA_Addon_Tom_Dead_15_00 " );	// Esteban is dead.
+	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_01 " );	// True? Dude, this is GOOD LUCK!
+	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_02 " );	// Who did this?
+	AI_Output(other,self, " DIA_Addon_Tom_Dead_15_03 " );	// (playfully) Well, let's say someone you know...
+	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_04 " );	// Thank you for coming to me. Now I can go back to camp...
 	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"LAGER");
@@ -189,13 +189,13 @@ instance DIA_Addon_Tom_PERM(C_Info)
 	condition = DIA_Addon_Tom_PERM_Condition;
 	information = DIA_Addon_Tom_PERM_Info;
 	permanent = TRUE;
-	description = "Что еще?";
+	description = " What else? " ;
 };
 
 
 func int DIA_Addon_Tom_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Tom_Esteban) && (TOM_TP == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Tom_Stephen ) && ( TOM_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -206,15 +206,15 @@ func void DIA_Addon_Tom_PERM_Info()
 	AI_Output(other,self,"DIA_Addon_Tom_PERM_15_00");	//Что еще?
 	if(Npc_GetDistToWP(self,"BL_INN_05_B") <= 500)
 	{
-		AI_Output(self,other,"DIA_Addon_Tom_PERM_11_01");	//Теперь я могу спокойно пить варево Люсии.
+		AI_Output(self,other, " DIA_Addon_Tom_PERM_11_01 " );	// Now I can safely drink Lucia's brew.
 	}
 	else if(Npc_KnowsInfo(other,DIA_Addon_Tom_Dead))
 	{
-		AI_Output(self,other,"DIA_Addon_Tom_PERM_11_02");	//Теперь я, наконец, могу показаться в лагере!
+		AI_Output(self,other, " DIA_Addon_Tom_PERM_11_02 " );	// Now I can finally show myself in the camp!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Tom_PERM_11_03");	//А иначе бы я сидел тут и считал камни...
+		AI_Output(self,other, " DIA_Addon_Tom_PERM_11_03 " );	// Otherwise, I'd be sitting here and counting the stones...
 	};
 };
 
@@ -226,13 +226,13 @@ instance DIA_ADDON_TOM_ORCINVASION(C_Info)
 	condition = dia_addon_tom_orcinvasion_condition;
 	information = dia_addon_tom_orcinvasion_info;
 	permanent = TRUE;
-	description = "Я слышал, ты помог парням...";
+	description = " I heard you helped the guys... " ;
 };
 
 
 func int dia_addon_tom_orcinvasion_condition()
 {
-	if((TOM_TP == TRUE) && !Npc_KnowsInfo(other,dia_addon_tom_orcinvasion))
+	if (( TOM_TP  ==  TRUE ) &&  ! Npc_KnowsInfo(other,dia_addon_tom_orconversion))
 	{
 		return TRUE;
 	};
@@ -240,24 +240,23 @@ func int dia_addon_tom_orcinvasion_condition()
 
 func void dia_addon_tom_orcinvasion_info()
 {
-	AI_Output(other,self,"DIA_Addon_Tom_OrcInvasion_01_01");	//Я слышал, это ты помог парням смыться из лагеря?
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_02");	//Ну, в общем, да. Хотя ничего героического я в этом не вижу.
-	AI_Output(other,self,"DIA_Addon_Tom_OrcInvasion_01_03");	//А откуда ты прознал про этот ход?
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_04");	//Давно очень. Причем наткнулся на него совершенно случайно.
-	AI_Output(other,self,"DIA_Addon_Tom_OrcInvasion_01_05");	//Понятно. Торус сказал, что орки застали вас врасплох?
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_06");	//Да, все произошло так неожиданно... Эти орки свалились на нас как снег на голову.
-	AI_Output(other,self,"DIA_Addon_Tom_OrcInvasion_01_07");	//Может, они пришли как-раз из того скрытого прохода?
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_08");	//Нет, не думаю. Они атаковали со стороны болот.
-	AI_Output(other,self,"DIA_Addon_Tom_OrcInvasion_01_09");	//И что было дальше?
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_10");	//В лагере поднялась такая неразбериха! Единственным, кто сохранил трезвую голову в этой ситуации, был Торус.
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_11");	//Он и его ребята заняли оборону при входе на верхнее плато лагеря. Но орков было слишком много, и вскоре их оттеснили к храму.
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_12");	//Собственно, тогда уже стало понятно, что лагерь нам не удержать.
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_13");	//Поэтому, кто смог - последовал за мной к спасительному проходу, пока Торус с остатками своей гвардии прикрывал наше отступление.
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_14");	//Как потом оказалось, только ему самому и удалось спастись. Все остальные погибли.
-	AI_Output(other,self,"DIA_Addon_Tom_OrcInvasion_01_15");	//Да, все это просто ужасно.
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_16");	//Хорошо, конечно, что мы выбрались живыми из этой заварухи. Хотя непонятно, что теперь нам делать?
-	AI_Output(self,other,"DIA_Addon_Tom_OrcInvasion_01_17");	//Наш лагерь - единственное, что у нас было. Мы же бандиты, люди вне закона - куда нам теперь идти? И что с нами будет?
-	AI_Output(other,self,"DIA_Addon_Tom_OrcInvasion_01_18");	//Не переживай. Думаю, Торус что-нибудь придумает.
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_01 " );	// I heard you helped the guys get out of the camp?
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_02 " );	// Well, in general, yes. Although I don't see anything heroic in it.
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_03 " );	// How did you find out about this move?
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_04 " );	// A long time ago. And I stumbled across it quite by accident.
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_05 " );	// Got it. Thorus said the orcs took you by surprise?
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_06 " );	// Yes, everything happened so unexpectedly... These orcs fell on us like snow on our heads.
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_07 " );	// Maybe they just came from that hidden passage?
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_08 " );	// No, I don't think so. They attacked from the swamps.
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_09 " );	// And what happened next?
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_10 " );	// The camp is in such a mess! The only one who kept a cool head in this situation was Torus.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_11 " );	// He and his guys took up defensive positions at the entrance to the upper plateau of the camp. But there were too many orcs, and they were soon pushed back to the temple.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_12 " );	// Actually, then it already became clear that we could not hold the camp.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_13 " );	// Therefore, whoever could - followed me to the saving passage, while Thorus with the remnants of his guard covered our retreat.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_14 " );	// As it turned out later, only he managed to escape. All the rest died.
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_15 " );	// Yes, all this is just terrible.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_16 " );	// It's good, of course, that we got out of this mess alive. Although it is not clear what we should do now?
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_17 " );	// Our camp is the only one we had. We are bandits, people outside the law - where should we go now? And what will happen to us?
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_18 " );	// Don't worry. I think Torus will come up with something.
 };
-
 
