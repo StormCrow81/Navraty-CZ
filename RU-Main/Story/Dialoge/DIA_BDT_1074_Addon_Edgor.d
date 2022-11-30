@@ -19,9 +19,9 @@ func int DIA_Addon_Edgor_EXIT_Condition()
 
 func void DIA_Addon_Edgor_EXIT_Info()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Edgor_MIS2) && (Edgor_Exiteinmal == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Edgor_MIS2 ) && ( Edgor_ExitInfrequently ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_Addon_Edgor_EXIT_06_00");	//Был рад познакомиться...
+		AI_Output(self,other, " DIA_Addon_Edgor_EXIT_06_00 " );	// Nice to meet you...
 		Edgor_Exiteinmal = TRUE;
 	};
 	AI_StopProcessInfos(self);
@@ -41,7 +41,7 @@ instance DIA_Addon_Edgor_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Edgor_PICKPOCKET_Condition()
 {
-	return C_Beklauen(10,7);
+	return  C_Robbery ( 10 , 7 );
 };
 
 func void DIA_Addon_Edgor_PICKPOCKET_Info()
@@ -53,7 +53,7 @@ func void DIA_Addon_Edgor_PICKPOCKET_Info()
 
 func void DIA_Addon_Edgor_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	B_Say(self,self,"$AWAKE");
 	Info_ClearChoices(DIA_Addon_Edgor_PICKPOCKET);
 };
@@ -71,7 +71,7 @@ instance DIA_Addon_Edgor_Hi(C_Info)
 	condition = DIA_Addon_Edgor_Hi_Condition;
 	information = DIA_Addon_Edgor_Hi_Info;
 	permanent = FALSE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -83,11 +83,11 @@ func int DIA_Addon_Edgor_Hi_Condition()
 func void DIA_Addon_Edgor_Hi_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Edgor_Hi_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_Edgor_Hi_06_01");	//Ты хочешь узнать, как у меня дела? Я тебе расскажу, как у меня дела.
-	AI_Output(self,other,"DIA_Addon_Edgor_Hi_06_02");	//Сначала какие-то пираты привезли меня сюда в шторм. Я облевал всю их посудину.
-	AI_Output(self,other,"DIA_Addon_Edgor_Hi_06_03");	//Затем Ворон запер шахту, потому что какие-то идиоты слишком сильно хотят золота.
-	AI_Output(self,other,"DIA_Addon_Edgor_Hi_06_04");	//А затем Франко стал командиром охотников и убивает всякого, кто против него.
-	AI_Output(self,other,"DIA_Addon_Edgor_Hi_06_05");	//Я бы сказал, что дела идут отвратительно.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_01 " );	// Do you want to know how I'm doing? I'll tell you how I'm doing.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_02 " );	// First, some pirates brought me here in a storm. I vomited all over their dish.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_03 " );	// Then Raven locked up the mine because some idiots wanted the gold too much.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_04 " );	// And then Franco became the commander of the hunters and kills anyone who is against him.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_05 " );	// I would say that things are going badly.
 	if(SC_KnowsRavensGoldmine == FALSE)
 	{
 		B_LogEntry(TOPIC_Addon_RavenKDW,LogText_Addon_RavensGoldmine);
@@ -105,7 +105,7 @@ instance DIA_Addon_Edgor_Franco(C_Info)
 	condition = DIA_Addon_Edgor_Franco_Condition;
 	information = DIA_Addon_Edgor_Franco_Info;
 	permanent = FALSE;
-	description = "Как Франко сделался старшим?";
+	description = " How did Franco become a senior? " ;
 };
 
 
@@ -115,14 +115,14 @@ func int DIA_Addon_Edgor_Franco_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Edgor_Franco_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Edgor_Franco_15_00");	//Как Франко сделался старшим?
-	AI_Output(self,other,"DIA_Addon_Edgor_Franco_06_01");	//Очень просто. Убил Флетчера, который был командиром до него.
-	AI_Output(self,other,"DIA_Addon_Edgor_Franco_06_02");	//Флетчер был свой парень. А Франко просто загонял нас.
+	AI_Output(other,self, " DIA_Addon_Edgor_Franco_15_00 " );	// How did Franco become the elder?
+	AI_Output(self,other, " DIA_Addon_Edgor_Franco_06_01 " );	// Very simple. Killed Fletcher, who was the commander before him.
+	AI_Output(self,other, " DIA_Addon_Edgor_Franco_06_02 " );	// Fletcher was his boyfriend. And Franco just drove us.
 };
 
 
@@ -133,26 +133,26 @@ instance DIA_Addon_Edgor_MIS2(C_Info)
 	condition = DIA_Addon_Edgor_MIS2_Condition;
 	information = DIA_Addon_Edgor_MIS2_Info;
 	permanent = FALSE;
-	description = "Франко послал меня по поводу этой каменной таблички...";
+	description = " Franco sent me about this stone tablet... " ;
 };
 
 
 func int DIA_Addon_Edgor_MIS2_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Edgor_Hi) && (MIS_HlpEdgor == LOG_Running))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Edgor_Hi ) && ( MIS_HelpEdgor == LOG_Running ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Edgor_MIS2_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Edgor_MIS2_15_00");	//Франко послал меня по поводу этой каменной таблички. Ты ее нашел?
-	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_01");	//Приятель, я даже не пытался ее искать. Все, что я знаю, - это то, что она должна быть где-то в том старом здании на болоте.
-	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_02");	//А мой внутренний голос говорит мне: 'Эдгор, сторонись старых зданий, стоящих на болоте'.
-	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_03");	//Я не собираюсь рисковать своей шкурой ради этого раздолбая Франко!
-	B_LogEntry(Topic_Addon_Stoneplate,"Эдгор не собирается искать каменную табличку. Он говорит, что она находится в каком-то старом строении на болотах.");
+	AI_Output(other,self, " DIA_Addon_Edgor_MIS2_15_00 " );	// Franco sent me about this stone tablet. Did you find her?
+	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_01 " );	// Buddy, I didn't even try to look for her. All I know is that it must be somewhere in that old building in the swamp.
+	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_02 " );	// And my inner voice says to me: 'Edgor, stay away from the old buildings standing in the swamp'.
+	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_03 " );	// I'm not going to risk my skin for that gouging Franco!
+	B_LogEntry(Topic_Addon_Stoneplate, " Edgor isn't going to look for the stone tablet. He says it's in some old building in the swamps. " );
 };
 
 
@@ -163,7 +163,7 @@ instance DIA_Addon_Edgor_Weg(C_Info)
 	condition = DIA_Addon_Edgor_Weg_Condition;
 	information = DIA_Addon_Edgor_Weg_Info;
 	permanent = FALSE;
-	description = "А где находится это старое здание?";
+	description = " Where is this old building? " ;
 };
 
 
@@ -173,16 +173,16 @@ func int DIA_Addon_Edgor_Weg_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Edgor_Weg_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Edgor_Weg_15_00");	//А где находится это старое здание?
-	AI_Output(self,other,"DIA_Addon_Edgor_Weg_06_01");	//Обойди слева тот большой камень. Через некоторое время увидишь другой большой камень.
-	AI_Output(self,other,"DIA_Addon_Edgor_Weg_06_02");	//Его надо обойти слева... или справа, я уже не помню - это было слишком давно.
-	AI_Output(self,other,"DIA_Addon_Edgor_Weg_06_03");	//Но развалины должны быть на небольшом возвышении. И они совсем заросли растениями.
-	AI_Output(self,other,"DIA_Addon_Edgor_Weg_06_04");	//Может быть, тебе повезет и ты не найдешь их...
+	AI_Output(other,self, " DIA_Addon_Edgor_Weg_15_00 " );	// Where is this old building?
+	AI_Output(self,other, " DIA_Addon_Edgor_Weg_06_01 " );	// Go around that big rock to the left. After a while you will see another large stone.
+	AI_Output(self,other, " DIA_Addon_Edgor_Weg_06_02 " );	// It must be bypassed to the left... or to the right, I don't remember anymore - it was too long ago.
+	AI_Output(self,other, " DIA_Addon_Edgor_Weg_06_03 " );	// But the ruins should be on a slight rise. And they are completely overgrown with plants.
+	AI_Output(self,other, " DIA_Addon_Edgor_Weg_06_04 " );	// Maybe you'll get lucky and not find them...
 };
 
 
@@ -193,24 +193,24 @@ instance DIA_Addon_Edgor_Found(C_Info)
 	condition = DIA_Addon_Edgor_Found_Condition;
 	information = DIA_Addon_Edgor_Found_Info;
 	permanent = FALSE;
-	description = "Я нашел каменную табличку!";
+	description = " I found a stone tablet! " ;
 };
 
 
 func int DIA_Addon_Edgor_Found_Condition()
 {
-	if((Npc_HasItems(other,ItMi_Addon_Stone_04) >= 1) && !Npc_IsDead(Franco) && (MIS_HlpEdgor == LOG_Running))
+	if ((Npc_HasItems(other,ItMy_Addon_Stone_04) >=  1 ) &&  ! Npc_IsDead(Franco) && (MY_HelpEdgor == LOG_Running))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Edgor_Found_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Edgor_Found_15_00");	//(радостно) Я нашел каменную табличку!
-	AI_Output(self,other,"DIA_Addon_Edgor_Found_06_01");	//(скучно) Правда? Ты смелый парень.
-	AI_Output(self,other,"DIA_Addon_Edgor_Found_06_02");	//(скучно) Тогда ты наверняка заработал себе пропуск в лагерь. (зевает)
+	AI_Output(other,self, " DIA_Addon_Edgor_Found_15_00 " );	// (joyfully) I found the stone tablet!
+	AI_Output(self,other, " DIA_Addon_Edgor_Found_06_01 " );	// (bored) Really? You are a brave guy.
+	AI_Output(self,other, " DIA_Addon_Edgor_Found_06_02 " );	// (bored) Then you've probably earned yourself a camp pass. (yawns)
 };
 
 
@@ -221,7 +221,7 @@ instance DIA_Addon_Edgor_Teach(C_Info)
 	condition = DIA_Addon_Edgor_Teach_Condition;
 	information = DIA_Addon_Edgor_Teach_Info;
 	permanent = FALSE;
-	description = "Можешь научить меня кое-чему?";
+	description = " Can you teach me something? " ;
 };
 
 
@@ -231,25 +231,25 @@ func int DIA_Addon_Edgor_Teach_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Edgor_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Edgor_Teach_15_00");	//Можешь научить меня кое-чему?
-	AI_Output(self,other,"DIA_Addon_Edgor_Teach_06_01");	//Я многое знаю про кровавых шершней. Я ненавижу этих гадкий тварей даже больше, чем я ненавижу Франко!
-	AI_Output(self,other,"DIA_Addon_Edgor_Teach_06_02");	//Но я знаю, как отрывать от них жала и крылья, от их мертвых тушек. (с оттенком безумия) Да! Отрывать от них...
-	AI_Output(self,other,"DIA_Addon_Edgor_Teach_06_03");	//Кроме того, я знаю, как выделять секрет из оторванных жал.
-	AI_Output(self,other,"DIA_Addon_Edgor_Teach_06_04");	//Если хочешь, я могу научить тебя всей этой фигне.
-	AI_Output(self,other,"DIA_Addon_Edgor_Teach_06_05");	//Конечно, я ничего не буду делать бесплатно...
+	AI_Output(other,self, " DIA_Addon_Edgor_Teach_15_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_01 " );	// I know a lot about blood hornets. I hate those nasty creatures even more than I hate Franco!
+	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_02 " );	// But I know how to tear off their stingers and wings, from their dead carcasses. (with a hint of madness) Yes! Get away from them...
+	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_03 " );	// Also, I know how to extract the secret from torn stings.
+	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_04 " );	// If you want, I can teach you all this stuff.
+	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_05 " );	// Of course, I won't do anything for free...
 	Log_CreateTopic(Topic_Addon_BDT_Teacher,LOG_NOTE);
-	B_LogEntry(Topic_Addon_BDT_Teacher,"Эдгор знает кучу всего о кровяных шершнях и их трофеях.");
+	B_LogEntry(Topic_Addon_BDT_Teacher, " Edgor knows a lot about blood hornets and their trophies. " );
 	Edgor_Teach = TRUE;
 };
 
 func void B_Edgor_NotEnoughGold()
 {
-	AI_Output(self,other,"DIA_Addon_Edgor_NotEnoughGold_06_00");	//Мне нужно золото. Меня интересуют только монеты, не самородки.
+	AI_Output(self,other, " DIA_Addon_Edgor_NotEnoughGold_06_00 " );	// I need gold. I'm only interested in coins, not nuggets.
 };
 
 
@@ -260,7 +260,7 @@ instance DIA_Addon_Edgor_TrainStart(C_Info)
 	condition = DIA_Addon_Edgor_Start_Condition;
 	information = DIA_Addon_Edgor_Start_Info;
 	permanent = TRUE;
-	description = "По поводу кровавых мух...";
+	description = " About the blood flies... " ;
 };
 
 
@@ -274,22 +274,22 @@ func int DIA_Addon_Edgor_Start_Condition()
 
 func void DIA_Addon_Edgor_Start_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Edgor_TrainStart_SEKRET_15_00");	//По поводу кровавых мух...
-	AI_Output(self,other,"DIA_Addon_Edgor_TrainStart_SEKRET_06_01");	//Что бы ты хотел узнать?
+	AI_Output(other,self, " DIA_Addon_Edgor_TrainStart_SEKRET_15_00 " );	// About the blood flies...
+	AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_SEKRET_06_01 " );	// What would you like to know?
 	Info_ClearChoices(DIA_Addon_Edgor_TrainStart);
 	Info_AddChoice(DIA_Addon_Edgor_TrainStart,Dialog_Back,DIA_Addon_Edgor_TrainStart_BACK);
 
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Edgor_TrainStart,"Как оторвать жало? (Очки обучения: 1, Цена: 150 монет)",DIA_Addon_Edgor_TrainStart_Sting);
+		Info_AddChoice(DIA_Addon_Edgor_TrainStart, " How to remove the sting? (Training points: 1, Cost: 150 coins) " ,DIA_Addon_Edgor_TrainStart_Sting);
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Edgor_TrainStart,"А как отделить крылья? (Очки обучения: 1, Цена: 300 монет)",DIA_Addon_Edgor_TrainStart_Wing);
+		Info_AddChoice(DIA_Addon_Edgor_TrainStart, " How to separate the wings? (Training points: 1, Cost: 300 coins) " ,DIA_Addon_Edgor_TrainStart_Wing);
 	};
 	if(Knows_Bloodfly == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Edgor_TrainStart,"Как добыть секрет из жала? (Очки обучения: 1, Цена: 500 монет)",DIA_Addon_Edgor_TrainStart_GIFT);
+		Info_AddChoice(DIA_Addon_Edgor_TrainStart, " How to get the secret from the sting? (Training points: 1, Cost: 500 coins) " ,DIA_Addon_Edgor_TrainStart_GIFT);
 	};
 };
 
@@ -304,9 +304,9 @@ func void DIA_Addon_Edgor_TrainStart_Sting()
 	{
 		if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFSting))
 		{
-			AI_Output(other,self,"DIA_Addon_Edgor_TrainStart_Sting_15_00");	//Как оторвать жало от мухи?
-			AI_Output(self,other,"DIA_Addon_Edgor_TrainStart_Sting_06_01");	//Переверни дохлую тварь на брюхо и разрежь ее крест-накрест. Схвати внутренности и разрежь ткани вдоль всей спины.
-			AI_Output(self,other,"DIA_Addon_Edgor_TrainStart_Sting_06_02");	//После этого ты сможешь выдернуть жало резким движением.
+			AI_Output(other,self, " DIA_Addon_Edgor_TrainStart_Sting_15_00 " );	// How to tear off the sting from the fly?
+			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_Sting_06_01 " );	// Turn the dead creature over on its belly and cut it crosswise. Grab the innards and cut the tissue along the entire back.
+			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_Sting_06_02 " );	// After that, you can yank the stinger out with a quick movement.
 		};
 	}
 	else
@@ -322,8 +322,8 @@ func void DIA_Addon_Edgor_TrainStart_Wing()
 	{
 		if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFWing))
 		{
-			AI_Output(other,self,"DIA_Addon_Edgor_TrainStart_Wing_15_00");	//А как отделить крылья?
-			AI_Output(self,other,"DIA_Addon_Edgor_TrainStart_Wing_06_01");	//Схвати их одной рукой. Другой просто отрежь их по внешней стороне кожи.
+			AI_Output(other,self, " DIA_Addon_Edgor_TrainStart_Wing_15_00 " );	// And how to separate the wings?
+			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_Wing_06_01 " );	// Grab them with one hand. Another just cut them off on the outside of the skin.
 		};
 	}
 	else
@@ -339,13 +339,13 @@ func void DIA_Addon_Edgor_TrainStart_GIFT()
 	{
 		if(other.lp >= 1)
 		{
-			AI_Output(other,self,"DIA_Addon_Edgor_TrainStart_GIFT_15_00");	//Как добыть секрет из жала кровавой мухи?
-			AI_Output(self,other,"DIA_Addon_Edgor_TrainStart_GIFT_06_01");	//Разрежь верхний слой жала вдоль - тогда лечебный секрет и вытечет.
-			AI_Output(self,other,"DIA_Addon_Edgor_TrainStart_GIFT_06_02");	//Это совершенно безопасный способ высосать его из жала или использовать его для лечебного зелья.
+			AI_Output(other,self, " DIA_Addon_Edgor_TrainStart_GIFT_15_00 " );	// How to extract the secret from the sting of a bloodfly?
+			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_GIFT_06_01 " );	// Cut the top layer of the sting lengthwise - then the healing secret will flow out.
+			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_GIFT_06_02 " );	// This is a perfectly safe way to suck it out of the sting or use it for a healing potion.
 			other.lp = other.lp - 1;
 			RankPoints = RankPoints + 1;
 			Knows_Bloodfly = TRUE;
-			AI_Print("Изучен навык разделки добычи - 'Извлечение секрета из жала'");
+			AI_Print( " Learned the skill of cutting prey - 'Extracting the secret from the sting' " );
 		}
 		else
 		{
@@ -359,4 +359,3 @@ func void DIA_Addon_Edgor_TrainStart_GIFT()
 	};
 	Info_ClearChoices(DIA_Addon_Edgor_TrainStart);
 };
-
