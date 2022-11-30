@@ -42,41 +42,41 @@ func int DIA_Hokurn_Hello_Condition()
 
 func void DIA_Hokurn_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Hokurn_Hello_01_00");	//У тебя не найдется чего-нибудь выпить?
-	AI_Output(other,self,"DIA_Hokurn_Hello_15_01");	//Полагаю, вода тебе не подойдет.
-	AI_Output(self,other,"DIA_Hokurn_Hello_01_02");	//Нет, черт побери!!! Мне нужно что-нибудь алкогольное, чтобы я, наконец, мог избавиться от этой проклятой головной боли.
-	AI_Output(self,other,"DIA_Hokurn_Hello_01_03");	//Когда мне долго не удается промочить горло, мой череп раскалывается и мне кажется, что он вот-вот взорвется.
+	AI_Output(self,other, " DIA_Hokurn_Hello_01_00 " );	// Do you have anything to drink?
+	AI_Output(other,self, " DIA_Hokurn_Hello_15_01 " );	// I guess water won't suit you.
+	AI_Output(self,other, " DIA_Hokurn_Hello_01_02 " );	// No, damn it!!! I need something alcoholic so I can finally get rid of this damn headache.
+	AI_Output(self,other, " DIA_Hokurn_Hello_01_03 " );	// When I can't get my throat wet for a long time, my skull cracks and feels like it's going to explode.
 	Info_ClearChoices(DIA_Hokurn_Hello);
-	Info_AddChoice(DIA_Hokurn_Hello,"Я ничем не могу помочь тебе.",DIA_Hokurn_Hello_No);
+	Info_AddChoice(DIA_Hokurn_Hello, " I can't help you. " ,DIA_Hokurn_Hello_No);
 
 	if((Npc_HasItems(other,ItFo_Beer) >= 1) || (Npc_HasItems(other,ItFo_Addon_Rum) >= 1) || (Npc_HasItems(other,ItFo_Addon_Grog) >= 1) || (Npc_HasItems(other,ItFo_Booze) >= 1) || (Npc_HasItems(other,ItFo_Wine) >= 1))
 	{
-		Info_AddChoice(DIA_Hokurn_Hello,"Вот, возьми это.",DIA_Hokurn_Hello_Yes);
+		Info_AddChoice(DIA_Hokurn_Hello, " Here, take this. " ,DIA_Hokurn_Hello_Yes);
 	};
 };
 
 func void DIA_Hokurn_Hello_No()
 {
-	AI_Output(other,self,"DIA_Hokurn_Hello_No_15_00");	//Я ничем не могу помочь тебе.
-	AI_Output(self,other,"DIA_Hokurn_Hello_No_01_01");	//Тогда проваливай!
+	AI_Output(other,self, " DIA_Hokurn_Hello_No_15_00 " );	// I can't help you.
+	AI_Output(self,other, " DIA_Hokurn_Hello_No_01_01 " );	// Then get lost!
 	Info_ClearChoices(DIA_Hokurn_Hello);
 	Info_AddChoice(DIA_Hokurn_Hello,Dialog_Ende,DIA_Hokurn_Hello_END);
-	Info_AddChoice(DIA_Hokurn_Hello,"Еще одно...",DIA_Hokurn_Hello_ASK1);
+	Info_AddChoice(DIA_Hokurn_Hello, " One more thing... " ,DIA_Hokurn_Hello_ASK1);
 };
 
 func void DIA_Hokurn_Hello_ASK1()
 {
-	AI_Output(other,self,"DIA_Hokurn_Hello_ASK1_15_00");	//Еще одно...
-	AI_Output(self,other,"DIA_Hokurn_Hello_ASK1_01_01");	//(ревет) Ты что, не понял меня? УБИРАЙСЯ!!!
+	AI_Output(other,self, " DIA_Hokurn_Hello_ASK1_15_00 " );	// One more thing...
+	AI_Output(self,other, " DIA_Hokurn_Hello_ASK1_01_01 " );	// (roars) Don't you understand me? GET OUT!!!
 	Info_ClearChoices(DIA_Hokurn_Hello);
 	Info_AddChoice(DIA_Hokurn_Hello,Dialog_Ende,DIA_Hokurn_Hello_END);
-	Info_AddChoice(DIA_Hokurn_Hello,"Это важно.",DIA_Hokurn_Hello_ASK2);
+	Info_AddChoice(DIA_Hokurn_Hello, " This is important. " ,DIA_Hokurn_Hello_ASK2);
 };
 
 func void DIA_Hokurn_Hello_ASK2()
 {
-	AI_Output(other,self,"DIA_Hokurn_Hello_ASK2_15_00");	//Это важно.
-	AI_Output(self,other,"DIA_Hokurn_Hello_ASK2_01_01");	//(ревет) Ты сам напросился.
+	AI_Output(other,self, " DIA_Hokurn_Hello_ASK2_15_00 " );	// This is important.
+	AI_Output(self,other, " DIA_Hokurn_Hello_ASK2_01_01 " );	// (roars) You asked for it.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -88,8 +88,8 @@ func void DIA_Hokurn_Hello_END()
 
 func void B_Hokurn_Sauf()
 {
-	AI_Output(self,other,"B_Hokurn_Sauf_01_00");	//(рыгает) Ох, какое блаженство!
-	AI_Output(self,other,"B_Hokurn_Sauf_01_01");	//Теперь я опять могу размышлять здраво. Что я могу сделать для тебя?
+	AI_Output(self,other, " B_Hokurn_Sauf_01_00 " );	// (burps) Oh, what bliss!
+	AI_Output(self,other, " B_Hokurn_Sauf_01_01 " );	// Now I can think rationally again. What can I do for you?
 };
 
 func void b_hokurn_drinking()
@@ -149,7 +149,7 @@ func void b_hokurn_taking()
 
 func void DIA_Hokurn_Hello_Yes()
 {
-	AI_Output(other,self,"DIA_Hokurn_Hello_Yes_15_00");	//У меня есть кое-что.
+	AI_Output(other,self, " DIA_Hokurn_Hello_Yes_15_00 " );	// I have something.
 	b_hokurn_drinking();
 	B_Hokurn_Sauf();
 	Info_ClearChoices(DIA_Hokurn_Hello);
@@ -163,13 +163,13 @@ instance DIA_Hokurn_Drink(C_Info)
 	condition = DIA_Hokurn_Drink_Condition;
 	information = DIA_Hokurn_Drink_Info;
 	permanent = TRUE;
-	description = "Я принес тебе выпивку.";
+	description = " I brought you a drink. " ;
 };
 
 
 func int DIA_Hokurn_Drink_Condition()
 {
-	if((KAPITELORCATC == FALSE) && (HokurnGetsDrink == FALSE) && ((Npc_HasItems(other,ItFo_Beer) >= 1) || (Npc_HasItems(other,ItFo_Addon_Rum) >= 1) || (Npc_HasItems(other,ItFo_Addon_Grog) >= 1) || (Npc_HasItems(other,ItFo_Booze) >= 1) || (Npc_HasItems(other,ItFo_Wine) >= 1)))
+	if (( KAPITELORCATC  ==  FALSE ) && (HokurnGetsDrink ==  FALSE ) && ((Npc_HasItems(other,ItFo_Beer) >=  1 ) || (Npc_HasItems(other,ItFo_Addon_Rum) >=  1 ) || (Npc_HasItems(other,ItFo_Addon_Grog) >=  1 ) || (Npc_HasItems(other,ItFo_Booze) >=  1 ) || (Npc_HasItems(other,ItFo_Wine) >=  1 )))
 	{
 		return TRUE;
 	};
@@ -177,8 +177,8 @@ func int DIA_Hokurn_Drink_Condition()
 
 func void DIA_Hokurn_Drink_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_Drink_15_00");	//Я принес тебе выпивку.
-	AI_Output(self,other,"DIA_Hokurn_Drink_01_01");	//(жадно) Давай сюда!!
+	AI_Output(other,self, " DIA_Hokurn_Drink_15_00 " );	// I brought you a drink.
+	AI_Output(self,other, " DIA_Hokurn_Drink_01_01 " );	// (eagerly) Come on over here!!
 	b_hokurn_drinking();
 	B_Hokurn_Sauf();
 };
@@ -191,13 +191,13 @@ instance DIA_Hokurn_Question(C_Info)
 	condition = DIA_Hokurn_Question_Condition;
 	information = DIA_Hokurn_Question_Info;
 	permanent = TRUE;
-	description = "Мне нужна кое-какая информация.";
+	description = " I need some information. " ;
 };
 
 
 func int DIA_Hokurn_Question_Condition()
 {
-	if((HokurnGetsDrink == FALSE) && (KAPITELORCATC == FALSE))
+	if ((HokurnGetsDrink ==  FALSE ) && ( KAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -205,9 +205,9 @@ func int DIA_Hokurn_Question_Condition()
 
 func void DIA_Hokurn_Question_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_Question_15_00");	//Мне нужна кое-какая информация.
-	AI_Output(self,other,"DIA_Hokurn_Question_01_01");	//(раздраженно) Я думал, ты меня понял. Я говорю только с друзьями.
-	AI_Output(self,other,"DIA_Hokurn_Question_01_02");	//А друзья всегда делятся со мной выпивкой. Понял? Теперь проваливай!
+	AI_Output(other,self, " DIA_Hokurn_Question_15_00 " );	// I need some information.
+	AI_Output(self,other, " DIA_Hokurn_Question_01_01 " );	// (irritated) I thought you understood me. I only talk to friends.
+	AI_Output(self,other, " DIA_Hokurn_Question_01_02 " );	// And friends always share drinks with me. Understood? Now get lost!
 };
 
 
@@ -218,7 +218,7 @@ instance DIA_Hokurn_Learn(C_Info)
 	condition = DIA_Hokurn_Learn_Condition;
 	information = DIA_Hokurn_Learn_Info;
 	permanent = FALSE;
-	description = "Я ищу человека, который мог бы научить меня чему-нибудь.";
+	description = " I'm looking for someone who could teach me something. " ;
 };
 
 
@@ -232,28 +232,28 @@ func int DIA_Hokurn_Learn_Condition()
 
 func void DIA_Hokurn_Learn_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_Learn_15_00");	//Я ищу человека, который мог бы научить меня чему-нибудь.
-	AI_Output(self,other,"DIA_Hokurn_Learn_01_01");	//Я мог бы обучить тебя некоторым вещам. Я лучший боец на многие мили вокруг.
-	AI_Output(self,other,"DIA_Hokurn_Learn_01_02");	//Так как мы друзья, я сделаю тебе скидку. Это будет стоить триста золотых монет.
+	AI_Output(other,self, " DIA_Hokurn_Learn_15_00 " );	// I'm looking for someone who could teach me something.
+	AI_Output(self,other, " DIA_Hokurn_Learn_01_01 " );	// I could teach you some things. I'm the best fighter for miles around.
+	AI_Output(self,other, " DIA_Hokurn_Learn_01_02 " );	// Since we're friends, I'll give you a discount. It will cost three hundred gold coins.
 	Info_ClearChoices(DIA_Hokurn_Learn);
-	Info_AddChoice(DIA_Hokurn_Learn,"Это слишком дорого.",DIA_Hokurn_Learn_TooExpensive);
+	Info_AddChoice(DIA_Hokurn_Learn, " It's too expensive. " ,DIA_Hokurn_Learn_TooExpensive);
 	if(Npc_HasItems(other,ItMi_Gold) >= 300)
 	{
-		Info_AddChoice(DIA_Hokurn_Learn,"В порядке, вот золото.",DIA_Hokurn_Learn_OK);
+		Info_AddChoice(DIA_Hokurn_Learn, " OK, here's the gold. " ,DIA_Hokurn_Learn_OK);
 	};
 };
 
 func void DIA_Hokurn_Learn_TooExpensive()
 {
-	AI_Output(other,self,"DIA_Hokurn_Learn_TooExpensive_15_00");	//Это для меня слишком дорого.
-	AI_Output(self,other,"DIA_Hokurn_Learn_TooExpensive_01_01");	//Слишком дорого? Это меньше, чем любой другой запросил бы на моем месте.
-	AI_Output(self,other,"DIA_Hokurn_Learn_TooExpensive_01_02");	//Ну, сам подумай.
+	AI_Output(other,self, " DIA_Hokurn_Learn_TooExpensive_15_00 " );	// This is too expensive for me.
+	AI_Output(self,other, " DIA_Hokurn_Learn_TooExpensive_01_01 " );	// Too expensive? This is less than anyone else would ask in my place.
+	AI_Output(self,other, " DIA_Hokurn_Learn_TooExpensive_01_02 " );	// Well, think for yourself.
 	Info_ClearChoices(DIA_Hokurn_Learn);
 };
 
 func void DIA_Hokurn_Learn_OK()
 {
-	AI_Output(other,self,"DIA_Hokurn_Learn_OK_15_00");	//Хорошо, вот деньги.
+	AI_Output(other,self, " DIA_Hokurn_Learn_OK_15_00 " );	// Okay, here's the money.
 	B_GiveInvItems(other,self,ItMi_Gold,300);
 	Hokurn_TeachPlayer = TRUE;
 	Info_ClearChoices(DIA_Hokurn_Learn);
@@ -267,13 +267,13 @@ instance DIA_Hokurn_PayTeacher(C_Info)
 	condition = DIA_Hokurn_PayTeacher_Condition;
 	information = DIA_Hokurn_PayTeacher_Info;
 	permanent = TRUE;
-	description = "Вот твои деньги. Я хочу, чтобы ты обучил меня.";
+	description = " Here's your money. I want you to educate me. " ;
 };
 
 
 func int DIA_Hokurn_PayTeacher_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Hokurn_Learn) && (Npc_HasItems(other,ItMi_Gold) >= 300) && (Hokurn_TeachPlayer == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Hokurn_Learn ) && ( Npc_HasItems ( other , It_My_Gold ) >=  300 ) && ( Hokurn_TeachPlayer ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -281,8 +281,8 @@ func int DIA_Hokurn_PayTeacher_Condition()
 
 func void DIA_Hokurn_PayTeacher_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_PayTeacher_15_00");	//Вот твои деньги. Я хочу, чтобы ты обучил меня.
-	AI_Output(self,other,"DIA_Hokurn_PayTeacher_01_01");	//Ты не пожалеешь!
+	AI_Output(other,self, " DIA_Hokurn_PayTeacher_15_00 " );	// Here's your money. I want you to teach me.
+	AI_Output(self,other, " DIA_Hokurn_PayTeacher_01_01 " );	// You won't regret it!
 	B_GiveInvItems(other,self,ItMi_Gold,300);
 	Hokurn_TeachPlayer = TRUE;
 };
@@ -295,7 +295,7 @@ instance DIA_Hokurn_DrinkAndLearn(C_Info)
 	condition = DIA_Hokurn_DrinkAndLearn_Condition;
 	information = DIA_Hokurn_DrinkAndLearn_Info;
 	permanent = TRUE;
-	description = "Вот, держи выпивку.";
+	description = " Here, have a drink. " ;
 };
 
 
@@ -309,9 +309,9 @@ func int DIA_Hokurn_DrinkAndLearn_Condition()
 
 func void DIA_Hokurn_DrinkAndLearn_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_DrinkAndLearn_15_00");	//Теперь у тебя есть, что выпить.
+	AI_Output(other,self, " DIA_Hokurn_DrinkAndLearn_15_00 " );	// Now you have something to drink.
 	b_hokurn_drinking();
-	AI_Output(self,other,"DIA_Hokurn_DrinkAndLearn_01_01");	//Мне гораздо лучше.
+	AI_Output(self,other, " DIA_Hokurn_DrinkAndLearn_01_01 " );	// I feel much better.
 };
 
 
@@ -322,7 +322,7 @@ instance DIA_Hokurn_Teach(C_Info)
 	condition = DIA_Hokurn_Teach_Condition;
 	information = DIA_Hokurn_Teach_Info;
 	permanent = TRUE;
-	description = "Начнем обучение.";
+	description = " Let's start learning. " ;
 };
 
 
@@ -336,20 +336,20 @@ func int DIA_Hokurn_Teach_Condition()
 
 func void DIA_Hokurn_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_Teach_15_00");	//Давай начнем обучение.
+	AI_Output(other,self, " DIA_Hokurn_Teach_15_00 " );	// Let's start training.
 	if(HokurnLastDrink < Wld_GetDay())
 	{
-		AI_Output(self,other,"DIA_Hokurn_Teach_01_01");	//Сначала принеси мне что-нибудь выпить!
+		AI_Output(self,other, " DIA_Hokurn_Teach_01_01 " );	// First get me something to drink!
 	}
 	else
 	{
 		if(hero.guild == GIL_PAL)
 		{
-			AI_Output(self,other,"DIA_Hokurn_Teach_01_02");	//А потом мы посмотрим, что можно выжать из твоих ржавых паладинских костей, ха?
+			AI_Output(self,other, " DIA_Hokurn_Teach_01_02 " );	// And then we'll see what we can squeeze out of your rusty paladin bones, huh?
 		}
-		else if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR))
+		else  if ((hero.guild ==  GIL_KDF ) || (hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_KDM ) || (hero.guild ==  GIL_GUR ))
 		{
-			AI_Output(self,other,"DIA_Hokurn_Teach_01_03");	//Что ты понимаешь. Даже маги не чуждаются оружия ближнего боя.
+			AI_Output(self,other, " DIA_Hokurn_Teach_01_03 " );	// What do you understand. Even mages are no strangers to melee weapons.
 		};
 		Info_ClearChoices(DIA_Hokurn_Teach);
 		Info_AddChoice(DIA_Hokurn_Teach,Dialog_Back,DIA_Hokurn_Teach_Back);
@@ -367,7 +367,7 @@ func void DIA_Hokurn_Teach_Back()
 
 func void B_Hokurn_TeachedEnough()
 {
-	AI_Output(self,other,"B_Hokurn_TeachedEnough_01_00");	//Тебе больше не нужен учитель в этом виде боевого искусства.
+	AI_Output(self,other, " B_Hokurn_TeachedEnough_01_00 " );	// You no longer need a teacher in this martial art.
 };
 
 func void DIA_Hokurn_Teach_2H_1()
@@ -418,13 +418,13 @@ instance DIA_Hokurn_StayHere(C_Info)
 	condition = DIA_Hokurn_StayHere_Condition;
 	information = DIA_Hokurn_StayHere_Info;
 	permanent = FALSE;
-	description = "А что ты вообще здесь делаешь, кстати?";
+	description = " What are you even doing here, by the way? " ;
 };
 
 
 func int DIA_Hokurn_StayHere_Condition()
 {
-	if((HokurnGetsDrink == TRUE) && (KAPITELORCATC == FALSE))
+	if ((HokurnGetsDrink ==  TRUE ) && ( CAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -432,9 +432,9 @@ func int DIA_Hokurn_StayHere_Condition()
 
 func void DIA_Hokurn_StayHere_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_StayHere_15_00");	//Кстати, а что ты вообще здесь делаешь?
-	AI_Output(self,other,"DIA_Hokurn_StayHere_01_01");	//Если честно, понятия не имею, что мы делаем здесь и когда все начнется.
-	AI_Output(self,other,"DIA_Hokurn_StayHere_01_02");	//И пока у меня есть выпивка, меня это совершенно не волнует.
+	AI_Output(other,self, " DIA_Hokurn_StayHere_15_00 " );	// By the way, what are you even doing here?
+	AI_Output(self,other, " DIA_Hokurn_StayHere_01_01 " );	// To be honest, I have no idea what we are doing here and when everything will start.
+	AI_Output(self,other, " DIA_Hokurn_StayHere_01_02 " );	// And as long as I have booze, I don't care at all.
 };
 
 
@@ -445,13 +445,13 @@ instance DIA_Hokurn_WhereDragon(C_Info)
 	condition = DIA_Hokurn_WhereDragon_Condition;
 	information = DIA_Hokurn_WhereDragon_Info;
 	permanent = TRUE;
-	description = "Ты знаешь, где находятся драконы?";
+	description = " Do you know where the dragons are? " ;
 };
 
 
 func int DIA_Hokurn_WhereDragon_Condition()
 {
-	if((HokurnGetsDrink == TRUE) && (HokurnTellsDragon == FALSE) && Npc_KnowsInfo(other,DIA_Hokurn_StayHere) && (KAPITELORCATC == FALSE))
+	if ((HokurnGetsDrink ==  TRUE ) && (HokurnTellsDragon ==  FALSE ) && Npc_KnowsInfo(other,DIA_Hokurn_StayHere) && ( CAPITELORCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -459,46 +459,46 @@ func int DIA_Hokurn_WhereDragon_Condition()
 
 func void DIA_Hokurn_WhereDragon_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_WhereDragon_15_00");	//Ты знаешь, где находятся драконы?
-	AI_Output(self,other,"DIA_Hokurn_WhereDragon_01_01");	//А что я получу за то, что скажу это тебе?
+	AI_Output(other,self, " DIA_Hokurn_WhereDragon_15_00 " );	// Do you know where the dragons are?
+	AI_Output(self,other, " DIA_Hokurn_WhereDragon_01_01 " );	// And what will I get for saying this to you?
 	Info_ClearChoices(DIA_Hokurn_WhereDragon);
-	Info_AddChoice(DIA_Hokurn_WhereDragon,"Ничего, я буду искать их сам.",DIA_Hokurn_WhereDragon_FindMyself);
-	Info_AddChoice(DIA_Hokurn_WhereDragon,"Я мог бы купить у тебя сведения.",DIA_Hokurn_WhereDragon_Gold);
+	Info_AddChoice(DIA_Hokurn_WhereDragon, " Never mind, I'll look for them myself. " ,DIA_Hokurn_WhereDragon_FindMyself);
+	Info_AddChoice(DIA_Hokurn_WhereDragon, " I could buy info from you. " ,DIA_Hokurn_WhereDragon_Gold);
 	if((Npc_HasItems(other,ItFo_Beer) >= 1) || (Npc_HasItems(other,ItFo_Booze) >= 1) || (Npc_HasItems(other,ItFo_Wine) >= 1) || (Npc_HasItems(other,ItFo_Addon_Rum) >= 1) || (Npc_HasItems(other,ItFo_Addon_Grog) >= 1))
 	{
-		Info_AddChoice(DIA_Hokurn_WhereDragon,"У меня есть еще одна бутылка.",DIA_Hokurn_WhereDragon_Booze);
+		Info_AddChoice(DIA_Hokurn_WhereDragon, " I have another bottle. " ,DIA_Hokurn_WhereDragon_Booze);
 	};
 };
 
 func void DIA_Hokurn_WhereDragon_FindMyself()
 {
-	AI_Output(other,self,"DIA_Hokurn_WhereDragon_FindMyself_15_00");	//Ничего, я сам их найду.
-	AI_Output(self,other,"DIA_Hokurn_WhereDragon_FindMyself_01_01");	//Тебе лучше быть поосторожнее. Впереди тебя ждет много кровопролитных боев.
+	AI_Output(other,self, " DIA_Hokurn_WhereDragon_FindMyself_15_00 " );	// Don't worry, I'll find them myself.
+	AI_Output(self,other, " DIA_Hokurn_WhereDragon_FindMyself_01_01 " );	// You'd better be careful. There are many bloody battles ahead of you.
 	Info_ClearChoices(DIA_Hokurn_WhereDragon);
 };
 
 func void DIA_Hokurn_WhereDragon_Gold()
 {
-	AI_Output(other,self,"DIA_Hokurn_WhereDragon_Gold_15_00");	//Я был бы не прочь заплатить тебе за эту информацию.
-	AI_Output(self,other,"DIA_Hokurn_WhereDragon_Gold_01_01");	//Заплатить мне? Хорошо, я продам тебе эту информацию за двести золотых монет.
+	AI_Output(other,self, " DIA_Hokurn_WhereDragon_Gold_15_00 " );	// I wouldn't mind paying you for this information.
+	AI_Output(self,other, " DIA_Hokurn_WhereDragon_Gold_01_01 " );	// Pay me? Okay, I'll sell you this information for two hundred gold coins.
 	Info_ClearChoices(DIA_Hokurn_WhereDragon);
-	Info_AddChoice(DIA_Hokurn_WhereDragon,"Слишком много.",DIA_Hokurn_WhereDragon_TooMuch);
+	Info_AddChoice(DIA_Hokurn_WhereDragon, " Too many. " ,DIA_Hokurn_WhereDragon_TooMuch);
 	if(Npc_HasItems(other,ItMi_Gold) >= 200)
 	{
-		Info_AddChoice(DIA_Hokurn_WhereDragon,"Согласен, здесь деньги.",DIA_Hokurn_WhereDragon_OK);
+		Info_AddChoice(DIA_Hokurn_WhereDragon, " Agree, there's money here. " ,DIA_Hokurn_WhereDragon_OK);
 	};
 };
 
 func void DIA_Hokurn_WhereDragon_TooMuch()
 {
-	AI_Output(other,self,"DIA_Hokurn_WhereDragon_TooMuch_15_00");	//Это слишком много!
-	AI_Output(self,other,"DIA_Hokurn_WhereDragon_TooMuch_01_01");	//Тогда забудь об этом.
+	AI_Output(other,self, " DIA_Hokurn_WhereDragon_TooMuch_15_00 " );	// That's too much!
+	AI_Output(self,other, " DIA_Hokurn_WhereDragon_TooMuch_01_01 " );	// Then forget about it.
 	Info_ClearChoices(DIA_Hokurn_WhereDragon);
 };
 
 func void DIA_Hokurn_WhereDragon_OK()
 {
-	AI_Output(other,self,"DIA_Hokurn_WhereDragon_OK_15_00");	//Договорились. Вот твои деньги!
+	AI_Output(other,self, " DIA_Hokurn_WhereDragon_OK_15_00 " );	// Agreed. Here is your money!
 	B_GiveInvItems(other,self,ItMi_Gold,200);
 	HokurnTellsDragon = TRUE;
 	Info_ClearChoices(DIA_Hokurn_WhereDragon);
@@ -506,11 +506,11 @@ func void DIA_Hokurn_WhereDragon_OK()
 
 func void DIA_Hokurn_WhereDragon_Booze()
 {
-	AI_Output(other,self,"DIA_Hokurn_WhereDragon_Booze_15_00");	//У меня еще есть бутылка!
-	AI_Output(self,other,"DIA_Hokurn_WhereDragon_Booze_01_01");	//За хорошую каплю я бы всех драконов на свете убил.
-	AI_Output(self,other,"DIA_Hokurn_WhereDragon_Booze_01_02");	//Заметано. Давай сюда!
+	AI_Output(other,self, " DIA_Hokurn_WhereDragon_Booze_15_00 " );	// I still have a bottle!
+	AI_Output(self,other, " DIA_Hokurn_WhereDragon_Booze_01_01 " );	// For a good drop, I'd kill all the dragons in the world.
+	AI_Output(self,other, " DIA_Hokurn_WhereDragon_Booze_01_02 " );	// Noticed. Come here!
 	b_hokurn_taking();
-	AI_Output(self,other,"DIA_Hokurn_WhereDragon_Booze_01_03");	//Я оставлю его до худших времен.
+	AI_Output(self,other, " DIA_Hokurn_WhereDragon_Booze_01_03 " );	// I'll leave him for worse.
 	HokurnTellsDragon = TRUE;
 	Info_ClearChoices(DIA_Hokurn_WhereDragon);
 };
@@ -523,13 +523,13 @@ instance DIA_Hokurn_Dragon(C_Info)
 	condition = DIA_Hokurn_Dragon_Condition;
 	information = DIA_Hokurn_Dragon_Info;
 	permanent = FALSE;
-	description = "Хорошо, теперь скажи, где все эти драконы?";
+	description = " Okay, now tell me, where are all those dragons? " ;
 };
 
 
 func int DIA_Hokurn_Dragon_Condition()
 {
-	if((HokurnTellsDragon == TRUE) && (KAPITELORCATC == FALSE) && (MIS_AllDragonsDead == FALSE))
+	if ((HokurnTellsDragon ==  TRUE ) && ( CAPITELORCATC  ==  FALSE ) && (MY_AllDragonsDead ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -537,10 +537,10 @@ func int DIA_Hokurn_Dragon_Condition()
 
 func void DIA_Hokurn_Dragon_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_Dragon_15_00");	//Хорошо, теперь скажи, где все эти драконы?
-	AI_Output(self,other,"DIA_Hokurn_Dragon_01_01");	//Ну, если честно, я не могу сказать тебе ничего определенного, но я слышал, что всего должно быть четыре дракона.
-	AI_Output(self,other,"DIA_Hokurn_Dragon_01_02");	//Прошлой ночью над самой высокой горой мы видели багровое свечение.
-	AI_Output(self,other,"DIA_Hokurn_Dragon_01_03");	//Готов поклясться свой матерью, что если ты ищешь драконов, одного из них ты найдешь там.
+	AI_Output(other,self, " DIA_Hokurn_Dragon_15_00 " );	// Okay, now tell me, where are all these dragons?
+	AI_Output(self,other, " DIA_Hokurn_Dragon_01_01 " );	// Well, to be honest, I can't tell you anything definitive, but I heard that there should be four dragons in total.
+	AI_Output(self,other, " DIA_Hokurn_Dragon_01_02 " );	// Last night we saw a crimson glow over the highest mountain.
+	AI_Output(self,other, " DIA_Hokurn_Dragon_01_03 " );	// I'll swear on my mother that if you're looking for dragons, you'll find one there.
 };
 
 
@@ -551,13 +551,13 @@ instance DIA_Hokurn_AllDragonsDead(C_Info)
 	condition = DIA_Hokurn_AllDragonsDead_Condition;
 	information = DIA_Hokurn_AllDragonsDead_Info;
 	permanent = TRUE;
-	description = "Я убил всех драконов.";
+	description = " I've killed all the dragons. " ;
 };
 
 
 func int DIA_Hokurn_AllDragonsDead_Condition()
 {
-	if((MIS_AllDragonsDead == TRUE) && (KAPITELORCATC == FALSE))
+	if ((MY_AllDragonsDead ==  TRUE ) && ( CAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -565,8 +565,8 @@ func int DIA_Hokurn_AllDragonsDead_Condition()
 
 func void DIA_Hokurn_AllDragonsDead_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_AllDragonsDead_15_00");	//Я убил всех драконов.
-	AI_Output(self,other,"DIA_Hokurn_AllDragonsDead_01_01");	//Иди, рассказывай сказки кому-нибудь другому.
+	AI_Output(other,self, " DIA_Hokurn_AllDragonsDead_15_00 " );	// I killed all the dragons.
+	AI_Output(self,other, " DIA_Hokurn_AllDragonsDead_01_01 " );	// Go tell stories to someone else.
 };
 
 
@@ -583,7 +583,7 @@ instance DIA_Hokurn_PICKPOCKET(C_Info)
 
 func int DIA_Hokurn_PICKPOCKET_Condition()
 {
-	return C_Beklauen(69,210);
+	return  C_Robbery ( 69 , 210 );
 };
 
 func void DIA_Hokurn_PICKPOCKET_Info()
@@ -595,7 +595,7 @@ func void DIA_Hokurn_PICKPOCKET_Info()
 
 func void DIA_Hokurn_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Hokurn_PICKPOCKET);
 };
 
@@ -664,7 +664,7 @@ instance DIA_Hokurn_SLD_PICKPOCKET(C_Info)
 
 func int DIA_Hokurn_SLD_PICKPOCKET_Condition()
 {
-	return C_Beklauen(69,210);
+	return  C_Robbery ( 69 , 210 );
 };
 
 func void DIA_Hokurn_SLD_PICKPOCKET_Info()
@@ -676,7 +676,7 @@ func void DIA_Hokurn_SLD_PICKPOCKET_Info()
 
 func void DIA_Hokurn_SLD_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Hokurn_SLD_PICKPOCKET);
 };
 
@@ -705,33 +705,33 @@ func int DIA_Hokurn_NW_Hello_Condition()
 
 func void DIA_Hokurn_NW_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Hokurn_Hello_01_00");	//У тебя не найдется чего-нибудь выпить?
-	AI_Output(other,self,"DIA_Hokurn_Hello_15_01");	//Полагаю, вода тебе не подойдет.
-	AI_Output(self,other,"DIA_Hokurn_Hello_01_02");	//Нет, черт побери!!! Мне нужно что-нибудь алкогольное, чтобы я, наконец, мог избавиться от этой проклятой головной боли.
-	AI_Output(self,other,"DIA_Hokurn_Hello_01_03");	//Когда мне долго не удается промочить горло, мой череп раскалывается и мне кажется, что он вот-вот взорвется.
+	AI_Output(self,other, " DIA_Hokurn_Hello_01_00 " );	// Do you have anything to drink?
+	AI_Output(other,self, " DIA_Hokurn_Hello_15_01 " );	// I guess water won't suit you.
+	AI_Output(self,other, " DIA_Hokurn_Hello_01_02 " );	// No, damn it!!! I need something alcoholic so I can finally get rid of this damn headache.
+	AI_Output(self,other, " DIA_Hokurn_Hello_01_03 " );	// When I can't get my throat wet for a long time, my skull cracks and feels like it's going to explode.
 	HokFirstMeet = TRUE;
 	Info_ClearChoices(DIA_Hokurn_NW_Hello);
-	Info_AddChoice(DIA_Hokurn_NW_Hello,"Я ничем не могу помочь тебе.",DIA_Hokurn_NW_Hello_No);
+	Info_AddChoice(DIA_Hokurn_NW_Hello, " I can't help you. " ,DIA_Hokurn_NW_Hello_No);
 
 	if((Npc_HasItems(other,ItFo_Beer) >= 1) || (Npc_HasItems(other,ItFo_Addon_Rum) >= 1) || (Npc_HasItems(other,ItFo_Addon_Grog) >= 1) || (Npc_HasItems(other,ItFo_Booze) >= 1) || (Npc_HasItems(other,ItFo_Wine) >= 1))
 	{
-		Info_AddChoice(DIA_Hokurn_NW_Hello,"Вот, возьми это.",DIA_Hokurn_NW_Hello_Yes);
+		Info_AddChoice(DIA_Hokurn_NW_Hello, " Here, take this. " ,DIA_Hokurn_NW_Hello_Yes);
 	};
 };
 
 func void DIA_Hokurn_NW_Hello_No()
 {
-	AI_Output(other,self,"DIA_Hokurn_Hello_No_15_00");	//Я ничем не могу помочь тебе.
-	AI_Output(self,other,"DIA_Hokurn_Hello_No_01_01");	//Тогда проваливай!
+	AI_Output(other,self, " DIA_Hokurn_Hello_No_15_00 " );	// I can't help you.
+	AI_Output(self,other, " DIA_Hokurn_Hello_No_01_01 " );	// Then get lost!
 	Info_ClearChoices(DIA_Hokurn_NW_Hello);
 	Info_AddChoice(DIA_Hokurn_NW_Hello,Dialog_Ende,DIA_Hokurn_NW_Hello_END);
-	Info_AddChoice(DIA_Hokurn_NW_Hello,"Еще одно...",DIA_Hokurn_NW_Hello_ASK1);
+	Info_AddChoice(DIA_Hokurn_NW_Hello, " Please... " ,DIA_Hokurn_NW_Hello_ASK1);
 };
 
 func void DIA_Hokurn_NW_Hello_ASK1()
 {
-	AI_Output(other,self,"DIA_Hokurn_Hello_ASK1_15_00");	//Еще одно...
-	AI_Output(self,other,"DIA_Hokurn_Hello_ASK1_01_01");	//(ревет)...Ты что, не понял меня? УБИРАЙСЯ!!!
+	AI_Output(other,self, " DIA_Hokurn_Hello_ASK1_15_00 " );	// One more thing...
+	AI_Output(self,other, " DIA_Hokurn_Hello_ASK1_01_01 " );	// (roars)... Don't you understand me? GET OUT!!!
 	Info_ClearChoices(DIA_Hokurn_NW_Hello);
 	Info_AddChoice(DIA_Hokurn_NW_Hello,Dialog_Ende,DIA_Hokurn_NW_Hello_END);
 	Info_AddChoice(DIA_Hokurn_NW_Hello,"Это важно.",DIA_Hokurn_NW_Hello_ASK2);
@@ -739,8 +739,8 @@ func void DIA_Hokurn_NW_Hello_ASK1()
 
 func void DIA_Hokurn_NW_Hello_ASK2()
 {
-	AI_Output(other,self,"DIA_Hokurn_Hello_ASK2_15_00");	//Это важно.
-	AI_Output(self,other,"DIA_Hokurn_Hello_ASK2_01_01");	//(ревет)...Ты сам напросился!
+	AI_Output(other,self, " DIA_Hokurn_Hello_ASK2_15_00 " );	// This is important.
+	AI_Output(self,other, " DIA_Hokurn_Hello_ASK2_01_01 " );	// (roars)... You asked for it!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -752,8 +752,8 @@ func void DIA_Hokurn_NW_Hello_END()
 
 func void B_Hokurn_NW_Sauf()
 {
-	AI_Output(self,other,"B_Hokurn_Sauf_01_00");	//(рыгает) Ох, какое блаженство!
-	AI_Output(self,other,"B_Hokurn_Sauf_01_01");	//Теперь я опять могу размышлять здраво. Что я могу сделать для тебя?
+	AI_Output(self,other, " B_Hokurn_Sauf_01_00 " );	// (burps) Oh, what bliss!
+	AI_Output(self,other, " B_Hokurn_Sauf_01_01 " );	// Now I can think rationally again. What can I do for you?
 };
 
 func void b_hokurn_NW_drinking()
@@ -813,7 +813,7 @@ func void b_hokurn_NW_taking()
 
 func void DIA_Hokurn_NW_Hello_Yes()
 {
-	AI_Output(other,self,"DIA_Hokurn_Hello_Yes_15_00");	//Вот, возьми это.
+	AI_Output(other,self, " DIA_Hokurn_Hello_Yes_15_00 " );	// Here, take this.
 	b_hokurn_drinking();
 	B_Hokurn_Sauf();
 	StartPashalQuest = TRUE;
@@ -828,13 +828,13 @@ instance DIA_Hokurn_NW_Drink(C_Info)
 	condition = DIA_Hokurn_NW_Drink_Condition;
 	information = DIA_Hokurn_NW_Drink_Info;
 	permanent = TRUE;
-	description = "Я тебе принес немного выпить.";
+	description = " I brought you some drinks. " ;
 };
 
 
 func int DIA_Hokurn_NW_Drink_Condition()
 {
-	if((KAPITELORCATC == FALSE) && (HokurnGetsDrink == FALSE) && ((Npc_HasItems(other,ItFo_Beer) >= 1) || (Npc_HasItems(other,ItFo_Addon_Rum) >= 1) || (Npc_HasItems(other,ItFo_Addon_Grog) >= 1) || (Npc_HasItems(other,ItFo_Booze) >= 1) || (Npc_HasItems(other,ItFo_Wine) >= 1)))
+	if (( KAPITELORCATC  ==  FALSE ) && (HokurnGetsDrink ==  FALSE ) && ((Npc_HasItems(other,ItFo_Beer) >=  1 ) || (Npc_HasItems(other,ItFo_Addon_Rum) >=  1 ) || (Npc_HasItems(other,ItFo_Addon_Grog) >=  1 ) || (Npc_HasItems(other,ItFo_Booze) >=  1 ) || (Npc_HasItems(other,ItFo_Wine) >=  1 )))
 	{
 		return TRUE;
 	};
@@ -842,28 +842,28 @@ func int DIA_Hokurn_NW_Drink_Condition()
 
 func void DIA_Hokurn_NW_Drink_Info()
 {
-	AI_Output(other,self,"DIA_Hokurn_Drink_15_00");	//Я тебе принес немного выпить.
-	AI_Output(self,other,"DIA_Hokurn_Drink_01_01");	//Давай сюда!
+	AI_Output(other,self, " DIA_Hokurn_Drink_15_00 " );	// I brought you some drinks.
+	AI_Output(self,other, " DIA_Hokurn_Drink_01_01 " );	// Come here!
 	b_hokurn_NW_drinking();
 	B_Hokurn_NW_Sauf();
 	StartPashalQuest = TRUE;
 };
 
-//-----------------------пасхалка-----------------------------------------------
+// -----------------------easter eggs------------------------ ----------------------
 
-instance DIA_Hokurn_NW_PashalQuest(C_Info)
+instance DIA_Hokurn_NW_PashalQuest (C_Info)
 {
    npc = SLD_849_Hokurn;
    nr = 5;
    condition = DIA_Hokurn_NW_PashalQuest_Condition;
    information = DIA_Hokurn_NW_PashalQuest_Info;
    permanent = FALSE;
-   description = "На этой ферме есть что-нибудь интересное?";
+   description = " Is there anything interesting on this farm? " ;
 };
 
 func int DIA_Hokurn_NW_PashalQuest_Condition()
 {
-   if((KAPITELORCATC == FALSE) && (Kapitel < 4) && (StartPashalQuest == TRUE))
+   if (( CHAPTERORCATC  ==  FALSE ) && (Chapter <  4 ) && (StartPashalQuest ==  TRUE ))
    {
       return TRUE;
    };
@@ -871,43 +871,43 @@ func int DIA_Hokurn_NW_PashalQuest_Condition()
 
 func void DIA_Hokurn_NW_PashalQuest_Info()
 {
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_00");   //На вашей ферме есть что-нибудь интересное?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_01");   //Интересное? Парень, да ты явно не в себе, коли задаешь такие вопросы.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_02");   //Оглянись, - и сам увидишь, что кругом одни тупые бараны да овцы.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_03");   //Сия печальная картина, увы, не меняется день ото дня.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_04");   //Поэтому ищи интересные вещи за пределами нашего свинарника. Здесь ты ничего не найдешь.
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_05");   //А ты, похоже, знаешь, где их искать?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_06");   //(ехидно) Ну, как тебе сказать. Знать не знаю, но кое-что слышал.
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_07");   //Слышал что?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_08");   //Ну...(замялся) Это довольно старая история. И я даже не знаю, правдива она или нет.
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_09");   //Я бы с удовольствием тебя послушал.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_10");   //Эх! Ну да ладно, почему бы и нет.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_11");   //В конце концов, ты угостил меня выпивкой, а я хороших дел не забываю.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_12");   //Ну так вот... Дело было в то время, когда я сидел за Барьером в Долине Рудников.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_13");   //Однажды в таверне Нового лагеря я услышал рассказ о некоем артефакте.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_14");   //Какой-то чудак из Болотного лагеря, который принес нам очередную порцию травы, вещал о могуществе.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_15");   //Он говорил о том, что есть предмет, который позволит владельцу обрести безмерную и безграничную власть над миром! Представляешь?
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_16");   //И ты ему поверил?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_17");   //Ну, не то чтобы... Болотные братья - довольно странные ребята, от них чего угодно можно ожидать.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_18");   //Кто знает, рассказ - чистая правда или бредни обкурившихся сектантов?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_19");   //Я лишь одно могу с уверенностью сказать: слухи просто так не рождаются! Уж в этом ты мне поверь.
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_20");   //Да, необычная история. А как звали того парня?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_21");   //Я не знаю его имени. Припоминаю только то, что он постоянно курил болотную траву. Целыми днями напролет!
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_22");   //А когда вконец обкуривался, начинал долбиться головой об стену. Как будто пытался проткнуть ее насквозь!
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_23");   //Да, забавный был парнишка.
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_24");   //А где он сейчас, ты не знаешь?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_25");   //Понятия не имею. С тех пор он больше не появлялся в нашем лагере.
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_26");   //Ну ладно, спасибо за рассказ.
+   AI_Output(other,self, " DIA_Hokurn_NW_PashalQuest_01_00 " );   // Is there anything interesting on your farm?
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_01 " );   // Interesting? Dude, you're clearly out of your mind for asking questions like this.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_02 " );   // Look around, and you will see for yourself that there are only stupid rams and sheep around.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_03 " );   // This sad picture, alas, does not change from day to day.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_04 " );   // So look for interesting things outside of our pigsty. You won't find anything here.
+   AI_Output(other,self, " DIA_Hokurn_NW_PashalQuest_01_05 " );   // Do you seem to know where to look for them?
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_06 " );   // (sarcastically) Well, how can I tell you. I don't know, but I heard something.
+   AI_Output(other,self, " DIA_Hokurn_NW_PashalQuest_01_07 " );   // Heard what?
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_08 " );   // Well... (he hesitated) It's quite an old story. And I don't even know if it's true or not.
+   AI_Output(other,self, " DIA_Hokurn_NW_PashalQuest_01_09 " );   // I'd love to hear from you.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_10 " );   // Eh! Well, okay, why not.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_11 " );   // After all, you bought me a drink, and I remember good things.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_12 " );   // Well, so... It was at the time when I was sitting behind the Barrier in the Valley of Mines.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_13 " );   // Once in the tavern of the New Camp, I heard a story about a certain artifact.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_14 " );   // Some eccentric from the Swamp Camp, who brought us another portion of the grass, was talking about power.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_15 " );   // He spoke about the fact that there is an item that will allow the owner to gain immense and unlimited power over the world! Can you imagine?
+   AI_Output(other,self, " DIA_Hokurn_NW_PashalQuest_01_16 " );   // And you believed him?
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_17 " );   // Well, not really... The Swamp Brothers are pretty weird guys, you can expect anything from them.
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_18 " );   // Who knows, is the story pure truth or nonsense of stoned sectarians?
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_19 " );   // I can only say one thing with certainty: rumors don't just happen! You can trust me on this.
+   AI_Output(other,self, " DIA_Hokurn_NW_PashalQuest_01_20 " );   // Yes, an unusual story. What was that guy's name?
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_21 " );   // I don't know his name. I only remember that he constantly smoked marsh grass. All day long!
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_22 " );   // And when he was completely stoned, he started banging his head against the wall. As if he was trying to pierce her through!
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_23 " );   // Yes, the boy was funny.
+   AI_Output(other,self, " DIA_Hokurn_NW_PashalQuest_01_24 " );   // Where is he now, do you know?
+   AI_Output(self,other, " DIA_Hokurn_NW_PashalQuest_01_25 " );   // I have no idea. Since then, he has not appeared in our camp again.
+   AI_Output(other,self, " DIA_Hokurn_NW_PashalQuest_01_26 " );   // Okay, thanks for the story.
    MIS_PashalQuest = LOG_Running;
    Log_CreateTopic(TOPIC_PashalQuest,LOG_MISSION);
    Log_SetTopicStatus(TOPIC_PashalQuest,LOG_Running);
-   B_LogEntry(TOPIC_PashalQuest,"Наемник Хокурн рассказал мне странную историю о некоем магическом артефакте, дарующем безграничную власть над всем миром! Он услышал ее в колонии от какого-то послушника Братства Спящего, торговавшего болотником в Новом лагере. Возможно, я смогу отыскать этого человека в новом лагере Братства в Хоринисе, чтобы подробнее разузнать об этом магическом предмете.");
+   B_LogEntry(TOPIC_PashalQuest, " The mercenary Hawkurn told me a strange story about some magical artifact that grants unlimited power over the whole world! He heard it in the colony from some acolyte of the Brotherhood of the Sleeper, who was selling swamp in the New Camp. Maybe I can find this person in new Brotherhood camp in Khorinis to learn more about this magical item. " );
    AI_StopProcessInfos(self);
    Wld_InsertNpc(SEK_4567_Unicorn,"NW_PSICAMP_UNICORN");
 };
 
-var int UNICORN_FLAG_01;
-var int UNICORN_FLAG_02;
+var int  UNICORN_FLAG_01 ;
+var int  UNICORN_FLAG_02 ;
 var int UNICORNTALK_YES;
 
 instance DIA_SEK_4567_Unicorn_EXIT(C_Info)
@@ -939,7 +939,7 @@ instance DIA_SEK_4567_Unicorn_NOTALK_SLEEPER(C_Info)
    information = DIA_SEK_4567_Unicorn_notalk_sleeper_info;
    permanent = FALSE;
    important = FALSE;
-   description = "Да пребудет с тобой Спящий!";
+   description = " May the Sleeper be with you! " ;
 };
 
 
@@ -953,7 +953,7 @@ func int DIA_SEK_4567_Unicorn_notalk_sleeper_condition()
 
 func void DIA_SEK_4567_Unicorn_notalk_sleeper_info()
 {
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_NoTalk_Sleeper_01_00");   //Да пребудет с тобой Спящий!
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_NoTalk_Sleeper_01_00 " );   // May the Sleeper be with you!
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_NoTalk_Sleeper_01_01");   //(вздох)
    UNICORN_FLAG_01 = TRUE;
    AI_StopProcessInfos(self);
@@ -967,7 +967,7 @@ instance DIA_SEK_4567_Unicorn_NOTALK_IMP(C_Info)
    information = DIA_SEK_4567_Unicorn_notalk_imp_info;
    permanent = TRUE;
    important = FALSE;
-   description = "Все в порядке, приятель?";
+   description = " Is everything all right, mate? " ;
 };
 
 func int DIA_SEK_4567_Unicorn_notalk_imp_condition()
@@ -980,7 +980,7 @@ func int DIA_SEK_4567_Unicorn_notalk_imp_condition()
 
 func void DIA_SEK_4567_Unicorn_notalk_imp_info()
 {
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_NoTalk_Imp_01_00");   //Все в порядке, приятель?
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_NoTalk_Imp_01_00 " );   // Are you all right, mate?
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_NoTalk_Sleeper_01_01");   //(вздох)
    UNICORN_FLAG_02 = TRUE;
    AI_StopProcessInfos(self);
@@ -993,7 +993,7 @@ instance DIA_SEK_4567_Unicorn_HasSmoke(C_Info)
    condition = DIA_SEK_4567_Unicorn_HasSmoke_condition;
    information = DIA_SEK_4567_Unicorn_HasSmoke_info;
    permanent = FALSE;
-   description = "У меня завалялись косяки из болотной травы.";
+   description = " I have shoals of swamp grass lying around. " ;
 };
 
 func int DIA_SEK_4567_Unicorn_HasSmoke_condition()
@@ -1006,17 +1006,17 @@ func int DIA_SEK_4567_Unicorn_HasSmoke_condition()
 
 func void DIA_SEK_4567_Unicorn_HasSmoke_info()
 {
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HasSmoke_01_00");   //У меня завалялись косяки из болотной травы. Тебя они интересуют?
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HasSmoke_01_00 " );   // I have shoals of swamp grass lying around. Are you interested in them?
    AI_PlayAni(self,"T_SEARCH");
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_01");   //(покашливая) С этого и надо было начинать! Много их у тебя?
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HasSmoke_01_02");   //Ну так, не очень.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_03");   //Ладно, без разницы... Давай их сюда. А то в последнее время их здесь стало трудно достать.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HasSmoke_01_01 " );   // (coughing) That's where we should have started! How many of them do you have?
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HasSmoke_01_02 " );   // Well, not really.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HasSmoke_01_03 " );   // Okay, it doesn't matter... Give them here. And lately it has become difficult to get them here.
    B_GiveInvItems(other,self,ItMi_Joint,Npc_HasItems(other,ItMi_Joint));
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HasSmoke_01_04");   //Разве Талас не выдает тебе новую порцию каждый день?
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_05");   //Выдает, но, к сожалению, мне ее мало. Я постоянно хочу курить.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_06");   //Если я не курю болотник, у меня начинает жутко болеть голова. Хоть об стенку бейся!
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_07");   //Раньше и такое помогало, но сейчас все без толку... Все равно раскалывается.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_08");   //Поэтому мне нужно очень много косяков из болотной травы! Понимаешь?
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HasSmoke_01_04 " );   // Doesn't Talas give you a new portion every day?
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HasSmoke_01_05 " );   // Gives, but, unfortunately, it is not enough for me. I want to smoke all the time.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HasSmoke_01_06 " );   // If I don't smoke bog, I get a terrible headache. At least hit the wall!
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HasSmoke_01_07 " );   // This used to help, but now it's useless... It still splits.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HasSmoke_01_08 " );   // That's why I need a lot of marsh grass shoals! Understand?
    UNICORNTALK_YES = TRUE;
 };
 
@@ -1027,7 +1027,7 @@ instance DIA_SEK_4567_Unicorn_HeyYou(C_Info)
    condition = DIA_SEK_4567_Unicorn_HeyYou_condition;
    information = DIA_SEK_4567_Unicorn_HeyYou_info;
    permanent = FALSE;
-   description = "Эй, а ты часом не тот парень...";
+   description = " Hey, you're not the right guy for an hour... " ;
 };
 
 func int DIA_SEK_4567_Unicorn_HeyYou_condition()
@@ -1041,25 +1041,25 @@ func int DIA_SEK_4567_Unicorn_HeyYou_condition()
 func void DIA_SEK_4567_Unicorn_HeyYou_info()
 {
    B_GivePlayerXP(200);
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_00");   //Эй, ты часом не тот парень, что толкал болотник в Новом лагере?
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_01");   //Ну да. Было дело. Однако я пробыл там совсем недолго.
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HeyYou_01_00 " );   // Hey, aren't you the guy who pushed the swamp in the New Camp?
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_01 " );   // Well, yes. It was business. However, I didn't stay there for long.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_02");   //Почему?
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_03");   //(виновато) Ну, я скурил весь болотник, который вручили мне на продажу.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_04");   //Поэтому меня быстро сменили Идолы Исидро и Каган. А меня отправили обратно в наш лагерь.
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_05");   //Ладно, не суть важно. Меня интересует другой вопрос.
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_06");   //Кое-кто помнит, что ты рассказывал о странном магическом артефакте.
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_07");   //Якобы с его помощью можно управлять чуть ли не всем миром!
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_08");   //Эммм...(растерянно) Правда?! Ну, возможно, что-то такое и было... Чего не сделаешь после хорошей порции болотника.
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_09");   //Ты что-нибудь помнишь об этом?
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_10");   //Почти ничего. Припоминаю только, что ту историю я и сам случайно услышал.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_03 " );   // (guilty) Well, I smoked all the swamp that was handed to me for sale.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_04 " );   // So I was quickly replaced by the Idols of Isidro and Kagan. And they sent me back to our camp.
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HeyYou_01_05 " );   // Okay, it doesn't matter. I am interested in another question.
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HeyYou_01_06 " );   // Someone remembers what you said about the strange magical artifact.
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HeyYou_01_07 " );   // Allegedly, with its help, you can control almost the whole world!
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_08 " );   // Umm...(confused) Really?! Well, maybe something like that happened ... What you can’t do after a good portion of the bog.
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HeyYou_01_09 " );   // Do you remember anything about this?
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_10 " );   // Almost nothing. I only remember that I myself accidentally heard that story.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_11");   //Где?
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_12");   //В Старом лагере. Как-то раз, принеся очередную порцию болотника, я случайно стал свидетелем разговора двух стражников.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_13");   //Один из них рассказывал другому о том странном предмете.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_14");   //Потом они увидели меня и отошли дальше. Вот, собственно, и все.
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_15");   //А ты не помнишь, как звали тех стражников?
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_16");   //Их имен я не знаю. Помню только, что у одного из них были седые волосы.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_17");   //А так, это все, что мне известно.
-   B_LogEntry(TOPIC_PashalQuest,"Я нашел парня, который рассказывал эту историю в Новом лагере. Мне он толком ничего не сказал, кроме того, что сам когда-то подслушал эту историю в разговоре двух стражников Старого лагеря. Если кто-то и знает об этом артефакте больше, то только они. И где мне теперь искать этих людей, ума не приложу...");
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_12 " );   // In the Old Camp. Once, having brought another portion of the swamp, I accidentally witnessed a conversation between two guards.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_13 " );   // One of them was telling the other about that strange item.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_14 " );   // Then they saw me and moved on. That, in fact, is all.
+   AI_Output(other,self, " DIA_SEK_4567_Unicorn_HeyYou_01_15 " );   // Do you remember the names of those guards?
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_16 " );   // I don't know their names. I only remember that one of them had gray hair.
+   AI_Output(self,other, " DIA_SEK_4567_Unicorn_HeyYou_01_17 " );   // Well, that's all I know.
+   B_LogEntry(TOPIC_PashalQuest, " I found a guy who told this story in the New Camp. He didn't really tell me anything, except that he himself once overheard this story in a conversation between two guards of the Old Camp. If anyone knows about it there are more artifacts, then only they. And where should I look for these people now, I’ll never know ... " );
    PashalQuestGuardStep = TRUE;
 };
 
@@ -1090,7 +1090,7 @@ instance DIA_BDT_4568_KINJARTS_HELLO(C_Info)
    condition = DIA_BDT_4568_KINJARTS_HELLO_condition;
    information = DIA_BDT_4568_KINJARTS_HELLO_info;
    permanent = FALSE;
-   description = "Привет. Как дела?";
+   description = " Hi. How are you? " ;
 };
 
 func int DIA_BDT_4568_KINJARTS_HELLO_condition()
@@ -1100,18 +1100,18 @@ func int DIA_BDT_4568_KINJARTS_HELLO_condition()
 
 func void DIA_BDT_4568_KINJARTS_HELLO_info()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_HELLO_01_00");   //Привет. Как дела?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_HELLO_01_01");   //(ухмыляясь) Кто тут у нас приблудился?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_HELLO_01_02");   //Хотя не говори ничего! Дай догадаюсь... Небось очередное мясо для забоя в золотой шахте?
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_HELLO_01_03");   //Ты ошибаешься! Я здесь по другой причине.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_HELLO_01_04");   //Не старайся обмануть меня, мальчик!
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_HELLO_01_05");   //В своей жизни я повидал множество щенков, вроде тебя, которые рассказывали всем о важной миссии. Особенно в Старом лагере!
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_HELLO_01_06");   //Поначалу они выказывали себя бывалыми героями, способными свернуть горы! Если не сказать больше...
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_HELLO_01_07");   //Но всех их вылечила работа в шахте! Пару лет с киркой в руках выбивают дурь и браваду из молодых горячих голов.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_HELLO_01_08");   //И из тебя выбьют...
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_HELLO_01_00 " );   // Hello. How are you?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_HELLO_01_01 " );   // (grinning) Who's straying here?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_HELLO_01_02 " );   // Don't say anything though! Let me guess... More meat to be slaughtered in a gold mine, I suppose?
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_HELLO_01_03 " );   // You're wrong! I'm here for a different reason.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_HELLO_01_04 " );   // Don't try to fool me, boy!
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_HELLO_01_05 " );   // I've seen a lot of puppies like you in my life telling everyone about an important mission. Especially in the Old Camp!
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_HELLO_01_06 " );   // At first, they proved themselves to be seasoned heroes capable of moving mountains! To say the least...
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_HELLO_01_07 " );   // But they were all cured by working in the mine! A couple of years, with a pick in their hands, they knock out nonsense and bravado from young hotheads.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_HELLO_01_08 " );   // And they'll beat you out...
 };
 
-var int KinJartsTellUs;
+var you KinJartsTellUs;
 var int KinJartsWannaOre;
 
 instance DIA_BDT_4568_KINJARTS_Quest(C_Info)
@@ -1121,7 +1121,7 @@ instance DIA_BDT_4568_KINJARTS_Quest(C_Info)
    condition = DIA_BDT_4568_KINJARTS_Quest_condition;
    information = DIA_BDT_4568_KINJARTS_Quest_info;
    permanent = FALSE;
-   description = "Я что-то не припоминаю нашу встречу в Старом лагере.";
+   description = " I don't remember our meeting at the Old Camp. " ;
 };
 
 func int DIA_BDT_4568_KINJARTS_Quest_condition()
@@ -1134,52 +1134,52 @@ func int DIA_BDT_4568_KINJARTS_Quest_condition()
 
 func void DIA_BDT_4568_KINJARTS_Quest_info()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_00");   //Я что-то не припоминаю нашу встречу в Старом лагере.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_01");   //(ухмыляясь) Намекаешь на то, что ты тоже побывал в колонии?
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_02");   //Именно так. Но тебя я там не видел.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_03");   //Ну, это и неудивительно. Поскольку большую часть времени я проводил вне лагеря, сопровождая грузы, прибывшие из-за барьера.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_04");   //Возможно, именно поэтому наши дороги никогда и не пересекались.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_05");   //Вот если бы ты спросил знающих парней про старину Кинжартса, то тебе бы тогда рассказали, кто я такой!
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_06");   //Правда? Может, тогда сам расскажешь?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_07");   //(ухмыляясь) Ну, если тебе так хочется послушать о тех временах, то ты должен знать, что за все приходится платить.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_08"); //Рудой, как обычно?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_09"); //А ты догадлив! Но не волнуйся, я не буду с тебя драть втридорога, как это делают местные торговцы.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_10"); //Так что, пожалуй, трех кусков руды мне вполне хватит.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_01_00 " );   // I don't remember our meeting at the Old Camp.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_01_01 " );   // (smirking) Are you implying that you also visited the colony?
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_01_02 " );   // That's right. But I didn't see you there.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_01_03 " );   // Well, this is not surprising. Because most of the time I spent outside the camp, escorting the cargo that arrived from behind the barrier.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_01_04 " );   // Maybe that's why our paths never crossed.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_01_05 " );   // Now, if you asked the knowledgeable guys about the old Kinzharts, then they would tell you who I am!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_01_06 " );   // True? Maybe you can tell yourself then?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_01_07 " );   // (grinning) Well, if you really want to hear about those times, then you should know that you have to pay for everything.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_01_08 " ); // Ore, as usual?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_01_09 " ); // And you are quick-witted! But don't worry, I won't charge you exorbitant prices like the local merchants do.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_01_10 " ); // So maybe three pieces of ore will be enough for me.
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_Quest);
-   Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest,"Я подумаю над твоим предложением.",DIA_BDT_4568_KINJARTS_Quest_Back);
+   Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest, " I'll think about your offer. " ,DIA_BDT_4568_KINJARTS_Quest_Back);
 
    if(Npc_HasItems(other,ItMi_Nugget) >= 3)
    {
-      Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest,"(отдать три куска магической руды)",DIA_BDT_4568_KINJARTS_Quest_MagicOre);
+      Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest, " (give three pieces of magic ore) " ,DIA_BDT_4568_KINJARTS_Quest_MagicOre);
    };
-   if((Npc_HasItems(other,ITMI_SNUGGET) >= 3) && (RhetorikSkillValue[1] >= 35))
+   if ((Npc_HasItems(other, ITMI_SNUGGET ) >=  3 ) && (RhetoricSkillValue[ 1 ] >=  35 )) ;
    {
-      Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest,"(отдать три куска железной руды)",DIA_BDT_4568_KINJARTS_Quest_IronOre);
+      Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest, " (give three pieces of iron ore) " ,DIA_BDT_4568_KINJARTS_Quest_IronOre);
    };
 };
 
 func void DIA_BDT_4568_KINJARTS_Quest_Back()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_Back_01_01");   //Я подумаю над твоим предложением.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_Back_01_02");   //Только недолго! А то вдруг я передумаю.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_Back_01_01 " );   // I'll think about your suggestion.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_Back_01_02 " );   // Not for long! And then suddenly I change my mind.
    KinJartsWannaOre = TRUE;
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_Quest);
 };
 
 func void DIA_BDT_4568_KINJARTS_Quest_MagicOre()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_01");   //Вот твои три куска руды.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_01 " );   // Here are your three pieces of ore.
    B_GiveInvItems(other,self,ItMi_Nugget,3);
    Npc_RemoveInvItems(self,ItMi_Nugget,3);
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_02");   //Хорошо. Тогда я, пожалуй, продолжу рассказ.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_03");   //В колонию я попал в то время, когда каторжане еще видели над своей головой чистое небо.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_04");   //Вначале пришлось непросто. Я на своей шкуре прочувствовал всю тяжесть работы в шахте.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_05");   //Однако, после появления Барьера и захвата власти Гомезом, он сделал меня одним из стражников и поставил заботиться о новичках, прибывающих в колонию.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_06");   //Позже меня сменил Буллит. А нужные знакомства у других баронов позволили мне занять место главного поставщика и сопровождающего грузов.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_07");   //Это была очень опасная работа, поскольку на наши обозы постоянно нападали воры из Нового лагеря.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_08");   //В одной из таких заварушек я даже было чуть не погиб.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_09");   //Но это все в прошлом. Теперь я один из телохранителей Торуса.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_10");   //И новое место меня вполне устраивает!
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_02 " );   // Good. Then I, perhaps, will continue the story.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_03 " );   // I ended up in the colony at a time when the convicts still saw a clear sky above their heads.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_04 " );   // It wasn't easy at first. I felt the hardship of working in the mine on my own skin.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_05 " );   // However, after the appearance of the Barrier and the takeover by Gomez, he made me one of the guards and put me in charge of the newcomers arriving at the colony.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_06 " );   // Bullitt replaced me later. And the necessary contacts with other barons allowed me to take the place of the main supplier and accompanying cargo.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_07 " );   // It was a very dangerous job, because our carts were constantly attacked by thieves from the New Camp.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_08 " );   // In one of these troubles, I even almost died.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_09 " );   // But that's all in the past. Now I'm one of Torus's bodyguards.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_10 " );   // And the new place suits me just fine!
    KinJartsTellUs = TRUE;
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_Quest);
 };
@@ -1187,27 +1187,27 @@ func void DIA_BDT_4568_KINJARTS_Quest_MagicOre()
 
 func void DIA_BDT_4568_KINJARTS_Quest_IronOre()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_01");   //Вот твои три куска руды.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_01 " );   // Here are your three pieces of ore.
    B_GiveInvItems(other,self,ItMi_SNugget,3);
    Npc_RemoveInvItems(self,ItMi_SNugget,3);
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_02");   //Что ты мне здесь суешь?!
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_03");   //Руду. Ты ведь ее хотел.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_04");   //Я имел в виду магическую руду, а не обычную!
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_05");   //Но ты об этом ни разу не обмолвился. Так что бери то, что дают.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_06");   //М-да... Похоже, обвел ты старину Кинжартса вокруг пальца. Не ожидал!
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_07");   //Так теперь ты расскажешь мне о себе и о том, чем занимался в Старом лагере?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_08");   //(ухмыляясь) Конечно. Уговор есть уговор! Так вот...
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_09");   //В колонию я попал в то время, когда каторжане еще видели над своей головой чистое небо.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_10");   //Вначале пришлось непросто. Я на своей шкуре прочувствовал всю тяжесть работы в шахте.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_11");   //Однако, после появления Барьера и захвата власти Гомезом, он сделал меня одним из стражников и поставил заботиться о новичках, прибывающих в колонию.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_12");   //Позже меня сменил Буллит. А нужные знакомства у других баронов позволили мне занять место главного поставщика и сопровождающего грузов.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_13");   //Это была очень опасная работа, поскольку на наши обозы постоянно нападали воры из Нового лагеря.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_14");   //В одной из таких заварушек я даже было чуть не погиб.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_15");   //Но это все в прошлом. Теперь я один из телохранителей Торуса.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_16");   //И новое место меня вполне устраивает!
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_02 " );   // What are you putting me here?!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_03 " );   // Ore. You did want her.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_04 " );   // I meant magic ore, not normal ore!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_05 " );   // But you never mentioned it. So take what is given.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_06 " );   // Hmmm... Looks like you've got old Kinzharts wrapped around your finger. Not expected!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_07 " );   // So now you're going to tell me about yourself and what you did in the Old Camp?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_08 " );   // (grinning) Of course. A deal is a deal! So...
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_09 " );   // I ended up in the colony at a time when the convicts still saw a clear sky above their heads.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_10 " );   // It wasn't easy at first. I felt the hardship of working in the mine on my own skin.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_11 " );   // However, after the appearance of the Barrier and the takeover by Gomez, he made me one of the guards and put me in charge of the newcomers arriving at the colony.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_12 " );   // Bullitt replaced me later. And the necessary contacts with other barons allowed me to take the place of the main supplier and accompanying cargo.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_13 " );   // It was a very dangerous job, because our carts were constantly attacked by thieves from the New Camp.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_14 " );   // In one of these troubles, I even almost died.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_15 " );   // But that's all in the past. Now I'm one of Torus's bodyguards.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_16 " );   // And the new place suits me just fine!
    KinJartsTellUs = TRUE;
-   RhetorikSkillValue[1] += 1;
-   AI_Print("Риторика + 1");
+   RhetoricSkillValue[ 1 ] +=  1 ;
+   AI_Print( " Rhetoric + 1 " );
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_Quest);
 };
 
@@ -1218,12 +1218,12 @@ instance DIA_BDT_4568_KINJARTS_QuestAgain(C_Info)
    condition = DIA_BDT_4568_KINJARTS_QuestAgain_condition;
    information = DIA_BDT_4568_KINJARTS_QuestAgain_info;
    permanent = TRUE;
-   description = "Я принес тебе руду.";
+   description = " I brought you ore. " ;
 };
 
 func int DIA_BDT_4568_KINJARTS_QuestAgain_condition()
 {
-   if((KinJartsWannaOre == TRUE) && (KinJartsTellUs == FALSE))
+   if (( Who WantsUs ==  TRUE ) && ( Who WantsUs ==  FALSE ))
    {
       return TRUE;
    };
@@ -1231,69 +1231,69 @@ func int DIA_BDT_4568_KINJARTS_QuestAgain_condition()
 
 func void DIA_BDT_4568_KINJARTS_QuestAgain_info()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestAgain_01_00");   //Я принес тебе руду.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestAgain_01_01");   //Хорошо. Давай ее сюда!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestAgain_01_00 " );   // I brought you ore.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestAgain_01_01 " );   // Good. Give her here!
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_QuestAgain);
-   Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain,"Я еще подумаю на этим.",DIA_BDT_4568_KINJARTS_QuestAgain_Back);
+   Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain, " I'll think about it. " ,DIA_BDT_4568_KINJARTS_QuestAgain_Back);
 
    if(Npc_HasItems(other,ItMi_Nugget) >= 3)
    {
-      Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain,"Отдать три куска магической руды.",DIA_BDT_4568_KINJARTS_QuestAgain_MagicOre);
+      Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain, " Give three pieces of magic ore. " ,DIA_BDT_4568_KINJARTS_QuestAgain_MagicOre);
    };
-   if((Npc_HasItems(other,ITMI_SNUGGET) >= 3) && (RhetorikSkillValue[1] >= 35))
+   if ((Npc_HasItems(other, ITMI_SNUGGET ) >=  3 ) && (RhetoricSkillValue[ 1 ] >=  35 )) ;
    {
-      Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain,"Отдать три куска железной руды.",DIA_BDT_4568_KINJARTS_QuestAgain_IronOre);
+      Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain, " Give three pieces of iron ore. " ,DIA_BDT_4568_KINJARTS_QuestAgain_IronOre);
    };
 };
 
 func void DIA_BDT_4568_KINJARTS_QuestAgain_Back()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestAgain_Back_01_01");   //Я еще подумаю на этим.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestAgain_Back_01_02");   //Только недолго! А то вдруг я передумаю.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestAgain_Back_01_01 " );   // I'll think about it some more.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestAgain_Back_01_02 " );   // Not for long! And then suddenly I change my mind.
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_QuestAgain);
 };
 
 func void DIA_BDT_4568_KINJARTS_QuestAgain_MagicOre()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_01");   //Вот твои три куска руды.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_01 " );   // Here are your three pieces of ore.
    B_GiveInvItems(other,self,ItMi_Nugget,3);
    Npc_RemoveInvItems(self,ItMi_Nugget,3);
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_02");   //Хорошо. Тогда я, пожалуй, продолжу рассказ.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_03");   //В колонию я попал в то время, когда каторжане еще видели над своей головой чистое небо.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_04");   //Вначале пришлось непросто. Я на своей шкуре прочувствовал всю тяжесть работы в шахте.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_05");   //Однако, после появления Барьера и захвата власти Гомезом, он сделал меня одним из стражников и поставил заботиться о новичках, прибывающих в колонию.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_06");   //Позже меня сменил Буллит. А нужные знакомства у других баронов позволили мне занять место главного поставщика и сопровождающего грузов.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_07");   //Это была очень опасная работа, поскольку на наши обозы постоянно нападали воры из Нового лагеря.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_08");   //В одной из таких заварушек я даже было чуть не погиб.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_09");   //Но это все в прошлом. Теперь я один из телохранителей Торуса.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_10");   //И новое место меня вполне устраивает!
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_02 " );   // Good. Then I, perhaps, will continue the story.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_03 " );   // I ended up in the colony at a time when the convicts still saw a clear sky above their heads.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_04 " );   // It wasn't easy at first. I felt the hardship of working in the mine on my own skin.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_05 " );   // However, after the appearance of the Barrier and the takeover by Gomez, he made me one of the guards and put me in charge of the newcomers arriving at the colony.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_06 " );   // Bullitt replaced me later. And the necessary contacts with other barons allowed me to take the place of the main supplier and accompanying cargo.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_07 " );   // It was a very dangerous job, because our carts were constantly attacked by thieves from the New Camp.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_08 " );   // In one of these troubles, I even almost died.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_09 " );   // But that's all in the past. Now I'm one of Torus's bodyguards.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_10 " );   // And the new place suits me just fine!
    KinJartsTellUs = TRUE;
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_QuestAgain);
 };
 
 func void DIA_BDT_4568_KINJARTS_QuestAgain_IronOre()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_01");   //Вот твои три куска руды.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_01 " );   // Here are your three pieces of ore.
    B_GiveInvItems(other,self,ItMi_SNugget,3);
    Npc_RemoveInvItems(self,ItMi_SNugget,3);
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_02");   //Что ты мне здесь суешь?!
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_03");   //Руду. Ты ведь ее хотел.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_04");   //Я имел в виду магическую руду, а не обычную!
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_05");   //Но ты об этом ни разу не обмолвился. Так что бери то, что дают!
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_06");   //Мда... Похоже, обвел ты старину Кинжартса вокруг пальца. Не ожидал!
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_07");   //Так теперь ты расскажешь мне о себе и о том, чем занимался в Старом лагере?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_08");   //(ухмыляясь) Конечно. Уговор есть уговор! Так вот...
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_09");   //В колонию я попал в то время, когда каторжане еще видели над своей головой чистое небо.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_10");   //Вначале пришлось непросто. Я на своей шкуре прочувствовал всю тяжесть работы в шахте.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_12");   //Однако, после появления Барьера и захвата власти Гомезом, он сделал меня одним из стражников и поставил заботиться о новичках, прибывающих в колонию.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_13");   //Позже меня сменил Буллит. А нужные знакомства у других баронов позволили мне занять место главного поставщика и сопровождающего грузов.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_14");   //Это была очень опасная работа, поскольку на наши обозы постоянно нападали воры из Нового лагеря.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_15");   //В одной из таких заварушек я даже было чуть не погиб.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_16");   //Но это все в прошлом. Теперь я один из телохранителей Торуса.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_17");   //И новое место меня вполне устраивает!
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_02 " );   // What are you putting me here?!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_03 " );   // Ore. You did want her.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_04 " );   // I meant magic ore, not normal ore!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_05 " );   // But you never mentioned it. So take what they give!
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_06 " );   // Hmm... Looks like you've got old Kinzharts wrapped around your finger. Not expected!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_07 " );   // So now you're going to tell me about yourself and what you did in the Old Camp?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_08 " );   // (grinning) Of course. A deal is a deal! So...
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_09 " );   // I ended up in the colony at a time when the convicts still saw a clear sky above their heads.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_10 " );   // It wasn't easy at first. I felt the hardship of working in the mine on my own skin.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_12 " );   // However, after the appearance of the Barrier and the takeover by Gomez, he made me one of the guards and put me in charge of the newcomers arriving at the colony.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_13 " );   // Bullitt replaced me later. And the necessary contacts with other barons allowed me to take the place of the main supplier and accompanying cargo.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_14 " );   // It was a very dangerous job, because our carts were constantly attacked by thieves from the New Camp.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_15 " );   // In one of these troubles, I even almost died.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_16 " );   // But that's all in the past. Now I'm one of Torus's bodyguards.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Quest_IronOre_01_17 " );   // And the new place suits me just fine!
    KinJartsTellUs = TRUE;
-   RhetorikSkillValue[1] += 1;
-   AI_Print("Риторика + 1");
+   RhetoricSkillValue[ 1 ] +=  1 ;
+   AI_Print( " Rhetoric + 1 " );
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_QuestAgain);
 };
 
@@ -1304,7 +1304,7 @@ instance DIA_BDT_4568_KINJARTS_QuestDone(C_Info)
    condition = DIA_BDT_4568_KINJARTS_QuestDone_condition;
    information = DIA_BDT_4568_KINJARTS_QuestDone_info;
    permanent = FALSE;
-   description = "Выходит, что ты очень много знаешь про Старый лагерь.";
+   description = " You seem to know a lot about the Old Camp. " ;
 };
 
 func int DIA_BDT_4568_KINJARTS_QuestDone_condition()
@@ -1318,37 +1318,37 @@ func int DIA_BDT_4568_KINJARTS_QuestDone_condition()
 func void DIA_BDT_4568_KINJARTS_QuestDone_info()
 {
    B_GivePlayerXP(200);
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_00");   //Выходит, что ты очень много знаешь про Старый лагерь.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_01");   //Больше, чем кто-либо! А почему ты спросил?
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_02");   //Просто у меня есть один очень щекотливый вопрос.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_03");   //Хммм. Тогда можешь задать его мне, если хочешь.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_04");   //Я ищу одного стражника, который в свое время пустил слух о некоем магическом артефакте.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_05");   //Якобы этот могущественный предмет способен даже влиять на судьбу этого мира.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_00 " );   // Looks like you know a lot about the Old Camp.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_01 " );   // More than anyone! Why do you ask?
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_02 " );   // I just have one very sensitive question.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_03 " );   // Hmmm. Then you can ask it to me if you want.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_04 " );   // I'm looking for a guard who once started a rumor about a certain magical artifact.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_05 " );   // Allegedly, this powerful item can even influence the fate of this world.
    AI_PlayAni(self,"T_SEARCH");
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_06");   //Очень интересно. Тогда позволь мне задать тебе встречный вопрос - откуда тебе это известно?
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_07");   //Об этом мне рассказал один из братьев болотного лагеря.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_08");   //Он как-то подслушал разговор двух стражников, которые говорили об этом артефакте.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_09");   //(задумчиво) Ну да, такое вполне возможно.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_10");   //Что ты хочешь этим сказать?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_11");   //Я хочу сказать то, что, похоже, с этим вопросом ты обратился по адресу.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_12");   //Поскольку тот стражник, которого ты ищешь, - я!
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_13");   //Да ну! Правда?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_14");   //Разве я похож на вруна? Или, может быть, произвожу подобное впечатление?
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_15");   //Я бы так не сказал.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_16");   //Тогда поверь мне, сынок. Все это чистая правда!
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_17");   //А тот укурок, видимо, подслушал мой разговор с моим приятелем Скорпио, когда я рассказывал ему эту историю.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_18");   //Тогда Скорпио сказал, что это полная чушь и посоветовал мне не забивать себе этим голову.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_19");   //Но, по всей видимости, не все так посчитали.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_20");   //Значит, артефакт на самом деле существует?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_06 " );   // Very interesting. Then let me ask you a counter question - how do you know this?
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_07 " );   // One of the brothers of the swamp camp told me about this.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_08 " );   // He somehow overheard two guards talking about this artifact.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_09 " );   // (thoughtfully) Well, yes, this is quite possible.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_10 " );   // What do you mean by that?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_11 " );   // I want to say that it looks like you addressed this question to the address.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_12 " );   // Because the guard you're looking for is me!
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_13 " );   // Come on! Truth?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_14 " );   // Do I look like a liar? Or maybe I give the same impression?
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_15 " );   // I wouldn't say that.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_16 " );   // Then trust me, son. All this is true!
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_17 " );   // And that stoner apparently overheard my conversation with my friend Scorpio when I told him this story.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_18 " );   // Then Scorpio said that it was complete nonsense and advised me not to bother myself with this.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_19 " );   // But, apparently, not everyone thought so.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_20 " );   // So the artifact actually exists?
    AI_PlayAni(self,"T_SEARCH");
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_21");   //Послушай меня, приятель. Я не говорил, что он существует.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_22");   //Однако о нем в свое время упоминали маги Огня, а к их словам, я полагаю, все-таки стоит прислушаться.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_23");   //Но все маги Огня были убиты по приказу Гомеза. Как же теперь быть?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_24");   //Я это знаю. Но, насколько мне известно, кое-кому из них все-таки удалось выжить.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_25");   //Кажется, этого мага звали Милтен! Возможно, что тебе стоит найти его и поговорить уже с ним об этом артефакте.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_26");   //Мне же тебе больше нечего сказать.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_27");   //Я тебя понял.
-   B_LogEntry(TOPIC_PashalQuest,"Кинжартс оказался одним из тех стражников, кто знал о той истории с артефактом. По его словам, подтвердить его существование могут только маги Огня, жившие в Старом лагере. А единственным магом, избежавшим расправы Гомеза, был Милтен.");
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_21 " );   // Listen to me, buddy. I didn't say it existed.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_22 " );   // However, it was mentioned at one time by the Firebenders, and their words, I believe, are still worth listening to.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_23 " );   // But all the Firebenders were killed on Gomez's orders. How to be now?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_24 " );   // I know it. But, as far as I know, some of them still managed to survive.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_25 " );   // I think this mage's name was Milten! Perhaps you should find him and talk to him about this artifact already.
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_QuestDone_01_26 " );   // I have nothing more to say to you.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_QuestDone_01_27 " );   // I understand you.
+   B_LogEntry(TOPIC_PashalQuest, " Kinzharts was one of the guards who knew about the history of the artifact. According to him, only the Firebenders who lived in the Old Camp could confirm its existence. And the only magician who escaped Gomez's massacre was Milten. " ) ;
    PashalQuestMageStep = TRUE;
 };
 
@@ -1359,12 +1359,12 @@ instance DIA_BDT_4568_KINJARTS_Perm(C_Info)
    condition = DIA_BDT_4568_KINJARTS_Perm_condition;
    information = DIA_BDT_4568_KINJARTS_Perm_info;
    permanent = TRUE;
-   description = "Как обстановка?";
+   description = " How are things? " ;
 };
 
 func int DIA_BDT_4568_KINJARTS_Perm_condition()
 {
-   if(Npc_KnowsInfo(other,DIA_BDT_4568_KINJARTS_QuestDone) == TRUE)
+   if ( Npc_KnowsInfo ( other , DIA_BDT_4568_KINJARTS_QuestDone ) ==  TRUE )
    {
       return TRUE;
    };
@@ -1372,8 +1372,8 @@ func int DIA_BDT_4568_KINJARTS_Perm_condition()
 
 func void DIA_BDT_4568_KINJARTS_Perm_info()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Perm_01_00");   //Как обстановка?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Perm_01_01");   //Пока все тихо. Надеюсь, так все и останется.
+   AI_Output(other,self, " DIA_BDT_4568_KINJARTS_Perm_01_00 " );   // What is the situation?
+   AI_Output(self,other, " DIA_BDT_4568_KINJARTS_Perm_01_01 " );   // All is quiet for now. I hope it stays that way.
 };
 
 instance DIA_KDF_4569_AlexOne_EXIT(C_Info)
@@ -1413,10 +1413,10 @@ func int DIA_KDF_4569_AlexOne_HELLO_condition()
 
 func void DIA_KDF_4569_AlexOne_HELLO_info()
 {
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_HELLO_01_00");   //Эй! Ты что здесь делаешь?
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_HELLO_01_01");   //Я хотел задать тебе тот же вопрос.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_HELLO_01_02");   //(пренебрежительно) Мои дела тебя не касаются.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_HELLO_01_03");   //Они слишком важные, чтобы я стал рассказывать о них первому встречному!
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_HELLO_01_00 " );   // Hey! What are you doing here?
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_HELLO_01_01 " );   // I wanted to ask you the same question.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_HELLO_01_02 " );   // (disparagingly) My business is none of your business.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_HELLO_01_03 " );   // They're too important for me to tell anyone I meet!
 };
 
 instance DIA_KDF_4569_AlexOne_WhoYou(C_Info)
@@ -1426,7 +1426,7 @@ instance DIA_KDF_4569_AlexOne_WhoYou(C_Info)
    condition = DIA_KDF_4569_AlexOne_WhoYou_condition;
    information = DIA_KDF_4569_AlexOne_WhoYou_info;
    permanent = FALSE;
-   description = "Ты - маг Огня?";
+   description = " Are you a Fire Mage? " ;
 };
 
 func int DIA_KDF_4569_AlexOne_WhoYou_condition()
@@ -1439,23 +1439,23 @@ func int DIA_KDF_4569_AlexOne_WhoYou_condition()
 
 func void DIA_KDF_4569_AlexOne_WhoYou_info()
 {
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_00");   //Ты - маг Огня?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_01");   //Как видишь. А что, тебя это удивляет?
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_02");   //Не припомню, чтобы встречал тебя в монастыре Хориниса.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_03");   //Меня приняли в Круг Огня здесь, в колонии. А про монастырь я ничего не знаю.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_04");   //Интересно! И кто же принял тебя в Круг?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_05");   //(важно) Сам мастер Корристо! И именно по его поручению я сейчас здесь.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_06");   //Но Корристо и другие маги Огня уже давно мертвы! Убиты по приказу Гомеза.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_07");   //Что ты мелешь?! Как такое может быть? Ты что, с ума сошел?
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_08");   //Так ты ничего не знаешь?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_09");   //А что я должен знать?!
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_10");   //Когда в Старой шахте произошел завал, Гомез пришел в ярость и решил напасть на Новый лагерь.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_11");   //Маги Огня были против этой затеи, и он просто приказал их убить.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_12");   //О Иннос... Неужели это правда?
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_13");   //Можешь не сомневаться. А сейчас в замке Старого лагеря расположились паладины, после чего его осадили орки.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_14");   //Как такое возможно?! Хотя я не был в Старом лагере уже несколько лет.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_15");   //Там действительно многое могло поменяться! Но то, что я услышал от тебя, разбивает мне сердце.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_16");   //Держись, приятель! Это не самое худшее, что случилось за последние дни.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_00 " );   // Are you a fire mage?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhoYou_01_01 " );   // As you can see. What surprises you?
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_02 " );   // I don't remember meeting you at the monastery of Khorinis.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhoYou_01_03 " );   // I've been accepted into the Circle of Fire here at the colony. I don't know anything about the monastery.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_04 " );   // Interesting! And who accepted you into the Circle?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhoYou_01_05 " );   // (important) Master Corristo himself! And it is on his behalf that I am here now.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_06 " );   // But Corristo and the other Firebenders are long dead! Killed on the orders of Gomez.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhoYou_01_07 " );   // What are you talking about?! How can this be? Are you crazy?
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_08 " );   // So you don't know anything?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhoYou_01_09 " );   // What should I know?!
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_10 " );   // When the Old Mine collapsed, Gomez flew into a rage and decided to attack the New Camp.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_11 " );   // The Fire Mages were against this idea, and he simply ordered them to be killed.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhoYou_01_12 " );   // Oh Innos... Is it true?
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_13 " );   // You can be sure. And now paladins have settled in the castle of the Old Camp, after which the orcs laid siege to it.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhoYou_01_14 " );   // How is this possible?! Although I haven't been to the Old Camp for several years.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhoYou_01_15 " );   // There really could change a lot! But what I heard from you breaks my heart.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhoYou_01_16 " );   // Hold on, buddy! This is not the worst thing that has happened in recent days.
 };
 
 instance DIA_KDF_4569_AlexOne_WhatBow(C_Info)
@@ -1465,7 +1465,7 @@ instance DIA_KDF_4569_AlexOne_WhatBow(C_Info)
    condition = DIA_KDF_4569_AlexOne_WhatBow_condition;
    information = DIA_KDF_4569_AlexOne_WhatBow_info;
    permanent = FALSE;
-   description = "Зачем тебе арбалет?";
+   description = " Why do you need a crossbow? " ;
 };
 
 func int DIA_KDF_4569_AlexOne_WhatBow_condition()
@@ -1478,14 +1478,14 @@ func int DIA_KDF_4569_AlexOne_WhatBow_condition()
 
 func void DIA_KDF_4569_AlexOne_WhatBow_info()
 {
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatBow_01_00");   //Зачем тебе арбалет?
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatBow_01_01");   //Ты же маг. Разве тебе недостаточно сил магических рун, чтобы защитить себя?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_02");   //Да, я маг, но больше на словах, чем на деле...
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_03");   //К сожалению, мое обучение так и не было завершено.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_04");   //А потому мои магические способности не столь велики, как у других магов.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_05");   //Другое дело - арбалет! С раннего детства отец учил меня обращаться с ним.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_06");   //С ним я обращаюсь не хуже, чем умелый воин с мечом или маг с посохом.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatBow_01_07");   //Значит, маг-арбалетчик. Да, забавно.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatBow_01_00 " );   // Why do you need a crossbow?
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatBow_01_01 " );   // You're a mage. Don't you have enough magic rune powers to protect yourself?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatBow_01_02 " );   // Yes, I am a magician, but more in words than in deeds...
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatBow_01_03 " );   // Unfortunately, my training was never completed.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatBow_01_04 " );   // Therefore, my magical abilities are not as great as those of other magicians.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatBow_01_05 " );   // Another thing - a crossbow! From an early age, my father taught me how to handle it.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatBow_01_06 " );   // I treat him no worse than a skilled warrior with a sword or a magician with a staff.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatBow_01_07 " );   // So, a crossbow mage. Yes, it's funny.
 };
 
 instance DIA_KDF_4569_AlexOne_WhatDeal(C_Info)
@@ -1495,12 +1495,12 @@ instance DIA_KDF_4569_AlexOne_WhatDeal(C_Info)
    condition = DIA_KDF_4569_AlexOne_WhatDeal_condition;
    information = DIA_KDF_4569_AlexOne_WhatDeal_info;
    permanent = FALSE;
-   description = "Так что у тебя здесь за дела?";
+   description = " So what's your business here? " ;
 };
 
 func int DIA_KDF_4569_AlexOne_WhatDeal_condition()
 {
-   if((MIS_PashalQuest == LOG_Running) && (Npc_KnowsInfo(other,DIA_KDF_4569_AlexOne_WhoYou) == TRUE))
+   if (( MIS_PashalQuest == LOG_Running ) && ( Npc_KnowsInfo ( other , DIA_KDF_4569_AlexOne_WhoYou ) ==  TRUE ))
    {
       return TRUE;
    };
@@ -1509,28 +1509,28 @@ func int DIA_KDF_4569_AlexOne_WhatDeal_condition()
 func void DIA_KDF_4569_AlexOne_WhatDeal_info()
 {
    B_GivePlayerXP(300);
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_00");   //Так что у тебя здесь за дела?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_01");   //Эх... Теперь это уже вряд ли имеет значение.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_02");   //И все-таки, может быть, расскажешь?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_03");   //Ну хорошо. Если тебе это так интересно.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_04");   //Мастер Корристо послал меня найти в этой долине какую-либо информацию об одном древнем артефакте.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_05");   //Уж не тот ли, с помощью которого они собирались разрушить магический барьер?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_06");   //(удивленно) Да, о нем! А ты откуда об этом знаешь?
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_07");   //Мне рассказал об этом Милтен.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_08");   //Тогда тебе и так должно быть все известно. Мне больше нечего добавить.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_09");   //Но ты нашел что-нибудь?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_10");   //Самого артефакта мне, конечно, найти не удалось.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_11");   //Но я уверен, что напал на след, который может меня к нему привести.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_12");   //И что это?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_13");   //На другом берегу этого пруда, что под нами, находится заброшенный склеп.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_14");   //Могу предположить, что именно там может находиться этот артефакт!
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_15");   //Ну, или по крайней мере то, что позволит определить его точное местоположение.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_16");   //Что там может находиться?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_17");   //Ты так меня спрашиваешь, как будто я уже там побывал.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_18");   //Тогда почему бы тебе просто не сходить туда и выяснить это?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_19");   //Вход в склеп закрыт! А как его открыть, я не знаю.
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_20");   //Понятно.
-   B_LogEntry(TOPIC_PashalQuest,"Недалеко от башни Ксардаса я встретил мага Огня Лекса. Он и есть тот человек, которого Корристо послал на поиски артефакта. Лекс уверен, что разгадка местоположения этого предмета сокрыта в заброшенном склепе, что находится неподалеку, однако вход в склеп закрыт.");
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_00 " );   // So what's your business here?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_01 " );   // Eh... It hardly matters now.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_02 " );   // And yet, maybe you can tell?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_03 " );   // Okay. If you're that interested.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_04 " );   // Master Corristo sent me to find some information about an ancient artifact in this valley.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_05 " );   // Isn't that the one they were going to use to break the magic barrier?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_06 " );   // (surprised) Yes, about him! And how do you know about it?
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_07 " );   // Milten told me about it.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_08 " );   // Then you should already know everything. I have nothing more to add.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_09 " );   // But did you find anything?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_10 " );   // Of course, I could not find the artifact itself.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_11 " );   // But I'm sure I've found a trail that could lead me to it.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_12 " );   // And what is this?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_13 " );   // On the other side of this pond, below us, is an abandoned crypt.
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_14 " );   // I can assume that this artifact can be located there!
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_15 " );   // Well, or at least something that will allow us to determine its exact location.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_16 " );   // What can be there?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_17 " );   // You're asking me like I've been there before.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_18 " );   // Then why don't you just go there and find out?
+   AI_Output(self,other, " DIA_KDF_4569_AlexOne_WhatDeal_01_19 " );   // The entrance to the crypt is closed! And I don't know how to open it.
+   AI_Output(other,self, " DIA_KDF_4569_AlexOne_WhatDeal_01_20 " );   // Got it.
+   B_LogEntry(TOPIC_PashalQuest, " I met Firemage Lex near the tower of Xardas. He is the man Corristo sent to find the artifact. Lex is sure that the clue to the location of this item is hidden in an abandoned crypt nearby, but the entrance to the crypt is closed . " );
    PashalQuestPentaStep = TRUE;
 };
 
@@ -1566,7 +1566,7 @@ instance DIA_VLK_4570_Avabul_HELLO(C_Info)
 
 func int DIA_VLK_4570_Avabul_HELLO_condition()
 {
-	if((MIS_PashalQuest == LOG_Running) && (AvabulIsUp == TRUE))
+	if ((MY_PashalQuest == LOG_Running) && (AvailableIsUp ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1575,62 +1575,62 @@ func int DIA_VLK_4570_Avabul_HELLO_condition()
 func void DIA_VLK_4570_Avabul_HELLO_info()
 {
    B_GivePlayerXP(1000);
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_00");   //Кто воззвал ко мне?! Кто посмел потревожить мой священный покой?!
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_01");   //Это был я.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_02");   //(пренебрежительно) Ну конечно! Очередной смертный, который ищет для себя власти и могущества.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_03");   //Но поверь мне, они тебе абсолютно не нужны! Смерть куда вам более к лицу, жалкие вы черви...
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_04");   //Эй, не так быстро, красавица! Ответь хотя бы на один мой вопрос.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_05");   //Что?! И тебе еще хватает наглости просить меня об этом?
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_06");   //Хотя... почему бы и нет.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_07");   //Мне доставит удовольствие увидеть твои жалкие мольбы сохранить тебе твою ничтожную жизнь.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_08");   //Ты ошибаешься! Я хотел спросить совсем о другом.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_09");   //Правда?! И о чем же?
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_10");   //Об артефакте, сила которого способна управлять этим миром.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_11");   //(смеется) Ах вот оно что! Ну конечно...
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_12");   //Ты, как и тот некромант, возомнил себя великим и могущественным магом.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_13");   //И надеешься, что я скажу тебе, где его искать!
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_14");   //Что-то вроде того.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_15");   //Сама наивность...(хохочет) Ответь мне, зачем тебе он понадобился, смертный?
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_16");   //Неужели ты действительно думаешь, что сможешь совладать с могуществом этого предмета?
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_17");   //Ну, я и сам пока этого не знаю. 
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_18");   //Не знаешь что?
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_19");   //Зачем мне вообще сдался этот артефакт.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_20");   //Просто так уж получилось, что я прослышал о нем, и мой путь привел меня сюда.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_21");   //Хммм. Как интересно!
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_22");   //Знаешь, в это сложно поверить, что человек, который ищет самую могущественную реликвию этого мира, совершенно не знает, для чего она ему нужна.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_23");   //(загадочно) Но я чувствую, что ты говоришь мне правду, смертный.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_24");   //Так что я сохраню тебе жизнь и не стану превращать в бесчувственную нежить, как я это сделала с тем магом-выскочкой!
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_25");   //Премного благодарен! Может быть, заодно и на вопрос мой ответишь?
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_26");   //Артефакт, который ты ищешь, носит имя Ниврам! Его создали творцы этого мира, дабы им было сподручнее управлять им.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_27");   //Ты говоришь о Хранителях?
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_28");   //(с интересом) Ты и о них знаешь?
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_00 " );   // Who called to me?! Who dares to disturb my sacred rest?!
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_01 " );   // That was me.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_02 " );   // (disparagingly) Of course! Another mortal who seeks power and might for himself.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_03 " );   // But trust me, you absolutely don't need them! Death suits you better, you miserable worms...
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_04 " );   // Hey, not so fast, beauty! Answer at least one of my questions.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_05 " );   // What?! And you still have the audacity to ask me about it?
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_06 " );   // Though... why not.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_07 " );   // It will give me pleasure to see your pitiful pleas to spare you your miserable life.
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_08 " );   // You're wrong! I wanted to ask something completely different.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_09 " );   // Really?! And about what?
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_10 " );   // About an artifact whose power is able to control this world.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_11 " );   // (laughs) Ah, that's it! Well, of course...
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_12 " );   // You, like that necromancer, imagined yourself to be a great and powerful magician.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_13 " );   // And you hope I'll tell you where to find it!
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_14 " );   // Something like that.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_15 " );   // Naivety itself... (laughs) Tell me, why do you need it, mortal?
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_16 " );   // Do you really think you can handle the power of this item?
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_17 " );   // Well, I don't know yet myself.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_18 " );   // Don't know what?
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_19 " );   // Why did I even give up this artifact.
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_20 " );   // It just so happens that I heard about him, and my path led me here.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_21 " );   // Hmmm. How interesting!
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_22 " );   // You know, it's hard to believe that a person who is looking for the most powerful relic of this world has absolutely no idea what he needs it for.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_23 " );   // (cryptically) But I sense you're telling me the truth, mortal.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_24 " );   // So I'll spare your life and won't turn you into an insensitive undead like I did with that upstart mage!
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_25 " );   // Thank you very much! Perhaps you can answer my question at the same time?
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_26 " );   // The artifact you're looking for is named Nivram! It was created by the creators of this world, so that it would be more convenient for them to manage it.
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_27 " );   // Are you talking about Guardians?
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_28 " );   // (with interest) Do you know about them too?
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_29");   //Немного.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_30");   //Они самые! Чтобы исключить возможность использования этого артефакта кем-либо посторонним, они надежно спрятали его.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_31");   //Но где именно, никто не знает. Даже боги.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_32");   //Тогда нет смысла продолжать его поиски.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_33");   //Да, ты прав. Для тебя - абсолютно никакого.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_34");   //Однако мой хозяин уже давно хочет заполучить этот предмет.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_35");   //И он мог бы помочь тебе в его поисках. Естественно, в обмен на власть и могущество, которое вы, смертные, всегда так жаждете обрести!
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_36");   //А почему бы Белиару самому не поискать этот артефакт, если ему он так нужен? 
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_37");   //Он не хочет привлекать к себе лишнего внимания Хранителей.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_38");   //Поэтому лучше, когда некоторые вещи делаются простыми смертными, вроде тебя.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_39");   //Ты хотела сказать - грязную работу.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_40");   //(властно) Это не важно.  Важно только то, с чем ты останешься в конце этого пути. А мой хозяин предлагает немало!
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_41");   //Ну так что, ты согласен?
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_42");   //А если я не соглашусь, что тогда?
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_43");   //Тогда ты просто глупец, а я сейчас теряю с тобой время!
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_44");   //Ладно, ладно... Вижу, ты дама серьезная. Да и лишнее могущество мне не помешает.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_45");   //Я согласен!
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_46");   //Отлично! Только запомни: ты дал слово самому Белиару! И просто так от него ты теперь не сможешь отказаться.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_47");   //Давай ближе к делу.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_48");   //Хорошо, смертный. Первым делом тебе необходимо найти древнейшего из древних. Когда-его звали Янус Двуликий.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_49");   //Возможно, он что-то помнит об этом артефакте. 
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_50");   //И где мне его искать?
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_51");   //Насколько мне известно, он охраняет одну из реликвий самих Хранителей.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_52");   //А теперь ступай! Не стоит более терять времени на разговоры.
-   B_LogEntry(TOPIC_PashalQuest,"С помощью черепа могущественного демона мне удалось вызвать одну из темных жриц Белиара - Авабюл. По ее словам, даже сам Белиар желает заполучить этот артефакт! В конце концов я согласился помочь Авабюл отыскать этот артефакт для Белиара, в обмен на предложенную им власть и могущество. Теперь мне надо найти Януса Двуликого - древнейшего из древних, того, кто может что-то помнить об этом артефакте. По словам жрицы, Янус охраняет одну из реликвий Хранителей.");
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_30 " );   // They are the best! To prevent the possibility of this artifact being used by anyone else, they hid it securely.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_31 " );   // But where exactly, no one knows. Even the gods.
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_32 " );   // Then there's no point in continuing to look for it.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_33 " );   // Yes, you're right. For you, absolutely nothing.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_34 " );   // However, my master has been wanting this item for a long time.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_35 " );   // And he could help you find him. Naturally, in exchange for the power and power that you mortals are always so eager to acquire!
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_36 " );   // And why shouldn't Beliar look for this artifact himself, if he needs it so much?
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_37 " );   // He doesn't want to draw too much attention from the Guardians.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_38 " );   // So it's better when some things are done by mere mortals like you.
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_39 " );   // You mean dirty work.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_40 " );   // (imperiously) It doesn't matter. What matters is what you end up with at the end of this journey. And my master offers a lot!
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_41 " );   // So, do you agree?
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_42 " );   // And if I disagree, what then?
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_43 " );   // Then you're just a fool, and I'm wasting my time with you now!
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_44 " );   // Okay, okay... I see you're a serious lady. Yes, and extra power will not hurt me.
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_45 " );   // I agree!
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_46 " );   // Great! Just remember: you gave your word to Beliar himself! And just like that, you can’t refuse it now.
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_47 " );   // Let's get down to business.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_48 " );   // All right, mortal. First of all, you need to find the oldest of the ancients. Once, his name was Janus Two-faced.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_49 " );   // Maybe he remembers something about this artifact.
+   AI_Output(other,self, " DIA_VLK_4570_Avabul_HELLO_01_50 " );   // And where can I find it?
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_51 " );   // As far as I know, he guards one of the Guardians' own relics.
+   AI_Output(self,other, " DIA_VLK_4570_Avabul_HELLO_01_52 " );   // Now go! No more time to waste talking.
+   B_LogEntry(TOPIC_PashalQuest, " Using the skull of a powerful demon, I managed to summon one of the dark priestesses of Beliar - Avabul. According to her, even Beliar himself wants to get this artifact! In the end, I agreed to help Avabul find this artifact for Beliar, in exchange for the offer them power and might. Now I need to find Janus Two-Face - the oldest of the ancients, someone who can remember something about this artifact. According to the priestess, Janus guards one of the relics of the Guardians. " );
    AI_StopProcessInfos(self);
-   PashalQuestJanusStep = TRUE;
+   PaschalQuestJanusStep = TRUE ;
 };
 
 instance DIA_DMT_4571_Jan_EXIT(C_Info)
@@ -1670,12 +1670,12 @@ func int DIA_DMT_4571_Jan_HELLO_condition()
 
 func void DIA_DMT_4571_Jan_HELLO_info()
 {
-   AI_Output(self,other,"DIA_DMT_4571_Jan_HELLO_01_00");   //Остановись, смертный! Дальше для тебя дороги нет!
-   AI_Output(other,self,"DIA_DMT_4571_Jan_HELLO_01_01");   //Это почему?
-   AI_Output(self,other,"DIA_DMT_4571_Jan_HELLO_01_02");   //Только избранным дозволено входить сюда. А ты не из их числа!
-   AI_Output(self,other,"DIA_DMT_4571_Jan_HELLO_01_03");   //Так что поворачивай назад, если тебе дорога твоя жизнь.
-   AI_Output(other,self,"DIA_DMT_4571_Jan_HELLO_01_04");   //А если я этого не сделаю?
-   AI_Output(self,other,"DIA_DMT_4571_Jan_HELLO_01_05");   //Тогда ты умрешь. Как и остальные, кто пытался проникнуть сюда.
+   AI_Output(self,other, " DIA_DMT_4571_Jan_HELLO_01_00 " );   // Stop, mortal! There is no further way for you!
+   AI_Output(other,self, " DIA_DMT_4571_Jan_HELLO_01_01 " );   // Why is this?
+   AI_Output(self,other, " DIA_DMT_4571_Jan_HELLO_01_02 " );   // Only the chosen ones are allowed to enter here. And you are not one of them!
+   AI_Output(self,other, " DIA_DMT_4571_Jan_HELLO_01_03 " );   // So turn back if you value your life.
+   AI_Output(other,self, " DIA_DMT_4571_Jan_HELLO_01_04 " );   // What if I don't?
+   AI_Output(self,other, " DIA_DMT_4571_Jan_HELLO_01_05 " );   // Then you will die. So did the others who tried to get in here.
 };
 
 instance DIA_DMT_4571_Jan_WRATH(C_Info)
@@ -1685,7 +1685,7 @@ instance DIA_DMT_4571_Jan_WRATH(C_Info)
    condition = DIA_DMT_4571_Jan_WRATH_condition;
    information = DIA_DMT_4571_Jan_WRATH_info;
    permanent = FALSE;
-   description = "Полагаешь, что я с тобой не справлюсь?";
+   description = " You think I can't handle you? " ;
 };
 
 func int DIA_DMT_4571_Jan_WRATH_condition()
@@ -1698,24 +1698,24 @@ func int DIA_DMT_4571_Jan_WRATH_condition()
 
 func void DIA_DMT_4571_Jan_WRATH_info()
 {
-   AI_Output(other,self,"DIA_DMT_4571_Jan_WRATH_01_00");   //Полагаешь, что я с тобой не справлюсь?
-   AI_Output(self,other,"DIA_DMT_4571_Jan_WRATH_01_01");   //(смеется) Ты можешь попробовать, смертный!
-   AI_Output(self,other,"DIA_DMT_4571_Jan_WRATH_01_02");   //Но ты только потеряешь свое время и жизнь в жалких попытках одолеть меня.
-   AI_Output(self,other,"DIA_DMT_4571_Jan_WRATH_01_03");   //Те, кто поставил меня хранить этот путь, наделили меня огромной силой и могуществом.
-   AI_Output(self,other,"DIA_DMT_4571_Jan_WRATH_01_04");   //И сделали одним из бессмертных Стражей Вечности!
-   AI_Output(self,other,"DIA_DMT_4571_Jan_WRATH_01_05");   //Однако такому жалкому червю, как ты, это наверняка ни о чем не говорит. 
-   AI_Output(self,other,"DIA_DMT_4571_Jan_WRATH_01_06");   //Так что лучше поворачивай назад!
-   AI_Output(self,other,"DIA_DMT_4571_Jan_WRATH_01_07");   //Здесь ты не найдешь ничего, кроме своей собственной смерти.
+   AI_Output(other,self, " DIA_DMT_4571_Jan_WRATH_01_00 " );   // Think I can't handle you?
+   AI_Output(self,other, " DIA_DMT_4571_Jan_WRATH_01_01 " );   // (laughs) You can try, mortal!
+   AI_Output(self,other, " DIA_DMT_4571_Jan_WRATH_01_02 " );   // But you'll only waste your time and life in a pathetic attempt to defeat me.
+   AI_Output(self,other, " DIA_DMT_4571_Jan_WRATH_01_03 " );   // Those who put me in charge of this path endowed me with great strength and power.
+   AI_Output(self,other, " DIA_DMT_4571_Jan_WRATH_01_04 " );   // And made one of the immortal Guardians of Eternity!
+   AI_Output(self,other, " DIA_DMT_4571_Jan_WRATH_01_05 " );   // However, to a pathetic worm like you, this probably means nothing.
+   AI_Output(self,other, " DIA_DMT_4571_Jan_WRATH_01_06 " );   // So you better turn back!
+   AI_Output(self,other, " DIA_DMT_4571_Jan_WRATH_01_07 " );   // Here you will find nothing but your own death.
 };
 
-instance DIA_DMT_4571_Jan_Pashal(C_Info)
+instance DIA_DMT_4571_Jan_Pashal (C_Info)
 {
    npc = DMT_4571_Jan;
    nr = 1;
    condition = DIA_DMT_4571_Jan_Pashal_condition;
    information = DIA_DMT_4571_Jan_Pashal_info;
    permanent = FALSE;
-   description = "Так ты и есть Янус Двуликий?";
+   description = " So you are Janus Two-Face? " ;
 };
 
 func int DIA_DMT_4571_Jan_Pashal_condition()
@@ -1729,20 +1729,20 @@ func int DIA_DMT_4571_Jan_Pashal_condition()
 func void DIA_DMT_4571_Jan_Pashal_info()
 {
    B_GivePlayerXP(1500);
-   AI_Output(other,self,"DIA_DMT_4571_Jan_Pashal_01_00");   //Так ты и есть Янус Двуликий? А я ведь искал тебя!
-   AI_Output(self,other,"DIA_DMT_4571_Jan_Pashal_01_01");   //Ты искал меня, смертный? Но зачем, позволь узнать?
-   AI_Output(other,self,"DIA_DMT_4571_Jan_Pashal_01_02");   //Мне рассказала про тебя жрица Белиара по имени Авабюл.
-   AI_Output(other,self,"DIA_DMT_4571_Jan_Pashal_01_03");   //По ее словам, ты можешь знать про судьбу одного из древнейших артефактов.
-   AI_Output(other,self,"DIA_DMT_4571_Jan_Pashal_01_04");   //Его называют Ниврам. Ты что-нибудь слышал о нем?
-   AI_Output(self,other,"DIA_DMT_4571_Jan_Pashal_01_05");   //Никогда бы не подумал, что когда-нибудь услышу подобный вопрос от обычного человека.
-   AI_Output(self,other,"DIA_DMT_4571_Jan_Pashal_01_06");   //Выходит, что ты посланник Белиара, раз тебя прислала сама Авабюл.
-   AI_Output(other,self,"DIA_DMT_4571_Jan_Pashal_01_07");   //А разве это что-то меняет?
-   AI_Output(self,other,"DIA_DMT_4571_Jan_Pashal_01_08");   //Нет, абсолютно ничего.
-   AI_Output(self,other,"DIA_DMT_4571_Jan_Pashal_01_09");   //Но раз сильные мира сего доверяют тебе хранить подобные тайны, то, по всей видимости, это не просто так.
-   AI_Output(other,self,"DIA_DMT_4571_Jan_Pashal_01_10");   //Тогда, может быть, расскажешь мне про этот артефакт?
-   AI_Output(self,other,"DIA_DMT_4571_Jan_Pashal_01_11");   //Рассказ будет коротким. Ибо ответ на твой вопрос находится за этими дверьми.
-   AI_Output(self,other,"DIA_DMT_4571_Jan_Pashal_01_12");   //Однако, как я уже сказал, ты не войдешь в них до тех пор, пока я сам не решу впустить тебя.
-   B_LogEntry(TOPIC_PashalQuest,"Я отыскал Януса Двуликого. Он сказал, что ответ на интересующий меня вопрос находится за огромными вратами, которые он охраняет. Правда, я не смогу пройти через них до тех пор, пока сам Янус не разрешит мне сделать это.");
+   AI_Output(other,self, " DIA_DMT_4571_Jan_Pashal_01_00 " );   // So you are Janus Two-faced? And I was looking for you!
+   AI_Output(self,other, " DIA_DMT_4571_Jan_Pashal_01_01 " );   // You were looking for me, mortal? But why, may I ask?
+   AI_Output(other,self, " DIA_DMT_4571_Jan_Pashal_01_02 " );   // A priestess of Beliar named Avabul told me about you.
+   AI_Output(other,self, " DIA_DMT_4571_Jan_Pashal_01_03 " );   // According to her, you may know the fate of one of the oldest artifacts.
+   AI_Output(other,self, " DIA_DMT_4571_Jan_Pashal_01_04 " );   // They call him Nivram. Have you heard anything about him?
+   AI_Output(self,other, " DIA_DMT_4571_Jan_Pashal_01_05 " );   // I never would have thought that I would ever hear such a question from an ordinary person.
+   AI_Output(self,other, " DIA_DMT_4571_Jan_Pashal_01_06 " );   // It turns out that you are the messenger of Beliar, since Avabul herself sent you.
+   AI_Output(other,self, " DIA_DMT_4571_Jan_Pashal_01_07 " );   // Does this change anything?
+   AI_Output(self,other, " DIA_DMT_4571_Jan_Pashal_01_08 " );   // No, absolutely nothing.
+   AI_Output(self,other, " DIA_DMT_4571_Jan_Pashal_01_09 " );   // But if the powers that be trust you to keep such secrets, then, apparently, this is not just.
+   AI_Output(other,self, " DIA_DMT_4571_Jan_Pashal_01_10 " );   // Then maybe you can tell me about this artifact?
+   AI_Output(self,other, " DIA_DMT_4571_Jan_Pashal_01_11 " );   // The story will be short. For the answer to your question is behind these doors.
+   AI_Output(self,other, " DIA_DMT_4571_Jan_Pashal_01_12 " );   // However, as I said, you will not enter them until I myself decide to let you in.
+   B_LogEntry(TOPIC_PashalQuest, " I found Janus Two-Face. He said that the answer to my question lies behind the huge gate he guards. However, I won't be able to pass through it until Janus himself gives me permission to do so. " );
 };
 
 instance DIA_DMT_4571_Jan_Dual(C_Info)
@@ -1752,7 +1752,7 @@ instance DIA_DMT_4571_Jan_Dual(C_Info)
    condition = DIA_DMT_4571_Jan_Dual_condition;
    information = DIA_DMT_4571_Jan_Dual_info;
    permanent = FALSE;
-   description = "Почему тебя называют Двуликим?";
+   description = " Why are you called Two-Face? " ;
 };
 
 func int DIA_DMT_4571_Jan_Dual_condition()
@@ -1765,13 +1765,13 @@ func int DIA_DMT_4571_Jan_Dual_condition()
 
 func void DIA_DMT_4571_Jan_Dual_info()
 {
-	AI_Output(other,self,"DIA_DMT_4571_Jan_Dual_01_00");   //Почему тебя называют Двуликим?
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Dual_01_01");   //Как ты, наверное, уже заметил, смертный, я ношу золотую маску.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Dual_01_02");   //На протяжении всей моей жизни она скрывала мое истинное лицо от людей.
+	AI_Output(other,self, " DIA_DMT_4571_Jan_Dual_01_00 " );   // Why are you called Two-Face?
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Dual_01_01 " );   // As you may have noticed, mortal, I wear a golden mask.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Dual_01_02 " );   // Throughout my life, she hid my true face from people.
 	AI_Output(other,self,"DIA_DMT_4571_Jan_Dual_01_03");   //Зачем?
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Dual_01_04");   //На то были свои причины. Однако именно поэтому меня и прозвали Двуликим.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Dual_01_05");   //Правда, то, что оно скрывает сейчас, уже трудно назвать лицом.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Dual_01_06");   //Но, как видишь, привычка носить маску осталась до сих пор.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Dual_01_04 " );   // There were reasons for that. However, that is why they called me Two-Face.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Dual_01_05 " );   // True, what it hides now can hardly be called a face.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Dual_01_06 " );   // But, as you can see, the habit of wearing a mask has remained to this day.
 };
 
 instance DIA_DMT_4571_Jan_His(C_Info)
@@ -1781,7 +1781,7 @@ instance DIA_DMT_4571_Jan_His(C_Info)
    condition = DIA_DMT_4571_Jan_His_condition;
    information = DIA_DMT_4571_Jan_His_info;
    permanent = FALSE;
-   description = "А кем ты был при жизни?";
+   description = " Who were you when you were alive? " ;
 };
 
 func int DIA_DMT_4571_Jan_His_condition()
@@ -1794,14 +1794,14 @@ func int DIA_DMT_4571_Jan_His_condition()
 
 func void DIA_DMT_4571_Jan_His_info()
 {
-	AI_Output(other,self,"DIA_DMT_4571_Jan_His_01_00");   //А кем ты был при жизни?
-	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_01");   //Я был охотником на драконов.
-	AI_Output(other,self,"DIA_DMT_4571_Jan_His_01_02");   //Ты сражался с драконами?
-	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_03");   //И не один раз. В те времена, когда я жил, драконы не были такой уж редкостью, как сейчас.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_04");   //В одном из таких сражений я и погиб.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_05");   //Правда, как видишь, мое пребывание в этом мире на этом не закончилось. Теперь я страж этих врат.
-	AI_Output(other,self,"DIA_DMT_4571_Jan_His_01_06");   //А что сокрыто за ними?
-	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_07");   //Ты сам об этом узнаешь, - если, конечно, окажешься достоин этой чести.
+	AI_Output(other,self, " DIA_DMT_4571_Jan_His_01_00 " );   // And who were you in life?
+	AI_Output(self,other, " DIA_DMT_4571_Jan_His_01_01 " );   // I was a dragon hunter.
+	AI_Output(other,self, " DIA_DMT_4571_Jan_His_01_02 " );   // Have you fought dragons?
+	AI_Output(self,other, " DIA_DMT_4571_Jan_His_01_03 " );   // And more than once. In the days when I lived, dragons weren't as rare as they are now.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_His_01_04 " );   // In one of these battles, I died.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_His_01_05 " );   // True, as you can see, my stay in this world did not end there. Now I am the guardian of these gates.
+	AI_Output(other,self, " DIA_DMT_4571_Jan_His_01_06 " );   // And what is hidden behind them?
+	AI_Output(self,other, " DIA_DMT_4571_Jan_His_01_07 " );   // You yourself will find out about this - if, of course, you prove yourself worthy of this honor.
 };
 
 instance DIA_DMT_4571_Jan_Proof(C_Info)
@@ -1811,7 +1811,7 @@ instance DIA_DMT_4571_Jan_Proof(C_Info)
    condition = DIA_DMT_4571_Jan_Proof_condition;
    information = DIA_DMT_4571_Jan_Proof_info;
    permanent = FALSE;
-   description = "Что я должен сделать, чтобы убедить тебя?";
+   description = " What should I do to convince you? " ;
 };
 
 func int DIA_DMT_4571_Jan_Proof_condition()
@@ -1824,27 +1824,27 @@ func int DIA_DMT_4571_Jan_Proof_condition()
 
 func void DIA_DMT_4571_Jan_Proof_info()
 {
-	AI_Output(other,self,"DIA_DMT_4571_Jan_Proof_01_00");   //Что я должен сделать, чтобы убедить тебя?
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_01");   //Ты должен будешь пройти мое испытание. Но это будет довольно непросто.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_02");   //Ты действительно уверен в том, что готов к нему?
-	AI_Output(other,self,"DIA_DMT_4571_Jan_Proof_01_03");   //Абсолютно! Давай, говори уже, - в чем оно заключается?
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_04");   //Хорошо. Поскольку ты являешься посланником Белиара, я попрошу тебя принести мне душу его Избранного!
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_05");   //Душу того, кто являет собой его суть, его силу и его власть в этом мире.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_06");   //Уж если Темный бог так хочет заполучить этот артефакт, то ему придется дорого заплатить за это.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_07");   //В ином случае эти двери никогда не откроются перед тобой.
+	AI_Output(other,self, " DIA_DMT_4571_Jan_Proof_01_00 " );   // What should I do to convince you?
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_01 " );   // You will have to pass my test. But it won't be easy.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_02 " );   // Are you really sure you're ready for it?
+	AI_Output(other,self, " DIA_DMT_4571_Jan_Proof_01_03 " );   // Absolutely! Come on, tell me already - what is it?
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_04 " );   // Good. Since you are the messenger of Beliar, I will ask you to bring me the soul of his Chosen One!
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_05 " );   // The soul of the one who is his essence, his strength and his power in this world.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_06 " );   // If the Dark God really wants to get this artifact, then he will have to pay dearly for it.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_07 " );   // Otherwise, these doors will never open for you.
 
 	if(UndeadDragonIsDead == FALSE)
 	{
-		AI_Output(other,self,"DIA_DMT_4571_Jan_Proof_01_08");   //Хорошо. Где мне его искать?
-		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_09");   //В одном из священных храмов самого Белиара, конечно! Где же еще.
-		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_10");   //Но я сомневаюсь, что тебе удастся добраться хотя бы до одного из них.
-		AI_Output(other,self,"DIA_DMT_4571_Jan_Proof_01_11");   //Ну, это мы еще посмотрим. Сюда ведь я как-то добрался.
-		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_12");   //Что, по правде говоря, меня очень сильно удивляет.
-		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_13");   //Однако ты не производишь впечатление того, кто способен одолеть одно из самых могущественных созданий этого мира.
-		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_14");   //И изменю я свое мнение только тогда, когда увижу перед собой душу этого существа.
+		AI_Output(other,self, " DIA_DMT_4571_Jan_Proof_01_08 " );   // Good. Where can I look for it?
+		AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_09 " );   // In one of the sacred temples of Beliar himself, of course! Where else.
+		AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_10 " );   // But I doubt you'll be able to get to even one of them.
+		AI_Output(other,self, " DIA_DMT_4571_Jan_Proof_01_11 " );   // Well, we'll see about that later. Somehow I got here.
+		AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_12 " );   // Which, to tell the truth, surprises me a lot.
+		AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_13 " );   // However, you don't come across as someone capable of defeating one of the most powerful creatures in this world.
+		AI_Output(self,other, " DIA_DMT_4571_Jan_Proof_01_14 " );   // And I will change my mind only when I see the soul of this creature in front of me.
 	};
 
-	B_LogEntry(TOPIC_PashalQuest,"Янус пропустит меня, если я принесу ему душу Избранного самого Белиара!");
+	B_LogEntry(TOPIC_PashalQuest, " Janus will let me through if I bring him the soul of Beliar's Chosen One! " );
 };
 
 instance DIA_DMT_4571_Jan_ProofDone(C_Info)
@@ -1854,7 +1854,7 @@ instance DIA_DMT_4571_Jan_ProofDone(C_Info)
    condition = DIA_DMT_4571_Jan_ProofDone_condition;
    information = DIA_DMT_4571_Jan_ProofDone_info;
    permanent = FALSE;
-   description = "Вот душа Избранного Белиара!";
+   description = " Here is the soul of Chosen Beliar! " ;
 };
 
 func int DIA_DMT_4571_Jan_ProofDone_condition()
@@ -1868,13 +1868,13 @@ func int DIA_DMT_4571_Jan_ProofDone_condition()
 func void DIA_DMT_4571_Jan_ProofDone_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(other,self,"DIA_DMT_4571_Jan_ProofDone_01_00");   //Вот душа Избранного Белиара!
-	AI_Output(self,other,"DIA_DMT_4571_Jan_ProofDone_01_01");   //Воистину это она. Я преклоняюсь перед тобой, о великий воин!
-	AI_Output(other,self,"DIA_DMT_4571_Jan_ProofDone_01_02");   //Теперь ты пропустишь меня?
-	AI_Output(self,other,"DIA_DMT_4571_Jan_ProofDone_01_03");   //Как и обещал. Просто возложи принесенную тобой душу на алтарь, что позади тебя.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_ProofDone_01_04");   //После этого двери откроются, и ты сможешь пройти.
-	B_LogEntry(TOPIC_PashalQuest,"Я принес Янусу душу. Теперь нужно возложить ее на алтарь, что находится рядом, и после этого двери должны открыться.");
-	PashalQuestEgezartStep = TRUE;
+	AI_Output(other,self, " DIA_DMT_4571_Jan_ProofDone_01_00 " );   // Here is the soul of the Chosen Beliar!
+	AI_Output(self,other, " DIA_DMT_4571_Jan_ProofDone_01_01 " );   // Truly this is it. I bow before you, O great warrior!
+	AI_Output(other,self, " DIA_DMT_4571_Jan_ProofDone_01_02 " );   // Now will you let me through?
+	AI_Output(self,other, " DIA_DMT_4571_Jan_ProofDone_01_03 " );   // As promised. Just place the soul you brought on the altar behind you.
+	AI_Output(self,other, " DIA_DMT_4571_Jan_ProofDone_01_04 " );   // After that, the doors will open and you can go through.
+	B_LogEntry(TOPIC_PashalQuest, " I brought a soul to Janus. Now you need to put it on the altar that is nearby, and after that the doors should open. " );
+	PaschalQuestEgezartStep = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
@@ -1918,34 +1918,34 @@ func int DIA_DMT_4572_Trazege_HELLO_condition()
 
 func void DIA_DMT_4572_Trazege_HELLO_info()
 {
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_00");   //Что тебе здесь надо?! И как ты вообще попал сюда?
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_01");   //Через магический портал.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_02");   //(ухмыляясь) Об этом я уже и сам догадался, умник.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_03");   //Меня интересует другое - какого дьявола Янус впустил тебя сюда?!
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_04");   //Я выполнил его испытание и тем самым доказал, что достоин этого.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_05");   //Достоин? И что же ты сделал, герой?
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_06");   //Я убил Избранного самого Белиара! Разве этого мало?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_07");   //(небрежно) По правде говоря, меня это не особо впечатляет.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_00 " );   // What do you want here?! And how did you even get here?
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_HELLO_01_01 " );   // Through a magical portal.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_02 " );   // (grinning) I figured that out myself, smart guy.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_03 " );   // I'm interested in something else - why the hell did Janus let you in here?!
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_HELLO_01_04 " );   // I passed his test and thus proved that I am worthy of it.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_05 " );   // Worthy? And what did you do, hero?
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_HELLO_01_06 " );   // I killed the Chosen One of Beliar himself! Is this not enough?
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_07 " );   // (carelessly) To be honest, I'm not that impressed.
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_08");   //Почему?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_09");   //Я уже привык к тому, что его избранники не особо-то и долго живут в этом мире.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_10");   //Обязательно находится тот, кто с завидным постоянством отправляет их обратно к своему хозяину в царство Тьмы!
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_11");   //Так что ты не первый и не последний, кто сделал это.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_12");   //А сам Белиар уже давно подыскал себе новую замену. Так что видишь - история повторяется вновь!
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_13");   //И кто же теперь его избранный?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_14");   //Насколько мне известно, Ксардас, могущественный темный маг.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_15");   //Что же. Посмотрим, на сколько его хватит.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_16");   //Но хватит уже пустой болтовни! Если ты хотел заслужить мое внимание, то ты это сделал.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_17");   //А теперь отвечай немедленно, зачем ты пожаловал сюда?
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_09 " );   // I'm already used to the fact that his chosen ones do not live very long in this world.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_10 " );   // Be sure to find someone who, with enviable constancy, sends them back to their master in the kingdom of Darkness!
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_11 " );   // So you're not the first or the last to do this.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_12 " );   // And Beliar himself has long been looking for a new replacement. So you see - history repeats itself again!
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_HELLO_01_13 " );   // And who is his chosen one now?
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_14 " );   // As far as I know, Xardas is a powerful dark mage.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_15 " );   // Well. Let's see how long it lasts.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_16 " );   // But enough of the empty talk! If you wanted to earn my attention, then you did it.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_HELLO_01_17 " );   // Now answer immediately, why did you come here?
 };
 
-instance DIA_DMT_4572_Trazege_GiveMePower(C_Info)
+instance DIA_DMT_4572_Trazege_GiveMePower (C_Info)
 {
    npc = DMT_4572_Trazege;
    nr = 1;
    condition = DIA_DMT_4572_Trazege_GiveMePower_condition;
    information = DIA_DMT_4572_Trazege_GiveMePower_info;
    permanent = FALSE;
-   description = "Я ищу один артефакт.";
+   description = " I'm looking for one artifact. " ;
 };
 
 func int DIA_DMT_4572_Trazege_GiveMePower_condition()
@@ -1959,22 +1959,22 @@ func int DIA_DMT_4572_Trazege_GiveMePower_condition()
 func void DIA_DMT_4572_Trazege_GiveMePower_info()
 {
 	B_GivePlayerXP(5000);
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_GiveMePower_01_00");   //Я ищу один артефакт. Его называют Ниврам.
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_GiveMePower_01_01");   //Насколько я знаю, с его помощью...
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_02");   //Можешь дальше не продолжать. Я уже и так все понял.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_03");   //Ты, видимо, один из тех, кто с помощью него хочет заполучить безграничную власть и могущество в этом мире.
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_GiveMePower_01_04");   //Ну, не совсем. Его хочет заполучить Белиар.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_05");   //(смеется) Кем возомнил себя этот жалкий божок!
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_06");   //Никто - ни он, ни его брат Иннос никогда не получат этот артефакт.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_07");   //Они слишком алчны и самолюбивы, чтобы обладать его безграничной властью.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_08");   //Возможно, я бы отдал его Аданосу, но он слишком мудр, чтобы принять этот дар.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_09");   //Поэтому, если ты не возражаешь, я оставлю его себе.
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_GiveMePower_01_10");   //А тебе он зачем?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_12");   //С помощью этого артефакта я слежу за балансом этого мира, исправляя ошибки все тех же богов.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_13");   //Я тот, благодаря кому этот мир еще живет и дышит! И ты в том числе.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_14");   //Поэтому он останется здесь до тех пор, пока не придет время разрушить этот мир и возродить его заново.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_15");   //И уж поверь мне, так оно и будет!
-	B_LogEntry(TOPIC_PashalQuest,"Внутри храма я встретил Эгезарта, стража интересующего меня артефакта. Как и ожидалось, он не захотел мне его отдавать.");
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_GiveMePower_01_00 " );   // I'm looking for one artifact. It is called Nivram.
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_GiveMePower_01_01 " );   // As far as I know, with it...
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_02 " );   // You don't have to continue. I already understood everything.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_03 " );   // You, apparently, are one of those who, with the help of it, want to get unlimited power and power in this world.
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_GiveMePower_01_04 " );   // Well, not really. Beliar wants to get him.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_05 " );   // (laughs) Who does this miserable god think he is!
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_06 " );   // No one - neither he nor his brother Innos - will ever receive this artifact.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_07 " );   // They are too greedy and selfish to wield his unlimited power.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_08 " );   // Perhaps I would give it to Adanos, but he is too wise to accept this gift.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_09 " );   // So if you don't mind, I'll keep it for myself.
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_GiveMePower_01_10 " );   // Why do you need it?
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_12 " );   // With the help of this artifact, I monitor the balance of this world, correcting the mistakes of all the same gods.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_13 " );   // I am the one thanks to whom this world still lives and breathes! And you including.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_14 " );   // Therefore, he will remain here until the time comes to destroy this world and rebuild it anew.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_GiveMePower_01_15 " );   // And believe me, it will be so!
+	B_LogEntry(TOPIC_PashalQuest, " Inside the temple, I met Egezart, the guardian of the artifact I was interested in. As expected, he didn't want to give it to me. " );
 };
 
 instance DIA_DMT_4572_Trazege_NoAtAll(C_Info)
@@ -1984,7 +1984,7 @@ instance DIA_DMT_4572_Trazege_NoAtAll(C_Info)
    condition = DIA_DMT_4572_Trazege_NoAtAll_condition;
    information = DIA_DMT_4572_Trazege_NoAtAll_info;
    permanent = FALSE;
-   description = "А если я заберу его у тебя силой?";
+   description = " What if I take it from you by force? " ;
 };
 
 func int DIA_DMT_4572_Trazege_NoAtAll_condition()
@@ -1997,14 +1997,14 @@ func int DIA_DMT_4572_Trazege_NoAtAll_condition()
 
 func void DIA_DMT_4572_Trazege_NoAtAll_info()
 {
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_NoAtAll_01_00");   //А если я заберу его у тебя силой?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_NoAtAll_01_01");   //(смеется) Глупец!
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_NoAtAll_01_02");   //Неужели ты полагаешь, что твое оружие или магия способны причинить мне вред?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_NoAtAll_01_03");   //Мне же достаточно только подумать, и ты прямо тут умрешь в ужасных муках.
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_NoAtAll_01_00 " );   // What if I take it from you by force?
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_NoAtAll_01_01 " );   // (laughs) Stupid!
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_NoAtAll_01_02 " );   // Do you think your weapons or magic can harm me?
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_NoAtAll_01_03 " );   // I just need to think, and you will die in terrible agony right here.
 	AI_PlayAni(hero,"T_INSANE");
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_NoAtAll_01_04");   //Ну как, теперь ты понимаешь всю нелепость своей идеи?
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_NoAtAll_01_05");   //Хорошо, я все понял! Только больше так не делай.
-	B_LogEntry(TOPIC_PashalQuest,"Я собирался силой отобрать артефакт у Эгезарта, но вовремя понял, что этот бой мне не выиграть никогда.");
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_NoAtAll_01_04 " );   // Well, now you understand all the absurdity of your idea?
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_NoAtAll_01_05 " );   // Ok, I got it! Just don't do it again.
+	B_LogEntry(TOPIC_PashalQuest, " I was going to take the artifact from Egezart by force, but I realized in time that I would never win this fight. " );
 };
 
 instance DIA_DMT_4572_Trazege_BuyGift(C_Info)
@@ -2014,7 +2014,7 @@ instance DIA_DMT_4572_Trazege_BuyGift(C_Info)
    condition = DIA_DMT_4572_Trazege_BuyGift_condition;
    information = DIA_DMT_4572_Trazege_BuyGift_info;
    permanent = FALSE;
-   description = "И что мне теперь делать?";
+   description = " What should I do now? " ;
 };
 
 func int DIA_DMT_4572_Trazege_BuyGift_condition()
@@ -2027,26 +2027,26 @@ func int DIA_DMT_4572_Trazege_BuyGift_condition()
 
 func void DIA_DMT_4572_Trazege_BuyGift_info()
 {
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_BuyGift_01_00");   //И что мне теперь делать?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_01_01");   //Тебе лучше уйти и больше никогда сюда не возвращаться!
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_01_02");   //Артефакт, что ты искал, останется тут навсегда.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_01_03");   //Ну или, по крайней мере, до тех пор, пока его Создатели сами не решат его дальнейшую судьбу.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_01_04");   //Что же касается тебя... То ты наверняка за все это время проделал очень долгий и опасный путь.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_01_05");   //Все это, безусловно, заслуживает уважения. Поэтому с пустыми руками я тебя не отпущу.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_01_06");   //Выбирай свою награду, смертный. И будь мудр в своем решении.
-	B_LogEntry(TOPIC_PashalQuest,"Я смирился с тем, что мне никогда не заполучить этот предмет. Он навсегда останется тут, внутри этого храма. Однако я не ушел оттуда с пустыми руками - Эгезарт преподнес мне дар за то, что я смог добраться до него. Думаю, на этом стоит закончить эту историю.");
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_BuyGift_01_00 " );   // And what should I do now?
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_01_01 " );   // You'd better leave and never come back here again!
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_01_02 " );   // The artifact you were looking for will be here forever.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_01_03 " );   // Well, or, at least, until its Creators themselves decide its future fate.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_01_04 " );   // As for you... You must have traveled a very long and dangerous path during all this time.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_01_05 " );   // All this, of course, deserves respect. Therefore, with empty hands, I will not let you go.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_01_06 " );   // Choose your reward, mortal. And be wise in your decision.
+	B_LogEntry(TOPIC_PashalQuest, " I resigned myself to the fact that I will never get this item. It will forever remain here, inside this temple. However, I did not leave there empty-handed - Egezart gave me a gift for being able to get to it. I think this is the end of this story. " );
    	Info_ClearChoices(DIA_DMT_4572_Trazege_BuyGift);
-   	Info_AddChoice(DIA_DMT_4572_Trazege_BuyGift,"Даруй мне жизнь и выносливость!",DIA_DMT_4572_Trazege_BuyGift_Hp);
-   	Info_AddChoice(DIA_DMT_4572_Trazege_BuyGift,"Даруй мне мудрость и знания!",DIA_DMT_4572_Trazege_BuyGift_Mana);
-   	Info_AddChoice(DIA_DMT_4572_Trazege_BuyGift,"Сделай меня невероятно ловким!",DIA_DMT_4572_Trazege_BuyGift_Dex);
-   	Info_AddChoice(DIA_DMT_4572_Trazege_BuyGift,"Надели меня огромной силой!",DIA_DMT_4572_Trazege_BuyGift_Str);
+   	Info_AddChoice(DIA_DMT_4572_Trazege_BuyGift, " Give me life and stamina! " ,DIA_DMT_4572_Trazege_BuyGift_Hp);
+   	Info_AddChoice(DIA_DMT_4572_Trazege_BuyGift, " Give me wisdom and knowledge! " ,DIA_DMT_4572_Trazege_BuyGift_Mana);
+   	Info_AddChoice(DIA_DMT_4572_Trazege_BuyGift, " Make me incredibly dexterous! " ,DIA_DMT_4572_Trazege_BuyGift_Dex);
+   	Info_AddChoice(DIA_DMT_4572_Trazege_BuyGift, " Give me great power! " ,DIA_DMT_4572_Trazege_BuyGift_Str);
 };
 
 func void DIA_DMT_4572_Trazege_BuyGift_Str()
 {
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_BuyGift_Str_01_00");   //Надели меня огромной силой!
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_BuyGift_Str_01_00 " );   // Grant me great power!
 	B_RaiseAttribute_Bonus(other,ATR_STRENGTH,50);
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Str_01_01");   //Как скажешь. Ты сделал свой выбор! Теперь прощай.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_Str_01_01 " );   // As you say. You made your choice! Now goodbye.
 	MIS_PashalQuest = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_PashalQuest,LOG_SUCCESS);
 	AI_StopProcessInfos(self);
@@ -2054,9 +2054,9 @@ func void DIA_DMT_4572_Trazege_BuyGift_Str()
 
 func void DIA_DMT_4572_Trazege_BuyGift_Dex()
 {
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_BuyGift_Dex_01_00");   //Сделай меня невероятно ловким!
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_BuyGift_Dex_01_00 " );   // Make me incredibly dexterous!
 	B_RaiseAttribute_Bonus(other,ATR_DEXTERITY,50);
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Dex_01_01");   //Как скажешь. Ты сделал свой выбор! Теперь прощай.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_Dex_01_01 " );   // As you say. You made your choice! Now goodbye.
 	MIS_PashalQuest = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_PashalQuest,LOG_SUCCESS);
 	AI_StopProcessInfos(self);
@@ -2064,12 +2064,12 @@ func void DIA_DMT_4572_Trazege_BuyGift_Dex()
 
 func void DIA_DMT_4572_Trazege_BuyGift_Mana()
 {
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_BuyGift_Mana_01_00");   //Даруй мне мудрость и знания!
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_BuyGift_Mana_01_00 " );   // Grant me wisdom and knowledge!
 	B_RaiseAttribute_Bonus(other,ATR_MANA_MAX,150);
 	Npc_ChangeAttribute(other,ATR_MANA,150);
 	ATR_INTELLECT += 20;
 	Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Mana_01_01");   //Как скажешь. Ты сделал свой выбор! Теперь прощай.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_Mana_01_01 " );   // As you say. You made your choice! Now goodbye.
 	MIS_PashalQuest = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_PashalQuest,LOG_SUCCESS);
 	AI_StopProcessInfos(self);
@@ -2079,7 +2079,7 @@ func void DIA_DMT_4572_Trazege_BuyGift_Hp()
 {
 	var int TempStaminaMax;
 
-	AI_Output(other,self,"DIA_DMT_4572_Trazege_BuyGift_Hp_01_00");   //Даруй мне жизнь и выносливость!
+	AI_Output(other,self, " DIA_DMT_4572_Trazege_BuyGift_Hp_01_00 " );   // Grant me life and stamina!
 	B_RaiseAttribute(other,ATR_HITPOINTS_MAX,500);
 	Npc_ChangeAttribute(other,ATR_HITPOINTS,500);
 
@@ -2095,7 +2095,7 @@ func void DIA_DMT_4572_Trazege_BuyGift_Hp()
 		Npc_SetTalentSkill(hero,NPC_TALENT_STAMINA,ATR_STAMINA_MAX[0]);
 	};
 
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Hp_01_01");   //Как скажешь. Ты сделал свой выбор! Теперь прощай.
+	AI_Output(self,other, " DIA_DMT_4572_Trazege_BuyGift_Hp_01_01 " );   // As you say. You made your choice! Now goodbye.
 	MIS_PashalQuest = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_PashalQuest,LOG_SUCCESS);
 	AI_StopProcessInfos(self);
@@ -2138,12 +2138,12 @@ func int DIA_KDW_4573_Oddler_HELLO_condition()
 
 func void DIA_KDW_4573_Oddler_HELLO_info()
 {
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_HELLO_01_00");   //Приветствую тебя, путник. Ты заблудился?
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_HELLO_01_01");   //С чего ты взял?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_HELLO_01_02");   //Это место слишком опасно для обычных прогулок.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_HELLO_01_03");   //Никто, будучи в здравом уме, просто так не решится прийти сюда.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_HELLO_01_04");   //Следовательно, ты либо заблудился, либо, возможно, что-то ищешь.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_HELLO_01_05");   //И это что-то настолько важно для тебя, что ты готов рискнуть своей жизнью ради этого.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_HELLO_01_00 " );   // Greetings, traveler. Are you lost?
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_HELLO_01_01 " );   // Where did you get it from?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_HELLO_01_02 " );   // This place is too dangerous for ordinary walks.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_HELLO_01_03 " );   // No one in their right mind would dare to come here just like that.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_HELLO_01_04 " );   // Therefore, you are either lost or perhaps looking for something.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_HELLO_01_05 " );   // And it's something so important to you that you're willing to risk your life for it.
 };
 
 instance DIA_KDW_4573_Oddler_WhoYou(C_Info)
@@ -2153,7 +2153,7 @@ instance DIA_KDW_4573_Oddler_WhoYou(C_Info)
    condition = DIA_KDW_4573_Oddler_WhoYou_condition;
    information = DIA_KDW_4573_Oddler_WhoYou_info;
    permanent = FALSE;
-   description = "А ты что тут делаешь?";
+   description = " What are you doing here? " ;
 };
 
 func int DIA_KDW_4573_Oddler_WhoYou_condition()
@@ -2166,13 +2166,13 @@ func int DIA_KDW_4573_Oddler_WhoYou_condition()
 
 func void DIA_KDW_4573_Oddler_WhoYou_info()
 {
-  AI_Output(other,self,"DIA_KDW_4573_Oddler_WhoYou_01_00");   //А ты что тут делаешь?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_01");   //Как видишь, живу. По мне лучше места просто не найти.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_02");   //Тишина и спокойствие - это все, что мне нужно. И, самое главное, подальше от людей.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_WhoYou_01_03");   //И тебя абсолютно не беспокоит то, что кругом может быть полно орков или других хищных тварей?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_04");   //Орков тут нет. Их лагеря находятся в другой части этих гор.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_05");   //А что касается всего остального, то с этим я как-нибудь справлюсь.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_06");   //(улыбаясь) Я же все-таки маг.
+  AI_Output(other,self, " DIA_KDW_4573_Oddler_WhoYou_01_00 " );   // What are you doing here?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_WhoYou_01_01 " );   // As you can see, I live. For me, there is simply no better place to be.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_WhoYou_01_02 " );   // Peace and quiet is all I need. And, most importantly, away from people.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_WhoYou_01_03 " );   // And you're not at all worried about the fact that the area may be full of orcs or other predatory creatures?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_WhoYou_01_04 " );   // Orcs are not here. Their camps are in another part of these mountains.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_WhoYou_01_05 " );   // As for everything else, I'll deal with that somehow.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_WhoYou_01_06 " );   // (smiling) I'm still a magician.
 };
 
 instance DIA_KDW_4573_Oddler_Mage(C_Info)
@@ -2182,7 +2182,7 @@ instance DIA_KDW_4573_Oddler_Mage(C_Info)
    condition = DIA_KDW_4573_Oddler_Mage_condition;
    information = DIA_KDW_4573_Oddler_Mage_info;
    permanent = FALSE;
-   description = "Так ты еще и маг?";
+   description = " So you're also a magician? " ;
 };
 
 func int DIA_KDW_4573_Oddler_Mage_condition()
@@ -2195,29 +2195,29 @@ func int DIA_KDW_4573_Oddler_Mage_condition()
 
 func void DIA_KDW_4573_Oddler_Mage_info()
 {
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mage_01_00");   //Так ты еще и маг?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_01");   //Маг Воды, если быть более точным.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mage_01_02");   //Из Нового лагеря?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_03");   //(задумчиво) Хммм. Что еще за Новый лагерь?
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mage_01_04");   //Тот, что в Долине Рудников, конечно.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_05");   //Извини, но я никогда не слышал о нем. 
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mage_01_06");   //Тогда откуда ты?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_07");   //Сам я родом из Сильдена. Это небольшой городок в Миртане.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mage_01_08");   //А как ты оказался в Хоринисе?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_09");   //Приплыл сюда на корабле, как же еще.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mage_01_00 " );   // So you're also a mage?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_01 " );   // Waterbender, to be more precise.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mage_01_02 " );   // From the New Camp?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_03 " );   // (thoughtfully) Hmmm. What is New Camp?
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mage_01_04 " );   // The one in the Valley of Mines, of course.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_05 " );   // Sorry, but I've never heard of him.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mage_01_06 " );   // Then where are you from?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_07 " );   // I myself come from Silden. This is a small town in Myrtana.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mage_01_08 " );   // And how did you end up in Khorinis?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_09 " );   // Sailed here on a ship, how else.
    AI_Output(other,self,"DIA_KDW_4573_Oddler_Mage_01_10");   //Зачем?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_11");   //У меня было послание для верховного мага Огня Корристо.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_12");   //Он был наставником в монастыре Инноса, который находился на этом острове.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_13");   //Правда, это было очень давно. С тех пор прошел не один десяток лет.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mage_01_14");   //Ну хорошо. А как ты попал сюда?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_15");   //Вместе с остальными магами Огня я принимал участие в одной из исследовательских экспедиций.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_16");   //Мы хотели получше изучить эти горы и, возможно, найти тут что-нибудь интересное.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_17");   //В итоге вместо этого я угодил в плен к оркам.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_18");   //Они бы меня убили, не будь я магом! Но их верховный шаман почему-то заинтересовался моей магией.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_19");   //Это и спасло мою жизнь.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_20");   //Через несколько лет мне удалось бежать из их лагеря.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_21");   //Скитаясь по горам, я набрел на это место. И теперь живу тут.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_22");   //Вот, собственно, и вся история.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_11 " );   // I had a message for Archfiremage Corristo.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_12 " );   // He was a teacher in the monastery of Innos, which was located on this island.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_13 " );   // True, that was a long time ago. More than a dozen years have passed since then.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mage_01_14 " );   // Okay. And how did you get here?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_15 " );   // Together with the rest of the Firebenders, I took part in one of the research expeditions.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_16 " );   // We wanted to explore these mountains better and maybe find something interesting here.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_17 " );   // I ended up being captured by the orcs instead.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_18 " );   // They'd kill me if I wasn't a mage! But for some reason their high shaman became interested in my magic.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_19 " );   // That saved my life.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_20 " );   // A few years later, I managed to escape from their camp.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_21 " );   // Wandering through the mountains, I came across this place. And now I live here.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mage_01_22 " );   // That, in fact, is the whole story.
 };
 
 instance DIA_KDW_4573_Oddler_Blind(C_Info)
@@ -2227,7 +2227,7 @@ instance DIA_KDW_4573_Oddler_Blind(C_Info)
    condition = DIA_KDW_4573_Oddler_Blind_condition;
    information = DIA_KDW_4573_Oddler_Blind_info;
    permanent = FALSE;
-   description = "У тебя повязка на глазах.";
+   description = " You are blindfolded. " ;
 };
 
 func int DIA_KDW_4573_Oddler_Blind_condition()
@@ -2240,14 +2240,14 @@ func int DIA_KDW_4573_Oddler_Blind_condition()
 
 func void DIA_KDW_4573_Oddler_Blind_info()
 {
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Blind_01_00");   //У тебя повязка на глазах. Ты слепой?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Blind_01_01");   //(вздыхая) Да. Как видишь.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Blind_01_02");   //Как же это случилось?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Blind_01_03");   //Чтобы сделать невозможной для меня саму мысль о побеге, орки выкололи мне глаза.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Blind_01_04");   //Поначалу, конечно, было невыносимо тяжело. Я не мог пройти даже и двух метров без чьей-либо помощи.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Blind_01_05");   //Но со временем у меня обострились другие мои чувства, - например, слух или обоняние.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Blind_01_06");   //Все это помогло мне тут выжить. Теперь мне необязательно быть зрячим, чтобы понять, кто стоит передо мной.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Blind_01_07");   //Кстати, ты только поднимался на эту гору, а я уже знал, что сюда кто-то идет.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Blind_01_00 " );   // You're blindfolded. Are you blind?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Blind_01_01 " );   // (sigh) Yes. As you see.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Blind_01_02 " );   // How did this happen?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Blind_01_03 " );   // To make it impossible for me to even think of escaping, the orcs gouged out my eyes.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Blind_01_04 " );   // At first, of course, it was unbearably hard. I couldn't even walk two meters without someone's help.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Blind_01_05 " );   // But over time, my other senses became more acute, such as hearing or smell.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Blind_01_06 " );   // All this helped me survive here. Now I do not have to be sighted to understand who is standing in front of me.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Blind_01_07 " );   // By the way, you just climbed this mountain, and I already knew that someone was coming here.
 };
 
 instance DIA_KDW_4573_Oddler_Away(C_Info)
@@ -2257,7 +2257,7 @@ instance DIA_KDW_4573_Oddler_Away(C_Info)
    condition = DIA_KDW_4573_Oddler_Away_condition;
    information = DIA_KDW_4573_Oddler_Away_info;
    permanent = FALSE;
-   description = "Ты не хотел бы убраться отсюда?";
+   description = " Would you like to get out of here? " ;
 };
 
 func int DIA_KDW_4573_Oddler_Away_condition()
@@ -2270,12 +2270,12 @@ func int DIA_KDW_4573_Oddler_Away_condition()
 
 func void DIA_KDW_4573_Oddler_Away_info()
 {
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Getout_01_00");   //Ты не хотел бы убраться отсюда?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_01");   //Нет. Мне здесь нравится! Здесь тихо и спокойно.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_02");   //К тому же переход через горы будет крайне опасным делом.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_03");   //Без должной подготовки можно легко погибнуть.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_04");   //Или, что еще хуже, попасть в плен к оркам.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_05");   //Так что подобные мысли меня посещают все реже и реже.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Getout_01_00 " );   // Would you like to get out of here?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Getout_01_01 " );   // No. I like it here! It's quiet and calm here.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Getout_01_02 " );   // In addition, crossing the mountains will be extremely dangerous.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Getout_01_03 " );   // Without proper preparation, one can easily die.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Getout_01_04 " );   // Or worse, get captured by orcs.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Getout_01_05 " );   // So these thoughts come to me less and less.
 };
 
 instance DIA_KDW_4573_Oddler_Mount(C_Info)
@@ -2285,7 +2285,7 @@ instance DIA_KDW_4573_Oddler_Mount(C_Info)
    condition = DIA_KDW_4573_Oddler_Mount_condition;
    information = DIA_KDW_4573_Oddler_Mount_info;
    permanent = FALSE;
-   description = "Что тут есть интересного в горах?";
+   description = " What's interesting in the mountains? " ;
 };
 
 func int DIA_KDW_4573_Oddler_Mount_condition()
@@ -2298,17 +2298,17 @@ func int DIA_KDW_4573_Oddler_Mount_condition()
 
 func void DIA_KDW_4573_Oddler_Mount_info()
 {
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mount_01_00");   //Что тут есть интересного в горах?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_01");   //Ничего особенного.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_02");   //Где-то внизу должен располагаться небольшой форт. 
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_03");   //Его построили паладины, которые сопровождали нас в той злосчастной экспедиции.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_04");   //Недалеко от него находится древнее святилище орков. Там они меня и взяли в плен.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mount_01_05");   //А где сам их лагерь?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_06");   //Далеко отсюда. На другом конце этих гор.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_07");   //Но я тебе туда ходить не советую, если ты, конечно, не хочешь разделить мою участь.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mount_01_08");   //Понятно. Больше ничего?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_09");   //Это все, что я знаю. Больше мне нечего добавить.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Mount_01_10");   //Ладно, благодарю тебя.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mount_01_00 " );   // What is there interesting in the mountains?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mount_01_01 " );   // Nothing special.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mount_01_02 " );   // Somewhere down there should be a small fort.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mount_01_03 " );   // It was built by the paladins who accompanied us on that ill-fated expedition.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mount_01_04 " );   // Nearby is an ancient orc shrine. There they captured me.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mount_01_05 " );   // And where is their camp itself?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mount_01_06 " );   // Far from here. At the other end of these mountains.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mount_01_07 " );   // But I do not advise you to go there, unless, of course, you want to share my fate.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mount_01_08 " );   // Got it. Nothing else?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Mount_01_09 " );   // That's all I know. I have nothing more to add.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Mount_01_10 " );   // Okay, thank you.
 };
 
 instance DIA_KDW_4573_Oddler_Work(C_Info)
@@ -2318,7 +2318,7 @@ instance DIA_KDW_4573_Oddler_Work(C_Info)
    condition = DIA_KDW_4573_Oddler_Work_condition;
    information = DIA_KDW_4573_Oddler_Work_info;
    permanent = FALSE;
-   description = "Что ты тут строишь?";
+   description = " What are you building here? " ;
 };
 
 func int DIA_KDW_4573_Oddler_Work_condition()
@@ -2331,13 +2331,13 @@ func int DIA_KDW_4573_Oddler_Work_condition()
 
 func void DIA_KDW_4573_Oddler_Work_info()
 {
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Work_01_00");   //Что ты тут строишь?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_01");   //Ты что, тоже слепой? Разве не видно?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_02");   //Я строю для себя хижину.
-   AI_Output(other,self,"DIA_KDW_4573_Oddler_Work_01_03");   //Зачем? Разве тебе в пещере не уютно?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_04");   //В ней, конечно, тепло, но и она не всегда спасает от здешних морозов.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_05");   //Правда, мне чертовски не хватает инструментов. Ржавая пила - это единственное, что мне удалось тут отыскать.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_06");   //А с ней одной немного-то и сделаешь.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Work_01_00 " );   // What are you building here?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Work_01_01 " );   // Are you blind too? Isn't it visible?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Work_01_02 " );   // I'm building a hut for myself.
+   AI_Output(other,self, " DIA_KDW_4573_Oddler_Work_01_03 " );   // Why? Aren't you comfortable in the cave?
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Work_01_04 " );   // Of course, it is warm in it, but it does not always save from the local frosts.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Work_01_05 " );   // True, I don't have enough tools. A rusty saw is the only thing I could find here.
+   AI_Output(self,other, " DIA_KDW_4573_Oddler_Work_01_06 " );   // And you can do a little with her alone.
 };
 
 instance DIA_KDW_4573_Oddler_WorkDo(C_Info)
@@ -2347,7 +2347,7 @@ instance DIA_KDW_4573_Oddler_WorkDo(C_Info)
    condition = DIA_KDW_4573_Oddler_WorkDo_condition;
    information = DIA_KDW_4573_Oddler_WorkDo_info;
    permanent = FALSE;
-   description = "Я могу достать для тебя инструменты.";
+   description = " I can get some tools for you. " ;
 };
 
 func int DIA_KDW_4573_Oddler_WorkDo_condition()
@@ -2360,15 +2360,15 @@ func int DIA_KDW_4573_Oddler_WorkDo_condition()
 
 func void DIA_KDW_4573_Oddler_WorkDo_info()
 {
-	AI_Output(other,self,"DIA_KDW_4573_Oddler_WorkDo_01_00");   //Я могу достать для тебя инструменты.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_01");   //Правда? Ну, тогда, пожалуй, я не буду отказываться от твоей помощи.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_02");   //Мне нужен молоток, новая пила и кирка, чтобы обтесывать камни.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_03");   //Если сможешь все это для меня достать, я буду очень признателен.
-	AI_Output(other,self,"DIA_KDW_4573_Oddler_WorkDo_01_04");   //Договорились.
+	AI_Output(other,self, " DIA_KDW_4573_Oddler_WorkDo_01_00 " );   // I can get the tools for you.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_WorkDo_01_01 " );   // True? Well, then, perhaps, I will not refuse your help.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_WorkDo_01_02 " );   // I need a hammer, a new saw, and a pick to cut rocks.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_WorkDo_01_03 " );   // If you can get all this for me, I'd really appreciate it.
+	AI_Output(other,self, " DIA_KDW_4573_Oddler_WorkDo_01_04 " );   // Agreed.
 	MIS_OddlerlTools = LOG_Running;
 	Log_CreateTopic(TOPIC_OddlerlTools,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_OddlerlTools,LOG_Running);
-	B_LogEntry(TOPIC_OddlerlTools,"Оддлеру нужны новые инструменты для постройки хижины. Он попросил принести ему молоток, новую пилу и кирку.");
+	B_LogEntry(TOPIC_OddlerlTools, " Oddler needs new tools to build his hut. He asked for a hammer, a new saw, and a pickaxe. " );
 };
 
 instance DIA_KDW_4573_Oddler_Done(C_Info)
@@ -2377,12 +2377,12 @@ instance DIA_KDW_4573_Oddler_Done(C_Info)
 	nr = 99;
 	condition = DIA_KDW_4573_Oddler_Done_Condition;
 	information = DIA_KDW_4573_Oddler_Done_Info;
-	description = "Вот новые инструменты.";
+	description = " Here are the new tools. " ;
 };
 
 func int DIA_KDW_4573_Oddler_Done_Condition()
 {
-	if((MIS_OddlerlTools == LOG_Running) && (Npc_HasItems(other,ItMi_Hammer) >= 1) && (Npc_HasItems(other,ItMi_Saw) >= 1) && (Npc_HasItems(other,ItMw_2H_Axe_L_01) >= 1))
+	if ((MIS_OddlerlTools == LOG_Running) && (Npc_HasItems(other,ItMy_Hammer) >=  1 ) && (Npc_HasItems(other,ItMy_Saw) >=  1 ) && (Npc_HasItems(other,ItMw_2H_Axe_L_01) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -2391,17 +2391,17 @@ func int DIA_KDW_4573_Oddler_Done_Condition()
 func void DIA_KDW_4573_Oddler_Done_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_KDW_4573_Oddler_Done_01_00");	//Вот новые инструменты.
+	AI_Output(other,self, " DIA_KDW_4573_Oddler_Done_01_00 " );	// Here are the new tools.
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(hero,ItMi_Hammer,1);
 	Npc_RemoveInvItems(hero,ItMi_Saw,1);
 	Npc_RemoveInvItems(hero,ItMw_2H_Axe_L_01,1);
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_Done_01_01");	//Спасибо! Теперь постройка хижины пойдет намного быстрей.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_Done_01_02");	//Вот, возьми этот магический свиток в знак моей благодарности.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_Done_01_01 " );	// Thank you! Now the construction of the hut will go much faster.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_Done_01_02 " );	// Here, take this magic scroll as a token of my gratitude.
 	B_GiveInvItems(self,other,ItSc_Shrink,1);
 	MIS_OddlerlTools = LOG_Success;
 	Log_SetTopicStatus(TOPIC_OddlerlTools,LOG_Success);
-	B_LogEntry(TOPIC_OddlerlTools,"Я принес Оддлеру нужные ему инструменты.");
+	B_LogEntry(TOPIC_OddlerlTools, " I brought Oddler the tools he needs. " );
 };
 
 instance DIA_KDW_4573_Oddler_XRANFREG(C_Info)
@@ -2411,12 +2411,12 @@ instance DIA_KDW_4573_Oddler_XRANFREG(C_Info)
    condition = DIA_KDW_4573_Oddler_XRANFREG_condition;
    information = DIA_KDW_4573_Oddler_XRANFREG_info;
    permanent = FALSE;
-   description = "Расскажи мне о той экспедиции.";
+   description = " Tell me about that expedition. " ;
 };
 
 func int DIA_KDW_4573_Oddler_XRANFREG_condition()
 {
-   if((Npc_KnowsInfo(other,DIA_KDW_4573_Oddler_Mage) == TRUE) && (MIS_XRANFREG == LOG_Running))
+   if ((Npc_KnowsInfo(other,DIA_KDW_4573_Oddler_Mage) ==  TRUE ) && ( MIS_XRANFREG  == LOG_Running ))
    {
       return TRUE;
    };
@@ -2425,22 +2425,22 @@ func int DIA_KDW_4573_Oddler_XRANFREG_condition()
 func void DIA_KDW_4573_Oddler_XRANFREG_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_KDW_4573_Oddler_XRANFREG_01_00");   //Расскажи мне о той экспедиции.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_01");   //Эх. Давно это было!
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_02");   //В ней принимали участие только маги Огня и несколько паладинов, которые вызвались в качестве сопровождения.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_03");   //Мастер Корристо предложил мне отправиться вместе с ними, дабы помочь им исследовать эту неизвестную часть острова.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_04");   //Поначалу я думал отказаться от этой опасной затеи.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_05");   //Но Корристо смог убедить меня в необходимости моего присутствия, и я решил согласиться.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_06");   //Переход через горы нам дался довольно легко.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_07");   //Когда мы попали сюда, Корристо распорядился построить тут небольшой лагерь, где мы все и обосновались.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_08");   //Позже часть магов ушла на север, а остальные, в том числе и я, решили осмотреть восточную часть этих земель.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_09");   //Так мы натолкнулись на заброшенное святилище орков.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_10");   //Точнее, оно выглядело как заброшенное, но на самом деле все оказалось иначе.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_11");   //В один прекрасный день, когда я занимался тем, что изучал древние алтари святилища, туда пришли орки.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_12");   //Хотя меня и сопровождало несколько паладинов, но исход боя был уже предрешен.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_13");   //Паладинов орки убили сразу. А меня, увидев, что я маг, решили отвести в лагерь.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_14");   //На этом моя история участия в этой экспедиции заканчивается.
-	B_LogEntry(TOPIC_XRANFREG,"Оддлер - один из тех, кто принимал участие в экспедиции магов Огня. По его словам, на востоке находится древнее святилище орков. Надо бы наведаться туда при случае.");
+	AI_Output(other,self, " DIA_KDW_4573_Oddler_XRANFREG_01_00 " );   // Tell me about that expedition.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_01 " );   // Eh. That was a long time ago!
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_02 " );   // Only Firebenders and a few paladins who volunteered as escorts took part in it.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_03 " );   // Master Corristo suggested that I go with them to help them explore this unknown part of the island.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_04 " );   // At first I thought about abandoning this dangerous undertaking.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_05 " );   // But Corristo was able to convince me of the need for my presence, and I decided to agree.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_06 " );   // Crossing the mountains was pretty easy for us.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_07 " );   // When we got here, Corristo ordered to build a small camp here, where we all settled.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_08 " );   // Later, some of the magicians went north, and the rest, including me, decided to explore the eastern part of these lands.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_09 " );   // So we stumbled upon an abandoned orc shrine.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_10 " );   // More precisely, it looked like an abandoned one, but in fact everything turned out differently.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_11 " );   // One fine day, when I was studying the ancient altars of the sanctuary, the orcs came there.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_12 " );   // Although I was accompanied by several paladins, the outcome of the battle was already a foregone conclusion.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_13 " );   // The orcs killed the paladins immediately. And when they saw that I was a magician, they decided to take me to the camp.
+	AI_Output(self,other, " DIA_KDW_4573_Oddler_XRANFREG_01_14 " );   // This is where my story of participation in this expedition ends.
+	B_LogEntry( TOPIC_XRANFREG , " Oddler is one of those who took part in the Fire Mage expedition. According to him, there is an ancient orc shrine to the east. I should pay a visit if the opportunity arises. " );
 };
 
 instance DIA_VLK_5570_Avabul_EXIT(C_Info)
@@ -2483,14 +2483,14 @@ func int DIA_VLK_5570_Avabul_HELLO_condition()
 
 func void DIA_VLK_5570_Avabul_HELLO_info()
 {
-	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_00");   //Смертный! Ты достал артефакт, который ищет мой господин?
-	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_01");   //Боюсь огорчить тебя, но его у меня нет.
-	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_02");   //Что ты сказал?!
-	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_03");   //Ты что, оглохла? Я сказал, что у меня его нет. Его настоящий владелец не захотел с ним расставаться.
-	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_04");   //Меня это не волнует. Ты должен был принести его мне! Это была часть нашего договора!
-	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_05");   //Тогда тебе и твоему хозяину придется немного поумерить свои аппетиты. Артефакт навсегда останется внутри этого храма, так что забудь о нашем соглашении.
-	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_06");   //Да как ты смеешь?! Жалкий червяк! За свою наглость ты сейчас умрешь!
-	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_07");   //А когда это случится, я вдоволь наиграюсь с твоей душой, словно с куклой!
+	AI_Output(self,other, " DIA_VLK_5570_Avabul_HELLO_01_00 " );   // Mortal! Have you obtained the artifact my lord is looking for?
+	AI_Output(other,self, " DIA_VLK_5570_Avabul_HELLO_01_01 " );   // I'm afraid to disappoint you, but I don't have it.
+	AI_Output(self,other, " DIA_VLK_5570_Avabul_HELLO_01_02 " );   // What did you say?!
+	AI_Output(other,self, " DIA_VLK_5570_Avabul_HELLO_01_03 " );   // Are you deaf? I said I don't have it. His real owner did not want to part with him.
+	AI_Output(self,other, " DIA_VLK_5570_Avabul_HELLO_01_04 " );   // I don't care. You should have brought it to me! It was part of our contract!
+	AI_Output(other,self, " DIA_VLK_5570_Avabul_HELLO_01_05 " );   // Then you and your master will have to moderate their appetites a bit. The artifact will forever remain inside this temple, so forget about our agreement.
+	AI_Output(self,other, " DIA_VLK_5570_Avabul_HELLO_01_06 " );   // How dare you?! Pitiful worm! You will die for your insolence!
+	AI_Output(self,other, " DIA_VLK_5570_Avabul_HELLO_01_07 " );   // And when that happens, I'll play with your soul like a doll!
 	Info_ClearChoices(DIA_VLK_5570_Avabul_HELLO);
 	Info_AddChoice(DIA_VLK_5570_Avabul_HELLO,Dialog_Ende,DIA_VLK_5570_Avabul_HELLO_End);
 };
@@ -2498,7 +2498,7 @@ func void DIA_VLK_5570_Avabul_HELLO_info()
 func void DIA_VLK_5570_Avabul_HELLO_End()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	self.flags = 0;
 	Snd_Play("MFX_FEAR_CAST");
 	Wld_PlayEffect("SPELLFX_MASSDEATH_EXPLOSION",self,other,0,250,DAM_MAGIC,TRUE);
