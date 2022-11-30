@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Riordian_ADW_EXIT(C_Info)
 {
 	npc = KDW_14040_Addon_Riordian_ADW;
@@ -27,7 +28,7 @@ instance DIA_Addon_Riordian_HelloADW(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Riordian_HelloADW_Condition;
 	information = DIA_Addon_Riordian_HelloADW_Info;
-	description = "Ты ожидал увидеть здесь ТАКОЕ?";
+	description = " Did you expect to see THIS here? " ;
 };
 
 
@@ -38,10 +39,10 @@ func int DIA_Addon_Riordian_HelloADW_Condition()
 
 func void DIA_Addon_Riordian_HelloADW_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_HelloADW_15_00");	//Ты ожидал увидеть здесь ТАКОЕ?
-	AI_Output(self,other,"DIA_Addon_Riordian_HelloADW_10_01");	//Нет, вовсе нет. Я поражен тем, какие размеры должен был иметь этот город.
-	AI_Output(self,other,"DIA_Addon_Riordian_HelloADW_10_02");	//Большинство зданий погребено под камнем и землей, но те руины, что избежали этой участи, разбросаны по всей долине.
-	AI_Output(self,other,"DIA_Addon_Riordian_HelloADW_10_03");	//Здесь, должно быть, жили тысячи человек.
+	AI_Output(other,self, " DIA_Addon_Riordian_HelloADW_15_00 " );	// Did you expect to see THIS here?
+	AI_Output(self,other, " DIA_Addon_Riordian_HelloADW_10_01 " );	// No, not at all. I'm amazed at how big this city must have been.
+	AI_Output(self,other, " DIA_Addon_Riordian_HelloADW_10_02 " );	// Most of the buildings are buried under stone and earth, but those ruins that escaped this fate are scattered throughout the valley.
+	AI_Output(self,other, " DIA_Addon_Riordian_HelloADW_10_03 " );	// Thousands of people must have lived here.
 };
 
 
@@ -51,7 +52,7 @@ instance DIA_Addon_Riordian_WhatToFind(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Riordian_WhatToFind_Condition;
 	information = DIA_Addon_Riordian_WhatToFind_Info;
-	description = "Что вы здесь уже обнаружили?";
+	description = " What have you already found here? " ;
 };
 
 
@@ -61,62 +62,62 @@ func int DIA_Addon_Riordian_WhatToFind_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Riordian_WhatToFind_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_WhatToFind_15_00");	//Что вы здесь уже обнаружили?
-	AI_Output(self,other,"DIA_Addon_Riordian_WhatToFind_10_01");	//На востоке раскинулось огромное болото, на котором находится большая крепость.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhatToFind_10_02");	//Насколько мы поняли, в ней обосновались бандиты.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhatToFind_10_03");	//На твоем месте я бы туда не ходил. Там повсюду сторожевые посты и охранники.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhatToFind_10_04");	//Держись от болота подальше, пока не наберешься опыта... или не найдешь способ обмануть бандитов.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhatToFind_10_05");	//На западе располагается пиратский лагерь.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhatToFind_10_06");	//Я точно не уверен, но по-моему, пираты нас тоже уже заметили.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhatToFind_10_07");	//Впрочем, их, похоже, не очень-то беспокоит наше присутствие.
+	AI_Output(other,self, " DIA_Addon_Riordian_WhatToFind_15_00 " );	// What have you already discovered here?
+	AI_Output(self,other, " DIA_Addon_Riordian_WhatToFind_10_01 " );	// To the east is a huge swamp, on which there is a large fortress.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhatToFind_10_02 " );	// As far as we understand, bandits settled in it.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhatToFind_10_03 " );	// If I were you, I wouldn't go there. There are guard posts and guards everywhere.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhatToFind_10_04 " );	// Stay out of the swamp until you gain experience... or find a way to trick the bandits.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhatToFind_10_05 " );	// To the west is a pirate camp.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhatToFind_10_06 " );	// I'm not exactly sure, but I think the pirates have already noticed us too.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhatToFind_10_07 " );	// However, they don't seem to care much about our presence.
 };
 
 
-instance DIA_Addon_Riordian_Gegend(C_Info)
+instance DIA_Addon_Riordian_Area (C_Info)
 {
 	npc = KDW_14040_Addon_Riordian_ADW;
 	nr = 5;
 	condition = DIA_Addon_Riordian_Gegend_Condition;
-	information = DIA_Addon_Riordian_Gegend_Info;
+	information = DIA_Addon_Riordian_Area_Info;
 	permanent = TRUE;
-	description = "Расскажи мне об этой местности побольше.";
+	description = " Tell me more about this area. " ;
 };
 
 
 func int DIA_Addon_Riordian_Gegend_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Riordian_WhatToFind) && (Saturas_RiesenPlan == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Riordian_WhatToFind ) && ( Saturation_RicePlan ==  FALSE )) .
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 
 var int DIA_Addon_Riordian_Gegend_Info_OneTime;
 
-func void DIA_Addon_Riordian_Gegend_Info()
+func void DIA_Addon_Riordian_Area_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_Gegend_15_00");	//Расскажи мне об этой местности побольше.
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_10_01");	//Что ты хочешь узнать?
+	AI_Output(other,self, " DIA_Addon_Riordian_Gegend_15_00 " );	// Tell me more about this area.
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_10_01 " );	// What do you want to know?
 	Info_ClearChoices(DIA_Addon_Riordian_Gegend);
 	Info_AddChoice(DIA_Addon_Riordian_Gegend,Dialog_Back,DIA_Addon_Riordian_Gegend_Back);
-	if((DIA_Addon_Riordian_Gegend_Info_OneTime == FALSE) && (Npc_HasItems(other,itwr_map_addonworld_1) == FALSE))
+	if ((DIA_Addon_Riordian_Gegend_Info_OneTime ==  FALSE ) && (Npc_HasItems(other,itwr_map_addonworld_1) ==  FALSE ))
 	{
-		Info_AddChoice(DIA_Addon_Riordian_Gegend,"Существует ли карта этой местности?",DIA_Addon_Riordian_Gegend_map);
+		Info_AddChoice(DIA_Addon_Riordian_Gegend, " Is there a map for this area? " ,DIA_Addon_Riordian_Gegend_map);
 		DIA_Addon_Riordian_Gegend_Info_OneTime = TRUE;
 	};
-	Info_AddChoice(DIA_Addon_Riordian_Gegend,"Где вы заметили пиратов?",DIA_Addon_Riordian_Gegend_Piraten);
-	Info_AddChoice(DIA_Addon_Riordian_Gegend,"Напомни, где обосновались бандиты?",DIA_Addon_Riordian_Gegend_bandits);
-	Info_AddChoice(DIA_Addon_Riordian_Gegend,"Вы уже побывали на западе?",DIA_Addon_Riordian_Gegend_west);
-	Info_AddChoice(DIA_Addon_Riordian_Gegend,"Что я найду на востоке?",DIA_Addon_Riordian_Gegend_ost);
-	Info_AddChoice(DIA_Addon_Riordian_Gegend,"Что расположено на юге?",DIA_Addon_Riordian_Gegend_sued);
-	Info_AddChoice(DIA_Addon_Riordian_Gegend,"Что находится на севере?",DIA_Addon_Riordian_Gegend_nord);
+	Info_AddChoice(DIA_Addon_Riordian_Gegend, " Where did you spot the pirates? " ,DIA_Addon_Riordian_Gegend_Piraten);
+	Info_AddChoice(DIA_Addon_Riordian_Gegend, " Remind me where the bandits settled? " ,DIA_Addon_Riordian_Gegend_bandits);
+	Info_AddChoice(DIA_Addon_Riordian_Gegend, " Have you been to the west yet? " ,DIA_Addon_Riordian_Gegend_west);
+	Info_AddChoice(DIA_Addon_Riordian_Gegend, " What will I find in the east? " ,DIA_Addon_Riordian_Gegend_ost);
+	Info_AddChoice(DIA_Addon_Riordian_Gegend, " What's in the south? " ,DIA_Addon_Riordian_Gegend_sued);
+	Info_AddChoice(DIA_Addon_Riordian_Gegend, " What's up north? " ,DIA_Addon_Riordian_Gegend_nord);
 };
 
 func void DIA_Addon_Riordian_Gegend_Back()
@@ -126,44 +127,44 @@ func void DIA_Addon_Riordian_Gegend_Back()
 
 func void DIA_Addon_Riordian_Gegend_map()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_Gegend_map_15_00");	//Существует ли карта этой местности?
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_map_10_01");	//Да, Кронос уже нарисовал карту. Обратись к нему.
+	AI_Output(other,self, " DIA_Addon_Riordian_Gegend_map_15_00 " );	// Is there a map of this area?
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_map_10_01 " );	// Yes, Kronos has already drawn the map. Contact him.
 };
 
-func void DIA_Addon_Riordian_Gegend_bandits()
+func void DIA_Addon_Riordian_Area_bandits()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_Gegend_bandits_15_00");	//Напомни, где обосновались бандиты?
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_bandits_10_01");	//Их крепость и сторожевые посты находятся на востоке.
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_bandits_10_02");	//Чтобы добраться до крепости, тебе придется пересечь болото.
+	AI_Output(other,self, " DIA_Addon_Riordian_Gegend_bandits_15_00 " );	// Remind me where the bandits settled?
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_bandits_10_01 " );	// Their stronghold and outposts are to the east.
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_bandits_10_02 " );	// To get to the fortress, you'll have to cross the swamp.
 };
 
-func void DIA_Addon_Riordian_Gegend_Piraten()
+func void DIA_Addon_Riordian_Area_Pirates()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_Gegend_Piraten_15_00");	//Где вы заметили пиратов?
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_Piraten_10_01");	//На западе. Некоторые пираты подходили к этому месту довольно близко.
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_Piraten_10_02");	//Думаю, они охотились.
+	AI_Output(other,self, " DIA_Addon_Riordian_Gegend_Piraten_15_00 " );	// Where did you spot the pirates?
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_Piraten_10_01 " );	// In the west. Some pirates came quite close to this place.
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_Piraten_10_02 " );	// I think they were hunting.
 };
 
-func void DIA_Addon_Riordian_Gegend_nord()
+func void DIA_Addon_Riordian_Region_north()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_Gegend_nord_15_00");	//Что находится на севере?
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_nord_10_01");	//Если верить записям Зодчих, там расположено большое ущелье, окруженное скалами.
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_nord_10_02");	//Ландшафт там составляют песок и растрескавшаяся от засухи земля.
+	AI_Output(other,self, " DIA_Addon_Riordian_Gegend_nord_15_00 " );	// What is in the north?
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_nord_10_01 " );	// According to the records of the Builders, there is a large gorge surrounded by rocks.
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_nord_10_02 " );	// The landscape there is made up of sand and drought cracked earth.
 };
 
 func void DIA_Addon_Riordian_Gegend_sued()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_Gegend_sued_15_00");	//Что расположено на юге?
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_sued_10_01");	//Местность на юге очень труднопроходимая.
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_sued_10_02");	//Ты найдешь там тропинки-серпантины, водопады и скалы причудливых форм.
+	AI_Output(other,self, " DIA_Addon_Riordian_Gegend_sued_15_00 " );	// What is located in the south?
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_sued_10_01 " );	// The terrain to the south is very difficult.
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_sued_10_02 " );	// You will find there serpentine paths, waterfalls and rocks of bizarre shapes.
 };
 
-func void DIA_Addon_Riordian_Gegend_ost()
+func void DIA_Addon_Riordian_Region_East()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_Gegend_ost_15_00");	//Что я найду на востоке?
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_ost_10_01");	//Огромное болото. Эта местность очень опасна.
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_ost_10_02");	//Там можно встретить не только бандитов, но и чрезвычайно опасных животных.
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_ost_10_03");	//Будь осторожнее.
+	AI_Output(other,self, " DIA_Addon_Riordian_Gegend_ost_15_00 " );	// What will I find in the east?
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_ost_10_01 " );	// Huge swamp. This area is very dangerous.
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_ost_10_02 " );	// There you can meet not only bandits, but also extremely dangerous animals.
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_ost_10_03 " );	// Be careful.
 };
 
 
@@ -171,13 +172,13 @@ var int DIA_Addon_Riordian_Gegend_west_OneTime;
 
 func void DIA_Addon_Riordian_Gegend_west()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_Gegend_west_15_00");	//Вы уже побывали на западе?
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_west_10_01");	//Еще нет. Но мы знаем, что там находится берег моря.
-	AI_Output(self,other,"DIA_Addon_Riordian_Gegend_west_10_02");	//Видимо, на этом берегу устроили свой лагерь пираты.
+	AI_Output(other,self, " DIA_Addon_Riordian_Gegend_west_15_00 " );	// Have you been to the west yet?
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_west_10_01 " );	// Not yet. But we know that there is a seashore.
+	AI_Output(self,other, " DIA_Addon_Riordian_Gegend_west_10_02 " );	// Apparently, pirates have set up their camp on this shore.
 	if((DIA_Addon_Riordian_Gegend_west_OneTime == FALSE) && Npc_HasItems(VLK_4304_Addon_William,ITWr_Addon_William_01))
 	{
-		AI_Output(self,other,"DIA_Addon_Riordian_Gegend_west_10_03");	//На востоке, недалеко отсюда, мы нашли тело рыбака.
-		AI_Output(self,other,"DIA_Addon_Riordian_Gegend_west_10_04");	//Тебе стоит на него взглянуть.
+		AI_Output(self,other, " DIA_Addon_Riordian_Gegend_west_10_03 " );	// To the east, not far from here, we found the body of a fisherman.
+		AI_Output(self,other, " DIA_Addon_Riordian_Gegend_west_10_04 " );	// You should take a look at it.
 		B_LogEntry(TOPIC_Addon_MissingPeople,LogText_Addon_WilliamLeiche);
 		DIA_Addon_Riordian_Gegend_west_OneTime = TRUE;
 	};
@@ -190,7 +191,7 @@ instance DIA_Addon_Riordian_HousesOfRulers(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Riordian_HousesOfRulers_Condition;
 	information = DIA_Addon_Riordian_HousesOfRulers_Info;
-	description = "Меня послал Сатурас.";
+	description = " Saturas sent me. " ;
 };
 
 
@@ -200,14 +201,14 @@ func int DIA_Addon_Riordian_HousesOfRulers_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Riordian_HousesOfRulers_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_HousesOfRulers_15_00");	//Меня послал Сатурас. Я должен исследовать пять храмов Яркендара.
-	AI_Output(self,other,"DIA_Addon_Riordian_HousesOfRulers_10_01");	//На то, чтобы найти сведения об их местонахождении в записях Зодчих, мне понадобилось приличное количество времени.
-	AI_Output(self,other,"DIA_Addon_Riordian_HousesOfRulers_10_02");	//Но зато теперь я могу дать тебе точную информацию.
+	AI_Output(other,self, " DIA_Addon_Riordian_HousesOfRulers_15_00 " );	// Saturas sent me. I must investigate the five temples of Yarkendar.
+	AI_Output(self,other, " DIA_Addon_Riordian_HousesOfRulers_10_01 " );	// It took me a fair amount of time to find information about their whereabouts in the records of the Builders.
+	AI_Output(self,other, " DIA_Addon_Riordian_HousesOfRulers_10_02 " );	// But now I can give you accurate information.
 	MIS_Riordian_HousesOfRulers = LOG_Running;
 };
 
@@ -218,16 +219,16 @@ instance DIA_Addon_Riordian_WhereAreHouses(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Riordian_WhereAreHouses_Condition;
 	information = DIA_Addon_Riordian_WhereAreHouses_Info;
-	description = "Где находятся пять храмов?";
+	description = " Where are the five temples? " ;
 };
 
 func int DIA_Addon_Riordian_WhereAreHouses_Condition()
 {
-	if((MIS_Riordian_HousesOfRulers == LOG_Running) && (Saturas_SCBroughtAllToken == FALSE))
+	if (( MIS_Riordian_HousesOfRulers == LOG_Running ) && ( Saturates_SCBroughtAllTokens ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 
@@ -235,31 +236,31 @@ var int B_WhreAreHousesOfRulersOneTime;
 
 func void B_WhreAreHousesOfRulers()
 {
-	AI_Output(self,other,"DIA_Addon_Riordian_WhereAreHouses_10_00");	//Храм ученых - это огромная библиотека! Она находится далеко на севере.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhereAreHouses_10_01");	//Храм воинов расположен на востоке. Он представляет из себя крепость, окруженную скалами.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhereAreHouses_10_02");	//Храмы жрецов и стражей мертвых расположены недалеко друг от друга. Ты найдешь их на юго-западе.
-	AI_Output(self,other,"DIA_Addon_Riordian_WhereAreHouses_10_03");	//А храм целителей должен быть где-то на юго-востоке.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhereAreHouses_10_00 " );	// The Temple of Scholars is a huge library! It is located far to the north.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhereAreHouses_10_01 " );	// Temple of warriors is located in the east. It is a fortress surrounded by rocks.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhereAreHouses_10_02 " );	// Temples of priests and guardians of the dead are located not far from each other. You will find them in the southwest.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhereAreHouses_10_03 " );	// And the temple of healers should be somewhere in the southeast.
 	if(B_WhreAreHousesOfRulersOneTime == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Riordian_WhereAreHouses_10_04");	//Если эти храмы еще сохранились, ты узнаешь их по особой манере постройки.
+		AI_Output(self,other, " DIA_Addon_Riordian_WhereAreHouses_10_04 " );	// If these temples still exist, you will recognize them by their special construction style.
 		B_WhreAreHousesOfRulersOneTime = TRUE;
 	};
-	AI_Output(self,other,"DIA_Addon_Riordian_WhereAreHouses_10_05");	//Все храмы строились на возвышениях. К украшенному колоннами входу в каждый из них вела крутая лестница.
+	AI_Output(self,other, " DIA_Addon_Riordian_WhereAreHouses_10_05 " );	// All temples were built on hills. A steep staircase led to the entrance decorated with columns.
 	if(B_WhreAreHousesOfRulersOneTime == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Riordian_WhereAreHouses_10_06");	//Надеюсь, тебе это поможет.
+		AI_Output(self,other, " DIA_Addon_Riordian_WhereAreHouses_10_06 " );	// Hope this helps you.
 	};
 	Log_CreateTopic(TOPIC_Addon_HousesOfRulers,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_HousesOfRulers,LOG_Running);
-	B_LogEntry(TOPIC_Addon_HousesOfRulers,"Храм ученых - это огромная библиотека. Она находится где-то на севере.");
-	Log_AddEntry(TOPIC_Addon_HousesOfRulers,"Храм воинов - это окруженная скалами крепость на востоке.");
-	Log_AddEntry(TOPIC_Addon_HousesOfRulers,"Храмы жрецов и стражей мертвых находятся недалеко друг от друга. Я смогу найти их на юго-западе.");
-	Log_AddEntry(TOPIC_Addon_HousesOfRulers,"Храм целителей находится на юго-востоке.");
+	B_LogEntry(TOPIC_Addon_HousesOfRulers, " The Temple of Scholars is a huge library. It's somewhere to the north. " );
+	Log_AddEntry(TOPIC_Addon_HousesOfRulers, " The Temple of the Warriors is a rock-encircled fortress to the east. " );
+	Log_AddEntry(TOPIC_Addon_HousesOfRulers, " The temples of the priests and guardians of the dead are not far from each other. I can find them in the southwest. " );
+	Log_AddEntry(TOPIC_Addon_HousesOfRulers, " Temple of Healers is in the southeast. " );
 };
 
 func void DIA_Addon_Riordian_WhereAreHouses_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_WhereAreHouses_15_00");	//Где находятся пять дворцов?
+	AI_Output(other,self, " DIA_Addon_Riordian_WhereAreHouses_15_00 " );	// Where are the five palaces located?
 	B_WhreAreHousesOfRulers();
 };
 
@@ -271,7 +272,7 @@ instance DIA_Addon_Riordian_FoundHouse(C_Info)
 	condition = DIA_Addon_Riordian_FoundHouse_Condition;
 	information = DIA_Addon_Riordian_FoundHouse_Info;
 	permanent = TRUE;
-	description = "Насчет храмов...";
+	description = " About temples... " ;
 };
 
 
@@ -281,12 +282,12 @@ func int DIA_Addon_Riordian_FoundHouse_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 var int foundhouseinfo[6];
 const int Library = 1;
-const int heiler = 2;
+const  int healer = 2 ;
 const int Warrior = 3;
 const int Priest = 4;
 const int Totenw = 5;
@@ -297,53 +298,53 @@ func void DIA_Addon_Riordian_FoundHouse_Info()
 {
 	var int RiordianHouseXPs;
 	RiordianHouseNeuigkeit = 0;
-	AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_00");	//Насчет храмов...
+	AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_00 " );	// About temples...
 	AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_01");	//Да?
 
 	if((SC_COMESINTO_CANYONLIBRARY_FUNC_OneTime == TRUE) && (FOUNDHOUSEINFO[1] == FALSE))
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_02");	//Библиотекой ученых, похоже, заинтересовались орки.
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_03");	//Ты полагаешь, что они способны прочитать записи на древнем языке?
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_04");	//Нет, я так не думаю, но кто знает...
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_05");	//Ладно, в любом случае тебе лучше от них избавиться.
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_02 " );	// Orcs seem to be interested in the scientists' library.
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_03 " );	// Do you think they can read the writings in the ancient language?
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_04 " );	// No, I don't think so, but who knows...
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_05 " );	// Okay, you'd better get rid of them anyway.
 		FOUNDHOUSEINFO[1] = TRUE;
 		RiordianHouseNeuigkeit = RiordianHouseNeuigkeit + 1;
 		Log_CreateTopic(TOPIC_Addon_CanyonOrcs,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_Addon_CanyonOrcs,LOG_Running);
-		B_LogEntry(TOPIC_Addon_CanyonOrcs,"Маг воды Риордиан будет доволен, если я очищу каньон от орков.");
+		B_LogEntry(TOPIC_Addon_CanyonOrcs, " Water Mage Riordian will be pleased if I clear the canyon of orcs. " );
 	};
-	if((Npc_IsDead(Stoneguardian_Heiler) || Npc_HasItems(other,ItMi_Addon_Stone_04) || (Saturas_SCFound_ItMi_Addon_Stone_04 == TRUE)) && (FOUNDHOUSEINFO[2] == FALSE))
+	if ( ( Npc_IsDead ( Stoneguardian_Heiler ) || Npc_HasItems ( other , ItMy_Addon_Stone_04 ) || _ _ _  
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_06");	//Храм целителей находится в центре болота. Его охраняют каменные стражи.
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_07");	//Значит, он все еще стоит?
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_08");	//Да, но неизвестно, сколько это еще продлится...
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_09");	//Мне больно видеть разрушение древних строений, свидетелей прошлого...
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_06 " );	// The temple of the healers is in the middle of the swamp. It is guarded by stone guards.
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_07 " );	// So it's still standing?
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_08 " );	// Yes, but we don't know how long it will last...
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_09 " );	// It pains me to see the destruction of ancient buildings, witnesses of the past...
 		FOUNDHOUSEINFO[2] = TRUE;
 		RiordianHouseNeuigkeit = RiordianHouseNeuigkeit + 1;
 	};
 	if((RavenIsInTempel == TRUE) && (FOUNDHOUSEINFO[3] == FALSE))
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_10");	//В храме воинов поселился Ворон.
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_11");	//Он сделал хороший выбор.
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_12");	//Это самая неприступная крепость во всей долине.
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_10 " );	// A raven settled in the temple of warriors.
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_11 " );	// He made a good choice.
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_12 " );	// This is the most impregnable fortress in the entire valley.
 		FOUNDHOUSEINFO[3] = TRUE;
 		RiordianHouseNeuigkeit = RiordianHouseNeuigkeit + 1;
 	};
-	if((Npc_IsDead(Minecrawler_Priest) || Npc_HasItems(other,ItMi_Addon_Stone_03) || (Saturas_SCFound_ItMi_Addon_Stone_03 == TRUE)) && (FOUNDHOUSEINFO[4] == FALSE))
+	if ( ( Npc_IsDead ( Minecrawler_Priest ) || Npc_HasItems ( other , ItMy_Addon_Stone_03 ) || _ _ _  
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_13");	//В храме жрецов было множество ползунов.
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_14");	//Но ведь эти животные встречаются здесь очень редко, верно?
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_13 " );	// There were many crawlers in the temple of the priests.
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_14 " );	// But these animals are very rare here, right?
 		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_15");	//Да, ты прав.
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_16");	//Странные вещи здесь творятся...
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_16 " );	// Strange things are happening here...
 		FOUNDHOUSEINFO[4] = TRUE;
 		RiordianHouseNeuigkeit = RiordianHouseNeuigkeit + 1;
 	};
-	if((Npc_IsDead(MayaZombie04_Totenw) || Npc_HasItems(other,ItMi_Addon_Stone_02) || (Saturas_SCFound_ItMi_Addon_Stone_02 == TRUE)) && (FOUNDHOUSEINFO[5] == FALSE))
+	if ((Npc_IsDead(MayaZombie04_Totenw) || Npc_HasItems(other,ItMi_Addon_Stone_02) || (Saturas_SCFound_ItMi_Addon_Stone_02 ==  TRUE )) && ( FOUNDHOUSEINFO [ 5 ] ==  FALSE )) ;
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_17");	//Храм стражей мертвых защищают силы зла.
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_18");	//Я раньше никогда не встречал такое количество зомби в одном месте.
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_19");	//Какая печальная судьба! Стражи мертвых пали жертвой своих же способностей.
-		AI_Output(self,other,"DIA_Addon_Riordian_FoundHouse_10_20");	//Их тесная связь с миром мертвых сослужила им злую службу. Надеюсь, ты освободил их от страданий.
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_17 " );	// The Temple of the Guardians of the Dead is protected by the forces of evil.
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_18 " );	// I've never seen so many zombies in one place before.
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_19 " );	// What a sad fate! The Guardians of the Dead fell victim to their own abilities.
+		AI_Output(self,other, " DIA_Addon_Riordian_FoundHouse_10_20 " );	// Their close association with the world of the dead has done them a disservice. I hope you put them out of their misery.
 		FOUNDHOUSEINFO[5] = TRUE;
 		RiordianHouseNeuigkeit = RiordianHouseNeuigkeit + 1;
 	};
@@ -355,7 +356,7 @@ func void DIA_Addon_Riordian_FoundHouse_Info()
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_FoundHouse_15_21");	//Напомни мне, где они находятся?
+		AI_Output(other,self, " DIA_Addon_Riordian_FoundHouse_15_21 " );	// Remind me where they are?
 		B_WhreAreHousesOfRulers();
 	};
 };
@@ -366,32 +367,32 @@ instance DIA_Addon_Riordian_OrksWeg(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Riordian_OrksWeg_Condition;
 	information = DIA_Addon_Riordian_OrksWeg_Info;
-	description = "Скоро орки потеряют интерес к этой местности.";
+	description = " Orcs will soon lose interest in this area. " ;
 };
 
 func int DIA_Addon_Riordian_OrksWeg_Condition()
 {
-	if(Npc_IsDead(OrcShaman_Sit_CanyonLibraryKey) && (FOUNDHOUSEINFO[1] == TRUE))
+	if ( Npc_IsDead ( OrcShaman_Sit_CanyonLibraryKey ) && ( FOUNDHOUSEINFO [ 1 ] ==  TRUE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Riordian_OrksWeg_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_OrksWeg_15_00");	//Скоро орки потеряют интерес к этой местности.
-	AI_Output(self,other,"DIA_Addon_Riordian_OrksWeg_10_01");	//Почему ты так считаешь?
+	AI_Output(other,self, " DIA_Addon_Riordian_OrksWeg_15_00 " );	// Orcs will soon lose interest in this area.
+	AI_Output(self,other, " DIA_Addon_Riordian_OrksWeg_10_01 " );	// Why do you think so?
 	if(OrcShaman_Sit_CanyonLibraryKey.aivar[AIV_KilledByPlayer] == TRUE)
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_OrksWeg_15_02");	//Я убил их командира.
+		AI_Output(other,self, " DIA_Addon_Riordian_OrksWeg_15_02 " );	// I killed their commander.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_OrksWeg_15_03");	//Их предводитель мертв.
+		AI_Output(other,self, " DIA_Addon_Riordian_OrksWeg_15_03 " );	// Their leader is dead.
 	};
-	AI_Output(self,other,"DIA_Addon_Riordian_OrksWeg_10_04");	//Будем надеяться, ты прав.
-	AI_Output(self,other,"DIA_Addon_Riordian_OrksWeg_10_05");	//Нам сейчас не нужны лишние заботы.
+	AI_Output(self,other, " DIA_Addon_Riordian_OrksWeg_10_04 " );	// Let's hope you're right.
+	AI_Output(self,other, " DIA_Addon_Riordian_OrksWeg_10_05 " );	// We don't need any extra worries now.
 	TOPIC_END_CanyonOrcs = TRUE;
 	B_GivePlayerXP(XP_Addon_Riordian_OrksWeg);
 };
@@ -403,7 +404,7 @@ instance DIA_Addon_Riordian_FoundAllHouses(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Riordian_FoundAllHouses_Condition;
 	information = DIA_Addon_Riordian_FoundAllHouses_Info;
-	description = "Я нашел все храмы.";
+	description = " I found all the temples. " ;
 };
 
 
@@ -413,16 +414,16 @@ func int DIA_Addon_Riordian_FoundAllHouses_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Riordian_FoundAllHouses_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_FoundAllHouses_15_00");	//Я нашел все храмы.
-	AI_Output(self,other,"DIA_Addon_Riordian_FoundAllHouses_10_01");	//Они все находились там, где я указал?
-	AI_Output(other,self,"DIA_Addon_Riordian_FoundAllHouses_15_02");	//Ну... более-менее.
-	AI_Output(self,other,"DIA_Addon_Riordian_FoundAllHouses_10_03");	//Отлично! Значит, моя работа была не напрасной.
-	AI_Output(self,other,"DIA_Addon_Riordian_FoundAllHouses_10_04");	//Благодарю тебя.
+	AI_Output(other,self, " DIA_Addon_Riordian_FoundAllHouses_15_00 " );	// I found all the temples.
+	AI_Output(self,other, " DIA_Addon_Riordian_FoundAllHouses_10_01 " );	// Were they all where I indicated?
+	AI_Output(other,self, " DIA_Addon_Riordian_FoundAllHouses_15_02 " );	// Well... more or less.
+	AI_Output(self,other, " DIA_Addon_Riordian_FoundAllHouses_10_03 " );	// Great! So my work was not in vain.
+	AI_Output(self,other, " DIA_Addon_Riordian_FoundAllHouses_10_04 " );	// Thank you.
 	MIS_Riordian_HousesOfRulers = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Addon_FoundAllHouses);
 };
@@ -433,7 +434,7 @@ instance DIA_Addon_Riordian_SpeedPotion(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Riordian_SpeedPotion_Condition;
 	information = DIA_Addon_Riordian_SpeedPotion_Info;
-	description = "Я еще могу чем то помочь?";
+	description = " Is there anything else I can help you with? " ;
 };
 
 func int DIA_Addon_Riordian_SpeedPotion_Condition()
@@ -446,29 +447,29 @@ func int DIA_Addon_Riordian_SpeedPotion_Condition()
 
 func void DIA_Addon_Riordian_SpeedPotion_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_SpeedPotion_01_00");	//Я еще могу чем то помочь?
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotion_01_01");	//Возможно...(задумчиво) Недавно мне пришла в голову мысль сделать новый эликсир ускорения.
-	AI_Output(other,self,"DIA_Addon_Riordian_SpeedPotion_01_02");	//А чем тебя не устраивает обычный?
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotion_01_03");	//Дело в том, что эффект его действия слишком непродолжительный.
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotion_01_04");	//Однако я слышал, что в лагере пиратов есть алхимик, который умеет варить особенное зелье скорости.
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotion_01_05");	//Причем еще и не такое сложное в изготовлении, как обычный эликсир.
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotion_01_06");	//Вот я и подумал, что было бы неплохо как-то заполучить этот рецепт.
-	AI_Output(other,self,"DIA_Addon_Riordian_SpeedPotion_01_07");	//Намекаешь на то, чтобы я достал его для тебя?
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotion_01_08");	//Ты меня правильно понял. А если все получится, я в долгу не останусь.
-	AI_Output(other,self,"DIA_Addon_Riordian_SpeedPotion_01_09");	//Ладно, попробую.
+	AI_Output(other,self, " DIA_Addon_Riordian_SpeedPotion_01_00 " );	// Is there anything else I can do to help?
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotion_01_01 " );	// Maybe...(thoughtfully) I recently got the idea to make a new elixir of acceleration.
+	AI_Output(other,self, " DIA_Addon_Riordian_SpeedPotion_01_02 " );	// Why don't you like the usual one?
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotion_01_03 " );	// The fact is that the effect of its action is too short.
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotion_01_04 " );	// However, I heard that there is an alchemist in the pirate camp who can brew a special potion of speed.
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotion_01_05 " );	// And it's also not as difficult to make as a regular elixir.
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotion_01_06 " );	// So I thought it would be nice to somehow get this recipe.
+	AI_Output(other,self, " DIA_Addon_Riordian_SpeedPotion_01_07 " );	// Are you suggesting I get it for you?
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotion_01_08 " );	// You understood me correctly. And if everything works out, I will not remain in debt.
+	AI_Output(other,self, " DIA_Addon_Riordian_SpeedPotion_01_09 " );	// Okay, I'll try.
 	MIS_SpeedPotion = LOG_Running;
 	Log_CreateTopic(TOPIC_SpeedPotion,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SpeedPotion,LOG_Running);
-	B_LogEntry(TOPIC_SpeedPotion,"Риордиан хочет, чтобы я принес ему рецепт изготовления зелья ускорения, которое варит алхимик в лагере пиратов.");
+	B_LogEntry(TOPIC_SpeedPotion, " Riordian wants me to bring him the recipe for a speed potion that the alchemist brews at the pirate camp. " );
 };
 
-instance DIA_Addon_Riordian_SpeedPotionDone(C_Info)
+instance DIA_Addon_Riordian_SpeedPotionDone (C_Info)
 {
 	npc = KDW_14040_Addon_Riordian_ADW;
 	nr = 5;
 	condition = DIA_Addon_Riordian_SpeedPotionDone_Condition;
 	information = DIA_Addon_Riordian_SpeedPotionDone_Info;
-	description = "Я достал нужный тебе рецепт.";
+	description = " I got the recipe you need. " ;
 };
 
 func int DIA_Addon_Riordian_SpeedPotionDone_Condition()
@@ -482,35 +483,35 @@ func int DIA_Addon_Riordian_SpeedPotionDone_Condition()
 func void DIA_Addon_Riordian_SpeedPotionDone_Info()
 {
 	B_GivePlayerXP(400);
-	AI_Output(other,self,"DIA_Addon_Riordian_SpeedPotionDone_01_00");	//Я достал нужный тебе рецепт.
+	AI_Output(other,self, " DIA_Addon_Riordian_SpeedPotionDone_01_00 " );	// I got the recipe you need.
 	B_GiveInvItems(other,self,ITWr_Addon_Piratentod,1);
 	Npc_RemoveInvItems(self,ITWr_Addon_Piratentod,1);
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotionDone_01_01");	//Отлично! Тогда давай скорее взглянем на него.
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotionDone_01_01 " );	// Great! Then let's take a look at it.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotionDone_01_02");	//Ну, собственно, так я и думал. Он довольно прост в изготовлении.
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotionDone_01_03");	//Хорошо. Я благодарю тебя. Возьми эти напитки.
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotionDone_01_02 " );	// Well, that's exactly what I thought. It's pretty easy to make.
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotionDone_01_03 " );	// Good. I thank you. Take these drinks.
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(other,ItPo_Health_Addon_04,2);
 	CreateInvItems(other,ItPo_Mana_Addon_04,2);
-	AI_Output(self,other,"DIA_Addon_Riordian_SpeedPotionDone_01_04");	//Они наверняка пригодятся тебе в твоих странствиях.
+	AI_Output(self,other, " DIA_Addon_Riordian_SpeedPotionDone_01_04 " );	// They will surely come in handy on your travels.
 	MIS_SpeedPotion = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SpeedPotion,LOG_SUCCESS);
-	B_LogEntry(TOPIC_SpeedPotion,"Я отдал рецепт Риордиану.");
+	B_LogEntry(TOPIC_SpeedPotion, " I gave the recipe to Riordian. " );
 };
 
-instance DIA_Addon_Riordian_ADW_PreTeach(C_Info)
+instance DIA_Addon_Riordian_ADW_PreTeach (C_Info)
 {
 	npc = KDW_14040_Addon_Riordian_ADW;
 	nr = 5;
 	condition = DIA_Addon_Riordian_ADW_PreTeach_Condition;
 	information = DIA_Addon_Riordian_ADW_PreTeach_Info;
 	permanent = TRUE;
-	description = "Ты можешь меня обучить своим умениям?";
+	description = " Can you teach me your skills? " ;
 };
 
 func int DIA_Addon_Riordian_ADW_PreTeach_Condition()
 {
-	if((Riordian_ADW_ADDON_TeachAlchemy == FALSE) && (Riordian_ADW_ADDON_TeachWisp == FALSE) && Npc_KnowsInfo(other,DIA_Addon_Saturas_ADW_PreTeachCircle))
+	if ((Riordian_ADW_ADDON_TeachAlchemy ==  FALSE ) && (Riordian_ADW_ADDON_TeachWisp ==  FALSE ) && Npc_KnowsInfo(other,DIA_Addon_Saturates_ADW_PreTeachCircle));
 	{
 		return TRUE;
 	};
@@ -518,11 +519,11 @@ func int DIA_Addon_Riordian_ADW_PreTeach_Condition()
 
 func void DIA_Addon_Riordian_ADW_PreTeach_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_ADW_PreTeach_15_00");	//Ты можешь меня обучить?
+	AI_Output(other,self, " DIA_Addon_Riordian_ADW_PreTeach_15_00 " );	// Can you teach me?
 
 	if(hero.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_Addon_Riordian_ADW_PreTeach_10_01");	//Я могу тебя обучить искусству алхимии.
+		AI_Output(self,other, " DIA_Addon_Riordian_ADW_PreTeach_10_01 " );	// I can teach you the art of alchemy.
 		Log_CreateTopic(TOPIC_Addon_KDWTeacher,LOG_NOTE);
 		B_LogEntry(TOPIC_Addon_KDWTeacher,LogText_Addon_RiordianTeachAlchemy);
 		Riordian_ADW_ADDON_TeachAlchemy = TRUE;
@@ -530,7 +531,7 @@ func void DIA_Addon_Riordian_ADW_PreTeach_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Riordian_ADW_PreTeach_10_03");	//Я учу только тех, кто состоит в нашем оредене. А я вижу, что ты не маг Воды!
+		AI_Output(self,other, " DIA_Addon_Riordian_ADW_PreTeach_10_03 " );	// I only teach those in our order. And I see that you are not a Waterbender!
 	};
 };
 
@@ -543,7 +544,7 @@ instance DIA_Riordian_ADW_TeachAlchemy(C_Info)
 	condition = DIA_Riordian_ADW_TeachAlchemy_Condition;
 	information = DIA_Riordian_ADW_TeachAlchemy_Info;
 	permanent = TRUE;
-	description = "Научи меня смешивать зелья.";
+	description = " Teach me how to mix potions. " ;
 };
 
 func int DIA_Riordian_ADW_TeachAlchemy_Condition()
@@ -556,18 +557,18 @@ func int DIA_Riordian_ADW_TeachAlchemy_Condition()
 
 func void DIA_Riordian_ADW_TeachAlchemy_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_ADW_TeachAlchemy_15_00");	//Научи меня смешивать зелья.
+	AI_Output(other,self, " DIA_Addon_Riordian_ADW_TeachAlchemy_15_00 " );	// Teach me how to mix potions.
 
 	if(Alchemy_Explain == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Riordian_ADW_TeachAlchemy_10_01");	//Магические зелья изготавливаются на алхимическом столе. Мы установили такой стол в одном из зданий наверху.
-		AI_Output(self,other,"DIA_Addon_Riordian_ADW_TeachAlchemy_10_02");	//Тебе понадобится пустой алхимический сосуд, ингредиенты и, конечно, знание рецепта зелья.
-		AI_Output(self,other,"DIA_Addon_Riordian_ADW_TeachAlchemy_10_03");	//Рецептам ты можешь научиться у меня. Все остальное тебе придется добыть самому.
+		AI_Output(self,other, " DIA_Addon_Riordian_ADW_TeachAlchemy_10_01 " );	// Magic potions are crafted at the alchemy table. We set up such a table in one of the buildings upstairs.
+		AI_Output(self,other, " DIA_Addon_Riordian_ADW_TeachAlchemy_10_02 " );	// You'll need an empty alchemy vessel, ingredients, and of course knowledge of the potion recipe.
+		AI_Output(self,other, " DIA_Addon_Riordian_ADW_TeachAlchemy_10_03 " );	// You can learn the recipes from me. Everything else you have to get yourself.
 		Alchemy_Explain = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Riordian_ADW_TeachAlchemy_10_04");	//Какой рецепт ты хочешь выучить?
+		AI_Output(self,other, " DIA_Addon_Riordian_ADW_TeachAlchemy_10_04 " );	// What recipe do you want to learn?
 	};
 
 	Info_ClearChoices(DIA_Riordian_ADW_TeachAlchemy);
@@ -601,12 +602,12 @@ func void DIA_Riordian_ADW_TeachAlchemy_Info()
 		};
 		if(PLAYER_TALENT_ALCHEMY[POTION_Perm_DEX] == FALSE)
 		{
-			Info_AddChoice(DIA_Riordian_ADW_TeachAlchemy,b_buildlearnstringforalchemy("Эликсир ловкости",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Perm_DEX)),DIA_Riordian_ADW_TeachAlchemy_Perm_DEX);
+			Info_AddChoice(DIA_Riordian_ADW_TeachAlchemy, b_buildlearnstringforalchemy( " Элсрлавкости " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Perm_DEX)), DIA_Riordian_AlDW_Perm_Teach);
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Riordian_ADW_TeachAlchemy_10_05");	//Я уже научил тебя всему, что знал сам.
+		AI_Output(self,other, " DIA_Addon_Riordian_ADW_TeachAlchemy_10_05 " );	// I've already taught you everything I knew myself.
 		DIA_Riordian_ADW_TeachAlchemy_permanent = TRUE;
 	};
 };
@@ -665,7 +666,7 @@ instance DIA_RIORDIAN_ADW_PRAYFORGOMEZ(C_Info)
 	condition = dia_riordian_adw_prayforgomez_condition;
 	information = dia_riordian_adw_prayforgomez_info;
 	permanent = FALSE;
-	description = "Мне нужно благословение Аданоса.";
+	description = " I need the blessing of Adanos. " ;
 };
 
 func int dia_riordian_adw_prayforgomez_condition()
@@ -678,19 +679,19 @@ func int dia_riordian_adw_prayforgomez_condition()
 
 func void dia_riordian_adw_prayforgomez_info()
 {
-	AI_Output(other,self,"DIA_Riordian_ADW_PrayForGomez_01_01");	//Мне нужно благословение Аданоса.
-	AI_Output(self,other,"DIA_Riordian_ADW_PrayForGomez_01_02");	//Поговори об этом с Сатурасом.
-	AI_Output(self,other,"DIA_Riordian_ADW_PrayForGomez_01_03");	//Думаю, он сможет помочь тебе.
-	SENTTOSATURASGOMEZ = TRUE;
+	AI_Output(other,self, " DIA_Riordian_ADW_PrayForGomez_01_01 " );	// I need the blessing of Adanos.
+	AI_Output(self,other, " DIA_Riordian_ADW_PrayForGomez_01_02 " );	// Talk to Saturas about this.
+	AI_Output(self,other, " DIA_Riordian_ADW_PrayForGomez_01_03 " );	// I think he can help you.
+	SENTTOSATURASGOMEZ = TRUE ;
 };
 
-instance DIA_ADDON_RIORDIAN_ADW_TEACHPRE(C_Info)
+instance DIA_ADDON_RIORDIAN_ADW_TEACHPRE (C_Info)
 {
 	npc = KDW_14040_Addon_Riordian_ADW;
 	nr = 5;
 	condition = dia_addon_riordian_ADW_teachpre_condition;
 	information = dia_addon_riordian_ADW_teachpre_info;
-	description = "Ватрас дал мне этот амулет ищущего огонька...";
+	description = " Vatras gave me this Seeking Wisp Amulet... " ;
 };
 
 func int dia_addon_riordian_ADW_teachpre_condition()
@@ -703,10 +704,10 @@ func int dia_addon_riordian_ADW_teachpre_condition()
 
 func void dia_addon_riordian_ADW_teachpre_info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_TeachPre_15_00");	//Ватрас дал мне этот амулет ищущего огонька...
-	AI_Output(self,other,"DIA_Addon_Riordian_TeachPre_10_01");	//Ага! (заинтересованно) Это редкий артефакт... Ты знаешь, что ты можешь обучать своего огонька?
-	AI_Output(other,self,"DIA_Addon_Riordian_TeachPre_15_02");	//Ты можешь научить меня этому?
-	AI_Output(self,other,"DIA_Addon_Riordian_TeachPre_10_03");	//Да, конечно. Я долгое время занимался этой областью магии.
+	AI_Output(other,self, " DIA_Addon_Riordian_TeachPre_15_00 " );	// Vatras gave me this amulet of the Seeking Wisp...
+	AI_Output(self,other, " DIA_Addon_Riordian_TeachPre_10_01 " );	// Aha! (interested) It's a rare artifact... Do you know that you can train your Wisp?
+	AI_Output(other,self, " DIA_Addon_Riordian_TeachPre_15_02 " );	// Can you teach me this?
+	AI_Output(self,other, " DIA_Addon_Riordian_TeachPre_10_03 " );	// Yes, of course. I have been involved in this area of ​​magic for a long time.
 	Riordian_Addon_TeachPlayer = TRUE;
 	Log_CreateTopic(TOPIC_Addon_KDWTeacher,LOG_NOTE);
 	B_LogEntry(TOPIC_Addon_KDWTeacher,LogText_Addon_RiordianTeach);
@@ -719,7 +720,7 @@ instance DIA_ADDON_RIORDIAN_ADW_TEACH(C_Info)
 	condition = dia_addon_riordian_ADW_teach_condition;
 	information = dia_addon_riordian_ADW_teach_info;
 	permanent = TRUE;
-	description = "(обучение ищущего огонька)";
+	description = " (training the searching wisp) " ;
 };
 
 var int dia_addon_riordian_ADW_teach_noperm;
@@ -744,27 +745,27 @@ func void dia_addon_riordian_ADW_teach_info()
 
 		if(player_talent_wispdetector[WISPSKILL_FF] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Поиск оружие дальнего боя, стрел и болтов (Требуется: 10 кусков магической руды)",dia_addon_riordian_ADW_teach_wispskill_ff);
+			Info_AddChoice(dia_addon_riordian_ADW_teach, " Search for Ranged Weapons, Arrows and Bolts (Requires: 10 Magic Ore) " ,dia_addon_riordian_ADW_teach_wispskill_ff);
 		};
 		if(player_talent_wispdetector[WISPSKILL_NONE] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Поиск золота и различной утвари (Требуется: 20 кусков магической руды)",dia_addon_riordian_ADW_teach_wispskill_none);
+			Info_AddChoice(dia_addon_riordian_ADW_teach, " Search for gold and various utensils (Requires: 20 pieces of magic ore) " ,dia_addon_riordian_ADW_teach_wispskill_none);
 		};
 		if(player_talent_wispdetector[WISPSKILL_RUNE] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Поиск магических свитков (Требуется: 30 кусков магической руды)",dia_addon_riordian_ADW_teach_wispskill_rune);
+			Info_AddChoice(dia_addon_riordian_ADW_teach, " Find Magic Scrolls (Requires: 30 Magic Ore) " ,dia_addon_riordian_ADW_teach_wispskill_rune);
 		};
 		if(player_talent_wispdetector[WISPSKILL_FOOD] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Поиск еды и растений (Требуется: 50 кусков магической руды)",dia_addon_riordian_ADW_teach_wispskill_food);
+			Info_AddChoice(dia_addon_riordian_ADW_teach, " Find Food and Plants (Requires: 50 Magic Ore) " ,dia_addon_riordian_ADW_teach_wispskill_food);
 		};
 		if(player_talent_wispdetector[WISPSKILL_MAGIC] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Поиск магических колец и амулетов (Требуется: 75 кусков магической руды)",dia_addon_riordian_ADW_teach_wispskill_magic);
+			Info_AddChoice(dia_addon_riordian_ADW_teach, " Search for Magic Rings and Amulets (Requires: 75 Magic Ore) " ,dia_addon_riordian_ADW_teach_wispskill_magic);
 		};
 		if(player_talent_wispdetector[WISPSKILL_POTIONS] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Поиск магических зелий (Требуется: 100 кусков магической руды)",dia_addon_riordian_ADW_teach_wispskill_potions);
+			Info_AddChoice(dia_addon_riordian_ADW_teach, " Find Magic Potions (Requires: 100 Magic Ore) " ,dia_addon_riordian_ADW_teach_wispskill_potions);
 		};
 	}
 	else
@@ -867,18 +868,18 @@ func int DIA_Addon_Riordian_LostPower_Condition()
 
 func void DIA_Addon_Riordian_LostPower_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_00");	//Эй, постой! Я слышал, что тебе удалось открыть магический портал, ведущий в неизвестную область.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_03");	//Сатурас говорит, что там может находиться священная вотчина самого Аданоса!
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_04");	//Исходя из этих соображений, он запрещает нам предпринимать какие-либо попытки ее изучения.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_05");	//Но, пожалуй, на тебя запрет Сатураса не распространяется.
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_01_06");	//Что ты хочешь этим сказать?
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_07");	//Ты бы мог сам исследовать эту область и принести мне какие-нибудь документальные свидетельства, связывающие бытность народа Зодчих с тем местом.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_08");	//Это помогло бы нам лучше понять, как развивалась их цивилизация, пока они не заселили эту долину.
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_01_09");	//Но, может, это были вовсе не Зодчие?
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_10");	//Да, этого мы не знаем. Но я уверен, что портал был построен именно ими. А значит, они должны были знать, куда он ведет.
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_01_11");	//Хорошо, я ведь все равно собираюсь идти туда.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_12");	//Чудесно! Только не говори об этом Сатурасу, иначе он будет в ярости!
-	B_LogEntry(TOPIC_LostPower,"Риордиан хочет, чтобы я поискал в найденной мною священной земле Аданоса какие-нибудь документальные свидетельства о цивилизации народа Зодчих.");
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_01_00 " );	// Hey, wait! I heard that you managed to open a magical portal leading to an unknown area.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_01_03 " );	// Saturas says that there may be the sacred fiefdom of Adanos himself!
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_01_04 " );	// Based on these considerations, he forbids us to make any attempt to study it.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_01_05 " );	// But perhaps Saturas' ban doesn't apply to you.
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_01_06 " );	// What do you mean by that?
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_01_07 " );	// You could explore this area yourself and bring me some documentary evidence that connects the existence of the people of the Architects with that place.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_01_08 " );	// This would help us better understand how their civilization developed before they settled this valley.
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_01_09 " );	// But maybe they weren't Architects at all?
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_01_10 " );	// Yes, we don't know that. But I am sure that the portal was built by them. So they must have known where it leads.
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_01_11 " );	// Okay, I'm going to go there anyway.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_01_12 " );	// Great! Just don't tell Saturas about it or he'll be furious!
+	B_LogEntry(TOPIC_LostPower, " Riordian wants me to search the sacred land of Adanos I found for any documentary evidence of the civilization of the Builders. " );
 };
 
 instance DIA_Addon_Riordian_LostPower_Done(C_Info)
@@ -888,12 +889,12 @@ instance DIA_Addon_Riordian_LostPower_Done(C_Info)
 	condition = DIA_Addon_Riordian_LostPower_Done_Condition;
 	information = DIA_Addon_Riordian_LostPower_Done_Info;
 	permanent = TRUE;
-	description = "Насчет твоей просьбы...";
+	description = " About your request... " ;
 };
 
 func int DIA_Addon_Riordian_LostPower_Done_Condition()
 {
-	if((MIS_LostPower == LOG_Running) && (Npc_HasItems(other,ItMi_LP_StonePlate_01) >= 1) && (Npc_KnowsInfo(other,DIA_Addon_Riordian_LostPower) == TRUE) && (RiordianDayStory == FALSE))
+	if ((MY_LostPower == LOG_Running) && (Npc_HasItems(other,ItMy_LP_StonePlate_01) >=  1 ) && (Npc_KnowsInfo(other,DIA_Addon_Riordian_LostPower) ==  TRUE ) && (RiordianDayStory ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -901,14 +902,14 @@ func int DIA_Addon_Riordian_LostPower_Done_Condition()
 
 func void DIA_Addon_Riordian_LostPower_Done_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Done_01_00");	//Насчет твоей просьбы...
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Done_01_01");	//Да? Тебе удалось найти что-нибудь интересное?
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Done_01_00 " );	// About your request...
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Done_01_01 " );	// Yes? Did you manage to find anything interesting?
 	Info_ClearChoices(DIA_Addon_Riordian_LostPower_Done);
 	Info_AddChoice(DIA_Addon_Riordian_LostPower_Done,Dialog_Back,DIA_Addon_Riordian_LostPower_Done_Back);
 
 	if(Npc_HasItems(other,ItMi_LP_StonePlate_01) >= 1)
 	{
-		Info_AddChoice(DIA_Addon_Riordian_LostPower_Done,"Отдать найденные каменные таблички.",DIA_Addon_Riordian_LostPower_Done_StnAll);
+		Info_AddChoice(DIA_Addon_Riordian_LostPower_Done, " Give found stone tablets. " ,DIA_Addon_Riordian_LostPower_Done_StnAll);
 	};
 };
 
@@ -928,13 +929,13 @@ func void DIA_Addon_Riordian_LostPower_Done_StnAll()
 
 	if(TakeStonePlate > 1)
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Done_StnAll_01_00");	//Держи эти каменные таблички. Наверняка ты найдешь в них что-нибудь полезное.
-		AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Done_StnAll_01_01");	//Хорошо. Я внимательно их изучу.
+		AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Done_StnAll_01_00 " );	// Hold these stone tablets. Surely you will find something useful in them.
+		AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Done_StnAll_01_01 " );	// Good. I will study them carefully.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Done_StnAll_01_02");	//Держи эту каменную табличку. Наверняка ты найдешь в ней что-нибудь полезное.
-		AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Done_StnAll_01_03");	//Хорошо. Я внимательно ее изучу.
+		AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Done_StnAll_01_02 " );	// Hold this stone tablet. Surely you will find something useful in it.
+		AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Done_StnAll_01_03 " );	// Good. I will study it carefully.
 	};
 
 	AllTakeStonePlate = AllTakeStonePlate + TakeStonePlate;
@@ -952,7 +953,7 @@ instance DIA_Addon_Riordian_LostPower_Know(C_Info)
 	condition = DIA_Addon_Riordian_LostPower_Know_Condition;
 	information = DIA_Addon_Riordian_LostPower_Know_Info;
 	permanent = FALSE;
-	description = "Что тебе удалось выяснить из всего, что я тебе принес?";
+	description = " What did you find out from everything I brought you? " ;
 };
 
 func int DIA_Addon_Riordian_LostPower_Know_Condition()
@@ -966,26 +967,26 @@ func int DIA_Addon_Riordian_LostPower_Know_Condition()
 func void DIA_Addon_Riordian_LostPower_Know_Info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Know_01_00");	//Что тебе удалось выяснить из всего, что я тебе принес?
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_01");	//Немногое. Большинство из этих каменных табличек оказались бесполезным хламом. 
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_02");	//Например, среди них мне попался один очень странный кулинарный рецепт приготовления блюда из мяса глорха.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_03");	//А другая табличка вообще оказалась любовной запиской. Представляешь?
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Know_01_04");	//Значит, все оказалось напрасно?
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_05");	//Не совсем. Были и те, которые помогли прояснить ситуацию, произошедшую на Плато Древних.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_06");	//(задумчиво) Плато Древних!.. Какое необычное название. Именно так Зодчие называли ту местность, куда вел портал.
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Know_01_07");	//Я знаю. Но что же там все-таки произошло?
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_08");	//Какое-то страшное проклятие постигло этот народ. Правда, чем оно вызвано, в найденных тобой записях не указано.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_09");	//Но очевидно, что за короткий промежуток времени все их земли наводнили жуткие монстры и орды нежити. Люди были в панике и не знали, что делать.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_10");	//Тогда Куарходрон, великий военачальник Зодчих, собрал огромную армию и попытался уничтожить зло одним решительным ударом.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_11");	//Битва произошла рядом с местом, именуемом Кхар Арам. К несчастью, Куарходрон и его воины потерпели поражение. Слишком силен был их враг.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_12");	//С остатками войска и другими жителями долины они укрылись тут, в Яркендаре. А проход, ведущий на плато, запечатали сильной магией.
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Know_01_13");	//Интересная история. Только непонятно, кто был их враг?
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_14");	//Мне и самому интересно. И главное - почему Аданос не помог им? Ведь именно ему этот народ поклонялся на протяжении веков.
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Know_01_15");	//Может, проклятие наслал сам Аданос?
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_16");	//Нет, скорее, загадка кроется в другом... В некоем артефакте, о котором написано в этих табличках.
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_Know_01_17");	//Только его название в записях умалчивается. Однако там сказано, что сам Аданос сокрыл его в этой долине от взора своего брата Белиара.
-	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_Know_01_18");	//(про себя) Артефакт Белиара... Неужто Коготь?
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Know_01_00 " );	// What did you manage to figure out from everything I brought you?
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_01 " );	// Not much. Most of these stone tablets turned out to be useless junk.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_02 " );	// For example, among them I came across one very strange culinary recipe for preparing a dish of glorch meat.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_03 " );	// And the other sign actually turned out to be a love note. Can you imagine?
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Know_01_04 " );	// So everything was in vain?
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_05 " );	// Not really. There were those who helped clarify the situation that occurred on the Plateau of the Ancients.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_06 " );	// (thoughtfully) Plateau of the Ancients!.. What an unusual name. That is how the Architects called the area where the portal led.
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Know_01_07 " );	// I know. But what happened there anyway?
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_08 " );	// Some terrible curse befell this people. True, what caused it is not indicated in the records you found.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_09 " );	// But it is obvious that in a short period of time, all their lands were overrun by terrible monsters and hordes of the undead. People were in a panic and did not know what to do.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_10 " );	// Then Quarhodron, the great warlord of the Builders, gathered a huge army and tried to destroy the evil with one decisive blow.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_11 " );	// The battle took place near a place called Khar Aram. Unfortunately, Quarhodron and his warriors were defeated. Their enemy was too strong.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_12 " );	// With the remnants of the army and other inhabitants of the valley, they took refuge here, in Yarkendar. And the passage leading to the plateau was sealed with strong magic.
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Know_01_13 " );	// Interesting story. Just wondering who their enemy was?
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_14 " );	// I'm also interested. And most importantly, why didn't Adanos help them? After all, this people worshiped him for centuries.
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Know_01_15 " );	// Maybe the curse was sent by Adanos himself?
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_16 " );	// No, rather, the mystery lies in something else... In a certain artifact, which is written about in these tablets.
+	AI_Output(self,other, " DIA_Addon_Riordian_LostPower_Know_01_17 " );	// Only its name is silent in the records. However, it says that Adanos himself hid it in this valley from the gaze of his brother Beliar.
+	AI_Output(other,self, " DIA_Addon_Riordian_LostPower_Know_01_18 " );	// (to himself) Beliar's artifact... Is it a Talon?
 	MIS_LostPower = LOG_Success;
 	Log_SetTopicStatus(TOPIC_LostPower,LOG_Success);
-	B_LogEntry(TOPIC_LostPower,"Я принес Риордиану достаточное количество документальных свидетельств о развитии цивилизации Зодчих на плато.");
+	B_LogEntry(TOPIC_LostPower, " I brought Riordian enough documentary evidence of the development of the Builders' civilization on the plateau. " );
 };
