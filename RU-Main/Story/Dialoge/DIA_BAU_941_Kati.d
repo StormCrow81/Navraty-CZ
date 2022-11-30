@@ -4,7 +4,7 @@ instance DIA_Kati_EXIT(C_Info)
 	npc = BAU_941_Kati;
 	nr = 999;
 	condition = DIA_Kati_EXIT_Condition;
-	information = DIA_Kati_EXIT_Info;
+	information = DIA_Inside_EXIT_Info;
 	permanent = TRUE;
 	description = Dialog_Ende;
 };
@@ -12,7 +12,7 @@ instance DIA_Kati_EXIT(C_Info)
 
 func int DIA_Kati_EXIT_Condition()
 {
-	if(Kapitel < 3)
+	if (chapter <  3 )
 	{
 		return TRUE;
 	};
@@ -24,7 +24,7 @@ func void DIA_Kati_EXIT_Info()
 };
 
 
-instance DIA_Kati_SLDNOCHDA(C_Info)
+DIA_Kati_SLDNOCHDA (C_Info) instances
 {
 	npc = BAU_941_Kati;
 	nr = 4;
@@ -45,35 +45,35 @@ func int DIA_Kati_SLDNOCHDA_Condition()
 
 func void DIA_Kati_SLDNOCHDA_Info()
 {
-	var int Hilfe;
-	if(Hilfe == FALSE)
+	var int help;
+	if (help ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Kati_SLDNOCHDA_16_00");	//Эти головорезы угрожают моему мужу! Мы простые граждане Хориниса, преданные королю, а эти наемники хотят ограбить нас!
-		Hilfe = TRUE;
+		AI_Output(self,other, " DIA_Kati_SLDNOCHDA_16_00 " );	// These thugs are threatening my husband! We are ordinary citizens of Khorinis, loyal to the king, and these mercenaries want to rob us!
+		help = TRUE ;
 	};
-	AI_Output(self,other,"DIA_Kati_SLDNOCHDA_16_01");	//Ну не стой же здесь. Сделай что-нибудь! Помоги нам!
+	AI_Output(self,other, " DIA_Kati_SLDNOCHDA_16_01 " );	// Well, don't just stand there. Do something! Help us!
 	Akils_SLDStillthere = TRUE;
 	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
-	B_LogEntry(TOPIC_AkilsSLDStillthere,"Фермеру Акилу угрожают наемники.");
+	B_LogEntry(TOPIC_AkilsSLDStillthere, " Farmer Akils is threatened by mercenaries. " );
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Kati_HALLO(C_Info)
+instances DIA_Kati_HALLO (C_Info)
 {
 	npc = BAU_941_Kati;
 	nr = 5;
 	condition = DIA_Kati_HALLO_Condition;
 	information = DIA_Kati_HALLO_Info;
 	permanent = FALSE;
-	description = "С тобой все в порядке?";
+	description = " Are you all right? " ;
 };
 
 
 func int DIA_Kati_HALLO_Condition()
 {
-	if(Npc_IsDead(Alvares) && Npc_IsDead(Engardo))
+	if (Npc_IsDead(Alvares) && Npc_IsDead(Engardo))
 	{
 		return TRUE;
 	};
@@ -81,35 +81,35 @@ func int DIA_Kati_HALLO_Condition()
 
 func void DIA_Kati_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Kati_HALLO_15_00");	//С тобой все в порядке?
-	if(Npc_IsDead(Akil))
+	AI_Output(other,self, " DIA_Kati_HALLO_15_00 " );	// Are you all right?
+	if (Npc_IsDead(Akil))
 	{
-		AI_Output(self,other,"DIA_Kati_HALLO_16_01");	//Мой любимый муж мертв!...(рыдает) Ох, Иннос, за что ты меня так наказываешь?!
+		AI_Output(self,other, " DIA_Kati_HALLO_16_01 " );	// My beloved husband is dead!...(sobs) Oh, Innos, why are you punishing me like that?!
 		Npc_ExchangeRoutine(self,"Start");
 		B_StartOtherRoutine(Randolph,"Start");
 		B_GivePlayerXP(XP_Akil_Tot);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kati_HALLO_16_02");	//Да, я в порядке, спасибо.
+		AI_Output(self,other, " DIA_Kati_HALLO_16_02 " );	// Yes, I'm fine, thanks.
 	};
 };
 
 
-instance DIA_Kati_ESSEN(C_Info)
+DIA_Kati_ESSEN (C_Info) instances
 {
 	npc = BAU_941_Kati;
 	nr = 12;
 	condition = DIA_Kati_ESSEN_Condition;
 	information = DIA_Kati_ESSEN_Info;
 	permanent = FALSE;
-	description = "Акил говорит, что ты можешь накормить меня.";
+	description = " Akil says you can feed me. " ;
 };
 
 
 func int DIA_Kati_ESSEN_Condition()
 {
-	if((Kati_Mahlzeit == TRUE) && (Npc_IsDead(Akil) == FALSE))
+	if ((Not_Dead ==  TRUE ) && (Npc_IsDead(Akil) ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -117,9 +117,9 @@ func int DIA_Kati_ESSEN_Condition()
 
 func void DIA_Kati_ESSEN_Info()
 {
-	AI_Output(other,self,"DIA_Kati_ESSEN_15_00");	//Акил говорит, что ты можешь накормить меня.
-	AI_Output(self,other,"DIA_Kati_ESSEN_16_01");	//С тех пор как рухнул Барьер, для нас настали тяжелые времена. Жить здесь стало небезопасно.
-	AI_Output(self,other,"DIA_Kati_ESSEN_16_02");	//Вот, держи ломоть хлеба, немного молока и бутылку воды. Извини, но это все, чем мы можем поделиться.
+	AI_Output(other,self, " DIA_Kati_ESSEN_15_00 " );	// Akil says you can feed me.
+	AI_Output(self,other, " DIA_Kati_ESSEN_16_01 " );	// Ever since the Barrier collapsed, times have fallen on us. Living here has become unsafe.
+	AI_Output(self,other, " DIA_Kati_ESSEN_16_02 " );	// Here, have a slice of bread, some milk and a bottle of water. I'm sorry, but that's all we can share.
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(other,ItFo_Bread,1);
 	CreateInvItems(other,ItFo_Water,1);
@@ -127,20 +127,20 @@ func void DIA_Kati_ESSEN_Info()
 };
 
 
-instance DIA_Kati_Baltram(C_Info)
+instance DIA_Kati_Baltram (C_Info)
 {
 	npc = BAU_941_Kati;
 	nr = 4;
 	condition = DIA_Kati_Baltram_Condition;
 	information = DIA_Kati_Baltram_Info;
 	permanent = FALSE;
-	description = "Меня прислал Бальтрам.";
+	description = " Baltram sent me. " ;
 };
 
 
 func int DIA_Kati_Baltram_Condition()
 {
-	if(Npc_IsDead(Akil) && (MIS_Baltram_ScoutAkil == LOG_Running) && (Lieferung_Geholt == FALSE))
+	if (Npc_IsDead(Akil) && (MIS_Baltram_ScoutAkil == LOG_Running) && (Delivery_Geholt ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -148,28 +148,28 @@ func int DIA_Kati_Baltram_Condition()
 
 func void DIA_Kati_Baltram_Info()
 {
-	AI_Output(other,self,"DIA_Kati_Baltram_15_00");	//Меня прислал Бальтрам. Я должен забрать посылку для него.
-	AI_Output(self,other,"DIA_Kati_Baltram_16_01");	//Да, конечно. Вот, я уже упаковала ее.
+	AI_Output(other,self, " DIA_Kati_Baltram_15_00 " );	// Baltram sent me. I have to pick up a package for him.
+	AI_Output(self,other, " DIA_Kati_Baltram_16_01 " );	// Yes, of course. Here, I already packed it.
 	CreateInvItems(self,ItMi_BaltramPaket,1);
 	B_GiveInvItems(self,other,ItMi_BaltramPaket,1);
-	Lieferung_Geholt = TRUE;
+	Delivery_Geholt = TRUE ;
 };
 
 
-instance DIA_Kati_BAUERNAUFSTAND(C_Info)
+instance DIA_Kati_BAUERNAUFSTAND (C_Info)
 {
 	npc = BAU_941_Kati;
 	nr = 6;
 	condition = DIA_Kati_BAUERNAUFSTAND_Condition;
 	information = DIA_Kati_BAUERNAUFSTAND_Info;
 	permanent = FALSE;
-	description = "Почему вы не противостоите тирании Онара?";
+	description = " Why don't you resist Onar's tyranny? " ;
 };
 
 
 func int DIA_Kati_BAUERNAUFSTAND_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Kati_HALLO))
+	if ( Npc_KnowsInfo ( other , DIA_Now_HELLO ))
 	{
 		return TRUE;
 	};
@@ -177,26 +177,26 @@ func int DIA_Kati_BAUERNAUFSTAND_Condition()
 
 func void DIA_Kati_BAUERNAUFSTAND_Info()
 {
-	AI_Output(other,self,"DIA_Kati_BAUERNAUFSTAND_15_00");	//Почему вы не противостоите тирании Онара?
-	AI_Output(self,other,"DIA_Kati_BAUERNAUFSTAND_16_01");	//Для фермеров, живущих у города, это имеет смысл. Им лучше быть на стороне ополчения, чем полагаться на наемников Онара.
-	AI_Output(self,other,"DIA_Kati_BAUERNAUFSTAND_16_02");	//С другой стороны, есть Бенгар и Секоб, которые скорее откажутся от своих ферм, чем будут работать на короля.
+	AI_Output(other,self, " DIA_Kati_BAUERNAUFSTAND_15_00 " );	// Why don't you resist Onar's tyranny?
+	AI_Output(self,other, " DIA_Kati_BAUERNAUFSTAND_16_01 " );	// For farmers living near the city, this makes sense. They'd rather be on the side of the militia than rely on Onar's mercenaries.
+	AI_Output(self,other, " DIA_Kati_BAUERNAUFSTAND_16_02 " );	// On the other hand, there are Bengar and Sekob who would rather give up their farms than work for the king.
 };
 
 
-instance DIA_Kati_ANDEREHOEFE(C_Info)
+instances DIA_Kati_ANDEREHOEFE (C_Info)
 {
 	npc = BAU_941_Kati;
 	nr = 7;
 	condition = DIA_Kati_ANDEREHOEFE_Condition;
 	information = DIA_Kati_ANDEREHOEFE_Info;
 	permanent = FALSE;
-	description = "Где находятся фермы Бенгара и Секоба?";
+	description = " Where are the Bengar and Sekob farms? " ;
 };
 
 
 func int DIA_Kati_ANDEREHOEFE_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Kati_BAUERNAUFSTAND))
+	if ( Npc_KnowsInfo ( other , DIA_Current_BAUERNAUFSTAND ))
 	{
 		return TRUE;
 	};
@@ -204,25 +204,25 @@ func int DIA_Kati_ANDEREHOEFE_Condition()
 
 func void DIA_Kati_ANDEREHOEFE_Info()
 {
-	AI_Output(other,self,"DIA_Kati_ANDEREHOEFE_15_00");	//Где находятся фермы Бенгара и Секоба?
-	AI_Output(self,other,"DIA_Kati_ANDEREHOEFE_16_01");	//Неподалеку от фермы Онара. Иди на восток отсюда, и ты найдешь их.
+	AI_Output(other,self, " DIA_Kati_ANDEREHOEFE_15_00 " );	// Where are the Bengar and Sekob farms?
+	AI_Output(self,other, " DIA_Kati_ANDEREHOEFE_16_01 " );	// Not far from Onar's farm. Go east of here and you will find them.
 };
 
 
-instance DIA_Kati_HIERWEG(C_Info)
+instance DIA_Kati_HIERWEG (C_Info)
 {
 	npc = BAU_941_Kati;
 	nr = 9;
 	condition = DIA_Kati_HIERWEG_Condition;
 	information = DIA_Kati_HIERWEG_Info;
 	permanent = FALSE;
-	description = "А вы не думали о том, чтобы уехать отсюда?";
+	description = " Have you thought about leaving here? " ;
 };
 
 
 func int DIA_Kati_HIERWEG_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Kati_BAUERNAUFSTAND))
+	if ( Npc_KnowsInfo ( other , DIA_Current_BAUERNAUFSTAND ))
 	{
 		return TRUE;
 	};
@@ -230,27 +230,27 @@ func int DIA_Kati_HIERWEG_Condition()
 
 func void DIA_Kati_HIERWEG_Info()
 {
-	AI_Output(other,self,"DIA_Kati_HIERWEG_15_00");	//А вы не думали о том, чтобы уехать отсюда?
-	AI_Output(self,other,"DIA_Kati_HIERWEG_16_01");	//Не так-то просто уехать из этой части страны. Вся эта земля окружена стеной высоких, непроходимых гор.
-	AI_Output(self,other,"DIA_Kati_HIERWEG_16_02");	//Выбраться отсюда можно только лежит через Долину Рудников или через гавань города.
-	AI_Output(self,other,"DIA_Kati_HIERWEG_16_03");	//Так как мы не можем позволить себе купить место на корабле, а Долина Рудников - это место, откуда не возвращаются, мы вынуждены оставаться здесь.
+	AI_Output(other,self, " DIA_Kati_HIERWEG_15_00 " );	// Have you thought about leaving here?
+	AI_Output(self,other, " DIA_Kati_HIERWEG_16_01 " );	// It's not easy to leave this part of the country. All this land is surrounded by a wall of high, impenetrable mountains.
+	AI_Output(self,other, " DIA_Kati_HIERWEG_16_02 " );	// The only way out of here is through the Valley of Mines or through the city's harbor.
+	AI_Output(self,other, " DIA_Kati_HIERWEG_16_03 " );	// Since we can't afford to buy a place on a ship, and the Valley of Mines is a place of no return, we're forced to stay here.
 };
 
 
-instance DIA_Kati_PASS(C_Info)
+DIA_Kati_PASS (C_Info) instances
 {
 	npc = BAU_941_Kati;
 	nr = 10;
 	condition = DIA_Kati_PASS_Condition;
 	information = DIA_Kati_PASS_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о Проходе?";
+	description = " What do you know about the Passage? " ;
 };
 
 
 func int DIA_Kati_PASS_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Kati_HIERWEG))
+	if ( Npc_KnowsInfo ( other , DIA_Current_HIERWEG ))
 	{
 		return TRUE;
 	};
@@ -258,25 +258,25 @@ func int DIA_Kati_PASS_Condition()
 
 func void DIA_Kati_PASS_Info()
 {
-	AI_Output(other,self,"DIA_Kati_PASS_15_00");	//Что ты знаешь о Проходе?
-	AI_Output(self,other,"DIA_Kati_PASS_16_01");	//Сама я там никогда не была. Но я знаю, что он где-то неподалеку от фермы Бенгара на высокогорных пастбищах.
+	AI_Output(other,self, " DIA_Kati_PASS_15_00 " );	// What do you know about the Passage?
+	AI_Output(self,other, " DIA_Kati_PASS_16_01 " );	// I've never been there myself. But I know he's somewhere near Bengar's farm in the high pastures.
 };
 
 
-instance DIA_Kati_PERMKAP1(C_Info)
+instances DIA_Kati_PERMKAP1 (C_Info)
 {
 	npc = BAU_941_Kati;
 	nr = 11;
 	condition = DIA_Kati_PERMKAP1_Condition;
 	information = DIA_Kati_PERMKAP1_Info;
 	permanent = TRUE;
-	description = "Береги своего мужа.";
+	description = " Take care of your husband. " ;
 };
 
 
 func int DIA_Kati_PERMKAP1_Condition()
 {
-	if(!C_NpcIsDown(Akil) && Npc_KnowsInfo(other,DIA_Kati_HALLO) && Npc_KnowsInfo(other,DIA_Kati_BAUERNAUFSTAND) && Npc_KnowsInfo(other,DIA_Kati_ANDEREHOEFE) && Npc_KnowsInfo(other,DIA_Kati_HIERWEG) && Npc_KnowsInfo(other,DIA_Kati_PASS) && (Kapitel < 3))
+	if ( ! C_NpcIsDown(Akil) && Npc_KnowsInfo(other,DIA_Kati_HALLO) && Npc_KnowsInfo(other,DIA_Kati_BAUERNAUFSTAND) && Npc_KnowsInfo(other,DIA_Kati_ANDEREHOEFE) && Npc_KnowsInfo(other,DIA_Kati_HIERWEG) && Npc_KnowsInfo(other,DIA_Kati_PASS) && (Kapitel <  3 ))
 	{
 		return TRUE;
 	};
@@ -284,8 +284,8 @@ func int DIA_Kati_PERMKAP1_Condition()
 
 func void DIA_Kati_PERMKAP1_Info()
 {
-	AI_Output(other,self,"DIA_Kati_PERMKAP1_15_00");	//Береги своего мужа.
-	AI_Output(self,other,"DIA_Kati_PERMKAP1_16_01");	//Я стараюсь изо всех сил.
+	AI_Output(other,self, " DIA_Kati_PERMKAP1_15_00 " );	// Take care of your husband.
+	AI_Output(self,other, " DIA_Kati_PERMKAP1_16_01 " );	// I try my best.
 	AI_StopProcessInfos(self);
 };
 
@@ -303,7 +303,7 @@ instance DIA_Kati_KAP3_EXIT(C_Info)
 
 func int DIA_Kati_KAP3_EXIT_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
@@ -315,20 +315,20 @@ func void DIA_Kati_KAP3_EXIT_Info()
 };
 
 
-instance DIA_Kati_PERM(C_Info)
+instances of DIA_Kati_PERM (C_Info)
 {
 	npc = BAU_941_Kati;
 	nr = 3;
 	condition = DIA_Kati_PERM_Condition;
 	information = DIA_Kati_PERM_Info;
 	permanent = TRUE;
-	description = "С тобой все в порядке?";
+	description = " Are you all right? " ;
 };
 
 
 func int DIA_Kati_PERM_Condition()
 {
-	if((Kapitel >= 3) && Npc_KnowsInfo(other,DIA_Kati_HALLO))
+	if ((Capital >=  3 ) && Npc_KnowsInfo(other,DIA_Category_HELLO))
 	{
 		return TRUE;
 	};
@@ -336,9 +336,9 @@ func int DIA_Kati_PERM_Condition()
 
 func void DIA_Kati_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Kati_PERM_15_00");	//С тобой все в порядке?
-	AI_Output(self,other,"DIA_Kati_PERM_16_01");	//Мы справимся. Вот только не знаю, сколько еще нам придется терпеть этих дьяволов в черном.
-	AI_Output(self,other,"DIA_Kati_PERM_16_02");	//Я так долго не вынесу. Они шныряют вокруг дома и везде суют свой нос.
+	AI_Output(other,self, " DIA_Kati_PERM_15_00 " );	// Are you all right?
+	AI_Output(self,other, " DIA_Kati_PERM_16_01 " );	// We'll manage. I just don't know how much longer we'll have to put up with these devils in black.
+	AI_Output(self,other, " DIA_Kati_PERM_16_02 " );	// I can't take this long. They snoop around the house and stick their nose everywhere.
 };
 
 
@@ -347,7 +347,7 @@ instance DIA_Kati_KAP4_EXIT(C_Info)
 	npc = BAU_941_Kati;
 	nr = 999;
 	condition = DIA_Kati_KAP4_EXIT_Condition;
-	information = DIA_Kati_KAP4_EXIT_Info;
+	information = DIA_CAP4_EXIT_Info;
 	permanent = TRUE;
 	description = Dialog_Ende;
 };
@@ -355,7 +355,7 @@ instance DIA_Kati_KAP4_EXIT(C_Info)
 
 func int DIA_Kati_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -372,7 +372,7 @@ instance DIA_Kati_KAP5_EXIT(C_Info)
 	npc = BAU_941_Kati;
 	nr = 999;
 	condition = DIA_Kati_KAP5_EXIT_Condition;
-	information = DIA_Kati_KAP5_EXIT_Info;
+	information = DIA_CAP5_EXIT_Info;
 	permanent = TRUE;
 	description = Dialog_Ende;
 };
@@ -380,7 +380,7 @@ instance DIA_Kati_KAP5_EXIT(C_Info)
 
 func int DIA_Kati_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -405,7 +405,7 @@ instance DIA_Kati_KAP6_EXIT(C_Info)
 
 func int DIA_Kati_KAP6_EXIT_Condition()
 {
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		return TRUE;
 	};
@@ -417,7 +417,7 @@ func void DIA_Kati_KAP6_EXIT_Info()
 };
 
 
-instance DIA_Kati_PICKPOCKET(C_Info)
+instances DIA_Kati_PICKPOCKET (C_Info)
 {
 	npc = BAU_941_Kati;
 	nr = 900;
@@ -430,19 +430,19 @@ instance DIA_Kati_PICKPOCKET(C_Info)
 
 func int DIA_Kati_PICKPOCKET_Condition()
 {
-	return C_Beklauen(13,15);
+	return  C_Robbery ( 13 , 15 );
 };
 
 func void DIA_Kati_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Kati_PICKPOCKET);
 	Info_AddChoice(DIA_Kati_PICKPOCKET,Dialog_Back,DIA_Kati_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Kati_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Kati_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Kati_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Kati_PICKPOCKET_DoIt);
 };
 
 func void DIA_Kati_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Kati_PICKPOCKET);
 };
 
@@ -450,4 +450,3 @@ func void DIA_Kati_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Kati_PICKPOCKET);
 };
-
