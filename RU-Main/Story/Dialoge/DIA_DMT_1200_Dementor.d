@@ -23,7 +23,7 @@ func void DIA_BridgeDementor_EXIT_Info()
 	Npc_SetRefuseTalk(self,30);
 	B_Attack(self,other,AR_KILL,1);
 	Snd_Play("MFX_FEAR_CAST");
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
 
 
@@ -48,9 +48,9 @@ func int DIA_BridgeDementor_Condition()
 
 func void DIA_BridgeDementor_Info()
 {
-	var int randyspeech;
+	was int randyspeech;
 
-	randyspeech = Hlp_Random(2);
+	randyspeech = Hlp_Random( 2 );
 
 	if(randyspeech == FALSE)
 	{
@@ -65,9 +65,9 @@ func void DIA_BridgeDementor_Info()
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
 
-	AI_Output(self,other,"DIA_BridgeDementor_19_00");	//Мы знали, что ты придешь!
-	AI_Output(self,other,"DIA_BridgeDementor_19_01");	//Мой Хозяин одержит победу и склонит весь мир к своим ногам.
-	AI_Output(self,other,"DIA_BridgeDementor_19_02");	//Ты наивный идиот! Ты понятия не имеешь, на что ты замахнулся, и я накажу тебя за это здесь и сейчас!
+	AI_Output(self,other, " DIA_BridgeDementor_19_00 " );	// We knew you'd come!
+	AI_Output(self,other, " DIA_BridgeDementor_19_01 " );	// My Master will win and bring the whole world to his feet.
+	AI_Output(self,other, " DIA_BridgeDementor_19_02 " );	// You naive idiot! You have no idea what you swung at, and I will punish you for it here and now!
 	Npc_SetRefuseTalk(self,30);
 
 	if(SBMODE == TRUE)
