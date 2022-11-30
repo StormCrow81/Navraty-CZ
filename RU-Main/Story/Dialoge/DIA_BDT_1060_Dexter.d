@@ -21,7 +21,7 @@ func void DIA_Dexter_EXIT_Info()
 };
 
 
-instance DIA_Dexter_Hallo(C_Info)
+instance DIA_Dexter_Hello (C_Info)
 {
 	npc = BDT_1060_Dexter;
 	nr = 1;
@@ -42,46 +42,46 @@ func int DIA_Dexter_Hallo_Condition()
 
 func void DIA_Dexter_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Dexter_Hallo_09_00");	//Посмотрите, кто пришел. Великий освободитель. Что ж, герой, что ты делаешь здесь?
-	AI_Output(other,self,"DIA_Dexter_Hallo_15_01");	//Я хочу получить ответы на несколько вопросов.
+	AI_Output(self,other, " DIA_Dexter_Hallo_09_00 " );	// Look who's here. Great liberator. Well, hero, what are you doing here?
+	AI_Output(other,self, " DIA_Dexter_Hallo_15_01 " );	// I want answers to a few questions.
 	if(Ranger_SCKnowsDexter == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Dexter_Hallo_09_00");	//Не ожидал я, что ты придешь сюда добровольно.
-		AI_Output(other,self,"DIA_Addon_Dexter_Hallo_15_01");	//Что ты имеешь в виду?
-		AI_Output(self,other,"DIA_Addon_Dexter_Hallo_09_02");	//Я имею в виду, что я разыскивал тебя. Неужели тебе не попадались мои объявления о розыске?
-		AI_Output(self,other,"DIA_Addon_Dexter_Hallo_09_03");	//На них изображена твоя рожа. Да-да, тебя усиленно разыскивают. Разве ты не знал?
-		B_LogEntry(Topic_Bandits,"Я нашел того, кто раздавал бандитам объявления о розыске с моим изображением. Это был Декстер, мой давний знакомый еще по Старому Лагерю в Долине Рудников.");
+		AI_Output(self,other, " DIA_Addon_Dexter_Hallo_09_00 " );	// I didn't expect you to come here voluntarily.
+		AI_Output(other,self, " DIA_Addon_Dexter_Hallo_15_01 " );	// What do you mean?
+		AI_Output(self,other, " DIA_Addon_Dexter_Hallo_09_02 " );	// I mean, I was looking for you. Haven't you come across my wanted ads?
+		AI_Output(self,other, " DIA_Addon_Dexter_Hallo_09_03 " );	// They show your face. Yes, they are looking for you. Didn't you know?
+		B_LogEntry(Topic_Bandits, " I found someone who was handing out wanted posters with my picture to the bandits. It was Dexter, an old friend of mine from the Old Camp in the Mine Valley. " );
 		Log_SetTopicStatus(Topic_Bandits,LOG_SUCCESS);
-		MIS_Steckbriefe = LOG_SUCCESS;
+		MIS_profiles = LOG_SUCCESS ;
 		B_GivePlayerXP(200);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Dexter_Hallo_15_02");	//КТО-ТО распространяет листки бумаги с моим изображением. КОЕ-КТО сказал мне, что это ты.
-		AI_Output(self,other,"DIA_Dexter_Hallo_09_03");	//Кто-то слишком много болтает.
-		AI_Output(self,other,"DIA_Addon_Dexter_Hallo_09_04");	//Впрочем, ты прав. Я распространял объявления о розыске. Я искал тебя - и ты явился.
-		B_LogEntry(Topic_Bandits,"Я нашел того, кто раздавал бандитам объявления о розыске с моим изображением. Это был Декстер, мой давний знакомый еще по Старому Лагерю в Долине Рудников.");
+		AI_Output(other,self, " DIA_Dexter_Hallo_15_02 " );	// SOMEONE is distributing slips of paper with my picture on them. SOMEONE told me it was you.
+		AI_Output(self,other, " DIA_Dexter_Hallo_09_03 " );	// Someone talks too much.
+		AI_Output(self,other, " DIA_Addon_Dexter_Hallo_09_04 " );	// However, you're right. I distributed wanted notices. I was looking for you - and you appeared.
+		B_LogEntry(Topic_Bandits, " I found someone who was handing out wanted posters with my picture to the bandits. It was Dexter, an old friend of mine from the Old Camp in the Mine Valley. " );
 		Log_SetTopicStatus(Topic_Bandits,LOG_SUCCESS);
-		MIS_Steckbriefe = LOG_SUCCESS;
+		MIS_profiles = LOG_SUCCESS ;
 		B_GivePlayerXP(100);
 	};
-	AI_Output(other,self,"DIA_Addon_Dexter_Hallo_15_05");	//Итак, что тебе от меня надо?
-	AI_Output(self,other,"DIA_Addon_Dexter_Hallo_09_06");	//Мне? Абсолютно ничего. Но мой хозяин просто дьявольски жаждет твоей смерти.
-	AI_Output(self,other,"DIA_Addon_Dexter_Hallo_09_07");	//Поэтому он приказал мне найти тебя и доставить ему твою голову.
+	AI_Output(other,self, " DIA_Addon_Dexter_Hallo_15_05 " );	// So what do you want from me?
+	AI_Output(self,other, " DIA_Addon_Dexter_Hallo_09_06 " );	// Me? Absolutely nothing. But my master is just hell-bent on your death.
+	AI_Output(self,other, " DIA_Addon_Dexter_Hallo_09_07 " );	// That's why he ordered me to find you and deliver your head to him.
 	DEXTERSAYABOUTKILL = TRUE;
 };
 
-instance DIA_Dexter_Glaube(C_Info)
+instance DIA_Dexter_Glaube (C_Info)
 {
 	npc = BDT_1060_Dexter;
 	nr = 5;
 	condition = DIA_Dexter_Glaube_Condition;
-	information = DIA_Dexter_Glaube_Info;
+	information = DIA_Dexter_Belief_Info;
 	permanent = FALSE;
-	description = "Я не верю ни одному твоему слову.";
+	description = " I don't believe a word you say. " ;
 };
 
-func int DIA_Dexter_Glaube_Condition()
+func int DIA_Dexter_Belief_Condition()
 {
 	if(Knows_Dexter == TRUE)
 	{
@@ -89,10 +89,10 @@ func int DIA_Dexter_Glaube_Condition()
 	};
 };
 
-func void DIA_Dexter_Glaube_Info()
+func void DIA_Dexter_Belief_Info()
 {
-	AI_Output(other,self,"DIA_Dexter_Glaube_15_00");	//Я не верю ни одному твоему слову.
-	AI_Output(self,other,"DIA_Dexter_Glaube_09_01");	//Послушай, это все правда. Клянусь могилой своей матери!
+	AI_Output(other,self, " DIA_Dexter_Glaube_15_00 " );	// I don't believe a single word you say.
+	AI_Output(self,other, " DIA_Dexter_Glaube_09_01 " );	// Look, it's all true. I swear on my mother's grave!
 };
 
 
@@ -102,7 +102,7 @@ instance DIA_Addon_Dexter_Patrick(C_Info)
 	nr = 2;
 	condition = DIA_Addon_Dexter_Patrick_Condition;
 	information = DIA_Addon_Dexter_Patrick_Info;
-	description = "К вам приходил наемник по имени Патрик?";
+	description = " Have you been visited by a mercenary named Patrick? " ;
 };
 
 
@@ -116,14 +116,14 @@ func int DIA_Addon_Dexter_Patrick_Condition()
 
 func void DIA_Addon_Dexter_Patrick_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_Patrick_15_00");	//К вам приходил наемник по имени Патрик?
-	AI_Output(self,other,"DIA_Addon_Dexter_Patrick_09_01");	//Патрик? Не понимаю, о ком ты говоришь.
-	AI_Output(self,other,"DIA_Addon_Dexter_Patrick_09_02");	//Я припоминаю какого-то крикливого наемника, который иногда здесь появлялся и болтал с ребятами.
-	AI_Output(self,other,"DIA_Addon_Dexter_Patrick_09_03");	//Но я не видел его уже черт знает сколько времени.
-	AI_Output(self,other,"DIA_Addon_Dexter_Patrick_09_04");	//Возможно, он в конце концов нарвался на неприятности. Мне это неизвестно.
+	AI_Output(other,self, " DIA_Addon_Dexter_Patrick_15_00 " );	// Did a mercenary named Patrick visit you?
+	AI_Output(self,other, " DIA_Addon_Dexter_Patrick_09_01 " );	// Patrick? I don't understand what you're talking about.
+	AI_Output(self,other, " DIA_Addon_Dexter_Patrick_09_02 " );	// I remember some noisy mercenary who sometimes appeared here and chatted with the guys.
+	AI_Output(self,other, " DIA_Addon_Dexter_Patrick_09_03 " );	// But I haven't seen him for god knows how long.
+	AI_Output(self,other, " DIA_Addon_Dexter_Patrick_09_04 " );	// Maybe he ran into trouble after all. I don't know.
 	Log_CreateTopic(TOPIC_Addon_MissingPeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_MissingPeople,LOG_Running);
-	B_LogEntry(TOPIC_Addon_MissingPeople,"Декстер утверждает, что не знает наемника Патрика.");
+	B_LogEntry(TOPIC_Addon_MissingPeople, " Dexter claims he doesn't know the mercenary Patrick. " );
 	Dexter_KnowsPatrick = TRUE;
 	B_GivePlayerXP(XP_Addon_Dexter_KnowsPatrick);
 };
@@ -134,7 +134,7 @@ instance DIA_Addon_Dexter_Greg(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Dexter_Greg_Condition;
 	information = DIA_Addon_Dexter_Greg_Info;
-	description = "Тебя ищет человек с повязкой на глазу!";
+	description = "The man with the eyepatch is looking for you! " ;
 };
 
 func int DIA_Addon_Dexter_Greg_Condition()
@@ -147,9 +147,9 @@ func int DIA_Addon_Dexter_Greg_Condition()
 
 func void DIA_Addon_Dexter_Greg_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_Greg_15_00");	//Тебя ищет человек с повязкой на глазу!
-	AI_Output(self,other,"DIA_Addon_Dexter_Greg_09_01");	//Меня все ищут. Но это их дело.
-	AI_Output(self,other,"DIA_Addon_Dexter_Greg_09_02");	//Если этому человеку есть, что сказать, то пусть он приходит сюда.
+	AI_Output(other,self, " DIA_Addon_Dexter_Greg_15_00 " );	// The man with the eyepatch is looking for you!
+	AI_Output(self,other, " DIA_Addon_Dexter_Greg_09_01 " );	// Everyone is looking for me. But that's their business.
+	AI_Output(self,other, " DIA_Addon_Dexter_Greg_09_02 " );	// If this person has something to say, then let him come here.
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -160,7 +160,7 @@ instance DIA_Addon_Dexter_WulfgarSend(C_Info)
 	condition = DIA_Addon_Dexter_WulfgarSend_Condition;
 	information = DIA_Addon_Dexter_WulfgarSend_Info;
 	permanent = FALSE;
-	description = "У тебя есть свой человек в ополчении?";
+	description = " Do you have your own man in the militia? " ;
 };
 
 func int DIA_Addon_Dexter_WulfgarSend_Condition()
@@ -174,13 +174,13 @@ func int DIA_Addon_Dexter_WulfgarSend_Condition()
 func void DIA_Addon_Dexter_WulfgarSend_Info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Addon_Dexter_WulfgarSend_01_00");	//У тебя есть свой человек в ополчении?
-	AI_Output(self,other,"DIA_Addon_Dexter_WulfgarSend_01_01");	//Может быть и есть. А тебе-то какое до этого дело?
-	AI_Output(other,self,"DIA_Addon_Dexter_WulfgarSend_01_02");	//Мне просто нужно знать его имя.
-	AI_Output(self,other,"DIA_Addon_Dexter_WulfgarSend_01_03");	//(смеется) Ну ты наглец!
-	AI_Output(self,other,"DIA_Addon_Dexter_WulfgarSend_01_04");	//Вот так просто приходишь ко мне и просишь, чтобы я сдал тебе своего же человека?
-	AI_Output(self,other,"DIA_Addon_Dexter_WulfgarSend_01_05");	//Но я тебе так отвечу...
-	AI_Output(self,other,"DIA_Addon_Dexter_WulfgarSend_01_06");	//Если вдруг ты еще раз осмелишься задать мне подобный вопрос, то я тебе язык отрежу. Понял?!
+	AI_Output(other,self, " DIA_Addon_Dexter_WulfgarSend_01_00 " );	// Do you have your own man in the militia?
+	AI_Output(self,other, " DIA_Addon_Dexter_WulfgarSend_01_01 " );	// Maybe there is. And what do you care about that?
+	AI_Output(other,self, " DIA_Addon_Dexter_WulfgarSend_01_02 " );	// I just need to know its name.
+	AI_Output(self,other, " DIA_Addon_Dexter_WulfgarSend_01_03 " );	// (laughs) Well, you're insolent!
+	AI_Output(self,other, " DIA_Addon_Dexter_WulfgarSend_01_04 " );	// Just like that, you come to me and ask me to give you my own person?
+	AI_Output(self,other, " DIA_Addon_Dexter_WulfgarSend_01_05 " );	// But I'll answer you like this...
+	AI_Output(self,other, " DIA_Addon_Dexter_WulfgarSend_01_06 " );	// If suddenly you dare to ask me such a question again, then I will cut off your tongue. Understood?!
 };
 
 instance DIA_Addon_Dexter_missingPeople(C_Info)
@@ -189,7 +189,7 @@ instance DIA_Addon_Dexter_missingPeople(C_Info)
 	nr = 2;
 	condition = DIA_Addon_Dexter_missingPeople_Condition;
 	information = DIA_Addon_Dexter_missingPeople_Info;
-	description = "Ты похищаешь жителей Хориниса!";
+	description = " You're kidnapping the people of Khorinis! " ;
 };
 
 
@@ -203,49 +203,49 @@ func int DIA_Addon_Dexter_missingPeople_Condition()
 
 func void DIA_Addon_Dexter_missingPeople_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_missingPeople_15_00");	//Ты похищаешь жителей Хориниса!
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_09_01");	//Итак, ты это выяснил. Хорошая работа, приятель.
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_09_02");	//А я-то думал, я надежно заметаю все следы.
+	AI_Output(other,self, " DIA_Addon_Dexter_missingPeople_15_00 " );	// You're kidnapping the people of Khorinis!
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_09_01 " );	// So you figured it out. Good job, buddy.
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_09_02 " );	// And I thought I'd reliably cover all traces.
 	Info_ClearChoices(DIA_Addon_Dexter_missingPeople);
-	Info_AddChoice(DIA_Addon_Dexter_missingPeople,"Кто отдает тебе приказы?",DIA_Addon_Dexter_missingPeople_wer);
-	Info_AddChoice(DIA_Addon_Dexter_missingPeople,"Куда попадают похищенные люди? Работают где-то здесь в рудниках?",DIA_Addon_Dexter_missingPeople_Wo);
+	Info_AddChoice(DIA_Addon_Dexter_missingPeople, " Who's giving you orders? " ,DIA_Addon_Dexter_missingPeople_wer);
+	Info_AddChoice(DIA_Addon_Dexter_missingPeople, " Where do kidnapped people go? Do they work in the mines around here? " ,DIA_Addon_Dexter_missingPeople_Wo);
 };
 
 func void DIA_Addon_Dexter_missingPeople_Wo()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_missingPeople_Wo_15_00");	//Куда попадают похищенные люди? Работают где-то здесь в рудниках?
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_Wo_09_01");	//(смеется) Нет-нет, они далеко на северо-востоке. Тебе туда не добраться.
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_Wo_09_02");	//Я мог бы показать тебе, где именно, но мне совершенно не хочется.
+	AI_Output(other,self, " DIA_Addon_Dexter_missingPeople_Wo_15_00 " );	// Where do kidnapped people go? Do they work in the mines around here?
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_Wo_09_01 " );	// (laughs) No, no, they're far to the northeast. You can't get there.
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_Wo_09_02 " );	// I could show you exactly where, but I really don't want to.
 };
 
 func void DIA_Addon_Dexter_missingPeople_wer()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_missingPeople_wer_15_00");	//Кто отдает тебе приказы?
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_wer_09_01");	//Хозяин. Очень опасный человек. Впрочем, ты его знаешь. Это Ворон, один из бывших рудных баронов из Долины Рудников.
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_wer_09_02");	//Эти люди нужны ему для выполнения его планов. И это все, что тебе нужно знать.
-	Info_AddChoice(DIA_Addon_Dexter_missingPeople,"Ворон опасен? Перестань...",DIA_Addon_Dexter_missingPeople_Raven);
-	Info_AddChoice(DIA_Addon_Dexter_missingPeople,"Рудный барон здесь, в Хоринисе?",DIA_Addon_Dexter_missingPeople_RavenTot);
+	AI_Output(other,self, " DIA_Addon_Dexter_missingPeople_wer_15_00 " );	// Who gives you orders?
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_wer_09_01 " );	// Owner. A very dangerous person. However, you know him. This is Raven, one of the former ore barons from the Valley of Mines.
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_wer_09_02 " );	// He needs these people to carry out his plans. And that's all you need to know.
+	Info_AddChoice(DIA_Addon_Dexter_missingPeople, " Is the raven dangerous? Stop it... " ,DIA_Addon_Dexter_missingPeople_Raven);
+	Info_AddChoice(DIA_Addon_Dexter_missingPeople, " Is the Ore Baron here in Khorinis? " ,DIA_Addon_Dexter_missingPeople_RavenTot);
 };
 
 func void DIA_Addon_Dexter_missingPeople_Raven()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_missingPeople_Raven_15_00");	//Ворон опасен? Перестань...
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_Raven_09_01");	//(раздраженно) Да что тебе известно? Ты не знаешь его, как я знаю.
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_Raven_09_02");	//(неуверенно) Тогда он действительно был жалкой свиньей, но теперь...
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_Raven_09_03");	//После падения Барьера он изменился. На его лицо легла черная тень.
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_Raven_09_04");	//(со страхом) Если слишком долго смотреть ему в глаза, его взгляд пронзит тебя, как когти хищника.
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_Raven_09_05");	//Я дам тебе один совет. Беги из Хориниса. Беги, пока еще не слишком поздно.
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_Raven_09_06");	//(мрачно) Здесь тебя ждет лишь верная смерть.
+	AI_Output(other,self, " DIA_Addon_Dexter_missingPeople_Raven_15_00 " );	// Is the raven dangerous? Stop doing that...
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_Raven_09_01 " );	// (irritated) What do you know? You don't know him like I do.
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_Raven_09_02 " );	// (uncertainly) He really was a pathetic pig back then, but now...
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_Raven_09_03 " );	// After the fall of the Barrier, it has changed. A black shadow fell over his face.
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_Raven_09_04 " );	// (with fear) If you look into his eyes too long, his gaze will pierce you like the claws of a predator.
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_Raven_09_05 " );	// I'll give you one piece of advice. Escape from Khorinis. Run before it's too late.
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_Raven_09_06 " );	// (grimly) Only certain death awaits you here.
 	Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_WhoStolePeople,LOG_Running);
-	B_LogEntry(TOPIC_Addon_WhoStolePeople,"У Декстера есть хозяин - Ворон, бывший рудный барон. Похоже, что именно он стоит за всеми этими похищениями людей. Теперь мне нужно только получить доказательство этого.");
+	B_LogEntry(TOPIC_Addon_WhoStolePeople, " Dexter has an owner, Raven, a former ore baron. It looks like he's behind all these kidnappings. Now I just need to get proof of that. " );
 	Info_ClearChoices(DIA_Addon_Dexter_missingPeople);
 };
 
 func void DIA_Addon_Dexter_missingPeople_RavenTot()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_missingPeople_RavenTot_15_00");	//Рудный барон здесь, в Хоринисе?
-	AI_Output(self,other,"DIA_Addon_Dexter_missingPeople_RavenTot_09_01");	//Он больше не рудный барон. У него свои планы, и скоро Хоринис падет к его ногам.
+	AI_Output(other,self, " DIA_Addon_Dexter_missingPeople_RavenTot_15_00 " );	// Ore baron here in Khorinis?
+	AI_Output(self,other, " DIA_Addon_Dexter_missingPeople_RavenTot_09_01 " );	// He is no longer an ore baron. He has his own plans, and soon Khorinis will fall at his feet.
 };
 
 
@@ -255,7 +255,7 @@ instance DIA_Addon_Dexter_Boss(C_Info)
 	nr = 3;
 	condition = DIA_Addon_Dexter_Boss_Condition;
 	information = DIA_Addon_Dexter_Boss_Info;
-	description = "Твой хозяин? Кто это такой?";
+	description = " Your master? Who is this? " ;
 };
 
 
@@ -269,9 +269,9 @@ func int DIA_Addon_Dexter_Boss_Condition()
 
 func void DIA_Addon_Dexter_Boss_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_Boss_15_00");	//Твой хозяин? Кто это такой?
-	AI_Output(self,other,"DIA_Addon_Dexter_Boss_09_01");	//(смеется) Тебе, наверняка, не терпится это узнать? Понимаю.
-	AI_Output(self,other,"DIA_Addon_Dexter_Boss_09_02");	//(серьезно) Не вижу ни одной причины, по которой я должен тебе это сказать.
+	AI_Output(other,self, " DIA_Addon_Dexter_Boss_15_00 " );	// Your master? Who is that?
+	AI_Output(self,other, " DIA_Addon_Dexter_Boss_09_01 " );	// (laughs) Are you sure you're itching to find out? Understand.
+	AI_Output(self,other, " DIA_Addon_Dexter_Boss_09_02 " );	// (seriously) I don't see any reason why I should tell you this.
 };
 
 
@@ -282,7 +282,7 @@ instance DIA_Dexter_Vor(C_Info)
 	condition = DIA_Dexter_Vor_Condition;
 	information = DIA_Dexter_Vor_Info;
 	permanent = FALSE;
-	description = "И что ты собираешься делать сейчас? Убить меня?";
+	description = " What are you going to do now? Kill me? " ;
 };
 
 
@@ -296,12 +296,12 @@ func int DIA_Dexter_Vor_Condition()
 
 func void DIA_Dexter_Vor_Info()
 {
-	AI_Output(other,self,"DIA_Dexter_Vor_15_00");	//И что ты собираешься делать сейчас? Убить меня?
-	AI_Output(self,other,"DIA_Dexter_Vor_09_01");	//Да. Но ты освободил нас всех. Вот почему я даю тебе еще один шанс. Сваливай - исчезни, сделайся невидимым. Уходи и больше не попадайся мне на пути.
-	AI_Output(other,self,"DIA_Addon_Dexter_Vor_15_00");	//Я должен узнать, куда ты отправил людей.
-	AI_Output(self,other,"DIA_Addon_Dexter_Vor_09_01");	//(смеется) Ты мог бы попробовать силой заставить меня говорить...
-	AI_Output(self,other,"DIA_Addon_Dexter_Vor_09_02");	//(угрожающе) Думаю, тебе лучше уйти.
-	AI_Output(self,other,"DIA_Dexter_Vor_09_02");	//Если я увижу тебя еще раз, то без колебаний убью!
+	AI_Output(other,self, " DIA_Dexter_Vor_15_00 " );	// And what are you going to do now? Kill me?
+	AI_Output(self,other, " DIA_Dexter_Vor_09_01 " );	// Yes. But you freed us all. That's why I'm giving you one more chance. Dump - disappear, become invisible. Get out and don't get in my way again.
+	AI_Output(other,self, " DIA_Addon_Dexter_Vor_15_00 " );	// I need to find out where you sent the people.
+	AI_Output(self,other, " DIA_Addon_Dexter_Vor_09_01 " );	// (laughs) You could try to force me to speak...
+	AI_Output(self,other, " DIA_Addon_Dexter_Vor_09_02 " );	// (threateningly) I think you'd better leave.
+	AI_Output(self,other, " DIA_Dexter_Vor_09_02 " );	// If I see you again, I won't hesitate to kill you!
 	Dexter_NoMoreSmallTalk = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -329,16 +329,16 @@ func void DIA_Dexter_Kill_Info()
 {
 	if(Knows_Dexter == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Dexter_Add_09_02");	//Ты сам напросился...
+		AI_Output(self,other, " DIA_Addon_Dexter_Add_09_02 " );	// You asked for it...
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Dexter_Kill_09_01");	//Ох, тебе не стоило показываться здесь. Ты оказался не в то время и не в том месте.
+		AI_Output(self,other, " DIA_Dexter_Kill_09_01 " );	// Oh, you shouldn't have shown yourself here. You were at the wrong time and in the wrong place.
 	};
-	MIS_Steckbriefe = LOG_OBSOLETE;
+	MIS_profiles = LOG_OBSOLETE ;
 	B_Greg_ComesToDexter();
 	Info_ClearChoices(DIA_Dexter_Kill);
-	Info_AddChoice(DIA_Dexter_Kill,Dialog_Ende,DIA_Dexter_Kill_ENDE);
+	Info_AddChoice(DIA_Dexter_Kill,Dialog_End,DIA_Dexter_Kill_ENDE);
 };
 
 func void DIA_Dexter_Kill_ENDE()
@@ -349,21 +349,21 @@ func void DIA_Dexter_Kill_ENDE()
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 	itm = Npc_GetEquippedArmor(Greg_NW);
 
-	if(Hlp_IsItem(itm,ITAR_PIR_N_Addon) == FALSE)
+	if (Hlp_IsItem(item,ITAR_PIR_N_Addon) ==  FALSE )
 	{
 		AI_EquipArmor(Greg_NW,ITAR_PIR_N_Addon);
 	};
 };
 
 
-instance DIA_Dexter_Kopf(C_Info)
+instance DIA_Dexter_Head (C_Info)
 {
 	npc = BDT_1060_Dexter;
 	nr = 5;
 	condition = DIA_Dexter_Kopf_Condition;
-	information = DIA_Dexter_Kopf_Info;
+	information = DIA_Dexter_Head_Info;
 	permanent = FALSE;
-	description = "Тебе нужна моя голова? Что ж, попробуй ее взять!";
+	description = " Do you want my head? Well, try to take it! " ;
 };
 
 
@@ -375,11 +375,11 @@ func int DIA_Dexter_Kopf_Condition()
 	};
 };
 
-func void DIA_Dexter_Kopf_Info()
+func void DIA_Dexter_Head_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Dexter_Add_15_00");	//Тебе нужна моя голова? Что ж, попробуй ее взять!
-	AI_Output(self,other,"DIA_Addon_Dexter_Add_09_01");	//Ну, если ты так хочешь...
-	DIA_Dexter_Kill_ENDE();
+	AI_Output(other,self, " DIA_Addon_Dexter_Add_15_00 " );	// Do you want my head? Well, try to take it!
+	AI_Output(self,other, " DIA_Addon_Dexter_Add_09_01 " );	// Well, if that's what you want...
+	DIA_Dexter_Kill_END();
 };
 
 
@@ -396,7 +396,7 @@ instance DIA_Dexter_PICKPOCKET(C_Info)
 
 func int DIA_Dexter_PICKPOCKET_Condition()
 {
-	return C_Beklauen(96,370);
+	return  C_Robbery ( 96 , 370 );
 };
 
 func void DIA_Dexter_PICKPOCKET_Info()
@@ -408,7 +408,7 @@ func void DIA_Dexter_PICKPOCKET_Info()
 
 func void DIA_Dexter_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Dexter_PICKPOCKET);
 };
 
@@ -416,4 +416,3 @@ func void DIA_Dexter_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Dexter_PICKPOCKET);
 };
-
