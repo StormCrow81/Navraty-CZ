@@ -61,7 +61,7 @@ instance DIA_Addon_Miguel_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Miguel_PICKPOCKET_Condition()
 {
-	return C_Beklauen(40,48);
+	return  C_Robbery ( 40 , 48 );
 };
 
 func void DIA_Addon_Miguel_PICKPOCKET_Info()
@@ -73,7 +73,7 @@ func void DIA_Addon_Miguel_PICKPOCKET_Info()
 
 func void DIA_Addon_Miguel_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Miguel_PICKPOCKET);
 };
 
@@ -83,14 +83,14 @@ func void DIA_Addon_Miguel_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Addon_Miguel_Hi(C_Info)
+instance DIA_Addon_Miguel_Hi (C_Info)
 {
 	npc = BDT_10022_Addon_Miguel;
 	nr = 1;
 	condition = DIA_Addon_Miguel_Hi_Condition;
 	information = DIA_Addon_Miguel_Hi_Info;
 	permanent = FALSE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -104,19 +104,19 @@ func int DIA_Addon_Miguel_Hi_Condition()
 
 func void DIA_Addon_Miguel_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Miguel_Hi_15_00");	//Что ты здесь делаешь?
-	if(Wld_IsTime(6,0,22,0))
+	AI_Output(other,self, " DIA_Addon_Miguel_Hi_15_00 " );	// What are you doing here?
+	if (Wld_IsTime( 6 , 0 , 22 , 0 ))
 	{
-		AI_Output(other,self,"DIA_Addon_Miguel_Hi_15_01");	//Ищешь что-нибудь?
-		AI_Output(self,other,"DIA_Addon_Miguel_Hi_11_02");	//Растения. Я ищу растения.
+		AI_Output(other,self, " DIA_Addon_Miguel_Hi_15_01 " );	// Looking for something?
+		AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_02 " );	// Plants. I am looking for plants.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Miguel_Hi_11_03");	//Обычно я ищу растения.
+		AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_03 " );	// I usually look for plants.
 	};
-	AI_Output(self,other,"DIA_Addon_Miguel_Hi_11_04");	//Большинство из них можно использовать.
-	AI_Output(self,other,"DIA_Addon_Miguel_Hi_11_05");	//Многие растения имеют лечебные свойства, а из болотной травы получаются отличные косяки.
-	AI_Output(self,other,"DIA_Addon_Miguel_Hi_11_06");	//До того как я попал за Барьер, я работал алхимиком.
+	AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_04 " );	// Most of them can be used.
+	AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_05 " );	// Many plants have medicinal properties, and swamp grass makes excellent shoals.
+	AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_06 " );	// Before I got behind the Barrier, I worked as an alchemist.
 };
 
 
@@ -127,26 +127,26 @@ instance DIA_Addon_Miguel_Story(C_Info)
 	condition = DIA_Addon_Miguel_Story_Condition;
 	information = DIA_Addon_Miguel_Story_Info;
 	permanent = FALSE;
-	description = "А почему ты оказался за Барьером?";
+	description = " Why are you behind the Barrier? " ;
 };
 
 
 func int DIA_Addon_Miguel_Story_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Miguel_Hi) && (MIGUEL_TP == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Michael_Hi ) && ( MIGUEL_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Miguel_Story_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Miguel_Story_15_00");	//А почему ты оказался за Барьером?
-	AI_Output(self,other,"DIA_Addon_Miguel_Story_11_01");	//Я много работал над зельями, воздействующими на разум.
-	AI_Output(self,other,"DIA_Addon_Miguel_Story_11_02");	//Однажды вечером мой начальник Игнац выпил результат моего 'эксперимента' вместо своего вина.
-	AI_Output(self,other,"DIA_Addon_Miguel_Story_11_03");	//Это сделало его... э-э... непредсказуемым на некоторое время, и с тех пор он немного не в себе.
-	AI_Output(self,other,"DIA_Addon_Miguel_Story_11_04");	//(фальшиво) За это маги бросили меня за Барьер. 'Исследования запрещенных знаний,' - вот как они это назвали.
+	AI_Output(other,self, " DIA_Addon_Miguel_Story_15_00 " );	// And why did you end up behind the Barrier?
+	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_01 " );	// I've been working on mind-affecting potions a lot.
+	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_02 " );	// One evening my boss Ignaz drank the result of my 'experiment' instead of his wine.
+	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_03 " );	// This made him... uh... unpredictable for a while, and he's been a little out of sorts ever since.
+	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_04 " );	// (fakely) For this, the magicians threw me over the Barrier. 'Research on forbidden knowledge,' is what they called it.
 };
 
 
@@ -157,7 +157,7 @@ instance DIA_Addon_Miguel_Lager(C_Info)
 	condition = DIA_Addon_Miguel_Lager_Condition;
 	information = DIA_Addon_Miguel_Lager_Info;
 	permanent = FALSE;
-	description = "Расскажи мне про лагерь.";
+	description = " Tell me about the camp. " ;
 };
 
 
@@ -171,9 +171,9 @@ func int DIA_Addon_Miguel_Lager_Condition()
 
 func void DIA_Addon_Miguel_Lager_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Miguel_Lager_15_00");	//Расскажи мне про лагерь.
-	AI_Output(self,other,"DIA_Addon_Miguel_Lager_11_01");	//Я знаю немного. Сам я никогда там не был.
-	AI_Output(self,other,"DIA_Addon_Miguel_Lager_11_02");	//Только люди Ворона были там с самого начала. Все остальные, те, кто пришел позже, как я, должны ждать, пока им не понадобятся новые люди.
+	AI_Output(other,self, " DIA_Addon_Miguel_Lager_15_00 " );	// Tell me about the camp.
+	AI_Output(self,other, " DIA_Addon_Miguel_Lager_11_01 " );	// I don't know much. I myself have never been there.
+	AI_Output(self,other, " DIA_Addon_Miguel_Lager_11_02 " );	// Only Crow's people have been there since the beginning. Everyone else, those who came later like me, have to wait until they need new people.
 };
 
 
@@ -184,121 +184,121 @@ instance DIA_Addon_Miguel_WhereFrom(C_Info)
 	condition = DIA_Addon_Miguel_WhereFrom_Condition;
 	information = DIA_Addon_Miguel_WhereFrom_Info;
 	permanent = FALSE;
-	description = "Откуда ты пришел?";
+	description = " Where are you from? " ;
 };
 
 
 func int DIA_Addon_Miguel_WhereFrom_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Addon_Miguel_Hi) || Npc_KnowsInfo(other,DIA_Addon_Miguel_Lager)) && (MIGUEL_TP == FALSE))
+	if ((Npc_KnowsInfo(other,DIA_Addon_Miguel_Hi) || Npc_KnowsInfo(other,DIA_Addon_Miguel_Storage)) && ( MIGUEL_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Miguel_WhereFrom_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Miguel_WhereFrom_15_00");	//Откуда ты пришел?
-	AI_Output(self,other,"DIA_Addon_Miguel_WhereFrom_11_01");	//Ну, оттуда же, откуда и ты, я думаю. С пиратами. Через море.
-	AI_Output(self,other,"DIA_Addon_Miguel_WhereFrom_11_02");	//Мы находимся на острове. Здесь нет другой связи с материком.
-	AI_Output(other,self,"DIA_Addon_Miguel_WhereFrom_15_03");	//(задумчиво) Верно.
+	AI_Output(other,self, " DIA_Addon_Miguel_WhereFrom_15_00 " );	// Where did you come from?
+	AI_Output(self,other, " DIA_Addon_Miguel_WhereFrom_11_01 " );	// Well, from the same place as you, I think. With pirates. Through the sea.
+	AI_Output(self,other, " DIA_Addon_Miguel_WhereFrom_11_02 " );	// We're on an island. There is no other connection to the mainland.
+	AI_Output(other,self, " DIA_Addon_Miguel_WhereFrom_15_03 " );	// (thoughtfully) Right.
 };
 
 
-instance DIA_Addon_Miguel_Angefordert(C_Info)
+instance DIA_Addon_Miguel_Requested (C_Info)
 {
 	npc = BDT_10022_Addon_Miguel;
 	nr = 4;
-	condition = DIA_Addon_Miguel_Angefordert_Condition;
-	information = DIA_Addon_Miguel_Angefordert_Info;
+	condition = DIA_Addon_Miguel_Requested_Condition;
+	information = DIA_Addon_Miguel_Requested_Info;
 	permanent = FALSE;
-	description = "Когда им бывают нужны новые люди?";
+	description = " When do they need new people? " ;
 };
 
 
-func int DIA_Addon_Miguel_Angefordert_Condition()
+func int DIA_Addon_Miguel_Requested_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Miguel_Lager) && (MIGUEL_TP == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Miguel_Storage ) && ( MIGUEL_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Miguel_Angefordert_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Miguel_Angefordert_15_00");	//Когда им бывают нужны новые люди?
-	AI_Output(self,other,"DIA_Addon_Miguel_Angefordert_11_01");	//Ну, когда они кого-нибудь теряют.
-	AI_Output(self,other,"DIA_Addon_Miguel_Angefordert_11_02");	//Если рудокопа съедает ползун, утраченного работника заменяют одним из нас.
-	AI_Output(self,other,"DIA_Addon_Miguel_Angefordert_11_03");	//Иногда они и сами друг друга убивают. Но в последнее время с этим полегче.
-	AI_Output(self,other,"DIA_Addon_Miguel_Angefordert_11_04");	//Ворон каким-то образом установил контроль над шахтой, так чтобы все сразу не могли туда попасть.
-	AI_Output(self,other,"DIA_Addon_Miguel_Angefordert_11_05");	//Но я не знаю, что именно он сделал. Я никогда не был внутри.
+	AI_Output(other,self, " DIA_Addon_Miguel_Angefordert_15_00 " );	// When do they need new people?
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_01 " );	// Well, when they lose someone.
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_02 " );	// If a miner eats a crawler, the lost worker is replaced with one of us.
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_03 " );	// Sometimes they kill each other themselves. But lately it's been easier.
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_04 " );	// Raven has somehow established control over the mine so that everyone can't get in at once.
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_05 " );	// But I don't know what exactly he did. I have never been inside.
 };
 
 
-instance DIA_Addon_Miguel_Fortuno(C_Info)
+instance DIA_Addon_Miguel_Fortuno (C_Info)
 {
 	npc = BDT_10022_Addon_Miguel;
 	nr = 6;
 	condition = DIA_Addon_Miguel_Fortuno_Condition;
 	information = DIA_Addon_Miguel_Fortuno_Info;
 	permanent = FALSE;
-	description = "У Фортуно не все в порядке с головой!";
+	description = " Fortuno is not all right in the head! " ;
 };
 
 
 func int DIA_Addon_Miguel_Fortuno_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Fortuno_FREE) && (MIGUEL_TP == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Fortune_FREE_Addon ) && ( MIGUEL_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Miguel_Fortuno_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Miguel_Fortuno_15_00");	//У Фортуно не все в порядке с головой! Он мог бы выпить зелье и вернуть себе память.
-	AI_Output(self,other,"DIA_Addon_Miguel_Fortuno_11_01");	//Фортуно? Это слуга Ворона, да?
-	AI_Output(other,self,"DIA_Addon_Miguel_Fortuno_15_02");	//Он был им. Теперь он просто чурбан. И это - ошибка Ворона.
-	AI_Output(self,other,"DIA_Addon_Miguel_Fortuno_11_03");	//Ворона? Хм, до сих пор я думал о нем лучше. М-м, ну ладно. Но здесь, в болоте, я не могу сварить зелье.
-	AI_Output(other,self,"DIA_Addon_Miguel_Fortuno_15_04");	//Я могу сварить зелье. В лагере есть стол алхимика. Мне нужен только рецепт.
-	AI_Output(self,other,"DIA_Addon_Miguel_Fortuno_11_05");	//Будь осторожен с этим рецептом. Это зелье может быть опасно.
+	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_00 " );	// Fortuno is not all right in the head! He could drink the potion and regain his memory.
+	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_01 " );	// Fortuno? It's the Crow's servant, right?
+	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_02 " );	// He was. Now he's just a jerk. And this is Raven's fault.
+	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_03 " );	// Crow? Hmm, so far I've thought better of him. Mm, okay. But here in the swamp, I can't brew the potion.
+	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_04 " );	// I can brew a potion. There is an alchemist's table in the camp. I only need a prescription.
+	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_05 " );	// Be careful with this recipe. This potion can be dangerous.
 	B_GiveInvItems(self,other,ITWr_Addon_MCELIXIER_01,1);
-	AI_Output(self,other,"DIA_Addon_Miguel_Fortuno_11_06");	//Если ты как-то не так его сваришь, или возьмешь не тот ингредиент, он может быть смертельным.
-	AI_Output(other,self,"DIA_Addon_Miguel_Fortuno_15_07");	//Я буду осторожен.
-	B_LogEntry(Topic_Addon_Fortuno,"Мигель дал мне рецепт зелья, которое вернет Фортуно память. Но я должен быть уверен во всех ингредиентах, иначе у меня получится смертельный яд.");
+	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_06 " );	// If you brew it the wrong way, or use the wrong ingredient, it can be deadly.
+	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_07 " );	// I'll be careful.
+	B_LogEntry(Topic_Addon_Fortuno, " Miguel gave me the recipe for a potion that will restore Fortuno's memory. But I must be sure of all the ingredients, otherwise I will end up with a deadly poison. " );
 };
 
 
-instance DIA_Addon_Miguel_BRAU(C_Info)
+instance DIA_Addon_Miguel_BRAU (C_Info)
 {
 	npc = BDT_10022_Addon_Miguel;
 	nr = 7;
 	condition = DIA_Addon_Miguel_BRAU_Condition;
 	information = DIA_Addon_Miguel_BRAU_Info;
 	permanent = FALSE;
-	description = "Ты можешь научить меня кое-чему?";
+	description = " Can you teach me something? " ;
 };
 
 
 func int DIA_Addon_Miguel_BRAU_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Miguel_Story) && (MIGUEL_TP == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Miguel_Story ) && ( MIGUEL_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Miguel_BRAU_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Miguel_BRAU_15_00");	//Ты можешь научить меня кое-чему?
-	AI_Output(self,other,"DIA_Addon_Miguel_BRAU_11_01");	//У меня нет времени. Мне нужно зарабатывать золото. И пока я не могу попасть в лагерь, я живу, продавая растения.
-	AI_Output(self,other,"DIA_Addon_Miguel_BRAU_11_02");	//Но если тебе нужны зелья, у меня пока еще есть несколько.
+	AI_Output(other,self, " DIA_Addon_Miguel_BRAU_15_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_Addon_Miguel_BRAU_11_01 " );	// I don't have time. I need to earn gold. And while I can't get to the camp, I live by selling plants.
+	AI_Output(self,other, " DIA_Addon_Miguel_BRAU_11_02 " );	// But if you need potions, I still have a few.
 	Log_CreateTopic(Topic_Addon_BDT_Trader,LOG_NOTE);
-	B_LogEntry(Topic_Addon_BDT_Trader,"У Мигеля я могу покупать напитки и растения.");
+	B_LogEntry(Topic_Addon_BDT_Trader, " I can buy drinks and plants from Miguel. " );
 };
 
 
@@ -308,13 +308,13 @@ instance DIA_ADDON_MIGUEL_DRAGONS(C_Info)
 	nr = 7;
 	condition = dia_addon_miguel_dragons_condition;
 	information = dia_addon_miguel_dragons_info;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
 func int dia_addon_miguel_dragons_condition()
 {
-	if((Kapitel == 3) && (MIS_AllDragonsDead == FALSE) && (MIGUEL_TP == FALSE))
+	if ((Chapter ==  3 ) && (MY_AllDragonsDead ==  FALSE ) && ( MIGUEL_TP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -322,10 +322,10 @@ func int dia_addon_miguel_dragons_condition()
 
 func void dia_addon_miguel_dragons_info()
 {
-	AI_Output(other,self,"DIA_Addon_Miguel_Dragons_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_Miguel_Dragons_10_01");	//У нас все тихо. А тебя что-то давно не было видно.
-	AI_Output(other,self,"DIA_Addon_Miguel_Dragons_15_02");	//Да все дела, дела - в общем, сам понимаешь.
-	AI_Output(self,other,"DIA_Addon_Miguel_Dragons_10_07");	//Понятно. Кстати, я тут недавно нашел одно редкое растение. Возможно, тебя оно заинтересует.
+	AI_Output(other,self, " DIA_Addon_Miguel_Dragons_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Addon_Miguel_Dragons_10_01 " );	// Everything is quiet here. And you haven't been seen for a long time.
+	AI_Output(other,self, " DIA_Addon_Miguel_Dragons_15_02 " );	// Yes, all things, things - in general, you understand.
+	AI_Output(self,other, " DIA_Addon_Miguel_Dragons_10_07 " );	// Got it. By the way, I recently found one rare plant here. Perhaps it will interest you.
 	CreateInvItems(self,ItPl_Perm_Herb,1);
 };
 
@@ -338,17 +338,17 @@ instance DIA_Addon_Miguel_trade(C_Info)
 	information = DIA_Addon_Miguel_trade_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Давай займемся делом!";
+	description = " Let's get down to business! " ;
 };
 
 
 func int DIA_Addon_Miguel_trade_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Addon_Miguel_BRAU) && (MIGUEL_TP == FALSE)) || (Kapitel == 4))
+	if ((Npc_KnowsInfo(other,DIA_Addon_Miguel_BRAU) && ( MIGUEL_TP  ==  FALSE )) || (Capital ==  4 ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Miguel_trade_Info()
