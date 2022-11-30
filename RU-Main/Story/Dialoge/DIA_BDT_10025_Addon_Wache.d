@@ -28,7 +28,7 @@ instance DIA_Addon_BDT_10025_Wache_Hi(C_Info)
 	condition = DIA_Addon_10025_Wache_Hi_Condition;
 	information = DIA_Addon_10025_Wache_Hi_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -39,12 +39,11 @@ func int DIA_Addon_10025_Wache_Hi_Condition()
 
 func void DIA_Addon_10025_Wache_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10025_Wache_Hi_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_BDT_10025_Wache_Hi_07_01");	//Я готовлю вкусное тушеное мясо для рудокопов и охранников.
-	if(Sklaven_Flucht == FALSE)
+	AI_Output(other,self, " DIA_Addon_BDT_10025_Wache_Hi_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_01 " );	// I cook delicious stew for miners and guards.
+	if (slave_escape ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10025_Wache_Hi_07_02");	//А рабы почти ничего не получат. Немного застоявшейся воды и старый хлеб, не более того.
-		AI_Output(self,other,"DIA_Addon_BDT_10025_Wache_Hi_07_03");	//Этим городским крысам это не сильно повредит.
+		AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_02 " );	// And slaves get next to nothing. Some stagnant water and old bread, nothing more.
+		AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_03 " );	// These city rats won't hurt much.
 	};
 };
-
