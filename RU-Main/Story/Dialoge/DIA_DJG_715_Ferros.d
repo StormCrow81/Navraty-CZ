@@ -1,5 +1,5 @@
 
-instance DIA_DJG_715_Ferros_EXIT(C_Info)
+instance DIA_DJG_715_Ferros_EXIT (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 999;
@@ -21,14 +21,14 @@ func void DIA_DJG_715_Ferros_EXIT_Info()
 };
 
 
-instance DIA_DJG_715_Ferros_Hello(C_Info)
+instance DIA_DJG_715_Ferros_Hello (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 4;
 	condition = DIA_DJG_715_Ferros_Hello_Condition;
 	information = DIA_DJG_715_Ferros_Hello_Info;
 	permanent = FALSE;
-	description = "Откуда ты?";
+	description = " Where are you from? " ;
 };
 
 
@@ -39,13 +39,13 @@ func int DIA_DJG_715_Ferros_Hello_Condition()
 
 func void DIA_DJG_715_Ferros_Hello_Info()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_Hello_15_00");	//Откуда ты?
-	AI_Output(self,other,"DIA_DJG_715_Ferros_Hello_01_01");	//С материка. Мои люди и я бежали оттуда.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_Hello_01_02");	//Там становится все хуже. Орки сжигают за собой все, что горит.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_Hello_01_03");	//Король потерял контроль над своим королевством.
+	AI_Output(other,self, " DIA_DJG_715_Ferros_Hello_15_00 " );	// Where are you from?
+	AI_Output(self,other, " DIA_DJG_715_Ferros_Hello_01_01 " );	// From the mainland. My people and I fled from there.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_Hello_01_02 " );	// It's getting worse there. Orcs burn everything that burns behind them.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_Hello_01_03 " );	// The king has lost control of his kingdom.
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_DJG_715_Ferros_Hello_01_04");	//Вы, паладины, провалили все дело, если тебе интересно мое мнение.
+		AI_Output(self,other, " DIA_DJG_715_Ferros_Hello_01_04 " );	// You paladins failed the whole thing, if you want my opinion.
 	};
 };
 
@@ -57,7 +57,7 @@ instance DIA_DJG_715_Ferros_Friends(C_Info)
 	condition = DIA_DJG_715_Ferros_Friends_Condition;
 	information = DIA_DJG_715_Ferros_Friends_Info;
 	permanent = FALSE;
-	description = "А где сейчас твои люди?";
+	description = " Where are your people now? " ;
 };
 
 
@@ -71,20 +71,20 @@ func int DIA_DJG_715_Ferros_Friends_Condition()
 
 func void DIA_DJG_715_Ferros_Friends_Info()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_Friends_15_00");	//А где сейчас твои люди?
-	AI_Output(self,other,"DIA_DJG_715_Ferros_Friends_01_01");	//Я покинул их.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_Friends_01_02");	//Они думали, что им дозволено брать все, что им угодно, даже если это не принадлежит им. Я не хочу принимать в этом участия.
+	AI_Output(other,self, " DIA_DJG_715_Ferros_Friends_15_00 " );	// Where are your people now?
+	AI_Output(self,other, " DIA_DJG_715_Ferros_Friends_01_01 " );	// I left them.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_Friends_01_02 " );	// They thought they were allowed to take whatever they wanted, even if it wasn't theirs. I don't want to take part in this.
 };
 
 
-instance DIA_DJG_715_Ferros_War(C_Info)
+instance DIA_DJG_715_Ferros_War (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 6;
 	condition = DIA_DJG_715_Ferros_War_Condition;
 	information = DIA_DJG_715_Ferros_War_Info;
 	permanent = FALSE;
-	description = "Что еще ты знаешь о войне?";
+	description = " What else do you know about war? " ;
 };
 
 
@@ -98,25 +98,25 @@ func int DIA_DJG_715_Ferros_War_Condition()
 
 func void DIA_DJG_715_Ferros_War_Info()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_War_15_00");	//Что еще ты знаешь о войне?
+	AI_Output(other,self, " DIA_DJG_715_Ferros_War_15_00 " );	// What else do you know about war?
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_DJG_715_Ferros_War_01_01");	//Ты ведь давно не видел своего короля, а?
+		AI_Output(self,other, " DIA_DJG_715_Ferros_War_01_01 " );	// You haven't seen your king for a long time, have you?
 	};
-	AI_Output(self,other,"DIA_DJG_715_Ferros_War_01_02");	//Орки окружили столицу. Но пала она уже или нет, я не знаю.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_War_01_03");	//Последнее, что я слышал, - что король мертв. Но я в это не верю.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_War_01_02 " );	// Orcs have surrounded the capital. But whether it has already fallen or not, I do not know.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_War_01_03 " );	// Last I heard, the king is dead. But I don't believe in it.
 };
 
 var int FerrosRing;
 
-instance DIA_DJG_715_Ferros_OldCamp(C_Info)
+instance DIA_DJG_715_Ferros_OldCamp (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 7;
 	condition = DIA_DJG_715_Ferros_OldCamp_Condition;
 	information = DIA_DJG_715_Ferros_OldCamp_Info;
 	permanent = FALSE;
-	description = "А что ты делаешь здесь, в замке?";
+	description = " What are you doing here in the castle? " ;
 };
 
 func int DIA_DJG_715_Ferros_OldCamp_Condition()
@@ -126,40 +126,40 @@ func int DIA_DJG_715_Ferros_OldCamp_Condition()
 
 func void DIA_DJG_715_Ferros_OldCamp_Info()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_OldCamp_15_00");	//А что ты делаешь здесь, в замке?
-	AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_01_01");	//Я услышал о драконах и пришел помочь сражаться с ними.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_01_02");	//К несчастью, я потерял свой меч, когда пробирался мимо орков. И вот я застрял здесь.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_01_03");	//Без меча я не могу выйти отсюда, а те мечи, что продают здесь, - бесполезный хлам.
+	AI_Output(other,self, " DIA_DJG_715_Ferros_OldCamp_15_00 " );	// What are you doing here in the castle?
+	AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_01_01 " );	// I heard about dragons and came to help fight them.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_01_02 " );	// Unfortunately, I lost my sword while making my way past the orcs. And so I'm stuck here.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_01_03 " );	// I can't get out of here without a sword, and the swords they sell here are useless junk.
 	Info_ClearChoices(DIA_DJG_715_Ferros_OldCamp);
-	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp,"Я желаю тебе удачи в твоих поисках.",DIA_DJG_715_Ferros_OldCamp_No);
-	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp,"Что ты дашь мне, если я найду твой меч?",DIA_DJG_715_Ferros_OldCamp_Price);
-	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp,"Я найду твой меч.",DIA_DJG_715_Ferros_OldCamp_Yes);
+	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp, " I wish you good luck in your quest. " ,DIA_DJG_715_Ferros_OldCamp_No);
+	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp, " What will you give me if I find your sword? " ,DIA_DJG_715_Ferros_OldCamp_Price);
+	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp, " I will find your sword. " ,DIA_DJG_715_Ferros_OldCamp_Yes);
 	Wld_InsertItem(ItMW_1H_FerrosSword_Mis,"FP_OW_ITEM_08");
 	MIS_FErrosSword = LOG_Running;
 	Log_CreateTopic(TOPIC_FerrosSword,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FerrosSword,LOG_Running);
-	B_LogEntry(TOPIC_FerrosSword,"Ферос потерял свой меч из-за орков! Это было глупостью.");
+	B_LogEntry(TOPIC_FerrosSword, " Feros lost his sword to the orcs! That was stupid. " );
 };
 
 func void DIA_DJG_715_Ferros_OldCamp_No()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_OldCamp_No_15_00");	//Я желаю тебе удачи в твоих поисках.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_No_01_01");	//Я все задаю себе вопрос - а зачем я вообще пришел сюда?
+	AI_Output(other,self, " DIA_DJG_715_Ferros_OldCamp_No_15_00 " );	// I wish you luck in your quest.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_No_01_01 " );	// I keep asking myself the question - why did I even come here?
 	Info_ClearChoices(DIA_DJG_715_Ferros_OldCamp);
 };
 
 func void DIA_DJG_715_Ferros_OldCamp_Price()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_OldCamp_Price_15_00");	//Что ты дашь мне, если я найду твой меч?
-	AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Price_01_01");	//Боже, я ничего не могу дать. Я потратил все свои деньги на этот меч.
+	AI_Output(other,self, " DIA_DJG_715_Ferros_OldCamp_Price_15_00 " );	// What will you give me if I find your sword?
+	AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_Price_01_01 " );	// God, I can't give anything. I spent all my money on this sword.
 
 	if(RhetorikSkillValue[1] >= 50)
 	{
-		AI_Output(other,self,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_00");	//Боюсь, что так дело не пойдет!
-		AI_Output(other,self,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_01");	//К тому же ты вовсе не похож на человека, у которого нет денег.
-		AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_02");	//У меня их и вправду нет, приятель.
-		AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_03");	//Единственное, что я смогу тебе дать в качестве награды, это мое фамильное кольцо.
-		AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_04");	//Последняя вещь, которую я еще не продал...
+		AI_Output(other,self, " DIA_DJG_715_Ferros_OldCamp_Price_New_15_00 " );	// I'm afraid this won't work!
+		AI_Output(other,self, " DIA_DJG_715_Ferros_OldCamp_Price_New_15_01 " );	// Besides, you don't look like a person who has no money.
+		AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_Price_New_15_02 " );	// I really don't have them, mate.
+		AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_Price_New_15_03 " );	// The only thing I can give you as a reward is my family ring.
+		AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_Price_New_15_04 " );	// The last thing I haven't sold yet...
 		FerrosRing = TRUE;
 	};
 
@@ -168,22 +168,22 @@ func void DIA_DJG_715_Ferros_OldCamp_Price()
 
 func void DIA_DJG_715_Ferros_OldCamp_Yes()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_OldCamp_Yes_15_00");	//Я найду твой меч.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Yes_01_01");	//Это было бы великолепно. Тебе стоит поискать у большого утеса на юге.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Yes_01_02");	//Я, вероятно, потерял его там, около палаток орков.
-	B_LogEntry(TOPIC_FerrosSword,"Похоже, Ферос потерял свой меч на высоком утесе на юге, там, где находятся палатки орков.");
+	AI_Output(other,self, " DIA_DJG_715_Ferros_OldCamp_Yes_15_00 " );	// I'll find your sword.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_Yes_01_01 " );	// That would be great. You should look around the big cliff to the south.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_OldCamp_Yes_01_02 " );	// I probably lost it there, near the orc tents.
+	B_LogEntry(TOPIC_FerrosSword, " Looks like Feros lost his sword on the high cliff to the south, where the orcs' tents are. " );
 	Info_ClearChoices(DIA_DJG_715_Ferros_OldCamp);
 };
 
 
-instance DIA_DJG_715_Ferros_FerrosAnySword(C_Info)
+instance DIA_DJG_715_Ferros_FerrosAnySword (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 6;
 	condition = DIA_DJG_715_Ferros_FerrosAnySword_Condition;
 	information = DIA_DJG_715_Ferros_FerrosAnySword_Info;
 	permanent = FALSE;
-	description = "Возможно, у меня есть для тебя другой меч.";
+	description = " Maybe I have another sword for you. " ;
 };
 
 
@@ -197,7 +197,7 @@ func int DIA_DJG_715_Ferros_FerrosAnySword_Condition()
 
 func void DIA_DJG_715_Ferros_FerrosAnySword_Info()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_15_00");	//Возможно, у меня есть для тебя другой меч.
+	AI_Output(other,self, " DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_15_00 " );	// Maybe I have another sword for you.
 	Info_ClearChoices(DIA_DJG_715_Ferros_FerrosAnySword);
 	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,Dialog_Back,DIA_DJG_715_Ferros_FerrosAnySword_Back);
 	if(Npc_HasItems(other,ItMw_1H_Special_01) >= 1)
@@ -217,61 +217,61 @@ func void DIA_DJG_715_Ferros_FerrosAnySword_Back()
 
 func void B_Ferros_FerrosAnySword_Give()
 {
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Give_01_00");	//Это хороший клинок. Превосходной работы.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Give_01_01");	//Ты уверен, что хочешь отдать его мне просто так?
+	AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Give_01_00 " );	// This is a good blade. Excellent work.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Give_01_01 " );	// Are you sure you want to give it to me just like that?
 };
 
 func void DIA_DJG_715_Ferros_FerrosAnySword_Silverblade()
 {
 	B_Ferros_FerrosAnySword_Give();
 	Info_ClearChoices(DIA_DJG_715_Ferros_FerrosAnySword);
-	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,"Нет, он нужен мне самому.",DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_No);
-	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,"Да, забирай.",DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_Yes);
+	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword, " No, I need it myself. " ,DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_No);
+	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword, " Да, забирай. " ,DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_Yes);
 };
 
 func void DIA_DJG_715_Ferros_FerrosAnySword_Oreblade()
 {
 	B_Ferros_FerrosAnySword_Give();
 	Info_ClearChoices(DIA_DJG_715_Ferros_FerrosAnySword);
-	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,"Нет, он нужен мне самому.",DIA_DJG_715_Ferros_FerrosAnySword_Oreblade_No);
-	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,"Да, забирай.",DIA_DJG_715_Ferros_FerrosAnySword_Oreblade_Yes);
+	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword, " No, I need it myself. " ,DIA_DJG_715_Ferros_FerrosAnySword_Oreblade_No);
+	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword, " Да, забирай. " ,DIA_DJG_715_Ferros_FerrosAnySword_Oreblade_Yes);
 };
 
 func void B_Ferros_FerrosAnySword_Yes1()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_15_00");		//Да, забирай.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_00");		//Благодарю тебя. Ты хороший человек.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_01");		//Денег, как ты знаешь, у меня нет. Но я покажу тебе один прием, который позволит тебе правильнее использовать свою силу в бою.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_02");		//Было бы неплохо.
+	AI_Output(other,self, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_15_00 " );		// Yes, take it.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_00 " );		// Thank you. You are a good person.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_01 " );		// Money, as you know, I don't have. But I will show you one technique that will allow you to better use your power in battle.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_02 " );		// Would be nice.
 
 	if(RhetorikSkillValue[1] >= 50)
 	{
-		AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_03");	//Тогда слушай. Когда ты наносишь удар, используй не только силу руки, но и инерцию всего тела.
-		AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_04");	//Ты должен единовременно развернуть бедро, вынести вперед плечо и распрямить руку.
-		AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_05");	//Твой удар получится более сильным и точным. Ты и сам это поймешь, когда попробуешь.
+		AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_03 " );	// Then listen. When you strike, use not only the strength of your hand, but also the momentum of your whole body.
+		AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_04 " );	// You must rotate your hip at the same time, bring your shoulder forward and straighten your arm.
+		AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_05 " );	// Your strike will be stronger and more accurate. You will understand it yourself when you try it.
 		B_RaiseAttribute_Bonus(hero,ATR_STRENGTH,1);
 	};
 };
 
 func void B_Ferros_FerrosAnySword_Yes2()
 {
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_00");	//Спасибо! Я твой должник.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_01");	//Взамен я покажу тебе парочку трюков, которые позволят тебе лучше использовать силу и ловкость в бою.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_00 " );	// Thank you! I owe you.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_01 " );	// In return, I'll show you a couple of tricks that will allow you to better use your strength and agility in combat.
 
 	if(FerrosRing == TRUE)
 	{
-		AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_02");	//Ах да, возьми это кольцо. Только не теряй его.
-		B_GiveInvItems(self,hero,ItRi_FerrosRing,1);
+		AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_02 " );	// Oh yeah, take this ring. Just don't lose it.
+		B_GiveInvItems(self,hero,ItRi_FerrosRing, 1 );
 	};
 
 	Log_CreateTopic(TOPIC_Teacher,LOG_NOTE);
-	B_LogEntry(TOPIC_Teacher,"Ферос может повысить мои силу и ловкость.");
+	B_LogEntry(TOPIC_Teacher, " Feros can increase my strength and agility. " );
 };
 
 func void B_Ferros_FerrosAnySword_No()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_No_15_00");	//Нет, он нужен мне самому.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_No_01_01");	//Понимаю.
+	AI_Output(other,self, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_No_15_00 " );	// No, I need it myself.
+	AI_Output(self,other, " DIA_DJG_715_Ferros_FerrosAnySword_Blade_No_01_01 " );	// I understand.
 };
 
 func void DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_Yes()
@@ -306,14 +306,14 @@ func void DIA_DJG_715_Ferros_FerrosAnySword_Oreblade_No()
 	Info_ClearChoices(DIA_DJG_715_Ferros_FerrosAnySword);
 };
 
-instance DIA_DJG_715_Ferros_FerrosHisSword(C_Info)
+instance DIA_DJG_715_Ferros_FerrosHisSword (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 6;
 	condition = DIA_DJG_715_Ferros_FerrosHisSword_Condition;
 	information = DIA_DJG_715_Ferros_FerrosHisSword_Info;
 	permanent = FALSE;
-	description = "Я нашел твой меч.";
+	description = " I found your sword. " ;
 };
 
 func int DIA_DJG_715_Ferros_FerrosHisSword_Condition()
@@ -326,7 +326,7 @@ func int DIA_DJG_715_Ferros_FerrosHisSword_Condition()
 
 func void DIA_DJG_715_Ferros_FerrosHisSword_Info()
 {
-	AI_Output(other,self,"DIA_DJG_715_Ferros_FerrosHisSword_15_00");	//Я нашел твой меч.
+	AI_Output(other,self, " DIA_DJG_715_Ferros_FerrosHisSword_15_00 " );	// I found your sword.
 	B_GiveInvItems(other,self,ItMW_1H_FerrosSword_Mis,1);
 	B_Ferros_FerrosAnySword_Yes2();
 	MIS_FErrosSword = LOG_SUCCESS;
@@ -334,14 +334,14 @@ func void DIA_DJG_715_Ferros_FerrosHisSword_Info()
 };
 
 
-instance DIA_Ferros_Teach(C_Info)
+instance DIA_Ferros_Teach (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 1;
 	condition = DIA_Ferros_Teach_Condition;
 	information = DIA_Ferros_Teach_Info;
 	permanent = TRUE;
-	description = "Покажи мне, как можно улучшить свои способности.";
+	description = " Show me how I can improve my abilities. " ;
 };
 
 
@@ -355,14 +355,14 @@ func int DIA_Ferros_Teach_Condition()
 
 func void DIA_Ferros_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Ferros_Teach_15_00");	//Покажи мне, как можно улучшить свои способности.
+	AI_Output(other,self, " DIA_Ferros_Teach_15_00 " );	// Show me how to improve my abilities.
 	if(MIS_OCGateOpen == TRUE)
 	{
-		AI_Output(self,other,"DIA_Ferros_Teach_01_01");	//После всех этих нападений орков я больше этим не занимаюсь. Я рад, что вообще остался жив, парень.
+		AI_Output(self,other, " DIA_Ferros_Teach_01_01 " );	// After all these orc attacks, I don't do it anymore. I'm glad I'm still alive, man.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ferros_Teach_01_02");	//Хороший боец должен уметь напрямую передавать свои способности своему оружию.
+		AI_Output(self,other, " DIA_Ferros_Teach_01_02 " );	// A good fighter should be able to transfer their abilities directly to their weapons.
 		Info_ClearChoices(DIA_Ferros_Teach);
 		Info_AddChoice(DIA_Ferros_Teach,Dialog_Back,DIA_Ferros_Teach_Back);
 		Info_AddChoice(DIA_Ferros_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ferros_Teach_STR_1);
@@ -402,14 +402,14 @@ func void DIA_Ferros_Teach_DEX_5()
 };
 
 
-instance DIA_Ferros_AllDragonsDead(C_Info)
+instance DIA_Ferros_AllDragonsDead (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 5;
 	condition = DIA_Ferros_AllDragonsDead_Condition;
 	information = DIA_Ferros_AllDragonsDead_Info;
 	permanent = FALSE;
-	description = "Все драконы мертвы.";
+	description = " All dragons are dead. " ;
 };
 
 
@@ -423,12 +423,12 @@ func int DIA_Ferros_AllDragonsDead_Condition()
 
 func void DIA_Ferros_AllDragonsDead_Info()
 {
-	AI_Output(other,self,"DIA_Ferros_AllDragonsDead_15_00");	//Все драконы мертвы.
-	AI_Output(self,other,"DIA_Ferros_AllDragonsDead_01_01");	//Отлично! Если бы у нас было побольше людей вроде тебя, все, возможно, не зашло бы так далеко.
+	AI_Output(other,self, " DIA_Ferros_AllDragonsDead_15_00 " );	// All dragons are dead.
+	AI_Output(self,other, " DIA_Ferros_AllDragonsDead_01_01 " );	// Great! If we had more people like you, things might not have gone this far.
 };
 
 
-instance DIA_Ferros_PICKPOCKET(C_Info)
+instance DIA_Ferros_PICKPOCKET (C_Info)
 {
 	npc = DJG_715_Ferros;
 	nr = 900;
@@ -441,19 +441,19 @@ instance DIA_Ferros_PICKPOCKET(C_Info)
 
 func int DIA_Ferros_PICKPOCKET_Condition()
 {
-	return C_Beklauen(56,75);
+	return  C_Robbery ( 56 , 75 );
 };
 
 func void DIA_Ferros_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Ferros_PICKPOCKET);
 	Info_AddChoice(DIA_Ferros_PICKPOCKET,Dialog_Back,DIA_Ferros_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Ferros_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Ferros_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Ferros_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Ferros_PICKPOCKET_DoIt);
 };
 
 func void DIA_Ferros_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Ferros_PICKPOCKET);
 };
 
@@ -461,4 +461,3 @@ func void DIA_Ferros_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Ferros_PICKPOCKET);
 };
-
