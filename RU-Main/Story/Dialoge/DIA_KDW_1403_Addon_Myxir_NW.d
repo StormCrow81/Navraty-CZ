@@ -21,13 +21,13 @@ func void DIA_Addon_Myxir_EXIT_Info()
 };
 
 
-instance DIA_Addon_Myxir_Hallo(C_Info)
+instance DIA_Addon_Myxir_Hallo (C_Info)
 {
 	npc = KDW_1403_Addon_Myxir_NW;
 	nr = 5;
 	condition = DIA_Addon_Myxir_Hallo_Condition;
 	information = DIA_Addon_Myxir_Hallo_Info;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -38,18 +38,18 @@ func int DIA_Addon_Myxir_Hallo_Condition()
 
 func void DIA_Addon_Myxir_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_Hallo_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_Addon_Myxir_Hallo_12_01");	//Заявиться сюда было с твоей стороны очень смелым поступком.
+	AI_Output(other,self, " DIA_Addon_Myxir_Hallo_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Addon_Myxir_Hallo_12_01 " );	// Showing up here was a very brave act of you.
 };
 
 
-instance DIA_Addon_Myxir_WasMachstDu(C_Info)
+instance DIA_Addon_Myxir_WasMachstDu (C_Info)
 {
 	npc = KDW_1403_Addon_Myxir_NW;
 	nr = 5;
 	condition = DIA_Addon_Myxir_WasMachstDu_Condition;
 	information = DIA_Addon_Myxir_WasMachstDu_Info;
-	description = "Чем ты здесь занимаешься?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -59,26 +59,26 @@ func int DIA_Addon_Myxir_WasMachstDu_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Myxir_WasMachstDu_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_WasMachstDu_15_00");	//Чем ты здесь занимаешься?
-	AI_Output(self,other,"DIA_Addon_Myxir_WasMachstDu_12_01");	//Я изучаю язык зодчих.
-	AI_Output(self,other,"DIA_Addon_Myxir_WasMachstDu_12_02");	//Язык - это ключ к тому, чтобы понять этих людей.
-	AI_Output(self,other,"DIA_Addon_Myxir_WasMachstDu_12_03");	//Каждый из нас должен выучить этот язык, иначе экспедиция закончится, даже не начавшись.
-	AI_Output(self,other,"DIA_Addon_Myxir_WasMachstDu_12_04");	//Зодчие выбивали свои тексты на каменных табличках. К сожалению, многие из них давно разбиты или украдены.
+	AI_Output(other,self, " DIA_Addon_Myxir_WasMachstDu_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Addon_Myxir_WasMachstDu_12_01 " );	// I study the language of architects.
+	AI_Output(self,other, " DIA_Addon_Myxir_WasMachstDu_12_02 " );	// Language is the key to understanding these people.
+	AI_Output(self,other, " DIA_Addon_Myxir_WasMachstDu_12_03 " );	// Each of us must learn this language, otherwise the expedition will end before it even starts.
+	AI_Output(self,other, " DIA_Addon_Myxir_WasMachstDu_12_04 " );	// Architects carved their texts on stone tablets. Unfortunately, many of them have long been broken or stolen.
 };
 
 
-instance DIA_Addon_Myxir_Steintafeln(C_Info)
+instance DIA_Addon_Myxir_Steintafeln (C_Info)
 {
 	npc = KDW_1403_Addon_Myxir_NW;
 	nr = 5;
 	condition = DIA_Addon_Myxir_Steintafeln_Condition;
 	information = DIA_Addon_Myxir_Steintafeln_Info;
-	description = "Что же можно узнать из этих табличек?";
+	description = " What can you learn from these tablets? " ;
 };
 
 
@@ -88,18 +88,18 @@ func int DIA_Addon_Myxir_Steintafeln_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Myxir_Steintafeln_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_Steintafeln_15_00");	//Что же можно узнать из этих табличек?
-	AI_Output(self,other,"DIA_Addon_Myxir_Steintafeln_12_01");	//На них записаны знания древнего народа.
-	AI_Output(self,other,"DIA_Addon_Myxir_Steintafeln_12_02");	//Некоторые из них волшебным образом увеличивают магические или боевые способности.
-	AI_Output(self,other,"DIA_Addon_Myxir_Steintafeln_12_03");	//Для тех, кто способен их прочесть, они являются настоящим сокровищем.
+	AI_Output(other,self, " DIA_Addon_Myxir_Steintafeln_15_00 " );	// What can you learn from these tablets?
+	AI_Output(self,other, " DIA_Addon_Myxir_Steintafeln_12_01 " );	// They contain the knowledge of the ancient people.
+	AI_Output(self,other, " DIA_Addon_Myxir_Steintafeln_12_02 " );	// Some of them magically increase magical or combat abilities.
+	AI_Output(self,other, " DIA_Addon_Myxir_Steintafeln_12_03 " );	// For those who can read them, they are a real treasure.
 	Log_CreateTopic(TOPIC_Addon_Stoneplates,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_Stoneplates,LOG_Running);
-	B_LogEntry(TOPIC_Addon_Stoneplates,"На каменных табличках записаны древние знания зодчих. Некоторые из них могут волшебным образом увеличить познания в области сражений или магии. Однако их нужно еще суметь прочитать.");
+	B_LogEntry(TOPIC_Addon_Stoneplates, " The stone tablets contain the ancient knowledge of the architects. Some of them can magically increase the knowledge of combat or magic. However, they still need to be able to read. " );
 };
 
 
@@ -109,7 +109,7 @@ instance DIA_Addon_Myxir_WillYouTeachMe(C_Info)
 	nr = 10;
 	condition = DIA_Addon_Myxir_WillYouTeachMe_Condition;
 	information = DIA_Addon_Myxir_WillYouTeachMe_Info;
-	description = "Ты можешь научить меня языку Зодчих?";
+	description = " Can you teach me the language of the Architects? " ;
 };
 
 
@@ -119,13 +119,13 @@ func int DIA_Addon_Myxir_WillYouTeachMe_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Myxir_WillYouTeachMe_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_WillYouTeachMe_15_00");	//Ты можешь научить меня языку Зодчих?
-	AI_Output(self,other,"DIA_Addon_Myxir_WillYouTeachMe_12_01");	//Конечно, почему нет? Я с радостью поделюсь с тобой своими знаниями.
+	AI_Output(other,self, " DIA_Addon_Myxir_WillYouTeachMe_15_00 " );	// Can you teach me the language of the Builders?
+	AI_Output(self,other, " DIA_Addon_Myxir_WillYouTeachMe_12_01 " );	// Of course, why not? I will gladly share my knowledge with you.
 	Myxir_Addon_TeachPlayer = TRUE;
 	Log_CreateTopic(TOPIC_Addon_KDWTeacher,LOG_NOTE);
 	B_LogEntry(TOPIC_Addon_KDWTeacher,LogText_Addon_MyxirTeach);
@@ -144,12 +144,12 @@ instance DIA_Addon_Myxir_Teach(C_Info)
 	condition = DIA_Addon_Myxir_Teach_Condition;
 	information = DIA_Addon_Myxir_Teach_Info;
 	permanent = TRUE;
-	description = "Научи меня этому языку.";
+	description = " Teach me this language. " ;
 };
 
 func int DIA_Addon_Myxir_Teach_Condition()
 {
-	if((Myxir_Addon_TeachPlayer == TRUE) && (DIA_Addon_Myxir_Teach_NoPerm == FALSE))
+	if (( Myxir_Addon_Teach_Player ==  TRUE ) && ( DIA_Myxir_Addon_Teach_NoPerm ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -157,7 +157,7 @@ func int DIA_Addon_Myxir_Teach_Condition()
 
 func void DIA_Addon_Myxir_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_TeachRequest_15_00");	//Научи меня этому языку.
+	AI_Output(other,self, " DIA_Addon_Myxir_TeachRequest_15_00 " );	// Teach me this language.
 
 	if(DIA_Addon_Myxir_Teach_OneTime == FALSE)
 	{
@@ -185,7 +185,7 @@ func void DIA_Addon_Myxir_Teach_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachNoMore_12_00");	//Больше мне нечего тебе показать. Ты изучил язык зодчих.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachNoMore_12_00 " );	// I have nothing more to show you. You have learned the language of architects.
 		DIA_Addon_Myxir_Teach_NoPerm = TRUE;
 	};
 };
@@ -199,9 +199,9 @@ func void DIA_Addon_Myxir_Teach_LANGUAGE_1()
 {
 	if(B_TeachPlayerTalentForeignLanguage(self,other,LANGUAGE_1))
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL1_12_00");	//Ну, начнем с чего-нибудь простого. В первую очередь займемся языком крестьян.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL1_12_01");	//Как правило, тексты, написанные на языке крестьян, связаны с нашим миром, с такими понятиями, как работа, любовь, добыча пищи.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL1_12_02");	//Это - основной язык города. Ты сможешь прочесть большинство текстов, которые найдешь здесь, если его освоишь.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL1_12_00 " );	// Well, let's start with something simple. Let us first deal with the language of the peasants.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL1_12_01 " );	// As a rule, texts written in the language of peasants are connected with our world, with such concepts as work, love, food production.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL1_12_02 " );	// This is the main language of the city. You can read most of the texts you find here if you master it.
 	};
 
 	Info_ClearChoices(DIA_Addon_Myxir_Teach);
@@ -211,8 +211,8 @@ func void DIA_Addon_Myxir_Teach_LANGUAGE_2()
 {
 	if(B_TeachPlayerTalentForeignLanguage(self,other,LANGUAGE_2))
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL2_12_00");	//Ты уже знаком с языком крестьян. Язык воинов немного более сложен.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL2_12_01");	//Тексты, написанные на языке воинов, в основном касаются войн и оружия. Ты узнаешь кое-что полезное.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL2_12_00 " );	// You are already familiar with the language of the peasants. The language of the warriors is a bit more complex.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL2_12_01 " );	// Texts written in the language of warriors mainly deal with wars and weapons. You will learn something useful.
 	};
 
 	Info_ClearChoices(DIA_Addon_Myxir_Teach);
@@ -222,9 +222,9 @@ func void DIA_Addon_Myxir_Teach_LANGUAGE_3()
 {
 	if(B_TeachPlayerTalentForeignLanguage(self,other,LANGUAGE_3))
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL3_12_00");	//Высокий штиль жрецов трудно понять. Но я с радостью обучу тебя ему.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL3_12_01");	//Помимо прочего, священные книги, описывающие историю и магию создателей, написаны на языке жрецов.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL3_12_02");	//Каждый из этих текстов - настоящее сокровище, если, конечно, ты можешь его понять.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL3_12_00 " );	// The high calm of the priests is hard to understand. But I'll gladly teach it to you.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL3_12_01 " );	// Among other things, the sacred books that describe the history and magic of the creators are written in the language of the priests.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL3_12_02 " );	// Each of these texts is a real treasure, if, of course, you can understand it.
 	};
 
 	Info_ClearChoices(DIA_Addon_Myxir_Teach);
@@ -238,7 +238,7 @@ instance DIA_ADDON_MYXIR_PRAYFORGOMEZ(C_Info)
 	condition = dia_addon_myxir_prayforgomez_condition;
 	information = dia_addon_myxir_prayforgomez_info;
 	permanent = FALSE;
-	description = "Мне нужно благословение Аданоса.";
+	description = " I need the blessing of Adanos. " ;
 };
 
 
@@ -252,9 +252,9 @@ func int dia_addon_myxir_prayforgomez_condition()
 
 func void dia_addon_myxir_prayforgomez_info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_PrayForGomez_01_01");	//Мне нужно благословение Аданоса.
-	AI_Output(self,other,"DIA_Addon_Myxir_PrayForGomez_01_02");	//Поговори об этом с Сатурасом.
-	AI_Output(self,other,"DIA_Addon_Myxir_PrayForGomez_01_03");	//Думаю, он сможет помочь тебе.
-	SENTTOSATURASGOMEZ = TRUE;
+	AI_Output(other,self, " DIA_Addon_Myxir_PrayForGomez_01_01 " );	// I need the blessing of Adanos.
+	AI_Output(self,other, " DIA_Addon_Myxir_PrayForGomez_01_02 " );	// Talk to Saturas about this.
+	AI_Output(self,other, " DIA_Addon_Myxir_PrayForGomez_01_03 " );	// I think he can help you.
+	SENTTOSATURASGOMEZ = TRUE ;
 };
 
