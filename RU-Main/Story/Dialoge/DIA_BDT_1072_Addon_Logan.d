@@ -6,7 +6,7 @@ instance DIA_Addon_Logan_EXIT(C_Info)
 	condition = DIA_Addon_Logan_EXIT_Condition;
 	information = DIA_Addon_Logan_EXIT_Info;
 	permanent = TRUE;
-	description = "Я вернусь позже...";
+	description = " I'll be back later... " ;
 };
 
 
@@ -17,10 +17,10 @@ func int DIA_Addon_Logan_EXIT_Condition()
 
 func void DIA_Addon_Logan_EXIT_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Logan_EXIT_15_00");	//Я вернусь позже...
+	AI_Output(other,self, " DIA_Addon_Logan_EXIT_15_00 " );	// I'll be back later...
 	if(!((MIS_HlpLogan == LOG_Running) || !(MIS_HlpLogan == LOG_SUCCESS)) && (Logan_Inside == FALSE))
 	{
-		AI_Output(self,other,"DIA_Addon_Logan_EXIT_10_01");	//(ворчливо) Да-а, просто убегаешь. А я останусь здесь и остановлю каждого, кто подойдет слишком близко.
+		AI_Output(self,other, " DIA_Addon_Logan_EXIT_10_01 " );	// (grouchily) Yeah, you're just running away. And I will stay here and stop anyone who gets too close.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -39,7 +39,7 @@ instance DIA_Addon_Logan_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Logan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(59,50);
+	return  C_Robbery ( 59 , 50 );
 };
 
 func void DIA_Addon_Logan_PICKPOCKET_Info()
@@ -51,7 +51,7 @@ func void DIA_Addon_Logan_PICKPOCKET_Info()
 
 func void DIA_Addon_Logan_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Logan_PICKPOCKET);
 };
 
@@ -78,14 +78,14 @@ func int DIA_Addon_Logan_Mine_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_Mine_Info()
 {
 	B_Say(other,self,"$MINE_ADDON_DESCRIPTION");
 	B_GiveInvItems(other,self,ItMi_Addon_Stone_01,1);
-	AI_Output(self,other,"DIA_Addon_BDT_1072_Logan_Mine_10_00");	//Так значит, ты это сделал, хм... Ладно, хорошо, что ты не забыл про меня.
+	AI_Output(self,other, " DIA_Addon_BDT_1072_Logan_Mine_10_00 " );	// So you did it, hmm... Okay, good thing you didn't forget about me.
 	Player_SentBuddler = Player_SentBuddler + 1;
 	B_GivePlayerXP(XP_Addon_MINE);
 	AI_StopProcessInfos(self);
@@ -100,7 +100,7 @@ instance DIA_Addon_Logan_How2(C_Info)
 	condition = DIA_Addon_Logan_How2_Condition;
 	information = DIA_Addon_Logan_How2_Info;
 	permanent = FALSE;
-	description = "Как у тебя дела?";
+	description = " How are you? " ;
 };
 
 
@@ -110,17 +110,17 @@ func int DIA_Addon_Logan_How2_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_How2_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Logan_How2_15_00");	//Как у тебя дела?
-	AI_Output(self,other,"DIA_Addon_Logan_How2_10_01");	//Ну, по крайней мере, я теперь внутри. Люсия варит какой-то гадкий ликер.
-	AI_Output(self,other,"DIA_Addon_Logan_How2_10_02");	//Но Эстебан не пускает меня в шахту. Ну никак не хочет. Он дал мне другую работу.
-	AI_Output(other,self,"DIA_Addon_Logan_How2_15_03");	//И? Что он хочет от тебя?
-	AI_Output(self,other,"DIA_Addon_Logan_How2_10_04");	//На его жизнь покушались. И он хочет, чтобы я выяснил, кто за этим стоит.
-	AI_Output(self,other,"DIA_Addon_Logan_How2_10_05");	//(тихо) Эстебан считает, что в этом замешан Снаф. Мне нужно следить за ним...
+	AI_Output(other,self, " DIA_Addon_Logan_How2_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Addon_Logan_How2_10_01 " );	// Well, at least I'm inside now. Lucia is making some nasty liquor.
+	AI_Output(self,other, " DIA_Addon_Logan_How2_10_02 " );	// But Esteban won't let me into the mine. Well, he doesn't want to. He gave me another job.
+	AI_Output(other,self, " DIA_Addon_Logan_How2_15_03 " );	// And? What does he want from you?
+	AI_Output(self,other, " DIA_Addon_Logan_How2_10_04 " );	// There was an attempt on his life. And he wants me to find out who's behind this.
+	AI_Output(self,other, " DIA_Addon_Logan_How2_10_05 " );	// (quietly) Esteban thinks Snaf is involved. I need to watch him...
 };
 
 
@@ -141,18 +141,18 @@ func int DIA_Addon_Logan_Attentat_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_Attentat_Info()
 {
 	B_Say(other,self,"$ATTENTAT_ADDON_DESCRIPTION");
-	AI_Output(self,other,"DIA_Addon_Logan_Attentat_10_00");	//Ты ищешь того, кто за этим стоит, да?
-	AI_Output(self,other,"DIA_Addon_Logan_Attentat_10_01");	//Но я ничего про это не знаю. Откуда мне знать? Тогда я еще был на болоте...
+	AI_Output(self,other, " DIA_Addon_Logan_Attentat_10_00 " );	// You're looking for whoever's behind this, right?
+	AI_Output(self,other, " DIA_Addon_Logan_Attentat_10_01 " );	// But I don't know anything about it. How should I know? Then I was still in the swamp ...
 };
 
 
-instance DIA_Addon_Logan_HI(C_Info)
+instances of DIA_Addon_Logan_HI (C_Info)
 {
 	npc = BDT_1072_Addon_Logan;
 	nr = 2;
@@ -169,25 +169,25 @@ func int DIA_Addon_Logan_HI_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_HI_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Logan_HI_10_00");	//Смотри-ка, новое лицо.
-	AI_Output(self,other,"DIA_Addon_Logan_HI_10_01");	//Ты пришел просто постоять рядом или, может быть, все-таки поможешь?
+	AI_Output(self,other, " DIA_Addon_Logan_HI_10_00 " );	// Look, a new face.
+	AI_Output(self,other, " DIA_Addon_Logan_HI_10_01 " );	// Did you just come to stand beside me, or maybe you can still help?
 	if(Npc_KnowsInfo(other,DIA_Addon_Franco_HI))
 	{
-		AI_Output(other,self,"DIA_Addon_Logan_HI_15_02");	//Меня послал Франко. Он говорит, что тебе может понадобиться помощь. Так что?
+		AI_Output(other,self, " DIA_Addon_Logan_HI_15_02 " );	// Franco sent me. He says you might need help. So that?
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Addon_Logan_HI_15_03");	//Это зависит от того, в чем тебе нужна помощь?
+		AI_Output(other,self, " DIA_Addon_Logan_HI_15_03 " );	// It depends on what you need help with?
 	};
-	AI_Output(self,other,"DIA_Addon_Logan_HI_10_04");	//Болотные акулы начинают подбираться ко мне слишком близко. Самое время прикончить некоторых из них.
+	AI_Output(self,other, " DIA_Addon_Logan_HI_10_04 " );	// The swamp sharks are starting to get too close to me. It's time to finish off some of them.
 	Log_CreateTopic(Topic_Addon_Logan,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Addon_Logan,LOG_Running);
-	B_LogEntry(Topic_Addon_Logan,"Логан хочет, чтобы я отправился с ним на охоту на болотожоров.");
+	B_LogEntry(Topic_Addon_Logan, " Logan wants me to go on a swamp hunt with him. " );
 };
 
 
@@ -198,41 +198,41 @@ instance DIA_Addon_Logan_Why(C_Info)
 	condition = DIA_Addon_Logan_Why_Condition;
 	information = DIA_Addon_Logan_Why_Info;
 	permanent = FALSE;
-	description = "Что я получу за помощь?";
+	description = " What will I get for my help? " ;
 };
 
 
 func int DIA_Addon_Logan_Why_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Logan_HI) && (Logan_Inside == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Logan_HI ) && ( Logan_Inside ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_Why_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Logan_Why_15_00");	//Что я получу за помощь?
-	AI_Output(self,other,"DIA_Addon_Logan_Why_10_01");	//(рычит) Франко сгноит тебя здесь, если ты этого не сделаешь.
-	AI_Output(self,other,"DIA_Addon_Logan_Why_10_02");	//Если ты хочешь попасть в лагерь, тебе придется помогать другим. На одних словах ты далеко не уедешь.
-	AI_Output(self,other,"DIA_Addon_Logan_Why_10_03");	//А кроме того, я могу показать тебе, как разделывать этих зверюг.
-	AI_Output(self,other,"DIA_Addon_Logan_Why_10_04");	//Но я не думаю, что Франко пошлет тебя в лагерь просто за то, что мы здесь немного повеселимся с болотожорами.
-	AI_Output(self,other,"DIA_Addon_Logan_Why_10_05");	//Здесь есть люди, которые уже долгое время ждут возможности попасть внутрь.
-	AI_Output(self,other,"DIA_Addon_Logan_Why_10_06");	//И следующим, кто туда попадет, буду я... (рычит)... Лучше бы это было так...
+	AI_Output(other,self, " DIA_Addon_Logan_Why_15_00 " );	// What do I get for helping?
+	AI_Output(self,other, " DIA_Addon_Logan_Why_10_01 " );	// (growls) Franco will rot you here if you don't.
+	AI_Output(self,other, " DIA_Addon_Logan_Why_10_02 " );	// If you want to get into the camp, you'll have to help others. Words alone won't get you far.
+	AI_Output(self,other, " DIA_Addon_Logan_Why_10_03 " );	// And besides, I can show you how to butcher these beasts.
+	AI_Output(self,other, " DIA_Addon_Logan_Why_10_04 " );	// But I don't think Franco will send you to the camp just because we're here to have some fun with the swamp eaters.
+	AI_Output(self,other, " DIA_Addon_Logan_Why_10_05 " );	// There are people here who have been waiting for a long time to get inside.
+	AI_Output(self,other, " DIA_Addon_Logan_Why_10_06 " );	// And the next one to get there will be me... (growls)... It better be like this...
 	Log_CreateTopic(Topic_Addon_BDT_Teacher,LOG_NOTE);
-	B_LogEntry(Topic_Addon_BDT_Teacher,"Логан может научить меня снимать шкуры и выбирать зубы и когти.");
+	B_LogEntry(Topic_Addon_BDT_Teacher, " Logan can teach me how to skin and pick teeth and claws. " );
 };
 
 
-instance DIA_Addon_Logan_Lager(C_Info)
+instances of DIA_Addon_Logan_Lager (C_Info)
 {
 	npc = BDT_1072_Addon_Logan;
 	nr = 3;
 	condition = DIA_Addon_Logan_Lager_Condition;
 	information = DIA_Addon_Logan_Lager_Info;
 	permanent = FALSE;
-	description = "А что в лагере?";
+	description = " What's in the camp? " ;
 };
 
 
@@ -242,25 +242,25 @@ func int DIA_Addon_Logan_Lager_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_Lager_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Logan_Lager_15_00");	//А что в лагере?
-	AI_Output(self,other,"DIA_Addon_Logan_Lager_10_01");	//(ворчливо) Вопрос в том, чего НЕТ в лагере. Там нет болотных акул, там нет болотных кочек... Вообще НЕТ болота.
-	AI_Output(self,other,"DIA_Addon_Logan_Lager_10_02");	//Зато там есть выпивка и золото. И насколько я знаю, там даже есть женщина. Понял?
+	AI_Output(other,self, " DIA_Addon_Logan_Lager_15_00 " );	// What's in the camp?
+	AI_Output(self,other, " DIA_Addon_Logan_Lager_10_01 " );	// (grouchily) The question is what is NOT in the camp. There are no swamp sharks, there are no swamp hummocks ... There is NO swamp at all.
+	AI_Output(self,other, " DIA_Addon_Logan_Lager_10_02 " );	// But there is booze and gold. And as far as I know, there is even a woman there. Understood?
 };
 
 
-instance DIA_Addon_Logan_MIS(C_Info)
+instances of DIA_Addon_Logan_MIS (C_Info)
 {
 	npc = BDT_1072_Addon_Logan;
 	nr = 99;
 	condition = DIA_Addon_Logan_MIS_Condition;
 	information = DIA_Addon_Logan_MIS_Info;
 	permanent = FALSE;
-	description = "Давай разберемся с болотожорами.";
+	description = " Let's deal with the swamp eaters. " ;
 };
 
 
@@ -270,17 +270,17 @@ func int DIA_Addon_Logan_MIS_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_MIS_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Logan_MIS_15_00");	//Давай разберемся с болотожорами.
-	AI_Output(self,other,"DIA_Addon_Logan_MIS_10_01");	//Ты, наконец, понял, как здесь нужно себя вести. Приятно слышать. Тсс...слышишь? Да-а, я их слышу.
-	AI_Output(other,self,"DIA_Addon_Logan_MIS_15_02");	//Понятно, и что нам теперь делать?
-	AI_Output(self,other,"DIA_Addon_Logan_MIS_10_03");	//Они приближаются! Они хотят закусить человечиной. Ну-ну, мы посмотрим, кто кого съест...Пойдем!
+	AI_Output(other,self, " DIA_Addon_Logan_MIS_15_00 " );	// Let's deal with the swamp eaters.
+	AI_Output(self,other, " DIA_Addon_Logan_MIS_10_01 " );	// You finally figured out how to behave here. Nice to hear. Shh... do you hear? Yes, I hear them.
+	AI_Output(other,self, " DIA_Addon_Logan_MIS_15_02 " );	// I see, so what do we do now?
+	AI_Output(self,other, " DIA_Addon_Logan_MIS_10_03 " );	// They're coming! They want to eat human flesh. Well, well, we'll see who eats whom... Let's go!
 	Snd_Play("SWA_WARN01");
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	MIS_HlpLogan = LOG_Running;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"JAGD");
@@ -290,7 +290,7 @@ func void DIA_Addon_Logan_MIS_Info()
 };
 
 
-instance DIA_Addon_Logan_tot(C_Info)
+instances of DIA_Addon_Logan_tot (C_Info)
 {
 	npc = BDT_1072_Addon_Logan;
 	nr = 2;
@@ -307,31 +307,31 @@ func int DIA_Addon_Logan_tot_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_tot_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Logan_tot_10_00");	//Хороший болотожор - дохлый болотожор. Это будет предупреждением ее собратьям!
-	AI_Output(other,self,"DIA_Addon_Logan_tot_15_01");	//Отлично, мне нужно сделать еще что-нибудь? Если нет, я пойду...
-	AI_Output(self,other,"DIA_Addon_Logan_tot_10_02");	//Иди. И если ты захочешь научиться чему-нибудь еще, ты знаешь, где меня искать.
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(self,other, " DIA_Addon_Logan_tot_10_00 " );	// A good swamp eater is a dead swamp eater. This will be a warning to her brethren!
+	AI_Output(other,self, " DIA_Addon_Logan_tot_15_01 " );	// Great, is there anything else I need to do? If not, I'll go...
+	AI_Output(self,other, " DIA_Addon_Logan_tot_10_02 " );	// Go. And if you want to learn anything else, you know where to find me.
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	MIS_HlpLogan = LOG_SUCCESS;
-	self.aivar[93] = FALSE;
-	B_LogEntry(Topic_Addon_Franco,"Я помог Логану. Посмотрим, что скажет на это Франко.");
+	self.aivar[ 93 ] = FALSE ;
+	B_LogEntry(Topic_Addon_Franco, " I helped Logan. Let's see what Franco has to say about that. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"START");
 };
 
 
-instance DIA_Addon_Logan_Lern(C_Info)
+instances of DIA_Addon_Logan_Lern (C_Info)
 {
 	npc = BDT_1072_Addon_Logan;
 	nr = 100;
 	condition = DIA_Addon_Logan_Lern_Condition;
 	information = DIA_Addon_Logan_Lern_Info;
 	permanent = FALSE;
-	description = "Покажи мне, как разделывать туши животных...";
+	description = " Show me how to butcher animal carcasses... " ;
 };
 
 
@@ -341,25 +341,25 @@ func int DIA_Addon_Logan_Lern_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_Lern_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Logan_Lern_15_00");	//Покажи мне, как разделывать туши животных...
-	AI_Output(self,other,"DIA_Addon_Logan_Lern_10_01");	//Если ты хочешь научиться разделывать кровавых мух, пойди к Эдгору. Он про них знает буквально все.
-	AI_Output(self,other,"DIA_Addon_Logan_Lern_10_02");	//А если тебя интересуют болотные акулы и ящеры, я могу научить тебя снимать шкуру и вынимать зубы.
+	AI_Output(other,self, " DIA_Addon_Logan_Lern_15_00 " );	// Show me how to butcher animal carcasses...
+	AI_Output(self,other, " DIA_Addon_Logan_Lern_10_01 " );	// If you want to learn how to butcher blood flies, go to Edgor. He knows literally everything about them.
+	AI_Output(self,other, " DIA_Addon_Logan_Lern_10_02 " );	// And if you're interested in swamp sharks and lizards, I can teach you how to skin and remove teeth.
 };
 
 
-instance DIA_Addon_Logan_Allg(C_Info)
+instances of DIA_Addon_Logan_Allg (C_Info)
 {
 	npc = BDT_1072_Addon_Logan;
 	nr = 3;
 	condition = DIA_Addon_Logan_Allg_Condition;
 	information = DIA_Addon_Logan_Allg_Info;
 	permanent = TRUE;
-	description = "Я хочу обучиться...";
+	description = " I want to learn... " ;
 };
 
 
@@ -369,7 +369,7 @@ func int DIA_Addon_Logan_Allg_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Logan_Allg_Info()
@@ -420,7 +420,7 @@ instance DIA_Addon_Logan_Hacker(C_Info)
 	condition = DIA_Addon_Logan_Hacker_Condition;
 	information = DIA_Addon_Logan_Hacker_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -435,12 +435,11 @@ func int DIA_Addon_Logan_Hacker_Condition()
 func void DIA_Addon_Logan_Hacker_Info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10004_Logan_Hacker_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Logan_Hacker_10_01");	//Эй, спасибо тебе, я сделал это! Я в шахте!
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Logan_Hacker_10_02");	//Я пока не много знаю про то, как добывать золото, но это придет.
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Logan_Hacker_10_01 " );	// Hey, thank you, I did it! I'm in the mine!
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Logan_Hacker_10_02 " );	// I don't know much about how to mine gold yet, but it will come.
 	if(Logan_Lohn == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10004_Logan_Hacker_10_03");	//Я выучил самую главную вещь. Стой на земле крепко и всегда бей твердо!
+		AI_Output(self,other, " DIA_Addon_BDT_10004_Logan_Hacker_10_03 " );	// I learned the most important thing. Stand on the ground firmly and always hit hard!
 		Logan_Lohn = TRUE;
 	};
 };
-
