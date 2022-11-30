@@ -22,7 +22,7 @@ func void DIA_Kurgan_EXIT_Info()
 };
 
 
-instance DIA_Kurgan_HELLO(C_Info)
+instance DIA_Kurgan_HELLO (C_Info)
 {
 	npc = DJG_708_Kurgan;
 	condition = DIA_Kurgan_HELLO_Condition;
@@ -33,7 +33,7 @@ instance DIA_Kurgan_HELLO(C_Info)
 
 func int DIA_Kurgan_HELLO_Condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -41,26 +41,26 @@ func int DIA_Kurgan_HELLO_Condition()
 
 func void DIA_Kurgan_HELLO_Info()
 {
-	AI_Output(self,other,"DIA_Kurgan_HELLO_01_00");	//Эй, ты! Смотри, куда идешь!
-	AI_Output(other,self,"DIA_Kurgan_HELLO_15_01");	//Что ты этим хочешь сказать?
-	AI_Output(self,other,"DIA_Kurgan_HELLO_01_02");	//Я хочу сказать, что пребывание здесь может не очень хорошо сказаться на твоем здоровье. Это место просто кишит орками и монстрами.
-	AI_Output(self,other,"DIA_Kurgan_HELLO_01_03");	//Не говоря уже о драконах. Это просто дружеское предупреждение.
-	B_LogEntry(TOPIC_Dragonhunter,"У входа в Долину Рудников мне встретилась группа охотников на драконов. Эти парни хорошо вооружены, но, боюсь, это не произведет особого впечатления на драконов.");
+	AI_Output(self,other, " DIA_Kurgan_HELLO_01_00 " );	// Hey you! Watch where you're going!
+	AI_Output(other,self, " DIA_Kurgan_HELLO_15_01 " );	// What do you mean by that?
+	AI_Output(self,other, " DIA_Kurgan_HELLO_01_02 " );	// I mean, staying here might not be good for your health. This place is just teeming with orcs and monsters.
+	AI_Output(self,other, " DIA_Kurgan_HELLO_01_03 " );	// Not to mention dragons. This is just a friendly warning.
+	B_LogEntry(TOPIC_Dragonhunter, " I met a group of dragon hunters at the entrance to the Valley of Mines. These guys are well-armed, but I'm afraid that won't impress the dragons. " );
 };
 
 
-instance DIA_Kurgan_ELSE(C_Info)
+DIA_Kurgan_ELSE (C_Info) instances
 {
 	npc = DJG_708_Kurgan;
 	condition = DIA_Kurgan_ELSE_Condition;
 	information = DIA_Kurgan_ELSE_Info;
-	description = "Ты можешь сказать мне что-нибудь, чего я еще не знаю?";
+	description = " Can you tell me something I don't already know? " ;
 };
 
 
 func int DIA_Kurgan_ELSE_Condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -68,25 +68,25 @@ func int DIA_Kurgan_ELSE_Condition()
 
 func void DIA_Kurgan_ELSE_Info()
 {
-	AI_Output(other,self,"DIA_Kurgan_ELSE_15_00");	//Ты можешь сказать мне что-нибудь, чего я еще не знаю?
-	AI_Output(self,other,"DIA_Kurgan_ELSE_01_01");	//Я могу дать тебе добрый совет, причем бесплатно.
-	AI_Output(self,other,"DIA_Kurgan_ELSE_01_02");	//Нам здесь не нужны трусы, которые падают в обморок, как только почувствуют даже слабый запах дракона.
-	AI_Output(self,other,"DIA_Kurgan_ELSE_01_03");	//Возвращайся домой, это работа для настоящих мужчин.
+	AI_Output(other,self, " DIA_Kurgan_ELSE_15_00 " );	// Can you tell me something I don't already know?
+	AI_Output(self,other, " DIA_Kurgan_ELSE_01_01 " );	// I can give you good advice for free.
+	AI_Output(self,other, " DIA_Kurgan_ELSE_01_02 " );	// We don't need cowards here who faint at the slightest whiff of a dragon.
+	AI_Output(self,other, " DIA_Kurgan_ELSE_01_03 " );	// Come home, this is a job for real men.
 };
 
 
-instance DIA_Kurgan_Leader(C_Info)
+instances of DIA_Kurgan_Leader (C_Info)
 {
 	npc = DJG_708_Kurgan;
 	condition = DIA_Kurgan_Leader_Condition;
 	information = DIA_Kurgan_Leader_Info;
-	description = "Ты что здесь, за главного?";
+	description = " Are you in charge here? " ;
 };
 
 
 func int DIA_Kurgan_Leader_Condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -94,26 +94,26 @@ func int DIA_Kurgan_Leader_Condition()
 
 func void DIA_Kurgan_Leader_Info()
 {
-	AI_Output(other,self,"DIA_Kurgan_Leader_15_00");	//Ты что здесь, за главного?
-	AI_Output(self,other,"DIA_Kurgan_Leader_01_01");	//Я что, похож на главного? Конечно нет. Нам здесь не нужны важничающие кретины, раздающие приказы.
-	AI_Output(self,other,"DIA_Kurgan_Leader_01_02");	//Когда Сильвио попытался вести себя как командир, мы показали ему и его парням, что мы думаем об этом.
-	AI_Output(self,other,"DIA_Kurgan_Leader_01_03");	//Произошла небольшая стычка. И в конце концов им пришлось убраться.
-	AI_Output(self,other,"DIA_Kurgan_Leader_01_04");	//Надеюсь, Сильвио найдет свой конец в кастрюле какого-нибудь орка.
+	AI_Output(other,self, " DIA_Kurgan_Leader_15_00 " );	// Are you in charge here?
+	AI_Output(self,other, " DIA_Kurgan_Leader_01_01 " );	// Do I look like the boss? Of course not. We don't need arrogant cretins issuing orders here.
+	AI_Output(self,other, " DIA_Kurgan_Leader_01_02 " );	// When Silvio tried to act like a commander, we showed him and his guys what we think about it.
+	AI_Output(self,other, " DIA_Kurgan_Leader_01_03 " );	// There was a little skirmish. And in the end they had to leave.
+	AI_Output(self,other, " DIA_Kurgan_Leader_01_04 " );	// I hope Silvio finds his end in some orc's pot.
 };
 
 
-instance DIA_Kurgan_KillDragon(C_Info)
+instance DIA_Kurgan_KillDragon (C_Info) .
 {
 	npc = DJG_708_Kurgan;
 	condition = DIA_Kurgan_KillDragon_Condition;
 	information = DIA_Kurgan_KillDragon_Info;
-	description = "Так вы хотите убить драконов?";
+	description = " So you want to kill dragons? " ;
 };
 
 
 func int DIA_Kurgan_KillDragon_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Kurgan_Leader) && (KAPITELORCATC == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Kurgan_Leader ) && ( CAPITAL CATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -124,54 +124,54 @@ var int Kurgan_KillDragon_Day;
 
 func void DIA_Kurgan_KillDragon_Info()
 {
-	AI_Output(other,self,"DIA_Kurgan_KillDragon_15_00");	//(издеваясь) Так вы хотите убить драконов?
-	AI_Output(self,other,"DIA_Kurgan_KillDragon_01_01");	//Надо же, какой догадливый. А ты хоть знаешь, как можно завалить дракона?
-	AI_Output(self,other,"DIA_Kurgan_KillDragon_01_02");	//Ты думаешь, он будет спокойно сидеть на месте, когда ты будешь рубить его голову?
-	AI_Output(self,other,"DIA_Kurgan_KillDragon_01_03");	//Такие дела требуют тщательного планирования и решительных действий.
-	AI_Output(other,self,"DIA_Kurgan_KillDragon_15_04");	//Понимаю. И как вы собираетесь справиться с драконами?
-	AI_Output(self,other,"DIA_Kurgan_KillDragon_01_05");	//Сначала мы должны выяснить, где они скрываются.
-	AI_Output(self,other,"DIA_Kurgan_KillDragon_01_06");	//Только тогда можно будет подумать о лучшем способе атаковать их.
+	AI_Output(other,self, " DIA_Kurgan_KillDragon_15_00 " );	// (mocking) So you want to kill dragons?
+	AI_Output(self,other, " DIA_Kurgan_KillDragon_01_01 " );	// Wow, what a quick-witted one. Do you even know how to kill a dragon?
+	AI_Output(self,other, " DIA_Kurgan_KillDragon_01_02 " );	// Do you think he'll sit still while you chop off his head?
+	AI_Output(self,other, " DIA_Kurgan_KillDragon_01_03 " );	// Such cases require careful planning and decisive action.
+	AI_Output(other,self, " DIA_Kurgan_KillDragon_15_04 " );	// I understand. And how are you going to deal with the dragons?
+	AI_Output(self,other, " DIA_Kurgan_KillDragon_01_05 " );	// First we need to find out where they are hiding.
+	AI_Output(self,other, " DIA_Kurgan_KillDragon_01_06 " );	// Only then can we think of a better way to attack them.
 	Kurgan_KillDragon_Day = Wld_GetDay();
-	Info_AddChoice(DIA_Kurgan_KillDragon,"К сожалению, мне нужно идти.",DIA_Kurgan_KillDragon_weg);
-	Info_AddChoice(DIA_Kurgan_KillDragon,"Как вы собираетесь пройти мимо орков?",DIA_Kurgan_KillDragon_orks);
-	Info_AddChoice(DIA_Kurgan_KillDragon,"Мне кажется, вы не способны найти даже слепую овцу.",DIA_Kurgan_KillDragon_spott);
+	Info_AddChoice(DIA_Kurgan_KillDragon, " Sorry, I have to go. " ,DIA_Kurgan_KillDragon_weg);
+	Info_AddChoice(DIA_Kurgan_KillDragon, " How are you going to get past the orcs? " ,DIA_Kurgan_KillDragon_orks);
+	Info_AddChoice(DIA_Kurgan_KillDragon, " I don't think you can even find a blind sheep. " ,DIA_Kurgan_KillDragon_spott);
 };
 
-func void DIA_Kurgan_KillDragon_spott()
+func void DIA_Kurgan_KillDragon_spit()
 {
-	AI_Output(other,self,"DIA_Kurgan_KillDragon_spott_15_00");	//Мне кажется, вы не способны найти даже слепую овцу.
-	AI_Output(self,other,"DIA_Kurgan_KillDragon_spott_01_01");	//Что? Ты хочешь схлопотать по своей тупой физиономии?
+	AI_Output(other,self, " DIA_Kurgan_KillDragon_spott_15_00 " );	// I don't think you can even find a blind sheep.
+	AI_Output(self,other, " DIA_Kurgan_KillDragon_spott_01_01 " );	// What? Do you want to get in on your stupid face?
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
 
 func void DIA_Kurgan_KillDragon_orks()
 {
-	AI_Output(other,self,"DIA_Kurgan_KillDragon_orks_15_00");	//Как вы собираетесь пройти мимо орков?
-	AI_Output(self,other,"DIA_Kurgan_KillDragon_orks_01_01");	//Мы рассмотрим этот вопрос позже.
+	AI_Output(other,self, " DIA_Kurgan_KillDragon_orks_15_00 " );	// How are you going to get past the orcs?
+	AI_Output(self,other, " DIA_Kurgan_KillDragon_orks_01_01 " );	// We'll look at this later.
 };
 
 func void DIA_Kurgan_KillDragon_weg()
 {
-	AI_Output(other,self,"DIA_Kurgan_KillDragon_weg_15_00");	//Мне бы очень хотелось посмотреть, как вы будете делать это, но, к сожалению, мне нужно идти.
-	AI_Output(self,other,"DIA_Kurgan_KillDragon_weg_01_01");	//Возвращайся назад, через проход. В противном случае ты рискуешь лишиться руки или ноги.
+	AI_Output(other,self, " DIA_Kurgan_KillDragon_weg_15_00 " );	// I'd love to see how you do this, but unfortunately I have to go.
+	AI_Output(self,other, " DIA_Kurgan_KillDragon_weg_01_01 " );	// Go back through the passage. Otherwise, you risk losing an arm or leg.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Kurgan_SEENDRAGON(C_Info)
+instances of DIA_Kurgan_SEENDRAGON (C_Info)
 {
 	npc = DJG_708_Kurgan;
 	condition = DIA_Kurgan_SEENDRAGON_Condition;
 	information = DIA_Kurgan_SEENDRAGON_Info;
 	permanent = TRUE;
-	description = "Ты еще не видел дракона?";
+	description = " Have you seen a dragon yet? " ;
 };
 
 
 func int DIA_Kurgan_SEENDRAGON_Condition()
 {
-	if((Kurgan_KillDragon_Day <= (Wld_GetDay() - 2)) && (KAPITELORCATC == FALSE))
+	if ((Kurgan_KillDragon_Day <= (Wld_GetDay() -  2 )) && ( CAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -179,25 +179,25 @@ func int DIA_Kurgan_SEENDRAGON_Condition()
 
 func void DIA_Kurgan_SEENDRAGON_Info()
 {
-	AI_Output(other,self,"DIA_Kurgan_SEENDRAGON_15_00");	//Ты еще не видел дракона?
-	AI_Output(self,other,"DIA_Kurgan_SEENDRAGON_01_01");	//Пока нет. Но эта тварь не может скрываться вечно.
+	AI_Output(other,self, " DIA_Kurgan_SEENDRAGON_15_00 " );	// Have you seen the dragon yet?
+	AI_Output(self,other, " DIA_Kurgan_SEENDRAGON_01_01 " );	// Not yet. But this creature can't hide forever.
 };
 
 
-instance DIA_Kurgan_AllDragonsDead(C_Info)
+instances DIA_Kurgan_AllDragonsDead (C_Info)
 {
 	npc = DJG_708_Kurgan;
 	nr = 5;
 	condition = DIA_Kurgan_AllDragonsDead_Condition;
 	information = DIA_Kurgan_AllDragonsDead_Info;
 	permanent = FALSE;
-	description = "Драконы мертвы.";
+	description = " The dragons are dead. " ;
 };
 
 
 func int DIA_Kurgan_AllDragonsDead_Condition()
 {
-	if((MIS_AllDragonsDead == TRUE) && (KAPITELORCATC == FALSE))
+	if ((MY_AllDragonsDead ==  TRUE ) && ( CAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -206,14 +206,14 @@ func int DIA_Kurgan_AllDragonsDead_Condition()
 func void DIA_Kurgan_AllDragonsDead_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Kurgan_AllDragonsDead_15_00");	//Драконы мертвы.
-	AI_Output(self,other,"DIA_Kurgan_AllDragonsDead_01_01");	//Ха! И кто, интересно, убил их? Паладины?
+	AI_Output(other,self, " DIA_Kurgan_AllDragonsDead_15_00 " );	// The dragons are dead.
+	AI_Output(self,other, " DIA_Kurgan_AllDragonsDead_01_01 " );	// Ha! And who, I wonder, killed them? Paladins?
 	AI_Output(other,self,"DIA_Kurgan_AllDragonsDead_15_02");	//Я.
-	AI_Output(self,other,"DIA_Kurgan_AllDragonsDead_01_03");	//(смеется) Ха. Ты даже сам в это не веришь. Хватит нести чушь.
+	AI_Output(self,other, " DIA_Kurgan_AllDragonsDead_01_03 " );	// (laughs) Ha. You don't even believe it yourself. Stop talking nonsense.
 };
 
 
-instance DIA_Kurgan_PICKPOCKET(C_Info)
+instances DIA_Kurgan_PICKPOCKET (C_Info)
 {
 	npc = DJG_708_Kurgan;
 	nr = 900;
@@ -226,19 +226,19 @@ instance DIA_Kurgan_PICKPOCKET(C_Info)
 
 func int DIA_Kurgan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(34,120);
+	return  C_Robbery ( 34 , 120 );
 };
 
 func void DIA_Kurgan_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Kurgan_PICKPOCKET);
 	Info_AddChoice(DIA_Kurgan_PICKPOCKET,Dialog_Back,DIA_Kurgan_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Kurgan_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Kurgan_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Kurgan_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Kurgan_PICKPOCKET_DoIt);
 };
 
 func void DIA_Kurgan_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Kurgan_PICKPOCKET);
 };
 
@@ -270,19 +270,19 @@ func int dia_kurgan_thanksforhelp_condition()
 func void dia_kurgan_thanksforhelp_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Kurgan_ThanksForHelp_01_00");	//Спасибо, что помог. Еще немного - и нам всем пришел бы конец!
+	AI_Output(self,other, " DIA_Kurgan_ThanksForHelp_01_00 " );	// Thanks for the help. A little more - and we all would have come to an end!
 	MEETKURGANAFTER = TRUE;
 };
 
 
-instance DIA_KURGAN_WHYHERE(C_Info)
+DIA_KURGAN_WHYHERE (C_Info) instances
 {
 	npc = DJG_708_Kurgan;
 	nr = 1;
 	condition = dia_kurgan_whyhere_condition;
 	information = dia_kurgan_whyhere_info;
 	permanent = FALSE;
-	description = "Почему вы до сих пор здесь?!";
+	description = " Why are you still here?! " ;
 };
 
 
@@ -296,27 +296,27 @@ func int dia_kurgan_whyhere_condition()
 
 func void dia_kurgan_whyhere_info()
 {
-	AI_Output(other,self,"DIA_Kurgan_WhyHere_01_00");	//Почему вы до сих пор здесь?
-	AI_Output(self,other,"DIA_Kurgan_WhyHere_01_01");	//И куда нам, по-твоему, идти? Кругом же орки!
-	AI_Output(self,other,"DIA_Kurgan_WhyHere_01_02");	//Постоянно рискуешь нарваться на один из их патрулей.
-	AI_Output(self,other,"DIA_Kurgan_WhyHere_01_03");	//Теперь нам даже в замке не укрыться. Я слышал, что эти мерзкие твари добрались и до него.
+	AI_Output(other,self, " DIA_Kurgan_WhyHere_01_00 " );	// Why are you still here?
+	AI_Output(self,other, " DIA_Kurgan_WhyHere_01_01 " );	// And where do you think we should go? Orcs all around!
+	AI_Output(self,other, " DIA_Kurgan_WhyHere_01_02 " );	// You constantly run the risk of running into one of their patrols.
+	AI_Output(self,other, " DIA_Kurgan_WhyHere_01_03 " );	// Now we can't even hide in the castle. I heard those nasty creatures got to him too.
 };
 
 
-instance DIA_KURGAN_HOWAROUND(C_Info)
+DIA_KURGAN_HOWAROUND (C_Info) instances
 {
 	npc = DJG_708_Kurgan;
 	nr = 2;
 	condition = dia_kurgan_howaround_condition;
 	information = dia_kurgan_howaround_info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
 func int dia_kurgan_howaround_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && Npc_KnowsInfo(other,dia_kurgan_whyhere) && (DGJJOINPALADIN == FALSE))
+	if (( MIS_OR с GREATWAR  == LOG_Running ) && Npc_KnowsInfo ( other , dia_kurgan_whyhere ) && ( DGJJOINPALADIN  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -324,8 +324,8 @@ func int dia_kurgan_howaround_condition()
 
 func void dia_kurgan_howaround_info()
 {
-	AI_Output(other,self,"DIA_Kurgan_HowAround_01_00");	//Как обстановка?
-	AI_Output(self,other,"DIA_Kurgan_HowAround_01_01");	//Все тихо. Орков пока не видно.
+	AI_Output(other,self, " DIA_Kurgan_HowAround_01_00 " );	// How setting?
+	AI_Output(self,other, " DIA_Kurgan_HowAround_01_01 " );	// Everything is quiet. Orcs are not visible yet.
 };
 
 
@@ -336,13 +336,13 @@ instance DIA_KURGAN_GOAWAY(C_Info)
 	condition = dia_kurgan_goaway_condition;
 	information = dia_kurgan_goaway_info;
 	permanent = FALSE;
-	description = "Вы могли бы присоединиться к паладинам.";
+	description = " You could join the paladins. " ;
 };
 
 
 func int dia_kurgan_goaway_condition()
 {
-	if((MEETNATAN == TRUE) && (MIS_KILLDRAGONHUNTER == FALSE) && Npc_KnowsInfo(other,dia_kurgan_whyhere) && (DGJJOINPALADIN == FALSE))
+	if (( MEETNATAN  ==  TRUE ) && ( MIS_KILLDRAGONHUNTER  ==  FALSE ) && Npc_KnowsInfo(other,dia_kurgan_whyhere) && ( DGJJOINPALADIN  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -350,12 +350,12 @@ func int dia_kurgan_goaway_condition()
 
 func void dia_kurgan_goaway_info()
 {
-	AI_Output(other,self,"DIA_Kurgan_GoAway_01_00");	//Вы могли бы присоединиться к паладинам.
-	AI_Output(self,other,"DIA_Kurgan_GoAway_01_01");	//(удивленно) Что ты имеешь в виду?
-	AI_Output(other,self,"DIA_Kurgan_GoAway_01_02");	//Их отряд сейчас стоит на выходе из Долины Рудников. И с ними вам будет куда легче выбраться отсюда.
-	AI_Output(self,other,"DIA_Kurgan_GoAway_01_03");	//Да? Возможно, ты прав.
-	AI_Output(self,other,"DIA_Kurgan_GoAway_01_04");	//Там мы будем чувствовать себя куда спокойнее, чем здесь.
-	AI_Output(self,other,"DIA_Kurgan_GoAway_01_06");	//Спасибо за новость.
+	AI_Output(other,self, " DIA_Kurgan_GoAway_01_00 " );	// You could join the paladins.
+	AI_Output(self,other, " DIA_Kurgan_GoAway_01_01 " );	// (surprised) What do you mean?
+	AI_Output(other,self, " DIA_Kurgan_GoAway_01_02 " );	// Their squad is now standing at the exit from the Valley of Mines. And with them, it will be much easier for you to get out of here.
+	AI_Output(self,other, " DIA_Kurgan_GoAway_01_03 " );	// Yes? Maybe you're right.
+	AI_Output(self,other, " DIA_Kurgan_GoAway_01_04 " );	// There we will feel much calmer than here.
+	AI_Output(self,other, " DIA_Kurgan_GoAway_01_06 " );	// Thanks for the news.
 	DGJMOVEPALADIN = TRUE;
 };
 
@@ -367,13 +367,13 @@ instance DIA_KURGAN_DGJJOINPALADIN(C_Info)
 	condition = dia_kurgan_dgjjoinpaladin_condition;
 	information = dia_kurgan_dgjjoinpaladin_info;
 	permanent = FALSE;
-	description = "Паладинам нужна ваша помощь.";
+	description = "The paladins need your help. " ;
 };
 
 
 func int dia_kurgan_dgjjoinpaladin_condition()
 {
-	if((MIS_STURMCASTLE == LOG_Running) && Npc_KnowsInfo(other,dia_kurgan_whyhere))
+	if (( MIS_STURMCASTLE  == LOG_Running ) && Npc_KnowsInfo ( other , dia_kurgan_whyhere ))
 	{
 		return TRUE;
 	};
@@ -381,44 +381,44 @@ func int dia_kurgan_dgjjoinpaladin_condition()
 
 func void dia_kurgan_dgjjoinpaladin_info()
 {
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_01_00");	//Паладинам нужна ваша помощь.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_01_01");	//Да?! И зачем же она им понадобилась?
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_01_02");	//Они хотят вернуть себе крепость, поэтому им нужны еще люди.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_01_03");	//(ехидно) Ах вот как? Похоже, у них окончательно поехала крыша, раз они собираются выступить против целой армии орков!
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_01_07");	//Мы не настолько глупы, чтобы понапрасну рисковать своими жизнями.
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_01_10");	//Может, мы все-таки сможем договориться?
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_01_11");	//О чем тут договариваться, приятель?
-	B_LogEntry(TOPIC_STURMCASTLE,"Охотникам на драконов эта идея не пришлась по душе. Они не хотят помогать паладинам штурмовать крепость, захваченную орками. Попробую убедить их.");
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_01_00 " );	// Paladins need your help.
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_01_01 " );	// Yes?! And why did they need her?
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_01_02 " );	// They want the fortress back, so they need more people.
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_01_03 " );	// (sarcastically) Oh, how is it? Looks like they've finally gone crazy, since they are going to oppose a whole army of orcs!
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_01_07 " );	// We're not stupid enough to risk our lives needlessly.
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_01_10 " );	// Maybe we can still come to an agreement?
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_01_11 " );	// What's the deal here, mate?
+	B_LogEntry( TOPIC_STURMCASTLE , " The dragon hunters don't like this idea. They don't want to help the paladins storm the fortress that the orcs have taken. I'll try to convince them. " );
 	Info_ClearChoices(dia_kurgan_dgjjoinpaladin);
-	Info_AddChoice(dia_kurgan_dgjjoinpaladin,"Я не буду считать вас трусами!",dia_kurgan_dgjjoinpaladin_coward);
-	Info_AddChoice(dia_kurgan_dgjjoinpaladin,"Я бы мог рассказать оркам о вашем лагере.",dia_kurgan_dgjjoinpaladin_orcs);
-	Info_AddChoice(dia_kurgan_dgjjoinpaladin,"Как насчет золота?",dia_kurgan_dgjjoinpaladin_gold);
+	Info_AddChoice(dia_kurgan_dgjjoinpaladin, " I won't call you cowards! " ,dia_kurgan_dgjjoinpaladin_coward);
+	Info_AddChoice(dia_kurgan_dgjjoinpaladin, " I could tell the orcs about your camp. " ,dia_kurgan_dgjjoinpaladin_orcs);
+	Info_AddChoice(dia_kurgan_dgjjoinpaladin, " How about gold? " ,dia_kurgan_dgjjoinpaladin_gold);
 };
 
 func void dia_kurgan_dgjjoinpaladin_coward()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_Coward_01_00");	//Я не буду считать вас трусами!
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Coward_01_01");	//Ха! И ты наивно полагаешь, что меня заботит твое мнение?
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Coward_01_02");	//Я тебе вот что скажу: убирайся отсюда ко всем чертям!
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Coward_01_03");	//Мы не будем помогать паладинам! И тем более такому умнику, как ты.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Coward_01_04");	//Все, разговор окончен. Проваливай!
-	B_LogEntry(TOPIC_STURMCASTLE,"У меня так ничего и не вышло. Надо сообщить об этом паладинам.");
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_Coward_01_00 " );	// I won't call you cowards!
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Coward_01_01 " );	// Ha! And you naively think that I care about your opinion?
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Coward_01_02 " );	// I'll tell you what: get the hell out of here!
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Coward_01_03 " );	// We won't help paladins! Especially for a smart guy like you.
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Coward_01_04 " );	// That's it, the conversation is over. Get out!
+	B_LogEntry( TOPIC_STURMCASTLE , " It didn't work out for me. I should tell the paladins about this. " );
 	AI_StopProcessInfos(self);
-	self.aivar[93] = FALSE;
+	self.aivar[ 93 ] = FALSE ;
 	DGJREFUSEPALADIN = TRUE;
 	INNOSPRAYCOUNT = INNOSPRAYCOUNT + 1;
 };
 
 func void dia_kurgan_dgjjoinpaladin_orcs()
 {
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_00");	//Я бы мог рассказать оркам о вашем лагере.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_01");	//(испуганно) Что?! Но ты этого не сделаешь!
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_02");	//Давай проверим!
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_03");	//Ну ты и подонок! И после этого ты еще надеешься на мою помощь?!
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_05");	//Аргххх, черт! Ну ладно, мы поможем паладинам.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_07");	//Когда-нибудь мы еще с тобой поквитаемся, ублюдок! Помяни мое слово.
-	B_LogEntry(TOPIC_STURMCASTLE,"С помощью небольшого шантажа я смог убедить этих трусов сражаться на нашей стороне. Однако мне теперь не стоит поворачиваться к ним спиной.");
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_Orcs_01_00 " );	// I could tell the orcs about your camp.
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Orcs_01_01 " );	// (frightened) What?! But you won't!
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_Orcs_01_02 " );	// Let's check it out!
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Orcs_01_03 " );	// Well, you're a bastard! And after that you still hope for my help?!
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Orcs_01_05 " );	// Arghhh, damn! Okay, we'll help the paladins.
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Orcs_01_07 " );	// Someday we'll get even with you, bastard! Mark my word.
+	B_LogEntry( TOPIC_STURMCASTLE , " With a little blackmail, I was able to convince these cowards to fight on our side. However, I shouldn't turn my back on them now. " );
 	DGJJOINPALADIN = TRUE;
 	DGJREVENGEME = TRUE;
 	AI_StopProcessInfos(self);
@@ -426,23 +426,23 @@ func void dia_kurgan_dgjjoinpaladin_orcs()
 
 func void dia_kurgan_dgjjoinpaladin_gold()
 {
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_Gold_01_00");	//Как насчет золота?
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Gold_01_01");	//Золота? Это действительно могло бы нас заинтересовать.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Gold_01_02");	//Только этого золота должно быть очень много, поскольку орков в крепости тоже немало!
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Gold_01_06");	//Полагаю, пятидесяти тысяч золотых будет для нас в самый раз.
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_Gold_01_00 " );	// How about gold?
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Gold_01_01 " );	// Gold? This might really interest us.
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Gold_01_02 " );	// But there should be a lot of this gold, since there are a lot of orcs in the fortress too!
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Gold_01_06 " );	// I guess fifty thousand gold would be just right for us.
 	Info_ClearChoices(dia_kurgan_dgjjoinpaladin);
-	Info_AddChoice(dia_kurgan_dgjjoinpaladin,"У меня не хватает золота.",dia_kurgan_dgjjoinpaladin_nogold);
+	Info_AddChoice(dia_kurgan_dgjjoinpaladin, " I don't have enough gold. " ,dia_kurgan_dgjjoinpaladin_nogold);
 	if(Npc_HasItems(other,ItMi_Gold) >= 50000)
 	{
-		Info_AddChoice(dia_kurgan_dgjjoinpaladin,"Вот твои деньги.",dia_kurgan_dgjjoinpaladin_ok);
+		Info_AddChoice(dia_kurgan_dgjjoinpaladin, " Here's your money. " ,dia_kurgan_dgjjoinpaladin_ok);
 	};
 };
 
 func void dia_kurgan_dgjjoinpaladin_nogold()
 {
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_NoGold_01_00");	//У меня не хватает золота.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_NoGold_01_01");	//(недовольно) Тогда найди его.
-	B_LogEntry(TOPIC_STURMCASTLE,"Охотники на драконов согласились присоединиться к паладинам только в том случае, если я заплачу им пятьдесят тысяч золотых монет!");
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_NoGold_01_00 " );	// I don't have enough gold.
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_NoGold_01_01 " );	// (angrily) Then find him.
+	B_LogEntry( TOPIC_STURMCASTLE , " The dragon hunters only agreed to join the paladins if I paid them fifty thousand gold pieces! " );
 	DJGAWAITSGOLD = TRUE;
 	Info_ClearChoices(dia_kurgan_dgjjoinpaladin);
 };
@@ -450,11 +450,11 @@ func void dia_kurgan_dgjjoinpaladin_nogold()
 func void dia_kurgan_dgjjoinpaladin_ok()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_Ok_01_00");	//Вот твои деньги.
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladin_Ok_01_00 " );	// Here's your money.
 	B_GiveInvItems(other,self,ItMi_Gold,50000);
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Ok_01_01");	//(довольно) Хорошо, приятель. Мы поможем паладинам!
-	B_LogEntry(TOPIC_STURMCASTLE,"Я предложил им золото. Они не стали от него отказываться, и обещали помочь паладинам штурмовать крепость.");
-	self.aivar[93] = FALSE;
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladin_Ok_01_01 " );	// (pretty) Okay, mate. We will help the paladins!
+	B_LogEntry( TOPIC_STURMCASTLE , " I offered them gold. They didn't refuse it, and promised to help the paladins storm the fortress. " );
+	self.aivar[ 93 ] = FALSE ;
 	DGJJOINPALADIN = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -467,13 +467,13 @@ instance DIA_KURGAN_DGJJOINPALADINGOLD(C_Info)
 	condition = dia_kurgan_dgjjoinpaladingold_condition;
 	information = dia_kurgan_dgjjoinpaladingold_info;
 	permanent = TRUE;
-	description = "Я принес тебе золото.";
+	description = " I brought you gold. " ;
 };
 
 
 func int dia_kurgan_dgjjoinpaladingold_condition()
 {
-	if((MIS_STURMCASTLE == LOG_Running) && (DJGAWAITSGOLD == TRUE) && (DGJJOINPALADIN == FALSE) && (Npc_HasItems(other,ItMi_Gold) >= 50000))
+	if (( MIS_STURMCASTLE  == LOG_Running ) && ( DJGAWAITSGOLD  ==  TRUE ) && ( DGJJOINPALADIN  ==  FALSE ) && ( Npc_HasItems ( other , ItMy_Gold ) >=  50000 )) ;
 	{
 		return TRUE;
 	};
@@ -482,19 +482,19 @@ func int dia_kurgan_dgjjoinpaladingold_condition()
 func void dia_kurgan_dgjjoinpaladingold_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladinGold_01_00");	//Я принес тебе золото.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladinGold_01_01");	//Правда? Покажи!
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladinGold_01_02");	//Вот твои деньги.
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladinGold_01_00 " );	// I brought you gold.
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladinGold_01_01 " );	// Justice? Show!
+	AI_Output(other,self, " DIA_Kurgan_DgjJoinPaladinGold_01_02 " );	// Here's your money.
 	B_GiveInvItems(other,self,ItMi_Gold,50000);
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladinGold_01_03");	//(довольно) Хорошо, приятель. Мы поможем паладинам!
-	B_LogEntry(TOPIC_STURMCASTLE,"Я отдал золото охотникам на драконов. Теперь они помогут паладинам.");
-	self.aivar[93] = FALSE;
+	AI_Output(self,other, " DIA_Kurgan_DgjJoinPaladinGold_01_03 " );	// (pretty) Okay, mate. We will help the paladins!
+	B_LogEntry( TOPIC_STURMCASTLE , " I gave the gold to the dragon hunters. Now they will help the paladins. " );
+	self.aivar[ 93 ] = FALSE ;
 	DGJJOINPALADIN = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KURGAN_FUCKOFF(C_Info)
+DIA_KURGAN_FUCKOFF (C_Info) instances
 {
 	npc = DJG_708_Kurgan;
 	nr = 2;
@@ -518,4 +518,3 @@ func void dia_kurgan_fuckoff_info()
 	B_Say(self,other,"$NOTNOW");
 	AI_StopProcessInfos(self);
 };
-
