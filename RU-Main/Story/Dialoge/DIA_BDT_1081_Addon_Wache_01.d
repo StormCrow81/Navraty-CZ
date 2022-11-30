@@ -34,7 +34,7 @@ instance DIA_Addon_Wache_01_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Wache_01_PICKPOCKET_Condition()
 {
-	return C_Beklauen(38,99);
+	return  C_Robbery ( 38 , 99 );
 };
 
 func void DIA_Addon_Wache_01_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_Wache_01_PICKPOCKET_Info()
 
 func void DIA_Addon_Wache_01_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Wache_01_PICKPOCKET);
 };
 
@@ -63,7 +63,7 @@ instance DIA_Addon_Wache_01_Hi(C_Info)
 	condition = DIA_Addon_Wache_01_Hi_Condition;
 	information = DIA_Addon_Wache_01_Hi_Info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -74,8 +74,8 @@ func int DIA_Addon_Wache_01_Hi_Condition()
 
 func void DIA_Addon_Wache_01_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Wache_01_Hi_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_Addon_Wache_01_Hi_04_01");	//Только коснись Эстебана - и я порублю тебя на кусочки.
+	AI_Output(other,self, " DIA_Addon_Wache_01_Hi_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Addon_Wache_01_Hi_04_01 " );	// Just touch Esteban and I'll cut you into pieces.
 	AI_StopProcessInfos(self);
 };
 
