@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Merdarion_ADW_EXIT(C_Info)
 {
 	npc = KDW_14050_Addon_Merdarion_ADW;
@@ -27,7 +28,7 @@ instance DIA_Addon_Merdarion_ADWHello(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Merdarion_ADWHello_Condition;
 	information = DIA_Addon_Merdarion_ADWHello_Info;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -38,72 +39,72 @@ func int DIA_Addon_Merdarion_ADWHello_Condition()
 
 func void DIA_Addon_Merdarion_ADWHello_Back()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_Back_15_00");	//Я услышал достаточно.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_Back_15_00 " );	// I've heard enough.
 	Info_ClearChoices(DIA_Addon_Merdarion_ADWHello);
 };
 
 func void DIA_Addon_Merdarion_ADWHello_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_06_01");	//Слушай...(прислушиваясь) Любопытно, да?
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_06_01 " );	// Listen... (listening) Curious, huh?
 	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_15_02");	//Хммм...
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_06_03");	//Эти телепортационные камни, видимо, не работают, но все еще слышно, как они гудят.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_06_04");	//Хотя они неактивны, в них еще осталась какая-то энергия.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_06_03 " );	// These teleport stones don't seem to be working, but you can still hear them humming.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_06_04 " );	// Although they are inactive, there is still some energy left in them.
 	Info_ClearChoices(DIA_Addon_Merdarion_ADWHello);
-	Info_AddChoice(DIA_Addon_Merdarion_ADWHello,"Где эти телепорты черпают энергию?",DIA_Addon_Merdarion_ADWHello_reaktor);
-	Info_AddChoice(DIA_Addon_Merdarion_ADWHello,"Как ты думаешь, как их можно активировать?",DIA_Addon_Merdarion_ADWHello_was);
+	Info_AddChoice(DIA_Addon_Merdarion_ADWHello, " Where do these teleporters get their energy? " ,DIA_Addon_Merdarion_ADWHello_reaktor);
+	Info_AddChoice(DIA_Addon_Merdarion_ADWHello, " How do you think they can be activated? " ,DIA_Addon_Merdarion_ADWHello_was);
 };
 
 func void DIA_Addon_Merdarion_ADWHello_was()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_was_15_00");	//Как ты думаешь, как их можно активировать?
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_was_06_01");	//У меня есть одна идея. Только мне нужно убедиться, что мое подозрение верно.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_was_06_02");	//У меня несколько дней назад было ощущение, что я уже видел похожую штуку.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_was_06_03");	//Я полагаю, что нам нужно передать им внушительное количество магической энергии, чтобы заставить их снова работать.
-	Info_AddChoice(DIA_Addon_Merdarion_ADWHello,"Где ты видел такие телепортационные камни раньше?",DIA_Addon_Merdarion_ADWHello_wo);
-	Info_AddChoice(DIA_Addon_Merdarion_ADWHello,"Что может дать достаточное количество магической энергии?..",DIA_Addon_Merdarion_ADWHello_focus);
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_was_15_00 " );	// How do you think they can be activated?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_was_06_01 " );	// I have one idea. I just need to make sure my suspicion is correct.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_was_06_02 " );	// I had a feeling a few days ago that I had already seen a similar thing.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_was_06_03 " );	// I believe we need to transfer an impressive amount of magical energy to them in order to make them work again.
+	Info_AddChoice(DIA_Addon_Merdarion_ADWHello, " Where have you seen such teleport stones before? " ,DIA_Addon_Merdarion_ADWHello_wo);
+	Info_AddChoice(DIA_Addon_Merdarion_ADWHello, " What can give enough magical energy?.. " ,DIA_Addon_Merdarion_ADWHello_focus);
 };
 
 func void DIA_Addon_Merdarion_ADWHello_focus()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_focus_15_00");	//Что может дать достаточное количество магической энергии?..
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_focus_06_01");	//Мне приходит в голову только одна идея. Магическая фокусировка.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_focus_06_02");	//Я имею в виду один из пяти фокусирующих камней, которые были использованы при создании магического Барьера в Долине Рудников.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_focus_06_03");	//Насколько я знаю, некоторое время назад ты вернул их нам.
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_focus_15_04");	//Да, я помню.
-	Info_AddChoice(DIA_Addon_Merdarion_ADWHello,"Ты сказал, что тебе нужно убедиться, что твое подозрение верно.",DIA_Addon_Merdarion_ADWHello_focusProof);
-	Info_AddChoice(DIA_Addon_Merdarion_ADWHello,"И где фокусирующие камни сейчас?",DIA_Addon_Merdarion_ADWHello_focusWo);
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_focus_15_00 " );	// What can give enough magical energy...?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_focus_06_01 " );	// Only one idea comes to my mind. Magic focus.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_focus_06_02 " );	// I'm referring to one of the five focus stones that were used to create the magical Barrier in the Valley of Mines.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_focus_06_03 " );	// As far as I know, you returned them to us some time ago.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_focus_15_04 " );	// Yes, I remember.
+	Info_AddChoice(DIA_Addon_Merdarion_ADWHello, " You said you needed to make sure your suspicion was correct. " ,DIA_Addon_Merdarion_ADWHello_focusProof);
+	Info_AddChoice(DIA_Addon_Merdarion_ADWHello, " And where are the focus stones now? " ,DIA_Addon_Merdarion_ADWHello_focusWo);
 };
 
 func void DIA_Addon_Merdarion_ADWHello_focusWo()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_focusWo_15_00");	//И где фокусирующие камни сейчас?
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_focusWo_06_01");	//Они были доверены мне. Я должен хранить их, пока им не найдется другое использование.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_focusWo_06_02");	//Похоже, что время пришло.
-	Info_AddChoice(DIA_Addon_Merdarion_ADWHello,"Я услышал достаточно.",DIA_Addon_Merdarion_ADWHello_Back);
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_focusWo_15_00 " );	// And where are the focus stones now?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_focusWo_06_01 " );	// They were entrusted to me. I must keep them until they find another use.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_focusWo_06_02 " );	// Looks like it's about time.
+	Info_AddChoice(DIA_Addon_Merdarion_ADWHello, " I've heard enough. " ,DIA_Addon_Merdarion_ADWHello_Back);
 };
 
 func void DIA_Addon_Merdarion_ADWHello_focusProof()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_focusProof_15_00");	//Ты сказал, что тебе нужно убедиться, что твое подозрение верно.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_focusProof_06_01");	//Магический фокус может быть связан с этими камнями.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_focusProof_06_02");	//Но я не знаю где.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_focusProof_15_00 " );	// You said you needed to make sure your suspicion was correct.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_focusProof_06_01 " );	// Magic focus can be associated with these gems.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_focusProof_06_02 " );	// But I don't know where.
 };
 
 func void DIA_Addon_Merdarion_ADWHello_wo()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_wo_15_00");	//Где ты видел такие телепортационные камни раньше?
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_wo_06_01");	//Ты тоже был в исправительной колонии. Неужели ты никогда их не замечал?
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_wo_06_02");	//Я совершенно уверен, что их все еще можно там найти.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_wo_15_00 " );	// Where have you seen such teleportation stones before?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_wo_06_01 " );	// You were also in a penal colony. Have you never noticed them?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_wo_06_02 " );	// I'm pretty sure they can still be found there.
 };
 
 func void DIA_Addon_Merdarion_ADWHello_reaktor()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADWHello_reaktor_15_00");	//Что эти камни делают?
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_reaktor_06_01");	//Зодчие были очень развитой нацией.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_reaktor_06_02");	//Они использовали такие свойства магии, которых мы никогда не видели.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_reaktor_06_03");	//Сеть телепортационных камней была построена, чтобы Зодчие могли быстро перемещаться из одного города в другой.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADWHello_reaktor_06_04");	//ЭТОТ камень, очевидно, является центральным.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADWHello_reaktor_15_00 " );	// What are these stones doing?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_reaktor_06_01 " );	// Architects were a very developed nation.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_reaktor_06_02 " );	// They used magic properties we've never seen before.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_reaktor_06_03 " );	// A network of teleport stones has been built to allow Builders to move quickly from one city to another.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADWHello_reaktor_06_04 " );	// THIS stone is obviously the center stone.
 };
 
 instance DIA_Addon_Merdarion_ADW_Portal(C_Info)
@@ -112,13 +113,13 @@ instance DIA_Addon_Merdarion_ADW_Portal(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Merdarion_ADW_Portal_Condition;
 	information = DIA_Addon_Merdarion_ADW_Portal_Info;
-	description = "Есть здесь еще что-нибудь интересное?";
+	description = " Is there anything else interesting here? " ;
 };
 
 
 func int DIA_Addon_Merdarion_ADW_Portal_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Merdarion_ADWHello) == TRUE)
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Merdarion_ADWHello ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -126,29 +127,29 @@ func int DIA_Addon_Merdarion_ADW_Portal_Condition()
 
 func void DIA_Addon_Merdarion_ADW_Portal_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_Portal_01_00");	//Есть здесь еще что-нибудь интересное?
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_Portal_01_01");	//В пустынном каньоне на севере этой долины есть небольшая каменная постройка, по всей видимости, оставленная Зодчими.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_Portal_01_02");	//С виду она напоминает храм, но на мой взгляд, это остатки какого-то магического портала.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_Portal_01_03");	//Так что если вдруг случайно сможешь это выяснить, дай мне знать.
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_Portal_01_04");	//Хорошо, я учту это.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_Portal_01_00 " );	// Is there anything else interesting here?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_Portal_01_01 " );	// In the deserted canyon to the north of this valley, there is a small stone building, apparently left by the Builders.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_Portal_01_02 " );	// It looks like a temple, but in my opinion, these are the remains of some kind of magical portal.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_Portal_01_03 " );	// So if you happen to find out, let me know.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_Portal_01_04 " );	// Okay, I'll keep that in mind.
 	MIS_MerdarionPortal = LOG_Running;
 	Log_CreateTopic(TOPIC_MerdarionPortal,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MerdarionPortal,LOG_Running);
-	B_LogEntry(TOPIC_MerdarionPortal,"По словам Мердариона, в каньоне находятся развалины какого-то древнего строения. Он думает, что это магический портал. Мердарион попросил меня сообщить ему, если мне удастся что-нибудь выяснить об этом.");
+	B_LogEntry(TOPIC_MerdarionPortal, " According to Merdarion, there are ruins of some ancient structure in the canyon. He thinks it is a magical portal. Merdarion asked me to let him know if I can find anything about it. " );
 };
 
-instance DIA_Addon_Merdarion_ADW_PortalDone(C_Info)
+instance DIA_Addon_Merdarion_ADW_PortalDone (C_Info)
 {
 	npc = KDW_14050_Addon_Merdarion_ADW;
 	nr = 5;
 	condition = DIA_Addon_Merdarion_ADW_PortalDone_Condition;
 	information = DIA_Addon_Merdarion_ADW_PortalDone_Info;
-	description = "Ты был прав насчет портала.";
+	description = " You were right about the portal. " ;
 };
 
 func int DIA_Addon_Merdarion_ADW_PortalDone_Condition()
 {
-	if((MIS_MerdarionPortal == LOG_Running) && (AV_ENTER == TRUE))
+	if ((MIS_MerdarionPortal == LOG_Running) && ( AV_ENTER  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -157,49 +158,49 @@ func int DIA_Addon_Merdarion_ADW_PortalDone_Condition()
 func void DIA_Addon_Merdarion_ADW_PortalDone_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_00");	//Ты был прав насчет портала.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_01");	//Даже так... (с интересом) И куда он ведет?
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_02");	//Судя по всему, это место когда-то называлось плато Древних.
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_03");	//В записях Зодчих сказано, что оно является священной вотчиной самого Аданоса.
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_04");	//Именно там он впервые ступил в мир людей и обратился к ним.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_05");	//О боги! (изумленно) Поверить не могу! Это... Это просто не укладывается в моей голове.
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_06");	//Тогда сам пойди и взгляни на него.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_07");	//Мне, безусловно, хотелось бы этого, но меня почему-то терзают какие-то нехорошие предчувствия. 
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_08");	//Если Зодчие сокрыли это место, то, пожалуй, наше вмешательство может повлечь за собой крайне непредсказуемые последствия.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_09");	//Поэтому пусть эти знания останутся сокрытыми для остальных. Так будет лучше для всех!
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_10");	//Ладно, как скажешь.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PortalDone_01_00 " );	// You were right about the portal.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_PortalDone_01_01 " );	// Even so... (with interest) And where does it lead?
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PortalDone_01_02 " );	// Apparently, this place was once called the Plateau of the Ancients.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PortalDone_01_03 " );	// In the records of the Builders it is said that it is the sacred fiefdom of Adanos himself.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PortalDone_01_04 " );	// It was there that he first stepped into the world of people and addressed them.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_PortalDone_01_05 " );	// Oh gods! (surprised) I can't believe it! It's... It just doesn't fit in my head.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PortalDone_01_06 " );	// Then go and have a look at it yourself.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_PortalDone_01_07 " );	// I, of course, would like this, but for some reason I am tormented by some bad premonitions.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_PortalDone_01_08 " );	// If the Builders hid this place, then perhaps our intervention could lead to extremely unpredictable consequences.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_PortalDone_01_09 " );	// Therefore, let this knowledge remain hidden from the rest. This will be better for everyone!
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PortalDone_01_10 " );	// Okay, whatever you say.
 	MIS_MerdarionPortal = LOG_Success;
 	Log_SetTopicStatus(TOPIC_MerdarionPortal,LOG_Success);
-	B_LogEntry(TOPIC_MerdarionPortal,"Я рассказал Мердариону про портал на плато Древних. Он был впечатлен услышанным. Однако маги Воды вряд ли предпримут попытку пройти через него. По их мнению, некоторые тайны Древних должны оставаться тайными.");
+	B_LogEntry(TOPIC_MerdarionPortal, " I told Merdarion about the portal on the plateau of the Ancients. He was impressed by what he heard. However, the Waterbenders are unlikely to attempt to pass through it. In their opinion, some secrets of the Ancients should remain secret. " );
 };
 
-instance DIA_Addon_Merdarion_FokusGeben(C_Info)
+instance DIA_Addon_Merdarion_GebenFokus (C_Info)
 {
 	npc = KDW_14050_Addon_Merdarion_ADW;
 	nr = 5;
 	condition = DIA_Addon_Merdarion_FokusGeben_Condition;
 	information = DIA_Addon_Merdarion_FokusGeben_Info;
-	description = "Дай мне фокусирующий камень.";
+	description = " Give me the focus stone. " ;
 };
 
 func int DIA_Addon_Merdarion_FokusGeben_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Merdarion_ADWHello))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Merdarion_ADWHello ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Addon_Merdarion_FokusGeben_Info()
+func void DIA_Addon_Merdarion_FocusGive_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_FokusGeben_15_00");	//Дай мне фокусирующий камень. Я попробую заставить телепортеры работать.
-	AI_Output(self,other,"DIA_Addon_Merdarion_FokusGeben_06_01");	//Хорошо. Но будь осторожен, слышишь меня?
-	AI_Output(self,other,"DIA_Addon_Merdarion_FokusGeben_06_02");	//Сатурас снимет с меня голову, если мы их потеряем.
+	AI_Output(other,self, " DIA_Addon_Merdarion_FokusGeben_15_00 " );	// Give me the focus stone. I'll try to get the teleporters to work.
+	AI_Output(self,other, " DIA_Addon_Merdarion_FokusGeben_06_01 " );	// Good. But be careful, do you hear me?
+	AI_Output(self,other, " DIA_Addon_Merdarion_FokusGeben_06_02 " );	// Saturas will take my head off if we lose them.
 	CreateInvItems(self,ItMi_Focus,1);
 	B_GiveInvItems(self,other,ItMi_Focus,1);
 	Log_CreateTopic(TOPIC_Addon_TeleportsADW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_TeleportsADW,LOG_Running);
-	B_LogEntry(TOPIC_Addon_TeleportsADW,"Маг воды Мердарион дал мне один из старых камней фокусировки, которые использовались для создания Барьера вокруг Долины Рудников. С его помощью я могу попробовать активировать какой-нибудь телепорт.");
+	) ; _ _ _
 };
 
 
@@ -209,7 +210,7 @@ instance DIA_Addon_Merdarion_FirstFocus(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Merdarion_FirstFocus_Condition;
 	information = DIA_Addon_Merdarion_FirstFocus_Info;
-	description = "Я активировал один из телепортационных камней.";
+	description = " I have activated one of the teleport stones. " ;
 };
 
 func int DIA_Addon_Merdarion_FirstFocus_Condition()
@@ -218,7 +219,7 @@ func int DIA_Addon_Merdarion_FirstFocus_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 
@@ -226,19 +227,19 @@ var int Merdarion_GotFocusCount;
 
 func void DIA_Addon_Merdarion_FirstFocus_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_FirstFocus_15_00");	//Я активировал один из телепортационных камней.
-	AI_Output(self,other,"DIA_Addon_Merdarion_FirstFocus_06_01");	//Да, я вижу. Значит, я был прав.
-	AI_Output(self,other,"DIA_Addon_Merdarion_FirstFocus_06_02");	//Я поговорил с другими об этом.
-	AI_Output(self,other,"DIA_Addon_Merdarion_FirstFocus_06_03");	//Мы хотим, чтобы ты попытался активировать все остальные телепортационные камни.
-	AI_Output(self,other,"DIA_Addon_Merdarion_FirstFocus_06_04");	//Если мы сможем быстро перемещаться из одной части города в другую, нам это очень поможет исследованиях.
-	AI_Output(self,other,"DIA_Addon_Merdarion_FirstFocus_06_05");	//Вот еще один фокусирующий камень.
+	AI_Output(other,self, " DIA_Addon_Merdarion_FirstFocus_15_00 " );	// I've activated one of the teleport stones.
+	AI_Output(self,other, " DIA_Addon_Merdarion_FirstFocus_06_01 " );	// Yes, I see. So I was right.
+	AI_Output(self,other, " DIA_Addon_Merdarion_FirstFocus_06_02 " );	// I've talked to others about this.
+	AI_Output(self,other, " DIA_Addon_Merdarion_FirstFocus_06_03 " );	// We want you to try to activate all the other teleport stones.
+	AI_Output(self,other, " DIA_Addon_Merdarion_FirstFocus_06_04 " );	// If we can quickly move from one part of the city to another, it will help us a lot in research.
+	AI_Output(self,other, " DIA_Addon_Merdarion_FirstFocus_06_05 " );	// Here's another focus stone.
 	CreateInvItems(self,ItMi_Focus,1);
 	B_GiveInvItems(self,other,ItMi_Focus,1);
-	Merdarion_GotFocusCount = 1;
-	AI_Output(self,other,"DIA_Addon_Merdarion_FirstFocus_06_06");	//Активируй их все, если сумеешь.
-	AI_Output(other,self,"DIA_Addon_Merdarion_FirstFocus_15_07");	//Я постараюсь.
+	Merdarion_GotFocusCount = 1 ;
+	AI_Output(self,other, " DIA_Addon_Merdarion_FirstFocus_06_06 " );	// Activate them all if you can.
+	AI_Output(other,self, " DIA_Addon_Merdarion_FirstFocus_15_07 " );	// I'll try.
 	B_GivePlayerXP(XP_Addon_ActivatedTeleportStone);
-	B_LogEntry(TOPIC_Addon_TeleportsADW,"Мердарион дал мне еще один камень фокусировки. Я должен постараться активировать все телепорты. Мердарион будет снабжать меня новыми камнями по мере включения телепортов.");
+	B_LogEntry(TOPIC_Addon_TeleportsADW, " Merdarion gave me another Focus Stone. I should try to activate all the Teleports. Merdarion will supply me with new stones as the Teleports turn on. " );
 };
 
 
@@ -249,7 +250,7 @@ instance DIA_Addon_Merdarion_ActivateTeleports(C_Info)
 	condition = DIA_Addon_Merdarion_ActivateTeleports_Condition;
 	information = DIA_Addon_Merdarion_ActivateTeleports_Info;
 	permanent = TRUE;
-	description = "Я активировал еще один телепортационный камень.";
+	description = " I've activated another teleport stone. " ;
 };
 
 
@@ -259,7 +260,7 @@ func int DIA_Addon_Merdarion_ActivateTeleports_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 
@@ -267,54 +268,54 @@ var int DIA_Addon_Merdarion_ActivateTeleports_OneTime;
 
 func void DIA_Addon_Merdarion_ActivateTeleports_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ActivateTeleports_15_00");	//Я активировал еще один телепортационный камень.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ActivateTeleports_15_00 " );	// I've activated another teleport stone.
 	if(SC_ADW_ActivatedAllTelePortStones == FALSE)
 	{
-		AI_Output(other,self,"DIA_Addon_Merdarion_ActivateTeleports_15_01");	//Дай мне следующий фокусирующий камень.
-		AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_02");	//Конечно, пожалуйста.
+		AI_Output(other,self, " DIA_Addon_Merdarion_ActivateTeleports_15_01 " );	// Give me the next focus stone.
+		AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_02 " );	// Sure, please.
 		CreateInvItems(self,ItMi_Focus,1);
 		B_GiveInvItems(self,other,ItMi_Focus,1);
 	};
 	if(DIA_Addon_Merdarion_ActivateTeleports_OneTime == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_03");	//Это было сложно?
-		AI_Output(other,self,"DIA_Addon_Merdarion_ActivateTeleports_15_04");	//Как посмотреть. Я бы не отказался от помощи.
-		AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_05");	//Я могу дать тебе немного золота, это поможет?
-		AI_Output(other,self,"DIA_Addon_Merdarion_ActivateTeleports_15_06");	//Явно не помешает.
-		AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_07");	//Посмотрим...
+		AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_03 " );	// Was it difficult?
+		AI_Output(other,self, " DIA_Addon_Merdarion_ActivateTeleports_15_04 " );	// How to see. I wouldn't mind helping.
+		AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_05 " );	// I can give you some gold, will that help?
+		AI_Output(other,self, " DIA_Addon_Merdarion_ActivateTeleports_15_06 " );	// Obviously it won't hurt.
+		AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_07 " );	// Let's see...
 		DIA_Addon_Merdarion_ActivateTeleports_OneTime = TRUE;
 	};
 	if(SC_ADW_ActivatedAllTelePortStones == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_08");	//Ты проделал отличную работу. Мне остается только поздравить тебя.
-		AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_09");	//Теперь они все работают. Впечатляющее зрелище, правда?
+		AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_08 " );	// You did a great job. I can only congratulate you.
+		AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_09 " );	// Now they all work. Impressive sight, right?
 	};
-	AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_10");	//Вот несколько золотых монет.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_10 " );	// Here are some gold coins.
 	B_GivePlayerXP(XP_Addon_ActivatedTeleportStone);
 	CreateInvItems(self,ItMi_Gold,150);
 	B_GiveInvItems(self,other,ItMi_Gold,150);
-	Merdarion_GotFocusCount = Merdarion_GotFocusCount + 1;
-	if((Merdarion_GotFocusCount >= 1) && (Saturas_SCBroughtAllToken == FALSE) && (Ghost_SCKnowsHow2GetInAdanosTempel == FALSE) && (MIS_Saturas_LookingForHousesOfRulers == 0))
+	Merdarion_GotFocusCount = Merdarion_GotFocusCount +  1 ;
+	if ((Merdarion_GotFocusCount >=  1 ) && (Saturas_SCBroughtAllToken ==  FALSE ) && (Ghost_SCKnowsHow2GetInAdanosTemple ==  FALSE ) && (MY_Saturas_LookingForHousesOfRulers ==  0 )) ;
 	{
-		AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_11");	//Да, и кстати, пока я не забыл - Сатурас хотел поговорить с тобой.
-		AI_Output(self,other,"DIA_Addon_Merdarion_ActivateTeleports_06_12");	//Ты должен найти его как можно скорее.
+		AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_11 " );	// Oh, and before I forget, Saturas wanted to talk to you.
+		AI_Output(self,other, " DIA_Addon_Merdarion_ActivateTeleports_06_12 " );	// You must find him as soon as possible.
 	};
 };
 
 
-instance DIA_Addon_Merdarion_ADW_PreTeachMana(C_Info)
+instance DIA_Addon_Merdarion_ADW_PreTeachMana (C_Info)
 {
 	npc = KDW_14050_Addon_Merdarion_ADW;
 	nr = 5;
 	condition = DIA_Addon_Merdarion_ADW_PreTeachMana_Condition;
 	information = DIA_Addon_Merdarion_ADW_PreTeachMana_Info;
-	description = "Ты можешь повысить мои магические способности?";
+	description = " Can you enhance my magic abilities? " ;
 };
 
 
 func int DIA_Addon_Merdarion_ADW_PreTeachMana_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Merdarion_ADWHello) && (hero.guild == GIL_KDW) && Npc_KnowsInfo(other,DIA_Addon_Saturas_ADW_PreTeachCircle))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Merdarion_ADWHello ) && ( hero . guild ==  GIL_KDW ) && Npc_KnowsInfo ( other , DIA_Addon_Saturas_ADW_PreTeachCircle ) ) ;
 	{
 		return TRUE;
 	};
@@ -322,22 +323,22 @@ func int DIA_Addon_Merdarion_ADW_PreTeachMana_Condition()
 
 func void DIA_Addon_Merdarion_ADW_PreTeachMana_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PreTeachMana_15_00");	//Ты можешь повысить мои магические способности?
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PreTeachMana_06_01");	//Я могу увеличить количество твоей магической энергии.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PreTeachMana_15_00 " );	// Can you enhance my magical abilities?
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_PreTeachMana_06_01 " );	// I can increase your magical energy.
 	Merdarion_Addon_TeachMana = TRUE;
 	Log_CreateTopic(TOPIC_Addon_KDWTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_Addon_KDWTeacher,"Мердарион может увеличить мою магическую энергию.");
+	B_LogEntry(TOPIC_Addon_KDWTeacher, " Merdarion can increase my magical energy. " );
 };
 
 
-instance DIA_Addon_Merdarion_ADW_TEACH_MANA(C_Info)
+instance DIA_Addon_Merdarion_ADW_TEACH_MANA (C_Info)
 {
 	npc = KDW_14050_Addon_Merdarion_ADW;
 	nr = 99;
 	condition = DIA_Addon_Merdarion_ADW_TEACH_MANA_Condition;
 	information = DIA_Addon_Merdarion_ADW_TEACH_MANA_Info;
 	permanent = TRUE;
-	description = "Я хочу повысить свои магические способности.";
+	description = " I want to increase my magical abilities. " ;
 };
 
 
@@ -353,7 +354,7 @@ func int DIA_Addon_Merdarion_ADW_TEACH_MANA_Condition()
 
 func void DIA_Addon_Merdarion_ADW_TEACH_MANA_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_TEACH_MANA_15_00");	//Я хочу увеличить мою магическую энергию.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_TEACH_MANA_15_00 " );	// I want to increase my magical energy.
 	Info_ClearChoices(DIA_Addon_Merdarion_ADW_TEACH_MANA);
 	Info_AddChoice(DIA_Addon_Merdarion_ADW_TEACH_MANA,Dialog_Back,DIA_Addon_Merdarion_ADW_TEACH_MANA_BACK);
 	Info_AddChoice(DIA_Addon_Merdarion_ADW_TEACH_MANA,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Addon_Merdarion_ADW_TEACH_MANA_1);
@@ -364,8 +365,8 @@ func void DIA_Addon_Merdarion_ADW_TEACH_MANA_BACK()
 {
 	if(other.attribute[ATR_MANA_MAX] >= T_MEGA)
 	{
-		AI_Output(self,other,"DIA_Addon_Merdarion_ADW_TEACH_MANA_06_00");	//То, что ты просишь, выходит за рамки моих способностей.
-		AI_Output(self,other,"DIA_Addon_Merdarion_ADW_TEACH_MANA_06_01");	//Ты уже знаешь все, чему бы я тебя мог научить.
+		AI_Output(self,other, " DIA_Addon_Merdarion_ADW_TEACH_MANA_06_00 " );	// What you're asking is beyond my ability.
+		AI_Output(self,other, " DIA_Addon_Merdarion_ADW_TEACH_MANA_06_01 " );	// You already know everything I could teach you.
 		Merdarion_ADW_Empty = TRUE;
 	};
 	Info_ClearChoices(DIA_Addon_Merdarion_ADW_TEACH_MANA);
@@ -390,14 +391,14 @@ func void DIA_Addon_Merdarion_ADW_TEACH_MANA_5()
 };
 
 
-instance DIA_ADDON_MERDARION_ADW_PRAYFORGOMEZ(C_Info)
+instance DIA_ADDON_MERDARION_ADW_PRAYFORGOMEZ (C_Info)
 {
 	npc = KDW_14050_Addon_Merdarion_ADW;
 	nr = 1;
 	condition = dia_addon_merdarion_adw_prayforgomez_condition;
 	information = dia_addon_merdarion_adw_prayforgomez_info;
 	permanent = FALSE;
-	description = "Мне нужно благословление Аданоса.";
+	description = " I need the blessing of Adanos. " ;
 };
 
 
@@ -411,11 +412,11 @@ func int dia_addon_merdarion_adw_prayforgomez_condition()
 
 func void dia_addon_merdarion_adw_prayforgomez_info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PrayForGomez_01_01");	//Мне нужно благословление Аданоса.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PrayForGomez_01_02");	//Поговори об этом с Сатурасом.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PrayForGomez_01_03");	//Думаю, он сможет помочь тебе.
-	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PrayForGomez_01_04");	//Спасибо за совет.
-	SENTTOSATURASGOMEZ = TRUE;
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PrayForGomez_01_01 " );	// I need the blessing of Adanos.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_PrayForGomez_01_02 " );	// Talk to Saturas about this.
+	AI_Output(self,other, " DIA_Addon_Merdarion_ADW_PrayForGomez_01_03 " );	// I think he can help you.
+	AI_Output(other,self, " DIA_Addon_Merdarion_ADW_PrayForGomez_01_04 " );	// Thanks for the tip.
+	SENTTOSATURASGOMEZ = TRUE ;
 };
 
 
@@ -452,7 +453,7 @@ instance DIA_Addon_Merdarion_AncientAltar(C_Info)
 	condition = DIA_Addon_Merdarion_AncientAltar_Condition;
 	information = DIA_Addon_Merdarion_AncientAltar_Info;
 	permanent = FALSE;
-	description = "Я по поводу юниторов.";
+	description = " I'm talking about units. " ;
 };
 
 func int DIA_Addon_Merdarion_AncientAltar_Condition()
@@ -465,32 +466,32 @@ func int DIA_Addon_Merdarion_AncientAltar_Condition()
 
 func void DIA_Addon_Merdarion_AncientAltar_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Merdarion_AncientAltar_01_00");	//Я по поводу юниторов. Мне нужно еще несколько штук.
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_01");	//К сожалению, я ничем не смогу тебе помочь.
+	AI_Output(other,self, " DIA_Addon_Merdarion_AncientAltar_01_00 " );	// I'm talking about units. I need a few more.
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_01 " );	// Sorry, I can't help you.
 
 	if(SC_ADW_ActivatedAllTelePortStones == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_02");	//Все юниторы, которые у меня были, мы уже использовали для активации магических порталов.
-		AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_03");	//Других же у меня просто нет. Кстати, а зачем они тебе вдруг так понадобились?
+		AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_02 " );	// All the units I had were already used to activate the magical portals.
+		AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_03 " );	// I just don't have any others. By the way, why do you suddenly need them so much?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_04");	//С теми юниторами, которые дал мне Сатурас, я расстанусь только в случае крайней необходимости.
-		AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_05");	//А ты даже не объяснил, зачем они тебе вдруг понадобились.
+		AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_04 " );	// Those units that Saturas gave me, I will part only in case of emergency.
+		AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_05 " );	// And you didn't even explain why you suddenly needed them.
 	};
 
-	AI_Output(other,self,"DIA_Addon_Merdarion_AncientAltar_01_06");	//Сатурас сказал, что с их помощью можно вернуть магию древним алтарям.
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_07");	//(задумчиво) В таком случае они тебе точно не понадобятся.
-	AI_Output(other,self,"DIA_Addon_Merdarion_AncientAltar_01_08");	//Это еще почему?
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_09");	//Потому что эти юниторы совершенно не годятся для подобных целей.
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_10");	//Скорее всего, тут нужны какие-то особенные кристаллы, которые сами хранят в себе магическую энергию.
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_11");	//Но таких я пока здесь не встречал.
-	AI_Output(other,self,"DIA_Addon_Merdarion_AncientAltar_01_12");	//А если я найду тебе такие кристаллы, ты сможешь сделать из них фокусирующие камни?
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_13");	//(задумчиво) Почему бы и нет. Им необходимо будет лишь придать правильную форму и закрепить в оправе.
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_14");	//Ибо нестабильная структура кристалла может запросто разрушить сама себя.
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_15");	//Так что, если вдруг встретишь подобные экземпляры, приноси их мне. 
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_16");	//И я помогу тебе с твоей проблемой.
-	AI_Output(other,self,"DIA_Addon_Merdarion_AncientAltar_01_17");	//Хорошо, я все понял.
+	AI_Output(other,self, " DIA_Addon_Merdarion_AncientAltar_01_06 " );	// Saturas said they could restore magic to the ancient altars.
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_07 " );	// (thoughtfully) In that case, you definitely won't need them.
+	AI_Output(other,self, " DIA_Addon_Merdarion_AncientAltar_01_08 " );	// Why else?
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_09 " );	// Because these units are completely unsuitable for such purposes.
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_10 " );	// Most likely, some special crystals are needed here, which themselves store magical energy.
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_11 " );	// But I haven't seen them here yet.
+	AI_Output(other,self, " DIA_Addon_Merdarion_AncientAltar_01_12 " );	// And if I find these crystals for you, can you make focus stones out of them?
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_13 " );	// (thoughtfully) Why not. They will only need to give the correct shape and secure in the frame.
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_14 " );	// For the unstable structure of the crystal can easily destroy itself.
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_15 " );	// So, if you happen to see such instances, bring them to me.
+	AI_Output(self,other, " DIA_Addon_Merdarion_AncientAltar_01_16 " );	// And I'll help you with your problem.
+	AI_Output(other,self, " DIA_Addon_Merdarion_AncientAltar_01_17 " );	// Okay, I got it.
 	MerdarionDoUnitors = TRUE;
 };
 
@@ -501,7 +502,7 @@ instance DIA_Addon_Merdarion_MakeUnitor(C_Info)
 	condition = DIA_Addon_Merdarion_MakeUnitor_Condition;
 	information = DIA_Addon_Merdarion_MakeUnitor_Info;
 	permanent = FALSE;
-	description = "У меня есть для тебя кусок магического кристалла.";
+	description = " I have a piece of magic crystal for you. " ;
 };
 
 func int DIA_Addon_Merdarion_MakeUnitor_Condition()
@@ -515,19 +516,19 @@ func int DIA_Addon_Merdarion_MakeUnitor_Condition()
 func void DIA_Addon_Merdarion_MakeUnitor_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Addon_Merdarion_MakeUnitor_01_00");	//У меня есть для тебя кусок магического кристалла.
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_01_01");	//Правда? Покажи мне его.
-	AI_Output(other,self,"DIA_Addon_Merdarion_MakeUnitor_01_02");	//Вот он.
+	AI_Output(other,self, " DIA_Addon_Merdarion_MakeUnitor_01_00 " );	// I have a piece of the magic crystal for you.
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_01_01 " );	// True? Show it to me.
+	AI_Output(other,self, " DIA_Addon_Merdarion_MakeUnitor_01_02 " );	// Here it is.
 	B_GiveInvItems(other,self,ItMi_UnSharp_MagicCrystal,1);
 	Npc_RemoveInvItems(self,ItMi_UnSharp_MagicCrystal,1);
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_01_03");	//Похоже, ты действительно прав.
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_01_04");	//И из него получится вполне подходящий для твоих целей фокусирующий камень. Где ты его нашел?
-	AI_Output(other,self,"DIA_Addon_Merdarion_MakeUnitor_01_05");	//Тебе лучше не знать.
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_01_06");	//Ну, раз так... Подожди минутку. Это не займет много времени.
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_01_07");	//Вот, твой магический юнитор готов. Можешь его использовать.
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_01_03 " );	// Looks like you're right.
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_01_04 " );	// And it will make a very suitable focusing stone for your purposes. Where did you find him?
+	AI_Output(other,self, " DIA_Addon_Merdarion_MakeUnitor_01_05 " );	// You better not know.
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_01_06 " );	// Well, if so... Wait a minute. It does not take a lot of time.
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_01_07 " );	// Here, your magic unit is ready. You can use it.
 	B_GiveInvItems(self,other,ItMi_MagicCrystal,1);
-	AI_Output(other,self,"DIA_Addon_Merdarion_MakeUnitor_01_08");	//Спасибо. А если мне понадобятся еще юниторы?
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_01_09");	//Все очень просто, друг мой. Главное, приноси мне кристаллы.
+	AI_Output(other,self, " DIA_Addon_Merdarion_MakeUnitor_01_08 " );	// Thank you. What if I need more units?
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_01_09 " );	// It's very simple, my friend. Most importantly, bring me the crystals.
 };
 
 instance DIA_Addon_Merdarion_MakeUnitor_Done(C_Info)
@@ -537,7 +538,7 @@ instance DIA_Addon_Merdarion_MakeUnitor_Done(C_Info)
 	condition = DIA_Addon_Merdarion_MakeUnitor_Done_Condition;
 	information = DIA_Addon_Merdarion_MakeUnitor_Done_Info;
 	permanent = TRUE;
-	description = "Сделай для меня еще несколько юниторов.";
+	description = " Make me some more units. " ;
 };
 
 func int DIA_Addon_Merdarion_MakeUnitor_Done_Condition()
@@ -550,17 +551,17 @@ func int DIA_Addon_Merdarion_MakeUnitor_Done_Condition()
 
 func void DIA_Addon_Merdarion_MakeUnitor_Done_Info()
 {
-	var int anzahl_common;
+	var int number_common;
 
-	AI_Output(other,self,"DIA_Addon_Merdarion_MakeUnitor_Done_01_00");	//Сделай для меня еще несколько юниторов.
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_Done_01_01");	//А кристаллы у тебя есть?
-	AI_Output(other,self,"DIA_Addon_Merdarion_MakeUnitor_Done_01_02");	//Конечно, вот они.
+	AI_Output(other,self, " DIA_Addon_Merdarion_MakeUnitor_Done_01_00 " );	// Make me some more units.
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_Done_01_01 " );	// Do you have crystals?
+	AI_Output(other,self, " DIA_Addon_Merdarion_MakeUnitor_Done_01_02 " );	// Of course, here they are.
 	b_giveinvitemsmanythings(other,self);
 	anzahl_common = Npc_HasItems(other,ItMi_UnSharp_MagicCrystal);
 	Npc_RemoveInvItems(other,ItMi_UnSharp_MagicCrystal,anzahl_common);
 	CreateInvItems(other,ItMi_MagicCrystal,anzahl_common);
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_Done_01_03");	//Хорошо. Подожди минутку.
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_Done_01_03 " );	// Good. Wait a minute.
 	B_UseFakeUnitor();
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_Done_01_04");	//Все, готово. Можешь забрать свои фокусирующие камни.
+	AI_Output(self,other, " DIA_Addon_Merdarion_MakeUnitor_Done_01_04 " );	// Everything, ready. You can take your focus stones.
 	b_giveinvitemsmanythings(self,other);
 };
