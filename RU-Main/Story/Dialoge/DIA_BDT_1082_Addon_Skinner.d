@@ -34,7 +34,7 @@ instance DIA_Addon_Skinner_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Skinner_PICKPOCKET_Condition()
 {
-	return C_Beklauen(100,200);
+	return  C_Robbery ( 100 , 200 );
 };
 
 func void DIA_Addon_Skinner_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_Skinner_PICKPOCKET_Info()
 
 func void DIA_Addon_Skinner_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Wache_02_PICKPOCKET);
 };
 
@@ -74,15 +74,15 @@ func int DIA_Addon_Skinner_Hi_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Skinner_Hi_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Skinner_Hi_08_00");	//Ты зачем меня разбудил, а? Я уверен, что ты толком и не знаешь...
-	AI_Output(self,other,"DIA_Addon_Skinner_Hi_08_01");	//Нет - не надо ничего говорить. Оправдываться слишком поздно.
-	AI_Output(self,other,"DIA_Addon_Skinner_Hi_08_02");	//У тебя теперь есть выбор. Ты можешь сразиться со мной и моей Бетти. А можешь попробовать убежать.
-	AI_Output(self,other,"DIA_Addon_Skinner_Hi_08_03");	//И на твоем месте я бы начинал разбег...
+	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_00 " );	// Why did you wake me up, huh? I'm sure you don't really know...
+	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_01 " );	// No - no need to say anything. It's too late to make excuses.
+	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_02 " );	// You now have a choice. You can fight me and my Betty. Or you can try to run away.
+	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_03 " );	// And if I were you, I would start the run...
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -95,7 +95,7 @@ instance DIA_Addon_Skinner_Attentat(C_Info)
 	condition = DIA_Addon_Skinner_Attentat_Condition;
 	information = DIA_Addon_Skinner_Attentat_Info;
 	permanent = FALSE;
-	description = "По поводу нападения...";
+	description = " Regarding the attack... " ;
 };
 
 
@@ -105,21 +105,21 @@ func int DIA_Addon_Skinner_Attentat_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Skinner_Attentat_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Skinner_Attentat_15_00");	//По поводу нападения...
-	AI_Output(self,other,"DIA_Addon_Skinner_Attentat_08_01");	//Что тебе нужно?
+	AI_Output(other,self, " DIA_Addon_Skinner_Attentat_15_00 " );	// Regarding the attack...
+	AI_Output(self,other, " DIA_Addon_Skinner_Attentat_08_01 " );	// What do you need?
 	Info_ClearChoices(DIA_Addon_Skinner_Attentat);
-	Info_AddChoice(DIA_Addon_Skinner_Attentat,"Я хочу убрать Эстебана.",DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA);
-	Info_AddChoice(DIA_Addon_Skinner_Attentat,"Я хочу найти предателя.",DIA_Addon_Skinner_ATTENTAT_ADDON_PRO);
+	Info_AddChoice(DIA_Addon_Skinner_Attentat, " I want to remove Esteban. " ,DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA);
+	Info_AddChoice(DIA_Addon_Skinner_Attentat, " I want to find a traitor. " ,DIA_Addon_Skinner_ATTENTAT_ADDON_PRO);
 };
 
 func void DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA()
 {
-	AI_Output(other,self,"DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA_15_00");	//Я хочу убрать Эстебана.
+	AI_Output(other,self, " DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA_15_00 " );	// I want to remove Esteban.
 	AI_Output(self,other,"DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA_08_01");	//Отлично.
 	Judas_Counter = Judas_Counter + 1;
 	Info_ClearChoices(DIA_Addon_Skinner_Attentat);
@@ -127,7 +127,7 @@ func void DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA()
 
 func void DIA_Addon_Skinner_ATTENTAT_ADDON_PRO()
 {
-	AI_Output(other,self,"DIA_Addon_Skinner_ATTENTAT_ADDON_PRO_15_00");	//Я хочу найти предателя.
+	AI_Output(other,self, " DIA_Addon_Skinner_ATTENTAT_ADDON_PRO_15_00 " );	// I want to find the traitor.
 	AI_Output(self,other,"DIA_Addon_Skinner_ATTENTAT_ADDON_PRO_08_01");	//Дерьмо.
 	Info_ClearChoices(DIA_Addon_Skinner_Attentat);
 };
