@@ -21,14 +21,14 @@ func void DIA_Biff_NW_EXIT_Info()
 };
 
 
-instance DIA_Biff_NW_HAfen(C_Info)
+instance DIA_Biff_NW_HAfen (C_Info)
 {
 	npc = DJG_713_Biff_NW;
 	nr = 5;
 	condition = DIA_Biff_NW_HAfen_Condition;
 	information = DIA_Biff_NW_HAfen_Info;
 	permanent = TRUE;
-	description = "Хорошо. Осталось не долго.";
+	description = " Good. Not long left. " ;
 };
 
 
@@ -42,8 +42,8 @@ func int DIA_Biff_NW_HAfen_Condition()
 
 func void DIA_Biff_NW_HAfen_Info()
 {
-	AI_Output(other,self,"DIA_Biff_NW_HAfen_15_00");	//Хорошо. Осталось недолго.
-	AI_Output(self,other,"DIA_Biff_NW_HAfen_07_01");	//Я не могу ждать.
+	AI_Output(other,self, " DIA_Biff_NW_HAfen_15_00 " );	// Good. Not long left.
+	AI_Output(self,other, " DIA_Biff_NW_HAfen_07_01 " );	// I can't wait.
 	if(MIS_ReadyforChapter6 == TRUE)
 	{
 		Npc_ExchangeRoutine(self,"SHIP");
@@ -69,7 +69,7 @@ instance DIA_Biff_NW_PICKPOCKET(C_Info)
 
 func int DIA_Biff_NW_PICKPOCKET_Condition()
 {
-	return C_Beklauen(92,250);
+	return  C_Robbery ( 92 , 250 );
 };
 
 func void DIA_Biff_NW_PICKPOCKET_Info()
@@ -81,7 +81,7 @@ func void DIA_Biff_NW_PICKPOCKET_Info()
 
 func void DIA_Biff_NW_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Biff_NW_PICKPOCKET);
 };
 
@@ -98,7 +98,7 @@ instance DIA_BIFF_NW_KAPITELORCATTACK(C_Info)
 	condition = dia_biff_nw_kapitelorcattack_condition;
 	information = dia_biff_nw_kapitelorcattack_info;
 	permanent = FALSE;
-	description = "Какие у тебя планы?";
+	description = " What are your plans? " ;
 };
 
 
@@ -113,17 +113,16 @@ func int dia_biff_nw_kapitelorcattack_condition()
 func void dia_biff_nw_kapitelorcattack_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Biff_NW_KapitelOrcAttack_01_00");	//Какие у тебя планы?
-	AI_Output(self,other,"DIA_Biff_NW_KapitelOrcAttack_01_01");	//Я пока точно не могу сказать. Но, думаю, что останусь с теми, кто решит прорубать себе дорогу из города топором.
-	AI_Output(other,self,"DIA_Biff_NW_KapitelOrcAttack_01_02");	//И тебя это не пугает?
-	AI_Output(self,other,"DIA_Biff_NW_KapitelOrcAttack_01_03");	//Если бы я боялся, то не стал бы охотником на драконов! А эти твари будут куда пострашнее каких-то орков.
-	AI_Output(other,self,"DIA_Biff_NW_KapitelOrcAttack_01_04");	//Ладно, дело твое. Тогда наши пути здесь пока расходятся.
-	AI_Output(other,self,"DIA_Biff_NW_KapitelOrcAttack_01_05");	//Но надеюсь, что мы видимся не в последний раз.
-	AI_Output(self,other,"DIA_Biff_NW_KapitelOrcAttack_01_06");	//Там будет видно.
-	B_LogEntry(TOPIC_HELPCREW,"Бифф остается с теми, кто будет прорываться из города с боем. Думаю, у него есть шанс остаться в живых.");
+	AI_Output(other,self, " DIA_Biff_NW_KapitelOrcAttack_01_00 " );	// What are your plans?
+	AI_Output(self,other, " DIA_Biff_NW_KapitelOrcAttack_01_01 " );	// I can't say for sure yet. But I think that I will stay with those who decide to cut their way out of the city with an axe.
+	AI_Output(other,self, " DIA_Biff_NW_KapitelOrcAttack_01_02 " );	// And it doesn't scare you?
+	AI_Output(self,other, " DIA_Biff_NW_KapitelOrcAttack_01_03 " );	// If I was afraid, I wouldn't be a dragon hunter! And these creatures will be much more terrible than some orcs.
+	AI_Output(other,self, " DIA_Biff_NW_KapitelOrcAttack_01_04 " );	// Okay, it's up to you. Then our paths diverge here for the time being.
+	AI_Output(other,self, " DIA_Biff_NW_KapitelOrcAttack_01_05 " );	// But I hope we don't see each other for the last time.
+	AI_Output(self,other, " DIA_Biff_NW_KapitelOrcAttack_01_06 " );	// It will be visible there.
+	B_LogEntry( TOPIC_HELPCREW , " Biff stays with those who will break out of the city with a fight. I think he has a chance to stay alive. " );
 	BIFFBATTLETHROUGTH = TRUE;
 	PERMCOUNTBACKNW = PERMCOUNTBACKNW + 1;
 	b_countbackcrew();
 	AI_StopProcessInfos(self);
 };
-
