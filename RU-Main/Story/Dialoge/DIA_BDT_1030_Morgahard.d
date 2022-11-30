@@ -21,13 +21,13 @@ func void DIA_Morgahard_EXIT_Info()
 };
 
 
-instance DIA_Morgahard_HALLO(C_Info)
+instances DIA_Morgahard_HALLO (C_Info)
 {
 	npc = BDT_1030_Morgahard;
 	nr = 3;
 	condition = DIA_Morgahard_HALLO_Condition;
-	information = DIA_Morgahard_HALLO_Info;
-	description = "Ты Моргахард.";
+	information = DIA_Morgahard_HELLO_Info;
+	description = " You are Morgahard. " ;
 };
 
 
@@ -38,40 +38,40 @@ func int DIA_Morgahard_HALLO_Condition()
 
 func void DIA_Morgahard_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Morgahard_HALLO_15_00");	//Ты Моргахард.
-	AI_Output(self,other,"DIA_Morgahard_HALLO_07_01");	//Откуда ты знаешь мое имя?
-	AI_Output(other,self,"DIA_Morgahard_HALLO_15_02");	//Тебя ищет судья. Ты сбежал из тюрьмы.
-	AI_Output(other,self,"DIA_Morgahard_HALLO_15_03");	//Что ты сделал такого? Украл его бумажник?
-	AI_Output(self,other,"DIA_Morgahard_HALLO_07_04");	//Не его! Главы города, по его наводке.
-	AI_Output(self,other,"DIA_Morgahard_HALLO_07_05");	//А после того как мы напали на него, он не захотел делиться награбленным с нами и посадил нас за решетку.
-	AI_Output(self,other,"DIA_Morgahard_HALLO_07_06");	//Нам не хотелось болтаться на виселице, поэтому мы сбежали.
-	AI_Output(self,other,"DIA_Morgahard_HALLO_07_07");	//Мы думали, что нас здесь не найдут. Но похоже, мы ошибались.
+	AI_Output(other,self, " DIA_Morgahard_HALLO_15_00 " );	// You are Morgahard.
+	AI_Output(self,other, " DIA_Morgahard_HALLO_07_01 " );	// How do you know my name?
+	AI_Output(other,self, " DIA_Morgahard_HALLO_15_02 " );	// The judge is looking for you. You escaped from prison.
+	AI_Output(other,self, " DIA_Morgahard_HALLO_15_03 " );	// What did you do? Stole his wallet?
+	AI_Output(self,other, " DIA_Morgahard_HALLO_07_04 " );	// Not him! The heads of the city, on his tip.
+	AI_Output(self,other, " DIA_Morgahard_HALLO_07_05 " );	// And after we attacked him, he did not want to share the loot with us and put us behind bars.
+	AI_Output(self,other, " DIA_Morgahard_HALLO_07_06 " );	// We didn't want to hang out on the gallows, so we ran away.
+	AI_Output(self,other, " DIA_Morgahard_HALLO_07_07 " );	// We thought we wouldn't be found here. But it looks like we were wrong.
 	Info_ClearChoices(DIA_Morgahard_HALLO);
-	Info_AddChoice(DIA_Morgahard_HALLO,"Хватит хныкать! Доставай свое оружие.",DIA_Morgahard_HALLO_attack);
-	Info_AddChoice(DIA_Morgahard_HALLO,"Что мы можем сделать с судьей?",DIA_Morgahard_HALLO_richter);
-	Info_AddChoice(DIA_Morgahard_HALLO,"Судья приказал мне убить тебя.",DIA_Morgahard_HALLO_tot);
-	B_LogEntry(TOPIC_RichterLakai,"Я нашел Моргахарда, главаря бродяг.");
+	Info_AddChoice(DIA_Morgahard_HALLO, " Stop whining! Draw your weapon. " ,DIA_Morgahard_HALLO_attack);
+	Info_AddChoice(DIA_Morgahard_HALLO, " What can we do about the judge? " ,DIA_Morgahard_HALLO_richter);
+	Info_AddChoice(DIA_Morgahard_HALLO, " The judge ordered me to kill you. " ,DIA_Morgahard_HALLO_tot);
+	B_LogEntry(TOPIC_RichterLakai, " I found Morgahard, the leader of the tramps. " );
 	SCFoundMorgahard = TRUE;
 	B_GivePlayerXP(XP_FoundMorgahard);
 };
 
-func void DIA_Morgahard_HALLO_tot()
+func void DIA_Morgahard_HELLO_tot()
 {
-	AI_Output(other,self,"DIA_Morgahard_HALLO_tot_15_00");	//Судья приказал мне убить тебя.
-	AI_Output(self,other,"DIA_Morgahard_HALLO_tot_07_01");	//Да, конечно. За этим ты и пришел, да?
+	AI_Output(other,self, " DIA_Morgahard_HALLO_tot_15_00 " );	// The judge ordered me to kill you.
+	AI_Output(self,other, " DIA_Morgahard_HALLO_tot_07_01 " );	// Yes, of course. That's what you came for, right?
 };
 
-func void DIA_Morgahard_HALLO_richter()
+func void DIA_Morgahard_HELLO_richter()
 {
-	AI_Output(other,self,"DIA_Morgahard_HALLO_richter_15_00");	//Что мы можем сделать с судьей?
-	AI_Output(self,other,"DIA_Morgahard_HALLO_richter_07_01");	//Ничего. Он засел в верхнем квартале города как паук в паутине. Неприкосновенный.
-	AI_Output(other,self,"DIA_Morgahard_HALLO_richter_15_02");	//Я бы так не сказал. Нам нужно доказательство его вины в деле главы города.
-	AI_Output(self,other,"DIA_Morgahard_HALLO_richter_07_03");	//Доказательство говоришь? У меня есть оно. Но кто послушает беглого преступника?
-	AI_Output(other,self,"DIA_Morgahard_HALLO_richter_15_04");	//Дай мне это доказательство, и я позабочусь, чтобы за вами больше никто не охотился.
-	AI_Output(self,other,"DIA_Morgahard_HALLO_richter_07_05");	//Ты уверен? Хорошо. Вот, возьми это письмо. Оно подписано судьей.
+	AI_Output(other,self, " DIA_Morgahard_HALLO_richter_15_00 " );	// What can we do with the judge?
+	AI_Output(self,other, " DIA_Morgahard_HALLO_richter_07_01 " );	// Nothing. He settled in the upper quarter of the city like a spider in a web. Inviolable.
+	AI_Output(other,self, " DIA_Morgahard_HALLO_richter_15_02 " );	// I wouldn't say that. We need proof of his guilt in the mayor's case.
+	AI_Output(self,other, " DIA_Morgahard_HALLO_richter_07_03 " );	// Proof you say? I have it. But who will listen to a fugitive?
+	AI_Output(other,self, " DIA_Morgahard_HALLO_richter_15_04 " );	// Give me this proof and I'll make sure no one else hunts you.
+	AI_Output(self,other, " DIA_Morgahard_HALLO_richter_07_05 " );	// Are you sure? Good. Here, take this letter. It is signed by the judge.
 	B_GiveInvItems(self,other,ItWr_RichterKomproBrief_MIS,1);
-	AI_Output(self,other,"DIA_Morgahard_HALLO_richter_07_06");	//Если это и не снимет с меня вину, оно позволит доказать, что судья был соучастником в этом деле.
-	B_LogEntry(TOPIC_RichterLakai,"Моргахард передал мне бумагу с приказом судьи. Этот клочок бумаги доказывает, что судья ограбил главу города Лариуса. Я думаю, это именно то, что хотел найти Ли.");
+	AI_Output(self,other, " DIA_Morgahard_HALLO_richter_07_06 " );	// If this doesn't exonerate me, it will prove that the judge was an accomplice in this case.
+	B_LogEntry(TOPIC_RichterLakai, " Morgahard gave me a paper with the judge's order. This piece of paper proves that the judge robbed the mayor of Larius. I think that's what Lee wanted to find. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -79,8 +79,8 @@ var int MorgahardSucked;
 
 func void DIA_Morgahard_HALLO_attack()
 {
-	AI_Output(other,self,"DIA_Morgahard_HALLO_attack_15_00");	//Хватит хныкать! Доставай свое оружие. Мы положим этому делу конец.
-	AI_Output(self,other,"DIA_Morgahard_HALLO_attack_07_01");	//Отлично. Мне все равно нечего терять.
+	AI_Output(other,self, " DIA_Morgahard_HALLO_attack_15_00 " );	// Stop whining! Get your weapon. We will put an end to this matter.
+	AI_Output(self,other, " DIA_Morgahard_HALLO_attack_07_01 " );	// Great. I still have nothing to lose.
 	AI_StopProcessInfos(self);
 	MorgahardSucked = TRUE;
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
@@ -93,7 +93,7 @@ instance DIA_Morgahard_Nickname(C_Info)
 	condition = DIA_Morgahard_Nickname_Condition;
 	information = DIA_Morgahard_Nickname_Info;
 	permanent = FALSE;
-	description = "Аделхард, часом, не твой родственник?";
+	description = " Adelhard, isn't your relative? " ;
 };
 
 func int DIA_Morgahard_Nickname_Condition()
@@ -106,20 +106,20 @@ func int DIA_Morgahard_Nickname_Condition()
 
 func void DIA_Morgahard_Nickname_Info()
 {
-	AI_Output(other,self,"DIA_Morgahard_Nickname_01_00");	//Аделхард, часом, не твой родственник?
-	AI_Output(self,other,"DIA_Morgahard_Nickname_01_01");	//Кто?! Алехард?... Не знаю никакого Алехарда.
-	AI_Output(other,self,"DIA_Morgahard_Nickname_01_02");	//Вообще-то, я сказал 'Аделхард'.
-	AI_Output(self,other,"DIA_Morgahard_Nickname_01_03");	//И его не знаю.
-	AI_Output(other,self,"DIA_Morgahard_Nickname_01_04");	//Да их не двое, а всего один - А-дел-хард!
-	AI_Output(self,other,"DIA_Morgahard_Nickname_01_05");	//По-моему, ты просто издеваешься надо мной! Иди к черту!
-	AI_Output(other,self,"DIA_Morgahard_Nickname_01_06");	//Воу, воу, полегче! Я просто спросил. Без всякой задней мысли.
-	AI_Output(self,other,"DIA_Morgahard_Nickname_01_07");	//Ага, ты на моем веку не первый такой 'просто спрашивающий'. Никого я не знаю, понял?!
-	AI_Output(self,other,"DIA_Morgahard_Nickname_01_08");	//Ни Алехарда, ни Леонарда, ни Бернарда, ни Фернандо... хотя, Фернандо я знаю...(с издевкой) Он тебя не интересует случайно?!
+	AI_Output(other,self, " DIA_Morgahard_Nickname_01_00 " );	// Adelhard, isn't your relative?
+	AI_Output(self,other, " DIA_Morgahard_Nickname_01_01 " );	// Who?! Alehard?... I don't know any Alehard.
+	AI_Output(other,self, " DIA_Morgahard_Nickname_01_02 " );	// Actually, I said 'Adelhard'.
+	AI_Output(self,other, " DIA_Morgahard_Nickname_01_03 " );	// And I don't know him.
+	AI_Output(other,self, " DIA_Morgahard_Nickname_01_04 " );	// Yes, there are not two of them, but only one - A-del-hard!
+	AI_Output(self,other, " DIA_Morgahard_Nickname_01_05 " );	// I think you're just kidding me! Go to hell!
+	AI_Output(other,self, " DIA_Morgahard_Nickname_01_06 " );	// Whoa, whoa, take it easy! I just asked. Without any ulterior motive.
+	AI_Output(self,other, " DIA_Morgahard_Nickname_01_07 " );	// Yeah, you're not the first 'just asker' in my lifetime. I don't know anyone, you understand?
+	AI_Output(self,other, " DIA_Morgahard_Nickname_01_08 " );	// Neither Alehard, nor Leonard, nor Bernard, nor Fernando... although, I know Fernando... (with a sneer) Does he interest you by any chance?!
 	AI_Output(other,self,"DIA_Morgahard_Nickname_01_09");	//Нет.
 	AI_Output(self,other,"DIA_Morgahard_Nickname_01_10");	//Жаль!
-	AI_Output(other,self,"DIA_Morgahard_Nickname_01_11");	//У вас с Аделхардом похожие имена, у них окончание одно, вот я и подумал...
-	AI_Output(self,other,"DIA_Morgahard_Nickname_01_12");	//Ох! Он подумал! Вон, у Лариуса с Корнелиусом тоже имена одинаково заканчиваются! Может, они муж с женой? Спроси при встрече!
-	AI_Output(other,self,"DIA_Morgahard_Nickname_01_13");	//А это идея.
+	AI_Output(other,self, " DIA_Morgahard_Nickname_01_11 " );	// You and Adelhard have similar names, they have the same ending, so I thought...
+	AI_Output(self,other, " DIA_Morgahard_Nickname_01_12 " );	// Oh! He thought! Look, Larius and Cornelius also have the same names! Maybe they are husband and wife? Ask at the meeting!
+	AI_Output(other,self, " DIA_Morgahard_Nickname_01_13 " );	// And this is the idea.
 };
 
 instance DIA_Morgahard_Perm(C_Info)
@@ -142,7 +142,7 @@ func int DIA_Morgahard_Perm_Condition()
 
 func void DIA_Morgahard_Perm_Info()
 {
-	AI_Output(self,other,"DIA_Morgahard_Perm_07_00");	//А этот подлец судья... Я еще увижу его болтающимся на виселице.
+	AI_Output(self,other, " DIA_Morgahard_Perm_07_00 " );	// And this scoundrel judge... I'll see him hanging on the gallows again.
 	AI_StopProcessInfos(self);
 };
 
@@ -168,7 +168,7 @@ func int DIA_Morgahard_Perm2_Condition()
 
 func void DIA_Morgahard_Perm2_Info()
 {
-	AI_Output(self,other,"DIA_Morgahard_Perm2_07_00");	//Почему бы тебе просто не исчезнуть?
+	AI_Output(self,other, " DIA_Morgahard_Perm2_07_00 " );	// Why don't you just disappear?
 	AI_StopProcessInfos(self);
 };
 
@@ -186,7 +186,7 @@ instance DIA_Morgahard_PICKPOCKET(C_Info)
 
 func int DIA_Morgahard_PICKPOCKET_Condition()
 {
-	return C_Beklauen(73,45);
+	return  C_Robbery ( 73 , 45 );
 };
 
 func void DIA_Morgahard_PICKPOCKET_Info()
@@ -198,7 +198,7 @@ func void DIA_Morgahard_PICKPOCKET_Info()
 
 func void DIA_Morgahard_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Morgahard_PICKPOCKET);
 };
 
