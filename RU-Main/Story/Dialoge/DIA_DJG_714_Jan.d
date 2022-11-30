@@ -34,16 +34,16 @@ instance DIA_JAN_Hello(C_Info)
 
 func int DIA_Jan_Hello_Condition()
 {
-	if((Kapitel >= 4) && Npc_IsInState(self,ZS_Talk) && (MIS_OCGateOpen == FALSE))
+	if (( Capital >=  4 ) && Npc_IsInState ( self , ZS_Talk ) && ( MIS_OCGateOpen ==  FALSE )) ;
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Jan_Hello_10_00");	//И какой идиот затащил меня сюда?!
-	AI_Output(self,other,"DIA_Jan_Hello_10_01");	//Я думал, здесь для меня действительно найдется настоящая работа. Но здесь ничего нет кроме нескольких высокомерных паладинов и банды орков.
+	AI_Output(self,other, " DIA_Jan_Hello_10_00 " );	// And what idiot dragged me here?!
+	AI_Output(self,other, " DIA_Jan_Hello_10_01 " );	// I thought there might actually be a real job for me here. But there's nothing here but a few arrogant paladins and a band of orcs.
 };
 
 
@@ -54,64 +54,64 @@ instance DIA_JAN_Dragons(C_Info)
 	condition = DIA_Jan_Dragons_Condition;
 	information = DIA_Jan_Dragons_Info;
 	permanent = FALSE;
-	description = "Ты забыл о драконах!";
+	description = " You forgot about dragons! " ;
 };
 
 
 func int DIA_Jan_Dragons_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_JAN_Hello) && (MIS_JanBecomesSmith == FALSE) && (Kapitel == 4) && (MIS_OCGateOpen == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_JAN_Hello ) && ( MY_JanBecomesSmith ==  FALSE ) && ( Chapter ==  4 ) && ( MY_OCGateOpen ==  FALSE )) ;
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_Dragons_Info()
 {
-	AI_Output(other,self,"DIA_Jan_Dragons_15_00");	//Ты забыл о драконах!
-	AI_Output(self,other,"DIA_Jan_Dragons_10_01");	//(с издевкой) Как же я мог забыть?! Знаешь что? Я кузнец, а не воин.
-	AI_Output(self,other,"DIA_Jan_Dragons_10_02");	//Я делаю оружие. А сражаются им путь другие.
-	AI_Output(other,self,"DIA_Jan_Dragons_15_03");	//Тогда почему ты не стоишь за этой наковальней?
-	AI_Output(self,other,"DIA_Jan_Dragons_10_04");	//Паладины не подпускают меня к кузнице. Если я подойду к ней, меня бросят за решетку.
+	AI_Output(other,self, " DIA_Jan_Dragons_15_00 " );	// You forgot about dragons!
+	AI_Output(self,other, " DIA_Jan_Dragons_10_01 " );	// (with mockery) How could I forget?! You know? I am a blacksmith, not a warrior.
+	AI_Output(self,other, " DIA_Jan_Dragons_10_02 " );	// I make weapons. And others fight their way.
+	AI_Output(other,self, " DIA_Jan_Dragons_15_03 " );	// Then why aren't you standing behind that anvil?
+	AI_Output(self,other, " DIA_Jan_Dragons_10_04 " );	// Paladins won't let me near the forge. If I approach her, they will throw me behind bars.
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Jan_Dragons_10_05");	//Ты ведь один из них. Может, замолвишь за меня словечко?
+		AI_Output(self,other, " DIA_Jan_Dragons_10_05 " );	// You're one of them. Maybe put in a good word for me?
 	};
 	Info_ClearChoices(DIA_JAN_Dragons);
-	Info_AddChoice(DIA_JAN_Dragons,"Мне нужно идти.",DIA_JAN_Dragons_ShitHappen);
-	Info_AddChoice(DIA_JAN_Dragons,"А что мне будет, если я помогу тебе?",DIA_JAN_Dragons_Reward);
-	Info_AddChoice(DIA_JAN_Dragons,"Я попробую помочь тебе.",DIA_JAN_Dragons_HelpYou);
+	Info_AddChoice(DIA_JAN_Dragons, " I have to go. " ,DIA_JAN_Dragons_ShitHappen);
+	Info_AddChoice(DIA_JAN_Dragons, " What if I help you? " ,DIA_JAN_Dragons_Reward);
+	Info_AddChoice(DIA_JAN_Dragons, " I'll try to help you. " ,DIA_JAN_Dragons_HelpYou);
 };
 
 func void DIA_JAN_Dragons_HelpYou()
 {
-	AI_Output(other,self,"DIA_JAN_Dragons_HelpYou_15_00");	//Я попробую помочь тебе.
-	AI_Output(self,other,"DIA_JAN_Dragons_HelpYou_10_01");	//Как тебе это удастся? Парсиваль приказал страже ни к чему нас не подпускать.
-	AI_Output(self,other,"DIA_JAN_Dragons_HelpYou_10_02");	//Никто не осмелится нарушить его.
-	AI_Output(other,self,"DIA_JAN_Dragons_HelpYou_15_03");	//Я сделаю все, что смогу.
-	AI_Output(self,other,"DIA_JAN_Dragons_HelpYou_10_04");	//Представить себе не могу, что он послушает тебя.
+	AI_Output(other,self, " DIA_JAN_Dragons_HelpYou_15_00 " );	// I'll try to help you.
+	AI_Output(self,other, " DIA_JAN_Dragons_HelpYou_10_01 " );	// How do you do it? Parsival ordered the guards to keep us out of anything.
+	AI_Output(self,other, " DIA_JAN_Dragons_HelpYou_10_02 " );	// Nobody dares to break it.
+	AI_Output(other,self, " DIA_JAN_Dragons_HelpYou_15_03 " );	// I'll do my best.
+	AI_Output(self,other, " DIA_JAN_Dragons_HelpYou_10_04 " );	// I can't imagine that he will listen to you.
 	Log_CreateTopic(TOPIC_JanBecomesSmith,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_JanBecomesSmith,LOG_Running);
-	B_LogEntry(TOPIC_JanBecomesSmith,"Охотник на драконов Ян, находящийся в замке Долины Рудников, хочет работать в кузнице. Но Парсиваль запрещает ему это.");
+	) ; _ _ _
 	MIS_JanBecomesSmith = LOG_Running;
 	Info_ClearChoices(DIA_JAN_Dragons);
 };
 
 func void DIA_JAN_Dragons_Reward()
 {
-	AI_Output(other,self,"DIA_JAN_Dragons_Reward_15_00");	//А что мне будет, если я помогу тебе?
-	AI_Output(self,other,"DIA_JAN_Dragons_Reward_10_01");	//У меня ничего нет. Единственно, я могу научить тебя чему-нибудь.
+	AI_Output(other,self, " DIA_JAN_Dragons_Reward_15_00 " );	// What will happen to me if I help you?
+	AI_Output(self,other, " DIA_JAN_Dragons_Reward_10_01 " );	// I don't have anything. The only thing I can teach you is something.
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_JAN_Dragons_Reward_10_02");	//Я знаю способ, как сделать клинок, выкованный из магической руды, еще прочнее.
+		AI_Output(self,other, " DIA_JAN_Dragons_Reward_10_02 " );	// I know a way to make a blade forged from magic ore even stronger.
 	};
 	Jan_TeachPlayer = TRUE;
 };
 
 func void DIA_JAN_Dragons_ShitHappen()
 {
-	AI_Output(other,self,"DIA_JAN_Dragons_ShitHappen_15_00");	//Мне нужно идти.
-	AI_Output(self,other,"DIA_JAN_Dragons_ShitHappen_10_01");	//Все просто ужасно. Я не могу покинуть этот замок и не могу работать в кузнице.
+	AI_Output(other,self, " DIA_JAN_Dragons_ShitHappen_15_00 " );	// I need to go.
+	AI_Output(self,other, " DIA_JAN_Dragons_ShitHappen_10_01 " );	// Everything is just awful. I can't leave this castle and I can't work in the forge.
 	Info_ClearChoices(DIA_JAN_Dragons);
 };
 
@@ -123,23 +123,23 @@ instance DIA_JAN_Home(C_Info)
 	condition = DIA_Jan_Home_Condition;
 	information = DIA_Jan_Home_Info;
 	permanent = FALSE;
-	description = "Откуда ты?";
+	description = " Where are you from? " ;
 };
 
 
 func int DIA_Jan_Home_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_JAN_Hello) && (Kapitel >= 4) && (MIS_OCGateOpen == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_JAN_Hello ) && ( Capital >=  4 ) && ( MIS_OCGateOpen ==  FALSE )) .
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_Home_Info()
 {
-	AI_Output(other,self,"DIA_Jan_Home_15_00");	//Откуда ты пришел?
-	AI_Output(self,other,"DIA_Jan_Home_10_01");	//Я присоединился к парням с гор. И мы направились в эту долину, чтобы разбогатеть, охотясь на драконов.
-	AI_Output(self,other,"DIA_Jan_Home_10_02");	//Их главаря звали Сильвио. Такая сволочь! Он обращался со мной как со своей собственностью.
+	AI_Output(other,self, " DIA_Jan_Home_15_00 " );	// Where did you come from?
+	AI_Output(self,other, " DIA_Jan_Home_10_01 " );	// I joined the guys from the mountains. And we went to this valley to get rich hunting dragons.
+	AI_Output(self,other, " DIA_Jan_Home_10_02 " );	// Their leader's name was Silvio. Such a bastard! He treated me like his own property.
 };
 
 
@@ -150,58 +150,58 @@ instance DIA_JAN_OldCamp(C_Info)
 	condition = DIA_Jan_OldCamp_Condition;
 	information = DIA_Jan_OldCamp_Info;
 	permanent = TRUE;
-	description = "Что произошло в замке?";
+	description = " What happened in the castle? " ;
 };
 
 
 func int DIA_Jan_OldCamp_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_JAN_Hello) && (Kapitel == 4) && (MIS_OCGateOpen == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_JAN_Hello ) && ( Capital ==  4 ) && ( MIS_OCGateOpen ==  FALSE )) ;
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_OldCamp_Info()
 {
-	AI_Output(other,self,"DIA_Jan_OldCamp_15_00");	//А что произошло в замке?
-	AI_Output(self,other,"DIA_Jan_OldCamp_10_01");	//Ничего, насколько я слышал. Но, конечно, меня очень волнует, что произошло ВНЕ замка.
+	AI_Output(other,self, " DIA_Jan_OldCamp_15_00 " );	// What happened in the castle?
+	AI_Output(self,other, " DIA_Jan_OldCamp_10_01 " );	// Nothing, as far as I've heard. But, of course, I'm very worried about what happened OUTSIDE the castle.
 };
 
 
-instance DIA_JAN_Parcival(C_Info)
+instance DIA_JAN_Parcival (C_Info)
 {
 	npc = DJG_714_Jan;
 	nr = 4;
 	condition = DIA_Jan_Parcival_Condition;
 	information = DIA_Jan_Parcival_Info;
 	permanent = FALSE;
-	description = "Я поговорил с Парсивалем.";
+	description = " I spoke to Parzival. " ;
 };
 
 
 func int DIA_Jan_Parcival_Condition()
 {
-	if((MIS_JanBecomesSmith != LOG_SUCCESS) && Npc_KnowsInfo(other,DIA_Parcival_Jan) && (MIS_OCGateOpen == FALSE))
+	if ((MY_JanBecomesSmith !=  LOG_SUCCESS ) && Npc_KnowsInfo(other, DIA_Parcival_Jan) && (MY_OCGateOpen ==  FALSE ))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_Parcival_Info()
 {
-	AI_Output(other,self,"DIA_Jan_Parcival_15_00");	//Я поговорил с Парсивалем.
+	AI_Output(other,self, " DIA_Jan_Parcival_15_00 " );	// I've spoken to Parsival.
 	AI_Output(self,other,"DIA_Jan_Parcival_10_01");	//И?
 	if(hero.guild == GIL_DJG)
 	{
-		AI_Output(other,self,"DIA_Jan_Parcival_15_02");	//Он не доверяет нам, охотникам на драконов.
+		AI_Output(other,self, " DIA_Jan_Parcival_15_02 " );	// He doesn't trust us dragon hunters.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Jan_Parcival_15_03");	//Он не доверяет вам, охотникам на драконов.
+		AI_Output(other,self, " DIA_Jan_Parcival_15_03 " );	// He doesn't trust you dragon hunters.
 	};
-	AI_Output(self,other,"DIA_Jan_Parcival_10_04");	//Черт. Я так хочу работать.
-	AI_Output(self,other,"DIA_Jan_Parcival_10_05");	//Что ж, видимо, придется смириться. Только Гаронд может помочь мне теперь.
+	AI_Output(self,other, " DIA_Jan_Parcival_10_04 " );	// Damn. I so want to work.
+	AI_Output(self,other, " DIA_Jan_Parcival_10_05 " );	// Well, apparently, we'll have to put up with it. Only Garond can help me now.
 };
 
 
@@ -212,7 +212,7 @@ instance DIA_JAN_JanIsSmith(C_Info)
 	condition = DIA_Jan_JanIsSmith_Condition;
 	information = DIA_Jan_JanIsSmith_Info;
 	permanent = FALSE;
-	description = "Берись за молот, для тебя есть работа.";
+	description = " Grab the hammer, there's work for you. " ;
 };
 
 
@@ -220,16 +220,16 @@ func int DIA_Jan_JanIsSmith_Condition()
 {
 	if((MIS_JanBecomesSmith == LOG_SUCCESS) && (MIS_OCGateOpen == FALSE))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_JanIsSmith_Info()
 {
-	AI_Output(other,self,"DIA_Jan_JanIsSmith_15_00");	//Берись за молот, для тебя есть работа.
-	AI_Output(self,other,"DIA_Jan_JanIsSmith_10_01");	//Ты сделал это? Как тебе удалось?
-	AI_Output(other,self,"DIA_Jan_JanIsSmith_15_02");	//Мне пришлось поручиться за тебя, так что не разочаруй меня.
-	AI_Output(self,other,"DIA_Jan_JanIsSmith_10_03");	//Не волнуйся. Я так рад, что опять могу работать.
+	AI_Output(other,self, " DIA_Jan_JanIsSmith_15_00 " );	// Grab the hammer, there's work for you.
+	AI_Output(self,other, " DIA_Jan_JanIsSmith_10_01 " );	// Did you do it? How did you manage?
+	AI_Output(other,self, " DIA_Jan_JanIsSmith_15_02 " );	// I had to vouch for you, so don't disappoint me.
+	AI_Output(self,other, " DIA_Jan_JanIsSmith_10_03 " );	// Don't worry. I'm so glad I can work again.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"SMITH");
 };
@@ -242,7 +242,7 @@ instance DIA_JAN_SellWeapons(C_Info)
 	condition = DIA_Jan_SellWeapons_Condition;
 	information = DIA_Jan_SellWeapons_Info;
 	permanent = FALSE;
-	description = "Ты продаешь оружие?";
+	description = " Do you sell weapons? " ;
 };
 
 
@@ -250,22 +250,22 @@ func int DIA_Jan_SellWeapons_Condition()
 {
 	if((MIS_JanBecomesSmith == LOG_SUCCESS) && Npc_KnowsInfo(other,DIA_JAN_JanIsSmith) && (Jan_TeachPlayer == FALSE) && (MIS_OCGateOpen == FALSE))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_SellWeapons_Info()
 {
-	AI_Output(other,self,"DIA_Jan_SellWeapons_15_00");	//Ты продаешь оружие?
+	AI_Output(other,self, " DIA_Jan_SellWeapons_15_00 " );	// Do you sell weapons?
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Jan_SellWeapons_10_01");	//Ни за что. Чтобы потом твои собратья бросили меня в темницу за торговлю из-под полы? Нет, забудь об этом!
+		AI_Output(self,other, " DIA_Jan_SellWeapons_10_01 " );	// No way. So that your brethren will then throw me in a dungeon for trading from under the floor? No, forget it!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_SellWeapons_10_02");	//Мог бы, если бы оно у меня было. Но сначала я должен обеспечить оружием паладинов в замке.
+		AI_Output(self,other, " DIA_Jan_SellWeapons_10_02 " );	// I could if I had one. But first, I have to secure weapons for the paladins in the castle.
 	};
-	AI_Output(self,other,"DIA_Jan_SellWeapons_10_03");	//Но я могу показать тебе, как ковать хорошее оружие.
+	AI_Output(self,other, " DIA_Jan_SellWeapons_10_03 " );	// But I can show you how to make good weapons.
 	Jan_TeachPlayer = TRUE;
 };
 
@@ -277,22 +277,22 @@ instance Jan_Training_Talente(C_Info)
 	condition = Jan_Training_Talente_Condition;
 	information = Jan_Training_Talente_Info;
 	permanent = TRUE;
-	description = "Обучи меня кузнечному делу.";
+	description = " Teach me blacksmithing. " ;
 };
 
 
 func int Jan_Training_Talente_Condition()
 {
-	if((Jan_TeachPlayer == TRUE) && Npc_KnowsInfo(other,DIA_JAN_JanIsSmith) && (MIS_OCGateOpen == FALSE))
+	if (( Jan_TeachPlayer ==  TRUE ) && Npc_KnowsInfo( other , DIA_JAN_JanIsSmith ) && ( MIS_OCGateOpen ==  FALSE ))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void Jan_Training_Talente_Info()
 {
-	AI_Output(other,self,"DIA_Jan_TeachPlayer_15_00");	//Обучи меня кузнечному делу.
-	AI_Output(self,other,"DIA_Jan_TeachPlayer_10_01");	//Что именно ты хочешь научиться ковать?
+	AI_Output(other,self, " DIA_Jan_TeachPlayer_15_00 " );	// Teach me blacksmithing.
+	AI_Output(self,other, " DIA_Jan_TeachPlayer_10_01 " );	// What exactly do you want to learn how to forge?
 	Info_ClearChoices(Jan_Training_Talente);
 	Info_AddChoice(Jan_Training_Talente,Dialog_Back,Jan_Training_Smith_Back);
 	if(PLAYER_TALENT_SMITH[WEAPON_Common] == FALSE)
@@ -351,7 +351,7 @@ func void Jan_Training_Smith_2hSpecial2()
 };
 
 
-var int DIA_JAN_SellArmor_permanent;
+var int DAY_JAN_SellArmor_permanent;
 
 instance DIA_JAN_SellArmor(C_Info)
 {
@@ -360,7 +360,7 @@ instance DIA_JAN_SellArmor(C_Info)
 	condition = DIA_Jan_SellArmor_Condition;
 	information = DIA_Jan_SellArmor_Info;
 	permanent = TRUE;
-	description = "Могу я купить у тебя доспехи?";
+	description = " Can I buy armor from you? " ;
 };
 
 
@@ -368,49 +368,49 @@ func int DIA_Jan_SellArmor_Condition()
 {
 	if((MIS_JanBecomesSmith == LOG_SUCCESS) && Npc_KnowsInfo(other,DIA_JAN_JanIsSmith) && (MIS_OCGateOpen == FALSE) && (DIA_JAN_SellArmor_permanent == FALSE))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_SellArmor_Info()
 {
-	AI_Output(other,self,"DIA_Jan_SellArmor_15_00");	//Могу я купить у тебя доспехи?
+	AI_Output(other,self, " DIA_Jan_SellArmor_15_00 " );	// Can I buy armor from you?
 
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_TPL))
 	{
-		AI_Output(self,other,"DIA_Jan_SellArmor_10_01");	//Мои доспехи не идут ни в какое сравнение с теми, что у тебя сейчас есть. Забудь об этом.
+		AI_Output(self,other, " DIA_Jan_SellArmor_10_01 " );	// My armor is no match for what you currently have. Forget it.
 	}
-	else if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR))
+	else  if ((hero.guild ==  GIL_KDF ) || (hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_KDM ) || (hero.guild ==  GIL_GUR ))
 	{
-		AI_Output(self,other,"DIA_Jan_SellArmor_10_02");	//Маг, который нуждается в доспехах? Забудь об этом - тебе лучше обратиться к портному. Я не могу сделать доспехи для тебя.
+		AI_Output(self,other, " DIA_Jan_SellArmor_10_02 " );	// Mage who needs armor? Forget it - you'd better go to a tailor. I can't make armor for you.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_SellArmor_10_03");	//Если бы они у меня были, я бы продал их тебе. Но, к сожалению, у меня их нет.
+		AI_Output(self,other, " DIA_Jan_SellArmor_10_03 " );	// If I had them, I would sell them to you. But unfortunately I don't have them.
 
 		if((SBMode == TRUE) || (RealMode[2] == TRUE))
 		{
 			Info_ClearChoices(DIA_JAN_SellArmor);
-			Info_AddChoice(DIA_JAN_SellArmor,"Ты можешь изготовить что-нибудь для меня?",DIA_JAN_SellArmor_BuildOne);
+			Info_AddChoice(DIA_JAN_SellArmor, " Can you make something for me? " ,DIA_JAN_SellArmor_BuildOne);
 		};
 	};
 };
 
 func void DIA_JAN_SellArmor_Sorry()
 {
-	AI_Output(other,self,"DIA_JAN_SellArmor_Sorry_15_00");	//Думаю, ничего не получится.
-	AI_Output(self,other,"DIA_JAN_SellArmor_Sorry_10_01");	//Ну, если все же что-нибудь придумаешь, дай мне знать.
+	AI_Output(other,self, " DIA_JAN_SellArmor_Sorry_15_00 " );	// I don't think it will work.
+	AI_Output(self,other, " DIA_JAN_SellArmor_Sorry_10_01 " );	// Well, if you come up with something, let me know.
 	Info_ClearChoices(DIA_JAN_SellArmor);
 };
 
 func void DIA_JAN_SellArmor_BuildOne()
 {
-	AI_Output(other,self,"DIA_JAN_SellArmor_BuildOne_15_00");	//Ты можешь изготовить что-нибудь для меня?
-	AI_Output(self,other,"DIA_JAN_SellArmor_BuildOne_10_01");	//Ну, если ты хочешь что-нибудь получше, ты должен принести мне необходимые материалы.
-	AI_Output(other,self,"DIA_JAN_SellArmor_BuildOne_15_02");	//А что нужно?
-	AI_Output(self,other,"DIA_JAN_SellArmor_BuildOne_10_03");	//Ты хочешь сражаться с драконами, да? Принеси мне драконьи чешуйки - из них я смогу собрать что-нибудь для тебя.
-	AI_Output(self,other,"DIA_JAN_SellArmor_BuildOne_10_04");	//Двадцать чешуек должно быть достаточно.
-	DIA_JAN_SellArmor_permanent = TRUE;
+	AI_Output(other,self, " DIA_JAN_SellArmor_BuildOne_15_00 " );	// Can you make something for me?
+	AI_Output(self,other, " DIA_JAN_SellArmor_BuildOne_10_01 " );	// Well, if you want something better, you should bring me the necessary materials.
+	AI_Output(other,self, " DIA_JAN_SellArmor_BuildOne_15_02 " );	// What do you need?
+	AI_Output(self,other, " DIA_JAN_SellArmor_BuildOne_10_03 " );	// You want to fight dragons, don't you? Bring me some dragon scales - I can use them to collect something for you.
+	AI_Output(self,other, " DIA_JAN_SellArmor_BuildOne_10_04 " );	// Twenty scales should be enough.
+	DIA_JAN_SellArmor_permanent = TRUE ;
 	Info_ClearChoices(DIA_JAN_SellArmor);
 };
 
@@ -424,7 +424,7 @@ instance DIA_JAN_Dragonscales(C_Info)
 	condition = DIA_Jan_Dragonscales_Condition;
 	information = DIA_Jan_Dragonscales_Info;
 	permanent = TRUE;
-	description = "У меня есть чешуя дракона.";
+	description = " I have dragon scales. " ;
 };
 
 
@@ -432,7 +432,7 @@ func int DIA_Jan_Dragonscales_Condition()
 {
 	if((MIS_JanBecomesSmith == LOG_SUCCESS) && Npc_KnowsInfo(other,DIA_JAN_JanIsSmith) && (MIS_OCGateOpen == FALSE) && (DIA_JAN_SellArmor_permanent == TRUE) && (Jan_Sells_Armor == FALSE) && (Npc_HasItems(other,ItAt_DragonScale) >= 1))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
@@ -441,14 +441,14 @@ var int DIA_JAN_Dragonscales_OneTime;
 
 func void DIA_Jan_Dragonscales_Info()
 {
-	AI_Output(other,self,"DIA_JAN_Dragonscales_15_00");	//У меня есть чешуя дракона.
+	AI_Output(other,self, " DIA_JAN_Dragonscales_15_00 " );	// I have dragon scales.
 
 	if(Npc_HasItems(other,ItAt_DragonScale) >= 20)
 	{
 		B_GiveInvItems(other,self,ItAt_DragonScale,20);
 		Npc_RemoveInvItems(self,ItAt_DragonScale,20);
-		AI_Output(self,other,"DIA_JAN_Dragonscales_10_01");	//Хорошо! Думаю, из этого что-нибудь получится.
-		AI_Output(self,other,"DIA_JAN_Dragonscales_10_02");	//Заходи завтра и получишь свои новые доспехи.
+		AI_Output(self,other, " DIA_JAN_Dragonscales_10_01 " );	// Good! I think something will come of it.
+		AI_Output(self,other, " DIA_JAN_Dragonscales_10_02 " );	// Come in tomorrow and get your new armor.
 		if(DIA_JAN_Dragonscales_OneTime == FALSE)
 		{
 			B_GivePlayerXP(XP_Addon_JanSellsArmor);
@@ -458,7 +458,7 @@ func void DIA_Jan_Dragonscales_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_JAN_Dragonscales_10_03");	//Мне нужно два десятка драконьих чешуек, иначе я не смогу сделать тебе доспехи.
+		AI_Output(self,other, " DIA_JAN_Dragonscales_10_03 " );	// I need two dozen dragon scales, otherwise I won't be able to make you armor.
 	};
 };
 
@@ -473,32 +473,32 @@ instance DIA_JAN_ArmorReady(C_Info)
 	condition = DIA_Jan_ArmorReady_Condition;
 	information = DIA_Jan_ArmorReady_Info;
 	permanent = TRUE;
-	description = "Доспехи готовы?";
+	description = " Armor ready? " ;
 };
 
 func int DIA_Jan_ArmorReady_Condition()
 {
-	if((MIS_OCGateOpen == FALSE) && (Jan_Sells_Armor != FALSE) && (DIA_JAN_ArmorReady_NoPerm == FALSE))
+	if ((MIS_OCGateOpen ==  FALSE ) && (Jan_Sells_Armor !=  FALSE ) && (DIA_JAN_ArmorReady_NoPerm ==  FALSE ))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Jan_ArmorReady_Info()
 {
-	AI_Output(other,self,"DIA_JAN_ArmorReady_15_00");	//Доспехи готовы?
+	AI_Output(other,self, " DIA_JAN_ArmorReady_15_00 " );	// Armor ready?
 	if(Jan_Sells_Armor == Wld_GetDay())
 	{
-		AI_Output(self,other,"DIA_JAN_ArmorReady_10_01");	//Пока еще нет. Заходи завтра.
+		AI_Output(self,other, " DIA_JAN_ArmorReady_10_01 " );	// Not yet. Come tomorrow.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_JAN_ArmorReady_10_02");	//Это настоящее произведение искусства. Ты можешь купить их, если хочешь.
-		AI_Output(self,other,"DIA_JAN_ArmorReady_10_03");	//Для тебя особая цена.
-		AI_Output(other,self,"DIA_JAN_ArmorReady_15_04");	//Что!? И это после всего, что я сделал для тебя
-		AI_Output(self,other,"DIA_JAN_ArmorReady_10_05");	//Ну не надо так. Мне же тоже нужно зарабатывать на жизнь. Не хочешь, не бери.
+		AI_Output(self,other, " DIA_JAN_ArmorReady_10_02 " );	// This is a true work of art. You can buy them if you want.
+		AI_Output(self,other, " DIA_JAN_ArmorReady_10_03 " );	// Special price for you.
+		AI_Output(other,self, " DIA_JAN_ArmorReady_15_04 " );	// What!? And this is after everything I've done for you
+		AI_Output(self,other, " DIA_JAN_ArmorReady_10_05 " );	// Well, don't do that. I also need to earn a living. If you don't want it, don't take it.
 		DJG_Armor_is_offered = TRUE;
-		DIA_JAN_ArmorReady_NoPerm = TRUE;
+		DAY_JAN_ArmorReady_NoPerm = TRUE ;
 	};
 };
 
@@ -512,7 +512,7 @@ instance DIA_Jan_DJG_ARMOR_M(C_Info)
 	condition = DIA_Jan_DJG_ARMOR_M_Condition;
 	information = DIA_Jan_DJG_ARMOR_M_Info;
 	permanent = TRUE;
-	description = "Доспех из драконьей чешуи. (Цена: 15000 монет)";
+	description = " Dragonscale armor. (Price: 15000 coins) " ;
 };
 
 func int DIA_Jan_DJG_ARMOR_M_Condition()
@@ -525,11 +525,11 @@ func int DIA_Jan_DJG_ARMOR_M_Condition()
 
 func void DIA_Jan_DJG_ARMOR_M_Info()
 {
-	AI_Output(other,self,"DIA_Jan_DJG_ARMOR_M_15_00");	//Я хочу купить эти доспехи.
+	AI_Output(other,self, " DIA_Jan_DJG_ARMOR_M_15_00 " );	// I want to buy this armor.
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 15000)
 	{
-		AI_Output(self,other,"DIA_Jan_DJG_ARMOR_M_10_01");	//Ты увидишь, они стоят своих денег.
+		AI_Output(self,other, " DIA_Jan_DJG_ARMOR_M_10_01 " );	// You'll see, they're worth the money.
 		B_GiveInvItems(other,self,ItMi_Gold,15000);
 		Npc_RemoveInvItems(self,ItMi_Gold,15000);
 		CreateInvItems(self,ITAR_Dargonscale,1);
@@ -538,24 +538,24 @@ func void DIA_Jan_DJG_ARMOR_M_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_DJG_ARMOR_M_10_02");	//У тебя недостаточно золота.
+		AI_Output(self,other, " DIA_Jan_DJG_ARMOR_M_10_02 " );	// You don't have enough gold.
 	};
 };
 
-instance DIA_Jan_DragonPlettBericht(C_Info)
+instance DIA_Jan_DragonPlettReport (C_Info)
 {
 	npc = DJG_714_Jan;
 	nr = 3;
 	condition = DIA_Jan_DragonPlettBericht_Condition;
-	information = DIA_Jan_DragonPlettBericht_Info;
-	description = "Насчет драконов...";
+	information = DIA_Jan_DragonPlettReport_Info;
+	description = " About dragons... " ;
 };
 
 var int DIA_Jan_DragonPlettBericht_NoPerm;
 
 func int DIA_Jan_DragonPlettBericht_Condition()
 {
-	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_JAN_Dragons) && (DIA_Jan_DragonPlettBericht_NoPerm == FALSE) && (MIS_OCGateOpen == FALSE) && (MIS_KilledDragons != 0))
+	if ((Chapter >=  4 ) && Npc_KnowsInfo(other,DIA_JAN_Dragons) && (DIA_Jan_DragonPlettBericht_NoPerm ==  FALSE ) && (MIS_OCGateOpen ==  FALSE ) && (MIS_KilledDragons !=  0 )) ;
 	{
 		return TRUE;
 	};
@@ -565,30 +565,30 @@ func void DIA_Jan_DragonPlettBericht_Info()
 {
 	if(MIS_KilledDragons == 1)
 	{
-		AI_Output(other,self,"DIA_Jan_DragonPlettBericht_15_00");	//Я убил дракона.
+		AI_Output(other,self, " DIA_Jan_DragonPlettBericht_15_00 " );	// I killed the dragon.
 	}
 	else if((MIS_KilledDragons == 2) || (MIS_KilledDragons == 3))
 	{
-		AI_Output(other,self,"DIA_Jan_DragonPlettBericht_15_01");	//Я убил несколько драконов.
+		AI_Output(other,self, " DIA_Jan_DragonPlettBericht_15_01 " );	// I killed some dragons.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Jan_DragonPlettBericht_15_02");	//Я убил всех драконов.
+		AI_Output(other,self, " DIA_Jan_DragonPlettBericht_15_02 " );	// I killed all the dragons.
 	};
 	if(hero.guild == GIL_DJG)
 	{
-		AI_Output(self,other,"DIA_Jan_DragonPlettBericht_10_03");	//И что? Ты ведь охотник на драконов, разве нет?
-		AI_Output(other,self,"DIA_Jan_DragonPlettBericht_15_04");	//А ты разве нет?
+		AI_Output(self,other, " DIA_Jan_DragonPlettBericht_10_03 " );	// So what? You're a dragon hunter, aren't you?
+		AI_Output(other,self, " DIA_Jan_DragonPlettBericht_15_04 " );	// Don't you?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_DragonPlettBericht_10_05");	//Да, конечно, но если честно, то мне это не интересно.
+		AI_Output(self,other, " DIA_Jan_DragonPlettBericht_10_05 " );	// Yes, of course, but to be honest, I'm not interested.
 	};
-	AI_Output(self,other,"DIA_Jan_DragonPlettBericht_10_06");	//Я уже говорил тебе, мне больше нравится делать оружие, чем убивать драконов.
+	AI_Output(self,other, " DIA_Jan_DragonPlettBericht_10_06 " );	// I already told you, I like making weapons more than killing dragons.
 	if((hero.guild != GIL_DJG) && (hero.guild != GIL_SLD))
 	{
-		AI_Output(self,other,"DIA_Jan_DragonPlettBericht_10_07");	//Впрочем, есть кое-что, что может заинтересовать меня.
-		AI_Output(self,other,"DIA_Jan_DragonPlettBericht_10_08");	//Если бы ты принес мне драконьей крови, я бы хорошо заплатил за нее.
+		AI_Output(self,other, " DIA_Jan_DragonPlettBericht_10_07 " );	// However, there is something that might interest me.
+		AI_Output(self,other, " DIA_Jan_DragonPlettBericht_10_08 " );	// If you brought me dragon blood, I would pay well for it.
 		Jan_WantsDragonBlood = TRUE;
 	};
 };
@@ -601,13 +601,13 @@ instance DIA_Jan_DragonBlood(C_Info)
 	condition = DIA_Jan_DragonBlood_Condition;
 	information = DIA_Jan_DragonBlood_Info;
 	permanent = TRUE;
-	description = "У меня есть кровь дракона для тебя.";
+	description = " I have dragon blood for you. " ;
 };
 
 
 func int DIA_Jan_DragonBlood_Condition()
 {
-	if((Jan_WantsDragonBlood == TRUE) && (MIS_OCGateOpen == FALSE) && Npc_HasItems(other,ItAt_DragonBlood) && ((hero.guild != GIL_DJG) && (hero.guild != GIL_SLD)))
+	if ((Jan_WantsDragonBlood ==  TRUE ) && (MY_OCGateOpen ==  FALSE ) && Npc_HasItems(other,It_DragonBlood) && ((hero.guild !=  GIL_DJG ) && (hero.guild !=  GIL_SLD ))) ;
 	{
 		return TRUE;
 	};
@@ -615,14 +615,14 @@ func int DIA_Jan_DragonBlood_Condition()
 
 func void DIA_Jan_DragonBlood_Info()
 {
-	AI_Output(other,self,"DIA_Jan_DragonBlood_15_00");	//Я принес тебе драконью кровь.
-	AI_Output(self,other,"DIA_Jan_DragonBlood_10_01");	//Отлично. Приноси мне всю кровь, что найдешь.
+	AI_Output(other,self, " DIA_Jan_DragonBlood_15_00 " );	// I brought you dragon blood.
+	AI_Output(self,other, " DIA_Jan_DragonBlood_10_01 " );	// Great. Bring me all the blood you can find.
 	Info_ClearChoices(DIA_Jan_DragonBlood);
 	Info_AddChoice(DIA_Jan_DragonBlood,Dialog_Back,DIA_Jan_DragonBlood_BACK);
 	if(Npc_HasItems(other,ItAt_DragonBlood) >= 1)
 	{
 		Info_AddChoice(DIA_Jan_DragonBlood,"(Все)",DIA_Jan_DragonBlood_all);
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Одну пробирку)",DIA_Jan_DragonBlood_1);
+		Info_AddChoice(DIA_Jan_DragonBlood, " (One tube) " ,DIA_Jan_DragonBlood_1);
 	};
 };
 
@@ -651,7 +651,7 @@ func void DIA_Jan_DragonBlood_1()
 	if(Npc_HasItems(other,ItAt_DragonBlood) >= 1)
 	{
 		Info_AddChoice(DIA_Jan_DragonBlood,"(Все)",DIA_Jan_DragonBlood_all);
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Одну пробирку)",DIA_Jan_DragonBlood_1);
+		Info_AddChoice(DIA_Jan_DragonBlood, " (One tube) " ,DIA_Jan_DragonBlood_1);
 	};
 	BloodLeft = IntToString(Npc_HasItems(other,ItAt_DragonBlood));
 	BloodText = ConcatStrings(BloodLeft,PRINT_NumberLeft);
@@ -678,7 +678,7 @@ func void DIA_Jan_DragonBlood_all()
 	if(Npc_HasItems(other,ItAt_DragonBlood) >= 1)
 	{
 		Info_AddChoice(DIA_Jan_DragonBlood,"(Все)",DIA_Jan_DragonBlood_all);
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Одну пробирку)",DIA_Jan_DragonBlood_1);
+		Info_AddChoice(DIA_Jan_DragonBlood, " (One tube) " ,DIA_Jan_DragonBlood_1);
 	};
 	BloodLeft = IntToString(Npc_HasItems(other,ItAt_DragonBlood));
 	BloodText = ConcatStrings(BloodLeft,PRINT_NumberLeft);
@@ -693,7 +693,7 @@ instance DIA_Jan_NACHOCGATEOPEN(C_Info)
 	condition = DIA_Jan_NACHOCGATEOPEN_Condition;
 	information = DIA_Jan_NACHOCGATEOPEN_Info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -707,15 +707,15 @@ func int DIA_Jan_NACHOCGATEOPEN_Condition()
 
 func void DIA_Jan_NACHOCGATEOPEN_Info()
 {
-	AI_Output(other,self,"DIA_Jan_NACHOCGATEOPEN_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_Jan_NACHOCGATEOPEN_10_01");	//Абсолютно ничего не ясно!
+	AI_Output(other,self, " DIA_Jan_NACHOCGATEOPEN_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Jan_NACHOCGATEOPEN_10_01 " );	// Absolutely nothing is clear!
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Jan_NACHOCGATEOPEN_10_02");	//Зачем эти идиоты открыли ворота? Вы, паладины, ни на что не годитесь!
+		AI_Output(self,other, " DIA_Jan_NACHOCGATEOPEN_10_02 " );	// Why did those idiots open the gate? You paladins are good for nothing!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_NACHOCGATEOPEN_10_03");	//Они вот так вот просто взяли и открыли ворота. Идиоты! Мне такое не понять.
+		AI_Output(self,other, " DIA_Jan_NACHOCGATEOPEN_10_03 " );	// They just took it like that and opened the gate. Idiots! I don't understand this.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -734,7 +734,7 @@ instance DIA_Jan_PICKPOCKET(C_Info)
 
 func int DIA_Jan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(37,95);
+	return  C_Robbery ( 37 , 95 );
 };
 
 func void DIA_Jan_PICKPOCKET_Info()
@@ -746,7 +746,7 @@ func void DIA_Jan_PICKPOCKET_Info()
 
 func void DIA_Jan_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Jan_PICKPOCKET);
 };
 
@@ -763,7 +763,7 @@ instance DIA_JAN_ARMORCANTEACH(C_Info)
 	condition = dia_jan_armorcanteach_condition;
 	information = dia_jan_armorcanteach_info;
 	permanent = TRUE;
-	description = "Ты умеешь ковать доспехи?";
+	description = " Can you forge armor? " ;
 };
 
 
@@ -777,87 +777,87 @@ func int dia_jan_armorcanteach_condition()
 
 func void dia_jan_armorcanteach_info()
 {
-	AI_Output(other,self,"DIA_Jan_ArmorCanTeach_01_00");	//Ты умеешь ковать доспехи?
-	AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_01");	//Да, я кое-что умею. А тебе зачем?
-	AI_Output(other,self,"DIA_Jan_ArmorCanTeach_01_02");	//А можешь меня научить этому?
-	AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_03");	//Ну, почему бы и нет. Ведь ты тоже охотник на драконов. Я бы мог показать тебе несколько способов, как улучшить свой доспех.
-	AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_04");	//Правда, для начала тебе надо немного разбираться в ковке.
+	AI_Output(other,self, " DIA_Jan_ArmorCanTeach_01_00 " );	// Can you forge armor?
+	AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_01 " );	// Yes, I can do something. Why you asking?
+	AI_Output(other,self, " DIA_Jan_ArmorCanTeach_01_02 " );	// Can you teach me how to do this?
+	AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_03 " );	// Well, why not. You are also a dragon hunter. I could show you some ways to improve your armor.
+	AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_04 " );	// True, you need to know a little about forging first.
 
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
-		AI_Output(other,self,"DIA_Jan_ArmorCanTeach_01_05");	//Я довольно сносно разбираюсь в ковке.
-		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_06");	//Да, вижу, что разбираешся. Хорошо, я покажу тебе, как это сделать.
-		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_07");	//Но сам понимаешь, тебе за это придется заплатить.
-		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_08");	//А так - только скажи, и мы приступим к твоему обучению.
+		AI_Output(other,self, " DIA_Jan_ArmorCanTeach_01_05 " );	// I'm pretty good at forging.
+		AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_06 " );	// Yes, I see that you understand. Okay, I'll show you how to do it.
+		AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_07 " );	// But you know, you'll have to pay for it.
+		AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_08 " );	// And so - just say it, and we will begin your training.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_09");	//А ты, как я погляжу, даже понятия не имеешь, что это такое!
-		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_10");	//Вот что, парень. Иди сначала научись хоть как-то ковать. А после мы поговорим о твоем обучении.
-		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_11");	//И еще: сам понимаешь, тебе за это придется заплатить.
+		AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_09 " );	// And you, as I see it, even have no idea what it is!
+		AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_10 " );	// Here's the thing, man. Go learn how to forge first. And then we'll talk about your training.
+		AI_Output(self,other, " DIA_Jan_ArmorCanTeach_01_11 " );	// And one more thing: you yourself understand, you will have to pay for this.
 	};
 
 	JAN_TEACHARMOR = TRUE;
 	Log_CreateTopic(TOPIC_ARMORTEACHER,LOG_NOTE);
-	B_LogEntry(TOPIC_ARMORTEACHER,"Ян может научить меня улучшать доспехи охотников на драконов.");
+	B_LogEntry( TOPIC_ARMORTEACHER , " Yan can teach me how to upgrade dragon hunter armor. " );
 };
 
 func void b_jan_teacharmor_4()
 {
-	AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_01");	//Итак, приступим. Проверь, что все необходимые материалы у тебя под рукой. Берешь разогретую стальную заготовку...
+	AI_Output(self,other, " DIA_Jan_TeachArmor_4_01_01 " );	// So let's get started. Make sure you have all the necessary materials at hand. You take a heated steel billet ...
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
 		AI_GotoWP(self,"NW_BIGFARM_SMITH_ANVIL");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_02");	//...на наковальне придаешь ей форму пластины и вковываешь в нее кусок магической руды....
-		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_03");	//...далее делаешь крепления и соединяешь пластину с ними, тщательно проковывая места схода...
-		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_04");	//...после этого тщательно крепишь полученный элемент на корпус доспеха - вот таким образом... смотри...(показывает)
+		AI_Output(self,other, " DIA_Jan_TeachArmor_4_01_02 " );	// ...on an anvil you give it the shape of a plate and forge a piece of magic ore into it....
+		AI_Output(self,other, " DIA_Jan_TeachArmor_4_01_03 " );	// ...then you make fasteners and connect the plate to them, carefully forging the vanishing points...
+		AI_Output(self,other, " DIA_Jan_TeachArmor_4_01_04 " );	// ...after that, you carefully fasten the resulting element to the body of the armor - like this... look... (shows)
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_05");	//...готово!
-		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_06");	//Это все, что тебе следует знать, чтобы улучшить этот доспех.
+		AI_Output(self,other, " DIA_Jan_TeachArmor_4_01_06 " );	// That's all you need to know to upgrade this armor.
 	};
 };
 
 func void b_jan_teacharmor_5()
 {
-	AI_Output(self,other,"DIA_Jan_TeachArmor_5_01_01");	//Ну что ж, пожалуй, начнем. Для создания этого доспеха тебе потребуется много времени и усилий - но поверь, это того стоит...
+	AI_Output(self,other, " DIA_Jan_TeachArmor_5_01_01 " );	// Well, let's get started. It will take a lot of time and effort to create this armor - but trust me, it's worth it...
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
 		AI_GotoWP(self,"NW_BIGFARM_SMITH_ANVIL");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Jan_TeachArmor_5_01_02");	//...возьми раскаленную стальную заготовку и раздели ее на несколько равных частей. Постарайся, чтобы они были примерно одного размера...
-		AI_Output(self,other,"DIA_Jan_TeachArmor_5_01_03");	//...далее бери каждую часть и обработай ее последовательно с помощью магической рудной крошки. После скрепи две части и прокуй места схода...
-		AI_Output(self,other,"DIA_Jan_TeachArmor_5_01_04");	//...а после полученный элемент скрепляешь с доспехом по бокам с помощью металлической пластины... Смотри, как я это делаю... (показывает)
-		AI_Output(self,other,"DIA_Jan_TeachArmor_5_01_05");	//...видишь, как он сел четко, практически обтекая поверхность доспеха. Усиливаешь крепление металлическими болтами, и ...
+		AI_Output(self,other, " DIA_Jan_TeachArmor_5_01_02 " );	// ...take a hot steel billet and divide it into several equal parts. Try to keep them about the same size...
+		AI_Output(self,other, " DIA_Jan_TeachArmor_5_01_03 " );	// ...next, take each piece and process it sequentially with magical ore chips. After fasten the two parts and forge the places of convergence ...
+		AI_Output(self,other, " DIA_Jan_TeachArmor_5_01_04 " );	// ...and then you fasten the resulting element to the armor on the sides using a metal plate... Watch how I do it... (shows)
+		AI_Output(self,other, " DIA_Jan_TeachArmor_5_01_05 " );	// ...you see how he sat down clearly, practically flowing around the surface of the armor. Strengthen the fastening with metal bolts, and ...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
-		AI_Output(self,other,"DIA_Jan_TeachArmor_5_01_06");	//...готово! Ну и как тебе процесс? Ничего, немного практики - и у тебя все выйдет, как надо.
-		AI_Output(self,other,"DIA_Jan_TeachArmor_5_01_07");	//Теперь иди, пробуй сам.
+		AI_Output(self,other, " DIA_Jan_TeachArmor_5_01_06 " );	// ...done! So how do you like the process? Nothing, a little practice - and you'll get it right.
+		AI_Output(self,other, " DIA_Jan_TeachArmor_5_01_07 " );	// Now go try it yourself.
 	};
 };
 
 func void b_jan_teacharmor_6()
 {
-	AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_01");	//Овладев этим знанием, ты сможешь сделать такой доспех, с которым по своей прочности и надежности не сравнится никакой другой...
+	AI_Output(self,other, " DIA_Jan_TeachArmor_6_01_01 " );	// Having mastered this knowledge, you will be able to make such armor, which no other can be compared with in terms of its strength and reliability...
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
 		AI_GotoWP(self,"NW_BIGFARM_SMITH_ANVIL");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_02");	//...следи внимательно. Берешь раскаленную стальную заготовку и на наковальне придаешь ей форму пластины...
-		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_03");	//...после этого покрываешь полученный элемент магической рудной крошкой и поверху наносишь слой черной руды...
-		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_04");	//...далее скрепляешь две таких пластины стальными болтами и крепишь на каркас брони... вот так, как я это делаю...(показывает)
-		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_05");	//...это добавит прочности в местах крепления всех элементов доспеха...еще немного подбиваем контур брони, и...
+		AI_Output(self,other, " DIA_Jan_TeachArmor_6_01_02 " );	// ...watch carefully. You take a hot steel billet and on the anvil you give it the shape of a plate ...
+		AI_Output(self,other, " DIA_Jan_TeachArmor_6_01_03 " );	// ...after that, cover the resulting element with magical ore chips and apply a layer of black ore on top...
+		AI_Output(self,other, " DIA_Jan_TeachArmor_6_01_04 " );	// ...then you fasten two such plates with steel bolts and fasten them to the armor frame... this is how I do it... (shows)
+		AI_Output(self,other, " DIA_Jan_TeachArmor_6_01_05 " );	// ...this will add strength in the places of fastening of all elements of the armor...we knock out the contour of the armor a little more, and...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
-		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_06");	//...все, доспех готов! Воистину, настоящее произведения искусства.
-		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_07");	//Мне больше нечему тебя учить. Все, что я знал, я тебе поведал. Теперь иди и опробуй свои знания.
+		AI_Output(self,other, " DIA_Jan_TeachArmor_6_01_06 " );	// ...that's it, the armor is ready! Truly a true work of art.
+		AI_Output(self,other, " DIA_Jan_TeachArmor_6_01_07 " );	// I have nothing more to teach you. Everything I knew, I told you. Now go and test your knowledge.
 	};
 };
 
@@ -868,15 +868,15 @@ func void b_janarmorchoices()
 
 	if((PLAYER_TALENT_SMITH[20] == FALSE) && (SHOW_DJG_ARMOR_L == TRUE))
 	{
-		Info_AddChoice(dia_jan_armorteach,B_BuildLearnString("Улучшить легкие доспехи драконоборца (Цена: 4000 монет)",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_L_V1)),dia_jan_armorteach_itar_djg_l_v1);
+		Info_AddChoice(dia_jan_armorteach,B_BuildLearnString( " Upgrade Dragonslayer Light Armor (Cost: 4000 coins) " ,B_GetLearnCostTalent(other, NPC_TALENT_SMITH , WEAPON_ITAR_DJG_L_V1 )),dia_jan_armorteach_itar_djg_l_v1);
 	};
 	if((PLAYER_TALENT_SMITH[21] == FALSE) && (Show_DJG_Armor_M == TRUE))
 	{
-		Info_AddChoice(dia_jan_armorteach,B_BuildLearnString("Улучшить доспехи драконоборца (Цена: 6000 монет)",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_M_V1)),dia_jan_armorteach_itar_djg_m_v1);
+		Info_AddChoice(dia_jan_armorteach,B_BuildLearnString( " Upgrade Dragonslayer Armor (Cost: 6000 coins) " ,B_GetLearnCostTalent(other, NPC_TALENT_SMITH , WEAPON_ITAR_DJG_M_V1 )),dia_jan_armorteach_itar_djg_m_v1);
 	};
 	if((PLAYER_TALENT_SMITH[22] == FALSE) && (SHOW_DJG_ARMOR_H == TRUE))
 	{
-		Info_AddChoice(dia_jan_armorteach,B_BuildLearnString("Улучшить тяжелые доспехи драконоборца (Цена: 8000 монет)",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_H_V1)),dia_jan_armorteach_itar_djg_h_v1);
+		Info_AddChoice(dia_jan_armorteach,B_BuildLearnString( " Upgrade Dragonslayer Heavy Armor (Cost: 8000 coins) " ,B_GetLearnCostTalent(other, NPC_TALENT_SMITH , WEAPON_ITAR_DJG_H_V1 )),dia_jan_armorteach_itar_djg_h_v1);
 	};
 };
 
@@ -888,7 +888,7 @@ instance DIA_JAN_ARMORTEACH(C_Info)
 	condition = dia_jan_armorteach_condition;
 	information = dia_jan_armorteach_info;
 	permanent = TRUE;
-	description = "Научи меня улучшать доспехи.";
+	description = " Teach me how to upgrade my armor. " ;
 };
 
 
@@ -905,16 +905,16 @@ func int dia_jan_armorteach_condition()
 
 func void dia_jan_armorteach_info()
 {
-	AI_Output(other,self,"DIA_Jan_ArmorTeach_01_00");	//Научи меня улучшать доспехи.
-	if(Wld_IsTime(8,0,20,0))
+	AI_Output(other,self, " DIA_Jan_ArmorTeach_01_00 " );	// Teach me how to upgrade armor.
+	if (Wld_IsTime( 8 , 0 , 20 , 0 ))
 	{
-		AI_Output(self,other,"DIA_Jan_ArmorTeach_01_01");	//И что же ты хочешь узнать?
+		AI_Output(self,other, " DIA_Jan_ArmorTeach_01_01 " );	// And what do you want to know?
 		b_janarmorchoices();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_ArmorTeach_01_02");	//На сегодня я уже закончил работать в кузне.
-		AI_Output(self,other,"DIA_Jan_ArmorTeach_01_03");	//Приходи завтра утром, тогда и поговорим об этом.
+		AI_Output(self,other, " DIA_Jan_ArmorTeach_01_02 " );	// I've already finished working at the forge for today.
+		AI_Output(self,other, " DIA_Jan_ArmorTeach_01_03 " );	// Come tomorrow morning, then we'll talk about it.
 	};
 };
 
@@ -936,7 +936,7 @@ func void dia_jan_armorteach_itar_djg_l_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_TeachArmor_04_00");	//Но ведь у тебя недостаточно золота! Так что пока забудь об этом.
+		AI_Output(self,other, " DIA_Jan_TeachArmor_04_00 " );	// But you don't have enough gold! So for now, forget about it.
 	};
 	b_janarmorchoices();
 };
@@ -954,7 +954,7 @@ func void dia_jan_armorteach_itar_djg_m_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_TeachArmor_05_00");	//Но ведь у тебя недостаточно золота! Так что пока забудь об этом.
+		AI_Output(self,other, " DIA_Jan_TeachArmor_05_00 " );	// But you don't have enough gold! So for now, forget about it.
 	};
 	b_janarmorchoices();
 };
@@ -972,7 +972,7 @@ func void dia_jan_armorteach_itar_djg_h_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jan_TeachArmor_06_00");	//Но ведь у тебя недостаточно золота! Так что пока забудь об этом.
+		AI_Output(self,other, " DIA_Jan_TeachArmor_06_00 " );	// But you don't have enough gold! So for now, forget about it.
 	};
 	b_janarmorchoices();
 };
