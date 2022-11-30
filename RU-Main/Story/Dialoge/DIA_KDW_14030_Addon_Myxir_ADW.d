@@ -27,7 +27,7 @@ instance DIA_Addon_Myxir_ADWHello(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Myxir_ADWHello_Condition;
 	information = DIA_Addon_Myxir_ADWHello_Info;
-	description = "Есть новые находки?";
+	description = " Any new finds? " ;
 };
 
 
@@ -38,59 +38,59 @@ func int DIA_Addon_Myxir_ADWHello_Condition()
 
 func void DIA_Addon_Myxir_ADWHello_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_ADWHello_15_00");	//Есть новые находки?
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_12_01");	//Зодчие просто поражают меня!
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_12_02");	//Жаль, что все они мертвы, как и их язык.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_12_03");	//Даже их могущественные ритуалы и духи предков не могли спасти их.
-	AI_Output(other,self,"DIA_Addon_Myxir_ADWHello_15_04");	//Духи предков?
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_12_05");	//Зодчие жили в тесной связи с миром духов.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_12_06");	//Если я правильно понял, они верили, что их предки поддерживают с ними постоянный контакт.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_12_07");	//Они регулярно проводили ритуалы, призывающие духов. Духи давали им советы и помогали достичь просвещения.
+	AI_Output(other,self, " DIA_Addon_Myxir_ADWHello_15_00 " );	// Any new finds?
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_12_01 " );	// Architects just amaze me!
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_12_02 " );	// Too bad they're all dead, like their language.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_12_03 " );	// Even their powerful rituals and ancestral spirits couldn't save them.
+	AI_Output(other,self, " DIA_Addon_Myxir_ADWHello_15_04 " );	// Spirits of ancestors?
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_12_05 " );	// Architects lived in close connection with the world of spirits.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_12_06 " );	// If I understand correctly, they believed that their ancestors were in constant contact with them.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_12_07 " );	// They regularly performed rituals to summon spirits. The spirits gave them advice and helped them achieve enlightenment.
 	Info_ClearChoices(DIA_Addon_Myxir_ADWHello);
-	Info_AddChoice(DIA_Addon_Myxir_ADWHello,"Как работали эти ритуалы?",DIA_Addon_Myxir_ADWHello_wie);
-	Info_AddChoice(DIA_Addon_Myxir_ADWHello,"Та нежить, что мне доводилось встречать, была не очень-то разговорчивой.",DIA_Addon_Myxir_ADWHello_Watt);
+	Info_AddChoice(DIA_Addon_Myxir_ADWHello, " How did these rituals work? " ,DIA_Addon_Myxir_ADWHello_wie);
+	Info_AddChoice(DIA_Addon_Myxir_ADWHello, " The undead I've met weren't very talkative. " ,DIA_Addon_Myxir_ADWHello_Watt);
 };
 
 func void DIA_Addon_Myxir_ADWHello_wie()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_ADWHello_wie_15_00");	//Как работали эти ритуалы?
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_wie_12_01");	//Стражам мертвых были известны особые заклинания, которые использовались для умиротворения духов.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_wie_12_02");	//Впрочем, описания, которые я здесь нахожу, большей частью малопонятны. Очень редко мне удается найти четкий ответ на интересующий меня вопрос.
+	AI_Output(other,self, " DIA_Addon_Myxir_ADWHello_wie_15_00 " );	// How did these rituals work?
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_wie_12_01 " );	// Guardians of the dead were known to have special spells that were used to appease the spirits.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_wie_12_02 " );	// However, the descriptions I find here are mostly obscure. Very rarely do I manage to find a clear answer to a question that interests me.
 };
 
 func void DIA_Addon_Myxir_ADWHello_Watt()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_ADWHello_Watt_15_00");	//Та нежить, что мне доводилось встречать, была не очень-то разговорчивой.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_Watt_12_01");	//Но зодчие призывали не злобных бездушных созданий, таких как зомби или скелеты.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_Watt_12_02");	//Им удавалось вызывать духов великих воинов, жрецов и правителей.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADWHello_Watt_12_03");	//Я не сомневаюсь, что они на самом деле существовали.
+	AI_Output(other,self, " DIA_Addon_Myxir_ADWHello_Watt_15_00 " );	// The undead I've met weren't very talkative.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_Watt_12_01 " );	// But the builders didn't call for evil soulless creatures like zombies or skeletons.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_Watt_12_02 " );	// They were able to summon the spirits of great warriors, priests and rulers.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADWHello_Watt_12_03 " );	// I have no doubt they actually existed.
 };
 
 
-instance DIA_Addon_Myxir_PermADW(C_Info)
+instances of DIA_Addon_Myxir_PermADW (C_Info)
 {
 	npc = KDW_14030_Addon_Myxir_ADW;
 	nr = 10;
 	condition = DIA_Addon_Myxir_PermADW_Condition;
 	information = DIA_Addon_Myxir_PermADW_Info;
 	permanent = TRUE;
-	description = "Если я встречу духа, то обязательно тебе сообщу.";
+	description = " If I meet a spirit, I will definitely let you know. " ;
 };
 
 
 func int DIA_Addon_Myxir_PermADW_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Myxir_ADWHello) && (Saturas_RiesenPlan == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Myxir_ADWHello ) && ( Saturation_SnowPlan ==  FALSE )) .
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Myxir_PermADW_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_PermADW_15_00");	//Если я встречу духа, то обязательно тебе сообщу.
-	AI_Output(self,other,"DIA_Addon_Myxir_PermADW_12_01");	//(смеется) Да, я на этом настаиваю.
+	AI_Output(other,self, " DIA_Addon_Myxir_PermADW_15_00 " );	// If I meet a spirit, I will definitely let you know.
+	AI_Output(self,other, " DIA_Addon_Myxir_PermADW_12_01 " );	// (laughs) Yes, I insist on it.
 };
 
 instance DIA_Addon_Myxir_AncientBook(C_Info)
@@ -100,7 +100,7 @@ instance DIA_Addon_Myxir_AncientBook(C_Info)
 	condition = DIA_Addon_Myxir_AncientBook_Condition;
 	information = DIA_Addon_Myxir_AncientBook_Info;
 	permanent = FALSE;
-	description = "Ты выглядишь немного озадаченным.";
+	description = " You look a little puzzled. " ;
 };
 
 func int DIA_Addon_Myxir_AncientBook_Condition()
@@ -113,24 +113,24 @@ func int DIA_Addon_Myxir_AncientBook_Condition()
 
 func void DIA_Addon_Myxir_AncientBook_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_AncientBook_01_00");	//Ты выглядишь немного озадаченным.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_01");	//Понимаешь, с тех пор, как я начал изучать культуру зодчих, меня постоянно терзает один вопрос.
+	AI_Output(other,self, " DIA_Addon_Myxir_AncientBook_01_00 " );	// You look a little puzzled.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_01 " );	// You see, since I began to study the culture of architects, I have been constantly tormented by one question.
 	AI_Output(other,self,"DIA_Addon_Myxir_AncientBook_01_02");	//Какой?
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_03");	//Нам уже известно, что Древние использовали в качестве письмен каменные таблички.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_04");	//Но мне кажется, что у них должны были быть и полновесные книги, в которых они хранили свои знания и мудрость.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_05");	//На севере этой долины есть большой храм, который, по всей видимости, Зодчие использовали в качестве своей библиотеки.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_06");	//К сожалению, у меня сейчас нет возможности самому отправиться туда и досконально его изучить.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_07");	//Но, может, у тебя это получится?
-	AI_Output(other,self,"DIA_Addon_Myxir_AncientBook_01_08");	//А ты уверен, что книги зодчих действительно существуют?
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_09");	//Не уверен. Но их цивилизация насчитывает не одно тысячелетие.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_10");	//А за такой огромный срок просто невозможно сохранить все записи только на кусках камня.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_11");	//Поэтому вполне возможно, что мы просто не знаем о существовании других источников их знаний.
-	AI_Output(other,self,"DIA_Addon_Myxir_AncientBook_01_12");	//Ну ладно. Загляну туда при случае.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBook_01_13");	//Отлично. Если найдешь что-нибудь интересное, обязательно покажи мне.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_03 " );	// We already know that the Ancients used stone tablets as writing.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_04 " );	// But it seems to me that they should have had full-fledged books in which they kept their knowledge and wisdom.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_05 " );	// In the north of this valley there is a large temple, which, apparently, the Builders used as their library.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_06 " );	// Unfortunately, I don't currently have the opportunity to go there myself and study it thoroughly.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_07 " );	// But maybe you can do it?
+	AI_Output(other,self, " DIA_Addon_Myxir_AncientBook_01_08 " );	// Are you sure that the books of architects really exist?
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_09 " );	// Not sure. But their civilization has more than one millennium.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_10 " );	// And for such a huge period it is simply impossible to save all the records only on pieces of stone.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_11 " );	// So it's quite possible that we just don't know about the existence of other sources of their knowledge.
+	AI_Output(other,self, " DIA_Addon_Myxir_AncientBook_01_12 " );	// Okay. I'll look there just in case.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBook_01_13 " );	// Great. If you find something interesting, be sure to show me.
 	MIS_MyxirAncientBook = LOG_Running;
 	Log_CreateTopic(TOPIC_MyxirAncientBook,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MyxirAncientBook,LOG_Running);
-	B_LogEntry(TOPIC_MyxirAncientBook,"Миксир уверен, что у Зодчих были свои настоящие книги. Он думает, что их можно найти в библиотеке, которая располагается на северо-востоке долины.");
+	B_LogEntry(TOPIC_MyxirAncientBook, " Mixir is sure that the Builders had their own real books. He thinks they can be found in the library, which is located in the northeast of the valley. " );
 };
 
 instance DIA_Addon_Myxir_AncientBookDone(C_Info)
@@ -140,7 +140,7 @@ instance DIA_Addon_Myxir_AncientBookDone(C_Info)
 	condition = DIA_Addon_Myxir_AncientBookDone_Condition;
 	information = DIA_Addon_Myxir_AncientBookDone_Info;
 	permanent = FALSE;
-	description = "Взгляни на это.";
+	description = " Look at this. " ;
 };
 
 func int DIA_Addon_Myxir_AncientBookDone_Condition()
@@ -154,18 +154,18 @@ func int DIA_Addon_Myxir_AncientBookDone_Condition()
 func void DIA_Addon_Myxir_AncientBookDone_Info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Addon_Myxir_AncientBookDone_01_00");	//Взгляни на это. 
+	AI_Output(other,self, " DIA_Addon_Myxir_AncientBookDone_01_00 " );	// Take a look at this.
 	B_GiveInvItems(other,self,ItWr_AncientBook_01,1);
 	Npc_RemoveInvItems(self,ItWr_AncientBook_01,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBookDone_01_01");	//О Аданос...(изумленно) Где ты нашел этот древний манускрипт?
-	AI_Output(other,self,"DIA_Addon_Myxir_AncientBookDone_01_02");	//Там, где ты и советовал мне поискать - в библиотеке Зодчих.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBookDone_01_03");	//Невероятно! Значит, я был прав, и они действительно хранили некоторые свои записи в таких вот книгах.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBookDone_01_04");	//Необходимо как можно скорее тщательнейшим образом изучить эти записи.
-	AI_Output(self,other,"DIA_Addon_Myxir_AncientBookDone_01_05");	//Возможно, именно здесь кроются ответы на интересующие нас вопросы.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBookDone_01_01 " );	// Oh Adanos...(astonished) Where did you find this ancient manuscript?
+	AI_Output(other,self, " DIA_Addon_Myxir_AncientBookDone_01_02 " );	// Where you advised me to look - in the Library of Architects.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBookDone_01_03 " );	// Incredible! So, I was right, and they really kept some of their notes in such books.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBookDone_01_04 " );	// These entries should be carefully examined as soon as possible.
+	AI_Output(self,other, " DIA_Addon_Myxir_AncientBookDone_01_05 " );	// Perhaps this is where the answers to our questions lie.
 	MIS_MyxirAncientBook = LOG_Success;
 	Log_SetTopicStatus(TOPIC_MyxirAncientBook,LOG_Success);
-	B_LogEntry(TOPIC_MyxirAncientBook,"Я отдал Миксиру книгу Зодчих, которую нашел в развалинах библиотеки.");
+	B_LogEntry(TOPIC_MyxirAncientBook, " I gave Mixer the Builder's book I found in the ruins of the library. " );
 };
 
 instance DIA_Addon_Myxir_GeistTafel(C_Info)
@@ -174,76 +174,76 @@ instance DIA_Addon_Myxir_GeistTafel(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Myxir_GeistTafel_Condition;
 	information = DIA_Addon_Myxir_GeistTafel_Info;
-	description = "Меня послал Сатурас.";
+	description = " Saturas sent me. " ;
 };
 
 func int DIA_Addon_Myxir_GeistTafel_Condition()
 {
-	if((Saturas_RiesenPlan == TRUE) && Npc_KnowsInfo(other,DIA_Addon_Myxir_ADWHello))
+	if ((Saturated_SnowPlan ==  TRUE ) && Npc_KnowsInfo(other,DIA_Addon_Myxir_ADWHello))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Myxir_GeistTafel_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_15_00");	//Меня послал Сатурас.
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_15_01");	//Ворон проник в храм и закрыл его двери изнутри.
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_15_02");	//Сатурас считает, что он узнал о том, как попасть в храм, у духа!
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_03");	//(пораженно) О, Аданос!
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_04");	//Должно быть, чтобы узнать, как открыть ворота, он призвал верховного жреца Кардимона.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_05");	//Судя по записям, его гробница была в пещерах под крепостью!
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_06");	//Ты должен поступить так же.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_07");	//Но Кардимона тебе вызвать уже не удастся...
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_08");	//На западе долины находится гробница Куарходрона, предводителя воинов.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_09");	//Ты должен отыскать ее... и пробудить Куарходрона.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_10");	//Здесь написано, как тот, кто верит в Аданоса, может вызвать духа.
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_15_11");	//Ты думаешь, что это сработает?
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_12");	//Мне в руки попадалось множество бессмысленных манускриптов.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_13");	//Например, записи Ю'Бериона, предводителя Братства Спящего.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_12_14");	//Но автору ЭТИХ записей я верю.
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistTafel_15_00 " );	// Saturas sent me.
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistTafel_15_01 " );	// The raven entered the temple and closed its doors from the inside.
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistTafel_15_02 " );	// Saturas thinks he learned how to get to the temple from a spirit!
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_03 " );	// (amazed) Oh, Adanos!
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_04 " );	// He must have summoned High Priest Cardimon to learn how to open the gate.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_05 " );	// According to the records, his tomb was in the caves under the fortress!
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_06 " );	// You should do the same.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_07 " );	// But you won't be able to summon Cardimon...
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_08 " );	// To the west of the valley is the tomb of Quarhodron, leader of the warriors.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_09 " );	// You must find her... and awaken Quarhodron.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_10 " );	// It is written here how one who believes in Adanos can summon a spirit.
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistTafel_15_11 " );	// Do you think this will work?
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_12 " );	// I've come across a lot of meaningless manuscripts.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_13 " );	// For example, records of Yu'Berion, leader of the Brotherhood of the Sleeper.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_12_14 " );	// But I believe the author of THESE entries.
 	MIS_ADDON_Myxir_GeistBeschwoeren = LOG_Running;
 	Info_ClearChoices(DIA_Addon_Myxir_GeistTafel);
-	Info_AddChoice(DIA_Addon_Myxir_GeistTafel,"Ты серьезно?",DIA_Addon_Myxir_GeistTafel_geist);
-	Info_AddChoice(DIA_Addon_Myxir_GeistTafel,"Почему Куарходрон? Почему не верховный жрец Кардимон?",DIA_Addon_Myxir_GeistTafel_Khardimon);
-	Info_AddChoice(DIA_Addon_Myxir_GeistTafel,"Братство Спящего распространяло не одну лишь ложь.",DIA_Addon_Myxir_GeistTafel_psi);
+	Info_AddChoice(DIA_Addon_Myxir_GeistTafel, " Are you serious? " ,DIA_Addon_Myxir_GeistTafel_geist);
+	Info_AddChoice(DIA_Addon_Myxir_GeistTafel, " Why Quarhodron? Why not High Priest Cardimon? " ,DIA_Addon_Myxir_GeistTafel_Khardimon);
+	Info_AddChoice(DIA_Addon_Myxir_GeistTafel, " The Brotherhood of the Sleeper spread more than just lies. " ,DIA_Addon_Myxir_GeistTafel_psi);
 };
 
 func void DIA_Addon_Myxir_GeistTafel_Khardimon()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_Khardimon_15_00");	//Почему Куарходрон? Почему не верховный жрец Кардимон?
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_Khardimon_12_01");	//Своим ритуалом Ворон осквернил гробницу Кардимона.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_Khardimon_12_02");	//Так что тебе придется найти другого духа.
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistTafel_Khardimon_15_00 " );	// Why Quarhodron? Why not High Priest Cardimon?
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_Khardimon_12_01 " );	// Raven defiled Cardimon's tomb with his ritual.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_Khardimon_12_02 " );	// So you'll have to find another spirit.
 };
 
 func void DIA_Addon_Myxir_GeistTafel_psi()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_psi_15_00");	//Братство Спящего распространяло не одну лишь ложь. Спящий на самом деле существовал.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_psi_12_01");	//Не то, о чем они говорили, заставляло сомневаться в их правдивости, а те слова, которые они использовали.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_psi_12_02");	//Речи членов Братства были запутанны и непонятны. Их разум был затуманен болотной травой, которую они курили без остановки.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_psi_12_03");	//А текст на этой табличке написан серьезным и разумным человеком. Это убеждает меня в правдивости его слов.
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistTafel_psi_15_00 " );	// The Brotherhood of the Sleeper was spreading more than just lies. The sleeper actually existed.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_psi_12_01 " );	// It wasn't what they were talking about that made them doubt their veracity, but the words they used.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_psi_12_02 " );	// The speeches of the members of the Brotherhood were confused and incomprehensible. Their minds were clouded by the swamp grass they smoked non-stop.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_psi_12_03 " );	// And the text on this tablet is written by a serious and reasonable person. This convinces me of the veracity of his words.
 };
 
 func void DIA_Addon_Myxir_GeistTafel_geist()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_geist_15_00");	//Ты серьезно?
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_geist_12_01");	//Мы должны использовать любую возможность.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_geist_12_02");	//Даже если у нас есть лишь призрачный шанс встретиться с одним из Зодчих, мы должны его использовать.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_geist_12_03");	//В конце концов, Ворону-то это удалось.
-	Info_AddChoice(DIA_Addon_Myxir_GeistTafel,"И что же мне нужно сделать, чтобы вызвать этого духа?",DIA_Addon_Myxir_GeistTafel_wie);
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistTafel_geist_15_00 " );	// Are you serious?
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_geist_12_01 " );	// We should use every opportunity.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_geist_12_02 " );	// Even if we only have a slim chance of meeting one of the Builders, we should use it.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_geist_12_03 " );	// In the end, Raven succeeded.
+	Info_AddChoice(DIA_Addon_Myxir_GeistTafel, " So what do I need to do to summon this spirit? " ,DIA_Addon_Myxir_GeistTafel_wie);
 };
 
 func void DIA_Addon_Myxir_GeistTafel_wie()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_wie_15_00");	//И что же мне нужно сделать, чтобы вызвать этого духа?
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_wie_12_01");	//Найди гробницу Куарходрона. Она находится на западе долины.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_wie_12_02");	//Духа вызвать можно при помощи заклинания стражей мертвых. Вот, я записал его.
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistTafel_wie_15_00 " );	// And what do I need to do to summon this spirit?
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_wie_12_01 " );	// Find Quarhodron's tomb. It is located in the west of the valley.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_wie_12_02 " );	// The spirit can be summoned using the guardian of the dead spell. Here, I wrote it down.
 	CreateInvItems(self,ItWr_Addon_SUMMONANCIENTGHOST,1);
 	B_GiveInvItems(self,other,ItWr_Addon_SUMMONANCIENTGHOST,1);
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_wie_12_03");	//Это все. Теперь тебе нужно лишь отыскать гробницу.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_wie_12_04");	//Удачи, сын мой!
-	B_LogEntry(TOPIC_Addon_Quarhodron,"Миксир хочет, чтобы я пробудил дух древнего короля воинов Куарходрона и попросил у него совета. Он дал мне бумагу с заклинанием, которое я должен прочитать в гробнице Куарходрона. Она находится на западе.");
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_wie_12_03 " );	// That's all. Now you just need to find the tomb.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistTafel_wie_12_04 " );	// Good luck, my son!
+	; _ _ _ _
 	Info_ClearChoices(DIA_Addon_Myxir_GeistTafel);
 };
 
@@ -253,7 +253,7 @@ instance DIA_Addon_Myxir_GeistPerm(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Myxir_GeistPerm_Condition;
 	information = DIA_Addon_Myxir_GeistPerm_Info;
-	description = "Расскажи мне еще раз о том, как вызвать дух Куарходрона.";
+	description = " Tell me again about how to summon the spirit of Quarhodron. " ;
 };
 
 
@@ -263,14 +263,14 @@ func int DIA_Addon_Myxir_GeistPerm_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Myxir_GeistPerm_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_GeistPerm_15_00");	//Расскажи мне еще раз о том, как вызвать дух Куарходрона.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistPerm_12_01");	//Найди его гробницу и прочитай в ней заклинание стражей мертвых.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistPerm_12_02");	//Я записал слова. Ты должен просто прочитать их вслух.
+	AI_Output(other,self, " DIA_Addon_Myxir_GeistPerm_15_00 " );	// Tell me again about how to summon Quarhodron's spirit.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistPerm_12_01 " );	// Find his tomb and cast the Guardians of the Dead spell in it.
+	AI_Output(self,other, " DIA_Addon_Myxir_GeistPerm_12_02 " );	// I wrote down the words. You should just read them aloud.
 };
 
 
@@ -280,7 +280,7 @@ instance DIA_Addon_Myxir_TalkedToGhost(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Myxir_TalkedToGhost_Condition;
 	information = DIA_Addon_Myxir_TalkedToGhost_Info;
-	description = "Я говорил с Куарходроном.";
+	description = " I spoke with Quarhodron. " ;
 };
 
 
@@ -290,23 +290,23 @@ func int DIA_Addon_Myxir_TalkedToGhost_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Myxir_TalkedToGhost_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_TalkedToGhost_15_00");	//Я говорил с Куарходроном.
-	AI_Output(self,other,"DIA_Addon_Myxir_TalkedToGhost_12_01");	//(восхищенно) Тебе действительно удалось пробудить его от смертного сна?
-	AI_Output(self,other,"DIA_Addon_Myxir_TalkedToGhost_12_02");	//Невероятно! Меня все больше и больше восхищают эти Зодчие.
-	AI_Output(self,other,"DIA_Addon_Myxir_TalkedToGhost_12_03");	//Кто знает, чего бы они могли добиться, если бы их цивилизация не погибла...
+	AI_Output(other,self, " DIA_Addon_Myxir_TalkedToGhost_15_00 " );	// I spoke with Quarhodron.
+	AI_Output(self,other, " DIA_Addon_Myxir_TalkedToGhost_12_01 " );	// (admiringly) Did you really manage to wake him from his mortal sleep?
+	AI_Output(self,other, " DIA_Addon_Myxir_TalkedToGhost_12_02 " );	// Incredible! I am more and more fascinated by these Architects.
+	AI_Output(self,other, " DIA_Addon_Myxir_TalkedToGhost_12_03 " );	// Who knows what they could have achieved if their civilization hadn't died...
 	MIS_ADDON_Myxir_GeistBeschwoeren = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Addon_Myxir_GeistBeschwoeren);
 	if((Saturas_KnowsHow2GetInTempel == FALSE) && (Ghost_SCKnowsHow2GetInAdanosTempel == TRUE))
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TalkedToGhost_12_04");	//И что же сказал дух?
-		AI_Output(other,self,"DIA_Addon_Myxir_TalkedToGhost_15_05");	//Он рассказал мне о том, как попасть в храм Аданоса.
-		AI_Output(self,other,"DIA_Addon_Myxir_TalkedToGhost_12_06");	//Тогда скорее иди к Сатурасу. Его, несомненно, заинтересует то, что ты ему расскажешь.
-		B_LogEntry(TOPIC_Addon_Quarhodron,"Я должен сказать Сатурасу, что пробудил Куарходрона.");
+		AI_Output(self,other, " DIA_Addon_Myxir_TalkedToGhost_12_04 " );	// And what did the spirit say?
+		AI_Output(other,self, " DIA_Addon_Myxir_TalkedToGhost_15_05 " );	// He told me about how to get to the Temple of Adanos.
+		AI_Output(self,other, " DIA_Addon_Myxir_TalkedToGhost_12_06 " );	// Then quickly go to Saturas. He will certainly be interested in what you tell him.
+		B_LogEntry(TOPIC_Addon_Quarhodron, " I must tell Saturas that I awakened the Quarhodron. " );
 	};
 };
 
@@ -320,7 +320,7 @@ instance DIA_Addon_Myxir_ADW_Teach(C_Info)
 	condition = DIA_Addon_Myxir_ADW_Teach_Condition;
 	information = DIA_Addon_Myxir_ADW_Teach_Info;
 	permanent = TRUE;
-	description = "Научи меня этому языку.";
+	description = " Teach me this language. " ;
 };
 
 func int DIA_Addon_Myxir_ADW_Teach_Condition()
@@ -333,7 +333,7 @@ func int DIA_Addon_Myxir_ADW_Teach_Condition()
 
 func void DIA_Addon_Myxir_ADW_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_TeachRequest_15_00");	//Научи меня этому языку.
+	AI_Output(other,self, " DIA_Addon_Myxir_TeachRequest_15_00 " );	// Teach me this language.
 
 	if(DIA_Addon_Myxir_ADW_Teach_OneTime == FALSE)
 	{
@@ -361,7 +361,7 @@ func void DIA_Addon_Myxir_ADW_Teach_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachNoMore_12_00");	//Больше мне нечего тебе показать. Ты изучил язык зодчих.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachNoMore_12_00 " );	// I have nothing more to show you. You have learned the language of architects.
 		DIA_Addon_Myxir_ADW_Teach_NoPerm = TRUE;
 	};
 };
@@ -375,9 +375,9 @@ func void DIA_Addon_Myxir_ADW_Teach_LANGUAGE_1()
 {
 	if(B_TeachPlayerTalentForeignLanguage(self,other,LANGUAGE_1))
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL1_12_00");	//Ну, начнем с чего-нибудь простого. В первую очередь займемся языком крестьян.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL1_12_01");	//Как правило, тексты, написанные на языке крестьян, связаны с нашим миром, с такими понятиями, как работа, любовь, добыча пищи.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL1_12_02");	//Это - основной язык города. Ты сможешь прочесть большинство текстов, которые найдешь здесь, если его освоишь.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL1_12_00 " );	// Well, let's start with something simple. Let us first deal with the language of the peasants.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL1_12_01 " );	// As a rule, texts written in the language of peasants are connected with our world, with such concepts as work, love, food production.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL1_12_02 " );	// This is the main language of the city. You can read most of the texts you find here if you master it.
 	};
 
 	Info_ClearChoices(DIA_Addon_Myxir_ADW_Teach);
@@ -387,8 +387,8 @@ func void DIA_Addon_Myxir_ADW_Teach_LANGUAGE_2()
 {
 	if(B_TeachPlayerTalentForeignLanguage(self,other,LANGUAGE_2))
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL2_12_00");	//Ты уже знаком с языком крестьян. Язык воинов немного более сложен.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL2_12_01");	//Тексты, написанные на языке воинов, в основном касаются войн и оружия. Ты узнаешь кое-что полезное.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL2_12_00 " );	// You are already familiar with the language of the peasants. The language of the warriors is a bit more complex.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL2_12_01 " );	// Texts written in the language of warriors mainly deal with wars and weapons. You will learn something useful.
 	};
 
 	Info_ClearChoices(DIA_Addon_Myxir_ADW_Teach);
@@ -398,22 +398,22 @@ func void DIA_Addon_Myxir_ADW_Teach_LANGUAGE_3()
 {
 	if(B_TeachPlayerTalentForeignLanguage(self,other,LANGUAGE_3))
 	{
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL3_12_00");	//Высокий штиль жрецов трудно понять. Но я с радостью обучу тебя ему.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL3_12_01");	//Помимо прочего, священные книги, описывающие историю и магию создателей, написаны на языке жрецов.
-		AI_Output(self,other,"DIA_Addon_Myxir_TeachL3_12_02");	//Каждый из этих текстов - настоящее сокровище, если, конечно, ты можешь его понять.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL3_12_00 " );	// The high calm of the priests is hard to understand. But I'll gladly teach it to you.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL3_12_01 " );	// Among other things, the sacred books that describe the history and magic of the creators are written in the language of the priests.
+		AI_Output(self,other, " DIA_Addon_Myxir_TeachL3_12_02 " );	// Each of these texts is a real treasure, if, of course, you can understand it.
 	};
 
 	Info_ClearChoices(DIA_Addon_Myxir_ADW_Teach);
 };
 
-instance DIA_ADDON_MYXIR_ADW_PRAYFORGOMEZ(C_Info)
+instance DIA_ADDON_MYXIR_ADW_PRAYFORGOMEZ (C_Info)
 {
 	npc = KDW_14030_Addon_Myxir_ADW;
 	nr = 1;
 	condition = dia_addon_myxir_adw_prayforgomez_condition;
 	information = dia_addon_myxir_adw_prayforgomez_info;
 	permanent = FALSE;
-	description = "Мне нужно благословение Аданоса.";
+	description = " I need the blessing of Adanos. " ;
 };
 
 
@@ -427,8 +427,8 @@ func int dia_addon_myxir_adw_prayforgomez_condition()
 
 func void dia_addon_myxir_adw_prayforgomez_info()
 {
-	AI_Output(other,self,"DIA_Addon_Myxir_ADW_PrayForGomez_01_01");	//Мне нужно благословение Аданоса.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADW_PrayForGomez_01_02");	//Поговори об этом с Сатурасом.
-	AI_Output(self,other,"DIA_Addon_Myxir_ADW_PrayForGomez_01_03");	//Думаю, он сможет помочь тебе.
-	SENTTOSATURASGOMEZ = TRUE;
+	AI_Output(other,self, " DIA_Addon_Myxir_ADW_PrayForGomez_01_01 " );	// I need the blessing of Adanos.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADW_PrayForGomez_01_02 " );	// Talk to Saturas about this.
+	AI_Output(self,other, " DIA_Addon_Myxir_ADW_PrayForGomez_01_03 " );	// I think he can help you.
+	SENTTOSATURASGOMEZ = TRUE ;
 };
