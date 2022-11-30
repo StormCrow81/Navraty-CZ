@@ -39,18 +39,18 @@ func int DIA_Bdt_1064_BanditGuard_FirstWarn_Condition()
 	if(Npc_GetDistToWP(other,Bdt_1064_Checkpoint) <= 800)
 	{
 		Npc_SetRefuseTalk(self,5);
-		return FALSE;
+		return  FALSE ;
 	};
 	if((self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_RefuseTalk(self) == FALSE))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Bdt_1064_BanditGuard_FirstWarn_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Dexwache_Add_04_00");	//Есть только один способ попасть в наш лагерь живым - через мост.
+	AI_Output(self,other, " DIA_Addon_Dexwache_Add_04_00 " );	// There is only one way to get to our camp alive - through the bridge.
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Bdt_1064_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
 	AI_StopProcessInfos(self);
@@ -70,16 +70,16 @@ instance DIA_Bdt_1064_BanditGuard_SecondWarn(C_Info)
 
 func int DIA_Bdt_1064_BanditGuard_SecondWarn_Condition()
 {
-	if((self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Bdt_1064_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 75)))
+	if ((self.aivar[AIV_GuardPass_Status] == GP_FirstWarnGiven) && (self.aivar[ AIV_PASSGATE ] ==  FALSE ) && (Help_StrengthCmp(Npc_GetNearestWP(self),self.wp) ==  TRUE ) && (Npc_GetDistToWP(other,Bdt_1064_Checkpoint); < ( other . aivar [ AIV_LastDistToWP ] --  75 ))) .
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Bdt_1064_BanditGuard_SecondWarn_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Dexwache_Add_04_01");	//Ты хочешь, чтобы я тебя ткнул этой штукой. Еще ОДИН шаг - и я сброшу тебя в обрыв!
+	AI_Output(self,other, " DIA_Addon_Dexwache_Add_04_01 " );	// You want me to poke you with that thing. One more step and I'll throw you off the cliff!
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Bdt_1064_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);
@@ -103,14 +103,14 @@ func int DIA_Bdt_1064_BanditGuard_Attack_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Bdt_1064_BanditGuard_Attack_Info()
 {
 	other.aivar[AIV_LastDistToWP] = 0;
-	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
-	AI_Output(self,other,"DIA_Addon_Dexwache_Add_04_02");	//Ну, если ты этого хочешь...
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
+	AI_Output(self,other, " DIA_Addon_Dexwache_Add_04_02 " );	// Well, if that's what you want...
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,1);
 };
@@ -133,12 +133,11 @@ func int DIA_BanditGuard_PERM_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_BanditGuard_PERM_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Dexwache_Add_04_03");	//Не бормочи тут на меня!
+	AI_Output(self,other, " DIA_Addon_Dexwache_Add_04_03 " );	// Don't mumble at me here!
 	AI_StopProcessInfos(self);
 };
-
