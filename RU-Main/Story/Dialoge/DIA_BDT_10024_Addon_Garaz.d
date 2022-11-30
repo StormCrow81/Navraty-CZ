@@ -21,7 +21,7 @@ func void DIA_Addon_Garaz_EXIT_Info()
 };
 
 
-instance DIA_Addon_Garaz_PICKPOCKET(C_Info)
+instances DIA_Addon_Garaz_PICKPOCKET (C_Info)
 {
 	npc = BDT_10024_Addon_Garaz;
 	nr = 900;
@@ -34,19 +34,19 @@ instance DIA_Addon_Garaz_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Garaz_PICKPOCKET_Condition()
 {
-	return C_Beklauen(66,80);
+	return  C_Robbery ( 66 , 80 );
 };
 
 func void DIA_Addon_Garaz_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Addon_Garaz_PICKPOCKET);
 	Info_AddChoice(DIA_Addon_Garaz_PICKPOCKET,Dialog_Back,DIA_Addon_Garaz_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Addon_Garaz_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Addon_Garaz_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Addon_Garaz_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Addon_Garaz_PICKPOCKET_DoIt);
 };
 
 func void DIA_Addon_Garaz_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Garaz_PICKPOCKET);
 };
 
@@ -56,12 +56,12 @@ func void DIA_Addon_Garaz_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Addon_Garaz_Probleme(C_Info)
+instances DIA_Addon_Garaz_Probleme (C_Info)
 {
 	npc = BDT_10024_Addon_Garaz;
 	nr = 2;
 	condition = DIA_Addon_Garaz_Probleme_Condition;
-	information = DIA_Addon_Garaz_Probleme_Info;
+	information = DIA_Addon_Garaz_Problems_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -74,20 +74,20 @@ func int DIA_Addon_Garaz_Probleme_Condition()
 
 func void DIA_Addon_Garaz_Probleme_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Garaz_Probleme_08_00");	//Подожди минутку.
-	AI_Output(other,self,"DIA_Addon_Garaz_Probleme_15_01");	//Есть какие-то проблемы?
-	AI_Output(self,other,"DIA_Addon_Garaz_Probleme_08_02");	//Ползуны! Множество ползунов. Мы напоролись на их гнездо!
+	AI_Output(self,other, " DIA_Addon_Garaz_Probleme_08_00 " );	// Wait a minute.
+	AI_Output(other,self, " DIA_Addon_Garaz_Probleme_15_01 " );	// Are there any problems?
+	AI_Output(self,other, " DIA_Addon_Garaz_Probleme_08_02 " );	// Crawlers! Lots of crawlers. We ran into their nest!
 };
 
 
-instance DIA_Addon_Garaz_Hi(C_Info)
+instances of DIA_Addon_Garaz_Hi (C_Info)
 {
 	npc = BDT_10024_Addon_Garaz;
 	nr = 3;
 	condition = DIA_Addon_Garaz_Hi_Condition;
 	information = DIA_Addon_Garaz_Hi_Info;
 	permanent = FALSE;
-	description = "Почему мы не можем на них напасть?";
+	description = " Why can't we attack them? " ;
 };
 
 
@@ -101,30 +101,30 @@ func int DIA_Addon_Garaz_Hi_Condition()
 
 func void DIA_Addon_Garaz_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garaz_Hi_15_00");	//Почему мы не можем на них напасть?
-	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_01");	//Я тоже спрашивал об этом. Но у охранников есть 'более важные дела'.
-	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_02");	//Бладвин поручил мне разобраться с этой проблемой.
-	AI_Output(other,self,"DIA_Addon_Garaz_Hi_15_03");	//Я полагаю, ты не собираешься с ними драться.
-	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_04");	//А зачем? Чтобы мы смогли добраться до золота в пещере?
-	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_05");	//Бладвин все равно заберет большую часть себе. И я не хочу рисковать собственной головой за свою ничтожную долю.
-	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_06");	//Если ТЫ хочешь сразиться с ползунами - даже не думай, что я тебя остановлю. Только не надо выманивать их сюда, ладно?
+	AI_Output(other,self, " DIA_Addon_Garaz_Hi_15_00 " );	// Why can't we attack them?
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_01 " );	// I asked about this too. But the guards have 'more important things to do'.
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_02 " );	// Bloodwyn assigned me to deal with this problem.
+	AI_Output(other,self, " DIA_Addon_Garaz_Hi_15_03 " );	// I assume you're not going to fight them.
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_04 " );	// Why? So we can get to the gold in the cave?
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_05 " );	// Bloodwyn will take most of it anyway. And I don't want to risk my own head for my tiny share.
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_06 " );	// If YOU want to fight the crawlers, don't even think I'll stop you. Just don't lure them out here, okay?
 };
 
 
-instance DIA_Addon_Garaz_Bloodwyn(C_Info)
+instances of DIA_Addon_Garaz_Bloodwyn (C_Info)
 {
 	npc = BDT_10024_Addon_Garaz;
 	nr = 8;
 	condition = DIA_Addon_Garaz_Bloodwyn_Condition;
 	information = DIA_Addon_Garaz_Bloodwyn_Info;
 	permanent = FALSE;
-	description = "Ты мне можешь рассказать что-нибудь про Бладвина?";
+	description = " Can you tell me something about Bloodwin? " ;
 };
 
 
 func int DIA_Addon_Garaz_Bloodwyn_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Garaz_Hi) && (Minecrawler_Killed < 9) && (BLOODWYNISDEAD == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Garage_Hi ) && ( Minecrawler_Killed <  9 ) && ( BLOODWYNISDEAD  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -132,25 +132,25 @@ func int DIA_Addon_Garaz_Bloodwyn_Condition()
 
 func void DIA_Addon_Garaz_Bloodwyn_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garaz_Bloodwyn_15_00");	//Ты мне можешь рассказать что-нибудь про Бладвина?
-	AI_Output(self,other,"DIA_Addon_Garaz_Bloodwyn_08_01");	//Могу. Он - жадный до золота ублюдок. Он проверяет каждую жилу и каждый самородок.
-	AI_Output(self,other,"DIA_Addon_Garaz_Bloodwyn_08_02");	//Он не может отвлечься от своей жажды золота. А нас он ни во что не ставит.
-	AI_Output(other,self,"DIA_Addon_Garaz_Bloodwyn_15_03");	//Что еще?
-	AI_Output(self,other,"DIA_Addon_Garaz_Bloodwyn_08_04");	//Он думает, что он - лучший и терпеть не может, если у кого-то больше денег, чем у него. Пожалуйста - я не встану у него на пути.
-	AI_Output(self,other,"DIA_Addon_Garaz_Bloodwyn_08_05");	//Просто не стой у него на пути и не провоцируй его, если не хочешь, чтобы он впал в ярость и перестал себя контролировать...
-	B_LogEntry(Topic_Addon_Tempel,"Если Бладвин узнает, что в шахте была открыта новая золотая жила, он наверняка покинет храм.");
-	B_LogEntry(Topic_Addon_Tempel,"Когда Бладвин рассержен, он теряет над собой контроль. Это может мне помочь.");
+	AI_Output(other,self, " DIA_Addon_Garaz_Bloodwyn_15_00 " );	// Can you tell me something about Bloodwin?
+	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_01 " );	// I can. He's a gold-hungry bastard. He checks every vein and every nugget.
+	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_02 " );	// He can't stop his lust for gold. And he doesn't care about us.
+	AI_Output(other,self, " DIA_Addon_Garaz_Bloodwyn_15_03 " );	// What else?
+	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_04 " );	// He thinks he's the best and can't stand it if anyone else has more money than him. Please, I won't get in his way.
+	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_05 " );	// Just don't stand in his way or provoke him if you don't want him to go berserk and out of control...
+	B_LogEntry(Topic_Addon_Tempel, " If Bloodwin finds out that a new gold vein has been discovered in the mine, he will surely leave the temple. " );
+	B_LogEntry(Topic_Addon_Tempel, " When Bloodwin gets angry, he loses control of himself. It might help me. " );
 };
 
 
-instance DIA_Addon_Garaz_Sieg(C_Info)
+instance DIA_Addon_Garaz_Sieg (C_Info)
 {
 	npc = BDT_10024_Addon_Garaz;
 	nr = 3;
 	condition = DIA_Addon_Garaz_Sieg_Condition;
 	information = DIA_Addon_Garaz_Sieg_Info;
 	permanent = FALSE;
-	description = "С ползунами покончено!";
+	description = " Crawlers are done with! " ;
 };
 
 
@@ -164,14 +164,14 @@ func int DIA_Addon_Garaz_Sieg_Condition()
 
 func void DIA_Addon_Garaz_Sieg_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garaz_Sieg_15_00");	//Ну, готово. С ползунами покончено!
-	AI_Output(self,other,"DIA_Addon_Garaz_Sieg_08_01");	//Бладвин уже идет сюда. Ты ведь этого хотел?
-	AI_Output(self,other,"DIA_Addon_Garaz_Sieg_08_02");	//Я хочу сказать, что ты перебил ползунов, чтобы Бладвин пришел сюда, да? Тогда, что бы ты ни планировал, делай это СЕЙЧАС.
+	AI_Output(other,self, " DIA_Addon_Garaz_Sieg_15_00 " );	// Well, done. Done with crawlers!
+	AI_Output(self,other, " DIA_Addon_Garaz_Sieg_08_01 " );	// Bloodwyn is on his way here. Is that what you wanted?
+	AI_Output(self,other, " DIA_Addon_Garaz_Sieg_08_02 " );	// I mean you killed the crawlers to get Bloodwyn to come here, right? Then whatever you plan, do it NOW.
 	B_StartOtherRoutine(Bloodwyn,"GOLD");
 };
 
 
-instance DIA_Addon_Garaz_Blood(C_Info)
+instances of DIA_Addon_Garaz_Blood (C_Info)
 {
 	npc = BDT_10024_Addon_Garaz;
 	nr = 3;
@@ -192,8 +192,8 @@ func int DIA_Addon_Garaz_Blood_Condition()
 
 func void DIA_Addon_Garaz_Blood_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Garaz_Blood_08_00");	//Ты показал этому лодырю! Отличная работа.
-	AI_Output(self,other,"DIA_Addon_Garaz_Blood_08_01");	//Я пойду осмотрю пещеру.
+	AI_Output(self,other, " DIA_Addon_Garaz_Blood_08_00 " );	// You showed this bum! Great job.
+	AI_Output(self,other, " DIA_Addon_Garaz_Blood_08_01 " );	// I'll go check out the cave.
 	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"GOLD");
@@ -201,7 +201,7 @@ func void DIA_Addon_Garaz_Blood_Info()
 };
 
 
-instance DIA_Addon_Garaz_Gold(C_Info)
+instances of DIA_Addon_Garaz_Gold (C_Info)
 {
 	npc = BDT_10024_Addon_Garaz;
 	nr = 3;
@@ -222,6 +222,6 @@ func int DIA_Addon_Garaz_Gold_Condition()
 
 func void DIA_Addon_Garaz_Gold_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Garaz_Gold_08_00");	//Ух ты, приятель! Здесь явно много золота!
-	AI_Output(self,other,"DIA_Addon_Garaz_Gold_08_01");	//Чтобы добраться до этих самородков, нам понадобится лестница.
+	AI_Output(self,other, " DIA_Addon_Garaz_Gold_08_00 " );	// Wow, mate! There is obviously a lot of gold here!
+	AI_Output(self,other, " DIA_Addon_Garaz_Gold_08_01 " );	// To get to these nuggets, we'll need a ladder.
 };
