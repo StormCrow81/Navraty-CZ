@@ -28,7 +28,7 @@ instance DIA_Addon_BDT_10027_Buddler_Hi(C_Info)
 	condition = DIA_Addon_10027_Buddler_Hi_Condition;
 	information = DIA_Addon_10027_Buddler_Hi_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -40,13 +40,12 @@ func int DIA_Addon_10027_Buddler_Hi_Condition()
 func void DIA_Addon_10027_Buddler_Hi_Info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10027_Buddler_Hi_15_00");	//Как дела?
-	if(Sklaven_Flucht == FALSE)
+	if (slave_escape ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10027_Buddler_Hi_11_01");	//Я работаю на рудных баронов уже очень долго! Хорошо, что теперь работают другие.
+		AI_Output(self,other, " DIA_Addon_BDT_10027_Buddler_Hi_11_01 " );	// I've been working for the ore barons for a very long time! It's good that others are working now.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10027_Buddler_Hi_11_02");	//Черт! Теперь нам снова придется копать самим?!
+		AI_Output(self,other, " DIA_Addon_BDT_10027_Buddler_Hi_11_02 " );	// Damn! Now we have to dig ourselves again?!
 	};
 };
-
