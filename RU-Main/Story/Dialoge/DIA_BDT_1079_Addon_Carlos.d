@@ -6,7 +6,7 @@ instance DIA_Addon_Carlos_EXIT(C_Info)
 	condition = DIA_Addon_Carlos_EXIT_Condition;
 	information = DIA_Addon_Carlos_EXIT_Info;
 	permanent = TRUE;
-	description = "Еще увидимся.";
+	description = " See you later. " ;
 };
 
 
@@ -34,7 +34,7 @@ instance DIA_Addon_Carlos_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Carlos_PICKPOCKET_Condition()
 {
-	return C_Beklauen(71,85);
+	return  C_Robbery ( 71 , 85 );
 };
 
 func void DIA_Addon_Carlos_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_Carlos_PICKPOCKET_Info()
 
 func void DIA_Addon_Carlos_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Carlos_PICKPOCKET);
 };
 
@@ -56,7 +56,7 @@ func void DIA_Addon_Carlos_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Addon_Carlos_HI(C_Info)
+instance DIA_Addon_Carlos_HI (C_Info)
 {
 	npc = BDT_1079_Addon_Carlos;
 	nr = 1;
@@ -69,32 +69,32 @@ instance DIA_Addon_Carlos_HI(C_Info)
 
 func int DIA_Addon_Carlos_HI_Condition()
 {
-	if(Npc_IsDead(Franco))
+	if (Npc_IsDead(Franco))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void DIA_Addon_Carlos_HI_Info()
+func void DAY_Addon_Carlos_HI_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Carlos_HI_12_00");	//Эй, это ты тот парень, что укокошил Франко?
+	AI_Output(self,other, " DIA_Addon_Carlos_HI_12_00 " );	// Hey, are you the guy that killed Franco?
 	Info_ClearChoices(DIA_Addon_Carlos_HI);
-	Info_AddChoice(DIA_Addon_Carlos_HI,"Что? Я? Нет!",DIA_Addon_Carlos_HI_No);
-	Info_AddChoice(DIA_Addon_Carlos_HI,"Да, а почему ты спрашиваешь?",DIA_Addon_Carlos_HI_Yes);
+	Info_AddChoice(DIA_Addon_Carlos_HI, " Что? Я? Нет! " ,DIA_Addon_Carlos_HI_No);
+	Info_AddChoice(DIA_Addon_Carlos_HI, " Yes, why do you ask? " ,DIA_Addon_Carlos_HI_Yes);
 };
 
 func void DIA_Addon_Carlos_HI_Yes()
 {
-	AI_Output(other,self,"DIA_Addon_Carlos_HI_Yes_15_00");	//Да, а почему ты спрашиваешь?
-	AI_Output(self,other,"DIA_Addon_Carlos_HI_Yes_12_01");	//(зло) Потому что теперь мне придется заниматься его работой. Просто прекрасно, молодец! Спасибо огромное!
+	AI_Output(other,self, " DIA_Addon_Carlos_HI_Yes_15_00 " );	// Yes, why do you ask?
+	AI_Output(self,other, " DIA_Addon_Carlos_HI_Yes_12_01 " );	// (angrily) Because now I have to do his job. Just great, well done! Thanks a lot!
 	Info_ClearChoices(DIA_Addon_Carlos_HI);
 };
 
-func void DIA_Addon_Carlos_HI_No()
+func void DAY_Addon_Carlos_HI_No()
 {
 	AI_Output(other,self,"DIA_Addon_Carlos_HI_No_15_00");	//Что? Я? Нет!
-	AI_Output(self,other,"DIA_Addon_Carlos_HI_No_12_01");	//А, ничего личного!
+	AI_Output(self,other, " DIA_Addon_Carlos_HI_No_12_01 " );	// Ah, nothing personal!
 	Info_ClearChoices(DIA_Addon_Carlos_HI);
 };
 
@@ -116,22 +116,22 @@ func int DIA_Addon_Carlos_Attentat_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Carlos_Attentat_Info()
 {
 	B_Say(other,self,"$ATTENTAT_ADDON_DESCRIPTION");
-	AI_Output(self,other,"DIA_Addon_Carlos_Attentat_12_00");	//После того как нападающий был убит, Торус приказал мне найти нового человека для лагеря.
+	AI_Output(self,other, " DIA_Addon_Carlos_Attentat_12_00 " );	// After the attacker was killed, Thorus ordered me to find a new man for the camp.
 	if(Logan_Inside == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Carlos_Attentat_12_01");	//И Франко послал Логана.
+		AI_Output(self,other, " DIA_Addon_Carlos_Attentat_12_01 " );	// And Franco sent Logan.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Carlos_Attentat_12_02");	//И Франко послал нового парня.
+		AI_Output(self,other, " DIA_Addon_Carlos_Attentat_12_02 " );	// And Franco sent a new guy.
 	};
-	AI_Output(self,other,"DIA_Addon_Carlos_Attentat_12_03");	//Эй, я просто делаю то, что мне сказал Торус. Я ничего не знаю про само нападение.
+	AI_Output(self,other, " DIA_Addon_Carlos_Attentat_12_03 " );	// Hey, I'm just doing what Torus told me. I don't know anything about the attack itself.
 };
 
 
@@ -142,7 +142,7 @@ instance DIA_Addon_Carlos_PERM(C_Info)
 	condition = DIA_Addon_Carlos_PERM_Condition;
 	information = DIA_Addon_Carlos_PERM_Info;
 	permanent = TRUE;
-	description = "И как тебе нравится быть командиром у охотников?";
+	description = " How do you like being a hunter commander? " ;
 };
 
 
@@ -153,8 +153,7 @@ func int DIA_Addon_Carlos_PERM_Condition()
 
 func void DIA_Addon_Carlos_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Carlos_PERM_15_00");	//И как тебе нравится быть командиром у охотников?
-	AI_Output(self,other,"DIA_Addon_Carlos_PERM_12_00");	//Оставь меня в покое!
+	AI_Output(other,self, " DIA_Addon_Carlos_PERM_15_00 " );	// And how do you like being a hunter commander?
+	AI_Output(self,other, " DIA_Addon_Carlos_PERM_12_00 " );	// Leave me alone!
 	AI_StopProcessInfos(self);
 };
-
