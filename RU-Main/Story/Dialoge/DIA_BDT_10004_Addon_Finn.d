@@ -1,4 +1,4 @@
-var int FinnTellFT;
+var int FindTellFT;
 
 instance DIA_Addon_Finn_EXIT(C_Info)
 {
@@ -35,7 +35,7 @@ instance DIA_Addon_Finn_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Finn_PICKPOCKET_Condition()
 {
-	return C_Beklauen(35,50);
+	return  C_Robbery ( 35 , 50 );
 };
 
 func void DIA_Addon_Finn_PICKPOCKET_Info()
@@ -47,7 +47,7 @@ func void DIA_Addon_Finn_PICKPOCKET_Info()
 
 func void DIA_Addon_Finn_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Finn_PICKPOCKET);
 };
 
@@ -64,7 +64,7 @@ instance DIA_Addon_Finn_Hacker(C_Info)
 	condition = DIA_Addon_Finn_Hacker_Condition;
 	information = DIA_Addon_Finn_Hacker_Info;
 	permanent = TRUE;
-	description = "Снова за работой?";
+	description = " Back at work? " ;
 };
 
 
@@ -74,17 +74,17 @@ func int DIA_Addon_Finn_Hacker_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Finn_Hacker_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10004_Finn_Hacker_15_00");	//Снова за работой?
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Finn_Hacker_07_01");	//Да, я хочу выбрать из этой шахты все золото до последнего кусочка.
+	AI_Output(other,self, " DIA_Addon_BDT_10004_Finn_Hacker_15_00 " );	// Back at work?
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Finn_Hacker_07_01 " );	// Yes, I want to pick every last piece of gold from this mine.
 };
 
 
-instance DIA_Addon_Finn_Hi(C_Info)
+instance DIA_Addon_Finn_Hi (C_Info) .
 {
 	npc = BDT_10004_Addon_Finn;
 	nr = 1;
@@ -101,24 +101,24 @@ func int DIA_Addon_Finn_Hi_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Finn_Hi_Info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10004_Finn_Hi_15_00");	//Привет!
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Finn_Hi_07_01");	//(сердито) Что тебе нужно?
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Finn_Hi_07_01 " );	// (angrily) What do you want?
 };
 
 
-instance DIA_Addon_Finn_Hacke(C_Info)
+instance DIA_Addon_Finn_Hacke (C_Info)
 {
 	npc = BDT_10004_Addon_Finn;
 	nr = 2;
 	condition = DIA_Addon_Finn_Hacke_Condition;
 	information = DIA_Addon_Finn_Hacke_Info;
 	permanent = FALSE;
-	description = "Где я могу взять кирку?";
+	description = " Where can I get a pickaxe? " ;
 };
 
 
@@ -129,10 +129,10 @@ func int DIA_Addon_Finn_Hacke_Condition()
 
 func void DIA_Addon_Finn_Hacke_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_Hacke_15_00");	//Где я могу взять кирку?
-	AI_Output(self,other,"DIA_Addon_Finn_Hacke_07_01");	//Спроси у кузнеца Хуно. Но наличие кирки еще не даст тебе права войти в шахту.
-	AI_Output(self,other,"DIA_Addon_Finn_Hacke_07_02");	//Если ты хочешь войти, тебе нужно поговорить с Эстебаном.
-	AI_Output(self,other,"DIA_Addon_Finn_Hacke_07_03");	//А с Торусом можешь даже не пытаться говорить - он впустит тебя, только если у тебя будет красный камень.
+	AI_Output(other,self, " DIA_Addon_Finn_Hacke_15_00 " );	// Where can I get a pickaxe?
+	AI_Output(self,other, " DIA_Addon_Finn_Hacke_07_01 " );	// Ask the blacksmith Huno. But having a pick does not give you the right to enter the mine.
+	AI_Output(self,other, " DIA_Addon_Finn_Hacke_07_02 " );	// If you want to enter, you need to talk to Esteban.
+	AI_Output(self,other, " DIA_Addon_Finn_Hacke_07_03 " );	// And you don't even have to try to talk to Torus - he will let you in only if you have a red stone.
 };
 
 
@@ -143,7 +143,7 @@ instance DIA_Addon_Finn_Esteban(C_Info)
 	condition = DIA_Addon_Finn_Esteban_Condition;
 	information = DIA_Addon_Finn_Esteban_Info;
 	permanent = FALSE;
-	description = "Скажи мне, что ты думаешь об Эстебане?";
+	description = " Tell me what you think of Esteban? " ;
 };
 
 
@@ -153,41 +153,41 @@ func int DIA_Addon_Finn_Esteban_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Finn_Esteban_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_Esteban_15_00");	//Скажи мне, что ты думаешь об Эстебане?
-	AI_Output(self,other,"DIA_Addon_Finn_Esteban_07_01");	//(осторожно) Он здесь босс... он... по-моему, он свой парень.
-	AI_Output(self,other,"DIA_Addon_Finn_Esteban_07_02");	//(нерешительно) Он всегда отправляет в шахту правильных ребят. Тех, кто знает свое дело, я имею в виду.
+	AI_Output(other,self, " DIA_Addon_Finn_Esteban_15_00 " );	// Tell me what do you think of Esteban?
+	AI_Output(self,other, " DIA_Addon_Finn_Esteban_07_01 " );	// (carefully) He's the boss here... he's... I think he's my boyfriend.
+	AI_Output(self,other, " DIA_Addon_Finn_Esteban_07_02 " );	// (hesitantly) He always sends the right guys down the mine. Those who know their stuff, I mean.
 };
 
 
-instance DIA_Addon_Finn_Profi(C_Info)
+instance DIA_Addon_Finn_Profi (C_Info)
 {
 	npc = BDT_10004_Addon_Finn;
 	nr = 4;
 	condition = DIA_Addon_Finn_Profi_Condition;
 	information = DIA_Addon_Finn_Profi_Info;
 	permanent = FALSE;
-	description = "А ты знаешь это дело?";
+	description = " Do you know this case? " ;
 };
 
 
 func int DIA_Addon_Finn_Profi_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Finn_Esteban))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Finn_Stephen ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Finn_Profi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_Profi_15_00");	//А ты знаешь это дело?
-	AI_Output(self,other,"DIA_Addon_Finn_Profi_07_01");	//Я в нем лучший!
+	AI_Output(other,self, " DIA_Addon_Finn_Profi_15_00 " );	// Do you know this business?
+	AI_Output(self,other, " DIA_Addon_Finn_Profi_07_01 " );	// I'm the best at it!
 };
 
 
@@ -214,11 +214,11 @@ func void DIA_Addon_Finn_Mine_Info()
 {
 	B_Say(other,self,"$MINE_ADDON_DESCRIPTION");
 	B_GiveInvItems(other,self,ItMi_Addon_Stone_01,1);
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Finn_Mine_07_00");	//Конечно, босс. Ты хочешь, чтобы в шахте работали лучшие люди? Тогда я вернусь к делу...
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Finn_Mine_07_01");	//Да, и кое-что еще. Это один секрет рудокопов.
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Finn_Mine_07_02");	//От века и поныне хорошая идея - рубить посильнее.
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Finn_Mine_07_03");	//Если ты копнешь пару раз без видимого результата, попробуй провести концом кирки вдоль камня.
-	AI_Output(self,other,"DIA_Addon_BDT_10004_Finn_Mine_07_04");	//Если тебе повезет, таким образом ты получишь несколько кусков за раз.
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Finn_Mine_07_00 " );	// Of course, boss. Do you want the best people to work in the mine? Then I'll get back to business...
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Finn_Mine_07_01 " );	// Yes, and one more thing. This is one secret of the miners.
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Finn_Mine_07_02 " );	// From time immemorial to this day, it's a good idea to chop harder.
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Finn_Mine_07_03 " );	// If you dig a couple of times with no visible results, try running the end of your pick along the rock.
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Finn_Mine_07_04 " );	// If you're lucky, you'll end up with several pieces at a time this way.
 	Knows_Truemmerschlag = TRUE;
 	Player_SentBuddler = Player_SentBuddler + 1;
 	B_GivePlayerXP(XP_Addon_MINE);
@@ -233,12 +233,12 @@ instance DIA_Addon_Finn_Gold(C_Info)
 	condition = DIA_Addon_Finn_Gold_Condition;
 	information = DIA_Addon_Finn_Gold_Info;
 	permanent = TRUE;
-	description = "Научи меня добывать золото.";
+	description = " Teach me how to mine gold. " ;
 };
 
 func int DIA_Addon_Finn_Gold_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Finn_Profi) && (Hero_HackChance < 100))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Finn_Profi ) && ( Hero_HackChance <  100 )) ;
 	{
 		return TRUE;
 	};
@@ -248,16 +248,16 @@ func void DIA_Addon_Finn_Gold_Info()
 {
 	if(KNOWHOWPICKGOLD == TRUE)
 	{
-		AI_Output(other,self,"DIA_Addon_Scatty_teach_15_00");	//Расскажи мне еще что-нибудь о том, как копать золото.
+		AI_Output(other,self, " DIA_Addon_Scatty_teach_15_00 " );	// Tell me more about how to dig for gold.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Addon_Finn_Gold_07_04");	//Научи меня добывать золото.
+		AI_Output(other,self, " DIA_Addon_Finn_Gold_07_04 " );	// Teach me how to mine gold.
 	};
 
 	Info_ClearChoices(DIA_Addon_Finn_Gold);
 	Info_AddChoice(DIA_Addon_Finn_Gold,Dialog_Back,DIA_Addon_Finn_Gold_Back);
-	Info_AddChoice(DIA_Addon_Finn_Gold,b_buildlearnstringforgoldhunt("Добыча золота",B_GetLearnCostTalent(other,NPC_TALENT_GOLDWORK,1)),DIA_Addon_Finn_Gold_GOLDWORK);
+	Info_AddChoice(DIA_Addon_Finn_Gold,b_buildlearnstringforgoldhunt( " Cost of selection " ,B_GetLearnCostTalent(other, NPC_TALENT_GOLDWORK , 1 )),DIA_Addon_Finn_Gold_GOLDWORK);
 };
 
 func void DIA_Addon_Finn_Gold_Back()
@@ -271,90 +271,90 @@ func void DIA_Addon_Finn_Gold_GOLDWORK()
 	{
 		if(FINNTEACHMOREGOLD == FALSE)
 		{
-			AI_Output(self,other,"DIA_Addon_Finn_Gold_07_00");	//Ну, еще одно, что следует знать. Золото это не руда. Есть большая разница.
-			AI_Output(self,other,"DIA_Addon_Finn_Gold_07_01");	//Я имею в виду, что ни одна женщина не будет носить на шее ожерелье из кусков руды.
-			AI_Output(self,other,"DIA_Addon_Finn_Gold_07_02");	//Когда будешь копать, иди сверху вниз. Так самородки будет проще вынуть.
-			AI_Output(self,other,"DIA_Addon_Finn_Gold_07_03");	//Есть рудокопы, которые делают все наоборот, но это намного сложнее.
+			AI_Output(self,other, " DIA_Addon_Finn_Gold_07_00 " );	// Well, one more thing to know. Gold is not an ore. There is a big difference.
+			AI_Output(self,other, " DIA_Addon_Finn_Gold_07_01 " );	// I mean no woman would wear a necklace of ore lumps around her neck.
+			AI_Output(self,other, " DIA_Addon_Finn_Gold_07_02 " );	// When you dig, go from top to bottom. So the nuggets will be easier to remove.
+			AI_Output(self,other, " DIA_Addon_Finn_Gold_07_03 " );	// There are miners who do the opposite, but it's much more difficult.
 			FINNTEACHMOREGOLD = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_Finn_Gold_07_05");	//Без проблем! Слушай сюда...(рассказывает)...
+			AI_Output(self,other, " DIA_Addon_Finn_Gold_07_05 " );	// No problem! Listen here... (tells)...
 		};
 	};
 
 	Info_ClearChoices(DIA_Addon_Finn_Gold);
 };
 
-instance DIA_Addon_Finn_ein(C_Info)
+instance DIA_Addon_Finn_ein (C_Info)
 {
 	npc = BDT_10004_Addon_Finn;
 	nr = 7;
 	condition = DIA_Addon_Finn_ein_Condition;
 	information = DIA_Addon_Finn_ein_Info;
 	permanent = TRUE;
-	description = "Можешь оценить мое умение добывать золото?";
+	description = " Can you rate my gold mining skills? " ;
 };
 
 
 func int DIA_Addon_Finn_ein_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Finn_Profi) && (KNOWHOWPICKGOLD == TRUE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Finn_Profi ) && ( KNOWHOWPICKGOLD  ==  TRUE ))
 	{
 		return TRUE;
 	};
 };
 
 
-var int Finn_einmal;
-var int Finn_Gratulation;
+var int Finn_once;
+var int Finn_Congratulations;
 
 func void DIA_Addon_Finn_ein_Info()
 {
 	var string concatText;
-	AI_Output(other,self,"DIA_Addon_Finn_ein_15_00");	//Можешь ты оценить мои умения рудокопа?
-	if(Finn_einmal == FALSE)
+	AI_Output(other,self, " DIA_Addon_Finn_ein_15_00 " );	// Can you rate my skills as a miner?
+	if (Finn_once ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_ein_07_01");	//Конечно. Я занимаюсь этим больше 35 лет. Нет ничего, чтобы я не мог оценить!
-		Finn_einmal = TRUE;
+		AI_Output(self,other, " DIA_Addon_Finn_ein_07_01 " );	// Of course. I've been doing this for over 35 years. There is nothing that I cannot appreciate!
+		Finn_once = TRUE ;
 	};
-	AI_Output(self,other,"DIA_Addon_Finn_ein_07_02");	//Что касается тебя, то ты...
+	AI_Output(self,other, " DIA_Addon_Finn_ein_07_02 " );	// As for you, you...
 	if(Hero_HackChance < 20)
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_ein_07_03");	//совершенный новичок.
+		AI_Output(self,other, " DIA_Addon_Finn_ein_07_03 " );	// complete newbie.
 	}
 	else if(Hero_HackChance < 35)
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_ein_07_04");	//вполне сносный работник.
+		AI_Output(self,other, " DIA_Addon_Finn_ein_07_04 " );	// quite a tolerable worker.
 	}
 	else if(Hero_HackChance < 50)
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_ein_07_05");	//опытный золотоискатель.
+		AI_Output(self,other, " DIA_Addon_Finn_ein_07_05 " );	// an experienced gold digger.
 	}
 	else if(Hero_HackChance < 65)
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_ein_07_06");	//настоящий рудокоп.
+		AI_Output(self,other, " DIA_Addon_Finn_ein_07_06 " );	// real miner.
 	}
 	else if(Hero_HackChance < 80)
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_ein_07_07");	//чертовски хороший рудокоп.
+		AI_Output(self,other, " DIA_Addon_Finn_ein_07_07 " );	// damn good miner.
 	}
 	else if(Hero_HackChance < 95)
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_ein_07_08");	//великий рудокоп.
+		AI_Output(self,other, " DIA_Addon_Finn_ein_07_08 " );	// great miner.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_ein_07_09");	//гуру среди рудокопов.
-		if(Finn_Gratulation == FALSE)
+		AI_Output(self,other, " DIA_Addon_Finn_ein_07_09 " );	// guru among miners.
+		if (Finn_Congratulations ==  FALSE )
 		{
-			AI_Output(self,other,"DIA_Addon_Finn_ein_07_10");	//Тем самым ты так же крут, как я. Сердечные поздравления, партнер!
+			AI_Output(self,other, " DIA_Addon_Finn_ein_07_10 " );	// That way you're as cool as me. Hearty congratulations, partner!
 			B_GivePlayerXP(200);
 			Snd_Play("LevelUP");
-			Finn_Gratulation = TRUE;
+			Finn_Congratulations = TRUE ;
 		};
 	};
-	concatText = ConcatStrings("Уровень добычи золота: ",IntToString(Hero_HackChance));
+	concatText = ConcatStrings( " Gold mining level: " ,IntToString(Hero_HackChance));
 	AI_Print(concatText);
 };
 
@@ -366,7 +366,7 @@ instance DIA_Addon_Finn_Attentat(C_Info)
 	condition = DIA_Addon_Finn_Attentat_Condition;
 	information = DIA_Addon_Finn_Attentat_Info;
 	permanent = FALSE;
-	description = "Насчет попытки покушения на Эстебана...";
+	description = " About the assassination attempt on Esteban... " ;
 };
 
 
@@ -376,85 +376,85 @@ func int DIA_Addon_Finn_Attentat_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Finn_Attentat_Info()
 {
 	B_Say(other,self,"$ATTENTAT_ADDON_DESCRIPTION2");
-	AI_Output(self,other,"DIA_Addon_Finn_Attentat_07_00");	//(осторожно) Да?
-	AI_Output(other,self,"DIA_Addon_Finn_Attentat_15_01");	//У тебя есть идеи, кто стоит за всем этим?
-	AI_Output(self,other,"DIA_Addon_Finn_Attentat_07_02");	//А зачем тебе это?
+	AI_Output(self,other, " DIA_Addon_Finn_Attentat_07_00 " );	// (carefully) Yes?
+	AI_Output(other,self, " DIA_Addon_Finn_Attentat_15_01 " );	// Do you have any idea who is behind all this?
+	AI_Output(self,other, " DIA_Addon_Finn_Attentat_07_02 " );	// Why are you doing this?
 	Info_ClearChoices(DIA_Addon_Finn_Attentat);
-	Info_AddChoice(DIA_Addon_Finn_Attentat,"Я хочу поговорить с ним...",DIA_Addon_Finn_Attentat_WannaTalk);
-	Info_AddChoice(DIA_Addon_Finn_Attentat,"Эстебан больше не хочет видеть его среди живых!",DIA_Addon_Finn_Attentat_ForTheBoss);
+	Info_AddChoice(DIA_Addon_Finn_Attentat, " I want to talk to him... " ,DIA_Addon_Finn_Attentat_WannaTalk);
+	Info_AddChoice(DIA_Addon_Finn_Attentat, " Esteban doesn't want to see him alive anymore! " ,DIA_Addon_Finn_Attentat_ForTheBoss);
 };
 
 func void B_Addon_Finn_TellAll()
 {
-	AI_Output(self,other,"DIA_Addon_Finn_TellAll_07_00");	//(повествуя) Когда произошло нападение, я собирался забрать свою кирку от кузнеца Хуно.
-	AI_Output(self,other,"DIA_Addon_Finn_TellAll_07_01");	//Но его на месте не было.
+	AI_Output(self,other, " DIA_Addon_Finn_TellAll_07_00 " );	// (narrating) When the attack happened, I was about to take my pick from Huno the blacksmith.
+	AI_Output(self,other, " DIA_Addon_Finn_TellAll_07_01 " );	// But he wasn't there.
 	AI_Output(other,self,"DIA_Addon_Finn_TellAll_15_02");	//И?
-	AI_Output(self,other,"DIA_Addon_Finn_TellAll_07_03");	//А обычно он ВСЕГДА на месте. ОЧЕНЬ подозрительно - вот что я думаю.
+	AI_Output(self,other, " DIA_Addon_Finn_TellAll_07_03 " );	// And usually it is ALWAYS there. VERY suspicious - that's what I think.
 	Finn_TellAll = TRUE;
 
-	if(FinnTellFT == FALSE)
+	if (FinnTellFT ==  FALSE )
 	{
-		B_LogEntry(Topic_Addon_Esteban,"Финн рассказывает, что Хуно отсутствовал во время покушения.");
-		FinnTellFT = TRUE;
+		B_LogEntry(Topic_Addon_Esteban, " Finn says that Huno was absent at the time of the assassination. " );
+		FindTellFT = TRUE ;
 	};
 };
 
 func void DIA_Addon_Finn_Attentat_ForTheBoss()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_ForTheBoss_15_00");	//Эстебан больше не хочет видеть его среди живых!
-	AI_Output(self,other,"DIA_Addon_Finn_ForTheBoss_07_01");	//О! Ты работаешь на босса?
-	AI_Output(self,other,"DIA_Addon_Finn_ForTheBoss_07_02");	//Тогда я тебе скажу, что я знаю.
+	AI_Output(other,self, " DIA_Addon_Finn_ForTheBoss_15_00 " );	// Esteban doesn't want to see him alive anymore!
+	AI_Output(self,other, " DIA_Addon_Finn_ForTheBoss_07_01 " );	// Oh! Are you working for a boss?
+	AI_Output(self,other, " DIA_Addon_Finn_ForTheBoss_07_02 " );	// Then I'll tell you what I know.
 	B_Addon_Finn_TellAll();
 	Info_ClearChoices(DIA_Addon_Finn_Attentat);
 };
 
 func void DIA_Addon_Finn_Attentat_WannaTalk()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_WannaTalk_15_00");	//Я хочу поговорить с ним...
-	AI_Output(self,other,"DIA_Addon_Finn_WannaTalk_07_01");	//(осторожно) Да? И что тебе от него нужно?
+	AI_Output(other,self, " DIA_Addon_Finn_WannaTalk_15_00 " );	// I want to talk to him...
+	AI_Output(self,other, " DIA_Addon_Finn_WannaTalk_07_01 " );	// (carefully) Yes? And what do you want from him?
 	Info_ClearChoices(DIA_Addon_Finn_Attentat);
-	Info_AddChoice(DIA_Addon_Finn_Attentat,"Тебя это не должно волновать!",DIA_Addon_Finn_Attentat_ForgetIt);
-	Info_AddChoice(DIA_Addon_Finn_Attentat,"У меня для него интересная информация!",DIA_Addon_Finn_Attentat_HaveInfos);
-	Info_AddChoice(DIA_Addon_Finn_Attentat,"Я хочу прикончить Эстебана и ищу союзника!",DIA_Addon_Finn_Attentat_KillEsteban);
+	Info_AddChoice(DIA_Addon_Finn_Attentat, " You shouldn't care! " ,DIA_Addon_Finn_Attentat_ForgetIt);
+	Info_AddChoice(DIA_Addon_Finn_Attentat, " I have interesting information for him! " ,DIA_Addon_Finn_Attentat_HaveInfos);
+	Info_AddChoice(DIA_Addon_Finn_Attentat, " I want to kill Esteban and am looking for an ally! " ,DIA_Addon_Finn_Attentat_KillEsteban);
 };
 
 func void DIA_Addon_Finn_Attentat_KillEsteban()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_KillEsteban_15_00");	//Я хочу устранить Эстебана, и мне нужен союзник!
-	AI_Output(self,other,"DIA_Addon_Finn_KillEsteban_07_01");	//Я в это дело ввязываться не буду!
-	Finn_Petzt = TRUE;
+	AI_Output(other,self, " DIA_Addon_Finn_KillEsteban_15_00 " );	// I want to eliminate Esteban, and I need an ally!
+	AI_Output(self,other, " DIA_Addon_Finn_KillEsteban_07_01 " );	// I'm not going to get involved in this business!
+	Finn_Petzt = TRUE ;
 	Info_ClearChoices(DIA_Addon_Finn_Attentat);
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Addon_Finn_Attentat_HaveInfos()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_HaveInfos_15_00");	//У меня есть для него информация, которая может оказаться интересной!
-	AI_Output(self,other,"DIA_Addon_Finn_HaveInfos_07_01");	//Ты в сговоре с тем, кто это устроил, правда?
+	AI_Output(other,self, " DIA_Addon_Finn_HaveInfos_15_00 " );	// I have information for him that might be interesting!
+	AI_Output(self,other, " DIA_Addon_Finn_HaveInfos_07_01 " );	// You're in cahoots with whoever did this, right?
 	Info_ClearChoices(DIA_Addon_Finn_Attentat);
-	Info_AddChoice(DIA_Addon_Finn_Attentat,"Я хочу прикончить Эстебана и ищу союзника!",DIA_Addon_Finn_Attentat_KillEsteban);
-	Info_AddChoice(DIA_Addon_Finn_Attentat,"Тебя это не должно волновать!",DIA_Addon_Finn_Attentat_ForgetIt);
-	Info_AddChoice(DIA_Addon_Finn_Attentat,"Ни в коем случае!",DIA_Addon_Finn_Attentat_NoNo);
+	Info_AddChoice(DIA_Addon_Finn_Attentat, " I want to kill Esteban and am looking for an ally! " ,DIA_Addon_Finn_Attentat_KillEsteban);
+	Info_AddChoice(DIA_Addon_Finn_Attentat, " You shouldn't care! " ,DIA_Addon_Finn_Attentat_ForgetIt);
+	Info_AddChoice(DIA_Addon_Finn_Attentat, " No way! " ,DIA_Addon_Finn_Attentat_NoNo);
 };
 
 func void DIA_Addon_Finn_Attentat_NoNo()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_NoNo_15_00");	//Конечно нет!
-	AI_Output(self,other,"DIA_Addon_Finn_NoNo_07_01");	//(оценивающе) Хорошо! Я расскажу тебе то, что я знаю.
+	AI_Output(other,self, " DIA_Addon_Finn_NoNo_15_00 " );	// Of course not!
+	AI_Output(self,other, " DIA_Addon_Finn_NoNo_07_01 " );	// (appreciatively) Good! I will tell you what I know.
 	B_Addon_Finn_TellAll();
 	Info_ClearChoices(DIA_Addon_Finn_Attentat);
 };
 
 func void DIA_Addon_Finn_Attentat_ForgetIt()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_ForgetIt_15_00");	//Это не твое дело!
-	AI_Output(self,other,"DIA_Addon_Finn_ForgetIt_07_01");	//Да? Ну тогда я ничего об этом не знаю.
+	AI_Output(other,self, " DIA_Addon_Finn_ForgetIt_15_00 " );	// It's none of your business!
+	AI_Output(self,other, " DIA_Addon_Finn_ForgetIt_07_01 " );	// Yes? Well then I don't know anything about it.
 	Info_ClearChoices(DIA_Addon_Finn_Attentat);
 };
 
@@ -466,33 +466,33 @@ instance DIA_Addon_Finn_Again(C_Info)
 	condition = DIA_Addon_Finn_Again_Condition;
 	information = DIA_Addon_Finn_Again_Info;
 	permanent = TRUE;
-	description = "И снова о нападении...";
+	description = " And again about the attack... " ;
 };
 
 
 func int DIA_Addon_Finn_Again_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Finn_Attentat) && !Npc_IsDead(Esteban))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Finn_Attack ) &&  ! Npc_IsDead ( Stephen ) ) ;
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Finn_Again_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_Again_15_00");	//И снова о нападении...
+	AI_Output(other,self, " DIA_Addon_Finn_Again_15_00 " );	// And again about the attack...
 
 	if(Finn_TellAll == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_Again_07_01");	//Я тебе уже сказал все, что я знаю.
+		AI_Output(self,other, " DIA_Addon_Finn_Again_07_01 " );	// I've already told you everything I know.
 		Info_ClearChoices(DIA_Addon_Finn_Again);
 		Info_AddChoice(DIA_Addon_Finn_Again,"Хорошо...",DIA_Addon_Finn_Again_Exit);
-		Info_AddChoice(DIA_Addon_Finn_Again,"Тогда расскажи это еще раз!",DIA_Addon_Finn_Again_Nochmal);
+		Info_AddChoice(DIA_Addon_Finn_Again, " Then tell it again! " ,DIA_Addon_Finn_Again_Nochmal);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Finn_Again_07_02");	//Оставь меня в покое с этой чепухой!
+		AI_Output(self,other, " DIA_Addon_Finn_Again_07_02 " );	// Leave me alone with this nonsense!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -503,9 +503,9 @@ func void DIA_Addon_Finn_Again_Exit()
 	Info_ClearChoices(DIA_Addon_Finn_Again);
 };
 
-func void DIA_Addon_Finn_Again_Nochmal()
+func void DIA_Addon_Finn_Again_Again()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_Again_Nochmal_15_00");	//Тогда расскажи мне еще раз!
+	AI_Output(other,self, " DIA_Addon_Finn_Again_Nochmal_15_00 " );	// Then tell me again!
 	B_Addon_Finn_TellAll();
 	Info_ClearChoices(DIA_Addon_Finn_Again);
 };
