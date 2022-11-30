@@ -34,7 +34,7 @@ instance DIA_Addon_10008_Bandit_PICKPOCKET(C_Info)
 
 func int DIA_Addon_10008_Bandit_PICKPOCKET_Condition()
 {
-	return C_Beklauen(55,99);
+	return  C_Robbery ( 55 , 99 );
 };
 
 func void DIA_Addon_10008_Bandit_PICKPOCKET_Info()
@@ -46,7 +46,7 @@ func void DIA_Addon_10008_Bandit_PICKPOCKET_Info()
 
 func void DIA_Addon_10008_Bandit_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_10008_Bandit_PICKPOCKET);
 };
 
@@ -73,16 +73,16 @@ func int DIA_Addon_10008_Bandit_Hi_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_10008_Bandit_Hi_Info()
 {
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_Hi_01_00");	//НЕ НАДО его будить!
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_00 " );	// DO NOT wake him up!
 	AI_Output(other,self,"DIA_Addon_10008_Bandit_Hi_15_01");	//Что???
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_Hi_01_02");	//Если ты не хочешь создавать себе проблем, не связывайся со Скиннером.
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_Hi_01_03");	//Это парень непредсказуем. Прошлый раз, когда один парень разбудил Скиннера, тот его убил.
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_Hi_01_04");	//Пусть он спит, для общего блага.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_02 " );	// If you don't want to create problems for yourself, don't mess with Skinner.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_03 " );	// This guy is unpredictable. The last time a guy woke Skinner up, he killed him.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_04 " );	// Let him sleep, for the greater good.
 };
 
 
@@ -93,7 +93,7 @@ instance DIA_Addon_10008_Bandit_soup(C_Info)
 	condition = DIA_Addon_10008_Bandit_soup_Condition;
 	information = DIA_Addon_10008_Bandit_soup_Info;
 	permanent = FALSE;
-	description = "Ты рудокоп?";
+	description = " Are you a miner? " ;
 };
 
 
@@ -105,13 +105,13 @@ func int DIA_Addon_10008_Bandit_soup_Condition()
 func void DIA_Addon_10008_Bandit_soup_Info()
 {
 	AI_Output(other,self,"DIA_Addon_10008_Bandit_soup_15_00");	//Ты рудокоп?
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_01");	//Ты по штанам так решил? Нет, я ношу их просто потому, что это удобно.
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_02");	//Все, что я здесь делаю, - готовлю тушеное мясо. Вот, попробуй - оно придаст тебе сил.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_01 " );	// Did you decide that in your pants? No, I wear them simply because they are comfortable.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_02 " );	// All I do here is cook stew. Here, try it - it will give you strength.
 	B_GiveInvItems(self,other,ItFo_Addon_Meatsoup,1);
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_03");	//Это очень важно - тренировать свою силу. Вокруг столько опасностей.
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_04");	//Если хочешь, я готов помочь тебе стать сильнее.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_03 " );	// It's very important to train your strength. There are so many dangers around.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_04 " );	// If you want, I'm ready to help you become stronger.
 	Log_CreateTopic(Topic_Addon_BDT_Teacher,LOG_NOTE);
-	B_LogEntry(Topic_Addon_BDT_Teacher,"Бандит у котелка может помочь мне стать сильнее.");
+	B_LogEntry(Topic_Addon_BDT_Teacher, "The thug at the bowler hat can help me get stronger. " );
 };
 
 
@@ -122,7 +122,7 @@ instance DIA_Addon_10008_Bandit_Teach(C_Info)
 	condition = DIA_Addon_10008_Bandit_Teach_Condition;
 	information = DIA_Addon_10008_Bandit_Teach_Info;
 	permanent = TRUE;
-	description = "Я хочу быть сильнее.";
+	description = " I want to be stronger. " ;
 };
 
 
@@ -132,12 +132,12 @@ func int DIA_Addon_10008_Bandit_Teach_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_10008_Bandit_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Addon_10008_Bandit_Teach_15_00");	//Я хочу быть сильнее.
+	AI_Output(other,self, " DIA_Addon_10008_Bandit_Teach_15_00 " );	// I want to be stronger.
 	Info_ClearChoices(DIA_Addon_10008_Bandit_Teach);
 	Info_AddChoice(DIA_Addon_10008_Bandit_Teach,Dialog_Back,DIA_Addon_10008_Bandit_Teach_Back);
 	Info_AddChoice(DIA_Addon_10008_Bandit_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Addon_10008_Bandit_Teach_STR_1);
@@ -166,4 +166,3 @@ func void DIA_Addon_10008_Bandit_Teach_STR_5()
 	Info_AddChoice(DIA_Addon_10008_Bandit_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Addon_10008_Bandit_Teach_STR_1);
 	Info_AddChoice(DIA_Addon_10008_Bandit_Teach,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Addon_10008_Bandit_Teach_STR_5);
 };
-
