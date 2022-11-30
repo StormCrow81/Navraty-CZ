@@ -1,5 +1,5 @@
 
-instance DIA_Schwarzmagier_HELLO(C_Info)
+instance DIA_Schwarzmagier_HELLO (C_Info)
 {
 	npc = DMT_1299_OberDementor_DI;
 	nr = 5;
@@ -17,67 +17,67 @@ func int DIA_Schwarzmagier_HELLO_Condition()
 
 var int SC_KnowsMadPsi;
 
-func void DIA_Schwarzmagier_HELLO_Info()
+func void DIA_Black Mage_HELLO_Info()
 {
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_09_00");	//Что ж, ничтожный червь, ты действительно осмелился дойти до ворот хозяина.
-	AI_Output(other,self,"DIA_Schwarzmagier_HELLO_15_01");	//Это ты здесь всем заправляешь?
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_09_02");	//Я страж Чертогов Ирдората! Величайшего источника власти Белиара на земле. Божественная сила повелителя течет через мои руки.
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_09_03");	//Одно мое слово, и ты погрузишься в вечное безумие.
-	B_LogEntry(TOPIC_HallenVonIrdorath,"Я у последних врат. Черный маг, похоже, ключ к ним.");
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_09_00 " );	// Well, little worm, you really dared to come to the master's gate.
+	AI_Output(other,self, " DIA_Schwarzmagier_HELLO_15_01 " );	// Are you the one running the show here?
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_09_02 " );	// I am the guardian of the Halls of Irdorath! The greatest source of Beliar's power on earth. The divine power of the overlord flows through my hands.
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_09_03 " );	// One word from me, and you will plunge into eternal madness.
+	B_LogEntry(TOPIC_HallenVonIrdorath, " I'm at the last gate. The black mage seems to be the key to it. " );
 	Info_ClearChoices(DIA_Schwarzmagier_HELLO);
-	Info_AddChoice(DIA_Schwarzmagier_HELLO,"Отведи меня к своему хозяину.",DIA_Schwarzmagier_HELLO_meister);
-	Info_AddChoice(DIA_Schwarzmagier_HELLO,"И сколько еще тебе подобных мне придется убить?",DIA_Schwarzmagier_HELLO_dmt);
-	Info_AddChoice(DIA_Schwarzmagier_HELLO,"А что скрывается за тем огромным порталом, вон там?",DIA_Schwarzmagier_HELLO_hinterTor);
-	Info_AddChoice(DIA_Schwarzmagier_HELLO,"Кто твой хозяин?",DIA_Schwarzmagier_HELLO_wer);
+	Info_AddChoice(DIA_Schwarzmagier_HELLO, " Take me to your master. " ,DIA_Schwarzmagier_HELLO_meister);
+	Info_AddChoice(DIA_Schwarzmagier_HELLO, " How many more of your kind will I have to kill? " ,DIA_Schwarzmagier_HELLO_dmt);
+	Info_AddChoice(DIA_Schwarzmagier_HELLO, " What's behind that huge portal over there? " ,DIA_Schwarzmagier_HELLO_hinterTor);
+	Info_AddChoice(DIA_Schwarzmagier_HELLO, " Who is your boss? " ,DIA_Schwarzmagier_HELLO_wer);
 
 	if(SC_KnowsMadPsi == TRUE)
 	{
-		Info_AddChoice(DIA_Schwarzmagier_HELLO,"Ты ведь был последователем Спящего.",DIA_Schwarzmagier_HELLO_schlaefer);
+		Info_AddChoice(DIA_Schwarzmagier_HELLO, " You were a follower of the Sleeper. " ,DIA_Schwarzmagier_HELLO_schlaefer);
 	};
 };
 
-func void DIA_Schwarzmagier_HELLO_wer()
+func void DIA_Black Mage_HELLO_who()
 {
-	AI_Output(other,self,"DIA_Schwarzmagier_HELLO_wer_15_00");	//Кто твой хозяин?
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_wer_09_01");	//Он странник между мирами. Его божественная мудрость просвещает нас.
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_wer_09_02");	//Он Избранный Белиара. Он тот, кто освободит королевство от презренных последователей Инноса.
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_wer_09_03");	//Он несет смерть всем, кто сомневается в его величии.
+	AI_Output(other,self, " DIA_Schwarzmagier_HELLO_wer_15_00 " );	// Who is your master?
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_wer_09_01 " );	// He's a wanderer between worlds. His divine wisdom enlightens us.
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_wer_09_02 " );	// He is Beliar's Chosen. He is the one who will free the kingdom from the despicable followers of Innos.
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_wer_09_03 " );	// He brings death to all who doubt his greatness.
 };
 
-func void DIA_Schwarzmagier_HELLO_hinterTor()
+func void DIA_blackmagician_HELLO_behindgate()
 {
-	AI_Output(other,self,"DIA_Schwarzmagier_HELLO_hinterTor_15_00");	//А что скрывается за тем огромным порталом, вон там?
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_hinterTor_09_01");	//(смеется) Покои моего повелителя останутся недоступными для тебя. Я не дам тебе возможности открыть эти врата.
+	AI_Output(other,self, " DIA_Schwarzmagier_HELLO_hinterTor_15_00 " );	// What's behind that huge portal over there?
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_hinterTor_09_01 " );	// (laughs) My lord's quarters will remain out of your reach. I will not give you the opportunity to open these gates.
 };
 
-func void DIA_Schwarzmagier_HELLO_schlaefer()
+func void DIA_black magician_HELLO_sleeper()
 {
-	AI_Output(other,self,"DIA_Schwarzmagier_HELLO_schlaefer_15_00");	//Ты ведь был последователем Спящего.
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_schlaefer_09_01");	//Это было в далеком прошлом! Повелитель открыл нам глаза. Теперь никто не остановит нас.
+	AI_Output(other,self, " DIA_Schwarzmagier_HELLO_schlaefer_15_00 " );	// You were a follower of the Sleeper.
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_schlaefer_09_01 " );	// That was in the distant past! The Master has opened our eyes. Now no one will stop us.
 	TOPIC_END_DEMENTOREN = TRUE;
 	B_GivePlayerXP(XP_Ambient);
 };
 
-func void DIA_Schwarzmagier_HELLO_dmt()
+func void DIA_Black Mage_HELLO_dmt()
 {
-	AI_Output(other,self,"DIA_Schwarzmagier_HELLO_dmt_15_00");	//И сколько еще тебе подобных мне придется убить?
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_dmt_09_01");	//Нас много. Ты даже не представляешь, как многочисленны те, кто ждет прихода этой свободы.
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_dmt_09_02");	//Их вопль прокатится по всей земле, когда мы вступим в этот мир.
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_dmt_09_03");	//Чтобы освободить его от варваров, называющих себя Стражами Огня.
+	AI_Output(other,self, " DIA_Schwarzmagier_HELLO_dmt_15_00 " );	// And how many more of your kind will I have to kill?
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_dmt_09_01 " );	// There are many of us. You have no idea how many are those who are waiting for this freedom to come.
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_dmt_09_02 " );	// Their cry will reverberate throughout the land as we enter this world.
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_dmt_09_03 " );	// To free him from the barbarians who call themselves the Fire Guardians.
 };
 
-func void DIA_Schwarzmagier_HELLO_meister()
+func void DIA_Black Mage_HELLO_master()
 {
 	//Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_INCOVATION_RED",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_meister_09_00");	//(угрожающе) Хватит болтовни! Я уничтожу тебя.
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_meister_09_00 " );	// (threateningly) Enough talk! I will destroy you.
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_meister_09_01");	//Твой взор потухнет, и твой дух растает во тьме.
+	AI_Output(self,other, " DIA_Schwarzmagier_HELLO_meister_09_01 " );	// Your gaze will go out, and your spirit will melt into darkness.
 
-	if(Npc_HasItems(other,ItAm_Prot_BlackEye_Mis) == FALSE)
+	if (Npc_HasItems(other,ItAm_Prot_BlackEye_Mis) ==  FALSE )
 	{
 		AI_PlayAni(hero,"T_INSANE");
 		hero.attribute[ATR_MANA] = 0;
@@ -89,7 +89,7 @@ func void DIA_Schwarzmagier_HELLO_meister()
 		B_SCIsObsessed(hero);
 	};
 	Info_ClearChoices(DIA_Schwarzmagier_HELLO);
-	Info_AddChoice(DIA_Schwarzmagier_HELLO,Dialog_Ende,DIA_Schwarzmagier_HELLO_back);
+	Info_AddChoice(DIA_Schwarzmagier_HELLO,Dialog_End,DIA_Schwarzmagier_HELLO_back);
 };
 
 func void DIA_Schwarzmagier_HELLO_back()
@@ -99,5 +99,5 @@ func void DIA_Schwarzmagier_HELLO_back()
 	self.flags = 0;
 	Snd_Play("MFX_FEAR_CAST");
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
