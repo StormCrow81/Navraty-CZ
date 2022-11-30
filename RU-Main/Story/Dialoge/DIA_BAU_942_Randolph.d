@@ -21,35 +21,35 @@ func void DIA_Randolph_EXIT_Info()
 };
 
 
-instance DIA_Randolph_SchwereLuft(C_Info)
+instance DIA_Randolph_SchwereLuft (C_Info)
 {
 	npc = BAU_942_Randolph;
 	nr = 4;
-	condition = DIA_Randolph_SchwereLuft_Condition;
+	condition = DIA_Randolph_HeavyAir_Condition;
 	information = DIA_Randolph_SchwereLuft_Info;
 	permanent = FALSE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
-func int DIA_Randolph_SchwereLuft_Condition()
+func int DIA_Randolph_HeavyAir_Condition()
 {
-	if(!Npc_IsDead(Alvares) && !Npc_IsDead(Engardo) && (Kapitel < 4))
+	if ( ! Npc_IsDead(Alvares) &&  ! Npc_IsDead(Engardo) && (Chapter <  4 )) ;
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Randolph_SchwereLuft_Info()
+func void DIA_Randolph_HeavyAir_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_SchwereLuft_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_Randolph_SchwereLuft_06_01");	//Хммм... Как только кто-нибудь здесь скажет неверное слово, начнется танец смерти... так что будь осторожнее - или резни не миновать.
-	AI_Output(other,self,"DIA_Randolph_SchwereLuft_15_02");	//Ты будешь участвовать в схватке?
-	AI_Output(self,other,"DIA_Randolph_SchwereLuft_06_03");	//Я не останусь в стороне, когда начнется драка. Но я также не собираюсь провоцировать ее.
+	AI_Output(other,self, " DIA_Randolph_SchwereLuft_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Randolph_SchwereLuft_06_01 " );	// Hmmm... As soon as anyone here says the wrong word, the dance of death will begin... so be careful - or there will be a massacre.
+	AI_Output(other,self, " DIA_Randolph_SchwereLuft_15_02 " );	// Are you going to fight?
+	AI_Output(self,other, " DIA_Randolph_SchwereLuft_06_03 " );	// I won't stand by when the fight starts. But I'm also not going to provoke her.
 	Akils_SLDStillthere = TRUE;
 	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
-	B_LogEntry(TOPIC_AkilsSLDStillthere,"Фермеру Акилу угрожают наемники.");
+	B_LogEntry(TOPIC_AkilsSLDStillthere, " Farmer Akils is threatened by mercenaries. " );
 	B_NpcClearObsessionByDMT(self);
 };
 
@@ -61,13 +61,13 @@ instance DIA_Randolph_HALLO(C_Info)
 	condition = DIA_Randolph_HALLO_Condition;
 	information = DIA_Randolph_HALLO_Info;
 	permanent = FALSE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
 func int DIA_Randolph_HALLO_Condition()
 {
-	if(Npc_IsDead(Alvares) && Npc_IsDead(Engardo) && (Kapitel < 4))
+	if ( Npc_IsDead ( Alvares ) && Npc_IsDead ( Engardo ) && ( Chapter <  4 )) ;
 	{
 		return TRUE;
 	};
@@ -75,18 +75,18 @@ func int DIA_Randolph_HALLO_Condition()
 
 func void DIA_Randolph_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_HALLO_15_00");	//Все в порядке?
-	if(Npc_IsDead(Akil) && Npc_IsDead(Kati))
+	AI_Output(other,self, " DIA_Randolph_HALLO_15_00 " );	// Is everything okay?
+	if (Npc_IsDead(Akil) && Npc_IsDead(Kati))
 	{
-		AI_Output(self,other,"DIA_Randolph_HALLO_06_01");	//Теперь, когда Кати и Акил отправились в царство Инноса, я буду управлять этой фермой.
+		AI_Output(self,other, " DIA_Randolph_HALLO_06_01 " );	// Now that Kati and Akil have gone to the realm of Innos, I will manage this farm.
 		Npc_ExchangeRoutine(self,"START");
 		AI_ContinueRoutine(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Randolph_HALLO_06_02");	//Да, я в порядке. Этот Альварес становился все наглее и наглее с каждым днем. Хорошо, что все кончилось.
+		AI_Output(self,other, " DIA_Randolph_HALLO_06_02 " );	// Yes, I'm fine. This Alvarez was getting bolder and bolder every day. It's good that it's all over.
 	};
-	AI_Output(self,other,"DIA_Randolph_HALLO_06_03");	//От чего я не отказался бы сейчас - так это от стаканчика хорошего вина в таверне.
+	AI_Output(self,other, " DIA_Randolph_HALLO_06_03 " );	// What I wouldn't say no to right now is a glass of good wine in a tavern.
 };
 
 
@@ -97,13 +97,13 @@ instance DIA_Randolph_Baltram(C_Info)
 	condition = DIA_Randolph_Baltram_Condition;
 	information = DIA_Randolph_Baltram_Info;
 	permanent = FALSE;
-	description = "Меня прислал Бальтрам.";
+	description = " Baltram sent me. " ;
 };
 
 
 func int DIA_Randolph_Baltram_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Randolph_HALLO) && (MIS_Baltram_ScoutAkil == LOG_Running) && Npc_IsDead(Akil) && Npc_IsDead(Kati) && (Lieferung_Geholt == FALSE) && (Kapitel < 4))
+	if ( Npc_KnowsInfo ( other , DIA_Randolph_HALLO ) && ( MIS_Baltram_ScoutAkil == LOG_Running ) && Npc_IsDead ( Acil ) && Npc_IsDead ( Now ) && ( Lieferung_Geholt ==  FALSE ) && ( Chapter <  4 )) ;
 	{
 		return TRUE;
 	};
@@ -111,39 +111,39 @@ func int DIA_Randolph_Baltram_Condition()
 
 func void DIA_Randolph_Baltram_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_Baltram_15_00");	//Меня прислал Бальтрам. Я должен забрать пакет для него.
-	AI_Output(self,other,"DIA_Randolph_Baltram_06_01");	//Хорошо. Я уже все приготовил. Вот твой пакет.
+	AI_Output(other,self, " DIA_Randolph_Baltram_15_00 " );	// Baltram sent me. I have to pick up a package for him.
+	AI_Output(self,other, " DIA_Randolph_Baltram_06_01 " );	// Good. I've got everything ready. Here is your package.
 	CreateInvItems(self,ItMi_BaltramPaket,1);
 	B_GiveInvItems(self,other,ItMi_BaltramPaket,1);
-	Lieferung_Geholt = TRUE;
+	Delivery_Geholt = TRUE ;
 };
 
 
-instance DIA_Randolph_Geschichte(C_Info)
+instance DIA_Randolph_History (C_Info)
 {
 	npc = BAU_942_Randolph;
 	nr = 5;
-	condition = DIA_Randolph_Geschichte_Condition;
-	information = DIA_Randolph_Geschichte_Info;
+	condition = DIA_Randolph_History_Condition;
+	information = DIA_Randolph_History_Info;
 	permanent = FALSE;
-	description = "Ты ведь нездешний, да?";
+	description = " You're not from here, are you? " ;
 };
 
 
-func int DIA_Randolph_Geschichte_Condition()
+func int DIA_Randolph_History_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Randolph_HALLO) && (Kapitel < 4))
+	if ( Npc_KnowsInfo ( other , DIA_Randolph_HELLO ) && ( Capital <  4 )) .
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Randolph_Geschichte_Info()
+func void DIA_Randolph_History_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_Geschichte_15_00");	//Ты ведь нездешний, да?
-	AI_Output(self,other,"DIA_Randolph_Geschichte_06_01");	//Я пришел с южных островов. Когда-то ходили глашатаи и объявляли, что на Хоринисе нужны люди, чтобы добывать магическую руду.
-	AI_Output(self,other,"DIA_Randolph_Geschichte_06_02");	//Но когда я приехал сюда, они возвели этот огромный барьер. И мне расхотелось идти туда. Поэтому я начал работать в порту.
-	AI_Output(self,other,"DIA_Randolph_Geschichte_06_03");	//Затем сюда перестали заплывать корабли, и я пошел работать на Акила. У меня была работа и похуже, сейчас еще ничего.
+	AI_Output(other,self, " DIA_Randolph_Geschichte_15_00 " );	// You're not from here, are you?
+	AI_Output(self,other, " DIA_Randolph_Geschichte_06_01 " );	// I come from the southern islands. Once upon a time, heralds went and announced that people were needed on Khorinis to mine magical ore.
+	AI_Output(self,other, " DIA_Randolph_Geschichte_06_02 " );	// But when I came here, they put up this huge barrier. And I didn't want to go there. So I started working at the port.
+	AI_Output(self,other, " DIA_Randolph_Geschichte_06_03 " );	// Then the ships stopped coming here, and I went to work for Akil. I had a job and worse, now still nothing.
 };
 
 
@@ -153,13 +153,13 @@ instance DIA_Randolph_TAVERNE(C_Info)
 	nr = 5;
 	condition = DIA_Randolph_TAVERNE_Condition;
 	information = DIA_Randolph_TAVERNE_Info;
-	description = "Ты бываешь в таверне?";
+	description = " Do you go to the tavern? " ;
 };
 
 
 func int DIA_Randolph_TAVERNE_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Randolph_HALLO) && (Kapitel < 4))
+	if ( Npc_KnowsInfo ( other , DIA_Randolph_HELLO ) && ( Capital <  4 )) .
 	{
 		return TRUE;
 	};
@@ -167,25 +167,25 @@ func int DIA_Randolph_TAVERNE_Condition()
 
 func void DIA_Randolph_TAVERNE_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_TAVERNE_15_00");	//Ты бываешь в таверне?
+	AI_Output(other,self, " DIA_Randolph_TAVERNE_15_00 " );	// Do you go to the tavern?
 	AI_Output(self,other,"DIA_Randolph_TAVERNE_06_01");	//Бывал.
-	AI_Output(self,other,"DIA_Randolph_TAVERNE_06_02");	//Но больше я не могу позволить себе ходить туда.
+	AI_Output(self,other, " DIA_Randolph_TAVERNE_06_02 " );	// But I can't afford to go there anymore.
 };
 
 
-instance DIA_Randolph_WASISTINTAVERNE(C_Info)
+instance DIA_Randolph_WASISTINTAVERNE (C_Info)
 {
 	npc = BAU_942_Randolph;
 	nr = 6;
 	condition = DIA_Randolph_WASISTINTAVERNE_Condition;
 	information = DIA_Randolph_WASISTINTAVERNE_Info;
-	description = "А что там происходит, в таверне?";
+	description = " What's going on in the tavern? " ;
 };
 
 
 func int DIA_Randolph_WASISTINTAVERNE_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Randolph_TAVERNE) && (Kapitel < 4))
+	if ( Npc_KnowsInfo ( other , DIA_Randolph_TAVERN ) && ( Capital <  4 )) ;
 	{
 		return TRUE;
 	};
@@ -193,58 +193,58 @@ func int DIA_Randolph_WASISTINTAVERNE_Condition()
 
 func void DIA_Randolph_WASISTINTAVERNE_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_WASISTINTAVERNE_15_00");	//А что там происходит, в таверне?
-	AI_Output(self,other,"DIA_Randolph_WASISTINTAVERNE_06_01");	//Там проводят азартные игры.
-	AI_Output(self,other,"DIA_Randolph_WASISTINTAVERNE_06_02");	//Двое состязаются друг с другом. Тот, кто может выпить больше пива - побеждает.
-	AI_Output(self,other,"DIA_Randolph_WASISTINTAVERNE_06_03");	//В последнее время я только проигрывал, и теперь у меня совсем не осталось денег.
+	AI_Output(other,self, " DIA_Randolph_WASISTINTAVERNE_15_00 " );	// What's going on in the tavern?
+	AI_Output(self,other, " DIA_Randolph_WASISTINTAVERNE_06_01 " );	// Gambling is held there.
+	AI_Output(self,other, " DIA_Randolph_WASISTINTAVERNE_06_02 " );	// The two are competing against each other. Whoever can drink the most beer wins.
+	AI_Output(self,other, " DIA_Randolph_WASISTINTAVERNE_06_03 " );	// I've only been losing lately, and now I don't have any money left.
 	Log_CreateTopic(TOPIC_Wettsaufen,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Wettsaufen,LOG_Running);
-	B_LogEntry(TOPIC_Wettsaufen,"В таверне можно заключить пари.");
+	B_LogEntry(TOPIC_Wettsaufen, " You can bet in the tavern. " );
 };
 
 
-instance DIA_Randolph_GEGENWEN(C_Info)
+instance DIA_Randolph_GEGENWEN (C_Info)
 {
 	npc = BAU_942_Randolph;
 	nr = 7;
 	condition = DIA_Randolph_GEGENWEN_Condition;
 	information = DIA_Randolph_GEGENWEN_Info;
-	description = "С кем ты соревновался?";
+	description = " Who did you compete with? " ;
 };
 
 
-func int DIA_Randolph_GEGENWEN_Condition()
+func int DIA_Randolph_GIVEAWAY_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Randolph_WASISTINTAVERNE) && (Kapitel < 4))
+	if ( Npc_KnowsInfo ( other , DIA_Randolph_HOUSE INTAVERNE ) && ( Capital <  4 )) .
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Randolph_GEGENWEN_Info()
+func void DIA_Randolph_TOP_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_GEGENWEN_15_00");	//С кем ты соревновался?
-	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_01");	//С Рухаром, этим старым бездельником. Он всегда побеждал меня.
-	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_02");	//У меня есть подозрение, что эта грязная свинья все время подмешивала в мое пиво шнапс.
-	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_03");	//Я думаю, он держит шнапс в своем чертовом сундуке. Вот подлец!
-	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_04");	//Кто-нибудь должен подменить шнапс в его сундуке на воду. Тогда он может подливать ее в мое пиво сколько хочет.
-	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_05");	//Если бы только у меня были деньги, чтобы сразиться с ним еще раз.
-	B_LogEntry(TOPIC_Wettsaufen,"Рендольф рассказал мне о Рухаре и состязании 'кто кого перепьет'. У Рендольфа недостаточно денег, чтобы заключить пари с Рухаром еще раз.");
-	B_LogEntry_Quiet(TOPIC_Wettsaufen,"Рендольф подозревает Рухара в жульничестве в состязании 'кто кого перепьет'. Рендольф хотел бы подменить бутылку шнапса в сундуке Рухара на бутылку с водой.");
+	AI_Output(other,self, " DIA_Randolph_GEGENWEN_15_00 " );	// Who did you compete against?
+	AI_Output(self,other, " DIA_Randolph_GEGENWEN_06_01 " );	// With Ruhar, that old bum. He always defeated me.
+	AI_Output(self,other, " DIA_Randolph_GEGENWEN_06_02 " );	// I have a hunch that this dirty pig was putting schnapps in my beer all the time.
+	AI_Output(self,other, " DIA_Randolph_GEGENWEN_06_03 " );	// I think he keeps schnapps in his goddamn trunk. Here's the scoundrel!
+	AI_Output(self,other, " DIA_Randolph_GEGENWEN_06_04 " );	// Someone needs to swap the schnapps in his chest for water. Then he can pour it into my beer as much as he wants.
+	AI_Output(self,other, " DIA_Randolph_GEGENWEN_06_05 " );	// If only I had the money to fight him one more time.
+	B_LogEntry(TOPIC_Wettsaufen, " Randolph told me about Ruhar and the out-drinking contest. Randolph doesn't have enough money to bet Ruhar again. " );
+	B_LogEntry_Quiet(TOPIC_Wettsaufen, " Randolph suspects Ruhar of cheating in the 'out drinking' contest. Randolph would like to swap the bottle of schnapps in Ruhar's chest for a bottle of water. " );
 };
 
-instance DIA_Randolph_WASBRAUCHSTDU(C_Info)
+instance DIA_Randolph_WASBRAUCHSTDU (C_Info)
 {
 	npc = BAU_942_Randolph;
 	nr = 8;
 	condition = DIA_Randolph_WASBRAUCHSTDU_Condition;
 	information = DIA_Randolph_WASBRAUCHSTDU_Info;
-	description = "Сколько денег тебе нужно для этого состязания?";
+	description = " How much money do you need for this contest? " ;
 };
 
 func int DIA_Randolph_WASBRAUCHSTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Randolph_GEGENWEN) && (MIS_Rukhar_Wettkampf == LOG_Running) && (Kapitel < 4))
+	if (Npc_KnowsInfo(other,DIA_Randolph_ACQUIRED) && (MIS_Rukhar_Wettkampf == LOG_Running) && (Chapter <  4 )) ;
 	{
 		return TRUE;
 	};
@@ -252,19 +252,19 @@ func int DIA_Randolph_WASBRAUCHSTDU_Condition()
 
 func void DIA_Randolph_WASBRAUCHSTDU_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_WASBRAUCHSTDU_15_00");	//Сколько денег тебе нужно для этого состязания?
-	AI_Output(self,other,"DIA_Randolph_WASBRAUCHSTDU_06_01");	//Десять золотых.
+	AI_Output(other,self, " DIA_Randolph_WASBRAUCHSTDU_15_00 " );	// How much money do you need for this challenge?
+	AI_Output(self,other, " DIA_Randolph_WASBRAUCHSTDU_06_01 " );	// Ten gold.
 };
 
 
-instance DIA_Randolph_ICHGEBEDIRGELD(C_Info)
+instance DIA_Randolph_ICHGEBEDIRGELD (C_Info)
 {
 	npc = BAU_942_Randolph;
 	nr = 9;
 	condition = DIA_Randolph_ICHGEBEDIRGELD_Condition;
-	information = DIA_Randolph_ICHGEBEDIRGELD_Info;
+	information = DIA_Randolph_I GIVEDIRMONEY_Info;
 	permanent = TRUE;
-	description = "Я дам тебе деньги, чтобы ты сразился с Рухаром.";
+	description = " I'll give you money to fight Ruhar. " ;
 };
 
 
@@ -272,75 +272,75 @@ var int DIA_Randolph_ICHGEBEDIRGELD_noPerm;
 
 func int DIA_Randolph_ICHGEBEDIRGELD_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Randolph_WASBRAUCHSTDU) && (DIA_Randolph_ICHGEBEDIRGELD_noPerm == FALSE) && (Kapitel < 4))
+	if ( Npc_KnowsInfo ( other , DIA_Randolph_WASBRAUCHSTDU ) && ( DIA_Randolph_ICHGETDIRGEL_noPerm ==  FALSE ) && ( Chapter <  4 )) ;
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Randolph_ICHGEBEDIRGELD_Info()
+func void DIA_Randolph_I GIVEDIRMONEY_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_ICHGEBEDIRGELD_15_00");	//Я дам тебе деньги, чтобы ты сразился с Рухаром.
+	AI_Output(other,self, " DIA_Randolph_ICHGEBEDIRGELD_15_00 " );	// I'll give you money to fight Ruhar.
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,10))
 	{
-		AI_Output(self,other,"DIA_Randolph_ICHGEBEDIRGELD_06_01");	//(восторженно) Правда? Огромное спасибо. Я скоро верну их тебе.
-		AI_Output(self,other,"DIA_Randolph_ICHGEBEDIRGELD_06_02");	//Если я смогу победить, я даже верну тебе их с процентами. Еще увидимся.
-		B_LogEntry(TOPIC_Wettsaufen,"Пари заключено. Я должен наблюдать за ним.");
-		B_GivePlayerXP(XP_Randolph_WettkampfStart);
-		DIA_Randolph_ICHGEBEDIRGELD_noPerm = TRUE;
+		AI_Output(self,other, " DIA_Randolph_ICHGEBEDIRGELD_06_01 " );	// (enthusiastic) Really? Thank you so much. I will return them to you soon.
+		AI_Output(self,other, " DIA_Randolph_ICHGEBEDIRGELD_06_02 " );	// If I can win, I'll even give them back to you with interest. See you.
+		B_LogEntry(TOPIC_Wettsaufen, "The bet is made. I must watch him. " );
+		B_GivePlayerXP(XP_Randolph_CompetitionStart);
+		DIA_Randolph_ICHGEBEDIRGELD_noPerm = TRUE ;
 		B_NpcClearObsessionByDMT(self);
-		MIS_Rukhar_Wettkampf_Day = Wld_GetDay();
+		MIS_Rukhar_Competition_Day = Wld_GetDay();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Randolph_ICHGEBEDIRGELD_06_03");	//Да ладно. У тебя даже этого-то нет.
+		AI_Output(self,other, " DIA_Randolph_ICHGEBEDIRGELD_06_03 " );	// Come on. You don't even have that.
 	};
 
 	B_NpcClearObsessionByDMT(self);
 };
 
-instance DIA_Randolph_WETTKAMPFZUENDE(C_Info)
+instance DIA_Randolph_WETTKAMPZZENDE (C_Info)
 {
 	npc = BAU_942_Randolph;
 	nr = 10;
-	condition = DIA_Randolph_WETTKAMPFZUENDE_Condition;
-	information = DIA_Randolph_WETTKAMPFZUENDE_Info;
+	condition = DIA_Randolph_WETTKAMPZZENDE_Condition;
+	information = DIA_Randolph_WETTKAMPZUMENDE_Info;
 	permanent = TRUE;
-	description = "Похмелье?";
+	description = " Hangover? " ;
 };
 
-func int DIA_Randolph_WETTKAMPFZUENDE_Condition()
+func int DIA_Randolph_COMPETITION_START_Condition()
 {
-	if((MIS_Rukhar_Wettkampf == LOG_SUCCESS) && (Kapitel < 4))
+	if ((MIS_Rukhar_Competition ==  LOG_SUCCESS ) && (Chapter <  4 ))
 	{
 		return TRUE;
 	};
 };
 
 
-var int DIA_Randolph_WETTKAMPFZUENDE_OneTime;
+var int DIA_Randolph_COMPETITION_ONETIME;
 
-func void DIA_Randolph_WETTKAMPFZUENDE_Info()
+func void DIA_Randolph_COMPETITION_START_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_WETTKAMPFZUENDE_15_00");	//Похмелье?
+	AI_Output(other,self, " DIA_Randolph_WETTKAMPFZUENDE_15_00 " );	// Hangover?
 
-	if(Rukhar_Won_Wettkampf == TRUE)
+	if (Rukhar_Won_Competition ==  TRUE )
 	{
-		AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_01");	//Да уж, врагу такого не пожелаешь. И я не могу избавиться от него. Я больше капли в рот не возьму, клянусь!
-		AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_02");	//Твои деньги пропали. Извини.
+		AI_Output(self,other, " DIA_Randolph_WETTKAMPFZUENDE_06_01 " );	// Yeah, you wouldn't wish this on your enemy. And I can't get rid of it. I won't take another drop in my mouth, I swear!
+		AI_Output(self,other, " DIA_Randolph_WETTKAMPFZUENDE_06_02 " );	// Your money is gone. I'm sorry.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_03");	//Нет. Я чувствую себя отлично, правда.
-		if(DIA_Randolph_WETTKAMPFZUENDE_OneTime == FALSE)
+		AI_Output(self,other, " DIA_Randolph_WETTKAMPFZUENDE_06_03 " );	// No. I feel great, really.
+		if (DIA_Randolph_WETTKAMPZUMENDE_OneTime ==  FALSE )
 		{
-			AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_04");	//Все, наконец, получилось. Спасибо еще раз за деньги. Вот, получи их назад.
+			AI_Output(self,other, " DIA_Randolph_WETTKAMPFZUENDE_06_04 " );	// Everything finally worked out. Thanks again for the money. Here, take them back.
 			CreateInvItems(self,ItMi_Gold,20);
 			B_GiveInvItems(self,other,ItMi_Gold,12);
-			DIA_Randolph_WETTKAMPFZUENDE_OneTime = TRUE;
+			DIA_Randolph_WETTKAMPZUENDE_OneTime = TRUE ;
 		};
-		AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_05");	//Похоже, Рухар не скоро еще оправится после этого.
+		AI_Output(self,other, " DIA_Randolph_WETTKAMPFZUENDE_06_05 " );	// Looks like Ruhar won't recover anytime soon after this.
 	};
 
 	B_NpcClearObsessionByDMT(self);
@@ -354,7 +354,7 @@ instance DIA_Randolph_PERM(C_Info)
 	condition = DIA_Randolph_PERM_Condition;
 	information = DIA_Randolph_PERM_Info;
 	permanent = TRUE;
-	description = "Ты в порядке?";
+	description = " Are you okay? " ;
 };
 
 
@@ -377,50 +377,50 @@ func void DIA_Randolph_PERM_Info()
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Randolph_PERM_15_00");	//Ты в порядке?
+		AI_Output(other,self, " DIA_Randolph_PERM_15_00 " );	// Are you okay?
 
 		if(((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL)) && (MIS_HealRandolph != LOG_SUCCESS))
 		{
-			if((DIA_Sagitta_HEALRANDOLPH_GotOne == FALSE) && (DIA_Sagitta_HEALRANDOLPH_KnowsPrice == TRUE) && (DIA_Randolph_PERM_GotMoney == FALSE))
+			if (( DIA_Sagitta_HEALRANDOLPH_GotOne ==  FALSE ) && ( DIA_Sagitta_HEALRANDOLPH_KnowsPrice ==  TRUE ) && ( DIA_Randolph_PERM_GotMoney ==  FALSE ))
 			{
-				AI_Output(other,self,"DIA_Randolph_PERM_15_01");	//Ты послал меня, не дав денег, и не предупредил, что это лекарство такое дорогое?!
-				AI_Output(other,self,"DIA_Randolph_PERM_15_02");	//Сагитта хочет триста золотых за него.
-				AI_Output(self,other,"DIA_Randolph_PERM_06_03");	//Я могу дать тебе только полторы сотни золотых. Пожалуйста! Ты должен помочь мне. Пожалуйста.
+				AI_Output(other, self, " DIA_Randolph_PERM_15_01 " );	// You sent me without giving money, and didn't warn me that this medicine is so expensive?!
+				AI_Output(other,self, " DIA_Randolph_PERM_15_02 " );	// Sagitta wants three hundred gold for him.
+				AI_Output(self,other, " DIA_Randolph_PERM_06_03 " );	// I can only give you one and a half hundred gold pieces. Please! You must help me. Please.
 				CreateInvItems(self,ItMi_Gold,150);
 				B_GiveInvItems(self,other,ItMi_Gold,150);
 				DIA_Randolph_PERM_GotMoney = TRUE;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Randolph_PERM_06_04");	//Мне плохо. Каждый раз, когда я перестаю пить, это похмелье убивает меня. Мне очень нужна помощь.
-				AI_Output(self,other,"DIA_Randolph_PERM_06_05");	//Но есть лекарство, которое может помочь.
-				AI_Output(self,other,"DIA_Randolph_PERM_06_06");	//Сагитта, ведьма-целительница, уже готовила его для меня. Но я не думаю, что теперь смогу добраться до нее сам. Там повсюду орки.
+				AI_Output(self,other, " DIA_Randolph_PERM_06_04 " );	// I feel bad. Every time I stop drinking, this hangover kills me. I really need help.
+				AI_Output(self,other, " DIA_Randolph_PERM_06_05 " );	// But there is a medicine that can help.
+				AI_Output(self,other, " DIA_Randolph_PERM_06_06 " );	// Sagitta, the healer witch, was already preparing it for me. But I don't think I can get to it myself now. Orcs are everywhere.
 			};
 			Log_CreateTopic(TOPIC_HealRandolph,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_HealRandolph,LOG_Running);
-			B_LogEntry(TOPIC_HealRandolph,"Рендольф, похоже, решил бросить пить и послал меня к Сагитте за лекарством от похмельного синдрома.");
+			B_LogEntry(TOPIC_HealRandolph, " Randolph seems to have decided to stop drinking and sent me to Sagitta for a hangover cure. " );
 			MIS_HealRandolph = LOG_Running;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Randolph_PERM_06_07");	//Я все еще чувствую слабость в ногах, но мне уже стало лучше.
+			AI_Output(self,other, " DIA_Randolph_PERM_06_07 " );	// I still feel weak in my legs, but I'm getting better.
 		};
 	};
 };
 
 
-instance DIA_Randolph_Heilung(C_Info)
+instance DIA_Randolph_Healing (C_Info)
 {
 	npc = BAU_942_Randolph;
 	nr = 55;
-	condition = DIA_Randolph_Heilung_Condition;
-	information = DIA_Randolph_Heilung_Info;
+	condition = DIA_Randolph_Healing_Condition;
+	information = DIA_Randolph_Healing_Info;
 	permanent = TRUE;
-	description = "Спиртное ударило тебе в голову, ха?";
+	description = "The booze went to your head, huh? " ;
 };
 
 
-func int DIA_Randolph_Heilung_Condition()
+func int DIA_Randolph_Healing_Condition()
 {
 	if((NpcObsessedByDMT_Randolph == TRUE) && (NpcObsessedByDMT == FALSE) && (hero.guild == GIL_KDF))
 	{
@@ -428,10 +428,10 @@ func int DIA_Randolph_Heilung_Condition()
 	};
 };
 
-func void DIA_Randolph_Heilung_Info()
+func void DIA_Randolph_Healing_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_Heilung_15_00");	//Спиртное ударило тебе в голову, ха?
-	AI_Output(self,other,"DIA_Randolph_Heilung_06_01");	//Я больше капли в рот не возьму. Только ни в этой жизни. Ты можешь мне поверить, парень.
+	AI_Output(other,self, " DIA_Randolph_Heilung_15_00 " );	// The alcohol went to your head, huh?
+	AI_Output(self,other, " DIA_Randolph_Heilung_06_01 " );	// I won't take another drop in my mouth. Just not in this life. You can trust me boy.
 	B_NpcClearObsessionByDMT(self);
 };
 
@@ -442,7 +442,7 @@ instance DIA_Randolph_SAGITTAHEAL(C_Info)
 	nr = 56;
 	condition = DIA_Randolph_SAGITTAHEAL_Condition;
 	information = DIA_Randolph_SAGITTAHEAL_Info;
-	description = "Держи. Это облегчит твое похмелье. ";
+	description = " Here. This will ease your hangover. " ;
 };
 
 
@@ -456,24 +456,24 @@ func int DIA_Randolph_SAGITTAHEAL_Condition()
 
 func void DIA_Randolph_SAGITTAHEAL_Info()
 {
-	AI_Output(other,self,"DIA_Randolph_SAGITTAHEAL_15_00");	//Держи. Это облегчит твое похмелье.
+	AI_Output(other,self, " DIA_Randolph_SAGITTAHEAL_15_00 " );	// Hold. It will ease your hangover.
 	B_GiveInvItems(other,self,ItPo_HealRandolph_MIS,1);
 	if(Npc_IsInState(self,ZS_Pick_FP))
 	{
 		B_UseItem(self,ItPo_HealRandolph_MIS);
 	};
-	AI_Output(self,other,"DIA_Randolph_SAGITTAHEAL_06_01");	//Ох! Спасибо, друг. Теперь я смогу хотя бы поспать.
-	AI_Output(self,other,"DIA_Randolph_SAGITTAHEAL_06_02");	//Чем я могу отплатить тебе за это?
+	AI_Output(self,other, " DIA_Randolph_SAGITTAHEAL_06_01 " );	// Oh! Thank you friend. Now I can at least sleep.
+	AI_Output(self,other, " DIA_Randolph_SAGITTAHEAL_06_02 " );	// How can I repay you for this?
 	if(DIA_Randolph_PERM_GotMoney == FALSE)
 	{
-		AI_Output(self,other,"DIA_Randolph_SAGITTAHEAL_06_03");	//Я думаю, эти несколько монет могут только помочь мне спасти лицо. Но боюсь, это все, что у меня есть.
+		AI_Output(self,other, " DIA_Randolph_SAGITTAHEAL_06_03 " );	// I think these few coins can only help me save face. But I'm afraid that's all I have.
 		CreateInvItems(self,ItMi_Gold,150);
 		B_GiveInvItems(self,other,ItMi_Gold,150);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Randolph_SAGITTAHEAL_15_04");	//Я заплатил за тебя кучу денег. Твои жалкие несколько монет никак не могут компенсировать мои затраты.
-		AI_Output(self,other,"DIA_Randolph_SAGITTAHEAL_06_05");	//Ну, в таком случае мне повезло, что я встретил такого великодушного паладина, тебе так не кажется?
+		AI_Output(other,self, " DIA_Randolph_SAGITTAHEAL_15_04 " );	// I paid a lot of money for you. Your measly few coins can't make up for my expenses.
+		AI_Output(self,other, " DIA_Randolph_SAGITTAHEAL_06_05 " );	// Well, in that case, I'm lucky to have met such a generous paladin, don't you think?
 	};
 	MIS_HealRandolph = LOG_SUCCESS;
 	B_GivePlayerXP(XP_HealRandolph);
@@ -494,7 +494,7 @@ instance DIA_Randolph_PICKPOCKET(C_Info)
 
 func int DIA_Randolph_PICKPOCKET_Condition()
 {
-	return C_Beklauen(58,2);
+	return  C_Robbery ( 58 , 2 );
 };
 
 func void DIA_Randolph_PICKPOCKET_Info()
@@ -506,7 +506,7 @@ func void DIA_Randolph_PICKPOCKET_Info()
 
 func void DIA_Randolph_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Randolph_PICKPOCKET);
 };
 
@@ -514,4 +514,3 @@ func void DIA_Randolph_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Randolph_PICKPOCKET);
 };
-
