@@ -1,7 +1,8 @@
 
+
 instance Spell_PalHeal(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	spellType = SPELL_NEUTRAL;
 	targetCollectAlgo = TARGET_COLLECT_CASTER;
 	canTurnDuringInvest = 0;
@@ -160,7 +161,7 @@ func void Spell_Cast_PalHeal()
 		MM_Poison_02_Up = FALSE;
 		MM_Poison_03_Up = FALSE;
 		TimerPoisonUpTic = FALSE;
-		TimerPoisonUp = FALSE;
+		TimerPoisonUp = FALSE ;
 		TempPlayerIsCurse = FALSE;
 		PlayerIsCurse = FALSE;
 		TempPlayerIsWeakness = FALSE;
@@ -189,7 +190,7 @@ func void Spell_Cast_PalHeal()
 		MM_Poison_02_Up = FALSE;
 		MM_Poison_03_Up = FALSE;
 		TimerPoisonUpTic = FALSE;
-		TimerPoisonUp = FALSE;
+		TimerPoisonUp = FALSE ;
 		TempPlayerIsCurse = FALSE;
 		PlayerIsCurse = FALSE;
 		TempPlayerIsWeakness = FALSE;
@@ -204,24 +205,24 @@ func void Spell_Cast_PalHeal()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
 
-//----------------------хил Стража------------------------------
+// ----------------------hill Guard----------------------- ------
 
 instance SPELL_TPLHEAL(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	spellType = SPELL_NEUTRAL;
 	targetCollectAlgo = TARGET_COLLECT_CASTER;
 	canTurnDuringInvest = 0;
@@ -401,7 +402,7 @@ func void spell_cast_tplheal()
 		MM_Poison_02_Up = FALSE;
 		MM_Poison_03_Up = FALSE;
 		TimerPoisonUpTic = FALSE;
-		TimerPoisonUp = FALSE;
+		TimerPoisonUp = FALSE ;
 		TempPlayerIsCurse = FALSE;
 		PlayerIsCurse = FALSE;
 		TempPlayerIsWeakness = FALSE;
@@ -430,7 +431,7 @@ func void spell_cast_tplheal()
 		MM_Poison_02_Up = FALSE;
 		MM_Poison_03_Up = FALSE;
 		TimerPoisonUpTic = FALSE;
-		TimerPoisonUp = FALSE;
+		TimerPoisonUp = FALSE ;
 		TempPlayerIsCurse = FALSE;
 		PlayerIsCurse = FALSE;
 		TempPlayerIsWeakness = FALSE;
@@ -453,7 +454,7 @@ func void spell_cast_tplheal()
 		MM_Poison_02_Up = FALSE;
 		MM_Poison_03_Up = FALSE;
 		TimerPoisonUpTic = FALSE;
-		TimerPoisonUp = FALSE;
+		TimerPoisonUp = FALSE ;
 		TempPlayerIsCurse = FALSE;
 		PlayerIsCurse = FALSE;
 		TempPlayerIsWeakness = FALSE;
@@ -461,19 +462,19 @@ func void spell_cast_tplheal()
 		TempPlayerIsSick = FALSE;
 		PlayerIsSick = FALSE;
 		ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
-		HeroNoCC = TRUE;
+		HeroNoCC = TRUE ;
 		return;
 	};
 
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
 
-//----------------------обычный хил------------------------------
+// ----------------------regular heal------------------------ ------
 
 instance Spell_Heal(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	spellType = SPELL_NEUTRAL;
 	targetCollectAlgo = TARGET_COLLECT_CASTER;
 	canTurnDuringInvest = 0;
@@ -576,7 +577,7 @@ func void Spell_Cast_Heal()
 		MM_Poison_02_Up = FALSE;
 		MM_Poison_03_Up = FALSE;
 		TimerPoisonUpTic = FALSE;
-		TimerPoisonUp = FALSE;
+		TimerPoisonUp = FALSE ;
 		TempPlayerIsCurse = FALSE;
 		PlayerIsCurse = FALSE;
 		TempPlayerIsWeakness = FALSE;
@@ -603,14 +604,14 @@ func void Spell_Cast_Heal()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
