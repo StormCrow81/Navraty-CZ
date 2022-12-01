@@ -1,7 +1,8 @@
 
+
 instance SPELL_BELIARRUNE(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 
 	if(NUMBERBELIARRUNE == FALSE)
 	{
@@ -99,40 +100,40 @@ func void spell_cast_beliarrune()
 	}
 	else if(BELIARWEAPUPG06 == TRUE)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_BELIARSRUNE_06;
+		self. attribute[ ATR_MANA ] = self. attribute[ ATR_MANA ] -  SPL_COST_BELIARSRUNE_06 ;
 	}
 	else if(BELIARWEAPUPG05 == TRUE)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_BELIARSRUNE_05;
+		self. attribute[ ATR_MANA ] = self. attribute[ ATR_MANA ] -  SPL_COST_BELIARSRUNE_05 ;
 	}
 	else if(BELIARWEAPUPG04 == TRUE)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_BELIARSRUNE_04;
+		self. attribute[ ATR_MANA ] = self. attribute[ ATR_MANA ] -  SPL_COST_BELIARSRUNE_04 ;
 	}
 	else if(BELIARWEAPUPG03 == TRUE)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_BELIARSRUNE_03;
+		self. attribute[ ATR_MANA ] = self. attribute[ ATR_MANA ] -  SPL_COST_BELIARSRUNE_03 ;
 	}
 	else if(BELIARWEAPUPG02 == TRUE)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_BELIARSRUNE_02;
+		self. attribute[ ATR_MANA ] = self. attribute[ ATR_MANA ] -  SPL_COST_BELIARSRUNE_02 ;
 	}
 	else
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_BELIARSRUNE_01;
+		self. attribute[ ATR_MANA ] = self. attribute[ ATR_MANA ] -  SPL_COST_BELIARSRUNE_01 ;
 	};
 	if(Npc_IsPlayer(self) && (MIS_RUNEMAGICNOTWORK == LOG_Running) && (TESTRUNEME == FALSE) && !Npc_GetActiveSpellIsScroll(self))
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
