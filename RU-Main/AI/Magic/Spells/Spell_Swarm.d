@@ -1,7 +1,8 @@
 
+
 instance Spell_Swarm(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	targetCollectAlgo = TARGET_COLLECT_FOCUS;
 };
 
@@ -9,13 +10,13 @@ func int Spell_Logic_Swarm(var int manaInvested)
 {
 	if((other.protection[PROT_MAGIC] == IMMUNE) || (other.flags == NPC_FLAG_IMMORTAL) || (other.flags == NPC_FLAG_GHOST) || (other.flags == NPC_FLAG_XARADRIM) || (other.flags == ORCTEMPLENPCFLAGS) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(XranFreg)) || (other.guild == GIL_TROLL) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(XOR_12206_WARRIORNATURE)) || (other.aivar[90] == TRUE) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(Ass_126_Haniar)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(TROLL_CAVE_UNIQ)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(BDT_1090_Addon_Raven)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(BDT_2090_Addon_Raven)) || (other.guild == GIL_DMT) || (other.guild == GIL_KDW) || (other.guild == GIL_KDF) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR) || (other.guild == GIL_DRAGON) || (other.guild == GIL_Stoneguardian) || (other.guild == GIL_DEMON) || (other.aivar[90] == TRUE) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(NONE_100_Xardas)) || C_NpcIsUndead(other))
 	{
-		AI_PrintClr("Это не сработает...",177,58,17);
+		AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 		//B_Say(self,self,"$DONTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(other.aivar[AIV_SwarmStateTime] > 0)
 	{
-		AI_PrintClr("Это не сработает...",177,58,17);
+		AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 		//B_Say(self,self,"$DONTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -88,10 +89,10 @@ func void Spell_Cast_Swarm()
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
