@@ -1,7 +1,7 @@
 
 instance Spell_MasterOfDisaster(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	damage_per_level = SPL_DAMAGE_MasterOfDisaster;
 	damagetype = DAM_MAGIC;
 	targetCollectRange = 1000;
@@ -11,7 +11,7 @@ func int Spell_Logic_MasterOfDisaster(var int manaInvested)
 {
 	if(C_NpcIsEvil(other) == FALSE)
 	{
-		AI_PrintClr("Это не сработает...",177,58,17);
+		AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 		//B_Say(self,self,"$DONTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -48,14 +48,13 @@ func void Spell_Cast_MasterOfDisaster()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
-
