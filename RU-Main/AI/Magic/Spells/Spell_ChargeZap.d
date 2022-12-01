@@ -1,4 +1,5 @@
 
+
 instance Spell_ChargeZap(C_Spell_Proto)
 {
 	time_per_mana = 60;
@@ -26,7 +27,7 @@ func int Spell_Logic_ChargeZap(var int manaInvested)
 		{
 			self.attribute[ATR_MANA] = 0;
 		};
-		self.aivar[AIV_SpellLevel] = 2;
+		self.aivar[AIV_SpellLevel] = 2 ;
 		return SPL_NEXTLEVEL;
 	}
 	else if((manaInvested > (STEP_ChargeZap * 2)) && (self.aivar[AIV_SpellLevel] <= 2))
@@ -36,7 +37,7 @@ func int Spell_Logic_ChargeZap(var int manaInvested)
 		{
 			self.attribute[ATR_MANA] = 0;
 		};
-		self.aivar[AIV_SpellLevel] = 3;
+		self.aivar[AIV_SpellLevel] = 3 ;
 		return SPL_NEXTLEVEL;
 	}
 	else if((manaInvested > (STEP_ChargeZap * 3)) && (self.aivar[AIV_SpellLevel] <= 3))
@@ -46,10 +47,10 @@ func int Spell_Logic_ChargeZap(var int manaInvested)
 		{
 			self.attribute[ATR_MANA] = 0;
 		};
-		self.aivar[AIV_SpellLevel] = 4;
+		self.aivar[AIV_SpellLevel] = 4 ;
 		return SPL_NEXTLEVEL;
 	}
-	else if((manaInvested > (STEP_ChargeZap * 3)) && (self.aivar[AIV_SpellLevel] == 4))
+	else  if ((manaInvested > (STEP_ChargeZap *  3 )) && (self.aivar[AIV_SpellLevel] ==  4 ))
 	{
 		return SPL_DONTINVEST;
 	};
@@ -74,20 +75,20 @@ func void Spell_Cast_ChargeZap(var int spellLevel)
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike the Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
 instance Spell_AdanosBall(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	damage_per_level = SPL_Damage_AdanosBall;
 	damagetype = DAM_MAGIC;
 };
@@ -128,13 +129,13 @@ func void Spell_Cast_AdanosBall()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
