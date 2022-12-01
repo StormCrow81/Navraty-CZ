@@ -1,7 +1,8 @@
 
+
 instance SPELL_SUMMONELIGOR(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
@@ -10,7 +11,7 @@ func int spell_logic_summoneligor(var int manaInvested)
 {
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -208,6 +209,6 @@ func void spell_cast_summoneligor()
 	{
 		Wld_SpawnNpcRange(self,Summoned_Demon,1,1000);
 	};
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
