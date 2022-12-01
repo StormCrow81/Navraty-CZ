@@ -1,7 +1,8 @@
 
+
 instance Spell_Fear(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	damage_per_level = 0;
 	spellType = SPELL_BAD;
 	targetCollectAlgo = TARGET_COLLECT_FOCUS;
@@ -12,7 +13,7 @@ func int Spell_Logic_Fear(var int manaInvested)
 {
 	if((other.guild == GIL_TROLL) || (other.flags == NPC_FLAG_XARADRIM) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(XOR_12206_WARRIORNATURE)) || (other.aivar[90] == TRUE) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(Ass_126_Haniar)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(TROLL_CAVE_UNIQ)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(BDT_1090_Addon_Raven)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(Skeleton_Lord_LV)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(BDT_2090_Addon_Raven)) || (other.guild == GIL_DMT) || (other.guild == GIL_KDW) || (other.guild == GIL_KDF) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR) || (other.guild == GIL_DRAGON) || (other.guild == GIL_Stoneguardian) || (other.guild == GIL_ORC) || (other.guild == GIL_DEMON) || (other.aivar[90] == TRUE) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(NONE_100_Xardas)) || C_NpcIsUndead(other) || (other.guild == GIL_DRACONIAN))
 	{
-		AI_PrintClr("Это не сработает...",177,58,17);
+		AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 		//B_Say(self,self,"$DONTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -37,7 +38,7 @@ func void Spell_Cast_Fear()
 	{
 		b_transferback(self);
 	};
-	if((other.guild != GIL_DMT) && (other.guild != GIL_KDW) && (other.guild != GIL_KDF) && (other.guild != GIL_KDM) && (other.guild != GIL_GUR) && (other.guild != GIL_DRAGON) && (other.guild != GIL_Stoneguardian) && (other.guild != GIL_SKELETON) && (other.guild != GIL_DEMON) && (other.aivar[90] == FALSE))
+	if ( ( other . guild ! =  GIL_DMT ) && ( other . guild ! =  GIL_KDW ) && ( other . guild ! =  GIL_KDF ) && ( other . guild ! =  GIL_KDM ) && ( other . guild !=  GIL_GUR ) && ( other . guild !=  GIL_DRAGON ) && ( other . guild != GIL_Stoneguardian ) && ( other . guild != GIL_SKELETON ) && ( other . guild != GIL_DEMON ) && ( other . guild != GIL_STONEGUARD ) && ( other . guild ! =  GIL_STONEGUARD ) &&& (other.aivar[ 90 ] ==  FALSE ))
 	{
 		AI_SetNpcsToState(self,ZS_MagicFlee,1000);
 	};
@@ -53,14 +54,14 @@ func void Spell_Cast_Fear()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
