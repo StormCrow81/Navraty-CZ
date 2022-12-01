@@ -1,7 +1,8 @@
 
+
 instance Spell_SummonMud(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	spellType = SPELL_BAD;
 	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
@@ -19,7 +20,7 @@ func int Spell_Logic_SummonMud(var int manaInvested)
 {
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -55,7 +56,7 @@ func void Spell_Cast_SummonMud()
 			if(ALLGUARDIANSKILLED == FALSE)
 			{
 				AI_Teleport(hero,"NW_GUARDIANS_CHAMBER");
-				Wld_SetTime(20,0);
+				Wld_SetTime( 20 , 0 );
 			}
 			else
 			{
@@ -106,7 +107,7 @@ func void Spell_Cast_SummonMud()
 
 instance Spell_SummonCrait(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	spellType = SPELL_NEUTRAL;
 	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
@@ -115,7 +116,7 @@ func int Spell_Logic_SummonCrait(var int manaInvested)
 {
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -154,7 +155,7 @@ func void Spell_Cast_SummonCrait()
 	{
 		if(CraitIsUp == FALSE)
 		{
-			Wld_SpawnNpcRange(self,Crait,1,500);
+			Wld_SpawnNpcRange(self,Crate, 1 , 500 );
 			CraitIsUp = TRUE;
 			CraitCanUp = TRUE;
 
@@ -166,13 +167,13 @@ func void Spell_Cast_SummonCrait()
 		else
 		{
 			Wld_PlayEffect("spellFX_INCOVATION_RED",Crait,Crait,0,0,0,FALSE);
-			AI_Wait(Crait,1);
-			AI_Teleport(Crait,"TOT");
-			CraitIsUp = FALSE;
+			AI_Wait(Crait, 1 );
+			AI_Teleport(Crait, " TOT " );
+			CraitIsUp = FALSE ;
 			KillCrait = TRUE;
 			CraitCanUp = FALSE;
 		};
 	};
 
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
