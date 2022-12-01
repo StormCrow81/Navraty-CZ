@@ -1,3 +1,4 @@
+
 instance Spell_Transform(C_Spell_Proto)
 {
 	time_per_mana = 0;
@@ -346,15 +347,15 @@ func int Spell_Logic_TrfWarg(var int manaInvested)
 {
 	var C_Item EquipWeap;
 
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -402,15 +403,15 @@ func int Spell_Logic_TrfFireWaran(var int manaInvested)
 {
 	var C_Item EquipWeap;
 
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -458,15 +459,15 @@ func int Spell_Logic_TrfLurker(var int manaInvested)
 {
 	var C_Item EquipWeap;
 
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -514,15 +515,15 @@ func int Spell_Logic_TrfShadowbeast(var int manaInvested)
 {
 	var C_Item EquipWeap;
 
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -570,15 +571,15 @@ func int Spell_Logic_TrfDragonSnapper(var int manaInvested)
 {
 	var C_Item EquipWeap;
 
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -626,15 +627,15 @@ func int spell_logic_trfmeatbug(var int manaInvested)
 {
 	var C_Item EquipWeap;
 
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -683,15 +684,15 @@ func int Spell_Logic_TrfTroll(var int manaInvested)
 {
 	var C_Item EquipWeap;
 
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		AI_Print("Что-то мешает это сделать...");
+		AI_Print( " Something is preventing this from being done... " );
 		//B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
