@@ -1,7 +1,8 @@
 
+
 instance Spell_Light(C_Spell_Proto)
 {
-	time_per_mana = 500;
+	time_per_mana = 500 ;
 	spellType = SPELL_NEUTRAL;
 	targetCollectAlgo = TARGET_COLLECT_NONE;
 	targetCollectRange = 0;
@@ -12,7 +13,7 @@ instance Spell_Light(C_Spell_Proto)
 
 instance Spell_PalLight(C_Spell_Proto)
 {
-	time_per_mana = 500;
+	time_per_mana = 500 ;
 	spellType = SPELL_NEUTRAL;
 	targetCollectAlgo = TARGET_COLLECT_NONE;
 	targetCollectRange = 0;
@@ -61,7 +62,7 @@ func int Spell_Logic_PalLight(var int manaInvested)
 
 func void Spell_Cast_PalLight()
 {
-	var C_Npc osta;
+	where C_Npc cheese;
 
 	if(Npc_IsPlayer(self) && (PLAYERISTRANSFER == TRUE) && (PLAYERISTRANSFERDONE == FALSE))
 	{
@@ -75,25 +76,25 @@ func void Spell_Cast_PalLight()
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_PalLight;
 	};
-	self.aivar[AIV_SelectSpell] += 1;
-	AI_Print("Вас окружает святая защитная аура...");
+	self.aivar[AIV_SelectSpell] +=  1 ;
+	AI_Print( " You are surrounded by a holy protective aura... " );
 	PalLightIsOn = TRUE;
 
 	if(Npc_IsPlayer(self))
 	{
 		if(Npc_GetDistToNpc(STONEGOLEM_OSTA,self) <= 1500)
 		{
-			OSTAISDEAD = TRUE;
+			OBTAINEDAD = TRUE ;
 			Wld_PlayEffect("VOB_MAGICBURN",STONEGOLEM_OSTA,STONEGOLEM_OSTA,0,0,0,FALSE);
 			Npc_ChangeAttribute(STONEGOLEM_OSTA,ATR_HITPOINTS,-STONEGOLEM_OSTA.attribute[ATR_HITPOINTS_MAX]);
 
 			if((MIS_XARDASTASKSFOUR == LOG_Running) && (NERGALPETVIEW == TRUE) && (XARDASTELLMEOSTA == FALSE))
 			{
-				B_LogEntry(TOPIC_XARDASTASKSFOUR,"Святой магический свет - вот чего боятся теневые големы! Ведь он их мнгновенно убивает...");
+				B_LogEntry( TOPIC_XARDASTASKSFOUR , " Holy magical light is what shadow golems fear most, for it is instant death... " );
 			}
 			else if((MIS_XARDASTASKSFOUR == LOG_Running) && (NERGALPETVIEW == FALSE) && (XARDASTELLMEOSTA == TRUE))
 			{
-				B_LogEntry(TOPIC_XARDASTASKSFOUR,"Святой магический свет мнгновенно убил теневого голема.");
+				B_LogEntry( TOPIC_XARDASTASKSFOUR , " Holy magic light instantly killed the shadow golem. " );
 			};
 		};
 	};
@@ -101,15 +102,15 @@ func void Spell_Cast_PalLight()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
-	if((hero.guild == GIL_PAL) && (PalLightIsOn == FALSE))
+	if (( hero . guild ==  GIL_PAL ) && ( PalLightIsOn ==  FALSE ))
 	{
 		hero.protection[PROT_MAGIC] = hero.protection[PROT_MAGIC] + 25;
 		HolyAuraIsUp = TRUE;
@@ -136,7 +137,7 @@ func int Spell_Logic_Light(var int manaInvested)
 
 func void Spell_Cast_Light()
 {
-	var C_Npc osta;
+	where C_Npc cheese;
 
 	if(Npc_IsPlayer(self) && (PLAYERISTRANSFER == TRUE) && (PLAYERISTRANSFERDONE == FALSE))
 	{
@@ -151,11 +152,11 @@ func void Spell_Cast_Light()
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_LIGHT;
 	};
 
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 
 	if(Npc_IsPlayer(self) && (OSTAISDEAD == FALSE) && (TrySimpleLight == FALSE))
 	{
-		osta = Hlp_GetNpc(stonegolem_osta);
+		buy = Hlp_GetNpc(stonegolem_buy);
 
 		if((Npc_GetDistToNpc(osta,self) <= 1000) && Npc_CanSeeNpc(osta,self))
 		{
@@ -163,11 +164,11 @@ func void Spell_Cast_Light()
 
 			if((MIS_XARDASTASKSFOUR == LOG_Running) && (NERGALPETVIEW == TRUE) && (XARDASTELLMEOSTA == FALSE))
 			{
-				B_LogEntry(TOPIC_XARDASTASKSFOUR,"Я попробовал использовать на теневом големе магический свет, но это мне не помогло...");
+				B_LogEntry( TOPIC_XARDASTASKSFOUR , " I tried magic light on the shadow golem, but it didn't work... " );
 			}
 			if((MIS_XARDASTASKSFOUR == LOG_Running) && (NERGALPETVIEW == FALSE) && (XARDASTELLMEOSTA == TRUE))
 			{
-				B_LogEntry(TOPIC_XARDASTASKSFOUR,"Ксардас сказал, что яркий магический свет мнгновенно убьет теневого голема. Но почему то этого не произошло! Что же мне делать?");
+				B_LogEntry( TOPIC_XARDASTASKSFOUR , " Xardas said that a bright magical light would instantly kill the shadow golem. But for some reason it didn't happen! What should I do? " );
 			};
 		};
 	};
@@ -175,20 +176,20 @@ func void Spell_Cast_Light()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
 
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 };
 
 instance Spell_UnlockChest(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	damage_per_level = 0;
 	spellType = SPELL_NEUTRAL;
 };
@@ -231,15 +232,15 @@ func void Spell_Cast_UnlockChest()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
 
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
