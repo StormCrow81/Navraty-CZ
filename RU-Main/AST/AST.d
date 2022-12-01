@@ -1,33 +1,32 @@
+
 var int game_mode;
 
-/*Функции ниже, предназначены для отслеживания одевания/снимания(экипировки)
-предметов, для всех нпс в текущем мире, так же в этой части скрипта действуют глобальные инстанции item,self
-
-item - одеваемый предмет
-self - нпс, который одевает предмет
+/* The functions below are designed to keep track of putting on / taking off (equipment)
+items, for all NPCs in the current world, also in this part of the script there are global instances of item, self
+item - wearable item
+self - the NPC that wears the item
 */
 
 //****************************************
-//При экипировке
+// When equipped
 func void OnEquipItems()
 {
 };
 
 //****************************************
-//При снятии
+// When removed
 func void OnUnEquipItems()
 {
 };
 
 /*
-Функция "захвата" текста диалогов, вызывается в момент начала каждой реплики в диалоге (гг/нпс - знаечния не имеет)
-реплика записывается в переменную - DIA_CurrentReply .
-Глобальные переменные other,self имеют те же значения, что и в самом диалоге
-self - нпс
-other - ГГ
-
+The function of "capturing" the text of dialogues, is called at the moment of the beginning of each remark in the dialogue (yy / nps - does not matter)
+the replica is written to a variable - DIA_CurrentReply .
+Global variables other,self have the same values ​​as in the dialog itself
+self - nps
+other - GG
 info:
-Для включения этой функции, необходимо указать значение константы bEnableMsgCallback = 1
+To enable this function, you must specify the value of the constant bEnableMsgCallback = 1
 */
 
 //
@@ -44,7 +43,7 @@ func void HandleEvent(var int uKey)
 	var C_NPC pNpc;
 	var int tmpMorph;
 	var int tmpMana;
-	var int tmpHp;
+	var int tmpHP;
 	var int ranbers;
 	var C_Item weapon;
 	var int DayNow;
@@ -129,9 +128,9 @@ func void HandleEvent(var int uKey)
 		CheckDismount = TRUE;
 	};
 
-	//------------------------Переключение акробатики-----------------------------------------------BS_FALL
+	// ------------------------ Toggle acrobatics---------------------- ------------------------BS_FALL
 
-	if(KeyPressed(KEY_T) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (LowHealth == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (Npc_GetTalentSkill(hero,NPC_TALENT_ACROBAT) == TRUE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_T) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) ==  FALSE ) && (C_BodyStateContains(hero, BS_SWIM ) ==  FALSE ) && (C_BodyStateContains(hero, BS_FALL ) ==  FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (C_BodyStateContains(hero, BS_FALL ) ==  FALSE ) ; && ( bDevMode ==  FALSE ) && ( Steal_Mode ==  FALSE ) && ( LowHealth ==  FALSE ) &&(Mount_Up ==  FALSE ) && (ShakoIsOn[ 0 ] ==  FALSE ) && (Npc_GetTalentSkill(hero, NPC_TALENT_ACROBAT ) ==  TRUE ) && (OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && ; (HeroNotMobsi ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
 	{
 		if(AcrobatTurnOFF == FALSE)
 		{
@@ -144,7 +143,7 @@ func void HandleEvent(var int uKey)
 			AcrobatTurnOFF = FALSE;
 		};
 	};
-	if(KeyPressed(KEY_Y) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_Y) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE ) && (OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && (HeroNotMobsi ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && (CaptureCheat ==  TRUE ) && (HeroIsDead ==  FALSE ). ))
 	{
 		bChestLvl = Mob_GetBreakNum();
 		bChestStrenghNeed = bChestLvl * 15;
@@ -180,7 +179,7 @@ func void HandleEvent(var int uKey)
 						ATR_STAMINA[0] = 0;
 					};
 
-					AI_PrintClr("Сундук открыт!",83,152,48);
+					AI_PrintClr( " The chest is open! " , 83 , 152 , 48 );
 					BreakChest = FALSE;
 
 					if(hero.attribute[ATR_DEXTERITY] < Hlp_Random(100))
@@ -191,21 +190,21 @@ func void HandleEvent(var int uKey)
 			}
 			else
 			{
-				AI_PlayAni(self,"T_DONTKNOW");
+				AI_PlayAni(self, " T_DONTKNOW " );
 				B_Say(hero,hero,"$TOOHEAVYFORME");
-				concatText = ConcatStrings("Для взлома требуется ",IntToString(bChestStrenghNeed - hero.attribute[ATR_STRENGTH]));
+				concatText = ConcatStrings( " Requires " ,IntToString(bChestStrenghNeed - hero.attribute[ ATR_STRENGTH ]));
 				concatText = ConcatStrings(concatText," силы...");
 				AI_Print(concatText);
 			};
 		}
 		else
 		{
-			AI_PlayAni(self,"T_DONTKNOW");
+			AI_PlayAni(self, " T_DONTKNOW " );
 			AI_Print(PRINT_MissingWeap);
 			B_Say_Overlay(hero,hero,"$MISSINGITEM");
 		};
 	};
-	if(KeyPressed(KEY_Y) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_Y) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE ) ==  FALSE ) && ( C_BodyStateContains( hero , BS_SWIM ) ==  FALSE ) && ( C_BodyStateContains ( hero , BS_FALL ) ==  FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ) && (Steal_Mode = ). =  FALSE ) && ( Mount_Up ==  FALSE ) && ( ShakoIsOn[ 0 ] ==  FALSE ) && .(OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && ( HeroNotMobsi ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( CaptureCheat ==  TRUE ) && ( HeroIsDead ==  FALSE ))
 	{
 		if(Npc_GetTalentSkill(hero,NPC_TALENT_PICKLOCK) > 0)
 		{
@@ -234,10 +233,10 @@ func void HandleEvent(var int uKey)
 					{
 						AI_PlayAni(hero,"T_PLUNDER");
 						Snd_Play("PICKLOCK_SUCCESS");
-						AI_PrintClr("Сундук открыт!",83,152,48);
+						AI_PrintClr( " The chest is open! " , 83 , 152 , 48 );
 						BreakChest = FALSE;
 						Npc_RemoveInvItems(hero,ItKE_lockpick,bChestLockNeed);
-						concatText = ConcatStrings("Потрачено ",IntToString(bChestLockNeed));
+						concatText = ConcatStrings( " Consumed " ,IntToString(bChestLockNeed));
 
 						if(bChestLockNeed >= 5) 
 						{
@@ -257,9 +256,9 @@ func void HandleEvent(var int uKey)
 				}
 				else
 				{
-					AI_PlayAni(self,"T_DONTKNOW");
+					AI_PlayAni(self, " T_DONTKNOW " );
 					B_Say_Overlay(self,self,"$PICKLOCKMISSING");
-					concatText = ConcatStrings("Для взлома требуется ",IntToString(bChestLockNeed));
+					concatText = ConcatStrings( " Requires " ,IntToString(bChestLockNeed));
 					
 					if(bChestLockNeed >= 5) 
 					{
@@ -279,44 +278,44 @@ func void HandleEvent(var int uKey)
 			}
 			else
 			{
-				AI_PlayAni(self,"T_DONTKNOW");
+				AI_PlayAni(self, " T_DONTKNOW " );
 				B_Say(hero,hero,"$TOOHEAVYFORME");
-				concatText = ConcatStrings("Для взлома требуется ",IntToString(100 - hero.attribute[ATR_DEXTERITY]));
+				concatText = ConcatStrings( " Hacking requires " ,IntToString( 100  - hero.attribute[ ATR_DEXTERITY ]));
 				concatText = ConcatStrings(concatText," ловкости...");
 				AI_Print(concatText);
 			};
 		}
 		else
 		{
-			AI_PlayAni(self,"T_DONTKNOW");
+			AI_PlayAni(self, " T_DONTKNOW " );
 			B_Say_Overlay(self,self,"$NOPICKLOCKTALENT");
 			AI_Print(PRINT_NoPicklockTalent);
 		};
 	};
 
-	//------------------------главные кнопки-----------------------------------------------------
+	// ------------------------ main buttons---------------------- -------------------------------
 
-	if(KeyPressed(KEY_GRAVE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (bSprintTime == FALSE) && (HeroIsDead == FALSE) && (FlyCarpetIsOn == FALSE) && (ShakoIsOn[0] == FALSE) && (HeroDrunk == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (PlayerSitDust == FALSE) && (Mount_Up == FALSE) && (hero.guild <= GIL_SEPERATOR_HUM) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
+	if(KeyPressed(KEY_GRAVE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE ) && (C_BodyStateContains(hero, BS_SWIM ) ==  FALSE ) && (C_BodyStateContains(hero, BS_FALL ) ==  FALSE ) && (bDevMode ==  FALSE ) && (Steal_Mode ==  FALSE ) && (bSprintTime ==  FALSE ) && (HeroIsDead ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && (ShakoIsOn[0] == FALSE) && (HeroDrunk ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && (PlayerSitDust ==  FALSE ) && (Mount_Up ==  FALSE ) && (hero.guild <=  GIL_SEPERATOR_HUM ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE )) ;
 	{
 		B_Hotkey_Sprint();
 	}
-	if(KeyPressed(KEY_NUMPAD1) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (FlyCarpetIsOn == FALSE) && (PlayerSitDust == FALSE) && (hero.guild <= GIL_SEPERATOR_HUM) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
+	if(KeyPressed(KEY_NUMPAD1) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) &&(ShakoIsOn[ 0 ] ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( PlayerSitDust ==  FALSE ) && ( hero.guild <=  GIL_SEPERATOR_HUM ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE )) ;
 	{
 		B_Hotkey_Health_Potion();
 	};
-	if(KeyPressed(KEY_NUMPAD2) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (FlyCarpetIsOn == FALSE) && (PlayerSitDust == FALSE) && (hero.guild <= GIL_SEPERATOR_HUM) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
+	if(KeyPressed(KEY_NUMPAD2) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) &&(ShakoIsOn[ 0 ] ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( PlayerSitDust ==  FALSE ) && ( hero.guild <=  GIL_SEPERATOR_HUM ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE )) ;
 	{
 		B_Hotkey_Mana_Potion();
 	};
-	if(KeyPressed(KEY_NUMPAD3) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (FlyCarpetIsOn == FALSE) && (PlayerSitDust == FALSE) && (hero.guild <= GIL_SEPERATOR_HUM) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
+	if(KeyPressed(KEY_NUMPAD3) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) &&(ShakoIsOn[ 0 ] ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( PlayerSitDust ==  FALSE ) && ( hero.guild <=  GIL_SEPERATOR_HUM ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE )) ;
 	{
 		B_Hotkey_Stamina_Potion();
 	};
-	if(KeyPressed(KEY_NUMPAD4) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (FlyCarpetIsOn == FALSE) && (PlayerSitDust == FALSE) && (hero.guild <= GIL_SEPERATOR_HUM) && (LowHealth == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
+	if(KeyPressed(KEY_NUMPAD4) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) &&(ShakoIsOn[ 0 ] ==  FALSE ) && (FlyCarpetIsOn ==  FALSE ) && (PlayerSitDust ==  FALSE ) && (hero.guild <=  GIL_SEPERATOR_HUM ) && (LowHealth ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE )) ;
 	{
 		B_Hotkey_Speed_Potion();
 	};
-	if(KeyPressed(KEY_NUMPAD5) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (FlyCarpetIsOn == FALSE) && (PlayerSitDust == FALSE) && (hero.guild <= GIL_SEPERATOR_HUM) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
+	if(KeyPressed(KEY_NUMPAD5) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) &&(ShakoIsOn[ 0 ] ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( PlayerSitDust ==  FALSE ) && ( hero.guild <=  GIL_SEPERATOR_HUM ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE )) ;
 	{
 		B_Hotkey_UnPoison_Potion();
 	};
@@ -327,7 +326,7 @@ func void HandleEvent(var int uKey)
 			Mdl_RemoveOverlayMds(hero,"HUMANS_NEWTORCH.MDS");
 			Ext_RemoveFromSlot(hero,"BIP01 L HAND");
 			Npc_RemoveInvItems(hero,ItLsFireTorch,Npc_HasItems(hero,ItLsFireTorch));
-			TorchIsOn = FALSE;
+			TorchIsOn = FALSE ;
 		}
 		else
 		{
@@ -343,18 +342,18 @@ func void HandleEvent(var int uKey)
 			}
 			else
 			{
-				AI_Print("У вас нет факела...");
+				AI_Print( " You don't have a torch... " );
 				B_Say(hero,hero,"$MISSINGITEM");	
 			};
 		};
 	};
-	if(KeyPressed(KEY_NUMPAD7) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_NUMPAD7) && !KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && ( HeroNotMobsi ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( CaptureCheat ==  TRUE ) && ( HeroIsDead ==  FALSE ))
 	{
-		if(OgonekIsUp == TRUE)
+		if (OgonekIsUp ==  TRUE )
 		{
 			DetWspr = Hlp_GetNpc(Wisp_Detector);
 		
-			if(Npc_IsDead(DetWspr) == FALSE)
+			if (Npc_IsDead(DetWspr) ==  FALSE )
 			{
 				Snd_Play("WSP_Dead_A1");
 			};
@@ -362,7 +361,7 @@ func void HandleEvent(var int uKey)
 			AI_Teleport(DetWspr,"TOT");
 			B_RemoveNpc(DetWspr);
 			AI_Teleport(DetWspr,"TOT");
-			OgonekIsUp = FALSE;
+			OgonekIsUp = FALSE ;
 		}
 		else
 		{
@@ -379,11 +378,11 @@ func void HandleEvent(var int uKey)
 				Wld_SpawnNpcRange(hero,Wisp_Detector,1,500);
 				Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",Wisp_Detector,Wisp_Detector,0,0,0,FALSE);
 				Snd_Play("MFX_Transform_Cast");
-				OgonekIsUp = TRUE;
+				NumberIsUp = TRUE ;
 			}
 			else
 			{
-				AI_Print("У вас нет амулета вызова...");
+				AI_Print( " You don't have a summoning amulet... " );
 				B_Say(hero,hero,"$MISSINGITEM");	
 			};
 		};
@@ -407,7 +406,7 @@ func void HandleEvent(var int uKey)
 			}
 			else
 			{
-				AI_Print("У вас нет фонаря...");
+				AI_Print( " You don't have a flashlight... " );
 				B_Say(hero,hero,"$MISSINGITEM");	
 			};
 		};
@@ -420,7 +419,7 @@ func void HandleEvent(var int uKey)
 		}
 		else
 		{
-			AI_Print("У вас нет точильного оселка...");
+			AI_Print( " You don't have a whetstone... " );
 			B_Say(hero,hero,"$MISSINGITEM");	
 		};
 	};
@@ -436,19 +435,19 @@ func void HandleEvent(var int uKey)
 				Use_HolyArrow = FALSE;
 				Use_FireArrow = FALSE;
 				Use_MagicArrow = FALSE;
-				AI_Print("Используются обычные стрелы...");
+				AI_Print( " Normal arrows are used... " );
 			}
 			else
 			{
-				AI_Print("У вас нет данного типа стрел!");
+				AI_Print( " You don't have this type of arrow! " );
 			};
 		}
 		else
 		{
-			AI_Print("Вы уже используете этот тип стрел!");	
+			AI_Print( " You are already using this arrow type! " );	
 		};
 	};
-	if(KeyPressed(KEY_NUMPAD1) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_ADDON_MAGICCROSSBOW_SHV) != TRUE) && ((weapon.flags & ITEM_CROSSBOW) == ITEM_CROSSBOW))
+	if(KeyPressed(KEY_NUMPAD1) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM ) ==  FALSE ) && ( C_BodyStateContains( hero , BS_FALL ) ==  FALSE ) && ( C_BodyStateContains ( hero , BS_ITEMINTERACT ) ==  FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ) && (Steal_Mode = =  FALSE ) && ( HeroIsDead ==  FALSE ) && ( Mount_Up ==  FALSE ) &&(ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_ADDON_MAGICCROSSBOW_SHV) != TRUE) && ((weapon.flags & ITEM_CROSSBOW) == ITEM_CROSSBOW))
 	{
 		if(Use_Bolt == FALSE)
 		{	
@@ -456,18 +455,18 @@ func void HandleEvent(var int uKey)
 			{
 				weapon.munition = ItRw_Bolt;
 				Use_Bolt = TRUE;
-				Use_MagicBolt = FALSE;
+				Use_MagicBolt = FALSE ;
 				Use_HolyBolt = FALSE;
-				AI_Print("Используются обычные болты...");		
+				AI_Print( " Normal bolts are used... " );		
 			}
 			else
 			{
-				AI_Print("У вас нет данного типа болтов!");
+				AI_Print( " You don't have this bolt type! " );
 			};				
 		}
 		else
 		{
-			AI_Print("Вы уже используете этот тип болтов!");	
+			AI_Print( " You are already using this bolt type! " );	
 		};
 	};
 	if(KeyPressed(KEY_NUMPAD2) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_SHADOWBOW) != TRUE) && ((weapon.flags & ITEM_BOW) == ITEM_BOW))
@@ -482,16 +481,16 @@ func void HandleEvent(var int uKey)
 				Use_HolyArrow = FALSE;
 				Use_FireArrow = FALSE;
 				Use_MagicArrow = TRUE;
-				AI_Print("Используются магические стрелы...");
+				AI_Print( " Magic arrows are being used... " );
 			}
 			else
 			{
-				AI_Print("У вас нет данного типа стрел!");
+				AI_Print( " You don't have this type of arrow! " );
 			};
 		}
 		else
 		{
-			AI_Print("Вы уже используете этот тип стрел!");	
+			AI_Print( " You are already using this arrow type! " );	
 		};
 	};
 	if(KeyPressed(KEY_NUMPAD2) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_ADDON_MAGICCROSSBOW_SHV) != TRUE) && ((weapon.flags & ITEM_CROSSBOW) == ITEM_CROSSBOW))
@@ -504,16 +503,16 @@ func void HandleEvent(var int uKey)
 				Use_Bolt = FALSE;
 				Use_MagicBolt = TRUE;
 				Use_HolyBolt = FALSE;
-				AI_Print("Используются магические болты...");		
+				AI_Print( " Magic bolts are being used... " );		
 			}
 			else
 			{
-				AI_Print("У вас нет данного типа болтов!");
+				AI_Print( " You don't have this bolt type! " );
 			};				
 		}
 		else
 		{
-			AI_Print("Вы уже используете этот тип болтов!");	
+			AI_Print( " You are already using this bolt type! " );	
 		};
 	};
 	if(KeyPressed(KEY_NUMPAD3) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_SHADOWBOW) != TRUE) && ((weapon.flags & ITEM_BOW) == ITEM_BOW))
@@ -528,19 +527,19 @@ func void HandleEvent(var int uKey)
 				Use_HolyArrow = TRUE;
 				Use_FireArrow = FALSE;
 				Use_MagicArrow = FALSE;
-				AI_Print("Используются освященные стрелы...");
+				AI_Print( " Consecrated arrows are being used... " );
 			}
 			else
 			{
-				AI_Print("У вас нет данного типа стрел!");
+				AI_Print( " You don't have this type of arrow! " );
 			};
 		}
 		else
 		{
-			AI_Print("Вы уже используете этот тип стрел!");	
+			AI_Print( " You are already using this arrow type! " );	
 		};
 	};
-	if(KeyPressed(KEY_NUMPAD3) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_ADDON_MAGICCROSSBOW_SHV) != TRUE) && ((weapon.flags & ITEM_CROSSBOW) == ITEM_CROSSBOW))
+	if(KeyPressed(KEY_NUMPAD3) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) ==  FALSE ) && (C_BodyStateContains(hero, BS_SWIM ) ==  FALSE ) && (C_BodyStateContains(hero, BS_FALL ) ==  FALSE ) ==  FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ) && ( Steal_Mode ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( Mount_Up ==  FALSE ) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_ADDON_MAGICCROSSBOW_SHV) != TRUE) && ((weapon.flags & ITEM_CROSSBOW) == ITEM_CROSSBOW))
 	{
 		if(Use_HolyBolt == FALSE)
 		{	
@@ -548,18 +547,18 @@ func void HandleEvent(var int uKey)
 			{
 				weapon.munition = ItRw_HolyBolt;
 				Use_Bolt = FALSE;
-				Use_MagicBolt = FALSE;
+				Use_MagicBolt = FALSE ;
 				Use_HolyBolt = TRUE;
-				AI_Print("Используются освященные болты...");		
+				AI_Print( " Consecrated bolts are being used... " );		
 			}
 			else
 			{
-				AI_Print("У вас нет данного типа болтов!");
+				AI_Print( " You don't have this bolt type! " );
 			};				
 		}
 		else
 		{
-			AI_Print("Вы уже используете этот тип болтов!");	
+			AI_Print( " You are already using this bolt type! " );	
 		};
 	};
 	if(KeyPressed(KEY_NUMPAD4) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_SHADOWBOW) != TRUE) && ((weapon.flags & ITEM_BOW) == ITEM_BOW))
@@ -574,16 +573,16 @@ func void HandleEvent(var int uKey)
 				Use_HolyArrow = FALSE;
 				Use_FireArrow = TRUE;
 				Use_MagicArrow = FALSE;
-				AI_Print("Используются огненные стрелы...");
+				AI_Print( " Fire arrows are being used... " );
 			}
 			else
 			{
-				AI_Print("У вас нет данного типа стрел!");
+				AI_Print( " You don't have this type of arrow! " );
 			};
 		}
 		else
 		{
-			AI_Print("Вы уже используете этот тип стрел!");	
+			AI_Print( " You are already using this arrow type! " );	
 		};
 	};
 	if(KeyPressed(KEY_NUMPAD5) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (Npc_HasEquippedRangedWeapon(hero) == TRUE) && (Hlp_IsItem(weapon,ITRW_SHADOWBOW) != TRUE) && ((weapon.flags & ITEM_BOW) == ITEM_BOW))
@@ -598,19 +597,19 @@ func void HandleEvent(var int uKey)
 				Use_HolyArrow = FALSE;
 				Use_FireArrow = FALSE;
 				Use_MagicArrow = FALSE;
-				AI_Print("Используются отравленые стрелы...");
+				AI_Print( " Poison arrows are being used... " );
 			}
 			else
 			{
-				AI_Print("У вас нет данного типа стрел!");
+				AI_Print( " You don't have this type of arrow! " );
 			};
 		}
 		else
 		{
-			AI_Print("Вы уже используете этот тип стрел!");	
+			AI_Print( " You are already using this arrow type! " );	
 		};
 	};
-	if(KeyPressed(KEY_NUMPAD6) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (PlayerSitDust == FALSE) && (HeroTRANS == FALSE) && (HeroIsDead == FALSE) && (ShakoIsOn[0] == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
+	if(KeyPressed(KEY_NUMPAD6) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) &&(C_BodyStateContains(hero, BS_DIVE ) ==  FALSE ) && (C_BodyStateContains(hero, BS_SWIM ) ==  FALSE ) && (C_BodyStateContains(hero, BS_FALL ) ==  FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ). ) && (Steal_Mode ==  FALSE ) && (HeroNotMobsi ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE) && (PlayerSitDust ==  FALSE ) && (HeroTRANS ==  FALSE ) && (HeroIsDead ==  FALSE ) && (ShakoIsOn[ 0 ] ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE )) ;
 	{
 		if(CraitIsUp == FALSE)
 		{
@@ -620,11 +619,11 @@ func void HandleEvent(var int uKey)
 				PlayerSitDust = FALSE;
 				WhistleCount = FALSE;
 			};
-			if((hero.attribute[ATR_MANA_MAX] >= 350) && (Npc_HasItems(hero,ItMi_FlyCarpet) >= 1) && (Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) >= 4))
+			if ((hero.attribute[ ATR_MANA_MAX ] >=  350 ) && (Npc_HasItems(hero,ItMy_FlyCarpet) >=  1 ) && (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) >=  4 )) ;
 			{
 				if(FlyCarpetIsOn == FALSE)
 				{
-					Mdl_ApplyOverlayMds(hero,"fliegender_drache.mds");
+					Mdl_ApplyOverlayMds(hero, " flying_dragon.mds " );
 					ActivateZSSlot(hero,"BIP01");
 					Ext_RemoveFromSlot(hero,"BIP01");	
 					Ext_PutInSlot(hero,"BIP01",ItSe_FlyCarpet);
@@ -646,21 +645,21 @@ func void HandleEvent(var int uKey)
 			{
 				Mdl_RemoveOverlayMds(hero,"fliegender_drache.mds");
 
-				if(Npc_HasItems(hero,ItMi_FlyCarpet) == FALSE)
+				if (Npc_HasItems(hero,ItMi_FlyCarpet) ==  FALSE )
 				{
 					B_Say(hero,hero,"$MISSINGITEM");
 				}
 				else
 				{
 					B_Say(hero,hero,"$TOOHEAVYFORME");
-					AI_Print("Для использования требуется 350 магической энергии и 4 круг магии...");
+					AI_Print( " Requires 350 magic energy and 4 circle of magic to use... " );
 				};
 			};
 		};
 	};
-	//------------------------Прочее-----------------------------------------------
+	// ------------------------Other---------------------- -----------------------
 
-	if(KeyPressed(KEY_NUMPAD7) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_NUMPAD7) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE ) && ( HeroNotMobsi ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( CaptureCheat ==  TRUE ) && ( HeroIsDead ==  FALSE ))
 	{
 		if(RegenSummoned == FALSE)
 		{
@@ -689,29 +688,29 @@ func void HandleEvent(var int uKey)
 			}
 			else
 			{
-				AI_Print("Не самое удачное место для рыбалки...");
+				AI_Print( " Not the best fishing spot... " );
 				B_Say(hero,hero,"$DONTWORK");	
 				ActivateZSSlot(hero,"BIP01 R HAND");
 				Ext_RemoveFromSlot(hero,"BIP01 R HAND");
-				AngelIsOn = FALSE;
+				AngelIsOn = FALSE ;
 			};
 		}
 		else
 		{
-			AI_Print("У вас нет удочки...");
+			AI_Print( " You don't have a fishing rod... " );
 			B_Say(hero,hero,"$MISSINGITEM");
 			ActivateZSSlot(hero,"BIP01 R HAND");
 			Ext_RemoveFromSlot(hero,"BIP01 R HAND");
-			AngelIsOn = FALSE;	
+			AngelIsOn = FALSE ;	
 		};
 	};
 	if(KeyPressed(KEY_NUMPAD9) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && KeyPressed(KEY_LSHIFT) && (Steal_Mode == FALSE) && (HeroIsDead == FALSE) && (Mount_Up == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
 	{
 		if(Npc_ValidFocusNpc(hero))
 		{
-			if((pNpc.guild <= GIL_SEPERATOR_HUM) && (pNpc.attribute[ATR_HITPOINTS] == FALSE) && (pNpc.aivar[90] == FALSE) && (pNpc.guild != GIL_DMT))
+			if ((pNpc.guild <=  GIL_SEPERATOR_HUM ) && (pNpc.attribute[ ATR_HITPOINTS ] ==  FALSE ) && (pNpc.aivar[ 90 ] ==  FALSE ) && (pNpc.guild !=  GIL_DMT )) ;
 			{
-				if(pNpc.aivar[AIV_StoryBandit] == FALSE)
+				if (pNpc.aivar[AIV_StoryBandit] ==  ​​FALSE )
 				{
 					if((Npc_HasItems(hero,ItSc_Ressurect) >= 1) && (hero.attribute[ATR_MANA] >= SPL_COST_SCROLL4))
 					{
@@ -735,12 +734,12 @@ func void HandleEvent(var int uKey)
 					}
 					else if(Npc_HasItems(hero,ItSc_Ressurect) == FALSE)
 					{
-						AI_Print("У вас не хватает свитков воскрешения...");
+						AI_Print( " You don't have enough Resurrection Scrolls... " );
 						B_Say(hero,hero,"$MISSINGITEM");
 					}
 					else if(hero.attribute[ATR_MANA] < SPL_COST_SCROLL4)
 					{
-						AI_Print("У вас не хватает магической энергии...");
+						AI_Print( " You don't have enough magical energy... " );
 						B_Say(hero,hero,"$DONTWORK");
 					};
 				}
@@ -748,7 +747,7 @@ func void HandleEvent(var int uKey)
 				{
 					if(Hlp_GetInstanceID(pNpc) != Hlp_GetInstanceID(VLK_444_Jack))
 					{
-						AI_Print("Это не поможет...");
+						AI_Print( " This won't help... " );
 					};
 
 					B_Say(hero,hero,"$DONTWORK");
@@ -758,7 +757,7 @@ func void HandleEvent(var int uKey)
 	};
 	if(KeyPressed(KEY_BACK) && KeyPressed(KEY_LSHIFT) && !KeyPressed(KEY_RSHIFT) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (FlyCarpetIsOn == FALSE) && (PlayerSitDust == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
 	{
-		if((hero.attribute[ATR_HITPOINTS] > 0) && (HeroIsDead == FALSE) && (Npc_IsInState(hero,ZS_Talk) == FALSE) && (Npc_IsInState(hero,ZS_Unconscious) == FALSE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE))
+		if ((hero.attribute[ ATR_HITPOINTS ] >  0 ) && (HeroIsDead ==  FALSE ) && (Npc_IsInState(hero,ZS_Talk) ==  FALSE ) && (Npc_IsInState(hero,ZS_Unconscious) ==  FALSE ) && (HeroNotMobsi ==  FALSE ) ; && ( ENDGAMECREDITS  ==  FALSE ))
 		{
 			AI_RemoveWeapon(hero);
 			tmpMana = hero.attribute[ATR_MANA];
@@ -768,16 +767,16 @@ func void HandleEvent(var int uKey)
 			hero.attribute[ATR_MANA] = tmpMana;
 			hero.attribute[ATR_HITPOINTS] = tmpHp;
 			AI_Wait(hero,1);
-			bManaBar = 1;
-			bHealthBar = 1;
+			bManaBar = 1 ;
+			bHealthBar = 1 ;
 			CamModeOn = FALSE;
 		};
 	};
-	if(KeyPressed(KEY_NUMPAD3) && !KeyPressed(KEY_LSHIFT) && KeyPressed(KEY_RSHIFT) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (AIV_OrcWeaponEquip == FALSE) && (RH_Ready_2X2 == FALSE) && (LH_Ready_2X2 == FALSE) && (LowHealth == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_NUMPAD3) && !KeyPressed(KEY_LSHIFT) && KeyPressed(KEY_RSHIFT) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (AIV_OrcWeaponEquip == FALSE) && (RH_Ready_2X2 == FALSE) && (LH_Ready_2X2 == FALSE) && (LowHealth == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ) && (Steal_Mode ==  FALSE ) && (Mount_Up ==  FALSE ) && (ShakoIsOn[ 0 ] ==  FALSE ) && (OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_PRODUCTION  ==  NONE ) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
 	{
 		if(EquipedIndex_1H == TRUE)
 		{
-			if((EquipedIndex_Chief == FALSE) && (AIV_Shield_01 == FALSE) && (AIV_Shield_02 == FALSE) && (AIV_Shield_03 == FALSE) && (AIV_Shield_04 == FALSE) && (AIV_Shield_05 == FALSE) && (AIV_Shield_06 == FALSE) && (AIV_Shield_07 == FALSE) && (AIV_Shield_Caracust == FALSE))
+			if ((EquipedIndex_Chief ==  FALSE ) && (AIV_Shield_01 ==  FALSE ) && (AIV_Shield_02 ==  FALSE ) && (AIV_Shield_03 ==  FALSE ) && (AIV_Shield_04 == FALSE ) && (AIV_Shield_05 == FALSE ) && (AIV_Shield_05 == FALSE ) && (AIV_Shield_05 ==  FALSE ) && ( AIV_Shield_05 ==  FALSE ) && && (AIV_Shield_07 == FALSE ) && (AIV_Shield_Caracust == FALSE ))   
 			{
 				if(hero.HitChance[NPC_TALENT_1H] >= 90)
 				{
@@ -795,12 +794,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"humans_1hST3.mds");
-					AI_Print("Выбран уровень владения одноручным оружием - 'Мастер'");
+					AI_Print( "The selected level of one-handed weapon proficiency is 'Master' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if(EquipedIndex_Chief == TRUE)
@@ -821,12 +820,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"Humans_Rapier_ST3.mds");
-					AI_Print("Выбран уровень владения одноручным оружием - 'Мастер'");
+					AI_Print( "The selected level of one-handed weapon proficiency is 'Master' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
@@ -847,18 +846,18 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"Shield_ST4.MDS");
-					AI_Print("Выбран уровень владения щитом - 'Мастер'");
+					AI_Print( " Shield level selected - 'Master' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 		};
 		if(EquipedIndex_2H == TRUE)
 		{
-			if((AIV_Speer == FALSE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE) && (AIV_Staff_10 == FALSE))
+			if ((AIV_Speer ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_05 ==  FALSE ) && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ) && (AIV_Staff_10 ==  FALSE ))
 			{
 				if(hero.HitChance[NPC_TALENT_2H] >= 90)
 				{
@@ -912,12 +911,12 @@ func void HandleEvent(var int uKey)
 						Mdl_ApplyOverlayMds(hero,"humans_2hST3.mds");
 					};
 
-					AI_Print("Выбран уровень владения двуручным оружием - 'Мастер'");
+					AI_Print( " Two -handed weapon level selected - 'Master' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if(AIV_Speer == TRUE)
@@ -953,12 +952,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
 					Mdl_ApplyOverlayMds(hero,"Humans_SPST2.MDS");
-					AI_Print("Выбран уровень владения копьем - 'Мастер'");
+					AI_Print( " Spear level selected - 'Master' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 			if((AIV_Staff_01 == TRUE) || (AIV_Staff_Blood == TRUE) || (AIV_Staff_02 == TRUE) || (AIV_Staff_03 == TRUE) || (AIV_Staff_04 == TRUE) || (AIV_Staff_05 == TRUE) || (AIV_Staff_06 == TRUE) || (AIV_Staff_07 == TRUE) || (AIV_Staff_08 == TRUE) || (AIV_Staff_09 == TRUE) || (AIV_Staff_10 == TRUE))
@@ -994,21 +993,21 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
 					Mdl_ApplyOverlayMds(hero,"Humans_SPST2.MDS");
-					AI_Print("Выбран уровень владения посохом - 'Мастер'");
+					AI_Print( " Staff proficiency selected - 'Master' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 		};
 	};
-	if(KeyPressed(KEY_NUMPAD2) && !KeyPressed(KEY_LSHIFT) && KeyPressed(KEY_RSHIFT) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (AIV_OrcWeaponEquip == FALSE) && (RH_Ready_2X2 == FALSE) && (LH_Ready_2X2 == FALSE) && (LowHealth == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_NUMPAD2) && !KeyPressed(KEY_LSHIFT) && KeyPressed(KEY_RSHIFT) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (AIV_OrcWeaponEquip == FALSE) && (RH_Ready_2X2 == FALSE) && (LH_Ready_2X2 == FALSE) && (LowHealth == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ) && (Steal_Mode ==  FALSE ) && (Mount_Up ==  FALSE ) && (ShakoIsOn[ 0 ] ==  FALSE ) && (OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_PRODUCTION  ==  NONE ) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
 	{
 		if(EquipedIndex_1H == TRUE)
 		{
-			if((EquipedIndex_Chief == FALSE) && (AIV_Shield_01 == FALSE) && (AIV_Shield_02 == FALSE) && (AIV_Shield_03 == FALSE) && (AIV_Shield_04 == FALSE) && (AIV_Shield_05 == FALSE) && (AIV_Shield_06 == FALSE) && (AIV_Shield_07 == FALSE) && (AIV_Shield_Caracust == FALSE))
+			if ((EquipedIndex_Chief ==  FALSE ) && (AIV_Shield_01 ==  FALSE ) && (AIV_Shield_02 ==  FALSE ) && (AIV_Shield_03 ==  FALSE ) && (AIV_Shield_04 == FALSE ) && (AIV_Shield_05 == FALSE ) && (AIV_Shield_05 == FALSE ) && (AIV_Shield_05 ==  FALSE ) && ( AIV_Shield_05 ==  FALSE ) && && (AIV_Shield_07 == FALSE ) && (AIV_Shield_Caracust == FALSE ))   
 			{
 				if(hero.HitChance[NPC_TALENT_1H] >= 60)
 				{
@@ -1026,12 +1025,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"humans_1hST2.mds");
-					AI_Print("Выбран уровень владения одноручным оружием - 'Эксперт'");
+					AI_Print( "The selected level of one-handed weapon proficiency is 'Expert' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if(EquipedIndex_Chief == TRUE)
@@ -1052,12 +1051,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"Humans_Rapier_ST2.mds");
-					AI_Print("Выбран уровень владения одноручным оружием - 'Эксперт'");
+					AI_Print( "The selected level of one-handed weapon proficiency is 'Expert' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
@@ -1078,18 +1077,18 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"Shield_ST3.MDS");
-					AI_Print("Выбран уровень владения щитом - 'Эксперт'");
+					AI_Print( " Shield level selected - 'Expert' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 		};
 		if(EquipedIndex_2H == TRUE)
 		{
-			if((AIV_Speer == FALSE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE) && (AIV_Staff_10 == FALSE))
+			if ((AIV_Speer ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_05 ==  FALSE ) && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ) && (AIV_Staff_10 ==  FALSE ))
 			{
 				if(hero.HitChance[NPC_TALENT_2H] >= 60)
 				{
@@ -1136,12 +1135,12 @@ func void HandleEvent(var int uKey)
 						Mdl_ApplyOverlayMds(hero,"humans_2hST2.mds");
 					};
 
-					AI_Print("Выбран уровень владения двуручным оружием - 'Эксперт'");
+					AI_Print( " Two -handed weapon proficiency level selected - 'Expert' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if(AIV_Speer == TRUE)
@@ -1177,12 +1176,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
 					Mdl_ApplyOverlayMds(hero,"HUMANS_AXEST2.MDS");
-					AI_Print("Выбран уровень владения копьем - 'Эксперт'");
+					AI_Print( " Spear level selected - 'Expert' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 			if((AIV_Staff_01 == TRUE) || (AIV_Staff_Blood == TRUE) || (AIV_Staff_02 == TRUE) || (AIV_Staff_03 == TRUE) || (AIV_Staff_04 == TRUE) || (AIV_Staff_05 == TRUE) || (AIV_Staff_06 == TRUE) || (AIV_Staff_07 == TRUE) || (AIV_Staff_08 == TRUE) || (AIV_Staff_09 == TRUE) || (AIV_Staff_10 == TRUE))
@@ -1218,21 +1217,21 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
 					Mdl_ApplyOverlayMds(hero,"HUMANS_AXEST2.MDS");
-					AI_Print("Выбран уровень владения посохом - 'Эксперт'");
+					AI_Print( " Staff proficiency selected - 'Expert' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 		};
 	};
-	if(KeyPressed(KEY_NUMPAD1) && !KeyPressed(KEY_LSHIFT) && KeyPressed(KEY_RSHIFT) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (AIV_OrcWeaponEquip == FALSE) && (RH_Ready_2X2 == FALSE) && (LH_Ready_2X2 == FALSE) && (LowHealth == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_NUMPAD1) && !KeyPressed(KEY_LSHIFT) && KeyPressed(KEY_RSHIFT) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (AIV_OrcWeaponEquip == FALSE) && (RH_Ready_2X2 == FALSE) && (LH_Ready_2X2 == FALSE) && (LowHealth == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ) && (Steal_Mode ==  FALSE ) && (Mount_Up ==  FALSE ) && (ShakoIsOn[ 0 ] ==  FALSE ) && (OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_PRODUCTION  ==  NONE ) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
 	{
 		if(EquipedIndex_1H == TRUE)
 		{
-			if((EquipedIndex_Chief == FALSE) && (AIV_Shield_01 == FALSE) && (AIV_Shield_02 == FALSE) && (AIV_Shield_03 == FALSE) && (AIV_Shield_04 == FALSE) && (AIV_Shield_05 == FALSE) && (AIV_Shield_06 == FALSE) && (AIV_Shield_07 == FALSE) && (AIV_Shield_Caracust == FALSE))
+			if ((EquipedIndex_Chief ==  FALSE ) && (AIV_Shield_01 ==  FALSE ) && (AIV_Shield_02 ==  FALSE ) && (AIV_Shield_03 ==  FALSE ) && (AIV_Shield_04 == FALSE ) && (AIV_Shield_05 == FALSE ) && (AIV_Shield_05 == FALSE ) && (AIV_Shield_05 ==  FALSE ) && ( AIV_Shield_05 ==  FALSE ) && && (AIV_Shield_07 == FALSE ) && (AIV_Shield_Caracust == FALSE ))   
 			{
 				if(hero.HitChance[NPC_TALENT_1H] >= 30)
 				{
@@ -1250,12 +1249,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"humans_1hST1.mds");
-					AI_Print("Выбран уровень владения одноручным оружием - 'Опытный'");
+					AI_Print( "The selected level of one-handed weapon proficiency is 'Experienced' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if(EquipedIndex_Chief == TRUE)
@@ -1276,12 +1275,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"Humans_Rapier_ST1.mds");
-					AI_Print("Выбран уровень владения одноручным оружием - 'Опытный'");
+					AI_Print( "The selected level of one-handed weapon proficiency is 'Experienced' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
@@ -1302,18 +1301,18 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"Shield_ST2.MDS");
-					AI_Print("Выбран уровень владения щитом - 'Опытный'");
+					AI_Print( " Shield level selected - 'Experienced' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 		};
 		if(EquipedIndex_2H == TRUE)
 		{
-			if((AIV_Speer == FALSE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE) && (AIV_Staff_10 == FALSE))
+			if ((AIV_Speer ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_05 ==  FALSE ) && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ) && (AIV_Staff_10 ==  FALSE ))
 			{
 				if(hero.HitChance[NPC_TALENT_2H] >= 30)
 				{
@@ -1346,12 +1345,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
 					Mdl_ApplyOverlayMds(hero,"humans_2hST1.mds");
-					AI_Print("Выбран уровень владения двуручным оружием - 'Опытный'");
+					AI_Print( " Selected level of two-handed weapon proficiency - 'Experienced' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			}
 			else if(AIV_Speer == TRUE)
@@ -1387,12 +1386,12 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
 					Mdl_ApplyOverlayMds(hero,"Humans_SPST1.MDS");
-					AI_Print("Выбран уровень владения копьем - 'Опытный'");
+					AI_Print( " Spear level selected - 'Experienced' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 			if((AIV_Staff_01 == TRUE) || (AIV_Staff_Blood == TRUE) || (AIV_Staff_02 == TRUE) || (AIV_Staff_03 == TRUE) || (AIV_Staff_04 == TRUE) || (AIV_Staff_05 == TRUE) || (AIV_Staff_06 == TRUE) || (AIV_Staff_07 == TRUE) || (AIV_Staff_08 == TRUE) || (AIV_Staff_09 == TRUE) || (AIV_Staff_10 == TRUE))
@@ -1428,21 +1427,21 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 					Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
 					Mdl_ApplyOverlayMds(hero,"Humans_SPST1.MDS");
-					AI_Print("Выбран уровень владения посохом - 'Опытный'");
+					AI_Print( " Staff level selected - 'Experienced' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 		};
 	};
-	if(KeyPressed(KEY_NUMPAD0) && !KeyPressed(KEY_LSHIFT) && KeyPressed(KEY_RSHIFT) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (AIV_OrcWeaponEquip == FALSE) && (RH_Ready_2X2 == FALSE) && (LH_Ready_2X2 == FALSE) && (LowHealth == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if(KeyPressed(KEY_NUMPAD0) && !KeyPressed(KEY_LSHIFT) && KeyPressed(KEY_RSHIFT) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (AIV_OrcWeaponEquip == FALSE) && (RH_Ready_2X2 == FALSE) && (LH_Ready_2X2 == FALSE) && (LowHealth == FALSE) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ) && (Steal_Mode ==  FALSE ) && (Mount_Up ==  FALSE ) && (ShakoIsOn[ 0 ] ==  FALSE ) && (OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_PRODUCTION  ==  NONE ) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
 	{
 		if(EquipedIndex_1H == TRUE)
 		{
-			if((EquipedIndex_Chief == FALSE) && (AIV_Shield_01 == FALSE) && (AIV_Shield_02 == FALSE) && (AIV_Shield_03 == FALSE) && (AIV_Shield_04 == FALSE) && (AIV_Shield_05 == FALSE) && (AIV_Shield_06 == FALSE) && (AIV_Shield_07 == FALSE) && (AIV_Shield_Caracust == FALSE))
+			if ((EquipedIndex_Chief ==  FALSE ) && (AIV_Shield_01 ==  FALSE ) && (AIV_Shield_02 ==  FALSE ) && (AIV_Shield_03 ==  FALSE ) && (AIV_Shield_04 == FALSE ) && (AIV_Shield_05 == FALSE ) && (AIV_Shield_05 == FALSE ) && (AIV_Shield_05 ==  FALSE ) && ( AIV_Shield_05 ==  FALSE ) && && (AIV_Shield_07 == FALSE ) && (AIV_Shield_Caracust == FALSE ))   
 			{
 				Mdl_RemoveOverlayMds(hero,"humans_1hST3.mds");
 				Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
@@ -1457,7 +1456,7 @@ func void HandleEvent(var int uKey)
 				Mdl_RemoveOverlayMds(hero,"Shield_ST1.MDS");
 				Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 				Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
-				AI_Print("Выбран уровень владения одноручным оружием - 'Новичок'");
+				AI_Print( "The selected level of one-handed weapon proficiency is 'Beginner' " );
 				B_CheckAcroAni(hero);
 			}
 			else if(EquipedIndex_Chief == TRUE)
@@ -1476,7 +1475,7 @@ func void HandleEvent(var int uKey)
 				Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 				Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 				Mdl_ApplyOverlayMds(hero,"Humans_Pirate.mds");
-				AI_Print("Выбран уровень владения одноручным оружием - 'Новичок'");
+				AI_Print( "The selected level of one-handed weapon proficiency is 'Beginner' " );
 				B_CheckAcroAni(hero);
 			}
 			else if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
@@ -1497,18 +1496,18 @@ func void HandleEvent(var int uKey)
 					Mdl_RemoveOverlayMds(hero,"PRE_START.mds");
 					Mdl_RemoveOverlayMds(hero,"PRE_Hum_Shield2.MDS");
 					Mdl_ApplyOverlayMds(hero,"Shield_ST1.MDS");
-					AI_Print("Выбран уровень владения щитом - 'Новичок'");
+					AI_Print( " Shield level selected - 'Beginner' " );
 					B_CheckAcroAni(hero);
 				}
 				else
 				{
-					AI_PrintClr("Недостаточный уровень владения оружием!",177,58,17);
+					AI_PrintClr( " Insufficient weapon proficiency! " , 177 , 58 , 17 );
 				};
 			};
 		};
 		if(EquipedIndex_2H == TRUE)
 		{
-			if((AIV_Speer == FALSE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE) && (AIV_Staff_10 == FALSE))
+			if ((AIV_Speer ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_05 ==  FALSE ) && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ) && (AIV_Staff_10 ==  FALSE ))
 			{
 				Mdl_RemoveOverlayMds(hero,"humans_2hST3.mds");
 				Mdl_RemoveOverlayMds(hero,"humans_2hST2.mds");
@@ -1538,7 +1537,7 @@ func void HandleEvent(var int uKey)
 				Mdl_RemoveOverlayMds(hero,"Humans_Speer.mds");
 				Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 				Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
-				AI_Print("Выбран уровень владения двуручным оружием - 'Новичок'");
+				AI_Print( " Selected level of two-handed weapon proficiency - 'Novice' " );
 				B_CheckAcroAni(hero);
 			}
 			else if(AIV_Speer == TRUE)
@@ -1571,7 +1570,7 @@ func void HandleEvent(var int uKey)
 				Mdl_RemoveOverlayMds(hero,"Humans_Speer.mds");
 				Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 				Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
-				AI_Print("Выбран уровень владения копьем - 'Новичок'");
+				AI_Print( " Spear level selected - 'Beginner' " );
 				B_CheckAcroAni(hero);
 			};
 			if((AIV_Staff_01 == TRUE) || (AIV_Staff_Blood == TRUE) || (AIV_Staff_02 == TRUE) || (AIV_Staff_03 == TRUE) || (AIV_Staff_04 == TRUE) || (AIV_Staff_05 == TRUE) || (AIV_Staff_06 == TRUE) || (AIV_Staff_07 == TRUE) || (AIV_Staff_08 == TRUE) || (AIV_Staff_09 == TRUE) || (AIV_Staff_10 == TRUE))
@@ -1604,7 +1603,7 @@ func void HandleEvent(var int uKey)
 				Mdl_RemoveOverlayMds(hero,"Humans_Speer.mds");
 				Mdl_RemoveOverlayMds(hero,"Humans_SPST1.mds");
 				Mdl_RemoveOverlayMds(hero,"Humans_SPST2.mds");
-				AI_Print("Выбран уровень владения посохом - 'Новичок'");
+				AI_Print( " Staff proficiency level selected - 'Beginner' " );
 				B_CheckAcroAni(hero);
 			};
 		};
@@ -1617,7 +1616,7 @@ func void HandleEvent(var int uKey)
 			Menu_WriteInt("SOUND","musicEnabled",TRUE);
 		};
 	};
-	if(KeyClick(KEY_I) && (C_BodyStateContains(hero,BS_ITEMINTERACT) == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (bDevMode == FALSE) && (Steal_Mode == FALSE) && (Mount_Up == FALSE) && (ShakoIsOn[0] == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if (KeyClick( KEY_I ) && (C_BodyStateContains(hero, BS_ITEMINTERACT ) ==  FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (bDevMode ==  FALSE ) && (Steal_Mode ==  FALSE ) && (Mount_Up ==  FALSE ) && ( ShakoIsOn[ 0 ] ==  FALSE ) && ( OptionCheck ==  FALSE ) && .(HeroTRANS ==  FALSE) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && ( HeroNotMobsi ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( CaptureCheat ==  TRUE ) && ( HeroIsDead ==  FALSE ))
 	{
 		if(MoreInfoOnScreen == FALSE)
 		{
