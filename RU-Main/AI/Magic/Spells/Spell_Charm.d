@@ -1,7 +1,7 @@
 
 instance Spell_Charm(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	spellType = SPELL_NEUTRAL;
 	damage_per_level = 0;
 	damagetype = DAM_MAGIC;
@@ -11,9 +11,9 @@ instance Spell_Charm(C_Spell_Proto)
 
 func int Spell_Logic_Charm(var int manaInvested)
 {
-	if((Hlp_GetInstanceID(other) == Hlp_GetInstanceID(GUR_8002_ORUN)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(Skeleton_Lord_LV)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(KDF_500_Pyrokar)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(KDW_1400_Addon_Saturas_NW)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(KDW_14000_Addon_Saturas_ADW)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(KDF_504_Parlan)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(MIL_311_Andre)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(NONE_100_Xardas)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(PAL_200_Hagen)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(PAL_250_Garond)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(SLD_800_Lee)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(PAL_9158_VARUS)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(XBS_7507_NETBEK)))
+	if ((Help_GetInstanceID(other) == Help_GetInstanceID( GUR_8002_ORUN )) || (Help_GetInstanceID(other) == Help_GetInstanceID(Skeleton_Lord_LV)) || (Help_GetInstanceID(other) == Help_GetInstanceID(KDF_500_Pyrokar)) || ( In = Help_GetInstanceID(KDW_1400_Addon_Saturas_NW)) || (Help_GetInstanceID(other) == Help_GetInstanceID(KDW_14000_ADW_Saturas_ADW)) || (Help_GetInstanceID(other) == Help_GetInstanceID(KDF_504_Language)) || ) (Help_GetInstanceID(other)) ; Hlp_GetInstanceID(MIL_311_Andre)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(NONE_100_Xardas)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(PAL_200_Hagen)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(PAL_250_Garond)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(SLD_800_Lee)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(PAL_9158_VARUS)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(XBS_7507_NETBEK)))
 	{
-		AI_PrintClr("Это не сработает...",177,58,17);
+		AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 		//B_Say(self,self,"$DONTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -25,7 +25,7 @@ func int Spell_Logic_Charm(var int manaInvested)
 		{
 			RamirezMagicDone = TRUE;
 		};
-		if((other.aivar[AIV_NpcSawPlayerCommit] != CRIME_NONE) && (MIS_Ignaz_Charm == LOG_Running))
+		if ((other.aivar[AIV_NpcSawPlayerCommit] !=  CRIME_NONE ) && (MY_IGNAZ_CHARM == LOG_Running))
 		{
 			Charm_Test = TRUE;
 		};
@@ -33,7 +33,7 @@ func int Spell_Logic_Charm(var int manaInvested)
 		B_DeletePetzCrime(other);
 		other.vars[0] = FALSE;
 
-		other.aivar[AIV_NpcSawPlayerCommit] = CRIME_NONE;
+		other.aivar[AIV_NpcSawPlayerCommit] = CRIME_NONE ;
 
 		if((other.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) && ((Hlp_GetInstanceID(other) == Hlp_GetInstanceID(VLK_498_Ignaz)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(BAU_980_Sagitta)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(xbs_7513_darrion)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(PIR_1351_Addon_Samuel)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(VLK_458_Rupert)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(VLK_4303_Addon_Erol)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(NONE_100_Xardas))))
 		{
@@ -77,20 +77,20 @@ func void Spell_Cast_Charm()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
 instance Spell_TeleportSeaport(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	spellType = SPELL_NEUTRAL;
 	targetCollectAlgo = TARGET_COLLECT_CASTER;
 };
@@ -111,8 +111,7 @@ func void Spell_Cast_TeleportSeaport()
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_SCROLL4;
 	};
 
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
-
 
 
