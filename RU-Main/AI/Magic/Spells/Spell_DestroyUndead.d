@@ -1,7 +1,8 @@
 
+
 instance Spell_DestroyUndead(C_Spell_Proto)
 {
-	time_per_mana = 0;
+	time_per_mana = 0 ;
 	damage_per_level = SPL_Damage_DESTROYUNDEAD;
 	spellType = SPELL_NEUTRAL;
 };
@@ -13,20 +14,20 @@ func int Spell_Logic_DestroyUndead(var int manaInvested)
 	{
 		if((Hlp_GetInstanceID(other) == Hlp_GetInstanceID(senyak_demon)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(skeleton_warrior_dark_fireshpere)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(skeleton_warrior_dark_darkshpere)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(skeleton_warrior_dark_watershpere)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(skeleton_warrior_dark_stoneshpere)))
 		{
-			AI_PrintClr("Это не сработает...",177,58,17);
+			AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 			//B_Say(self,self,"$DONTWORK");
 			return SPL_SENDSTOP;
 		};
 	};
 	if(other.guild == GIL_DEMON)
 	{
-		AI_PrintClr("Это не сработает...",177,58,17);
+		AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 		//B_Say(self,self,"$DONTWORK");
 		return SPL_SENDSTOP;
 	};
 	if(C_NpcIsUndead(other) == FALSE)
 	{
-		AI_PrintClr("Это не сработает...",177,58,17);
+		AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 		//B_Say(self,self,"$DONTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -64,15 +65,15 @@ func void Spell_Cast_DestroyUndead()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
 
