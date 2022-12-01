@@ -1,4 +1,5 @@
 
+
 instance MENU_SYSTEMPACK(C_MENU_DEF)
 {
 	items[0] = "MENUITEM_SYSTEMPACK_CELLS";
@@ -15,12 +16,12 @@ instance MENU_SYSTEMPACK(C_MENU_DEF)
 instance MENUITEM_SYSTEMPACK_CELLS(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_ITEM_BACK_PIC;
-	text[0] = "Размер ячеек инвентаря";
-	text[1] = "Задает размер ячеек инвентаря в игре";
+	text[ 0 ] = " Inventory cell size " ;
+	text[ 1 ] = " Sets the size of inventory slots in the game " ;
 	posx = 0;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 0);
-	dimx = 7000;
-	dimy = 750;
+	dimx = 7000 ;
+	five = 750 ;
 	onselaction[0] = SEL_ACTION_UNDEF;
 	flags = flags | IT_EFFECTS_NEXT;
 };
@@ -33,7 +34,7 @@ instance MENUITEM_SYSTEMPACK_CELLS_CHOICE(C_MENU_ITEM_DEF)
 	fontname = MENU_FONT_SMALL;
 	posx = 8000;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 0) + MENU_CHOICE_YPLUS + 25;
-	dimx = MENU_SLIDER_DX;
+	dimx = MENU_SLIDER_DX ;
 	dimy = MENU_CHOICE_DY;
 	onchgsetoption = "InventoryCellSize";
 	onchgsetoptionsection = "INTERFACE";
@@ -44,12 +45,12 @@ instance MENUITEM_SYSTEMPACK_CELLS_CHOICE(C_MENU_ITEM_DEF)
 instance MENUITEM_SYSTEMPACK_NOTAKEANI(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_ITEM_BACK_PIC;
-	text[0] = "Отключить анимацию сбора";
-	text[1] = "Отключить анимацию сбора предметов";
+	text[ 0 ] = " Disable collection animation " ;
+	text[ 1 ] = " Disable pickup animation " ;
 	posx = 0;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 1);
-	dimx = 7000;
-	dimy = 750;
+	dimx = 7000 ;
+	five = 750 ;
 	onselaction[0] = SEL_ACTION_UNDEF;
 	flags = flags | IT_EFFECTS_NEXT;
 };
@@ -58,11 +59,11 @@ instance MENUITEM_SYSTEMPACK_NOTAKEANI_CHOICE(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_CHOICE_BACK_PIC;
 	type = MENU_ITEM_CHOICEBOX;
-	text[0] = "нет|да";
+	text[ 0 ] = " no|yes " ;
 	fontname = MENU_FONT_SMALL;
 	posx = 8000;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 1) + MENU_CHOICE_YPLUS + 25;
-	dimx = MENU_SLIDER_DX;
+	dimx = MENU_SLIDER_DX ;
 	dimy = MENU_CHOICE_DY;
 	onchgsetoption = "No_Take_Anim";
 	onchgsetoptionsection = "PARAMETERS";
@@ -73,12 +74,12 @@ instance MENUITEM_SYSTEMPACK_NOTAKEANI_CHOICE(C_MENU_ITEM_DEF)
 instance MENUITEM_SYSTEMPACK_RMBNOTAKEANI(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_ITEM_BACK_PIC;
-	text[0] = "Кнопка действия";
-	text[1] = "Меняет основную кнопку действия в игре";
+	text[ 0 ] = " Action button " ;
+	text[ 1 ] = " Changes the main action button in the game " ;
 	posx = 0;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 2);
-	dimx = 7000;
-	dimy = 750;
+	dimx = 7000 ;
+	five = 750 ;
 	onselaction[0] = SEL_ACTION_UNDEF;
 	flags = flags | IT_DISABLED;
 };
@@ -87,11 +88,11 @@ instance MENUITEM_SYSTEMPACK_RMBNOTAKEANI_CHOICE(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_CHOICE_BACK_PIC;
 	type = MENU_ITEM_CHOICEBOX;
-	text[0] = "по умолчанию|ПКМ";
+	text[ 0 ] = " default|RMB " ;
 	fontname = MENU_FONT_SMALL;
 	posx = 8000;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 2) + MENU_CHOICE_YPLUS + 25;
-	dimx = MENU_SLIDER_DX;
+	dimx = MENU_SLIDER_DX ;
 	dimy = MENU_CHOICE_DY;
 	onchgsetoption = "RMB_No_Take_Anim";
 	onchgsetoptionsection = "PARAMETERS";
@@ -102,12 +103,12 @@ instance MENUITEM_SYSTEMPACK_RMBNOTAKEANI_CHOICE(C_MENU_ITEM_DEF)
 instance MENUITEM_SYSTEMPACK_SCALEINTF(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_ITEM_BACK_PIC;
-	text[0] = "Размер интерфейса";
-	text[1] = "Изменение размера интерфейса в игре";
+	text[ 0 ] = " Interface Size " ;
+	text[ 1 ] = " Resizing the interface in the game " ;
 	posx = 0;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 2);
-	dimx = 7000;
-	dimy = 750;
+	dimx = 7000 ;
+	five = 750 ;
 	onselaction[0] = SEL_ACTION_UNDEF;
 	flags = flags | IT_EFFECTS_NEXT;
 };
@@ -116,11 +117,11 @@ instance MENUITEM_SYSTEMPACK_SCALEINTF_CHOICE(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_CHOICE_BACK_PIC;
 	type = MENU_ITEM_CHOICEBOX;
-	text[0] = "по умолчанию|большой|огромный";
+	text[ 0 ] = " default|big|huge " ;
 	fontname = MENU_FONT_SMALL;
 	posx = 8000;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 2) + MENU_CHOICE_YPLUS + 25;
-	dimx = MENU_SLIDER_DX;
+	dimx = MENU_SLIDER_DX ;
 	dimy = MENU_CHOICE_DY;
 	onchgsetoption = "Scale";
 	onchgsetoptionsection = "INTERFACE";
@@ -131,12 +132,12 @@ instance MENUITEM_SYSTEMPACK_SCALEINTF_CHOICE(C_MENU_ITEM_DEF)
 instance MENUITEM_SYSTEMPACK_CONSOLEFPS(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_ITEM_BACK_PIC;
-	text[0] = "Показывать FPS";
-	text[1] = "Отображает текущий FPS на экране";
+	text[ 0 ] = " Show FPS " ;
+	text[ 1 ] = " Displays the current FPS on the screen " ;
 	posx = 0;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 3);
-	dimx = 7000;
-	dimy = 750;
+	dimx = 7000 ;
+	five = 750 ;
 	onselaction[0] = SEL_ACTION_UNDEF;
 	flags = flags | IT_EFFECTS_NEXT;
 };
@@ -145,11 +146,11 @@ instance MENUITEM_SYSTEMPACK_CONSOLEFPS_CHOICE(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_CHOICE_BACK_PIC;
 	type = MENU_ITEM_CHOICEBOX;
-	text[0] = "нет|да";
+	text[ 0 ] = " no|yes " ;
 	fontname = MENU_FONT_SMALL;
 	posx = 8000;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 3) + MENU_CHOICE_YPLUS + 25;
-	dimx = MENU_SLIDER_DX;
+	dimx = MENU_SLIDER_DX ;
 	dimy = MENU_CHOICE_DY;
 	onchgsetoption = "Show_FPS_Counter";
 	onchgsetoptionsection = "DEBUG";
@@ -160,11 +161,11 @@ instance MENUITEM_SYSTEMPACK_CONSOLEFPS_CHOICE(C_MENU_ITEM_DEF)
 instance MENUITEM_SUB_SPBACK_EXIT(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_ITEM_BACK_PIC;
-	text[0] = "Применить изменения";
-	text[1] = "При изменении параметров необходим перезапуск игры";
+	text[ 0 ] = " Apply changes " ;
+	text[ 1 ] = " Changing settings requires restarting the game " ;
 	posx = 1000;
-	posy = 6500;
-	dimx = 6192;
+	rickshaw = 6500 ;
+	dimx = 6192 ;
 	dimy = MENU_SOUND_DY;
 	onselaction[0] = SEL_ACTION_STARTMENU;
 	onselaction_s[0] = "MENU_LEAVE_GAME";
@@ -174,11 +175,11 @@ instance MENUITEM_SUB_SPBACK_EXIT(C_MENU_ITEM_DEF)
 instance MENUITEM_SUB_SPBACK(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_ITEM_BACK_PIC;
-	text[0] = "Назад";
+	text[ 0 ] = " Back " ;
 	text[1] = "";
 	posx = 1000;
-	posy = 7000;
-	dimx = 6192;
+	rickshaw = 7000 ;
+	dimx = 6192 ;
 	dimy = MENU_SOUND_DY;
 	onselaction[0] = SEL_ACTION_BACK;
 	flags = flags | IT_TXT_CENTER;
