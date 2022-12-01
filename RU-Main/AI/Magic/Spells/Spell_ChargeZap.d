@@ -1,5 +1,6 @@
 
 
+
 instance Spell_ChargeZap(C_Spell_Proto)
 {
 	time_per_mana = 60;
