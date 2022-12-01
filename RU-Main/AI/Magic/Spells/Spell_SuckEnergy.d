@@ -1,6 +1,7 @@
+
 instance Spell_ManaForLife(C_Spell_Proto)
 {
-    time_per_mana = 50;
+    time_per_mana = 50 ;
     spelltype = SPELL_NEUTRAL;
     targetCollectAlgo = TARGET_COLLECT_CASTER;
     canTurnDuringInvest = FALSE;
@@ -12,7 +13,7 @@ func int Spell_Logic_ManaForLife(var int healthInvested)
 
 	if((Mount_Up == TRUE) || (FlyCarpetIsOn == TRUE) || (PlayerSitDust == TRUE) || (HeroTRANS == TRUE))
 	{
-		AI_PrintClr("Это не сработает...",177,58,17);
+		AI_PrintClr( " This won't work... " , 177 , 58 , 17 );
 		//B_Say(self,self,"$DONTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -23,7 +24,7 @@ func int Spell_Logic_ManaForLife(var int healthInvested)
 			return SPL_SENDSTOP;
 		};
 
-		self.aivar[AIV_SpellLevel] = 0;
+		self.aivar[AIV_SpellLevel] = 0 ;
 		Wld_StopEffect("FOV_MORPH1");
         	return SPL_NEXTLEVEL;
 	};
@@ -35,21 +36,21 @@ func int Spell_Logic_ManaForLife(var int healthInvested)
 	{
 		Npc_ChangeAttribute(self,ATR_HITPOINTS,-5);
 		Npc_ChangeAttribute(self,ATR_MANA,1);
-		self.aivar[AIV_SpellLevel] += 1;
+		self.aivar[AIV_SpellLevel] +=  1 ;
 		soundprefix = ConcatStrings(ConcatStrings("SVM_",IntToString(self.voice)),"_AARGH_");
 
-		if(self.aivar[AIV_SpellLevel] == 10)
+		if (self.aivar[AIV_SpellLevel] ==  10 )
 		{
 			Snd_Play3D(self,ConcatStrings(soundprefix, "1"));
 		}
-		else if(self.aivar[AIV_SpellLevel] == 20)
+		else  if (self.aivar[AIV_SpellLevel] ==  20 )
 		{
 			Snd_Play3D(self,ConcatStrings(soundprefix, "2"));
 		}
-		else if(self.aivar[AIV_SpellLevel] == 30)
+		else  if (self.aivar[AIV_SpellLevel] ==  30 )
 		{
 			Snd_Play3D(self,ConcatStrings(soundprefix, "3"));
-			self.aivar[AIV_SpellLevel] = 0;
+			self.aivar[AIV_SpellLevel] = 0 ;
 		};
 
 		return SPL_STATUS_CANINVEST_NO_MANADEC;
@@ -68,16 +69,16 @@ func void Spell_Cast_ManaForLife()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar, I can use rune magic. What does that mean?! " );
 		};
 
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 
 	Wld_StopEffect("FOV_MORPH1");
-	self.aivar[AIV_SelectSpell] += 1;
+	self.aivar[AIV_SelectSpell] +=  1 ;
 };
