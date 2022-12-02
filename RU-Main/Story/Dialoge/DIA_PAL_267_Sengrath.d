@@ -1,4 +1,5 @@
 
+
 instance DIA_Sengrath_EXIT(C_Info)
 {
 	npc = PAL_267_Sengrath;
@@ -39,18 +40,18 @@ func int DIA_Sengrath_Hello_Condition()
 
 func void DIA_Sengrath_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Sengrath_Hello_03_00");	//Я знал! Я знал, что кому-нибудь это удастся!
-	AI_Output(self,other,"DIA_Sengrath_Hello_03_01");	//Ты прошел через Проход? А наш посланник смог пробиться?
-	if(Kapitel == 1)
+	AI_Output(self,other, " DIA_Sengrath_Hello_03_00 " );	// I knew! I knew someone could do it!
+	AI_Output(self,other, " DIA_Sengrath_Hello_03_01 " );	// Did you pass through the Passage? And our envoy was able to get through?
+	if (chapter ==  1 )
 	{
-		AI_Output(other,self,"DIA_Sengrath_Hello_15_03");	//Нет, ваш курьер не сделал этого.
+		AI_Output(other,self, " DIA_Sengrath_Hello_15_03 " );	// No, your courier didn't.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Sengrath_Hello_15_02");	//Нет, ваш посланник не смог пересечь проход. Я пришел по приказу лорда Хагена.
+		AI_Output(other,self, " DIA_Sengrath_Hello_15_02 " );	// No, your envoy couldn't cross the passage. I have come by order of Lord Hagen.
 	};
-	AI_Output(self,other,"DIA_Sengrath_Hello_03_03");	//(рычит) Проклятые орки...
-	AI_Output(self,other,"DIA_Sengrath_Hello_03_04");	//Ну, командующий Гаронд наверняка захочет поговорить с тобой. Ты найдешь его в этом большом здании, охраняемом двумя рыцарями.
+	AI_Output(self,other, " DIA_Sengrath_Hello_03_03 " );	// (growls) Damned orcs...
+	AI_Output(self,other, " DIA_Sengrath_Hello_03_04 " );	// Well, Commander Garond will probably want to talk to you. You will find him in this large building guarded by two knights.
 };
 
 
@@ -61,7 +62,7 @@ instance DIA_Sengrath_Equipment(C_Info)
 	condition = DIA_Sengrath_Equipment_Condition;
 	information = DIA_Sengrath_Equipment_Info;
 	permanent = FALSE;
-	description = "Где я могу найти снаряжение здесь?";
+	description = " Where can I find gear here? " ;
 };
 
 
@@ -72,12 +73,12 @@ func int DIA_Sengrath_Equipment_Condition()
 
 func void DIA_Sengrath_Equipment_Info()
 {
-	AI_Output(other,self,"DIA_Sengrath_Equipment_15_00");	//Где я могу найти снаряжение здесь?
-	AI_Output(self,other,"DIA_Sengrath_Equipment_03_01");	//Тандор распоряжается оружием. Управляющий Энгор отвечает за все остальное.
-	AI_Output(other,self,"DIA_Sengrath_Equipment_15_02");	//А что насчет магии?
-	AI_Output(self,other,"DIA_Sengrath_Equipment_03_03");	//У нас есть свитки с заклинаниями. Если тебе понадобится один из них, дай мне знать.
+	AI_Output(other,self, " DIA_Sengrath_Equipment_15_00 " );	// Where can I find gear here?
+	AI_Output(self,other, " DIA_Sengrath_Equipment_03_01 " );	// Tandor handles weapons. Manager Engor is in charge of everything else.
+	AI_Output(other,self, " DIA_Sengrath_Equipment_15_02 " );	// What about magic?
+	AI_Output(self,other, " DIA_Sengrath_Equipment_03_03 " );	// We have spell scrolls. If you need one of these, let me know.
 	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
-	B_LogEntry(TOPIC_Trader_OC,"Сенграт продает свитки в замке.");
+	B_LogEntry(TOPIC_Trader_OC, " Sengrat sells scrolls in the castle. " );
 };
 
 
@@ -88,7 +89,7 @@ instance DIA_Sengrath_Perm(C_Info)
 	condition = DIA_Sengrath_Perm_Condition;
 	information = DIA_Sengrath_Perm_Info;
 	permanent = FALSE;
-	description = "Кто здесь может научить меня чему-нибудь?";
+	description = " Who here can teach me something? " ;
 };
 
 
@@ -99,17 +100,17 @@ func int DIA_Sengrath_Perm_Condition()
 
 func void DIA_Sengrath_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Sengrath_Perm_15_00");	//Кто здесь может научить меня чему-нибудь?
+	AI_Output(other,self, " DIA_Sengrath_Perm_15_00 " );	// Who here can teach me something?
 
 	if(((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR)) && (Kapitel <= 2))
 	{
-		AI_Output(self,other,"DIA_Sengrath_Perm_03_01");	//Поговори с Милтеном - он здесь единственный маг.
+		AI_Output(self,other, " DIA_Sengrath_Perm_03_01 " );	// Talk to Milten - he's the only mage here.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Sengrath_Perm_03_02");	//Спроси Керолота. Он обучает парней обращению с мечом. Может, и тебя он сможет чему-нибудь научить.
+		AI_Output(self,other, " DIA_Sengrath_Perm_03_02 " );	// Ask Caroloth. He teaches the boys how to use the sword. Maybe he can teach you something too.
 		Log_CreateTopic(TOPIC_Teacher_OC,LOG_NOTE);
-		B_LogEntry(TOPIC_Teacher_OC,"Керолот тренирует мечников в замке.");
+		B_LogEntry(TOPIC_Teacher_OC, " Caroloth is training swordsmen at the castle. " );
 	};
 };
 
@@ -122,7 +123,7 @@ instance DIA_Sengrath_Scrolls(C_Info)
 	information = DIA_Sengrath_Scrolls_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи мне свои свитки.";
+	description = " Show me your scrolls. " ;
 };
 
 
@@ -147,7 +148,7 @@ func void DIA_Sengrath_Scrolls_Info()
 		CreateInvItems(self,itpo_anpois,3);
 	};
 
-	AI_Output(other,self,"DIA_Sengrath_Scrolls_15_00");	//Покажи мне свои свитки.
+	AI_Output(other,self, " DIA_Sengrath_Scrolls_15_00 " );	// Show me your scrolls.
 	B_GiveTradeInv(self);
 };
 
@@ -165,7 +166,7 @@ instance DIA_Sengrath_PICKPOCKET(C_Info)
 
 func int DIA_Sengrath_PICKPOCKET_Condition()
 {
-	return C_Beklauen(32,35);
+	return  C_Robbery ( 32 , 35 );
 };
 
 func void DIA_Sengrath_PICKPOCKET_Info()
@@ -177,7 +178,7 @@ func void DIA_Sengrath_PICKPOCKET_Info()
 
 func void DIA_Sengrath_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Sengrath_PICKPOCKET);
 };
