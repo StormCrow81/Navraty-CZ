@@ -1,4 +1,5 @@
 
+
 instance DIA_XOR_12205_TERINAKS_EXIT(C_Info)
 {
 	npc = xor_12205_terinaks;
@@ -26,7 +27,7 @@ instance DIA_XOR_12205_TERINAKS_HALLO(C_Info)
 	npc = xor_12205_terinaks;
 	nr = 5;
 	condition = dia_xor_12205_terinaks_hallo_condition;
-	information = dia_xor_12205_terinaks_hallo_info;
+	information = dia_xor_12205_terinaks_hello_info;
 	important = TRUE;
 	permanent = FALSE;
 };
@@ -42,13 +43,13 @@ func int dia_xor_12205_terinaks_hallo_condition()
 
 func void dia_xor_12205_terinaks_hallo_info()
 {
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_HALLO_01_00");	//Хммм. Твое лицо мне знакомо, смертный!
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_HALLO_01_03");	//Ах да. Ты тот, кого Хранители прислали мне на помощь в битве с Люцианом.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_HALLO_01_05");	//Ну что же... Раз ты сейчас здесь, это было сделано неспроста.
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_HALLO_01_06");	//Это было одно из испытаний Хранителей.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_HALLO_01_07");	//И полагаю, ты прошел ВСЕ их испытания?
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_HALLO_01_08");	//Да! Хранитель Стоннос принял меня в адепты Круга. Теперь я один из вас.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_HALLO_01_11");	//Я немного удивлен тому, чего тебе удалось достичь за такой короткий срок.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_00 " );	// Hmmm. Your face is familiar to me, mortal!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_03 " );	// Oh yeah. You are the one sent by the Guardians to help me fight Lucian.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_05 " );	// Well... Since you're here now, this was done for a reason.
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_HALLO_01_06 " );	// This was one of the Guardians' trials.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_07 " );	// And I assume you passed ALL of their tests?
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_HALLO_01_08 " );	// Yes! Guardian Stonnos has accepted me as an Adept of the Circle. Now I am one of you.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_11 " );	// I'm a bit surprised at what you've managed to achieve in such a short amount of time.
 };
 
 
@@ -59,7 +60,7 @@ instance DIA_XOR_12205_TERINAKS_WHOYOU(C_Info)
 	condition = dia_xor_12205_terinaks_whoyou_condition;
 	information = dia_xor_12205_terinaks_whoyou_info;
 	permanent = FALSE;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -71,14 +72,14 @@ func int dia_xor_12205_terinaks_whoyou_condition()
 func void dia_xor_12205_terinaks_whoyou_info()
 {
 	AI_Output(other,self,"DIA_XOR_12205_Terinaks_WhoYou_01_00");	//Кто ты?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_WhoYou_01_01");	//Мое имя Таринакс, и я наставник Асгардов, воинов стихий.
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_WhoYou_01_02");	//А кто такие Асгарды?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_WhoYou_01_06");	//Основное предназначение Асгардов - нести божественную мудрость Хранителей в этот мир.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_WhoYou_01_07");	//Мы все являемся их преданными и покорными слугами, беспрекословно следующими их божественной воле...
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_WhoYou_01_08");	//...и готовы не задумываясь пожертвовать своей жизнью ради тех целей, которые они преследуют.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_WhoYou_01_09");	//Тот же, кто усомнится в их деяниях, - просто не достоин быть воином стихий, ибо смысл нашей жизни только в служении Творцам!
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_WhoYou_01_10");	//Асгарды также являются личной стражей Хранителей и хранят их священный покой в этих чертогах.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_WhoYou_01_12");	//Как и у всех прочих божеств, у Творцов также найдутся враги, готовые с радостью их уничтожить.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_01 " );	// My name is Tarinax, and I am the mentor of the Asgardians, warriors of the elements.
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_WhoYou_01_02 " );	// And who are the Asgardians?
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_06 " );	// The main purpose of the Asgardians is to bring the divine wisdom of the Guardians into this world.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_07 " );	// We are all their devoted and obedient servants, unquestioningly following their divine will...
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_08 " );	// ...and are ready to sacrifice their lives without hesitation for the sake of the goals they pursue.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_09 " );	// The one who doubts their deeds is simply not worthy of being a warrior of the elements, for the meaning of our life is only in serving the Creators!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_10 " );	// Asgardians are also the personal guardians of the Keepers and keep their sacred rest in these halls.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_12 " );	// Like all other deities, the Creators also have enemies ready to destroy them with joy.
 };
 
 
@@ -89,13 +90,13 @@ instance DIA_XOR_12205_TERINAKS_CANTEACHME(C_Info)
 	condition = dia_xor_12205_terinaks_canteachme_condition;
 	information = dia_xor_12205_terinaks_canteachme_info;
 	permanent = FALSE;
-	description = "Чему ты можешь меня научить?";
+	description = " What can you teach me? " ;
 };
 
 
 func int dia_xor_12205_terinaks_canteachme_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_xor_12205_terinaks_whoyou) && (GUARDIANTEACHMEWAR == FALSE))
+	if ( Npc_KnowsInfo ( hero , dia_xor_12205_terinaks_whoyou ) && ( GUARDIACHMEWAR  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -103,9 +104,9 @@ func int dia_xor_12205_terinaks_canteachme_condition()
 
 func void dia_xor_12205_terinaks_canteachme_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_CanTeachMe_01_00");	//Чему ты можешь меня научить?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_CanTeachMe_01_01");	//Много чему. Но я обучаю только Асгардов и тех, кто выбрал этот путь.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_CanTeachMe_01_02");	//Ты же пока не вступил на этот путь. Поэтому нам пока не о чем разговаривать!
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_CanTeachMe_01_00 " );	// What can you teach me?
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_CanTeachMe_01_01 " );	// Lots of things. But I only teach Asgardians and those who choose this path.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_CanTeachMe_01_02 " );	// You haven't taken this path yet. Therefore, we have nothing to talk about yet!
 };
 
 
@@ -116,7 +117,7 @@ instance DIA_XOR_12205_TERINAKS_PERM(C_Info)
 	condition = dia_xor_12205_terinaks_perm_condition;
 	information = dia_xor_12205_terinaks_perm_info;
 	permanent = TRUE;
-	description = "Как обстоят дела?";
+	description = " How are things? " ;
 };
 
 
@@ -130,8 +131,8 @@ func int dia_xor_12205_terinaks_perm_condition()
 
 func void dia_xor_12205_terinaks_perm_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Perm_01_00");	//Как обстоят дела?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Perm_01_01");	//Все спокойно.
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Perm_01_00 " );	// How are things?
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Perm_01_01 " );	// Everything is calm.
 };
 
 
@@ -142,13 +143,13 @@ instance DIA_XOR_12205_TERINAKS_TEACHME(C_Info)
 	condition = dia_xor_12205_terinaks_teachme_condition;
 	information = dia_xor_12205_terinaks_teachme_info;
 	permanent = FALSE;
-	description = "Меня прислали к тебе Хранители.";
+	description = " The Guardians sent me to you. " ;
 };
 
 
 func int dia_xor_12205_terinaks_teachme_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_xor_12205_terinaks_whoyou) && (GUARDIANTEACHMEWAR == TRUE))
+	if ( Npc_KnowsInfo ( hero , dia_xor_12205_terinaks_whoyou ) && ( GUARDIACHMEWAR  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -156,18 +157,18 @@ func int dia_xor_12205_terinaks_teachme_condition()
 
 func void dia_xor_12205_terinaks_teachme_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_TeachMe_01_00");	//Меня прислали к тебе Хранители.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_TeachMe_01_01");	//Хорошо. Что хотят от меня Творцы?
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_TeachMe_01_02");	//Они хотят, чтобы ты стал моим наставником. Мой путь - это путь воина!
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_TeachMe_01_03");	//Что же, если на то их воля, то так тому и быть - я стану твоим наставником и учителем.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_TeachMe_01_04");	//Однако ты должен понять, что вступить на путь Воина Стихий...
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_TeachMe_01_05");	//...это великая честь, которой удостаиваются лишь немногие избранные.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_TeachMe_01_08");	//В твоей жизни должна остаться лишь одна цель, и эта цель - служение Творцам и их заветам!
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_TeachMe_01_12");	//А чему ты сможешь меня обучить?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_TeachMe_01_13");	//Искусству боя.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_TeachMe_01_14");	//Для Асгардов это основная дисциплина, в которой им нет равных среди остальных смертных.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_TeachMe_01_18");	//И когда ты будешь готов встать в наши ряды, я посвящу тебя в секреты ковки самых лучших доспехов, которые только есть в этом мире.
-	B_LogEntry(TOPIC_GUARDIANS,"Я поговорил с мастером Таринаксом. Теперь он станет моим наставником и сможет обучить меня искусству воина.");
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_TeachMe_01_00 " );	// I was sent to you by the Guardians.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_01 " );	// Good. What do the Creators want from me?
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_TeachMe_01_02 " );	// They want you to be my mentor. My path is the path of a warrior!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_03 " );	// Well, if it is their will, then so be it - I will become your mentor and teacher.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_04 " );	// However, you must understand that embarking on the path of the Elemental Warrior...
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_05 " );	// ...this is a great honor bestowed on only a select few.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_08 " );	// Only one goal should remain in your life, and this goal is to serve the Creators and their precepts!
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_TeachMe_01_12 " );	// What can you teach me?
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_13 " );	// The art of combat.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_14 " );	// For the Asgardians, this is a core discipline in which they have no equal among other mortals.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_18 " );	// And when you're ready to join our ranks, I'll let you in on the secrets of forging the finest armor the world has to offer.
+	B_LogEntry( TOPIC_GUARDIANS , " I have spoken to Master Tarinax. He will now be my mentor and can teach me the art of the warrior. " );
 	TARINAKSTEACHME = TRUE;
 };
 
@@ -179,7 +180,7 @@ instance DIA_XOR_12205_TERINAKS_BEXOR(C_Info)
 	condition = dia_xor_12205_terinaks_bexor_condition;
 	information = dia_xor_12205_terinaks_bexor_info;
 	permanent = FALSE;
-	description = "Как мне стать Асгардом?";
+	description = " How do I become Asgard? " ;
 };
 
 
@@ -193,15 +194,15 @@ func int dia_xor_12205_terinaks_bexor_condition()
 
 func void dia_xor_12205_terinaks_bexor_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_BeXOR_01_00");	//Как мне стать Асгардом?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BeXOR_01_01");	//Для этого ты должен будешь победить одного из нас в честном бою.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BeXOR_01_03");	//Но, как ты понимаешь, сделать это будет довольно непросто.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BeXOR_01_04");	//Однако если ты почувствуешь вдруг в себе силу бросить нам вызов, скажи мне об этом.
-	B_LogEntry(TOPIC_GUARDIANS,"Чтобы стать Асгардом, воином Стихий, я должен бросить вызов одному из этих воинов и победить его.");
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BeXOR_01_00 " );	// How do I become Asgard?
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BeXOR_01_01 " );	// To do this, you will have to defeat one of us in a fair fight.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BeXOR_01_03 " );	// But, as you know, it will be quite difficult to do this.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BeXOR_01_04 " );	// However, if you suddenly feel the strength to challenge us, tell me about it.
+	B_LogEntry( TOPIC_GUARDIANS , " To become Asgard, the warrior of the Elements, I must challenge and defeat one of these warriors. " );
 };
 
 
-var int chalangeharadrimfirsttime;
+var int challengeharadrimfirsttime;
 
 instance DIA_XOR_12205_TERINAKS_BATTLE(C_Info)
 {
@@ -210,7 +211,7 @@ instance DIA_XOR_12205_TERINAKS_BATTLE(C_Info)
 	condition = dia_xor_12205_terinaks_battle_condition;
 	information = dia_xor_12205_terinaks_battle_info;
 	permanent = TRUE;
-	description = "Я готов бросить вызов одному из вас!";
+	description = " I'm ready to challenge one of you! " ;
 };
 
 
@@ -224,45 +225,45 @@ func int dia_xor_12205_terinaks_battle_condition()
 
 func void dia_xor_12205_terinaks_battle_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Battle_01_00");	//Я готов бросить вызов одному из вас!
-	if(Kapitel >= 5)
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Battle_01_00 " );	// I'm ready to challenge one of you!
+	if (Chapter >=  5 )
 	{
-		AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_01_01");	//Ну хорошо. Ты в этом точно уверен?
+		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_01_01 " );	// Okay. Are you sure about this?
 		Info_ClearChoices(dia_xor_12205_terinaks_battle);
-		Info_AddChoice(dia_xor_12205_terinaks_battle,"Нет, я передумал.",dia_xor_12205_terinaks_battle_no);
-		Info_AddChoice(dia_xor_12205_terinaks_battle,"Да, я уверен.",dia_xor_12205_terinaks_battle_ok);
+		Info_AddChoice(dia_xor_12205_terinaks_battle, " No, I changed my mind. " ,dia_xor_12205_terinaks_battle_no);
+		Info_AddChoice(dia_xor_12205_terinaks_battle, " Yes, I'm sure. " ,dia_xor_12205_terinaks_battle_ok);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_01_02");	//Ты еще не готов к этому!
-		AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_01_04");	//Ты еще слаб, и никак пока не проявил себя, чтобы я поверил в это.
-		AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_01_05");	//Я позволю тебе сразиться с одним из нас только тогда, когда сам увижу, что ты готов к этому испытанию.
+		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_01_02 " );	// You're not ready for this yet!
+		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_01_04 " );	// You're still weak, and you haven't shown yourself yet for me to believe it.
+		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_01_05 " );	// I'll only let you fight one of us when I can see for myself that you're ready for this challenge.
 		AI_StopProcessInfos(self);
 	};
 };
 
 func void dia_xor_12205_terinaks_battle_no()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Battle_No_01_00");	//Нет, я передумал.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_No_01_01");	//Хорошо. Тогда вернемся к этому, когда ты будешь готов.
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Battle_No_01_00 " );	// No, I changed my mind.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_No_01_01 " );	// Good. Then come back to it when you're ready.
 	Info_ClearChoices(dia_xor_12205_terinaks_battle);
 };
 
 func void dia_xor_12205_terinaks_battle_ok()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Battle_Ok_01_00");	//Да, я готов.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_Ok_01_01");	//Ну что же, хорошо. В таком случае один из моих воинов уже ожидает тебя.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_Ok_01_02");	//Одержи над ним победу, и ты будешь принят в наш Священный Круг!
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Battle_Ok_01_00 " );	// Yes, I'm ready.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_01 " );	// Well, okay. In that case, one of my warriors is already waiting for you.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_02 " );	// Defeat him and you will be accepted into our Sacred Circle!
 
 	if(CHALANGEHARADRIMFIRSTTIME == FALSE)
 	{
-		AI_Output(other,self,"DIA_XOR_12205_Terinaks_Battle_Ok_01_03");	//Где именно я должен буду сразиться с ним?
-		AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_Ok_01_04");	//Камень телепортации, что находится в центре этих чертогов, приведет тебя в нужное место.
-		AI_Output(self,other,"DIA_XOR_12205_Terinaks_Battle_Ok_01_05");	//Теперь ступай! Битва ждет тебя.
+		AI_Output(other,self, " DIA_XOR_12205_Terinaks_Battle_Ok_01_03 " );	// Where exactly should I fight him?
+		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_04 " );	// The teleportation stone at the center of these halls will lead you to the right place.
+		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_05 " );	// Now go! The battle is waiting for you.
 		CHALANGEHARADRIMFIRSTTIME = TRUE;
 	};
 
-	CHALANGEHARADRIMSTART = TRUE;
+	CHALLENGEHARADRIMSTART = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
@@ -273,7 +274,7 @@ instance DIA_XOR_12205_TERINAKS_BATTLEWIN(C_Info)
 	condition = dia_xor_12205_terinaks_battlewin_condition;
 	information = dia_xor_12205_terinaks_battlewin_info;
 	permanent = FALSE;
-	description = "Я выиграл этот бой.";
+	description = " I won this fight. " ;
 };
 
 func int dia_xor_12205_terinaks_battlewin_condition()
@@ -287,36 +288,36 @@ func int dia_xor_12205_terinaks_battlewin_condition()
 func void dia_xor_12205_terinaks_battlewin_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_BattleWin_01_00");	//Я выиграл этот бой.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_01");	//Ну что же, мои уроки не прошли для тебя даром.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_03");	//Победить Асгарда в честном бою может только другой Асгард. А это значит лишь одно - ты доказал, что готов стать им!
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_05");	//Теперь ты один из нас.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_06");	//И в знак моего признания твоего статуса прими от меня вот этот меч. Меч Асгарда!
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_07");	//Это оружие не знает себе равных в бою и является символом нашего Священного Круга.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_08");	//Он станет частью тебя, и на острие его клинка ты понесешь в этот мир силу и мудрость Творцов!
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_09");	//Однако, прежде чем я тебе его дам, ты должен будешь ответить на один несложный вопрос.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_10");	//Какой тип оружия ты предпочитаешь - одноручный или двуручный?
-	BEHARADRIM = TRUE;
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BattleWin_01_00 " );	// I won this fight.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_01 " );	// Well, my lessons have not been in vain for you.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_03 " );	// Only another Asgard can defeat Asgard in a fair fight. And this means only one thing - you proved that you are ready to become one!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_05 " );	// Now you're one of us.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_06 " );	// And as a token of my recognition of your status, accept this sword from me. Sword of Asgard!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_07 " );	// This weapon is unmatched in combat and is the symbol of our Sacred Circle.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_08 " );	// He will become a part of you, and on the edge of his blade you will carry the power and wisdom of the Creators into this world!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_09 " );	// However, before I give it to you, you will have to answer one simple question.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_10 " );	// What type of weapon do you prefer - one-handed or two-handed?
+	BEHARADRIM = TRUE ;
 	Snd_Play("LevelUP");
-	B_LogEntry(TOPIC_GUARDIANS,"Мастер Таринакс возвел меня в ранг Асгарда. Теперь я воин Стихий.");
+	B_LogEntry( TOPIC_GUARDIANS , " Master Tarinax elevated me to the rank of Asgard. I am now an Elemental Warrior. " );
 	Info_ClearChoices(dia_xor_12205_terinaks_battlewin);
-	Info_AddChoice(dia_xor_12205_terinaks_battlewin,"Я предпочитаю одноручный меч.",dia_xor_12205_terinaks_battlewin_1h);
-	Info_AddChoice(dia_xor_12205_terinaks_battlewin,"Я предпочитаю двуручный меч.",dia_xor_12205_terinaks_battlewin_2h);
+	Info_AddChoice(dia_xor_12205_terinaks_battlewin, " I prefer a one-handed sword. " ,dia_xor_12205_terinaks_battlewin_1h);
+	Info_AddChoice(dia_xor_12205_terinaks_battlewin, " I prefer a two-handed sword. " ,dia_xor_12205_terinaks_battlewin_2h);
 };
 
 func void dia_xor_12205_terinaks_battlewin_1h()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_BattleWin_1H_01_00");	//Я предпочитаю одноручный меч.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_1H_01_01");	//Хорошо. Возьми этот клинок. Носи его с гордостью и честью, честью Асгарда!
-	CreateInvItems(self,itmw_1h_xaradrim,1);
-	B_GiveInvItems(self,other,itmw_1h_xaradrim,1);
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BattleWin_1H_01_00 " );	// I prefer a one-handed sword.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_1H_01_01 " );	// Good. Take this blade. Wear it with pride and honor, the honor of Asgard!
+	CreateInvItems(self,itmw_1h_xaradrim, 1 );
+	B_GiveInvItems(self,other,itmw_1h_xaradrim, 1 );
 	Info_ClearChoices(dia_xor_12205_terinaks_battlewin);
 };
 
 func void dia_xor_12205_terinaks_battlewin_2h()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_BattleWin_2H_01_00");	//Я предпочитаю двуручный меч.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_2H_01_01");	//Хорошо. Возьми этот клинок. Носи его с гордостью и честью, честью Асгарда!
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BattleWin_2H_01_00 " );	// I prefer a two-handed sword.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_2H_01_01 " );	// Good. Take this blade. Wear it with pride and honor, the honor of Asgard!
 	CreateInvItems(self,itmw_2h_xaradrim,1);
 	B_GiveInvItems(self,other,itmw_2h_xaradrim,1);
 	Info_ClearChoices(dia_xor_12205_terinaks_battlewin);
@@ -330,7 +331,7 @@ instance DIA_XOR_12205_TERINAKS_ARMOR(C_Info)
 	condition = dia_xor_12205_terinaks_armor_condition;
 	information = dia_xor_12205_terinaks_armor_info;
 	permanent = FALSE;
-	description = "Что насчет доспехов?";
+	description = " What about armor? " ;
 };
 
 
@@ -344,42 +345,42 @@ func int dia_xor_12205_terinaks_armor_condition()
 
 func void dia_xor_12205_terinaks_armor_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Armor_01_00");	//Что насчет доспехов?
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Armor_01_01");	//Ты говорил, что сможешь обучить меня секрету их ковки.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Armor_01_02");	//Конечно. Каждый асгард носит подобную броню.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Armor_01_03");	//Существуют два типа доспеха, секретам ковки которых я смогу тебя обучить.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Armor_01_04");	//Однако выбрать ты сможешь только один. Поэтому подумай хорошенько, прежде чем сделать свой выбор.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Armor_01_05");	//Итак, какой из них ты выбираешь?
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_01_00 " );	// What about armor?
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_01_01 " );	// You said you could teach me the secret of forging them.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_01_02 " );	// Of course. Every Asgard wears similar armor.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_01_03 " );	// There are two types of armor that I can teach you how to forge.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_01_04 " );	// However, you can only choose one. So think carefully before making your choice.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_01_05 " );	// So which one do you choose?
 	Info_ClearChoices(dia_xor_12205_terinaks_armor);
-	Info_AddChoice(dia_xor_12205_terinaks_armor,"Доспехи Тьмы (Требование экипировки: 500 или более ловкости)",dia_xor_12205_terinaks_armor_dark);
-	Info_AddChoice(dia_xor_12205_terinaks_armor,"Доспехи Света (Требование экипировки: 500 или более силы)",dia_xor_12205_terinaks_armor_light);
+	Info_AddChoice(dia_xor_12205_terinaks_armor, " Armor of Darkness (Equipment Requirement: 500 or more Agility) " ,dia_xor_12205_terinaks_armor_dark);
+	Info_AddChoice(dia_xor_12205_terinaks_armor, " Armor of Light (Equip Requirement: 500 or more power) " ,dia_xor_12205_terinaks_armor_light);
 };
 
 func void dia_xor_12205_terinaks_armor_dark()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Armor_Dark_01_00");	//Я выбираю рудные доспехи Тьмы.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Armor_Dark_01_01");	//Хорошо. Это твой выбор! Теперь ты сможешь сам выковать этот доспех.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Armor_Dark_01_02");	//Это большая честь, которая выпадает немногим.
-	AI_Print("Изучен рецепт ковки - 'Рудные доспехи Тьмы'");
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_Dark_01_00 " );	// I choose Dark Ore Armor.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Dark_01_01 " );	// Good. It's your choice! Now you can forge this armor yourself.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Dark_01_02 " );	// This is a great honor that few get.
+	AI_Print( " Learned forging recipe - 'Dark Ore Armor' " );
 	Npc_SetTalentSkill(other,NPC_TALENT_SMITH,1);
 	Snd_Play("LevelUP");
 	PLAYER_TALENT_SMITH[34] = TRUE;
 	PLAYER_TALENT_SMITH_34 = TRUE;
-	B_LogEntry(TOPIC_ARMORTEACHER,"Для того, чтобы выковать доспехи Тьмы мне необходимо: десять слитков из магической руды, два куска черной руды, десять кусков серы, пять смоляных растворов, пять кусков угля, черный жемчуг и кусок адаманта.");
+	B_LogEntry( TOPIC_ARMORTEACHER , " In order to forge the Armor of Darkness, I need: ten ingots of magic ore, two pieces of black ore, ten pieces of sulfur, five resin solutions, five pieces of coal, black pearl and a piece of adamant. " );
 	Info_ClearChoices(dia_xor_12205_terinaks_armor);
 };
 
 func void dia_xor_12205_terinaks_armor_light()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Armor_Light_01_00");	//Я выбираю рудные доспехи Света.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Armor_Light_01_01");	//Хорошо. Это твой выбор! Теперь ты сможешь сам выковать этот доспех.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Armor_Light_01_02");	//Это большая честь, которая выпадает немногим.
-	AI_Print("Изучен рецепт ковки - 'Рудные доспехи Света'");
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_Light_01_00 " );	// I choose the ore armor of the Light.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Light_01_01 " );	// Good. It's your choice! Now you can forge this armor yourself.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Light_01_02 " );	// This is a great honor that few get.
+	AI_Print( " Learned crafting recipe - 'Ore Armor of Light' " );
 	Npc_SetTalentSkill(other,NPC_TALENT_SMITH,1);
 	Snd_Play("LevelUP");
 	PLAYER_TALENT_SMITH[33] = TRUE;
 	PLAYER_TALENT_SMITH_33 = TRUE;
-	B_LogEntry(TOPIC_ARMORTEACHER,"Для того чтобы выковать рудные доспехи Света мне необходимо: десять слитков из магической руды, кусок черной руды, десять кусков серы, пять смоляных растворов, пять кусков кварца, аквамарин и кусок адаманта.");
+	B_LogEntry( TOPIC_ARMORTEACHER , " In order to forge the ore armor of Light, I need: ten ingots of magic ore, a piece of black ore, ten pieces of sulfur, five resin solutions, five pieces of quartz, aquamarine and a piece of adamant. " );
 	Info_ClearChoices(dia_xor_12205_terinaks_armor);
 };
 
@@ -390,7 +391,7 @@ instance DIA_XOR_12205_TERINAKS_ADAMANT(C_Info)
 	condition = dia_xor_12205_terinaks_ADAMANT_condition;
 	information = dia_xor_12205_terinaks_ADAMANT_info;
 	permanent = FALSE;
-	description = "Насчет доспехов...";
+	description = " About the armor... " ;
 };
 
 func int dia_xor_12205_terinaks_ADAMANT_condition()
@@ -404,13 +405,13 @@ func int dia_xor_12205_terinaks_ADAMANT_condition()
 func void dia_xor_12205_terinaks_ADAMANT_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_ADAMANT_01_00");	//Насчет доспехов...
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_ADAMANT_01_01");	//Для их ковки требуется некий адамант. Что это такое?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_ADAMANT_01_02");	//Это очень редкий металл почти божественного происхождения. Все доспехи Асгардов сделаны именно из него.
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_ADAMANT_01_03");	//И где мне его достать?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_ADAMANT_01_04");	//Обычно его залежи встречаются только в местах огромного скопления магической энергии.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_ADAMANT_01_05");	//Ибо только очень сильная магия способна превратить обычную руду в этот бесценный металл.
-	B_LogEntry(TOPIC_ARMORTEACHER,"По словам Таринакса, адамант можно найти только в местах с огромным сосредоточением магии.");
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_ADAMANT_01_00 " );	// About armor...
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_ADAMANT_01_01 " );	// Forging them requires some kind of adamant. What it is?
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_ADAMANT_01_02 " );	// This is a very rare metal of almost divine origin. All Asgardian armor is made from it.
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_ADAMANT_01_03 " );	// And where can I get it?
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_ADAMANT_01_04 " );	// Usually, its deposits are found only in places of huge accumulation of magical energy.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_ADAMANT_01_05 " );	// For only very strong magic can turn ordinary ore into this priceless metal.
+	B_LogEntry( TOPIC_ARMORTEACHER , " According to Tarinax, adamant can only be found in places with a huge concentration of magic. " );
 };
 
 instance DIA_XOR_12205_TERINAKS_PERMTASK(C_Info)
@@ -420,7 +421,7 @@ instance DIA_XOR_12205_TERINAKS_PERMTASK(C_Info)
 	condition = dia_xor_12205_terinaks_permtask_condition;
 	information = dia_xor_12205_terinaks_permtask_info;
 	permanent = FALSE;
-	description = "У тебя есть для меня какие-нибудь поручения?";
+	description = " Do you have any errands for me? " ;
 };
 
 func int dia_xor_12205_terinaks_permtask_condition()
@@ -433,8 +434,8 @@ func int dia_xor_12205_terinaks_permtask_condition()
 
 func void dia_xor_12205_terinaks_permtask_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_PermTask_01_00");	//У тебя есть для меня какие-нибудь поручения?
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_PermTask_01_01");	//Боюсь, что нет. Думаю, тебе следует поговорить о этом с Хранителями.
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_PermTask_01_00 " );	// Do you have any errands for me?
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_PermTask_01_01 " );	// I'm afraid not. I think you should talk to the Guardians about this.
 };
 
 
@@ -445,7 +446,7 @@ instance DIA_XOR_12205_TERINAKS_TEACH_MELEE(C_Info)
 	condition = dia_xor_12205_terinaks_teach_melee_condition;
 	information = dia_xor_12205_terinaks_teach_melee_info;
 	permanent = TRUE;
-	description = "Обучи меня владению оружием ближнего боя.";
+	description = " Teach me how to use a melee weapon. " ;
 };
 
 func int dia_xor_12205_terinaks_teach_melee_condition()
@@ -458,8 +459,8 @@ func int dia_xor_12205_terinaks_teach_melee_condition()
 
 func void dia_xor_12205_terinaks_teach_melee_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Teach_Melee_01_00");	//Обучи меня владению оружием ближнего боя.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Teach_Melee_01_01");	//Хорошо. Что ты хочешь узнать?
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Teach_Melee_01_00 " );	// Teach me how to use a melee weapon.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Teach_Melee_01_01 " );	// Good. What do you want to know?
 	Info_ClearChoices(dia_xor_12205_terinaks_teach_melee);
 	Info_AddChoice(dia_xor_12205_terinaks_teach_melee,Dialog_Back,dia_xor_12205_terinaks_teach_melee_back);
 	Info_AddChoice(dia_xor_12205_terinaks_teach_melee,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),dia_xor_12205_terinaks_teach_melee_2h_1);
@@ -533,7 +534,7 @@ instance DIA_XOR_12205_TERINAKS_TEACH_RANGED(C_Info)
 	condition = dia_xor_12205_terinaks_teach_ranged_condition;
 	information = dia_xor_12205_terinaks_teach_ranged_info;
 	permanent = TRUE;
-	description = "Обучи меня владению оружием дальнего боя.";
+	description = " Teach me how to use ranged weapons. " ;
 };
 
 
@@ -547,8 +548,8 @@ func int dia_xor_12205_terinaks_teach_ranged_condition()
 
 func void dia_xor_12205_terinaks_teach_ranged_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Teach_Ranged_01_00");	//Обучи меня владению оружием дальнего боя.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Teach_Ranged_01_01");	//Хорошо. Что ты хочешь узнать?
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Teach_Ranged_01_00 " );	// Teach me how to use ranged weapons.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Teach_Ranged_01_01 " );	// Good. What do you want to know?
 	Info_ClearChoices(dia_xor_12205_terinaks_teach_ranged);
 	Info_AddChoice(dia_xor_12205_terinaks_teach_ranged,Dialog_Back,dia_xor_12205_terinaks_teach_ranged_back);
 	Info_AddChoice(dia_xor_12205_terinaks_teach_ranged,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW,1)),dia_xor_12205_terinaks_teach_ranged_2h_1);
@@ -621,7 +622,7 @@ instance DIA_XOR_12205_TERINAKS_TEACH_SKILLS(C_Info)
 	condition = dia_xor_12205_terinaks_teach_skills_condition;
 	information = dia_xor_12205_terinaks_teach_skills_info;
 	permanent = TRUE;
-	description = "Я хочу увеличить свои навыки.";
+	description = " I want to increase my skills. " ;
 };
 
 func int dia_xor_12205_terinaks_teach_skills_condition()
@@ -634,8 +635,8 @@ func int dia_xor_12205_terinaks_teach_skills_condition()
 
 func void dia_xor_12205_terinaks_teach_skills_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_Teach_Skills_01_00");	//Я хочу увеличить свои навыки.
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_Teach_Skills_01_01");	//Хорошо. Что ты хочешь узнать?
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Teach_Skills_01_00 " );	// I want to increase my skills.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Teach_Skills_01_01 " );	// Good. What do you want to know?
 	Info_ClearChoices(dia_xor_12205_terinaks_teach_skills);
 	Info_AddChoice(dia_xor_12205_terinaks_teach_skills,Dialog_Back,dia_xor_12205_terinaks_teach_skills_back);
 	Info_AddChoice(dia_xor_12205_terinaks_teach_skills,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),dia_xor_12205_terinaks_teach_skills_dex_1);
