@@ -1,4 +1,5 @@
 
+
 instance DIA_Pal_213_Schiffswache_EXIT(C_Info)
 {
 	npc = PAL_213_Schiffswache;
@@ -36,7 +37,7 @@ instance DIA_Pal_213_Schiffswache_FirstWarn(C_Info)
 
 func int DIA_Pal_213_Schiffswache_FirstWarn_Condition()
 {
-	if((MIS_ShipIsFree == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE))
+	if ((MIS_ShipIsFree ==  FALSE ) && (self.aivar[AIV_GuardPassage_Status] ==  GP_NONE ) && (self.aivar[ AIV_PASSGATE ] ==  FALSE ) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) ==  TRUE ) );
 	{
 		return TRUE;
 	};
@@ -44,15 +45,15 @@ func int DIA_Pal_213_Schiffswache_FirstWarn_Condition()
 
 func void DIA_Pal_213_Schiffswache_FirstWarn_Info()
 {
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_FirstWarn_01_00");	//Стой! Куда это ты идешь?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_FirstWarn_01_00 " );	// Stop! Where are you going?
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_FirstWarn_15_01");	//Я хотел...
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Pal_213_Schiffswache_FirstWarn_01_02");	//Извини. Но тебе сюда нельзя.
+		AI_Output(self,other, " DIA_Pal_213_Schiffswache_FirstWarn_01_02 " );	// Sorry. But you can't come here.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_213_Schiffswache_FirstWarn_01_03");	//Здесь не на что смотреть. Иди своей дорогой.
+		AI_Output(self,other, " DIA_Pal_213_Schiffswache_FirstWarn_01_03 " );	// Nothing to see here. Go your way.
 	};
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Pal_213_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
@@ -72,7 +73,7 @@ instance DIA_Pal_213_Schiffswache_SecondWarn(C_Info)
 
 func int DIA_Pal_213_Schiffswache_SecondWarn_Condition()
 {
-	if((MIS_ShipIsFree == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Pal_213_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
+	if ((MIS_ShipIsFree ==  FALSE ) && (self.aivar[AIV_GuardPassage_Status] == GP_FirstWarningGiven) && (self.aivar[ AIV_PASSGATE ] ==  FALSE ) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) ==  TRUE ) && ; ( Npc_GetDistToWP ( other , Pal_213_Checkpoint ) < ( other . aivar [ AIV_LastDistToWP ] --  50 ))) .
 	{
 		return TRUE;
 	};
@@ -82,11 +83,11 @@ func void DIA_Pal_213_Schiffswache_SecondWarn_Info()
 {
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Pal_213_Schiffswache_SecondWarn_01_00");	//Ни шагу дальше. Исключений нет ни для кого.
+		AI_Output(self,other, " DIA_Pal_213_Schiffswache_SecondWarn_01_00 " );	// Not one step further. There are no exceptions for anyone.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_213_Schiffswache_SecondWarn_01_01");	//Ты же не хочешь ЗАСТАВИТЬ меня ударить тебя, правда?
+		AI_Output(self,other, " DIA_Pal_213_Schiffswache_SecondWarn_01_01 " );	// You don't want to FORCE me to hit you, do you?
 	};
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Pal_213_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
@@ -107,7 +108,7 @@ instance DIA_Pal_213_Schiffswache_Attack(C_Info)
 
 func int DIA_Pal_213_Schiffswache_Attack_Condition()
 {
-	if((MIS_ShipIsFree == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_SecondWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Pal_213_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
+	if ((MIS_ShipIsFree ==  FALSE ) && (self.aivar[AIV_GuardPassage_Status] == GP_SecondWarnGiven) && (self.aivar[ AIV_PASSGATE ] ==  FALSE ) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) ==  TRUE ) && ; ( Npc_GetDistToWP ( other , Pal_213_Checkpoint ) < ( other . aivar [ AIV_LastDistToWP ] -  50 ))) ;
 	{
 		return TRUE;
 	};
@@ -116,7 +117,7 @@ func int DIA_Pal_213_Schiffswache_Attack_Condition()
 func void DIA_Pal_213_Schiffswache_Attack_Info()
 {
 	other.aivar[AIV_LastDistToWP] = 0;
-	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,1);
 };
@@ -129,7 +130,7 @@ instance DIA_Pal_213_Schiffswache_GoOnBoard(C_Info)
 	condition = DIA_Pal_213_Schiffswache_GoOnBoard_Condition;
 	information = DIA_Pal_213_Schiffswache_GoOnBoard_Info;
 	permanent = FALSE;
-	description = "Я хочу попасть на борт корабля.";
+	description = " I want to get on board the ship. " ;
 };
 
 
@@ -140,10 +141,10 @@ func int DIA_Pal_213_Schiffswache_GoOnBoard_Condition()
 
 func void DIA_Pal_213_Schiffswache_GoOnBoard_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_GoOnBoard_15_00");	//Я хочу попасть на борт корабля.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_GoOnBoard_01_01");	//Никому не позволено входить на корабль! У меня есть приказ!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_GoOnBoard_01_02");	//Я должен убить всякого, кто войдет на корабль без соответствующего разрешения.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_GoOnBoard_01_03");	//Во имя Инноса, я буду защищать этот корабль даже ценой своей жизни.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_GoOnBoard_15_00 " );	// I want to get on board the ship.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_GoOnBoard_01_01 " );	// No one is allowed on the ship! I have an order!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_GoOnBoard_01_02 " );	// I must kill anyone who enters the ship without permission.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_GoOnBoard_01_03 " );	// In the name of Innos, I will protect this ship even at the cost of my life.
 };
 
 
@@ -154,7 +155,7 @@ instance DIA_Pal_213_Schiffswache_IAmKDF(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmKDF_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmKDF_Info;
 	permanent = FALSE;
-	description = "Ты сомневаешься в намерениях Мага Огня?";
+	description = " Do you doubt the Fire Mage's intentions? " ;
 };
 
 
@@ -168,10 +169,10 @@ func int DIA_Pal_213_Schiffswache_IAmKDF_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmKDF_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF_15_00");	//Ты сомневаешься в намерениях мага Огня?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF_01_01");	//Нет, конечно же, нет...(замявшись) Да простит меня Иннос!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF_01_02");	//Маги Огня - стражи мудрости Инноса!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF_01_03");	//Тот, кто сомневается в них, сомневается в Инносе и не заслуживает пощады.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDF_15_00 " );	// Do you doubt the Fire Mage's intentions?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF_01_01 " );	// No, of course not... (hesitantly) Forgive me Innos!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF_01_02 " );	// Mages of Fire - guardians of the wisdom of Innos!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF_01_03 " );	// He who doubts them doubts Innos and deserves no mercy.
 };
 
 
@@ -182,13 +183,13 @@ instance DIA_Pal_213_Schiffswache_IAmKDF2(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmKDF2_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmKDF2_Info;
 	permanent = FALSE;
-	description = "Что будет, если я взойду на борт?";
+	description = " What happens if I go on board? " ;
 };
 
 
 func int DIA_Pal_213_Schiffswache_IAmKDF2_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF))
+	if ((hero.guild ==  GIL_KDF ) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF))
 	{
 		return TRUE;
 	};
@@ -196,8 +197,8 @@ func int DIA_Pal_213_Schiffswache_IAmKDF2_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmKDF2_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF2_15_00");	//Что будет, если я взойду на борт?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF2_01_01");	//Я должен убить...(нервно) Я хочу сказать, остановить тебя.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDF2_15_00 " );	// What happens if I get on board?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF2_01_01 " );	// I have to kill... (nervously) I mean, stop you.
 };
 
 
@@ -208,13 +209,13 @@ instance DIA_Pal_213_Schiffswache_IAmKDF3(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmKDF3_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmKDF3_Info;
 	permanent = FALSE;
-	description = "Ты осмелишься атаковать Мага Огня?";
+	description = " Do you dare to attack the Fire Mage? " ;
 };
 
 
 func int DIA_Pal_213_Schiffswache_IAmKDF3_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF2))
+	if ((hero.guild ==  GIL_KDF ) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF2))
 	{
 		return TRUE;
 	};
@@ -222,10 +223,10 @@ func int DIA_Pal_213_Schiffswache_IAmKDF3_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmKDF3_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF3_15_00");	//Ты осмелишься атаковать мага Огня?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF3_01_01");	//Я никогда не подниму руку на мага.
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF3_15_02");	//Так что ты все-таки будешь делать, если я взойду на борт?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF3_01_03");	//Ничего, господин...(робко) 
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDF3_15_00 " );	// Do you dare to attack a Fire Mage?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF3_01_01 " );	// I will never raise my hand against a mage.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDF3_15_02 " );	// So what are you going to do if I come on board?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF3_01_03 " );	// Nothing, sir... (timidly)
 };
 
 
@@ -236,13 +237,13 @@ instance DIA_Pal_213_Schiffswache_IAmKDF4(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmKDF4_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmKDF4_Info;
 	permanent = FALSE;
-	description = "Тогда я сейчас взойду на борт.";
+	description = " Then I'll come aboard now. " ;
 };
 
 
 func int DIA_Pal_213_Schiffswache_IAmKDF4_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF3))
+	if ((hero.guild ==  GIL_KDF ) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF3))
 	{
 		return TRUE;
 	};
@@ -250,25 +251,25 @@ func int DIA_Pal_213_Schiffswache_IAmKDF4_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmKDF4_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF4_15_00");	//Тогда я сейчас взойду на борт.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF4_01_01");	//Ты не должен делать этого, приказы лорда Хагена были вполне конкретными.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDF4_15_00 " );	// Then I'll go aboard now.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF4_01_01 " );	// You mustn't do this, Lord Hagen's orders were quite specific.
 };
 
 
-instance DIA_Pal_213_Schiffswache_IAmKDF5(C_Info)
+instance DIA_Pal_213_Schiffswache_IAmKDF5 (C_Info)
 {
 	npc = PAL_213_Schiffswache;
 	nr = 6;
 	condition = DIA_Pal_213_Schiffswache_IAmKDF5_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmKDF5_Info;
 	permanent = FALSE;
-	description = "Приказы лорда Хагена касаются и меня тоже?";
+	description = " Do Lord Hagen's orders apply to me too? " ;
 };
 
 
 func int DIA_Pal_213_Schiffswache_IAmKDF5_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF4))
+	if ((hero.guild ==  GIL_KDF ) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF4))
 	{
 		return TRUE;
 	};
@@ -276,10 +277,10 @@ func int DIA_Pal_213_Schiffswache_IAmKDF5_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmKDF5_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF5_15_00");	//Приказы лорда Хагена касаются и меня тоже?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF5_01_01");	//Я не знаю.
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF5_15_02");	//Сам подумай - разве лорд Хаген осмелился бы подозревать мага в воровстве?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF5_01_03");	//Я в это не верю.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDF5_15_00 " );	// Do Lord Hagen's orders apply to me too?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF5_01_01 " );	// I don't know.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDF5_15_02 " );	// Think for yourself - would Lord Hagen dare to suspect a magician of theft?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF5_01_03 " );	// I don't believe it.
 };
 
 
@@ -290,13 +291,13 @@ instance DIA_Pal_213_Schiffswache_IAmKDF6(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmKDF6_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmKDF6_Info;
 	permanent = FALSE;
-	description = "Тогда позволь мне взойти на корабль!";
+	description = " Then let me board the ship! " ;
 };
 
 
 func int DIA_Pal_213_Schiffswache_IAmKDF6_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF5))
+	if ((hero.guild ==  GIL_KDF ) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF5))
 	{
 		return TRUE;
 	};
@@ -304,13 +305,13 @@ func int DIA_Pal_213_Schiffswache_IAmKDF6_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmKDF6_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF6_15_00");	//Тогда позволь мне взойти на корабль!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF6_01_01");	//Хорошо! Ты можешь пройти на корабль.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDF6_15_00 " );	// Then let me board the ship!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDF6_01_01 " );	// Good! You can go to the ship.
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	MIS_ShipIsFree = TRUE;
@@ -325,7 +326,7 @@ instance DIA_PAL_213_SCHIFFSWACHE_IAMKDW(C_Info)
 	condition = dia_pal_213_schiffswache_iamkdw_condition;
 	information = dia_pal_213_schiffswache_iamkdw_info;
 	permanent = FALSE;
-	description = "Ты поднимешь свой меч на мага Воды?";
+	description = " Will you raise your sword against the Water Mage? " ;
 };
 
 
@@ -339,9 +340,9 @@ func int dia_pal_213_schiffswache_iamkdw_condition()
 
 func void dia_pal_213_schiffswache_iamkdw_info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDW_15_00");	//Ты поднимешь свой меч на мага Воды?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDW_01_01");	//Нет, конечно нет! (нервно) Аданос простит меня!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDW_01_02");	//Убийство служителя Воды - жуткое преступление...(нервно) Тот, кто это сделал, заслуживает только смерти!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDW_15_00 " );	// Will you raise your sword against the Water Mage?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDW_01_01 " );	// No, of course not! (nervously) Adanos forgive me!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDW_01_02 " );	// Killing a servant of Water is a terrible crime... (nervously) Whoever did this deserves only death!
 };
 
 
@@ -352,13 +353,13 @@ instance DIA_PAL_213_SCHIFFSWACHE_IAMKDW2(C_Info)
 	condition = dia_pal_213_schiffswache_iamkdw2_condition;
 	information = dia_pal_213_schiffswache_iamkdw2_info;
 	permanent = FALSE;
-	description = "Что случится, если я зайду на борт?";
+	description = " What happens if I go on board? " ;
 };
 
 
 func int dia_pal_213_schiffswache_iamkdw2_condition()
 {
-	if((hero.guild == GIL_KDW) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdw))
+	if ((hero.guild ==  GIL_KDW ) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdw))
 	{
 		return TRUE;
 	};
@@ -366,8 +367,8 @@ func int dia_pal_213_schiffswache_iamkdw2_condition()
 
 func void dia_pal_213_schiffswache_iamkdw2_info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDW2_15_00");	//Что случится, если я поднимусь на борт?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDW2_01_01");	//Я убью тебя...(нервно) я имею в виду - остановлю.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDW2_15_00 " );	// What happens if I get on board?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDW2_01_01 " );	// I'll kill you... (nervously) I mean stop you.
 };
 
 
@@ -378,13 +379,13 @@ instance DIA_PAL_213_SCHIFFSWACHE_IAMKDW3(C_Info)
 	condition = dia_pal_213_schiffswache_iamkdw3_condition;
 	information = dia_pal_213_schiffswache_iamkdw3_info;
 	permanent = FALSE;
-	description = "И если я взойду, ты возьмешь на себя этот грех?";
+	description = " And if I ascend, will you take this sin upon yourself? " ;
 };
 
 
 func int dia_pal_213_schiffswache_iamkdw3_condition()
 {
-	if((hero.guild == GIL_KDW) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdw2))
+	if ((hero.guild ==  GIL_KDW ) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdw2))
 	{
 		return TRUE;
 	};
@@ -392,10 +393,10 @@ func int dia_pal_213_schiffswache_iamkdw3_condition()
 
 func void dia_pal_213_schiffswache_iamkdw3_info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDW3_15_00");	//И если я взойду, ты возьмешь на себя этот грех?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDW3_01_01");	//Я никогда бы не поднял руку на мага.
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDW3_15_02");	//Ну, так что ты сделаешь, если я взойду на борт?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDW3_01_03");	//(тихо) Ничего.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDW3_15_00 " );	// And if I ascend, will you take this sin upon yourself?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDW3_01_01 " );	// I would never raise a hand against a mage.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDW3_15_02 " );	// Well, so what will you do if I come on board?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDW3_01_03 " );	// (quietly) Nothing.
 };
 
 
@@ -406,13 +407,13 @@ instance DIA_PAL_213_SCHIFFSWACHE_IAMKDW4(C_Info)
 	condition = dia_pal_213_schiffswache_iamkdw4_condition;
 	information = dia_pal_213_schiffswache_iamkdw4_info;
 	permanent = FALSE;
-	description = "Тогда я захожу на борт.";
+	description = " Then I'll come on board. " ;
 };
 
 
 func int dia_pal_213_schiffswache_iamkdw4_condition()
 {
-	if((hero.guild == GIL_KDW) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdw3))
+	if ((hero.guild ==  GIL_KDW ) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdw3))
 	{
 		return TRUE;
 	};
@@ -420,13 +421,13 @@ func int dia_pal_213_schiffswache_iamkdw4_condition()
 
 func void dia_pal_213_schiffswache_iamkdw4_info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDW4_15_00");	//Тогда я захожу на борт.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDW4_01_01");	//Хорошо...(обреченно) Но прошу тебя, никому об этом не рассказывай!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDW4_15_00 " );	// Then I'll get on board.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDW4_01_01 " );	// Okay...(doomed) But please, don't tell anyone about this!
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	MIS_ShipIsFree = TRUE;
@@ -441,7 +442,7 @@ instance DIA_PAL_213_SCHIFFSWACHE_IAMKDM(C_Info)
 	condition = dia_pal_213_schiffswache_iamkdm_condition;
 	information = dia_pal_213_schiffswache_iamkdm_info;
 	permanent = FALSE;
-	description = "Паладин, ты знаешь, кому я служу?";
+	description = " Paladin, do you know who I serve? " ;
 };
 
 
@@ -455,29 +456,29 @@ func int dia_pal_213_schiffswache_iamkdm_condition()
 
 func void dia_pal_213_schiffswache_iamkdm_info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_15_00");	//Паладин, ты знаешь, кому я служу?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_01");	//Да, я догадываюсь. Ты же некромант, я прав? Прихвостень Белиара! (с презрением)
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_02");	//И как думаешь, что он сделает, если ты осмелишься поднять свой меч против его слуги?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_03");	//Что, попытается убить меня? (смеется)
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_04");	//Я не боюсь его, некромант! Я готов принести свою жизнь во славу Инноса ради его великой цели!
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_05");	//А готов ли ты принести свою душу в его славу?
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_15_00 " );	// Paladin, do you know who I serve?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDM_01_01 " );	// Yes, I guess. You are a necromancer, am I right? Beliar's henchman! (with contempt)
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_02 " );	// And what do you think he will do if you dare to raise your sword against his servant?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDM_01_03 " );	// What, try to kill me? (laughs)
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDM_01_04 " );	// I'm not afraid of him, necromancer! I am ready to lay down my life for the glory of Innos for his great purpose!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_05 " );	// Are you ready to bring your soul to his glory?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_06");	//Что?!
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_07");	//Я спрашиваю, готов ли ты пожертвовать своей душой ради этого дела?
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_08");	//Ты, глупец, подумал, что мой бог решит отнять у тебя твою жизнь. Поверь, она ему не нужна!
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_09");	//Ты знаешь, что он сделает? Он проклянет тебя, паладин!
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_10");	//И ты, после своей смерти, станешь его слугой. И не будет твоей душе покоя никогда!
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_11");	//Или ты никогда не слышал про обращенных паладинов? Как ты думаешь, почему все они после своей смерти стали служить Белиару?
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_12");	//Да потому что тот, кто покушается на жизнь слуги Темного Бога, не имея на то веской причины - по его воле сам станет таким же!
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_13");	//И даже твой жалкий бог не сможет тебе помочь!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_14");	//Нет...(нервно) Только не это!
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_15");	//Тогда просто впусти меня на корабль, и будем считать, что инцидент исчерпан.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_16");	//(сквозь зубы) Хорошо, ты можешь пройти.
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_17");	//Спасибо, ты очень любезен.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_07 " );	// I'm asking if you're willing to sacrifice your soul for this cause?
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_08 " );	// You, fool, thought that my god would decide to take your life from you. Trust me, he doesn't need it!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_09 " );	// Do you know what he'll do? He will curse you, paladin!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_10 " );	// And you, after your death, will become his servant. And your soul will never rest!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_11 " );	// Or have you never heard of converted paladins? Why do you think they all began to serve Beliar after their death?
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_12 " );	// Yes, because the one who encroaches on the life of a servant of the Dark God, without a good reason - by his will, he himself will become the same!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_13 " );	// And even your pathetic god can't help you!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDM_01_14 " );	// No...(nervously) Not that!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_15 " );	// Then just let me on the ship, and we'll consider the incident over.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmKDM_01_16 " );	// (through gritted teeth) Okay, you can get through.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmKDM_01_17 " );	// Thank you, you're very kind.
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	MIS_ShipIsFree = TRUE;
@@ -492,7 +493,7 @@ instance DIA_Pal_213_Schiffswache_IAmPAL(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmPAL_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmPAL_Info;
 	permanent = FALSE;
-	description = "Ты не доверяешь мне, рыцарь?";
+	description = " You don't trust me, knight? " ;
 };
 
 
@@ -506,8 +507,8 @@ func int DIA_Pal_213_Schiffswache_IAmPAL_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmPAL_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmPAL_15_00");	//Ты не доверяешь мне, рыцарь?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmPAL_01_01");	//Никак нет, я просто выполняю приказ.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmPAL_15_00 " );	// You don't trust me, knight?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmPAL_01_01 " );	// No way, I'm just following orders.
 };
 
 
@@ -518,13 +519,13 @@ instance DIA_Pal_213_Schiffswache_IAmPAL2(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmPAL2_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmPAL2_Info;
 	permanent = FALSE;
-	description = "Тогда ты должен знать, кто из нас выше званием.";
+	description = " Then you should know which of us is higher in rank. " ;
 };
 
 
 func int DIA_Pal_213_Schiffswache_IAmPAL2_Condition()
 {
-	if((hero.guild == GIL_PAL) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmPAL))
+	if (( hero . guild ==  GIL_PAL ) && Npc_KnowsInfo ( other , DIA_Pal_213_Schiffswache_IAmPAL ) )
 	{
 		return TRUE;
 	};
@@ -532,8 +533,8 @@ func int DIA_Pal_213_Schiffswache_IAmPAL2_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmPAL2_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmPAL2_15_00");	//Тогда ты должен знать, кто из нас выше званием.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmPAL2_01_01");	//Так точно!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmPAL2_15_00 " );	// Then you should know which of us is higher in rank.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmPAL2_01_01 " );	// That's right!
 };
 
 
@@ -544,13 +545,13 @@ instance DIA_Pal_213_Schiffswache_IAmPAL3(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmPAL3_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmPAL3_Info;
 	permanent = FALSE;
-	description = "Я приказываю тебе пропустить меня на этот корабль.";
+	description = " I order you to let me on this ship. " ;
 };
 
 
 func int DIA_Pal_213_Schiffswache_IAmPAL3_Condition()
 {
-	if((hero.guild == GIL_PAL) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmPAL2))
+	if (( hero . guild ==  GIL_PAL ) && Npc_KnowsInfo ( other , DIA_Pal_213_Schiffswache_IAmPAL2 ))
 	{
 		return TRUE;
 	};
@@ -558,13 +559,13 @@ func int DIA_Pal_213_Schiffswache_IAmPAL3_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmPAL3_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmPAL3_15_00");	//И я приказываю тебе пропустить меня на этот корабль.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmPAL3_01_01");	//Есть, сэр, вы можете взойти на корабль.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmPAL3_15_00 " );	// And I order you to let me on this ship.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmPAL3_01_01 " );	// Yes, sir, you can board the ship.
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	MIS_ShipIsFree = TRUE;
@@ -572,14 +573,14 @@ func void DIA_Pal_213_Schiffswache_IAmPAL3_Info()
 };
 
 
-instance DIA_Pal_213_Schiffswache_IAmDJG(C_Info)
+instance DIA_Pal_213_Schiffswache_IAmDJG (C_Info)
 {
 	npc = PAL_213_Schiffswache;
 	nr = 6;
 	condition = DIA_Pal_213_Schiffswache_IAmDJG_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmDJG_Info;
 	permanent = FALSE;
-	description = "А этот вопрос нельзя как-нибудь решить?";
+	description = " Can't this question be solved somehow? " ;
 };
 
 
@@ -593,8 +594,8 @@ func int DIA_Pal_213_Schiffswache_IAmDJG_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmDJG_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmDJG_15_00");	//А этот вопрос нельзя как-нибудь решить?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmDJG_01_01");	//Я не понимаю.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmDJG_15_00 " );	// Can't this question be solved somehow?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmDJG_01_01 " );	// I don't understand.
 };
 
 
@@ -605,13 +606,13 @@ instance DIA_Pal_213_Schiffswache_IAmDJG2(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmDJG2_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmDJG2_Info;
 	permanent = FALSE;
-	description = "Я могу дать тебе денег.";
+	description = " I can give you money. " ;
 };
 
 
 func int DIA_Pal_213_Schiffswache_IAmDJG2_Condition()
 {
-	if((hero.guild == GIL_DJG) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmDJG) && (MIS_ShipIsFree == FALSE))
+	if (( hero . guild ==  GIL_DJG ) && Npc_KnowsInfo ( other , DIA_Pal_213_Schiffswache_IAmDJG ) && ( MIS_ShipIsFree ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -619,8 +620,8 @@ func int DIA_Pal_213_Schiffswache_IAmDJG2_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmDJG2_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmDJG2_15_00");	//Я могу дать тебе денег. За то, что ты будешь смотреть в другую сторону.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmDJG2_01_01");	//Меня нельзя подкупить, и если ты сейчас не исчезнешь, я сочту это оскорблением.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmDJG2_15_00 " );	// I can give you money. Because you will look the other way.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmDJG2_01_01 " );	// I can't be bribed, and if you don't disappear now, I'll take it as an insult.
 };
 
 
@@ -631,14 +632,14 @@ instance DIA_Pal_213_Schiffswache_IAmDJG3(C_Info)
 	condition = DIA_Pal_213_Schiffswache_IAmDJG3_Condition;
 	information = DIA_Pal_213_Schiffswache_IAmDJG3_Info;
 	permanent = FALSE;
-	description = "У меня письменное разрешение.";
+	description = " I have written permission. " ;
 };
 
 func int DIA_Pal_213_Schiffswache_IAmDJG3_Condition()
 {
 	if(hero.guild == GIL_DJG)
 	{
-		if(Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmDJG) && (Npc_HasItems(other,ITWr_ForgedShipLetter_MIS) >= 1))
+		if ( Npc_KnowsInfo ( other , DIA_Pal_213_Schiffswache_IAmDJG ) && ( Npc_HasItems ( other , ITWr_ForgedShipLetter_MIS ) >=  1 )) ;
 		{
 			return TRUE;
 		};
@@ -654,11 +655,11 @@ func int DIA_Pal_213_Schiffswache_IAmDJG3_Condition()
 
 func void DIA_Pal_213_Schiffswache_IAmDJG3_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmDJG3_15_00");	//У меня письменное разрешение. Я уполномочен взойти на этот корабль.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmDJG3_01_01");	//Дай я взгляну.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_IAmDJG3_15_00 " );	// I have written permission. I am authorized to board this ship.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmDJG3_01_01 " );	// Let me take a look.
 	B_GiveInvItems(other,self,ITWr_ForgedShipLetter_MIS,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmDJG3_01_02");	//Все правильно, ты можешь пройти.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_IAmDJG3_01_02 " );	// That's right, you can pass.
 	MIS_ShipIsFree = TRUE;
 	B_StartOtherRoutine(Girion,"WaitForShip");
 };
@@ -675,7 +676,7 @@ instance DIA_Pal_213_Schiffswache_Rats(C_Info)
 
 func int DIA_Pal_213_Schiffswache_Rats_Condition()
 {
-	if((MIS_ShipIsFree == TRUE) && ((Npc_IsDead(Ship_Rat_01) == FALSE) || (Npc_IsDead(Ship_Rat_02) == FALSE) || (Npc_IsDead(Ship_Rat_03) == FALSE) || (Npc_IsDead(Ship_Rat_04) == FALSE) || (Npc_IsDead(Ship_Rat_05) == FALSE) || (Npc_IsDead(Ship_Rat_06) == FALSE)))
+	if ((MIS_ShipIsFree ==  TRUE ) && ((Npc_IsDead(Ship_Rat_01) ==  FALSE ) || (Npc_IsDead(Ship_Rat_02) ==  FALSE ) || (Npc_IsDead(Ship_Rat_03) ==  FALSE ) || ( Npc_IsDead(Ship_Rat_04) == FALSE )  FALSE ) || (Npc_IsDead(Ship_Rat_05) ==  FALSE ) || (Npc_IsDead(Ship_Rat_06) ==  FALSE )))
 	{
 		return TRUE;
 	};
@@ -683,24 +684,24 @@ func int DIA_Pal_213_Schiffswache_Rats_Condition()
 
 func void DIA_Pal_213_Schiffswache_Rats_Info()
 {
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_00");	//Постой! Раз уж ты прошел на корабль, то у меня к тебе будет одна просьба.
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_01_01");	//Что еще такое?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_02");	//Эти чертовы крысы просто сводят меня с ума.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_00 " );	// Wait! Since you have already entered the ship, I will have one request for you.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_Rats_01_01 " );	// What else is this?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_02 " );	// Those damn rats are driving me crazy.
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_01_03");	//Крысы?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_04");	//Да, крысы. (раздраженно) Обыкновенные корабельные крысы!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_05");	//Каждую ночь эти маленькие паразиты, ползая в трюме корабля, создают жуткий шум и возню.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_06");	//Мы тут с напарником стоим на посту, а дело это совсем не легкое.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_07");	//В особенности, когда ты постоянно в напряжении от каждого шороха.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_08");	//А эти крысы, будь они прокляты, мешают нам сосредоточится!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_09");	//Будь добр, позаботься о них.
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_01_10");	//А почему бы тебе не сделать это самому?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_11");	//Я тебе уже сказал, что стою на посту. И покидать его я не имею права!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_12");	//Другое дело - ты. (серьезно) Что скажешь?
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_01_13");	//Ладно, я загляну в трюм.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_04 " );	// Yes, rats. (annoyed) Ordinary ship rats!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_05 " );	// Every night, these little parasites crawl in the ship's hold, making a terrible noise and fuss.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_06 " );	// My partner and I are on duty here, and this is not an easy task at all.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_07 " );	// Especially when you're constantly on the edge of every rustle.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_08 " );	// And these rats, damn them, prevent us from concentrating!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_09 " );	// Kindly take care of them.
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_Rats_01_10 " );	// Why don't you do it yourself?
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_11 " );	// I already told you that I'm on duty. And I have no right to leave it!
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_01_12 " );	// Another thing is you. (seriously) What do you say?
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_Rats_01_13 " );	// Okay, I'll look into the hold.
 	MIS_SchiffswacheRats = LOG_Running;
 	Log_CreateTopic(TOPIC_SchiffswacheRats,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SchiffswacheRats,LOG_Running);
-	B_LogEntry(TOPIC_SchiffswacheRats,"Охранник корабля пожаловался, что каждую ночь крысы внутри трюма создают слишком много шума. Он попросил меня разделаться с ними.");
+	B_LogEntry(TOPIC_SchiffswacheRats, " The ship's guard complained that the rats inside the hold make too much noise every night. He asked me to deal with them. " );
 };
 
 instance DIA_Pal_213_Schiffswache_Rats_Done(C_Info)
@@ -710,7 +711,7 @@ instance DIA_Pal_213_Schiffswache_Rats_Done(C_Info)
 	condition = DIA_Pal_213_Schiffswache_Rats_Done_Condition;
 	information = DIA_Pal_213_Schiffswache_Rats_Done_Info;
 	permanent = FALSE;
-	description = "С крысами покончено.";
+	description = " The rats are gone. " ;
 };
 
 func int DIA_Pal_213_Schiffswache_Rats_Done_Condition()
@@ -724,10 +725,10 @@ func int DIA_Pal_213_Schiffswache_Rats_Done_Condition()
 func void DIA_Pal_213_Schiffswache_Rats_Done_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_Done_01_00");	//С крысами покончено.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_Done_01_01");	//Надеюсь, ты их всех перебил?
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_Done_01_02");	//Всех до единой.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_Done_01_03");	//Хорошо. (вздыхая) Наконец-то ночью будет тихо. Благодарю тебя!
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_Rats_Done_01_00 " );	// The rats are done.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_Done_01_01 " );	// I hope you killed them all?
+	AI_Output(other,self, " DIA_Pal_213_Schiffswache_Rats_Done_01_02 " );	// Every single one.
+	AI_Output(self,other, " DIA_Pal_213_Schiffswache_Rats_Done_01_03 " );	// Good. (sighing) Finally, the night will be quiet. Thank you!
 	MIS_SchiffswacheRats = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SchiffswacheRats,LOG_SUCCESS);
 };
