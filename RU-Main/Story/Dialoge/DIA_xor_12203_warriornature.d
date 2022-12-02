@@ -1,4 +1,5 @@
 
+
 instance DIA_XOR_12203_WARRIORNATURE_EXIT(C_Info)
 {
 	npc = xor_12203_warriornature;
