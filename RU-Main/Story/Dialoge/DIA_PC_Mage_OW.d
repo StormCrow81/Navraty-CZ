@@ -1,4 +1,5 @@
 
+
 instance DIA_MiltenOW_EXIT(C_Info)
 {
 	npc = PC_Mage_OW;
@@ -39,77 +40,77 @@ func int DIA_MiltenOW_Hello_Condition()
 
 func void DIA_MiltenOW_Hello_Info()
 {
-	AI_Output(self,other,"DIA_MiltenOW_Hello_03_00");	//Посмотрите, кто вернулся! Наш герой из-за Барьера!
+	AI_Output(self,other, " DIA_MiltenOW_Hello_03_00 " );	// Look who's back! Our hero from beyond the Barrier!
 	Info_ClearChoices(DIA_MiltenOW_Hello);
-	Info_AddChoice(DIA_MiltenOW_Hello,"Рад видеть тебя, Милтен!",DIA_MiltenOW_Hello_YES);
+	Info_AddChoice(DIA_MiltenOW_Hello, " Nice to see you Milten! " ,DIA_MiltenOW_Hello_YES);
 	Info_AddChoice(DIA_MiltenOW_Hello,"Я знаю тебя?",DIA_MiltenOW_Hello_NO);
 };
 
 func void B_Milten_GornDiegoLester()
 {
-	AI_Output(self,other,"DIA_MiltenOW_Hello_NO_03_02");	//Ты помнишь Горна, Диего и Лестера?
+	AI_Output(self,other, " DIA_MiltenOW_Hello_NO_03_02 " );	// Do you remember Gorn, Diego and Lester?
 };
 
 func void DIA_MiltenOW_Hello_YES()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_MiltenOW_Hello_YES_15_00");	//Рад видеть тебя, Милтен. Ты все еще здесь или здесь опять?
-	AI_Output(self,other,"DIA_MiltenOW_Hello_YES_03_01");	//Опять. После того как Барьер рухнул, я вступил в монастырь Магов Огня.
-	AI_Output(self,other,"DIA_MiltenOW_Hello_YES_03_02");	//Но когда стало ясно, что паладины хотят отправиться сюда, мой опыт и знание этих мест оказались весьма полезными.
-	AI_Output(self,other,"DIA_MiltenOW_Hello_YES_03_03");	//Поэтому было решено доверить мне эту священную миссию обеспечения магической поддержки этой экспедиции.
+	AI_Output(other,self, " DIA_MiltenOW_Hello_YES_15_00 " );	// Good to see you, Milten. Are you still here or here again?
+	AI_Output(self,other, " DIA_MiltenOW_Hello_YES_03_01 " );	// Again. After the barrier collapsed, I entered the Fire Mage Monastery.
+	AI_Output(self,other, " DIA_MiltenOW_Hello_YES_03_02 " );	// But when it became clear that the paladins wanted to go here, my experience and knowledge of these places proved to be very useful.
+	AI_Output(self,other, " DIA_MiltenOW_Hello_YES_03_03 " );	// Therefore, it was decided to entrust me with this sacred mission of providing magical support for this expedition.
 	B_Milten_GornDiegoLester();
 	Info_ClearChoices(DIA_MiltenOW_Hello);
-	Info_AddChoice(DIA_MiltenOW_Hello,"Конечно же, я помню парней!",DIA_MiltenOW_Hello_Friends);
-	Info_AddChoice(DIA_MiltenOW_Hello,"Эти имена ни о чем мне не говорят.",DIA_MiltenOW_Hello_Forget);
+	Info_AddChoice(DIA_MiltenOW_Hello, " Of course I remember guys! " ,DIA_MiltenOW_Hello_Friends);
+	Info_AddChoice(DIA_MiltenOW_Hello, " These names mean nothing to me. " ,DIA_MiltenOW_Hello_Forget);
 };
 
 func void DIA_MiltenOW_Hello_NO()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Hello_NO_15_00");	//Я знаю тебя?
-	AI_Output(self,other,"DIA_MiltenOW_Hello_NO_03_01");	//Ты через многое прошел, да?
+	AI_Output(other,self, " DIA_MiltenOW_Hello_NO_15_00 " );	// Do I know you?
+	AI_Output(self,other, " DIA_MiltenOW_Hello_NO_03_01 " );	// You've been through a lot, haven't you?
 	B_Milten_GornDiegoLester();
 	Info_ClearChoices(DIA_MiltenOW_Hello);
-	Info_AddChoice(DIA_MiltenOW_Hello,"Конечно же, я помню парней!",DIA_MiltenOW_Hello_Friends);
-	Info_AddChoice(DIA_MiltenOW_Hello,"Эти имена ни о чем мне не говорят.",DIA_MiltenOW_Hello_Forget);
+	Info_AddChoice(DIA_MiltenOW_Hello, " Of course I remember guys! " ,DIA_MiltenOW_Hello_Friends);
+	Info_AddChoice(DIA_MiltenOW_Hello, " These names mean nothing to me. " ,DIA_MiltenOW_Hello_Forget);
 };
 
 func void DIA_MiltenOW_Hello_Friends()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_MiltenOW_Hello_Friends_15_00");	//Конечно же, я помню парней!
-	AI_Output(self,other,"DIA_MiltenOW_Hello_Friends_03_01");	//Ну, Горн и Диего не ушли далеко. Их подобрали паладины здесь, в долине.
-	AI_Output(self,other,"DIA_MiltenOW_Hello_Friends_03_02");	//Лестер исчез, впрочем - и я понятия не имею, где он сейчас ошивается.
+	AI_Output(other,self, " DIA_MiltenOW_Hello_Friends_15_00 " );	// Of course I remember the guys!
+	AI_Output(self,other, " DIA_MiltenOW_Hello_Friends_03_01 " );	// Well, Gorn and Diego didn't get far. They were picked up by the paladins here in the valley.
+	AI_Output(self,other, " DIA_MiltenOW_Hello_Friends_03_02 " );	// Lester is gone, though - and I have no idea where he's hanging out right now.
 
 	if(Npc_KnowsInfo(other,DIA_Lester_Hello))
 	{
-		AI_Output(other,self,"DIA_MiltenOW_Hello_Friends_15_03");	//Я встретил Лестера - он теперь с Ксардасом.
-		AI_Output(self,other,"DIA_MiltenOW_Hello_Friends_03_04");	//Ну, хоть какие-то хорошие новости.
+		AI_Output(other,self, " DIA_MiltenOW_Hello_Friends_15_03 " );	// I met Lester - he's with Xardas now.
+		AI_Output(self,other, " DIA_MiltenOW_Hello_Friends_03_04 " );	// Well, at least some good news.
 	};
 
-	AI_Output(self,other,"DIA_MiltenOW_Hello_Friends_03_05");	//Ну, а у меня нет ничего хорошего.
+	AI_Output(self,other, " DIA_MiltenOW_Hello_Friends_03_05 " );	// Well, I don't have anything good.
 	Knows_Diego = TRUE;
 	Info_ClearChoices(DIA_MiltenOW_Hello);
 };
 
 func void DIA_MiltenOW_Hello_Forget()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Hello_Forget_15_00");	//Эти имена ни о чем мне не говорят.
-	AI_Output(self,other,"DIA_MiltenOW_Hello_Forget_03_01");	//Ты многое забыл, да? Что ж, оставим прошлое в покое и посвятим себя делам нынешних дней.
-	AI_Output(self,other,"DIA_MiltenOW_Hello_Forget_03_02");	//Хотя у меня и нет приятных новостей.
+	AI_Output(other,self, " DIA_MiltenOW_Hello_Forget_15_00 " );	// These names mean nothing to me.
+	AI_Output(self,other, " DIA_MiltenOW_Hello_Forget_03_01 " );	// You forgot a lot, didn't you? Well, let's leave the past alone and devote ourselves to the affairs of the present day.
+	AI_Output(self,other, " DIA_MiltenOW_Hello_Forget_03_02 " );	// I don't have good news though.
 	Info_ClearChoices(DIA_MiltenOW_Hello);
 };
 
-instance DIA_MiltenOW_Bericht(C_Info)
+instance DIA_MiltenOW_Report (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 3;
-	condition = DIA_MiltenOW_Bericht_Condition;
-	information = DIA_MiltenOW_Bericht_Info;
+	condition = DIA_MiltenOW_Report_Condition;
+	information = DIA_MiltenOW_Report_Info;
 	permanent = FALSE;
-	description = "Как здесь обстоят дела?";
+	description = " How are things here? " ;
 };
 
-func int DIA_MiltenOW_Bericht_Condition()
+func int DIA_MiltenOW_Report_Condition()
 {
 	if(Npc_KnowsInfo(other,DIA_MiltenOW_Hello))
 	{
@@ -117,14 +118,14 @@ func int DIA_MiltenOW_Bericht_Condition()
 	};
 };
 
-func void DIA_MiltenOW_Bericht_Info()
+func void DIA_MiltenOW_Report_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Bericht_15_00");	//Как здесь обстоят дела?
-	AI_Output(self,other,"DIA_MiltenOW_Bericht_03_01");	//Паладины пришли сюда, чтобы добывать магическую руду.
-	AI_Output(self,other,"DIA_MiltenOW_Bericht_03_02");	//Но из-за всех этих нападений драконов и орков я сомневаюсь, что паладины уйдут отсюда с рудой.
-	AI_Output(self,other,"DIA_MiltenOW_Bericht_03_03");	//Нет, клянусь Инносом - я чувствую присутствие чего-то темного... какого-то зла, оно разрастается здесь. Что-то, темное поднимается от этой долины.
-	AI_Output(self,other,"DIA_MiltenOW_Bericht_03_04");	//Мы заплатили высокую цену за уничтожение Спящего. Разрушение Барьера погубило и это место.
-	AI_Output(self,other,"DIA_MiltenOW_Bericht_03_05");	//Мы можем считать себя счастливчиками, если нам удастся пережить все это.
+	AI_Output(other,self, " DIA_MiltenOW_Bericht_15_00 " );	// How are things here?
+	AI_Output(self,other, " DIA_MiltenOW_Bericht_03_01 " );	// Paladins came here to mine magic ore.
+	AI_Output(self,other, " DIA_MiltenOW_Bericht_03_02 " );	// But with all these dragon and orc attacks, I doubt the paladins will leave here with the ore.
+	AI_Output(self,other, " DIA_MiltenOW_Bericht_03_03 " );	// No, I swear by Innos - I feel the presence of something dark... some kind of evil, it grows here. Something dark is rising from this valley.
+	AI_Output(self,other, " DIA_MiltenOW_Bericht_03_04 " );	// We paid a high price for the destruction of the Sleeper. The destruction of the Barrier destroyed this place as well.
+	AI_Output(self,other, " DIA_MiltenOW_Bericht_03_05 " );	// We can consider ourselves lucky if we manage to survive all this.
 };
 
 instance DIA_MiltenOW_Pashal(C_Info)
@@ -134,7 +135,7 @@ instance DIA_MiltenOW_Pashal(C_Info)
 	condition = DIA_MiltenOW_Pashal_Condition;
 	information = DIA_MiltenOW_Pashal_Info;
 	permanent = FALSE;
-	description = "У меня к тебе один вопрос.";
+	description = " I have one question for you. " ;
 };
 
 func int DIA_MiltenOW_Pashal_Condition()
@@ -147,35 +148,35 @@ func int DIA_MiltenOW_Pashal_Condition()
 
 func void DIA_MiltenOW_Pashal_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Pashal_01_00");	//У меня к тебе один вопрос.
-	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_01");	//Какой именно?
-	AI_Output(other,self,"DIA_MiltenOW_Pashal_01_02");	//Ты что-нибудь слышал о неком магическом артефакте, который вобрал в себя всю силу этого мира?
-	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_03");	//Хммм...(задумчиво) Да! Я что-то припоминаю...помойму мастер Корристо однажды упоминал о таком.
-	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_04");	//В его планах было даже использование этого артефакта для того, чтобы разрушить магический барьер!
-	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_05");	//Но поскольку артефакт так и не был найден, то все это осталось лишь на словах.
-	AI_Output(other,self,"DIA_MiltenOW_Pashal_01_06");	//А что вы конкретно предприняли?
-	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_07");	//Насколько я знаю, Корристо послал одного из магов на его поиски.
-	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_08");	//Но тот так и не вернулся! Больше попыток его отыскать не предпринималось.
+	AI_Output(other,self, " DIA_MiltenOW_Pashal_01_00 " );	// I have one question for you.
+	AI_Output(self,other, " DIA_MiltenOW_Pashal_01_01 " );	// Which one?
+	AI_Output(other,self, " DIA_MiltenOW_Pashal_01_02 " );	// Have you heard anything about a certain magical artifact that absorbed all the power of this world?
+	AI_Output(self,other, " DIA_MiltenOW_Pashal_01_03 " );	// Hmmm... (thoughtfully) Yes! I remember something... I think Master Corristo once mentioned this.
+	AI_Output(self,other, " DIA_MiltenOW_Pashal_01_04 " );	// He even planned to use this artifact to destroy the magic barrier!
+	AI_Output(self,other, " DIA_MiltenOW_Pashal_01_05 " );	// But since the artifact was never found, all this remained only in words.
+	AI_Output(other,self, " DIA_MiltenOW_Pashal_01_06 " );	// What exactly did you do?
+	AI_Output(self,other, " DIA_MiltenOW_Pashal_01_07 " );	// As far as I know, Corristo sent one of the mages to find him.
+	AI_Output(self,other, " DIA_MiltenOW_Pashal_01_08 " );	// But he never came back! No further attempts were made to find him.
 	AI_Output(other,self,"DIA_MiltenOW_Pashal_01_09");	//Ясно.
 	PashalQuestCaveStep = TRUE;
-	B_LogEntry(TOPIC_PashalQuest,"Милтен рассказал мне о том, что Маги Огня пытались найти этот артефакт и даже отправили на поиски одного из Магов. Но у них ничего не вышло, а тот маг вообще пропал.");
+	B_LogEntry(TOPIC_PashalQuest, " Milten told me that the Fire Mages tried to find this artifact and even sent one of the Mages to look for it. But they did not succeed, and that mage disappeared altogether. " );
 	Wld_InsertNpc(KDF_4569_AlexOne,"OW_ALEXONE");
 };
 
-instance DIA_MiltenOW_Erz(C_Info)
+instance DIA_MiltenOW_Erz (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 4;
 	condition = DIA_MiltenOW_Erz_Condition;
 	information = DIA_MiltenOW_Erz_Info;
 	permanent = FALSE;
-	description = "Сколько руды удалось добыть?";
+	description = " How much ore did you mine? " ;
 };
 
 
 func int DIA_MiltenOW_Erz_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_MiltenOW_Bericht))
+	if ( Npc_KnowsInfo ( other , DIA_MiltenOW_Info ))
 	{
 		return TRUE;
 	};
@@ -183,27 +184,27 @@ func int DIA_MiltenOW_Erz_Condition()
 
 func void DIA_MiltenOW_Erz_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Erz_15_00");	//Сколько руды удалось добыть?
-	AI_Output(self,other,"DIA_MiltenOW_Erz_03_01");	//Сколько руды?.. Ни одного ящика! У нас уже давно нет вестей от старателей.
-	AI_Output(self,other,"DIA_MiltenOW_Erz_03_02");	//Я не удивлюсь, если они все давно мертвы. А нас атакуют драконы и осаждают орки!
-	AI_Output(self,other,"DIA_MiltenOW_Erz_03_03");	//Эта экспедиция обернулась полным провалом.
+	AI_Output(other,self, " DIA_MiltenOW_Erz_15_00 " );	// How much ore did you mine?
+	AI_Output(self,other, " DIA_MiltenOW_Erz_03_01 " );	// How much ore?.. Not a single crate! We haven't had any news from the prospectors for a long time.
+	AI_Output(self,other, " DIA_MiltenOW_Erz_03_02 " );	// I wouldn't be surprised if they're all long dead. And we are attacked by dragons and besieged by orcs!
+	AI_Output(self,other, " DIA_MiltenOW_Erz_03_03 " );	// This expedition turned out to be a complete failure.
 };
 
 
-instance DIA_MiltenOW_Wo(C_Info)
+instance DIA_MiltenOW_Wo (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 5;
 	condition = DIA_MiltenOW_Wo_Condition;
 	information = DIA_MiltenOW_Wo_Info;
 	permanent = FALSE;
-	description = "А где сейчас Горн и Диего?";
+	description = " Where are Gorn and Diego now? " ;
 };
 
 
 func int DIA_MiltenOW_Wo_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_MiltenOW_Hello) && (Knows_Diego == TRUE))
+	if ( Npc_KnowsInfo ( other , DIA_MiltenOW_Hello ) && ( Knows_Diego ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -211,9 +212,9 @@ func int DIA_MiltenOW_Wo_Condition()
 
 func void DIA_MiltenOW_Wo_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Wo_Forget_15_00");	//А где сейчас Горн и Диего?
-	AI_Output(self,other,"DIA_MiltenOW_Wo_Forget_03_01");	//Ну, Горн сидит здесь, в темнице, за то, что сопротивлялся аресту.
-	AI_Output(self,other,"DIA_MiltenOW_Wo_Forget_03_02");	//Диего прикрепили к отряду старателей. Спроси паладина Парсиваля, он отправлял этот отряд.
+	AI_Output(other,self, " DIA_MiltenOW_Wo_Forget_15_00 " );	// Where are Gorn and Diego now?
+	AI_Output(self,other, " DIA_MiltenOW_Wo_Forget_03_01 " );	// Well, Gorn is here in prison for resisting arrest.
+	AI_Output(self,other, " DIA_MiltenOW_Wo_Forget_03_02 " );	// Diego was assigned to a prospecting party. Ask paladin Parsival, he sent this squad.
 	KnowsAboutGorn = TRUE;
 	SearchForDiego = LOG_Running;
 };
@@ -226,13 +227,13 @@ instance DIA_MiltenOW_Gorn(C_Info)
 	condition = DIA_MiltenOW_Gorn_Condition;
 	information = DIA_MiltenOW_Gorn_Info;
 	permanent = FALSE;
-	description = "Пойдем, освободим Горна!";
+	description = " Let's go free the Gorn! " ;
 };
 
 
 func int DIA_MiltenOW_Gorn_Condition()
 {
-	if((KnowsAboutGorn == TRUE) && (Kapitel == 2))
+	if ((KnowsAboutGorn ==  TRUE ) && (Chapter ==  2 ))
 	{
 		return TRUE;
 	};
@@ -240,31 +241,31 @@ func int DIA_MiltenOW_Gorn_Condition()
 
 func void DIA_MiltenOW_Gorn_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Gorn_15_00");	//Пойдем, освободим Горна!
-	AI_Output(self,other,"DIA_MiltenOW_Gorn_03_01");	//Ну... проблема заключается в том, что Горн - осужденный заключенный.
-	AI_Output(self,other,"DIA_MiltenOW_Gorn_03_02");	//Но если нам повезет, Гаронд согласится на сделку и мы сможем купить Горну свободу.
-	AI_Output(other,self,"DIA_MiltenOW_Gorn_15_03");	//Да, может быть...
-	AI_Output(self,other,"DIA_MiltenOW_Gorn_03_04");	//Держи меня в курсе.
+	AI_Output(other,self, " DIA_MiltenOW_Gorn_15_00 " );	// Let's go free Gorn!
+	AI_Output(self,other, " DIA_MiltenOW_Gorn_03_01 " );	// Well... the problem is that Gorn is a convicted prisoner.
+	AI_Output(self,other, " DIA_MiltenOW_Gorn_03_02 " );	// But if we're lucky, Garond will agree to the deal and we can buy Gorn's freedom.
+	AI_Output(other,self, " DIA_MiltenOW_Gorn_15_03 " );	// Yes, maybe...
+	AI_Output(self,other, " DIA_MiltenOW_Gorn_03_04 " );	// Keep me posted.
 	Log_CreateTopic(TOPIC_RescueGorn,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RescueGorn,LOG_Running);
-	B_LogEntry(TOPIC_RescueGorn,"Командующий Гаронд посадил Горна в тюрьму. Возможно, с ним можно договориться и нам удастся вытащить беднягу.");
+	B_LogEntry(TOPIC_RescueGorn, " Commander Garond put Gorn in jail. Perhaps we can negotiate with him and we will be able to get the poor fellow out. " );
 };
 
 
-instance DIA_MiltenOW_Preis(C_Info)
+instance DIA_MiltenOW_Price (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 5;
 	condition = DIA_MiltenOW_Preis_Condition;
 	information = DIA_MiltenOW_Preis_Info;
 	permanent = FALSE;
-	description = "Гаронд хочет тысячу золотых монет за Горна.";
+	description = " Garond wants a thousand gold coins for the Gorn. " ;
 };
 
 
-func int DIA_MiltenOW_Preis_Condition()
+func int DIA_MiltenOW_Price_Condition()
 {
-	if((MIS_RescueGorn == LOG_Running) && (Kapitel == 2))
+	if ((MY_RescueGorn == LOG_Running) && (Chapter ==  2 ))
 	{
 		return TRUE;
 	};
@@ -272,40 +273,40 @@ func int DIA_MiltenOW_Preis_Condition()
 
 func void DIA_MiltenOW_Preis_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Preis_15_00");	//Гаронд хочет тысячу золотых монет за Горна.
-	AI_Output(self,other,"DIA_MiltenOW_Preis_03_01");	//Немаленькая сумма. Я могу пожертвовать двести пятьдесят монет.
+	AI_Output(other,self, " DIA_MiltenOW_Preis_15_00 " );	// Garond wants a thousand gold coins for Gorn.
+	AI_Output(self,other, " DIA_MiltenOW_Preis_03_01 " );	// Not a small amount. I can donate two hundred and fifty coins.
 	B_GiveInvItems(self,other,ItMi_Gold,250);
-	B_LogEntry(TOPIC_RescueGorn,"Милтен дал мне двести пятьдесят монет, чтобы я заплатил за освобождение Горна.");
+	B_LogEntry(TOPIC_RescueGorn, " Milten gave me two hundred and fifty coins to pay for rescuing Gorn. " );
 };
 
 
-instance DIA_MiltenOW_Mehr(C_Info)
+instance DIA_MiltenOW_More (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 5;
 	condition = DIA_MiltenOW_Mehr_Condition;
-	information = DIA_MiltenOW_Mehr_Info;
+	information = DIA_MiltenOW_More_Info;
 	permanent = FALSE;
-	description = "Мне нужно больше золота, чтобы купить свободу Горна.";
+	description = " I need more gold to buy Gorn's freedom. " ;
 };
 
 
 func int DIA_MiltenOW_Mehr_Condition()
 {
-	if((MIS_RescueGorn == LOG_Running) && (Kapitel == 2) && (Npc_HasItems(other,ItMi_Gold) < 1000) && Npc_KnowsInfo(other,DIA_MiltenOW_Preis))
+	if ((MY_RescueGorn == LOG_Running) && (Chapter ==  2 ) && (Npc_HasItems(other,ItMy_Gold) <  1000 ) && Npc_KnowsInfo(other,DIA_MiltenOW_Price));
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_MiltenOW_Mehr_Info()
+func void DIA_MiltenOW_More_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Mehr_15_00");	//Мне нужно больше золота, чтобы купить свободу Горна.
-	AI_Output(self,other,"DIA_MiltenOW_Mehr_03_01");	//Добыть еще золота... Хм, Диего мог бы помочь, но его здесь нет.
-	AI_Output(self,other,"DIA_MiltenOW_Mehr_03_02");	//Может, Горн припрятал где-нибудь золото для себя. Нужно выяснить это.
-	AI_Output(self,other,"DIA_MiltenOW_Mehr_03_03");	//Я напишу ему записку - вот, попробуй передать ее в темницу.
+	AI_Output(other,self, " DIA_MiltenOW_Mehr_15_00 " );	// I need more gold to buy Gorn's freedom.
+	AI_Output(self,other, " DIA_MiltenOW_Mehr_03_01 " );	// Get more gold... Hmm, Diego could help, but he's not here.
+	AI_Output(self,other, " DIA_MiltenOW_Mehr_03_02 " );	// Maybe Gorn stashed some gold for himself somewhere. Need to figure it out.
+	AI_Output(self,other, " DIA_MiltenOW_Mehr_03_03 " );	// I'll write him a note - here, try to send it to the dungeon.
 	B_GiveInvItems(self,other,ItWr_LetterForGorn_MIS,1);
-	B_LogEntry(TOPIC_RescueGorn,"Милтен дал мне записку для Горна. Если я смогу пробраться в тюрьму, возможно, Горн сможет сообщить, не припрятал ли он где-нибудь немного золота.");
+	B_LogEntry(TOPIC_RescueGorn, " Milten gave me a note for the Gorn. If I can get into the prison, perhaps the Gorn can let me know if he has hidden some gold somewhere. " );
 };
 
 
@@ -316,13 +317,13 @@ instance DIA_MiltenOW_Equipment(C_Info)
 	condition = DIA_MiltenOW_Equipment_Condition;
 	information = DIA_MiltenOW_Equipment_Info;
 	permanent = FALSE;
-	description = "Ты можешь обеспечить меня снаряжением?";
+	description = " Can you provide me with gear? " ;
 };
 
 
 func int DIA_MiltenOW_Equipment_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Garond_Equipment) && (other.guild == GIL_KDF))
+	if ( Npc_KnowsInfo ( other , DIA_Garond_Equipment ) && ( other . guild ==  GIL_KDF ))
 	{
 		return TRUE;
 	};
@@ -330,13 +331,13 @@ func int DIA_MiltenOW_Equipment_Condition()
 
 func void DIA_MiltenOW_Equipment_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Equipmentt_15_00");	//Ты можешь обеспечить меня снаряжением? Гаронд попросил меня отправиться в шахты.
-	AI_Output(self,other,"DIA_MiltenOW_Equipment_03_01");	//И где я, по-твоему, возьму его? Единственное, что я могу тебе дать, - это ценный рунный камень.
+	AI_Output(other,self, " DIA_MiltenOW_Equipmentt_15_00 " );	// Can you provide me with equipment? Garond asked me to go to the mines.
+	AI_Output(self,other, " DIA_MiltenOW_Equipment_03_01 " );	// And where do you think I'll get it? The only thing I can give you is a valuable runestone.
 	B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 };
 
 
-instance DIA_MiltenOW_Versteck(C_Info)
+instance DIA_MiltenOW_Versteck (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 1;
@@ -344,13 +345,13 @@ instance DIA_MiltenOW_Versteck(C_Info)
 	information = DIA_MiltenOW_Versteck_Info;
 	permanent = FALSE;
 	important = FALSE;
-	description = "Я получил ответ от Горна.";
+	description = " I received a response from Gorn. " ;
 };
 
 
 func int DIA_MiltenOW_Versteck_Condition()
 {
-	if((GornsTreasure == TRUE) && (Npc_HasItems(other,ItMi_GornsTreasure_MIS) <= 0) && (Gorns_Beutel == FALSE) && (Kapitel == 2))
+	if ((GornsTreasure ==  TRUE ) && (Npc_HasItems(other,ItMi_GornsTreasure_MIS) <=  0 ) && (Gorns_Beutel ==  FALSE ) && (Kapitel ==  2 ))
 	{
 		return TRUE;
 	};
@@ -358,29 +359,29 @@ func int DIA_MiltenOW_Versteck_Condition()
 
 func void DIA_MiltenOW_Versteck_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Versteck_15_00");	//Я получил ответ от Горна. Он говорит, что его золото находится у южных ворот.
-	AI_Output(self,other,"DIA_MiltenOW_Versteck_03_01");	//Бывших южных ворот, ты хочешь сказать. Дракон превратил их в развалины.
-	AI_Output(other,self,"DIA_MiltenOW_Versteck_15_02");	//Как мне добраться туда?
-	AI_Output(self,other,"DIA_MiltenOW_Versteck_03_03");	//Это неподалеку от тарана орков. Южные ворота были справа от него.
-	AI_Output(self,other,"DIA_MiltenOW_Versteck_03_04");	//Это будет непросто - так что постарайся сделать все побыстрее и не привлекая внимания врага.
-	B_LogEntry(TOPIC_RescueGorn,"Бывшие южные ворота находятся справа от тарана орков. Золото Горна спрятано где-то там.");
+	AI_Output(other,self, " DIA_MiltenOW_Versteck_15_00 " );	// I got a response from Gorn. He says that his gold is at the south gate.
+	AI_Output(self,other, " DIA_MiltenOW_Versteck_03_01 " );	// The former south gate, you mean. The dragon turned them into ruins.
+	AI_Output(other,self, " DIA_MiltenOW_Versteck_15_02 " );	// How do I get there?
+	AI_Output(self,other, " DIA_MiltenOW_Versteck_03_03 " );	// It's near the orc ram. The south gate was to his right.
+	AI_Output(self,other, " DIA_MiltenOW_Versteck_03_04 " );	// It won't be easy - so try to do it quickly and without attracting the attention of the enemy.
+	B_LogEntry(TOPIC_RescueGorn, " The former south gate is to the right of the orc battering ram. The Forge's gold is hidden somewhere. " );
 };
 
 
-instance DIA_MiltenOW_Frei(C_Info)
+instance DIA_MiltenOW_Frei (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 5;
 	condition = DIA_MiltenOW_Frei_Condition;
 	information = DIA_MiltenOW_Frei_Info;
 	permanent = FALSE;
-	description = "Я освободил Горна.";
+	description = " I freed the Gorn. " ;
 };
 
 
 func int DIA_MiltenOW_Frei_Condition()
 {
-	if((MIS_RescueGorn == LOG_SUCCESS) && (Kapitel == 2))
+	if ((MY_RescueGorn ==  LOG_SUCCESS ) && (Chapter ==  2 ))
 	{
 		return TRUE;
 	};
@@ -388,35 +389,35 @@ func int DIA_MiltenOW_Frei_Condition()
 
 func void DIA_MiltenOW_Frei_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Frei_15_00");	//Я освободил Горна.
-	AI_Output(self,other,"DIA_MiltenOW_Frei_03_01");	//Хорошо! Теперь мы можем подумать о том, что делать дальше.
+	AI_Output(other,self, " DIA_MiltenOW_Frei_15_00 " );	// I freed Gorn.
+	AI_Output(self,other, " DIA_MiltenOW_Frei_03_01 " );	// Good! Now we can think about what to do next.
 };
 
 
-instance DIA_MiltenOW_Lehren(C_Info)
+instance DIA_MiltenOW_Lehren (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 9;
 	condition = DIA_MiltenOW_Lehren_Condition;
-	information = DIA_MiltenOW_Lehren_Info;
+	information = DIA_MiltenOW_Teaching_Info;
 	permanent = FALSE;
-	description = "Ты можешь научить меня чему-нибудь?";
+	description = " Can you teach me something? " ;
 };
 
 
 func int DIA_MiltenOW_Lehren_Condition()
 {
-	if((other.guild == GIL_KDF) && (Kapitel == 2))
+	if ((other.guild ==  GIL_KDF ) && (Chapter ==  2 ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_MiltenOW_Lehren_Info()
+func void DIA_MiltenOW_Teaching_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Lehren_15_00");	//Ты можешь чему-нибудь меня научить?
-	AI_Output(self,other,"DIA_MiltenOW_Lehren_03_01");	//Я могу посвятить тебя в некоторые из заклинаний второго круга магии или помогу увеличить твою волшебную силу.
-	AI_Output(self,other,"DIA_MiltenOW_Lehren_03_02");	//Если ты чувствуешь готовность приумножить свою силу, я дам тебе указания.
+	AI_Output(other,self, " DIA_MiltenOW_Lehren_15_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_MiltenOW_Lehren_03_01 " );	// I can initiate you into some of the spells of the second circle of magic or help you increase your magic power.
+	AI_Output(self,other, " DIA_MiltenOW_Lehren_03_02 " );	// If you feel ready to increase your power, I will give you instructions.
 };
 
 instance DIA_MILTENOW_CASSIA(C_Info)
@@ -426,7 +427,7 @@ instance DIA_MILTENOW_CASSIA(C_Info)
 	condition = dia_miltenow_cassia_condition;
 	information = dia_miltenow_cassia_info;
 	permanent = FALSE;
-	description = "А ты не знаешь случайно...";
+	description = " Do you happen to know... " ;
 };
 
 func int dia_miltenow_cassia_condition()
@@ -439,15 +440,15 @@ func int dia_miltenow_cassia_condition()
 
 func void dia_miltenow_cassia_info()
 {
-	AI_Output(other,self,"DIA_Milten_Cassia_15_00");	//А ты не знаешь случайно, где ключ от склада паладинов?
-	AI_Output(self,other,"DIA_Milten_Cassia_03_01");	//Что ты задумал, разбойник? Впрочем, тебе не повезло.
-	AI_Output(self,other,"DIA_Milten_Cassia_03_02");	//В один прекрасный день Энгор вылез из своей конуры подышать свежим воздухом и где-то его посеял.
-	AI_Output(self,other,"DIA_Milten_Cassia_03_03");	//Думаю, что Гаронд рано или поздно прикажет сломать дверь и заставит Энгора ее чинить.
+	AI_Output(other,self, " DIA_Milten_Cassia_15_00 " );	// Do you happen to know where the key to the paladin warehouse is?
+	AI_Output(self,other, " DIA_Milten_Cassia_03_01 " );	// What are you up to, robber? However, you're out of luck.
+	AI_Output(self,other, " DIA_Milten_Cassia_03_02 " );	// One fine day, Anghor got out of his kennel to breathe fresh air and sowed it somewhere.
+	AI_Output(self,other, " DIA_Milten_Cassia_03_03 " );	// I think that sooner or later Garond will order to break the door and force Angora to repair it.
 	AI_Output(self,other,"DIA_Milten_Cassia_03_04");	//Да, кстати...
-	AI_Output(self,other,"DIA_Milten_Cassia_03_05");	//Если ты, все же, найдешь ключ - верни его Энгору!
-	AI_Output(self,other,"DIA_Milten_Cassia_03_06");	//Так будет лучше для всех.
-	AI_Output(other,self,"DIA_Milten_Cassia_15_07");	//Понятно.
-	B_LogEntry(TOPIC_CASSIAGOLDCUP,"Энгор потерял ключ склада паладинов, когда выходил подышать свежим воздухом. Если я найду ключ, будет лучше, если я верну его Энгору.");
+	AI_Output(self,other, " DIA_Milten_Cassia_03_05 " );	// If you still find the key - return it to Angora!
+	AI_Output(self,other, " DIA_Milten_Cassia_03_06 " );	// This will be better for everyone.
+	AI_Output(other,self, " DIA_Milten_Cassia_15_07 " );	// Got it.
+	B_LogEntry( TOPIC_CASSIAGOLDCUP , " Angore lost the paladin store key when he went out for some fresh air. If I find the key, it's best if I return it to Anggor. " );
 	MILTENSAYABOUTOCKEY = TRUE;
 };
 
@@ -458,13 +459,13 @@ instance DIA_MiltenOW_TeachCircle2(C_Info)
 	condition = DIA_MiltenOW_TeachCircle2_Condition;
 	information = DIA_MiltenOW_TeachCircle2_Info;
 	permanent = TRUE;
-	description = "Обучи меня второму Кругу магии. (Очки обучения: 30)";
+	description = " Teach me the second Circle of Magic. (Training Points: 30) " ;
 };
 
 
 func int DIA_MiltenOW_TeachCircle2_Condition()
 {
-	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 2))
+	if ((other.guild ==  GIL_KDF ) && Npc_KnowsInfo(other, DIA_MiltenOW_Lehren) && (Npc_GetTalentSkill(other, NPC_TALENT_MAGE ) <  2 ) );
 	{
 		return TRUE;
 	};
@@ -472,15 +473,15 @@ func int DIA_MiltenOW_TeachCircle2_Condition()
 
 func void DIA_MiltenOW_TeachCircle2_Info()
 {
-	AI_Output(other,self,"DIA_Milten_Add_15_00");	//Обучи меня второму кругу магии.
-	AI_Output(self,other,"DIA_Milten_Add_03_01");	//Это обычно привилегия учителей нашего ордена.
-	AI_Output(self,other,"DIA_Milten_Add_03_02");	//Но я думаю, что в твоем случае мы можем сделать исключение...
+	AI_Output(other,self, " DIA_Milten_Add_15_00 " );	// Teach me the second circle of magic.
+	AI_Output(self,other, " DIA_Milten_Add_03_01 " );	// This is usually the privilege of the teachers of our order.
+	AI_Output(self,other, " DIA_Milten_Add_03_02 " );	// But I think we can make an exception in your case...
 
 	if(B_TeachMagicCircle(self,other,2))
 	{
-		AI_Output(self,other,"DIA_Milten_Add_03_03");	//Я не уверен, что помню все эти официальные и торжественные слова...
-		AI_Output(self,other,"DIA_Milten_Add_03_04");	//Войди во второй круг. Э-э... он покажет тебе направление, но твои дела формируют путь..
-		AI_Output(self,other,"DIA_Milten_Add_03_05");	//Я думаю, ты понимаешь, о чем все это...
+		AI_Output(self,other, " DIA_Milten_Add_03_03 " );	// I'm not sure I remember all those official and solemn words...
+		AI_Output(self,other, " DIA_Milten_Add_03_04 " );	// Enter the second circle. Uh... he will show you the direction, but your deeds form the path..
+		AI_Output(self,other, " DIA_Milten_Add_03_05 " );	// I think you understand what this is all about...
 	};
 };
 
@@ -492,13 +493,13 @@ instance DIA_MiltenOW_Teach(C_Info)
 	condition = DIA_MiltenOW_Teach_Condition;
 	information = DIA_MiltenOW_Teach_Info;
 	permanent = TRUE;
-	description = "Я хочу изучить новые заклинания.";
+	description = " I want to learn new spells. " ;
 };
 
 
 func int DIA_MiltenOW_Teach_Condition()
 {
-	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Kapitel == 2))
+	if ((other.guild ==  GIL_KDF ) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Chapter ==  2 ))
 	{
 		return TRUE;
 	};
@@ -506,7 +507,7 @@ func int DIA_MiltenOW_Teach_Condition()
 
 func void DIA_MiltenOW_Teach_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Teach_15_00");	//Я хочу изучить новые заклинания.
+	AI_Output(other,self, " DIA_MiltenOW_Teach_15_00 " );	// I want to learn new spells.
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2)
 	{
 		Info_ClearChoices(DIA_MiltenOW_Teach);
@@ -522,7 +523,7 @@ func void DIA_MiltenOW_Teach_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_MiltenOW_Teach_03_01");	//Ты все еще не достиг второго круга магии. Я ничему не могу научить тебя.
+		AI_Output(self,other, " DIA_MiltenOW_Teach_03_01 " );	// You still haven't reached the second circle of magic. I can't teach you anything.
 	};
 };
 
@@ -541,20 +542,20 @@ func void DIA_MiltenOW_Teach_RapidFirebolt()
 	B_TeachPlayerTalentRunes(self,other,SPL_RapidFirebolt);
 };
 
-instance DIA_MiltenOW_Mana(C_Info)
+instances DIA_MiltenOW_Mana (C_Info)
 {
 	npc = PC_Mage_OW;
 	nr = 100;
 	condition = DIA_MiltenOW_Mana_Condition;
 	information = DIA_MiltenOW_Mana_Info;
 	permanent = TRUE;
-	description = "Я хочу повысить мои магические способности.";
+	description = " I want to increase my magical abilities. " ;
 };
 
 
 func int DIA_MiltenOW_Mana_Condition()
 {
-	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Kapitel == 2))
+	if ((other.guild ==  GIL_KDF ) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Chapter ==  2 ))
 	{
 		return TRUE;
 	};
@@ -562,7 +563,7 @@ func int DIA_MiltenOW_Mana_Condition()
 
 func void DIA_MiltenOW_Mana_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Mana_15_00");	//Я хочу повысить мои магические способности
+	AI_Output(other,self, " DIA_MiltenOW_Mana_15_00 " );	// I want to increase my magical abilities
 	Info_ClearChoices(DIA_MiltenOW_Mana);
 	Info_AddChoice(DIA_MiltenOW_Mana,Dialog_Back,DIA_MiltenOW_Mana_BACK);
 	Info_AddChoice(DIA_MiltenOW_Mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_MiltenOW_Mana_1);
@@ -573,7 +574,7 @@ func void DIA_MiltenOW_Mana_BACK()
 {
 	if(other.attribute[ATR_MANA_MAX] >= T_MED)
 	{
-		AI_Output(self,other,"DIA_MiltenOW_Mana_03_00");	//Твоя магическая энергия велика. Слишком велика, чтобы я мог увеличить ее.
+		AI_Output(self,other, " DIA_MiltenOW_Mana_03_00 " );	// Your magical energy is great. Too big for me to enlarge it.
 	};
 	Info_ClearChoices(DIA_MiltenOW_Mana);
 };
@@ -604,13 +605,13 @@ instance DIA_MiltenOW_Perm(C_Info)
 	condition = DIA_MiltenOW_Perm_Condition;
 	information = DIA_MiltenOW_Perm_Info;
 	permanent = TRUE;
-	description = "А какие у тебя здесь обязанности?";
+	description = " What are your responsibilities here? " ;
 };
 
 
 func int DIA_MiltenOW_Perm_Condition()
 {
-	if((Kapitel == 2) && (Npc_KnowsInfo(other,DIA_MiltenOW_Frei) == FALSE))
+	if ((Capital ==  2 ) && (Npc_KnowsInfo(other,DIA_MiltenOW_Free) ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -618,9 +619,9 @@ func int DIA_MiltenOW_Perm_Condition()
 
 func void DIA_MiltenOW_Perm_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Perm_15_00");	//А какие у тебя здесь обязанности?
-	AI_Output(self,other,"DIA_MiltenOW_Perm_03_01");	//Изначально, я должен был проверять магическую руду. Но она здесь редко попадала мне в руки.
-	AI_Output(self,other,"DIA_MiltenOW_Perm_03_02");	//И теперь я сосредоточился на изучении алхимии.
+	AI_Output(other,self, " DIA_MiltenOW_Perm_15_00 " );	// And what are your duties here?
+	AI_Output(self,other, " DIA_MiltenOW_Perm_03_01 " );	// Initially, I had to check for magic ore. But she rarely fell into my hands here.
+	AI_Output(self,other, " DIA_MiltenOW_Perm_03_02 " );	// And now I'm focusing on learning alchemy.
 };
 
 
@@ -631,13 +632,13 @@ instance DIA_MiltenOW_Plan(C_Info)
 	condition = DIA_MiltenOW_Plan_Condition;
 	information = DIA_MiltenOW_Plan_Info;
 	permanent = TRUE;
-	description = "Что ты планируешь делать дальше?";
+	description = " What are you planning to do next? " ;
 };
 
 
 func int DIA_MiltenOW_Plan_Condition()
 {
-	if((Kapitel == 2) && Npc_KnowsInfo(other,DIA_MiltenOW_Frei))
+	if ((Capital ==  2 ) && Npc_KnowsInfo(other,DIA_MiltenOW_Free)) .
 	{
 		return TRUE;
 	};
@@ -645,12 +646,12 @@ func int DIA_MiltenOW_Plan_Condition()
 
 func void DIA_MiltenOW_Plan_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Plan_15_00");	//Что ты планируешь делать дальше?
-	AI_Output(self,other,"DIA_MiltenOW_Plan_03_01");	//Я вернусь. Подожду еще немного, и теперь, когда Горн свободен, я могу отправиться в путь вместе с ним.
-	AI_Output(self,other,"DIA_MiltenOW_Plan_03_02");	//Крайне важно, чтобы Пирокар узнал о ситуации здесь.
-	AI_Output(other,self,"DIA_MiltenOW_Plan_15_03");	//Ну, если ты так считаешь.
-	AI_Output(self,other,"DIA_MiltenOW_Plan_03_04");	//Я надеюсь, что лорд Хаген поймет, какая угроза исходит от этой долины. Не хочется думать, что произойдет, если орки пройдут через Проход.
-	AI_Output(other,self,"DIA_MiltenOW_Plan_15_05");	//Ну, тогда удачного путешествия.
+	AI_Output(other,self, " DIA_MiltenOW_Plan_15_00 " );	// What are you planning to do next?
+	AI_Output(self,other, " DIA_MiltenOW_Plan_03_01 " );	// I'll be back. I'll wait a little longer, and now that Gorn is free, I can go with him.
+	AI_Output(self,other, " DIA_MiltenOW_Plan_03_02 " );	// It's imperative that the Pyrocar learn about the situation here.
+	AI_Output(other,self, " DIA_MiltenOW_Plan_15_03 " );	// Well, if you think so.
+	AI_Output(self,other, " DIA_MiltenOW_Plan_03_04 " );	// I hope Lord Hagen understands the threat this valley poses. I don't want to think about what will happen if the orcs pass through the Passage.
+	AI_Output(other,self, " DIA_MiltenOW_Plan_15_05 " );	// Well, have a good trip then.
 };
 
 instance DIA_MiltenOW_Baby(C_Info)
@@ -660,7 +661,7 @@ instance DIA_MiltenOW_Baby(C_Info)
 	condition = DIA_MiltenOW_Baby_Condition;
 	information = DIA_MiltenOW_Baby_Info;
 	permanent = FALSE;
-	description = "У меня к тебе есть весьма необычная просьба.";
+	description = " I have a very unusual request for you. " ;
 };
 
 func int DIA_MiltenOW_Baby_Condition()
@@ -673,17 +674,17 @@ func int DIA_MiltenOW_Baby_Condition()
 
 func void DIA_MiltenOW_Baby_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Baby_01_00");	//У меня к тебе есть весьма необычная просьба.
-	AI_Output(self,other,"DIA_MiltenOW_Baby_01_01");	//Говори. Ты же знаешь, для друга я готов сделать все, что в моих силах.
-	AI_Output(other,self,"DIA_MiltenOW_Baby_01_02");	//В общем, один оруженосец из замка попросил меня... попросить тебя, чтобы ты наколдовал женщину для него и его товарищей.
-	AI_Output(other,self,"DIA_MiltenOW_Baby_01_03");	//Ну, ты понимаешь о чем я.
-	AI_Output(self,other,"DIA_MiltenOW_Baby_01_04");	//(озадаченно) По правде говоря, я не ожидал услышать от тебя подобной просьбы.
-	AI_Output(other,self,"DIA_MiltenOW_Baby_01_05");	//Так ты сможешь им помочь?
-	AI_Output(self,other,"DIA_MiltenOW_Baby_01_06");	//Ну... Я в таких делах, скажем так, не слишком опытен. Но раз ты просишь, то я попробую что-нибудь придумать.
-	AI_Output(other,self,"DIA_MiltenOW_Baby_01_07");	//Отлично! Уверен, парни будут просто вне себя от радости. Когда все будет готово?
-	AI_Output(self,other,"DIA_MiltenOW_Baby_01_08");	//Думаю, к завтрашнему вечеру, не раньше. Мне надо хорошенько подготовиться.
-	AI_Output(other,self,"DIA_MiltenOW_Baby_01_09");	//Так им и передам.
-	B_LogEntry(TOPIC_BrutusBaby,"Как ни странно, Милтен согласился помочь. По его словам, к вечеру завтрашнего дня, все должно быть готово.");
+	AI_Output(other,self, " DIA_MiltenOW_Baby_01_00 " );	// I have a very unusual request for you.
+	AI_Output(self,other, " DIA_MiltenOW_Baby_01_01 " );	// Speak. You know, for a friend, I'm ready to do everything in my power.
+	AI_Output(other,self, " DIA_MiltenOW_Baby_01_02 " );	// Anyway, a squire from the castle asked me... to ask you to conjure a woman for him and his comrades.
+	AI_Output(other,self, " DIA_MiltenOW_Baby_01_03 " );	// Well, you know what I mean.
+	AI_Output(self,other, " DIA_MiltenOW_Baby_01_04 " );	// (puzzled) To tell you the truth, I didn't expect to hear such a request from you.
+	AI_Output(other,self, " DIA_MiltenOW_Baby_01_05 " );	// So can you help them?
+	AI_Output(self,other, " DIA_MiltenOW_Baby_01_06 " );	// Well... I'm not very experienced in such matters, shall we say. But since you ask, I'll try to come up with something.
+	AI_Output(other,self, " DIA_MiltenOW_Baby_01_07 " );	// Great! I'm sure the guys will be just overjoyed. When will everything be ready?
+	AI_Output(self,other, " DIA_MiltenOW_Baby_01_08 " );	// I think by tomorrow evening, not earlier. I need to be well prepared.
+	AI_Output(other,self, " DIA_MiltenOW_Baby_01_09 " );	// So I'll tell them.
+	B_LogEntry(TOPIC_BrutusBaby, " Oddly enough, Milten agreed to help. According to him, by tomorrow evening, everything should be ready. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -694,7 +695,7 @@ instance DIA_MiltenOW_Baby_Done(C_Info)
 	condition = DIA_MiltenOW_Baby_Done_Condition;
 	information = DIA_MiltenOW_Baby_Done_Info;
 	permanent = FALSE;
-	description = "Все готово?";
+	description = " Are you ready? " ;
 };
 
 func int DIA_MiltenOW_Baby_Done_Condition()
@@ -707,15 +708,15 @@ func int DIA_MiltenOW_Baby_Done_Condition()
 
 func void DIA_MiltenOW_Baby_Done_Info()
 {
-	AI_Output(other,self,"DIA_MiltenOW_Baby_Done_01_00");	//Все готово?
-	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_01");	//Да, все приготовления завершены. Осталось только прочитать нужное заклинание.
-	AI_Output(other,self,"DIA_MiltenOW_Baby_Done_01_02");	//Так, в чем же дело, читай.
-	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_03");	//Лучше это сделаешь ты, поскольку мне необходимо поддерживать свою концентрацию вокруг магической пентаграммы вызова.
-	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_04");	//Вот, возьми этот свиток. Там все написано.
+	AI_Output(other,self, " DIA_MiltenOW_Baby_Done_01_00 " );	// Are you ready?
+	AI_Output(self,other, " DIA_MiltenOW_Baby_Done_01_01 " );	// Yes, all preparations are complete. It remains only to cast the desired spell.
+	AI_Output(other,self, " DIA_MiltenOW_Baby_Done_01_02 " );	// So, what's the matter, read.
+	AI_Output(self,other, " DIA_MiltenOW_Baby_Done_01_03 " );	// You'd better do it, as I need to maintain my concentration around the magic pentagram of summoning.
+	AI_Output(self,other, " DIA_MiltenOW_Baby_Done_01_04 " );	// Here, take this scroll. Everything is written there.
 	B_GiveInvItems(self,other,ItWr_MiltenSummon,1);
-	AI_Output(other,self,"DIA_MiltenOW_Baby_Done_01_05");	//Ладно, давай сюда.
+	AI_Output(other,self, " DIA_MiltenOW_Baby_Done_01_05 " );	// Okay, come here.
 	Info_ClearChoices(DIA_MiltenOW_Baby_Done);
-	Info_AddChoice(DIA_MiltenOW_Baby_Done,"Использовать свиток...",DIA_MiltenOW_Baby_Done_Do);
+	Info_AddChoice(DIA_MiltenOW_Baby_Done, " Use Scroll... " ,DIA_MiltenOW_Baby_Done_Do);
 };
 
 func void DIA_MiltenOW_Baby_Done_Do()
@@ -725,7 +726,7 @@ func void DIA_MiltenOW_Baby_Done_Do()
 	B_HeroUseFakeScroll();
 	MIS_BrutusBaby = LOG_Success;
 	Log_SetTopicStatus(TOPIC_BrutusBaby,LOG_Success);
-	B_LogEntry(TOPIC_BrutusBaby,"Похоже, Милтен что-то напутал в заклинании. Вместо прекрасной девы в центре пентаграммы появился огромный архидемон. Правда, вполне безобидный. Но один его вид нагнал такого ужаса на всех присутствующих, что они теперь наверняка надолго забудут о каких-либо своих желаниях.");
+	B_LogEntry(TOPIC_BrutusBaby, " It looks like Milten messed up something in the spell. Instead of a beautiful maiden, a huge archdemon appeared in the center of the pentagram. True, it is quite harmless. But one of his sights caught up with such horror on all those present that they will now probably forget about any- or your desires. " );
 	MiltenSummon = TRUE;
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Demon_Lord_Milten,"OC_MAGE_CENTER");
