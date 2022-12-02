@@ -1,4 +1,5 @@
 
+
 instance DIA_Mika_EXIT(C_Info)
 {
 	npc = Mil_337_Mika;
@@ -12,7 +13,7 @@ instance DIA_Mika_EXIT(C_Info)
 
 func int DIA_Mika_EXIT_Condition()
 {
-	if(Kapitel <= 2)
+	if (chapter <=  2 )
 	{
 		return TRUE;
 	};
@@ -23,7 +24,7 @@ func void DIA_Mika_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Mika_WOHIN(C_Info)
+instance DIA_Mika_WOHIN (C_Info)
 {
 	npc = Mil_337_Mika;
 	nr = 4;
@@ -33,7 +34,7 @@ instance DIA_Mika_WOHIN(C_Info)
 };
 
 
-func int DIA_Mika_WOHIN_Condition()
+func int DIA_Mika_WHIN_Condition()
 {
 	if(Npc_IsInState(self,ZS_Talk))
 	{
@@ -41,44 +42,44 @@ func int DIA_Mika_WOHIN_Condition()
 	};
 };
 
-func void DIA_Mika_WOHIN_Info()
+func void DIA_Mika_WHIN_Info()
 {
-	AI_Output(self,other,"DIA_Mika_WOHIN_12_00");	//Эй, эй! Не так быстро. Прогуливаться здесь одному довольно опасно. Откуда ты идешь?
+	AI_Output(self,other, " DIA_Mika_WOHIN_12_00 " );	// Hey, hey! Not so fast. Walking alone here is quite dangerous. Where are you going from now?
 	Info_ClearChoices(DIA_Mika_WOHIN);
-	Info_AddChoice(DIA_Mika_WOHIN,"Это не твое дело.",DIA_Mika_WOHIN_weg);
-	Info_AddChoice(DIA_Mika_WOHIN,"С одной из ферм.",DIA_Mika_WOHIN_Bauern);
-	Info_AddChoice(DIA_Mika_WOHIN,"Из города!",DIA_Mika_WOHIN_stadt);
+	Info_AddChoice(DIA_Mika_WOHIN, " It's none of your business. " ,DIA_Mika_WOHIN_weg);
+	Info_AddChoice(DIA_Mika_WOHIN, " From one of the farms. " ,DIA_Mika_WOHIN_Bauern);
+	Info_AddChoice(DIA_Mika_WOHIN, " Из города! " ,DIA_Mika_WOHIN_stadt);
 };
 
-func void DIA_Mika_WOHIN_stadt()
+func void DIA_Mika_WHERE_city()
 {
-	AI_Output(other,self,"DIA_Mika_WOHIN_stadt_15_00");	//Из города!
-	AI_Output(self,other,"DIA_Mika_WOHIN_stadt_12_01");	//Так, так. Тогда что ты делаешь тут, так далеко от его защитных стен?
+	AI_Output(other,self, " DIA_Mika_WOHIN_stadt_15_00 " );	// Out of town!
+	AI_Output(self,other, " DIA_Mika_WOHIN_stadt_12_01 " );	// Yes, yes. Then what are you doing here, so far from its protective walls?
 	Info_ClearChoices(DIA_Mika_WOHIN);
 };
 
 func void DIA_Mika_WOHIN_Bauern()
 {
-	AI_Output(other,self,"DIA_Mika_WOHIN_Bauern_15_00");	//С одной из ферм.
-	AI_Output(self,other,"DIA_Mika_WOHIN_Bauern_12_01");	//Ты фермер, да? Хмм. Тогда тебе не стоит бродить по этим опасным тропам совсем одному. Кто знает, кто там может поджидать тебя.
+	AI_Output(other,self, " DIA_Mika_WOHIN_Bauern_15_00 " );	// From one of the farms.
+	AI_Output(self,other, " DIA_Mika_WOHIN_Bauern_12_01 " );	// You're a farmer, right? Hmm. Then you shouldn't wander these dangerous paths all alone. Who knows who might be waiting for you there.
 	Info_ClearChoices(DIA_Mika_WOHIN);
 };
 
 func void DIA_Mika_WOHIN_weg()
 {
-	AI_Output(other,self,"DIA_Mika_WOHIN_weg_15_00");	//Это не твое дело.
-	AI_Output(self,other,"DIA_Mika_WOHIN_weg_12_01");	//Как знаешь. Но не плачь потом, если кто-то снимет с тебя шкуру. Удачной прогулки.
+	AI_Output(other,self, " DIA_Mika_WOHIN_weg_15_00 " );	// It's none of your business.
+	AI_Output(self,other, " DIA_Mika_WOHIN_weg_12_01 " );	// As you know. But don't cry later if someone skins you. Have a good walk.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Mika_WASGEFAEHRLICH(C_Info)
+instance DIA_Mika_WAS DANGEROUS (C_Info)
 {
 	npc = Mil_337_Mika;
 	nr = 5;
 	condition = DIA_Mika_WASGEFAEHRLICH_Condition;
-	information = DIA_Mika_WASGEFAEHRLICH_Info;
-	description = "А что такого опасного здесь?";
+	information = DIA_Mika_WAS DANGEROUS_Info;
+	description = " What's so dangerous here? " ;
 };
 
 func int DIA_Mika_WASGEFAEHRLICH_Condition()
@@ -86,33 +87,33 @@ func int DIA_Mika_WASGEFAEHRLICH_Condition()
 	return TRUE;
 };
 
-func void DIA_Mika_WASGEFAEHRLICH_Info()
+func void DIA_Mika_WAS DANGEROUS_Info()
 {
-	AI_Output(other,self,"DIA_Mika_WASGEFAEHRLICH_15_00");	//А что такого опасного здесь?
-	AI_Output(self,other,"DIA_Mika_WASGEFAEHRLICH_12_01");	//Много чего.
-	AI_Output(self,other,"DIA_Mika_WASGEFAEHRLICH_12_02");	//Ну, например, бандиты. Они только и ждут, когда к ним в лапы попадет кто-нибудь вроде тебя.
-	AI_Output(self,other,"DIA_Mika_WASGEFAEHRLICH_12_03");	//А если тебя не поймают бандиты, то дикие животные из леса или наемники, которые шляются вокруг, позаботятся о тебе.
-	AI_Output(self,other,"DIA_Mika_WASGEFAEHRLICH_12_04");	//Так что постарайся сначала хотя бы добыть приличные доспехи. Без них тут нечего делать.
+	AI_Output(other,self, " DIA_Mika_WASGEFAEHRLICH_15_00 " );	// What's so dangerous here?
+	AI_Output(self,other, " DIA_Mika_WASGEFAEHRLICH_12_01 " );	// Lots of things.
+	AI_Output(self,other, " DIA_Mika_WASGEFAEHRLICH_12_02 " );	// Well, for example, bandits. They're just waiting for someone like you to fall into their clutches.
+	AI_Output(self,other, " DIA_Mika_WASGEFAEHRLICH_12_03 " );	// And if the bandits don't catch you, then the wild animals from the forest or the mercenaries that hang around will take care of you.
+	AI_Output(self,other, " DIA_Mika_WASGEFAEHRLICH_12_04 " );	// So try to at least get some decent armor first. There is nothing to do without them.
 
 	if(RealMode[2] == FALSE)
 	{
-		AI_Output(self,other,"DIA_Mika_WASGEFAEHRLICH_12_05");	//Я уверен, что ты прибежишь за помощью ко мне, не успев даже дойти до следующего поворота этой дороги.
+		AI_Output(self,other, " DIA_Mika_WASGEFAEHRLICH_12_05 " );	// I'm sure you'll come running to me for help before you even make it to the next turn in this road.
 	};
 };
 
-instance DIA_Mika_WASKOSTETHILFE(C_Info)
+instance DIA_Mika_WASKOSTETHILFE (C_Info)
 {
 	npc = Mil_337_Mika;
 	nr = 6;
 	condition = DIA_Mika_WASKOSTETHILFE_Condition;
 	information = DIA_Mika_WASKOSTETHILFE_Info;
-	description = "Ну, предположим, я обращусь к тебе за помощью.";
+	description = " Well, let's say I ask you for help. " ;
 };
 
 
 func int DIA_Mika_WASKOSTETHILFE_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Mika_WASGEFAEHRLICH) == TRUE) && (RealMode[2] == FALSE))
+	if (( Npc_KnowsInfo ( other , DIA_Mika_WASGEFAEHRLICH ) ==  TRUE ) && ( RealMode [ 2 ] ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -120,53 +121,53 @@ func int DIA_Mika_WASKOSTETHILFE_Condition()
 
 func void DIA_Mika_WASKOSTETHILFE_Info()
 {
-	AI_Output(other,self,"DIA_Mika_WASKOSTETHILFE_15_00");	//Ну, предположим, я обращусь к тебе за помощью. Сколько это будет мне стоить?
-	AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_12_01");	//Я все го лишь скромный слуга короля и мне не к лицу обдирать беззащитных граждан нашего королевства.
-	AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_12_02");	//Но, знаешь, если уж ты так ставишь вопрос, то я бы не отказался от небольшой финансовой помощи. Это укрепит наши будущие деловые отношения.
-	AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_12_03");	//Сто золотых монет будет достаточно для начала. Что скажешь?
+	AI_Output(other,self, " DIA_Mika_WASKOSTETHILFE_15_00 " );	// Well, suppose I turn to you for help. How much will it cost me?
+	AI_Output(self,other, " DIA_Mika_WASKOSTETHILFE_12_01 " );	// I'm just a humble servant of the king, and it doesn't suit me to rip off the defenseless citizens of our kingdom.
+	AI_Output(self,other, " DIA_Mika_WASKOSTETHILFE_12_02 " );	// But, you know, if that's how you put the question, I wouldn't mind a little financial help. This will strengthen our future business relationship.
+	AI_Output(self,other, " DIA_Mika_WASKOSTETHILFE_12_03 " );	// One hundred gold coins will be enough to get you started. What do you say?
 	Info_ClearChoices(DIA_Mika_WASKOSTETHILFE);
-	Info_AddChoice(DIA_Mika_WASKOSTETHILFE,"Я подумаю над этим.",DIA_Mika_WASKOSTETHILFE_nochnicht);
-	Info_AddChoice(DIA_Mika_WASKOSTETHILFE,"Почему бы и нет? Вот твои 100 монет.",DIA_Mika_WASKOSTETHILFE_ja);
+	Info_AddChoice(DIA_Mika_WASKOSTETHILFE, " I'll think about it. " ,DIA_Mika_WASKOSTETHILFE_nochnicht);
+	Info_AddChoice(DIA_Mika_WASKOSTETHILFE, " Why not? Here's your 100 coins. " ,DIA_Mika_WASKOSTETHILFE_ja);
 };
 
 func void DIA_Mika_WASKOSTETHILFE_ja()
 {
-	AI_Output(other,self,"DIA_Mika_WASKOSTETHILFE_ja_15_00");	//Почему бы и нет? Вот твои сто монет.
+	AI_Output(other,self, " DIA_Mika_WASKOSTETHILFE_ja_15_00 " );	// Why not? Here is your hundred coins.
 	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
-		AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_ja_12_01");	//Потрясающе. Если тебе понадобится моя помощь, ты знаешь, где найти меня.
-		AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_ja_12_02");	//Но будь так любезен, не отвлекай меня по всяким пустякам. Я не выношу этого, ты слышишь?
+		AI_Output(self,other, " DIA_Mika_WASKOSTETHILFE_ja_12_01 " );	// Awesome. If you need my help, you know where to find me.
+		AI_Output(self,other, " DIA_Mika_WASKOSTETHILFE_ja_12_02 " );	// But be so kind as to not distract me with trifles. I can't stand it, do you hear?
 		Mika_Helps = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_ja_12_03");	//У тебя нет денег. Но, возможно, они у тебя найдутся, когда тебе действительно понадобится моя помощь.
+		AI_Output(self,other, " DIA_Mika_WASKOSTETHILFE_ja_12_03 " );	// You don't have any money. But perhaps you will have them when you really need my help.
 	};
 	AI_StopProcessInfos(self);
 };
 
-func void DIA_Mika_WASKOSTETHILFE_nochnicht()
+func void DIA_Mika_WASKOSTETHILFE_not yet()
 {
-	AI_Output(other,self,"DIA_Mika_WASKOSTETHILFE_nochnicht_15_00");	//Я подумаю над этим.
-	AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_nochnicht_12_01");	//Как знаешь. Желаю удачно погибнуть.
+	AI_Output(other,self, " DIA_Mika_WASKOSTETHILFE_nochnicht_15_00 " );	// I'll think about it.
+	AI_Output(self,other, " DIA_Mika_WASKOSTETHILFE_nochnicht_12_01 " );	// As you know. I wish you a good death.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Mika_UEBERLEGT(C_Info)
+instance DIA_Mika_UEBERLEGT (C_Info)
 {
 	npc = Mil_337_Mika;
 	nr = 7;
 	condition = DIA_Mika_UEBERLEGT_Condition;
 	information = DIA_Mika_UEBERLEGT_Info;
 	permanent = TRUE;
-	description = "Я передумал! Я заплачу тебе сто золотых.";
+	description = " I changed my mind! I'll pay you a hundred gold. " ;
 };
 
 
 func int DIA_Mika_UEBERLEGT_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Mika_WASKOSTETHILFE) && (Mika_Helps == FALSE))
+	if (Npc_KnowsInfo(other,DIA_Mika_WASCOST_THINGS) && (Mika_Helps ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -174,27 +175,27 @@ func int DIA_Mika_UEBERLEGT_Condition()
 
 func void DIA_Mika_UEBERLEGT_Info()
 {
-	AI_Output(other,self,"DIA_Mika_UEBERLEGT_15_00");	//Я передумал! Я заплачу тебе сто золотых.
+	AI_Output(other,self, " DIA_Mika_UEBERLEGT_15_00 " );	// I changed my mind! I will pay you a hundred gold.
 	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
-		AI_Output(self,other,"DIA_Mika_UEBERLEGT_12_01");	//Превосходно! Лучше поздно, чем никогда. И что теперь?
+		AI_Output(self,other, " DIA_Mika_UEBERLEGT_12_01 " );	// Excellent! Better late than never. And now what?
 		Mika_Helps = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Mika_UEBERLEGT_12_02");	//(сердито) Возвращайся, когда у тебя будут деньги.
+		AI_Output(self,other, " DIA_Mika_UEBERLEGT_12_02 " );	// (angrily) Come back when you have the money.
 		AI_StopProcessInfos(self);
 	};
 };
 
-instance DIA_Mika_HILFE(C_Info)
+instance DIA_Mika_HILFE (C_Info)
 {
 	npc = Mil_337_Mika;
 	nr = 8;
 	condition = DIA_Mika_HILFE_Condition;
 	information = DIA_Mika_HILFE_Info;
 	permanent = TRUE;
-	description = "Мне нужна твоя помощь.";
+	description = " I need your help. " ;
 };
 
 func int DIA_Mika_HILFE_Condition()
@@ -207,74 +208,74 @@ func int DIA_Mika_HILFE_Condition()
 
 func void DIA_Mika_HILFE_Info()
 {
-	AI_Output(other,self,"DIA_Mika_HILFE_15_00");	//Мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_Mika_HILFE_12_01");	//Ну, если это так необходимо. Что случилось?
+	AI_Output(other,self, " DIA_Mika_HILFE_15_00 " );	// I need your help.
+	AI_Output(self,other, " DIA_Mika_HILFE_12_01 " );	// Well, if it's necessary. What happened?
 	Info_ClearChoices(DIA_Mika_HILFE);
-	Info_AddChoice(DIA_Mika_HILFE,"Меня преследуют бандиты.",DIA_Mika_HILFE_schongut);
-	Info_AddChoice(DIA_Mika_HILFE,"На меня напали монстры.",DIA_Mika_HILFE_monster);
-	if(!Npc_IsDead(Alvares) && !Npc_IsDead(Engardo) && (MIKAGOFARM == FALSE) && ((Akils_SLDStillthere == TRUE) || Npc_KnowsInfo(other,DIA_Sarah_Bauern)))
+	Info_AddChoice(DIA_Mika_HILFE, " Bandits are chasing me. " ,DIA_Mika_HILFE_schongut);
+	Info_AddChoice(DIA_Mika_HILFE, " Monsters attacked me. " ,DIA_Mika_HILFE_monster);
+	if ( ! Npc_IsDead(Alvares) &&  ! Npc_IsDead(Engardo) && ( MIKAGOFARM  ==  FALSE ) && ((Achilles_SLDStillthere ==  TRUE ) || Npc_KnowsInfo(other,DIA_Sarah_Bauern)));
 	{
-		Info_AddChoice(DIA_Mika_HILFE,"На фермера Акила напали наемники.",DIA_Mika_HILFE_Akil);
+		Info_AddChoice(DIA_Mika_HILFE, " Farmer Akil was attacked by mercenaries. " ,DIA_Mika_HILFE_Akil);
 	};
 	if((MIS_SALANDRILHELP == LOG_Running) && (ORCWARRIORSALANDRILISDEAD == FALSE))
 	{
-		Info_AddChoice(DIA_Mika_HILFE,"Говорят, тут неподалеку есть орк.",dia_mika_hilfe_orcsalandril);
+		Info_AddChoice(DIA_Mika_HILFE, " They say there's an orc nearby. " ,dia_mika_hilfe_orcsalandril);
 	};
 };
 
 func void DIA_Mika_HILFE_Akil()
 {
-	AI_Output(other,self,"DIA_Mika_HILFE_Akil_15_00");	//На фермера Акила напали наемники.
-	AI_Output(self,other,"DIA_Mika_HILFE_Akil_12_01");	//Что?...(возбужденно) Этот сброд ошивается вокруг фермы Акила? Тогда не будем терять времени попусту. Идем за мной!
+	AI_Output(other,self, " DIA_Mika_HILFE_Akil_15_00 " );	// Farmer Akil was attacked by mercenaries.
+	AI_Output(self,other, " DIA_Mika_HILFE_Akil_12_01 " );	// What?...(excited) Is this rabble hanging around Akil's farm? Then let's not waste time. Come follow me!
 	AI_StopProcessInfos(self);
 	MIKAGOFARM = TRUE;
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	B_GivePlayerXP(XP_Ambient);
-	B_LogEntry(TOPIC_AkilsSLDStillthere,"Мика хочет помочь мне решить проблему с наемниками, которые напали на Акила.");
+	B_LogEntry(TOPIC_AkilsSLDStillthere, " Mika wants to help me solve the problem with the mercenaries who attacked Akil. " );
 	Npc_ExchangeRoutine(self,"Akil");
 };
 
 func void DIA_Mika_HILFE_monster()
 {
-	AI_Output(other,self,"DIA_Mika_HILFE_monster_15_00");	//На меня напали монстры.
-	AI_Output(self,other,"DIA_Mika_HILFE_monster_12_01");	//Но я не вижу никаких монстров. Я думаю, тебе померещилось.
+	AI_Output(other,self, " DIA_Mika_HILFE_monster_15_00 " );	// Monsters attacked me.
+	AI_Output(self,other, " DIA_Mika_HILFE_monster_12_01 " );	// But I don't see any monsters. I think you got it.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Mika_HILFE_schongut()
 {
-	AI_Output(other,self,"DIA_Mika_HILFE_schongut_15_00");	//Меня преследуют бандиты.
-	AI_Output(self,other,"DIA_Mika_HILFE_schongut_12_01");	//Да ну? И где же они? Если бы за тобой гнались, я бы видел хотя бы одного из них, правильно?
+	AI_Output(other,self, " DIA_Mika_HILFE_schongut_15_00 " );	// I'm being chased by bandits.
+	AI_Output(self,other, " DIA_Mika_HILFE_schongut_12_01 " );	// huh? And where are they? If you were being chased, I would have seen at least one of them, right?
 	AI_StopProcessInfos(self);
 };
 
 func void dia_mika_hilfe_orcsalandril()
 {
-	AI_Output(other,self,"DIA_Mika_HILFE_OrcSalandril_01_00");	//Говорят, тут неподалеку есть орк.
-	AI_Output(self,other,"DIA_Mika_HILFE_OrcSalandril_01_01");	//Орк?! Хммм...(испуганно) Это серьезный противник!
-	AI_Output(self,other,"DIA_Mika_HILFE_OrcSalandril_01_02");	//Полагаю, что сотней золотых тебе не обойтись.
-	AI_Output(other,self,"DIA_Mika_HILFE_OrcSalandril_01_03");	//То есть как? Но мы же договорились!
-	AI_Output(self,other,"DIA_Mika_HILFE_OrcSalandril_01_04");	//Парень, я не собираюсь рисковать своей жизнью ради пары монет, тем более сражаясь с орком!
-	AI_Output(other,self,"DIA_Mika_HILFE_OrcSalandril_01_05");	//Ну, и сколько ты хочешь?
-	AI_Output(self,other,"DIA_Mika_HILFE_OrcSalandril_01_06");	//Ммм...(задумался) Пятьсот золотых и ни монетой меньше!
+	AI_Output(other,self, " DIA_Mika_HILFE_OrcSalandril_01_00 " );	// They say there's an orc nearby.
+	AI_Output(self,other, " DIA_Mika_HILFE_OrcSalandril_01_01 " );	// Orc?! Hmmm... (frightened) This is a serious opponent!
+	AI_Output(self,other, " DIA_Mika_HILFE_OrcSalandril_01_02 " );	// Guess you can't get by with a hundred gold pieces.
+	AI_Output(other,self, " DIA_Mika_HILFE_OrcSalandril_01_03 " );	// So how? But we agreed!
+	AI_Output(self,other, " DIA_Mika_HILFE_OrcSalandril_01_04 " );	// Man, I'm not going to risk my life for a couple of coins, much less fighting an orc!
+	AI_Output(other,self, " DIA_Mika_HILFE_OrcSalandril_01_05 " );	// Well, how much do you want?
+	AI_Output(self,other, " DIA_Mika_HILFE_OrcSalandril_01_06 " );	// Mmm... (thinking) Five hundred gold pieces and not a coin less!
 	MIKATELLORKS = TRUE;
 	Info_ClearChoices(DIA_Mika_HILFE);
 };
 
 
-instance DIA_MIKA_GOHUNT(C_Info)
+instance DIA_MIKA_GOHUNT (C_Info)
 {
 	npc = Mil_337_Mika;
 	nr = 1;
 	condition = dia_mika_gohunt_condition;
-	information = dia_mika_gohunt_info;
+	information = dia_mica_gohunt_info;
 	permanent = TRUE;
-	description = "Вот твои пятьсот монет. Теперь идем!";
+	description = " Here's your five hundred coins. Now let's go! " ;
 };
 
 func int dia_mika_gohunt_condition()
 {
-	if((MIS_SALANDRILHELP == LOG_Running) && (ORCWARRIORSALANDRILISDEAD == FALSE) && (MIKATELLORKS == TRUE) && (MIKATELLORKSGO == FALSE))
+	if (( MIS_SALANDRILHELP  == LOG_Running) && ( ORCWARRIORSALANDRILISDEAD  ==  FALSE ) && ( MIKATELLORKS  ==  TRUE ) && ( MIKATELLORKSGO  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -282,21 +283,21 @@ func int dia_mika_gohunt_condition()
 
 func void dia_mika_gohunt_info()
 {
-	AI_Output(other,self,"DIA_Mika_GoHunt_01_00");	//Вот твои пятьсот монет. Теперь идем!
+	AI_Output(other,self, " DIA_Mika_GoHunt_01_00 " );	// Here's your five hundred coins. Now let's go!
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,500))
 	{
-		MIKATELLORKSGO = TRUE;
-		AI_Output(self,other,"DIA_Mika_GoHunt_01_01");	//Эх. Ладно, пошли! Показывай, где этот твой орк.
+		MIKATELLORKSGO = TRUE ;
+		AI_Output(self,other, " DIA_Mika_GoHunt_01_01 " );	// Eh. Okay, let's go! Show me where this orc of yours is.
 		AI_StopProcessInfos(self);
-		self.aivar[AIV_PARTYMEMBER] = TRUE;
+		self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 		B_GivePlayerXP(XP_Ambient);
 		Npc_ExchangeRoutine(self,"Follow");
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Mika_GoHunt_01_02");	//И где они? У тебя же нет столько золота!
-		AI_Output(self,other,"DIA_Mika_GoHunt_01_03");	//Так что лучше я останусь здесь. Подальше от орков!
+		AI_Output(self,other, " DIA_Mika_GoHunt_01_02 " );	// And where are they? You don't have that much gold!
+		AI_Output(self,other, " DIA_Mika_GoHunt_01_03 " );	// So I better stay here. Away from the orcs!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -315,7 +316,7 @@ instance DIA_MIKA_GOHOME(C_Info)
 
 func int dia_mika_gohome_condition()
 {
-	if((MIS_SALANDRILHELP == LOG_Running) && (MIKATELLORKSDONE == FALSE) && (ORCWARRIORSALANDRILISDEAD == FALSE) && (MIKATELLORKSGO == TRUE) && (Npc_GetDistToWP(self,"NW_CITY_TO_FOREST_01") >= 10000))
+	if (( MIS_SALANDRILHELP  == LOG_Running) && ( MIKATELLORKSDONE  ==  FALSE ) && ( ORCWARRIORSALANDRILISDEAD  ==  FALSE ) && ( MIKATELLORKSGO  ==  TRUE ) && (Npc_GetDistToWP(self, " NW_CITY_TO_FOREST_01 " ) >=  10000 )) ;
 	{
 		return TRUE;
 	};
@@ -323,12 +324,12 @@ func int dia_mika_gohome_condition()
 
 func void dia_mika_gohome_info()
 {
-	AI_Output(self,other,"DIA_Mika_GoHome_01_00");	//Здесь нет никаких орков, приятель!
-	AI_Output(self,other,"DIA_Mika_GoHome_01_01");	//Так что лучше я вернусь обратно в город.
-	AI_Output(other,self,"DIA_Mika_GoHome_01_02");	//Эй, постой...
+	AI_Output(self,other, " DIA_Mika_GoHome_01_00 " );	// There ain't no orcs here, mate!
+	AI_Output(self,other, " DIA_Mika_GoHome_01_01 " );	// So I better get back to town.
+	AI_Output(other,self, " DIA_Mika_GoHome_01_02 " );	// Hey, wait...
 	MIKATELLORKSDONE = TRUE;
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"Start");
 };
 
@@ -353,24 +354,24 @@ func int DIA_Mika_Zack_Condition()
 
 func void DIA_Mika_Zack_Info()
 {
-	AI_Output(self,other,"DIA_Mika_Zack_12_00");	//Теперь смотри, как это делается.
+	AI_Output(self,other, " DIA_Mika_Zack_12_00 " );	// Now watch how it's done.
 	Info_AddChoice(DIA_Mika_Zack,Dialog_Ende,DIA_Mika_Zack_los);
 };
 
 func void DIA_Mika_Zack_los()
 {
 	AI_StopProcessInfos(self);
-	if(!Npc_IsDead(Alvares))
+	if ( ! Npc_IsDead(Alvares))
 	{
-		Alvares.aivar[AIV_EnemyOverride] = FALSE;
+		Alvares.aivar[AIV_EnemyOverride] = FALSE ;
 	};
-	if(!Npc_IsDead(Engardo))
+	if ( ! Npc_IsDead(Engardo))
 	{
-		Engardo.aivar[AIV_EnemyOverride] = FALSE;
+		Engardo.aivar[AIV_EnemyOverride] = FALSE ;
 	};
 };
 
-instance DIA_Mika_WIEDERNACHHAUSE(C_Info)
+instance DIA_Mika_WIEDERNACHHAUSE (C_Info)
 {
 	npc = Mil_337_Mika;
 	nr = 9;
@@ -389,9 +390,9 @@ func int DIA_Mika_WIEDERNACHHAUSE_Condition()
 
 func void DIA_Mika_WIEDERNACHHAUSE_Info()
 {
-	AI_Output(self,other,"DIA_Mika_WIEDERNACHHAUSE_12_00");	//Вот и все! Я могу возвращаться назад.
+	AI_Output(self,other, " DIA_Mika_WIEDERNACHHAUSE_12_00 " );	// That's it! I can go back.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"Start");
 	B_GivePlayerXP(XP_Ambient);
 };
@@ -410,7 +411,7 @@ instance DIA_Mika_Kap3_EXIT(C_Info)
 
 func int DIA_Mika_Kap3_EXIT_Condition()
 {
-	if(Kapitel >= 3)
+	if (Chapter >=  3 )
 	{
 		return TRUE;
 	};
@@ -427,15 +428,15 @@ instance DIA_Mika_Kap3u4u5_PERM(C_Info)
 	npc = Mil_337_Mika;
 	nr = 39;
 	condition = DIA_Mika_Kap3u4u5_PERM_Condition;
-	information = DIA_Mika_Kap3u4u5_PERM_Info;
+	information = DIA_MIKA_CAP_PERM_Info;
 	permanent = TRUE;
-	description = "Все тихо?";
+	description = " Is everything quiet? " ;
 };
 
 
 func int DIA_Mika_Kap3u4u5_PERM_Condition()
 {
-	if((Kapitel >= 3) && Npc_KnowsInfo(other,DIA_Mika_WOHIN) && Npc_IsDead(Alvares) && Npc_IsDead(Engardo))
+	if ((Capital >=  3 ) && Npc_KnowsInfo(other,DIA_Mika_WOHIN) && Npc_IsDead(Alvares) && Npc_IsDead(Engardo));
 	{
 		return TRUE;
 	};
@@ -444,7 +445,7 @@ func int DIA_Mika_Kap3u4u5_PERM_Condition()
 func void DIA_Mika_Kap3u4u5_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Mika_Kap3u4u5_PERM_15_00");	//Все тихо?
-	AI_Output(self,other,"DIA_Mika_Kap3u4u5_PERM_12_01");	//Ты все еще жив? Надо же!
+	AI_Output(self,other, " DIA_Mika_Kap3u4u5_PERM_12_01 " );	// Are you still alive? Wow!
 };
 
 
@@ -461,7 +462,7 @@ instance DIA_Mika_PICKPOCKET(C_Info)
 
 func int DIA_Mika_PICKPOCKET_Condition()
 {
-	return C_Beklauen(65,75);
+	return  C_Robbery ( 65 , 75 );
 };
 
 func void DIA_Mika_PICKPOCKET_Info()
@@ -473,7 +474,7 @@ func void DIA_Mika_PICKPOCKET_Info()
 
 func void DIA_Mika_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Mika_PICKPOCKET);
 };
 
@@ -489,12 +490,12 @@ instance DIA_Mika_Key(C_Info)
 	condition = DIA_Mika_Key_Condition;
 	information = DIA_Mika_Key_Info;
 	permanent = FALSE;
-	description = "Ты не находил тут никакого ключа?";
+	description = " Did you find any clue here? " ;
 };
 
 func int DIA_Mika_Key_Condition()
 {
-	if((MIS_Constantino_LostKey == LOG_Running) && (MikaHaveKey == TRUE))
+	if (( MY_Constantine_LostKey == LOG_Running ) && ( MikaHaveKey ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -502,14 +503,14 @@ func int DIA_Mika_Key_Condition()
 
 func void DIA_Mika_Key_Info()
 {
-	AI_Output(other,self,"DIA_Mika_Key_01_00");	//Ты не находил тут никакого ключа?
-	AI_Output(self,other,"DIA_Mika_Key_01_01");	//Находил. Вон под той елкой валялся. Видать, кто-то обронил по неосторожности.
-	AI_Output(other,self,"DIA_Mika_Key_01_02");	//А не мог бы ты отдать его мне?
-	AI_Output(self,other,"DIA_Mika_Key_01_03");	//Конечно, приятель. О чем речь.
-	AI_Output(self,other,"DIA_Mika_Key_01_04");	//Только за это ты мне заплатишь, скажем... пятьдесят золотых монет. Договорились?
-	AI_Output(other,self,"DIA_Mika_Key_01_05");	//А не слишком ли много за какой-то там ключ?
-	AI_Output(self,other,"DIA_Mika_Key_01_06");	//Дешевле я тебе его не отдам. Так что если он тебе действительно нужен, то придется раскошелиться.
-	B_LogEntry(TOPIC_Constantino_LostKey,"Ключ Константино нашел Мика. Но он отдаст его мне только за полсотни монет.");
+	AI_Output(other,self, " DIA_Mika_Key_01_00 " );	// Did you find any key here?
+	AI_Output(self,other, " DIA_Mika_Key_01_01 " );	// Found. There he was lying under that tree. Looks like someone accidentally dropped it.
+	AI_Output(other,self, " DIA_Mika_Key_01_02 " );	// Could you give it to me?
+	AI_Output(self,other, " DIA_Mika_Key_01_03 " );	// Of course, mate. What are we talking about.
+	AI_Output(self,other, " DIA_Mika_Key_01_04 " );	// Only for this you will pay me, say... fifty gold coins. Deal?
+	AI_Output(other,self, " DIA_Mika_Key_01_05 " );	// Isn't it too much for some kind of key?
+	AI_Output(self,other, " DIA_Mika_Key_01_06 " );	// I won't give it to you cheaper. So if you really need it, you will have to fork out.
+	B_LogEntry(TOPIC_Constantino_LostKey, " Mick found Constantino's key. But he'll only give it to me for fifty coins. " );
 };
 
 instance DIA_Mika_KeyDone(C_Info)
@@ -519,12 +520,12 @@ instance DIA_Mika_KeyDone(C_Info)
 	condition = DIA_Mika_KeyDone_Condition;
 	information = DIA_Mika_KeyDone_Info;
 	permanent = TRUE;
-	description = "Давай сюда ключ.";
+	description = " Give me the key here. " ;
 };
 
 func int DIA_Mika_KeyDone_Condition()
 {
-	if((MIS_Constantino_LostKey == LOG_Running) && (MikaGiveKey == FALSE) && (Npc_KnowsInfo(other,DIA_Mika_Key) == TRUE) && (MikaHaveKey == TRUE))
+	if ((MIS_Constantino_LostKey == LOG_Running) && (MikaGiveKey ==  FALSE ) && (Npc_KnowsInfo(other,DIA_Mika_Key) ==  TRUE ) && (MikaHaveKey ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -532,23 +533,23 @@ func int DIA_Mika_KeyDone_Condition()
 
 func void DIA_Mika_KeyDone_Info()
 {
-	AI_Output(other,self,"DIA_Mika_KeyDone_01_00");	//Давай сюда ключ.
+	AI_Output(other, self, " DIA_Mika_KeyDone_01_00 " );	// Give me the key here.
 	AI_Output(self,other,"DIA_Mika_KeyDone_01_01");	//А деньги?
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
 		Npc_RemoveInvItems(self,ItMi_Gold,50);
-		AI_Output(other,self,"DIA_Mika_KeyDone_01_02");	//Вот, тут полсотни золотых монет.
-		AI_Output(self,other,"DIA_Mika_KeyDone_01_03");	//Хорошо. Тогда держи свой ключ.
+		AI_Output(other,self, " DIA_Mika_KeyDone_01_02 " );	// Here, there are fifty gold coins.
+		AI_Output(self,other, " DIA_Mika_KeyDone_01_03 " );	// Good. Then hold your key.
 		B_GiveInvItems(self,other,ItKe_Constantino,1);
-		AI_Output(self,other,"DIA_Mika_KeyDone_01_04");	//Честная сделка, не правда ли?
+		AI_Output(self,other, " DIA_Mika_KeyDone_01_04 " );	// Fair deal, isn't it?
 		AI_Output(other,self,"DIA_Mika_KeyDone_01_05");	//Да уж.
 		MikaGiveKey = TRUE;
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Mika_KeyDone_01_06");	//У меня пока нет столько денег.
-		AI_Output(self,other,"DIA_Mika_KeyDone_01_07");	//Тогда найди их. А ключ пока побудет у меня.
+		AI_Output(other,self, " DIA_Mika_KeyDone_01_06 " );	// I don't have that much money yet.
+		AI_Output(self,other, " DIA_Mika_KeyDone_01_07 " );	// Then find them. For now, I'll have the key.
 	};
 };
 
@@ -559,7 +560,7 @@ instance DIA_Mika_Werewolf(C_Info)
 	condition = DIA_Mika_Werewolf_Condition;
 	information = DIA_Mika_Werewolf_Info;
 	permanent = FALSE;
-	description = "Ты что-нибудь слышал о нападениях на людей в последнее время?";
+	description = " Have you heard anything about attacks on people lately? " ;
 };
 
 func int DIA_Mika_Werewolf_Condition()
@@ -573,21 +574,21 @@ func int DIA_Mika_Werewolf_Condition()
 func void DIA_Mika_Werewolf_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Mika_Werewolf_01_00");	//Ты что-нибудь слышал о нападениях на людей в последнее время?
-	AI_Output(self,other,"DIA_Mika_Werewolf_01_01");	//Да, было дело. Недавно на ферме Акила какой-то зверь задрал одного из крестьян.
-	AI_Output(other,self,"DIA_Mika_Werewolf_01_02");	//Вы что-то предприняли по этому случаю?
-	AI_Output(self,other,"DIA_Mika_Werewolf_01_03");	//Ну, лорд Андрэ отправил туда несколько своих парней.
-	AI_Output(self,other,"DIA_Mika_Werewolf_01_04");	//Но кроме следов крови и разорванной одежды они там ничего не нашли. 
-	AI_Output(self,other,"DIA_Mika_Werewolf_01_05");	//По всей видимости, монстр унес свою добычу далеко в лес.
-	B_LogEntry(TOPIC_WolfAndMan,"По словам Мики, недавно какой-то зверь задрал одного из крестьян на ферме Акила.");
+	AI_Output(other,self, " DIA_Mika_Werewolf_01_00 " );	// Have you heard anything about attacks on people lately?
+	AI_Output(self,other, " DIA_Mika_Werewolf_01_01 " );	// Yes, it was. Recently, at the Akila farm, one of the peasants was killed by some beast.
+	AI_Output(other,self, " DIA_Mika_Werewolf_01_02 " );	// Did you do something about this?
+	AI_Output(self,other, " DIA_Mika_Werewolf_01_03 " );	// Well, Lord Andre sent some of his guys there.
+	AI_Output(self,other, " DIA_Mika_Werewolf_01_04 " );	// But apart from traces of blood and torn clothes, they found nothing there.
+	AI_Output(self,other, " DIA_Mika_Werewolf_01_05 " );	// Apparently, the monster took its prey far into the forest.
+	B_LogEntry(TOPIC_WolfAndMan, " According to Micah, one of the peasants at Akila's farm was recently killed by some beast. " );
 };
 
 
-//----------------------охрана----------------------------------------
+// ----------------------guard------------------------ ---------------
 
 const string Mil_360_Checkpoint = "NW_CASTLEMINE_PATH_02";
 
-instance DIA_Mil_360_Miliz_EXIT(C_Info)
+instance DIA_Mil_360_Miliz_EXIT (C_Info)
 {
 	npc = Mil_360_Miliz;
 	nr = 999;
@@ -602,7 +603,7 @@ func int DIA_Mil_360_Miliz_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Mil_360_Miliz_EXIT_Info()
+func void DAY_Thousand_360_Miliz_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
@@ -629,13 +630,13 @@ func int DIA_Mil_360_Miliz_FirstWarn_Condition()
 func void DIA_Mil_360_Miliz_FirstWarn_Info()
 {
 	AI_Output(self,other,"DIA_Mil_360_Miliz_FirstWarn_03_00");	//СТОЙ!
-	AI_Output(self,other,"DIA_Mil_360_Miliz_FirstWarn_03_01");	//Дальше прохода нет! Это частные владения!
+	AI_Output(self,other, " DIA_Mil_360_Miliz_FirstWarn_03_01 " );	// There is no further passage! This is private property!
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_360_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
 };
 
 
-instance DIA_Mil_360_Miliz_SecondWarn(C_Info)
+instances of DIA_Mil_360_Miliz_SecondWarn (C_Info)
 {
 	npc = Mil_360_Miliz;
 	nr = 2;
@@ -656,14 +657,14 @@ func int DIA_Mil_360_Miliz_SecondWarn_Condition()
 
 func void DIA_Mil_360_Miliz_SecondWarn_Info()
 {
-	AI_Output(self,other,"DIA_Mil_360_Miliz_SecondWarn_03_00");	//Я последний раз предупреждаю тебя. Еще один шаг - и ты познакомишься с моим мечом.
+	AI_Output(self,other, " DIA_Mil_360_Miliz_SecondWarn_03_00 " );	// I'm warning you for the last time. One more step and you will be acquainted with my sword.
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_360_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Mil_360_Miliz_Attack(C_Info)
+instance DIA_Mil_360_Miliz_Attack (C_Info)
 {
 	npc = Mil_360_Miliz;
 	nr = 3;
@@ -684,8 +685,8 @@ func int DIA_Mil_360_Miliz_Attack_Condition()
 func void DIA_Mil_360_Miliz_Attack_Info()
 {
 	other.aivar[AIV_LastDistToWP] = 0;
-	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
-	AI_Output(self,other,"DIA_Mil_360_Miliz_Attack_03_00");	//Ты сам напросился...
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
+	AI_Output(self,other, " DIA_Mil_360_Miliz_Attack_03_00 " );	// You asked for it...
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
@@ -697,7 +698,7 @@ instance DIA_Mil_360_Miliz_FirstInTower(C_Info)
 	condition = DIA_Mil_360_Miliz_FirstInTower_condition;
 	information = DIA_Mil_360_Miliz_FirstInTower_info;
 	permanent = TRUE;
-	description = "Спокойно! Вот документы.";
+	description = " Calm down! Here are the documents. " ;
 };
 
 func int DIA_Mil_360_Miliz_FirstInTower_condition()
@@ -710,32 +711,32 @@ func int DIA_Mil_360_Miliz_FirstInTower_condition()
 
 func void DIA_Mil_360_Miliz_FirstInTower_info()
 {
-	AI_Output(other,self,"DIA_Mil_360_Miliz_FirstInTower_15_00");	//Спокойно! Вот документы.
+	AI_Output(other,self, " DIA_Mil_360_Miliz_FirstInTower_15_00 " );	// Calm down! Here are the documents.
 	B_GiveInvItems(other,self,ItWr_HagenLoanDocs,1);
-	AI_Output(self,other,"DIA_Mil_360_Miliz_FirstInTower_15_01");	//Ну давай взглянем на них.
+	AI_Output(self,other, " DIA_Mil_360_Miliz_FirstInTower_15_01 " );	// Well, let's take a look at them.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Mil_360_Miliz_FirstInTower_15_02");	//Хммм... Вроде все в порядке! Так значит, это ты новый владелец?
+	AI_Output(self,other, " DIA_Mil_360_Miliz_FirstInTower_15_02 " );	// Hmmm... Everything seems to be in order! So you are the new owner?
 	B_GiveInvItems(self,other,ItWr_HagenLoanDocs,1);
-	AI_Output(other,self,"DIA_Mil_360_Miliz_FirstInTower_15_03");	//Там все написано. А теперь впусти меня в мою башню!
-	AI_Output(self,other,"DIA_Mil_360_Miliz_FirstInTower_15_04");	//Конечно, проходи. Будут еще какие-нибудь распоряжения?
-	AI_Output(other,self,"DIA_Mil_360_Miliz_FirstInTower_15_05");	//Хммм... Возможно, в дальнейшем сюда будут приходить другие люди. Ты будешь спрашивать у них пароль.
-	AI_Output(other,self,"DIA_Mil_360_Miliz_FirstInTower_15_06");	//Паролем будет фраза - 'Драконовы сокровища'. Всех, кто будет знать пароль, ты пропустишь. Остальных - нет!
-	AI_Output(self,other,"DIA_Mil_360_Miliz_FirstInTower_15_07");	//Хорошо. Будет сделано!
+	AI_Output(other,self, " DIA_Mil_360_Miliz_FirstInTower_15_03 " );	// Everything is written there. Now let me into my tower!
+	AI_Output(self,other, " DIA_Mil_360_Miliz_FirstInTower_15_04 " );	// Sure, go ahead. Any other orders?
+	AI_Output(other,self, " DIA_Mil_360_Miliz_FirstInTower_15_05 " );	// Hmmm... Maybe other people will come here in the future. You will ask them for a password.
+	AI_Output(other,self, " DIA_Mil_360_Miliz_FirstInTower_15_06 " );	// The password will be the phrase - 'Dragon Treasures'. Anyone who knows the password, you will miss. The rest - no!
+	AI_Output(self,other, " DIA_Mil_360_Miliz_FirstInTower_15_07 " );	// Good. Will be done!
 	PasswordSet = TRUE;
-	self.aivar[AIV_PASSGATE] = TRUE;
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Guard");
 	B_StartOtherRoutine(Mil_361_Miliz,"Guard");
 };
 
-instance DIA_Mil_360_Miliz_PERM(C_Info)
+instance DIA_Mil_360_Miliz_PERM (C_Info)
 {
 	npc = Mil_360_Miliz;
 	nr = 1;
 	condition = DIA_Mil_360_Miliz_PERM_Condition;
 	information = DIA_Mil_360_Miliz_PERM_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 func int DIA_Mil_360_Miliz_PERM_Condition()
@@ -748,11 +749,11 @@ func int DIA_Mil_360_Miliz_PERM_Condition()
 
 func void DIA_Mil_360_Miliz_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Mil_360_Miliz_PERM_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Mil_360_Miliz_PERM_03_01");	//Все хорошо, друг!
+	AI_Output(other,self, " DIA_Mil_360_Miliz_PERM_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Mil_360_Miliz_PERM_03_01 " );	// All is well, friend!
 };
 
-instance DIA_Mil_361_Miliz_EXIT(C_Info)
+instance DIA_Mil_361_Miliz_EXIT (C_Info)
 {
 	npc = Mil_361_Miliz;
 	nr = 999;
@@ -767,19 +768,19 @@ func int DIA_Mil_361_Miliz_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Mil_361_Miliz_EXIT_Info()
+func void DAY_Mil_361_Miliz_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Mil_361_Miliz_Hallo(C_Info)
+instance DIA_Mil_361_Miliz_Hello (C_Info)
 {
 	npc = Mil_361_Miliz;
 	nr = 2;
 	condition = DIA_Mil_361_Miliz_Hallo_Condition;
 	information = DIA_Mil_361_Miliz_Hallo_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 func int DIA_Mil_361_Miliz_Hallo_Condition()
@@ -792,11 +793,11 @@ func int DIA_Mil_361_Miliz_Hallo_Condition()
 
 func void DIA_Mil_361_Miliz_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_Mil_309_Stadtwache_Hallo_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Mil_309_Stadtwache_Hallo_06_01");	//Все в порядке! Но мы должны быть настороже.
+	AI_Output(other,self, " DIA_Mil_309_Stadtwache_Hallo_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Mil_309_Stadtwache_Hallo_06_01 " );	// All right! But we must be careful.
 };
 
-instance DIA_Mil_363_Miliz_EXIT(C_Info)
+instance DIA_Mil_363_Miliz_EXIT (C_Info)
 {
 	npc = Mil_363_Miliz;
 	nr = 999;
@@ -811,12 +812,12 @@ func int DIA_Mil_363_Miliz_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Mil_363_Miliz_EXIT_Info()
+func void DAY_Thousand_363_Thousand_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Mil_362_Miliz_EXIT(C_Info)
+instance DIA_Mil_362_Miliz_EXIT (C_Info)
 {
 	npc = Mil_362_Miliz;
 	nr = 999;
@@ -831,7 +832,7 @@ func int DIA_Mil_362_Miliz_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Mil_362_Miliz_EXIT_Info()
+func void DAY_Thousand_362_Thousand_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
