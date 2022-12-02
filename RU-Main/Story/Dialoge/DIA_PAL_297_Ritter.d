@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_297_EXIT(C_Info)
 {
 	npc = PAL_297_Ritter;
@@ -28,7 +29,7 @@ instance DIA_PAL_297_TRESPAS(C_Info)
 	condition = DIA_PAL_297_TRESPAS_Condition;
 	information = DIA_PAL_297_TRESPAS_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -39,14 +40,14 @@ func int DIA_PAL_297_TRESPAS_Condition()
 
 func void DIA_PAL_297_TRESPAS_Info()
 {
-	AI_Output(other,self,"DIA_PAL_297_TRESPAS_15_00");	//Как дела?
-	if(Kapitel == 1)
+	AI_Output(other,self, " DIA_PAL_297_TRESPAS_15_00 " );	// How are you?
+	if (chapter ==  1 )
 	{
-		AI_Output(self,other,"DIA_PAL_297_TRESPAS_04_01");	//Здесь очень опасно, так что тебе лучше повернуть назад - мы не хотим, чтобы с тобой что-нибудь произошло.
+		AI_Output(self,other, " DIA_PAL_297_TRESPAS_04_01 " );	// It's very dangerous here, so you'd better turn back - we don't want anything to happen to you.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PAL_297_TRESPAS_04_02");	//Ты очень мужественный, если хочешь войти в Долину. Не забудь взять с собой побольше лечебных зелий.
+		AI_Output(self,other, " DIA_PAL_297_TRESPAS_04_02 " );	// You are very courageous if you want to enter the Valley. Don't forget to bring more healing potions with you.
 	};
 };
 
@@ -57,7 +58,7 @@ instance DIA_Addon_PAL_297_Rangerbandits(C_Info)
 	nr = 5;
 	condition = DIA_Addon_PAL_297_Rangerbandits_Condition;
 	information = DIA_Addon_PAL_297_Rangerbandits_Info;
-	description = "Не было ли здесь недавно бандитов?";
+	description = " Were there bandits here recently? " ;
 };
 
 
@@ -71,8 +72,8 @@ func int DIA_Addon_PAL_297_Rangerbandits_Condition()
 
 func void DIA_Addon_PAL_297_Rangerbandits_Info()
 {
-	AI_Output(other,self,"DIA_Addon_PAL_297_Rangerbandits_15_00");	//Не было ли здесь недавно бандитов?
-	AI_Output(self,other,"DIA_Addon_PAL_297_Rangerbandits_04_01");	//Не понимаю, о чем ты говоришь. Пока мы были на страже, не проходил никто. И уж конечно, здесь не было никаких бандитов.
-	AI_Output(self,other,"DIA_Addon_PAL_297_Rangerbandits_04_02");	//Попробуй спросить крестьян. Может, они что-нибудь видели.
+	AI_Output(other,self, " DIA_Addon_PAL_297_Rangerbandits_15_00 " );	// Were there bandits here recently?
+	AI_Output(self,other, " DIA_Addon_PAL_297_Rangerbandits_04_01 " );	// I don't understand what you're talking about. While we were on guard, no one passed. And of course, there were no bandits here.
+	AI_Output(self,other, " DIA_Addon_PAL_297_Rangerbandits_04_02 " );	// Try asking the peasants. Maybe they saw something.
 };
 
