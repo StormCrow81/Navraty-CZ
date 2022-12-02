@@ -1,4 +1,5 @@
 
+
 var int dia_addon_vatras_pissoffforevver_li_onetime;
 var int trd_vatli;
 
@@ -22,14 +23,14 @@ func void dia_vatras_li_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_VATRAS_LI_HEAL(C_Info)
+instance DIA_VATRAS_LI_HEAL (C_Info)
 {
 	npc = vlk_439_vatras_li;
 	nr = 99;
 	condition = dia_vatras_li_heal_condition;
 	information = dia_vatras_li_heal_info;
 	permanent = TRUE;
-	description = "Вылечи меня. ";
+	description = " Heal me. " ;
 };
 
 func int dia_vatras_li_heal_condition()
@@ -39,17 +40,17 @@ func int dia_vatras_li_heal_condition()
 
 func void dia_vatras_li_heal_info()
 {
-	AI_Output(other,self,"DIA_Vatras_DI_HEAL_15_00");	//Вылечи меня.
+	AI_Output(other,self, " DIA_Vatras_DI_HEAL_15_00 " );	// Heal me.
 
 	if(hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX])
 	{
-		AI_Output(self,other,"DIA_Vatras_DI_HEAL_05_01");	//Аданос, благослови его! Он будет тем, кто восстановит равновесие мира.
+		AI_Output(self,other, " DIA_Vatras_DI_HEAL_05_01 " );	// Adanos, bless him! He will be the one to restore the balance of the world.
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
 		AI_Print(PRINT_FullyHealed);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Vatras_DI_HEAL_05_02");	//Твое тело не повреждено!
+		AI_Output(self,other, " DIA_Vatras_DI_HEAL_05_02 " );	// Your body is intact!
 	};
 };
 
@@ -62,7 +63,7 @@ instance DIA_VATRAS_LI_TRADE(C_Info)
 	information = dia_vatras_li_trade_info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Ты можешь мне что-нибудь продать?";
+	description = " Can you sell me something? " ;
 };
 
 
@@ -79,10 +80,10 @@ func void dia_vatras_li_trade_info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Vatras_DI_TRADE_15_00");	//Ты можешь продать мне что-нибудь продать?
-	AI_Output(self,other,"DIA_Vatras_DI_TRADE_05_01");	//В чем ты нуждаешься?
+	AI_Output(other,self, " DIA_Vatras_DI_TRADE_15_00 " );	// Can you sell me something to sell?
+	AI_Output(self,other, " DIA_Vatras_DI_TRADE_05_01 " );	// What do you need?
 
-	if(TRD_VATLI != TRUE)
+	if ( TRD_VATLI  !=  TRUE )
 	{
 		CreateInvItems(self,ItPo_HealObsession_MIS,2);
 		CreateInvItems(self,ItPl_Temp_Herb,4);
@@ -97,7 +98,7 @@ func void dia_vatras_li_trade_info()
 		CreateInvItems(self,ItPo_Health_03,10);
 		CreateInvItems(self,ItPo_Mana_02,12);
 		CreateInvItems(self,ItPo_Mana_03,10);
-		TRD_VATLI = TRUE;
+		TRD_VATLI = TRUE ;
 	};
 
 	B_GiveTradeInv(self);
@@ -123,26 +124,26 @@ func int dia_vatras_li_vatrassucked_condition()
 
 func void dia_vatras_li_vatrassucked_info()
 {
-	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_00");	//Убирайся с глаз моих, убийца! Ты не можешь больше рассчитывать на мою помощь!
-	AI_Output(other,self,"DIA_Vatras_DI_VatrasSucked_05_10");	//Неужели после всего, что я сделал, ты до сих пор отказываешься выслушать меня?
-	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_11");	//Да, твои заслуги велики! Но они не оправдывают всех тех вещей, которые ты натворил ранее.
-	AI_Output(other,self,"DIA_Vatras_DI_VatrasSucked_05_12");	//Но все мы, люди, иногда ошибаемся в своих поступках.
-	AI_Output(other,self,"DIA_Vatras_DI_VatrasSucked_05_13");	//Признаю, что был не прав, творя подобные злодеяния. Прости меня, отче! Смени уже свой гнев на милость.
-	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_14");	//Хммм...(сомнительно) Это не так легко сделать, как тебе кажется, сын мой.
-	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_15");	//Конечно я могу тебя простить, но вот простит ли тебя Аданос?
-	AI_Output(other,self,"DIA_Vatras_DI_VatrasSucked_05_16");	//Я постараюсь выпросить прощение и у него.
-	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_17");	//Что же...(серьезно) Надеюсь, что твои слова также же серьезны, как и твои намерения!
-	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_18");	//Хорошо, считай что ты прощен! Пусть сами боги решают, что с тобой делать за твои грехи.
+	AI_Output(self,other, " DIA_Vatras_DI_VatrasSucked_05_00 " );	// Get out of my sight, murderer! You can no longer count on my help!
+	AI_Output(other,self, " DIA_Vatras_DI_VatrasSucked_05_10 " );	// After everything I've done, you still refuse to listen to me?
+	AI_Output(self,other, " DIA_Vatras_DI_VatrasSucked_05_11 " );	// Yes, your merits are great! But they don't justify all the things you've done before.
+	AI_Output(other,self, " DIA_Vatras_DI_VatrasSucked_05_12 " );	// But all of us, humans, sometimes make mistakes in our actions.
+	AI_Output(other,self, " DIA_Vatras_DI_VatrasSucked_05_13 " );	// I admit that I was wrong in doing such atrocities. Forgive me, father! Change your anger to mercy.
+	AI_Output(self,other, " DIA_Vatras_DI_VatrasSucked_05_14 " );	// Hmmm...(doubtful) It's not as easy as you think, my son.
+	AI_Output(self,other, " DIA_Vatras_DI_VatrasSucked_05_15 " );	// Of course I can forgive you, but will Adanos forgive you?
+	AI_Output(other,self, " DIA_Vatras_DI_VatrasSucked_05_16 " );	// I'll try to beg forgiveness from him too.
+	AI_Output(self,other, " DIA_Vatras_DI_VatrasSucked_05_17 " );	// Well... (seriously) I hope your words are as serious as your intentions!
+	AI_Output(self,other, " DIA_Vatras_DI_VatrasSucked_05_18 " );	// Okay, consider yourself forgiven! Let the gods themselves decide what to do with you for your sins.
 	VATRASFORGIVENME = TRUE;
 };
 
-instance DIA_VATRAS_LI_TALENTE(C_Info)
+instance DIA_VATRAS_LI_TALENTE (C_Info)
 {
 	npc = vlk_439_vatras_li;
 	condition = dia_vatras_li_talente_condition;
 	information = dia_vatras_li_talente_info;
 	permanent = TRUE;
-	description = "Обучи меня своим способностям.";
+	description = " Teach me your abilities. " ;
 };
 
 func int dia_vatras_li_talente_condition()
@@ -152,16 +153,16 @@ func int dia_vatras_li_talente_condition()
 
 func void dia_vatras_li_talente_info()
 {
-	AI_Output(other,self,"DIA_Vatras_DI_Talente_15_00");	//Обучи меня своим способностям.
-	AI_Output(self,other,"DIA_Vatras_DI_Talente_05_01");	//Я сделаю все, что в моих силах.
+	AI_Output(other,self, " DIA_Vatras_DI_Talente_15_00 " );	// Teach me your abilities.
+	AI_Output(self,other, " DIA_Vatras_DI_Talente_05_01 " );	// I'll do my best.
 	Info_ClearChoices(dia_vatras_li_talente);
 	Info_AddChoice(dia_vatras_li_talente,Dialog_Back,dia_vatras_li_talente_back);
-	if((hero.guild == GIL_KDW) || (hero.guild == GIL_KDF) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR))
+	if ((hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_KDF ) || (hero.guild ==  GIL_KDM ) || (hero.guild ==  GIL_GUR ))
 	{
-		Info_AddChoice(dia_vatras_li_talente,"Изучать круги магии",dia_vatras_li_talente_circles);
+		Info_AddChoice(dia_vatras_li_talente, " Learn Magic Circles " ,dia_vatras_li_talente_circles);
 	};
 
-	Info_AddChoice(dia_vatras_li_talente,"Изучать алхимию",dia_vatras_li_talente_alchimie);
+	Info_AddChoice(dia_vatras_li_talente, " Learn Alchemy " ,dia_vatras_li_talente_alchimie);
 };
 
 func void dia_vatras_li_talente_circles()
@@ -170,15 +171,15 @@ func void dia_vatras_li_talente_circles()
 	Info_AddChoice(dia_vatras_li_talente,Dialog_Back,dia_vatras_li_talente_back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3)
 	{
-		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString("4 Круг магии",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,4)),dia_vatras_li_talente_circle_4);
+		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString( " 4 Круг магии " ,B_GetLearnCostTalent(other, NPC_TALENT_MAGE , 4 )),dia_vatras_li_talente_circle_4);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4)
 	{
-		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString("5 Круг магии",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,5)),dia_vatras_li_talente_circle_5);
+		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString( " 5 Круг магии " ,B_GetLearnCostTalent(other, NPC_TALENT_MAGE , 5 )),dia_vatras_li_talente_circle_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5)
 	{
-		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString("6 Круг магии",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,6)),dia_vatras_li_talente_circle_6);
+		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString( " 6 Круг магии " ,B_GetLearnCostTalent(other, NPC_TALENT_MAGE , 6 )),dia_vatras_li_talente_circle_6);
 	};
 };
 
@@ -188,35 +189,35 @@ func void dia_vatras_li_talente_alchimie()
 	Info_AddChoice(dia_vatras_li_talente,Dialog_Back,dia_vatras_li_talente_back);
 	if(PLAYER_TALENT_ALCHEMY[POTION_Health_01] == FALSE)
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Лечебная эссенция ",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Health_01)),dia_vatras_li_talente_potion_health_01);
+		Info_AddChoice(dia_vatras_li_talent,b_buildlearnstringforalchemy( " Material Cost " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Health_01)),dia_vatras_li_talent_potion_01);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_02] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Лечебный экстракт ",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Health_02)),dia_vatras_li_talente_potion_health_02);
+		Info_AddChoice(dia_vatras_li_talent,b_buildlearnstringforalchemy( " Chemical Cost " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Health_02)),dia_vatras_li_talent_02_potion_health);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Лечебный эликсир",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Health_03)),dia_vatras_li_talente_potion_health_03);
+		Info_AddChoice(dia_vatras_li_talent,b_buildlearnstringforalchemy( " Magic " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Health_03)),dia_vatras_li_talent_potion_03);
 	};
 	if(PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == FALSE)
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Эссенция маны ",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Mana_01)),dia_vatras_li_talente_potion_mana_01);
+		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy( " Ессенция маны " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Mana_01)),dia_vatras_li_talente_potion_mana_01);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Экстракт маны ",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Mana_02)),dia_vatras_li_talente_potion_mana_02);
+		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy( " Екстракт маны " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Mana_02)),dia_vatras_li_talente_potion_mana_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Эликсир маны ",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Mana_03)),dia_vatras_li_talente_potion_mana_03);
+		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy( " Эликсир маны " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Mana_03)),dia_vatras_li_talente_potion_mana_03);
 	};
 	if(PLAYER_TALENT_ALCHEMY[POTION_Speed] == FALSE)
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Напиток ускорения ",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Speed)),dia_vatras_li_talente_potion_speed);
+		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy( " Напиток экспления " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Speed)),dia_vatras_li_talente_potion_speed);
 	}
 	else if(PLAYER_TALENT_ALCHEMY[15] == FALSE)
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Двойной напиток ускорения ",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_SPEED_02)),dia_vatras_di_talente_potion_speed_02);
+		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy( " Double Speed ​​Drink " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY , POTION_SPEED_02 )),dia_vatras_di_talente_potion_speed_02);
 	};
 	if(PLAYER_TALENT_ALCHEMY[POTION_Perm_STR] == FALSE)
 	{
@@ -224,11 +225,11 @@ func void dia_vatras_li_talente_alchimie()
 	};
 	if(PLAYER_TALENT_ALCHEMY[POTION_Perm_DEX] == FALSE)
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Эликсир ловкости",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Perm_DEX)),dia_vatras_li_talente_potion_perm_dex);
+		Info_AddChoice(dia_vatras_li_talent,b_buildlearnstringforalchemy( " Learn CostTalent " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_PERM_DEX)),dia_vatras_li_talent_potion_perm_dex);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Mana] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy("Эликсир духа",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY,POTION_Perm_Mana)),dia_vatras_li_talente_potion_perm_mana);
+		Info_AddChoice(dia_vatras_li_talente,b_buildlearnstringforalchemy( " Эликсир духа " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Perm_Mana)),dia_vatras_li_talente_potion_perm_mana);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE))
 	{
@@ -244,15 +245,15 @@ func void dia_vatras_li_talente_circle_4()
 
 func void dia_vatras_li_talente_circle_5()
 {
-	AI_Output(self,other,"DIA_Vatras_DI_Talente_Circle_5_05_00");	//Теперь ты маг пятого круга! Обдуманно используй доступные тебе заклинания.
+	AI_Output(self,other, " DIA_Vatras_DI_Talente_Circle_5_05_00 " );	// Now you're a mage of the fifth circle! Use your spells wisely.
 	Info_ClearChoices(dia_vatras_li_talente);
 	B_TeachMagicCircle(self,other,5);
 };
 
 func void dia_vatras_li_talente_circle_6()
 {
-	AI_Output(self,other,"DIA_Vatras_DI_Talente_Circle_6_05_00");	//Теперь ты имеешь доступ к высшему знанию магии.
-	AI_Output(self,other,"DIA_Vatras_DI_Talente_Circle_6_05_01");	//Руководствуйся разумом и знай свои человеческие слабости. Они могут разрушить тебя.
+	AI_Output(self,other, " DIA_Vatras_DI_Talente_Circle_6_05_00 " );	// You now have access to the higher knowledge of magic.
+	AI_Output(self,other, " DIA_Vatras_DI_Talente_Circle_6_05_01 " );	// Be guided by reason and know your human weaknesses. They can destroy you.
 	Info_ClearChoices(dia_vatras_li_talente);
 	B_TeachMagicCircle(self,other,6);
 };
@@ -329,7 +330,7 @@ instance DIA_ADDON_VATRAS_LI_MISSMYGOLD(C_Info)
 	condition = dia_addon_vatras_li_missmygold_condition;
 	information = dia_addon_vatras_li_missmygold_info;
 	permanent = FALSE;
-	description = "А служитель Аданоса случайно не знает, куда подевалось мое золото?";
+	description = " Does the servant of Adanos happen to know where my gold went? " ;
 };
 
 
@@ -343,9 +344,9 @@ func int dia_addon_vatras_li_missmygold_condition()
 
 func void dia_addon_vatras_li_missmygold_info()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_LI_MissMyGold_01_01");	//А служитель Аданоса случайно не знает, куда подевалось мое золото?
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_MissMyGold_01_02");	//Мне это неведомо, сын мой...(серьезно) К тому же подобного рода вещи меня мало интересуют.
-	B_LogEntry(TOPIC_MISSMYGOLD,"Естественно, Ватрас ничего не знает о пропаже моего золота.");
+	AI_Output(other,self, " DIA_Addon_Vatras_LI_MissMyGold_01_01 " );	// Does the servant of Adanos happen to know where my gold went?
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_MissMyGold_01_02 " );	// I don't know, my son... (seriously) Besides, this sort of thing doesn't interest me much.
+	B_LogEntry( TOPIC_MISSMYGOLD , " Of course Vatras doesn't know anything about my missing gold. " );
 };
 
 
@@ -356,7 +357,7 @@ instance DIA_ADDON_VATRAS_LI_FINDMAGICORECAVE(C_Info)
 	condition = dia_addon_vatras_li_findmagicorecave_condition;
 	information = dia_addon_vatras_li_findmagicorecave_info;
 	permanent = FALSE;
-	description = "Я нашел пещеру с залежами магической руды.";
+	description = " I found a cave with magical ore deposits. " ;
 };
 
 
@@ -370,9 +371,9 @@ func int dia_addon_vatras_li_findmagicorecave_condition()
 
 func void dia_addon_vatras_li_findmagicorecave_info()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_LI_FindMagicOreCave_01_01");	//Я нашел пещеру с залежами магической руды.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_FindMagicOreCave_01_02");	//Правда?!...(удивленно) Тогда тебе стоит поговорить об этом с нашим капитаном.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_FindMagicOreCave_01_03");	//Думаю, ему будет интересно услышать эту новость.
+	AI_Output(other,self, " DIA_Addon_Vatras_LI_FindMagicOreCave_01_01 " );	// I found a cave with magical ore deposits.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_FindMagicOreCave_01_02 " );	// Really?!...(surprised) Then you should talk to our captain about it.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_FindMagicOreCave_01_03 " );	// I think he will be interested to hear this news.
 	GOTOORECAPITAN = TRUE;
 };
 
@@ -384,7 +385,7 @@ instance DIA_ADDON_VATRAS_LI_CHANGECOURSE(C_Info)
 	condition = dia_addon_vatras_li_changecourse_condition;
 	information = dia_addon_vatras_li_changecourse_info;
 	permanent = FALSE;
-	description = "Мне нужен твой совет.";
+	description = " I need your advice. " ;
 };
 
 
@@ -398,31 +399,31 @@ func int dia_addon_vatras_li_changecourse_condition()
 
 func void dia_addon_vatras_li_changecourse_info()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_LI_ChangeCourse_01_00");	//Мне нужен твой совет.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_01_01");	//Чем я могу помочь тебе, сын мой?
-	AI_Output(other,self,"DIA_Addon_Vatras_LI_ChangeCourse_01_02");	//Нам надо решить, что делать с рудой, которую мы обнаружили на этом острове.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_01_03");	//Хммм...(задумчиво) А у тебя самого есть идеи на этот счет?
+	AI_Output(other,self, " DIA_Addon_Vatras_LI_ChangeCourse_01_00 " );	// I need your advice.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_01_01 " );	// How can I help you, my son?
+	AI_Output(other,self, " DIA_Addon_Vatras_LI_ChangeCourse_01_02 " );	// We need to decide what to do with the ore we found on this island.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_01_03 " );	// Hmmm...(thoughtfully) Do you have any ideas about this yourself?
 	Info_ClearChoices(dia_addon_vatras_li_changecourse);
-	Info_AddChoice(dia_addon_vatras_li_changecourse,"Думаю, нам стоит рассказать о ней паладинам.",dia_addon_vatras_li_changecourse_ore);
-	Info_AddChoice(dia_addon_vatras_li_changecourse,"Уверен, что паладины хорошо заплатят нам за эту руду!",dia_addon_vatras_li_changecourse_gold);
+	Info_AddChoice(dia_addon_vatras_li_changecourse, " I think we should tell the paladins about her. " ,dia_addon_vatras_li_changecourse_ore);
+	Info_AddChoice(dia_addon_vatras_li_changecourse, " I'm sure the paladins will pay us well for this ore! " ,dia_addon_vatras_li_changecourse_gold);
 };
 
 func void dia_addon_vatras_li_changecourse_ore()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_01");	//Думаю, нам стоит рассказать о ней паладинам.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_03");	//Я целиком и полностью одобряю твои замыслы, сын мой...(серьезно)
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_04");	//Ты прав. Мы должны незамедлительно сообщить об этом лорду Хагену.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_05");	//Хммм...(задумчиво) правда для этого, нам понадобится вернуться обратно в Хоринис.
-	AI_Output(other,self,"DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_08");	//Спасибо за совет.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_09");	//Да пребудет с тобой Аданос!
-	B_LogEntry(TOPIC_CHANGECOURSE,"Ватрас полагает, что мы просто обязаны вернуться в Хоринис и сообщить паладинам о руде.");
+	AI_Output(other,self, " DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_01 " );	// I think we should tell the paladins about her.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_03 " );	// I fully and completely approve of your plans, my son... (seriously)
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_04 " );	// You're right. We must report this to Lord Hagen immediately.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_05 " );	// Hmmm...(thoughtfully) really, we'll need to go back to Khorinis for that.
+	AI_Output(other,self, " DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_08 " );	// Thanks for the tip.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Ore_01_09 " );	// May Adanos be with you!
+	B_LogEntry( TOPIC_CHANGECOURSE , " Vatras thinks we should just go back to Khorinis and tell the paladins about the ore. " );
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKPAL + 1;
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями! Теперь стоит сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys! Now it's time to tell our captain. " );
 	};
 	Info_ClearChoices(dia_addon_vatras_li_changecourse);
 };
@@ -430,18 +431,18 @@ func void dia_addon_vatras_li_changecourse_ore()
 func void dia_addon_vatras_li_changecourse_gold()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_01");	//Уверен, что паладины хорошо заплатят нам за эту руду. Она им просто необходима!
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_02");	//Мне не очень по душе твои мысли, сын мой...(серьезно) Использовать чужую нужду ради своей выгоды - поступок, который не может быть достоин уважения.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_05");	//Мне казалось, что понятие чести и благородства ты всегда ставил выше, нежели тусклый блеск золота.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_06");	//Но видимо я ошибался!...(печально)
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_07");	//Конечно, решение принимать только тебе.
-	AI_Output(self,other,"DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_08");	//Но я не одобряю твоих замыслов!
-	B_LogEntry(TOPIC_CHANGECOURSE,"Ватрас не одобрил моей идеи насчет того, чтобы стребовать с паладинов золото за найденую нами магическую руду.");
+	AI_Output(other,self, " DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_01 " );	// I'm sure the paladins will pay us well for this ore. She just needs them!
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_02 " );	// I don't really like your thoughts, my son... (seriously) Using someone else's need for your own benefit is an act that cannot be worthy of respect.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_05 " );	// It seemed to me that you always put the concept of honor and nobility higher than the dull sheen of gold.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_06 " );	// But apparently I was wrong!...(sadly)
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_07 " );	// Of course, the decision is up to you.
+	AI_Output(self,other, " DIA_Addon_Vatras_LI_ChangeCourse_Gold_01_08 " );	// But I don't approve of your plans!
+	B_LogEntry( TOPIC_CHANGECOURSE , " Vatras didn't approve of my idea of ​​charging paladins for gold for magic ore we found. " );
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями! Теперь стоит сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys! Now it's time to tell our captain. " );
 	};
 	Info_ClearChoices(dia_addon_vatras_li_changecourse);
 };
