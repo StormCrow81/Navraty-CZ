@@ -1,4 +1,5 @@
 
+
 instance DIA_Marcos_EXIT(C_Info)
 {
 	npc = PAL_217_Marcos;
@@ -21,7 +22,7 @@ func void DIA_Marcos_EXIT_Info()
 };
 
 
-instance DIA_Marcos_Hallo(C_Info)
+instance DIA_Marcos_Hallo (C_Info)
 {
 	npc = PAL_217_Marcos;
 	nr = 2;
@@ -34,102 +35,102 @@ instance DIA_Marcos_Hallo(C_Info)
 
 func int DIA_Marcos_Hallo_Condition()
 {
-	if(Kapitel == 2)
+	if (chapter ==  2 )
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Marcos_Hallo_Info()
+func void DAY_Marcos_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Marcos_Hallo_04_00");	//СТОЙ - во имя Инноса! Я Маркос, паладин короля. Говори, что тебе нужно, и говори правду!
+	AI_Output(self,other, " DIA_Marcos_Hallo_04_00 " );	// STOP - in the name of Innos! I am Marcos, paladin of the king. Say what you need and tell the truth!
 
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(other,self,"DIA_Marcos_Hallo_15_01");	//Избранный Инноса всегда говорит правду.
-		AI_Output(self,other,"DIA_Marcos_Hallo_04_02");	//Прошу простить меня, о, преподобный маг. Я не понял сразу, с кем я говорю.
-		AI_Output(other,self,"DIA_Marcos_Hallo_15_03");	//Да, ничего, все нормально.
-		AI_Output(self,other,"DIA_Marcos_Hallo_04_04");	//Если мне будет позволено спросить - что привело тебя сюда?
+		AI_Output(other,self, " DIA_Marcos_Hallo_15_01 " );	// The Chosen One of Innos always speaks the truth.
+		AI_Output(self,other, " DIA_Marcos_Hallo_04_02 " );	// Please forgive me, oh reverend magician. I did not immediately understand who I was talking to.
+		AI_Output(other,self, " DIA_Marcos_Hallo_15_03 " );	// Yes, nothing, everything is fine.
+		AI_Output(self,other, " DIA_Marcos_Hallo_04_04 " );	// If I may ask, what brings you here?
 	}
 	else if(other.guild == GIL_MIL)
 	{
-		AI_Output(other,self,"DIA_Marcos_Hallo_15_05");	//Расслабься, я состою на службе у лорда Хагена.
-		AI_Output(self,other,"DIA_Marcos_Hallo_04_06");	//Ты один из его людей. Какие задачи привели тебя сюда?
+		AI_Output(other,self, " DIA_Marcos_Hallo_15_05 " );	// Relax, I'm in the service of Lord Hagen.
+		AI_Output(self,other, " DIA_Marcos_Hallo_04_06 " );	// You are one of his people. What tasks brought you here?
 	}
 	else if(other.guild == GIL_SLD)
 	{
-		AI_Output(other,self,"DIA_Marcos_Hallo_15_07");	//Расслабься, мы работаем на одного хозяина - лорда Хагена.
-		AI_Output(self,other,"DIA_Marcos_Hallo_04_08");	//С каких это пор лорд Хаген стал нанимать наемников? Говори, что тебе нужно здесь!
+		AI_Output(other,self, " DIA_Marcos_Hallo_15_07 " );	// Relax, we work for the same master - Lord Hagen.
+		AI_Output(self,other, " DIA_Marcos_Hallo_04_08 " );	// Since when did Lord Hagen start hiring mercenaries? Say what you need here!
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Marcos_Hallo_15_07");	//Расслабься, мы работаем на одного хозяина - лорда Хагена.
-		AI_Output(self,other,"DIA_Marcos_Hallo_04_08");	//С каких это пор лорд Хаген стал нанимать наемников? Говори, что тебе нужно здесь!
+		AI_Output(other,self, " DIA_Marcos_Hallo_15_07 " );	// Relax, we work for the same master - Lord Hagen.
+		AI_Output(self,other, " DIA_Marcos_Hallo_04_08 " );	// Since when did Lord Hagen start hiring mercenaries? Say what you need here!
 	};
 };
 
 
-instance DIA_Marcos_Hagen(C_Info)
+instance DIA_Marcos_Hagen (C_Info)
 {
 	npc = PAL_217_Marcos;
 	nr = 2;
 	condition = DIA_Marcos_Hagen_Condition;
 	information = DIA_Marcos_Hagen_Info;
 	permanent = FALSE;
-	description = "Я должен доставить лорду Хагену доказательства существования драконов.";
+	description = " I must deliver proof of dragons to Lord Hagen. " ;
 };
 
 
 func int DIA_Marcos_Hagen_Condition()
 {
-	if((Kapitel == 2) && (Garond.aivar[AIV_TalkedToPlayer] == FALSE))
+	if ((Kapitel ==  2 ) && (Garond.aivar[AIV_TalkedToPlayer] ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Marcos_Hagen_Info()
+func void DAY_Marcos_Hagen_Info()
 {
-	AI_Output(other,self,"DIA_Marcos_Hagen_15_00");	//Я должен доставить лорду Хагену доказательства существования драконов.
-	AI_Output(self,other,"DIA_Marcos_Hagen_04_01");	//Тогда ты не должен терять времени и рисковать своей жизнью понапрасну.
-	AI_Output(self,other,"DIA_Marcos_Hagen_04_02");	//Ты думаешь, ты сможешь найти здесь драконью чешуйку и отнести ему?
-	AI_Output(self,other,"DIA_Marcos_Hagen_04_03");	//Попробуй добраться до замка и поговорить с командующим Гарондом.
-	AI_Output(self,other,"DIA_Marcos_Hagen_04_04");	//Он должен узнать, что ты выполняешь задание лорда Хагена! Он найдет способ помочь тебе.
+	AI_Output(other,self, " DIA_Marcos_Hagen_15_00 " );	// I have to deliver proof of dragons to Lord Hagen.
+	AI_Output(self,other, " DIA_Marcos_Hagen_04_01 " );	// Then you shouldn't waste your time risking your life for nothing.
+	AI_Output(self,other, " DIA_Marcos_Hagen_04_02 " );	// Do you think you can find a dragon scale here and take it to him?
+	AI_Output(self,other, " DIA_Marcos_Hagen_04_03 " );	// Try to get to the castle and talk to Commander Garond.
+	AI_Output(self,other, " DIA_Marcos_Hagen_04_04 " );	// He needs to know you're on a mission for Lord Hagen! He will find a way to help you.
 };
 
 
-instance DIA_Marcos_Garond(C_Info)
+instance DIA_Marcos_Garond (C_Info)
 {
 	npc = PAL_217_Marcos;
 	nr = 2;
 	condition = DIA_Marcos_Garond_Condition;
 	information = DIA_Marcos_Garond_Info;
 	permanent = FALSE;
-	description = "Я пришел от Гаронда.";
+	description = " I come from Garond. " ;
 };
 
 
 func int DIA_Marcos_Garond_Condition()
 {
-	if((Kapitel == 2) && (MIS_OLDWORLD == LOG_Running))
+	if ((Chapter ==  2 ) && ( MY_OLDWORLD  == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Marcos_Garond_Info()
+func void DAY_Marcos_Garond_Info()
 {
-	AI_Output(other,self,"DIA_Marcos_Garond_15_00");	//Я пришел от Гаронда - он хочет знать, какое количество руды готово к транспортировке.
-	AI_Output(self,other,"DIA_Marcos_Garond_04_01");	//Скажи Гаронду, что мне пришлось оставить шахту, так как нападения орков стали слишком частыми.
-	AI_Output(self,other,"DIA_Marcos_Garond_04_02");	//Я попытался добраться до замка с оставшимися людьми, но в конце концов я единственный остался в живых.
-	AI_Output(self,other,"DIA_Marcos_Garond_04_03");	//Я спрятал руду в безопасном месте. Там ЧЕТЫРЕ ящика. Иди к Гаронду и доложи ему об этом.
-	AI_Output(self,other,"DIA_Marcos_Garond_04_04");	//Скажи ему, что я буду охранять руду, пока жив. Но я не знаю, сколько времени пройдет, прежде чем орки найдут меня здесь.
-	AI_Output(self,other,"DIA_Marcos_Garond_04_05");	//Скажи ему, чтобы прислал подкрепление.
-	AI_Output(other,self,"DIA_Marcos_Garond_15_06");	//Я дам ему знать.
-	B_LogEntry(TOPIC_ScoutMine,"Паладин Маркос охраняет ЧЕТЫРЕ ящика в небольшой долине.");
+	AI_Output(other,self, " DIA_Marcos_Garond_15_00 " );	// I've come from Garond - he wants to know how much ore is ready for transport.
+	AI_Output(self,other, " DIA_Marcos_Garond_04_01 " );	// Tell Garond I had to leave the mine because the orc attacks became too frequent.
+	AI_Output(self,other, " DIA_Marcos_Garond_04_02 " );	// I tried to get to the castle with the remaining people, but in the end I was the only one left alive.
+	AI_Output(self,other, " DIA_Marcos_Garond_04_03 " );	// I hid the ore in a safe place. There are FOUR boxes. Go to Garond and report to him about it.
+	AI_Output(self,other, " DIA_Marcos_Garond_04_04 " );	// Tell him I'll guard the ore as long as I live. But I don't know how long it will be before the orcs find me here.
+	AI_Output(self,other, " DIA_Marcos_Garond_04_05 " );	// Tell him to send reinforcements.
+	AI_Output(other,self, " DIA_Marcos_Garond_15_06 " );	// I'll let him know.
+	B_LogEntry(TOPIC_ScoutMine, " Paladin Marcos is guarding FOUR crates in a small valley. " );
 	Log_CreateTopic(Topic_MarcosJungs,LOG_MISSION);
 	Log_SetTopicStatus(Topic_MarcosJungs,LOG_Running);
-	B_LogEntry_Quiet(Topic_MarcosJungs,"Маркос хочет, чтобы Гаронд послал ему подмогу.");
+	B_LogEntry_Quiet(Topic_MarcosJungs, " Marcos wants Garond to send help. " );
 	MIS_Marcos_Jungs = LOG_Running;
 	Marcos_Ore = TRUE;
 	self.flags = 0;
@@ -143,13 +144,13 @@ instance DIA_Marcos_Perm(C_Info)
 	condition = DIA_Marcos_Perm_Condition;
 	information = DIA_Marcos_Perm_Info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
 func int DIA_Marcos_Perm_Condition()
 {
-	if((Kapitel >= 2) && (Npc_KnowsInfo(other,DIA_Marcos_Hagen) || Npc_KnowsInfo(other,DIA_Marcos_Garond)))
+	if ((Capital >=  2 ) && (Npc_KnowsInfo(other, DIA_Marcos_Hagen) || Npc_KnowsInfo(other, DIA_Marcos_Garond)))
 	{
 		return TRUE;
 	};
@@ -157,33 +158,33 @@ func int DIA_Marcos_Perm_Condition()
 
 func void DIA_Marcos_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Marcos_Perm_15_00");	//Как обстановка?
-	if(KAPITELORCATC == TRUE)
+	AI_Output(other,self, " DIA_Marcos_Perm_15_00 " );	// How are things?
+	if ( KAPITELORCATC  ==  TRUE )
 	{
-		AI_Output(self,other,"DIA_Marcos_Perm_04_04");	//Я выдержу, так как Иннос со мной!
+		AI_Output(self,other, " DIA_Marcos_Perm_04_04 " );	// I will survive, because Innos is with me!
 		AI_StopProcessInfos(self);
 	};
 	if(self.attribute[ATR_HITPOINTS] < (self.attribute[ATR_HITPOINTS_MAX] / 2))
 	{
-		AI_Output(self,other,"DIA_Marcos_Perm_04_01");	//Мне очень нужны лечебные зелья!
+		AI_Output(self,other, " DIA_Marcos_Perm_04_01 " );	// I really need healing potions!
 		B_UseItem(self,ItPo_Health_03);
 	}
 	else if(MIS_Marcos_Jungs == LOG_Running)
 	{
-		AI_Output(self,other,"DIA_Marcos_Perm_04_02");	//Я выдержу, и я надеюсь, что Гаронд скоро пришлет подкрепление.
+		AI_Output(self,other, " DIA_Marcos_Perm_04_02 " );	// I'll hold out, and I hope Garond sends reinforcements soon.
 	}
 	else if(MIS_Marcos_Jungs == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Marcos_Perm_04_03");	//Спасибо тебе за помощь. Иннос даст нам силы и поможет нам продержаться.
-		if(Marcos_einmalig == FALSE)
+		AI_Output(self,other, " DIA_Marcos_Perm_04_03 " );	// Thank you for your help. Innos will give us strength and help us to hold out.
+		if (Marcos_unique ==  FALSE )
 		{
 			B_GivePlayerXP(XP_Marcos_Jungs);
-			Marcos_einmalig = TRUE;
+			Marcos_unique = TRUE ;
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Marcos_Perm_04_04");	//Я выдержу, так как Иннос со мной!
+		AI_Output(self,other, " DIA_Marcos_Perm_04_04 " );	// I will survive, because Innos is with me!
 	};
 	AI_StopProcessInfos(self);
 };
@@ -202,7 +203,7 @@ instance DIA_Marcos_PICKPOCKET(C_Info)
 
 func int DIA_Marcos_PICKPOCKET_Condition()
 {
-	return C_Beklauen(65,380);
+	return  C_Robbery ( 65 , 380 );
 };
 
 func void DIA_Marcos_PICKPOCKET_Info()
@@ -214,7 +215,7 @@ func void DIA_Marcos_PICKPOCKET_Info()
 
 func void DIA_Marcos_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Marcos_PICKPOCKET);
 };
@@ -232,13 +233,13 @@ instance DIA_MARCOS_LEADER(C_Info)
 	condition = dia_marcos_leader_condition;
 	information = dia_marcos_leader_info;
 	permanent = FALSE;
-	description = "Кто сейчас вами командует?";
+	description = " Who is in charge now? " ;
 };
 
 
 func int dia_marcos_leader_condition()
 {
-	if((KAPITELORCATC == TRUE) && (PALADINCASTELFREE == FALSE) && (COMMANDPALOW == FALSE))
+	if (( CAPITELORCATC  ==  TRUE ) && ( PALADINCASTELFREE  ==  FALSE ) && ( COMMANDPALOW  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -246,9 +247,9 @@ func int dia_marcos_leader_condition()
 
 func void dia_marcos_leader_info()
 {
-	AI_Output(other,self,"DIA_Marcos_Leader_01_00");	//Кто сейчас вами командует?
-	AI_Output(self,other,"DIA_Marcos_Leader_01_01");	//Нашим отрядом сейчас руководит паладин Натан, поскольку он самый старший из нас по званию.
-	AI_Output(self,other,"DIA_Marcos_Leader_01_02");	//Так что, если что - все вопросы к нему!
+	AI_Output(other,self, " DIA_Marcos_Leader_01_00 " );	// Who is in charge now?
+	AI_Output(self,other, " DIA_Marcos_Leader_01_01 " );	// Our squad is now led by the paladin Nathan, since he is the most senior of us in rank.
+	AI_Output(self,other, " DIA_Marcos_Leader_01_02 " );	// So, if anything - all questions to him!
 	AI_Output(other,self,"DIA_Marcos_Leader_01_03");	//Ясно.
 	COMMANDPALOW = TRUE;
 };
