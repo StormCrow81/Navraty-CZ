@@ -77,12 +77,12 @@ func void DIA_Rosi_WASMACHSTDU_Info()
 		AI_Output(self,other, " DIA_Rosi_WASMACHSTDU_17_01 " );	// I've been asking myself this question for years now. Sekob, my husband, managed to quarrel with all the neighbors.
 		AI_Output(self,other, " DIA_Rosi_WASMACHSTDU_17_02 " );	// He owes everyone in the neighborhood. And he steals food from Onar's stocks and sells them in the city.
 		AI_Output(self,other, " DIA_Rosi_WASMACHSTDU_17_03 " );	// He made a fortune with his shady dealings.
-		AI_Output(self,other, " DIA_Rosi_WASMACHSTDU_17_04 " );	// He forces our workers to work to the point of exhaustion. For this, everyone calls him a murderer behind his back.
+		AI_Output(self,other, " DIA_Rosi_WASMACHSTDU_17_04 " );	// He forces our workers to work to the point of exhaustion. For this, everyone calls him a slave driver behind his back.
 		AI_Output(self,other, " DIA_Rosi_WASMACHSTDU_17_05 " );	// I don't like calling myself Sekob's wife, trust me. Sometimes I even wish the Barrier was still in place.
 	};
 	AI_Output(self,other, " DIA_Rosi_WASMACHSTDU_17_06 " );	// Do you want to buy some food or maybe something to hunt in the forest?
 	Log_CreateTopic(Topic_OutTrader,LOG_NOTE);
-	B_LogEntry(Topic_OutTrader, " Rosie at the Secoba Farm sells various items. " );
+	B_LogEntry(Topic_OutTrader, " Rosie at Secob's Farm sells various items. " );
 };
 
 
@@ -115,7 +115,7 @@ func void DIA_Rosi_WAREZ_Info()
 	};
 
 	AI_Output(other,self, " DIA_Rosi_WAREZ_15_00 " );	// What can you offer me?
-	AI_Output(self,other, " DIA_Rosi_WAREZ_17_01 " );	// Choose.
+	AI_Output(self,other, " DIA_Rosi_WAREZ_17_01 " );	// Have a look.
 	B_GiveTradeInv(self);
 	Npc_RemoveInvItems(self,ItFoMuttonRaw,Npc_HasItems(self,ItFoMuttonRaw));
 };
@@ -143,7 +143,7 @@ func void DIA_Rosi_BARRIERE_Info()
 {
 	AI_Output(other,self, " DIA_Rosi_BARRIERE_15_00 " );	// Barrier?
 	AI_Output(self,other, " DIA_Rosi_BARRIERE_17_01 " );	// Well, the dome that covered the old Valley of Mines.
-	AI_Output(self,other, " DIA_Rosi_BARRIERE_17_02 " );	// Many farmers and ordinary workers who committed a crime were then simply thrown there and they never came back.
+	AI_Output(self,other, " DIA_Rosi_BARRIERE_17_02 " );	// Many farmers and ordinary workers who committed a crime were simply thrown in there and many never came back.
 };
 
 
@@ -168,7 +168,7 @@ func int DIA_Rosi_DuInBarriere_Condition()
 func void DIA_Rosi_DuInBarriere_Info()
 {
 	AI_Output(other,self, " DIA_Rosi_DuInBarriere_15_00 " );	// Have you ever been behind the Barrier?
-	AI_Output(self,other, " DIA_Rosi_DuInBarriere_17_01 " );	// No. We've only heard of him. Bengar, a farmer from the highlands, will surely be able to tell you more about him.
+	AI_Output(self,other, " DIA_Rosi_DuInBarriere_17_01 " );	// No. We've only ever heard of it. Bengar, a farmer from the highlands, will surely be able to tell you more about it.
 	AI_Output(self,other, " DIA_Rosi_DuInBarriere_17_02 " );	// His farm is very close to the passage leading to the Valley of Mines.
 };
 
@@ -194,7 +194,7 @@ func int DIA_Rosi_BENGAR_Condition()
 func void DIA_Rosi_BENGAR_Info()
 {
 	AI_Output(other,self, " DIA_Rosi_BENGAR_15_00 " );	// How do I get to Bengar's farm?
-	AI_Output(self,other, " DIA_Rosi_BENGAR_17_01 " );	// Ask Balthazar. This is our shepherd. Sometimes he leads his sheep to the pastures of Bengar.
+	AI_Output(self,other, " DIA_Rosi_BENGAR_17_01 " );	// Ask Balthazar, our shepherd. Sometimes he leads his sheep to the pastures near Bengar.
 	AI_Output(self,other, " DIA_Rosi_BENGAR_17_02 " );	// He'll tell you how to get there.
 };
 
@@ -220,7 +220,7 @@ func int DIA_Rosi_Miliz_Condition()
 func void DIA_Rosi_Miliz_Info()
 {
 	AI_Output(other,self, " DIA_Rosi_Miliz_15_00 " );	// Why are the militia attacking your farms?
-	AI_Output(self,other, " DIA_Rosi_Miliz_17_01 " );	// Because there's no one here who won't let them just rob our farms instead of buying our products.
+	AI_Output(self,other, " DIA_Rosi_Miliz_17_01 " );	// Because there's no one here willing to stand up to them.
 	AI_Output(self,other, " DIA_Rosi_Miliz_17_02 " );	// The king is far away, and we can only work for Onar, hoping that he will send help when we really need it.
 };
 
@@ -248,8 +248,8 @@ func void DAY_Rosi_ONAR_Info()
 	AI_Output(other,self, " DIA_Rosi_ONAR_15_00 " );	// And what does Onar's help look like?
 	AI_Output(self,other, " DIA_Rosi_ONAR_17_01 " );	// Sometimes we know in advance that the militia plans to pay us a visit.
 	AI_Output(self,other, " DIA_Rosi_ONAR_17_02 " );	// Then we send someone to Onar asking for help.
-	AI_Output(self,other, " DIA_Rosi_ONAR_17_03 " );	// And then there are usually mercenaries soon after that he pays to come in here and drive the militia out.
-	AI_Output(self,other, " DIA_Rosi_ONAR_17_04 " );	// But frankly, mercenaries aren't much better than militia.
+	AI_Output(self,other, " DIA_Rosi_ONAR_17_03 " );	// His mercenaries usually show up soon after that to drive the militia scum out.
+	AI_Output(self,other, " DIA_Rosi_ONAR_17_04 " );	// But frankly, mercenaries aren't much better than militiamen.
 };
 
 
@@ -383,9 +383,9 @@ func int DIA_Rosi_FLEEFROMSEKOB_Condition()
 func void DIA_Rosi_FLEEFROMSEKOB_Info()
 {
 	AI_Output(other,self, " DIA_Rosi_FLEEFROMSEKOB_15_00 " );	// What are you doing out here in the wilderness?
-	AI_Output(self,other, " DIA_Rosi_FLEEFROMSEKOB_17_01 " );	// I can't take it anymore. Sekob began throwing tantrums at every opportunity.
-	AI_Output(self,other, " DIA_Rosi_FLEEFROMSEKOB_17_02 " );	// In the end, everyone stopped talking to him. Well, he doesn't talk to anyone either.
-	AI_Output(self,other, " DIA_Rosi_FLEEFROMSEKOB_17_03 " );	// I should have run from there, but now I don't know where to go.
+	AI_Output(self,other, " DIA_Rosi_FLEEFROMSEKOB_17_01 " );	// I can't take it anymore. Sekob is throwing tantrums at every opportunity.
+	AI_Output(self,other, " DIA_Rosi_FLEEFROMSEKOB_17_02 " );	// Now everyone has stopped talking to him. Well, he doesn't talk to anyone either.
+	AI_Output(self,other, " DIA_Rosi_FLEEFROMSEKOB_17_03 " );	// I should have run from here, but now I don't know where to go.
 	AI_Output(self,other, " DIA_Rosi_FLEEFROMSEKOB_17_04 " );	// Could you help me?
 	B_GivePlayerXP(XP_Ambient);
 	RosiFoundKap5 = TRUE;
@@ -425,11 +425,11 @@ func void DIA_Rosi_HILFE_Info()
 	};
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW))
 	{
-		AI_Output(other,self, " DIA_Rosi_HILFE_15_03 " );	// Let's go to the monastery. You will be well received there.
+		AI_Output(other,self, " DIA_Rosi_HILFE_15_03 " );	// Let's go to the monastery. You will be safe there.
 	};
 	if((hero.guild == GIL_SEK) || (hero.guild == GIL_TPL) || (hero.guild == GIL_GUR))
 	{
-		AI_Output(other,self, " DIA_Rosi_HILFE_15_03A " );	// I can take you to our camp. The brothers will take care of you.
+		AI_Output(other,self, " DIA_Rosi_HILFE_15_03A " );	// I can take you to our camp. My brothers will take care of you.
 	};
 	AI_Output(self,other, " DIA_Rosi_HILFE_17_04 " );	// I will never forget what you did for me. I will repay you.
 	if (Npc_IsDead(Return))
@@ -501,7 +501,7 @@ func void DIA_Rosi_ARRIVED_Info()
 	};
 
 	AI_Output(self,other, " DIA_Rosi_ANGEKOMMEN_17_00 " );	// Then I'll find my own way.
-	AI_Output(self,other, " DIA_Rosi_ANGEKOMMEN_17_01 " );	// Thank you. I don't even know what I would do without you.
+	AI_Output(self,other, " DIA_Rosi_ANGEKOMMEN_17_01 " );	// Thank you. I don't know what I would have done without you.
 	AI_Output(self,other, " DIA_Rosi_ANGEKOMMEN_17_02 " );	// Please accept this humble gift. You deserve it.
 	B_GiveInvItems(self,other,ItMi_Gold,450);
 	MIS_BringRosiBackToSekob = LOG_OBSOLETE;
@@ -556,7 +556,7 @@ instance DIA_Rosi_TRAIT (C_Info)
 	nr = 55;
 	condition = DIA_Rosi_TRAIT_Condition;
 	information = DIA_Rosi_TRAIT_Info;
-	description = " See, now you're home again. " ;
+	description = " You're home now. " ;
 };
 
 func int DIA_Rosi_TRAIT_Condition()
@@ -570,7 +570,7 @@ func int DIA_Rosi_TRAIT_Condition()
 func void DIA_Rosi_TRAIT_Info()
 {
 	B_GivePlayerXP(XP_Ambient);
-	AI_Output(other,self, " DIA_Rosi_TRAIT_15_00 " );	// See, now you're home again.
+	AI_Output(other,self, " DIA_Rosi_TRAIT_15_00 " );	// You're home now.
 	AI_Output(self,other, " DIA_Rosi_TRAIT_17_01 " );	// You're the worst piece of shit I've ever met in my life! You dirty pig!
 	MIS_RosisFlucht = LOG_OBSOLETE;
 	Log_SetTopicStatus(TOPIC_RosisFlucht,LOG_OBSOLETE);
