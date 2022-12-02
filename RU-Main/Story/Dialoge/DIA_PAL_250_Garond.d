@@ -1,4 +1,5 @@
 
+
 instance DIA_garond_EXIT(C_Info)
 {
 	npc = PAL_250_Garond;
@@ -12,7 +13,7 @@ instance DIA_garond_EXIT(C_Info)
 
 func int DIA_Garond_EXIT_Condition()
 {
-	if(Kapitel < 3)
+	if (chapter <  3 )
 	{
 		return TRUE;
 	};
@@ -20,21 +21,21 @@ func int DIA_Garond_EXIT_Condition()
 
 func void DIA_Garond_EXIT_Info()
 {
-	if((MIS_ScoutMine == LOG_Running) && (KAPITELORCATC == FALSE) && (MIS_LostPaladins == FALSE))
+	if ((MY_ScoutMine == LOG_Running) && ( CAPITELORCATC  ==  FALSE ) && (MY_LostPaladins ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_Garond_SeekPaladin_01_00");	//Погоди минутку...
-		AI_Output(self,other,"DIA_Garond_SeekPaladin_01_01");	//Есть еще одно дело, в котором твоя помощь оказалась бы полезной.
-		AI_Output(other,self,"DIA_Garond_SeekPaladin_01_02");	//И в чем оно заключается?
-		AI_Output(self,other,"DIA_Garond_SeekPaladin_01_03");	//Когда мы направлялись к замку, то разбились на три группы, чтобы не привлекать к себе особого внимания орков.
-		AI_Output(self,other,"DIA_Garond_SeekPaladin_01_04");	//Первую группу возглавлял я! Командирами остальных двух были паладины Альберт и Венцель.
-		AI_Output(self,other,"DIA_Garond_SeekPaladin_01_05");	//Однако до сих пор о них ничего не было слышно. Я даже не знаю, живы они или нет!
-		AI_Output(self,other,"DIA_Garond_SeekPaladin_01_06");	//Поэтому ты должен постараться выяснить, что стало с моими людьми.
-		AI_Output(other,self,"DIA_Garond_SeekPaladin_01_07");	//Ладно! Я сделаю все, что в моих силах.
-		AI_Output(self,other,"DIA_Garond_SeekPaladin_01_08");	//Я очень надеюсь на тебя.
+		AI_Output(self,other, " DIA_Garond_SeekPaladin_01_00 " );	// Wait a minute...
+		AI_Output(self,other, " DIA_Garond_SeekPaladin_01_01 " );	// There is one more thing where your help would be useful.
+		AI_Output(other,self, " DIA_Garond_SeekPaladin_01_02 " );	// And what is it?
+		AI_Output(self,other, " DIA_Garond_SeekPaladin_01_03 " );	// As we made our way to the castle, we split into three groups so as not to draw too much attention from the orcs.
+		AI_Output(self,other, " DIA_Garond_SeekPaladin_01_04 " );	// I led the first group! The other two were commanded by the paladins Albert and Wenzel.
+		AI_Output(self,other, " DIA_Garond_SeekPaladin_01_05 " );	// However, nothing has been heard of them until now. I don't even know if they are alive or not!
+		AI_Output(self,other, " DIA_Garond_SeekPaladin_01_06 " );	// Therefore, you should try to find out what became of my people.
+		AI_Output(other,self, " DIA_Garond_SeekPaladin_01_07 " );	// Okay! I will do everything in my power.
+		AI_Output(self,other, " DIA_Garond_SeekPaladin_01_08 " );	// I really hope for you.
 		MIS_LostPaladins = LOG_Running;
 		Log_CreateTopic(TOPIC_LostPaladins,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_LostPaladins,LOG_Running);
-		B_LogEntry(TOPIC_LostPaladins,"Гаронд попросил меня выяснить, что стало с отрядами паладинов Альберта и Венцеля.");
+		B_LogEntry(TOPIC_LostPaladins, " Garond asked me to find out what happened to Albert and Wenzel's paladin squads. " );
 	};
 
 	AI_StopProcessInfos(self);
@@ -43,7 +44,7 @@ func void DIA_Garond_EXIT_Info()
 var int Garond_LastPetzCounter;
 var int Garond_LastPetzCrime;
 
-instance DIA_Garond_PMSchulden(C_Info)
+instance DIA_Garond_PM Debt (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 1;
@@ -56,7 +57,7 @@ instance DIA_Garond_PMSchulden(C_Info)
 
 func int DIA_Garond_PMSchulden_Condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (Garond_Schulden > 0) && (B_GetGreatestPetzCrime(self) <= Garond_LastPetzCrime) && (KAPITELORCATC == FALSE))
+	if (Npc_IsInState(self,ZS_Talk) && (Garond_Shoulder >  0 ) && (B_GetGreatestPetzCrime(self) <= Garond_LastPetzCrime) && ( CAPITELORCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -69,7 +70,7 @@ func void dia_garond_petzmaster_attackmurder()
 	B_Attack(self,other,AR_HumanMurderedHuman,0);
 	GLOBAL_MAKE_BANDIT_FORCITY = 1;
 	GARONDTROUBLE = TRUE;
-	concatText = "Паладины объявили вас вне закона!";
+	concatText = " Paladins have outlawed you! " ;
 	AI_Print(concatText);
 };
 
@@ -80,7 +81,7 @@ func void dia_garond_pmschulden_attackmurder()
 	B_Attack(self,other,AR_HumanMurderedHuman,0);
 	GLOBAL_MAKE_BANDIT_FORCITY = 1;
 	GARONDTROUBLE = TRUE;
-	concatText = "Паладины объявили вас вне закона!";
+	concatText = " Paladins have outlawed you! " ;
 	AI_Print(concatText);
 };
 
@@ -89,24 +90,24 @@ func void DIA_Garond_PMSchulden_Info()
 	var int diff;
 	var string concatText1;
 	var string concatText2;
-	var string concattextschulden;
+	var string contexttextdebts;
 	var string tsettext1;
 	var string tsettext2;
 	var string tsettext3;
 	var int temp1;
-	AI_Output(self,other,"DIA_Garond_PMSchulden_10_00");	//Прежде чем мы обсудим что-нибудь, заплати штраф.
-	temp1 = 0;
+	AI_Output(self,other, " DIA_Garond_PMSchulden_10_00 " );	// Before we discuss anything, pay the fine.
+	temp1 = 0 ;
 	if(GLOBAL_OLDCAMP_MURDER > 2)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(GLOBAL_OLDCAMP_THEFT > 10)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(GLOBAL_OLDCAMP_ATTACK > 5)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(temp1 == 1)
 	{
@@ -115,62 +116,62 @@ func void DIA_Garond_PMSchulden_Info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_OLDCAMP_MURDER),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_MURDERCOUNT2_OLDCAMP);
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_OLDCAMP,tsettext2);
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_36");	//Но в свете твоих последних деяний - это уже ни к чему...
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_37");	//Ты - убийца, и это твоя истинная сущность. А мой священный долг - избавлять землю от таких, как ты!
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_38");	//И поверь мне: эту обязанность перед людьми и Инносом я исполню, чего бы мне это не стоило.
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_36 " );	// But in light of your recent deeds, this is no longer necessary...
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_37 " );	// You are a killer, and this is your true nature. And my sacred duty is to rid the earth of people like you!
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_38 " );	// And believe me: I will fulfill this duty to people and Innos, no matter what the cost.
 			AI_ReadyMeleeWeapon(self);
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_39");	//А теперь - умри!
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_39 " );	// And now - die!
 		}
 		else if(GLOBAL_OLDCAMP_ATTACK > 5)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_OLDCAMP_ATTACK),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_OLDCAMP);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_OLDCAMP,tsettext2);
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_40");	//Но в свете твоих последних деяний - это уже ни к чему...
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_41");	//Ты - бандит, и это твоя истинная сущность. А мой священный долг - избавлять землю от таких, как ты!
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_42");	//И поверь мне: эту обязанность перед людьми и Инносом я исполню, чего бы мне это не стоило.
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_40 " );	// But in light of your recent deeds, this is no longer necessary...
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_41 " );	// You are a bandit, and this is your true nature. And my sacred duty is to rid the earth of people like you!
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_42 " );	// And believe me: I will fulfill this duty to people and Innos, no matter what the cost.
 			AI_ReadyMeleeWeapon(self);
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_43");	//А теперь - умри!
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_43 " );	// And now - die!
 		}
 		else if(GLOBAL_OLDCAMP_THEFT > 10)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_OLDCAMP_THEFT),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_THEFTCOUNT2_OLDCAMP);
 			tsettext3 = ConcatStrings(PRINT_THEFTCOUNT_OLDCAMP,tsettext2);
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_44");	//Но в свете твоих последних деяний - это уже ни к чему...
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_45");	//Ты - вор, и это твоя истинная сущность. А мой священный долг - избавлять землю от таких, как ты!
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_46");	//И поверь мне: эту обязанность перед людьми и Инносом я исполню, чего бы мне это не стоило.
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_44 " );	// But in light of your recent deeds, this is no longer necessary...
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_45 " );	// You are a thief, and this is your true nature. And my sacred duty is to rid the earth of people like you!
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_46 " );	// And believe me: I will fulfill this duty to people and Innos, no matter what the cost.
 			AI_ReadyMeleeWeapon(self);
-			AI_Output(self,other,"DIA_Garond_PMSchulden_08_47");	//А теперь - умри!
+			AI_Output(self,other, " DIA_Garond_PMSchulden_08_47 " );	// And now - die!
 		};
 		Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
-		B_LogEntry(TOPIC_DIPLOM,"Мои отношения с паладинами испорчены из-за постоянных бесчинств в замке. Теперь там меня считают бандитом, это касается и города!");
+		B_LogEntry( TOPIC_DIPLOM , " My relationship with the paladins is ruined because of the constant outrages in the castle. Now they consider me a bandit there, this also applies to the city! " );
 		Info_ClearChoices(DIA_Garond_PMSchulden);
 		Info_ClearChoices(DIA_Garond_PETZMASTER);
-		Info_AddChoice(DIA_Garond_PMSchulden,"Постой...(пора сматываться)",dia_garond_pmschulden_attackmurder);
+		Info_AddChoice(DIA_Garond_PMSchulden, " Wait...(it's time to leave) " ,dia_garond_pmschulden_attackmurder);
 	}
 	else
 	{
 		if(B_GetTotalPetzCounter(self) > Garond_LastPetzCounter)
 		{
-			AI_Output(self,other,"DIA_Garond_PMSchulden_10_01");	//А он возник из-за последних обвинений.
-			AI_Output(self,other,"DIA_Garond_PMSchulden_10_02");	//По-видимому, ты доставишь мне еще больше неприятностей.
+			AI_Output(self,other, " DIA_Garond_PMSchulden_10_01 " );	// And it arose because of the latest accusations.
+			AI_Output(self,other, " DIA_Garond_PMSchulden_10_02 " );	// Looks like you'll give me even more trouble.
 			diff = B_GetTotalPetzCounter(self) - Garond_LastPetzCounter;
 			if(diff > 0)
 			{
-				Garond_Schulden = Garond_Schulden + (diff * 250);
+				garond_debt = garond_debt + (diff *  250 );
 			};
-			if(Garond_Schulden < 1000)
+			if (Garond_Debts <  1000 )
 			{
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_03");	//Но я надеюсь, что ты теперь оплатишь все! В целом это...
-				AI_Output(other,self,"DIA_Garond_PMSchulden_10_03A");	//Сколько?
-				if(Garond_Schulden <= 1000)
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_03 " );	// But I hope you pay for everything now! In general, this...
+				AI_Output(other,self, " DIA_Garond_PMSchulden_10_03A " );	// How much?
+				if (Garond_Debts <=  1000 )
 				{
 					B_Say_Gold(self,other,Garond_Schulden);
 				}
 				else
 				{
-					concatText1 = ConcatStrings(IntToString(Garond_Schulden),"");
+					concatText1 = ConcatStrings(IntToString(Garond_Debts), " " );
 					concatText2 = ConcatStrings(concatText1,PRINT_SHULDEN2);
 					concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 					AI_Print(concattextschulden);
@@ -178,27 +179,27 @@ func void DIA_Garond_PMSchulden_Info()
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_04");	//Я разочарован тобой. Твой штраф составляет...
-				AI_Output(other,self,"DIA_Garond_PMSchulden_10_04A");	//Сколько?
-				if(Garond_Schulden <= 1000)
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_04 " );	// I'm disappointed with you. Your fine is...
+				AI_Output(other,self, " DIA_Garond_PMSchulden_10_04A " );	// How much?
+				if (Garond_Debts <=  1000 )
 				{
 					B_Say_Gold(self,other,Garond_Schulden);
 				}
 				else
 				{
-					concatText1 = ConcatStrings(IntToString(Garond_Schulden),"");
+					concatText1 = ConcatStrings(IntToString(Garond_Debts), " " );
 					concatText2 = ConcatStrings(concatText1,PRINT_SHULDEN2);
 					concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 					AI_Print(concattextschulden);
 				};
 			};
 		}
-		else if(B_GetGreatestPetzCrime(self) < Garond_LastPetzCrime)
+		else  if (B_GetGreatestPetzCrime(self) < Garond_LastPetzCrime)
 		{
-			AI_Output(self,other,"DIA_Garond_PMSchulden_10_05");	//Выяснилось несколько новых обстоятельств.
-			if(Garond_LastPetzCrime == CRIME_MURDER)
+			AI_Output(self,other, " DIA_Garond_PMSchulden_10_05 " );	// Several new circumstances have come to light.
+			if (Garond_LastPetzCrime ==  CRIME_MURDER )
 			{
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_06");	//Теперь тебя никто больше не обвиняет в убийстве.
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_06 " );	// No one accuses you of murder anymore.
 				GLOBAL_OLDCAMP_MURDER = GLOBAL_OLDCAMP_MURDER - 1;
 				if(GLOBAL_OLDCAMP_MURDER < 0)
 				{
@@ -207,7 +208,7 @@ func void DIA_Garond_PMSchulden_Info()
 			};
 			if((Garond_LastPetzCrime == CRIME_THEFT) || ((Garond_LastPetzCrime > CRIME_THEFT) && (B_GetGreatestPetzCrime(self) < CRIME_THEFT)))
 			{
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_07");	//Никто не вспоминает о том, что застал тебя за кражей.
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_07 " );	// No one remembers that they caught you stealing.
 				GLOBAL_OLDCAMP_THEFT = GLOBAL_OLDCAMP_THEFT - 1;
 				if(GLOBAL_OLDCAMP_THEFT < 0)
 				{
@@ -216,7 +217,7 @@ func void DIA_Garond_PMSchulden_Info()
 			};
 			if((Garond_LastPetzCrime == CRIME_ATTACK) || ((Garond_LastPetzCrime > CRIME_ATTACK) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK)))
 			{
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_08");	//Больше нет ни одного свидетеля, который бы подтвердил, что ты участвовал в драке.
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_08 " );	// There is no other witness to confirm that you were involved in the fight.
 				GLOBAL_OLDCAMP_ATTACK = GLOBAL_OLDCAMP_ATTACK - 1;
 				if(GLOBAL_OLDCAMP_ATTACK < 0)
 				{
@@ -225,43 +226,43 @@ func void DIA_Garond_PMSchulden_Info()
 			};
 			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 			{
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_09");	//По-видимому, все обвинения против тебя были устранены.
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_09 " );	// Apparently, all charges against you have been dropped.
 			};
-			AI_Output(self,other,"DIA_Garond_PMSchulden_10_10");	//Я не знаю, что произошло, но я предостерегаю тебя: не заходи слишком далеко!
+			AI_Output(self,other, " DIA_Garond_PMSchulden_10_10 " );	// I don't know what happened, but I warn you: don't go too far!
 			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 			{
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_11");	//Я решил простить тебе твои долги.
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_12");	//И больше не делай неприятностей в замке!
-				Garond_Schulden = 0;
-				Garond_LastPetzCounter = 0;
-				Garond_LastPetzCrime = CRIME_NONE;
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_11 " );	// I have decided to forgive you your debts.
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_12 " );	// And don't make any more trouble in the castle!
+				garond_debt = 0 ;
+				Garond_LastPetzCounter = 0 ;
+				Garond_LastPetzCrime = CRIME_NONE ;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_13");	//Чтобы было ясно: ты должен заплатить свой штраф в полном размере.
-				if(Garond_Schulden <= 1000)
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_13 " );	// To be clear: you must pay your fine in full.
+				if (Garond_Debts <=  1000 )
 				{
 					B_Say_Gold(self,other,Garond_Schulden);
 				}
 				else
 				{
-					concatText1 = ConcatStrings(IntToString(Garond_Schulden),"");
+					concatText1 = ConcatStrings(IntToString(Garond_Debts), " " );
 					concatText2 = ConcatStrings(concatText1,PRINT_SHULDEN2);
 					concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 					AI_Print(concattextschulden);
 				};
-				AI_Output(self,other,"DIA_Garond_PMSchulden_10_14");	//Итак, что ты решил?
+				AI_Output(self,other, " DIA_Garond_PMSchulden_10_14 " );	// So what did you decide?
 			};
 		};
 		if(B_GetGreatestPetzCrime(self) != CRIME_NONE)
 		{
 			Info_ClearChoices(DIA_Garond_PMSchulden);
 			Info_ClearChoices(DIA_Garond_PETZMASTER);
-			Info_AddChoice(DIA_Garond_PMSchulden,"У меня недостаточно золота!",DIA_Garond_PETZMASTER_PayLater);
-			Info_AddChoice(DIA_Garond_PMSchulden,"Сколько я должен заплатить?",DIA_Garond_PMSchulden_HowMuchAgain);
-			if(Npc_HasItems(other,ItMi_Gold) >= Garond_Schulden)
+			Info_AddChoice(DIA_Garond_PMSchulden, " I don't have enough gold! " ,DIA_Garond_PETZMASTER_PayLater);
+			Info_AddChoice(DIA_Garond_PMSchulden, " How Much Should I Pay? " ,DIA_Garond_PMSchulden_HowMuchAgain);
+			if (Npc_HasItems(other,ItMi_Gold) >= Garond_debts)
 			{
-				Info_AddChoice(DIA_Garond_PMSchulden,"Я хочу заплатить штраф.",DIA_Garond_PETZMASTER_PayNow);
+				Info_AddChoice(DIA_Garond_PMSchulden, " I want to pay a fine. " ,DIA_Garond_PETZMASTER_PayNow);
 			};
 		};
 	};
@@ -271,31 +272,31 @@ func void DIA_Garond_PMSchulden_HowMuchAgain()
 {
 	var string concatText1;
 	var string concatText2;
-	var string concattextschulden;
-	AI_Output(other,self,"DIA_Garond_PMSchulden_HowMuchAgain_15_00");	//Сколько я должен заплатить?
-	if(Garond_Schulden <= 1000)
+	var string contexttextdebts;
+	AI_Output(other,self, " DIA_Garond_PMSchulden_HowMuchAgain_15_00 " );	// How much do I have to pay?
+	if (Garond_Debts <=  1000 )
 	{
 		B_Say_Gold(self,other,Garond_Schulden);
 	}
 	else
 	{
-		concatText1 = ConcatStrings(IntToString(Garond_Schulden),"");
+		concatText1 = ConcatStrings(IntToString(Garond_Debts), " " );
 		concatText2 = ConcatStrings(concatText1,PRINT_SHULDEN2);
 		concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 		AI_Print(concattextschulden);
 	};
 	Info_ClearChoices(DIA_Garond_PMSchulden);
 	Info_ClearChoices(DIA_Garond_PETZMASTER);
-	Info_AddChoice(DIA_Garond_PMSchulden,"У меня недостаточно золота!",DIA_Garond_PETZMASTER_PayLater);
-	Info_AddChoice(DIA_Garond_PMSchulden,"Сколько я должен заплатить?",DIA_Garond_PMSchulden_HowMuchAgain);
-	if(Npc_HasItems(other,ItMi_Gold) >= Garond_Schulden)
+	Info_AddChoice(DIA_Garond_PMSchulden, " I don't have enough gold! " ,DIA_Garond_PETZMASTER_PayLater);
+	Info_AddChoice(DIA_Garond_PMSchulden, " How Much Should I Pay? " ,DIA_Garond_PMSchulden_HowMuchAgain);
+	if (Npc_HasItems(other,ItMi_Gold) >= Garond_debts)
 	{
-		Info_AddChoice(DIA_Garond_PMSchulden,"Я хочу заплатить штраф.",DIA_Garond_PETZMASTER_PayNow);
+		Info_AddChoice(DIA_Garond_PMSchulden, " I want to pay a fine. " ,DIA_Garond_PETZMASTER_PayNow);
 	};
 };
 
 
-instance DIA_Garond_PETZMASTER(C_Info)
+instance DIA_Garond_PETZMASTER (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 1;
@@ -308,7 +309,7 @@ instance DIA_Garond_PETZMASTER(C_Info)
 
 func int DIA_Garond_PETZMASTER_Condition()
 {
-	if((B_GetGreatestPetzCrime(self) > Garond_LastPetzCrime) && (KAPITELORCATC == FALSE))
+	if ((B_GetGreatestPetzCrime(self) > Garond_LastPetzCrime) && ( CAPITALORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -318,28 +319,28 @@ func void DIA_Garond_PETZMASTER_Info()
 {
 	var string concatText1;
 	var string concatText2;
-	var string concattextschulden;
+	var string contexttextdebts;
 	var string tsettext1;
 	var string tsettext2;
 	var string tsettext3;
 	var int temp1;
-	Garond_Schulden = 0;
-	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
+	garond_debt = 0 ;
+	if (self.aivar[AIV_TalkedToPlayer] ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_00");	//Ты парень, который устроил неприятности в замке.
+		AI_Output(self,other, " DIA_Garond_PETZMASTER_10_00 " );	// You're the guy who caused trouble in the castle.
 	};
-	temp1 = 0;
+	temp1 = 0 ;
 	if(GLOBAL_OLDCAMP_MURDER > 2)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(GLOBAL_OLDCAMP_THEFT > 10)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(GLOBAL_OLDCAMP_ATTACK > 5)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(temp1 == 1)
 	{
@@ -348,124 +349,124 @@ func void DIA_Garond_PETZMASTER_Info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_OLDCAMP_MURDER),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_MURDERCOUNT2_OLDCAMP);
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_OLDCAMP,tsettext2);
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_48");	//Но в свете твоих последних деяний - это уже ни к чему...
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_49");	//Кровожадным ублюдкам вроде тебя не место в этом мире - и посему земная кара настигнет тебя раньше, чем небесная.
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_50");	//И поверь мне, эту обязанность перед людьми и Инносом я исполню, чего бы мне это не стоило.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_48 " );	// But in light of your recent deeds, this is no longer necessary...
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_49 " );	// Bloodthirsty bastards like you have no place in this world - and therefore earthly punishment will overtake you before heavenly.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_50 " );	// And believe me, I will fulfill this duty to people and Innos, no matter what it costs me.
 			AI_ReadyMeleeWeapon(self);
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_51");	//А теперь - умри!
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_51 " );	// And now - die!
 		}
 		else if(GLOBAL_OLDCAMP_ATTACK > 5)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_OLDCAMP_ATTACK),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_OLDCAMP);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_OLDCAMP,tsettext2);
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_52");	//Но в свете твоих последних деяний - это уже ни к чему...
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_53");	//Ты - бандит, и это твоя истинная сущность. А мой священный долг - избавлять землю от таких, как ты!
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_54");	//И поверь мне: эту обязанность перед людьми и Инносом я исполню, чего бы мне это не стоило.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_52 " );	// But in light of your recent deeds, this is no longer necessary...
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_53 " );	// You are a bandit, and this is your true nature. And my sacred duty is to rid the earth of people like you!
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_54 " );	// And believe me: I will fulfill this duty to people and Innos, no matter what the cost.
 			AI_ReadyMeleeWeapon(self);
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_55");	//А теперь - умри!
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_55 " );	// And now - die!
 		}
 		else if(GLOBAL_OLDCAMP_THEFT > 10)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_OLDCAMP_THEFT),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_THEFTCOUNT2_OLDCAMP);
 			tsettext3 = ConcatStrings(PRINT_THEFTCOUNT_OLDCAMP,tsettext2);
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_56");	//Но в свете твоих последних деяний - это уже ни к чему...
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_57");	//Ты - вор, и это твоя истинная сущность. А мой священный долг - избавлять землю от таких как ты!
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_58");	//И поверь мне: эту обязанность перед людьми и Инносом, я исполню, чего бы мне это не стоило.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_56 " );	// But in light of your recent deeds, this is no longer necessary...
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_57 " );	// You are a thief, and this is your true nature. And my sacred duty is to rid the earth of people like you!
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_58 " );	// And believe me: I will fulfill this duty to people and Innos, no matter what it costs me.
 			AI_ReadyMeleeWeapon(self);
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_08_59");	//А теперь - умри!
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_08_59 " );	// And now - die!
 		};
 		Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
-		B_LogEntry(TOPIC_DIPLOM,"Мои отношения с паладинами испорчены из-за постоянных бесчинств в замке. Теперь там меня считают бандитом, это касается и города!");
+		B_LogEntry( TOPIC_DIPLOM , " My relationship with the paladins is ruined because of the constant outrages in the castle. Now they consider me a bandit there, this also applies to the city! " );
 		Info_ClearChoices(DIA_Garond_PMSchulden);
 		Info_ClearChoices(DIA_Garond_PETZMASTER);
-		Info_AddChoice(DIA_Garond_PETZMASTER,"Постой!!!...(пора сматываться)",dia_garond_petzmaster_attackmurder);
+		Info_AddChoice(DIA_Garond_PETZMASTER, " Wait!!!...(it's time to leave) " ,dia_garond_petzmaster_attackmurder);
 	}
 	else
 	{
 		if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 		{
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_01");	//Я уже спрашивал себя - когда ты придешь ко мне?
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_02");	//Убийство - это самое последнее, что я хотел бы видеть!
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_03");	//Я отвечаю за каждого из моих людей - и теперь у меня еще на одного человека меньше!
-			Garond_Schulden = B_GetTotalPetzCounter(self) * 1500;
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_01 " );	// I already asked myself - when will you come to me?
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_02 " );	// Murder is the last thing I want to see!
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_03 " );	// I'm responsible for each of my people - and now I have one less person!
+			Garond_debts = B_GetTotalPetzCounter(self) *  1500 ;
 			if((PETZCOUNTER_City_Theft + PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller) > 0)
 			{
-				AI_Output(self,other,"DIA_Garond_PETZMASTER_10_04");	//И я даже не заикаюсь об остальных делах, которые ты натворил.
+				AI_Output(self,other, " DIA_Garond_PETZMASTER_10_04 " );	// And I don't even stutter about the rest of the things you've done.
 			};
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_05");	//Теперь я объясню тебе кое-что. Мы все сидим здесь в ловушке.
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_06");	//И я отвечаю за каждого из моих людей. И за тебя.
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_07");	//Если ты захочешь убить кого-то, тебе надо только выйти из замка. Там предостаточно орков.
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_08");	//Я назначу тебе штраф - хотя я вовсе не хочу заниматься таким дерьмом.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_05 " );	// Now I'll explain something to you. We are all sitting here in a trap.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_06 " );	// And I'm responsible for each of my people. And for you.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_07 " );	// If you want to kill someone, all you have to do is get out of the castle. There are plenty of orcs out there.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_08 " );	// I'll give you a fine - even though I don't want to do that kind of shit.
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 		{
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_09");	//Я слышал, ты занимаешься воровством?
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_09 " );	// I heard you're into stealing?
 			if((PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller) > 0)
 			{
-				AI_Output(self,other,"DIA_Garond_PETZMASTER_10_10");	//Помимо других дел, о которых мне сообщили.
+				AI_Output(self,other, " DIA_Garond_PETZMASTER_10_10 " );	// In addition to other cases I've been told about.
 			};
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_11");	//Я не позволю тебе этого. Я думаю, что ты недооцениваешь серьезности положения.
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_12");	//Ты заплатишь штраф, чтобы исправить последствия своего преступления!
-			Garond_Schulden = B_GetTotalPetzCounter(self) * 500;
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_11 " );	// I won't let you. I think you underestimate the seriousness of the situation.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_12 " );	// You will pay a fine to make amends for your crime!
+			Garond_debts = B_GetTotalPetzCounter(self) *  500 ;
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 		{
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_13");	//Мне не нравится, что между моими людьми возникают драки.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_13 " );	// I don't like fighting between my people.
 			if(PETZCOUNTER_City_Sheepkiller > 0)
 			{
-				AI_Output(self,other,"DIA_Garond_PETZMASTER_10_14");	//И случай с овцами не делает тебе чести.
+				AI_Output(self,other, " DIA_Garond_PETZMASTER_10_14 " );	// And the incident with the sheep does you no credit.
 			};
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_15");	//Ты заплатить штраф за это!
-			Garond_Schulden = B_GetTotalPetzCounter(self) * 750;
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_15 " );	// You pay a fine for this!
+			Garond_debts = B_GetTotalPetzCounter(self) *  750 ;
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_SHEEPKILLER)
 		{
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_16");	//Ты ходишь кругом и убиваешь наших овец? Они принадлежат нам всем.
-			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_17");	//Ты оплатишь мне мясо.
-			Garond_Schulden = 250;
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_16 " );	// You go around and kill our sheep? They belong to all of us.
+			AI_Output(self,other, " DIA_Garond_PETZMASTER_10_17 " );	// You will pay me for the meat.
+			garond_debt = 250 ;
 		};
 		AI_Output(other,self,"DIA_Garond_PETZMASTER_15_18");	//Сколько?
-		if(Garond_Schulden <= 1000)
+		if (Garond_Debts <=  1000 )
 		{
 			B_Say_Gold(self,other,Garond_Schulden);
 		}
 		else
 		{
-			concatText1 = ConcatStrings(IntToString(Garond_Schulden),"");
+			concatText1 = ConcatStrings(IntToString(Garond_Debts), " " );
 			concatText2 = ConcatStrings(concatText1,PRINT_SHULDEN2);
 			concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 			AI_Print(concattextschulden);
 		};
 		Info_ClearChoices(DIA_Garond_PMSchulden);
 		Info_ClearChoices(DIA_Garond_PETZMASTER);
-		Info_AddChoice(DIA_Garond_PETZMASTER,"У меня недостаточно золота!",DIA_Garond_PETZMASTER_PayLater);
-		if(Npc_HasItems(other,ItMi_Gold) >= Garond_Schulden)
+		Info_AddChoice(DIA_Garond_PETZMASTER, " I don't have enough gold! " ,DIA_Garond_PETZMASTER_PayLater);
+		if (Npc_HasItems(other,ItMi_Gold) >= Garond_debts)
 		{
-			Info_AddChoice(DIA_Garond_PETZMASTER,"Я хочу заплатить штраф.",DIA_Garond_PETZMASTER_PayNow);
+			Info_AddChoice(DIA_Garond_PETZMASTER, " I want to pay a fine. " ,DIA_Garond_PETZMASTER_PayNow);
 		};
 	};
 };
 
 func void DIA_Garond_PETZMASTER_PayNow()
 {
-	AI_Output(other,self,"DIA_Garond_PETZMASTER_PayNow_15_00");	//Я хочу заплатить штраф!
-	B_GiveInvItems(other,self,ItMi_Gold,Garond_Schulden);
-	AI_Output(self,other,"DIA_Garond_PETZMASTER_PayNow_10_01");	//Хорошо, я скажу об этом нашим парням, чтобы немного успокоить их. Но чтобы больше такое не повторялось!
+	AI_Output(other,self, " DIA_Garond_PETZMASTER_PayNow_15_00 " );	// I want to pay a fine!
+	B_GiveInvItems(other,self,ItMi_Gold,Garond_Duties);
+	AI_Output(self,other, " DIA_Garond_PETZMASTER_PayNow_10_01 " );	// Okay, I'll tell our guys about this to calm them down a bit. But don't let this happen again!
 	B_GrantAbsolution(LOC_OLDCAMP);
-	Garond_Schulden = 0;
-	Garond_LastPetzCounter = 0;
-	Garond_LastPetzCrime = CRIME_NONE;
+	garond_debt = 0 ;
+	Garond_LastPetzCounter = 0 ;
+	Garond_LastPetzCrime = CRIME_NONE ;
 	Info_ClearChoices(DIA_Garond_PETZMASTER);
 	Info_ClearChoices(DIA_Garond_PMSchulden);
 };
 
 func void DIA_Garond_PETZMASTER_PayLater()
 {
-	AI_Output(other,self,"DIA_Garond_PETZMASTER_PayLater_15_00");	//У меня нет столько золота!
-	AI_Output(self,other,"DIA_Garond_PETZMASTER_PayLater_10_01");	//Тогда постарайся раздобыть это золото как можно быстрее.
-	AI_Output(self,other,"DIA_Garond_PETZMASTER_PayLater_10_02");	//И я предупреждаю тебя: если ты будешь совершать подобные преступления и в будущем, цена возрастет!
+	AI_Output(other,self, " DIA_Garond_PETZMASTER_PayLater_15_00 " );	// I don't have that much gold!
+	AI_Output(self,other, " DIA_Garond_PETZMASTER_PayLater_10_01 " );	// Then try to get this gold as quickly as possible.
+	AI_Output(self,other, " DIA_Garond_PETZMASTER_PayLater_10_02 " );	// And I warn you: if you continue to commit such crimes in the future, the price will increase!
 	Garond_LastPetzCounter = B_GetTotalPetzCounter(self);
 	Garond_LastPetzCrime = B_GetGreatestPetzCrime(self);
 	AI_StopProcessInfos(self);
@@ -493,36 +494,36 @@ func int DIA_Garond_Hello_Condition()
 
 func void DIA_Garond_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Garond_Hello_10_00");	//Откуда ты взялся? Ты не из старателей, и ты не один из моих людей. Так кто же ты?
-	AI_Output(other,self,"DIA_Garond_Hello_15_01");	//Я пришел через Проход.
-	AI_Output(self,other,"DIA_Garond_Hello_10_02");	//Через Проход...? Ты действительно прошел там?! О, Иннос всемогущий!
+	AI_Output(self,other, " DIA_Garond_Hello_10_00 " );	// Where did you come from? You're not one of the miners, and you're not one of my people. So who are you?
+	AI_Output(other,self, " DIA_Garond_Hello_15_01 " );	// I came through the Passage.
+	AI_Output(self,other, " DIA_Garond_Hello_10_02 " );	// Through Passage...? Did you really go through there?! Oh, Innos almighty!
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Garond_Hello_10_03");	//Зачем ты прошел этот путь, маг?
+		AI_Output(self,other, " DIA_Garond_Hello_10_03 " );	// Why did you come this way, mage?
 	}
-	else if(hero.guild == GIL_MIL)
+	else  if (hero.guild ==  GIL_MIL )
 	{
-		AI_Output(self,other,"DIA_Garond_Hello_10_04");	//Какой приказ ты выполняешь, солдат?
+		AI_Output(self,other, " DIA_Garond_Hello_10_04 " );	// What order are you following, soldier?
 	}
 	else if(hero.guild == GIL_SLD)
 	{
-		AI_Output(self,other,"DIA_Garond_Hello_10_05");	//Я задаю себе вопрос: зачем наемнику проделывать такой путь? Что ты делаешь здесь?
+		AI_Output(self,other, " DIA_Garond_Hello_10_05 " );	// I ask myself: why would a mercenary make such a journey? What are you doing here?
 	}
-	else if(hero.guild == GIL_KDW)
+	else  if (hero.guild ==  GIL_KDW )
 	{
-		AI_Output(self,other,"DIA_Garond_Hello_10_06");	//Что ищет здесь почтенный маг Воды?
+		AI_Output(self,other, " DIA_Garond_Hello_10_06 " );	// What is the venerable Water Mage looking for here?
 	}
-	else if(hero.guild == GIL_KDM)
+	else  if (hero.guild ==  GIL_KDM )
 	{
-		AI_Output(self,other,"DIA_Garond_Hello_10_07");	//И какая же причина заставила НЕКРОМАНТА появиться здесь?
+		AI_Output(self,other, " DIA_Garond_Hello_10_07 " );	// And what was the reason for the NECROMANCE to appear here?
 	}
 	else if(hero.guild == GIL_SEK)
 	{
-		AI_Output(self,other,"DIA_Garond_Hello_10_08");	//Ты похож на тех парней из бывшего лагеря на болотах. Чего тебе тут надо?
+		AI_Output(self,other, " DIA_Garond_Hello_10_08 " );	// You look like those guys from the former swamp camp. What do you need here?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garond_Hello_10_09");	//Что ты здесь делаешь?
+		AI_Output(self,other, " DIA_Garond_Hello_10_09 " );	// What are you doing here?
 	};
 };
 
@@ -532,13 +533,13 @@ instance DIA_Garond_NeedProof(C_Info)
 	nr = 1;
 	condition = DIA_Garond_NeedProof_Condition;
 	information = DIA_Garond_NeedProof_Info;
-	description = "Я прибыл от лорда Хагена.";
+	description = " I have come from Lord Hagen. " ;
 };
 
 
 func int DIA_Garond_NeedProof_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Garond_Hello) && (MIS_OLDWORLD == LOG_Running) && (Kapitel == 2))
+	if ( Npc_KnowsInfo ( other , DIA_Garond_Hello ) && ( MY_OLDWORLD  == LOG_Running ) && ( Chapter ==  2 )) ;
 	{
 		return TRUE;
 	};
@@ -546,33 +547,33 @@ func int DIA_Garond_NeedProof_Condition()
 
 func void DIA_Garond_NeedProof_Info()
 {
-	AI_Output(other,self,"DIA_Garond_NeedProof_15_00");	//Я пришел от лорда Хагена. Он хочет, чтобы я представил ему доказательства присутствия здесь драконов.
-	AI_Output(self,other,"DIA_Garond_NeedProof_10_01");	//Так ты пришел, чтобы получить эти доказательства и исчезнуть опять?
-	AI_Output(other,self,"DIA_Garond_NeedProof_15_02");	//Да! Именно на это я и рассчитывал.
-	AI_Output(self,other,"DIA_Garond_NeedProof_10_03");	//Так ему нужны доказательства? Он может получить их. Но я не могу отправить тебя назад к лорду Хагену, не предоставив ему информацию о руде.
-	AI_Output(self,other,"DIA_Garond_NeedProof_10_04");	//Послушай - лорд Хаген должен узнать все о ситуации здесь и о том, сколько руды удалось нам добыть.
-	AI_Output(other,self,"DIA_Garond_NeedProof_15_05");	//Хорошо. И что ты хочешь, чтобы я сделал?
-	AI_Output(self,other,"DIA_Garond_NeedProof_10_06");	//У нас здесь в долине три отряда старателей. Но я еще не получил от них ни одного куска руды.
-	AI_Output(self,other,"DIA_Garond_NeedProof_10_07");	//Посети все три шахты и доложи мне, сколько руды они добыли.
-	AI_Output(self,other,"DIA_Garond_NeedProof_10_08");	//После этого я дам тебе письмо, которое ты отнесешь лорду Хагену.
-	AI_Output(other,self,"DIA_Garond_NeedProof_15_09");	//Ну, хорошо. Похоже, у меня нет выбора.
-	if(((hero.guild == GIL_GUR) || (hero.guild == GIL_TPL)) && (MIS_PALADINWATCH == LOG_Running) && (IDOLORANQUESTIONTWO == FALSE))
+	AI_Output(other,self, " DIA_Garond_NeedProof_15_00 " );	// I come from Lord Hagen. He wants me to show him evidence of dragons here.
+	AI_Output(self,other, " DIA_Garond_NeedProof_10_01 " );	// So you came to get this evidence and disappear again?
+	AI_Output(other,self, " DIA_Garond_NeedProof_15_02 " );	// Yes! That's exactly what I was counting on.
+	AI_Output(self,other, " DIA_Garond_NeedProof_10_03 " );	// So he needs proof? He can get them. But I can't send you back to Lord Hagen without giving him information about the ore.
+	AI_Output(self,other, " DIA_Garond_NeedProof_10_04 " );	// Listen - Lord Hagen needs to know all about the situation here and how much ore we've managed to extract.
+	AI_Output(other,self, " DIA_Garond_NeedProof_15_05 " );	// Good. And what do you want me to do?
+	AI_Output(self,other, " DIA_Garond_NeedProof_10_06 " );	// We've got three bands of miners here in the valley. But I haven't received a single piece of ore from them yet.
+	AI_Output(self,other, " DIA_Garond_NeedProof_10_07 " );	// Visit all three mines and report to me how much ore they have mined.
+	AI_Output(self,other, " DIA_Garond_NeedProof_10_08 " );	// After that, I'll give you a letter to take to Lord Hagen.
+	AI_Output(other,self, " DIA_Garond_NeedProof_15_09 " );	// Well, okay. It looks like I have no choice.
+	if (((hero.guild ==  GIL_GUR ) || (hero.guild ==  GIL_TPL )) && ( MY_PALADINWATCH  == LOG_Running) && ( TWO IDOLORANQUESTIONS  ==  FALSE )) ;
 	{
 		IDOLORANQUESTIONTWO = TRUE;
-		B_LogEntry(TOPIC_PALADINWATCH,"Судя по всему, основной причиной, по которой паладины прибыли на этот остров явилась магическая руда. Без достаточного количества оружия из магической руды армия короля не будет иметь ни единого шанса в войне против орков. Отряд, что отправился в Долину Рудников, должен выяснить ситуацию с возможностью добычи руды на острове. После этого, паладины планируют вернуться обратно на материк.");
+		B_LogEntry( TOPIC_PALADINWATCH , " It seems that the main reason why the paladins came to this island was magic ore. Without enough weapons from magic ore, the king's army will not have a chance in the war against the orcs. The squad that went to the Valley of Mines , must find out the situation with the possibility of mining on the island.After that, the paladins plan to return back to the mainland. " );
 	};
-	if(((hero.guild == GIL_GUR) || (hero.guild == GIL_TPL)) && (MIS_PALADINWATCH == LOG_Running) && (IDOLORANQUESTIONTHREE == FALSE))
+	if (((hero.guild ==  GIL_GUR ) || (hero.guild ==  GIL_TPL )) && ( MIS_PALADINWATCH  == LOG_Running) && ( IDOLORANQUESTIONTHREE  ==  FALSE )) ;
 	{
 		IDOLORANQUESTIONTHREE = TRUE;
-		B_LogEntry(TOPIC_PALADINWATCH,"Отряд паладинов, который лорд Хаген отправил для разъяснения ситуации с рудой, обосновался в старом замке Баронов. Их дела обстоят совсем плохо. По словам паладина Гаронда, ситуация с рудой до сих пор не ясна и ко всему прочему, орки взяли замок в кольцо, окружив паладинов со всех сторон. К тому же недавно на замок было совершено нападение драконов - что еще больше добавляет 'оптимизма' в успех всей операции.");
+		B_LogEntry( TOPIC_PALADINWATCH , " The paladin squad that Lord Hagen sent to clarify the situation with the ore settled in the old Barons' castle. They are in a very bad state. the castle is surrounded by paladins from all sides.In addition, the castle was recently attacked by dragons - which adds even more 'optimism' to the success of the whole operation. " );
 	};
 	MIS_ScoutMine = LOG_Running;
 	B_StartOtherRoutine(Jergan,"FAJETH");
-	B_LogEntry(Topic_MISOLDWORLD,"Прежде чем комендант Гаронд даст мне письмо с доказательствами, он хочет, чтобы я нашел ТРИ группы рудокопов и сообщил ему, сколько руды они уже добыли.");
+	B_LogEntry(Topic_MISOLDWORLD, " Before Commandant Garond gives me a letter of evidence, he wants me to find THREE groups of miners and tell him how much ore they have already mined. " );
 	Log_CreateTopic(TOPIC_ScoutMine,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ScoutMine,LOG_Running);
-	B_LogEntry_Quiet(TOPIC_ScoutMine,"Комендант Гаронд дал мне задание. Он послал в разведку ТРИ группы рудокопов на поиск магической руды. Но до сих пор от них не было никаких известий.");
-	B_LogEntry_Quiet(TOPIC_ScoutMine,"Я должен разыскать группы рудокопов и узнать сколько руды они нашли.");
+	B_LogEntry_Quiet(TOPIC_ScoutMine, " Commandant Garond gave me a mission. He sent out THREE groups of miners to scout for magic ore. But so far, I haven't heard from them. " );
+	B_LogEntry_Quiet(TOPIC_ScoutMine, " I need to track down the mining teams and find out how much ore they found. " );
 };
 
 instance DIA_Garond_WhyNot(C_Info)
@@ -581,12 +582,12 @@ instance DIA_Garond_WhyNot(C_Info)
 	nr = 1;
 	condition = DIA_Garond_WhyNot_Condition;
 	information = DIA_Garond_WhyNot_Info;
-	description = "Почему ты не отправил людей в другие шахты?";
+	description = " Why didn't you send people to other mines? " ;
 };
 
 func int DIA_Garond_WhyNot_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Garond_NeedProof) == TRUE) && (Kapitel <= 5))
+	if (( Npc_KnowsInfo ( other , DIA_Garond_NeedProof ) ==  TRUE ) && ( Capital <=  5 )) ;
 	{
 		return TRUE;
 	};
@@ -594,35 +595,35 @@ func int DIA_Garond_WhyNot_Condition()
 
 func void DIA_Garond_WhyNot_Info()
 {
-	AI_Output(other,self,"DIA_Garond_WhyNot_01_00");	//Почему ты не отправил людей в Старую шахту?
-	AI_Output(self,other,"DIA_Garond_WhyNot_01_01");	//(серьезно) Насколько мне известно, в ней произошел обвал.
-	AI_Output(self,other,"DIA_Garond_WhyNot_01_02");	//Вряд ли мы сможем добывать там руду.
-	AI_Output(self,other,"DIA_Garond_WhyNot_01_03");	//Да и потом, в той шахте наверняка сейчас полно нежити.
-	AI_Output(self,other,"DIA_Garond_WhyNot_01_04");	//А я не собираюсь посылать своих людей на верную смерть! У меня их и так мало.
-	AI_Output(other,self,"DIA_Garond_WhyNot_01_05");	//Есть еще шахта в Новом лагере.
-	AI_Output(self,other,"DIA_Garond_WhyNot_01_06");	//Шахта в Новом лагере? Еще одна?
-	AI_Output(other,self,"DIA_Garond_WhyNot_01_07");	//А ты о ней не знал?
-	AI_Output(self,other,"DIA_Garond_WhyNot_01_08");	//Кажется, один из заключенных говорил о чем-то похожем. Но я тогда не придал этому значения.
-	AI_Output(other,self,"DIA_Garond_WhyNot_01_09");	//А зря. В свое время маги Воды добывали в ней руду для своих экспериментов. 
-	AI_Output(self,other,"DIA_Garond_WhyNot_01_10");	//Если это так...(задумчиво) То тогда, пожалуй, нам стоит проверить ее.
-	AI_Output(self,other,"DIA_Garond_WhyNot_01_11");	//Займись этим! Надо выяснить, что сейчас с этой шахтой и можно ли там добывать руду.
+	AI_Output(other,self, " DIA_Garond_WhyNot_01_00 " );	// Why didn't you send people to the Old Mine?
+	AI_Output(self,other, " DIA_Garond_WhyNot_01_01 " );	// (seriously) As far as I know, it collapsed.
+	AI_Output(self,other, " DIA_Garond_WhyNot_01_02 " );	// It is unlikely that we will be able to mine ore there.
+	AI_Output(self,other, " DIA_Garond_WhyNot_01_03 " );	// And besides, that mine is probably full of undead right now.
+	AI_Output(self,other, " DIA_Garond_WhyNot_01_04 " );	// And I'm not going to send my people to certain death! I have very few of them.
+	AI_Output(other,self, " DIA_Garond_WhyNot_01_05 " );	// There is also a mine in the New Camp.
+	AI_Output(self,other, " DIA_Garond_WhyNot_01_06 " );	// The mine in the New Camp? Another one?
+	AI_Output(other,self, " DIA_Garond_WhyNot_01_07 " );	// Didn't you know about her?
+	AI_Output(self,other, " DIA_Garond_WhyNot_01_08 " );	// One of the prisoners seems to be talking about something similar. But then I did not attach any importance to this.
+	AI_Output(other,self, " DIA_Garond_WhyNot_01_09 " );	// But in vain. At one time, the magicians of Water mined ore in it for their experiments.
+	AI_Output(self,other, " DIA_Garond_WhyNot_01_10 " );	// If that's the case... (thoughtfully) Then maybe we should check it out.
+	AI_Output(self,other, " DIA_Garond_WhyNot_01_11 " );	// Take care of it! We need to find out what is now with this mine and whether it is possible to mine ore there.
 	MIS_ScoutNewMine = LOG_Running;
 	Log_CreateTopic(TOPIC_ScoutNewMine,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ScoutNewMine,LOG_Running);
-	B_LogEntry(TOPIC_ScoutNewMine,"Гаронд был удивлен известием о том, что в Долине Рудников существует еще одна шахта - та, которая была в Новом лагере. Он приказал мне узнать ситуацию там!");
+	B_LogEntry(TOPIC_ScoutNewMine, " Garond was surprised to learn that another mine exists in the Valley of Mines - the one in the New Camp. He ordered me to inquire about the situation there! " );
 };
 
-var int SFRM_01;
-var int SFRM_02;
+var int  SFRM_01 ;
+var int  SFRM_02 ;
 
-instance DIA_Garond_ScoutNewMine(C_Info)
+instance DIA_Garond_ScoutNewMine (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 1;
 	condition = DIA_Garond_ScoutNewMine_Condition;
 	information = DIA_Garond_ScoutNewMine_Info;
 	permanent = TRUE;
-	description = "Насчет шахты в Новом лагере.";
+	description = " About the mine in the New Camp. " ;
 };
 
 func int DIA_Garond_ScoutNewMine_Condition()
@@ -637,27 +638,27 @@ func void DIA_Garond_ScoutNewMine_Info()
 {
 	var int sumqx;
 
-	sumqx = FALSE;
+	sumqx = FALSE ;
 
-	AI_Output(other,self,"DIA_Garond_ScoutNewMine_01_00");	//Насчет шахты в Новом лагере.
-	AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_01");	//Я тебя слушаю.
+	AI_Output(other,self, " DIA_Garond_ScoutNewMine_01_00 " );	// About the mine in the New Camp.
+	AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_01 " );	// I'm listening to you.
 
 	if(FreeMineGeneralIsDead == FALSE)
 	{
 		if((ScoutFreeLager == TRUE) && (SFRM_01 == FALSE))
 		{
-			sumqx = sumqx + 200;
-			AI_Output(other,self,"DIA_Garond_ScoutNewMine_01_02");	//Орки полностью контролируют все подходы к ней.
-			AI_Output(other,self,"DIA_Garond_ScoutNewMine_01_03");	//И их там довольно много.
-			AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_04");	//Я в этом и не сомневался. Эти твари своего не упустят!
+			sumqx = sumqx +  200 ;
+			AI_Output(other,self, " DIA_Garond_ScoutNewMine_01_02 " );	// Orcs have full control of all approaches to it.
+			AI_Output(other,self, " DIA_Garond_ScoutNewMine_01_03 " );	// And there are quite a few of them.
+			AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_04 " );	// I didn't doubt it. These creatures won't let go!
 			SFRM_01 = TRUE;
 		};
 		if((ScoutFreeMine == TRUE) && (SFRM_02 == FALSE))
 		{
-			sumqx = sumqx + 200;
-			AI_Output(other,self,"DIA_Garond_ScoutNewMine_01_05");	//Мне удалось попасть в саму шахту. Там тоже полно орков!
-			AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_06");	//Логично было предположить, что они не оставят ее без охраны.
-			AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_07");	//Теперь, чтобы добывать там руду, нам придется выбить их оттуда!
+			sumqx = sumqx +  200 ;
+			AI_Output(other,self, " DIA_Garond_ScoutNewMine_01_05 " );	// I managed to get into the mine itself. It's full of orcs too!
+			AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_06 " );	// It was logical to assume that they would not leave her unguarded.
+			AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_07 " );	// Now, in order to mine ore there, we'll have to knock them out of there!
 			SFRM_02 = TRUE;
 		};
 		if(sumqx > 0)
@@ -665,8 +666,8 @@ func void DIA_Garond_ScoutNewMine_Info()
 			B_GivePlayerXP(sumqx);
 		};
 
-		AI_Output(other,self,"DIA_Garond_ScoutNewMine_01_08");	//Больше пока ничего.
-		AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_09");	//Хорошо! Тогда сообщи мне, если ситуация изменится.
+		AI_Output(other,self, " DIA_Garond_ScoutNewMine_01_08 " );	// Nothing else yet.
+		AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_09 " );	// Good! Then let me know if the situation changes.
 	}
 	else
 	{
@@ -679,15 +680,15 @@ func void DIA_Garond_ScoutNewMine_Info()
 			B_GivePlayerXP(1000);
 		};
 
-		AI_Output(other,self,"DIA_Garond_ScoutNewMine_01_10");	//Я позаботился об орках. Шахта теперь свободна.
-		AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_11");	//Ты серьезно? Честно говоря, этого я никак от тебя не ожидал.
-		AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_12");	//Хорошо! Как только мы снимем осаду с замка, я пошлю туда небольшую группу людей.
-		AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_13");	//Посмотрим, много ли там запасов руды.
-		AI_Output(self,other,"DIA_Garond_ScoutNewMine_01_14");	//Вот - возьми это золото в качестве награды.
+		AI_Output(other,self, " DIA_Garond_ScoutNewMine_01_10 " );	// I took care of the orcs. The mine is now free.
+		AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_11 " );	// Are you serious? To be honest, I didn't expect this from you.
+		AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_12 " );	// Good! As soon as we lift the siege from the castle, I will send a small group of people there.
+		AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_13 " );	// Let's see if there's a lot of ore there.
+		AI_Output(self,other, " DIA_Garond_ScoutNewMine_01_14 " );	// Here, take this gold as a reward.
 		B_GiveInvItems(self,other,ItMi_Gold,1500);
 		MIS_ScoutNewMine = LOG_Success;
 		Log_SetTopicStatus(TOPIC_ScoutNewMine,LOG_Success);
-		B_LogEntry(TOPIC_ScoutNewMine,"Гаронд был доволен тем, что мне удалось освободить шахту в Новом лагере.");
+		B_LogEntry(TOPIC_ScoutNewMine, " Garond was pleased that I was able to liberate the mine in the New Camp. " );
 		AI_StopProcessInfos(self);
 	};
 };
@@ -695,19 +696,19 @@ func void DIA_Garond_ScoutNewMine_Info()
 var int AlbertGroupDone;
 var int VenzelGroupDone;
 
-instance DIA_GAROND_GROUP4(C_Info)
+instance DIA_GAROND_GROUP4 (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 2;
 	condition = dia_garond_group4_condition;
 	information = dia_garond_group4_info;
 	permanent = FALSE;
-	description = "Я обнаружил отряд паладина Альберта.";
+	description = " I've located Paladin Albert's party. " ;
 };
 
 func int dia_garond_group4_condition()
 {
-	if((MIS_LostPaladins == LOG_Running) && (KAPITELORCATC == FALSE) && (AlbertGroup == TRUE))
+	if ((MY_LostPaladins == LOG_Running) && ( CAPITELORCATC  ==  FALSE ) && (AlbertGroup ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -716,16 +717,16 @@ func int dia_garond_group4_condition()
 func void dia_garond_group4_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Garond_Group4_15_01");	//Я обнаружил отряд паладина Альберта.
-	AI_Output(self,other,"DIA_Garond_Group4_10_00");	//Что с ними?
-	AI_Output(other,self,"DIA_Garond_Group4_15_02");	//Они укрылись в пещере за забором орков.
-	AI_Output(other,self,"DIA_Garond_Group4_15_03");	//Он спрашивает - что им делать?
-	AI_Output(self,other,"DIA_Garond_Group4_10_01");	//Иннос прислал нам сегодня хорошие новости!
-	AI_Output(self,other,"DIA_Garond_Group4_10_02");	//Если ты сумеешь добраться туда вновь, передай мой приказ - пусть сидят в укрытии, пока в долине не появится лорд Хаген со своими людьми.
-	AI_Output(self,other,"DIA_Garond_Group4_10_04");	//А потом они ударят оркам в тыл!
-	AI_Output(self,other,"DIA_Garond_Group4_10_05");	//Если мы ударим с трех сторон - из Хориниса, из замка и со стороны моря, то мы посеем панику в рядах орков.
-	AI_Output(self,other,"DIA_Garond_Group4_10_06");	//И тогда у нас будет заметный шанс.
-	B_LogEntry(TOPIC_LostPaladins,"Я сообщил Гаронду о найденной группе паладинов.");
+	AI_Output(other,self, " DIA_Garond_Group4_15_01 " );	// I've located Paladin Albert's party.
+	AI_Output(self,other, " DIA_Garond_Group4_10_00 " );	// What's up with them?
+	AI_Output(other,self, " DIA_Garond_Group4_15_02 " );	// They hid in a cave behind the orc fence.
+	AI_Output(other,self, " DIA_Garond_Group4_15_03 " );	// He asks - what should they do?
+	AI_Output(self,other, " DIA_Garond_Group4_10_01 " );	// Innos sent us good news today!
+	AI_Output(self,other, " DIA_Garond_Group4_10_02 " );	// If you manage to get there again, give my order to stay in cover until Lord Hagen and his men appear in the valley.
+	AI_Output(self,other, " DIA_Garond_Group4_10_04 " );	// And then they'll hit the orcs in the rear!
+	AI_Output(self,other, " DIA_Garond_Group4_10_05 " );	// If we strike from three sides - from Khorinis, from the castle and from the sea, then we will sow panic in the ranks of the orcs.
+	AI_Output(self,other, " DIA_Garond_Group4_10_06 " );	// And then we will have a noticeable chance.
+	B_LogEntry(TOPIC_LostPaladins, " I informed Garond of a group of paladins found. " );
 
 	if(MIS_EscapeMine == LOG_Success)
 	{
@@ -736,22 +737,22 @@ func void dia_garond_group4_info()
 	MIS_FINDEDOCGROUP = LOG_Running;
 	Log_CreateTopic(TOPIC_FINDEDOCGROUP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FINDEDOCGROUP,LOG_Running);
-	B_LogEntry_Quiet(TOPIC_FINDEDOCGROUP,"Гаронд попросил меня передать приказ Альберту, чтобы те пока оставались на месте до прихода в долину лорда Хагена с подкреплением.");
+	B_LogEntry_Quiet( TOPIC_FINDEDOCGROUP , " Garonde asked me to convey orders to Albert to remain where they are until Lord Hagen arrives with reinforcements. " );
 };
 
-instance DIA_GAROND_Venzel(C_Info)
+instance DIA_GAROND_Venzel (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 2;
 	condition = dia_garond_Venzel_condition;
 	information = dia_garond_Venzel_info;
 	permanent = FALSE;
-	description = "По поводу группы паладина Венцеля.";
+	description = " Regarding Paladin Wenzel's party. " ;
 };
 
 func int dia_garond_Venzel_condition()
 {
-	if((MIS_LostPaladins == LOG_Running) && (KAPITELORCATC == FALSE) && (HintVenzelOrcs_01 == TRUE) && (HintVenzelOrcs_02 == TRUE))
+	if ((MIS_LostPaladins == LOG_Running) && ( CAPITELORCATC  ==  FALSE ) && (HintVenzelOrcs_01 ==  TRUE ) && (HintVenzelOrcs_02 ==  TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -760,22 +761,22 @@ func int dia_garond_Venzel_condition()
 func void dia_garond_Venzel_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Garond_Venzel_01_01");	//По поводу группы паладина Венцеля...
-	AI_Output(self,other,"DIA_Garond_Venzel_01_02");	//Я внимательно тебя слушаю.
-	AI_Output(other,self,"DIA_Garond_Venzel_01_03");	//Пару дней назад один из охотников видел раненого паладина на берегу реки. 
-	AI_Output(other,self,"DIA_Garond_Venzel_01_04");	//Возможно, это был кто-то из отряда Венцеля.
-	AI_Output(self,other,"DIA_Garond_Venzel_01_05");	//Интересно... Больше ничего не удалось узнать?
-	AI_Output(other,self,"DIA_Garond_Venzel_01_06");	//Также разведчик Йерган говорит, что недавно наблюдал, как орки вели группу пленных людей к себе в лагерь.
-	AI_Output(other,self,"DIA_Garond_Venzel_01_07");	//Правда на них не было никаких опознавательных знаков.
-	AI_Output(other,self,"DIA_Garond_Venzel_01_08");	//Поэтому он не может сказать точно.
-	AI_Output(self,other,"DIA_Garond_Venzel_01_09");	//Если они все-таки живы и попали в плен к оркам, надо как-то попытаться вытащить их из лап этих тварей. 
-	AI_Output(self,other,"DIA_Garond_Venzel_01_10");	//(решительно) Где они сейчас?
-	AI_Output(other,self,"DIA_Garond_Venzel_01_11");	//Боюсь, что кроме орков, этого никто не скажет.
-	AI_Output(self,other,"DIA_Garond_Venzel_01_12");	//Знаешь, мне все равно, как ты это сделаешь...(серьезно) Но ты должен узнать, что это были за люди!
-	AI_Output(self,other,"DIA_Garond_Venzel_01_13");	//И если среди них есть мои братья по оружию - постараться спасти их.
-	AI_Output(self,other,"DIA_Garond_Venzel_01_14");	//Выполни это поручение - и можешь просить от меня все, что захочешь. Клянусь Инносом!
-	AI_Output(other,self,"DIA_Garond_Venzel_01_15");	//Ну, если это для тебя так важно...
-	B_LogEntry(TOPIC_LostPaladins,"Я сообщил Гаронду о том, что мне удалось выяснить по поводу отряда Венцеля. Новости его, конечно, не порадовали. Он настоял на том, чтобы я выяснил, что это были за люди, которых орки увели в горы. И если представится возможность, спас их. По всей видимости, это могут знать только сами орки.");
+	AI_Output(other,self, " DIA_Garond_Venzel_01_01 " );	// Regarding Paladin Wenzel's group...
+	AI_Output(self,other, " DIA_Garond_Venzel_01_02 " );	// I'm listening to you carefully.
+	AI_Output(other,self, " DIA_Garond_Venzel_01_03 " );	// A couple of days ago, one of the hunters saw a wounded paladin on the river bank.
+	AI_Output(other,self, " DIA_Garond_Venzel_01_04 " );	// Maybe it was someone from Wenzel's squad.
+	AI_Output(self,other, " DIA_Garond_Venzel_01_05 " );	// Interesting... Did you find out anything else?
+	AI_Output(other,self, " DIA_Garond_Venzel_01_06 " );	// Scout Yergan also says that he recently observed how the orcs led a group of captured people to their camp.
+	AI_Output(other,self, " DIA_Garond_Venzel_01_07 " );	// True, they did not have any identification marks.
+	AI_Output(other,self, " DIA_Garond_Venzel_01_08 " );	// So he can't tell for sure.
+	AI_Output(self,other, " DIA_Garond_Venzel_01_09 " );	// If they are still alive and captured by the orcs, we must somehow try to get them out of the clutches of these creatures.
+	AI_Output(self,other, " DIA_Garond_Venzel_01_10 " );	// (decidedly) Where are they now?
+	AI_Output(other,self, " DIA_Garond_Venzel_01_11 " );	// I'm afraid that no one will say this except the orcs.
+	AI_Output(self,other, " DIA_Garond_Venzel_01_12 " );	// You know, I don't care how you do it... (seriously) But you should find out what kind of people they were!
+	AI_Output(self,other, " DIA_Garond_Venzel_01_13 " );	// And if there are my brothers in arms among them, try to save them.
+	AI_Output(self,other, " DIA_Garond_Venzel_01_14 " );	// Complete this task - and you can ask me whatever you want. I swear by Innos!
+	AI_Output(other,self, " DIA_Garond_Venzel_01_15 " );	// Well, if it's that important to you...
+	B_LogEntry(TOPIC_LostPaladins, " I informed Garond of what I had found out about Wenzel's party. Of course, he was not happy with the news. He insisted that I find out who these people were who were taken to the mountains by the orcs. And if the opportunity presents itself, save them. Apparently, only the orcs themselves can know this. " );
 	KnowVenzelOrcs = TRUE;
 };
 
@@ -786,7 +787,7 @@ instance DIA_PAL_250_Garond_VenzelDone(C_Info)
 	condition = DIA_PAL_250_Garond_VenzelDone_condition;
 	information = DIA_PAL_250_Garond_VenzelDone_info;
 	permanent = FALSE;
-	description = "Я выяснил, что случилось с Венцелем.";
+	description = " I found out what happened to Wenzel. " ;
 };
 
 func int DIA_PAL_250_Garond_VenzelDone_condition()
@@ -800,31 +801,31 @@ func int DIA_PAL_250_Garond_VenzelDone_condition()
 func void DIA_PAL_250_Garond_VenzelDone_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_01");	//Я выяснил, что случилось с Венцелем.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_02");	//Рассказывай все, что знаешь. Он жив?
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_03");	//Жив, но попал в плен к оркам. Они отправили его в железную шахту добывать руду.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_04");	//Хвала Инносу...(облегченно) Значит, еще не все потеряно! Надо попробовать вытащить его оттуда.
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_05");	//В этом уже нет необходимости. В шахте орков я нашел магический портал.
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_06");	//Венцель вместе с остальными рабами воспользуется им, чтобы сбежать из плена.
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_07");	//Однако есть подозрение, что портал ведет прямиком на материк.
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_08");	//Поэтому Венцель попросил меня передать тебе, что скорее всего, не вернется обратно в Хоринис.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_09");	//Что же, пусть будет так. Главное, что с ним все будет в порядке.
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_10");	//Он сказал, что вернется в Миртану и будет сражаться с орками там.
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_11");	//По всей видимости, он был прав, когда говорил, что у короля там дела обстоят не лучше вашего.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_12");	//Эти проклятые орки...(гневно) Они заполонили всю страну, как саранча!
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_13");	//Но мы будем сражаться до последнего! Просто так им нас не сломить.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_14");	//Что касается ситуации на материке...(с неохотой) Я не стану тебя обманывать! Да, это так.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_15");	//Король из последних сил старается сдержать орды орков, прорвавшиеся из Нордмара.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_16");	//Но ему это плохо удается. Орков слишком много, а королю не хватает ни людей, ни оружия.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_17");	//Поэтому вся надежда лежит на нас! Возможно, с помощью магической руды еще есть шанс переломить ход войны.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_18");	//Но, как видишь, мы сами тут с трудом отбиваемся от орков.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_19");	//Я не привык сдаваться раньше времени...(обреченно) Но похоже, что в этой войне мы уже проиграли.
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_20");	//Но только не вздумай об этом рассказывать кому-либо! 
-	AI_Output(self,other,"DIA_PAL_250_Garond_VenzelDone_01_21");	//Я не позволю, чтобы мои солдаты пали духом только из-за каких то глупых домыслов.
-	AI_Output(other,self,"DIA_PAL_250_Garond_VenzelDone_01_22");	//Само собой.
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_01 " );	// I found out what happened to Wenzel.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_02 " );	// Tell me everything you know. Is he alive?
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_03 " );	// Alive, but captured by orcs. They sent him to an iron mine to extract ore.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_04 " );	// Praise Innos... (relieved) So, all is not lost! We must try to get him out of there.
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_05 " );	// This is no longer necessary. In the orc mine, I found a magical portal.
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_06 " );	// Wenzel, along with the rest of the slaves, will use it to escape from captivity.
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_07 " );	// However, there is a suspicion that the portal leads directly to the mainland.
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_08 " );	// Therefore, Wenzel asked me to tell you that most likely he will not return back to Khorinis.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_09 " );	// Well, so be it. The main thing is that everything will be fine with him.
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_10 " );	// He said he would return to Myrtana and fight the orcs there.
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_11 " );	// Apparently, he was right when he said that the king is no better off there than you are.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_12 " );	// Those damn orcs...(angrily) They've swept across the country like locusts!
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_13 " );	// But we will fight to the last! They just won't break us.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_14 " );	// As for the situation on the mainland... (reluctantly) I won't lie to you! Yes it is.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_15 " );	// The king is doing his best to hold back the hordes of orcs that have broken through from Nordmar.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_16 " );	// But he's not good at it. There are too many orcs, and the king does not have enough people or weapons.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_17 " );	// Therefore, all hope lies with us! Perhaps with the help of magic ore, there is still a chance to turn the tide of the war.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_18 " );	// But, as you can see, we ourselves here are hardly fighting off the orcs.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_19 " );	// I'm not used to giving up prematurely...(doomed) But it looks like we've already lost this war.
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_20 " );	// But don't you dare tell anyone about it!
+	AI_Output(self,other, " DIA_PAL_250_Garond_VenzelDone_01_21 " );	// I won't let my soldiers lose heart just because of some stupid speculation.
+	AI_Output(other,self, " DIA_PAL_250_Garond_VenzelDone_01_22 " );	// Of course.
 	MIS_LostPaladins = LOG_Success;
 	Log_SetTopicStatus(TOPIC_LostPaladins,LOG_Success);
-	B_LogEntry(TOPIC_LostPaladins,"Я рассказал Гаронду о судьбе Венцеля.");
+	B_LogEntry(TOPIC_LostPaladins, " I told Garond about Wenzel's fate. " );
 };
 
 instance DIA_Garond_Why(C_Info)
@@ -834,7 +835,7 @@ instance DIA_Garond_Why(C_Info)
 	condition = DIA_Garond_Why_Condition;
 	information = DIA_Garond_Why_Info;
 	permanent = FALSE;
-	description = "Но почему именно я? ";
+	description = " But why me? " ;
 };
 
 func int DIA_Garond_Why_Condition()
@@ -847,9 +848,9 @@ func int DIA_Garond_Why_Condition()
 
 func void DIA_Garond_Why_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Why_15_00");	//Но почему именно я?
-	AI_Output(self,other,"DIA_Garond_Why_10_01");	//Потому что ты знаешь как пробираться через ряды орков. Мои парни только зря отдадут свои жизни.
-	AI_Output(self,other,"DIA_Garond_Why_10_02");	//Ведь тебе один раз уже удалось преодолеть все препятствия - значит, ты как нельзя лучше подходишь для этой работы.
+	AI_Output(other,self, " DIA_Garond_Why_15_00 " );	// But why me?
+	AI_Output(self,other, " DIA_Garond_Why_10_01 " );	// Because you know how to get through the orcs. My boys will only give their lives in vain.
+	AI_Output(self,other, " DIA_Garond_Why_10_02 " );	// After all, you have already managed to overcome all the obstacles once, which means that you are the best suited for this work.
 };
 
 instance DIA_Garond_Equipment(C_Info)
@@ -859,13 +860,13 @@ instance DIA_Garond_Equipment(C_Info)
 	condition = DIA_Garond_Equipment_Condition;
 	information = DIA_Garond_Equipment_Info;
 	permanent = FALSE;
-	description = "Мне нужно снаряжение.";
+	description = " I need equipment. " ;
 };
 
 
 func int DIA_Garond_Equipment_Condition()
 {
-	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && ((other.guild == GIL_KDF) || (other.guild == GIL_MIL)))
+	if ((MIS_ScoutMine == LOG_Running) && (Chapter ==  2 ) && ((other.guild ==  GIL_KDF ) || (other.guild ==  GIL_MIL )))
 	{
 		return TRUE;
 	};
@@ -873,28 +874,28 @@ func int DIA_Garond_Equipment_Condition()
 
 func void DIA_Garond_Equipment_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Equipment_15_00");	//Мне нужно снаряжение.
+	AI_Output(other,self, " DIA_Garond_Equipment_15_00 " );	// I need gear.
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Garond_Equipment_10_01");	//Поговори с магом Милтеном здесь, в замке. Он разбирается в таких вещах.
+		AI_Output(self,other, " DIA_Garond_Equipment_10_01 " );	// Talk to the mage Milten here in the castle. He understands such things.
 	};
 	if(other.guild == GIL_MIL)
 	{
-		AI_Output(self,other,"DIA_Garond_Equipment_10_02");	//Поговори об этом с Тандором. Он выдаст тебе все необходимое.
+		AI_Output(self,other, " DIA_Garond_Equipment_10_02 " );	// Talk to Tandor about it. He will give you everything you need.
 		Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
-		B_LogEntry(TOPIC_Trader_OC,"Тандор продает оружие в замке.");
+		B_LogEntry(TOPIC_Trader_OC, " Tandor sells weapons in the castle. " );
 	};
 };
 
 
-instance DIA_Garond_zahlen(C_Info)
+instance DIA_Garond_zahlen (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 4;
 	condition = DIA_Garond_zahlen_Condition;
 	information = DIA_Garond_zahlen_Info;
 	permanent = FALSE;
-	description = "Сколько ты заплатишь мне за эту работу?";
+	description = " How much will you pay me for this job? " ;
 };
 
 
@@ -908,9 +909,9 @@ func int DIA_Garond_zahlen_Condition()
 
 func void DIA_Garond_zahlen_Info()
 {
-	AI_Output(other,self,"DIA_Garond_zahlen_15_00");	//Сколько ты заплатишь мне за эту работу?
-	AI_Output(self,other,"DIA_Garond_zahlen_10_01");	//Я не торгуюсь с вами, наемниками.
-	AI_Output(self,other,"DIA_Garond_zahlen_10_02");	//Ох, ладно, похоже, у меня нет выбора. Я заплачу тебе пятьсот золотых, если ты выполнишь мое задание.
+	AI_Output(other,self, " DIA_Garond_zahlen_15_00 " );	// How much will you pay me for this job?
+	AI_Output(self,other, " DIA_Garond_zahlen_10_01 " );	// I don't trade with you mercenaries.
+	AI_Output(self,other, " DIA_Garond_zahlen_10_02 " );	// Oh well, looks like I don't have a choice. I will pay you five hundred gold if you complete my task.
 };
 
 
@@ -921,7 +922,7 @@ instance DIA_Garond_Wo(C_Info)
 	condition = DIA_Garond_Wo_Condition;
 	information = DIA_Garond_Wo_Info;
 	permanent = FALSE;
-	description = "Где мне найти эти шахты?";
+	description = " Where can I find these mines? " ;
 };
 
 
@@ -935,19 +936,19 @@ func int DIA_Garond_Wo_Condition()
 
 func void DIA_Garond_Wo_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Wo_15_00");	//Где мне найти эти шахты?
-	AI_Output(self,other,"DIA_Garond_Wo_10_01");	//Вот, возьми эту карту. На ней показаны две области, где находятся шахты.
+	AI_Output(other,self, " DIA_Garond_Wo_15_00 " );	// Where can I find these mines?
+	AI_Output(self,other, " DIA_Garond_Wo_10_01 " );	// Here, take this card. It shows two areas where the mines are located.
 	CreateInvItems(self,itwr_map_oldworld_oremines_mis_1,1);
 	B_GiveInvItems(self,other,itwr_map_oldworld_oremines_mis_1,1);
-	AI_Output(self,other,"DIA_Garond_Wo_10_02");	//Если у тебя есть еще вопросы, обратись к Парсивалю. Он расскажет все, что тебе нужно знать о старателях.
-	B_LogEntry(TOPIC_ScoutMine,"Паладин Парсиваль может дать мне информацию о старателях.");
+	AI_Output(self,other, " DIA_Garond_Wo_10_02 " );	// If you have more questions, ask Parsival. He'll tell you everything you need to know about prospectors.
+	B_LogEntry(TOPIC_ScoutMine, " Paladin Parzival can give me information about the scouts. " );
 };
 
 func void B_Garond_OreCounter3()
 {
-	AI_Output(self,other,"B_Garond_OreCounter3_10_00");	//Черт! Что там происходит? Неужели сам Белиар явился, чтобы стереть нас с лица земли?!
-	AI_Output(self,other,"B_Garond_OreCounter3_10_01");	//Мои люди почти все мертвы, а с той рудой, что у нас есть, мы НЕ МОЖЕМ ОСТАНОВИТЬ ДАЖЕ ОДНОГО ОРКА, НЕ ГОВОРЯ УЖЕ ОБ АРМИИ!
-	AI_Output(self,other,"B_Garond_OreCounter3_10_02");	//Эта экспедиция обречена на провал.
+	AI_Output(self,other, " B_Garond_OreCounter3_10_00 " );	// Damn! What is happening there? Has Beliar himself come to wipe us off the face of the earth?!
+	AI_Output(self,other, " B_Garond_OreCounter3_10_01 " );	// My people are almost all dead, and with all the ore we have, we CANNOT STOP EVEN ONE ORC, LET ALL AN ARMY!
+	AI_Output(self,other, " B_Garond_OreCounter3_10_02 " );	// This expedition is doomed to failure.
 };
 
 
@@ -958,7 +959,7 @@ instance DIA_Garond_Fajeth(C_Info)
 	condition = DIA_Garond_Fajeth_Condition;
 	information = DIA_Garond_Fajeth_Info;
 	permanent = FALSE;
-	description = "Я поговорил с Фаджетом.";
+	description = " I talked to Fudget. " ;
 };
 
 
@@ -972,12 +973,12 @@ func int DIA_Garond_Fajeth_Condition()
 
 func void DIA_Garond_Fajeth_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Fajeth_15_00");	//Я поговорил с Фаджетом.
-	AI_Output(self,other,"DIA_Garond_Fajeth_10_01");	//Что он может сказать мне?
-	AI_Output(other,self,"DIA_Garond_Fajeth_15_02");	//Его люди добыли два ящика руды.
-	AI_Output(self,other,"DIA_Garond_Fajeth_10_03");	//Хмм... два ящика? Мне не нужны два ящика - мне нужно ДВЕ СОТНИ.
-	AI_Output(other,self,"DIA_Garond_Fajeth_15_04");	//Он хочет, чтобы я передал тебе - ему нужны еще люди.
-	AI_Output(self,other,"DIA_Garond_Fajeth_10_05");	//Что? Я должен послать еще людей на верную смерть? Он может забыть об этом.
+	AI_Output(other,self, " DIA_Garond_Fajeth_15_00 " );	// I talked to Fudget.
+	AI_Output(self,other, " DIA_Garond_Fajeth_10_01 " );	// What can he tell me?
+	AI_Output(other,self, " DIA_Garond_Fajeth_15_02 " );	// His men mined two crates of ore.
+	AI_Output(self,other, " DIA_Garond_Fajeth_10_03 " );	// Hmm... two boxes? I don't need two boxes - I need TWO HUNDREDS.
+	AI_Output(other,self, " DIA_Garond_Fajeth_15_04 " );	// He wants me to tell you - he needs more people.
+	AI_Output(self,other, " DIA_Garond_Fajeth_10_05 " );	// What? Should I send more people to certain death? He may forget about it.
 	Ore_Counter = Ore_Counter + 1;
 	B_GivePlayerXP(XP_Fajeth_Ore);
 	if(Ore_Counter >= 3)
@@ -987,20 +988,20 @@ func void DIA_Garond_Fajeth_Info()
 };
 
 
-instance DIA_Garond_Silvestro(C_Info)
+instance DIA_Garond_Silvestro (C_Info) .
 {
 	npc = PAL_250_Garond;
 	nr = 2;
 	condition = DIA_Garond_Silvestro_Condition;
 	information = DIA_Garond_Silvestro_Info;
 	permanent = FALSE;
-	description = "Насчет шахты Сильвестро...";
+	description = " About the Silvestro Mine... " ;
 };
 
 
 func int DIA_Garond_Silvestro_Condition()
 {
-	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && (Silvestro_Ore == TRUE))
+	if ((MY_ScoutMine == LOG_Running) && (Chapter ==  2 ) && (Wild_Ore ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1008,12 +1009,12 @@ func int DIA_Garond_Silvestro_Condition()
 
 func void DIA_Garond_Silvestro_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Silvestro_15_00");	//Насчет шахты Сильвестро...
-	AI_Output(self,other,"DIA_Garond_Silvestro_10_01");	//Ты видел его? Ты говорил с ним?
-	AI_Output(other,self,"DIA_Garond_Silvestro_15_02");	//Все, кто находился в шахте, мертвы. Растерзаны ползунами!
-	AI_Output(self,other,"DIA_Garond_Silvestro_10_03");	//А что насчет руды? Ты знаешь, сколько они добыли?
-	AI_Output(other,self,"DIA_Garond_Silvestro_15_04");	//Им удалось спрятать несколько ящиков. Они в пещере - по пути от замка к шахте.
-	AI_Output(self,other,"DIA_Garond_Silvestro_10_05");	//Черт! Это были хорошие люди - да проявит Иннос милосердие к их душам.
+	AI_Output(other,self, " DIA_Garond_Silvestro_15_00 " );	// About the Silvestro Mine...
+	AI_Output(self,other, " DIA_Garond_Silvestro_10_01 " );	// Did you see him? Have you spoken to him?
+	AI_Output(other,self, " DIA_Garond_Silvestro_15_02 " );	// Everyone in the mine is dead. Torn to pieces by crawlers!
+	AI_Output(self,other, " DIA_Garond_Silvestro_10_03 " );	// What about ore? Do you know how much they got?
+	AI_Output(other,self, " DIA_Garond_Silvestro_15_04 " );	// They managed to hide a few crates. They are in a cave - on the way from the castle to the mine.
+	AI_Output(self,other, " DIA_Garond_Silvestro_10_05 " );	// Damn! They were good people - may Innos show mercy to their souls.
 	Ore_Counter = Ore_Counter + 1;
 	B_GivePlayerXP(XP_Silvestro_Ore);
 	if(Ore_Counter >= 3)
@@ -1023,33 +1024,33 @@ func void DIA_Garond_Silvestro_Info()
 };
 
 
-instance DIA_Garond_Marcos(C_Info)
+instance DIA_Garond_Marcos (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 2;
 	condition = DIA_Garond_Marcos_Condition;
 	information = DIA_Garond_Marcos_Info;
 	permanent = FALSE;
-	description = "Я встретил Маркоса.";
+	description = " I met Markos. " ;
 };
 
 
-func int DIA_Garond_Marcos_Condition()
+func int DAY_Garond_Marcos_Condition()
 {
-	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && (Marcos_Ore == TRUE))
+	if ((MY_ScoutMine == LOG_Running) && (Chapter ==  2 ) && (Marcos_Ore ==  TRUE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Garond_Marcos_Info()
+func void DAY_Garond_Marcos_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Marcos_15_00");	//Я встретил Маркоса.
-	AI_Output(self,other,"DIA_Garond_Marcos_10_01");	//И? Что он может доложить? Сколько руды он добыл для нас?
-	AI_Output(other,self,"DIA_Garond_Marcos_15_02");	//Четыре ящика. Он покинул шахту, чтобы переправить руду в безопасное место.
-	AI_Output(other,self,"DIA_Garond_Marcos_15_03");	//Теперь он охраняет эти ящики в небольшой долине за позициями орков. Он просит прислать подкрепление.
-	AI_Output(self,other,"DIA_Garond_Marcos_10_04");	//Что? Всего четыре ящика - и он покинул шахту? Черт, как это все плохо.
-	AI_Output(self,other,"DIA_Garond_Marcos_10_05");	//И ему нужны еще люди?.. Что ж, ладно, я пошлю к нему двух человек.
+	AI_Output(other,self, " DIA_Garond_Marcos_15_00 " );	// I met Marcos.
+	AI_Output(self,other, " DIA_Garond_Marcos_10_01 " );	// And? What can he report? How much ore did he mine for us?
+	AI_Output(other,self, " DIA_Garond_Marcos_15_02 " );	// Four drawers. He left the mine to move the ore to safety.
+	AI_Output(other,self, " DIA_Garond_Marcos_15_03 " );	// He now guards these crates in a small valley behind the orc positions. He asks for reinforcements.
+	AI_Output(self,other, " DIA_Garond_Marcos_10_04 " );	// What? Only four boxes - and he left the mine? Damn, this is all bad.
+	AI_Output(self,other, " DIA_Garond_Marcos_10_05 " );	// And he needs more people?.. Well, all right, I'll send two people to him.
 	Marcos_Guard1.flags = 0;
 	Marcos_Guard2.flags = 0;
 	B_StartOtherRoutine(Marcos_Guard1,"MARCOS");
@@ -1073,7 +1074,7 @@ instance DIA_Garond_Success(C_Info)
 	condition = DIA_Garond_Success_Condition;
 	information = DIA_Garond_Success_Info;
 	permanent = FALSE;
-	description = "Что насчет письма для лорда Хагена?";
+	description = " What about a letter for Lord Hagen? " ;
 };
 
 
@@ -1087,20 +1088,20 @@ func int DIA_Garond_Success_Condition()
 
 func void DIA_Garond_Success_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Success_15_00");	//Что насчет письма для лорда Хагена?
-	AI_Output(self,other,"DIA_Garond_Success_10_01");	//В общей сложности у нас есть десять ящиков руды - и мы потеряли в два раза больше хороших людей.
-	AI_Output(self,other,"DIA_Garond_Success_10_02");	//Ты получишь свое письмо. Лорд Хаген должен услышать об этом! Эта долина проклята...
+	AI_Output(other,self, " DIA_Garond_Success_15_00 " );	// What about a letter for Lord Hagen?
+	AI_Output(self,other, " DIA_Garond_Success_10_01 " );	// We've got ten crates of ore in total - and we've lost twice as many good men.
+	AI_Output(self,other, " DIA_Garond_Success_10_02 " );	// You will receive your letter. Lord Hagen needs to hear about this! This valley is cursed...
 	CreateInvItems(self,ItWr_PaladinLetter_MIS,1);
 	B_GiveInvItems(self,other,ItWr_PaladinLetter_MIS,1);
 	KnowsPaladins_Ore = TRUE;
 
-	if(((hero.guild == GIL_GUR) || (hero.guild == GIL_TPL)) && (MIS_PALADINWATCH == LOG_Running) && (IDOLORANQUESTIONFOUR == FALSE))
+	if (((hero.guild ==  GIL_GUR ) || (hero.guild ==  GIL_TPL )) && ( MY_PALADINWATCH  == LOG_Running) && ( IDOLORANQUESTIONFOUR  ==  FALSE )) ;
 	{
 		IDOLORANQUESTIONFOUR = TRUE;
-		B_LogEntry(TOPIC_PALADINWATCH,"По мнению Гаронда, экспедиция в Долину Рудников потерпела полное фиаско! Те залежи руды, что еще доступны для добычи - не могут обеспечить потребности всей королевской армии. Гаронд послал меня с донесением к лорду Хагену, где также просит о подкреплении.");
+		B_LogEntry( TOPIC_PALADINWATCH , " In Garond's opinion, the expedition to the Vale of Mines has been a complete fiasco! Those ore deposits that are still available for mining cannot meet the needs of the entire royal army. Garond sent me with a report to Lord Hagen, where he also asks for reinforcements. " );
 	};
 
-	B_LogEntry(Topic_MISOLDWORLD,"Гаронд вручил мне письмо. Это хорошее доказательство! С ним я могу возвращаться к лорду Хагену.");
+	B_LogEntry(Topic_MISOLDWORLD, " Garond handed me the letter. This is good evidence! With it I can return to Lord Hagen. " );
 	MIS_ScoutMine = LOG_SUCCESS;
 	B_GivePlayerXP(XP_ScoutMine);
 	MIS_ReadyForChapter3 = TRUE;
@@ -1115,7 +1116,7 @@ instance DIA_Garond_SLD(C_Info)
 	condition = DIA_Garond_SLD_Condition;
 	information = DIA_Garond_SLD_Info;
 	permanent = FALSE;
-	description = "Как насчет оплаты?";
+	description = " How about payment? " ;
 };
 
 
@@ -1129,8 +1130,8 @@ func int DIA_Garond_SLD_Condition()
 
 func void DIA_Garond_SLD_Info()
 {
-	AI_Output(other,self,"DIA_Garond_SLD_15_00");	//Как насчет оплаты?
-	AI_Output(self,other,"DIA_Garond_SLD_10_01");	//Ох, да, точно. Я должен тебе немного золота. Вот твоя награда.
+	AI_Output(other,self, " DIA_Garond_SLD_15_00 " );	// How about payment?
+	AI_Output(self,other, " DIA_Garond_SLD_10_01 " );	// Oh, yes, exactly. I owe you some gold. Here is your reward.
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 };
 
@@ -1142,7 +1143,7 @@ instance DIA_Garond_Running(C_Info)
 	condition = DIA_Garond_Running_Condition;
 	information = DIA_Garond_Running_Info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
@@ -1156,18 +1157,18 @@ func int DIA_Garond_Running_Condition()
 
 func void DIA_Garond_Running_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Running_15_00");	//Как обстановка?
+	AI_Output(other,self, " DIA_Garond_Running_15_00 " );	// How are things?
 	if(Ore_Counter == 2)
 	{
-		AI_Output(self,other,"DIA_Garond_Running_10_01");	//Теперь я жду только новостей с последней шахты - и надеюсь, что это будут хорошие новости.
+		AI_Output(self,other, " DIA_Garond_Running_10_01 " );	// Now I'm only waiting for news from the last mine - and I hope it will be good news.
 	}
 	else if(Ore_Counter == 1)
 	{
-		AI_Output(self,other,"DIA_Garond_Running_10_02");	//Мне нужны доклады о двух других шахтах. А там посмотрим.
+		AI_Output(self,other, " DIA_Garond_Running_10_02 " );	// I need reports on the other two mines. And we'll see.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garond_Running_10_03");	//Ты должен найти наши шахты. Мне очень нужны новости о том, как обстоят дела с добычей руды.
+		AI_Output(self,other, " DIA_Garond_Running_10_03 " );	// You must find our mines. I really need news on how things are going with ore mining.
 	};
 };
 
@@ -1179,13 +1180,13 @@ instance DIA_Garond_Gorn(C_Info)
 	condition = DIA_Garond_Gorn_Condition;
 	information = DIA_Garond_Gorn_Info;
 	permanent = FALSE;
-	description = "Я хочу, чтобы ты освободил Горна.";
+	description = " I want you to free Gorn. " ;
 };
 
 
 func int DIA_Garond_Gorn_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_MiltenOW_Gorn) && (Kapitel == 2) && Npc_KnowsInfo(other,DIA_Garond_NeedProof))
+	if ( Npc_KnowsInfo ( other , DIA_MiltenOW_Gorn ) && ( Capital ==  2 ) && Npc_Knows Info ( other , DIA_Garond_NeedProof )) .
 	{
 		return TRUE;
 	};
@@ -1193,31 +1194,31 @@ func int DIA_Garond_Gorn_Condition()
 
 func void DIA_Garond_Gorn_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Gorn_15_00");	//Я хочу, чтобы ты освободил Горна.
-	AI_Output(self,other,"DIA_Garond_Gorn_10_01");	//Я не могу отпустить его. Он совершил слишком много преступлений и должен поплатиться за это.
-	AI_Output(other,self,"DIA_Garond_Gorn_15_02");	//Могу я заплатить штраф за него?
-	AI_Output(self,other,"DIA_Garond_Gorn_10_03");	//Это возможно - но обойдется тебе очень недешево. Я хочу получить за Горна тысячу золотых!
-	AI_Output(other,self,"DIA_Garond_Gorn_15_04");	//Это огромная сумма.
-	AI_Output(self,other,"DIA_Garond_Gorn_10_05");	//Вина Горна тоже не маленькая! Принеси мне это золото и я освобожу его.
+	AI_Output(other,self, " DIA_Garond_Gorn_15_00 " );	// I want you to free Gorn.
+	AI_Output(self,other, " DIA_Garond_Gorn_10_01 " );	// I can't let him go. He has committed too many crimes and must pay for it.
+	AI_Output(other,self, " DIA_Garond_Gorn_15_02 " );	// Can I pay a fine for it?
+	AI_Output(self,other, " DIA_Garond_Gorn_10_03 " );	// It's possible - but it will cost you a lot. I want to get a thousand gold for Gorn!
+	AI_Output(other,self, " DIA_Garond_Gorn_15_04 " );	// This is a huge amount.
+	AI_Output(self,other, " DIA_Garond_Gorn_10_05 " );	// Vina Gorna is also not small! Bring me that gold and I'll set it free.
 	MIS_RescueGorn = LOG_Running;
-	B_LogEntry(TOPIC_RescueGorn,"Гаронд требует тысячу золотых монет за освобождение Горна. ");
+	B_LogEntry(TOPIC_RescueGorn, " Garond demands a thousand gold pieces to free the Gorn. " );
 };
 
 
-instance DIA_Garond_Pay(C_Info)
+instance DIA_Garond_Pay (C_Info) .
 {
 	npc = PAL_250_Garond;
 	nr = 4;
 	condition = DIA_Garond_Pay_Condition;
 	information = DIA_Garond_Pay_Info;
 	permanent = TRUE;
-	description = "Я хочу купить свободу Горну. (Заплатить 1000 монет)";
+	description = " I want to buy Gorn's freedom. (Pay 1000 coins) " ;
 };
 
 
 func int DIA_Garond_Pay_Condition()
 {
-	if((MIS_RescueGorn == LOG_Running) && (Kapitel == 2) && (Garond_Kerkerauf == FALSE))
+	if ((MY_RescueGorn == LOG_Running) && (Chapter ==  2 ) && (Garond_Church ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1225,16 +1226,16 @@ func int DIA_Garond_Pay_Condition()
 
 func void DIA_Garond_Pay_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Pay_15_00");	//Я хочу купить Горну свободу.
+	AI_Output(other,self, " DIA_Garond_Pay_15_00 " );	// I want to buy Gorn freedom.
 	if(B_GiveInvItems(other,self,ItMi_Gold,1000))
 	{
-		AI_Output(self,other,"DIA_Garond_Pay_10_01");	//Хорошо. Ты можешь пойти к Герольду и сказать ему, что я приказываю освободить Горна.
-		Garond_Kerkerauf = TRUE;
-		B_LogEntry(TOPIC_RescueGorn,"Я заплатил Гаронду. Теперь я могу освободить Горна из темницы. Стражник Герольд не будет препятствовать.");
+		AI_Output(self,other, " DIA_Garond_Pay_10_01 " );	// Good. You can go to the Herald and tell him that I am ordering the release of Gorn.
+		Garond_Kerkerauf = TRUE ;
+		B_LogEntry(TOPIC_RescueGorn, " I have paid Garond. Now I can release the Gorn from the dungeon. Guard Herold will not interfere. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garond_Pay_10_02");	//Тогда принеси мне тысячу золотых монет.
+		AI_Output(self,other, " DIA_Garond_Pay_10_02 " );	// Then bring me a thousand gold coins.
 	};
 };
 
@@ -1246,13 +1247,13 @@ instance DIA_Garond_Perm2(C_Info)
 	condition = DIA_Garond_Perm2_Condition;
 	information = DIA_Garond_Perm2_Info;
 	permanent = TRUE;
-	description = "Что ты планируешь делать дальше?";
+	description = " What are you planning to do next? " ;
 };
 
 
 func int DIA_Garond_Perm2_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Garond_Success) && (Kapitel == 2))
+	if ( Npc_KnowsInfo ( other , DIA_Garond_Success ) && ( Capital ==  2 )) ;
 	{
 		return TRUE;
 	};
@@ -1260,9 +1261,9 @@ func int DIA_Garond_Perm2_Condition()
 
 func void DIA_Garond_Perm2_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Perm2_15_00");	//Что ты планируешь делать дальше?
-	AI_Output(self,other,"DIA_Garond_Perm2_10_01");	//Я уже все перепробовал. Ты - моя единственная надежда, что лорд Хаген пришлет мне подкрепление.
-	AI_Output(self,other,"DIA_Garond_Perm2_10_02");	//Но мы не падем духом и будем молиться Инносу, чтобы он не оставил нас без своей поддержки в этот мрачный час.
+	AI_Output(other,self, " DIA_Garond_Perm2_15_00 " );	// What are you planning to do next?
+	AI_Output(self,other, " DIA_Garond_Perm2_10_01 " );	// I've already tried everything. You are my only hope that Lord Hagen will send me reinforcements.
+	AI_Output(self,other, " DIA_Garond_Perm2_10_02 " );	// But we will not lose heart and will pray to Innos that he will not leave us without his support in this dark hour.
 };
 
 
@@ -1279,7 +1280,7 @@ instance DIA_Garond_KAP3_EXIT(C_Info)
 
 func int DIA_Garond_KAP3_EXIT_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
@@ -1291,34 +1292,34 @@ func void DIA_Garond_KAP3_EXIT_Info()
 };
 
 
-instance DIA_Garond_WASGIBTSNEUES(C_Info)
+instance DIA_Garond_WASGIBTSNEUES (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 30;
 	condition = DIA_Garond_WASGIBTSNEUES_Condition;
-	information = DIA_Garond_WASGIBTSNEUES_Info;
+	information = DIA_Garond_WASGIBTSNEW_Info;
 	permanent = TRUE;
-	description = "Что нового?";
+	description = " What's new? " ;
 };
 
 
 func int DIA_Garond_WASGIBTSNEUES_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Garond_WASGIBTSNEUES_Info()
+func void DIA_Garond_WASGIBTSNEW_Info()
 {
-	AI_Output(other,self,"DIA_Garond_WASGIBTSNEUES_15_00");	//Что нового?
-	AI_Output(self,other,"DIA_Garond_WASGIBTSNEUES_10_01");	//Черт. Что ты тут ошиваешься? Мне нужно подкрепление!
-	AI_Output(self,other,"DIA_Garond_WASGIBTSNEUES_10_02");	//Даже Милтен покинул замок. Но мне не нужно несколько человек - мне нужно БОЛЬШОЕ подкрепление!
+	AI_Output(other,self, " DIA_Garond_WASGIBTSNEUES_15_00 " );	// What's new?
+	AI_Output(self,other, " DIA_Garond_WASGIBTSNEUES_10_01 " );	// Damn. What are you doing here? I need reinforcements!
+	AI_Output(self,other, " DIA_Garond_WASGIBTSNEUES_10_02 " );	// Even Milten left the castle. But I don't need a few people - I need BIG reinforcements!
 };
 
 
-instance DIA_Garond_KAP4_EXIT(C_Info)
+instance DIA_Garond_KAP4_EXIT (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 999;
@@ -1331,7 +1332,7 @@ instance DIA_Garond_KAP4_EXIT(C_Info)
 
 func int DIA_Garond_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -1350,13 +1351,13 @@ instance DIA_Garond_BACKINKAP4(C_Info)
 	condition = DIA_Garond_BACKINKAP4_Condition;
 	information = DIA_Garond_BACKINKAP4_Info;
 	permanent = FALSE;
-	description = "Я вернулся.";
+	description = " I'm back. " ;
 };
 
 
 func int DIA_Garond_BACKINKAP4_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -1364,21 +1365,21 @@ func int DIA_Garond_BACKINKAP4_Condition()
 
 func void DIA_Garond_BACKINKAP4_Info()
 {
-	AI_Output(other,self,"DIA_Garond_BACKINKAP4_15_00");	//Я вернулся.
-	AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_01");	//Я сам это вижу. А что насчет подкрепления?
-	AI_Output(other,self,"DIA_Garond_BACKINKAP4_15_02");	//Лорд Хаген прибудет, как только со всем разберется. Столько всего произошло.
-	AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_03");	//Меня это не волнует. Мне нужны войска. Орки все прибывают и прибывают. Нам не продержаться долго.
-	AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_04");	//Мои люди измотаны, и у нас заканчивается провизия.
-	AI_Output(other,self,"DIA_Garond_BACKINKAP4_15_05");	//Прибыли волонтеры.
+	AI_Output(other,self, " DIA_Garond_BACKINKAP4_15_00 " );	// I'm back.
+	AI_Output(self,other, " DIA_Garond_BACKINKAP4_10_01 " );	// I see it myself. What about reinforcements?
+	AI_Output(other,self, " DIA_Garond_BACKINKAP4_15_02 " );	// Lord Hagen will arrive as soon as everything is sorted out. So much has happened.
+	AI_Output(self,other, " DIA_Garond_BACKINKAP4_10_03 " );	// I don't care. I need troops. Orcs keep coming and coming. We won't last long.
+	AI_Output(self,other, " DIA_Garond_BACKINKAP4_10_04 " );	// My people are exhausted and we're running out of provisions.
+	AI_Output(other,self, " DIA_Garond_BACKINKAP4_15_05 " );	// The volunteers have arrived.
 	if(hero.guild == GIL_DJG)
 	{
-		AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_06");	//Ты имеешь в виду себя и твоих друзей, охотников на драконов, что ли? Вы, конечно, можете помочь нам, но вас слишком мало.
+		AI_Output(self,other, " DIA_Garond_BACKINKAP4_10_06 " );	// You mean yourself and your dragon hunter friends, right? Of course, you can help us, but you are too few.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_07");	//Ты имеешь в виду охотников на драконов? Они, конечно, могут помочь нам, но их слишком мало.
+		AI_Output(self,other, " DIA_Garond_BACKINKAP4_10_07 " );	// You mean dragon hunters? Of course, they can help us, but they are too few.
 	};
-	AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_08");	//Если Хаген не пришлет в ближайшее время своих людей, я ничего не могу гарантировать.
+	AI_Output(self,other, " DIA_Garond_BACKINKAP4_10_08 " );	// If Hagen doesn't send his people soon, I can't guarantee anything.
 	B_InitNpcGlobals();
 	AI_Teleport(DJG_Angar,"OW_DJG_WATCH_STONEHENGE_01");
 	B_StartOtherRoutine(DJG_Angar,"Start");
@@ -1395,22 +1396,22 @@ func void DIA_Garond_BACKINKAP4_Info()
 };
 
 
-instance DIA_Garond_DragonPlettBericht(C_Info)
+instance DIA_Garond_DragonPlettReport (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 11;
 	condition = DIA_Garond_DragonPlettBericht_Condition;
-	information = DIA_Garond_DragonPlettBericht_Info;
+	information = DIA_Garond_DragonPlettReport_Info;
 	permanent = TRUE;
-	description = "Насчет драконов...";
+	description = " About dragons... " ;
 };
 
 
-var int DIA_Garond_DragonPlettBericht_NoPerm;
+var int DIA_Garond_DragonPlettReport_NoPerm;
 
 func int DIA_Garond_DragonPlettBericht_Condition()
 {
-	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Garond_BACKINKAP4) && (DIA_Garond_DragonPlettBericht_NoPerm == FALSE) && (KAPITELORCATC == FALSE))
+	if ((Capitol >=  4 ) && Npc_KnowsInfo(other,DIA_Garond_BACKINKAP4) && (DIA_Garond_DragonPlettBericht_NoPerm ==  FALSE ) && ( CAPITELORCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -1429,15 +1430,15 @@ func void DIA_Garond_DragonPlettBericht_Info()
 	var int CurrentDragonCount;
 	var int Drachengeld;
 	var int XP_LocalGarond;
-	B_LogEntry(TOPIC_DRACHENJAGD,"Гаронд наверняка заинтересован тем, как идут дела с драконами, хотя делает вид, что это ему полностью безразлично.");
+	B_LogEntry( TOPIC_DRACHENJAGD , " Garond is obviously interested in how things are going with the dragons, although he pretends not to care. " );
 	if(Garond_DragonCounter < MIS_KilledDragons)
 	{
-		AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_00");	//У меня есть новости о драконах.
-		AI_Output(self,other,"DIA_Garond_DragonPlettBericht_10_01");	//Докладывай.
+		AI_Output(other,self, " DIA_Garond_DragonPlettBericht_15_00 " );	// I have news about dragons.
+		AI_Output(self,other, " DIA_Garond_DragonPlettBericht_10_01 " );	// Report.
 		CurrentDragonCount = 0;
-		if(Npc_IsDead(SwampDragon) && (Garond_SwampdragonKilled_OneTime == FALSE))
+		if ( Npc_IsDead ( SwampDragon ) && ( Garond_SwampDragonKilled_OneTime ==  FALSE ))
 		{
-			AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_02");	//Я убил дракона в болоте к востоку отсюда.
+			AI_Output(other,self, " DIA_Garond_DragonPlettBericht_15_02 " );	// I killed a dragon in the swamp east of here.
 			Garond_SwampdragonKilled_OneTime = TRUE;
 			CurrentDragonCount = CurrentDragonCount + 1;
 			if((SLD_Rod_is_alive == TRUE) && !Npc_IsDead(DJG_702_Rod))
@@ -1451,65 +1452,65 @@ func void DIA_Garond_DragonPlettBericht_Info()
 				AI_Teleport(DJG_703_Cipher,"VORPOSTEN");
 			};
 		};
-		if(Npc_IsDead(RockDragon) && (Garond_RockdragonKilled_OneTime == FALSE))
+		if ( Npc_IsDead ( RockDragon ) && ( Garond_RockDragonKilled_OneTime ==  FALSE ))
 		{
-			AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_03");	//Дракон в каменной крепости к югу отсюда мертв.
+			AI_Output(other,self, " DIA_Garond_DragonPlettBericht_15_03 " );	// The dragon in the stone fortress south of here is dead.
 			Garond_RockdragonKilled_OneTime = TRUE;
 			CurrentDragonCount = CurrentDragonCount + 1;
 		};
 		if(Npc_IsDead(FireDragon) && (Garond_FireDragonKilled_OneTime == FALSE))
 		{
-			AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_04");	//Огненный дракон из вулкана на юге больше не будет беспокоить вас.
+			AI_Output(other,self, " DIA_Garond_DragonPlettBericht_15_04 " );	// The fire dragon from the volcano to the south will no longer bother you.
 			Garond_FireDragonKilled_OneTime = TRUE;
 			CurrentDragonCount = CurrentDragonCount + 1;
 		};
-		if(Npc_IsDead(IceDragon) && (Garond_IcedragonKilled_OneTime == FALSE))
+		if ( Npc_IsDead ( IceDragon ) && ( Garond_IcedragonKilled_OneTime ==  FALSE ))
 		{
-			AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_05");	//Я был в западном ледяном районе и расправился с драконом, обитавшем там.
+			AI_Output(other,self, " DIA_Garond_DragonPlettBericht_15_05 " );	// I was in the western ice region and dealt with the dragon that lived there.
 			Garond_IcedragonKilled_OneTime = TRUE;
 			CurrentDragonCount = CurrentDragonCount + 1;
 		};
-		AI_Output(self,other,"DIA_Garond_DragonPlettBericht_10_06");	//Это хорошие новости. Вот. Возьми эти деньги. Надеюсь, они помогут тебе обновить свое снаряжение.
-		Drachengeld = CurrentDragonCount * Garond_KilledDragonGeld;
+		AI_Output(self,other, " DIA_Garond_DragonPlettBericht_10_06 " );	// This is good news. Here. Take this money. I hope they help you upgrade your gear.
+		Dragon Money = CurrentDragonCount * Garond_KilledDragon Money;
 		XP_LocalGarond = CurrentDragonCount * XP_Garond_KilledDragon;
 		B_GivePlayerXP(XP_LocalGarond);
-		CreateInvItems(self,ItMi_Gold,Drachengeld);
+		CreateInvItems(self,ItMi_Gold,Dragon Money);
 		B_GiveInvItems(self,other,ItMi_Gold,Drachengeld);
 		Garond_DragonCounter = MIS_KilledDragons;
 		if(MIS_AllDragonsDead == TRUE)
 		{
-			DIA_Garond_DragonPlettBericht_NoPerm = TRUE;
+			DIA_Garond_DragonPlettReport_NoPerm = TRUE ;
 		};
 	};
-	if((Garond_OricExperte_OneTime == FALSE) && (Npc_IsDead(Oric) == FALSE) && (MIS_AllDragonsDead == FALSE))
+	if ((Garond_OricExpert_OneTime ==  FALSE ) && (Npc_IsDead(Oric) ==  FALSE ) && (MY_AllDragonsDead ==  FALSE ))
 	{
-		AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_07");	//Ты можешь еще что-нибудь рассказать о драконах?
-		AI_Output(self,other,"DIA_Garond_DragonPlettBericht_10_08");	//Мне нужно заниматься другими делами. Пусть мой помощник-стратег Орик расскажет тебе об этом.
-		B_LogEntry(TOPIC_DRACHENJAGD,"Гаронд сообщил мне, что у офицера Орика есть больше информации о драконах для меня.");
-		Garond_OricExperte_OneTime = TRUE;
+		AI_Output(other,self, " DIA_Garond_DragonPlettBericht_15_07 " );	// Can you tell me more about dragons?
+		AI_Output(self,other, " DIA_Garond_DragonPlettBericht_10_08 " );	// I have other things to do. Let my assistant strategist Orik tell you about it.
+		B_LogEntry( TOPIC_DRACHENJAGD , " Garond informed me that Officer Orik has more dragon information for me. " );
+		Garond_OricExperte_OneTime = TRUE ;
 	}
 	else if(MIS_AllDragonsDead == FALSE)
 	{
-		AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_09");	//Последнее время были еще нападения драконов?
-		AI_Output(self,other,"DIA_Garond_DragonPlettBericht_10_10");	//По счастью, нет. В настоящий момент они держатся вдалеке.
+		AI_Output(other,self, " DIA_Garond_DragonPlettBericht_15_09 " );	// Have there been any more dragon attacks lately?
+		AI_Output(self,other, " DIA_Garond_DragonPlettBericht_10_10 " );	// Fortunately, no. At the moment they are keeping aloof.
 	};
 };
 
 
-instance DIA_Garond_AllDragonDead(C_Info)
+instance DIA_Garond_AllDragonDead (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 12;
 	condition = DIA_Garond_AllDragonDead_Condition;
 	information = DIA_Garond_AllDragonDead_Info;
 	permanent = FALSE;
-	description = "Все драконы мертвы.";
+	description = " All dragons are dead. " ;
 };
 
 
 func int DIA_Garond_AllDragonDead_Condition()
 {
-	if((MIS_AllDragonsDead == TRUE) && (DIA_Garond_DragonPlettBericht_NoPerm == TRUE) && (Kapitel >= 4) && (KAPITELORCATC == FALSE))
+	if ((MIS_AllDragonsDead ==  TRUE ) && (DIA_Garond_DragonPlettBericht_NoPerm ==  TRUE ) && (Chapter >=  4 ) && ( CHAPTERCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -1518,14 +1519,14 @@ func int DIA_Garond_AllDragonDead_Condition()
 func void DIA_Garond_AllDragonDead_Info()
 {
 	B_GivePlayerXP(1500);
-	AI_Output(other,self,"DIA_Garond_AllDragonDead_15_00");	//Все драконы мертвы.
-	AI_Output(self,other,"DIA_Garond_AllDragonDead_10_01");	//Все?...(недоверчиво) То есть зло изгнано отсюда навеки?
-	AI_Output(other,self,"DIA_Garond_AllDragonDead_15_02");	//Нет! Остался их предводитель.
-	AI_Output(self,other,"DIA_Garond_AllDragonDead_10_03");	//Разве не драконы были предводителями орков?
-	AI_Output(other,self,"DIA_Garond_AllDragonDead_15_04");	//Да, это так, но у них также есть свой хозяин. Мы должны уничтожить и его тоже!
-	AI_Output(self,other,"DIA_Garond_AllDragonDead_10_05");	//Я, к сожалению, ничем не могу тебе помочь! Я должен охранять руду, а эти проклятые орки, кстати, тоже все еще здесь.
-	AI_Output(self,other,"DIA_Garond_AllDragonDead_10_06");	//Тебе придется сделать это самому.
-	AI_Output(self,other,"DIA_Garond_AllDragonDead_10_07");	//Да защитит тебя Иннос!
+	AI_Output(other,self, " DIA_Garond_AllDragonDead_15_00 " );	// All dragons are dead.
+	AI_Output(self,other, " DIA_Garond_AllDragonDead_10_01 " );	// Everything?...(incredulously) That is, evil is banished from here forever?
+	AI_Output(other,self, " DIA_Garond_AllDragonDead_15_02 " );	// No! Their leader remained.
+	AI_Output(self,other, " DIA_Garond_AllDragonDead_10_03 " );	// Weren't dragons the leaders of the orcs?
+	AI_Output(other,self, " DIA_Garond_AllDragonDead_15_04 " );	// Yes, they are, but they also have their own owner. We must destroy him too!
+	AI_Output(self,other, " DIA_Garond_AllDragonDead_10_05 " );	// Sorry, I can't help you! I'm supposed to guard the ore, and those damned orcs, by the way, are still here too.
+	AI_Output(self,other, " DIA_Garond_AllDragonDead_10_06 " );	// You'll have to do it yourself.
+	AI_Output(self,other, " DIA_Garond_AllDragonDead_10_07 " );	// May Innos protect you!
 	OWDragonsDeadIsDead = TRUE;
 };
 
@@ -1536,13 +1537,13 @@ instance DIA_Garond_JanBecomeSmith(C_Info)
 	condition = DIA_Garond_JanBecomeSmith_Condition;
 	information = DIA_Garond_JanBecomeSmith_Info;
 	permanent = TRUE;
-	description = "Я хочу поговорить о кузнеце.";
+	description = " I want to talk about the blacksmith. " ;
 };
 
 
 func int DIA_Garond_JanBecomeSmith_Condition()
 {
-	if((MIS_JanBecomesSmith == LOG_Running) && (Kapitel >= 4) && (KAPITELORCATC == FALSE))
+	if ((MIS_JanBecomesSmith == LOG_Running) && (Chapter >=  4 ) && ( CHAPTERCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -1550,42 +1551,42 @@ func int DIA_Garond_JanBecomeSmith_Condition()
 
 func void DIA_Garond_JanBecomeSmith_Info()
 {
-	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_15_00");	//Я хочу поговорить о кузнеце.
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_01");	//Каком кузнеце? Он исчез.
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_02");	//Он что вернулся? Тогда можешь сказать ему...
-	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_15_03");	//Нет, я говорю о Яне.
+	AI_Output(other,self, " DIA_Garond_JanBecomeSmith_15_00 " );	// I want to talk about the blacksmith.
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_10_01 " );	// Which blacksmith? He dissapeared.
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_10_02 " );	// Is he back? Then you can tell him...
+	AI_Output(other,self, " DIA_Garond_JanBecomeSmith_15_03 " );	// No, I'm talking about Jan.
 	if(hero.guild == GIL_DJG)
 	{
-		AI_Output(other,self,"DIA_Garond_JanBecomeSmith_15_04");	//Он охотник на драконов, как и я, и хороший кузнец.
+		AI_Output(other,self, " DIA_Garond_JanBecomeSmith_15_04 " );	// He's a dragon hunter, like me, and a good blacksmith.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Garond_JanBecomeSmith_15_05");	//Одном из охотников на драконов. Он кузнец.
+		AI_Output(other,self, " DIA_Garond_JanBecomeSmith_15_05 " );	// One of the dragon hunters. He is a blacksmith.
 	};
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_06");	//Это хорошо. Наш предыдущий кузнец слинял, трус.
-	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_15_07");	//Ян хотел бы поработать в кузнице.
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_08");	//Понимаю. Так ты думаешь, я могу доверять ему?
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_10_06 " );	// This is good. Our previous blacksmith faded, coward.
+	AI_Output(other,self, " DIA_Garond_JanBecomeSmith_15_07 " );	// Ian would like to work at the forge.
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_10_08 " );	// I understand. So you think I can trust him?
 	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_15_09");	//Да.
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_10");	//Если ты так уверен, то ты можешь поручиться за него.
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_11");	//Если из-за него возникнут проблемы, за это ответишь ты. Согласен?
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_10_10 " );	// If you're so sure, then you can vouch for him.
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_10_11 " );	// If it causes problems, you will be responsible for it. I agree?
 	DobarOut = TRUE;
 	Info_ClearChoices(DIA_Garond_JanBecomeSmith);
-	Info_AddChoice(DIA_Garond_JanBecomeSmith,"Я еще подумаю над этим.",DIA_Garond_JanBecomeSmith_No);
-	Info_AddChoice(DIA_Garond_JanBecomeSmith,"Я ручаюсь за Яна.",DIA_Garond_JanBecomeSmith_Yes);
+	Info_AddChoice(DIA_Garond_JanBecomeSmith, " I'll think about it. " ,DIA_Garond_JanBecomeSmith_No);
+	Info_AddChoice(DIA_Garond_JanBecomeSmith, " I vouch for Jan. " ,DIA_Garond_JanBecomeSmith_Yes);
 };
 
 func void DIA_Garond_JanBecomeSmith_No()
 {
-	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_No_15_00");	//Я подумаю над этим.
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_No_10_01");	//Как я могу доверять ему, если даже ты сомневаешься в нем?
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_No_10_02");	//Если за него никто не сможет поручиться, этот Ян на пушечный выстрел не подойдет к кузнице.
+	AI_Output(other,self, " DIA_Garond_JanBecomeSmith_No_15_00 " );	// I'll think about it.
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_No_10_01 " );	// How can I trust him when even you doubt him?
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_No_10_02 " );	// If no one can vouch for him, this Yang won't be able to walk to the forge with a cannon shot.
 	Info_ClearChoices(DIA_Garond_JanBecomeSmith);
 };
 
 func void DIA_Garond_JanBecomeSmith_Yes()
 {
-	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_Yes_15_00");	//Я ручаюсь за Яна.
-	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_Yes_10_01");	//Хорошо. Он может работать в кузнице. Но, конечно же, он должен обеспечивать моих людей мечами.
+	AI_Output(other,self, " DIA_Garond_JanBecomeSmith_Yes_15_00 " );	// I vouch for Jan.
+	AI_Output(self,other, " DIA_Garond_JanBecomeSmith_Yes_10_01 " );	// Good. He can work in the forge. But, of course, he must provide my people with swords.
 	Info_ClearChoices(DIA_Garond_JanBecomeSmith);
 	MIS_JanBecomesSmith = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Ambient);
@@ -1598,12 +1599,12 @@ instance DIA_Garond_DobarOut(C_Info)
 	condition = DIA_Garond_DobarOut_Condition;
 	information = DIA_Garond_DobarOut_Info;
 	permanent = FALSE;
-	description = "Ты сказал, что ваш кузнец сбежал.";
+	description = " You said your blacksmith ran away. " ;
 };
 
 func int DIA_Garond_DobarOut_Condition()
 {
-	if((DobarOut == TRUE) && (Npc_IsDead(VLK_4107_Parlaf) == FALSE) && (ParlafIsDead == FALSE))
+	if ((DobarOut ==  TRUE ) && (Npc_IsDead(VLK_4107_Conversation) ==  FALSE ) && (ConversationIsDead ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1612,28 +1613,28 @@ func int DIA_Garond_DobarOut_Condition()
 func void DIA_Garond_DobarOut_Info()
 {
 	B_GivePlayerXP(1500);
-	AI_Output(other,self,"DIA_Garond_DobarOut_01_00");	//Ты сказал, что ваш кузнец сбежал.
-	AI_Output(self,other,"DIA_Garond_DobarOut_01_01");	//Да, и не один, а вместе со своим помощником Парлафом. Правда, я не думаю, что им удалось далеко уйти.
-	AI_Output(self,other,"DIA_Garond_DobarOut_01_02");	//В последние дни в долине стало еще больше орков и всяких других тварей, а эти двое не были хорошими бойцами.
-	AI_Output(self,other,"DIA_Garond_DobarOut_01_03");	//Знаешь, пусть они и жалкие трусы, но Иннос с ними. Во всяком случае худшее – я имею в виду момент, когда орки возьмут замок – они уже не застанут.
-	AI_Output(other,self,"DIA_Garond_DobarOut_01_04");	//Может, мне поискать их?
+	AI_Output(other,self, " DIA_Garond_DobarOut_01_00 " );	// You said your blacksmith ran away.
+	AI_Output(self,other, " DIA_Garond_DobarOut_01_01 " );	// Yes, and not alone, but together with his assistant Parlaf. However, I don't think they got very far.
+	AI_Output(self,other, " DIA_Garond_DobarOut_01_02 " );	// In recent days, there have been more orcs and other creatures in the valley, and these two were not good fighters.
+	AI_Output(self,other, " DIA_Garond_DobarOut_01_03 " );	// You know, they may be miserable cowards, but Innos is with them. In any case, the worst - I mean the moment when the orcs take the castle - they will not find.
+	AI_Output(other,self, " DIA_Garond_DobarOut_01_04 " );	// Maybe I should look for them?
 
 	if(MIS_JanBecomesSmith == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Garond_DobarOut_01_05");	//Если честно, в нынешней ситуации мне уже все равно. Кузнец теперь у нас есть.
+		AI_Output(self,other, " DIA_Garond_DobarOut_01_05 " );	// To be honest, in the current situation, I don't care anymore. We now have a blacksmith.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garond_DobarOut_01_06");	//Если честно, в нынешней ситуации мне уже все равно.
+		AI_Output(self,other, " DIA_Garond_DobarOut_01_06 " );	// To be honest, in the current situation, I don't care anymore.
 	};
 
-	AI_Output(self,other,"DIA_Garond_DobarOut_01_07");	//Но, так или иначе, ты постоянно носишься по всей долине... в общем, решай сам.
-	AI_Output(other,self,"DIA_Garond_DobarOut_01_08");	//Я тебя понял.
+	AI_Output(self,other, " DIA_Garond_DobarOut_01_07 " );	// But one way or another, you're always running around the valley... well, decide for yourself.
+	AI_Output(other,self, " DIA_Garond_DobarOut_01_08 " );	// I understand you.
 	DayParlafDead = Wld_GetDay();
 	MIS_DobarOut = LOG_Running;
 	Log_CreateTopic(TOPIC_DobarOut,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DobarOut,LOG_Running);
-	B_LogEntry(TOPIC_DobarOut,"За время моего отсутствия в замке произошло немало изменений, и это касается не только прибывших сюда охотников на драконов. Кузнец Добар и его помощник Парлаф решили бежать из замка. Я мог бы поискать их.");
+	B_LogEntry(TOPIC_DobarOut, " A lot of changes have taken place in the castle during my absence, and this applies not only to the dragon hunters who arrived here. Blacksmith Dobar and his assistant Parlaf decided to flee the castle. I could look for them. " );
 };
 
 instance DIA_Garond_DobarOut_Done(C_Info)
@@ -1643,7 +1644,7 @@ instance DIA_Garond_DobarOut_Done(C_Info)
 	condition = DIA_Garond_DobarOut_Done_Condition;
 	information = DIA_Garond_DobarOut_Done_Info;
 	permanent = FALSE;
-	description = "Я нашел Парлафа.";
+	description = " I found Parlaf. " ;
 };
 
 func int DIA_Garond_DobarOut_Done_Condition()
@@ -1656,59 +1657,59 @@ func int DIA_Garond_DobarOut_Done_Condition()
 
 func void DIA_Garond_DobarOut_Done_Info()
 {
-	AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_00");	//Я нашел Парлафа.
-	AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_01");	//Где же был этот щенок?
+	AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_00 " );	// I found Parlaf.
+	AI_Output(self,other, " DIA_Garond_DobarOut_Done_01_01 " );	// Where was this puppy?
 
 	if(ParlafNoExcort == TRUE)
 	{
 		B_GivePlayerXP(100);
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_02");	//Прятался в одной из пещер недалеко от замка.
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_03");	//Он попросил меня сопроводить его обратно в замок, но к сожалению погиб пробираясь сюда.
-		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_04");	//Что ж... По крайней мере он успел осознать свою ошибку.
-		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_05");	//Не могу сказать, что буду сильно скучать по нему.
-		B_LogEntry(TOPIC_DobarOut,"Я сообщил Гаронду, что не смог довести Парлафа живым до замка.");
+		AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_02 " );	// Hiding in one of the caves near the castle.
+		AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_03 " );	// He asked me to escort him back to the castle, but unfortunately he died making his way here.
+		AI_Output(self,other, " DIA_Garond_DobarOut_Done_01_04 " );	// Well... At least he realized his mistake.
+		AI_Output(self,other, " DIA_Garond_DobarOut_Done_01_05 " );	// Can't say I'm going to miss him a lot.
+		B_LogEntry(TOPIC_DobarOut, " I told Garond that I couldn't bring Parlaff to the castle alive. " );
 		GarondKnowParlaf = TRUE;
 
 		if(GarondKnowDobar == TRUE)
 		{
 			MIS_DobarOut = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_DobarOut,LOG_SUCCESS);
-			B_LogEntry_Quiet(TOPIC_DobarOut,"Думаю, на этом мои поиски окончены.");
+			B_LogEntry_Quiet(TOPIC_DobarOut, " I think this is the end of my search. " );
 		};
 	}
 	else if(ParlafOnPlaceDead == TRUE)
 	{
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_06");	//Прятался в одной из пещер недалеко от замка. Когда я добрался до нее, он уже был мертв. Голод.
-		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_07");	//(с сарказмом) Что, там не кормили лучше, чем здесь? Проклятые нытики...
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_08");	//Необязательно уже корить покойника.
-		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_09");	//О, Иннос, да мы тут все наполовину покойники! А ты предлагаешь мне жалеть трусливого дезертира?
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_10");	//Ничего я не предлагаю.
-		B_LogEntry(TOPIC_DobarOut,"Я сообщил Гаронду, что нашел Парлафа мертвым. Похоже, эта новость не произвела на него особого впечатления.");
+		AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_06 " );	// Hiding in one of the caves near the castle. By the time I got to her, he was already dead. Hunger.
+		AI_Output(self,other, " DIA_Garond_DobarOut_Done_01_07 " );	// (with sarcasm) What, they didn't feed better there than here? Damn whiners...
+		AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_08 " );	// It is not necessary to reproach the dead already.
+		AI_Output(self,other, " DIA_Garond_DobarOut_Done_01_09 " );	// Oh, Innos, we're all half dead here! Are you suggesting that I feel sorry for the cowardly deserter?
+		AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_10 " );	// I'm not suggesting anything.
+		B_LogEntry(TOPIC_DobarOut, " I told Garond that I found Parlaf dead. He didn't seem to be very impressed by the news. " );
 		GarondKnowParlaf = TRUE;
 
 		if(GarondKnowDobar == TRUE)
 		{
 			MIS_DobarOut = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_DobarOut,LOG_SUCCESS);
-			B_LogEntry_Quiet(TOPIC_DobarOut,"Думаю, на этом мои поиски окончены.");
+			B_LogEntry_Quiet(TOPIC_DobarOut, " I think this is the end of my search. " );
 		};
 	}
 	else if(ParlafOnPlace == TRUE)
 	{
 		B_GivePlayerXP(250);
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_11");	//Прятался в одной из пещер недалеко от замка. Только благодаря мне ему удалось выжить.
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_12");	//Он попросил меня сопроводить его обратно в замок. Думаю, он осознает свою ошибку.
-		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_13");	//Что ж... в иной ситуации я бы бросил его в темницу. Но раз он понял всю глупость своего поступка, я не буду этого делать.
-		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_14");	//Тем более, занятие для него найдется – пусть помогает Яну в кузнице.
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_15");	//Хорошо, я ему передам.
-		B_LogEntry(TOPIC_DobarOut,"Я сообщил Гаронду, что привел Парлафа обратно в замок. Тот велел ему, вновь помогать в кузнице.");
+		AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_11 " );	// Hiding in one of the caves near the castle. It was only thanks to me that he managed to survive.
+		AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_12 " );	// He asked me to escort him back to the castle. I think he realizes his mistake.
+		AI_Output(self,other, " DIA_Garond_DobarOut_Done_01_13 " );	// Well... in a different situation, I would throw him in a dungeon. But since he understood the stupidity of his act, I will not do it.
+		AI_Output(self,other, " DIA_Garond_DobarOut_Done_01_14 " );	// Moreover, there is something for him to do - let him help Jan in the forge.
+		AI_Output(other,self, " DIA_Garond_DobarOut_Done_01_15 " );	// Okay, I'll give it to him.
+		B_LogEntry(TOPIC_DobarOut, " I informed Garond that I brought Parlaff back to the castle. He told him to help in the forge again. " );
 		GarondKnowParlaf = TRUE;
  
 		if(GarondKnowDobar == TRUE)
 		{
 			MIS_DobarOut = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_DobarOut,LOG_SUCCESS);
-			B_LogEntry_Quiet(TOPIC_DobarOut,"Думаю, на этом мои поиски окончены.");
+			B_LogEntry_Quiet(TOPIC_DobarOut, " I think this is the end of my search. " );
 		};
 	};
 };
@@ -1720,7 +1721,7 @@ instance DIA_Garond_DobarOut_Xone(C_Info)
 	condition = DIA_Garond_DobarOut_Xone_Condition;
 	information = DIA_Garond_DobarOut_Xone_Info;
 	permanent = FALSE;
-	description = "Я нашел Добара.";
+	description = " I found Dobar. " ;
 };
 
 func int DIA_Garond_DobarOut_Xone_Condition()
@@ -1734,22 +1735,22 @@ func int DIA_Garond_DobarOut_Xone_Condition()
 func void DIA_Garond_DobarOut_Xone_Info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Garond_DobarOut_Xone_01_00");	//Я нашел Добара.
-	AI_Output(self,other,"DIA_Garond_DobarOut_Xone_01_01");	//И что с ним?
-	AI_Output(other,self,"DIA_Garond_DobarOut_Xone_01_02");	//Он мертв. 
-	AI_Output(self,other,"DIA_Garond_DobarOut_Xone_01_03");	//Я нисколько не удивлен этой новости. Да, он был неплохим кузнецом, но плакать по нему я точно не буду.
+	AI_Output(other,self, " DIA_Garond_DobarOut_Xone_01_00 " );	// I found Dobar.
+	AI_Output(self,other, " DIA_Garond_DobarOut_Xone_01_01 " );	// And what about him?
+	AI_Output(other,self, " DIA_Garond_DobarOut_Xone_01_02 " );	// He's dead.
+	AI_Output(self,other, " DIA_Garond_DobarOut_Xone_01_03 " );	// I'm not at all surprised by this news. Yes, he was a good blacksmith, but I definitely won’t cry for him.
 	GarondKnowDobar = TRUE;
-	B_LogEntry(TOPIC_DobarOut,"Я сообщил Гаронду, что нашел Добара мертвым.");
+	B_LogEntry(TOPIC_DobarOut, " I told Garond that I found Dobar dead. " );
 
 	if(GarondKnowParlaf == TRUE)
 	{
 		MIS_DobarOut = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_DobarOut,LOG_SUCCESS);
-		B_LogEntry_Quiet(TOPIC_DobarOut,"Думаю, на этом мои поиски окончены.");
+		B_LogEntry_Quiet(TOPIC_DobarOut, " I think this is the end of my search. " );
 	};
 };
 
-instance DIA_Garond_KAP5_EXIT(C_Info)
+instance DIA_Garond_CAP5_EXIT (C_Info) .
 {
 	npc = PAL_250_Garond;
 	nr = 999;
@@ -1762,7 +1763,7 @@ instance DIA_Garond_KAP5_EXIT(C_Info)
 
 func int DIA_Garond_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -1781,13 +1782,13 @@ instance DIA_Garond_PERM5(C_Info)
 	condition = DIA_Garond_PERM5_Condition;
 	information = DIA_Garond_PERM5_Info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
 func int DIA_Garond_PERM5_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -1795,15 +1796,15 @@ func int DIA_Garond_PERM5_Condition()
 
 func void DIA_Garond_PERM5_Info()
 {
-	AI_Output(other,self,"DIA_Garond_PERM5_15_00");	//Как обстановка?
+	AI_Output(other,self, " DIA_Garond_PERM5_15_00 " );	// How are things?
 	if(MIS_OCGateOpen == TRUE)
 	{
-		AI_Output(self,other,"DIA_Garond_PERM5_10_01");	//Что за бардак! Какой-то ублюдок оставил открытыми главные ворота. Теперь мы остались совсем без защиты.
-		AI_Output(self,other,"DIA_Garond_PERM5_10_02");	//Ну, доберусь я до этого предателя...
+		AI_Output(self,other, " DIA_Garond_PERM5_10_01 " );	// What a mess! Some bastard left the main gate open. Now we are completely defenseless.
+		AI_Output(self,other, " DIA_Garond_PERM5_10_02 " );	// Well, I'll get to this traitor...
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garond_PERM5_10_03");	//Мы все здесь помрем как мухи, если Хаген не прибудет как можно скорее.
+		AI_Output(self,other, " DIA_Garond_PERM5_10_03 " );	// We're all going to die like flies here if Hagen doesn't arrive soon.
 	};
 };
 
@@ -1821,7 +1822,7 @@ instance DIA_Garond_KAP6_EXIT(C_Info)
 
 func int DIA_Garond_KAP6_EXIT_Condition()
 {
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		return TRUE;
 	};
@@ -1840,13 +1841,13 @@ instance DIA_GAROND_MADERZ(C_Info)
 	condition = dia_garond_maderz_condition;
 	information = dia_garond_maderz_info;
 	permanent = FALSE;
-	description = "У меня есть для тебя новость.";
+	description = " I have some news for you. " ;
 };
 
 
 func int dia_garond_maderz_condition()
 {
-	if((MIS_MADERZ == LOG_Running) && (KAPITELORCATC == FALSE))
+	if (( MY_PARENTS  == LOG_Running ) && ( CAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1855,34 +1856,34 @@ func int dia_garond_maderz_condition()
 func void dia_garond_maderz_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Garond_MadErz_01_00");	//У меня есть для тебя новость.
-	AI_Output(other,self,"DIA_Garond_MadErz_01_04");	//Недалеко от развалин старого города орков я обнаружил большие запасы магической руды. Не меньше двадцати ящиков!
-	AI_Output(self,other,"DIA_Garond_MadErz_01_05");	//Не уж то это правда?
-	AI_Output(self,other,"DIA_Garond_MadErz_01_07");	//Если это действительно так, это просто отличная новость!
-	AI_Output(self,other,"DIA_Garond_MadErz_01_08");	//Двадцать ящиков это больше того, что мы имеем сейчас.
-	AI_Output(self,other,"DIA_Garond_MadErz_01_10");	//Однако радоваться еще рано. Орки еще тут и до сих пор осаждают наш замок.
-	AI_Output(self,other,"DIA_Garond_MadErz_01_12");	//Нам же теперь надо решить, что делать дальше с найденной тобою рудой.
-	AI_Output(other,self,"DIA_Garond_MadErz_01_13");	//Думаю, для начала тебе стоит послать туда пару своих людей.
-	AI_Output(self,other,"DIA_Garond_MadErz_01_14");	//Ты прав - я пошлю туда несколько солдат. В конце концов, это пока единственное, что я могу сделать.
-	AI_Output(self,other,"DIA_Garond_MadErz_01_21");	//Что же касается тебя - то ты заслужил небольшую награду за свои труды.
-	AI_Output(self,other,"DIA_Garond_MadErz_01_22");	//Выбери сам, что тебе нужно.
+	AI_Output(other,self, " DIA_Garond_MadErz_01_00 " );	// I have news for you.
+	AI_Output(other,self, " DIA_Garond_MadErz_01_04 " );	// Not far from the ruins of the old city of the orcs, I discovered large reserves of magic ore. At least twenty boxes!
+	AI_Output(self,other, " DIA_Garond_MadErz_01_05 " );	// Isn't that true?
+	AI_Output(self,other, " DIA_Garond_MadErz_01_07 " );	// If this is true, that's great news!
+	AI_Output(self,other, " DIA_Garond_MadErz_01_08 " );	// Twenty boxes is more than what we have now.
+	AI_Output(self,other, " DIA_Garond_MadErz_01_10 " );	// However, it's too early to rejoice. Orcs are still here and still besieging our castle.
+	AI_Output(self,other, " DIA_Garond_MadErz_01_12 " );	// Now we need to decide what to do next with the ore you found.
+	AI_Output(other,self, " DIA_Garond_MadErz_01_13 " );	// I think you should send a couple of your men there first.
+	AI_Output(self,other, " DIA_Garond_MadErz_01_14 " );	// You're right - I'll send some soldiers there. After all, this is the only thing I can do for now.
+	AI_Output(self,other, " DIA_Garond_MadErz_01_21 " );	// As for you, you deserve a small reward for your labors.
+	AI_Output(self,other, " DIA_Garond_MadErz_01_22 " );	// Choose what you need.
 	MIS_MADERZ = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_MADERZ,LOG_SUCCESS);
-	B_LogEntry(TOPIC_MADERZ,"Я сообщил Гаронду о найденных мною запасах магической руды недалеко от развалин старого города орков. Гаронд был рад услышать эту новость. Он направит туда несколько своих людей для транспортировки руды в замок.");
+	B_LogEntry( TOPIC_MADERZ , " I have informed Garond of my discovery of a magical ore near the ruins of an old orc city. Garond was delighted to hear the news. He will send some of his men there to transport the ore to the castle. " );
 	Info_ClearChoices(dia_garond_maderz);
-	Info_AddChoice(dia_garond_maderz,"Взять золото.",dia_garond_maderz_gold);
-	Info_AddChoice(dia_garond_maderz,"Взять эликсир маны.",dia_garond_maderz_mana);
-	Info_AddChoice(dia_garond_maderz,"Взять эликсир жизни.",dia_garond_maderz_health);
-	Info_AddChoice(dia_garond_maderz,"Взять эликсир ловкости.",dia_garond_maderz_dex);
-	Info_AddChoice(dia_garond_maderz,"Взять эликсир силы.",dia_garond_maderz_str);
+	Info_AddChoice(dia_garond_maderz, " Take gold. " ,dia_garond_maderz_gold);
+	Info_AddChoice(dia_garond_maderz, " Take mana elixir. " ,dia_garond_maderz_mana);
+	Info_AddChoice(dia_garond_maderz, " Take elixir of life. " ,dia_garond_maderz_health);
+	Info_AddChoice(dia_garond_maderz, " Take Elixir of Agility. " ,dia_garond_maderz_dex);
+	Info_AddChoice(dia_garond_maderz, " Take potion of power. " ,dia_garond_maderz_str);
 };
 
 func void dia_garond_maderz_gold()
 {
-	AI_Output(other,self,"DIA_Garond_MadErz_Gold_01_00");	//Дай мне золото.
-	AI_Output(self,other,"DIA_Garond_MadErz_Gold_01_01");	//Хорошо! Вот, возьми тысячу золотых монет.
+	AI_Output(other,self, " DIA_Garond_MadErz_Gold_01_00 " );	// Give me the gold.
+	AI_Output(self,other, " DIA_Garond_MadErz_Gold_01_01 " );	// Good! Here, take a thousand gold pieces.
 	B_GiveInvItems(self,other,ItMi_Gold,1000);
-	AI_Output(self,other,"DIA_Garond_MadErz_Gold_01_02");	//Надеюсь, ты потратишь эти деньги с умом.
+	AI_Output(self,other, " DIA_Garond_MadErz_Gold_01_02 " );	// I hope you spend this money wisely.
 	Info_ClearChoices(dia_garond_maderz);
 	Wld_InsertNpc(pal_9165_ritter,"WP_ORCTEMPLEORE_01");
 	Wld_InsertNpc(pal_9166_ritter,"WP_ORCTEMPLEORE_02");
@@ -1891,10 +1892,10 @@ func void dia_garond_maderz_gold()
 
 func void dia_garond_maderz_mana()
 {
-	AI_Output(other,self,"DIA_Garond_MadErz_Mana_01_00");	//Я возьму зелье магической энергии.
-	AI_Output(self,other,"DIA_Garond_MadErz_Mana_01_01");	//Хорошо! Вот, возьми его.
+	AI_Output(other,self, " DIA_Garond_MadErz_Mana_01_00 " );	// I'll take a potion of magical energy.
+	AI_Output(self,other, " DIA_Garond_MadErz_Mana_01_01 " );	// Good! Here, take it.
 	B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
-	AI_Output(self,other,"DIA_Garond_MadErz_Mana_01_02");	//Надеюсь, он пригодится тебе.
+	AI_Output(self,other, " DIA_Garond_MadErz_Mana_01_02 " );	// I hope you find it useful.
 	Info_ClearChoices(dia_garond_maderz);
 	Wld_InsertNpc(pal_9165_ritter,"WP_ORCTEMPLEORE_01");
 	Wld_InsertNpc(pal_9166_ritter,"WP_ORCTEMPLEORE_02");
@@ -1903,10 +1904,10 @@ func void dia_garond_maderz_mana()
 
 func void dia_garond_maderz_str()
 {
-	AI_Output(other,self,"DIA_Garond_MadErz_Str_01_00");	//Я хочу взять зелье силы.
-	AI_Output(self,other,"DIA_Garond_MadErz_Str_01_01");	//Хорошо! Вот, возьми его.
+	AI_Output(other,self, " DIA_Garond_MadErz_Str_01_00 " );	// I want to take a strength potion.
+	AI_Output(self,other, " DIA_Garond_MadErz_Str_01_01 " );	// Good! Here, take it.
 	B_GiveInvItems(self,other,ItPo_Perm_STR,1);
-	AI_Output(self,other,"DIA_Garond_MadErz_Str_01_02");	//Надеюсь, он пригодится тебе.
+	AI_Output(self,other, " DIA_Garond_MadErz_Str_01_02 " );	// I hope you find it useful.
 	Info_ClearChoices(dia_garond_maderz);
 	Wld_InsertNpc(pal_9165_ritter,"WP_ORCTEMPLEORE_01");
 	Wld_InsertNpc(pal_9166_ritter,"WP_ORCTEMPLEORE_02");
@@ -1915,10 +1916,10 @@ func void dia_garond_maderz_str()
 
 func void dia_garond_maderz_dex()
 {
-	AI_Output(other,self,"DIA_Garond_MadErz_Dex_01_00");	//Я выбираю зелье ловкости.
-	AI_Output(self,other,"DIA_Garond_MadErz_Dex_01_01");	//Хорошо! Вот, возьми его.
+	AI_Output(other,self, " DIA_Garond_MadErz_Dex_01_00 " );	// I choose a potion of agility.
+	AI_Output(self,other, " DIA_Garond_MadErz_Dex_01_01 " );	// Good! Here, take it.
 	B_GiveInvItems(self,other,ItPo_Perm_DEX,1);
-	AI_Output(self,other,"DIA_Garond_MadErz_Dex_01_02");	//Надеюсь, он пригодится тебе.
+	AI_Output(self,other, " DIA_Garond_MadErz_Dex_01_02 " );	// I hope you find it useful.
 	Info_ClearChoices(dia_garond_maderz);
 	Wld_InsertNpc(pal_9165_ritter,"WP_ORCTEMPLEORE_01");
 	Wld_InsertNpc(pal_9166_ritter,"WP_ORCTEMPLEORE_02");
@@ -1927,10 +1928,10 @@ func void dia_garond_maderz_dex()
 
 func void dia_garond_maderz_health()
 {
-	AI_Output(other,self,"DIA_Garond_MadErz_Health_01_00");	//Дай мне эликсир жизни.
-	AI_Output(self,other,"DIA_Garond_MadErz_Health_01_01");	//Хорошо! Вот, возьми его.
+	AI_Output(other,self, " DIA_Garond_MadErz_Health_01_00 " );	// Give me the elixir of life.
+	AI_Output(self,other, " DIA_Garond_MadErz_Health_01_01 " );	// Good! Here, take it.
 	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
-	AI_Output(self,other,"DIA_Garond_MadErz_Health_01_02");	//Надеюсь, он пригодится тебе.
+	AI_Output(self,other, " DIA_Garond_MadErz_Health_01_02 " );	// I hope you find it useful.
 	Info_ClearChoices(dia_garond_maderz);
 	Wld_InsertNpc(pal_9165_ritter,"WP_ORCTEMPLEORE_01");
 	Wld_InsertNpc(pal_9166_ritter,"WP_ORCTEMPLEORE_02");
@@ -1960,23 +1961,23 @@ func int dia_garond_captured_condition()
 func void dia_garond_captured_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(self,other,"DIA_Garond_Captured_01_00");	//Это ты?! Как тебе удалось пробраться сюда?
-	AI_Output(other,self,"DIA_Garond_Captured_01_94");	//Это долгая история! Ты лучше скажи мне - что произошло?
-	AI_Output(self,other,"DIA_Garond_Captured_01_05");	//Не знаю! Последнее, что я помню - это сильный удар по голове, после чего я потерял сознание.
-	AI_Output(self,other,"DIA_Garond_Captured_01_06");	//А потом очнулся в этой камере вместе с остальными.
+	AI_Output(self,other, " DIA_Garond_Captured_01_00 " );	// Is that you?! How did you manage to get in here?
+	AI_Output(other,self, " DIA_Garond_Captured_01_94 " );	// It's a long story! You better tell me - what happened?
+	AI_Output(self,other, " DIA_Garond_Captured_01_05 " );	// I don't know! The last thing I remember was a strong blow to the head, after which I lost consciousness.
+	AI_Output(self,other, " DIA_Garond_Captured_01_06 " );	// And then I woke up in this cell with the others.
 	KNOWABOUTGAROND = TRUE;
 
 	if(MIS_RESCUEGAROND == LOG_Running)
 	{
-		B_LogEntry(TOPIC_RESCUEGAROND,"Думаю, что лорд Хаген обрадовался бы, узнав, что Гаронд и часть его людей живы. Теперь я просто обязан помочь им выбраться из этой ситуации.");
+		B_LogEntry( TOPIC_RESCUEGAROND , " I think Lord Hagen would be glad to know that Garond and some of his people are alive. Now I just have to help them get out of this situation. " );
 	};
 	if(MIS_NEWSSURVIVERS == LOG_Running)
 	{
-		B_LogEntry(TOPIC_NEWSSURVIVERS,"Я проник в крепость, захваченную орками. Вначале я не поверил своим глазам, когда увидел, что Гаронд и несколько его людей живы. Орки почему-то не стали их убивать, а просто взяли в плен. Надо подумать, как их вытащить.");
+		B_LogEntry( TOPIC_NEWSSURVIVERS , " I infiltrated a fortress captured by orcs. At first, I couldn't believe my eyes when I saw that Garond and some of his men were alive. For some reason, the orcs did not kill them, but simply took them prisoner. I need to think how pull them out. " );
 	};
 	if(MIS_STURMCASTLE == LOG_Running)
 	{
-		B_LogEntry(TOPIC_STURMCASTLE,"Вначале я не поверил своим глазам, когда увидел, что Гаронд и несколько его людей живы. Орки почему-то не стали их убивать, а просто взяли в плен. Думаю, что самый простой способ вызволить их отсюда - это очистить крепость от орков.");
+		B_LogEntry( TOPIC_STURMCASTLE , " At first I couldn't believe my eyes when I saw that Garond and some of his people were alive. For some reason, the orcs didn't kill them, but simply took them prisoner. I think that the easiest way to get them out of here is to clear fortress from orcs. " );
 	};
 	if(DGJMOVEPALADIN == TRUE)
 	{
@@ -1991,7 +1992,7 @@ instance DIA_GAROND_ABOUTSLAVE(C_Info)
 	condition = DIA_GAROND_ABOUTSLAVE_condition;
 	information = DIA_GAROND_ABOUTSLAVE_info;
 	permanent = FALSE;
-	description = "А где остальные заключенные?";
+	description = " Where are the other prisoners? " ;
 };
 
 func int DIA_GAROND_ABOUTSLAVE_condition()
@@ -2005,10 +2006,10 @@ func int DIA_GAROND_ABOUTSLAVE_condition()
 func void DIA_GAROND_ABOUTSLAVE_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_GAROND_ABOUTSLAVE_01_00");	//А где остальные заключенные?
-	AI_Output(self,other,"DIA_GAROND_ABOUTSLAVE_01_01");	//Орки куда-то их угнали. Но я точно не знаю, куда!
-	AI_Output(self,other,"DIA_GAROND_ABOUTSLAVE_01_02");	//Возможно, вкалывать на какой-нибудь орочий рудник.
-	AI_Output(self,other,"DIA_GAROND_ABOUTSLAVE_01_03");	//Или, что хуже, просто на бойню.
+	AI_Output(other,self, " DIA_GAROND_ABOUTSLAVE_01_00 " );	// Where are the rest of the prisoners?
+	AI_Output(self,other, " DIA_GAROND_ABOUTSLAVE_01_01 " );	// Orcs took them somewhere. But I don't know exactly where!
+	AI_Output(self,other, " DIA_GAROND_ABOUTSLAVE_01_02 " );	// Maybe work hard at some orc mine.
+	AI_Output(self,other, " DIA_GAROND_ABOUTSLAVE_01_03 " );	// Or, worse, just to the slaughter.
 };
 
 instance DIA_GAROND_FINDAWAY(C_Info)
@@ -2018,7 +2019,7 @@ instance DIA_GAROND_FINDAWAY(C_Info)
 	condition = dia_garond_findaway_condition;
 	information = dia_garond_findaway_info;
 	permanent = FALSE;
-	description = "Вам надо как-то выбираться отсюда!";
+	description = " You need to get out of here somehow! " ;
 };
 
 func int dia_garond_findaway_condition()
@@ -2031,13 +2032,13 @@ func int dia_garond_findaway_condition()
 
 func void dia_garond_findaway_info()
 {
-	AI_Output(other,self,"DIA_Garond_FindAway_01_00");	//Вам надо выбираться отсюда!
-	AI_Output(self,other,"DIA_Garond_FindAway_01_01");	//И как ты предлагаешь нам этот сделать?!
-	AI_Output(self,other,"DIA_Garond_FindAway_01_02");	//Крепость пала, и в ней наверняка сейчас полно орков! Мы даже не успеем добежать до главных ворот, как будем уже мертвы.
-	AI_Output(other,self,"DIA_Garond_FindAway_01_04");	//Я что-нибудь придумаю.
-	AI_Output(self,other,"DIA_Garond_FindAway_01_05");	//Очень надеюсь на это. Но по моему мнению, выход у нас только один...
-	AI_Output(self,other,"DIA_Garond_FindAway_01_09");	//Если ты перебьешь здесь всех орков и освободишь эту крепость!
-	AI_Output(self,other,"DIA_Garond_FindAway_01_10");	//Однако не думаю, что даже тебе такое под силу.
+	AI_Output(other,self, " DIA_Garond_FindAway_01_00 " );	// You need to get out of here!
+	AI_Output(self,other, " DIA_Garond_FindAway_01_01 " );	// And how do you suggest we do this?!
+	AI_Output(self,other, " DIA_Garond_FindAway_01_02 " );	// The fortress has fallen, and it must be full of orcs now! We won't even make it to the main gate before we're dead.
+	AI_Output(other,self, " DIA_Garond_FindAway_01_04 " );	// I'll think of something.
+	AI_Output(self,other, " DIA_Garond_FindAway_01_05 " );	// I really hope so. But in my opinion, we have only one way out ...
+	AI_Output(self,other, " DIA_Garond_FindAway_01_09 " );	// If you kill all the orcs here and free this fortress!
+	AI_Output(self,other, " DIA_Garond_FindAway_01_10 " );	// However, I don't think even you can do that.
 };
 
 
@@ -2048,7 +2049,7 @@ instance DIA_GAROND_PALADINFREE(C_Info)
 	condition = dia_garond_paladinfree_condition;
 	information = dia_garond_paladinfree_info;
 	permanent = FALSE;
-	description = "Идем! Теперь вы все свободны.";
+	description = " Let's go! You are all free now. " ;
 };
 
 
@@ -2063,14 +2064,14 @@ func int dia_garond_paladinfree_condition()
 func void dia_garond_paladinfree_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Garond_PaladinFree_01_00");	//Идем! Теперь вы все свободны.
-	AI_Output(self,other,"DIA_Garond_PaladinFree_01_01");	//То есть? (непонимающе) Что ты имеешь в виду?
+	AI_Output(other,self, " DIA_Garond_PaladinFree_01_00 " );	// Let's go! Now you are all free.
+	AI_Output(self,other, " DIA_Garond_PaladinFree_01_01 " );	// That is? (uncomprehending) What do you mean?
 	if(CASTLEISFREE == TRUE)
 	{
-		AI_Output(other,self,"DIA_Garond_PaladinFree_01_02");	//Замок снова в наших руках!
-		AI_Output(self,other,"DIA_Garond_PaladinFree_01_03");	//Правда?! Неужели вы смогли выбить орков из этой крепости?
-		AI_Output(self,other,"DIA_Garond_PaladinFree_01_05");	//Невероятно! Поверить не могу!
-		AI_Output(self,other,"DIA_Garond_PaladinFree_01_09");	//Только выпусти меня и моих парней из этих чертовых клеток.
+		AI_Output(other,self, " DIA_Garond_PaladinFree_01_02 " );	// The castle is in our hands again!
+		AI_Output(self,other, " DIA_Garond_PaladinFree_01_03 " );	// Really?! Have you been able to drive the orcs out of this fortress?
+		AI_Output(self,other, " DIA_Garond_PaladinFree_01_05 " );	// Incredible! I can't believe!
+		AI_Output(self,other, " DIA_Garond_PaladinFree_01_09 " );	// Just let me and my boys out of these damn cages.
 		PALADINCASTELFREE = TRUE;
 		if(MIS_NEWSSURVIVERS == LOG_Running)
 		{
@@ -2084,7 +2085,7 @@ func void dia_garond_paladinfree_info()
 		};
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
-			B_LogEntry(TOPIC_RESCUEGAROND,"Я освободил Гаронда и его людей из плена. Теперь надо как можно скорее убраться из этой долины.");
+			B_LogEntry( TOPIC_RESCUEGAROND , " I freed Garond and his men from captivity. Now we must get out of this valley as soon as possible. " );
 		};
 		AI_StopProcessInfos(self);
 		if(DGJMOVEPALADIN == TRUE)
@@ -2094,12 +2095,12 @@ func void dia_garond_paladinfree_info()
 	}
 	else if(CANFREEPALADIN == TRUE)
 	{
-		AI_Output(other,self,"DIA_Garond_PaladinFree_01_12");	//Нам нужно выбираться отсюда!
-		AI_Output(self,other,"DIA_Garond_PaladinFree_01_13");	//Ха! И куда же мы, по-твоему, пойдем? Тут ведь кругом одни орки!
-		AI_Output(other,self,"DIA_Garond_PaladinFree_01_17");	//Я смог договориться с их предводителем, чтобы вас выпустили на свободу.
-		AI_Output(other,self,"DIA_Garond_PaladinFree_01_18");	//Так что если не хотите остаться здесь навсегда - пошевеливайтесь. А то орки могут и передумать!
-		AI_Output(self,other,"DIA_Garond_PaladinFree_01_19");	//Ну что же, ладно - как скажешь.
-		AI_Output(self,other,"DIA_Garond_PaladinFree_01_20");	//Только для начала выпусти меня и моих парней из этих чертовых клеток.
+		AI_Output(other,self, " DIA_Garond_PaladinFree_01_12 " );	// We need to get out of here!
+		AI_Output(self,other, " DIA_Garond_PaladinFree_01_13 " );	// Ha! And where do you think we're going? There are only orcs around here!
+		AI_Output(other,self, " DIA_Garond_PaladinFree_01_17 " );	// I was able to negotiate with their leader to set you free.
+		AI_Output(other,self, " DIA_Garond_PaladinFree_01_18 " );	// So if you don't want to stay here forever, move on. And then the orcs can change their minds!
+		AI_Output(self,other, " DIA_Garond_PaladinFree_01_19 " );	// Well, okay - as you say.
+		AI_Output(self,other, " DIA_Garond_PaladinFree_01_20 " );	// Just get me and my guys out of these damn cages first.
 		PALADINCASTELFREE = TRUE;
 		SAFEFLAGPALADIN = TRUE;
 		if(MIS_NEWSSURVIVERS == LOG_Running)
@@ -2114,7 +2115,7 @@ func void dia_garond_paladinfree_info()
 		};
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
-			B_LogEntry(TOPIC_RESCUEGAROND,"Я освободил Гаронда и его людей из плена. Теперь надо как можно скорее убраться из этой долины.");
+			B_LogEntry( TOPIC_RESCUEGAROND , " I freed Garond and his men from captivity. Now we must get out of this valley as soon as possible. " );
 		};
 		AI_StopProcessInfos(self);
 		if(DGJMOVEPALADIN == TRUE)
@@ -2146,8 +2147,8 @@ func int dia_garond_whatwait_condition()
 
 func void dia_garond_whatwait_info()
 {
-	AI_Output(self,other,"DIA_Garond_WhatWait_01_00");	//Ну и долго нам еще тут сидеть? Чего ты ждешь?!
-	AI_Output(self,other,"DIA_Garond_WhatWait_01_01");	//Давай, выпусти нас отсюда!
+	AI_Output(self,other, " DIA_Garond_WhatWait_01_00 " );	// Well, how long do we have to sit here? What are you waiting for?!
+	AI_Output(self,other, " DIA_Garond_WhatWait_01_01 " );	// Come on, let us out of here!
 	AI_StopProcessInfos(self);
 };
 
@@ -2173,26 +2174,26 @@ func int dia_garond_peoplefree_condition()
 
 func void dia_garond_peoplefree_info()
 {
-	AI_Output(self,other,"DIA_Garond_PeopleFree_01_00");	//Отлично! Так-то намного лучше.
-	AI_Output(other,self,"DIA_Garond_PeopleFree_01_01");	//Теперь идем.
+	AI_Output(self,other, " DIA_Garond_PeopleFree_01_00 " );	// Great! So much better.
+	AI_Output(other,self, " DIA_Garond_PeopleFree_01_01 " );	// Now let's go.
 	if(CANFREEPALADIN == TRUE)
 	{
-		AI_Output(other,self,"DIA_Garond_PeopleFree_01_02");	//Нужно как можно скорее добраться до отряда паладинов, что стоит при выходе из этой долины.
-		AI_Output(self,other,"DIA_Garond_PeopleFree_01_03");	//Хорошо. Тогда не будем терять времени - веди нас.
+		AI_Output(other,self, " DIA_Garond_PeopleFree_01_02 " );	// We need to get to the group of paladins that is standing at the exit from this valley as soon as possible.
+		AI_Output(self,other, " DIA_Garond_PeopleFree_01_03 " );	// Good. Then let's not waste time - lead us.
 		ALLAWAYFROMCASTLE = TRUE;
 		Info_ClearChoices(dia_garond_peoplefree);
-		Info_AddChoice(dia_garond_peoplefree,"Идем!",dia_garond_peoplefree_go);
+		Info_AddChoice(dia_garond_peoplefree, " Идем! " ,dia_garond_peoplefree_go);
 	}
 	else if(CASTLEISFREE == TRUE)
 	{
-		AI_Output(other,self,"DIA_Garond_PeopleFree_01_05");	//Нам необходимо как можно скорее убраться из этой крепости!
+		AI_Output(other,self, " DIA_Garond_PeopleFree_01_05 " );	// We need to get out of this fortress as soon as possible!
 		AI_Output(self,other,"DIA_Garond_PeopleFree_01_06");	//Но почему?
-		AI_Output(other,self,"DIA_Garond_PeopleFree_01_07");	//В скором времени орки вновь пришлют сюда новые подкрепления, и тогда нам всем придется очень несладко.
-		AI_Output(self,other,"DIA_Garond_PeopleFree_01_14");	//Хммм...(задумчиво) Ну что же, ладно.
-		AI_Output(self,other,"DIA_Garond_PeopleFree_01_15");	//Тогда не будем терять времени - веди нас. Мы уходим отсюда!
+		AI_Output(other,self, " DIA_Garond_PeopleFree_01_07 " );	// Soon the orcs will send more reinforcements here again, and then we will all have a very hard time.
+		AI_Output(self,other, " DIA_Garond_PeopleFree_01_14 " );	// Hmmm...(thoughtfully) Well, okay.
+		AI_Output(self,other, " DIA_Garond_PeopleFree_01_15 " );	// Then let's not waste time - lead us. We're leaving here!
 		ALLAWAYFROMCASTLE = TRUE;
 		Info_ClearChoices(dia_garond_peoplefree);
-		Info_AddChoice(dia_garond_peoplefree,"Идем!",dia_garond_peoplefree_go);
+		Info_AddChoice(dia_garond_peoplefree, " Идем! " ,dia_garond_peoplefree_go);
 	};
 };
 
@@ -2226,17 +2227,17 @@ func int dia_garond_peopleaway_condition()
 func void dia_garond_peopleaway_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_Garond_PeopleAway_01_00");	//Отлично, мы на месте! Думаю, что здесь мы теперь в полной безопасности.
-	AI_Output(other,self,"DIA_Garond_PeopleAway_01_03");	//Но нам все равно нужно двигаться дальше. Сейчас дорога каждая минута!
-	AI_Output(self,other,"DIA_Garond_PeopleAway_01_04");	//Согласен. Поэтому иди через проход, а мы сразу же после этого последуем за тобой.
-	AI_Output(other,self,"DIA_Garond_PeopleAway_01_05");	//Хорошо. Встретимся на той стороне.
+	AI_Output(self,other, " DIA_Garond_PeopleAway_01_00 " );	// Great, we're there! I think we're safe here now.
+	AI_Output(other,self, " DIA_Garond_PeopleAway_01_03 " );	// But we still need to move on. Now every minute counts!
+	AI_Output(self,other, " DIA_Garond_PeopleAway_01_04 " );	// Agree. Therefore, go through the passage, and we will immediately follow after you.
+	AI_Output(other,self, " DIA_Garond_PeopleAway_01_05 " );	// Good. Meet me on the other side.
 	ALLAWAYFROMPLACE = TRUE;
 	AI_StopProcessInfos(self);
 	b_paladinawaytwo();
 };
 
 
-instance DIA_GAROND_WHATWAITAGAIN(C_Info)
+instance DIA_GAROND_WHATWAITAGAIN (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 1;
@@ -2257,23 +2258,23 @@ func int dia_garond_whatwaitagain_condition()
 
 func void dia_garond_whatwaitagain_info()
 {
-	AI_Output(self,other,"DIA_Garond_WhatWaitAgain_01_00");	//Давай, ступай! Мы последуем за тобой.
+	AI_Output(self,other, " DIA_Garond_WhatWaitAgain_01_00 " );	// Come on, go! We will follow you.
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Garond_OrcTraitor(C_Info)
+instance DIA_Garond_OrcTraitor (C_Info)
 {
 	npc = PAL_250_Garond;
 	nr = 1;
 	condition = DIA_Garond_OrcTraitor_Condition;
 	information = DIA_Garond_OrcTraitor_Info;
 	permanent = FALSE;
-	description = "У меня тут кое-что для тебя есть.";
+	description = " I have something here for you. " ;
 };
 
 func int DIA_Garond_OrcTraitor_Condition()
 {
-	if((MIS_HeroOrcJoin_T2 == LOG_Running) && (Npc_HasItems(other,ItWr_UrKarrasLetter) >= 1) && (OrcClanBossLetterDeliver == FALSE))
+	if ((MIS_HeroOrcJoin_T2 == LOG_Running) && (Npc_HasItems(other,ItWr_UrKarrasLetter) >=  1 ) && (OrcClanBossLetterDeliver ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -2281,41 +2282,41 @@ func int DIA_Garond_OrcTraitor_Condition()
 
 func void DIA_Garond_OrcTraitor_Info()
 {
-	var int RanGonezPlace;
+	lime int RanGonezPlace;
 
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Garond_OrcTraitor_01_00");	//У меня тут кое-что есть для тебя.
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_01");	//Надеюсь, это что-то действительно важное, а не какая-нибудь очередная ерунда! 
-	AI_Output(other,self,"DIA_Garond_OrcTraitor_01_02");	//Вот, взгляни.
+	AI_Output(other,self, " DIA_Garond_OrcTraitor_01_00 " );	// I have something here for you.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_01 " );	// I hope this is something really important, and not some other nonsense!
+	AI_Output(other,self, " DIA_Garond_OrcTraitor_01_02 " );	// Here, take a look.
 	B_GiveInvItems(other,self,ItWr_UrKarrasLetter,1);
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_03");	//И что это?
-	AI_Output(other,self,"DIA_Garond_OrcTraitor_01_04");	//Это послание военачальника орков к одному из вождей их горных племен. Ну как, тебе уже интересно?
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_05");	//(с интересом) А ну-ка, дай взглянуть...
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_03 " );	// And what is this?
+	AI_Output(other,self, " DIA_Garond_OrcTraitor_01_04 " );	// This is a message from an orc warlord to one of their mountain tribe leaders. Well, are you already interested?
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_05 " );	// (with interest) Come on, let me take a look...
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_06");	//Но это послание написано на орочьем языке!
-	AI_Output(other,self,"DIA_Garond_OrcTraitor_01_07");	//Конечно, его же писал орк! Тебе найти переводчика?
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_08");	//Не надо, я сам прочту...(раздраженно) За долгие годы войны с этими тварями я стал немного понимать их язык.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_06 " );	// But this message is written in orc language!
+	AI_Output(other,self, " DIA_Garond_OrcTraitor_01_07 " );	// Of course, the orc wrote it! Can you find an interpreter?
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_08 " );	// Don't, I'll read it myself... (irritated) Over the long years of war with these creatures, I began to understand their language a little.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_09");	//(читая) Глазам своим поверить не могу! То, что ты принес - действительно крайне важные сведения!
-	AI_Output(other,self,"DIA_Garond_OrcTraitor_01_10");	//И что там написано?
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_11");	//Похоже, в скором времени орки планируют начать штурм замка, и собирают для этого дополнительные силы.
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_12");	//Они хотят застигнуть нас врасплох, атаковав сразу с нескольких сторон. Но, похоже, теперь у них уже ничего не получится.
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_13");	//Я распоряжусь удвоить охрану стен и установить дополнительные оборонительные заслоны.
-	AI_Output(other,self,"DIA_Garond_OrcTraitor_01_14");	//А у тебя хватит на это людей?
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_15");	//Пока хватит. Хотя мы и находимся в нелегкой ситуации, но обладаем достаточным людским ресурсом, чтобы держать оборону сразу с нескольких сторон.
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_16");	//Конечно, без дополнительных укреплений это было бы куда сложней.
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_17");	//Но у нас теперь есть достаточно времени, чтобы хорошо подготовиться к штурму.
-	AI_Output(other,self,"DIA_Garond_OrcTraitor_01_18");	//Я рад, что это информация оказалась полезной для тебя.
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_19");	//Твою помощь в этом деле невозможно переоценить, и я благодарю тебя от имени всех паладинов, что находятся в этой крепости!
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_20");	//Вот, прими это в качестве награды...
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_09 " );	// (reading) I can't believe my eyes! What you brought is really extremely important information!
+	AI_Output(other,self, " DIA_Garond_OrcTraitor_01_10 " );	// And what is written there?
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_11 " );	// It looks like the orcs are planning to storm the castle soon, and are gathering additional forces for this.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_12 " );	// They want to take us by surprise by attacking from several directions at once. But now it looks like they won't be able to.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_13 " );	// I'll have the walls doubled and more defensive barriers installed.
+	AI_Output(other,self, " DIA_Garond_OrcTraitor_01_14 " );	// Do you have enough people for this?
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_15 " );	// Enough for now. Although we are in a difficult situation, we have sufficient manpower to keep the defense on several sides at once.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_16 " );	// Of course, without additional fortifications, this would be much more difficult.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_17 " );	// But we now have enough time to prepare well for the assault.
+	AI_Output(other,self, " DIA_Garond_OrcTraitor_01_18 " );	// I'm glad this information was useful to you.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_19 " );	// Your help in this matter cannot be overestimated, and I thank you on behalf of all the paladins that are in this fortress!
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_20 " );	// Here, take this as a reward...
  	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_21");	//Думаю, ты и сам знаешь, что наши запасы крайне скудны. 
-	AI_Output(self,other,"DIA_Garond_OrcTraitor_01_22");	//Но я просто не могу не отблагодарить тебя за то, что ты сделал для нас.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_21 " );	// I think you know that our supplies are extremely scarce.
+	AI_Output(self,other, " DIA_Garond_OrcTraitor_01_22 " );	// But I just can't thank you enough for what you've done for us.
 	OrcTraitor = TRUE;
-	B_LogEntry(TOPIC_HeroOrcJoin_T2,"Вместо того, чтобы передать сообщение Ур-Карраса вождю клана Высокой Скалы, я отнес его в крепость людям. Как выяснилось из письма, орки готовятся к новому штурму и для этого ищут помощи у других кланов. Как и предполагалось, эта информация оказалась весьма важной для паладинов! Однако теперь, после своего предательства, думаю мне не стоит возвращаться в город орков. Наверняка мое присутствие в крепости не осталось для них незамеченным, и они пошлют кого-нибудь к Ур-Каррасу, чтобы сообщить о моей измене. Если только я не успею перехватить гонца до того, как он расскажет все Ур-Каррасу. Надо поспешить, поскольку наверняка времени у меня на это осталось крайне мало...");
+	B_LogEntry(TOPIC_HeroOrcJoin_T2,"Instead of delivering Ur-Karras's message to the Chieftain of the Highrock clan, I took it to the human stronghold. As it turned out, the orcs are preparing for a new assault and are seeking help from other clans to do this. As expected, this The information proved to be very important to the paladins! However, now that I've been betrayed, I don't think I should return to the orc city. Surely my presence in the fortress has not gone unnoticed by them, and they will send someone to Ur-Karras to report my treachery (Unless I can intercept the messenger before he tells Ur-Karras everything. I must hurry, because I probably have very little time left for this...");
 
-	RanGonezPlace = Hlp_Random(100);
-	DayGonezStart = Wld_GetDay();
+	RanGonezPlace = Hlp_Random( 100 );
+	DayGoneZStart = Wld_GetDay();
 
 	if(RanGonezPlace >= 60)
 	{
@@ -2338,7 +2339,7 @@ instance DIA_Garond_PICKPOCKET(C_Info)
 	condition = DIA_Garond_pickpocket_condition;
 	information = DIA_Garond_pickpocket_info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его ключ)";
+	description = " (Try to steal his key) " ;
 };
 
 func int DIA_Garond_pickpocket_condition()
@@ -2353,7 +2354,7 @@ func void DIA_Garond_pickpocket_info()
 {
 	Info_ClearChoices(DIA_Garond_pickpocket);
 	Info_AddChoice(DIA_Garond_pickpocket,Dialog_Back,DIA_Garond_pickpocket_back);
-	Info_AddChoice(DIA_Garond_pickpocket,DIALOG_PICKPOCKET,DIA_Garond_pickpocket_doit);
+	Info_AddChoice(DIA_Garond_pickpocket, DIALOG_PICKPOCKET ,DIA_Garond_pickpocket_doit);
 };
 
 func void DIA_Garond_pickpocket_doit()
