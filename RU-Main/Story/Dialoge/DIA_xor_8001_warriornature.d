@@ -1,5 +1,6 @@
 
-var int luzian_betreten;
+
+var int luzian_enter;
 
 instance XOR_8001_WARRIORNATURE_EXIT(C_Info)
 {
@@ -36,7 +37,7 @@ instance XOR_8001_WARRIORNATURE_FOUND(C_Info)
 
 func int xor_8001_warriornature_found_condition()
 {
-	if((GUARDIAN_RING == TRUE) && !Npc_IsDead(luzian_demon))
+	if (( GUARDIAN_RING  ==  TRUE ) &&  ! Npc_IsDead(luzian_demon))
 	{
 		return TRUE;
 	};
@@ -44,55 +45,55 @@ func int xor_8001_warriornature_found_condition()
 
 func void xor_8001_warriornature_found_info()
 {
-	LUZIAN_BETRETEN = FALSE;
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_01");	//Так вот кого Хранители послали мне в подмогу...(оценивающе) А ты не производишь впечатление сильного воина.
-	AI_Output(other,self,"XOR_8001_WarriorNature_Found_02");	//Хранители... А как ты узнал?
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_03");	//Ты хоть имеешь представление, что за кольцо у тебя на руке? Кто дал его тебе?
-	AI_Output(other,self,"XOR_8001_WarriorNature_Found_04");	//Мне дал его Дагот.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_05");	//Все правильно - один из Хранителей! Это кольцо - их символ власти. Именно поэтому я и заговорил с тобой.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_06");	//Судя по твоим словам, ты еще только вступил на этот путь. Что привело тебя сюда?
-	AI_Output(other,self,"XOR_8001_WarriorNature_Found_07");	//Я ищу древнего демона - Люциана. Может, ты мне поможешь в моих поисках?
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_08");	//(смеется) Вот уж не думал.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_09");	//Ты назвал имя Люциан? Считай, что ты уже нашел его. Он находится в пещере позади меня.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_10");	//Хорошо, что ты не пошел туда один - демон разорвал бы тебя на части!
-	AI_Output(other,self,"XOR_8001_WarriorNature_Found_11");	//А откуда ты знаешь, что он там?
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_12");	//Он там, поверь мне. Этот демон - сущее зло! Я охочусь за ним уже более тысячи лет.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_13");	//И, наконец, мне удалось загнать зверя в ловушку. Но Люциан силен, и мне одному будет трудно справится с ним.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_14");	//Вот почему я просил Хранителей прислать мне кого-нибудь в помощь - и они прислали тебя.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_15");	//Да, парень, - похоже, иного выхода у меня нет, кроме как идти в пещеру именно с тобой.
+	LUZIAN_BETRETEN = FALSE ;
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_01 " );	// So that's who the Guardians sent to help me... (appreciatively) You don't seem like a strong warrior.
+	AI_Output(other,self, " XOR_8001_WarriorNature_Found_02 " );	// Guardians... How did you know?
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_03 " );	// Do you have any idea what kind of ring you have on your hand? Who gave it to you?
+	AI_Output(other,self, " XOR_8001_WarriorNature_Found_04 " );	// Dagoth gave it to me.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_05 " );	// That's right - one of the Guardians! This ring is their symbol of power. That is why I spoke to you.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_06 " );	// Judging by your words, you have just entered this path. What brought you here?
+	AI_Output(other,self, " XOR_8001_WarriorNature_Found_07 " );	// I'm looking for an ancient demon - Lucian. Can you help me in my search?
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_08 " );	// (laughs) I didn't think so.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_09 " );	// Did you name Lucian? Consider that you have already found it. He is in the cave behind me.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_10 " );	// It's good you didn't go there alone - the demon would have torn you apart!
+	AI_Output(other,self, " XOR_8001_WarriorNature_Found_11 " );	// How do you know he's there?
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_12 " );	// He's there, trust me. This demon is pure evil! I have hunted him for over a thousand years.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_13 " );	// And finally, I managed to drive the beast into a trap. But Lucian is strong, and it will be difficult for me alone to cope with him.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_14 " );	// That's why I asked the Guardians to send someone to help me - and they sent you.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_15 " );	// Yes, boy, it looks like I have no choice but to go into the cave with you.
 	AI_Output(self,other,"XOR_8001_WarriorNature_Found_16");	//Ты готов?
 	Info_ClearChoices(xor_8001_warriornature_found);
-	B_LogEntry(TOPIC_GUARDIANSTEST,"В долине рядом с башней Ксардаса я встретил одного воина. И, похоже, у нас с ним оказались схожие цели. Нам обоим надо прогуляться в пещеру, где находится демон Люциан.");
-	Info_AddChoice(xor_8001_warriornature_found,"Подожди! Мне надо немного времени, чтобы собраться с духом.",xor_8001_warriornature_found_no);
-	Info_AddChoice(xor_8001_warriornature_found,"Идем в пещеру - уничтожим Люциана!",xor_8001_warriornature_found_yes);
+	B_LogEntry( TOPIC_GUARDIANSTEST , " I met a warrior in the valley near the tower of Xardas. And it looks like we have similar goals. We both need to take a walk into the cave where the demon Lucian is. " );
+	Info_AddChoice(xor_8001_warriornature_found, " Wait! I need some time to gather my courage. " ,xor_8001_warriornature_found_no);
+	Info_AddChoice(xor_8001_warriornature_found, " Let's go to the cave - kill Lucian! " ,xor_8001_warriornature_found_yes);
 };
 
 func void xor_8001_warriornature_found_no()
 {
-	AI_Output(other,self,"XOR_8001_WarriorNature_Found_17");	//Подожди, мне надо немного времени, чтобы собраться с духом и проверить снаряжение.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_18");	//Ага, ты немного боишься? Хорошо, я жду тебя тут. Но не тяни долго с подготовкой.
-	LUZIAN_BETRETEN = TRUE;
+	AI_Output(other,self, " XOR_8001_WarriorNature_Found_17 " );	// Wait, I need some time to gather my courage and check my gear.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_18 " );	// Yeah, are you a little scared? Okay, I'm waiting for you here. But don't wait too long to get ready.
+	LUZIAN_BETRETEN = TRUE ;
 	Info_ClearChoices(xor_8001_warriornature_found);
 };
 
 func void xor_8001_warriornature_found_yes()
 {
-	AI_Output(other,self,"XOR_8001_WarriorNature_Found_19");	//Хорошо, идем.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_20");	//Да защитят нас Хранители!
+	AI_Output(other,self, " XOR_8001_WarriorNature_Found_19 " );	// Okay, let's go.
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_20 " );	// May the Guardians protect us!
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"Guide");
-	LUZIAN_BETRETEN = FALSE;
+	LUZIAN_BETRETEN = FALSE ;
 };
 
-instance XOR_8001_WARRIORNATURE_PLATIE(C_Info)
+instance XOR_8001_WARRIORNATURE_PLATION (C_Info)
 {
 	npc = XOR_12207_WARRIORNATURE;
 	nr = 1;
 	condition = xor_8001_warriornature_PLATIE_condition;
-	information = xor_8001_warriornature_PLATIE_info;
+	information = xor_8001_warriornature_PLATION_info;
 	permanent = FALSE;
-	description = "Что на тебе за доспехи?";
+	description = " What armor are you wearing? " ;
 };
 
 func int xor_8001_warriornature_PLATIE_condition()
@@ -103,15 +104,15 @@ func int xor_8001_warriornature_PLATIE_condition()
 	};
 };
 
-func void xor_8001_warriornature_PLATIE_info()
+func void xor_8001_warriornature_PLATION_info()
 {
-	AI_Output(other,self,"XOR_8001_WarriorNature_PLATIE_01");	//Что на тебе за доспехи? Немного на платье смахивает.
+	AI_Output(other,self, " XOR_8001_WarriorNature_PLATIE_01 " );	// What kind of armor are you wearing? Looks a bit like a dress.
 	AI_Output(self,other,"XOR_8001_WarriorNature_PLATIE_02");	//Хммм...
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
 
-instance XOR_8001_WARRIORNATURE_LUZIAN(C_Info)
+instance XOR_8001_WARRIORNATURE_LUZIAN (C_Info)
 {
 	npc = XOR_12207_WARRIORNATURE;
 	nr = 1;
@@ -119,12 +120,12 @@ instance XOR_8001_WARRIORNATURE_LUZIAN(C_Info)
 	information = xor_8001_warriornature_luzian_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Идем в пещеру - уничтожим Люциана!";
+	description = " Let's go to the cave - kill Lucian! " ;
 };
 
 func int xor_8001_warriornature_luzian_condition()
 {
-	if(LUZIAN_BETRETEN == TRUE)
+	if ( LUZIAN_BETRETEN  ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -132,12 +133,12 @@ func int xor_8001_warriornature_luzian_condition()
 
 func void xor_8001_warriornature_luzian_info()
 {
-	AI_Output(other,self,"XOR_8001_WarriorNature_Found_21");	//Идем в пещеру - уничтожим Люциана!
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_22");	//Хорошо, идем. Будь наготове! Да защитят нас Хранители...
+	AI_Output(other,self, " XOR_8001_WarriorNature_Found_21 " );	// Let's go to the cave - destroy Lucian!
+	AI_Output(self,other, " XOR_8001_WarriorNature_Found_22 " );	// Okay, let's go. Get ready! May the Guardians protect us...
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"Guide");
-	LUZIAN_BETRETEN = FALSE;
+	LUZIAN_BETRETEN = FALSE ;
 };
 
 instance XOR_8001_WARRIORNATURE_DEMON_DEAD(C_Info)
@@ -152,7 +153,7 @@ instance XOR_8001_WARRIORNATURE_DEMON_DEAD(C_Info)
 
 func int xor_8001_warriornature_demon_dead_condition()
 {
-	if(Npc_KnowsInfo(hero,xor_8001_warriornature_found) && Npc_IsDead(luzian_demon))
+	if ( Npc_KnowsInfo ( hero , xor_8001_warriornature_found ) && Npc_IsDead ( luzian_demon ) )
 	{
 		return TRUE;
 	};
@@ -160,14 +161,14 @@ func int xor_8001_warriornature_demon_dead_condition()
 
 func void xor_8001_warriornature_demon_dead_info()
 {
-	AI_Output(self,other,"XOR_8001_WarriorNature_Demon_Dead_01");	//Он мертв! Наконец-то... Я уже и не думал, что это когда-либо произойдет.
-	AI_Output(other,self,"XOR_8001_WarriorNature_Demon_Dead_02");	//Да, Люциан мертв. Никогда еще не видел подобных существ!
-	AI_Output(self,other,"XOR_8001_WarriorNature_Demon_Dead_03");	//Сколько силы и злобы было в этом демоне - я до сих пор не могу поверить, что все позади.
-	AI_Output(other,self,"XOR_8001_WarriorNature_Demon_Dead_04");	//Да, этот бой я не забуду никогда!
-	AI_Output(self,other,"XOR_8001_WarriorNature_Demon_Dead_05");	//Я тоже, мой друг! Спасибо, что помог мне. Теперь прощай. Может быть, мы еще встретимся.
-	B_LogEntry(TOPIC_GUARDIANSTEST,"Люциан мертв. Древний демон оказался очень серьезным противником, и бой с ним, кажется, отнял у меня все силы. Но все позади, и теперь мне надо вернуться к Даготу, чтобы отдать ему сердце поверженного нами демона.");
+	AI_Output(self,other, " XOR_8001_WarriorNature_Demon_Dead_01 " );	// He's dead! Finally... I didn't think it would ever happen.
+	AI_Output(other,self, " XOR_8001_WarriorNature_Demon_Dead_02 " );	// Yes, Lucian is dead. I have never seen such creatures before!
+	AI_Output(self,other, " XOR_8001_WarriorNature_Demon_Dead_03 " );	// How much strength and malice was in this demon - I still can't believe that everything is over.
+	AI_Output(other,self, " XOR_8001_WarriorNature_Demon_Dead_04 " );	// Yes, I will never forget this fight!
+	AI_Output(self,other, " XOR_8001_WarriorNature_Demon_Dead_05 " );	// Me too, my friend! Thanks for helping me. Now goodbye. Maybe we'll meet again.
+	B_LogEntry( TOPIC_GUARDIANSTEST , " Lucian is dead. The ancient demon turned out to be a very serious opponent, and the fight with him seems to have taken all my strength. But everything is over, and now I need to return to Dagoth to give him the heart of the demon we defeated. " ) ;
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"Guard");
 };
 
