@@ -1,4 +1,5 @@
 
+
 instance DIA_Boltan_EXIT(C_Info)
 {
 	npc = Mil_313_Boltan;
@@ -31,7 +32,7 @@ instance DIA_Boltan_PICKPOCKET(C_Info)
 
 func int DIA_Boltan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(18,10);
+	return  C_Robbery ( 18 , 10 );
 };
 
 func void DIA_Boltan_PICKPOCKET_Info()
@@ -43,7 +44,7 @@ func void DIA_Boltan_PICKPOCKET_Info()
 
 func void DIA_Boltan_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Boltan_PICKPOCKET);
 };
 
@@ -52,12 +53,12 @@ func void DIA_Boltan_PICKPOCKET_BACK()
 	Info_ClearChoices(DIA_Boltan_PICKPOCKET);
 };
 
-instance DIA_Boltan_HALLO(C_Info)
+instance DIA_Boltan_HELLO (C_Info)
 {
 	npc = Mil_313_Boltan;
 	nr = 1;
 	condition = DIA_Boltan_HALLO_Condition;
-	information = DIA_Boltan_HALLO_Info;
+	information = DIA_Boltan_HELLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -68,9 +69,9 @@ func int DIA_Boltan_HALLO_Condition()
 	return TRUE;
 };
 
-func void DIA_Boltan_HALLO_Info()
+func void DIA_Boltan_HELLO_Info()
 {
-	AI_Output(self,other,"DIA_Boltan_Add_05_00");	//Что тебе нужно?
+	AI_Output(self,other, " DIA_Boltan_Add_05_00 " );	// What do you need?
 };
 
 
@@ -81,7 +82,7 @@ instance DIA_Boltan_ToConvicts(C_Info)
 	condition = DIA_Boltan_ToConvicts_Condition;
 	information = DIA_Boltan_ToConvicts_Info;
 	permanent = TRUE;
-	description = "Я хочу увидеть заключенных.";
+	description = " I want to see the prisoners. " ;
 };
 
 
@@ -92,25 +93,25 @@ func int DIA_Boltan_ToConvicts_Condition()
 
 func void DIA_Boltan_ToConvicts_Info()
 {
-	AI_Output(other,self,"DIA_Boltan_Add_15_01");	//Я хочу увидеть заключенных.
-	if((Kapitel == 3) && (MIS_RescueBennet != LOG_SUCCESS))
+	AI_Output(other,self, " DIA_Boltan_Add_15_01 " );	// I want to see the prisoners.
+	if ((Chapter ==  3 ) && (MY_RescueBennet !=  LOG_SUCCESS ))
 	{
 		if(other.guild == GIL_SLD)
 		{
-			AI_Output(self,other,"DIA_Boltan_Add_05_07");	//Да, иди попрощайся со своим приятелем.
+			AI_Output(self,other, " DIA_Boltan_Add_05_07 " );	// Yeah, go say goodbye to your buddy.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Boltan_Add_05_06");	//Мы арестовали эту свинью, что убила паладина Лотара.
+			AI_Output(self,other, " DIA_Boltan_Add_05_06 " );	// We arrested the pig that killed the paladin Lothar.
 		};
 	}
-	else if(((Canthar_Ausgeliefert == FALSE) || (Canthar_WiederRaus == TRUE)) && (Sarah_Ausgeliefert == FALSE) && (Rengaru_Ausgeliefert == FALSE) && (Nagur_Ausgeliefert == FALSE) && (CANTHAR_AUSGELIEFERT2 == FALSE))
+	if  _ _ _  _ _ _ _ _  _ _ _ _ _  _ _ _ _ _  _ _ _ _ _  _ _ _ _ _  _  _ _
 	{
-		AI_Output(self,other,"DIA_Boltan_Add_05_02");	//Все камеры сейчас пусты.
+		AI_Output(self,other, " DIA_Boltan_Add_05_02 " );	// All chambers are now empty.
 	}
 	else if(other.guild == GIL_MIL)
 	{
-		AI_Output(self,other,"DIA_Boltan_Add_05_04");	//Хорошо, приятель.
+		AI_Output(self,other, " DIA_Boltan_Add_05_04 " );	// Okay, mate.
 	}
 	else if((other.guild == GIL_PAL) || (other.guild == GIL_KDF) || (other.guild == GIL_KDM) || (other.guild == GIL_KDW))
 	{
@@ -118,7 +119,7 @@ func void DIA_Boltan_ToConvicts_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Boltan_Add_05_03");	//Иди, но не задерживайся там слишком долго, понятно?
+		AI_Output(self,other, " DIA_Boltan_Add_05_03 " );	// Go, but don't stay there too long, okay?
 	};
 };
 
@@ -136,7 +137,7 @@ instance DIA_Boltan_HalloBennet(C_Info)
 
 func int DIA_Boltan_HalloBennet_Condition()
 {
-	if((Kapitel == 3) && (MIS_RescueBennet != LOG_SUCCESS) && (other.guild == GIL_SLD))
+	if ((Chapter ==  3 ) && (MY_RescueBennet !=  LOG_SUCCESS ) && (other.guild ==  GIL_SLD ))
 	{
 		return TRUE;
 	};
@@ -144,9 +145,9 @@ func int DIA_Boltan_HalloBennet_Condition()
 
 func void DIA_Boltan_HalloBennet_Info()
 {
-	AI_Output(self,other,"DIA_Boltan_Add_05_08");	//Ты ведь пришел не затем, чтобы вызволить отсюда своего приятеля, нет?
-	AI_Output(self,other,"DIA_Boltan_Add_05_09");	//Забудь об этом! Как только я подниму тревогу, парни будут здесь в мгновение ока!
-	AI_Output(self,other,"DIA_Boltan_Add_05_10");	//И тогда мы сделаем из тебя котлету! (грязный смех)
+	AI_Output(self,other, " DIA_Boltan_Add_05_08 " );	// You didn't come here to get your friend out of here, did you?
+	AI_Output(self,other, " DIA_Boltan_Add_05_09 " );	// Forget it! As soon as I raise the alarm, the boys will be here in no time!
+	AI_Output(self,other, " DIA_Boltan_Add_05_10 " );	// And then we'll make a cutlet out of you! (dirty laugh)
 };
 
 
@@ -163,7 +164,7 @@ instance DIA_Boltan_HalloCanthar(C_Info)
 
 func int DIA_Boltan_HalloCanthar_Condition()
 {
-	if(((Kapitel != 3) || ((Kapitel == 3) && ((MIS_RescueBennet == LOG_SUCCESS) || (other.guild != GIL_SLD)))) && (Canthar_WiederRaus == TRUE) && (Canthar_Ausgeliefert == TRUE))
+	if (((Chapter !=  3 ) || ((Chapter ==  3 ) && ((MY_RescueBennet ==  LOG_SUCCESS ) || (other.guild !=  GIL_SLD )))) && (Canthar_WiederRaus ==  TRUE ) && (Canthar_Ausgeliefert = =  TRUE ))
 	{
 		return TRUE;
 	};
@@ -171,21 +172,21 @@ func int DIA_Boltan_HalloCanthar_Condition()
 
 func void DIA_Boltan_HalloCanthar_Info()
 {
-	AI_Output(self,other,"DIA_Boltan_Add_05_11");	//Эй, ты тот парень, что написал жалобу на Кантара, торговца.
-	AI_Output(self,other,"DIA_Boltan_Add_05_12");	//Много людей приходило, чтобы похлопотать за него. Уважаемых людей.
-	AI_Output(self,other,"DIA_Boltan_Add_05_13");	//Должно быть, произошло какое-то недоразумение. Такое бывает.
-	AI_Output(self,other,"DIA_Boltan_Add_05_14");	//В будущем тебе стоит быть тщательнее выбирать, кого ты хочешь упечь в тюрьму.
+	AI_Output(self,other, " DIA_Boltan_Add_05_11 " );	// Hey, you're the guy who filed the complaint against Kantar, the merchant.
+	AI_Output(self,other, " DIA_Boltan_Add_05_12 " );	// A lot of people came to plead for him. Dear people.
+	AI_Output(self,other, " DIA_Boltan_Add_05_13 " );	// There must have been some misunderstanding. It happens.
+	AI_Output(self,other, " DIA_Boltan_Add_05_14 " );	// In the future, you should be more careful about who you want to put in jail.
 };
 
 
-instance DIA_BOLTAN_SARAHELPSTWO(C_Info)
+instance DIA_BOLTAN_SARAHELPSTWO (C_Info) .
 {
 	npc = Mil_313_Boltan;
 	nr = 2;
 	condition = dia_boltan_sarahelpstwo_condition;
 	information = dia_boltan_sarahelpstwo_info;
 	permanent = FALSE;
-	description = "Мне кое-что нужно от тебя!";
+	description = " I need something from you! " ;
 };
 
 
@@ -199,86 +200,86 @@ func int dia_boltan_sarahelpstwo_condition()
 
 func void dia_boltan_sarahelpstwo_info()
 {
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_01_02");	//Ты забрал у торговки Сары кольцо. Отдай его мне!
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_01_03");	//Что? С чего ты вообще это взял?
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_01_04");	//Она сама мне сказала об этом.
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_01_05");	//Да?! (злобно) Вот дрянь!
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_01_06");	//Поэтому не валяй дурака и давай его сюда.
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_01_07");	//(нагло) Ага! Конечно!
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_01_08");	//Это кольцо мое! Так что забудь об этом.
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_01_02 " );	// You took the ring from the merchant Sarah. Give it to me!
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_01_03 " );	// What? Where did you even get this from?
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_01_04 " );	// She told me about it herself.
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_01_05 " );	// Yes?! (angrily) That's rubbish!
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_01_06 " );	// So don't play the fool and bring him here.
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_01_07 " );	// (brazenly) Aha! Of course!
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_01_08 " );	// This ring is mine! So forget about it.
 	Info_ClearChoices(dia_boltan_sarahelpstwo);
-	Info_AddChoice(dia_boltan_sarahelpstwo,"Отдай мне кольцо или пожалеешь об этом!",dia_boltan_sarahelpstwo_kill);
-	Info_AddChoice(dia_boltan_sarahelpstwo,"Тогда, продай мне его!",dia_boltan_sarahelpstwo_buy);
+	Info_AddChoice(dia_boltan_sarahelpstwo, " Give me the ring or you'll regret it! " ,dia_boltan_sarahelpstwo_kill);
+	Info_AddChoice(dia_boltan_sarahelpstwo, " Sell it to me then! " ,dia_boltan_sarahelpstwo_buy);
 	if(other.guild == GIL_KDF)
 	{
-		Info_AddChoice(dia_boltan_sarahelpstwo,"Ты смеешь противиться воле мага Огня?",dia_boltan_sarahelpstwo_kdf);
+		Info_AddChoice(dia_boltan_sarahelpstwo, " Do you dare oppose the will of the Firebender? " ,dia_boltan_sarahelpstwo_kdf);
 	};
 	if(other.guild == GIL_PAL)
 	{
-		Info_AddChoice(dia_boltan_sarahelpstwo,"Ты посмеешь ослушаться приказа паладина?",dia_boltan_sarahelpstwo_pal);
+		Info_AddChoice(dia_boltan_sarahelpstwo, " Do you dare disobey a paladin's command? " ,dia_boltan_sarahelpstwo_pal);
 	};
 	if(other.guild == GIL_MIL)
 	{
-		Info_AddChoice(dia_boltan_sarahelpstwo,"Тогда я скажу лорду Андрэ, что ты украл это кольцо.",dia_boltan_sarahelpstwo_mil);
+		Info_AddChoice(dia_boltan_sarahelpstwo, " Then I'll tell Lord Andre that you stole this ring. " ,dia_boltan_sarahelpstwo_mil);
 	};
 };
 
 func void dia_boltan_sarahelpstwo_kdf()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_KDF_01_00");	//Ты смеешь противиться воле служителя Инноса?
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_KDF_01_01");	//Нет! Что ты! Я...(запинаясь)
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_KDF_01_04");	//Вот, почтенный - держи его.
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_KDF_01_00 " );	// Do you dare to oppose the will of the servant Innos?
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_KDF_01_01 " );	// No! What you! I... (stammering)
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_KDF_01_04 " );	// Here, sir, hold him.
 	B_GiveInvItems(self,other,itri_sarafamilyring,1);
-	B_LogEntry(TOPIC_SARAHELPSTWO,"Болтан не стал перечить мне, поскольку я маг Огня. Он отдал мне кольцо Сары.");
+	B_LogEntry( TOPIC_SARAHELPSTWO , " Dumpty didn't argue with me because I'm a Firebender. He gave me Sarah's ring. " );
 	AI_StopProcessInfos(self);
 };
 
 func void dia_boltan_sarahelpstwo_pal()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_PAL_01_00");	//Ты смеешь противиться воле служителя Инноса?
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_PAL_01_01");	//Нет! Что ты! Я...(запинаясь)
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_PAL_01_04");	//Вот, держи его.
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_PAL_01_00 " );	// Do you dare to oppose the will of the servant Innos?
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_PAL_01_01 " );	// No! What you! I... (stammering)
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_PAL_01_04 " );	// Here, hold it.
 	B_GiveInvItems(self,other,itri_sarafamilyring,1);
-	B_LogEntry(TOPIC_SARAHELPSTWO,"Болтан не стал перечить мне, поскольку я паладин. Он отдал мне кольцо Сары.");
+	B_LogEntry( TOPIC_SARAHELPSTWO , " Dumpty didn't argue with me because I'm a paladin. He gave me Sarah's ring. " );
 	AI_StopProcessInfos(self);
 };
 
 func void dia_boltan_sarahelpstwo_mil()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_MIL_01_00");	//Тогда я скажу лорду Андрэ, что ты украл это кольцо.
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_MIL_01_01");	//И ты думаешь, он тебе поверит?
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_MIL_01_02");	//А почему нет? В конце концов, я такой же солдат ополчения, как и ты.
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_MIL_01_06");	//Хорошо...(злобно) Черт с тобой! Вот, забирай его!
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_MIL_01_00 " );	// Then I'll tell Lord Andre that you stole that ring.
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_MIL_01_01 " );	// And you think he'll believe you?
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_MIL_01_02 " );	// Why not? After all, I am a militia soldier just like you.
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_MIL_01_06 " );	// Okay...(viciously) Damn you! Here, take it!
 	B_GiveInvItems(self,other,itri_sarafamilyring,1);
-	B_LogEntry(TOPIC_SARAHELPSTWO,"Я сумел 'уговорить' Болтана отдать мне кольцо. Теперь его нужно отнести Саре.");
+	B_LogEntry( TOPIC_SARAHELPSTWO , " I managed to 'convince' Boltan to give me the ring. Now I need to take it to Sarah. " );
 	AI_StopProcessInfos(self);
 };
 
 func void dia_boltan_sarahelpstwo_buy()
 {
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_Buy_01_00");	//Тогда продай мне его!
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_Buy_01_05");	//Сколько ты хочешь за него?
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_Buy_01_06");	//Ну...(задумчиво) предположим, я хочу за него...
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_Buy_01_07");	//Пятьсот золотых монет!
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_Buy_01_09");	//(ехидно) Это неплохая цена для такой вещицы, правда?
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_Buy_01_11");	//Хорошо, я подумаю над твоим предложением.
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_Buy_01_00 " );	// Then sell it to me!
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_Buy_01_05 " );	// How much do you want for it?
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_Buy_01_06 " );	// Well... (thoughtfully) suppose I want for him...
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_Buy_01_07 " );	// Five hundred gold coins!
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_Buy_01_09 " );	// (snickeringly) That's a good price for something like this, isn't it?
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_Buy_01_11 " );	// Okay, I'll think about your suggestion.
 	Info_ClearChoices(dia_boltan_sarahelpstwo);
-	B_LogEntry(TOPIC_SARAHELPSTWO,"Я сумел уговорить Болтана продать мне кольцо Сары за пятьсот золотых монет.");
-	BOLTANTRADERING = TRUE;
+	B_LogEntry( TOPIC_SARAHELPSTWO , " I managed to get Boltan to sell me Sarah's ring for five hundred gold pieces. " );
+	BOLT ATTACHMENT = TRUE ;
 };
 
 func void dia_boltan_sarahelpstwo_kill()
 {
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_Kill_01_00");	//Отдай мне кольцо или пожалеешь об этом!
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_Kill_01_01");	//Правда? (смеется) И что же ты сделаешь?
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwo_Kill_01_02");	//Просто надеру тебе задницу, подонок!
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_Kill_01_04");	//ЧТО?!...(злобно) Ты еще смеешь мне угрожать?
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwo_Kill_01_05");	//Ну я сейчас тебе покажу, сосунок!
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_Kill_01_00 " );	// Give me the ring or you'll regret it!
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_Kill_01_01 " );	// True? (laughs) And what are you going to do?
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwo_Kill_01_02 " );	// I'll just kick your ass, you bastard!
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_Kill_01_04 " );	// WHAT?!...(viciously) You still dare to threaten me?
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwo_Kill_01_05 " );	// Well, I'll show you now, sucker!
 	CreateInvItems(self,itri_sarafamilyring,1);
-	B_LogEntry(TOPIC_SARAHELPSTWO,"Я не смог уговорить Болтана отдать мне кольцо Сары. Теперь единственный способ получить его обратно - это побить его.");
+	B_LogEntry( TOPIC_SARAHELPSTWO , " I couldn't get Boltan to give me Sarah's ring. Now the only way to get it back is to beat him. " );
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -291,7 +292,7 @@ instance DIA_BOLTAN_SARAHELPSTWOBUYRING(C_Info)
 	condition = dia_boltan_sarahelpstwobuyring_condition;
 	information = dia_boltan_sarahelpstwobuyring_info;
 	permanent = TRUE;
-	description = "Продай мне кольцо Сары.";
+	description = " Sell me Sarah's ring. " ;
 };
 
 
@@ -305,23 +306,23 @@ func int dia_boltan_sarahelpstwobuyring_condition()
 
 func void dia_boltan_sarahelpstwobuyring_info()
 {
-	AI_Output(other,self,"DIA_Boltan_SaraHelpsTwoBuyRing_01_00");	//Продай мне кольцо Сары.
-	AI_Output(self,other,"DIA_Boltan_SaraHelpsTwoBuyRing_01_01");	//А где мои пятьсот золотых?
+	AI_Output(other,self, " DIA_Boltan_SaraHelpsTwoBuyRing_01_00 " );	// Sell me Sarah's ring.
+	AI_Output(self,other, " DIA_Boltan_SaraHelpsTwoBuyRing_01_01 " );	// Where's my five hundred gold pieces?
 	if(Npc_HasItems(other,ItMi_Gold) >= 500)
 	{
 		B_GivePlayerXP(200);
 		Npc_RemoveInvItems(other,ItMi_Gold,500);
-		AI_Output(other,self,"DIA_Boltan_SaraHelpsTwoBuyRing_01_02");	//Вот твои деньги.
-		AI_Output(self,other,"DIA_Boltan_SaraHelpsTwoBuyRing_01_03");	//Хорошо! Вот, держи свою побрякушку.
+		AI_Output(other,self, " DIA_Boltan_SaraHelpsTwoBuyRing_01_02 " );	// Here's your money.
+		AI_Output(self,other, " DIA_Boltan_SaraHelpsTwoBuyRing_01_03 " );	// Good! Here, have your trinket.
 		B_GiveInvItems(self,other,itri_sarafamilyring,1);
-		B_LogEntry(TOPIC_SARAHELPSTWO,"Я выкупил у Болтана кольцо. Теперь его нужно отнести Саре.");
-		BOLTANTRADERINGDONE = TRUE;
+		B_LogEntry( TOPIC_SARAHELPSTWO , " I bought a ring from Boltan. Now I need to take it to Sarah. " );
+		BOLT ATTRACTING DONE = TRUE ;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Boltan_SaraHelpsTwoBuyRing_01_06");	//У меня их пока нет.
-		AI_Output(self,other,"DIA_Boltan_SaraHelpsTwoBuyRing_01_07");	//Тогда приходи, когда они у тебя будут.
+		AI_Output(other,self, " DIA_Boltan_SaraHelpsTwoBuyRing_01_06 " );	// I don't have them yet.
+		AI_Output(self,other, " DIA_Boltan_SaraHelpsTwoBuyRing_01_07 " );	// Then come back when you have them.
 		AI_StopProcessInfos(self);
 	};
 };
