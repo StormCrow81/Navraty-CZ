@@ -1,3 +1,4 @@
+
 var int LokiAnsewrOne;
 var int LokiAnsewrTwo;
 var int LokiAnsewrThree;
@@ -22,14 +23,14 @@ func void dia_SEK_8049_LOKI_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_SEK_8049_LOKI_GREET(C_Info)
+instances DIA_SEK_8049_LOKI_GREET (C_Info)
 {
 	npc = SEK_8049_LOKI;
 	nr = 1;
 	condition = dia_SEK_8049_LOKI_greet_condition;
 	information = dia_SEK_8049_LOKI_greet_info;
 	permanent = FALSE;
-	description = "Я хотел бы поговорить с тобой, послушник.";
+	description = " I'd like to talk to you, acolyte. " ;
 };
 
 func int dia_SEK_8049_LOKI_greet_condition()
@@ -39,26 +40,26 @@ func int dia_SEK_8049_LOKI_greet_condition()
 
 func void dia_SEK_8049_LOKI_greet_info()
 {
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Greet_01_00");	//Я хотел бы поговорить с тобой, послушник.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Greet_01_01");	//О чем именно?
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Greet_01_02");	//Меня интересуют подробности недавнего нападения.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Greet_01_03");	//Ах, это...(нервно) Я стараюсь как можно скорее забыть о случившемся. Но, по всей видимости, мне этого не удастся сделать.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Greet_01_04");	//Я понимаю, что ты пережил не самые приятные минуты в своей жизни.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Greet_01_05");	//Но ты должен осознавать, что твое чудесное спасение еще не гарантирует спокойной жизни.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Greet_01_06");	//И всем остальным членам Братства до сих пор грозит огромная опасность!
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Greet_01_07");	//Поэтому ты должен помочь мне.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Greet_01_08");	//Хммм...(обреченно) Ну ладно, полагаю ты прав. Спрашивай, что хочешь.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Greet_01_00 " );	// I'd like to talk to you, acolyte.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Greet_01_01 " );	// About what exactly?
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Greet_01_02 " );	// I'm interested in the details of the recent attack.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Greet_01_03 " );	// Ah, that's... (nervously) I'm trying to forget about it as soon as possible. But apparently I won't be able to do it.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Greet_01_04 " );	// I understand that you have experienced not the most pleasant moments in your life.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Greet_01_05 " );	// But you must realize that your miraculous salvation does not yet guarantee a peaceful life.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Greet_01_06 " );	// And all the other members of the Brotherhood are still in great danger!
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Greet_01_07 " );	// Therefore, you must help me.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Greet_01_08 " );	// Hmmm...(doomed) Okay, I guess you're right. Ask what you want.
 };
 
 
-instance DIA_SEK_8049_LOKI_Survive(C_Info)
+instances DIA_SEK_8049_LOKI_Survive (C_Info)
 {
 	npc = SEK_8049_LOKI;
 	nr = 1;
 	condition = dia_SEK_8049_LOKI_Survive_condition;
 	information = dia_SEK_8049_LOKI_Survive_info;
 	permanent = FALSE;
-	description = "Как тебе удалось выжить?";
+	description = " How did you manage to survive? " ;
 };
 
 func int dia_SEK_8049_LOKI_Survive_condition()
@@ -71,11 +72,11 @@ func int dia_SEK_8049_LOKI_Survive_condition()
 
 func void dia_SEK_8049_LOKI_Survive_info()
 {
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Survive_01_00");	//Как тебе удалось выжить?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Survive_01_01");	//Думаю, что мне просто повезло...(растерянно) Иначе не скажешь!
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Survive_01_02");	//Я нашел огромную поляну с болотной травой и так увлекся ее сбором, что не заметил, как отошел от нашего лагеря.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Survive_01_03");	//Услышав звуки боя, я спрятался в ближайших зарослях и сидел там, пока нападавшие не ушли.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Survive_01_04");	//Вот, собственно, и все.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Survive_01_00 " );	// How did you manage to survive?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Survive_01_01 " );	// I guess I'm just lucky... (bewildered) You can't say otherwise!
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Survive_01_02 " );	// I found a huge clearing with marsh grass and was so carried away by its collection that I did not notice how I moved away from our camp.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Survive_01_03 " );	// Hearing the sounds of battle, I hid in the nearby thicket and sat there until the attackers left.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Survive_01_04 " );	// That, in fact, is all.
 	LokiAnsewrOne = TRUE;
 };
 
@@ -87,7 +88,7 @@ instance DIA_SEK_8049_LOKI_Attackers(C_Info)
 	condition = dia_SEK_8049_LOKI_Attackers_condition;
 	information = dia_SEK_8049_LOKI_Attackers_info;
 	permanent = FALSE;
-	description = "Как выглядели нападавшие?";
+	description = " What did the attackers look like? " ;
 };
 
 func int dia_SEK_8049_LOKI_Attackers_condition()
@@ -100,12 +101,12 @@ func int dia_SEK_8049_LOKI_Attackers_condition()
 
 func void dia_SEK_8049_LOKI_Attackers_info()
 {
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Attackers_01_00");	//Как выглядели нападавшие?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Attackers_01_01");	//Мне это неизвестно...(растерянно) К тому же все их лица скрывали маски.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Attackers_01_02");	//Единственное, что мне запомнилось, так это странного рода рисунки, покрывавшие их тела.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Attackers_01_03");	//Они немного схожи с теми, что делаем мы здесь, в лагере Братства.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Attackers_01_04");	//А они о чем-нибудь разговаривали?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Attackers_01_05");	//Нет. За все то время, сколько я их видел, они не произнесли ни слова. 
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Attackers_01_00 " );	// What did the attackers look like?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Attackers_01_01 " );	// I don't know... (bewildered) Besides, all their faces were hidden by masks.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Attackers_01_02 " );	// The only thing I remember is the strange kind of drawings that covered their bodies.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Attackers_01_03 " );	// They're a bit similar to what we do here at the Brotherhood camp.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Attackers_01_04 " );	// Did they talk about anything?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Attackers_01_05 " );	// No. In all the time I saw them, they didn't say a word.
 	LokiAnsewrTwo = TRUE;
 };
 
@@ -116,7 +117,7 @@ instance DIA_SEK_8049_LOKI_Other(C_Info)
 	condition = dia_SEK_8049_LOKI_Other_condition;
 	information = dia_SEK_8049_LOKI_Other_info;
 	permanent = FALSE;
-	description = "Что случилось с остальными?";
+	description = " What happened to the others? " ;
 };
 
 func int dia_SEK_8049_LOKI_Other_condition()
@@ -129,20 +130,20 @@ func int dia_SEK_8049_LOKI_Other_condition()
 
 func void dia_SEK_8049_LOKI_Other_info()
 {
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Other_01_00");	//Что случилось с остальными?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Other_01_01");	//Они забрали всех послушников с собой. А тех же, кто сопротивлялся - просто убили на месте.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Other_01_02");	//Больше мне ничего не известно.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Other_01_00 " );	// What happened to the others?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Other_01_01 " );	// They took all the acolytes with them. And those who resisted were simply killed on the spot.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Other_01_02 " );	// I don't know anything else.
 	LokiAnsewrThree = TRUE;
 };
 
-instance DIA_SEK_8049_LOKI_Sign(C_Info)
+instances DIA_SEK_8049_LOKI_Sign (C_Info)
 {
 	npc = SEK_8049_LOKI;
 	nr = 1;
 	condition = dia_SEK_8049_LOKI_Sign_condition;
 	information = dia_SEK_8049_LOKI_Sign_info;
 	permanent = FALSE;
-	description = "Насчет того амулета, что тебе показывал Идол Намиб.";
+	description = " About that amulet that the Namib Idol showed you. " ;
 };
 
 func int dia_SEK_8049_LOKI_Sign_condition()
@@ -155,19 +156,19 @@ func int dia_SEK_8049_LOKI_Sign_condition()
 
 func void dia_SEK_8049_LOKI_Sign_info()
 {
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Sign_01_00");	//Насчет того амулета, что тебе показывал Идол Намиб.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Sign_01_01");	//Ты что-нибудь о нем знаешь?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Sign_01_02");	//Нет, мне о нем ничего не известно.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Sign_01_03");	//Правда... мне показалось, что изображенный на нем в центре символ я где-то уже видел.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Sign_01_04");	//Вот только не могу вспомнить, где именно.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Sign_01_05");	//Ты уверен в этом?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Sign_01_06");	//Да, иначе бы я не придал этому рисунку большого значения.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Sign_01_07");	//Но почему же ты не сказал об этом самому Идолу Намибу?!
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Sign_01_08");	//Понимаешь... Я был тогда слишком напуган и побоялся ошибиться в своих догадках.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Sign_01_09");	//Что ж, тогда надо помочь тебе обо всем вспомнить. Это может быть очень важно!
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_Sign_01_10");	//Вот только как это сделать?...(растерянно) Боюсь, что пока я больше ничем тебе помочь не смогу.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_Sign_01_11");	//Я что-нибудь придумаю.
-	B_LogEntry(TOPIC_PrioratStart,"Мне удалось выяснить, что Локи уже видел символ, который показывал ему Идол Намиб на амулете. Однако, Локи не может вспомнить - где и когда это было. Ему надо помочь освежить память. Возможно, один из Гуру знает способ, как это сделать.");
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Sign_01_00 " );	// About that amulet that the Namib Idol showed you.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Sign_01_01 " );	// Do you know anything about him?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Sign_01_02 " );	// No, I don't know anything about him.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Sign_01_03 " );	// True... it seemed to me that I had already seen the symbol depicted on it in the center somewhere.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Sign_01_04 " );	// I just can't remember where.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Sign_01_05 " );	// Are you sure about this?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Sign_01_06 " );	// Yes, otherwise I wouldn't attach much importance to this drawing.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Sign_01_07 " );	// But why didn't you tell the Namib Idol himself about this?!
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Sign_01_08 " );	// You see... I was too scared then and I was afraid to make a mistake in my guesses.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Sign_01_09 " );	// Well, then we need to help you remember everything. This can be very important!
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_Sign_01_10 " );	// Here's how to do it?...(bewildered) I'm afraid that for now I can't help you with anything else.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_Sign_01_11 " );	// I'll think of something.
+	B_LogEntry(TOPIC_PrioratStart, " I was able to find out that Loki has already seen the symbol that the Namib Idol showed him on the amulet. However, Loki cannot remember where and when it was. He needs help to refresh his memory. Perhaps one of the Guru knows a way, how to do it. " );
 	LokiNeedMemory = TRUE;
 };
 
@@ -180,7 +181,7 @@ instance DIA_SEK_8049_LOKI_SPECIALPOTION(C_Info)
 	condition = dia_SEK_8049_LOKI_SPECIALPOTION_condition;
 	information = dia_SEK_8049_LOKI_SPECIALPOTION_info;
 	permanent = FALSE;
-	description = "Вот, выпей этот напиток.";
+	description = " Here, drink this drink. " ;
 };
 
 
@@ -194,10 +195,10 @@ func int dia_SEK_8049_LOKI_SPECIALPOTION_condition()
 
 func void dia_SEK_8049_LOKI_SPECIALPOTION_info()
 {
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_SPECIALPOTION_01_00");	//Вот, выпей этот напиток.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_SPECIALPOTION_01_01");	//А что это?
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_SPECIALPOTION_01_02");	//Не волнуйся. Он поможет тебе немного освежить твою память.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_SPECIALPOTION_01_03");	//Ну, хорошо...(боязно) Давай его сюда.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_SPECIALPOTION_01_00 " );	// Here, drink this drink.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_SPECIALPOTION_01_01 " );	// What is this?
+	AI_Output(other, self, " DIA_SEK_8049_LOKI_SPECIALPOTION_01_02 " );	// Don't worry. It will help you refresh your memory a little.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_SPECIALPOTION_01_03 " );	// Well, well... (fearfully) Give it here.
 	AI_StopProcessInfos(self);
 	B_GiveInvItems(other,self,ItPo_Memories,1);
 
@@ -209,7 +210,7 @@ func void dia_SEK_8049_LOKI_SPECIALPOTION_info()
 	AI_UseItem(self,ItPo_Memories);
 	LokiMemoriesAlive = TRUE;
 	Npc_SetRefuseTalk(self,5);
-	hero.aivar[AIV_INVINCIBLE] = FALSE;
+	hero.aivar[ AIV_INVINCIBLE ] = FALSE ;
 };
 
 
@@ -235,26 +236,26 @@ func int DIA_SEK_8049_LOKI_SPECIALPOTION_OK_condition()
 func void DIA_SEK_8049_LOKI_SPECIALPOTION_OK_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_00");	//Ох...(приходя в себя) Черт, что это было?!
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_01");	//Ну и как твои ощущения?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_02");	//Не могу сказать, что они слишком приятные...(пошатываясь) Этот твой напиток прилично бьет по мозгам!
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_03");	//Похоже, что я был без сознания несколько минут.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_04");	//Так оно и было. Но давай сразу к делу.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_05");	//Теперь ты вспомнил, где видел тот знак на амулете?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_06");	//Да, я все вспомнил. И даже больше, чем стоило бы.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_07");	//И ты сможешь отвести меня туда?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_08");	//Думаю, да. Как ни странно, но это место находится совсем недалеко от нашего лагеря.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_09");	//Тогда не будем терять времени - веди меня.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_00 " );	// Oh...(recovering) What the hell was that?!
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_01 " );	// So how do you feel?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_02 " );	// I can't say that they are too pleasant... (staggering) This drink of yours is a good brain hit!
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_03 " );	// Looks like I was unconscious for several minutes.
+	AI_Output(other, self, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_04 " );	// So it was. But let's get straight to the point.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_05 " );	// Now do you remember where you saw that sign on the amulet?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_06 " );	// Yes, I remember everything. And even more than it should.
+	AI_Output(other, self, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_07 " );	// And can you take me there?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_08 " );	// I think so. Oddly enough, but this place is located very close to our camp.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_09 " );	// Then let's not waste time - lead me.
 	Npc_ExchangeRoutine(self,"GUIDE");
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_10");	//Хорошо! Следуй за мной.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_SPECIALPOTION_OK_01_10 " );	// Good! Follow me.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	LokiGuide = TRUE;
 	Loki_GuideDay = Wld_GetDay();
 };
 
 
-instance DIA_SEK_8049_LOKI_GUIDE(C_Info)
+instances DIA_SEK_8049_LOKI_GUIDE (C_Info)
 {
 	npc = SEK_8049_LOKI;
 	nr = 1;
@@ -276,23 +277,23 @@ func void DIA_SEK_8049_LOKI_GUIDE_Info()
 {
 	B_GivePlayerXP(500);
 
-	if(Loki_GuideDay > (Wld_GetDay() - 2))
+	if ( Loki_GuideDay > ( Wld_GetDay () -  2 ))
 	{
-		AI_Output(self,other,"DIA_SEK_8049_LOKI_GUIDE_01_00");	//Вот мы и пришли.
+		AI_Output(self,other, " DIA_SEK_8049_LOKI_GUIDE_01_00 " );	// Here we are.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_SEK_8049_LOKI_GUIDE_01_01");	//Вот ты где! А я уж начал думать, что тебя загрызли волки.
+		AI_Output(self,other, " DIA_SEK_8049_LOKI_GUIDE_01_01 " );	// There you are! And I already began to think that you were bitten by wolves.
 	};
 
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_GUIDE_01_02");	//И что у нас тут?
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_GUIDE_01_03");	//...(оглядываясь) Позади меня странного рода камень, на нем-то я и видел интересующий тебя символ.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_GUIDE_01_04");	//Хорошо, я посмотрю.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_GUIDE_01_05");	//Давай...(нервно) А я, пожалуй, лучше вернусь в лагерь. Мне как-то немного не по себе от этого места.
-	AI_Output(self,other,"DIA_SEK_8049_LOKI_GUIDE_01_06");	//Еще увидимся, приятель.
-	AI_Output(other,self,"DIA_SEK_8049_LOKI_GUIDE_01_07");	//Само собой.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_GUIDE_01_02 " );	// And what do we have here?
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_GUIDE_01_03 " );	// ...(looking around) Behind me is a strange kind of stone, on which I saw the symbol you are interested in.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_GUIDE_01_04 " );	// Okay, I'll take a look.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_GUIDE_01_05 " );	// Come on... (nervously) I'd better get back to camp. I feel a little uncomfortable with this place.
+	AI_Output(self,other, " DIA_SEK_8049_LOKI_GUIDE_01_06 " );	// See you later, mate.
+	AI_Output(other,self, " DIA_SEK_8049_LOKI_GUIDE_01_07 " );	// Of course.
 	Assasins_Door_Found = TRUE;
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"PsiCamp");
 };
