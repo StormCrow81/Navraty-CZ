@@ -1,4 +1,5 @@
 
+
 instance DIA_FISK_NW_EXIT(C_Info)
 {
 	npc = vlk_6021_fisk;
@@ -46,7 +47,7 @@ func void dia_fisk_nw_pickpocket_info()
 
 func void dia_fisk_nw_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_fisk_nw_pickpocket);
 };
 
@@ -56,82 +57,82 @@ func void dia_fisk_nw_pickpocket_back()
 };
 
 
-instance DIA_FISK_NW_HI(C_Info)
+instance DIA_FISK_NW_HI ( C_Info );
 {
 	npc = vlk_6021_fisk;
 	nr = 1;
 	condition = dia_fisk_nw_hi_condition;
 	information = dia_fisk_nw_hi_info;
 	permanent = FALSE;
-	description = "Не могу поверить своим глазам!";
+	description = " I can't believe my eyes! " ;
 };
 
 
-func int dia_fisk_nw_hi_condition()
+func int dia_fish_nw_hi_condition()
 {
 	return TRUE;
 };
 
-func void dia_fisk_nw_hi_info()
+func void dia_fish_nw_hi_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_00");	//Не могу поверить своим глазам! Фиск, как ты здесь очутился?
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_01");	//Хмм... Cтранный вопрос для человека, который сам как-то умудрился оказаться здесь.
-	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_03");	//А как тебе удалось миновать стражу?!
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_04");	//Сам понимаешь: деловые люди всегда смогут договориться. Я сделал им предложение, от которого они не смогли отказаться...(смеется)
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_05");	//А я сам-то гляжу, ты тоже малый не промах.
+	AI_Output(other,self, " DIA_Fisk_NW_Hi_01_00 " );	// I can't believe my eyes! Fisk, how did you end up here?
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_01 " );	// Hmm... Strange question for someone who somehow managed to get here.
+	AI_Output(other,self, " DIA_Fisk_NW_Hi_01_03 " );	// And how did you manage to get past the guard?!
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_04 " );	// You understand: business people can always come to an agreement. I made them an offer they couldn't refuse...(laughs)
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_05 " );	// And I myself look, you are also not a small mistake.
 
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_06");	//Если честно, впервые вижу бандита, который смог втереться в доверие к магам Огня. Да еще и стать им!
+		AI_Output(self,other, " DIA_Fisk_NW_Hi_01_06 " );	// To be honest, this is the first time I've seen a bandit who managed to ingratiate himself with Firebenders. Yes, and become one!
 	}
 	else if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_07");	//Видать, у паладинов совсем крыша поехала, если они начали брать к себе на службу беглых каторжников!
+		AI_Output(self,other, " DIA_Fisk_NW_Hi_01_07 " );	// Looks like the paladins have completely lost their minds if they started to take fugitive convicts into their service!
 	}
 	else if(other.guild == GIL_DJG)
 	{
-		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_08");	//Уже успел стать наемником. Неплохо для бывшего заключенного!
+		AI_Output(self,other, " DIA_Fisk_NW_Hi_01_08 " );	// Already managed to become a mercenary. Not bad for an ex-con!
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_0A");	//Если честно, впервые вижу бандита, который смог втереться в доверие к магам Воды. Да еще и стать им!
+		AI_Output(self,other, " DIA_Fisk_NW_Hi_01_0A " );	// To be honest, for the first time I see a bandit who was able to ingratiate himself with the Water Mages. Yes, and become one!
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_0B");	//Если честно, впервые вижу бандита, который смог стать некромантом! Поразительно...(удивленно)
+		AI_Output(self,other, " DIA_Fisk_NW_Hi_01_0B " );	// To be honest, this is the first time I've seen a bandit who could become a necromancer! Amazing... (surprised)
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_0C");	//Уже успел записаться в сектанты! Поразительно...(удивленно)
+		AI_Output(self,other, " DIA_Fisk_NW_Hi_01_0C " );	// Already signed up for the sectarians! Amazing... (surprised)
 	};
 
-	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_09");	//Как бы тебе сказать. В общем, я не совсем тот, за кого себя выдавал. Просто... Там на болотах, мне... В общем, были дела.
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_10");	//Ну ладно, не оправдывайся. В конце концов, там, в лагере, ты мне очень здорово помог. Рука руку моет - помнишь?
-	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_11");	//Да уж. Вижу, ты тут тоже неплохо устроился!
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_12");	//Я за то время, что провел в лагере, успел скопить неплохой капитал. Его как раз хватило на то, чтобы открыть здесь свое небольшое дельце.
-	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_13");	//А остальные торговцы не были против?
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_14");	//Я поговорил с ними. Вроде никто не стал возражать. Хотя это опять же мне стоило недешево. Но, думаю, это себя оправдывает.
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_15");	//А что им волноваться? Это местечко, как видишь, стоит на самом отшибе торговой площади. Поэтому и клиентов у меня поменьше, чем у них.
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_16");	//Приходится работать немного побольше, чем все остальные.
-	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_17");	//А мне ты сможешь что-нибудь продать?
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_18");	//Конечно, выбирай.
+	AI_Output(other,self, " DIA_Fisk_NW_Hi_01_09 " );	// How would you say. All in all, I'm not exactly who I say I am. It's just... There in the swamps, to me... In general, there were things.
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_10 " );	// Okay, don't make excuses. In the end, there, in the camp, you helped me a lot. Hand washes hand - remember?
+	AI_Output(other,self, " DIA_Fisk_NW_Hi_01_11 " );	// Yeah. I see you're doing well here too!
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_12 " );	// During the time that I spent in the camp, I managed to save up a good amount of capital. It was just enough to open his own small business here.
+	AI_Output(other,self, " DIA_Fisk_NW_Hi_01_13 " );	// Did the rest of the merchants mind?
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_14 " );	// I talked to them. No one seemed to object. But again, it cost me dearly. But I think it pays off.
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_15 " );	// Why should they worry? This place, as you can see, stands on the outskirts of the market square. Therefore, I have fewer clients than they do.
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_16 " );	// Have to work a little harder than everyone else.
+	AI_Output(other,self, " DIA_Fisk_NW_Hi_01_17 " );	// Can you sell me something?
+	AI_Output(self,other, " DIA_Fisk_NW_Hi_01_18 " );	// Of course, choose.
 };
 
-instance DIA_FISK_NW_TRADE(C_Info)
+instance DIA_FISK_NW_TRADE (C_Info);
 {
 	npc = vlk_6021_fisk;
 	nr = 775;
 	condition = dia_fisk_nw_trade_condition;
-	information = dia_fisk_nw_trade_info;
+	info = dia_fisk_nw_trade_info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Давай займемся делом!";
+	description = " Let's get down to business! " ;
 };
 
 func int dia_fisk_nw_trade_condition()
 {
-	if(Npc_KnowsInfo(other,dia_fisk_nw_hi) && Wld_IsTime(5,10,21,30))
+	if ( Npc_KnowsInfo ( other , dia_fish_nw_hi ) && Wld_IsTime ( 5 , 10 , 21 , 30 )) ;
 	{
 		return TRUE;
 	};
