@@ -1,4 +1,5 @@
 
+
 instance DIA_Ulf_EXIT(C_Info)
 {
 	npc = NOV_602_Ulf;
@@ -21,20 +22,20 @@ func void DIA_Ulf_EXIT_Info()
 };
 
 
-instance DIA_Ulf_Hallo(C_Info)
+instance DIA_Ulf_Hello (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 2;
 	condition = DIA_Ulf_Hallo_Condition;
 	information = DIA_Ulf_Hallo_Info;
 	permanent = FALSE;
-	description = "Что ты здесь делаешь?";
+	description = " What are you doing here? " ;
 };
 
 
 func int DIA_Ulf_Hallo_Condition()
 {
-	if((other.guild != GIL_NOV) && (MIS_SCHNITZELJAGD == FALSE))
+	if ((other.guild !=  GIL_NOV ) && ( MIS_SCHNITZELJAGD  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -42,32 +43,32 @@ func int DIA_Ulf_Hallo_Condition()
 
 func void DIA_Ulf_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Hallo_15_00");	//Что ты здесь делаешь?
+	AI_Output(other,self, " DIA_Ulf_Hallo_15_00 " );	// What are you doing here?
 
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Ulf_Hallo_03_01");	//Если тебе интересно это знать, я выполняю задание монастыря.
+		AI_Output(self,other, " DIA_Ulf_Hallo_03_01 " );	// If you're interested in knowing this, I'm on a mission for the monastery.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ulf_Hallo_03_02");	//Я послушник в монастыре! Я выполняю задания магов, а также паладинов.
+		AI_Output(self,other, " DIA_Ulf_Hallo_03_02 " );	// I'm a novice in a monastery! I carry out the tasks of magicians, as well as paladins.
 
 		if(Npc_GetDistToWP(self,"NW_CITY_BEER_04") < 1500)
 		{
-			AI_Output(self,other,"DIA_Ulf_Hallo_03_03");	//Я принес вино трем трактирщикам в городе.
+			AI_Output(self,other, " DIA_Ulf_Hallo_03_03 " );	// I brought wine to three innkeepers in the city.
 		};
 	};
 };
 
 
-instance DIA_Ulf_Wirte(C_Info)
+instance DIA_Ulf_Wirte (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 3;
 	condition = DIA_Ulf_Wirte_Condition;
 	information = DIA_Ulf_Wirte_Info;
 	permanent = FALSE;
-	description = "Кто эти трое трактирщиков?";
+	description = " Who are these three innkeepers? " ;
 };
 
 
@@ -81,9 +82,9 @@ func int DIA_Ulf_Wirte_Condition()
 
 func void DIA_Ulf_Wirte_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Wirte_15_00");	//Кто эти трое трактирщиков?
-	AI_Output(self,other,"DIA_Ulf_Wirte_03_01");	//Один из них - вот этот добрый человек за прилавком.
-	AI_Output(self,other,"DIA_Ulf_Wirte_03_02");	//Также еще Карагон - хозяин таверны на храмовой площади, и Кардиф - владелец бара в портовом районе.
+	AI_Output(other,self, " DIA_Ulf_Wirte_15_00 " );	// Who are these three innkeepers?
+	AI_Output(self,other, " DIA_Ulf_Wirte_03_01 " );	// One of them is this kind man behind the counter.
+	AI_Output(self,other, " DIA_Ulf_Wirte_03_02 " );	// Also Karagon is the owner of a tavern on the temple square, and Cardiff is the owner of a bar in the waterfront.
 };
 
 
@@ -94,13 +95,13 @@ instance DIA_Ulf_Kloster(C_Info)
 	condition = DIA_Ulf_Kloster_Condition;
 	information = DIA_Ulf_Kloster_Info;
 	permanent = FALSE;
-	description = "Что ты можешь рассказать мне о монастыре?";
+	description = " What can you tell me about the monastery? " ;
 };
 
 
 func int DIA_Ulf_Kloster_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Ulf_Hallo) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV))
+	if ( Npc_KnowsInfo ( hero , DIA_Ulf_Hallo ) && ( hero . guild !=  GIL_KDF ) && ( hero . guild !=  GIL_NOV ))
 	{
 		return TRUE;
 	};
@@ -108,26 +109,26 @@ func int DIA_Ulf_Kloster_Condition()
 
 func void DIA_Ulf_Kloster_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Kloster_15_00");	//Что ты можешь рассказать мне о монастыре?
-	AI_Output(self,other,"DIA_Ulf_Kloster_03_01");	//Мы, послушники, ищем просвещение в молитвах Инносу и изучении принципов веры под руководством магов.
-	AI_Output(self,other,"DIA_Ulf_Kloster_03_02");	//Мы служим им так же, как мы служим Инносу, и готовим себя к единению с огнем.
+	AI_Output(other,self, " DIA_Ulf_Kloster_15_00 " );	// What can you tell me about the monastery?
+	AI_Output(self,other, " DIA_Ulf_Kloster_03_01 " );	// We, the novices, seek enlightenment in prayers to Innos and the study of the principles of faith under the guidance of magicians.
+	AI_Output(self,other, " DIA_Ulf_Kloster_03_02 " );	// We serve them as we serve Innos, and prepare ourselves for union with the fire.
 };
 
 
-instance DIA_Ulf_Bringen(C_Info)
+instance DIA_Ulf_Bringen (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 4;
 	condition = DIA_Ulf_Bringen_Condition;
 	information = DIA_Ulf_Bringen_Info;
 	permanent = FALSE;
-	description = "Отведи меня в монастырь.";
+	description = " Take me to the monastery. " ;
 };
 
 
 func int DIA_Ulf_Bringen_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Ulf_Hallo) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV) && (hero.guild != GIL_PAL))
+	if (Npc_KnowsInfo(hero,DIA_Ulf_Hallo) && (hero.guild !=  GIL_KDF ) && (hero.guild !=  GIL_NOV ) && (hero.guild !=  GIL_PAL ))
 	{
 		return TRUE;
 	};
@@ -135,27 +136,27 @@ func int DIA_Ulf_Bringen_Condition()
 
 func void DIA_Ulf_Bringen_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Bringen_15_00");	//Отведи меня в монастырь.
-	AI_Output(self,other,"DIA_Ulf_Bringen_03_01");	//Забудь об этом. Ты знаешь, сколько различных злобных тварей встретилось мне по пути?
-	AI_Output(self,other,"DIA_Ulf_Bringen_03_02");	//Когда я думаю обо всех этих кровавых мухах, волках и гоблинах, я рад, что мне больше не нужно жить здесь.
-	AI_Output(self,other,"DIA_Ulf_Bringen_03_03");	//Кроме того, тебя все равно не пустят в монастырь.
+	AI_Output(other,self, " DIA_Ulf_Bringen_15_00 " );	// Take me to the monastery.
+	AI_Output(self,other, " DIA_Ulf_Bringen_03_01 " );	// Forget it. Do you know how many different evil creatures I met along the way?
+	AI_Output(self,other, " DIA_Ulf_Bringen_03_02 " );	// When I think about all those bloody flies and wolves and goblins, I'm glad I don't have to live here anymore.
+	AI_Output(self,other, " DIA_Ulf_Bringen_03_03 " );	// Besides, you won't be allowed into the monastery anyway.
 	AI_Output(other,self,"DIA_Ulf_Bringen_15_04");	//Почему?
-	AI_Output(self,other,"DIA_Ulf_Bringen_03_05");	//Вход в монастырь разрешен только магам, паладинам и послушникам.
+	AI_Output(self,other, " DIA_Ulf_Bringen_03_05 " );	// Only mages, paladins, and acolytes are allowed to enter the monastery.
 };
 
 
-instance DIA_Ulf_Aufnahme(C_Info)
+instance DIA_Ulf_Recording (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 3;
-	condition = DIA_Ulf_Aufnahme_Condition;
-	information = DIA_Ulf_Aufnahme_Info;
+	condition = DIA_Ulf_Recording_Condition;
+	information = DIA_Ulf_Recording_Info;
 	permanent = FALSE;
-	description = "Как мне стать послушником?";
+	description = " How do I become a novice? " ;
 };
 
 
-func int DIA_Ulf_Aufnahme_Condition()
+func int DIA_Ulf_Recording_Condition()
 {
 	if(Npc_KnowsInfo(hero,DIA_Ulf_Bringen) && (hero.guild == GIL_NONE))
 	{
@@ -163,16 +164,16 @@ func int DIA_Ulf_Aufnahme_Condition()
 	};
 };
 
-func void DIA_Ulf_Aufnahme_Info()
+func void DIA_Ulf_Bild_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Aufnahme_15_00");	//Как мне стать послушником?
-	AI_Output(self,other,"DIA_Ulf_Aufnahme_03_01");	//Если человек чувствует глубокое желание...
-	AI_Output(other,self,"DIA_Ulf_Aufnahme_15_02");	//Эй! Просто скажи мне, каковы условия.
-	AI_Output(self,other,"DIA_Ulf_Aufnahme_03_03");	//Ты должен принести дары. Овцу и...
+	AI_Output(other,self, " DIA_Ulf_Aufnahme_15_00 " );	// How do I become a novice?
+	AI_Output(self,other, " DIA_Ulf_Aufnahme_03_01 " );	// If a person feels a deep desire...
+	AI_Output(other,self, " DIA_Ulf_Aufnahme_15_02 " );	// Hey! Just tell me what the conditions are.
+	AI_Output(self,other, " DIA_Ulf_Aufnahme_03_03 " );	// You must bring gifts. Sheep and...
 	B_Say_Gold(self,other,Summe_Kloster);
 	Log_CreateTopic(Topic_Kloster,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Kloster,LOG_Running);
-	B_LogEntry(Topic_Kloster,"Чтобы стать послушником монастыря Инноса, мне нужна овца и тысяча золотых монет.");
+	B_LogEntry(Topic_Kloster, " To become an acolyte of the Innos monastery, I need a sheep and a thousand gold pieces. " );
 };
 
 
@@ -183,13 +184,13 @@ instance DIA_Ulf_Gold(C_Info)
 	condition = DIA_Ulf_Gold_Condition;
 	information = DIA_Ulf_Gold_Info;
 	permanent = FALSE;
-	description = "Как мне раздобыть такую огромную сумму?";
+	description = " How can I get such a huge amount? " ;
 };
 
 
 func int DIA_Ulf_Gold_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Ulf_Aufnahme) && (hero.guild == GIL_NONE))
+	if ( Npc_KnowsInfo ( hero , DIA_Ulf_Aufnahme ) && ( hero . guild ==  GIL_NONE ))
 	{
 		return TRUE;
 	};
@@ -197,25 +198,25 @@ func int DIA_Ulf_Gold_Condition()
 
 func void DIA_Ulf_Gold_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Gold_15_00");	//Как мне раздобыть такую огромную сумму?
-	AI_Output(self,other,"DIA_Ulf_Gold_03_01");	//Так как очевидно, что ты не знаешь никого, кто мог бы заплатить за тебя, тебе просто нужно заработать ее.
+	AI_Output(other,self, " DIA_Ulf_Gold_15_00 " );	// How do I get such a huge amount?
+	AI_Output(self,other, " DIA_Ulf_Gold_03_01 " );	// Since you obviously don't know anyone who could pay for you, you just need to earn it.
 };
 
 
-instance DIA_Ulf_Schaf(C_Info)
+instance DIA_Ulf_Schaf (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 9;
 	condition = DIA_Ulf_Schaf_Condition;
 	information = DIA_Ulf_Schaf_Info;
 	permanent = FALSE;
-	description = "Где я могу найти овцу?";
+	description = " Where can I find sheep? " ;
 };
 
 
 func int DIA_Ulf_Schaf_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Ulf_Aufnahme) && (other.guild == GIL_NONE))
+	if ( Npc_KnowsInfo ( hero , DIA_Wolf_Aufname ) & & ( other . guild ==  GIL_NONE ))
 	{
 		return TRUE;
 	};
@@ -223,18 +224,18 @@ func int DIA_Ulf_Schaf_Condition()
 
 func void DIA_Ulf_Schaf_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Schaf_15_00");	//Где я могу найти овцу?
-	AI_Output(self,other,"DIA_Ulf_Schaf_03_01");	//У фермеров, конечно же. Но ты не получишь ее даром.
-	B_LogEntry(Topic_Kloster,"Я могу раздобыть овцу у фермеров.");
+	AI_Output(other,self, " DIA_Ulf_Schaf_15_00 " );	// Where can I find a sheep?
+	AI_Output(self,other, " DIA_Ulf_Schaf_03_01 " );	// Farmers, of course. But you won't get it for free.
+	B_LogEntry(Topic_Kloster, " I can get sheep from the farmers. " );
 };
 
 
-instance DIA_Ulf_Suche(C_Info)
+instance DIA_Ulf_Search (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 9;
 	condition = DIA_Ulf_Suche_Condition;
-	information = DIA_Ulf_Suche_Info;
+	information = DIA_Ulf_Search_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -248,30 +249,30 @@ func int DIA_Ulf_Suche_Condition()
 	};
 };
 
-func void DIA_Ulf_Suche_Info()
+func void DIA_Ulf_Search_Info()
 {
-	AI_Output(self,other,"DIA_Ulf_Suche_03_00");	//Эй, ты знаешь новости?
-	AI_Output(other,self,"DIA_Ulf_Suche_15_01");	//Ты был избран.
-	AI_Output(self,other,"DIA_Ulf_Suche_03_02");	//Точно. Я как раз хотел посидеть, попить холодного пива, когда из-за угла вышел Дарон и сказал мне, что я был избран.
-	AI_Output(self,other,"DIA_Ulf_Suche_03_03");	//Кто бы мог подумать? Воля Инноса непостижима. А что привело тебя сюда?
-	AI_Output(other,self,"DIA_Ulf_Suche_15_04");	//Я потребовал прохождения Испытания Огнем.
-	AI_Output(self,other,"DIA_Ulf_Suche_03_05");	//Это невозможно?! Похоже мужества у тебя на десятерых хватит. Это значит, что ты тоже будешь искать 'то, что верующий находит в конце пути'?
-	AI_Output(other,self,"DIA_Ulf_Suche_15_06");	//Похоже на это.
+	AI_Output(self,other, " DIA_Ulf_Suche_03_00 " );	// Hey, do you know the news?
+	AI_Output(other,self, " DIA_Ulf_Suche_15_01 " );	// You have been chosen.
+	AI_Output(self,other, " DIA_Ulf_Suche_03_02 " );	// Exactly. I was just about to sit down and have a cold beer when Daron came around the corner and told me that I had been chosen.
+	AI_Output(self,other, " DIA_Ulf_Suche_03_03 " );	// Who would have thought? The will of Innos is incomprehensible. What brought you here?
+	AI_Output(other,self, " DIA_Ulf_Suche_15_04 " );	// I requested a Trial by Fire.
+	AI_Output(self,other, " DIA_Ulf_Suche_03_05 " );	// Is this impossible?! It looks like you have enough courage for ten. Does this mean that you too will look for 'what the believer finds at the end of the road'?
+	AI_Output(other,self, " DIA_Ulf_Suche_15_06 " );	// Looks like this.
 };
 
 
-instance DIA_Ulf_Rausgefunden(C_Info)
+instance DIA_Ulf_Rausfound (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 9;
-	condition = DIA_Ulf_Rausgefunden_Condition;
-	information = DIA_Ulf_Rausgefunden_Info;
+	condition = DIA_Ulf_Rausfound_Condition;
+	information = DIA_Ulf_Rausfound_Info;
 	permanent = FALSE;
-	description = "Ты еще ничего не нашел?";
+	description = " Have you found anything yet? " ;
 };
 
 
-func int DIA_Ulf_Rausgefunden_Condition()
+func int DIA_Ulf_Rausfound_Condition()
 {
 	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && (Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_42") <= 1000))
 	{
@@ -279,40 +280,40 @@ func int DIA_Ulf_Rausgefunden_Condition()
 	};
 };
 
-func void DIA_Ulf_Rausgefunden_Info()
+func void DIA_Ulf_Get out_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Rausgefunden_15_00");	//Ты еще ничего не нашел?
-	AI_Output(self,other,"DIA_Ulf_Rausgefunden_03_01");	//Ну, я пытался идти за Агоном - но я потерял его.
-	AI_Output(self,other,"DIA_Ulf_Rausgefunden_03_02");	//И что теперь? Что они говорят? Следуй знакам Инноса. Но я не понимаю эту загадку с путем.
-	AI_Output(self,other,"DIA_Ulf_Rausgefunden_03_03");	//Так что я продолжу свои поиски.
+	AI_Output(other,self, " DIA_Ulf_Rausgefunden_15_00 " );	// Haven't found anything yet?
+	AI_Output(self,other, " DIA_Ulf_Rausgefunden_03_01 " );	// Well, I tried to follow Agon - but I lost him.
+	AI_Output(self,other, " DIA_Ulf_Rausgefunden_03_02 " );	// And now what? What they're saying? Follow the signs of Innos. But I don't understand this riddle with the path.
+	AI_Output(self,other, " DIA_Ulf_Rausgefunden_03_03 " );	// So I'll continue my search.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FOLLOW");
 };
 
 
-instance DIA_Ulf_Folgen(C_Info)
+instance DIA_Ulf_Folgen (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 9;
 	condition = DIA_Ulf_Folgen_Condition;
 	information = DIA_Ulf_Folgen_Info;
 	permanent = FALSE;
-	description = "Эй, ты что, идешь за мной?";
+	description = " Hey, are you following me? " ;
 };
 
 
 func int DIA_Ulf_Folgen_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,DIA_Ulf_Rausgefunden))
+	if (( MIS_SCHNITZELJAGD  == LOG_Running) && (other.guild ==  GIL_NOV ) && Npc_KnowsInfo(other,DIA_Wolf_RausgeFound))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Ulf_Folgen_Info()
+func void DIA_Ulf_Follow_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Folgen_15_00");	//Эй, ты что, идешь за мной?
-	AI_Output(self,other,"DIA_Ulf_Folgen_03_01");	//Чушь. Просто я случайно иду в том же направлении, что и ты.
+	AI_Output(other,self, " DIA_Ulf_Folgen_15_00 " );	// Hey, are you following me?
+	AI_Output(self,other, " DIA_Ulf_Folgen_03_01 " );	// Nonsense. I just happen to be walking in the same direction as you.
 	AI_StopProcessInfos(self);
 };
 
@@ -324,13 +325,13 @@ instance DIA_Ulf_Stop(C_Info)
 	condition = DIA_Ulf_Stop_Condition;
 	information = DIA_Ulf_Stop_Info;
 	permanent = FALSE;
-	description = "Хватит бегать за мной!";
+	description = " Stop chasing me! " ;
 };
 
 
 func int DIA_Ulf_Stop_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,DIA_Ulf_Folgen))
+	if (( MIS_SCHNITZELJAGD  == LOG_Running) && (other.guild ==  GIL_NOV ) && Npc_KnowsInfo(other,DIA_Wolf_Follow))
 	{
 		return TRUE;
 	};
@@ -338,14 +339,14 @@ func int DIA_Ulf_Stop_Condition()
 
 func void DIA_Ulf_Stop_Info()
 {
-	AI_Output(other,self,"DIA_Ulf_Stop_15_00");	//Хватит бегать за мной!
-	AI_Output(self,other,"DIA_Ulf_Stop_03_01");	//Я не иду за тобой. Но, пожалуйста, если тебе так кажется - я пойду другой дорогой.
+	AI_Output(other,self, " DIA_Ulf_Stop_15_00 " );	// Stop chasing me!
+	AI_Output(self,other, " DIA_Ulf_Stop_03_01 " );	// I'm not following you. But please, if you think so, I'll go the other way.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"SUCHE");
 };
 
 
-instance DIA_Ulf_Abrechnung(C_Info)
+instance DIA_Ulf_Abrechnung (C_Info)
 {
 	npc = NOV_602_Ulf;
 	nr = 9;
@@ -358,7 +359,7 @@ instance DIA_Ulf_Abrechnung(C_Info)
 
 func int DIA_Ulf_Abrechnung_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && (Npc_HasItems(other,ItMi_RuneBlank) >= 1) && (Npc_KnowsInfo(other,DIA_Agon_GolemDead) || Npc_KnowsInfo(other,DIA_Agon_GolemLives)))
+	if (( MIS_SCHNITZELJAGD  == LOG_Running ) && ( other . guild ==  GIL_NOV ) && ( Npc_HasItems ( other , ItMi_RuneBlank ) >=  1 ) && ( Npc_KnowsInfo ( other , DIA_Agon_GolemDead ) ||
 	{
 		return TRUE;
 	};
@@ -366,40 +367,40 @@ func int DIA_Ulf_Abrechnung_Condition()
 
 func void DIA_Ulf_Abrechnung_Info()
 {
-	AI_Output(self,other,"DIA_Ulf_Abrechnung_03_00");	//Мы опять встретились. Я много размышлял. Я верю, что желание стать магом сильно во мне.
-	AI_Output(other,self,"DIA_Ulf_Abrechnung_15_01");	//Ох - не делай этого...
-	AI_Output(self,other,"DIA_Ulf_Abrechnung_03_02");	//У меня нет выбора. Жизнь послушника не по мне.
-	AI_Output(self,other,"DIA_Ulf_Abrechnung_03_03");	//Я должен стать магом. Тогда сразу все станет хорошо. И теперь я заберу то, что должно принадлежать мне.
-	AI_Output(self,other,"DIA_Ulf_Abrechnung_03_04");	//Ты хочешь сказать последнее слово?
+	AI_Output(self,other, " DIA_Ulf_Abrechnung_03_00 " );	// We met again. I've been thinking a lot. I believe that the desire to become a magician is strong in me.
+	AI_Output(other,self, " DIA_Ulf_Abrechnung_15_01 " );	// Oh - don't do that...
+	AI_Output(self,other, " DIA_Ulf_Abrechnung_03_02 " );	// I don't have a choice. The life of a novice is not for me.
+	AI_Output(self,other, " DIA_Ulf_Abrechnung_03_03 " );	// I have to become a mage. Then immediately everything will be fine. And now I'll take what should be mine.
+	AI_Output(self,other, " DIA_Ulf_Abrechnung_03_04 " );	// Do you want to have the last word?
 	Info_ClearChoices(DIA_Ulf_Abrechnung);
-	Info_AddChoice(DIA_Ulf_Abrechnung,"Прекрати, я не хочу убивать тебя.",DIA_Ulf_Abrechnung_Lass);
-	Info_AddChoice(DIA_Ulf_Abrechnung,"Ты, возможно, что-то не понимаешь - мне нужно вернуться в монастырь.",DIA_Ulf_Abrechnung_Schnell);
-	Info_AddChoice(DIA_Ulf_Abrechnung,"У тебя нет ничего покурить?",DIA_Ulf_Abrechnung_Rauch);
+	Info_AddChoice(DIA_Ulf_Abrechnung, " Stop, I don't want to kill you. " ,DIA_Ulf_Abrechnung_Lass);
+	Info_AddChoice(DIA_Ulf_Abrechnung, " You may not understand - I need to go back to the monastery. " ,DIA_Ulf_Abrechnung_Schnell);
+	Info_AddChoice(DIA_Ulf_Abrechnung, " Don't you have something to smoke? " ,DIA_Ulf_Abrechnung_Rauch);
 };
 
 func void DIA_Ulf_Abrechnung_Lass()
 {
-	AI_Output(other,self,"DIA_Ulf_Abrechnung_Lass_15_00");	//Прекрати, я не хочу убивать тебя.
-	AI_Output(self,other,"DIA_Ulf_Abrechnung_Lass_03_01");	//Чушь. Ты же знаешь, что у тебя нет ни единого шанса против меня! Сражайся!
+	AI_Output(other,self, " DIA_Ulf_Abrechnung_Lass_15_00 " );	// Stop it, I don't want to kill you.
+	AI_Output(self,other, " DIA_Ulf_Abrechnung_Lass_03_01 " );	// Nonsense. You know you don't stand a chance against me! Fight!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,0);
 };
 
 func void DIA_Ulf_Abrechnung_Schnell()
 {
-	AI_Output(other,self,"DIA_Ulf_Abrechnung_Schnell_15_00");	//Ты, возможно, что-то не понимаешь... Мне нужно вернуться в монастырь.
-	AI_Output(self,other,"DIA_Ulf_Abrechnung_Schnell_03_01");	//Тебе больше никуда не нужно идти!
+	AI_Output(other,self, " DIA_Ulf_Abrechnung_Schnell_15_00 " );	// You may not understand something... I need to get back to the monastery.
+	AI_Output(self,other, " DIA_Ulf_Abrechnung_Schnell_03_01 " );	// You don't have to go anywhere else!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,0);
 };
 
 func void DIA_Ulf_Abrechnung_Rauch()
 {
-	AI_Output(other,self,"DIA_Ulf_Abrechnung_Rauch_15_00");	//У тебя нет ничего покурить?
-	AI_Output(self,other,"DIA_Ulf_Abrechnung_Rauch_03_01");	//Тебе повезло. Как раз у меня кое-что есть.
+	AI_Output(other,self, " DIA_Ulf_Abrechnung_Rauch_15_00 " );	// Don't you have anything to smoke?
+	AI_Output(self,other, " DIA_Ulf_Abrechnung_Rauch_03_01 " );	// You're in luck. I just have something.
 	B_GiveInvItems(self,other,ItMi_Joint,1);
 	B_UseItem(other,ItMi_Joint);
-	AI_Output(self,other,"DIA_Ulf_Abrechnung_Rauch_03_02");	//Давай, закурим.
+	AI_Output(self,other, " DIA_Ulf_Abrechnung_Rauch_03_02 " );	// Let's smoke.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,0);
 };
@@ -426,8 +427,8 @@ func int DIA_Ulf_Troll_Condition()
 
 func void DIA_Ulf_Troll_Info()
 {
-	AI_Output(self,other,"DIA_Ulf_Troll_03_00");	//Эй, ты действительно думаешь, что мы идем правильной дорогой? Тролль живет не здесь.
-	AI_Output(self,other,"DIA_Ulf_Troll_03_01");	//Я думаю, нам нужно идти в другую сторону.
+	AI_Output(self,other, " DIA_Ulf_Troll_03_00 " );	// Hey, do you really think we're on the right track? The troll doesn't live here.
+	AI_Output(self,other, " DIA_Ulf_Troll_03_01 " );	// I think we need to go the other way.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"WAIT");
 };
@@ -440,7 +441,7 @@ instance DIA_ULF_RING(C_Info)
 	condition = dia_ulf_ring_condition;
 	information = dia_ulf_ring_info;
 	permanent = FALSE;
-	description = "Эй, почему ты такой мрачный?";
+	description = " Hey, why are you so gloomy? " ;
 };
 
 
@@ -454,44 +455,44 @@ func int dia_ulf_ring_condition()
 
 func void dia_ulf_ring_info()
 {
-	AI_Output(other,self,"DIA_Ulf_Ring_01_00");	//Эй, почему ты такой мрачный?
+	AI_Output(other,self, " DIA_Ulf_Ring_01_00 " );	// Hey, why are you so gloomy?
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Ulf_Ring_01_01");	//Простите меня, мастер...(замялся) Я...
-		AI_Output(other,self,"DIA_Ulf_Ring_01_02");	//Давай, рассказывай. Что с тобой случилось?
+		AI_Output(self,other, " DIA_Ulf_Ring_01_01 " );	// Forgive me, master... (he hesitated) I...
+		AI_Output(other,self, " DIA_Ulf_Ring_01_02 " );	// Come on, tell me. What happened to you?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ulf_Ring_01_03");	//Даже не спрашивай!
+		AI_Output(self,other, " DIA_Ulf_Ring_01_03 " );	// Don't even ask!
 	};
-	AI_Output(self,other,"DIA_Ulf_Ring_01_05");	//Эх. Дело в том, что я потерял свое кольцо.
-	AI_Output(self,other,"DIA_Ulf_Ring_01_07");	//Оно было очень дорого мне, поскольку досталось от моего отца.
-	AI_Output(other,self,"DIA_Ulf_Ring_01_08");	//Как же ты его потерял?
+	AI_Output(self,other, " DIA_Ulf_Ring_01_05 " );	// Eh. The thing is, I lost my ring.
+	AI_Output(self,other, " DIA_Ulf_Ring_01_07 " );	// It was very dear to me because it was inherited from my father.
+	AI_Output(other,self, " DIA_Ulf_Ring_01_08 " );	// How did you lose it?
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Ulf_Ring_01_09");	//Понимаете, когда я шел по дороге из города в монастырь, недалеко от моста, что рядом с фермой Акила, на меня напали бандиты.
+		AI_Output(self,other, " DIA_Ulf_Ring_01_09 " );	// You see, when I was walking along the road from the city to the monastery, not far from the bridge, which is next to Akila's farm, bandits attacked me.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ulf_Ring_01_10");	//Понимаешь, когда я шел по дороге из города в монастырь, недалеко от моста, что рядом с фермой Акила, на меня напали бандиты.
+		AI_Output(self,other, " DIA_Ulf_Ring_01_10 " );	// You see, when I was walking along the road from the city to the monastery, not far from the bridge, which is next to Akila's farm, bandits attacked me.
 	};
-	AI_Output(self,other,"DIA_Ulf_Ring_01_11");	//Эти ублюдки пытались убить меня! Но я, не будь глупцом, сломя голову бросился от них в лес, который находился неподалеку.
-	AI_Output(self,other,"DIA_Ulf_Ring_01_12");	//Я бежал от них сломя голову, совершенно не понимая, куда я бегу.
-	AI_Output(self,other,"DIA_Ulf_Ring_01_13");	//А потом обнаружил, что оно пропало.
-	AI_Output(self,other,"DIA_Ulf_Ring_01_14");	//Возможно, я обронил его как раз в том лесу, но туда я больше и шагу не сделаю. Мне моя жизнь дороже!
-	AI_Output(other,self,"DIA_Ulf_Ring_01_15");	//Я что-нибудь придумаю.
+	AI_Output(self,other, " DIA_Ulf_Ring_01_11 " );	// Those bastards tried to kill me! But I, don't be a fool, rushed headlong from them into the forest, which was nearby.
+	AI_Output(self,other, " DIA_Ulf_Ring_01_12 " );	// I ran headlong from them, not understanding where I was running.
+	AI_Output(self,other, " DIA_Ulf_Ring_01_13 " );	// And then I discovered that it was gone.
+	AI_Output(self,other, " DIA_Ulf_Ring_01_14 " );	// I may have dropped it in that forest, but I won't go there again. My life is dearer to me!
+	AI_Output(other,self, " DIA_Ulf_Ring_01_15 " );	// I'll think of something.
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Ulf_Ring_01_16");	//Прошу вас, найдите его...(обреченно) Я был бы вам крайне признателен за это!
+		AI_Output(self,other, " DIA_Ulf_Ring_01_16 " );	// Please, find him... (doomed) I would be extremely grateful to you!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ulf_Ring_01_17");	//Прошу тебя, найди его...(обреченно) Я был бы тебе крайне признателен за это!
+		AI_Output(self,other, " DIA_Ulf_Ring_01_17 " );	// Please, find him... (doomed) I would be extremely grateful to you for this!
 	};
 	MIS_ULFRING = LOG_Running;
 	Log_CreateTopic(TOPIC_ULFRING,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ULFRING,LOG_Running);
-	B_LogEntry(TOPIC_ULFRING,"Послушник Ульф потерял свое кольцо, убегая от бандитов, которых встретил по пути из города. Я решил помочь бедняге найти его. По словам Ульфа, кольцо следует искать в лесу недалеко от моста, ведущего на ферму Акила.");
+	; _ _ _ _ _ _
 	AI_StopProcessInfos(self);
 	Wld_InsertItem(ItRi_Ulf,"FP_ROAM_NW_FARM2_TO_TAVERN_09_MONSTER4_04");
 };
@@ -503,7 +504,7 @@ instance DIA_ULF_RINGHERE(C_Info)
 	condition = dia_ulf_ringhere_condition;
 	information = dia_ulf_ringhere_info;
 	permanent = FALSE;
-	description = "Это твое кольцо?";
+	description = " Is this your ring? " ;
 };
 
 
@@ -518,25 +519,25 @@ func int dia_ulf_ringhere_condition()
 func void dia_ulf_ringhere_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Ulf_RingHere_01_00");	//Это твое кольцо?
-	AI_Output(self,other,"DIA_Ulf_RingHere_01_01");	//О да, это оно!
+	AI_Output(other,self, " DIA_Ulf_RingHere_01_00 " );	// Is this your ring?
+	AI_Output(self,other, " DIA_Ulf_RingHere_01_01 " );	// Oh yes, that's it!
 	B_GiveInvItems(other,self,itri_ulf,1);
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Ulf_RingHere_01_03");	//Благодарю вас, мастер! Что бы я делал без вашей помощи.
-		AI_Output(self,other,"DIA_Ulf_RingHere_01_04");	//Вот. Возьмите в качестве моей благодарности этот магический эликсир.
+		AI_Output(self,other, " DIA_Ulf_RingHere_01_03 " );	// Thank you, master! What would I do without your help.
+		AI_Output(self,other, " DIA_Ulf_RingHere_01_04 " );	// Here. Take this magical elixir as my thanks.
 		B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ulf_RingHere_01_05");	//Благодарю тебя! Чтобы я делал без твоей помощи.
-		AI_Output(self,other,"DIA_Ulf_RingHere_01_06");	//Вот. Возьми в качестве моей благодарности этот эликсир жизни.
+		AI_Output(self,other, " DIA_Ulf_RingHere_01_05 " );	// Thank you! What would I do without your help.
+		AI_Output(self,other, " DIA_Ulf_RingHere_01_06 " );	// Here. Take this elixir of life as my thanks.
 		B_GiveInvItems(self,other,ItPo_Perm_Health,1);
 	};
-	AI_Output(self,other,"DIA_Ulf_RingHere_01_07");	//Я понимаю, что этого мало. Но это самое ценное, что у меня есть с собой!
+	AI_Output(self,other, " DIA_Ulf_RingHere_01_07 " );	// I understand that this is not enough. But this is the most valuable thing I have with me!
 	MIS_ULFRING = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_ULFRING,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ULFRING,"Ульф был рад вернуть себе кольцо.");
+	B_LogEntry( TOPIC_ULFRING , " Ulf was glad to have his ring back. " );
 };
 
 
@@ -553,7 +554,7 @@ instance DIA_Ulf_PICKPOCKET(C_Info)
 
 func int DIA_Ulf_PICKPOCKET_Condition()
 {
-	return C_Beklauen(34,50);
+	return  C_Robbery ( 34 , 50 );
 };
 
 func void DIA_Ulf_PICKPOCKET_Info()
@@ -565,7 +566,7 @@ func void DIA_Ulf_PICKPOCKET_Info()
 
 func void DIA_Ulf_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Ulf_PICKPOCKET);
 };
 
