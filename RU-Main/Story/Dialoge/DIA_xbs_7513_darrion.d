@@ -1,4 +1,5 @@
 
+
 instance XBS_7513_DARRION_EXIT(C_Info)
 {
 	npc = xbs_7513_darrion;
@@ -62,7 +63,7 @@ instance XBS_7513_DARRION_PICKPOCKET(C_Info)
 
 func int xbs_7513_darrion_pickpocket_condition()
 {
-	return C_Beklauen(85,102);
+	return  C_Robbery ( 85 , 102 );
 };
 
 func void xbs_7513_darrion_pickpocket_info()
@@ -74,7 +75,7 @@ func void xbs_7513_darrion_pickpocket_info()
 
 func void xbs_7513_darrion_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(xbs_7513_darrion_pickpocket);
 };
 
@@ -91,7 +92,7 @@ instance XBS_7513_DARRION_HI(C_Info)
 	condition = xbs_7513_darrion_hi_condition;
 	information = xbs_7513_darrion_hi_info;
 	permanent = FALSE;
-	description = "Как дела, мастер?";
+	description = " How are you, Master? " ;
 };
 
 func int xbs_7513_darrion_hi_condition()
@@ -101,15 +102,15 @@ func int xbs_7513_darrion_hi_condition()
 
 func void xbs_7513_darrion_hi_info()
 {
-	AI_Output(other,self,"XBS_7513_Darrion_Hi_15_00");	//Как дела, мастер?
-	AI_Output(self,other,"XBS_7513_Darrion_Hi_06_01");	//Все как обычно.
-	AI_Output(other,self,"XBS_7513_Darrion_Hi_15_02");	//Ты меня не помнишь?
-	AI_Output(self,other,"XBS_7513_Darrion_Hi_06_03");	//Что-то припоминаю...(задумчиво) Впрочем, ничего удивительного - тут все свои.
-	AI_Output(other,self,"XBS_7513_Darrion_Hi_15_04");	//А могу я купить у мастера оружие или кузнечные принадлежности?
-	AI_Output(self,other,"XBS_7513_Darrion_Hi_06_06");	//Конечно. Но только тогда, когда я в кузнице.
-	AI_Output(self,other,"XBS_7513_Darrion_Hi_06_07");	//Вечером я отдыхаю - мы тут особо на работе не надрываемся.
+	AI_Output(other,self, " XBS_7513_Darrion_Hi_15_00 " );	// How are you, master?
+	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_01 " );	// Everything is as usual.
+	AI_Output(other,self, " XBS_7513_Darrion_Hi_15_02 " );	// You don't remember me?
+	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_03 " );	// I remember something... (thoughtfully) However, it's not surprising - everyone here is friendly.
+	AI_Output(other,self, " XBS_7513_Darrion_Hi_15_04 " );	// Can I buy weapons or blacksmithing accessories from the master?
+	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_06 " );	// Of course. But only when I'm in the forge.
+	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_07 " );	// In the evening I rest - we don't work too hard here.
 	Log_CreateTopic(TOPIC_XBS,LOG_NOTE);
-	B_LogEntry(TOPIC_XBS,"Даррион торгует материалами для кузницы и отмычками. Но только тогда, когда он в кузнице.");
+	B_LogEntry( TOPIC_XBS , " Darrion trades forge materials and lockpicks. But only when he's in the forge. " );
 };
 
 
@@ -120,13 +121,13 @@ instance XBS_7513_DARRION_BLITZ(C_Info)
 	condition = xbs_7513_darrion_blitz_condition;
 	information = xbs_7513_darrion_blitz_info;
 	permanent = FALSE;
-	description = "Как ты забрался в эти горы?";
+	description = " How did you get into these mountains? " ;
 };
 
 
 func int xbs_7513_darrion_blitz_condition()
 {
-	if(Npc_KnowsInfo(other,xbs_7513_darrion_hi))
+	if ( Npc_KnowsInfo ( other , xbs_7513_darrion_hi ) )
 	{
 		return TRUE;
 	};
@@ -134,13 +135,13 @@ func int xbs_7513_darrion_blitz_condition()
 
 func void xbs_7513_darrion_blitz_info()
 {
-	AI_Output(other,self,"XBS_7513_Darrion_Blitz_15_00");	//Расскажи, как ты забрался в эти горы?
-	AI_Output(self,other,"XBS_7513_Darrion_Blitz_06_01");	//В тот день, когда пал Барьер, в лагере наступил хаос.
-	AI_Output(self,other,"XBS_7513_Darrion_Blitz_06_02");	//Мало кто сохранил остатки разума. Те, кто сумел это сделать, теперь в основном тут.
-	AI_Output(other,self,"XBS_7513_Darrion_Blitz_15_03");	//А что делал ты?
-	AI_Output(self,other,"XBS_7513_Darrion_Blitz_06_04");	//Я какое-то время, как и все, носился, потеряв разум. Пока не наткнулся на Нетбека.
-	AI_Output(self,other,"XBS_7513_Darrion_Blitz_06_05");	//Он, наверное, был единственным спокойным человеком в долине. И я пошел за ним.
-	AI_Output(self,other,"XBS_7513_Darrion_Blitz_06_06");	//Но я кузнец и далек от его деревьев. Поэтому и тут занимаюсь своим ремеслом.
+	AI_Output(other,self, " XBS_7513_Darrion_Blitz_15_00 " );	// Tell me, how did you get into these mountains?
+	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_01 " );	// The day the Barrier fell, the camp fell into chaos.
+	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_02 " );	// Few have retained the remnants of the mind. Those who managed to do this are now mostly here.
+	AI_Output(other,self, " XBS_7513_Darrion_Blitz_15_03 " );	// What did you do?
+	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_04 " );	// For a while, like everyone else, I was running around, losing my mind. Until I came across Netback.
+	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_05 " );	// He was probably the only calm person in the valley. And I followed him.
+	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_06 " );	// But I am a blacksmith and far from his trees. That's why I'm doing my job here.
 };
 
 
@@ -167,7 +168,7 @@ var int darionday;
 
 func void xbs_7513_darrion_trade_info()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -193,7 +194,7 @@ instance DIA_DARRION_ARMORCANTEACH(C_Info)
 	condition = dia_darrion_armorcanteach_condition;
 	information = dia_darrion_armorcanteach_info;
 	permanent = TRUE;
-	description = "Я слышал, что ты единственный, кто умеет ковать доспехи Стражей.";
+	description = " I heard that you're the only one who can forge Guardian armor. " ;
 };
 
 
@@ -207,84 +208,84 @@ func int dia_darrion_armorcanteach_condition()
 
 func void dia_darrion_armorcanteach_info()
 {
-	AI_Output(other,self,"DIA_Darrion_ArmorCanTeach_01_00");	//Я слышал, что ты единственный, кто умеет ковать доспехи Стражей.
-	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_01");	//И это правда, поскольку я был единственным кузнецом на болотах. Мне приходилось ковать доспехи для всех братьев, и даже для самого Кор-Ангара.
-	AI_Output(other,self,"DIA_Darrion_ArmorCanTeach_01_02");	//Ты можешь меня обучить этому ремеслу?
-	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_03");	//Ну, почему бы и нет. Я мог бы показать тебе несколько способов улучшить твой доспех.
-	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_04");	//Но для этого ты должен неплохо разбираться в ковке.
+	AI_Output(other,self, " DIA_Darrion_ArmorCanTeach_01_00 " );	// I heard you're the only one who can forge Guardian armor.
+	AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_01 " );	// And that's true, since I was the only blacksmith in the swamps. I had to forge armor for all the brothers, and even for Kor-Angar himself.
+	AI_Output(other,self, " DIA_Darrion_ArmorCanTeach_01_02 " );	// Can you teach me this trade?
+	AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_03 " );	// Well, why not. I could show you some ways to upgrade your armor.
+	AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_04 " );	// But for this, you must have a good understanding of forging.
 
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
-		AI_Output(other,self,"DIA_Darrion_ArmorCanTeach_01_05");	//Я довольно сносно разбираюсь в ковке.
-		AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_06");	//Ну хорошо, тогда можем начинать хоть сейчас.
-		AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_07");	//Но скажу сразу: не бесплатно.
+		AI_Output(other,self, " DIA_Darrion_ArmorCanTeach_01_05 " );	// I'm pretty good at forging.
+		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_06 " );	// Well, then we can start at least now.
+		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_07 " );	// But I'll tell you right away: not free.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_09");	//А как я погляжу, ты в этом самый настоящий дилетант!
-		AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_10");	//Вот что, парень. Сперва научись основам кузнечного дела. И тогда мы поговорим о твоем обучении.
-		AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_11");	//И скажу сразу: бесплатно я этого делать не стану.
+		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_09 " );	// And as I see it, you are a real dilettante at this!
+		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_10 " );	// Here's the thing, man. First, learn the basics of blacksmithing. And then we'll talk about your training.
+		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_11 " );	// And I’ll say right away: I won’t do this for free.
 	};
 	DARRION_TEACHARMOR = TRUE;
 	Log_CreateTopic(TOPIC_ARMORTEACHER,LOG_NOTE);
-	B_LogEntry(TOPIC_ARMORTEACHER,"Даррион может научить меня улучшать доспехи Стражей болотного Братства.");
+	B_LogEntry( TOPIC_ARMORTEACHER , " Darrion can teach me how to upgrade Swamp Brotherhood armor. " );
 };
 
 func void b_darrion_teacharmor_4()
 {
-	AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_01");	//Что ж, приступим. Проверь, чтобы все необходимые материалы были у тебя под рукой. Берешь разогретую стальную заготовку...
+	AI_Output(self,other, " DIA_Darrion_TeachArmor_4_01_01 " );	// Well, let's get started. Make sure you have all the necessary materials at hand. You take a heated steel billet ...
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
 		AI_GotoWP(self,"WP_COAST_FOREST_117");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_02");	//...на наковальне придаешь ей форму пластины и вковываешь в нее кусок магической руды...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_03");	//...потом делаешь крепления и соединяешь пластину с ними, тщательно проковывая места схода...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_04");	//...после этого тщательно крепишь полученный элемент на корпус доспеха - вот таким образом... смотри...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_4_01_02 " );	// ...on an anvil you give it the shape of a plate and forge a piece of magic ore into it...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_4_01_03 " );	// ...then you make fasteners and connect the plate to them, carefully forging the places of convergence...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_4_01_04 " );	// ...after that, you carefully fasten the resulting element to the body of the armor - like this... look...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_05");	//...готово!
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_06");	//Это все, что тебе следует знать, чтобы улучшить этот доспех.
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_4_01_06 " );	// That's all you need to know to upgrade this armor.
 	};
 };
 
 func void b_darrion_teacharmor_5()
 {
-	AI_Output(self,other,"DIA_Darrion_TeachArmor_5_01_01");	//Для создания этого доспеха тебе потребуется много времени и усилий, но это того стоит...
+	AI_Output(self,other, " DIA_Darrion_TeachArmor_5_01_01 " );	// It will take a lot of time and effort to create this armor, but it's worth it...
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
 		AI_GotoWP(self,"WP_COAST_FOREST_117");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_5_01_02");	//...возьми раскаленную стальную заготовку и раздели ее на две равные части...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_5_01_03");	//...обработай каждую из них с помощью магической рудной крошки, а затем скрепи обе части и прокуй места схода...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_5_01_04");	//...полученный элемент скрепляешь с доспехом по бокам с помощью металлической пластины... смотри, как я это делаю...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_5_01_05");	//...видишь, как четко он сел, практически обтекая поверхность доспеха. Усиливаешь крепление металлическими болтами и...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_5_01_02 " );	// ...take a hot steel billet and divide it into two equal parts...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_5_01_03 " );	// ...process each of them with magical ore chips, then fasten both parts together and forge the vanishing points...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_5_01_04 " );	// ...the resulting element is fastened to the armor on the sides using a metal plate... see how I do it...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_5_01_05 " );	// ...you see how clearly he sat down, practically flowing around the surface of the armor. Strengthen the fastening with metal bolts and ...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_5_01_06");	//...все, доспех готов.
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_5_01_06 " );	// ...everything, the armor is ready.
 	};
 };
 
 func void b_darrion_teacharmor_6()
 {
-	AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_01");	//Овладев этим знанием, ты сможешь сделать невероятно прочный и надежный доспех.
+	AI_Output(self,other, " DIA_Darrion_TeachArmor_6_01_01 " );	// With this knowledge, you will be able to make an incredibly durable and reliable armor.
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
 		AI_GotoWP(self,"WP_COAST_FOREST_117");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_02");	//Смотри внимательно и запоминай. Берешь раскаленную стальную заготовку и на наковальне придаешь ей форму пластины...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_03");	//...покрываешь полученный элемент магической рудной крошкой и поверху наносишь слой смоляного раствора...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_04");	//...скрепляешь две таких пластины стальными болтами и крепишь на каркас брони... вот так, как я это делаю...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_05");	//...это добавит прочности в местах крепления всех элементов доспеха. Еще немного подбиваем контур брони и...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_6_01_02 " );	// Watch carefully and remember. You take a hot steel billet and on the anvil you give it the shape of a plate ...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_6_01_03 " );	// ...cover the resulting element with magical ore chips and apply a layer of resin solution on top...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_6_01_04 " );	// ...you fasten two of these plates with steel bolts and attach them to the armor frame... this is how I do it...
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_6_01_05 " );	// ...this will add strength to the attachment points of all armor elements. We knock out the contour of the armor a little more and ...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_06");	//...все, доспех готов!
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_07");	//Теперь ты знаешь все, чему я мог научить тебя. Попробуй применить полученные знания на практике.
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_6_01_06 " );	// ...that's it, the armor is ready!
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_6_01_07 " );	// Now you know everything I could teach you. Try to apply the acquired knowledge in practice.
 	};
 };
 
@@ -295,15 +296,15 @@ func void b_darrionarmorchoices()
 
 	if((PLAYER_TALENT_SMITH[29] == FALSE) && (BuyTemplerLight == TRUE))
 	{
-		Info_AddChoice(dia_darrion_armorteach,B_BuildLearnStringEx("Легкие доспехи Стража (Цена обучения: 3000 монет",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_TPL_L_V1)),dia_darrion_armorteach_itar_tpl_l_v1);
+		Info_AddChoice(dia_darrion_armorteach,B_BuildLearnStringEx( " Guardian Light Armor (Training Cost: 3000 Coins " ,B_GetLearnCostTalent(other, NPC_TALENT_SMITH , WEAPON_ITAR_TPL_L_V1 )),dia_darrion_armorteach_itar_tpl_l_v1);
 	};
 	if((PLAYER_TALENT_SMITH[30] == FALSE) && (BuyTemplerMed == TRUE))
 	{
-		Info_AddChoice(dia_darrion_armorteach,B_BuildLearnStringEx("Доспехи Стража (Цена обучения: 5000 монет",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_TPL_M_V1)),dia_darrion_armorteach_itar_tpl_m_v1);
+		Info_AddChoice(dia_darrion_armorteach,B_BuildLearnStringEx( " Guard Armor ( Training cost: 5000 coins " ,B_GetLearnCostTalent(other, NPC_TALENT_SMITH , WEAPON_ITAR_TPL_M_V1 )),dia_darrion_armorteach_itar_tpl_m_v1);
 	};
 	if((PLAYER_TALENT_SMITH[31] == FALSE) && (BuyTemplerHeavy == TRUE))
 	{
-		Info_AddChoice(dia_darrion_armorteach,B_BuildLearnStringEx("Тяжелые доспехи Стража (Цена обучения: 7000 монет",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_TPL_S_V1)),dia_darrion_armorteach_itar_tpl_s_v1);
+		Info_AddChoice(dia_darrion_armorteach,B_BuildLearnStringEx( " Guardian heavy armor (Training cost: 7000 coins " ,B_GetLearnCostTalent(other, NPC_TALENT_SMITH , WEAPON_ITAR_TPL_S_V1 )),dia_darrion_armorteach_itar_tpl_s_v1);
 	};
 };
 
@@ -315,7 +316,7 @@ instance DIA_DARRION_ARMORTEACH(C_Info)
 	condition = dia_darrion_armorteach_condition;
 	information = dia_darrion_armorteach_info;
 	permanent = TRUE;
-	description = "Научи меня улучшать доспехи.";
+	description = " Teach me how to upgrade my armor. " ;
 };
 
 
@@ -332,16 +333,16 @@ func int dia_darrion_armorteach_condition()
 
 func void dia_darrion_armorteach_info()
 {
-	AI_Output(other,self,"DIA_Darrion_ArmorTeach_01_00");	//Научи меня улучшать доспехи.
-	if(Wld_IsTime(8,0,20,0))
+	AI_Output(other,self, " DIA_Darrion_ArmorTeach_01_00 " );	// Teach me how to upgrade armor.
+	if (Wld_IsTime( 8 , 0 , 20 , 0 ))
 	{
-		AI_Output(self,other,"DIA_Darrion_ArmorTeach_01_01");	//Что ты хочешь узнать?
+		AI_Output(self,other, " DIA_Darrion_ArmorTeach_01_01 " );	// What do you want to know?
 		b_darrionarmorchoices();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Darrion_ArmorTeach_01_02");	//На сегодня я уже закончил работать в кузнице...
-		AI_Output(self,other,"DIA_Darrion_ArmorTeach_01_03");	//Приходи завтра утром, тогда и поговорим об этом.
+		AI_Output(self,other, " DIA_Darrion_ArmorTeach_01_02 " );	// I've already finished working at the forge for today...
+		AI_Output(self,other, " DIA_Darrion_ArmorTeach_01_03 " );	// Come tomorrow morning, then we'll talk about it.
 	};
 };
 
@@ -363,7 +364,7 @@ func void dia_darrion_armorteach_itar_tpl_l_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_04_00");	//А золотишка-то у тебя не хватает. Так что пока забудь об этом.
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_04_00 " );	// And you don't have enough gold. So for now, forget about it.
 	};
 	b_darrionarmorchoices();
 };
@@ -381,7 +382,7 @@ func void dia_darrion_armorteach_itar_tpl_m_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_05_00");	//А золото где, приятель? 
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_05_00 " );	// Where's the gold, mate?
 	};
 	b_darrionarmorchoices();
 };
@@ -399,7 +400,7 @@ func void dia_darrion_armorteach_itar_tpl_s_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_06_00");	//У тебя слишком мало золота. А делиться с тобой таким секретом за меньшую сумму я не собираюсь.
+		AI_Output(self,other, " DIA_Darrion_TeachArmor_06_00 " );	// You don't have enough gold. And I'm not going to share such a secret with you for a smaller amount.
 	};
 	b_darrionarmorchoices();
 };
@@ -412,13 +413,13 @@ instance XBS_7513_DARRION_ORESMITH(C_Info)
 	condition = xbs_7513_darrion_oresmith_condition;
 	information = xbs_7513_darrion_oresmith_info;
 	permanent = FALSE;
-	description = "Нетбек сказал, что ты сможешь меня научить ковать рудное оружие.";
+	description = " Netback said you could teach me how to forge an ore weapon. " ;
 };
 
 
 func int xbs_7513_darrion_oresmith_condition()
 {
-	if((HOWCANMAKEBLACKSWORD == TRUE) && (NETBEKLEADME_STEP2DONE == FALSE) && (KNOWNORESWORD == FALSE) && Npc_KnowsInfo(hero,dia_netbek_makeblacksword))
+	if (( HOWCANMAKEBLACKSWORD  ==  TRUE ) && ( NETBEKLEADME_STEP2DONE  ==  FALSE ) && ( KNOWNORESWORD  ==  FALSE ) && Npc_KnowsInfo(hero,dia_netbek_makeblacksword));
 	{
 		return TRUE;
 	};
@@ -426,9 +427,9 @@ func int xbs_7513_darrion_oresmith_condition()
 
 func void xbs_7513_darrion_oresmith_info()
 {
-	AI_Output(other,self,"XBS_7513_Darrion_OreSmith_01_00");	//Нетбек сказал, что ты сможешь меня научить ковать рудное оружие.
-	AI_Output(self,other,"XBS_7513_Darrion_OreSmith_01_01");	//Ну, если он так сказал, то могу.
-	AI_Output(self,other,"XBS_7513_Darrion_OreSmith_01_02");	//Но тебе понадобится некоторый опыт, чтобы овладеть искусством ковки магической руды.
+	AI_Output(other,self, " XBS_7513_Darrion_OreSmith_01_00 " );	// Netback said you could teach me how to forge ore weapons.
+	AI_Output(self,other, " XBS_7513_Darrion_OreSmith_01_01 " );	// Well, if he said so, then I can.
+	AI_Output(self,other, " XBS_7513_Darrion_OreSmith_01_02 " );	// But you'll need some experience to master the art of forging magic ore.
 };
 
 
@@ -439,13 +440,13 @@ instance XBS_7513_DARRION_ORESMITHTEACH(C_Info)
 	condition = xbs_7513_darrion_oresmithteach_condition;
 	information = xbs_7513_darrion_oresmithteach_info;
 	permanent = TRUE;
-	description = "Научи меня ковать рудное оружие. (Очки обучения: 20)";
+	description = " Teach me how to forge an ore weapon. (Training Points: 20) " ;
 };
 
 
 func int xbs_7513_darrion_oresmithteach_condition()
 {
-	if((HOWCANMAKEBLACKSWORD == TRUE) && (KNOWNORESWORD == FALSE) && Npc_KnowsInfo(hero,xbs_7513_darrion_oresmith))
+	if (( HOWCANMAKEBLACKSWORD  ==  TRUE ) && ( KNOWNORESWORD  ==  FALSE ) && Npc_KnowsInfo(hero,xbs_7513_darrion_oresmith))
 	{
 		return TRUE;
 	};
@@ -453,27 +454,27 @@ func int xbs_7513_darrion_oresmithteach_condition()
 
 func void xbs_7513_darrion_oresmithteach_info()
 {
-	AI_Output(other,self,"XBS_7513_Darrion_OreSmithTeach_01_00");	//Научи меня ковать рудное оружие.
+	AI_Output(other,self, " XBS_7513_Darrion_OreSmithTeach_01_00 " );	// Teach me how to forge ore weapons.
 
 	if(other.lp >= 20)
 	{
-		AI_Output(self,other,"XBS_7513_Darrion_OreSmithTeach_01_01");	//Хорошо, слушай внимательно. Процесс создания рудного клинка достаточно прост.
-		AI_Output(self,other,"XBS_7513_Darrion_OreSmithTeach_01_02");	//Берешь необходимое количество магической руды и нагреваешь их до нужной температуры.
-		AI_Output(self,other,"XBS_7513_Darrion_OreSmithTeach_01_03");	//Затем нужно соединить куски в единый сплав, придав ему форму клинка, а потом резко охладить.
-		AI_Output(self,other,"XBS_7513_Darrion_OreSmithTeach_01_04");	//В итоге ты получишь оружие, прочность которого не будет знать себе равных.
-		AI_Output(other,self,"XBS_7513_Darrion_OreSmithTeach_01_05");	//Спасибо, я все понял.
+		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_01 " );	// Okay, listen carefully. The process of creating an ore blade is quite simple.
+		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_02 " );	// Take the required amount of magic ore and heat them up to the right temperature.
+		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_03 " );	// Then you need to combine the pieces into a single alloy, giving it the shape of a blade, and then cool it sharply.
+		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_04 " );	// As a result, you will receive a weapon whose durability will know no equal.
+		AI_Output(other,self, " XBS_7513_Darrion_OreSmithTeach_01_05 " );	// Thanks, I got it.
 		other.lp = other.lp - 20;
 		RankPoints = RankPoints + 20;
 		KNOWNORESWORD = TRUE;
-		AI_Print("Изучен рецепт ковки - 'Рудный меч'");
+		AI_Print( " Learned forging recipe - 'Ore Sword' " );
 		Npc_SetTalentSkill(other,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 	}
 	else
 	{
-		AI_Output(self,other,"XBS_7513_Darrion_OreSmithTeach_01_06");	//У тебя недостаточно опыта для этого.
-		AI_Output(self,other,"XBS_7513_Darrion_OreSmithTeach_01_07");	//Приходи, когда наберешься его, и я научу тебя всему, что знаю сам.
-		AI_Output(other,self,"XBS_7513_Darrion_OreSmithTeach_01_08");	//Ладно, как скажешь.
+		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_06 " );	// You don't have enough experience for this.
+		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_07 " );	// Come back when you've got it, and I'll teach you everything I know myself.
+		AI_Output(other,self, " XBS_7513_Darrion_OreSmithTeach_01_08 " );	// Okay, whatever you say.
 	};
 };
 
@@ -485,7 +486,7 @@ instance XBS_7513_DARRION_BLACKORE(C_Info)
 	condition = xbs_7513_darrion_blackore_condition;
 	information = xbs_7513_darrion_blackore_info;
 	permanent = FALSE;
-	description = "Ты не знаешь, где мне отыскать черную руду?";
+	description = " Do you know where I can find black ore? " ;
 };
 
 
@@ -499,11 +500,11 @@ func int xbs_7513_darrion_blackore_condition()
 
 func void xbs_7513_darrion_blackore_info()
 {
-	AI_Output(other,self,"XBS_7513_Darrion_BlackOre_01_00");	//Ты не знаешь, где мне отыскать черную руду?
-	AI_Output(self,other,"XBS_7513_Darrion_BlackOre_01_01");	//Черную руду? Боюсь, что нет. За всю свою жизнь я лишь единожды держал в руках это сокровище.
-	AI_Output(self,other,"XBS_7513_Darrion_BlackOre_01_02");	//Однако до меня доходили слухи, будто бы орки знали, где ее искать. Хотя, правда это или нет, - точно утверждать не могу.
+	AI_Output(other,self, " XBS_7513_Darrion_BlackOre_01_00 " );	// Do you know where I can find black ore?
+	AI_Output(self,other, " XBS_7513_Darrion_BlackOre_01_01 " );	// Black ore? I am afraid no. In all my life, I only once held this treasure in my hands.
+	AI_Output(self,other, " XBS_7513_Darrion_BlackOre_01_02 " );	// However, I've heard rumors that the orcs knew where to look for her. Although, whether this is true or not, I can’t say for sure.
 	AI_Output(other,self,"XBS_7513_Darrion_BlackOre_01_03");	//Понятно.
-	B_LogEntry(TOPIC_GUARDIANS,"Кузнец Даррион слышал, что орки могут знать, где найти черную руду.");
+	B_LogEntry( TOPIC_GUARDIANS , " Blacksmith Darrion heard that orcs might know where to find black ore. " );
 };
 
 instance XBS_7513_DARRION_PrioratBlade(C_Info)
@@ -513,7 +514,7 @@ instance XBS_7513_DARRION_PrioratBlade(C_Info)
 	condition = XBS_7513_DARRION_PrioratBlade_condition;
 	information = XBS_7513_DARRION_PrioratBlade_info;
 	permanent = FALSE;
-	description = "Мне нужен твой совет.";
+	description = " I need your advice. " ;
 };
 
 func int XBS_7513_DARRION_PrioratBlade_condition()
@@ -527,10 +528,10 @@ func int XBS_7513_DARRION_PrioratBlade_condition()
 func void XBS_7513_DARRION_PrioratBlade_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_01");	//Мне нужен твой совет.
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_02");	//Какой именно?
-	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_03");	//Ко мне в руки попал один редкий клинок. И я ищу кузнеца, который мог бы рассказать мне о нем.
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_06");	//Ну, тогда показывай, что у тебя там.
+	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_01 " );	// I need your advice.
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_02 " );	// Which one?
+	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_03 " );	// One rare blade fell into my hands. And I'm looking for a blacksmith who could tell me about him.
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_06 " );	// Well, then show what you have there.
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_07");	//Вот.
 	CreateInvItems(self,ItMw_1H_AssBlade_View,1);
 	AI_UnequipWeapons(self);
@@ -539,8 +540,8 @@ func void XBS_7513_DARRION_PrioratBlade_info()
 	AI_PlayAni(self,"T_1HSINSPECT");
 	AI_RemoveWeapon(self);
 	AI_UnequipWeapons(self);
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_08");	//Это действительно очень редкий клинок для этих мест.
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_11");	//Но если бы ты когда-нибудь бывал в Варанте...(ехидно) 
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_08 " );	// This is indeed a very rare blade for this area.
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_11 " );	// But if you'd ever been to Varant... (snidely)
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_12");	//То что?
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_13");	//То знал бы, что для тамошних жителей это оружие абсолютно не представляет из себя никакой ценности!
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_14");	//Значит, оно из Варанта? А что это вообще такое - Варант?
@@ -548,13 +549,13 @@ func void XBS_7513_DARRION_PrioratBlade_info()
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_16");	//Хотя это оружие немного отличается от того, что приходилось мне видеть раньше.
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_17");	//В каком смысле?
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_18");	//Меня очень заинтересовала гравировка в основании клинка. Символы, изображенные на ней, мне не особо знакомы.
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_19");	//Однако зная, что они обозначают, я бы мог точно сказать - кто является настоящим владельцем этого оружия.
-	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_20");	//А кто может это знать?
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_21");	//Понятия не имею. (озадаченно) Возможно, сами ассасины и признали бы его хозяина.
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_22");	//Но где тут найдешь хотя бы одного из них?
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_23");	//Им по душе жаркое солнце Варанта, нежели здешний климат.
-	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_24");	//Ладно, я тебя понял. Спасибо за помощь!
-	B_LogEntry(TOPIC_PrioratStart,"Даррион рассказал мне о том, что найденный мною клинок обычно используют ассасины, живущие в пустыне Варант, которая располагается на юге Миртаны. Однако больше всего его заинтересовала гравировка, выбитая в основании клинка. Символы, изображенные на ней, смогли бы дать более точный ответ на мой вопрос. Но к моему большому сожалению, расшифровать их Даррион не смог. По его словам, сами ассасины смогли бы это сделать.");
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_19 " );	// However, knowing what they mean, I could say for sure who the real owner of this weapon is.
+	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_20 " );	// And who can know this?
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_21 " );	// I have no idea. (puzzled) Perhaps the Assassins themselves would recognize his master.
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_22 " );	// But where can you find at least one of them?
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_23 " );	// They like the hot sun of Varant, rather than the local climate.
+	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_24 " );	// Okay, I understand you. Thanks for the help!
+	B_LogEntry(TOPIC_PrioratStart, " Darrion told me that the blade I found is commonly used by Assassins living in the Varant Desert, which is located in the south of Myrtana. However, he was most interested in the engraving embossed at the base of the blade. The symbols depicted on it could give a more accurate answer to my question. But to my great regret, Darrion could not decipher them. According to him, the assassins themselves could do it. " );
 	BladePrioratKnowsAssasins = TRUE;
 };
 
@@ -565,7 +566,7 @@ instance DIA_Darrion_DoCrossBow(C_Info)
 	condition = DIA_Darrion_DoCrossBow_condition;
 	information = DIA_Darrion_DoCrossBow_info;
 	permanent = FALSE;
-	description = "Ты умеешь делать арбалеты?";
+	description = " Can you make crossbows? " ;
 };
 
 func int DIA_Darrion_DoCrossBow_condition()
@@ -579,13 +580,13 @@ func int DIA_Darrion_DoCrossBow_condition()
 func void DIA_Darrion_DoCrossBow_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Darrion_DoCrossBow_01_01");	//Ты умеешь делать арбалеты?
-	AI_Output(self,other,"DIA_Darrion_DoCrossBow_01_02");	//Арбалеты? Это ты обратился не по адресу, приятель.
-	AI_Output(self,other,"DIA_Darrion_DoCrossBow_01_03");	//Тебе нужен хороший плотник или столяр.
-	AI_Output(self,other,"DIA_Darrion_DoCrossBow_01_04");	//Только он, возможно, сможет помочь тебе в этом деле.
+	AI_Output(other,self, " DIA_Darrion_DoCrossBow_01_01 " );	// Can you make crossbows?
+	AI_Output(self,other, " DIA_Darrion_DoCrossBow_01_02 " );	// Crossbows? It's you who went to the wrong place, buddy.
+	AI_Output(self,other, " DIA_Darrion_DoCrossBow_01_03 " );	// You need a good carpenter or joiner.
+	AI_Output(self,other, " DIA_Darrion_DoCrossBow_01_04 " );	// Only he, perhaps, can help you in this matter.
 	AI_Output(other,self,"DIA_Darrion_DoCrossBow_01_05");	//Понял.
 	CrossBowNeedPlotnik = TRUE;
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Делать арбалеты меня сможет научить только плотник или столяр.");
+	B_LogEntry(TOPIC_TagNorGrHunWeap, " Only a carpenter or joiner can teach me how to make crossbows. " );
 };
 
 instance XBS_7513_DARRION_CanSellArmor(C_Info)
@@ -595,7 +596,7 @@ instance XBS_7513_DARRION_CanSellArmor(C_Info)
 	condition = XBS_7513_DARRION_CanSellArmor_condition;
 	information = XBS_7513_DARRION_CanSellArmor_info;
 	permanent = FALSE;
-	description = "Тебя, случаем, не интересуют поношенные доспехи?";
+	description = " Are you interested in well-worn armor, by any chance? " ;
 };
 
 func int XBS_7513_DARRION_CanSellArmor_condition()
@@ -608,17 +609,17 @@ func int XBS_7513_DARRION_CanSellArmor_condition()
 
 func void XBS_7513_DARRION_CanSellArmor_info()
 {
-	AI_Output(other,self,"XBS_7513_DARRION_CanSellArmor_01_00");	//Тебя, случаем, не интересуют поношенные доспехи?
-	AI_Output(self,other,"XBS_7513_DARRION_CanSellArmor_01_01");	//Возможно. А почему ты спрашиваешь?
-	AI_Output(other,self,"XBS_7513_DARRION_CanSellArmor_01_02");	//У меня тут завалялась пара ненужных комплектов, и я понятия не имею, что с ними теперь делать.
-	AI_Output(self,other,"XBS_7513_DARRION_CanSellArmor_01_03");	//Ну, если так, можешь приносить их мне.
-	AI_Output(self,other,"XBS_7513_DARRION_CanSellArmor_01_04");	//Часть из них можно будет попробовать подогнать под кого-нибудь из ребят в лагере.
-	AI_Output(self,other,"XBS_7513_DARRION_CanSellArmor_01_05");	//Остальные же пойдут как подручный материал для создания новых. Сталь, кожа, ткань, дратва - все сгодится!
-	AI_Output(other,self,"XBS_7513_DARRION_CanSellArmor_01_06");	//А что я с этого получу?
-	AI_Output(self,other,"XBS_7513_DARRION_CanSellArmor_01_07");	//Золота у меня мало. А вот обменять их на руду - это легко.
-	AI_Output(other,self,"XBS_7513_DARRION_CanSellArmor_01_09");	//Хорошо, я подумаю над твоим предложением.
+	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_00 " );	// You don't care about well-worn armor, do you?
+	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_01 " );	// Possibly. Why are you asking?
+	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_02 " );	// I have a couple of unnecessary kits lying around here, and I have no idea what to do with them now.
+	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_03 " );	// Well, if so, you can bring them to me.
+	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_04 " );	// Some of them can be tried to fit one of the guys in the camp.
+	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_05 " );	// The rest will go as improvised material for creating new ones. Steel, leather, fabric, drastva - everything will fit!
+	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_06 " );	// What do I get out of this?
+	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_07 " );	// I don't have much gold. But to exchange them for ore is easy.
+	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_09 " );	// Okay, I'll think about your suggestion.
 	Log_CreateTopic(TOPIC_XBS,LOG_NOTE);
-	B_LogEntry(TOPIC_XBS,"Даррион принимает поношенные доспехи в обмен на магическую руду.");
+	B_LogEntry( TOPIC_XBS , " Darrion accepts used armor in exchange for magic ore. " );
 	DarrionCanSellArmor = TRUE;
 };
 
@@ -629,7 +630,7 @@ instance XBS_7513_DARRION_CanSellArmor_Do(C_Info)
 	condition = XBS_7513_DARRION_CanSellArmor_Do_condition;
 	information = XBS_7513_DARRION_CanSellArmor_Do_info;
 	permanent = TRUE;
-	description = "Я принес тебе доспехи.";
+	description = " I brought you armor. " ;
 };
 
 func int XBS_7513_DARRION_CanSellArmor_Do_condition()
@@ -645,134 +646,134 @@ func void XBS_7513_DARRION_CanSellArmor_Do_info()
 	var C_Item EquipWeap;
 	EquipWeap = Npc_GetEquippedArmor(other);
 
-	AI_Output(other,self,"XBS_7513_DARRION_CanSellArmor_Do_01_00");	//Я принес тебе доспехи.
-	AI_Output(self,other,"XBS_7513_DARRION_CanSellArmor_Do_01_01");	//Хорошо. Давай посмотрим на них.
+	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_Do_01_00 " );	// I brought you armor.
+	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_Do_01_01 " );	// Good. Let's look at them.
 	Info_ClearChoices(XBS_7513_DARRION_CanSellArmor_Do);
 	Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,Dialog_Back,XBS_7513_DARRION_CanSellArmor_Do_back);
 
-	if((Hlp_IsItem(EquipWeap,ITAR_PRISONEL) == FALSE) && (Npc_HasItems(other,ITAR_PRISONEL) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_PRISONEL ) ==  FALSE ) && (Npc_HasItems(other, ITAR_PRISONEL ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Простые штаны рудокопа' - 5 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PRISONEL);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Prisoner's license plate' - 5 years ago " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PRISONER);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_Prisoner) == FALSE) && (Npc_HasItems(other,ITAR_Prisoner) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ITAR_Prisoner) ==  FALSE ) && (Npc_HasItems(other,ITAR_Prisoner) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Штаны рудокопа' - 5 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Prisoner);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Prisoners' - 5 years ago " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Prisoner);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_Bau_L) == FALSE) && (Npc_HasItems(other,ITAR_Bau_L) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ITAR_Bau_L) ==  FALSE ) && (Npc_HasItems(other,ITAR_Bau_L) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкая одежда крестьянина' - 5 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Bau_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Peasant's Light Clothes' - 5 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Bau_L);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_Vlk_L) == FALSE) && (Npc_HasItems(other,ITAR_Vlk_L) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ITAR_Vlk_L) ==  FALSE ) && (Npc_HasItems(other,ITAR_Vlk_L) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкая одежда горожанина' - 5 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Vlk_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Citizen Light Clothes' - 5 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Vlk_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Bau_M) == FALSE) && (Npc_HasItems(other,ITAR_Bau_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда крестьянина' - 5 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Bau_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Peasant's Clothes' - 5 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Bau_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Vlk_M) == FALSE) && (Npc_HasItems(other,ITAR_Vlk_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда горожанина' - 5 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Vlk_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Specifying selection' - 5 years ago " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Vlk_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Vlk_H) == FALSE) && (Npc_HasItems(other,ITAR_Vlk_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роскошная одежда горожанина' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Vlk_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Deluxe Citizen Clothes' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Vlk_H);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SEKBED) == FALSE) && (Npc_HasItems(other,ITAR_SEKBED) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Набедренная повязка Братства' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SEKBED);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Loincloth' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SEKBED);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SEKBED_V1) == FALSE) && (Npc_HasItems(other,ITAR_SEKBED_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Набедренный кушак Братства' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SEKBED_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Daily Assembly Armor' - 10 minutes ago " ,XBS_7513_DARRION_Can_ITARV1Armor_K);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SMITH_NOV) == FALSE) && (Npc_HasItems(other,ITAR_SMITH_NOV) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда кузнеца-подмастерья' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Apprentice Blacksmith Clothes' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SMITH_NOV_01) == FALSE) && (Npc_HasItems(other,ITAR_SMITH_NOV_01) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда кузнеца-подмастерья' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_01);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Apprentice Blacksmith Clothes' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_01);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SMITH_NOV_02) == FALSE) && (Npc_HasItems(other,ITAR_SMITH_NOV_02) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда кузнеца-подмастерья' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_02);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Apprentice Blacksmith Clothes' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_02);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SMITH_NOV_03) == FALSE) && (Npc_HasItems(other,ITAR_SMITH_NOV_03) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда кузнеца-подмастерья' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_03);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Apprentice Blacksmith Clothes' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_03);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SMITH_NOV_04) == FALSE) && (Npc_HasItems(other,ITAR_SMITH_NOV_04) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда кузнеца-подмастерья' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_04);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Apprentice Blacksmith Clothes' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_04);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SMITH_NOV_05) == FALSE) && (Npc_HasItems(other,ITAR_SMITH_NOV_05) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда кузнеца-подмастерья' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_05);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Apprentice Blacksmith Clothes' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SMITH_NOV_05);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Leather_L) == FALSE) && (Npc_HasItems(other,ITAR_Leather_L) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кожаный доспех' - 15 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Leather_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Leather Armor' - 15 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Leather_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Leather_M) == FALSE) && (Npc_HasItems(other,ITAR_Leather_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелый кожаный доспех' - 15 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Leather_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Leather Armor' - 15 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Leather_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ALCHEMY_NOV) == FALSE) && (Npc_HasItems(other,ITAR_ALCHEMY_NOV) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Одежда алхимика-подмастерья' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ALCHEMY_NOV);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Apprentice Alchemist Clothes' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ALCHEMY_NOV);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_KIL_SL) == FALSE) && (Npc_HasItems(other,ITAR_KIL_SL) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспех убийцы' - 15 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_KIL_SL);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Assassin Armor' - 15 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_KIL_SL);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_KIL_SLS) == FALSE) && (Npc_HasItems(other,ITAR_KIL_SLS) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспех мастера-убийцы' - 20 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_KIL_SLS);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Master Assassin Armor' - 20 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_KIL_SLS);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TOWNGUARD) == FALSE) && (Npc_HasItems(other,ITAR_TOWNGUARD) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие доспехи ополчения' - 15 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TOWNGUARD);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Militia Light Armor' - 15 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TOWNGUARD);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Mil_L) == FALSE) && (Npc_HasItems(other,ITAR_Mil_L) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи ополчения' - 20 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Mil_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Militia Armor' - 20 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Mil_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_L_V1) == FALSE) && (Npc_HasItems(other,ITAR_MIL_L_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи ополчения' - 25 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Militia Armor' - 25 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_L_V12) == FALSE) && (Npc_HasItems(other,ITAR_MIL_L_V12) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи ополчения' - 25 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V12);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Militia Armor' - 25 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V12);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_MIL_L_V13) == FALSE) && (Npc_HasItems(other,ITAR_MIL_L_V13) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_MIL_L_V13 ) ==  FALSE ) && (Npc_HasItems(other, ITAR_MIL_L_V13 ) >=  1 )) ;
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи ополчения' - 25 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V13);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Militia Armor' - 25 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V13);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_L_V14) == FALSE) && (Npc_HasItems(other,ITAR_MIL_L_V14) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи ополчения' - 25 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V14);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Militia Armor' - 25 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V14);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_L_V15) == FALSE) && (Npc_HasItems(other,ITAR_MIL_L_V15) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи ополчения' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V15);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Militia Armor' - 30 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_L_V15);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_Sld_L) == FALSE) && (Npc_HasItems(other,ItAr_Sld_L) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие доспехи наемника' - 25 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Sld_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Mercenary Light Armor' - 25 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Sld_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_L_V1) == FALSE) && (Npc_HasItems(other,ITAR_SLD_L_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи наемника' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_L_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Mercenary Light Forged Armor' - 30 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_L_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_L_V2) == FALSE) && (Npc_HasItems(other,ITAR_SLD_L_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи наемника' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_L_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Mercenary Light Forged Armor' - 30 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_L_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_L_V3) == FALSE) && (Npc_HasItems(other,ITAR_SLD_L_V3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи наемника' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_L_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Mercenary Light Forged Armor' - 30 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_L_V3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_L_V4) == FALSE) && (Npc_HasItems(other,ITAR_SLD_L_V4) >= 1))
 	{
@@ -824,611 +825,611 @@ func void XBS_7513_DARRION_CanSellArmor_Do_info()
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_NDM_L) == FALSE) && (Npc_HasItems(other,ITAR_NDM_L) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба темного послушника' - 25 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_NDM_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Dark Acolyte Robe' - 25 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_NDM_L);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_KDF_L) == FALSE) && (Npc_HasItems(other,ItAr_KDF_L) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_KDF_L) ==  FALSE ) && (Npc_HasItems(other,ItAr_KDF_L) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба младшего мага Огня' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDF_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Junior Fire Mage Rob' - 30 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDF_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_KDF_M) == FALSE) && (Npc_HasItems(other,ITAR_KDF_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба мага Огня' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDF_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Darrion_CanSellArmor_Do' - 40 minutes " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDF_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_KDF_M_NEW) == FALSE) && (Npc_HasItems(other,ITAR_KDF_M_NEW) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба мага Огня' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDF_M_NEW);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Page 100' - 40 minutes " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDF_M_NEW);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_KDW_L_Addon) == FALSE) && (Npc_HasItems(other,ITAR_KDW_L_Addon) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ITAR_KDW_L_Addon) ==  FALSE ) && (Npc_HasItems(other,ITAR_KDW_L_Addon) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба мага Воды' - 35 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDW_L_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Advanced Code' - 35 minutes " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDW_L_Addon);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DMT_L) == FALSE) && (Npc_HasItems(other,ITAR_DMT_L) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба темного мага' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DMT_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Please wait' - 40 minutes ago " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DMT_L);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_GUR_L) == FALSE) && (Npc_HasItems(other,ITAR_GUR_L) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_GUR_L ) ==  FALSE ) && (Npc_HasItems(other, ITAR_GUR_L ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба гуру Братства' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_GUR_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Please sell armor' - 40 minutes " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_GUR_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MAYA_PRIEST) == FALSE) && (Npc_HasItems(other,ITAR_MAYA_PRIEST) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба древних жрецов' - 45 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MAYA_PRIEST);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Robe of Ancient Priests' - 45 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MAYA_PRIEST);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_RANGER_Addon) == FALSE) && (Npc_HasItems(other,ITAR_RANGER_Addon) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"Доспех 'Кольца Воды' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " Water Ring Armor - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_Addon);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_RANGER_ADDON_V1) == FALSE) && (Npc_HasItems(other,ITAR_RANGER_ADDON_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"Кованый доспех 'Кольца Воды' - 45 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " Ring of Water Hammered Armor - 45 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_RANGER_ADDON_V2) == FALSE) && (Npc_HasItems(other,ITAR_RANGER_ADDON_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"Кованый доспех 'Кольца Воды' - 45 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " Ring of Water Hammered Armor - 45 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_RANGER_ADDON_V3) == FALSE) && (Npc_HasItems(other,ITAR_RANGER_ADDON_V3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"Кованый доспех 'Кольца Воды' - 45 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " Ring of Water Hammered Armor - 45 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_RANGER_ADDON_V4) == FALSE) && (Npc_HasItems(other,ITAR_RANGER_ADDON_V4) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"Кованый доспех 'Кольца Воды' - 45 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " Ring of Water Hammered Armor - 45 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V4);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_RANGER_ADDON_V5) == FALSE) && (Npc_HasItems(other,ITAR_RANGER_ADDON_V5) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"Кованый доспех 'Кольца Воды' - 50 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " Ring of Water Hammered Armor - 50 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_RANGER_ADDON_V5);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PIR_L_Addon) == FALSE) && (Npc_HasItems(other,ITAR_PIR_L_Addon) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие доспехи пирата' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PIR_L_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Pirate Light Armor' - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PIR_L_Addon);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PIR_M_Addon) == FALSE) && (Npc_HasItems(other,ITAR_PIR_M_Addon) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи пирата' - 50 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PIR_M_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Pirate Armor' - 50 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PIR_M_Addon);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PIR_H_Addon) == FALSE) && (Npc_HasItems(other,ITAR_PIR_H_Addon) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи пирата' - 60 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PIR_H_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Pirate Heavy Armor' - 60 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PIR_H_Addon);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_BDT_M) == FALSE) && (Npc_HasItems(other,ItAr_BDT_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие доспехи бандита' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_BDT_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Light Bandit Armor' - 30 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_BDT_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_BDT_H) == FALSE) && (Npc_HasItems(other,ItAr_BDT_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи бандита' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_BDT_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Bandit Armor' - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_BDT_H);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_BDT_F) == FALSE) && (Npc_HasItems(other,ITAR_BDT_F) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи бандита' - 50 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_BDT_F);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Bandit Armor' - 50 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_BDT_F);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_GRD_L) == FALSE) && (Npc_HasItems(other,ITAR_GRD_L) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Лeгкие доспехи стражника' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_GRD_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Guard's Light Armor' - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_GRD_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_GRD_L_V1) == FALSE) && (Npc_HasItems(other,ITAR_GRD_L_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи стражника' - 45 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_GRD_L_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Guard's Light Forged Armor' - 45 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_GRD_L_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Bloodwyn_Addon) == FALSE) && (Npc_HasItems(other,ITAR_Bloodwyn_Addon) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи стражника' - 50 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Bloodwyn_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Guard's Armor' - 50 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Bloodwyn_Addon);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_BLOODWYN_ADDON_V1) == FALSE) && (Npc_HasItems(other,ITAR_BLOODWYN_ADDON_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи стражника' - 55 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_BLOODWYN_ADDON_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Guard's Forged Armor' - 55 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_BLOODWYN_ADDON_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Thorus_Addon) == FALSE) && (Npc_HasItems(other,ITAR_Thorus_Addon) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи стражника' - 60 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Thorus_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Guard Armor' - 60 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Thorus_Addon);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_THORUS_ADDON_V1) == FALSE) && (Npc_HasItems(other,ITAR_THORUS_ADDON_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи стражника' - 65 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_THORUS_ADDON_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Guard Armor' - 65 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_THORUS_ADDON_V1);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_OreBaron_Addon) == FALSE) && (Npc_HasItems(other,ITAR_OreBaron_Addon) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ITAR_OreBaron_Addon) ==  FALSE ) && (Npc_HasItems(other,ITAR_OreBaron_Addon) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи рудного барона' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_OreBaron_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Ore Baron Armor' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_OreBaron_Addon);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_DJG_Crawler) == FALSE) && (Npc_HasItems(other,ITAR_DJG_Crawler) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ITAR_DJG_Crawler) ==  FALSE ) && (Npc_HasItems(other,ITAR_DJG_Crawler) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи из панцирей ползунов' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_Crawler);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Crawler Shell Armor' - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_Crawler);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_MIL_M) == FALSE) && (Npc_HasItems(other,ItAr_MIL_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи ополчения' - 60 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_MIL_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Militia Armor' - 60 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_MIL_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_M_V1) == FALSE) && (Npc_HasItems(other,ITAR_MIL_M_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи ополчения' - 65 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Militia Armor' - 65 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_M_V12) == FALSE) && (Npc_HasItems(other,ITAR_MIL_M_V12) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи ополчения' - 65 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V12);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Militia Armor' - 65 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V12);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_M_V13) == FALSE) && (Npc_HasItems(other,ITAR_MIL_M_V13) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи ополчения' - 65 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V13);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Militia Armor' - 65 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V13);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_M_V14) == FALSE) && (Npc_HasItems(other,ITAR_MIL_M_V14) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи ополчения' - 65 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V14);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Militia Armor' - 65 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V14);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_MIL_M_V15) == FALSE) && (Npc_HasItems(other,ITAR_MIL_M_V15) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи ополчения' - 70 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V15);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Militia Armor' - 70 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_MIL_M_V15);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_L) == FALSE) && (Npc_HasItems(other,ITAR_PAL_L) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспех оруженосца' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Squire's Armor' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_Sld_H) == FALSE) && (Npc_HasItems(other,ItAr_Sld_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи наемника' - 70 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Sld_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Mercenary Armor' - 70 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Sld_H);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_H_V1) == FALSE) && (Npc_HasItems(other,ITAR_SLD_H_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи наемника' - 75 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Mercenary Armor' - 75 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_H_V2) == FALSE) && (Npc_HasItems(other,ITAR_SLD_H_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи наемника' - 75 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Mercenary Armor' - 75 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_H_V3) == FALSE) && (Npc_HasItems(other,ITAR_SLD_H_V3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи наемника' - 75 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Mercenary Armor' - 75 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_H_V4) == FALSE) && (Npc_HasItems(other,ITAR_SLD_H_V4) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи наемника' - 75 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Mercenary Armor' - 75 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V4);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_SLD_H_V5) == FALSE) && (Npc_HasItems(other,ITAR_SLD_H_V5) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи наемника' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Mercenary Armor' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_SLD_H_V5);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_PAL_M) == FALSE) && (Npc_HasItems(other,ItAr_PAL_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи рыцаря' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_PAL_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Knight Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_PAL_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_M_V1) == FALSE) && (Npc_HasItems(other,ITAR_PAL_M_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи рыцаря' - 95 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Knight's Forged Armor' - 95 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_M_V12) == FALSE) && (Npc_HasItems(other,ITAR_PAL_M_V12) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи рыцаря' - 95 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V12);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Knight's Forged Armor' - 95 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V12);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_M_V13) == FALSE) && (Npc_HasItems(other,ITAR_PAL_M_V13) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи рыцаря' - 95 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V13);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Knight's Forged Armor' - 95 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V13);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_M_V14) == FALSE) && (Npc_HasItems(other,ITAR_PAL_M_V14) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи рыцаря' - 95 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V14);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Knight's Forged Armor' - 95 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V14);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_M_V15) == FALSE) && (Npc_HasItems(other,ITAR_PAL_M_V15) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Рудные доспехи рыцаря' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V15);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Knight's Ore Armor' - 100 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V15);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_M_V2) == FALSE) && (Npc_HasItems(other,ITAR_PAL_M_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Освященные рудные доспехи рыцаря' - 105 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Sacred Knight's Ore Armor' - 105 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_M_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_PAl_H) == FALSE) && (Npc_HasItems(other,ItAr_PAl_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи паладина' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_PAl_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Paladin Armor' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_PAl_H);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_H_V1) == FALSE) && (Npc_HasItems(other,ITAR_PAL_H_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи паладина' - 130 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Paladin's Forged Armor' - 130 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_H_V12) == FALSE) && (Npc_HasItems(other,ITAR_PAL_H_V12) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи паладина' - 130 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V12);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Paladin's Forged Armor' - 130 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V12);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_H_V13) == FALSE) && (Npc_HasItems(other,ITAR_PAL_H_V13) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи паладина' - 130 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V13);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Paladin's Forged Armor' - 130 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V13);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_H_V14) == FALSE) && (Npc_HasItems(other,ITAR_PAL_H_V14) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи паладина' - 130 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V14);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Paladin's Forged Armor' - 130 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V14);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_H_V15) == FALSE) && (Npc_HasItems(other,ITAR_PAL_H_V15) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Рудные доспехи паладина' - 140 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V15);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Paladin Ore Armor' - 140 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V15);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_PAL_H_V2) == FALSE) && (Npc_HasItems(other,ITAR_PAL_H_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Освященные рудные доспехи паладина' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Sanctified Paladin Ore Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_PAL_H_V2);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_DJG_L) == FALSE) && (Npc_HasItems(other,ITAR_DJG_L) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_DJG_L ) ==  FALSE ) && (Npc_HasItems(other, ITAR_DJG_L ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие доспехи драконоборца' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Dragon Slayer Light Armor' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_DJG_L_V1) == FALSE) && (Npc_HasItems(other,ITAR_DJG_L_V1) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_DJG_L_V1 ) ==  FALSE ) && (Npc_HasItems(other, ITAR_DJG_L_V1 ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи драконоборца' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Light Forged Dragonslayer Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_L_V2) == FALSE) && (Npc_HasItems(other,ITAR_DJG_L_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи драконоборца' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Light Forged Dragonslayer Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V2);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_DJG_L_V3) == FALSE) && (Npc_HasItems(other,ITAR_DJG_L_V3) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_DJG_L_V3 ) ==  FALSE ) && (Npc_HasItems(other, ITAR_DJG_L_V3 ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи драконоборца' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Light Forged Dragonslayer Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V3);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_DJG_L_V4) == FALSE) && (Npc_HasItems(other,ITAR_DJG_L_V4) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_DJG_L_V4 ) ==  FALSE ) && (Npc_HasItems(other, ITAR_DJG_L_V4 ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи драконоборца' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Light Forged Dragonslayer Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V4);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_DJG_L_V5) == FALSE) && (Npc_HasItems(other,ITAR_DJG_L_V5) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_DJG_L_V5 ) ==  FALSE ) && (Npc_HasItems(other, ITAR_DJG_L_V5 ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи драконоборца' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Light Forged Dragonslayer Armor' - 100 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_L_V5);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_M) == FALSE) && (Npc_HasItems(other,ITAR_DJG_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи драконоборца' - 110 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Dragon Slayer Armor' - 110 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_M_V1) == FALSE) && (Npc_HasItems(other,ITAR_DJG_M_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи драконоборца' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Dragonslayer Armor' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_M_V2) == FALSE) && (Npc_HasItems(other,ITAR_DJG_M_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи драконоборца' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Dragonslayer Armor' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_M_V3) == FALSE) && (Npc_HasItems(other,ITAR_DJG_M_V3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи драконоборца' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Dragonslayer Armor' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_M_V4) == FALSE) && (Npc_HasItems(other,ITAR_DJG_M_V4) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи драконоборца' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Dragonslayer Armor' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V4);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_M_V5) == FALSE) && (Npc_HasItems(other,ITAR_DJG_M_V5) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи драконоборца' - 130 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Dragonslayer Armor' - 130 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_M_V5);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_Dargonscale) == FALSE) && (Npc_HasItems(other,ITAR_Dargonscale) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ITAR_Dargonscale) ==  FALSE ) && (Npc_HasItems(other,ITAR_Dargonscale) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспех из драконьей чешуи' - 140 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Dargonscale);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Dragonscale Armor' - 140 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Dargonscale);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_H) == FALSE) && (Npc_HasItems(other,ITAR_DJG_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи драконоборца' - 140 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Dragonslayer Armor' - 140 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_H_V1) == FALSE) && (Npc_HasItems(other,ITAR_DJG_H_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи драконоборца' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Dragonslayer Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_H_V2) == FALSE) && (Npc_HasItems(other,ITAR_DJG_H_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи драконоборца' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Dragonslayer Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_H_V3) == FALSE) && (Npc_HasItems(other,ITAR_DJG_H_V3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи драконоборца' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Dragonslayer Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_H_V4) == FALSE) && (Npc_HasItems(other,ITAR_DJG_H_V4) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи драконоборца' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Dragonslayer Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V4);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DJG_H_V5) == FALSE) && (Npc_HasItems(other,ITAR_DJG_H_V5) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи драконоборца' - 160 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Dragonslayer Armor' - 160 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DJG_H_V5);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_DragonKiller) == FALSE) && (Npc_HasItems(other,ItAr_DragonKiller) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_DragonKiller) ==  FALSE ) && (Npc_HasItems(other,ItAr_DragonKiller) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи убийцы драконов' - 200 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_DragonKiller);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Dragon Slayer Armor' - 200 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_DragonKiller);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_SHVWarrior) == FALSE) && (Npc_HasItems(other,ItAr_SHVWarrior) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_SHVWarrior) ==  FALSE ) && (Npc_HasItems(other,ItAr_SHVWarrior) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи Вершителя' - 130 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_SHVWarrior);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Armor of the Executor' - 130 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_SHVWarrior);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_LST) == FALSE) && (Npc_HasItems(other,ITAR_TPL_LST) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Боевой кильт Стража Братства' - 70 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_LST);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Guard Battle Kilt' - 70 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_LST);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_L) == FALSE) && (Npc_HasItems(other,ITAR_TPL_L) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие доспехи Стража Братства' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Guard Light Armor' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_L_V1) == FALSE) && (Npc_HasItems(other,ITAR_TPL_L_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи Стража Братства' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Guard Light Forged Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_L_V2) == FALSE) && (Npc_HasItems(other,ITAR_TPL_L_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи Стража Братства' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Guard Light Forged Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_L_V3) == FALSE) && (Npc_HasItems(other,ITAR_TPL_L_V3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи Стража Братства' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Guard Light Forged Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_L_V4) == FALSE) && (Npc_HasItems(other,ITAR_TPL_L_V4) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи Стража Братства' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Guard Light Forged Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V4);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_L_V5) == FALSE) && (Npc_HasItems(other,ITAR_TPL_L_V5) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Легкие кованые доспехи Стража Братства' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Fraternity Guard Light Forged Armor' - 100 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_L_V5);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_M) == FALSE) && (Npc_HasItems(other,ITAR_TPL_M) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи Стража Братства' - 110 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Guard Armor' - 110 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_M_V1) == FALSE) && (Npc_HasItems(other,ITAR_TPL_M_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи Стража Братства' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Brotherhood Guard Armor' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_M_V2) == FALSE) && (Npc_HasItems(other,ITAR_TPL_M_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи Стража Братства' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Brotherhood Guard Armor' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_M_V3) == FALSE) && (Npc_HasItems(other,ITAR_TPL_M_V3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи Стража Братства' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Armor of the Brotherhood Guard' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_M_V4) == FALSE) && (Npc_HasItems(other,ITAR_TPL_M_V4) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи Стража Братства' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Armor of the Brotherhood Guard' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V4);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_M_V5) == FALSE) && (Npc_HasItems(other,ITAR_TPL_M_V5) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кованые доспехи Стража Братства' - 130 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Forged Armor of the Brotherhood Guard' - 130 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_M_V5);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_S) == FALSE) && (Npc_HasItems(other,ITAR_TPL_S) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи Стража Братства' - 140 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Brotherhood Guard Armor' - 140 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_S_V1) == FALSE) && (Npc_HasItems(other,ITAR_TPL_S_V1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи Стража Братства' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Brotherhood Guard Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_S_V2) == FALSE) && (Npc_HasItems(other,ITAR_TPL_S_V2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи Стража Братства' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Armor of the Brotherhood Guard' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_S_V3) == FALSE) && (Npc_HasItems(other,ITAR_TPL_S_V3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи Стража Братства' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Brotherhood Guard Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_S_V4) == FALSE) && (Npc_HasItems(other,ITAR_TPL_S_V4) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи Стража Братства' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Armor of the Brotherhood Guard' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V4);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TPL_S_V5) == FALSE) && (Npc_HasItems(other,ITAR_TPL_S_V5) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые кованые доспехи Стража Братства' - 160 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Forged Armor of the Brotherhood Guard' - 160 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TPL_S_V5);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_KDF_H) == FALSE) && (Npc_HasItems(other,ItAr_KDF_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба высшего мага Огня' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDF_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Robe of the Grand Fire Mage' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDF_H);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_KDF_H_BLESSED) == FALSE) && (Npc_HasItems(other,ITAR_KDF_H_BLESSED) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Освященная роба высшего мага Огня' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDF_H_BLESSED);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Sanctified Robe of the High Fire Mage' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDF_H_BLESSED);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_KDF_SH) == FALSE) && (Npc_HasItems(other,ItAr_KDF_SH) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_KDF_SH) ==  FALSE ) && (Npc_HasItems(other,ItAr_KDF_SH) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба архимага Огня' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDF_SH);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Please sell armor' - 100 minutes " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDF_SH);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_KDW_H) == FALSE) && (Npc_HasItems(other,ITAR_KDW_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба высшего мага Воды' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDW_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Robe of Grand Water Mage' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDW_H);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_KDW_SH) == FALSE) && (Npc_HasItems(other,ItAr_KDW_SH) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_KDW_SH) ==  FALSE ) && (Npc_HasItems(other,ItAr_KDW_SH) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба архимага Воды' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDW_SH);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Robe of the Water Archmage' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDW_SH);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_KDW_ADANOS) == FALSE) && (Npc_HasItems(other,ITAR_KDW_ADANOS) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_KDW_ADANOS ) ==  FALSE ) && (Npc_HasItems(other, ITAR_KDW_ADANOS ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба жреца Аданоса' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDW_ADANOS);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Personal Self' - 100 minutes " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_KDW_ADANOS);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DMT_H) == FALSE) && (Npc_HasItems(other,ITAR_DMT_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба высшего темного мага' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DMT_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Superior Shadow Mage Robe' - 100 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DMT_H);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DMT_H_BELIAR_1) == FALSE) && (Npc_HasItems(other,ITAR_DMT_H_BELIAR_1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Оскверненная роба высшего темного мага' - 110 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DMT_H_BELIAR_1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Corrupted Supreme Shadow Mage Robe' - 110 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DMT_H_BELIAR_1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DMT_H_BELIAR_3) == FALSE) && (Npc_HasItems(other,ITAR_DMT_H_BELIAR_3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба вестника Тьмы' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DMT_H_BELIAR_3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Darkbringer Robe' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DMT_H_BELIAR_3);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_KDM_SH) == FALSE) && (Npc_HasItems(other,ItAr_KDM_SH) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_KDM_SH) ==  FALSE ) && (Npc_HasItems(other,ItAr_KDM_SH) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба архимага Тьмы' - 130 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDM_SH);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Robe of the Archmage of Darkness' - 130 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_KDM_SH);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_GUR_H) == FALSE) && (Npc_HasItems(other,ITAR_GUR_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба высшего гуру Братства' - 110 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_GUR_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Brotherhood Supreme Guru Robes' - 110 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_GUR_H);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_HARADRIMMAGE) == FALSE) && (Npc_HasItems(other,ITAR_HARADRIMMAGE) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_HARADRIMMAGE ) ==  FALSE ) && (Npc_HasItems(other, ITAR_HARADRIMMAGE ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Роба адепта Хранителей' - 50 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_HARADRIMMAGE);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Rob of the Guardian Adept' - 50 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_HARADRIMMAGE);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_BloodArmor) == FALSE) && (Npc_HasItems(other,ItAr_BloodArmor) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_BloodArmor) ==  FALSE ) && (Npc_HasItems(other,ItAr_BloodArmor) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи Крови' - 170 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_BloodArmor);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Blood Armor' - 170 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_BloodArmor);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ASSASINS_01) == FALSE) && (Npc_HasItems(other,ITAR_ASSASINS_01) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи тени Масиаф' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_01);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Masyaf Shadow Heavy Armor' - 100 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_01);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ASSASINS_02) == FALSE) && (Npc_HasItems(other,ITAR_ASSASINS_02) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи приора Масиаф' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_02);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Armor of Prior Masyaf' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_02);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ASSASINS_03) == FALSE) && (Npc_HasItems(other,ITAR_ASSASINS_03) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи послушника Масиаф' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_03);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Masyaf Acolyte Armor' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_03);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ASSASINS_04) == FALSE) && (Npc_HasItems(other,ITAR_ASSASINS_04) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи тени Масиаф' - 90 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_04);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Masyaf Shadow Armor' - 90 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_04);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ASSASINS_DEMONMAGE) == FALSE) && (Npc_HasItems(other,ITAR_ASSASINS_DEMONMAGE) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи гуру-демона' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_DEMONMAGE);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Guru Demon Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASSASINS_DEMONMAGE);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_Hun_H) == FALSE) && (Npc_HasItems(other,ItAr_Hun_H) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Тяжелые доспехи охотника' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Hun_H);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Heavy Hunter Armor' - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Hun_H);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DHT_END) == FALSE) && (Npc_HasItems(other,ITAR_DHT_END) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи ловкача' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Database' - 10 minutes ago " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_HuntArmor_01) == FALSE) && (Npc_HasItems(other,ItAr_HuntArmor_01) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_HuntArmor_01) ==  FALSE ) && (Npc_HasItems(other,ItAr_HuntArmor_01) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи охотника-следопыта' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_HuntArmor_01);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Hunter Armor' - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_HuntArmor_01);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_HuntArmor_02) == FALSE) && (Npc_HasItems(other,ItAr_HuntArmor_02) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_HuntArmor_02) ==  FALSE ) && (Npc_HasItems(other,ItAr_HuntArmor_02) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи охотника-зверобоя' - 60 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_HuntArmor_02);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'St. John's Wort Armor' - 60 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_HuntArmor_02);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_HuntArmor_03) == FALSE) && (Npc_HasItems(other,ItAr_HuntArmor_03) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_HuntArmor_03) ==  FALSE ) && (Npc_HasItems(other,ItAr_HuntArmor_03) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи охотника-троллебойца' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_HuntArmor_03);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Troll Hunter Armor' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_HuntArmor_03);
 	};
-	if((Hlp_IsItem(EquipWeap,ItAr_HuntArmor_04) == FALSE) && (Npc_HasItems(other,ItAr_HuntArmor_04) >= 1))
+	if ((Hlp_IsItem(EquipWeap,ItAr_HuntArmor_04) ==  FALSE ) && (Npc_HasItems(other,ItAr_HuntArmor_04) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи мастера-охотника' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_HuntArmor_04);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Master Hunter Armor' - 100 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_HuntArmor_04);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DHT_END_1) == FALSE) && (Npc_HasItems(other,ITAR_DHT_END_1) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи вора' - 20 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_1);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Thief Armor' - 20 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_1);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DHT_END_2) == FALSE) && (Npc_HasItems(other,ITAR_DHT_END_2) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи призрака' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_2);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Ghost Armor' - 30 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_2);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DHT_END_3) == FALSE) && (Npc_HasItems(other,ITAR_DHT_END_3) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи ночной тени' - 50 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_3);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Nightshade Armor' - 50 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_3);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DHT_END_4) == FALSE) && (Npc_HasItems(other,ITAR_DHT_END_4) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи мастера-вора' - 60 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_4);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Master Thief Armor' - 60 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_4);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DHT_END_5) == FALSE) && (Npc_HasItems(other,ITAR_DHT_END_5) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи главаря воров' - 80 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_5);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Thieves Leader Armor' - 80 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_5);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_DHT_END_6) == FALSE) && (Npc_HasItems(other,ITAR_DHT_END_6) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи короля воров' - 100 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_6);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Armor of the King of Thieves' - 100 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_DHT_END_6);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ASS) == FALSE) && (Npc_HasItems(other,ITAR_ASS) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспех ассасина' - 120 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASS);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Assassin Armor' - 120 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASS);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_TOPTHIEF) == FALSE) && (Npc_HasItems(other,ITAR_TOPTHIEF) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспех Эр'Хазира' - 150 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_TOPTHIEF);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Er'Hazir Armor' - 150 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_TOPTHIEF);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ASGARD) == FALSE) && (Npc_HasItems(other,ITAR_ASGARD) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспех призрачной тени' - 180 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASGARD);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Ghost Shadow Armor' - 180 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ASGARD);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_ADVENTURE_HERO) == FALSE) && (Npc_HasItems(other,ITAR_ADVENTURE_HERO) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Доспехи авантюриста' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_ADVENTURE_HERO);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Adventurer Armor' - 30 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_ADVENTURE_HERO);
 	};
 	if((Hlp_IsItem(EquipWeap,ItAr_OldSteelArmor) == FALSE) && (Npc_HasItems(other,ItAr_OldSteelArmor) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Стальной самокованный доспех' - 60 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_OldSteelArmor);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Steel Self-Forged Armor' - 60 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_OldSteelArmor);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_STTP_01) == FALSE) && (Npc_HasItems(other,ITAR_STTP_01) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Кольчуга призрака' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_STTP_01);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Ghost Chain' - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_STTP_01);
 	};
-	if((Hlp_IsItem(EquipWeap,ITAR_OREARMOR) == FALSE) && (Npc_HasItems(other,ITAR_OREARMOR) >= 1))
+	if ((Hlp_IsItem(EquipWeap, ITAR_OREARMOR ) ==  FALSE ) && (Npc_HasItems(other, ITAR_OREARMOR ) >=  1 ))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Рудные доспехи Света' - 250 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_OREARMOR);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Ore Armor of Light' - 250 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_OREARMOR);
 	};
 	if((Hlp_IsItem(EquipWeap,ITAR_Raven_Addon) == FALSE) && (Npc_HasItems(other,ITAR_Raven_Addon) >= 1))
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Рудные доспехи Тьмы' - 250 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ITAR_Raven_Addon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Dark Ore Armor' - 250 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ITAR_Raven_Addon);
 	};
 	if(Npc_HasItems(other,ItAr_Hut) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Матерчатая шапка' - 1 кусок руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Hut);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Mother's Hat' - 1 piece of ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Hut);
 	};
 	if(Npc_HasItems(other,ItAr_HoodHelm) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Матерчатая накидка' - 2 куска руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_HoodHelm);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Cloth Cape' - 2 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_HoodHelm);
 	};
 	if(Npc_HasItems(other,ItAr_ThiefHut) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шапка вора' - 2 куска руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_ThiefHut);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Can SellArmor_Do' - 2 pages " ,XBS_7513_DARRION_CanSellArmor_Do_ItIs_ThiefHut);
 	};
 	if(Npc_HasItems(other,ItAr_PirateHat) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шляпа капитана' - 3 куска руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_PirateHat);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Entertainment' - 3 pages " ,XBS_7513_DARRION_CanSellArmor_Do_ItIs_PirateHat);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_01) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Железный шлем' - 5 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_01);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Iron Helmet' - 5 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_01);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_New_01) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шлем лучника' - 5 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_New_01);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Archer's Helm' - 5 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_New_01);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_New_02) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шлем Эр'Хазира' - 30 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_New_02);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Boy's 'Armor' - 30 minutes ago " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_New_02);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_02) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Нордмарский шлем' - 8 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_02);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Darrion Armor' - 8 minutes ago " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_02);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_Hunt) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Покров берсерка' - 15 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_Hunt);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Can SellArmor_Do' - 15 years ago " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Hunt_Hunt);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_03) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шлем рыцаря' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_03);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Knight's Helmet' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_03);
 	};
 	if(Npc_HasItems(other,ItAr_Pal_Helm) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шлем паладина' - 15 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Pal_Helm);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Boy's' - 15 minutes ago " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Pal_Helm);
 	};
 	if(Npc_HasItems(other,ItAr_Pal_Helm_Open) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шлем паладина' - 15 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Pal_Helm_Open);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Boy's' - 15 minutes ago " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Pal_Helm_Open);
 	};
 	if(Npc_HasItems(other,ItAr_DJG_Helm) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шлем драконоборца' - 20 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_DJG_Helm);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Dragon Slayer Helm' - 20 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_DJG_Helm);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_Demon) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Драконий шлем' - 40 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_Demon);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Dragon Helmet' - 40 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_Demon);
 	};
 	if(Npc_HasItems(other,ItAr_God_Helm) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Древний шлем' - 50 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_God_Helm);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Ancient Helmet' - 50 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_God_Helm);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_G3_01) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Стальной шлем' - 10 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_G3_01);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Steel Helmet' - 10 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_G3_01);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_G3_02) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шлем наемника' - 12 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_G3_02);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Boy's' - 12 minutes ago " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_G3_02);
 	};
 	if(Npc_HasItems(other,ItAr_Helm_G3_04) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Рогатый шлем' - 12 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_G3_04);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Horned Helm' - 12 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_Helm_G3_04);
 	};
 	if(Npc_HasItems(other,ItAr_ShrecHelm) >= 1)
 	{
-		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do,"'Шлем жреца Зодчих' - 8 кусков руды",XBS_7513_DARRION_CanSellArmor_Do_ItAr_ShrecHelm);
+		Info_AddChoice(XBS_7513_DARRION_CanSellArmor_Do, " 'Architect Priest Helmet' - 8 Ore " ,XBS_7513_DARRION_CanSellArmor_Do_ItAr_ShrecHelm);
 	};
 };
 
