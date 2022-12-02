@@ -1,4 +1,5 @@
 
+
 instance DIA_NASH_EXIT(C_Info)
 {
 	npc = vlk_6010_nash;
@@ -29,7 +30,7 @@ instance DIA_NASH_HELLO(C_Info)
 	information = dia_nash_hello_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Эй парень, как дела?";
+	description = " Hey man, how are you? " ;
 };
 
 
@@ -43,70 +44,70 @@ func int dia_nash_hello_condition()
 
 func void dia_nash_hello_info()
 {
-	AI_Output(other,self,"DIA_Nash_Hello_01_01");	//Эй, парень, как дела?
-	AI_Output(self,other,"DIA_Nash_Hello_01_02");	//Нормально, приятель. Ты же тот новичок, который недавно появился в лагере?
-	AI_Output(other,self,"DIA_Nash_Hello_01_03");	//Да, это я. И что с того?
-	AI_Output(self,other,"DIA_Nash_Hello_01_04");	//Если хочешь знать мое мнение, то, по-моему ты просто сумасшедший! У тебя точно крыша поехала!
-	AI_Output(self,other,"DIA_Nash_Hello_01_05");	//Ты хоть представляешь, куда ты попал? На твоем месте я бы уже давно свалил из этого местечка куда подальше.
-	AI_Output(other,self,"DIA_Nash_Hello_01_06");	//Но ты не на моем месте...
-	AI_Output(self,other,"DIA_Nash_Hello_01_07");	//Да ладно, не обижайся. Просто я и подумать не мог, что кто-то вот так отважиться прийти сюда, да еще и по собственному желанию.
-	AI_Output(self,other,"DIA_Nash_Hello_01_08");	//Ты наверно очень храбрый парень...
+	AI_Output(other,self, " DIA_Nash_Hello_01_01 " );	// Hey man, how are you?
+	AI_Output(self,other, " DIA_Nash_Hello_01_02 " );	// Fine, mate. Are you the newbie who recently showed up at camp?
+	AI_Output(other,self, " DIA_Nash_Hello_01_03 " );	// Yes, it's me. So what?
+	AI_Output(self,other, " DIA_Nash_Hello_01_04 " );	// If you want to know my opinion, then I think you're just crazy! You've definitely gone crazy!
+	AI_Output(self,other, " DIA_Nash_Hello_01_05 " );	// Do you have any idea where you've ended up? If I were you, I would have left this place a long time ago.
+	AI_Output(other,self, " DIA_Nash_Hello_01_06 " );	// But you're not in my place...
+	AI_Output(self,other, " DIA_Nash_Hello_01_07 " );	// Come on, don't be offended. It's just that I couldn't even think that someone would dare to come here like that, and even of their own free will.
+	AI_Output(self,other, " DIA_Nash_Hello_01_08 " );	// You must be a very brave guy...
 	AI_Output(other,self,"DIA_Nash_Hello_01_09");	//А ты нет?
-	AI_Output(self,other,"DIA_Nash_Hello_01_10");	//Я? Нет, приятель. По мне лучше сидеть здесь, в пещере. Подальше от всяких там неприятностей!
-	AI_Output(other,self,"DIA_Nash_Hello_01_11");	//И ты весь день торчишь в этой пещере?
-	AI_Output(self,other,"DIA_Nash_Hello_01_12");	//Да. И не могу сказать, что мне это не нравится.
-	AI_Output(other,self,"DIA_Nash_Hello_01_13");	//А чем тогда ты вообще тут занимаешься?
-	AI_Output(self,other,"DIA_Nash_Hello_01_14");	//Я помогаю Хасану охранять склад, когда он отдыхает. Все равно из меня охотник никудышный.
-	AI_Output(self,other,"DIA_Nash_Hello_01_15");	//Не то, что Багрус, например, или Гунмар! Эти парни знают свое дело.
-	AI_Output(self,other,"DIA_Nash_Hello_01_16");	//Ну, и кроме того, кто-то же должен следить за тем, что бы парни не умирали с голоду, когда возвращаются с охоты.
-	AI_Output(other,self,"DIA_Nash_Hello_01_17");	//Ты что - повар?
-	AI_Output(self,other,"DIA_Nash_Hello_01_18");	//Ну, типа того. Особенно у меня хорошо получается мясной суп с добавкой сушеных корнеплодов. Просто пальчики оближешь!
-	AI_Output(self,other,"DIA_Nash_Hello_01_19");	//Могу даже поспорить, что вряд ли кто-то вообще сумеет приготовить нечто подобное, как мой суп.
-	AI_Output(self,other,"DIA_Nash_Hello_01_20");	//Хочешь попробовать?
+	AI_Output(self,other, " DIA_Nash_Hello_01_10 " );	// Me? No, buddy. It's better for me to sit here in the cave. Away from any troubles there!
+	AI_Output(other,self, " DIA_Nash_Hello_01_11 " );	// And you're stuck in this cave all day?
+	AI_Output(self,other, " DIA_Nash_Hello_01_12 " );	// Yes. And I can't say that I don't like it.
+	AI_Output(other,self, " DIA_Nash_Hello_01_13 " );	// What are you doing here anyway?
+	AI_Output(self,other, " DIA_Nash_Hello_01_14 " );	// I help Hasan guard the warehouse when he's resting. Anyway, I'm not a good hunter.
+	AI_Output(self,other, " DIA_Nash_Hello_01_15 " );	// Not like Bagrus, for example, or Gunmar! These guys know their stuff.
+	AI_Output(self,other, " DIA_Nash_Hello_01_16 " );	// Well, besides, someone has to make sure that the guys don't starve to death when they come back from the hunt.
+	AI_Output(other,self, " DIA_Nash_Hello_01_17 " );	// Are you a chef?
+	AI_Output(self,other, " DIA_Nash_Hello_01_18 " );	// Well, sort of. I am especially good at meat soup with the addition of dried root vegetables. Just lick your fingers!
+	AI_Output(self,other, " DIA_Nash_Hello_01_19 " );	// I bet that hardly anyone can even cook something like my soup.
+	AI_Output(self,other, " DIA_Nash_Hello_01_20 " );	// Would you like to try?
 	Info_ClearChoices(dia_nash_hello);
-	Info_AddChoice(dia_nash_hello,"С удовольствием.",dia_nash_hello_yes);
-	Info_AddChoice(dia_nash_hello,"Нет, спасибо.",dia_nash_hello_no);
+	Info_AddChoice(dia_nash_hello, " With pleasure. " ,dia_nash_hello_yes);
+	Info_AddChoice(dia_nash_hello, " No thanks. " ,dia_nash_hello_no);
 };
 
 func void dia_nash_hello_yes()
 {
-	AI_Output(other,self,"DIA_Nash_Hello_01_21");	//С удовольствием...
+	AI_Output(other,self, " DIA_Nash_Hello_01_21 " );	// With pleasure...
 	AI_Output(self,other,"DIA_Nash_Hello_01_22");	//Держи.
 	CreateInvItems(other,itfo_nashsoup,1);
 	B_UseItem(other,itfo_nashsoup);
-	AI_Output(self,other,"DIA_Nash_Hello_01_23");	//Ну и как?
+	AI_Output(self,other, " DIA_Nash_Hello_01_23 " );	// Well, how?
 	Info_ClearChoices(dia_nash_hello);
-	Info_AddChoice(dia_nash_hello,"Знатный супец!",dia_nash_hello_ok);
-	Info_AddChoice(dia_nash_hello,"Да как-то не очень.",dia_nash_hello_not);
+	Info_AddChoice(dia_nash_hello, " Noble soup! " ,dia_nash_hello_ok);
+	Info_AddChoice(dia_nash_hello, " Not really. " ,dia_nash_hello_not);
 };
 
 func void dia_nash_hello_no()
 {
-	AI_Output(other,self,"DIA_Nash_Hello_01_24");	//Нет, спасибо.
-	AI_Output(self,other,"DIA_Nash_Hello_01_25");	//Ну, дело твое, конечно. Хотя зря ты отказался...
+	AI_Output(other,self, " DIA_Nash_Hello_01_24 " );	// No thanks.
+	AI_Output(self,other, " DIA_Nash_Hello_01_25 " );	// Well, it's up to you, of course. Even though you refused...
 	MEETNASH = TRUE;
 };
 
 func void dia_nash_hello_ok()
 {
-	AI_Output(other,self,"DIA_Nash_Hello_01_26");	//Знатный супец!
-	AI_Output(self,other,"DIA_Nash_Hello_01_27");	//Я так и знал, что тебе он понравится. Еще никто нос не воротил!
-	AI_Output(other,self,"DIA_Nash_Hello_01_28");	//Правда, вкус у твоего супа какой-то странный.
-	AI_Output(self,other,"DIA_Nash_Hello_01_29");	//По первому разу да, есть немного. Но потом привыкаешь и уже глядишь - а тебя от тарелки и за уши не оттащишь! (смеется)
-	AI_Output(other,self,"DIA_Nash_Hello_01_30");	//А чье мясо было в супе?
-	AI_Output(self,other,"DIA_Nash_Hello_01_31");	//Если честно, тебе лучше не знать...
+	AI_Output(other,self, " DIA_Nash_Hello_01_26 " );	// Noble soup!
+	AI_Output(self,other, " DIA_Nash_Hello_01_27 " );	// I knew you'd like it. No one has turned up their nose yet!
+	AI_Output(other,self, " DIA_Nash_Hello_01_28 " );	// True, your soup tastes kind of weird.
+	AI_Output(self,other, " DIA_Nash_Hello_01_29 " );	// For the first time, yes, there are a few. But then you get used to it and you already look - but you can’t drag you off the plate and by the ears! (laughs)
+	AI_Output(other,self, " DIA_Nash_Hello_01_30 " );	// Whose meat was in the soup?
+	AI_Output(self,other, " DIA_Nash_Hello_01_31 " );	// To be honest, you're better off not knowing...
 	AI_StopProcessInfos(self);
-	NASH_STEW_DAY = Wld_GetDay();
+	NASH_STEW_DAY = World_GetDay();
 	MEETNASH = TRUE;
 	NASHREADYTEACH = TRUE;
 };
 
 func void dia_nash_hello_not()
 {
-	AI_Output(other,self,"DIA_Nash_Hello_01_33");	//Да как-то не очень.
-	AI_Output(self,other,"DIA_Nash_Hello_01_34");	//Странно. У ребят в лагере он просто на ура идет. Еще и добавки просят!
-	AI_Output(other,self,"DIA_Nash_Hello_01_35");	//Ну, значит, я буду первым, кто ее не станет просить.
-	AI_Output(self,other,"DIA_Nash_Hello_01_36");	//Жаль, что тебе он не понравился. Но как говорится, на вкус и цвет...
+	AI_Output(other,self, " DIA_Nash_Hello_01_33 " );	// Yes, somehow not very.
+	AI_Output(self,other, " DIA_Nash_Hello_01_34 " );	// Strange. For the guys in the camp, he just goes with a bang. They also ask for supplements!
+	AI_Output(other,self, " DIA_Nash_Hello_01_35 " );	// Well, then I'll be the first to not ask her.
+	AI_Output(self,other, " DIA_Nash_Hello_01_36 " );	// Too bad you didn't like it. But as they say, the taste and color ...
 	AI_StopProcessInfos(self);
 	MEETNASH = TRUE;
 };
@@ -120,7 +121,7 @@ instance DIA_NASH_HELLO_VALLEY(C_Info)
 	information = dia_nash_hello_valley_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Можешь рассказать что-нибудь о долине?";
+	description = " Can you tell me something about the valley? " ;
 };
 
 
@@ -134,25 +135,25 @@ func int dia_nash_hello_valley_condition()
 
 func void dia_nash_hello_valley_info()
 {
-	AI_Output(other,self,"DIA_Nash_Hello_Valley_01_01");	//Можешь рассказать что-нибудь о долине?
-	AI_Output(self,other,"DIA_Nash_Hello_Valley_01_02");	//Навряд ли, приятель. Тебе лучше поговорить об этом с Эльваисом или с другими парнями.
-	AI_Output(self,other,"DIA_Nash_Hello_Valley_01_03");	//Они лучше, чем я знают местность в округе.
-	AI_Output(other,self,"DIA_Nash_Hello_Valley_01_04");	//Ну, может, они тебе что-нибудь рассказывали?
-	AI_Output(self,other,"DIA_Nash_Hello_Valley_01_05");	//Хмм... дай подумать...
+	AI_Output(other,self, " DIA_Nash_Hello_Valley_01_01 " );	// Can you tell me something about the valley?
+	AI_Output(self,other, " DIA_Nash_Hello_Valley_01_02 " );	// Probably not, mate. You better talk to Elvais or the other guys about it.
+	AI_Output(self,other, " DIA_Nash_Hello_Valley_01_03 " );	// They know the area better than I do.
+	AI_Output(other,self, " DIA_Nash_Hello_Valley_01_04 " );	// Well, maybe they told you something?
+	AI_Output(self,other, " DIA_Nash_Hello_Valley_01_05 " );	// Hmm...let me think...
 	if(NASHREADYTEACH == TRUE)
 	{
-		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_06");	//Помнится, Каррок, один из охотников когда-то мне рассказывал, как наткнулся на какой-то странный подземный... то ли склеп, то ли храм...
-		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_07");	//Я уже не помню... Он говорил, что это находится где-то к востоку от нашего лагеря... так давно это было.
-		AI_Output(other,self,"DIA_Nash_Hello_Valley_01_08");	//А где сейчас сам Каррок?
-		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_09");	//К сожалению, однажды он пошел на охоту и так с нее и не вернулся.
-		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_10");	//Он все твердил, что хочет еще раз попробовать проникнуть в тот подземный храм.
-		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_11");	//Возможно, именно там он и нашел свою судьбу...
-		B_LogEntry(TOPIC_URNAZULRAGE,"В лагере, я повстречал парня по имени Нэш. Он рассказал, что один охотник из лагеря по имени Каррок, в свое время нашел вход в подземный храм, где-то на востоке долины. К сожалению, самого Каррока я не смогу об этом спросить, поскольку с тех пор его никто не видел. Судя по всему, он погиб, пытаясь пробраться в сам храм.");
+		AI_Output(self,other, " DIA_Nash_Hello_Valley_01_06 " );	// I remember, Carrock, one of the hunters once told me how he stumbled upon some strange underground ... either a crypt, or a temple ...
+		AI_Output(self,other, " DIA_Nash_Hello_Valley_01_07 " );	// I don't remember anymore... He said it was somewhere to the east of our camp... it was so long ago.
+		AI_Output(other,self, " DIA_Nash_Hello_Valley_01_08 " );	// And where is Carrock himself now?
+		AI_Output(self,other, " DIA_Nash_Hello_Valley_01_09 " );	// Unfortunately, one day he went hunting and never came back.
+		AI_Output(self,other, " DIA_Nash_Hello_Valley_01_10 " );	// He kept saying that he wanted to try to get into that underground temple again.
+		AI_Output(self,other, " DIA_Nash_Hello_Valley_01_11 " );	// Maybe that's where he found his destiny...
+		B_LogEntry( TOPIC_URNAZULRAGE , " In the camp, I met a guy named Nash. He said that one hunter from the camp named Carrock, at one time found the entrance to an underground temple, somewhere in the east of the valley. Unfortunately, I did not I can ask about it, because no one has seen him since. Apparently, he died trying to get into the temple itself. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_12");	//Нет... ничего такого не припоминаю... Извини, парень.
-		AI_Output(other,self,"DIA_Nash_Hello_Valley_01_13");	//Ну, на нет и суда нет.
+		AI_Output(self,other, " DIA_Nash_Hello_Valley_01_12 " );	// No... I don't remember anything like that... Sorry, man.
+		AI_Output(other,self, " DIA_Nash_Hello_Valley_01_13 " );	// Well, there is no trial.
 	};
 	ASKNASHVALLEY = TRUE;
 };
@@ -166,7 +167,7 @@ instance DIA_NASH_HELLO_SOUPAGAIN(C_Info)
 	information = dia_nash_hello_soupagain_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Дай мне еще твоего супчика.";
+	description = " Give me more of your soup. " ;
 };
 
 
@@ -180,16 +181,16 @@ func int dia_nash_hello_soupagain_condition()
 
 func void dia_nash_hello_soupagain_info()
 {
-	AI_Output(other,self,"DIA_Nash_Hello_SoupAgain_01_01");	//Дай мне еще твоего супчика.
-	if(NASH_STEW_DAY != Wld_GetDay())
+	AI_Output(other,self, " DIA_Nash_Hello_SoupAgain_01_01 " );	// Give me some more of your soup.
+	if ( NASH_STEW_DAY  != Wld_GetDay())
 	{
 		B_GiveInvItems(self,other,itfo_nashsoup,1);
-		AI_Output(self,other,"DIA_Nash_Hello_SoupAgain_01_02");	//Вот, возьми...
-		NASH_STEW_DAY = Wld_GetDay();
+		AI_Output(self,other, " DIA_Nash_Hello_SoupAgain_01_02 " );	// Here, take this...
+		NASH_STEW_DAY = World_GetDay();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Nash_Hello_SoupAgain_01_03");	//Ты сегодня уже получил свою порцию! Приходи завтра.
+		AI_Output(self,other, " DIA_Nash_Hello_SoupAgain_01_03 " );	// You already got your portion today! Come tomorrow.
 	};
 };
 
@@ -200,7 +201,7 @@ instance DIA_Nash_Shield(C_Info)
 	condition = DIA_Nash_Shield_condition;
 	information = DIA_Nash_Shield_info;
 	permanent = FALSE;
-	description = "Я смотрю, ты носишь щит.";
+	description = " I see you're wearing a shield. " ;
 };
 
 func int DIA_Nash_Shield_condition()
@@ -213,22 +214,22 @@ func int DIA_Nash_Shield_condition()
 
 func void DIA_Nash_Shield_info()
 {
-	AI_Output(other,self,"DIA_Nash_Shield_01_01");	//Я смотрю, ты носишь щит.
-	AI_Output(self,other,"DIA_Nash_Shield_01_02");	//А тебя это удивляет? В таком месте, как это надежный щит может спасти тебе жизнь!
-	AI_Output(self,other,"DIA_Nash_Shield_01_04");	//Если, конечно, ты знаешь, как с ним обращаться.
-	AI_Output(other,self,"DIA_Nash_Shield_01_05");	//А меня ты можешь обучить сражаться с ним?
-	AI_Output(self,other,"DIA_Nash_Shield_01_06");	//Конечно, могу! Но для этого ты должен хотя бы немного разбираться в этом деле.
-	AI_Output(self,other,"DIA_Nash_Shield_01_07");	//Для зеленого новичка мои уроки будут абсолютно бесполезны.
-	AI_Output(self,other,"DIA_Nash_Shield_01_08");	//Кроме того, тебе придется заплатить за них.
-	AI_Output(self,other,"DIA_Nash_Shield_01_09");	//Но не золотом, как ты мог подумать! Для нас его звон здесь мало что значит.
-	AI_Output(other,self,"DIA_Nash_Shield_01_10");	//А чего же ты хочешь?
-	AI_Output(self,other,"DIA_Nash_Shield_01_11");	//Еды, конечно! С ней у нас тут очень большие проблемы.
-	AI_Output(self,other,"DIA_Nash_Shield_01_12");	//Поэтому за то, чтобы я тебя тренировал, ты принесешь мне пятьдесят кусков свежего мяса.
-	AI_Output(other,self,"DIA_Nash_Shield_01_13");	//Ладно, я подумаю над твоим предложением.
+	AI_Output(other,self, " DIA_Nash_Shield_01_01 " );	// I see you're wearing a shield.
+	AI_Output(self,other, " DIA_Nash_Shield_01_02 " );	// Does that surprise you? In a place like this, a strong shield can save your life!
+	AI_Output(self,other, " DIA_Nash_Shield_01_04 " );	// If, of course, you know how to handle it.
+	AI_Output(other,self, " DIA_Nash_Shield_01_05 " );	// Can you train me to fight him?
+	AI_Output(self,other, " DIA_Nash_Shield_01_06 " );	// Of course I can! But for this you must at least understand a little about this matter.
+	AI_Output(self,other, " DIA_Nash_Shield_01_07 " );	// For a green beginner, my lessons will be absolutely useless.
+	AI_Output(self,other, " DIA_Nash_Shield_01_08 " );	// Plus, you'll have to pay for them.
+	AI_Output(self,other, " DIA_Nash_Shield_01_09 " );	// But not gold, as you might think! For us, his ringing here means little.
+	AI_Output(other,self, " DIA_Nash_Shield_01_10 " );	// What do you want?
+	AI_Output(self,other, " DIA_Nash_Shield_01_11 " );	// Food, of course! We have a lot of problems with her.
+	AI_Output(self,other, " DIA_Nash_Shield_01_12 " );	// Therefore, in order for me to train you, you will bring me fifty pieces of fresh meat.
+	AI_Output(other,self, " DIA_Nash_Shield_01_13 " );	// Okay, I'll think about your suggestion.
 	MIS_MeetNashShield = LOG_Running;
 	Log_CreateTopic(TOPIC_MeetNashShield,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MeetNashShield,LOG_Running);
-	B_LogEntry(TOPIC_MeetNashShield,"Нэш может научить меня обращению с щитом. Однако за это он попросил принести ему полсотни кусков мяса.");
+	B_LogEntry(TOPIC_MeetNashShield, " Nash can teach me how to use the shield. However, for this he asked me to bring him fifty pieces of meat. " );
 };
 
 instance DIA_Nash_ShieldDone(C_Info)
@@ -238,7 +239,7 @@ instance DIA_Nash_ShieldDone(C_Info)
 	condition = DIA_Nash_ShieldDone_condition;
 	information = DIA_Nash_ShieldDone_info;
 	permanent = FALSE;
-	description = "Вот твое мясо.";
+	description = " Here's your meat. " ;
 };
 
 func int DIA_Nash_ShieldDone_condition()
@@ -252,15 +253,15 @@ func int DIA_Nash_ShieldDone_condition()
 func void DIA_Nash_ShieldDone_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Nash_ShieldDone_01_01");	//Вот твое мясо.
+	AI_Output(other,self, " DIA_Nash_ShieldDone_01_01 " );	// Here's your meat.
 	B_GiveInvItems(other,self,ItFoMuttonRaw,50);
 	Npc_RemoveInvItems(self,ItFoMuttonRaw,50);
-	AI_Output(other,self,"DIA_Nash_ShieldDone_01_02");	//Теперь ты научишь меня своим приемам?
-	AI_Output(self,other,"DIA_Nash_ShieldDone_01_03");	//(довольно) Конечно. Главное, чтобы у тебя хватило опыта для моих уроков.
-	AI_Output(self,other,"DIA_Nash_ShieldDone_01_04");	//Просто скажи, когда будешь готов начать тренировку.
+	AI_Output(other,self, " DIA_Nash_ShieldDone_01_02 " );	// Now will you teach me your tricks?
+	AI_Output(self,other, " DIA_Nash_ShieldDone_01_03 " );	// (pretty) Of course. The main thing is that you have enough experience for my lessons.
+	AI_Output(self,other, " DIA_Nash_ShieldDone_01_04 " );	// Just tell me when you're ready to start training.
 	MIS_MeetNashShield = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_MeetNashShield,LOG_SUCCESS);
-	B_LogEntry(TOPIC_MeetNashShield,"Я принес Нэшу полсотни кусков мяса. Теперь он покажет мне свои приемы владения щитом.");
+	B_LogEntry(TOPIC_MeetNashShield, " I brought Nash fifty pieces of meat. Now he'll show me his shield techniques. " );
 };
 
 instance DIA_Nash_Shield_Teach(C_Info)
@@ -270,7 +271,7 @@ instance DIA_Nash_Shield_Teach(C_Info)
 	condition = DIA_Nash_Shield_Teach_Condition;
 	information = DIA_Nash_Shield_Teach_Info;
 	permanent = TRUE;
-	description = "Научи меня лучше обращаться с щитом.";
+	description = " Teach me how to use a shield better. " ;
 };
 
 func int DIA_Nash_Shield_Teach_Condition()
@@ -283,7 +284,7 @@ func int DIA_Nash_Shield_Teach_Condition()
 
 func void DIA_Nash_Shield_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Nash_Shield_Teach_15_00");	//Научи меня лучше обращаться с щитом.
+	AI_Output(other,self, " DIA_Nash_Shield_Teach_15_00 " );	// Teach me how to use a shield better.
 	Info_ClearChoices(DIA_Nash_Shield_Teach);
 	Info_AddChoice(DIA_Nash_Shield_Teach,Dialog_Back,DIA_Nash_Shield_Teach_Back);
 	Info_AddChoice(DIA_Nash_Shield_Teach,PRINT_ShieldNoMoney1,DIA_Nash_Shield_Teach_1);
@@ -302,24 +303,24 @@ func void DIA_Nash_Shield_Teach_Back()
 
 func void DIA_Nash_Shield_Teach_Block()
 {
-	AI_Output(other,self,"DIA_Nash_Shield_Teach_Block_01_00");	//Научи меня блокировать магический урон щитом.
+	AI_Output(other,self, " DIA_Nash_Shield_Teach_Block_01_00 " );	// Teach me how to block magic damage with a shield.
 
 	if(hero.lp >= 10)
 	{
 		hero.lp = hero.lp - 10;
 		RankPoints = RankPoints + 10;
-		AI_Output(self,other,"DIA_Nash_Shield_Teach_Block_01_01");	//Тут все зависит от твоего навыка владения и прочности самого щита.
-		AI_Output(self,other,"DIA_Nash_Shield_Teach_Block_01_02");	//Весь магический урон у тебя вряд ли получится заблокировать, однако ты можешь его ослабить.
-		AI_Output(self,other,"DIA_Nash_Shield_Teach_Block_01_03");	//Если твой щит способен будет выдержать магическую атаку, он поглотит часть урона. 
-		AI_Output(self,other,"DIA_Nash_Shield_Teach_Block_01_04");	//Ну, а если нет...
-		AI_Output(self,other,"DIA_Nash_Shield_Teach_Block_01_05");	//Вот поэтому для начала постарайся раздобыть приличный щит! Остальное приложится само.
-		AI_Print("Бой с щитом - обучен!");
+		AI_Output(self,other, " DIA_Nash_Shield_Teach_Block_01_01 " );	// It all depends on your skill and the strength of the shield itself.
+		AI_Output(self,other, " DIA_Nash_Shield_Teach_Block_01_02 " );	// You won't be able to block all magic damage, but you can weaken it.
+		AI_Output(self,other, " DIA_Nash_Shield_Teach_Block_01_03 " );	// If your shield is able to withstand a magical attack, it will absorb some of the damage.
+		AI_Output(self,other, " DIA_Nash_Shield_Teach_Block_01_04 " );	// Well, if not...
+		AI_Output(self,other, " DIA_Nash_Shield_Teach_Block_01_05 " );	// That's why try to get a decent shield first! The rest will follow by itself.
+		AI_Print( " Shield combat trained! " );
 		Snd_Play("LevelUP");
 		SkillBlockShield = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Nash_Shield_Teach_Block_01_06");	//У тебя не хватает опыта!
+		AI_Output(self,other, " DIA_Nash_Shield_Teach_Block_01_06 " );	// You don't have enough experience!
 	};
 
 	Info_ClearChoices(DIA_Nash_Shield_Teach);
