@@ -1,4 +1,5 @@
 
+
 instance DIA_RUEN_EXIT(C_Info)
 {
 	npc = vlk_6007_ruen;
@@ -29,7 +30,7 @@ instance DIA_RUEN_HELLO(C_Info)
 	information = dia_ruen_hello_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Как дела в лагере?";
+	description = " How are things at camp? " ;
 };
 
 
@@ -43,20 +44,20 @@ func int dia_ruen_hello_condition()
 
 func void dia_ruen_hello_info()
 {
-	AI_Output(other,self,"DIA_Ruen_Hello_01_00");	//Как дела в лагере?
-	AI_Output(self,other,"DIA_Ruen_Hello_01_01");	//...Постой! Ты же тот парень, что недавно тут появился!
-	AI_Output(self,other,"DIA_Ruen_Hello_01_02");	//Все о тебе только и говорят...
-	AI_Output(self,other,"DIA_Ruen_Hello_01_03");	//Да хреново, братишка. Охотиться здесь в последнее время становится все опаснее и опаснее.
-	AI_Output(self,other,"DIA_Ruen_Hello_01_04");	//Куда ни кинь, рискуешь нарваться на каких-нибудь злобных тварей.
-	AI_Output(self,other,"DIA_Ruen_Hello_01_05");	//А по ночам вообще становиться жутко до дрожи!
-	AI_Output(self,other,"DIA_Ruen_Hello_01_06");	//Эта пещера единственное место, где можно чувствовать себя более или менее в безопасности.
-	AI_Output(self,other,"DIA_Ruen_Hello_01_07");	//В общем, жизнь здесь не сахар, а сплошная нервотрепка!
-	AI_Output(other,self,"DIA_Ruen_Hello_01_08");	//А на кого вы охотитесь?
-	AI_Output(self,other,"DIA_Ruen_Hello_01_09");	//В основном на варгов. Скажу тебе - чертовски опасные твари!
-	AI_Output(self,other,"DIA_Ruen_Hello_01_10");	//Но выбирать особо не приходится. Лучше этого здесь все равно не найти.
-	AI_Output(other,self,"DIA_Ruen_Hello_01_11");	//Ты тоже охотник?
-	AI_Output(self,other,"DIA_Ruen_Hello_01_12");	//Все мы тут охотники. Да, собственно, тут и заняться больше нечем, кроме охоты.
-	MEETRUEN = 1;
+	AI_Output(other,self, " DIA_Ruen_Hello_01_00 " );	// How are things at the camp?
+	AI_Output(self,other, " DIA_Ruen_Hello_01_01 " );	// ...Wait! You're the guy that just showed up here!
+	AI_Output(self,other, " DIA_Ruen_Hello_01_02 " );	// Everyone is talking about you...
+	AI_Output(self,other, " DIA_Ruen_Hello_01_03 " );	// Yes, it sucks, brother. Hunting here has become more and more dangerous lately.
+	AI_Output(self,other, " DIA_Ruen_Hello_01_04 " );	// Wherever you go, you run the risk of running into some evil creatures.
+	AI_Output(self,other, " DIA_Ruen_Hello_01_05 " );	// And at night it gets creepy to the point of shivering!
+	AI_Output(self,other, " DIA_Ruen_Hello_01_06 " );	// This cave is the only place where you can feel more or less safe.
+	AI_Output(self,other, " DIA_Ruen_Hello_01_07 " );	// In general, life here is not sugar, but sheer hassle!
+	AI_Output(other,self, " DIA_Ruen_Hello_01_08 " );	// And who are you hunting?
+	AI_Output(self,other, " DIA_Ruen_Hello_01_09 " );	// Mainly wargs. I'll tell you - damn dangerous creatures!
+	AI_Output(self,other, " DIA_Ruen_Hello_01_10 " );	// But you don't really have to choose. You won't find better than this here.
+	AI_Output(other,self, " DIA_Ruen_Hello_01_11 " );	// Are you a hunter too?
+	AI_Output(self,other, " DIA_Ruen_Hello_01_12 " );	// We're all hunters here. Yes, in fact, there is nothing more to do here, except for hunting.
+	MEASUREMENTS = 1 ;
 };
 
 
@@ -68,7 +69,7 @@ instance DIA_RUEN_HELLO_TWO(C_Info)
 	information = dia_ruen_hello_two_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Ты можешь научить меня охотиться?";
+	description = " Can you teach me how to hunt? " ;
 };
 
 
@@ -82,31 +83,31 @@ func int dia_ruen_hello_two_condition()
 
 func void dia_ruen_hello_two_info()
 {
-	AI_Output(other,self,"DIA_Ruen_Hello_Two_01_01");	//Ты можешь научить меня охотиться?
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_02");	//Навряд ли я тебе смогу много рассказать об этом.
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_03");	//Если хочешь действительно научиться чему-то стоящему, тебе лучше поговорить с Баргусом.
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_04");	//Он у нас лучший! Поговори с ним. Он в той пещере, что слева от меня.
-	AI_Output(other,self,"DIA_Ruen_Hello_Two_01_05");	//А кто еще меня сможет здесь чему-то научить?
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_06");	//Ну, как я и сказал, Багрус может тебя научить искусству охоты и разделке животных.
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_07");	//Гунмар - стрелок, какого еще надо поискать! Уж если захотел научиться метко стрелять из лука - он именно тот человек, к кому следует обратиться.
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_08");	//Гиллимор сможет тебя обучить различным тонкостям в приготовлении лечебных снадобий. Он у нас что-то вроде алхимика.
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_09");	//Эмнол - этот парень просто гора мышц! Если хочешь стать сильнее - обратись к нему. Он покажет тебе пару приемов, которые повысят твой силу.
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_10");	//Если хочешь научиться получше обращаться с холодным оружием - неважно - одноручным или двуручным, Кардор может тебе показать, как это сделать. В этом ему нет равных среди нас!
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_11");	//Нофельд покажет тебе, как повысить свою ловкость.
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_12");	//Хасан может продать тебе какой-нибудь хлам, завалявшийся на складе.
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_13");	//Что касается остальных парней, то вряд ли они смогут тебя чему-то научить.
-	AI_Output(other,self,"DIA_Ruen_Hello_Two_01_14");	//А ты сам?
-	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_15");	//Я? Хммм... боюсь, ни чем...(смеется)
-	AI_Output(other,self,"DIA_Ruen_Hello_Two_01_16");	//Ладно, и на том спасибо.
+	AI_Output(other,self, " DIA_Ruen_Hello_Two_01_01 " );	// Can you teach me how to hunt?
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_02 " );	// I don't think I can tell you much about this.
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_03 " );	// If you really want to learn something worthwhile, you'd better talk to Bargus.
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_04 " );	// He's the best! Talk to him. He's in the cave to my left.
+	AI_Output(other,self, " DIA_Ruen_Hello_Two_01_05 " );	// And who else can teach me something here?
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_06 " );	// Well, like I said, Bagrus can teach you the art of hunting and butchering animals.
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_07 " );	// Gunmar is a shooter, what else to look for! If you want to learn how to shoot accurately from a bow - he is exactly the person to whom you should turn.
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_08 " );	// Gillimore will be able to teach you various subtleties in the preparation of medicinal potions. He's kind of like an alchemist.
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_09 " );	// Emnol - this guy is just a mountain of muscles! If you want to become stronger, contact him. He will show you a couple of tricks that will increase your strength.
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_10 " );	// If you want to learn how to better use melee weapons - it doesn't matter - one-handed or two-handed, Kardor can show you how to do it. In this he has no equal among us!
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_11 " );	// Nofeld will show you how to increase your dexterity.
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_12 " );	// Hasan can sell you some junk from the warehouse.
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_13 " );	// As for the rest of the guys, it's unlikely they'll be able to teach you anything.
+	AI_Output(other,self, " DIA_Ruen_Hello_Two_01_14 " );	// And you yourself?
+	AI_Output(self,other, " DIA_Ruen_Hello_Two_01_15 " );	// Me? Hmmm... I'm afraid not... (laughs)
+	AI_Output(other,self, " DIA_Ruen_Hello_Two_01_16 " );	// Okay, thanks for that.
 	AI_Output(self,other,"DIA_Ruen_Hello_Two_01_17");	//Да не за что.
 	Log_CreateTopic(TOPIC_TEACHERSINVALLEY,LOG_NOTE);
-	B_LogEntry(TOPIC_TEACHERSINVALLEY,"Багрус - лучший охотник в лагере. Он может показать мне, как разделывать трупы убитых животных");
-	B_LogEntry(TOPIC_TEACHERSINVALLEY,"Гунмар специализируется на стрельбе из лука. Руэн сказал, что он лучший стрелок в этих местах.");
-	B_LogEntry(TOPIC_TEACHERSINVALLEY,"Гиллимор - травник и может обучить меня приготовлению различных снадобий.");
-	B_LogEntry(TOPIC_TEACHERSINVALLEY,"Эмнол может увеличить мою силу.");
-	B_LogEntry(TOPIC_TEACHERSINVALLEY,"Кардор сможет показать мне пару приемов владения холодным оружием.");
-	B_LogEntry(TOPIC_TEACHERSINVALLEY,"Нофельд поможет мне увеличить мою ловкость.");
-	B_LogEntry(TOPIC_TEACHERSINVALLEY,"Хасан торгует разным хламом. Его можно найти на складе.");
+	B_LogEntry( TOPIC_TEACHERSINVALLEY , " Bagrus is the best hunter in the camp. He can show me how to butcher dead animals " );
+	B_LogEntry( TOPIC_TEACHERSINVALLEY , " Gunmar specializes in archery. Ruen said he's the best archer in the area. " );
+	B_LogEntry( TOPIC_TEACHERSINVALLEY , " Gillimore is an herbalist and can teach me how to make various potions. " );
+	B_LogEntry( TOPIC_TEACHERSINVALLEY , " Emnol can increase my strength. " );
+	B_LogEntry( TOPIC_TEACHERSINVALLEY , " Kardor can show me a couple of melee skills. " );
+	B_LogEntry( TOPIC_TEACHERSINVALLEY , " Nofeld will help me increase my dexterity. " );
+	B_LogEntry( TOPIC_TEACHERSINVALLEY , " Hasan sells junk. You can find it in the warehouse. " );
 	BARGUSTEACHER = TRUE;
 	GUNMARTEACHER = TRUE;
 	GILLIMORTEACHER = TRUE;
@@ -114,11 +115,11 @@ func void dia_ruen_hello_two_info()
 	KARDORTEACHER = TRUE;
 	NOFELDTEACHER = TRUE;
 	HASANTEACHER = TRUE;
-	MEETRUEN = 2;
+	METERS = 2 ;
 };
 
 
-instance DIA_RUEN_HELLO_SKLEP(C_Info)
+instance DIA_RUEN_HELLO_SKLEP (C_Info)
 {
 	npc = vlk_6007_ruen;
 	nr = 1;
@@ -126,13 +127,13 @@ instance DIA_RUEN_HELLO_SKLEP(C_Info)
 	information = dia_ruen_hello_sklep_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "(спросить про заброшенный склеп в долине)";
+	description = " (ask about the abandoned crypt in the valley) " ;
 };
 
 
 func int dia_ruen_hello_sklep_condition()
 {
-	if((MEETHARUMTWO == TRUE) && (RUENSKLEPKNOWN == FALSE))
+	if (( METHODS  ==  TRUE ) && ( RUENSKLEPKNOWN  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -140,24 +141,24 @@ func int dia_ruen_hello_sklep_condition()
 
 func void dia_ruen_hello_sklep_info()
 {
-	AI_Output(other,self,"DIA_Ruen_Hello_Sklep_01_00");	//Эльваис рассказал мне, что ты во время одной охоты нактнулся на какой-то заброшенный склеп.
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_01");	//Да, было дело. Жуткое местечко, я тебе скажу!
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_03");	//А тебе зачем это?
-	AI_Output(other,self,"DIA_Ruen_Hello_Sklep_01_04");	//Да, так. Хочу туда наведаться. Эльваис сказал мне, что ты оттуда приволок добрую кучу старинных фолиантов.
-	AI_Output(other,self,"DIA_Ruen_Hello_Sklep_01_05");	//Некоторые из которых, по словам Эльваиса, содержали в себе очень полезную информацию.
-	AI_Output(other,self,"DIA_Ruen_Hello_Sklep_01_06");	//Вот я и думаю, что мне стоит там побывать. Может, найду что-нибудь интересное.
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_07");	//Я бы посоветовал тебе держаться подальше от этого места. Этот склеп просто рассадник зла.
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_08");	//Никогда не видел столько нежити в одном месте. Да ими просто все кишит там!
-	AI_Output(other,self,"DIA_Ruen_Hello_Sklep_01_09");	//Ну, с этим, я думаю, как-нибудь разберусь. Ты не мог бы точнее сказать, где находится этот склеп?
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_10");	//А я погляжу, ты парень рисковый! Дело твое, конечно...
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_11");	//Только, боюсь, сказать тебе точное место, где находился этот склеп, я не смогу.
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_12");	//Случайно на него набрел. Да и когда сматывался оттуда, времени, чтобы запоминать дорогу, особенно-то и не было.
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_13");	//Помню только, что склеп этот расположен в пещере, где-то у круга камней.
-	AI_Output(other,self,"DIA_Ruen_Hello_Sklep_01_14");	//Круг камней?
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_15");	//Да, круг камней. Он, кажется, расположен к северу от нашего лагеря.
-	AI_Output(other,self,"DIA_Ruen_Hello_Sklep_01_16");	//Да уж... теперь найти его точно не проблема!
-	AI_Output(self,other,"DIA_Ruen_Hello_Sklep_01_17");	//Ну, парень - все, что знал, то сказал.
-	B_LogEntry(TOPIC_URNAZULRAGE,"Я поговорил с Руэном о заброшенном склепе. Он рассказал мне, что склеп этот находится к северу от лагеря, недалеко от круга камней, в пещере.");
+	AI_Output(other,self, " DIA_Ruen_Hello_Sklep_01_00 " );	// Elvais told me that you stumbled upon some abandoned crypt during one hunt.
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_01 " );	// Yes, it was. Creepy place, I tell you!
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_03 " );	// Why are you doing this?
+	AI_Output(other,self, " DIA_Ruen_Hello_Sklep_01_04 " );	// Yes, yes. I want to visit there. Elvais told me that you brought a good bunch of old tomes from there.
+	AI_Output(other,self, " DIA_Ruen_Hello_Sklep_01_05 " );	// Some of which, according to Elvais, contained very useful information.
+	AI_Output(other,self, " DIA_Ruen_Hello_Sklep_01_06 " );	// So I think I should go there. Maybe I'll find something interesting.
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_07 " );	// I would advise you to stay away from this place. This crypt is just a hotbed of evil.
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_08 " );	// Never seen so many undead in one place. Yes, they are just all teeming there!
+	AI_Output(other,self, " DIA_Ruen_Hello_Sklep_01_09 " );	// Well, I think I'll figure it out somehow. Could you be more specific about where this crypt is located?
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_10 " );	// And I'll see, you're a risky guy! It's up to you, of course...
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_11 " );	// But I'm afraid I won't be able to tell you the exact location of this crypt.
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_12 " );	// Stumbled upon it by accident. And when I got out of there, I didn’t have much time to remember the road.
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_13 " );	// I only remember that this crypt is located in a cave, somewhere near the circle of stones.
+	AI_Output(other,self, " DIA_Ruen_Hello_Sklep_01_14 " );	// Circle of rocks?
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_15 " );	// Yes, a circle of stones. It seems to be located north of our camp.
+	AI_Output(other,self, " DIA_Ruen_Hello_Sklep_01_16 " );	// Yeah... now it's definitely not a problem to find it!
+	AI_Output(self,other, " DIA_Ruen_Hello_Sklep_01_17 " );	// Well, the guy - everything he knew, he said.
+	B_LogEntry( TOPIC_URNAZULRAGE , " I talked to Ruen about the abandoned crypt. He told me that the crypt is north of the camp, not far from the stone circle, in a cave. " );
 	RUENSKLEPKNOWN = TRUE;
 };
 
@@ -170,7 +171,7 @@ instance DIA_RUEN_HELLO_LAST(C_Info)
 	information = dia_ruen_hello_last_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Есть еще новости?";
+	description = " Any more news? " ;
 };
 
 
@@ -184,8 +185,8 @@ func int dia_ruen_hello_last_condition()
 
 func void dia_ruen_hello_last_info()
 {
-	AI_Output(other,self,"DIA_Ruen_Hello_Last_01_00");	//Есть еще новости?
-	AI_Output(self,other,"DIA_Ruen_Hello_Last_01_01");	//Пока нет.
+	AI_Output(other,self, " DIA_Ruen_Hello_Last_01_00 " );	// Any more news?
+	AI_Output(self,other, " DIA_Ruen_Hello_Last_01_01 " );	// Not yet.
 };
 
 
