@@ -1,4 +1,5 @@
 
+
 instance DIA_Mil_305_Torwache_EXIT(C_Info)
 {
 	npc = Mil_305_Torwache;
@@ -39,16 +40,16 @@ func int DIA_Mil_305_Torwache_FirstWarn_Condition()
 	if(Npc_GetDistToWP(other,Mil_305_Checkpoint) <= 700)
 	{
 		Npc_SetRefuseTalk(self,5);
-		return FALSE;
+		return  FALSE ;
 	};
 	if((B_GetGreatestPetzCrime(self) >= CRIME_ATTACK) && (Mil_305_schonmalreingelassen == TRUE))
 	{
-		self.aivar[AIV_PASSGATE] = FALSE;
+		self.aivar[ AIV_PASSGATE ] = FALSE ;
 	}
-	else if(Mil_305_schonmalreingelassen == TRUE)
+	else  if (Mil_305_schonmalreinlett ==  TRUE )
 	{
 		HIGHCITYGATEACCESSGRANTED = TRUE;
-		self.aivar[AIV_PASSGATE] = TRUE;
+		self.aivar[ AIV_PASSGATE ] = TRUE ;
 	};
 	if((self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_RefuseTalk(self) == FALSE))
 	{
@@ -63,21 +64,21 @@ func void DIA_Mil_305_Torwache_FirstWarn_Info()
 	{
 		if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 		{
-			AI_Output(self,other,"DIA_Mil_305_Torwache_FirstWarn_03_01");	//Тебя подозревают в убийстве в городе! Пока обвинения не сняты, я не могу пропустить тебя в верхний квартал.
+			AI_Output(self,other, " DIA_Mil_305_Torwache_FirstWarn_03_01 " );	// You are suspected of murder in the city! Until the charges are dropped, I can't let you into the upper quarter.
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 		{
-			AI_Output(self,other,"DIA_Mil_305_Torwache_FirstWarn_03_02");	//Пока ты обвиняешься в воровстве, ты не можешь войти в верхний квартал города!
+			AI_Output(self,other, " DIA_Mil_305_Torwache_FirstWarn_03_02 " );	// As long as you're accused of stealing, you can't enter the upper quarter of the city!
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 		{
-			AI_Output(self,other,"DIA_Mil_305_Torwache_FirstWarn_03_03");	//Я не могу пропустить в верхний квартал города нарушителя спокойствия вроде тебя.
+			AI_Output(self,other, " DIA_Mil_305_Torwache_FirstWarn_03_03 " );	// I can't let a troublemaker like you into the uptown.
 		};
-		AI_Output(self,other,"DIA_Mil_305_Torwache_FirstWarn_03_04");	//Иди к лорду Андрэ и урегулируй эту проблему!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_FirstWarn_03_04 " );	// Go to Lord Andre and fix this problem!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_FirstWarn_03_05");	//Только граждане города и служащие королевских войск могут входить в верхний квартал города!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_FirstWarn_03_05 " );	// Only citizens of the city and employees of the royal troops can enter the upper quarter of the city!
 	};
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_305_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
@@ -105,7 +106,7 @@ func int DIA_Mil_305_Torwache_SecondWarn_Condition()
 
 func void DIA_Mil_305_Torwache_SecondWarn_Info()
 {
-	AI_Output(self,other,"DIA_Mil_305_Torwache_SecondWarn_03_00");	//Я последний раз предупреждаю тебя. Еще один шаг - и ты познакомишься с моим мечом.
+	AI_Output(self,other, " DIA_Mil_305_Torwache_SecondWarn_03_00 " );	// I'm warning you for the last time. One more step and you will be acquainted with my sword.
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_305_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);
@@ -134,8 +135,8 @@ func int DIA_Mil_305_Torwache_Attack_Condition()
 func void DIA_Mil_305_Torwache_Attack_Info()
 {
 	other.aivar[AIV_LastDistToWP] = 0;
-	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
-	AI_Output(self,other,"DIA_Mil_305_Torwache_Attack_03_00");	//Ты сам напросился...
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
+	AI_Output(self,other, " DIA_Mil_305_Torwache_Attack_03_00 " );	// You asked for it...
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
@@ -148,7 +149,7 @@ instance DIA_Mil_305_Torwache_MESSAGE(C_Info)
 	condition = DIA_Mil_305_Torwache_MESSAGE_Condition;
 	information = DIA_Mil_305_Torwache_MESSAGE_Info;
 	permanent = FALSE;
-	description = "У меня важное сообщение для лорда Хагена.";
+	description = " I have an important message for Lord Hagen. " ;
 };
 
 
@@ -162,53 +163,53 @@ func int DIA_Mil_305_Torwache_MESSAGE_Condition()
 
 func void DIA_Mil_305_Torwache_MESSAGE_Info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_MESSAGE_15_00");	//У меня важное сообщение для лорда Хагена.
-	AI_Output(self,other,"DIA_Mil_305_Torwache_MESSAGE_03_01");	//Половина города хочет поговорить с лордом Хагеном по важному вопросу.
-	AI_Output(self,other,"DIA_Mil_305_Torwache_MESSAGE_03_02");	//Если я буду пропускать каждого просителя, он только и будет что заниматься мелкими проблемами горожан.
+	AI_Output(other,self, " DIA_Mil_305_Torwache_MESSAGE_15_00 " );	// I have an important message for Lord Hagen.
+	AI_Output(self,other, " DIA_Mil_305_Torwache_MESSAGE_03_01 " );	// Half the town wants to talk to Lord Hagen about an important matter.
+	AI_Output(self,other, " DIA_Mil_305_Torwache_MESSAGE_03_02 " );	// If I let every petitioner through, he'll only have to deal with the townspeople's petty problems.
 };
 
 
-instance DIA_Mil_305_Torwache_Ausnahme(C_Info)
+instance DIA_Mil_305_Torwache_Ausnahme (C_Info)
 {
 	npc = Mil_305_Torwache;
 	nr = 2;
 	condition = DIA_Mil_305_Torwache_Ausnahme_Condition;
-	information = DIA_Mil_305_Torwache_Ausnahme_Info;
+	information = DIA_Mil_305_Gorwache_Ausnahme_Info;
 	permanent = TRUE;
-	description = "А может сделать для меня исключение?";
+	description = " Maybe make an exception for me? " ;
 };
 
 
-func int DIA_Mil_305_Torwache_Ausnahme_Condition()
+func int DIA_Mil_305_Gorwache_Ausnahme_Condition()
 {
-	if(Mil_305_schonmalreingelassen == FALSE)
+	if (Mil_305_schonmalreinlett ==  FALSE )
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Mil_305_Torwache_Ausnahme_Info()
+func void DIA_Mil_305_Gateguard_Exception_Info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_Ausnahme_15_00");	//А может сделать для меня исключение?
-	AI_Output(self,other,"DIA_Mil_305_Torwache_Ausnahme_03_01");	//Что?! Правила есть правила! Правила применимы ко всем без исключения!
-	AI_Output(self,other,"DIA_Mil_305_Torwache_Ausnahme_03_02");	//Если я позволю тебе нарушить эти правила, это будет нечестно по отношению к тем, кто выполняет их.
+	AI_Output(other,self, " DIA_Mil_305_Torwache_Ausnahme_15_00 " );	// Maybe make an exception for me?
+	AI_Output(self,other, " DIA_Mil_305_Torwache_Ausnahme_03_01 " );	// What?! Rules are rules! The rules apply to everyone without exception!
+	AI_Output(self,other, " DIA_Mil_305_Torwache_Ausnahme_03_02 " );	// If I let you break these rules, it won't be fair to those who follow them.
 };
 
 
-instance DIA_Mil_305_Torwache_PassAsCitizen(C_Info)
+instance DIA_Mil_305_Torwache_PassAsCitizen (C_Info)
 {
 	npc = Mil_305_Torwache;
 	nr = 2;
 	condition = DIA_Mil_305_Torwache_PassAsCitizen_Condition;
 	information = DIA_Mil_305_Torwache_PassAsCitizen_Info;
 	permanent = TRUE;
-	description = "Я уважаемый гражданин Хориниса! Позволь мне пройти!";
+	description = " I am a respected citizen of Khorinis! Let me pass! " ;
 };
 
 
 func int DIA_Mil_305_Torwache_PassAsCitizen_Condition()
 {
-	if((Mil_305_schonmalreingelassen == FALSE) && (Kapitel <= 1))
+	if ((Mil_305_schonmalreinlett ==  FALSE ) && (chapter <=  1 ))
 	{
 		return TRUE;
 	};
@@ -216,38 +217,38 @@ func int DIA_Mil_305_Torwache_PassAsCitizen_Condition()
 
 func void DIA_Mil_305_Torwache_PassAsCitizen_Info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsCitizen_15_00");	//Я уважаемый гражданин Хориниса! Позволь мне пройти!
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsCitizen_15_00 " );	// I am a respected citizen of Khorinis! Let me pass!
 	if(Player_IsApprentice > APP_NONE)
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsCitizen_03_01");	//Я не знаю, что заставило мастеров Хориниса принять тебя в ученики и не хочу знать!
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsCitizen_03_02");	//Ты можешь войти. Но веди себя, как положено, если не хочешь нарваться на серьезные неприятности.
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsCitizen_03_01 " );	// I don't know what made the masters of Khorinis accept you as an apprentice, and I don't want to know!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsCitizen_03_02 " );	// You can enter. But behave yourself, if you don't want to run into serious trouble.
 		HIGHCITYGATEACCESSGRANTED = TRUE;
-		self.aivar[AIV_PASSGATE] = TRUE;
-		Mil_305_schonmalreingelassen = TRUE;
+		self.aivar[ AIV_PASSGATE ] = TRUE ;
+		Mil_305_always let in = TRUE ;
 		AI_StopProcessInfos(self);
 	}
 	else if((MIS_Matteo_Gold == LOG_SUCCESS) || (MIS_Thorben_GetBlessings == LOG_SUCCESS) || (MIS_Bosper_Bogen == LOG_SUCCESS) || (MIS_Bosper_WolfFurs == LOG_SUCCESS) || (MIS_Harad_Orc == LOG_SUCCESS) || (MIS_HakonBandits == LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsCitizen_03_03");	//Возможно, тебе удалось договориться с некоторыми мастерами в нижней части города, но если бы ты был гражданином, я бы знал об этом!
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsCitizen_03_04");	//Не пытайся обмануть меня! Я предупреждаю тебя!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsCitizen_03_03 " );	// You may have managed to negotiate with some masters in the lower part of the city, but if you were a citizen, I would know about it!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsCitizen_03_04 " );	// Don't try to trick me! I'm warning you!
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsCitizen_03_05");	//Ты не стоишь грязи под моими ногтями! Прочь с глаз моих!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsCitizen_03_05 " );	// You're not worth the dirt under my nails! Get out of my sight!
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_Mil_305_Torwache_PassAsMil(C_Info)
+instance DIA_Mil_305_Torwache_PassAsMil (C_Info)
 {
 	npc = Mil_305_Torwache;
 	nr = 3;
 	condition = DIA_Mil_305_Torwache_PassAsMil_Condition;
 	information = DIA_Mil_305_Torwache_PassAsMil_Info;
 	permanent = TRUE;
-	description = "Я состою в ополчении - дай мне пройти!";
+	description = " I'm in the militia - let me through! " ;
 };
 
 
@@ -261,12 +262,12 @@ func int DIA_Mil_305_Torwache_PassAsMil_Condition()
 
 func void DIA_Mil_305_Torwache_PassAsMil_Info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsMil_15_00");	//Я состою в ополчении - дай мне пройти!
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsMil_03_01");	//Так Андрэ принял тебя? Возможно, ты не такой уж плохой парень, как кажешься.
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsMil_03_02");	//Теперь ты один из защитников города! Так что посторайся быть вежливым и дружелюбным с горожанами.
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsMil_15_00 " );	// I'm in the militia - let me pass!
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsMil_03_01 " );	// So Andre accepted you? Maybe you're not such a bad guy as you seem.
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsMil_03_02 " );	// Now you're one of the city's defenders! So try to be polite and friendly with the townspeople.
 	HIGHCITYGATEACCESSGRANTED = TRUE;
-	self.aivar[AIV_PASSGATE] = TRUE;
-	Mil_305_schonmalreingelassen = TRUE;
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	Mil_305_always let in = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
@@ -277,7 +278,7 @@ instance DIA_Mil_305_Torwache_PassAsMage(C_Info)
 	condition = DIA_Mil_305_Torwache_PassAsMage_Condition;
 	information = DIA_Mil_305_Torwache_PassAsMage_Info;
 	permanent = TRUE;
-	description = "Ты смеешь стоять на пути представителя Инноса?";
+	description = " Do you dare stand in the way of Innos' representative? " ;
 };
 
 func int DIA_Mil_305_Torwache_PassAsMage_Condition()
@@ -290,13 +291,13 @@ func int DIA_Mil_305_Torwache_PassAsMage_Condition()
 
 func void DIA_Mil_305_Torwache_PassAsMage_Info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsMage_15_00");	//Ты смеешь стоять на пути представителя Инноса?
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsMage_03_01");	//Эээ... нет! Конечно нет! Для избранных Инноса вход открыт.
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsMage_15_02");	//Молись, чтобы Иннос простил тебе это кощунство!
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsMage_03_03");	//Да, о избранный!
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsMage_15_00 " );	// You dare to stand in the way of Innos' representative?
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsMage_03_01 " );	// Uh... no! Of course not! For the elite of Innos, the entrance is open.
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsMage_15_02 " );	// Pray that Innos forgives you for this blasphemy!
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsMage_03_03 " );	// Yes, oh chosen one!
 	HIGHCITYGATEACCESSGRANTED = TRUE;
-	self.aivar[AIV_PASSGATE] = TRUE;
-	Mil_305_schonmalreingelassen = TRUE;
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	Mil_305_always let in = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
@@ -308,7 +309,7 @@ instance DIA_Mil_305_Torwache_PassAsSld(C_Info)
 	condition = DIA_Mil_305_Torwache_PassAsSld_Condition;
 	information = DIA_Mil_305_Torwache_PassAsSld_Info;
 	permanent = TRUE;
-	description = "У меня важное сообщение для лорда Хагена!";
+	description = " I have an important message for Lord Hagen! " ;
 };
 
 
@@ -322,13 +323,13 @@ func int DIA_Mil_305_Torwache_PassAsSld_Condition()
 
 func void DIA_Mil_305_Torwache_PassAsSld_Info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsSld_15_00");	//У меня важное сообщение для лорда Хагена!
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsSld_03_01");	//Ты один из этих подонков наемников! Что тебе нужно от лорда Хагена?
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsSld_15_02");	//Я пришел с предложением мира.
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsSld_03_03");	//Ах! Значит, наконец, до вас, подлецов, дошел голос разума? Тогда проходи к лорду Хагену. Но постарайся быть милым и вежливым, или я так отделаю тебя, что мало не покажется!
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsSld_15_00 " );	// I have an important message for Lord Hagen!
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsSld_03_01 " );	// You're one of those mercenary scumbags! What do you want from Lord Hagen?
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsSld_15_02 " );	// I've come with an offer of peace.
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsSld_03_03 " );	// Ah! So, finally, the voice of reason has reached you scoundrels? Then go to Lord Hagen. But try to be nice and polite, or I'll give you a hard time!
 	HIGHCITYGATEACCESSGRANTED = TRUE;
-	self.aivar[AIV_PASSGATE] = TRUE;
-	Mil_305_schonmalreingelassen = TRUE;
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	Mil_305_always let in = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
@@ -340,7 +341,7 @@ instance DIA_MIL_305_TORWACHE_PASSASKDW(C_Info)
 	condition = dia_mil_305_torwache_passaskdw_condition;
 	information = dia_mil_305_torwache_passaskdw_info;
 	permanent = TRUE;
-	description = "Я - маг Воды!";
+	description = " I'm a water mage! " ;
 };
 
 
@@ -354,23 +355,23 @@ func int dia_mil_305_torwache_passaskdw_condition()
 
 func void dia_mil_305_torwache_passaskdw_info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsKdw_15_00");	//Я - маг Воды!
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsKdw_03_01");	//Мы всегда рады служителям Аданоса! Ты можешь пройти.
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsKdw_15_00 " );	// I'm a waterbender!
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsKdw_03_01 " );	// We are always glad to servants of Adanos! You can pass.
 	HIGHCITYGATEACCESSGRANTED = TRUE;
-	self.aivar[AIV_PASSGATE] = TRUE;
-	Mil_305_schonmalreingelassen = TRUE;
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	Mil_305_always let in = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_305_TORWACHE_PASSASNDW(C_Info)
+instance DIA_MIL_305_TORWACHE_PASSASNDW (C_Info)
 {
 	npc = Mil_305_Torwache;
 	nr = 3;
 	condition = dia_mil_305_torwache_passasndw_condition;
 	information = dia_mil_305_torwache_passasndw_info;
 	permanent = TRUE;
-	description = "Я - адепт магов Воды.";
+	description = " I am a Water Mage Adept. " ;
 };
 
 
@@ -384,23 +385,23 @@ func int dia_mil_305_torwache_passasndw_condition()
 
 func void dia_mil_305_torwache_passasndw_info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsNDW_15_00");	//Я - адепт магов Воды. У меня послание для главы паладинов.
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsNDW_12_01");	//Хорошо, проходи.
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsNDW_15_00 " );	// I am an adept of the Water Mages. I have a message for the head of the paladins.
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsNDW_12_01 " );	// Okay, come on in.
 	HIGHCITYGATEACCESSGRANTED = TRUE;
-	self.aivar[AIV_PASSGATE] = TRUE;
-	Mil_305_schonmalreingelassen = TRUE;
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	Mil_305_always let in = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_305_TORWACHE_PASSASSEK(C_Info)
+instance DIA_MIL_305_TORWACHE_PASSASSEK (C_Info)
 {
 	npc = Mil_305_Torwache;
 	nr = 3;
 	condition = dia_mil_305_torwache_passassek_condition;
 	information = dia_mil_305_torwache_passassek_info;
 	permanent = TRUE;
-	description = "У меня назначена встреча...";
+	description = " I have an appointment... " ;
 };
 
 
@@ -414,11 +415,11 @@ func int dia_mil_305_torwache_passassek_condition()
 
 func void dia_mil_305_torwache_passassek_info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsSek_15_00");	//У меня назначена встреча с Лариусом. Тебя должны были предупредить.
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsSek_03_01");	//Ах да! Конечно. Ты можешь войти. Но постарайся не создавать здесь проблем.
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsSek_15_00 " );	// I have an appointment with Larius. You should have been warned.
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsSek_03_01 " );	// Oh yeah! Of course. You can enter. But try not to create problems here.
 	HIGHCITYGATEACCESSGRANTED = TRUE;
-	self.aivar[AIV_PASSGATE] = TRUE;
-	Mil_305_schonmalreingelassen = TRUE;
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	Mil_305_always let in = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
@@ -430,7 +431,7 @@ instance DIA_MIL_305_TORWACHE_PASSASKDM(C_Info)
 	condition = dia_mil_305_torwache_passaskdm_condition;
 	information = dia_mil_305_torwache_passaskdm_info;
 	permanent = TRUE;
-	description = "Ты осмелишься задерживать темного мага?!";
+	description = " Do you dare to detain a dark mage?! " ;
 };
 
 
@@ -444,11 +445,11 @@ func int dia_mil_305_torwache_passaskdm_condition()
 
 func void dia_mil_305_torwache_passaskdm_info()
 {
-	AI_Output(other,self,"DIA_Mil_305_Torwache_PassAsKdm_15_00");	//Ты осмелишься задерживать темного мага?!
-	AI_Output(self,other,"DIA_Mil_305_Torwache_PassAsKdm_03_01");	//Мммм...(сквозь зубы)...хорошо, некромант, ты можешь войти. Но я буду приглядывать за тобой.
+	AI_Output(other,self, " DIA_Mil_305_Torwache_PassAsKdm_15_00 " );	// You dare to detain a dark mage?!
+	AI_Output(self,other, " DIA_Mil_305_Torwache_PassAsKdm_03_01 " );	// Mmmm...(through gritted teeth)...okay, necromancer, you can enter. But I will keep an eye on you.
 	HIGHCITYGATEACCESSGRANTED = TRUE;
-	self.aivar[AIV_PASSGATE] = TRUE;
-	Mil_305_schonmalreingelassen = TRUE;
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	Mil_305_always let in = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
@@ -460,7 +461,7 @@ instance DIA_Mil_305_Torwache_PERM(C_Info)
 	condition = DIA_Mil_305_Torwache_PERM_Condition;
 	information = DIA_Mil_305_Torwache_PERM_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -477,27 +478,27 @@ func void DIA_Mil_305_Torwache_PERM_Info()
 	AI_Output(other,self,"DIA_Mil_305_Torwache_PERM_15_00");	//Как дела?
 	if((other.guild == GIL_PAL) || (other.guild == GIL_MIL))
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PERM_03_01");	//Все хорошо, друг!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PERM_03_01 " );	// All is well, friend!
 	}
 	else if((other.guild == GIL_KDF) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PERM_03_02");	//Мы просто выполняем свою работу. Спасибо, что обратил на меня свое внимание, о, избранный!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PERM_03_02 " );	// We're just doing our job. Thank you for drawing your attention to me, oh chosen one!
 	}
 	else if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PERM_03_03");	//Возможно, мне придется пропустить тебя, но я не хочу разговаривать с тобой.
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PERM_03_03 " );	// I may have to let you through, but I don't want to talk to you.
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PERM_03_04");	//Чего ты хочешь, болотник?
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PERM_03_04 " );	// What do you want, swamp?
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PERM_03_05");	//Чего ты хочешь, некромант?
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PERM_03_05 " );	// What do you want, necromancer?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Mil_305_Torwache_PERM_03_06");	//Не приставай ко мне!
+		AI_Output(self,other, " DIA_Mil_305_Torwache_PERM_03_06 " );	// Don't bother me!
 	};
 	AI_StopProcessInfos(self);
 };
