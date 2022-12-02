@@ -1,4 +1,5 @@
 
+
 instance DIA_VLK_6132_GAYVERN_EXIT(C_Info)
 {
 	npc = vlk_6132_gayvern;
@@ -21,14 +22,14 @@ func void dia_vlk_6132_gayvern_exit_info()
 };
 
 
-instance DIA_VLK_6132_GAYVERN_HALLO(C_Info)
+instances DIA_VLK_6132_GAYVERN_HALLO (C_Info)
 {
 	npc = vlk_6132_gayvern;
 	nr = 2;
 	condition = dia_vlk_6132_gayvern_hallo_condition;
-	information = dia_vlk_6132_gayvern_hallo_info;
+	information = dia_vlk_6132_gayvern_hello_info;
 	permanent = FALSE;
-	description = "Привет, ты кто?";
+	description = " Hi, who are you? " ;
 };
 
 
@@ -39,16 +40,16 @@ func int dia_vlk_6132_gayvern_hallo_condition()
 
 func void dia_vlk_6132_gayvern_hallo_info()
 {
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hallo_01_00");	//Привет, ты кто?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_01");	//Меня зовут Гэйверн. А ты, я так понимаю, новенький в этом городе.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hallo_01_02");	//С чего ты взял?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_03");	//(смеется) В портовом квартале нет ни одного человека, которого я бы не знал.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_04");	//А вот тебя я тут вижу в первый раз!
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hallo_01_05");	//Так, может быть, я из другой части города - например, из верхнего квартала.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_06");	//КТО? Ты?...(смеется) Да ты себя со стороны-то видел, парень?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_07");	//Ты же выглядишь как оборванец! (смеется) Вот насмешил.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_08");	//Нет, дружище, - таких, как ты, туда точно не пустят.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_09");	//Так что не пытайся обмануть меня. Поверь мне: у тебя это не выйдет!
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hallo_01_00 " );	// Hello, who are you?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hallo_01_01 " );	// My name is Gavern. And you, as I understand it, are new in this city.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hallo_01_02 " );	// Where did you get it from?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hallo_01_03 " );	// (laughs) There is not a single person in the waterfront that I don't know.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hallo_01_04 " );	// But I see you here for the first time!
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hallo_01_05 " );	// So, maybe I'm from another part of the city - for example, from the upper quarter.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hallo_01_06 " );	// WHO? You? ... (laughs) Did you see yourself from the outside, guy?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hallo_01_07 " );	// You look like a ragamuffin! (laughs) That made me laugh.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hallo_01_08 " );	// No, buddy, they won't let people like you in there.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hallo_01_09 " );	// So don't try to fool me. Trust me, you won't get it!
 };
 
 
@@ -59,7 +60,7 @@ instance DIA_VLK_6132_GAYVERN_WORK(C_Info)
 	condition = dia_vlk_6132_gayvern_work_condition;
 	information = dia_vlk_6132_gayvern_work_info;
 	permanent = FALSE;
-	description = "А чем ты занимаешься?";
+	description = " What do you do? " ;
 };
 
 
@@ -73,20 +74,20 @@ func int dia_vlk_6132_gayvern_work_condition()
 
 func void dia_vlk_6132_gayvern_work_info()
 {
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Work_01_00");	//А чем ты занимаешься?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_01");	//Раньше я работал в порту.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_02");	//Но с тех пор как в Хоринис перестали заходить торговые корабли, работы тут совсем не стало.	
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_03");	//Вот и сижу уже, почитай, полтора месяца без дела. Короче, одна скукота!
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Work_01_04");	//Значит, ты безработный?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_07");	//Не совсем. Кардиф, хозяин этой таверны, предложил мне работать у него вышибалой.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_11");	//Дело, конечно, не из приятных, но что поделать - жить-то на что-то надо.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_12");	//Хотел бы я заняться чем-нибудь другим, вот только кому я такой нужен...(печально)
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Work_01_00 " );	// What are you doing?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Work_01_01 " );	// I used to work at the port.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Work_01_02 " );	// But since merchant ships stopped entering Khorinis, there has been no work here at all.	
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Work_01_03 " );	// So I've already been sitting, read it, for a month and a half without anything to do. In short, one boredom!
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Work_01_04 " );	// So you're unemployed?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Work_01_07 " );	// Not really. Cardiff, the owner of this tavern, offered me a job as a bouncer for him.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Work_01_11 " );	// The matter, of course, is not pleasant, but what can you do - you need to live on something.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Work_01_12 " );	// I wish I could do something else, but who needs me like this... (sadly)
 
-	if((MIS_TRADEHELPER != LOG_Running) || (MIS_TRADEHELPER != LOG_SUCCESS) || (MIS_TRADEHELPER != LOG_FAILED))
+	if (( MIS_TRADEHELPER  != LOG_Running) || ( MIS_TRADEHELPER  !=  LOG_SUCCESS ) || ( MIS_TRADEHELPER  !=  LOG_FAILED ))
 	{
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_14");	//Послушай, а у ТЕБЯ, случайно, нет для меня какой-нибудь работы?
-		AI_Output(other,self,"DIA_VLK_6132_Gayvern_Work_01_15");	//Пожалуй, нет. Но если что-нибудь подвернется, обязательно дам тебе знать.
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_16");	//Спасибо, парень. Поверь, я в долгу не останусь.
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_Work_01_14 " );	// Look, do YOU ​​happen to have a job for me?
+		AI_Output(other,self, " DIA_VLK_6132_Gayvern_Work_01_15 " );	// Probably not. But if anything comes up, I'll be sure to let you know.
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_Work_01_16 " );	// Thanks man. Believe me, I will not remain in debt.
 	};
 };
 
@@ -97,7 +98,7 @@ instance DIA_VLK_6132_GAYVERN_HOW(C_Info)
 	condition = dia_vlk_6132_gayvern_how_condition;
 	information = dia_vlk_6132_gayvern_how_info;
 	permanent = TRUE;
-	description = "Ну, как дела?";
+	description = " Well, how are you? " ;
 };
 
 func int dia_vlk_6132_gayvern_how_condition()
@@ -110,27 +111,27 @@ func int dia_vlk_6132_gayvern_how_condition()
 
 func void dia_vlk_6132_gayvern_how_info()
 {
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_How_01_00");	//Ну, как дела?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_How_01_01");	//Да все также паршиво, как и раньше.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_How_01_00 " );	// Well, how are you?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_How_01_01 " );	// Yes, everything is as lousy as before.
 
 	if((GAYVERNRECRUITEDDT == FALSE) && (HURRAYICANHIRE == TRUE))
 	{
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_How_01_06");	//А у тебя новости есть?
-		AI_Output(other,self,"DIA_VLK_6132_Gayvern_How_01_07");	//Если ты по поводу работы - то, возможно, есть одна мысль.
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_How_01_08");	//Тогда чего же ты тянешь - выкладывай!
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_How_01_06 " );	// Do you have any news?
+		AI_Output(other,self, " DIA_VLK_6132_Gayvern_How_01_07 " );	// If you're talking about work - then perhaps there is one thought.
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_How_01_08 " );	// Then what are you pulling - lay it out!
 	}
-	else if((MIS_TRADEHELPER != LOG_Running) || (MIS_TRADEHELPER != LOG_SUCCESS) || (MIS_TRADEHELPER != LOG_FAILED))
+	else  if (( MIS_TRADEHELPER  != LOG_Running) || ( MIS_TRADEHELPER  !=  LOG_SUCCESS ) || ( MIS_TRADEHELPER  !=  LOG_FAILED ))
 	{
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_How_01_02");	//А у тебя новости есть?
-		AI_Output(other,self,"DIA_VLK_6132_Gayvern_How_01_03");	//Если ты по поводу работы - то нет.
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_How_01_04");	//Очень жаль...
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_How_01_05");	//Ладно, если что - ты знаешь, где меня найти.
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_How_01_02 " );	// Do you have any news?
+		AI_Output(other,self, " DIA_VLK_6132_Gayvern_How_01_03 " );	// If you're talking about work, then no.
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_How_01_04 " );	// Sorry...
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_How_01_05 " );	// Okay, if anything - you know where to find me.
 	}
-	else if((MIS_TRADEHELPER == LOG_Running) && (FINDPERSONONE == FALSE))
+	else  if (( MIS_TRADEHELPER  == LOG_Running) && ( FINDPERSONONE  ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_How_01_06");	//А у тебя новости есть?
-		AI_Output(other,self,"DIA_VLK_6132_Gayvern_How_01_07");	//Если ты по поводу работы - то, возможно, есть одна мысль.
-		AI_Output(self,other,"DIA_VLK_6132_Gayvern_How_01_08");	//Тогда чего же ты тянешь - выкладывай!
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_How_01_06 " );	// Do you have any news?
+		AI_Output(other,self, " DIA_VLK_6132_Gayvern_How_01_07 " );	// If you're talking about work - then perhaps there is one thought.
+		AI_Output(self,other, " DIA_VLK_6132_Gayvern_How_01_08 " );	// Then what are you pulling - lay it out!
 	};
 };
 
@@ -142,7 +143,7 @@ instance DIA_VLK_6132_GAYVERN_HIRE(C_Info)
 	condition = dia_vlk_6132_gayvern_hire_condition;
 	information = dia_vlk_6132_gayvern_hire_info;
 	permanent = FALSE;
-	description = "Тебе еще нужна работа?";
+	description = " Do you still need a job? " ;
 };
 
 
@@ -156,26 +157,26 @@ func int dia_vlk_6132_gayvern_hire_condition()
 
 func void dia_vlk_6132_gayvern_hire_info()
 {
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_00");	//Тебе еще нужна работа?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_01");	//Ха! Он еще и спрашивает! Конечно же нужна.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_02");	//А что ты можешь предложить?
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_03");	//Один крупный торговец из верхнего квартала города ищет человека на место своего помощника.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_04");	//А работа заключается в том, чтобы выполнять его поручения и помогать ему вести торговые дела.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_06");	//Вот я и подумал, что, может быть, ты смог бы взяться за это дело.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_07");	//Тебе это интересно?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_08");	//Парень, я готов выполнять любую работу, лишь бы не сидеть тут без дела.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_10");	//Хорошо. Но не будем торопиться: для начала мне нужно немного узнать, на что ты способен.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_11");	//Скажи, что ты умеешь делать?
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_00 " );	// Do you still need a job?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hire_01_01 " );	// Ha! He also asks! Of course it is needed.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hire_01_02 " );	// What can you suggest?
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_03 " );	// One large merchant from the upper quarter of the city is looking for a man to take the place of his assistant.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_04 " );	// And the job is to run his errands and help him run his business.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_06 " );	// So I thought maybe you could take on this case.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_07 " );	// Are you interested?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hire_01_08 " );	// Boy, I'm ready to do any job, as long as I don't sit here doing nothing.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_10 " );	// Good. But let's not rush: first I need to know a little about what you are capable of.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_11 " );	// Tell me, what can you do?
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_12");	//Ну...(задумчиво)
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_13");	//Если тебе нужно что-нибудь там разгрузить или погрузить - в этом деле мне равных нет.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_14");	//А ты умеешь договариваться с людьми?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_15");	//Конечно. Каждый день только этим и занимаюсь...(смеется)
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_16");	//Уговариваю людей не делать тут разных глупостей. И знаешь, мои методы уговоров действуют безотказно!
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_17");	//Ну, в этом я не сомневаюсь.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_18");	//Поверь мне: ты не пожалеешь, если порекомендуешь торговцу именно меня.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_19");	//Так что, если я тебя заинтересовал, - только скажи - и я в деле!
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_20");	//Хорошо, я подумаю на этим.
-	B_LogEntry(TOPIC_TRADEHELPER,"Я поговорил с Гэйверном. Мое предложение - устроиться на работу к Лютеро - он принял с воодушевлением. Хотя, может быть, мне стоит поискать еще кого-нибудь для этой работенки.");
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hire_01_13 " );	// If you need to unload or load something there, I have no equal in this matter.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_14 " );	// Do you know how to negotiate with people?
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hire_01_15 " );	// Of course. This is what I do every day... (laughs)
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hire_01_16 " );	// I tell people not to do stupid things here. And you know, my methods of persuasion work flawlessly!
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_17 " );	// Well, I have no doubt about that.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hire_01_18 " );	// Trust me, you won't regret recommending me to the merchant.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_Hire_01_19 " );	// So, if I'm interested in you - just tell me - and I'm in business!
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_Hire_01_20 " );	// Okay, I'll think about it.
+	B_LogEntry( TOPIC_TRADEHELPER , " I talked to Gavern. My offer to get a job with Luthero was accepted with enthusiasm. Though maybe I should look for someone else for the job. " );
 	GAYVERNAGREE = TRUE;
 };
 
@@ -187,13 +188,13 @@ instance DIA_VLK_6132_GAYVERN_HIREOK(C_Info)
 	condition = dia_vlk_6132_gayvern_hireok_condition;
 	information = dia_vlk_6132_gayvern_hireok_info;
 	permanent = FALSE;
-	description = "Идем к торговцу.";
+	description = " Let's go to the merchant. " ;
 };
 
 
 func int dia_vlk_6132_gayvern_hireok_condition()
 {
-	if((GAYVERNAGREE == TRUE) && (MIS_TRADEHELPER == LOG_Running) && (FINDPERSONONE == FALSE) && (FINDPERSONTWO == FALSE) && (FINDPERSONTHREE == FALSE) && (GAYVERNRECRUITEDDT == FALSE))
+	if (( GAYVERNAGREE  ==  TRUE ) && ( MY_TRADEHELPER  == LOG_Running) && ( FINDPERSONONONE  ==  FALSE ) && ( FINDTHREEPERSONS  ==  FALSE ) && ( FINDTHREEPERSONS  ==  FALSE ) && ( GAYVERNRECRUITEDDT  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -201,18 +202,18 @@ func int dia_vlk_6132_gayvern_hireok_condition()
 
 func void dia_vlk_6132_gayvern_hireok_info()
 {
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_HireOk_01_00");	//Идем к торговцу.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_HireOk_01_01");	//Думаю, ты именно тот человек, который ему нужен.
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_HireOk_01_02");	//Отлично! Пошли.
-	B_LogEntry(TOPIC_TRADEHELPER,"Я остановил свой выбор на Гэйверне. Надеюсь, Лютеро его оценит.");
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_HireOk_01_00 " );	// We go to the merchant.
+	AI_Output(other,self, " DIA_VLK_6132_Gayvern_HireOk_01_01 " );	// I think you're the right person for him.
+	AI_Output(self,other, " DIA_VLK_6132_Gayvern_HireOk_01_02 " );	// Great! Went.
+	B_LogEntry( TOPIC_TRADEHELPER , " I chose Gavern. I hope Luthero appreciates it. " );
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	FINDPERSONONE = TRUE;
 	Npc_ExchangeRoutine(self,"FOLLOW");
 };
 
 
-instance DIA_VLK_6132_GAYVERN_NEWLIFE(C_Info)
+instance DIA_VLK_6132_GAYVERN_NEWLIFE (C_Info) .
 {
 	npc = vlk_6132_gayvern;
 	nr = 2;
@@ -252,7 +253,7 @@ instance DIA_VLK_6132_GAYVERN_PICKPOCKET(C_Info)
 
 func int dia_vlk_6132_gayvern_pickpocket_condition()
 {
-	return C_Beklauen(30,60);
+	return  C_Robbery ( 30 , 60 );
 };
 
 func void dia_vlk_6132_gayvern_pickpocket_info()
@@ -264,7 +265,7 @@ func void dia_vlk_6132_gayvern_pickpocket_info()
 
 func void dia_vlk_6132_gayvern_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_vlk_6132_gayvern_pickpocket);
 };
 
@@ -280,7 +281,7 @@ instance DIA_VLK_6132_GAYVERN_ASKFORDT(C_Info)
 	condition = DIA_VLK_6132_GAYVERN_askfordt_condition;
 	information = DIA_VLK_6132_GAYVERN_askfordt_info;
 	permanent = FALSE;
-	description = "Не хочешь поработать на меня?";
+	description = " Would you like to work for me? " ;
 };
 
 func int DIA_VLK_6132_GAYVERN_askfordt_condition()
@@ -294,31 +295,31 @@ func int DIA_VLK_6132_GAYVERN_askfordt_condition()
 func void DIA_VLK_6132_GAYVERN_askfordt_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_15_00");	//Не хочешь поработать на меня?
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_01");	//А что надо будет делать?
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_02");	//Ну, ты ведь крепкий парень. А мне в лагере не помешал бы еще один охранник.
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_03");	//У тебя даже лагерь есть?
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_04");	//Да, и я как раз набираю туда людей. Ну, что скажешь?
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_05");	//(задумался) Охранник? Что же получается, опять придется кому-то бить морду?
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_06");	//Я бы сказал, это куда более отвественная работа. Конечно же, за порядком следить тоже придется.
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_07");	//Но кроме этого, на лагерь могут напасть монстры, бандиты или даже орки. И мне нужны люди, готовые защищать его.
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_08");	//А, ну... Это звучит куда интересней. А кормить там будут? 
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_09");	//Само собой. Трехразовое питание, кров и небольшая, но ежедневная плата за различного рода хлопоты. 
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_10");	//Еще и платить будут? А сколько?
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_11");	//Хммм... Порядка тридцати золотых монет в день. Идет?
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_12");	//Тридцать золотых монет?! Да я таких денег и отродясь не получал. Хорошо, я согласен.
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_13");	//Вот и славно. Тогда собирай свои вещи и дуй прямиком туда.
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_14");	//И кстати, пароль для входа в лагерь - 'Драконовы сокровища'. Просто скажи его охранникам на входе.
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_15");	//Понял. Только сначала скажу Кардифу, что я увольняюсь. 
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_16");	//Эх... Должно быть, он сильно растроится из-за этого. Но сидеть целыми днями в его кабаке мне наскучило еще больше.
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_17");	//Хорошо, только не задерживайся.
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_18");	//Постараюсь.
-	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Гэйверн присоединился к моему лагерю.");
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_15_00 " );	// Would you like to work for me?
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_01 " );	// What should be done?
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_02 " );	// Well, you're a tough guy. And I could use another guard in the camp.
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_03 " );	// Do you even have a camp?
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_04 " );	// Yeah, and I'm just recruiting people there. Well, what can you say?
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_05 " );	// (thinking) Guard? What happens, again you have to beat someone in the face?
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_06 " );	// I'd say it's a much more responsible job. Of course, you also have to follow the order.
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_07 " );	// But other than that, the camp can be attacked by monsters, bandits, or even orcs. And I need people ready to protect him.
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_08 " );	// Ah, well... That sounds a lot more interesting. Will there be food there?
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_09 " );	// Of course. Three meals a day, shelter and a small but daily fee for various kinds of chores.
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_10 " );	// Will they also pay? And how much?
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_11 " );	// Hmmm... About thirty gold coins a day. Is it coming?
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_12 " );	// Thirty gold coins?! Yes, I never received that kind of money. Ok, I agree.
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_13 " );	// That's nice. Then pack your things and head straight over there.
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_14 " );	// By the way, the password to enter the camp is 'Dragon Hoard'. Just tell it to the guards at the entrance.
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_15 " );	// Got it. I'll just tell Cardiff first that I'm resigning.
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_16 " );	// Eh... He must be really upset about this. But sitting all day in his tavern bored me even more.
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_AskforDT_17_17 " );	// Okay, just don't linger.
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_AskforDT_17_18 " );	// I'll try.
+	B_LogEntry( TOPIC_PPL_FOR_TOWER , " Gavern has joined my camp. " );
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 	GAYVERNRECRUITEDDT = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"InTower");
@@ -331,7 +332,7 @@ instance DIA_VLK_6132_GAYVERN_INTOWER(C_Info)
 	condition = DIA_VLK_6132_GAYVERN_intower_condition;
 	information = DIA_VLK_6132_GAYVERN_intower_info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 func int DIA_VLK_6132_GAYVERN_intower_condition()
@@ -344,6 +345,6 @@ func int DIA_VLK_6132_GAYVERN_intower_condition()
 
 func void DIA_VLK_6132_GAYVERN_intower_info()
 {
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_InTower_OrcKap_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_InTower_OrcKap_01_01");	//В полном.
+	AI_Output(other,self, " DIA_VLK_6132_GAYVERN_InTower_OrcKap_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_VLK_6132_GAYVERN_InTower_OrcKap_01_01 " );	// In full.
 };
