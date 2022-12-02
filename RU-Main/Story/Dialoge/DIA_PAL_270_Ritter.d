@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_270_EXIT(C_Info)
 {
 	npc = PAL_270_Ritter;
@@ -43,18 +44,18 @@ func int DIA_Ritter_OUT_Condition()
 
 func void DIA_Ritter_OUT_Info()
 {
-	if(DIA_Ritter_OUT_NoPerm == FALSE)
+	if ( DIA_Ritter_OUT_NoPerm ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Ritter_OUT_06_00");	//Ты пришел из Хориниса, да? Когда все кончится, я тоже вернусь туда.
+		AI_Output(self,other, " DIA_Ritter_OUT_06_00 " );	// You came from Khorinis, didn't you? When it's all over, I'll go back there too.
 		DIA_Ritter_OUT_NoPerm = TRUE;
 	};
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Ritter_OUT_06_01");	//Я очень рад, что мы с вами в одной команде, сэр.
+		AI_Output(self,other, " DIA_Ritter_OUT_06_01 " );	// I'm very glad we're on the same team, sir.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ritter_OUT_06_02");	//У нас получится. Мы доставим руду в Хоринис, и нас будут носить на руках!
+		AI_Output(self,other, " DIA_Ritter_OUT_06_02 " );	// We can do it. We will deliver the ore to Khorinis, and we will be carried in our arms!
 	};
 };
 
