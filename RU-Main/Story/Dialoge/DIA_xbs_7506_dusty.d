@@ -1,4 +1,5 @@
 
+
 instance DIA_DUSTY_EXIT(C_Info)
 {
 	npc = xbs_7506_dusty;
@@ -34,7 +35,7 @@ instance DIA_DUSTY_PICKPOCKET(C_Info)
 
 func int dia_dusty_pickpocket_condition()
 {
-	return C_Beklauen(25,30);
+	return  C_Robbery ( 25 , 30 );
 };
 
 func void dia_dusty_pickpocket_info()
@@ -46,7 +47,7 @@ func void dia_dusty_pickpocket_info()
 
 func void dia_dusty_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_dusty_pickpocket);
 };
 
@@ -77,14 +78,14 @@ func int dia_dusty_hallo_condition()
 
 func void dia_dusty_hallo_info()
 {
-	AI_Output(self,other,"DIA_Dusty_Hallo_01_00");	//Кажется, я тебя знаю.
-	AI_Output(self,other,"DIA_Dusty_Hallo_01_01");	//Это ты привел меня в Болотный лагерь. Помнишь?
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_00 " );	// I think I know you.
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_01 " );	// It was you who brought me to Swamp Camp. Do you remember?
 	AI_Output(other,self,"DIA_Dusty_Hallo_15_00");	//Ммм...
-	AI_Output(self,other,"DIA_Dusty_Hallo_01_02");	//Мое имя - Дасти! Я тогда еще был рудокопом в Старом лагере.
-	AI_Output(other,self,"DIA_Dusty_Hallo_15_01");	//Кажется, вспоминаю. Надеюсь, ты не в обиде, что я тебя втравил в это дело?
-	AI_Output(self,other,"DIA_Dusty_Hallo_01_03");	//Нет. Я сам виноват - влез в дело, ничего о нем не разузнав.
-	AI_Output(self,other,"DIA_Dusty_Hallo_01_04");	//Правда, я не особо в их глупости и вникал.
-	AI_Output(self,other,"DIA_Dusty_Hallo_01_05");	//Я больше спал, чем слушал. После шахты не до высоких материй, знаешь ли.
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_02 " );	// My name is Dusty! I was still a miner in the Old Camp then.
+	AI_Output(other,self, " DIA_Dusty_Hallo_15_01 " );	// I seem to remember. I hope you're not offended that I dragged you into this business?
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_03 " );	// No. It's my own fault - I got into the case without finding out anything about it.
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_04 " );	// True, I didn’t really delve into their stupidity.
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_05 " );	// I slept more than I listened. After the mine is not up to high matters, you know.
 	b_heroknowforestbase();
 	AI_StopProcessInfos(self);
 };
