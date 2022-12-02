@@ -55,8 +55,8 @@ func int DIA_Akil_Hallo_Condition()
 func void DIA_Akil_Hallo_Info()
 {
 	AI_Output(other,self, " DIA_Akil_Hallo_15_00 " );	// Do you have any problems?
-	AI_Output(self,other, " DIA_Akil_Hallo_13_01 " );	// (in a sweat)... Uh... no, no... it's all right. (nervously) It's... you'd better leave now.
-	AI_Output(other, self, " DIA_Akil_Hallo_15_02 " );	// Are you sure about this?
+	AI_Output(self,other, " DIA_Akil_Hallo_13_01 " );	// Uh... no, no... it's all right. It's... you'd better leave now.
+	AI_Output(other, self, " DIA_Akil_Hallo_15_02 " );	// Are you sure?
 	AI_Output(self,other, " DIA_Akil_Hallo_13_03 " );	// Uh... yes, yes... it's all right. You... uh... I... I can't talk to you right now.
 	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
@@ -122,7 +122,7 @@ func void DIA_Akil_AfterFight_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Akil_NachKampf_13_04 " );	// These are mercenaries from Onar's farm. These bastards only know what to rob and kill.
+		AI_Output(self,other, " DIA_Akil_NachKampf_13_04 " );	// These are mercenaries from Onar's farm. These bastards only know how to rob and kill.
 	};
 	AI_Output(self,other, " DIA_Akil_NachKampf_13_05 " );	// I feared the worst...
 	AI_Output(self,other, " DIA_Akil_NachKampf_13_06 " );	// (takes a deep breath)... thank Innos it didn't come to that. Tell me what can I do for you?
@@ -194,8 +194,8 @@ func void DIA_Akil_Soeldner_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Akil_Soeldner_13_02 " );	// You don't know this? Onar hired them. They guard his farm and collect rent for him.
-		AI_Output(self,other, " DIA_Akil_Soeldner_13_03 " );	// This means they go from farm to farm and take what they like best. And those who cannot pay risk losing their lives.
+		AI_Output(self,other, " DIA_Akil_Soeldner_13_02 " );	// You don't know? Onar hired them. They guard his farm and collect rent for him.
+		AI_Output(self,other, " DIA_Akil_Soeldner_13_03 " );	// This means they go from farm to farm and take what they like. And those who cannot pay risk losing their lives.
 	};
 };
 
@@ -225,7 +225,7 @@ func void DIA_Addon_Akil_MissingPeople_Info()
 	AI_Output(self,other, " DIA_Addon_Akil_MissingPeople_13_02 " );	// Tonak and Telbor worked in my fields. But three days ago they disappeared.
 	AI_Output(self,other, " DIA_Addon_Akil_MissingPeople_13_03 " );	// I know for a fact that they wouldn't just leave the farm without telling me.
 	AI_Output(self,other, " DIA_Addon_Akil_MissingPeople_13_04 " );	// However, they are gone, and no one knows where they are now.
-	AI_Output(self,other, " DIA_Addon_Akil_MissingPeople_13_05 " );	// If you find out anything about their fate, be sure to let me know
+	AI_Output(self,other, " DIA_Addon_Akil_MissingPeople_13_05 " );	// If you find out anything about their fate, be sure to let me know.
 	B_GivePlayerXP(XP_Ambient);
 	Log_CreateTopic(TOPIC_Addon_MissingPeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_MissingPeople,LOG_Running);
@@ -258,13 +258,13 @@ func void DIA_Addon_Akil_ReturnPeople_Info()
 	AI_Output(other,self, " DIA_Addon_Akil_ReturnPeople_15_00 " );	// About your employees...
 	if((Npc_GetDistToWP(Tonak_NW,"NW_FARM2_FIELD_TANOK") <= 1000) && (Npc_GetDistToWP(Telbor_NW,"NW_FARM2_FIELD_TELBOR") <= 1000))
 	{
-		AI_Output(self,other, " DIA_Addon_Akil_ReturnPeople_13_01 " );	// You brought them back! You are a very brave person.
+		AI_Output(self,other, " DIA_Addon_Akil_ReturnPeople_13_01 " );	// You brought them back! You are truly a hero!
 	}
 	else
 	{
 		AI_Output(self,other, " DIA_Addon_Akil_ReturnPeople_13_02 " );	// At least one of them survived.
 	};
-	AI_Output(self,other, " DIA_Addon_Akil_ReturnPeople_13_03 " );	// Take this gold as a reward.
+	AI_Output(self,other, " DIA_Addon_Akil_ReturnPeople_13_03 " );	// Please take this gold as a reward.
 	B_GiveInvItems(self,other,ItMi_Gold,100);
 	B_GivePlayerXP(XP_Ambient);
 	MIS_Akil_BringMissPeopleBack = LOG_SUCCESS;
@@ -326,7 +326,7 @@ var int Knows_Taverne;
 
 func void DIA_Akil_Area_Info()
 {
-	AI_Output(other,self, " DIA_Akil_Gegend_15_00 " );	// You know these places...
+	AI_Output(other,self, " DIA_Akil_Gegend_15_00 " );	// You know this area well?
 	AI_Output(self,other, " DIA_Akil_Gegend_13_01 " );	// Of course, what do you want to know?
 };
 
@@ -354,7 +354,7 @@ func void DIA_Akil_Hof_Info()
 {
 	AI_Output(other,self, " DIA_Akil_Gegend_Onar_15_00 " );	// How can I find Onar's farm?
 	AI_Output(self,other, " DIA_Akil_Gegend_Onar_13_01 " );	// Go down the stone stairs over there, and then follow the road to the east.
-	AI_Output(self,other, " DIA_Akil_Gegend_Onar_13_02 " );	// You'll come across a tavern along the way. From it, go further east until you reach a large field. That's where these mercenaries live.
+	AI_Output(self,other, " DIA_Akil_Gegend_Onar_13_02 " );	// You'll come across a tavern along the way. From it, go further east until you reach a large field. That's where those mercenaries live.
 	Knows_Taverne = TRUE ;
 };
 
@@ -381,7 +381,7 @@ func int DIA_Akil_Taverne_Condition()
 func void DIA_Akil_Taverne_Info()
 {
 	AI_Output(other,self, " DIA_Akil_Gegend_Taverne_15_00 " );	// What's that tavern east of here?
-	AI_Output(self,other, " DIA_Akil_Gegend_Taverne_13_01 " );	// Ask Randolph about it. He knows about her better than me. He has been there several times.
+	AI_Output(self,other, " DIA_Akil_Gegend_Taverne_13_01 " );	// Ask Randolph about it. He knows that place inside and out. He practically lives there.
 };
 
 
@@ -407,8 +407,8 @@ func int DIA_Akil_Wald_Condition()
 func void DIA_Akil_Wald_Info()
 {
 	AI_Output(other,self, " DIA_Akil_Gegend_Wald_15_00 " );	// And what is there, in the forest behind your farm?
-	AI_Output(self,other, " DIA_Akil_Gegend_Wald_13_01 " );	// There are monsters roaming around. And wolves are still the most harmless of them.
-	AI_Output(self,other, " DIA_Akil_Gegend_Wald_13_02 " );	// It is also said that bandits have made their lair there. Well, at least they don't touch my farm.
+	AI_Output(self,other, " DIA_Akil_Gegend_Wald_13_01 " );	// There are monsters roaming around. And wolves are the most harmless of them.
+	AI_Output(self,other, " DIA_Akil_Gegend_Wald_13_02 " );	// It is also rumoured that bandits have made their lair there. Well, at least they don't touch my farm.
 };
 
 
@@ -438,7 +438,7 @@ func void DIA_Akil_Perm_Info()
 	{
 		if(MIS_Akil_SchafDiebe == LOG_SUCCESS)
 		{
-			AI_Output(self,other, " DIA_Akil_Perm_13_01 " );	// No. I hope now my sheep will no longer be wasted.
+			AI_Output(self,other, " DIA_Akil_Perm_13_01 " );	// No. I just hope that now my sheep will be safe.
 		}
 		else
 		{
@@ -449,21 +449,21 @@ func void DIA_Akil_Perm_Info()
 	{
 		if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 		{
-			AI_Output(self,other, " DIA_Akil_Perm_13_03 " );	// Orcs are everywhere now. They even say that they have their headquarters here somewhere. Ask Farmer Lobart about it.
+			AI_Output(self,other, " DIA_Akil_Perm_13_03 " );	// Orcs are everywhere now. The word is that they have their headquarters here somewhere. Ask Farmer Lobart about it.
 		};
 		if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 		{
-			AI_Output(self,other, " DIA_Akil_Perm_13_04 " );	// Lizard people are said to have appeared in the area. If I were you, I wouldn't go into caves.
+			AI_Output(self,other, " DIA_Akil_Perm_13_04 " );	// Lizard people are said to have appeared in the area. If I were you, I wouldn't go into any caves.
 		};
 		if((hero.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM))
 		{
-			AI_Output(self,other, " DIA_Akil_Perm_13_05 " );	// People in black robes are looking for you.
-			AI_Output(other,self, " DIA_Akil_Perm_15_06 " );	// This is not news.
-			AI_Output(self,other, " DIA_Akil_Perm_13_07 " );	// Well, okay. I just thought you should know this.
+			AI_Output(self,other, " DIA_Akil_Perm_13_05 " );	// Scary people in black robes are looking for you.
+			AI_Output(other,self, " DIA_Akil_Perm_15_06 " );	// I'm aware.
+			AI_Output(self,other, " DIA_Akil_Perm_13_07 " );	// Well, okay. I just thought you should know.
 		};
 		if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 		{
-			AI_Output(self,other, " DIA_Akil_Perm_13_08 " );	// The area is just teeming with beasts! If I were you, I'd be more careful...
+			AI_Output(self,other, " DIA_Akil_Perm_13_08 " );	// The area is just teeming with beasts! If I were you, I'd be very careful...
 		};
 	};
 };
@@ -515,11 +515,11 @@ func int DIA_Akil_SCHAFDIEB_Condition()
 func void DIA_Akil_SCHAFDIEB_Info()
 {
 	AI_Output(other,self, " DIA_Akil_SCHAFDIEB_15_00 " );	// Any more news?
-	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_13_01 " );	// Someone is constantly stealing my sheep. I can't sleep well at night now.
+	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_13_01 " );	// Someone is constantly stealing my sheep. I can't sleep at night.
 	Info_ClearChoices(DIA_Akil_SCHAFDIEB);
-	Info_AddChoice(DIA_Akil_SCHAFDIEB, " These are not my problems. " ,DIA_Akil_SCHAFDIEB_nein);
+	Info_AddChoice(DIA_Akil_SCHAFDIEB, " That is not my problem. " ,DIA_Akil_SCHAFDIEB_nein);
 	Info_AddChoice(DIA_Akil_SCHAFDIEB, " How many sheep have you lost? " ,DIA_Akil_SCHAFDIEB_wieviel);
-	Info_AddChoice(DIA_Akil_SCHAFDIEB, " Who can do this? " ,DIA_Akil_SCHAFDIEB_wer);
+	Info_AddChoice(DIA_Akil_SCHAFDIEB, " Who could be doing this? " ,DIA_Akil_SCHAFDIEB_wer);
 	MIS_Akil_SchafDiebe = LOG_Running;
 	Log_CreateTopic(TOPIC_AkilSchafDiebe,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_AkilSchafDiebe,LOG_Running);
@@ -530,8 +530,8 @@ func void DIA_Akil_SCHAFDIEB_wer()
 {
 	AI_Output(other,self, " DIA_Akil_SCHAFDIEB_wer_15_00 " );	// Who can do this?
 	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_wer_13_01 " );	// I have my suspicions.
-	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_wer_13_02 " );	// Some dark personalities have settled in a cave in that forest over there.
-	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_wer_13_03 " );	// I find it hard to believe that they only eat berries. I'm pretty sure they're the ones responsible for the disappearance of my sheep.
+	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_wer_13_02 " );	// Some sketchy types have settled in a cave in that forest over there.
+	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_wer_13_03 " );	// I find it hard to believe that they are vegetarians. I'm pretty sure they're the ones responsible for the disappearance of my sheep.
 	Info_ClearChoices(DIA_Akil_SCHAFDIEB);
 };
 
@@ -543,8 +543,8 @@ func void DIA_Akil_SCHAFDIEB_how much()
 
 func void DIA_Akil_SCHAFDIEB_no()
 {
-	AI_Output(other,self, " DIA_Akil_SCHAFDIEB_nein_15_00 " );	// These are not my problems.
-	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_nein_13_01 " );	// I understand. You have other worries.
+	AI_Output(other,self, " DIA_Akil_SCHAFDIEB_nein_15_00 " );	// That is not my problem.
+	AI_Output(self,other, " DIA_Akil_SCHAFDIEB_nein_13_01 " );	// I understand. You must have many other concerns.
 	Info_ClearChoices(DIA_Akil_SCHAFDIEB);
 };
 
@@ -555,7 +555,7 @@ instance DIA_Akil_SCHAFDIEBEPLATT (C_Info)
 	nr = 2;
 	condition = DIA_Akil_SCHAFDIEBEPLATT_Condition;
 	information = DIA_Akil_SCHAFDIEBEPLATT_Info;
-	description = " I found those who stole sheep from you. " ;
+	description = " I found the sheep thieves. " ;
 };
 
 
@@ -569,23 +569,23 @@ func int DIA_Akil_SCHAFDIEBEPLATT_Condition()
 
 func void DIA_Akil_SCHAFDIEBEPLATT_Info()
 {
-	AI_Output(other,self, " DIA_Akil_SCHAFDIEBEPLATT_15_00 " );	// I found those who stole sheep from you.
-	AI_Output(other,self, " DIA_Akil_SCHAFDIEBEPLATT_15_01 " );	// You were right. They were bandits from a cave in the forest. But they won't steal anything from you.
+	AI_Output(other,self, " DIA_Akil_SCHAFDIEBEPLATT_15_00 " );	// I found the sheep thieves.
+	AI_Output(other,self, " DIA_Akil_SCHAFDIEBEPLATT_15_01 " );	// You were right. They were bandits from a cave in the forest. But they won't be bothering anyone again.
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 	{
 		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_02 " );	// Thank you, oh noble servant of Innos.
 	}
 	else  if (hero.guild ==  GIL_MIL )
 	{
-		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_03 " );	// Thank you. Now I see that the militia sometimes helps us small farmers.
+		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_03 " );	// Thank you. Now I can see that there are honorable militiamen.
 	}
 	else  if (hero.guild ==  GIL_KDW )
 	{
-		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_03A " );	// Thank you, servant of Adanos.
+		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_03A " );	// Thank you, righteous servant of Adanos.
 	}
 	else  if (hero.guild ==  GIL_KDM )
 	{
-		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_03B " );	// Although it sounds strange, I thank you, dark mage.
+		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_03B " );	// Although it may sound strange, I thank you, dark one.
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
@@ -593,7 +593,7 @@ func void DIA_Akil_SCHAFDIEBEPLATT_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_04 " );	// Thank you. You are a very strange mercenary. Not like the others.
+		AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_04 " );	// Thank you. You are certainly a very strange mercenary. Not like the others.
 	};
 	AI_Output(self,other, " DIA_Akil_SCHAFDIEBEPLATT_13_05 " );	// Take this as a thank you for the selfless service you've done me.
 	CreateInvItems(self,ItMi_Gold,150);
@@ -623,7 +623,7 @@ func int DIA_Akil_AkilsSchaf_Condition()
 
 func void DIA_Akil_AkilsSchaf_Info()
 {
-	AI_Output(self,other, " DIA_Akil_AkilsSchaf_13_01 " );	// Very good. Here are some gold ones. I hope this is enough.
+	AI_Output(self,other, " DIA_Akil_AkilsSchaf_13_01 " );	// Very good. Here are some gold pieces. I hope this is enough.
 	CreateInvItems(self,ItMi_Gold,150);
 	B_GiveInvItems(self,other,ItMi_Gold,150);
 	Follow_Sheep_AKIL.aivar[ AIV_PARTYMEMBER ] = FALSE ;
@@ -763,15 +763,15 @@ func int DIA_Akil_Werewolf_Condition()
 func void DIA_Akil_Werewolf_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self, " DIA_Akil_Werewolf_01_00 " );	// What can you tell us about the recent attack?
+	AI_Output(other,self, " DIA_Akil_Werewolf_01_00 " );	// What can you tell me about the recent attack?
 	AI_Output(self,other, " DIA_Akil_Werewolf_01_01 " );	// Eh... You're talking about this terrible case.
 	AI_Output(self,other, " DIA_Akil_Werewolf_01_03 " );	// One of my peasants went to Orlan's tavern to wet his throat before going to sleep.
-	AI_Output(self,other, " DIA_Akil_Werewolf_01_04 " );	// Just at that moment, I was about to go into the house, when suddenly I heard a desperate cry and the roar of a beast behind me.
-	AI_Output(self,other, " DIA_Akil_Werewolf_01_05 " );	// I turned around to see what was the matter. But I couldn't really see anything. It was almost at night!
-	AI_Output(self,other, " DIA_Akil_Werewolf_01_06 " );	// Then I rushed into the house with all my might to call for help from the others.
+	AI_Output(self,other, " DIA_Akil_Werewolf_01_04 " );	// At the very moment I was about to go into the house, I heard a desperate cry and the roar of a beast behind me.
+	AI_Output(self,other, " DIA_Akil_Werewolf_01_05 " );	// I turned around to see what was the matter. But I couldn't really see anything. It was almost dark by then!
+	AI_Output(self,other, " DIA_Akil_Werewolf_01_06 " );	// Then I rushed into the house to call for help from the others.
 	AI_Output(self,other, " DIA_Akil_Werewolf_01_07 " );	// But when we returned, neither the beast nor the peasant was anywhere.
 	AI_Output(self,other, " DIA_Akil_Werewolf_01_08 " );	// We only found a piece of torn tissue and a pool of blood... That's it.
 	AI_Output(other,self, " DIA_Akil_Werewolf_01_09 " );	// Where did you find them?
-	AI_Output(self,other, " DIA_Akil_Werewolf_01_10 " );	// Here, right under the bridge. But if I were you, I wouldn't go there. And just a little...
+	AI_Output(self,other, " DIA_Akil_Werewolf_01_10 " );	// Here, right under the bridge. But if I were you, I wouldn't go there. Something is very wrong...
 	B_LogEntry(TOPIC_WolfAndMan, " Akil said that one of the peasants was attacked by a huge beast. It happened not far from the tavern, under the bridge. " );
 };
