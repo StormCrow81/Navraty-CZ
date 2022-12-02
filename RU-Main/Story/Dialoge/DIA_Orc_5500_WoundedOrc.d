@@ -1,4 +1,5 @@
 
+
 instance DIA_Orc_5500_WoundedOrc_EXIT(C_Info)
 {
 	npc = Orc_5500_WoundedOrc;
@@ -41,41 +42,41 @@ func int DIA_Orc_5500_WoundedOrc_Hello_condition()
 func void DIA_Orc_5500_WoundedOrc_Hello_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_01");	//Аргх!!! (тяжело дыша) Еще один человек прийти, чтобы убить меня.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_02");	//Да, обычно я так и поступаю! Хотя нечасто встретишь орка, говорящего на человеческом языке.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_03");	//Я выслушаю тебя, но предупреждаю: одно неверное движение - и я снесу тебе голову, орк!
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_04");	//А теперь отвечай - кто ты и что здесь делаешь?
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_05");	//Меня звать Ур-Каррас, но я думать, тебе это мало что скажет обо мне.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_06");	//Да, я не слышал раньше этого имени. Но, судя по твоим доспехам, ты не простой орк.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_07");	//Скорее всего, ты один из военачальников орков. Где же тогда твой отряд?
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_08");	//Все быть убиты, все быть мертвые! Только я остаться один жить, но быть тяжело ранен и не мочь идти обратно в долину.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_09");	//Их перебили паладины?
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_10");	//Нет, мы не сражаться с паладинами...(хрипя) Мой отряд быть очень маленький, чтобы напасть на их.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_11");	//Если не они, то кто же? И что в таком случае вы делали в Хоринисе?
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_12");	//Я не мочь сказать это человек.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_13");	//Если ты мне этого не скажешь, то я прикончу тебя прямо сейчас!
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_14");	//Если человек хочет убить его, то пусть не тянуть время. (превозмогая боль) Ур-Каррас не бояться смерти.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_01 " );	// Argh!!! (breathing heavily) Another man come to kill me.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_02 " );	// Yes, I usually do that! It's not often you see an orc speaking a human language, though.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_03 " );	// I'll listen to you, but I warn you: one wrong move and I'll blow your head off, orc!
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_04 " );	// And now answer - who are you and what are you doing here?
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_05 " );	// My name is Ur-Karras, but I don't think that would tell you much about me.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_06 " );	// Yes, I haven't heard this name before. But judging by your armor, you're no ordinary orc.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_07 " );	// You are most likely one of the orc warlords. Where is your team then?
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_08 " );	// Everyone be killed, everyone be dead! Only I will be left alone to live, but to be seriously injured and not be able to go back to the valley.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_09 " );	// Were they killed by the paladins?
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_10 " );	// No, we don't fight paladins...(wheezing) My squad is too small to attack them.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_11 " );	// If not them, then who? And what, then, did you do in Khorinis?
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_12 " );	// I can't tell this man.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_13 " );	// If you don't tell me, I'll kill you right now!
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Info_18_14 " );	// If a person wants to kill him, then let him not play for time. (overcoming the pain) Ur-Karras does not fear death.
 	Info_ClearChoices(DIA_Orc_5500_WoundedOrc_Hello);
-	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"Твои слова достойны уважения, Ур-Каррас.",DIA_Orc_5500_WoundedOrc_Hello_Mercy);
-	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"Что же, ты сам выбрал свою судьбу, орк!",DIA_Orc_5500_WoundedOrc_Hello_Kill);
+	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello, " Your words are worthy of respect, Ur-Karras. " ,DIA_Orc_5500_WoundedOrc_Hello_Mercy);
+	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello, " Well, you chose your own destiny, Orc! " ,DIA_Orc_5500_WoundedOrc_Hello_Kill);
 };
 
 
 func void DIA_Orc_5500_WoundedOrc_Hello_Mercy()
 {
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_01");	//Твои слова достойны уважения, Ур-Каррас. Пожалуй, я оставлю тебе жизнь.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_02");	//Но ты должен поклясться мне, что немедленно покинешь Хоринис! При следующей нашей встрече я без колебаний перережу тебе глотку.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_03");	//Человек может не стараться. Как я уже говорить, Ур-Каррас тяжело ранен и не может вернуться к братам.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_04");	//Можешь убить меня сейчас...(тяжело дыша) Время ничего не изменить.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_01 " );	// Your words are worthy of respect, Ur-Karras. Maybe I'll let you live.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_02 " );	// But you must swear to me that you will immediately leave Khorinis! The next time we meet, I won't hesitate to slit your throat.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_03 " );	// A person may not try. As I have already said, Ur-Karras is seriously wounded and cannot return to his brothers.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_04 " );	// You can kill me now... (breathing heavily) Time won't change anything.
 	Info_ClearChoices(DIA_Orc_5500_WoundedOrc_Hello);
-	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"Как уже было сказано, я не стану этого делать.",DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two);
-	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"Ты не оставляешь мне выбора, орк.",DIA_Orc_5500_WoundedOrc_Hello_Kill_Two);
+	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello, " As said, I won't do this. " ,DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two);
+	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello, " You leave me no choice Orc. " ,DIA_Orc_5500_WoundedOrc_Hello_Kill_Two);
 };
 
 func void DIA_Orc_5500_WoundedOrc_Hello_Kill()
 {
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Kill_18_01");	//Что же, ты сам выбрал свою судьбу, орк!
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Kill_18_02");	//Сейчас я прикончу тебя, и еще на одну гнусную тварь станет меньше.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Kill_18_01 " );	// Well, you chose your own fate, orc!
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Kill_18_02 " );	// Now I'll finish you off, and there'll be one less vile creature.
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Kill_18_03");	//Аргххх!!!
 	AI_StopProcessInfos(self);
 	self.guild = GIL_ORC;
@@ -83,7 +84,7 @@ func void DIA_Orc_5500_WoundedOrc_Hello_Kill()
 
 func void DIA_Orc_5500_WoundedOrc_Hello_Kill_Two()
 {
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Kill_Two_18_01");	//Ты не оставляешь мне выбора, орк. Приготовься умереть.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Kill_Two_18_01 " );	// You leave me no choice, orc. Prepare to die.
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Kill_Two_18_02");	//Аргххх!!!
 	AI_StopProcessInfos(self);
 	self.guild = GIL_ORC;
@@ -91,33 +92,33 @@ func void DIA_Orc_5500_WoundedOrc_Hello_Kill_Two()
 
 func void DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two()
 {
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_01");	//Я не стану этого делать.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_02");	//Но позволить тебе остаться в Хоринисе я тоже не могу. И что же мне с тобой делать?
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_03");	//Ур-Каррас не мочь знать этого.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_04");	//Хммм. Дай мне хотя бы взглянуть на твою рану.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_05");	//Ррррр...(хрипя) Хорошо, смотри, человек.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_06");	//Да, рана серьезная. Похоже, тебя покусала какая-то ужасная тварь.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_07");	//Есть ли какой-нибудь способ помочь тебе излечиться?
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_08");	//Ур-Каррас думать, что только его браты - говорящие с духами - смогли бы помочь ему. Но они быть далеко в долине...
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_09");	//Что еще за говорящие с духами?
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_10");	//Быть великими магами орков. Люди обычно называть их шаманами.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_11");	//Но к вашим шаманам просто так не подойдешь.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_12");	//Скорее они превратят меня в пылающую головешку, чем выслушают меня.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_13");	//Тогда человеку остается бросить тут умирать Ур-Карраса...(хрипя) А самому уходить.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_14");	//Нет. Если на то пошло, я тебя не брошу.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_15");	//Похоже, у меня входит в привычку помогать раненым оркам.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_17");	//Аргххх...(удивленно) Ур-Каррас быть удивленным, что человек пытаться помочь ему.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_18");	//Обычно раньше все люди хотеть только убить его!
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_19");	//Ладно, сиди тут и постарайся не умереть, пока я не вернусь.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_20");	//Меня не очень радует перспектива впустую потратить на тебя свое время.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_21");	//Ур-Каррас иметь немного лечебных орочих зелий, чтобы пока не быть мертвым. Но их хватать ненадолго.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_22");	//Тогда не будем терять времени на разговоры. Я скоро вернусь.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_01 " );	// I won't do this.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_02 " );	// But I can't let you stay in Khorinis either. And what am I to do with you?
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_03 " );	// Ur-Karras cannot know this.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_04 " );	// Hmmm. Let me at least look at your wound.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_05 " );	// Rrrrr...(wheezing) Okay, look, man.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_06 " );	// Yes, the wound is serious. Looks like you've been bitten by some horrible creature.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_07 " );	// Is there any way to help you heal?
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_08 " );	// Ur-Karras to think that only his brothers - the spirit-speakers - could help him. But they be far away in the valley...
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_09 " );	// What are spirit talkers?
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_10 " );	// Be a great orc mage. People usually call them shamans.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_11 " );	// But you can't just walk up to your shamans.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_12 " );	// They'd rather turn me into a burning firebrand than listen to me.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_13 " );	// Then the only thing left for a man to do is to leave Ur-Karras here to die... (wheezing) And leave yourself.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_14 " );	// No. For that matter, I won't leave you.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_15 " );	// I seem to be getting into the habit of helping wounded orcs.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_17 " );	// Arghhh...(surprised) Ur-Karras be surprised that a human is trying to help him.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_18 " );	// Usually before all the people only want to kill him!
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_19 " );	// Okay, sit here and try not to die until I get back.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_20 " );	// I'm not very happy about the prospect of wasting my time on you.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_21 " );	// Ur-Karras to have some Orc healing potions to keep from being dead just yet. But they won't last long.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_22 " );	// Then let's not waste time talking. I'll be back soon.
 	MIS_Orcwayhero = LOG_Running;
 	Log_CreateTopic(TOPIC_Orcwayhero,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Orcwayhero,LOG_Running);
-	B_LogEntry(TOPIC_Orcwayhero,"Недалеко от Хориниса я наткнулся на раненого орка по имени Ур-Каррас. Он возглавлял небольшой отряд, прибывший из Долины для выполнения важного поручения, о котором отказался говорить даже под угрозой смерти. Из отряда выжил он один, но серьезные раны не дают ему вернуться обратно. Я решил помочь орку, знающему язык людей. Целительная магия шаманов смогла бы помочь, но где в Хоринисе найти шамана орков, согласившегося бы со мной разговаривать? Мне придется самому что-нибудь придумать, чтобы помочь Ур-Каррасу. Времени мало, нужно действовать быстро.");
+	B_LogEntry(TOPIC_Orcwayhero,"Not far from Khorinis, I came across a wounded orc named Ur-Karras. He led a small detachment that arrived from the Valley on an important mission, which he refused to talk about even under threat of death. He alone survived from the detachment, but serious wounds I decided to help an orc who speaks the language of men. The healing magic of the shamans could help, but where in Khorinis can I find an orc shaman who would agree to talk to me? I will have to think of something myself to help Ur-Karras. Time is short, we must act quickly.");
 	AI_StopProcessInfos(self);
-	self.name[0] = "Ур-Каррас";
+	self.name[ 0 ] = " Ur-Karras " ;
 };
 
 
@@ -128,7 +129,7 @@ instance DIA_Orc_5500_WoundedOrc_HaveCure(C_Info)
 	information = DIA_Orc_5500_WoundedOrc_HaveCure_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "Я нашел средство, чтобы поднять тебя на ноги.";
+	description = " I found a remedy to get you back on your feet. " ;
 };
 
 
@@ -144,36 +145,36 @@ func void DIA_Orc_5500_WoundedOrc_HaveCure_info()
 {
 	B_GivePlayerXP(250);	
 	Npc_RemoveInvItems(other,ItSc_OrcHeal,1);
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_01");	//Я нашел средство, чтобы поднять тебя на ноги.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_02");	//Надеюсь, что человек быть прав...(хрипя и харкая кровью) Ур-Каррас чувствует, что скоро умирать...
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_03");	//Не так быстро, орк. Думаю, это тебе поможет.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_01 " );	// I found a remedy to get you back on your feet.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_02 " );	// I hope the man is right... (wheezing and spitting blood) Ur-Karras feels like dying soon...
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_03 " );	// Not so fast, orc. I think this will help you.
 	B_HeroUseFakeScroll();
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_04");	//Аргхх... Что человек делать с Ур-Каррасом?!
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_05");	//Спокойно! Это всего лишь целебная магия.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_06");	//И, кажется, твои раны начали потихоньку затягиваться.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_07");	//Не верить своим глазам! Человек смочь вылечить Ур-Карраса.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_08");	//Ур-Каррас чувствовать, как к нему начала возвращаться его сила. Он думать, что его смерть отступить перед магией человека.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_09");	//Ну-ка, подожди еще немного...
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_04 " );	// Arghh... What's a human to do with Ur-Karras?!
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_05 " );	// Calm down! It's just healing magic.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_06 " );	// And it seems that your wounds have begun to slowly heal.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_07 " );	// Don't believe your eyes! A human being able to cure Ur-Karras.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_08 " );	// Ur-Karras can feel his strength begin to return to him. He think that his death to retreat before the magic of man.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_09 " );	// Well, wait a little more...
 	B_HeroUseFakeScroll();
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_10");	//Ну как? Полагаю, что теперь ты должен чувствовать себя абсолютно здоровым.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_11");	//Ур-Каррас чувствовать себя совсем здоровый! (восхищенно) Человек, наверно, быть великий шаман, что смог излечить Ур-Карраса!
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_12");	//Если хочешь, можешь считать именно так.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_13");	//Ур-Каррас благодарить человек...(с уважением) Он никогда не говорить этого людям, но он теперь очень уважать человек.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_14");	//Эй, оставь свои комплименты! Теперь, когда ты снова встал на ноги, ты можешь покинуть Хоринис.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_15");	//И будет лучше, если ты сделаешь это как можно скорей.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_16");	//Человек помог Ур-Каррасу, и он может теперь уходить к своим братам в долину.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_17");	//Ур-Каррас только дожидаться темноты, чтобы идти к ним.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_18");	//Хорошо, я тебе верю, орк. И надеюсь, что нам больше не доведется встретиться вновь.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_19");	//В иной раз все может сложиться не так гладко.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_20");	//Этого Ур-Каррас не может обещать человек. Но он не забудет его помощь, теперь человек для него стать братом!
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_10 " );	// Well, how? I think you should feel completely healthy now.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_11 " );	// Ur-Karras feel completely healthy! (admiringly) The man must be a great shaman who could heal Ur-Karras!
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_12 " );	// If you want, you can count that way.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_13 " );	// Ur-Karras thanking the man...(respectfully) He never said that to the people, but he is now a very respectful man.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_14 " );	// Hey, leave your compliments! Now that you are back on your feet, you can leave Khorinis.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_15 " );	// And it's better if you do it as soon as possible.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_16 " );	// The man helped Ur-Karras, and he can now go to his brothers in the valley.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_17 " );	// Ur-Karras only wait until dark to go to them.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_18 " );	// Okay, I believe you, orc. And I hope we never meet again.
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_19 " );	// Sometimes things don't go so smoothly.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_20 " );	// This Ur-Karras cannot be promised by a man. But he will not forget his help, now a man for him to become a brother!
 	AI_PlayAni(self,"T_GREETGRD");
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_21");	//Ур-Каррас дать клятву человек в этом. А теперь Ур-Каррас говорить прощай великий шаман!
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_22");	//Само собой... кмм... братишка.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_HaveCure_18_21 " );	// Ur-Karras swear a man to this. And now Ur-Karras say farewell, great shaman!
+	AI_Output(other,self, " DIA_Orc_5500_WoundedOrc_HaveCure_18_22 " );	// Of course... hmm... bro.
 	MIS_Orcwayhero = LOG_SUCCESS;
 	Log_SetTopicStatus(Topic_Orcwayhero,LOG_SUCCESS);
-	B_LogEntry(Topic_Orcwayhero,"Я помог Ур-Каррасу и залечил его раны. Теперь он может вернуться обратно в Долину. В свою очередь Ур-Каррас обещал не забыть о том, что я помог ему избежать верной гибели, и с этого момента стал называть меня своим... братом. Странные, все-таки, создания эти орки.");
+	B_LogEntry(Topic_Orcwayhero, " I helped Ur-Karras and healed his wounds. Now he can return back to the Vale. In turn, Ur-Karras promised not to forget that I helped him avoid certain death, and from that moment he began to call me his ... brother. Strange, after all, these orcs are creatures. " );
 	Info_ClearChoices(DIA_Orc_5500_WoundedOrc_HaveCure);
 	Info_AddChoice(DIA_Orc_5500_WoundedOrc_HaveCure,Dialog_Ende,DIA_Orc_5500_WoundedOrc_HaveCure_Quit);
 };
@@ -221,7 +222,7 @@ func int DIA_Orc_5500_WoundedOrc_Buy_condition()
 
 func void DIA_Orc_5500_WoundedOrc_Buy_info()
 {
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Buy_Info_18_01");	//Ур-Каррас идти к своим братьям, как и обещать брат человек.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Buy_Info_18_02");	//Он может не волноваться!
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Buy_Info_18_01 " );	// Ur-Karras go to his brothers, as promised brother man.
+	AI_Output(self,other, " DIA_Orc_5500_WoundedOrc_Buy_Info_18_02 " );	// He needn't worry!
 	AI_StopProcessInfos(self);
 };
