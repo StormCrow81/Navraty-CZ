@@ -1,4 +1,5 @@
 
+
 instance DIA_GornNW_KAP3_EXIT(C_Info)
 {
 	npc = PC_Fighter_NW_vor_DJG;
@@ -28,7 +29,7 @@ instance DIA_GornNW_Hallo(C_Info)
 	condition = DIA_GornNW_Hallo_Condition;
 	information = DIA_GornNW_Hallo_Info;
 	permanent = FALSE;
-	description = "С тобой все в порядке?";
+	description = " Are you all right? " ;
 };
 
 
@@ -39,17 +40,17 @@ func int DIA_GornNW_Hallo_Condition()
 
 func void DIA_GornNW_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_GornNW_Add_15_00");	//С тобой все в порядке?
+	AI_Output(other,self, " DIA_GornNW_Add_15_00 " );	// Are you all right?
 	if(MIS_RescueGorn == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_GornNW_Add_12_01");	//Ты спас меня, парень.
-		AI_Output(self,other,"DIA_GornNW_Add_12_02");	//Я никогда не забуду этого.
+		AI_Output(self,other, " DIA_GornNW_Add_12_01 " );	// You saved me, boy.
+		AI_Output(self,other, " DIA_GornNW_Add_12_02 " );	// I will never forget this.
 		B_GivePlayerXP(XP_Ambient);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_GornNW_Add_12_03");	//Милтен вытащил меня.
-		AI_Output(self,other,"DIA_GornNW_Add_12_04");	//Я никогда не забуду этого.
+		AI_Output(self,other, " DIA_GornNW_Add_12_03 " );	// Milten pulled me out.
+		AI_Output(self,other, " DIA_GornNW_Add_12_04 " );	// I will never forget this.
 	};
 };
 
@@ -61,7 +62,7 @@ instance DIA_GornNW_WhatNext(C_Info)
 	condition = DIA_GornNW_WhatNext_Condition;
 	information = DIA_GornNW_WhatNext_Info;
 	permanent = TRUE;
-	description = "Что ты собираешься делать теперь?";
+	description = " What are you going to do now? " ;
 };
 
 
@@ -72,10 +73,10 @@ func int DIA_GornNW_WhatNext_Condition()
 
 func void DIA_GornNW_WhatNext_Info()
 {
-	AI_Output(other,self,"DIA_GornNW_Add_15_05");	//Что ты собираешься делать теперь?
-	AI_Output(self,other,"DIA_GornNW_Add_12_06");	//Сначала я отъемся.
+	AI_Output(other,self, " DIA_GornNW_Add_15_05 " );	// What are you going to do now?
+	AI_Output(self,other, " DIA_GornNW_Add_12_06 " );	// First I'll fuck off.
 	AI_Output(other,self,"DIA_GornNW_Add_15_07");	//А потом?
-	AI_Output(self,other,"DIA_GornNW_Add_12_08");	//Кто знает! Возможно, я опять вернусь в колонию.
-	AI_Output(self,other,"DIA_GornNW_Add_12_09");	//Кто-то ведь должен присматривать за орками - иначе они могут появиться у нас на пороге без всякого предупреждения.
+	AI_Output(self,other, " DIA_GornNW_Add_12_08 " );	// Who knows! Perhaps I will return to the colony again.
+	AI_Output(self,other, " DIA_GornNW_Add_12_09 " );	// Someone has to watch over the orcs, otherwise they might show up on our doorstep without any warning.
 };
 
