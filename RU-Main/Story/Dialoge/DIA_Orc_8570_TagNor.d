@@ -1,3 +1,4 @@
+
 const int Bonus_TagNor = 10;
 const int Bonus_TagNor_HP = 100;
 
@@ -23,11 +24,11 @@ func void DIA_Orc_8570_TagNor_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Orc_8570_TagNor_PreHello(C_Info)
+instance DIA_Orc_8570_NorthTag_PreHello (C_Info) .
 {
 	npc = Orc_8570_TagNor;
 	condition = DIA_Orc_8570_TagNor_PreHello_condition;
-	information = DIA_Orc_8570_TagNor_PreHello_info;
+	information = DIA_Orc_8570_NorthTag_PreHello_info;
 	important = TRUE;
 	permanent = TRUE;
 };
@@ -42,9 +43,9 @@ func int DIA_Orc_8570_TagNor_PreHello_condition()
 
 func void DIA_Orc_8570_TagNor_PreHello_info()
 {
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_PreHello_01_01");	//МОРА КАР ТУК...(недовольно) ГРАК ДУР КАН?
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_PreHello_01_02");	//Что ты сказал?!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_PreHello_01_03");	//БЕШ МОРА! ХАД КУД САД...
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_PreHello_01_01 " );	// MORA CAR TUK...(unhappy) GRAK DUR KAN?
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_PreHello_01_02 " );	// What did you say?!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_PreHello_01_03 " );	// BESH MORA! HAD KUD GARDEN...
 	AI_StopProcessInfos(self);
 };
 
@@ -67,7 +68,7 @@ func int DIA_Orc_8570_TagNor_PreHelloOk_condition()
 
 func void DIA_Orc_8570_TagNor_PreHelloOk_info()
 {
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_PreHelloOk_01_01");	//Что тебе нужно, морра?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_PreHelloOk_01_01 " );	// What do you want, morra?
 };
 
 instance DIA_Orc_8570_TagNor_Hello(C_Info)
@@ -77,7 +78,7 @@ instance DIA_Orc_8570_TagNor_Hello(C_Info)
 	information = DIA_Orc_8570_TagNor_Hello_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "Я слышал, что ты лучший охотник среди орков.";
+	description = " I heard that you are the best hunter among orcs. " ;
 };
 
 func int DIA_Orc_8570_TagNor_Hello_condition()
@@ -90,31 +91,31 @@ func int DIA_Orc_8570_TagNor_Hello_condition()
 
 func void DIA_Orc_8570_TagNor_Hello_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Hello_Info_18_01");	//Я слышал, что ты лучший охотник среди орков.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Hello_Info_18_02");	//Аргххх...(пренебрежительно) И какое человек быть до этого дело?!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Hello_Info_18_03");	//Просто подумал, что ты бы мог научить меня своему ремеслу.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Hello_Info_18_04");	//Нет! Таг-Нор не будет ничему учить человек.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Hello_Info_18_05");	//Это еще почему?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Hello_Info_18_06");	//Потому что Таг-Нор не знать и не уважать его!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Hello_Info_18_07");	//Сначала тот должен показать, на что способен, и может быть, потом Таг-Нор учить человек, как стать великим охотник.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Hello_Info_18_01 " );	// I heard that you are the best hunter among the orcs.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Hello_Info_18_02 " );	// Arghhh...(disparagingly) And what kind of a person to be does that matter?!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Hello_Info_18_03 " );	// Just thought you could teach me your trade.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Hello_Info_18_04 " );	// No! Tag-Nor will not teach a person anything.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Hello_Info_18_05 " );	// Why else?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Hello_Info_18_06 " );	// Because Tag-Nor doesn't know or respect him!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Hello_Info_18_07 " );	// First, he must show what he is capable of, and maybe then Tag-Nor will teach people how to become a great hunter.
 	MIS_TagNorRespect = LOG_Running;
 	Log_CreateTopic(TOPIC_TagNorRespect,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TagNorRespect,LOG_Running);
-	B_LogEntry(TOPIC_TagNorRespect,"Я повстречал Таг-Нора. По словам орков, он является лучшим охотником клана и, думаю, мне стоит у него поучиться. Однако для начала мне придется доказать Таг-Нору, что я чего-то стою, принеся ему какой-нибудь редкий и особенный трофей.");
+	B_LogEntry(TOPIC_TagNorRespect, " I met Tag-Nor. According to the orcs, he is the best hunter of the clan and I think I should learn from him. However, first I have to prove to Tag-Nor that I'm worth something by bringing him some some rare and special trophy. " );
 };
 
-instance DIA_Orc_8570_TagNor_Muritan(C_Info)
+instance DIA_Orc_8570_North_Tag (C_Info) .
 {
 	npc = Orc_8570_TagNor;
 	condition = DIA_Orc_8570_TagNor_Muritan_condition;
-	information = DIA_Orc_8570_TagNor_Muritan_info;
+	information = DIA_Orc_8570_North_Tag_info;
 	permanent = FALSE;
-	description = "У меня кое-что есть для тебя.";
+	description = " I have something for you. " ;
 };
 
 func int DIA_Orc_8570_TagNor_Muritan_condition()
 {
-	if((MIS_TagNorRespect == LOG_Running) && ((Npc_HasItems(hero,ItAt_BuritanTooth) >= 1) || (Npc_HasItems(hero,ItAt_TrollBlackFur) >= 1) || (Npc_HasItems(hero,ItAt_CurratIshi) >= 1)))
+	if ((MIS_TagNorRespect == LOG_Running) && ((Npc_HasItems(hero,ItAt_BuritanTooth) >=  1 ) || (Npc_HasItems(hero,ItAt_TrollBlackFur) >=  1 ) || (Npc_HasItems(hero,ItAt_CurratIshi) >=  1 )))
 	{
 		return TRUE;
 	};
@@ -122,26 +123,26 @@ func int DIA_Orc_8570_TagNor_Muritan_condition()
 
 func void DIA_Orc_8570_TagNor_Muritan_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Muritan_Info_18_01");	//У меня тут кое-что есть для тебя.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Info_18_02");	//И что именно человек приносить Таг-Нор?
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Muritan_Info_18_03");	//Один очень редкий охотничий трофей. Вот, взгляни на него.
-	Info_ClearChoices(DIA_Orc_8570_TagNor_Muritan);
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Muritan_Info_18_01 " );	// I have something here for you.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Info_18_02 " );	// And what exactly does a person bring to Tag-Nor?
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Muritan_Info_18_03 " );	// One very rare hunting trophy. Here, look at him.
+	Info_ClearChoices(DIA_Orc_8570_North_Tag);
 
 	if(Npc_HasItems(other,ItAt_BuritanTooth) >= 1)
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_Muritan,"(отдать клык муритана)",DIA_Orc_8570_TagNor_Muritan_Claw);
+		Info_AddChoice(DIA_Orc_8570_TagNor_Muritan, " (Give Muritan Fang) " ,DIA_Orc_8570_TagNor_Muritan_Claw);
 	};
 	if(Npc_HasItems(other,ItAt_TrollBlackFur) >= 1)
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_Muritan,"(отдать шкуру черного тролля)",DIA_Orc_8570_TagNor_Muritan_Fur);
+		Info_AddChoice(DIA_Orc_8570_TagNor_Muritan, " (Give Black Troll Skin) " ,DIA_Orc_8570_TagNor_Muritan_Fur);
 	};
 	if(Npc_HasItems(other,ItAt_CurratIshi) >= 1)
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_Muritan,"(отдать шип Иши-Куррата)",DIA_Orc_8570_TagNor_Muritan_Ishi);
+		Info_AddChoice(DIA_Orc_8570_TagNor_Muritan, " (from South-English) " ,DIA_Orc_8570_TagNor_Muritan_Ishi);
 	};
 };
 
-func void DIA_Orc_8570_TagNor_Muritan_Claw()
+func void DIA_Orc_8570_North_Tag_Muritan_Claw()
 {
 	B_GivePlayerXP(500);
 	B_GiveInvItems(other,self,ItAt_BuritanTooth,1);
@@ -149,7 +150,7 @@ func void DIA_Orc_8570_TagNor_Muritan_Claw()
 
 	if(Trophy_MuritanTooth  == TRUE)
 	{
-		if((Npc_HasItems(other,ItAt_PW_MuritanTooth) == FALSE) && (Npc_HasItems(other,ItAt_BuritanTooth) == FALSE))
+		if ((Npc_HasItems(other,ItAt_PW_MuritanTooth) ==  FALSE ) && (Npc_HasItems(other,ItAt_BuritanTooth) ==  FALSE ))
 		{
 			Ext_RemoveFromSlot(other,"BIP01 PELVIS");
 			Npc_RemoveInvItems(other,ItUt_MuritanTooth,Npc_HasItems(other,ItUt_MuritanTooth));
@@ -157,24 +158,24 @@ func void DIA_Orc_8570_TagNor_Muritan_Claw()
 		};
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_01");	//Аргххх...(удивленно) То быть ядовитый зуб Муритана! Где человек взять его?!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Muritan_Claw_01_02");	//Я смог выследить одну из этих тварей и убить ее.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_03");	//Человек быть очень умелым охотник, раз смочь убить его. Таг-Нор быть впечатлен!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Muritan_Claw_01_04");	//Вижу, мой подарок произвел на тебя впечатление. Теперь ты научишь меня охотиться?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_06");	//Хорошо, Таг-Нор станет обучать человек. 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_07");	//Хотя я думать, если человек убить Муритана, тот не сильно нуждаться в этом.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Claw_01_01 " );	// Arghhh...(surprised) That must be Muritan's poison tooth! Where man take it?!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Muritan_Claw_01_02 " );	// I was able to track down one of these creatures and kill it.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Claw_01_03 " );	// A person to be a very skilled hunter, just to be able to kill him. Tag Nor be impressed!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Muritan_Claw_01_04 " );	// I see you were impressed by my gift. Now will you teach me how to hunt?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Claw_01_06 " );	// All right, Tag-Nor will be trained by a human.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Claw_01_07 " );	// Although I think if a man kill Muritan, he doesn't really need it.
 	ORCRESPECT = ORCRESPECT + 10;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 10");
+		AI_Print( " Respect among orcs + 10 " );
 	};
 
 	TagNorTeach = TRUE;
 	MIS_TagNorRespect = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_TagNorRespect,LOG_SUCCESS);
-	B_LogEntry(TOPIC_TagNorRespect,"Я принес Таг-Нору редкий охотничий трофей - ядовитый клык Муритана. Это сильно впечатлило старого охотника орков, и он согласился обучить меня своему ремеслу.");
-	Info_ClearChoices(DIA_Orc_8570_TagNor_Muritan);
+	B_LogEntry(TOPIC_TagNorRespect, " I brought Tag-Nor a rare hunting trophy, Muritan's Poison Fang. This greatly impressed the old orc hunter, and he agreed to teach me his trade. " );
+	Info_ClearChoices(DIA_Orc_8570_North_Tag);
 };
 
 func void DIA_Orc_8570_TagNor_Muritan_Fur()
@@ -182,25 +183,25 @@ func void DIA_Orc_8570_TagNor_Muritan_Fur()
 	B_GivePlayerXP(250);
 	B_GiveInvItems(other,self,ItAt_TrollBlackFur,1);
 	Npc_RemoveInvItems(self,ItAt_TrollBlackFur,1);
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Fur_01_01");	//Аргххх...(одобрительно) Быть шкура большой черный тролль!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Fur_01_02");	//Таг-Нор видеть, что человек быть очень умелый охотник.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Muritan_Fur_01_03");	//Теперь ты научишь меня охотиться?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Fur_01_04");	//Хорошо, Таг-Нор станет обучать человек. 
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Fur_01_01 " );	// Arghhh...(approvingly) Be the skin of a big black troll!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Fur_01_02 " );	// Tag-Nor see that the man be a very skilled hunter.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Muritan_Fur_01_03 " );	// Now will you teach me how to hunt?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Fur_01_04 " );	// All right, Tag-Nor will be trained by a human.
 	ORCRESPECT = ORCRESPECT + 5;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 5");
+		AI_Print( " Respect among orcs + 5 " );
 	};
 
 	TagNorTeach = TRUE;
 	MIS_TagNorRespect = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_TagNorRespect,LOG_SUCCESS);
-	B_LogEntry(TOPIC_TagNorRespect,"Я принес Таг-Нору редкий охотничий трофей - шкуру черного тролля, и он согласился обучить меня своему ремеслу.");
-	Info_ClearChoices(DIA_Orc_8570_TagNor_Muritan);
+	B_LogEntry(TOPIC_TagNorRespect, " I brought Tag-Nor a rare hunting trophy - the skin of a black troll, and he agreed to teach me his trade. " );
+	Info_ClearChoices(DIA_Orc_8570_North_Tag);
 };
 
-func void DIA_Orc_8570_TagNor_Muritan_Ishi()
+func void DIA_Orc_8570_North_Tag_She()
 {
 	B_GivePlayerXP(1500);
 	B_GiveInvItems(other,self,ItAt_CurratIshi,1);
@@ -209,27 +210,27 @@ func void DIA_Orc_8570_TagNor_Muritan_Ishi()
 	if(Trophy_IshiCurrat == TRUE)
 	{
 		Ext_RemoveFromSlot(other,"BIP01 PELVIS");
-		Npc_RemoveInvItems(other,ItUt_IshiCurrat,Npc_HasItems(other,ItUt_IshiCurrat));
+		Npc_RemoveInvItems(other,ItOut_IshiCurrat,Npc_HasItems(other,ItOut_IshiCurrat));
 		Trophy_IshiCurrat = FALSE;
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Ishi_01_01");	//Хммм... Таг-Нор никогда не видеть такое! Он быть сильно удивленный.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Ishi_01_02");	//Он думать, что человек быть очень умелый охотник, если смог добыть такое.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Muritan_Ishi_01_03");	//Значит, теперь ты научишь меня охотиться?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Ishi_01_04");	//Хорошо, Таг-Нор станет обучать человек! 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Ishi_01_05");	//Но думать, что раз человек смог принести такой трофей Таг-Нор, ему это уже не быть нужно.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Ishi_01_01 " );	// Hmmm... Tag-Nor will never see this! He be greatly surprised.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Ishi_01_02 " );	// He thinks that a person would be a very skilled hunter if he could get such a thing.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Muritan_Ishi_01_03 " );	// So now you're going to teach me how to hunt?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Ishi_01_04 " );	// All right, Tag-Nor will be trained by a human!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Muritan_Ishi_01_05 " );	// But to think that since a person could bring such a trophy to Tag-Nor, he no longer needs it.
 	ORCRESPECT = ORCRESPECT + 15;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 15");
+		AI_Print( " Respect among orcs + 15 " );
 	};
 
 	TagNorTeach = TRUE;
 	MIS_TagNorRespect = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_TagNorRespect,LOG_SUCCESS);
-	B_LogEntry(TOPIC_TagNorRespect,"Я принес Таг-Нору редкий трофей - спинной шип Иши-Куррата. Это очень впечатлило старого орка-охотника, и он согласился обучить меня своему ремеслу.");
-	Info_ClearChoices(DIA_Orc_8570_TagNor_Muritan);
+	B_LogEntry(TOPIC_TagNorRespect, " I brought Tag-Nor a rare trophy - Ishi-Kurrat's dorsal spike. This greatly impressed the old orc hunter, and he agreed to teach me his trade. " );
+	Info_ClearChoices(DIA_Orc_8570_North_Tag);
 };
 
 instance DIA_Orc_8570_TagNor_Bow(C_Info)
@@ -239,7 +240,7 @@ instance DIA_Orc_8570_TagNor_Bow(C_Info)
 	information = DIA_Orc_8570_TagNor_Bow_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "А почему вы, орки, не пользуетесь луками?";
+	description = " Why don't you orcs use bows? " ;
 };
 
 func int DIA_Orc_8570_TagNor_Bow_condition()
@@ -252,11 +253,11 @@ func int DIA_Orc_8570_TagNor_Bow_condition()
 
 func void DIA_Orc_8570_TagNor_Bow_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Bow_Info_18_01");	//А почему вы, орки, не пользуетесь луками?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Bow_Info_18_02");	//Лук быть оружием люди. Браты не уметь воевать из него!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Bow_Info_18_03");	//А что насчет арбалетов?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Bow_Info_18_04");	//Их тоже придумать люди, но мы суметь научиться использовать их в бою.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Bow_Info_18_05");	//Если человек иметь немного опыт, Таг-Нор может показать ему, как еще лучше стрелять из арбалет.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Bow_Info_18_01 " );	// Why don't you orcs use bows?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Bow_Info_18_02 " );	// The bow is the weapon of the people. Brothers do not know how to fight out of it!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_Bow_Info_18_03 " );	// What about crossbows?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Bow_Info_18_04 " );	// People also come up with them, but we can learn how to use them in battle.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_Bow_Info_18_05 " );	// If a person has a little experience, Tag-Nor can show him how to shoot even better with a crossbow.
 	TagNorTeachCrossBow = TRUE;
 };
 
@@ -266,7 +267,7 @@ instance DIA_Orc_8570_TagNor_FindCrBow(C_Info)
 	condition = DIA_Orc_8570_TagNor_FindCrBow_condition;
 	information = DIA_Orc_8570_TagNor_FindCrBow_info;
 	permanent = FALSE;
-	description = "Где мне достать хороший арбалет для охоты?";
+	description = " Where can I get a good hunting crossbow? " ;
 };
 
 func int DIA_Orc_8570_TagNor_FindCrBow_condition()
@@ -279,63 +280,63 @@ func int DIA_Orc_8570_TagNor_FindCrBow_condition()
 
 func void DIA_Orc_8570_TagNor_FindCrBow_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_01");	//Где мне достать хороший арбалет для охоты?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_02");	//(задумчиво) Обычно для простой охотник подходить любой из арбалеты.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_03");	//Силы простого арбалета вполне хватать, чтобы рано или поздно убивать любой зверь.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_01 " );	// Where can I get a good hunting crossbow?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_02 " );	// (thoughtfully) Usually for a simple hunter to approach any of the crossbows.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_03 " );	// The power of a simple crossbow is enough to kill any beast sooner or later.
 
 	if((KELIOSFIRETEST == FALSE) && (SBMODE == TRUE))
 	{
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_04");	//Но если человек хочет иметь оружие, достойное только великого охотника, то...
+		AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_04 " );	// But if a person wants to have a weapon worthy only of a great hunter, then...
 		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_05");	//То что?
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_06");	//...то, возможно, Таг-Нор сможет помогать ему. Но это быть очень непросто!
-		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_07");	//Я не боюсь трудностей! Рассказывай, где мне найти такое оружие.
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_08");	//Ну хорошо... Но тогда ты сначала приносить мне кое-какие вещи.
-		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_09");	//Ну, конечно, куда же без этого! Ладно, говори - что именно тебе нужно?
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_10");	//Во-первых, Таг-Нору будет необходима руда магия! Очень много руда магия...
-		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_11");	//Сколько руды тебе нужно?
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_12");	//Сто кусок руда ему вполне должно хватить.
-		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_13");	//Но это же целая гора руды!
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_14");	//А разве Таг-Нор говорить, что ему быть легко?
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_15");	//Если тот считать это слишком сложно для него, то мы можем закончить этот разговор.
+		AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_06 " );	// ...then perhaps Tag-Nor can help him. But it can be very difficult!
+		AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_07 " );	// I'm not afraid of difficulties! Tell me where I can find such a weapon.
+		AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_08 " );	// Well, well... But then you first bring me some things.
+		AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_09 " );	// Well, of course, where without it! Okay, tell me - what exactly do you need?
+		AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_10 " );	// First, Thag-Nor will need magic ore! A lot of ore magic...
+		AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_11 " );	// How much ore do you need?
+		AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_12 " );	// A hundred pieces of ore should be enough for him.
+		AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_13 " );	// But that's a whole mountain of ore!
+		AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_14 " );	// Can Tag-Nor say that it is easy for him to be?
+		AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Info_18_15 " );	// If he finds this too hard for him, then we can end this conversation.
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBow);
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBow,"Да, это все не для меня.",DIA_Orc_8570_TagNor_FindCrBow_Back);
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBow,"Ладно, попробую достать для тебя эту руду.",DIA_Orc_8570_TagNor_FindCrBow_Forward);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBow, " Yes, this is not for me. " ,DIA_Orc_8570_TagNor_FindCrBow_Back);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBow, " Okay, I'll try to get you this ore. " ,DIA_Orc_8570_TagNor_FindCrBow_Forward);
 	};
 };
 
 func void DIA_Orc_8570_TagNor_FindCrBow_Back()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Back_01_01");	//Да, это все не для меня.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Back_01_02");	//Как скажешь, человек.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Back_01_01 " );	// Yes, this is not for me.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Back_01_02 " );	// As you say, man.
 	AI_StopProcessInfos(self);
 };
 
 
 func void DIA_Orc_8570_TagNor_FindCrBow_Forward()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_01");	//Ладно, попробую достать для тебя эту руду.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_02");	//Хорошо... И еще, если человек вдруг найти черная руда, то тоже может приносить ее Таг-Нору!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_03");	//Он обязательно найти применение и ей.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_04");	//Я учту это. Что еще тебе нужно?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_05");	//Второе, что ты должен будешь достать для Таг-Нор - это брусок дерева... буковый дерева!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_06");	//Слышать, что на юг острова расти такие деревья. Человек лучше искать там!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_07");	//Надеюсь, это все?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_08");	//Нет. Рог черного пещерного тролля! Ты должен приносить его Таг-Нор!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_09");	//Ага, это уже становится интересней...
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_10");	//Почему человек так смотреть? Неужели он испугаться?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_11");	//Таг Нор думать, что такому охотнику, как ты это не быть трудно.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_12");	//Мне бы твою уверенность. Ну, что там дальше по списку?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_13");	//Потом мне понадобится... сухожилия огромный черный пума! Таг-Нор слышать, что они обитают в горах на юго-запад острова.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_14");	//Но быть осторожен, не порви их, когда будешь потрошить зверь. Иначе они становиться бесполезными!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_15");	//Постараюсь быть поаккуратней.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_16");	//И последняя, самая важная вещь, которую тебе нужно будет находить для меня - это редкий символ, что когда-то принадлежать великому охотнику орков!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_17");	//И где же мне искать этот редкий символ?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_18");	//Таг-Нор слышать, на старое кладбище орков похоронен один такой герой.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_22");	//Ну что же, работа предстоит не из легких. Не буду терять времени!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_01 " );	// Okay, I'll try to get this ore for you.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_02 " );	// Good... And yet, if a person suddenly finds black ore, then he can also bring it to Tag-Nor!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_03 " );	// He will definitely find a use for her.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_04 " );	// I'll keep that in mind. What else do you need?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_05 " );	// The second thing you'll need to get for Tag-Nor is a block of wood... beech wood!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_06 " );	// Hear that such trees grow in the south of the island. Man better look there!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_07 " );	// I hope that's all?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_08 " );	// No. Black cave troll horn! You must bring it to Tag-Nor!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_09 " );	// Yeah, this is getting interesting...
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_10 " );	// Why does the person look like that? Is he scared?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_11 " );	// Thag Nor thinks it's not hard for a hunter like you.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_12 " );	// I would like your confidence. Well, what's next on the list?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_13 " );	// Then I'll need... huge black cougar tendons! Tag-Nor hear that they inhabit the mountains to the southwest of the island.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_14 " );	// But be careful not to tear them when you gut the beast. Otherwise they become useless!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_15 " );	// I'll try to be more careful.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_16 " );	// And the last, most important thing you'll need to find for me is a rare symbol that once belonged to a great orc hunter!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_17 " );	// And where can I find this rare symbol?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_18 " );	// Tag-Nor hear, one such hero is buried in the old orc graveyard.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBow_Forward_01_22 " );	// Well, the work ahead is not easy. I won't waste time!
 	MIS_TagNorGrHunWeap = LOG_Running;
 	Log_CreateTopic(TOPIC_TagNorGrHunWeap,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TagNorGrHunWeap,LOG_Running);
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Таг-Нор сказал, что может помочь мне достать оружие, достойное великих охотников. Однако после того как он рассказал мне, что для этого будет нужно, я почти пожалел о том, что ввязался во все это. Итак, мне необходимо принести Таг-Нору сто кусков магической руды, цельный брусок букового дерева, рог черного пещерного тролля, сухожилия гигантской черной пумы и, наконец - символ, который когда-то принадлежал великому охотнику орков. Искать последний Таг-Нор мне посоветовал на старом кладбище орков. По его словам, там должен быть похоронен один из таких героев.");
+	B_LogEntry(TOPIC_TagNorGrHunWeap,"Tag-Nor said that he could help me get a weapon worthy of great hunters. However, after he told me what it would take, I almost regretted getting involved in all this. So, I you need to bring Tag-Nor one hundred pieces of magical ore, a solid block of beech wood, the horn of a black cave troll, the tendons of a giant black cougar and, finally, a symbol that once belonged to a great orc hunter. . According to him, one of these heroes should be buried there.");
 	AI_StopProcessInfos(self);
 };
 
@@ -346,7 +347,7 @@ instance DIA_Orc_8570_TagNor_BlackOre(C_Info)
 	information = DIA_Orc_8570_TagNor_BlackOre_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "А чем обычная магическая руда отличается от черной?";
+	description = " What's the difference between regular magic ore and black ore? " ;
 };
 
 func int DIA_Orc_8570_TagNor_BlackOre_condition()
@@ -359,9 +360,9 @@ func int DIA_Orc_8570_TagNor_BlackOre_condition()
 
 func void DIA_Orc_8570_TagNor_BlackOre_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_BlackOre_01_01");	//А чем обычная магическая руда отличается от черной?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_BlackOre_01_02");	//Таг-Нор не может ответить человек на этот вопрос.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_BlackOre_01_03");	//Но он точно знать, что черная руда иметь больше магия, чем обычная.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_BlackOre_01_01 " );	// What's the difference between regular magic ore and black ore?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_BlackOre_01_02 " );	// Tag-Nor man cannot answer this question.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_BlackOre_01_03 " );	// But he knows for sure that black ore has more magic than regular ore.
 };
 
 instance DIA_Orc_8570_TagNor_TeachHunting(C_Info)
@@ -371,12 +372,12 @@ instance DIA_Orc_8570_TagNor_TeachHunting(C_Info)
 	condition = DIA_Orc_8570_TagNor_TeachHunting_Condition;
 	information = DIA_Orc_8570_TagNor_TeachHunting_Info;
 	permanent = TRUE;
-	description = "Я хочу научиться разделывать добычу.";
+	description = " I want to learn how to carve loot. " ;
 };
 
 func int DIA_Orc_8570_TagNor_TeachHunting_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Orc_8570_TagNor_Hello) && (TagNorTeach == TRUE) && (TagNorTeachAll == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Orc_8570_Nor_Tag_Hello ) && ( NorTeach tag ==  TRUE ) && ( NorTeachAll tag ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -384,8 +385,8 @@ func int DIA_Orc_8570_TagNor_TeachHunting_Condition()
 
 func void DIA_Orc_8570_TagNor_TeachHunting_Info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_TeachHunting_01_00");	//Я хочу научиться разделывать добычу.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_TeachHunting_01_01");	//Что человек хотеть знать?
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_TeachHunting_01_00 " );	// I want to learn how to butcher prey.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_TeachHunting_01_01 " );	// What does the person want to know?
 
 	if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ReptileSkin] == FALSE))
 	{
@@ -406,7 +407,7 @@ func void DIA_Orc_8570_TagNor_TeachHunting_Info()
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] == FALSE)
 		{
-			Info_AddChoice(DIA_Orc_8570_TagNor_TeachHunting,B_BuildLearnStringForOrc("Вырезать огненный язык.",B_GetLearnCostTalentOrc(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_FireTongue)),DIA_Orc_8570_TagNor_TeachHunting_FireTongue);
+			Info_AddChoice(DIA_Orc_8570_TagNor_TeachHunting,B_BuildLearnStringForOrc( " Cut fire tongue. " ,B_GetLearnCostTalentOrc(other, NPC_TALENT_TAKEANIMALTROPHY ,TROPHY_FireTongue)),DIA_Orc_8570_TagNor_TeachHunting_FireTongue);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] == FALSE)
 		{
@@ -415,7 +416,7 @@ func void DIA_Orc_8570_TagNor_TeachHunting_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_TeachHunting_01_04");	//Больше мне нечему учить человек.
+		AI_Output(self,other, " DIA_Orc_8570_TagNor_TeachHunting_01_04 " );	// I have nothing more to teach man.
 		TagNorTeachAll = TRUE;
 	};
 };
@@ -478,7 +479,7 @@ instance DIA_Orc_8570_TagNor_TeachCrossBow(C_Info)
 	condition = DIA_Orc_8570_TagNor_TeachCrossBow_Condition;
 	information = DIA_Orc_8570_TagNor_TeachCrossBow_Info;
 	permanent = TRUE;
-	description = "Научи меня стрелять из арбалета.";
+	description = " Teach me how to shoot a crossbow. " ;
 };
 
 func int DIA_Orc_8570_TagNor_TeachCrossBow_Condition()
@@ -491,7 +492,7 @@ func int DIA_Orc_8570_TagNor_TeachCrossBow_Condition()
 
 func void DIA_Orc_8570_TagNor_TeachCrossBow_Info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_TeachCrossBow_15_00");	//Научи меня стрелять из арбалета.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_TeachCrossBow_15_00 " );	// Teach me how to shoot a crossbow.
 	Info_ClearChoices(DIA_Orc_8570_TagNor_TeachCrossBow);
 	Info_AddChoice(DIA_Orc_8570_TagNor_TeachCrossBow,Dialog_Back,DIA_Orc_8570_TagNor_TeachCrossBow_Back);
 	Info_AddChoice(DIA_Orc_8570_TagNor_TeachCrossBow,B_BuildLearnStringForOrc(PRINT_LearnCrossBow1,B_GetLearnCostTalentOrc(other,NPC_TALENT_CROSSBOW,1)),DIA_Orc_8570_TagNor_TeachCrossBow_CROSSBOW_1);
@@ -532,7 +533,7 @@ instance DIA_Orc_8570_TagNor_FindCrBowIng(C_Info)
 	condition = DIA_Orc_8570_TagNor_FindCrBowIng_condition;
 	information = DIA_Orc_8570_TagNor_FindCrBowIng_info;
 	permanent = TRUE;
-	description = "Насчет тех вещей, которые тебе были нужны.";
+	description = " About the things you needed. " ;
 };
 
 func int DIA_Orc_8570_TagNor_FindCrBowIng_condition()
@@ -545,48 +546,48 @@ func int DIA_Orc_8570_TagNor_FindCrBowIng_condition()
 
 func void DIA_Orc_8570_TagNor_FindCrBowIng_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_01");	//Насчет тех вещей, которые тебе были нужны.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_02");	//У человек есть, что показать Таг-Нор?
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_01 " );	// About those things you needed.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowIng_01_02 " );	// Do people have something to show Tag-Nor?
 
 	Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
 	Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng,Dialog_Back,DIA_Orc_8570_TagNor_FindCrBowIng_Back);
 
-	if((Npc_HasItems(other,ItMi_Nugget) >= 100) && (AllIngCrBow_Ore == FALSE))
+	if ((Npc_HasItems(other,ItMy_Nugget) >=  100 ) && (AllIngCrBow_Ore ==  FALSE ))
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng,"Отдать магическую руду",DIA_Orc_8570_TagNor_FindCrBowIng_Ore);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng, " Give Magic Ore " ,DIA_Orc_8570_TagNor_FindCrBowIng_Ore);
 	};
 
-	if((Npc_HasItems(other,ItMi_BukTree) >= 1) && (AllIngCrBow_Tree == FALSE))
+	if ((Npc_HasItems(other,ItMi_BukTree) >=  1 ) && (AllIngCrBow_Tree ==  FALSE ))
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng,"Отдать брусок бука",DIA_Orc_8570_TagNor_FindCrBowIng_Tree);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng, " Give Beech Bar " ,DIA_Orc_8570_TagNor_FindCrBowIng_Tree);
 	};
 
 	if((Npc_HasItems(other,ItAt_BlackTrollHorn) >= 1) && (AllIngCrBow_Horn == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng,"Отдать рог черного тролля",DIA_Orc_8570_TagNor_FindCrBowIng_Horn);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng, " Give Black Troll Horn " ,DIA_Orc_8570_TagNor_FindCrBowIng_Horn);
 	};
 
 	if((Npc_HasItems(other,ItAt_PumaMuscle) >= 1) && (AllIngCrBow_Puma == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng,"Отдать сухожилия пумы",DIA_Orc_8570_TagNor_FindCrBowIng_Puma);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng, " Give Puma Tendons " ,DIA_Orc_8570_TagNor_FindCrBowIng_Puma);
 	};
 
 	if((Npc_HasItems(other,ItMi_HuntSign) >= 1) && (AllIngCrBow_Sign == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng,"Отдать символ охотника",DIA_Orc_8570_TagNor_FindCrBowIng_Sign);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng, " Give hunter symbol " ,DIA_Orc_8570_TagNor_FindCrBowIng_Sign);
 	};
 
 	if((Npc_HasItems(other,ItMi_Zeitspalt_Addon) >= 1) && (AllIngCrBow_BlackOre == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng,"Отдать черную магическую руду",DIA_Orc_8570_TagNor_FindCrBowIng_BlackOre);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBowIng, " Give Black Magic Ore " ,DIA_Orc_8570_TagNor_FindCrBowIng_BlackOre);
 	};
 };
 
 func void DIA_Orc_8570_TagNor_FindCrBowIng_Ore()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_03");	//Тут сто кусков магической руды, как ты и просил.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_04");	//Хммм... быть хорошо! Можешь отдать ее Таг-Нору.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_03 " );	// There are a hundred pieces of magic ore, just like you asked.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowIng_01_04 " );	// Hmmm... be good! You can give it to Thag-Nor.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_05");	//Держи.
 	B_GiveInvItems(other,self,ItMi_Nugget,100);
 	Npc_RemoveInvItems(self,ItMi_Nugget,Npc_HasItems(self,ItMi_Nugget));
@@ -596,19 +597,19 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Ore()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору все вещи, о которых он просил. Посмотрим, что будет дальше...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Tag-Nor all the things he asked for. Let's see what happens next... " );
 	}
 	else
 	{
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору сто кусков магической руды.");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Tag-Nor one hundred pieces of magic ore. " );
 	};
 };
 
 func void DIA_Orc_8570_TagNor_FindCrBowIng_Tree()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_06");	//У меня есть цельный брусок тропического бука.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_07");	//Тогда давай его Таг-Нору!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_06 " );	// I have a solid block of tropical beech.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowIng_01_07 " );	// Then give it to Tag-Nor!
 	B_GiveInvItems(other,self,ItMi_BukTree,1);
 	Npc_RemoveInvItems(self,ItMi_BukTree,Npc_HasItems(self,ItMi_BukTree));
 	AllIngCrBow_Tree = TRUE;
@@ -617,19 +618,19 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Tree()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору все вещи, о которых он просил. Посмотрим, что будет дальше...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Tag-Nor all the things he asked for. Let's see what happens next... " );
 	}
 	else
 	{
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору цельный брусок тропического бука.");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Tag-Nor a solid block of tropical beech. " );
 	};
 };
 
 func void DIA_Orc_8570_TagNor_FindCrBowIng_Horn()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_09");	//Вот рог пещерного черного тролля.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_10");	//Отлично, человек! Теперь отдай его Таг-Нору.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_09 " );	// Here is the horn of the cave black troll.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowIng_01_10 " );	// Great, man! Now give it to Tag-Nor.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_11");	//Конечно.
 	B_GiveInvItems(other,self,ItAt_BlackTrollHorn,1);
 	Npc_RemoveInvItems(self,ItAt_BlackTrollHorn,Npc_HasItems(self,ItAt_BlackTrollHorn));
@@ -639,19 +640,19 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Horn()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору все вещи, о которых он просил. Посмотрим, что будет дальше...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Tag-Nor all the things he asked for. Let's see what happens next... " );
 	}
 	else
 	{
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору рог пещерного черного тролля.");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought the horn of the cave black troll to Tag-Nor. " );
 	};
 };
 
 func void DIA_Orc_8570_TagNor_FindCrBowIng_Puma()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_12");	//Здесь сухожилия черной пумы, как ты и просил.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_13");	//Если так, то Таг-Нор с радостью забрать их у человек.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_12 " );	// Here are the tendons of the black cougar, as you requested.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowIng_01_13 " );	// If so, then Tag-Nor will gladly take them from humans.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_14");	//Вот они.
 	B_GiveInvItems(other,self,ItAt_PumaMuscle,1);
 	Npc_RemoveInvItems(self,ItAt_PumaMuscle,Npc_HasItems(self,ItAt_PumaMuscle));
@@ -661,49 +662,49 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Puma()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору все вещи, о которых он просил! Теперь посмотрим, что будет дальше...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Tag-Nor all the things he asked for! Now let's see what happens next... " );
 	}
 	else
 	{
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору сухожилия черной пумы.");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Black Cougar tendons to Tag-Nor. " );
 	};
 };
 
 func void DIA_Orc_8570_TagNor_FindCrBowIng_Sign()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_15");	//У меня есть символ великого охотника орков.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_16");	//Так тебе удалось его достать? Таг-Нор быть сильно удивлен! Скорей покажи мне его!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_15 " );	// I have the glyph of the great orc hunter.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowIng_01_16 " );	// So did you manage to get it? Tag-Nor be greatly surprised! Hurry show it to me!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_17");	//Вот.
 	B_GiveInvItems(other,self,ItMi_HuntSign,1);
 	Npc_RemoveInvItems(self,ItMi_HuntSign,Npc_HasItems(self,ItMi_HuntSign));
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_18");	//Да, это он! Человек сделать все как надо... Таг-Нор быть очень довольный!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowIng_01_18 " );	// Yes, it's him! Man do everything right... Tag-Nor be very pleased!
 	AllIngCrBow_Sign = TRUE;
 
 	if((AllIngCrBow_Ore == TRUE) && (AllIngCrBow_Tree == TRUE) && (AllIngCrBow_Horn == TRUE) && (AllIngCrBow_Puma == TRUE) && (AllIngCrBow_Sign == TRUE))
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору все вещи, о которых он просил. Посмотрим, что будет дальше...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Tag-Nor all the things he asked for. Let's see what happens next... " );
 	}
 	else
 	{
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Я принес Таг-Нору символ великого охотника орков.");
+		B_LogEntry(TOPIC_TagNorGrHunWeap, " I brought Tag-Nor the symbol of the great orc hunter. " );
 	};
 };
 
 func void DIA_Orc_8570_TagNor_FindCrBowIng_BlackOre()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_19");	//У меня есть черная руда.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_20");	//Быть очень хорошо! Но пока оставь ее, она еще пригодится человек.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_21");	//Как скажешь.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_19 " );	// I have black ore.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowIng_01_20 " );	// Be very good! But for now, leave her, she's still going to come in handy man.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_21 " );	// As you say.
 	AllIngCrBow_BlackOre = TRUE;
 };
 
 func void DIA_Orc_8570_TagNor_FindCrBowIng_Back()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_22");	//Пока ничего.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowIng_01_22 " );	// Nothing yet.
 	Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
 };
 
@@ -714,7 +715,7 @@ instance DIA_Orc_8570_TagNor_FindCrBowSmithTeacher(C_Info)
 	information = DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "Теперь у тебя все есть.";
+	description = " Now you have everything. " ;
 };
 
 func int DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_condition()
@@ -728,20 +729,20 @@ func int DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_condition()
 func void DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_01");	//Теперь у тебя все есть. Что дальше?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_02");	//Человек хорошо поработал... Достал все, что просил Таг-Нор.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_03");	//Но чтобы его труды не пропасть зря, он должен найти тот, кто сможет научить человек делать его оружие.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_04");	//Ты хочешь сказать, что я сам должен буду сделать этот арбалет?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_05");	//Быть именно так. Или человек думать, что за него это сделать Таг-Нор?
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_06");	//Ну, я думал, что...
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_07");	//Таг-Нор быть простым охотником и делать оружие он не уметь!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_08");	//Человек искать того, кто покажет человек, как можно сделать его.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_09");	//Кто бы это мог быть?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_10");	//Человек спросить это у таких же людей, как он. Возможно, тех, кто уметь ковать оружие.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_11");	//То есть у кузнецов. Что ж, я тебя понял.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_12");	//Хорошо. Когда человек будет уметь делать оружие, то он снова приходить к Таг-Нор.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_13");	//Тогда тот скажет, что человеку делать дальше.
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Таг-Нор хочет, чтобы я нашел того, кто научил бы меня делать арбалеты. Полагаю, надо поспрашивать об этом кузнецов.");
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_01 " );	// Now you have everything. What's next?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_02 " );	// The man did a good job... Got everything that Tag-Nor asked for.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_03 " );	// But in order for his labors not to be in vain, he must find someone who can teach people how to make his weapons.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_04 " );	// Are you saying that I will have to make this crossbow myself?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_05 " );	// Be that way. Or does a person think that Tag-Nor can do it for him?
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_06 " );	// Well, I thought...
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_07 " );	// Tag-Nor to be a simple hunter and he doesn't know how to make weapons!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_08 " );	// Man look for someone who will show man how you can make it.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_09 " );	// Who could it be?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_10 " );	// A person to ask this from people like him. Perhaps those who know how to forge weapons.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_11 " );	// That is, the blacksmiths. Well, I understand you.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_12 " );	// Good. When a person will be able to make weapons, he will again come to Tag-Nor.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_13 " );	// Then he will tell you what to do next.
+	B_LogEntry(TOPIC_TagNorGrHunWeap, " Tag-Nor wants me to find someone to teach me how to make crossbows. Guess I should ask the blacksmiths about it. " );
 	FindSmithTeacherCrBow = TRUE;
 };
 
@@ -752,7 +753,7 @@ instance DIA_Orc_8570_TagNor_BeginMakeNimrod(C_Info)
 	information = DIA_Orc_8570_TagNor_BeginMakeNimrod_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "Я умею делать упоры для арбалетов.";
+	description = " I can do rests for crossbows. " ;
 };
 
 func int DIA_Orc_8570_TagNor_BeginMakeNimrod_condition()
@@ -766,19 +767,19 @@ func int DIA_Orc_8570_TagNor_BeginMakeNimrod_condition()
 func void DIA_Orc_8570_TagNor_BeginMakeNimrod_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_BeginMakeNimrod_01_01");	//Я умею делать упоры для арбалетов.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_BeginMakeNimrod_01_02");	//Если так, тогда человек быть готов к тому, чтобы создать великое оружие охотников орков!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_BeginMakeNimrod_01_03");	//Что мне для этого нужно?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_BeginMakeNimrod_01_04");	//Вот, он взять эти древний письмена орков. В них человек найдет все, что ему понадобиться.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_BeginMakeNimrod_01_01 " );	// I can do rests for crossbows.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_BeginMakeNimrod_01_02 " );	// If so, then the human should be ready to create a great orc hunter weapon!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_BeginMakeNimrod_01_03 " );	// What do I need for this?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_BeginMakeNimrod_01_04 " );	// Here, he take these ancient orc writings. In them, a person will find everything he needs.
 	B_GiveInvItems(self,other,ItWr_DragNimrod,1);
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_BeginMakeNimrod_01_05");	//Таг-Нор также возвращать человеку все то, что он раньше приносить ему.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_BeginMakeNimrod_01_05 " );	// Tag-Nor also return to the person everything that he used to bring to him.
 	CreateInvItems(other,ItMi_Nugget,100);
 	CreateInvItems(other,ItMi_BukTree,1);
 	CreateInvItems(other,ItAt_BlackTrollHorn,1);
 	CreateInvItems(other,ItMi_HuntSign,1);
 	CreateInvItems(other,ItAt_PumaMuscle,1);
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_BeginMakeNimrod_01_06");	//Теперь человек ступать и возвращаться к Таг-Нор, когда уже сделать великое оружие!
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Таг-Нор дал мне древние орочьи письмена, в которых описано создание великого оружия орков. Теперь мне остается только изготовить его.");
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_BeginMakeNimrod_01_06 " );	// Now a man to step and return to Tag-Nor, when already make a great weapon!
+	B_LogEntry(TOPIC_TagNorGrHunWeap, " Tag-Nor gave me an ancient Orc script that describes the creation of a great Orc weapon. Now all I have to do is craft it. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -788,7 +789,7 @@ instance DIA_Orc_8570_TagNor_GetNimrod(C_Info)
 	condition = DIA_Orc_8570_TagNor_GetNimrod_condition;
 	information = DIA_Orc_8570_TagNor_GetNimrod_info;
 	permanent = FALSE;
-	description = "Я создал арбалет великих охотников!";
+	description = " I've made the crossbow of great hunters! " ;
 };
 
 func int DIA_Orc_8570_TagNor_GetNimrod_condition()
@@ -802,33 +803,33 @@ func int DIA_Orc_8570_TagNor_GetNimrod_condition()
 func void DIA_Orc_8570_TagNor_GetNimrod_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_01");	//Я создал арбалет великих охотников орков!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_02");	//ХРОК НАКАР!!! (восхищенно) Неужели человек удалось это сделать? Создать великое оружие... 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_03");	//...оружие, достойный только великих воинов.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_04");	//Как видишь, Таг-Нор! Я не стал бы тебя обманывать.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_05");	//Ну, раз так... Тогда человек может считать себя великим воином. И он по праву заслужить носить его!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_06");	//Собственно, это я и собирался сделать.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_07");	//Таг-Нор не удивляться тому, что человек захотеть оставить себе этот арбалет. С таким оружием он будет почти непобедимый!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_08");	//Однако Таг-Нор все-таки хотеть спросить человек об одной вещи.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GetNimrod_01_01 " );	// I created the crossbow of the great orc hunters!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_02 " );	// HROK NAKAR!!! (admiringly) Has man managed to do it? Create a great weapon...
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_03 " );	// ...a weapon worthy only of great warriors.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GetNimrod_01_04 " );	// As you can see, Tag-Nor! I would not deceive you.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_05 " );	// Well, if so... Then a person can consider himself a great warrior. And he rightfully deserves to wear it!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GetNimrod_01_06 " );	// Actually, this is what I was going to do.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_07 " );	// Tag-Nor should not be surprised that a man would want to keep this crossbow for himself. With such a weapon, he will be almost invincible!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_08 " );	// However, Tag-Nor still wants to ask a person about one thing.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_09");	//О какой?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_10");	//(вкрадчиво) Не хочет ли тот отдать это великое оружие Таг-Нору?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_10 " );	// (smartly) Does he want to give this great weapon to Thag-Nor?
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_11");	//Что?!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_12");	//Таг-Нор всегда мечтать иметь такое оружие, как Драг Нимрод! С такой арбалет Таг-Нор мог бы заслужить еще больше уважение своих братьев.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_13");	//А взамен человек смог бы попросить у Таг-Нора абсолютно все, чего бы он захотеть!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_14");	//Очень неожиданное предложение! Мне нужно хорошенько подумать об этом.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_15");	//Таг-Нор не торопить человек. Пусть тот думает столько, сколько захочет. А Таг-Нор будет ждать его ответа.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_16");	//Договорились. Но пока что я оставлю этот арбалет себе. Ты не возражаешь?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_17");	//Конечно, носи его! Ведь он быть по праву твой.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_12 " );	// Tag-Nor always dream of having a weapon like Drag Nimrod! With such a crossbow, Tag-Nor could earn even more respect from his brothers.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_13 " );	// And in return, a person could ask Tag-Nor for absolutely everything he wants!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GetNimrod_01_14 " );	// A very unexpected offer! I need to think carefully about this.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_15 " );	// Tag-Nor don't rush people. Let him think as much as he wants. And Tag-Nor will be waiting for his answer.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GetNimrod_01_16 " );	// Agreed. But for now, I'll keep this crossbow for myself. You do not mind, do you?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GetNimrod_01_17 " );	// Of course, wear it! After all, he is rightfully yours.
 	ORCRESPECT = ORCRESPECT + 10;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 10");
+		AI_Print( " Respect among orcs + 10 " );
 	};
 
 	MIS_TagNorGrHunWeap = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_TagNorGrHunWeap,LOG_SUCCESS);
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Я сообщил Таг-Нору, что мне удалось сделать Драг Нимрод - арбалет великих охотников орков. Он по достоинству оценил мои труды и предложил отдать ему это оружие за соответствующее вознаграждение. Я должен подумать над его предложением.");};
+	B_LogEntry(TOPIC_TagNorGrHunWeap, " I informed Tag-Nor that I had succeeded in making the Drag Nimrod, the crossbow of the great orc hunters. He appreciated my efforts and offered to give him this weapon for an appropriate reward. I should consider his proposal. " );} ;
 
 instance DIA_Orc_8570_TagNor_GiveNimrod(C_Info)
 {
@@ -836,7 +837,7 @@ instance DIA_Orc_8570_TagNor_GiveNimrod(C_Info)
 	condition = DIA_Orc_8570_TagNor_GiveNimrod_condition;
 	information = DIA_Orc_8570_TagNor_GiveNimrod_info;
 	permanent = FALSE;
-	description = "Тебе еще нужен тот арбалет?";
+	description = " Do you still need that crossbow? " ;
 };
 
 func int DIA_Orc_8570_TagNor_GiveNimrod_condition()
@@ -850,45 +851,45 @@ func int DIA_Orc_8570_TagNor_GiveNimrod_condition()
 func void DIA_Orc_8570_TagNor_GiveNimrod_info()
 {
 	B_GivePlayerXP(3000);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_01");	//Тебе еще нужен тот арбалет?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_02");	//Драг-Нимрод?! (оживленно) Таг-Нор уже говорить человек о том, что очень хотеть владеть им. Но почему он спрашивать?
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_03");	//Я все-таки решил отдать его тебе.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_04");	//Человек говорить серьезно? Он действительно хотеть отдать ему Драг Нимрод?
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_05");	//Да, но хотелось бы знать, что я получу взамен.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_06");	//Таг-Нор ожидать этих слов! Поэтому он хотеть предложить человек только то, что больше никто ему не сможет дать.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_01_01 " );	// Do you still need that crossbow?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_01_02 " );	// Drag-Nimrod?! (briskly) Tag-Nor is already talking to people about wanting to own it. But why does he ask?
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_01_03 " );	// I still decided to give it to you.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_01_04 " );	// Man speak seriously? Does he really want to give him Drag Nimrod?
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_01_05 " );	// Yes, but I'd like to know what I'll get in return.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_01_06 " );	// Tag-Nor expect these words! Therefore, he wants to offer people only what no one else can give him.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_07");	//И что же?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_08");	//Настоящее мастерство охотника - это всегда оставаться незаметным, когда подкрадываешься к своей добыча.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_09");	//Таг-Нор может показать человек, как на время становиться невидимым!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_01_08 " );	// The true skill of a hunter is to always remain inconspicuous when sneaking up on your prey.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_01_09 " );	// Tag-Nor can show a person how to become invisible for a while!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_10");	//Ты шутишь?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_11");	//Таг-Нор совсем не шутить. (серьезно) Он поделиться с человек этим секретом, если тот отдаст ему Драг-Нимрод!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_12");	//Но если ему это быть неинтересно, он может узнать, как увеличить свой сила, ловкость или жизненная энергия! Таг-Нор сможет обучить его и этому.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_14");	//Ну так что человек выбирать?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_01_11 " );	// Tag-Nor isn't joking at all. (seriously) He will share this secret with a man if he gives him Drag-Nimrod!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_01_12 " );	// But if he's not interested, he can learn how to increase his strength, agility, or vitality! Tag-Nor could teach him that too.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_01_14 " );	// Well, so what man to choose?
 	ORCRESPECT = ORCRESPECT + 5;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 5");
+		AI_Print( " Respect among orcs + 5 " );
 	};
 
 	Info_ClearChoices(DIA_Orc_8570_TagNor_GiveNimrod);
-	Info_AddChoice(DIA_Orc_8570_TagNor_GiveNimrod,"Покажи мне, как становиться невидимым.",DIA_Orc_8570_TagNor_GiveNimrod_Hide);
-	Info_AddChoice(DIA_Orc_8570_TagNor_GiveNimrod,"Покажи мне, как стать сильней.",DIA_Orc_8570_TagNor_GiveNimrod_Str);
-	Info_AddChoice(DIA_Orc_8570_TagNor_GiveNimrod,"Покажи мне, как стать ловчей.",DIA_Orc_8570_TagNor_GiveNimrod_Dex);
-	Info_AddChoice(DIA_Orc_8570_TagNor_GiveNimrod,"Покажи мне, как стать более живучим.",DIA_Orc_8570_TagNor_GiveNimrod_Hlth);
+	Info_AddChoice(DIA_Orc_8570_TagNor_GiveNimrod, " Show me how to become invisible. " ,DIA_Orc_8570_TagNor_GiveNimrod_Hide);
+	Info_AddChoice(DIA_Orc_8570_TagNor_GiveNimrod, " Show me how to get stronger. " ,DIA_Orc_8570_TagNor_GiveNimrod_Str);
+	Info_AddChoice(DIA_Orc_8570_TagNor_GiveNimrod, " Show me how to get smarter. " ,DIA_Orc_8570_TagNor_GiveNimrod_Dex);
+	Info_AddChoice(DIA_Orc_8570_TagNor_GiveNimrod, " Show me how to be more tenacious. " ,DIA_Orc_8570_TagNor_GiveNimrod_Hlth);
 };
 
 func void DIA_Orc_8570_TagNor_GiveNimrod_Hide()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_01");	//Покажи мне, как становиться невидимым.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_02");	//Ты выбрать самую ценную награду! Теперь человек слушать внимательно.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_03");	//Сперва возьми этот магический эликсир.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_01 " );	// Show me how to become invisible.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_02 " );	// You choose the most valuable reward! Now man listen carefully.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_03 " );	// Take this magical elixir first.
 	B_GiveInvItems(self,other,ItPo_ElixirSHadow,1);
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_04");	//Выпив его, ты становиться призраком, и ни одна живая душа не смочь увидеть тебя!
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_05");	//И как долго я смогу оставаться невидимым?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_06");	//Таг-Нор быть это неизвестно. Но оно длиться до тех пор, пока ты сам не дашь себя обнаружить.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_07");	//Но нужно остерегаться созданий, порожденных сильная магия! Некоторые из них могут почувствовать присутствие человек поблизости!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_08");	//И тогда их магия разрушать действия чар эликсира.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_09");	//Хорошо, Таг-Нор. Я все понял. Держи свой арбалет, как мы и договаривались.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_04 " );	// After drinking it, you become a ghost, and not a single living soul can see you!
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_05 " );	// And how long can I remain invisible?
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_06 " );	// Tag-Nor is unknown. But it lasts until you let yourself be discovered.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_07 " );	// But beware of creatures spawned by strong magic! Some of them can feel the presence of a person nearby!
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_08 " );	// And then their magic will break the effects of the elixir spell.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_09 " );	// All right, Tag-Nor. I got it. Hold your crossbow, as we agreed.
 
 	if(Npc_HasItems(other,ITRW_GREATARBALET_ORC_01) >= 1)
 	{
@@ -916,19 +917,19 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Hide()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_10");	//ХРОТАК НАК!!!...(радостно) Наконец-то теперь самое великое оружие охотников орков у Таг-Нора! Он очень сильно благодарить человек за это.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_11");	//Ну да, само собой.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_10 " );	// HROTAK NAK!!!...(happily) Tag-Nor now has the greatest orc hunter's weapon at last! He is very much to thank the man for this.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_11 " );	// Well, yes, of course.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Orc_8570_TagNor_GiveNimrod_Str()
 {
 	B_RaiseAttribute_Bonus(other,ATR_STRENGTH,Bonus_TagNor);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_01");	//Покажи мне, как стать сильней.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_02");	//Как скажешь, человек. Теперь слушать меня внимательно.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Str_01_01 " );	// Show me how to get stronger.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Str_01_02 " );	// As you say, man. Now listen to me carefully.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_03");	//...(рассказывает)...
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_04");	//Теперь ты стать куда более сильный, чем раньше.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_05");	//А вот твой арбалет, Таг-Нор. Как мы и договаривались.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Str_01_04 " );	// Now you become much stronger than before.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Str_01_05 " );	// And here is your crossbow, Tag-Nor. As we agreed.
 
 	if(Npc_HasItems(other,ITRW_GREATARBALET_ORC_01) >= 1)
 	{
@@ -956,19 +957,19 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Str()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_06");	//ХРОТАК НАК!!! (радостно) Наконец-то теперь самое великое оружие охотников орков у Таг-Нора! Он очень сильно благодарить человек за это.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_07");	//Ну да, само собой.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Str_01_06 " );	// HROTAK NAK!!! (joyfully) Tag-Nor's greatest weapon of hunters is now at last! He is very much to thank the man for this.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Str_01_07 " );	// Well, yes, of course.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Orc_8570_TagNor_GiveNimrod_Dex()
 {
 	B_RaiseAttribute_Bonus(other,ATR_DEXTERITY,Bonus_TagNor);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_01");	//Покажи мне, как стать более ловким.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_02");	//Как скажешь, человек. Теперь слушать меня внимательно.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_01 " );	// Show me how to get more agile.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_02 " );	// As you say, man. Now listen to me carefully.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_03");	//...(рассказывает)...
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_04");	//Вот и все! Теперь ты стать куда более ловкий, чем раньше.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_05");	//А вот твой арбалет, Таг-Нор. Как мы и договаривались.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_04 " );	// That's it! Now you become much more dexterous than before.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_05 " );	// And here is your crossbow, Tag-Nor. As we agreed.
 
 
 	if(Npc_HasItems(other,ITRW_GREATARBALET_ORC_01) >= 1)
@@ -997,8 +998,8 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Dex()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_06");	//ХРОТАК НАК!!! (радостно) Наконец-то теперь самое великое оружие охотников орков у Таг-Нора! Он очень сильно благодарить человек за это.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_07");	//Ну да, само собой.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_06 " );	// HROTAK NAK!!! (joyfully) Tag-Nor's greatest weapon of hunters is now at last! He is very much to thank the man for this.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_07 " );	// Well, yes, of course.
 	AI_StopProcessInfos(self);
 };
 
@@ -1006,11 +1007,11 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Hlth()
 {
 	B_RaiseAttribute(other,ATR_HITPOINTS_MAX,Bonus_TagNor_HP);
 	Npc_ChangeAttribute(other,ATR_HITPOINTS,Bonus_TagNor_HP);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_01");	//Покажи мне, как стать более живучим.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_02");	//Как скажешь, человек. Теперь слушать меня внимательно.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_01 " );	// Show me how to be more durable.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_02 " );	// As you say, man. Now listen to me carefully.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_03");	//...(рассказывает)...
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_04");	//Вот и все! Теперь ты сможешь выдержать намного больше удары, чем раньше.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_05");	//А вот твой арбалет, Таг-Нор. Как мы и договаривались.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_04 " );	// That's it! Now you can take a lot more hits than before.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_05 " );	// And here is your crossbow, Tag-Nor. As we agreed.
 
 	if(Npc_HasItems(other,ITRW_GREATARBALET_ORC_01) >= 1)
 	{
@@ -1038,12 +1039,12 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Hlth()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_06");	//ХРОТАК НАК!!! (радостно) Наконец-то теперь самое великое оружие охотников орков у Таг-Нора! Он очень сильно благодарить человек за это.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_07");	//Ну да, само собой.
+	AI_Output(self,other, " DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_06 " );	// HROTAK NAK!!! (joyfully) Tag-Nor's greatest weapon of hunters is now at last! He is very much to thank the man for this.
+	AI_Output(other,self, " DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_07 " );	// Well, yes, of course.
 	AI_StopProcessInfos(self);
 };
 
-//--------------------------------------орк торговец--------------------------------
+// -------------------------------------- orc trader-------- -----------------------
 
 var int OrcTradeDone_01;
 var int OrcTradeDone_02;
@@ -1079,7 +1080,7 @@ instance DIA_Orc_8549_TradeOrc_Trade(C_Info)
 	information = DIA_Orc_8549_TradeOrc_Trade_info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи свои товары.";
+	description = " Show your products. " ;
 };
 
 func int DIA_Orc_8549_TradeOrc_Trade_condition()
@@ -1089,16 +1090,16 @@ func int DIA_Orc_8549_TradeOrc_Trade_condition()
 
 func void DIA_Orc_8549_TradeOrc_Trade_info()
 {
-	AI_Output(other,self,"DIA_Camper01_TRADE_15_00");	//Покажи свои товары.
+	AI_Output(other,self, " DIA_Camper01_TRADE_15_00 " );	// Display your products.
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_PreHello_01_03");	//ДАБАР КАРАД ГОР ТАК НИР ВАК.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_PreHello_01_03 " );	// DABAR KARAD GOR TAK NIR VAK.
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		if((OrcTradeDone_05 == FALSE) && (ORCRESPECT >= 90) && (other.guild != GIL_KDF) && (other.guild != GIL_KDM) && (other.guild != GIL_KDW) && (other.guild != GIL_GUR) && (other.guild != GIL_NOV) && (other.guild != GIL_NDW) && (other.guild != GIL_NDM) && (other.guild != GIL_DMT))
+		if ( ( OrcTradeDone_05 ==  FALSE ) && ( ORCRESPECT  >=  90 ) && ( other . guild !=  GIL_KDF ) && ( other . guild !=  GIL_KDM ) && ( other . guild !=  GIL_KDW ) && ( other . guild !=  GIL_GUR ) && (other.guild !=  GIL_NOV ) && (other.guild !=  GIL_NDW ) && (other.guild ! =  GIL_NDM ) && (other.guild != GIL_NDM ) &&& (other.guild != GIL_DMT))
 		{
 			CreateInvItems(self,ItRu_ShadowMount,1);
 			CreateInvItems(self,ItMw_Halleberde_Orc,1);
@@ -1138,7 +1139,7 @@ func void DIA_Orc_8549_TradeOrc_Trade_info()
 			CreateInvItems(self,ItAt_WargFur,3);
 			CreateInvItems(self,ItRw_Bolt,50);
 			CreateInvItems(self,ItLsTorch,5);
-			CreateInvItems(self,ITMI_SNUGGET,15);
+			CreateInvItems(self, ITMI_SNUGGET , 15 );
 			CreateInvItems(self,ItPl_Blueplant,3);
 			CreateInvItems(self,ItFoMuttonRaw,10);
 			OrcTradeDone_01 = TRUE;
