@@ -79,7 +79,7 @@ func void DIA_Babera_WIESIEHTSAUS_Vielleicht ()
 	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_Vielleicht_15_00");	//Мaybe.
 	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_Vielleicht_16_01 " );	// Then you better talk to the farmer, Sekob. Maybe he has a job for you.
 	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_Vielleicht_16_02 " );	// Or try to find a job at Onar's farm. She is at the end of this road.
-	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_Vielleicht_16_03 " );	// for your own sake, be nice to the mercenaries. They don't like outsiders.
+	AI_Output (self, other, " DIA_Babera_WIESIEHTSAUS_Vielleicht_16_03 " );	// For your own sake, be nice to the mercenaries. They don't like outsiders.
 	Info_ClearChoices(DIA_Babera_WIESIEHTSAUS);
 };
 
@@ -134,7 +134,7 @@ instance DIA_Babera_Rosi (C_Info)
 	No. = 3 ;
 	condition = DIA_Babera_Rosi_Condition;
 	information = DIA_Babera_Rosi_Info;
-	description = "А где Рози?";
+	description = "Where is Rosie?";
 };
 
 
