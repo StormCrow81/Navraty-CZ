@@ -1,4 +1,5 @@
 
+
 instance DIA_LEMARGUARD_EXIT(C_Info)
 {
 	npc = vlk_6120_lemarguard;
@@ -34,19 +35,19 @@ instance DIA_LEMARGUARD_PICKPOCKET(C_Info)
 
 func int dia_lemarguard_pickpocket_condition()
 {
-	return C_Beklauen(93,320);
+	return  C_Robbery ( 93 , 320 );
 };
 
 func void dia_lemarguard_pickpocket_info()
 {
 	Info_ClearChoices(dia_lemarguard_pickpocket);
-	Info_AddChoice(dia_lemarguard_pickpocket,Dialog_Back,dia_lemarguard_pickpocket_back);
+	Info_AddChoice(dia_lemarguard_pickpocket, Dialog_Back, dia_lemarguard_pickpocket_back);
 	Info_AddChoice(dia_lemarguard_pickpocket,DIALOG_PICKPOCKET,dia_lemarguard_pickpocket_doit);
 };
 
 func void dia_lemarguard_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_lemarguard_pickpocket);
 };
 
@@ -56,7 +57,7 @@ func void dia_lemarguard_pickpocket_back()
 };
 
 
-instance DIA_LEMARGUARD_HALLO(C_Info)
+instances DIA_LEMARGUARD_HALLO (C_Info)
 {
 	npc = vlk_6120_lemarguard;
 	nr = 1;
@@ -74,35 +75,35 @@ func int dia_lemarguard_hallo_condition()
 
 func void dia_lemarguard_hallo_info()
 {
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_01_00");	//Эй, что ты тут все вертишься? Какого тебе тут нужно?!
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_01_01");	//Хотя постой...(внимательно вглядывается) Я, кажется, тебя знаю!
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_01_02");	//Ну, точно! Ты тот парень, что постоянно мелькал в Старом лагере и всех беспокоил.
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_01_03");	//Хе-хе! Думаю, и ты меня наверняка должен помнить.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_01_00 " );	// Hey, why are you all fidgeting around here? What do you need here?
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_01_01 " );	// But wait... (looks attentively) I think I know you!
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_01_02 " );	// Well, sure! You're the guy that kept popping up in the Old Camp and bothering everyone.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_01_03 " );	// Hehe! I think you must remember me too.
 	Info_ClearChoices(dia_lemarguard_hallo);
-	Info_AddChoice(dia_lemarguard_hallo,"Сожалею, я не знаю тебя.",dia_lemarguard_hallo_no);
-	Info_AddChoice(dia_lemarguard_hallo,"Как я мог забыть твое лицо!",dia_lemarguard_hallo_yes);
+	Info_AddChoice(dia_lemarguard_hallo, " I'm sorry I don't know you. " ,dia_lemarguard_hallo_no);
+	Info_AddChoice(dia_lemarguard_hallo, " How could I forget your face! " ,dia_lemarguard_hallo_yes);
 };
 
-func void dia_lemarguard_hallo_no()
+func void day_lemarguard_hallo_no()
 {
-	AI_Output(other,self,"DIA_LemarGuard_Hallo_No_01_00");	//Нет, я не знаю тебя.
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_No_01_01");	//Хммм...(удивленно) Странно! У меня хорошая память, да и тебя ни с кем спутаешь.
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_No_01_03");	//Ладно, неважно! Просто хочу дать тебе совет - держись от Лемара подальше. Он не любит, когда к нему пристают по пустякам.
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_No_01_04");	//Усек? Только попробуй доставить ему проблем - и тогда уже я поговорю с тобой по душам! Хе-хе...
+	AI_Output(other,self, " DIA_LemarGuard_Hallo_No_01_00 " );	// No, I don't know you.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_01 " );	// Hmmm...(surprised) Strange! I have a good memory, and you will be confused with no one.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_03 " );	// Okay, whatever! I just want to give you advice - stay away from Lemar. He doesn't like being teased about trifles.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_04 " );	// truncated? Just try to give him problems - and then I will talk heart to heart with you! Hehe...
 	AI_Output(other,self,"DIA_LemarGuard_Hallo_No_01_05");	//Хорошо.
 	AI_StopProcessInfos(self);
 };
 
 func void dia_lemarguard_hallo_yes()
 {
-	self.name[0] = "Шрам, телохранитель Лемара";
+	self.name[ 0 ] = " Scar, Lemar's bodyguard " ;
 	SCARKNOWS = TRUE;
-	AI_Output(other,self,"DIA_LemarGuard_Hallo_Yes_01_00");	//Как я мог забыть твое лицо! Шрам!
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_Yes_01_01");	//Хе-хе... Вижу, и ты узнал меня.
-	AI_Output(other,self,"DIA_LemarGuard_Hallo_Yes_01_02");	//Что ты тут делаешь?
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_Yes_01_03");	//Лемар нанял меня в телохранители.
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_Yes_01_04");	//Хочу дать тебе совет - держись от него подальше. Он не любит, когда к нему пристают по пустякам.
-	AI_Output(self,other,"DIA_LemarGuard_Hallo_Yes_01_05");	//Усек? Только попробуй доставить ему проблем - и тогда уже я поговорю с тобой по душам! Хе-хе. Понял?
+	AI_Output(other,self, " DIA_LemarGuard_Hallo_Yes_01_00 " );	// How could I forget your face! Scar!
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_01 " );	// Hehe... I see you recognize me too.
+	AI_Output(other,self, " DIA_LemarGuard_Hallo_Yes_01_02 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_03 " );	// Lemar hired me as a bodyguard.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_04 " );	// I want to give you advice - stay away from him. He doesn't like being teased about trifles.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_05 " );	// truncated? Just try to give him problems - and then I will talk heart to heart with you! Hehe. Understood?
 	AI_Output(other,self,"DIA_LemarGuard_Hallo_Yes_01_06");	//Хорошо.
 	AI_StopProcessInfos(self);
 };
@@ -115,7 +116,7 @@ instance DIA_LEMARGUARD_HALLOEN(C_Info)
 	condition = dia_lemarguard_halloen_condition;
 	information = dia_lemarguard_halloen_info;
 	permanent = TRUE;
-	description = "Ну как тебе работенка?";
+	description = " How do you like your job? " ;
 };
 
 func int dia_lemarguard_halloen_condition()
@@ -125,7 +126,7 @@ func int dia_lemarguard_halloen_condition()
 
 func void dia_lemarguard_halloen_info()
 {
-	AI_Output(other,self,"DIA_LemarGuard_HalloEN_01_00");	//Ну и как тебе работенка?
-	AI_Output(self,other,"DIA_LemarGuard_HalloEN_01_01");	//Проваливай, пока цел! Хе-хе...
+	AI_Output(other,self, " DIA_LemarGuard_HalloEN_01_00 " );	// Well, how do you like your job?
+	AI_Output(self,other, " DIA_LemarGuard_HalloEN_01_01 " );	// Get lost while you're still alive! Hehe...
 	AI_StopProcessInfos(self);
 };
