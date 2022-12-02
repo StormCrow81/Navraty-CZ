@@ -1,4 +1,5 @@
 
+
 instance DIA_VLK_6133_MAXI_EXIT(C_Info)
 {
 	npc = vlk_6133_maxi;
@@ -21,14 +22,14 @@ func void dia_vlk_6133_maxi_exit_info()
 };
 
 
-instance DIA_VLK_6133_MAXI_HALLO(C_Info)
+instance DIA_VLK_6133_MAXI_HALLO (C_Info)
 {
 	npc = vlk_6133_maxi;
 	nr = 2;
 	condition = dia_vlk_6133_maxi_hallo_condition;
-	information = dia_vlk_6133_maxi_hallo_info;
+	information = dia_vlk_6133_maxi_hello_info;
 	permanent = FALSE;
-	description = "Привет!";
+	description = " Hi! " ;
 };
 
 
@@ -39,13 +40,13 @@ func int dia_vlk_6133_maxi_hallo_condition()
 
 func void dia_vlk_6133_maxi_hallo_info()
 {
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hallo_01_00");	//Привет!
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hallo_01_01");	//Эй! Что тебе от меня нужно? У тебя есть для меня работа?
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hallo_01_02");	//Нет, у меня ее нет для тебя.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hallo_01_03");	//(сердито) Тогда зачем ты меня отвлекаешь? Не видишь - я занят!
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hallo_01_04");	//А чем ты занят?
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hallo_01_05");	//Я тут стою и стараюсь не упустить момент, когда какому-нибудь из торговцев понадобится помощь такого человека, как я.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hallo_01_06");	//А ты начинаешь спрашивать меня про всякую ерунду, и тем самым отвлекаешь!
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hallo_01_00 " );	// Hello!
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hallo_01_01 " );	// Hey! What do you want from me? Do you have a job for me?
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hallo_01_02 " );	// No, I don't have it for you.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hallo_01_03 " );	// (angrily) Then why are you distracting me? Can't you see I'm busy!
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hallo_01_04 " );	// What are you doing?
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hallo_01_05 " );	// I'm standing here trying not to miss the moment when one of the merchants needs the help of a man like me.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hallo_01_06 " );	// And you start asking me about all sorts of nonsense, and thus distract!
 };
 
 
@@ -56,7 +57,7 @@ instance DIA_VLK_6133_MAXI_WHATDO(C_Info)
 	condition = dia_vlk_6133_maxi_whatdo_condition;
 	information = dia_vlk_6133_maxi_whatdo_info;
 	permanent = FALSE;
-	description = "А чего ты, собственно, ждешь?";
+	description = " What are you waiting for? " ;
 };
 
 
@@ -70,16 +71,16 @@ func int dia_vlk_6133_maxi_whatdo_condition()
 
 func void dia_vlk_6133_maxi_whatdo_info()
 {
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_WhatDo_01_00");	//Я немного не понял - а чего ты, собственно, ждешь?
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_01");	//Я жду, когда одному из торговцев понадобится какая-нибудь помощь.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_03");	//Я готов взяться за их любую грязную работу. Я хорошо понимаю в этом деле.
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_WhatDo_01_04");	//Ты разбираешься в торговле?
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_05");	//Конечно! Я даже умею немного читать и писать.
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_WhatDo_01_06");	//Просто по тебе этого никак не скажешь.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_08");	//Да, я уже работал на одного торговца, но, правда, он недавно подчистую разорился, а я остался без дела.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_10");	//Вот сейчас ищу нового нанимателя.
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_WhatDo_01_11");	//Все с тобой понятно. Мне кажется, ты будешь еще долго тут стоять.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_12");	//Что? Пошел вон отсюда! Еще накаркаешь, не дай Аданос.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_WhatDo_01_00 " );	// I didn't understand a bit - what are you actually waiting for?
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_WhatDo_01_01 " );	// I'm waiting for one of the merchants to need some help.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_WhatDo_01_03 " );	// I'm ready to take on any of their dirty work. I am well versed in this matter.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_WhatDo_01_04 " );	// Are you good at trading?
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_WhatDo_01_05 " );	// Of course! I can even read and write a little.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_WhatDo_01_06 " );	// You just can't tell.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_WhatDo_01_08 " );	// Yes, I already worked for one merchant, but it's true that he recently went bankrupt, and I was left without work.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_WhatDo_01_10 " );	// Now I'm looking for a new employer.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_WhatDo_01_11 " );	// Everything is clear with you. I think you'll be here for a long time.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_WhatDo_01_12 " );	// What? Get away from here! Still croaking, don't let Adanos.
 	AI_StopProcessInfos(self);
 };
 
@@ -91,7 +92,7 @@ instance DIA_VLK_6133_MAXI_PERM(C_Info)
 	condition = dia_vlk_6133_maxi_perm_condition;
 	information = dia_vlk_6133_maxi_perm_info;
 	permanent = TRUE;
-	description = "Как жизнь?";
+	description = " How are you? " ;
 };
 
 
@@ -106,11 +107,11 @@ func int dia_vlk_6133_maxi_perm_condition()
 func void dia_vlk_6133_maxi_perm_info()
 {
 	AI_Output(other,self,"DIA_VLK_6133_Maxi_Perm_01_00");	//Как жизнь?
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Perm_01_01");	//А тебе не все равно?
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Perm_01_02");	//Может, у меня есть для тебя работа.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Perm_01_03");	//В самом деле? И какая же?
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Perm_01_04");	//Хороший вопрос. Я подумаю об этом...
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Perm_01_05");	//Отвали от меня! Что я тебе сделал, что ты постоянно треплешь мне нервы?
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Perm_01_01 " );	// Do you care?
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Perm_01_02 " );	// Maybe I have a job for you.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Perm_01_03 " );	// Really? And what is it?
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Perm_01_04 " );	// Good question. I'll think about it...
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Perm_01_05 " );	// Get off me! What have I done to you that you keep getting on my nerves?
 	AI_StopProcessInfos(self);
 };
 
@@ -122,7 +123,7 @@ instance DIA_VLK_6133_MAXI_HIRE(C_Info)
 	condition = dia_vlk_6133_maxi_hire_condition;
 	information = dia_vlk_6133_maxi_hire_info;
 	permanent = FALSE;
-	description = "У меня есть для тебя работа.";
+	description = " I have a job for you. " ;
 };
 
 
@@ -136,21 +137,21 @@ func int dia_vlk_6133_maxi_hire_condition()
 
 func void dia_vlk_6133_maxi_hire_info()
 {
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_00");	//У меня есть для тебя работа.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_01");	//Да? И что ты можешь предложить?
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_03");	//Один крупный торговец из верхнего квартала города ищет человека на место своего помощника.
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_04");	//Работа заключается в том, чтобы выполнять за него всякую пыльную работенку и помогать ему вести торговые дела.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_05");	//Ого! Звучит совсем неплохо!
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_06");	//Я подумал, что твои услуги вполне бы могли ему пригодиться.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_07");	//Это отличное предложение! Можешь считать, что мое согласие у тебя в кармане.
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_08");	//Хорошо. Но для начала скажи мне, что ты умеешь делать?
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_09");	//Как я тебе уже говорил, раньше я работал на одного торговца, и, в общем, он был доволен моей работой.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_10");	//Я умею немного читать и писать, а в таком деле это очень много значит!
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_11");	//К тому же я не чураюсь и пыльной работенки грузчика или посыльного. Я все могу делать!
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_12");	//Что же, совсем неплохо.
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_14");	//Я еще подумаю, и, скорее всего, обращусь к тебе.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_15");	//Хорошо, - подумай, но только недолго. Такие работники, как я, на дороге не валяются.
-	B_LogEntry(TOPIC_TRADEHELPER,"Макси согласен работать помощником у Лютеро. Хотя, возможно, кто-нибудь еще согласится на эту работенку.");
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hire_01_00 " );	// I have a job for you.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hire_01_01 " );	// Yes? And what can you suggest?
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hire_01_03 " );	// One large merchant from the upper quarter of the city is looking for a man to take the place of his assistant.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hire_01_04 " );	// The job is to do all the dusty jobs for him and help him run the business.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hire_01_05 " );	// Wow! Sounds pretty good!
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hire_01_06 " );	// I thought your services might be useful to him.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hire_01_07 " );	// This is a great offer! You can consider that my consent is in your pocket.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hire_01_08 " );	// Good. But first, tell me what can you do?
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hire_01_09 " );	// As I told you before, I used to work for a merchant, and, in general, he was pleased with my work.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hire_01_10 " );	// I can read and write a little, which means a lot in this business!
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hire_01_11 " );	// In addition, I do not shy away from the dusty work of a loader or messenger. I can do everything!
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hire_01_12 " );	// Well, not bad at all.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Hire_01_14 " );	// I'll think about it, and, most likely, I'll contact you.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Hire_01_15 " );	// Okay, think about it, but not for long. Workers like me don't roll around on the road.
+	B_LogEntry( TOPIC_TRADEHELPER , " Maxie is willing to work as Luthero's assistant. Although maybe someone else will take the job. " );
 	MAXIAGREE = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -163,13 +164,13 @@ instance DIA_VLK_6133_MAXI_HIREOK(C_Info)
 	condition = dia_vlk_6133_maxi_hireok_condition;
 	information = dia_vlk_6133_maxi_hireok_info;
 	permanent = FALSE;
-	description = "Идем к торговцу.";
+	description = " Let's go to the merchant. " ;
 };
 
 
 func int dia_vlk_6133_maxi_hireok_condition()
 {
-	if((MAXIAGREE == TRUE) && (MIS_TRADEHELPER == LOG_Running) && (FINDPERSONONE == FALSE) && (FINDPERSONTWO == FALSE) && (FINDPERSONTHREE == FALSE))
+	if (( MAXIAGREE  ==  TRUE ) && ( MY_TRADEHELPER  == LOG_Running ) && ( FINDPERSONONONE  ==  FALSE ) && ( FINDTHREEPERSONS  ==  FALSE ) && ( FINDTHREEPERSONS  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -177,12 +178,12 @@ func int dia_vlk_6133_maxi_hireok_condition()
 
 func void dia_vlk_6133_maxi_hireok_info()
 {
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_HireOk_01_00");	//Идем к торговцу.
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_HireOk_01_01");	//Думаю, ты именно тот человек, который ему нужен.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_HireOk_01_02");	//Отлично! Пошли.
-	B_LogEntry(TOPIC_TRADEHELPER,"Я решил остановить свой выбор на Макси. Этот парень немного разбирается в той работе, которую ему хотят предложить. Надеюсь, Лютеро оценит мой выбор.");
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_HireOk_01_00 " );	// We go to the merchant.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_HireOk_01_01 " );	// I think you're the right person for him.
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_HireOk_01_02 " );	// Great! Went.
+	B_LogEntry( TOPIC_TRADEHELPER , " I've decided to go with Maxi. This guy knows a little about the job he's being offered. I hope Luthero appreciates my choice. " );
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	FINDPERSONTWO = TRUE;
 	Npc_ExchangeRoutine(self,"FOLLOW");
 };
@@ -209,9 +210,9 @@ func int dia_vlk_6133_maxi_thanks_condition()
 
 func void dia_vlk_6133_maxi_thanks_info()
 {
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Thanks_01_00");	//Хочу сказать тебе спасибо, что помог мне получить это место!
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Thanks_01_01");	//Надеюсь, ты не заставишь меня думать о том, что я сделал ошибку, предложив Лютеро твою кандидатуру?
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Thanks_01_02");	//Нет, что ты! Я буду выполнять свою работу так хорошо, как только смогу...
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Thanks_01_00 " );	// I want to thank you for helping me get this job!
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_Thanks_01_01 " );	// I hope you don't make me think I made a mistake in suggesting you to Luther?
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_Thanks_01_02 " );	// No, what are you! I will do my job as well as I can...
 	AI_StopProcessInfos(self);
 };
 
@@ -223,7 +224,7 @@ instance DIA_VLK_6133_MAXI_NEWLIFE(C_Info)
 	condition = dia_vlk_6133_maxi_newlife_condition;
 	information = dia_vlk_6133_maxi_newlife_info;
 	permanent = TRUE;
-	description = "Жалобы есть?";
+	description = " Any complaints? " ;
 };
 
 
@@ -237,13 +238,13 @@ func int dia_vlk_6133_maxi_newlife_condition()
 
 func void dia_vlk_6133_maxi_newlife_info()
 {
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_NewLife_01_00");	//Жалобы есть?
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_NewLife_01_01");	//Нет! Все довольны.
+	AI_Output(other,self, " DIA_VLK_6133_Maxi_NewLife_01_00 " );	// Any complaints?
+	AI_Output(self,other, " DIA_VLK_6133_Maxi_NewLife_01_01 " );	// No! Everyone is happy.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_VLK_6133_MAXI_PICKPOCKET(C_Info)
+instance DIA_VLK_6133_MAXI_PICKPOCKET (C_Info)
 {
 	npc = vlk_6133_maxi;
 	nr = 900;
@@ -256,19 +257,19 @@ instance DIA_VLK_6133_MAXI_PICKPOCKET(C_Info)
 
 func int dia_vlk_6133_maxi_pickpocket_condition()
 {
-	return C_Beklauen(60,90);
+	return  C_Robbery ( 60 , 90 );
 };
 
 func void dia_vlk_6133_maxi_pickpocket_info()
 {
 	Info_ClearChoices(dia_vlk_6133_maxi_pickpocket);
 	Info_AddChoice(dia_vlk_6133_maxi_pickpocket,Dialog_Back,dia_vlk_6133_maxi_pickpocket_back);
-	Info_AddChoice(dia_vlk_6133_maxi_pickpocket,DIALOG_PICKPOCKET,dia_vlk_6133_maxi_pickpocket_doit);
+	Info_AddChoice(dia_vlk_6133_maxi_pickpocket, DIALOG_PICKPOCKET ,dia_vlk_6133_maxi_pickpocket_doit);
 };
 
 func void dia_vlk_6133_maxi_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_vlk_6133_maxi_pickpocket);
 };
 
