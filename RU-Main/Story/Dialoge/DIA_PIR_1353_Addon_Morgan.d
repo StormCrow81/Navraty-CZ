@@ -1,4 +1,5 @@
 
+
 var int Morgan_Perm_Counter;
 
 instance DIA_Addon_Morgan_EXIT(C_Info)
@@ -21,25 +22,25 @@ func int DIA_Addon_Morgan_EXIT_Info()
 {
 	if(GregIsBack == FALSE)
 	{
-		AI_Output(other,self,"DIA_Addon_Morgan_Perm_15_00");	//Можешь отправляться спать дальше.
+		AI_Output(other,self, " DIA_Addon_Morgan_Perm_15_00 " );	// You can go back to sleep.
 		if(Morgan_Perm_Counter == 0)
 		{
-			AI_Output(self,other,"DIA_Addon_Morgan_Perm_07_01");	//(зевает) Отличная мысль.
+			AI_Output(self,other, " DIA_Addon_Morgan_Perm_07_01 " );	// (yawns) Great idea.
 			Morgan_Perm_Counter = 1;
 		}
 		else if(Morgan_Perm_Counter == 1)
 		{
-			AI_Output(self,other,"DIA_Addon_Morgan_Perm_07_02");	//(сонно) Что ж, спокойной ночи.
+			AI_Output(self,other, " DIA_Addon_Morgan_Perm_07_02 " );	// (drowsily) Well, good night.
 			Morgan_Perm_Counter = 2;
 		}
 		else if(Morgan_Perm_Counter == 2)
 		{
-			AI_Output(self,other,"DIA_Addon_Morgan_Perm_07_03");	//(устало) С огромным удовольствием.
+			AI_Output(self,other, " DIA_Addon_Morgan_Perm_07_03 " );	// (wearily) With great pleasure.
 			Morgan_Perm_Counter = 3;
 		}
 		else if(Morgan_Perm_Counter == 3)
 		{
-			AI_Output(self,other,"DIA_Addon_Morgan_Perm_07_04");	//Разбуди меня, если что-нибудь произойдет.
+			AI_Output(self,other, " DIA_Addon_Morgan_Perm_07_04 " );	// Wake me up if something happens.
 			Morgan_Perm_Counter = 0;
 		};
 	};
@@ -61,7 +62,7 @@ instance DIA_Addon_Morgan_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Morgan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,43);
+	return  C_Robbery ( 20 , 43 );
 };
 
 func void DIA_Addon_Morgan_PICKPOCKET_Info()
@@ -73,7 +74,7 @@ func void DIA_Addon_Morgan_PICKPOCKET_Info()
 
 func void DIA_Addon_Morgan_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Morgan_PICKPOCKET);
 };
 
@@ -83,31 +84,31 @@ func void DIA_Addon_Morgan_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Addon_Morgan_Anheuern(C_Info)
+instance DIA_Addon_Morgan_Hire (C_Info)
 {
 	npc = PIR_1353_Addon_Morgan;
 	nr = 1;
-	condition = DIA_Addon_Morgan_Anheuern_Condition;
-	information = DIA_Addon_Morgan_Anheuern_Info;
+	condition = DIA_Addon_Morgan_Hire_Condition;
+	information = DIA_Addon_Morgan_Hire_Info;
 	important = TRUE;
 };
 
 
-func int DIA_Addon_Morgan_Anheuern_Condition()
+func int DIA_Addon_Morgan_Hire_Condition()
 {
 	if(Npc_IsInState(self,ZS_Talk) && (GregIsBack == TRUE))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func int DIA_Addon_Morgan_Anheuern_Info()
+func int DIA_Addon_Morgan_Hire_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Morgan_Anheuern_07_00");	//Замечательно! Теперь Грэг заставит меня пилить доски!
+	AI_Output(self,other, " DIA_Addon_Morgan_Anheuern_07_00 " );	// Great! Now Greg will make me saw the boards!
 	if(MIS_Addon_Greg_ClearCanyon == LOG_Running)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Anheuern_07_01");	//(с сарказмом) Удачи в потрошении монстров!
+		AI_Output(self,other, " DIA_Addon_Morgan_Anheuern_07_01 " );	// (sarcastically) Good luck eviscerating the monsters!
 	};
 	return TRUE;
 };
@@ -130,15 +131,15 @@ func int DIA_Addon_Morgan_Hello_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_Hello_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Morgan_Hello_15_00");	//Эй, ты!
-	AI_Output(self,other,"DIA_Addon_Morgan_Hello_07_01");	//(сонно) А? Что тебе нужно?
-	AI_Output(self,other,"DIA_Addon_Morgan_Hello_07_02");	//(сонно) Аллигатор Джек уже вернулся?
-	AI_Output(self,other,"DIA_Addon_Morgan_Hello_07_03");	//(сонно) Нет? Ну, значит, скоро вернется. Приятных снов.
+	AI_Output(self,other, " DIA_Addon_Morgan_Hello_07_01 " );	// (drowsily) Huh? What do you need?
+	AI_Output(self,other, " DIA_Addon_Morgan_Hello_07_02 " );	// (sleepy) Gator Jack is back yet?
+	AI_Output(self,other, " DIA_Addon_Morgan_Hello_07_03 " );	// (sleepy) No? Well, that means he'll be back soon. Pleasant dreams.
 	AI_StopProcessInfos(self);
 };
 
@@ -149,7 +150,7 @@ instance DIA_Addon_Morgan_Meat(C_Info)
 	nr = 2;
 	condition = DIA_Addon_Morgan_Meat_Condition;
 	information = DIA_Addon_Morgan_Meat_Info;
-	description = "Я принес мясо.";
+	description = " I brought meat. " ;
 };
 
 
@@ -159,22 +160,22 @@ func int DIA_Addon_Morgan_Meat_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_Meat_Info()
 {
 	var int GivenMeat;
-	AI_Output(other,self,"DIA_Addon_Morgan_Meat_15_00");	//Я принес мясо.
+	AI_Output(other,self, " DIA_Addon_Morgan_Meat_15_00 " );	// I brought the meat.
 	if(GregIsBack == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Meat_07_01");	//(просыпается) А-а-а. Мне нужно глотнуть рома, чтобы проснуться.
+		AI_Output(self,other, " DIA_Addon_Morgan_Meat_07_01 " );	// (wakes up) Ahhh. I need to take a sip of rum to wake up.
 		CreateInvItems(self,ItFo_Booze,3);
 		B_UseItem(self,ItFo_Booze);
-		AI_Output(self,other,"DIA_Addon_Morgan_Meat_07_02");	//Так-то лучше. Еще раз, что ты хотел?
-		AI_Output(other,self,"DIA_Addon_Morgan_Meat_15_03");	//Я принес мясо. От Аллигатора Джека.
+		AI_Output(self,other, " DIA_Addon_Morgan_Meat_07_02 " );	// That's better. Once again, what do you want?
+		AI_Output(other,self, " DIA_Addon_Morgan_Meat_15_03 " );	// I brought the meat. From Alligator Jack.
 	};
-	AI_Output(self,other,"DIA_Addon_Morgan_Meat_07_04");	//Точно! Я вспомнил! Мясо! Давай его сюда.
+	AI_Output(self,other, " DIA_Addon_Morgan_Meat_07_04 " );	// Exactly! I remembered! Meat! Give it here.
 	GivenMeat = Npc_HasItems(other,ItFoMuttonRaw);
 	if(GivenMeat > 10)
 	{
@@ -183,9 +184,9 @@ func void DIA_Addon_Morgan_Meat_Info()
 	B_GiveInvItems(other,self,ItFoMuttonRaw,GivenMeat);
 	if(GivenMeat < 10)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Meat_07_05");	//Это все? Остальное, наверное, сам съел? Ну ладно...
+		AI_Output(self,other, " DIA_Addon_Morgan_Meat_07_05 " );	// Is that all? Did you eat the rest yourself? OK...
 	};
-	B_LogEntry(TOPIC_Addon_BringMeat,"Я принес мясо Моргану.");
+	B_LogEntry(TOPIC_Addon_BringMeat, " I brought meat to Morgan. " );
 	MIS_AlligatorJack_BringMeat = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Addon_AlligatorJAck_BringMeat);
 };
@@ -197,7 +198,7 @@ instance DIA_Addon_Morgan_Job(C_Info)
 	nr = 3;
 	condition = DIA_Addon_Morgan_Job_Condition;
 	information = DIA_Addon_Morgan_Job_Info;
-	description = "Что ты здесь делаешь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -207,19 +208,19 @@ func int DIA_Addon_Morgan_Job_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_Job_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_Job_15_01");	//Что ты здесь делаешь?
-	AI_Output(self,other,"DIA_Addon_Morgan_Job_07_01");	//Грэг назначил меня командиром одного из боевых отрядов.
-	AI_Output(self,other,"DIA_Addon_Morgan_Job_07_02");	//Я отвечаю за снабжение лагеря. Мясо мне поставляет Аллигатор Джек.
-	AI_Output(self,other,"DIA_Addon_Morgan_Job_07_03");	//Еще я слежу за тем, чтобы к лагерю не подходили дикие звери, которых тут полно.
-	AI_Output(self,other,"DIA_Addon_Morgan_Job_07_04");	//За этим следят мои парни.
+	AI_Output(other,self, " DIA_Addon_Morgan_Job_15_01 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Addon_Morgan_Job_07_01 " );	// Greg put me in charge of one of the combat squads.
+	AI_Output(self,other, " DIA_Addon_Morgan_Job_07_02 " );	// I'm in charge of supplying the camp. Alligator Jack supplies me with meat.
+	AI_Output(self,other, " DIA_Addon_Morgan_Job_07_03 " );	// I also make sure that wild animals do not approach the camp, of which there are a lot.
+	AI_Output(self,other, " DIA_Addon_Morgan_Job_07_04 " );	// My guys are watching this.
 	if(GregIsBack == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Job_07_05");	//Я сказал им, что к возвращению Грэга здесь не должно быть (зевает) ни одного зверя.
+		AI_Output(self,other, " DIA_Addon_Morgan_Job_07_05 " );	// I told them there shouldn't be (yawns) any animals here by Greg's return.
 	};
 };
 
@@ -230,7 +231,7 @@ instance DIA_Addon_Morgan_Sleep(C_Info)
 	nr = 4;
 	condition = DIA_Addon_Morgan_Sleep_Condition;
 	information = DIA_Addon_Morgan_Sleep_Info;
-	description = "А сам ты что-нибудь делаешь?";
+	description = " Do you do anything yourself? " ;
 };
 
 
@@ -240,18 +241,18 @@ func int DIA_Addon_Morgan_Sleep_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_Sleep_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_Sleep_15_00");	//А сам ты что-нибудь делаешь?
-	AI_Output(self,other,"DIA_Addon_Morgan_Sleep_07_01");	//На что это ты намекаешь?!
-	AI_Output(self,other,"DIA_Addon_Morgan_Sleep_07_02");	//Да моя работа здесь самая важная.
-	AI_Output(self,other,"DIA_Addon_Morgan_Sleep_07_03");	//Я обучаю своих людей.
-	AI_Output(self,other,"DIA_Addon_Morgan_Sleep_07_04");	//Я делаю из них лучших и самых отважных бойцов, которых когда-либо видели эти воды.
-	AI_Output(self,other,"DIA_Addon_Morgan_Sleep_07_05");	//Но они не из тех, кто продает себя по дешевке.
-	AI_Output(self,other,"DIA_Addon_Morgan_Sleep_07_06");	//За свой труд они получают порядочный куш золота.
+	AI_Output(other,self, " DIA_Addon_Morgan_Sleep_15_00 " );	// Do you do anything yourself?
+	AI_Output(self,other, " DIA_Addon_Morgan_Sleep_07_01 " );	// What are you hinting at?!
+	AI_Output(self,other, " DIA_Addon_Morgan_Sleep_07_02 " );	// Yes, my work here is the most important.
+	AI_Output(self,other, " DIA_Addon_Morgan_Sleep_07_03 " );	// I train my people.
+	AI_Output(self,other, " DIA_Addon_Morgan_Sleep_07_04 " );	// I make them the best and bravest fighters these waters have ever seen.
+	AI_Output(self,other, " DIA_Addon_Morgan_Sleep_07_05 " );	// But they're not the type to sell themselves cheaply.
+	AI_Output(self,other, " DIA_Addon_Morgan_Sleep_07_06 " );	// For their work, they receive a decent sum of gold.
 };
 
 
@@ -261,31 +262,31 @@ instance DIA_Addon_Morgan_JoinMorgan(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Morgan_JoinMorgan_Condition;
 	information = DIA_Addon_Morgan_JoinMorgan_Info;
-	description = "Я хочу вступить в твой отряд.";
+	description = " I want to join your squad. " ;
 };
 
 
 func int DIA_Addon_Morgan_JoinMorgan_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Morgan_Sleep) && (GregIsBack == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Morgan_Sleep ) && ( GregIsBack ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_JoinMorgan_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_JoinMorgan_15_00");	//Я хочу вступить в твой отряд.
-	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_01");	//(смеется) Мой отряд? Мой отряд сейчас валяется на пляже.
-	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_03");	//Они палец о палец не ударят до тех пор, пока капитан не вернется. Это я тебе точно говорю.
-	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_04");	//Но если ты хочешь показать всем остальным, из чего ты сделан, то ступай на северный пляж.
-	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_05");	//Там полно шныгов... и черт знает, чего еще.
-	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_06");	//Разберись с ними, и ты заработаешь уважение (зевает) людей...
-	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_07");	//Добро пожаловать в мой отряд. Хе-хе. А я еще посплю...
+	AI_Output(other,self, " DIA_Addon_Morgan_JoinMorgan_15_00 " );	// I want to join your squad.
+	AI_Output(self,other, " DIA_Addon_Morgan_JoinMorgan_07_01 " );	// (laughs) My squad? My squad is now lying on the beach.
+	AI_Output(self,other, " DIA_Addon_Morgan_JoinMorgan_07_03 " );	// They won't lift a finger until the captain returns. This is exactly what I'm telling you.
+	AI_Output(self,other, " DIA_Addon_Morgan_JoinMorgan_07_04 " );	// But if you want to show everyone else what you're made of, then go to the northern beach.
+	AI_Output(self,other, " DIA_Addon_Morgan_JoinMorgan_07_05 " );	// It's full of snitches... and God knows what else.
+	AI_Output(self,other, " DIA_Addon_Morgan_JoinMorgan_07_06 " );	// Deal with them and you'll earn the respect of (yawns) people...
+	AI_Output(self,other, " DIA_Addon_Morgan_JoinMorgan_07_07 " );	// Welcome to my squad. Hehe. And I'll still sleep...
 	Log_CreateTopic(TOPIC_Addon_MorganBeach,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_MorganBeach,LOG_Running);
-	B_LogEntry(TOPIC_Addon_MorganBeach,"Я присоединился к боевой группе Моргана. Он хочет, чтобы я очистил северный пляж от монстров.");
+	B_LogEntry(TOPIC_Addon_MorganBeach, " I've joined Morgan's fireteam. He wants me to clear the northern beach of monsters. " );
 	MIS_Addon_MorganLurker = LOG_Running;
 	AI_StopProcessInfos(self);
 };
@@ -298,13 +299,13 @@ instance DIA_Addon_Morgan_LurkerPlatt(C_Info)
 	condition = DIA_Addon_Morgan_LurkerPlatt_Condition;
 	information = DIA_Addon_Morgan_LurkerPlatt_Info;
 	permanent = TRUE;
-	description = "На северном пляже теперь безопасно.";
+	description = " Northern beach is now safe. " ;
 };
 
 
 func int DIA_Addon_Morgan_LurkerPlatt_Condition()
 {
-	if(Npc_IsDead(BeachLurker1) && Npc_IsDead(BeachLurker2) && Npc_IsDead(BeachLurker3) && Npc_IsDead(BeachWaran1) && Npc_IsDead(BeachWaran2) && (MIS_Addon_MorganLurker == LOG_Running))
+	if (Npc_IsDead(BeachLurker1) && Npc_IsDead(BeachLurker2) && Npc_IsDead(BeachLurker3) && Npc_IsDead(BeachWaran1) && Npc_IsDead(BeachWaran2) && (MIS_Addon_MorganLurker == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -312,37 +313,37 @@ func int DIA_Addon_Morgan_LurkerPlatt_Condition()
 
 func void DIA_Addon_Morgan_LurkerPlatt_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_LurkerPlatt_15_00");	//На северном пляже теперь безопасно.
-	AI_Output(self,other,"DIA_Addon_Morgan_LurkerPlatt_07_01");	//А пещера? Там ты тоже побывал?
+	AI_Output(other,self, " DIA_Addon_Morgan_LurkerPlatt_15_00 " );	// The northern beach is now safe.
+	AI_Output(self,other, " DIA_Addon_Morgan_LurkerPlatt_07_01 " );	// And the cave? Have you been there too?
 	if(Npc_IsDead(BeachShadowbeast1))
 	{
 		AI_Output(other,self,"DIA_Addon_Morgan_LurkerPlatt_15_02");	//Конечно.
-		AI_Output(self,other,"DIA_Addon_Morgan_LurkerPlatt_07_03");	//Отлично. Ты хороший человек.
-		AI_Output(self,other,"DIA_Addon_Morgan_LurkerPlatt_07_04");	//Вот твоя награда.
+		AI_Output(self,other, " DIA_Addon_Morgan_LurkerPlatt_07_03 " );	// Great. You are a good person.
+		AI_Output(self,other, " DIA_Addon_Morgan_LurkerPlatt_07_04 " );	// Here's your reward.
 		CreateInvItems(self,ItMi_Gold,150);
 		B_GiveInvItems(self,other,ItMi_Gold,150);
-		B_LogEntry(TOPIC_Addon_MorganBeach,"Все чудовища на пляже убиты.");
+		B_LogEntry(TOPIC_Addon_MorganBeach, " All monsters on the beach have been killed. " );
 		MIS_Addon_MorganLurker = LOG_SUCCESS;
 		B_GivePlayerXP(XP_Addon_Morgan_LurkerPlatt);
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Addon_Morgan_LurkerPlatt_15_05");	//Э-э-э...
-		AI_Output(self,other,"DIA_Addon_Morgan_LurkerPlatt_07_06");	//Это тоже часть твоего задания. Возвращайся, когда закончишь.
-		B_LogEntry(TOPIC_Addon_MorganBeach,"Морган попросил меня заняться пещерой.");
+		AI_Output(self,other, " DIA_Addon_Morgan_LurkerPlatt_07_06 " );	// This is also part of your task. Come back when you're done.
+		B_LogEntry(TOPIC_Addon_MorganBeach, " Morgan asked me to take care of the cave. " );
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_Addon_Morgan_Auftrag2(C_Info)
+instance DIA_Addon_Morgan_Auftrag2 (C_Info)
 {
 	npc = PIR_1353_Addon_Morgan;
 	nr = 99;
 	condition = DIA_Addon_Morgan_Auftrag2_Condition;
 	information = DIA_Addon_Morgan_Auftrag2_Info;
 	permanent = TRUE;
-	description = "Для меня есть еще какая-нибудь работа?";
+	description = " Is there any other work for me? " ;
 };
 
 
@@ -352,23 +353,23 @@ func int DIA_Addon_Morgan_Auftrag2_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_Auftrag2_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_Auftrag2_15_00");	//Для меня есть еще какая-нибудь работа?
+	AI_Output(other,self, " DIA_Addon_Morgan_Auftrag2_15_00 " );	// Is there any other work for me?
 	if(GregIsBack == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Auftrag2_07_01");	//Пока нет.
-		AI_Output(self,other,"DIA_Addon_Morgan_Auftrag2_07_02");	//Отдохни, полежи, выпей рома!
+		AI_Output(self,other, " DIA_Addon_Morgan_Auftrag2_07_01 " );	// Not yet.
+		AI_Output(self,other, " DIA_Addon_Morgan_Auftrag2_07_02 " );	// Relax, lie down, drink some rum!
 		CreateInvItems(self,ItFo_Booze,3);
 		B_UseItem(self,ItFo_Booze);
-		AI_Output(self,other,"DIA_Addon_Morgan_Auftrag2_07_03");	//Чертовски забористая вещь!
+		AI_Output(self,other, " DIA_Addon_Morgan_Auftrag2_07_03 " );	// Fucking awesome stuff!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Auftrag2_07_04");	//Тебе лучше спросить капитана.
+		AI_Output(self,other, " DIA_Addon_Morgan_Auftrag2_07_04 " );	// You'd better ask the captain.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -383,7 +384,7 @@ instance DIA_Addon_Morgan_FOUNDTHEM(C_Info)
 	condition = DIA_Addon_Morgan_FOUNDTHEM_Condition;
 	information = DIA_Addon_Morgan_FOUNDTHEM_Info;
 	permanent = TRUE;
-	description = "Насчет Хэнка и Ангуса....";
+	description = " About Hank and Angus.... " ;
 };
 
 
@@ -393,19 +394,19 @@ func int DIA_Addon_Morgan_FOUNDTHEM_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_FOUNDTHEM_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_FOUNDTHEM_15_00");	//Насчет Хэнка и Ангуса...
+	AI_Output(other,self, " DIA_Addon_Morgan_FOUNDTHEM_15_00 " );	// About Hank and Angus...
 	if(Morgan_AngusStory == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_01");	//Не напоминай мне о них.
-		AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_02");	//Наверняка они попали в руки бандитов.
-		AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_03");	//А у Ангуса было мое кольцо.
-		AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_04");	//Нет, конечно, это было уже ЕГО кольцо. Он выиграл его у меня в кости.
-		AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_05");	//Но я бы обязательно отыгрался. А теперь оно пропало навсегда!
+		AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_07_01 " );	// Don't remind me of them.
+		AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_07_02 " );	// They must have fallen into the hands of bandits.
+		AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_07_03 " );	// And Angus had my ring.
+		AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_07_04 " );	// No, of course, it was already HIS ring. He won it against me at the dice.
+		AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_07_05 " );	// But I would definitely win back. And now it's gone forever!
 		Morgan_AngusStory = TRUE;
 	};
 	Info_ClearChoices(DIA_Addon_Morgan_FOUNDTHEM);
@@ -415,27 +416,27 @@ func void DIA_Addon_Morgan_FOUNDTHEM_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_06");	//Если найдешь мое кольцо, принеси его мне. Я тебе достойно заплачу!
+		AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_07_06 " );	// If you find my ring, bring it to me. I will pay you well!
 	};
 };
 
 func void DIA_Addon_Morgan_FOUNDTHEM_Now()
 {
 	AI_Output(other,self,"DIA_Addon_Morgan_FOUNDTHEM_15_01");	//Я нашел их.
-	AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_07");	//Ну, говори. Что с ними?
+	AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_07_07 " );	// Well, talk. What's up with them?
 	AI_Output(other,self,"DIA_Addon_Morgan_FOUNDTHEM_15_03");	//Они мертвы.
-	AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_08");	//А кольцо? Что с кольцом?!
+	AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_07_08 " );	// And the ring? What's with the ring?!
 	Info_ClearChoices(DIA_Addon_Morgan_FOUNDTHEM);
 	Info_AddChoice(DIA_Addon_Morgan_FOUNDTHEM,"Вот оно.",DIA_Addon_Morgan_FOUNDTHEM_GiveRing);
-	Info_AddChoice(DIA_Addon_Morgan_FOUNDTHEM,"У них его не было.",DIA_Addon_Morgan_FOUNDTHEM_NoRing);
+	Info_AddChoice(DIA_Addon_Morgan_FOUNDTHEM, " No Ring. " ,DIA_Addon_Morgan_FOUNDTHEM_NoRing);
 };
 
 func void DIA_Addon_Morgan_FOUNDTHEM_NoRing()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_FOUNDTHEM_NoRing_15_00");	//У них его не было.
-	AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_NoRing_07_01");	//(в ужасе) Что? Возвращайся и поищи получше. Оно должно было быть у Ангуса.
-	AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_NoRing_07_02");	//Это небольшое кольцо, украшенное сложными узорами.
-	AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_NoRing_07_03");	//Ты должен найти его! Должен!
+	AI_Output(other,self, " DIA_Addon_Morgan_FOUNDTHEM_NoRing_15_00 " );	// They didn't have it.
+	AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_NoRing_07_01 " );	// (horrified) What? Come back and look better. Angus should have had it.
+	AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_NoRing_07_02 " );	// This is a small ring decorated with intricate designs.
+	AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_NoRing_07_03 " );	// You must find him! Must!
 	Info_ClearChoices(DIA_Addon_Morgan_FOUNDTHEM);
 };
 
@@ -443,8 +444,8 @@ func void DIA_Addon_Morgan_FOUNDTHEM_GiveRing()
 {
 	AI_Output(other,self,"DIA_Addon_Morgan_FOUNDTHEM_GiveRing_15_00");	//Вот оно.
 	B_GiveInvItems(other,self,ItRi_Addon_MorgansRing_Mission,1);
-	AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_GiveRing_07_01");	//(радостно) Да, это оно! Спасибо тебе!
-	AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_GiveRing_07_02");	//Вот, возьми эту каменную табличку. Возможно, она на первый взгляд и бесполезна, но Гаретт тебе за нее хорошо заплатит.
+	AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_GiveRing_07_01 " );	// (joyfully) Yes, that's it! Thank you!
+	AI_Output(self,other, " DIA_Addon_Morgan_FOUNDTHEM_GiveRing_07_02 " );	// Here, take this stone tablet. It may seem useless at first glance, but Garett will pay you well for it.
 	MIS_Addon_Morgan_SeekTraitor = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Addon_MorgansRing);
 	Info_ClearChoices(DIA_Addon_Morgan_FOUNDTHEM);
@@ -458,29 +459,29 @@ instance DIA_Addon_Morgan_Francis(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Morgan_Francis_Condition;
 	information = DIA_Addon_Morgan_Francis_Info;
-	description = "Что ты думаешь о Фрэнсисе?";
+	description = " What do you think of Francis? " ;
 };
 
 
 func int DIA_Addon_Morgan_Francis_Condition()
 {
-	if(Francis_ausgeschissen == FALSE)
+	if (Francis_shit out ==  FALSE )
 	{
 		if(Npc_KnowsInfo(other,DIA_Addon_Skip_GregsHut) || (Francis.aivar[AIV_TalkedToPlayer] == TRUE))
 		{
 			return TRUE;
 		};
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_Francis_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_Francis_15_00");	//Что ты думаешь о Фрэнсисе?
-	AI_Output(self,other,"DIA_Addon_Morgan_Francis_07_01");	//Я ничего не имею против него, (угрожающе) пока он ко мне не лезет!
-	AI_Output(other,self,"DIA_Addon_Morgan_Francis_15_02");	//Он здесь начальник?
-	AI_Output(self,other,"DIA_Addon_Morgan_Francis_07_03");	//(смеется) Он ДУМАЕТ, что он главный.
-	AI_Output(self,other,"DIA_Addon_Morgan_Francis_07_04");	//Но когда вернется Грэг, Фрэнсис снова займется своей обычной работой - пилением досок.
+	AI_Output(other,self, " DIA_Addon_Morgan_Francis_15_00 " );	// What do you think of Francis?
+	AI_Output(self,other, " DIA_Addon_Morgan_Francis_07_01 " );	// I have nothing against him, (threateningly) as long as he doesn't get on me!
+	AI_Output(other,self, " DIA_Addon_Morgan_Francis_15_02 " );	// Is he the boss here?
+	AI_Output(self,other, " DIA_Addon_Morgan_Francis_07_03 " );	// (laughs) He THINKS he's in charge.
+	AI_Output(self,other, " DIA_Addon_Morgan_Francis_07_04 " );	// But when Greg returns, Francis will go back to his usual job of sawing boards.
 };
 
 
@@ -490,7 +491,7 @@ instance DIA_Addon_Morgan_TRAIN(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Morgan_TRAIN_Condition;
 	information = DIA_Addon_Morgan_TRAIN_Info;
-	description = "А меня ты можешь чему-нибудь научить?";
+	description = " Can you teach me something? " ;
 };
 
 
@@ -500,20 +501,20 @@ func int DIA_Addon_Morgan_TRAIN_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_TRAIN_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_TRAIN_15_00");	//А меня ты можешь чему-нибудь научить?
-	AI_Output(self,other,"DIA_Addon_Morgan_TRAIN_07_01");	//Конечно! Я могу улучшить твое умение обращаться с одноручным оружием.
+	AI_Output(other,self, " DIA_Addon_Morgan_TRAIN_15_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_Addon_Morgan_TRAIN_07_01 " );	// Of course! I can improve your skill with one-handed weapons.
 	Log_CreateTopic(Topic_Addon_PIR_Teacher,LOG_NOTE);
 	B_LogEntry(Topic_Addon_PIR_Teacher,Log_Text_Addon_MorganTeach);
 	Morgan_Addon_TeachPlayer = TRUE;
 };
 
 
-var int Morgan_merke1h;
+var int Morgan_brand1h;
 var int Morgan_Labercount;
 
 instance DIA_Addon_Morgan_Teach(C_Info)
@@ -523,7 +524,7 @@ instance DIA_Addon_Morgan_Teach(C_Info)
 	condition = DIA_Addon_Morgan_Teach_Condition;
 	information = DIA_Addon_Morgan_Teach_Info;
 	permanent = TRUE;
-	description = "Я готов учиться!";
+	description = " I'm ready to learn! " ;
 };
 
 
@@ -533,12 +534,12 @@ func int DIA_Addon_Morgan_Teach_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Morgan_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Morgan_Teach_15_00");	//Я готов учиться!
+	AI_Output(other,self, " DIA_Addon_Morgan_Teach_15_00 " );	// I'm ready to learn!
 	Morgan_merke1h = other.HitChance[NPC_TALENT_1H];
 	Info_ClearChoices(DIA_Addon_Morgan_Teach);
 	Info_AddChoice(DIA_Addon_Morgan_Teach,Dialog_Back,DIA_Addon_Morgan_Teach_Back);
@@ -552,23 +553,23 @@ func void DIA_Addon_Morgan_Teach_Back()
 	{
 		if(Morgan_Labercount == 0)
 		{
-			AI_Output(self,other,"DIA_Addon_Morgan_CommentFightSkill_07_00");	//Итак, забудь всю эту ерунду насчет чести и всего прочего. Либо ты убиваешь врага, либо он тебя.
+			AI_Output(self,other, " DIA_Addon_Morgan_CommentFightSkill_07_00 " );	// So, forget all this nonsense about honor and everything else. Either you kill the enemy or he kills you.
 			Morgan_Labercount = 1;
 		}
 		else if(Morgan_Labercount == 1)
 		{
-			AI_Output(self,other,"DIA_Addon_Morgan_CommentFightSkill_07_01");	//Ты научишься вкладывать больше силы в свои удары.
+			AI_Output(self,other, " DIA_Addon_Morgan_CommentFightSkill_07_01 " );	// You will learn to put more power into your punches.
 			Morgan_Labercount = 2;
 		}
 		else if(Morgan_Labercount == 2)
 		{
-			AI_Output(self,other,"DIA_Addon_Morgan_CommentFightSkill_07_02");	//Ха-ха. Ну, теперь ты хотя бы знаешь, с какой стороны браться за меч.
+			AI_Output(self,other, " DIA_Addon_Morgan_CommentFightSkill_07_02 " );	// Haha. Well, at least now you know which side to take on the sword.
 			Morgan_Labercount = 0;
 		};
 	}
 	else if(other.HitChance[NPC_TALENT_1H] >= 75)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Teach_Back_07_00");	//Если ты хочешь стать еще лучше, ты должен найти более опытного учителя.
+		AI_Output(self,other, " DIA_Addon_Morgan_Teach_Back_07_00 " );	// If you want to become even better, you must find a more experienced teacher.
 	};
 	Info_ClearChoices(DIA_Addon_Morgan_Teach);
 };
