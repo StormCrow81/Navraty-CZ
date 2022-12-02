@@ -1,4 +1,5 @@
 
+
 instance DIA_Opolos_Kap1_EXIT(C_Info)
 {
 	npc = NOV_605_Opolos;
@@ -12,7 +13,7 @@ instance DIA_Opolos_Kap1_EXIT(C_Info)
 
 func int DIA_Opolos_Kap1_EXIT_Condition()
 {
-	if(Kapitel <= 1)
+	if (chapter <=  1 )
 	{
 		return TRUE;
 	};
@@ -45,38 +46,38 @@ func int DIA_Opolos_Hello_Condition()
 
 func void DIA_Opolos_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Opolos_Hello_12_00");	//Привет, ты, должно быть, тот самый новичок.
-	AI_Output(self,other,"DIA_Opolos_Hello_12_01");	//Я Ополос! Я присматриваю за овцами.
+	AI_Output(self,other, " DIA_Opolos_Hello_12_00 " );	// Hi, you must be that newbie.
+	AI_Output(self,other, " DIA_Opolos_Hello_12_01 " );	// I'm Opolos! I look after the sheep.
 };
 
 
-instance DIA_Opolos_Wurst(C_Info)
+instance DIA_Opolos_Wurst (C_Info)
 {
 	npc = NOV_605_Opolos;
 	nr = 2;
 	condition = DIA_Opolos_Wurst_Condition;
-	information = DIA_Opolos_Wurst_Info;
+	information = DIA_Opolos_Sausage_Info;
 	permanent = FALSE;
-	description = "Я принес баранью колбасу.";
+	description = " I brought lamb sausage. " ;
 };
 
 
 func int DIA_Opolos_Wurst_Condition()
 {
-	if((Kapitel == 1) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) == 0) && (Npc_HasItems(other,ItFo_Schafswurst) >= 1))
+	if ((Kapitel ==  1 ) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) ==  0 ) && (Npc_HasItems(other,ItFo_Schafswurst) >=  1 ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Opolos_Wurst_Info()
+func void DIA_Opolos_Sausage_Info()
 {
 	var string NovizeText;
-	var string NovizeLeft;
-	AI_Output(other,self,"DIA_Opolos_Wurst_15_00");	//Я принес баранью колбасу.
-	AI_Output(self,other,"DIA_Opolos_Wurst_12_01");	//Ох, фантастика! Наконец-то! Вкуснейшая баранья колбаса!
+	var string NoviceLeft;
+	AI_Output(other,self, " DIA_Opolos_Wurst_15_00 " );	// I brought lamb sausage.
+	AI_Output(self,other, " DIA_Opolos_Wurst_12_01 " );	// Oh, fantastic! Finally! Delicious lamb sausage!
 	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
-	Wurst_Gegeben = Wurst_Gegeben + 1;
+	Sausage_Given = Sausage_Given +  1 ;
 	CreateInvItems(self,ItFo_Sausage,1);
 	B_UseItem(self,ItFo_Sausage);
 };
@@ -89,7 +90,7 @@ instance DIA_Opolos_HowLong(C_Info)
 	condition = DIA_Opolos_HowLong_Condition;
 	information = DIA_Opolos_HowLong_Info;
 	permanent = FALSE;
-	description = "Ты давно в монастыре?";
+	description = " How long have you been in the monastery? " ;
 };
 
 
@@ -103,15 +104,15 @@ func int DIA_Opolos_HowLong_Condition()
 
 func void DIA_Opolos_HowLong_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_HowLong_15_00");	//Ты давно в монастыре?
-	AI_Output(self,other,"DIA_Opolos_HowLong_12_01");	//Уже три года. Но до сих пор меня не пускают в библиотеку. А мне так хочется...
-	AI_Output(other,self,"DIA_Opolos_HowLong_15_02");	//А почему?
-	AI_Output(self,other,"DIA_Opolos_HowLong_12_03");	//Моя работа здесь - пасти овец - а не изучать писания.
-	AI_Output(self,other,"DIA_Opolos_HowLong_12_04");	//И пока мастер Парлан не освободит меня от этой обязанности, мне не позволят начать обучение в библиотеке.
+	AI_Output(other,self, " DIA_Opolos_HowLong_15_00 " );	// How long have you been in the monastery?
+	AI_Output(self,other, " DIA_Opolos_HowLong_12_01 " );	// Already three years. But still they don't let me into the library. And I so want...
+	AI_Output(other,self, " DIA_Opolos_HowLong_15_02 " );	// Why?
+	AI_Output(self,other, " DIA_Opolos_HowLong_12_03 " );	// My job here is to herd sheep - not to study the scriptures.
+	AI_Output(self,other, " DIA_Opolos_HowLong_12_04 " );	// And until Master Parlan releases me from this duty, I won't be allowed to start teaching in the library.
 	MIS_HelpOpolos = LOG_Running;
 	Log_CreateTopic(Topic_OpolosStudy,LOG_MISSION);
 	Log_SetTopicStatus(Topic_OpolosStudy,LOG_Running);
-	B_LogEntry(Topic_OpolosStudy,"Ополос сторожит овец. А он хотел бы изучать свитки в библиотеке.");
+	B_LogEntry(Topic_OpolosStudy, " Opolos is looking after the sheep. He would like to study the scrolls in the library. " );
 };
 
 
@@ -122,13 +123,13 @@ instance DIA_Opolos_Monastery(C_Info)
 	condition = DIA_Opolos_Monastery_Condition;
 	information = DIA_Opolos_Monastery_Info;
 	permanent = FALSE;
-	description = "Как я должен вести себя в монастыре?";
+	description = " How should I behave in the monastery? " ;
 };
 
 
 func int DIA_Opolos_Monastery_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Opolos_Hello) && (hero.guild == GIL_NOV))
+	if ( Npc_KnowsInfo ( hero , DIA_Opolos_Hello ) && ( hero . guild ==  GIL_NOV ))
 	{
 		return TRUE;
 	};
@@ -136,54 +137,54 @@ func int DIA_Opolos_Monastery_Condition()
 
 func void DIA_Opolos_Monastery_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_Monastery_15_00");	//Как я должен вести себя в монастыре?
-	AI_Output(self,other,"DIA_Opolos_Monastery_12_01");	//Никогда не лги магам. Уважай своих братьев по общине.
-	AI_Output(self,other,"DIA_Opolos_Monastery_12_02");	//Уважай собственность монастыря. Если ты нарушишь эти правила, тебе придется отвечать перед мастером Парланом.
-	AI_Output(self,other,"DIA_Opolos_Monastery_12_03");	//Помимо этого, я могу посоветовать тебе быть осторожнее с Агоном. Если ты не будешь бдительным, ты можешь кончить как Бабо.
+	AI_Output(other,self, " DIA_Opolos_Monastery_15_00 " );	// How should I behave in the monastery?
+	AI_Output(self,other, " DIA_Opolos_Monastery_12_01 " );	// Never lie to mages. Respect your brothers in the community.
+	AI_Output(self,other, " DIA_Opolos_Monastery_12_02 " );	// Respect the property of the monastery. If you break these rules, you will have to answer to Master Parlan.
+	AI_Output(self,other, " DIA_Opolos_Monastery_12_03 " );	// Other than that, I can advise you to be careful with Agon. If you are not vigilant, you may end up like Babo.
 };
 
 
-instance DIA_Opolos_beibringen(C_Info)
+instance DIA_Opolos_teach (C_Info)
 {
 	npc = NOV_605_Opolos;
 	nr = 3;
-	condition = DIA_Opolos_beibringen_Condition;
-	information = DIA_Opolos_beibringen_Info;
+	condition = DIA_Opolos_teach_Condition;
+	information = DIA_Opolos_teach_Info;
 	permanent = FALSE;
-	description = "Ты можешь чему-нибудь научить меня?";
+	description = " Can you teach me something? " ;
 };
 
 
-func int DIA_Opolos_beibringen_Condition()
+func int DIA_Opolos_teach_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Opolos_Hello) && ((other.guild == GIL_NOV) || (other.guild == GIL_KDF)))
+	if ( Npc_KnowsInfo ( hero , DIA_Opolos_Hello ) && ( ( other . guild ==  GIL_NOV ) || ( other . guild ==  GIL_KDF )))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Opolos_beibringen_Info()
+func void DIA_Opolos_teach_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_beibringen_15_00");	//Ты можешь чему-нибудь научить меня?
-	AI_Output(self,other,"DIA_Opolos_beibringen_12_01");	//Конечно, мне часто приходилось драться. Я могу научить тебя, как стать сильнее.
-	AI_Output(self,other,"DIA_Opolos_beibringen_12_02");	//Но я бы хотел узнать что-нибудь о зельях, особенно о магических.
-	AI_Output(other,self,"DIA_Opolos_beibringen_15_03");	//Чем я могу помочь тебе в этом?
-	AI_Output(self,other,"DIA_Opolos_beibringen_12_04");	//Ну, если ты работаешь на Неораса, то у тебя наверняка будет возможность 'позаимствовать' ненадолго один из его рецептов.
-	AI_Output(self,other,"DIA_Opolos_beibringen_12_05");	//Если ты принесешь его мне, чтобы я мог изучить его, то я потренирую тебя.
+	AI_Output(other,self, " DIA_Opolos_beibringen_15_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_Opolos_beibringen_12_01 " );	// Of course, I often had to fight. I can teach you how to get stronger.
+	AI_Output(self,other, " DIA_Opolos_beibringen_12_02 " );	// But I'd like to know something about potions, especially magical ones.
+	AI_Output(other,self, " DIA_Opolos_beibringen_15_03 " );	// How can I help you with this?
+	AI_Output(self,other, " DIA_Opolos_beibringen_12_04 " );	// Well, if you're working for Neoras, you'll probably be able to 'borrow' one of his recipes for a little while.
+	AI_Output(self,other, " DIA_Opolos_beibringen_12_05 " );	// If you bring it to me so I can study it, then I'll train you.
 	Log_CreateTopic(Topic_OpolosRezept,LOG_MISSION);
 	Log_SetTopicStatus(Topic_OpolosRezept,LOG_Running);
-	B_LogEntry(Topic_OpolosRezept,"Ополос хочет взглянуть на рецепт приготовления зелий маны. Возможно мне удастся позаимствовать его, работая на Неораса.");
+	B_LogEntry(Topic_OpolosRezept, " Opolos wants to look at the mana potion recipe. Maybe I can borrow it while working for Neoras. " );
 };
 
 
-instance DIA_Opolos_rezept(C_Info)
+instance DIA_Opolos_recipe (C_Info)
 {
 	npc = NOV_605_Opolos;
 	nr = 3;
 	condition = DIA_Opolos_rezept_Condition;
-	information = DIA_Opolos_rezept_Info;
+	information = DIA_Opolos_recipe_Info;
 	permanent = TRUE;
-	description = "Насчет рецепта...";
+	description = " Recipe... " ;
 };
 
 
@@ -191,42 +192,42 @@ var int DIA_Opolos_rezept_permanent;
 
 func int DIA_Opolos_rezept_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Opolos_beibringen) && (other.guild == GIL_NOV) && (DIA_Opolos_rezept_permanent == FALSE))
+	if (Npc_KnowsInfo(hero,DIA_Opolos_behave) && (other.guild ==  GIL_NOV ) && (DIA_Opolos_rezept_permanent ==  FALSE )) ;
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Opolos_rezept_Info()
+func void DIA_Opolos_recipe_Info()
 {
 	if(Npc_HasItems(other,ItWr_ManaRezept) >= 1)
 	{
-		AI_Output(other,self,"DIA_Opolos_rezept_15_00");	//Я принес рецепт, как ты и хотел.
-		AI_Output(self,other,"DIA_Opolos_rezept_12_01");	//Хорошо, дай я прочту его.
+		AI_Output(other,self, " DIA_Opolos_rezept_15_00 " );	// I brought the recipe, just like you wanted.
+		AI_Output(self,other, " DIA_Opolos_rezept_12_01 " );	// Okay, let me read it.
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Opolos_rezept_12_02");	//Ага...хм...да...понятно... так, так...
+		AI_Output(self,other, " DIA_Opolos_rezept_12_02 " );	// Yeah...hmm...yeah...I see...so, so...
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Opolos_rezept_12_03");	//Хорошо! Огромное спасибо. Если хочешь, ты можешь потренироваться со мной.
-		DIA_Opolos_rezept_permanent = TRUE;
+		AI_Output(self,other, " DIA_Opolos_rezept_12_03 " );	// Good! Thank you so much. If you want, you can practice with me.
+		DIA_Opolos_rezept_permanent = TRUE ;
 		Opolos_TeachSTR = TRUE;
-		Opolos_Rezept = LOG_SUCCESS;
+		Opolos_Recipe = LOG_SUCCESS ;
 		B_GivePlayerXP(XP_Ambient);
 		Log_CreateTopic(Topic_KlosterTeacher,LOG_NOTE);
-		B_LogEntry(Topic_KlosterTeacher,"Ополос может помочь мне стать сильнее.");
+		B_LogEntry(Topic_KlosterTeacher, " Hollos can help me get stronger. " );
 	}
 	else if(MIS_NeorasRezept == LOG_SUCCESS)
 	{
-		AI_Output(other,self,"DIA_Opolos_rezept_15_04");	//Я уже вернул этот рецепт Неорасу.
-		AI_Output(self,other,"DIA_Opolos_rezept_12_05");	//Ох, черт - мне, наверное, никогда не удастся научиться чему-нибудь здесь. Ладно. Я все равно потренирую тебя.
+		AI_Output(other,self, " DIA_Opolos_rezept_15_04 " );	// I already returned this recipe to Neoras.
+		AI_Output(self,other, " DIA_Opolos_rezept_12_05 " );	// Oh shit - I'll probably never get to learn anything here. OK. I will still train you.
 		Opolos_Rezept = LOG_FAILED;
-		DIA_Opolos_rezept_permanent = TRUE;
+		DIA_Opolos_rezept_permanent = TRUE ;
 		Opolos_TeachSTR = TRUE;
 		Log_CreateTopic(Topic_KlosterTeacher,LOG_NOTE);
-		B_LogEntry(Topic_KlosterTeacher,"Ополос может помочь мне стать сильнее.");
+		B_LogEntry(Topic_KlosterTeacher, " Hollos can help me get stronger. " );
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Opolos_rezept_15_06");	//Вернемся к этому позже.
+		AI_Output(other,self, " DIA_Opolos_rezept_15_06 " );	// We'll come back to this later.
 	};
 };
 
@@ -238,7 +239,7 @@ instance DIA_Opolos_TEACH_STR(C_Info)
 	condition = DIA_Opolos_TEACH_STR_Condition;
 	information = DIA_Opolos_TEACH_STR_Info;
 	permanent = TRUE;
-	description = "Я хочу стать сильнее.";
+	description = " I want to get stronger. " ;
 };
 
 
@@ -252,7 +253,7 @@ func int DIA_Opolos_TEACH_STR_Condition()
 
 func void DIA_Opolos_TEACH_STR_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_TEACH_STR_15_00");	//Я хочу стать сильнее.
+	AI_Output(other,self, " DIA_Opolos_TEACH_STR_15_00 " );	// I want to get stronger.
 	Info_ClearChoices(DIA_Opolos_TEACH_STR);
 	Info_AddChoice(DIA_Opolos_TEACH_STR,Dialog_Back,DIA_Opolos_TEACH_STR_BACK);
 	Info_AddChoice(DIA_Opolos_TEACH_STR,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Opolos_TEACH_STR_1);
@@ -263,7 +264,7 @@ func void DIA_Opolos_TEACH_STR_BACK()
 {
 	if(other.attribute[ATR_STRENGTH] >= T_MED)
 	{
-		AI_Output(self,other,"DIA_Opolos_TEACH_STR_12_00");	//Ты стал очень сильным. Мне больше нечему учить тебя.
+		AI_Output(self,other, " DIA_Opolos_TEACH_STR_12_00 " );	// You have become very strong. I have nothing more to teach you.
 	};
 	Info_ClearChoices(DIA_Opolos_TEACH_STR);
 };
@@ -287,14 +288,14 @@ func void DIA_Opolos_TEACH_STR_5()
 };
 
 
-instance DIA_Opolos_Agon(C_Info)
+instance DIA_Opolos_Agon (C_Info) .
 {
 	npc = NOV_605_Opolos;
 	nr = 4;
 	condition = DIA_Opolos_Agon_Condition;
 	information = DIA_Opolos_Agon_Info;
 	permanent = FALSE;
-	description = "А кто такие Агон и Бабо?";
+	description = " Who are Agon and Babo? " ;
 };
 
 
@@ -308,23 +309,23 @@ func int DIA_Opolos_Agon_Condition()
 
 func void DIA_Opolos_Agon_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_Agon_15_00");	//А кто такие Агон и Бабо?
-	AI_Output(self,other,"DIA_Opolos_Agon_12_01");	//Агон заведует садом. Он тоже послушник, но ведет себя так, как будто он уже Избранный.
-	AI_Output(self,other,"DIA_Opolos_Agon_12_02");	//Бабо пришел в монастырь незадолго до тебя. И сначала он помогал Агону в саду.
-	AI_Output(self,other,"DIA_Opolos_Agon_12_03");	//Похоже, они что-то там не поделили, и с тех пор Бабо подметает двор.
-	AI_Output(other,self,"DIA_Opolos_Agon_15_04");	//Ты знаешь, что произошло?
-	AI_Output(self,other,"DIA_Opolos_Agon_12_05");	//Точно не знаю. Тебе лучше самому спросить их. Но слова Агона имеет больший вес, чем слово любого другого послушника, потому что он племянник главы города.
+	AI_Output(other,self, " DIA_Opolos_Agon_15_00 " );	// And who are Agon and Babo?
+	AI_Output(self,other, " DIA_Opolos_Agon_12_01 " );	// Agon is in charge of the garden. He is also a novice, but he acts like he is already the Chosen One.
+	AI_Output(self,other, " DIA_Opolos_Agon_12_02 " );	// Babo came to the monastery shortly before you. And at first he helped Agon in the garden.
+	AI_Output(self,other, " DIA_Opolos_Agon_12_03 " );	// Looks like they didn't share something, and Babo has been sweeping the yard ever since.
+	AI_Output(other,self, " DIA_Opolos_Agon_15_04 " );	// Do you know what happened?
+	AI_Output(self,other, " DIA_Opolos_Agon_12_05 " );	// I don't know exactly. You better ask them yourself. But the words of Agon carry more weight than the word of any other acolyte, because he is the nephew of the head of the city.
 };
 
 
-instance DIA_Opolos_LIESEL(C_Info)
+instance DIA_Opolos_LIESEL (C_Info)
 {
 	npc = NOV_605_Opolos;
 	nr = 2;
 	condition = DIA_Opolos_LIESEL_Condition;
 	information = DIA_Opolos_LIESEL_Info;
 	permanent = TRUE;
-	description = "Смотри, Я привел Бетси.";
+	description = " Look, I brought Betsy. " ;
 };
 
 
@@ -338,56 +339,56 @@ func int DIA_Opolos_LIESEL_Condition()
 
 func void DIA_Opolos_LIESEL_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_LIESEL_15_00");	//Смотри, Я привел Бетси. Могу я оставить ее с тобой?
+	AI_Output(other,self, " DIA_Opolos_LIESEL_15_00 " );	// Look, I brought Betsy. Can I leave her with you?
 	Npc_PerceiveAll(self);
 	if(Wld_DetectNpc(self,Follow_Sheep,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 800))
 	{
-		other.aivar[AIV_PARTYMEMBER] = FALSE;
-		other.aivar[AIV_TAPOSITION] = TRUE;
+		other.aivar[ AIV_PARTYMEMBER ] = FALSE ;
+		other.aivar[ AIV_TAPOSITION ] = TRUE ;
 		other.wp = "FP_ROAM_MONASTERY_04";
 		other.start_aistate = ZS_MM_AllScheduler;
 		Liesel_Giveaway = TRUE;
-		AI_Output(self,hero,"DIA_Opolos_LIESEL_12_01");	//Да, конечно. Какая красивая овечка. Я позабочусь о ней.
+		AI_Output(self,hero, " DIA_Opolos_LIESEL_12_01 " );	// Yes, of course. What a beautiful sheep. I'll take care of her.
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Opolos_Add_15_00");	//Хм... куда же это я его подевал. Я приду позже.
+		AI_Output(other,self, " DIA_Opolos_Add_15_00 " );	// Hmm... where did I put it. I'll come later.
 	};
 };
 
 
-instance DIA_Opolos_Biblothek(C_Info)
+instance DIA_Opolos_Library (C_Info)
 {
 	npc = NOV_605_Opolos;
 	nr = 98;
 	condition = DIA_Opolos_Biblothek_Condition;
-	information = DIA_Opolos_Biblothek_Info;
+	information = DIA_Opolos_Library_Info;
 	permanent = TRUE;
-	description = "Насчет библиотеки...";
+	description = " About the library... " ;
 };
 
 
 func int DIA_Opolos_Biblothek_Condition()
 {
-	if((other.guild == GIL_NOV) && Npc_KnowsInfo(other,DIA_Opolos_HowLong))
+	if ((other.guild ==  GIL_NOV ) && Npc_KnowsInfo(other,DIA_Opolos_HowLong))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Opolos_Biblothek_Info()
+func void DIA_Opolos_Library_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_Biblothek_15_00");	//Насчет библиотеки...
-	if(Parlan_Erlaubnis == FALSE)
+	AI_Output(other,self, " DIA_Opolos_Biblothek_15_00 " );	// About the library...
+	if (parlan_permission ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Opolos_Biblothek_12_01");	//Это запертая комната слева, рядом с воротами.
-		AI_Output(self,other,"DIA_Opolos_Biblothek_12_02");	//Ключ от нее можно получить только тогда, когда мастер Парлан решит, что ты готов изучать писания.
+		AI_Output(self,other, " DIA_Opolos_Biblothek_12_01 " );	// This is the locked room on the left, next to the gate.
+		AI_Output(self,other, " DIA_Opolos_Biblothek_12_02 " );	// The key to it can only be obtained when Master Parlan decides that you are ready to study the scriptures.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Opolos_Biblothek_12_03");	//Ты везунчик! Ты получил ключ от библиотеки, не пробыв тут и нескольких дней.
-		AI_Output(self,other,"DIA_Opolos_Biblothek_12_04");	//Не упусти свой шанс изучить древние писания!
+		AI_Output(self,other, " DIA_Opolos_Biblothek_12_03 " );	// You're lucky! You got the key to the library without being here for a few days.
+		AI_Output(self,other, " DIA_Opolos_Biblothek_12_04 " );	// Don't miss your chance to study ancient scriptures!
 	};
 	AI_StopProcessInfos(self);
 };
@@ -414,8 +415,8 @@ func int DIA_Opolos_HelloAgain_Condition()
 
 func void DIA_Opolos_HelloAgain_Info()
 {
-	AI_Output(self,other,"DIA_Opolos_HelloAgain_12_00");	//Привет. Спасибо, что помог мне. Теперь я не упущу свой шанс.
-	AI_Output(self,other,"DIA_Opolos_HelloAgain_12_01");	//Но у тебя, наверняка, теперь нет времени на разговоры с простым послушником, Мастер.
+	AI_Output(self,other, " DIA_Opolos_HelloAgain_12_00 " );	// Hello. Thanks for helping me. Now I won't miss my chance.
+	AI_Output(self,other, " DIA_Opolos_HelloAgain_12_01 " );	// But you probably don't have time to talk to a mere acolyte now, Master.
 	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 };
@@ -428,7 +429,7 @@ instance DIA_Opolos_HowIsIt(C_Info)
 	condition = DIA_Opolos_HowIsIt_Condition;
 	information = DIA_Opolos_HowIsIt_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -442,15 +443,15 @@ func int DIA_Opolos_HowIsIt_Condition()
 
 func void DIA_Opolos_HowIsIt_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_HowIsIt_15_00");	//Как дела?
+	AI_Output(other,self, " DIA_Opolos_HowIsIt_15_00 " );	// How are you?
 	if(MIS_HelpOpolos == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_01");	//Отлично. С тех пор, как мне разрешили посещать библиотеку, все просто превосходно.
+		AI_Output(self,other, " DIA_Opolos_HowIsIt_12_01 " );	// Great. Ever since I was allowed to visit the library, everything has been great.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_02");	//Я смиренно выполняю все, что мне поручено, Мастер.
-		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_03");	//Каждый день Иннос подвергает меня новым испытаниям. Я буду продолжать работать над собой.
+		AI_Output(self,other, " DIA_Opolos_HowIsIt_12_02 " );	// I humbly do whatever I'm assigned, Master.
+		AI_Output(self,other, " DIA_Opolos_HowIsIt_12_03 " );	// Every day Innos puts me to new trials. I will continue to work on myself.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -469,7 +470,7 @@ instance DIA_Opolos_Kap2_EXIT(C_Info)
 
 func int DIA_Opolos_Kap2_EXIT_Condition()
 {
-	if(Kapitel == 2)
+	if (chapter ==  2 )
 	{
 		return TRUE;
 	};
@@ -494,7 +495,7 @@ instance DIA_Opolos_Kap3_EXIT(C_Info)
 
 func int DIA_Opolos_Kap3_EXIT_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
@@ -513,13 +514,13 @@ instance DIA_Opolos_Kap3_PERM(C_Info)
 	condition = DIA_Opolos_Kap3_PERM_Condition;
 	information = DIA_Opolos_Kap3_PERM_Info;
 	permanent = TRUE;
-	description = "Как твои овцы?";
+	description = " How are your sheep? " ;
 };
 
 
 func int DIA_Opolos_Kap3_PERM_Condition()
 {
-	if((Kapitel >= 3) && (other.guild != GIL_KDF))
+	if ((Capital >=  3 ) && (other.guild !=  GIL_KDF ))
 	{
 		return TRUE;
 	};
@@ -527,16 +528,16 @@ func int DIA_Opolos_Kap3_PERM_Condition()
 
 func void DIA_Opolos_Kap3_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_15_00");	//Как твои овцы?
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_12_01");	//А как ты думаешь? Они стоят вокруг и жуют траву.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_12_02");	//Хотел бы я знать, что происходит снаружи. Маги, похоже, очень нервничают.
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_15_00 " );	// How are your sheep?
+	AI_Output(self,other, " DIA_Opolos_Kap3_PERM_12_01 " );	// What do you think? They stand around and chew grass.
+	AI_Output(self,other, " DIA_Opolos_Kap3_PERM_12_02 " );	// I wish I knew what was going on outside. The mages seem to be very nervous.
 	Info_ClearChoices(DIA_Opolos_Kap3_PERM);
 	Info_AddChoice(DIA_Opolos_Kap3_PERM,Dialog_Back,DIA_Opolos_Kap3_PERM_BACK);
-	Info_AddChoice(DIA_Opolos_Kap3_PERM,"В Долине Рудников появились драконы.",DIA_Opolos_Kap3_PERM_DRAGONS);
-	Info_AddChoice(DIA_Opolos_Kap3_PERM,"Неизвестные в черных рясах стоят на каждом перекрестке.",DIA_Opolos_Kap3_PERM_DMT);
+	Info_AddChoice(DIA_Opolos_Kap3_PERM, " Dragons have appeared in the Valley of Mines. " ,DIA_Opolos_Kap3_PERM_DRAGONS);
+	Info_AddChoice(DIA_Opolos_Kap3_PERM, " Strangers in black robes stand at every intersection. " ,DIA_Opolos_Kap3_PERM_DMT);
 	if(MIS_NovizenChase == LOG_Running)
 	{
-		Info_AddChoice(DIA_Opolos_Kap3_PERM,"Педро предал нас.",DIA_Opolos_Kap3_PERM_PEDRO);
+		Info_AddChoice(DIA_Opolos_Kap3_PERM, " Pedro betrayed us. " ,DIA_Opolos_Kap3_PERM_PEDRO);
 	};
 };
 
@@ -550,11 +551,11 @@ var int Opolos_Dragons;
 
 func void DIA_Opolos_Kap3_PERM_DRAGONS()
 {
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DRAGONS_15_00");	//В Долине Рудников появились драконы. Вместе с армией орков они осаждают королевские войска.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DRAGONS_12_01");	//Драконы - я всегда думал, что они существуют только в детских сказках.
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DRAGONS_15_02");	//Они здесь, поверь мне.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DRAGONS_12_03");	//Но королевские паладины разберутся с ними, разве нет?
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DRAGONS_15_04");	//Посмотрим.
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_DRAGONS_15_00 " );	// Dragons have appeared in the Valley of Mines. Together with an army of orcs, they besiege the royal troops.
+	AI_Output(self,other, " DIA_Opolos_Kap3_PERM_DRAGONS_12_01 " );	// Dragons - I always thought they only existed in children's fairy tales.
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_DRAGONS_15_02 " );	// They're here, trust me.
+	AI_Output(self,other, " DIA_Opolos_Kap3_PERM_DRAGONS_12_03 " );	// But the royal paladins will deal with them, won't they?
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_DRAGONS_15_04 " );	// Let's see.
 	if(Opolos_Dragons == FALSE)
 	{
 		B_GivePlayerXP(XP_Ambient);
@@ -567,11 +568,11 @@ var int Opolos_DMT;
 
 func void DIA_Opolos_Kap3_PERM_DMT()
 {
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_00");	//Неизвестные в черных рясах стоят на каждом перекрестке.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DMT_12_01");	//Что ты имеешь в виду? Какие еще неизвестные?
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_02");	//Никто не знает, откуда они взялись. Они носят длинные черные рясы и скрывают свои лица.
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_03");	//Похоже, это какие-то маги. По крайней мере, они владеют магией.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DMT_12_04");	//Это все очень тревожно, но я уверен, что Высший Совет решит эту проблему.
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_DMT_15_00 " );	// Strangers in black cassocks stand at every crossroads.
+	AI_Output(self,other, " DIA_Opolos_Kap3_PERM_DMT_12_01 " );	// What do you mean? What are the other unknowns?
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_DMT_15_02 " );	// Nobody knows where they came from. They wear long black robes and hide their faces.
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_DMT_15_03 " );	// Looks like some kind of mage. At least they have magic.
+	AI_Output(self,other, " DIA_Opolos_Kap3_PERM_DMT_12_04 " );	// This is all very troubling, but I'm sure the High Council will address this issue.
 	if(Opolos_DMT == FALSE)
 	{
 		B_GivePlayerXP(XP_Ambient);
@@ -580,15 +581,15 @@ func void DIA_Opolos_Kap3_PERM_DMT()
 };
 
 
-var int Opolos_Pedro;
+var int Opolos_Peter;
 
 func void DIA_Opolos_Kap3_PERM_PEDRO()
 {
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_PEDRO_15_00");	//Педро предал нас.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_PEDRO_12_01");	//Я слышал об этом, но я думал, что и тебе об этом известно. Вот почему я ничего не сказал.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_PEDRO_12_02");	//Неужели враг сильнее нас - ну я хочу сказать, сможем ли мы победить его?
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_PEDRO_15_03");	//Мы еще не мертвы.
-	if(Opolos_Pedro == FALSE)
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_PEDRO_15_00 " );	// Pedro betrayed us.
+	AI_Output(self,other, " DIA_Opolos_Kap3_PERM_PEDRO_12_01 " );	// I heard about it, but I thought you knew about it too. That's why I didn't say anything.
+	AI_Output(self,other, " DIA_Opolos_Kap3_PERM_PEDRO_12_02 " );	// Is the enemy stronger than us - I mean, can we defeat him?
+	AI_Output(other,self, " DIA_Opolos_Kap3_PERM_PEDRO_15_03 " );	// We're not dead yet.
+	if ( Opollos_Peter ==  FALSE )
 	{
 		B_GivePlayerXP(XP_Ambient);
 		Opolos_Pedro = TRUE;
@@ -609,7 +610,7 @@ instance DIA_Opolos_Kap4_EXIT(C_Info)
 
 func int DIA_Opolos_Kap4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -634,7 +635,7 @@ instance DIA_Opolos_Kap5_EXIT(C_Info)
 
 func int DIA_Opolos_Kap5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -659,7 +660,7 @@ instance DIA_Opolos_PICKPOCKET(C_Info)
 
 func int DIA_Opolos_PICKPOCKET_Condition()
 {
-	return C_Beklauen(54,70);
+	return  C_Robbery ( 54 , 70 );
 };
 
 func void DIA_Opolos_PICKPOCKET_Info()
@@ -671,7 +672,7 @@ func void DIA_Opolos_PICKPOCKET_Info()
 
 func void DIA_Opolos_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Opolos_PICKPOCKET);
 };
 
@@ -694,7 +695,7 @@ instance DIA_OPOLOS_KAP6_EXIT(C_Info)
 
 func int dia_opolos_kap6_exit_condition()
 {
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		return TRUE;
 	};
