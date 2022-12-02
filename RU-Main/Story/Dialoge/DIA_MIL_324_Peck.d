@@ -1,5 +1,6 @@
 
 
+
 instance DIA_Peck_EXIT(C_Info)
 {
 	npc = MIL_324_Peck;
