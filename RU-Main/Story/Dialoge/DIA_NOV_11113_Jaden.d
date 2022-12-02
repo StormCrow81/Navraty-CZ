@@ -1,4 +1,5 @@
 
+
 instance DIA_JADEN_KAP1_EXIT(C_Info)
 {
 	npc = nov_11113_jaden;
@@ -32,7 +33,7 @@ instance DIA_JADEN_HELLO1(C_Info)
 	information = dia_jaden_hello1_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Ты давно в монастыре?";
+	description = " How long have you been in the monastery? " ;
 };
 
 
@@ -43,20 +44,20 @@ func int dia_jaden_hello1_condition()
 
 func void dia_jaden_hello1_info()
 {
-	AI_Output(other,self,"DIA_Jaden_Hello_00_01");	//Ты давно в монастыре?
-	AI_Output(self,other,"DIA_Jaden_Hello_00_02");	//Уже почти год. А так, сам я с материка...
-	AI_Output(other,self,"DIA_Jaden_Hello_00_03");	//А как ты попал сюда?
-	AI_Output(self,other,"DIA_Jaden_Hello_00_04");	//На корабле, как же еще? Мы ведь на острове. Или ты забыл?
-	AI_Output(other,self,"DIA_Jaden_Hello_00_05");	//Я хотел сказать - почему ты приплыл именно сюда? Разве на материке нет ни одного монастыря?
-	AI_Output(self,other,"DIA_Jaden_Hello_00_06");	//Ну почему же, есть один - в Нордмаре.
-	AI_Output(self,other,"DIA_Jaden_Hello_00_07");	//Но в одиночку мне туда было не добраться. А найти провожатого в разгар войны оказалось проблемой.
-	AI_Output(self,other,"DIA_Jaden_Hello_00_08");	//Поэтому я взял деньги, оставленные мне моим отцом, сел на корабль и приплыл сюда.
-	AI_Output(other,self,"DIA_Jaden_Hello_00_09");	//Должно быть, твой отец был состоятельным человеком?
-	AI_Output(self,other,"DIA_Jaden_Hello_00_10");	//Он был паладином. В ордене получают не так много, как ты думаешь. 
-	AI_Output(self,other,"DIA_Jaden_Hello_00_11");	//Эту сумму он копил не один год. Он все надеялся, что я пойду в городскую стражу в Венгарде.
-	AI_Output(self,other,"DIA_Jaden_Hello_00_12");	//Но меня всегда привлекала магия и тайны прошлого. И вот я здесь!
-	AI_Output(other,self,"DIA_Jaden_Hello_00_13");	//Он БЫЛ паладином?
-	AI_Output(self,other,"DIA_Jaden_Hello_00_14");	//(печально) Да. Полгода назад я получил письмо о том, что он погиб в сражении.
+	AI_Output(other,self, " DIA_Jaden_Hello_00_01 " );	// How long have you been in the monastery?
+	AI_Output(self,other, " DIA_Jaden_Hello_00_02 " );	// It's been almost a year now. Well, I'm from the mainland...
+	AI_Output(other,self, " DIA_Jaden_Hello_00_03 " );	// How did you get here?
+	AI_Output(self,other, " DIA_Jaden_Hello_00_04 " );	// On a ship, how else? We're on an island. Or did you forget?
+	AI_Output(other,self, " DIA_Jaden_Hello_00_05 " );	// I wanted to say - why did you come here? Isn't there a single monastery on the mainland?
+	AI_Output(self,other, " DIA_Jaden_Hello_00_06 " );	// Well, why, there is one - in Nordmar.
+	AI_Output(self,other, " DIA_Jaden_Hello_00_07 " );	// But I couldn't get there alone. And finding an escort in the midst of the war turned out to be a problem.
+	AI_Output(self,other, " DIA_Jaden_Hello_00_08 " );	// So I took the money left to me by my father, boarded a ship and sailed here.
+	AI_Output(other,self, " DIA_Jaden_Hello_00_09 " );	// Your father must have been a wealthy man?
+	AI_Output(self,other, " DIA_Jaden_Hello_00_10 " );	// He was a paladin. The Order doesn't get as much as you think.
+	AI_Output(self,other, " DIA_Jaden_Hello_00_11 " );	// He saved this amount for more than one year. He kept hoping that I would go to the city guard in Vengard.
+	AI_Output(self,other, " DIA_Jaden_Hello_00_12 " );	// But I've always been drawn to the magic and mysteries of the past. And here I am!
+	AI_Output(other,self, " DIA_Jaden_Hello_00_13 " );	// Was he a paladin?
+	AI_Output(self,other, " DIA_Jaden_Hello_00_14 " );	// (sadly) Yes. Six months ago, I received a letter stating that he had died in battle.
 };
 
 instance DIA_JADEN_JOIN(C_Info)
@@ -66,7 +67,7 @@ instance DIA_JADEN_JOIN(C_Info)
 	information = dia_jaden_join_info;
 	permanent = TRUE;
 	npc = nov_11113_jaden;
-	description = "Я хочу стать магом!";
+	description = " I want to be a mage! " ;
 };
 
 func int dia_jaden_join_condition()
@@ -75,15 +76,15 @@ func int dia_jaden_join_condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void dia_jaden_join_info()
 {
-	AI_Output(other,self,"DIA_NOV_3_JOIN_15_00");	//Я хочу стать магом!
-	AI_Output(self,other,"DIA_Jaden_Join_03_01");	//Этого хотят все послушники. Но только немногие из них становятся Избранными и получают шанс быть принятыми в Круг Огня.
-	AI_Output(self,other,"DIA_Jaden_Join_03_02");	//Стать магом Круга Огня - это высочайшая честь, и ее нужно заслужить.
-	AI_Output(self,other,"DIA_Jaden_Join_03_03");	//Ты должен прилежно трудиться, и тогда, возможно, у тебя появится шанс.
+	AI_Output(other,self, " DIA_NOV_3_JOIN_15_00 " );	// I want to become a mage!
+	AI_Output(self,other, " DIA_Jaden_Join_03_01 " );	// This is what all acolytes want. But only a few of them become the Chosen Ones and get a chance to be accepted into the Circle of Fire.
+	AI_Output(self,other, " DIA_Jaden_Join_03_02 " );	// Becoming a Circle of Fire mage is the highest honor and must be earned.
+	AI_Output(self,other, " DIA_Jaden_Join_03_03 " );	// You must work hard, and then perhaps you will have a chance.
 };
 
 
@@ -94,7 +95,7 @@ instance DIA_JADEN_PEOPLE(C_Info)
 	information = dia_jaden_people_info;
 	permanent = TRUE;
 	npc = nov_11113_jaden;
-	description = "Кто возглавляет этот монастырь?";
+	description = " Who is the leader of this monastery? " ;
 };
 
 
@@ -105,9 +106,9 @@ func int dia_jaden_people_condition()
 
 func void dia_jaden_people_info()
 {
-	AI_Output(other,self,"DIA_NOV_3_PEOPLE_15_00");	//Кто возглавляет этот монастырь?
-	AI_Output(self,other,"DIA_Jaden_People_03_01");	//Мы, послушники, служим магам Круга Огня. Их, в свою очередь, возглавляет Высший Совет, состоящий из трех самых влиятельных магов.
-	AI_Output(self,other,"DIA_Jaden_People_03_02");	//Но за все дела послушников отвечает Парлан. Его всегда можно найти во дворе, он наблюдает за работой послушников.
+	AI_Output(other,self, " DIA_NOV_3_PEOPLE_15_00 " );	// Who heads this monastery?
+	AI_Output(self,other, " DIA_Jaden_People_03_01 " );	// We acolytes serve the mages of the Circle of Fire. They, in turn, are led by the Supreme Council, consisting of the three most influential mages.
+	AI_Output(self,other, " DIA_Jaden_People_03_02 " );	// But Parlan is responsible for all the affairs of the novices. He can always be found in the yard, he watches the work of novices.
 };
 
 
@@ -118,7 +119,7 @@ instance DIA_JADEN_LOCATION(C_Info)
 	information = dia_jaden_location_info;
 	permanent = TRUE;
 	npc = nov_11113_jaden;
-	description = "Что ты можешь сказать мне об этом монастыре?";
+	description = " What can you tell me about this monastery? " ;
 };
 
 
@@ -129,10 +130,10 @@ func int dia_jaden_location_condition()
 
 func void dia_jaden_location_info()
 {
-	AI_Output(other,self,"DIA_NOV_3_LOCATION_15_00");	//Что ты можешь сказать мне об этом монастыре?
-	AI_Output(self,other,"DIA_Jaden_Location_03_01");	//Мы свои трудом добываем хлеб насущный. Мы выращиваем овец и делаем вино.
-	AI_Output(self,other,"DIA_Jaden_Location_03_02");	//Здесь есть библиотека, но вход в нее разрешен только магам и избранным послушникам.
-	AI_Output(self,other,"DIA_Jaden_Location_03_03");	//Мы же, остальные послушники, следим за тем, чтобы маги Круга Огня ни в чем не нуждались.
+	AI_Output(other,self, " DIA_NOV_3_LOCATION_15_00 " );	// What can you tell me about this monastery?
+	AI_Output(self,other, " DIA_Jaden_Location_03_01 " );	// We earn our daily bread with our own labor. We raise sheep and make wine.
+	AI_Output(self,other, " DIA_Jaden_Location_03_02 " );	// There is a library here, but only mages and selected acolytes are allowed to enter.
+	AI_Output(self,other, " DIA_Jaden_Location_03_03 " );	// We, the rest of the acolytes, make sure that the mages of the Circle of Fire do not need anything.
 };
 
 
@@ -143,7 +144,7 @@ instance DIA_JADEN_STANDARD(C_Info)
 	information = dia_jaden_standard_info;
 	permanent = TRUE;
 	npc = nov_11113_jaden;
-	description = "Что нового?";
+	description = " What's new? " ;
 };
 
 func int dia_jaden_standard_condition()
@@ -153,52 +154,52 @@ func int dia_jaden_standard_condition()
 
 func void dia_jaden_standard_info()
 {
-	AI_Output(other,self,"DIA_NOV_3_STANDARD_15_00");	//Что новенького?
-	if(Kapitel == 1)
+	AI_Output(other,self, " DIA_NOV_3_STANDARD_15_00 " );	// What's new?
+	if (chapter ==  1 )
 	{
 		if(hero.guild == GIL_KDF)
 		{
-			AI_Output(self,other,"DIA_Jaden_Standard_03_01");	//И ты еще спрашиваешь! Да все послушники только о тебе и говорят.
-			AI_Output(self,other,"DIA_Jaden_Standard_03_02");	//Очень редко бывает так, чтобы зеленый новичок вроде тебя был избран в Круг Огня.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_01 " );	// And you still ask! Yes, all the novices only talk about you.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_02 " );	// It's very rare for a green rookie like you to be elected to the Circle of Fire.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Jaden_Standard_03_03");	//Скоро опять состоятся выборы. Один из послушников скоро будет принят в Круг Огня.
-			AI_Output(self,other,"DIA_Jaden_Standard_03_04");	//Скоро он приступит к выполнению испытаний.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_03 " );	// Elections will be held again soon. One of the acolytes will soon be accepted into the Circle of Fire.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_04 " );	// He'll start doing tests soon.
 		};
 	};
-	if((Kapitel == 2) || (Kapitel == 3))
+	if ((chapter ==  2 ) || (chapter ==  3 ))
 	{
 		if((Pedro_Traitor == TRUE) && (MIS_NovizenChase != LOG_SUCCESS))
 		{
-			AI_Output(self,other,"DIA_Jaden_Standard_03_05");	//Нашего ордена коснулась грязная лапа Белиара! Зло, должно быть, очень сильно, если оно смогло найти союзников здесь.
-			AI_Output(self,other,"DIA_Jaden_Standard_03_06");	//Педро жил в этом монастыре многие годы. Я думаю, что он слишком много времени проводил за стенами монастыря. Это ослабило его веру и сделало уязвимым для искушений Белиара.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_05 " );	// Our Order has been touched by Beliar's dirty paw! Evil must be very strong if it could find allies here.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_06 " );	// Pedro lived in this monastery for many years. I think he spent too much time behind the walls of the monastery. This weakened his faith and made him vulnerable to Beliar's temptations.
 		}
-		else if(MIS_NovizenChase == LOG_SUCCESS)
+		else  if (MIS_NoviceChase ==  LOG_SUCCESS )
 		{
-			AI_Output(self,other,"DIA_Jaden_Standard_03_07");	//Ты пришел как раз вовремя. Сам Иннос не мог бы выбрать лучший момент для твоего появления.
-			AI_Output(self,other,"DIA_Jaden_Standard_03_08");	//Ты войдешь в анналы нашего монастыря как спаситель Глаза.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_07 " );	// You came just in time. Innos himself could not have chosen a better moment for your appearance.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_08 " );	// You will enter the annals of our monastery as the savior of the Eye.
 		}
 		else if(MIS_OLDWORLD == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_Jaden_Standard_03_09");	//Новости из Долины Рудников очень тревожные. Я думаю, что Иннос специально подвергает нас суровым испытаниям.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_09 " );	// The news from the Valley of Mines is very disturbing. I think Innos is deliberately putting us to the test.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Jaden_Standard_03_10");	//Говорят, что от паладинов, отправившихся в Долину Рудников, нет никаких вестей. Высший Совет лучше знает, что нужно делать.
+			AI_Output(self,other, " DIA_Jaden_Standard_03_10 " );	// It is said that there is no news from the paladins who went to the Valley of Mines. The High Council knows best what needs to be done.
 		};
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
-		AI_Output(self,other,"DIA_Jaden_Standard_03_11");	//Говорят, что мы должны уничтожить драконов с помощью нашего Владыки. Гнев Инноса испепелит созданий Белиара.
+		AI_Output(self,other, " DIA_Jaden_Standard_03_11 " );	// They say that we must destroy the dragons with the help of our Lord. The wrath of Innos will incinerate the creatures of Beliar.
 	};
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
-		AI_Output(self,other,"DIA_Jaden_Standard_03_12");	//Хвала Инносу, нового кризиса нет. Мы должны дальше идти дорогой нашего господина, ведь только с его помощью мы сможем противостоять злу.
+		AI_Output(self,other, " DIA_Jaden_Standard_03_12 " );	// Praise to Innos, there is no new crisis. We must continue to follow the path of our master, because only with his help can we resist evil.
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
-		AI_Output(self,other,"DIA_Jaden_Standard_03_13");	//А ты сам не знаешь? Орки, орки, орки - вот единственная новость за последнее время. И с каждым днем их появляется еще больше!
+		AI_Output(self,other, " DIA_Jaden_Standard_03_13 " );	// Don't you know yourself? Orcs, orcs, orcs - that's the only news lately. And there are more of them every day!
 	};
 };
 
@@ -210,35 +211,35 @@ func void b_assignambientinfos_jaden(var C_Npc slf)
 	dia_nov_3_location.npc = Hlp_GetInstanceID(slf);
 	dia_nov_3_standard.npc = Hlp_GetInstanceID(slf);
 	DIA_NOV_3_Fegen.npc = Hlp_GetInstanceID(slf);
-	DIA_NOV_3_Wurst.npc = Hlp_GetInstanceID(slf);
+	DIA_NOV_3_Sausage.npc = Hlp_GetInstanceID(slf);
 };
 
-instance DIA_Jaden_Wurst(C_Info)
+instance DIA_Jaden_Wurst (C_Info)
 {
 	npc = nov_11113_jaden;
 	nr = 2;
 	condition = DIA_Jaden_Wurst_Condition;
-	information = DIA_Jaden_Wurst_Info;
+	information = DIA_Jaden_Sausage_Info;
 	permanent = FALSE;
-	description = "Вот, у меня есть баранья колбаса для тебя.";
+	description = " Here, I have lamb sausage for you. " ;
 };
 
 func int DIA_Jaden_Wurst_Condition()
 {
-	if((Kapitel == 1) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) == 0) && (Npc_HasItems(other,ItFo_Schafswurst) >= 1))
+	if ((Kapitel ==  1 ) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) ==  0 ) && (Npc_HasItems(other,ItFo_Schafswurst) >=  1 ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Jaden_Wurst_Info()
+func void DIA_Jaden_Sausage_Info()
 {
 	var string NovizeText;
-	var string NovizeLeft;
-	AI_Output(other,self,"DIA_Agon_Wurst_15_00");	//Вот, у меня есть баранья колбаса для тебя.
-	AI_Output(self,other,"DIA_Agon_Wurst_07_03");	//Ладно, давай ее сюда!
+	var string NoviceLeft;
+	AI_Output(other,self, " DIA_Agon_Wurst_15_00 " );	// Here, I have lamb sausage for you.
+	AI_Output(self,other, " DIA_Agon_Wurst_07_03 " );	// Okay, give it here!
 	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
-	Wurst_Gegeben = Wurst_Gegeben + 1;
+	Sausage_Given = Sausage_Given +  1 ;
 	CreateInvItems(self,ItFo_Sausage,1);
 	B_UseItem(self,ItFo_Sausage);
 };
@@ -255,7 +256,7 @@ instance DIA_JADENSLD_PICKPOCKET(C_Info)
 
 func int dia_jadensld_pickpocket_condition()
 {
-	return C_Beklauen(56,35);
+	return  C_Robbery ( 56 , 35 );
 };
 
 func void dia_jadensld_pickpocket_info()
