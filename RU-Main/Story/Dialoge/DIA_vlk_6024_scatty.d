@@ -1,4 +1,5 @@
 
+
 instance DIA_SCATTY_NW_EXIT(C_Info)
 {
 	npc = vlk_6024_scatty;
@@ -48,7 +49,7 @@ instance DIA_SCATTY_NW_PICKPOCKET(C_Info)
 
 func int dia_scatty_nw_pickpocket_condition()
 {
-	return C_Beklauen(110,250);
+	return  C_Robbery ( 110 , 250 );
 };
 
 func void dia_scatty_nw_pickpocket_info()
@@ -60,7 +61,7 @@ func void dia_scatty_nw_pickpocket_info()
 
 func void dia_scatty_nw_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_scatty_nw_pickpocket);
 };
 
@@ -82,7 +83,7 @@ instance DIA_SCATTY_NW_HI(C_Info)
 
 func int dia_scatty_nw_hi_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -94,13 +95,13 @@ func void dia_scatty_nw_hi_info()
 
 	if((SCATTYCHEST == TRUE) && (SCATTYCHESTDONE == FALSE))
 	{
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_17");	//Эй, парень! Твое лицо мне кажется знакомым.
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_18");	//Ну точно! Ты тот парень, что...
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_17 " );	// Hey man! Your face looks familiar to me.
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_18 " );	// Well, sure! You are the guy who...
 		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_19");	//...ГДЕ МОЕ ЗОЛОТО?!
-		AI_Output(other,self,"DIA_Scatty_NW_Hi_01_20");	//Какое золото? О чем ты?
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_21");	//Ты что, меня за идиота принимаешь? Где золото, я спрашиваю?!
-		AI_Output(other,self,"DIA_Scatty_NW_Hi_01_22");	//Не понимаю, о чем ты говоришь.
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_23");	//Ах, не понимаешь... Сейчас поймешь!
+		AI_Output(other,self, " DIA_Scatty_NW_Hi_01_20 " );	// What gold? What are you talking about?
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_21 " );	// Are you taking me for an idiot? Where is the gold, I ask?!
+		AI_Output(other,self, " DIA_Scatty_NW_Hi_01_22 " );	// I don't understand what you're talking about.
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_23 " );	// Oh, you don't understand... You'll understand now!
 		SCATTYCHESTDONE = TRUE;
 		SCATTY_SUCKED = TRUE;
 		B_LogEntry_Failed(TOPIC_SCATTYCHEST);
@@ -109,41 +110,41 @@ func void dia_scatty_nw_hi_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_00");	//Эй, парень! Твое лицо мне кажется знакомым.
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_01");	//Ну, точно! Ты тот парень, что...
-		AI_Output(other,self,"DIA_Scatty_NW_Hi_01_02");	//Рад тебя видеть, Скатти. Как ты оказался здесь?
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_03");	//Как, как. Так же, как и ты. Вообще не стоит об этом. Сам понимаешь, почему.
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_04");	//Не ожидал от тебя такой прыти.
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_00 " );	// Hey man! Your face looks familiar to me.
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_01 " );	// Well, sure! You are the guy who...
+		AI_Output(other,self, " DIA_Scatty_NW_Hi_01_02 " );	// Good to see you, Scutty. How did you get here?
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_03 " );	// How, how. Same as you. It's not worth it at all. You understand why.
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_04 " );	// I didn't expect such agility from you.
 		if(other.guild == GIL_KDF)
 		{
-			AI_Output(self,other,"DIA_Scatty_NW_Hi_01_05");	//Вы только посмотрите - маг Огня! Да уж, ты зря времени не терял.
+			AI_Output(self,other, " DIA_Scatty_NW_Hi_01_05 " );	// Just look - a fire mage! Yes, you didn't waste your time.
 		}
 		else if(other.guild == GIL_PAL)
 		{
-			AI_Output(self,other,"DIA_Scatty_NW_Hi_01_06");	//Вы только посмотрите - паладин короля! Да уж, ты зря времени не терял.
+			AI_Output(self,other, " DIA_Scatty_NW_Hi_01_06 " );	// Just look - the king's paladin! Yes, you didn't waste your time.
 		}
 		else if(other.guild == GIL_DJG)
 		{
-			AI_Output(self,other,"DIA_Scatty_NW_Hi_01_07");	//Вы только посмотрите - наемник! Да уж, ты зря времени не терял.
+			AI_Output(self,other, " DIA_Scatty_NW_Hi_01_07 " );	// Just look - a mercenary! Yes, you didn't waste your time.
 		}
 		else if(other.guild == GIL_KDW)
 		{
-			AI_Output(self,other,"DIA_Scatty_NW_Hi_01_0A");	//Вы только посмотрите - маг Воды! Да уж, ты зря времени не терял.
+			AI_Output(self,other, " DIA_Scatty_NW_Hi_01_0A " );	// Just look - a water mage! Yes, you didn't waste your time.
 		}
 		else if(other.guild == GIL_KDM)
 		{
-			AI_Output(self,other,"DIA_Scatty_NW_Hi_01_0B");	//Вы только посмотрите - некромант! Да уж, ты зря времени не терял.
+			AI_Output(self,other, " DIA_Scatty_NW_Hi_01_0B " );	// Just look - a necromancer! Yes, you didn't waste your time.
 		}
 		else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 		{
-			AI_Output(self,other,"DIA_Scatty_NW_Hi_01_0C");	//Вы только посмотрите - сектант! Да уж, ты зря времени не терял.
+			AI_Output(self,other, " DIA_Scatty_NW_Hi_01_0C " );	// Just look - a sectarian! Yes, you didn't waste your time.
 		};
-		AI_Output(other,self,"DIA_Scatty_NW_Hi_01_08");	//А что ты здесь делаешь?
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_09");	//Что, что. Работаю, конечно! Тренирую вместе с Вульфгаром этих парней-новобранцев, что ты видишь перед собой.
-		AI_Output(other,self,"DIA_Scatty_NW_Hi_01_10");	//Вульфгар взял тебя тренировать новобранцев?
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_11");	//Ну да, я продемонстрировал ему парочку своих коронных приемов. В общем, я произвел на него впечатление!
-		AI_Output(other,self,"DIA_Scatty_NW_Hi_01_12");	//Да, учитель, как я помню, из тебя совсем неплохой. Твои уроки там... ты знаешь где... не прошли для меня даром.
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_13");	//Рад, что ты не забыл те времена. Хорошее было время!
+		AI_Output(other,self, " DIA_Scatty_NW_Hi_01_08 " );	// What are you doing here?
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_09 " );	// What, what. I work, of course! I'm training with Wulfgar these new recruits that you see in front of you.
+		AI_Output(other,self, " DIA_Scatty_NW_Hi_01_10 " );	// Wulfgar took you to train new recruits?
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_11 " );	// Well, yes, I showed him a couple of my signature moves. In general, I impressed him!
+		AI_Output(other,self, " DIA_Scatty_NW_Hi_01_12 " );	// Yes, teacher, as I remember, you are not bad at all. Your lessons there... you know where... were not in vain for me.
+		AI_Output(self,other, " DIA_Scatty_NW_Hi_01_13 " );	// I'm glad you haven't forgotten those times. It was a good time!
 	};
 };
 
@@ -155,13 +156,13 @@ instance DIA_SCATTY_NW_CITY(C_Info)
 	condition = dia_scatty_nw_city_condition;
 	information = dia_scatty_nw_city_info;
 	permanent = TRUE;
-	description = "Как продвигается обучение новобранцев?";
+	description = " How is recruit training going? " ;
 };
 
 
 func int dia_scatty_nw_city_condition()
 {
-	if(Npc_KnowsInfo(other,dia_scatty_nw_hi) && (SCATTY_SUCKED == FALSE) && (KAPITELORCATC == FALSE))
+	if ( Npc_KnowsInfo ( other , dia_scatty_nw_hi ) && ( SCATTY_SUCKED  ==  FALSE ) && ( CAPITALORCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -169,25 +170,25 @@ func int dia_scatty_nw_city_condition()
 
 func void dia_scatty_nw_city_info()
 {
-	AI_Output(other,self,"DIA_Scatty_NW_City_01_00");	//Как продвигается обучение новобранцев?
-	AI_Output(self,other,"DIA_Scatty_NW_City_01_01");	//Так себе! Большинство из них никуда не годится.
-	AI_Output(self,other,"DIA_Scatty_NW_City_01_05");	//(решительно) Ничего. Мы еще сделаем из них настоящих солдат!
-	if((Npc_IsDead(Mil_330_Miliz) == FALSE) && Wld_IsTime(8,0,20,20))
+	AI_Output(other,self, " DIA_Scatty_NW_City_01_00 " );	// How is recruit training going?
+	AI_Output(self,other, " DIA_Scatty_NW_City_01_01 " );	// So-so! Most of them are of no use.
+	AI_Output(self,other, " DIA_Scatty_NW_City_01_05 " );	// (decidedly) Nothing. We will make real soldiers out of them!
+	if ((Npc_IsDead(Mil_330_Miliz) ==  FALSE ) && Wld_IsTime( 8 , 0 , 20 , 20 ))
 	{
 		AI_Standup(self);
-		B_TurnToNpc(self,Mil_330_Miliz);
-		AI_Output(self,other,"DIA_Scatty_NW_City_01_02");	//(зовет) Эй, парень, - это совсем никуда не годится!
-		AI_Output(self,other,"DIA_Scatty_NW_City_01_03");	//Возьмись за рукоять одной рукой. Лезвие вверх, и не держи его неподвижно.
-		AI_Output(self,other,"DIA_Scatty_NW_City_01_04");	//Оружие должно стать продолжением твоей руки, вписываться в твои движения. Это поможет ускорить атаку!
+		B_TurnToNpc(self,Mil_330_Militia);
+		AI_Output(self,other, " DIA_Scatty_NW_City_01_02 " );	// (calling) Hey man, this is not good at all!
+		AI_Output(self,other, " DIA_Scatty_NW_City_01_03 " );	// Grasp the handle with one hand. Blade up, and don't keep it still.
+		AI_Output(self,other, " DIA_Scatty_NW_City_01_04 " );	// The weapon should become an extension of your hand, fit into your movements. This will help speed up the attack!
 		B_TurnToNpc(self,other);
 	};
 };
 
 
-instance DIA_SCATTY_ANGREE(C_Info)
+instance DIA_SCATTY_ANGREE (C_Info)
 {
 	npc = vlk_6024_scatty;
-	condition = dia_scatty_angree_condition;
+	condition = dia_scatty_agree_condition;
 	information = dia_scatty_angree_info;
 	important = TRUE;
 	permanent = TRUE;
@@ -204,7 +205,7 @@ func int dia_scatty_angree_condition()
 
 func void dia_scatty_angree_info()
 {
-	AI_Output(self,other,"DIA_Scatty_Angree_01_00");	//Убирайся прочь, маленький обманщик!
+	AI_Output(self,other, " DIA_Scatty_Angree_01_00 " );	// Get out, you little liar!
 	AI_StopProcessInfos(self);
 	SCATTY_SUCKED = TRUE;
 };
@@ -216,12 +217,12 @@ instance DIA_SCATTY_NW_ESCAPEFROMTOWN(C_Info)
 	condition = dia_scatty_nw_escapefromtown_condition;
 	information = dia_scatty_nw_escapefromtown_info;
 	permanent = FALSE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 func int dia_scatty_nw_escapefromtown_condition()
 {
-	if(KAPITELORCATC == TRUE)
+	if ( KAPITELORCATC  ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -229,10 +230,10 @@ func int dia_scatty_nw_escapefromtown_condition()
 
 func void dia_scatty_nw_escapefromtown_info()
 {
-	AI_Output(other,self,"DIA_Scatty_NW_EscapeFromTown_01_00");	//Как дела?
-	AI_Output(self,other,"DIA_Scatty_NW_EscapeFromTown_01_01");	//(угрюмо) Могло быть и лучше. Хотя одно то, что я до сих пор жив, уже радует.
-	AI_Output(self,other,"DIA_Scatty_NW_EscapeFromTown_01_03");	//Если бы ты только видел, что тогда творилось в городе!
-	AI_Output(self,other,"DIA_Scatty_NW_EscapeFromTown_01_05");	//Да и сейчас не лучше! Кругом одни орки, и никакой надежды на то, что вскоре это все закончится.
+	AI_Output(other,self, " DIA_Scatty_NW_EscapeFromTown_01_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Scatty_NW_EscapeFromTown_01_01 " );	// (sullenly) It could have been better. Although the mere fact that I am still alive is already pleasing.
+	AI_Output(self,other, " DIA_Scatty_NW_EscapeFromTown_01_03 " );	// If only you could see what was going on in the city then!
+	AI_Output(self,other, " DIA_Scatty_NW_EscapeFromTown_01_05 " );	// And now it's not better! There are only orcs around, and there is no hope that this will all end soon.
 	SCATTYHERE = TRUE;
 };
 
@@ -243,12 +244,12 @@ instance DIA_SCATTY_NW_WHATNEXT(C_Info)
 	condition = dia_scatty_nw_whatnext_condition;
 	information = dia_scatty_nw_whatnext_info;
 	permanent = TRUE;
-	description = "Останешься пока тут?";
+	description = " Will you stay here for now? " ;
 };
 
 func int dia_scatty_nw_whatnext_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_scatty_nw_escapefromtown) && (MIS_OLDGUARDGOWAR == FALSE))
+	if ( Npc_KnowsInfo ( hero , dia_scatty_nw_escapefromtown ) && ( MIS_OLDGUARDGOWAR  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -256,8 +257,8 @@ func int dia_scatty_nw_whatnext_condition()
 
 func void dia_scatty_nw_whatnext_info()
 {
-	AI_Output(other,self,"DIA_Scatty_NW_WhatNext_01_00");	//Останешься тут?
-	AI_Output(self,other,"DIA_Scatty_NW_WhatNext_01_01");	//Полагаю, что да. По крайней мере, орки сюда еще не добрались.
+	AI_Output(other,self, " DIA_Scatty_NW_WhatNext_01_00 " );	// Will you stay here?
+	AI_Output(self,other, " DIA_Scatty_NW_WhatNext_01_01 " );	// I guess so. At least the orcs haven't gotten here yet.
 };
 
 instance DIA_SCATTY_NW_OLDGUARDGOWAR(C_Info)
@@ -280,11 +281,11 @@ func int dia_scatty_nw_oldguardgowar_condition()
 
 func void dia_scatty_nw_oldguardgowar_info()
 {
-	AI_Output(other,self,"DIA_Scatty_NW_OldGuardGoWar_01_00");	//Пошли! Надо выбираться отсюда.
-	AI_Output(self,other,"DIA_Scatty_NW_OldGuardGoWar_01_01");	//(решительно) Давно бы так! Я уже устал сидеть на одном месте.
-	AI_Output(self,other,"DIA_Scatty_NW_OldGuardGoWar_01_02");	//Ну, что стоишь, - вперед!
+	AI_Output(other,self, " DIA_Scatty_NW_OldGuardGoWar_01_00 " );	// Let's go! Gotta get out of here.
+	AI_Output(self,other, " DIA_Scatty_NW_OldGuardGoWar_01_01 " );	// (decidedly) It would be like that for a long time! I'm tired of sitting in one place.
+	AI_Output(self,other, " DIA_Scatty_NW_OldGuardGoWar_01_02 " );	// Well, what are you waiting for - go ahead!
 	SCATTYJOINME = TRUE;
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Follow");
 };
@@ -296,7 +297,7 @@ instance DIA_SCATTY_NW_OLDGUARDGOWAR_DONE(C_Info)
 	condition = DIA_SCATTY_NW_OLDGUARDGOWAR_DONE_condition;
 	information = DIA_SCATTY_NW_OLDGUARDGOWAR_DONE_info;
 	permanent = FALSE;
-	description = "Мы пришли.";
+	description = " We have arrived. " ;
 };
 
 func int DIA_SCATTY_NW_OLDGUARDGOWAR_DONE_condition()
@@ -311,8 +312,8 @@ func void DIA_SCATTY_NW_OLDGUARDGOWAR_DONE_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_SCATTY_NW_OLDGUARDGOWAR_DONE_01_00");	//Мы пришли.
-	AI_Output(self,other,"DIA_SCATTY_NW_OLDGUARDGOWAR_DONE_01_01");	//Спасибо, приятель. Мне уже тут нравится!
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(self,other, " DIA_SCATTY_NW_OLDGUARDGOWAR_DONE_01_01 " );	// Thanks mate. I already like it here!
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	SCATTYINSAFE = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FarmRest");
@@ -325,13 +326,13 @@ instance DIA_SCATTY_NW_WHEREPEASANT(C_Info)
 	condition = dia_scatty_nw_wherepeasant_condition;
 	information = dia_scatty_nw_wherepeasant_info;
 	permanent = FALSE;
-	description = "А где все крестьяне со двора?";
+	description = " Where are all the peasants from the yard? " ;
 };
 
 
 func int dia_scatty_nw_wherepeasant_condition()
 {
-	if((SCATTYHERE == TRUE) && (KNOWWHEREAKIL == FALSE) && (MIS_OLDGUARDGOWAR == FALSE))
+	if (( SCATTYHERE  ==  TRUE ) && ( KNOWWHEREAKIL  ==  FALSE ) && ( MY_OLDGUARDGOWAR  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -339,9 +340,9 @@ func int dia_scatty_nw_wherepeasant_condition()
 
 func void dia_scatty_nw_wherepeasant_info()
 {
-	AI_Output(other,self,"DIA_Scatty_NW_WherePeasant_01_00");	//А где все крестьяне со двора?
-	AI_Output(self,other,"DIA_Scatty_NW_WherePeasant_01_01");	//Понятия не имею. Разбежались, наверное, кто куда.
-	AI_Output(self,other,"DIA_Scatty_NW_WherePeasant_01_02");	//Ведь здесь сейчас оставаться слишком опасно. Эта ферма - слишком заметное место, чтобы орки ее оставили без внимания.
+	AI_Output(other,self, " DIA_Scatty_NW_WherePeasant_01_00 " );	// And where are all the peasants from the yard?
+	AI_Output(self,other, " DIA_Scatty_NW_WherePeasant_01_01 " );	// I have no idea. They fled, probably, who where.
+	AI_Output(self,other, " DIA_Scatty_NW_WherePeasant_01_02 " );	// It's too dangerous to stay here now. This farm is too conspicuous a place to be ignored by the orcs.
 	AI_Output(other,self,"DIA_Scatty_NW_WherePeasant_01_03");	//Ясно.
 	KNOWWHEREAKIL = TRUE;
 };
