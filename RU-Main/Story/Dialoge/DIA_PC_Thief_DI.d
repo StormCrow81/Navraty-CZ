@@ -1,4 +1,5 @@
 
+
 instance DIA_PC_Thief_DI_EXIT(C_Info)
 {
 	npc = PC_Thief_DI;
@@ -21,13 +22,13 @@ func void DIA_PC_Thief_DI_EXIT_Info()
 };
 
 
-instance DIA_PC_Thief_DI_Hallo(C_Info)
+instance DIA_PC_Thief_DI_Hello (C_Info)
 {
 	npc = PC_Thief_DI;
 	nr = 5;
 	condition = DIA_PC_Thief_DI_Hallo_Condition;
-	information = DIA_PC_Thief_DI_Hallo_Info;
-	description = "Мы прибыли.";
+	information = DIA_PC_Thief_DI_Hello_Info;
+	description = " We've arrived. " ;
 };
 
 
@@ -41,13 +42,13 @@ func int DIA_PC_Thief_DI_Hallo_Condition()
 
 func void DIA_PC_Thief_DI_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_PC_Thief_DI_Hallo_15_00");	//Мы прибыли.
-	AI_Output(self,other,"DIA_PC_Thief_DI_Hallo_11_01");	//Этот остров, похоже, находится совсем недалеко от Хориниса.
-	AI_Output(self,other,"DIA_PC_Thief_DI_Hallo_11_02");	//Я не знал об этом. Но теперь многие вещи стали для меня очевидными.
-	AI_Output(self,other,"DIA_PC_Thief_DI_Hallo_11_03");	//Я все время задавал себе вопрос - как оркам так быстро удавалось доставлять провизию и подкрепление.
-	AI_Output(self,other,"DIA_PC_Thief_DI_Hallo_11_04");	//Имея такой аванпост, это было для них легче легкого.
-	AI_Output(self,other,"DIA_PC_Thief_DI_Hallo_11_05");	//На пути вглубь острова, ты, вероятно, наткнешься на ловушку-другую.
-	AI_Output(self,other,"DIA_PC_Thief_DI_Hallo_11_06");	//Если тебе покажется, что ты не знаешь, что делать дальше, вернись ко мне. Возможно, мой опыт сможет помочь тебе.
+	AI_Output(other,self, " DIA_PC_Thief_DI_Hallo_15_00 " );	// We've arrived.
+	AI_Output(self,other, " DIA_PC_Thief_DI_Hallo_11_01 " );	// This island seems to be quite close to Khorinis.
+	AI_Output(self,other, " DIA_PC_Thief_DI_Hallo_11_02 " );	// I didn't know about this. But now many things have become clear to me.
+	AI_Output(self,other, " DIA_PC_Thief_DI_Hallo_11_03 " );	// I kept wondering how the orcs were able to bring in provisions and reinforcements so quickly.
+	AI_Output(self,other, " DIA_PC_Thief_DI_Hallo_11_04 " );	// With such an outpost, it was a breeze for them.
+	AI_Output(self,other, " DIA_PC_Thief_DI_Hallo_11_05 " );	// On your way inland, you'll probably run into a trap or two.
+	AI_Output(self,other, " DIA_PC_Thief_DI_Hallo_11_06 " );	// If you feel like you don't know what to do next, come back to me. Perhaps my experience can help you.
 };
 
 
@@ -58,7 +59,7 @@ instance DIA_PC_Thief_DI_RAT(C_Info)
 	condition = DIA_PC_Thief_DI_RAT_Condition;
 	information = DIA_PC_Thief_DI_RAT_Info;
 	permanent = TRUE;
-	description = "Мне нужен твой совет.";
+	description = " I need your advice. " ;
 };
 
 
@@ -76,29 +77,29 @@ var int DIA_PC_Thief_DI_RAT_OneTime2;
 
 func void DIA_PC_Thief_DI_RAT_Info()
 {
-	AI_Output(other,self,"DIA_PC_Thief_DI_RAT_15_00");	//Мне нужен твой совет.
-	if(Npc_IsDead(OrkElite_AntiPaladinOrkOberst_DI) && (EVT_ORKOBERST_SWITCH_FOUND == FALSE))
+	AI_Output(other,self, " DIA_PC_Thief_DI_RAT_15_00 " );	// I need your advice.
+	if (Npc_IsDead(OrkElite_AntiPaladinOrkColonel_DI) && ( EVT_ORKCOMMANDER_SWITCH_FOUND  ==  FALSE )) ;
 	{
-		AI_Output(other,self,"DIA_PC_Thief_DI_RAT_15_01");	//У полковника орков здесь есть штаб-квартира. Я не могу продвинуться вглубь острова дальше этой точки.
-		AI_Output(self,other,"DIA_PC_Thief_DI_RAT_11_02");	//Орки хитрые создания. Зачастую их недооценивают. Я полагаю, у них там что-то вроде секретного прохода. Осмотри стены на предмет скрытых выключателей.
-		AI_Output(self,other,"DIA_PC_Thief_DI_RAT_11_03");	//Помни, впрочем - эти выключатели обычно нужно нажимать в определенном порядке, чтобы механизм сработал.
+		AI_Output(other,self, " DIA_PC_Thief_DI_RAT_15_01 " );	// The orc colonel has his headquarters here. I can't move inland beyond this point.
+		AI_Output(self,other, " DIA_PC_Thief_DI_RAT_11_02 " );	// Orcs are cunning creatures. They are often underestimated. I believe they have some kind of secret passage there. Check the walls for hidden switches.
+		AI_Output(self,other, " DIA_PC_Thief_DI_RAT_11_03 " );	// Remember though - these switches usually need to be pressed in a specific order for the mechanism to work.
 	}
 	else if(Npc_IsDead(FireDragonIsland) && (EVT_DIBRIDGE_OPENED == FALSE))
 	{
-		AI_Output(other,self,"DIA_PC_Thief_DI_RAT_15_04");	//Я сражался с драконом и теперь застрял перед пропастью с подъемным мостом. Этот мост поднят, и я не знаю, как опустить его.
-		AI_Output(self,other,"DIA_PC_Thief_DI_RAT_11_05");	//Ммм. А ты не пробовал дальнобойное оружие? Может быть, механизм можно активировать при помощи выстрела.
+		AI_Output(other,self, " DIA_PC_Thief_DI_RAT_15_04 " );	// I've fought a dragon, and now I'm stuck in front of a drawbridge chasm. This bridge is up and I don't know how to lower it.
+		AI_Output(self,other, " DIA_PC_Thief_DI_RAT_11_05 " );	// Mmm. Have you tried ranged weapons? Maybe the mechanism can be activated with a shot.
 	}
-	else if(Npc_IsDead(Skeleton_Lord_Archol) && (Npc_KnowsInfo(other,DIA_Schwarzmagier_HELLO) == FALSE))
+	else  if ( Npc_IsDead ( Skeleton_Lord_Archol ) && ( Npc_KnowsInfo ( other , DIA_Martial_Magic_HELLO ) ==  FALSE )) .
 	{
-		AI_Output(other,self,"DIA_PC_Thief_DI_RAT_15_06");	//Я встречаю на своем пути полчища нежити и их изощренные ловушки.
-		AI_Output(self,other,"DIA_PC_Thief_DI_RAT_11_07");	//Извини, но я никогда не имел дела с нежитью. Здесь тебе придется изобретать что-то самому.
+		AI_Output(other,self, " DIA_PC_Thief_DI_RAT_15_06 " );	// I encounter hordes of the undead and their elaborate traps along the way.
+		AI_Output(self,other, " DIA_PC_Thief_DI_RAT_11_07 " );	// Sorry, but I've never dealt with the undead. Here you have to invent something yourself.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PC_Thief_DI_RAT_11_08");	//Приходи ко мне, если у тебя возникнет проблема, которую мой опыт может помочь разрешить.
+		AI_Output(self,other, " DIA_PC_Thief_DI_RAT_11_08 " );	// Come see me if you have a problem that my experience can help solve.
 		if((ORkSturmDI == TRUE) && (DIA_PC_Thief_DI_RAT_OneTime2 == FALSE))
 		{
-			AI_Output(self,other,"DIA_PC_Thief_DI_RAT_11_09");	//Еще одно. Я бы предпочел, чтобы ты не приводил всех этих тварей, что бродят здесь, к кораблю. Я надеюсь, этот рейд орков был последней атакой, которую нам пришлось отражать здесь!
+			AI_Output(self,other, " DIA_PC_Thief_DI_RAT_11_09 " );	// One more thing. I'd rather you didn't bring all those creatures that roam around here to the ship. I hope this orc raid was the last attack we had to repel here!
 			B_GivePlayerXP(XP_Ambient);
 			DIA_PC_Thief_DI_RAT_OneTime2 = TRUE;
 		};
@@ -106,7 +107,7 @@ func void DIA_PC_Thief_DI_RAT_Info()
 };
 
 
-instance DIA_Diego_DI_TRADE(C_Info)
+instance DIA_Diego_TRADE (C_Info)
 {
 	npc = PC_Thief_DI;
 	nr = 12;
@@ -114,11 +115,11 @@ instance DIA_Diego_DI_TRADE(C_Info)
 	information = DIA_Diego_DI_TRADE_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Мне нужна амуниция.";
+	description = " I need ammo. " ;
 };
 
 
-func int DIA_Diego_DI_TRADE_Condition()
+func int DIA_Diego_TRADE_Condition()
 {
 	if(UndeadDragonIsDead == FALSE)
 	{
@@ -137,11 +138,11 @@ func void DIA_Diego_DI_TRADE_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Diego_DI_TRADE_15_00");	//Мне нужна амуниция.
-	AI_Output(self,other,"DIA_Diego_DI_TRADE_11_01");	//Возможно, я смогу тебя выручить.
+	AI_Output(other,self, " DIA_Diego_DI_TRADE_15_00 " );	// I need ammo.
+	AI_Output(self,other, " DIA_Diego_DI_TRADE_11_01 " );	// Maybe I can help you out.
 	B_GiveTradeInv(self);
 	Npc_RemoveInvItems(self,ItRw_Bolt,Npc_HasItems(self,ItRw_Bolt));
-	McBolzenAmount = Kapitel * 50;
+	McBolzeAmount = Chapter *  50 ;
 	CreateInvItems(self,ItRw_Bolt,McBolzenAmount);
 	Npc_RemoveInvItems(self,ItRw_Arrow,Npc_HasItems(self,ItRw_Arrow));
 	McArrowAmount = Kapitel * 50;
@@ -156,7 +157,7 @@ instance DIA_PC_Thief_DI_Training_Talente(C_Info)
 	condition = DIA_PC_Thief_DI_Training_Talente_Condition;
 	information = DIA_PC_Thief_DI_Training_Talente_Info;
 	permanent = TRUE;
-	description = "Обучи меня.";
+	description = " Teach me. " ;
 };
 
 
@@ -170,13 +171,13 @@ func int DIA_PC_Thief_DI_Training_Talente_Condition()
 
 func void DIA_PC_Thief_DI_Training_Talente_Info()
 {
-	AI_Output(other,self,"DIA_PC_Thief_DI_Training_15_00");	//Потренируй меня.
-	AI_Output(self,other,"DIA_PC_Thief_DI_Training_11_01");	//Что тебе нужно?
+	AI_Output(other,self, " DIA_PC_Thief_DI_Training_15_00 " );	// Train me.
+	AI_Output(self,other, " DIA_PC_Thief_DI_Training_11_01 " );	// What do you need?
 	Info_ClearChoices(DIA_PC_Thief_DI_Training_Talente);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,Dialog_Back,DIA_PC_Thief_DI_Training_Talente_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_PICKLOCK) == FALSE)
 	{
-		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,"Взламывать замки",DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
+		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente, " Pick Locks " ,DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
 	};
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_PC_Thief_DI_Training_DEX_1);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_PC_Thief_DI_Training_DEX_5);
@@ -188,13 +189,13 @@ func void DIA_PC_Thief_DI_Training_DEX_1()
 {
 	if(B_TeachAttributePoints(self,other,ATR_DEXTERITY,1,T_MEGA))
 	{
-		AI_Output(self,other,"DIA_PC_Thief_DI_Training_DEX_1_11_00");	//Тебе будет значительно легче, если ты будешь держаться подальше от линии огня.
+		AI_Output(self,other, " DIA_PC_Thief_DI_Training_DEX_1_11_00 " );	// You'll feel much better if you stay out of the line of fire.
 	};
 	Info_ClearChoices(DIA_PC_Thief_DI_Training_Talente);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,Dialog_Back,DIA_PC_Thief_DI_Training_Talente_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_PICKLOCK) == FALSE)
 	{
-		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,"Взламывать замки",DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
+		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente, " Pick Locks " ,DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
 	};
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_PC_Thief_DI_Training_DEX_1);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_PC_Thief_DI_Training_DEX_5);
@@ -206,13 +207,13 @@ func void DIA_PC_Thief_DI_Training_DEX_5()
 {
 	if(B_TeachAttributePoints(self,other,ATR_DEXTERITY,5,T_MEGA))
 	{
-		AI_Output(self,other,"DIA_PC_Thief_DI_Training_DEX_5_11_00");	//Когда ты двигаешься, всегда помни о том, как легко передвигаются коты. Остальное придет само собой.
+		AI_Output(self,other, " DIA_PC_Thief_DI_Training_DEX_5_11_00 " );	// When you move, always remember how easy cats move. The rest will come by itself.
 	};
 	Info_ClearChoices(DIA_PC_Thief_DI_Training_Talente);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,Dialog_Back,DIA_PC_Thief_DI_Training_Talente_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_PICKLOCK) == FALSE)
 	{
-		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,"Взламывать замки",DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
+		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente, " Pick Locks " ,DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
 	};
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_PC_Thief_DI_Training_DEX_1);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_PC_Thief_DI_Training_DEX_5);
@@ -224,13 +225,13 @@ func void DIA_PC_Thief_DI_Training_Combat_BOW_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,1,100))
 	{
-		AI_Output(self,other,"DIA_PC_Thief_DI_Training_Combat_BOW_1_11_00");	//Для достижения лучшего результата побольше тренируйся.
+		AI_Output(self,other, " DIA_PC_Thief_DI_Training_Combat_BOW_1_11_00 " );	// For best results, practice more.
 	};
 	Info_ClearChoices(DIA_PC_Thief_DI_Training_Talente);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,Dialog_Back,DIA_PC_Thief_DI_Training_Talente_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_PICKLOCK) == FALSE)
 	{
-		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,"Взламывать замки",DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
+		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente, " Pick Locks " ,DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
 	};
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_PC_Thief_DI_Training_DEX_1);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_PC_Thief_DI_Training_DEX_5);
@@ -242,13 +243,13 @@ func void DIA_PC_Thief_DI_Training_Combat_BOW_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,5,100))
 	{
-		AI_Output(self,other,"DIA_PC_Thief_DI_Training_Combat_BOW_5_11_00");	//Чтобы твоя рука не дрожала, во время прицеливания старайся дышать пореже.
+		AI_Output(self,other, " DIA_PC_Thief_DI_Training_Combat_BOW_5_11_00 " );	// To keep your hand from shaking, try to slow your breathing while aiming.
 	};
 	Info_ClearChoices(DIA_PC_Thief_DI_Training_Talente);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,Dialog_Back,DIA_PC_Thief_DI_Training_Talente_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_PICKLOCK) == FALSE)
 	{
-		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,"Взламывать замки",DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
+		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente, " Pick Locks " ,DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
 	};
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_PC_Thief_DI_Training_DEX_1);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_PC_Thief_DI_Training_DEX_5);
@@ -260,13 +261,13 @@ func void DIA_PC_Thief_DI_Training_Talente_PICKLOCK()
 {
 	if(B_TeachThiefTalent(self,other,NPC_TALENT_PICKLOCK))
 	{
-		AI_Output(self,other,"DIA_PC_Thief_DI_Training_PICKLOCK_11_00");	//Лучше поздно, чем никогда. Странно что ты не изучил эту способность раньше.
+		AI_Output(self,other, " DIA_PC_Thief_DI_Training_PICKLOCK_11_00 " );	// Better late than never. It's strange that you haven't learned this ability before.
 	};
 	Info_ClearChoices(DIA_PC_Thief_DI_Training_Talente);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,Dialog_Back,DIA_PC_Thief_DI_Training_Talente_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_PICKLOCK) == FALSE)
 	{
-		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,"Взламывать замки",DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
+		Info_AddChoice(DIA_PC_Thief_DI_Training_Talente, " Pick Locks " ,DIA_PC_Thief_DI_Training_Talente_PICKLOCK);
 	};
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_PC_Thief_DI_Training_DEX_1);
 	Info_AddChoice(DIA_PC_Thief_DI_Training_Talente,b_buildlearnstringforskills(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_PC_Thief_DI_Training_DEX_5);
@@ -287,7 +288,7 @@ instance DIA_PC_Thief_DI_UndeadDragonDead(C_Info)
 	condition = DIA_PC_Thief_DI_UndeadDragonDead_Condition;
 	information = DIA_PC_Thief_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
-	description = "Все кончено. Теперь мы можем убираться отсюда.";
+	description = " It's over. Now we can get out of here. " ;
 };
 
 
@@ -303,13 +304,13 @@ var int DIA_PC_Thief_DI_UndeadDragonDead_OneTime;
 
 func void DIA_PC_Thief_DI_UndeadDragonDead_Info()
 {
-	AI_Output(other,self,"DIA_PC_Thief_DI_UndeadDragonDead_15_00");	//Все кончено. Теперь мы можем убираться отсюда.
+	AI_Output(other,self, " DIA_PC_Thief_DI_UndeadDragonDead_15_00 " );	// It's over. Now we can get out of here.
 	if(Npc_GetDistToWP(self,"WP_UNDEAD_MIDDLE_01") < 4000)
 	{
-		AI_Output(self,other,"DIA_PC_Thief_DI_UndeadDragonDead_11_01");	//Ты только посмотри на это. В жизни не видел такого сооружения.
-		AI_Output(self,other,"DIA_PC_Thief_DI_UndeadDragonDead_11_02");	//Как тебе, черт возьми, удалось пройти там?
-		AI_Output(other,self,"DIA_PC_Thief_DI_UndeadDragonDead_15_03");	//Мне просто повезло, я думаю.
-		AI_Output(self,other,"DIA_PC_Thief_DI_UndeadDragonDead_11_04");	//(смеется) Ну, если ты так думаешь...
+		AI_Output(self,other, " DIA_PC_Thief_DI_UndeadDragonDead_11_01 " );	// Just look at this. I have never seen such a structure in my life.
+		AI_Output(self,other, " DIA_PC_Thief_DI_UndeadDragonDead_11_02 " );	// How the hell did you manage to get through there?
+		AI_Output(other,self, " DIA_PC_Thief_DI_UndeadDragonDead_15_03 " );	// I'm just lucky I guess.
+		AI_Output(self,other, " DIA_PC_Thief_DI_UndeadDragonDead_11_04 " );	// (laughs) Well, if you think so...
 	}
 	else
 	{
@@ -317,16 +318,16 @@ func void DIA_PC_Thief_DI_UndeadDragonDead_Info()
 	};
 	if(DIA_PC_Thief_DI_UndeadDragonDead_OneTime == FALSE)
 	{
-		AI_Output(other,self,"DIA_PC_Thief_DI_UndeadDragonDead_15_06");	//Что ты собираешься делать дальше?
-		AI_Output(self,other,"DIA_PC_Thief_DI_UndeadDragonDead_11_07");	//Хороший вопрос. Я думаю, сначала нужно вернуться в Хоринис.
+		AI_Output(other,self, " DIA_PC_Thief_DI_UndeadDragonDead_15_06 " );	// What are you going to do next?
+		AI_Output(self,other, " DIA_PC_Thief_DI_UndeadDragonDead_11_07 " );	// Good question. I think we need to return to Khorinis first.
 		if((Diebesgilde_Verraten == TRUE) || (MIS_Andre_GuildOfThieves == LOG_SUCCESS))
 		{
-			AI_Output(self,other,"DIA_DiegoDI_Add_11_00");	//Там больше нет гильдии воров. Это открывает новые интересные возможности.
+			AI_Output(self,other, " DIA_DiegoDI_Add_11_00 " );	// There's no thieves guild there anymore. This opens up interesting new possibilities.
 		};
-		AI_Output(self,other,"DIA_PC_Thief_DI_UndeadDragonDead_11_09");	//Ммм. Ну, или, может быть, я просто продолжу бизнес Бромора. Это очень неплохие деньги. Честные деньги.
+		AI_Output(self,other, " DIA_PC_Thief_DI_UndeadDragonDead_11_09 " );	// Mmm. Well, or maybe I'll just continue Bromor's business. This is very good money. Honest money.
 		DIA_PC_Thief_DI_UndeadDragonDead_OneTime = TRUE;
 	};
-	AI_Output(self,other,"DIA_PC_Thief_DI_UndeadDragonDead_11_10");	//Иди к капитану. Пусть он поднимает якорь.
+	AI_Output(self,other, " DIA_PC_Thief_DI_UndeadDragonDead_11_10 " );	// Go to the captain. Let him raise the anchor.
 	AI_StopProcessInfos(self);
 	if(Lares_IsOnBoard != LOG_SUCCESS)
 	{
@@ -352,19 +353,19 @@ instance DIA_Thief_DI_PICKPOCKET(C_Info)
 
 func int DIA_Thief_DI_PICKPOCKET_Condition()
 {
-	return C_Beklauen(120,600);
+	return  C_Robbery ( 120 , 600 );
 };
 
 func void DIA_Thief_DI_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Thief_DI_PICKPOCKET);
 	Info_AddChoice(DIA_Thief_DI_PICKPOCKET,Dialog_Back,DIA_Thief_DI_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Thief_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Thief_DI_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Thief_DI_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Thief_DI_PICKPOCKET_DoIt);
 };
 
 func void DIA_Thief_DI_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Thief_DI_PICKPOCKET);
 };
 
