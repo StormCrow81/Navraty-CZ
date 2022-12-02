@@ -1,4 +1,5 @@
 
+
 instance DIA_GRAVO_EXIT(C_Info)
 {
 	npc = vlk_988_gravo;
@@ -10,7 +11,7 @@ instance DIA_GRAVO_EXIT(C_Info)
 };
 
 
-func int dia_gravo_exit_condition()
+func int dia_grave_exit_condition()
 {
 	return TRUE;
 };
@@ -20,7 +21,7 @@ func void dia_gravo_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_GRAVO_PICKPOCKET(C_Info)
+instances DIA_GRAVO_PICKPOCKET (C_Info)
 {
 	npc = vlk_988_gravo;
 	nr = 900;
@@ -32,19 +33,19 @@ instance DIA_GRAVO_PICKPOCKET(C_Info)
 
 func int DIA_GRAVO_PICKPOCKET_Condition()
 {
-	return C_Beklauen(45,88);
+	return  C_Robbery ( 45 , 88 );
 };
 
 func void DIA_GRAVO_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_GRAVO_PICKPOCKET);
-	Info_AddChoice(DIA_GRAVO_PICKPOCKET,Dialog_Back,DIA_GRAVO_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_GRAVO_PICKPOCKET,DIALOG_PICKPOCKET,DIA_GRAVO_PICKPOCKET_DoIt);
+	Info_AddChoice( DIA_GRAVO_PICKPOCKET ,Dialog_Back, DIA_GRAVO_PICKPOCKET_BACK );
+	Info_AddChoice( DIA_GRAVO_PICKPOCKET , DIALOG_PICKPOCKET ,DIA_GRAVO_PICKPOCKET_DoIt);
 };
 
 func void DIA_GRAVO_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_GRAVO_PICKPOCKET);
 };
 
@@ -53,14 +54,14 @@ func void DIA_GRAVO_PICKPOCKET_BACK()
 	Info_ClearChoices(DIA_GRAVO_PICKPOCKET);
 };
 
-instance DIA_GRAVO_FIRSTMEET(C_Info)
+DIA_GRAVO_FIRSTMEET (C_Info) instances
 {
 	npc = vlk_988_gravo;
 	nr = 1;
 	condition = dia_gravo_firstmeet_condition;
 	information = dia_gravo_firstmeet_info;
 	permanent = FALSE;
-	description = "Кажется, мы знакомы?";
+	description = " Looks like we know each other? " ;
 };
 
 
@@ -71,12 +72,12 @@ func int dia_gravo_firstmeet_condition()
 
 func void dia_gravo_firstmeet_info()
 {
-	AI_Output(other,self,"DIA_Gravo_FirstMeet_01_00");	//Кажется, мы знакомы?
-	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_01");	//Да? Хммм...(вглядываясь) Возможно, ты и прав. Твое лицо мне действительно знакомо.
-	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_03");	//Ах, ну да, точно! Теперь я тебя вспомнил.
-	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_04");	//Ты ведь тот парень, который постоянно попадал в какие-нибудь неприятности. А я их помогал тебе улаживать!
-	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_06");	//Правда, не стоит об этом сильно распространяться. Иначе тебя запросто могут принять за бандита.
-	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_07");	//Беглых каторжников здесь не особенно жалуют.
+	AI_Output(other,self, " DIA_Gravo_FirstMeet_01_00 " );	// Seems like we know each other?
+	AI_Output(self,other, " DIA_Gravo_FirstMeet_01_01 " );	// Yes? Hmmm...( peering) Maybe you're right. Your face is really familiar to me.
+	AI_Output(self,other, " DIA_Gravo_FirstMeet_01_03 " );	// Oh, yes, exactly! Now I remember you.
+	AI_Output(self,other, " DIA_Gravo_FirstMeet_01_04 " );	// You're the guy who always got into trouble. And I helped you sort them out!
+	AI_Output(self,other, " DIA_Gravo_FirstMeet_01_06 " );	// Really, don't go into too much detail on this. Otherwise, you can easily be mistaken for a bandit.
+	AI_Output(self,other, " DIA_Gravo_FirstMeet_01_07 " );	// Escaped convicts are not particularly favored here.
 };
 
 
@@ -87,7 +88,7 @@ instance DIA_GRAVO_HOWHERE(C_Info)
 	condition = dia_gravo_howhere_condition;
 	information = dia_gravo_howhere_info;
 	permanent = FALSE;
-	description = "Как ты здесь очутился?";
+	description = " How did you end up here? " ;
 };
 
 
@@ -101,20 +102,20 @@ func int dia_gravo_howhere_condition()
 
 func void dia_gravo_howhere_info()
 {
-	AI_Output(other,self,"DIA_Gravo_HowHere_01_00");	//Как ты здесь очутился?
-	AI_Output(self,other,"DIA_Gravo_HowHere_01_01");	//Странный вопрос... Так же, как и все. Прошел через проход, ведущий из Долины.
-	AI_Output(self,other,"DIA_Gravo_HowHere_01_02");	//После того, как этот магический барьер рухнул, меня вряд ли что-то могло удержать там.
+	AI_Output(other,self, " DIA_Gravo_HowHere_01_00 " );	// How did you get here?
+	AI_Output(self,other, " DIA_Gravo_HowHere_01_01 " );	// Strange question... Just like everyone else. Passed through the passage leading out of the Valley.
+	AI_Output(self,other, " DIA_Gravo_HowHere_01_02 " );	// After that magical barrier collapsed, there was hardly anything to keep me there.
 };
 
 
-instance DIA_GRAVO_HALLO(C_Info)
+DIA_GRAVO_HALLO (C_Info) instances
 {
 	npc = vlk_988_gravo;
 	nr = 1;
 	condition = dia_gravo_hallo_condition;
-	information = dia_gravo_hallo_info;
+	information = dia_gravo_hello_info;
 	permanent = FALSE;
-	description = "Как идут дела?";
+	description = " How are things going? " ;
 };
 
 
@@ -128,19 +129,19 @@ func int dia_gravo_hallo_condition()
 
 func void dia_gravo_hallo_info()
 {
-	AI_Output(other,self,"DIA_Gravo_Hallo_01_00");	//Как идут дела?
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_01");	//С тех пор как я перестал гнуть спину на шахте, пожаловаться не на что.
-	AI_Output(other,self,"DIA_Gravo_Hallo_01_02");	//На что же ты живешь?
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_03");	//Я все так же помогаю людям решать их проблемы.
-	AI_Output(other,self,"DIA_Gravo_Hallo_01_05");	//И какие же проблемы ты можешь решить?
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_06");	//Ну, разного рода. Смотря что у тебя за проблема.
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_08");	//Допустим, ты где-то слегка перегнул палку и тебя стали считать преступником!
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_09");	//Я бы мог помочь тебе уладить это недоразумение, поговорив с нужными людьми. Замолвить за тебя словечко.
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_10");	//Поверь, всегда есть ниточки, за которые в случае надобности можно дернуть.
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_11");	//А там, глядишь, люди начнут относиться к тебе совсем по-другому. И ты снова уже в чести!
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_12");	//Разумеется, бесплатно этого делать я не буду.
+	AI_Output(other,self, " DIA_Gravo_Hallo_01_00 " );	// How are things going?
+	AI_Output(self,other, " DIA_Gravo_Hallo_01_01 " );	// Since I stopped bending my back in the mine, there is nothing to complain about.
+	AI_Output(other, self, " DIA_Gravo_Hallo_01_02 " );	// What do you live on?
+	AI_Output(self,other, " DIA_Gravo_Hallo_01_03 " );	// I still help people solve their problems.
+	AI_Output(other,self, " DIA_Gravo_Hallo_01_05 " );	// And what problems can you solve?
+	AI_Output(self,other, " DIA_Gravo_Hallo_01_06 " );	// Well, different kinds. See what your problem is.
+	AI_Output(self,other, " DIA_Gravo_Hallo_01_08 " );	// Let's say you went a bit too far somewhere and they started to consider you a criminal!
+	AI_Output(self,other, " DIA_Gravo_Hallo_01_09 " );	// I could help you sort this out by talking to the right people. Put in a good word for you.
+	AI_Output(self,other, " DIA_Gravo_Hallo_01_10 " );	// Believe me, there are always strings that you can pull if necessary.
+	AI_Output(self,other, " DIA_Gravo_Hallo_01_11 " );	// And there, you see, people will begin to treat you quite differently. And you are already in honor again!
+	AI_Output(self,other, " DIA_Gravo_Hallo_01_12 " );	// Of course, I won't do it for free.
 	Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
-	B_LogEntry(TOPIC_DIPLOM,"Если я попаду в неприятности, Граво поможет мне решить эти проблемы. Естественно, за определенную плату.");
+	B_LogEntry( TOPIC_DIPLOM , " If I get into trouble, Gravo will help me solve these problems. Of course, for a fee. " );
 };
 
 
@@ -151,7 +152,7 @@ instance DIA_GRAVO_HELPANGRYNOW(C_Info)
 	condition = dia_gravo_helpangrynow_condition;
 	information = dia_gravo_helpangrynow_info;
 	permanent = TRUE;
-	description = "Кажется, у меня возникла проблема. Ты можешь мне помочь?";
+	description = " I seem to have a problem. Can you help me? " ;
 };
 
 
@@ -165,34 +166,34 @@ func int dia_gravo_helpangrynow_condition()
 
 func void dia_gravo_helpangrynow_info()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_15_00");	//Кажется, у меня возникла проблема. Ты можешь мне помочь?
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_04_01");	//Думаю, что да! Но моя помощь стоит недешево.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_15_00 " );	// I seem to have a problem. Can you help me?
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_04_01 " );	// I think so! But my help doesn't come cheap.
 	Info_ClearChoices(dia_gravo_helpangrynow);
 	Info_AddChoice(dia_gravo_helpangrynow,Dialog_Back,dia_gravo_helpangrynow_back);
 
 	if(GLOBAL_MAKE_BANDIT_FORFARM == TRUE)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"У меня проблемы на ферме Онара.",dia_gravo_helpangrynow_bigfarm);
+		Info_AddChoice(dia_gravo_helpangrynow, " I'm having trouble at Onar's farm. " ,dia_gravo_helpangrynow_bigfarm);
 	};
 	if(GLOBAL_MAKE_BANDIT_FORMON == TRUE)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"У меня проблемы в монастыре.",dia_gravo_helpangrynow_kloster);
+		Info_AddChoice(dia_gravo_helpangrynow, " I'm having trouble at the monastery. " ,dia_gravo_helpangrynow_kloster);
 	};
 	if(GLOBAL_MAKE_BANDIT_FORCITY == TRUE)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"У меня проблемы с паладинами.",dia_gravo_helpangrynow_city);
+		Info_AddChoice(dia_gravo_helpangrynow, " I'm having trouble with paladins. " ,dia_gravo_helpangrynow_city);
 	};
 	if(GLOBAL_MAKE_BANDIT_FORPSICAMP == TRUE)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"У меня проблемы в лагере Братства.",dia_gravo_helpangrynow_psicamp);
+		Info_AddChoice(dia_gravo_helpangrynow, " I'm having trouble at the Brotherhood camp. " ,dia_gravo_helpangrynow_psicamp);
 	};
 	if(GLOBAL_MAKE_BANDIT_FORCOAST == TRUE)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"У меня проблемы в лагере Нетбека.",dia_gravo_helpangrynow_netbek);
+		Info_AddChoice(dia_gravo_helpangrynow, " I'm in trouble at the Netbek camp. " ,dia_gravo_helpangrynow_netbek);
 	};
 	if(VatrasPissedOffForever == TRUE)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"У меня проблемы c магом воды, Ватрасом.",dia_gravo_helpangrynow_vatras);
+		Info_AddChoice(dia_gravo_helpangrynow, " I'm having trouble with the waterbender, Vatras. " ,dia_gravo_helpangrynow_vatras);
 	};
 };
 
@@ -203,121 +204,121 @@ func void dia_gravo_helpangrynow_back()
 
 func void dia_gravo_helpangrynow_vatras()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Vatras_01_00");	//У меня проблемы c магом воды, Ватрасом.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_01_01");	//Хммм...(задумчиво) Полагаю, что их можно будет решить без особого труда.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_Vatras_01_00 " );	// I'm having trouble with the waterbender, Vatras.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_01_01 " );	// Hmmm...(thoughtfully) I guess they can be solved without much difficulty.
 	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_BigFarm_01_03");	//Сколько?
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_01_04");	//Три тысячи золотых монет!
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_01_04 " );	// Three thousand gold coins!
 	Info_ClearChoices(dia_gravo_helpangrynow);
-	Info_AddChoice(dia_gravo_helpangrynow,"У меня столько нет.",dia_gravo_helpangrynow_nomoney);
+	Info_AddChoice(dia_gravo_helpangrynow, " I don't have that much. " ,dia_gravo_helpangrynow_nomoney);
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 3000)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"Хорошо! Вот золото.",dia_gravo_helpangrynow_vatras_takeit);
+		Info_AddChoice(dia_gravo_helpangrynow, " Хорошо! Вот золото. " ,dia_gravo_helpangrynow_vatras_takeit);
 	};
 };
 
 func void dia_gravo_helpangrynow_bigfarm()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_BigFarm_01_00");	//У меня проблемы на ферме Онара.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_01_01");	//Хммм...(задумчиво) Полагаю, что их можно будет решить без особого труда.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_01_02");	//Однако чтобы вернуть доверие этих людей, тебе придется мне заплатить.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_BigFarm_01_00 " );	// I'm in trouble at Onar's farm.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_01_01 " );	// Hmmm...(thoughtfully) I guess they can be solved without much difficulty.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_01_02 " );	// However, in order to regain the trust of these people, you will have to pay me.
 	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_BigFarm_01_03");	//Сколько?
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_01_04");	//Три тысячи золотых монет!
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_01_04 " );	// Three thousand gold coins!
 	Info_ClearChoices(dia_gravo_helpangrynow);
-	Info_AddChoice(dia_gravo_helpangrynow,"У меня столько нет.",dia_gravo_helpangrynow_nomoney);
+	Info_AddChoice(dia_gravo_helpangrynow, " I don't have that much. " ,dia_gravo_helpangrynow_nomoney);
 	if(Npc_HasItems(other,ItMi_Gold) >= 3000)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"Хорошо! Вот золото.",dia_gravo_helpangrynow_bigfarm_takeit);
+		Info_AddChoice(dia_gravo_helpangrynow, " Хорошо! Вот золото. " ,dia_gravo_helpangrynow_bigfarm_takeit);
 	};
 };
 
 func void dia_gravo_helpangrynow_kloster()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Kloster_01_00");	//У меня проблемы в монастыре.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Kloster_01_01");	//С Магами Огня? Хммм...(задумчиво) Ну и влип же ты, приятель!
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Kloster_01_02");	//Маги крайне упрямы и горды. А потому уговорить их простить тебя будет сделать крайне тяжело.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Kloster_01_03");	//Тебе придется заплатить мне просто огромную кучу золота, чтобы я взялся за это дело.
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Kloster_01_04");	//Сколько?
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Kloster_01_05");	//Десять тысяч золотых монет!
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_Kloster_01_00 " );	// I'm having problems at the monastery.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Kloster_01_01 " );	// With the Fire Mages? Hmmm... (thoughtfully) Well, you're in trouble, buddy!
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Kloster_01_02 " );	// Mages are extremely stubborn and proud. Therefore, it will be extremely difficult to persuade them to forgive you.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Kloster_01_03 " );	// You'll just have to pay me a huge pile of gold to take on this case.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_Kloster_01_04 " );	// How much?
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Kloster_01_05 " );	// Ten thousand gold coins!
 	Info_ClearChoices(dia_gravo_helpangrynow);
-	Info_AddChoice(dia_gravo_helpangrynow,"У меня столько нет.",dia_gravo_helpangrynow_nomoney);
+	Info_AddChoice(dia_gravo_helpangrynow, " I don't have that much. " ,dia_gravo_helpangrynow_nomoney);
 	if(Npc_HasItems(other,ItMi_Gold) >= 10000)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"Вот, возьми свои деньги.",dia_gravo_helpangrynow_kloster_takeit);
+		Info_AddChoice(dia_gravo_helpangrynow, " Вот, возьми свои деньги. " ,dia_gravo_helpangrynow_monastery_takeit);
 	};
 };
 
 func void dia_gravo_helpangrynow_city()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_City_01_00");	//У меня проблемы с паладинами.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_City_01_01");	//Хммм...(задумчиво) Это уже серьезно! Мне будет нелегко их уговорить, чтобы они забыли свои старые обиды.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_City_01_02");	//Да и золота потребуется куда больше, чем обычно.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_City_01_00 " );	// I'm having trouble with paladins.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_City_01_01 " );	// Hmmm... (thoughtfully) This is serious! It will not be easy for me to persuade them to forget their old grievances.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_City_01_02 " );	// Yes, and you will need much more gold than usual.
 	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_City_01_03");	//Сколько?
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_City_01_04");	//Пять тысяч золотых монет!
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_City_01_04 " );	// Five thousand gold coins!
 	Info_ClearChoices(dia_gravo_helpangrynow);
-	Info_AddChoice(dia_gravo_helpangrynow,"У меня столько нет.",dia_gravo_helpangrynow_nomoney);
+	Info_AddChoice(dia_gravo_helpangrynow, " I don't have that much. " ,dia_gravo_helpangrynow_nomoney);
 	if(Npc_HasItems(other,ItMi_Gold) >= 5000)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"Хорошо! Вот золото.",dia_gravo_helpangrynow_city_takeit);
+		Info_AddChoice(dia_gravo_helpangrynow, " Хорошо! Вот золото. " ,dia_gravo_helpangrynow_city_takeit);
 	};
 };
 
 func void dia_gravo_helpangrynow_psicamp()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Psicamp_01_00");	//У меня проблемы в лагере Братства.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Psicamp_01_01");	//Хммм...(задумчиво) Полагаю, что их можно будет решить без особого труда.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Psicamp_01_02");	//Однако чтобы вернуть доверие этих людей, тебе придется мне заплатить.
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Psicamp_01_03");	//Сколько?
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Psicamp_01_04");	//Четыре тысячи золотых монет!
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_Psicamp_01_00 " );	// I'm in trouble at the Brotherhood camp.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Psicamp_01_01 " );	// Hmmm...(thoughtfully) I guess they can be solved without much difficulty.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Psicamp_01_02 " );	// However, in order to regain the trust of these people, you will have to pay me.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_Psicamp_01_03 " );	// How much?
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Psicamp_01_04 " );	// Four thousand gold coins!
 	Info_ClearChoices(dia_gravo_helpangrynow);
-	Info_AddChoice(dia_gravo_helpangrynow,"У меня столько нет.",dia_gravo_helpangrynow_nomoney);
+	Info_AddChoice(dia_gravo_helpangrynow, " I don't have that much. " ,dia_gravo_helpangrynow_nomoney);
 	if(Npc_HasItems(other,ItMi_Gold) >= 4000)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"Хорошо! Вот золото.",dia_gravo_helpangrynow_psicamp_takeit);
+		Info_AddChoice(dia_gravo_helpangrynow, " Good! Here's gold. " ,dia_gravo_helpangrynow_psicamp_takeit);
 	};
 };
 
 func void dia_gravo_helpangrynow_netbek()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_NetBek_01_00");	//У меня проблемы в лагере Нетбека.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_NetBek_01_01");	//Хммм...(задумчиво) Полагаю, что их можно будет решить без особого труда.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_NetBek_01_02");	//Однако чтобы вернуть доверие этих людей, тебе придется мне заплатить.
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_NetBek_01_03");	//Сколько?
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_NetBek_01_04");	//Две тысячи золотых монет!
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_NetBek_01_00 " );	// I'm having trouble at the Netback camp.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_NetBek_01_01 " );	// Hmmm...(thoughtfully) I guess they can be solved without much difficulty.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_NetBek_01_02 " );	// However, in order to regain the trust of these people, you will have to pay me.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_NetBek_01_03 " );	// How much?
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_NetBek_01_04 " );	// Two thousand gold coins!
 	Info_ClearChoices(dia_gravo_helpangrynow);
-	Info_AddChoice(dia_gravo_helpangrynow,"У меня столько нет.",dia_gravo_helpangrynow_nomoney);
+	Info_AddChoice(dia_gravo_helpangrynow, " I don't have that much. " ,dia_gravo_helpangrynow_nomoney);
 	if(Npc_HasItems(other,ItMi_Gold) >= 2000)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"Хорошо! Вот золото.",dia_gravo_helpangrynow_netbek_takeit);
+		Info_AddChoice(dia_gravo_helpangrynow, " Хорошо! Вот золото. " ,dia_gravo_helpangrynow_netbek_takeit);
 	};
 };
 
 func void dia_gravo_helpangrynow_nomoney()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_NoMoney_01_00");	//У меня недостаточно золота.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_NoMoney_01_01");	//Мне очень жаль, парень...(пожимая плечами) Но тогда я ничего не смогу для тебя сделать!
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_NoMoney_01_00 " );	// I don't have enough gold.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_NoMoney_01_01 " );	// I'm sorry, boy... (shrugs) But then there's nothing I can do for you!
 	Info_ClearChoices(dia_gravo_helpangrynow);
 };
 
 func void dia_gravo_helpangrynow_vatras_takeit()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_00");	//Хорошо! Вот золото.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_00 " );	// Good! Here is gold.
 	B_GiveInvItems(other,self,ItMi_Gold,3000);
 	Npc_RemoveInvItems(self,ItMi_Gold,3000);
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_01");	//Можешь считать, что вопрос решен.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_02");	//И никому не говори об этом! Веди себя так, будто ничего не случилось.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_01 " );	// You can consider that the issue is resolved.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_02 " );	// And don't tell anyone about this! Act like nothing happened.
 	VatrasPissedOffForever = FALSE;
-	B_LogEntry(TOPIC_DIPLOM,"Теперь Ватрас должен простить меня.");
+	B_LogEntry( TOPIC_DIPLOM , " Now Vatras must forgive me. " );
 	Info_ClearChoices(dia_gravo_helpangrynow);
 };
 
 func void dia_gravo_helpangrynow_bigfarm_takeit()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_00");	//Хорошо! Вот золото.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_00 " );	// Good! Here is gold.
 	B_GiveInvItems(other,self,ItMi_Gold,3000);
 	Npc_RemoveInvItems(self,ItMi_Gold,3000);
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_01");	//Можешь считать, что вопрос решен.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_02");	//И никому не говори об этом! Веди себя так, будто ничего не случилось.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_01 " );	// You can consider that the issue is resolved.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_02 " );	// And don't tell anyone about this! Act like nothing happened.
 	B_GrantAbsolution(LOC_FARM);
 	ABSOLUTIONLEVEL_BL = ABSOLUTIONLEVEL_BL + 1;
 	PETZCOUNTER_BL_Murder = 0;
@@ -332,17 +333,17 @@ func void dia_gravo_helpangrynow_bigfarm_takeit()
 	GLOBAL_FARM_THEFT = 0;
 	GLOBAL_FARM_ATTACK = 0;
 	GLOBAL_MAKE_BANDIT_FORFARM = FALSE;
-	B_LogEntry(TOPIC_DIPLOM,"Я восстановил свои отношения с наемниками.");
+	B_LogEntry( TOPIC_DIPLOM , " I have restored my relationship with the mercenaries. " );
 	Info_ClearChoices(dia_gravo_helpangrynow);
 };
 
 func void dia_gravo_helpangrynow_kloster_takeit()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Kloster_TakeIt_01_00");	//Хорошо! Вот золото.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_Kloster_TakeIt_01_00 " );	// Good! Here is gold.
 	B_GiveInvItems(other,self,ItMi_Gold,10000);
 	Npc_RemoveInvItems(self,ItMi_Gold,10000);
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Kloster_TakeIt_01_01");	//Можешь считать, что вопрос решен.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Kloster_TakeIt_01_02");	//И никому не говори об этом! Веди себя так, будто ничего не случилось.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Kloster_TakeIt_01_01 " );	// You can consider that the issue is resolved.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Kloster_TakeIt_01_02 " );	// And don't tell anyone about this! Act like nothing happened.
 	B_GrantAbsolution(LOC_MONASTERY);
 	ABSOLUTIONLEVEL_BL = ABSOLUTIONLEVEL_BL + 1;
 	PETZCOUNTER_BL_Murder = 0;
@@ -356,18 +357,18 @@ func void dia_gravo_helpangrynow_kloster_takeit()
 	GLOBAL_MONASTERY_MURDER = 0;
 	GLOBAL_MONASTERY_THEFT = 0;
 	GLOBAL_MONASTERY_ATTACK = 0;
-	GLOBAL_MAKE_BANDIT_FORMON = FALSE;
-	B_LogEntry(TOPIC_DIPLOM,"Я восстановил свои отношения с Магами Огня.");
+	GLOBAL_MAKE_BANDIT_FORMON = FALSE ;
+	B_LogEntry( TOPIC_DIPLOM , " I have restored my relationship with the Firebenders. " );
 	Info_ClearChoices(dia_gravo_helpangrynow);
 };
 
 func void dia_gravo_helpangrynow_city_takeit()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_City_TakeIt_01_00");	//Хорошо! Вот золото.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_City_TakeIt_01_00 " );	// Good! Here is gold.
 	B_GiveInvItems(other,self,ItMi_Gold,5000);
 	Npc_RemoveInvItems(self,ItMi_Gold,5000);
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_City_TakeIt_01_01");	//Можешь считать, что вопрос решен.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_City_TakeIt_01_02");	//И никому не говори об этом! Веди себя так, будто ничего не случилось.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_City_TakeIt_01_01 " );	// You can consider that the issue is resolved.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_City_TakeIt_01_02 " );	// And don't tell anyone about this! Act like nothing happened.
 	if(GARONDTROUBLE == TRUE)
 	{
 		B_GrantAbsolution(LOC_OLDCAMP);
@@ -383,8 +384,8 @@ func void dia_gravo_helpangrynow_city_takeit()
 		GLOBAL_OLDCAMP_MURDER = 0;
 		GLOBAL_OLDCAMP_THEFT = 0;
 		GLOBAL_OLDCAMP_ATTACK = 0;
-		GARONDTROUBLE = FALSE;
-		B_LogEntry(TOPIC_DIPLOM,"Я восстановил свои отношения с паладинами в крепости.");
+		GARONDTROUBLE = FALSE ;
+		B_LogEntry( TOPIC_DIPLOM , " I have restored my relationship with the paladins in the stronghold. " );
 	}
 	else
 	{
@@ -401,7 +402,7 @@ func void dia_gravo_helpangrynow_city_takeit()
 		GLOBAL_CITY_MURDER = 0;
 		GLOBAL_CITY_THEFT = 0;
 		GLOBAL_CITY_ATTACK = 0;
-		B_LogEntry(TOPIC_DIPLOM,"Я восстановил свои отношения с паладинами в городе.");
+		B_LogEntry( TOPIC_DIPLOM , " I have restored my relationship with the paladins in the city. " );
 	};
 	GLOBAL_MAKE_BANDIT_FORCITY = FALSE;
 	Info_ClearChoices(dia_gravo_helpangrynow);
@@ -409,11 +410,11 @@ func void dia_gravo_helpangrynow_city_takeit()
 
 func void dia_gravo_helpangrynow_psicamp_takeit()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Psicamp_TakeIt_01_00");	//Хорошо! Вот золото.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_Psicamp_TakeIt_01_00 " );	// Good! Here is gold.
 	B_GiveInvItems(other,self,ItMi_Gold,4000);
 	Npc_RemoveInvItems(self,ItMi_Gold,4000);
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Psicamp_TakeIt_01_01");	//Можешь считать, что вопрос решен.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Psicamp_TakeIt_01_02");	//И никому не говори об этом! Веди себя так, будто ничего не случилось.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Psicamp_TakeIt_01_01 " );	// You can consider that the issue is resolved.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Psicamp_TakeIt_01_02 " );	// And don't tell anyone about this! Act like nothing happened.
 	B_GrantAbsolution(LOC_PSICAMP);
 	ABSOLUTIONLEVEL_BL = ABSOLUTIONLEVEL_BL + 1;
 	PETZCOUNTER_BL_Murder = 0;
@@ -427,17 +428,17 @@ func void dia_gravo_helpangrynow_psicamp_takeit()
 	GLOBAL_PSICAMP_THEFT = 0;
 	GLOBAL_PSICAMP_ATTACK = 0;
 	GLOBAL_MAKE_BANDIT_FORPSICAMP = FALSE;
-	B_LogEntry(TOPIC_DIPLOM,"Я восстановил свои отношения с лагерем Братства.");
+	B_LogEntry( TOPIC_DIPLOM , " I have restored my relationship with the Brotherhood camp. " );
 	Info_ClearChoices(dia_gravo_helpangrynow);
 };
 
 func void dia_gravo_helpangrynow_netbek_takeit()
 {
-	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Psicamp_NetBek_01_00");	//Хорошо! Вот золото.
+	AI_Output(other,self, " DIA_Gravo_HelpAngryNow_Psicamp_NetBek_01_00 " );	// Good! Here is gold.
 	B_GiveInvItems(other,self,ItMi_Gold,4000);
 	Npc_RemoveInvItems(self,ItMi_Gold,4000);
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Psicamp_NetBek_01_01");	//Можешь считать, что вопрос решен.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_Psicamp_NetBek_01_02");	//И никому не говори об этом! Веди себя так, будто ничего не случилось.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Psicamp_NetBek_01_01 " );	// You can consider that the issue is resolved.
+	AI_Output(self,other, " DIA_Gravo_HelpAngryNow_Psicamp_NetBek_01_02 " );	// And don't tell anyone about this! Act like nothing happened.
 	B_GrantAbsolution(LOC_COAST);
 	ABSOLUTIONLEVEL_BL = ABSOLUTIONLEVEL_BL + 1;
 	PETZCOUNTER_BL_Murder = 0;
@@ -451,6 +452,6 @@ func void dia_gravo_helpangrynow_netbek_takeit()
 	GLOBAL_COAST_THEFT = 0;
 	GLOBAL_COAST_ATTACK = 0;
 	GLOBAL_MAKE_BANDIT_FORCOAST = FALSE;
-	B_LogEntry(TOPIC_DIPLOM,"Я восстановил свои отношения с лагерем Нетбека.");
+	B_LogEntry( TOPIC_DIPLOM , " I have restored my relationship with the Netback camp. " );
 	Info_ClearChoices(dia_gravo_helpangrynow);
 };
