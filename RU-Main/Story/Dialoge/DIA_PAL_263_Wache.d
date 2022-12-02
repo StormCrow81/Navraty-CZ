@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_263_EXIT(C_Info)
 {
 	npc = PAL_263_Wache;
@@ -28,7 +29,7 @@ instance DIA_PAL_263_PERM(C_Info)
 	condition = DIA_PAL_263_PERM_Condition;
 	information = DIA_PAL_263_PERM_Info;
 	permanent = TRUE;
-	description = "Докладывай, солдат!";
+	description = " Report, soldier! " ;
 };
 
 
@@ -42,10 +43,10 @@ func int DIA_PAL_263_PERM_Condition()
 
 func void DIA_PAL_263_PERM_Info()
 {
-	AI_Output(other,self,"DIA_PAL_263_PERM_15_00");	//Докладывай, солдат!
-	AI_Output(self,other,"DIA_PAL_263_PERM_04_01");	//Есть, сэр! Удерживаю позицию, как приказано. Потери минимальны. Провизия кончается, орки спокойны.
-	AI_Output(self,other,"DIA_PAL_263_PERM_04_02");	//Последняя атака дракона полностью уничтожила внешнюю стену. Но с тех пор не происходило ничего необычного.
-	AI_Output(other,self,"DIA_PAL_263_PERM_15_03");	//Хорошо, держись.
+	AI_Output(other, self, " DIA_PAL_263_PERM_15_00 " );	// Report, soldier!
+	AI_Output(self,other, " DIA_PAL_263_PERM_04_01 " );	// Yes, sir! Hold position as ordered. Losses are minimal. Provisions are running out, the orcs are calm.
+	AI_Output(self,other, " DIA_PAL_263_PERM_04_02 " );	// The dragon's last attack completely destroyed the outer wall. But nothing out of the ordinary has happened since.
+	AI_Output(other,self, " DIA_PAL_263_PERM_15_03 " );	// Okay, hold on.
 };
 
 
@@ -56,7 +57,7 @@ instance DIA_PAL_263_PERM_OTH(C_Info)
 	condition = DIA_PAL_263_PERM_OTH_Condition;
 	information = DIA_PAL_263_PERM_OTH_Info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
@@ -70,6 +71,6 @@ func int DIA_PAL_263_PERM_OTH_Condition()
 
 func void DIA_PAL_263_PERM_OTH_Info()
 {
-	AI_Output(other,self,"DIA_PAL_263_PERM_OTH_15_00");	//Как обстановка?
-	AI_Output(self,other,"DIA_PAL_263_PERM_OTH_04_01");	//Мы держим ситуацию под контролем. Тебе не о чем беспокоиться, гражданский. Все будет хорошо.
+	AI_Output(other,self, " DIA_PAL_263_PERM_OTH_15_00 " );	// How are things?
+	AI_Output(self,other, " DIA_PAL_263_PERM_OTH_04_01 " );	// We have the situation under control. You have nothing to worry about, civilian. Everything will be fine.
 };
