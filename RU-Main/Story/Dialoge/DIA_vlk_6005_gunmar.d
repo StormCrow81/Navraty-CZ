@@ -1,4 +1,5 @@
 
+
 instance DIA_GUNMAR_EXIT(C_Info)
 {
 	npc = vlk_6005_gunmar;
@@ -29,7 +30,7 @@ instance DIA_GUNMAR_HELLO(C_Info)
 	information = dia_gunmar_hello_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Как жизнь, приятель?";
+	description = " How are you, buddy? " ;
 };
 
 
@@ -43,15 +44,15 @@ func int dia_gunmar_hello_condition()
 
 func void dia_gunmar_hello_info()
 {
-	AI_Output(other,self,"DIA_Gunmar_Hello_01_01");	//Как жизнь, приятель?
-	AI_Output(self,other,"DIA_Gunmar_Hello_01_02");	//Какая тут жизнь?! Парень, ты что, с луны свалился, а?
-	AI_Output(self,other,"DIA_Gunmar_Hello_01_04");	//Как назовешь жизнь, смысл которой заключается только в том, чтобы каждый день думать, как спасти свою шкуру.
-	AI_Output(self,other,"DIA_Gunmar_Hello_01_05");	//Кругом бродят такие орды разных тварей и нежити, что на охоту уже страшно выходить.
-	AI_Output(other,self,"DIA_Gunmar_Hello_01_07");	//Да уж, спокойной жизнью это точно не назовешь.
-	AI_Output(other,self,"DIA_Gunmar_Hello_01_08");	//Кстати, кроме орд нежити и прочих мерзких тварей ты, случайно, дракона в этих краях не видел?
-	AI_Output(self,other,"DIA_Gunmar_Hello_01_09");	//Только дракона тут и не хватало! И так ступить шага в этих краях нельзя без того, чтобы не нарваться на неприятности.
-	AI_Output(other,self,"DIA_Gunmar_Hello_01_10");	//Не кипятись, я просто спросил...
-	AI_Output(self,other,"DIA_Gunmar_Hello_01_11");	//Хватит ко мне лезть со всякими странного рода вопросами. Лучше займись чем-нибудь полезным.
+	AI_Output(other,self, " DIA_Gunmar_Hello_01_01 " );	// How's life, mate?
+	AI_Output(self,other, " DIA_Gunmar_Hello_01_02 " );	// What kind of life is here?! Boy, did you fall off the moon, huh?
+	AI_Output(self,other, " DIA_Gunmar_Hello_01_04 " );	// What do you call a life, the meaning of which is only to think every day how to save your own skin.
+	AI_Output(self,other, " DIA_Gunmar_Hello_01_05 " );	// Such hordes of different creatures and undead roam around that it's already scary to go hunting.
+	AI_Output(other,self, " DIA_Gunmar_Hello_01_07 " );	// Yeah, you can't exactly call it a quiet life.
+	AI_Output(other,self, " DIA_Gunmar_Hello_01_08 " );	// By the way, apart from the hordes of undead and other vile creatures, have you by any chance seen a dragon in these parts?
+	AI_Output(self,other, " DIA_Gunmar_Hello_01_09 " );	// Only the dragon was missing here! And so it is impossible to take a step in these parts without running into trouble.
+	AI_Output(other,self, " DIA_Gunmar_Hello_01_10 " );	// Don't get angry, I was just asking...
+	AI_Output(self,other, " DIA_Gunmar_Hello_01_11 " );	// Stop pestering me with all sorts of weird questions. Better do something useful.
 	MEETGUNMAR = TRUE;
 };
 
@@ -64,7 +65,7 @@ instance DIA_GUNMAR_HELLO_TEACH(C_Info)
 	information = dia_gunmar_hello_teach_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Говорят, ты лучший стрелок в округе.";
+	description = " They say you're the best shot in the area. " ;
 };
 
 
@@ -78,17 +79,17 @@ func int dia_gunmar_hello_teach_condition()
 
 func void dia_gunmar_hello_teach_info()
 {
-	AI_Output(other,self,"DIA_Gunmar_Hello_Teach_01_01");	//Говорят, ты лучший стрелок в округе.
-	AI_Output(self,other,"DIA_Gunmar_Hello_Teach_01_02");	//Ну, раз говорят, значит, так оно и есть. А что?
-	AI_Output(other,self,"DIA_Gunmar_Hello_Teach_01_03");	//Ты мог бы научить меня более метко стрелять из лука?
-	AI_Output(self,other,"DIA_Gunmar_Hello_Teach_01_04");	//Почему бы и нет?
-	AI_Output(self,other,"DIA_Gunmar_Hello_Teach_01_05");	//По крайней мере, лучше я буду тебя учить упражняться в стрельбе из лука, чем отвечать на твои странные вопросы.
-	AI_Output(self,other,"DIA_Gunmar_Hello_Teach_01_06");	//Ну и когда начнем?
+	AI_Output(other,self, " DIA_Gunmar_Hello_Teach_01_01 " );	// They say you're the best shot in the area.
+	AI_Output(self,other, " DIA_Gunmar_Hello_Teach_01_02 " );	// Well, since they say it, it means that it is so. And what?
+	AI_Output(other,self, " DIA_Gunmar_Hello_Teach_01_03 " );	// Could you teach me how to shoot a bow more accurately?
+	AI_Output(self,other, " DIA_Gunmar_Hello_Teach_01_04 " );	// Why not?
+	AI_Output(self,other, " DIA_Gunmar_Hello_Teach_01_05 " );	// At least I'd rather teach you how to practice archery than answer your weird questions.
+	AI_Output(self,other, " DIA_Gunmar_Hello_Teach_01_06 " );	// Well, when do we start?
 	GUNMARREADYTEACH = TRUE;
 };
 
 
-var int gunmar_merke_bow;
+var int gunmar_brand_bow;
 
 instance DIA_GUNMAR_TEACH(C_Info)
 {
@@ -97,7 +98,7 @@ instance DIA_GUNMAR_TEACH(C_Info)
 	condition = dia_gunmar_teach_condition;
 	information = dia_gunmar_teach_info;
 	permanent = TRUE;
-	description = "Научи меня точнее стрелять из лука и арбалета.";
+	description = " Teach me more accurate bow and crossbow shooting. " ;
 };
 
 
@@ -121,8 +122,8 @@ func void dia_gunmar_teach_choices()
 
 func void dia_gunmar_teach_info()
 {
-	AI_Output(other,self,"DIA_Gunmar_Teach_01_01");	//Научи меня точнее стрелять из лука и арбалета.
-	AI_Output(self,other,"DIA_Gunmar_Teach_01_02");	//Ну что ж, приступим.
+	AI_Output(other,self, " DIA_Gunmar_Teach_01_01 " );	// Teach me how to shoot more accurately with a bow and crossbow.
+	AI_Output(self,other, " DIA_Gunmar_Teach_01_02 " );	// Well, let's get started.
 	GUNMAR_MERKE_BOW = other.HitChance[NPC_TALENT_BOW];
 	dia_gunmar_teach_choices();
 };
@@ -155,7 +156,7 @@ func void dia_gunmar_teach_back()
 {
 	if(GUNMAR_MERKE_BOW < other.HitChance[NPC_TALENT_BOW])
 	{
-		AI_Output(self,other,"DIA_Gunmar_Teach_Back_01_01");	//Уже лучше. Больше тренируйся и станешь таким же хорошим стрелком, как и я.
+		AI_Output(self,other, " DIA_Gunmar_Teach_Back_01_01 " );	// Already better. Practice more and you'll be as good a shooter as I am.
 	};
 	Info_ClearChoices(dia_gunmar_teach);
 };
