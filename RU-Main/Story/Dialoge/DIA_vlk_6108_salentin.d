@@ -1,4 +1,5 @@
 
+
 instance DIA_SALENTIN_EXIT(C_Info)
 {
 	npc = vlk_6108_salentin;
@@ -21,12 +22,12 @@ func void dia_salentin_exit_info()
 };
 
 
-instance DIA_SALENTIN_HALLO(C_Info)
+instance DIA_SALENTIN_HALLO (C_Info)
 {
 	npc = vlk_6108_salentin;
 	nr = 1;
 	condition = dia_salentin_hallo_condition;
-	information = dia_salentin_hallo_info;
+	information = dia_salentin_hello_info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -39,24 +40,24 @@ func int dia_salentin_hallo_condition()
 
 func void dia_salentin_hallo_info()
 {
-	AI_Output(self,other,"DIA_Salentin_Hallo_01_00");	//(удивленно) Эй! Что ты тут делаешь?! Да как ты вообще попал сюда?
-	AI_Output(self,other,"DIA_Salentin_Hallo_01_01");	//Если паладины заметят - они убьют тебя!
-	AI_Output(other,self,"DIA_Salentin_Hallo_01_02");	//Не беспокойся, я с ними как-нибудь договорюсь.
-	AI_Output(self,other,"DIA_Salentin_Hallo_01_03");	//ЧТО?! Да они и слушать тебя не станут! Ты хотя бы представляешь, что это за место?
-	AI_Output(self,other,"DIA_Salentin_Hallo_01_04");	//(сочувственно) Ох, парень, мой тебе совет: лучше уходи отсюда, пока не поздно.
+	AI_Output(self,other, " DIA_Salentin_Hallo_01_00 " );	// (surprised) Hey! What are you doing here?! How did you even get here?
+	AI_Output(self,other, " DIA_Salentin_Hallo_01_01 " );	// If paladins notice, they'll kill you!
+	AI_Output(other,self, " DIA_Salentin_Hallo_01_02 " );	// Don't worry, I'll deal with them somehow.
+	AI_Output(self,other, " DIA_Salentin_Hallo_01_03 " );	// WHAT?! And they won't listen to you! Do you have any idea what this place is?
+	AI_Output(self,other, " DIA_Salentin_Hallo_01_04 " );	// (sympathetically) Oh man, my advice to you is better get out of here before it's too late.
 	BEONETLU = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SALENTIN_BAUERNAUFSTAND(C_Info)
+instance DIA_SALENTIN_BAUERNAURUFSTAND (C_Info)
 {
 	npc = vlk_6108_salentin;
 	nr = 2;
 	condition = dia_salentin_bauernaufstand_condition;
 	information = dia_salentin_bauernaufstand_info;
 	permanent = FALSE;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -67,34 +68,34 @@ func int dia_salentin_bauernaufstand_condition()
 
 func void dia_salentin_bauernaufstand_info()
 {
-	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_00");	//Кто ты?
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_01");	//Что?! Ты еще здесь?
-	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_03");	//Да не переживай ты так. Я здесь по делу.
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_04");	//Интересно, какое дело могло привести сюда человека вроде тебя?
-	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_05");	//Я ищу одну вещь. Точнее, один амулет - Трирамар. Знаешь о нем что-нибудь?
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_06");	//Какой еще Трирамар? Это что такое?
-	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_08");	//Я же сказал - амулет, и он мне очень нужен, без него я отсюда не уйду.
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_09");	//(смеется) Ты отсюда и так уже никуда не уйдешь!
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_10");	//Единственный путь с этого острова - это магический портал за часовней на севере, но его охраняют паладины.
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_11");	//И не думаю, что они выпустят тебя отсюда живым.
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_12");	//Да, парень, ты знатно вляпался!
+	AI_Output(other,self, " DIA_Salentin_Bauernaufstand_01_00 " );	// Who are you?
+	AI_Output(self,other, " DIA_Salentin_Bauernaufstand_01_01 " );	// What?! Are you still here?
+	AI_Output(other,self, " DIA_Salentin_Bauernaufstand_01_03 " );	// Don't worry like that. I'm here on business.
+	AI_Output(self,other, " DIA_Salentin_Bauernaufstand_01_04 " );	// I wonder what business could bring a man like you here?
+	AI_Output(other,self, " DIA_Salentin_Bauernaufstand_01_05 " );	// I'm looking for one thing. More precisely, one amulet - Triramar. Do you know anything about him?
+	AI_Output(self,other, " DIA_Salentin_Bauernaufstand_01_06 " );	// What other Triramar? What is this?
+	AI_Output(other,self, " DIA_Salentin_Bauernaufstand_01_08 " );	// I told you - an amulet, and I really need it, I won't leave here without it.
+	AI_Output(self,other, " DIA_Salentin_Bauernaufstand_01_09 " );	// (laughs) You're not going anywhere from here anyway!
+	AI_Output(self,other, " DIA_Salentin_Bauernaufstand_01_10 " );	// The only way out of this island is through the magical portal behind the chapel to the north, but it's guarded by paladins.
+	AI_Output(self,other, " DIA_Salentin_Bauernaufstand_01_11 " );	// And I don't think they'll let you out of here alive.
+	AI_Output(self,other, " DIA_Salentin_Bauernaufstand_01_12 " );	// Yes, boy, you've got yourself in trouble!
 };
 
 
-instance DIA_SALENTIN_TRIRAMAR(C_Info)
+instance DIA_SALENTIN_TRIRAMAR (C_Info)
 {
 	npc = vlk_6108_salentin;
 	nr = 2;
 	condition = dia_salentin_triramar_condition;
 	information = dia_salentin_triramar_info;
 	permanent = FALSE;
-	description = "А где паладины хранят этот амулет?";
+	description = " Where do paladins keep this amulet? " ;
 };
 
 
 func int dia_salentin_triramar_condition()
 {
-	if(Npc_KnowsInfo(other,dia_salentin_bauernaufstand))
+	if (Npc_KnowsInfo(other,dia_salentin_bauernaufstand))
 	{
 		return TRUE;
 	};
@@ -102,16 +103,16 @@ func int dia_salentin_triramar_condition()
 
 func void dia_salentin_triramar_info()
 {
-	AI_Output(other,self,"DIA_Salentin_Triramar_01_00");	//Часовня, говоришь? А там не может храниться амулет?
-	AI_Output(self,other,"DIA_Salentin_Triramar_01_01");	//Я понятия не имею, что там хранится. Я и на полет стрелы не приближаюсь к ней, мне дорога моя жизнь.
-	AI_Output(other,self,"DIA_Salentin_Triramar_01_03");	//Хватит меня пугать! Просто скажи - где эта часовня?
-	AI_Output(self,other,"DIA_Salentin_Triramar_01_04");	//Сумасшедший, точно сумасшедший.
-	AI_Output(self,other,"DIA_Salentin_Triramar_01_06");	//Часовня находится на севере от моей хижины. И, раз уж ты туда собрался, я попрошу тебя об одном одолжении...
-	AI_Output(self,other,"DIA_Salentin_Triramar_01_07");	//...постарайся, чтоб тебя убили не слишком близко к ней - мне бы пригодилось твое снаряжение. (с сарказмом)
-	AI_Output(other,self,"DIA_Salentin_Triramar_01_08");	//(кисло) Да ты прям шутник, как я посмотрю. Скажи лучше, много ли паладинов в часовне?
-	AI_Output(self,other,"DIA_Salentin_Triramar_01_11");	//Нет, основная часть вместе с командованием квартирует в лагере на востоке острова.
-	AI_Output(other,self,"DIA_Salentin_Triramar_01_12");	//Тогда наведуюсь к ним в лагерь.
-	AI_Output(self,other,"DIA_Salentin_Triramar_01_13");	//ЧТО?! (подавился) А, ну да, да, давай, наведайся... на тот свет.
+	AI_Output(other,self, " DIA_Salentin_Triramar_01_00 " );	// Chapel, you say? Can't an amulet be kept there?
+	AI_Output(self,other, " DIA_Salentin_Triramar_01_01 " );	// I have no idea what is stored there. I do not approach her even for the flight of an arrow, my life is dear to me.
+	AI_Output(other,self, " DIA_Salentin_Triramar_01_03 " );	// Stop scaring me! Just tell me - where is this chapel?
+	AI_Output(self,other, " DIA_Salentin_Triramar_01_04 " );	// Crazy, definitely crazy.
+	AI_Output(self,other, " DIA_Salentin_Triramar_01_06 " );	// The chapel is north of my hut. And since you're going there, I'll ask you for one favor...
+	AI_Output(self,other, " DIA_Salentin_Triramar_01_07 " );	// ...make sure you don't get killed too close to her - I could use your gear. (with sarcasm)
+	AI_Output(other,self, " DIA_Salentin_Triramar_01_08 " );	// (sourly) Yes, you're a real joker, as I see it. Tell me, are there many paladins in the chapel?
+	AI_Output(self,other, " DIA_Salentin_Triramar_01_11 " );	// No, the main part, together with the command, lodges in a camp in the east of the island.
+	AI_Output(other,self, " DIA_Salentin_Triramar_01_12 " );	// Then I'll visit them in the camp.
+	AI_Output(self,other, " DIA_Salentin_Triramar_01_13 " );	// WHAT?! (choking) Oh, yes, yes, come on, visit ... the next world.
 };
 
 
@@ -122,13 +123,13 @@ instance DIA_SALENTIN_GETOUT(C_Info)
 	condition = dia_salentin_getout_condition;
 	information = dia_salentin_getout_info;
 	permanent = FALSE;
-	description = "А как еще можно выбраться с этого острова?";
+	description = " How else can you get off this island? " ;
 };
 
 
 func int dia_salentin_getout_condition()
 {
-	if(Npc_KnowsInfo(other,dia_salentin_bauernaufstand))
+	if (Npc_KnowsInfo(other,dia_salentin_bauernaufstand))
 	{
 		return TRUE;
 	};
@@ -136,10 +137,10 @@ func int dia_salentin_getout_condition()
 
 func void dia_salentin_getout_info()
 {
-	AI_Output(other,self,"DIA_Salentin_GetOut_01_00");	//А как еще можно выбраться с этого острова?
-	AI_Output(self,other,"DIA_Salentin_GetOut_02_01");	//Никак. Стал бы я иначе торчать здесь столько времени!
-	AI_Output(self,other,"DIA_Salentin_GetOut_04_03");	//У меня этот остров уже в печенках сидит.
-	AI_Output(self,other,"DIA_Salentin_GetOut_05_04");	//Паладины, слава Инносу, не трогают меня, но и к порталу не подпускают.
+	AI_Output(other,self, " DIA_Salentin_GetOut_01_00 " );	// How else can you get off this island?
+	AI_Output(self,other, " DIA_Salentin_GetOut_02_01 " );	// None. I wish I had been stuck here all this time otherwise!
+	AI_Output(self,other, " DIA_Salentin_GetOut_04_03 " );	// I already have this island in my liver.
+	AI_Output(self,other, " DIA_Salentin_GetOut_05_04 " );	// Paladins, thank Innos, don't touch me, but they don't let me near the portal either.
 };
 
 
@@ -150,13 +151,13 @@ instance DIA_SALENTIN_HOWIN(C_Info)
 	condition = dia_salentin_howin_condition;
 	information = dia_salentin_howin_info;
 	permanent = FALSE;
-	description = "А как ты сам здесь очутился?";
+	description = " How did you end up here yourself? " ;
 };
 
 
 func int dia_salentin_howin_condition()
 {
-	if(Npc_KnowsInfo(other,dia_salentin_bauernaufstand))
+	if (Npc_KnowsInfo(other,dia_salentin_bauernaufstand))
 	{
 		return TRUE;
 	};
@@ -164,27 +165,27 @@ func int dia_salentin_howin_condition()
 
 func void dia_salentin_howin_info()
 {
-	AI_Output(other,self,"DIA_Salentin_HowIn_01_00");	//А как ты сам здесь очутился?
-	AI_Output(self,other,"DIA_Salentin_HowIn_01_04");	//Когда-то я был моряком и служил на одном из торговых кораблей. Мы занимались перевозкой магической руды из одной богом забытой колонии...
-	AI_Output(self,other,"DIA_Salentin_HowIn_01_05");	//Однажды, возвращаясь на материк, наш корабль угодил в жуткий шторм. Корабль его не пережил - разломился надвое. А меня волной снесло в открытое море.
-	AI_Output(self,other,"DIA_Salentin_HowIn_01_09");	//Очнулся я уже на острове, а вокруг меня толпилась куча паладинов.
-	AI_Output(other,self,"DIA_Salentin_HowIn_01_10");	//Почему же они оставили тебя в живых?
-	AI_Output(self,other,"DIA_Salentin_HowIn_01_11");	//Ну, паладины не звери какие-нибудь. Тем более я оказался на их острове не по своей воле.
-	AI_Output(self,other,"DIA_Salentin_HowIn_01_13");	//Они разрешили мне остаться и жить на этом острове. Дали мне еды, новую одежду и даже инструменты!
-	AI_Output(other,self,"DIA_Salentin_HowIn_01_14");	//А почему ты не остался жить вместе с ними?
-	AI_Output(self,other,"DIA_Salentin_HowIn_01_15");	//Парень, это военный лагерь, а не постоялый двор.
-	AI_Output(self,other,"DIA_Salentin_HowIn_01_23");	//Я стараюсь пореже попадаться к ним на глаза. И тебе советую делать то же самое!
+	AI_Output(other,self, " DIA_Salentin_HowIn_01_00 " );	// How did you end up here?
+	AI_Output(self,other, " DIA_Salentin_HowIn_01_04 " );	// Once I was a sailor and served on one of the merchant ships. We were transporting magical ore from a godforsaken colony...
+	AI_Output(self,other, " DIA_Salentin_HowIn_01_05 " );	// One day, while returning to the mainland, our ship was caught in a terrible storm. The ship did not survive it - it broke in two. And I was swept away to the open sea.
+	AI_Output(self,other, " DIA_Salentin_HowIn_01_09 " );	// I woke up already on the island, and a bunch of paladins crowded around me.
+	AI_Output(other,self, " DIA_Salentin_HowIn_01_10 " );	// Why did they let you live?
+	AI_Output(self,other, " DIA_Salentin_HowIn_01_11 " );	// Well, paladins aren't beasts. Moreover, I ended up on their island against my will.
+	AI_Output(self,other, " DIA_Salentin_HowIn_01_13 " );	// They let me stay and live on this island. They gave me food, new clothes and even tools!
+	AI_Output(other,self, " DIA_Salentin_HowIn_01_14 " );	// Why didn't you stay with them?
+	AI_Output(self,other, " DIA_Salentin_HowIn_01_15 " );	// Boy, this is a military camp, not an inn.
+	AI_Output(self,other, " DIA_Salentin_HowIn_01_23 " );	// I try to avoid being seen by them. And I advise you to do the same!
 };
 
 
-instance DIA_SALENTIN_CANPASS(C_Info)
+instance DIA_SALENTIN_CANPASS (C_Info)
 {
 	npc = vlk_6108_salentin;
 	nr = 1;
 	condition = dia_salentin_canpass_condition;
 	information = dia_salentin_canpass_info;
 	permanent = FALSE;
-	description = "Ты сам бываешь в лагере паладинов?";
+	description = " Do you visit the paladin camp yourself? " ;
 };
 
 
@@ -198,37 +199,37 @@ func int dia_salentin_canpass_condition()
 
 func void dia_salentin_canpass_info()
 {
-	AI_Output(other,self,"DIA_Salentin_CanPass_01_00");	//Ты сам бываешь в лагере паладинов?
-	AI_Output(self,other,"DIA_Salentin_CanPass_01_01");	//Да, пару раз в месяц я приношу им рыбу, которую мне удается поймать.
-	AI_Output(self,other,"DIA_Salentin_CanPass_01_02");	//А взамен они мне дают мясо и воду. Так что голодать мне здесь особо не приходится.
-	AI_Output(other,self,"DIA_Salentin_CanPass_01_03");	//Значит, они тебе доверяют, если пускают в лагерь?
-	AI_Output(self,other,"DIA_Salentin_CanPass_01_04");	//Не то чтобы доверяют, но я не представляю для них ни малейшей опасности, поэтому меня терпят.
-	AI_Output(self,other,"DIA_Salentin_CanPass_01_05");	//Ну и я, соответственно, стараюсь их не злить. А почему ты спрашиваешь?
+	AI_Output(other,self, " DIA_Salentin_CanPass_01_00 " );	// Do you visit the paladin camp yourself?
+	AI_Output(self,other, " DIA_Salentin_CanPass_01_01 " );	// Yes, a couple of times a month I bring them fish that I manage to catch.
+	AI_Output(self,other, " DIA_Salentin_CanPass_01_02 " );	// And in return they give me meat and water. So I don't have to go hungry here.
+	AI_Output(other,self, " DIA_Salentin_CanPass_01_03 " );	// So they trust you if they let you into the camp?
+	AI_Output(self,other, " DIA_Salentin_CanPass_01_04 " );	// Not that they trust me, but I don't pose the slightest danger to them, so they tolerate me.
+	AI_Output(self,other, " DIA_Salentin_CanPass_01_05 " );	// Well, I, accordingly, try not to anger them. Why are you asking?
 	TELLSALENTINLAGER = TRUE;
 	Info_ClearChoices(dia_salentin_canpass);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_salentin_canpass,"Думаю, ты мне пригодишься.",dia_salentin_canpass_yes);
+		Info_AddChoice(dia_salentin_canpass, " I think I can use you. " ,dia_salentin_canpass_yes);
 	};
-	Info_AddChoice(dia_salentin_canpass,"Просто интересуюсь.",dia_salentin_canpass_no);
+	Info_AddChoice(dia_salentin_canpass, " Just wondering. " ,dia_salentin_canpass_no);
 };
 
 func void dia_salentin_canpass_no()
 {
-	AI_Output(other,self,"DIA_Salentin_CanPass_No_01_00");	//Просто интересуюсь.
+	AI_Output(other,self, " DIA_Salentin_CanPass_No_01_00 " );	// Just wondering.
 	AI_Output(self,other,"DIA_Salentin_CanPass_No_01_01");	//Хммм...
 	Info_ClearChoices(dia_salentin_canpass);
 };
 
 func void dia_salentin_canpass_yes()
 {
-	AI_Output(other,self,"DIA_Salentin_CanPass_Yes_01_00");	//Думаю, ты мне пригодишься.
-	AI_Output(other,self,"DIA_Salentin_CanPass_Yes_01_01");	//Раз паладины тебе доверяют, я использую тебя, чтобы проникнуть к ним в лагерь.
-	AI_Output(self,other,"DIA_Salentin_CanPass_Yes_01_02");	//(настороженно) То есть? Что ты задумал?
+	AI_Output(other,self, " DIA_Salentin_CanPass_Yes_01_00 " );	// I think I'll need you.
+	AI_Output(other,self, " DIA_Salentin_CanPass_Yes_01_01 " );	// Since the paladins trust you, I'll use you to infiltrate their camp.
+	AI_Output(self,other, " DIA_Salentin_CanPass_Yes_01_02 " );	// (cautiously) You mean? What did you think?
 	Info_ClearChoices(dia_salentin_canpass);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_salentin_canpass,"...ГВАР САХ ЭСК ШАТАР...!",dia_salentin_canpass_use);
+		Info_AddChoice(dia_salentin_canpass, " ...ГВАР САХ ЭСК ШАТАР...! " ,dia_salentin_canpass_use);
 	};
 };
 
@@ -239,17 +240,17 @@ func void dia_salentin_canpass_use()
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
-	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_00");	//...ГВАР САХ ЭСК ШАТАР...!
-	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_01");	//Белиар, повелитель Тьмы! Даруй мне свое могущество, чтобы принять облик этого человека.
-	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_02");	//И завершить то, ради чего я здесь!
+	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_00 " );	// ...GVAR SAKH ESK SHATAR...!
+	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_01 " );	// Beliar, Lord of Darkness! Grant me your power to take on the form of this person.
+	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_02 " );	// And complete what I'm here for!
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
-	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_03");	//О Иннос! Кто ты? Ты служишь Белиару?!
-	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_04");	//И что это за магия?! О боже, что со мной происходит! Нееет...
+	AI_Output(self,other, " DIA_Salentin_CanPass_Use_01_03 " );	// O Innos! Who are you? Do you serve Beliar?!
+	AI_Output(self,other, " DIA_Salentin_CanPass_Use_01_04 " );	// And what is this magic?! Oh my god, what's happening to me! Nooo...
 	USESALENTINAMULET = TRUE;
 	Info_ClearChoices(dia_salentin_canpass);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_salentin_canpass,"(использовать амулет)",dia_salentin_canpass_usedead);
+		Info_AddChoice(dia_salentin_canpass, " (use amulet) " ,dia_salentin_canpass_usedead);
 	};
 };
 
@@ -261,14 +262,14 @@ func void dia_salentin_canpass_usedead()
 };
 
 
-instance DIA_SALENTIN_CANPASSAGAIN(C_Info)
+instance DIA_SALENTIN_CANPASSAGAIN (C_Info)
 {
 	npc = vlk_6108_salentin;
 	nr = 1;
 	condition = dia_salentin_canpassagain_condition;
 	information = dia_salentin_canpassagain_info;
 	permanent = TRUE;
-	description = "У меня есть к тебе дело.";
+	description = " I have business with you. " ;
 };
 
 
@@ -282,32 +283,32 @@ func int dia_salentin_canpassagain_condition()
 
 func void dia_salentin_canpassagain_info()
 {
-	AI_Output(other,self,"DIA_Salentin_CanPassAgain_01_00");	//У меня есть к тебе дело.
-	AI_Output(self,other,"DIA_Salentin_CanPassAgain_01_01");	//Какое именно?
+	AI_Output(other,self, " DIA_Salentin_CanPassAgain_01_00 " );	// I have business with you.
+	AI_Output(self,other, " DIA_Salentin_CanPassAgain_01_01 " );	// Which one exactly?
 	Info_ClearChoices(dia_salentin_canpassagain);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_salentin_canpassagain,"Думаю, ты мне пригодишься.",dia_salentin_canpassagain_yes);
+		Info_AddChoice(dia_salentin_canpassagain, " I think I can use you. " ,dia_salentin_canpassagain_yes);
 	};
-	Info_AddChoice(dia_salentin_canpassagain,"Просто интересуюсь.",dia_salentin_canpassagain_no);
+	Info_AddChoice(dia_salentin_canpassagain, " Just wondering. " ,dia_salentin_canpassagain_no);
 };
 
 func void dia_salentin_canpassagain_no()
 {
-	AI_Output(other,self,"DIA_Salentin_CanPassAgain_No_01_00");	//Пока забудь об этом.
-	AI_Output(self,other,"DIA_Salentin_CanPassAgain_No_01_01");	//Хммм... Ну ладно, как скажешь.
+	AI_Output(other,self, " DIA_Salentin_CanPassAgain_No_01_00 " );	// Forget about it for now.
+	AI_Output(self,other, " DIA_Salentin_CanPassAgain_No_01_01 " );	// Hmmm... Well, whatever you say.
 	Info_ClearChoices(dia_salentin_canpassagain);
 };
 
 func void dia_salentin_canpassagain_yes()
 {
-	AI_Output(other,self,"DIA_Salentin_CanPass_Yes_01_00");	//Думаю, ты мне пригодишься.
-	AI_Output(other,self,"DIA_Salentin_CanPass_Yes_01_01");	//Раз паладины тебе доверяют - я использую тебя, чтобы проникнуть к ним в лагерь.
-	AI_Output(self,other,"DIA_Salentin_CanPass_Yes_01_02");	//(настороженно) То есть?  Что ты задумал?
+	AI_Output(other,self, " DIA_Salentin_CanPass_Yes_01_00 " );	// I think I'll need you.
+	AI_Output(other,self, " DIA_Salentin_CanPass_Yes_01_01 " );	// Since the paladins trust you, I'll use you to infiltrate their camp.
+	AI_Output(self,other, " DIA_Salentin_CanPass_Yes_01_02 " );	// (cautiously) You mean? What did you think?
 	Info_ClearChoices(dia_salentin_canpassagain);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_salentin_canpassagain,"...ГВАР САХ ЭСК ШАТАР...!",dia_salentin_canpassagain_use);
+		Info_AddChoice(dia_salentin_canpassagain, " ...GVAR SAKH ESK SHATAR...! " ,dia_salentin_canpassagain_use);
 	};
 };
 
@@ -318,17 +319,17 @@ func void dia_salentin_canpassagain_use()
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
-	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_00");	//...ГВАР САХ ЭСК ШАТАР...!
-	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_01");	//Белиар, повелитель Тьмы! Даруй мне свое могущество, чтобы принять облик этого человека.
-	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_02");	//И завершить то, ради чего я здесь!
+	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_00 " );	// ...GVAR SAKH ESK SHATAR...!
+	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_01 " );	// Beliar, Lord of Darkness! Grant me your power to take on the form of this person.
+	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_02 " );	// And complete what I'm here for!
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
-	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_03");	//О Иннос! Кто ты? Ты служишь Белиару?!
-	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_04");	//И что это за магия?! О боже, что со мной происходит! Нееет...
+	AI_Output(self,other, " DIA_Salentin_CanPass_Use_01_03 " );	// O Innos! Who are you? Do you serve Beliar?!
+	AI_Output(self,other, " DIA_Salentin_CanPass_Use_01_04 " );	// And what is this magic?! Oh my god, what's happening to me! Nooo...
 	USESALENTINAMULET = TRUE;
 	Info_ClearChoices(dia_salentin_canpassagain);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_salentin_canpassagain,"(использовать амулет)",dia_salentin_canpassagain_usedead);
+		Info_AddChoice(dia_salentin_canpassagain, " (use amulet) " ,dia_salentin_canpassagain_usedead);
 	};
 };
 
@@ -353,7 +354,7 @@ instance DIA_SALENTIN_ADVICE(C_Info)
 
 func int dia_salentin_advice_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_salentin_triramar) && (USESALENTINAMULET == FALSE) && Npc_KnowsInfo(hero,dia_salentin_howin))
+	if ( Npc_KnowsInfo ( hero , dia_salentin_triramar ) && ( USESALENTINAMULET  ==  FALSE ) && Npc_KnowsInfo ( hero , dia_salentin_howin ))
 	{
 		return TRUE;
 	};
@@ -361,11 +362,11 @@ func int dia_salentin_advice_condition()
 
 func void dia_salentin_advice_info()
 {
-	AI_Output(self,other,"DIA_Salentin_Advice_01_00");	//Эй, постой!
-	AI_Output(other,self,"DIA_Salentin_Advice_01_01");	//Что еще?
-	AI_Output(self,other,"DIA_Salentin_Advice_01_02");	//Если ты серьезно решил наведаться в лагерь паладинов...
-	AI_Output(self,other,"DIA_Salentin_Advice_01_04");	//...не ходи туда днем - у тебя не будет ни единого шанса сделать то, что ты задумал.
-	AI_Output(self,other,"DIA_Salentin_Advice_01_05");	//Самое лучшее время - это ночь. Лагерь будет спать, - ну, может, кроме пары человек.
-	AI_Output(other,self,"DIA_Salentin_Advice_01_07");	//Откуда ты все это знаешь?
-	AI_Output(self,other,"DIA_Salentin_Advice_01_08");	//Какая разница, откуда? Просто запомни то, что я тебе сказал.
+	AI_Output(self,other, " DIA_Salentin_Advice_01_00 " );	// Hey, wait!
+	AI_Output(other,self, " DIA_Salentin_Advice_01_01 " );	// What else?
+	AI_Output(self,other, " DIA_Salentin_Advice_01_02 " );	// If you're serious about visiting the paladin camp...
+	AI_Output(self,other, " DIA_Salentin_Advice_01_04 " );	// ...don't go there during the day - you won't have a single chance to do what you have in mind.
+	AI_Output(self,other, " DIA_Salentin_Advice_01_05 " );	// The best time is at night. The camp will sleep, - well, maybe, except for a couple of people.
+	AI_Output(other,self, " DIA_Salentin_Advice_01_07 " );	// How do you know all this?
+	AI_Output(self,other, " DIA_Salentin_Advice_01_08 " );	// What's the difference, where? Just remember what I told you.
 };
