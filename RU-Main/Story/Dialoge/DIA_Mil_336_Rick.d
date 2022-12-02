@@ -1,4 +1,5 @@
 
+
 instance DIA_Rick_EXIT(C_Info)
 {
 	npc = Mil_336_Rick;
@@ -21,14 +22,14 @@ func void DIA_Rick_EXIT_Info()
 };
 
 
-instance DIA_Rick_HALLO(C_Info)
+instance DIA_Rick_HELLO (C_Info)
 {
 	npc = Mil_336_Rick;
 	nr = 1;
 	condition = DIA_Rick_HALLO_Condition;
-	information = DIA_Rick_HALLO_Info;
+	information = DIA_Rick_HELLO_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -39,8 +40,8 @@ func int DIA_Rick_HALLO_Condition()
 
 func void DIA_Rick_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Rick_HALLO_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Rick_HALLO_10_01");	//Если тебе хочется поговорить, говори с Румболдом. Я здесь просто на случай, если кто-нибудь вздумает бунтовать.
+	AI_Output(other,self, " DIA_Rick_HALLO_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Rick_HALLO_10_01 " );	// If you feel like talking, talk to Rumbold. I'm just here in case anyone wants to riot.
 	AI_StopProcessInfos(self);
 };
 
@@ -58,7 +59,7 @@ instance DIA_Rick_PICKPOCKET(C_Info)
 
 func int DIA_Rick_PICKPOCKET_Condition()
 {
-	return C_Beklauen(10,45);
+	return  C_Robbery ( 10 , 45 );
 };
 
 func void DIA_Rick_PICKPOCKET_Info()
@@ -70,7 +71,7 @@ func void DIA_Rick_PICKPOCKET_Info()
 
 func void DIA_Rick_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Rick_PICKPOCKET);
 };
 
