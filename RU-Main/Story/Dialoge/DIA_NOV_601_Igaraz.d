@@ -1,5 +1,6 @@
 
-instance DIA_Igaranz_Kap1_EXIT(C_Info)
+
+instance DIA_Igaranz_Cap1_EXIT (C_Info) .
 {
 	npc = NOV_601_Igaraz;
 	nr = 999;
@@ -21,7 +22,7 @@ func void DIA_Igaraz_Kap1_EXIT_Info()
 };
 
 
-instance DIA_Igaranz_Hello(C_Info)
+instance DIA_Igaranz_Hello (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 2;
@@ -44,42 +45,42 @@ func void DIA_Igaraz_Hello_Info()
 {
 	if(other.guild == GIL_NOV)
 	{
-		AI_Output(self,other,"DIA_Igaranz_Hello_13_00");	//Что я могу сделать для тебя, брат?
+		AI_Output(self,other, " DIA_Igaranz_Hello_13_00 " );	// What can I do for you brother?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Igaranz_Hello_13_01");	//Что я могу сделать для тебя?
+		AI_Output(self,other, " DIA_Igaranz_Hello_13_01 " );	// What can I do for you?
 	};
 };
 
 
-instance DIA_Igaraz_Wurst(C_Info)
+instance DIA_Igaraz_Wurst (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 2;
 	condition = DIA_Igaraz_Wurst_Condition;
-	information = DIA_Igaraz_Wurst_Info;
+	information = DIA_Igaraz_Sausage_Info;
 	permanent = FALSE;
-	description = "Я занимаюсь распределением колбасы.";
+	description = " I'm in charge of sausage distribution. " ;
 };
 
 
 func int DIA_Igaraz_Wurst_Condition()
 {
-	if((Kapitel == 1) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) == 0) && (Npc_HasItems(other,ItFo_Schafswurst) >= 1))
+	if ((Kapitel ==  1 ) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) ==  0 ) && (Npc_HasItems(other,ItFo_Schafswurst) >=  1 ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Igaraz_Wurst_Info()
+func void DIA_Igaraz_Sausage_Info()
 {
 	var string NovizeText;
-	var string NovizeLeft;
-	AI_Output(other,self,"DIA_Igaraz_Wurst_15_00");	//Я раздаю колбасу.
-	AI_Output(self,other,"DIA_Igaraz_Wurst_13_01");	//Ты работаешь на Горакса, да? Хорошо, тогда давай сюда эту колбасу.
+	var string NoviceLeft;
+	AI_Output(other,self, " DIA_Igaraz_Wurst_15_00 " );	// I'm handing out sausage.
+	AI_Output(self,other, " DIA_Igaraz_Wurst_13_01 " );	// You work for Gorax, don't you? Okay, then give this sausage here.
 	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
-	Wurst_Gegeben = Wurst_Gegeben + 1;
+	Sausage_Given = Sausage_Given +  1 ;
 	CreateInvItems(self,ItFo_Sausage,1);
 	B_UseItem(self,ItFo_Sausage);
 };
@@ -92,7 +93,7 @@ instance DIA_Igaranz_NotWork(C_Info)
 	condition = DIA_Igaraz_NotWork_Condition;
 	information = DIA_Igaraz_NotWork_Info;
 	permanent = FALSE;
-	description = "Почему ты не работаешь?";
+	description = " Why aren't you working? " ;
 };
 
 
@@ -106,9 +107,9 @@ func int DIA_Igaraz_NotWork_Condition()
 
 func void DIA_Igaraz_NotWork_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_NotWork_15_00");	//Почему ты не работаешь?
-	AI_Output(self,other,"DIA_Igaranz_NotWork_13_01");	//Мне позволено изучать учения Инноса. Я постигаю его мудрость.
-	AI_Output(self,other,"DIA_Igaranz_NotWork_13_02");	//Однажды он выберет меня - и тогда я пройду испытание магией и войду в Круг Огня.
+	AI_Output(other,self, " DIA_Igaranz_NotWork_15_00 " );	// Why aren't you working?
+	AI_Output(self,other, " DIA_Igaranz_NotWork_13_01 " );	// I am allowed to study the teachings of Innos. I understand his wisdom.
+	AI_Output(self,other, " DIA_Igaranz_NotWork_13_02 " );	// One day he will choose me - and then I will pass the test of magic and enter the Circle of Fire.
 };
 
 
@@ -119,7 +120,7 @@ instance DIA_Igaranz_Choosen(C_Info)
 	condition = DIA_Igaraz_Choosen_Condition;
 	information = DIA_Igaraz_Choosen_Info;
 	permanent = TRUE;
-	description = "Кто такие Избранные?";
+	description = " Who are the Chosen Ones? " ;
 };
 
 
@@ -133,13 +134,13 @@ func int DIA_Igaraz_Choosen_Condition()
 
 func void DIA_Igaraz_Choosen_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_Choosen_15_00");	//Кто такие Избранные?
-	AI_Output(self,other,"DIA_Igaranz_Choosen_13_01");	//Это послушники, которым Иннос предписал пройти испытание магией.
-	AI_Output(self,other,"DIA_Igaranz_Choosen_13_02");	//Тот, кто проходит его, принимается в ряды Магов Огня.
+	AI_Output(other,self, " DIA_Igaranz_Choosen_15_00 " );	// Who are the Chosen Ones?
+	AI_Output(self,other, " DIA_Igaranz_Choosen_13_01 " );	// These are the novices whom Innos ordered to pass the test of magic.
+	AI_Output(self,other, " DIA_Igaranz_Choosen_13_02 " );	// Whoever passes it is accepted into the ranks of the Fire Mages.
 	Info_ClearChoices(DIA_Igaranz_Choosen);
 	Info_AddChoice(DIA_Igaranz_Choosen,Dialog_Back,DIA_Igaranz_Choosen_back);
-	Info_AddChoice(DIA_Igaranz_Choosen,"Что такое Испытание Магией?",DIA_Igaranz_Choosen_TestOfMagic);
-	Info_AddChoice(DIA_Igaranz_Choosen,"Как я могу стать Избранным?",DIA_Igaranz_Choosen_HowChoosen);
+	Info_AddChoice(DIA_Igaranz_Choosen, " What is a Magic Trial? " ,DIA_Igaranz_Choosen_TestOfMagic);
+	Info_AddChoice(DIA_Igaranz_Choosen, " How can I become the Chosen One? " ,DIA_Igaranz_Choosen_HowChoosen);
 };
 
 func void DIA_Igaranz_Choosen_back()
@@ -149,16 +150,16 @@ func void DIA_Igaranz_Choosen_back()
 
 func void DIA_Igaranz_Choosen_TestOfMagic()
 {
-	AI_Output(other,self,"DIA_Igaranz_Choosen_TestOfMagic_15_00");	//Что такое Испытание Магией?
-	AI_Output(self,other,"DIA_Igaranz_Choosen_TestOfMagic_13_01");	//Это испытание, которому Высший Совет подвергает всех избранных послушников.
-	AI_Output(self,other,"DIA_Igaranz_Choosen_TestOfMagic_13_02");	//Это задание, при выполнении которого проверяются вера и сообразительность послушника.
-	AI_Output(self,other,"DIA_Igaranz_Choosen_TestOfMagic_13_03");	//Все избранные послушники принимают в нем участие - но только один из них может успешно выполнить его.
+	AI_Output(other,self, " DIA_Igaranz_Choosen_TestOfMagic_15_00 " );	// What is Trial by Magic?
+	AI_Output(self,other, " DIA_Igaranz_Choosen_TestOfMagic_13_01 " );	// This is the test that the High Council puts on all chosen novices.
+	AI_Output(self,other, " DIA_Igaranz_Choosen_TestOfMagic_13_02 " );	// This is a quest that tests the acolyte's faith and intelligence.
+	AI_Output(self,other, " DIA_Igaranz_Choosen_TestOfMagic_13_03 " );	// All chosen acolytes take part in it - but only one of them can successfully complete it.
 };
 
 func void DIA_Igaranz_Choosen_HowChoosen()
 {
-	AI_Output(other,self,"DIA_Igaranz_Choosen_HowChoosen_15_00");	//Как я могу стать Избранным?
-	AI_Output(self,other,"DIA_Igaranz_Choosen_HowChoosen_13_01");	//Ты не можешь влиять на это. Иннос самолично выбирает своих послушников, а Высший Совет объявляет его волю.
+	AI_Output(other,self, " DIA_Igaranz_Choosen_HowChoosen_15_00 " );	// How can I become the Chosen One?
+	AI_Output(self,other, " DIA_Igaranz_Choosen_HowChoosen_13_01 " );	// You can't influence this. Innos personally chooses his novices, and the Supreme Council announces his will.
 };
 
 
@@ -169,13 +170,13 @@ instance DIA_Igaranz_StudyInnos(C_Info)
 	condition = DIA_Igaraz_StudyInnos_Condition;
 	information = DIA_Igaraz_StudyInnos_Info;
 	permanent = FALSE;
-	description = "Как я могу начать изучать писания?";
+	description = " How can I start studying the scriptures? " ;
 };
 
 
 func int DIA_Igaraz_StudyInnos_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Igaranz_NotWork) && (Npc_GetDistToWP(self,"NW_MONASTERY_GRASS_01") <= 500) && (Parlan_Erlaubnis == FALSE) && (other.guild == GIL_NOV))
+	if ( Npc_KnowsInfo ( other , DIA_Igaranz_NotWork ) && ( Npc_ GetDistToWP ( self , " NW_MONASTERY_GRASS_01 " ) <=  500 ) && ( Language_Expression ==  FALSE ) && ( other . guild ==  GIL_NOV )) ;
 	{
 		return TRUE;
 	};
@@ -183,13 +184,13 @@ func int DIA_Igaraz_StudyInnos_Condition()
 
 func void DIA_Igaraz_StudyInnos_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_StudyInnos_15_00");	//Как я могу начать изучать писания?
-	AI_Output(self,other,"DIA_Igaranz_StudyInnos_13_01");	//Ты должен получить доступ в библиотеку.
-	AI_Output(self,other,"DIA_Igaranz_StudyInnos_13_02");	//Однако мастер Парлан даст тебе ключ, только когда ты выполнишь все его задания.
+	AI_Output(other,self, " DIA_Igaranz_StudyInnos_15_00 " );	// How can I start studying the scriptures?
+	AI_Output(self,other, " DIA_Igaranz_StudyInnos_13_01 " );	// You must access the library.
+	AI_Output(self,other, " DIA_Igaranz_StudyInnos_13_02 " );	// However, Master Parlan will only give you the key when you complete all of his tasks.
 };
 
 
-instance DIA_Igaraz_IMTHEMAN(C_Info)
+instances DIA_Igaraz_IMTHEMAN (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 2;
@@ -209,7 +210,7 @@ func int DIA_Igaraz_IMTHEMAN_Condition()
 
 func void DIA_Igaraz_IMTHEMAN_Info()
 {
-	AI_Output(self,other,"DIA_Igaraz_IMTHEMAN_13_00");	//Это свершилось!...(гордо) Иннос выбрал меня я приму участие в испытании магией.
+	AI_Output(self,other, " DIA_Igaraz_IMTHEMAN_13_00 " );	// It's done!...(proudly) Innos chose me to take part in the trial by magic.
 };
 
 
@@ -220,7 +221,7 @@ instance DIA_Igaraz_METOO(C_Info)
 	condition = DIA_Igaraz_METOO_Condition;
 	information = DIA_Igaraz_METOO_Info;
 	permanent = FALSE;
-	description = "Я тоже!";
+	description = " Me too! " ;
 };
 
 
@@ -236,15 +237,15 @@ func int DIA_Igaraz_METOO_Condition()
 
 func void DIA_Igaraz_METOO_Info()
 {
-	AI_Output(other,self,"DIA_Igaraz_METOO_15_00");	//Я тоже! Я потребовал прохождения Испытания Огнем.
-	AI_Output(self,other,"DIA_Igaraz_METOO_13_01");	//ЧТО ты потребовал? Ты либо любимчик Инноса, либо сумасшедший.
-	AI_Output(other,self,"DIA_Igaraz_METOO_15_02");	//Мне уже удалось много безумных вещей, и, возможно, удастся и это тоже...
-	AI_Output(self,other,"DIA_Igaraz_METOO_13_03");	//Иннос поддерживает меня - и я пройду это испытание!
+	AI_Output(other,self, " DIA_Igaraz_METOO_15_00 " );	// Me too! I demanded the Trial by Fire.
+	AI_Output(self,other, " DIA_Igaraz_METOO_13_01 " );	// WHAT did you request? You're either Innos' pet or you're crazy.
+	AI_Output(other,self, " DIA_Igaraz_METOO_15_02 " );	// I've done a lot of crazy things already, and maybe this one too...
+	AI_Output(self,other, " DIA_Igaraz_METOO_13_03 " );	// Innos supports me - and I will pass this test!
 	Info_ClearChoices(DIA_Igaraz_METOO);
 	Info_AddChoice(DIA_Igaraz_METOO,Dialog_Back,DIA_Igaraz_METOO_BACK);
-	Info_AddChoice(DIA_Igaraz_METOO,"Может, нам лучше действовать вместе...",DIA_Igaraz_METOO_HELP);
-	Info_AddChoice(DIA_Igaraz_METOO,"И как, еще ничего не нашел?",DIA_Igaraz_METOO_TELL);
-	Info_AddChoice(DIA_Igaraz_METOO,"Ты не видел Агона или Ульфа?",DIA_Igaraz_METOO_AGON);
+	Info_AddChoice(DIA_Igaraz_METOO, " Maybe we should work together... " ,DIA_Igaraz_METOO_HELP);
+	Info_AddChoice(DIA_Igaraz_METOO, " Have you found anything yet? " ,DIA_Igaraz_METOO_TELL);
+	Info_AddChoice(DIA_Igaraz_METOO, " Have you seen Agon or Ulf? " ,DIA_Igaraz_METOO_AGON);
 };
 
 func void DIA_Igaraz_METOO_BACK()
@@ -254,21 +255,21 @@ func void DIA_Igaraz_METOO_BACK()
 
 func void DIA_Igaraz_METOO_TELL()
 {
-	AI_Output(other,self,"DIA_Igaraz_METOO_TELL_15_00");	//И как, еще ничего не нашел?
-	AI_Output(self,other,"DIA_Igaraz_METOO_TELL_13_01");	//Так как у тебя все равно никаких шансов, я, пожалуй, скажу тебе:
-	AI_Output(self,other,"DIA_Igaraz_METOO_TELL_13_02");	//Даже не пытайся искать около ферм - ты там ничего не найдешь.
+	AI_Output(other,self, " DIA_Igaraz_METOO_TELL_15_00 " );	// And how, haven't found anything yet?
+	AI_Output(self,other, " DIA_Igaraz_METOO_TELL_13_01 " );	// Since you don't stand a chance anyway, I guess I'll tell you:
+	AI_Output(self,other, " DIA_Igaraz_METOO_TELL_13_02 " );	// Don't even try to look near the farms - you won't find anything there.
 };
 
 func void DIA_Igaraz_METOO_HELP()
 {
-	AI_Output(other,self,"DIA_Igaraz_METOO_HELP_15_00");	//Может, нам лучше действовать вместе...
-	AI_Output(self,other,"DIA_Igaraz_METOO_HELP_13_01");	//Забудь об этом. Я выполню это задание один. Ты мне будешь только обузой.
+	AI_Output(other,self, " DIA_Igaraz_METOO_HELP_15_00 " );	// Maybe we should work together...
+	AI_Output(self,other, " DIA_Igaraz_METOO_HELP_13_01 " );	// Forget it. I will complete this task alone. You will only be a burden to me.
 };
 
 func void DIA_Igaraz_METOO_AGON()
 {
-	AI_Output(other,self,"DIA_Igaraz_METOO_AGON_15_00");	//Ты не видел Агона или Ульфа?
-	AI_Output(self,other,"DIA_Igaraz_METOO_AGON_13_01");	//Мы разделились у таверны. Я пошел к фермам, а эти двое пошли вместе - но куда, я не знаю.
+	AI_Output(other,self, " DIA_Igaraz_METOO_AGON_15_00 " );	// Have you seen Agon or Ulf?
+	AI_Output(self,other, " DIA_Igaraz_METOO_AGON_13_01 " );	// We split up at the tavern. I went to the farms, and these two went together - but where, I don't know.
 };
 
 
@@ -279,13 +280,13 @@ instance DIA_Igaraz_ADD(C_Info)
 	condition = DIA_Igaraz_ADD_Condition;
 	information = DIA_Igaraz_ADD_Info;
 	permanent = FALSE;
-	description = "Ты знаешь что-нибудь о 'живой скале'?";
+	description = " Do you know anything about 'living rock'? " ;
 };
 
 
 func int DIA_Igaraz_ADD_Condition()
 {
-	if((Npc_GetDistToWP(self,"NW_TAVERNE_TROLLAREA_05") <= 3500) && (MIS_GOLEM == LOG_Running) && (Npc_IsDead(Magic_Golem) == FALSE) && (Npc_KnowsInfo(other,DIA_Igaraz_Stein) == FALSE) && Npc_KnowsInfo(other,DIA_Igaraz_METOO))
+	if (( Npc_GetDistToWP ( self , " NW_TAVERNE_TROLLAREA_05 " ) <=  3500 ) && ( MY_GOLEM  == LOG_Running ) && ( Npc_IsDead ( Magic_Golem ) ==  FALSE ) && ( Npc_KnowsInfo ( other , DIA_Igaraz_Stein ) ==  FALSE ) && ( Npc_KnowsInfo ( other , DIA_Igaraz_Stein ) == FALSE ))
 	{
 		return TRUE;
 	};
@@ -293,40 +294,40 @@ func int DIA_Igaraz_ADD_Condition()
 
 func void DIA_Igaraz_ADD_Info()
 {
-	AI_Output(other,self,"DIA_Igaraz_Add_15_00");	//Ты знаешь что-нибудь о 'живой скале'?
-	AI_Output(self,other,"DIA_Igaraz_Add_13_01");	//Нет!...(хихикает) Тебе дал задание Серпентес?
+	AI_Output(other,self, " DIA_Igaraz_Add_15_00 " );	// Do you know anything about 'living rock'?
+	AI_Output(self,other, " DIA_Igaraz_Add_13_01 " );	// No!...(giggles) Serpentes gave you a mission?
 	AI_Output(other,self,"DIA_Igaraz_Add_15_02");	//Да, а что?
-	AI_Output(self,other,"DIA_Igaraz_Add_13_03");	//Я, кажется, догадываюсь, что он имел в виду...
-	AI_Output(self,other,"DIA_Igaraz_Add_13_04");	//Ты будешь не первым, кто провалил это испытание...
-	AI_Output(other,self,"DIA_Igaraz_Add_15_05");	//Где мне найти эту живую скалу?
-	AI_Output(self,other,"DIA_Igaraz_Add_13_06");	//Просто иди по этой тропинке. Спустя некоторое время ты увидишь реку.
-	AI_Output(self,other,"DIA_Igaraz_Add_13_07");	//Продолжай идти по тропинке в горы. Она должна быть где-то там.
-	AI_Output(self,other,"DIA_Igaraz_Add_13_08");	//Если ты дойдешь до моста - значит, ты зашел слишком далеко.
-	AI_Output(self,other,"DIA_Igaraz_Add_13_09");	//Хотя я сомневаюсь, что тебе вообще удастся уйти далеко.
-	AI_Output(self,other,"DIA_Igaraz_Add_13_10");	//Это все что я могу сказать тебе... (с сарказмом) Это ведь все же должно быть твое ИСПЫТАНИЕ!
+	AI_Output(self,other, " DIA_Igaraz_Add_13_03 " );	// I think I can guess what he meant...
+	AI_Output(self,other, " DIA_Igaraz_Add_13_04 " );	// You won't be the first to fail this test...
+	AI_Output(other,self, " DIA_Igaraz_Add_15_05 " );	// Where can I find this living rock?
+	AI_Output(self,other, " DIA_Igaraz_Add_13_06 " );	// Just follow this path. After a while you will see the river.
+	AI_Output(self,other, " DIA_Igaraz_Add_13_07 " );	// Keep following the path up into the mountains. She must be in there somewhere.
+	AI_Output(self,other, " DIA_Igaraz_Add_13_08 " );	// If you get to the bridge, you've gone too far.
+	AI_Output(self,other, " DIA_Igaraz_Add_13_09 " );	// Though I doubt you'll get far at all.
+	AI_Output(self,other, " DIA_Igaraz_Add_13_10 " );	// That's all I can tell you... (sarcastically) This should still be your TEST!
 };
 
-instance DIA_Igaraz_Pruefung(C_Info)
+instances of DIA_Igaraz_Pruefunction (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 22;
 	condition = DIA_Igaraz_Pruefung_Condition;
-	information = DIA_Igaraz_Pruefung_Info;
-	description = "Выяснил что-нибудь новое?";
+	information = DIA_Igaraz_Test_Info;
+	description = " Find out something new? " ;
 };
 
 func int DIA_Igaraz_Pruefung_Condition()
 {
-	if((other.guild == GIL_NOV) && (MageFireChestOpen == FALSE) && (Npc_KnowsInfo(other,DIA_Igaraz_METOO) == TRUE))
+	if (( other . guild ==  GIL_NOV ) && ( MageFireChestOpen ==  FALSE ) && ( Npc_KnowsInfo ( other , DIA_Igaraz_METOO ) ==  TRUE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Igaraz_Pruefung_Info()
+func void DIA_Igaraz_Pruefunction_Info()
 {
-	AI_Output(other,self,"DIA_Igaraz_Pruefung_15_00");	//Выяснил что-нибудь новое?
-	AI_Output(self,other,"DIA_Igaraz_Pruefung_13_01");	//Пока нет, но я продолжаю поиски.
+	AI_Output(other,self, " DIA_Igaraz_Pruefung_15_00 " );	// Learned something new?
+	AI_Output(self,other, " DIA_Igaraz_Pruefung_13_01 " );	// Not yet, but I'm still looking.
 	AI_StopProcessInfos(self);
 
 	if(Igaraz_Wait == FALSE)
@@ -338,7 +339,7 @@ func void DIA_Igaraz_Pruefung_Info()
 };
 
 
-instance DIA_Igaraz_Stein(C_Info)
+instances of DIA_Igaraz_Stein (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 1;
@@ -350,7 +351,7 @@ instance DIA_Igaraz_Stein(C_Info)
 
 func int DIA_Igaraz_Stein_Condition()
 {
-	if((other.guild == GIL_NOV) && (Kapitel == 1) && (MageFireChestOpen == TRUE))
+	if ((other.guild ==  GIL_NOV ) && (Chapter ==  1 ) && (MageFireChestOpen ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -358,49 +359,49 @@ func int DIA_Igaraz_Stein_Condition()
 
 func void DIA_Igaraz_Stein_Info()
 {
-	AI_Output(self,other,"DIA_Igaraz_Seufz_13_00");	//Эй, подожди! Нам нужно поговорить.
-	AI_Output(other,self,"DIA_Igaraz_Seufz_15_01");	//Я так не думаю.
-	AI_Output(self,other,"DIA_Igaraz_Seufz_13_02");	//Я ждал этого испытания много лет. Иннос поддерживает меня и я ДОЛЖЕН пройти его.
+	AI_Output(self,other, " DIA_Igaraz_Seufz_13_00 " );	// Hey, wait! We need to talk.
+	AI_Output(other,self, " DIA_Igaraz_Seufz_15_01 " );	// I don't think so.
+	AI_Output(self,other, " DIA_Igaraz_Seufz_13_02 " );	// I've been waiting for this test for years. Innos supports me and I MUST pass it.
 
-	if(Npc_KnowsInfo(other,DIA_Ulf_Abrechnung))
+	if (Npc_KnowsInfo(other,DIA_Ulf_Abrechnung))
 	{
-		AI_Output(other,self,"DIA_Igaraz_Seufz_15_03");	//Где-то я уже это слышал.
+		AI_Output(other,self, " DIA_Igaraz_Seufz_15_03 " );	// Somewhere I already heard it.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Igaraz_Seufz_15_04");	//Ты не первый, кто говорит это.
+		AI_Output(other,self, " DIA_Igaraz_Seufz_15_04 " );	// You're not the first to say this.
 	};
 
-	AI_Output(self,other,"DIA_Igaraz_Seufz_13_05");	//Хватит болтать. Мне нужно то, что ты нашел. А тебе пришло время умереть!
+	AI_Output(self,other, " DIA_Igaraz_Seufz_13_05 " );	// Stop talking. I need what you found. And it's time for you to die!
 	AI_TurnToNPC(self,other);
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(other,self,"DIA_Igaraz_OneMoreChance_01_01");	//Эй, остынь, приятель! Не делай глупостей!
-	AI_Output(self,other,"DIA_Igaraz_OneMoreChance_01_02");	//У меня нет выбора...(обезумев) Я должен пройти это испытание!
-	AI_Output(other,self,"DIA_Igaraz_OneMoreChance_01_03");	//Послушай, убив меня, ты только навлечешь на себя гнев Инноса. Или ты думаешь, что твои 'подвиги' останутся безнаказанными?
-	AI_Output(self,other,"DIA_Igaraz_OneMoreChance_01_05");	//Но я... я как-то об этом не подумал.
-	AI_Output(other,self,"DIA_Igaraz_OneMoreChance_01_06");	//Пойми: Иннос сам выбирает того, кто достоин стать его избранным! И не тебе это решать...
-	AI_Output(other,self,"DIA_Igaraz_OneMoreChance_01_07");	//Опусти оружие и отправляйся обратно в монастырь.
-	AI_Output(self,other,"DIA_Igaraz_OneMoreChance_01_08");	//Да, ты прав...(растерянно) Я и сам не могу понять, что на меня нашло.
+	AI_Output(other,self, " DIA_Igaraz_OneMoreChance_01_01 " );	// Hey, chill, buddy! Don't do stupid things!
+	AI_Output(self,other, " DIA_Igaraz_OneMoreChance_01_02 " );	// I have no choice... (maddened) I must pass this test!
+	AI_Output(other,self, " DIA_Igaraz_OneMoreChance_01_03 " );	// Listen, killing me will only incur the wrath of Innos. Or do you think that your 'feats' will go unpunished?
+	AI_Output(self,other, " DIA_Igaraz_OneMoreChance_01_05 " );	// But I... somehow I didn't think about it.
+	AI_Output(other,self, " DIA_Igaraz_OneMoreChance_01_06 " );	// Understand: Innos himself chooses the one who is worthy to become his chosen one! And it's not for you to decide...
+	AI_Output(other,self, " DIA_Igaraz_OneMoreChance_01_07 " );	// Put down your weapon and head back to the monastery.
+	AI_Output(self,other, " DIA_Igaraz_OneMoreChance_01_08 " );	// Yes, you're right... (bewildered) I myself can't understand what came over me.
 	AI_RemoveWeapon(self);
-	AI_Output(self,other,"DIA_Igaraz_OneMoreChance_01_09");	//И что же мне теперь делать?
-	AI_Output(other,self,"DIA_Igaraz_OneMoreChance_01_10");	//Проводи как можно больше времени в молитвах! Только так ты сможешь заслужить благосклонность Инноса.
-	AI_Output(other,self,"DIA_Igaraz_OneMoreChance_01_11");	//А если я стану магом Огня, то попробую тебе помочь.
-	AI_Output(self,other,"DIA_Igaraz_OneMoreChance_01_12");	//(с надеждой) О, ты правда поможешь мне? Хорошо...(неуверенно) Я возвращаюсь в монастырь. Увидимся...
+	AI_Output(self,other, " DIA_Igaraz_OneMoreChance_01_09 " );	// So what should I do now?
+	AI_Output(other,self, " DIA_Igaraz_OneMoreChance_01_10 " );	// Spend as much time as you can in prayer! Only in this way can you earn the favor of Innos.
+	AI_Output(other,self, " DIA_Igaraz_OneMoreChance_01_11 " );	// And if I become a Fire Mage, I'll try to help you.
+	AI_Output(self,other, " DIA_Igaraz_OneMoreChance_01_12 " );	// (hopefully) Oh, can you really help me? Okay...(uncertainly) I'm going back to the monastery. See you...
 	MIS_Igaraz_OneMoreChance = LOG_Running;
 	Log_CreateTopic(TOPIC_IGARANZ_NEW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_Running);
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Послушник Игарац хотел убить меня, присвоив себе победу в испытании огнем. Я образумил его, пообещав позже похлопотать за него перед советом магов.");
+	B_LogEntry( TOPIC_IGARANZ_NEW , " Acolyte Igaraz wanted to kill me by claiming victory in the trial by fire. I brought him to his senses by promising to plead for him before the council of mages later. " );
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Igaranz_TalkAboutBabo(C_Info)
+instance DIA_Igaranz_TalkAboutBabo ( C_Info ) ;
 {
 	npc = NOV_601_Igaraz;
 	nr = 31;
 	condition = DIA_Igaraz_TalkAboutBabo_Condition;
 	information = DIA_Igaraz_TalkAboutBabo_Info;
 	permanent = FALSE;
-	description = "Нам нужно поговорить о Бабо.";
+	description = " We need to talk about Babo. " ;
 };
 
 func int DIA_Igaraz_TalkAboutBabo_Condition()
@@ -413,8 +414,8 @@ func int DIA_Igaraz_TalkAboutBabo_Condition()
 
 func void DIA_Igaraz_TalkAboutBabo_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_TalkAboutBabo_15_00");	//Нам нужно поговорить о Бабо.
-	AI_Output(self,other,"DIA_Igaranz_TalkAboutBabo_13_01");	//Да, в чем дело?
+	AI_Output(other,self, " DIA_Igaranz_TalkAboutBabo_15_00 " );	// We need to talk about Babo.
+	AI_Output(self,other, " DIA_Igaranz_TalkAboutBabo_13_01 " );	// Yes, what's the matter?
 };
 
 
@@ -425,12 +426,12 @@ instance DIA_Igaranz_BabosBelongings(C_Info)
 	condition = DIA_Igaraz_BabosBelongings_Condition;
 	information = DIA_Igaraz_BabosBelongings_Info;
 	permanent = FALSE;
-	description = "У тебя есть кое-что принадлежащее Бабо.";
+	description = " You have something that belongs to Babo. " ;
 };
 
 func int DIA_Igaraz_BabosBelongings_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Igaranz_TalkAboutBabo))
+	if ( Npc_KnowsInfo ( other , DIA_Guaranteed_TalkAboutBabo ) )
 	{
 		return TRUE;
 	};
@@ -438,20 +439,20 @@ func int DIA_Igaraz_BabosBelongings_Condition()
 
 func void DIA_Igaraz_BabosBelongings_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_BabosBelongings_15_00");	//У тебя есть кое-что принадлежащее Бабо.
-	AI_Output(self,other,"DIA_Igaranz_BabosBelongings_13_01");	//И что бы это могло быть?
-	AI_Output(other,self,"DIA_Igaranz_BabosBelongings_15_02");	//Несколько листков бумаги. Бабо хотел бы получить их назад.
-	AI_Output(self,other,"DIA_Igaranz_BabosBelongings_13_03");	//Да? Надо же! Могу представить. Вынужден огорчить, я предпочел бы оставить их у себя. Похоже, тут налицо противоречие интересов.
+	AI_Output(other,self, " DIA_Igaranz_BabosBelongings_15_00 " );	// You have something that belongs to Babo.
+	AI_Output(self,other, " DIA_Igaranz_BabosBelongings_13_01 " );	// And what could it be?
+	AI_Output(other,self, " DIA_Igaranz_BabosBelongings_15_02 " );	// Several slips of paper. Babo would like to have them back.
+	AI_Output(self,other, " DIA_Igaranz_BabosBelongings_13_03 " );	// Yes? Wow! I can imagine. Sorry, I'd rather keep them. There seems to be a conflict of interest here.
 };
 
-instance DIA_Igaranz_WhereDocs(C_Info)
+instance DIA_Igaranz_WhereDocs (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 31;
 	condition = DIA_Igaraz_WhereDocs_Condition;
 	information = DIA_Igaraz_WhereDocs_Info;
 	permanent = FALSE;
-	description = "Где эти бумаги?";
+	description = " Where are these papers? " ;
 };
 
 
@@ -465,10 +466,10 @@ func int DIA_Igaraz_WhereDocs_Condition()
 
 func void DIA_Igaraz_WhereDocs_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_WhereDocs_15_00");	//Где эти бумаги?
-	AI_Output(self,other,"DIA_Igaranz_WhereDocs_13_01");	//Ну, конечно же, я не держу их при себе. Боюсь, ничем не могу помочь.
+	AI_Output(other,self, " DIA_Igaranz_WhereDocs_15_00 " );	// Where are these papers?
+	AI_Output(self,other, " DIA_Igaranz_WhereDocs_13_01 " );	// Well, of course I don't keep them around. I'm afraid I can't help.
 	AI_Output(other,self,"DIA_Igaranz_WhereDocs_15_02");	//Где они?
-	AI_Output(self,other,"DIA_Igaranz_WhereDocs_13_03");	//Я запер их в сундуке. А ключ от него тебе никогда не получить.
+	AI_Output(self,other, " DIA_Igaranz_WhereDocs_13_03 " );	// I locked them in a chest. And you will never get the key to it.
 };
 
 
@@ -479,7 +480,7 @@ instance DIA_Igaranz_BabosJob(C_Info)
 	condition = DIA_Igaraz_BabosJob_Condition;
 	information = DIA_Igaraz_BabosJob_Info;
 	permanent = FALSE;
-	description = "Что Бабо должен делать для тебя?";
+	description = " What should Babo do for you? " ;
 };
 
 
@@ -493,11 +494,11 @@ func int DIA_Igaraz_BabosJob_Condition()
 
 func void DIA_Igaraz_BabosJob_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_BabosJob_15_00");	//Что Бабо должен делать для тебя?
-	AI_Output(self,other,"DIA_Igaranz_BabosJob_13_01");	//Если бы я знал, что этот слизняк наложит в штаны из-за нескольких кустов болотной травы, я бы давно позаботился, чтобы кто-нибудь другой занял его место в монастырском саду.
-	AI_Output(other,self,"DIA_Igaranz_BabosJob_15_02");	//Он должен выращивать болотную траву?
-	AI_Output(self,other,"DIA_Igaranz_BabosJob_13_03");	//Конечно. Так как она больше не поступает из-за Барьера, цена на травку в городе выросла втрое.
-	AI_Output(self,other,"DIA_Igaranz_BabosJob_13_04");	//Мы могли бы хорошо заработать на этом. Но Бабо отказывается сотрудничать.
+	AI_Output(other,self, " DIA_Igaranz_BabosJob_15_00 " );	// What should Babo do for you?
+	AI_Output(self,other, " DIA_Igaranz_BabosJob_13_01 " );	// If I knew what this slug would pee in his pants over a few bushes of swamp grass, I would have long ago ensured that someone else took his place in the monastery garden.
+	AI_Output(other,self, " DIA_Igaranz_BabosJob_15_02 " );	// Should he grow swamp grass?
+	AI_Output(self,other, " DIA_Igaranz_BabosJob_13_03 " );	// Of course. Since it is no longer available due to the Barrier, the price of weed in the city has tripled.
+	AI_Output(self,other, " DIA_Igaranz_BabosJob_13_04 " );	// We could make good money on this. But Babo refuses to cooperate.
 };
 
 var int IgaranzLowPrice;
@@ -509,7 +510,7 @@ instance DIA_Igaranz_Price(C_Info)
 	condition = DIA_Igaraz_Price_Condition;
 	information = DIA_Igaraz_Price_Info;
 	permanent = FALSE;
-	description = "Сколько ты хочешь за эти бумаги?";
+	description = " How much do you want for these papers? " ;
 };
 
 func int DIA_Igaraz_Price_Condition()
@@ -522,27 +523,27 @@ func int DIA_Igaraz_Price_Condition()
 
 func void DIA_Igaraz_Price_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_Price_15_00");	//Сколько ты хочешь за эти бумаги?
-	AI_Output(self,other,"DIA_Igaranz_Price_13_01");	//Вообще-то говоря, они практически бесценны. Очень редко можно встретить что-нибудь подобное.
-	AI_Output(self,other,"DIA_Igaranz_Price_13_02");	//Но у меня нет желания рисковать своим будущим из-за нескольких золотых.
-	AI_Output(self,other,"DIA_Igaranz_Price_13_03");	//Триста монет, и ты можешь делать с этими бумагами все, что захочешь.
+	AI_Output(other,self, " DIA_Igaranz_Price_15_00 " );	// How much do you want for these papers?
+	AI_Output(self,other, " DIA_Igaranz_Price_13_01 " );	// Generally speaking, they are practically priceless. It is very rare to find something like this.
+	AI_Output(self,other, " DIA_Igaranz_Price_13_02 " );	// But I have no desire to risk my future for a few gold pieces.
+	AI_Output(self,other, " DIA_Igaranz_Price_13_03 " );	// Three hundred coins, and you can do whatever you want with these papers.
 
 	if(RhetorikSkillValue[1] >= 35)
 	{
-		AI_Output(other,self,"DIA_Igaranz_Price_13_04");	//Слишком большая цена за простые бумажки, тебе не кажется?!
-		AI_Output(self,other,"DIA_Igaranz_Price_13_05");	//Ну, хорошо...(задумчиво) Я сбавлю цену до двухсот! Но это мое последнее предложение.
+		AI_Output(other,self, " DIA_Igaranz_Price_13_04 " );	// It's too high a price for simple pieces of paper, don't you think?!
+		AI_Output(self,other, " DIA_Igaranz_Price_13_05 " );	// Well, okay... (thoughtfully) I'll cut the price down to two hundred! But this is my last suggestion.
 		IgaranzLowPrice = TRUE;
 	};
 };
 
-instance DIA_Igaranz_BuyIt(C_Info)
+instance DIA_Igaranz_BuyIt (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 31;
 	condition = DIA_Igaraz_BuyIt_Condition;
 	information = DIA_Igaraz_BuyIt_Info;
 	permanent = FALSE;
-	description = "Я хочу купить эти бумаги.";
+	description = " I want to buy these securities. " ;
 };
 
 func int DIA_Igaraz_BuyIt_Condition()
@@ -562,8 +563,8 @@ func int DIA_Igaraz_BuyIt_Condition()
 
 func void DIA_Igaraz_BuyIt_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_BuyIt_15_00");	//Я хочу купить эти бумаги.
-	AI_Output(self,other,"DIA_Igaranz_BuyIt_13_01");	//Послушай, я сейчас не могу отлучиться. Я дам тебе ключ от моего сундука. В нем все равно больше ничего нет.
+	AI_Output(other,self, " DIA_Igaranz_BuyIt_15_00 " );	// I want to buy these securities.
+	AI_Output(self,other, " DIA_Igaranz_BuyIt_13_01 " );	// Look, I can't leave right now. I will give you the key to my chest. There is nothing else in it anyway.
 
 	if(IgaranzLowPrice == TRUE)
 	{
@@ -579,20 +580,20 @@ func void DIA_Igaraz_BuyIt_Info()
 };
 
 
-instance DIA_Igaranz_Perm(C_Info)
+instance DIA_Igaranz_Perm (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 2;
 	condition = DIA_Igaraz_Perm_Condition;
 	information = DIA_Igaraz_Perm_Info;
 	permanent = FALSE;
-	description = "У тебя есть что-нибудь интересное для меня?";
+	description = " Do you have anything interesting for me? " ;
 };
 
 
 func int DIA_Igaraz_Perm_Condition()
 {
-	if((Kapitel >= 3) && (other.guild != GIL_KDF) && (MIS_BabosDocs != LOG_Running))
+	if ((Chapter >=  3 ) && (other.guild !=  GIL_KDF ) && (MY_BabosDocs != LOG_Running))
 	{
 		return TRUE;
 	};
@@ -600,7 +601,7 @@ func int DIA_Igaraz_Perm_Condition()
 
 func void DIA_Igaraz_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Igaranz_Perm_15_00");	//У тебя есть что-нибудь интересное для меня?
+	AI_Output(other,self, " DIA_Igaranz_Perm_15_00 " );	// Do you have anything interesting for me?
 	AI_Output(self,other,"DIA_Igaranz_Perm_13_01");	//Хмм... нет.
 	AI_StopProcessInfos(self);
 };
@@ -629,32 +630,32 @@ func int DIA_Igaranz_OneMoreChance_News_condition()
 
 func void DIA_Igaranz_OneMoreChance_News_info()
 {
-	AI_Output(self,other,"DIA_Igaranz_OneMoreChance_News_01_01");	//Мое почтение! Вижу, что ты уже стал магом Огня.
-	AI_Output(other,self,"DIA_Igaranz_OneMoreChance_News_01_02");	//Да, как видишь. А ты хотел поинтересоваться насчет своей участи послушника? 
-	AI_Output(self,other,"DIA_Igaranz_OneMoreChance_News_01_03");	//Да, уважаемый маг...(робко) Вы правы.
+	AI_Output(self,other, " DIA_Igaranz_OneMoreChance_News_01_01 " );	// My respect! I see that you have already become a firebender.
+	AI_Output(other,self, " DIA_Igaranz_OneMoreChance_News_01_02 " );	// Yes, as you can see. And you wanted to ask about your fate as a novice?
+	AI_Output(self,other, " DIA_Igaranz_OneMoreChance_News_01_03 " );	// Yes, dear magician... (timidly) You are right.
 	Info_ClearChoices(DIA_Igaranz_OneMoreChance_News);
-	Info_AddChoice(DIA_Igaranz_OneMoreChance_News,"Пока не могу ничем порадовать.",DIA_Igaranz_OneMoreChance_News_yes);
-	Info_AddChoice(DIA_Igaranz_OneMoreChance_News,"Я передумал помогать тебе.",DIA_Igaranz_OneMoreChance_News_no);
+	Info_AddChoice(DIA_Igaranz_OneMoreChance_News, " Nothing to please yet. " ,DIA_Igaranz_OneMoreChance_News_yes);
+	Info_AddChoice(DIA_Igaranz_OneMoreChance_News, " I changed my mind about helping you. " ,DIA_Igaranz_OneMoreChance_News_no);
 };
 
 func void DIA_Igaranz_OneMoreChance_News_yes()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Igaranz_OneMoreChance_News_yes_01_01");	//Пока не могу ничем порадовать.
-	AI_Output(other,self,"DIA_Igaranz_OneMoreChance_News_yes_01_02");	//А между тем проводи больше времени в молитвах, практикуйся в магии...
-	AI_Output(other,self,"DIA_Igaranz_OneMoreChance_News_yes_01_03");	//В общем, работай над собой - и все будет хорошо.
-	AI_Output(self,other,"DIA_Igaranz_OneMoreChance_News_yes_01_04");	//Хорошо, мастер, я все понял.
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Игарац поинтересовался насчет своей участи послушника. Пусть пока ждет, до поры до времени...");
+	AI_Output(other,self, " DIA_Igaranz_OneMoreChance_News_yes_01_01 " );	// I can't please anything yet.
+	AI_Output(other,self, " DIA_Igaranz_OneMoreChance_News_yes_01_02 " );	// In the meantime, spend more time praying, practicing magic...
+	AI_Output(other,self, " DIA_Igaranz_OneMoreChance_News_yes_01_03 " );	// In general, work on yourself - and everything will be fine.
+	AI_Output(self,other, " DIA_Igaranz_OneMoreChance_News_yes_01_04 " );	// Okay, master, I got it.
+	B_LogEntry( TOPIC_IGARANZ_NEW , " Igaraz asked about his fate as an acolyte. Let him wait for the time being... " );
 	Info_ClearChoices(DIA_Igaranz_OneMoreChance_News);
 };
 
 func void DIA_Igaranz_OneMoreChance_News_no()
 {
-	AI_Output(other,self,"DIA_Igaranz_OneMoreChance_News_no_01_01");	//Я передумал помогать тебе.
-	AI_Output(other,self,"DIA_Igaranz_OneMoreChance_News_no_01_02");	//Неужели ты думаешь, что я стану просить за того, кто совсем недавно хотел лишить меня жизни?
-	AI_Output(self,other,"DIA_Igaranz_OneMoreChance_News_no_01_03");	//ТЫ! ТЫ - ГРЯЗНАЯ СКОТИНА! Ты поплатишься за это, клянусь Инносом!
-	AI_Output(other,self,"DIA_Igaranz_OneMoreChance_News_no_01_04");	//Не смей поднимать руку на мага Огня, послушник!
-	AI_Output(self,other,"DIA_Igaranz_OneMoreChance_News_no_01_05");	//Не сметь поднимать руку?! (в бешенстве) Да я убью тебя!
+	AI_Output(other,self, " DIA_Igaranz_OneMoreChance_News_no_01_01 " );	// I changed my mind about helping you.
+	AI_Output(other,self, " DIA_Igaranz_OneMoreChance_News_no_01_02 " );	// Do you really think that I will ask for someone who recently wanted to take my life?
+	AI_Output(self,other, " DIA_Igaranz_OneMoreChance_News_no_01_03 " );	// YOU! YOU ARE A DIRTY BEAST! You will pay for this, I swear by Innos!
+	AI_Output(other,self, " DIA_Igaranz_OneMoreChance_News_no_01_04 " );	// Don't you dare raise your hand against a Firebender, acolyte!
+	AI_Output(self,other, " DIA_Igaranz_OneMoreChance_News_no_01_05 " );	// Don't you dare raise your hand?! (furious) I'll kill you!
 	MIS_Igaraz_OneMoreChance = LOG_FAILED;
 	B_LogEntry_Failed(TOPIC_IGARANZ_NEW);
 	AI_StopProcessInfos(self);
@@ -664,20 +665,20 @@ func void DIA_Igaranz_OneMoreChance_News_no()
 
 var int igoranz_task;
 
-instance DIA_Igaraz_New_OfferHelp(C_Info)
+instance DIA_Igaraz_New_OfferHelp (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 2;
 	condition = DIA_Igaraz_New_OfferHelp_condition;
 	information = DIA_Igaraz_New_OfferHelp_info;
 	permanent = FALSE;
-	description = "Я поговорил с магами Огня насчет тебя.";
+	description = " I've spoken to the Firebenders about you. " ;
 };
 
 
 func int DIA_Igaraz_New_OfferHelp_condition()
 {
-	if((hero.guild == GIL_KDF) && (Kapitel >= 2) && (MIS_Igaraz_OneMoreChance == LOG_Running) && (IS_TALAMON_IGORANZCONDITION == TRUE))
+	if ((hero.guild ==  GIL_KDF ) && (Chapter >=  2 ) && (MIS_Igaraz_OneMoreChance == LOG_Running) && ( IS_TALAMON_IGORANZCONDITION  ==  TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -685,88 +686,88 @@ func int DIA_Igaraz_New_OfferHelp_condition()
 
 func void DIA_Igaraz_New_OfferHelp_info()
 {
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_01_01");	//Я поговорил с магами Огня насчет тебя.
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_01_02");	//Таламон приказал тебе найти и убить демона. А в качестве доказательства ты должен будешь принести его сердце.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_01_03");	//О, всемогущий Иннос! (в панике) Неужели мастер Таламон и вправду отправляет меня на бой с таким жутким чудищем?!
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_01_04");	//Это единственный шанс для тебя, Игарац.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_01_05");	//Но мне никогда не убить это ужасное порождение Белиара! Я даже не знаю, где их искать, этих демонов!
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_01_06");	//Прошу тебя - помоги мне! Я готов сделать для тебя все что угодно!
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_01_01 " );	// I've spoken to the Firebenders about you.
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_01_02 " );	// Talamon ordered you to find and kill the demon. And as proof, you will have to bring his heart.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_01_03 " );	// Oh, almighty Innos! (panicked) Is Master Talamon really sending me to fight such a terrible monster?!
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_01_04 " );	// This is your only chance, Igaraz.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_01_05 " );	// But I'll never kill this terrible spawn of Beliar! I don't even know where to look for them, those demons!
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_01_06 " );	// Please - help me! I'm ready to do anything for you!
 	Info_ClearChoices(DIA_Igaraz_New_OfferHelp);
-	Info_AddChoice(DIA_Igaraz_New_OfferHelp,"Извини, но я не могу тебе помочь.",DIA_Igaraz_New_OfferHelp_peace);
-	Info_AddChoice(DIA_Igaraz_New_OfferHelp,"За свою помощь я хочу очень много золота!",DIA_Igaraz_New_OfferHelp_gold);
-	Info_AddChoice(DIA_Igaraz_New_OfferHelp,"Меня интересуют только магические предметы или рецепты.",DIA_Igaraz_New_OfferHelp_magic);
-	Info_AddChoice(DIA_Igaraz_New_OfferHelp,"Разбирайся с этим сам.",DIA_Igaraz_New_OfferHelp_no);
+	Info_AddChoice(DIA_Igaraz_New_OfferHelp, " Sorry, but I can't help you. " ,DIA_Igaraz_New_OfferHelp_peace);
+	Info_AddChoice(DIA_Igaraz_New_OfferHelp, " I want a lot of gold for my help! " ,DIA_Igaraz_New_OfferHelp_gold);
+	Info_AddChoice(DIA_Igaraz_New_OfferHelp, " I'm only interested in magic items or recipes. " ,DIA_Igaraz_New_OfferHelp_magic);
+	Info_AddChoice(DIA_Igaraz_New_OfferHelp, " Deal with it yourself. " ,DIA_Igaraz_New_OfferHelp_no);
 };
 
 func void DIA_Igaraz_New_OfferHelp_peace()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_peace_01_01");	//Извини, но я не могу тебе помочь.
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_peace_01_02");	//Тебе придется делать все самому и, тем самым, доказать, что ты достоин стать истинным слугой Инноса.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_peace_01_03");	//Да, мастер...(смиренно) Хотя, скорее всего, на это у меня уйдет целая вечность, да и встреча с демоном может стать последним мгновением моей жизни.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_peace_01_04");	//Но я постараюсь справиться и не упущу свой шанс!
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_peace_01_01 " );	// Sorry, but I can't help you.
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_peace_01_02 " );	// You will have to do everything yourself and, thereby, prove that you are worthy of becoming a true servant of Innos.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_peace_01_03 " );	// Yes, master...(humbly) Although it will probably take me forever, and the encounter with the demon could be the last moment of my life.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_peace_01_04 " );	// But I'll try to cope and not miss my chance!
 	INNOSPRAYCOUNT = INNOSPRAYCOUNT + 5;
 	MIS_Igaraz_OneMoreChance = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_SUCCESS);
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Я отказал в помощи Игарацу с его испытанием. Пусть докажет сам, что достоин стать магом Огня.");
+	B_LogEntry( TOPIC_IGARANZ_NEW , " I refused to help Igaratsu with his trial. Let him prove himself worthy of becoming a Firebender. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Igaraz_New_OfferHelp_gold()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_gold_01_01");	//За свою помощь я хочу очень много золота!
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_gold_01_02");	//Охота на демонов - дело не из легких, и мне потребуется много золота, чтобы как следует экипироваться перед боем.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_gold_01_03");	//Хорошо. Тогда я, пожалуй, пройдусь по своим должникам. Благо, в монастыре мне должна чуть ли не каждая мышь и даже сам мастер Горакс.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_gold_01_04");	//Думаю, тысячи три-четыре я собрать в состоянии. Надеюсь, такое количество золота - это оправдывающая твой риск награда?
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_gold_01_05");	//Вполне. Я постараюсь достать для тебя сердце демона.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_gold_01_06");	//Буду ждать... и трясти с задолжавших мне обывателей золото, разумеется.
-	IgaranzMakeHappyGold = TRUE;
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Я пообещал Игарацу помочь с испытанием и достать для него сердце демона. За это он готов выложить кругленькую сумму! Ну и отлично, ведь деньги не пахнут...");
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_gold_01_01 " );	// I want a lot of gold for my help!
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_gold_01_02 " );	// Demon hunting isn't easy, and I'll need a lot of gold to properly equip myself for the fight.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_gold_01_03 " );	// Good. Then I, perhaps, will go over my debtors. Fortunately, almost every mouse in the monastery owes me, and even Master Gorax himself.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_gold_01_04 " );	// I think I can collect three or four thousand. I hope this amount of gold is a reward justifying your risk?
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_gold_01_05 " );	// Quite. I'll try to get the heart of a demon for you.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_gold_01_06 " );	// I'll wait... and shake the gold from the townsfolk who owe me, of course.
+	IgaranceMakeHappyGold = TRUE ;
+	B_LogEntry( TOPIC_IGARANZ_NEW , " I promised Igaratsu to help with the challenge and get him the heart of a demon. For this, he is ready to pay a tidy sum! Well, great, because money doesn't smell... " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Igaraz_New_OfferHelp_magic()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_magic_01_01");	//Меня интересуют только магические предметы или редкие алхимические рецепты. 
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_magic_01_02");	//Пока ты будешь выполнять столь опасное задание, я подыщу для тебя нечто особенное.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_magic_01_03");	//Стены этого монастыря хранят множество тайн, и я непременно что-то да найду здесь! По крайней мере, поиски в священном месте уж точно не потребуют от меня умертвить демона.
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_magic_01_04");	//Надеюсь, это будет действительно стоящая вещь, а не дешевый свиток с заклинанием.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_magic_01_05");	//Будь уверен - ты не разочаруешься!
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_magic_01_06");	//Ладно, договорились. Я достану для тебя сердце демона.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_magic_01_07");	//Буду ждать... и искать, разумеется.
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_magic_01_01 " );	// I'm only interested in magic items or rare alchemy recipes.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_magic_01_02 " );	// While you're on such a dangerous mission, I'll find something special for you.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_magic_01_03 " );	// The walls of this monastery hold many secrets, and I will certainly find something here! At the very least, searching in a sacred place would certainly not require me to slay a demon.
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_magic_01_04 " );	// I hope it's really worthwhile and not a cheap spell scroll.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_magic_01_05 " );	// Be sure - you won't be disappointed!
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_magic_01_06 " );	// Okay, agreed. I'll get the heart of a demon for you.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_magic_01_07 " );	// I'll wait... and search, of course.
 	IgaranzMakeHappyMagic = TRUE;
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Я пообещал Игарацу помочь с испытанием и достать для него сердце демона. В награду, Игарац обещал достать для меня какой-нибудь редкий магический предмет или рецепт.");
+	B_LogEntry( TOPIC_IGARANZ_NEW , " I promised Igaratsu to help with the challenge and get him a demon heart. As a reward, Igaratsu promised to get me some rare magic item or recipe. " );
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Igaraz_New_OfferHelp_no()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_no_01_01");	//Разбирайся с этим сам.
-	AI_Output(other,self,"DIA_Igaraz_New_OfferHelp_no_01_02");	//В конце концов, слово я сдержал - теперь сам выкручивайся.
-	AI_Output(self,other,"DIA_Igaraz_New_OfferHelp_no_01_03");	//О, Иннос, что же мне делать?! Я никогда не пройду это испытание!
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_no_01_01 " );	// Deal with it yourself.
+	AI_Output(other,self, " DIA_Igaraz_New_OfferHelp_no_01_02 " );	// In the end, I kept my word - now get out yourself.
+	AI_Output(self,other, " DIA_Igaraz_New_OfferHelp_no_01_03 " );	// Oh, Innos, what should I do?! I will never pass this test!
 	MIS_Igaraz_OneMoreChance = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_SUCCESS);
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Я отказал в помощи Игарацу с его испытанием.");
+	B_LogEntry( TOPIC_IGARANZ_NEW , " I refused to help Igaratsu with his trial. " );
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Igaraz_New_MakeMage(C_Info)
+instance DIA_Igaraz_New_MakeMage (C_Info)
 {
 	npc = NOV_601_Igaraz;
 	nr = 2;
 	condition = DIA_Igaraz_New_MakeMage_condition;
 	information = DIA_Igaraz_New_MakeMage_info;
 	permanent = FALSE;
-	description = "С этого момента можешь считать себя магом Огня!";
+	description = " From now on, you can consider yourself a Firebender! " ;
 };
 
 func int DIA_Igaraz_New_MakeMage_condition()
 {
-	if((MIS_Igaraz_OneMoreChance == LOG_Running) && (IgaranzMakeHappyOk == TRUE) && Npc_HasItems(hero,itar_kdf_m_new))
+	if ((MY_Igaraz_OneMoreChance == LOG_Running) && (IgarazMakeHappyOk ==  TRUE ) && Npc_HasItems(hero,itar_kdf_m_new))
 	{
 		return TRUE;
 	};
@@ -774,43 +775,43 @@ func int DIA_Igaraz_New_MakeMage_condition()
 
 func void DIA_Igaraz_New_MakeMage_info()
 {
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_01");	//С этого момента можешь считать себя магом Огня!
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_02");	//Вот, возьми эту робу в качестве доказательств своих заслуг.
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_03");	//Все остальные детали ты узнаешь у Парлана.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_01_01 " );	// From now on, you can consider yourself a Firebender!
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_01_02 " );	// Here, take this robe as proof of your merit.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_01_03 " );	// You can get all other details from Parlan.
 	Snd_Play("LEVELUP");
 	B_GiveInvItems(other,self,itar_kdf_m_new,1);
 	AI_EquipArmor(NOV_601_Igaraz,itar_kdf_m_new);
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_01_04");	//О, Иннос милостивый...(радостно) Наконец-то! Как долго я ждал этого момента!
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_01_04 " );	// Oh, gracious Innos... (joyfully) Finally! How long have I been waiting for this moment!
 
-	if(IgaranzMakeHappyGold == TRUE)
+	if (IgaranceMakeHappyGold ==  TRUE )
 	{
 		B_GivePlayerXP(100);
-		AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_05");	//Отпразднуешь потом! Как насчет нашего уговора?
-		AI_Output(self,other,"DIA_Igaraz_New_MakeMage_01_06");	//Конечно! Вот, возьми это золото. Я выжал все из должников.
+		AI_Output(other,self, " DIA_Igaraz_New_MakeMage_01_05 " );	// Celebrate later! How about our deal?
+		AI_Output(self,other, " DIA_Igaraz_New_MakeMage_01_06 " );	// Of course! Here, take this gold. I squeezed everything out of debtors.
 		B_GiveInvItems(self,other,ItMi_Gold,5000);
-		AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_07");	//Хммм... неплохо.
+		AI_Output(other,self, " DIA_Igaraz_New_MakeMage_01_07 " );	// Hmmm... not bad.
 		MIS_Igaraz_OneMoreChance = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_SUCCESS);
-		B_LogEntry(TOPIC_IGARANZ_NEW,"Я помог Игарацу, а он вручил мне пять тысяч золотых. Отлично! Я рассчитывал на куда меньший гонорар.");
+		B_LogEntry( TOPIC_IGARANZ_NEW , " I helped Igaratsu and he gave me five thousand gold pieces. Great! I was expecting a much lower fee. " );
 	}
 	else if(IgaranzMakeHappyMagic == TRUE)
 	{
-		AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_05");	//Отпразднуешь потом! Как насчет нашего уговора?
-		AI_Output(self,other,"DIA_Igaraz_New_MakeMage_01_08");	//Конечно! Я много чего нашел и могу даже предоставить тебе выбор: магическая руна, свиток с рецептом или магический эликсир.
-		AI_Output(self,other,"DIA_Igaraz_New_MakeMage_01_09");	//Что ты предпочитаешь?
+		AI_Output(other,self, " DIA_Igaraz_New_MakeMage_01_05 " );	// Celebrate later! How about our deal?
+		AI_Output(self,other, " DIA_Igaraz_New_MakeMage_01_08 " );	// Of course! I have found a lot and can even give you a choice: a magic rune, a scroll with a recipe, or a magic elixir.
+		AI_Output(self,other, " DIA_Igaraz_New_MakeMage_01_09 " );	// What do you prefer?
 		Info_ClearChoices(DIA_Igaraz_New_MakeMage);
-		Info_AddChoice(DIA_Igaraz_New_MakeMage,"Я возьму магическую руну.",DIA_Igaraz_New_MakeMage_Rune);
-		Info_AddChoice(DIA_Igaraz_New_MakeMage,"Я возьму алхимический рецепт.",DIA_Igaraz_New_MakeMage_Rezept);
-		Info_AddChoice(DIA_Igaraz_New_MakeMage,"Я возьму магический эликсир.",DIA_Igaraz_New_MakeMage_UnknownBook);
+		Info_AddChoice(DIA_Igaraz_New_MakeMage, " I'll take a magic rune. " ,DIA_Igaraz_New_MakeMage_Rune);
+		Info_AddChoice(DIA_Igaraz_New_MakeMage, " I'll take the alchemy recipe. " ,DIA_Igaraz_New_MakeMage_Rezept);
+		Info_AddChoice(DIA_Igaraz_New_MakeMage, " I'll take the magic elixir. " ,DIA_Igaraz_New_MakeMage_UnknownBook);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Igaraz_New_MakeMage_01_10");	//Да, и еще. У меня есть на продажу некоторые товары. 
-		AI_Output(self,other,"DIA_Igaraz_New_MakeMage_01_11");	//Взгляни как-нибудь, если будет интересно.
-		AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_12");	//Если не забуду.
+		AI_Output(self,other, " DIA_Igaraz_New_MakeMage_01_10 " );	// Yes, and more. I have some items for sale.
+		AI_Output(self,other, " DIA_Igaraz_New_MakeMage_01_11 " );	// Take a look sometime if you're interested.
+		AI_Output(other,self, " DIA_Igaraz_New_MakeMage_01_12 " );	// If I don't forget.
 		MIS_Igaraz_OneMoreChance = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_SUCCESS);
-		B_LogEntry(TOPIC_IGARANZ_NEW,"Я помог Игарацу. За это он сможет продать мне свои товары.");
+		B_LogEntry( TOPIC_IGARANZ_NEW , " I helped Igaratsu. For that he can sell me his goods. " );
 		IG_TRADE_COND = TRUE;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Trade");
@@ -820,18 +821,18 @@ func void DIA_Igaraz_New_MakeMage_info()
 func void DIA_Igaraz_New_MakeMage_Rune()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_Rune_01_01");	//Я возьму магическую руну.
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_Rune_01_02");	//Хорошо! Вот твоя руна.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_Rune_01_01 " );	// I'll take the magic rune.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_Rune_01_02 " );	// Good! Here is your rune.
 	B_GiveInvItems(self,other,ItRu_Sleep,1);
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_Rune_01_03");	//Ну что же, награда действительно стоила того, чтобы тебе помочь.
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_Rune_01_04");	//Я рад, что смог угодить тебе! 
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_Rune_01_05");	//Да, и еще. У меня есть на продажу некоторые товары.
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_Rune_01_06");	//Взгляни как-нибудь, если будет интересно.
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_Rune_01_07");	//Если не забуду.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_Rune_01_03 " );	// Well, the reward was really worth helping you.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_Rune_01_04 " );	// I'm glad I could please you!
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_Rune_01_05 " );	// Yes, and more. I have some items for sale.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_Rune_01_06 " );	// Take a look sometime if you're interested.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_Rune_01_07 " );	// If I don't forget.
 	MIS_Igaraz_OneMoreChance = LOG_SUCCESS;
 	IG_TRADE_COND = TRUE;
 	Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_SUCCESS);
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Я помог Игарацу, и за это он дал мне в качестве награды магическую руну.");
+	B_LogEntry( TOPIC_IGARANZ_NEW , " I helped Igaratsu and he rewarded me with a magic rune. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Trade");
 };
@@ -839,18 +840,18 @@ func void DIA_Igaraz_New_MakeMage_Rune()
 func void DIA_Igaraz_New_MakeMage_Rezept()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_Rezept_01_01");	//Я возьму алхимический рецепт.
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_Rezept_01_02");	//Хорошо! Вот, возьми этот свиток.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_Rezept_01_01 " );	// I'll take the alchemy recipe.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_Rezept_01_02 " );	// Good! Here, take this scroll.
 	B_GiveInvItems(self,other,ITWR_MAGICDEFENCE_02,1);
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_Rezept_01_03");	//Ну что же, награда действительно стоила того, чтобы тебе помочь.
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_Rezept_01_04");	//Я рад, что смог угодить тебе!
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_Rezept_01_05");	//Да, и еще. У меня есть на продажу некоторые товары. 
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_Rezept_01_06");	//Взгляни как-нибудь, если будет интересно.
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_Rezept_01_07");	//Если не забуду.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_Rezept_01_03 " );	// Well, the reward was really worth helping you.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_Rezept_01_04 " );	// I'm glad I could please you!
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_Rezept_01_05 " );	// Yes, and more. I have some items for sale.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_Rezept_01_06 " );	// Take a look sometime if you're interested.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_Rezept_01_07 " );	// If I don't forget.
 	MIS_Igaraz_OneMoreChance = LOG_SUCCESS;
 	IG_TRADE_COND = TRUE;
 	Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_SUCCESS);
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Я помог Игарацу, и за это он дал мне в качестве награды алхимический рецепт.");
+	B_LogEntry( TOPIC_IGARANZ_NEW , " I helped Igaratsu and he rewarded me with an alchemy recipe. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Trade");
 };
@@ -858,17 +859,17 @@ func void DIA_Igaraz_New_MakeMage_Rezept()
 func void DIA_Igaraz_New_MakeMage_UnknownBook()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_UnknownBook_01_01");	//Я возьму магический эликсир.
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_UnknownBook_01_02");	//Хорошо! Вот, держи его.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_UnknownBook_01_01 " );	// I'll take the magic elixir.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_UnknownBook_01_02 " );	// Good! Here, hold it.
 	B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_UnknownBook_01_03");	//Ну что же, неплохо.
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_UnknownBook_01_04");	//Удачи! Да, и еще. У меня есть на продажу некоторые товары. 
-	AI_Output(self,other,"DIA_Igaraz_New_MakeMage_UnknownBook_01_05");	//Взгляни как-нибудь, если будет интересно.
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_UnknownBook_01_06");	//Если не забуду.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_UnknownBook_01_03 " );	// Well, not bad.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_UnknownBook_01_04 " );	// Good luck! Yes, and more. I have some items for sale.
+	AI_Output(self,other, " DIA_Igaraz_New_MakeMage_UnknownBook_01_05 " );	// Take a look sometime if you're interested.
+	AI_Output(other,self, " DIA_Igaraz_New_MakeMage_UnknownBook_01_06 " );	// If I don't forget.
 	MIS_Igaraz_OneMoreChance = LOG_SUCCESS;
 	IG_TRADE_COND = TRUE;
 	Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_SUCCESS);
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Я помог Игарацу, и за это он дал мне в качестве награды магический эликсир.");
+	B_LogEntry( TOPIC_IGARANZ_NEW , " I helped Igaratsu and he rewarded me with a magic elixir. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Trade");
 };
@@ -881,7 +882,7 @@ instance DIA_IGARAZ_TRADE(C_Info)
 	information = dia_igaraz_trade_info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи свои товары.";
+	description = " Show your products. " ;
 };
 
 func int dia_igaraz_trade_condition()
@@ -900,7 +901,7 @@ func void dia_igaraz_trade_info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Igaraz_TRADE_01_01");	//Покажи свои товары.
+	AI_Output(other,self, " DIA_Igaraz_TRADE_01_01 " );	// Display your products.
 
 	if(Npc_HasItems(self,ItKe_IgarazChest_Mis) > 0)
 	{
