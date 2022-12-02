@@ -1,4 +1,5 @@
 
+
 instance DIA_NOFELD_EXIT(C_Info)
 {
 	npc = vlk_6003_nofeld;
@@ -29,7 +30,7 @@ instance DIA_NOFELD_HELLO(C_Info)
 	information = dia_nofeld_hello_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Привет.";
+	description = " Hello " ;
 };
 
 
@@ -44,15 +45,15 @@ func int dia_nofeld_hello_condition()
 func void dia_nofeld_hello_info()
 {
 	AI_Output(other,self,"DIA_Nofeld_Hello_01_01");	//Привет.
-	AI_Output(self,other,"DIA_Nofeld_Hello_01_02");	//А, это ты новенький. Как тебе наш лагерь?
-	AI_Output(other,self,"DIA_Nofeld_Hello_01_03");	//Ну, так... симпатичный.
-	AI_Output(self,other,"DIA_Nofeld_Hello_01_04");	//Да, местечко теплое. Главное, тут тепло и здесь можно не опасаться за свою жизнь.
-	AI_Output(self,other,"DIA_Nofeld_Hello_01_05");	//Не то, что там, снаружи. То и дело, кто-нибудь рыскает в близи с пещерой. Там надо держать ухо востро!
-	AI_Output(self,other,"DIA_Nofeld_Hello_01_06");	//Чуть расслабишься и все, считай, что уже труп. Даже не заметишь, как кто-нибудь подкрадется сзади и оттяпает тебе твою голову.
-	AI_Output(other,self,"DIA_Nofeld_Hello_01_07");	//А монстры не пытались атаковать вас здесь, в лагере?
-	AI_Output(self,other,"DIA_Nofeld_Hello_01_08");	//Нет, до этого дело не доходило. А если уж на то пошло, ребята, что у входа быстро разберутся с непрошеным гостем.
-	AI_Output(other,self,"DIA_Nofeld_Hello_01_10");	//А ты случайно не встречал здесь нечто похожее на дракона?
-	AI_Output(self,other,"DIA_Nofeld_Hello_01_11");	//Дракона? Нет, братишка, не встречал. И вообще я всегда считал, что это все сказки.
+	AI_Output(self,other, " DIA_Nofeld_Hello_01_02 " );	// Ah, you're the new one. How do you like our camp?
+	AI_Output(other,self, " DIA_Nofeld_Hello_01_03 " );	// Well, so... cute.
+	AI_Output(self,other, " DIA_Nofeld_Hello_01_04 " );	// Yes, the place is warm. The main thing is that it is warm here and here you can not be afraid for your life.
+	AI_Output(self,other, " DIA_Nofeld_Hello_01_05 " );	// Not what's out there. Every now and then, someone prowls around the cave. You have to keep your eyes open!
+	AI_Output(self,other, " DIA_Nofeld_Hello_01_06 " );	// Relax a little and that's it, consider that you are already a corpse. You won’t even notice how someone sneaks up behind you and chop off your head.
+	AI_Output(other,self, " DIA_Nofeld_Hello_01_07 " );	// Were the monsters trying to attack you here in the camp?
+	AI_Output(self,other, " DIA_Nofeld_Hello_01_08 " );	// No, it didn't get to that point. And for that matter, guys, that at the entrance they will quickly deal with an uninvited guest.
+	AI_Output(other, self, " DIA_Nofeld_Hello_01_10 " );	// Have you seen something that looks like a dragon here by any chance?
+	AI_Output(self,other, " DIA_Nofeld_Hello_01_11 " );	// Dragon? No, bro, I haven't. And in general, I always thought that these were all fairy tales.
 	AI_Output(other,self,"DIA_Nofeld_Hello_01_12");	//Ясно.
 	MEETNOFELD = TRUE;
 };
@@ -66,7 +67,7 @@ instance DIA_NOFELD_HELLO_TEACH(C_Info)
 	information = dia_nofeld_hello_teach_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Я слышал, ты ловкий парень.";
+	description = " I heard you're a smart guy. " ;
 };
 
 
@@ -80,17 +81,17 @@ func int dia_nofeld_hello_teach_condition()
 
 func void dia_nofeld_hello_teach_info()
 {
-	AI_Output(other,self,"DIA_Nofeld_Hello_Teach_01_01");	//Я слышал, ты ловкий парень.
+	AI_Output(other,self, " DIA_Nofeld_Hello_Teach_01_01 " );	// I heard you're a smart guy.
 	AI_Output(self,other,"DIA_Nofeld_Hello_Teach_01_02");	//И что?
-	AI_Output(other,self,"DIA_Nofeld_Hello_Teach_01_03");	//Ну, я подумал, вдруг ты сможешь помочь мне стать более ловким?
-	AI_Output(self,other,"DIA_Nofeld_Hello_Teach_01_04");	//Ну... я бы мог показать тебе пару трюков, которые бы, несомненно, повысили бы твою ловкость.
+	AI_Output(other,self, " DIA_Nofeld_Hello_Teach_01_03 " );	// Well, I was wondering if you could help me become more agile?
+	AI_Output(self,other, " DIA_Nofeld_Hello_Teach_01_04 " );	// Well... I could show you a couple of tricks that would definitely increase your dexterity.
 	AI_Output(other,self,"DIA_Nofeld_Hello_Teach_01_05");	//Покажешь?
-	AI_Output(self,other,"DIA_Nofeld_Hello_Teach_01_06");	//Почему бы и нет? Скажи, когда будешь готов.
+	AI_Output(self,other, " DIA_Nofeld_Hello_Teach_01_06 " );	// Why not? Tell me when you're ready.
 	NOFELDREADYTEACH = TRUE;
 };
 
 
-var int nofeld_merkedex;
+var int nofeld_markedex;
 
 instance DIA_NOFELD_TEACH(C_Info)
 {
@@ -99,7 +100,7 @@ instance DIA_NOFELD_TEACH(C_Info)
 	condition = dia_nofeld_teach_condition;
 	information = dia_nofeld_teach_info;
 	permanent = TRUE;
-	description = "Начнем тренировку.";
+	description = " Let's start training. " ;
 };
 
 
@@ -113,7 +114,7 @@ func int dia_nofeld_teach_condition()
 
 func void dia_nofeld_teach_info()
 {
-	AI_Output(other,self,"DIA_Nofeld_Teach_01_01");	//Начнем тренировку.
+	AI_Output(other,self, " DIA_Nofeld_Teach_01_01 " );	// Let's start training.
 	NOFELD_MERKEDEX = other.attribute[ATR_DEXTERITY];
 	Info_ClearChoices(dia_nofeld_teach);
 	Info_AddChoice(dia_nofeld_teach,Dialog_Back,dia_nofeld_teach_back);
@@ -125,7 +126,7 @@ func void dia_nofeld_teach_back()
 {
 	if(other.attribute[ATR_DEXTERITY] > NOFELD_MERKEDEX)
 	{
-		AI_Output(self,other,"DIA_Nofeld_Teach_Back_01_01");	//Вот. Теперь ты стал более ловким!
+		AI_Output(self,other, " DIA_Nofeld_Teach_Back_01_01 " );	// Here. Now you have become more dexterous!
 	};
 	Info_ClearChoices(dia_nofeld_teach);
 };
