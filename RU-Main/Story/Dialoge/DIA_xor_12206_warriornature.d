@@ -1,4 +1,5 @@
 
+
 instance DIA_XOR_12206_WARRIORNATURE_EXIT(C_Info)
 {
 	npc = xor_12206_warriornature;
@@ -37,10 +38,10 @@ func int dia_xor_12206_warriornature_standard_condition()
 
 func void dia_xor_12206_warriornature_standard_info()
 {
-	AI_Output(self,other,"DIA_XOR_12206_WarriorNature_STANDARD_01_00");	//Значит, это ты, кто осмелился бросить вызов!
-	AI_Output(self,other,"DIA_XOR_12206_WarriorNature_STANDARD_01_01");	//Ну что же, - посмотрим, на что ты способен. К бою!
+	AI_Output(self,other, " DIA_XOR_12206_WarriorNature_STANDARD_01_00 " );	// So it's you who dared to challenge!
+	AI_Output(self,other, " DIA_XOR_12206_WarriorNature_STANDARD_01_01 " );	// Well, let's see what you can do. To battle!
 	Info_ClearChoices(dia_xor_12206_warriornature_standard);
-	Info_AddChoice(dia_xor_12206_warriornature_standard,"(закончить разговор)",dia_xor_12206_warriornature_standard_ok);
+	Info_AddChoice(dia_xor_12206_warriornature_standard, " (end call) " ,dia_xor_12206_warriornature_standard_ok);
 };
 
 func void dia_xor_12206_warriornature_standard_ok()
