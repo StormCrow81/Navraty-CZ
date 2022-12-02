@@ -1,3 +1,4 @@
+
 instance DIA_Orc_8569_DeadOrc_EXIT(C_Info)
 {
 	npc = Orc_8569_DeadOrc;
@@ -31,7 +32,7 @@ instance DIA_Orc_8569_DeadOrc_Hello(C_Info)
 
 func int DIA_Orc_8569_DeadOrc_Hello_condition()
 {
-	if((MIS_NagDumgar == LOG_Running) && (DeadRabOrkovInsertDone == TRUE))
+	if ((MIS_Stupid == LOG_Running) && (DeadRabOrkovInsertDone ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -41,73 +42,73 @@ func void DIA_Orc_8569_DeadOrc_Hello_info()
 {
 	B_GivePlayerXP(1500);
 	AI_ReadyMeleeWeapon(other);
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_01");	//Так. И кто тут у нас?
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_02");	//Аргххх, человек...(испуганно) Ты прийти, чтобы убить меня?!
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_03");	//Может быть. По крайней мере, я всегда поступаю так с ходячими трупами.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_04");	//Прошу тебя, не делать этого. Не бить меня, не убивать меня! 
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_05");	//Ног-Драг сделать все, что человек ему говорить.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_01 " );	// Yes. And who do we have here?
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_02 " );	// Arghhh, human...(frightened) Are you coming to kill me?!
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_03 " );	// Maybe. At least that's what I always do with walking corpses.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_04 " );	// Please don't do this. Don't hit me, don't kill me!
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_05 " );	// Nog-Drag do whatever the person tells him.
 	AI_RemoveWeapon(other);
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_06");	//Ладно, успокойся! Зачем мне тебя убивать, ведь ты и так уже мертв.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_07");	//Ног-Драг не хотеть еще раз умирать! Если человек пощадить его, то тот сделать все, что прикажет ему человек.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_08");	//А я смотрю, ты очень напуган моим появлением. Так значит, тебя звать Ног-Драг?
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_09");	//Да, человек, мои братья когда-то звать меня так.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_10");	//И судя по всему, ты не принадлежал к кругу воинов, раз так трясешься за свою жизнь.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_11");	//Человек быть прав! Ног-Драг никогда не быть воином.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_12");	//Значит, ты просто был рабом. Я угадал?
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_13");	//Человек все знать! Ног-Драг действительно быть раб и строить тут большой храм, как приказывать его хозяин.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_14");	//Так ты тут со времен строительства Храма?
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_15");	//Ног-Драг уже давно быть тут. Видеть, как орки делать храм и как злой демон убивать их всех. Видеть и помнить очень много!
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_16");	//Тогда, возможно, ты знаешь одну очень важную вещь, которая меня интересует.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_17");	//Ног-Драг рассказать человек все, если тот не станет убивать его!
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_18");	//Вот ты заладил одно и то же... Хорошо! Ответь на мой вопрос - и я сохраню тебе жизнь.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_19");	//Тогда человек спрашивать, Ног-Драг все говорить.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_20");	//Ты знаешь шамана по имени Хаш-Гор?
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_21");	//Хаш-Гор?! (ужасно испугавшись) Но зачем человек спрашивать про него?!
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_22");	//Это тебя не касается! Просто ответь на мой вопрос.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_23");	//Да, Ног-Драг знать великого шамана Хаш-Гора. Он быть тут самый главный, когда орки строить Храм.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_24");	//А почему ты называешь его великим?
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_25");	//Потому что Хаш-Гор знать магия, который не знать другие шаманы! 
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_26");	//Из-за этого все братья орки очень боятся Хаш-Гор! 
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_27");	//Если великий шаман гневаться, то он убивать орков, поедать их сердца и делать мертвыми, как Ног-Драг.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_28");	//Ясно. А ты случайно не знаешь, где я сейчас смогу отыскать Хаш-Гора?
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_29");	//...пройти очень много времени с тех пор, как Ног-Драг видеть великий шаман в последний раз...
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_30");	//Ног-Драг полагать, что Хаш-Гор уже сам давно быть мертвый!
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_31");	//Поэтому, возможно, человек стоит поискать его там, где орки обычно хоронить своих мертвых братьев.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_32");	//Ты имеешь в виду кладбище орков?
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_33");	//Ног-Драг думать, что человек правильно назвать это место.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_34");	//Но он быть там очень осторожный! Хаш-Гор быть очень могущественный и злой шаман.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_35");	//Если человек случайно побеспокоить его дух, то он сам легко может стать мертвый.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_36");	//Ладно, я это учту.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_37");	//Человек еще что-нибудь спрашивать Ног-Драга?
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_38");	//Нет, больше мне от тебя ничего не надо.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_39");	//Значит, теперь человек не тронет Ног-Драга и не станет его убивать?!
-	B_LogEntry(TOPIC_NagDumgar,"Я повстречал орка-нежить по имени Ног-Драг. Когда-то он был одним из рабов, принимавших участие в строительстве Храма Спящего. Взяв с меня обещание не убивать его, Ног-Драг рассказал мне о великом шамане Хаш-Горе. Скорее всего, он уже мертв, и искать его в таком случае следует на кладбище орков.");
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_06 " );	// Okay, calm down! Why should I kill you when you're already dead.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_07 " );	// Nog-Drag doesn't want to die again! If a person spares him, then he will do everything that the person orders him to do.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_08 " );	// And I see that you are very frightened by my appearance. So your name is Nog-Drag?
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_09 " );	// Yes, man, my brothers used to call me that.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_10 " );	// And apparently, you did not belong to the circle of warriors, since you are shaking so much for your life.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_11 " );	// Man be right! Nog-Drag will never be a warrior.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_12 " );	// So you were just a slave. I guessed?
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_13 " );	// Man know everything! Nog-Drag really be a slave and build a big temple here, as ordered by his master.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_14 " );	// So you've been here since the construction of the Temple?
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_15 " );	// Nog-Drag has been around for a long time. See how the orcs make the temple and how the evil demon kills them all. See and remember a lot!
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_16 " );	// Then maybe you know one very important thing that interests me.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_17 " );	// Nog-Drag tell the man everything if he doesn't kill him!
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_18 " );	// Here you are doing the same thing... Good! Answer my question and I will spare your life.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_19 " );	// Then the person to ask, Nog-Drag all talk.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_20 " );	// Do you know a shaman named Hash-Gor?
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_21 " );	// Hash-Gor?! (terribly frightened) But why would a person ask about him?!
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_22 " );	// This doesn't concern you! Just answer my question.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_23 " );	// Yes, Nog-Drag know the great shaman of Khash-Gor. He will be the most important person here when the orcs build the Temple.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_24 " );	// Why do you call him great?
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_25 " );	// Because Hash-Gor knows magic that other shamans don't know!
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_26 " );	// Because of this, all orc brothers are very afraid of Hash-Gor!
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_27 " );	// If the great shaman is angry, then he will kill the orcs, eat their hearts and make them dead, like Nog-Drag.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_28 " );	// Clear. Do you happen to know where I can find Khash-Gor now?
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_29 " );	// ...it's been a very long time since Nog-Drag saw the great shaman for the last time...
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_30 " );	// Nog-Drag believe that Hash-Gor has long been dead himself!
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_31 " );	// So perhaps a human should look for it where orcs usually bury their dead brothers.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_32 " );	// You mean the orc graveyard?
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_33 " );	// Nog-Drag to think that the person is right to call this place.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_34 " );	// But he be very careful there! Khash Gor is a very powerful and evil shaman.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_35 " );	// If a person accidentally disturbs his spirit, then he himself can easily become dead.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_36 " );	// Okay, I'll take that into account.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_37 " );	// Man, is there anything else to ask Nog-Drag?
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Info_18_38 " );	// No, I don't need anything else from you.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Info_18_39 " );	// So, now the man will not touch Nog-Drag and will not kill him?!
+	B_LogEntry(TOPIC_NagDumgar, " I met an undead orc named Nog-Drag. He was once one of the slaves who took part in the construction of the Temple of the Sleeper. After making me promise not to kill him, Nog-Drag told me about the great shaman Khash- Woe. Most likely, he is already dead, and in this case, you should look for him in the orc cemetery. " );
 	Info_ClearChoices(DIA_Orc_8569_DeadOrc_Hello);
-	Info_AddChoice(DIA_Orc_8569_DeadOrc_Hello,"Нет, я передумал.",DIA_Orc_8569_DeadOrc_Hello_No);
-	Info_AddChoice(DIA_Orc_8569_DeadOrc_Hello,"Я не трону тебя.",DIA_Orc_8569_DeadOrc_Hello_Yes);
+	Info_AddChoice(DIA_Orc_8569_DeadOrc_Hello, " No, I changed my mind. " ,DIA_Orc_8569_DeadOrc_Hello_No);
+	Info_AddChoice(DIA_Orc_8569_DeadOrc_Hello, " I won't touch you. " ,DIA_Orc_8569_DeadOrc_Hello_Yes);
 };
 
 
 func void DIA_Orc_8569_DeadOrc_Hello_Yes()
 {
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Yes_18_01");	//Я не трону тебя, как и обещал.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Yes_18_02");	//Аргххх... Ног-Драг благодарить человек, что тот сдержать свое обещание.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Yes_18_03");	//За это он даст ему одну вещь, которая поможет человек, если он идти искать Хаш-Гора.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Yes_18_01 " );	// I won't hurt you, like I promised.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Yes_18_02 " );	// Arghhh... Nog-Drag thanking the man for keeping his promise.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Yes_18_03 " );	// For this, he will give him one thing that will help a person if he goes to look for Hash-Gor.
 	B_GiveInvItems(self,other,ItMi_DeadOrcItem,1);
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Yes_18_04");	//Спасибо, Ног-Драг. Надеюсь, она мне действительно пригодится.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Yes_18_05");	//Теперь прощай, орк - мне пора.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Yes_18_06");	//Добрый путь, человек...
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Yes_18_04 " );	// Thank you, Nog-Drag. Hope it really comes in handy for me.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_Yes_18_05 " );	// Now goodbye, orc - I've got to go.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_Yes_18_06 " );	// Have a nice trip, man...
 	DeadOrcLeavePeace = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Orc_8569_DeadOrc_Hello_No()
 {
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_No_18_01");	//Нет, я передумал.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_No_18_02");	//Думаю, что будет не очень правильно оставить тебя тут разгуливать по Храму.
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_No_18_03");	//Так что сейчас я тебя прикончу! Уж извини.
-	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_No_18_04");	//Аргххх! Человек обмануть Ног-Драга!
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_No_18_01 " );	// No, I changed my mind.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_No_18_02 " );	// I don't think it would be right to leave you here to roam the Temple.
+	AI_Output(other,self, " DIA_Orc_8569_DeadOrc_Hello_No_18_03 " );	// So now I'm going to kill you! Excuse me.
+	AI_Output(self,other, " DIA_Orc_8569_DeadOrc_Hello_No_18_04 " );	// Arghhh! Man trick Nog-Drag!
 	AI_StopProcessInfos(self);
 	self.flags = FALSE;
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
