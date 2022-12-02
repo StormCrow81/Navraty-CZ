@@ -1,5 +1,6 @@
 
-instance DIA_Udar_EXIT(C_Info)
+
+instance DIA_Udar_EXIT (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 999;
@@ -12,19 +13,19 @@ instance DIA_Udar_EXIT(C_Info)
 
 func int DIA_Udar_EXIT_Condition()
 {
-	if(Kapitel < 4)
+	if (chapter <  4 )
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Udar_EXIT_Info()
+func void DAY_Udar_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Udar_Hello(C_Info)
+instance DIA_Udar_Hello (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 2;
@@ -42,110 +43,110 @@ func int DIA_Udar_Hello_Condition()
 	};
 };
 
-func void DIA_Udar_Hello_Info()
+func void DAY_Udar_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Udar_Hello_09_00");	//Тебе крупно повезло, когда ты пробирался сюда. Я чуть не застрелил тебя.
-	AI_Output(other,self,"DIA_Udar_Hello_15_01");	//Тогда, наверное, я должен радоваться, что у тебя такой острый глаз.
-	AI_Output(self,other,"DIA_Udar_Hello_09_02");	//Не стоит трепаться попусту. Поговори с Сенгратом, если тебе что-нибудь нужно.
+	AI_Output(self,other, " DIA_Udar_Hello_09_00 " );	// You were very lucky when you made your way here. I almost shot you.
+	AI_Output(other,self, " DIA_Udar_Hello_15_01 " );	// Then maybe I should be glad you have such a sharp eye.
+	AI_Output(self,other, " DIA_Udar_Hello_09_02 " );	// Don't ramble. Talk to Sengrat if you need anything.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Udar_YouAreBest(C_Info)
+instances DIA_Udar_YouAreBest (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 3;
 	condition = DIA_Udar_YouAreBest_Condition;
 	information = DIA_Udar_YouAreBest_Info;
 	permanent = FALSE;
-	description = "Я слышал, что ты ЛУЧШИЙ арбалетчик!";
+	description = " I heard you are the BEST crossbowman! " ;
 };
 
 
 func int DIA_Udar_YouAreBest_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Keroloth_Udar) && (KAPITELORCATC == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Keroloth_Udar ) && ( CAPITALORCATC  ==  FALSE ))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Udar_YouAreBest_Info()
 {
-	AI_Output(other,self,"DIA_Udar_YouAreBest_15_00");	//Я слышал, что ты ЛУЧШИЙ арбалетчик во всей округе!
-	AI_Output(self,other,"DIA_Udar_YouAreBest_09_01");	//Ну, если так говорят, возможно, это правда. Что тебе нужно?
+	AI_Output(other,self, " DIA_Udar_YouAreBest_15_00 " );	// I heard you're the BEST crossbowman around!
+	AI_Output(self,other, " DIA_Udar_YouAreBest_09_01 " );	// Well, if they say so, it might be true. What do you need?
 };
 
 
-instance DIA_Udar_TeachMe(C_Info)
+DIA_Udar_TeachMe (C_Info) instances
 {
 	npc = PAL_268_Udar;
 	nr = 3;
 	condition = DIA_Udar_TeachMe_Condition;
 	information = DIA_Udar_TeachME_Info;
 	permanent = FALSE;
-	description = "Научи меня стрелять из арбалета.";
+	description = " Teach me how to shoot a crossbow. " ;
 };
 
 
 func int DIA_Udar_TeachMe_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Udar_YouAreBest) && (Udar_TeachPlayer != TRUE) && (KAPITELORCATC == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Udar_YouAreBest ) && ( Udar_TeachPlayer !=  TRUE ) && ( CAPITELORCATC  ==  FALSE )) .
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
 func void DIA_Udar_TeachME_Info()
 {
-	AI_Output(other,self,"DIA_Udar_Teacher_15_00");	//Научи меня стрелять из арбалета.
-	AI_Output(self,other,"DIA_Udar_Teacher_09_01");	//Убирайся! Вокруг замка бегает достаточно мишеней, на которых можно потренироваться.
+	AI_Output(other,self, " DIA_Udar_Teacher_15_00 " );	// Teach me how to shoot a crossbow.
+	AI_Output(self,other, " DIA_Udar_Teacher_09_01 " );	// Get out! There are enough targets running around the castle that you can practice on.
 };
 
 
-instance DIA_Udar_ImGood(C_Info)
+instances of DIA_Udar_ImGood (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 3;
 	condition = DIA_Udar_ImGood_Condition;
 	information = DIA_Udar_ImGood_Info;
 	permanent = FALSE;
-	description = "Самый великий арбалетчик - я.";
+	description = " The greatest crossbowman is me. " ;
 };
 
 
 func int DIA_Udar_ImGood_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Udar_YouAreBest) && (KAPITELORCATC == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Udar_YouAreBest ) && ( CAPITALORCATC  ==  FALSE ))
 	{
-		return 1;
+		return  1 ;
 	};
 };
 
-func void DIA_Udar_ImGood_Info()
+func void DAY_Udar_ImGood_Info()
 {
-	AI_Output(other,self,"DIA_Udar_ImGood_15_00");	//Самый великий арбалетчик - я.
-	AI_Output(self,other,"DIA_Udar_ImGood_09_01");	//(смеется) Да, ты прав!
-	AI_Output(self,other,"DIA_Udar_ImGood_09_02");	//Что ж, если ты хочешь поучиться, я могу помочь.
+	AI_Output(other,self, " DIA_Udar_ImGood_15_00 " );	// The greatest crossbowman is me.
+	AI_Output(self,other, " DIA_Udar_ImGood_09_01 " );	// (laughs) Yes, you're right!
+	AI_Output(self,other, " DIA_Udar_ImGood_09_02 " );	// Well, if you want to learn, I can help.
 	Udar_TeachPlayer = TRUE;
-	B_LogEntry(TOPIC_Teacher_OC,"Удар может обучить меня искусству стрельбы из арбалета.");
+	B_LogEntry(TOPIC_Teacher_OC, " Hitting can teach me the art of crossbow shooting. " );
 };
 
 
-instance DIA_Udar_Teach(C_Info)
+DIA_Udar_Teach (C_Info) instances
 {
 	npc = PAL_268_Udar;
 	nr = 3;
 	condition = DIA_Udar_Teach_Condition;
 	information = DIA_Udar_Teach_Info;
 	permanent = TRUE;
-	description = "Я хочу поучиться у тебя.";
+	description = " I want to learn from you. " ;
 };
 
 
 func int DIA_Udar_Teach_Condition()
 {
-	if((Udar_TeachPlayer == TRUE) && (KAPITELORCATC == FALSE))
+	if ((Udar_TeachPlayer ==  TRUE ) && ( KAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -153,8 +154,8 @@ func int DIA_Udar_Teach_Condition()
 
 func void DIA_Udar_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Udar_Teach_15_00");	//Я хочу учиться у тебя.
-	AI_Output(self,other,"DIA_Udar_Teach_09_01");	//Ладно, учись!
+	AI_Output(other,self, " DIA_Udar_Teach_15_00 " );	// I want to learn from you.
+	AI_Output(self,other, " DIA_Udar_Teach_09_01 " );	// Okay, learn!
 	Info_ClearChoices(DIA_Udar_Teach);
 	Info_AddChoice(DIA_Udar_Teach,Dialog_Back,DIA_Udar_Teach_Back);
 	Info_AddChoice(DIA_Udar_Teach,b_buildlearnstringforfight(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1)),DIA_Udar_Teach_CROSSBOW_1);
@@ -168,12 +169,12 @@ func void DIA_Udar_Teach_Back()
 
 func void B_Udar_TeachNoMore1()
 {
-	AI_Output(self,other,"B_Udar_TeachNoMore1_09_00");	//Ты уже знаешь основы - на большее у нас нет времени.
+	AI_Output(self,other, " B_Udar_TeachNoMore1_09_00 " );	// You already know the basics - we don't have time for more.
 };
 
 func void B_Udar_TeachNoMore2()
 {
-	AI_Output(self,other,"B_Udar_TeachNoMore2_09_00");	//Чтобы улучшить владение этим оружием, тебе лучше поискать более подходящего учителя.
+	AI_Output(self,other, " B_Udar_TeachNoMore2_09_00 " );	// To improve your skill with this weapon, you'd better look for a more suitable teacher.
 };
 
 func void DIA_Udar_Teach_CROSSBOW_1()
@@ -205,47 +206,47 @@ func void DIA_Udar_Teach_CROSSBOW_5()
 };
 
 
-instance DIA_Udar_Perm(C_Info)
+instances of DIA_Udar_Perm (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 11;
 	condition = DIA_Udar_Perm_Condition;
 	information = DIA_Udar_Perm_Info;
 	permanent = FALSE;
-	description = "Как дела в замке?";
+	description = " How are things at the castle? " ;
 };
 
 
 func int DIA_Udar_Perm_Condition()
 {
-	if(Kapitel <= 3)
+	if (chapter <=  3 )
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Udar_Perm_Info()
+func void DAY_Udar_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Udar_Perm_15_00");	//Как дела в замке?
-	AI_Output(self,other,"DIA_Udar_Perm_09_01");	//Некоторые из наших парней посвящают себя тренировкам, но, в принципе, все мы просто ждем, когда что-нибудь произойдет.
-	AI_Output(self,other,"DIA_Udar_Perm_09_02");	//Эта неопределенность изматывает. Такова стратегия этих чертовых орков. Они будут выжидать, пока наше терпение не лопнет.
+	AI_Output(other,self, " DIA_Udar_Perm_15_00 " );	// How are things at the castle?
+	AI_Output(self,other, " DIA_Udar_Perm_09_01 " );	// Some of our guys dedicate themselves to training, but basically we're all just waiting for something to happen.
+	AI_Output(self,other, " DIA_Udar_Perm_09_02 " );	// This uncertainty is exhausting. That's the strategy of those damn orcs. They will wait until our patience runs out.
 };
 
 
-instance DIA_Udar_Ring(C_Info)
+instances of DIA_Udar_Ring (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 11;
 	condition = DIA_Udar_Ring_Condition;
 	information = DIA_Udar_Ring_Info;
 	permanent = FALSE;
-	description = "Вот, я принес тебе кольцо Тенгрона.";
+	description = " Here, I brought you a Tengron ring. " ;
 };
 
 
 func int DIA_Udar_Ring_Condition()
 {
-	if((Npc_HasItems(other,ItRi_Tengron) >= 1) && (KAPITELORCATC == FALSE))
+	if ((Npc_HasItems(other,ItRi_Tengron) >=  1 ) && ( CAPITALORCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -253,16 +254,16 @@ func int DIA_Udar_Ring_Condition()
 
 func void DIA_Udar_Ring_Info()
 {
-	AI_Output(other,self,"DIA_Udar_Ring_15_00");	//Вот, я принес тебе кольцо Тенгрона. Оно будет защищать тебя. Тенгрон говорит, что он когда-нибудь вернется и заберет это кольцо назад.
-	AI_Output(self,other,"DIA_Udar_Ring_09_01");	//Что? Да ты знаешь, что это за кольцо? Он получил эту награду за мужество, проявленное в бою.
-	AI_Output(self,other,"DIA_Udar_Ring_09_02");	//Говоришь, что он хочет забрать его назад? Если такова воля Инноса, так и будет. Если такова воля Инноса...
+	AI_Output(other,self, " DIA_Udar_Ring_15_00 " );	// Here, I brought you Tengron's ring. It will protect you. Tengron says that someday he will return and take this ring back.
+	AI_Output(self,other, " DIA_Udar_Ring_09_01 " );	// What? Do you know what this ring is? He received this award for his courage in battle.
+	AI_Output(self,other, " DIA_Udar_Ring_09_02 " );	// Are you saying he wants to take it back? If such is the will of Innos, so be it. If that is the will of Innos...
 	B_GiveInvItems(other,self,ItRi_Tengron,1);
 	TengronRing = TRUE;
 	B_GivePlayerXP(XP_TengronRing);
 };
 
 
-instance DIA_Udar_KAP4_EXIT(C_Info)
+instance DIA_Udar_KAP4_EXIT (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 999;
@@ -275,7 +276,7 @@ instance DIA_Udar_KAP4_EXIT(C_Info)
 
 func int DIA_Udar_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -287,7 +288,7 @@ func void DIA_Udar_KAP4_EXIT_Info()
 };
 
 
-instance DIA_Udar_Kap4WiederDa(C_Info)
+instances DIA_Udar_Kap4WiederDa (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 40;
@@ -297,9 +298,9 @@ instance DIA_Udar_Kap4WiederDa(C_Info)
 };
 
 
-func int DIA_Udar_Kap4WiederDa_Condition()
+func int DIA_Cap4Return_Condition()
 {
-	if((Kapitel >= 4) && (KAPITELORCATC == FALSE))
+	if ((CAPITAL >=  4 ) && ( CAPITALORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -307,80 +308,80 @@ func int DIA_Udar_Kap4WiederDa_Condition()
 
 func void DIA_Udar_Kap4WiederDa_Info()
 {
-	AI_Output(self,other,"DIA_Udar_Kap4WiederDa_09_00");	//Хорошо, что ты пришел. Здесь творится сущий ад.
+	AI_Output(self,other, " DIA_Udar_Kap4WiederDa_09_00 " );	// It's good that you came. It's a living hell here.
 	if(hero.guild != GIL_DJG)
 	{
-		AI_Output(other,self,"DIA_Udar_Kap4WiederDa_15_01");	//Что случилось?
-		AI_Output(self,other,"DIA_Udar_Kap4WiederDa_09_02");	//Охотники на драконов ошиваются по всему замку и бахвалятся, что могут решить проблему с драконами.
-		AI_Output(self,other,"DIA_Udar_Kap4WiederDa_09_03");	//Но я скажу тебе - судя по тому, как они выглядят, они не в состоянии убить даже старого больного снеппера.
+		AI_Output(other,self, " DIA_Udar_Kap4WiederDa_15_01 " );	// What happened?
+		AI_Output(self,other, " DIA_Udar_Kap4WiederDa_09_02 " );	// Dragon hunters hang around the castle and brag about how they can solve the dragon problem.
+		AI_Output(self,other, " DIA_Udar_Kap4WiederDa_09_03 " );	// But I'll tell you - judging by the way they look, they can't even kill an old sick snapper.
 	};
-	AI_Output(self,other,"DIA_Udar_Kap4WiederDa_09_04");	//Многие из нас уже отчаялись и уже не верят, что нам удастся выбраться отсюда живыми.
+	AI_Output(self,other, " DIA_Udar_Kap4WiederDa_09_04 " );	// Many of us are already desperate and no longer believe that we will be able to get out of here alive.
 };
 
 
-instance DIA_Udar_Sengrath(C_Info)
+instances of DIA_Udar_Segrath (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 41;
 	condition = DIA_Udar_Sengrath_Condition;
 	information = DIA_Udar_Sengrath_Info;
-	description = "По-моему, вы вдвоем стояли здесь на часах?";
+	description = " I think you two were standing watch here? " ;
 };
 
 
 func int DIA_Udar_Sengrath_Condition()
 {
-	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Udar_Kap4WiederDa) && (Sengrath_Missing == TRUE) && (KAPITELORCATC == FALSE))
+	if ((Capital >=  4 ) && Npc_KnowsInfo(other,DIA_Space_Cap4RepeatDay) && (Missing_Capital ==  TRUE ) && ( CAPITALORCATC  ==  FALSE )) .
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Udar_Sengrath_Info()
+func void DAY_Udar_Sengrath_Info()
 {
-	AI_Output(other,self,"DIA_Udar_Sengrath_15_00");	//По-моему, вы вдвоем стояли здесь на часах?
-	AI_Output(self,other,"DIA_Udar_Sengrath_09_01");	//Теперь нет. Сенграт стоял у края стены и заснул.
-	AI_Output(self,other,"DIA_Udar_Sengrath_09_02");	//Он выронил свой арбалет, и тот упал вниз.
-	AI_Output(self,other,"DIA_Udar_Sengrath_09_03");	//Мы видели, как один из орков схватил его и растворился в темноте.
-	AI_Output(self,other,"DIA_Udar_Sengrath_09_04");	//Сенграт проснулся и побежал в ночь по направлению к частоколу орков. С тех пор его никто не видел.
-	AI_Output(self,other,"DIA_Udar_Sengrath_09_05");	//Да пребудет с нами Иннос!
+	AI_Output(other,self, " DIA_Udar_Sengrath_15_00 " );	// I think you two were standing watch here?
+	AI_Output(self,other, " DIA_Udar_Sengrath_09_01 " );	// Not now. Sengrat stood at the edge of the wall and fell asleep.
+	AI_Output(self,other, " DIA_Udar_Sengrath_09_02 " );	// He dropped his crossbow and it fell down.
+	AI_Output(self,other, " DIA_Udar_Sengrath_09_03 " );	// We saw how one of the orcs grabbed it and disappeared into the darkness.
+	AI_Output(self,other, " DIA_Udar_Sengrath_09_04 " );	// Sengrat woke up and ran into the night towards the orc stockade. Nobody has seen him since.
+	AI_Output(self,other, " DIA_Udar_Sengrath_09_05 " );	// May Innos be with us!
 	Log_CreateTopic(TOPIC_Sengrath_Missing,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Sengrath_Missing,LOG_Running);
-	B_LogEntry(TOPIC_Sengrath_Missing,"Удар, гвардеец замка, скучает по своему приятелю Сенграту. Последний раз он видел его как-то поздно ночью, тот направлялся к забору орков, чтобы вернуть свой арбалет.");
+	; _ _ _ _
 };
 
 
-instance DIA_Udar_SENGRATHGEFUNDEN(C_Info)
+instances DIA_Udar_SENGRATHGEFUNDEN (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 42;
 	condition = DIA_Udar_SENGRATHGEFUNDEN_Condition;
 	information = DIA_Udar_SENGRATHGEFUNDEN_Info;
-	description = "Я нашел Сенграта.";
+	description = " I found Sengrat. " ;
 };
 
 
-func int DIA_Udar_SENGRATHGEFUNDEN_Condition()
+func int DIA_Create_Fund_Condition() .
 {
-	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Udar_Sengrath) && Npc_HasItems(other,ItRw_SengrathsArmbrust_MIS) && (KAPITELORCATC == FALSE))
+	if ((Capital >=  4 ) && Npc_KnowsInfo(other,DIA_Udar_Sengrath) && Npc_HasItems(other,ItRw_SengrathsArmbrust_MIS) && ( CAPITELORCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Udar_SENGRATHGEFUNDEN_Info()
+func void DIA_Create_Funds_Info()
 {
-	AI_Output(other,self,"DIA_Udar_SENGRATHGEFUNDEN_15_00");	//Я нашел Сенграта.
-	AI_Output(self,other,"DIA_Udar_SENGRATHGEFUNDEN_09_01");	//Да? И где же он?
-	AI_Output(other,self,"DIA_Udar_SENGRATHGEFUNDEN_15_02");	//Он мертв. Вот его арбалет. Он был при нем.
-	AI_Output(self,other,"DIA_Udar_SENGRATHGEFUNDEN_09_03");	//Должно быть, он смог вернуть свой арбалет, но орки все же прикончили его.
-	AI_Output(self,other,"DIA_Udar_SENGRATHGEFUNDEN_09_04");	//Чертов дурак. Я знал, что так будет. Мы все тут погибнем.
+	AI_Output(other,self, " DIA_Udar_SENGRATHGEFUNDEN_15_00 " );	// I found Sengrat.
+	AI_Output(self,other, " DIA_Udar_SENGRATHGEFUNDEN_09_01 " );	// Yes? And where is he?
+	AI_Output(other,self, " DIA_Udar_SENGRATHGEFUNDEN_15_02 " );	// He's dead. Here is his crossbow. He was with him.
+	AI_Output(self,other, " DIA_Udar_SENGRATHGEFUNDEN_09_03 " );	// He must have been able to get his crossbow back, but the orcs still finished him off.
+	AI_Output(self,other, " DIA_Udar_SENGRATHGEFUNDEN_09_04 " );	// Damn fool. I knew it would. We will all die here.
 	TOPIC_END_Sengrath_Missing = TRUE;
 	B_GivePlayerXP(XP_SengrathFound);
 };
 
 
-instance DIA_Udar_BADFEELING(C_Info)
+instances of DIA_Udar_BADFEELING (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 50;
@@ -393,7 +394,7 @@ instance DIA_Udar_BADFEELING(C_Info)
 
 func int DIA_Udar_BADFEELING_Condition()
 {
-	if((Npc_RefuseTalk(self) == FALSE) && Npc_IsInState(self,ZS_Talk) && Npc_KnowsInfo(other,DIA_Udar_SENGRATHGEFUNDEN) && (Kapitel >= 4) && (KAPITELORCATC == FALSE))
+	if ((Npc_RefuseTalk(self) ==  FALSE ) && Npc_IsInState(self,ZS_Talk) && Npc_KnowsInfo(other,DIA_Create_SENGRATHGEFUND) && (Capital >=  4 ) && ( CAPITELORCATC  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -403,21 +404,21 @@ func void DIA_Udar_BADFEELING_Info()
 {
 	if(MIS_OCGateOpen == TRUE)
 	{
-		AI_Output(self,other,"DIA_Udar_BADFEELING_09_00");	//Еще одна такая неподготовленная атака и нам конец.
+		AI_Output(self,other, " DIA_Udar_BADFEELING_09_00 " );	// One more such unprepared attack and we're done.
 	}
 	else if(MIS_AllDragonsDead == TRUE)
 	{
-		AI_Output(self,other,"DIA_Udar_BADFEELING_09_01");	//Орки очень нервничают. Что-то очень напугало их. Я чувствую это.
+		AI_Output(self,other, " DIA_Udar_BADFEELING_09_01 " );	// Orcs are very nervous. Something really scared them. I'm feeling it.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Udar_BADFEELING_09_02");	//Мне очень не нравится все это.
+		AI_Output(self,other, " DIA_Udar_BADFEELING_09_02 " );	// I really don't like all this.
 	};
 	Npc_SetRefuseTalk(self,30);
 };
 
 
-instance DIA_Udar_KAP5_EXIT(C_Info)
+instance DIA_Udar_KAP5_EXIT (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 999;
@@ -430,7 +431,7 @@ instance DIA_Udar_KAP5_EXIT(C_Info)
 
 func int DIA_Udar_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -442,7 +443,7 @@ func void DIA_Udar_KAP5_EXIT_Info()
 };
 
 
-instance DIA_Udar_KAP6_EXIT(C_Info)
+instance DIA_Udar_KAP6_EXIT (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 999;
@@ -455,7 +456,7 @@ instance DIA_Udar_KAP6_EXIT(C_Info)
 
 func int DIA_Udar_KAP6_EXIT_Condition()
 {
-	if(Kapitel == 6)
+	if (chapter ==  6 )
 	{
 		return TRUE;
 	};
@@ -467,7 +468,7 @@ func void DIA_Udar_KAP6_EXIT_Info()
 };
 
 
-instance DIA_Udar_PICKPOCKET(C_Info)
+instances DIA_Udar_PICKPOCKET (C_Info)
 {
 	npc = PAL_268_Udar;
 	nr = 900;
@@ -480,19 +481,19 @@ instance DIA_Udar_PICKPOCKET(C_Info)
 
 func int DIA_Udar_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,15);
+	return  C_Robbery ( 20 , 15 );
 };
 
 func void DIA_Udar_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Udar_PICKPOCKET);
 	Info_AddChoice(DIA_Udar_PICKPOCKET,Dialog_Back,DIA_Udar_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Udar_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Udar_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Udar_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Udar_PICKPOCKET_DoIt);
 };
 
 func void DIA_Udar_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Udar_PICKPOCKET);
 };
@@ -524,23 +525,23 @@ func int dia_udar_captured_condition()
 
 func void dia_udar_captured_info()
 {
-	if((MIS_NATANDOLG == LOG_Running) && (UDARKNOWSNATAN == FALSE))
+	if (( MIS_NOTICE  == LOG_Running ) && ( UPDATE  ==  FALSE ))
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_Udar_Captured_01_01");	//Как? (удивленно) И ты здесь? Вот уж не думал, что орки пустят тебя сюда.
-		AI_Output(other,self,"DIA_Udar_Captured_01_04");	//Вы еще не думали о том, чтобы смыться отсюда?
-		AI_Output(self,other,"DIA_Udar_Captured_01_05");	//Эх...(обреченно) Если у нас был хотя бы один шанс это сделать - мы бы уже давно это сделали.
-		AI_Output(other,self,"DIA_Udar_Captured_01_06");	//Полагаю, скоро у вас будет эта возможность.
-		AI_Output(other,self,"DIA_Udar_Captured_01_08");	//А пока скажи - ты знаешь паладина Натана?
-		AI_Output(self,other,"DIA_Udar_Captured_01_09");	//Натана? Да, знаю, конечно.
-		AI_Output(other,self,"DIA_Udar_Captured_01_10");	//Он сказал, что ты когда-то спас ему жизнь. Это так?
-		AI_Output(self,other,"DIA_Udar_Captured_01_11");	//Да! И после всего случившегося, бедный парень почему-то вдолбил себе в голову, что должен непременно отплатить мне тем же самым.
-		AI_Output(self,other,"DIA_Udar_Captured_01_12");	//Хотя я ему не раз говорил, что на моем месте он бы поступил точно так же.
-		AI_Output(self,other,"DIA_Udar_Captured_01_13");	//Но он и слушать меня не хотел! Даже отправился вместе со мной в эту экспедицию, чтобы иметь здесь шанс вернуть мне свой долг чести.
-		AI_Output(self,other,"DIA_Udar_Captured_01_15");	//Ты его тоже знаешь?
-		AI_Output(other,self,"DIA_Udar_Captured_01_16");	//Да, паладин Натан сейчас также находится в Долине Рудников.
-		AI_Output(self,other,"DIA_Udar_Captured_01_17");	//Правда? (грустно) Надеюсь, он не натворит глупостей.
-		B_LogEntry(TOPIC_NATANDOLG,"Я спросил Удара о паладине Натане, и он подтвердил, что действительно когда-то спас жизнь этому парню. Однако Удар был крайне опечален тем, что Натан сейчас находится в Долине Рудников. По его словам, Натан слишком импульсивен, и Удар боится, что желание парня отдать свой долг чести во чтобы то ни стало может плохо для него закончиться.");
+		AI_Output(self,other, " DIA_Udar_Captured_01_01 " );	// How? (surprised) Are you here? I didn't think the orcs would let you in here.
+		AI_Output(other,self, " DIA_Udar_Captured_01_04 " );	// Have you thought about getting out of here yet?
+		AI_Output(self,other, " DIA_Udar_Captured_01_05 " );	// Eh...(doomed) If we had even one chance to do it, we would have done it a long time ago.
+		AI_Output(other,self, " DIA_Udar_Captured_01_06 " );	// I guess you'll have this opportunity soon.
+		AI_Output(other,self, " DIA_Udar_Captured_01_08 " );	// In the meantime, tell me - do you know the paladin Nathan?
+		AI_Output(self,other, " DIA_Udar_Captured_01_09 " );	// Nathan? Yes, I know, of course.
+		AI_Output(other,self, " DIA_Udar_Captured_01_10 " );	// He said you once saved his life. This is true?
+		AI_Output(self,other, " DIA_Udar_Captured_01_11 " );	// Yes! And after everything that happened, the poor guy for some reason drummed into his head that he must certainly repay me in the same way.
+		AI_Output(self,other, " DIA_Udar_Captured_01_12 " );	// Although I told him more than once that in my place he would have done exactly the same.
+		AI_Output(self,other, " DIA_Udar_Captured_01_13 " );	// But he didn't want to listen to me! He even went with me on this expedition in order to have a chance here to return his debt of honor to me.
+		AI_Output(self,other, " DIA_Udar_Captured_01_15 " );	// Do you know him too?
+		AI_Output(other,self, " DIA_Udar_Captured_01_16 " );	// Yes, paladin Nathan is now also in the Valley of Mines.
+		AI_Output(self,other, " DIA_Udar_Captured_01_17 " );	// True? (sadly) I hope he doesn't do something stupid.
+		B_LogEntry( TOPIC_NATANDOLG , " I asked Udar about the paladin Nathan, and he confirmed that he had actually saved the guy's life. However, Udar was extremely saddened that Nathan was now in the Mine Valley. According to him, Nathan is too impulsive, and The blow is afraid that the guy’s desire to pay his debt of honor at all costs may end badly for him. " );
 		UDARKNOWSNATAN = TRUE;
 		AI_StopProcessInfos(self);
 	}
