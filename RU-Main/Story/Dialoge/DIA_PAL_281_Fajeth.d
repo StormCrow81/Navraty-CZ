@@ -1,11 +1,12 @@
 
+
 func int C_SnapperDeath()
 {
-	if(Npc_IsDead(NewMine_Snapper1) && Npc_IsDead(NewMine_Snapper2) && Npc_IsDead(NewMine_Snapper3) && Npc_IsDead(NewMine_Snapper4) && Npc_IsDead(NewMine_Snapper5) && Npc_IsDead(NewMine_Snapper6) && Npc_IsDead(NewMine_Snapper7) && Npc_IsDead(NewMine_Snapper8))
+	if (Npc_IsDead(NewMine_Snapper1) && Npc_IsDead(NewMine_Snapper2) && Npc_IsDead(NewMine_Snapper3) && Npc_IsDead(NewMine_Snapper4) && Npc_IsDead(NewMine_Snapper5) && Npc_IsDead(NewMine_Snapper6) && Npc_IsDead(NewMine_Snapper7) && Npc_IsDead(NewMine_Snapper8)
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 
@@ -44,7 +45,7 @@ instance DIA_Fajeth_First(C_Info)
 
 func int DIA_Fajeth_First_Condition()
 {
-	if(Garond.aivar[AIV_TalkedToPlayer] == FALSE)
+	if (Garond.aivar[AIV_TalkedToPlayer] ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -52,9 +53,9 @@ func int DIA_Fajeth_First_Condition()
 
 func void DIA_Fajeth_First_Info()
 {
-	AI_Output(self,other,"DIA_Fajeth_First_12_00");	//Кто ты такой и что ты делаешь здесь?
-	AI_Output(other,self,"DIA_Fajeth_First_15_01");	//Я пришел по приказу лорда Хагена.
-	AI_Output(self,other,"DIA_Fajeth_First_12_02");	//Тогда тебе нужно попытаться добраться до замка. Командующий Гаронд там. Он главнокомандующий этой экспедицией.
+	AI_Output(self,other, " DIA_Fajeth_First_12_00 " );	// Who are you and what are you doing here?
+	AI_Output(other,self, " DIA_Fajeth_First_15_01 " );	// I have come by order of Lord Hagen.
+	AI_Output(self,other, " DIA_Fajeth_First_12_02 " );	// Then you should try to get to the castle. Commander Garond is there. He is the commander-in-chief of this expedition.
 	AI_StopProcessInfos(self);
 };
 
@@ -80,140 +81,140 @@ func int DIA_Fajeth_Hallo_Condition()
 
 func void DIA_Fajeth_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Fajeth_Hallo_12_00");	//Откуда ты пришел?
-	AI_Output(other,self,"DIA_Fajeth_Hallo_15_01");	//Я пришел по приказу Гаронда.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_12_02");	//Очень хорошо. Мне очень нужны новые люди.
-	AI_Output(other,self,"DIA_Fajeth_Hallo_15_03");	//Я здесь не для того, чтобы помогать тебе.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_12_04");	//Нет? Тогда зачем ты пришел?
-	AI_Output(other,self,"DIA_Fajeth_Hallo_15_05");	//В мою задачу входит выяснить, сколько руды добыто к настоящему моменту.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_12_00 " );	// Where did you come from?
+	AI_Output(other,self, " DIA_Fajeth_Hallo_15_01 " );	// I came by order of Garond.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_12_02 " );	// Very good. I really need new people.
+	AI_Output(other, self, " DIA_Fajeth_Hallo_15_03 " );	// I'm not here to help you.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_12_04 " );	// No? Then why did you come?
+	AI_Output(other,self, " DIA_Fajeth_Hallo_15_05 " );	// It's my job to find out how much ore has been mined so far.
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_06");	//О, достопочтенный маг. Твое присутствие вселяет в меня и моих людей уверенность.
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_07");	//Мы были бы очень благодарны, если бы ты смог использовать данную тебе Инносом силу, чтобы помочь нам.
-		Info_AddChoice(DIA_Fajeth_Hallo,"Что я могу сделать для тебя?",DIA_Fajeth_Hallo_Tun);
-		Info_AddChoice(DIA_Fajeth_Hallo,"Мое задание важнее.",DIA_Fajeth_Hallo_KDFNein);
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_06 " );	// Oh, venerable mage. Your presence gives me and my people confidence.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_07 " );	// We would be very grateful if you could use the power Innos gave you to help us.
+		Info_AddChoice(DIA_Fajeth_Hallo, " What can I do for you? " ,DIA_Fajeth_Hallo_Tun);
+		Info_AddChoice(DIA_Fajeth_Hallo, " My task is more important. " ,DIA_Fajeth_Hallo_KDFNein);
 	}
 	else if(other.guild == GIL_MIL)
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_08");	//И в мое поручение входит предпринимать все для содействия перевозки и защиты руды.
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_09");	//В это входит и защита людей. Ты состоишь на службе Инноса, потому ты выполнишь мои приказы.
-		Info_AddChoice(DIA_Fajeth_Hallo,"Что я могу для тебя сделать?",DIA_Fajeth_Hallo_Tun);
-		Info_AddChoice(DIA_Fajeth_Hallo,"У меня уже есть приказ от Гаронда.",DIA_Fajeth_Hallo_MILNein);
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_08 " );	// And it is my mandate to do everything to facilitate the transportation and protection of the ore.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_09 " );	// This includes protecting people. You are in the service of Innos, so you will follow my orders.
+		Info_AddChoice(DIA_Fajeth_Hallo, " What can I do for you? " ,DIA_Fajeth_Hallo_Tun);
+		Info_AddChoice(DIA_Fajeth_Hallo, " I already have an order from Garond. " ,DIA_Fajeth_Hallo_MILNein);
 	}
 	else if(other.guild == GIL_SLD)
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_10");	//Послушай - я не знаю, зачем Гаронд прислал мне наемника - но должно быть, у него были на то причины.
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_11");	//Но прежде чем я отправлю тебя назад, ты должен выполнить одно задание для меня.
-		Info_AddChoice(DIA_Fajeth_Hallo,"Все имеет свою цену.",DIA_Fajeth_Hallo_SLDJa);
-		Info_AddChoice(DIA_Fajeth_Hallo,"Нет, у меня нет времени...",DIA_Fajeth_Hallo_SLDNein);
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_10 " );	// Look - I don't know why Garond sent me a mercenary - but he must have had his reasons.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_11 " );	// But before I send you back, you must complete one task for me.
+		Info_AddChoice(DIA_Fajeth_Hallo, " Everything has a price. " ,DIA_Fajeth_Hallo_SLDJa);
+		Info_AddChoice(DIA_Fajeth_Hallo, " No, I don't have time... " ,DIA_Fajeth_Hallo_SLDNein);
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_12");	//Слушай - я не знаю, почему Гаронд посылает мне мага Воды вместо отряда паладинов - но он наверно знает, что делает.
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_13");	//Однако прежде чем я отправлю тебя назад, ты выполнишь одно дело для меня.
-		Info_AddChoice(DIA_Fajeth_Hallo,"Что я могу для тебя сделать?.",DIA_Fajeth_Hallo_Tun);
-		Info_AddChoice(DIA_Fajeth_Hallo,"Нет, у меня нет времени...",dia_fajeth_hallo_kdwnein);
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_12 " );	// Look - I don't know why Garond sends me a Watermage instead of a band of paladins - but he probably knows what he's doing.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_13 " );	// However, before I send you back, you'll do one thing for me.
+		Info_AddChoice(DIA_Fajeth_Hallo, " What can I do for you?. " ,DIA_Fajeth_Hallo_Tun);
+		Info_AddChoice(DIA_Fajeth_Hallo, " No, I don't have time... " ,dia_fajeth_hallo_kdwnein);
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_14");	//Слушай - я не знаю, почему Гаронд посылает мне НЕКРОМАНТА вместо отряда паладинов - но он наверно знает, что делает.
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_15");	//Однако прежде чем я отправлю тебя назад, ты выполнишь одно дело для меня.
-		Info_AddChoice(DIA_Fajeth_Hallo,"Что я могу для тебя сделать?.",DIA_Fajeth_Hallo_Tun);
-		Info_AddChoice(DIA_Fajeth_Hallo,"Нет, у меня нет времени...",dia_fajeth_hallo_kdmnein);
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_14 " );	// Look - I don't know why Garond sends me a NECROMANCE instead of a band of paladins - but he probably knows what he's doing.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_15 " );	// However, before I send you back, you'll do one thing for me.
+		Info_AddChoice(DIA_Fajeth_Hallo, " What can I do for you?. " ,DIA_Fajeth_Hallo_Tun);
+		Info_AddChoice(DIA_Fajeth_Hallo, " No, I don't have time... " ,dia_fajeth_hallo_kdmnein);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_16");	//Слушай - я не знаю, почему Гаронд посылает мне одного тебя вместо отряда паладинов - но он наверно знает, что делает.
-		AI_Output(self,other,"DIA_Fajeth_Hallo_12_17");	//Однако прежде чем я отправлю тебя назад, ты выполнишь одно дело для меня.
-		Info_AddChoice(DIA_Fajeth_Hallo,"Что я могу для тебя сделать?.",DIA_Fajeth_Hallo_Tun);
-		Info_AddChoice(DIA_Fajeth_Hallo,"Нет, у меня нет времени...",dia_fajeth_hallo_seknein);
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_16 " );	// Look - I don't know why Garond sends you alone to me instead of a band of paladins - but he probably knows what he's doing.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_12_17 " );	// However, before I send you back, you'll do one thing for me.
+		Info_AddChoice(DIA_Fajeth_Hallo, " What can I do for you?. " ,DIA_Fajeth_Hallo_Tun);
+		Info_AddChoice(DIA_Fajeth_Hallo, " No, I don't have time... " ,dia_fajeth_hallo_seknein);
 	};
 };
 
 func void DIA_Fajeth_Hallo_Tun()
 {
-	AI_Output(other,self,"DIA_Fajeth_Hallo_Tun_15_00");	//Что я могу сделать для тебя?
-	AI_Output(self,other,"DIA_Fajeth_Hallo_Tun_12_01");	//Вот уже несколько дней, орда снепперов бродит вокруг нашего лагеря. Похоже, они просто выжидают подходящей возможности для нападения.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_Tun_12_02");	//Я не знаю, чего они ждут - но пока они здесь, в лагере не будет спокойствия.
-	if(Npc_IsDead(Fed) == FALSE)
+	AI_Output(other,self, " DIA_Fajeth_Hallo_Tun_15_00 " );	// What can I do for you?
+	AI_Output(self,other, " DIA_Fajeth_Hallo_Tun_12_01 " );	// For several days now, a horde of Snappers has been wandering around our camp. They seem to be just waiting for the right opportunity to attack.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_Tun_12_02 " );	// I don't know what they're waiting for - but as long as they're here, there won't be peace in the camp.
+	if (Npc_IsDead(Fed) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_Tun_12_03");	//Фед, помимо всего прочего, напуган ими до смерти - и сводит с ума остальных каторжников.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_Tun_12_03 " );	// Fed is, among other things, scared to death of them - and drives the rest of the convicts crazy.
 	};
-	if(Npc_IsDead(Bilgot) == FALSE)
+	if (Npc_IsDead(Bilgot) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_Tun_12_04");	//И кого мне послать? Билгота? Ха - он тоже слабак.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_Tun_12_04 " );	// And who should I send? Bilgoth? Ha - he's weak too.
 	};
-	if(Npc_IsDead(Tengron) == FALSE)
+	if (Npc_IsDead(Tengron) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Fajeth_Hallo_Tun_12_05");	//Тенгрона? Конечно, он умеет сражаться, но он не обладает хитростью охотника.
+		AI_Output(self,other, " DIA_Fajeth_Hallo_Tun_12_05 " );	// Tengron? Of course, he knows how to fight, but he does not have the cunning of a hunter.
 	};
-	AI_Output(self,other,"DIA_Fajeth_Hallo_Tun_12_06");	//Ты единственный, кто может сделать это. Я хочу, чтобы ты выследил этих чертовых тварей и убил их.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_Tun_12_06 " );	// You are the only one who can do this. I want you to hunt down those damn creatures and kill them.
 	MIS_Fajeth_Kill_Snapper = LOG_Running;
 	Log_CreateTopic(TOPIC_FajethKillSnapper,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FajethKillSnapper,LOG_Running);
-	B_LogEntry(TOPIC_FajethKillSnapper,"Фаджет поручил мне охотиться на снепперов, которые вот уже в течении нескольких дней бродят вокруг лагеря.");
+	B_LogEntry(TOPIC_FajethKillSnapper, " Fajeth has assigned me to hunt the Snappers that have been roaming around the camp for several days. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(NewMine_Snapper7,"OW_PATH_333");
 	Wld_InsertNpc(NewMine_Snapper8,"OW_PATH_333");
 	Wld_InsertNpc(NewMine_Snapper3,"SPAWN_OW_BLOCKGOBBO_CAVE_DM6");
 };
 
-func void DIA_Fajeth_Hallo_KDFNein()
+func void DIA_Fajeth_Hallo_KDFNo()
 {
-	AI_Output(other,self,"DIA_Fajeth_Hallo_KDFNein_15_00");	//Мое задание важнее. Я не могу помочь тебе.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_KDFNein_12_01");	//Конечно, о, достопочтенный. Я сообщу тебе все, что ты желаешь знать.
+	AI_Output(other,self, " DIA_Fajeth_Hallo_KDFNein_15_00 " );	// My task is more important. I can not help you.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_KDFNein_12_01 " );	// Of course, oh venerable one. I will tell you everything you want to know.
 	MIS_Fajeth_Kill_Snapper = LOG_OBSOLETE;
 	Info_ClearChoices(DIA_Fajeth_Hallo);
 };
 
-func void DIA_Fajeth_Hallo_MILNein()
+func void DIA_Fajeth_Hello_MILNo()
 {
-	AI_Output(other,self,"DIA_Fajeth_Hallo_MILNein_15_00");	//У меня уже есть приказ. От Гаронда.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_MILNein_12_01");	//И ты выполнишь его. Но только после того, как я отпущу тебя.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_MILNein_12_02");	//Единственное, что я хочу слышать от тебя -это 'Что я могу сделать?' Понятно?
+	AI_Output(other,self, " DIA_Fajeth_Hallo_MILNein_15_00 " );	// I already have an order. From Garon.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_MILNein_12_01 " );	// And you will complete it. But only after I let you go.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_MILNein_12_02 " );	// The only thing I want to hear from you is 'What can I do?' Clear?
 };
 
 func void DIA_Fajeth_Hallo_SLDJa()
 {
-	AI_Output(other,self,"DIA_Fajeth_Hallo_SLDJa_15_00");	//У всего есть своя цена. Если ты заплатишь мне, возможно, я и соглашусь.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_SLDJa_12_01");	//Я не привык вести дела с наемниками. Я ненавижу торговаться, чтобы снизить цену.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_SLDJa_12_02");	//Но в знак проявления моей доброй воли, я заплачу тебе сто золотых, если ты выполнишь эту работу для меня.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_SLDJa_12_03");	//Ну как, по рукам?
+	AI_Output(other,self, " DIA_Fajeth_Hallo_SLDJa_15_00 " );	// Everything has a price. If you pay me, maybe I'll take it.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_SLDJa_12_01 " );	// I'm not used to doing business with mercenaries. I hate haggling to get the price down.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_SLDJa_12_02 " );	// But as a token of my goodwill, I will pay you a hundred gold if you do this job for me.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_SLDJa_12_03 " );	// Well, how's the deal?
 	Fajeth_Pay = TRUE;
 	Info_ClearChoices(DIA_Fajeth_Hallo);
-	Info_AddChoice(DIA_Fajeth_Hallo,"Что я могу сделать для тебя?",DIA_Fajeth_Hallo_Tun);
-	Info_AddChoice(DIA_Fajeth_Hallo,"Нет, меня нет времени.",DIA_Fajeth_Hallo_SLDNein);
+	Info_AddChoice(DIA_Fajeth_Hallo, " What can I do for you? " ,DIA_Fajeth_Hallo_Tun);
+	Info_AddChoice(DIA_Fajeth_Hallo, " No, I don't have time. " ,DIA_Fajeth_Hallo_SLDNein);
 };
 
 func void DIA_Fajeth_Hallo_SLDNein()
 {
-	AI_Output(other,self,"DIA_Fajeth_Hallo_SLDNein_15_00");	//Нет, у меня нет времени заботиться о твоей проблеме.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_SLDNein_12_01");	//Ты выбиваешь легкие деньги? Я не ожидал этого от наемника.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_SLDNein_12_02");	//Так как ты не хочешь помочь нам, задавай вопросы и исчезни.
+	AI_Output(other,self, " DIA_Fajeth_Hallo_SLDNein_15_00 " );	// No, I don't have time to take care of your problem.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_SLDNein_12_01 " );	// Are you making easy money? I did not expect this from a mercenary.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_SLDNein_12_02 " );	// Since you don't want to help us, ask questions and disappear.
 	MIS_Fajeth_Kill_Snapper = LOG_OBSOLETE;
 	Info_ClearChoices(DIA_Fajeth_Hallo);
 };
 
-func void dia_fajeth_hallo_kdwnein()
+func void dia_fajeth_hello_kdwnein()
 {
-	AI_Output(other,self,"DIA_Fajeth_Hallo_KDWNein_15_00");	//Нет, у меня нет времени заботиться о твоей проблеме.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_KDWNein_12_01");	//Ну что же! Тогда придется решать проблему самому. Спасибо хотя бы, что выслушал меня.
+	AI_Output(other,self, " DIA_Fajeth_Hallo_KDWNein_15_00 " );	// No, I don't have time to take care of your problem.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_KDWNein_12_01 " );	// Well! Then you have to solve the problem yourself. Thank you at least for listening to me.
 	MIS_Fajeth_Kill_Snapper = LOG_OBSOLETE;
 	Info_ClearChoices(DIA_Fajeth_Hallo);
 };
 
-func void dia_fajeth_hallo_kdmnein()
+func void dia_fajeth_hello_kdmnein()
 {
-	AI_Output(other,self,"DIA_Fajeth_Hallo_KDMNein_15_00");	//Нет, у меня нет времени заботиться о твоей проблеме.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_KDMNein_12_01");	//Ну что же! Тогда придется решать проблему самому. Спасибо хотя бы, что выслушал меня.
+	AI_Output(other,self, " DIA_Fajeth_Hallo_KDMNein_15_00 " );	// No, I don't have time to take care of your problem.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_KDMNein_12_01 " );	// Well! Then you have to solve the problem yourself. Thank you at least for listening to me.
 	MIS_Fajeth_Kill_Snapper = LOG_OBSOLETE;
 	Info_ClearChoices(DIA_Fajeth_Hallo);
 };
 
-func void dia_fajeth_hallo_seknein()
+func void dia_fajeth_hello_seknein()
 {
-	AI_Output(other,self,"DIA_Fajeth_Hallo_SEKNein_15_00");	//Нет, у меня нет времени заботиться о твоей проблеме.
-	AI_Output(self,other,"DIA_Fajeth_Hallo_SEKNein_12_01");	//Ну что же! Тогда придется решать проблему самому. Спасибо хотя бы, что выслушал меня.
+	AI_Output(other,self, " DIA_Fajeth_Hallo_SEKNein_15_00 " );	// No, I don't have time to take care of your problem.
+	AI_Output(self,other, " DIA_Fajeth_Hallo_SEKNein_12_01 " );	// Well! Then you have to solve the problem yourself. Thank you at least for listening to me.
 	MIS_Fajeth_Kill_Snapper = LOG_OBSOLETE;
 	Info_ClearChoices(DIA_Fajeth_Hallo);
 };
@@ -226,7 +227,7 @@ instance DIA_Fajeth_Leader(C_Info)
 	condition = DIA_Fajeth_Leader_Condition;
 	information = DIA_Fajeth_Leader_Info;
 	permanent = FALSE;
-	description = "Я убил вожака стаи.";
+	description = " I killed the leader of the pack. " ;
 };
 
 
@@ -240,8 +241,8 @@ func int DIA_Fajeth_Leader_Condition()
 
 func void DIA_Fajeth_Leader_Info()
 {
-	AI_Output(other,self,"DIA_Fajeth_Leader_15_00");	//Я убил предводителя снепперов.
-	AI_Output(self,other,"DIA_Fajeth_Leader_12_01");	//Хорошо. Без предводителя они не так опасны. Я думаю, теперь возможно они не будут больше нападать на нас.
+	AI_Output(other,self, " DIA_Fajeth_Leader_15_00 " );	// I killed the snapper leader.
+	AI_Output(self,other, " DIA_Fajeth_Leader_12_01 " );	// Good. Without a leader, they are not so dangerous. I think now maybe they won't attack us anymore.
 	B_GivePlayerXP(150);
 };
 
@@ -253,7 +254,7 @@ instance DIA_Fajeth_SNAPPER_KILLED(C_Info)
 	condition = DIA_Fajeth_SNAPPER_KILLED_Condition;
 	information = DIA_Fajeth_SNAPPER_KILLED_Info;
 	permanent = TRUE;
-	description = "Со снепперами покончено.";
+	description = " Snappers are over. " ;
 };
 
 
@@ -267,11 +268,11 @@ func int DIA_Fajeth_SNAPPER_KILLED_Condition()
 
 func void DIA_Fajeth_SNAPPER_KILLED_Info()
 {
-	AI_Output(hero,self,"DIA_Fajeth_SNAPPER_KILLED_15_00");	//Со снепперами покончено.
-	AI_Output(self,hero,"DIA_Fajeth_SNAPPER_KILLED_12_01");	//Отлична работа. А с остальными зверями мы сами разберемся.
+	AI_Output(hero,self, " DIA_Fajeth_SNAPPER_KILLED_15_00 " );	// Snappers are done.
+	AI_Output(self,hero, " DIA_Fajeth_SNAPPER_KILLED_12_01 " );	// Great job. And we will deal with the rest of the animals ourselves.
 	if(Fajeth_Pay == TRUE)
 	{
-		AI_Output(self,hero,"DIA_Fajeth_SNAPPER_KILLED_12_02");	//Ты заработал свое золото - вот 100 монет, как и договаривались.
+		AI_Output(self,hero, " DIA_Fajeth_SNAPPER_KILLED_12_02 " );	// You've earned your gold - here's 100 coins, as agreed.
 		B_GiveInvItems(self,other,ItMi_Gold,100);
 	};
 	Fajeth.flags = 0;
@@ -287,7 +288,7 @@ instance DIA_Fajeth_Running(C_Info)
 	condition = DIA_Fajeth_Running_Condition;
 	information = DIA_Fajeth_Running_Info;
 	permanent = TRUE;
-	description = "Как настроение у твоих людей?";
+	description = " How are your people feeling? " ;
 };
 
 
@@ -301,24 +302,24 @@ func int DIA_Fajeth_Running_Condition()
 
 func void DIA_Fajeth_Running_Info()
 {
-	AI_Output(other,self,"DIA_Fajeth_Running_15_00");	//Как настроение у твоих людей?
-	AI_Output(self,other,"DIA_Fajeth_Running_12_01");	//Ты хочешь узнать, каково настроение моих людей? Да они еле могут работать от страха!
-	AI_Output(self,other,"DIA_Fajeth_Running_12_02");	//Разберись с этими снепперами, или кто-нибудь сорвется!
+	AI_Output(other,self, " DIA_Fajeth_Running_15_00 " );	// How are your people feeling?
+	AI_Output(self,other, " DIA_Fajeth_Running_12_01 " );	// Do you want to know what the mood of my people is? Yes, they can barely work from fear!
+	AI_Output(self,other, " DIA_Fajeth_Running_12_02 " );	// Deal with these snappers or someone's going to snap!
 };
 
 
-instance DIA_Fajeth_BELOHNUNG(C_Info)
+instance DIA_Fajeth_REWARD (C_Info)
 {
 	npc = PAL_281_Fajeth;
 	nr = 3;
-	condition = DIA_Fajeth_BELOHNUNG_Condition;
-	information = DIA_Fajeth_BELOHNUNG_Info;
+	condition = DIA_Fajeth_REWARD_Condition;
+	information = DIA_Fajeth_REWARD_Info;
 	permanent = FALSE;
-	description = "Скажи мне, сколько руды удалось вам добыть.";
+	description = " Tell me how much ore you have mined. " ;
 };
 
 
-func int DIA_Fajeth_BELOHNUNG_Condition()
+func int DIA_Fajeth_REWARD_Condition()
 {
 	if((MIS_Fajeth_Kill_Snapper == LOG_SUCCESS) || (MIS_Fajeth_Kill_Snapper == LOG_OBSOLETE))
 	{
@@ -326,16 +327,16 @@ func int DIA_Fajeth_BELOHNUNG_Condition()
 	};
 };
 
-func void DIA_Fajeth_BELOHNUNG_Info()
+func void DIA_Fajeth_REWARD_Info()
 {
-	AI_Output(other,self,"DIA_Fajeth_BELOHNUNG_15_00");	//Скажи мне, сколько руды удалось вам добыть.
-	AI_Output(self,other,"DIA_Fajeth_BELOHNUNG_12_01");	//Доложи Гаронду, что мы смогли добыть только ДВА ящика руды.
-	AI_Output(self,other,"DIA_Fajeth_BELOHNUNG_12_02");	//Из-за постоянных нападений на нас мы потеряли очень много людей.
-	AI_Output(self,other,"DIA_Fajeth_BELOHNUNG_12_03");	//Если Гаронд сможет прислать подкрепление, мы сможем добывать больше руды.
-	AI_Output(other,self,"DIA_Fajeth_BELOHNUNG_15_04");	//Понятно. Я так и передам ему.
-	AI_Output(self,other,"DIA_Fajeth_BELOHNUNG_12_05");	//Хорошо. Мы надеемся на тебя. И будем удерживать наши позиции до последнего.
+	AI_Output(other,self, " DIA_Fajeth_BELOHNUNG_15_00 " );	// Tell me how much ore you have mined.
+	AI_Output(self,other, " DIA_Fajeth_BELOHNUNG_12_01 " );	// Report to Garond that we've only been able to mine TWO crates of ore.
+	AI_Output(self,other, " DIA_Fajeth_BELOHNUNG_12_02 " );	// Because of the constant attacks on us, we lost a lot of people.
+	AI_Output(self,other, " DIA_Fajeth_BELOHNUNG_12_03 " );	// If Garond can send reinforcements, we can mine more ore.
+	AI_Output(other,self, " DIA_Fajeth_BELOHNUNG_15_04 " );	// Got it. I will pass it on to him.
+	AI_Output(self,other, " DIA_Fajeth_BELOHNUNG_12_05 " );	// Good. We rely on you. And we will hold our positions to the last.
 	Fajeth_Ore = TRUE;
-	B_LogEntry(TOPIC_ScoutMine,"Старатели Фаджета смогли добыть ДВА ящика руды.");
+	B_LogEntry(TOPIC_ScoutMine, " Fudget's miners were able to mine TWO crates of ore. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -347,13 +348,13 @@ instance DIA_Fajeth_Perm2(C_Info)
 	condition = DIA_Fajeth_Perm2_Condition;
 	information = DIA_Fajeth_Perm2_Info;
 	permanent = TRUE;
-	description = "Как идет добыча руды?";
+	description = " How is the ore mining going? " ;
 };
 
 
 func int DIA_Fajeth_Perm2_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Fajeth_BELOHNUNG) && (Kapitel == 2))
+	if ( Npc_KnowsInfo ( other , DIA_Fajeth_BELOW ) && ( Capital ==  2 )) ;
 	{
 		return TRUE;
 	};
@@ -361,10 +362,10 @@ func int DIA_Fajeth_Perm2_Condition()
 
 func void DIA_Fajeth_Perm2_Info()
 {
-	AI_Output(other,self,"DIA_Fajeth_Perm2_15_00");	//Как идет добыча руды?
-	AI_Output(self,other,"DIA_Fajeth_Perm2_12_01");	//Плохо. Прогресса почти нет.
-	AI_Output(self,other,"DIA_Fajeth_Perm2_12_02");	//Когда мы прибыли сюда, сначала все шло хорошо - но теперь мои парни не добывают почти ничего кроме обломков. Ничего стоящего.
-	AI_Output(self,other,"DIA_Fajeth_Perm2_12_03");	//Но мы не отступим - по крайней мере, пока я командую здесь.
+	AI_Output(other,self, " DIA_Fajeth_Perm2_15_00 " );	// How is ore mining going?
+	AI_Output(self,other, " DIA_Fajeth_Perm2_12_01 " );	// Bad. Almost no progress.
+	AI_Output(self,other, " DIA_Fajeth_Perm2_12_02 " );	// When we got here, everything went well at first - but now my guys mine almost nothing but debris. Nothing worthwhile.
+	AI_Output(self,other, " DIA_Fajeth_Perm2_12_03 " );	// But we won't back down - at least not as long as I'm in command here.
 };
 
 
@@ -375,13 +376,13 @@ instance DIA_Fajeth_ERZABBAU(C_Info)
 	condition = DIA_Fajeth_ERZABBAU_Condition;
 	information = DIA_Fajeth_ERZABBAU_Info;
 	permanent = TRUE;
-	description = "Как идет добыча руды?";
+	description = " How is the ore mining going? " ;
 };
 
 
 func int DIA_Fajeth_ERZABBAU_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Fajeth_BELOHNUNG) && (Kapitel >= 3))
+	if ( Npc_KnowsInfo ( other , DIA_Fajeth_BELOW ) && ( Capital >=  3 )) ;
 	{
 		return TRUE;
 	};
@@ -389,16 +390,16 @@ func int DIA_Fajeth_ERZABBAU_Condition()
 
 func void DIA_Fajeth_ERZABBAU_Info()
 {
-	AI_Output(other,self,"DIA_Fajeth_ERZABBAU_15_00");	//Как идет добыча руды?
+	AI_Output(other,self, " DIA_Fajeth_ERZABBAU_15_00 " );	// How is ore mining going?
 	if(MIS_AllDragonsDead == TRUE)
 	{
-		AI_Output(self,other,"DIA_Fajeth_ERZABBAU_12_01");	//Здесь стало спокойнее. С чего бы это?
-		AI_Output(other,self,"DIA_Fajeth_ERZABBAU_15_02");	//Драконы мертвы.
-		AI_Output(self,other,"DIA_Fajeth_ERZABBAU_12_03");	//Ох, тогда я надеюсь, что подкрепления ждать недолго. Я все время теряю своих людей.
+		AI_Output(self,other, " DIA_Fajeth_ERZABBAU_12_01 " );	// It's calmer here. Why did it happen?
+		AI_Output(other,self, " DIA_Fajeth_ERZABBAU_15_02 " );	// The dragons are dead.
+		AI_Output(self,other, " DIA_Fajeth_ERZABBAU_12_03 " );	// Oh, then I hope reinforcements don't take long. I lose my people all the time.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fajeth_ERZABBAU_12_04");	//Да ты сам это видишь...
+		AI_Output(self,other, " DIA_Fajeth_ERZABBAU_12_04 " );	// Yes, you can see it yourself...
 	};
 };
 
@@ -416,7 +417,7 @@ instance DIA_Fajeth_PICKPOCKET(C_Info)
 
 func int DIA_Fajeth_PICKPOCKET_Condition()
 {
-	return C_Beklauen(56,95);
+	return  C_Robbery ( 56 , 95 );
 };
 
 func void DIA_Fajeth_PICKPOCKET_Info()
@@ -428,7 +429,7 @@ func void DIA_Fajeth_PICKPOCKET_Info()
 
 func void DIA_Fajeth_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Fajeth_PICKPOCKET);
 };
