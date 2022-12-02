@@ -1,4 +1,5 @@
 
+
 instance DIA_CAMPER01_EXIT(C_Info)
 {
 	npc = xbs_7501_camper;
@@ -34,7 +35,7 @@ instance DIA_CAMPER01_PICKPOCKET(C_Info)
 
 func int dia_camper01_pickpocket_condition()
 {
-	return C_Beklauen(25,30);
+	return  C_Robbery ( 25 , 30 );
 };
 
 func void dia_camper01_pickpocket_info()
@@ -46,7 +47,7 @@ func void dia_camper01_pickpocket_info()
 
 func void dia_camper01_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_camper01_pickpocket);
 };
 
@@ -56,7 +57,7 @@ func void dia_camper01_pickpocket_back()
 };
 
 
-instance DIA_CAMPER01_HALLO(C_Info)
+instance DIA_CAMPER01_HELLO (C_Info)
 {
 	npc = xbs_7501_camper;
 	nr = 2;
@@ -77,49 +78,49 @@ func int dia_camper01_hallo_condition()
 
 func void dia_camper01_hallo_info()
 {
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_00");	//Эй, парень! Ты, случайно, не на болота ли собрался?!
-	AI_Output(other,self,"DIA_Camper01_Hallo_01_01");	//Возможно. А что?
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_02");	//А то, что теперь туда лучше не ходить. Там стало слишком опасно!
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_04");	//Там обосновались какие-то странные люди в черных рясах. И скажу тебе честно: лучше держаться от них подальше - они пахнут смертью!
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_05");	//Сами же болота кишат разными опасными тварями и вдобавок ко всему еще странного рода существами, похожими на ящеров.
-	AI_Output(other,self,"DIA_Camper01_Hallo_01_07");	//А что стало с прежними обитателями лагеря?
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_08");	//Эх... большинство из них либо погибло, либо сошло с ума...
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_09");	//Правда, как я слышал, некоторым все-таки удалось выбраться живыми из этой долины.
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_10");	//Ну а те, кто не успел этого сделать, - например, как я, - ушли в другое место.
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_12");	//Теперь наше новое пристанище находится в развалинах старого монастыря на севере от этого места.
-	AI_Output(other,self,"DIA_Camper01_Hallo_01_14");	//Кто вами руководит?
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_15");	//Его имя - Нетбек! Он быший Гуру Братства Спящего.
-	AI_Output(other,self,"DIA_Camper01_Hallo_01_16");	//Постой, это не тот ли парень, что постоянно разговаривал с деревьями?
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_17");	//Да, именно он. А ты его знаешь?
-	AI_Output(other,self,"DIA_Camper01_Hallo_01_18");	//Встречал раньше. Кажется, он был всегда немного не в себе.
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_19");	//(серьезно) Я бы на твоем месте не стал так говорить.
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_21");	//Если бы не он - нам всем бы пришлось очень туго.
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_22");	//С помощью своей магии он прогнал отсюда всех этих мерзких орков, и теперь здесь растет только этот прекрасный лес!
-	AI_Output(other,self,"DIA_Camper01_Hallo_01_23");	//Как?! Неужели тут больше нет ни одной из этих зеленокожих тварей?
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_24");	//Ну... почти. Конечно, на побережье их много, но в лес они заходить боятся.
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_25");	//Так что здесь вполне безопасно, как и у нас в лагере.
-	AI_Output(self,other,"DIA_Camper01_Hallo_01_26");	//Кстати, если хочешь, могу показать отвести тебя туда, а то мне уже надоело торчать тут.
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_00 " );	// Hey man! Are you, by any chance, going to the swamps?!
+	AI_Output(other,self, " DIA_Camper01_Hallo_01_01 " );	// Possibly. And what?
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_02 " );	// And the fact that now it's better not to go there. It has become too dangerous!
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_04 " );	// Some strange people in black cassocks settled there. And I'll tell you honestly: it's better to stay away from them - they smell of death!
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_05 " );	// The swamps themselves are teeming with various dangerous creatures and, in addition to everything else, strange kind of creatures that look like lizards.
+	AI_Output(other, self, " DIA_Camper01_Hallo_01_07 " );	// And what happened to the former inhabitants of the camp?
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_08 " );	// Eh... most of them either died or went insane...
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_09 " );	// However, as I heard, some still managed to get out of this valley alive.
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_10 " );	// Well, those who did not have time to do this - for example, like me - went to another place.
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_12 " );	// Now our new home is in the ruins of an old monastery to the north of this place.
+	AI_Output(other,self, " DIA_Camper01_Hallo_01_14 " );	// Who is in charge of you?
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_15 " );	// His name is Netback! He is the former Guru of the Brotherhood of the Sleeper.
+	AI_Output(other,self, " DIA_Camper01_Hallo_01_16 " );	// Wait, isn't that the guy that was talking to the trees all the time?
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_17 " );	// Yes, it is. Do you know him?
+	AI_Output(other,self, " DIA_Camper01_Hallo_01_18 " );	// Met before. He seems to have always been a little out of his mind.
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_19 " );	// (seriously) I wouldn't say that if I were you.
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_21 " );	// If it weren't for him, we'd all be in a really hard time.
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_22 " );	// With his magic, he drove all those nasty orcs out of here, and now only this beautiful forest grows here!
+	AI_Output(other,self, " DIA_Camper01_Hallo_01_23 " );	// How?! Aren't any of those green-skinned creatures here anymore?
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_24 " );	// Well... almost. Of course, there are many of them on the coast, but they are afraid to enter the forest.
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_25 " );	// So it's quite safe here, just like in our camp.
+	AI_Output(self,other, " DIA_Camper01_Hallo_01_26 " );	// By the way, if you want, I can show you to take you there, otherwise I'm already tired of hanging around here.
 	Log_CreateTopic(TOPIC_XBS,LOG_NOTE);
-	B_LogEntry(TOPIC_XBS,"Часть Братства Спящего обосновалась в лагере на месте старого монастыря.");
+	B_LogEntry( TOPIC_XBS , " Part of the Brotherhood of the Sleeper has set up camp at the site of an old monastery. " );
 	Info_ClearChoices(dia_camper01_hallo);
-	Info_AddChoice(dia_camper01_hallo,"Конечно! Идем.",dia_camper01_hallo_gobase);
-	Info_AddChoice(dia_camper01_hallo,"Не стоит! Я как-нибудь сам.",dia_camper01_hallo_nobase);
+	Info_AddChoice(dia_camper01_hallo, " Of course! Let's go. " ,dia_camper01_hallo_gobase);
+	Info_AddChoice(dia_camper01_hallo, " Don't! I'll do it myself somehow. " ,dia_camper01_hallo_nobase);
 };
 
 func void dia_camper01_hallo_nobase()
 {
-	AI_Output(other,self,"DIA_Camper01_Hallo_NoBase_15_01");	//Не стоит! Я как-нибудь сам.
-	AI_Output(self,other,"DIA_Camper01_Hallo_NoBase_01_01");	//Ладно! Как скажешь.
+	AI_Output(other,self, " DIA_Camper01_Hallo_NoBase_15_01 " );	// Don't! I'm on my own somehow.
+	AI_Output(self,other, " DIA_Camper01_Hallo_NoBase_01_01 " );	// Okay! As you say.
 	AI_StopProcessInfos(self);
 	CAMPER_7501_TALK = TRUE;
 };
 
 func void dia_camper01_hallo_gobase()
 {
-	AI_Output(other,self,"DIA_Camper01_Hallo_GoBase_15_01");	//Конечно! Идем.
-	AI_Output(self,other,"DIA_Camper01_Hallo_GoBase_01_01");	//Тогда держись за мной.
+	AI_Output(other,self, " DIA_Camper01_Hallo_GoBase_15_01 " );	// Of course! Let's go.
+	AI_Output(self,other, " DIA_Camper01_Hallo_GoBase_01_01 " );	// Then follow me.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"GUIDETOCAMP");
 	CAMPER_7501_TALK = FALSE;
 };
@@ -145,9 +146,9 @@ func int dia_camper01_arrivedbase_condition()
 
 func void dia_camper01_arrivedbase_info()
 {
-	AI_Output(self,other,"DIA_Camper01_ArrivedBase_01_00");	//Вот мы и пришли!
-	AI_Output(self,other,"DIA_Camper01_ArrivedBase_01_01");	//Здесь можно чувствовать себя в полной безопасности.
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(self,other, " DIA_Camper01_ArrivedBase_01_00 " );	// Here we are!
+	AI_Output(self,other, " DIA_Camper01_ArrivedBase_01_01 " );	// Here you can feel completely safe.
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	self.flags = 0;
 	Npc_ExchangeRoutine(self,"STAYINCAMP");
 	b_heroknowforestbase();
@@ -162,7 +163,7 @@ instance DIA_CAMPER01_HALLO2(C_Info)
 	condition = dia_camper01_hallo2_condition;
 	information = dia_camper01_hallo2_info;
 	permanent = TRUE;
-	description = "Я бы не прочь отправиться в лагерь.";
+	description = " I'd love to go camping. " ;
 };
 
 
@@ -176,10 +177,10 @@ func int dia_camper01_hallo2_condition()
 
 func void dia_camper01_hallo2_info()
 {
-	AI_Output(other,self,"DIA_Camper01_Hallo2_01_00");	//Я бы не прочь отправиться в лагерь.
+	AI_Output(other,self, " DIA_Camper01_Hallo2_01_00 " );	// I wouldn't mind going to camp.
 	AI_Output(self,other,"DIA_Camper01_Hallo2_01_01");	//Ты уверен?
 	Info_ClearChoices(dia_camper01_hallo2);
-	Info_AddChoice(dia_camper01_hallo2,"Пока нет.",dia_camper01_hallo_nobase);
+	Info_AddChoice(dia_camper01_hallo2, " Not yet. " ,dia_camper01_hallo_nobase);
 	Info_AddChoice(dia_camper01_hallo2,"Да! Пошли.",dia_camper01_hallo_gobase);
 };
 
@@ -193,7 +194,7 @@ instance DIA_CAMPER01_BASERUMORS_RUMORS(C_Info)
 	condition = dia_camper01_baserumors_rumors_condition;
 	information = dia_camper01_baserumors_rumors_info;
 	permanent = TRUE;
-	description = "Что слышно в лагере?";
+	description = " What do you hear in the camp? " ;
 };
 
 
@@ -208,66 +209,66 @@ func int dia_camper01_baserumors_rumors_condition()
 func void dia_camper01_baserumors_rumors_info()
 {
 	b_heroknowforestbase();
-	AI_Output(other,self,"DIA_Camper01_BaseRumors_Rumors_01_00");	//Что слышно в лагере?
+	AI_Output(other,self, " DIA_Camper01_BaseRumors_Rumors_01_00 " );	// What is heard in the camp?
 
 	if((MIS_OCCOOKFLEE == LOG_SUCCESS) && (CAMPER01ABOUTCOOK == FALSE))
 	{
 		CAMPER01ABOUTCOOK = TRUE;
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_01");	//Главная новость - новый человек в лагере!
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_02");	//А в остальном - как обычно.
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_01 " );	// The main news is a new person in the camp!
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_02 " );	// And the rest - as usual.
 	};
-	if(Kapitel == 1)
+	if (chapter ==  1 )
 	{
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_03");	//Сейчас мы наблюдаем, как драконы совершают налеты на замок.
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_04");	//Ребята уже делают ставки - что обрушится в следующий раз.
-		COAST_WASINKAPITEL1 = TRUE;
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_03 " );	// Now we're watching the dragons raid the castle.
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_04 " );	// The guys are already betting on what will collapse next.
+		COAST_WASINKAPITEL1 = TRUE ;
 	}
-	else if(Kapitel == 2)
+	else  if (chapter ==  2 )
 	{
-		if(COAST_WASINKAPITEL1 == TRUE)
+		if ( COAST_WASINKAPITEL1  ==  TRUE )
 		{
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_05");	//Продолжаем наблюдать за драконами.
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_06");	//Один из них даже пытался подпалить наш лес, но потом удрал.
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_05 " );	// Continue watching dragons.
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_06 " );	// One of them even tried to set fire to our forest, but then ran away.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_07");	//С интересом наблюдаем, как драконы совершают налеты на замок.
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_08");	//Ребята уже делают ставки - что обрушится в следующий раз.
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_07 " );	// Watch with interest as the dragons raid the castle.
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_08 " );	// The guys are already betting on what will collapse next.
 		};
 	}
-	else if(Kapitel == 3)
+	else  if (chapter ==  3 )
 	{
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_09");	//На берегу у водопада видели странных парней в черном.
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_10");	//Они долго стояли и смотрели. Туда, где когда-то был лагерь нашего Братства.
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_11");	//Почему-то у меня волосы на голове шевелятся.
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_09 " );	// Strange guys in black were seen on the shore near the waterfall.
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_10 " );	// They stood and watched for a long time. Where once was the camp of our Brotherhood.
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_11 " );	// For some reason, the hair on my head is moving.
 	}
-	else if(Kapitel == 4)
+	else  if (chapter ==  4 )
 	{
 		if(MIS_AllDragonsDead == TRUE)
 		{
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_12");	//Большинство разговоров только о драконах!
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_13");	//Кажется, все парни очень рады, что их больше тут нет.
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_12 " );	// Most talk about dragons!
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_13 " );	// All the guys seem to be very happy that they are no longer here.
 		}
 		else if(MIS_KilledDragons > 0)
 		{
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_14");	//Говорят, что ты убил уже несколько драконов!
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_15");	//Если бы все были такие неугомонные, как ты, - все могло было быть иначе.
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_14 " );	// They say you've killed several dragons already!
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_15 " );	// If everyone were as restless as you, things could be different.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_16");	//Говорят, что новый отряд орков высадился на побережье и двинулся прямиком к замку.
-			AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_17");	//Чувствую, скоро орки пойдут на очередной штурм!
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_16 " );	// It is said that a new band of orcs landed on the coast and headed straight for the castle.
+			AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_17 " );	// I feel that soon the orcs will attack again!
 		};
 	}
 	else if(MIS_OCGateOpen == TRUE)
 	{
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_18");	//Орки штурмовали замок. Какой-то ублюдок открыл им ворота.
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_19");	//Не то чтобы мы все тут очень любили паладинов, но мне просто очень жаль тех ребят!
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_18 " );	// Orcs stormed the castle. Some bastard opened the gate for them.
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_19 " );	// It's not that we all really like paladins around here, but I just really feel bad for those guys!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_20");	//Осада продолжается, но это уже не так интересно, как раньше.
-		AI_Output(self,other,"DIA_Camper01_BaseRumors_Rumors_01_21");	//Когда тут летали эти драконы - было куда веселее.
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_20 " );	// The siege continues, but it's not as interesting as it used to be.
+		AI_Output(self,other, " DIA_Camper01_BaseRumors_Rumors_01_21 " );	// When those dragons were flying around, it was much more fun.
 	};
 };
 
@@ -279,7 +280,7 @@ instance DIA_CAMPER01_ABOUTTRADE(C_Info)
 	condition = dia_camper01_abouttrade_condition;
 	information = dia_camper01_abouttrade_info;
 	permanent = FALSE;
-	description = "Ты тут, в лагере чем-то приторговываешь?";
+	description = " Are you selling something here in the camp? " ;
 };
 
 func int dia_camper01_abouttrade_condition()
@@ -292,10 +293,10 @@ func int dia_camper01_abouttrade_condition()
 
 func void dia_camper01_abouttrade_info()
 {
-	AI_Output(other,self,"DIA_Camper01_AboutTRADE_15_00");	//Ты что-нибудь продаешь?
-	AI_Output(self,other,"DIA_Camper01_AboutTRADE_01_01");	//Угадал! То, что делаю сам или собираю, бродя по лесу.
+	AI_Output(other,self, " DIA_Camper01_AboutTRADE_15_00 " );	// Do you sell anything?
+	AI_Output(self,other, " DIA_Camper01_AboutTRADE_01_01 " );	// Guessed! What I do myself or collect, wandering through the forest.
 	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
-	B_LogEntry(TOPIC_Trader_OC,"Исидро продает товары в лагере Нетбека.");
+	B_LogEntry(TOPIC_Trader_OC, " Ysidro sells goods in the Netback camp. " );
 };
 
 
@@ -307,7 +308,7 @@ instance DIA_CAMPER01_TRADE(C_Info)
 	information = dia_camper01_trade_info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи свои товары.";
+	description = " Show your products. " ;
 };
 
 func int dia_camper01_trade_condition()
@@ -326,20 +327,20 @@ func void dia_camper01_trade_info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Camper01_TRADE_15_00");	//Покажи свои товары.
+	AI_Output(other,self, " DIA_Camper01_TRADE_15_00 " );	// Display your products.
 	AI_Output(self,other,"DIA_Camper01_TRADE_01_01");	//Выбирай.
 	B_GiveTradeInv(self);
 };
 
 
-instance DIA_CAMPER01_DRAKAR(C_Info)
+instance DIA_CAMPER01_DRAKAR (C_Info)
 {
 	npc = xbs_7501_camper;
 	nr = 2;
 	condition = dia_camper01_drakar_condition;
-	information = dia_camper01_drakar_info;
+	info = dia_camper01_drakar_info;
 	permanent = FALSE;
-	description = "А что это за корабль там внизу?";
+	description = " What's that ship down there? " ;
 };
 
 
@@ -353,29 +354,29 @@ func int dia_camper01_drakar_condition()
 
 func void dia_camper01_drakar_info()
 {
-	AI_Output(other,self,"DIA_Camper01_Drakar_01_00");	//А что это за корабль там внизу?
-	AI_Output(self,other,"DIA_Camper01_Drakar_01_01");	//Парень, это же боевой дракар орков!
-	AI_Output(self,other,"DIA_Camper01_Drakar_01_07");	//Этот корабль обычно доставляет новые подкрепления для осады замка.
-	AI_Output(other,self,"DIA_Camper01_Drakar_01_10");	//И как часто сюда прибывают новые отряды?
-	AI_Output(self,other,"DIA_Camper01_Drakar_01_11");	//Точно не знаю... Но как раз пару дней назад этот дракар привез сюда очередную партию этих тварей.
-	AI_Output(self,other,"DIA_Camper01_Drakar_01_12");	//Эх... и будем надеяться, что они не решат наведаться к нам в лагерь.
+	AI_Output(other,self, " DIA_Camper01_Drakar_01_00 " );	// What's that ship down there?
+	AI_Output(self,other, " DIA_Camper01_Drakar_01_01 " );	// Man, that's an orc war drakar!
+	AI_Output(self,other, " DIA_Camper01_Drakar_01_07 " );	// This ship usually delivers new reinforcements for a castle siege.
+	AI_Output(other,self, " DIA_Camper01_Drakar_01_10 " );	// And how often do new units arrive here?
+	AI_Output(self,other, " DIA_Camper01_Drakar_01_11 " );	// I don't know for sure... But just a couple of days ago, this drakar brought another batch of these creatures here.
+	AI_Output(self,other, " DIA_Camper01_Drakar_01_12 " );	// Eh... and let's hope they don't decide to visit our camp.
 };
 
 
-instance DIA_CAMPER01_DRAKAREXT(C_Info)
+instance DIA_CAMPER01_DRAKAREXT (C_Info)
 {
 	npc = xbs_7501_camper;
 	nr = 2;
 	condition = dia_camper01_drakarext_condition;
-	information = dia_camper01_drakarext_info;
+	info = dia_camper01_drakarext_info;
 	permanent = FALSE;
-	description = "А других кораблей тут нет?";
+	description = " Are there any other ships here? " ;
 };
 
 
 func int dia_camper01_drakarext_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_camper01_drakar))
+	if (Npc_KnowsInfo(hero,dia_camper01_drakar))
 	{
 		return TRUE;
 	};
@@ -383,16 +384,16 @@ func int dia_camper01_drakarext_condition()
 
 func void dia_camper01_drakarext_info()
 {
-	AI_Output(other,self,"DIA_Camper01_DrakarExt_01_00");	//А других кораблей тут нет?
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_01");	//(печально) К сожалению, нет. Эта махина - единственный корабль в здешних местах.
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_02");	//Иначе мы с ребятами уже давно бы попробовали уплыть отсюда.
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_03");	//Честно говоря, уже порядком надоело тут торчать!
-	AI_Output(other,self,"DIA_Camper01_DrakarExt_01_04");	//Почему бы тогда не отобрать корабль у орков?
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_05");	//Ты что, совсем сбреднил?! К нему я даже и близко не подойду!
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_06");	//Там же полно орков, приятель!
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_08");	//Даже отсюда по ночам слышен их рык с палубы.
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_09");	//К тому же я понятия не имею, как управляться с этой штуковиной.
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_16");	//По сравнению с ним, галеры паладинов - это лодки. С ним даже сотня человек не управится!
-	AI_Output(self,other,"DIA_Camper01_DrakarExt_01_18");	//Так что выбрось свою идею из головы - из этого ничего путного не выйдет.
+	AI_Output(other,self, " DIA_Camper01_DrakarExt_01_00 " );	// Are there any other ships here?
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_01 " );	// (sadly) Unfortunately not. This colossus is the only ship in these places.
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_02 " );	// Otherwise, the guys and I would have tried to swim away from here long ago.
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_03 " );	// To be honest, I'm already pretty tired of hanging around here!
+	AI_Output(other,self, " DIA_Camper01_DrakarExt_01_04 " );	// Why not take the ship from the orcs then?
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_05 " );	// Are you completely crazy?! I won't even get close to him!
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_06 " );	// It's full of orcs, mate!
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_08 " );	// Even from here you can hear their roar from the deck at night.
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_09 " );	// Plus, I have no idea how to operate this thing.
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_16 " );	// Compared to him, paladin galleys are boats. Not even a hundred people can handle it!
+	AI_Output(self,other, " DIA_Camper01_DrakarExt_01_18 " );	// So throw your idea out of your head - nothing good will come of it.
 };
 
