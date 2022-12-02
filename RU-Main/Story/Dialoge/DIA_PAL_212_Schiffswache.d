@@ -1,4 +1,5 @@
 
+
 instance DIA_Pal_212_Schiffswache_EXIT(C_Info)
 {
 	npc = PAL_212_Schiffswache;
@@ -21,12 +22,12 @@ func void DIA_Pal_212_Schiffswache_EXIT_Info()
 };
 
 
-instance DIA_Pal_212_Schiffswache_WERSEIDIHR(C_Info)
+instance DIA_Pal_212_Schiffswache_WERSEIDIHR (C_Info)
 {
 	npc = PAL_212_Schiffswache;
 	condition = DIA_Pal_212_Schiffswache_WERSEIDIHR_Condition;
 	information = DIA_Pal_212_Schiffswache_WERSEIDIHR_Info;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -41,16 +42,16 @@ func int DIA_Pal_212_Schiffswache_WERSEIDIHR_Condition()
 func void DIA_Pal_212_Schiffswache_WERSEIDIHR_Info()
 {
 	AI_Output(other,self,"DIA_Pal_212_Schiffswache_WERSEIDIHR_15_00");	//Кто вы?
-	AI_Output(self,other,"DIA_Pal_212_Schiffswache_WERSEIDIHR_08_01");	//Мы эмиссары короля Робара и слуги Инноса. Также нас еще называют паладинами.
+	AI_Output(self,other, " DIA_Pal_212_Schiffswache_WERSEIDIHR_08_01 " );	// We are emissaries of King Rhobar and servants of Innos. We are also called paladins.
 };
 
 
-instance DIA_Pal_212_Schiffswache_WASMACHSTDU2(C_Info)
+instance DIA_Pal_212_Schiffswache_WASMACHSTDU2 (C_Info)
 {
 	npc = PAL_212_Schiffswache;
 	condition = DIA_Pal_212_Schiffswache_WASMACHSTDU2_Condition;
 	information = DIA_Pal_212_Schiffswache_WASMACHSTDU2_Info;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -61,21 +62,21 @@ func int DIA_Pal_212_Schiffswache_WASMACHSTDU2_Condition()
 
 func void DIA_Pal_212_Schiffswache_WASMACHSTDU2_Info()
 {
-	AI_Output(other,self,"DIA_Pal_212_Schiffswache_WASMACHSTDU2_15_00");	//Что вы делаете здесь?
+	AI_Output(other,self, " DIA_Pal_212_Schiffswache_WASMACHSTDU2_15_00 " );	// What are you doing here?
 	if(MIS_ShipIsFree == FALSE)
 	{
 		if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 		{
-			AI_Output(self,other,"DIA_Pal_212_Schiffswache_WASMACHSTDU2_08_01");	//Тебе не попасть на этот корабль. Это все, что тебе нужно знать.
+			AI_Output(self,other, " DIA_Pal_212_Schiffswache_WASMACHSTDU2_08_01 " );	// You can't get on this ship. That's all you need to know.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Pal_212_Schiffswache_WASMACHSTDU2_08_02");	//Мы стоим здесь на страже. Никто не может взойти на этот корабль. Ты в том числе. Извини.
+			AI_Output(self,other, " DIA_Pal_212_Schiffswache_WASMACHSTDU2_08_02 " );	// We stand guard here. No one can board this ship. You are included. I'm sorry.
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_212_Schiffswache_WASMACHSTDU2_08_03");	//Из-за таких, как ты, мне приходится тратить мое время попусту. Я бы уж лучше отправился с нашими братьями в Долину Рудников.
+		AI_Output(self,other, " DIA_Pal_212_Schiffswache_WASMACHSTDU2_08_03 " );	// People like you make me waste my time. I'd rather go with our brothers to the Valley of Mines.
 	};
 	AI_StopProcessInfos(self);
 };
