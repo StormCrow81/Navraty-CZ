@@ -1,4 +1,5 @@
 
+
 instance DIA_Gerold_EXIT(C_Info)
 {
 	npc = PAL_261_Gerold;
@@ -12,7 +13,7 @@ instance DIA_Gerold_EXIT(C_Info)
 
 func int DIA_Gerold_EXIT_Condition()
 {
-	if(Kapitel < 4)
+	if (chapter <  4 )
 	{
 		return TRUE;
 	};
@@ -24,49 +25,49 @@ func void DIA_Gerold_EXIT_Info()
 };
 
 
-instance DIA_Gerold_Hallo(C_Info)
+instance DIA_Gerold_Hello (C_Info)
 {
 	npc = PAL_261_Gerold;
 	nr = 2;
 	condition = DIA_Gerold_Hallo_Condition;
-	information = DIA_Gerold_Hallo_Info;
+	information = DIA_Gerold_Hello_Info;
 	permanent = FALSE;
-	description = "Что ты охраняешь?";
+	description = " What are you guarding? " ;
 };
 
 
 func int DIA_Gerold_Hallo_Condition()
 {
-	if(Kapitel == 2)
+	if (chapter ==  2 )
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gerold_Hallo_Info()
+func void DIA_Gerold_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_Hallo_15_00");	//Что ты охраняешь?
-	AI_Output(self,other,"DIA_Gerold_Hallo_12_01");	//Заключенных.
-	AI_Output(other,self,"DIA_Gerold_Hallo_15_02");	//А кто там?
-	AI_Output(self,other,"DIA_Gerold_Hallo_12_03");	//Несколько каторжников и наемник Горн. Серьезный парень - сильный как бык.
-	AI_Output(self,other,"DIA_Gerold_Hallo_12_04");	//Четыре человека еле затолкали его туда.
+	AI_Output(other,self, " DIA_Gerold_Hallo_15_00 " );	// What are you guarding?
+	AI_Output(self,other, " DIA_Gerold_Hallo_12_01 " );	// Prisoners.
+	AI_Output(other,self, " DIA_Gerold_Hallo_15_02 " );	// Who's there?
+	AI_Output(self,other, " DIA_Gerold_Hallo_12_03 " );	// Several convicts and a mercenary Gorn. Serious guy - strong as a bull.
+	AI_Output(self,other, " DIA_Gerold_Hallo_12_04 " );	// Four people barely pushed him there.
 };
 
 
-instance DIA_Gerold_Jail(C_Info)
+instances of DIA_Gerold_Jail (C_Info)
 {
 	npc = PAL_261_Gerold;
 	nr = 2;
 	condition = DIA_Gerold_Jail_Condition;
 	information = DIA_Gerold_Jail_Info;
 	permanent = FALSE;
-	description = "Ты пропустишь меня в темницу?";
+	description = " Will you let me into the dungeon? " ;
 };
 
 
 func int DIA_Gerold_Jail_Condition()
 {
-	if((Kapitel == 2) && Npc_KnowsInfo(other,DIA_Gerold_Hallo) && (Garond_Kerkerauf == FALSE))
+	if ((Capital ==  2 ) && Npc_KnowsInfo(other, DIA_Gerold_Hello) && (Garond_Kerkerauf ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -74,27 +75,27 @@ func int DIA_Gerold_Jail_Condition()
 
 func void DIA_Gerold_Jail_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_Jail_15_00");	//Ты пропустишь меня в темницу?
-	AI_Output(self,other,"DIA_Gerold_Jail_12_01");	//Нет. НИКТО не может входить в темницу. Это касается ВСЕХ. Тебя, Милтена и всех остальных.
-	AI_Output(self,other,"DIA_Gerold_Jail_12_02");	//Здесь вам не таверна, куда вы можете входить и выходить когда захотите. Помни об этом.
+	AI_Output(other,self, " DIA_Gerold_Jail_15_00 " );	// Will you let me into the dungeon?
+	AI_Output(self,other, " DIA_Gerold_Jail_12_01 " );	// No. NO ONE can enter the dungeon. This applies to EVERYONE. You, Milten and everyone else.
+	AI_Output(self,other, " DIA_Gerold_Jail_12_02 " );	// This is not a tavern where you can go in and out as you please. Remember this.
 	KnowsAboutGorn = TRUE;
 };
 
 
-instance DIA_Gerold_Ausnahme(C_Info)
+instance DIA_Gerold_Ausnahme (C_Info)
 {
 	npc = PAL_261_Gerold;
 	nr = 2;
-	condition = DIA_Gerold_Ausnahme_Condition;
-	information = DIA_Gerold_Ausnahme_Info;
+	condition = DIA_Gerold_Exception_Condition;
+	information = DIA_Gerold_Exception_Info;
 	permanent = FALSE;
-	description = "Ты не мог бы сделать исключение для меня?";
+	description = " Could you make an exception for me? " ;
 };
 
 
-func int DIA_Gerold_Ausnahme_Condition()
+func int DIA_Gerold_Exception_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gerold_Jail) && (Kapitel == 2) && (Garond_Kerkerauf == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Gerold_Jail ) && ( Capital ==  2 ) && ( Garond_Kerkerauf ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -102,7 +103,7 @@ func int DIA_Gerold_Ausnahme_Condition()
 
 func void DIA_Gerold_Ausnahme_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_Ausnahme_15_00");	//Ты не мог бы сделать исключение для меня?
+	AI_Output(other,self, " DIA_Gerold_Ausnahme_15_00 " );	// Could you make an exception for me?
 	AI_Output(self,other,"DIA_Gerold_Ausnahme_12_01");	//Нет.
 };
 
@@ -114,13 +115,13 @@ instance DIA_Gerold_Gold(C_Info)
 	condition = DIA_Gerold_Gold_Condition;
 	information = DIA_Gerold_Gold_Info;
 	permanent = FALSE;
-	description = "А что если я заплачу золотом?";
+	description = " What if I pay in gold? " ;
 };
 
 
 func int DIA_Gerold_Gold_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gerold_Ausnahme) && (Kapitel == 2) && (Garond_Kerkerauf == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Gerold_Ausnahme ) && ( Capital ==  2 ) && ( Garond_Kerkerauf ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -128,7 +129,7 @@ func int DIA_Gerold_Gold_Condition()
 
 func void DIA_Gerold_Gold_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_Gold_15_00");	//А что если я заплачу золотом?
+	AI_Output(other,self, " DIA_Gerold_Gold_15_00 " );	// What if I pay in gold?
 	AI_Output(self,other,"DIA_Gerold_Gold_12_01");	//Хммм...(задумчиво)
 	AI_Output(self,other,"DIA_Gerold_Gold_12_02");	//Нет!
 };
@@ -141,13 +142,13 @@ instance DIA_Gerold_Deal(C_Info)
 	condition = DIA_Gerold_Deal_Condition;
 	information = DIA_Gerold_Deal_Info;
 	permanent = FALSE;
-	description = "У меня есть записка для одного из заключенных.";
+	description = " I have a note for one of the prisoners. " ;
 };
 
 
 func int DIA_Gerold_Deal_Condition()
 {
-	if((MIS_RescueGorn == LOG_Running) && (Npc_HasItems(other,ItWr_LetterForGorn_MIS) >= 1) && (Kapitel == 2) && (Garond_Kerkerauf == FALSE))
+	if ((MIS_RescueGorn == LOG_Running) && (Npc_HasItems(other,ItWr_LetterForGorn_MIS) >=  1 ) && (Chapter ==  2 ) && (Garond_Kerkerauf ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -155,15 +156,15 @@ func int DIA_Gerold_Deal_Condition()
 
 func void DIA_Gerold_Deal_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_Deal_15_00");	//У меня есть записка для одного из заключенных. Ты можешь передать ее?
-	AI_Output(self,other,"DIA_Gerold_Deal_12_01");	//Хммм...(задумчиво) В принципе, я не вижу препятствий для этого. Для кого эта записка?
-	AI_Output(other,self,"DIA_Gerold_Deal_15_02");	//Для Горна.
-	AI_Output(self,other,"DIA_Gerold_Deal_12_03");	//Это очень важный заключенный. Я не думаю, что Гаронд согласится. Но если это для тебя так важно, мы всегда можем договориться.
-	AI_Output(other,self,"DIA_Gerold_Deal_15_04");	//Что ты хочешь за это?
-	AI_Output(self,other,"DIA_Gerold_Deal_12_05");	//Наши пайки последнее время стали совсем скудные. Я хочу нормальной еды.
-	AI_Output(self,other,"DIA_Gerold_Deal_12_06");	//Принеси мне колбасы и буханку свежего хлеба - и немного сладкого меда.
-	AI_Output(self,other,"DIA_Gerold_Deal_12_07");	//Бутылку вина, чтобы запить все это. Да этого должно хватить. Я верю, у тебя получится достать все это. Так что заходи, когда найдешь продукты.
-	B_LogEntry(TOPIC_RescueGorn,"Если я принесу Герольду колбасу, хлеб, вино и мед, он передаст записку Горну.");
+	AI_Output(other,self, " DIA_Gerold_Deal_15_00 " );	// I have a note for one of the prisoners. Can you pass it on?
+	AI_Output(self,other, " DIA_Gerold_Deal_12_01 " );	// Hmmm...(thoughtfully) In principle, I see no obstacles to this. Who is this note for?
+	AI_Output(other,self, " DIA_Gerold_Deal_15_02 " );	// For Gorn.
+	AI_Output(self,other, " DIA_Gerold_Deal_12_03 " );	// This is a very important prisoner. I don't think Garond will agree. But if it's so important to you, we can always agree.
+	AI_Output(other,self, " DIA_Gerold_Deal_15_04 " );	// What do you want for this?
+	AI_Output(self,other, " DIA_Gerold_Deal_12_05 " );	// Our rations have become very scarce lately. I want normal food.
+	AI_Output(self,other, " DIA_Gerold_Deal_12_06 " );	// Bring me sausages and a loaf of fresh bread - and some sweet honey.
+	AI_Output(self,other, " DIA_Gerold_Deal_12_07 " );	// A bottle of wine to wash it all down. Yes, that should be enough. I believe you can get it all. So come back when you find the groceries.
+	B_LogEntry(TOPIC_RescueGorn, " If I bring Herold sausage, bread, wine and honey, he will give the note to the Gorn. " );
 };
 
 
@@ -174,7 +175,7 @@ instance DIA_Gerold_Stuff(C_Info)
 	condition = DIA_Gerold_Stuff_Condition;
 	information = DIA_Gerold_Stuff_Info;
 	permanent = TRUE;
-	description = "Я принес тебе кое-что.";
+	description = " I brought you something. " ;
 };
 
 
@@ -182,7 +183,7 @@ var int DIA_Gerold_Stuff_permanent;
 
 func int DIA_Gerold_Stuff_Condition()
 {
-	if((Npc_HasItems(other,ItWr_LetterForGorn_MIS) >= 1) && Npc_KnowsInfo(other,DIA_Gerold_Deal) && (Kapitel == 2) && (DIA_Gerold_Stuff_permanent == FALSE))
+	if ((Npc_HasItems(other,ItWr_LetterForGorn_MIS) >=  1 ) && Npc_KnowsInfo(other,DIA_Gerold_Deal) && (Capital ==  2 ) && (DIA_Gerold_Stuff_permanent ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -190,7 +191,7 @@ func int DIA_Gerold_Stuff_Condition()
 
 func void DIA_Gerold_Stuff_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_Stuff_15_00");	//Я принес тебе кое-что. Вот еда, как ты и просил.
+	AI_Output(other,self, " DIA_Gerold_Stuff_15_00 " );	// I brought you something. Here's the food, just like you asked.
 
 	if((Npc_HasItems(other,ItFo_Honey) >= 1) && (Npc_HasItems(other,ItFo_Bread) >= 1) && (Npc_HasItems(other,ItFo_Wine) >= 1) && (Npc_HasItems(other,ItFo_Sausage) >= 1))
 	{
@@ -199,61 +200,61 @@ func void DIA_Gerold_Stuff_Info()
 		Npc_RemoveInvItems(other,ItFo_Bread,1);
 		Npc_RemoveInvItems(other,ItFo_Wine,1);
 		Npc_RemoveInvItems(other,ItFo_Sausage,1);
-		AI_Output(self,other,"DIA_Gerold_Stuff_12_01");	//Хорошо, дай посмотрю. Записка у тебя с собой?
-		AI_Output(other,self,"DIA_Gerold_Stuff_15_02");	//Да, вот. Не забудь, она для Горна.
-		AI_Output(self,other,"DIA_Gerold_Stuff_12_03");	//Заходи завтра, он к этому времени уже получит ее.
+		AI_Output(self,other, " DIA_Gerold_Stuff_12_01 " );	// Okay, let me see. Do you have a note with you?
+		AI_Output(other,self, " DIA_Gerold_Stuff_15_02 " );	// Yes, here. Don't forget, it's for Gorn.
+		AI_Output(self,other, " DIA_Gerold_Stuff_12_03 " );	// Come in tomorrow, he'll have it by now.
 		B_GiveInvItems(other,self,ItWr_LetterForGorn_MIS,1);
 		DayContactGorn = Wld_GetDay();
 		DIA_Gerold_Stuff_permanent = TRUE;
-		B_LogEntry(TOPIC_RescueGorn,"Герольд получил то, что хотел, и передаст записку.");
+		B_LogEntry(TOPIC_RescueGorn, " Herald got what he wanted and will deliver the note. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gerold_Stuff_12_04");	//Заходи, когда у тебя будет то, что я просил.
+		AI_Output(self,other, " DIA_Gerold_Stuff_12_04 " );	// Come in when you have what I asked for.
 	};
 };
 
 
-instance DIA_Gerold_Antwort(C_Info)
+instance DIA_Gerold_Answer (C_Info)
 {
 	npc = PAL_261_Gerold;
 	nr = 2;
-	condition = DIA_Gerold_Antwort_Condition;
-	information = DIA_Gerold_Antwort_Info;
+	condition = DIA_Gerold_Answer_Condition;
+	information = DIA_Gerold_Answer_Info;
 	permanent = TRUE;
-	description = "Горн получил записку?";
+	description = " Gorn received a note? " ;
 };
 
 
-var int DIA_Gerold_Antwort_permanent;
+var int DIA_Gerold_Answer_permanent;
 
-func int DIA_Gerold_Antwort_Condition()
+func int DIA_Gerold_Answer_Condition()
 {
-	if((DIA_Gerold_Stuff_permanent == TRUE) && (Kapitel == 2) && (DIA_Gerold_Antwort_permanent == FALSE))
+	if ((DIA_Gerold_Stuff_permanent ==  TRUE ) && (Chapter ==  2 ) && (DIA_Gerold_Antwort_permanent ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gerold_Antwort_Info()
+func void DIA_Gerold_Answer_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_Antwort_15_00");	//Горн получил записку?
+	AI_Output(other,self, " DIA_Gerold_Antwort_15_00 " );	// Gorn got the note?
 	if(DayContactGorn < Wld_GetDay())
 	{
-		AI_Output(self,other,"DIA_Gerold_Antwort_12_01");	//Да, и я должен передать тебе его слова:
+		AI_Output(self,other, " DIA_Gerold_Antwort_12_01 " );	// Yes, and I have to give you his words:
 		AI_Output(other,self,"DIA_Gerold_Antwort_15_02");	//И?
-		AI_Output(self,other,"DIA_Gerold_Antwort_12_03");	//Это находится у южных ворот.
-		AI_Output(other,self,"DIA_Gerold_Antwort_15_04");	//Он сказал что-нибудь еще?
-		AI_Output(self,other,"DIA_Gerold_Antwort_12_05");	//Нет. Понятия не имею, что это значит. А ты знаешь?
-		AI_Output(other,self,"DIA_Gerold_Antwort_15_06");	//Возможно. Но тебе не стоит сильно напрягать мозги по этому поводу.
-		AI_Output(self,other,"DIA_Gerold_Antwort_12_07");	//Да, возможно, ты прав.
+		AI_Output(self,other, " DIA_Gerold_Antwort_12_03 " );	// This is at the south gate.
+		AI_Output(other,self, " DIA_Gerold_Antwort_15_04 " );	// Did he say anything else?
+		AI_Output(self,other, " DIA_Gerold_Antwort_12_05 " );	// No. I have no idea what that means. Do you know?
+		AI_Output(other,self, " DIA_Gerold_Antwort_15_06 " );	// Possibly. But you shouldn't strain your brains too much about it.
+		AI_Output(self,other, " DIA_Gerold_Antwort_12_07 " );	// Yes, you might be right.
 		GornsTreasure = TRUE;
-		DIA_Gerold_Antwort_permanent = TRUE;
-		B_LogEntry(TOPIC_RescueGorn,"Горн говорит, что его золото находится у южных ворот.");
+		DIA_Gerold_Answer_permanent = TRUE ;
+		B_LogEntry(TOPIC_RescueGorn, " The bugle says his gold is at the south gate. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gerold_GornsAnswer_12_08");	//Нет еще. Зайди попозже.
+		AI_Output(self,other, " DIA_Gerold_GornsAnswer_12_08 " );	// Not yet. Come in later.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -266,13 +267,13 @@ instance DIA_Gerold_SetGornFree(C_Info)
 	condition = DIA_Gerold_SetGornFree_Condition;
 	information = DIA_Gerold_SetGornFree_Info;
 	permanent = FALSE;
-	description = "Освободи Горна.";
+	description = " Release Upper. " ;
 };
 
 
 func int DIA_Gerold_SetGornFree_Condition()
 {
-	if((Garond_Kerkerauf == TRUE) && (Kapitel == 2))
+	if ((Garond_Kerkerauf ==  TRUE ) && (Chapter ==  2 ))
 	{
 		return TRUE;
 	};
@@ -280,11 +281,11 @@ func int DIA_Gerold_SetGornFree_Condition()
 
 func void DIA_Gerold_SetGornFree_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_SetGornFree_15_00");	//Освободи Горна. Это приказ командующего Гаронда.
-	AI_Output(self,other,"DIA_Gerold_SetGornFree_12_01");	//Мне уже сообщили об этом. Вот ключ, ты можешь войти туда.
+	AI_Output(other,self, " DIA_Gerold_SetGornFree_15_00 " );	// Free Gorn. This is an order from Commander Garond.
+	AI_Output(self,other, " DIA_Gerold_SetGornFree_12_01 " );	// I've already been told about this. Here is the key, you can enter there.
 	CreateInvItems(self,ItKe_PrisonKey_MIS,1);
 	B_GiveInvItems(self,other,ItKe_PrisonKey_MIS,1);
-	B_LogEntry(TOPIC_RescueGorn,"Герольд дал мне ключ от тюрьмы.");
+	B_LogEntry(TOPIC_RescueGorn, " The Herald gave me the key to the prison. " );
 };
 
 
@@ -295,13 +296,13 @@ instance DIA_Gerold_Perm(C_Info)
 	condition = DIA_Gerold_Perm_Condition;
 	information = DIA_Gerold_Perm_Info;
 	permanent = TRUE;
-	description = "Ты когда-нибудь спишь?";
+	description = " Do you ever sleep? " ;
 };
 
 
 func int DIA_Gerold_Perm_Condition()
 {
-	if((Kapitel < 4) && Npc_KnowsInfo(other,DIA_Gerold_Gold))
+	if ((Capital <  4 ) && Npc_KnowsInfo(other,DIA_Gerold_Gold)) .
 	{
 		return TRUE;
 	};
@@ -309,8 +310,8 @@ func int DIA_Gerold_Perm_Condition()
 
 func void DIA_Gerold_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_Perm_15_00");	//Ты когда-нибудь спишь?
-	AI_Output(self,other,"DIA_Gerold_Perm_12_01");	//Нет. Сам Иннос дарует мне силу никогда не спать на посту.
+	AI_Output(other,self, " DIA_Gerold_Perm_15_00 " );	// Do you ever sleep?
+	AI_Output(self,other, " DIA_Gerold_Perm_12_01 " );	// No. Innos himself gives me the strength to never sleep on duty.
 };
 
 
@@ -327,7 +328,7 @@ instance DIA_Gerold_KAP4_EXIT(C_Info)
 
 func int DIA_Gerold_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -339,63 +340,63 @@ func void DIA_Gerold_KAP4_EXIT_Info()
 };
 
 
-instance DIA_Gerold_KAP4_ALLESRUHIG(C_Info)
+instance DIA_Grolold_KAP4_ALLESRUHIG (C_Info)
 {
 	npc = PAL_261_Gerold;
 	nr = 30;
-	condition = DIA_Gerold_KAP4_ALLESRUHIG_Condition;
-	information = DIA_Gerold_KAP4_ALLESRUHIG_Info;
-	description = "Все тихо?";
+	condition = DIA_Rolled_KAP4_ALLESRUHIG_Condition;
+	information = DIA_Rolled_KAP4_ALLESRUHIG_Info;
+	description = " Is everything quiet? " ;
 };
 
 
-func int DIA_Gerold_KAP4_ALLESRUHIG_Condition()
+func int DIA_Rolled_KAP4_ALLESRUHIG_Condition()
 {
-	if(Kapitel >= 4)
+	if (Chapter >=  4 )
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gerold_KAP4_ALLESRUHIG_Info()
+func void DIA_Rolled_KAP4_ALLESRUHIG_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_KAP4_ALLESRUHIG_15_00");	//Все тихо?
-	AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_12_01");	//Тихо, да.
-	AI_Output(other,self,"DIA_Gerold_KAP4_ALLESRUHIG_15_02");	//Но?
-	AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_12_03");	//У меня пупок уже прилип к позвоночнику. Гаронд опять урезал наши пайки.
-	AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_12_04");	//Если я не найду где-нибудь приличной еды, я пойду и откушу кусок жирной задницы Гаронда.
-	Info_ClearChoices(DIA_Gerold_KAP4_ALLESRUHIG);
-	Info_AddChoice(DIA_Gerold_KAP4_ALLESRUHIG,"Это не мои проблемы.",DIA_Gerold_KAP4_ALLESRUHIG_Nein);
-	Info_AddChoice(DIA_Gerold_KAP4_ALLESRUHIG,"Возможно, я могу угостить тебя.",DIA_Gerold_KAP4_ALLESRUHIG_geben);
+	AI_Output(other,self, " DIA_Gerold_KAP4_ALLESRUHIG_15_00 " );	// Is everything quiet?
+	AI_Output(self,other, " DIA_Rolled_KAP4_ALLESRUHIG_12_01 " );	// Тихо, да.
+	AI_Output(other,self, " DIA_Gerold_KAP4_ALLESRUHIG_15_02 " );	// Но?
+	AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_12_03 " );	// My belly button is already stuck to my spine. Garond cut our rations again.
+	AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_12_04 " );	// If I don't find decent food somewhere, I'll go and bite off a piece of Garond's fat ass.
+	Info_ClearChoices(DIA_Rolled_KAP4_ALLESRUHIG);
+	Info_AddChoice(DIA_Gerold_KAP4_ALLESRUHIG, " These are not my problems. " ,DIA_Gerold_KAP4_ALLESRUHIG_Nein);
+	Info_AddChoice(DIA_Gerold_KAP4_ALLESRUHIG, " Maybe I can treat you. " ,DIA_Gerold_KAP4_ALLESRUHIG_geben);
 };
 
-func void DIA_Gerold_KAP4_ALLESRUHIG_geben()
+func void DIA_Gerold_KAP4_ALLESQUIHIG_giving()
 {
-	AI_Output(other,self,"DIA_Gerold_KAP4_ALLESRUHIG_geben_15_00");	//Возможно, я могу угостить тебя.
-	AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_geben_12_01");	//Ты с ума сошел? Только не здесь! Если кто-нибудь это увидит, у меня сразу появится куча новых друзей, если ты понимаешь, о чем я.
-	if(Wld_IsTime(23,10,8,0) == FALSE)
+	AI_Output(other,self, " DIA_Gerold_KAP4_ALLESRUHIG_geben_15_00 " );	// Maybe I can treat you.
+	AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_geben_12_01 " );	// Are you crazy? Just not here! If anyone sees this, I'll make a bunch of new friends right away, if you know what I mean.
+	if (Wld_IsTime( 23 , 10 , 8 , 0 ) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_geben_12_02");	//Ты найдешь меня в храме, когда все лягут спать.
+		AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_geben_12_02 " );	// You will find me at the temple when everyone is in bed.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_geben_12_03");	//Быстрее, пошли в храм, пока остальные не повылезли из своих нор. Я не могу ждать до завтра.
+		AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_geben_12_03 " );	// Hurry, let's go to the temple before the others crawl out of their holes. I can't wait until tomorrow.
 	};
-	AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_geben_12_04");	//Я думаю, в это время в храме никого нет. Я буду ждать тебя там.
-	AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_geben_12_05");	//Но смотри, чтобы это не оказалась черствая корка хлеба или какой-нибудь сырой кусок мяса, ты понял?
+	AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_geben_12_04 " );	// I think there is no one in the temple at this time. I will wait for you there.
+	AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_geben_12_05 " );	// But make sure it's not a stale crust of bread or some raw piece of meat, you understand?
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Food");
 	Log_CreateTopic(TOPIC_GeroldGiveFood,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GeroldGiveFood,LOG_Running);
-	B_LogEntry(TOPIC_GeroldGiveFood,"Гаронд опять урезал паек. Мне лучше принести Герольду что-нибудь поесть, пока он с голодухи не выкинул какую-нибудь глупость. Я должен встретиться с ним в доме магов, когда все уснут.");
+	B_LogEntry(TOPIC_GeroldGiveFood, " Garond has cut his rations again. I'd better get Gerold something to eat before he does something stupid out of hunger. I should meet him at the wizards' house when everyone is asleep. " );
 	MIS_GeroldGiveFood = LOG_Running;
 };
 
-func void DIA_Gerold_KAP4_ALLESRUHIG_Nein()
+func void DIA_Gerold_KAP4_ALLESQUIT_No()
 {
-	AI_Output(other,self,"DIA_Gerold_KAP4_ALLESRUHIG_Nein_15_00");	//Это не мои проблемы.
-	AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_Nein_12_01");	//Тебе легко говорить. Твою-то пайку Гаронд наверняка не урежет.
-	AI_Output(self,other,"DIA_Gerold_KAP4_ALLESRUHIG_Nein_12_02");	//Даже хотя он и не признает это, он страшно напуган и видит в тебе свое единственное спасение.
+	AI_Output(other,self, " DIA_Gerold_KAP4_ALLESRUHIG_Nein_15_00 " );	// These are not my problems.
+	AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_Nein_12_01 " );	// It's easy for you to talk. Garond will certainly not cut your rations.
+	AI_Output(self,other, " DIA_Gerold_KAP4_ALLESRUHIG_Nein_12_02 " );	// Even though he won't admit it, he's terrified and sees you as his only salvation.
 	AI_StopProcessInfos(self);
 };
 
@@ -425,9 +426,9 @@ func void DIA_Gerold_MoreFood()
 	Info_ClearChoices(DIA_Gerold_FOOD);
 	if(Gerold_FoodCounter > 8)
 	{
-		AI_Output(self,other,"DIA_Gerold_MoreFood_12_00");	//Этого достаточно. Этого достаточно! Теперь я меня некоторое время не будет мучить голод.
-		AI_Output(self,other,"DIA_Gerold_MoreFood_12_01");	//Вот мое золото. Я все равно ничего не могу на него купить здесь, а тебе оно, может быть, пригодится.
-		AI_Output(self,other,"DIA_Gerold_MoreFood_12_02");	//А теперь я лучше пойду, пока никто не увидел нас.
+		AI_Output(self,other, " DIA_Gerold_MoreFood_12_00 " );	// That's enough. It's enough! Now I won't be hungry for a while.
+		AI_Output(self,other, " DIA_Gerold_MoreFood_12_01 " );	// Here's my gold. I can't buy anything with it here anyway, but you might find it useful.
+		AI_Output(self,other, " DIA_Gerold_MoreFood_12_02 " );	// And now I'd better go before anyone sees us.
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Start");
 		MIS_GeroldGiveFood = LOG_SUCCESS;
@@ -439,18 +440,18 @@ func void DIA_Gerold_MoreFood()
 	{
 		if(Gerold_FoodCounter == 0)
 		{
-			Info_AddChoice(DIA_Gerold_FOOD,"Сейчас у меня ничего нет.",DIA_Gerold_FOOD_nichts);
+			Info_AddChoice(DIA_Gerold_FOOD, " I don't have anything right now. " ,DIA_Gerold_FOOD_nichts);
 		}
 		else
 		{
-			Info_AddChoice(DIA_Gerold_FOOD,"Это все, что у меня есть.",DIA_Gerold_FOOD_kaese_nichtmehr);
+			Info_AddChoice(DIA_Gerold_FOOD, " That's all I have. " ,DIA_Gerold_FOOD_kaese_nichtmehr);
 			if(Gerold_FoodCounter < 5)
 			{
-				AI_Output(self,other,"DIA_Gerold_MoreFood_12_03");	//Конечно. Давай сюда. А еще у тебя есть?
+				AI_Output(self,other, " DIA_Gerold_MoreFood_12_03 " );	// Of course. Come here. Do you have any more?
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Gerold_MoreFood_12_04");	//Да. Еще, еще!
+				AI_Output(self,other, " DIA_Gerold_MoreFood_12_04 " );	// Yes. More more!
 			};
 		};
 		if(Npc_HasItems(other,ItFo_FishSoup) || Npc_HasItems(other,ItFo_Stew))
@@ -459,11 +460,11 @@ func void DIA_Gerold_MoreFood()
 		};
 		if(Npc_HasItems(other,ItFoMutton))
 		{
-			Info_AddChoice(DIA_Gerold_FOOD,"(Дать мясо)",DIA_Gerold_FOOD_fleisch);
+			Info_AddChoice(DIA_Gerold_FOOD, " (Give Meat) " ,DIA_Gerold_FOOD_fleisch);
 		};
 		if(Npc_HasItems(other,ItFo_Bacon))
 		{
-			Info_AddChoice(DIA_Gerold_FOOD,"(Дать окорок)",DIA_Gerold_FOOD_schinken);
+			Info_AddChoice(DIA_Gerold_FOOD, " (Give ham) " ,DIA_Gerold_FOOD_schinken);
 		};
 		if(Npc_HasItems(other,ItFo_Cheese))
 		{
@@ -471,22 +472,22 @@ func void DIA_Gerold_MoreFood()
 		};
 		if(Npc_HasItems(other,ItFo_Sausage))
 		{
-			Info_AddChoice(DIA_Gerold_FOOD,"Дать колбасу)",DIA_Gerold_FOOD_Wurst);
+			Info_AddChoice(DIA_Gerold_FOOD, " Give Sausage) " ,DIA_Gerold_FOOD_Wurst);
 		};
-		Gerold_FoodCounter = Gerold_FoodCounter + 1;
+		Gerold_FoodCounter = Gerold_FoodCounter +  1 ;
 	};
 };
 
 func void DIA_Gerold_FOOD_Info()
 {
-	AI_Output(self,other,"DIA_Gerold_FOOD_12_00");	//Вот ты где. И как? У тебя есть что-нибудь поесть?
+	AI_Output(self,other, " DIA_Gerold_FOOD_12_00 " );	// There you are. And How? Do you have anything to eat?
 	DIA_Gerold_MoreFood();
 };
 
-func void DIA_Gerold_FOOD_nichts()
+func void DIA_Gerold_FOOD_nothing()
 {
-	AI_Output(other,self,"DIA_Gerold_FOOD_nichts_15_00");	//Сейчас у меня ничего нет.
-	AI_Output(self,other,"DIA_Gerold_FOOD_nichts_12_01");	//Сначала наобещаешь с три короба, а затем хочешь обмануть меня?
+	AI_Output(other,self, " DIA_Gerold_FOOD_nichts_15_00 " );	// Now I have nothing.
+	AI_Output(self,other, " DIA_Gerold_FOOD_nichts_12_01 " );	// First promise with three boxes, and then you want to deceive me?
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 	Npc_ExchangeRoutine(self,"Start");
@@ -494,25 +495,25 @@ func void DIA_Gerold_FOOD_nichts()
 	B_GivePlayerXP(XP_Ambient);
 };
 
-func void DIA_Gerold_FOOD_kaese_nichtmehr()
+func void DIA_Gerold_FOOD_kaese_nomore()
 {
 	var int XP_GeroldGiveFoodLow;
-	var int Teiler;
-	AI_Output(other,self,"DIA_Gerold_FOOD_kaese_nichtmehr_15_00");	//Это все, что у меня есть.
-	AI_Output(self,other,"DIA_Gerold_FOOD_kaese_nichtmehr_12_01");	//И я, по-твоему, поверю в это? Ладно, это все же лучше, чем ничего. Вот, возьми немного золота за это.
+	var int divider;
+	AI_Output(other,self, " DIA_Gerold_FOOD_kaese_nichtmehr_15_00 " );	// This is all I have.
+	AI_Output(self,other, " DIA_Gerold_FOOD_kaese_nichtmehr_12_01 " );	// And do you think I'll believe it? Okay, it's still better than nothing. Here, take some gold for this.
 	CreateInvItems(self,ItMi_Gold,50);
 	B_GiveInvItems(self,other,ItMi_Gold,50);
-	AI_Output(self,other,"DIA_Gerold_FOOD_kaese_nichtmehr_12_02");	//Хорошо. А теперь мне нужно возвращаться на мой пост.
+	AI_Output(self,other, " DIA_Gerold_FOOD_kaese_nichtmehr_12_02 " );	// Good. Now I need to get back to my post.
 	AI_StopProcessInfos(self);
 	if(Gerold_FoodCounter < 4)
 	{
-		Teiler = 3;
+		divider = 3 ;
 	}
 	else
 	{
-		Teiler = 2;
+		divider = 2 ;
 	};
-	XP_GeroldGiveFoodLow = XP_GeroldGiveFood / Teiler;
+	XP_GeroldGiveFoodLow = XP_GeroldGiveFood / divider;
 	Npc_ExchangeRoutine(self,"Start");
 	MIS_GeroldGiveFood = LOG_OBSOLETE;
 	B_GivePlayerXP(XP_GeroldGiveFoodLow);
@@ -520,35 +521,35 @@ func void DIA_Gerold_FOOD_kaese_nichtmehr()
 
 func void DIA_Gerold_FOOD_kaese()
 {
-	AI_Output(other,self,"DIA_Gerold_FOOD_kaese_15_00");	//Как насчет сочного куска сыра?
+	AI_Output(other,self, " DIA_Gerold_FOOD_kaese_15_00 " );	// How about a juicy piece of cheese?
 	B_GiveInvItems(other,self,ItFo_Cheese,1);
 	DIA_Gerold_MoreFood();
 };
 
-func void DIA_Gerold_FOOD_Wurst()
+func void DIA_Gerold_FOOD_Sausage()
 {
-	AI_Output(other,self,"DIA_Gerold_FOOD_Wurst_15_00");	//Кусок колбасы?
+	AI_Output(other,self, " DIA_Gerold_FOOD_Wurst_15_00 " );	// Piece of sausage?
 	B_GiveInvItems(other,self,ItFo_Sausage,1);
 	DIA_Gerold_MoreFood();
 };
 
-func void DIA_Gerold_FOOD_schinken()
+func void DIA_Gerold_FOOD_ham()
 {
-	AI_Output(other,self,"DIA_Gerold_FOOD_schinken_15_00");	//Я могу дать тебе этот окорок.
+	AI_Output(other,self, " DIA_Gerold_FOOD_schinken_15_00 " );	// I can give you this ham.
 	B_GiveInvItems(other,self,ItFo_Bacon,1);
 	DIA_Gerold_MoreFood();
 };
 
 func void DIA_Gerold_FOOD_fleisch()
 {
-	AI_Output(other,self,"DIA_Gerold_FOOD_fleisch_15_00");	//Кусок мяса?
+	AI_Output(other,self, " DIA_Gerold_FOOD_fleisch_15_00 " );	// Piece of meat?
 	B_GiveInvItems(other,self,ItFoMutton,1);
 	DIA_Gerold_MoreFood();
 };
 
 func void DIA_Gerold_FOOD_Suppe()
 {
-	AI_Output(other,self,"DIA_Gerold_FOOD_Suppe_15_00");	//Хороший суп еще никому не повредил, тебе так не кажется?
+	AI_Output(other,self, " DIA_Gerold_FOOD_Suppe_15_00 " );	// Good soup never hurt anyone, don't you think?
 	if(B_GiveInvItems(other,self,ItFo_FishSoup,1))
 	{
 	}
@@ -567,13 +568,13 @@ instance DIA_Gerold_PERM4(C_Info)
 	condition = DIA_Gerold_PERM4_Condition;
 	information = DIA_Gerold_PERM4_Info;
 	permanent = TRUE;
-	description = "Все еще голоден?";
+	description = " Still hungry? " ;
 };
 
 
 func int DIA_Gerold_PERM4_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gerold_KAP4_ALLESRUHIG))
+	if (Npc_KnowsInfo(other,DIA_Grold_KAP4_ALLESRUHIG))
 	{
 		return TRUE;
 	};
@@ -581,26 +582,26 @@ func int DIA_Gerold_PERM4_Condition()
 
 func void DIA_Gerold_PERM4_Info()
 {
-	AI_Output(other,self,"DIA_Gerold_PERM4_15_00");	//Все еще голоден?
+	AI_Output(other,self, " DIA_Gerold_PERM4_15_00 " );	// Still hungry?
 	if(MIS_OCGateOpen == TRUE)
 	{
-		AI_Output(self,other,"DIA_Gerold_PERM4_12_01");	//Если орки атакуют нас опять, даже полный желудок не поможет мне.
+		AI_Output(self,other, " DIA_Gerold_PERM4_12_01 " );	// If the orcs attack us again, even a full stomach won't help me.
 	}
 	else if(MIS_GeroldGiveFood == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Gerold_PERM4_12_02");	//Ты, должно быть, шутишь. В меня больше не лезет. Спасибо еще раз.
+		AI_Output(self,other, " DIA_Gerold_PERM4_12_02 " );	// You must be joking. Doesn't fit me anymore. Thanks again.
 	}
 	else if(MIS_GeroldGiveFood == LOG_OBSOLETE)
 	{
-		AI_Output(self,other,"DIA_Gerold_PERM4_12_03");	//Да. Но все же, спасибо за помощь.
+		AI_Output(self,other, " DIA_Gerold_PERM4_12_03 " );	// Yes. But still, thanks for the help.
 	}
 	else if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Gerold_PERM4_12_04");	//Все в порядке, Мастер.
+		AI_Output(self,other, " DIA_Gerold_PERM4_12_04 " );	// It's all right, Master.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gerold_PERM4_12_05");	//Проваливай!
+		AI_Output(self,other, " DIA_Gerold_PERM4_12_05 " );	// Get lost!
 	};
 	AI_StopProcessInfos(self);
 };
@@ -619,7 +620,7 @@ instance DIA_Gerold_KAP5_EXIT(C_Info)
 
 func int DIA_Gerold_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -644,7 +645,7 @@ instance DIA_Gerold_KAP6_EXIT(C_Info)
 
 func int DIA_Gerold_KAP6_EXIT_Condition()
 {
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		return TRUE;
 	};
@@ -669,7 +670,7 @@ instance DIA_Gerold_PICKPOCKET(C_Info)
 
 func int DIA_Gerold_PICKPOCKET_Condition()
 {
-	return C_Beklauen(71,170);
+	return  C_Robbery ( 71 , 170 );
 };
 
 func void DIA_Gerold_PICKPOCKET_Info()
@@ -681,7 +682,7 @@ func void DIA_Gerold_PICKPOCKET_Info()
 
 func void DIA_Gerold_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Gerold_PICKPOCKET);
 };
