@@ -1,4 +1,5 @@
 
+
 instance DIA_GornDJG_EXIT(C_Info)
 {
 	npc = PC_Fighter_DJG;
@@ -26,7 +27,7 @@ instance DIA_GornDJG_STARTCAMP(C_Info)
 	npc = PC_Fighter_DJG;
 	condition = DIA_GornDJG_STARTCAMP_Condition;
 	information = DIA_GornDJG_STARTCAMP_Info;
-	description = "Я вижу, ты присоединился к охотникам на драконов.";
+	description = " I see you've joined the dragon hunters. " ;
 };
 
 
@@ -40,35 +41,35 @@ func int DIA_GornDJG_STARTCAMP_Condition()
 
 func void DIA_GornDJG_STARTCAMP_Info()
 {
-	AI_Output(other,self,"DIA_GornDJG_STARTCAMP_15_00");	//Я вижу, ты присоединился к охотникам на драконов.
-	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_01");	//Я пошел за Сильвио в Долину Рудников, потому что я знаю эту местность как свои пять пальцев, и я хотел сам понять, что здесь происходит.
-	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_02");	//Я скажу тебе вот что. Здесь определенно что-то не так. В жизни никогда не видел столько орков в одном месте.
-	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_03");	//Я не удивлюсь, если Гаронд и паладины из замка давно сбежали или уже все перебиты.
-	Info_AddChoice(DIA_GornDJG_STARTCAMP,"Еще увидимся.",DIA_GornDJG_STARTCAMP_By);
-	Info_AddChoice(DIA_GornDJG_STARTCAMP,"Что ты планируешь делать дальше?",DIA_GornDJG_STARTCAMP_Wohin);
+	AI_Output(other,self, " DIA_GornDJG_STARTCAMP_15_00 " );	// I see you've joined the dragon hunters.
+	AI_Output(self,other, " DIA_GornDJG_STARTCAMP_12_01 " );	// I followed Silvio to the Valley of Mines because I know this area like the back of my hand and I wanted to understand for myself what was going on here.
+	AI_Output(self,other, " DIA_GornDJG_STARTCAMP_12_02 " );	// I'll tell you this. There is definitely something wrong here. I have never seen so many orcs in one place in my life.
+	AI_Output(self,other, " DIA_GornDJG_STARTCAMP_12_03 " );	// I wouldn't be surprised if Garond and the paladins from the castle fled a long time ago or if they've all been killed already.
+	Info_AddChoice(DIA_GornDJG_STARTCAMP, " See you later. " ,DIA_GornDJG_STARTCAMP_By);
+	Info_AddChoice(DIA_GornDJG_STARTCAMP, " What are you planning to do next? " ,DIA_GornDJG_STARTCAMP_Wohin);
 };
 
 func void DIA_GornDJG_STARTCAMP_Wohin()
 {
-	AI_Output(other,self,"DIA_GornDJG_STARTCAMP_Wohin_15_00");	//Что ты планируешь делать дальше?
-	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_Wohin_12_01");	//Я сначала пойду с парнями в Долину Рудников, а потом свалю.
-	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_Wohin_12_02");	//Мне просто очень хочется выяснить, что планируют орки.
+	AI_Output(other,self, " DIA_GornDJG_STARTCAMP_Wohin_15_00 " );	// What are you planning to do next?
+	AI_Output(self,other, " DIA_GornDJG_STARTCAMP_Wohin_12_01 " );	// I'll go with the guys to the Valley of Mines first, and then I'll go.
+	AI_Output(self,other, " DIA_GornDJG_STARTCAMP_Wohin_12_02 " );	// I just really want to find out what the orks are planning.
 };
 
 func void DIA_GornDJG_STARTCAMP_By()
 {
-	AI_Output(other,self,"DIA_GornDJG_STARTCAMP_By_15_00");	//Еще увидимся.
-	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_By_12_01");	//Будь осторожен.
+	AI_Output(other,self, " DIA_GornDJG_STARTCAMP_By_15_00 " );	// See you later.
+	AI_Output(self,other, " DIA_GornDJG_STARTCAMP_By_12_01 " );	// Be careful.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GornDJG_HALLO(C_Info)
+instance DIA_GornDJG_HELLO (C_Info)
 {
 	npc = PC_Fighter_DJG;
 	condition = DIA_GornDJG_HALLO_Condition;
-	information = DIA_GornDJG_HALLO_Info;
-	description = "Так вот ты куда забился!";
+	information = DIA_GornDJG_HELLO_Info;
+	description = " So that's where you're at! " ;
 };
 
 
@@ -80,19 +81,19 @@ func int DIA_GornDJG_HALLO_Condition()
 	};
 };
 
-func void DIA_GornDJG_HALLO_Info()
+func void DIA_GornDJG_HELLO_Info()
 {
-	AI_Output(other,self,"DIA_GornDJG_HALLO_15_00");	//Так вот ты куда забился!
-	AI_Output(self,other,"DIA_GornDJG_HALLO_12_01");	//Ты тоже не особенно похож на самоубийцу.
+	AI_Output(other,self, " DIA_GornDJG_HALLO_15_00 " );	// So that's where you've gone!
+	AI_Output(self,other, " DIA_GornDJG_HALLO_12_01 " );	// You don't look particularly suicidal either.
 };
 
 
-instance DIA_GornDJG_WHATSUP(C_Info)
+instances DIA_GornDJG_WHATSUP (C_Info)
 {
 	npc = PC_Fighter_DJG;
 	condition = DIA_GornDJG_WHATSUP_Condition;
 	information = DIA_GornDJG_WHATSUP_Info;
-	description = "Что-нибудь выяснил?";
+	description = " Did you find out anything? " ;
 };
 
 
@@ -106,27 +107,27 @@ func int DIA_GornDJG_WHATSUP_Condition()
 
 func void DIA_GornDJG_WHATSUP_Info()
 {
-	AI_Output(other,self,"DIA_GornDJG_WHATSUP_15_00");	//Что-нибудь выяснил?
-	AI_Output(self,other,"DIA_GornDJG_WHATSUP_12_01");	//Я все еще выжидаю. Мне кажется, там, наверху, в этих руинах на скале, может что-то быть. Ночью там виден свет и доносятся крики.
+	AI_Output(other,self, " DIA_GornDJG_WHATSUP_15_00 " );	// Did you figure something out?
+	AI_Output(self,other, " DIA_GornDJG_WHATSUP_12_01 " );	// I'm still waiting. It seems to me that up there, in these ruins on the rock, there might be something. At night, you can see the light and hear the screams.
 	Info_ClearChoices(DIA_GornDJG_WHATSUP);
-	Info_AddChoice(DIA_GornDJG_WHATSUP,"Может, это Лестер?",DIA_GornDJG_WHATSUP_Lester);
+	Info_AddChoice(DIA_GornDJG_WHATSUP, " Could it be Lester? " ,DIA_GornDJG_WHATSUP_Lester);
 	Info_AddChoice(DIA_GornDJG_WHATSUP,"Дракон?",DIA_GornDJG_WHATSUP_A_Dragon);
-	B_LogEntry(TOPIC_Dragonhunter,"Горн находится у подножья плоскогорья, ведущего к старой крепости в скалах. Отсюда он может наблюдать за плоскогорьем и барьером орков.");
+	B_LogEntry(TOPIC_Dragonhunter, " The forge is at the foot of the plateau leading to the old rock fortress. From here he can watch the plateau and the orc barrier. " );
 };
 
 func void DIA_GornDJG_WHATSUP_Lester()
 {
-	AI_Output(other,self,"DIA_GornDJG_WHATSUP_Lester_15_00");	//Может, это Лестер, который вернулся в свои старые руины на скале?
-	AI_Output(self,other,"DIA_GornDJG_WHATSUP_Lester_12_01");	//Может. Но, насколько я знаю, Лестер больше не живет там.
+	AI_Output(other,self, " DIA_GornDJG_WHATSUP_Lester_15_00 " );	// Maybe it's Lester, who returned to his old ruins on the rock?
+	AI_Output(self,other, " DIA_GornDJG_WHATSUP_Lester_12_01 " );	// Maybe. But as far as I know, Lester no longer lives there.
 };
 
 func void DIA_GornDJG_WHATSUP_A_Dragon()
 {
 	AI_Output(other,self,"DIA_GornDJG_WHATSUP_A_Dragon_15_00");	//Дракон?
-	AI_Output(self,other,"DIA_GornDJG_WHATSUP_A_Dragon_12_01");	//Весьма вероятно. Плоскогорье, находящееся там, охраняется лучше, чем королевская сокровищница. Ох, а это единственный путь в крепость.
-	AI_Output(self,other,"DIA_GornDJG_WHATSUP_A_Dragon_12_02");	//Как будто одного дракона недостаточно. Но, похоже, они окружают себя свитой из монстров.
+	AI_Output(self,other, " DIA_GornDJG_WHATSUP_A_Dragon_12_01 " );	// Very likely. The plateau that is there is better guarded than the royal treasury. Oh, and this is the only way to the fortress.
+	AI_Output(self,other, " DIA_GornDJG_WHATSUP_A_Dragon_12_02 " );	// As if one dragon isn't enough. But they seem to surround themselves with a retinue of monsters.
 	GornDJG_WhatMonsters = TRUE;
-	B_LogEntry(TOPIC_Dragonhunter,"Согласно информации, полученной от Горна, в старой крепости в скалах находится дракон.");
+	B_LogEntry(TOPIC_Dragonhunter, " According to information from Gorn, there is a dragon in the old rock fort. " );
 	Info_ClearChoices(DIA_GornDJG_WHATSUP);
 };
 
@@ -136,7 +137,7 @@ instance DIA_GornDJG_WHATMONSTERS(C_Info)
 	npc = PC_Fighter_DJG;
 	condition = DIA_GornDJG_WHATMONSTERS_Condition;
 	information = DIA_GornDJG_WHATMONSTERS_Info;
-	description = "А что это за монстры?";
+	description = " What are these monsters? " ;
 };
 
 
@@ -150,9 +151,9 @@ func int DIA_GornDJG_WHATMONSTERS_Condition()
 
 func void DIA_GornDJG_WHATMONSTERS_Info()
 {
-	AI_Output(other,self,"DIA_GornDJG_WHATMONSTERS_15_00");	//А что это за монстры?
-	AI_Output(self,other,"DIA_GornDJG_WHATMONSTERS_12_01");	//Я не смог хорошо разглядеть их, но они ходят на двух ногах и у них чешуйчатая кожа. Они обшаривают скалы как снепперы, унюхавшие добычу.
-	AI_Output(self,other,"DIA_GornDJG_WHATMONSTERS_12_02");	//Я хорошо слышу здесь внизу, как они сопят и фыркают там. Мне кажется, они заняли все плоскогорье там.
+	AI_Output(other,self, " DIA_GornDJG_WHATMONSTERS_15_00 " );	// What are these monsters?
+	AI_Output(self,other, " DIA_GornDJG_WHATMONSTERS_12_01 " );	// I couldn't get a good look at them, but they walk on two legs and have scaly skin. They scour the rocks like snappers smelling their prey.
+	AI_Output(self,other, " DIA_GornDJG_WHATMONSTERS_12_02 " );	// I can hear them well down here, how they sniff and snort down there. It seems to me that they occupied the entire plateau there.
 };
 
 
@@ -161,7 +162,7 @@ instance DIA_GornDJG_WAHTABOUTORCS(C_Info)
 	npc = PC_Fighter_DJG;
 	condition = DIA_GornDJG_WAHTABOUTORCS_Condition;
 	information = DIA_GornDJG_WAHTABOUTORCS_Info;
-	description = "Что насчет орков?";
+	description = " What about orcs? " ;
 };
 
 
@@ -175,19 +176,19 @@ func int DIA_GornDJG_WAHTABOUTORCS_Condition()
 
 func void DIA_GornDJG_WAHTABOUTORCS_Info()
 {
-	AI_Output(other,self,"DIA_GornDJG_WAHTABOUTORCS_15_00");	//Что с орками?
-	AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_01");	//Я понаблюдал за ними немного. Баррикада, которую они выстроили там, наверняка что-то скрывает. Я подозреваю, что за ней могут оказаться просто полчища орков.
+	AI_Output(other,self, " DIA_GornDJG_WAHTABOUTORCS_15_00 " );	// What about orcs?
+	AI_Output(self,other, " DIA_GornDJG_WAHTABOUTORCS_12_01 " );	// I watched them for a bit. The barricade they've built there must be hiding something. I suspect that there may simply be hordes of orcs behind her.
 	if(HEROKNOWFORESTBASE == TRUE)
 	{
-		AI_Output(other,self,"DIA_GornDJG_WAHTABOUTORCS_15_05");	//Расслабься, я там был и их там точно нет.
-		AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_06");	//Брось, если их там еще нет, то они там обязательно будут.
+		AI_Output(other,self, " DIA_GornDJG_WAHTABOUTORCS_15_05 " );	// Relax, I was there and they are definitely not there.
+		AI_Output(self,other, " DIA_GornDJG_WAHTABOUTORCS_12_06 " );	// Come on, if they're not there yet, they will definitely be there.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_GornDJG_WAHTABOUTORCS_15_02");	//Ты думаешь, ЕЩЕ больше чем и без того уже есть?
+		AI_Output(other,self, " DIA_GornDJG_WAHTABOUTORCS_15_02 " );	// Do you think there's MORE than already?
 	};
-	AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_03");	//Я не удивлюсь, если однажды вечером они разберут свой частокол и запрудят всю долину. Не нравится мне это все!
-	AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_04");	//Если это случится, мне нужно будет вернуться и предупредить Ли. Он все равно хочет убраться с этого острова. А тогда мешкать уже будет нельзя.
+	AI_Output(self,other, " DIA_GornDJG_WAHTABOUTORCS_12_03 " );	// I wouldn't be surprised if one evening they took down their stockade and dammed up the whole valley. I don't like it all!
+	AI_Output(self,other, " DIA_GornDJG_WAHTABOUTORCS_12_04 " );	// If this happens, I'll need to go back and warn Lee. He still wants to get off this island. And then it will no longer be possible to delay.
 };
 
 
@@ -196,7 +197,7 @@ instance DIA_GornDJG_HELPKILLDRACONIANS(C_Info)
 	npc = PC_Fighter_DJG;
 	condition = DIA_GornDJG_HELPKILLDRACONIANS_Condition;
 	information = DIA_GornDJG_HELPKILLDRACONIANS_Info;
-	description = "Ты поможешь мне пробиться в эту крепость?";
+	description = " Will you help me break into this fortress? " ;
 };
 
 
@@ -210,23 +211,23 @@ func int DIA_GornDJG_HELPKILLDRACONIANS_Condition()
 
 func void DIA_GornDJG_HELPKILLDRACONIANS_Info()
 {
-	AI_Output(other,self,"DIA_GornDJG_HELPKILLDRACONIANS_15_00");	//Ты поможешь мне пробиться в эту крепость?
-	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_01");	//Я даже не знаю. Боюсь, орки как назло начнут атаку, как только я отвернусь.
-	AI_Output(other,self,"DIA_GornDJG_HELPKILLDRACONIANS_15_02");	//Это паранойя!
-	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_03");	//Ничем не могу помочь. Я никогда не прощу себе, если опоздаю, понимаешь? Но с другой стороны...
-	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_04");	//Ладно! Зачем я вообще тогда здесь? Пошли на это плоскогорье и пробьем себе дорогу к крепости.
-	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_05");	//Небольшая разминка не помешает. Кроме того, я хочу разглядеть поближе монстров, что бродят там.
-	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_06");	//Дай мне знать, когда будешь готов!
-	B_LogEntry(TOPIC_Dragonhunter,"Горн хочет помочь мне добраться через плоскогорье до крепости в скалах.");
+	AI_Output(other,self, " DIA_GornDJG_HELPKILLDRACONIANS_15_00 " );	// Will you help me break into this fortress?
+	AI_Output(self,other, " DIA_GornDJG_HELPKILLDRACONIANS_12_01 " );	// I don't even know. I'm afraid the orcs will, as luck would have it, launch an attack as soon as I turn my back.
+	AI_Output(other,self, " DIA_GornDJG_HELPKILLDRACONIANS_15_02 " );	// This is paranoia!
+	AI_Output(self,other, " DIA_GornDJG_HELPKILLDRACONIANS_12_03 " );	// Can't help. I'll never forgive myself if I'm late, you know? But on the other side...
+	AI_Output(self,other, " DIA_GornDJG_HELPKILLDRACONIANS_12_04 " );	// Okay! Why am I even here then? Let's go to this plateau and make our way to the fortress.
+	AI_Output(self,other, " DIA_GornDJG_HELPKILLDRACONIANS_12_05 " );	// A little warm-up never hurts. Besides, I want to get a closer look at the monsters that roam there.
+	AI_Output(self,other, " DIA_GornDJG_HELPKILLDRACONIANS_12_06 " );	// Let me know when you're ready!
+	B_LogEntry(TOPIC_Dragonhunter, " The Gorn wants to help me get across the plateau to the rock fort. " );
 };
 
 
-instance DIA_GornDJG_LOSGEHTS(C_Info)
+instance DIA_GornDJG_LOSGEHTS (C_Info)
 {
 	npc = PC_Fighter_DJG;
 	condition = DIA_GornDJG_LOSGEHTS_Condition;
 	information = DIA_GornDJG_LOSGEHTS_Info;
-	description = "Пошли в атаку!";
+	description = " Let's attack! " ;
 };
 
 
@@ -240,10 +241,10 @@ func int DIA_GornDJG_LOSGEHTS_Condition()
 
 func void DIA_GornDJG_LOSGEHTS_Info()
 {
-	AI_Output(other,self,"DIA_GornDJG_LOSGEHTS_15_00");	//Пошли в атаку!
-	AI_Output(self,other,"DIA_GornDJG_LOSGEHTS_12_01");	//Как в старые времена, да? Но я хочу, чтобы ты знал: Это мой бой. На этот раз, я пойду первым!
+	AI_Output(other,self, " DIA_GornDJG_LOSGEHTS_15_00 " );	// Let's attack!
+	AI_Output(self,other, " DIA_GornDJG_LOSGEHTS_12_01 " );	// Like in the old days, huh? But I want you to know this is my fight. This time, I'll go first!
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"RunToRockRuinBridge");
 };
 
@@ -267,13 +268,13 @@ func int DIA_GornDJG_BISHIERHIN_Condition()
 
 func void DIA_GornDJG_BISHIERHIN_Info()
 {
-	AI_Output(self,other,"DIA_GornDJG_BISHIERHIN_12_00");	//Это было детской забавой. Ну а теперь, дружище, с остальным ты справишься сам. Задай им жару! А я пойду назад и буду наблюдать за орками.
-	AI_Output(other,self,"DIA_GornDJG_BISHIERHIN_15_01");	//Нет проблем. Еще увидимся!
-	AI_Output(self,other,"DIA_GornDJG_BISHIERHIN_12_02");	//Я тоже надеюсь на это!
-	B_LogEntry(TOPIC_Dragonhunter,"Горн вернулся на свой сторожевой пост. Он будет продолжать наблюдать за орками.");
+	AI_Output(self,other, " DIA_GornDJG_BISHIERHIN_12_00 " );	// That was child's play. Now, my friend, you can handle the rest on your own. Give them heat! And I'll go back and watch the orcs.
+	AI_Output(other,self, " DIA_GornDJG_BISHIERHIN_15_01 " );	// No problem. See you!
+	AI_Output(self,other, " DIA_GornDJG_BISHIERHIN_12_02 " );	// I hope so too!
+	B_LogEntry(TOPIC_Dragonhunter, " The Gorn has returned to his outpost. He will continue to watch the orcs. " );
 	B_GivePlayerXP(XP_GornDJGPlateauClear);
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"Start");
 };
 
@@ -283,7 +284,7 @@ instance DIA_GornDJG_DRAGONDEAD(C_Info)
 	npc = PC_Fighter_DJG;
 	condition = DIA_GornDJG_DRAGONDEAD_Condition;
 	information = DIA_GornDJG_DRAGONDEAD_Info;
-	description = "Каменный дракон мертв!";
+	description = " The stone dragon is dead! " ;
 };
 
 
@@ -297,14 +298,14 @@ func int DIA_GornDJG_DRAGONDEAD_Condition()
 
 func void DIA_GornDJG_DRAGONDEAD_Info()
 {
-	AI_Output(other,self,"DIA_GornDJG_DRAGONDEAD_15_00");	//Каменный дракон мертв!
-	AI_Output(self,other,"DIA_GornDJG_DRAGONDEAD_12_01");	//Я больше не слышу воплей! Ты был в этой крепости в скалах?
+	AI_Output(other,self, " DIA_GornDJG_DRAGONDEAD_15_00 " );	// The stone dragon is dead!
+	AI_Output(self,other, " DIA_GornDJG_DRAGONDEAD_12_01 " );	// I can't hear the screams anymore! Have you been to this fortress in the rocks?
 	AI_Output(other,self,"DIA_GornDJG_DRAGONDEAD_15_02");	//Да!
-	AI_Output(self,other,"DIA_GornDJG_DRAGONDEAD_12_03");	//Ха, ха! Я так и думал. Где бы ты ни появился, там камня на камне не остается.
-	AI_Output(other,self,"DIA_GornDJG_DRAGONDEAD_15_04");	//Что ты собираешься делать дальше?
-	AI_Output(self,other,"DIA_GornDJG_DRAGONDEAD_12_05");	//Я побуду здесь еще немного, а затем вернусь к Ли. Может, мы там еще встретимся!
-	AI_Output(self,other,"DIA_GornDJG_DRAGONDEAD_12_06");	//Меня уже тошнит от этих мест. Пришло время убираться с этого острова.
-	AI_Output(other,self,"DIA_GornDJG_DRAGONDEAD_15_07");	//Еще увидимся!
+	AI_Output(self,other, " DIA_GornDJG_DRAGONDEAD_12_03 " );	// Ha, ha! I thought so. Wherever you appear, there is no stone left unturned.
+	AI_Output(other,self, " DIA_GornDJG_DRAGONDEAD_15_04 " );	// What are you going to do next?
+	AI_Output(self,other, " DIA_GornDJG_DRAGONDEAD_12_05 " );	// I'll stay here a little longer, and then I'll return to Lee. Maybe we'll meet there again!
+	AI_Output(self,other, " DIA_GornDJG_DRAGONDEAD_12_06 " );	// I'm already sick of these places. It's time to get off this island.
+	AI_Output(other,self, " DIA_GornDJG_DRAGONDEAD_15_07 " );	// See you again!
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -322,7 +323,7 @@ instance DIA_Fighter_DJG_PICKPOCKET(C_Info)
 
 func int DIA_Fighter_DJG_PICKPOCKET_Condition()
 {
-	return C_Beklauen(10,35);
+	return  C_Robbery ( 10 , 35 );
 };
 
 func void DIA_Fighter_DJG_PICKPOCKET_Info()
@@ -334,7 +335,7 @@ func void DIA_Fighter_DJG_PICKPOCKET_Info()
 
 func void DIA_Fighter_DJG_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Fighter_DJG_PICKPOCKET);
 };
 
