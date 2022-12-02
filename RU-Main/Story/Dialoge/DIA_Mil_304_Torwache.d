@@ -1,4 +1,5 @@
 
+
 instance DIA_Mil_304_Torwache_EXIT(C_Info)
 {
 	npc = Mil_304_Torwache;
@@ -49,14 +50,14 @@ func void dia_mil_304_torwache_toarmscitygate_info()
 };
 
 
-instance DIA_Mil_304_Torwache_WASMACHSTDU(C_Info)
+instance DIA_Mil_304_Torwache_WASMACHSTDU (C_Info)
 {
 	npc = Mil_304_Torwache;
 	nr = 3;
 	condition = DIA_Mil_304_Torwache_WASMACHSTDU_Condition;
 	information = DIA_Mil_304_Torwache_WASMACHSTDU_Info;
 	permanent = TRUE;
-	description = "Как дела? ";
+	description = " How are you? " ;
 };
 
 
@@ -70,22 +71,22 @@ func int DIA_Mil_304_Torwache_WASMACHSTDU_Condition()
 
 func void DIA_Mil_304_Torwache_WASMACHSTDU_Info()
 {
-	AI_Output(other,self,"DIA_Mil_304_Torwache_WASMACHSTDU_15_00");	//Как дела?
+	AI_Output(other,self, " DIA_Mil_304_Torwache_WASMACHSTDU_15_00 " );	// Как дела?
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Mil_304_Torwache_WASMACHSTDU_08_01");	//Мне не на что жаловаться. Я выполняю свои обязанности, как того желает Иннос.
+		AI_Output(self,other, " DIA_Mil_304_Torwache_WASMACHSTDU_08_01 " );	// I have nothing to complain about. I carry out my duties as Innos wishes.
 	}
 	else if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Mil_304_Torwache_WASMACHSTDU_08_02");	//Эй, хватит нести чушь вроде 'как поживаешь?'! Убирайся с глаз моих, понятно?
+		AI_Output(self,other, " DIA_Mil_304_Torwache_WASMACHSTDU_08_02 " );	// Hey, stop talking nonsense like 'how are you?'! Get out of my sight, okay?
 	}
 	else if((hero.guild == GIL_NDW) || (hero.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Mil_304_Torwache_WASMACHSTDU_08_03");	//Жаловаться не на что. Аданос с тобой!
+		AI_Output(self,other, " DIA_Mil_304_Torwache_WASMACHSTDU_08_03 " );	// Nothing to complain about. Adanos with you!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Mil_304_Torwache_WASMACHSTDU_08_04");	//Все хорошо.
+		AI_Output(self,other, " DIA_Mil_304_Torwache_WASMACHSTDU_08_04 " );	// All is well.
 	};
 	AI_StopProcessInfos(self);
 };
