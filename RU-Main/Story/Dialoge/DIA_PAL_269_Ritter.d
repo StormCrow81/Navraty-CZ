@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_269_EXIT(C_Info)
 {
 	npc = PAL_269_Ritter;
@@ -44,12 +45,12 @@ var int DIA_Ritter_HERO_NoPerm;
 
 func void DIA_PAL_269_HERO_Info()
 {
-	AI_Output(self,other,"DIA_Ritter_HERO_04_00");	//Твое появление здесь хороший знак для нас всех. Мы все воспряли духом.
-	if(DIA_Ritter_HERO_NoPerm == FALSE)
+	AI_Output(self,other, " DIA_Ritter_HERO_04_00 " );	// Your presence here is a good sign for all of us. We all perked up.
+	if ( DIA_Ritter_HERO_NoPerm ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Ritter_HERO_04_01");	//Мы знаем, что наши товарищи в городе не забыли о нас. Глаз Инноса наблюдает за всеми нами.
-		AI_Output(self,other,"DIA_Ritter_HERO_04_02");	//И если орки и драконы будут ломиться в ворота, мы встретим их с поднятым забралом и будем сражаться до победы или смерти.
-		DIA_Ritter_HERO_NoPerm = TRUE;
+		AI_Output(self,other, " DIA_Ritter_HERO_04_01 " );	// We know that our comrades in the city haven't forgotten about us. The Eye of Innos watches over us all.
+		AI_Output(self,other, " DIA_Ritter_HERO_04_02 " );	// And if orcs and dragons break through the gates, we will meet them with a raised visor and fight to victory or death.
+		DIA_Ritter_HERO_NoPerm = TRUE ;
 	};
 };
 
