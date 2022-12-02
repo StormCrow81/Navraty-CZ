@@ -1,4 +1,5 @@
 
+
 instance DIA_SNAF_NW_EXIT(C_Info)
 {
 	npc = vlk_6023_snaf;
@@ -34,7 +35,7 @@ instance DIA_SNAF_NW_PICKPOCKET(C_Info)
 
 func int dia_snaf_nw_pickpocket_condition()
 {
-	return C_Beklauen(75,150);
+	return  C_Robbery ( 75 , 150 );
 };
 
 func void dia_snaf_nw_pickpocket_info()
@@ -46,7 +47,7 @@ func void dia_snaf_nw_pickpocket_info()
 
 func void dia_snaf_nw_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_snaf_nw_pickpocket);
 };
 
@@ -56,7 +57,7 @@ func void dia_snaf_nw_pickpocket_back()
 };
 
 
-instance DIA_SNAF_NW_HI(C_Info)
+instance DIA_SNAF_NW_HI (C_Info) .
 {
 	npc = vlk_6023_snaf;
 	nr = 1;
@@ -74,45 +75,45 @@ func int dia_snaf_nw_hi_condition()
 func void dia_snaf_nw_hi_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_00");	//Так-так. Кто это у нас здесь?
-	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_01");	//Снаф, уж не ты ли это?
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_02");	//Собственной персоной! Удивлен?
-	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_03");	//Вообще-то, не ожидал тебя тут встретить.
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_04");	//Как и я тебя. А ты, вижу, успел за это время далеко пробиться.
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_00 " );	// Well, well. Who do we have here?
+	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_01 " );	// Snaf, isn't that you?
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_02 " );	// In person! Surprised?
+	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_03 " );	// Actually, I didn't expect to meet you here.
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_04 " );	// Like I love you. And you, I see, managed to get far in this time.
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_Hi_01_05");	//Маг Огня! Ну кто бы мог подумать?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_05 " );	// Fire Mage! Well, who would have thought?
 	}
 	else if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_Hi_01_06");	//Паладин короля! Ну кто бы мог подумать?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_06 " );	// King's paladin! Well, who would have thought?
 	}
 	else if(other.guild == GIL_DJG)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_Hi_01_07");	//Наемник, значит! Ну кто бы мог подумать?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_07 " );	// Mercenary, so! Well, who would have thought?
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_Hi_01_0A");	//Маг Воды! Ну кто бы мог подумать...
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0A " );	// Water Mage! Well, who would have thought...
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_Hi_01_0B");	//НЕКРОМАНТ! Ну кто бы мог подумать?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0B " );	// NECROMANCE! Well, who would have thought?
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_Hi_01_0C");	//Болотник! Ну кто бы мог подумать?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0C " );	// Swamp! Well, who would have thought?
 	};
-	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_08");	//Что ты тут делаешь?
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_09");	//А что, разве не видишь? Работаю тут. (смеется)
-	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_10");	//Кардиф взял тебя к себе?
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_11");	//Я поделился с ним одним из моих лучших рецептов - этого хватило, чтобы получить эту работенку.
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_12");	//А я и не жалуюсь. Как раз мой профиль. Да и Кардифу хлопот поменьше.
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_13");	//Похоже, он не очень-то жалеет, что взял меня к себе.
-	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_14");	//Да, ты хорошо устроился.
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_15");	//Само собой. Ладно, парень - у меня еще куча дел, а на пустую болтовню у меня времени особо нет. Даже со старым знакомым!
-	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_16");	//Ладно, работай. Не буду отвлекать.
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_17");	//Спасибо тебе.
+	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_08 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_09 " );	// What, don't you see? I work here. (laughs)
+	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_10 " );	// Cardiff took you in?
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_11 " );	// I shared one of my best recipes with him - that was enough to get this job.
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_12 " );	// And I'm not complaining. Just my profile. Yes, and Cardiff has less trouble.
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_13 " );	// Looks like he doesn't really regret taking me in.
+	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_14 " );	// Yes, you're doing well.
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_15 " );	// Of course. Okay, man - I still have a lot to do, and I don't have much time for idle chatter. Even with an old friend!
+	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_16 " );	// Okay, work. I will not distract.
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_17 " );	// Thank you.
 	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_18");	//Да не за что.
 };
 
@@ -123,7 +124,7 @@ instance DIA_Snaf_NW_Booze(C_Info)
 	condition = DIA_Snaf_NW_Booze_Condition;
 	information = DIA_Snaf_NW_Booze_Info;
 	permanent = FALSE;
-	description = "Вот твой самогон, приятель.";
+	description = " Here's your moonshine, buddy. " ;
 };
 
 func int DIA_Snaf_NW_Booze_Condition()
@@ -137,14 +138,14 @@ func int DIA_Snaf_NW_Booze_Condition()
 func void DIA_Snaf_NW_Booze_Info()
 {
 	B_GivePlayerXP(XP_Addon_Loushammer);
-	AI_Output(other,self,"DIA_Addon_Snaf_Booze_15_00");	//Вот твой самогон, приятель.
+	AI_Output(other,self, " DIA_Addon_Snaf_Booze_15_00 " );	// Here's your moonshine, buddy.
 	B_GiveInvItems(other,self,ItFo_Addon_LousHammer,1);
-	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_01");	//Прекрасно, позволь мне приготовить соус.
-	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_02");	//Вот, готово! Можешь попробовать прямо сейчас. Силушки-то в ручонках прибавится, спору нет!
+	AI_Output(self,other, " DIA_Addon_Snaf_Booze_01_01 " );	// Fine, let me make the sauce.
+	AI_Output(self,other, " DIA_Addon_Snaf_Booze_01_02 " );	// Here, it's done! You can try right now. There will be more strength in the little hands, no doubt!
 	B_GiveInvItems(self,other,ItFo_Addon_FireStew,1);
 	MIS_SnafHammer = LOG_SUCCESS;
 	Log_SetTopicStatus(Topic_Addon_Hammer,LOG_SUCCESS);
-	B_LogEntry(Topic_Addon_Hammer,"Я принес Снафу самогон.");
+	B_LogEntry(Topic_Addon_Hammer, " I brought moonshine to Snafu. " );
 };
 
 instance DIA_SNAF_NW_CITY(C_Info)
@@ -154,7 +155,7 @@ instance DIA_SNAF_NW_CITY(C_Info)
 	condition = dia_snaf_nw_city_condition;
 	information = dia_snaf_nw_city_info;
 	permanent = TRUE;
-	description = "Есть что-нибудь новенькое?";
+	description = " Anything new? " ;
 };
 
 func int dia_snaf_nw_city_condition()
@@ -167,30 +168,30 @@ func int dia_snaf_nw_city_condition()
 
 func void dia_snaf_nw_city_info()
 {
-	AI_Output(other,self,"DIA_Snaf_NW_City_01_00");	//Есть что-нибудь новенькое?
+	AI_Output(other,self, " DIA_Snaf_NW_City_01_00 " );	// Anything new?
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_City_01_01");	//Нет, ничего такого. Ну, кроме того, что теперь бандитов стали принимать в маги Огня...(смеется)
+		AI_Output(self,other, " DIA_Snaf_NW_City_01_01 " );	// No, nothing like that. Well, apart from the fact that bandits are now accepted as Firebenders... (laughs)
 	}
 	else if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_City_01_02");	//Нет, ничего такого. Ну, кроме того, что бандитов теперь стали брать в паладины...(смеется)
+		AI_Output(self,other, " DIA_Snaf_NW_City_01_02 " );	// No, nothing like that. Well, apart from the fact that bandits are now being taken as paladins... (laughs)
 	}
 	else if(other.guild == GIL_DJG)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_City_01_03");	//Нет, ничего такого. Ну, кроме того, что бандитов теперь стали брать в наемники...(смеется)
+		AI_Output(self,other, " DIA_Snaf_NW_City_01_03 " );	// No, nothing like that. Well, apart from the fact that bandits are now being hired as mercenaries... (laughs)
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_City_01_04");	//Нет, ничего такого. Ну, кроме того, что бандитов теперь стали принимать в маги Воды...(смеется)
+		AI_Output(self,other, " DIA_Snaf_NW_City_01_04 " );	// No, nothing like that. Well, apart from the fact that bandits are now accepted as Waterbenders... (laughs)
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_City_01_05");	//Нет, ничего такого. Ну, кроме того, что бандитов теперь стали принимать в темные маги...(смеется)
+		AI_Output(self,other, " DIA_Snaf_NW_City_01_05 " );	// No, nothing like that. Well, apart from the fact that bandits are now accepted as dark magicians ... (laughs)
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_City_01_06");	//Нет, ничего такого, что могло бы заинтересовать тебя.
+		AI_Output(self,other, " DIA_Snaf_NW_City_01_06 " );	// No, nothing that might interest you.
 	};
 };
 
@@ -201,7 +202,7 @@ instance DIA_Addon_Snaf_NW_TeachCookDone(C_Info)
 	condition = DIA_Addon_Snaf_NW_TeachCookDone_Condition;
 	information = DIA_Addon_Snaf_NW_TeachCookDone_Info;
 	permanent = TRUE;
-	description = "Научи меня готовить похлебки.";
+	description = " Teach me how to cook chowder. " ;
 };
 
 func int DIA_Addon_Snaf_NW_TeachCookDone_Condition()
@@ -214,22 +215,22 @@ func int DIA_Addon_Snaf_NW_TeachCookDone_Condition()
 
 func void DIA_Addon_Snaf_NW_TeachCookDone_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_TeachCookDone_01_00");	//Научи меня готовить похлебки.
-	AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_01_01");	//Хорошо! С чего начнем?
+	AI_Output(other,self, " DIA_Addon_Snaf_TeachCookDone_01_00 " );	// Teach me how to cook stews.
+	AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_01_01 " );	// Good! Where do we start?
 	Info_ClearChoices(DIA_Addon_Snaf_NW_TeachCookDone);
 	Info_AddChoice(DIA_Addon_Snaf_NW_TeachCookDone,Dialog_Back,DIA_Addon_Snaf_NW_TeachCookDone_back);
 
 	if(Snaf_Meal_01 == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Snaf_NW_TeachCookDone,"Черная грибная похлебка (Цена: 500 монет)",DIA_Addon_Snaf_NW_TeachCookDone_BlackMeal);
+		Info_AddChoice(DIA_Addon_Snaf_NW_TeachCookDone, " Black Mushroom Chowder (Price: 500 coins) " ,DIA_Addon_Snaf_NW_TeachCookDone_BlackMeal);
 	};
 	if(Snaf_Meal_02 == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Snaf_NW_TeachCookDone,"Матерая грибная похлебка (Цена: 750 монет)",DIA_Addon_Snaf_NW_TeachCookDone_HotMeal);
+		Info_AddChoice(DIA_Addon_Snaf_NW_TeachCookDone, " Seasoned Mushroom Chowder (Price: 750 coins) " ,DIA_Addon_Snaf_NW_TeachCookDone_HotMeal);
 	};
 	if(Snaf_Meal_03 == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Snaf_NW_TeachCookDone,"Мясное рагу (Цена: 250 монет)",DIA_Addon_Snaf_NW_TeachCookDone_MeatMeal);
+		Info_AddChoice(DIA_Addon_Snaf_NW_TeachCookDone, " Cost (price: 250 minutes) " ,DIA_Addon_Snaf_NW_TeachCookDone_MeatMeal);
 	};
 };
 
@@ -240,47 +241,47 @@ func void DIA_Addon_Snaf_NW_TeachCookDone_back()
 
 func void DIA_Addon_Snaf_NW_TeachCookDone_BlackMeal()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_00");	//Черная грибная похлебка.
+	AI_Output(other,self, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_00 " );	// Black mushroom soup.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 500)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,500);
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_01");	//Нет ничего проще. Для начала тебе понадобится примерно полсотни темных грибов.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_02");	//Положи их в чан с водой и вари до тех пор, пока вода не приобретет черный цвет.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_03");	//Потом добавь лист огненной травы. Это собьет горечь самого супа!
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_01 " );	// There is nothing easier. To start, you will need about fifty dark mushrooms.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_02 " );	// Put them in a vat of water and boil until the water turns black.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_03 " );	// Then add a leaf of fire grass. This will take the bitterness out of the soup itself!
 		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_04");	//Вот и все.
-		AI_Print("Изучен рецепт готовки еды - 'Черная грибная похлебка'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить черную грибную похлебку. Для этого мне понадобится полсотни темных грибов и лист огненной травы.");
+		AI_Print( " Learned the recipe for cooking food - 'Black Mushroom Stew' " );
+		B_LogEntry( TOPIC_COOK , " Now I can cook black mushroom stew. For this I need fifty dark mushrooms and a leaf of fire grass. " );
 		Snd_Play("LevelUP");
 		Snaf_Meal_01 = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_05");	//Ты держишь меня за дурака?
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_06");	//Я ничему не буду тебя учить, пока не увижу золота.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_05 " );	// Are you taking me for a fool?
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_BlackMeal_01_06 " );	// I won't teach you anything until I see the gold.
 		Info_ClearChoices(DIA_Addon_Snaf_NW_TeachCookDone);
 	};
 };
 
 func void DIA_Addon_Snaf_NW_TeachCookDone_HotMeal()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_00");	//Матерая грибная похлебка.
+	AI_Output(other,self, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_00 " );	// Materaya mushroom soup.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 750)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,750);
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_01");	//Чтобы похлебка получилась наваристая, главное, не жалей для нее грибов.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_02");	//Кладешь полсотни штук в котел, добавляешь огненный корень для остроты и медленно все это варишь в котле.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_03");	//Не пройдет и получаса, как похлебка будет готова.
-		AI_Print("Изучен рецепт готовки еды - 'Матерая грибная похлебка'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить матерую грибную похлебку. Для этого мне понадобится полсотни мясных грибов и огненный корешок.");
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_01 " );	// To make the stew rich, the main thing is not to spare mushrooms for it.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_02 " );	// Put fifty pieces in a cauldron, add fireroot for a spicy kick, and slowly boil it all in the cauldron.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_03 " );	// In less than half an hour, the stew will be ready.
+		AI_Print( " Learned the recipe for cooking food - 'Mushroom Chowder' " );
+		B_LogEntry( TOPIC_COOK , " Now I can cook seasoned mushroom stew. For this I will need fifty meat mushrooms and a fire root. " );
 		Snd_Play("LevelUP");
 		Snaf_Meal_02 = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_04");	//Ты держишь меня за дурака?
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_05");	//Я ничему не буду тебя учить, пока не увижу золота.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_04 " );	// Are you taking me for a fool?
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_HotMeal_01_05 " );	// I won't teach you anything until I see the gold.
 		Info_ClearChoices(DIA_Addon_Snaf_NW_TeachCookDone);
 	};
 };
@@ -293,18 +294,18 @@ func void DIA_Addon_Snaf_NW_TeachCookDone_MeatMeal()
 	if(Npc_HasItems(hero,ItMi_Gold) >= 250)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,250);
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_01");	//Это мой собственный рецепт. (гордо) Ничего лишнего!
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_02");	//Только пара мясных грибов и мясо жука.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_03");	//Бросаешь все в котел, варишь - и получаешь самое вкусное блюдо из всех, что мне доводилось пробовать.
-		AI_Print("Изучен рецепт готовки еды - 'Мясное рагу'");
-		B_LogEntry(TOPIC_COOK,"Теперь я умею готовить мясное рагу. Для этого мне понадобится пара темных грибов и мясо жука.");
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_01 " );	// This is my own recipe. (proudly) Nothing more!
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_02 " );	// Just a couple of meat mushrooms and beetle meat.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_03 " );	// You throw everything into the cauldron, boil it - and you get the most delicious dish I have ever tasted.
+		AI_Print( " Recipe for 'Meat Stew' has been learned " );
+		B_LogEntry( TOPIC_COOK , " Now I know how to cook meat stew. For this I need a couple of dark mushrooms and beetle meat. " );
 		Snd_Play("LevelUP");
 		Snaf_Meal_03 = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_04");	//Ты держишь меня за дурака?
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_05");	//Я ничему не буду тебя учить, пока не увижу золота.
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_04 " );	// Are you taking me for a fool?
+		AI_Output(self,other, " DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_05 " );	// I won't teach you anything until I see the gold.
 		Info_ClearChoices(DIA_Addon_Snaf_NW_TeachCookDone);
 	};
 };
