@@ -1,4 +1,5 @@
 
+
 instance DIA_Wambo_EXIT(C_Info)
 {
 	npc = Mil_316_Wambo;
@@ -27,7 +28,7 @@ instance DIA_Wambo_PICKPOCKET(C_Info)
 	condition = DIA_Wambo_PICKPOCKET_Condition;
 	information = DIA_Wambo_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его ключ)";
+	description = " (Try to steal his key) " ;
 };
 
 func int DIA_Wambo_PICKPOCKET_Condition()
@@ -99,7 +100,7 @@ instance DIA_Wambo_Job(C_Info)
 	condition = DIA_Wambo_Job_Condition;
 	information = DIA_Wambo_Job_Info;
 	permanent = FALSE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -110,9 +111,9 @@ func int DIA_Wambo_Job_Condition()
 
 func void DIA_Wambo_Job_Info()
 {
-	AI_Output(other,self,"DIA_Wambo_Job_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Wambo_Job_03_01");	//Я слежу за тем, чтобы никто не входил в дома.
-	AI_Output(self,other,"DIA_Wambo_Job_03_02");	//Лорд Хаген лично отдал этот приказ. И даже не думай нарушить его!
+	AI_Output(other,self, " DIA_Wambo_Job_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Wambo_Job_03_01 " );	// I make sure no one enters the houses.
+	AI_Output(self,other, " DIA_Wambo_Job_03_02 " );	// Lord Hagen personally gave this order. And don't even think about breaking it!
 };
 
 
@@ -123,13 +124,13 @@ instance DIA_Wambo_Situation(C_Info)
 	condition = DIA_Wambo_Situation_Condition;
 	information = DIA_Wambo_Situation_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
 func int DIA_Wambo_Situation_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Wambo_Job))
+	if ( Npc_KnowsInfo ( other , DIA_Wambo_Job ) )
 	{
 		return TRUE;
 	};
@@ -137,8 +138,8 @@ func int DIA_Wambo_Situation_Condition()
 
 func void DIA_Wambo_Situation_Info()
 {
-	AI_Output(other,self,"DIA_Wambo_Situation_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Wambo_Situation_03_01");	//Сейчас все спокойно.
+	AI_Output(other,self, " DIA_Wambo_Situation_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Wambo_Situation_03_01 " );	// Everything is quiet now.
 };
 
 
@@ -149,13 +150,13 @@ instance DIA_Wambo_Ramirez(C_Info)
 	condition = DIA_Wambo_Ramirez_Condition;
 	information = DIA_Wambo_Ramirez_Info;
 	permanent = FALSE;
-	description = "Я пришел от нашего общего друга, Рамиреза.";
+	description = " I came from our mutual friend, Ramirez. " ;
 };
 
 
 func int DIA_Wambo_Ramirez_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Ramirez_Viertel))
+	if (Npc_KnowsInfo(other,DIA_Ramirez_Quarter))
 	{
 		return TRUE;
 	};
@@ -163,12 +164,12 @@ func int DIA_Wambo_Ramirez_Condition()
 
 func void DIA_Wambo_Ramirez_Info()
 {
-	AI_Output(other,self,"DIA_Wambo_Ramirez_15_00");	//Я пришел от нашего общего друга, Рамиреза.
-	AI_Output(self,other,"DIA_Wambo_Ramirez_03_01");	//Ох? Этот Рамирез тот еще подлец. И он мне не друг. Да, ладно. Ты принес мне что-нибудь?
-	AI_Output(other,self,"DIA_Wambo_Ramirez_15_02");	//Это зависит от того, что ты хочешь.
+	AI_Output(other,self, " DIA_Wambo_Ramirez_15_00 " );	// I came from our mutual friend, Ramirez.
+	AI_Output(self,other, " DIA_Wambo_Ramirez_03_01 " );	// Oh? This Ramirez is still a scoundrel. And he's not my friend. Come on. Did you bring me something?
+	AI_Output(other,self, " DIA_Wambo_Ramirez_15_02 " );	// It depends on what you want.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_Wambo_Ramirez_03_03");	//Хорошо, поступим так - ты платишь мне двести пятьдесят золотых монет. И меня не будет здесь всю ночь.
-	AI_Output(self,other,"DIA_Wambo_Ramirez_03_04");	//И, если ты уж такой подозрительный, давай договоримся так: если я появлюсь здесь, то нашу сделку можно будет считать расторгнутой.
+	AI_Output(self,other, " DIA_Wambo_Ramirez_03_03 " );	// Okay, let's do this - you pay me two hundred and fifty gold coins. And I won't be here all night.
+	AI_Output(self,other, " DIA_Wambo_Ramirez_03_04 " );	// And, if you're so suspicious, let's agree that if I show up here, then our deal can be considered terminated.
 };
 
 
@@ -179,7 +180,7 @@ instance DIA_Wambo_Deal(C_Info)
 	condition = DIA_Wambo_Deal_Condition;
 	information = DIA_Wambo_Deal_Info;
 	permanent = TRUE;
-	description = "У меня есть деньги.";
+	description = " I have money. " ;
 };
 
 
@@ -187,7 +188,7 @@ var int DIA_Wambo_Deal_permanent;
 
 func int DIA_Wambo_Deal_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Wambo_Ramirez) && (DIA_Wambo_Deal_permanent == FALSE))
+	if ( Npc_KnowsInfo ( other , Npc_Knows_Info ) && ( Npc_KnowsInfo ( other , Npc_Knows_Info  ) )
 	{
 		return TRUE;
 	};
@@ -195,20 +196,20 @@ func int DIA_Wambo_Deal_Condition()
 
 func void DIA_Wambo_Deal_Info()
 {
-	AI_Output(other,self,"DIA_Wambo_Deal_15_00");	//У меня есть деньги...
+	AI_Output(other,self, " DIA_Wambo_Deal_15_00 " );	// I have money...
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,250))
 	{
-		AI_Output(self,other,"DIA_Wambo_Deal_03_01");	//Хорошо, тогда я исчезаю на всю ночь.
-		AI_Output(self,other,"DIA_Wambo_Deal_03_02");	//И помни: если у тебя возникнут проблемы, я не знаю тебя.
+		AI_Output(self,other, " DIA_Wambo_Deal_03_01 " );	// Okay, then I'll disappear for the night.
+		AI_Output(self,other, " DIA_Wambo_Deal_03_02 " );	// And remember, if you're in trouble, I don't know you.
 		DIA_Wambo_Deal_permanent = TRUE;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"DRINK");
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Wambo_Deal_15_03");	//...но с собой их не захватил.
-		AI_Output(self,other,"DIA_Wambo_Deal_03_04");	//Я не выношу, когда кто-нибудь пытается одурачить меня. Так что давай сюда золото.
+		AI_Output(other,self, " DIA_Wambo_Deal_15_03 " );	// ...but didn't take them with me.
+		AI_Output(self,other, " DIA_Wambo_Deal_03_04 " );	// I can't stand it when someone tries to fool me. So get the gold here.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -221,7 +222,7 @@ instance DIA_WAMBO_KILL(C_Info)
 	condition = dia_wambo_kill_condition;
 	information = dia_wambo_kill_info;
 	permanent = FALSE;
-	description = "Кажется, у тебя большие проблемы.";
+	description = " You seem to be in big trouble. " ;
 };
 
 
@@ -236,16 +237,16 @@ func int dia_wambo_kill_condition()
 func void dia_wambo_kill_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Wambo_Kill_01_00");	//Кажется, у тебя большие проблемы.
-	AI_Output(self,other,"DIA_Wambo_Kill_01_01");	//У меня? Проблемы?...(смеется)
-	AI_Output(other,self,"DIA_Wambo_Kill_01_03");	//Говорят, ты обираешь местных торговцев, вымогаешь у них золото. Многие жалуются на тебя!
-	AI_Output(self,other,"DIA_Wambo_Kill_01_04");	//(надменно) Ну и что с того?
-	AI_Output(other,self,"DIA_Wambo_Kill_01_07");	//Я решил сказать тебе, что твои действия не останутся безнаказанными, и я об этом лично позабочусь.
-	AI_Output(self,other,"DIA_Wambo_Kill_01_08");	//Да ну? И что же ты сделаешь? Побежишь плакаться лорду Андрэ?
+	AI_Output(other,self, " DIA_Wambo_Kill_01_00 " );	// You seem to be in big trouble.
+	AI_Output(self,other, " DIA_Wambo_Kill_01_01 " );	// Me? Problems?...(laughs)
+	AI_Output(other,self, " DIA_Wambo_Kill_01_03 " );	// They say you're robbing local merchants, extorting gold from them. Many complain about you!
+	AI_Output(self,other, " DIA_Wambo_Kill_01_04 " );	// (arrogantly) So what?
+	AI_Output(other,self, " DIA_Wambo_Kill_01_07 " );	// I decided to tell you that your actions will not go unpunished, and I will personally take care of it.
+	AI_Output(self,other, " DIA_Wambo_Kill_01_08 " );	// huh? And what will you do? Will you run to cry to Lord Andre?
 	AI_ReadyMeleeWeapon(other);
-	AI_Output(other,self,"DIA_Wambo_Kill_01_09");	//Нет! Просто сейчас ты почувствуешь мой клинок в своем теле.
-	AI_Output(self,other,"DIA_Wambo_Kill_01_10");	//ЧТО?! Угрожаешь мне? Ах ты ублюдок!
-	AI_Output(self,other,"DIA_Wambo_Kill_01_11");	//Ну погоди, сейчас я кое-чему тебя научу!
+	AI_Output(other,self, " DIA_Wambo_Kill_01_09 " );	// No! Just now you will feel my blade in your body.
+	AI_Output(self,other, " DIA_Wambo_Kill_01_10 " );	// WHAT?! Are you threatening me? Oh you bastard!
+	AI_Output(self,other, " DIA_Wambo_Kill_01_11 " );	// Wait a minute, now I'll teach you something!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
