@@ -1,4 +1,5 @@
 
+
 instance DIA_Wirt_EXIT(C_Info)
 {
 	npc = VLK_4201_Wirt;
@@ -34,7 +35,7 @@ instance DIA_Wirt_PICKPOCKET(C_Info)
 
 func int DIA_Wirt_PICKPOCKET_Condition()
 {
-	return C_Beklauen(60,65);
+	return  C_Robbery ( 60 , 65 );
 };
 
 func void DIA_Wirt_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Wirt_PICKPOCKET_Info()
 
 func void DIA_Wirt_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Wirt_PICKPOCKET);
 };
 
@@ -56,12 +57,12 @@ func void DIA_Wirt_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Wirt_Hallo(C_Info)
+instance DIA_Wirt_Hello (C_Info)
 {
 	npc = VLK_4201_Wirt;
 	nr = 2;
 	condition = DIA_Wirt_Hallo_Condition;
-	information = DIA_Wirt_Hallo_Info;
+	information = DIA_Wirt_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -75,10 +76,10 @@ func int DIA_Wirt_Hallo_Condition()
 	};
 };
 
-func void DIA_Wirt_Hallo_Info()
+func void DIA_Host_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Wirt_Hallo_14_00");	//Хей, подойди поближе! Выпей глоток холодного пива.
-	AI_Output(self,other,"DIA_Wirt_Hallo_14_01");	//Лорд Андрэ выставил пару бочонков.
+	AI_Output(self,other, " DIA_Wirt_Hallo_14_00 " );	// Hey, come closer! Have a sip of cold beer.
+	AI_Output(self,other, " DIA_Wirt_Hallo_14_01 " );	// Lord Andre put out a couple of kegs.
 };
 
 instance DIA_WIRT_GIVEBEER(C_Info)
@@ -88,7 +89,7 @@ instance DIA_WIRT_GIVEBEER(C_Info)
 	condition = dia_wirt_givebeer_condition;
 	information = dia_wirt_givebeer_info;
 	permanent = TRUE;
-	description = "Дай мне немного пива.";
+	description = " Give me some beer. " ;
 };
 
 func int dia_wirt_givebeer_condition()
@@ -101,32 +102,32 @@ func int dia_wirt_givebeer_condition()
 
 func void dia_wirt_givebeer_info()
 {
-	var int randy;
-	AI_Output(other,self,"DIA_Wirt_GiveBeer_01_00");	//Дай мне немного пива.
+	be int randy;
+	AI_Output(other,self, " DIA_Wirt_GiveBeer_01_00 " );	// Give me some beer.
 	if(WIRT_DAY != Wld_GetDay())
 	{
-		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_01");	//Конечно! Вот, держи.
+		AI_Output(self,other, " DIA_Wirt_GiveBeer_01_01 " );	// Of course! Here you are.
 		B_GiveInvItems(self,other,ItFo_Beer,1);
-		randy = Hlp_Random(3);
+		randy = Hlp_Random( 3 );
 		if(randy == 0)
 		{
-			AI_Output(self,other,"DIA_Wirt_Hallo_14_02");	//После сделанной работы нет ничего лучше, чем холодное пиво.
+			AI_Output(self,other, " DIA_Wirt_Hallo_14_02 " );	// After a job well done, there's nothing better than a cold beer.
 		}
 		else if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_Wirt_Hallo_14_03");	//Паладины уже все привели в порядок. Так, выпей еще глоток и спокойно насладись им!
+			AI_Output(self,other, " DIA_Wirt_Hallo_14_03 " );	// The paladins have already put everything in order. So, take another sip and enjoy it in peace!
 		}
 		else if(randy == 2)
 		{
-			AI_Output(self,other,"DIA_Wirt_Hallo_14_04");	//Можно много говорить о Хоринисе, но наш 'Темный паладин' - лучшее пиво во всей Миртане!
+			AI_Output(self,other, " DIA_Wirt_Hallo_14_04 " );	// We can talk a lot about Khorinis, but our 'Dark Paladin' is the best beer in all of Myrtana!
 		};
 		WIRT_DAY = Wld_GetDay();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_02");	//Эй, но ведь ты уже получил сегодня свою порцию.
-		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_03");	//Если ты так быстро будешь уничтожать мои запасы, то так его точно на всех не хватит.
-		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_04");	//Лучше приходи завтра, и получишь еще одну кружку!
+		AI_Output(self,other, " DIA_Wirt_GiveBeer_01_02 " );	// Hey, but you already got your portion today.
+		AI_Output(self,other, " DIA_Wirt_GiveBeer_01_03 " );	// If you're destroying my supply so quickly, there won't be enough for everyone.
+		AI_Output(self,other, " DIA_Wirt_GiveBeer_01_04 " );	// Better come tomorrow and you'll get another mug!
 	};
 };
 
@@ -137,7 +138,7 @@ instance DIA_Wirt_FixBeer_Done(C_Info)
 	condition = DIA_Wirt_FixBeer_Done_Condition;
 	information = DIA_Wirt_FixBeer_Done_Info;
 	permanent = FALSE;
-	description = "Теперь ты служишь в ополчении?";
+	description = " Are you in the militia now? " ;
 };
 
 func int DIA_Wirt_FixBeer_Done_Condition()
@@ -151,19 +152,19 @@ func int DIA_Wirt_FixBeer_Done_Condition()
 func void DIA_Wirt_FixBeer_Done_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_00");	//Теперь ты служишь в ополчении?
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_01");	//Я и сам до сих пор не могу в это поверить. Они просто пришли и забрали меня!
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_02");	//Сказали, что для защиты города им нужны крепкие мужчины вроде меня. 
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_03");	//А я даже меч в руках держать не умею!
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_04");	//Ну, ты же понимаешь, времена сейчас непростые.
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_05");	//Ополчению необходима любая помощь! А вид у тебя, кстати, довольно бравый.
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_06");	//Думаю, всякий разбойник, завидев тебя издалека, сразу сбежит куда подальше!
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_07");	//(растерянно) Эммм... Ты так считаешь?
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_08");	//Да я просто в этом уверен - ты сам-то взгляни на себя!
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_09");	//Настоящий лихой рубака! Даже я тебя немного побаиваюсь.
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_10");	//Кммм... эээ... Ну да, наверное, ты прав. Иначе бы зачем они меня сюда притащили.
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_11");	//(задумчиво) Тогда... Тогда хватит болтать! Я вроде как на посту.
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_12");	//Конечно, конечно! Неси вахту... солдат.
+	AI_Output(other,self, " DIA_Wirt_FixBeer_Done_01_00 " );	// Now you serve in the militia?
+	AI_Output(self,other, " DIA_Wirt_FixBeer_Done_01_01 " );	// I still can't believe it myself. They just came and took me away!
+	AI_Output(self,other, " DIA_Wirt_FixBeer_Done_01_02 " );	// They said they needed strong men like me to protect the city.
+	AI_Output(self,other, " DIA_Wirt_FixBeer_Done_01_03 " );	// And I can't even hold a sword in my hands!
+	AI_Output(other,self, " DIA_Wirt_FixBeer_Done_01_04 " );	// Well, you know, times are tough right now.
+	AI_Output(other,self, " DIA_Wirt_FixBeer_Done_01_05 " );	// The militia needs all the help! And by the way, you look pretty good.
+	AI_Output(other,self, " DIA_Wirt_FixBeer_Done_01_06 " );	// I think that every robber, seeing you from afar, will immediately run away to hell!
+	AI_Output(self,other, " DIA_Wirt_FixBeer_Done_01_07 " );	// (bewildered) Umm... Do you think so?
+	AI_Output(other,self, " DIA_Wirt_FixBeer_Done_01_08 " );	// Yes, I'm just sure of it - you yourself, then take a look at yourself!
+	AI_Output(other,self, " DIA_Wirt_FixBeer_Done_01_09 " );	// A real dashing brawler! Even I'm a little afraid of you.
+	AI_Output(self,other, " DIA_Wirt_FixBeer_Done_01_10 " );	// Hmmm... uh... Well, yes, you're probably right. Otherwise, why would they drag me here.
+	AI_Output(self,other, " DIA_Wirt_FixBeer_Done_01_11 " );	// (thoughtfully) Then... Stop talking then! I seem to be on the job.
+	AI_Output(other,self, " DIA_Wirt_FixBeer_Done_01_12 " );	// Of course, of course! Keep watch... soldier.
 	AI_StopProcessInfos(self);
 };
 
@@ -174,7 +175,7 @@ instance DIA_Wirt_FixBeer_Perm(C_Info)
 	condition = DIA_Wirt_FixBeer_Perm_Condition;
 	information = DIA_Wirt_FixBeer_Perm_Info;
 	permanent = TRUE;
-	description = "Как служба?";
+	description = " How is the service? " ;
 };
 
 func int DIA_Wirt_FixBeer_Perm_Condition()
