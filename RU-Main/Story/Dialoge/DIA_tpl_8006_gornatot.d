@@ -1,4 +1,5 @@
 
+
 instance DIA_GORNATOT_EXIT(C_Info)
 {
 	npc = tpl_8006_gornatot;
@@ -33,7 +34,7 @@ instance dia_gornatot_PICKPOCKET(C_Info)
 
 func int dia_gornatot_PICKPOCKET_Condition()
 {
-	return C_Beklauen(15,35);
+	return  C_Robbery ( 15 , 35 );
 };
 
 func void dia_gornatot_PICKPOCKET_Info()
@@ -45,7 +46,7 @@ func void dia_gornatot_PICKPOCKET_Info()
 
 func void dia_gornatot_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_gornatot_PICKPOCKET);
 };
 
@@ -62,7 +63,7 @@ instance DIA_GORNATOT_WHOYOU(C_Info)
 	condition = dia_gornatot_whoyou_condition;
 	information = dia_gornatot_whoyou_info;
 	permanent = FALSE;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -77,39 +78,39 @@ func int dia_gornatot_whoyou_condition()
 func void dia_gornatot_whoyou_info()
 {
 	AI_Output(other,self,"DIA_GorNaTot_WhoYou_01_00");	//Кто ты?
-	AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_01");	//Я - Гор На Тоф.
-	AI_Output(other,self,"DIA_GorNaTot_WhoYou_01_02");	//А что ты тут делаешь?
+	AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_01 " );	// I am Gor Na Tof.
+	AI_Output(other,self, " DIA_GorNaTot_WhoYou_01_02 " );	// What are you doing here?
 	if((other.guild == GIL_NONE) || (other.guild == GIL_GUR) || (other.guild == GIL_TPL) || (other.guild == GIL_SEK))
 	{
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_03");	//Я занимаюсь обучением Стражей Братства.
-		AI_Output(other,self,"DIA_GorNaTot_WhoYou_01_04");	//Как идет это обучение?
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_05");	//Неплохо! Но мы по-прежнему очень сильно нуждаемся в людях.
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_06");	//Идол Парвез целыми днями торчит в городе, пытаясь отыскать людей, достойных принять нашу веру.
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_07");	//Но большинство из тех, кого он приводит в лагерь, почти ни на что не способны.
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_08");	//Они даже меч в руках толком держать не умеют, не говоря уже об остальном.
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_09");	//Хотя, безусловно, мы рады новым послушникам - ибо с каждым новым последователем крепчает и наша вера!
+		AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_03 " );	// I'm in charge of training the Guardians of the Brotherhood.
+		AI_Output(other,self, " DIA_GorNaTot_WhoYou_01_04 " );	// How is this learning going?
+		AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_05 " );	// Not bad! But we still need people very badly.
+		AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_06 " );	// Idol Parvez hangs around the city all day long, trying to find people worthy to accept our faith.
+		AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_07 " );	// But most of the people he brings to camp are pretty much incapable of anything.
+		AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_08 " );	// They don't even know how to properly hold a sword in their hands, not to mention the rest.
+		AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_09 " );	// Although, of course, we are glad to new novices - for with each new follower our faith grows stronger!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_10");	//(раздраженно) В данный момент я отвечаю на твои идиотские вопросы.
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_11");	//Поэтому будет лучше, если ты оставишь меня в покое! Ясно?
+		AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_10 " );	// (annoyed) I'm currently answering your idiotic questions.
+		AI_Output(self,other, " DIA_GorNaTot_WhoYou_01_11 " );	// So it's better if you leave me alone! It's clear?
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_GORNATOT_MITMACHEN(C_Info)
+instance DIA_GORNATOT_MITMACHEN (C_Info)
 {
 	npc = tpl_8006_gornatot;
 	nr = 2;
 	condition = dia_gornatot_mitmachen_condition;
 	information = dia_gornatot_mitmachen_info;
 	permanent = TRUE;
-	description = "Я хочу присоединиться к вам!";
+	description = " I want to join you! " ;
 };
 
 
-func int dia_gornatot_mitmachen_condition()
+func int dia_gornatot_join_condition()
 {
 	if(Npc_KnowsInfo(hero,dia_gornatot_whoyou) && ((other.guild == GIL_NONE) || (other.guild == GIL_SEK)))
 	{
@@ -117,26 +118,26 @@ func int dia_gornatot_mitmachen_condition()
 	};
 };
 
-func void dia_gornatot_mitmachen_info()
+func void dia_gornatot_join_info()
 {
-	AI_Output(other,self,"DIA_GorNaTot_Mitmachen_01_00");	//Я хочу присоединиться к вам!
-	AI_Output(self,other,"DIA_GorNaTot_Mitmachen_01_01");	//Ты хочешь стать стражем? Да, наглости тебе не занимать. Ты ведь не думаешь, что мы принимаем любого, кто об этом попросит?
-	AI_Output(self,other,"DIA_GorNaTot_Mitmachen_01_02");	//Поживи в Лагере, а там посмотрим.
+	AI_Output(other,self, " DIA_GorNaTot_Mitmachen_01_00 " );	// I want to join you!
+	AI_Output(self,other, " DIA_GorNaTot_Mitmachen_01_01 " );	// Do you want to become a guardian? Yes, you do not have the audacity. You don't think we accept anyone who asks, do you?
+	AI_Output(self,other, " DIA_GorNaTot_Mitmachen_01_02 " );	// Live in the Camp, and we'll see.
 };
 
 
-instance DIA_GORNATOT_ABWEISEND(C_Info)
+instance DIA_GORNATOT_REJECTING (C_Info)
 {
 	npc = tpl_8006_gornatot;
 	nr = 2;
-	condition = dia_gornatot_abweisend_condition;
-	information = dia_gornatot_abweisend_info;
+	condition = dia_gornatot_repellent_condition;
+	information = dia_gornatot_repellent_info;
 	permanent = TRUE;
-	description = "Ты можешь чему-нибудь научить меня?";
+	description = " Can you teach me something? " ;
 };
 
 
-func int dia_gornatot_abweisend_condition()
+func int dia_gornatot_repellent_condition()
 {
 	if(Npc_KnowsInfo(hero,dia_gornatot_whoyou) && (GORNATOTTEACH == FALSE))
 	{
@@ -144,41 +145,41 @@ func int dia_gornatot_abweisend_condition()
 	};
 };
 
-func void dia_gornatot_abweisend_info()
+func void dia_gornatot_repellent_info()
 {
-	AI_Output(other,self,"DIA_GorNaTot_Abweisend_01_00");	//Ты можешь чему-нибудь научить меня?
+	AI_Output(other,self, " DIA_GorNaTot_Abweisend_01_00 " );	// Can you teach me something?
 	if(other.guild == GIL_GUR)
 	{
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_01");	//Я учу только тех, кто принадлежит к священному кругу Стражей Братства!
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_02");	//Обучением Гуру занимаются Идолы - обратись к ним.
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_01 " );	// I only teach those who belong to the sacred circle of the Guardians of the Brotherhood!
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_02 " );	// Guru training is done by Idols - contact them.
 	}
 	else if(other.guild == GIL_SEK)
 	{
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_03");	//Я учу только тех, кто принадлежит к священному кругу Стражей Братства!
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_04");	//Если ты хочешь стать им - поговори с Гор На Кошем. Он поможет тебе вступить на этот путь.
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_03 " );	// I only teach those who belong to the sacred circle of the Guardians of the Brotherhood!
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_04 " );	// If you want to become one, talk to Gor Na Kosh. He will help you get on that path.
 	}
 	else if(other.guild == GIL_TPL)
 	{
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_06");	//Поскольку ты являешься одним из нас - я с радостью обучу тебя тому, что знаю сам.
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_07");	//Я помогу тебе освоить заклинания боевой магии Стражей и увеличить твою магическую силу для использования этих заклинаний.
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_08");	//Безусловно, наша магия не сравнима по силе и мощи со священной магией Гуру...
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_09");	//...однако, даже несмотря на это, она все равно является неплохим подспорьем в бою.
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_10");	//К тому же для ее овладения тебе не потребуются знания магических кругов.
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_11");	//Скажи, когда захочешь начать свое обучение - и мы тотчас приступим.
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_06 " );	// Since you are one of us, I will gladly teach you what I know.
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_07 " );	// I'll help you master Guardians' battle magic spells and increase your magic power to use these spells.
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_08 " );	// Of course, our magic is not comparable in strength and power to the sacred magic of the Guru...
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_09 " );	// ...however, despite this, she is still a good help in combat.
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_10 " );	// Plus, you don't need knowledge of magic circles to master it.
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_11 " );	// Tell me when you'd like to start your training, and we'll get started right away.
 		Log_CreateTopic(TOPIC_ADDON_TPLTEACHER,LOG_NOTE);
-		B_LogEntry(TOPIC_ADDON_TPLTEACHER,"Гор На Тоф покажет мне, как использовать боевую магию Стражей и сможет повысить мою магическую энергию.");
+		B_LogEntry( TOPIC_ADDON_TPLTEACHER , " Gor Na Toph will show me how to use the Guardians' battle magic and be able to increase my magic energy. " );
 		GORNATOTTEACH = TRUE;
 	}
 	else if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_12");	//Мои уроки распространяются только на Стражей!
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_13");	//А тебе хватает наглости спрашивать об этом, хотя ты сам даже не принадлежишь к нашему Братству!
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_14");	//До тех пор, пока ты не один из нас - можешь даже не мечтать об этом.
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_12 " );	// My lessons only apply to Guardians!
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_13 " );	// And you have the audacity to ask about this, even though you yourself do not even belong to our Brotherhood!
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_14 " );	// As long as you're not one of us, you don't even have to dream about it.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_15");	//Мои уроки не распространяются на неверных!
-		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_16");	//Убирайся прочь!
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_15 " );	// My lessons don't apply to infidels!
+		AI_Output(self,other, " DIA_GorNaTot_Abweisend_01_16 " );	// Get out!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -191,7 +192,7 @@ instance DIA_GORNATOT_TEACH_MANA(C_Info)
 	condition = dia_gornatot_teach_mana_condition;
 	information = dia_gornatot_teach_mana_info;
 	permanent = TRUE;
-	description = "Я хочу увеличить свою магическую энергию.";
+	description = " I want to increase my magical energy. " ;
 };
 
 
@@ -205,8 +206,8 @@ func int dia_gornatot_teach_mana_condition()
 
 func void dia_gornatot_teach_mana_info()
 {
-	AI_Output(other,self,"DIA_GorNaTot_TEACH_MANA_15_00");	//Я хочу увеличить свою магическую энергию.
-	AI_Output(self,other,"DIA_GorNaTot_TEACH_MANA_15_01");	//Сила разума не менее важна, чем сила и ловкость тела воина.
+	AI_Output(other,self, " DIA_GorNaTot_TEACH_MANA_15_00 " );	// I want to increase my magical energy.
+	AI_Output(self,other, " DIA_GorNaTot_TEACH_MANA_15_01 " );	// The strength of the mind is as important as the strength and dexterity of a warrior's body.
 	Info_ClearChoices(dia_gornatot_teach_mana);
 	Info_AddChoice(dia_gornatot_teach_mana,Dialog_Back,dia_gornatot_teach_mana_back);
 	Info_AddChoice(dia_gornatot_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_gornatot_teach_mana_1);
@@ -217,8 +218,8 @@ func void dia_gornatot_teach_mana_back()
 {
 	if(other.attribute[ATR_MANA_MAX] >= T_HIGH)
 	{
-		AI_Output(self,other,"DIA_GorNaTot_TEACH_MANA_05_00");	//Я больше не в силах помочь тебе в этом.
-		AI_Output(self,other,"DIA_GorNaTot_TEACH_MANA_05_01");	//Ты на пределе своих возможностей!
+		AI_Output(self,other, " DIA_GorNaTot_TEACH_MANA_05_00 " );	// I can't help you with this anymore.
+		AI_Output(self,other, " DIA_GorNaTot_TEACH_MANA_05_01 " );	// You're at your limits!
 	};
 	Info_ClearChoices(dia_gornatot_teach_mana);
 };
@@ -249,11 +250,11 @@ instance DIA_GORNATOT_TEACHTPLRUNES(C_Info)
 	condition = dia_gornatot_teachtplrunes_condition;
 	information = dia_gornatot_teachtplrunes_info;
 	permanent = TRUE;
-	description = "Я хочу овладеть боевой магией Стражей.";
+	description = " I want to master the combat magic of the Guardians. " ;
 };
 
 
-func int dia_gornatot_teachtplrunes_condition()
+func int dia_gornatot_reachtplrunes_condition()
 {
 	if((other.guild == GIL_TPL) && (GORNATOTTEACH == TRUE) && (FIRSTTALKTPLMAGIC == FALSE))
 	{
@@ -263,40 +264,40 @@ func int dia_gornatot_teachtplrunes_condition()
 
 func void dia_gornatot_teachtplrunes_info()
 {
-	AI_Output(other,self,"DIA_GorNaTot_TEACHTplRunes_01_00");	//Я хочу овладеть боевой магией Стражей.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_01");	//Перед тем как мы начнем обучение, позволь я тебе кое-что расскажу.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_02");	//Принципы использования боевой магии Стражей похожи на те, что лежат в основе любой другой магии.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_03");	//Для ее применения мы используем магические руны, в которых содержатся формулы с заклинаниями. Но есть и отличия...
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_05");	//Первое, что ты уже наверняка знаешь - магия Стражей не требует от тебя владения магическими кругами.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_06");	//Кроме этого, существуют несколько способов ее применения или, как мы их называем, - Путей.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_07");	//В зависимости от того, какой путь ты выберешь в самом начале своего обучения - то направление магии ты и сможешь использовать в дальнейшем.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_09");	//Теперь мне осталось задать тебе единственный вопрос, на который ты должен будешь мне сейчас ответить.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_10");	//Подумай хорошо, прежде чем дать ответ - впоследствии ты уже не сможешь изменить свой выбор.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_11");	//Итак: какой путь ты выбираешь для себя - Путь Целителя или Путь Воина?
+	AI_Output(other,self, " DIA_GorNaTot_TEACHTplRunes_01_00 " );	// I want to master the combat magic of the Guardians.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_01 " );	// Before we start training, let me tell you something.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_02 " );	// The principles of using Guardians' combat magic are similar to those that underlie any other magic.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_03 " );	// To use it, we use magic runes, which contain formulas with spells. But there are also differences...
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_05 " );	// The first thing you probably already know is that Guardian magic doesn't require you to wield magic circles.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_06 " );	// In addition, there are several ways to use it, or, as we call them, - Paths.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_07 " );	// Depending on which path you choose at the very beginning of your training, that direction of magic you can use in the future.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_09 " );	// Now I have to ask you the only question that you will have to answer me now.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_10 " );	// Think well before answering - you can't change your choice later.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_01_11 " );	// So: which path do you choose for yourself - the Path of the Healer or the Path of the Warrior?
 	Info_ClearChoices(dia_gornatot_teachtplrunes);
-	Info_AddChoice(dia_gornatot_teachtplrunes,"Я выбираю Путь Целителя.",dia_gornatot_teachtplrunes_heal);
-	Info_AddChoice(dia_gornatot_teachtplrunes,"Я выбираю Путь Воина.",dia_gornatot_teachtplrunes_combat);
+	Info_AddChoice(dia_gornatot_teachtplrunes, " I choose the Path of the Healer. " ,dia_gornatot_teachtplrunes_heal);
+	Info_AddChoice(dia_gornatot_teachtplrunes, " I choose the Path of the Warrior. " ,dia_gornatot_teachtplrunes_combat);
 };
 
-func void dia_gornatot_teachtplrunes_heal()
+func void dia_gornatot_reachtplrunes_heal()
 {
-	AI_Output(other,self,"DIA_GorNaTot_TEACHTplRunes_Heal_01_00");	//Я выбираю Путь Целителя.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_Heal_01_01");	//Хорошо, ты сделал свой выбор, и с этим я передаю тебе первую руну этого пути.
+	AI_Output(other,self, " DIA_GorNaTot_TEACHTplRunes_Heal_01_00 " );	// I choose the Path of the Healer.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_Heal_01_01 " );	// Okay, you've made your choice, and with that, I give you the first rune of this path.
 	B_GiveInvItems(self,other,itru_tplheal_00,1);
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_Heal_01_02");	//Она позволит тебе исцелять свои раны, полученные в сражениях во славу Братства!
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_Heal_01_03");	//Будь мудр и рассудителен в ее использовании. И не забывай про то, что я тебе говорил.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_Heal_01_02 " );	// She will allow you to heal your wounds received in battles for the glory of the Brotherhood!
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_Heal_01_03 " );	// Be wise and prudent in its use. And don't forget what I told you.
 	PSIWAYHEAL = TRUE;
 	FIRSTTALKTPLMAGIC = TRUE;
 	Info_ClearChoices(dia_gornatot_teachtplrunes);
 };
 
-func void dia_gornatot_teachtplrunes_combat()
+func void dia_gornatot_reachtplrunes_combat()
 {
-	AI_Output(other,self,"DIA_GorNaTot_TEACHTplRunes_Combat_01_00");	//Я выбираю Путь Воина.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_Combat_01_01");	//Хорошо, ты сделал свой выбор, и с этим я передаю тебе первую руну этого пути.
+	AI_Output(other,self, " DIA_GorNaTot_TEACHTplRunes_Combat_01_00 " );	// I choose the Path of the Warrior.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_Combat_01_01 " );	// Okay, you've made your choice, and with that, I give you the first rune of this path.
 	B_GiveInvItems(self,other,itru_tplstrike_00,1);
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_Combat_01_02");	//Она поможет тебе одолеть твоих врагов!
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_Combat_01_03");	//Будь мудр и рассудителен в ее использовании. И не забывай про то, что я тебе говорил.
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_Combat_01_02 " );	// She will help you defeat your enemies!
+	AI_Output(self,other, " DIA_GorNaTot_TEACHTplRunes_Combat_01_03 " );	// Be wise and prudent in its use. And don't forget what I told you.
 	PSIWAYCOMBAT = TRUE;
 	FIRSTTALKTPLMAGIC = TRUE;
 	Info_ClearChoices(dia_gornatot_teachtplrunes);
@@ -310,10 +311,10 @@ instance DIA_GORNATOT_TEACHTPLNEXTRUNES(C_Info)
 	condition = dia_gornatot_teachtplnextrunes_condition;
 	information = dia_gornatot_teachtplnextrunes_info;
 	permanent = TRUE;
-	description = "Я хочу продолжить свое обучение магии Стражей.";
+	description = " I want to continue my Guardian magic training. " ;
 };
 
-func int dia_gornatot_teachtplnextrunes_condition()
+func int dia_gornatot_reachtplnextrunes_condition()
 {
 	if((other.guild == GIL_TPL) && (GORNATOTTEACH == TRUE) && (PSIWAYRUNECOMPLETE == FALSE) && ((PSIWAYHEAL == TRUE) || (PSIWAYCOMBAT == TRUE)))
 	{
@@ -325,44 +326,44 @@ func void dia_gornatot_teachtplnextrunes_info()
 {
 	var string concatText;
 
-	AI_Output(other,self,"DIA_GorNaTot_TEACHTplNextRunes_01_00");	//Я хочу продолжить свое обучение магии Стражей.
+	AI_Output(other,self, " DIA_GorNaTot_TEACHTplNextRunes_01_00 " );	// I want to continue my Guardian magic training.
 	if(PSIWAYHEAL == TRUE)
 	{
-		if((PSIWAYHEALRUNE_01 == FALSE) && (Kapitel >= 2))
+		if (( PSIWAYHEALRUNE_01  ==  FALSE ) && (Capital >=  2 )) .
 		{
 			if(other.lp < 10)
 			{
 				concatText = PRINT_NeedLP;
 				concatText = ConcatStrings(concatText,IntToString(10));
-				concatText = ConcatStrings(concatText," очков обучения!");
+				concatText = ConcatStrings(concatText, " learning points! " );
 				AI_Print(concatText);
 				AI_Print(PRINT_NotEnoughLearnPoints);
 				B_Say(self,other,"$NOLEARNNOPOINTS");
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_01");	//Думаю, ты готов сделать следующий шаг на выбранном тобой пути.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_02");	//И в знак моего признания этого права - прими от меня эту руну.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_01 " );	// I think you're ready to take the next step on your chosen path.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_02 " );	// And as a sign of my recognition of this right - accept this rune from me.
 				other.lp = other.lp - 10;
 				RankPoints = RankPoints + 10;
 				B_GiveInvItems(self,other,itru_tplheal_01,1);
 				PSIWAYHEALRUNE_01 = TRUE;
 			};
 		}
-		else if((PSIWAYHEALRUNE_01 == TRUE) && (PSIWAYHEALRUNE_02 == FALSE) && (Kapitel >= 3))
+		else  if (( PSIWAYHEALRUNE_01  ==  TRUE ) && ( PSIWAYHEALRUNE_02  ==  FALSE ) && (Chapter >=  3 ))
 		{
 			if(other.lp < 15)
 			{
 				concatText = PRINT_NeedLP;
 				concatText = ConcatStrings(concatText,IntToString(15));
-				concatText = ConcatStrings(concatText," очков обучения!");
+				concatText = ConcatStrings(concatText, " learning points! " );
 				AI_Print(concatText);
 				B_Say(self,other,"$NOLEARNNOPOINTS");
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_03");	//Думаю, ты готов сделать следующий шаг на выбранном тобой пути.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_04");	//И в знак моего признания этого права - прими от меня эту руну.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_03 " );	// I think you're ready to take the next step on your chosen path.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_04 " );	// And as a sign of my recognition of this right - accept this rune from me.
 				other.lp = other.lp - 15;
 				RankPoints = RankPoints + 15;
 				B_GiveInvItems(self,other,itru_tplheal_02,1);
@@ -375,16 +376,16 @@ func void dia_gornatot_teachtplnextrunes_info()
 			{
 				concatText = PRINT_NeedLP;
 				concatText = ConcatStrings(concatText,IntToString(20));
-				concatText = ConcatStrings(concatText," очков обучения!");
+				concatText = ConcatStrings(concatText, " learning points! " );
 				AI_Print(concatText);
 				B_Say(self,other,"$NOLEARNNOPOINTS");
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_05");	//Думаю, ты готов сделать следующий шаг на выбранном тобой пути.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_06");	//И в знак моего признания этого права - прими от меня эту руну.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_07");	//Это последнее заклинание Пути Целителя - мне больше нечему учить тебя.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_08");	//Надеюсь, ты по достоинству оценишь полученные тобой знания!
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_05 " );	// I think you're ready to take the next step on your chosen path.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_06 " );	// And as a sign of my recognition of this right - accept this rune from me.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_07 " );	// This is the last spell of the Path of the Healer - I have nothing more to teach you.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_08 " );	// I hope you appreciate the knowledge you have gained!
 				other.lp = other.lp - 20;
 				RankPoints = RankPoints + 20;
 				B_GiveInvItems(self,other,itru_tplheal_03,1);
@@ -394,67 +395,67 @@ func void dia_gornatot_teachtplnextrunes_info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_09");	//Ты еще не готов к тому, чтобы получить следующее заклинание Пути Целителя.
+			AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_09 " );	// You're not ready to receive the next Path of the Healer spell yet.
 		};
 	};
 	if(PSIWAYCOMBAT == TRUE)
 	{
-		if((PSIWAYCOMBATRUNE_01 == FALSE) && (Kapitel >= 2))
+		if (( PSIWAYCOMBATRUNE_01  ==  FALSE ) && (Capital >=  2 ))
 		{
 			if(other.lp < 10)
 			{
 				concatText = PRINT_NeedLP;
 				concatText = ConcatStrings(concatText,IntToString(10));
-				concatText = ConcatStrings(concatText," очков обучения!");
+				concatText = ConcatStrings(concatText, " learning points! " );
 				AI_Print(concatText);
 				B_Say(self,other,"$NOLEARNNOPOINTS");
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_10");	//Думаю, ты готов сделать следующий шаг на выбранном тобой пути.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_11");	//И в знак моего признания этого права - прими от меня эту руну.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_10 " );	// I think you're ready to take the next step on your chosen path.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_11 " );	// And as a sign of my recognition of this right - accept this rune from me.
 				other.lp = other.lp - 10;
 				RankPoints = RankPoints + 10;
 				B_GiveInvItems(self,other,itru_tplstrike_01,1);
 				PSIWAYCOMBATRUNE_01 = TRUE;
 			};
 		}
-		else if((PSIWAYCOMBATRUNE_01 == TRUE) && (PSIWAYCOMBATRUNE_02 == FALSE) && (Kapitel >= 3))
+		else  if (( PSIWAYCOMBATRUNE_01  ==  TRUE ) && ( PSIWAYCOMBATRUNE_02  ==  FALSE ) && (Capital >=  3 ))
 		{
 			if(other.lp < 15)
 			{
 				concatText = PRINT_NeedLP;
 				concatText = ConcatStrings(concatText,IntToString(15));
-				concatText = ConcatStrings(concatText," очков обучения!");
+				concatText = ConcatStrings(concatText, " learning points! " );
 				AI_Print(concatText);
 				B_Say(self,other,"$NOLEARNNOPOINTS");
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_12");	//Думаю, ты готов сделать следующий шаг на выбранном тобой пути.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_13");	//И в знак моего признания этого права - прими от меня эту руну.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_12 " );	// I think you're ready to take the next step on your chosen path.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_13 " );	// And as a sign of my recognition of this right - accept this rune from me.
 				other.lp = other.lp - 15;
 				RankPoints = RankPoints + 15;
 				B_GiveInvItems(self,other,itru_tplstrike_02,1);
 				PSIWAYCOMBATRUNE_02 = TRUE;
 			};
 		}
-		else if((PSIWAYCOMBATRUNE_01 == TRUE) && (PSIWAYCOMBATRUNE_02 == TRUE) && (PSIWAYCOMBATRUNE_03 == FALSE) && (Kapitel >= 5))
+		else  if (( PSIWAYCOMBATRUNE_01  ==  TRUE ) && ( PSIWAYCOMBATRUNE_02  ==  TRUE ) && ( PSIWAYCOMBATRUNE_03  ==  FALSE ) && (Capital >=  5 ))
 		{
 			if(other.lp < 20)
 			{
 				concatText = PRINT_NeedLP;
 				concatText = ConcatStrings(concatText,IntToString(20));
-				concatText = ConcatStrings(concatText," очков обучения!");
+				concatText = ConcatStrings(concatText, " learning points! " );
 				AI_Print(concatText);
 				B_Say(self,other,"$NOLEARNNOPOINTS");
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_14");	//Думаю, ты готов сделать следующий шаг на выбранном тобой пути.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_15");	//И в знак моего признания этого права - прими от меня эту руну.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_16");	//Это последнее заклинание Пути Воина - мне больше нечему учить тебя.
-				AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_17");	//Надеюсь, ты по достоинству оценишь полученные тобой знания!
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_14 " );	// I think you're ready to take the next step on your chosen path.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_15 " );	// And as a sign of my recognition of this right - accept this rune from me.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_16 " );	// This is the last spell of the Way of the Warrior - I have nothing more to teach you.
+				AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_17 " );	// I hope you appreciate the knowledge you have gained!
 				other.lp = other.lp - 20;
 				RankPoints = RankPoints + 20;
 				B_GiveInvItems(self,other,itru_tplstrike_03,1);
@@ -464,7 +465,7 @@ func void dia_gornatot_teachtplnextrunes_info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_GorNaTot_TEACHTplNextRunes_01_18");	//Ты еще не готов к тому, чтобы получить следующее заклинание Пути Воина.
+			AI_Output(self,other, " DIA_GorNaTot_TEACHTplNextRunes_01_18 " );	// You're not ready to receive the next Warrior Path spell yet.
 		};
 	};
 };
@@ -477,7 +478,7 @@ instance DIA_GORNATOT_NamibSendTempler(C_Info)
 	condition = dia_gornatot_NamibSendTempler_condition;
 	information = dia_gornatot_NamibSendTempler_info;
 	permanent = FALSE;
-	description = "Я прибыл от Идола Намиба.";
+	description = " I came from the Namib Idol. " ;
 };
 
 func int dia_gornatot_NamibSendTempler_condition()
@@ -490,16 +491,16 @@ func int dia_gornatot_NamibSendTempler_condition()
 
 func void dia_gornatot_NamibSendTempler_info()
 {
-	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_00");	//Я прибыл от Идола Намиба.
-	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_01");	//(спокойно) Что хочет наш духовный наставник?
-	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_02");	//Он хочет, чтобы ты послал нескольких стражей в лагеря сборщиков болотника. Необходимо как можно скорее обеспечить их безопасность.
-	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_03");	//(удивленно) Зачем? Разве им что-то угрожает?
-	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_04");	//Ты сомневаешься в решении Идола Намиба?
-	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_05");	//Нет, конечно. Просто стало интересно - зачем Идолу Намибу это понадобилось?
-	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_06");	//Можешь спросить у него самого.
-	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_07");	//Ладно, не будем терять времени! Я сейчас же распоряжусь об отправке нескольких стражей к сборщикам. Можешь так ему и передать.
+	AI_Output(other,self, " DIA_GorNaTot_NamibSendTempler_01_00 " );	// I came from the Namib Idol.
+	AI_Output(self,other, " DIA_GorNaTot_NamibSendTempler_01_01 " );	// (calmly) What does our spirit guide want?
+	AI_Output(other,self, " DIA_GorNaTot_NamibSendTempler_01_02 " );	// He wants you to send some guards to the bog harvester camps. They need to be secured as soon as possible.
+	AI_Output(self,other, " DIA_GorNaTot_NamibSendTempler_01_03 " );	// (surprised) Why? Is there any threat to them?
+	AI_Output(other,self, " DIA_GorNaTot_NamibSendTempler_01_04 " );	// Do you doubt Namib Idol's decision?
+	AI_Output(self,other, " DIA_GorNaTot_NamibSendTempler_01_05 " );	// No, of course not. I just wondered - why did the Namib Idol need this?
+	AI_Output(other,self, " DIA_GorNaTot_NamibSendTempler_01_06 " );	// You can ask him himself.
+	AI_Output(self,other, " DIA_GorNaTot_NamibSendTempler_01_07 " );	// Okay, let's not waste time! I will immediately arrange for the dispatch of several guards to the collectors. You can pass it on to him.
 	GorNaTotSendTemplers = TRUE;
-	B_LogEntry(TOPIC_PrioratStart,"Наставника стражей Гор На Тофа удивила просьба Намиба, однако он пообещал в ближайшее время отправить в лагеря сборщиков несколько своих воинов.");
+	B_LogEntry(TOPIC_PrioratStart, " Gor Guard Trainer Na Tof was surprised by Namib's request, but promised to send some of his warriors to the gathering camps soon. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(TPL_8100_TEMPLER,"NW_PSICAMP_GUARDCAMP_00_01");
 	Wld_InsertNpc(TPL_8101_TEMPLER,"NW_PSICAMP_GUARDCAMP_01_01");
@@ -515,7 +516,7 @@ instance DIA_GORNATOT_LetsTrain(C_Info)
 	condition = dia_gornatot_LetsTrain_condition;
 	information = dia_gornatot_LetsTrain_info;
 	permanent = FALSE;
-	description = "Что ты можешь сказать о Тираксе?";
+	description = " What can you say about Tyrax? " ;
 };
 
 func int dia_gornatot_LetsTrain_condition()
@@ -529,17 +530,17 @@ func int dia_gornatot_LetsTrain_condition()
 func void dia_gornatot_LetsTrain_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_GorNaTot_LetsTrain_01_00");	//Что ты можешь сказать о твоем ученике Тираксе?
-	AI_Output(self,other,"DIA_GorNaTot_LetsTrain_01_01");	//Тиракс? Полагаю, что он один из лучших воинов, которых мне приходилось обучать.
-	AI_Output(self,other,"DIA_GorNaTot_LetsTrain_01_02");	//Но, на мой взгляд, порой ему не хватает уверенности в себе, что ведет к потери его концентрации в бою.
-	AI_Output(self,other,"DIA_GorNaTot_LetsTrain_01_03");	//Ему надо научиться полностью сосредотачиваться на битве, а не размышлять о том, что подумают о нем другие. А почему ты спрашиваешь?
-	AI_Output(other,self,"DIA_GorNaTot_LetsTrain_01_04");	//Тиракс сейчас находится в лагере сборщиков болотника вместе с другими стражами.
-	AI_Output(self,other,"DIA_GorNaTot_LetsTrain_01_05");	//Я знаю об этом, поскольку сам его туда и отправил.
-	AI_Output(other,self,"DIA_GorNaTot_LetsTrain_01_06");	//Так вот. Мне кажется, что им не мешало бы там попрактиковаться во владении мечом.
-	AI_Output(other,self,"DIA_GorNaTot_LetsTrain_01_07");	//Это будет куда полезнее, чем проводить все свое свободное время, стоя на посту. Но им нужен наставник, который займется их обучением.
-	AI_Output(self,other,"DIA_GorNaTot_LetsTrain_01_08");	//Мысль хорошая. И насколько я понимаю, ты хочешь, чтобы Тиракс занялся этим?
-	AI_Output(other,self,"DIA_GorNaTot_LetsTrain_01_09");	//Об этом я и хотел тебя спросить. Тираксу нужно твое согласие, чтобы начать тренировки.
-	AI_Output(self,other,"DIA_GorNaTot_LetsTrain_01_10");	//Что ж, я нисколько не против. Он вполне к этому готов.
-	GorNaTotAgreeTiraks = TRUE;
-	B_LogEntry(TOPIC_TrainInCamp,"Наставник стражей Гор На Тоф дал свое согласие на то, чтобы Тиракс занялся обучением стражей в лагере сборщиков.");
+	AI_Output(other,self, " DIA_GorNaTot_LetsTrain_01_00 " );	// What can you say about your apprentice Tyrax?
+	AI_Output(self,other, " DIA_GorNaTot_LetsTrain_01_01 " );	// Thirax? I believe he is one of the finest warriors I have ever trained.
+	AI_Output(self,other, " DIA_GorNaTot_LetsTrain_01_02 " );	// But, in my opinion, sometimes he lacks self-confidence, which leads to a loss of his concentration in battle.
+	AI_Output(self,other, " DIA_GorNaTot_LetsTrain_01_03 " );	// He needs to learn to fully focus on the battle and not worry about what others think of him. Why are you asking?
+	AI_Output(other,self, " DIA_GorNaTot_LetsTrain_01_04 " );	// Tyrax is currently at the Swamp Gatherer Camp with the other Guardians.
+	AI_Output(self,other, " DIA_GorNaTot_LetsTrain_01_05 " );	// I know this because I sent it there myself.
+	AI_Output(other,self, " DIA_GorNaTot_LetsTrain_01_06 " );	// So. It seems to me that they would do well to practice swordsmanship there.
+	AI_Output(other,self, " DIA_GorNaTot_LetsTrain_01_07 " );	// This will be much more useful than spending all your free time standing at your post. But they need a mentor to train them.
+	AI_Output(self,other, " DIA_GorNaTot_LetsTrain_01_08 " );	// Good idea. And I take it you want Tyrax to take care of it?
+	AI_Output(other,self, " DIA_GorNaTot_LetsTrain_01_09 " );	// That's what I wanted to ask you. Tirax needs your consent to begin training.
+	AI_Output(self,other, " DIA_GorNaTot_LetsTrain_01_10 " );	// Well, I don't mind at all. He is quite ready for this.
+	GorNaTotAgreeTiraks = TRUE ;
+	B_LogEntry(TOPIC_TrainInCamp, " Guardian Trainer Gor Na Tof has given his consent for Tirax to train guards at the Gatherer Camp. " );
 };
