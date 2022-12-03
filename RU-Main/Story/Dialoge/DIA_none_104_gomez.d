@@ -1,4 +1,5 @@
 
+
 instance DIA_GOMEZ_EXIT(C_Info)
 {
 	npc = none_104_gomez;
@@ -42,28 +43,28 @@ func int dia_gomez_hello_condition()
 
 func void dia_gomez_hello_info()
 {
-	AI_Output(self,other,"DIA_Gomez_Hello_01_00");	//Вот наши пути и пересеклись вновь, герой. Кто бы мог подумать.
-	AI_Output(self,other,"DIA_Gomez_Hello_01_01");	//Спасибо, что избавил меня от этого гнилого тела, в котором томилась моя душа.
+	AI_Output(self,other, " DIA_Gomez_Hello_01_00 " );	// So our paths crossed again, hero. Who would have thought.
+	AI_Output(self,other, " DIA_Gomez_Hello_01_01 " );	// Thank you for delivering me from this rotten body in which my soul languished.
 	AI_Output(other,self,"DIA_Gomez_Hello_01_02");	//Гомез?! Ты же...
-	AI_Output(self,other,"DIA_Gomez_Hello_01_03");	//Мертв? Ты, наверно, это хотел сказать.
-	AI_Output(self,other,"DIA_Gomez_Hello_01_04");	//Могу тебя обрадовать, ты не далек от истины - я действительно мертв.
-	AI_Output(other,self,"DIA_Gomez_Hello_01_05");	//Ты заслужил это, ублюдок!
-	AI_Output(self,other,"DIA_Gomez_Hello_01_06");	//Ты прав, в свое время я творил просто ужасные вещи.
-	AI_Output(other,self,"DIA_Gomez_Hello_01_07");	//Ужасные?! Это еще слабо сказано!
-	AI_Output(other,self,"DIA_Gomez_Hello_01_08");	//Чего стоит только та резня ни в чем неповинных магов Огня!
-	AI_Output(self,other,"DIA_Gomez_Hello_01_09");	//Ты можешь не сомневаться - за всю эту кровь боги уже заставили меня заплатить высокую цену.
-	AI_Output(self,other,"DIA_Gomez_Hello_01_10");	//И теперь у меня есть целая вечность, чтобы подумать и раскаяться во всем, мною совершенном...
+	AI_Output(self,other, " DIA_Gomez_Hello_01_03 " );	// Dead? You probably wanted to say that.
+	AI_Output(self,other, " DIA_Gomez_Hello_01_04 " );	// I can please you, you are not far from the truth - I really am dead.
+	AI_Output(other,self, " DIA_Gomez_Hello_01_05 " );	// You deserve it, you bastard!
+	AI_Output(self,other, " DIA_Gomez_Hello_01_06 " );	// You're right, in my time I did just terrible things.
+	AI_Output(other,self, " DIA_Gomez_Hello_01_07 " );	// Terrible?! That's too weak to say!
+	AI_Output(other,self, " DIA_Gomez_Hello_01_08 " );	// What is worth only that massacre of innocent Firebenders!
+	AI_Output(self,other, " DIA_Gomez_Hello_01_09 " );	// You can be sure that for all this blood, the gods have already made me pay a high price.
+	AI_Output(self,other, " DIA_Gomez_Hello_01_10 " );	// And now I have a whole eternity to think and repent of everything I have done...
 };
 
 
-instance DIA_GOMEZ_HAST(C_Info)
+instance DIA_GOMEZ_HAST (C_Info)
 {
 	npc = none_104_gomez;
 	nr = 1;
 	condition = dia_gomez_hast_condition;
 	information = dia_gomez_hast_info;
 	permanent = FALSE;
-	description = "Значит, ты проклят?";
+	description = " So you're cursed? " ;
 };
 
 
@@ -75,31 +76,31 @@ func int dia_gomez_hast_condition()
 	};
 };
 
-func void dia_gomez_hast_info()
+func void day_gomez_hast_info()
 {
-	AI_Output(other,self,"DIA_Gomez_Hast_01_00");	//Так, значит, ты проклят?
-	AI_Output(self,other,"DIA_Gomez_Hast_01_03");	//Да, мертвые, наконец-то, начинают понимать, какова цена власти и золота.
-	AI_Output(self,other,"DIA_Gomez_Hast_01_05");	//Я был уверен в том, что могу ВСЕ. И это действительно было именно так!
-	AI_Output(self,other,"DIA_Gomez_Hast_01_06");	//В моих руках была власть, которой позавидовал бы сам король.
-	AI_Output(self,other,"DIA_Gomez_Hast_01_07");	//Но только сейчас я понял то, что самое ценное у нас - это душа.
-	AI_Output(self,other,"DIA_Gomez_Hast_01_08");	//Душа, которой теперь нет покоя.
+	AI_Output(other,self, " DIA_Gomez_Hast_01_00 " );	// So, are you cursed?
+	AI_Output(self,other, " DIA_Gomez_Hast_01_03 " );	// Yes, the dead are finally beginning to understand the price of power and gold.
+	AI_Output(self,other, " DIA_Gomez_Hast_01_05 " );	// I was sure that I can do EVERYTHING. And it really was just that!
+	AI_Output(self,other, " DIA_Gomez_Hast_01_06 " );	// In my hands was the power that the king himself would envy.
+	AI_Output(self,other, " DIA_Gomez_Hast_01_07 " );	// But only now I realized that the most valuable thing with us is the soul.
+	AI_Output(self,other, " DIA_Gomez_Hast_01_08 " );	// The soul, which now has no rest.
 };
 
 
 var int gomezpermonetime;
 
-instance DIA_GOMEZ_CANDO(C_Info)
+instance DAY_GOMEZ_CANDO (C_Info)
 {
 	npc = none_104_gomez;
 	nr = 5;
 	condition = dia_gomez_cando_condition;
 	information = dia_gomez_cando_info;
 	permanent = TRUE;
-	description = "Что ты теперь будешь делать?";
+	description = " What are you going to do now? " ;
 };
 
 
-func int dia_gomez_cando_condition()
+func int day_gomez_cando_condition()
 {
 	if(Npc_KnowsInfo(hero,dia_gomez_hast) && (MIS_RESCUEGOMEZ != LOG_SUCCESS))
 	{
@@ -109,30 +110,30 @@ func int dia_gomez_cando_condition()
 
 func void dia_gomez_cando_info()
 {
-	AI_Output(other,self,"DIA_Gomez_CanDo_01_00");	//Что ты теперь будешь делать?
-	AI_Output(self,other,"DIA_Gomez_CanDo_01_01");	//Мне нет пути отсюда.
-	AI_Output(self,other,"DIA_Gomez_CanDo_01_02");	//Море пролитой когда-то мной крови крепко держит меня в этом месте.
-	AI_Output(self,other,"DIA_Gomez_CanDo_01_03");	//Никогда не думал, что стану проклятием своего же замка.
+	AI_Output(other,self, " DIA_Gomez_CanDo_01_00 " );	// What are you going to do now?
+	AI_Output(self,other, " DIA_Gomez_CanDo_01_01 " );	// I can't get out of here.
+	AI_Output(self,other, " DIA_Gomez_CanDo_01_02 " );	// The sea of ​​blood I once shed holds me firmly in this place.
+	AI_Output(self,other, " DIA_Gomez_CanDo_01_03 " );	// I never thought I'd become the curse of my own castle.
 	if(GOMEZPERMONETIME == FALSE)
 	{
-		AI_Output(other,self,"DIA_Gomez_CanDo_01_04");	//Выходит, ты здесь застрял надолго.
-		AI_Output(self,other,"DIA_Gomez_CanDo_01_05");	//Да, на целую вечность.
-		AI_Output(self,other,"DIA_Gomez_CanDo_01_06");	//Но если бы ты помог бы мне искупить свою вину и тем самым успокоить мою грешную душу...
-		AI_Output(self,other,"DIA_Gomez_CanDo_01_07");	//Тогда бы я смог покинуть это место и обрести долгожданный покой.
-		AI_Output(other,self,"DIA_Gomez_CanDo_01_08");	//На мою помощь ты точно не можешь рассчитывать!
+		AI_Output(other,self, " DIA_Gomez_CanDo_01_04 " );	// So you're stuck here for a long time.
+		AI_Output(self,other, " DIA_Gomez_CanDo_01_05 " );	// Yes, for all eternity.
+		AI_Output(self,other, " DIA_Gomez_CanDo_01_06 " );	// But if you would help me atone for my guilt and thereby calm my sinful soul...
+		AI_Output(self,other, " DIA_Gomez_CanDo_01_07 " );	// Then I would be able to leave this place and find the long-awaited peace.
+		AI_Output(other,self, " DIA_Gomez_CanDo_01_08 " );	// You definitely can't count on my help!
 		GOMEZPERMONETIME = TRUE;
 	};
 };
 
 
-instance DIA_GOMEZ_MRAMORSTATUE(C_Info)
+instance DIA_GOMEZ_MRAMORSTATUE (C_Info)
 {
 	npc = none_104_gomez;
 	nr = 1;
 	condition = dia_gomez_mramorstatue_condition;
 	information = dia_gomez_mramorstatue_info;
 	permanent = FALSE;
-	description = "Что ты знаешь о мраморных статуэтках?";
+	description = " What do you know about marble figurines? " ;
 };
 
 
@@ -146,24 +147,24 @@ func int dia_gomez_mramorstatue_condition()
 
 func void dia_gomez_mramorstatue_info()
 {
-	AI_Output(other,self,"DIA_Gomez_MramorStatue_01_00");	//Что ты знаешь о мраморных статуэтках?
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_01");	//О чем это ты?
-	AI_Output(other,self,"DIA_Gomez_MramorStatue_01_02");	//Я о трех статуэтках Инноса, выполненных из черного нордмарского мрамора.
-	AI_Output(other,self,"DIA_Gomez_MramorStatue_01_03");	//Один из рудных баронов потребовал их у короля Робара в качестве оплаты за груз магической руды.
-	AI_Output(other,self,"DIA_Gomez_MramorStatue_01_04");	//Ты знаешь, где они?
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_05");	//Конечно. Я тоже был рудным бароном, и в курсе того, где мои предшественники хранили сокровища.
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_06");	//Но ты должен оказать мне одну небольшую услугу.
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_08");	//Помоги мне стать свободным! Успокой мою душу, и я поделюсь с тобой всем тем, что знаю сам.
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_09");	//Мои страдания, эта боль - они просто ужасны!
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_10");	//И с каждым днем мои мучения становятся все более и более невыносимыми.
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_11");	//Особенно когда в эту долину пришло огромное зло.
-	AI_Output(other,self,"DIA_Gomez_MramorStatue_01_12");	//Откуда тебе это известно? Ты же ни разу не покидал замка?
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_13");	//Я это чувствую!
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_14");	//Тлетворные узы этого зла растеклись по всей округе, проникая в каждую щелочку и в каждую душу. И я не исключение.
-	AI_Output(other,self,"DIA_Gomez_MramorStatue_01_15");	//Хммм... А если я не стану тебе помогать?
-	AI_Output(self,other,"DIA_Gomez_MramorStatue_01_16");	//Тогда ты никогда не сможешь найти то, что ищешь.
-	AI_Output(other,self,"DIA_Gomez_MramorStatue_01_17");	//Выходит, у меня нет выбора.
-	B_LogEntry(TOPIC_RARETHINGS,"В замке Старого лагеря я повстречался с давним знакомым - рудным бароном Гомезом. Точнее, с его проклятой душой, обличенной в виде призрака. Довольно неожиданная встреча... Пользуясь случаем, я поинтересовался у Гомеза на тему тех драгоценных статуэток, которые так нужны Лютеро. Гомез ответил, что знает, где находятся эти мраморные статуэтки, и согласился указать мне это место. Но при одном условии - я должен буду помочь ему снять проклятие с его души. Похоже, чтобы заполучить нужные мне вещи, я должен буду немного поступиться своими принципами и помочь Гомезу снять его проклятие.");
+	AI_Output(other,self, " DIA_Gomez_MramorStatue_01_00 " );	// What do you know about marble figurines?
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_01 " );	// What are you talking about?
+	AI_Output(other,self, " DIA_Gomez_MramorStatue_01_02 " );	// I'm talking about the three statuettes of Innos, made of black Nordmar marble.
+	AI_Output(other,self, " DIA_Gomez_MramorStatue_01_03 " );	// One of the ore barons demanded them from King Rhobar as payment for a shipment of magical ore.
+	AI_Output(other,self, " DIA_Gomez_MramorStatue_01_04 " );	// Do you know where they are?
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_05 " );	// Of course. I was also an ore baron, and I know where my predecessors kept their treasures.
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_06 " );	// But you have to do me one small favor.
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_08 " );	// Help me be free! Calm my soul, and I will share with you all that I know myself.
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_09 " );	// My suffering, this pain - they are just awful!
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_10 " );	// And every day my torment becomes more and more unbearable.
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_11 " );	// Especially when a great evil has come to this valley.
+	AI_Output(other,self, " DIA_Gomez_MramorStatue_01_12 " );	// How do you know this? Have you ever left the castle?
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_13 " );	// I can feel it!
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_14 " );	// The pernicious bonds of this evil spread throughout the area, penetrating into every crack and into every soul. And I am no exception.
+	AI_Output(other,self, " DIA_Gomez_MramorStatue_01_15 " );	// Hmmm... What if I don't help you?
+	AI_Output(self,other, " DIA_Gomez_MramorStatue_01_16 " );	// Then you'll never find what you're looking for.
+	AI_Output(other,self, " DIA_Gomez_MramorStatue_01_17 " );	// So I don't have a choice.
+	B_LogEntry(TOPIC_RARETHINGS,"In the castle of the Old Camp, I met with an old acquaintance - the ore baron Gomez. More precisely, with his damned soul, convicted in the form of a ghost. Quite an unexpected meeting... Taking the opportunity, I asked Gomez about those precious figurines, which Luthero so desperately needs. Gomez replied that he knew where these marble figurines were, and agreed to show me the place. But on one condition - I will have to help him remove the curse from his soul. It seems that in order to get the things I need, I must I will give up my principles a little and help Gomez remove his curse.");
 };
 
 
@@ -174,13 +175,13 @@ instance DIA_GOMEZ_MRAMORSTATUEHELP(C_Info)
 	condition = dia_gomez_mramorstatuehelp_condition;
 	information = dia_gomez_mramorstatuehelp_info;
 	permanent = FALSE;
-	description = "Хорошо, я помогу тебе.";
+	description = " Okay, I'll help you. " ;
 };
 
 
 func int dia_gomez_mramorstatuehelp_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_gomez_mramorstatue) && (MIS_RARETHINGS == LOG_Running))
+	if ( Npc_KnowsInfo ( hero , dia_gomez_motherstatue ) && ( MY_RARETHINGS  == LOG_Running ))
 	{
 		return TRUE;
 	};
@@ -188,53 +189,53 @@ func int dia_gomez_mramorstatuehelp_condition()
 
 func void dia_gomez_mramorstatuehelp_info()
 {
-	AI_Output(other,self,"DIA_Gomez_MramorStatueHelp_01_00");	//Хорошо, я помогу тебе. Что я должен делать?
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_01");	//Для начала тебе необходимо посетить алтари всех трех великих божеств и помолиться перед ними за мою душу.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_02");	//Здесь в долине ты без особого труда сможешь отыскать алтари, посвященные Инносу и Белиару.
-	AI_Output(other,self,"DIA_Gomez_MramorStatueHelp_01_03");	//А что насчет с молитвы Аданосу?
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_04");	//В этом тебе наверняка смогут помочь маги Воды.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_05");	//Благословления одного из них будет вполне достаточно.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_11");	//После этого тебе следует отправиться в Старую шахту.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_12");	//В ней ты должен будешь отыскать как минимум десять неупокоенных душ тех людей, что раньше там работали на меня.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_14");	//Позаботься о том, чтобы они обрели, наконец-то, тот покой, которого так жаждут.
-	AI_Output(other,self,"DIA_Gomez_MramorStatueHelp_01_15");	//А как же мне это сделать?
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_16");	//Просто убей их.
-	AI_Output(other,self,"DIA_Gomez_MramorStatueHelp_01_17");	//Убить? Хммм... А я смотрю, твои методы решений проблем не отличаются особым разнообразием.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_18");	//Поверь, это единственный способ освободить эти души от того проклятия, что наложено на них.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_20");	//И запомни...
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_21");	//...перед тем как убить очередную душу, ты должен будешь испросить у нее прощение для меня.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_22");	//И только получив его - обнажай свой меч!
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_23");	//Иначе все твои действия окажутся бессмысленной тратой времени.
-	AI_Output(other,self,"DIA_Gomez_MramorStatueHelp_01_24");	//А зачем тебе понадобилось их прощение?
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_25");	//Потому что я сам проклял этих людей. И именно по моей вине их души до сих пор не могут обрести покой в этом мире.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_27");	//Когда я узнал, что в Старой шахте произошел обвал, я впал в безудержную ярость и был просто взбешен случившимся!
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_28");	//Мне казалось, что все вокруг меня предали.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_29");	//В безнадежных попытках как-то исправить сложившуюся ситуацию я не нашел ничего лучшего, как проклянуть всех тех, кто допустил обрушение этой шахты.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_30");	//Шахты, на которой держалась вся моя власть и все мое богатство.
-	AI_Output(other,self,"DIA_Gomez_MramorStatueHelp_01_35");	//Да, непростое дело.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_36");	//Это еще не все.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_37");	//После того, как ты побываешь в Старой шахте, тебе нужно будет вернуться сюда в замок.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_39");	//Как ты знаешь, мое самое тяжкое преступление - это убийство Корристо и его магов Огня.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_40");	//Поэтому тебе еще будет необходимо провести ритуал вызова душ умерших магов.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_43");	//На верхнем этаже в бывшей келье магов Огня сохранилась магическая пентаграмма.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_44");	//Используй ее. Для этого встань в середине магического круга и произнеси слова - ФАР АКТУС БЕК НОР КАР!
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_46");	//Эти слова - часть древнего магического заклинания, которое поможет тебе призвать души умерших в этот мир...
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_47");	//...и, естественно, как ты сам понимаешь, - только лишь на некоторое время.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_49");	//Чтобы ты не забыл их - я дам тебе свиток, где они будут записаны.
+	AI_Output(other,self, " DIA_Gomez_MramorStatueHelp_01_00 " );	// Okay, I'll help you. What should I do?
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_01 " );	// First you need to visit the altars of all three great deities and pray before them for my soul.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_02 " );	// Here in the valley you can easily find altars dedicated to Innos and Beliar.
+	AI_Output(other,self, " DIA_Gomez_MramorStatueHelp_01_03 " );	// What about praying to Adanos?
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_04 " );	// Waterbenders will surely be able to help you with this.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_05 " );	// Blessing one of them will suffice.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_11 " );	// After that, you should go to the Old Mine.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_12 " );	// In it, you will have to find at least ten restless souls of those people who used to work there for me.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_14 " );	// Make sure they finally find the peace they long for.
+	AI_Output(other,self, " DIA_Gomez_MramorStatueHelp_01_15 " );	// How can I do this?
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_16 " );	// Just kill them.
+	AI_Output(other,self, " DIA_Gomez_MramorStatueHelp_01_17 " );	// Kill? Hmmm... And I see that your methods of solving problems are not very diverse.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_18 " );	// Believe me, this is the only way to free these souls from the curse that has been placed on them.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_20 " );	// And remember...
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_21 " );	// ...before you kill another soul, you will have to ask her forgiveness for me.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_22 " );	// And only after receiving it - draw your sword!
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_23 " );	// Otherwise, all your actions will be a waste of time.
+	AI_Output(other,self, " DIA_Gomez_MramorStatueHelp_01_24 " );	// And why did you need their forgiveness?
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_25 " );	// Because I cursed these people myself. And it is my fault that their souls still cannot find peace in this world.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_27 " );	// When I learned that the Old Mine had collapsed, I flew into an uncontrollable rage and was just pissed off about what happened!
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_28 " );	// I felt like everyone around me had betrayed me.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_29 " );	// In my hopeless attempts to somehow correct the current situation, I did not find anything better than to curse all those who allowed the collapse of this mine.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_30 " );	// The mine that held all my power and all my wealth.
+	AI_Output(other,self, " DIA_Gomez_MramorStatueHelp_01_35 " );	// Yes, it's not easy.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_36 " );	// That's not all.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_37 " );	// After you visit the Old Mine, you will need to return here to the castle.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_39 " );	// As you know, my gravest crime is the murder of Corristo and his Firebenders.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_40 " );	// Therefore, you will still need to perform the ritual of summoning the souls of dead mages.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_43 " );	// On the top floor in the former cell of the Fire Mages, a magical pentagram has been preserved.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_44 " );	// Use it. To do this, stand in the middle of the magic circle and say the words - FAR ACTUS BEK NOR KAR!
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_46 " );	// These words are part of an ancient magic spell that will help you summon the souls of the dead to this world...
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_47 " );	// ...and, of course, as you understand, only for a while.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_49 " );	// Lest you forget them, I will give you a scroll where they will be written.
 	B_GiveInvItems(self,other,itwr_gomezmagicwords,1);
-	AI_Output(other,self,"DIA_Gomez_MramorStatueHelp_01_55");	//И каковы мои дальнейшие действия?
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_56");	//Поговори с каждым из них, и пусть каждый дарует мне свое прощение. Этого будет достаточно!
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_58");	//Это все. Так что не теряй времени и отправляйся в путь.
-	AI_Output(self,other,"DIA_Gomez_MramorStatueHelp_01_59");	//Я буду ждать тебя здесь, и, надеюсь, что ты принесешь мне хорошие новости.
+	AI_Output(other,self, " DIA_Gomez_MramorStatueHelp_01_55 " );	// And what are my next steps?
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_56 " );	// Speak to each of them, and may each grant me their forgiveness. This will be enough!
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_58 " );	// That's all. So don't waste your time and hit the road.
+	AI_Output(self,other, " DIA_Gomez_MramorStatueHelp_01_59 " );	// I'll be waiting for you here, and I hope you bring me good news.
 	MIS_RESCUEGOMEZ = LOG_Running;
 	RESCUEGOMEZSTEPONE = TRUE;
 	Log_CreateTopic(TOPIC_RESCUEGOMEZ,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RESCUEGOMEZ,LOG_Running);
-	B_LogEntry(TOPIC_RESCUEGOMEZ,"Для того, чтобы снять проклятие с души Гомеза, мне необходимо сделать три вещи.");
-	Log_AddEntry(TOPIC_RESCUEGOMEZ,"Для начала необходимо помолиться за душу рудного барона всем трем богам - Инносу, Белиару и Аданосу. Для молитв первым двум божествам подойдут их алтари, которые я без труда смогу отыскать в Долине Рудников. Что же касается благословения Аданоса, то в этом мне могут помочь маги Воды. Однако, помня тот ужас, который сеял Гомез при жизни, многие из них наверняка откажут мне в этой просьбе. Придется поискать мага, который не знал Гомеза при жизни.");
-	Log_AddEntry(TOPIC_RESCUEGOMEZ,"После того, как я получу согласие всех трех божеств, я должен буду отправиться в Старую шахту. Там мне предстоит отыскать как минимум десять неупокоенных душ тех людей, что работали когда-то на Гомеза, и принести им долгожданное упокоение или, проще говоря, убить их всех. Однако перед смертью, души должны дать прощение Гомезу - это очень важный момент.");
-	Log_AddEntry(TOPIC_RESCUEGOMEZ,"И в самую последнюю очередь мне необходимо совершить ритуал вызова душ магов Огня, убитых по приказу Гомеза в Старом лагере. Для этого он дал мне свиток со словами древнего заклинания. Ритуал необходимо провести в бывшей келье магов внутри замка, у пентаграммы на верхнем этаже. Души магов также должны согласиться простить злодеяния Гомеза.");
-	Log_AddEntry(TOPIC_RESCUEGOMEZ,"После того, как я выполню все эти поручения, мне необходимо будет вернуться к Гомезу.");
+	B_LogEntry( TOPIC_RESCUEGOMEZ , " In order to remove the curse from Gomez's soul, I need to do three things. " );
+	Log_AddEntry( TOPIC_RESCUEGOMEZ , " First you need to pray for the soul of the ore baron to all three gods - Innos, Beliar and Adanos. For prayers to the first two deities, their altars are suitable, which I can easily find in the Valley of Mines. As for the blessing of Adanos, then in Water magicians can help me with this. However, remembering the horror that Gomez sowed during his lifetime, many of them will probably refuse my request. I will have to look for a magician who did not know Gomez during his lifetime. " );
+	Log_AddEntry( TOPIC_RESCUEGOMEZ , " After I get the consent of all three deities, I will have to go to the Old Mine. There I have to find at least ten restless souls of those people who once worked for Gomez, and bring them a long-awaited rest or , in other words, kill them all. However, before death, the souls must give forgiveness to Gomez - this is a very important point. " );
+	Log_AddEntry( TOPIC_RESCUEGOMEZ , " And last but not least, I need to perform the ritual of calling the souls of the Fire Mages killed on the orders of Gomez in the Old Camp. To do this, he gave me a scroll with the words of an ancient spell. The ritual must be performed in the former cell of magicians inside the castle, near the pentagram on the top floor. The souls of the mages must also agree to forgive Gomez's atrocities. " );
+	Log_AddEntry( TOPIC_RESCUEGOMEZ , " After I complete all these tasks, I need to return to Gomez. " );
 };
 
 
@@ -245,7 +246,7 @@ instance DIA_GOMEZ_ISFREE(C_Info)
 	condition = dia_gomez_isfree_condition;
 	information = dia_gomez_isfree_info;
 	permanent = FALSE;
-	description = "Ты свободен!";
+	description = " You are free! " ;
 };
 
 
@@ -263,19 +264,19 @@ func void dia_gomez_isfree_info()
 	GOMEZISFREENOW = TRUE;
 	MIS_RESCUEGOMEZ = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_RESCUEGOMEZ,LOG_SUCCESS);
-	Log_AddEntry(TOPIC_RESCUEGOMEZ,"Душа Гомеза покинула этот мир.");
-	AI_Output(other,self,"DIA_Gomez_IsFree_01_00");	//Ты свободен! Твоя душа прощена.
-	AI_Output(self,other,"DIA_Gomez_IsFree_01_01");	//Наконец-то. Я чувствую это! Мои страдания, мои муки - им пришел конец...
-	AI_Output(self,other,"DIA_Gomez_IsFree_01_02");	//Это проклятое место больше не удерживает меня. Я действительно свободен!
-	AI_Output(other,self,"DIA_Gomez_IsFree_01_04");	//Что насчет тех драгоценных статуэток из нордмарского мрамора? Ты обещал мне сказать, где их искать.
-	AI_Output(self,other,"DIA_Gomez_IsFree_01_05");	//Поверь, тебе не придется их искать - они находятся в том сундуке, что стоит позади меня.
-	AI_Output(self,other,"DIA_Gomez_IsFree_01_06");	//Я дам тебе ключ, который откроет этот сундук.
-	AI_Output(self,other,"DIA_Gomez_IsFree_01_07");	//Вот, возьми его.
+	Log_AddEntry( TOPIC_RESCUEGOMEZ , " Gomez's soul has left this world. " );
+	AI_Output(other,self, " DIA_Gomez_IsFree_01_00 " );	// You are free! Your soul is forgiven.
+	AI_Output(self,other, " DIA_Gomez_IsFree_01_01 " );	// Finally. I'm feeling it! My suffering, my torment - they have come to an end ...
+	AI_Output(self,other, " DIA_Gomez_IsFree_01_02 " );	// This cursed place no longer holds me back. I'm really free!
+	AI_Output(other,self, " DIA_Gomez_IsFree_01_04 " );	// What about those precious Nordmar marble figurines? You promised to tell me where to look for them.
+	AI_Output(self,other, " DIA_Gomez_IsFree_01_05 " );	// Trust me, you won't have to look for them - they're in that chest behind me.
+	AI_Output(self,other, " DIA_Gomez_IsFree_01_06 " );	// I'll give you the key to open this chest.
+	AI_Output(self,other, " DIA_Gomez_IsFree_01_07 " );	// Here, take it.
 	B_GiveInvItems(self,other,itkey_gomeztreasure,1);
-	AI_Output(self,other,"DIA_Gomez_IsFree_01_09");	//А теперь мне пора... Прощай!
-	B_LogEntry(TOPIC_RARETHINGS,"После того, как я помог Гомезу снять проклятие с его души, он дал мне ключ от сундука, что находится здесь, в старой башне. В этом сундуке и хранятся все три нордмарские статуэтки.");
+	AI_Output(self,other, " DIA_Gomez_IsFree_01_09 " );	// And now I have to go... Farewell!
+	B_LogEntry( TOPIC_RARETHINGS , " After I helped Gomez remove the curse from his soul, he gave me the key to the chest, which is located here in the old tower. All three Nordmar figurines are stored in this chest. " );
 	Info_ClearChoices(dia_gomez_isfree);
-	Info_AddChoice(dia_gomez_isfree,"Прощай, рудный барон...",dia_gomez_isfree_ok);
+	Info_AddChoice(dia_gomez_isfree, " Goodbye Ore Baron... " ,dia_gomez_isfree_ok);
 };
 
 func void dia_gomez_isfree_ok()
