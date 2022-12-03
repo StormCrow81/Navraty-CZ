@@ -1,4 +1,5 @@
 
+
 instance DIA_Engardo_EXIT(C_Info)
 {
 	npc = SLD_841_Engardo;
@@ -49,20 +50,20 @@ func void DIA_Engardo_HALLO_Info()
 
 	if(Chance == FALSE)
 	{
-		AI_Output(self,other,"DIA_Engardo_HALLO_13_00");	//Эй, мужик, ты что, заблудился? Возвращайся на свое поле и дергай репу.
+		AI_Output(self,other, " DIA_Engardo_HALLO_13_00 " );	// Hey man, are you lost? Go back to your field and pull your turnips.
 		Chance = 1;
 		AI_StopProcessInfos(self);
 	}
 	else if(Chance == 1)
 	{
-		AI_Output(self,other,"DIA_Engardo_HALLO_13_01");	//Ты оказался не в том месте не в то время...
-		AI_Output(self,other,"DIA_Engardo_HALLO_13_02");	//...так что, если хочешь жить, лучше топай отсюда. Понял?
+		AI_Output(self,other, " DIA_Engardo_HALLO_13_01 " );	// You were in the wrong place at the wrong time...
+		AI_Output(self,other, " DIA_Engardo_HALLO_13_02 " );	// ...so if you want to live, you better stomp out of here. Understood?
 		Chance = 2;
 		AI_StopProcessInfos(self);
 	}
 	else if(Chance == 2)
 	{
-		AI_Output(self,other,"DIA_Engardo_HALLO_13_03");	//У тебя что, со слухом не все в порядке, или тебе очень хочется умереть? (грубо) Ладно - все равно уже слишком поздно.
+		AI_Output(self,other, " DIA_Engardo_HALLO_13_03 " );	// Are you hearing bad, or do you really want to die? (roughly) Okay - it's too late anyway.
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_SuddenEnemyInferno,1);
 	};
@@ -82,7 +83,7 @@ instance DIA_Engardo_PICKPOCKET(C_Info)
 
 func int DIA_Engardo_PICKPOCKET_Condition()
 {
-	return C_Beklauen(34,45);
+	return  C_Robbery ( 34 , 45 );
 };
 
 func void DIA_Engardo_PICKPOCKET_Info()
@@ -94,7 +95,7 @@ func void DIA_Engardo_PICKPOCKET_Info()
 
 func void DIA_Engardo_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Engardo_PICKPOCKET);
 };
 
