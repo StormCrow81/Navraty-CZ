@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_BenchPirate_EXIT(C_Info)
 {
 	npc = PIR_1363_Addon_PIRAT;
@@ -28,7 +29,7 @@ instance DIA_Addon_BenchPirate_Hello(C_Info)
 	condition = DIA_Addon_BenchPirate_Hello_Condition;
 	information = DIA_Addon_BenchPirate_Hello_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -39,64 +40,64 @@ func int DIA_Addon_BenchPirate_Hello_Condition()
 
 func void DIA_Addon_BenchPirate_Hello_Info()
 {
-	var int randy;
-	AI_Output(other,self,"DIA_Addon_Pir_7_Hello_15_00");	//Как дела?
-	randy = Hlp_Random(3);
+	be int randy;
+	AI_Output(other,self, " DIA_Addon_Pir_7_Hello_15_00 " );	// How are you?
+	randy = Hlp_Random( 3 );
 	if(GregIsBack == TRUE)
 	{
 		if(randy == 0)
 		{
-			AI_Output(self,other,"DIA_Addon_Pir_7_Hello_07_01");	//Грэг наконец-то вернулся. Самое время.
+			AI_Output(self,other, " DIA_Addon_Pir_7_Hello_07_01 " );	// Greg is finally back. It's about time.
 		}
 		else if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_Addon_Pir_7_Hello_07_02");	//Теперь Фрэнсису приходится пилить деревья для частокола. Надеюсь, это для него не слишком большой удар.
+			AI_Output(self,other, " DIA_Addon_Pir_7_Hello_07_02 " );	// Now Francis has to cut trees for the stockade. I hope this isn't too much of a blow to him.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_Pir_7_Hello_07_03");	//Что ж, пусть приходят бандиты. Пока с нами Грэг, они нам не страшны.
+			AI_Output(self,other, " DIA_Addon_Pir_7_Hello_07_03 " );	// Well, let the bandits come. As long as Greg is with us, they are not afraid of us.
 		};
 	}
 	else if(randy == 0)
 	{
-		AI_Output(self,other,"DIA_Addon_Pir_7_Hello_07_04");	//Фрэнсис, который остался за главного, - всего лишь жалкий клоун. Никто не воспринимает его всерьез.
+		AI_Output(self,other, " DIA_Addon_Pir_7_Hello_07_04 " );	// Francis, who was left in charge, is just a pathetic clown. Nobody takes him seriously.
 	}
 	else if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_Addon_Pir_7_Hello_07_05");	//Грэг доверяет Фрэнсису, потому что тот слишком туп, чтобы его обманывать. Но делать его за это командиром...
+		AI_Output(self,other, " DIA_Addon_Pir_7_Hello_07_05 " );	// Greg trusts Francis because he's too dumb to fool him. But to make him commander for this ...
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Pir_7_Hello_07_06");	//Если в ближайшее время Грэг не вернется, и я не почувствую палубу под своими ногами, у меня будет земная болезнь!
+		AI_Output(self,other, " DIA_Addon_Pir_7_Hello_07_06 " );	// If Greg doesn't come back soon and I don't feel the deck under my feet, I'll have earth sickness!
 	};
 };
 
 
-instance DIA_Addon_BenchPirate_Anheuern(C_Info)
+instance DIA_Addon_BenchPirate_Hire (C_Info)
 {
 	npc = PIR_1363_Addon_PIRAT;
 	nr = 11;
-	condition = DIA_Addon_BenchPirate_Anheuern_Condition;
-	information = DIA_Addon_BenchPirate_Anheuern_Info;
+	condition = DIA_Addon_BenchPirate_Hire_Condition;
+	information = DIA_Addon_BenchPirate_Hire_Info;
 	permanent = FALSE;
-	description = "Ты должен мне помочь.";
+	description = " You must help me. " ;
 };
 
 
-func int DIA_Addon_BenchPirate_Anheuern_Condition()
+func int DIA_Addon_BenchPirate_Hire_Condition()
 {
 	if(MIS_Addon_Greg_ClearCanyon == LOG_Running)
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void DIA_Addon_BenchPirate_Anheuern_Info()
+func void DIA_Addon_BenchPirate_Hire_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BenchPirate_Anheuern_15_00");	//Ты должен мне помочь.
-	AI_Output(self,other,"DIA_Addon_BenchPirate_Anheuern_07_01");	//Приказ Грэга?
-	AI_Output(other,self,"DIA_Addon_BenchPirate_Anheuern_15_08");	//Точно.
+	AI_Output(other,self, " DIA_Addon_BenchPirate_Anheuern_15_00 " );	// You have to help me.
+	AI_Output(self,other, " DIA_Addon_BenchPirate_Anheuern_07_01 " );	// Greg's order?
+	AI_Output(other,self, " DIA_Addon_BenchPirate_Anheuern_15_08 " );	// Exactly.
 };
 
 
@@ -107,30 +108,30 @@ instance DIA_Addon_BenchPirate_ComeOn(C_Info)
 	condition = DIA_Addon_BenchPirate_ComeOn_Condition;
 	information = DIA_Addon_BenchPirate_ComeOn_Info;
 	permanent = TRUE;
-	description = "Нас ждет каньон.";
+	description = "The canyon is waiting for us. " ;
 };
 
 
 func int DIA_Addon_BenchPirate_ComeOn_Condition()
 {
-	if((self.aivar[AIV_PARTYMEMBER] == FALSE) && (MIS_Addon_Greg_ClearCanyon == LOG_Running) && Npc_KnowsInfo(other,DIA_Addon_BenchPirate_Anheuern))
+	if ((self.aivar[ AIV_PARTYMEMBER ] ==  FALSE ) && (MY_Addon_Greg_ClearCanyon == LOG_Running) && Npc_KnowsInfo(other,DIA_Addon_BenchPirate_Anheuern));
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_BenchPirate_ComeOn_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BenchPirate_ComeOn_15_01");	//Нас ждет каньон.
+	AI_Output(other,self, " DIA_Addon_BenchPirate_ComeOn_15_01 " );	// The canyon is waiting for us.
 	if(C_GregsPiratesTooFar() == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_BenchPirate_ComeOn_07_02");	//Именно туда я и возвращаюсь...
+		AI_Output(self,other, " DIA_Addon_BenchPirate_ComeOn_07_02 " );	// That's where I'm going back...
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_BenchPirate_ComeOn_07_01");	//Есть, капитан!
+		AI_Output(self,other, " DIA_Addon_BenchPirate_ComeOn_07_01 " );	// Yes, captain!
 		if(C_BodyStateContains(self,BS_SIT))
 		{
 			AI_Standup(self);
@@ -139,7 +140,7 @@ func void DIA_Addon_BenchPirate_ComeOn_Info()
 		AI_StopProcessInfos(self);
 		B_Addon_PiratesFollowAgain();
 		Npc_ExchangeRoutine(self,"FOLLOW");
-		self.aivar[AIV_PARTYMEMBER] = TRUE;
+		self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	};
 };
 
@@ -151,24 +152,24 @@ instance DIA_Addon_BenchPirate_GoHome(C_Info)
 	condition = DIA_Addon_BenchPirate_GoHome_Condition;
 	information = DIA_Addon_BenchPirate_GoHome_Info;
 	permanent = TRUE;
-	description = "Ты мне больше не нужен.";
+	description = " I don't need you anymore. " ;
 };
 
 
 func int DIA_Addon_BenchPirate_GoHome_Condition()
 {
-	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
+	if (self.aivar[ AIV_PARTYMEMBER ] ==  TRUE )
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_BenchPirate_GoHome_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BenchPirate_GoHome_15_00");	//Ты мне больше не нужен.
-	AI_Output(self,other,"DIA_Addon_BenchPirate_GoHome_07_01");	//Возвращаюсь в лагерь, капитан!
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(other,self, " DIA_Addon_BenchPirate_GoHome_15_00 " );	// I don't need you anymore.
+	AI_Output(self,other, " DIA_Addon_BenchPirate_GoHome_07_01 " );	// Heading back to camp, captain!
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"START");
 };
 
@@ -186,24 +187,24 @@ instance DIA_Addon_BenchPirate_TooFar(C_Info)
 
 func int DIA_Addon_BenchPirate_TooFar_Condition()
 {
-	if((self.aivar[AIV_PARTYMEMBER] == TRUE) && (C_GregsPiratesTooFar() == TRUE))
+	if ((self.aivar[ AIV_PARTYMEMBER ] ==  TRUE ) && (C_GregsPiratesTooFar() ==  TRUE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_BenchPirate_TooFar_Info()
 {
-	AI_Output(self,other,"DIA_Addon_BenchPirate_TooFar_07_01");	//Мы слишком далеко от лагеря.
-	AI_Output(self,other,"DIA_Addon_BenchPirate_GoHome_07_02");	//Мне все это не нравится.
+	AI_Output(self,other, " DIA_Addon_BenchPirate_TooFar_07_01 " );	// We're too far from the camp.
+	AI_Output(self,other, " DIA_Addon_BenchPirate_GoHome_07_02 " );	// I don't like this.
 	if(C_HowManyPiratesInParty() >= 2)
 	{
-		AI_Output(self,other,"DIA_Addon_Matt_TooFar_07_02");	//Я возвращаюсь в лагерь!
+		AI_Output(self,other, " DIA_Addon_Matt_TooFar_07_02 " );	// I'm going back to camp!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Matt_TooFar_07_03");	//Мы с ребятами возвращаемся в лагерь!
+		AI_Output(self,other, " DIA_Addon_Matt_TooFar_07_03 " );	// The guys and I are going back to the camp!
 	};
 	B_Addon_PiratesGoHome();
 	AI_StopProcessInfos(self);
