@@ -1,4 +1,5 @@
 
+
 var int trd_mageli;
 
 instance DIA_MILTEN_LI_EXIT(C_Info)
@@ -30,7 +31,7 @@ instance DIA_MAGE_LI_HELLOS(C_Info)
 	condition = dia_mage_li_hellos_condition;
 	information = dia_mage_li_hellos_info;
 	permanent = FALSE;
-	description = "Как обстоят дела?";
+	description = " How are things? " ;
 };
 
 
@@ -41,29 +42,29 @@ func int dia_mage_li_hellos_condition()
 
 func void dia_mage_li_hellos_info()
 {
-	AI_Output(other,self,"DIA_Mage_LI_Ancient_01_01");	//Как обстоят дела?
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_02");	//Пока вроде бы все нормально. Все парни потихоньку приходят в себя после этого ужасного шторма!
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_04");	//Но меня все-таки беспокоит одна вещь...
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_06");	//Когда мы только высадились на этот берег, я ощутил небольшое магическое волнение.
-	AI_Output(other,self,"DIA_Mage_LI_Ancient_01_08");	//И что, по-твоему, это было?
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_09");	//Я пока не знаю... Но, возможно, его вызвало присутствие здесь на этом острове какой-то очень сильной магии.
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_10");	//Причем абсолютно мне не знакомой!
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_13");	//Думаю, что, скорее всего, ее источник находится где-то в центре этого острова.
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_15");	//Когда я попытался немного проследовать вглубь этих зарослей, то ощутил на себе куда более сильное магическое волнение.
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_21");	//И мне показалось, что вдали я увидел какую-то небольшую каменную башню!
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_22");	//Большая ее часть была сокрыта кронами деревьев, поэтому мне не удалось ее как следует разглядеть.
-	AI_Output(other,self,"DIA_Mage_LI_Ancient_01_24");	//Тогда нам стоит как можно быстрее проверить эту башню!
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_26");	//Но, боюсь, что тебе придется проделывать все это в одиночку.
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_30");	//Влияние на меня этой магической силы слишком велико, и я не знаю, к каким последствиям это может привести.
-	AI_Output(other,self,"DIA_Mage_LI_Ancient_01_32");	//Ладно, если мне удастся что-нибудь выяснить, - дам тебе знать.
-	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
+	AI_Output(other,self, " DIA_Mage_LI_Ancient_01_01 " );	// How are things going?
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_02 " );	// So far, everything seems to be fine. All the guys are slowly recovering from this terrible storm!
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_04 " );	// But one thing still worries me...
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_06 " );	// When we first landed on this shore, I felt a little magical excitement.
+	AI_Output(other,self, " DIA_Mage_LI_Ancient_01_08 " );	// And what do you think it was?
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_09 " );	// I don't know yet... But perhaps it was caused by the presence of some very strong magic here on this island.
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_10 " );	// And absolutely not familiar to me!
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_13 " );	// I think that, most likely, its source is located somewhere in the center of this island.
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_15 " );	// When I tried to follow a little deeper into these thickets, I felt a much stronger magical excitement.
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_21 " );	// And it seemed to me that in the distance I saw some small stone tower!
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_22 " );	// Most of it was hidden by the trees, so I couldn't see it very well.
+	AI_Output(other,self, " DIA_Mage_LI_Ancient_01_24 " );	// Then we should check this tower as soon as possible!
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_26 " );	// But I'm afraid you'll have to do all this alone.
+	AI_Output(self,other, " DIA_Mage_LI_Ancient_01_30 " );	// The influence of this magic power on me is too great, and I don't know what consequences it can lead to.
+	AI_Output(other,self, " DIA_Mage_LI_Ancient_01_32 " );	// Okay, if I can figure something out, I'll let you know.
+	if (self.aivar[ AIV_PARTYMEMBER ] ==  TRUE )
 	{
-		self.aivar[AIV_PARTYMEMBER] = FALSE;
+		self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	};
 	MIS_MILTENANCIENT = LOG_Running;
 	Log_CreateTopic(TOPIC_MILTENANCIENT,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MILTENANCIENT,LOG_Running);
-	B_LogEntry(TOPIC_MILTENANCIENT,"Милтен рассказал мне, что, едва сойдя на берег, он ощутил магическое волнение. Возможно, оно вызвано присутствием на острове какой-то странной магической силы. По словам Милтена, источник этой магии находится в старой каменной башне, которую Милтен обнаружил при исследовании самого острова. Думаю, стоит наведаться туда и разобраться, что к чему.");
+	B_LogEntry( TOPIC_MILTENANCIENT , " Milten told me that as soon as he got ashore, he felt a magical commotion. Perhaps it was caused by the presence of some strange magical force on the island. According to Milten, the source of this magic is in the old stone tower that Milten discovered while exploring the island itself. I think it's worth visiting there and figuring out what's what. " );
 };
 
 
@@ -74,7 +75,7 @@ instance DIA_MAGE_LI_ANCIENTPROGRESS(C_Info)
 	condition = dia_mage_li_ancientprogress_condition;
 	information = dia_mage_li_ancientprogress_info;
 	permanent = FALSE;
-	description = "Я обыскал эту каменную башню.";
+	description = " I searched this stone tower. " ;
 };
 
 
@@ -89,19 +90,19 @@ func int dia_mage_li_ancientprogress_condition()
 func void dia_mage_li_ancientprogress_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgress_01_01");	//Я обыскал эту каменную башню.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgress_01_02");	//(заинтересованно) И как? Тебе удалось что-нибудь выяснить?
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgress_01_03");	//Боюсь тебя огорчить, но ничего интересного в этой башне я так и не обнаружил.
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgress_01_04");	//Но зато я нашел там вот эту странную книгу. Похоже, она содержит в себе необычную магическую силу.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgress_01_05");	//Правда? Дай мне на нее взглянуть.
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgress_01_01 " );	// I searched this stone tower.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgress_01_02 " );	// (interested) And how? Did you manage to find out anything?
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgress_01_03 " );	// I'm afraid to disappoint you, but I did not find anything interesting in this tower.
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgress_01_04 " );	// But then I found this strange book there. It looks like it contains an unusual magical power.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgress_01_05 " );	// Really? Let me take a look at her.
 	B_GiveInvItems(other,self,itwr_ancient,1);
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgress_01_07");	//Хммм... похоже, ты прав!
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgress_01_08");	//Судя по всему, эта книга действительно содержит в себе магию.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgress_01_11");	//Возможно, мне понадобится некоторое время, что бы разобраться с этим.
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgress_01_12");	//Хорошо. Но я так и не смог ее открыть.
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgress_01_13");	//Похоже, эта книга защищена каким-то магическим заклинанием.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgress_01_14");	//(серьезно) Тогда, пожалуй, я постараюсь быть с ней поосторожнее. Спасибо.
-	B_LogEntry(TOPIC_MILTENANCIENT,"Я принес Милтену книгу, которую обнаружил в каменной башне. Он пообещал разобраться со всем этим.");
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgress_01_07 " );	// Hmmm... looks like you're right!
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgress_01_08 " );	// Apparently, this book really contains magic.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgress_01_11 " );	// I may need some time to figure this out.
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgress_01_12 " );	// Good. But I still couldn't open it.
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgress_01_13 " );	// This book appears to be protected by some kind of magic spell.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgress_01_14 " );	// (seriously) Then maybe I'll try to be more careful with her. Thank you.
+	B_LogEntry( TOPIC_MILTENANCIENT , " I brought Milten the book I found in the stone tower. He promised to look into it all. " );
 	MILTENDEMONTIMER = Wld_GetDay();
 };
 
@@ -119,7 +120,7 @@ instance DIA_MAGE_LI_ANCIENTPROGRESSTWO(C_Info)
 
 func int dia_mage_li_ancientprogresstwo_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 	if((MIS_MILTENANCIENT == LOG_Running) && (MEANDMILTENTELEPORTDC == FALSE) && Npc_KnowsInfo(hero,dia_mage_li_ancientprogress) && (MILTENDEMONTIMER <= (daynow - 1)))
 	{
@@ -130,16 +131,16 @@ func int dia_mage_li_ancientprogresstwo_condition()
 func void dia_mage_li_ancientprogresstwo_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressTwo_01_01");	//Постой! У меня есть новости насчет той книги, которую ты мне принес.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressTwo_01_03");	//Кажется, я понял, как ее можно открыть.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressTwo_01_05");	//Но мне как-то не по себе от этой идеи!
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressTwo_01_06");	//Чего ты боишься?
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressTwo_01_07");	//Я не боюсь... Просто кто знает - какую тайну она скрывает...
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressTwo_01_08");	//Да брось! Что может произойти из-за того, что мы просто откроем книгу?
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressTwo_01_09");	//Ну ладно, как скажешь. Ты готов?
-	B_LogEntry(TOPIC_MILTENANCIENT,"Кажется, Милтен разгадал секрет этой книги. Теперь мы попытаемся ее открыть.");
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressTwo_01_01 " );	// Wait! I have news about that book you brought me.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressTwo_01_03 " );	// I think I figured out how to open it.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressTwo_01_05 " );	// But I don't feel comfortable with this idea!
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressTwo_01_06 " );	// What are you afraid of?
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressTwo_01_07 " );	// I'm not afraid... It's just that who knows what secret she hides...
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressTwo_01_08 " );	// Come on! What can happen if we just open a book?
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressTwo_01_09 " );	// Well, whatever you say. Are you ready?
+	B_LogEntry( TOPIC_MILTENANCIENT , " Milten seems to have figured out the secret of this book. Now we will try to open it. " );
 	Info_ClearChoices(dia_mage_li_ancientprogresstwo);
-	Info_AddChoice(dia_mage_li_ancientprogresstwo,"Давай, открывай!",dia_mage_li_ancientprogresstwo_freedemon);
+	Info_AddChoice(dia_mage_li_ancientprogresstwo, " Давай, открывай! " ,dia_mage_li_ancientprogresstwo_freedemon);
 };
 
 func void dia_mage_li_ancientprogresstwo_freedemon()
@@ -176,17 +177,17 @@ func int dia_mage_li_ancientprogressthree_condition()
 func void dia_mage_li_ancientprogressthree_info()
 {
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressThree_01_01");	//(в недоумении) Черт! Где мы, и что все это было?
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressThree_01_03");	//Не стоило нам открывать эту книгу - с древней магией шутки плохи!
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressThree_01_04");	//И что нам теперь делать?
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressThree_01_05");	//Это ты у меня спрашиваешь? Понятия не имею!
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressThree_01_06");	//Ладно, не переживай! Что-нибудь придумаем.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressThree_01_01 " );	// (confused) Damn! Where are we, and what was it all about?
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressThree_01_03 " );	// We shouldn't have opened this book - ancient magic is no joke!
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressThree_01_04 " );	// And what do we do now?
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressThree_01_05 " );	// Are you asking me? I have no idea!
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressThree_01_06 " );	// Okay, don't worry! We'll come up with something.
 	AI_Output(self,other,"DIA_Mage_LI_AncientProgressThree_01_07");	//Да уж...
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressThree_01_08");	//Пойдем осмотрим эту пещеру.
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressThree_01_08 " );	// Let's go explore this cave.
 	AI_Output(self,other,"DIA_Mage_LI_AncientProgressThree_01_09");	//Хорошо!
-	B_LogEntry(TOPIC_MILTENANCIENT,"Мы с Милтеном оказались в какой-то пещере глубоко под землей. Интересно, куда на этот раз нас занесло?");
+	B_LogEntry( TOPIC_MILTENANCIENT , " Milten and I ended up in some kind of cave deep underground. I wonder where we got this time? " );
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"FOLLOW");
 };
 
@@ -212,8 +213,8 @@ func int dia_mage_li_ancientprogressthree_sleep_condition()
 
 func void dia_mage_li_ancientprogressthree_sleep_info()
 {
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressThree_SLEEP_01_01");	//Черт!!! Что за хрень огнедышащая?
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressThree_SLEEP_01_02");	//Я как раз хотел опробовать одну руну!
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressThree_SLEEP_01_01 " );	// Damn!!! What the hell is fire-breathing?
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressThree_SLEEP_01_02 " );	// I just wanted to try out one rune!
 	AI_StopProcessInfos(self);
 };
 
@@ -225,7 +226,7 @@ instance DIA_MAGE_LI_ANCIENTPROGRESSTHREE_WAIT(C_Info)
 	condition = dia_mage_li_ancientprogressthree_wait_condition;
 	information = dia_mage_li_ancientprogressthree_wait_info;
 	permanent = TRUE;
-	description = "Подожди здесь!";
+	description = " Wait here! " ;
 };
 
 
@@ -239,10 +240,10 @@ func int dia_mage_li_ancientprogressthree_wait_condition()
 
 func void dia_mage_li_ancientprogressthree_wait_info()
 {
-	AI_Output(other,self,"DIA_Addon_Diego_WarteHier_15_00");	//Подожди здесь!
-	AI_Output(self,other,"DIA_Mage_LI_GoHome_11_05");	//Я подожду поблизости.
+	AI_Output(other,self, " DIA_Addon_Diego_WarteHier_15_00 " );	// Wait here!
+	AI_Output(self,other, " DIA_Mage_LI_GoHome_11_05 " );	// I'll wait nearby.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"CAVE");
 };
 
@@ -254,7 +255,7 @@ instance DIA_MAGE_LI_ANCIENTPROGRESSTHREE_FOLL(C_Info)
 	condition = dia_mage_li_ancientprogressthree_foll_condition;
 	information = dia_mage_li_ancientprogressthree_foll_info;
 	permanent = TRUE;
-	description = "Пойдем со мной.";
+	description = " Come with me. " ;
 };
 
 
@@ -268,11 +269,11 @@ func int dia_mage_li_ancientprogressthree_foll_condition()
 
 func void dia_mage_li_ancientprogressthree_foll_info()
 {
-	AI_Output(other,self,"DIA_Addon_Diego_ComeOn_15_00");	//Пойдем со мной.
+	AI_Output(other,self, " DIA_Addon_Diego_ComeOn_15_00 " );	// Come with me.
 	AI_Output(self,other,"DIA_Mage_LI_ComeOn_11_02");	//Хорошо.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FOLLOW");
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 };
 
 
@@ -298,16 +299,16 @@ func int dia_mage_li_ancientprogressdone_condition()
 func void dia_mage_li_ancientprogressdone_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDone_01_01");	//С тобой все в порядке?..(переводя дух) Что это была за тварь?!
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressDone_01_04");	//Похоже, что демон. Но теперь расслабься! Все уже позади.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDone_01_05");	//Ладно... Радует хотя бы то, что он для нас более не опасен.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDone_01_06");	//Правда, теперь нам надо подумать, как выбраться из этого места. У тебя есть идеи?
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressDone_01_07");	//Кажется, в начале этого тунеля я видел телепорт.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDone_01_10");	//Тогда идем быстрее! А то у меня от этой пещеры уже мурашки по коже.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDone_01_01 " );	// Are you all right?..(taking a breath) What kind of creature was that?!
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressDone_01_04 " );	// Looks like a daemon. But now relax! Everything is already behind.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDone_01_05 " );	// Okay... The good news is that he's no longer dangerous to us.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDone_01_06 " );	// True, now we need to think about how to get out of this place. Do you have ideas?
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressDone_01_07 " );	// I think I saw a teleport at the beginning of this tunnel.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDone_01_10 " );	// Then let's go faster! And then I already have goosebumps from this cave.
 	self.flags = 0;
-	B_LogEntry(TOPIC_MILTENANCIENT,"Кажется, этот остров полон сюрпризов. В пещере мы наткнулись на огромного темного демона. Тварь оказалась чудовищно сильна, однако мы с Милтеном все-таки справились с ней. Теперь, когда демон мертв, надо попытаться выбраться из этого могильника.");
+	B_LogEntry( TOPIC_MILTENANCIENT , " This island seems to be full of surprises. We stumbled upon a huge dark demon in the cave. The creature turned out to be monstrously strong, but Milten and I still managed to defeat it. Now that the demon is dead, we must try to get out of this burial ground. " );
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"START");
 };
 
@@ -334,17 +335,17 @@ func int dia_mage_li_ancientprogressdoneext_condition()
 func void dia_mage_li_ancientprogressdoneext_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExt_01_01");	//Наконец-то все это закончилось.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExt_01_03");	//Судьба преподнесла нам хороший урок за нашу неосторожность!
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExt_01_04");	//Хорошо, что мы еще остались живы! А то бы все могло закончиться для нас куда хуже...
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressDoneExt_01_05");	//Значит, теперь все в порядке?
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExt_01_06");	//Да. Но мне, правда, кажется, что что-то все-таки изменилось.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExt_01_08");	//Я больше не ощущаю присутствие той магической силы, что раньше окутывала этот остров. Она исчезла!
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExt_01_10");	//Видимо, тот демон, которого мы прикончили в пещере, и был ее источником.
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExt_01_11");	//Других объяснений всего этого у меня просто нет.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExt_01_01 " );	// Finally, it's all over.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExt_01_03 " );	// Fate taught us a good lesson for our imprudence!
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExt_01_04 " );	// Good thing we're still alive! Otherwise things could have ended much worse for us...
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressDoneExt_01_05 " );	// So everything is fine now?
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExt_01_06 " );	// Yes. But I do feel like something has changed.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExt_01_08 " );	// I no longer feel the presence of the magical power that used to envelop this island. She disappeared!
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExt_01_10 " );	// Apparently, the demon we killed in the cave was its source.
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExt_01_11 " );	// I have no other explanation for all this.
 	MIS_MILTENANCIENT = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_MILTENANCIENT,LOG_SUCCESS);
-	B_LogEntry(TOPIC_MILTENANCIENT,"Похоже, что-то изменилось. Милтен больше не ощущает той магической силы, что раньше окутывала этот остров. Скорее всего, ее источником был тот демон, которого мы прикончили в глубокой пещере.");
+	B_LogEntry( TOPIC_MILTENANCIENT , " Something seems to have changed. Milten no longer senses the magic power that used to envelop this island. It most likely came from the demon we killed in the deep cave. " );
 	MILTENDEMONTIMEREXT = Wld_GetDay();
 };
 
@@ -356,7 +357,7 @@ instance DIA_MAGE_LI_ANCIENTPROGRESSDONEEXTBOOK(C_Info)
 	condition = dia_mage_li_ancientprogressdoneextbook_condition;
 	information = dia_mage_li_ancientprogressdoneextbook_info;
 	permanent = FALSE;
-	description = "У тебя осталась та книга?";
+	description = " Do you have that book left? " ;
 };
 
 
@@ -370,13 +371,13 @@ func int dia_mage_li_ancientprogressdoneextbook_condition()
 
 func void dia_mage_li_ancientprogressdoneextbook_info()
 {
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressDoneExtBook_01_01");	//У тебя осталась с собой та книга?
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExtBook_01_02");	//Да, она до сих пор у меня. А почему ты спрашиваешь?
-	AI_Output(other,self,"DIA_Mage_LI_AncientProgressDoneExtBook_01_03");	//Ты не мог бы отдать ее мне?
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExtBook_01_07");	//По всей видимости, того, что случилось в пещере, тебе оказалось мало...(с укором)
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExtBook_01_09");	//Ладно. Вот, возьми.
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressDoneExtBook_01_01 " );	// Do you have that book with you?
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExtBook_01_02 " );	// Yes, I still have it. Why are you asking?
+	AI_Output(other,self, " DIA_Mage_LI_AncientProgressDoneExtBook_01_03 " );	// Could you give it to me?
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExtBook_01_07 " );	// Apparently, what happened in the cave was not enough for you... (reproachfully)
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExtBook_01_09 " );	// Okay. Here, take it.
 	B_GiveInvItems(self,other,itwr_ancient,1);
-	AI_Output(self,other,"DIA_Mage_LI_AncientProgressDoneExtBook_01_10");	//Будь крайне осторожен!
+	AI_Output(self,other, " DIA_Mage_LI_AncientProgressDoneExtBook_01_10 " );	// Be extremely careful!
 };
 
 
@@ -387,13 +388,13 @@ instance DIA_MAGE_LI_ANCIENTAFTER(C_Info)
 	condition = dia_mage_li_ancientafter_condition;
 	information = dia_mage_li_ancientafter_info;
 	permanent = TRUE;
-	description = "За последнее время ничего больше не изменилось?";
+	description = " Has anything else changed lately? " ;
 };
 
 
 func int dia_mage_li_ancientafter_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 	if((MIS_MILTENANCIENT == LOG_SUCCESS) && (MILTENDEMONTIMEREXT <= (daynow - 1)))
 	{
@@ -403,15 +404,15 @@ func int dia_mage_li_ancientafter_condition()
 
 func void dia_mage_li_ancientafter_info()
 {
-	AI_Output(other,self,"DIA_Mage_LI_AncientAfter_01_01");	//За последнее время ничего больше не изменилось?
-	if(MILTENJOKE == FALSE)
+	AI_Output(other,self, " DIA_Mage_LI_AncientAfter_01_01 " );	// Has anything else changed lately?
+	if ( MILTENJOKE  ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Mage_LI_AncientAfter_01_02");	//Нет. Все так же - тихо и спокойно.
+		AI_Output(self,other, " DIA_Mage_LI_AncientAfter_01_02 " );	// No. All the same - quiet and calm.
 		MILTENJOKE = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Mage_LI_AncientAfter_01_11");	//Нет.) Ничего такого.
+		AI_Output(self,other, " DIA_Mage_LI_AncientAfter_01_11 " );	// No.) Nothing like that.
 	};
 };
 
@@ -424,7 +425,7 @@ instance DIA_MILTEN_LI_TRADE(C_Info)
 	information = dia_milten_li_trade_info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "У тебя есть пара напитков?";
+	description = " Do you have a couple of drinks? " ;
 };
 
 
@@ -441,10 +442,10 @@ func void dia_milten_li_trade_info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Milten_DI_TRADE_15_00");	//Есть несколько лишних зелий?
-	AI_Output(self,other,"DIA_Milten_DI_TRADE_03_01");	//Пока запас достаточный.
+	AI_Output(other,self, " DIA_Milten_DI_TRADE_15_00 " );	// Got some extra potions?
+	AI_Output(self,other, " DIA_Milten_DI_TRADE_03_01 " );	// As long as the supply is sufficient.
 
-	if(TRD_MAGELI != TRUE)
+	if ( TRD_MAGELI  !=  TRUE )
 	{
 		CreateInvItems(self,ItPl_Temp_Herb,9);
 		CreateInvItems(self,ItPl_Health_Herb_01,15);
@@ -459,7 +460,7 @@ func void dia_milten_li_trade_info()
 		CreateInvItems(self,ItPo_Mana_02,2);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 		CreateInvItems(self,ItPo_HealObsession_MIS,2);
-		TRD_MAGELI = TRUE;
+		TRD_MAGELI = TRUE ;
 	};
 	if(Npc_HasItems(self,itpo_anpois) != 3)
 	{
@@ -478,7 +479,7 @@ instance DIA_MILTEN_LI_TEACHMAGIC(C_Info)
 	condition = dia_milten_li_teachmagic_condition;
 	information = dia_milten_li_teachmagic_info;
 	permanent = TRUE;
-	description = "Я хочу улучшить свои магические способности.";
+	description = " I want to improve my magical abilities. " ;
 };
 
 
@@ -489,8 +490,8 @@ func int dia_milten_li_teachmagic_condition()
 
 func void dia_milten_li_teachmagic_info()
 {
-	AI_Output(other,self,"DIA_Milten_DI_TeachMagic_15_00");	//Я хочу повысить свои магические способности.
-	AI_Output(self,other,"DIA_Milten_DI_TeachMagic_03_03");	//Хорошо. Что тебе требуется?
+	AI_Output(other,self, " DIA_Milten_DI_TeachMagic_15_00 " );	// I want to increase my magical abilities.
+	AI_Output(self,other, " DIA_Milten_DI_TeachMagic_03_03 " );	// Good. What do you require?
 	Info_ClearChoices(dia_milten_li_teachmagic);
 	Info_AddChoice(dia_milten_li_teachmagic,Dialog_Back,dia_milten_li_teachmagic_back);
 	Info_AddChoice(dia_milten_li_teachmagic,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_milten_li_teachmagic_mana_1);
@@ -498,7 +499,7 @@ func void dia_milten_li_teachmagic_info()
 
 	if((hero.guild == GIL_KDF) || (CHOOSEFIRE == TRUE))
 	{
-		Info_AddChoice(dia_milten_li_teachmagic,"Создать руну",dia_milten_li_teachmagic_runes);
+		Info_AddChoice(dia_milten_li_teachmagic, " Create Rune " ,dia_milten_li_teachmagic_runes);
 	};
 };
 
@@ -506,19 +507,19 @@ func void dia_milten_li_teachmagic_runes()
 {
 	Info_ClearChoices(dia_milten_li_teachmagic);
 	Info_AddChoice(dia_milten_li_teachmagic,Dialog_Back,dia_milten_li_teachmagic_back);
-	AI_Output(self,other,"DIA_Milten_DI_TeachMagic_RUNES_03_00");	//Ох, нет! Я не большой специалист в этом, но мы как-нибудь справимся.
+	AI_Output(self,other, " DIA_Milten_DI_TeachMagic_RUNES_03_00 " );	// Oh no! I'm not much of an expert on this, but we'll manage somehow.
 
 	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) >= 4) && ((hero.guild == GIL_KDF) || (CHOOSEFIRE == TRUE)))
 	{
-		Info_AddChoice(dia_milten_li_teachmagic,"Круг четвертый",dia_milten_li_teachmagic_runen_circle_4);
+		Info_AddChoice(dia_milten_li_teachmagic, " Circle Four " ,dia_milten_li_teachmagic_runen_circle_4);
 	};
 	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) >= 5) && ((hero.guild == GIL_KDF) || (CHOOSEFIRE == TRUE)))
 	{
-		Info_AddChoice(dia_milten_li_teachmagic,"Круг пятый",dia_milten_li_teachmagic_runen_circle_5);
+		Info_AddChoice(dia_milten_li_teachmagic, " Circle Five " ,dia_milten_li_teachmagic_runen_circle_5);
 	};
 	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 6) && ((hero.guild == GIL_KDF) || (CHOOSEFIRE == TRUE)))
 	{
-		Info_AddChoice(dia_milten_li_teachmagic,"Круг шестой",dia_milten_li_teachmagic_runen_circle_6);
+		Info_AddChoice(dia_milten_li_teachmagic, " Circle Six " ,dia_milten_li_teachmagic_runen_circle_6);
 	};
 };
 
@@ -596,7 +597,7 @@ func void dia_milten_li_teachmagic_mana_1()
 {
 	if(B_TeachAttributePoints(self,other,ATR_MANA_MAX,1,T_MAX))
 	{
-		AI_Output(self,other,"DIA_Milten_DI_TeachMagic_MANA_1_03_00");	//Да ведет тебя рука Инноса.
+		AI_Output(self,other, " DIA_Milten_DI_TeachMagic_MANA_1_03_00 " );	// May the hand of Innos guide you.
 	};
 	Info_ClearChoices(dia_milten_li_teachmagic);
 	Info_AddChoice(dia_milten_li_teachmagic,Dialog_Back,dia_milten_li_teachmagic_back);
@@ -608,7 +609,7 @@ func void dia_milten_li_teachmagic_mana_5()
 {
 	if(B_TeachAttributePoints(self,other,ATR_MANA_MAX,5,T_MAX))
 	{
-		AI_Output(self,other,"DIA_Milten_DI_TeachMagic_MANA_5_03_00");	//Пусть Иннос осветит твой путь.
+		AI_Output(self,other, " DIA_Milten_DI_TeachMagic_MANA_5_03_00 " );	// May Innos light your path.
 	};
 	Info_ClearChoices(dia_milten_li_teachmagic);
 	Info_AddChoice(dia_milten_li_teachmagic,Dialog_Back,dia_milten_li_teachmagic_back);
@@ -630,7 +631,7 @@ instance DIA_MAGE_LI_PICKPOCKET(C_Info)
 
 func int dia_mage_li_pickpocket_condition()
 {
-	return C_Beklauen(45,120);
+	return  C_Robbery ( 45 , 120 );
 };
 
 func void dia_mage_li_pickpocket_info()
@@ -642,7 +643,7 @@ func void dia_mage_li_pickpocket_info()
 
 func void dia_mage_li_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_mage_li_pickpocket);
 };
 
@@ -659,7 +660,7 @@ instance DIA_MAGE_LI_MISSMYGOLD(C_Info)
 	condition = dia_mage_li_missmygold_condition;
 	information = dia_mage_li_missmygold_info;
 	permanent = FALSE;
-	description = "Ты, случайно, не знаешь, где мое золото?";
+	description = " Do you happen to know where my gold is? " ;
 };
 
 
@@ -673,11 +674,11 @@ func int dia_mage_li_missmygold_condition()
 
 func void dia_mage_li_missmygold_info()
 {
-	AI_Output(other,self,"DIA_Mage_LI_MissMyGold_01_01");	//Ты, случайно, не знаешь, где мое золото?
-	AI_Output(self,other,"DIA_Mage_LI_MissMyGold_01_02");	//Нет, приятель. Я этого не знаю.
-	AI_Output(self,other,"DIA_Mage_LI_MissMyGold_01_05");	//Мага Огня абсолютно не интересуют подобного рода вещи!
-	AI_Output(self,other,"DIA_Mage_LI_MissMyGold_01_06");	//Для нас наиболее ценной субстанцией являются знания, а не блеск этого презренного металла.
-	B_LogEntry(TOPIC_MISSMYGOLD,"Милтен совершенно не в курсе, что стало с моим золотом.");
+	AI_Output(other,self, " DIA_Mage_LI_MissMyGold_01_01 " );	// Do you happen to know where my gold is?
+	AI_Output(self,other, " DIA_Mage_LI_MissMyGold_01_02 " );	// No, buddy. I do not know that.
+	AI_Output(self,other, " DIA_Mage_LI_MissMyGold_01_05 " );	// The Firebender has absolutely no interest in this kind of thing!
+	AI_Output(self,other, " DIA_Mage_LI_MissMyGold_01_06 " );	// For us, the most valuable substance is knowledge, not the brilliance of this despicable metal.
+	B_LogEntry( TOPIC_MISSMYGOLD , " Milten has absolutely no idea what happened to my gold. " );
 };
 
 
@@ -688,7 +689,7 @@ instance DIA_MAGE_LI_AWAY(C_Info)
 	condition = dia_mage_li_away_condition;
 	information = dia_mage_li_away_info;
 	permanent = FALSE;
-	description = "Пора возвращаться на корабль.";
+	description = " Time to get back to the ship. " ;
 };
 
 
@@ -704,17 +705,17 @@ func void dia_mage_li_away_info()
 {
 	var int countpeopple;
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Mage_LI_Away_01_01");	//Пора возвращаться на корабль.
-	AI_Output(self,other,"DIA_Mage_LI_Away_01_02");	//Неужели мы покидаем этот остров?
-	AI_Output(other,self,"DIA_Mage_LI_Away_01_03");	//Да. Корабль в полном порядке, и теперь нам ничего не мешает смыться отсюда.
-	AI_Output(self,other,"DIA_Mage_LI_Away_01_04");	//Хорошо! Тогда я скоро буду.
-	B_LogEntry(TOPIC_GATHERCREW,"Я передал Милтену, что мы уходим с острова.");
-	MILTENLIONBOARD = TRUE;
+	AI_Output(other,self, " DIA_Mage_LI_Away_01_01 " );	// Time to get back to the ship.
+	AI_Output(self,other, " DIA_Mage_LI_Away_01_02 " );	// Are we leaving this island?
+	AI_Output(other,self, " DIA_Mage_LI_Away_01_03 " );	// Yes. The ship is in perfect order, and now nothing prevents us from escaping from here.
+	AI_Output(self,other, " DIA_Mage_LI_Away_01_04 " );	// Good! Then I'll be there soon.
+	B_LogEntry( TOPIC_GATHERCREW , " I told Milten we're leaving the island. " );
+	MILTENLIONBOARD = TRUE ;
 	if((GORNLIHERE == TRUE) && (GORNLIONBOARD == TRUE))
 	{
 		countpeopple = countpeopple + 1;
 	};
-	if((MILTENLIONBOARD == TRUE) && (MILTENLIHERE == TRUE))
+	if (( MILTENLIONBOARD  ==  TRUE ) && ( MILTENLIHERE  ==  TRUE ))
 	{
 		countpeopple = countpeopple + 1;
 	};
@@ -745,7 +746,7 @@ instance DIA_MAGE_LI_FINDMAGICORECAVE(C_Info)
 	condition = dia_mage_li_findmagicorecave_condition;
 	information = dia_mage_li_findmagicorecave_info;
 	permanent = FALSE;
-	description = "Я нашел пещеру с залежами магической руды.";
+	description = " I found a cave with magical ore deposits. " ;
 };
 
 
@@ -759,9 +760,9 @@ func int dia_mage_li_findmagicorecave_condition()
 
 func void dia_mage_li_findmagicorecave_info()
 {
-	AI_Output(other,self,"DIA_Mage_LI_FindMagicOreCave_01_01");	//Я нашел пещеру с залежами магической руды.
-	AI_Output(self,other,"DIA_Mage_LI_FindMagicOreCave_01_02");	//Правда? Тогда тебе стоит поговорить об этом с нашим капитаном.
-	AI_Output(self,other,"DIA_Mage_LI_FindMagicOreCave_01_03");	//Думаю, ему будет интересно услышать эту новость.
+	AI_Output(other,self, " DIA_Mage_LI_FindMagicOreCave_01_01 " );	// I found a cave with magical ore deposits.
+	AI_Output(self,other, " DIA_Mage_LI_FindMagicOreCave_01_02 " );	// Really? Then you should talk to our captain about it.
+	AI_Output(self,other, " DIA_Mage_LI_FindMagicOreCave_01_03 " );	// I think he will be interested to hear this news.
 	GOTOORECAPITAN = TRUE;
 };
 
@@ -788,20 +789,20 @@ func int dia_mage_li_changecourse_condition()
 func void dia_mage_li_changecourse_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(self,other,"DIA_Mage_LI_ChangeCourse_01_00");	//Я слышал, что ты хочешь вернуться обратно в Хоринис, чтобы сообщить паладинам о руде?
-	AI_Output(self,other,"DIA_Mage_LI_ChangeCourse_01_03");	//Лорд Хаген должен узнать об этом. И наверняка эта новость сможет во многих вселить определенную надежду.
-	AI_Output(other,self,"DIA_Mage_LI_ChangeCourse_01_04");	//А ты отправишься вместе со мной?
-	AI_Output(self,other,"DIA_Mage_LI_ChangeCourse_01_05");	//Разумеется. Помогать паладинам короля - это мой священный долг перед Инносом.
-	AI_Output(self,other,"DIA_Mage_LI_ChangeCourse_01_06");	//К тому же магам в монастыре, возможно, в скором времени понадобится помощь.
-	AI_Output(self,other,"DIA_Mage_LI_ChangeCourse_01_07");	//Если орки вдруг решат пройти через перевал, то их всех ждут крайне тяжелые времена.
-	AI_Output(other,self,"DIA_Mage_LI_ChangeCourse_01_10");	//Рад слышать это, Милтен!
-	B_LogEntry(TOPIC_CHANGECOURSE,"Милтен рад, что мы решили вернуться в Хоринис. Он поплывет с нами.");
+	AI_Output(self,other, " DIA_Mage_LI_ChangeCourse_01_00 " );	// I heard you want to go back to Khorinis to inform the paladins about the ore?
+	AI_Output(self,other, " DIA_Mage_LI_ChangeCourse_01_03 " );	// Lord Hagen needs to know about this. And for sure this news will be able to instill some hope in many.
+	AI_Output(other,self, " DIA_Mage_LI_ChangeCourse_01_04 " );	// Will you go with me?
+	AI_Output(self,other, " DIA_Mage_LI_ChangeCourse_01_05 " );	// Of course. Helping the king's paladins is my sacred duty to Innos.
+	AI_Output(self,other, " DIA_Mage_LI_ChangeCourse_01_06 " );	// Also, the magicians in the monastery may need help soon.
+	AI_Output(self,other, " DIA_Mage_LI_ChangeCourse_01_07 " );	// If the orcs suddenly decide to pass through the pass, then they are all in for extremely hard times.
+	AI_Output(other,self, " DIA_Mage_LI_ChangeCourse_01_10 " );	// Glad to hear it, Milten!
+	B_LogEntry( TOPIC_CHANGECOURSE , " Milten is glad we decided to return to Khorinis. He will sail with us. " );
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKPAL + 1;
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Пора сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Time to tell our captain. " );
 	};
 };
 
