@@ -1,4 +1,5 @@
 
+
 instance DIA_Rengaru_EXIT(C_Info)
 {
 	npc = VLK_492_Rengaru;
@@ -21,7 +22,7 @@ func void DIA_Rengaru_EXIT_Info()
 };
 
 
-instance DIA_Rengaru_PICKPOCKET(C_Info)
+instances DIA_Rengaru_PICKPOCKET (C_Info)
 {
 	npc = VLK_492_Rengaru;
 	nr = 900;
@@ -34,14 +35,14 @@ instance DIA_Rengaru_PICKPOCKET(C_Info)
 
 func int DIA_Rengaru_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,5);
+	return  C_Robbery ( 20 , 5 );
 };
 
 func void DIA_Rengaru_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Rengaru_PICKPOCKET);
 	Info_AddChoice(DIA_Rengaru_PICKPOCKET,Dialog_Back,DIA_Rengaru_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Rengaru_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Rengaru_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Rengaru_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Rengaru_PICKPOCKET_DoIt);
 };
 
 func void DIA_Rengaru_PICKPOCKET_DoIt()
@@ -78,20 +79,20 @@ func void DIA_Rengaru_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Rengaru_Hauab(C_Info)
+instances of DIA_Rengaru_Hauab (C_Info)
 {
 	npc = VLK_492_Rengaru;
 	nr = 2;
 	condition = DIA_Rengaru_Hauab_Condition;
 	information = DIA_Rengaru_Hauab_Info;
 	permanent = TRUE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
 func int DIA_Rengaru_Hauab_Condition()
 {
-	if((Jora_Dieb != LOG_Running) && (Npc_KnowsInfo(other,DIA_Rengaru_GOTYOU) == FALSE))
+	if (( Close_Load != LOG_Running ) && ( Npc_KnowsInfo ( other , DIA_Come_to_GOTYOU ) ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -99,19 +100,19 @@ func int DIA_Rengaru_Hauab_Condition()
 
 func void DIA_Rengaru_Hauab_Info()
 {
-	AI_Output(other,self,"DIA_Rengaru_Hauab_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Rengaru_Hauab_07_01");	//Я не понимаю, какое тебе до этого дело. Проваливай!
+	AI_Output(other,self, " DIA_Rengaru_Hauab_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Rengaru_Hauab_07_01 " );	// I don't understand why you care. Get out!
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Rengaru_HALLODIEB(C_Info)
+instance DIA_Rengaru_HALLODIEB (C_Info)
 {
 	npc = VLK_492_Rengaru;
 	nr = 2;
 	condition = DIA_Rengaru_HALLODIEB_Condition;
 	information = DIA_Rengaru_HALLODIEB_Info;
 	permanent = FALSE;
-	description = "Джора говорит, что ты украл у него деньги...";
+	description = " Jora says you stole money from him... " ;
 };
 
 func int DIA_Rengaru_HALLODIEB_Condition()
@@ -124,21 +125,21 @@ func int DIA_Rengaru_HALLODIEB_Condition()
 
 func void DIA_Rengaru_HALLODIEB_Info()
 {
-	AI_Output(other,self,"DIA_Rengaru_HALLODIEB_15_00");	//Джора говорит, что ты украл у него деньги...
-	AI_Output(self,other,"DIA_Rengaru_HALLODIEB_07_01");	//Черт! Я сваливаю отсюда!
+	AI_Output(other,self, " DIA_Rengaru_HALLODIEB_15_00 " );	// Jora says you stole money from him...
+	AI_Output(self,other, " DIA_Rengaru_HALLODIEB_07_01 " );	// Damn! I'm getting out of here!
 	AI_StopProcessInfos(self);
 	CreateInvItems(self,ItMi_Gold,50);
 	Npc_ExchangeRoutine(self,"RunAway");
 };
 
-instance DIA_Rengaru_GOTYOU(C_Info)
+instances DIA_Rengaru_GOTYOU (C_Info)
 {
 	npc = VLK_492_Rengaru;
 	nr = 3;
 	condition = DIA_Rengaru_GOTYOU_Condition;
 	information = DIA_Rengaru_GOTYOU_Info;
 	permanent = FALSE;
-	description = "Поймал!";
+	description = " Got it! " ;
 };
 
 func int DIA_Rengaru_GOTYOU_Condition()
@@ -153,31 +154,31 @@ func void DIA_Rengaru_GOTYOU_Info()
 {
 	B_GivePlayerXP(XP_RengaruGotThief);
 	AI_Output(other,self,"DIA_Rengaru_GOTYOU_15_00");	//Поймал!
-	AI_Output(self,other,"DIA_Rengaru_GOTYOU_07_01");	//Что тебе нужно от меня?
-	AI_Output(other,self,"DIA_Rengaru_GOTYOU_15_02");	//Ты украл кошелек у Джоры средь бела дня, и он даже видел, как ты сделал это.
-	AI_Output(other,self,"DIA_Rengaru_GOTYOU_15_03");	//Поэтому я пришел сказать тебе, что ты грязный вор и что...
+	AI_Output(self,other, " DIA_Rengaru_GOTYOU_07_01 " );	// What do you want from me?
+	AI_Output(other,self, " DIA_Rengaru_GOTYOU_15_02 " );	// You stole Jora's wallet in broad daylight and he even saw you do it.
+	AI_Output(other,self, " DIA_Rengaru_GOTYOU_15_03 " );	// That's why I came to tell you that you're a dirty thief and that...
 	Info_ClearChoices(DIA_Rengaru_GOTYOU);
-	Info_AddChoice(DIA_Rengaru_GOTYOU,"...Я заслуживаю долю от награбленного.",DIA_Rengaru_GOTYOU_Anteil);
-	Info_AddChoice(DIA_Rengaru_GOTYOU,"...тебе лучше вернуть золото Джоры. И немедленно.",DIA_Rengaru_GOTYOU_YouThief);
-	Info_AddChoice(DIA_Rengaru_GOTYOU,"...и теперь ты расскажешь мне, кто ты такой.",DIA_Rengaru_GOTYOU_WhoAreYou);
+	Info_AddChoice(DIA_Rengaru_GOTYOU, " ...I deserve a share of the loot. " ,DIA_Rengaru_GOTYOU_Anteil);
+	Info_AddChoice(DIA_Rengaru_GOTYOU, " ...you'd better get Jora's gold back. Now. " ,DIA_Rengaru_GOTYOU_YouThief);
+	Info_AddChoice(DIA_Rengaru_GOTYOU, " ...and now you tell me who you are. " ,DIA_Rengaru_GOTYOU_WhoAreYou);
 };
 
 func void DIA_Rengaru_GOTYOU_YouThief()
 {
-	AI_Output(other,self,"DIA_Rengaru_GOTYOU_YouThief_15_00");	//...тебе лучше вернуть золото Джоры. И немедленно.
+	AI_Output(other,self, " DIA_Rengaru_GOTYOU_YouThief_15_00 " );	// ...you'd better get Jora's gold back. And immediately.
 
 	if(Npc_HasItems(self,ItMi_Gold) >= 1)
 	{
-		AI_Output(self,other,"DIA_Rengaru_GOTYOU_YouThief_07_01");	//Вот золото, парень! Но теперь отпусти меня. Я больше никогда не буду заниматься этим.
+		AI_Output(self,other, " DIA_Rengaru_GOTYOU_YouThief_07_01 " );	// Here's the gold, man! But now let me go. I will never do this again.
 		B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Rengaru_GOTYOU_YouThief_07_02");	//У меня уже нет этого золота.
+		AI_Output(self,other, " DIA_Rengaru_GOTYOU_YouThief_07_02 " );	// I no longer have this gold.
 
 		if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 		{
-			AI_Output(self,other,"DIA_Rengaru_GOTYOU_YouThief_07_03");	//Но зачем я говорю тебе это? Ведь это ты меня обокрал!
+			AI_Output(self,other, " DIA_Rengaru_GOTYOU_YouThief_07_03 " );	// But why am I telling you this? After all, it was you who robbed me!
 		};
 	};
 
@@ -186,76 +187,76 @@ func void DIA_Rengaru_GOTYOU_YouThief()
 
 func void DIA_Rengaru_GOTYOU_Anteil()
 {
-	AI_Output(other,self,"DIA_Rengaru_GOTYOU_Anteil_15_00");	//...Я заслуживаю долю от награбленного.
+	AI_Output(other,self, " DIA_Rengaru_GOTYOU_Anteil_15_00 " );	// ...I deserve a share of the loot.
 
 	if((self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) && (Npc_HasItems(self,ItMi_Gold) < 1))
 	{
-		AI_Output(self,other,"DIA_Rengaru_GOTYOU_Anteil_07_01");	//Ты уже забрал все, что у меня было, после того, как вырубил меня! Пусти!
+		AI_Output(self,other, " DIA_Rengaru_GOTYOU_Anteil_07_01 " );	// You already took everything I had after knocking me out! Let it go!
 		Info_ClearChoices(DIA_Rengaru_GOTYOU);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Rengaru_GOTYOU_Anteil_15_02");	//Хорошо, похоже, у меня нет выбора. Давай, разделим пополам.
+		AI_Output(self,other, " DIA_Rengaru_GOTYOU_Anteil_15_02 " );	// Okay, looks like I don't have a choice. Let's split it in half.
 		Info_ClearChoices(DIA_Rengaru_GOTYOU);
-		Info_AddChoice(DIA_Rengaru_GOTYOU,"Нет, ты отдашь мне все!",DIA_Rengaru_GOTYOU_Anteil_alles);
-		Info_AddChoice(DIA_Rengaru_GOTYOU,"Хорошо, давай мне половину тогда.",DIA_Rengaru_GOTYOU_Anteil_GehtKlar);
+		Info_AddChoice(DIA_Rengaru_GOTYOU, " No, you'll give me everything! " ,DIA_Rengaru_GOTYOU_Anteil_alles);
+		Info_AddChoice(DIA_Rengaru_GOTYOU, " Okay, give me half then. " ,DIA_Rengaru_GOTYOU_Anteil_GehtKlar);
 	};
 };
 
-func void DIA_Rengaru_GOTYOU_Anteil_alles()
+func void DIA_Rengeru_GOTYOU_Share_everything()
 {
-	AI_Output(other,self,"DIA_Rengaru_GOTYOU_Anteil_alles_15_00");	//Нет, ты отдашь мне все!
+	AI_Output(other,self, " DIA_Rengaru_GOTYOU_Anteil_alles_15_00 " );	// No, you'll give me everything!
 
 	if(Npc_HasItems(self,ItMi_Gold) >= 2)
 	{
-		AI_Output(self,other,"DIA_Rengaru_GOTYOU_Anteil_alles_07_02");	//Ты просто грабишь меня. Ладно, возьми это золото. А теперь оставь меня в покое.
+		AI_Output(self,other, " DIA_Rengaru_GOTYOU_Anteil_alles_07_02 " );	// You're just robbing me. Okay, take this gold. Now leave me alone.
 		B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 		Info_ClearChoices(DIA_Rengaru_GOTYOU);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Rengaru_GOTYOU_Anteil_alles_07_03");	//Я бы отдал тебе золото, но у меня больше ничего нет.
+		AI_Output(self,other, " DIA_Rengaru_GOTYOU_Anteil_alles_07_03 " );	// I'd give you the gold, but I don't have anything else.
 		Info_ClearChoices(DIA_Rengaru_GOTYOU);
 	};
 };
 
-func void DIA_Rengaru_GOTYOU_Anteil_GehtKlar()
+func void DIA_Rengeru_GOTYOU_Share_GehtKlar()
 {
-	AI_Output(other,self,"DIA_Rengaru_GOTYOU_Anteil_GehtKlar_15_00");	//Хорошо, давай мне половину тогда.
+	AI_Output(other,self, " DIA_Rengaru_GOTYOU_Anteil_GehtKlar_15_00 " );	// Okay, give me half then.
 
 	if(B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(self,ItMi_Gold) / 2))
 	{
-		AI_Output(self,other,"DIA_Rengaru_GOTYOU_Anteil_GehtKlar_07_01");	//Вот твоя половина! А теперь отпусти меня!
+		AI_Output(self,other, " DIA_Rengaru_GOTYOU_Anteil_GehtKlar_07_01 " );	// Here's your half! Now let me go!
 		Info_ClearChoices(DIA_Rengaru_GOTYOU);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Rengaru_GOTYOU_Anteil_GehtKlar_07_02");	//Я был бы не прочь отдать тебе половину, но у меня больше ничего нет.
+		AI_Output(self,other, " DIA_Rengaru_GOTYOU_Anteil_GehtKlar_07_02 " );	// I wouldn't mind giving you half, but I don't have anything else.
 		Info_ClearChoices(DIA_Rengaru_GOTYOU);
 	};
 };
 
 func void DIA_Rengaru_GOTYOU_WhoAreYou()
 {
-	AI_Output(other,self,"DIA_Rengaru_GOTYOU_WhoAreYou_15_00");	//...и теперь ты расскажешь мне, кто ты такой.
-	AI_Output(self,other,"DIA_Rengaru_GOTYOU_WhoAreYou_07_01");	//Я просто бедный человек, пытающийся свести концы с концами.
-	AI_Output(self,other,"DIA_Rengaru_GOTYOU_WhoAreYou_07_02");	//Что мне еще делать? Я не могу найти работу в городе...
-	AI_Output(other,self,"DIA_Rengaru_GOTYOU_WhoAreYou_15_03");	//...хорошо, я понимаю. Хватит хныкать.
+	AI_Output(other,self, " DIA_Rengaru_GOTYOU_WhoAreYou_15_00 " );	// ...and now you tell me who you are.
+	AI_Output(self,other, " DIA_Rengaru_GOTYOU_WhoAreYou_07_01 " );	// I'm just a poor man trying to make ends meet.
+	AI_Output(self,other, " DIA_Rengaru_GOTYOU_WhoAreYou_07_02 " );	// What else should I do? I can't find a job in the city...
+	AI_Output(other,self, " DIA_Rengaru_GOTYOU_WhoAreYou_15_03 " );	// ...okay, I understand. Stop whining.
 };
 
-instance DIA_Rengaru_INKNAST(C_Info)
+instances of DIA_Rengaru_INKNAST (C_Info)
 {
 	npc = VLK_492_Rengaru;
 	nr = 4;
 	condition = DIA_Rengaru_INKNAST_Condition;
 	information = DIA_Rengaru_INKNAST_Info;
 	permanent = FALSE;
-	description = "Я должен сдать тебя ополчению.";
+	description = " I have to turn you in to the militia. " ;
 };
 
 func int DIA_Rengaru_INKNAST_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Rengaru_GOTYOU))
+	if ( Npc_KnowsInfo ( other , DIA_Come_to_GOTYOU ))
 	{
 		return TRUE;
 	};
@@ -263,47 +264,47 @@ func int DIA_Rengaru_INKNAST_Condition()
 
 func void DIA_Rengaru_INKNAST_Info()
 {
-	AI_Output(other,self,"DIA_Rengaru_INKNAST_15_00");	//Я должен сдать тебя ополчению.
-	AI_Output(self,other,"DIA_Rengaru_INKNAST_07_01");	//Что еще тебе нужно? У меня ничего не осталось! Отпусти меня, а?!
-	Info_AddChoice(DIA_Rengaru_INKNAST,"Почему я должен отпустить тебя?",DIA_Rengaru_INKNAST_keinKnast);
-	Info_AddChoice(DIA_Rengaru_INKNAST,"Я позабочусь, чтобы тебя посадили за решетку.",DIA_Rengaru_INKNAST_Knast);
-	Info_AddChoice(DIA_Rengaru_INKNAST,"Проваливай! И чтобы больше я тебя здесь не видел!",DIA_Rengaru_INKNAST_HauAb);
+	AI_Output(other,self, " DIA_Rengaru_INKNAST_15_00 " );	// I have to hand you over to the militia.
+	AI_Output(self,other, " DIA_Rengaru_INKNAST_07_01 " );	// What else do you need? I have nothing left! Let me go, huh?!
+	Info_AddChoice(DIA_Rengaru_INKNAST, " Why should I let you go? " ,DIA_Rengaru_INKNAST_keinKnast);
+	Info_AddChoice(DIA_Rengaru_INKNAST, " I'll make sure you get locked up. " ,DIA_Rengaru_INKNAST_Knast);
+	Info_AddChoice(DIA_Rengaru_INKNAST, " Get out! And never see you here again! " ,DIA_Rengaru_INKNAST_HauAb);
 };
 
 func void DIA_Rengaru_INKNAST_HauAb()
 {
-	AI_Output(other,self,"DIA_Rengaru_INKNAST_HauAb_15_00");	//Проваливай! И чтобы больше я тебя здесь не видел!
-	AI_Output(self,other,"DIA_Rengaru_INKNAST_HauAb_07_01");	//Ты не пожалеешь об этом! Спасибо, парень!
+	AI_Output(other,self, " DIA_Rengaru_INKNAST_HauAb_15_00 " );	// Get lost! And I don't want to see you here again!
+	AI_Output(self,other, " DIA_Rengaru_INKNAST_HauAb_07_01 " );	// You won't regret it! Thanks boy!
 	Npc_ExchangeRoutine(self,"Start");
 	AI_StopProcessInfos(self);
-	Diebesgilde_Okay = Diebesgilde_Okay + 1;
+	Thieves Guild_Okay = Thieves Guild_Okay +  1 ;
 };
 
 func void DIA_Rengaru_INKNAST_Knast()
 {
-	AI_Output(other,self,"DIA_Rengaru_INKNAST_Knast_15_00");	//Я позабочусь, чтобы тебя посадили за решетку.
-	AI_Output(self,other,"DIA_Rengaru_INKNAST_Knast_07_01");	//(устало) Я уже устал от этого всего. Если тебе кажется, что ты должен это сделать, поступай как знаешь.
-	AI_Output(self,other,"DIA_Rengaru_INKNAST_Knast_07_02");	//(предупреждающе) Но берегись: мои друзья это дело так не оставят...
+	AI_Output(other,self, " DIA_Rengaru_INKNAST_Knast_15_00 " );	// I'll make sure you get locked up.
+	AI_Output(self,other, " DIA_Rengaru_INKNAST_Knast_07_01 " );	// (wearily) I'm already tired of all this. If you feel like you have to do it, do as you please.
+	AI_Output(self,other, " DIA_Rengaru_INKNAST_Knast_07_02 " );	// (warning) But beware: my friends won't let this go...
 	Rengaru_InKnast = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Rengaru_INKNAST_keinKnast()
 {
-	AI_Output(other,self,"DIA_Rengaru_INKNAST_keinKnast_15_00");	//Почему я должен отпустить тебя?
-	AI_Output(self,other,"DIA_Rengaru_INKNAST_keinKnast_07_01");	//В городе никогда не помешают связи с нужными людьми - и хорошие отношения с ними.
-	AI_Output(self,other,"DIA_Rengaru_INKNAST_keinKnast_07_02");	//Я мог бы замолвить словечко за тебя. Я не могу и не хочу говорить больше. Решать тебе.
+	AI_Output(other,self, " DIA_Rengaru_INKNAST_keinKnast_15_00 " );	// Why should I let you go?
+	AI_Output(self,other, " DIA_Rengaru_INKNAST_keinKnast_07_01 " );	// In the city, it never hurts to connect with the right people - and have a good relationship with them.
+	AI_Output(self,other, " DIA_Rengaru_INKNAST_keinKnast_07_02 " );	// I could put in a good word for you. I can't and don't want to say more. You decide.
 };
 
 
-instance DIA_Rengaru_LastInfoKap1(C_Info)
+instances DIA_Rengaru_LastInfoKap1 (C_Info)
 {
 	npc = VLK_492_Rengaru;
 	nr = 6;
 	condition = DIA_Rengaru_LastInfoKap1_Condition;
 	information = DIA_Rengaru_LastInfoKap1_Info;
 	permanent = TRUE;
-	description = "Как дела? У тебя все в порядке?";
+	description = " How are you? Are you all right? " ;
 };
 
 
@@ -317,44 +318,44 @@ func int DIA_Rengaru_LastInfoKap1_Condition()
 
 func void DIA_Rengaru_LastInfoKap1_Info()
 {
-	AI_Output(other,self,"DIA_Rengaru_LastInfoKap1_15_00");	//Как дела? У тебя все в порядке?
+	AI_Output(other,self, " DIA_Rengaru_LastInfoKap1_15_00 " );	// How are you? Are you all right?
 	if(Rengaru_InKnast == TRUE)
 	{
-		AI_Output(self,other,"DIA_Rengaru_LastInfoKap1_07_01");	//Давай, давай, дразнись. Когда-нибудь, ты поплатишься за это. Клянусь!
+		AI_Output(self,other, " DIA_Rengaru_LastInfoKap1_07_01 " );	// Come on, come on, tease. Someday, you will pay for this. I swear!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Rengaru_LastInfoKap1_07_02");	//Что еще тебе нужно? Я больше ничего не украл, честно!
+		AI_Output(self,other, " DIA_Rengaru_LastInfoKap1_07_02 " );	// What else do you need? I didn't steal anything else, honestly!
 	};
 };
 
 
-instance DIA_Rengaru_Zeichen(C_Info)
+instance DIA_Rengaru_character (C_Info)
 {
 	npc = VLK_492_Rengaru;
 	nr = 2;
-	condition = DIA_Rengaru_Zeichen_Condition;
-	information = DIA_Rengaru_Zeichen_Info;
+	condition = DIA_Rengaru_Character_Condition;
+	information = DIA_Rengaru_Character_Info;
 	permanent = FALSE;
-	description = "(Показать сигнал воров)";
+	description = " (Show thief alert) " ;
 };
 
 
-func int DIA_Rengaru_Zeichen_Condition()
+func int DIA_Rengeru_Character_Condition()
 {
-	if((Knows_SecretSign == TRUE) && (Rengaru_InKnast == FALSE) && Npc_KnowsInfo(other,DIA_Rengaru_GOTYOU))
+	if (( Knows_SecretSign ==  TRUE ) && ( Come_InKnast ==  FALSE ) && Npc_KnowsInfo (other, DIA_Come_GOTYOU ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Rengaru_Zeichen_Info()
+func void DIA_Rengeru_Character_Info()
 {
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Rengaru_Zeichen_07_00");	//Эй, ты один из нас.
-	AI_Output(self,other,"DIA_Rengaru_Zeichen_07_01");	//Я скажу тебе кое-что. Если ты намереваешься залезть в чей-нибудь карман в городе, будь особенно осторожен с торговцами!
-	AI_Output(self,other,"DIA_Rengaru_Zeichen_07_02");	//Они очень бдительны и глаз не спускают со своих вещей. Но я могу дать тебе совет.
-	AI_Output(self,other,"DIA_Rengaru_Zeichen_07_03");	//Попробуй взять нужный тебе предмет одной рукой, размахивая при этом другой. Это отвлечет их.
+	AI_Output(self,other, " DIA_Rengaru_Zeichen_07_00 " );	// Hey, you're one of us.
+	AI_Output(self,other, " DIA_Rengaru_Zeichen_07_01 " );	// I'll tell you something. If you intend to reach into someone's pocket in the city, be especially careful of merchants!
+	AI_Output(self,other, " DIA_Rengaru_Zeichen_07_02 " );	// They are very vigilant and keep an eye on their belongings. But I can give you advice.
+	AI_Output(self,other, " DIA_Rengaru_Zeichen_07_03 " );	// Try picking up the item you want with one hand while swinging it with the other. It will distract them.
 	THIEF_REPUTATION = THIEF_REPUTATION + 1;
 	B_RaiseAttribute_Bonus(other,ATR_DEXTERITY,1);
 	Snd_Play("LEVELUP");
@@ -363,21 +364,21 @@ func void DIA_Rengaru_Zeichen_Info()
 
 var int is_rengaru_trade;
 
-instance DIA_RENGARU_ISTRADE(C_Info)
+instance DIA_RENGARU_ISTRADE (C_Info)
 {
 	npc = VLK_492_Rengaru;
 	nr = 1;
 	condition = dia_rengaru_istrade_condition;
 	information = dia_rengaru_istrade_info;
 	permanent = TRUE;
-	description = "У тебя есть что-нибудь на продажу?";
+	description = " Do you have anything for sale? " ;
 	trade = TRUE;
 };
 
 
 func int dia_rengaru_istrade_condition()
 {
-	if((Knows_SecretSign == TRUE) && (Rengaru_InKnast == FALSE) && Npc_KnowsInfo(other,DIA_Rengaru_GOTYOU))
+	if (( Knows_SecretSign ==  TRUE ) && ( Come_InKnast ==  FALSE ) && Npc_KnowsInfo (other, DIA_Come_GOTYOU ))
 	{
 		return TRUE;
 	};
@@ -391,12 +392,12 @@ func void dia_rengaru_istrade_info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Rengaru_Trade_00");	//У тебя есть что-нибудь на продажу?
-	AI_Output(self,other,"DIA_Rengaru_Trade_01");	//Ладно. У меня есть немного лишнего барахла..
+	AI_Output(other,self, " DIA_Rengaru_Trade_00 " );	// Do you have anything for sale?
+	AI_Output(self,other, " DIA_Rengaru_Trade_01 " );	// Okay. I have some extra junk..
 
 	if(IS_RENGARU_TRADE != 1)
 	{
-		B_LogEntry(TOPIC_CityTrader,"Если мне нужны отмычки или еще что-то подобное, я могу обращаться к Ренгару");
+		B_LogEntry(TOPIC_CityTrader, " If I need lockpicks or something like that, I can contact Rengar " );
 		IS_RENGARU_TRADE = 1;
 	};
 
