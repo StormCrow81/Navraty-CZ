@@ -1,3 +1,4 @@
+
 instance DIA_TPL_8104_TEMPLER_EXIT(C_Info)
 {
 	npc = TPL_8104_TEMPLER;
@@ -26,7 +27,7 @@ instance DIA_TPL_8104_TEMPLER_NOFOREVER(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_noforever_condition;
 	information = DIA_TPL_8104_TEMPLER_noforever_info;
 	permanent = FALSE;
-	description = "Ты возглавляешь этот отряд стражей?";
+	description = " Are you the leader of this squad of guardians? " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_noforever_condition()
@@ -36,13 +37,13 @@ func int DIA_TPL_8104_TEMPLER_noforever_condition()
 
 func void DIA_TPL_8104_TEMPLER_noforever_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_NoForever_01_00");	//Как я понимаю, именно ты возглавляешь этот отряд стражей?
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_NoForever_01_00 " );	// I take it you're the one leading this squad of guardians?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_NoForever_01_01");	//Да, ты прав. 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_NoForever_01_02");	//Гор На Тоф лично отдал мне приказ выдвинуться сюда, дабы защитить наших сборщиков от возможного нападения.
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_NoForever_01_03");	//А он не объяснил, с кем тебе предстоит столкнуться здесь?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_NoForever_01_04");	//Нет, этого он не сказал. 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_NoForever_01_05");	//Но это и не имеет особого значения. (спокойно) Я готов выполнить его приказ даже ценой своей собственной жизни!
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_NoForever_01_06");	//Ну, раз так, тогда я спокоен.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_NoForever_01_02 " );	// Gor Na Tof personally gave me the order to move here to protect our harvesters from a possible attack.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_NoForever_01_03 " );	// Didn't he explain who you're going to face here?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_NoForever_01_04 " );	// No, he didn't say that.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_NoForever_01_05 " );	// But that doesn't really matter. (calmly) I am ready to carry out his order even at the cost of my own life!
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_NoForever_01_06 " );	// Well, if so, then I'm calm.
 };
 
 instance DIA_TPL_8104_TEMPLER_AboutMe(C_Info)
@@ -52,7 +53,7 @@ instance DIA_TPL_8104_TEMPLER_AboutMe(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_AboutMe_condition;
 	information = DIA_TPL_8104_TEMPLER_AboutMe_info;
 	permanent = FALSE;
-	description = "Как ты стал стражем?";
+	description = " How did you become a Guardian? " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_AboutMe_condition()
@@ -65,17 +66,17 @@ func int DIA_TPL_8104_TEMPLER_AboutMe_condition()
 
 func void DIA_TPL_8104_TEMPLER_AboutMe_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_AboutMe_01_00");	//Как ты стал стражем?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_01");	//Очень просто. Когда наше Братство обосновалось здесь, в Хоринисе...
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_02");	//...ему потребовались люди, способные держать в руках оружие, чтобы охранять лагерь, новых послушников и самих Гуру. 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_03");	//Я был одним из тех, кого Гор На Тоф выбрал в качестве новых кандидатов в стражи.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_04");	//Позже он лично занялся моим обучением. И теперь я один из них!
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_05");	//А почему ты спрашиваешь?
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_AboutMe_01_06");	//Просто я не помню, чтобы встречал тебя в старом лагере Братства Спящего.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_07");	//Естественно! Ты и не мог меня помнить...(посмеиваясь) В старом лагере я был обычным послушником, который помогал нашим Гуру обрабатывать болотную траву.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_08");	//А вот тебя я запомнил хорошо. Ты ведь тот парень, что принес Кор Галому слюну ползунов. Не так ли?
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_AboutMe_01_09");	//Ну да, было дело.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_10");	//Значит, я не ошибся...(посмеиваясь) У меня хорошая память на лица! Особенно если дело касалось нашего Братства.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_AboutMe_01_00 " );	// How did you become a guardian?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_AboutMe_01_01 " );	// Very simple. When our Brotherhood settled here in Khorinis...
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_AboutMe_01_02 " );	// ...he needed people capable of holding weapons in their hands to guard the camp, the new novices, and the Gurus themselves.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_AboutMe_01_03 " );	// I was one of those selected by Gor Na Tof as new guard candidates.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_AboutMe_01_04 " );	// Later, he personally took over my training. And now I'm one of them!
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_AboutMe_01_05 " );	// Why do you ask?
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_AboutMe_01_06 " );	// I just don't remember meeting you at the old Brotherhood of the Sleeper camp.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_AboutMe_01_07 " );	// Naturally! You couldn't even remember me... (chuckling) In the old camp, I was an ordinary novice who helped our Gurus work the swamp grass.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_AboutMe_01_08 " );	// But I remember you well. You're the guy who brought Creeper saliva to Cor Galom. Is not it?
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_AboutMe_01_09 " );	// Well, yes, it was.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_AboutMe_01_10 " );	// So, I was not mistaken... (chuckling) I have a good memory for faces! Especially when it came to our Brotherhood.
 };
 
 instance DIA_TPL_8104_TEMPLER_WhatDo(C_Info)
@@ -85,7 +86,7 @@ instance DIA_TPL_8104_TEMPLER_WhatDo(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_WhatDo_condition;
 	information = DIA_TPL_8104_TEMPLER_WhatDo_info;
 	permanent = FALSE;
-	description = "Тут довольно скучно, не находишь?";
+	description = " It's pretty boring, don't you think? " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_WhatDo_condition()
@@ -98,10 +99,10 @@ func int DIA_TPL_8104_TEMPLER_WhatDo_condition()
 
 func void DIA_TPL_8104_TEMPLER_WhatDo_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_WhatDo_01_00");	//Тут довольно скучно, не находишь?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_WhatDo_01_01");	//Это так, приятель...(тоскливо) Здесь, в этой глуши, трудно себя чем-то занять.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_WhatDo_01_02");	//Однако, полагаю, что нам не стоит терять бдительности за разного рода делами. 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_WhatDo_01_03");	//Любое послабление будет стоить нам слишком дорого!
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_WhatDo_01_00 " );	// It's pretty boring here, don't you think?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_WhatDo_01_01 " );	// That's right, buddy... (dreary) Here, in this wilderness, it's hard to keep yourself busy.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_WhatDo_01_02 " );	// However, I think we shouldn't lose our vigilance for all sorts of things.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_WhatDo_01_03 " );	// Any indulgence will cost us too much!
 };
 
 instance DIA_TPL_8104_TEMPLER_HowReady(C_Info)
@@ -111,7 +112,7 @@ instance DIA_TPL_8104_TEMPLER_HowReady(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_HowReady_condition;
 	information = DIA_TPL_8104_TEMPLER_HowReady_info;
 	permanent = FALSE;
-	description = "Ты считаешь, что твои люди хорошо подготовлены?";
+	description = " Do you think your people are well trained? " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_HowReady_condition()
@@ -124,11 +125,11 @@ func int DIA_TPL_8104_TEMPLER_HowReady_condition()
 
 func void DIA_TPL_8104_TEMPLER_HowReady_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_HowReady_01_00");	//Ты считаешь, что твои люди хорошо подготовлены?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_HowReady_01_01");	//Хммм...(надменно) Насколько мне известно, Гор На Тоф лично отбирал тех, кого отправить сюда.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_HowReady_01_02");	//Полагаю, что ты не станешь сомневаться в компетентности нашего учителя.
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_HowReady_01_03");	//В этом нет никаких сомнений. Однако я знаю, с кем вам придется иметь дело в случае нападения. И просто хочу быть уверен, что твои люди к этому готовы.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_HowReady_01_05");	//Они готовы...(спокойно) Возможно, им немного не хватает мастерства во владении оружием. Однако их боевой дух крепок, как никогда!
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_HowReady_01_00 " );	// Do you think your people are well trained?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_HowReady_01_01 " );	// Hmmm...(arrogantly) As far as I know, Gor Na Tof personally selected who to send here.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_HowReady_01_02 " );	// I believe that you will not doubt the competence of our teacher.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_HowReady_01_03 " );	// There's no doubt about that. However, I know who you will have to deal with in the event of an attack. And I just want to make sure your people are ready for it.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_HowReady_01_05 " );	// They're ready...(calmly) Maybe they're a bit lacking in weapon prowess. However, their morale is stronger than ever!
 };
 
 
@@ -139,7 +140,7 @@ instance DIA_TPL_8104_TEMPLER_LetsTrain(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_LetsTrain_condition;
 	information = DIA_TPL_8104_TEMPLER_LetsTrain_info;
 	permanent = FALSE;
-	description = "А как насчет того, чтобы немного поупражняться с мечом?";
+	description = " How about some sword practice? " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_LetsTrain_condition()
@@ -152,20 +153,20 @@ func int DIA_TPL_8104_TEMPLER_LetsTrain_condition()
 
 func void DIA_TPL_8104_TEMPLER_LetsTrain_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_01_00");	//А как насчет того, чтобы немного поупражняться с мечом?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_01");	//Что ты имеешь в виду?
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_01_02");	//Полагаю, твоим бойцам не помешало бы немного попрактиковаться с оружием, пока у них есть на это время.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_03");	//Хммм...(задумчиво) Это действительно было бы неплохой идеей! Думаю, стоит спросить об этом у них самих.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_04");	//Однако остается вопрос - кто займется их обучением?
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_01_05");	//Может быть, ты?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_06");	//Ну...(смущенно) Я довольно неплохо управляюсь с двуручем стражей, но быть самому наставником мне еще не доводилось.
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_01_07");	//А какого о тебе мнения Гор На Тоф?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_08");	//Мой учитель? Насколько я знаю, он считает, что мне немного не хватает концентрации в бою. 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_09");	//Но лучше тебе самому поговорить с ним об этом.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_10");	//Возможно, если он даст свое согласие, то тогда я займусь обучением стражей здесь, в лагере сборщиков.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_LetsTrain_01_00 " );	// How about some sword practice?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_01_01 " );	// What do you mean?
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_LetsTrain_01_02 " );	// I guess your fighters could do with some weapon practice while they have time.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_01_03 " );	// Hmmm...(thoughtfully) That would be a really good idea! I think it's worth asking them about it.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_01_04 " );	// However, the question remains - who will train them?
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_LetsTrain_01_05 " );	// Maybe you?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_01_06 " );	// Well...(embarrassed) I'm pretty good with two-handed guardians, but I've never had the opportunity to be a mentor myself.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_LetsTrain_01_07 " );	// And what does Gor Na Tof think of you?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_01_08 " );	// My teacher? As far as I know, he thinks that I lack concentration in combat a little.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_01_09 " );	// But you'd better talk to him about it yourself.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_01_10 " );	// Perhaps if he gives his consent, then I'll train the guards here at the gathering camp.
 	Log_CreateTopic(TOPIC_TrainInCamp,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TrainInCamp,LOG_Running);
-	B_LogEntry(TOPIC_TrainInCamp,"Я предложил Тираксу заняться обучением стражей в лагере сборщиков. Но для начала мне следует поговорить с его учителем Гор На Тофом, чтобы тот дал свое согласие.");
+	B_LogEntry(TOPIC_TrainInCamp, " I've suggested to Tirax that he train guards at the Gatherer Camp. But first, I should talk to his teacher, Gor Na Toph, to give his consent. " );
 	MIS_TrainInCamp = LOG_Running;
 };
 
@@ -176,7 +177,7 @@ instance DIA_TPL_8104_TEMPLER_LetsTrain_Done(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_LetsTrain_Done_condition;
 	information = DIA_TPL_8104_TEMPLER_LetsTrain_Done_info;
 	permanent = FALSE;
-	description = "Гор На Тоф дал тебе свое согласие.";
+	description = " Gor Na Tof has given you his consent. " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_LetsTrain_Done_condition()
@@ -190,13 +191,13 @@ func int DIA_TPL_8104_TEMPLER_LetsTrain_Done_condition()
 func void DIA_TPL_8104_TEMPLER_LetsTrain_Done_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_00");	//Гор На Тоф дал тебе свое согласие, так что можешь начинать обучение стражей.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_01");	//Хммм...(удивленно) Значит, он довольно высоко ценит мои навыки боя.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_02");	//Ладно, тогда начнем с завтрашнего дня.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_03");	//Вот, возьми этот свиток в качестве моей благодарности. 
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_00 " );	// Gor Na Tof has given you his consent, so you can start training guardians.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_01 " );	// Hmmm...(surprised) So he thinks my fighting skills are pretty high.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_02 " );	// Okay, let's start tomorrow then.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_03 " );	// Here, take this scroll as my thanks.
 	B_GiveInvItems(self,other,ITSC_TRFMEATBUG,1);
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_04");	//Мне, как воину, он ни к чему. А тебе возможно и пригодится!
-	B_LogEntry(TOPIC_TrainInCamp,"Я передал Тираксу слова Гор На Тофа, и с завтрашнего дня он начнет тренировать стражей.");
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_04 " );	// As a warrior, I don't need him. And you might find it useful!
+	B_LogEntry(TOPIC_TrainInCamp, " I have conveyed Gor Na Tof's words to Tirax and he will start training guardians from tomorrow. " );
 	Log_CreateTopic(TOPIC_TrainInCamp,LOG_SUCCESS);
 	MIS_TrainInCamp = LOG_SUCCESS;
 	CampTrainingTimer = Wld_GetDay();
@@ -210,12 +211,12 @@ instance DIA_TPL_8104_TEMPLER_TrainDay(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_TrainDay_condition;
 	information = DIA_TPL_8104_TEMPLER_TrainDay_info;
 	permanent = FALSE;
-	description = "Как идет обучение?";
+	description = " How is the training going? " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_TrainDay_condition()
 {
-	var int Daynow;
+	be int Daynow;
 
 	Daynow = Wld_GetDay();
 
@@ -227,11 +228,11 @@ func int DIA_TPL_8104_TEMPLER_TrainDay_condition()
 
 func void DIA_TPL_8104_TEMPLER_TrainDay_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_TrainDay_01_00");	//Как идет обучение?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_TrainDay_01_01");	//Как видишь...(посмеиваясь) Попусту мы здесь время не теряем.
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_TrainDay_01_02");	//Понятно. А почему тренируются не все?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_TrainDay_01_03");	//Ну, кто-то ведь должен в это время охранять наших сборщиков болотника.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_TrainDay_01_04");	//Поэтому стражи тренируются по очереди в строго отведенное для этого время. А остальные наблюдают за лагерем.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_TrainDay_01_00 " );	// How is the learning going?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_TrainDay_01_01 " );	// As you can see... (chuckling) We're not wasting our time here.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_TrainDay_01_02 " );	// Got it. Why isn't everyone exercising?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_TrainDay_01_03 " );	// Well, someone has to guard our bog harvesters at this time.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_TrainDay_01_04 " );	// Therefore, the guards train in turn at the strictly allotted time for this. And the rest are watching the camp.
 };
 
 instance DIA_TPL_8104_TEMPLER_Relax(C_Info)
@@ -241,7 +242,7 @@ instance DIA_TPL_8104_TEMPLER_Relax(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_Relax_condition;
 	information = DIA_TPL_8104_TEMPLER_Relax_info;
 	permanent = FALSE;
-	description = "Ты выглядишь немного усталым.";
+	description = " You look a little tired. " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_Relax_condition()
@@ -254,19 +255,19 @@ func int DIA_TPL_8104_TEMPLER_Relax_condition()
 
 func void DIA_TPL_8104_TEMPLER_Relax_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_01_00");	//Ты выглядишь немного усталым.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_01");	//(угрюмо) Правда? Возможно, ты прав.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_02");	//Просто вся эта неопределенность чертовски изматывает. Да и сами нервы уже на пределе.
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_01_03");	//Тебе просто необходимо немного расслабиться.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_04");	//Эх, приятель... Так-то оно так. Только вот как это сделать?
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_01_05");	//А в чем проблема?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_06");	//Понимаешь, если бы я сейчас находился в лагере Братства, то незамедлительно пошел бы к Таласу. 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_07");	//Пара затяжек тех косяков, что он раздает послушникам, наверняка вернули бы меня к жизни.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_08");	//Но где в этой глуши, скажи мне, ты возьмешь хотя бы даже один косяк болотной травы?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_09");	//Так что пока, видимо, придется повременить с отдыхом.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_Relax_01_00 " );	// You look a little tired.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_01_01 " );	// (sullenly) Really? Maybe you're right.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_01_02 " );	// It's just that all this uncertainty is exhausting as hell. Yes, and the nerves themselves are already at the limit.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_Relax_01_03 " );	// You just need to relax a bit.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_01_04 " );	// Eh, buddy... That's how it is. Just how to do it?
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_Relax_01_05 " );	// What's the problem?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_01_06 " );	// You see, if I were in the Brotherhood camp right now, I would immediately go to Talas.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_01_07 " );	// A couple of puffs on those joints he's handing out to acolytes would probably bring me back to life.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_01_08 " );	// But where in this wilderness, tell me, will you take at least one shoal of swamp grass?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_01_09 " );	// So for now, apparently, we will have to wait a little with the rest.
 	Log_CreateTopic(TOPIC_TiraksRelax,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TiraksRelax,LOG_Running);
-	B_LogEntry(TOPIC_TiraksRelax,"Тираксу необходимо несколько косяков болотника, чтобы сбросить накопившееся напряжение.");
+	B_LogEntry(TOPIC_TiraksRelax, " Tirax needs a few bogweed shoals to release his tension. " );
 	MIS_TiraksRelax = LOG_Running;
 };
 
@@ -277,7 +278,7 @@ instance DIA_TPL_8104_TEMPLER_Relax_Done(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_Relax_Done_condition;
 	information = DIA_TPL_8104_TEMPLER_Relax_Done_info;
 	permanent = FALSE;
-	description = "У меня тут кое-что для тебя есть.";
+	description = " I have something here for you. " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_Relax_Done_condition()
@@ -290,32 +291,32 @@ func int DIA_TPL_8104_TEMPLER_Relax_Done_condition()
 
 func void DIA_TPL_8104_TEMPLER_Relax_Done_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_Done_01_00");	//У меня тут кое-что для тебя есть.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_Done_01_01");	//О чем ты говоришь?
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_Done_01_02");	//Это поможет тебе немного расслабиться. Вот.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_Relax_Done_01_00 " );	// I have something here for you.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_Done_01_01 " );	// What are you talking about?
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_Relax_Done_01_02 " );	// This will help you relax a bit. Here.
 
 	if(Npc_HasItems(other,ItMi_Joint) >= 3)
 	{
 		B_GivePlayerXP(300);
 		B_GiveInvItems(other,self,ItMi_Joint,3);
-		B_LogEntry(TOPIC_TiraksRelax,"Тиракс был на седьмом небе от счастья, узнав, что я достал ему косяки из болотной травы.");
+		B_LogEntry(TOPIC_TiraksRelax, " Tirax was over the moon when he heard that I got him marsh grass joints. " );
 	}
 	else if(Npc_HasItems(other,ItMi_Joint) >= 2)
 	{
 		B_GivePlayerXP(200);
 		B_GiveInvItems(other,self,ItMi_Joint,2);
-		B_LogEntry(TOPIC_TiraksRelax,"Тиракс был на седьмом небе от счастья, узнав, что я достал ему косяки из болотной травы.");
+		B_LogEntry(TOPIC_TiraksRelax, " Tirax was over the moon when he heard that I got him marsh grass joints. " );
 	}
 	else
 	{
 		B_GivePlayerXP(100);
 		B_GiveInvItems(other,self,ItMi_Joint,1);
-		B_LogEntry(TOPIC_TiraksRelax,"Тиракс был на седьмом небе от счастья, узнав, что я достал ему косяк из болотной травы.");
+		B_LogEntry(TOPIC_TiraksRelax, " Tirax was over the moon when he heard that I got him a marsh grass joint. " );
 	};
 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_Done_01_03");	//Я не верю своим глазам! Ты достал для меня болотник.
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_Done_01_04");	//Как видишь.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_Done_01_05");	//Что же, ты меня по настоящему выручил, приятель. И я этого не забуду!
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_Done_01_03 " );	// I can't believe my eyes! You got me a swamp.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_Relax_Done_01_04 " );	// As you can see.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_Relax_Done_01_05 " );	// Well, you really helped me out, mate. And I won't forget it!
 	CreateInvItems(self,ItMi_Joint,1);
 	B_UseItem(self,ItMi_Joint);
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_Done_01_06");	//...Мммм
@@ -330,12 +331,12 @@ instance DIA_TPL_8104_TEMPLER_GetFurs(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_GetFurs_condition;
 	information = DIA_TPL_8104_TEMPLER_GetFurs_info;
 	permanent = FALSE;
-	description = "Могу я еще чем-то помочь вам?";
+	description = " Is there anything else I can help you with? " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_GetFurs_condition()
 {
-	if((MIS_BalamProviant == LOG_SUCCESS) && (kapitel < 6) && (!Npc_IsDead(BAU_982_Grimbald)))
+	if ((MIS_BalamProviant ==  LOG_SUCCESS ) && (chapter <  6 ) && ( ! Npc_IsDead(BAU_982_Grimbald))) .
 	{
 		return TRUE;
 	};
@@ -343,18 +344,18 @@ func int DIA_TPL_8104_TEMPLER_GetFurs_condition()
 
 func void DIA_TPL_8104_TEMPLER_GetFurs_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_01_00");	//Могу я еще чем-то помочь вам?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_01");	//Хммм...(задумчиво) Полагаю, что ты бы мог достать для нас пару-другую овечьих шкур.
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_01_02");	//Это еще зачем?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_03");	//Ну, видишь ли, тут довольно холодно по ночам. А парням вообще приходится спать прямо на земле.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_04");	//Парочка же теплых овечьих шкур немного скрасит их и без того скудный отдых.
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_01_05");	//Ладно, понимаю. Но где мне их тут взять? Поблизости же нет ни одной фермы.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_06");	//Так-то да. Но насколько я знаю, тут рядом где-то промышляет один из охотников.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_07");	//Мы видели его несколько дней назад, там, при подъеме на плато.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_08");	//Так что, возможно, у него найдется все необходимое.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_01_00 " );	// Is there anything else I can help you with?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_01_01 " );	// Hmmm...(thoughtfully) I suppose you could get us a couple of sheepskins or two.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_01_02 " );	// Why else?
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_01_03 " );	// Well, you see, it's pretty cold here at night. And guys generally have to sleep right on the ground.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_01_04 " );	// A pair of warm sheepskins will brighten up their already meager rest a little.
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_01_05 " );	// Okay, I understand. But where can I get them? There are no farms nearby.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_01_06 " );	// So yes. But as far as I know, one of the hunters is hunting somewhere nearby.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_01_07 " );	// We saw him a few days ago, up there on the plateau.
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_01_08 " );	// So maybe he has everything he needs.
 	Log_CreateTopic(TOPIC_TiraksFur,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TiraksFur,LOG_Running);
-	B_LogEntry(TOPIC_TiraksFur,"Тиракс попросил меня достать для него несколько теплых овечьих шкур, чтобы парни в лагере не мерзли по ночам.");
+	B_LogEntry(TOPIC_TiraksFur, " Tirax asked me to get him some warm sheepskins to keep the guys at camp warm at night. " );
 	MIS_TiraksFur = LOG_Running;
 };
 
@@ -366,7 +367,7 @@ instance DIA_TPL_8104_TEMPLER_GetFurs_Done(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_GetFurs_Done_condition;
 	information = DIA_TPL_8104_TEMPLER_GetFurs_Done_info;
 	permanent = TRUE;
-	description = "По поводу нужных тебе шкур...";
+	description = " About the skins you need... " ;
 };
 
 func int DIA_TPL_8104_TEMPLER_GetFurs_Done_condition()
@@ -379,70 +380,70 @@ func int DIA_TPL_8104_TEMPLER_GetFurs_Done_condition()
 
 func void DIA_TPL_8104_TEMPLER_GetFurs_Done_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_00");	//По поводу нужных тебе шкур...
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_01");	//Да? Что скажешь? Неужели тебе удалось достать их для нас?
+	AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_00 " );	// About the skins you need...
+	AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_01 " );	// Yes? What do you say? Did you manage to get them for us?
 
 	if((Npc_HasItems(other,ItAt_ShadowFur) >= 2) && ((GrimbaldTellSellFur == TRUE) || (GrimbaldSellFur == TRUE) || (GrimbaldSellFurAll == TRUE)))
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_02");	//Вот, тут пара шкур мракориса. Надеюсь, этого хватит?
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_02 " );	// Here, here are a couple of mrakoris skins. I hope this is enough?
 		B_GiveInvItems(other,self,ItAt_ShadowFur,2);
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_03");	//Хммм...(удивленно) По мне, так это просто отличные шкуры, да и к тому же превосходной выделки!
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_04");	//Теперь моим парням точно не придется мерзнуть тут по ночам.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_05");	//Однако позволь мне узнать, откуда они у тебя? Ты что, охотился на этих тварей?!
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_06");	//Я - нет, но тот охотник, которого вы видели недалеко от лагеря, промышляет этим в здешних краях. От него я их и получил.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_08");	//Понятно. И небось, тебе пришлось за них выложить огромную кучу золота?
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_03 " );	// Hmmm... (surprised) To me, these are just excellent skins, and besides, excellent workmanship!
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_04 " );	// Now my guys won't have to freeze here at night.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_05 " );	// However, let me know where you got them from? Are you hunting these creatures?!
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_06 " );	// I don't, but that hunter you saw near the camp does it in these parts. I received them from him.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_08 " );	// Got it. And I suppose you had to shell out a huge pile of gold for them?
 		Info_ClearChoices(DIA_TPL_8104_TEMPLER_GetFurs_Done);
 
 		if(GrimbaldTellSellFur == TRUE)
 		{
-			Info_AddChoice(DIA_TPL_8104_TEMPLER_GetFurs_Done,"Они достались мне даром.",DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale);
+			Info_AddChoice(DIA_TPL_8104_TEMPLER_GetFurs_Done, " I got them for free. " ,DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale);
 		};
 
 		if(GrimbaldSellFur == TRUE)
 		{
-			Info_AddChoice(DIA_TPL_8104_TEMPLER_GetFurs_Done,"Мне пришлось заплатить за одну шкуру.",DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale);
+			Info_AddChoice(DIA_TPL_8104_TEMPLER_GetFurs_Done, " I had to pay for one skin. " ,DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale);
 		};
 
 		if(GrimbaldSellFurAll == TRUE)
 		{
-			Info_AddChoice(DIA_TPL_8104_TEMPLER_GetFurs_Done,"Ты прав! Они обошлись мне недешево.",DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale);
+			Info_AddChoice(DIA_TPL_8104_TEMPLER_GetFurs_Done, " You're right! They cost me dearly. " ,DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale);
 		};
 	}
 	else if(Npc_HasItems(other,ItAt_SheepFur) >= 2)
 	{
 		B_GivePlayerXP(250);
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_09");	//Вот, тут пара овечьих шкур. Надеюсь, этого хватит?
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_09 " );	// Here, here are a couple of sheepskins. I hope this is enough?
 		B_GiveInvItems(other,self,ItAt_SheepFur,2);
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_10");	//Конечно, приятель...(довольно) Теперь моим парням не придется тут мерзнуть по ночам.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_11");	//Возьми это золото в качестве моей благодарности. Извини, но больше мне нечем тебя отблагодарить.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_10 " );	// Of course, buddy... (enough) Now my guys won't have to freeze here at night.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_11 " );	// Take this gold as my thanks. I'm sorry, but I have nothing else to thank you.
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_12");	//Спасибо.
 		B_GiveInvItems(self,other,ItMi_Gold,200);
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_13");	//Тут намного больше, чем смог бы предложить тебе за них любой торговец. Уж будь уверен!
-		B_LogEntry(TOPIC_TiraksFur,"Я достал овечьи шкуры для Тиракса.");
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_13 " );	// There's a lot more here than any merchant could offer you for them. Be sure!
+		B_LogEntry(TOPIC_TiraksFur, " I got sheep skins for Tiraks. " );
 		Log_CreateTopic(TOPIC_TiraksFur,LOG_SUCCESS);
 		MIS_TiraksFur = LOG_SUCCESS;
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_14");	//Пока нет.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_15");	//Ладно, нет так нет. Главное, что ты не забыл про мою просьбу.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_01_15 " );	// Okay, no, no. The main thing is that you have not forgotten about my request.
 	}; 
 };
 
 
 func void DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale()
 {
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_00");	//Они достались мне даром.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_01");	//Ну, раз так...(задумчиво) Тогда в качестве своей благодарности я дам тебе несколько редких магических эликсиров.
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_02");	//Это будет довольно щедро с твоей стороны.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_03");	//Ну, ты помог нам, а это ценится куда дороже.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_04");	//Вот, возьми эти магические напитки. Надеюсь, что они тебе пригодятся.
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_00 " );	// I got them for nothing.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_01 " );	// Well, if that's the case... (thoughtfully) Then, as my thanks, I'll give you some rare magic elixirs.
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_02 " );	// That would be pretty generous of you.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_03 " );	// Well, you helped us, and that's much more valuable.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_04 " );	// Here, take these magical drinks. I hope they are of use to you.
 		B_GiveInvItemsManyThings(self,other);
 		CreateInvItems(other,ItPo_Perm_Health,1);
 		CreateInvItems(other,ItPo_Perm_Mana,1);
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_05");	//Спасибо.
-		B_LogEntry(TOPIC_TiraksFur,"Я отдал Тираксу шкуры мракориса.");
+		B_LogEntry(TOPIC_TiraksFur, " I gave Tirax the Tirakoris skins. " );
 		Log_CreateTopic(TOPIC_TiraksFur,LOG_SUCCESS);
 		MIS_TiraksFur = LOG_SUCCESS;
 		Info_ClearChoices(DIA_TPL_8104_TEMPLER_GetFurs_Done);
@@ -451,19 +452,19 @@ func void DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale()
 
 func void DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale()
 {
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_00");	//Мне пришлось заплатить за одну шкуру.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_01");	//Ну, раз так...(задумчиво) Тогда я компенсирую твои затраты и дам еще вдобавок несколько магических эликсиров.
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_02");	//Как щедро с твоей стороны!
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_03");	//Ну, ты помог нам, а это ценится куда дороже. Сколько стоила эта шкура?
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_04");	//Двести золотых.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_05");	//Хорошо. Вот - возьми свое золото и эти магические напитки.
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_00 " );	// I had to pay for one skin.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_01 " );	// Well, if that's the case... (thoughtfully) Then I'll compensate your expenses and give you a few more magical elixirs.
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_02 " );	// How generous of you!
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_03 " );	// Well, you helped us, and that's much more valuable. How much was this skin?
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_04 " );	// Two hundred gold.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_05 " );	// Good. Here, take your gold and these magical drinks.
 		B_GiveInvItemsManyThings(self,other);
 		CreateInvItems(other,ItMi_Gold,200);
 		CreateInvItems(other,ItPo_Health_02,5);
 		CreateInvItems(other,ItPo_Mana_02,5);
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_06");	//Надеюсь, что этого тебе хватит в качестве нашей благодарности.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_06 " );	// I hope this is enough for you as our thanks.
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale_01_07");	//Вполне.
-		B_LogEntry(TOPIC_TiraksFur,"Я отдал Тираксу шкуры мракориса.");
+		B_LogEntry(TOPIC_TiraksFur, " I gave Tirax the Tirakoris skins. " );
 		Log_CreateTopic(TOPIC_TiraksFur,LOG_SUCCESS);
 		MIS_TiraksFur = LOG_SUCCESS;
 		Info_ClearChoices(DIA_TPL_8104_TEMPLER_GetFurs_Done);
@@ -471,14 +472,14 @@ func void DIA_TPL_8104_TEMPLER_GetFurs_Done_HalfSale()
 
 func void DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale()
 {
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_00");	//Ты прав! Они обошлись мне недешево.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_01");	//Ну, раз так...(задумчиво) Тогда я компенсирую твои затраты в двойном размере. Сколько стоит каждая шкура?
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_02");	//Двести золотых.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_03");	//Хорошо. Вот - возьми свое золото. Полагаю, что ни один торговец в Хоринисе не предложит тебе подобную цену.
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_00 " );	// You're right! They cost me dearly.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_01 " );	// Well, if that's the case... (thoughtfully) Then I'll double your costs. How much does each skin cost?
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_02 " );	// Two hundred gold.
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_03 " );	// Good. Here, take your gold. I believe that no merchant in Khorinis will offer you such a price.
 		B_GiveInvItems(self,other,ItMi_Gold,800);
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_04");	//Как щедро с твоей стороны!
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_05");	//Ну, ты помог нам, а это ценится куда дороже.
-		B_LogEntry(TOPIC_TiraksFur,"Я отдал Тираксу шкуры мракориса. Он был очень доволен и отсыпал за них кучу золота.");
+		AI_Output(other,self, " DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_04 " );	// How generous of you!
+		AI_Output(self,other, " DIA_TPL_8104_TEMPLER_GetFurs_Done_AllSale_01_05 " );	// Well, you helped us, and that's much more valuable.
+		B_LogEntry(TOPIC_TiraksFur, " I gave Tirax the mrakoris pelts. He was very pleased and paid a lot of gold for them. " );
 		Log_CreateTopic(TOPIC_TiraksFur,LOG_SUCCESS);
 		MIS_TiraksFur = LOG_SUCCESS;
 		Info_ClearChoices(DIA_TPL_8104_TEMPLER_GetFurs_Done);
