@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_RoastPirate_EXIT(C_Info)
 {
 	npc = PIR_1364_Addon_Pirat;
@@ -40,18 +41,18 @@ func int DIA_Addon_RoastPirate_GimmeGrog_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_RoastPirate_GimmeGrog_Info()
 {
-	AI_Output(self,other,"DIA_Addon_PIR_6_GimmeGrog_06_00");	//Жар костра вызывает у меня жажду.
-	AI_Output(self,other,"DIA_Addon_PIR_6_GimmeGrog_06_01");	//У тебя не найдется для меня грога?
+	AI_Output(self,other, " DIA_Addon_PIR_6_GimmeGrog_06_00 " );	// The heat of the campfire makes me thirsty.
+	AI_Output(self,other, " DIA_Addon_PIR_6_GimmeGrog_06_01 " );	// Do you have a grog for me?
 	Log_CreateTopic(TOPIC_Addon_RoastGrog,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_RoastGrog,LOG_Running);
-	B_LogEntry(TOPIC_Addon_RoastGrog,"Пирату у костра нужен грог.");
+	B_LogEntry(TOPIC_Addon_RoastGrog, " Pirate by the fire needs some grog. " );
 	Info_ClearChoices(DIA_Addon_RoastPirate_GimmeGrog);
-	Info_AddChoice(DIA_Addon_RoastPirate_GimmeGrog,"У меня ничего нет.",DIA_Addon_RoastPirate_GimmeGrog_DontHaveAny);
+	Info_AddChoice(DIA_Addon_RoastPirate_GimmeGrog, " I don't have anything. " ,DIA_Addon_RoastPirate_GimmeGrog_DontHaveAny);
 	if(Npc_HasItems(other,ItFo_Addon_Grog) >= 1)
 	{
 		Info_AddChoice(DIA_Addon_RoastPirate_GimmeGrog,"Вот, глотни.",DIA_Addon_RoastPirate_GimmeGrog_HereIsGrog);
@@ -61,49 +62,49 @@ func void DIA_Addon_RoastPirate_GimmeGrog_Info()
 func void DIA_Addon_RoastPirate_GimmeGrog_DontHaveAny()
 {
 	AI_Output(other,self,"DIA_Addon_PIR_6_GimmeGrog_DontHaveAny_15_00");	//Нет.
-	AI_Output(self,other,"DIA_Addon_PIR_6_GimmeGrog_DontHaveAny_06_00");	//Проклятье! Умираю от жажды...
+	AI_Output(self,other, " DIA_Addon_PIR_6_GimmeGrog_DontHaveAny_06_00 " );	// Damn! I'm dying of thirst...
 	Info_ClearChoices(DIA_Addon_RoastPirate_GimmeGrog);
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Addon_RoastPirate_GimmeGrog_HereIsGrog()
 {
-	AI_Output(other,self,"DIA_Addon_PIR_6_GimmeGrog_HereIsGrog_15_00");	//Вот, глотни.
+	AI_Output(other,self, " DIA_Addon_PIR_6_GimmeGrog_HereIsGrog_15_00 " );	// Here, take a sip.
 	B_GiveInvItems(other,self,ItFo_Addon_Grog,1);
-	AI_Output(self,other,"DIA_Addon_PIR_6_GimmeGrog_HereIsGrog_06_01");	//Спасибо, приятель!
+	AI_Output(self,other, " DIA_Addon_PIR_6_GimmeGrog_HereIsGrog_06_01 " );	// Thanks mate!
 	B_UseItem(self,ItFo_Addon_Grog);
 	PIR_1364_Grog = TRUE;
 	Info_ClearChoices(DIA_Addon_RoastPirate_GimmeGrog);
-	B_LogEntry(TOPIC_Addon_RoastGrog,"Грог не дал пирату умереть от жажды.");
+	B_LogEntry(TOPIC_Addon_RoastGrog, " Grog kept the pirate from dying of thirst. " );
 	Npc_ExchangeRoutine(self,"START");
 	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_Addon_RoastPirate_SeichtesWasser(C_Info)
+instance DIA_Addon_RoastPirate_ShallowWater (C_Info)
 {
 	npc = PIR_1364_Addon_Pirat;
 	nr = 2;
-	condition = DIA_Addon_RoastPirate_SeichtesWasser_Condition;
-	information = DIA_Addon_RoastPirate_SeichtesWasser_Info;
-	description = "Как дела?";
+	condition = DIA_Addon_RoastPirate_ShallowWater_Condition;
+	information = DIA_Addon_RoastPirate_ShallowWater_Info;
+	description = " How are you? " ;
 };
 
 
-func int DIA_Addon_RoastPirate_SeichtesWasser_Condition()
+func int DIA_Addon_RoastPirate_ShallowWater_Condition()
 {
 	return TRUE;
 };
 
-func void DIA_Addon_RoastPirate_SeichtesWasser_Info()
+func void DIA_Addon_RoastPirate_ShallowWater_Info()
 {
-	AI_Output(other,self,"DIA_Addon_PIR_6_SeichtesWasser_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_PIR_6_SeichtesWasser_06_01");	//Я должен обслуживать всю эту прожорливую толпу.
-	AI_Output(self,other,"DIA_Addon_PIR_6_SeichtesWasser_06_02");	//И поэтому мне приходится целый день стоять здесь, умирая от жары.
-	AI_Output(self,other,"DIA_Addon_PIR_6_SeichtesWasser_06_03");	//Я бы лучше побродил по берегу в поисках добычи.
-	AI_Output(self,other,"DIA_Addon_PIR_6_SeichtesWasser_06_04");	//На той неделе у берега разбился о рифы торговый корабль.
-	AI_Output(self,other,"DIA_Addon_PIR_6_SeichtesWasser_06_05");	//И теперь добро с него выносит на пляж.
-	AI_Output(self,other,"DIA_Addon_PIR_6_SeichtesWasser_06_06");	//Очень надеюсь, что кто-нибудь меня скоро сменит.
+	AI_Output(other,self, " DIA_Addon_PIR_6_SeichtesWasser_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Addon_PIR_6_SeichtesWasser_06_01 " );	// I have to serve all this gluttonous crowd.
+	AI_Output(self,other, " DIA_Addon_PIR_6_SeichtesWasser_06_02 " );	// And that's why I have to stand here all day, dying from the heat.
+	AI_Output(self,other, " DIA_Addon_PIR_6_SeichtesWasser_06_03 " );	// I'd rather wander along the shore in search of prey.
+	AI_Output(self,other, " DIA_Addon_PIR_6_SeichtesWasser_06_04 " );	// A merchant ship was wrecked off the reefs that week.
+	AI_Output(self,other, " DIA_Addon_PIR_6_SeichtesWasser_06_05 " );	// And now the good from him takes out to the beach.
+	AI_Output(self,other, " DIA_Addon_PIR_6_SeichtesWasser_06_06 " );	// I really hope that someone will replace me soon.
 };
 
 
@@ -114,29 +115,29 @@ instance DIA_Addon_RoastPirate_Francis(C_Info)
 	condition = DIA_Addon_RoastPirate_Francis_Condition;
 	information = DIA_Addon_RoastPirate_Francis_Info;
 	permanent = FALSE;
-	description = "Что ты мне можешь сказать о Фрэнсисе?";
+	description = " What can you tell me about Francis? " ;
 };
 
 
 func int DIA_Addon_RoastPirate_Francis_Condition()
 {
-	if(Francis_ausgeschissen == FALSE)
+	if (Francis_shit out ==  FALSE )
 	{
 		if(Npc_KnowsInfo(other,DIA_Addon_Skip_GregsHut) || (Francis.aivar[AIV_TalkedToPlayer] == TRUE))
 		{
 			return TRUE;
 		};
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_RoastPirate_Francis_Info()
 {
-	AI_Output(other,self,"DIA_Addon_PIR_6_FRANCIS_15_00");	//Что ты мне можешь сказать о Фрэнсисе?
-	AI_Output(self,other,"DIA_Addon_PIR_6_Francis_06_01");	//О Фрэнсисе? Он ведет себя так, будто он - наш капитан. Но ничего, вот вернется Грэг...
-	AI_Output(self,other,"DIA_Addon_PIR_6_Francis_06_02");	//Фрэнсис сразу же забьется в свой темный угол.
-	AI_Output(self,other,"DIA_Addon_PIR_6_Francis_06_04");	//Этот червяк обманывает всех и каждого. Уверен, он даже сам у себя крадет.
-	AI_Output(self,other,"DIA_Addon_PIR_6_Francis_06_05");	//Но я тебе этого не говорил. И до тех пор, пока у тебя не будет доказательств, не стоит его обвинять.
+	AI_Output(other,self, " DIA_Addon_PIR_6_FRANCIS_15_00 " );	// What can you tell me about Francis?
+	AI_Output(self,other, " DIA_Addon_PIR_6_Francis_06_01 " );	// About Francis? He acts like he's our captain. But never mind, Greg will be back...
+	AI_Output(self,other, " DIA_Addon_PIR_6_Francis_06_02 " );	// Francis will immediately retreat to his dark corner.
+	AI_Output(self,other, " DIA_Addon_PIR_6_Francis_06_04 " );	// This worm deceives everyone. I'm sure he even steals from himself.
+	AI_Output(self,other, " DIA_Addon_PIR_6_Francis_06_05 " );	// But I didn't tell you that. And until you have proof, don't accuse him.
 };
 
 
@@ -147,77 +148,77 @@ instance DIA_Addon_RoastPirate_PERM(C_Info)
 	condition = DIA_Addon_RoastPirate_PERM_Condition;
 	information = DIA_Addon_RoastPirate_PERM_Info;
 	permanent = TRUE;
-	description = "Что-нибудь еще?";
+	description = " Anything else? " ;
 };
 
 
 func int DIA_Addon_RoastPirate_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_RoastPirate_SeichtesWasser))
+	if (Npc_KnowsInfo(other,DIA_Addon_RoastPirate_ShallowWater))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_RoastPirate_PERM_Info()
 {
-	var int randy;
-	AI_Output(other,self,"DIA_Addon_Matt_Job_15_00");	//Что-нибудь еще?
-	randy = Hlp_Random(3);
+	be int randy;
+	AI_Output(other,self, " DIA_Addon_Matt_Job_15_00 " );	// Anything else?
+	randy = Hlp_Random( 3 );
 	if(GregIsBack == TRUE)
 	{
-		if((randy == 0) && !Npc_IsDead(Francis))
+		if ((randy ==  0 ) &&  ! Npc_IsDead(Francis))
 		{
-			AI_Output(self,other,"DIA_Addon_PIR_6_Chef_06_02");	//На месте Грэга я бы отправил Фрэнсиса на болото.
+			AI_Output(self,other, " DIA_Addon_PIR_6_Chef_06_02 " );	// If I were Greg, I'd send Francis to the swamp.
 		}
 		else if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_Addon_PIR_6_Chef_06_03");	//После возвращения Грэга бандиты дважды подумают, прежде чем нападать на нас.
+			AI_Output(self,other, " DIA_Addon_PIR_6_Chef_06_03 " );	// After Greg returns, the bandits will think twice before attacking us.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_PIR_6_Chef_06_01");	//После возвращения Грэга у нас стало больше работы, но нам хотя бы платят за нее нормально.
+			AI_Output(self,other, " DIA_Addon_PIR_6_Chef_06_01 " );	// We've got more work to do since Greg's return, but at least we're getting paid well for it.
 		};
 	}
-	else if((randy == 0) && !Npc_IsDead(Francis))
+	else  if ((randy ==  0 ) &&  ! Npc_IsDead(Francis))
 	{
-		AI_Output(self,other,"DIA_Addon_PIR_6_Chef_06_06");	//Фрэнсис - полный неудачник. С тех пор как он начал командовать, все катится под гору.
+		AI_Output(self,other, " DIA_Addon_PIR_6_Chef_06_06 " );	// Francis is a complete loser. Ever since he took command, everything has been going downhill.
 	}
 	else if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_Addon_PIR_6_Chef_06_05");	//Пусть эти бандиты нападают. Они даже не поймут, что с ними произошло.
+		AI_Output(self,other, " DIA_Addon_PIR_6_Chef_06_05 " );	// Let those bandits attack. They don't even understand what happened to them.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_PIR_6_Chef_06_04");	//Надеюсь, что Грэг скоро вернется. Я соскучился по открытому морю.
+		AI_Output(self,other, " DIA_Addon_PIR_6_Chef_06_04 " );	// Hope Greg comes back soon. I missed the open sea.
 	};
 };
 
 
-instance DIA_Addon_RoastPirate_Anheuern(C_Info)
+instance DIA_Addon_RoastPirate_Hire (C_Info)
 {
 	npc = PIR_1364_Addon_Pirat;
 	nr = 11;
-	condition = DIA_Addon_RoastPirate_Anheuern_Condition;
-	information = DIA_Addon_RoastPirate_Anheuern_Info;
+	condition = DIA_Addon_RoastPirate_Hire_Condition;
+	information = DIA_Addon_RoastPirate_Hire_Info;
 	permanent = FALSE;
-	description = "Ты должен мне помочь.";
+	description = " You must help me. " ;
 };
 
 
-func int DIA_Addon_RoastPirate_Anheuern_Condition()
+func int DIA_Addon_RoastPirate_Hire_Condition()
 {
 	if(MIS_Addon_Greg_ClearCanyon == LOG_Running)
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void DIA_Addon_RoastPirate_Anheuern_Info()
+func void DIA_Addon_RoastPirate_Hire_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Matt_FollowMe_15_01");	//Ты должен мне помочь.
+	AI_Output(other,self, " DIA_Addon_Matt_FollowMe_15_01 " );	// You have to help me.
 	AI_Output(other,self,"DIA_Addon_Matt_FollowMe_15_03");	//Приказ Грэга.
 	B_Say(self,other,"$ABS_GOOD");
 };
@@ -230,22 +231,22 @@ instance DIA_Addon_RoastPirate_ComeOn(C_Info)
 	condition = DIA_Addon_RoastPirate_ComeOn_Condition;
 	information = DIA_Addon_RoastPirate_ComeOn_Info;
 	permanent = TRUE;
-	description = "Пойдем со мной.";
+	description = " Come with me. " ;
 };
 
 
 func int DIA_Addon_RoastPirate_ComeOn_Condition()
 {
-	if((self.aivar[AIV_PARTYMEMBER] == FALSE) && (MIS_Addon_Greg_ClearCanyon == LOG_Running) && Npc_KnowsInfo(other,DIA_Addon_RoastPirate_Anheuern))
+	if ((self.aivar[ AIV_PARTYMEMBER ] ==  FALSE ) && (MY_Addon_Greg_ClearCanyon == LOG_Running) && Npc_KnowsInfo(other,DIA_Addon_RoastPirate_Anheuern));
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_RoastPirate_ComeOn_Info()
 {
-	AI_Output(other,self,"DIA_Addon_RoastPirate_ComeOn_15_00");	//Пойдем со мной.
+	AI_Output(other,self, " DIA_Addon_RoastPirate_ComeOn_15_00 " );	// Come with me.
 	if(C_GregsPiratesTooFar() == TRUE)
 	{
 		B_Say(self,other,"$RUNAWAY");
@@ -257,7 +258,7 @@ func void DIA_Addon_RoastPirate_ComeOn_Info()
 		AI_StopProcessInfos(self);
 		B_Addon_PiratesFollowAgain();
 		Npc_ExchangeRoutine(self,"FOLLOW");
-		self.aivar[AIV_PARTYMEMBER] = TRUE;
+		self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	};
 };
 
@@ -269,24 +270,24 @@ instance DIA_Addon_RoastPirate_GoHome(C_Info)
 	condition = DIA_Addon_RoastPirate_GoHome_Condition;
 	information = DIA_Addon_RoastPirate_GoHome_Info;
 	permanent = TRUE;
-	description = "Ты мне больше не нужен.";
+	description = " I don't need you anymore. " ;
 };
 
 
 func int DIA_Addon_RoastPirate_GoHome_Condition()
 {
-	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
+	if (self.aivar[ AIV_PARTYMEMBER ] ==  TRUE )
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_RoastPirate_GoHome_Info()
 {
-	AI_Output(other,self,"DIA_Addon_RoastPirate_GoHome_15_00");	//Ты мне больше не нужен.
+	AI_Output(other,self, " DIA_Addon_RoastPirate_GoHome_15_00 " );	// I don't need you anymore.
 	B_Say(self,other,"$ABS_GOOD");
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"START");
 };
 
@@ -304,11 +305,11 @@ instance DIA_Addon_RoastPirate_TooFar(C_Info)
 
 func int DIA_Addon_RoastPirate_TooFar_Condition()
 {
-	if((self.aivar[AIV_PARTYMEMBER] == TRUE) && (C_GregsPiratesTooFar() == TRUE))
+	if ((self.aivar[ AIV_PARTYMEMBER ] ==  TRUE ) && (C_GregsPiratesTooFar() ==  TRUE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_RoastPirate_TooFar_Info()
