@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_91680_NATAN_EXIT(C_Info)
 {
 	npc = pal_91680_natan;
@@ -21,20 +22,20 @@ func void dia_pal_91680_natan_exit_info()
 };
 
 
-instance DIA_PAL_91680_NATAN_PERM(C_Info)
+instances DIA_PAL_91680_NATAN_PERM (C_Info)
 {
 	npc = pal_91680_natan;
 	nr = 1;
 	condition = dia_pal_91680_natan_perm_condition;
 	information = dia_pal_91680_natan_perm_info;
 	permanent = FALSE;
-	description = "Что думаешь делать?";
+	description = " What are you thinking of doing? " ;
 };
 
 
 func int dia_pal_91680_natan_perm_condition()
 {
-	if(HAGENOTHERSAGREED == FALSE)
+	if ( HAGENOTHERSAGREED  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -42,73 +43,73 @@ func int dia_pal_91680_natan_perm_condition()
 
 func void dia_pal_91680_natan_perm_info()
 {
-	AI_Output(other,self,"DIA_Pal_91680_Natan_Perm_01_00");	//Что думаешь делать?
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Perm_01_01");	//Полагаю отправиться в форт. Оставаться здесь сейчас слишком опасно!
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Perm_01_02");	//Кроме этого, мне необходимо как можно скорее доложить лорду Хагену о сложившейся ситуации в Долине Рудников.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Perm_01_03");	//Он должен знать, что сейчас там происходит!
-	AI_Output(other,self,"DIA_Pal_91680_Natan_Perm_01_04");	//Хорошо! Тогда выполняй свой приказ, солдат.
+	AI_Output(other,self, " DIA_Pal_91680_Natan_Perm_01_00 " );	// What are you thinking of doing?
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Perm_01_01 " );	// I guess we'll go to the fort. It's too dangerous to stay here now!
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Perm_01_02 " );	// In addition, I need to report to Lord Hagen about the current situation in the Valley of Mines as soon as possible.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Perm_01_03 " );	// He needs to know what's going on there now!
+	AI_Output(other,self, " DIA_Pal_91680_Natan_Perm_01_04 " );	// Good! Then follow your orders, soldier.
 };
 
 
-instance DIA_PAL_91680_NATAN_UDAR(C_Info)
+instance DIA_PAL_91680_NATAN_UDAR (C_Info)
 {
 	npc = pal_91680_natan;
 	nr = 1;
 	condition = dia_pal_91680_natan_udar_condition;
 	information = dia_pal_91680_natan_udar_info;
 	permanent = FALSE;
-	description = "Паладин Удар снова с нами!";
+	description = " Paladin Strike is with us again! " ;
 };
 
 
-func int dia_pal_91680_natan_udar_condition()
+func int dia_pal_91680_previous_udar_condition()
 {
-	if((MIS_NATANDOLG == LOG_Running) && !Npc_IsDead(pal_2680_udar))
+	if (( MIS_NATANDOLG  == LOG_Running) &&  ! Npc_IsDead(pal_2680_udar))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_91680_natan_udar_info()
+func void pal_day_91680_natan_udar_info()
 {
-	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_00");	//Паладин Удар снова с нами!
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_01");	//К счастью, да. Безусловно, я очень рад!
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_02");	//Если бы он погиб, я бы, наверное, свихнулся.
-	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_03");	//Тогда, полагаю, что ты уже достаточно сделал для того, чтобы выполнить по отношению к нему свой обет чести.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_04");	//Боюсь, что это не совсем так. Ведь я еще толком ничего для него и не сделал!
-	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_05");	//Но ты ведь сражался с орками, помогая ему выбраться из Долины Рудников. Разве этого мало?
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_06");	//Конечно мало. Пойми, я всю свою жизнь только и делаю, что сражаюсь с этими мерзкими тварями.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_07");	//И, честно говоря, большой заслуги в этом не вижу! Это мой священный долг как паладина, мой и многих других ребят.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_08");	//А Удар спас мне жизнь! Это исключительный поступок! И я должен совершить нечто подобное в отношении него.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_09");	//И оставь свои попытки успокоить или переубедить меня!
-	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_10");	//М-да... В общем, все ясно.
+	AI_Output(other,self, " DIA_Pal_91680_Natan_Udar_01_00 " );	// Paladin Strike is back with us!
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Udar_01_01 " );	// Fortunately, yes. Of course, I'm very happy!
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Udar_01_02 " );	// If he died, I'd probably go crazy.
+	AI_Output(other,self, " DIA_Pal_91680_Natan_Udar_01_03 " );	// Then I guess you've already done enough to fulfill your vow of honor towards him.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Udar_01_04 " );	// I'm afraid that's not entirely true. After all, I still really did nothing for him!
+	AI_Output(other,self, " DIA_Pal_91680_Natan_Udar_01_05 " );	// But you fought the orcs, helping him get out of the Valley of Mines. Is this not enough?
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Udar_01_06 " );	// Certainly not enough. You see, all my life I've been doing nothing but fighting these vile creatures.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Udar_01_07 " );	// And, frankly, I don't see much merit in this! This is my sacred duty as a paladin, mine and many other guys.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Udar_01_08 " );	// And the Impact saved my life! This is an exceptional move! And I have to do something similar for him.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_Udar_01_09 " );	// And stop trying to calm or convince me!
+	AI_Output(other,self, " DIA_Pal_91680_Natan_Udar_01_10 " );	// M-yes... In general, everything is clear.
 };
 
 
-instance DIA_PAL_91680_NATAN_ZASADA(C_Info)
+instances DIA_PAL_91680_NATAN_ZASADA (C_Info)
 {
 	npc = pal_91680_natan;
 	nr = 900;
 	condition = dia_pal_91680_natan_zasada_condition;
 	information = dia_pal_91680_natan_zasada_info;
 	permanent = FALSE;
-	description = "(отвлечь разговором...)";
+	description = " (distract by talking...) " ;
 };
 
 
-func int dia_pal_91680_natan_zasada_condition()
+func int pal_day_91680_natan_zasada_condition()
 {
-	if((MIS_NATANDOLG == LOG_Running) && (UDARORCSTRAP == TRUE) && (UDARORCSTRAPDONE == FALSE) && !Npc_IsDead(pal_2680_udar))
+	if (( MY_NATANDOLG  == LOG_Running ) && ( EXTERNAL ORCSTRAP  ==  TRUE ) && ( EXTERNAL ORCSTRAPDONE  ==  FALSE ) &&  ! Npc_IsDead(pal_2680_external)) .
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_91680_natan_zasada_info()
+func void pal_day_91680_natan_zasada_info()
 {
 	PlayVideo("RET2_BlackScreen.bik");
 	UDARORCSTRAPDONE = TRUE;
-	AI_Teleport(pal_2680_udar,"NW_UDAR_ZASADA");
+	AI_Teleport(pal_2680_stroke, " NW_STROKE_PRINCIPLE " );
 	Wld_InsertNpc(orkelite_udar,"FP_ROAM_ZASADAORCS_01");
 	Wld_InsertNpc(orcwarrior_udar_01,"FP_ROAM_ZASADAORCS_02");
 	Wld_InsertNpc(orcwarrior_udar_02,"FP_ROAM_ZASADAORCS_03");
@@ -119,7 +120,7 @@ func void dia_pal_91680_natan_zasada_info()
 };
 
 
-instance DIA_PAL_91680_NATAN_WHEREUDAR(C_Info)
+instances DIA_PAL_91680_NATAN_WHEREUDAR (C_Info)
 {
 	npc = pal_91680_natan;
 	nr = 1;
@@ -132,7 +133,7 @@ instance DIA_PAL_91680_NATAN_WHEREUDAR(C_Info)
 
 func int dia_pal_91680_natan_whereudar_condition()
 {
-	if((MIS_NATANDOLG == LOG_Running) && !Npc_IsDead(pal_2680_udar) && (UDARORCSTRAPDONE == TRUE))
+	if (( MY_NATANDOLG  == LOG_Running) &&  ! Npc_IsDead(pal_2680_udar) && ( UDAORCSTRAPDONE  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -140,25 +141,25 @@ func int dia_pal_91680_natan_whereudar_condition()
 
 func void dia_pal_91680_natan_whereudar_info()
 {
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdar_01_00");	//(взволновано) Постой, подожди! Пока мы тут с тобой болтали, я совершенно не заметил того, что паладин Удар куда-то исчез.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdar_01_01");	//Ты случайно не знаешь, где он?
-	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdar_01_02");	//Кажется, он собирался немного поохотиться на орков.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdar_01_03");	//На орков, один?! Но это же чертовски опасно!
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdar_01_04");	//Полагаю, что он посчитал это неплохой идеей - прикончить парочку этих мерзких тварей.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdar_01_05");	//Проклятье! И о чем он только думал?! Он же может запросто погибнуть. Ай, бестолочь, как я мог допустить это?
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdar_01_06");	//Нечего причитать, нужно найти его. Куда именно он отправился?!
-	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdar_01_07");	//Полагаю, что куда-то в сторону таверны Орлана. Как он сказал - там недалеко есть отличное место для засады.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdar_01_08");	//Ты можешь отвести меня туда?
-	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdar_01_09");	//Ладно! Следуй за мной.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdar_01_10");	//Хорошо, веди.
-	B_LogEntry(TOPIC_NATANDOLG,"Как и ожидалось, Натан был сильно встревожен, узнав, что Удар в одиночку отправился охотиться на орков, и попросил меня помочь найти своего товарища.");
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdar_01_00 " );	// (excited) Wait, wait! While we were chatting here, I did not notice at all that the paladin Strike had disappeared somewhere.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdar_01_01 " );	// Do you happen to know where he is?
+	AI_Output(other,self, " DIA_Pal_91680_Natan_WhereUdar_01_02 " );	// Looks like he was going to hunt some orcs.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdar_01_03 " );	// At the orcs, alone?! But it's damn dangerous!
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdar_01_04 " );	// I guess he thought it was a good idea to finish off a couple of those nasty things.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdar_01_05 " );	// Damn! And what was he thinking? He could easily die. Oh, idiot, how could I let this happen?
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdar_01_06 " );	// Nothing to lament, we need to find it. Where exactly did he go?
+	AI_Output(other,self, " DIA_Pal_91680_Natan_WhereUdar_01_07 " );	// I believe that somewhere in the direction of Orlan's tavern. As he said, there is a great place for an ambush nearby.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdar_01_08 " );	// Can you take me there?
+	AI_Output(other,self, " DIA_Pal_91680_Natan_WhereUdar_01_09 " );	// Okay! Follow me.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdar_01_10 " );	// Okay, drive on.
+	B_LogEntry( TOPIC_NATANDOLG , " As expected, Nathan was very dismayed to learn that Impact had gone hunting orcs alone and asked me to help find his comrade. " );
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"Follow");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_91680_NATAN_WHEREUDARDONE(C_Info)
+instances DIA_PAL_91680_NATAN_WHEREUDARDONE (C_Info)
 {
 	npc = pal_91680_natan;
 	nr = 1;
@@ -171,7 +172,7 @@ instance DIA_PAL_91680_NATAN_WHEREUDARDONE(C_Info)
 
 func int dia_pal_91680_natan_whereudardone_condition()
 {
-	if((MIS_NATANDOLG == LOG_Running) && (UDARORCSTRAPISDONE == TRUE))
+	if (( MY_NATANDOF  == LOG_Running) && ( EXTERIORORCSTRAPISDONE  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -180,15 +181,15 @@ func int dia_pal_91680_natan_whereudardone_condition()
 func void dia_pal_91680_natan_whereudardone_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdarDone_01_00");	//(взволновано) Хорошо, что мы успели. Легкая задержка - и он был бы труп!
-	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdarDone_01_01");	//Но, как видишь, все обошлось! Кстати, думаю, что теперь паладин Удар у тебя в долгу - ведь ты фактически спас ему жизнь.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdarDone_01_02");	//Даже не знаю... Все случилось так быстро. Я даже не тащил его на собственном горбу с орками на хвосте.
-	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdarDone_01_03");	//Главное, что ты выполнил свой обет чести, а как это случилось, уже не важно.
-	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdarDone_01_04");	//Ну да, ты прав...(улыбается) Что же, спасибо за помощь. Надеюсь, мы еще встретимся!
-	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdarDone_01_05");	//Само собой.
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdarDone_01_00 " );	// (excited) Good thing we made it. A slight delay - and he would be dead!
+	AI_Output(other,self, " DIA_Pal_91680_Natan_WhereUdarDone_01_01 " );	// But, as you can see, everything worked out! By the way, I think that now the paladin Strike is in your debt - after all, you actually saved his life.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdarDone_01_02 " );	// I don't even know... It all happened so fast. I didn't even drag him on my own hump with orcs on my tail.
+	AI_Output(other,self, " DIA_Pal_91680_Natan_WhereUdarDone_01_03 " );	// The main thing is that you fulfilled your vow of honor, but how it happened is no longer important.
+	AI_Output(self,other, " DIA_Pal_91680_Natan_WhereUdarDone_01_04 " );	// Well, yes, you're right... (smiles) Well, thanks for the help. Hope to see you again!
+	AI_Output(other,self, " DIA_Pal_91680_Natan_WhereUdarDone_01_05 " );	// Of course.
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"Start");
-	MIS_NATANDOLG = LOG_SUCCESS;
+	MIS_NATANDOLG = LOG_SUCCESS ;
 	Log_SetTopicStatus(TOPIC_NATANDOLG,LOG_SUCCESS);
 	AI_StopProcessInfos(self);
 };
