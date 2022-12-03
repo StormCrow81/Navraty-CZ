@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_2680_UDAR_EXIT(C_Info)
 {
 	npc = pal_2680_udar;
@@ -15,20 +16,20 @@ func int dia_pal_2680_udar_exit_condition()
 	return TRUE;
 };
 
-func void dia_pal_2680_udar_exit_info()
+func void pal_day_2680_udar_exit_info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_2680_UDAR_TEACH(C_Info)
+instances DIA_PAL_2680_UDAR_TEACH (C_Info)
 {
-	npc = pal_2680_udar;
+	npc = pal_2680_udr;
 	nr = 3;
 	condition = dia_pal_2680_udar_teach_condition;
 	information = dia_pal_2680_udar_teach_info;
 	permanent = TRUE;
-	description = "Я хочу учиться у тебя.";
+	description = " I want to learn from you. " ;
 };
 
 
@@ -42,8 +43,8 @@ func int dia_pal_2680_udar_teach_condition()
 
 func void dia_pal_2680_udar_teach_info()
 {
-	AI_Output(other,self,"DIA_Udar_Teach_15_00");	//Я хочу учиться у тебя.
-	AI_Output(self,other,"DIA_Udar_Teach_09_01");	//Ладно, учись!
+	AI_Output(other,self, " DIA_Udar_Teach_15_00 " );	// I want to learn from you.
+	AI_Output(self,other, " DIA_Udar_Teach_09_01 " );	// Okay, learn!
 	Info_ClearChoices(DIA_PAL_2680_UDAR_TEACH);
 	Info_AddChoice(dia_pal_2680_udar_teach,Dialog_Back,dia_pal_2680_udar_teach_back);
 	Info_AddChoice(dia_pal_2680_udar_teach,b_buildlearnstringforfight(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1)),dia_pal_2680_udar_teach_crossbow_1);
@@ -57,12 +58,12 @@ func void dia_pal_2680_udar_teach_back()
 
 func void dia_pal_2680_udar_teachnomore1()
 {
-	AI_Output(self,other,"B_Udar_TeachNoMore1_09_00");	//Ты уже знаешь основы - на большее у нас нет времени.
+	AI_Output(self,other, " B_Udar_TeachNoMore1_09_00 " );	// You already know the basics - we don't have time for more.
 };
 
 func void dia_pal_2680_udar_teachnomore2()
 {
-	AI_Output(self,other,"B_Udar_TeachNoMore2_09_00");	//Чтобы улучшить владение этим оружием, тебе лучше поискать более подходящего учителя.
+	AI_Output(self,other, " B_Udar_TeachNoMore2_09_00 " );	// To improve your skill with this weapon, you'd better look for a more suitable teacher.
 };
 
 func void dia_pal_2680_udar_teach_crossbow_1()
@@ -94,14 +95,14 @@ func void dia_pal_2680_udar_teach_crossbow_5()
 };
 
 
-instance DIA_PAL_2680_UDAR_PERM(C_Info)
+instances DIA_PAL_2680_UDAR_PERM (C_Info)
 {
-	npc = pal_2680_udar;
+	npc = pal_2680_udr;
 	nr = 1;
 	condition = dia_pal_2680_udar_perm_condition;
 	information = dia_pal_2680_udar_perm_info;
 	permanent = FALSE;
-	description = "Ты выглядишь немного усталым.";
+	description = " You look a little tired. " ;
 };
 
 
@@ -110,26 +111,26 @@ func int dia_pal_2680_udar_perm_condition()
 	return TRUE;
 };
 
-func void dia_pal_2680_udar_perm_info()
+func void pal_day_2680_udar_perm_info()
 {
-	AI_Output(other,self,"DIA_PAL_2680_Udar_Perm_01_00");	//Ты выглядишь немного усталым.
-	AI_Output(self,other,"DIA_PAL_2680_Udar_Perm_01_01");	//Да, есть немного. Последние стычки с орками меня окончательно измотали.
-	AI_Output(self,other,"DIA_PAL_2680_Udar_Perm_01_02");	//Но я стараюсь об этом не думать, поскольку шанс немного передохнуть нам представиться еще не очень скоро.
+	AI_Output(other,self, " DIA_PAL_2680_Udar_Perm_01_00 " );	// You look a little tired.
+	AI_Output(self,other, " DIA_PAL_2680_Udar_Perm_01_01 " );	// Yes, there are some. The last skirmishes with the orcs completely exhausted me.
+	AI_Output(self,other, " DIA_PAL_2680_Udar_Perm_01_02 " );	// But I try not to think about it, because we won't have a chance to take a break for a while.
 };
 
 
-instance DIA_PAL_2680_UDAR_NATAN(C_Info)
+instance DIA_PAL_2680_UDAR_NATAN (C_Info) .
 {
-	npc = pal_2680_udar;
+	npc = pal_2680_udr;
 	nr = 2;
 	condition = dia_pal_2680_udar_natan_condition;
 	information = dia_pal_2680_udar_natan_info;
 	permanent = FALSE;
-	description = "Ты уже говорил с Натаном?";
+	description = " Have you spoken to Nathan yet? " ;
 };
 
 
-func int dia_pal_2680_udar_natan_condition()
+func int dia_pal_2680_previous_condition() .
 {
 	if(MIS_NATANDOLG == LOG_Running)
 	{
@@ -137,70 +138,70 @@ func int dia_pal_2680_udar_natan_condition()
 	};
 };
 
-func void dia_pal_2680_udar_natan_info()
+func void pal_day_2680_udar_natan_info()
 {
-	AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_00");	//Ты уже говорил с Натаном?
-	if(Npc_IsDead(pal_91680_natan))
+	AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_00 " );	// Have you spoken to Nathan yet?
+	if (Npc_IsDead(pal_91680_natan))
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_01");	//Как видишь, к сожалению я не успел этого сделать.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_02");	//Теперь он мертв, и все из-за этого глупого долга чести, который он поклялся вернуть мне любой ценой.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_08");	//Он выполнил то, что хотел. Только цена для него оказалось слишком высока.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_09");	//(расстроенно) И я, к сожалению, уже ничего не могу изменить.
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_10");	//Понимаю.
-		MIS_NATANDOLG = LOG_FAILED;
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_01 " );	// As you can see, unfortunately I didn't have time to do it.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_02 " );	// Now he's dead, all because of this stupid debt of honor he swore to repay me at any cost.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_08 " );	// He did what he wanted. But the price was too high for him.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_09 " );	// (frustrated) And, unfortunately, I can't change anything anymore.
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_10 " );	// I understand.
+		MIS_NATANDOLG = LOG_FAILED ;
 		B_LogEntry_Failed(TOPIC_NATANDOLG);
 	}
 	else
 	{
 		B_GivePlayerXP(200);
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_11");	//Как видишь, мне пока было не до этого. (улыбается) Но не волнуйся, я обязательно поговорю с ним.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_12");	//Он все-таки умудрился вернуть мне свой долг чести. (посмеивается)
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_14");	//Да, это так, однако думаю, что сам он так не считает.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_15");	//Эх...(расстроенно) Неужели он полагает, что должен перебить для меня армию орков?
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_17");	//Может быть, я смогу тебе помочь убедить его?
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_18");	//Хммм...(задумчиво) Возможно, у меня действительно тут появилась одна очень неплохая идея.
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_20");	//И что ты задумал?
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_21");	//Я думаю устроить все так, чтобы у Натана появилась возможность спасти мне жизнь. И ты как раз бы мог мне в этом помочь.
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_22");	//Каким образом?
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_23");	//Хммм...(задумался) Я устрою засаду небольшому отряду орков. И просто для начала вступлю с ними в бой.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_24");	//Однако со стороны все будет выглядеть несколько иначе! Покажется, что это они сами загнали меня в ловушку.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_25");	//В этот момент ты и должен будешь появиться вместе с Натаном, чтобы помочь мне.
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_26");	//Но это же чертовски опасно! Ты не боишься, что когда мы подоспеем к тебе на помощь, может быть уже слишком поздно?
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_27");	//Не волнуйся...(улыбается) Несколько орков для меня вовсе не проблема.
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_29");	//И ты хочешь, чтобы эх убил Натан?
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_30");	//Все верно! В этом и заключается мой план. Так ты мне поможешь?
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_31");	//Ладно, договорились! Только обозначь точное место, где ты собираешься устроить эту засаду.
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_32");	//Не буду же я бегать по всему Хоринису в твоих поисках.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_33");	//Хммм, хороший вопрос. Полагаю, что небольшое полесье к востоку от таверны Орлана вполне для этого подойдет.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_34");	//Кажется, там есть одна небольшая пещера, где можно будет спрятаться. Да и дорога, проходящая вдоль этого места, наверняка сейчас занята орками.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_37");	//Я отправлюсь туда прямо сейчас и буду выжидать появления какого-нибудь небольшого отряда орков.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_38");	//А ты, соответственно, постарайся отвлечь Натана разговором, чтобы дать мне возможность на подготовку.
-		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_39");	//Хорошо, я все понял.
-		B_LogEntry(TOPIC_NATANDOLG,"У Удара появилась идея, как можно помочь паладину Натану выполнить свою клятву, хотя и не совсем честная. Удар хочет устроить засаду на небольшой отряд орков и вступить с ними в 'неравный' бой. После чего я должен буду подоспеть вместе с Натаном ему на помощь. По мнению Удара, этого хватит, чтобы после убедить Натана в том, что отныне его не связывает данный им обет чести.");
-		Log_AddEntry(TOPIC_NATANDOLG,"Теперь мне надо поговорить с самим Натаном и дать возможность Удару подготовиться к засаде. Он будет ждать нас недалеко от таверны Орлана, в небольшом лесу напротив одной из пещер.");
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_11 " );	// As you can see, I haven't been up to it yet. (smiles) But don't worry, I'll definitely talk to him.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_12 " );	// He still managed to return his debt of honor to me. (chuckles)
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_14 " );	// Yes, it is, but I don't think he thinks so himself.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_15 " );	// Eh...(frustrated) Does he really think he has to kill an orc army for me?
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_17 " );	// Maybe I can help you convince him?
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_18 " );	// Hmmm...(thoughtfully) I may have a really good idea here.
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_20 " );	// And what did you think?
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_21 " );	// I'm thinking of arranging things so that Nathan has an opportunity to save my life. And you could just help me with this.
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_22 " );	// How?
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_23 " );	// Hmmm...(thinking) I'll ambush a small group of orcs. And just to begin with, I will enter into battle with them.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_24 " );	// However, from the outside, everything will look a little different! It will seem that they themselves have driven me into a trap.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_25 " );	// At this point, you will have to appear with Nathan to help me.
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_26 " );	// But that's dangerous as hell! Aren't you afraid that by the time we get to your rescue, it might be too late?
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_27 " );	// Don't worry... (smiles) A ​​few orcs are not a problem for me at all.
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_29 " );	// And you want eh to kill Nathan?
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_30 " );	// That's right! This is my plan. So will you help me?
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_31 " );	// Okay, agreed! Just mark the exact spot where you're going to set up this ambush.
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_32 " );	// I won't run all over Khorinis looking for you.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_33 " );	// Hmmm, good question. I believe that a small woodland to the east of Orlan's tavern is quite suitable for this.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_34 " );	// There seems to be one small cave where you can hide. And the road that runs along this place is probably now occupied by orcs.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_37 " );	// I'll go there right now and wait for some small band of orcs to show up.
+		AI_Output(self,other, " DIA_PAL_2680_Udar_Natan_01_38 " );	// And you, accordingly, try to distract Nathan with a conversation to give me the opportunity to prepare.
+		AI_Output(other,self, " DIA_PAL_2680_Udar_Natan_01_39 " );	// Okay, I got it.
+		B_LogEntry( TOPIC_NATANDOLG , " Strike has an idea how to help the paladin Nathan fulfill his oath, although not entirely honest. Impact wants to ambush a small group of orcs and engage in an 'unequal' battle with them. After which I will have to arrive in time together with Nathan to help him. According to Udar, this is enough to convince Nathan later that from now on he is not bound by his vow of honor. " );
+		Log_AddEntry( TOPIC_NATANDOLG , " Now I need to talk to Nathan himself and let Udar prepare for an ambush. He will be waiting for us near Orlan's tavern, in a small forest opposite one of the caves. " );
 		AI_StopProcessInfos(self);
 		UDARORCSTRAP = TRUE;
-		self.aivar[93] = TRUE;
+		self.aivar[ 93 ] = TRUE ;
 		Npc_ExchangeRoutine(self,"OrcsTrap");
 	};
 };
 
 
-instance DIA_PAL_2680_UDAR_NATANDOLGDONE(C_Info)
+instance DIA_PAL_2680_UDAR_NATANDOLGDONE (C_Info)
 {
-	npc = pal_2680_udar;
+	npc = pal_2680_udr;
 	nr = 1;
 	condition = dia_pal_2680_udar_natandolgdone_condition;
-	information = dia_pal_2680_udar_natandolgdone_info;
+	information = dia_pal_2680_developed_info;
 	permanent = FALSE;
-	description = "Что скажешь?";
+	description = " What do you say? " ;
 };
 
 
 func int dia_pal_2680_udar_natandolgdone_condition()
 {
-	if(MIS_NATANDOLG == LOG_SUCCESS)
+	if ( MIS_NATANDOLG  ==  LOG_SUCCESS )
 	{
 		return TRUE;
 	};
@@ -209,15 +210,15 @@ func int dia_pal_2680_udar_natandolgdone_condition()
 func void dia_pal_2680_udar_natandolgdone_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_PAL_2680_Udar_NatanDolgDone_01_00");	//Что скажешь?
-	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_01");	//(улыбается) Наша хитрость вполне удалась.
-	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_02");	//Теперь на Натана постоянно не будет давить необходимость спасти мне жизнь.
-	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_05");	//Спасибо, что помог мне в этом деле.
-	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_06");	//Вот - прими от меня в качестве благодарности эту вещицу. Думаю, она тебе пригодится!
+	AI_Output(other,self, " DIA_PAL_2680_Udar_NatanDolgDone_01_00 " );	// What do you say?
+	AI_Output(self,other, " DIA_PAL_2680_Udar_NatanDolgDone_01_01 " );	// (smiles) Our trick was quite successful.
+	AI_Output(self,other, " DIA_PAL_2680_Udar_NatanDolgDone_01_02 " );	// Now Nathan will not be constantly pressed by the need to save my life.
+	AI_Output(self,other, " DIA_PAL_2680_Udar_NatanDolgDone_01_05 " );	// Thanks for helping me with this.
+	AI_Output(self,other, " DIA_PAL_2680_Udar_NatanDolgDone_01_06 " );	// Here - accept this thing from me as a thank you. I think you will need it!
 	B_GiveInvItems(self,other,itri_udargift,1);
-	AI_Output(other,self,"DIA_PAL_2680_Udar_NatanDolgDone_01_07");	//Спасибо.
+	AI_Output(other,self, " DIA_PAL_2680_Udar_NatanDolgDone_01_07 " );	// Thank you.
 	AI_StopProcessInfos(self);
-	self.aivar[93] = FALSE;
+	self.aivar[ 93 ] = FALSE ;
 	Npc_ExchangeRoutine(self,"Start");
 	Npc_ExchangeRoutine(pal_2500_garond,"Start");
 	Npc_ExchangeRoutine(pal_2510_oric,"Start");
