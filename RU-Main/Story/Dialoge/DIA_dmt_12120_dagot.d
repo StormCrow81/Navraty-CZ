@@ -1,4 +1,5 @@
 
+
 instance DMT_12120_DAGOT_EXIT(C_Info)
 {
 	npc = dmt_12120_dagot;
@@ -48,52 +49,52 @@ func void dmt_12120_dagot_hello_info()
 
 		if(CHOOSEDARK == TRUE)
 		{
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_01");	//(вкрадчиво) Итак, ты здесь. Добро пожаловать в нашу обитель, герой!
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_02");	//С этого момента я буду твоим наставником.
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_03");	//Остальные Хранители тоже будут внимательно следить за твоей судьбой. Но не более того!
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_04");	//Отныне лишь Тьма твой удел, и только ей теперь ты служишь. Запомни это!
-			AI_Output(other,self,"DMT_12120_Dagot_Hello_05");	//Да, мастер! Я все понял.
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_06");	//(вкрадчиво) Хорошо.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_01 " );	// (smartly) So, here you are. Welcome to our abode, hero!
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_02 " );	// From now on, I will be your mentor.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_03 " );	// The rest of the Guardians will also keep a close eye on your fate. But no more!
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_04 " );	// From now on, only Darkness is your destiny, and now you serve only Darkness. Remember it!
+			AI_Output(other,self, " DMT_12120_Dagot_Hello_05 " );	// Yes, master! I got it.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_06 " );	// (smartly) Good.
 			TELLWELCOMEDONE = TRUE;
 		}
 		else if(CHOOSESTONE == TRUE)
 		{
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_07");	//Тебе следует обратится к Хранителю Стонносу, адепт!
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_08");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_09");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_10");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_07 " );	// You should contact Guardian Stonnos, adept!
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_08 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_09 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_10 " );	// Now go!
 			AI_StopProcessInfos(self);
 		}
 		else if(CHOOSEWATER == TRUE)
 		{
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_11");	//Тебе следует обратится к Хранителю Вакону, адепт!
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_08");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_09");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_10");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_11 " );	// You should contact Guardian Vakon, adept!
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_08 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_09 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_10 " );	// Now go!
 			AI_StopProcessInfos(self);
 		}
 		else if(CHOOSEFIRE == TRUE)
 		{
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_15");	//Тебе следует обратится к Хранителю Келиосу, адепт!
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_08");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_09");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12120_Dagot_Hello_10");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_15 " );	// You should contact Guardian Kelios, adept!
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_08 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_09 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12120_Dagot_Hello_10 " );	// Now go!
 			AI_StopProcessInfos(self);
 		};
 	}
 	else if(CHOOSEDARK == TRUE)
 	{
-		AI_Output(self,other,"DMT_12120_Dagot_Hello_19");	//(вкрадчиво) Итак, ты здесь. Добро пожаловать в нашу обитель, герой!
-		AI_Output(self,other,"DMT_12120_Dagot_Hello_20");	//С этого момента я буду твоим наставником.
-		AI_Output(self,other,"DMT_12120_Dagot_Hello_21");	//Остальные Хранители тоже будут внимательно следить за твоей судьбой. Но не более того!
-		AI_Output(self,other,"DMT_12120_Dagot_Hello_22");	//Отныне лишь Тьма твой удел, и только ей теперь ты служишь. Запомни это!
-		AI_Output(other,self,"DMT_12120_Dagot_Hello_23");	//Да, мастер! Я все понял.
+		AI_Output(self,other, " DMT_12120_Dagot_Hello_19 " );	// (smartly) So, here you are. Welcome to our abode, hero!
+		AI_Output(self,other, " DMT_12120_Dagot_Hello_20 " );	// From now on, I will be your mentor.
+		AI_Output(self,other, " DMT_12120_Dagot_Hello_21 " );	// The rest of the Guardians will also keep a close eye on your fate. But no more!
+		AI_Output(self,other, " DMT_12120_Dagot_Hello_22 " );	// From now on, only Darkness is your destiny, and now you serve only Darkness. Remember it!
+		AI_Output(other,self, " DMT_12120_Dagot_Hello_23 " );	// Yes, master! I got it.
 		TELLWELCOMEDONE = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DMT_12120_Dagot_Hello_24");	//Ты уже знаешь, что тебе следует делать.
-		AI_Output(self,other,"DMT_12120_Dagot_Hello_10");	//Теперь ступай!
+		AI_Output(self,other, " DMT_12120_Dagot_Hello_24 " );	// You already know what you should do.
+		AI_Output(self,other, " DMT_12120_Dagot_Hello_10 " );	// Now go!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -105,7 +106,7 @@ instance DMT_12120_DAGOT_WHATTEACH(C_Info)
 	condition = dmt_12120_dagot_whatteach_condition;
 	information = dmt_12120_dagot_whatteach_info;
 	permanent = TRUE;
-	description = "Чему я смогу научится у тебя?";
+	description = " What can I learn from you? " ;
 };
 
 
@@ -119,35 +120,35 @@ func int dmt_12120_dagot_whatteach_condition()
 
 func void dmt_12120_dagot_whatteach_info()
 {
-	AI_Output(other,self,"DMT_12120_Dagot_WhatTeach_00");	//Ты можешь обучить меня магии?
+	AI_Output(other,self, " DMT_12120_Dagot_WhatTeach_00 " );	// Can you teach me magic?
 
-	if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR))
+	if ((hero.guild ==  GIL_KDF ) || (hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_KDM ) || (hero.guild ==  GIL_GUR ))
 	{
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_01");	//Поскольку теперь ты мой ученик, я могу обучить тебя магии, дарованной мне моим создателем.
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_03");	//Мы называем ее магией Тьмы. Эти знания священны, и немногие владели ими.
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_04");	//Только избранные были допущены к их познанию, и если ты пожелаешь, то в скором времени тоже станешь одним из их числа!
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_06");	//Кроме этого, знание магических кругов - также необходимое условия их познания. Но и этому я смогу тебя обучить, если пожелаешь!
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_24");	//И еще кое-что... Поскольку ты теперь являешься адептом нашего круга - прими от меня эту магическую робу послушника.
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_01 " );	// Since you are now my apprentice, I can teach you the magic bestowed upon me by my creator.
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_03 " );	// We call it Dark magic. This knowledge is sacred, and few possessed it.
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_04 " );	// Only the elect were allowed to know them, and if you wish, you will soon become one of their number too!
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_06 " );	// In addition, knowledge of magic circles is also a necessary condition for their knowledge. But I can teach you that too, if you wish!
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_24 " );	// And one more thing... Since you are now an adept of our circle, accept this acolyte's magic robe from me.
 		CreateInvItems(self,itar_haradrimmage,1);
 		B_GiveInvItems(self,other,itar_haradrimmage,1);
 		GUARDIANTEACHMEMAGIC = TRUE;
-		B_LogEntry(TOPIC_GUARDIANS,"Хранитель Дагот сможет научить меня магии Тьмы. Если я решу начать свое обучение, мне просто стоит поговорить с ним об этом.");
+		B_LogEntry( TOPIC_GUARDIANS , " Guardian Dagoth will be able to teach me Dark magic. If I decide to start my training, I should just talk to him about it. " );
 		AI_StopProcessInfos(self);
 	}
 	else if((hero.guild == GIL_PAL) || (hero.guild == GIL_DJG) || (hero.guild == GIL_SLD) || (hero.guild == GIL_TPL) || (hero.guild == GIL_MIL))
 	{
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_10");	//Поскольку ты воин, я вряд ли смогу обучить тебя магии, дарованной мне моим создателем.
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_11");	//Однако ты можешь поговорить с Таринаксом - наставником асгардов, воинов стихий.
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_12");	//Думаю, он поможет тебе в твоем обучении.
-		AI_Output(other,self,"DMT_12120_Dagot_WhatTeach_13");	//Хорошо, я так и сделаю.
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_10 " );	// Since you are a warrior, I can hardly teach you the magic bestowed upon me by my creator.
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_11 " );	// However, you can talk to Tarinax, master of the Asgardians, the elemental warriors.
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_12 " );	// I think it will help you in your studies.
+		AI_Output(other,self, " DMT_12120_Dagot_WhatTeach_13 " );	// Okay, I'll do that.
 		GUARDIANTEACHMEWAR = TRUE;
-		B_LogEntry(TOPIC_GUARDIANS,"Чтобы начать свое обучение, мне стоит поговорить с Таринаксом - наставником асгардов, воинов стихий.");
+		B_LogEntry( TOPIC_GUARDIANS , " To begin my training, I should speak to Tarinax, master of the Asgardians, the elemental warriors. " );
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_14");	//Пока ничему. Ты еще не готов познать всю мудрость, дарованную Хранителям!
-		AI_Output(self,other,"DMT_12120_Dagot_WhatTeach_15");	//Ты еще слишком слаб! Возвращайся, когда будешь готов, и я открою тебе наши тайны.
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_14 " );	// Nothing yet. You are not yet ready to know all the wisdom given to the Guardians!
+		AI_Output(self,other, " DMT_12120_Dagot_WhatTeach_15 " );	// You're still too weak! Come back when you're ready and I'll tell you our secrets.
 	};
 };
 
@@ -172,8 +173,8 @@ func int dmt_12120_dagot_helloback_condition()
 
 func void dmt_12120_dagot_helloback_info()
 {
-	AI_Output(self,other,"DMT_12120_Dagot_HelloBack_01");	//Ты уже знаешь, что тебе следует делать.
-	AI_Output(self,other,"DMT_12120_Dagot_Hello_10");	//Теперь ступай!
+	AI_Output(self,other, " DMT_12120_Dagot_HelloBack_01 " );	// You already know what you should do.
+	AI_Output(self,other, " DMT_12120_Dagot_Hello_10 " );	// Now go!
 	AI_StopProcessInfos(self);
 };
 
@@ -184,7 +185,7 @@ instance DMT_12120_DAGOT_EXPLAINCIRCLES(C_Info)
 	condition = dmt_12120_dagot_explaincircles_condition;
 	information = dmt_12120_dagot_explaincircles_info;
 	permanent = FALSE;
-	description = "Объясни мне, в чем смысл магических Кругов?";
+	description = " Explain to me what is the meaning of Magic Circles? " ;
 };
 
 
@@ -198,17 +199,17 @@ func int dmt_12120_dagot_explaincircles_condition()
 
 func void dmt_12120_dagot_explaincircles_info()
 {
-	AI_Output(other,self,"DMT_12120_Dagot_EXPLAINCIRCLES_Info_15_01");	//Объясни мне, в чем смысл магических Кругов?
-	AI_Output(self,other,"DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_02");	//Хорошо. Круги символизируют твое понимание магии.
-	AI_Output(self,other,"DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_03");	//Они обозначают уровень твоих знаний и навыков, способность обучаться новым заклинаниям.
-	AI_Output(self,other,"DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_04");	//Ты должен пройти каждый Круг до конца, прежде чем сможешь вступить в следующий.
-	AI_Output(self,other,"DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_05");	//Потребуются долгие часы обучения и намного больше опыта, чтобы достичь высших Кругов.
-	AI_Output(self,other,"DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_06");	//Твои старания каждый раз будут вознаграждаться новыми могущественными заклинаниями. Но в любом случае магические Круги значат куда больше.
-	AI_Output(self,other,"DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_07");	//Для того чтобы понять их силу, ты должен познать себя.
+	AI_Output(other,self, " DMT_12120_Dagot_EXPLAINCIRCLES_Info_15_01 " );	// Explain to me what the meaning of magic circles is?
+	AI_Output(self,other, " DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_02 " );	// Good. Circles symbolize your understanding of magic.
+	AI_Output(self,other, " DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_03 " );	// They indicate the level of your knowledge and skills, the ability to learn new spells.
+	AI_Output(self,other, " DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_04 " );	// You must complete each Circle before you can enter the next one.
+	AI_Output(self,other, " DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_05 " );	// It will take long hours of study and a lot more experience to reach the higher Circles.
+	AI_Output(self,other, " DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_06 " );	// Your efforts will be rewarded with powerful new spells every time. But in any case, magic Circles mean much more.
+	AI_Output(self,other, " DMT_12120_Dagot_EXPLAINCIRCLES_Info_14_07 " );	// In order to understand their power, you must know yourself.
 	EXPLAINCIRCLEMEAN = TRUE;
 };
 
-var int dia_dmt_12120_dagot_circle_noperm;
+var int day_dmt_12120_dagot_circle_noperm;
 
 instance DIA_DMT_12120_DAGOT_CIRCLE(C_Info)
 {
@@ -217,12 +218,12 @@ instance DIA_DMT_12120_DAGOT_CIRCLE(C_Info)
 	condition = dia_dmt_12120_dagot_circle_condition;
 	information = dia_dmt_12120_dagot_circle_info;
 	permanent = TRUE;
-	description = "Я хочу постигать суть магии.";
+	description = " I want to learn the essence of magic. " ;
 };
 
 func int dia_dmt_12120_dagot_circle_condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) <= 6) && (CHOOSEDARK == TRUE) && (TELLWELCOMEDONE == TRUE) && (GUARDIANTEACHMEMAGIC == TRUE) && (DIA_DMT_12120_DAGOT_CIRCLE_NOPERM == FALSE))
+	if ((Npc_GetTalentSkill(other, NPC_TALENT_MAGE ) <=  6 ) && ( CHOOSEDARK  ==  TRUE ) && ( TELLWELCOMEDONE  ==  TRUE ) && ( GUARDIANTEACHMEMAGIC  ==  TRUE ) && ( DIA_DMT_12120_DAGOT_CIRCLE_NOPERM  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -230,37 +231,37 @@ func int dia_dmt_12120_dagot_circle_condition()
 
 func void dia_dmt_12120_dagot_circle_info()
 {
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_CIRCLE_15_00");	//Я хочу постигать суть магии.
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_CIRCLE_15_00 " );	// I want to understand the essence of magic.
 	Info_ClearChoices(DIA_DMT_12120_DAGOT_CIRCLE);
 	Info_AddChoice(DIA_DMT_12120_DAGOT_CIRCLE,Dialog_Back,DIA_DMT_12120_DAGOT_CIRCLE_Back);
 
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 1)
 	{
-		Info_AddChoice(DIA_DMT_12120_DAGOT_CIRCLE,"1 Круг магии (Очков обучения: 20)",DIA_DMT_12120_DAGOT_CIRCLE_1);
+		Info_AddChoice( DIA_DMT_12120_DAGOT_CIRCLE , " 1 Circle of Magic (Training Points: 20) " , DIA_DMT_12120_DAGOT_CIRCLE_1 );
 	}
 	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1) && (Kapitel >= 2))
 	{
-		Info_AddChoice(DIA_DMT_12120_DAGOT_CIRCLE,"2 Круг магии (Очков обучения: 30)",DIA_DMT_12120_DAGOT_CIRCLE_2);
+		Info_AddChoice( DIA_DMT_12120_DAGOT_CIRCLE , " 2 Circle of Magic (Training Points: 30) " , DIA_DMT_12120_DAGOT_CIRCLE_2 );
 	}
 	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2) && (Kapitel >= 3))
 	{
-		Info_AddChoice(DIA_DMT_12120_DAGOT_CIRCLE,"3 Круг магии (Очков обучения: 40)",DIA_DMT_12120_DAGOT_CIRCLE_3);
+		Info_AddChoice( DIA_DMT_12120_DAGOT_CIRCLE , " 3 Circle of Magic (Training Points: 40) " , DIA_DMT_12120_DAGOT_CIRCLE_3 );
 	}
 	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3) && (MIS_ReadyforChapter4 == TRUE))
 	{
-		Info_AddChoice(DIA_DMT_12120_DAGOT_CIRCLE,"4 Круг магии (Очков обучения: 60)",DIA_DMT_12120_DAGOT_CIRCLE_4);
+		Info_AddChoice( DIA_DMT_12120_DAGOT_CIRCLE , " 4 Circle of Magic (Training Points: 60) " , DIA_DMT_12120_DAGOT_CIRCLE_4 );
 	}
 	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4) && (Kapitel >= 5))
 	{
-		Info_AddChoice(DIA_DMT_12120_DAGOT_CIRCLE,"5 Круг магии (Очков обучения: 80)",DIA_DMT_12120_DAGOT_CIRCLE_5);
+		Info_AddChoice( DIA_DMT_12120_DAGOT_CIRCLE , " 5 Circle of Magic (Training Points: 80) " , DIA_DMT_12120_DAGOT_CIRCLE_5 );
 	}
-	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && (Kapitel >= 5) && (MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS))
+	else  if ((Npc_GetTalentSkill(other, NPC_TALENT_MAGE ) ==  5 ) && (Chapter >=  5 ) && (MY_DarkOrder == LOG_Success) && (MY_JarCurse == LOG_Success) && ( MY_URNAZULRAGE  ==  LOG_SUCCESS )) ;
 	{
-		Info_AddChoice(DIA_DMT_12120_DAGOT_CIRCLE,"6 Круг магии (Очков обучения: 100)",DIA_DMT_12120_DAGOT_CIRCLE_6);
+		Info_AddChoice( DIA_DMT_12120_DAGOT_CIRCLE , " 6 Circle of Magic (Training Points: 100) " , DIA_DMT_12120_DAGOT_CIRCLE_6 );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_42");	//Ты еще не готов к этому! Возвращайся позже.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_42 " );	// You're not ready for this yet! Come back later.
 	};
 };
 
@@ -273,16 +274,16 @@ func void DIA_DMT_12120_Dagot_CIRCLE_1()
 {
 	if(B_TeachMagicCircle(self,other,1))
 	{
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_0A");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_DMT_12120_Dagot_CIRCLE_15_01");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_01");	//Вступив в Первый Круг, ты научишься использовать магические руны.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_02");	//Каждая руна содержит структуру особого магического заклинания.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_03");	//Использовав свою собственную магическую силу, ты сможешь высвободить магию руны.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_04");	//Но в отличие от свитков, которые по сути являются магическими формулами, магия рун поддерживает структуру заклинания всегда.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_05");	//Каждая руна таит в себе магическую силу, которую ты можешь забрать в любой момент.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_06");	//Так же, как и со свитком, в момент, когда ты используешь руну, расходуется твоя собственная магическая сила.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_07");	//С каждым новым Кругом ты будешь узнавать о рунах все больше и больше.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_08");	//Используй их силу, для того чтобы познать себя.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_0A " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_DMT_12120_Dagot_CIRCLE_15_01 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_01 " );	// By joining the First Circle, you will learn how to use magical runes.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_02 " );	// Each rune contains the structure of a special magic spell.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_03 " );	// By using your own magical power, you can release the rune's magic.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_04 " );	// But unlike scrolls, which are essentially magic formulas, rune magic maintains the structure of the spell at all times.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_05 " );	// Each rune contains a magical power that you can take away at any time.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_06 " );	// Just like with the scroll, the moment you use a rune, your own magic power is consumed.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_07 " );	// With each new Circle you will learn more and more about runes.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_08 " );	// Use their power to know yourself.
 	};
 	Info_ClearChoices(DIA_DMT_12120_Dagot_CIRCLE);
 };
@@ -291,15 +292,15 @@ func void DIA_DMT_12120_Dagot_CIRCLE_2()
 {
 	if(B_TeachMagicCircle(self,other,2))
 	{
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_0A");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_DMT_12120_Dagot_CIRCLE_15_02");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_09");	//Ты уже научился понимать руны. Пришло время углубить твои познания.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_10");	//Вступив во Второй Круг, ты постигнешь основы мощных боевых заклятий.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_11");	//Но для того чтобы познать истинные секреты магии, тебе предстоит многому научиться.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_12");	//Ты уже знаешь о том, что можешь использовать любую руну бессчетное число раз, но лишь до тех пор, пока не израсходуешь собственную магическую силу.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_13");	//Но прежде чем сделать что-либо, подумай о том, есть ли в этом смысл. Ты обладаешь силой, которая позволяет с легкостью сеять смерть и разрушения.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_14");	//Но истинный маг использует ее лишь по необходимости.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_15");	//Научись оценивать ситуацию, и ты познаешь истинную силу рун.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_0A " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_DMT_12120_Dagot_CIRCLE_15_02 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_09 " );	// You've already learned to understand runes. It's time to deepen your knowledge.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_10 " );	// As you enter the Second Circle, you will learn the basics of powerful combat spells.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_11 " );	// But in order to know the true secrets of magic, you have a lot to learn.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_12 " );	// You already know that you can use any rune countless times, but only until you use up your own magic power.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_13 " );	// But before you do anything, think about whether it makes sense. You have the power to sow death and destruction with ease.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_14 " );	// But a true magician uses it only when necessary.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_15 " );	// Learn to assess the situation, and you will know the true power of the runes.
 	};
 	Info_ClearChoices(DIA_DMT_12120_Dagot_CIRCLE);
 };
@@ -308,14 +309,14 @@ func void DIA_DMT_12120_Dagot_CIRCLE_3()
 {
 	if(B_TeachMagicCircle(self,other,3))
 	{
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_0A");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_DMT_12120_Dagot_CIRCLE_15_03");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_16");	//Третий Круг является одним из важнейших этапов в жизни каждого мага. Достигнув его, ты завершаешь свой поиск.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_17");	//Ты уже преодолел значительный этап на пути магии. Ты научился использовать руны.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_18");	//Это знание послужит основой для следующего этапа. Используй руны осмотрительно.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_19");	//Ты можешь использовать их или нет. Но ты должен определиться с выбором.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_20");	//Сделав выбор, используй свою силу без колебаний.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_21");	//Найди свой путь, и тогда ты познаешь силу решения.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_0A " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_DMT_12120_Dagot_CIRCLE_15_03 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_16 " );	// The Third Circle is one of the most important stages in the life of every magician. When you reach it, you complete your search.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_17 " );	// You have already crossed a significant stage on the path of magic. You have learned how to use runes.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_18 " );	// This knowledge will serve as the basis for the next step. Use runes carefully.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_19 " );	// You can use them or not. But you must make a choice.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_20 " );	// Once you've made your choice, use your power without hesitation.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_21 " );	// Find your way, and then you will know the power of decision.
 	};
 	Info_ClearChoices(DIA_DMT_12120_Dagot_CIRCLE);
 };
@@ -324,13 +325,13 @@ func void DIA_DMT_12120_Dagot_CIRCLE_4()
 {
 	if(B_TeachMagicCircle(self,other,4))
 	{
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_0A");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_DMT_12120_Dagot_CIRCLE_15_04");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_22");	//Ты завершил первые три Круга. Пришло время тебе постичь секреты магии.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_23");	//Основа магии рун - камень. Магический камень, добытый из магической руды.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_24");	//Это та самая руда, которую добывают в шахтах. В храмах она наделяется магическими формулами, и там же руны превращаются в орудия нашей силы.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_25");	//Теперь ты обладаешь всеми знаниями, которые были накоплены храмами.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_27");	//Познай магию, и ты откроешь для себя секрет власти.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_0A " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_DMT_12120_Dagot_CIRCLE_15_04 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_22 " );	// You have completed the first three Circles. It's time for you to learn the secrets of magic.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_23 " );	// The basis of rune magic is stone. A magical stone mined from magical ore.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_24 " );	// This is the same ore that is mined in the mines. In the temples, she is endowed with magical formulas, and there the runes turn into tools of our power.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_25 " );	// You now have all the knowledge that the temples have accumulated.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_27 " );	// Learn magic and you will discover the secret of power.
 	};
 	Info_ClearChoices(DIA_DMT_12120_Dagot_CIRCLE);
 };
@@ -339,12 +340,12 @@ func void DIA_DMT_12120_Dagot_CIRCLE_5()
 {
 	if(B_TeachMagicCircle(self,other,5))
 	{
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_0A");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_DMT_12120_Dagot_CIRCLE_15_05");	//Да, мастер. Я готов.
-		AI_Output(other,self,"DIA_DMT_12120_Dagot_CIRCLE_15_5A");	//Да будет так. Я открою тебе истинный смысл Пятого Круга.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_31");	//Познай предел своих возможностей, и ты познаешь свою истинную силу.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_32");	//Заклинания, которые ты сможешь изучать, могут быть воистину разрушительными.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_33");	//Так что знай меру своей силе и остерегайся мании величия.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_0A " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_DMT_12120_Dagot_CIRCLE_15_05 " );	// Yes, master. I'm ready.
+		AI_Output(other,self, " DIA_DMT_12120_Dagot_CIRCLE_15_5A " );	// So be it. I will reveal to you the true meaning of the Fifth Circle.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_31 " );	// Know your limits, and you will know your true power.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_32 " );	// The spells you can learn can be truly devastating.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_33 " );	// So know the measure of your strength and beware of megalomania.
 	};
 	Info_ClearChoices(DIA_DMT_12120_Dagot_CIRCLE);
 };
@@ -353,13 +354,13 @@ func void DIA_DMT_12120_Dagot_CIRCLE_6()
 {
 	if(B_TeachMagicCircle(self,other,6))
 	{
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_34");	//Я подниму тебя в Шестой Круг магии.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_35");	//Заметь, в Шестой Круг могут вступить лишь самые могущественные из магов. Он предназначен для тех, чья жизнь - это знак.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_38");	//Как ты уже знаешь, твой знак - это Тьма!
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_39");	//Шестой Круг позволит тебе использовать магию любой руны.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_40");	//И не забудь: не захватывать силу, но быть ее источником.
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_CIRCLE_14_41");	//Будь мудр и рассудителен в своих деяниях!
-		DIA_DMT_12120_DAGOT_CIRCLE_NOPERM = TRUE;
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_34 " );	// I will lift you up to the Sixth Circle of Magic.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_35 " );	// Note that only the most powerful of magicians can enter the Sixth Circle. It is for those whose life is a sign.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_38 " );	// As you already know, your sign is Darkness!
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_39 " );	// The Sixth Circle will allow you to use the magic of any rune.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_40 " );	// And don't forget: don't capture power, but be its source.
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_CIRCLE_14_41 " );	// Be wise and prudent in your deeds!
+		DIA_DMT_12120_DAGOT_CIRCLE_NOPERM = TRUE ;
 	};
 	Info_ClearChoices(DIA_DMT_12120_Dagot_CIRCLE);
 };
@@ -371,7 +372,7 @@ instance DIA_DMT_12120_DAGOT_TEACH_MANA(C_Info)
 	condition = dia_dmt_12120_dagot_teach_mana_condition;
 	information = dia_dmt_12120_dagot_teach_mana_info;
 	permanent = TRUE;
-	description = "Я хочу увеличить свою магическую энергию.";
+	description = " I want to increase my magical energy. " ;
 };
 
 
@@ -385,7 +386,7 @@ func int dia_dmt_12120_dagot_teach_mana_condition()
 
 func void dia_dmt_12120_dagot_teach_mana_info()
 {
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_TEACH_MANA_15_00");	//Я хочу увеличить свою магическую энергию.
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_TEACH_MANA_15_00 " );	// I want to increase my magical energy.
 	Info_ClearChoices(dia_dmt_12120_dagot_teach_mana);
 	Info_AddChoice(dia_dmt_12120_dagot_teach_mana,Dialog_Back,dia_dmt_12120_dagot_teach_mana_back);
 	Info_AddChoice(dia_dmt_12120_dagot_teach_mana,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_dmt_12120_dagot_teach_mana_1);
@@ -396,7 +397,7 @@ func void dia_dmt_12120_dagot_teach_mana_back()
 {
 	if(other.attribute[ATR_MANA_MAX] >= T_MEGA)
 	{
-		AI_Output(self,other,"DIA_DMT_12120_Dagot_TEACH_MANA_05_00");	//Ты на пределе своих возможностей!
+		AI_Output(self,other, " DIA_DMT_12120_Dagot_TEACH_MANA_05_00 " );	// You're at your limits!
 	};
 	Info_ClearChoices(dia_dmt_12120_dagot_teach_mana);
 };
@@ -420,14 +421,14 @@ func void dia_dmt_12120_dagot_teach_mana_5()
 };
 
 
-instance DIA_DMT_12120_DAGOT_RUNEN(C_Info)
+instance DIA_DMT_12120_DAGOT_RUNEN (C_Info)
 {
 	npc = dmt_12120_dagot;
 	nr = 99;
 	condition = dia_dmt_12120_dagot_runen_condition;
 	information = dia_dmt_12120_dagot_runen_info;
 	permanent = TRUE;
-	description = "Научи меня создавать руны Тьмы.";
+	description = " Teach me how to create runes of darkness. " ;
 };
 
 
@@ -441,33 +442,33 @@ func int dia_dmt_12120_dagot_runen_condition()
 
 func void dia_dmt_12120_dagot_runen_info()
 {
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_Runen_15_00");	//Научи меня создавать руны Тьмы.
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_Runen_15_01");	//Хорошо! Что именно ты хочешь узнать?
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_Runen_15_00 " );	// Teach me how to create runes of darkness.
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_Runen_15_01 " );	// Good! What exactly would you like to know?
 	Info_ClearChoices(dia_dmt_12120_dagot_runen);
 	Info_AddChoice(dia_dmt_12120_dagot_runen,Dialog_Back,dia_dmt_12120_dagot_runen_back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 6)
 	{
-		Info_AddChoice(dia_dmt_12120_dagot_runen,"6 Круг магии",dia_dmt_12120_dagot_runen_6);
+		Info_AddChoice(dia_dmt_12120_dagot_runen, " 6 Circle of Magic " ,dia_dmt_12120_dagot_runen_6);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 5)
 	{
-		Info_AddChoice(dia_dmt_12120_dagot_runen,"5 Круг магии",dia_dmt_12120_dagot_runen_5);
+		Info_AddChoice(dia_dmt_12120_dagot_runen, " 5 Circle of Magic " ,dia_dmt_12120_dagot_runen_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 4)
 	{
-		Info_AddChoice(dia_dmt_12120_dagot_runen,"4 Круг магии",dia_dmt_12120_dagot_runen_4);
+		Info_AddChoice(dia_dmt_12120_dagot_runen, " 4 Circle of Magic " ,dia_dmt_12120_dagot_runen_4);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3)
 	{
-		Info_AddChoice(dia_dmt_12120_dagot_runen,"3 Круг магии",dia_dmt_12120_dagot_runen_3);
+		Info_AddChoice(dia_dmt_12120_dagot_runen, " 3 Circle of Magic " ,dia_dmt_12120_dagot_runen_3);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2)
 	{
-		Info_AddChoice(dia_dmt_12120_dagot_runen,"2 Круг магии",dia_dmt_12120_dagot_runen_2);
+		Info_AddChoice(dia_dmt_12120_dagot_runen, " 2 Circle of Magic " ,dia_dmt_12120_dagot_runen_2);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 1)
 	{
-		Info_AddChoice(dia_dmt_12120_dagot_runen,"1 Круг магии",dia_dmt_12120_dagot_runen_1);
+		Info_AddChoice(dia_dmt_12120_dagot_runen, " 1 Circle of Magic " ,dia_dmt_12120_dagot_runen_1);
 	};
 };
 
@@ -658,7 +659,7 @@ instance DIA_DMT_12120_DAGOT_GIVEARMORGUARDIANS(C_Info)
 	condition = dia_dmt_12120_dagot_givearmorguardians_condition;
 	information = dia_dmt_12120_dagot_givearmorguardians_info;
 	permanent = FALSE;
-	description = "Я отправлюсь в Чертоги Ирдората!";
+	description = " I will go to the Halls of Irdorath! " ;
 };
 
 
@@ -672,14 +673,14 @@ func int dia_dmt_12120_dagot_givearmorguardians_condition()
 
 func void dia_dmt_12120_dagot_givearmorguardians_info()
 {
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveArmorGuardians_01_01");	//Я отправлюсь в Чертоги Ирдората. Я могу рассчитывать на вашу помощь?
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveArmorGuardians_01_02");	//Хранители никогда не вмешиваются в ход божественных распрей. Ты же знаешь.
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveArmorGuardians_01_03");	//Но и на твою судьбу мы не можем взирать безучастно. Ведь ты почти один из нас!
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveArmorGuardians_01_04");	//Поэтому прими от меня в качестве нашей доброй воли этот скромный дар.
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_GiveArmorGuardians_01_01 " );	// I will go to the Halls of Irdorath. Can I count on your help?
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveArmorGuardians_01_02 " );	// Keepers never interfere in the course of divine strife. You know.
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveArmorGuardians_01_03 " );	// But we cannot look at your fate indifferently either. After all, you are almost one of us!
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveArmorGuardians_01_04 " );	// Therefore, accept this humble gift from me as our goodwill.
 	B_GiveInvItems(self,other,ItPo_GuardiansElixir,1);
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveArmorGuardians_01_06");	//Это немногое из того, что мы можем тебе предложить. Остальное зависит только от тебя!
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveArmorGuardians_01_07");	//Спасибо, мастер.
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveArmorGuardians_01_08");	//Теперь ступай, избранный Стихий! Тебе еще предстоит многое сделать на благо этого мира.
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveArmorGuardians_01_06 " );	// This is a little of what we can offer you. The rest depends only on you!
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_GiveArmorGuardians_01_07 " );	// Thank you master.
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveArmorGuardians_01_08 " );	// Now go, chosen of the Elements! You still have a lot to do for the good of this world.
 	AI_StopProcessInfos(self);
 };
 
@@ -690,7 +691,7 @@ instance DIA_DMT_12120_DAGOT_GIVEELIGORRUNE(C_Info)
 	condition = dia_dmt_12120_dagot_giveeligorrune_condition;
 	information = dia_dmt_12120_dagot_giveeligorrune_info;
 	permanent = FALSE;
-	description = "Этому всему я смогу обучиться и у других магов.";
+	description = " I can learn all this from other mages. " ;
 };
 
 
@@ -704,21 +705,21 @@ func int dia_dmt_12120_dagot_giveeligorrune_condition()
 
 func void dia_dmt_12120_dagot_giveeligorrune_info()
 {
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_01");	//Этому всему я смогу обучиться и у других магов.
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_02");	//(серьезно) И что же тебе нужно?
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_03");	//Неужели это все тайные знания, которые готовы поведать мне Хранители? Я думаю, вы храните и другие секреты.
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_06");	//Первое, что тебе надо понять - это то, что каждая из стихий является творцом некоторых различных существ, населяющих пределы этого мира.
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_07");	//Эти существа безраздельно и полностью подчиняются воле своих создателей и иногда даже служат им. Нам, Хранителям, тоже подвластна эта сила!
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_08");	//А я могу овладеть ей?
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_09");	//Вот, возьми эту руну! Она хранит магию, о которой вряд ли знает кто-то еще, кроме нас.
-	CreateInvItems(self,itru_eligordemons,1);
-	B_GiveInvItems(self,other,itru_eligordemons,1);
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_10");	//Что это за руна?
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_11");	//С ее помощью ты сможешь призывать в этот мир существ, безраздельно преданных нам и по своей силе не знающих равных.
-	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_12");	//Кто эти существа?
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_13");	//Демоны! Демоны пылающего легиона Элигора, повелителя Лэнга!
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_14");	//Эти существа на протяжении многих тысячелетий верой и правдой служат нам. Теперь послужат и тебе!
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_15");	//Однако помни, что всякому могуществу приходит конец, если им пользоваться неразумно. Это не предостережение, а просто совет.
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_GiveEligorRune_01_01 " );	// I can learn all this from other magicians.
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveEligorRune_01_02 " );	// (seriously) And what do you need?
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_GiveEligorRune_01_03 " );	// Is this really all the secret knowledge that the Guardians are ready to tell me? I think you keep other secrets as well.
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveEligorRune_01_06 " );	// The first thing you need to understand is that each of the elements is the creator of some different creatures inhabiting the limits of this world.
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveEligorRune_01_07 " );	// These creatures completely and completely obey the will of their creators and sometimes even serve them. We, the Guardians, are also subject to this power!
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_GiveEligorRune_01_08 " );	// Can I own it?
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveEligorRune_01_09 " );	// Here, take this rune! She holds magic that hardly anyone else but us knows about.
+	CreateInvItems(self,itru_eligordemons, 1 );
+	B_GiveInvItems(self,other,itru_eligordemons, 1 );
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_GiveEligorRune_01_10 " );	// What is this rune?
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveEligorRune_01_11 " );	// With its help, you will be able to summon into this world creatures who are undividedly devoted to us and know no equal in their strength.
+	AI_Output(other,self, " DIA_DMT_12120_Dagot_GiveEligorRune_01_12 " );	// Who are these beings?
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveEligorRune_01_13 " );	// Demons! The demons of the Burning Legion of Eligor, Lord of Lang!
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveEligorRune_01_14 " );	// These creatures have served us faithfully for millennia. Now they will serve you!
+	AI_Output(self,other, " DIA_DMT_12120_Dagot_GiveEligorRune_01_15 " );	// However, remember that all power comes to an end if it is not used wisely. This is not a warning, just advice.
 	AI_StopProcessInfos(self);
 };
 
@@ -729,7 +730,7 @@ instance DMT_12120_DAGOT_TASKS(C_Info)
 	condition = dmt_12120_dagot_tasks_condition;
 	information = dmt_12120_dagot_tasks_info;
 	permanent = FALSE;
-	description = "У тебя еще будут для меня какие-нибудь поручения?";
+	description = " Do you have any more errands for me? " ;
 };
 
 
@@ -743,9 +744,9 @@ func int dmt_12120_dagot_tasks_condition()
 
 func void dmt_12120_dagot_tasks_info()
 {
-	AI_Output(other,self,"DMT_12120_Dagot_Tasks_01_01");	//У тебя еще будут для меня какие-нибудь поручения?
-	AI_Output(self,other,"DMT_12120_Dagot_Tasks_01_02");	//Пока нет. Все, что мог, ты уже сделал!
-	AI_Output(self,other,"DMT_12120_Dagot_Tasks_01_03");	//Для других дел ты еще не готов.
-	AI_Output(self,other,"DMT_12120_Dagot_Tasks_01_04");	//Однако если нам вновь вдруг понадобится твоя помощь, не сомневайся - мы тебя призовем сами.
+	AI_Output(other,self, " DMT_12120_Dagot_Tasks_01_01 " );	// Do you have any other errands for me?
+	AI_Output(self,other, " DMT_12120_Dagot_Tasks_01_02 " );	// Not yet. Everything you could, you've already done!
+	AI_Output(self,other, " DMT_12120_Dagot_Tasks_01_03 " );	// You're not ready for other things yet.
+	AI_Output(self,other, " DMT_12120_Dagot_Tasks_01_04 " );	// However, if we suddenly need your help again, do not hesitate - we will call you ourselves.
 };
 
