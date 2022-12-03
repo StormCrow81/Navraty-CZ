@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_187_MELHIOR_EXIT(C_Info)
 {
 	npc = pal_187_melhior;
@@ -28,7 +29,7 @@ instance DIA_PAL_187_MELHIOR_FIRSTWARN(C_Info)
 	condition = dia_pal_187_melhior_firstwarn_condition;
 	information = dia_pal_187_melhior_firstwarn_info;
 	permanent = FALSE;
-	description = "Что ты тут делаешь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -39,13 +40,13 @@ func int dia_pal_187_melhior_firstwarn_condition()
 
 func void dia_pal_187_melhior_firstwarn_info()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_FirstWarn_01_00");	//Что ты тут делаешь?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_FirstWarn_01_01");	//(испуганно) ЧТО?! Я?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_FirstWarn_01_02");	//Не твоего ума дело. Какого черта тебе от меня надо?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_FirstWarn_01_03");	//Иди отсюда, куда шел.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_FirstWarn_01_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_FirstWarn_01_01 " );	// (frightened) WHAT?! I?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_FirstWarn_01_02 " );	// none of your business. What the hell do you want from me?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_FirstWarn_01_03 " );	// Get out of here where you went.
 	CreateInvItems(self,ItFo_Booze,1);
 	B_UseItem(self,ItFo_Booze);
-	AI_Output(self,other,"DIA_Pal_187_Melhior_FirstWarn_01_04");	//Ну, что уставился? Давай, проваливай...
+	AI_Output(self,other, " DIA_Pal_187_Melhior_FirstWarn_01_04 " );	// Well, what are you staring at? Come on, get lost...
 	AI_StopProcessInfos(self);
 };
 
@@ -57,7 +58,7 @@ instance DIA_PAL_187_MELHIOR_SECONDWARN(C_Info)
 	condition = dia_pal_187_melhior_secondwarn_condition;
 	information = dia_pal_187_melhior_secondwarn_info;
 	permanent = FALSE;
-	description = "А разве ты не должен быть на посту, вояка?";
+	description = " Shouldn't you be on duty, warrior? " ;
 };
 
 
@@ -71,25 +72,25 @@ func int dia_pal_187_melhior_secondwarn_condition()
 
 func void dia_pal_187_melhior_secondwarn_info()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_SecondWarn_01_00");	//А разве ты не должен быть на посту?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_SecondWarn_01_01");	//Опять ты?! Ты действуешь мне на нервы!
-	AI_Output(self,other,"DIA_Pal_187_Melhior_SecondWarn_01_02");	//Проваливай к Белиару! И не мешай мне здесь пить.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_SecondWarn_01_03");	//Или я тебя сам отучу от таких вещей.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_SecondWarn_01_00 " );	// Aren't you supposed to be on duty?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_SecondWarn_01_01 " );	// You again?! You're getting on my nerves!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_SecondWarn_01_02 " );	// Get off to Beliar! And don't bother me drinking here.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_SecondWarn_01_03 " );	// Or I'll wean you from such things.
 	CreateInvItems(self,ItFo_Booze,1);
 	B_UseItem(self,ItFo_Booze);
-	AI_Output(self,other,"DIA_Pal_187_Melhior_SecondWarn_01_04");	//(икает) Понял?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_SecondWarn_01_04 " );	// (hiccups) Got it?
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_187_MELHIOR_LASTWARN(C_Info)
+instance DIA_PAL_187_MELHIOR_LASTWARN (C_Info)
 {
 	npc = pal_187_melhior;
 	nr = 1;
 	condition = dia_pal_187_melhior_lastwarn_condition;
 	information = dia_pal_187_melhior_lastwarn_info;
 	permanent = FALSE;
-	description = "Интересно, что на это скажет лорд Хаген?";
+	description = " I wonder what Lord Hagen will say to that? " ;
 };
 
 
@@ -103,13 +104,13 @@ func int dia_pal_187_melhior_lastwarn_condition()
 
 func void dia_pal_187_melhior_lastwarn_info()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_LastWarn_01_00");	//Да ты пьян как сапожник! Интересно, что на это скажет лорд Хаген?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_LastWarn_01_01");	//ЧТО?! Ты еще будешь мне угрожать?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_LastWarn_01_02");	//Да плевал я на мнение всяких там Хагенов с высокой колокольни.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_LastWarn_01_00 " );	// Yes, you're drunk as a shoemaker! I wonder what Lord Hagen will say to that?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_LastWarn_01_01 " );	// WHAT?! Are you still going to threaten me?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_LastWarn_01_02 " );	// Yes, I did not care about the opinion of all the Hagens from the high bell tower.
 	CreateInvItems(self,ItFo_Booze,1);
 	B_UseItem(self,ItFo_Booze);
-	AI_Output(self,other,"DIA_Pal_187_Melhior_LastWarn_01_03");	//А вот ты, кретин, меня не послушал.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_LastWarn_01_04");	//Так что сейчас я тебе покажу, как со мной связываться.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_LastWarn_01_03 " );	// But you, cretin, didn't listen to me.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_LastWarn_01_04 " );	// So now I'll show you how to mess with me.
 	CreateInvItems(self,ItFo_Booze,1);
 	B_UseItem(self,ItFo_Booze);
 	AI_StopProcessInfos(self);
@@ -124,13 +125,13 @@ instance DIA_PAL_187_MELHIOR_PAYBACKOK(C_Info)
 	condition = dia_pal_187_melhior_paybackok_condition;
 	information = dia_pal_187_melhior_paybackok_info;
 	permanent = FALSE;
-	description = "Ты не достоин быть паладином!";
+	description = " You don't deserve to be a paladin! " ;
 };
 
 
 func int dia_pal_187_melhior_paybackok_condition()
 {
-	if((self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) && Npc_KnowsInfo(hero,dia_pal_187_melhior_lastwarn))
+	if (( self . aivar [ AIV_LastFightAgainstPlayer ] ==  FIGHT_LOST ) && Npc_KnowsInfo( hero , dia_pal_187_melhior_lastwarn )) .
 	{
 		return TRUE;
 	};
@@ -144,38 +145,38 @@ func void dia_pal_187_melhior_paybackok_info()
 		EquipItem(self,ItMw_1h_Pal_Sword);
 	};
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_01_00");	//Ты не достоин быть паладином!
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_01_00 " );	// You don't deserve to be a paladin!
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_01_01");	//Своим поведением ты позоришь весь орден!
-		AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_01_02");	//Думаю, мне все-таки стоит поговорить с лордом Хагеном.
+		AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_01_01 " );	// With your behavior, you dishonor the entire order!
+		AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_01_02 " );	// I think I should still talk to Lord Hagen.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_01_04");	//Своим поведением, ты позоришь весь орден!
-		AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_01_05");	//Думаю, мне все-таки стоит поговорить с лордом Хагеном.
+		AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_01_04 " );	// With your behavior, you dishonor the entire order!
+		AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_01_05 " );	// I think I should still talk to Lord Hagen.
 	};
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_01_07");	//Что? (испуганно) Нет, не надо! Прошу тебя, не делай этого! Только не это!
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_01_08");	//И почему же я не должен этого делать?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_01_09");	//Ты не представляешь, какого это - быть изгнанным из ордена!
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_01_10");	//После этого моя жизнь станет просто невыносимой.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_01_11");	//Все кругом начнут презирать меня, и это лишь только малая часть тех бедствий, которые меня ожидают!
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_01_12");	//Если хочешь, я даже могу дать тебе денег. Много денег!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_01_07 " );	// What? (scared) No, don't! Please don't do this! Only not this!
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_01_08 " );	// Why shouldn't I?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_01_09 " );	// You have no idea what it's like to be expelled from an order!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_01_10 " );	// After that, my life will become unbearable.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_01_11 " );	// Everyone around me will begin to despise me, and this is only a small part of the disasters that await me!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_01_12 " );	// If you want, I can even give you money. Much money!
 	Info_ClearChoices(dia_pal_187_melhior_paybackok);
 	if((TELLABOUTDS == TRUE) && (MIS_GOLDDRAGONPORTAL == LOG_Running))
 	{
-		Info_AddChoice(dia_pal_187_melhior_paybackok,"Мне нужна информация.",dia_pal_187_melhior_paybackok_inform);
+		Info_AddChoice(dia_pal_187_melhior_paybackok, " I need info. " ,dia_pal_187_melhior_paybackok_inform);
 	};
-	Info_AddChoice(dia_pal_187_melhior_paybackok,"Деньги тут бесполезны.",dia_pal_187_melhior_paybackok_gotcha);
-	Info_AddChoice(dia_pal_187_melhior_paybackok,"Сколько ты заплатишь, если я тебя отпущу?",dia_pal_187_melhior_paybackok_money);
+	Info_AddChoice(dia_pal_187_melhior_paybackok, " Money is useless here. " ,dia_pal_187_melhior_paybackok_gotcha);
+	Info_AddChoice(dia_pal_187_melhior_paybackok, " How much will you pay if I let you go? " ,dia_pal_187_melhior_paybackok_money);
 };
 
 func void dia_pal_187_melhior_paybackok_money()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Money_01_00");	//Сколько ты заплатишь, если я тебя отпущу?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Money_01_01");	//Я дам тебе целую сотню золотых монет!
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Money_01_02");	//Ну как, мы договорились?
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Думаю, я упустил свой шанс узнать больше о амулете Трирамар. Теперь про Мора Уларту можно забыть.");
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Money_01_00 " );	// How much will you pay if I let you go?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Money_01_01 " );	// I'll give you a whole hundred gold coins!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Money_01_02 " );	// Well, did we agree?
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " I think I missed my chance to learn more about the Triramar amulet. Mora Ulartu can be forgotten now. " );
 	Info_ClearChoices(dia_pal_187_melhior_paybackok);
 	Info_AddChoice(dia_pal_187_melhior_paybackok,"Этого мало!",dia_pal_187_melhior_paybackok_notok);
 	Info_AddChoice(dia_pal_187_melhior_paybackok,"Хорошо!",dia_pal_187_melhior_paybackok_ok);
@@ -183,108 +184,108 @@ func void dia_pal_187_melhior_paybackok_money()
 
 func void dia_pal_187_melhior_paybackok_notok()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_NotOk_01_00");	//Ты смеешься надо мной?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_NotOk_01_02");	//Но это все что у меня есть!
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_NotOk_01_04");	//Тогда, думаю, лорду Хагену будет интересно узнать о твоих подвигах.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_NotOk_01_07");	//Ладно, ублюдок! Делай, что хочешь.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_NotOk_01_08");	//Но учти, я этого просто так не оставлю!
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_NotOk_01_00 " );	// Are you laughing at me?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_NotOk_01_02 " );	// But that's all I have!
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_NotOk_01_04 " );	// Then I think Lord Hagen would be interested in learning about your exploits.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_NotOk_01_07 " );	// Okay, bastard! Do what you want.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_NotOk_01_08 " );	// But remember, I won't just leave it like that!
 	MELHIORPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_pal_187_melhior_paybackok_ok()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Ok_01_00");	//Ладно, давай их сюда.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Ok_01_03");	//О Иннос. Как это здорово, что ты согласился!
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Ok_01_04");	//Вот, возьми мои деньги.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Ok_01_00 " );	// Okay, give them here.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Ok_01_03 " );	// About Innos. It's great that you agreed!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Ok_01_04 " );	// Here, take my money.
 	B_GiveInvItems(self,other,ItMi_Gold,100);
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Ok_01_05");	//Дам тебе совет на будущее: или бросай пить, или лучше прячься.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Ok_01_06");	//Да-да, конечно! (заискивающе улыбаясь)
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Ok_01_05 " );	// I'll give you advice for the future: either stop drinking, or better hide.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Ok_01_06 " );	// Yes, of course! (smiling ingratiatingly)
 	AI_StopProcessInfos(self);
 };
 
 func void dia_pal_187_melhior_paybackok_gotcha()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Gotcha_01_00");	//Деньги тут бесполезны. Тобой займется стража!
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Gotcha_01_01");	//Думаю, лорду Хагену будет интересно узнать о твоих подвигах.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Gotcha_01_04");	//Ладно, ублюдок! Делай, что хочешь.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Gotcha_01_05");	//Но учти, я этого просто так не оставлю!
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Думаю, я упустил свой шанс узнать больше о амулете Трирамар. Теперь про Мора Уларту можно забыть.");
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Gotcha_01_00 " );	// Money is useless here. The guards will take care of you!
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Gotcha_01_01 " );	// I think Lord Hagen would be interested in learning about your exploits.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Gotcha_01_04 " );	// Okay, bastard! Do what you want.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Gotcha_01_05 " );	// But remember, I won't just leave it like that!
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " I think I missed my chance to learn more about the Triramar amulet. Mora Ulartu can be forgotten now. " );
 	MELHIORPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_pal_187_melhior_paybackok_inform()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_00");	//Мне нужна информация.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_01");	//Конечно! И что ты хочешь знать?
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_02");	//Меня интересует судьба одного амулета.
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_03");	//Насколько мне известно, последнее время он находился у паладинов.
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_04");	//Амулет называется Трирамар. Ты что-нибудь слышал о такой вещице?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_05");	//Т-т-трирамар? (в ужасе) Я... да, я слышал о нем.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_06");	//Но я не могу тебе рассказать. Это священная тайна.
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_08");	//А ну выкладывай все что знаешь об нем, пока я не нанес визит вежливости лорду Хагену!
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_11");	//Ладно... я расскажу тебе все, что мне известно:
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_12");	//...(скрепя сердце) Я знаю, этот амулет хранят на острове Этлу.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_14");	//Это островок на юге материка — точнее не могу сказать...
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_18");	//Ладно, скажи, как туда можно добраться, на этот остров?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_25");	//Я случайно подслушал, как лорд Хаген заказывал магам из монастыря, 'нащупать' портал на Этлу.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_26");	//Знаю, что у них получилось, и знаю что...(разрываемый противоречиями) ключ к порталу хранится у самого Хагена.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Inform_01_31");	//зачем тебе все то, что ты у меня сейчас выпытал?
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Мне удалось выяснить, что паладины спрятали Амулет Трирамар на острове Этлу. Единственный способ попасть туда - это магический портал паладинов, который находится здесь на острове. Правда, точное место мне так и не удалось выяснить у Мельхиора. Ко всему прочему мне понадобится еще и ключ, который откроет мне проход к порталу. Как полагает Мельхиор, этот ключ, видимо, хранит при себе сам лорд Хаген, и это очень осложняет мою задачу добраться до Этлу.");
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_00 " );	// I need information.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_01 " );	// Of course! And what do you want to know?
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_02 " );	// I'm interested in the fate of one amulet.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_03 " );	// As far as I know, he's been with the paladins lately.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_04 " );	// The amulet is called Triramar. Have you heard of such a thing?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_05 " );	// T-t-triramar? (horrified) I... yes, I've heard of him.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_06 " );	// But I can't tell you. This is a sacred secret.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_08 " );	// Spread everything you know about him before I pay a courtesy call to Lord Hagen!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_11 " );	// Okay... I'll tell you everything I know:
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_12 " );	// ...(reluctantly) I know this amulet is kept on the island of Etlu.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_14 " );	// This is an island in the south of the mainland - I can’t say more precisely ...
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_18 " );	// Okay, tell me, how can I get there, to this island?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_25 " );	// I overheard Lord Hagen ordering the mages from the monastery to 'find' the portal to Etla.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_26 " );	// I know they succeeded, and I know that... the (controversial) key to the portal is kept by Hagen himself.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Inform_01_31 " );	// why do you need all that you have now extorted from me?
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " I managed to find out that the paladins hid the Amulet of Triramar on the island of Etlu. The only way to get there is through the paladins' magic portal, which is located here on the island. However, I did not manage to find out the exact place from Melchior. Everything else I will also need a key that will open the passage to the portal for me. According to Melchior, this key, apparently, is kept by Lord Hagen himself, and this makes it very difficult for me to get to Etla. " );
 	ETLUBEGINS = TRUE;
 	Info_ClearChoices(dia_pal_187_melhior_paybackok);
-	Info_AddChoice(dia_pal_187_melhior_paybackok,"Просто захотелось узнать о нем чуть побольше.",dia_pal_187_melhior_paybackok_nothing);
-	Info_AddChoice(dia_pal_187_melhior_paybackok,"Мне он очень нужен.",dia_pal_187_melhior_paybackok_take);
+	Info_AddChoice(dia_pal_187_melhior_paybackok, " Just wanted to know a little more about him. " ,dia_pal_187_melhior_paybackok_nothing);
+	Info_AddChoice(dia_pal_187_melhior_paybackok, " I really need it. " ,dia_pal_187_melhior_paybackok_take);
 };
 
 func void dia_pal_187_melhior_paybackok_nothing()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Nothing_01_00");	//Повышаю уровень своего интелекта.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Nothing_01_02");	//(облегченно) А-ааа, а то мне показалось...
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Nothing_01_03");	//(перебивая) Когда кажется, надо Инносу молится. Бывай, солдат!
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Nothing_01_04");	//Ага, и тебе счастливо... (растерянно)
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Nothing_01_00 " );	// Raise my intelligence level.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Nothing_01_02 " );	// (relieved) A-ahh, otherwise it seemed to me ...
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Nothing_01_03 " );	// (interrupting) When it seems, Innos should pray. Come on, soldier!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Nothing_01_04 " );	// Yeah, and you're happy... (confused)
 	Info_ClearChoices(dia_pal_187_melhior_paybackok);
 };
 
 func void dia_pal_187_melhior_paybackok_take()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Take_01_00");	//Мне он очень нужен.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Take_01_00 " );	// I really need it.
 	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_01");	//Кто?! Амулет?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_02");	//Но ведь он есть зло в чистом виде! Кому он может понадобиться?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_03");	//Разве что... тому, кто продал душу Белиару!
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_Take_01_04");	//Не говори глупостей!
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_05");	//Нет-нет, сейчас мне все стало ясно: твоя настойчивость, осведомленность...
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_02 " );	// But he is evil in its purest form! Who might need it?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_03 " );	// Unless... the one who sold his soul to Beliar!
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_Take_01_04 " );	// Don't talk nonsense!
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_05 " );	// No, no, now everything became clear to me: your perseverance, awareness...
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_06");	//Никак я не ожидал такого от паладина!
+		AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_06 " );	// I didn't expect this from a paladin!
 	}
-	else if(hero.guild == GIL_MIL)
+	else  if (hero.guild ==  GIL_MIL )
 	{
-		AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_07");	//Никак я не ожидал такого от ополченца!
+		AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_07 " );	// I didn't expect this from a militia!
 	}
 	else if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_08");	//Никак я не ожидал такого от мага...
+		AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_08 " );	// I didn't expect this from a mage...
 	}
 	else if((hero.guild == GIL_GUR) || (hero.guild == GIL_TPL))
 	{
-		AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_09");	//Да что еще можно ожидать от укуренного еретика?!
+		AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_09 " );	// What else can you expect from a stoned heretic?!
 	}
-	else if(hero.guild == GIL_KDM)
+	else  if (hero.guild ==  GIL_KDM )
 	{
-		AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_10");	//Что еще можно было ожидать от некроманта?!
+		AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_10 " );	// What else could you expect from a necromancer?!
 	}
 	else if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_11");	//Да что еще можно ожидать от наемника?!
+		AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_11 " );	// What else can you expect from a mercenary?!
 	};
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_12");	//О Иннос! Что же я наделал. Я все тебе рассказал.
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_13");	//Но я искуплю свой грех! Даже ценой своей жизни.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_12 " );	// O Innos! What have I done. I told you everything.
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_13 " );	// But I will atone for my sin! Even at the cost of your life.
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_Take_01_14");	//Ты не получишь его, прихвостень Белиара, никогда!	
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_Take_01_14 " );	// You won't get it, henchman of Beliar, never!	
 	MELHIORPISSOFFKILL = TRUE;
-	self.aivar[AIV_DropDeadAndKill] = TRUE;
+	self.aivar[AIV_DropDeadAndKill] = TRUE ;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,0);
 };
@@ -350,13 +351,13 @@ instance DIA_PAL_187_MELHIOR_HOWTHINGS(C_Info)
 	condition = dia_pal_187_melhior_howthings_condition;
 	information = dia_pal_187_melhior_howthings_info;
 	permanent = TRUE;
-	description = "Ну как, все в порядке?";
+	description = " So, are you all right? " ;
 };
 
 
 func int dia_pal_187_melhior_howthings_condition()
 {
-	if((MELHIORPISSOFFKILL == FALSE) && (MELHIORPISSOFF == FALSE) && Npc_KnowsInfo(other,dia_pal_187_melhior_paybackok))
+	if (( MELHIORPISSOFFKILL  ==  FALSE ) && ( MELHIORPISSOFF  ==  FALSE ) && Npc_KnowsInfo(other,dia_pal_187_melhior_paybackok))
 	{
 		return TRUE;
 	};
@@ -364,7 +365,7 @@ func int dia_pal_187_melhior_howthings_condition()
 
 func void dia_pal_187_melhior_howthings_info()
 {
-	AI_Output(other,self,"DIA_Pal_187_Melhior_PayBackOk_HowThings_01_00");	//Ну как, все в порядке?
-	AI_Output(self,other,"DIA_Pal_187_Melhior_PayBackOk_HowThings_01_01");	//Да, все нормально.
+	AI_Output(other,self, " DIA_Pal_187_Melhior_PayBackOk_HowThings_01_00 " );	// Well, is everything all right?
+	AI_Output(self,other, " DIA_Pal_187_Melhior_PayBackOk_HowThings_01_01 " );	// Yes, everything is fine.
 };
 
