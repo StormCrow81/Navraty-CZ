@@ -1,4 +1,5 @@
 
+
 instance DIA_Hakon_EXIT(C_Info)
 {
 	npc = VLK_407_Hakon;
@@ -21,7 +22,7 @@ func void DIA_Hakon_EXIT_Info()
 };
 
 
-instance DIA_Hakon_Sperre(C_Info)
+instance DIA_Hakon_Lock (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 2;
@@ -42,17 +43,17 @@ func int DIA_Hakon_Sperre_Condition()
 
 func void DIA_Hakon_Sperre_Info()
 {
-	AI_Output(self,other,"DIA_Hakon_Sperre_12_00");	//Проваливай, каторжник! Кантар рассказал мне, какой ты грязный ублюдок!
+	AI_Output(self,other, " DIA_Hakon_Sperre_12_00 " );	// Get lost, convict! Kantar told me what a dirty bastard you are!
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Hakon_Hallo(C_Info)
+instance DIA_Hakon_Hallo (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 3;
 	condition = DIA_Hakon_Hallo_Condition;
-	information = DIA_Hakon_Hallo_Info;
+	information = DIA_Hakon_Hello_Info;
 	important = TRUE;
 	permanent = FALSE;
 };
@@ -68,28 +69,28 @@ func int DIA_Hakon_Hallo_Condition()
 
 func void DIA_Hakon_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Hakon_Add_12_00");	//Я Хакон, торговец оружием.
-	AI_Output(self,other,"DIA_Hakon_Add_12_01");	//В наши дни каждый должен носить оружие. Особенно, когда выходишь за городские стены.
+	AI_Output(self,other, " DIA_Hakon_Add_12_00 " );	// I am Hakon, arms dealer.
+	AI_Output(self,other, " DIA_Hakon_Add_12_01 " );	// Everyone should carry a gun these days. Especially when you go outside the city walls.
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Хакон торгует оружием на рыночной площади.");
+	B_LogEntry(TOPIC_CityTrader, " Hakon trades weapons in the marketplace. " );
 };
 
 
-instance DIA_Hakon_Trade(C_Info)
+instance DIA_Counter_Trade (C_Info) .
 {
 	npc = VLK_407_Hakon;
 	nr = 99;
 	condition = DIA_Hakon_Trade_Condition;
-	information = DIA_Hakon_Trade_Info;
+	info = DIA_Hakon_Trade_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 };
 
 
 func int DIA_Hakon_Trade_Condition()
 {
-	if(Wld_IsTime(6,0,20,0))
+	if (Wld_IsTime( 6 , 0 , 20 , 0 ))
 	{
 		return TRUE;
 	};
@@ -103,35 +104,35 @@ func void DIA_Hakon_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Hakon_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Hakon_Trade_15_00 " );	// Show me your products.
 
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Hakon_Trade_12_01");	//Для меня большая честь, что представитель нашей святой церкви интересуется моими товарами.
+		AI_Output(self,other, " DIA_Hakon_Trade_12_01 " );	// I am honored that a representative of our holy church is interested in my goods.
 	}
-	else if(hero.guild == GIL_KDW)
+	else  if (hero.guild ==  GIL_KDW )
 	{
-		AI_Output(self,other,"DIA_Hakon_Trade_12_02");	//Я всегда рад предложить достопочтенному Магу Воды свой лучший товар.
+		AI_Output(self,other, " DIA_Hakon_Trade_12_02 " );	// I'm always happy to offer my best merchandise to the venerable Water Mage.
 	}
 	else if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Hakon_Trade_12_03");	//В моем ассортименте непременно найдется подобающее воину Инноса оружие!
+		AI_Output(self,other, " DIA_Hakon_Trade_12_03 " );	// In my assortment there will certainly be a weapon befitting a warrior of Innos!
 	}
-	else if(hero.guild == GIL_MIL)
+	else  if (hero.guild ==  GIL_MIL )
 	{
-		AI_Output(self,other,"DIA_Hakon_Trade_12_04");	//Зашитнику города нужен хороший меч!
+		AI_Output(self,other, " DIA_Hakon_Trade_12_04 " );	// The city's defender needs a good sword!
 	}
-	else if(hero.guild == GIL_GUR)
+	else  if (hero.guild ==  GIL_GUR )
 	{
-		AI_Output(self,other,"DIA_Hakon_Trade_12_05");	//Вы, должно быть, лавкой ошиблись, просветленный. Хотя, выбирайте.
+		AI_Output(self,other, " DIA_Hakon_Trade_12_05 " );	// You must be in the wrong shop, enlightened one. However, choose.
 	}
 	else if(hero.guild == GIL_TPL)
 	{
-		AI_Output(self,other,"DIA_Hakon_Trade_12_06");	//Так значит, среди вас, укурен... э... членов Братства тоже есть настоящие воины? У меня же есть настоящее оружие!
+		AI_Output(self,other, " DIA_Hakon_Trade_12_06 " );	// So, among you stoned... er... members of the Brotherhood are also real warriors? I have a real weapon!
 	}
-	else if(hero.guild == GIL_KDM)
+	else  if (hero.guild ==  GIL_KDM )
 	{
-		AI_Output(self,other,"DIA_Hakon_Trade_12_07");	//Зачем тебе оружие, некромант?! У тебя же есть проклятая белиарова магия! 
+		AI_Output(self,other, " DIA_Hakon_Trade_12_07 " );	// Why do you need a weapon, necromancer?! You have cursed beliar magic!
 	};
 
 	B_GiveTradeInv(self);
@@ -143,7 +144,7 @@ instance DIA_Addon_Hakon_MissingPeople(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Hakon_MissingPeople_Condition;
 	information = DIA_Addon_Hakon_MissingPeople_Info;
-	description = "Что ты знаешь об исчезновениях людей?";
+	description = " What do you know about disappearances? " ;
 };
 
 
@@ -157,18 +158,18 @@ func int DIA_Addon_Hakon_MissingPeople_Condition()
 
 func void DIA_Addon_Hakon_MissingPeople_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Hakon_MissingPeople_15_00");	//Что ты знаешь об исчезновениях людей?
-	AI_Output(self,other,"DIA_Addon_Hakon_MissingPeople_12_01");	//Я вижу множество людей, проходящих через восточные ворота.
-	AI_Output(self,other,"DIA_Addon_Hakon_MissingPeople_12_02");	//Некоторых из приходящих в город я раньше никогда не видел, а некоторые из уходящих больше не возвращаются.
-	AI_Output(self,other,"DIA_Addon_Hakon_MissingPeople_12_03");	//Но недавно случилось нечто действительно странное.
-	AI_Output(self,other,"DIA_Addon_Hakon_MissingPeople_12_04");	//В город пришел один человек... Вроде бы его звали Джо. Он что-то болтал о том, что скоро он разбогатеет.
-	AI_Output(self,other,"DIA_Addon_Hakon_MissingPeople_12_05");	//Он утверждал, что нашел способ пробраться в одну из городских башен, где хранится оружие ополчения.
-	AI_Output(self,other,"DIA_Addon_Hakon_MissingPeople_12_06");	//С тех пор я его не видел. Хотя раньше я встречался с ним каждый день.
-	AI_Output(self,other,"DIA_Addon_Hakon_MissingPeople_12_07");	//Я рассказал об этом ополчению.
-	AI_Output(self,other,"DIA_Addon_Hakon_MissingPeople_12_08");	//Но лорд Андрэ сказал, что не понимает, о чем я говорю. Он даже не знал, что это за парень.
+	AI_Output(other,self, " DIA_Addon_Hakon_MissingPeople_15_00 " );	// What do you know about disappearances?
+	AI_Output(self,other, " DIA_Addon_Hakon_MissingPeople_12_01 " );	// I see a lot of people passing through the east gate.
+	AI_Output(self,other, " DIA_Addon_Hakon_MissingPeople_12_02 " );	// Some of the people who come to town I have never seen before, and some of those who leave never come back.
+	AI_Output(self,other, " DIA_Addon_Hakon_MissingPeople_12_03 " );	// But something really strange happened recently.
+	AI_Output(self,other, " DIA_Addon_Hakon_MissingPeople_12_04 " );	// A man came to town... I think his name was Joe. He talked about how he was going to be rich soon.
+	AI_Output(self,other, " DIA_Addon_Hakon_MissingPeople_12_05 " );	// He claimed to have found a way to get into one of the city's towers, where militia weapons are kept.
+	AI_Output(self,other, " DIA_Addon_Hakon_MissingPeople_12_06 " );	// I haven't seen him since. Even though I used to see him every day.
+	AI_Output(self,other, " DIA_Addon_Hakon_MissingPeople_12_07 " );	// I told the militia about this.
+	AI_Output(self,other, " DIA_Addon_Hakon_MissingPeople_12_08 " );	// But Lord Andre said he didn't understand what I was talking about. He didn't even know who the guy was.
 	Log_CreateTopic(TOPIC_Addon_Joe,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_Joe,LOG_Running);
-	B_LogEntry(TOPIC_Addon_Joe,"Хакон, торговец из Хориниса, говорит, что человек по имени Джо бесследно исчез. Хакон утверждает, что Джо знает, как проникнуть в одну из башен города, где ополчение хранит оружие.");
+	B_LogEntry(TOPIC_Addon_Joe, " Hakon, a merchant from Khorinis, says that a man named Joe has disappeared without a trace. Hakon claims that Joe knows how to get into one of the city's towers where the militia stores weapons. " );
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -180,7 +181,7 @@ instance DIA_Hakon_OutOfTown(C_Info)
 	condition = DIA_Hakon_OutOfTown_Condition;
 	information = DIA_Hakon_OutOfTown_Info;
 	permanent = FALSE;
-	description = "Расскажи мне подробнее о местности вокруг города.";
+	description = " Tell me more about the area around the city. " ;
 };
 
 
@@ -191,11 +192,11 @@ func int DIA_Hakon_OutOfTown_Condition()
 
 func void DIA_Hakon_OutOfTown_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Add_15_02");	//Расскажи мне подробнее о местности вокруг города.
-	AI_Output(self,other,"DIA_Hakon_Add_12_03");	//Сейчас там стало очень опасно
-	AI_Output(self,other,"DIA_Hakon_Add_12_04");	//Из-за бандитов, с одной стороны, и из-за нашествия диких зверей с другой.
-	AI_Output(self,other,"DIA_Hakon_Add_12_05");	//Даже зверям, похоже, нечего есть в эти смутные времена.
-	AI_Output(self,other,"DIA_Hakon_Add_12_06");	//Они стали подходить совсем близко к городу, чего раньше не было.
+	AI_Output(other,self, " DIA_Hakon_Add_15_02 " );	// Tell me more about the area around the city.
+	AI_Output(self,other, " DIA_Hakon_Add_12_03 " );	// Now it's very dangerous there
+	AI_Output(self,other, " DIA_Hakon_Add_12_04 " );	// Because of the bandits, on the one hand, and because of the invasion of wild animals on the other.
+	AI_Output(self,other, " DIA_Hakon_Add_12_05 " );	// Even the beasts seem to have nothing to eat in these troubled times.
+	AI_Output(self,other, " DIA_Hakon_Add_12_06 " );	// They began to approach quite close to the city, which was not the case before.
 };
 
 
@@ -206,7 +207,7 @@ instance DIA_Hakon_Paladine(C_Info)
 	condition = DIA_Hakon_Paladine_Condition;
 	information = DIA_Hakon_Paladine_Info;
 	permanent = FALSE;
-	description = "Ты знаешь что-нибудь о паладинах?";
+	description = " Do you know anything about paladins? " ;
 };
 
 
@@ -217,28 +218,28 @@ func int DIA_Hakon_Paladine_Condition()
 
 func void DIA_Hakon_Paladine_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Add_15_07");	//Ты знаешь что-нибудь о паладинах?
-	AI_Output(self,other,"DIA_Hakon_Add_12_08");	//Да! Они разорили меня!
-	AI_Output(self,other,"DIA_Hakon_Add_12_09");	//Теперь все, что можно купить в этом городе - это короткий меч, и то в лучшем случае.
-	AI_Output(self,other,"DIA_Hakon_Add_12_10");	//Они забрали себе все, что длиннее фута с половиной.
-	AI_Output(self,other,"DIA_Hakon_Add_12_11");	//(с сарказмом) А взамен, теперь я могу бесплатно жить в отеле - ха!
+	AI_Output(other,self, " DIA_Hakon_Add_15_07 " );	// Do you know anything about paladins?
+	AI_Output(self,other, " DIA_Hakon_Add_12_08 " );	// Yes! They ruined me!
+	AI_Output(self,other, " DIA_Hakon_Add_12_09 " );	// Now all you can buy in this city is a short sword, and that's at best.
+	AI_Output(self,other, " DIA_Hakon_Add_12_10 " );	// They took everything longer than a foot and a half.
+	AI_Output(self,other, " DIA_Hakon_Add_12_11 " );	// (sarcastically) And in return, now I can stay in a hotel for free - ha!
 };
 
 
-instance DIA_Hakon_WoWaffen(C_Info)
+instance DIA_Hakon_WoWaffen (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 4;
 	condition = DIA_Hakon_WoWaffen_Condition;
 	information = DIA_Hakon_WoWaffen_Info;
 	permanent = FALSE;
-	description = "Где ты берешь оружие?";
+	description = " Where do you get your weapons? " ;
 };
 
 
 func int DIA_Hakon_WoWaffen_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Hakon_Paladine))
+	if ( Npc_KnowsInfo ( other , DIA_Hakon_Paladine ))
 	{
 		return TRUE;
 	};
@@ -246,18 +247,18 @@ func int DIA_Hakon_WoWaffen_Condition()
 
 func void DIA_Hakon_WoWaffen_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Add_15_12");	//Где ты берешь оружие?
-	if(Npc_KnowsInfo(other,DIA_Hakon_HaradBandits))
+	AI_Output(other,self, " DIA_Hakon_Add_15_12 " );	// Where do you get weapons?
+	if ( Npc_KnowsInfo ( other , DIA_Hakon_HaradBandits ))
 	{
-		AI_Output(self,other,"DIA_Hakon_Add_12_13");	//Нигде! Раньше моим поставщиком был Харад.
+		AI_Output(self,other, " DIA_Hakon_Add_12_13 " );	// Nowhere! Harad used to be my supplier.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Hakon_Add_12_14");	//Раньше моим поставщиком был кузнец Харад.
+		AI_Output(self,other, " DIA_Hakon_Add_12_14 " );	// Blacksmith Harad used to be my supplier.
 	};
-	AI_Output(self,other,"DIA_Hakon_Add_12_15");	//А теперь все, что он делает, забирают паладины.
-	AI_Output(self,other,"DIA_Hakon_Add_12_16");	//Он работает на этих парней днем и ночью, как безумный, без какой-либо оплаты! Он думает, что это его долг.
-	AI_Output(self,other,"DIA_Hakon_Add_12_17");	//Все, что я могу предложить тебе сейчас - это остатки.
+	AI_Output(self,other, " DIA_Hakon_Add_12_15 " );	// And now everything he does is taken by the paladins.
+	AI_Output(self,other, " DIA_Hakon_Add_12_16 " );	// He works like crazy for these guys day and night without any pay! He thinks it's his duty.
+	AI_Output(self,other, " DIA_Hakon_Add_12_17 " );	// All I can offer you now is leftovers.
 };
 
 
@@ -268,7 +269,7 @@ instance DIA_Hakon_HaradBandits(C_Info)
 	condition = DIA_Hakon_HaradBandits_Condition;
 	information = DIA_Hakon_HaradBandits_Info;
 	permanent = FALSE;
-	description = "Харад рассказал мне о нападении бандитов.";
+	description = " Harad told me about the bandit attack. " ;
 };
 
 
@@ -282,27 +283,27 @@ func int DIA_Hakon_HaradBandits_Condition()
 
 func void DIA_Hakon_HaradBandits_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Add_15_18");	//Харад рассказал мне о нападении бандитов.
+	AI_Output(other,self, " DIA_Hakon_Add_15_18 " );	// Harad told me about the bandit attack.
 	AI_Output(self,other,"DIA_Hakon_Add_12_19");	//Ох? И?
-	AI_Output(other,self,"DIA_Hakon_Add_15_20");	//Он проголосует за меня при поступлении в ученики, если я уничтожу этих бандитов.
-	AI_Output(self,other,"DIA_Hakon_Add_12_21");	//Старый добрый Харад!...(смеется) Возможно, он так хочет сказать мне 'извини', за то, что он не может сейчас делать оружие для меня.
+	AI_Output(other,self, " DIA_Hakon_Add_15_20 " );	// He'll vote for me when I become an apprentice if I destroy these bandits.
+	AI_Output(self,other, " DIA_Hakon_Add_12_21 " );	// Good old Harad!...(laughs) Maybe he wants to say 'sorry' to me that he can't make weapons for me right now.
 };
 
 
-instance DIA_Hakon_Banditen(C_Info)
+instance DIA_Confidential_Band (C_Info) .
 {
 	npc = VLK_407_Hakon;
 	nr = 6;
 	condition = DIA_Hakon_Banditen_Condition;
 	information = DIA_Hakon_Banditen_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь об этих бандитах?";
+	description = " What do you know about these bandits? " ;
 };
 
 
 func int DIA_Hakon_Banditen_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Hakon_HaradBandits) || Npc_KnowsInfo(hero,DIA_Hakon_OutOfTown))
+	if (Npc_KnowsInfo(hero, DIA_Hakon_HaradBandits) || Npc_KnowsInfo(hero, DIA_Hakon_OutOfTown))
 	{
 		return TRUE;
 	};
@@ -310,25 +311,25 @@ func int DIA_Hakon_Banditen_Condition()
 
 func void DIA_Hakon_Banditen_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Banditen_15_00");	//Что ты знаешь об этих бандитах?
-	AI_Output(self,other,"DIA_Hakon_Banditen_12_01");	//Что я знаю о них? Они ограбили меня на пути в город!
-	AI_Output(self,other,"DIA_Hakon_Banditen_12_02");	//И не только меня. Они давно уже здесь разбойничают.
-	AI_Output(self,other,"DIA_Hakon_Banditen_12_03");	//Ополчение пыталось выследить их, но безуспешно.
+	AI_Output(other,self, " DIA_Hakon_Banditen_15_00 " );	// What do you know about these bandits?
+	AI_Output(self,other, " DIA_Hakon_Banditen_12_01 " );	// What do I know about them? They robbed me on my way to town!
+	AI_Output(self,other, " DIA_Hakon_Banditen_12_02 " );	// And not only me. They've been robbing here for a long time.
+	AI_Output(self,other, " DIA_Hakon_Banditen_12_03 " );	// The militia tried to hunt them down, but failed.
 	MIS_HakonBandits = LOG_Running;
 	Log_CreateTopic(TOPIC_HakonBanditen,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HakonBanditen,LOG_Running);
-	B_LogEntry(TOPIC_HakonBanditen,"Хакон, торговец оружием, был ограблен бандитами неподалеку от города.");
+	B_LogEntry(TOPIC_HakonBanditen, " Hakon, an arms dealer, was robbed by bandits near the city. " );
 };
 
 
-instance DIA_Hakon_Wieviel(C_Info)
+instance DIA_Hakon_Wieviel (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 6;
 	condition = DIA_Hakon_Wieviel_Condition;
 	information = DIA_Hakon_Wieviel_Info;
 	permanent = FALSE;
-	description = "Я разберусь с этим.";
+	description = " I'll deal with it. " ;
 };
 
 
@@ -342,36 +343,36 @@ func int DIA_Hakon_Wieviel_Condition()
 
 func void DIA_Hakon_Wieviel_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Banditen_Ehre_15_00");	//Я разберусь с этим.
-	AI_Output(self,other,"DIA_Hakon_Banditen_Kohle_12_01");	//Что?...(удивленно) Ты хочешь расправиться с бандитами? В одиночку?! Ты, наверное, хороший боец?
-	AI_Output(other,self,"DIA_Hakon_Banditen_Kohle_15_00");	//Сколько ты готов дать за это?
-	if(Npc_KnowsInfo(other,DIA_Hakon_HaradBandits))
+	AI_Output(other,self, " DIA_Hakon_Banditen_Ehre_15_00 " );	// I'll deal with this.
+	AI_Output(self,other, " DIA_Hakon_Banditen_Kohle_12_01 " );	// What?...(surprised) Do you want to deal with the bandits? By oneself?! Are you a good fighter?
+	AI_Output(other,self, " DIA_Hakon_Banditen_Kohle_15_00 " );	// How much are you willing to pay for this?
+	if ( Npc_KnowsInfo ( other , DIA_Hakon_HaradBandits ))
 	{
-		AI_Output(self,other,"DIA_Hakon_Add_12_25");	//Ты ведь хочешь быть на хорошем счету у Харада, да?
-		AI_Output(self,other,"DIA_Hakon_Add_12_26");	//Я не думаю, что должен платить тебе за это.
+		AI_Output(self,other, " DIA_Hakon_Add_12_25 " );	// You want to be in good standing with Harad, don't you?
+		AI_Output(self,other, " DIA_Hakon_Add_12_26 " );	// I don't think I should pay you for this.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Hakon_Banditen_Ehre_12_01");	//Но это опасное дело.
-		AI_Output(self,other,"DIA_Hakon_Banditen_Kohle_12_02");	//Ладно, мне это тоже нужно. Я заплачу тебе сто золотых, если ты уничтожишь этих бандитов.
+		AI_Output(self,other, " DIA_Hakon_Banditen_Ehre_12_01 " );	// But this is a dangerous business.
+		AI_Output(self,other, " DIA_Hakon_Banditen_Kohle_12_02 " );	// Okay, I need this too. I will pay you a hundred gold if you destroy these bandits.
 		MIS_HakonBanditsPay = TRUE;
 	};
 	Info_ClearChoices(DIA_Hakon_Banditen);
 };
 
 
-instance DIA_Hakon_Miliz(C_Info)
+instance DIA_Hacon_Miliz (C_Info) .
 {
 	npc = VLK_407_Hakon;
 	nr = 4;
 	condition = DIA_Hakon_Miliz_Condition;
 	information = DIA_Hakon_Miliz_Info;
 	permanent = FALSE;
-	description = "Ты не знаешь, кто в ополчении занимался их поиском?";
+	description = " Do you know who in the militia was looking for them? " ;
 };
 
 
-func int DIA_Hakon_Miliz_Condition()
+func int DIA_Hack_Condition()
 {
 	if(MIS_HakonBandits == LOG_Running)
 	{
@@ -381,26 +382,26 @@ func int DIA_Hakon_Miliz_Condition()
 
 func void DIA_Hakon_Miliz_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Miliz_15_00");	//Ты не знаешь, кто в ополчении занимался их поиском?
-	AI_Output(self,other,"DIA_Hakon_Miliz_12_01");	//Парень по имени Пабло. Он, и еще несколько парней ходили на поиски этих бандитов. Но они не нашли их.
-	AI_Output(other,self,"DIA_Hakon_Miliz_15_02");	//Ты знаешь, где мне найти Пабло?
-	AI_Output(self,other,"DIA_Hakon_Miliz_12_03");	//Он патрулирует город! Ты найдешь его либо на рыночной пощади, либо в нижней части города.
-	B_LogEntry(TOPIC_HakonBanditen,"Пабло, городской стражник, занимался бесплодными поисками бандитов.");
+	AI_Output(other,self, " DIA_Hakon_Miliz_15_00 " );	// Do you know who in the militia was looking for them?
+	AI_Output(self,other, " DIA_Hakon_Miliz_12_01 " );	// A guy named Pablo. He and a few other guys went looking for these bandits. But they didn't find them.
+	AI_Output(other,self, " DIA_Hakon_Miliz_15_02 " );	// Do you know where I can find Pablo?
+	AI_Output(self,other, " DIA_Hakon_Miliz_12_03 " );	// He's patrolling the city! You will find him either at the market place or in the lower part of the city.
+	B_LogEntry(TOPIC_HakonBanditen, " Pablo, the city guard, has been fruitlessly searching for bandits. " );
 };
 
 
-instance DIA_Hakon_Wo(C_Info)
+instance DIA_Confirmation (C_Info) .
 {
 	npc = VLK_407_Hakon;
 	nr = 5;
 	condition = DIA_Hakon_Wo_Condition;
 	information = DIA_Hakon_Wo_Info;
 	permanent = FALSE;
-	description = "Где они напали на тебя?";
+	description = " Where did they attack you? " ;
 };
 
 
-func int DIA_Hakon_Wo_Condition()
+func int DIA_Current_Condition()
 {
 	if(MIS_HakonBandits == LOG_Running)
 	{
@@ -410,9 +411,9 @@ func int DIA_Hakon_Wo_Condition()
 
 func void DIA_Hakon_Wo_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Wo_15_00");	//Где они напали на тебя?
-	AI_Output(self,other,"DIA_Hakon_Wo_12_01");	//Около фермы Акила. Выйдешь из вот этих городских ворот и иди по дороге направо.
-	AI_Output(self,other,"DIA_Hakon_Wo_12_02");	//Вскоре ты увидишь каменную лестницу. Эти ублюдки пришли оттуда. Ручаюсь, у них там логово где-то в лесу.
+	AI_Output(other,self, " DIA_Hakon_Wo_15_00 " );	// Where did they attack you?
+	AI_Output(self,other, " DIA_Hakon_Wo_12_01 " );	// Near the Akila farm. You will leave these city gates and go along the road to the right.
+	AI_Output(self,other, " DIA_Hakon_Wo_12_02 " );	// Soon you will see a stone staircase. Those bastards came from there. I bet they have a lair somewhere in the woods.
 };
 
 
@@ -423,7 +424,7 @@ instance DIA_Hakon_Success(C_Info)
 	condition = DIA_Hakon_Success_Condition;
 	information = DIA_Hakon_Success_Info;
 	permanent = FALSE;
-	description = "Я расправился с бандитами.";
+	description = " I've dealt with the bandits. " ;
 };
 
 
@@ -437,18 +438,18 @@ func int DIA_Hakon_Success_Condition()
 
 func void DIA_Hakon_Success_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Success_15_00");	//Я расправился с бандитами.
-	AI_Output(self,other,"DIA_Hakon_Add_12_27");	//Правда? Кто-нибудь может подтвердить это. У тебя есть доказательства?
-	AI_Output(other,self,"DIA_Hakon_Add_15_28");	//(вздыхает) Мне что, вернуться назад и отрезать им головы?
-	AI_Output(self,other,"DIA_Hakon_Add_12_29");	//(поспешно) Нет - я не думаю, что это необходимо. Я верю тебе.
-	AI_Output(self,other,"DIA_Hakon_Success_12_01");	//Ты оказал очень большую услугу всем торговцам в городе.
-	if(Npc_KnowsInfo(other,DIA_Hakon_HaradBandits))
+	AI_Output(other,self, " DIA_Hakon_Success_15_00 " );	// I dealt with the bandits.
+	AI_Output(self,other, " DIA_Hakon_Add_12_27 " );	// True? Can anyone confirm this. Do you have proof?
+	AI_Output(other,self, " DIA_Hakon_Add_15_28 " );	// (sighs) Should I go back and cut off their heads?
+	AI_Output(self,other, " DIA_Hakon_Add_12_29 " );	// (hurriedly) No - I don't think it's necessary. I believe you.
+	AI_Output(self,other, " DIA_Hakon_Success_12_01 " );	// You have done a very great service to all the merchants in the city.
+	if ( Npc_KnowsInfo ( other , DIA_Hakon_HaradBandits ))
 	{
-		AI_Output(self,other,"DIA_Hakon_Add_12_30");	//Харад будет доволен - я надеюсь.
+		AI_Output(self,other, " DIA_Hakon_Add_12_30 " );	// Harad will be pleased - I hope.
 	};
 	if(MIS_HakonBanditsPay == TRUE)
 	{
-		AI_Output(self,other,"DIA_Hakon_Success_12_02");	//Вот деньги, как я и обещал.
+		AI_Output(self,other, " DIA_Hakon_Success_12_02 " );	// Here's the money, as I promised.
 		B_GiveInvItems(self,other,ItMi_Gold,100);
 	};
 	MIS_HakonBandits = LOG_SUCCESS;
@@ -456,20 +457,20 @@ func void DIA_Hakon_Success_Info()
 };
 
 
-instance DIA_Hakon_Minenanteil(C_Info)
+instance DIA_Hakon_Minenanteil (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 3;
 	condition = DIA_Hakon_Minenanteil_Condition;
-	information = DIA_Hakon_Minenanteil_Info;
+	information = DIA_Hakon_MinenTeil_Info;
 	permanent = FALSE;
-	description = "Где ты взял эти акции, что ты продаешь здесь?";
+	description = " Where did you get these shares, what are you selling here? " ;
 };
 
 
 func int DIA_Hakon_Minenanteil_Condition()
 {
-	if((hero.guild == GIL_KDF) && (MIS_Serpentes_MinenAnteil_KDF == LOG_Running))
+	if ((hero.guild ==  GIL_KDF ) && (MY_Serpent_MineBefore_KDF == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -477,8 +478,8 @@ func int DIA_Hakon_Minenanteil_Condition()
 
 func void DIA_Hakon_Minenanteil_Info()
 {
-	AI_Output(other,self,"DIA_Hakon_Minenanteil_15_00");	//Где ты взял эти акции, что ты продаешь здесь?
-	AI_Output(self,other,"DIA_Hakon_Minenanteil_12_01");	//Извини, но я не могу сказать тебе этого. Это слишком опасно для меня.
+	AI_Output(other,self, " DIA_Hakon_Minenanteil_15_00 " );	// Where did you get these shares, what are you selling here?
+	AI_Output(self,other, " DIA_Hakon_Minenanteil_12_01 " );	// Sorry, but I can't tell you that. It's too dangerous for me.
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -488,7 +489,7 @@ instance DIA_Hakon_PICKPOCKET(C_Info)
 	npc = VLK_407_Hakon;
 	nr = 900;
 	condition = DIA_Hakon_PICKPOCKET_Condition;
-	information = DIA_Hakon_PICKPOCKET_Info;
+	info = DIA_Hakon_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = PICKPOCKET_COMM;
 };
@@ -496,19 +497,19 @@ instance DIA_Hakon_PICKPOCKET(C_Info)
 
 func int DIA_Hakon_PICKPOCKET_Condition()
 {
-	return C_Beklauen(45,65);
+	return  C_Robbery ( 45 , 65 );
 };
 
 func void DIA_Hakon_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Hakon_PICKPOCKET);
 	Info_AddChoice(DIA_Hakon_PICKPOCKET,Dialog_Back,DIA_Hakon_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Hakon_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Hakon_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Hakon_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Hakon_PICKPOCKET_DoIt);
 };
 
 func void DIA_Hakon_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Hakon_PICKPOCKET);
 };
 
@@ -518,20 +519,20 @@ func void DIA_Hakon_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Hakon_Kapitel2(C_Info)
+instance DIA_Hakon_Chapter2 (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 5;
 	condition = DIA_Hakon_Kapitel2_Condition;
-	information = DIA_Hakon_Kapitel2_Info;
+	information = DIA_Hakon_Chapter2_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int DIA_Hakon_Kapitel2_Condition()
+func int DIA_Hakon_Chapter2_Condition()
 {
-	if((Kapitel >= 2) && (Canthar_Sperre == FALSE) && (self.aivar[AIV_TalkedToPlayer] == TRUE))
+	if ((Chapter >=  2 ) && (Canthar_Sperre ==  FALSE ) && (self.aivar[AIV_TalkedToPlayer] ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -539,20 +540,20 @@ func int DIA_Hakon_Kapitel2_Condition()
 
 func void DIA_Hakon_Kapitel2_Info()
 {
-	AI_Output(self,other,"DIA_Hakon_Add_12_22");	//А, снова ты здесь!
-	AI_Output(self,other,"DIA_Hakon_Add_12_23");	//Харад наконец-то справился с тем проклятым заказом паладинов.
-	AI_Output(self,other,"DIA_Hakon_Add_12_24");	//Это значит, что я могу предложить новое оружие. Ты не заинтересован?
+	AI_Output(self,other, " DIA_Hakon_Add_12_22 " );	// Ah, you're here again!
+	AI_Output(self,other, " DIA_Hakon_Add_12_23 " );	// Harad finally got through with that damn paladin order.
+	AI_Output(self,other, " DIA_Hakon_Add_12_24 " );	// This means I can suggest a new weapon. Are you not interested?
 };
 
 
-instance DIA_HAKON_HANNAISPRISION(C_Info)
+instance DIA_HAKON_HANNAISPRISION (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 3;
 	condition = dia_hakon_hannaisprision_condition;
 	information = dia_hakon_hannaisprision_info;
 	permanent = FALSE;
-	description = "Я слышал, тебя обокрали.";
+	description = " I heard you were robbed. " ;
 };
 
 
@@ -567,42 +568,42 @@ func int dia_hakon_hannaisprision_condition()
 func void dia_hakon_hannaisprision_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Hakon_HannaIsPrision_01_00");	//Я слышал, тебя обокрали.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_01");	//Да, это правда...(озадаченно)
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_02");	//Хотя если говорить честно - вся эта история мне кажется немного странной.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_04");	//Я знаю Ханну уже не один год.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_05");	//И могу дать руку на отсечение, что она - честный человек.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_06");	//Ей не было никакого смысла красть эти вещи - ведь то барахло даже и на грош не тянуло.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_07");	//Сама же гостиница приносила Ханне совсем неплохие деньги, и рисковать всем этим за пару монет - просто нелепо.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_09");	//Ну и кроме этого, тот свидетель...
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_11");	//...он говорит, что видел как Ханна копалась в моем сундуке на втором этаже.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_12");	//Но насколько мне известно, Ханна его просто на дух не переносила и навряд ли бы вообще впустила его на порог своей гостиницы.
-	AI_Output(other,self,"DIA_Hakon_HannaIsPrision_01_13");	//А в чем причина столь добрых отношений?
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_14");	//Этого я не знаю. Она не стала рассказывать мне об этом.
-	AI_Output(other,self,"DIA_Hakon_HannaIsPrision_01_15");	//Понятно. А что еще странного в этой истории?
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_18");	//Те вещи, которые у меня украли - там было одно кольцо. Само оно по себе - безделушка, но достаточно дорогое.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_19");	//Среди найденных вещей его не было.
-	AI_Output(other,self,"DIA_Hakon_HannaIsPrision_01_22");	//Интересно. Ладно, спасибо за информацию.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_23");	//Всегда рад помочь.
-	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Я поговорил с торговцем Хаконом о деле с Ханной. Кажется, он сам находит эту историю немного странной. Кроме того, он отметил, что Ханна просто на дух не переносила этого Гаспара. Может, Абигаль что-то знает об этом - в конце концов, она же ее сестра. Еще один интересный момент в этом деле заключается в том, что среди найденных у Ханны краденных вещей не оказалось одной безделушки - дорогого кольца. Возможно, тот, кто обокрал Хакона, решил оставить его себе. Думаю, этот факт поможет мне в поиске настоящего вора.");
+	AI_Output(other,self, " DIA_Hakon_HannaIsPrision_01_00 " );	// I heard you were robbed.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_01 " );	// Yes, it's true... (puzzled)
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_02 " );	// Although, to be honest, the whole story seems a little strange to me.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_04 " );	// I've known Hannah for years.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_05 " );	// And I can give a hand to cut off that she is an honest person.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_06 " );	// It didn't make any sense for her to steal these things - after all, that junk wasn't even worth a penny.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_07 " );	// The hotel itself brought Hanna quite good money, and risking all this for a couple of coins is simply ridiculous.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_09 " );	// Well, besides that, that witness...
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_11 " );	// ...he says he saw Hannah going through my trunk on the second floor.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_12 " );	// But as far as I know, Hannah just couldn't stand him and wouldn't have let him in at all at the door of her hotel.
+	AI_Output(other,self, " DIA_Hakon_HannaIsPrision_01_13 " );	// And what is the reason for such a good relationship?
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_14 " );	// I don't know this. She didn't tell me about it.
+	AI_Output(other,self, " DIA_Hakon_HannaIsPrision_01_15 " );	// Got it. What else is strange about this story?
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_18 " );	// Those things that were stolen from me - there was one ring. In itself, it is a trinket, but quite expensive.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_19 " );	// Among the things found, it was not.
+	AI_Output(other,self, " DIA_Hakon_HannaIsPrision_01_22 " );	// Interesting. Okay, thanks for the info.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrision_01_23 " );	// Always happy to help.
+	B_LogEntry( TOPIC_ABIGEILHELPHANNA , " I spoke to Hakon the trader about the Hanna affair. He seems to find the story a little strange himself. He also noted that Hanna just couldn't stand this Gasper. Maybe Abigail knows something about this "After all, she is her sister. Another interesting point in this case is that among the stolen items found on Hannah, one trinket was missing - an expensive ring. Perhaps the one who robbed Hakon decided to keep him. I think , this fact will help me in finding the real thief. " );
 	KNOWSHANNAINPRISIONABIGEIL = TRUE;
 };
 
 
-instance DIA_HAKON_HANNAISPRISIONRING(C_Info)
+instance DIA_HAKON_HANNAISPRISIONRING (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 3;
 	condition = dia_hakon_hannaisprisionring_condition;
 	information = dia_hakon_hannaisprisionring_info;
 	permanent = FALSE;
-	description = "Это твое кольцо?";
+	description = " Is this your ring? " ;
 };
 
 
 func int dia_hakon_hannaisprisionring_condition()
 {
-	if(Npc_HasItems(hero,itri_hakonmissring) >= 1)
+	if (Npc_HasItems(hero,itri_hakonmissring) >=  1 )
 	{
 		return TRUE;
 	};
@@ -610,41 +611,41 @@ func int dia_hakon_hannaisprisionring_condition()
 
 func void dia_hakon_hannaisprisionring_info()
 {
-	AI_Output(other,self,"DIA_Hakon_HannaIsPrisionRing_01_00");	//Это твое кольцо?
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_01");	//Да! Это как раз то самое кольцо, которое у меня украли.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_02");	//(удивленно) Но откуда оно у тебя?
-	AI_Output(other,self,"DIA_Gorax_Find_Papers_Ok_01_15");	//Это долгая история...
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_04");	//М-м, ну и ладно!
+	AI_Output(other,self, " DIA_Hakon_HannaIsPrisionRing_01_00 " );	// Is this your ring?
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_01 " );	// Yes! This is the same ring that was stolen from me.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_02 " );	// (surprised) But where did you get it from?
+	AI_Output(other,self, " DIA_Gorax_Find_Papers_Ok_01_15 " );	// It's a long story...
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_04 " );	// Mmm, okay!
 
 	if(HANNAISFREE == FALSE)
 	{
-		AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_06");	//Думаю, что это кольцо тебе еще и самому пригодится.
-		AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_07");	//Так что можешь пока оставить его себе.
-		AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_08");	//Однако потом я бы с удовольствием вернул бы эту вещицу себе.
+		AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_06 " );	// I think that this ring will also come in handy for you.
+		AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_07 " );	// So you can keep it for now.
+		AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_08 " );	// However, I would gladly return this little thing to myself later.
 		HAKONRINGAFTER = TRUE;
 	}
 	else
 	{
 		B_GivePlayerXP(50);
-		AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_11");	//Если ты не против, я бы с удовольствием вернул бы его себе.
-		AI_Output(other,self,"DIA_Hakon_HannaIsPrisionRing_01_12");	//Нет проблем. Вот, держи его.
+		AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_11 " );	// If you don't mind, I'd love to have it back.
+		AI_Output(other,self, " DIA_Hakon_HannaIsPrisionRing_01_12 " );	// No problem. Here, hold it.
 		B_GiveInvItems(other,self,itri_hakonmissring,1);
 		Npc_RemoveInvItems(self,itri_hakonmissring,1);
-		AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_13");	//Спасибо тебе, приятель.
-		AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRing_01_14");	//Возьми это золото в качестве компенсации за твои хлопоты. Это будет по-честному!
+		AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_13 " );	// Thank you, buddy.
+		AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRing_01_14 " );	// Take this gold as compensation for your troubles. It will be fair!
 		B_GiveInvItems(self,other,ItMi_Gold,100);
 	};
 };
 
 
-instance DIA_HAKON_HANNAISPRISIONRINGAFTER(C_Info)
+instance DIA_HAKON_HANNAISPRISIONRINGAFTER (C_Info)
 {
 	npc = VLK_407_Hakon;
 	nr = 3;
 	condition = dia_hakon_hannaisprisionringafter_condition;
 	information = dia_hakon_hannaisprisionringafter_info;
 	permanent = FALSE;
-	description = "Возьми свое кольцо.";
+	description = " Take your ring. " ;
 };
 
 
@@ -659,11 +660,11 @@ func int dia_hakon_hannaisprisionringafter_condition()
 func void dia_hakon_hannaisprisionringafter_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Hakon_HannaIsPrisionRingAfter_01_01");	//Возьми свое кольцо.
+	AI_Output(other,self, " DIA_Hakon_HannaIsPrisionRingAfter_01_01 " );	// Take your ring.
 	B_GiveInvItems(other,self,itri_hakonmissring,1);
 	Npc_RemoveInvItems(self,itri_hakonmissring,1);
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRingAfter_01_02");	//Спасибо тебе, приятель.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrisionRingAfter_01_03");	//Возьми это золото в качестве компенсации за твои хлопоты. Это будет по-честному!
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRingAfter_01_02 " );	// Thank you, buddy.
+	AI_Output(self,other, " DIA_Hakon_HannaIsPrisionRingAfter_01_03 " );	// Take this gold as compensation for your troubles. It will be fair!
 	B_GiveInvItems(self,other,ItMi_Gold,100);
 };
 
@@ -674,7 +675,7 @@ instance DIA_Hakon_HauntedLH(C_Info)
 	condition = DIA_Hakon_HauntedLH_condition;
 	information = DIA_Hakon_HauntedLH_info;
 	permanent = FALSE;
-	description = "Тебе знакомо имя - Стефан?";
+	description = " Do you know the name Stefan? " ;
 };
 
 func int DIA_Hakon_HauntedLH_condition()
@@ -688,7 +689,7 @@ func int DIA_Hakon_HauntedLH_condition()
 func void DIA_Hakon_HauntedLH_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Hakon_HauntedLH_01_01");	//Тебе знакомо имя - Стефан?
-	AI_Output(self,other,"DIA_Hakon_HauntedLH_01_02");	//Нет, первый раз слышу.
-	B_LogEntry(TOPIC_HauntedLighthouse,"Торговец Хакон ничего не знает о человеке по имени Стефан.");
+	AI_Output(other,self, " DIA_Hakon_HauntedLH_01_01 " );	// Do you know the name - Stefan?
+	AI_Output(self,other, " DIA_Hakon_HauntedLH_01_02 " );	// No, this is the first time I hear about it.
+	B_LogEntry(TOPIC_HauntedLighthouse, " Trader Hakon knows nothing about a man named Stefan. " );
 };
