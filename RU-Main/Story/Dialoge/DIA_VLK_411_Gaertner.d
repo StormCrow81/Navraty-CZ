@@ -1,4 +1,5 @@
 
+
 instance DIA_Gaertner_EXIT(C_Info)
 {
 	npc = VLK_411_Gaertner;
@@ -34,7 +35,7 @@ instance DIA_Gaertner_PICKPOCKET(C_Info)
 
 func int DIA_Gaertner_PICKPOCKET_Condition()
 {
-	return C_Beklauen(40,50);
+	return  C_Robbery ( 40 , 50 );
 };
 
 func void DIA_Gaertner_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Gaertner_PICKPOCKET_Info()
 
 func void DIA_Gaertner_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Gaertner_PICKPOCKET);
 };
 
@@ -63,7 +64,7 @@ instance DIA_Gaertner_Job(C_Info)
 	condition = DIA_Gaertner_Job_Condition;
 	information = DIA_Gaertner_Job_Info;
 	permanent = FALSE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -74,13 +75,13 @@ func int DIA_Gaertner_Job_Condition()
 
 func void DIA_Gaertner_Job_Info()
 {
-	AI_Output(other,self,"DIA_Gaertner_Job_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Gaertner_Job_09_01");	//А ты как думаешь? Я садовник и ухаживаю за этим садом.
-	AI_Output(other,self,"DIA_Gaertner_Job_15_02");	//Ты, похоже, вполне доволен жизнью?
-	AI_Output(self,other,"DIA_Gaertner_Job_09_03");	//Да! И хотелось бы, чтобы все так оставалось подольше.
-	AI_Output(self,other,"DIA_Gaertner_Job_09_04");	//Когда-то меня даже хотели отправить в колонию за то, что я прикончил одного парня.
-	AI_Output(self,other,"DIA_Gaertner_Job_09_05");	//Но Лариусу, главе города, нужен был садовник, и меня оставили здесь.
-	AI_Output(self,other,"DIA_Gaertner_Job_09_06");	//Со временем этот сад стал моим домом! И я вполне доволен этим.
+	AI_Output(other,self, " DIA_Gaertner_Job_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Gaertner_Job_09_01 " );	// What do you think? I am a gardener and take care of this garden.
+	AI_Output(other,self, " DIA_Gaertner_Job_15_02 " );	// Do you seem to be quite satisfied with life?
+	AI_Output(self,other, " DIA_Gaertner_Job_09_03 " );	// Yes! And I would like it to stay that way.
+	AI_Output(self,other, " DIA_Gaertner_Job_09_04 " );	// Once upon a time they even wanted to send me to the colony for killing one guy.
+	AI_Output(self,other, " DIA_Gaertner_Job_09_05 " );	// But Larius, the head of the city, needed a gardener, and they left me here.
+	AI_Output(self,other, " DIA_Gaertner_Job_09_06 " );	// Over time, this garden became my home! And I'm quite happy with it.
 };
 
 instance DIA_Gaertner_Escape(C_Info)
@@ -90,7 +91,7 @@ instance DIA_Gaertner_Escape(C_Info)
 	condition = DIA_Gaertner_Escape_Condition;
 	information = DIA_Gaertner_Escape_Info;
 	permanent = FALSE;
-	description = "Ты не пытался сбежать отсюда?";
+	description = " Have you tried to escape from here? " ;
 };
 
 func int DIA_Gaertner_Escape_Condition()
@@ -103,13 +104,13 @@ func int DIA_Gaertner_Escape_Condition()
 
 func void DIA_Gaertner_Escape_Info()
 {
-	AI_Output(other,self,"DIA_Gaertner_Escape_01_00");	//А ты не пытался сбежать отсюда?
-	AI_Output(self,other,"DIA_Gaertner_Escape_01_01");	//Поначалу я тоже думал об этом! Но потом решил отказаться от этой затеи.
-	AI_Output(self,other,"DIA_Gaertner_Escape_01_02");	//Во-первых, вся стража знает меня в лицо, и я не смогу даже выйти за пределы верхнего квартала.
-	AI_Output(self,other,"DIA_Gaertner_Escape_01_03");	//Во-вторых, учитывая все эти слухи об орках, я предпочитаю держаться рядом с паладинами.
-	AI_Output(self,other,"DIA_Gaertner_Escape_01_04");	//А в-третьих, мне и бежать-то особо некуда!
-	AI_Output(self,other,"DIA_Gaertner_Escape_01_05");	//Поэтому, как ни крути, тут мне будет лучше, нежели с кайлом в руках на рудниках паладинов. 
-	AI_Output(other,self,"DIA_Gaertner_Escape_01_06");	//Я тебя прекрасно понимаю.
+	AI_Output(other,self, " DIA_Gaertner_Escape_01_00 " );	// Have you tried to escape from here?
+	AI_Output(self,other, " DIA_Gaertner_Escape_01_01 " );	// I thought about that too at first! But then he decided to abandon this idea.
+	AI_Output(self,other, " DIA_Gaertner_Escape_01_02 " );	// First of all, all the guards know me personally, and I won't even be able to go beyond the upper quarter.
+	AI_Output(self,other, " DIA_Gaertner_Escape_01_03 " );	// Secondly, given all these rumors about orcs, I prefer to stay close to the paladins.
+	AI_Output(self,other, " DIA_Gaertner_Escape_01_04 " );	// And thirdly, I have nowhere to run!
+	AI_Output(self,other, " DIA_Gaertner_Escape_01_05 " );	// Therefore, whatever one may say, I'll be better off here than with a pick in my hands in the paladin mines.
+	AI_Output(other,self, " DIA_Gaertner_Escape_01_06 " );	// I understand you perfectly.
 };
 
 instance DIA_Gaertner_Plants(C_Info)
@@ -119,7 +120,7 @@ instance DIA_Gaertner_Plants(C_Info)
 	condition = DIA_Gaertner_Plants_Condition;
 	information = DIA_Gaertner_Plants_Info;
 	permanent = FALSE;
-	description = "Ты выращиваешь какие-нибудь травы?";
+	description = " Do you grow any herbs? " ;
 };
 
 func int DIA_Gaertner_Plants_Condition()
@@ -132,11 +133,11 @@ func int DIA_Gaertner_Plants_Condition()
 
 func void DIA_Gaertner_Plants_Info()
 {
-	AI_Output(other,self,"DIA_Gaertner_Plants_15_00");	//Ты выращиваешь какие-нибудь травы?
-	AI_Output(self,other,"DIA_Gaertner_Plants_09_01");	//Да, немного. Я выращиваю огненную траву и огненную крапиву. Также я пытался сажать болотную траву, но она не прижилась здесь.
-	AI_Output(self,other,"DIA_Gaertner_Plants_09_02");	//Я только что собрал выращенное! Так что, если ты хочешь что-то купить...
+	AI_Output(other,self, " DIA_Gaertner_Plants_15_00 " );	// Do you grow any herbs?
+	AI_Output(self,other, " DIA_Gaertner_Plants_09_01 " );	// Yes, a little. I grow fire grass and fire nettles. I also tried to plant marsh grass, but it did not take root here.
+	AI_Output(self,other, " DIA_Gaertner_Plants_09_02 " );	// I just harvested the grown! So if you want to buy something...
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Садовник может продать мне кое-какие растения.");
+	B_LogEntry(TOPIC_CityTrader, "The gardener can sell me some plants. " );
 };
 
 instance DIA_Gaertner_Trade(C_Info)
@@ -146,7 +147,7 @@ instance DIA_Gaertner_Trade(C_Info)
 	condition = DIA_Gaertner_Trade_Condition;
 	information = DIA_Gaertner_Trade_Info;
 	permanent = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 	trade = TRUE;
 };
 
@@ -167,25 +168,25 @@ func void DIA_Gaertner_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Gaertner_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Gaertner_Trade_15_00 " );	// Show me your products.
 	B_GiveTradeInv(self);
 };
 
 
-instance DIA_Gaertner_Krautabak(C_Info)
+instance DIA_Gaertner_Krautabak (C_Info)
 {
 	npc = VLK_411_Gaertner;
 	nr = 5;
 	condition = DIA_Gaertner_Krautabak_Condition;
 	information = DIA_Gaertner_Krautabak_Info;
 	permanent = FALSE;
-	description = "У меня есть травяной табак.";
+	description = " I have herbal tobacco. " ;
 };
 
 
 func int DIA_Gaertner_Krautabak_Condition()
 {
-	if((Npc_HasItems(other,ItMi_SumpfTabak) >= 1) && Wld_IsTime(6,45,21,45))
+	if ((Npc_HasItems(other,ItMi_SumpfTabak) >=  1 ) && Wld_IsTime( 6 , 45 , 21 , 45 ))
 	{
 		return TRUE;
 	};
@@ -193,16 +194,16 @@ func int DIA_Gaertner_Krautabak_Condition()
 
 func void DIA_Gaertner_Krautabak_Info()
 {
-	AI_Output(other,self,"DIA_Gaertner_Krautabak_15_00");	//У меня есть травяной табак. Хочешь затянуться?
-	AI_Output(self,other,"DIA_Gaertner_Krautabak_09_01");	//Даже не знаю... А, ладно, давай. Покурю немного.
+	AI_Output(other,self, " DIA_Gaertner_Krautabak_15_00 " );	// I have herbal tobacco. Do you want to stretch?
+	AI_Output(self,other, " DIA_Gaertner_Krautabak_09_01 " );	// I don't even know... Oh, okay, let's go. I smoke a little.
 	B_GiveInvItems(other,self,ItMi_SumpfTabak,1);
 	Npc_RemoveInvItems(self,ItMi_SumpfTabak,1);
 	CreateInvItems(self,ItMi_Joint,1);
 	B_UseItem(self,ItMi_Joint);
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
-	AI_Output(self,other,"DIA_Gaertner_Krautabak_09_02");	//Хха... кха-кха....
+	AI_Output(self,other, " DIA_Gaertner_Krautabak_09_02 " );	// Hha... kha-kha...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Gaertner_Krautabak_09_03");	//Ядреная штука! Что-то мне расхотелось курить это.
+	AI_Output(self,other, " DIA_Gaertner_Krautabak_09_03 " );	// Vigorous thing! Something made me want to smoke it.
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -214,7 +215,7 @@ instance DIA_Gaertner_Sign(C_Info)
 	condition = DIA_Gaertner_Sign_Condition;
 	information = DIA_Gaertner_Sign_Info;
 	permanent = FALSE;
-	description = "(Показать сигнал воров)";
+	description = " (Show thief alert) " ;
 };
 
 func int DIA_Gaertner_Sign_Condition()
@@ -228,9 +229,9 @@ func int DIA_Gaertner_Sign_Condition()
 func void DIA_Gaertner_Sign_Info()
 {
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Gaertner_Sign_09_00");	//Теперь ты один из нас и я могу подкинуть тебе кое-какую информацию.
-	AI_Output(self,other,"DIA_Gaertner_Sign_09_01");	//В некоторых домах здесь есть секретные панели, которые открываются скрытыми выключателями. 
-	AI_Output(self,other,"DIA_Gaertner_Sign_09_02");	//Люди хранят там самые ценные свои вещи.
+	AI_Output(self,other, " DIA_Gaertner_Sign_09_00 " );	// Now you're one of us and I can give you some information.
+	AI_Output(self,other, " DIA_Gaertner_Sign_09_01 " );	// Some houses here have secret panels that are opened by hidden switches.
+	AI_Output(self,other, " DIA_Gaertner_Sign_09_02 " );	// People keep their most valuable things there.
 	THIEF_REPUTATION = THIEF_REPUTATION + 1;
 };
 
@@ -241,7 +242,7 @@ instance DIA_Gaertner_HelpThings(C_Info)
 	condition = DIA_Gaertner_HelpThings_condition;
 	information = DIA_Gaertner_HelpThings_info;
 	permanent = FALSE;
-	description = "Я могу чем-то помочь тебе?";
+	description = " Is there anything I can help you with? " ;
 };
 
 func int DIA_Gaertner_HelpThings_condition()
@@ -254,18 +255,18 @@ func int DIA_Gaertner_HelpThings_condition()
 
 func void DIA_Gaertner_HelpThings_info()
 {
-	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_00");	//Я могу чем-то помочь тебе?
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_01");	//Конечно, брат. Как ты мог заметить, я целыми днями только и делаю, что торчу тут.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_02");	//Стражники меня даже за ограду ратуши не выпускают.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_03");	//Поэтому моя жизнь лишена даже самых простых удовольствий.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_04");	//Однако если бы ты только смог принести мне несколько бутылок джина и немного болотника...
-	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_05");	//Понимаю. Сколько тебе надо?
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_06");	//(задумчиво) Думаю, трех бутылок и пяти стеблей будет достаточно. Больше мне все равно негде прятать.
-	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_07");	//Хорошо, я достану их для тебя.
+	AI_Output(other,self, " DIA_Gaertner_HelpThings_01_00 " );	// Is there anything I can help you with?
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_01_01 " );	// Of course, brother. As you can see, all I do all day long is hang around here.
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_01_02 " );	// The guards don't even let me out of the town hall fence.
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_01_03 " );	// Therefore, my life is devoid of even the simplest pleasures.
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_01_04 " );	// However, if you could only bring me a few bottles of gin and some bogweed...
+	AI_Output(other,self, " DIA_Gaertner_HelpThings_01_05 " );	// I understand. How much do you need?
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_01_06 " );	// (thoughtfully) I think three bottles and five stems will be enough. I don't have anywhere else to hide.
+	AI_Output(other,self, " DIA_Gaertner_HelpThings_01_07 " );	// Okay, I'll get them for you.
 	MIS_GaertnerHive = LOG_Running;
 	Log_CreateTopic(TOPIC_GaertnerHive,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GaertnerHive,LOG_Running);
-	B_LogEntry(TOPIC_GaertnerHive,"Садовник попросил достать ему три бутылки джина и пять косяков болотника.");
+	B_LogEntry(TOPIC_GaertnerHive, " The gardener asked for three bottles of gin and five joints of bogweed. " );
 };
 
 instance DIA_Gaertner_HelpThings_Done(C_Info)
@@ -275,7 +276,7 @@ instance DIA_Gaertner_HelpThings_Done(C_Info)
 	condition = DIA_Gaertner_HelpThings_Done_condition;
 	information = DIA_Gaertner_HelpThings_Done_info;
 	permanent = FALSE;
-	description = "Я принес то, что ты просил.";
+	description = " I brought what you asked for. " ;
 };
 
 func int DIA_Gaertner_HelpThings_Done_condition()
@@ -289,20 +290,20 @@ func int DIA_Gaertner_HelpThings_Done_condition()
 func void DIA_Gaertner_HelpThings_Done_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Gaertner_HelpThings_Done_01_00");	//Я принес то, что ты просил.
+	AI_Output(other,self, " DIA_Gaertner_HelpThings_Done_01_00 " );	// I brought what you asked for.
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(hero,ItFo_Booze,3);
 	Npc_RemoveInvItems(hero,ItMi_Joint,5);
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_01");	//(довольно) Наконец-то. Что ж, теперь я у тебя в долгу, приятель.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_02");	//Чем же мне тебя отблагодарить...
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_03");	//Слушай... как-то раз, подстригая траву возле входа в ратушу, я обнаружил этот ключ.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_04");	//Похоже, его выронил один из паладинов.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_05");	//По правде говоря, я не знаю, какой именно сундук он открывает. 
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_06");	//Но наверняка там будет чем поживиться.
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_Done_01_01 " );	// (pretty) Finally. Well, now I'm in your debt, mate.
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_Done_01_02 " );	// How can I thank you...
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_Done_01_03 " );	// Listen... one day, while cutting the grass near the entrance to the town hall, I found this key.
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_Done_01_04 " );	// Looks like it was dropped by one of the paladins.
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_Done_01_05 " );	// To be honest, I don't know which chest it opens.
+	AI_Output(self,other, " DIA_Gaertner_HelpThings_Done_01_06 " );	// But for sure there will be something to profit from.
 	B_GiveInvItems(self,other,ItKe_PaladinTruhe,1);
 	MIS_GaertnerHive = LOG_Success;
 	Log_SetTopicStatus(TOPIC_GaertnerHive,LOG_Success);
-	B_LogEntry(TOPIC_GaertnerHive,"Я принес садовнику джин и болотник. За это он мне дал какой-то странный ключ. По всей видимости, от сундука...");
+	B_LogEntry(TOPIC_GaertnerHive, " I brought a gin and a bogweed to the gardener. For that, he gave me some strange key. Apparently, from the chest... " );
 };
 
 instance DIA_GAERTNER_ENTERHALL(C_Info)
@@ -312,12 +313,12 @@ instance DIA_GAERTNER_ENTERHALL(C_Info)
 	condition = dia_gaertner_enterhall_condition;
 	information = dia_gaertner_enterhall_info;
 	permanent = FALSE;
-	description = "Ты знаешь, как попасть в ратушу?";
+	description = " Do you know how to get to the town hall? " ;
 };
 
 func int dia_gaertner_enterhall_condition()
 {
-	if((MIS_ORUNPACKET == LOG_Running) && Npc_KnowsInfo(hero,DIA_Gaertner_Sign) && (MeetLarius == FALSE))
+	if (( MY_ORUNPACKET  == LOG_Running ) && Npc_KnowsInfo ( hero , DIA_Gaertner_Sign ) && ( MeetLarius ==  FALSE )) .
 	{
 		return TRUE;
 	};
@@ -325,18 +326,18 @@ func int dia_gaertner_enterhall_condition()
 
 func void dia_gaertner_enterhall_info()
 {
-	AI_Output(other,self,"DIA_Gaertner_EnterHall_01_00");	//Ты, случайно, не знаешь, как можно попасть в ратушу?
-	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_01");	//А зачем тебе туда нужно попадать?
-	AI_Output(other,self,"DIA_Gaertner_EnterHall_01_02");	//Мне надо срочно встретиться с Лариусом - городской главой Хориниса. У меня к нему есть небольшое дельце.
-	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_03");	//Ха! Забудь об этом, парень. Паладины не пустят тебя внутрь в любом случае.
-	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_04");	//Если, конечно, ты не состоишь на службе у короля.
-	AI_Output(other,self,"DIA_Gaertner_EnterHall_01_05");	//Ну, может, есть какой-нибудь другой способ встретиться с ним?
-	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_06");	//Ну, один способ, конечно, есть. Точнее, это даже не способ, я бы сказал.
-	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_07");	//С недавнего времени я стал замечать, что Лариус иногда стал покидать свою резиденцию.
-	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_08");	//Выходит, так сказать, прогуляться и подышать свежим воздухом. Смекаешь?
-	AI_Output(other,self,"DIA_Gaertner_EnterHall_01_09");	//А когда приблизительно он это делает?
-	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_10");	//Точно сказать не могу, но, кажется, около полудня.
-	AI_Output(other,self,"DIA_Gaertner_EnterHall_01_11");	//Спасибо, я все понял.
-	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_12");	//Да не за что. (смеется)
-	B_LogEntry(TOPIC_ORUNPACKET,"Садовник сказал мне, что Лариус иногда выходит подышать свежим воздухом. Обычно где-то около полудня.");
+	AI_Output(other,self, " DIA_Gaertner_EnterHall_01_00 " );	// Do you happen to know how to get to the town hall?
+	AI_Output(self,other, " DIA_Gaertner_EnterHall_01_01 " );	// Why do you need to go there?
+	AI_Output(other,self, " DIA_Gaertner_EnterHall_01_02 " );	// I need to urgently meet with Larius, the mayor of Khorinis. I have a little thing for him.
+	AI_Output(self,other, " DIA_Gaertner_EnterHall_01_03 " );	// Ha! Forget it man. The paladins won't let you in anyway.
+	AI_Output(self,other, " DIA_Gaertner_EnterHall_01_04 " );	// Unless, of course, you are in the service of the king.
+	AI_Output(other,self, " DIA_Gaertner_EnterHall_01_05 " );	// Well, is there any other way to meet him?
+	AI_Output(self,other, " DIA_Gaertner_EnterHall_01_06 " );	// Well, there is one way, of course. More precisely, this is not even a way, I would say.
+	AI_Output(self,other, " DIA_Gaertner_EnterHall_01_07 " );	// Recently, I began to notice that Larius sometimes began to leave his residence.
+	AI_Output(self,other, " DIA_Gaertner_EnterHall_01_08 " );	// Goes out, so to speak, to take a walk and get some fresh air. Are you savvy?
+	AI_Output(other,self, " DIA_Gaertner_EnterHall_01_09 " );	// Approximately when does he do this?
+	AI_Output(self,other, " DIA_Gaertner_EnterHall_01_10 " );	// I can't say exactly, but I think it's around noon.
+	AI_Output(other,self, " DIA_Gaertner_EnterHall_01_11 " );	// Thanks, I got it.
+	AI_Output(self,other, " DIA_Gaertner_EnterHall_01_12 " );	// No reason. (laughs)
+	B_LogEntry( TOPIC_ORUNPACKET , "The gardener told me that Larius sometimes goes out for some fresh air. Usually around noon. " );
 };
