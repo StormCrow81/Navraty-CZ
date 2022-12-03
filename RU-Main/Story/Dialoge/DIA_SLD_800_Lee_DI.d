@@ -1,4 +1,5 @@
 
+
 instance DIA_Lee_DI_EXIT(C_Info)
 {
 	npc = SLD_800_Lee_DI;
@@ -21,13 +22,13 @@ func void DIA_Lee_DI_EXIT_Info()
 };
 
 
-instance DIA_Lee_DI_Hallo(C_Info)
+instance DIA_Lee_DI_Hallo (C_Info)
 {
 	npc = SLD_800_Lee_DI;
 	nr = 2;
 	condition = DIA_Lee_DI_Hallo_Condition;
-	information = DIA_Lee_DI_Hallo_Info;
-	description = "Что ты будешь делать?";
+	information = DIA_Lee_DI_Hello_Info;
+	description = " What are you going to do? " ;
 };
 
 
@@ -41,25 +42,25 @@ func int DIA_Lee_DI_Hallo_Condition()
 
 func void DIA_Lee_DI_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_Lee_DI_Hallo_15_00");	//Что ты будешь делать?
-	AI_Output(self,other,"DIA_Lee_DI_Hallo_04_01");	//Кто-то должен охранять корабль. Я останусь здесь и позабочусь, чтобы он был на месте, когда ты вернешься.
+	AI_Output(other,self, " DIA_Lee_DI_Hallo_15_00 " );	// What will you do?
+	AI_Output(self,other, " DIA_Lee_DI_Hallo_04_01 " );	// Someone needs to guard the ship. I'll stay here and make sure he's there when you get back.
 };
 
 
-instance DIA_Lee_DI_PERM6(C_Info)
+instance DIA_Lee_DI_PERM6 (C_Info)
 {
 	npc = SLD_800_Lee_DI;
 	nr = 2;
 	condition = DIA_Lee_DI_PERM6_Condition;
 	information = DIA_Lee_DI_PERM6_Info;
 	permanent = TRUE;
-	description = "Как мой корабль?";
+	description = " How is my ship? " ;
 };
 
 
 func int DIA_Lee_DI_PERM6_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Lee_DI_Hallo) && (UndeadDragonIsDead == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Lee_DI_Hello ) && ( UndeadDragonIsDead ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -67,14 +68,14 @@ func int DIA_Lee_DI_PERM6_Condition()
 
 func void DIA_Lee_DI_PERM6_Info()
 {
-	AI_Output(other,self,"DIA_Lee_DI_PERM6_15_00");	//Как мой корабль?
+	AI_Output(other,self, " DIA_Lee_DI_PERM6_15_00 " );	// How is my ship?
 	if(ORkSturmDI == FALSE)
 	{
-		AI_Output(self,other,"DIA_Lee_DI_PERM6_04_01");	//Не волнуйся. Я держу все под контролем.
+		AI_Output(self,other, " DIA_Lee_DI_PERM6_04_01 " );	// Don't worry. I have everything under control.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lee_DI_PERM6_04_02");	//Все отлично. Эти жалкие орки могут возвращаться, когда хотят. Я опять устрою им взбучку.
+		AI_Output(self,other, " DIA_Lee_DI_PERM6_04_02 " );	// Everything is fine. These pathetic orcs can come back whenever they want. I'll give them a beating again.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -87,7 +88,7 @@ instance DIA_Lee_DI_Teach(C_Info)
 	condition = DIA_Lee_DI_Teach_Condition;
 	information = DIA_Lee_DI_Teach_Info;
 	permanent = TRUE;
-	description = "Я хочу потренироваться.";
+	description = " I want to work out. " ;
 };
 
 
@@ -101,8 +102,8 @@ func int DIA_Lee_DI_Teach_Condition()
 
 func void DIA_Lee_DI_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Lee_DI_Teach_15_00");	//Я хочу потренироваться.
-	AI_Output(self,other,"DIA_Lee_DI_Teach_04_01");	//Что именно ты хочешь улучшить?
+	AI_Output(other,self, " DIA_Lee_DI_Teach_15_00 " );	// I want to practice.
+	AI_Output(self,other, " DIA_Lee_DI_Teach_04_01 " );	// What exactly do you want to improve?
 	Info_ClearChoices(DIA_Lee_DI_Teach);
 	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
 	Info_AddChoice(DIA_Lee_DI_Teach,b_buildlearnstringforfight(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),DIA_Lee_DI_Teach_2H_1);
@@ -115,7 +116,7 @@ func void DIA_Lee_DI_Teach_1H_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,100))
 	{
-		AI_Output(self,other,"DIA_Lee_DI_Teach_1H_1_04_00");	//Твоя защита ужасна, но мы что-нибудь сделаем с этим.
+		AI_Output(self,other, " DIA_Lee_DI_Teach_1H_1_04_00 " );	// Your defense is terrible, but we'll do something about it.
 	};
 	Info_ClearChoices(DIA_Lee_DI_Teach);
 	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
@@ -129,7 +130,7 @@ func void DIA_Lee_DI_Teach_1H_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,100))
 	{
-		AI_Output(self,other,"DIA_Lee_DI_Teach_1H_5_04_00");	//Твои кисти слишком напряжены. Ты должен держать оружие свободнее.
+		AI_Output(self,other, " DIA_Lee_DI_Teach_1H_5_04_00 " );	// Your brushes are too tight. You should keep your weapons free.
 	};
 	Info_ClearChoices(DIA_Lee_DI_Teach);
 	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
@@ -143,7 +144,7 @@ func void DIA_Lee_DI_Teach_2H_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,100))
 	{
-		AI_Output(self,other,"DIA_DIA_Lee_DI_Teach_2H_1_04_00");	//Всегда помни: боковой удар должен идти от бедра, а не от запястья.
+		AI_Output(self,other, " DIA_DIA_Lee_DI_Teach_2H_1_04_00 " );	// Always remember: the side kick should come from the hip, not the wrist.
 	};
 	Info_ClearChoices(DIA_Lee_DI_Teach);
 	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
@@ -157,7 +158,7 @@ func void DIA_Lee_DI_Teach_2H_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,100))
 	{
-		AI_Output(self,other,"DIA_Lee_DI_Teach_2H_5_04_00");	//Сильнейший удар бесполезен, если он приходится в никуда. Так что старайся точно рассчитывать удары.
+		AI_Output(self,other, " DIA_Lee_DI_Teach_2H_5_04_00 " );	// Strongest hit is useless if it goes nowhere. So try to accurately count the blows.
 	};
 	Info_ClearChoices(DIA_Lee_DI_Teach);
 	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
@@ -180,7 +181,7 @@ instance DIA_Lee_DI_UndeadDragonDead(C_Info)
 	condition = DIA_Lee_DI_UndeadDragonDead_Condition;
 	information = DIA_Lee_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
-	description = "Мы можем отчаливать.";
+	description = " We can set sail. " ;
 };
 
 
@@ -197,26 +198,26 @@ var int DIA_Lee_DI_UndeadDragonDead_OneTime;
 
 func void DIA_Lee_DI_UndeadDragonDead_Info()
 {
-	AI_Output(other,self,"DIA_Lee_DI_UndeadDragonDead_15_00");	//Мы можем отчаливать. Враг мертв.
-	AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_01");	//Очень хорошо. Тогда скажи капитану, чтобы поднимал якорь.
+	AI_Output(other,self, " DIA_Lee_DI_UndeadDragonDead_15_00 " );	// We can set sail. The enemy is dead.
+	AI_Output(self,other, " DIA_Lee_DI_UndeadDragonDead_04_01 " );	// Very good. Then tell the captain to raise anchor.
 	if((DIA_Lee_DI_UndeadDragonDead_OneTime == FALSE) && (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_02");	//Ты ведь доставишь меня на материк, да?
-		AI_Output(other,self,"DIA_Lee_DI_UndeadDragonDead_15_03");	//Да. Хоринис проживет и без тебя.
-		AI_Output(self,other,"DIA_Lee_Add_04_26");	//Значит, я наконец, смогу нанести так долго откладываемый визит вежливости королю.
-		AI_Output(self,other,"DIA_Lee_Add_04_27");	//Я столько ждал этого...
-		AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_05");	//Как ты думаешь? Разве терпение не должно быть вознаграждено?
-		AI_Output(other,self,"DIA_Lee_DI_UndeadDragonDead_15_06");	//Терпение и убийственные доводы.
-		AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_07");	//(смеется) Да. Без хорошего отряда ничего не получится. Для меня было большой честью биться с тобой бок о бок.
+		AI_Output(self,other, " DIA_Lee_DI_UndeadDragonDead_04_02 " );	// You'll get me to the mainland, right?
+		AI_Output(other,self, " DIA_Lee_DI_UndeadDragonDead_15_03 " );	// Yes. Khorinis will live without you.
+		AI_Output(self,other, " DIA_Lee_Add_04_26 " );	// So I can finally pay the long-delayed courtesy visit to the king.
+		AI_Output(self,other, " DIA_Lee_Add_04_27 " );	// I've been waiting for this for so long...
+		AI_Output(self,other, " DIA_Lee_DI_UndeadDragonDead_04_05 " );	// What do you think? Shouldn't patience be rewarded?
+		AI_Output(other,self, " DIA_Lee_DI_UndeadDragonDead_15_06 " );	// Patience and murderous arguments.
+		AI_Output(self,other, " DIA_Lee_DI_UndeadDragonDead_04_07 " );	// (laughs) Yes. Nothing will work without a good team. It was a great honor for me to fight side by side with you.
 		DIA_Lee_DI_UndeadDragonDead_OneTime = TRUE;
 	};
-	AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_08");	//Может быть, когда-нибудь наши пути пересекутся вновь...
+	AI_Output(self,other, " DIA_Lee_DI_UndeadDragonDead_04_08 " );	// Maybe someday our paths will cross again...
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
 
 
-instance DIA_Lee_DI_PICKPOCKET(C_Info)
+instance DIA_Lee_DI_PICKPOCKET (C_Info)
 {
 	npc = SLD_800_Lee_DI;
 	nr = 900;
@@ -229,19 +230,19 @@ instance DIA_Lee_DI_PICKPOCKET(C_Info)
 
 func int DIA_Lee_DI_PICKPOCKET_Condition()
 {
-	return C_Beklauen(110,570);
+	return  C_Robbery ( 110 , 570 );
 };
 
 func void DIA_Lee_DI_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Lee_DI_PICKPOCKET);
 	Info_AddChoice(DIA_Lee_DI_PICKPOCKET,Dialog_Back,DIA_Lee_DI_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Lee_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Lee_DI_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Lee_DI_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Lee_DI_PICKPOCKET_DoIt);
 };
 
 func void DIA_Lee_DI_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Lee_DI_PICKPOCKET);
 };
 
