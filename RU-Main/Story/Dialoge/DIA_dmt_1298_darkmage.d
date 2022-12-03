@@ -1,4 +1,5 @@
 
+
 instance DIA_DMT1298_HELLO(C_Info)
 {
 	npc = dmt_1298_darkmage;
@@ -16,13 +17,13 @@ func int dia_dmt1298_hello_condition()
 func void dia_dmt1298_hello_info()
 {
 	AI_UnequipWeapons(self);
-	AI_Output(self,other,"DIA_DMT1298_Hello_01_00");	//Так-так. Кто это тут?
-	AI_Output(self,other,"DIA_DMT1298_Hello_01_02");	//Всего лишь жалкое порождение Инноса. Мой Хозяин следит за тобой каждый день.
-	AI_Output(other,self,"DIA_DMT1298_Hello_01_03");	//Что тебе от меня нужно?
-	AI_Output(self,other,"DIA_DMT1298_Hello_01_04");	//Жалкий червяк! Будто ты не понимаешь, с кем имеешь дело.
+	AI_Output(self,other, " DIA_DMT1298_Hello_01_00 " );	// Well, well. Who is it here?
+	AI_Output(self,other, " DIA_DMT1298_Hello_01_02 " );	// Just a pitiful offspring of Innos. My Master watches over you every day.
+	AI_Output(other,self, " DIA_DMT1298_Hello_01_03 " );	// What do you want from me?
+	AI_Output(self,other, " DIA_DMT1298_Hello_01_04 " );	// Wretched worm! It's like you don't know who you're dealing with.
 	MeetDarkTempleMage = TRUE;
 	Info_ClearChoices(dia_dmt1298_hello);
-	Info_AddChoice(dia_dmt1298_hello,"Еще один вопросик.",dia_dmt1298_hello_one);
+	Info_AddChoice(dia_dmt1298_hello, " Another question. " ,dia_dmt1298_hello_one);
 };
 
 func void dia_dmt1298_hello_battle()
@@ -32,17 +33,17 @@ func void dia_dmt1298_hello_battle()
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
 
-	AI_Output(other,self,"DIA_DMT1298_Hello_Battle_01_90");	//Ну, укуси меня!
-	AI_Output(self,other,"DIA_DMT1298_Hello_Battle_01_00");	//(злобно) Я легко разделаюсь с тобой, ничтожество!
-	AI_Output(self,other,"DIA_DMT1298_Hello_Battle_01_01");	//А после твоей смерти я воскрешу твое тело и присоединю его к своей армии зла.
+	AI_Output(other,self, " DIA_DMT1298_Hello_Battle_01_90 " );	// Well, bite me!
+	AI_Output(self,other, " DIA_DMT1298_Hello_Battle_01_00 " );	// (angrily) I'll take care of you, you little bastard!
+	AI_Output(self,other, " DIA_DMT1298_Hello_Battle_01_01 " );	// And after your death, I will resurrect your body and add it to my army of evil.
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_DMT1298_Hello_Battle_01_02");	//Из тебя получится отличный маг-скелет!
+		AI_Output(self,other, " DIA_DMT1298_Hello_Battle_01_02 " );	// You'll make a great Skeleton Mage!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_DMT1298_Hello_Battle_01_03");	//Из тебя получится отличный скелет-воин!
+		AI_Output(self,other, " DIA_DMT1298_Hello_Battle_01_03 " );	// You'll make a great skeleton warrior!
 	};
 
 	if(SBMODE == 1)
@@ -71,24 +72,24 @@ func void dia_dmt1298_hello_battle()
 	};
 
 	Info_ClearChoices(dia_dmt1298_hello);
-	Info_AddChoice(dia_dmt1298_hello,"...(пора его прикончить!)",dia_dmt1298_hello_End);
+	Info_AddChoice(dia_dmt1298_hello, " ...(time to kill him!) " ,dia_dmt1298_hello_End);
 };
 
 func void dia_dmt1298_hello_End()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	Snd_Play("MFX_FEAR_CAST");
 };
 
 func void dia_dmt1298_hello_one()
 {
-	AI_Output(other,self,"DIA_DMT1298_Hello_One_01_00");	//Подожди, у меня есть еще вопрос.
-	AI_Output(other,self,"DIA_DMT1298_Hello_One_01_01");	//Скажи, ты случайно не находил тут один меч - такой большой с синим мерцающим камнем в основании клинка?
-	AI_Output(self,other,"DIA_DMT1298_Hello_One_01_03");	//(задумчиво) Если ты задаешь этот вопрос - значит, именно от твоей руки пал Спящий.
-	AI_Output(self,other,"DIA_DMT1298_Hello_One_01_04");	//Мой хозяин предупреждал меня о нашей возможной встрече.
+	AI_Output(other,self, " DIA_DMT1298_Hello_One_01_00 " );	// Wait, I have another question.
+	AI_Output(other,self, " DIA_DMT1298_Hello_One_01_01 " );	// Tell me, did you happen to find one sword here - such a big one with a blue shimmering stone at the base of the blade?
+	AI_Output(self,other, " DIA_DMT1298_Hello_One_01_03 " );	// (thoughtfully) If you ask this question, it means that it was from your hand that the Sleeper fell.
+	AI_Output(self,other, " DIA_DMT1298_Hello_One_01_04 " );	// My master warned me about our possible meeting.
 	Info_ClearChoices(dia_dmt1298_hello);
-	Info_AddChoice(dia_dmt1298_hello,"Боюсь, для тебя эта встреча закончится так же плохо, как и для Спящего...",dia_dmt1298_hello_video);
+	Info_AddChoice(dia_dmt1298_hello, " I'm afraid this meeting will end as badly for you as it did for the Sleeper... " ,dia_dmt1298_hello_video);
 };
 
 func void dia_dmt1298_hello_video()
@@ -96,35 +97,35 @@ func void dia_dmt1298_hello_video()
 	PlayVideo("RET2_Sleeper.bik");
 	AI_EquipBestMeleeWeapon(self);
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_DMT1298_Hello_Video_01_00");	//Ты имеешь в виду это оружие... Уризель отличный клинок, оружие, достойное самого Белиара! Этот меч - одна из тех причин, по которой мой хозяин велел мне появиться тут.
+	AI_Output(self,other, " DIA_DMT1298_Hello_Video_01_00 " );	// You mean this weapon... Urisel is an excellent blade, a weapon worthy of Beliar himself! This sword is one of the reasons my master ordered me to appear here.
 	AI_RemoveWeapon(self);
 	AI_UnequipWeapons(self);
-	AI_Output(self,other,"DIA_DMT1298_Hello_Video_01_01");	//И, естественно, хозяин также велел мне хранить этот меч - как я хранил бы его священный покой!
-	AI_Output(self,other,"DIA_DMT1298_Hello_Video_01_02");	//И будь уверен - он в надежных руках, и такому жалкому псу, как ты, никогда его не заполучить...(смеется)
+	AI_Output(self,other, " DIA_DMT1298_Hello_Video_01_01 " );	// And, of course, the owner also told me to keep this sword - as I would keep his sacred peace!
+	AI_Output(self,other, " DIA_DMT1298_Hello_Video_01_02 " );	// And be sure - he's in safe hands, and a pathetic dog like you will never get him... (laughs)
 	Info_ClearChoices(dia_dmt1298_hello);
-	Info_AddChoice(dia_dmt1298_hello,"Что же на самом деле заставило тебя появится здесь?",dia_dmt1298_hello_sleeper);
+	Info_AddChoice(dia_dmt1298_hello, " What really made you show up here? " ,dia_dmt1298_hello_sleeper);
 };
 
 func void dia_dmt1298_hello_sleeper()
 {
-	AI_Output(other,self,"DIA_DMT1298_Hello_sleeper_01_00");	//Что же на самом деле заставило тебя появится здесь?
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_01");	//А ты даже не догадываешься, да? (насмешливо) Глупец!
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_02");	//Ведь именно ты тогда помешал явиться этому миру одному из самых могущественных демонов мироздания!
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_03");	//Но благодаря моим усилиям, он в скором времени вновь вернется в своды этого Храма.
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_04");	//И тогда вы все еще пожалеете, что вообще родились на свет!
-	AI_Output(other,self,"DIA_DMT1298_Hello_sleeper_01_05");	//Ты что, снова вызвал Спящего?!
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_06");	//Наконец-то до тебя дошло это, болван...(насмешливо)
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_07");	//Я уже свершил ритуал призыва, и теперь мне осталось только дождаться его появления!
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_08");	//А пока что я разделаюсь с тобой, червь! Дабы ты больше не путался под ногами моего повелителя.
+	AI_Output(other,self, " DIA_DMT1298_Hello_sleeper_01_00 " );	// What actually made you show up here?
+	AI_Output(self,other, " DIA_DMT1298_Hello_sleeper_01_01 " );	// You don't even know, do you? (mockingly) Stupid!
+	AI_Output(self,other, " DIA_DMT1298_Hello_sleeper_01_02 " );	// After all, it was you then who prevented one of the most powerful demons of the universe from appearing in this world!
+	AI_Output(self,other, " DIA_DMT1298_Hello_sleeper_01_03 " );	// But thanks to my efforts, he will soon return to the vaults of this Temple.
+	AI_Output(self,other, " DIA_DMT1298_Hello_sleeper_01_04 " );	// And then you'll still wish you were even born!
+	AI_Output(other,self, " DIA_DMT1298_Hello_sleeper_01_05 " );	// Have you summoned the Sleeper again?!
+	AI_Output(self,other, " DIA_DMT1298_Hello_sleeper_01_06 " );	// You finally got it, you idiot... (mockingly)
+	AI_Output(self,other, " DIA_DMT1298_Hello_sleeper_01_07 " );	// I've already performed the summoning ritual, and now all I have to do is wait for him to appear!
+	AI_Output(self,other, " DIA_DMT1298_Hello_sleeper_01_08 " );	// In the meantime, I'll deal with you, worm! So that you no longer get under the feet of my master.
 	MIS_SleeperBack = LOG_Running;
 	Log_CreateTopic(TOPIC_SleeperBack,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SleeperBack,LOG_Running);
-	B_LogEntry(TOPIC_SleeperBack,"Этот проклятый некромант сказал, что вновь призвал Спящего в этот мир! Возможно ли такое? Поживем - увидим...");
+	B_LogEntry(TOPIC_SleeperBack, " That damned necromancer said he's summoned the Sleeper back to this world! Is that possible? Let's wait and see... " );
 	Info_ClearChoices(dia_dmt1298_hello);
-	Info_AddChoice(dia_dmt1298_hello,"Ну, укуси меня!",dia_dmt1298_hello_battle);
+	Info_AddChoice(dia_dmt1298_hello, " Come on, bite me! " ,dia_dmt1298_hello_battle);
 };
 
-//-------------------Итузельд---------------------------------------------
+// ----------------------------------------- -----------------
 
 instance DMT_12987_Ituseld_EXIT(C_Info)
 {
@@ -162,12 +163,12 @@ func int DMT_12987_Ituseld_HELLO_condition()
 
 func void DMT_12987_Ituseld_HELLO_info()
 {
-	AI_Output(self,other,"DMT_12987_Ituseld_HELLO_01_00");	//Ты кто такой?! И что делаешь в моей башне?
-	AI_Output(other,self,"DMT_12987_Ituseld_HELLO_01_01");	//Я тот, кто пришел снести тебе голову за убийство паладина Лотара.
-	AI_Output(self,other,"DMT_12987_Ituseld_HELLO_01_02");	//Ааа...(скучающе) Очередной фанатик, возомнивший себя героем.
-	AI_Output(self,other,"DMT_12987_Ituseld_HELLO_01_03");	//Что же, тогда тебя постигнет та же участь, что и того глупого паладина.
-	AI_Output(self,other,"DMT_12987_Ituseld_HELLO_01_04");	//Я сокрушу тебя одним ударом, червь!
+	AI_Output(self,other, " DMT_12987_Ituseld_HELLO_01_00 " );	// Who are you?! And what are you doing in my tower?
+	AI_Output(other,self, " DMT_12987_Ituseld_HELLO_01_01 " );	// I'm the one who came to cut your head off for killing the paladin Lothar.
+	AI_Output(self,other, " DMT_12987_Ituseld_HELLO_01_02 " );	// Ahh...(bored) Another fanatic who thinks he's a hero.
+	AI_Output(self,other, " DMT_12987_Ituseld_HELLO_01_03 " );	// Well, then you will suffer the same fate as that stupid paladin.
+	AI_Output(self,other, " DMT_12987_Ituseld_HELLO_01_04 " );	// I'll crush you with one blow, worm!
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	Snd_Play("MFX_FEAR_CAST");
 };
