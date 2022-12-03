@@ -1,4 +1,5 @@
 
+
 instance DIA_ELIGOR_DEMON_EXIT(C_Info)
 {
 	npc = eligor_demon;
@@ -43,25 +44,25 @@ func int dia_eligor_demon_hello_condition()
 func void dia_eligor_demon_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_00");	//Ни один демон больше не придет на твой зов, человек. Руна лишилась своей силы.
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_01");	//Ты сам все прекрасно понимаешь...(рычит)
-	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_02");	//Так значит, ты и есть великий Элигор, повелитель Легиона демонов Лэнга. А ты производишь впечатление!
-	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_03");	//Позволь задать тебе вопрос - зачем ты сам явился ко мне?
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_04");	//Я явился на твой зов, дабы предложить тебе одну вещь, которая, возможно, заинтересует тебя, человек.
-	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_05");	//Что именно ты хочешь мне предложить?
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_06");	//Ты наверняка уже успел убедиться в могуществе Легиона и в том, что демоны Лэнга не знают себе равных по силе и мощи!
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_07");	//Ты сможешь и дальше пользоваться услугами демонов моего легиона. Но при одном условии...
-	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_08");	//Что это за условие?
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_09");	//Каждый раз, когда ты захочешь вызвать одного из демонов, тебе придется пожертвовать небольшим количеством своей жизненной силы.
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_10");	//Согласись, не очень большая плата по сравнению с тем могуществом, что тебе будет даровано!
-	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_11");	//Не слишком ли высокая цена за твои услуги?!
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_12");	//Мое дело только предложить. Решение же вправе принять ты сам.
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_13");	//Подумай, после этого ты сможешь пользоваться услугами Легиона столько раз, сколько этого сам захочешь.
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_14");	//И запомни: я предагаю это лишь один раз. Поэтому хорошенько подумай, прежде чем дать свой ответ.
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_15");	//Итак, твой выбор, человек?
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_00 " );	// No more demons will come to your call, human. The rune has lost its power.
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_01 " );	// You yourself understand everything perfectly ... (growls)
+	AI_Output(other,self, " DIA_Eligor_Demon_Hello_01_02 " );	// So you are the great Eligor, master of Lang's Demon Legion. And you make an impression!
+	AI_Output(other,self, " DIA_Eligor_Demon_Hello_01_03 " );	// Let me ask you a question - why did you come to me yourself?
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_04 " );	// I have come to your call to offer you one thing that might interest you, human.
+	AI_Output(other,self, " DIA_Eligor_Demon_Hello_01_05 " );	// What exactly do you want me to offer?
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_06 " );	// You must have already convinced yourself of the power of the Legion and that the demons of Lang are unmatched in strength and power!
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_07 " );	// You can continue to use the services of the demons of my legion. But on one condition...
+	AI_Output(other,self, " DIA_Eligor_Demon_Hello_01_08 " );	// What is this condition?
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_09 " );	// Every time you want to summon one of the demons, you'll have to sacrifice a small amount of your life force.
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_10 " );	// Agree, not a very big price compared to the power that you will be bestowed!
+	AI_Output(other,self, " DIA_Eligor_Demon_Hello_01_11 " );	// Isn't the price too high for your services?!
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_12 " );	// My business is only to suggest. The decision is yours to make.
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_13 " );	// Think, after that you will be able to use the services of the Legion as many times as you want.
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_14 " );	// And remember: I only betray this once. So think carefully before giving your answer.
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_15 " );	// So, what's your choice, human?
 	Info_ClearChoices(dia_eligor_demon_hello);
-	Info_AddChoice(dia_eligor_demon_hello,"Считай, что мы договорились.",dia_eligor_demon_hello_ok);
-	Info_AddChoice(dia_eligor_demon_hello,"Слишком высокая плата.",dia_eligor_demon_hello_no);
+	Info_AddChoice(dia_eligor_demon_hello, " Consider that we have agreed. " ,dia_eligor_demon_hello_ok);
+	Info_AddChoice(dia_eligor_demon_hello, " The fee is too high. " ,dia_eligor_demon_hello_no);
 };
 
 func void dia_eligor_demon_hello_ok()
@@ -69,8 +70,8 @@ func void dia_eligor_demon_hello_ok()
 	Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Snd_Play("DEM_WARN");
-	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_16");	//Считай, что мы договорились.
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_17");	//На другое я и не рассчитывал. Теперь демоны Лэнга в полном твоем распоряжении.
+	AI_Output(other,self, " DIA_Eligor_Demon_Hello_01_16 " );	// Consider that we have agreed.
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_17 " );	// I didn't expect anything else. Now Lang's demons are at your complete disposal.
 	AI_StopProcessInfos(self);
 	ELIGOR_FOREVER = TRUE;
 	ELIGOR_TALK = TRUE;
@@ -90,14 +91,14 @@ func void dia_eligor_demon_hello_ok()
 func void dia_eligor_demon_hello_no()
 {
 	Snd_Play("MYSTERY_04");
-	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_18");	//Слишком высокая плата, Элигор.
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_19");	//Как скажешь, человек. Наша беседа окончена! Прощай.
+	AI_Output(other,self, " DIA_Eligor_Demon_Hello_01_18 " );	// Too high a fee, Eligor.
+	AI_Output(self,other, " DIA_Eligor_Demon_Hello_01_19 " );	// As you say, man. Our conversation is over! Goodbye.
 	AI_StopProcessInfos(self);
 	ELIGOR_TALK = TRUE;
 	self.start_aistate = zs_mm_rtn_demonrest;
 };
 
-//---------------------------------------------Элигор 7 глава---------------------------------------------------------
+// --------------------------------------------- Eligor 7 chapters ----------------------------------------------------- -------
 
 instance DIA_ELIGOR_DEMON_OW_EXIT(C_Info)
 {
@@ -136,55 +137,55 @@ func int dia_eligor_demon_ow_hello_condition()
 func void dia_eligor_demon_ow_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_01");	//КТО ВОЗЗВАЛ КО МНЕ? КТО ПОСМЕЛ ПОТРЕВОЖИТЬ МОЙ ПОКОЙ?!
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_02");	//Это я тебя вызвал.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_03");	//Твое лицо кажется мне знакомым, смертный.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_04");	//Ну конечно, теперь я тебя вспомнил.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_05");	//Ты тот, кто сразил избранника Белиара в Чертогах Ирдората! 
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_06");	//По моему мнению, этот поступок действительно достоин уважения.
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_07");	//Я отправил на тот свет множество приспешников Белиара.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_08");	//Однако не каждый из них был настолько могущественнен, как тот дракон!
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_09");	//Но хватит уже пустой болтовни...(рычит) Говори, чего ты хочешь?
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_10");	//Мне нужен Венец Демонов! Ты отдашь его мне?
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_11");	//С чего бы мне это делать, смертный?
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_01 " );	// WHO CALLED TO ME? WHO DARE TO DISTURB MY PEACE?!
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_02 " );	// I called you.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_03 " );	// Your face seems familiar to me, mortal.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_04 " );	// Of course, now I remember you.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_05 " );	// You are the one who slew the chosen one of Beliar in the Halls of Irdorath!
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_06 " );	// In my opinion, this act is really worthy of respect.
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_07 " );	// I sent a lot of Beliar's minions to the next world.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_08 " );	// However, not all of them were as powerful as that dragon!
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_09 " );	// But enough of the idle chatter...(growls) Say what you want?
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_10 " );	// I need the Demon Crown! Will you give it to me?
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_11 " );	// Why would I do this, mortal?
 
 	if(HasSleeperDefence == 1)
 	{
-		AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_12");	//Но ты ведь получил маску Спящего! Не так ли?
+		AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_12 " );	// But you got the Sleeper's mask! Is not it?
 	}
 	else if(HasSleeperDefence == 2)
 	{
-		AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_13");	//Но ты ведь получил Корону Льда! Не так ли?
+		AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_13 " );	// But you got the Crown of Ice! Is not it?
 	}
 	else if(HasSleeperDefence == 3)
 	{
-		AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_14");	//Но ты ведь получил Глаз Инноса! Не так ли?
+		AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_14 " );	// But you got the Eye of Innos! Is not it?
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_99");	//Но ты ведь кое-что получил! Не так ли?
+		AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_99 " );	// But you got something! Is not it?
 	};
 
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_15");	//Теперь и я хочу получить тот артефакт взамен своего!
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_16");	//(смеется) Ты ошибаешься, смертный.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_17");	//Это была лишь плата за то, что ты сейчас имеешь возможность говорить со мной.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_18");	//Не более того. Скажи, зачем тебе понадобился мой артефакт?
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_19");	//Он поможет мне одолеть древнейшего из демонов этого мира - Спящего!
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_20");	//(задумчиво) Так вот оно что! Все дело в нем.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_21");	//Когда-то он был могущественнен, как и я сам! Но сейчас он мне не ровня.
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_22");	//Тебе - может быть. А я к нему даже подступиться не могу из-за его магии.
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_23");	//Поэтому и прошу у тебя Венец Демонов.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_24");	//Само собой...(смеется) Как я сразу не догадался.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_25");	//Однако ты должен понимать, что просто так я его не отдам. Тебе придется заплатить за него.
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_26");	//И сколько золота тебе нужно?
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_27");	//Золото меня абсолютно не интересует. Ты заплатишь мне своей жизнью!
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_28");	//Ты что, убьешь меня?
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_29");	//Нет. (смеется) Я лишь заберу у тебя половину твоей жизненной энергии.
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_01_30");	//Кммм... Может, есть какой-нибудь иной способ?
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_31");	//Я не собираюсь с тобой торговаться, смертный!
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_01_32");	//Либо ты принимаешь мои условия, либо закончим этот разговор.
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_15 " );	// Now I want to get that artifact instead of mine!
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_16 " );	// (laughs) You're wrong, mortal.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_17 " );	// It was only a payment for the fact that you now have the opportunity to speak with me.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_18 " );	// No more than that. Tell me why you need my artifact?
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_19 " );	// He will help me defeat the oldest of the demons of this world - the Sleeper!
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_20 " );	// (thoughtfully) So that's it! It's all about him.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_21 " );	// He was once as powerful as I am! But now he is no match for me.
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_22 " );	// You - maybe. And I can’t even approach him because of his magic.
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_23 " );	// That's why I ask you for the Crown of Demons.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_24 " );	// Of course... (laughs) I didn't think of it right away.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_25 " );	// However, you must understand that I will not give it away just like that. You will have to pay for it.
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_26 " );	// And how much gold do you need?
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_27 " );	// Gold doesn't interest me at all. You will pay me with your life!
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_28 " );	// Are you going to kill me?
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_29 " );	// No. (laughs) I'll just take half of your life energy away from you.
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_01_30 " );	// Hmmm... Is there another way?
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_31 " );	// I'm not going to bargain with you, mortal!
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_01_32 " );	// Either you accept my terms or we'll end this conversation.
 	Info_ClearChoices(DIA_Eligor_Demon_OW_Hello);
-	Info_AddChoice(DIA_Eligor_Demon_OW_Hello,"Хорошо. Забирай мою жизненную силу.",DIA_Eligor_Demon_OW_Hello_Health);
+	Info_AddChoice(DIA_Eligor_Demon_OW_Hello, " Okay. Take my life force. " ,DIA_Eligor_Demon_OW_Hello_Health);
 };
 
 func void DIA_Eligor_Demon_OW_Hello_Health()
@@ -202,18 +203,18 @@ func void DIA_Eligor_Demon_OW_Hello_Health()
 	AI_Wait(hero,1);
 	AI_PlayAni(hero,"T_HEASHOOT_2_STAND");
 	AI_Wait(hero,1);
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_Health_01_01");	//Ну что же. Сделка есть сделка! Венец Демонов теперь твой.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_Health_01_01 " );	// Well then. A deal is a deal! The Crown of Demons is now yours.
 	B_GiveInvItems(self,other,ItAr_Helm_G3_06,1);
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_Health_01_02");	//Надеюсь, ты еще не пожалел о том решении, которое принял.
-	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_Health_01_03");	//Что сделано, то сделано.
-	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_Health_01_04");	//Как скажешь, человек. Наша встреча окончена... прощай.
-	B_LogEntry(TOPIC_SLEEPERBACK,"Элигор потребовал от меня часть моей жизненной силы. У меня не было выбора. Мне во чтобы то ни стало нужно было заполучить его артефакт!");
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_Health_01_02 " );	// I hope you haven't regretted the decision you made yet.
+	AI_Output(other,self, " DIA_Eligor_Demon_OW_Hello_Health_01_03 " );	// What's done is done.
+	AI_Output(self,other, " DIA_Eligor_Demon_OW_Hello_Health_01_04 " );	// As you say, man. Our meeting is over... goodbye.
+	B_LogEntry( TOPIC_SLEEPERBACK , " Eligor demanded some of my life force from me. I had no choice. I had to get his artifact by all means! " );
 	AI_StopProcessInfos(self);
 	ELIGOR_OW_TALK = TRUE;
 	self.start_aistate = zs_mm_rtn_demonrest;
 };
 
-//-----------------------------призрак маяка------------------
+// -----------------------ghost of the lighthouse----------------- -
 
 instance DIA_Skeleton_Stefan_EXIT(C_Info)
 {
@@ -257,33 +258,33 @@ func void DIA_Skeleton_Stefan_Hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_00");	//Что привело тебя сюда, смертный? Что ты тут ищешь?
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_01");	//Хммм... Значит, слухи - не вымысел. На этом маяке действительно обитают призраки!
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_02");	//Тебя не обманули. Это действительно правда. А теперь ответь на мой вопрос.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_03");	//Я ищу Стефана, смотрителя маяка. Он был убит тут много лет назад.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_04");	//Зачем он тебе понадобился?
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_05");	//Я хочу снять проклятие с этого места, поэтому мне нужно знать обо всем, что тут произошло. 
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_06");	//Меня удивляет твое желание, смертный. Обычно живые стараются обходить это место стороной.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_07");	//А ты пришел сюда и говоришь, что хочешь мне помочь.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_08");	//Так ты и есть Стефан? Тогда расскажи мне, почему тебя убили - и, главное, за что?
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_09");	//За мою доброту и чрезмерное сострадание к людям. Похоже, в этом и была вся проблема.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_10");	//Когда-то я помог человеку, попавшему в беду. За это он отплатил мне тем, что лишил меня жизни.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_11");	//Кто этот человек?
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_12");	//Я не знаю его настоящего имени. Он просил называть его Келевра.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_13");	//Келевра? Больше похоже на прозвище. Возможно даже - пиратское.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_14");	//Думаю, он и был пиратом. По крайней мере, у него при себе была пиратская сабля.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_15");	//А как он вообще попал на маяк?
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_16");	//В тот день на море бушевал сильный шторм. Я поднялся на верхний ярус маяка, чтобы немного подлить масла в огонь, и тут увидел, как его тело выбросило волнами на берег.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_17");	//По всей видимости, его корабль затонул. Я подобрал его почти бездыханное тело и отнес на маяк.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_18");	//Он долго приходил в себя. Мне пришлось несколько раз сплавать в город за лекарствами, потому что у него началась лихорадка. Но в итоге он поправился.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_19");	//И что было дальше? 
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_20");	//В один прекрасный день он сказал, что уходит и ему потребовалась моя лодка.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_21");	//Но я не мог отдать ему лодку, потому что она была нужна мне самому. И я предложил отвезти его в Хоринис.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_22");	//В тот момент мне показалось, что он немного напрягся и занервничал.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_23");	//Он предложил мне подняться наверх, чтобы показать место, где будет лучше высадить его на берег.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_24");	//А когда мы поднялись, проткнул меня своей саблей, сказав, что так или иначе лодка ему нужна самому.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_25");	//Он ушел, оставив меня умирать в луже собственной крови...
-	B_LogEntry(TOPIC_HauntedLighthouse,"Призрак Стефана, обитавший на маяке, рассказал мне историю своей гибели. Его убил некий Келевра, который, надо полагать, был пиратом.");
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_00 " );	// What brings you here, mortal? What are you looking for?
+	AI_Output(other,self, " DIA_Skeleton_Stefan_Hello_01_01 " );	// Hmmm... So the rumors are not fiction. This lighthouse is actually haunted!
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_02 " );	// You were not deceived. It's really true. Now answer my question.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_Hello_01_03 " );	// I'm looking for Stefan, the lighthouse keeper. He was killed here many years ago.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_04 " );	// Why do you need it?
+	AI_Output(other,self, " DIA_Skeleton_Stefan_Hello_01_05 " );	// I want to remove the curse from this place, so I need to know about everything that happened here.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_06 " );	// I'm surprised by your desire, mortal. Usually the living try to avoid this place.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_07 " );	// And you came here and you say you want to help me.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_Hello_01_08 " );	// So you are Stefan? Then tell me why you were killed - and, most importantly, for what?
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_09 " );	// For my kindness and excessive compassion for people. It looks like that was the whole problem.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_10 " );	// I once helped a man in need. For this he repaid me by taking my life.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_Hello_01_11 " );	// Who is this person?
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_12 " );	// I don't know his real name. He asked to be called Kelevra.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_Hello_01_13 " );	// Kelevra? More like a nickname. Maybe even pirated.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_14 " );	// I think he was a pirate. At least he had a pirate sword with him.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_Hello_01_15 " );	// And how did he even get to the lighthouse?
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_16 " );	// There was a big storm on the sea that day. I climbed to the top tier of the lighthouse to add some fuel to the fire, and then I saw his body washed up on the shore by the waves.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_17 " );	// Apparently, his ship sank. I picked up his almost lifeless body and carried it to the lighthouse.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_18 " );	// It took him a long time to come to his senses. I had to swim to town several times to get medicine because he had a fever. But in the end he got better.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_Hello_01_19 " );	// And what happened next?
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_20 " );	// One day he said he was leaving and he needed my boat.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_21 " );	// But I couldn't give him the boat because I needed it myself. And I offered to take him to Khorinis.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_22 " );	// At that moment, it seemed to me that he was a little tense and nervous.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_23 " );	// He suggested that I go upstairs to show him the best place to land him on the shore.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_24 " );	// And when we got up, he stabbed me with his saber, saying that one way or another he needed the boat himself.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_Hello_01_25 " );	// He left, leaving me to die in a pool of my own blood...
+	B_LogEntry(TOPIC_HauntedLighthouse, " The ghost of Stefan, who lived at the lighthouse, told me the story of his death. He was killed by a certain Kelevra, who must have been a pirate. " );
 };
 
 instance DIA_Skeleton_Stefan_How(C_Info)
@@ -293,7 +294,7 @@ instance DIA_Skeleton_Stefan_How(C_Info)
 	condition = DIA_Skeleton_Stefan_How_condition;
 	information = DIA_Skeleton_Stefan_How_info;
 	permanent = FALSE;
-	description = "Как снять проклятие с этого места?";
+	description = " How can I remove the curse from this place? " ;
 };
 
 func int DIA_Skeleton_Stefan_How_condition()
@@ -304,12 +305,12 @@ func int DIA_Skeleton_Stefan_How_condition()
 func void DIA_Skeleton_Stefan_How_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(other,self,"DIA_Skeleton_Stefan_How_01_00");	//Как снять проклятие с этого места? Уверен, многие в Хоринисе хотели бы вернуть этот маяк обратно.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_How_01_01");	//У них уже есть новый. Зачем им еще один? 
-	AI_Output(other,self,"DIA_Skeleton_Stefan_How_01_02");	//Не знаю. Но призракам не место среди людей. Ты должен это понимать.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_How_01_03");	//Я тебя понимаю. Но ничем помочь не могу. Извини...
+	AI_Output(other,self, " DIA_Skeleton_Stefan_How_01_00 " );	// How to remove the curse from this place? I am sure that many in Khorinis would like to return this lighthouse back.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_How_01_01 " );	// They already have a new one. Why do they need another one?
+	AI_Output(other,self, " DIA_Skeleton_Stefan_How_01_02 " );	// I don't know. But ghosts have no place among people. You must understand this.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_How_01_03 " );	// I understand you. But I can't help. I'm sorry...
 	DealStoryDLH = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Похоже, мне опять нужна помощь Ксардаса. Он наверняка должен знать, как можно снять проклятие с этого маяка.");
+	B_LogEntry(TOPIC_HauntedLighthouse, " Looks like I need Xardas' help again. He must know how to remove the curse from this lighthouse. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -335,55 +336,55 @@ func void DIA_Skeleton_Stefan_FinalMeet_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
 	B_GivePlayerXP(250);
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_00");	//Ты снова пришел повидаться со мной, смертный. И на этот раз не один... 
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_01_01");	//Узнаешь моего спутника?
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_02");	//Узнаю. Хотя он и сильно постарел за это время.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_01_03");	//Джек пришел, чтобы испросить у тебя прощения за свое злодеяние.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_04");	//Можешь не продолжать, смертный. Я знаю, зачем он здесь. Я почувствовал это, как только он приплыл сюда.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_05");	//Не думал, что у него хватит смелости явиться сюда.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_06");	//Но раз он тут... Полагаю, у нас найдется с ним общая тема для разговора. Ты же пока зажги пламя у маяка.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_01_07");	//Зачем мне это делать?
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_08");	//Так ты хочешь избавить это место от проклятия, или нет?
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_00 " );	// You came to see me again, mortal. And this time not alone...
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_01_01 " );	// Do you recognize my companion?
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_02 " );	// I know. Although he has aged a lot during this time.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_01_03 " );	// Jack has come to ask your forgiveness for his crime.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_04 " );	// You don't have to continue, mortal. I know why he is here. I felt it as soon as he sailed here.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_05 " );	// I didn't think he'd have the courage to come here.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_06 " );	// But since he's here... I guess we'll have something in common with him. For now, light the flame at the lighthouse.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_01_07 " );	// Why should I do this?
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_08 " );	// So you want to rid this place of the curse, or not?
 	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_01_09");	//Хочу, но...
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_10");	//(перебивает) Тогда слушай и делай, что тебе говорят!
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_11");	//Присутствие здесь этого человека и сила связанного с ним проклятия скоро привлечет сюда остальных призраков.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_12");	//А пламя маяка на время остановит их! Поэтому ты должен подняться наверх и зажечь маяк.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_01_13");	//И поторопись, они уже близко...
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_10 " );	// (interrupts) Then listen and do what you're told!
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_11 " );	// The presence of this person here and the power of the curse associated with him will soon attract the rest of the ghosts here.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_12 " );	// And the lighthouse flame will stop them for a while! Therefore, you must go upstairs and light the beacon.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_01_13 " );	// And hurry up, they're getting closer...
 	JackMeetGhost = TRUE;
 	Info_ClearChoices(DIA_Skeleton_Stefan_FinalMeet);
 
 	if(RhetorikSkillValue[1] >= 50)
 	{
-		Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet,"Тогда ты должен кое-что пообещать мне, призрак.",DIA_Skeleton_Stefan_FinalMeet_Promise);
+		Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet, " Then you should promise me something, ghost. " ,DIA_Skeleton_Stefan_FinalMeet_Promise);
 	};
 
-	Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet,"Нет, я не буду этого делать.",DIA_Skeleton_Stefan_FinalMeet_No);
-	Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet,"Хорошо, сейчас зажгу.",DIA_Skeleton_Stefan_FinalMeet_Yes);
+	Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet, " No, I won't. " ,DIA_Skeleton_Stefan_FinalMeet_No);
+	Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet, " Ok, I'll rock it now. " ,DIA_Skeleton_Stefan_FinalMeet_Yes);
 };
 
 func void DIA_Skeleton_Stefan_FinalMeet_Promise()
 {
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_Promise_01_00");	//Тогда ты должен кое-что пообещать мне, призрак.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_Promise_01_01");	//О чем ты говоришь?
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_Promise_01_02");	//Пока я буду наверху, Джек не должен умереть. Хватит уже и той крови, которая здесь когда-то пролилась.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_Promise_01_03");	//Мертвые не в ответе перед живыми, смертный!
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_Promise_01_04");	//Поклянись, что он не умрет! Иначе, ты будешь проклят до скончания времен.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_Promise_01_05");	//Хорошо...(спокойно) Я обещаю тебе, что он не погибнет.
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_Promise_01_06");	//Так-то лучше.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_Promise_01_00 " );	// Then you have to promise me something, ghost.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_Promise_01_01 " );	// What are you talking about?
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_Promise_01_02 " );	// As long as I'm upstairs, Jack must not die. Enough already and the blood that was once shed here.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_Promise_01_03 " );	// The dead are not responsible to the living, mortal!
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_Promise_01_04 " );	// Swear he won't die! Otherwise, you will be damned until the end of time.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_Promise_01_05 " );	// Okay...(calmly) I promise you he won't die.
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_Promise_01_06 " );	// That's better.
 	JackDontDie = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Призрак пообещал мне не убивать Джека. Надеюсь, он сдержит свое слово...");
+	B_LogEntry(TOPIC_HauntedLighthouse, " The ghost promised me not to kill Jack. I hope he keeps his word... " );
 };
 
 func void DIA_Skeleton_Stefan_FinalMeet_No()
 {
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_No_01_00");	//Нет, я не буду этого делать.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_No_01_01");	//Как скажешь, смертный. Мне жаль, но тогда вы все тут умрете...
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_No_01_00 " );	// No, I won't.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_No_01_01 " );	// As you say, mortal. I'm sorry, but then you're all going to die here...
 	AI_StopProcessInfos(self);
 	LeaveMeetGhost = TRUE;
 	StefanCanFight = TRUE;
 	self.flags = 0;
-	self.aivar[AIV_EnemyOverride] = FALSE;
-	VLK_444_Jack.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
+	VLK_444_Jack.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	B_StartOtherRoutine(VLK_444_Jack,"JackFight");
 	Wld_InsertNpc(Ghost_LH,"NW_SOUL_LH_03");
 	Wld_InsertNpc(Ghost_LH,"NW_SOUL_LH_04");
@@ -393,9 +394,9 @@ func void DIA_Skeleton_Stefan_FinalMeet_No()
 
 func void DIA_Skeleton_Stefan_FinalMeet_Yes()
 {
-	AI_Output(other,self,"DIA_Skeleton_Stefan_FinalMeet_Yes_01_00");	//Хорошо, сейчас зажгу.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_FinalMeet_Yes_01_01");	//Тогда не мешкай.
-	VLK_444_Jack.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(other,self, " DIA_Skeleton_Stefan_FinalMeet_Yes_01_00 " );	// Okay, I'll light it up now.
+	AI_Output(self,other, " DIA_Skeleton_Stefan_FinalMeet_Yes_01_01 " );	// Then don't hesitate.
+	VLK_444_Jack.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	LeaveMeetGhost = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"JackTalk");
