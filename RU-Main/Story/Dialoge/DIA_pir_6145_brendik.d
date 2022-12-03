@@ -1,7 +1,8 @@
 
+
 instance DIA_BRENDIK_EXIT(C_Info)
 {
-	npc = pir_6145_brendik;
+	npc = pir_6145_brand;
 	nr = 999;
 	condition = dia_brendik_exit_condition;
 	information = dia_brendik_exit_info;
@@ -23,7 +24,7 @@ func void dia_brendik_exit_info()
 
 instance DIA_BRENDIK_HELLO(C_Info)
 {
-	npc = pir_6145_brendik;
+	npc = pir_6145_brand;
 	nr = 8;
 	condition = dia_brendik_hello_condition;
 	information = dia_brendik_hello_info;
@@ -40,14 +41,14 @@ func int dia_brendik_hello_condition()
 func void dia_brendik_hello_info()
 {
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Brendik_Hello_01_00");	//Эй, ты - а ну стой!!!
+	AI_Output(self,other, " DIA_Brendik_Hello_01_00 " );	// Hey, you - stop!!!
 	AI_Output(other,self,"DIA_Brendik_Hello_01_01");	//Кто? Я?
-	AI_Output(self,other,"DIA_Brendik_Hello_01_02");	//А ты что, здесь кого-то еще видишь?
-	AI_Output(self,other,"DIA_Brendik_Hello_01_04");	//Говори - что тебе тут нужно и кто ты вообще такой?!
-	AI_Output(other,self,"DIA_Brendik_Hello_01_05");	//Да я так - просто прогуливаюсь тут.
-	AI_Output(self,other,"DIA_Brendik_Hello_01_06");	//Умник, да? А ты, случаем, не бандит?!
-	AI_Output(other,self,"DIA_Brendik_Hello_01_07");	//Конечно нет! Разве я похож на него?
-	AI_Output(self,other,"DIA_Brendik_Hello_01_08");	//Хммм...(внимательно разглядывает) Ну ладно. Но смотри у меня - если что, я тебе живо башку снесу! Понял?
+	AI_Output(self,other, " DIA_Brendik_Hello_01_02 " );	// Do you see anyone else here?
+	AI_Output(self,other, " DIA_Brendik_Hello_01_04 " );	// Tell me - what do you need here and who are you anyway?!
+	AI_Output(other,self, " DIA_Brendik_Hello_01_05 " );	// Yes, I am - just strolling here.
+	AI_Output(self,other, " DIA_Brendik_Hello_01_06 " );	// Smart guy, huh? Are you a bandit by any chance?
+	AI_Output(other,self, " DIA_Brendik_Hello_01_07 " );	// Of course not! Do I look like him?
+	AI_Output(self,other, " DIA_Brendik_Hello_01_08 " );	// Hmmm...(looks closely) Okay. But look at me - if anything, I will quickly blow your head off! Understood?
 	AI_RemoveWeapon(self);
 	AI_Output(other,self,"DIA_Brendik_Hello_01_10");	//Понял.
 	MEETBRENDIK = TRUE;
@@ -56,12 +57,12 @@ func void dia_brendik_hello_info()
 
 instance DIA_BRENDIK_FINDLOSTHUSB(C_Info)
 {
-	npc = pir_6145_brendik;
+	npc = pir_6145_brand;
 	nr = 8;
 	condition = dia_brendik_findlosthusb_condition;
 	information = dia_brendik_findlosthusb_info;
 	permanent = FALSE;
-	description = "Это тебя зовут Брендик?";
+	description = " Is your name Brandyck? " ;
 };
 
 
@@ -76,38 +77,38 @@ func int dia_brendik_findlosthusb_condition()
 func void dia_brendik_findlosthusb_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_00");	//Это тебя зовут Брендик?
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_01");	//Ну, допустим...(недоверчиво) А что надо?
-	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_02");	//Меня послала твоя жена, Гритта. Ты ее помнишь?
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_03");	//ЧТО?! МОЯ ЖЕНА?! (в панике) О нет! Только не это!
+	AI_Output(other,self, " DIA_Brendik_FindLostHusb_01_00 " );	// Is that your name Brandyck?
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_01 " );	// Well, let's say... (incredulously) What do you need?
+	AI_Output(other,self, " DIA_Brendik_FindLostHusb_01_02 " );	// Your wife, Gritta, sent me. Do you remember her?
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_03 " );	// WHAT?! MY WIFE?! (panicked) Oh no! Only not this!
 	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_04");	//Не понял?!
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_05");	//Послушай, я хочу жить нормальной жизнью, так что лучше убей меня!
-	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_06");	//Ты боишься своей жены больше черта, а вроде она очень милая женщина...
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_07");	//Она же просто невыносима: у нее всегда на уме были только деньги, да шмотки.
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_08");	//'Брендик, купи мне новое платье!', 'Брендик, я хочу эту шляпку!', 'Брендик, купи мне сапожки из кожи остера'... Ты представляешь себе, сколько стоят такие вещи?!
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_09");	//Я вкалывал как вол, а она только и делала, что требовала денег, а потом жаловалась, что сделала ошибку, выйдя за меня замуж.
-	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_10");	//Сказать по правде, она не сильно изменилась. Я и познакомился с ней из-за того, что она задолжала деньги одному торговцу.
-	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_11");	//Но также я могу сказать, что она очень скучает, потому как не знает, жив ты или мертв.
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_12");	//(с издевкой) А, ну конечно, ее дядюшка Торбен небось не потакает всем её прихотям.
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_13");	//Послушай, даже если она скучает просто по мне, а не по возможности попить мою кровь, я не буду проверять это.
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_14");	//В Хоринисе я был никем, тряпкой, а здесь я Человек!!! Меня уважают ребята в лагере, ко мне прислушивается Грэг.
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_15");	//Ни за что я не вернусь к старой жизни!
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_16");	//Передай ей, что я жив, здоров - и точка!
-	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_17");	//Как хочешь, мне все равно.
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_18");	//Вот и отлично!
-	B_LogEntry(TOPIC_FINDLOSTHUSB,"Я нашел Брендика. Он был не в восторге, узнав, что его разыскивает жена, и возвращаться к ней не собирается. Осталось рассказать об этом Гритте.");
-	BRENDIKNOTBACK = TRUE;
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_05 " );	// Look, I want to live a normal life, so you better kill me!
+	AI_Output(other,self, " DIA_Brendik_FindLostHusb_01_06 " );	// You're afraid of your wife more than the devil, but she seems to be a very nice woman...
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_07 " );	// She is simply unbearable: she always had only money and clothes on her mind.
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_08 " );	// 'Brandik, buy me a new dress!', 'Brandik, I want this hat!', 'Brandik, buy me boots made of oster leather'... Can you imagine how much these things cost?!
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_09 " );	// I worked like an ox, and she only did what she demanded money, and then complained that she made a mistake by marrying me.
+	AI_Output(other,self, " DIA_Brendik_FindLostHusb_01_10 " );	// To be honest, she hasn't changed much. I met her because she owed money to a merchant.
+	AI_Output(other,self, " DIA_Brendik_FindLostHusb_01_11 " );	// But I can also tell that she's really bored because she doesn't know if you're alive or dead.
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_12 " );	// (with a sneer) Oh, of course, her uncle Torben probably does not indulge her every whim.
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_13 " );	// Look, even if she just misses me and not the opportunity to drink my blood, I won't check it out.
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_14 " );	// In Khorinis I was a nobody, a rag, but here I am a Man!!! The guys in the camp respect me, Greg listens to me.
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_15 " );	// There's no way I'm going back to my old life!
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_16 " );	// Tell her I'm alive and well - period!
+	AI_Output(other,self, " DIA_Brendik_FindLostHusb_01_17 " );	// As you wish, I don't care.
+	AI_Output(self,other, " DIA_Brendik_FindLostHusb_01_18 " );	// That's great!
+	; _ _ _ _ _ _
+	BRENDIKNOTBACK = TRUE ;
 };
 
 
 instance DIA_BRENDIK_WHATDO(C_Info)
 {
-	npc = pir_6145_brendik;
+	npc = pir_6145_brand;
 	nr = 8;
 	condition = dia_brendik_whatdo_condition;
 	information = dia_brendik_whatdo_info;
 	permanent = FALSE;
-	description = "Что ты тут делаешь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -118,23 +119,23 @@ func int dia_brendik_whatdo_condition()
 
 func void dia_brendik_whatdo_info()
 {
-	AI_Output(other,self,"DIA_Brendik_WhatDo_01_00");	//Что ты тут делаешь?
-	AI_Output(self,other,"DIA_Brendik_WhatDo_01_01");	//Слежу за бандитами - приказ Грэга!
-	AI_Output(other,self,"DIA_Brendik_WhatDo_01_02");	//А почему именно в этом месте?
-	AI_Output(self,other,"DIA_Brendik_WhatDo_01_03");	//Отсюда сверху, вход в их лагерь просматривается, как на ладони!
-	AI_Output(self,other,"DIA_Brendik_WhatDo_01_04");	//Да и к тому же на болотах слишком много опасных тварей, а сюда они попросту не доберутся.
-	AI_Output(other,self,"DIA_Brendik_WhatDo_01_05");	//Понятно.
+	AI_Output(other,self, " DIA_Brendik_WhatDo_01_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Brendik_WhatDo_01_01 " );	// Watching the bandits - Greg's orders!
+	AI_Output(other,self, " DIA_Brendik_WhatDo_01_02 " );	// And why exactly in this place?
+	AI_Output(self,other, " DIA_Brendik_WhatDo_01_03 " );	// From up here, the entrance to their camp is clearly visible!
+	AI_Output(self,other, " DIA_Brendik_WhatDo_01_04 " );	// And besides, there are too many dangerous creatures in the swamps, and they simply won't get here.
+	AI_Output(other,self, " DIA_Brendik_WhatDo_01_05 " );	// Got it.
 };
 
 
-instance DIA_BRENDIK_GOTOGREG(C_Info)
+instances DIA_BRENDIK_GOTOGREG (C_Info)
 {
-	npc = pir_6145_brendik;
+	npc = pir_6145_brand;
 	nr = 8;
 	condition = dia_brendik_gotogreg_condition;
 	information = dia_brendik_gotogreg_info;
 	permanent = FALSE;
-	description = "Ты нужен Грэгу!";
+	description = " Greg needs you! " ;
 };
 
 
@@ -149,11 +150,11 @@ func int dia_brendik_gotogreg_condition()
 func void dia_brendik_gotogreg_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Brendik_GoToGreg_01_00");	//Ты нужен Грэгу!
-	AI_Output(self,other,"DIA_Brendik_GoToGreg_01_01");	//Это еще зачем?!
-	AI_Output(other,self,"DIA_Brendik_GoToGreg_01_02");	//Он передает тебе, чтобы ты возвращался в лагерь.
-	AI_Output(other,self,"DIA_Brendik_GoToGreg_01_03");	//Кажется, у него есть для тебя еще одно какое-то поручение.
-	AI_Output(self,other,"DIA_Brendik_GoToGreg_01_04");	//Хорошо, я все понял. Наконец-то я уберусь с этого проклятого болота!
+	AI_Output(other,self, " DIA_Brendik_GoToGreg_01_00 " );	// Greg needs you!
+	AI_Output(self,other, " DIA_Brendik_GoToGreg_01_01 " );	// Why else?
+	AI_Output(other,self, " DIA_Brendik_GoToGreg_01_02 " );	// He's telling you to get back to camp.
+	AI_Output(other,self, " DIA_Brendik_GoToGreg_01_03 " );	// Looks like he has another task for you.
+	AI_Output(self,other, " DIA_Brendik_GoToGreg_01_04 " );	// Okay, I got it. Finally, I'll get out of this damn swamp!
 	BRENDIKGOCAMP = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -161,12 +162,12 @@ func void dia_brendik_gotogreg_info()
 
 instance DIA_BRENDIK_HOW(C_Info)
 {
-	npc = pir_6145_brendik;
+	npc = pir_6145_brand;
 	nr = 8;
 	condition = dia_brendik_how_condition;
 	information = dia_brendik_how_info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -180,15 +181,15 @@ func int dia_brendik_how_condition()
 
 func void dia_brendik_how_info()
 {
-	AI_Output(other,self,"DIA_Brendik_How_01_01");	//Как дела?
-	AI_Output(self,other,"DIA_Brendik_How_01_02");	//Все нормально. Только скучновато немного.
-	AI_Output(self,other,"DIA_Brendik_How_01_03");	//Эх...(печально) Если бы только у нас был наш корабль! Мы бы уж точно не сидели тут без дела.
+	AI_Output(other,self, " DIA_Brendik_How_01_01 " );	// How are you?
+	AI_Output(self,other, " DIA_Brendik_How_01_02 " );	// Everything is fine. Just a little boring.
+	AI_Output(self,other, " DIA_Brendik_How_01_03 " );	// Eh...(sadly) If only we had our ship! We certainly wouldn't be sitting here doing nothing.
 };
 
 
-instance DIA_BRENDIK_PICKPOCKET(C_Info)
+instances DIA_BRENDIK_PICKPOCKET (C_Info)
 {
-	npc = pir_6145_brendik;
+	npc = pir_6145_brand;
 	nr = 900;
 	condition = dia_brendik_pickpocket_condition;
 	information = dia_brendik_pickpocket_info;
@@ -199,19 +200,19 @@ instance DIA_BRENDIK_PICKPOCKET(C_Info)
 
 func int dia_brendik_pickpocket_condition()
 {
-	return C_Beklauen(105,350);
+	return  C_Robbery ( 105 , 350 );
 };
 
 func void dia_brendik_pickpocket_info()
 {
 	Info_ClearChoices(dia_brendik_pickpocket);
-	Info_AddChoice(dia_brendik_pickpocket,Dialog_Back,dia_brendik_pickpocket_back);
-	Info_AddChoice(dia_brendik_pickpocket,DIALOG_PICKPOCKET,dia_brendik_pickpocket_doit);
+	Info_AddChoice(dia_brendik_pickpocket, Dialog_Back, dia_brendik_pickpocket_back);
+	Info_AddChoice(dia_brendik_pickpocket, DIALOG_PICKPOCKET , dia_brendik_pickpocket_doit);
 };
 
 func void dia_brendik_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_brendik_pickpocket);
 };
 
