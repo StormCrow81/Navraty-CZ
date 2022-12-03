@@ -1,4 +1,5 @@
 
+
 instance DIA_DRAGON_BLACK_EXIT(C_Info)
 {
 	npc = dragon_black;
@@ -47,37 +48,37 @@ func int dia_dragon_black_hello_condition()
 func void dia_dragon_black_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_00");	//Человек!? А я-то думал, что уничтожил вас всех, жалкие людишки!
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_01");	//Как видишь, ты немного ошибся. И думаю, что это станет твоей последней ошибкой.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_05");	//(рычит) Значит, своим беспокойством я обязан тебе?! Простому смертному?
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_03");	//Именно так оно и есть, дракон. Я пришел сюда, чтобы снести тебе твою поганую голову!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_07");	//(рычит) Раз ты сумел добраться до меня, то, очевидно, мой верный слуга Дакат потерпел неудачу.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_08");	//Безмозглая тварь! Все надо доделывать самому!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_09");	//Ну что же, я вырву у тебя сердце, заберу душу, а плоть разорву на мелкие кусочки!
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_10");	//Это мы еще посмотрим, кто кому вырвет сердце! Привет тебе от Ур-Тралла!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_14");	//Ур-Тралл? Ах да, я помню этого слизняка. Сам он не осмелился бросить мне вызов? Впрочем, это не важно.
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_00 " );	// Human!? And I thought I had destroyed all of you, miserable people!
+	AI_Output(other,self, " DIA_Dragon_Black_Hello_01_01 " );	// As you can see, you made a mistake. And I think that this will be your last mistake.
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_05 " );	// (growls) So I owe my concern to you?! To a mere mortal?
+	AI_Output(other,self, " DIA_Dragon_Black_Hello_01_03 " );	// That's the way it is, dragon. I came here to blow your filthy head off!
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_07 " );	// (growls) Since you managed to get to me, then obviously my faithful servant Dakat failed.
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_08 " );	// Mindless creature! Everything has to be done by yourself!
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_09 " );	// Well, I'll rip your heart out, take your soul, and tear your flesh into small pieces!
+	AI_Output(other,self, " DIA_Dragon_Black_Hello_01_10 " );	// We'll see who rips out who's heart! Greetings from Ur-Thrall!
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_14 " );	// Ur-Thrall? Oh yes, I remember that slug. Didn't he dare to challenge me? However, it doesn't matter.
 
 	if(MEETURGROM == 4)
 	{
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_19");	//Я вижу, ты привел с собой могучего Ур-Грома!
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_20");	//Его душа принадлежит мне, так же как и весь их мерзкий народец!
+		AI_Output(self,other, " DIA_Dragon_Black_Hello_01_19 " );	// I see you brought the mighty Ur-Grom with you!
+		AI_Output(self,other, " DIA_Dragon_Black_Hello_01_20 " );	// His soul belongs to me, as well as all their vile people!
 	};
 	if(Npc_HasItems(other,itrw_addon_magiccrossbow_shv) >= 1)
 	{
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_21");	//О, я вижу, ты отыскал Вершителя - оружие воина-духа, низвергнутого мной!
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_22");	//И ты наивно полагаешь, что он тебе поможет одолеть меня?
+		AI_Output(self,other, " DIA_Dragon_Black_Hello_01_21 " );	// Oh, I see you've found the Executor, the weapon of the spirit warrior I cast down!
+		AI_Output(self,other, " DIA_Dragon_Black_Hello_01_22 " );	// And you naively think that he will help you defeat me?
 	};
 
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_17");	//Хватит попусту тратить время на болтовню! Пора заняться делом.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_18");	//(презрительно) Я уже чувствую вкус твоей крови, герой...
+	AI_Output(other,self, " DIA_Dragon_Black_Hello_01_17 " );	// Stop wasting time talking! It's time to get down to business.
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_18 " );	// (contemptuously) I can already taste your blood, hero...
 	AI_PlayAni(self,"T_WARN");
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_23");	//МОИ ЗУБЫ - МЕЧИ! МОИ КОГТИ - КОПЬЯ! МОИ КРЫЛЬЯ - УРАГАН!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_24");	//Я - ЭТО ПЛАМЯ! Я - ЭТО... СМЕРТЬ!
-	B_LogEntry(TOPIC_URNAZULRAGE,"Великая Тень, Азгалор, - здесь! Око Гнева пробудило черного дракона и он явился в Долину Теней, ведомый зовом этого могущественного артефакта. В общем, именно этого я и добивался. Теперь только мой меч сможет дать ответ - не напрасно ли все это было сделано?");
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_23 " );	// MY TEETH ARE SWORDS! MY CLAWS ARE SPEARS! MY WINGS ARE A HURRICANE!
+	AI_Output(self,other, " DIA_Dragon_Black_Hello_01_24 " );	// I AM THE FLAME! I AM... DEATH!
+	B_LogEntry( TOPIC_URNAZULRAGE , " The Great Shadow, Azgalor, is here! The Eye of Wrath awakened the black dragon and he came to the Valley of Shadows, led by the call of this powerful artifact. In general, this is exactly what I wanted. Now only my sword can answer - not in vain has it all been done? " );
 	AI_StopProcessInfos(self);
 	DragonTalk_Exit_Free = FALSE;
 	DRAGONBLACKMEET = TRUE;
 	self.flags = 0;
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
 
