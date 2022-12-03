@@ -1,4 +1,5 @@
 
+
 instance DIA_GORNAVID_EXIT(C_Info)
 {
 	npc = tpl_8007_gornavid;
@@ -33,7 +34,7 @@ instance dia_gornavid_PICKPOCKET(C_Info)
 
 func int dia_gornavid_PICKPOCKET_Condition()
 {
-	return C_Beklauen(15,35);
+	return  C_Robbery ( 15 , 35 );
 };
 
 func void dia_gornavid_PICKPOCKET_Info()
@@ -45,7 +46,7 @@ func void dia_gornavid_PICKPOCKET_Info()
 
 func void dia_gornavid_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_gornavid_PICKPOCKET);
 };
 
@@ -61,7 +62,7 @@ instance DIA_GORNAVID_WHOYOU(C_Info)
 	condition = dia_gornavid_whoyou_condition;
 	information = dia_gornavid_whoyou_info;
 	permanent = FALSE;
-	description = "Я здесь новенький. Кто ты?";
+	description = " I'm new here. Who are you? " ;
 };
 
 
@@ -75,12 +76,12 @@ func int dia_gornavid_whoyou_condition()
 
 func void dia_gornavid_whoyou_info()
 {
-	AI_Output(other,self,"DIA_GorNaVid_WhoYou_01_00");	//Я здесь новенький. Кто ты?
-	AI_Output(self,other,"DIA_GorNaVid_WhoYou_01_01");	//Меня зовут Гор На Вид.
-	AI_Output(other,self,"DIA_GorNaVid_WhoYou_01_02");	//Скажи, а нужны ли вам верные люди?
-	AI_Output(self,other,"DIA_GorNaVid_WhoYou_01_03");	//Верные люди нужны всегда. Но тебе придется серьезно поработать над собой.
-	AI_Output(self,other,"DIA_GorNaVid_WhoYou_01_04");	//Только лучшие из лучших могут стать Стражами.
-	AI_Output(self,other,"DIA_GorNaVid_WhoYou_01_05");	//Это высочайшая честь для любого последователя нашего Братства.
+	AI_Output(other,self, " DIA_GorNaVid_WhoYou_01_00 " );	// I'm new here. Who are you?
+	AI_Output(self,other, " DIA_GorNaVid_WhoYou_01_01 " );	// My name is Gor Na Vid.
+	AI_Output(other,self, " DIA_GorNaVid_WhoYou_01_02 " );	// Tell me, do you need faithful people?
+	AI_Output(self,other, " DIA_GorNaVid_WhoYou_01_03 " );	// Faithful people are always needed. But you have to seriously work on yourself.
+	AI_Output(self,other, " DIA_GorNaVid_WhoYou_01_04 " );	// Only the best of the best can become Guardians.
+	AI_Output(self,other, " DIA_GorNaVid_WhoYou_01_05 " );	// This is the highest honor for any follower of our Brotherhood.
 };
 
 
@@ -91,7 +92,7 @@ instance DIA_GORNAVID_BECOMETPL(C_Info)
 	condition = dia_gornavid_becometpl_condition;
 	information = dia_gornavid_becometpl_info;
 	permanent = TRUE;
-	description = "Я тоже хочу стать Стражем, как и ты.";
+	description = " I want to be a Guardian too, just like you. " ;
 };
 
 
@@ -105,26 +106,26 @@ func int dia_gornavid_becometpl_condition()
 
 func void dia_gornavid_becometpl_info()
 {
-	AI_Output(other,self,"DIA_GorNaVid_BecomeTPL_01_00");	//Я тоже хочу стать Стражем, как и ты.
-	AI_Output(self,other,"DIA_GorNaVid_BecomeTPL_01_01");	//А знаешь ли ты, от чего мне пришлось отказаться, прежде чем я смог встать на страже покоя избранных?
-	AI_Output(self,other,"DIA_GorNaVid_BecomeTPL_01_02");	//Не думай, что сможешь так вот запросто попасть на это место и получить подобающий почет и уважение.
-	AI_Output(self,other,"DIA_GorNaVid_BecomeTPL_01_03");	//Прежде чем говорить об этом, ты должен узнать немного о нашем учении.
-	AI_Output(self,other,"DIA_GorNaVid_BecomeTPL_01_04");	//Это займет некоторое время и, возможно, приведет тебя в чувство.
+	AI_Output(other,self, " DIA_GorNaVid_BecomeTPL_01_00 " );	// I also want to become a Guardian, just like you.
+	AI_Output(self,other, " DIA_GorNaVid_BecomeTPL_01_01 " );	// Do you know what I had to give up before I could stand guard over the peace of the elect?
+	AI_Output(self,other, " DIA_GorNaVid_BecomeTPL_01_02 " );	// Don't think that you can easily get to this place and get proper honor and respect.
+	AI_Output(self,other, " DIA_GorNaVid_BecomeTPL_01_03 " );	// Before talking about this, you should know a little about our teachings.
+	AI_Output(self,other, " DIA_GorNaVid_BecomeTPL_01_04 " );	// This will take some time and may bring you back to your senses.
 };
 
 
-instance DIA_GORNAVID_ABWEISEND(C_Info)
+instance DIA_GORNAVID_ABWEISEND (C_Info)
 {
 	npc = tpl_8007_gornavid;
 	nr = 2;
-	condition = dia_gornavid_abweisend_condition;
-	information = dia_gornavid_abweisend_info;
+	condition = dia_gornavid_repellent_condition;
+	information = dia_gornavid_repellent_info;
 	permanent = TRUE;
-	description = "Ты можешь чему-нибудь научить меня?";
+	description = " Can you teach me something? " ;
 };
 
 
-func int dia_gornavid_abweisend_condition()
+func int dia_gornavid_forbidding_condition()
 {
 	if(Npc_KnowsInfo(hero,dia_gornavid_whoyou) && (GORNAVIDTEACH == FALSE))
 	{
@@ -132,40 +133,40 @@ func int dia_gornavid_abweisend_condition()
 	};
 };
 
-func void dia_gornavid_abweisend_info()
+func void dia_gornavid_repellent_info()
 {
-	AI_Output(other,self,"DIA_GorNaVid_Abweisend_01_00");	//Ты можешь чему-нибудь научить меня?
+	AI_Output(other,self, " DIA_GorNaVid_Abweisend_01_00 " );	// Can you teach me something?
 	if(other.guild == GIL_GUR)
 	{
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_01");	//Я обучаю только Стражей!
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_02");	//Обучение Гуру не входит в мою компетенцию. Тебе лучше поговорить на эту тему с Идолами.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_01 " );	// I only train Guardians!
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_02 " );	// Guru training is not my area of ​​expertise. You'd better talk to the Idols about this.
 	}
 	else if(other.guild == GIL_SEK)
 	{
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_03");	//Я обучаю только Стражей!
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_04");	//Если ты хочешь присоединиться к нам - тебе следует поговорить об этом с Гор На Кошем. Он главный среди нас.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_03 " );	// I only train Guardians!
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_04 " );	// If you want to join us, you should talk to Gor Na Kosh about it. He is the leader among us.
 	}
 	else if(other.guild == GIL_TPL)
 	{
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_05");	//Ты правильно сделал, что обратился ко мне.
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_06");	//Тебе действительно есть чему у меня поучиться.
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_07");	//Традиционно, основным оружием Стражей является двуручный меч. Однако при этом никак нельзя забывать и о технике ведения дальнего боя.
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_08");	//Не скажу, что я хорошо разбираюсь в стрельбе из лука. Но вот в чем я действительно знаю толк - так это в технике стрельбы из арбалета.
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_09");	//Если у тебя есть достаточно опыта и имеется желание потренировать этот навык - то я к твоим услугам.
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_10");	//Только дай знать - и мы приступим к твоему обучению.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_05 " );	// You did the right thing by contacting me.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_06 " );	// You really have a lot to learn from me.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_07 " );	// Traditionally, the main weapon of the Guardians is a two-handed sword. However, at the same time, one should not forget about the technique of long-range combat.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_08 " );	// I won't say I'm good at archery. But here's what I really know a lot about - it's the technique of shooting from a crossbow.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_09 " );	// If you have enough experience and a desire to practice this skill, then I am at your service.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_10 " );	// Just let me know and we'll start training you.
 		Log_CreateTopic(TOPIC_ADDON_TPLTEACHER,LOG_NOTE);
-		B_LogEntry(TOPIC_ADDON_TPLTEACHER,"Гор На Вид может преподать мне несколько уроков с оружием дальнего боя.");
+		B_LogEntry( TOPIC_ADDON_TPLTEACHER , " Gor Na Vid can teach me some lessons with ranged weapons. " );
 		GORNAVIDTEACH = TRUE;
 	}
 	else if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_11");	//Я обучаю только Стражей, а ты даже не принадлежишь к нашему лагерю!
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_12");	//Извини, но я ничем не могу тебе помочь.
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_11 " );	// I only train Guardians, and you don't even belong to our camp!
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_12 " );	// Sorry, but I can't help you.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_13");	//Проваливай!
-		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_14");	//Чужаку здесь не место!
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_13 " );	// Get lost!
+		AI_Output(self,other, " DIA_GorNaVid_Abweisend_01_14 " );	// Strangers don't belong here!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -178,7 +179,7 @@ instance DIA_GORNAVID_TEACH(C_Info)
 	condition = dia_gornavid_teach_condition;
 	information = dia_gornavid_teach_info;
 	permanent = TRUE;
-	description = "Я хочу учиться у тебя.";
+	description = " I want to learn from you. " ;
 };
 
 
@@ -192,8 +193,8 @@ func int dia_gornavid_teach_condition()
 
 func void dia_gornavid_teach_info()
 {
-	AI_Output(other,self,"DIA_GorNaVid_Teach_15_00");	//Я хочу учиться у тебя.
-	AI_Output(self,other,"DIA_GorNaVid_Teach_09_01");	//Хорошо! Давай начнем тренировку.
+	AI_Output(other,self, " DIA_GorNaVid_Teach_15_00 " );	// I want to learn from you.
+	AI_Output(self,other, " DIA_GorNaVid_Teach_09_01 " );	// Good! Let's start training.
 	Info_ClearChoices(dia_gornavid_teach);
 	Info_AddChoice(dia_gornavid_teach,Dialog_Back,dia_gornavid_teach_back);
 	Info_AddChoice(dia_gornavid_teach,b_buildlearnstringforfight(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1)),dia_gornavid_teach_crossbow_1);
@@ -207,22 +208,22 @@ func void dia_gornavid_teach_back()
 
 func void b_gornavid_teachnomore1()
 {
-	AI_Output(self,other,"B_GorNaVid_TeachNoMore1_09_00");	//Ты уже знаешь все, что только можно было узнать.
+	AI_Output(self,other, " B_GorNaVid_TeachNoMore1_09_00 " );	// You already know everything there is to know.
 };
 
 func void b_gornavid_teachnomore2()
 {
-	AI_Output(self,other,"B_GorNaVid_TeachNoMore2_09_00");	//Мне больше нечему учить тебя.
+	AI_Output(self,other, " B_GorNaVid_TeachNoMore2_09_00 " );	// I have nothing more to teach you.
 };
 
 func void b_gornavid_teachnomore3()
 {
-	AI_Output(self,other,"B_GorNaVid_TeachNoMore3_09_00");	//Ты уже знаешь основы, для большего нет времени.
+	AI_Output(self,other, " B_GorNaVid_TeachNoMore3_09_00 " );	// You already know the basics, there's no time for more.
 };
 
 func void b_gornavid_teachnomore4()
 {
-	AI_Output(self,other,"B_GorNaVid_TeachNoMore4_09_00");	//Чтобы усовершенствовать обращение с луком, ты должен найти настоящего учителя.
+	AI_Output(self,other, " B_GorNaVid_TeachNoMore4_09_00 " );	// To perfect bow handling, you must find a real teacher.
 };
 
 func void dia_gornavid_teach_crossbow_1()
