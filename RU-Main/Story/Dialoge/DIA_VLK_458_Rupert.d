@@ -1,4 +1,5 @@
 
+
 instance DIA_Rupert_EXIT(C_Info)
 {
 	npc = VLK_458_Rupert;
@@ -45,7 +46,7 @@ func void DIA_Rupert_PICKPOCKET_Info()
 
 func void DIA_Rupert_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Rupert_PICKPOCKET);
 };
 
@@ -101,8 +102,8 @@ func int DIA_Rupert_Hello_Condition()
 
 func void DIA_Rupert_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Rupert_Hello_03_00");	//Привет, чужеземец!
-	AI_Output(self,other,"DIA_Rupert_Hello_03_01");	//Ты, должно быть, голоден и хочешь пить. Может, тебя заинтересуют мои товары?
+	AI_Output(self,other, " DIA_Rupert_Hello_03_00 " );	// Hello, outlander!
+	AI_Output(self,other, " DIA_Rupert_Hello_03_01 " );	// You must be hungry and thirsty. Maybe you are interested in my products?
 };
 
 
@@ -113,13 +114,13 @@ instance DIA_Rupert_ZuPal(C_Info)
 	condition = DIA_Rupert_ZuPal_Condition;
 	information = DIA_Rupert_ZuPal_Info;
 	permanent = FALSE;
-	description = "Я пришел, чтобы встретиться с паладинами.";
+	description = " I've come to meet the paladins. " ;
 };
 
 
 func int DIA_Rupert_ZuPal_Condition()
 {
-	if(Kapitel < 2)
+	if (chapter <  2 )
 	{
 		return TRUE;
 	};
@@ -127,8 +128,8 @@ func int DIA_Rupert_ZuPal_Condition()
 
 func void DIA_Rupert_ZuPal_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_ZuPal_15_00");	//Откровенно говоря, я пришел, чтобы встретиться с паладинами.
-	AI_Output(self,other,"DIA_Rupert_ZuPal_03_01");	//У тебя мало шансов на это! С тех пор, как паладины обосновались в верхнем квартале, туда стало очень трудно попасть.
+	AI_Output(other,self, " DIA_Rupert_ZuPal_15_00 " );	// Frankly speaking, I came to meet with the paladins.
+	AI_Output(self,other, " DIA_Rupert_ZuPal_03_01 " );	// You don't stand a chance of that! Since the paladins have settled in the upper quarter, it has become very difficult to get there.
 };
 
 
@@ -139,7 +140,7 @@ instance DIA_Rupert_HelpMeIntoOV(C_Info)
 	condition = DIA_Rupert_HelpMeIntoOV_Condition;
 	information = DIA_Rupert_HelpMeIntoOV_Info;
 	permanent = FALSE;
-	description = "Ты можешь помочь мне попасть в верхний квартал?";
+	description = " Can you help me get to the upper quarter? " ;
 };
 
 func int DIA_Rupert_HelpMeIntoOV_Condition()
@@ -152,30 +153,30 @@ func int DIA_Rupert_HelpMeIntoOV_Condition()
 
 func void DIA_Rupert_HelpMeIntoOV_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_HelpMeIntoOV_15_00");	//Ты можешь помочь мне попасть в верхний квартал?
-	AI_Output(self,other,"DIA_Rupert_HelpMeIntoOV_03_01");	//Я? Нет, мое слово мало что значит!
-	AI_Output(self,other,"DIA_Rupert_HelpMeIntoOV_03_02");	//Всего несколько людей в нижней части города влиятельны настолько, что могут заставить стражу пропустить тебя.
-	AI_Output(self,other,"DIA_Rupert_HelpMeIntoOV_03_03");	//Маттео, мой босс, - один из них. Возможно, тебе стоит поговорить с ним.
+	AI_Output(other,self, " DIA_Rupert_HelpMeIntoOV_15_00 " );	// Can you help me get to the upper quarter?
+	AI_Output(self,other, " DIA_Rupert_HelpMeIntoOV_03_01 " );	// Me? No, my word means little!
+	AI_Output(self,other, " DIA_Rupert_HelpMeIntoOV_03_02 " );	// Only a few people in the lower part of the city are powerful enough to get the guards to let you through.
+	AI_Output(self,other, " DIA_Rupert_HelpMeIntoOV_03_03 " );	// Matteo, my boss, is one of them. Perhaps you should talk to him.
 
 	if((CanTeachTownMaster == FALSE) && (hero.guild == GIL_NONE))
 	{
-		AI_Output(self,other,"DIA_Rupert_HelpMeIntoOV_03_10");	//Правда, судя по твоему виду, он вряд ли даже станет разговаривать с тобой.
-		AI_Output(other,self,"DIA_Rupert_HelpMeIntoOV_03_11");	//И что же мне делать?
-		AI_Output(self,other,"DIA_Rupert_HelpMeIntoOV_03_12");	//Тебе надо как-то завоевать его доверие.
-		AI_Output(self,other,"DIA_Rupert_HelpMeIntoOV_03_13");	//Поговори с ополченцем Пабло. Думаю, он сможет как-нибудь помочь тебе.
+		AI_Output(self,other, " DIA_Rupert_HelpMeIntoOV_03_10 " );	// However, judging by your appearance, he is unlikely to even talk to you.
+		AI_Output(other,self, " DIA_Rupert_HelpMeIntoOV_03_11 " );	// And what should I do?
+		AI_Output(self,other, " DIA_Rupert_HelpMeIntoOV_03_12 " );	// You need to win his trust somehow.
+		AI_Output(self,other, " DIA_Rupert_HelpMeIntoOV_03_13 " );	// Talk to Militia Pablo. I think he can help you somehow.
 		RupertSendPablo = TRUE;
 		Log_CreateTopic(TOPIC_OV,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_OV,LOG_Running);
-		B_LogEntry(TOPIC_OV,"Чтобы попасть в верхний квартал, мне нужна помощь влиятельных граждан из нижней части города.");
-		B_LogEntry_Quiet(TOPIC_OV,"Торговец Маттео - один из влиятельных граждан нижней части города.");
-		B_LogEntry_Quiet(TOPIC_OV,"Но он не станет разговаривать со мной. Сначала нужно завоевать его доверие. Руперт посоветовал поговорить мне с ополченцем Пабло. Возможно, тот поможет мне в моем деле.");
+		B_LogEntry( TOPIC_OV , " To get to the upper quarter, I need the help of influential citizens from the lower part of the city. " );
+		B_LogEntry_Quiet( TOPIC_OV , " Merchant Matteo is one of the powerful citizens of the lower part of the city. " );
+		; _ _ _ _ _ _
 	}
 	else
 	{
 		Log_CreateTopic(TOPIC_OV,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_OV,LOG_Running);
-		B_LogEntry(TOPIC_OV,"Чтобы попасть в верхний квартал, мне нужна помощь влиятельных граждан из нижней части города.");
-		B_LogEntry_Quiet(TOPIC_OV,"Торговец Маттео - один из влиятельных граждан нижней части города. ");
+		B_LogEntry( TOPIC_OV , " To get to the upper quarter, I need the help of influential citizens from the lower part of the city. " );
+		B_LogEntry_Quiet( TOPIC_OV , " Merchant Matteo is one of the powerful citizens of the lower part of the city. " );
 	};
 };
 
@@ -187,12 +188,12 @@ instance DIA_Rupert_WoMatteo(C_Info)
 	condition = DIA_Rupert_WoMatteo_Condition;
 	information = DIA_Rupert_WoMatteo_Info;
 	permanent = FALSE;
-	description = "Где я могу найти Маттео?";
+	description = " Where can I find Matteo? " ;
 };
 
 func int DIA_Rupert_WoMatteo_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Rupert_HelpMeIntoOV) && (hero.guild == GIL_NONE))
+	if ( Npc_KnowsInfo ( other , DIA_Rupert_HelpMeIntoOV ) && ( hero . guild ==  GIL_NONE ))
 	{
 		return TRUE;
 	};
@@ -200,13 +201,13 @@ func int DIA_Rupert_WoMatteo_Condition()
 
 func void DIA_Rupert_WoMatteo_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_WoMatteo_15_00");	//Где я могу найти Маттео?
-	AI_Output(self,other,"DIA_Rupert_WoMatteo_03_01");	//Ты стоишь прямо перед его лавкой. Просто войди внутрь! Он практически всегда там.
+	AI_Output(other,self, " DIA_Rupert_WoMatteo_15_00 " );	// Where can I find Matteo?
+	AI_Output(self,other, " DIA_Rupert_WoMatteo_03_01 " );	// You're standing right in front of his shop. Just come inside! He is almost always there.
 
 	if(Knows_Matteo == FALSE)
 	{
 		Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-		B_LogEntry(TOPIC_CityTrader,"Лавка Маттео находится у южных ворот города. Он продает снаряжение, оружие и другие товары.");
+		B_LogEntry(TOPIC_CityTrader, " Matteo's shop is located at the south gate of the city. He sells equipment, weapons and other goods. " );
 		Knows_Matteo = TRUE;
 	};
 };
@@ -216,15 +217,15 @@ instance DIA_Rupert_WerEinfluss(C_Info)
 	npc = VLK_458_Rupert;
 	nr = 2;
 	condition = DIA_Rupert_WerEinfluss_Condition;
-	information = DIA_Rupert_WerEinfluss_Info;
+	information = DIA_Rupert_WerInfluence_Info;
 	permanent = FALSE;
-	description = "А что насчет других влиятельных горожан?";
+	description = " What about other influential citizens? " ;
 };
 
 
 func int DIA_Rupert_WerEinfluss_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Rupert_HelpMeIntoOV) && (hero.guild == GIL_NONE))
+	if ( Npc_KnowsInfo ( other , DIA_Rupert_HelpMeIntoOV ) && ( hero . guild ==  GIL_NONE ))
 	{
 		return TRUE;
 	};
@@ -232,19 +233,19 @@ func int DIA_Rupert_WerEinfluss_Condition()
 
 func void DIA_Rupert_WerEinfluss_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_WerEinfluss_15_00");	//А что насчет других влиятельных горожан?
-	AI_Output(self,other,"DIA_Rupert_WerEinfluss_03_01");	//Торговцы и мастера ремесленники, здесь, на главной улице - самые влиятельные фигуры в городе.
-	AI_Output(self,other,"DIA_Rupert_WerEinfluss_03_02");	//Ты должен попытаться стать учеником одного из них, как я.
-	AI_Output(self,other,"DIA_Rupert_WerEinfluss_03_03");	//С тех пор, как я работаю на Маттео, люди в городе относятся ко мне с уважением!
+	AI_Output(other,self, " DIA_Rupert_WerEinfluss_15_00 " );	// What about other influential citizens?
+	AI_Output(self,other, " DIA_Rupert_WerEinfluss_03_01 " );	// Merchants and craftsmen, here on the main street, are the most influential figures in the city.
+	AI_Output(self,other, " DIA_Rupert_WerEinfluss_03_02 " );	// You should try to become a student of one of them, like me.
+	AI_Output(self,other, " DIA_Rupert_WerEinfluss_03_03 " );	// Ever since I've been working for Matteo, people in the city treat me with respect!
 
 	if((CanTeachTownMaster == FALSE) && (hero.guild == GIL_NONE))
 	{
-		AI_Output(self,other,"DIA_Rupert_WerEinfluss_03_10");	//Однако никто из них не станет разговаривать с тобой до тех пор, пока ты не завоюешь их доверие.
-		B_LogEntry(TOPIC_OV,"Я должен попытаться стать учеником одного из мастеров! Но это станет возможно только тогда, когда я завоюю их доверие.");
+		AI_Output(self,other, " DIA_Rupert_WerEinfluss_03_10 " );	// However, none of them will talk to you until you win their trust.
+		B_LogEntry( TOPIC_OV , " I should try to become an apprentice to one of the masters! But that will only be possible when I win their trust. " );
 	}
 	else
 	{
-		B_LogEntry(TOPIC_OV,"Я должен попытаться стать учеником одного из мастеров.");
+		B_LogEntry( TOPIC_OV , " I should try to become a student of one of the masters. " );
 	};
 };
 
@@ -255,7 +256,7 @@ instance DIA_Rupert_Work(C_Info)
 	condition = DIA_Rupert_Work_Condition;
 	information = DIA_Rupert_Work_Info;
 	permanent = FALSE;
-	description = "Мне нужны деньги и я ищу работу.";
+	description = " I need money and I'm looking for a job. " ;
 };
 
 
@@ -269,9 +270,9 @@ func int DIA_Rupert_Work_Condition()
 
 func void DIA_Rupert_Work_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_Work_15_00");	//Мне нужны деньги и я ищу работу.
-	AI_Output(self,other,"DIA_Rupert_Work_03_01");	//Я слышал, что у Боспера проблемы с поставщиками. Его лавка находится вон там.
-	AI_Output(self,other,"DIA_Rupert_Work_03_02");	//Говорят, он платит довольно хорошо.
+	AI_Output(other,self, " DIA_Rupert_Work_15_00 " );	// I need money and I'm looking for a job.
+	AI_Output(self,other, " DIA_Rupert_Work_03_01 " );	// I heard that Bosper has problems with suppliers. His shop is over there.
+	AI_Output(self,other, " DIA_Rupert_Work_03_02 " );	// They say he pays pretty well.
 };
 
 
@@ -282,7 +283,7 @@ instance DIA_Rupert_YourOffer(C_Info)
 	condition = DIA_Rupert_YourOffer_Condition;
 	information = DIA_Rupert_YourOffer_Info;
 	permanent = FALSE;
-	description = "Что ты можешь мне предложить?";
+	description = " What can you offer me? " ;
 };
 
 func int DIA_Rupert_YourOffer_Condition()
@@ -292,12 +293,12 @@ func int DIA_Rupert_YourOffer_Condition()
 
 func void DIA_Rupert_YourOffer_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_YourOffer_15_00");	//Что ты можешь мне предложить?
-	AI_Output(self,other,"DIA_Rupert_YourOffer_03_01");	//Сейчас, у меня мало что есть.
+	AI_Output(other,self, " DIA_Rupert_YourOffer_15_00 " );	// What can you offer me?
+	AI_Output(self,other, " DIA_Rupert_YourOffer_03_01 " );	// Right now, I don't have much to eat.
 
 	if((hero.guild != GIL_SLD) && (hero.guild != GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Rupert_YourOffer_03_02");	//Этот чертов Онар не поставляет больше продукты, а того, что мы получаем с маленьких ферм, недостаточно для удовлетворения потребностей города.
+		AI_Output(self,other, " DIA_Rupert_YourOffer_03_02 " );	// That damn Onar isn't supplying food anymore, and what we get from the small farms isn't enough to meet the city's needs.
 	};
 };
 
@@ -309,7 +310,7 @@ instance DIA_Rupert_Trade(C_Info)
 	condition = DIA_Rupert_Trade_Condition;
 	information = DIA_Rupert_Trade_Info;
 	permanent = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 	trade = TRUE;
 };
 
@@ -330,23 +331,23 @@ func void DIA_Rupert_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Rupert_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Rupert_Trade_15_00 " );	// Show me your products.
 
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Rupert_Trade_03_01");	//Я приношу извинения за скудный выбор! Человек вашего положения наверняка привык к лучшему.
+		AI_Output(self,other, " DIA_Rupert_Trade_03_01 " );	// I apologize for the poor selection! A man in your position must be accustomed to the best.
 	};
 };
 
 
-instance DIA_Rupert_Bauernaufstand(C_Info)
+instance DIA_Rupert_Bauernaufstand (C_Info)
 {
 	npc = VLK_458_Rupert;
 	nr = 4;
 	condition = DIA_Rupert_Bauernaufstand_Condition;
 	information = DIA_Rupert_Bauernaufstand_Info;
 	permanent = FALSE;
-	description = "Расскажи мне о восстании крестьян.";
+	description = " Tell me about the peasant uprising. " ;
 };
 
 
@@ -360,12 +361,12 @@ func int DIA_Rupert_Bauernaufstand_Condition()
 
 func void DIA_Rupert_Bauernaufstand_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_Bauernaufstand_15_00");	//Расскажи мне о восстании крестьян.
-	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_01");	//Это довольно просто! Онар, крупный помещик, больше не платит налоги городу.
-	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_02");	//Только представь! Мы воюем с орками, а этот жирный гусь забирает все себе!
-	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_03");	//Обычно городская стража принимает жесткие меры в таких случаях.
-	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_04");	//Но теперь самое интересное - говорят, что Онар нанял наемников, чтобы те не подпускали к его ферме городские войска!
-	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_05");	//НАЕМНИКОВ! Это все кончится войной! Как будто одной войны недостаточно!
+	AI_Output(other,self, " DIA_Rupert_Bauernaufstand_15_00 " );	// Tell me about the peasant uprising.
+	AI_Output(self,other, " DIA_Rupert_Bauernaufstand_03_01 " );	// It's pretty easy! Onar, a large landowner, no longer pays taxes to the city.
+	AI_Output(self,other, " DIA_Rupert_Bauernaufstand_03_02 " );	// Just imagine! We are at war with the orcs, and this fat goose takes everything for himself!
+	AI_Output(self,other, " DIA_Rupert_Bauernaufstand_03_03 " );	// Usually, the city guard takes drastic measures in such cases.
+	AI_Output(self,other, " DIA_Rupert_Bauernaufstand_03_04 " );	// But now the most interesting thing is that Onar is said to have hired mercenaries to keep city troops out of his farm!
+	AI_Output(self,other, " DIA_Rupert_Bauernaufstand_03_05 " );	// MERCENES! This will all end in war! As if one war wasn't enough!
 };
 
 
@@ -376,13 +377,13 @@ instance DIA_Rupert_Mercs(C_Info)
 	condition = DIA_Rupert_Mercs_Condition;
 	information = DIA_Rupert_Mercs_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о наемниках Онара?";
+	description = " What do you know about Onar's mercenaries? " ;
 };
 
 
 func int DIA_Rupert_Mercs_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Rupert_Bauernaufstand) && (hero.guild != GIL_SLD) && (hero.guild != GIL_DJG))
+	if (Npc_KnowsInfo(other,DIA_Rupert_BauerException) && (hero.guild !=  GIL_SLD ) && (hero.guild !=  GIL_DJG ))
 	{
 		return TRUE;
 	};
@@ -390,8 +391,8 @@ func int DIA_Rupert_Mercs_Condition()
 
 func void DIA_Rupert_Mercs_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_Mercs_15_00");	//Что ты знаешь о наемниках Онара?
-	AI_Output(self,other,"DIA_Rupert_Mercs_03_01");	//Я слышал, что большинство из них бывшие каторжники из колонии.
-	AI_Output(self,other,"DIA_Rupert_Mercs_03_02");	//А их главарь, по слухам, был большой шишкой при короле - генералом или что-то в этом роде, - которого осудили за предательство!
-	AI_Output(self,other,"DIA_Rupert_Mercs_03_03");	//Ужасные времена!
+	AI_Output(other,self, " DIA_Rupert_Mercs_15_00 " );	// What do you know about Onar's mercenaries?
+	AI_Output(self,other, " DIA_Rupert_Mercs_03_01 " );	// I heard that most of them are former convicts from the colony.
+	AI_Output(self,other, " DIA_Rupert_Mercs_03_02 " );	// And their leader was rumored to be a big shot under the king - a general or something - who was convicted of treason!
+	AI_Output(self,other, " DIA_Rupert_Mercs_03_03 " );	// Terrible times!
 };
