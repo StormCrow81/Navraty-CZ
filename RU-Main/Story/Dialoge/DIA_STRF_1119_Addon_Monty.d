@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Monty_EXIT(C_Info)
 {
 	npc = STRF_1119_Addon_Monty;
@@ -21,7 +22,7 @@ func void DIA_Addon_Monty_EXIT_Info()
 };
 
 
-var int Monty_einmal;
+var int monty_once;
 
 instance DIA_Addon_Monty_Hi(C_Info)
 {
@@ -30,7 +31,7 @@ instance DIA_Addon_Monty_Hi(C_Info)
 	condition = DIA_Addon_Monty_Hi_Condition;
 	information = DIA_Addon_Monty_Hi_Info;
 	permanent = FALSE;
-	description = "Как идут дела?";
+	description = " How are things going? " ;
 };
 
 
@@ -41,11 +42,11 @@ func int DIA_Addon_Monty_Hi_Condition()
 
 func void DIA_Addon_Monty_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Monty_Hi_15_00");	//Как идут дела?
-	AI_Output(self,other,"DIA_Addon_Monty_Hi_08_01");	//Я жив - и это все, что имеет для меня значение.
-	if(Monty_einmal == FALSE)
+	AI_Output(other,self, " DIA_Addon_Monty_Hi_15_00 " );	// How are things going?
+	AI_Output(self,other, " DIA_Addon_Monty_Hi_08_01 " );	// I'm alive - and that's all that matters to me.
+	if (Monty_once ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_Monty_Hi_08_02");	//Если ты хочешь что-либо обсудить, тебе нужен Патрик.
+		AI_Output(self,other, " DIA_Addon_Monty_Hi_08_02 " );	// If you want to discuss anything, you need Patrick.
 		Monty_einmal = TRUE;
 	};
 };
