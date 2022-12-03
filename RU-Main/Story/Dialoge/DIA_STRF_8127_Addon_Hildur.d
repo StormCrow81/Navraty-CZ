@@ -1,4 +1,5 @@
 
+
 instance DIA_STRF_8127_Addon_Hildur_EXIT(C_Info)
 {
 	npc = STRF_8127_Addon_Hildur;
@@ -28,7 +29,7 @@ instance DIA_STRF_8127_Addon_Hildur_HowYou(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_HowYou_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_HowYou_Info;
 	permanent = FALSE;
-	description = "Ты кузнец?";
+	description = " Are you a blacksmith? " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_HowYou_Condition()
@@ -39,11 +40,11 @@ func int DIA_STRF_8127_Addon_Hildur_HowYou_Condition()
 func void DIA_STRF_8127_Addon_Hildur_HowYou_Info()
 {
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowYou_01_00");	//Ты кузнец?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowYou_01_01");	//Нет, я простой плавильщик руды.
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowYou_01_02");	//То есть тебе не приходится целый день вкалывать с кайлом в руках?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowYou_01_03");	//Как видишь. Однако не думай, что у меня легкая работа!
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowYou_01_01 " );	// No, I'm a simple ore smelter.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_HowYou_01_02 " );	// So you don't have to work all day with a pick in your hands?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowYou_01_03 " );	// As you can see. However, do not think that I have an easy job!
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowYou_01_04");	//Правда?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowYou_01_05");	//Вот постоишь тут с мое - сам поймешь.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowYou_01_05 " );	// If you stand here with mine, you'll understand.
 };	
 	
 instance DIA_STRF_8127_Addon_Hildur_HowLong(C_Info)
@@ -53,12 +54,12 @@ instance DIA_STRF_8127_Addon_Hildur_HowLong(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_HowLong_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_HowLong_Info;
 	permanent = FALSE;
-	description = "Ты уже давно тут?";
+	description = " Have you been here for a long time? " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_HowLong_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_STRF_8127_Addon_Hildur_HowYou) == TRUE)
+	if ( Npc_KnowsInfo ( hero , DIA_STRF_8127_Addon_Hildur_HowYou ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -66,17 +67,17 @@ func int DIA_STRF_8127_Addon_Hildur_HowLong_Condition()
 
 func void DIA_STRF_8127_Addon_Hildur_HowLong_Info()
 {
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowLong_01_00");	//Ты уже давно тут?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_01");	//Больше, чем ты можешь себе представить.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_02");	//Я попал сюда еще в те времена, когда всей долиной заправляли рудные бароны.
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowLong_01_03");	//Как же ты угодил к оркам?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_04");	//Это долгая история...(задумчиво) Как-то раз я сопровождал груз руды из старой шахты.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_05");	//Когда мы уже почти подходили к замку, на нас вдруг внезапно напали орки.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_06");	//Большую часть конвоя они тогда перебили, ну а меня и еще нескольких парней приволокли сюда.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_07");	//Когда же орки прознали, что я неплохо умею обращаться с рудой, то поставили меня тут у печи, лить стальные болванки.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_08");	//Вот так я тут до сих пор и торчу.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_09");	//Мне, конечно, попроще, чем другим парням. У меня даже есть своя кровать.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_10");	//Но по сути я такой же раб, как и они.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_HowLong_01_00 " );	// How long have you been here?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_01 " );	// More than you can imagine.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_02 " );	// I've been here since the days when the ore barons ruled the valley.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_HowLong_01_03 " );	// How did you please the orcs?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_04 " );	// It's a long story...(thoughtfully) Once I was escorting a load of ore from an old mine.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_05 " );	// When we were almost approaching the castle, we were suddenly suddenly attacked by orcs.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_06 " );	// They killed most of the convoy then, but they dragged me and a few other guys here.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_07 " );	// When the orcs found out that I was good at handling ore, they put me here by the furnace, pouring steel ingots.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_08 " );	// This is how I'm still stuck here.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_09 " );	// Of course, it's easier for me than for other guys. I even have my own bed.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_HowLong_01_10 " );	// But basically I'm just as much a slave as they are.
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowLong_01_11");	//Понятно.
 };	
 
@@ -87,12 +88,12 @@ instance DIA_STRF_8127_Addon_Hildur_NeedRest(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_NeedRest_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_NeedRest_Info;
 	permanent = FALSE;
-	description = "Ты можешь научить меня плавить руду?";
+	description = " Can you teach me how to smelt ore? " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_NeedRest_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_STRF_8127_Addon_Hildur_HowYou) == TRUE)
+	if ( Npc_KnowsInfo ( hero , DIA_STRF_8127_Addon_Hildur_HowYou ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -100,17 +101,17 @@ func int DIA_STRF_8127_Addon_Hildur_NeedRest_Condition()
 
 func void DIA_STRF_8127_Addon_Hildur_NeedRest_Info()
 {
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_NeedRest_01_00");	//Ты можешь научить меня плавить руду?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_NeedRest_01_01");	//Извини, но у меня сейчас на это нету времени.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_NeedRest_01_02");	//Орки пристально следят за тем, как я работаю. И чуть что, сразу начинают подгонять своими топорами.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_NeedRest_01_03");	//Особенно вон тот орк по имени Дабар Шак! Этот вообще с меня глаз не спускает.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_NeedRest_01_04");	//Вот если бы ты как-то отвлек его на время, то я вполне бы смог показать тебе, как плавить руду.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_NeedRest_01_05");	//С условием, конечно, что у тебя будет для этого достаточно опыта.
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_NeedRest_01_06");	//Ладно! Попробую что-нибудь придумать.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_NeedRest_01_00 " );	// Can you teach me how to smelt ore?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_NeedRest_01_01 " );	// Sorry, but I don't have time for this right now.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_NeedRest_01_02 " );	// Orcs keep a close eye on how I work. And just a little, they immediately begin to customize with their axes.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_NeedRest_01_03 " );	// Especially that Orc named Dabar Shak! This one never takes my eyes off me.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_NeedRest_01_04 " );	// Now, if you somehow distracted him for a while, then I could well show you how to smelt the ore.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_NeedRest_01_05 " );	// With the condition, of course, that you have enough experience for this.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_NeedRest_01_06 " );	// Okay! I'll try to come up with something.
 	MIS_NeedRest = LOG_Running;
 	Log_CreateTopic(TOPIC_NeedRest,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NeedRest,LOG_Running);
-	B_LogEntry(TOPIC_NeedRest,"Хильдур может научить меня плавить руду, если я смогу как-то отвлечь орка Дабар Шака, который постоянно следит за ним.");
+	B_LogEntry(TOPIC_NeedRest, " Hildur can teach me how to smelt ore if I can somehow distract the orc Dabar Shak, who is constantly watching him. " );
 };	
 
 
@@ -121,12 +122,12 @@ instance DIA_STRF_8127_Addon_Hildur_NeedRest_Done(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_NeedRest_Done_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_NeedRest_Done_Info;
 	permanent = FALSE;
-	description = "Твой охранник завалился спать.";
+	description = " Your guard has fallen asleep. " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_NeedRest_Done_Condition()
 {
-	if((MIS_NeedRest == LOG_Running) && (DabarShakIsSleep == TRUE))
+	if (( MIS_NeedRest == LOG_Running ) && ( PastShakeIsSleeping ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -135,15 +136,15 @@ func int DIA_STRF_8127_Addon_Hildur_NeedRest_Done_Condition()
 func void DIA_STRF_8127_Addon_Hildur_NeedRest_Done_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_00");	//Твой охранник завалился спать.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_01");	//Ну наконец-то. Теперь можно немного и расслабиться!
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_02");	//Так ты научишь меня плавить руду?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_03");	//Почему бы и нет? Но только если у тебя будет достаточно опыта.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_00 " );	// Your guard fell asleep.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_01 " );	// Well, finally. Now you can relax a bit!
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_02 " );	// So will you teach me how to smelt ore?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_03 " );	// Why not? But only if you have enough experience.
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_NeedRest_Done_01_04");	//Само собой.
 	RT_Respect = RT_Respect + 1;
 	MIS_NeedRest = LOG_Success;
 	Log_SetTopicStatus(TOPIC_NeedRest,LOG_Success);
-	B_LogEntry(TOPIC_NeedRest,"Я рассказал Хильдуру про уснувшего Дабар Шака. Теперь он может научить меня плавить руду.");
+	B_LogEntry(TOPIC_NeedRest, " I told Hildur about the sleeping Dabar Shaq. Now he can teach me how to smelt ore. " );
 };	
 
 instance DIA_STRF_8127_Addon_Hildur_Plavka(C_Info)
@@ -153,7 +154,7 @@ instance DIA_STRF_8127_Addon_Hildur_Plavka(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_Plavka_condition;
 	information = DIA_STRF_8127_Addon_Hildur_Plavka_info;
 	permanent = TRUE;
-	description = "Научи меня плавить железную руду. (Очки обучения: 3)";
+	description = " Teach me how to smelt iron ore. (Learning points: 3) " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_Plavka_condition()
@@ -166,7 +167,7 @@ func int DIA_STRF_8127_Addon_Hildur_Plavka_condition()
 
 func void DIA_STRF_8127_Addon_Hildur_Plavka_info()
 {
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Plavka_01_00");	//Научи меня плавить железную руду.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_Plavka_01_00 " );	// Teach me how to smelt iron ore.
 
 	if(hero.lp < 3)
 	{
@@ -176,16 +177,16 @@ func void DIA_STRF_8127_Addon_Hildur_Plavka_info()
 	};
 	if(hero.lp >= 3)
 	{
-		AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Plavka_01_01");	//В плавильной печи все проще, но подойдет и простой кузнечный горн.
-		AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Plavka_01_02");	//Тебе нужно как минимум пятьдесят кусков руды. Топишь их в печи, а потом сливаешь в форму!
-		AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Plavka_01_03");	//Вот и весь секрет изготовления стальной заготовки.
+		AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Plavka_01_01 " );	// Things are simpler in a smelter, but a simple forge will do.
+		AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Plavka_01_02 " );	// You need at least fifty pieces of ore. You heat them in the oven, and then pour them into a mold!
+		AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Plavka_01_03 " );	// That's the whole secret of making a steel billet.
 		hero.lp = hero.lp - 3;
 		RankPoints = RankPoints + 3;
-		AI_Print("Изучено: плавка руды");
+		AI_Print( " Studied : ore smelting " );
 		KNOWHOWTOOREFUS = TRUE;
-		DabarShakIsAwake = TRUE;
+		DabarShakIsAwake = TRUE ;
 		Snd_Play("LevelUP");
-		B_LogEntry(TOPIC_STEELDRAW,"Теперь я умею переплавлять железную руду в стальные заготовки. Для получения стальной заготовки нужен кузнечный горн и пятьдесят кусков руды.");
+		B_LogEntry( TOPIC_STEELDRAW , " I can now smelt iron ore into steel billets. To make a steel billet, you need a forge and fifty pieces of ore. " );
 	};
 };
 
@@ -196,12 +197,12 @@ instance DIA_STRF_8127_Addon_Hildur_Work(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_Work_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_Work_Info;
 	permanent = FALSE;
-	description = "У тебя есть какая-нибудь работенка для меня?";
+	description = " Do you have any job for me? " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_Work_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_STRF_8127_Addon_Hildur_HowYou) == TRUE)
+	if ( Npc_KnowsInfo ( hero , DIA_STRF_8127_Addon_Hildur_HowYou ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -209,17 +210,17 @@ func int DIA_STRF_8127_Addon_Hildur_Work_Condition()
 
 func void DIA_STRF_8127_Addon_Hildur_Work_Info()
 {
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Work_01_00");	//У тебя есть какая-нибудь работенка для меня?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Work_01_01");	//Хммм...(задумчиво) Ты бы мне очень помог, если бы раздобыл где-нибудь угля.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Work_01_02");	//Эта печь так стара, что мне каждый раз приходится тратить кучу времени, чтобы разжечь в ней огонь.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Work_01_03");	//А нормального угля тут днем с огнем не сыщешь! 
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Work_01_04");	//И сколько тебе его нужно?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Work_01_05");	//Совсем немного. Имей бы я под рукой хотя бы десять кусков угля, то этого количества мне бы надолго хватило.
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Work_01_06");	//Хорошо. Попробую достать его для тебя.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_Work_01_00 " );	// Do you have any job for me?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Work_01_01 " );	// Hmmm...(thoughtfully) You could help me a lot if you could get some coal somewhere.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Work_01_02 " );	// This stove is so old that I have to spend a lot of time to light it every time.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Work_01_03 " );	// And you won't find normal coal here during the day with fire!
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_Work_01_04 " );	// And how much do you need?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Work_01_05 " );	// Quite a bit. If I had at least ten pieces of coal on hand, this amount would be enough for me for a long time.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_Work_01_06 " );	// Good. I'll try to get it for you.
 	MIS_HildurCoal = LOG_Running;
 	Log_CreateTopic(TOPIC_HildurCoal,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HildurCoal,LOG_Running);
-	B_LogEntry(TOPIC_HildurCoal,"Хильдуру нужен уголь, чтобы разжигать огонь в своей старой плавильне. По меньшей мере кусков десять.");
+	B_LogEntry(TOPIC_HildurCoal, " Hildur needs coal to start a fire in his old smelter. At least ten pieces. " );
 };	
 
 instance DIA_STRF_8127_Addon_Hildur_WorkDone(C_Info)
@@ -229,7 +230,7 @@ instance DIA_STRF_8127_Addon_Hildur_WorkDone(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_WorkDone_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_WorkDone_Info;
 	permanent = FALSE;
-	description = "Я принес тебе угля.";
+	description = " I brought you coal. " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_WorkDone_Condition()
@@ -243,18 +244,18 @@ func int DIA_STRF_8127_Addon_Hildur_WorkDone_Condition()
 func void DIA_STRF_8127_Addon_Hildur_WorkDone_Info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_WorkDone_01_00");	//Я принес тебе угля.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_WorkDone_01_00 " );	// I brought you coal.
 	B_GiveInvItems(other,self,ItMi_Coal,10);
 	Npc_RemoveInvItems(self,ItMi_Coal,10);
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_WorkDone_01_01");	//Отлично, парень! Теперь моим мучениям пришел конец!
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_WorkDone_01_02");	//К сожалению, мне нечем тебя отблагодарить.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_WorkDone_01_03");	//Если только парой кусков железной руды.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_WorkDone_01_01 " );	// Great, man! Now my suffering is over!
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_WorkDone_01_02 " );	// Unfortunately, I have nothing to thank you with.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_WorkDone_01_03 " );	// If only a couple of pieces of iron ore.
 	B_GiveInvItems(self,other,ItMi_SNugget,2);
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_WorkDone_01_04");	//Большего и не надо.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_WorkDone_01_04 " );	// You don't need more.
 	RT_Respect = RT_Respect + 1;
 	MIS_HildurCoal = LOG_Success;
 	Log_SetTopicStatus(TOPIC_HildurCoal,LOG_Success);
-	B_LogEntry(TOPIC_HildurCoal,"Я принес Хильдуру уголь.");
+	B_LogEntry(TOPIC_HildurCoal, " I brought coal to Hildur. " );
 };
 	
 instance DIA_STRF_8127_Addon_Hildur_LowLevel(C_Info)
@@ -264,12 +265,12 @@ instance DIA_STRF_8127_Addon_Hildur_LowLevel(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_LowLevel_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_LowLevel_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о нижнем уровне шахты?";
+	description = " What do you know about the lower level of the mine? " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_LowLevel_Condition()
 {
-	if((Npc_KnowsInfo(hero,DIA_STRF_8127_Addon_Hildur_HowYou) == TRUE) && (MIS_LowLevel == LOG_Running))
+	if ((Npc_KnowsInfo(hero,DIA_STRF_8127_Hildur_HowYou) ==  TRUE ) && (MIS_LowLevel == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -277,26 +278,26 @@ func int DIA_STRF_8127_Addon_Hildur_LowLevel_Condition()
 
 func void DIA_STRF_8127_Addon_Hildur_LowLevel_Info()
 {
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_00");	//Что ты знаешь о нижнем уровне шахты?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_01");	//Хммм...(удивленно) А с чего вдруг такие вопросы?!
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_02");	//По словам Роллана, ты должен кое-что знать об этом.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_03");	//Ага! Так значит, это тебе Роллан нашептал? Вот же ж трепло!
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_04");	//Значит, он прав. Может, тогда расскажешь мне, что тебе известно про нижний уровень?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_05");	//Эх! Ну ладно...(вздыхая) Хотя я и не особо люблю говорить на эту тему.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_06");	//В общем, в свое время на нижнем уровне тоже добывалась руда.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_07");	//Но не просто железная, а магическая! Там было очень богатое месторождение этой горной породы.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_08");	//И все шло прекрасно до тех пор, пока орки, видимо, не откопали там то, что они не должны были откапывать.
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_09");	//Что же именно они там нашли?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_10");	//Я не знаю, приятель. В то время я уже работал здесь, у печи. Поэтому отходить далеко не мог.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_11");	//Но одно я знаю точно...
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_12");	//...после того случая орки закрыли проход, ведущий на нижний уровень, и больше его никогда не открывали!
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_13");	//Значит, никто не знает настоящую причину, почему орки закрыли ту часть шахты?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_14");	//Если ее кто-то и знает, то только сами орки.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_15");	//Но из тех, кто здесь был тогда, остался только один Грок. Старый орк-охранник, что стоит возле подъемника.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_16");	//Можешь попробовать поговорить с ним. Если, конечно, он станет тебя слушать.
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_17");	//Хорошо, так и сделаю.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_00 " );	// What do you know about the lower level of the mine?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_01 " );	// Hmmm...(surprised) Why all of a sudden such questions?!
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_02 " );	// According to Rolland, you should know something about this.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_03 " );	// Aha! So this is what Rolland whispered to you? Here is the yap!
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_04 " );	// So he's right. Maybe then tell me what you know about the lower level?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_05 " );	// Eh! Okay... (sighing) I don't really like to talk about it though.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_06 " );	// In general, at one time, ore was also mined at the lower level.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_07 " );	// But not just iron, but magic! There was a very rich deposit of this rock.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_08 " );	// And everything was going great until the orcs apparently dug up something they shouldn't have dug up.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_09 " );	// What exactly did they find there?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_10 " );	// I don't know, mate. At that time I was already working here, by the stove. Therefore, he could not go far.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_11 " );	// But one thing I know for sure...
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_12 " );	// ...after that incident, the orcs closed the passage leading to the lower level, and never opened it again!
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_13 " );	// So no one knows the real reason why the orcs closed that part of the mine?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_14 " );	// If anyone knows her, then only the orcs themselves.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_15 " );	// But of those who were here then, only Grock remained. An old orc guard who stands near the lift.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_16 " );	// You can try talking to him. Unless, of course, he will listen to you.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_LowLevel_01_17 " );	// Okay, I'll do that.
 	KnowGrok = TRUE;
-	B_LogEntry(TOPIC_LowLevel,"Я поговорил с Хильдуром по поводу нижнего уровня шахты. Похоже, орки обнаружили там нечто такое, что их крайне напугало. Что именно - Хильдиру не известно. Старый орк Грок может кое-что знать об этом.");
+	B_LogEntry(TOPIC_LowLevel, " I've spoken to Hildur about the lower level of the mine. It looks like the orcs have discovered something there that really frightens them. Hildir doesn't know what exactly. Old orc Grok might know something about it. " );
 };	
 
 instance DIA_STRF_8127_Addon_Hildur_Perm(C_Info)
@@ -306,7 +307,7 @@ instance DIA_STRF_8127_Addon_Hildur_Perm(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_Perm_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_Perm_Info;
 	permanent = TRUE;
-	description = "Как работается?";
+	description = " How does it work? " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_Perm_Condition()
@@ -319,10 +320,10 @@ func int DIA_STRF_8127_Addon_Hildur_Perm_Condition()
 
 func void DIA_STRF_8127_Addon_Hildur_Perm_Info()
 {
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Perm_01_00");	//Как работается?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Perm_01_01");	//Все так же, приятель...(вздыхая) Целый день только и занимаюсь тем, что отливаю стальные болванки.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Perm_01_02");	//Но лучше уж так, чем с кайлом у жилы.
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Perm_01_03");	//Это ты точно подметил.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_Perm_01_00 " );	// How does it work?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Perm_01_01 " );	// Still the same, buddy... (sighing) All day long I've been busy casting steel ingots.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_Perm_01_02 " );	// But it's better that way than with a pick at the vein.
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_Perm_01_03 " );	// That's exactly what you noticed.
 };	
 
 instance DIA_STRF_8127_Addon_Hildur_ElkKirka(C_Info)
@@ -332,12 +333,12 @@ instance DIA_STRF_8127_Addon_Hildur_ElkKirka(C_Info)
 	condition = DIA_STRF_8127_Addon_Hildur_ElkKirka_Condition;
 	information = DIA_STRF_8127_Addon_Hildur_ElkKirka_Info;
 	permanent = FALSE;
-	description = "Ты случайно не знаешь, где тут можно раздобыть приличную кирку?";
+	description = " Do you happen to know where you can get a decent pickaxe around here? " ;
 };
 
 func int DIA_STRF_8127_Addon_Hildur_ElkKirka_Condition()
 {
-	if((MIS_ElkKirka == LOG_Running) && (ElkNeedNewKirka == TRUE) && (Npc_KnowsInfo(hero,DIA_STRF_8127_Addon_Hildur_HowYou) == TRUE))
+	if (( MIS_ElkKirka == LOG_Running ) && ( ElkNeedNewKirka ==  TRUE ) && ( Npc_KnowsInfo ( hero , DIA_STRF_8127_Addon_Hildur_HowYou ) ==  TRUE )) .
 	{
 		return TRUE;
 	};
@@ -345,15 +346,15 @@ func int DIA_STRF_8127_Addon_Hildur_ElkKirka_Condition()
 
 func void DIA_STRF_8127_Addon_Hildur_ElkKirka_Info()
 {
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_00");	//Ты случайно не знаешь, где тут можно раздобыть приличную кирку?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_01");	//За весь инструмент тут отвечает Вакур Шак.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_02");	//Но тебе он продаст ее только в том случае, если у тебя есть золото.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_03");	//Эта скотина слишком жадная для орка! Но тем не менее...
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_04");	//А откуда рабы берут золото?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_05");	//Подчас среди породы железной руды можно найти небольшие золотые прожилки.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_06");	//Если ты наткнулся на такую, то, считай, тебе крупно повезло.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_07");	//За золото тут можно купить более-менее нормальной еды или новые инструменты.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_08");	//Вот так и выживаем!
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_00 " );	// Do you happen to know where you can get a decent pickaxe around here?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_01 " );	// Vakur Shak is responsible for the entire tool here.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_02 " );	// But he will only sell it to you if you have the gold.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_03 " );	// This bastard is too greedy for an orc! But nonetheless...
+	AI_Output(other,self, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_04 " );	// Where do slaves get their gold from?
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_05 " );	// Sometimes small gold streaks can be found among iron ore rocks.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_06 " );	// If you stumbled upon one, consider yourself very lucky.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_07 " );	// For gold here you can buy more or less normal food or new tools.
+	AI_Output(self,other, " DIA_STRF_8127_Addon_Hildur_ElkKirka_01_08 " );	// This is how we survive!
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_09");	//Ясно.
-	ElkNeedNewKirka = 2;
+	ElkNeedNewKirka = 2 ;
 };	
