@@ -1,11 +1,12 @@
 
-var int Brahim_ShowedMaps;
+
+var int Brahim_ShownMaps;
 
 func void B_BrahimNewMaps()
 {
 	if(Brahim_ShowedMaps == TRUE)
 	{
-		AI_Output(self,other,"B_BrahimNewMaps_07_00");	//Заходи попозже. Я уверен, что смогу приготовить что-нибудь интересное для тебя.
+		AI_Output(self,other, " B_BrahimNewMaps_07_00 " );	// Come back later. I'm sure I can cook something interesting for you.
 	};
 };
 
@@ -23,7 +24,7 @@ instance DIA_Brahim_EXIT(C_Info)
 
 func int DIA_Brahim_EXIT_Condition()
 {
-	if(Kapitel <= 2)
+	if (chapter <=  2 )
 	{
 		return TRUE;
 	};
@@ -42,7 +43,7 @@ instance DIA_Brahim_PICKPOCKET(C_Info)
 	condition = DIA_Brahim_PICKPOCKET_Condition;
 	information = DIA_Brahim_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его секстант)";
+	description = " (Try to steal his sextant) " ;
 };
 
 func int DIA_Brahim_PICKPOCKET_Condition()
@@ -57,7 +58,7 @@ func void DIA_Brahim_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Brahim_PICKPOCKET);
 	Info_AddChoice(DIA_Brahim_PICKPOCKET,Dialog_Back,DIA_Brahim_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Brahim_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Brahim_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Brahim_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Brahim_PICKPOCKET_DoIt);
 };
 
 func void DIA_Brahim_PICKPOCKET_DoIt()
@@ -112,7 +113,7 @@ instance DIA_Brahim_GREET(C_Info)
 	condition = DIA_Brahim_GREET_Condition;
 	information = DIA_Brahim_GREET_Info;
 	permanent = FALSE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -123,12 +124,12 @@ func int DIA_Brahim_GREET_Condition()
 
 func void DIA_Brahim_GREET_Info()
 {
-	AI_Output(other,self,"DIA_Brahim_GREET_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Brahim_GREET_07_01");	//Меня зовут Ибрагим. Я рисую карты и продаю их.
-	AI_Output(self,other,"DIA_Brahim_GREET_07_02");	//Так как ты недавно здесь, возможно, тебе пригодится карта города.
-	AI_Output(self,other,"DIA_Brahim_GREET_07_03");	//Это очень недорого и очень полезно, пока ты здесь не освоишься.
+	AI_Output(other,self, " DIA_Brahim_GREET_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Brahim_GREET_07_01 " );	// My name is Ibrahim. I draw cards and sell them.
+	AI_Output(self,other, " DIA_Brahim_GREET_07_02 " );	// Since you're new here, you might need a map of the city.
+	AI_Output(self,other, " DIA_Brahim_GREET_07_03 " );	// It's very inexpensive and very useful until you get the hang of it.
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Ибрагим рисует карты и продает их в гавани.");
+	B_LogEntry(TOPIC_CityTrader, " Ibrahim draws cards and sells them in the harbor. " );
 };
 
 instance DIA_Brahim_HelpPath(C_Info)
@@ -138,7 +139,7 @@ instance DIA_Brahim_HelpPath(C_Info)
 	condition = DIA_Brahim_HelpPath_Condition;
 	information = DIA_Brahim_HelpPath_Info;
 	permanent = FALSE;
-	description = "А тебе никакая помощь не нужна?";
+	description = " Do you need any help? " ;
 };
 
 func int DIA_Brahim_HelpPath_Condition()
@@ -151,23 +152,23 @@ func int DIA_Brahim_HelpPath_Condition()
 
 func void DIA_Brahim_HelpPath_Info()
 {
-	AI_Output(other,self,"DIA_Brahim_HelpPath_01_00");	//А тебе никакая помощь не нужна?
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_01");	//Хорошо, что спросил. Еще как нужна!
-	AI_Output(other,self,"DIA_Brahim_HelpPath_01_02");	//Тогда выкладывай - в чем дело?
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_03");	//Да, понимаешь...(чешет затылок) Недавно я получил заказ на карту всего этого острова.
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_04");	//Покупатель платит очень приличную сумму за нее. Почти полтысячи золотых!
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_05");	//А у меня, как оказалось, закончились чернила, чтобы подписать ее.
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_06");	//Вот теперь сижу и гадаю, где их мне отыскать...
-	AI_Output(other,self,"DIA_Brahim_HelpPath_01_07");	//А купить их не пробовал?
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_08");	//В этой части города такие вещи не продаются, а в верхний квартал меня не пускают.
-	AI_Output(other,self,"DIA_Brahim_HelpPath_01_09");	//Понимаю! Ладно, попробую их для тебя достать.
-	AI_Output(other,self,"DIA_Brahim_HelpPath_01_10");	//Кстати, а что за человек так щедро платит за твою карту?
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_11");	//По правде говоря, никогда его раньше тут не видел.
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_12");	//Кажется, его зовут то ли Гоалес, то ли Гонслес. В общем, я так и не запомнил его имени.
+	AI_Output(other,self, " DIA_Brahim_HelpPath_01_00 " );	// Do you need any help?
+	AI_Output(self,other, " DIA_Brahim_HelpPath_01_01 " );	// Good thing you asked. How much more needed!
+	AI_Output(other,self, " DIA_Brahim_HelpPath_01_02 " );	// Then lay it out - what's the matter?
+	AI_Output(self,other, " DIA_Brahim_HelpPath_01_03 " );	// Yeah, you see... (scratches back of head) I recently got an order for a map of this whole island.
+	AI_Output(self,other, " DIA_Brahim_HelpPath_01_04 " );	// The buyer pays a very decent amount for it. Almost half a thousand gold!
+	AI_Output(self,other, " DIA_Brahim_HelpPath_01_05 " );	// And I, as it turned out, ran out of ink to sign it.
+	AI_Output(self,other, " DIA_Brahim_HelpPath_01_06 " );	// Now I'm sitting and wondering where I can find them...
+	AI_Output(other,self, " DIA_Brahim_HelpPath_01_07 " );	// Have you tried to buy them?
+	AI_Output(self,other, " DIA_Brahim_HelpPath_01_08 " );	// They don't sell that kind of stuff in this part of town, and they don't let me in the upper quarter.
+	AI_Output(other,self, " DIA_Brahim_HelpPath_01_09 " );	// I understand! Okay, I'll try to get them for you.
+	AI_Output(other,self, " DIA_Brahim_HelpPath_01_10 " );	// By the way, what kind of person pays so generously for your card?
+	AI_Output(self,other, " DIA_Brahim_HelpPath_01_11 " );	// To be honest, I've never seen him here before.
+	AI_Output(self,other, " DIA_Brahim_HelpPath_01_12 " );	// I think his name is either Goales or Gonsles. In general, I did not remember his name.
 	MIS_BrahimWax = LOG_Running;
 	Log_CreateTopic(TOPIC_BrahimWax,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BrahimWax,LOG_Running);
-	B_LogEntry(TOPIC_BrahimWax,"Ибрагиму срочно нужны чернила. Без них он не может подписать обозначения на карте, которую ему заказали. Думаю, что стоит поискать их где-нибудь на рыночной площади или у торговцев.");
+	B_LogEntry(TOPIC_BrahimWax, " Ibrahim urgently needs ink. Without it, he can't sign the symbols on the map he was ordered to. I think it's worth looking for them somewhere in the market place or at the merchants. " );
 };
 
 instance DIA_Brahim_HelpPath_Done(C_Info)
@@ -177,7 +178,7 @@ instance DIA_Brahim_HelpPath_Done(C_Info)
 	condition = DIA_Brahim_HelpPath_Done_Condition;
 	information = DIA_Brahim_HelpPath_Done_Info;
 	permanent = FALSE;
-	description = "Вот твои чернила.";
+	description = " Here is your ink. " ;
 };
 
 func int DIA_Brahim_HelpPath_Done_Condition()
@@ -191,23 +192,23 @@ func int DIA_Brahim_HelpPath_Done_Condition()
 func void DIA_Brahim_HelpPath_Done_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Brahim_HelpPath_Done_01_00");	//Вот твои чернила.
+	AI_Output(other,self, " DIA_Brahim_HelpPath_Done_01_00 " );	// Here's your ink.
 	B_GiveInvItems(other,self,ItMi_Wax,1);
 	Npc_RemoveInvItems(self,ItMi_Wax,1);
-	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_01");	//Благодарю тебя! Ты меня просто выручил.
-	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_02");	//Теперь я наконец-то закончу эту карту и получу огромную кучу золота.
-	AI_Output(other,self,"DIA_Brahim_HelpPath_Done_01_03");	//А мне что-нибудь перепадет?
-	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_04");	//К сожалению, у меня сейчас для тебя нет ничего ценного.
-	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_05");	//Хотя постой. Вот, возьми эту бумагу.
-	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_06");	//Она вовсе не такая простая, как кажется на первый взгляд!
+	AI_Output(self,other, " DIA_Brahim_HelpPath_Done_01_01 " );	// Thank you! You just rescued me.
+	AI_Output(self,other, " DIA_Brahim_HelpPath_Done_01_02 " );	// Now I can finally finish this map and get a huge pile of gold.
+	AI_Output(other,self, " DIA_Brahim_HelpPath_Done_01_03 " );	// Will I get anything?
+	AI_Output(self,other, " DIA_Brahim_HelpPath_Done_01_04 " );	// Unfortunately, I don't have anything of value for you right now.
+	AI_Output(self,other, " DIA_Brahim_HelpPath_Done_01_05 " );	// But wait. Here, take this paper.
+	AI_Output(self,other, " DIA_Brahim_HelpPath_Done_01_06 " );	// It's not as simple as it seems at first glance!
 	B_GiveInvItems(self,other,itwr_magicpaper,3);
-	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_07");	//С ее помощью можно делать магические свитки.
-	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_08");	//Но большего у меня ничего нет.
-	AI_Output(other,self,"DIA_Brahim_HelpPath_Done_01_09");	//Ладно, сойдет и это.
+	AI_Output(self,other, " DIA_Brahim_HelpPath_Done_01_07 " );	// It can be used to make magic scrolls.
+	AI_Output(self,other, " DIA_Brahim_HelpPath_Done_01_08 " );	// But I have nothing more.
+	AI_Output(other,self, " DIA_Brahim_HelpPath_Done_01_09 " );	// Okay, this will do.
 	CreateInvItems(self,itwr_map_newworld_1,1);
 	MIS_BrahimWax = LOG_Success;
 	Log_SetTopicStatus(TOPIC_BrahimWax,LOG_Success);
-	B_LogEntry(TOPIC_BrahimWax,"Я принес Ибрагиму чернила.");
+	B_LogEntry(TOPIC_BrahimWax, " I brought some ink for Ibrahim. " );
 };
 
 instance DIA_Addon_Brahim_MissingPeople(C_Info)
@@ -216,7 +217,7 @@ instance DIA_Addon_Brahim_MissingPeople(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Brahim_MissingPeople_Condition;
 	information = DIA_Addon_Brahim_MissingPeople_Info;
-	description = "А правда, что некоторые жители таинственным образом исчезли?";
+	description = " Is it true that some residents have mysteriously disappeared? " ;
 };
 
 
@@ -230,10 +231,10 @@ func int DIA_Addon_Brahim_MissingPeople_Condition()
 
 func void DIA_Addon_Brahim_MissingPeople_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Brahim_MissingPeople_15_00");	//А правда, что некоторые жители таинственным образом исчезли?
-	AI_Output(self,other,"DIA_Addon_Brahim_MissingPeople_07_01");	//Я слышал об этом! Но я не уверен, что это правда.
-	AI_Output(self,other,"DIA_Addon_Brahim_MissingPeople_07_02");	//Оглядись вокруг! Неужели ты хочешь провести в этой дыре свои лучшие годы жизни?
-	AI_Output(self,other,"DIA_Addon_Brahim_MissingPeople_07_03");	//Не удивительно, что люди уезжают отсюда.
+	AI_Output(other,self, " DIA_Addon_Brahim_MissingPeople_15_00 " );	// Is it true that some residents have mysteriously disappeared?
+	AI_Output(self,other, " DIA_Addon_Brahim_MissingPeople_07_01 " );	// I heard about it! But I'm not sure this is true.
+	AI_Output(self,other, " DIA_Addon_Brahim_MissingPeople_07_02 " );	// Look around! Do you really want to spend your best years of your life in this hole?
+	AI_Output(self,other, " DIA_Addon_Brahim_MissingPeople_07_03 " );	// No wonder people are leaving here.
 };
 
 
@@ -246,12 +247,12 @@ instance DIA_BRAHIM_COAST_MAP(C_Info)
 	condition = dia_brahim_coast_map_condition;
 	information = dia_brahim_coast_map_info;
 	permanent = FALSE;
-	description = "Не хочешь скопировать хорошую карту рудниковой долины?";
+	description = " Would you like to copy a good mine valley map? " ;
 };
 
 func int dia_brahim_coast_map_condition()
 {
-	if((Npc_HasItems(other,itwr_map_oldworld_forest_1) >= 1) && Npc_KnowsInfo(other,DIA_Brahim_GREET))
+	if ((Npc_HasItems(other,itwr_map_oldworld_forest_1) >=  1 ) && Npc_KnowsInfo(other,DIA_Brahim_GREET))
 	{
 		return TRUE;
 	};
@@ -259,46 +260,46 @@ func int dia_brahim_coast_map_condition()
 
 func void dia_brahim_coast_map_info()
 {
-	AI_Output(other,self,"DIA_Brahim_Coast_Map_15_00");	//Не хочешь скопировать хорошую карту рудниковой долины? У тебя такой точно нет.
-	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_01");	//Дай-ка глянуть...
+	AI_Output(other,self, " DIA_Brahim_Coast_Map_15_00 " );	// Would you like to copy a good mine valley map? You definitely don't have one.
+	AI_Output(self,other, " DIA_Brahim_Coast_Map_07_01 " );	// Let's take a look...
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_02");	//Очень интересно!
-	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_03");	//Что ты за это хочешь? Денег у меня немного, но могу что-нибудь подарить.
-	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_04");	//Вот, выбирай...
+	AI_Output(self,other, " DIA_Brahim_Coast_Map_07_02 " );	// Very interesting!
+	AI_Output(self,other, " DIA_Brahim_Coast_Map_07_03 " );	// What do you want for this? I don't have much money, but I can give you something.
+	AI_Output(self,other, " DIA_Brahim_Coast_Map_07_04 " );	// Here, choose...
 	Info_ClearChoices(dia_brahim_coast_map);
-	Info_AddChoice(dia_brahim_coast_map,"Лечебный эликсир",dia_brahim_coast_map_health_03);
-	Info_AddChoice(dia_brahim_coast_map,"Эликсир маны",dia_brahim_coast_map_mana_03);
-	Info_AddChoice(dia_brahim_coast_map,"Тридцать золотых монет",dia_brahim_coast_map_gold_03);
+	Info_AddChoice(dia_brahim_coast_map, " Healing Elixir " ,dia_brahim_coast_map_health_03);
+	Info_AddChoice(dia_brahim_coast_map, " Mana Elixir " ,dia_brahim_coast_map_mana_03);
+	Info_AddChoice(dia_brahim_coast_map, " Thirty gold coins " ,dia_brahim_coast_map_gold_03);
 };
 
 func void dia_brahim_coast_give()
 {
-	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_05");	//Отлично, возьми.
-	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_06");	//И дай-ка я еще раз гляну, чтобы получше запомнить.
+	AI_Output(self,other, " DIA_Brahim_Coast_Map_07_05 " );	// Great, take it.
+	AI_Output(self,other, " DIA_Brahim_Coast_Map_07_06 " );	// And let me take another look to remember better.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_07");	//Все понятно. Приходи завтра к обеду - карта уже будет в продаже.
+	AI_Output(self,other, " DIA_Brahim_Coast_Map_07_07 " );	// Everything is clear. Come tomorrow for dinner - the card will already be on sale.
 	Info_ClearChoices(dia_brahim_coast_map);
 	B_GivePlayerXP(XP_Ambient);
-	BRAHIMOWMAPREADY = Wld_GetDay() + 1;
+	BRAHIMOWMAPREADY = Wld_GetDay() +  1 ;
 };
 
 func void dia_brahim_coast_map_mana_03()
 {
-	AI_Output(other,self,"DIA_Brahim_Coast_Map_15_01");	//Дай мне напиток маны.
+	AI_Output(other,self, " DIA_Brahim_Coast_Map_15_01 " );	// Give me a mana drink.
 	B_GiveInvItems(self,other,ItPo_Mana_03,1);
 	dia_brahim_coast_give();
 };
 
 func void dia_brahim_coast_map_health_03()
 {
-	AI_Output(other,self,"DIA_Brahim_Coast_Map_15_02");	//Дай мне лечебный напиток.
+	AI_Output(other,self, " DIA_Brahim_Coast_Map_15_02 " );	// Give me a health drink.
 	B_GiveInvItems(self,other,ItPo_Health_03,1);
 	dia_brahim_coast_give();
 };
 
 func void dia_brahim_coast_map_gold_03()
 {
-	AI_Output(other,self,"DIA_Brahim_Coast_Map_15_03");	//Дай мне золото.
+	AI_Output(other,self, " DIA_Brahim_Coast_Map_15_03 " );	// Give me the gold.
 	B_GiveInvItems(self,other,ItMi_Gold,30);
 	dia_brahim_coast_give();
 };
@@ -311,12 +312,12 @@ instance DIA_Brahim_BUY(C_Info)
 	information = DIA_Brahim_BUY_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи мне твои карты.";
+	description = " Show me your cards. " ;
 };
 
 func int DIA_Brahim_BUY_Condition()
 {
-	if((Npc_KnowsInfo(hero,DIA_Brahim_GREET) == TRUE) && Wld_IsTime(8,0,22,0))
+	if (( Npc_KnowsInfo(hero, DIA_Brahim_GREET) ==  TRUE ) && Wld_IsTime( 8 , 0 , 22 , 0 ))
 	{
 		return TRUE;
 	};
@@ -340,15 +341,15 @@ func void DIA_Brahim_BUY_Info()
 		BRAHIMOWMAPREADY = 0;
 	};
 
-	AI_Output(other,self,"DIA_Brahim_BUY_15_00");	//Покажи мне свои карты.
+	AI_Output(other,self, " DIA_Brahim_BUY_15_00 " );	// Show me your cards.
 
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Brahim_BUY_07_01");	//Ты не найдешь лучше даже в монастыре.
+		AI_Output(self,other, " DIA_Brahim_BUY_07_01 " );	// You won't find better even in a monastery.
 	};
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Brahim_BUY_07_02");	//Хорошая карта - это очень важно, особенно для людей, прибывших с материка, мистер Паладин.
+		AI_Output(self,other, " DIA_Brahim_BUY_07_02 " );	// A good map is very important, especially for people coming from the mainland, Mr. Paladin.
 	};
 
 	Brahim_ShowedMaps = TRUE;
@@ -369,7 +370,7 @@ instance DIA_Brahim_Kap3_EXIT(C_Info)
 
 func int DIA_Brahim_Kap3_EXIT_Condition()
 {
-	if((Kapitel >= 3) && (Npc_KnowsInfo(other,DIA_Brahim_Kap3_First_EXIT) || (Npc_HasItems(other,itwr_shatteredgolem_mis_1) == 0)))
+	if ((Chapter >=  3 ) && (Npc_KnowsInfo(other,DIA_Brahim_Chapter3_First_EXIT) || (Npc_HasItems(other,itwr_shatteredgolem_mis_1) ==  0 ))) ;
 	{
 		return TRUE;
 	};
@@ -377,7 +378,7 @@ func int DIA_Brahim_Kap3_EXIT_Condition()
 
 func void DIA_Brahim_Kap3_EXIT_Info()
 {
-	if(Kapitel <= 4)
+	if (chapter <=  4 )
 	{
 		B_BrahimNewMaps();
 	};
@@ -398,7 +399,7 @@ instance DIA_Brahim_Kap3_First_EXIT(C_Info)
 
 func int DIA_Brahim_Kap3_First_EXIT_Condition()
 {
-	if((Kapitel >= 3) && (Npc_HasItems(other,itwr_shatteredgolem_mis_1) >= 1))
+	if ((Chapter >=  3 ) && (Npc_HasItems(other,itwr_shatteredgolem_mis_1) >=  1 ))
 	{
 		return TRUE;
 	};
@@ -406,15 +407,15 @@ func int DIA_Brahim_Kap3_First_EXIT_Condition()
 
 func void DIA_Brahim_Kap3_First_EXIT_Info()
 {
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_07_00");	//Я знал, что этот клочок бумаги заинтересует тебя.
-	AI_Output(other,self,"DIA_Brahim_Kap3_First_EXIT_15_01");	//Какой клочок?
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_07_02");	//Ну, та старая карта, что ты только что купил.
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_07_03");	//Я знаю таких людей, как ты. Вы используете каждый шанс, чтобы найти сокровища.
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_07_00 " );	// I knew this piece of paper would interest you.
+	AI_Output(other,self, " DIA_Brahim_Kap3_First_EXIT_15_01 " );	// What scrap?
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_07_02 " );	// Well, that old card you just bought.
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_07_03 " );	// I know people like you. You use every chance to find treasures.
 	Info_ClearChoices(DIA_Brahim_Kap3_First_EXIT);
 	Info_AddChoice(DIA_Brahim_Kap3_First_EXIT,Dialog_Back,DIA_Brahim_Kap3_First_EXIT_BACK);
-	Info_AddChoice(DIA_Brahim_Kap3_First_EXIT,"Где ты взял эту карту?",DIA_Brahim_Kap3_First_EXIT_WhereGetIt);
-	Info_AddChoice(DIA_Brahim_Kap3_First_EXIT,"Что это за карта?",DIA_Brahim_Kap3_First_EXIT_Content);
-	Info_AddChoice(DIA_Brahim_Kap3_First_EXIT,"Почему ты не оставил ее себе?",DIA_Brahim_Kap3_First_EXIT_KeepIt);
+	Info_AddChoice(DIA_Brahim_Kap3_First_EXIT, " Where did you get this card? " ,DIA_Brahim_Kap3_First_EXIT_WhereGetIt);
+	Info_AddChoice(DIA_Brahim_Kap3_First_EXIT, " What is this card? " ,DIA_Brahim_Kap3_First_EXIT_Content);
+	Info_AddChoice(DIA_Brahim_Kap3_First_EXIT, " Why didn't you keep her? " ,DIA_Brahim_Kap3_First_EXIT_KeepIt);
 };
 
 func void DIA_Brahim_Kap3_First_EXIT_BACK()
@@ -424,23 +425,23 @@ func void DIA_Brahim_Kap3_First_EXIT_BACK()
 
 func void DIA_Brahim_Kap3_First_EXIT_WhereGetIt()
 {
-	AI_Output(other,self,"DIA_Brahim_Kap3_First_EXIT_WhereGetIt_15_00");	//Где ты взял эту карту?
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_WhereGetIt_07_01");	//Ох, я нашел ее в стопке старых карт, что я купил недавно.
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_WhereGetIt_07_02");	//Продавец, должно быть, проглядел ее.
+	AI_Output(other,self, " DIA_Brahim_Kap3_First_EXIT_WhereGetIt_15_00 " );	// Where did you get this card?
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_WhereGetIt_07_01 " );	// Oh, I found it in a stack of old cards I bought recently.
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_WhereGetIt_07_02 " );	// The salesperson must have overlooked it.
 };
 
 func void DIA_Brahim_Kap3_First_EXIT_Content()
 {
-	AI_Output(other,self,"DIA_Brahim_Kap3_First_EXIT_Content_15_00");	//Что это за карта?
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_Content_07_01");	//Похоже, это карта сокровищ или что-то вроде.
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_Content_07_02");	//Но, похоже, ты из тех, кто способен выяснить это самостоятельно.
+	AI_Output(other,self, " DIA_Brahim_Kap3_First_EXIT_Content_15_00 " );	// What is this map?
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_Content_07_01 " );	// Looks like it's a treasure map or something.
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_Content_07_02 " );	// But you seem to be the type to figure it out on your own.
 };
 
 func void DIA_Brahim_Kap3_First_EXIT_KeepIt()
 {
-	AI_Output(other,self,"DIA_Brahim_Kap3_First_EXIT_KeepIt_15_00");	//Почему ты не оставил ее себе?
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_KeepIt_07_01");	//Я старый человек, и времена, когда я сам искал сокровища, давно прошли.
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_KeepIt_07_02");	//Пусть этим занимаются те, кто помоложе.
+	AI_Output(other,self, " DIA_Brahim_Kap3_First_EXIT_KeepIt_15_00 " );	// Why didn't you keep it for yourself?
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_KeepIt_07_01 " );	// I'm an old man, and the days when I searched for treasure myself are long gone.
+	AI_Output(self,other, " DIA_Brahim_Kap3_First_EXIT_KeepIt_07_02 " );	// Let the younger ones do it.
 };
 
 instance DIA_Brahim_NeedWorldMap(C_Info)
@@ -450,7 +451,7 @@ instance DIA_Brahim_NeedWorldMap(C_Info)
 	condition = DIA_Brahim_NeedWorldMap_Condition;
 	information = DIA_Brahim_NeedWorldMap_Info;
 	permanent = FALSE;
-	description = "Мне нужна морская карта.";
+	description = " I need a sea chart. " ;
 };
 
 func int DIA_Brahim_NeedWorldMap_Condition()
@@ -464,13 +465,13 @@ func int DIA_Brahim_NeedWorldMap_Condition()
 func void DIA_Brahim_NeedWorldMap_Info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_00");	//Мне нужна морская карта, на которой проложен точный курс до материка.
-	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_01");	//Хммм...(удивленно) И откуда же мне ее взять?
-	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_02");	//Но ты же картограф!
-	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_03");	//Да, но не моряк! Я рисую карты только тех мест, где бывал сам.
-	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_04");	//А я даже и в море ни разу не был.
-	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_05");	//Может, хотя бы подскажешь, где мне ее взять?
-	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_06");	//Возможно, она есть у паладинов. Они ведь как-то приплыли сюда.
-	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_07");	//Да, у них она вполне может быть.
-	B_LogEntry(Topic_SylvioCrew,"У картографа Ибрагима нет нужной мне карты, но по его словам, она может быть у паладинов.");
+	AI_Output(other,self, " DIA_Brahim_NeedWorldMap_01_00 " );	// I need a sea chart that shows an accurate course to the mainland.
+	AI_Output(self,other, " DIA_Brahim_NeedWorldMap_01_01 " );	// Hmmm...(surprised) Where can I get it from?
+	AI_Output(other,self, " DIA_Brahim_NeedWorldMap_01_02 " );	// But you're a cartographer!
+	AI_Output(self,other, " DIA_Brahim_NeedWorldMap_01_03 " );	// Yes, but not a sailor! I only draw maps of places where I have been.
+	AI_Output(self,other, " DIA_Brahim_NeedWorldMap_01_04 " );	// And I have never even been to the sea.
+	AI_Output(other,self, " DIA_Brahim_NeedWorldMap_01_05 " );	// Can you at least tell me where I can get it?
+	AI_Output(self,other, " DIA_Brahim_NeedWorldMap_01_06 " );	// Paladins might have it. They somehow got here.
+	AI_Output(other,self, " DIA_Brahim_NeedWorldMap_01_07 " );	// Yes, they may well have it.
+	B_LogEntry(Topic_SylvioCrew, " Cartographer Ibrahim doesn't have the card I need, but he says paladins might have one. " );
 };
