@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Patrick_NW_EXIT(C_Info)
 {
 	npc = STRF_1123_Addon_Patrick_NW;
@@ -34,7 +35,7 @@ instance DIA_Addon_Patrick_NW_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Patrick_NW_PICKPOCKET_Condition()
 {
-	return C_Beklauen(35,50);
+	return  C_Robbery ( 35 , 50 );
 };
 
 func void DIA_Addon_Patrick_NW_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Addon_Patrick_NW_PICKPOCKET_Info()
 
 func void DIA_Addon_Patrick_NW_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Patrick_NW_PICKPOCKET);
 };
 
@@ -63,7 +64,7 @@ instance DIA_Addon_Patrick_NW_Hi(C_Info)
 	condition = DIA_Addon_Patrick_NW_Hi_Condition;
 	information = DIA_Addon_Patrick_NW_Hi_Info;
 	permanent = FALSE;
-	description = "Итак, с вами все в порядке?";
+	description = " So, are you all right? " ;
 };
 
 
@@ -75,10 +76,10 @@ func int DIA_Addon_Patrick_NW_Hi_Condition()
 func void DIA_Addon_Patrick_NW_Hi_Info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Addon_Patrick_NW_Hi_15_00");	//Итак, с вами все в порядке?
-	AI_Output(self,other,"DIA_Addon_Patrick_NW_Hi_07_01");	//Все хорошо. Маги воды вывели нас из этой проклятой долины.
-	AI_Output(other,self,"DIA_Addon_Patrick_NW_Hi_15_02");	//И что вы будете делать дальше?
-	AI_Output(self,other,"DIA_Addon_Patrick_NW_Hi_07_03");	//Я продолжу работать на Ли. А в один прекрасный день мы покинем этот остров...
-	AI_Output(other,self,"DIA_Addon_Patrick_NW_Hi_15_04");	//И что будет тогда?
-	AI_Output(self,other,"DIA_Addon_Patrick_NW_Hi_07_05");	//Увидим. Если война все еще идет, мы будем сражаться с орками. Но это станет ясно позднее.
+	AI_Output(other,self, " DIA_Addon_Patrick_NW_Hi_15_00 " );	// So, are you all right?
+	AI_Output(self,other, " DIA_Addon_Patrick_NW_Hi_07_01 " );	// All is well. Waterbenders brought us out of this accursed valley.
+	AI_Output(other,self, " DIA_Addon_Patrick_NW_Hi_15_02 " );	// And what will you do next?
+	AI_Output(self,other, " DIA_Addon_Patrick_NW_Hi_07_03 " );	// I will continue to work for Lee. And one day we'll leave this island...
+	AI_Output(other,self, " DIA_Addon_Patrick_NW_Hi_15_04 " );	// And what will happen then?
+	AI_Output(self,other, " DIA_Addon_Patrick_NW_Hi_07_05 " );	// We'll see. If the war is still going on, we will fight the orcs. But this will become clear later.
 };
