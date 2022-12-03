@@ -1,3 +1,4 @@
+
 	
 instance DIA_ADDON_INEXTREMO_ANNOUNCER_EXIT(C_Info)
 {
@@ -34,7 +35,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_PICKPOCKET(C_Info)
 
 func int dia_addon_inextremo_announcer_pickpocket_condition()
 {
-	return C_Beklauen(118,300);
+	return  C_Robbery ( 118 , 300 );
 };
 
 func void dia_addon_inextremo_announcer_pickpocket_info()
@@ -46,7 +47,7 @@ func void dia_addon_inextremo_announcer_pickpocket_info()
 
 func void dia_addon_inextremo_announcer_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_addon_inextremo_announcer_pickpocket);
 };
 
@@ -77,8 +78,8 @@ func int dia_addon_inextremo_announcer_hi_condition()
 
 func void dia_addon_inextremo_announcer_hi_info()
 {
-	AI_Output(self,other,"DIA_pir_1398_Hi_01_00");	//Чего тебе надо?! Не видишь, мы работаем.
-	AI_Output(self,other,"DIA_pir_1398_Hi_01_01");	//Поговорим позже!
+	AI_Output(self,other, " DIA_pir_1398_Hi_01_00 " );	// What do you need?! Can't you see we're working.
+	AI_Output(self,other, " DIA_pir_1398_Hi_01_01 " );	// Let's talk later!
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,300);
 };
@@ -91,7 +92,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_HALLO(C_Info)
 	condition = dia_addon_inextremo_announcer_hallo_condition;
 	information = dia_addon_inextremo_announcer_hallo_info;
 	permanent = FALSE;
-	description = "Кто вы?";
+	description = " Who are you? " ;
 };
 
 
@@ -106,12 +107,12 @@ func int dia_addon_inextremo_announcer_hallo_condition()
 func void dia_addon_inextremo_announcer_hallo_info()
 {
 	AI_Output(other,self,"DIA_pir_1398_Hallo_01_00");	//Кто вы?
-	AI_Output(self,other,"DIA_pir_1398_Hallo_01_03");	//А что, разве не видно? (смеется) Мы - труппа бродячих музыкантов, веселим и развлекаем здешнюю публику.
-	AI_Output(other,self,"DIA_pir_1398_Hallo_01_04");	//А как давно вы в городе?
-	AI_Output(self,other,"DIA_pir_1398_Hallo_01_05");	//Уже несколько месяцев. Обычно мы стараемся долго не задерживаться на одном месте, но...
-	AI_Output(self,other,"DIA_pir_1398_Hallo_01_06");	//...в местный порт пока что до последнего времени не зашел ни один корабль. Если, конечно, не считать галеры паладинов, прибывшей пару недель назад.
-	AI_Output(self,other,"DIA_pir_1398_Hallo_01_09");	//Хотя нам по большому счету все равно, где выступать.
-	MEETSTID = TRUE;
+	AI_Output(self,other, " DIA_pir_1398_Hallo_01_03 " );	// Why, can't you see? (laughs) We are a troupe of itinerant musicians, we entertain and amuse the local audience.
+	AI_Output(other,self, " DIA_pir_1398_Hallo_01_04 " );	// And how long have you been in the city?
+	AI_Output(self,other, " DIA_pir_1398_Hallo_01_05 " );	// It's been several months now. Usually we try not to stay in one place for a long time, but...
+	AI_Output(self,other, " DIA_pir_1398_Hallo_01_06 " );	// ...not a single ship has entered the local port until recently. Unless, of course, you count the paladin galleys that arrived a couple of weeks ago.
+	AI_Output(self,other, " DIA_pir_1398_Hallo_01_09 " );	// Although, by and large, we don't care where we perform.
+	MEASURING STID = TRUE ;
 };
 
 
@@ -122,13 +123,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_HALLOTWO(C_Info)
 	condition = dia_addon_inextremo_announcer_hallotwo_condition;
 	information = dia_addon_inextremo_announcer_hallotwo_info;
 	permanent = FALSE;
-	description = "И как тебе такая жизнь?";
+	description = " How do you like your life? " ;
 };
 
 
 func int dia_addon_inextremo_announcer_hallotwo_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_addon_inextremo_announcer_hallo) && (CHECKFLAGKILLSMEET == FALSE) && (JOINKILLERS == FALSE))
+	if (Npc_KnowsInfo(hero,dia_addon_inextremo_announcer_hello) && ( CHECKFLAGKILLSMEET  ==  FALSE ) && ( JOINKILLERS  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -136,10 +137,10 @@ func int dia_addon_inextremo_announcer_hallotwo_condition()
 
 func void dia_addon_inextremo_announcer_hallotwo_info()
 {
-	AI_Output(other,self,"DIA_pir_1398_HalloTwo_01_00");	//И как тебе такая жизнь?
-	AI_Output(self,other,"DIA_pir_1398_HalloTwo_01_01");	//Да вроде жаловаться не приходится. Пока что.
-	AI_Output(self,other,"DIA_pir_1398_HalloTwo_01_02");	//Нам много не надо - пара золотых монет, чтобы прокормить себя, да иногда поставить ребятам выпивку.
-	AI_Output(self,other,"DIA_pir_1398_HalloTwo_01_03");	//Большинству жителей этого города, похоже, нравятся наши выступления.
+	AI_Output(other,self, " DIA_pir_1398_HalloTwo_01_00 " );	// And how do you like this life?
+	AI_Output(self,other, " DIA_pir_1398_HalloTwo_01_01 " );	// Yes, it seems there is no need to complain. For now.
+	AI_Output(self,other, " DIA_pir_1398_HalloTwo_01_02 " );	// We don't need much - a couple of gold coins to feed ourselves, and sometimes put the guys on a drink.
+	AI_Output(self,other, " DIA_pir_1398_HalloTwo_01_03 " );	// Most of the people in this town seem to enjoy our performances.
 };
 
 
@@ -164,9 +165,9 @@ func int dia_addon_inextremo_announcer_mention_condition()
 
 func void dia_addon_inextremo_announcer_mention_info()
 {
-	AI_Output(self,other,"DIA_pir_1398_Mention_01_00");	//Да... и еще кое-что.
-	AI_Output(self,other,"DIA_pir_1398_Mention_01_02");	//Хочу попросить тебя - не приставай к остальным парням.
-	AI_Output(self,other,"DIA_pir_1398_Mention_01_03");	//Мы выступаем почти целый день. И, естественно, после тяжелого дня им хочется немного отдохнуть.
+	AI_Output(self,other, " DIA_pir_1398_Mention_01_00 " );	// Yes... and one more thing.
+	AI_Output(self,other, " DIA_pir_1398_Mention_01_02 " );	// I want to ask you not to bother the other guys.
+	AI_Output(self,other, " DIA_pir_1398_Mention_01_03 " );	// We've been performing almost all day. And, of course, after a hard day they want to relax a bit.
 	AI_StopProcessInfos(self);
 };
 
@@ -178,13 +179,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_TELLABOUTKILLERS(C_Info)
 	condition = dia_addon_inextremo_announcer_tellaboutkillers_condition;
 	information = dia_addon_inextremo_announcer_tellaboutkillers_info;
 	permanent = FALSE;
-	description = "Ты что-нибудь знаешь про гильдию убийц?";
+	description = " Do you know anything about the Assassin's Guild? " ;
 };
 
 
 func int dia_addon_inextremo_announcer_tellaboutkillers_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_addon_inextremo_announcer_hallo) && (CANCOMPLETEGUILDKILL == FALSE) && Npc_KnowsInfo(hero,dia_ramirez_guildkill) && (KILLCANJOIN == FALSE))
+	if (Npc_KnowsInfo(hero,dia_addon_inextremo_announcer_hallo) && ( CANCOMPLETEGUILKILL  ==  FALSE ) && Npc_KnowsInfo(hero,dia_ramirez_guildkill) && ( KILLCANJOIN  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -192,27 +193,27 @@ func int dia_addon_inextremo_announcer_tellaboutkillers_condition()
 
 func void dia_addon_inextremo_announcer_tellaboutkillers_info()
 {
-	AI_Output(other,self,"DIA_pir_1398_TellAboutKillers_01_00");	//Ты что-нибудь знаешь про гильдию убийц?
+	AI_Output(other,self, " DIA_pir_1398_TellAboutKillers_01_00 " );	// Do you know anything about the Assassin's Guild?
 	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_01_01");	//ЧТО?!
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_01_04");	//Кто тебе сказал, что я что-нибудь знаю про это?
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_01_04 " );	// Who told you that I know anything about this?
 	Info_ClearChoices(dia_addon_inextremo_announcer_tellaboutkillers);
-	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutkillers,"Рамирез сказал мне об этом.",dia_addon_inextremo_announcer_tellaboutkillers_ramirez);
-	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutkillers,"Это не имеет значения.",dia_addon_inextremo_announcer_tellaboutkillers_nomatter);
+	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutkillers, " Ramirez told me about it. " ,dia_addon_inextremo_announcer_tellaboutkillers_ramirez);
+	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutkillers, " It doesn't matter. " ,dia_addon_inextremo_announcer_tellaboutkillers_nomatter);
 };
 
 func void dia_addon_inextremo_announcer_tellaboutkillers_ramirez()
 {
-	AI_Output(other,self,"DIA_pir_1398_TellAboutKillers_Ramirez_01_00");	//Рамирез сказал мне об этом.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_Ramirez_01_01");	//(задумчиво) Рамирез, говоришь?
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_Ramirez_01_02");	//Хммм... мне кажется, у кого-то слишком длинный язык.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_Ramirez_01_05");	//Так ты интересуешься гильдией убийц, как я понял. И зачем же они тебе понадобились?
-	AI_Output(other,self,"DIA_pir_1398_TellAboutKillers_Ramirez_01_06");	//У меня к ним есть одно небольшое дельце.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutKillers_Ramirez_01_10");	//Просто расскажи мне, что ты про них знаешь и где я смогу их найти.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_Ramirez_01_13");	//Хммм...(внимательно вглядываясь)
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_Ramirez_01_14");	//Ну хорошо. Если тебе так приспичило поиграть со смертью, то я могу тебе устроить эту встречу.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_Ramirez_01_15");	//Завтра около часа полуночи приходи в заброшенный дом на пристани. Там ты найдешь того, кого искал.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_Ramirez_01_16");	//(улыбается) И смотри не опаздывай. Другого шанса у тебя не будет.
-	B_LogEntry(TOPIC_GUILDKILL,"Гиллиан готов устроить мне встречу с гильдией убийц. Для этого мне необходимо около часа после полуночи прийти в дом на берегу моря недалеко от пристани.");
+	AI_Output(other,self, " DIA_pir_1398_TellAboutKillers_Ramirez_01_00 " );	// Ramirez told me about it.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_Ramirez_01_01 " );	// (thoughtfully) Ramirez, you say?
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_Ramirez_01_02 " );	// Hmmm... I think someone's tongue is too long.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_Ramirez_01_05 " );	// So you're interested in the Assassin's Guild, I take it. And why do you need them?
+	AI_Output(other,self, " DIA_pir_1398_TellAboutKillers_Ramirez_01_06 " );	// I have one little thing to do with them.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutKillers_Ramirez_01_10 " );	// Just tell me what you know about them and where I can find them.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_Ramirez_01_13 " );	// Hmmm... (looking closely)
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_Ramirez_01_14 " );	// Okay. If you are so impatient to play with death, then I can arrange this meeting for you.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_Ramirez_01_15 " );	// Tomorrow at about midnight, come to the abandoned house on the pier. There you will find the one you were looking for.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_Ramirez_01_16 " );	// (smiles) And don't be late. You won't get another chance.
+	B_LogEntry( TOPIC_GUILDKILL , " Gillian is ready to arrange a meeting with the Assassin's Guild for me. To do this, I need to arrive at a house by the sea near the pier about an hour after midnight. " );
 	KILLSMEET = TRUE;
 	THIEFKILLS = TRUE;
 	MIS_KILLSMEET_DAY = Wld_GetDay();
@@ -222,16 +223,16 @@ func void dia_addon_inextremo_announcer_tellaboutkillers_ramirez()
 func void dia_addon_inextremo_announcer_tellaboutkillers_nomatter()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_pir_1398_TellAboutKillers_NoMatter_01_00");	//Это не имеет значения. Знаешь ли, ходят слухи...
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_NoMatter_01_01");	//Хммм...(внимательно вглядывается) Слухи говоришь? Ну ладно.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_NoMatter_01_03");	//Итак, ты интересуешься гильдией убийц, как я понял. И зачем же они тебе понадобились?
-	AI_Output(other,self,"DIA_pir_1398_TellAboutKillers_NoMatter_01_04");	//У меня к ним есть одно небольшое дельце.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutKillers_NoMatter_01_08");	//Расскажи мне, что ты про них знаешь и где я смогу их найти.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_NoMatter_01_11");	//Хммм...(внимательно вглядываясь)
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_NoMatter_01_12");	//Ну, хорошо! Если тебе так приспичило поиграть со смертью, то я могу тебе устроить эту встречу.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_NoMatter_01_13");	//Завтра около часа после полуночи приходи в заброшенный дом на пристани. Там ты найдешь того, кого искал.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutKillers_NoMatter_01_14");	//(улыбается) И смотри не опаздывай. Другого шанса у тебя не будет.
-	B_LogEntry(TOPIC_GUILDKILL,"Гиллиан готов устроить мне встречу с гильдией убийц. Для этого мне необходимо завтра около часа после полуночи прийти в дом на берегу моря недалеко от пристани.");
+	AI_Output(other,self, " DIA_pir_1398_TellAboutKillers_NoMatter_01_00 " );	// It doesn't matter. You know there are rumors...
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_NoMatter_01_01 " );	// Hmmm... (looks closely) Are you talking about rumors? OK.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_NoMatter_01_03 " );	// So, you're interested in the Assassin's Guild, I take it. And why do you need them?
+	AI_Output(other,self, " DIA_pir_1398_TellAboutKillers_NoMatter_01_04 " );	// I have one little thing to do with them.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutKillers_NoMatter_01_08 " );	// Tell me what you know about them and where I can find them.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_NoMatter_01_11 " );	// Hmmm... (looking closely)
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_NoMatter_01_12 " );	// Well, good! If you are so impatient to play with death, then I can arrange this meeting for you.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_NoMatter_01_13 " );	// Tomorrow, about an hour after midnight, come to the abandoned house on the pier. There you will find the one you were looking for.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutKillers_NoMatter_01_14 " );	// (smiles) And don't be late. You won't get another chance.
+	B_LogEntry( TOPIC_GUILDKILL , " Gillian is ready to arrange a meeting with the assassins guild for me. To do this, I need to come to the house by the sea near the pier tomorrow about an hour after midnight. " );
 	KILLSMEET = TRUE;
 	MIS_KILLSMEET_DAY = Wld_GetDay();
 	AI_StopProcessInfos(self);
@@ -262,105 +263,105 @@ func void dia_addon_inextremo_announcer_meetinhouse_info()
 	B_GivePlayerXP(250);
 	self.guild = GIL_VLK;
 	Npc_SetTrueGuild(self,GIL_VLK);
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_01_00");	//Итак, ты все-таки пришел...(смеется) Не ожидал, что у тебе хватит духу на это!
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_01_01");	//Гиллиан?!
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_01_02");	//Что, удивлен? Не стоит так удивляться. В конце концов, ты сам искал этой встречи.
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_01_03");	//Значит, ты один из тех парней, что состоят в гильдии убийц?
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_01_04");	//Как и все, кого ты тут видишь вокруг.
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_01_05");	//Хммм... так вот чем занимаются обыкновенные бродячие музыканты в свободное время. Кто бы мог подумать...
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_01_06");	//Каждый зарабатывает на хлеб так, как умеет...(смеется)
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_01_07");	//Но хватит пустой болтовни - у нас сейчас не так много времени на это.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_01_08");	//Так что говори, что тебе нужно от нас?
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_01_09");	//И я очень надеюсь, что та причина, которая привела тебя сюда, достойна того, чтобы мы тебя выслушали.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_01_10");	//Иначе этот разговор закончится довольно быстро. Так же, как и твоя жизнь! (смеется)
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_01_00 " );	// So, you did come... (laughs) I didn't expect you to have the guts to do it!
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_01_01 " );	// Gillian?!
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_01_02 " );	// What, surprised? You shouldn't be so surprised. After all, you yourself were looking for this meeting.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_01_03 " );	// So you're one of those guys in the Assassin's Guild?
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_01_04 " );	// Like everyone you see around here.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_01_05 " );	// Hmmm... so that's what ordinary itinerant musicians do in their free time. Who would have thought...
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_01_06 " );	// Everyone earns his bread the way he can... (laughs)
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_01_07 " );	// But enough chit-chat - we don't have much time for that right now.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_01_08 " );	// So tell me what you need from us?
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_01_09 " );	// And I really hope that the reason that brought you here is worthy of us listening to you.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_01_10 " );	// Otherwise, this conversation will end pretty quickly. Just like your life! (laughs)
 	GUILDKILLKNOWNLOC = TRUE;
-	B_LogEntry(TOPIC_GUILDKILL,"Я пришел на встречу в назначенное время. Гиллиан тоже был там... Труппа бродячих музыкантов, прибывших пару недель назад в город, и оказалось той самой гильдией убийц, что наводила ужас на жителей Хориниса. Теперь все зависит от моих дальнейших действий - мне надо как-то выкрутиться из этой ситуации.");
+	B_LogEntry( TOPIC_GUILDKILL , " I came to the meeting at the appointed time. Gillian was there too... A troupe of itinerant musicians who arrived in the city a couple of weeks ago turned out to be the very guild of assassins that terrified the inhabitants of Khorinis. Now everything depends on my further actions - I need to somehow get out of this situation. " );
 	Info_ClearChoices(dia_addon_inextremo_announcer_meetinhouse);
-	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse,"Я пришел сюда, чтобы убить вас.",dia_addon_inextremo_announcer_meetinhouse_kill);
-	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse,"Я хочу присоединиться к вам.",dia_addon_inextremo_announcer_meetinhouse_join);
-	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse,"Я ищу человека по имени Асмал.",dia_addon_inextremo_announcer_meetinhouse_asmal);
+	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse, " I came here to kill you. " ,dia_addon_inextremo_announcer_meetinhouse_kill);
+	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse, " I want to join you. " ,dia_addon_inextremo_announcer_meetinhouse_join);
+	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse, " I'm looking for a man named Asmal. " ,dia_addon_inextremo_announcer_meetinhouse_asmal);
 };
 
 func void dia_addon_inextremo_announcer_meetinhouse_asmal()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Asmal_01_00");	//Я ищу человека по имени Асмал.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Asmal_01_01");	//Асмал? Тебе нужен Асмал? (смеется)
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Asmal_01_02");	//Ну, тогда можешь считать, что ты его уже нашел. Асмал - это я!
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Asmal_01_03");	//Что-нибудь еще?
-	B_LogEntry(TOPIC_GUILDKILL,"Гиллиан и оказался тем самым Асмалом! Немного непредусмотрительно с его стороны, но кто знает - может, это последняя вещь, которую я смогу выяснить в этом деле.");
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Asmal_01_00 " );	// I'm looking for a man named Asmal.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Asmal_01_01 " );	// Asmal? Do you need Asmal? (laughs)
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Asmal_01_02 " );	// Well, then you can consider that you have already found it. Asmal is me!
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Asmal_01_03 " );	// Anything else?
+	B_LogEntry( TOPIC_GUILDKILL , " Gillian turned out to be Asmal! A bit imprudent of him, but who knows - maybe this is the last thing I can find out in this case. " );
 	self.name[0] = "Асмал";
 	KNOWSASMAL = TRUE;
 };
 
 func void dia_addon_inextremo_announcer_meetinhouse_kill()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Kill_01_00");	//Я пришел сюда, чтобы убить вас.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Kill_01_01");	//ЧТО?! (смеется) Ты действительно решил, что ты такой крутой парень и тебе это под силу?
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Kill_01_02");	//(смеется) Ну ты и глупец!
-	B_LogEntry(TOPIC_GUILDKILL,"Я раскрыл свои карты, сказав Асмалу, что пришел убить их. Он рассмеялся, услыхав мое смелое заявление. Вот хватит ли мне сил справиться со всей его бандой?");
-	if((THIEFKILLS == TRUE) && !(Npc_IsDead(Cassia) || !Npc_IsDead(Jesper) || !Npc_IsDead(Ramirez)))
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Kill_01_00 " );	// I came here to kill you.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Kill_01_01 " );	// WHAT?! (laughs) Have you really decided that you are such a cool guy and you can do it?
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Kill_01_02 " );	// (laughs) Well, you're a fool!
+	B_LogEntry( TOPIC_GUILDKILL , " I showed my cards by telling Asmal I came to kill them. He laughed at my bold statement. Am I strong enough to take on his entire gang? " );
+	if (( THIEFKILLS  ==  TRUE ) &&  ! (Npc_IsDead(Cassia) ||  ! Npc_IsDead(Jesper) ||  ! Npc_IsDead(Ramirez)))
 	{
-		AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Kill_01_05");	//Ха! Ты закончишь так же, как твои дружки из гильдии воров, у которых слишком длинные языки.
+		AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Kill_01_05 " );	// Ha! You'll end up like your thieves guild friends with too long tongues.
 		AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Kill_01_06");	//ЧТО?
-		AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Kill_01_07");	//Ты думал, я позволю таким типам, как этот Рамирез, болтать о том, о чем лучше всегда помалкивать?
-		B_LogEntry(TOPIC_GUILDKILL,"Асмал также сказал мне, что расправился с гильдией воров. И, кажется, именно я стал виной их гибели, проговорившись Асмалу про Рамиреза. Как неосмотрительно с моей стороны.");
+		AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Kill_01_07 " );	// You thought I'd let guys like this Ramirez talk about things that are best kept quiet?
+		; _ _ _ _ _ _
 		B_KillNpc(VLK_447_Cassia);
 		B_KillNpc(VLK_446_Jesper);
 		B_KillNpc(VLK_445_Ramirez);
 		B_KillNpc(VLK_494_Attila);
 	};
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Kill_01_08");	//Так что лучше прибереги свой пыл для чего-нибудь другого, молокосос, и приготовься умереть!
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Kill_01_10");	//Тогда не будем терять времени.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Kill_01_11");	//Ну ладно, как скажешь!
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Kill_01_08 " );	// So better save your fire for something else, sucker, and prepare to die!
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Kill_01_10 " );	// Then let's not waste time.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Kill_01_11 " );	// Well, whatever you say!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
 
 func void dia_addon_inextremo_announcer_meetinhouse_join()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Join_01_00");	//Я хочу присоединиться к вам.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Join_01_01");	//(озадаченно) Что? Хммм... да, парень, - наглости тебе не занимать!
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Join_01_02");	//Прийти сюда, чтобы предложить нам такое! (смеется) Эй парни, вы слышали это?
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Join_01_04");	//Ну, говори. С чего это ты вдруг решил, что нам нужны твои услуги?
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Join_01_05");	//Я состою на службе у лорда Андрэ в его городской страже и...
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Join_01_08");	//...подумал, что вам мог бы пригодиться человек, который имеет связи в этих кругах.
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Join_01_09");	//Это решило бы многие ваши проблемы с ополчением!
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Join_01_10");	//Хммм... верно. Может, такой человек мог бы действительно пригодиться.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Join_01_11");	//Но откуда нам знать, что ты не побежишь сразу после этой встречи к тому же лорду Андрэ и не расскажешь про все то, что тут увидел.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Join_01_12");	//К тому же я не могу понять, какая тебе выгода от этого?
-	B_LogEntry(TOPIC_GUILDKILL,"Я сказал Асмалу, что хочу присоединиться к ним. Он был очень удивлен этим фактом и захотел узнать причину, побудившую меня сделать им такое предложение.");
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Join_01_00 " );	// I want to join you.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Join_01_01 " );	// (puzzled) What? Hmmm... yes, boy, you must be so arrogant!
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Join_01_02 " );	// Come here to offer us this! (laughs) Hey guys, did you hear that?
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Join_01_04 " );	// Well, talk. Why did you suddenly decide that we need your services?
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Join_01_05 " );	// I am in the service of Lord Andre in his city guard and...
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Join_01_08 " );	// ...thought you could use someone who has connections in these circles.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Join_01_09 " );	// This would solve a lot of your militia problems!
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Join_01_10 " );	// Hmmm... right. Maybe such a person could really come in handy.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Join_01_11 " );	// But how do we know that you will not run immediately after this meeting to the same Lord Andre and tell about everything that you saw here.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Join_01_12 " );	// Besides, I can't figure out what's the benefit to you?
+	B_LogEntry( TOPIC_GUILDKILL , " I told Asmal that I wanted to join them. He was very surprised by this fact and wanted to know the reason that prompted me to make such an offer to them. " );
 	Info_ClearChoices(dia_addon_inextremo_announcer_meetinhouse);
-	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse,"Я слышал, что убийцы неплохо зарабатывают на своем деле.",dia_addon_inextremo_announcer_meetinhouse_money);
-	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse,"Это тебя не касается!",dia_addon_inextremo_announcer_meetinhouse_notyours);
-	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse,"А разве это так важно?",dia_addon_inextremo_announcer_meetinhouse_donttell);
+	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse, " I heard killers make good money doing their jobs. " ,dia_addon_inextremo_announcer_meetinhouse_money);
+	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse, " This is none of your business! " ,dia_addon_inextremo_announcer_meetinhouse_notyours);
+	Info_AddChoice(dia_addon_inextremo_announcer_meetinhouse, " Does it really matter? " ,dia_addon_inextremo_announcer_meetinhouse_donttell);
 };
 
 func void dia_addon_inextremo_announcer_meetinhouse_money()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Money_01_00");	//Я слышал, что убийцы неплохо зарабатывают на своем деле.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Money_01_01");	//Золото любишь, да?
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Money_01_02");	//А кто же его не любит.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Money_01_04");	//Насколько я знаю, лорд Андрэ хорошо заботится о своих людях.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Money_01_06");	//А это все мне говорит о том, что ты не очень-то надежный человек!
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Money_01_07");	//Думаю, ты запросто сдашь нас при одном только виде золота.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Money_01_08");	//Извини, но такие люди нам не нужны.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Money_01_00 " );	// I've heard that assassins make good money doing their jobs.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Money_01_01 " );	// You love gold, don't you?
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_Money_01_02 " );	// And who doesn't love him.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Money_01_04 " );	// As far as I know, Lord Andre takes good care of his people.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Money_01_06 " );	// And all this tells me that you are not a very reliable person!
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Money_01_07 " );	// I think you'd easily turn us in at the mere sight of gold.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Money_01_08 " );	// Sorry, but we don't need such people.
 	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_Money_01_10");	//Погоди...
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_Money_01_11");	//Эй, ребята! Давайте проучим этого ублюдка!
-	B_LogEntry(TOPIC_GUILDKILL,"Мне не удалось произвести впечатление на Асмала своими доводами. Теперь у меня есть два выхода: убить их всех или попытаться выбраться отсюда живым, чтобы сообщить лорду Андрэ о случившемся.");
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_Money_01_11 " );	// Hey guys! Let's teach this bastard a lesson!
+	B_LogEntry( TOPIC_GUILDKILL , " I failed to impress Asmal with my arguments. Now I have two options: kill them all or try to get out of here alive to tell Lord Andre what happened. " );
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
 
 func void dia_addon_inextremo_announcer_meetinhouse_notyours()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_NotYours_01_00");	//Это тебя не касается!
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_NotYours_01_01");	//О, ты глубоко ошибаешься!
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_NotYours_01_02");	//Думаю, скорее всего, ты и сам не знаешь, зачем тебе это нужно.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_NotYours_01_03");	//А это наводит на очень подозрительные мысли.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_NotYours_01_04");	//А со всем подозрительным, по моему мнению, лучше всегда кончать сразу.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_NotYours_01_00 " );	// This doesn't concern you!
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_NotYours_01_01 " );	// Oh, you are deeply mistaken!
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_NotYours_01_02 " );	// I think, most likely, you yourself do not know why you need this.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_NotYours_01_03 " );	// And this leads to very suspicious thoughts.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_NotYours_01_04 " );	// And with everything suspicious, in my opinion, it is always better to finish immediately.
 	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_NotYours_01_07");	//Погоди...
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_NotYours_01_08");	//Эй, ребята! Давайте проучим этого ублюдка!
-	B_LogEntry(TOPIC_GUILDKILL,"Мне не удалось произвести впечатление на Асмала своими доводами. Теперь у меня есть два выхода: убить их всех или попытаться выбраться отсюда живым, чтобы сообщить лорду Андрэ о случившемся.");
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_NotYours_01_08 " );	// Hey guys! Let's teach this bastard a lesson!
+	B_LogEntry( TOPIC_GUILDKILL , " I failed to impress Asmal with my arguments. Now I have two options: kill them all or try to get out of here alive to tell Lord Andre what happened. " );
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
@@ -368,33 +369,33 @@ func void dia_addon_inextremo_announcer_meetinhouse_notyours()
 func void dia_addon_inextremo_announcer_meetinhouse_donttell()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_DontTell_01_00");	//А разве это так важно?
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_DontTell_01_01");	//Я и так сильно рискую тем, что пришел сюда.
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_DontTell_01_02");	//Так что можешь не сомневаться, мои причины достаточно весомы.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_04");	//Значит, хочешь стать одним из нас...(внимательно вглядывается)
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_05");	//Ну хорошо. Считай, что ты меня убедил.
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_DontTell_01_06");	//Значит, теперь я вхожу в гильдию?
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_07");	//Да! Теперь ты один из нас.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_08");	//Но запомни: на многое пока что можешь не рассчитывать.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_11");	//Ты еще должен доказать, что способен не только болтать языком, но и делать что-нибудь посерьезнее.
-	AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_13");	//Надеюсь, ты понимаешь, о чем я говорю.
-	AI_Output(other,self,"DIA_pir_1398_MeetInHouse_DontTell_01_17");	//Я понимаю.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_DontTell_01_00 " );	// Is it really that important?
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_DontTell_01_01 " );	// I'm already taking a big risk by coming here.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_DontTell_01_02 " );	// So you can rest assured that my reasons are good enough.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_04 " );	// So you want to become one of us... (looks carefully)
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_05 " );	// Okay. Think you've convinced me.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_DontTell_01_06 " );	// So I'm in a guild now?
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_07 " );	// Yes! Now you are one of us.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_08 " );	// But remember: you can't count on much just yet.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_11 " );	// You still have to prove that you can not only talk your tongue, but also do something more serious.
+	AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_13 " );	// I hope you understand what I'm talking about.
+	AI_Output(other,self, " DIA_pir_1398_MeetInHouse_DontTell_01_17 " );	// I understand.
 	if(KNOWSASMAL == FALSE)
 	{
-		AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_19");	//И еще кое-что...
-		AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_20");	//Гиллиан - это не мое настоящее имя.
-		AI_Output(self,other,"DIA_pir_1398_MeetInHouse_DontTell_01_22");	//Все знают меня как Асмала. Поэтому обращайся ко мне именно так.
+		AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_19 " );	// And one more thing...
+		AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_20 " );	// Gillian is not my real name.
+		AI_Output(self,other, " DIA_pir_1398_MeetInHouse_DontTell_01_22 " );	// Everyone knows me as Asmala. So please contact me this way.
 		self.name[0] = "Асмал";
 		KNOWSASMAL = TRUE;
 	};
 	Info_ClearChoices(dia_addon_inextremo_announcer_meetinhouse);
-	B_LogEntry(TOPIC_GUILDKILL,"Мне удалось произвести впечатление на Асмала. Он согласился принять меня в их гильдию на достаточно жестких условиях, но выбирать не приходится.");
+	B_LogEntry( TOPIC_GUILDKILL , " I managed to impress Asmal. He agreed to accept me into their guild under rather tough conditions, but you don't have to choose. " );
 	if(JOINKILLERS == FALSE)
 	{
 		MIS_KILLWAY = LOG_Running;
 		Log_CreateTopic(TOPIC_KILLWAY,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_KILLWAY,LOG_Running);
-		B_LogEntry(TOPIC_KILLWAY,"Асмал принял меня в гильдию убийц. Правда, пока только на словах - до тех пор, пока я не докажу ему, что действительно достоин этого.");
+		B_LogEntry( TOPIC_KILLWAY , " Asmal accepted me into the killer's guild. True, so far only in words - until I prove to him that I really deserve it. " );
 		JOINKILLERS = TRUE;
 	};
 };
@@ -424,22 +425,22 @@ func void dia_addon_inextremo_announcer_meetkillers_info()
 	self.guild = GIL_VLK;
 	Npc_SetTrueGuild(self,GIL_VLK);
 
-	if(MEETSTID == TRUE)
+	if ( MEASID  ==  TRUE )
 	{
-		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_00");	//Эй, ты! Что тебе здесь нужно?
-		AI_Output(other,self,"DIA_pir_1398_MeetKillers_01_01");	//Ээ... я должен тут встретиться с одним человеком.
-		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_02");	//Да ну? Правда?! Хммм...
-		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_03");	//Ну, тогда считай, что эта встреча уже произошла...(внимательно вглядывается)
-		AI_Output(other,self,"DIA_pir_1398_MeetKillers_01_04");	//А что ты на меня так смотришь?
-		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_05");	//Хммм... твое лицо мне кажется знакомым. Мы нигде раньше не встречались?
-		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_08");	//Ладно, сейчас это не важно.
-		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_10");	//Итак, значит это ты искал меня?
-		B_LogEntry(TOPIC_GERBRANDTHELP,"Я встретился с тем человеком, о котором говорил Гербрандт, как и было оговорено - в таверне, ровно в назначенное время. Им оказался один из бродячих музыкантов - Гиллиан. Правда, на этот раз он был уже не таким любезным, как при первой нашей встрече.");
+		AI_Output(self,other, " DIA_pir_1398_MeetKillers_01_00 " );	// Hey you! What do you need here?
+		AI_Output(other,self, " DIA_pir_1398_MeetKillers_01_01 " );	// Uh... I have to meet someone here.
+		AI_Output(self,other, " DIA_pir_1398_MeetKillers_01_02 " );	// huh? Truth?! Hmmm...
+		AI_Output(self,other, " DIA_pir_1398_MeetKillers_01_03 " );	// Well, then consider that this meeting has already happened... (looks carefully)
+		AI_Output(other,self, " DIA_pir_1398_MeetKillers_01_04 " );	// Why are you looking at me like that?
+		AI_Output(self,other, " DIA_pir_1398_MeetKillers_01_05 " );	// Hmmm... your face looks familiar to me. Have we met somewhere before?
+		AI_Output(self,other, " DIA_pir_1398_MeetKillers_01_08 " );	// Okay, it doesn't matter now.
+		AI_Output(self,other, " DIA_pir_1398_MeetKillers_01_10 " );	// So, that means you were looking for me?
+		B_LogEntry( TOPIC_GERBRANDTHELP , " I met the man Gerbrandt was talking about, as agreed - in the tavern, exactly at the appointed time. It turned out to be one of the traveling musicians - Gillian. However, this time he was not so kind, like when we first met. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_11");	//Эй парень, это ты искал со мной встречи?!
-		B_LogEntry(TOPIC_GERBRANDTHELP,"Я встретился с тем человеком, о котором говорил Гербрандт, как и было оговорено - в таверне, ровно в назначенное время.");
+		AI_Output(self,other, " DIA_pir_1398_MeetKillers_01_11 " );	// Hey man, were you looking to meet me?!
+		B_LogEntry( TOPIC_GERBRANDTHELP , " I met the person Gerbrandt was talking about, as agreed - in the tavern, exactly at the appointed time. " );
 	};
 
 	MEETCHIEFKILLERS = TRUE;
@@ -451,46 +452,46 @@ func void dia_addon_inextremo_announcer_meetkillers_info()
 func void dia_addon_inextremo_announcer_meetkillers_notme()
 {
 	STIDKILLME = TRUE;
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_NotMe_01_00");	//Ну, не совсем я...
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_NotMe_01_01");	//(удивленно) Что это значит?!
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_NotMe_01_02");	//Один человек послал меня встретиться с тобой.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_NotMe_01_00 " );	// Well, not exactly me...
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_NotMe_01_01 " );	// (surprised) What does that mean?!
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_NotMe_01_02 " );	// One person sent me to meet you.
 	AI_Output(self,other,"DIA_pir_1398_MeetKillers_NotMe_01_03");	//И кто же?
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_NotMe_01_04");	//Я не могу сказать. Он попросил оставить его имя в тайне.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_NotMe_01_05");	//Хммм... ну ладно.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_NotMe_01_06");	//И что же ему от меня нужно?
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_NotMe_01_04 " );	// I can't tell. He asked that his name be kept secret.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_NotMe_01_05 " );	// Hmmm... okay.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_NotMe_01_06 " );	// And what does he want from me?
 	Info_ClearChoices(dia_addon_inextremo_announcer_meetkillers);
 	if((Npc_HasItems(other,itse_gerbrandpocket) >= 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) >= 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) >= 1)))
 	{
-		Info_AddChoice(dia_addon_inextremo_announcer_meetkillers,"Вот, возьми этот кошелек и письмо.",dia_addon_inextremo_announcer_meetkillers_giveger);
+		Info_AddChoice(dia_addon_inextremo_announcer_meetkillers, " Here, take this wallet and letter. " ,dia_addon_inextremo_announcer_meetkillers_giveger);
 	};
 	Info_AddChoice(dia_addon_inextremo_announcer_meetkillers,"Понятия не имею.",dia_addon_inextremo_announcer_meetkillers_dontknow);
 };
 
 func void dia_addon_inextremo_announcer_meetkillers_me()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Me_01_00");	//Да, это был я.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Me_01_01");	//Хорошо, и что же тебе нужно от меня?
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Me_01_00 " );	// Yes, that was me.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Me_01_01 " );	// Okay, so what do you want from me?
 	Info_ClearChoices(dia_addon_inextremo_announcer_meetkillers);
 	if((Npc_HasItems(other,itse_gerbrandpocket) >= 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) >= 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) >= 1)))
 	{
-		Info_AddChoice(dia_addon_inextremo_announcer_meetkillers,"Вот, возьми этот кошелек и письмо.",dia_addon_inextremo_announcer_meetkillers_giveger);
+		Info_AddChoice(dia_addon_inextremo_announcer_meetkillers, " Here, take this wallet and letter. " ,dia_addon_inextremo_announcer_meetkillers_giveger);
 	};
 	Info_AddChoice(dia_addon_inextremo_announcer_meetkillers,"Понятия не имею.",dia_addon_inextremo_announcer_meetkillers_dontknow);
 };
 
 func void dia_addon_inextremo_announcer_meetkillers_dontknow()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_DontKnow_01_00");	//Понятия не имею.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontKnow_01_01");	//Хммм. А ты шутник, как я погляжу...(смеется)
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontKnow_01_03");	//Позволь мне объяснить тебе пару вещей.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontKnow_01_04");	//Мое время - это мои деньги!
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontKnow_01_08");	//Так что теперь ты - мой должник...(смеется)
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_DontKnow_01_09");	//Я тебе ничего не должен!
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontKnow_01_11");	//И скажу тебе честно, как на духу, - я не очень-то особо жалую должников, а самое главное - всегда получаю то, что мне причитается.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontKnow_01_12");	//И знаешь, что я решил...
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontKnow_01_14");	//...я решил, что взыщу твой должок с тебя прямо сейчас!
-	Npc_SetTempAttitude(self,ATT_HOSTILE);
-	B_LogEntry(TOPIC_GERBRANDTHELP,"Теперь мне точно не видать рекомендательного письма от Гербрандта, поскольку я завалил все дело. К тому же во время встречи у меня возникли, так сказать, некоторые сложности.");
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_DontKnow_01_00 " );	// I have no idea.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontKnow_01_01 " );	// Hmmm. And you are a joker, as I see it ... (laughs)
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontKnow_01_03 " );	// Let me explain a couple of things to you.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontKnow_01_04 " );	// My time is my money!
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontKnow_01_08 " );	// So now you're in my debt... (laughs)
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_DontKnow_01_09 " );	// I don't owe you anything!
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontKnow_01_11 " );	// And I'll tell you honestly, as if in spirit, - I don't really feel sorry for debtors, and most importantly, I always get what is due to me.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontKnow_01_12 " );	// And you know what I decided...
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontKnow_01_14 " );	// ...I've decided that I'll collect your debt from you right now!
+	Npc_SetTempAttitude(self, ATT_HOSTILE );
+	B_LogEntry( TOPIC_GERBRANDTHELP , " Now I'm sure I won't see Gerbrandt's letter of recommendation, because I screwed up the whole thing. Also, during the meeting, I had, so to speak, some difficulties. " );
 	MEETCHIEFKILLERSMISSTIME = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
@@ -498,11 +499,11 @@ func void dia_addon_inextremo_announcer_meetkillers_dontknow()
 
 func void dia_addon_inextremo_announcer_meetkillers_giveger()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_00");	//Вот, возьми этот кошелек...
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_00 " );	// Here, take this wallet...
 	B_GiveInvItems(other,self,itse_gerbrandpocket,1);
 	Npc_RemoveInvItems(self,itse_gerbrandpocket,1);
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_01");	//...и еще письмо. Здесь все, что тебе нужно.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_02");	//Хммм... ну, давай посмотрим.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_01 " );	// ...and another letter. Everything you need is here.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_02 " );	// Hmmm... well, let's see.
 	if(Npc_HasItems(other,itwr_gerbrandseclet) >= 1)
 	{
 		B_GiveInvItems(other,self,itwr_gerbrandseclet,1);
@@ -511,33 +512,33 @@ func void dia_addon_inextremo_announcer_meetkillers_giveger()
 
 		if(STIDKILLME == TRUE)
 		{
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_03");	//Хорошо, мне все ясно. Думаю, с этим делом не возникнет много хлопот.
-			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_04");	//Вот и отлично! Думаю, теперь наш разговор можно считать завершенным.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_05");	//Не так быстро, друг мой! (ехидно улыбается) Не так быстро.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_09");	//Мне нужно имя того человека, кто тебя послал ко мне.
-			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_10");	//(повысив голос) Я уже говорил тебе, что это тебя не касается!
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_11");	//Не груби! Иначе мне придется научить тебя хорошим манерам.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_12");	//Если ты мне не скажешь его имя, то, боюсь, я не смогу просто так тебя отпустить.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_13");	//Понимаешь, я должен отчетливо представлять себе, с кем я веду дела.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_14");	//В противном случае я очень многим рискую.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_15");	//Поэтому тебе придется назвать мне его имя.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_16");	//В противном же случае...
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_18");	//...мне просто придется убить тебя.
-			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_20");	//Эй, постой...
-			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_22");	//Если я тебе назову имя того человека - что тогда?
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_23");	//Хммм... тогда ты сможешь спокойно убраться отсюда куда тебе вздумается - я тебя не трону.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_24");	//Так что ты выбрал?
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_03 " );	// Okay, I'm clear. I don't think this will be much of a problem.
+			AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_04 " );	// That's great! I think now our conversation can be considered completed.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_05 " );	// Not so fast, my friend! (smiling mischievously) Not so fast.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_09 " );	// I need the name of the person who sent you to me.
+			AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_10 " );	// (raising his voice) I already told you that this is none of your business!
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_11 " );	// Don't be rude! Otherwise, I'll have to teach you good manners.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_12 " );	// If you don't tell me his name, I'm afraid I won't be able to just let you go.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_13 " );	// You see, I have to be clear about who I'm doing business with.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_14 " );	// Otherwise, I risk a lot.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_15 " );	// So you'll have to tell me his name.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_16 " );	// Otherwise...
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_18 " );	// ...I'll just have to kill you.
+			AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_20 " );	// Hey, wait...
+			AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_22 " );	// If I tell you the name of that person - what then?
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_23 " );	// Hmmm... then you can safely get out of here wherever you want - I won't hurt you.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_24 " );	// So what did you choose?
 			Info_ClearChoices(dia_addon_inextremo_announcer_meetkillers);
-			Info_AddChoice(dia_addon_inextremo_announcer_meetkillers,"Угрозами ты от меня ничего не добьешься!",dia_addon_inextremo_announcer_meetkillers_donttell);
-			Info_AddChoice(dia_addon_inextremo_announcer_meetkillers,"Хорошо! Я скажу то, что знаю сам.",dia_addon_inextremo_announcer_meetkillers_tell);
+			Info_AddChoice(dia_addon_inextremo_announcer_meetkillers, " Threats will get you nowhere! " ,dia_addon_inextremo_announcer_meetkillers_donttell);
+			Info_AddChoice(dia_addon_inextremo_announcer_meetkillers, " Okay! I'll tell you what I know. " ,dia_addon_inextremo_announcer_meetkillers_tell);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_25");	//Хорошо! Мне все ясно. Думаю, с этим делом не возникнет много хлопот.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_26");	//Можешь быть спокоен - твоя проблема будет решена быстро.
-			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_27");	//Вот и отлично! Думаю, теперь наш разговор можно считать завершенным.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_3A");	//Еще увидимся!
-			B_LogEntry(TOPIC_GERBRANDTHELP,"Я выполнил все в точности так, как велел мне Гербрандт. Теперь осталось вернуться к нему и забрать свою награду.");
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_25 " );	// Good! Everything is clear to me. I don't think this will be much of a problem.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_26 " );	// You can be calm - your problem will be solved quickly.
+			AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_27 " );	// That's great! I think now our conversation can be considered completed.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_3A " );	// See you again!
+			B_LogEntry( TOPIC_GERBRANDTHELP , " I did everything exactly as Gerbrandt told me. Now all I have to do is return to him and collect my reward. " );
 			MEETCHIEFKILLERSOK = TRUE;
 			AI_StopProcessInfos(self);
 			Npc_SetRefuseTalk(self,400);
@@ -552,20 +553,20 @@ func void dia_addon_inextremo_announcer_meetkillers_giveger()
 		B_UseFakeScroll();
 		if(STIDKILLME == TRUE)
 		{
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_31");	//Хорошо! Мне все ясно. Думаю, с этим делом не возникнет много хлопот.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_32");	//Однако, как я заметил, печать на письме была сломана еще до того, как я взялся его прочитать.
-			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_33");	//Я просто хотел...
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_34");	//(перебивая) Я знаю, что ты хотел.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_35");	//Все это мне говорит только об одном - о том, что ты не слишком надежный человек в делах такого рода.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_39");	//Позволь мне объяснить тебе пару вещей.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_40");	//Видишь ли, в нашем деле нет ничего хуже, чем люди, на которых нельзя положиться.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_43");	//Поэтому, боюсь, я не смогу просто так тебя отпустить.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_31 " );	// Good! Everything is clear to me. I don't think this will be much of a problem.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_32 " );	// However, as I noticed, the seal on the letter was broken even before I read it.
+			AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_33 " );	// I just wanted to...
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_34 " );	// (interrupting) I know what you wanted.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_35 " );	// All this tells me only one thing - that you are not a very reliable person in cases of this kind.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_39 " );	// Let me explain a couple of things to you.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_40 " );	// You see, there's nothing worse in our business than people you can't rely on.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_43 " );	// So I'm afraid I can't just let you go.
 			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_44");	//То есть?
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_45");	//От таких идиотов вроде тебя нужно избавляться как можно быстрее.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_45 " );	// Idiots like you need to be disposed of as quickly as possible.
 			AI_ReadyMeleeWeapon(self);
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_47");	//Пойми, ничего личного - но ты не оставил мне выбора...
-			Npc_SetTempAttitude(self,ATT_HOSTILE);
-			B_LogEntry(TOPIC_GERBRANDTHELP,"Я сделал все, о чем просил Гербрандт. Правда, во время встречи возникли, так сказать, некоторые сложности.");
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_47 " );	// Understand, nothing personal - but you left me no choice...
+			Npc_SetTempAttitude(self, ATT_HOSTILE );
+			B_LogEntry( TOPIC_GERBRANDTHELP , " I did everything Gerbrandt asked. However, during the meeting there were, so to speak, some difficulties. " );
 			MEETCHIEFKILLERSNOTOK = TRUE;
 			MEETCHIEFKILLERSOK = TRUE;
 			AI_StopProcessInfos(self);
@@ -573,25 +574,25 @@ func void dia_addon_inextremo_announcer_meetkillers_giveger()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_48");	//Хорошо! Мне все ясно. Думаю, с этим делом не возникнет много хлопот.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_49");	//Однако, как я заметил, печать на письме была сломана еще до того, как я взялся его прочитать.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_50");	//Значит ли это, что ты решил прочитать еще раз свое же письмо, что выглядит очень странно...
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_51");	//...либо его написал другой человек?!
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_48 " );	// Good! Everything is clear to me. I don't think this will be much of a problem.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_49 " );	// However, as I noticed, the seal on the letter was broken even before I read it.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_50 " );	// Does this mean that you decided to read your own letter again, which looks very strange...
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_51 " );	// ...or someone else wrote it?!
 			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_52");	//Я...
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_53");	//Хммм... ты можешь ничего не объяснять. Мне и так все понятно.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_54");	//Все это мне говорит только об одном - о том, что ты не слишком надежный человек в делах такого рода.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_55");	//Но хуже всего то, что ты соврал мне. Это весьма печальный факт!
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_56");	//Думаю, наверняка тебя просто кто-то послал, чтобы передать мне это письмо и кошелек, а ты...(ехидно улыбаясь)
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_59");	//Позволь мне объяснить тебе пару вещей.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_60");	//Видишь ли, в нашем деле нет ничего хуже, чем люди, на которых нельзя положиться.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_63");	//Поэтому, боюсь, я не смогу просто так тебя отпустить.
-			AI_Output(other,self,"DIA_pir_1398_MeetKillers_GiveGer_01_64");	//То есть? Как это понимать?!
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_65");	//От таких идиотов вроде тебя нужно избавляться как можно быстрее.
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_66");	//И чем скорее это сделать, тем будет лучше для всех. И для дела в том числе!
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_53 " );	// Hmmm... you don't have to explain anything. I understand everything.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_54 " );	// All this tells me only one thing - that you are not a very reliable person in cases of this kind.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_55 " );	// But the worst thing is that you lied to me. This is a very sad fact!
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_56 " );	// I think, for sure, someone just sent you to give me this letter and a wallet, and you ... (smiling maliciously)
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_59 " );	// Let me explain a couple of things to you.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_60 " );	// You see, there's nothing worse in our business than people you can't rely on.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_63 " );	// So I'm afraid I can't just let you go.
+			AI_Output(other,self, " DIA_pir_1398_MeetKillers_GiveGer_01_64 " );	// That is? What does it mean?!
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_65 " );	// Idiots like you need to be disposed of as quickly as possible.
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_66 " );	// And the sooner this is done, the better for everyone. And for business as well!
 			AI_ReadyMeleeWeapon(self);
-			AI_Output(self,other,"DIA_pir_1398_MeetKillers_GiveGer_01_67");	//Пойми, ничего личного - но ты не оставил мне выбора...
-			Npc_SetTempAttitude(self,ATT_HOSTILE);
-			B_LogEntry(TOPIC_GERBRANDTHELP,"Я сделал все, о чем просил Гербрандт. Правда, во время встречи возникли, так сказать, некоторые сложности.");
+			AI_Output(self,other, " DIA_pir_1398_MeetKillers_GiveGer_01_67 " );	// Understand, nothing personal - but you left me no choice...
+			Npc_SetTempAttitude(self, ATT_HOSTILE );
+			B_LogEntry( TOPIC_GERBRANDTHELP , " I did everything Gerbrandt asked. However, during the meeting there were, so to speak, some difficulties. " );
 			MEETCHIEFKILLERSNOTOK = TRUE;
 			MEETCHIEFKILLERSOK = TRUE;
 			AI_StopProcessInfos(self);
@@ -602,34 +603,34 @@ func void dia_addon_inextremo_announcer_meetkillers_giveger()
 
 func void dia_addon_inextremo_announcer_meetkillers_donttell()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_DontTell_01_00");	//Угрозами ты от меня ничего не добьешься!
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontTell_01_01");	//Хммм... значит, ты предпочитаешь умереть. Как глупо с твоей стороны так поступать! (смеется)
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_DontTell_01_02");	//Или, быть может, ты решил со мной поторговаться?
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_DontTell_01_00 " );	// Threats won't get you anything from me!
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontTell_01_01 " );	// Hmmm... so you prefer to die. How stupid of you to do that! (laughs)
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_DontTell_01_02 " );	// Or maybe you decided to bargain with me?
 	Info_ClearChoices(dia_addon_inextremo_announcer_meetkillers);
-	Info_AddChoice(dia_addon_inextremo_announcer_meetkillers,"Глупо или нет - это решит бой!",dia_addon_inextremo_announcer_meetkillers_fight);
-	Info_AddChoice(dia_addon_inextremo_announcer_meetkillers,"Поторговаться? А почему бы и нет.",dia_addon_inextremo_announcer_meetkillers_torg);
+	Info_AddChoice(dia_addon_inextremo_announcer_meetkillers, " Stupid or not, that will decide the fight! " ,dia_addon_inextremo_announcer_meetkillers_fight);
+	Info_AddChoice(dia_addon_inextremo_announcer_meetkillers, " Bargain? Why not. " ,dia_addon_inextremo_announcer_meetkillers_torg);
 };
 
 func void dia_addon_inextremo_announcer_meetkillers_tell()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Tell_01_00");	//Хорошо! Я скажу то, что знаю сам.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Tell_01_00 " );	// Good! I will say what I know myself.
 	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_01");	//Я слушаю...
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Tell_01_02");	//Его зовут Гербрандт.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_03");	//Где он живет?
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Tell_01_04");	//В верхнем квартале города, первый дом справа. Больше я ничего не знаю.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_05");	//Ну что же, этого вполне достаточно.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Tell_01_02 " );	// His name is Gerbrandt.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_03 " );	// Where does he live?
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Tell_01_04 " );	// In the upper quarter of the city, the first house on the right. I don't know anything more.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_05 " );	// Well, that's enough.
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Tell_01_06");	//Эй! Ты же обещал!
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_07");	//Тебе не следует верить всему тому, что говорят.
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Tell_01_09");	//Но ведь мы договорились!
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_10");	//Ха! (смеется) Позволь мне объяснить тебе пару вещей.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_11");	//Видишь ли, в нашем деле нет ничего хуже, чем люди, на которых нельзя положиться.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_13");	//И судя по всему, ты относишься именно к этой категории людей. Так просто сдал мне своего работодателя - о чем же еще говорить?
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_14");	//Не факт, что ты не проболтаешься и о нашей встрече. А я так рисковать не могу! Понимаешь?
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_15");	//А посему ты не оставил мне выбора...
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Tell_01_16");	//Придется тебе сегодня все-таки умереть.
-	Npc_SetTempAttitude(self,ATT_HOSTILE);
-	B_LogEntry(TOPIC_GERBRANDTHELP,"Я сделал все, о чем просил Гербрандт. Правда, во время встречи возникли, так сказать, некоторые сложности. К тому же я проболтался о причастности Гербрандта к этому делу. Не думаю, что это ему понравится.");
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Tell_01_06 " );	// Hey! But you promised!
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_07 " );	// You shouldn't believe everything they say.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Tell_01_09 " );	// But we agreed!
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_10 " );	// Ha! (laughs) Let me explain a couple of things to you.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_11 " );	// You see, there's nothing worse in our business than people you can't rely on.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_13 " );	// And apparently, you belong to this category of people. So he just gave me his employer - what else to talk about?
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_14 " );	// It's not a fact that you won't spill the beans about our meeting. And I can't risk it! Understand?
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_15 " );	// And so you left me no choice...
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Tell_01_16 " );	// You're going to have to die today.
+	Npc_SetTempAttitude(self, ATT_HOSTILE );
+	B_LogEntry( TOPIC_GERBRANDTHELP , " I did everything Gerbrandt asked. However, during the meeting there were, so to speak, some difficulties. Besides, I blabbed about Gerbrandt's involvement in this case. I don't think he will like it. " );
 	MEETCHIEFKILLERSNOTOK = TRUE;
 	MEETCHIEFKILLERSOK = TRUE;
 	MEETCHIEFKILLERSTELLSGER = TRUE;
@@ -639,23 +640,23 @@ func void dia_addon_inextremo_announcer_meetkillers_tell()
 
 func void dia_addon_inextremo_announcer_meetkillers_fight()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Fight_01_00");	//Посмотрим! Все решит бой!
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Fight_01_00 " );	// Let's see! Everything will be decided by the fight!
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Fight_01_01");	//Ха! Смелые слова, храбрец. Ты, видимо, даже и не догадываешься, кому ты бросаешь вызов.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Fight_01_03");	//Конечно, я бы мог с легкостью отправить тебя сейчас на тот свет, но, знаешь...(задумчиво)
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Fight_01_01 " );	// Ha! Bold words, brave man. You probably don't even know who you're challenging.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Fight_01_03 " );	// Of course, I could easily send you to the next world now, but, you know... (thoughtfully)
 	AI_RemoveWeapon(self);
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Fight_01_04");	//...я этого не стану делать.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Fight_01_05");	//Я уважаю таких людей, как ты. К тому же, как я понял, ты умеешь держать язык за зубами, а это тоже чего-то стоит.
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Fight_01_06");	//Что ты хочешь этим сказать?
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Fight_01_07");	//То, что наш разговор окончен. Иди и передай своему работадателю, что я позабочусь о его проблемах.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Fight_01_04 " );	// ...I won't do that.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Fight_01_05 " );	// I respect people like you. Besides, as I understand it, you know how to keep your mouth shut, and this is also worth something.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Fight_01_06 " );	// What do you mean by that?
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Fight_01_07 " );	// That our conversation is over. Go and tell your employer that I will take care of his problems.
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
-	B_LogEntry(TOPIC_GERBRANDTHELP,"Я сделал все, о чем просил Гербрандт. Правда, во время встречи возникли, так сказать, некоторые сложности. Мне также хватило ума не проболтаться о причастности Гербрандта к этому делу. Теперь осталось вернуться к нему и забрать свою награду.");
+	B_LogEntry( TOPIC_GERBRANDTHELP , " I did everything Gerbrandt asked. However, during the meeting there were, so to speak, some difficulties. I was also smart enough not to blurt out Gerbrandt's involvement in this matter. Now it remains to return to him and collect my reward. " );
 	MEETCHIEFKILLERSOK = TRUE;
 	MEETCHIEFKILLERSDANGER = TRUE;
 	AI_StopProcessInfos(self);
@@ -667,26 +668,26 @@ func void dia_addon_inextremo_announcer_meetkillers_fight()
 
 func void dia_addon_inextremo_announcer_meetkillers_torg()
 {
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Torg_01_00");	//Поторговаться? А почему бы и нет.
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Torg_01_01");	//Каждая информация всегда чего-то стоит.
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Torg_01_06");	//Тем более такая ценная!
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_07");	//А ты, как я посмотрю, делец! Ладно, я дам тебе триста монет. Теперь говори!
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Torg_01_08");	//Его зовут Гербрандт, он торговец.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_09");	//А где он живет?
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Torg_01_10");	//В верхнем квартале города, первый дом справа. Больше я ничего не знаю.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_11");	//Хммм... ну что же, этого вполне достаточно.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Torg_01_00 " );	// Bargain? Why not.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Torg_01_01 " );	// Each information is always worth something.
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Torg_01_06 " );	// Especially so valuable!
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_07 " );	// And you, as I see it, are a businessman! Okay, I'll give you three hundred coins. Now speak!
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Torg_01_08 " );	// His name is Gerbrandt, he is a merchant.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_09 " );	// Where does he live?
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Torg_01_10 " );	// In the upper quarter of the city, the first house on the right. I don't know anything more.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_11 " );	// Hmmm... well, that's enough.
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(other,self,"DIA_pir_1398_MeetKillers_Torg_01_12");	//Эй! Ты же обещал! И где мои деньги?
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_13");	//Тебе не следует верить всему тому, что говорят.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_14");	//Неужели ты думаешь, что я настолько глуп, чтобы платить тебе за это.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_16");	//Позволь мне объяснить тебе пару вещей.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_17");	//Видишь ли, в нашем деле нет ничего хуже, чем люди, на которых нельзя положиться.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_19");	//Тем более те, которые готовы продать все ради блеска золота в своих карманах.
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_20");	//И судя по всему, ты относишься именно к этой категории людей. Вот так просто взял и сдал мне своего работодателя - о чем же еще говорить?
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_21");	//Не факт, что ты не проболтаешься и о нашей встрече. А я так рисковать не могу! Понимаешь?
-	AI_Output(self,other,"DIA_pir_1398_MeetKillers_Torg_01_22");	//А посему ты не оставил мне выбора.
-	Npc_SetTempAttitude(self,ATT_HOSTILE);
-	B_LogEntry(TOPIC_GERBRANDTHELP,"Я сделал все, о чем просил Гербрандт. Правда, во время встречи возникли, так сказать, некоторые сложности. К тому же я проболтался о причастности Гербрандта к этому делу. Не думаю, что это ему понравится.");
+	AI_Output(other,self, " DIA_pir_1398_MeetKillers_Torg_01_12 " );	// Hey! But you promised! And where is my money?
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_13 " );	// You shouldn't believe everything they say.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_14 " );	// Do you really think I'm stupid enough to pay you for this.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_16 " );	// Let me explain a couple of things to you.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_17 " );	// You see, there's nothing worse in our business than people you can't rely on.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_19 " );	// Especially those who are ready to sell everything for the sake of the glitter of gold in their pockets.
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_20 " );	// And apparently, you belong to this category of people. Just like that, he simply took and handed over his employer to me - what else to talk about?
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_21 " );	// It's not a fact that you won't spill the beans about our meeting. And I can't risk it! Understand?
+	AI_Output(self,other, " DIA_pir_1398_MeetKillers_Torg_01_22 " );	// And so you left me no choice.
+	Npc_SetTempAttitude(self, ATT_HOSTILE );
+	B_LogEntry( TOPIC_GERBRANDTHELP , " I did everything Gerbrandt asked. However, during the meeting there were, so to speak, some difficulties. Besides, I blabbed about Gerbrandt's involvement in this case. I don't think he will like it. " );
 	MEETCHIEFKILLERSNOTOK = TRUE;
 	MEETCHIEFKILLERSOK = TRUE;
 	MEETCHIEFKILLERSTELLSGER = TRUE;
@@ -715,79 +716,79 @@ func int dia_addon_inextremo_announcer_tellaboutwambo_condition()
 func void dia_addon_inextremo_announcer_tellaboutwambo_info()
 {
 	B_GivePlayerXP(100);
-	MEETSTIDGERBRANT = TRUE;
+	MEETSTIDGERBRANT = TRUE ;
 	self.guild = GIL_VLK;
 	Npc_SetTrueGuild(self,GIL_VLK);
 	Npc_ExchangeRoutine(self,"Start");
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_0A");	//Это опять ты! Хммм... вот мы и снова встретились.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_0B");	//Хотя на мой взгляд ты выбрал не совсем подходящее для этого время.
-	if(MEETSTID == TRUE)
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_0A " );	// It's you again! Hmmm... here we are again.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_0B " );	// Although I don't think you picked the right time for this.
+	if ( MEASID  ==  TRUE )
 	{
-		AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_0C");	//Ну, если честно, я и сам не ожидал увидеть тебя здесь.
-		AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_0D");	//Однако это произошло!
+		AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_0C " );	// Well, to be honest, I didn't expect to see you here myself.
+		AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_0D " );	// However, it happened!
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_0E");	//А разве мы знакомы?! Хотя постой! Ты же тот человек из таверны, верно?
-		AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_0F");	//Вижу, что ты меня хорошенько запомнил! Впрочем, как и я тебя.
+		AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_0E " );	// Do we know each other?! Wait though! You're the man from the tavern, right?
+		AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_0F " );	// I see that you remember me well! However, as I you.
 	};
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_00");	//Кажется, у тебя неприятности с ополчением.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_01");	//У меня? (смеется) Что ты имеешь в виду?
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_02");	//Может быть, мне показалось, но, похоже, ты только что убил человека.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_03");	//Думаю, у тебя из-за этого будут большие проблемы.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_0H");	//Ты ошибаешься, друг мой! У меня их не будет, поскольку об этом вряд ли кто узнает.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_05");	//Ведь для этого нужны свидетели...(смеется)
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_06");	//А что насчет меня? Я же видел, как ты...
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_07");	//(перебивая) Значит, тем хуже для тебя!
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_09");	//Ты выбрал не самое лучшее время, чтобы перейти мне дорогу.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_10");	//Хотя я тебя не виню - скорее всего, ты здесь оказался просто по нелепой случайности.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_12");	//Ты мне угрожаешь?!
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_13");	//Нет, что ты! Угрозы - это лишь пустая трата времени и сил.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_14");	//Действия приносят куда больше пользы.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_15");	//Пойми меня правильно - я не имею ничего против тебя, но я не могу так рисковать.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_18");	//Просто своим появлением здесь ты не оставил мне выбора...(смеется)
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_00 " );	// Looks like you're in trouble with the militia.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_01 " );	// Me? (laughs) What do you mean?
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_02 " );	// Maybe I imagined it, but it looks like you just killed a man.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_03 " );	// I think you'll be in big trouble because of this.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_0H " );	// You're wrong, my friend! I will not have them, because it is unlikely that anyone will know about it.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_05 " );	// After all, this requires witnesses ... (laughs)
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_06 " );	// What about me? I saw how you...
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_07 " );	// (interrupting) So much the worse for you!
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_09 " );	// You didn't pick the best time to cross my path.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_10 " );	// I don't blame you though - it's more likely that you ended up here just by an absurd accident.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_12 " );	// Are you threatening me?!
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_13 " );	// No, what are you! Threats are just a waste of time and effort.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_14 " );	// Actions are much more useful.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_15 " );	// Don't get me wrong - I have nothing against you, but I can't take that risk.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_18 " );	// Just by being here, you left me no choice... (laughs)
 	if(other.guild == GIL_MIL)
 	{
-		AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_35");	//Тем более что ты сам состоишь в ополчении.
+		AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_35 " );	// Especially since you yourself are a member of the militia.
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_GuardStopsIntruder,0);
 	}
 	else if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_36");	//Тем более что ты сам паладин.
+		AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_36 " );	// Especially since you're a paladin yourself.
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_GuardStopsIntruder,0);
 	}
 	else if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_37");	//Тем более что ты - маг Огня и наверняка настучишь друзьям-паладинам.
+		AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_37 " );	// Especially since you're a Firebender and you'll probably snitch on your paladin friends.
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_GuardStopsIntruder,0);
 	}
 	else if(other.guild == GIL_NOV)
 	{
-		AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_38");	//Тем более что ты - приспешник магов Огня и наверняка захочешь выслужиться.
+		AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_38 " );	// Especially since you're a minion of the Firebenders and you'll probably want to curry favor.
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_GuardStopsIntruder,0);
 	};
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_19");	//Постой! Давай просто спокойно поговорим.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_20");	//Может, мы все-таки сможем мирно уладить эту проблему?
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_25");	//(задумался) Может быть...
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_30");	//Может, ты мне и будешь полезен, если, конечно...(внимательно вглядываясь)
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_01_31");	//К чему ты ведешь?
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_32");	//Возможно, мне бы пригодилась помощь такого человека, как ты.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_33");	//Насколько я понял, ты вроде парень ничего - не из болтливых, да и наглости тебе не занимать.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_01_34");	//Поэтому... думаю, у меня есть к тебе одно предложение.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_19 " );	// Wait! Let's just talk calmly.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_20 " );	// Maybe we can still peacefully settle this problem?
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_25 " );	// (thinking) Maybe...
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_30 " );	// Maybe you will be useful to me, if, of course ... (carefully peering)
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_01_31 " );	// Where are you going?
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_32 " );	// Maybe I could use the help of someone like you.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_33 " );	// As far as I understand, you seem to be a guy of nothing - not one of the talkative ones, and you don’t have the audacity to do so.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_01_34 " );	// So... I think I have a suggestion for you.
 	Info_ClearChoices(dia_addon_inextremo_announcer_tellaboutwambo);
-	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutwambo,"И в чем оно заключается?",dia_addon_inextremo_announcer_tellaboutwambo_tellme);
-	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutwambo,"Не думаю, что оно меня заинтересует.",dia_addon_inextremo_announcer_tellaboutwambo_refuse);
+	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutwambo, " What is it? " ,dia_addon_inextremo_announcer_tellaboutwambo_tellme);
+	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutwambo, " I don't think I'm interested. " ,dia_addon_inextremo_announcer_tellaboutwambo_refuse);
 };
 
 func void dia_addon_inextremo_announcer_tellaboutwambo_refuse()
 {
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_Refuse_01_00");	//Не думаю, что оно меня заинтересует.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_Refuse_01_01");	//Ты отказался, даже не выслушав, что я хотел тебе предложить.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_Refuse_01_04");	//Ну, в таком случае пришло время умирать, друг мой.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_Refuse_01_00 " );	// I don't think it will interest me.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_Refuse_01_01 " );	// You refused without even listening to what I wanted to offer you.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_Refuse_01_04 " );	// Well, in that case it's time to die, my friend.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
@@ -795,40 +796,40 @@ func void dia_addon_inextremo_announcer_tellaboutwambo_refuse()
 func void dia_addon_inextremo_announcer_tellaboutwambo_tellme()
 {
 	CANCOMPLETEGUILDKILL = TRUE;
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_TellMe_01_00");	//И в чем оно заключается?
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_01");	//Для начала позволь мне тебе кое-что объяснить...
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_02");	//Думаю, ты уже наверняка догадываешься, что я не совсем обычный человек, как это кажется на первый взгляд.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_TellMe_01_03");	//Это ты верно подметил! Простым парнем тебя трудно назвать.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_05");	//Мое настоящее ремесло также нельзя назвать обычным занятием.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_TellMe_01_06");	//И чем ты занимаешься?
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_08");	//Мое настоящее занятие заключается в том, что я помогаю людям решать их проблемы не совсем законными методами.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_11");	//Мое настоящее имя - Асмал. Может быть, это тебе о чем-нибудь говорит?
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_TellMe_01_13");	//Никогда раньше не слышал о тебе.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_14");	//Хммм...(улыбается) Может, это и к лучшему для тебя.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_16");	//Пойми правильно: мне не доставляет удовольствия убивать людей, но каждый зарабатывает на хлеб так, как умеет.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_17");	//В конце концов, тот, кого я сейчас убил, был всего лишь продажным ополченцем, доставлявшим множество хлопот местным торговцам.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_18");	//Думаю, от его смерти этот мир лишь выиграл, нежели проиграл.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_19");	//Кстати, именно ты подписал этому бедняге смертный приговор, передав мне ту записку с деньгами в таверне...(смеется)
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_20");	//Правда, сейчас это уже не имеет никакого значения. Поэтому лучше вернемся непосредственно к твоей персоне.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_21");	//Скажу честно: конечно, мне было бы проще просто убить тебя...
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_22");	//...и тем самым уладить возникшую проблему. Но... я хочу дать тебе шанс.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_TellMe_01_23");	//Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_24");	//Я предлагаю тебе стать одним из нас.
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_TellMe_01_25");	//Одним из вас? Ты предлагаешь мне стать убийцей?!
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_26");	//Да. И присоединиться к нашему тайному обществу или, проще говоря, к нашей гильдии убийц.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_27");	//Примешь ли ты мое предложение или нет - решать тебе.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_TellMe_01_29");	//Итак, что скажешь?
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_TellMe_01_00 " );	// And what is it?
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_01 " );	// First, let me explain something to you...
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_02 " );	// I think you already probably guess that I'm not quite an ordinary person, as it seems at first glance.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_TellMe_01_03 " );	// You got it right! It's hard to call you a simple guy.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_05 " );	// My real craft is also not an ordinary occupation.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_TellMe_01_06 " );	// And what do you do?
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_08 " );	// My real job is helping people solve their problems in ways that are not entirely legal.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_11 " );	// My real name is Asmal. Maybe it tells you something?
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_TellMe_01_13 " );	// Never heard of you before.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_14 " );	// Hmmm...(smiles) Maybe it's for the best for you.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_16 " );	// Don't misunderstand: it doesn't give me pleasure to kill people, but everyone earns his bread the way he can.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_17 " );	// After all, the one I just killed was just a corrupt militia who caused a lot of trouble for the local merchants.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_18 " );	// I think this world won rather than lost by his death.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_19 " );	// By the way, it was you who signed this poor fellow's death warrant by handing me that note with the money in the tavern... (laughs)
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_20 " );	// True, it doesn't matter now. Therefore, it is better to return directly to your person.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_21 " );	// I'll be honest: of course, it would be easier for me to just kill you...
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_22 " );	// ...and thereby solve the problem. But... I want to give you a chance.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_TellMe_01_23 " );	// What do you mean?
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_24 " );	// I invite you to become one of us.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_TellMe_01_25 " );	// One of you? Are you asking me to become a killer?!
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_26 " );	// Yes. And join our secret society, or, more simply, our guild of assassins.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_27 " );	// Whether you accept my offer or not is up to you.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_TellMe_01_29 " );	// So what do you say?
 	Info_ClearChoices(dia_addon_inextremo_announcer_tellaboutwambo);
-	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutwambo,"Я не имею дел с убийцами!",dia_addon_inextremo_announcer_tellaboutwambo_becomeno);
+	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutwambo, " I don't deal with killers! " ,dia_addon_inextremo_announcer_tellaboutwambo_becomeno);
 	Info_AddChoice(dia_addon_inextremo_announcer_tellaboutwambo,"Хорошо, я с вами!",dia_addon_inextremo_announcer_tellaboutwambo_becomeyes);
 };
 
 func void dia_addon_inextremo_announcer_tellaboutwambo_becomeno()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_BecomeNo_01_00");	//Я не имею дел с убийцами!
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeNo_01_03");	//В таком случае, думаю, на этом стоит закончить наш разговор, друг мой.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeNo_01_04");	//Теперь пришло время умирать!
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_BecomeNo_01_00 " );	// I don't deal with assassins!
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeNo_01_03 " );	// In that case, I think we should end our conversation here, my friend.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeNo_01_04 " );	// Now it's time to die!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
@@ -837,25 +838,25 @@ func void dia_addon_inextremo_announcer_tellaboutwambo_becomeyes()
 {
 	self.name[0] = "Асмал";
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_00");	//Хорошо, я с вами!
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_01");	//Я знал, что ты согласишься с моим предложением.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_02");	//Ты сделал правильный выбор, иначе бы ты сейчас был бы просто мертв.
+	AI_Output(other,self, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_00 " );	// Okay, I'm with you!
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_01 " );	// I knew you would agree to my proposal.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_02 " );	// You made the right choice, otherwise you would just be dead right now.
 	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_03");	//И что теперь?
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_04");	//Теперь ты один из нас!
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_07");	//Скажу тебе - на многое пока что можешь не рассчитывать.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_08");	//Ты еще должен доказать, что способен не только болтать языком, но и делать что-нибудь посерьезнее.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_10");	//Надеюсь, ты понимаешь, о чем я говорю.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_04 " );	// Now you're one of us!
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_07 " );	// I'll tell you - you can't count on much for now.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_08 " );	// You still have to prove that you can not only talk your tongue, but also do something more serious.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_10 " );	// I hope you understand what I'm talking about.
 	AI_Output(other,self,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_15");	//Я понимаю.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_16");	//И еще кое-что... Последнее время в Хоринисе стало немного неспокойно.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_18");	//Поэтому лучше пока отсидеться в каком-нибудь тихом местечке.
-	AI_Output(self,other,"DIA_pir_1398_TellAboutWambo_BecomeYes_01_20");	//Если будешь вновь искать со мной встречи, приходи в заброшенный дом на пристани.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_16 " );	// And one more thing... Khorinis has become a little restless lately.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_18 " );	// Therefore, it is better to sit in some quiet place for now.
+	AI_Output(self,other, " DIA_pir_1398_TellAboutWambo_BecomeYes_01_20 " );	// If you want to meet me again, come to the abandoned house on the pier.
 
 	if(JOINKILLERS == FALSE)
 	{
 		MIS_KILLWAY = LOG_Running;
 		Log_CreateTopic(TOPIC_KILLWAY,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_KILLWAY,LOG_Running);
-		B_LogEntry(TOPIC_KILLWAY,"Асмал принял меня в гильдию убийц. Правда, пока только на словах - до тех пор, пока я не докажу ему, что действительно достоин этого.");
+		B_LogEntry( TOPIC_KILLWAY , " Asmal accepted me into the killer's guild. True, so far only in words - until I prove to him that I really deserve it. " );
 		JOINKILLERS = TRUE;
 	};
 
@@ -885,7 +886,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLARMOR(C_Info)
 	condition = dia_addon_inextremo_announcer_killarmor_condition;
 	information = dia_addon_inextremo_announcer_killarmor_info;
 	permanent = FALSE;
-	description = "А что это на тебе за доспехи?";
+	description = " What is that armor you're wearing? " ;
 };
 
 func int dia_addon_inextremo_announcer_killarmor_condition()
@@ -898,14 +899,14 @@ func int dia_addon_inextremo_announcer_killarmor_condition()
 
 func void dia_addon_inextremo_announcer_killarmor_info()
 {
-	AI_Output(other,self,"DIA_pir_1398_KillArmor_01_00");	//А что это на тебе за доспехи?
-	AI_Output(self,other,"DIA_pir_1398_KillArmor_01_01");	//А сам-то как думаешь? Могу дать руку на отсечение, что раньше ты подобных не встречал.
-	AI_Output(self,other,"DIA_pir_1398_KillArmor_01_03");	//Такие доспехи носят только те люди, которые по праву заслужили свое место в нашем кругу. А что, они тебе так приглянулись?
-	AI_Output(other,self,"DIA_pir_1398_KillArmor_01_04");	//Очень интересно! А как мне получить такие же?
-	AI_Output(other,self,"DIA_pir_1398_KillArmor_01_05");	//Теперь я тоже состою в гильдии убийц и...
-	AI_Output(self,other,"DIA_pir_1398_KillArmor_01_06");	//(перебивая) Ха! Эти доспехи еще надо для начала заслужить! Или ты думаешь, что уже много сделал для нашей гильдии?
-	AI_Output(self,other,"DIA_pir_1398_KillArmor_01_07");	//Для начала прояви себя, выполни пару моих поручений и, быть может, в конце концов, ты будешь удостоен чести носить доспехи настоящего убийцы!
-	B_LogEntry(TOPIC_KILLWAY,"Асмал сказал, что я пока не достоин носить доспехи наемного убийцы, и мне нужно заслужить эту честь, проявив себя на деле.");
+	AI_Output(other,self, " DIA_pir_1398_KillArmor_01_00 " );	// What kind of armor are you wearing?
+	AI_Output(self,other, " DIA_pir_1398_KillArmor_01_01 " );	// What do you think? I can lend a hand on cutting off that you have not seen anything like this before.
+	AI_Output(self,other, " DIA_pir_1398_KillArmor_01_03 " );	// Only those people who have rightfully earned their place in our circle wear such armor. And what, they liked you so much?
+	AI_Output(other,self, " DIA_pir_1398_KillArmor_01_04 " );	// Very interesting! How can I get the same?
+	AI_Output(other,self, " DIA_pir_1398_KillArmor_01_05 " );	// Now I'm in the Assassin's Guild too, and...
+	AI_Output(self,other, " DIA_pir_1398_KillArmor_01_06 " );	// (interrupting) Ha! This armor still needs to be earned first! Or do you think that you have already done a lot for our guild?
+	AI_Output(self,other, " DIA_pir_1398_KillArmor_01_07 " );	// First, prove yourself, complete a couple of my tasks, and maybe, in the end, you will be honored to wear the armor of a real assassin!
+	B_LogEntry( TOPIC_KILLWAY , " Asmal said that I am not yet worthy to wear the armor of an assassin, and I need to earn this honor by showing myself in action. " );
 };
 
 instance DIA_ADDON_INEXTREMO_ANNOUNCER_CANTEACH(C_Info)
@@ -915,7 +916,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_CANTEACH(C_Info)
 	condition = dia_addon_inextremo_announcer_canteach_condition;
 	information = dia_addon_inextremo_announcer_canteach_info;
 	permanent = FALSE;
-	description = "Ты можешь меня чему-нибудь научить?";
+	description = " Can you teach me something? " ;
 };
 
 func int dia_addon_inextremo_announcer_canteach_condition()
@@ -929,11 +930,11 @@ func int dia_addon_inextremo_announcer_canteach_condition()
 func void dia_addon_inextremo_announcer_canteach_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_Addon_InExtremo_Announcer_CanTeach_01_00");	//Ты можешь меня чему-нибудь научить?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Announcer_CanTeach_01_01");	//Боюсь, многому я тебя научить не смогу. Сам понимаешь, не мое это дело учить кого-то.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Announcer_CanTeach_01_02");	//Но, если на то пошло, то парочку приемов фектования я бы мог тебе преподать.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Announcer_CanTeach_01_03");	//Ведь как-никак от этого зависит успех выполненой работы - а это важный момент в нашем ремесле!
-	AI_Output(self,other,"DIA_Addon_InExtremo_Announcer_CanTeach_01_04");	//Так что, если ты хочешь научиться получше владеть своей шпагой или мечом, - только скажи, и мы начнем.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Announcer_CanTeach_01_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Announcer_CanTeach_01_01 " );	// I'm afraid I can't teach you much. You understand, it's not my business to teach someone.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Announcer_CanTeach_01_02 " );	// But, if it comes to that, I could teach you a couple of tricks.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Announcer_CanTeach_01_03 " );	// After all, the success of the work done depends on it - and this is an important point in our craft!
+	AI_Output(self,other, " DIA_Addon_InExtremo_Announcer_CanTeach_01_04 " );	// So if you want to learn how to use your sword or sword better, just say so and we'll get started.
 	ANNOUNCERCANTEACH = TRUE;
 };
 
@@ -944,7 +945,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_TEACH(C_Info)
 	condition = dia_addon_inextremo_announcer_teach_condition;
 	information = dia_addon_inextremo_announcer_teach_info;
 	permanent = TRUE;
-	description = "Давай начнем тренировку.";
+	description = " Let's start training. " ;
 };
 
 func int dia_addon_inextremo_announcer_teach_condition()
@@ -999,13 +1000,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK0(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork0_condition;
 	information = dia_addon_inextremo_announcer_killwork0_info;
 	permanent = FALSE;
-	description = "Как насчет какой-нибудь работенки?";
+	description = " How about some work to do? " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killwork0_condition()
 {
-	if((JOINKILLERS == TRUE) && (WAMBOISDEAD == FALSE))
+	if (( JOINKILLERS  ==  TRUE ) && ( WAMBOISDEAD  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1016,25 +1017,25 @@ func void dia_addon_inextremo_announcer_killwork0_info()
 	self.name[0] = "Асмал";
 	self.guild = GIL_VLK;
 	Npc_SetTrueGuild(self,GIL_VLK);
-	AI_Output(other,self,"DIA_pir_1398_KillWork0_01_00");	//Как насчет какой-нибудь работенки?
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_01");	//Ха! Так спешишь показать показать себя на деле? Хммм...
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_02");	//Думаю, есть одно дельце - как раз для тебя! Заодно и посмотрим, на что ты способен.
-	AI_Output(other,self,"DIA_pir_1398_KillWork0_01_03");	//И что нужно делать?
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_04");	//Один человек из городского ополчения очень сильно докучает некоторым крупным торговцам из верхнего квартала Хориниса.
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_05");	//Видимо, парень создает уж совсем много проблем, если они решили обратиться именно к нам за помощью.
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_06");	//Судя по их словам, у того стражника слишком большой аппетит в плане денег в отношении этих торговцев...(смеется)
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_08");	//Я хочу, чтобы ты разобрался с этим стражником. И чем быстрее ты это сделаешь, тем будет лучше!
-	AI_Output(other,self,"DIA_pir_1398_KillWork0_01_09");	//Проще говоря, мне нужно его убить?
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_10");	//Какой ты догадливый!
-	AI_Output(other,self,"DIA_pir_1398_KillWork0_01_11");	//Кто этот парень?
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_12");	//Его зовут Вамбо. Возможно, ты уже встречался с ним. Так что не теряй времени!
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_13");	//Возвращайся, когда разберешься с этим делом. Возможно, у меня будут к тебе еще поручения.
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_14");	//Да, и еще. Я надеюсь, мне не стоит тебе напоминать, что все это лучше сделать без свидетелей.
-	AI_Output(self,other,"DIA_pir_1398_KillWork0_01_15");	//Сам понимаешь, нам не нужны лишние проблемы с ополчением.
+	AI_Output(other,self, " DIA_pir_1398_KillWork0_01_00 " );	// How about some work to do?
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_01 " );	// Ha! So are you in a hurry to show yourself in practice? Hmmm...
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_02 " );	// I think there is one thing - just for you! Let's go and see what you're capable of.
+	AI_Output(other,self, " DIA_pir_1398_KillWork0_01_03 " );	// And what should be done?
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_04 " );	// One man from the city militia is very annoying to some big merchants from the upper quarter of Khorinis.
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_05 " );	// Apparently, the guy creates quite a lot of problems if they decide to turn to us for help.
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_06 " );	// Judging from what they said, that guard has a huge appetite for money in regards to these merchants...(laughs)
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_08 " );	// I want you to deal with this guard. And the sooner you do it, the better!
+	AI_Output(other,self, " DIA_pir_1398_KillWork0_01_09 " );	// Simply put, do I need to kill him?
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_10 " );	// How clever you are!
+	AI_Output(other,self, " DIA_pir_1398_KillWork0_01_11 " );	// Who is this guy?
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_12 " );	// His name is Wambo. You may have already met him. So don't waste your time!
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_13 " );	// Come back when you've dealt with this matter. Perhaps I will have more assignments for you.
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_14 " );	// Yes, and more. I hope I don't have to remind you that this is best done without witnesses.
+	AI_Output(self,other, " DIA_pir_1398_KillWork0_01_15 " );	// You know, we don't want any more trouble with the militia.
 	MIS_KILLWAMBO = LOG_Running;
 	Log_CreateTopic(TOPIC_KILLWAMBO,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KILLWAMBO,LOG_Running);
-	B_LogEntry(TOPIC_KILLWAMBO,"Асмал поручил мне разобраться с ополченцем по имени Вамбо, который серьезно докучает торговцам из верхнего квартала.");
+	B_LogEntry( TOPIC_KILLWAMBO , " Asmal has assigned me to deal with a militiaman named Wambo who is seriously harassing merchants from the upper quarter. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(Mil_316_Wambo,"WaitFight2");
 };
@@ -1047,13 +1048,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK0DONE(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork0done_condition;
 	information = dia_addon_inextremo_announcer_killwork0done_info;
 	permanent = FALSE;
-	description = "Я уладил дело с Вамбо.";
+	description = " I settled the deal with Wambo. " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killwork0done_condition()
 {
-	if((MIS_KILLWAMBO == LOG_Running) && (WAMBOISDEAD == TRUE))
+	if (( WAMBOISDEAD  == LOG_Running ) && ( WAMBOISDEAD  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1063,14 +1064,14 @@ func void dia_addon_inextremo_announcer_killwork0done_info()
 {
 	self.name[0] = "Асмал";
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_pir_1398_KillWork0Done_01_00");	//Я уладил дело с Вамбо.
-	AI_Output(self,other,"DIA_pir_1398_KillWork0Done_01_03");	//Хммм. Ну хорошо. Думаю, наши заказчики будут довольны.
-	AI_Output(self,other,"DIA_pir_1398_KillWork0Done_01_04");	//Кажется, от тебя действительно есть польза.
-	AI_Output(self,other,"DIA_pir_1398_KillWork0Done_01_05");	//Вот, возьми этот кошелек. Тут твоя доля за выполненную работу.
+	AI_Output(other,self, " DIA_pir_1398_KillWork0Done_01_00 " );	// I settled the deal with Wambo.
+	AI_Output(self,other, " DIA_pir_1398_KillWork0Done_01_03 " );	// Hmmm. OK then. I think our customers will be happy.
+	AI_Output(self,other, " DIA_pir_1398_KillWork0Done_01_04 " );	// You seem to be really useful.
+	AI_Output(self,other, " DIA_pir_1398_KillWork0Done_01_05 " );	// Here, take this wallet. Here's your share of the work done.
 	B_GiveInvItems(self,other,ItSe_GoldPocket100,1);
 	MIS_KILLWAMBO = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KILLWAMBO,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KILLWAMBO,"Асмал остался доволен моей работой.");
+	B_LogEntry( TOPIC_KILLWAMBO , " Asmal was pleased with my work. " );
 };
 
 
@@ -1081,13 +1082,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK1(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork1_condition;
 	information = dia_addon_inextremo_announcer_killwork1_info;
 	permanent = FALSE;
-	description = "Есть для меня работа?";
+	description = " Do you have a job for me? " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killwork1_condition()
 {
-	if((JOINKILLERS == TRUE) && (KILLTARGET1 == FALSE) && (WAMBOISDEAD == TRUE))
+	if (( JOINKILLERS  ==  TRUE ) && ( KILLTARGET1  ==  FALSE ) && ( WAMBOISDEAD  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1097,26 +1098,26 @@ func void dia_addon_inextremo_announcer_killwork1_info()
 {
 	var C_Npc slf;
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork1_01_00");	//Есть для меня работа?
-	AI_Output(self,other,"DIA_pir_1398_KillWork1_01_01");	//Хммм... да, есть еще одно дельце. Думаю, ты с ним без труда справишься.
-	AI_Output(other,self,"DIA_pir_1398_KillWork1_01_02");	//Что надо делать?
-	AI_Output(self,other,"DIA_pir_1398_KillWork1_01_03");	//Я хочу, чтобы ты позаботился об одном человеке по имени Луис. Ты найдешь его здесь, в городе.
-	AI_Output(other,self,"DIA_pir_1398_KillWork1_01_04");	//Его надо убить?
-	AI_Output(self,other,"DIA_pir_1398_KillWork1_01_05");	//Да, этот парень слишком много треплет языком о тех вещах, о которых лучше всегда помалкивать.
-	AI_Output(self,other,"DIA_pir_1398_KillWork1_01_06");	//И, естественно, кое-кому это не очень нравится.
-	AI_Output(self,other,"DIA_pir_1398_KillWork1_01_07");	//Постарайся все сделать тихо, без лишнего шума. Сам понимаешь, от этого зависит наша репутация!
-	AI_Output(self,other,"DIA_pir_1398_KillWork1_01_08");	//А как уладишь это дело - возвращайся ко мне. У меня будет для тебя еще одно поручение.
+	AI_Output(other,self, " DIA_pir_1398_KillWork1_01_00 " );	// Got a job for me?
+	AI_Output(self,other, " DIA_pir_1398_KillWork1_01_01 " );	// Hmmm... yes, there is one more thing. I think you can easily handle it.
+	AI_Output(other,self, " DIA_pir_1398_KillWork1_01_02 " );	// What should be done?
+	AI_Output(self,other, " DIA_pir_1398_KillWork1_01_03 " );	// I want you to take care of a man named Louis. You will find it here in the city.
+	AI_Output(other,self, " DIA_pir_1398_KillWork1_01_04 " );	// Should I kill him?
+	AI_Output(self,other, " DIA_pir_1398_KillWork1_01_05 " );	// Yeah, this guy talks way too much about things that are best kept quiet.
+	AI_Output(self,other, " DIA_pir_1398_KillWork1_01_06 " );	// And, of course, some people don't like it very much.
+	AI_Output(self,other, " DIA_pir_1398_KillWork1_01_07 " );	// Try to do everything quietly, without too much noise. You know, our reputation depends on it!
+	AI_Output(self,other, " DIA_pir_1398_KillWork1_01_08 " );	// And when you settle this matter, come back to me. I have one more task for you.
 	AI_StopProcessInfos(self);
 	MIS_KILLTARGET1 = LOG_Running;
 	Log_CreateTopic(TOPIC_KILLTARGET1,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KILLTARGET1,LOG_Running);
-	B_LogEntry(TOPIC_KILLTARGET1,"Асмал попросил меня уладить дело с типом по имени Луис. Этот парень явно много болтает, если кто-то захотел его смерти. Придется мне приложить все усилия, чтобы он больше не доставлял никому проблем.");
+	B_LogEntry( TOPIC_KILLTARGET1 , " Asmal asked me to settle a case with a guy named Luis. This guy obviously talks a lot if someone wants him dead. I'll have to do my best to make sure he doesn't cause anyone any more trouble. " );
 	Wld_InsertNpc(vlk_6109_luis,"NW_CITY_LUIS");
 	if(Npc_IsDead(Canthar) == TRUE)
 	{
 		KILLTARGET3 = TRUE;
 	};
-	if(Npc_IsDead(Lehmar) == TRUE)
+	if (Npc_IsDead(Lehmar) ==  TRUE )
 	{
 		KILLTARGET2 = TRUE;
 	};
@@ -1134,7 +1135,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK1DONE(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork1done_condition;
 	information = dia_addon_inextremo_announcer_killwork1done_info;
 	permanent = FALSE;
-	description = "Про проблему с Луисом можно забыть.";
+	description = " We can forget about the problem with Luis. " ;
 };
 
 
@@ -1149,20 +1150,20 @@ func int dia_addon_inextremo_announcer_killwork1done_condition()
 func void dia_addon_inextremo_announcer_killwork1done_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork1Done_01_00");	//Про проблему с Луисом можно забыть.
-	AI_Output(self,other,"DIA_pir_1398_KillWork1Done_01_01");	//Ты позаботился о том, чтобы он больше не раскрывал свою пасть?
-	AI_Output(other,self,"DIA_pir_1398_KillWork1Done_01_02");	//Парень теперь нем как рыба.
-	AI_Output(self,other,"DIA_pir_1398_KillWork1Done_01_03");	//Что же, неплохо! Ты делаешь успехи. А это, как сам понимаешь, всегда поощряется.
-	AI_Output(self,other,"DIA_pir_1398_KillWork1Done_01_05");	//Так что... вот, держи - тут твоя доля за твои хлопоты.
+	AI_Output(other,self, " DIA_pir_1398_KillWork1Done_01_00 " );	// You can forget about the problem with Louis.
+	AI_Output(self,other, " DIA_pir_1398_KillWork1Done_01_01 " );	// Did you make sure he doesn't open his mouth again?
+	AI_Output(other,self, " DIA_pir_1398_KillWork1Done_01_02 " );	// The guy is dumb as a fish now.
+	AI_Output(self,other, " DIA_pir_1398_KillWork1Done_01_03 " );	// Well, not bad! You're making progress. And this, as you know, is always encouraged.
+	AI_Output(self,other, " DIA_pir_1398_KillWork1Done_01_05 " );	// So... here you go - here is your share for your troubles.
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	MIS_KILLTARGET1 = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KILLTARGET1,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KILLTARGET1,"Я уладил дело с Луисом.");
+	B_LogEntry( TOPIC_KILLTARGET1 , " I fixed things with Luis. " );
 	if(Npc_IsDead(Canthar) == TRUE)
 	{
 		KILLTARGET3 = TRUE;
 	};
-	if(Npc_IsDead(Lehmar) == TRUE)
+	if (Npc_IsDead(Lehmar) ==  TRUE )
 	{
 		KILLTARGET2 = TRUE;
 	};
@@ -1180,13 +1181,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK2(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork2_condition;
 	information = dia_addon_inextremo_announcer_killwork2_info;
 	permanent = FALSE;
-	description = "Ты говорил про еще одно поручение.";
+	description = " You were talking about another errand. " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killwork2_condition()
 {
-	if((JOINKILLERS == TRUE) && (KILLTARGET2 == FALSE) && (KILLTARGET1 == TRUE) && (WAMBOISDEAD == TRUE))
+	if (( JOINKILLERS  ==  TRUE ) && ( KILLTARGET2  ==  FALSE ) && ( KILLTARGET1  ==  TRUE ) && ( WAMBOISDEAD  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1195,41 +1196,41 @@ func int dia_addon_inextremo_announcer_killwork2_condition()
 func void dia_addon_inextremo_announcer_killwork2_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_00");	//Ты говорил про еще одно поручение.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_01");	//Да, и оно достаточно срочное. Нам как можно скорее нужно решить эту проблему, пока проблемы не возникли у нас.
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_02");	//А в чем, собственно, дело?
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_03");	//Ты знаешь человека по имени Лемар? Он ростовщик в портовом квартале Хориниса.
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_04");	//Да, я его знаю. А что у тебя за дела с ним?
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_05");	//Это тебя не касается! Единственное, что тебе следует знать, так это то, что в свое время Лемар оказал нам одну очень неоценимую услугу.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_06");	//Его помощь существенно облегчила нам жизнь в городе, хотя и плата за его услуги была достаточно высока.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_07");	//Думаю, он с самого начала догадывался, кто мы такие и чем занимаемся.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_08");	//Правда, больше всего его все-таки интересовало золото, поэтому он не стал задавать лишних вопросов. По крайней мере, до последнего времени.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_09");	//(злобно) Но теперь этот ублюдок зашел слишком далеко!
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_10");	//Что он сделал?
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_11");	//В последнее время дела у него идут не слишком хорошо.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_12");	//Слишком много должников, но мало кто из них платит по счетам. Поэтому он решил, что было бы неплохо заработать деньги иным способом.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_14");	//Он поставил нам условие: что, если мы не хотим чтобы кто-то узнал о нас больше, нам придется раскошелится...(смеется)
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_15");	//А если мы откажемся, он угрожает сдать нас лорду Андрэ и его ополчению!
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_17");	//Так пошли кого-нибудь из своих ребят к Лемару, чтобы они разобрались с ним.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_20");	//Все не так просто. Одно только появление моих ребят рядом с домом Лемара вызовет его беспокойство, и он сразу же побежит к лорду Андрэ.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_21");	//Он не дурак, и понимает, что мы наверняка попробуем поквитаться с ним. К тому же Лемар знает в лицо практически всех моих ребят.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_23");	//Ко всему прочему, недавно он еще и нанял себе телохранителя, представляешь? Лютер знает этого парня - он отличный боец и справиться с ним без лишнего шума будет крайне сложно.
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_24");	//М-да. похоже, Лемар все предусмотрел.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_25");	//Все, кроме одного...(смеется)
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_26");	//Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_27");	//Тебя, естественно! Этот болван даже не догадывается, что ты - один из нас...(смеется) Представляю, какое у него будет лицо, когда он узнает об этом!
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_30");	//Не теряй времени. Отправляйся к Лемару и позаботься о том, чтобы этот ублюдок больше никогда не смог угрожать нам.
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_31");	//А что насчет телохранителя?
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_32");	//Если понадобится, тебе придется позаботиться и о нем. Конечно, это будет совсем непросто, но другого выхода у нас нет.
-	AI_Output(other,self,"DIA_pir_1398_KillWork2_01_33");	//Хммм... но вокруг его дома всегда полно народу! Если я кого-нибудь прикончу, меня тут же схватит ополчение!
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_35");	//Постарайся застать ростовщика в таком месте, где было бы поменьше всяких зевак.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_37");	//Недавно я слышал, что Лемар частенько наведывается вечером в гавань. Видимо, выходит прогуляться и подышать свежим морским воздухом.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_38");	//Обычно в это время там практически никого нет.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2_01_45");	//Когда будешь протыкать эту жирную свинью шпагой, передай ему привет от меня и моих ребят...(смеется)
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_00 " );	// You were talking about another assignment.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_01 " );	// Yes, and it's quite urgent. We need to resolve this issue as soon as possible before we have problems.
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_02 " );	// What's the point?
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_03 " );	// Do you know a man named Lemar? He is a moneylender in the port district of Khorinis.
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_04 " );	// Yes, I know him. What do you have to do with him?
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_05 " );	// This doesn't concern you! The only thing you should know is that in his time Lemar rendered us one very invaluable service.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_06 " );	// His help made life in the city much easier for us, although the fee for his services was quite high.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_07 " );	// I think he guessed from the very beginning who we are and what we do.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_08 " );	// True, he was most interested in gold, so he did not ask too many questions. At least until recently.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_09 " );	// (angrily) But now that bastard has gone too far!
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_10 " );	// What did he do?
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_11 " );	// Things haven't been going well for him lately.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_12 " );	// Too many debtors, but few of them pay their bills. So he decided that it would be nice to make money in some other way.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_14 " );	// He gave us a condition: that if we don't want anyone to know more about us, we'll have to fork out... (laughs)
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_15 " );	// And if we refuse, he threatens to turn us over to Lord Andre and his militia!
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_17 " );	// So send one of your guys to Lemar to deal with him.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_20 " );	// It's not that simple. The mere appearance of my guys near Lemar's house will cause him anxiety, and he will immediately run to Lord Andre.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_21 " );	// He's not stupid, and he knows we'll probably try to get even with him. In addition, Lemar knows almost all of my guys by sight.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_23 " );	// On top of that, he recently hired a bodyguard, can you imagine? Luther knows this guy - he is a great fighter and it will be extremely difficult to deal with him without too much noise.
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_24 " );	// M-yes. It seems that Lemar has foreseen everything.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_25 " );	// All but one... (laughs)
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_26 " );	// What do you mean?
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_27 " );	// You, of course! This fool doesn't even know you're one of us...(laughs) I can imagine what his face will look like when he finds out about this!
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_30 " );	// Don't waste time. Go to Lemar and make sure that bastard can never threaten us again.
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_31 " );	// What about a bodyguard?
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_32 " );	// You'll have to take care of him if you need to. Of course, it will not be easy at all, but we have no other choice.
+	AI_Output(other,self, " DIA_pir_1398_KillWork2_01_33 " );	// Hmmm... but his house is always full of people! If I kill anyone, the militia will immediately grab me!
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_35 " );	// Try to catch the moneylender in a place where there would be fewer onlookers.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_37 " );	// Recently I heard that Lemar often visits the harbor in the evening. Apparently, he goes out for a walk and breathes in the fresh sea air.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_38 " );	// Usually there is hardly anyone there at this time.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2_01_45 " );	// When you pierce this fat pig with a sword, say hello to him from me and my guys ... (laughs)
 	MIS_KILLTARGET2 = LOG_Running;
 	Log_CreateTopic(TOPIC_KILLTARGET2,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KILLTARGET2,LOG_Running);
-	B_LogEntry(TOPIC_KILLTARGET2,"У гильдии убийц возникли проблемы с ростовщиком Лемаром. Тот знает, кто они и решил воспользоваться этим, шантажируя Асмала и его людей. Мне нужно разобраться с этой проблемой, хотя это будет непросто. Лемар нанял себе телохранителя, и застать его врасплох будет трудновато. Кроме того, Асмал упомянул, что вечером Лемар любит гулять в гавани и намекнул, что это лучший шанс сделать мое грязное дело без лишнего шума.");
+	B_LogEntry( TOPIC_KILLTARGET2 , " The assassin's guild is having trouble with loan shark Lemar. He knows who they are and decided to take advantage of this by blackmailing Asmal and his people. I need to deal with this problem, although it will not be easy. Lemar hired a bodyguard and catch him besides, Asmal mentioned that Lemar loves to walk in the harbor in the evening and hinted that this is the best chance to do my dirty work without too much noise. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(VLK_484_Lehmar,"CanKill");
 	Wld_InsertNpc(vlk_6120_lemarguard,"NW_CITY_LEMAR_KILL_GUARD");
@@ -1252,7 +1253,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK2DONE(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork2done_condition;
 	information = dia_addon_inextremo_announcer_killwork2done_info;
 	permanent = FALSE;
-	description = "Я передал привет Лемару от тебя.";
+	description = " I said hi to Lemar for you. " ;
 };
 
 
@@ -1267,17 +1268,17 @@ func int dia_addon_inextremo_announcer_killwork2done_condition()
 func void dia_addon_inextremo_announcer_killwork2done_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork2Done_01_00");	//Я передал Лемару привет от тебя.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2Done_01_01");	//Да? (смеется) И что же он сказал?
-	AI_Output(other,self,"DIA_pir_1398_KillWork2Done_01_02");	//Ничего, потому что он уже был мертв.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2Done_01_03");	//Отлично! Эта свинья заслужила это! Думаю, многие обрадуются его смерти.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2Done_01_05");	//Слишком много людей были ему должны.
-	AI_Output(self,other,"DIA_pir_1398_KillWork2Done_01_06");	//Что же касается тебя, то ты отлично поработал!
-	AI_Output(self,other,"DIA_pir_1398_KillWork2Done_01_07");	//Вот, возьми это золото за свои труды и прими мою благодарность.
+	AI_Output(other,self, " DIA_pir_1398_KillWork2Done_01_00 " );	// I sent Lemar your regards.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2Done_01_01 " );	// Yes? (laughs) And what did he say?
+	AI_Output(other,self, " DIA_pir_1398_KillWork2Done_01_02 " );	// Nothing, because he was already dead.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2Done_01_03 " );	// Great! This pig deserved it! I think many will rejoice at his death.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2Done_01_05 " );	// Too many people owed him.
+	AI_Output(self,other, " DIA_pir_1398_KillWork2Done_01_06 " );	// As for you, you did a great job!
+	AI_Output(self,other, " DIA_pir_1398_KillWork2Done_01_07 " );	// Here, take this gold for your labors and accept my gratitude.
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	MIS_KILLTARGET2 = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KILLTARGET2,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KILLTARGET2,"Асмал был рад узнать, что я убил Лемара.");
+	B_LogEntry( TOPIC_KILLTARGET2 , " Asmal was glad to know that I killed Lemar. " );
 	if(Npc_IsDead(Canthar) == TRUE)
 	{
 		KILLTARGET3 = TRUE;
@@ -1295,7 +1296,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLREWARD(C_Info)
 	condition = dia_addon_inextremo_announcer_killreward_condition;
 	information = dia_addon_inextremo_announcer_killreward_info;
 	permanent = FALSE;
-	description = "Надеюсь, теперь я достоин носить доспехи убийцы?";
+	description = " I hope now I am worthy to wear the assassin's armor? " ;
 };
 
 func int dia_addon_inextremo_announcer_killreward_condition()
@@ -1309,17 +1310,17 @@ func int dia_addon_inextremo_announcer_killreward_condition()
 func void dia_addon_inextremo_announcer_killreward_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillReward_01_00");	//Надеюсь, теперь я достоин носить доспехи убийцы?
-	AI_Output(self,other,"DIA_pir_1398_KillReward_01_01");	//(удивленно) Тебя все еще это интересует?
-	AI_Output(self,other,"DIA_pir_1398_KillReward_01_03");	//Хммм...(внимательно вглядываясь) Ну, если ты так хочешь узнать мое мнение, - то, думаю, да. Ты достоин!
-	AI_Output(self,other,"DIA_pir_1398_KillReward_01_04");	//Ты доказал всем, что по праву заслужил носить эти доспехи, и даже более того.
-	AI_Output(self,other,"DIA_pir_1398_KillReward_01_05");	//Я был уверен, что ты далеко пойдешь!
-	AI_Output(self,other,"DIA_pir_1398_KillReward_01_06");	//Правда, я не ожидал, что это произойдет так быстро.
-	AI_Output(self,other,"DIA_pir_1398_KillReward_01_08");	//Поэтому вот, прими от меня эти доспехи наемного убийцы.
-	AI_Output(self,other,"DIA_pir_1398_KillReward_01_09");	//И уж я надеюсь, ты понимаешь, что этой чести удостаивались единицы.
-	AI_Output(self,other,"DIA_pir_1398_KillReward_01_10");	//Вид этих доспехов любому скажет, кто ты и на что способен.
+	AI_Output(other,self, " DIA_pir_1398_KillReward_01_00 " );	// I hope now I'm worthy to wear the assassin's armor?
+	AI_Output(self,other, " DIA_pir_1398_KillReward_01_01 " );	// (surprised) Are you still interested?
+	AI_Output(self,other, " DIA_pir_1398_KillReward_01_03 " );	// Hmmm...( peering carefully) Well, if you really want to know my opinion, then I think so. You are deserve!
+	AI_Output(self,other, " DIA_pir_1398_KillReward_01_04 " );	// You proved to everyone that you rightfully deserved to wear this armor, and even more.
+	AI_Output(self,other, " DIA_pir_1398_KillReward_01_05 " );	// I was sure you'd go far!
+	AI_Output(self,other, " DIA_pir_1398_KillReward_01_06 " );	// True, I did not expect this to happen so quickly.
+	AI_Output(self,other, " DIA_pir_1398_KillReward_01_08 " );	// So here, take this assassin's armor from me.
+	AI_Output(self,other, " DIA_pir_1398_KillReward_01_09 " );	// And I hope you understand that only a few have received this honor.
+	AI_Output(self,other, " DIA_pir_1398_KillReward_01_10 " );	// The sight of this armor will tell anyone who you are and what you are capable of.
 	B_GiveInvItems(self,other,itar_kil_sl,1);
-	B_LogEntry(TOPIC_KILLWAY,"Асмал считает, что теперь я достоин носить звание наемного убийцы и быть полноценным представителем их гильдии.");
+	B_LogEntry( TOPIC_KILLWAY , " Asmal thinks I'm now worthy of being an assassin and a full member of their guild. " );
 };
 
 instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK3(C_Info)
@@ -1329,13 +1330,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK3(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork3_condition;
 	information = dia_addon_inextremo_announcer_killwork3_info;
 	permanent = FALSE;
-	description = "Что-нибудь еще?";
+	description = " Anything else? " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killwork3_condition()
 {
-	if((JOINKILLERS == TRUE) && (KILLTARGET3 == FALSE) && (KILLTARGET1 == TRUE) && (KILLTARGET2 == TRUE) && (WAMBOISDEAD == TRUE))
+	if (( JOINKILLERS  ==  TRUE ) && ( KILLTARGET3  ==  FALSE ) && ( KILLTARGET1  ==  TRUE ) && ( KILLTARGET2  ==  TRUE ) && ( WAMBOISDEAD  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1344,21 +1345,21 @@ func int dia_addon_inextremo_announcer_killwork3_condition()
 func void dia_addon_inextremo_announcer_killwork3_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork3_01_00");	//Что-нибудь еще?
-	AI_Output(self,other,"DIA_pir_1398_KillWork3_01_01");	//Для тебя еще есть одна работенка довольно специфического плана.
-	AI_Output(other,self,"DIA_pir_1398_KillWork3_01_02");	//Кто на этот раз?
-	AI_Output(self,other,"DIA_pir_1398_KillWork3_01_03");	//Кантар, торговец на рыночной площади.
-	AI_Output(other,self,"DIA_pir_1398_KillWork3_01_04");	//Кантар? И кому же он наступил на больную мозоль, да еще так сильно?
-	AI_Output(self,other,"DIA_pir_1398_KillWork3_01_07");	//Кантар уж слишком преуспевающий торговец, и именно из-за этого у него в скором времени будут большие проблемы.
-	AI_Output(self,other,"DIA_pir_1398_KillWork3_01_09");	//Люди не любят особо удачливых. К тому же, как оказалось, и сам Кантар играет не совсем честно.
-	AI_Output(self,other,"DIA_pir_1398_KillWork3_01_11");	//У него есть небольшие связи в верхних кругах городской знати и он этим пользуется, чтобы убрать со своего пути других торговцев на рыночной площади.
-	AI_Output(self,other,"DIA_pir_1398_KillWork3_01_15");	//Постарайся не обмануть надежды этих людей - они очень рассчитывают на нашу помощь.
-	AI_Output(self,other,"DIA_pir_1398_KillWork3_01_16");	//Теперь ступай! Ты знаешь что надо делать.
+	AI_Output(other,self, " DIA_pir_1398_KillWork3_01_00 " );	// Anything else?
+	AI_Output(self,other, " DIA_pir_1398_KillWork3_01_01 " );	// There's one more job for you that's pretty specific.
+	AI_Output(other,self, " DIA_pir_1398_KillWork3_01_02 " );	// Who is this time?
+	AI_Output(self,other, " DIA_pir_1398_KillWork3_01_03 " );	// Kantar, merchant in the market square.
+	AI_Output(other,self, " DIA_pir_1398_KillWork3_01_04 " );	// Cantar? And to whom did he step on a sore spot, and even so hard?
+	AI_Output(self,other, " DIA_pir_1398_KillWork3_01_07 " );	// Kantar is too prosperous a merchant, and because of this, he will soon have big problems.
+	AI_Output(self,other, " DIA_pir_1398_KillWork3_01_09 " );	// People don't like the extra lucky. In addition, as it turned out, Kantar himself does not play quite honestly.
+	AI_Output(self,other, " DIA_pir_1398_KillWork3_01_11 " );	// He has some connections in the upper circles of the city's nobility, and he uses this to get other merchants out of his way in the market square.
+	AI_Output(self,other, " DIA_pir_1398_KillWork3_01_15 " );	// Try not to deceive the hopes of these people - they are counting on our help.
+	AI_Output(self,other, " DIA_pir_1398_KillWork3_01_16 " );	// Now go! You know what to do.
 	AI_StopProcessInfos(self);
 	MIS_KILLTARGET3 = LOG_Running;
 	Log_CreateTopic(TOPIC_KILLTARGET3,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KILLTARGET3,LOG_Running);
-	B_LogEntry(TOPIC_KILLTARGET3,"Асмал дал мне очередное поручение. На этот раз мне нужно позаботиться о торговце Кантаре. Думаю, это не составит особого труда.");
+	B_LogEntry( TOPIC_KILLTARGET3 , " Asmal gave me another errand. This time I need to take care of Trader Kantar. I think it won't be too hard. " );
 
 	if(Npc_GetDistToWP(VLK_468_Canthar,"NW_CITY_HABOUR_KASERN_RENGARU") <= 1000)
 	{
@@ -1378,7 +1379,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK3DONE(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork3done_condition;
 	information = dia_addon_inextremo_announcer_killwork3done_info;
 	permanent = FALSE;
-	description = "Кантар больше не помеха для других торговцев.";
+	description = " Kantar is no longer a hindrance to other merchants. " ;
 };
 
 
@@ -1393,13 +1394,13 @@ func int dia_addon_inextremo_announcer_killwork3done_condition()
 func void dia_addon_inextremo_announcer_killwork3done_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork3Done_01_00");	//Кантар больше не помеха для других торговцев.
-	AI_Output(self,other,"DIA_pir_1398_KillWork3Done_01_03");	//Хорошо! Наши заказчики будут довольны.
-	AI_Output(self,other,"DIA_pir_1398_KillWork3Done_01_04");	//Вот, возьми причитающуюся тебе долю за эту работу.
+	AI_Output(other,self, " DIA_pir_1398_KillWork3Done_01_00 " );	// Kantar is no longer a hindrance to other merchants.
+	AI_Output(self,other, " DIA_pir_1398_KillWork3Done_01_03 " );	// Good! Our customers will be happy.
+	AI_Output(self,other, " DIA_pir_1398_KillWork3Done_01_04 " );	// Here, take your share of this work.
 	B_GiveInvItems(self,other,ItMi_Gold,750);
 	MIS_KILLTARGET3 = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KILLTARGET3,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KILLTARGET3,"Я отчитался перед Асмалом о выполненном заказе.");
+	B_LogEntry( TOPIC_KILLTARGET3 , " I reported to Asmal about the completed order. " );
 	if(Npc_IsDead(vlk_6110_nigel) == TRUE)
 	{
 		MISSION4COMPLETE = TRUE;
@@ -1414,13 +1415,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK4(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork4_condition;
 	information = dia_addon_inextremo_announcer_killwork4_info;
 	permanent = FALSE;
-	description = "Как насчет очередного заказа?";
+	description = " How about the next order? " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killwork4_condition()
 {
-	if((JOINKILLERS == TRUE) && (MISSION4COMPLETE == FALSE) && (KILLTARGET1 == TRUE) && (KILLTARGET2 == TRUE) && (KILLTARGET3 == TRUE) && (WAMBOISDEAD == TRUE))
+	if (( JOINKILLERS  ==  TRUE ) && ( MISSION4COMPLETE  ==  FALSE ) && ( KILLTARGET1  ==  TRUE ) && ( KILLTARGET2  ==  TRUE ) && ( KILLTARGET3  ==  TRUE ) && ( WAMBOISDEAD  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1429,22 +1430,22 @@ func int dia_addon_inextremo_announcer_killwork4_condition()
 func void dia_addon_inextremo_announcer_killwork4_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork4_01_00");	//Как насчет очередного заказа?
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_03");	//(улыбается) Ну, как скажешь. Есть тут у меня еще одно дельце, как раз для тебя.
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_05");	//Один человек по имени Найджел задолжал одному крупному торговцу огромную кучу денег.
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_06");	//Насколько я знаю, его задолженность перед торговцем составляет порядка двух тысяч золотых.
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_08");	//Деньги немалые. Вот и этот парень решил, что лучше будет забыть про долг, чем его отдать.
-	AI_Output(other,self,"DIA_pir_1398_KillWork4_01_09");	//Что от меня требуется?
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_10");	//Найди этого ублюдка и постарайся выбить из него этот долг. А если он откажется платить - просто убей его!
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_11");	//Конечно, как ты сам понимаешь, первый вариант более предпочтительнее для всех...
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_12");	//...но если так не выйдет - надо проучить этого бедолагу.
-	AI_Output(other,self,"DIA_pir_1398_KillWork4_01_13");	//А где мне его искать?
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_14");	//Говорят, что его недавно видели в таверне у Орлана. Он, видимо, наивно полагает, что его там никто не достанет.
-	AI_Output(self,other,"DIA_pir_1398_KillWork4_01_16");	//Теперь ступай, и не подведи меня!
+	AI_Output(other,self, " DIA_pir_1398_KillWork4_01_00 " );	// How about the next order?
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_03 " );	// (smiles) Well, whatever you say. I have another one here just for you.
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_05 " );	// A man named Nigel owed a large merchant a huge pile of money.
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_06 " );	// As far as I know, his debt to the merchant is about two thousand gold.
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_08 " );	// A lot of money. So this guy decided that it would be better to forget about the debt than to give it away.
+	AI_Output(other,self, " DIA_pir_1398_KillWork4_01_09 " );	// What is required of me?
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_10 " );	// Find this bastard and try to beat this debt out of him. And if he refuses to pay - just kill him!
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_11 " );	// Of course, as you yourself understand, the first option is more preferable for everyone...
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_12 " );	// ...but if it doesn't work out, we need to teach this poor guy a lesson.
+	AI_Output(other,self, " DIA_pir_1398_KillWork4_01_13 " );	// Where can I find it?
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_14 " );	// They say that he was recently seen in Orlan's tavern. He apparently naively believes that no one will get him there.
+	AI_Output(self,other, " DIA_pir_1398_KillWork4_01_16 " );	// Now go, and don't let me down!
 	MIS_KILLTARGET4 = LOG_Running;
 	Log_CreateTopic(TOPIC_KILLTARGET4,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KILLTARGET4,LOG_Running);
-	B_LogEntry(TOPIC_KILLTARGET4,"Мне необходимо найти человека по имени Найджел и напомнить ему о его долге. Если он откажется платить, придется просто убить его. Асмал сказал, что недавно этого типа видели в таверне у Орлана.");
+	B_LogEntry( TOPIC_KILLTARGET4 , " I need to find a man named Nigel and remind him of his debt. If he refuses to pay, I'll just have to kill him. Asmal said that this guy was recently seen in Orlan's tavern. " );
 };
 
 
@@ -1455,13 +1456,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK4DONE(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork4done_condition;
 	information = dia_addon_inextremo_announcer_killwork4done_info;
 	permanent = FALSE;
-	description = "Я уладил дело с Найджелом.";
+	description = " I settled with Nigel. " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killwork4done_condition()
 {
-	if((MIS_KILLTARGET4 == LOG_Running) && ((KILLTARGET4 == TRUE) || ((GRABTARGET4 == TRUE) && (NIGELBANDITISDEAD == TRUE) && (KILLTARGET4 == FALSE) && ((Npc_HasItems(other,ItMi_Gold) >= 2000) || (Npc_HasItems(other,itse_nigelpocket) >= 1)))))
+	if (( MY_KILL TARGET4  == LOG_Running ) && (( KILL TARGET4  ==  TRUE ) || (( CATCH TARGET4  ==  TRUE ) && ( NIGELBANDITISDEAD  ==  TRUE ) && ( KILL TARGET4  ==  FALSE ) && ((Npc_HasItems(other,ItMi_Gold) >=  2000 ) || (Npc_HasItems(other,self_nigelpocket) >=  1 )))))
 	{
 		return TRUE;
 	};
@@ -1470,16 +1471,16 @@ func int dia_addon_inextremo_announcer_killwork4done_condition()
 func void dia_addon_inextremo_announcer_killwork4done_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork4Done_01_00");	//Я уладил дело с Найджелом.
-	AI_Output(self,other,"DIA_pir_1398_KillWork4Done_01_01");	//(с интересом) Он отдал деньги?
-	if((GRABTARGET4 == TRUE) && (NIGELBANDITISDEAD == TRUE) && (KILLTARGET4 == FALSE) && ((Npc_HasItems(other,ItMi_Gold) >= 2000) || (Npc_HasItems(other,itse_nigelpocket) >= 1)))
+	AI_Output(other,self, " DIA_pir_1398_KillWork4Done_01_00 " );	// I settled with Nigel.
+	AI_Output(self,other, " DIA_pir_1398_KillWork4Done_01_01 " );	// (with interest) Did he give the money?
+	if (( GRABTARGET4  ==  TRUE ) && ( NIGELBANDITISDEAD  ==  TRUE ) && ( KILLTARGET4  ==  FALSE ) && ((Npc_HasItems(other,ItMy_Gold) >=  2000 ) || (Npc_HasItems(other,own_nigelpocket) >=  1 ))) ;
 	{
-		AI_Output(other,self,"DIA_pir_1398_KillWork4Done_01_02");	//Можно сказать, что да. Правда, пришлось немного повозиться с этим делом.
-		AI_Output(self,other,"DIA_pir_1398_KillWork4Done_01_03");	//А где деньги?!
+		AI_Output(other,self, " DIA_pir_1398_KillWork4Done_01_02 " );	// We can say yes. True, I had to tinker with this case a little.
+		AI_Output(self,other, " DIA_pir_1398_KillWork4Done_01_03 " );	// Where's the money?!
 		if(Npc_HasItems(other,itse_nigelpocket) >= 1)
 		{
 			B_GiveInvItems(other,self,itse_nigelpocket,1);
-			AI_Output(other,self,"DIA_pir_1398_KillWork4Done_01_04A");	//Вот, держи этот кошелек.
+			AI_Output(other,self, " DIA_pir_1398_KillWork4Done_01_04A " );	// Here, take this wallet.
 			Npc_RemoveInvItems(self,itse_nigelpocket,1);
 
 			if(MIS_NIGELMATTER == LOG_Running)
@@ -1491,29 +1492,29 @@ func void dia_addon_inextremo_announcer_killwork4done_info()
 		else
 		{
 			B_GiveInvItems(other,self,ItMi_Gold,2000);
-			AI_Output(other,self,"DIA_pir_1398_KillWork4Done_01_04B");	//Вот, держи. Как ты и говорил - две тысячи!
+			AI_Output(other,self, " DIA_pir_1398_KillWork4Done_01_04B " );	// Here, take this. Like you said - two thousand!
 			Npc_RemoveInvItems(self,ItMi_Gold,2000);
 		};
-		AI_Output(self,other,"DIA_pir_1398_KillWork4Done_01_05");	//Отлично! Наш клиент будет очень доволен нашей работой.
-		AI_Output(self,other,"DIA_pir_1398_KillWork4Done_01_09");	//А за то, что сумел выбить должок, - твоя доля за это дельце будет больше, чем обычно.
-		AI_Output(self,other,"DIA_pir_1398_KillWork4Done_01_10");	//Вот, держи - целая куча золота! Надеюсь, ты сможешь найти ему достойное применение.
-		AI_Output(other,self,"DIA_pir_1398_KillWork4Done_01_11");	//Можешь не сомневаться.
+		AI_Output(self,other, " DIA_pir_1398_KillWork4Done_01_05 " );	// Great! Our client will be very satisfied with our work.
+		AI_Output(self,other, " DIA_pir_1398_KillWork4Done_01_09 " );	// And for the fact that you managed to knock out a debt - your share for this business will be more than usual.
+		AI_Output(self,other, " DIA_pir_1398_KillWork4Done_01_10 " );	// Here you go - a whole bunch of gold! I hope you can find a worthy use for it.
+		AI_Output(other,self, " DIA_pir_1398_KillWork4Done_01_11 " );	// You can be sure.
 		B_GiveInvItems(self,other,ItMi_Gold,1000);
 		MIS_KILLTARGET4 = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_KILLTARGET4,LOG_SUCCESS);
-		B_LogEntry(TOPIC_KILLTARGET4,"Асмал был рад узнать, что мне удалось выбить из Найджела долг.");
+		B_LogEntry( TOPIC_KILLTARGET4 , " Asmal was delighted to know that I managed to get Nigel out of debt. " );
 	}
 	else if(KILLTARGET4 == TRUE)
 	{
-		AI_Output(other,self,"DIA_pir_1398_KillWork4Done_01_12");	//К сожалению, нет. Парень не воспринял всерьез все мои доводы, да и денег у него не оказалось.
-		AI_Output(other,self,"DIA_pir_1398_KillWork4Done_01_13");	//Так что пришлось его прикончить.
-		AI_Output(self,other,"DIA_pir_1398_KillWork4Done_01_14");	//Жаль. Хотя, в общем, я не очень и рассчитывал на то, что тебе удастся выбить из него эти деньги.
-		AI_Output(self,other,"DIA_pir_1398_KillWork4Done_01_15");	//Но в любом случае ты выполнил свою работу хорошо.
-		AI_Output(self,other,"DIA_pir_1398_KillWork4Done_01_16");	//Вот, держи - как всегда твой гонорар за хлопоты.
+		AI_Output(other,self, " DIA_pir_1398_KillWork4Done_01_12 " );	// Unfortunately not. The guy did not take seriously all my arguments, and he did not have any money either.
+		AI_Output(other,self, " DIA_pir_1398_KillWork4Done_01_13 " );	// So I had to kill him.
+		AI_Output(self,other, " DIA_pir_1398_KillWork4Done_01_14 " );	// Sorry. Although, in general, I did not really count on the fact that you would be able to knock this money out of him.
+		AI_Output(self,other, " DIA_pir_1398_KillWork4Done_01_15 " );	// But anyway, you did a good job.
+		AI_Output(self,other, " DIA_pir_1398_KillWork4Done_01_16 " );	// Here, take it - as always, your fee for the trouble.
 		B_GiveInvItems(self,other,ItMi_Gold,500);
 		MIS_KILLTARGET4 = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_KILLTARGET4,LOG_SUCCESS);
-		B_LogEntry(TOPIC_KILLTARGET4,"Асмал был немного расстроен тем, что мне не удалось выбить из Найджела долг. С другой стороны, работа сделана, а этого достаточно.");
+		B_LogEntry( TOPIC_KILLTARGET4 , " Asmal was a little upset that I couldn't get Nigel out of debt. On the other hand, the job is done, and that's enough. " );
 	};
 	MISSION4COMPLETE = TRUE;
 };
@@ -1526,13 +1527,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK5(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork5_condition;
 	information = dia_addon_inextremo_announcer_killwork5_info;
 	permanent = FALSE;
-	description = "Есть еще работа?";
+	description = " Any more work to do? " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killwork5_condition()
 {
-	if((JOINKILLERS == TRUE) && (KILLTARGET5 == FALSE) && (KILLTARGET1 == TRUE) && (KILLTARGET2 == TRUE) && (KILLTARGET3 == TRUE) && (MISSION4COMPLETE == TRUE) && (WAMBOISDEAD == TRUE))
+	if (( JOINKILLERS  ==  TRUE ) && ( KILLTARGET5  ==  FALSE ) && ( KILLTARGET1  ==  TRUE ) && ( KILLTARGET2  ==  TRUE ) && ( KILLTARGET3  ==  TRUE ) && ( MISSION4COMPLETE  ==  TRUE ) && ( WAMBOISDEAD  ==  TRUE ) . )
 	{
 		return TRUE;
 	};
@@ -1541,29 +1542,29 @@ func int dia_addon_inextremo_announcer_killwork5_condition()
 func void dia_addon_inextremo_announcer_killwork5_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork5_01_00");	//Есть еще работа?
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_01");	//(серьезно) Пожалуй, найдется. Есть одна проблема, требующая немедленного решения.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_05");	//Недавно в таверне у Орлана я встретил одного человека. Не совсем простого человека... старого знакомого из далекого прошлого.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_07");	//Когда-то давно он состоял в нашей гильдии убийц.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_10");	//Но потом случилось так, что этот идиот умудрился погореть на одном деле и чуть не подставил всех нас!
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_11");	//Его приговорили к каторжным работам на рудниках в какой-то из колоний королевства. Ну а нам удалось избежать этой горькой участи.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_13");	//С тех пор о нем никто ничего не слышал. По крайней мере, до недавнего времени.
-	AI_Output(other,self,"DIA_pir_1398_KillWork5_01_17");	//А в чем, собственно, проблема?
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_18");	//Проблема в том, что слишком уж он много знает про нас!
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_19");	//К тому же этот парень до сих пор винит нас в том, что мы тогда не смогли вытащить его из того дерьма, в которое он сам вляпался.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_20");	//И, думаю, теперь, когда он повстречал меня здесь на острове, этот ублюдок не преминет при удобном случае сдать меня городскому ополчению.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_21");	//Да и звук золота для него не последний в этой жизни.
-	AI_Output(other,self,"DIA_pir_1398_KillWork5_01_22");	//Но он же беглый каторжник. Ему же никто не поверит!
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_23");	//Возможно. Но не стоит так рисковать!
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_24");	//Правда, насколько мне стало известно, сейчас он подался в наемники на двор Онара.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_27");	//Надо разобраться и как можно скорее!
-	AI_Output(other,self,"DIA_pir_1398_KillWork5_01_30");	//Как его имя?
-	AI_Output(self,other,"DIA_pir_1398_KillWork5_01_31");	//Его зовут Рудар. Запомнил?
-	AI_Output(other,self,"DIA_pir_1398_KillWork5_01_32");	//Да, нет проблем. Считай, что он уже труп.
+	AI_Output(other,self, " DIA_pir_1398_KillWork5_01_00 " );	// Any more work?
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_01 " );	// (seriously) Perhaps there is. There is one issue that needs to be addressed immediately.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_05 " );	// Recently I met a man in Orlan's tavern. Not quite a simple person... an old acquaintance from the distant past.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_07 " );	// Once upon a time, he was a member of our guild of assassins.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_10 " );	// But then it happened that this idiot managed to get burned on one case and almost set us all up!
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_11 " );	// He was sentenced to hard labor in the mines in some of the kingdom's colonies. Well, we managed to avoid this bitter fate.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_13 " );	// No one has heard from him since. At least until recently.
+	AI_Output(other,self, " DIA_pir_1398_KillWork5_01_17 " );	// What exactly is the problem?
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_18 " );	// Problem is, he knows too much about us!
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_19 " );	// Plus, this guy still blames us for not being able to get him out of the shit he got himself into back then.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_20 " );	// And I think now that he met me here on the island, this bastard will not fail to turn me in to the city militia when the opportunity arises.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_21 " );	// Yes, and the sound of gold for him is not the last in this life.
+	AI_Output(other,self, " DIA_pir_1398_KillWork5_01_22 " );	// But he's a runaway convict. Nobody will believe him!
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_23 " );	// Possibly. But don't take that risk!
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_24 " );	// True, as far as I know, now he has gone as a mercenary to Onar's yard.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_27 " );	// We need to figure it out and as soon as possible!
+	AI_Output(other,self, " DIA_pir_1398_KillWork5_01_30 " );	// What's his name?
+	AI_Output(self,other, " DIA_pir_1398_KillWork5_01_31 " );	// His name is Rudar. Remember?
+	AI_Output(other,self, " DIA_pir_1398_KillWork5_01_32 " );	// Yes, no problem. Consider him already dead.
 	MIS_KILLTARGET5 = LOG_Running;
 	Log_CreateTopic(TOPIC_KILLTARGET5,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KILLTARGET5,LOG_Running);
-	B_LogEntry(TOPIC_KILLTARGET5,"Недавно Асмал встретил одного старого знакомого. Когда-то давно он состоял в гильдии убийц, пока не влип в одну историю, из-за чего был сослан на каторжные работы в Долину Рудников. Асмал уверен, что этот тип - Рудар - не преминет при первом удобном случае сдать Асмала ополчению за то, что тот в свое время не смог помочь ему в той ситуации. Поэтому мне необходимо как можно скорее решить эту проблему. Асмал сказал, что Рудар подался в наемники к Онару.");
+	B_LogEntry( TOPIC_KILLTARGET5 , " Asmal recently met an old acquaintance. Once upon a time he was a member of the assassin's guild, until he got into a story, because of which he was exiled to hard labor in the Valley of Mines. Asmal is sure that this type is Rudar - he will not fail to hand over Asmal to the militia at the first opportunity because he could not help him in that situation at the first opportunity. Therefore, I need to solve this problem as soon as possible. Asmal said that Rudar went as a mercenary to Onar. " );
 	Wld_InsertNpc(sld_6111_rudar,"NW_BIGFARM_RUDAR");
 };
 
@@ -1575,7 +1576,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORK5DONE(C_Info)
 	condition = dia_addon_inextremo_announcer_killwork5done_condition;
 	information = dia_addon_inextremo_announcer_killwork5done_info;
 	permanent = FALSE;
-	description = "Рудар мертв.";
+	description = " Rudar is dead. " ;
 };
 
 
@@ -1590,17 +1591,17 @@ func int dia_addon_inextremo_announcer_killwork5done_condition()
 func void dia_addon_inextremo_announcer_killwork5done_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWork5Done_01_00");	//Рудар мертв.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5Done_01_03");	//Хммм...(облегченно) Ну, тогда, пожалуй, мы можем забыть об этой проблеме.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5Done_01_04");	//Я даже, честно говоря, удивлен, что ты смог с ним справиться в одиночку.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5Done_01_05");	//Рудар всегда был неплохим бойцом и к тому же отлично владел мечом. В отличии от меня, он всегда предпочитал меч заместо шпаги.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5Done_01_06");	//Но ладно... все это уже не важно. Важно другое - то, что он больше не сможет раскрыть свою поганую пасть.
-	AI_Output(self,other,"DIA_pir_1398_KillWork5Done_01_07");	//Вот, возьми это золото. Это лучшая награда за твои труды, которую я только могу предложить.
-	AI_Output(other,self,"DIA_pir_1398_KillWork5Done_01_08");	//Спасибо!
+	AI_Output(other,self, " DIA_pir_1398_KillWork5Done_01_00 " );	// Rudar is dead.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5Done_01_03 " );	// Hmmm... (relieved) Well, then, perhaps, we can forget about this problem.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5Done_01_04 " );	// I'm even honestly surprised you could handle it on your own.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5Done_01_05 " );	// Rudar has always been a good fighter and also an excellent swordsman. Unlike me, he always preferred a sword over a sword.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5Done_01_06 " );	// But okay... none of that matters anymore. Another thing is important - that he will no longer be able to open his filthy mouth.
+	AI_Output(self,other, " DIA_pir_1398_KillWork5Done_01_07 " );	// Here, take this gold. This is the best reward for your work that I can offer.
+	AI_Output(other,self, " DIA_pir_1398_KillWork5Done_01_08 " );	// Thank you!
 	B_GiveInvItems(self,other,ItMi_Gold,1000);
 	MIS_KILLTARGET5 = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KILLTARGET5,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KILLTARGET5,"Асмал вздохнул с облечением, узнав о смерти Рудара.");
+	B_LogEntry( TOPIC_KILLTARGET5 , " Asmal breathed a sigh of relief upon learning of Rudar's death. " );
 };
 
 
@@ -1611,13 +1612,13 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLWORKFINAL(C_Info)
 	condition = dia_addon_inextremo_announcer_killworkfinal_condition;
 	information = dia_addon_inextremo_announcer_killworkfinal_info;
 	permanent = FALSE;
-	description = "Есть еще какие-нибудь поручения?";
+	description = " Any other errands? " ;
 };
 
 
 func int dia_addon_inextremo_announcer_killworkfinal_condition()
 {
-	if((JOINKILLERS == TRUE) && (KILLTARGETFINAL == FALSE) && (KILLTARGET1 == TRUE) && (KILLTARGET2 == TRUE) && (KILLTARGET3 == TRUE) && (MISSION4COMPLETE == TRUE) && (KILLTARGET5 == TRUE) && (WAMBOISDEAD == TRUE))
+	if (( JOINKILLERS  ==  TRUE ) && ( KILLTARGETFINAL  ==  FALSE ) && ( KILLTARGET1  ==  TRUE ) && ( KILLTARGET2  ==  TRUE ) && ( KILLTARGET3  ==  TRUE ) && ( MISSION4COMPLETE  ==  TRUE ) && ( KILLTARGET5  ==  TRUE ) . && ( WAMBOISDEAD  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1626,49 +1627,49 @@ func int dia_addon_inextremo_announcer_killworkfinal_condition()
 func void dia_addon_inextremo_announcer_killworkfinal_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_00");	//Есть еще какие-нибудь поручения?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_01");	//Думаю, да.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_05");	//Как ты и сам уже наверняка знаешь, последнее время в окрестностях Хориниса объявилось слишком много бандитов.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_07");	//Сам понимаешь, что таким людям нечего терять, и они на все готовы, чтобы урвать куш побольше, пока есть возможность.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_08");	//Грабят и убивают всех кого ни попадя! В общем, эти ублюдки совсем озверели.
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_09");	//А при чем тут вы? Какое отношение гильдия убийц имеет ко всему происходящему?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_12");	//В городе из-за всего происходящего много недовольных людей. В большинстве случаев - это торговцы, чей бизнес страдает от этих грабежей и нападений больше всего.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_13");	//Вот и недавно на одного такого торговца напали бандиты. Он вез большую партию разнообразного товара и еще, по его словам, приличную сумму золота!
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_14");	//Ого! Видимо, крупный был торговец!
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_15");	//Да, этим подонкам чертовски повезло! К счастью для него самого, он смог выйти из этой переделки живым, и теперь очень хочет вернуть свое добро и свое золото назад.
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_16");	//Тогда ему бы следовало обратиться к городскому ополчению.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_17");	//ЧТО?! К этим трусам? (смеется) Да они даже и носа не покажут за городские ворота - не то чтобы разобраться с целой бандой.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_18");	//Только и могут, что драть с местных фермеров налоги. Поэтому он обратился за помощью именно к нам.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_21");	//Делая нам это предложение, он намекнул, что говорит от имени многих влиятельных людей города.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_22");	//Видимо, другие торговцы поддержали его в этом начинании. Еще бы, это же и в их интересах!
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_23");	//И ты согласился?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_24");	//Да, я согласился. Слишком уж хорошие деньги он предложил нам за эту работу!
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_2A");	//И сколько составит доля каждого в этом дельце?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_2B");	//Пока не могу сказать, но куш приличный. Можешь в этом не сомневаться!
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_28");	//Ясно. Ты уже что-нибудь предпринял по этому поводу?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_29");	//Я послал Лютера и Флейла разузнать об этих бандитах побольше.
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_30");	//И что они узнали?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_31");	//Немного. Главаря той банды, что напала на торговца, кажется, зовут Ханс. Я о нем ничего раньше не слышал.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_32");	//Вместе с ним в банде еще около семи человек, и все они засели где-то недалеко от фермы Онара.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_37");	//После того как нам удалось узнать, где располагаются эти ублюдки, - я послал несколько своих ребят разобраться с ними.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_41");	//Но те парни не так уж и просты!
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_42");	//Мои ребята оттуда еле ноги унесли. Хорошо, что никого не убили!
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_44");	//Кажется, вы нарвались на крутых бандитов!
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_45");	//К сожалению, ты прав. Банда Ханса оказалась моим ребятам не по зубам! И, видимо, просто так их голыми руками не взять.
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_46");	//И что ты теперь собираешься делать?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_47");	//В любом случае работа должна быть сделана, и неважно, одного человека нужно убить или целую банду! Думаю, придется навести визит этому Хансу и его ребятам самолично.
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_48");	//Ты что, собираешься отправиться одиночку?!
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_49");	//Нет конечно! (смеется) Я еще совсем из ума не выжил.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_50");	//Мы отправимся туда все вместе! Думаю, тогда у нас будет шанс одолеть Ханса и его ребят.
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_54");	//Когда выдвигаемся?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_55");	//Прямо сейчас. Из города будем выбираться поодиночке, чтобы не привлечь внимание стражников.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_58");	//Мы будем ждать тебя в лесу неподалеку от фермы Онара.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinal_01_60");	//По словам Лютера, рядом с тем местом еще какой-то парень пасет овец.
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinal_01_62");	//Хорошо, я все понял.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_00 " );	// Any other errands?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_01 " );	// I think so.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_05 " );	// As you probably already know, there have been too many bandits in the vicinity of Khorinis lately.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_07 " );	// You yourself understand that such people have nothing to lose, and they are ready to do anything to snatch more jackpot while there is an opportunity.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_08 " );	// They rob and kill everyone! In general, these bastards are completely brutalized.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_09 " );	// What are you doing here? What does the Assassin's Guild have to do with everything that's going on?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_12 " );	// There are a lot of dissatisfied people in the city because of everything that is happening. In most cases, it is the merchants whose business suffers the most from these robberies and attacks.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_13 " );	// Recently, one such merchant was attacked by bandits. He was carrying a large consignment of various goods and, according to him, a decent amount of gold!
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_14 " );	// Wow! Apparently, the merchant was a big one!
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_15 " );	// Yeah, those scumbags are damn lucky! Fortunately for himself, he was able to get out of this alteration alive, and now he really wants to return his good and his gold back.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_16 " );	// Then he should have contacted the city militia.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_17 " );	// WHAT?! To these shorts? (laughs) They won't even show their noses outside the city gates - let alone deal with a whole gang.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_18 " );	// All they can do is to tax local farmers. So he turned to us for help.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_21 " );	// By making this offer to us, he hinted that he was speaking on behalf of many influential people in the city.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_22 " );	// Apparently, other merchants supported him in this endeavor. Still, it's in their interest!
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_23 " );	// And you agreed?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_24 " );	// Yes, I agreed. Too good money he offered us for this work!
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_2A " );	// And how much will each share in this business?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_2B " );	// Can't say yet, but it's a decent jackpot. You can not doubt it!
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_28 " );	// Clear. Have you already done something about this?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_29 " );	// I sent Luther and Flail to find out more about these bandits.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_30 " );	// And what did they learn?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_31 " );	// Not much. The leader of the gang that attacked the merchant seems to be named Hans. I haven't heard anything about him before.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_32 " );	// Together with him, there are about seven other people in the gang, and they all settled down somewhere not far from Onar's farm.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_37 " );	// After we managed to find out where these bastards are, I sent a few of my guys to deal with them.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_41 " );	// But those guys aren't that simple!
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_42 " );	// My guys barely got out of there. Good thing no one was killed!
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_44 " );	// Looks like you ran into tough bandits!
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_45 " );	// Unfortunately, you're right. The Hans gang turned out to be too tough for my guys! And, apparently, you can’t just take them with your bare hands.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_46 " );	// And what are you going to do now?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_47 " );	// In any case, the job must be done, and it doesn't matter if one person needs to be killed or an entire gang! I think I'll have to pay a visit to this Hans and his guys personally.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_48 " );	// Are you going to go alone?!
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_49 " );	// Of course not! (laughs) I'm not completely out of my mind yet.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_50 " );	// We'll all go there together! I think then we will have a chance to beat Hans and his guys.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_54 " );	// When do we move out?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_55 " );	// Right now. We will get out of the city one by one, so as not to attract the attention of the guards.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_58 " );	// We'll be waiting for you in the forest near Onar's farm.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinal_01_60 " );	// According to Luther, there's another guy tending sheep near that place.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinal_01_62 " );	// Okay, I got it.
 	MIS_KILLTARGETFINAL = LOG_Running;
 	Log_CreateTopic(TOPIC_KILLTARGETFINAL,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KILLTARGETFINAL,LOG_Running);
-	B_LogEntry(TOPIC_KILLTARGETFINAL,"Асмал сказал, что нам необходимо разобраться с небольшой бандой, засевшей недалеко от фермы Онара. Ее возглавляет некий Ханс, и судя по всему, он и его ребята - парни достаточно крутые. Но работа есть работа, к тому же, по словам Асмала, за нее очень хорошо заплатят. Я должен буду встретиться с Асмалом и остальными его людьми недалеко от фермы Онара, рядом с пастбищем, после чего мы приступим к выполнению своей грязной работы.");
+	B_LogEntry( TOPIC_KILLTARGETFINAL , " Asmal said we need to deal with a small gang that has settled near Onar's farm. It is led by a certain Hans, and apparently, he and his guys are pretty cool guys. But work is work, besides, according to Asmal, she will be paid very well. I will have to meet Asmal and the rest of his people near Onar's farm, next to the pasture, after which we will start doing our dirty work. " );
 	AI_StopProcessInfos(self);
 	b_killmeetinghans();
 	Wld_InsertNpc(bdt_6112_hans,"NW_BDT_HANS_S");
@@ -1704,10 +1705,10 @@ func int dia_addon_inextremo_announcer_killworkfinalreadyforfight_condition()
 func void dia_addon_inextremo_announcer_killworkfinalreadyforfight_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalReadyForFight_01_00");	//(нервно) Где тебя носит?! Почему так долго?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalReadyForFight_01_02");	//А, ладно! На болтовню сейчас нет времени.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalReadyForFight_01_03");	//Видишь позади меня в лесу небольшой отблеск костра? Это и есть лагерь Ханса.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalReadyForFight_01_05");	//Пора действовать! Застанем их врасплох - это даст нам определенное преимущество в начале боя.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalReadyForFight_01_00 " );	// (nervously) Where are you?! Why so long?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalReadyForFight_01_02 " );	// Oh, okay! There is no time for chatting now.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalReadyForFight_01_03 " );	// Do you see a small glow of a fire behind me in the forest? This is the Hans camp.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalReadyForFight_01_05 " );	// Time to act! Let's take them by surprise - this will give us a certain advantage at the beginning of the battle.
 	GuideGuildsToCamp = TRUE;
 	Info_ClearChoices(dia_addon_inextremo_announcer_killworkfinalreadyforfight);
 	Info_AddChoice(dia_addon_inextremo_announcer_killworkfinalreadyforfight,"Идем!",dia_addon_inextremo_announcer_killworkfinalreadyforfight_figth);
@@ -1756,25 +1757,25 @@ func void dia_addon_inextremo_announcer_killworkfinaldone_info()
 	b_changeguild(PIR_1396_Addon_InExtremo_Flex,GIL_OUT);
 	b_changeguild(pir_1397_addon_inextremo_charlotte,GIL_OUT);
 	b_changeguild(pir_1398_addon_inextremo_announcer,GIL_OUT);
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_00");	//(переводя дыхание) Теперь Ханс и его люди более не опасны.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_02");	//Эти ублюдки действительно были крутыми парнями.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_00 " );	// (breathing) Hans and his men are no longer dangerous.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_02 " );	// Those bastards really were tough guys.
 	MIS_KILLTARGETFINAL = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KILLTARGETFINAL,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KILLTARGETFINAL,"С бандой Ханса покончено - все его люди мертвы, как и он сам.");
+	B_LogEntry( TOPIC_KILLTARGETFINAL , " Hans' gang is finished - all his people are dead, as is he. " );
 
 	if((CHARLOTTEISDEADX == TRUE) || (FLEXISDEADX == TRUE) || (LUTTERISDEADX == TRUE) || (THEFLAILISDEADX == TRUE) || (DRPYMONTEISDEADX == TRUE))
 	{
 		AI_PlayAni(self,"T_SEARCH");
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_04");	//М-да... эта работенка нам дорого обошлась!
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_04 " );	// M-yes... this job cost us dearly!
 		if(CHARLOTTEISDEADX == TRUE)
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_05");	//Шарлотта...
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_05 " );	// Charlotte...
 			countsharlotte = 1;
 			countlost = countlost + 1;
 		};
 		if(FLEXISDEADX == TRUE)
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_06");	//Флекс...
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_06 " );	// Flex...
 			countlost = countlost + 1;
 		};
 		if(LUTTERISDEADX == TRUE)
@@ -1784,120 +1785,120 @@ func void dia_addon_inextremo_announcer_killworkfinaldone_info()
 		};
 		if(THEFLAILISDEADX == TRUE)
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_08");	//Флейл...
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_08 " );	// Flail...
 			countlost = countlost + 1;
 		};
 		if(DRPYMONTEISDEADX == TRUE)
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_09");	//Паймон...
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_09 " );	// Compact...
 			countlost = countlost + 1;
 		};
 		if(countlost > 1)
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_10");	//...все они мертвы...(печально) Нам всем будет их очень сильно не хватать!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_12");	//Ну ладно, не будем больше об этом. Теперь уже ничего не поправить.
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_13");	//Наша работа сделана, а это самое главное.
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_10 " );	// ...they're all dead...(sadly) We'll all miss them so much!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_12 " );	// Okay, let's not talk about it anymore. Now there is nothing to fix.
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_13 " );	// Our work is done, and this is the most important thing.
 		}
 		else
 		{
 			if(countsharlotte == 1)
 			{
-				AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_14");	//...она мертва! Бедная девочка...(печально) Нам всем будет ее очень сильно не хватать!
+				AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_14 " );	// ...she's dead! Poor girl... (sadly) We will all miss her so much!
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_16");	//...он мертв! Нам всем будет его очень сильно не хватать.
+				AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_16 " );	// ...he's dead! We will all miss him greatly.
 			};
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_18");	//...(задумчиво) Ну ладно, не будем больше об этом. Теперь уже ничего не поправить.
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_19");	//Наша работа сделана, а это самое главное.
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_18 " );	// ...(thoughtfully) Well, let's not talk about it anymore. Now there is nothing to fix.
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_19 " );	// Our work is done, and this is the most important thing.
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_20");	//Так что мы еще легко отделались - вроде как никого из наших парней не прикончили.
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_22");	//Ну ладно, не будем больше об этом. Теперь все они мертвы, а наша работа сделана. И это самое главное!
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_20 " );	// So we got off lightly - it looks like none of our guys got killed.
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_22 " );	// Okay, let's not talk about it anymore. Now they are all dead and our job is done. And this is the most important thing!
 	};
 
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_23");	//А что насчет обещанной кучи золота?
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_24");	//Ах да, золото! Теперь каждый из нас получит приличный куш. То золото, что бандиты забрали у торговца, и есть наш гонорар за эту работенку.
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_23 " );	// What about the promised pile of gold?
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_24 " );	// Oh yes, gold! Now each of us will get a decent jackpot. The gold that the bandits took from the merchant is our fee for this job.
 
-	if(HANSKILL == 0)
+	if ( GLOVES  ==  0 )
 	{
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_25");	//Правда, ты не особо помог нам в этой заварушке, но все равно рисковал своей жизнью, а, значит, заслужил свою долю.
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_26");	//Вот, возьми - тут пятьсот золотых монет!
-		AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_27");	//Как! Так мало?
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_28");	//Но ты же даже не прикончил ни одного бандита! И хочешь получить еще больше?
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_29");	//Так что прекрати ныть и жаловаться, как баба!
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_30");	//Надо было лучше махать мечом, если хотел, чтобы твоя доля была больше этой...(смеется)
-		AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_31");	//Меня это не устраивает!
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_32");	//Это уже твои личные проблемы.
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_25 " );	// True, you didn't help us much in this mess, but you still risked your life, which means you deserve your share.
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_26 " );	// Here, take it - here are five hundred gold coins!
+		AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_27 " );	// How! So few?
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_28 " );	// But you didn't even kill a single bandit! And you want to get even more?
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_29 " );	// So stop whining and complaining like a woman!
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_30 " );	// I should have swung my sword better if I wanted your share to be more than this... (laughs)
+		AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_31 " );	// I don't like this!
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_32 " );	// These are your personal problems.
 		Info_ClearChoices(dia_addon_inextremo_announcer_killworkfinaldone);
-		Info_AddChoice(dia_addon_inextremo_announcer_killworkfinaldone,"Ладно, давай сюда деньги.",dia_addon_inextremo_announcer_killworkfinaldone_ok);
-		Info_AddChoice(dia_addon_inextremo_announcer_killworkfinaldone,"Немедленно заплати мне больше - или я убью тебя!",dia_addon_inextremo_announcer_killworkfinaldone_refuse);
+		Info_AddChoice(dia_addon_inextremo_announcer_killworkfinaldone, " Okay, give me money here. " ,dia_addon_inextremo_announcer_killworkfinaldone_ok);
+		Info_AddChoice(dia_addon_inextremo_announcer_killworkfinaldone, " Pay me more now or I'll kill you! " ,dia_addon_inextremo_announcer_killworkfinaldone_refuse);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_34");	//Что касается тебя, то ты славно потрудился!
+		AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_34 " );	// As for you, you did a great job!
 		MIS_KILLTARGETFINAL = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_KILLTARGETFINAL,LOG_SUCCESS);
-		B_LogEntry(TOPIC_KILLTARGETFINAL,"С бандой Ханса покончено - все его люди мертвы, как и он сам.");
+		B_LogEntry( TOPIC_KILLTARGETFINAL , " Hans' gang is finished - all his people are dead, as is he. " );
 
-		if(HANSKILL == 1)
+		if ( GLOVES  ==  1 )
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_35");	//Прикончил одного из этих ублюдков - неплохая работа, парень!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_36");	//Вот, возьми - тут тысяча золотых монет.
-			AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_37");	//Ну что же, совсем неплохо.
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_35 " );	// Finished off one of those bastards - good job, man!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_36 " );	// Here, take this - there's a thousand gold coins.
+			AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_37 " );	// Well, not bad at all.
 			B_GiveInvItems(self,other,ItMi_Gold,1000);
 		}
-		else if(HANSKILL == 2)
+		else  if ( SKILLS  ==  2 )
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_39");	//Прикончил двоих ублюдков из этой банды - хорошая работа, парень!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_40");	//Вот, возьми - тут полторы тысячи золотых монет.
-			AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_41");	//Ну что же, совсем неплохо.
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_39 " );	// Killed two bastards from this gang - good job, man!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_40 " );	// Here, take this - there are one and a half thousand gold coins.
+			AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_41 " );	// Well, not bad at all.
 			B_GiveInvItems(self,other,ItMi_Gold,1500);
 		}
-		else if(HANSKILL == 3)
+		else  if ( SKILLS  ==  3 )
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_43");	//Прикончил троих ублюдков из банды Ханса - отличная работа, парень!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_44");	//Вот, возьми - тут две тысячи золотых монет.
-			AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_45");	//Ну что же, совсем неплохо.
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_43 " );	// Finished off three bastards from the Hans gang - great job, man!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_44 " );	// Here, take it - there are two thousand gold coins.
+			AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_45 " );	// Well, not bad at all.
 			B_GiveInvItems(self,other,ItMi_Gold,2000);
 		}
-		else if(HANSKILL == 4)
+		else  if ( SKILLS  ==  4 )
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_47");	//Прикончил аж четверых ублюдков из банды Ханса - работа, достойная уважения, парень!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_48");	//Вот, возьми - тут две с половиной тысячи золотых монет!
-			AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_49");	//Ну что же, совсем неплохо!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_47 " );	// Killed four bastards from the Hans gang - a job worthy of respect, boy!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_48 " );	// Here, take it - there are two and a half thousand gold coins!
+			AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_49 " );	// Well, not bad at all!
 			B_GiveInvItems(self,other,ItMi_Gold,2500);
 		}
-		else if(HANSKILL == 5)
+		else  if ( SKILLS  ==  5 )
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_51");	//(удивленно) Прикончил аж пятерых ублюдков из банды Ханса - непостижимо!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_52");	//Вот, возьми - тут три тысячи золотых монет!
-			AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_53");	//Ну что же, совсем неплохо!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_51 " );	// (surprised) Killed as many as five bastards from the gang of Hans - incomprehensible!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_52 " );	// Here, take it - there are three thousand gold coins!
+			AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_53 " );	// Well, not bad at all!
 			B_GiveInvItems(self,other,ItMi_Gold,3000);
 		}
-		else if(HANSKILL == 6)
+		else  if ( SKILLS  ==  6 )
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_55");	//(восхищенно) Прикончил шестерых! Если честно, не ожидал от тебя такой прыти!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_56");	//Вот, возьми - тут три с половиной тысячи золотых монет!
-			AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_57");	//Ну что же, совсем неплохо!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_55 " );	// (delighted) Killed six! To be honest, I did not expect such a quickness from you!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_56 " );	// Here, take it - there are three and a half thousand gold coins!
+			AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_57 " );	// Well, not bad at all!
 			B_GiveInvItems(self,other,ItMi_Gold,3500);
 		}
-		else if(HANSKILL == 7)
+		else  if ( SKILLS  ==  7 )
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_59");	//Уму непостижимо - один прикончил семерых! Просто нет слов!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_60");	//Бандиты явно не осознавали, с кем они связались!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_61");	//Вот, возьми - тут четыре тысячи золотых монет! Это очень приличные деньги, более чем соизмеримые твоим заслугам в этом деле.
-			AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_62");	//Ну что же, совсем неплохо!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_59 " );	// My mind is incomprehensible - one killed seven! There are no words!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_60 " );	// The bandits obviously didn't realize who they were messing with!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_61 " );	// Here, take it - there are four thousand gold coins! This is very decent money, more than commensurate with your merits in this matter.
+			AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_62 " );	// Well, not bad at all!
 			B_GiveInvItems(self,other,ItMi_Gold,4000);
 		}
-		else if(HANSKILL == 8)
+		else  if ( SKILLS  ==  8 )
 		{
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_64");	//Прикончил всех бандитов, да еще и самого Ханса в придачу! Сдается мне, ты бы и без нас справился с этим делом.
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_65");	//Думаю, если бы Ханс знал, что такой парень, как ты, охотится за его головой, - его бы и духу здесь не было!
-			AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_01_67");	//Вот, возьми - тут пять тысяч золотых монет! Это очень приличные деньги, более чем соизмеримые твоим заслугам в этом деле.
-			AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_01_68");	//Ну что же, совсем неплохо!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_64 " );	// Finished off all the bandits, and even Hans himself to boot! It seems to me that you would have managed this case without us.
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_65 " );	// I think if Hans knew that a guy like you was after his head, he wouldn't even be here!
+			AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_01_67 " );	// Here, take it - there are five thousand gold coins! This is very decent money, more than commensurate with your merits in this matter.
+			AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_01_68 " );	// Well, not bad at all!
 			B_GiveInvItems(self,other,ItMi_Gold,5000);
 		};
 	};
@@ -1905,18 +1906,18 @@ func void dia_addon_inextremo_announcer_killworkfinaldone_info()
 
 func void dia_addon_inextremo_announcer_killworkfinaldone_ok()
 {
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_Ok_01_00");	//Ладно, давай сюда деньги.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_Ok_01_01");	//Вот так-то лучше! Держи свою долю.
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_Ok_01_02");	//И чтобы больше я не слышал от тебя этого нытья!
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_Ok_01_00 " );	// Okay, give me the money here.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_Ok_01_01 " );	// That's better! Keep your share.
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_Ok_01_02 " );	// And I don't want to hear that whining from you again!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	AI_StopProcessInfos(self);
 };
 
 func void dia_addon_inextremo_announcer_killworkfinaldone_refuse()
 {
-	AI_Output(other,self,"DIA_pir_1398_KillWorkFinalDone_Refuse_01_00");	//Немедленно заплати мне больше или я убью тебя!
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_Refuse_01_01");	//ЧТО?! Ты еще и угрожаешь мне! Да кто ты такой, чтобы мне угрожать?!
-	AI_Output(self,other,"DIA_pir_1398_KillWorkFinalDone_Refuse_01_02");	//Придется тебя все-таки научить хорошим манерам! Ты, жадный ублюдок!
+	AI_Output(other,self, " DIA_pir_1398_KillWorkFinalDone_Refuse_01_00 " );	// Pay me more immediately or I'll kill you!
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_Refuse_01_01 " );	// WHAT?! You still threaten me! Who are you to threaten me?!
+	AI_Output(self,other, " DIA_pir_1398_KillWorkFinalDone_Refuse_01_02 " );	// You'll still have to teach good manners! You greedy bastard!
 	TROUBLEWITHASMAL = TRUE;
 	AI_StopProcessInfos(self);
 	b_changeguild(pir_1398_addon_inextremo_announcer,GIL_OUT);
@@ -1931,7 +1932,7 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLAFTERDO(C_Info)
 	condition = dia_addon_inextremo_announcer_killafterdo_condition;
 	information = dia_addon_inextremo_announcer_killafterdo_info;
 	permanent = FALSE;
-	description = "И что теперь вы собираетесь делать?";
+	description = " So what are you going to do now? " ;
 };
 
 
@@ -1946,21 +1947,21 @@ func int dia_addon_inextremo_announcer_killafterdo_condition()
 func void dia_addon_inextremo_announcer_killafterdo_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillAfterDo_01_00");	//Что вы теперь собираетесь делать?
-	AI_Output(self,other,"DIA_pir_1398_KillAfterDo_01_01");	//Думаю, мы останемся здесь - подальше от города и от проблем.
-	AI_Output(self,other,"DIA_pir_1398_KillAfterDo_01_03");	//Здесь, под боком у этого жирного борова Онара и его наемников, можно чувствовать себя гораздо комфортнее.
-	AI_Output(other,self,"DIA_pir_1398_KillAfterDo_01_07");	//Понятно.
+	AI_Output(other,self, " DIA_pir_1398_KillAfterDo_01_00 " );	// What are you going to do now?
+	AI_Output(self,other, " DIA_pir_1398_KillAfterDo_01_01 " );	// I think we'll stay here - away from the city and away from the problems.
+	AI_Output(self,other, " DIA_pir_1398_KillAfterDo_01_03 " );	// Here, next to that fat boar Onar and his mercenaries, you can feel much more comfortable.
+	AI_Output(other,self, " DIA_pir_1398_KillAfterDo_01_07 " );	// Got it.
 	KILLFINISH = TRUE;
 };
 
-instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLCANBEMASTER(C_Info)
+instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLCANBEMASTER (C_Info)
 {
 	npc = pir_1398_addon_inextremo_announcer;
 	nr = 1;
 	condition = dia_addon_inextremo_announcer_killcanbemaster_condition;
 	information = dia_addon_inextremo_announcer_killcanbemaster_info;
 	permanent = FALSE;
-	description = "А как мне получить такие же доспехи, как у тебя?";
+	description = " How can I get the same armor as yours? " ;
 };
 
 
@@ -1975,26 +1976,26 @@ func int dia_addon_inextremo_announcer_killcanbemaster_condition()
 func void dia_addon_inextremo_announcer_killcanbemaster_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillCanBeMaster_01_00");	//А как мне получить такие же доспехи, как у тебя?
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_01");	//Боюсь, что никак! (смеется)
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_03");	//Эти доспехи мастера гильдии убийц, и только тот, кто обладает этой привилегией, может носить их!
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_04");	//Они подчеркивают его статус в гильдии перед остальными.
-	AI_Output(other,self,"DIA_pir_1398_KillCanBeMaster_01_07");	//Как мне стать мастером гильдии убийц?
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_08");	//Хммм...(внимательно всматривается) Намекаешь, что хочешь возглавить гильдию убийц?
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_10");	//А ты рисковый парень! Этого вопроса мне не задавали уже очень давно, ибо я давно отбил охоту у большинства людей задавать мне его!
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_11");	//Но ты - новенький в нашей гильдии, поэтому позволь мне кое-что тебе объяснить.
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_12");	//В гильдии, друг мой, может быть только один мастер, и на данный момент - это я!
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_13");	//Если ты хочешь сам им стать, тебе придется дождаться, пока я не сложу свои полномочия главы гильдии или же...
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_14");	//...ты можешь просто бросить мне вызов! (смеется)
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_15");	//Если честно, мне было бы очень интересно посмотреть на то, как у тебя это получится.
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_16");	//Хотя и наверняка знаю, что против меня у тебя нет ни одно шанса...(смеется)
-	AI_Output(other,self,"DIA_pir_1398_KillCanBeMaster_01_17");	//Ты так считаешь?
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_18");	//Я в этом уверен! Или, ты думаешь, ты первый, кто решил замахнуться на мое место?
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_19");	//До тебя таких смельчаков, как ты, было предостаточно, но все они теперь кормят крыс...(злорадно)
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_21");	//Так что на твоем бы месте я выкинул бы эту идею из головы, и как можно скорее - для тебя же будет лучше!
-	AI_Output(other,self,"DIA_pir_1398_KillCanBeMaster_01_23");	//Я подумаю над твоим предложением.
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_24");	//Правильно - подумай и хорошенько, прежде чем делать необдуманные шаги!
-	B_LogEntry(TOPIC_KILLWAY,"Асмал сказал, что, если я хочу получить доспех мастера гильдии убийц и стать ее главой, единственный способ это сделать - бросить ему вызов. По моему мнению, Асмал - отличный боец, и победить его будет нелегко.");
+	AI_Output(other,self, " DIA_pir_1398_KillCanBeMaster_01_00 " );	// How can I get the same armor as you?
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_01 " );	// I'm afraid not! (laughs)
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_03 " );	// This armor is the master of the Assassin's Guild, and only those with this privilege can wear it!
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_04 " );	// They emphasize his status in the guild in front of the rest.
+	AI_Output(other,self, " DIA_pir_1398_KillCanBeMaster_01_07 " );	// How do I become an assassin guild master?
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_08 " );	// Hmmm...(looks closely) Are you implying that you want to lead an assassin's guild?
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_10 " );	// And you're a risky guy! This question has not been asked to me for a very long time, because I have long discouraged most people from asking me it!
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_11 " );	// But you're new to our guild, so let me explain something to you.
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_12 " );	// There can only be one master per guild, my friend, and for now, that's me!
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_13 " );	// If you want to become one yourself, you'll have to wait until I step down as guildmaster or...
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_14 " );	// ...you can just challenge me! (laughs)
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_15 " );	// To be honest, I'd be very interested to see how you do it.
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_16 " );	// Although I know for sure that you have no chance against me... (laughs)
+	AI_Output(other,self, " DIA_pir_1398_KillCanBeMaster_01_17 " );	// Do you think so?
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_18 " );	// I'm sure of it! Or do you think you're the first one to take my place?
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_19 " );	// Before you, there were plenty of daredevils like you, but now they all feed rats... (gloatingly)
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_21 " );	// So if I were you, I'd get this idea out of my head, and as soon as possible - it's better for you!
+	AI_Output(other,self, " DIA_pir_1398_KillCanBeMaster_01_23 " );	// I'll think about your suggestion.
+	AI_Output(self,other, " DIA_pir_1398_KillCanBeMaster_01_24 " );	// That's right - think carefully before making rash moves!
+	B_LogEntry( TOPIC_KILLWAY , " Asmal said that if I want to get the Assassin's Guild Master Armor and become its leader, the only way to do it is to challenge him. In my opinion, Asmal is an excellent fighter, and it will not be easy to defeat him. " );
 };
 
 instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLBEOUT(C_Info)
@@ -2004,12 +2005,12 @@ instance DIA_ADDON_INEXTREMO_ANNOUNCER_KILLBEOUT(C_Info)
 	condition = dia_addon_inextremo_announcer_killbeout_condition;
 	information = dia_addon_inextremo_announcer_killbeout_info;
 	permanent = FALSE;
-	description = "Я хочу бросить тебе вызов.";
+	description = " I want to challenge you. " ;
 };
 
 func int dia_addon_inextremo_announcer_killbeout_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_addon_inextremo_announcer_killcanbemaster))
+	if (Npc_KnowsInfo(hero,dia_addon_inextremo_announcer_killcanbemaster))
 	{
 		return TRUE;
 	};
@@ -2018,15 +2019,15 @@ func int dia_addon_inextremo_announcer_killbeout_condition()
 func void dia_addon_inextremo_announcer_killbeout_info()
 {
 	self.name[0] = "Асмал";
-	AI_Output(other,self,"DIA_pir_1398_KillBeOut_01_00");	//Я хочу бросить тебе вызов.
-	AI_Output(self,other,"DIA_pir_1398_KillBeOut_01_01");	//Значит, ты все-таки решился на это. Ха! (смеется)
-	AI_Output(self,other,"DIA_pir_1398_KillBeOut_01_02");	//Смелый поступок, но, по моему мнению, очень глупый.
-	AI_Output(other,self,"DIA_pir_1398_KillBeOut_01_03");	//Это решит наш поединок!
-	AI_Output(other,self,"DIA_pir_1398_KillBeOut_01_04");	//В любом случае, если это единственная возможность стать главой гильдии убийц, - то можешь не сомневаться в том, что я это сделаю!
-	AI_Output(self,other,"DIA_pir_1398_KillBeOut_01_05");	//(смеется) Жалкий червяк! Ладно, посмотрим, насколько ты хорош.
-	AI_Output(self,other,"DIA_pir_1398_KillBeOut_01_06");	//Я убью тебя быстро.
+	AI_Output(other,self, " DIA_pir_1398_KillBeOut_01_00 " );	// I want to challenge you.
+	AI_Output(self,other, " DIA_pir_1398_KillBeOut_01_01 " );	// So, you still decided on this. Ha! (laughs)
+	AI_Output(self,other, " DIA_pir_1398_KillBeOut_01_02 " );	// A bold move, but very stupid in my opinion.
+	AI_Output(other,self, " DIA_pir_1398_KillBeOut_01_03 " );	// This will decide our duel!
+	AI_Output(other,self, " DIA_pir_1398_KillBeOut_01_04 " );	// In any case, if this is the only way to become the head of the assassin's guild, then you can rest assured that I will do it!
+	AI_Output(self,other, " DIA_pir_1398_KillBeOut_01_05 " );	// (laughs) Pathetic worm! Okay, let's see how good you are.
+	AI_Output(self,other, " DIA_pir_1398_KillBeOut_01_06 " );	// I'll kill you quickly.
 	CANBEKILLMASTER = TRUE;
-	B_LogEntry(TOPIC_KILLWAY,"Я бросил Асмалу вызов. Теперь только бой решит, кто из нас достоин быть главой гильдии убийц.");
+	B_LogEntry( TOPIC_KILLWAY , " I challenged Asmal. Now only a fight will decide which of us is worthy to be the head of the assassin's guild. " );
 	AI_StopProcessInfos(self);
 	b_changeguild(pir_1398_addon_inextremo_announcer,GIL_NONE);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
