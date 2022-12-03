@@ -1,5 +1,6 @@
 
-instance DIA_Wolf_DI_EXIT(C_Info)
+
+instance DIA_Wolf_DI_EXIT (C_Info)
 {
 	npc = SLD_811_Wolf_DI;
 	nr = 999;
@@ -21,18 +22,18 @@ func void DIA_Wolf_DI_EXIT_Info()
 };
 
 
-instance DIA_Wolf_DI_HALLO(C_Info)
+instance DIA_Wolf_DI_HELLO (C_Info)
 {
 	npc = SLD_811_Wolf_DI;
 	nr = 4;
 	condition = DIA_Wolf_DI_HALLO_Condition;
 	information = DIA_Wolf_DI_HALLO_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
-func int DIA_Wolf_DI_HALLO_Condition()
+func int DIA_Wolf_DI_HELLO_Condition()
 {
 	if(UndeadDragonIsDead == FALSE)
 	{
@@ -43,39 +44,39 @@ func int DIA_Wolf_DI_HALLO_Condition()
 
 var int DIA_Wolf_DI_HALLO_OneTime;
 
-func void DIA_Wolf_DI_HALLO_Info()
+func void DIA_Wolf_DI_HELLO_Info()
 {
-	AI_Output(other,self,"DIA_Wolf_DI_HALLO_15_00");	//Как дела?
+	AI_Output(other,self, " DIA_Wolf_DI_HALLO_15_00 " );	// How are you?
 	if((Bennet_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(Bennet_DI) == FALSE))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_HALLO_08_01");	//Тебе ОЧЕНЬ нужно было брать с собой Беннета?
-		AI_Output(other,self,"DIA_Wolf_DI_HALLO_15_02");	//В чем проблема?
-		AI_Output(self,other,"DIA_Wolf_DI_HALLO_08_03");	//А, ничего. Все в порядке. Делай, что считаешь нужным.
+		AI_Output(self,other, " DIA_Wolf_DI_HALLO_08_01 " );	// Did you REALLY need to take Bennet with you?
+		AI_Output(other,self, " DIA_Wolf_DI_HALLO_15_02 " );	// What's the problem?
+		AI_Output(self,other, " DIA_Wolf_DI_HALLO_08_03 " );	// Ah, nothing. Everything is fine. Do what you think is right.
 	}
-	else if(DIA_Wolf_DI_HALLO_OneTime == FALSE)
+	else  if (DIA_Wolf_DI_HALLO_OneTime ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_HALLO_08_04");	//Эта кузница не в самом лучшем состоянии, но я думаю, у меня что-нибудь получится.
+		AI_Output(self,other, " DIA_Wolf_DI_HALLO_08_04 " );	// This forge is not in the best condition, but I think I can do something.
 		B_GivePlayerXP(XP_Ambient);
-		DIA_Wolf_DI_HALLO_OneTime = TRUE;
+		DIA_Wolf_DI_HALLO_OneTime = TRUE ;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"SmithDI");
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Wolf_DI_HALLO_15_05");	//Ты можешь изготовить для меня доспехи?
-		AI_Output(self,other,"DIA_Wolf_DI_HALLO_08_06");	//Извини, приятель. Но не с этими инструментами. Придется подождать, пока мы не прибудем на материк.
+		AI_Output(other,self, " DIA_Wolf_DI_HALLO_15_05 " );	// Can you make armor for me?
+		AI_Output(self,other, " DIA_Wolf_DI_HALLO_08_06 " );	// Sorry mate. But not with these tools. We'll have to wait until we arrive on the mainland.
 	};
 };
 
 
-instance DIA_Wolf_DI_Training(C_Info)
+instances DIA_Wolf_DI_Training (C_Info)
 {
 	npc = SLD_811_Wolf_DI;
 	nr = 10;
 	condition = DIA_Wolf_DI_Training_Condition;
 	information = DIA_Wolf_DI_Training_Info;
 	permanent = TRUE;
-	description = "Обучи меня стрельбе.";
+	description = " Teach me how to shoot. " ;
 };
 
 
@@ -89,7 +90,7 @@ func int DIA_Wolf_DI_Training_Condition()
 
 func void DIA_Wolf_DI_Training_Info()
 {
-	AI_Output(other,self,"DIA_Wolf_DI_Training_15_00");	//Обучи меня стрельбе.
+	AI_Output(other,self, " DIA_Wolf_DI_Training_15_00 " );	// Teach me how to shoot.
 	AI_Output(self,other,"DIA_Wolf_DI_Training_08_01");	//Из чего?
 	Info_ClearChoices(DIA_Wolf_DI_Training);
 	Info_AddChoice(DIA_Wolf_DI_Training,Dialog_Back,DIA_Wolf_DI_Training_BACK);
@@ -103,7 +104,7 @@ func void DIA_Wolf_DI_Training_BOW_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,1,90))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_Training_BOW_1_08_00");	//В отличии от арбалета, лук - громоздкий и требует много места. Смотри, что в во время боя его у тебя хватало.
+		AI_Output(self,other, " DIA_Wolf_DI_Training_BOW_1_08_00 " );	// Unlike a crossbow, a bow is bulky and takes up a lot of space. Look what you had enough of during the battle.
 	};
 	Info_ClearChoices(DIA_Wolf_DI_Training);
 	Info_AddChoice(DIA_Wolf_DI_Training,Dialog_Back,DIA_Wolf_DI_Training_BACK);
@@ -117,7 +118,7 @@ func void DIA_Wolf_DI_Training_BOW_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,5,90))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_Training_BOW_5_08_00");	//Пускай тетиву с легкостью когда пускаешь стрелу. Неповоротливый палец задает стреле неправильную траекторию.
+		AI_Output(self,other, " DIA_Wolf_DI_Training_BOW_5_08_00 " );	// String with ease when shooting an arrow. A clumsy finger gives the arrow the wrong trajectory.
 	};
 	Info_ClearChoices(DIA_Wolf_DI_Training);
 	Info_AddChoice(DIA_Wolf_DI_Training,Dialog_Back,DIA_Wolf_DI_Training_BACK);
@@ -131,7 +132,7 @@ func void DIA_Wolf_DI_Training_CROSSBOW_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,100))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_Training_CROSSBOW_1_08_00");	//Пытайся при стрельбе не расшатывать арбалет. Для этого осторожно спускай курок.
+		AI_Output(self,other, " DIA_Wolf_DI_Training_CROSSBOW_1_08_00 " );	// Try not to loosen the crossbow when shooting. To do this, carefully pull the trigger.
 	};
 	Info_ClearChoices(DIA_Wolf_DI_Training);
 	Info_AddChoice(DIA_Wolf_DI_Training,Dialog_Back,DIA_Wolf_DI_Training_BACK);
@@ -145,7 +146,7 @@ func void DIA_Wolf_DI_Training_CROSSBOW_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,100))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_Training_CROSSBOW_5_08_00");	//Смышленый стрелок всегда обращает внимание на ветер и не стреляет против него.
+		AI_Output(self,other, " DIA_Wolf_DI_Training_CROSSBOW_5_08_00 " );	// A smart shooter always pays attention to the wind and doesn't shoot against it.
 	};
 	Info_ClearChoices(DIA_Wolf_DI_Training);
 	Info_AddChoice(DIA_Wolf_DI_Training,Dialog_Back,DIA_Wolf_DI_Training_BACK);
@@ -168,7 +169,7 @@ instance DIA_Wolf_DI_UndeadDragonDead(C_Info)
 	condition = DIA_Wolf_DI_UndeadDragonDead_Condition;
 	information = DIA_Wolf_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -185,20 +186,20 @@ var int DIA_Wolf_DI_UndeadDragonDead_OneTime;
 
 func void DIA_Wolf_DI_UndeadDragonDead_Info()
 {
-	AI_Output(other,self,"DIA_Wolf_DI_UndeadDragonDead_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_Wolf_DI_UndeadDragonDead_08_01");	//Конечно. А у тебя? Нелегко тебе пришлось, да?
+	AI_Output(other,self, " DIA_Wolf_DI_UndeadDragonDead_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Wolf_DI_UndeadDragonDead_08_01 " );	// Of course. And you have? It wasn't easy for you, was it?
 	if(DIA_Wolf_DI_UndeadDragonDead_OneTime == FALSE)
 	{
-		AI_Output(other,self,"DIA_Wolf_DI_UndeadDragonDead_15_02");	//Куда ты теперь?
-		AI_Output(self,other,"DIA_Wolf_DI_UndeadDragonDead_08_03");	//Куда угодно, только не назад. Я по горло сыт Хоринисом.
-		AI_Output(self,other,"DIA_Wolf_DI_UndeadDragonDead_08_04");	//Мне все равно, куда плыть. Лишь бы подальше отсюда.
+		AI_Output(other,self, " DIA_Wolf_DI_UndeadDragonDead_15_02 " );	// Where are you now?
+		AI_Output(self,other, " DIA_Wolf_DI_UndeadDragonDead_08_03 " );	// Anywhere but back. I'm fed up with Khorinis.
+		AI_Output(self,other, " DIA_Wolf_DI_UndeadDragonDead_08_04 " );	// I don't care where to swim. Just to get away from here.
 		DIA_Wolf_DI_UndeadDragonDead_OneTime = TRUE;
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Wolf_DI_PICKPOCKET(C_Info)
+instances DIA_Wolf_DI_PICKPOCKET (C_Info)
 {
 	npc = SLD_811_Wolf_DI;
 	nr = 900;
@@ -211,19 +212,19 @@ instance DIA_Wolf_DI_PICKPOCKET(C_Info)
 
 func int DIA_Wolf_DI_PICKPOCKET_Condition()
 {
-	return C_Beklauen(32,45);
+	return  C_Robbery ( 32 , 45 );
 };
 
 func void DIA_Wolf_DI_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Wolf_DI_PICKPOCKET);
 	Info_AddChoice(DIA_Wolf_DI_PICKPOCKET,Dialog_Back,DIA_Wolf_DI_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Wolf_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Wolf_DI_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Wolf_DI_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Wolf_DI_PICKPOCKET_DoIt);
 };
 
 func void DIA_Wolf_DI_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Wolf_DI_PICKPOCKET);
 };
 
