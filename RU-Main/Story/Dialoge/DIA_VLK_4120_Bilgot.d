@@ -1,4 +1,5 @@
 
+
 instance DIA_Bilgot_EXIT(C_Info)
 {
 	npc = VLK_4120_Bilgot;
@@ -21,7 +22,7 @@ func void DIA_Bilgot_EXIT_Info()
 };
 
 
-instance DIA_Bilgot_HALLO(C_Info)
+instances DIA_Bilgot_HALLO (C_Info)
 {
 	npc = VLK_4120_Bilgot;
 	nr = 2;
@@ -39,27 +40,27 @@ func int DIA_Bilgot_HALLO_Condition()
 
 func void DIA_Bilgot_HALLO_Info()
 {
-	AI_Output(self,other,"DIA_Bilgot_HALLO_05_00");	//Эй, откуда ты взялся? Ты пришел из замка?
-	Info_AddChoice(DIA_Bilgot_HALLO,"Да, я пришел из замка - ну и что?",DIA_Bilgot_HALLO_Burg);
-	Info_AddChoice(DIA_Bilgot_HALLO,"Я просто случайно забрел сюда...",DIA_Bilgot_HALLO_Zufall);
+	AI_Output(self,other, " DIA_Bilgot_HALLO_05_00 " );	// Hey, where did you come from? Have you come from the castle?
+	Info_AddChoice(DIA_Bilgot_HALLO, " Yes, I came from the castle - so what? " ,DIA_Bilgot_HALLO_Burg);
+	Info_AddChoice(DIA_Bilgot_HALLO, " I just wandered in here by accident... " ,DIA_Bilgot_HALLO_Zufall);
 };
 
-func void DIA_Bilgot_HALLO_Zufall()
+func void DIA_Bilgot_HELLO_Random()
 {
-	AI_Output(other,self,"DIA_Bilgot_HALLO_Zufall_15_00");	//Я просто случайно забрел сюда...
-	AI_Output(self,other,"DIA_Bilgot_HALLO_Zufall_05_01");	//Парень, никто не заходит сюда СЛУЧАЙНО. Мы заперты здесь - окруженные снепперами!
-	AI_Output(self,other,"DIA_Bilgot_HALLO_Zufall_05_02");	//И дня не проходит, чтобы они не загрызли кого-нибудь из наших.
-	AI_Output(self,other,"DIA_Bilgot_HALLO_Zufall_05_03");	//Так ты не скажешь мне, откуда ты пришел? Хорошо - пусть тогда тебя съедят снепперы!
+	AI_Output(other,self, " DIA_Bilgot_HALLO_Zufall_15_00 " );	// I just wandered in here by accident...
+	AI_Output(self,other, " DIA_Bilgot_HALLO_Zufall_05_01 " );	// Man, no one walks in here RANDOMLY. We're locked in here - surrounded by snappers!
+	AI_Output(self,other, " DIA_Bilgot_HALLO_Zufall_05_02 " );	// Not a day goes by that they don't kill one of ours.
+	AI_Output(self,other, " DIA_Bilgot_HALLO_Zufall_05_03 " );	// So won't you tell me where you came from? Good - let the snappers eat you then!
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Bilgot_HALLO_Burg()
 {
-	AI_Output(other,self,"DIA_Bilgot_HALLO_Burg_15_00");	//Да, я пришел из замка - ну и что?
-	AI_Output(self,other,"DIA_Bilgot_HALLO_Burg_05_01");	//Как там дела?
-	AI_Output(other,self,"DIA_Bilgot_HALLO_Burg_15_02");	//Не лучше, чем здесь. Орки все еще там, если ты это имел в виду.
-	AI_Output(self,other,"DIA_Bilgot_HALLO_Burg_05_03");	//Черт. Нигде нельзя чувствовать себя в безопасности.
-	AI_Output(self,other,"DIA_Bilgot_HALLO_Burg_05_04");	//Я скажу тебе кое-что. Если бы я не был напуган до смерти, я бы бежал отсюда.
+	AI_Output(other,self, " DIA_Bilgot_HALLO_Burg_15_00 " );	// Yes, I came from the castle - so what?
+	AI_Output(self,other, " DIA_Bilgot_HALLO_Burg_05_01 " );	// How are things?
+	AI_Output(other,self, " DIA_Bilgot_HALLO_Burg_15_02 " );	// No better than here. The orcs are still there, if that's what you mean.
+	AI_Output(self,other, " DIA_Bilgot_HALLO_Burg_05_03 " );	// Damn. Nowhere can you feel safe.
+	AI_Output(self,other, " DIA_Bilgot_HALLO_Burg_05_04 " );	// I'll tell you something. If I hadn't been scared to death, I would have fled from here.
 	Info_ClearChoices(DIA_Bilgot_HALLO);
 };
 
@@ -71,7 +72,7 @@ instance DIA_Bilgot_Job(C_Info)
 	condition = DIA_Bilgot_Job_Condition;
 	information = DIA_Bilgot_Job_Info;
 	permanent = FALSE;
-	description = "А что ты вообще здесь делаешь, кстати?";
+	description = " What are you even doing here, by the way? " ;
 };
 
 
@@ -82,27 +83,27 @@ func int DIA_Bilgot_Job_Condition()
 
 func void DIA_Bilgot_Job_Info()
 {
-	AI_Output(other,self,"DIA_Bilgot_Job_15_00");	//А что ты вообще здесь делаешь, кстати?
-	AI_Output(self,other,"DIA_Bilgot_Job_05_01");	//Я здесь как мальчик на побегушках. Поднеси-подай, посмотри, где там снепперы, Билгот туда, Билгот сюда.
-	AI_Output(self,other,"DIA_Bilgot_Job_05_02");	//Мне лучше было остаться дома со своей старухой. Там было не лучше, но, по крайней мере, там была приличная еда.
-	AI_Output(self,other,"DIA_Bilgot_Job_05_03");	//А теперь я - все, что осталось от отряда, которым командовал Фаджет.
-	AI_Output(self,other,"DIA_Bilgot_Job_05_04");	//Откуда мне было знать, что этой экспедиции не суждено было вернуться?
-	AI_Output(self,other,"DIA_Bilgot_Job_05_05");	//Мой приятель Олав улизнул. Может быть, хотя бы ему удалось вырваться...
+	AI_Output(other,self, " DIA_Bilgot_Job_15_00 " );	// What are you even doing here, by the way?
+	AI_Output(self,other, " DIA_Bilgot_Job_05_01 " );	// I'm here as an errand boy. Bring it, give it, see where the snappers are, Bilgot there, Bilgot here.
+	AI_Output(self,other, " DIA_Bilgot_Job_05_02 " );	// I should have stayed at home with my old woman. It wasn't any better, but at least it had decent food.
+	AI_Output(self,other, " DIA_Bilgot_Job_05_03 " );	// And now I'm all that's left of the squad led by Fudget.
+	AI_Output(self,other, " DIA_Bilgot_Job_05_04 " );	// How was I to know that this expedition was not destined to return?
+	AI_Output(self,other, " DIA_Bilgot_Job_05_05 " );	// My friend Olav slipped away. Maybe at least he managed to escape...
 };
 
 
-instance DIA_Bilgot_Hilfe(C_Info)
+instance DIA_Bilgot_Help (C_Info)
 {
 	npc = VLK_4120_Bilgot;
 	nr = 3;
-	condition = DIA_Bilgot_Hilfe_Condition;
-	information = DIA_Bilgot_Hilfe_Info;
+	condition = DIA_Bilgot_Help_Condition;
+	information = DIA_Bilgot_Help_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о снепперах?";
+	description = " What do you know about snappers? " ;
 };
 
 
-func int DIA_Bilgot_Hilfe_Condition()
+func int DIA_Bilgot_Help_Condition()
 {
 	if(MIS_Fajeth_Kill_Snapper == LOG_Running)
 	{
@@ -110,19 +111,19 @@ func int DIA_Bilgot_Hilfe_Condition()
 	};
 };
 
-func void DIA_Bilgot_Hilfe_Info()
+func void DIA_Bilgot_Help_Info()
 {
-	AI_Output(other,self,"DIA_Bilgot_Hilfe_15_00");	//Что ты знаешь о снепперах?
-	AI_Output(self,other,"DIA_Bilgot_Hilfe_05_01");	//Зачем тебе знать это? И не говори мне, что просто из любопытства!
-	AI_Output(other,self,"DIA_Bilgot_Hilfe_15_02");	//Я собираюсь поохотиться на этих снепперов,
-	AI_Output(self,other,"DIA_Bilgot_Hilfe_05_03");	//Это безумие. Я наблюдал за ними - что за кровожадные твари!
-	AI_Output(other,self,"DIA_Bilgot_Hilfe_15_04");	//Тогда расскажи мне, что ты о них знаешь.
-	AI_Output(self,other,"DIA_Bilgot_Hilfe_05_05");	//Хм... я мог бы помочь тебе, но только при одном условии!
-	AI_Output(other,self,"DIA_Bilgot_Hilfe_15_06");	//Что ты хочешь?
-	AI_Output(self,other,"DIA_Bilgot_Hilfe_05_07");	//Если тебе удастся убить снепперов - ты должен вытащить меня отсюда!
-	if(Npc_IsDead(Fed) == FALSE)
+	AI_Output(other, self, " DIA_Bilgot_Hilfe_15_00 " );	// What do you know about snappers?
+	AI_Output(self,other, " DIA_Bilgot_Hilfe_05_01 " );	// Why do you need to know this? And don't tell me it's just out of curiosity!
+	AI_Output(other,self, " DIA_Bilgot_Hilfe_15_02 " );	// I'm going to hunt these snappers,
+	AI_Output(self,other, " DIA_Bilgot_Hilfe_05_03 " );	// This is crazy. I watched them - what bloodthirsty creatures!
+	AI_Output(other,self, " DIA_Bilgot_Hilfe_15_04 " );	// Then tell me what you know about them.
+	AI_Output(self,other, " DIA_Bilgot_Hilfe_05_05 " );	// Hmm... I could help you, but only on one condition!
+	AI_Output(other,self, " DIA_Bilgot_Hilfe_15_06 " );	// What do you want?
+	AI_Output(self,other, " DIA_Bilgot_Hilfe_05_07 " );	// If you manage to kill the snappers, you have to get me out of here!
+	if (Npc_IsDead(Fed) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Bilgot_Hilfe_05_08");	//Мне здесь долго не продержаться - ты говорил с Федом? У этого парня крыша поехала, и я не хочу кончить как он!
+		AI_Output(self,other, " DIA_Bilgot_Hilfe_05_08 " );	// I can't last long here - have you talked to Fed? This guy is crazy and I don't want to end up like him!
 	};
 };
 
@@ -134,7 +135,7 @@ instance DIA_Bilgot_KNOWSLEADSNAPPER(C_Info)
 	condition = DIA_Bilgot_KNOWSLEADSNAPPER_Condition;
 	information = DIA_Bilgot_KNOWSLEADSNAPPER_Info;
 	permanent = FALSE;
-	description = "Расскажи мне, что ты знаешь. И я вытащу тебя отсюда!";
+	description = " Tell me what you know. I'll get you out of here! " ;
 };
 
 
@@ -148,20 +149,20 @@ func int DIA_Bilgot_KNOWSLEADSNAPPER_Condition()
 
 func void DIA_Bilgot_KNOWSLEADSNAPPER_Info()
 {
-	AI_Output(other,self,"DIA_Bilgot_KNOWSLEADSNAPPER_15_00");	//Расскажи мне, что ты знаешь. И я вытащу тебя отсюда!
-	AI_Output(self,other,"DIA_Bilgot_KNOWSLEADSNAPPER_05_01");	//Я знал, что могу рассчитывать на тебя. Так что будь внимателен. Я довольно долго наблюдаю за снепперами.
-	AI_Output(self,other,"DIA_Bilgot_KNOWSLEADSNAPPER_05_02");	//Они очень хитры и могут, ну, как бы...общаться. Они никогда не ходят поодиночке и нападают только стаей. Но есть еще кое-что. Среди них есть один особенный!
-	AI_Output(self,other,"DIA_Bilgot_KNOWSLEADSNAPPER_05_03");	//Он редко показывается, но я видел его.
-	AI_Output(self,other,"DIA_Bilgot_KNOWSLEADSNAPPER_05_04");	//Другие снепперы низко кланяются, когда проходят мимо него, но никогда не отходят далеко.
-	AI_Output(self,other,"DIA_Bilgot_KNOWSLEADSNAPPER_05_05");	//Пока этот зверь не тронется с места, ни один снеппер поблизости даже не шевельнется.
-	AI_Output(other,self,"DIA_Bilgot_KNOWSLEADSNAPPER_15_06");	//Где мне найти этого кровожадного зверя?
-	AI_Output(self,other,"DIA_Bilgot_KNOWSLEADSNAPPER_05_07");	//Я видел его на ступенях старой сторожевой башни.
-	AI_Output(other,self,"DIA_Bilgot_KNOWSLEADSNAPPER_15_08");	//Отлично. Мне кажется, я понял. Спасибо!
-	AI_Output(self,other,"DIA_Bilgot_KNOWSLEADSNAPPER_05_09");	//Помни, ты дал мне слово!
-	B_LogEntry(TOPIC_FajethKillSnapper,"Билгот рассказал мне о вожаке стаи Снепперов. Он должен быть на ступеньках старой сторожевой башни.");
+	AI_Output(other,self, " DIA_Bilgot_KNOWSLEADSNAPPER_15_00 " );	// Tell me what you know. And I'll get you out of here!
+	AI_Output(self,other, " DIA_Bilgot_KNOWSLEADSNAPPER_05_01 " );	// I knew I could count on you. So be careful. I've been watching Snappers for quite some time.
+	AI_Output(self,other, " DIA_Bilgot_KNOWSLEADSNAPPER_05_02 " );	// They are very cunning and can, well, sort of... communicate. They never walk alone and only attack in packs. But there is more. There is one special among them!
+	AI_Output(self,other, " DIA_Bilgot_KNOWSLEADSNAPPER_05_03 " );	// It rarely shows up, but I've seen it.
+	AI_Output(self,other, " DIA_Bilgot_KNOWSLEADSNAPPER_05_04 " );	// Other snappers bow low when they pass him, but never go far.
+	AI_Output(self,other, " DIA_Bilgot_KNOWSLEADSNAPPER_05_05 " );	// As long as this beast doesn't move, no snappers nearby will even move.
+	AI_Output(other,self, " DIA_Bilgot_KNOWSLEADSNAPPER_15_06 " );	// Where can I find this bloodthirsty beast?
+	AI_Output(self,other, " DIA_Bilgot_KNOWSLEADSNAPPER_05_07 " );	// I saw him on the steps of the old watchtower.
+	AI_Output(other,self, " DIA_Bilgot_KNOWSLEADSNAPPER_15_08 " );	// Great. I think I understand. Thank you!
+	AI_Output(self,other, " DIA_Bilgot_KNOWSLEADSNAPPER_05_09 " );	// Remember, you gave me your word!
+	B_LogEntry(TOPIC_FajethKillSnapper, " Bilgoth told me about the leader of the Snapper pack. He should be on the steps of the old watchtower. " );
 	Log_CreateTopic(TOPIC_BilgotEscort,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BilgotEscort,LOG_Running);
-	B_LogEntry_Quiet(TOPIC_BilgotEscort,"Билгот хочет, чтобы я вывел его из долины.");
+	B_LogEntry_Quiet(TOPIC_BilgotEscort, " Bilgot wants me to lead him out of the valley. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(NewMine_LeadSnapper,"OW_ORC_LOOKOUT_2_01");
 };
@@ -174,7 +175,7 @@ instance DIA_Bilgot_TAKEYOUWITHME(C_Info)
 	condition = DIA_Bilgot_TAKEYOUWITHME_Condition;
 	information = DIA_Bilgot_TAKEYOUWITHME_Info;
 	permanent = FALSE;
-	description = "(Сдержать обещание)";
+	description = " (Keep the promise) " ;
 };
 
 
@@ -188,43 +189,43 @@ func int DIA_Bilgot_TAKEYOUWITHME_Condition()
 
 func void DIA_Bilgot_TAKEYOUWITHME_Info()
 {
-	AI_Output(other,self,"DIA_Bilgot_TAKEYOUWITHME_15_00");	//Время пришло, Билгот! Пакуй свои вещи, мы отправляемся в путь.
+	AI_Output(other,self, " DIA_Bilgot_TAKEYOUWITHME_15_00 " );	// The time has come, Bilgot! Pack your things, we're on our way.
 	AI_Output(self,other,"DIA_Bilgot_TAKEYOUWITHME_05_03");	//Я готов!
 	Npc_ExchangeRoutine(self,"FOLLOWTOOCBRIDGE");
 	Bilgot.flags = 0;
 	MIS_RescueBilgot = LOG_Running;
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Bilgot_LAUFSCHNELLER(C_Info)
+instance DIA_Bilgot_RUN FASTER (C_Info)
 {
 	npc = VLK_4120_Bilgot;
 	nr = 5;
 	condition = DIA_Bilgot_LAUFSCHNELLER_Condition;
-	information = DIA_Bilgot_LAUFSCHNELLER_Info;
+	information = DIA_Bilgot_RUN FASTER_Info;
 	permanent = FALSE;
-	description = "Ты не мог бы идти немного быстрее?!";
+	description = " Could you walk a little faster?! " ;
 };
 
 
-func int DIA_Bilgot_LAUFSCHNELLER_Condition()
+func int DIA_Bilgot_FAST_RUNNING_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Bilgot_TAKEYOUWITHME) && (Npc_KnowsInfo(other,DIA_Bilgot_BEIBRUECKEANGEKOMMEN) == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Bilgot_TAKEYOUWITHME ) && ( Npc_KnowsInfo ( other , DIA_Bilgot_CREATED_WITHME ) ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Bilgot_LAUFSCHNELLER_Info()
+func void DIA_Bilgot_RUN FASTER_Info()
 {
-	AI_Output(other,self,"DIA_Bilgot_LAUFSCHNELLER_15_00");	//Ты не мог бы идти немного быстрее?!
-	AI_Output(self,other,"DIA_Bilgot_LAUFSCHNELLER_05_01");	//Я иду так быстро, как могу.
+	AI_Output(other,self, " DIA_Bilgot_LAUFSCHNELLER_15_00 " );	// Could you walk a little faster?!
+	AI_Output(self,other, " DIA_Bilgot_LAUFSCHNELLER_05_01 " );	// I'm walking as fast as I can.
 };
 
 
-instance DIA_Bilgot_BEIBRUECKEANGEKOMMEN(C_Info)
+instance DIA_Bilgot_BEIBRUECKEANGECOMMEN (C_Info)
 {
 	npc = VLK_4120_Bilgot;
 	nr = 2;
@@ -245,15 +246,15 @@ func int DIA_Bilgot_BEIBRUECKEANGEKOMMEN_Condition()
 
 func void DIA_Bilgot_BEIBRUECKEANGEKOMMEN_Info()
 {
-	AI_Output(other,self,"DIA_Bilgot_BEIBRUECKEANGEKOMMEN_15_00");	//Хорошо, пришли. Дальше иди один. Но будь осторожен!
-	AI_Output(self,other,"DIA_Bilgot_BEIBRUECKEANGEKOMMEN_05_01");	//Спасибо!
-	AI_Output(other,self,"DIA_Bilgot_BEIBRUECKEANGEKOMMEN_15_02");	//Смотри, чтобы тебя не съели. Я очень огорчусь.
-	AI_Output(self,other,"DIA_Bilgot_BEIBRUECKEANGEKOMMEN_05_03");	//Прощай!
+	AI_Output(other,self, " DIA_Bilgot_BEIBRUECKEANGEKOMMEN_15_00 " );	// Okay, here we go. Then go alone. But be careful!
+	AI_Output(self,other, " DIA_Bilgot_BEIBRUECKEANGEKOMMEN_05_01 " );	// Thank you!
+	AI_Output(other,self, " DIA_Bilgot_BEIBRUECKEANGEKOMMEN_15_02 " );	// Be careful not to get eaten. I will be very upset.
+	AI_Output(self,other, " DIA_Bilgot_BEIBRUECKEANGEKOMMEN_05_03 " );	// Goodbye!
 	TschuessBilgot = TRUE;
 	BilgotDayOut = Wld_GetDay();
 	MIS_RescueBilgot = LOG_SUCCESS;
 	B_GivePlayerXP(XP_BilgotEscort);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FLEEOUTOFOW");
 };
@@ -265,12 +266,12 @@ instance DIA_Bilgot_Olav(C_Info)
 	condition = DIA_Bilgot_Olav_Condition;
 	information = DIA_Bilgot_Olav_Info;
 	permanent = FALSE;
-	description = "Я нашел Олава.";
+	description = " I found Olaf. " ;
 };
 
 func int DIA_Bilgot_Olav_Condition()
 {
-	if((Npc_HasItems(Olav,ItSe_Olav) == 0) && Npc_KnowsInfo(other,DIA_Bilgot_Job))
+	if ((Npc_HasItems(Olav,It_Is_Olav) ==  0 ) && Npc_KnowsInfo(other,DIA_Bilgot_Job))
 	{
 		return TRUE;
 	};
@@ -278,10 +279,10 @@ func int DIA_Bilgot_Olav_Condition()
 
 func void DIA_Bilgot_Olav_Info()
 {
-	AI_Output(other,self,"DIA_Bilgot_Olav_15_00");	//Я нашел Олава.
+	AI_Output(other,self, " DIA_Bilgot_Olav_15_00 " );	// I found Olaf.
 	AI_Output(self,other,"DIA_Bilgot_Olav_05_01");	//И как он?
-	AI_Output(other,self,"DIA_Bilgot_Olav_15_02");	//Он мертв! Его съели волки.
-	AI_Output(self,other,"DIA_Bilgot_Olav_05_03");	//Ох, черт...(нервно) Надеюсь, хотя бы мне удастся выбраться отсюда.
+	AI_Output(other,self, " DIA_Bilgot_Olav_15_02 " );	// He's dead! The wolves ate him.
+	AI_Output(self,other, " DIA_Bilgot_Olav_05_03 " );	// Oh shit... (nervously) I hope I can at least get out of here.
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -299,7 +300,7 @@ instance DIA_Bilgot_PICKPOCKET(C_Info)
 
 func int DIA_Bilgot_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,30);
+	return  C_Robbery ( 20 , 30 );
 };
 
 func void DIA_Bilgot_PICKPOCKET_Info()
@@ -311,7 +312,7 @@ func void DIA_Bilgot_PICKPOCKET_Info()
 
 func void DIA_Bilgot_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Bilgot_PICKPOCKET);
 };
 
@@ -321,7 +322,7 @@ func void DIA_Bilgot_PICKPOCKET_BACK()
 };
 
 
-//---------------------новый Бильгот------------------------------------------------
+// ---------------------new Billgot------------------------- ----------------------
 
 instance DIA_Bilgot_NW_EXIT(C_Info)
 {
@@ -343,27 +344,27 @@ func void DIA_Bilgot_NW_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Bilgot_NW_LetztePause(C_Info)
+instance DIA_Bilgot_NW_LastPause (C_Info)
 {
 	npc = VLK_41200_Bilgot;
 	nr = 1;
-	condition = DIA_Bilgot_NW_LetztePause_Condition;
-	information = DIA_Bilgot_NW_LetztePause_Info;
+	condition = DIA_Bilgot_NW_LastPause_Condition;
+	information = DIA_Bilgot_NW_LastPause_Info;
 	permanent = FALSE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
-func int DIA_Bilgot_NW_LetztePause_Condition()
+func int DIA_Bilgot_NW_LastPause_Condition()
 {
 	return TRUE;
 };
 
-func void DIA_Bilgot_NW_LetztePause_Info()
+func void DIA_Bilgot_NW_LastPause_Info()
 {
-	AI_Output(other,self,"DIA_Biff_HALLO_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Bilgot_LetztePause_05_01");	//Я просто не в силах идти. Мне нужно передохнуть немного. Я справлюсь. Не волнуйся!
-	AI_Output(other,self,"DIA_Bilgot_LetztePause_15_02");	//Как скажешь.
-	AI_Output(self,other,"DIA_Bilgot_LetztePause_05_03");	//Просто немного передохну.
+	AI_Output(other,self, " DIA_Biff_HALLO_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Bilgot_LetztePause_05_01 " );	// I just can't walk. I need to rest a little. I can handle. Do not worry!
+	AI_Output(other,self, " DIA_Bilgot_LetztePause_15_02 " );	// As you say.
+	AI_Output(self,other, " DIA_Bilgot_LetztePause_05_03 " );	// Just take a break.
 };
 
 instance DIA_Bilgot_NW_FREEDOM(C_Info)
@@ -373,12 +374,12 @@ instance DIA_Bilgot_NW_FREEDOM(C_Info)
 	condition = DIA_Bilgot_NW_FREEDOM_condition;
 	information = DIA_Bilgot_NW_FREEDOM_info;
 	permanent = FALSE;
-	description = "И как долго ты здесь будешь сидеть?";
+	description = " How long are you going to be here? " ;
 };
 
 func int DIA_Bilgot_NW_FREEDOM_condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Bilgot_NW_LetztePause) == TRUE) && (BILGOTRECRUITEDDT == FALSE) && (HURRAYICANHIRE == TRUE) && Npc_IsInState(self,ZS_Talk))
+	if ((Npc_KnowsInfo(other,DIA_Bilgot_NW_LatestPause) ==  TRUE ) && ( BILGOTRCRUITEDDT  ==  FALSE ) && ( HURRAYICANHIRE  ==  TRUE ) && Npc_IsInState(self,ZS_Talk));
 	{
 		return TRUE;
 	};
@@ -387,13 +388,13 @@ func int DIA_Bilgot_NW_FREEDOM_condition()
 func void DIA_Bilgot_NW_FREEDOM_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Bilgot_NW_FREEDOM_01_00");	//И как долго ты здесь будешь сидеть?
-	AI_Output(self,other,"DIA_Bilgot_NW_FREEDOM_01_01");	//Не знаю... Мне все равно пока некуда иди.
-	AI_Output(other,self,"DIA_Bilgot_NW_FREEDOM_01_02");	//Тогда пошли ко мне в лагерь! Там ты найдешь все необходимое - кров, пищу и сможешь немного отдохнуть.
-	AI_Output(self,other,"DIA_Bilgot_NW_FREEDOM_01_03");	//А сидя здесь, ты дождешься только того, что тебя сожрет какая-нибудь хищная тварь.
-	AI_Output(self,other,"DIA_Bilgot_NW_FREEDOM_01_04");	//И то правда... Ладно, идем.
-	AI_Output(other,self,"DIA_Bilgot_NW_FREEDOM_01_05");	//Следуй за мной.
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	AI_Output(other,self, " DIA_Bilgot_NW_FREEDOM_01_00 " );	// And how long will you stay here?
+	AI_Output(self,other, " DIA_Bilgot_NW_FREEDOM_01_01 " );	// I don't know... I still have nowhere to go yet.
+	AI_Output(other,self, " DIA_Bilgot_NW_FREEDOM_01_02 " );	// Then come to my camp! There you will find everything you need - shelter, food and you can get some rest.
+	AI_Output(self,other, " DIA_Bilgot_NW_FREEDOM_01_03 " );	// And sitting here, you will only wait for some predatory creature to devour you.
+	AI_Output(self,other, " DIA_Bilgot_NW_FREEDOM_01_04 " );	// And that's true... Okay, let's go.
+	AI_Output(other,self, " DIA_Bilgot_NW_FREEDOM_01_05 " );	// Follow me.
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FollowMe");
 };
@@ -419,18 +420,18 @@ func int DIA_Bilgot_NW_finallyintower_condition()
 func void DIA_Bilgot_NW_finallyintower_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Bilgot_NW_FinallyInTower_01_00");	//Вот мы и пришли.
-	AI_Output(self,other,"DIA_Bilgot_NW_FinallyInTower_01_01");	//Это твой лагерь?! Впечатляет...
-	AI_Output(other,self,"DIA_Bilgot_NW_FinallyInTower_01_02");	//Здесь ты можешь чувствовать себя в безопасности.
-	AI_Output(other,self,"DIA_Bilgot_NW_FinallyInTower_01_03");	//А пока иди вон, отдохни у костра. А то ты еле на ногах стоишь!
-	AI_Output(self,other,"DIA_Bilgot_NW_FinallyInTower_01_04");	//Так и сделаю. Благодарю тебя.
-	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Бильгот теперь будет жить и работать у меня в лагере.");
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(other,self, " DIA_Bilgot_NW_FinallyInTower_01_00 " );	// Here we are.
+	AI_Output(self,other, " DIA_Bilgot_NW_FinallyInTower_01_01 " );	// Is this your camp?! Impressive...
+	AI_Output(other,self, " DIA_Bilgot_NW_FinallyInTower_01_02 " );	// Here you can feel safe.
+	AI_Output(other,self, " DIA_Bilgot_NW_FinallyInTower_01_03 " );	// In the meantime, go out and rest by the fire. And then you can barely stand on your feet!
+	AI_Output(self,other, " DIA_Bilgot_NW_FinallyInTower_01_04 " );	// I'll do that. Thank you.
+	B_LogEntry( TOPIC_PPL_FOR_TOWER , " Bilgot will now live and work at my camp. " );
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 	BILGOTRECRUITEDDT = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"InTower");
@@ -443,7 +444,7 @@ instance DIA_Bilgot_NW_INTOWER_ORCKAP(C_Info)
 	condition = DIA_Bilgot_NW_intower_orckap_condition;
 	information = DIA_Bilgot_NW_intower_orckap_info;
 	permanent = TRUE;
-	description = "Все хорошо?";
+	description = " Is everything okay? " ;
 };
 
 func int DIA_Bilgot_NW_intower_orckap_condition()
@@ -456,6 +457,6 @@ func int DIA_Bilgot_NW_intower_orckap_condition()
 
 func void DIA_Bilgot_NW_intower_orckap_info()
 {
-	AI_Output(other,self,"DIA_Bilgot_NW_InTower_OrcKap_15_00");	//Все хорошо?
-	AI_Output(self,other,"DIA_Bilgot_NW_InTower_OrcKap_01_01");	//Лучше и не придумаешь. Спасибо, что помог мне выбраться из той проклятой долины.
+	AI_Output(other,self, " DIA_Bilgot_NW_InTower_OrcKap_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Bilgot_NW_InTower_OrcKap_01_01 " );	// Better than you can imagine. Thank you for helping me get out of that damned valley.
 };
