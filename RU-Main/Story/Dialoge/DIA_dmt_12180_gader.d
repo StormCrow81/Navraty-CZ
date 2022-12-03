@@ -1,7 +1,8 @@
 
+
 instance DMT_12180_GADER_EXIT(C_Info)
 {
-	npc = dmt_12180_gader;
+	npc = dmt_12180_streets;
 	nr = 999;
 	condition = dmt_12180_gader_exit_condition;
 	information = dmt_12180_gader_exit_info;
@@ -22,9 +23,9 @@ func void dmt_12180_gader_exit_info()
 };
 
 
-instance DMT_12180_GADER_HELLO(C_Info)
+instance DMT_12180_GADER_HELLO (C_Info)
 {
-	npc = dmt_12180_gader;
+	npc = dmt_12180_streets;
 	condition = dmt_12180_gader_hello_condition;
 	information = dmt_12180_gader_hello_info;
 	important = TRUE;
@@ -47,41 +48,41 @@ func void dmt_12180_gader_hello_info()
 		TELLWHATDONE = TRUE;
 		if(CHOOSEDARK == TRUE)
 		{
-			AI_Output(self,other,"DMT_12180_Gader_Hello_01");	//Тебе следует обратится к Хранителю Даготу, адепт!
-			AI_Output(self,other,"DMT_12180_Gader_Hello_02");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12180_Gader_Hello_03");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12180_Gader_Hello_04");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12180_Gader_Hello_01 " );	// You should contact Guardian Dagoth, adept!
+			AI_Output(self,other, " DMT_12180_Gader_Hello_02 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12180_Gader_Hello_03 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12180_Gader_Hello_04 " );	// Now go!
 			AI_StopProcessInfos(self);
 		}
 		else if(CHOOSESTONE == TRUE)
 		{
-			AI_Output(self,other,"DMT_12180_Gader_Hello_05");	//Тебе следует обратится к Хранителю Стонносу, адепт!
-			AI_Output(self,other,"DMT_12180_Gader_Hello_06");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12180_Gader_Hello_07");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12180_Gader_Hello_04");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12180_Gader_Hello_05 " );	// You should contact Guardian Stonnos, adept!
+			AI_Output(self,other, " DMT_12180_Gader_Hello_06 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12180_Gader_Hello_07 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12180_Gader_Hello_04 " );	// Now go!
 			AI_StopProcessInfos(self);
 		}
 		else if(CHOOSEWATER == TRUE)
 		{
-			AI_Output(self,other,"DMT_12180_Gader_Hello_09");	//Тебе следует обратится к Хранителю Вакону, адепт!
-			AI_Output(self,other,"DMT_12180_Gader_Hello_10");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12180_Gader_Hello_11");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12180_Gader_Hello_04");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12180_Gader_Hello_09 " );	// You should contact Guardian Vakon, adept!
+			AI_Output(self,other, " DMT_12180_Gader_Hello_10 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12180_Gader_Hello_11 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12180_Gader_Hello_04 " );	// Now go!
 			AI_StopProcessInfos(self);
 		}
 		else if(CHOOSEFIRE == TRUE)
 		{
-			AI_Output(self,other,"DMT_12180_Gader_Hello_13");	//Тебе следует обратится к Хранителю Келиосу, адепт!
-			AI_Output(self,other,"DMT_12180_Gader_Hello_14");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12180_Gader_Hello_15");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12180_Gader_Hello_04");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12180_Gader_Hello_13 " );	// You should contact Guardian Kelios, adept!
+			AI_Output(self,other, " DMT_12180_Gader_Hello_14 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12180_Gader_Hello_15 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12180_Gader_Hello_04 " );	// Now go!
 			AI_StopProcessInfos(self);
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DMT_12180_Gader_Hello_17");	//Ты уже знаешь, что тебе следует делать.
-		AI_Output(self,other,"DMT_12180_Gader_Hello_04");	//Теперь ступай!
+		AI_Output(self,other, " DMT_12180_Gader_Hello_17 " );	// You already know what you should do.
+		AI_Output(self,other, " DMT_12180_Gader_Hello_04 " );	// Now go!
 		AI_StopProcessInfos(self);
 	};
 };
