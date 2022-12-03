@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Pardos_NW_EXIT(C_Info)
 {
 	npc = STRF_1127_Addon_Pardos_NW;
@@ -21,14 +22,14 @@ func void DIA_Addon_Pardos_NW_EXIT_Info()
 };
 
 
-instance DIA_Addon_Pardos_NW_Hi(C_Info)
+instance DIA_Addon_Pardos_NW_Hi (C_Info);
 {
 	npc = STRF_1127_Addon_Pardos_NW;
 	nr = 2;
 	condition = DIA_Addon_Pardos_NW_Hi_Condition;
 	information = DIA_Addon_Pardos_NW_Hi_Info;
 	permanent = FALSE;
-	description = "Как идут дела?";
+	description = " How are things going? " ;
 };
 
 
@@ -37,11 +38,11 @@ func int DIA_Addon_Pardos_NW_Hi_Condition()
 	return TRUE;
 };
 
-func void DIA_Addon_Pardos_NW_Hi_Info()
+func void DIA_Brown_Addon_NW_Hi_Info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Addon_Pardos_NW_Hi_15_00");	//Как идут дела?
-	AI_Output(self,other,"DIA_Addon_Pardos_NW_Hi_03_01");	//Э-э...(усмехается) Это же мой спаситель. Спасибо. Теперь я, наконец, могу отдохнуть.
+	AI_Output(other,self, " DIA_Addon_Pardos_NW_Hi_15_00 " );	// How are things going?
+	AI_Output(self,other, " DIA_Addon_Pardos_NW_Hi_03_01 " );	// Uh...(grins) This is my savior. Thank you. Now I can finally rest.
 	AI_Output(other,self,"DIA_Addon_Pardos_NW_Hi_15_02");	//Удачи.
 };
 
@@ -59,7 +60,7 @@ instance DIA_Addon_Pardos_NW_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Pardos_NW_PICKPOCKET_Condition()
 {
-	return C_Beklauen(85,10);
+	return  C_Robbery ( 85 , 10 );
 };
 
 func void DIA_Addon_Pardos_NW_PICKPOCKET_Info()
@@ -71,7 +72,7 @@ func void DIA_Addon_Pardos_NW_PICKPOCKET_Info()
 
 func void DIA_Addon_Pardos_NW_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Pardos_NW_PICKPOCKET);
 };
 
