@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_285_EXIT(C_Info)
 {
 	npc = Pal_285_Ritter;
@@ -28,13 +29,13 @@ instance DIA_PAL_285_PASS(C_Info)
 	condition = dia_pal_285_pass_condition;
 	information = dia_pal_285_pass_info;
 	permanent = TRUE;
-	description = "Тренируешься?";
+	description = " Working out? " ;
 };
 
 
 func int dia_pal_285_pass_condition()
 {
-	if(Kapitel < 4)
+	if (chapter <  4 )
 	{
 		return TRUE;
 	};
@@ -42,8 +43,8 @@ func int dia_pal_285_pass_condition()
 
 func void dia_pal_285_pass_info()
 {
-	AI_Output(other,self,"DIA_PAL_285_Pass_15_00");	//Тренируешься?
-	AI_Output(self,other,"DIA_PAL_285_Pass_09_01");	//Конечно! И ты мне в этом заметно мешаешь!
+	AI_Output(other,self, " DIA_PAL_285_Pass_15_00 " );	// Working out?
+	AI_Output(self,other, " DIA_PAL_285_Pass_09_01 " );	// Of course! And you make me feel bad about it!
 	AI_StopProcessInfos(self);
 };
 
@@ -55,13 +56,13 @@ instance DIA_PAL_285_PERM(C_Info)
 	condition = dia_pal_285_perm_condition;
 	information = dia_pal_285_perm_info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
 func int dia_pal_285_perm_condition()
 {
-	if(Kapitel >= 4)
+	if (Chapter >=  4 )
 	{
 		return TRUE;
 	};
@@ -69,7 +70,7 @@ func int dia_pal_285_perm_condition()
 
 func void dia_pal_285_perm_info()
 {
-	AI_Output(other,self,"DIA_PAL_298_Perm2_15_00");	//Как обстановка?
-	AI_Output(self,other,"DIA_PAL_298_Perm2_09_01");	//Все спокойно.
+	AI_Output(other,self, " DIA_PAL_298_Perm2_15_00 " );	// How are things?
+	AI_Output(self,other, " DIA_PAL_298_Perm2_09_01 " );	// Everything is calm.
 };
 
