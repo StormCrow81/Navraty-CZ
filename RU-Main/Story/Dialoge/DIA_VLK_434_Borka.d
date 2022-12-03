@@ -1,4 +1,5 @@
 
+
 instance DIA_Borka_EXIT(C_Info)
 {
 	npc = VLK_434_Borka;
@@ -34,7 +35,7 @@ instance DIA_Borka_PICKPOCKET(C_Info)
 
 func int DIA_Borka_PICKPOCKET_Condition()
 {
-	return C_Beklauen(80,120);
+	return  C_Robbery ( 80 , 120 );
 };
 
 func void DIA_Borka_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Borka_PICKPOCKET_Info()
 
 func void DIA_Borka_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Borka_PICKPOCKET);
 };
 
@@ -56,7 +57,7 @@ func void DIA_Borka_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Borka_PISSOFF(C_Info)
+instance DIA_Borka_PISSOFF (C_Info)
 {
 	npc = VLK_434_Borka;
 	condition = DIA_Borka_PISSOFF_Condition;
@@ -76,11 +77,11 @@ func int DIA_Borka_PISSOFF_Condition()
 
 func void DIA_Borka_PISSOFF_Info()
 {
-	AI_Output(self,other,"DIA_Borka_PISSOFF_11_00");	//Эй ты! Куда ты идешь? Не важно, какие у тебя планы - они могут подождать.
-	AI_Output(self,other,"DIA_Borka_PISSOFF_11_01");	//Ты стоишь перед входом в жемчужину Хориниса - КРАСНЫЙ ФОНАРЬ. Это самый шикарный бордель во всей Миртане, будь я проклят!
-	AI_Output(self,other,"DIA_Borka_PISSOFF_11_02");	//Моряки из самых дальних уголков света приплывают сюда, чтобы провести несколько незабываемых ночей в Красном Фонаре.
-	AI_Output(self,other,"DIA_Borka_PISSOFF_11_03");	//А теперь и у тебя появился такой шанс - нет, честь - провести ночь с Надей, самым страстным цветком богов!
-	AI_Output(self,other,"DIA_Borka_PISSOFF_11_04");	//Заходи же, и ты познаешь наслаждение, о котором другие не могут даже и мечтать!
+	AI_Output(self,other, " DIA_Borka_PISSOFF_11_00 " );	// Hey you! Where are you going? No matter what your plans are, they can wait.
+	AI_Output(self,other, " DIA_Borka_PISSOFF_11_01 " );	// You are standing in front of the entrance to the pearl of Khorinis - RED LANTERN. This is the most luxurious brothel in all of Myrtana, damn me!
+	AI_Output(self,other, " DIA_Borka_PISSOFF_11_02 " );	// Sailors from the farthest corners of the world come here to spend some unforgettable nights at the Red Lantern.
+	AI_Output(self,other, " DIA_Borka_PISSOFF_11_03 " );	// And now you have a chance - no, an honor - to spend the night with Nadia, the most passionate flower of the gods!
+	AI_Output(self,other, " DIA_Borka_PISSOFF_11_04 " );	// Come in, and you will experience pleasure that others cannot even dream of!
 };
 
 
@@ -105,8 +106,8 @@ func int DIA_Borka_TROUBLE_Condition()
 
 func void DIA_Borka_TROUBLE_Info()
 {
-	AI_Output(self,other,"DIA_Borka_TROUBLE_11_00");	//Что ты стоишь здесь и колеблешься? Заходи внутрь и познакомься с нашей любвеобильной Надей.
-	AI_Output(self,other,"DIA_Borka_TROUBLE_11_01");	//Это страстное создание ночи придаст твоей жизни новый смысл!
+	AI_Output(self,other, " DIA_Borka_TROUBLE_11_00 " );	// Why are you standing here and hesitating? Come inside and meet our loving Nadia.
+	AI_Output(self,other, " DIA_Borka_TROUBLE_11_01 " );	// This passionate creation of the night will give your life a new meaning!
 };
 
 
@@ -117,7 +118,7 @@ instance DIA_BORKA_HELLO(C_Info)
 	condition = dia_borka_hello_condition;
 	information = dia_borka_hello_info;
 	permanent = FALSE;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -129,9 +130,9 @@ func int dia_borka_hello_condition()
 func void dia_borka_hello_info()
 {
 	AI_Output(other,self,"DIA_Borka_Hello_01_00");	//Кто ты?
-	AI_Output(self,other,"DIA_Borka_Hello_01_01");	//Я - Борка, работаю зазывалой в этом борделе. Еще вопросы есть?
-	AI_Output(other,self,"DIA_Borka_Hello_01_02");	//Думаю, нет.
-	AI_Output(self,other,"DIA_Borka_Hello_01_03");	//Тогда либо входи, либо проваливай - у меня нет времени на пустые разговоры.
+	AI_Output(self,other, " DIA_Borka_Hello_01_01 " );	// I'm Borka, I work as a barker in this brothel. Any questions?
+	AI_Output(other,self, " DIA_Borka_Hello_01_02 " );	// I don't think so.
+	AI_Output(self,other, " DIA_Borka_Hello_01_03 " );	// Then get in or get out - I don't have time for idle talk.
 	AI_StopProcessInfos(self);
 };
 
@@ -143,7 +144,7 @@ instance DIA_BORKA_WHATNEW(C_Info)
 	condition = dia_borka_whatnew_condition;
 	information = dia_borka_whatnew_info;
 	permanent = TRUE;
-	description = "Как жизнь?";
+	description = " How are you? " ;
 };
 
 
@@ -157,8 +158,8 @@ func int dia_borka_whatnew_condition()
 
 func void dia_borka_whatnew_info()
 {
-	AI_Output(other,self,"DIA_Borka_WhatNew_01_00");	//Как жизнь?
-	AI_Output(self,other,"DIA_Borka_WhatNew_01_01");	//(раздраженно) Отстань от меня...
+	AI_Output(other,self, " DIA_Borka_WhatNew_01_00 " );	// How's life?
+	AI_Output(self,other, " DIA_Borka_WhatNew_01_01 " );	// (annoyed) Get off me...
 	AI_StopProcessInfos(self);
 };
 
@@ -170,7 +171,7 @@ instance DIA_Borka_Smoke(C_Info)
 	condition = DIA_Borka_Smoke_Condition;
 	information = DIA_Borka_Smoke_Info;
 	permanent = TRUE;
-	description = "Ты не знаешь, где можно купить травки?";
+	description = " Do you know where you can buy weed? " ;
 };
 
 
@@ -184,8 +185,8 @@ func int DIA_Borka_Smoke_Condition()
 
 func void DIA_Borka_Smoke_Info()
 {
-	AI_Output(other,self,"DIA_Borka_Smoke_15_00");	//Ты не знаешь, где можно купить травки?
-	AI_Output(self,other,"DIA_Borka_Smoke_11_01");	//Нет, проваливай!
+	AI_Output(other,self, " DIA_Borka_Smoke_15_00 " );	// Do you know where you can buy weed?
+	AI_Output(self,other, " DIA_Borka_Smoke_11_01 " );	// No, get lost!
 	AI_StopProcessInfos(self);
 };
 
@@ -197,7 +198,7 @@ instance DIA_Borka_BUYHERB(C_Info)
 	condition = DIA_Borka_BUYHERB_Condition;
 	information = DIA_Borka_BUYHERB_Info;
 	permanent = TRUE;
-	description = "Я слышал, ты продаешь травку.";
+	description = " I heard you sell weed. " ;
 };
 
 
@@ -213,44 +214,44 @@ func void DIA_Borka_BUYHERB_Info()
 {
 	var C_Item heroArmor;
 	heroArmor = Npc_GetEquippedArmor(other);
-	AI_Output(other,self,"DIA_Borka_BUYHERB_15_00");	//Я слышал, ты продаешь травку.
+	AI_Output(other,self, " DIA_Borka_BUYHERB_15_00 " );	// I heard you sell weed.
 
 	if((Hlp_IsItem(heroArmor,ITAR_Mil_L) == TRUE) || (Hlp_IsItem(heroArmor,ITAR_TOWNGUARD) == TRUE))
 	{
-		AI_Output(self,other,"DIA_Borka_BUYHERB_11_01");	//Извините, господин стражник. Это, должно быть, какая-то ошибка! Я ничего не знаю ни о какой травке.
+		AI_Output(self,other, " DIA_Borka_BUYHERB_11_01 " );	// Sorry, mister guard. It must be some kind of mistake! I don't know anything about any weed.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Borka_BUYHERB_11_02");	//Кто это сказал?
+		AI_Output(self,other, " DIA_Borka_BUYHERB_11_02 " );	// Who said that?
 		Info_ClearChoices(DIA_Borka_BUYHERB);
-		Info_AddChoice(DIA_Borka_BUYHERB,"Я думаю, это не важно.",DIA_Borka_BUYHERB_Egal);
-		Info_AddChoice(DIA_Borka_BUYHERB,"Надя сказала.",DIA_Borka_BUYHERB_Nadja);
+		Info_AddChoice(DIA_Borka_BUYHERB, " I don't think it matters. " ,DIA_Borka_BUYHERB_Egal);
+		Info_AddChoice(DIA_Borka_BUYHERB, " Nadja said. " ,DIA_Borka_BUYHERB_Nadja);
 	};
 };
 
 func void DIA_Borka_BUYHERB_Egal()
 {
-	AI_Output(other,self,"DIA_Borka_BUYHERB_Egal_15_00");	//Я думаю, это не важно.
-	AI_Output(self,other,"DIA_Borka_BUYHERB_Egal_11_01");	//Я просто хочу знать, кто прислал тебя, чтобы удостовериться, что тебе можно доверять.
+	AI_Output(other,self, " DIA_Borka_BUYHERB_Egal_15_00 " );	// I don't think it matters.
+	AI_Output(self,other, " DIA_Borka_BUYHERB_Egal_11_01 " );	// I just want to know who sent you to make sure you can be trusted.
 	Info_ClearChoices(DIA_Borka_BUYHERB);
-	Info_AddChoice(DIA_Borka_BUYHERB,"Надя сказала.",DIA_Borka_BUYHERB_Nadja);
-	Info_AddChoice(DIA_Borka_BUYHERB,"Так мы с тобой договоримся или нет?",DIA_Borka_BUYHERB_Deal);
+	Info_AddChoice(DIA_Borka_BUYHERB, " Nadja said. " ,DIA_Borka_BUYHERB_Nadja);
+	Info_AddChoice(DIA_Borka_BUYHERB, " So, shall we agree or not? " ,DIA_Borka_BUYHERB_Deal);
 };
 
 func void DIA_Borka_BUYHERB_Nadja()
 {
-	AI_Output(other,self,"DIA_Borka_BUYHERB_NADJA_15_00");	//Надя сказала.
-	AI_Output(self,other,"DIA_Borka_BUYHERB_NADJA_11_01");	//Ну, эта пташка еще и не такое напоет. Знаешь, тебе не стоит верить всему, что болтает эта девка.
-	Nadja_Victim = TRUE;
+	AI_Output(other,self, " DIA_Borka_BUYHERB_NADJA_15_00 " );	// Nadia said.
+	AI_Output(self,other, " DIA_Borka_BUYHERB_NADJA_11_01 " );	// Well, this bird won't sing like that. You know, you shouldn't believe everything that girl says.
+	Nadja_Victim = TRUE ;
 	Undercover_Failed = TRUE;
 	Info_ClearChoices(DIA_Borka_BUYHERB);
 };
 
 func void DIA_Borka_BUYHERB_Deal()
 {
-	AI_Output(other,self,"DIA_Borka_BUYHERB_Deal_15_00");	//Так мы с тобой договоримся или нет?
+	AI_Output(other,self, " DIA_Borka_BUYHERB_Deal_15_00 " );	// So we will agree or not?
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_Borka_BUYHERB_Deal_11_01");	//Хорошо... договоримся. Ты даешь мне пятьдесят золотых монет, и получаешь свою травку. Никакой торговли!
+	AI_Output(self,other, " DIA_Borka_BUYHERB_Deal_11_01 " );	// Okay... let's agree. You give me fifty gold coins and you get your weed. No trading!
 	Info_ClearChoices(DIA_Borka_BUYHERB);
 	Borka_Deal = TRUE;
 };
@@ -263,14 +264,14 @@ instance DIA_Borka_SECOND_CHANCE(C_Info)
 	condition = DIA_Borka_SECOND_CHANCE_Condition;
 	information = DIA_Borka_SECOND_CHANCE_Info;
 	permanent = TRUE;
-	description = "Договорились! Вот твое золото.";
+	description = " Deal! Here's your gold. " ;
 };
 
 func int DIA_Borka_SECOND_CHANCE_Condition()
 {
 	var C_Item heroArmor;
 	heroArmor = Npc_GetEquippedArmor(other);
-	if((Borka_Deal == TRUE) && (Npc_HasItems(other,ItMi_Gold) >= 50) && (Hlp_IsItem(heroArmor,ITAR_Mil_L) == FALSE) && (Hlp_IsItem(heroArmor,ITAR_TOWNGUARD) == FALSE))
+	if ((Borka_Deal ==  TRUE ) && (Npc_HasItems(other,ItMi_Gold) >=  50 ) && (Hlp_IsItem(heroArmor,ITAR_Mil_L) ==  FALSE ) && (Hlp_IsItem(heroArmor, ITAR_TOWNGUARD ) ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -278,13 +279,13 @@ func int DIA_Borka_SECOND_CHANCE_Condition()
 
 func void DIA_Borka_SECOND_CHANCE_Info()
 {
-	AI_Output(other,self,"DIA_Borka_SECOND_CHANCE_15_00");	//Договорились! Вот твое золото.
+	AI_Output(other,self, " DIA_Borka_SECOND_CHANCE_15_00 " );	// Agreed! Here is your gold.
 	B_GiveInvItems(hero,self,ItMi_Gold,50);
 	AI_Output(self,other,"DIA_Borka_SECOND_CHANCE_11_01");	//Хорошо...
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_Borka_SECOND_CHANCE_11_02");	//... вот, держи свежий, смолистый косячок.
+	AI_Output(self,other, " DIA_Borka_SECOND_CHANCE_11_02 " );	// ... here, have a fresh, resinous joint.
 	B_GiveInvItems(self,hero,ItMi_Joint,1);
-	Borka_Deal = 2;
+	Borka_Deal = 2 ;
 	AI_StopProcessInfos(self);
 };
 
