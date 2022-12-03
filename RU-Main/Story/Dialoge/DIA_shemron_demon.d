@@ -1,4 +1,5 @@
 
+
 instance DIA_SHEMRON_DEMON_EXIT(C_Info)
 {
 	npc = shemron_demon;
@@ -38,7 +39,7 @@ instance DIA_SHEMRON_DEMON_HELLO(C_Info)
 
 func int dia_shemron_demon_hello_condition()
 {
-	if((SHEMRON_TALK == FALSE) && (KNOWDEMENTORLANGUAGE == TRUE) && (Npc_HasItems(other,itmi_darkshpere) >= 1))
+	if (( SHEMRON_TALK  ==  FALSE ) && ( KNOWDEMENTORLANGUAGE  ==  TRUE ) && ( Npc_HasItems ( other , itmi_darkshpere ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -47,91 +48,91 @@ func int dia_shemron_demon_hello_condition()
 func void dia_shemron_demon_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_00");	//Человек!?...(рычит) А я то думал - что за сумасшедший посмел потревожить мой покой!!!
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_01");	//Ты видно сам не осознал до сих пор, во что ввязался придя сюда...
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_02");	//Но скоро ты это поймешь...(зловеще)
-	AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_03");	//Кто ты, порождение тьмы?! Еще один прихвостень Белиара?
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_04");	//Глупый человек!...(смеется) Мой создатель не Темный бог!
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_06");	//Я - Шемрон, пятый демон легиона Элигора, верный страж Хранителей божественной Тьмы, чью мудрость хранит ночь!
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_00 " );	// Man!?... (growls) And I thought - what kind of madman dared to disturb my peace!!!
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_01 " );	// You obviously haven't realized until now what you got yourself into when you came here...
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_02 " );	// But soon you will understand... (ominously)
+	AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_03 " );	// Who are you, a creature of darkness?! Another henchman of Beliar?
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_04 " );	// Stupid human!...(laughs) My creator is not the Dark God!
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_06 " );	// I am Shemron, the fifth demon of the legion of Eligor, the faithful guardian of the Keepers of the divine Darkness, whose wisdom keeps the night!
 	self.name[0] = "Шемррон";
 	SHEMRONKNOWS = TRUE;
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_07");	//По их приказу я оберегаю то, что ты - жалкий вор, только что украл.
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_08");	//И сейчас я позабочусь о том, чтобы это больше никогда не повторилось...(рычит)
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_07 " );	// On their orders, I guard what you - a pathetic thief, just stole.
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_08 " );	// And now I'll make sure this never happens again... (growls)
 	if(GUARDIAN_WAY == TRUE)
 	{
-		AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_09");	//Постой. Ты сказал, Хранителей? Ты хочешь сказать, что ты, демон, служишь Хранителям?
-		AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_11");	//М-да, вот так сюрприз... Хранители никогда не упоминали, что у них есть подобного рода слуги.
-		AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_13");	//Хмм...не хочешь ли ты сказать жалкий червяк, что имеешь хотя бы какое-то представление о том, о чем только что сказал!
+		AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_09 " );	// Wait. Did you say Guardians? Are you saying that you, demon, serve the Guardians?
+		AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_11 " );	// Hmm, what a surprise... The Keepers never mentioned that they had this kind of servant.
+		AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_13 " );	// Hmm...would you like to say you pathetic worm that you have at least some idea of ​​what you just said!
 		if(ADEPTGUARDIAN == TRUE)
 		{
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_14");	//Я посвящен в священный Круг Хранителей и являюсь их адептом.
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_15");	//Не думаю, что им понравится, если со мной вдруг случиться что-нибудь плохое.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_14 " );	// I am initiated into the sacred Circle of Guardians and am their adept.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_15 " );	// I don't think they'd like it if something bad happened to me.
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_16");	//Я встречал Хранителей и они указали мне путь, которому я начал следовать.
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_17");	//Не думаю, что им понравится, если со мной вдруг случиться что-нибудь плохое...
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_16 " );	// I met the Guardians and they showed me the path that I started to follow.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_17 " );	// I don't think they'd like it if something bad happened to me...
 		};
-		AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_18");	//Быть того не может! Я не верю ни одному твоему слову, жалкий человек!
-		AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_19");	//Немыслимо, чтобы Стражи Стихий обратили свой взор на такого паршивого червя, как ты...(рычит)
-		AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_20");	//Я говорю правду!
-		AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_21");	//Иначе как по-твоему я бы вообще смог с тобой разговаривать. Именно Хранители научили меня языку демонов.
-		AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_22");	//Да...это очень странно, что ты владеешь этим знанием. Но этого не достаточно для того, чтобы я поверил тебе.
-		AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_24");	//Если ты сможешь доказать то, что действительно тот за кого себя выдаешь то...
-		AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_25");	//...то возможно я не стану сейчас разрывать твою плоть на куски. Хотя сейчас мне очень хочется это сделать!...(рычит)
+		AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_18 " );	// It can't be! I don't believe a single word you say, miserable man!
+		AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_19 " );	// It's unthinkable that the Elemental Guardians would turn their eyes on a lousy worm like you... (growls)
+		AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_20 " );	// I'm telling the truth!
+		AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_21 " );	// Otherwise, how do you think I would even be able to talk to you. It was the Guardians who taught me the language of demons.
+		AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_22 " );	// Yes... it's very strange that you have this knowledge. But that's not enough for me to believe you.
+		AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_24 " );	// If you can prove that you really are who you say you are...
+		AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_25 " );	// ...then maybe I won't tear your flesh to pieces now. Although now I really want to do it! ... (growls)
 		if(Npc_HasItems(other,itri_guardians_01) >= 1)
 		{
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_26");	//У меня есть это кольцо. Его мне дал Хранитель Дагот во время нашей первой встречи.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_27");	//...(рычит) Кольцо Баала!!!... Только Хранитель мог дать тебе эту вещь.
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_28");	//Теперь ты мне веришь?
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_29");	//Да. Этого вполне достаточно!
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_30");	//Я сохраню тебе жизнь, человек. Но то, что ты забрал - все равно останется здесь.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_31");	//Сфера покинет это место только в том случае, если на то будет воля Хранителей.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_32");	//Отдай мне ее.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_26 " );	// I have this ring. It was given to me by the Guardian Dagoth during our first meeting.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_27 " );	// ...(growls) Ring of Bhaal!!!... Only the Keeper could give you this thing.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_28 " );	// Do you believe me now?
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_29 " );	// Yes. This is quite enough!
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_30 " );	// I'll keep you alive, human. But what you took will still be here.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_31 " );	// The sphere will only leave this place if it is the will of the Guardians.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_32 " );	// Give it to me.
 			Info_ClearChoices(dia_shemron_demon_hello);
-			Info_AddChoice(dia_shemron_demon_hello,"Хорошо! Вот возьми ее.",dia_shemron_demon_hello_ok);
-			Info_AddChoice(dia_shemron_demon_hello,"Мне она нужна самому.",dia_shemron_demon_hello_no);
+			Info_AddChoice(dia_shemron_demon_hello, " Good! Here, take her. " ,dia_shemron_demon_hello_ok);
+			Info_AddChoice(dia_shemron_demon_hello, " I need it myself. " ,dia_shemron_demon_hello_no);
 			if(MIS_STONNOSTEST == LOG_Running)
 			{
-				Info_AddChoice(dia_shemron_demon_hello,"Хранителю Стонносу нужна эта Сфера...",dia_shemron_demon_hello_stonnos);
+				Info_AddChoice(dia_shemron_demon_hello, " Guardian Stonnos needs this Orb... " ,dia_shemron_demon_hello_stonnos);
 			};
 		}
 		else if(Npc_HasItems(other,itri_guardians_02) >= 1)
 		{
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_33");	//У меня есть это кольцо адепта священного круга. Хранитель Стоннос дал его мне при посвящении.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_34");	//...(рычит) Кольцо Стихий!!!... Только Хранитель мог дать тебе эту вещь.
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_35");	//Теперь ты мне веришь?
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_36");	//Да. Этого вполне достаточно!
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_37");	//Я сохраню тебе жизнь, человек. Но то, что ты забрал - все равно останется здесь.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_38");	//Сфера покинет это место только в том случае, если на то будет воля Хранителей.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_39");	//Отдай мне ее.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_33 " );	// I have this holy circle adept's ring. Guardian Stonnos gave it to me at the initiation.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_34 " );	// ...(growls) Ring of Elements!!!... Only the Guardian could give you this thing.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_35 " );	// Do you believe me now?
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_36 " );	// Yes. This is quite enough!
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_37 " );	// I'll keep you alive, human. But what you took will still be here.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_38 " );	// The sphere will only leave this place if it is the will of the Guardians.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_39 " );	// Give it to me.
 			Info_ClearChoices(dia_shemron_demon_hello);
-			Info_AddChoice(dia_shemron_demon_hello,"Хорошо! Вот возьми ее.",dia_shemron_demon_hello_ok);
-			Info_AddChoice(dia_shemron_demon_hello,"Мне она нужна самому.",dia_shemron_demon_hello_no);
+			Info_AddChoice(dia_shemron_demon_hello, " Good! Here, take her. " ,dia_shemron_demon_hello_ok);
+			Info_AddChoice(dia_shemron_demon_hello, " I need it myself. " ,dia_shemron_demon_hello_no);
 			if(MIS_STONNOSTEST == LOG_Running)
 			{
-				Info_AddChoice(dia_shemron_demon_hello,"Хранителю Стонносу нужна эта Сфера...",dia_shemron_demon_hello_stonnos);
+				Info_AddChoice(dia_shemron_demon_hello, " Guardian Stonnos needs this Orb... " ,dia_shemron_demon_hello_stonnos);
 			};
 		}
-		else if(Npc_HasItems(other,itri_narus) >= 1)
+		else  if ( Npc_HasItems ( other , itri_narus ) >=  1 )
 		{
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_40");	//У меня есть это кольцо. Его мне дал Хранитель Вакон во время нашей первой встречи.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_41");	//...(рычит) Кольцо Воды!!!... Только Хранитель мог дать тебе эту вещь.
-			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_42");	//Теперь ты мне веришь?
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_43");	//Да. Этого вполне достаточно!
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_44");	//Я сохраню тебе жизнь, человек. Но то, что ты забрал - все равно останется здесь.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_45");	//Ты мудро поступил человек! В противном случае ты был бы сейчас уже мертв.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_40 " );	// I have this ring. It was given to me by Guardian Vakon during our first meeting.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_41 " );	// ...(growls) Ring of Water!!!... Only the Keeper could give you this thing.
+			AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_42 " );	// Do you believe me now?
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_43 " );	// Yes. This is quite enough!
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_44 " );	// I'll keep you alive, human. But what you took will still be here.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_45 " );	// You acted wisely man! Otherwise, you would be dead by now.
 			Info_ClearChoices(dia_shemron_demon_hello);
-			Info_AddChoice(dia_shemron_demon_hello,"Хорошо! Вот возьми ее.",dia_shemron_demon_hello_ok);
-			Info_AddChoice(dia_shemron_demon_hello,"Мне она нужна самому.",dia_shemron_demon_hello_no);
+			Info_AddChoice(dia_shemron_demon_hello, " Good! Here, take her. " ,dia_shemron_demon_hello_ok);
+			Info_AddChoice(dia_shemron_demon_hello, " I need it myself. " ,dia_shemron_demon_hello_no);
 			if(MIS_STONNOSTEST == LOG_Running)
 			{
-				Info_AddChoice(dia_shemron_demon_hello,"Хранителю Стонносу нужна эта Сфера...",dia_shemron_demon_hello_stonnos);
+				Info_AddChoice(dia_shemron_demon_hello, " Guardian Stonnos needs this Orb... " ,dia_shemron_demon_hello_stonnos);
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_47");	//Теперь продолжай свой путь! Возможно когда-нибудь наши дороги вновь пересекуться.
+			AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_47 " );	// Now continue on your way! Maybe someday our paths will cross again.
 			AI_StopProcessInfos(self);
 			Snd_Play("MFX_FEAR_CAST");
 			B_Attack(self,other,AR_SuddenEnemyInferno,1);
@@ -153,36 +154,36 @@ func void dia_shemron_demon_hello_info()
 
 func void dia_shemron_demon_hello_stonnos()
 {
-	AI_Output(other,self,"DIA_Shemron_Demon_Hello_Stonnos_01_01");	//Хранителю Стонносу нужна эта Сфера и я намереваюсь во чтобы то ни стало выполнить его поручение.
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_Stonnos_01_03");	//Стоннос?! Хммм...(рычит) Ну раз так, тогда в этом нет необходимости, человек.
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_Stonnos_01_04");	//Если все, что ты говоришь - правда, и тебя сюда прислал сам верховный Хранитель Стоннос - то я более не смеею тебя задерживать!
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_Stonnos_01_05");	//Можешь оставить эту Сферу себе и продолжить свой путь!
+	AI_Output(other,self, " DIA_Shemron_Demon_Hello_Stonnos_01_01 " );	// Keeper Stonnos needs this Orb, and I intend to do whatever it takes to fulfill his errand.
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_Stonnos_01_03 " );	// Stonnos?! Hmmm... (growls) Well, if that's the case, then there's no need for that, human.
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_Stonnos_01_04 " );	// If everything you say is true, and High Guardian Stonnos himself sent you here, then I don't dare to detain you any longer!
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_Stonnos_01_05 " );	// You can keep this Orb for yourself and continue on your way!
 	GIVESHEPHRESHEMRONBACK = TRUE;
 	AI_StopProcessInfos(self);
 	SHEMRON_TALK = TRUE;
 	SHEMRON_FIGHT = FALSE;
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	self.start_aistate = zs_mm_rtn_demonrest;
 };
 
 func void dia_shemron_demon_hello_ok()
 {
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_44");	//Я сохраню тебе жизнь, человек. Но то, что ты забрал - все равно останется здесь.
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_44 " );	// I'll keep you alive, human. But what you took will still be here.
 	B_GiveInvItems(other,self,itmi_darkshpere,1);
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_45");	//Ты мудро поступил человек! В противном случае ты был бы сейчас уже мертв.
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_47");	//Теперь продолжай свой путь! Возможно когда-нибудь наши дороги вновь пересекуться.
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_45 " );	// You acted wisely man! Otherwise, you would be dead by now.
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_47 " );	// Now continue on your way! Maybe someday our paths will cross again.
 	AI_StopProcessInfos(self);
 	SHEMRON_TALK = TRUE;
 	SHEMRON_FIGHT = FALSE;
 	GIVESHEPHRESHEMRON = TRUE;
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
 
 func void dia_shemron_demon_hello_no()
 {
-	AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_48");	//Мне она нужна самому.
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_49");	//Ну это мы еще посмотрим.
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_51");	//Ха ха ха...(рычит) Возможно, ты и хороший боец, но со мной тебе не совладать!
+	AI_Output(other,self, " DIA_Shemron_Demon_Hello_01_48 " );	// I need it myself.
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_49 " );	// Well, we'll see about that.
+	AI_Output(self,other, " DIA_Shemron_Demon_Hello_01_51 " );	// Ha ha ha... (growls) You may be a good fighter, but you can't handle me!
 	AI_StopProcessInfos(self);
 	Snd_Play("MFX_FEAR_CAST");
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
@@ -199,7 +200,7 @@ instance DIA_SHEMRON_DEMON_BACKSHEPHRE(C_Info)
 	condition = dia_shemron_demon_backshephre_condition;
 	information = dia_shemron_demon_backshephre_info;
 	permanent = FALSE;
-	description = "Хранителю Стонносу нужна Сфера Тьмы!";
+	description = " Guardian Stonnos needs a Shadow Orb! " ;
 };
 
 
@@ -213,16 +214,16 @@ func int dia_shemron_demon_backshephre_condition()
 
 func void dia_shemron_demon_backshephre_info()
 {
-	AI_Output(other,self,"DIA_Shemron_Demon_BackShephre_01_01");	//Хранителю Стонносу нужна Сфера Тьмы! И я намереваюсь во чтобы то ни стало выполнить его поручение.
-	AI_Output(self,other,"DIA_Shemron_Demon_BackShephre_01_03");	//Стоннос?! Хммм...(рычит) Ну раз так, тогда в этом нет необходимости, человек.
-	AI_Output(self,other,"DIA_Shemron_Demon_BackShephre_01_04");	//Если все, что ты говоришь - правда, и тебя сюда прислал сам глава священного круга - то тогда ты можешь совершенно спокойно забрать ее у меня!
-	AI_Output(self,other,"DIA_Shemron_Demon_BackShephre_01_05");	//Вот, возьми этот магический артефакт и отнеси его верховному Хранителю!
+	AI_Output(other,self, " DIA_Shemron_Demon_BackShephre_01_01 " );	// Keeper Stonnos needs a Shadow Orb! And I intend to do whatever it takes to carry out his order.
+	AI_Output(self,other, " DIA_Shemron_Demon_BackShephre_01_03 " );	// Stonnos?! Hmmm... (growls) Well, if that's the case, then there's no need for that, human.
+	AI_Output(self,other, " DIA_Shemron_Demon_BackShephre_01_04 " );	// If everything you say is true, and the head of the sacred circle himself sent you here - then you can safely take it from me!
+	AI_Output(self,other, " DIA_Shemron_Demon_BackShephre_01_05 " );	// Here, take this magical artifact and take it to the High Guardian!
 	B_GiveInvItems(self,other,itmi_darkshpere,1);
 	GIVESHEPHRESHEMRONBACK = TRUE;
 	AI_StopProcessInfos(self);
 	SHEMRON_TALK = TRUE;
 	SHEMRON_FIGHT = FALSE;
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	self.start_aistate = zs_mm_rtn_demonrest;
 };
 
