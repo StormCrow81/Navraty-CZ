@@ -1,7 +1,8 @@
 
+
 instance DIA_Addon_Tonak_NW_EXIT(C_Info)
 {
-	npc = STRF_1125_Addon_Tonak_NW;
+	npc = STRF_1125_Addon_Tons_NW;
 	nr = 999;
 	condition = DIA_Addon_Tonak_NW_EXIT_Condition;
 	information = DIA_Addon_Tonak_NW_EXIT_Info;
@@ -21,14 +22,14 @@ func void DIA_Addon_Tonak_NW_EXIT_Info()
 };
 
 
-instance DIA_Addon_Tonak_NW_Hi(C_Info)
+instance DIA_Addon_Tonak_NW_Hi (C_Info) .
 {
-	npc = STRF_1125_Addon_Tonak_NW;
+	npc = STRF_1125_Addon_Tons_NW;
 	nr = 2;
 	condition = DIA_Addon_Tonak_NW_Hi_Condition;
 	information = DIA_Addon_Tonak_NW_Hi_Info;
 	permanent = FALSE;
-	description = "Вернулся к работе на поле?";
+	description = " Back to field work? " ;
 };
 
 
@@ -40,19 +41,19 @@ func int DIA_Addon_Tonak_NW_Hi_Condition()
 func void DIA_Addon_Tonak_NW_Hi_Info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Addon_Tonak_NW_Hi_15_00");	//Вернулся к работе на поле?
-	AI_Output(self,other,"DIA_Addon_Tonak_NW_Hi_03_01");	//Эй, ты же парень, который спас мне жизнь! Да, я снова тружусь.
+	AI_Output(other,self, " DIA_Addon_Tonak_NW_Hi_15_00 " );	// Back to field work?
+	AI_Output(self,other, " DIA_Addon_Tonak_NW_Hi_03_01 " );	// Hey, you're the guy who saved my life! Yes, I'm working again.
 
-	if(!Npc_IsDead(Egill) && !Npc_IsDead(Ehnim))
+	if ( ! Npc_IsDead(Egill) &&  ! Npc_IsDead(Ehnim))
 	{
-		AI_Output(self,other,"DIA_Addon_Tonak_NW_Hi_03_02");	//Особенно тяжело приходится с этими чокнутыми братьями. Черт, даже с бандитами было проще...
+		AI_Output(self,other, " DIA_Addon_Tonak_NW_Hi_03_02 " );	// It's especially hard with these crazy brothers. Hell, even with bandits it was easier...
 	};
 };
 
 
 instance DIA_Addon_Tonak_NW_PICKPOCKET(C_Info)
 {
-	npc = STRF_1125_Addon_Tonak_NW;
+	npc = STRF_1125_Addon_Tons_NW;
 	nr = 900;
 	condition = DIA_Addon_Tonak_NW_PICKPOCKET_Condition;
 	information = DIA_Addon_Tonak_NW_PICKPOCKET_Info;
@@ -63,19 +64,19 @@ instance DIA_Addon_Tonak_NW_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Tonak_NW_PICKPOCKET_Condition()
 {
-	return C_Beklauen(80,160);
+	return  C_Robbery ( 80 , 160 );
 };
 
 func void DIA_Addon_Tonak_NW_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Addon_Tonak_NW_PICKPOCKET);
 	Info_AddChoice(DIA_Addon_Tonak_NW_PICKPOCKET,Dialog_Back,DIA_Addon_Tonak_NW_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Addon_Tonak_NW_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Addon_Tonak_NW_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Addon_Tonak_NW_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Addon_Tonak_NW_PICKPOCKET_DoIt);
 };
 
 func void DIA_Addon_Tonak_NW_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Tonak_NW_PICKPOCKET);
 };
 
