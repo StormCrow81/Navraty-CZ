@@ -1,4 +1,5 @@
 
+
 instance DIA_OW_CSP_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,13 +27,13 @@ instance DIA_OW_CSP_PEOPLE(C_Info)
 	condition = dia_ow_csp_people_condition;
 	information = dia_ow_csp_people_info;
 	permanent = TRUE;
-	description = "Кто у вас командир?";
+	description = " Who is your commander? " ;
 };
 
 
 func int dia_ow_csp_people_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -40,15 +41,15 @@ func int dia_ow_csp_people_condition()
 
 func void dia_ow_csp_people_info()
 {
-	AI_Output(other,self,"DIA_OW_CSP_People_15_00");	//Кто у вас командир?
-	AI_Output(self,other,"DIA_OW_CSP_People_04_01");	//Нашим отрядом сейчас командует паладин Альберт.
+	AI_Output(other,self, " DIA_OW_CSP_People_15_00 " );	// Who is your commander?
+	AI_Output(self,other, " DIA_OW_CSP_People_04_01 " );	// Our squad is now led by paladin Albert.
 	if(Npc_GetDistToWP(self,"WP_COAST_FOREST_126") > 1000)
 	{
-		AI_Output(self,other,"DIA_OW_CSP_People_04_02");	//Ты найдешь его в глубине этой пещеры.
+		AI_Output(self,other, " DIA_OW_CSP_People_04_02 " );	// You will find him deep in this cave.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_OW_CSP_People_04_03");	//Ты найдешь его в пещере, где мы расположились.
+		AI_Output(self,other, " DIA_OW_CSP_People_04_03 " );	// You'll find him in the cave where we camped.
 	};
 };
 
@@ -59,13 +60,13 @@ instance DIA_OW_CSP_LOCATION(C_Info)
 	condition = dia_ow_csp_location_condition;
 	information = dia_ow_csp_location_info;
 	permanent = TRUE;
-	description = "Что ты можешь рассказать о местности?";
+	description = " What can you tell us about the area? " ;
 };
 
 
 func int dia_ow_csp_location_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -73,20 +74,20 @@ func int dia_ow_csp_location_condition()
 
 func void dia_ow_csp_location_info()
 {
-	AI_Output(other,self,"DIA_OW_CSP_Location_15_00");	//Что ты можешь рассказать о местности?
+	AI_Output(other,self, " DIA_OW_CSP_Location_15_00 " );	// What can you tell us about the area?
 	if(Npc_GetDistToWP(self,"WP_COAST_FOREST_126") > 1000)
 	{
-		AI_Output(self,other,"DIA_OW_CSP_Location_04_01");	//Наверху над нами находится лагерь бывших каторжников.
-		AI_Output(self,other,"DIA_OW_CSP_Location_04_02");	//Хотя они и не почитают Инноса, но однако с ними все же можно иметь дело.
-		AI_Output(self,other,"DIA_OW_CSP_Location_04_03");	//За рекой достаточно опасный лес, но орков в нем нет.
-		AI_Output(self,other,"DIA_OW_CSP_Location_04_04");	//Все они внизу, на побережье - у них там вроде лагеря.
+		AI_Output(self,other, " DIA_OW_CSP_Location_04_01 " );	// Above us is a camp of former convicts.
+		AI_Output(self,other, " DIA_OW_CSP_Location_04_02 " );	// Although they do not revere Innos, they can still be dealt with.
+		AI_Output(self,other, " DIA_OW_CSP_Location_04_03 " );	// Across the river is a rather dangerous forest, but there are no orcs in it.
+		AI_Output(self,other, " DIA_OW_CSP_Location_04_04 " );	// They're all down on the coast - they kind of have a camp there.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_OW_CSP_Location_04_05");	//На востоке за забором - орки. На западе тоже опасно - там тролли, множество кровожадных тварей!
-		AI_Output(self,other,"DIA_OW_CSP_Location_04_06");	//На юге проход за забор - его тоже охраняют орки.
-		AI_Output(self,other,"DIA_OW_CSP_Location_04_07");	//А на севере в скале - пещера, в которой расположена наша группа.
-		AI_Output(self,other,"DIA_OW_CSP_Location_04_08");	//Ты всегда можешь найти там защиту.
+		AI_Output(self,other, " DIA_OW_CSP_Location_04_05 " );	// In the east behind the fence - orcs. It is also dangerous in the west - there are trolls, a lot of bloodthirsty creatures!
+		AI_Output(self,other, " DIA_OW_CSP_Location_04_06 " );	// In the south there is a passage behind the fence - it is also guarded by orcs.
+		AI_Output(self,other, " DIA_OW_CSP_Location_04_07 " );	// And in the north in the rock is the cave in which our group is located.
+		AI_Output(self,other, " DIA_OW_CSP_Location_04_08 " );	// You can always find protection there.
 	};
 };
 
@@ -97,13 +98,13 @@ instance DIA_OW_CSP_LOCATION2(C_Info)
 	condition = dia_ow_csp_location2_condition;
 	information = dia_ow_csp_location2_info;
 	permanent = TRUE;
-	description = "Что ты можешь рассказать о местности?";
+	description = " What can you tell us about the area? " ;
 };
 
 
 func int dia_ow_csp_location2_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -111,19 +112,19 @@ func int dia_ow_csp_location2_condition()
 
 func void dia_ow_csp_location2_info()
 {
-	AI_Output(other,self,"DIA_OW_CSP_Location2_15_00");	//Что ты можешь рассказать о местности?
+	AI_Output(other,self, " DIA_OW_CSP_Location2_15_00 " );	// What can you tell us about the area?
 	if(Npc_GetDistToWP(self,"WP_COAST_FOREST_126") > 1000)
 	{
-		AI_Output(self,other,"DIA_OW_CSP_Location2_04_01");	//Наверху над нами находится лагерь бывших каторжников.
-		AI_Output(self,other,"DIA_OW_CSP_Location2_04_02");	//За рекой довольно опасный лес, но орков там нет.
-		AI_Output(self,other,"DIA_OW_CSP_Location2_04_03");	//Все они внизу, на побережье - у них там вроде лагеря.
+		AI_Output(self,other, " DIA_OW_CSP_Location2_04_01 " );	// Above us is a camp of former convicts.
+		AI_Output(self,other, " DIA_OW_CSP_Location2_04_02 " );	// Across the river is a rather dangerous forest, but there are no orcs there.
+		AI_Output(self,other, " DIA_OW_CSP_Location2_04_03 " );	// They're all down on the coast - they kind of have a camp there.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_OW_CSP_Location2_04_05");	//На востоке, за забором - орки. На западе тоже опасно - там тролли, множество кровожадных тварей!
-		AI_Output(self,other,"DIA_OW_CSP_Location2_04_06");	//На юге проход за забор - его тоже охраняют орки.
-		AI_Output(self,other,"DIA_OW_CSP_Location2_04_07");	//А на севере в скале - пещера, в которой расположена наша группа.
-		AI_Output(self,other,"DIA_OW_CSP_Location2_04_08");	//Ты всегда можешь найти там защиту.
+		AI_Output(self,other, " DIA_OW_CSP_Location2_04_05 " );	// In the east, behind the fence - orcs. It is also dangerous in the west - there are trolls, a lot of bloodthirsty creatures!
+		AI_Output(self,other, " DIA_OW_CSP_Location2_04_06 " );	// In the south there is a passage behind the fence - it is also guarded by orcs.
+		AI_Output(self,other, " DIA_OW_CSP_Location2_04_07 " );	// And in the north in the rock is the cave in which our group is located.
+		AI_Output(self,other, " DIA_OW_CSP_Location2_04_08 " );	// You can always find protection there.
 	};
 };
 
@@ -134,13 +135,13 @@ instance DIA_OW_CSP_STANDARD(C_Info)
 	condition = dia_ow_csp_standard_condition;
 	information = dia_ow_csp_standard_info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
 func int dia_ow_csp_standard_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -148,31 +149,31 @@ func int dia_ow_csp_standard_condition()
 
 func void dia_ow_csp_standard_info()
 {
-	AI_Output(other,self,"DIA_OW_CSP_Standard_15_00");	//Как обстановка?
-	if(Kapitel <= 3)
+	AI_Output(other,self, " DIA_OW_CSP_Standard_15_00 " );	// How setting?
+	if (chapter <=  3 )
 	{
-		AI_Output(self,other,"DIA_OW_CSP_Standard_04_01");	//Пока все тихо! Но наши мысли сейчас с теми, кто остался в крепости.
+		AI_Output(self,other, " DIA_OW_CSP_Standard_04_01 " );	// All is quiet for now! But our thoughts are now with those who remained in the fortress.
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		if(MIS_KilledDragons < 4)
 		{
-			AI_Output(self,other,"DIA_OW_CSP_Standard_04_02");	//Драконы почти перестали тут летать, зато орков стало еще больше.
+			AI_Output(self,other, " DIA_OW_CSP_Standard_04_02 " );	// Dragons have almost stopped flying here, but there are even more orcs.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_OW_CSP_Standard_04_05");	//Теперь эти огнедышащие бестии больше не будут угрожать замку! Это хорошие новости.
+			AI_Output(self,other, " DIA_OW_CSP_Standard_04_05 " );	// Now those fire-breathing beasts will no longer threaten the castle! This is good news.
 		};
 	};
-	if(Kapitel >= 5)
+	if (Chapter >=  5 )
 	{
 		if(MIS_OCGateOpen == FALSE)
 		{
-			AI_Output(self,other,"DIA_OW_CSP_Standard_04_06");	//Кажется, смерть драконов не слишком впечатлила орков.
+			AI_Output(self,other, " DIA_OW_CSP_Standard_04_06 " );	// The orcs don't seem to be too impressed by the death of the dragons.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_OW_CSP_Standard_04_07");	//Почему-то стало особенно тревожно за паладинов в замке.
+			AI_Output(self,other, " DIA_OW_CSP_Standard_04_07 " );	// For some reason, I became especially anxious for the paladins in the castle.
 		};
 	};
 };
@@ -184,7 +185,7 @@ instance DIA_OW_CSP_SEAPOST(C_Info)
 	condition = dia_ow_csp_seapost_condition;
 	information = dia_ow_csp_seapost_info;
 	permanent = TRUE;
-	description = "Что ты здесь делаешь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -198,8 +199,8 @@ func int dia_ow_csp_seapost_condition()
 
 func void dia_ow_csp_seapost_info()
 {
-	AI_Output(other,self,"DIA_OW_CSP_SeaPost_15_00");	//Что ты здесь делаешь?
-	AI_Output(self,other,"DIA_OW_CSP_SeaPost_04_01");	//Но, похоже, сейчас мы их интересуем меньше всего.
+	AI_Output(other,self, " DIA_OW_CSP_SeaPost_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_OW_CSP_SeaPost_04_01 " );	// But they seem to be the least interested in us right now.
 };
 
 func void b_assignambientinfos_csp(var C_Npc slf)
