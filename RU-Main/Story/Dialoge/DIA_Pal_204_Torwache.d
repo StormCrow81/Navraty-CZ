@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_204_TORWACHE_EXIT(C_Info)
 {
 	npc = Pal_204_Torwache;
@@ -48,7 +49,7 @@ func void dia_pal_204_torwache_toarmscitygate_info()
 };
 
 
-instance DIA_Mil_359_Miliz_EXIT(C_Info)
+instance DIA_Mil_359_Miliz_EXIT (C_Info)
 {
 	npc = Mil_359_Miliz;
 	nr = 999;
@@ -64,12 +65,12 @@ func int DIA_Mil_359_Miliz_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Mil_359_Miliz_EXIT_Info()
+func void DAY_Mil_359_Miliz_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Mil_359_Miliz_TOARMSCITYGATE(C_Info)
+DIA_Mil_359_Miliz_TOARMSCITYGATE (C_Info) instance
 {
 	npc = Mil_359_Miliz;
 	nr = 1;
@@ -81,7 +82,7 @@ instance DIA_Mil_359_Miliz_TOARMSCITYGATE(C_Info)
 
 func int DIA_Mil_359_Miliz_TOARMSCITYGATE_condition()
 {
-	if((TOARMSKASERN == TRUE) && (hero.guild != GIL_MIL) && (hero.guild != GIL_PAL) && (hero.guild != GIL_KDF) && (hero.guild != GIL_KDW))
+	if (( TOARMSKASERN  ==  TRUE ) && (hero.guild !=  GIL_MIL ) && (hero.guild !=  GIL_PAL ) && (hero.guild !=  GIL_KDF ) && (hero.guild !=  GIL_KDW ))
 	{
 		return TRUE;
 	};
@@ -92,5 +93,5 @@ func void DIA_Mil_359_Miliz_TOARMSCITYGATE_info()
 	B_Say(self,other,"$ALARM");
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,1);
-	TOARMSKASERN = FALSE;
+	TOARMCASERN = FALSE ;
 };
