@@ -1,4 +1,5 @@
 
+
 const string PAL_199_CHECKPOINT = "NW_FORESTFORT_01";
 
 instance DIA_PAL_199_RITTER_EXIT(C_Info)
@@ -38,9 +39,9 @@ func int dia_pal_199_ritter_firstwarn_condition()
 {
 	if(GRANTTOFORT == TRUE)
 	{
-		self.aivar[AIV_PASSGATE] = TRUE;
+		self.aivar[ AIV_PASSGATE ] = TRUE ;
 	};
-	if((self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (PYROKARSENTTOHAGEN == FALSE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Npc_GetDistToWP(self,"NW_FORESTFORT_01") < 500) && (GRANTTOFORT == FALSE) && (Npc_HasItems(hero,itwr_hagenorderfort) < 1) && (Kapitel < 6))
+	if (( self . aivar [ AIV_Guardpassage_Status ] ==  GP_NONE ) && ( PYROKARSENTTOHAGEN  ==  FALSE ) && ( self . aivar [ AIV_PASSGATE ] ==  FALSE ) && ( Npc_GetDistToWP ( self , " NW_FORESTFORT_01 " ) <  500 ) && ( GRANTTOFORT  ==  FALSE ) && (Npc_HasItems(hero,itwr_gardenorderfort) <  1 ) && (Chapter <  6 )) ;
 	{
 		return TRUE;
 	};
@@ -48,9 +49,9 @@ func int dia_pal_199_ritter_firstwarn_condition()
 
 func void dia_pal_199_ritter_firstwarn_info()
 {
-	AI_Output(self,other,"DIA_PAL_199_Ritter_FirstWarn_01_00");	//СТОЙ! Куда это ты собрался, парень?
-	AI_Output(other,self,"DIA_PAL_199_Ritter_FirstWarn_01_01");	//Эээ... туда! А что?
-	AI_Output(self,other,"DIA_PAL_199_Ritter_FirstWarn_01_02");	//Только люди, которые состоят на службе короля, имеют доступ в крепость. И только по личному распоряжению самого лорда Хагена!
+	AI_Output(self,other, " DIA_PAL_199_Ritter_FirstWarn_01_00 " );	// STOP! Where are you going, boy?
+	AI_Output(other,self, " DIA_PAL_199_Ritter_FirstWarn_01_01 " );	// Uh... over there! And what?
+	AI_Output(self,other, " DIA_PAL_199_Ritter_FirstWarn_01_02 " );	// Only people who are in the service of the king have access to the fortress. And only by the personal order of Lord Hagen himself!
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,PAL_199_CHECKPOINT);
 	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
 };
@@ -69,7 +70,7 @@ instance DIA_PAL_199_RITTER_ATTACK(C_Info)
 
 func int dia_pal_199_ritter_attack_condition()
 {
-	if((self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (PYROKARSENTTOHAGEN == FALSE) && (self.aivar[AIV_PASSGATE] == FALSE) && (GRANTTOFORT == FALSE) && (Npc_HasItems(hero,itwr_hagenorderfort) < 1) && (Kapitel < 6) && (Npc_GetDistToWP(other,PAL_199_CHECKPOINT) < (other.aivar[AIV_LastDistToWP] - 50)))
+	if ((self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && ( PYROKARSENTTOHAGEN  ==  FALSE ) && (self.aivar[ AIV_PASSGATE ] ==  FALSE ) && ( GRANTTOFORT  ==  FALSE ) && (Npc_HasItems(hero,itwr_hagenorderfort) <  1 ) ; && (Chapter <  6 ) && (Npc_GetDistToWP(other, PAL_199_CHECKPOINT ) < (other.aivar[AIV_LastDistToWP] -  50 ))) ;
 	{
 		return TRUE;
 	};
@@ -77,9 +78,9 @@ func int dia_pal_199_ritter_attack_condition()
 
 func void dia_pal_199_ritter_attack_info()
 {
-	AI_Output(self,other,"DIA_PAL_199_Ritter_Attack_01_00");	//Кажется, я тебя предупреждал!
+	AI_Output(self,other, " DIA_PAL_199_Ritter_Attack_01_00 " );	// I think I warned you!
 	other.aivar[AIV_LastDistToWP] = 0;
-	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
@@ -92,13 +93,13 @@ instance DIA_PAL_199_RITTER_HAGEN(C_Info)
 	condition = dia_pal_199_ritter_hagen_condition;
 	information = dia_pal_199_ritter_hagen_info;
 	permanent = FALSE;
-	description = "Что это за место?";
+	description = " What is this place? " ;
 };
 
 
 func int dia_pal_199_ritter_hagen_condition()
 {
-	if((GRANTTOFORT == FALSE) && !Npc_KnowsInfo(other,dia_pal_199_ritter_hagen))
+	if (( GRANTTOFORT  ==  FALSE ) &&  ! Npc_KnowsInfo(other,dia_pal_199_ritter_hagen))
 	{
 		return TRUE;
 	};
@@ -106,14 +107,14 @@ func int dia_pal_199_ritter_hagen_condition()
 
 func void dia_pal_199_ritter_hagen_info()
 {
-	AI_Output(other,self,"DIA_PAL_199_Ritter_Hagen_01_00");	//Что это за место?
-	AI_Output(self,other,"DIA_PAL_199_Ritter_Hagen_01_01");	//А что, не видно? Это крепость!
-	AI_Output(other,self,"DIA_PAL_199_Ritter_Hagen_01_02");	//И что вы тут охраняете?
-	AI_Output(self,other,"DIA_PAL_199_Ritter_Hagen_01_03");	//Проход в южные земли Хориниса. Там располагается военный королевский форт Азган.
-	AI_Output(other,self,"DIA_PAL_199_Ritter_Hagen_01_04");	//А я думал, что все паладины расместились в городе.
-	AI_Output(self,other,"DIA_PAL_199_Ritter_Hagen_01_05");	//Небольшая часть паладинов вместе с лордом Хагеном так и сделала. Остальные же ушли через проход в форт.
-	AI_Output(other,self,"DIA_PAL_199_Ritter_Hagen_01_06");	//А как мне попасть в этот форт?
-	AI_Output(self,other,"DIA_PAL_199_Ritter_Hagen_01_07");	//Только если лорд Хаген самостоятельно отдаст такой приказ. Без него ты просто попусту тратишь свое и мое время.
+	AI_Output(other,self, " DIA_PAL_199_Ritter_Hagen_01_00 " );	// What is this place?
+	AI_Output(self,other, " DIA_PAL_199_Ritter_Hagen_01_01 " );	// Why can't you see? This is a fortress!
+	AI_Output(other,self, " DIA_PAL_199_Ritter_Hagen_01_02 " );	// And what are you guarding here?
+	AI_Output(self,other, " DIA_PAL_199_Ritter_Hagen_01_03 " );	// Passage to the southern lands of Khorinis. There is the military royal fort Azgan.
+	AI_Output(other,self, " DIA_PAL_199_Ritter_Hagen_01_04 " );	// And I thought that all the paladins were located in the city.
+	AI_Output(self,other, " DIA_PAL_199_Ritter_Hagen_01_05 " );	// A handful of paladins, along with Lord Hagen, did just that. The rest went through the passage to the fort.
+	AI_Output(other,self, " DIA_PAL_199_Ritter_Hagen_01_06 " );	// How do I get to this fort?
+	AI_Output(self,other, " DIA_PAL_199_Ritter_Hagen_01_07 " );	// Only if Lord Hagen gives the order himself. Without it, you're just wasting your time and mine.
 	AI_StopProcessInfos(self);
 };
 
@@ -125,13 +126,13 @@ instance DIA_PAL_199_RITTER_MAGE(C_Info)
 	condition = dia_pal_199_ritter_mage_condition;
 	information = dia_pal_199_ritter_mage_info;
 	permanent = FALSE;
-	description = "Я - маг Огня!";
+	description = " I'm a fire mage! " ;
 };
 
 
 func int dia_pal_199_ritter_mage_condition()
 {
-	if((GRANTTOFORT == FALSE) && (other.guild == GIL_KDF) && !Npc_KnowsInfo(other,dia_pal_199_ritter_hagen))
+	if (( GRANTTOFORT  ==  FALSE ) && ( other.guild ==  GIL_KDF ) &&  !
 	{
 		return TRUE;
 	};
@@ -139,8 +140,8 @@ func int dia_pal_199_ritter_mage_condition()
 
 func void dia_pal_199_ritter_mage_info()
 {
-	AI_Output(other,self,"DIA_PAL_199_Ritter_Mage_01_00");	//Я - маг Огня!
-	AI_Output(self,other,"DIA_PAL_199_Ritter_Mage_01_03");	//Меня это не волнует. Если у тебя нет разрешения лорда Хагена, в крепость тебе не попасть.
+	AI_Output(other,self, " DIA_PAL_199_Ritter_Mage_01_00 " );	// I'm a fire mage!
+	AI_Output(self,other, " DIA_PAL_199_Ritter_Mage_01_03 " );	// I don't care. Unless you have Lord Hagen's permission, you can't enter the fortress.
 	AI_StopProcessInfos(self);
 };
 
@@ -152,13 +153,13 @@ instance DIA_PAL_199_RITTER_PALADIN(C_Info)
 	condition = dia_pal_199_ritter_paladin_condition;
 	information = dia_pal_199_ritter_paladin_info;
 	permanent = FALSE;
-	description = "Я же паладин!";
+	description = " I'm a paladin! " ;
 };
 
 
 func int dia_pal_199_ritter_paladin_condition()
 {
-	if((GRANTTOFORT == FALSE) && (other.guild == GIL_PAL) && !Npc_KnowsInfo(other,dia_pal_199_ritter_hagen))
+	if (( GRANTTOFORT  ==  FALSE ) && ( other.guild ==  GIL_PAL ) &&  !
 	{
 		return TRUE;
 	};
@@ -166,8 +167,8 @@ func int dia_pal_199_ritter_paladin_condition()
 
 func void dia_pal_199_ritter_paladin_info()
 {
-	AI_Output(other,self,"DIA_PAL_199_Ritter_Paladin_01_00");	//Я же паладин!
-	AI_Output(self,other,"DIA_PAL_199_Ritter_Paladin_01_03");	//Меня это не волнует. Если у тебя нет разрешения лорда Хагена, в крепость тебе не попасть.
+	AI_Output(other,self, " DIA_PAL_199_Ritter_Paladin_01_00 " );	// I'm a paladin!
+	AI_Output(self,other, " DIA_PAL_199_Ritter_Paladin_01_03 " );	// I don't care. Unless you have Lord Hagen's permission, you can't enter the fortress.
 	AI_StopProcessInfos(self);
 };
 
@@ -185,7 +186,7 @@ instance DIA_PAL_199_RITTER_PASSASMIL(C_Info)
 
 func int dia_pal_199_ritter_passasmil_condition()
 {
-	if((GRANTTOFORT == FALSE) && (Npc_HasItems(other,itwr_hagenorderfort) >= 1) && (Kapitel < 6))
+	if (( GRANTTOFORT  ==  FALSE ) && (Npc_HasItems(other,itwr_gardenorderfort) >=  1 ) && (Chapter <  6 )) ;
 	{
 		return TRUE;
 	};
@@ -195,24 +196,24 @@ func void dia_pal_199_ritter_passasmil_info()
 {
 	var C_Npc gatekeeper;
 	AI_Output(self,other,"DIA_PAL_199_Ritter_PassAsMil_01_00");	//СТОЙ!
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassAsMil_01_01");	//Только люди, которые состоят на службе короля, имеют доступ в крепость. И только по личному распоряжению самого лорда Хагена.
-	AI_Output(other,self,"DIA_PAL_199_Ritter_PassAsMil_01_03");	//У меня есть приказ от лорда Хагена.
-	AI_Output(other,self,"DIA_PAL_199_Ritter_PassAsMil_01_05");	//Вот, держи.
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassAsMil_01_01 " );	// Only people who are in the service of the king have access to the fortress. And only by personal order of Lord Hagen himself.
+	AI_Output(other,self, " DIA_PAL_199_Ritter_PassAsMil_01_03 " );	// I have orders from Lord Hagen.
+	AI_Output(other,self, " DIA_PAL_199_Ritter_PassAsMil_01_05 " );	// Here, take this.
 
 	if(B_GiveInvItems(other,self,itwr_hagenorderfort,1))
 	{
-		Npc_RemoveInvItems(self,itwr_hagenorderfort,1);
+		Npc_RemoveInvItems(self,itwr_hagenorderfort, 1 );
 	};
 
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassAsMil_01_06");	//(удивленно) Да, действительно. Хорошо, ты можешь войти.
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassAsMil_01_08");	//Только не создавай проблем. Понял?
-	self.aivar[AIV_PASSGATE] = TRUE;
-	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassAsMil_01_06 " );	// (surprised) Yes, indeed. Okay, you can come in.
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassAsMil_01_08 " );	// Just don't make trouble. Understood?
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
 	GRANTTOFORT = TRUE;
 	gatekeeper = Hlp_GetNpc(pal_193_ritter);
 	AI_TurnToNPC(self,gatekeeper);
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassAsMil_01_09");	//(кричит) Эй, там, наверху! Опускайте ворота!
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassAsMil_01_09 " );	// (shouting) Hey, up there! Lower the gate!
 	AI_TurnToNPC(self,other);
 	AI_Output(self,other,"DIA_PAL_199_Ritter_PassAsMil_01_10");	//Проходи.
 	AI_StopProcessInfos(self);
@@ -232,7 +233,7 @@ instance DIA_PAL_199_RITTER_PASSEVER(C_Info)
 
 func int dia_pal_199_ritter_passever_condition()
 {
-	if((GRANTTOFORT == FALSE) && (Kapitel >= 6) && (Npc_HasItems(other,itwr_pyrorderfort) >= 1) && (PYROKARSENTTOHAGEN == TRUE))
+	if (( GRANTTOFORT  ==  FALSE ) && (Chapter >=  6 ) && (Npc_HasItems(other,itwr_pyrorderfort) >=  1 ) && ( PYROKARSENTTOHAGEN  ==  TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -242,12 +243,12 @@ func void dia_pal_199_ritter_passever_info()
 {
 	var C_Npc gatekeeper;
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassEver_01_00");		//Стой! Что ты тут делаешь?
-	AI_Output(other,self,"DIA_PAL_199_Ritter_PassEver_01_01");		//Мне нужно попасть в форт. У меня срочное сообщение для паладинов.
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassEver_01_02");		//Срочное сообщение? И от кого же?
-	AI_Output(other,self,"DIA_PAL_199_Ritter_PassEver_01_03");		//От Пирокара, верховного мага Огня. Или тебе этого недостаточно?
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassEver_01_04");		//Сообщение от магов Огня?
-	AI_Output(other,self,"DIA_PAL_199_Ritter_PassAsMil_01_05");	//Вот, держи.
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassEver_01_00 " );		// Stop! What are you doing here?
+	AI_Output(other,self, " DIA_PAL_199_Ritter_PassEver_01_01 " );		// I need to get to the fort. I have an urgent message for paladins.
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassEver_01_02 " );		// Urgent message? And from whom?
+	AI_Output(other,self, " DIA_PAL_199_Ritter_PassEver_01_03 " );		// From Pyrocar, Archmage of Fire. Or is that not enough for you?
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassEver_01_04 " );		// A message from the Firebenders?
+	AI_Output(other,self, " DIA_PAL_199_Ritter_PassAsMil_01_05 " );	// Here, take this.
 
 	if(B_GiveInvItems(other,self,itwr_pyrorderfort,1))
 	{
@@ -255,15 +256,15 @@ func void dia_pal_199_ritter_passever_info()
 	};
 
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassAsMil_01_06");	//(удивленно) Да, действительно. Хорошо, ты можешь войти.
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassAsMil_01_06 " );	// (surprised) Yes, indeed. Okay, you can come in.
 	AI_RemoveWeapon(self);
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassEver_01_07");		//Только не создавай проблем. Понял?
-	self.aivar[AIV_PASSGATE] = TRUE;
-	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassEver_01_07 " );		// Just don't make trouble. Understood?
+	self.aivar[ AIV_PASSGATE ] = TRUE ;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
 	GRANTTOFORT = TRUE;
 	gatekeeper = Hlp_GetNpc(pal_193_ritter);
 	AI_TurnToNPC(self,gatekeeper);
-	AI_Output(self,other,"DIA_PAL_199_Ritter_PassEver_01_08");	//(кричит) Эй, там, наверху! Опускайте ворота!
+	AI_Output(self,other, " DIA_PAL_199_Ritter_PassEver_01_08 " );	// (shouting) Hey, up there! Lower the gate!
 	AI_TurnToNPC(self,other);
 	AI_Output(self,other,"DIA_PAL_199_Ritter_PassEver_01_09");	//Проходи.
 	AI_StopProcessInfos(self);
