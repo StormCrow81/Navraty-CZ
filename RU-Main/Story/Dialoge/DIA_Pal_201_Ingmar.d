@@ -1,4 +1,5 @@
 
+
 instance DIA_Ingmar_EXIT(C_Info)
 {
 	npc = Pal_201_Ingmar;
@@ -12,7 +13,7 @@ instance DIA_Ingmar_EXIT(C_Info)
 
 func int DIA_Ingmar_EXIT_Condition()
 {
-	if(Kapitel < 3)
+	if (chapter <  3 )
 	{
 		return TRUE;
 	};
@@ -24,18 +25,18 @@ func void DIA_Ingmar_EXIT_Info()
 };
 
 
-instance DIA_Ingmar_Hallo(C_Info)
+instance DIA_Ingmar_Hallo (C_Info)
 {
 	npc = Pal_201_Ingmar;
 	nr = 2;
 	condition = DIA_Ingmar_Hallo_Condition;
-	information = DIA_Ingmar_Hallo_Info;
+	information = DIA_Ingmar_Hello_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-var int DIA_Ingmar_Hallo_permanent;
+var int DIA_Ingmar_Hello_permanent;
 
 func int DIA_Ingmar_Hallo_Condition()
 {
@@ -47,31 +48,31 @@ func int DIA_Ingmar_Hallo_Condition()
 
 func void DIA_Ingmar_Hallo_Info()
 {
-	if((EnterOW_Kapitel2 == FALSE) && (LordHagen.aivar[AIV_TalkedToPlayer] == TRUE))
+	if ((EnterOW_Chapter2 ==  FALSE ) && (LordHagen.aivar[AIV_TalkedToPlayer] ==  TRUE ))
 	{
-		AI_Output(self,other,"DIA_Ingmar_Hallo_06_00");	//Согласно полученным мной сообщениям, Долина Рудников - опасное место.
-		AI_Output(self,other,"DIA_Ingmar_Hallo_06_01");	//Позаботься о своем снаряжении, прежде чем отправляться туда.
+		AI_Output(self,other, " DIA_Ingmar_Hallo_06_00 " );	// According to reports I've received, the Valley of Mines is a dangerous place.
+		AI_Output(self,other, " DIA_Ingmar_Hallo_06_01 " );	// Take care of your gear before you go there.
 	}
 	else if((MIS_OLDWORLD == LOG_SUCCESS) && (LordHagen.aivar[AIV_TalkedToPlayer] == TRUE))
 	{
-		AI_Output(self,other,"DIA_Ingmar_Hallo_06_02");	//Обстановка в Долине Рудников очень тревожит меня. Но мы разработаем план, чтобы преодолеть все опасности и вытащить наших парней оттуда вместе с рудой.
+		AI_Output(self,other, " DIA_Ingmar_Hallo_06_02 " );	// The situation in the Valley of Mines worries me greatly. But we will develop a plan to overcome all dangers and get our guys out of there along with the ore.
 		DIA_Ingmar_Hallo_permanent = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ingmar_Hallo_06_03");	//Я думал, ты пришел поговорить с лордом Хагеном. Так иди же к нему.
+		AI_Output(self,other, " DIA_Ingmar_Hallo_06_03 " );	// I thought you came to talk to Lord Hagen. So go to him.
 	};
 };
 
 
-instance DIA_Ingmar_Krieg(C_Info)
+instance DIA_Ingmar_Krieg (C_Info)
 {
 	npc = Pal_201_Ingmar;
 	nr = 99;
 	condition = DIA_Ingmar_Krieg_Condition;
 	information = DIA_Ingmar_Krieg_Info;
 	permanent = FALSE;
-	description = "Как дела на материке?";
+	description = " How are things on the mainland? " ;
 };
 
 
@@ -85,10 +86,10 @@ func int DIA_Ingmar_Krieg_Condition()
 
 func void DIA_Ingmar_Krieg_Info()
 {
-	AI_Output(other,self,"DIA_Ingmar_Krieg_15_00");	//Как дела на материке?
-	AI_Output(self,other,"DIA_Ingmar_Krieg_06_01");	//Война еще не выиграна, хотя королевские войска уже теснят орков.
-	AI_Output(self,other,"DIA_Ingmar_Krieg_06_02");	//Но мелкие отряды орков появляются то здесь, то там, пытаясь рассредоточить нашу армию.
-	AI_Output(self,other,"DIA_Ingmar_Krieg_06_03");	//Они сражаются без мужества и без веры, и поэтому в конце концов мы обязательно победим.
+	AI_Output(other,self, " DIA_Ingmar_Krieg_15_00 " );	// How are things on the mainland?
+	AI_Output(self,other, " DIA_Ingmar_Krieg_06_01 " );	// The war is not yet won, although the royal forces are already pushing the orcs.
+	AI_Output(self,other, " DIA_Ingmar_Krieg_06_02 " );	// But small units of orcs appear here and there, trying to disperse our army.
+	AI_Output(self,other, " DIA_Ingmar_Krieg_06_03 " );	// They fight without courage and without faith, and therefore in the end we are sure to win.
 };
 
 
@@ -99,7 +100,7 @@ instance DIA_Ingmar_CanTeach(C_Info)
 	condition = DIA_Ingmar_CanTeach_Condition;
 	information = DIA_Ingmar_CanTeach_Info;
 	permanent = TRUE;
-	description = "Ты можешь научить меня чему-нибудь?";
+	description = " Can you teach me something? " ;
 };
 
 
@@ -113,16 +114,16 @@ func int DIA_Ingmar_CanTeach_Condition()
 
 func void DIA_Ingmar_CanTeach_Info()
 {
-	AI_Output(other,self,"DIA_Ingmar_CanTeach_15_00");	//Ты можешь научить меня чему-нибудь?
+	AI_Output(other,self, " DIA_Ingmar_CanTeach_15_00 " );	// Can you teach me something?
 	if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Ingmar_CanTeach_06_01");	//Я могу научить тебя как стать сильнее, чтобы ты мог эффективнее действовать своим оружием.
+		AI_Output(self,other, " DIA_Ingmar_CanTeach_06_01 " );	// I can teach you how to become stronger so you can use your weapons more effectively.
 		Ingmar_TeachSTR = TRUE;
-		B_LogEntry(TOPIC_CityTeacher,"Паладин Ингмар может помочь мне стать сильнее.");
+		B_LogEntry(TOPIC_CityTeacher, " Paladin Ingmar can help me become stronger. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ingmar_CanTeach_06_02");	//Я обучаю только последователей нашего ордена.
+		AI_Output(self,other, " DIA_Ingmar_CanTeach_06_02 " );	// I only train followers of our order.
 	};
 };
 
@@ -134,7 +135,7 @@ instance DIA_Ingmar_Teach(C_Info)
 	condition = DIA_Ingmar_Teach_Condition;
 	information = DIA_Ingmar_Teach_Info;
 	permanent = TRUE;
-	description = "Я хочу стать сильнее.";
+	description = " I want to get stronger. " ;
 };
 
 
@@ -148,7 +149,7 @@ func int DIA_Ingmar_Teach_Condition()
 
 func void DIA_Ingmar_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Ingmar_Teach_15_00");	//Я хочу стать сильнее.
+	AI_Output(other,self, " DIA_Ingmar_Teach_15_00 " );	// I want to get stronger.
 	Info_ClearChoices(DIA_Ingmar_Teach);
 	Info_AddChoice(DIA_Ingmar_Teach,Dialog_Back,DIA_Ingmar_Teach_BACK);
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforstamina(PRINT_LEARNSTMN1,B_GetLearnCostTalent(other,NPC_TALENT_STAMINA,1)),dia_ingmar_teach_stamina_1);
@@ -158,9 +159,9 @@ func void DIA_Ingmar_Teach_Info()
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 
-	if((Kapitel >= 3) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_PAL)) 
+	if ((Chapter >=  3 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_PAL ))
 	{
-		Info_AddChoice(DIA_Ingmar_Teach,"Регенерация выносливости (Очки обучения: 10)",DIA_Ingmar_Teach_RegenStam);
+		Info_AddChoice(DIA_Ingmar_Teach, " Stamina Regeneration (Training Points: 10) " ,DIA_Ingmar_Teach_RegenStam);
 	};
 };
 
@@ -168,7 +169,7 @@ func void DIA_Ingmar_Teach_BACK()
 {
 	if(other.attribute[ATR_STRENGTH] >= T_MEGA)
 	{
-		AI_Output(self,other,"DIA_Ingmar_Teach_06_00");	//Ты и так силен как тролль! Мне нечему учить тебя.
+		AI_Output(self,other, " DIA_Ingmar_Teach_06_00 " );	// You're as strong as a troll! I have nothing to teach you.
 	};
 
 	Info_ClearChoices(DIA_Ingmar_Teach);
@@ -176,11 +177,11 @@ func void DIA_Ingmar_Teach_BACK()
 
 func void DIA_Ingmar_Teach_RegenStam()
 {
-	var int kosten;
+	var int cost;
 
-	AI_Output(other,self,"DIA_Vatras_Teach_regen_15_03");	//Научи меня ускоренному восстановлению выносливости.
+	AI_Output(other,self, " DIA_Vatras_Teach_regen_15_03 " );	// Teach me faster stamina recovery.
 
-	kosten = 10;
+	cost = 10 ;
 
 	if(hero.lp < kosten)
 	{
@@ -190,9 +191,9 @@ func void DIA_Ingmar_Teach_RegenStam()
 	else
 	{
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
-		AI_Print("Обучение: Ускоренная регенерация выносливости");
-		VATRAS_TEACHREGENSTAM = TRUE;
+		RankPoints = RankPoints + cost;
+		AI_Print( " Tutorial: Accelerated Stamina Regeneration " );
+		VATRAS_TEACHREGENSTAM = TRUE ;
 		Snd_Play("LevelUP");
 	};
 
@@ -218,9 +219,9 @@ func void DIA_Ingmar_Teach_1()
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 
-	if((Kapitel >= 3) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_PAL)) 
+	if ((Chapter >=  3 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_PAL ))
 	{
-		Info_AddChoice(DIA_Ingmar_Teach,"Регенерация выносливости (Очки обучения: 10)",DIA_Ingmar_Teach_RegenStam);
+		Info_AddChoice(DIA_Ingmar_Teach, " Stamina Regeneration (Training Points: 10) " ,DIA_Ingmar_Teach_RegenStam);
 	};
 };
 
@@ -236,9 +237,9 @@ func void DIA_Ingmar_Teach_5()
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 
-	if((Kapitel >= 3) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_PAL)) 
+	if ((Chapter >=  3 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_PAL ))
 	{
-		Info_AddChoice(DIA_Ingmar_Teach,"Регенерация выносливости (Очки обучения: 10)",DIA_Ingmar_Teach_RegenStam);
+		Info_AddChoice(DIA_Ingmar_Teach, " Stamina Regeneration (Training Points: 10) " ,DIA_Ingmar_Teach_RegenStam);
 	};
 };
 
@@ -254,9 +255,9 @@ func void dia_ingmar_teach_stamina_1()
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 
-	if((Kapitel >= 3) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_PAL)) 
+	if ((Chapter >=  3 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_PAL ))
 	{
-		Info_AddChoice(DIA_Ingmar_Teach,"Регенерация выносливости (Очки обучения: 10)",DIA_Ingmar_Teach_RegenStam);
+		Info_AddChoice(DIA_Ingmar_Teach, " Stamina Regeneration (Training Points: 10) " ,DIA_Ingmar_Teach_RegenStam);
 	};
 };
 
@@ -272,9 +273,9 @@ func void dia_ingmar_teach_stamina_5()
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 
-	if((Kapitel >= 3) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_PAL)) 
+	if ((Chapter >=  3 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_PAL ))
 	{
-		Info_AddChoice(DIA_Ingmar_Teach,"Регенерация выносливости (Очки обучения: 10)",DIA_Ingmar_Teach_RegenStam);
+		Info_AddChoice(DIA_Ingmar_Teach, " Stamina Regeneration (Training Points: 10) " ,DIA_Ingmar_Teach_RegenStam);
 	};
 };
 
@@ -290,9 +291,9 @@ func void dia_ingmar_teach_hp_1()
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 
-	if((Kapitel >= 3) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_PAL)) 
+	if ((Chapter >=  3 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_PAL ))
 	{
-		Info_AddChoice(DIA_Ingmar_Teach,"Регенерация выносливости (Очки обучения: 10)",DIA_Ingmar_Teach_RegenStam);
+		Info_AddChoice(DIA_Ingmar_Teach, " Stamina Regeneration (Training Points: 10) " ,DIA_Ingmar_Teach_RegenStam);
 	};
 };
 
@@ -308,9 +309,9 @@ func void dia_ingmar_teach_hp_5()
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
 	Info_AddChoice(DIA_Ingmar_Teach,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 
-	if((Kapitel >= 3) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_PAL)) 
+	if ((Chapter >=  3 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_PAL ))
 	{
-		Info_AddChoice(DIA_Ingmar_Teach,"Регенерация выносливости (Очки обучения: 10)",DIA_Ingmar_Teach_RegenStam);
+		Info_AddChoice(DIA_Ingmar_Teach, " Stamina Regeneration (Training Points: 10) " ,DIA_Ingmar_Teach_RegenStam);
 	};
 };
 
@@ -328,7 +329,7 @@ instance DIA_Ingmar_KAP3_EXIT(C_Info)
 
 func int DIA_Ingmar_KAP3_EXIT_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
@@ -353,7 +354,7 @@ instance DIA_Ingmar_KAP4_EXIT(C_Info)
 
 func int DIA_Ingmar_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -365,13 +366,13 @@ func void DIA_Ingmar_KAP4_EXIT_Info()
 };
 
 
-instance DIA_Ingmar_ORKELITE(C_Info)
+instance DIA_Ingmar_ORKELITE (C_Info) .
 {
 	npc = Pal_201_Ingmar;
 	nr = 40;
 	condition = DIA_Ingmar_ORKELITE_Condition;
 	information = DIA_Ingmar_ORKELITE_Info;
-	description = "Орки готовят массированное наступление.";
+	description = " Orcs are preparing a massive attack. " ;
 };
 
 
@@ -385,68 +386,68 @@ func int DIA_Ingmar_ORKELITE_Condition()
 
 func void DIA_Ingmar_ORKELITE_Info()
 {
-	AI_Output(other,self,"DIA_Ingmar_ORKELITE_15_00");	//Орки готовят массированное наступление.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_06_01");	//Да ну? Что ж, это очень интересно. А откуда тебе это известно?
+	AI_Output(other,self, " DIA_Ingmar_ORKELITE_15_00 " );	// Orcs are preparing a massive offensive.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_06_01 " );	// huh? Well, this is very interesting. And how do you know this?
 	if(TalkedTo_AntiPaladin == TRUE)
 	{
-		AI_Output(other,self,"DIA_Ingmar_ORKELITE_15_02");	//Я говорил с ними.
+		AI_Output(other,self, " DIA_Ingmar_ORKELITE_15_02 " );	// I spoke to them.
 	};
-	AI_Output(other,self,"DIA_Ingmar_ORKELITE_15_03");	//Их лидеры появились в этой местности.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_06_04");	//Ммм. Это не похоже на типичную стратегию орков.
+	AI_Output(other,self, " DIA_Ingmar_ORKELITE_15_03 " );	// Their leaders have appeared in this area.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_06_04 " );	// Mmm. This doesn't sound like a typical Ork strategy.
 	Info_ClearChoices(DIA_Ingmar_ORKELITE);
-	Info_AddChoice(DIA_Ingmar_ORKELITE,"Тебе нужно найти способ избавить нас от них.",DIA_Ingmar_ORKELITE_loswerden);
-	Info_AddChoice(DIA_Ingmar_ORKELITE,"Что нам делать теперь?",DIA_Ingmar_ORKELITE_wasTun);
-	Info_AddChoice(DIA_Ingmar_ORKELITE,"Что это значит?",DIA_Ingmar_ORKELITE_wieso);
+	Info_AddChoice(DIA_Ingmar_ORKELITE, " You need to find a way to rid us of them. " ,DIA_Ingmar_ORKELITE_loswerden);
+	Info_AddChoice(DIA_Ingmar_ORKELITE, " What do we do now? " ,DIA_Ingmar_ORKELITE_wasTun);
+	Info_AddChoice(DIA_Ingmar_ORKELITE, " What does this mean? " ,DIA_Ingmar_ORKELITE_wieso);
 	Log_CreateTopic(TOPIC_OrcElite,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_OrcElite,LOG_Running);
-	B_LogEntry(TOPIC_OrcElite,"Ингмар был очень заинтересован историей об элитных воинах орков.");
+	B_LogEntry(TOPIC_OrcElite, " Ingmar was very interested in the story about the elite Orc warriors. " );
 	MIS_KillOrkOberst = LOG_Running;
 };
 
-func void DIA_Ingmar_ORKELITE_loswerden()
+func void DIA_Ingmar_ORKELITE_get rid of()
 {
-	AI_Output(other,self,"DIA_Ingmar_ORKELITE_loswerden_15_00");	//Тебе нужно найти способ избавить нас от них.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_loswerden_06_01");	//Было бы неплохо, если бы у нас была более подробная информация. Я пошлю кого-нибудь разведать окрестности.
+	AI_Output(other,self, " DIA_Ingmar_ORKELITE_loswerden_15_00 " );	// You need to find a way to rid us of them.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_loswerden_06_01 " );	// It would be nice if we had more detailed information. I'll send someone to scout the area.
 	Info_ClearChoices(DIA_Ingmar_ORKELITE);
 };
 
 func void DIA_Ingmar_ORKELITE_wieso()
 {
-	AI_Output(other,self,"DIA_Ingmar_ORKELITE_wieso_15_00");	//Что это значит?
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wieso_06_01");	//Если то, что ты говоришь, правда, это означает, что они надеются ослабить нас изнутри, нанеся удар своими лучшими воинами.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wieso_06_02");	//Обычно каждую орду орков возглавляет один предводитель. Крайне редко можно встретить двоих или больше вместе.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wieso_06_03");	//На это есть причина. Их лидеры - ядро их атакующей стратегии, и обычно окружены простыми воинами-орками.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wieso_06_04");	//Поэтому очень трудно подобраться к кому-нибудь из них, не пробившись через орду не менее чем из 30 воинов.
-	B_LogEntry(TOPIC_OrcElite,"Ингмар сказал, что-то о главе предводителей орков.");
+	AI_Output(other,self, " DIA_Ingmar_ORKELITE_wieso_15_00 " );	// What does this mean?
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wieso_06_01 " );	// If what you're saying is true, that means they're hoping to weaken us from within by striking out with their best warriors.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wieso_06_02 " );	// Usually each orc horde is led by one leader. It is extremely rare to meet two or more together.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wieso_06_03 " );	// There is a reason for this. Their leaders are the core of their offensive strategy, and are usually surrounded by simple orc warriors.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wieso_06_04 " );	// Therefore, it is very difficult to get close to any of them without breaking through a horde of at least 30 warriors.
+	B_LogEntry(TOPIC_OrcElite, " Ingmar said something about the head of the orc leaders. " );
 };
 
 func void DIA_Ingmar_ORKELITE_wasTun()
 {
-	AI_Output(other,self,"DIA_Ingmar_ORKELITE_wasTun_15_00");	//Что нам делать теперь?
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_01");	//Когда они встречаются в таком количестве, это обычно диверсионная группа, возглавляемая старшим по званию.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_02");	//Этот высокопоставленный предводитель устраивает себе штаб-квартиру в одной из пещер, откуда направляет свои войска в бой.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_03");	//Если бы мы смогли добраться до этого военачальника орков, мы получили бы решающее преимущество.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_04");	//Военачальник орков обычно предпочитает находиться в непосредственной близости от своих врагов. Я бы посоветовал поискать его пещеру где-нибудь неподалеку от города.
-	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_05");	//Несколько орков было замечено у фермы Лобарта. Может быть, тебе попробовать начать поиски именно оттуда?
-	B_LogEntry(TOPIC_OrcElite,"Согласно Ингмару, я должен найти полковника орков в пещере где-то неподалеку от фермы Лобарта. Ингмар хочет, чтобы я нашел и убил его.");
+	AI_Output(other,self, " DIA_Ingmar_ORKELITE_wasTun_15_00 " );	// What do we do now?
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wasTun_06_01 " );	// When they meet in such numbers, it's usually a commando group led by a senior in rank.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wasTun_06_02 " );	// This high-ranking leader sets up his headquarters in one of the caves, from where he directs his troops into battle.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wasTun_06_03 " );	// If we could get to this orc warlord, we'd have a decisive advantage.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wasTun_06_04 " );	// An orc warlord generally prefers to be in close proximity to his enemies. I would advise looking for his cave somewhere near the city.
+	AI_Output(self,other, " DIA_Ingmar_ORKELITE_wasTun_06_05 " );	// Several orcs have been spotted near Lobart's farm. Maybe you should try starting your search from there?
+	B_LogEntry(TOPIC_OrcElite, " According to Ingmar, I should find the orc colonel in a cave somewhere near Lobart's farm. Ingmar wants me to find and kill him. " );
 	Info_ClearChoices(DIA_Ingmar_ORKELITE);
 };
 
 
-instance DIA_Ingmar_HAUPTQUARTIER(C_Info)
+instance DIA_Ingmar_HAUPTQUARTIER (C_Info)
 {
 	npc = Pal_201_Ingmar;
 	nr = 41;
 	condition = DIA_Ingmar_HAUPTQUARTIER_Condition;
 	information = DIA_Ingmar_HAUPTQUARTIER_Info;
 	permanent = FALSE;
-	description = "Я смог найти штаб-квартиру орков.";
+	description = " I was able to find the orc headquarters. " ;
 };
 
 
 func int DIA_Ingmar_HAUPTQUARTIER_Condition()
 {
-	if(Npc_IsDead(OrkElite_AntiPaladinOrkOberst) && Npc_KnowsInfo(other,DIA_Ingmar_ORKELITE))
+	if ( Npc_IsDead ( OrkElite_AntiPaladinOrkColonel ) && Npc_KnowsInfo ( other , DIA_Ingmar_ORKELITE ) )
 	{
 		return TRUE;
 	};
@@ -454,10 +455,10 @@ func int DIA_Ingmar_HAUPTQUARTIER_Condition()
 
 func void DIA_Ingmar_HAUPTQUARTIER_Info()
 {
-	AI_Output(other,self,"DIA_Ingmar_HAUPTQUARTIER_15_00");	//Я смог найти штаб-квартиру орков. Их военачальник пал.
-	AI_Output(self,other,"DIA_Ingmar_HAUPTQUARTIER_06_01");	//Это отличные новости. Теперь орки некоторое время будут пребывать в растерянности.
-	AI_Output(self,other,"DIA_Ingmar_HAUPTQUARTIER_06_02");	//Это неплохо. Если бы у нас было побольше рыцарей вроде тебя, за исход грядущей битвы можно было бы не волноваться.
-	AI_Output(self,other,"DIA_Ingmar_HAUPTQUARTIER_06_03");	//Вот. Возьми это золото. Надеюсь, оно поможет тебе купить хорошее снаряжение.
+	AI_Output(other,self, " DIA_Ingmar_HAUPTQUARTIER_15_00 " );	// I was able to find the orc headquarters. Their commander has fallen.
+	AI_Output(self,other, " DIA_Ingmar_HAUPTQUARTIER_06_01 " );	// This is great news. Now the orcs will be at a loss for some time.
+	AI_Output(self,other, " DIA_Ingmar_HAUPTQUARTIER_06_02 " );	// That's not bad. If we had more knights like you, we wouldn't have to worry about the outcome of the upcoming battle.
+	AI_Output(self,other, " DIA_Ingmar_HAUPTQUARTIER_06_03 " );	// Here. Take this gold. I hope it helps you buy good gear.
 	B_GivePlayerXP(XP_KilledOrkOberst);
 	CreateInvItems(self,ItMi_Gold,300);
 	B_GiveInvItems(self,other,ItMi_Gold,300);
@@ -478,7 +479,7 @@ instance DIA_Ingmar_KAP5_EXIT(C_Info)
 
 func int DIA_Ingmar_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -503,7 +504,7 @@ instance DIA_Ingmar_KAP6_EXIT(C_Info)
 
 func int DIA_Ingmar_KAP6_EXIT_Condition()
 {
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		return TRUE;
 	};
@@ -521,7 +522,7 @@ instance DIA_Ingmar_PICKPOCKET(C_Info)
 	condition = DIA_Ingmar_PICKPOCKET_Condition;
 	information = DIA_Ingmar_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его свиток)";
+	description = " (Try to steal his scroll) " ;
 };
 
 func int DIA_Ingmar_PICKPOCKET_Condition()
@@ -596,13 +597,13 @@ instance DIA_INGMAR_ABOUTORKS(C_Info)
 	condition = dia_ingmar_aboutorks_condition;
 	information = dia_ingmar_aboutorks_info;
 	permanent = FALSE;
-	description = "Ты что-нибудь знаешь об орках?";
+	description = " Do you know anything about orcs? " ;
 };
 
 
 func int dia_ingmar_aboutorks_condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Ingmar_ORKELITE))
+	if ( Npc_KnowsInfo ( other , DIA_Ingmar_ORKELITE ))
 	{
 		return TRUE;
 	};
@@ -610,34 +611,34 @@ func int dia_ingmar_aboutorks_condition()
 
 func void dia_ingmar_aboutorks_info()
 {
-	AI_Output(other,self,"DIA_Ingmar_AboutOrks_01_00");	//Ты что-нибудь знаешь об орках?
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_01");	//Знаю ли я что-нибудь об орках? Парень, я наилучший знаток этих монстров во всем королевстве!
-	AI_Output(other,self,"DIA_Ingmar_AboutOrks_01_04");	//Тогда ты наверняка сможешь рассказать мне о них очень много интересного.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_07");	//Хорошо, слушай. Многие люди считают орков довольно примитивными созданиями.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_08");	//Но на самом у этих тварей есть своя строгая военная иерархия, довольно эффективная в плане организации.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_09");	//И, как видишь, это принесло им довольно неплохие плоды в войне с нами.
-	AI_Output(other,self,"DIA_Ingmar_AboutOrks_01_10");	//Что это за иерархия?
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_11");	//Первую ступень в ней занимают орки-воины - это основная боевая единица их армии. На орочьем языке этих воинов называют ГРАШ-РАМТОР!
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_12");	//Они носят легкие кольчужные доспехи и не являются особо опасными противниками даже для простого охотника.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_13");	//Искусством сражения такие орки обычно не владеют, и стараются задавить своего врага лишь простым численным превосходством.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_14");	//Сразить такого монстра будет не особо тяжело.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_16");	//Следующие по рангу идут черные орки-воины или ЭРЗМРАКС-КОРРГРОН! Они очень сильны и хорошо владеют оружием ближнего боя.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_17");	//Схватка с таким противником будет серьезным испытанием для любого опытного воина. Поэтому старайся избегать встречи с ними, если у тебя нет прочных доспехов.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_18");	//Еще большую опасность представляют собой элитные черные орки-воины! Их называют ТАРШМОР-ГРОНСРОК, и этот противник - уже очень серьезное испытание даже для опытного рыцаря.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_19");	//Тяжелые доспехи надежно защищают их от мечей и топоров. И ко всему прочему, они также вооружены тяжелыми арбалетами, которые запросто пробьют саму прочную броню.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_21");	//Далее, вслед за ними по рангу следуют ГРАКС-НАРЗУЛГ - элитные черные орки-старейшины.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_22");	//Они на порядок сильнее обычных воинов, и в их компетенцию входит командование небольшими отрядами орков.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_23");	//Их нельзя встретить в больших количествах, но сражаться с ними так же тяжело, как и с нами - паладинами Инноса.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_24");	//Поэтому элитные черные орки-старейшины - наши самые серьезные противники на поле боя!
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_25");	//Следующие в военной иерархии орков идут РОР-ГНОРК - элитные орочьи военачальники, которые командуют Гракс-Нарзулгами, направляя и координируя их действия.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_28");	//Эти элитные орки прекрасно владеют мечом и отлично разбираются в тактике ведения боя.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_29");	//Стоит тебе лишь на секунду потерять концентрацию - и их огромный меч разрубит тебя пополам!
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_32");	//И последние в этом списке - это ВРУШМОР-КОГРОН, элитные орочьи предводители. Именно они управляют целыми армиями орков и ведут их в атаку.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_33");	//Убить такого противника - огромная честь для любого воина - и для паладина в том числе.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_34");	//Правда, на поле боя они показываются в довольно редких случаях и, как правило, в сопровождении многочисленной охраны.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_35");	//Так что, чтобы пробиться к ним, тебе сперва придется для начала уложить несколько дюжин вооруженных до зубов охранников, и только после этого у тебя появится шанс убить такого противника.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_37");	//Выше них по рангу стоят только могущественные вожди Орды. Но я никогда их не видел.
-	AI_Output(self,other,"DIA_Ingmar_AboutOrks_01_39");	//И я даже понятия не имею, как они выглядят и насколько сильны.
+	AI_Output(other,self, " DIA_Ingmar_AboutOrks_01_00 " );	// Do you know anything about orcs?
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_01 " );	// Do I know anything about orcs? Man, I'm the best expert on these monsters in the whole kingdom!
+	AI_Output(other,self, " DIA_Ingmar_AboutOrks_01_04 " );	// Then you can probably tell me a lot of interesting things about them.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_07 " );	// Okay, listen. Many people consider orcs to be rather primitive creatures.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_08 " );	// But in fact, these creatures have their own strict military hierarchy, which is quite effective in terms of organization.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_09 " );	// And, as you can see, it brought them pretty good results in the war with us.
+	AI_Output(other,self, " DIA_Ingmar_AboutOrks_01_10 " );	// What is this hierarchy?
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_11 " );	// The first step in it is occupied by orc warriors - this is the main combat unit of their army. In the orc language, these warriors are called GRASH-RAMTOR!
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_12 " );	// They wear light mail armor and are not particularly dangerous opponents even for a simple hunter.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_13 " );	// Such orcs usually do not know the art of battle, and try to crush their enemy with simple numerical superiority.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_14 " );	// It won't be too hard to defeat such a monster.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_16 " );	// Next in rank are Black Orc Warriors or ERZMRAX-KORRGRON! They are very strong and proficient with melee weapons.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_17 " );	// A fight with such an opponent will be a serious test for any experienced warrior. Therefore, try to avoid meeting with them if you do not have strong armor.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_18 " );	// Elite Black Orc Warriors are even more dangerous! They are called TARSCHMORE-GRONSROCK, and this opponent is already a very serious test even for an experienced knight.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_19 " );	// Heavy armor reliably protects them from swords and axes. And on top of that, they are also armed with heavy crossbows that can easily pierce the most durable armor.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_21 " );	// Next, following them in rank are GRAX-NARZULG - elite black orc elders.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_22 " );	// They are an order of magnitude stronger than ordinary warriors, and their competence includes commanding small units of orcs.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_23 " );	// They can't be found in large numbers, but they're just as hard to fight as they are us paladins of Innos.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_24 " );	// That's why the Elite Black Orc Elders are our biggest opponents on the battlefield!
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_25 " );	// Next in the ork military hierarchy are ROR-GNORK - elite Orc warlords who command the Grax-Narzulg, directing and coordinating their actions.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_28 " );	// These elite orcs are skilled with swordsmanship and are well versed in combat tactics.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_29 " );	// If you lose focus for just a second, their huge sword will cut you in half!
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_32 " );	// And last on this list are the VRUSHMORE-KOGRON, the elite Ork leaders. It is they who control entire armies of orcs and lead them on the attack.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_33 " );	// To kill such an opponent is a great honor for any warrior - and for a paladin as well.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_34 " );	// True, they are shown on the battlefield in rather rare cases and, as a rule, accompanied by numerous guards.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_35 " );	// So in order to get through to them, you'll first have to take out a few dozen heavily armed guards first, and only then will you have a chance to kill such an enemy.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_37 " );	// Above them in rank are only the powerful leaders of the Horde. But I never saw them.
+	AI_Output(self,other, " DIA_Ingmar_AboutOrks_01_39 " );	// And I have no idea what they look like or how strong they are.
 };
 
 instance DIA_Ingmar_CanTeachShield(C_Info)
@@ -647,7 +648,7 @@ instance DIA_Ingmar_CanTeachShield(C_Info)
 	condition = DIA_Ingmar_CanTeachShield_Condition;
 	information = DIA_Ingmar_CanTeachShield_Info;
 	permanent = FALSE;
-	description = "У меня к тебе вопрос.";
+	description = " I have a question for you. " ;
 };
 
 func int DIA_Ingmar_CanTeachShield_Condition()
@@ -660,27 +661,27 @@ func int DIA_Ingmar_CanTeachShield_Condition()
 
 func void DIA_Ingmar_CanTeachShield_Info()
 {
-	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_00");	//У меня к тебе вопрос.
-	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_01");	//Что тебя интересует?
-	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_02");	//Седрик сказал, что ты можешь достать для меня щит паладина.
-	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_03");	//Ах, это...(ворчливо) Похоже, этот упрямец успокоится только тогда, когда мы все будем ходить с ними за спиной.
-	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_04");	//Ты с ним не согласен?
-	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_05");	//Я приверженец старого доброго двуручного меча. И лучше него ничего быть не может!
-	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_06");	//Так что насчет щита?
-	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_07");	//Ну, если ты так настаиваешь... Хорошо, я дам тебе щит паладина.
-	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_08");	//Но чтобы носить его, ты должен хорошо владеть одноручным оружием.
+	AI_Output(other,self, " DIA_Ingmar_CanTeachShield_01_00 " );	// I have a question for you.
+	AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_01 " );	// What are you interested in?
+	AI_Output(other,self, " DIA_Ingmar_CanTeachShield_01_02 " );	// Cedric said you could get me a paladin shield.
+	AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_03 " );	// Ah, that's... (grouchily) It looks like this stubborn bastard will only calm down when we all walk around with them behind their backs.
+	AI_Output(other,self, " DIA_Ingmar_CanTeachShield_01_04 " );	// Do you disagree with him?
+	AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_05 " );	// I'm a fan of the good old two-handed sword. And there is nothing better than him!
+	AI_Output(other,self, " DIA_Ingmar_CanTeachShield_01_06 " );	// So what about the shield?
+	AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_07 " );	// Well, if you insist so... Fine, I'll give you a paladin shield.
+	AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_08 " );	// But in order to wear it, you must be proficient with one-handed weapons.
 
 	if(hero.HitChance[NPC_TALENT_1H] >= 50)
 	{
-		AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_09");	//Я достаточно хорошо владею им.
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_10");	//(вздыхая) Ну, хорошо. Вот, держи.
+		AI_Output(other,self, " DIA_Ingmar_CanTeachShield_01_09 " );	// I'm pretty good at it.
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_10 " );	// (sighing) Well, okay. Here you are.
 		B_GiveInvItems(self,other,ItAr_Shield_07,1);
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_11");	//Надеюсь, он хорошо послужит тебе в бою.
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_11 " );	// Hope it serves you well in battle.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_13");	//А насколько я могу судить, ты еще недостаточно опытен.
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_14");	//Приходи, когда научишься лучше обращаться с одноручным мечом.
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_13 " );	// And as far as I can tell, you're still not experienced enough.
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_01_14 " );	// Come back when you get better with a one-handed sword.
 		NeedProofShield = TRUE;
 	};
 };
@@ -692,7 +693,7 @@ instance DIA_Ingmar_CanTeachShield_Perm(C_Info)
 	condition = DIA_Ingmar_CanTeachShield_Perm_Condition;
 	information = DIA_Ingmar_CanTeachShield_Perm_Info;
 	permanent = TRUE;
-	description = "Дай мне щит паладина.";
+	description = " Give me a paladin's shield. " ;
 };
 
 func int DIA_Ingmar_CanTeachShield_Perm_Condition()
@@ -705,21 +706,21 @@ func int DIA_Ingmar_CanTeachShield_Perm_Condition()
 
 func void DIA_Ingmar_CanTeachShield_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_Perm_01_00");	//Дай мне щит паладина.
+	AI_Output(other,self, " DIA_Ingmar_CanTeachShield_Perm_01_00 " );	// Give me the paladin's shield.
 
 	if(hero.HitChance[NPC_TALENT_1H] >= 50)
 	{
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_01");	//А что насчет твоего умения сражаться одноручным оружием?
-		AI_Output(other,self,"DIA_Ingmar_CanTeachShield_Perm_01_02");	//Я достаточно хорошо владею им.
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_03");	//(вздыхая) Ну, хорошо. Вот, держи.
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_Perm_01_01 " );	// What about your ability to fight with one-handed weapons?
+		AI_Output(other,self, " DIA_Ingmar_CanTeachShield_Perm_01_02 " );	// I'm pretty good at it.
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_Perm_01_03 " );	// (sighing) Well, okay. Here you are.
 		B_GiveInvItems(self,other,ItAr_Shield_07,1);
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_04");	//Надеюсь, он хорошо послужит тебе в бою.
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_Perm_01_04 " );	// Hope it serves you well in battle.
 		GetPalShield = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_06");	//Я же сказал, что дам тебе его только в том случае, если ты будешь достаточно хорош в обращении с одноручным мечом.
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_07");	//Что тут непонятного?
-		Print("Владение одноручным оружием более 50...");
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_Perm_01_06 " );	// I told you I'll only give it to you if you're good enough with a one-handed sword.
+		AI_Output(self,other, " DIA_Ingmar_CanTeachShield_Perm_01_07 " );	// What's wrong here?
+		Print ( " One-handed weapon proficiency over 50... " );
 	};
 };
