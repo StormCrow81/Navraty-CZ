@@ -1,5 +1,6 @@
 
 
+
 instance DIA_Dobar_EXIT(C_Info)
 {
 	npc = VLK_4106_Good;
@@ -139,33 +140,33 @@ func int DIA_Dobar_NEWS_Condition()
 
 func void DIA_Dobar_NEWS_Info()
 {
-	AI_Output(other,self,"DIA_Dobar_NEWS_15_00");	//Как работа?
-	if(Dobar_einmalig == FALSE)
+	AI_Output(other,self, " DIA_Dobar_NEWS_15_00 " );	// How's work?
+	if (Dobar_unique ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Dobar_NEWS_08_01");	//Я кую оружие для рыцарей замка. С тех пор, как мы прибыли сюда, я не отхожу от кузницы.
-		AI_Output(self,other,"DIA_Dobar_NEWS_08_02");	//Это оружие нам очень пригодится. Мы еще покажем этим проклятым оркам!
-		if(Npc_IsDead(Parlaf) == FALSE)
+		AI_Output(self,other, " DIA_Dobar_NEWS_08_01 " );	// I forge weapons for the knights of the castle. Since we arrived here, I have not left the forge.
+		AI_Output(self,other, " DIA_Dobar_NEWS_08_02 " );	// This weapon will be very useful to us. We'll show those damn orcs yet!
+		if (Npc_IsDead(Parlaf) ==  FALSE )
 		{
 			B_TurnToNpc(self,Parlaf);
-			AI_Output(self,other,"DIA_Dobar_NEWS_08_03");	//(зовет) Эй, Парлаф - затачивай эти мечи получше - орки чертовски сильные противники!
+			AI_Output(self,other, " DIA_Dobar_NEWS_08_03 " );	// (calling) Hey Parlaf - sharpen those swords better - orcs are damn strong opponents!
 			B_TurnToNpc(self,other);
 		};
-		Dobar_einmalig = TRUE;
+		dobar_unique = TRUE ;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Dobar_NEWS_08_04");	//Могло бы быть и лучше. Если бы ты постоянно не отвлекал меня, работа продвигалась бы быстрее.
+		AI_Output(self,other, " DIA_Dobar_NEWS_08_04 " );	// Could be better. If you hadn't constantly distracted me, the work would have progressed faster.
 	};
 };
 
-instance DIA_DOBAR_ARMORCANTEACH(C_Info)
+instance DIA_DOBAR_ARMORCANTEACH (C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 5;
 	condition = dia_dobar_armorcanteach_condition;
 	information = dia_dobar_armorcanteach_info;
 	permanent = TRUE;
-	description = "Ты разбираешься в ковке доспехов?";
+	description = " Are you good at forging armor? " ;
 };
 
 
@@ -179,33 +180,33 @@ func int dia_dobar_armorcanteach_condition()
 
 func void dia_dobar_armorcanteach_info()
 {
-	AI_Output(other,self,"DIA_Dobar_ArmorCanTeach_01_00");	//Ты разбираешься в ковке доспехов?
-	AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_01");	//Да, я немного смыслю в их изготовлении. Хотя, если честно, ковать оружие мне больше по душе.
-	AI_Output(other,self,"DIA_Dobar_ArmorCanTeach_01_02");	//Можешь научить меня, как улучшать доспехи?
-	AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_03");	//Ну, поскольку ты один из нас, я бы мог показать тебе, как сделать твои доспехи более крепкими и надежными.
-	AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_04");	//Но ты должен хотя бы немного разбираться в кузнечном деле.
+	AI_Output(other,self, " DIA_Dobar_ArmorCanTeach_01_00 " );	// Are you good at forging armor?
+	AI_Output(self,other, " DIA_Dobar_ArmorCanTeach_01_01 " );	// Yes, I know a little about making them. Although, to be honest, forging weapons is more to my liking.
+	AI_Output(other,self, " DIA_Dobar_ArmorCanTeach_01_02 " );	// Can you teach me how to upgrade armor?
+	AI_Output(self,other, " DIA_Dobar_ArmorCanTeach_01_03 " );	// Well, since you're one of us, I could show you how to make your armor stronger and more reliable.
+	AI_Output(self,other, " DIA_Dobar_ArmorCanTeach_01_04 " );	// But you should at least know a little about blacksmithing.
 
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
-		AI_Output(other,self,"DIA_Dobar_ArmorCanTeach_01_05");	//Я неплохой кузнец.
-		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_07");	//Это хорошо! Только сразу хочу предупредить тебя, что все имеет свою цену - и мои уроки в том числе.
-		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_08");	//Скажи мне, как будешь готов - и мы начнем обучение.
+		AI_Output(other,self, " DIA_Dobar_ArmorCanTeach_01_05 " );	// I'm a good blacksmith.
+		AI_Output(self,other, " DIA_Dobar_ArmorCanTeach_01_07 " );	// That's good! I just want to warn you right away that everything has its price - including my lessons.
+		AI_Output(self,other, " DIA_Dobar_ArmorCanTeach_01_08 " );	// Tell me when you're ready and we'll start training.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_09");	//А судя по всему, ты даже молот кузнечный в руках не держал!
-		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_10");	//Дам тебе совет, малыш. Сначала научись ковать, а потом я подумаю насчет твоей просьбы...
-		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_11");	//И хочу предупредить тебя, что все имеет свою цену - и мои уроки в том числе.
+		AI_Output(self,other, " DIA_Dobar_ArmorCanTeach_01_09 " );	// And apparently, you didn't even hold a blacksmith's hammer in your hands!
+		AI_Output(self,other, " DIA_Dobar_ArmorCanTeach_01_10 " );	// I'll give you advice, kid. First learn how to forge, and then I will think about your request...
+		AI_Output(self,other, " DIA_Dobar_ArmorCanTeach_01_11 " );	// And I want to warn you that everything has a price - including my lessons.
 	};
 
 	DOBAR_TEACHARMOR = TRUE;
 	Log_CreateTopic(TOPIC_ARMORTEACHER,LOG_NOTE);
-	B_LogEntry(TOPIC_ARMORTEACHER,"Добар может научить меня улучшать доспехи городского ополчения.");
+	B_LogEntry( TOPIC_ARMORTEACHER , " Dobar can teach me how to upgrade city militia armor. " );
 };
 
 func void b_dobar_teacharmor_1()
 {
-	AI_Output(self,other,"DIA_Dobar_TeachArmor_1_01_01");	//Хорошо, начнем. Возьми все необходимые материалы...
+	AI_Output(self,other, " DIA_Dobar_TeachArmor_1_01_01 " );	// Okay, let's get started. Take all the necessary materials...
 
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
@@ -213,8 +214,8 @@ func void b_dobar_teacharmor_1()
 		AI_GotoWP(self,"OC_SMITH_ANVIL");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_1_01_02");	//...на наковальне добавь их в нужной последовательности к разогретой стальной заготовке...
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_1_01_03");	//...после чего придай ей требуемую форму и скрепи с доспехом...
+		AI_Output(self,other, " DIA_Dobar_TeachArmor_1_01_02 " );	// ...on the anvil, add them in the desired sequence to the heated steel billet...
+		AI_Output(self,other, " DIA_Dobar_TeachArmor_1_01_03 " );	// ...then give it the required shape and fasten it to the armor...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Dobar_TeachArmor_1_01_05");	//...вот и все!
@@ -223,7 +224,7 @@ func void b_dobar_teacharmor_1()
 
 func void b_dobar_teacharmor_2()
 {
-	AI_Output(self,other,"DIA_Dobar_TeachArmor_2_01_01");	//Тщательно запоминай все, что я тебе сейчас буду показывать. И как всегда, убедись, что у тебя под рукой есть все материалы для ковки...
+	AI_Output(self,other, " DIA_Dobar_TeachArmor_2_01_01 " );	// Carefully remember everything that I will show you now. And as always, make sure you have all the forging materials on hand...
 
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
@@ -231,12 +232,12 @@ func void b_dobar_teacharmor_2()
 		AI_GotoWP(self,"OC_SMITH_ANVIL");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_2_01_02");	//...возьми раскаленную стальную заготовку и раздели ее на несколько равных частей...
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_2_01_03");	//...смешай каждую часть в нужной последовательности с очередным материалом...
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_2_01_04");	//...а потом вковываешь их в каркас имеющейся брони, старательно проковывая места схода...
+		AI_Output(self,other, " DIA_Dobar_TeachArmor_2_01_02 " );	// ...take a hot steel billet and divide it into several equal parts...
+		AI_Output(self,other, " DIA_Dobar_TeachArmor_2_01_03 " );	// ...mix each part in the right order with the next material...
+		AI_Output(self,other, " DIA_Dobar_TeachArmor_2_01_04 " );	// ...and then you forge them into the frame of the existing armor, carefully forging the exit points...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_2_01_05");	//...и всего-то делов!
+		AI_Output(self,other, " DIA_Dobar_TeachArmor_2_01_05 " );	// ...and that's all!
 	};
 };
 
@@ -247,22 +248,22 @@ func void b_dobararmorchoices()
 
 	if(PLAYER_TALENT_SMITH[13] == FALSE)
 	{
-		Info_AddChoice(dia_dobar_armorteach,"Доспехи ополчения (Цена обучения: 600 монет)",dia_dobar_armorteach_itar_mil_l_v1);
+		Info_AddChoice(dia_dobar_armorteach, " Militia Armor (Training Cost: 600 Coins) " ,dia_dobar_armorteach_itar_mil_l_v1);
 	};
 	if((PLAYER_TALENT_SMITH[14] == FALSE) && (SHOW_ITAR_MIL_M == TRUE))
 	{
-		Info_AddChoice(dia_dobar_armorteach,"Тяжелые доспехи ополчения (Цена обучения: 1200 монет)",dia_dobar_armorteach_itar_mil_m_v1);
+		Info_AddChoice(dia_dobar_armorteach, " Heavy Militia Armor (Training Cost: 1200 coins) " ,dia_dobar_armorteach_itar_mil_m_v1);
 	};
 };
 
 instance DIA_DOBAR_ARMORTEACH(C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 5;
 	condition = dia_dobar_armorteach_condition;
 	information = dia_dobar_armorteach_info;
 	permanent = TRUE;
-	description = "Научи меня улучшать доспехи.";
+	description = " Teach me how to upgrade my armor. " ;
 };
 
 func int dia_dobar_armorteach_condition()
@@ -278,15 +279,15 @@ func int dia_dobar_armorteach_condition()
 
 func void dia_dobar_armorteach_info()
 {
-	AI_Output(other,self,"DIA_Dobar_ArmorTeach_01_00");	//Научи меня улучшать доспехи.
-	if(Wld_IsTime(8,0,20,0))
+	AI_Output(other,self, " DIA_Dobar_ArmorTeach_01_00 " );	// Teach me how to upgrade armor.
+	if (Wld_IsTime( 8 , 0 , 20 , 0 ))
 	{
-		AI_Output(self,other,"DIA_Dobar_ArmorTeach_01_01");	//Хорошо, давай начнем...
+		AI_Output(self,other, " DIA_Dobar_ArmorTeach_01_01 " );	// Okay, let's get started...
 		b_dobararmorchoices();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Dobar_ArmorTeach_01_02");	//Ты что, совсем сбрендил, приятель? Сейчас же ночь! Дождись утра, тогда и приходи.
+		AI_Output(self,other, " DIA_Dobar_ArmorTeach_01_02 " );	// Are you completely crazy, buddy? Now it's night! Wait for the morning, then come.
 	};
 };
 
@@ -309,7 +310,7 @@ func void dia_dobar_armorteach_itar_mil_l_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_01_00");	//(раздраженно) Парень, не пытайся надуть меня! Сначала достань золото...
+		AI_Output(self,other, " DIA_Dobar_TeachArmor_01_00 " );	// (annoyed) Boy, don't try to fool me! Get the gold first...
 	};
 	b_dobararmorchoices();
 };
@@ -328,7 +329,7 @@ func void dia_dobar_armorteach_itar_mil_m_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_01_00");	//(раздраженно) Парень, не пытайся надуть меня! Сначала достань золото...
+		AI_Output(self,other, " DIA_Dobar_TeachArmor_01_00 " );	// (annoyed) Boy, don't try to fool me! Get the gold first...
 	};
 	b_dobararmorchoices();
 };
@@ -336,17 +337,17 @@ func void dia_dobar_armorteach_itar_mil_m_v1()
 
 instance DIA_Dobar_WarGoods(C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 3;
 	condition = DIA_Dobar_WarGoods_Condition;
 	information = DIA_Dobar_WarGoods_Info;
 	permanent = FALSE;
-	description = "Помощь не нужна?";
+	description = " Do you need help? " ;
 };
 
 func int DIA_Dobar_WarGoods_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Dobar_Talent))
+	if ( Npc_KnowsInfo ( other , DIA_Dobar_Talent ))
 	{
 		return TRUE;
 	};
@@ -354,40 +355,40 @@ func int DIA_Dobar_WarGoods_Condition()
 
 func void DIA_Dobar_WarGoods_Info()
 {
-	AI_Output(other,self,"DIA_Dobar_WarGoods_01_00");	//Помощь не нужна?
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_01");	//Хммм...(ворчливо) Мне сейчас действительно не помешала бы чья-либо помощь.
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_02");	//Нашим парням порой приходится отстреливаться от орков, что бродят возле тарана.
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_03");	//А для этого нужны болты. Много болтов! Но поскольку замок окружен этими тварями, то...
-	AI_Output(other,self,"DIA_Dobar_WarGoods_01_04");	//...то я должен достать для вас болты. Я прав?
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_05");	//Не перебивай меня! Болты я и сам могу сделать, но для этого...
-	AI_Output(other,self,"DIA_Dobar_WarGoods_01_06");	//...нужна сталь. Угадал?
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_07");	//(раздраженно) Белиар бы тебя побрал, мальчишка! Ты вообще можешь дослушать до конца?
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_08");	//Стали у меня полно! К тому же я научился переплавлять оружие убитых паладинами орков, и с ней теперь проблем особо нет.
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_09");	//Мне нужен уголь. Его запасы в замке подходят к концу, а мне необходимо каждый день чем-то растапливать свой горн.
-	AI_Output(other,self,"DIA_Dobar_WarGoods_01_10");	//И где же мне взять для тебя этот уголь?
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_11");	//(ворчливо) Откуда мне знать? Но, думаю, его можно поискать в старых рудных шахтах.
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_12");	//Там должны были остаться огромные плавильные печи. А для их разогрева обычно требуется просто невероятное количество угля.
-	AI_Output(other,self,"DIA_Dobar_WarGoods_01_13");	//Понятно. Тогда загляну туда при случае.
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_14");	//Так-то лучше...
+	AI_Output(other,self, " DIA_Dobar_WarGoods_01_00 " );	// Need help?
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_01 " );	// Hmmm... (grouchily) I really could use some help right now.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_02 " );	// Our guys sometimes have to shoot back from the orcs that roam near the battering ram.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_03 " );	// And that requires bolts. Lots of bolts! But since the castle is surrounded by these creatures, then...
+	AI_Output(other,self, " DIA_Dobar_WarGoods_01_04 " );	// ...then I must get the bolts for you. I'm right?
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_05 " );	// Don't interrupt me! I can make the bolts myself, but for this...
+	AI_Output(other, self, " DIA_Dobar_WarGoods_01_06 " );	// ...needs steel. Guessed?
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_07 " );	// (annoyed) Beliar would take you, boy! Can you listen to the end at all?
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_08 " );	// I have a lot of steel! In addition, I learned how to smelt the weapons of the orcs killed by the paladins, and now there are no particular problems with it.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_09 " );	// I need coal. His reserves in the castle are running out, and I need something to melt my forge every day.
+	AI_Output(other,self, " DIA_Dobar_WarGoods_01_10 " );	// And where can I get this coal for you?
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_11 " );	// (grouchily) How should I know? But I think you can look for it in the old ore mines.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_12 " );	// There should have been huge smelting furnaces. And to heat them up, it usually takes an incredible amount of coal.
+	AI_Output(other,self, " DIA_Dobar_WarGoods_01_13 " );	// Got it. Then I'll take a look there.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_01_14 " );	// That's better...
 	MIS_DobarCoal = LOG_Running;
 	Log_CreateTopic(TOPIC_DobarCoal,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DobarCoal,LOG_Running);
-	B_LogEntry(TOPIC_DobarCoal,"У кузнеца Добара подходят к концу запасы угля в замке. А без него он не сможет ковать оружие и болты для паладинов. Добар предположил, что большое количество угля можно достать в старых рудных шахтах.");
+	) ; _ _ _
 };
 
 instance DIA_Dobar_WarGoods_Done(C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 3;
 	condition = DIA_Dobar_WarGoods_Done_Condition;
 	information = DIA_Dobar_WarGoods_Done_Info;
 	permanent = FALSE;
-	description = "Я принес тебе огромный пакет с углем.";
+	description = " I brought you a huge bag of coal. " ;
 };
 
 func int DIA_Dobar_WarGoods_Done_Condition()
 {
-	if((MIS_DobarCoal == LOG_Running) && (Npc_HasItems(other,ITMI_COALBAG) >= 1))
+	if ((MY_CarryCoal == LOG_Running) && (Npc_HasItems(other, ITMI_COALBAG ) >=  1 ))
 	{
 		return TRUE;
 	};
@@ -397,7 +398,7 @@ func void DIA_Dobar_WarGoods_Done_Info()
 {
 	var int MoreCoal;
 
-	AI_Output(other,self,"DIA_Dobar_WarGoods_Done_01_00");	//Я принес тебе огромный пакет с углем.
+	AI_Output(other,self, " DIA_Dobar_WarGoods_Done_01_00 " );	// I brought you a huge bag of coal.
 
 	if(Npc_HasItems(other,ITMI_COALBAG) == 1)
 	{
@@ -405,7 +406,7 @@ func void DIA_Dobar_WarGoods_Done_Info()
 		B_GiveInvItems(other,self,ITMI_COALBAG,1);
 		Npc_RemoveInvItems(self,ITMI_COALBAG,1);
 	}
-	else if(Npc_HasItems(other,ITMI_COALBAG) >= 2)
+	else  if ( Npc_HasItems ( other , ITMI_COALBAG ) >=  2 )
 	{
 		B_GivePlayerXP(1000);
 		B_GiveInvItems(other,self,ITMI_COALBAG,2);
@@ -413,10 +414,10 @@ func void DIA_Dobar_WarGoods_Done_Info()
 		MoreCoal = TRUE;
 	};
 
-	AI_Output(self,other,"DIA_Dobar_WarGoods_Done_01_01");	//Ого! Какой огромный! И где же ты умудрился его достать?
-	AI_Output(other,self,"DIA_Dobar_WarGoods_Done_01_02");	//Как ты и предполагал, я нашел его в старой шахте.
-	AI_Output(self,other,"DIA_Dobar_WarGoods_Done_01_03");	//Вот видишь? Мои предчувствия меня не обманули.
-	AI_Output(self,other,"DIA_Dobar_WarGoods_Done_01_04");	//Спасибо тебе за помощь, приятель. За это я дам тебе немного болтов из наших запасов.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_Done_01_01 " );	// Wow! How huge! And where did you manage to get it?
+	AI_Output(other,self, " DIA_Dobar_WarGoods_Done_01_02 " );	// As you suspected, I found it in an old mine.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_Done_01_03 " );	// You see? My premonitions did not deceive me.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_Done_01_04 " );	// Thanks for your help, mate. For that, I'll give you some bolts from our stocks.
 
 	if(MoreCoal == TRUE)
 	{
@@ -427,22 +428,22 @@ func void DIA_Dobar_WarGoods_Done_Info()
 		B_GiveInvItems(self,other,ItRw_Bolt,100);
 	};
 
-	AI_Output(self,other,"DIA_Dobar_WarGoods_Done_01_06");	//Надеюсь, они тебе пригодятся, если ты вдруг решишь подстрелить парочку орков.
+	AI_Output(self,other, " DIA_Dobar_WarGoods_Done_01_06 " );	// Hope you find them useful if you ever decide to shoot some orcs.
 	MIS_DobarCoal = LOG_Success;
 	Log_SetTopicStatus(TOPIC_DobarCoal,LOG_Success);
-	B_LogEntry(TOPIC_DobarCoal,"Добар остался доволен количеством принесенного мной угля.");
+	B_LogEntry(TOPIC_DobarCoal, " Dobar was satisfied with the amount of coal I brought. " );
 };
 
 var int DobarTeachOrcsWeapon;
 
 instance DIA_Dobar_OrcsWeapon(C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 3;
 	condition = DIA_Dobar_OrcsWeapon_Condition;
 	information = DIA_Dobar_OrcsWeapon_Info;
 	permanent = FALSE;
-	description = "Ты умеешь переплавлять оружие орков?";
+	description = " Can you smelt orc weapons? " ;
 };
 
 func int DIA_Dobar_OrcsWeapon_Condition()
@@ -455,39 +456,39 @@ func int DIA_Dobar_OrcsWeapon_Condition()
 
 func void DIA_Dobar_OrcsWeapon_Info()
 {
-	AI_Output(other,self,"DIA_Dobar_OrcsWeapon_01_00");	//Ты умеешь переплавлять оружие орков?
-	AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_01");	//Пришлось научиться! Иначе откуда паладинам брать боеприпасы?
-	AI_Output(other,self,"DIA_Dobar_OrcsWeapon_01_02");	//А меня можешь этому научить?
-	AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_03");	//Ну... почему бы и нет?
-	AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_05");	//Но прежде ты должен будешь освоить процесс выплавки стали из железной руды.
+	AI_Output(other,self, " DIA_Dobar_OrcsWeapon_01_00 " );	// Can you smelt orc weapons?
+	AI_Output(self,other, " DIA_Dobar_OrcsWeapon_01_01 " );	// Had to learn! Otherwise, where do paladins get ammunition from?
+	AI_Output(other,self, " DIA_Dobar_OrcsWeapon_01_02 " );	// Can you teach me this?
+	AI_Output(self,other, " DIA_Dobar_OrcsWeapon_01_03 " );	// Well... why not?
+	AI_Output(self,other, " DIA_Dobar_OrcsWeapon_01_05 " );	// But first, you'll have to master the process of smelting steel from iron ore.
 
 	if(KNOWHOWTOOREFUS == TRUE)
 	{
-		AI_Output(other,self,"DIA_Dobar_OrcsWeapon_01_06");	//Это я уже знаю.
-		AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_07");	//Хорошо! Тем будет проще для тебя...
-		AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_08");	//Но сразу хочу предупредить, что в качестве платы за обучение я принимаю только магическую руду.
+		AI_Output(other,self, " DIA_Dobar_OrcsWeapon_01_06 " );	// I already know this.
+		AI_Output(self,other, " DIA_Dobar_OrcsWeapon_01_07 " );	// Good! The easier it will be for you...
+		AI_Output(self,other, " DIA_Dobar_OrcsWeapon_01_08 " );	// But I want to warn you right away that I only accept magical ores as tuition fees.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_09");	//Без этих знаний я вряд ли смогу тебе помочь.
-		AI_Output(other,self,"DIA_Dobar_OrcsWeapon_01_10");	//Понимаю.
-		AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_11");	//И еще кое-что. В качестве платы за обучение я принимаю только магическую руду.
+		AI_Output(self,other, " DIA_Dobar_OrcsWeapon_01_09 " );	// Without this knowledge, I can hardly help you.
+		AI_Output(other,self, " DIA_Dobar_OrcsWeapon_01_10 " );	// I understand.
+		AI_Output(self,other, " DIA_Dobar_OrcsWeapon_01_11 " );	// And one more thing. I only accept magical ores as tuition fees.
 	};
 
 
-	AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_12");	//Золото нам тут без надобности!
+	AI_Output(self,other, " DIA_Dobar_OrcsWeapon_01_12 " );	// We don't need gold here!
 	DobarTeachOrcsWeapon = TRUE;
-	B_LogEntry(TOPIC_Teacher_OC,"Добар может обучить меня переплавлять оружие орков в стальные болванки.");
+	B_LogEntry(TOPIC_Teacher_OC, " Dobar can teach me how to smelt orc weapons into ingots of steel. " );
 };
 
 instance DIA_Dobar_OrcsWeaponTeach(C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 5;
 	condition = DIA_Dobar_OrcsWeaponTeach_condition;
 	information = DIA_Dobar_OrcsWeaponTeach_info;
 	permanent = TRUE;
-	description = "Обучи меня переплавлять оружие орков. (Очки обучения: 2, Цена: 10 кусков руды)";
+	description = " Teach me how to smelt orc weapons. (Training Points: 2, Cost: 10 Ore) " ;
 };
 
 func int DIA_Dobar_OrcsWeaponTeach_condition()
@@ -500,29 +501,29 @@ func int DIA_Dobar_OrcsWeaponTeach_condition()
 
 func void DIA_Dobar_OrcsWeaponTeach_info()
 {
-	AI_Output(other,self,"DIA_Dobar_OrcsWeaponTeach_01_00");	//Обучи меня переплавлять оружие орков.
+	AI_Output(other,self, " DIA_Dobar_OrcsWeaponTeach_01_00 " );	// Teach me how to smelt orc weapons.
 
 	if(KNOWHOWTOOREFUS == FALSE)
 	{
-		AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_01");	//Пока ты не знаком с техникой плавки стали, ты не сможешь этому научиться. Разве я не говорил тебе?
+		AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_01 " );	// Until you are familiar with the technique of melting steel, you will not be able to learn it. Didn't I tell you?
 	}
 	else
 	{
-		if((hero.lp >= 2) && (Npc_HasItems(other,ItMi_Nugget) >= 10))
+		if ((hero.lp >=  2 ) && (Npc_HasItems(other,ItMy_Nugget) >=  10 )) ;
 		{
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_02");	//Хорошо. Для начала тебе нужна одна своя стальная болванка.
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_03");	//Она необходима для того, чтобы все твои последующие болванки были одинакового размера.
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_04");	//Также следует знать, что орочья сталь совсем не похожа на нашу. Орки не слишком заботятся о чистоте сплава.
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_05");	//Поэтому, чтобы получить одну стальную болванку хорошего качества, одного их топора или меча не хватит.
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_06");	//У меня обычно уходит порядка десяти на изготовления одной заготовки.
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_07");	//И самое главное - необходимо хорошенько выпарить из сплава различные примеси!
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_08");	//Ну, вот, вроде бы, и все.
+			AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_02 " );	// Good. To get started, you need one of your own steel blanks.
+			AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_03 " );	// It is necessary so that all your subsequent discs are the same size.
+			AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_04 " );	// You should also be aware that Orc steel is nothing like ours. Orcs don't care too much about the purity of the alloy.
+			AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_05 " );	// Therefore, to get one good quality steel ingot, one of their ax or sword is not enough.
+			AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_06 " );	// It usually takes me about ten to make one blank.
+			AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_07 " );	// And most importantly - it is necessary to thoroughly evaporate various impurities from the alloy!
+			AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_08 " );	// Well, that's it, that's all.
 			hero.lp = hero.lp - 2;
 			RankPoints = RankPoints + 2;
 			Npc_RemoveInvItems(hero,ItMi_Nugget,10);
 			OrcsWeaponSteel = TRUE;
-			AI_Print("Изучено: переплавка оружия");
-			B_LogEntry(TOPIC_STEELDRAW,"Теперь я умею переплавлять оружие орков.");
+			AI_Print( " Studied : Weapon Smelting " );
+			B_LogEntry( TOPIC_STEELDRAW , " Now I can smelt orc weapons. " );
 			Snd_Play("LevelUP");
 		}
 		else
