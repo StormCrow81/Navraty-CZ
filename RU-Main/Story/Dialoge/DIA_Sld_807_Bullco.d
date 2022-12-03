@@ -1,4 +1,5 @@
 
+
 instance DIA_Bullco_EXIT(C_Info)
 {
 	npc = Sld_807_Bullco;
@@ -21,14 +22,14 @@ func void DIA_Bullco_EXIT_Info()
 };
 
 
-instance DIA_Bullco_Hallo(C_Info)
+instance DIA_Bullco_Hallo (C_Info)
 {
 	npc = Sld_807_Bullco;
 	nr = 1;
 	condition = DIA_Bullco_Hallo_Condition;
 	information = DIA_Bullco_Hallo_Info;
 	permanent = TRUE;
-	description = "Нам двоим нужно поболтать...";
+	description = " We two need to chat... " ;
 };
 
 
@@ -39,20 +40,20 @@ func int DIA_Bullco_Hallo_Condition()
 
 func void DIA_Bullco_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_Bullco_HALLO_15_00");	//Нам двоим нужно поболтать...
+	AI_Output(other,self, " DIA_Bullco_HALLO_15_00 " );	// We two need to chat...
 	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
-		AI_Output(self,other,"DIA_Bullco_HALLO_06_01");	//Послушай, ты победил! Теперь оставь меня в покое.
+		AI_Output(self,other, " DIA_Bullco_HALLO_06_01 " );	// Look, you won! Now leave me alone.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bullco_HALLO_06_02");	//Я ничего не хочу знать об этом.
+		AI_Output(self,other, " DIA_Bullco_HALLO_06_02 " );	// I don't want to know anything about this.
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Bullco_Quatscher(C_Info)
+instance DIA_Bullco_Quatscher (C_Info)
 {
 	npc = Sld_807_Bullco;
 	nr = 2;
@@ -65,7 +66,7 @@ instance DIA_Bullco_Quatscher(C_Info)
 
 func int DIA_Bullco_Quatscher_Condition()
 {
-	if((self.aivar[AIV_DefeatedByPlayer] == FALSE) && (Sylvio_angequatscht >= 2))
+	if (( self . aivar [ AIV_DefeatedByPlayer ] ==  FALSE ) && ( Sylvio_angequatscht >=  2 ))
 	{
 		return TRUE;
 	};
@@ -73,7 +74,7 @@ func int DIA_Bullco_Quatscher_Condition()
 
 func void DIA_Bullco_Quatscher_Info()
 {
-	AI_Output(self,other,"DIA_Bullco_Quatscher_06_00");	//Сильвио не любит болтунов. Ты мог бы понять это уже.
+	AI_Output(self,other, " DIA_Bullco_Quatscher_06_00 " );	// Silvio doesn't like talkers. You could understand it already.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"PEE");
 	B_Attack(self,other,AR_NONE,1);
@@ -96,7 +97,7 @@ instance DIA_Bullco_PleaseLeave(C_Info)
 
 func int DIA_Bullco_PleaseLeave_Condition()
 {
-	if(self.aivar[AIV_DefeatedByPlayer] == FALSE)
+	if (self.aivar[AIV_DefeatedByPlayer] ==  FALSE )
 	{
 		if((self.aivar[AIV_LastFightAgainstPlayer] != FIGHT_NONE) || (Sylvio_MenDefeated == TRUE))
 		{
@@ -107,10 +108,10 @@ func int DIA_Bullco_PleaseLeave_Condition()
 
 func void DIA_Bullco_PleaseLeave_Info()
 {
-	AI_Output(self,other,"DIA_Bullco_PleaseLeave_06_00");	//Нам нужно поговорить. Тебе и мне.
-	AI_Output(other,self,"DIA_Bullco_PleaseLeave_15_01");	//Что тебе нужно?
-	AI_Output(self,other,"DIA_Bullco_PleaseLeave_06_02");	//Я думаю, будет лучше для всех, если твоя физиономия больше не будет маячить на этой ферме.
-	AI_Output(self,other,"DIA_Bullco_PleaseLeave_06_03");	//Чтобы завтра утром тебя здесь не было. Мы поняли друг друга?
+	AI_Output(self,other, " DIA_Bullco_PleaseLeave_06_00 " );	// We need to talk. You and me
+	AI_Output(other,self, " DIA_Bullco_PleaseLeave_15_01 " );	// What do you need?
+	AI_Output(self,other, " DIA_Bullco_PleaseLeave_06_02 " );	// I think it's better for everyone if your face doesn't hang around this farm anymore.
+	AI_Output(self,other, " DIA_Bullco_PleaseLeave_06_03 " );	// So that you won't be here tomorrow morning. Did we understand each other?
 	Bullco_Leave_Day = B_GetDayPlus();
 	Bullco_scharf = TRUE;
 	AI_StopProcessInfos(self);
@@ -120,7 +121,7 @@ func void DIA_Bullco_PleaseLeave_Info()
 
 var int Bullco_HitCounter;
 
-instance DIA_Bullco_DailyCheck(C_Info)
+instances of DIA_Bullco_DailyCheck (C_Info)
 {
 	npc = Sld_807_Bullco;
 	nr = 4;
@@ -133,7 +134,7 @@ instance DIA_Bullco_DailyCheck(C_Info)
 
 func int DIA_Bullco_DailyCheck_Condition()
 {
-	if((self.aivar[AIV_DefeatedByPlayer] == FALSE) && (Bullco_scharf == TRUE) && (Wld_GetDay() > Bullco_Leave_Day))
+	if (( self . aivar [ AIV_DefeatedByPlayer ] ==  FALSE ) && ( Bullco_scharf ==  TRUE ) && ( Wld_GetDay () > Bullco_Leave_Day ))
 	{
 		return TRUE;
 	};
@@ -143,13 +144,13 @@ func void DIA_Bullco_DailyCheck_Info()
 {
 	if(Bullco_HitCounter == 0)
 	{
-		AI_Output(self,other,"DIA_Bullco_DailyCheck_06_00");	//Ты все еще здесь...
-		AI_Output(self,other,"DIA_Bullco_DailyCheck_06_01");	//А я-то думал, мы договорились, что я позволю тебе уйти с миром.
-		AI_Output(self,other,"DIA_Bullco_DailyCheck_06_02");	//Тебе стоило прислушаться к моим словам.
+		AI_Output(self,other, " DIA_Bullco_DailyCheck_06_00 " );	// You're still here...
+		AI_Output(self,other, " DIA_Bullco_DailyCheck_06_01 " );	// I thought we agreed that I would let you go in peace.
+		AI_Output(self,other, " DIA_Bullco_DailyCheck_06_02 " );	// You should have listened to my words.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bullco_DailyCheck_06_03");	//Глазам своим не верю! Этот урод все еще здесь!
+		AI_Output(self,other, " DIA_Bullco_DailyCheck_06_03 " );	// I can't believe my eyes! This freak is still here!
 	};
 	Bullco_HitCounter = Bullco_HitCounter + 1;
 	Bullco_Leave_Day = B_GetDayPlus();
@@ -165,7 +166,7 @@ instance DIA_Bullco_WontLeave(C_Info)
 	condition = DIA_Bullco_WontLeave_Condition;
 	information = DIA_Bullco_WontLeave_Info;
 	permanent = FALSE;
-	description = "Я НЕ СОБИРАЮСЬ уходить отсюда!";
+	description = " I'm NOT going to leave here! " ;
 };
 
 
@@ -179,36 +180,36 @@ func int DIA_Bullco_WontLeave_Condition()
 
 func void DIA_Bullco_WontLeave_Info()
 {
-	AI_Output(other,self,"DIA_Bullco_WontLeave_15_00");	//Я НЕ СОБИРАЮСЬ уходить отсюда!
-	if(self.aivar[AIV_DefeatedByPlayer] == FALSE)
+	AI_Output(other,self, " DIA_Bullco_WontLeave_15_00 " );	// I'm NOT going to leave here!
+	if (self.aivar[AIV_DefeatedByPlayer] ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Bullco_WontLeave_06_01");	//(вздыхает) Похоже, нам придется обсудить этот вопрос опять.
+		AI_Output(self,other, " DIA_Bullco_WontLeave_06_01 " );	// (sighs) Looks like we'll have to discuss this issue again.
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_NONE,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bullco_WontLeave_06_02");	//(ворчливо) Да, да, иди, расскажи это кому-нибудь, кому это интересно.
-		Bullco_scharf = FALSE;
+		AI_Output(self,other, " DIA_Bullco_WontLeave_06_02 " );	// (grouchily) Yes, yes, go tell this to someone who is interested.
+		Bullco_sharp = FALSE ;
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_Bullco_PepesSchafe(C_Info)
+instance DIA_Bullco_PepesSchafe (C_Info)
 {
 	npc = Sld_807_Bullco;
 	nr = 6;
 	condition = DIA_Bullco_PepesSchafe_Condition;
 	information = DIA_Bullco_PepesSchafe_Info;
 	permanent = FALSE;
-	description = "Тебе имя Пепе говорит о чем-нибудь?";
+	description = " Does the name Pepe mean anything to you? " ;
 };
 
 
 func int DIA_Bullco_PepesSchafe_Condition()
 {
-	if((MIS_Pepe_KillWolves == LOG_SUCCESS) && (Bullco_scharf == TRUE) && (Onar_WegenPepe == TRUE))
+	if ((MY_Pepe_KillWolves ==  LOG_SUCCESS ) && (Bullco_scharf ==  TRUE ) && (Onar_WegenPepe ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -216,18 +217,18 @@ func int DIA_Bullco_PepesSchafe_Condition()
 
 func void DIA_Bullco_PepesSchafe_Info()
 {
-	AI_Output(other,self,"DIA_Bullco_PepesSchafe_15_00");	//Тебе имя Пепе говорит о чем-нибудь?
-	AI_Output(self,other,"DIA_Bullco_PepesSchafe_06_01");	//Я абсолютно не понимаю, о чем ты говоришь, но твой тон мне не нравится!
-	AI_Output(other,self,"DIA_Bullco_PepesSchafe_15_02");	//Ты должен был охранять овец.
-	AI_Output(self,other,"DIA_Bullco_PepesSchafe_06_03");	//Какое мне дело до овец?
-	AI_Output(other,self,"DIA_Bullco_PepesSchafe_15_04");	//До них есть дело Ли.
-	AI_Output(self,other,"DIA_Bullco_PepesSchafe_06_05");	//На что ты намекаешь?
-	AI_Output(other,self,"DIA_Bullco_PepesSchafe_15_06");	//Если ты продолжишь действовать мне на нервы, я позабочусь, чтобы тебе пришлось заплатить за овец.
-	AI_Output(other,self,"DIA_Bullco_PepesSchafe_15_07");	//Так что если тебя волнует твое жалование, оставь меня в покое!
-	AI_Output(self,other,"DIA_Bullco_PepesSchafe_06_08");	//(в ярости) Ты, ты...
-	AI_Output(other,self,"DIA_Bullco_PepesSchafe_15_09");	//(спокойно) Да?
-	AI_Output(self,other,"DIA_Bullco_PepesSchafe_06_10");	//(себе под нос) Мерзкий коварный ублюдок...
-	Bullco_scharf = FALSE;
+	AI_Output(other,self, " DIA_Bullco_PepesSchafe_15_00 " );	// Does the name Pepe mean anything to you?
+	AI_Output(self,other, " DIA_Bullco_PepesSchafe_06_01 " );	// I have absolutely no idea what you're talking about, but I don't like your tone!
+	AI_Output(other,self, " DIA_Bullco_PepesSchafe_15_02 " );	// You were supposed to guard the sheep.
+	AI_Output(self,other, " DIA_Bullco_PepesSchafe_06_03 " );	// What do I care about sheep?
+	AI_Output(other,self, " DIA_Bullco_PepesSchafe_15_04 " );	// They're Li's business.
+	AI_Output(self,other, " DIA_Bullco_PepesSchafe_06_05 " );	// What are you implying?
+	AI_Output(other,self, " DIA_Bullco_PepesSchafe_15_06 " );	// If you keep getting on my nerves, I'll make sure you have to pay for the sheep.
+	AI_Output(other,self, " DIA_Bullco_PepesSchafe_15_07 " );	// So if you care about your salary, leave me alone!
+	AI_Output(self,other, " DIA_Bullco_PepesSchafe_06_08 " );	// (furious) You, you...
+	AI_Output(other,self, " DIA_Bullco_PepesSchafe_15_09 " );	// (calmly) Yes?
+	AI_Output(self,other, " DIA_Bullco_PepesSchafe_06_10 " );	// (under his breath) You nasty sly bastard...
+	Bullco_sharp = FALSE ;
 	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 };
@@ -246,7 +247,7 @@ instance DIA_BullcoSLD_PICKPOCKET(C_Info)
 
 func int DIA_BullcoSLD_PICKPOCKET_Condition()
 {
-	return C_Beklauen(56,35);
+	return  C_Robbery ( 56 , 35 );
 };
 
 func void DIA_BullcoSLD_PICKPOCKET_Info()
@@ -258,7 +259,7 @@ func void DIA_BullcoSLD_PICKPOCKET_Info()
 
 func void DIA_BullcoSLD_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_BullcoSLD_PICKPOCKET);
 };
 
