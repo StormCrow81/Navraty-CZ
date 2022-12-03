@@ -1,4 +1,5 @@
 
+
 instance DIA_Regis_EXIT(C_Info)
 {
 	npc = VLK_425_Regis;
@@ -34,7 +35,7 @@ instance DIA_Regis_PICKPOCKET(C_Info)
 
 func int DIA_Regis_PICKPOCKET_Condition()
 {
-	return C_Beklauen(40,35);
+	return  C_Robbery ( 40 , 35 );
 };
 
 func void DIA_Regis_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Regis_PICKPOCKET_Info()
 
 func void DIA_Regis_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Regis_PICKPOCKET);
 };
 
@@ -56,12 +57,12 @@ func void DIA_Regis_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Regis_Hallo(C_Info)
+instance DIA_Regis_Hello (C_Info)
 {
 	npc = VLK_425_Regis;
 	nr = 1;
 	condition = DIA_Regis_Hallo_Condition;
-	information = DIA_Regis_Hallo_Info;
+	information = DIA_Regis_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -77,21 +78,21 @@ func int DIA_Regis_Hallo_Condition()
 
 func void DIA_Regis_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Regis_Hallo_13_00");	//Эй, ты недавно в этом городе, да?
+	AI_Output(self,other, " DIA_Regis_Hallo_13_00 " );	// Hey, you're new to this city, right?
 	AI_Output(other,self,"DIA_Regis_Hallo_15_01");	//Да, а ты?
-	AI_Output(self,other,"DIA_Regis_Hallo_13_02");	//Я приплыл с материка и вот теперь болтаюсь здесь без дела. У меня почти закончились деньги, поэтому, похоже, мне ничего другого не остается, кроме как поступить в ополчение.
-	AI_Output(self,other,"DIA_Regis_Hallo_13_03");	//Но я не хочу делать этого. Я не хочу, чтобы меня убили орки, когда я буду сражаться за короля.
+	AI_Output(self,other, " DIA_Regis_Hallo_13_02 " );	// I sailed from the mainland and now I'm hanging out here doing nothing. I'm almost out of money, so it looks like I have no choice but to join the militia.
+	AI_Output(self,other, " DIA_Regis_Hallo_13_03 " );	// But I don't want to do that. I don't want to be killed by orcs when I fight for the king.
 };
 
 
-instance DIA_Regis_MILIZ(C_Info)
+DIA_Regis_MILIZ (C_Info) instances
 {
 	npc = VLK_425_Regis;
 	nr = 5;
 	condition = DIA_Regis_MILIZ_Condition;
 	information = DIA_Regis_MILIZ_Info;
 	permanent = FALSE;
-	description = "Что ты можешь рассказать об ополчении?";
+	description = " What can you tell us about the militia? " ;
 };
 
 
@@ -103,24 +104,24 @@ func int DIA_Regis_MILIZ_Condition()
 	};
 };
 
-func void DIA_Regis_MILIZ_Info()
+func void DAY_Regis_MILIZ_Info()
 {
-	AI_Output(other,self,"DIA_Regis_MILIZ_15_00");	//Что ты можешь рассказать об ополчении?
-	AI_Output(self,other,"DIA_Regis_Add_13_01");	//Ими теперь командует один из паладинов. Некий лорд Андрэ.
-	AI_Output(self,other,"DIA_Regis_Add_13_02");	//Он пытается мобилизовать половину города на случай нападения орков.
-	AI_Output(self,other,"DIA_Regis_Add_13_03");	//Но чтобы вступить в ополчение, нужно быть гражданином этого города.
-	AI_Output(self,other,"DIA_Regis_Add_13_04");	//Насколько мне известно, если ты не являешься гражданином города, тебя все равно будут тренировать, но официально не зачислят.
+	AI_Output(other,self, " DIA_Regis_MILIZ_15_00 " );	// What can you tell us about the militia?
+	AI_Output(self,other, " DIA_Regis_Add_13_01 " );	// They are now commanded by one of the paladins. A certain Lord Andre.
+	AI_Output(self,other, " DIA_Regis_Add_13_02 " );	// He's trying to mobilize half the city in case the orcs attack.
+	AI_Output(self,other, " DIA_Regis_Add_13_03 " );	// But to join the militia, you must be a citizen of this city.
+	AI_Output(self,other, " DIA_Regis_Add_13_04 " );	// As far as I know, if you are not a citizen of the city, you will still be trained, but not officially enrolled.
 };
 
 
-instance DIA_Regis_ANDRE(C_Info)
+DIA_Regis_ANDRE (C_Info) instances
 {
 	npc = VLK_425_Regis;
 	nr = 5;
 	condition = DIA_Regis_ANDRE_Condition;
 	information = DIA_Regis_ANDRE_Info;
 	permanent = FALSE;
-	description = "Что еще ты можешь рассказать о лорде Андрэ?";
+	description = " What else can you say about Lord Andre? " ;
 };
 
 
@@ -134,31 +135,31 @@ func int DIA_Regis_ANDRE_Condition()
 
 func void DIA_Regis_ANDRE_Info()
 {
-	AI_Output(other,self,"DIA_Regis_ANDRE_15_00");	//Что еще ты можешь рассказать о лорде Андрэ?
-	AI_Output(self,other,"DIA_Regis_Add_13_05");	//Он также занял должность судьи.
-	AI_Output(self,other,"DIA_Regis_Add_13_06");	//Если ты нарушил закон в городе, тебе придется держать ответ перед ним.
-	AI_Output(self,other,"DIA_Regis_Add_13_07");	//Я как-то подрался с одним горожанином.
-	AI_Output(self,other,"DIA_Regis_Add_13_08");	//Он побежал жаловаться к лорду Андрэ.
-	AI_Output(self,other,"DIA_Regis_Add_13_09");	//И этот пустяк обошелся мне в полсотни золотых монет.
-	AI_Output(self,other,"DIA_Regis_Add_13_10");	//Хорошо еще, что это случилось ночью, а то были бы другие свидетели.
-	AI_Output(self,other,"DIA_Regis_Add_13_11");	//Чем больше людей жалуется на тебя, тем выше штраф.
+	AI_Output(other,self, " DIA_Regis_ANDRE_15_00 " );	// What else can you say about Lord Andre?
+	AI_Output(self,other, " DIA_Regis_Add_13_05 " );	// He also took the position of a judge.
+	AI_Output(self,other, " DIA_Regis_Add_13_06 " );	// If you broke the law in the city, you will have to answer to him.
+	AI_Output(self,other, " DIA_Regis_Add_13_07 " );	// I got into a fight with a citizen once.
+	AI_Output(self,other, " DIA_Regis_Add_13_08 " );	// He ran to complain to Lord Andre.
+	AI_Output(self,other, " DIA_Regis_Add_13_09 " );	// And this trifle cost me fifty gold coins.
+	AI_Output(self,other, " DIA_Regis_Add_13_10 " );	// It's good that this happened at night, otherwise there would have been other witnesses.
+	AI_Output(self,other, " DIA_Regis_Add_13_11 " );	// The more people complain about you, the higher the penalty.
 };
 
 
-instance DIA_Regis_Valentino(C_Info)
+instances of DIA_Regis_Valentino (C_Info)
 {
 	npc = VLK_425_Regis;
 	nr = 5;
 	condition = DIA_Regis_Valentino_Condition;
 	information = DIA_Regis_Valentino_Info;
 	permanent = FALSE;
-	description = "С кем ты дрался?";
+	description = " Who did you fight? " ;
 };
 
 
 func int DIA_Regis_Valentino_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Regis_ANDRE))
+	if ( Npc_KnowsInfo ( other , DIA_Regis_OTHER ))
 	{
 		return TRUE;
 	};
@@ -166,26 +167,26 @@ func int DIA_Regis_Valentino_Condition()
 
 func void DIA_Regis_Valentino_Info()
 {
-	AI_Output(other,self,"DIA_Regis_Add_15_12");	//С кем ты дрался?
-	AI_Output(self,other,"DIA_Regis_Add_13_13");	//С парнем по имени Валентино. Он часто ошивается в таверне около храма.
-	AI_Output(self,other,"DIA_Regis_Add_13_14");	//Обычно я довольно мирный. Но ЭТОТ урод просто вывел меня из себя...
+	AI_Output(other,self, " DIA_Regis_Add_15_12 " );	// Who did you fight?
+	AI_Output(self,other, " DIA_Regis_Add_13_13 " );	// With a guy named Valentino. He often hangs out in a tavern near the temple.
+	AI_Output(self,other, " DIA_Regis_Add_13_14 " );	// Usually I'm pretty peaceful. But THIS freak just pissed me off...
 };
 
 
-instance DIA_Regis_ValDefeat(C_Info)
+instance DIA_Regis_ValDefeat (C_Info) .
 {
 	npc = VLK_425_Regis;
 	nr = 5;
 	condition = DIA_Regis_ValDefeat_Condition;
 	information = DIA_Regis_ValDefeat_Info;
 	permanent = FALSE;
-	description = "Я встретил этого Валентино...";
+	description = " I met this Valentino... " ;
 };
 
 
 func int DIA_Regis_ValDefeat_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Regis_Valentino) && (Valentino.aivar[AIV_DefeatedByPlayer] == TRUE))
+	if ( Npc_KnowsInfo ( other , DIA_Regis_Valentino ) && ( Valentino . aivar [ AIV_DefeatedByPlayer ] ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -194,17 +195,17 @@ func int DIA_Regis_ValDefeat_Condition()
 func void DIA_Regis_ValDefeat_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Regis_Add_15_15");	//Я встретил этого Валентино...
+	AI_Output(other,self, " DIA_Regis_Add_15_15 " );	// I met this Valentino...
 	AI_Output(self,other,"DIA_Regis_Add_13_16");	//И?
-	AI_Output(other,self,"DIA_Regis_Add_15_17");	//Я задал ему хорошую взбучку...
-	AI_Output(self,other,"DIA_Regis_Add_13_18");	//(смеется) Он заслужил это...
+	AI_Output(other,self, " DIA_Regis_Add_15_17 " );	// I gave him a good thrashing...
+	AI_Output(self,other, " DIA_Regis_Add_13_18 " );	// (laughs) He deserved it...
 
 	if(!Npc_IsDead(Valentino))
 	{
-		AI_Output(self,other,"DIA_Regis_Add_13_19");	//Вот - я нашел это кольцо в его кармане, когда наша стычка закончилась.
+		AI_Output(self,other, " DIA_Regis_Add_13_19 " );	// Here - I found this ring in his pocket when our skirmish was over.
 		B_GiveInvItems(self,other,ItRi_ValentinosRing,1);
 		Regis_Ring = TRUE;
-		AI_Output(self,other,"DIA_Regis_Add_13_20");	//(ухмыляется) Ты можешь передать его следующему, кто надает ему тумаков...
+		AI_Output(self,other, " DIA_Regis_Add_13_20 " );	// (grins) You can pass it to the next one who cuffs him...
 	};
 };
 
@@ -218,7 +219,7 @@ instance DIA_Regis_PERM(C_Info)
 	condition = DIA_Regis_PERM_Condition;
 	information = DIA_Regis_PERM_Info;
 	permanent = TRUE;
-	description = "Слышал что-нибудь интересное?";
+	description = " Have you heard anything interesting? " ;
 };
 
 
@@ -229,37 +230,37 @@ func int DIA_Regis_PERM_Condition()
 
 func void DIA_Regis_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Regis_PERM_15_00");	//Слышал что-нибудь интересное?
+	AI_Output(other,self, " DIA_Regis_PERM_15_00 " );	// Heard anything interesting?
 
-	if((Regis_Bogendieb == FALSE) && (MIS_Bosper_Bogen != LOG_SUCCESS))
+	if ((Regis_Bogendieb ==  FALSE ) && (MIS_Bosper_Bogen !=  LOG_SUCCESS ))
 	{
-		AI_Output(self,other,"DIA_Regis_PERM_13_01");	//Можно сказать и так.
-		AI_Output(self,other,"DIA_Regis_PERM_13_02");	//Говорят, Боспер, мастер-лучник, был ограблен. Причем самым наглым образом!
-		AI_Output(self,other,"DIA_Regis_PERM_13_03");	//Вор вломился в его лавку средь бела дня и схватил лук.
-		AI_Output(self,other,"DIA_Regis_PERM_13_04");	//Боспер побежал за ним, вопя 'Держи вора!' Но вор оказался очень проворным.
+		AI_Output(self,other, " DIA_Regis_PERM_13_01 " );	// You can say that.
+		AI_Output(self,other, " DIA_Regis_PERM_13_02 " );	// They say Bosper, the master archer, was robbed. And in the most brazen way!
+		AI_Output(self,other, " DIA_Regis_PERM_13_03 " );	// A thief broke into his shop in broad daylight and grabbed a bow.
+		AI_Output(self,other, " DIA_Regis_PERM_13_04 " );	// Bosper ran after him, yelling 'Stop the thief!' But the thief was very agile.
 		MIS_Bosper_Bogen = LOG_Running;
 		Regis_Bogendieb = TRUE;
 	}
-	else if((MIS_Bosper_Bogen == LOG_SUCCESS) && (Regis_Bogendieb != 2))
+	else  if ((MIS_Bosper_Bogen ==  LOG_SUCCESS ) && (Regis_Bogendieb !=  2 ))
 	{
-		AI_Output(self,other,"DIA_Regis_PERM_13_05");	//А потом какой-то честный человек нашел этот лук и вернул Босперу.
-		AI_Output(self,other,"DIA_Regis_PERM_13_06");	//Это странно - в наше время обычно никому нет дела до других, но этот парень сам зашел к нему и вернул лук.
-		Regis_Bogendieb = 2;
+		AI_Output(self,other, " DIA_Regis_PERM_13_05 " );	// And then some honest man found this bow and gave it back to Bosper.
+		AI_Output(self,other, " DIA_Regis_PERM_13_06 " );	// It's weird - no one usually cares about others these days, but this guy went to his place and got the bow back.
+		Regis_Bogendieb = 2 ;
 	}
-	else if(Kapitel != 3)
+	else  if (chapter !=  3 )
 	{
-		AI_Output(self,other,"DIA_Regis_PERM_13_07");	//Пока все тихо. Но я думаю, что когда придут орки, мы это заметим...
+		AI_Output(self,other, " DIA_Regis_PERM_13_07 " );	// So far everything is quiet. But I think that when the orcs come, we will notice...
 	}
 	else if(MIS_RescueBennet == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Regis_PERM_13_08");	//Выяснилось, что этот наемник невиновен, и им пришлось отпустить его.
-		AI_Output(self,other,"DIA_Regis_PERM_13_09");	//Лорд Хаген, должно быть, вне себя от ярости.
+		AI_Output(self,other, " DIA_Regis_PERM_13_08 " );	// This mercenary turned out to be innocent, and they had to let him go.
+		AI_Output(self,other, " DIA_Regis_PERM_13_09 " );	// Lord Hagen must be beside himself with rage.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Regis_PERM_13_10");	//Весь город только и говорит об этом. Ты помнишь Лотара, паладина?
+		AI_Output(self,other, " DIA_Regis_PERM_13_10 " );	// The whole city is talking about it. Do you remember Lothar, the paladin?
 		AI_Output(other,self,"DIA_Regis_PERM_15_11");	//Может быть.
-		AI_Output(self,other,"DIA_Regis_PERM_13_12");	//Так вот, он мертв. Убит прямо на улице. В этом подозревают наемников, конечно же.
+		AI_Output(self,other, " DIA_Regis_PERM_13_12 " );	// So, he's dead. Killed right on the street. Mercenaries are suspected of this, of course.
 	};
 };
 
@@ -271,7 +272,7 @@ instance DIA_Regis_Crew(C_Info)
 	condition = DIA_Regis_Crew_Condition;
 	information = DIA_Regis_Crew_Info;
 	permanent = FALSE;
-	description = "Я пытаюсь собрать команду для морской прогулки.";
+	description = " I'm trying to put together a crew for a boat trip. " ;
 };
 
 
@@ -285,9 +286,9 @@ func int DIA_Regis_Crew_Condition()
 
 func void DIA_Regis_Crew_Info()
 {
-	AI_Output(other,self,"DIA_Regis_Crew_15_00");	//Я пытаюсь собрать команду для морской прогулки.
-	AI_Output(self,other,"DIA_Regis_Crew_13_01");	//Ничем не могу помочь. Тебе лучше поспрашивать в порту. Ну, или, может, в кабаке.
-	AI_Output(self,other,"DIA_Regis_Crew_13_02");	//Если здесь еще остались моряки, то, скорее всего, ты найдешь их там.
+	AI_Output(other,self, " DIA_Regis_Crew_15_00 " );	// I'm trying to put together a crew for a sea trip.
+	AI_Output(self,other, " DIA_Regis_Crew_13_01 " );	// Can't help. You'd better ask around at the port. Well, or maybe in a tavern.
+	AI_Output(self,other, " DIA_Regis_Crew_13_02 " );	// If there are still sailors here, you'll most likely find them there.
 };
 
 
@@ -298,7 +299,7 @@ instance DIA_REGIS_PAYBACK(C_Info)
 	condition = dia_regis_payback_condition;
 	information = dia_regis_payback_info;
 	permanent = FALSE;
-	description = "Тебе привет от Валентино!";
+	description = " Hello from Valentino! " ;
 };
 
 
@@ -312,12 +313,12 @@ func int dia_regis_payback_condition()
 
 func void dia_regis_payback_info()
 {
-	AI_Output(other,self,"DIA_Regis_PayBack_01_00");	//Тебе привет от Валентино!
-	AI_Output(self,other,"DIA_Regis_PayBack_01_01");	//(удивленно) Что?
-	AI_Output(self,other,"DIA_Regis_PayBack_01_02");	//Что нужно от меня этому идиоту?
-	AI_Output(other,self,"DIA_Regis_PayBack_01_04");	//Просто, чтобы я пару раз врезал тебе - так сказать, для ума.
-	AI_Output(self,other,"DIA_Regis_PayBack_01_05");	//Он что, послал тебя, чтобы поквитаться со мной?
-	AI_Output(self,other,"DIA_Regis_PayBack_01_07");	//Ха! И ты думаешь, что у тебя это вот так просто выйдет? (смеется)
+	AI_Output(other,self, " DIA_Regis_PayBack_01_00 " );	// Greetings from Valentino!
+	AI_Output(self,other, " DIA_Regis_PayBack_01_01 " );	// (surprised) What?
+	AI_Output(self,other, " DIA_Regis_PayBack_01_02 " );	// What does this idiot want from me?
+	AI_Output(other,self, " DIA_Regis_PayBack_01_04 " );	// Just so I can punch you a couple of times - just for fun, so to speak.
+	AI_Output(self,other, " DIA_Regis_PayBack_01_05 " );	// Did he send you to get even with me?
+	AI_Output(self,other, " DIA_Regis_PayBack_01_07 " );	// Ha! And you think you can do it just like that? (laughs)
 	self.guild = GIL_NONE;
 	Npc_SetTrueGuild(self,GIL_NONE);
 	AI_StopProcessInfos(self);
@@ -325,7 +326,7 @@ func void dia_regis_payback_info()
 };
 
 
-instance DIA_REGIS_PAYBACKOK(C_Info)
+instances DIA_REGIS_PAYBACKOK (C_Info)
 {
 	npc = VLK_425_Regis;
 	nr = 1;
@@ -338,7 +339,7 @@ instance DIA_REGIS_PAYBACKOK(C_Info)
 
 func int dia_regis_paybackok_condition()
 {
-	if((self.aivar[AIV_LastFightAgainstPlayer] != FIGHT_NONE) && Npc_KnowsInfo(other,dia_regis_payback) && (REGISPISSOFF == FALSE))
+	if ((self.aivar[AIV_LastFightAgainstPlayer] !=  FIGHT_NONE ) && Npc_KnowsInfo(other,dia_regis_payback) && ( REGISPISSOFF  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -348,21 +349,21 @@ func void dia_regis_paybackok_info()
 {
 	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_00");	//Ну что - ты доволен?
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_01");	//Думаешь, если побил меня, то стал крутым?!
-		AI_Output(other,self,"DIA_Regis_PayBackOk_01_02");	//Эй, приятель, сбавь тон! А то придется мне снова научить тебя хорошим манерам.
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_03");	//Давай, смейся надо мной!
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_04");	//Только учти, что если в следующий раз ты решишь тронуть меня хотя бы пальцем - тебе придется иметь дело с лордом Андрэ!
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_00 " );	// Well, are you satisfied?
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_01 " );	// You think if you beat me, you became cool?!
+		AI_Output(other,self, " DIA_Regis_PayBackOk_01_02 " );	// Hey buddy, slow down! Otherwise I'll have to teach you good manners again.
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_03 " );	// Come on, laugh at me!
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_04 " );	// Just keep in mind that if next time you decide to lay a finger on me, you'll have to deal with Lord Andre!
 		self.guild = GIL_VLK;
 		REGISPISSOFF = TRUE;
 		Npc_SetTrueGuild(self,GIL_VLK);
-		self.aivar[AIV_ToughGuy] = FALSE;
+		self.aivar[AIV_ToughGuy] = FALSE ;
 
 		if((MIS_VALENTINOHELP == LOG_Running) && (VALENTINOPSI == FALSE))
 		{
 			B_GivePlayerXP(250);
 			REGISFIGHTOK = TRUE;
-			B_LogEntry(TOPIC_VALENTINOHELP,"Я побил Региса!");
+			B_LogEntry( TOPIC_VALENTINOHELP , " I beat Regis! " );
 		};
 
 		AI_StopProcessInfos(self);
@@ -371,24 +372,24 @@ func void dia_regis_paybackok_info()
 	{
 		self.guild = GIL_VLK;
 		Npc_SetTrueGuild(self,GIL_VLK);
-		self.aivar[AIV_ToughGuy] = FALSE;
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_07");	//Ну что, тебе хватило?
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_08");	//И только попробуй еще раз сунуться ко мне!
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_09");	//А теперь - убирайся!
+		self.aivar[AIV_ToughGuy] = FALSE ;
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_07 " );	// Well, did you have enough?
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_08 " );	// And just try to poke your nose at me again!
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_09 " );	// And now - get out!
 		REGISPISSOFF = TRUE;
 
 		if((MIS_VALENTINOHELP == LOG_Running) && (VALENTINOPSI == FALSE))
 		{
 			REGISFIGHTNOTOK = TRUE;
-			B_LogEntry(TOPIC_VALENTINOHELP,"Регис побил меня.");
+			B_LogEntry( TOPIC_VALENTINOHELP , " Regis beat me. " );
 		};
 
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_10");	//Что, малыш - так испугался, что раньше времени наделал в штаны? (смеется)
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_11");	//А ведь мы еще не закончили наш разговор...
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_10 " );	// What, baby - so scared that he put it in his pants ahead of time? (laughs)
+		AI_Output(self,other, " DIA_Regis_PayBackOk_01_11 " );	// But we haven't finished our conversation yet...
 		AI_StopProcessInfos(self);
 		self.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
 		B_Attack(self,other,AR_NONE,0);
