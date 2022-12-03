@@ -1,5 +1,6 @@
 
-var int CassiaTellsAttila;
+
+was int CassiaTellsAttila;
 var int CassiaRecievePay;
 
 instance DIA_Cassia_EXIT(C_Info)
@@ -34,7 +35,7 @@ instance DIA_Cassia_PICKME(C_Info)
 
 func int DIA_Cassia_PICKME_Condition()
 {
-	return C_Beklauen(100,400);
+	return  C_Robbery ( 100 , 400 );
 };
 
 func void DIA_Cassia_PICKME_Info()
@@ -102,29 +103,29 @@ func void DIA_Cassia_Gilde_Info()
 {
 	if((other.guild == GIL_MIL) || (other.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Cassia_Gilde_16_00");	//Я вижу, ты стал служителем закона и порядка.
-		AI_Output(self,other,"DIA_Cassia_Gilde_16_01");	//Но то, что ты теперь служишь Инносу, для нас значения не имеет. Ты один из нас. И я надеюсь, что ты это тоже понимаешь.
+		AI_Output(self,other, " DIA_Cassia_Gilde_16_00 " );	// I see you have become a servant of law and order.
+		AI_Output(self,other, " DIA_Cassia_Gilde_16_01 " );	// But the fact that you now serve Innos does not matter to us. You are one of us. And I hope you understand that too.
 	};
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Cassia_Gilde_16_02");	//Так ты теперь служитель церкви Инноса? Отлично. Но ты помимо этого один из нас - надеюсь, ты никогда это не забудешь.
+		AI_Output(self,other, " DIA_Cassia_Gilde_16_02 " );	// So you are now a minister of the church of Innos? Excellent. But you're also one of us - I hope you never forget that.
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Cassia_Abgelaufen(C_Info)
+instance DIA_Cassia_Expired (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
-	condition = DIA_Cassia_Abgelaufen_Condition;
-	information = DIA_Cassia_Abgelaufen_Info;
+	condition = DIA_Cassia_Expired_Condition;
+	information = DIA_Cassia_Expired_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int DIA_Cassia_Abgelaufen_Condition()
+func int DIA_Cassia_Expired_Condition()
 {
 	if(Npc_IsInState(self,ZS_Talk) && (Cassia_Frist == TRUE) && (Cassia_Day < (B_GetDayPlus() - 2)) && (Join_Thiefs != TRUE))
 	{
@@ -132,9 +133,9 @@ func int DIA_Cassia_Abgelaufen_Condition()
 	};
 };
 
-func void DIA_Cassia_Abgelaufen_Info()
+func void DIA_Cassia_Expired_Info()
 {
-	AI_Output(self,other,"DIA_Cassia_Abgelaufen_16_00");	//Твой срок истек! Тебе не следовало возвращаться.
+	AI_Output(self,other, " DIA_Cassia_Abgelaufen_16_00 " );	// Your term has expired! You shouldn't have come back.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_KILL,0);
 };
@@ -163,25 +164,25 @@ func void DIA_Cassia_News_Info()
 {
 	if(MIS_ThiefGuild_sucked == FALSE)
 	{
-		AI_Output(self,other,"DIA_Cassia_News_16_00");	//Я вижу, ты получил наш подарок! Я Кассия.
-		AI_Output(other,self,"DIA_Cassia_News_15_01");	//Хорошо, Кассия. Теперь скажи мне, зачем я здесь?
-		AI_Output(self,other,"DIA_Cassia_News_16_02");	//Ты привлек наше внимание тем, что завоевал доверие одного из наших друзей.
-		AI_Output(self,other,"DIA_Cassia_News_16_03");	//И мы хотим дать тебе шанс. Ты можешь присоединиться к нам.
+		AI_Output(self,other, " DIA_Cassia_News_16_00 " );	// I see you got our present! I am Cassia.
+		AI_Output(other,self, " DIA_Cassia_News_15_01 " );	// Okay, Cassia. Now tell me why am I here?
+		AI_Output(self,other, " DIA_Cassia_News_16_02 " );	// You got our attention by winning the trust of one of our friends.
+		AI_Output(self,other, " DIA_Cassia_News_16_03 " );	// And we want to give you a chance. You can join us.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cassia_News_16_04");	//Только посмотрите, кто нашел дорогу сюда! Аттила недооценил тебя...но я не сделаю такой ошибки.
-		AI_Output(other,self,"DIA_Cassia_News_15_05");	//Что это за игры?
-		AI_Output(self,other,"DIA_Cassia_News_16_06");	//Мы хотели, чтобы ты умер за то, что сдал одного из наших друзей. Вот почему мы послали Аттилу.
-		AI_Output(self,other,"DIA_Cassia_News_16_07");	//Твое присутствие здесь, однако, открывает новые возможности...
-		AI_Output(other,self,"DIA_Cassia_News_15_08");	//... что ты хочешь предложить мне?
-		AI_Output(self,other,"DIA_Cassia_News_16_09");	//Ты можешь присоединиться к нам.
+		AI_Output(self,other, " DIA_Cassia_News_16_04 " );	// Just look who found their way here! Attila underestimated you...but I won't make that mistake.
+		AI_Output(other,self, " DIA_Cassia_News_15_05 " );	// What are these games?
+		AI_Output(self,other, " DIA_Cassia_News_16_06 " );	// We wanted you to die for ratting out one of our friends. That's why we sent Attila.
+		AI_Output(self,other, " DIA_Cassia_News_16_07 " );	// Your presence here, however, opens up new possibilities...
+		AI_Output(other,self, " DIA_Cassia_News_15_08 " );	// ... what do you want to offer me?
+		AI_Output(self,other, " DIA_Cassia_News_16_09 " );	// You can join us.
 	};
 	if((other.guild == GIL_NONE) || (other.guild == GIL_NOV))
 	{
 		Cassia_Gildencheck = TRUE;
 	};
-	DG_gefunden = TRUE;
+	DG_found = TRUE ;
 };
 
 
@@ -192,7 +193,7 @@ instance DIA_Cassia_mehr(C_Info)
 	condition = DIA_Cassia_mehr_Condition;
 	information = DIA_Cassia_mehr_Info;
 	permanent = FALSE;
-	description = "Расскажи мне о вашей организации.";
+	description = " Tell me about your organization. " ;
 };
 
 func int DIA_Cassia_mehr_Condition()
@@ -202,10 +203,10 @@ func int DIA_Cassia_mehr_Condition()
 
 func void DIA_Cassia_mehr_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_mehr_15_00");	//Расскажи мне о вашей организации.
-	AI_Output(self,other,"DIA_Cassia_mehr_16_01");	//Горожане недолюбливают нас. Но никто не знает, где находится наше укрытие.
-	AI_Output(self,other,"DIA_Cassia_mehr_16_02");	//Те немногие, что вообще знают, что канализация существует, полагают, что она закрыта, и в нее невозможно попасть.
-	AI_Output(self,other,"DIA_Cassia_mehr_16_03");	//И пока они не найдут нас, мы можем работать спокойно.
+	AI_Output(other,self, " DIA_Cassia_mehr_15_00 " );	// Tell me about your organization.
+	AI_Output(self,other, " DIA_Cassia_mehr_16_01 " );	// The townspeople don't like us. But no one knows where our hideout is.
+	AI_Output(self,other, " DIA_Cassia_mehr_16_02 " );	// The few who even know that the sewers exist believe that they are closed and impossible to get into.
+	AI_Output(self,other, " DIA_Cassia_mehr_16_03 " );	// And until they find us, we can work quietly.
 };
 
 
@@ -216,7 +217,7 @@ instance DIA_Cassia_MissingPeople(C_Info)
 	condition = DIA_Cassia_MissingPeople_Condition;
 	information = DIA_Cassia_MissingPeople_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о пропавших людях?";
+	description = " What do you know about missing people? " ;
 };
 
 func int DIA_Cassia_MissingPeople_Condition()
@@ -229,21 +230,21 @@ func int DIA_Cassia_MissingPeople_Condition()
 
 func void DIA_Cassia_MissingPeople_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Cassia_Add_15_00");	//Что ты знаешь о пропавших людях?
-	AI_Output(self,other,"DIA_Addon_Cassia_Add_16_01");	//А почему это так интересует тебя?
-	AI_Output(other,self,"DIA_Addon_Cassia_Add_15_02");	//Я хочу выяснить, что случилось с ними.
-	AI_Output(self,other,"DIA_Addon_Cassia_Add_16_03");	//Когда выйдешь из канализации, плыви вдоль побережья вправо.
-	AI_Output(self,other,"DIA_Addon_Cassia_Add_16_04");	//Там ты найдешь ответы на интересующие тебя вопросы...
+	AI_Output(other,self, " DIA_Addon_Cassia_Add_15_00 " );	// What do you know about missing people?
+	AI_Output(self,other, " DIA_Addon_Cassia_Add_16_01 " );	// Why are you so interested in this?
+	AI_Output(other,self, " DIA_Addon_Cassia_Add_15_02 " );	// I want to find out what happened to them.
+	AI_Output(self,other, " DIA_Addon_Cassia_Add_16_03 " );	// When you exit the sewers, swim along the coast to the right.
+	AI_Output(self,other, " DIA_Addon_Cassia_Add_16_04 " );	// There you will find answers to your questions...
 };
 
-instance DIA_Cassia_Vorteil(C_Info)
+instance DIA_Cassia_Vorteil (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 3;
 	condition = DIA_Cassia_Vorteil_Condition;
 	information = DIA_Cassia_Vorteil_Info;
 	permanent = FALSE;
-	description = "А какая мне выгода от присоединения к вам?";
+	description = " What's in it for me to join you? " ;
 };
 
 func int DIA_Cassia_Vorteil_Condition()
@@ -251,62 +252,62 @@ func int DIA_Cassia_Vorteil_Condition()
 	return TRUE;
 };
 
-func void DIA_Cassia_Vorteil_Info()
+func void DIA_Cassia_Advantage_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Vorteil_15_00");	//А какая мне выгода от присоединения к вам?
-	AI_Output(self,other,"DIA_Cassia_Vorteil_16_01");	//Ты можешь научиться у нас особым навыкам - навыкам, которые позволят тебе жить в роскоши.
-	AI_Output(other,self,"DIA_Cassia_Vorteil_15_02");	//Но для этого мне придется скрываться здесь, да?
-	AI_Output(self,other,"DIA_Cassia_Vorteil_16_03");	//Нет...(тихо смеется) Тебе только нужно придерживаться наших правил. Вот и все!
+	AI_Output(other,self, " DIA_Cassia_Vorteil_15_00 " );	// What do I benefit from joining you?
+	AI_Output(self,other, " DIA_Cassia_Vorteil_16_01 " );	// You can learn special skills from us - skills that will allow you to live in luxury.
+	AI_Output(other,self, " DIA_Cassia_Vorteil_15_02 " );	// But for this I have to hide here, right?
+	AI_Output(self,other, " DIA_Cassia_Vorteil_16_03 " );	// No... (laughs softly) You just have to stick to our rules. That's all!
 };
 
-instance DIA_Cassia_Lernen(C_Info)
+instance DIA_Cassia_Lernen (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 4;
 	condition = DIA_Cassia_Lernen_Condition;
 	information = DIA_Cassia_Lernen_Info;
 	permanent = FALSE;
-	description = "Чему я могу научиться у вас?";
+	description = " What can I learn from you? " ;
 };
 
 func int DIA_Cassia_Lernen_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Cassia_Vorteil))
+	if (Npc_KnowsInfo(other,DIA_Cassia_Vorteil))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Cassia_Lernen_Info()
+func void DIA_Cassia_Learn_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Lernen_15_00");	//Чему я могу научиться у вас?
-	AI_Output(self,other,"DIA_Cassia_Lernen_16_01");	//Джеспер может научить тебя передвигаться бесшумно.
-	AI_Output(self,other,"DIA_Cassia_Lernen_16_98");	//Кроме того, у него ты сможешь разжиться приличным доспехом.
-	AI_Output(self,other,"DIA_Cassia_Lernen_16_02");	//Рамирез - чрезвычайно одаренный медвежатник! Ни один замок не устоит перед его отмычками.
-	AI_Output(self,other,"DIA_Cassia_Lernen_77_11");	//Но самое главное - он может обучить тебя изготовлению воровского оружия.
-	AI_Output(self,other,"DIA_Cassia_Lernen_16_03");	//А я могу научить тебя карманному воровству.
-	AI_Output(self,other,"DIA_Cassia_Lernen_16_04");	//Также я могу помочь тебе стать более ловким! Именно ловкость - ключ к воровским способностям.
-	AI_Output(self,other,"DIA_Cassia_Lernen_16_99");	//Кроме того, я могу показать, как правильно управлять своим телом в движении.
-	AI_Output(self,other,"DIA_Cassia_Lernen_16_97");	//Очень важный навык. Особенно в ситуации, если тебя застали врасплох, и надо быстро среагировать на опасность. 
+	AI_Output(other,self, " DIA_Cassia_Lernen_15_00 " );	// What can I learn from you?
+	AI_Output(self,other, " DIA_Cassia_Lernen_16_01 " );	// Jesper can teach you how to move silently.
+	AI_Output(self,other, " DIA_Cassia_Lernen_16_98 " );	// In addition, you can get hold of decent armor from him.
+	AI_Output(self,other, " DIA_Cassia_Lernen_16_02 " );	// Ramirez is an extremely gifted bugbear! No lock can resist his picks.
+	AI_Output(self,other, " DIA_Cassia_Lernen_77_11 " );	// But most importantly, he can teach you how to make thieves' weapons.
+	AI_Output(self,other, " DIA_Cassia_Lernen_16_03 " );	// And I can teach you pickpocketing.
+	AI_Output(self,other, " DIA_Cassia_Lernen_16_04 " );	// I can also help you become more dexterous! Dexterity is the key to thieving abilities.
+	AI_Output(self,other, " DIA_Cassia_Lernen_16_99 " );	// In addition, I can show you how to properly control your body in motion.
+	AI_Output(self,other, " DIA_Cassia_Lernen_16_97 " );	// A very important skill. Especially in a situation where you are taken by surprise, and you need to quickly respond to the danger.
 	Log_CreateTopic(TOPIC_ThiefTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_ThiefTeacher,"Кассия сможет обучить меня карманному воровству, акробатике или просто помочь мне стать более ловким.");
-	B_LogEntry_Quiet(TOPIC_ThiefTeacher,"Рамирез готов обучить меня пользоваться отмычками. Также он сможет показать мне, как изготавливать воровское оружие.");
-	B_LogEntry_Quiet(TOPIC_ThiefTeacher,"Джеспер покажет мне, как правильно красться. Кроме того я смогу приобрести у него неплохие доспехи.");
+	B_LogEntry(TOPIC_ThiefTeacher, " Cassia can teach me pickpocketing, acrobatics, or just help me become more dexterous. " );
+	B_LogEntry_Quiet(TOPIC_ThiefTeacher, " Ramirez is ready to teach me how to use lockpicks. He can also show me how to make thieving weapons. " );
+	B_LogEntry_Quiet(TOPIC_ThiefTeacher, " Jesper will show me how to sneak properly. Also, I can buy good armor from him. " );
 };
 
-instance DIA_Cassia_Regeln(C_Info)
+instance DIA_Cassia_Regeln (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 3;
 	condition = DIA_Cassia_Regeln_Condition;
-	information = DIA_Cassia_Regeln_Info;
+	information = DIA_Cassia_Rules_Info;
 	permanent = FALSE;
-	description = "Что у вас за правила?";
+	description = " What are your rules? " ;
 };
 
 func int DIA_Cassia_Regeln_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Cassia_Vorteil))
+	if (Npc_KnowsInfo(other,DIA_Cassia_Vorteil))
 	{
 		return TRUE;
 	};
@@ -318,20 +319,20 @@ func void DIA_Cassia_Regeln_Info()
 	AI_Output(self,other,"DIA_Cassia_Regeln_16_02");	//Первое правило - никому ни слова о нас! Никогда.
 	AI_Output(self,other,"DIA_Cassia_Regeln_16_03");	//Второе: не попадайся.
 	AI_Output(self,other,"DIA_Cassia_Regeln_16_04");	//Третье: если ты обнажишь оружие здесь, чтобы напасть на кого-нибудь, мы убьем тебя!
-	AI_Output(self,other,"DIA_Cassia_Regeln_16_05");	//И четвертое, последнее правило. Тот, кто хочет присоединиться к нам, должен доказать серьезность своих намерений.
+	AI_Output(self,other, " DIA_Cassia_Regeln_16_05 " );	// And the fourth, last rule. Anyone who wants to join us must prove the seriousness of their intentions.
 };
 
-instance DIA_Cassia_Erwischen(C_Info)
+instance DIA_Cassia_Catch (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
-	condition = DIA_Cassia_Erwischen_Condition;
-	information = DIA_Cassia_Erwischen_Info;
+	condition = DIA_Cassia_Get_Condition;
+	information = DIA_Cassia_Get_Info;
 	permanent = FALSE;
-	description = "Что будет, если меня поймают?";
+	description = " What happens if I get caught? " ;
 };
 
-func int DIA_Cassia_Erwischen_Condition()
+func int DIA_Cassia_Get_Condition()
 {
 	if(Npc_KnowsInfo(other,DIA_Cassia_Regeln))
 	{
@@ -339,27 +340,27 @@ func int DIA_Cassia_Erwischen_Condition()
 	};
 };
 
-func void DIA_Cassia_Erwischen_Info()
+func void DIA_Cassia_Get_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Erwischen_15_00");	//Что будет, если меня поймают?
-	AI_Output(self,other,"DIA_Cassia_Erwischen_16_01");	//Просто не попадайся, хорошо?
+	AI_Output(other,self, " DIA_Cassia_Erwischen_15_00 " );	// What happens if I get caught?
+	AI_Output(self,other, " DIA_Cassia_Erwischen_16_01 " );	// Just don't get caught, okay?
 };
 
-instance DIA_Cassia_beweisen(C_Info)
+instance DIA_Cassia_behaben (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
 	condition = DIA_Cassia_beweisen_Condition;
-	information = DIA_Cassia_beweisen_Info;
+	information = DIA_Cassia_behaben_Info;
 	permanent = TRUE;
-	description = "Как мне доказать серьезность моих намерений?";
+	description = " How can I prove my intentions are serious? " ;
 };
 
-var int DIA_Cassia_beweisen_permanent;
+var int DIA_Cassia_beisen_permanent;
 
 func int DIA_Cassia_beweisen_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Cassia_Regeln) && (DIA_Cassia_beweisen_permanent == FALSE))
+	if (Npc_KnowsInfo(other,DIA_Cassia_Rules) && (DIA_Cassia_beweisen_permanent ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -367,121 +368,121 @@ func int DIA_Cassia_beweisen_Condition()
 
 func void DIA_Cassia_beweisen_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_beweisen_15_00");	//Как мне доказать серьезность моих намерений?
+	AI_Output(other,self, " DIA_Cassia_beweisen_15_00 " );	// How can I prove my seriousness?
 
 	if(Join_Thiefs == FALSE)
 	{
-		AI_Output(self,other,"DIA_Cassia_beweisen_16_01");	//Так ты присоединишься к нам или нет?
+		AI_Output(self,other, " DIA_Cassia_beweisen_16_01 " );	// So will you join us or not?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cassia_beweisen_16_02");	//У этого упрямого алхимика - Константино, есть прекрасное кольцо!
-		AI_Output(self,other,"DIA_Cassia_beweisen_16_03");	//Но оно ему совсем ни к чему. Я хочу, чтобы оно украшало мою руку.
+		AI_Output(self,other, " DIA_Cassia_beweisen_16_02 " );	// That stubborn alchemist, Constantino, has a beautiful ring!
+		AI_Output(self,other, " DIA_Cassia_beweisen_16_03 " );	// But he doesn't need it at all. I want it to decorate my hand.
 		MIS_CassiaRing = LOG_Running;
-		DIA_Cassia_beweisen_permanent = TRUE;
+		DIA_Cassia_beweisen_permanent = TRUE ;
 		Log_CreateTopic(Topic_CassiaRing,LOG_MISSION);
 		Log_SetTopicStatus(Topic_CassiaRing,LOG_Running);
-		B_LogEntry(Topic_CassiaRing,"Кассия хочет, чтобы я принес ей кольцо Константино.");
+		B_LogEntry(Topic_CassiaRing, " Cassia wants me to bring her Constantino's ring. " );
 	};
 };
 
-instance DIA_Cassia_Beitreten(C_Info)
+instance DIA_Cassia_Join (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 10;
-	condition = DIA_Cassia_Beitreten_Condition;
-	information = DIA_Cassia_Beitreten_Info;
+	condition = DIA_Cassia_Join_Condition;
+	information = DIA_Cassia_Join_Info;
 	permanent = FALSE;
-	description = "Хорошо, я в деле.";
+	description = " Okay, I'm in. " ;
 };
 
-func int DIA_Cassia_Beitreten_Condition()
+func int DIA_Cassia_Join_Condition()
 {
-	if((Join_Thiefs == FALSE) && Npc_KnowsInfo(other,DIA_Cassia_Regeln))
+	if ((Join_Thiefs ==  FALSE ) && Npc_KnowsInfo(other, DIA_Cassia_Rules))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Cassia_Beitreten_Info()
+func void DIA_Cassia_Join_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Beitreten_15_00");	//Хорошо, я в деле.
-	AI_Output(self,other,"DIA_Cassia_Beitreten_16_01");	//Отлично! Теперь тебе будет дана возможность проявить себя.
+	AI_Output(other,self, " DIA_Cassia_Beitreten_15_00 " );	// Okay, I'm in.
+	AI_Output(self,other, " DIA_Cassia_Beitreten_16_01 " );	// Great! Now you will be given the opportunity to prove yourself.
 	Join_Thiefs = TRUE;
 };
 
-instance DIA_Cassia_Ablehnen(C_Info)
+instance DIA_Cassia_Reject (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 9;
 	condition = DIA_Cassia_Ablehnen_Condition;
-	information = DIA_Cassia_Ablehnen_Info;
+	information = DIA_Cassia_Reject_Info;
 	permanent = FALSE;
-	description = "А что если я не хочу присоединяться к вам?..";
+	description = " What if I don't want to join you?.. " ;
 };
 
-func int DIA_Cassia_Ablehnen_Condition()
+func int DIA_Cassia_Reject_Condition()
 {
-	if((Join_Thiefs == FALSE) && Npc_KnowsInfo(other,DIA_Cassia_Regeln))
+	if ((Join_Thiefs ==  FALSE ) && Npc_KnowsInfo(other, DIA_Cassia_Rules))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Cassia_Ablehnen_Info()
+func void DIA_Cassia_Reject_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Ablehnen_15_00");	//А что если я не хочу присоединяться к вам?
+	AI_Output(other,self, " DIA_Cassia_Ablehnen_15_00 " );	// What if I don't want to join you?
 
 	if(MIS_ThiefGuild_sucked == FALSE)
 	{
-		AI_Output(self,other,"DIA_Cassia_Ablehnen_16_01");	//Ты теряешь шанс, который дается один раз в жизни, но ты можешь идти.
-		AI_Output(self,other,"DIA_Cassia_Ablehnen_16_02");	//И даже не думай предать нас. Ты горько пожалеешь об этом.
+		AI_Output(self,other, " DIA_Cassia_Ablehnen_16_01 " );	// You're losing your once-in-a-lifetime chance, but you can go.
+		AI_Output(self,other, " DIA_Cassia_Ablehnen_16_02 " );	// And don't even think about betraying us. You will bitterly regret this.
 		Info_ClearChoices(DIA_Cassia_Ablehnen);
-		Info_AddChoice(DIA_Cassia_Ablehnen,"Хорошо, я в деле.",DIA_Cassia_Ablehnen_Okay);
-		Info_AddChoice(DIA_Cassia_Ablehnen,"Мне нужно время на размышление.",DIA_Cassia_Ablehnen_Frist);
+		Info_AddChoice(DIA_Cassia_Ablehnen, " Okay, I'm in. " ,DIA_Cassia_Ablehnen_Okay);
+		Info_AddChoice(DIA_Cassia_Ablehnen, " I need time to think. " ,DIA_Cassia_Ablehnen_Frist);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cassia_Ablehnen_16_03");	//В таком случае, я убью тебя!
+		AI_Output(self,other, " DIA_Cassia_Ablehnen_16_03 " );	// In that case, I'll kill you!
 		Info_ClearChoices(DIA_Cassia_Ablehnen);
-		Info_AddChoice(DIA_Cassia_Ablehnen,"Хорошо, я в деле.",DIA_Cassia_Ablehnen_Okay);
-		Info_AddChoice(DIA_Cassia_Ablehnen,"Ну, тогда попробуй меня убить.",DIA_Cassia_Ablehnen_Kill);
+		Info_AddChoice(DIA_Cassia_Ablehnen, " Okay, I'm in. " ,DIA_Cassia_Ablehnen_Okay);
+		Info_AddChoice(DIA_Cassia_Ablehnen, " Well, then try to kill me. " ,DIA_Cassia_Ablehnen_Kill);
 	};
 };
 
-func void DIA_Cassia_Ablehnen_Okay()
+func void DIA_Cassia_Reject_Okay()
 {
-	AI_Output(other,self,"DIA_Cassia_Ablehnen_Okay_15_00");	//Хорошо, я в деле.
-	AI_Output(self,other,"DIA_Cassia_Ablehnen_Okay_16_01");	//Ты принял мудрое решение...(улыбается) Если ты сможешь доказать серьезность своих намерений, то сможешь влиться в наши ряды.
+	AI_Output(other,self, " DIA_Cassia_Ablehnen_Okay_15_00 " );	// Okay, I'm in.
+	AI_Output(self,other, " DIA_Cassia_Ablehnen_Okay_16_01 " );	// You made a wise decision... (smiles) If you can prove your seriousness, you can join our ranks.
 	Join_Thiefs = TRUE;
 	Info_ClearChoices(DIA_Cassia_Ablehnen);
 };
 
 func void DIA_Cassia_Ablehnen_Kill()
 {
-	AI_Output(other,self,"DIA_Cassia_Ablehnen_Kill_15_00");	//Ну, тогда попробуй меня убить.
-	AI_Output(self,other,"DIA_Cassia_Ablehnen_Kill_16_01");	//Жаль...(спокойно) Я думала, ты умнее.
+	AI_Output(other,self, " DIA_Cassia_Ablehnen_Kill_15_00 " );	// Well, then try to kill me.
+	AI_Output(self,other, " DIA_Cassia_Ablehnen_Kill_16_01 " );	// Too bad... (calmly) I thought you were smarter.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
 
-func void DIA_Cassia_Ablehnen_Frist()
+func void DIA_Cassia_Reject_Deadline()
 {
-	AI_Output(other,self,"DIA_Cassia_Ablehnen_Frist_15_00");	//Мне нужно время на размышление.
-	AI_Output(self,other,"DIA_Cassia_Ablehnen_Frist_16_01");	//Пожалуйста! Я дам тебе два дня на принятие этого решения. После этого, тебе лучше не появляться здесь.
+	AI_Output(other,self, " DIA_Cassia_Ablehnen_Frist_15_00 " );	// I need time to think.
+	AI_Output(self,other, " DIA_Cassia_Ablehnen_Frist_16_01 " );	// Please! I will give you two days to make this decision. After that, you'd better not show up here.
 	Cassia_Day = B_GetDayPlus();
 	Cassia_Frist = TRUE;
 	Info_ClearChoices(DIA_Cassia_Ablehnen);
 };
 
-instance DIA_Cassia_BevorLernen(C_Info)
+instance DIA_Cassia_BevorLernen (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 5;
 	condition = DIA_Cassia_BevorLernen_Condition;
 	information = DIA_Cassia_BevorLernen_Info;
 	permanent = FALSE;
-	description = "Ты можешь обучить меня?";
+	description = " Can you teach me? " ;
 };
 
 func int DIA_Cassia_BevorLernen_Condition()
@@ -494,10 +495,10 @@ func int DIA_Cassia_BevorLernen_Condition()
 
 func void DIA_Cassia_BevorLernen_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_BevorLernen_15_00");		//Ты можешь обучить меня?
-	AI_Output(self,other,"DIA_Cassia_BevorLernen_900_02");	//Конечно! Ведь, ты теперь один из нас.
+	AI_Output(other,self, " DIA_Cassia_BevorLernen_15_00 " );		// Can you teach me?
+	AI_Output(self,other, " DIA_Cassia_BevorLernen_900_02 " );	// Of course! After all, you are now one of us.
 	Cassia_TeachPickpocket = TRUE;
-	Cassia_TeachDEX = TRUE;
+	Cassia_TeachDEX = TRUE ;
 	Cassia_TeachAcrobat = TRUE;
 };
 
@@ -508,12 +509,12 @@ instance DIA_Cassia_TEACH(C_Info)
 	condition = DIA_Cassia_TEACH_Condition;
 	information = DIA_Cassia_TEACH_Info;
 	permanent = TRUE;
-	description = "Я хочу стать более ловким.";
+	description = " I want to become more dexterous. " ;
 };
 
 func int DIA_Cassia_TEACH_Condition()
 {
-	if(Cassia_TeachDEX == TRUE)
+	if (Cassia_TeachDEX ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -521,38 +522,38 @@ func int DIA_Cassia_TEACH_Condition()
 
 func void DIA_Cassia_TEACH_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_TEACH_15_00");	//Я хочу стать более ловким.
+	AI_Output(other,self, " DIA_Cassia_TEACH_15_00 " );	// I want to become more dexterous.
 
 	if((AttilaIsDead == TRUE) && (CassiaRecievePay == FALSE))
 	{
 		if(CassiaTellsAttila == FALSE)
 		{
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_05");	//Не так быстро, друг мой. Прежде чем мы начнем наше обучение, ты должен кое-что сделать.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_05 " );	// Not so fast, my friend. Before we begin our training, there is something you must do.
 			AI_Output(other,self,"DIA_Cassia_Pickpocket_16_06");	//Что именно?
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_07");	//Заплатить мне небольшую компенсацию за смерть Аттилы.
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_08");	//Он выполнял для меня довольно важные поручения и теперь с некоторыми из них могут возьникнуть проблемы.
-			AI_Output(other,self,"DIA_Cassia_Pickpocket_16_09");	//И сколько ты хочешь?
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_10");	//Думаю, тысячи золотых монет вполне хватит, чтобы забыть об этом недоразумении.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_07 " );	// Pay me some compensation for Attila's death.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_08 " );	// He's been doing some pretty important jobs for me, and now some of them might get in trouble.
+			AI_Output(other,self, " DIA_Cassia_Pickpocket_16_09 " );	// And how much do you want?
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_10 " );	// I think a thousand gold coins will be enough to forget about this misunderstanding.
 			CassiaTellsAttila = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_11");	//Так как насчет небольшой компенсации?
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_11 " );	// So how about a little compensation?
 		};
 
 		Info_ClearChoices(DIA_Cassia_TEACH);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= 1000)
 		{
-			Info_AddChoice(DIA_Cassia_TEACH,"Хорошо, вот твои деньги.",DIA_Cassia_TEACH_Ok);
+			Info_AddChoice(DIA_Cassia_TEACH, " Okay, here's your money. " ,DIA_Cassia_TEACH_Ok);
 		};
 
-		Info_AddChoice(DIA_Cassia_TEACH,"У меня нет таких денег.",DIA_Cassia_TEACH_No);
-		Info_AddChoice(DIA_Cassia_TEACH,"А не пойти ли тебе куда подальше?",DIA_Cassia_TEACH_Damn);
+		Info_AddChoice(DIA_Cassia_TEACH, " I don't have that kind of money. " ,DIA_Cassia_TEACH_No);
+		Info_AddChoice(DIA_Cassia_TEACH, " Why don't you go somewhere else? " ,DIA_Cassia_TEACH_Damn);
 
 		if(RhetorikSkillValue[1] >= 10)
 		{
-			Info_AddChoice(DIA_Cassia_TEACH,"У меня на этот счет иное мнение.",DIA_Cassia_TEACH_Agreed);
+			Info_AddChoice(DIA_Cassia_TEACH, " I have a different opinion on this. " ,DIA_Cassia_TEACH_Agreed);
 		};
 	}
 	else
@@ -594,7 +595,7 @@ instance DIA_Cassia_Pickpocket(C_Info)
 	condition = DIA_Cassia_Pickpocket_Condition;
 	information = DIA_Cassia_Pickpocket_Info;
 	permanent = TRUE;
-	description = "Научи меня карманному воровству. (Очки обучения: 10)";
+	description = " Teach me pickpocketing. (Training points: 10) " ;
 };
 
 func int DIA_Cassia_Pickpocket_Condition()
@@ -607,48 +608,48 @@ func int DIA_Cassia_Pickpocket_Condition()
 
 func void DIA_Cassia_Pickpocket_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_15_00");	//Научи меня карманному воровству.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_15_00 " );	// Teach me pickpocketing.
 
 	if((AttilaIsDead == TRUE) && (CassiaRecievePay == FALSE))
 	{
 		if(CassiaTellsAttila == FALSE)
 		{
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_05");	//Не так быстро, друг мой. Прежде чем мы начнем наше обучение, ты должен кое-что сделать.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_05 " );	// Not so fast, my friend. Before we begin our training, there is something you must do.
 			AI_Output(other,self,"DIA_Cassia_Pickpocket_16_06");	//Что именно?
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_07");	//Заплатить мне небольшую компенсацию за смерть Аттилы.
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_08");	//Он выполнял для меня довольно важные поручения и теперь с некоторыми из них могут возьникнуть проблемы.
-			AI_Output(other,self,"DIA_Cassia_Pickpocket_16_09");	//И сколько ты хочешь?
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_10");	//Думаю, тысячи золотых монет вполне хватит, чтобы забыть об этом недоразумении.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_07 " );	// Pay me some compensation for Attila's death.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_08 " );	// He's been doing some pretty important jobs for me, and now some of them might get in trouble.
+			AI_Output(other,self, " DIA_Cassia_Pickpocket_16_09 " );	// And how much do you want?
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_10 " );	// I think a thousand gold coins will be enough to forget about this misunderstanding.
 			CassiaTellsAttila = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_11");	//Так как насчет небольшой компенсации?
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_11 " );	// So how about a little compensation?
 		};
 
 		Info_ClearChoices(DIA_Cassia_Pickpocket);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= 1000)
 		{
-			Info_AddChoice(DIA_Cassia_Pickpocket,"Хорошо, вот твои деньги.",DIA_Cassia_Pickpocket_Ok);
+			Info_AddChoice(DIA_Cassia_Pickpocket, " Okay, here's your money. " ,DIA_Cassia_Pickpocket_Ok);
 		};
 
-		Info_AddChoice(DIA_Cassia_Pickpocket,"У меня нет таких денег.",DIA_Cassia_Pickpocket_No);
-		Info_AddChoice(DIA_Cassia_Pickpocket,"А не пойти ли тебе куда подальше?",DIA_Cassia_Pickpocket_Damn);
+		Info_AddChoice(DIA_Cassia_Pickpocket, " I don't have that kind of money. " ,DIA_Cassia_Pickpocket_No);
+		Info_AddChoice(DIA_Cassia_Pickpocket, " Why don't you go somewhere else? " ,DIA_Cassia_Pickpocket_Damn);
 
 		if(RhetorikSkillValue[1] >= 10)
 		{
-			Info_AddChoice(DIA_Cassia_Pickpocket,"У меня на этот счет иное мнение.",DIA_Cassia_Pickpocket_Agreed);
+			Info_AddChoice(DIA_Cassia_Pickpocket, " I have a different opinion on this. " ,DIA_Cassia_Pickpocket_Agreed);
 		};
 	}
 	else
 	{
 		if(b_teachthieftalentfree(self,other,NPC_TALENT_PICKPOCKET))
 		{
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_01");	//Если ты хочешь обчистить чьи-нибудь карманы, отвлеки его. Просто начни говорить с ним, поболтай.
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_02");	//А когда будешь разговаривать, оцени его. Обращай внимание на оттопыривающиеся карманы, драгоценности или кожаный шнурок на шее. И, самое главное, попытайся оценить, насколько он осторожен.
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_03");	//Обокрасть пьяного поденного рабочего - это далеко не то же самое, что украсть у бдительного торговца. Помни об этом.
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_04");	//Если ты неуклюж, он, конечно же, почувствует недоброе. И, превыше всего: всегда сохраняй хладнокровие!
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_01 " );	// If you want to pick someone's pockets, distract him. Just start talking to him, chat.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_02 " );	// And when you talk, rate him. Pay attention to protruding pockets, jewelry or a leather lace around the neck. And, most importantly, try to appreciate how careful he is.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_03 " );	// Stealing from a drunken day laborer is not the same as stealing from a vigilant merchant. Remember this.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_04 " );	// If you're clumsy, he'll surely feel unkind. And, above all: always keep your cool!
 		};
 	};
 };
@@ -662,7 +663,7 @@ instance DIA_Cassia_Acrobat(C_Info)
 	condition = DIA_Cassia_Acrobat_Condition;
 	information = DIA_Cassia_Acrobat_Info;
 	permanent = TRUE;
-	description = "Покажи мне, как правильно управлять своим телом. (Очки обучения: 10)";
+	description = " Show me how to control my body properly. (Learning points: 10) " ;
 };
 
 func int DIA_Cassia_Acrobat_Condition()
@@ -675,38 +676,38 @@ func int DIA_Cassia_Acrobat_Condition()
 
 func void DIA_Cassia_Acrobat_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Acrobat_15_00");	//Покажи мне, как правильно управлять своим телом.
+	AI_Output(other,self, " DIA_Cassia_Acrobat_15_00 " );	// Show me how to properly control your body.
 
 	if((AttilaIsDead == TRUE) && (CassiaRecievePay == FALSE))
 	{
 		if(CassiaTellsAttila == FALSE)
 		{
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_05");	//Не так быстро, друг мой. Прежде чем мы начнем наше обучение, ты должен кое-что сделать.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_05 " );	// Not so fast, my friend. Before we begin our training, there is something you must do.
 			AI_Output(other,self,"DIA_Cassia_Pickpocket_16_06");	//Что именно?
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_07");	//Заплатить мне небольшую компенсацию за смерть Аттилы.
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_08");	//Он выполнял для меня довольно важные поручения и теперь с некоторыми из них могут возьникнуть проблемы.
-			AI_Output(other,self,"DIA_Cassia_Pickpocket_16_09");	//И сколько ты хочешь?
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_10");	//Думаю, тысячи золотых монет вполне хватит, чтобы забыть об этом недоразумении.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_07 " );	// Pay me some compensation for Attila's death.
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_08 " );	// He's been doing some pretty important jobs for me, and now some of them might get in trouble.
+			AI_Output(other,self, " DIA_Cassia_Pickpocket_16_09 " );	// And how much do you want?
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_10 " );	// I think a thousand gold coins will be enough to forget about this misunderstanding.
 			CassiaTellsAttila = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Cassia_Pickpocket_16_11");	//Так как насчет небольшой компенсации?
+			AI_Output(self,other, " DIA_Cassia_Pickpocket_16_11 " );	// So how about a little compensation?
 		};
 
 		Info_ClearChoices(DIA_Cassia_Acrobat);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= 1000)
 		{
-			Info_AddChoice(DIA_Cassia_Acrobat,"Хорошо, вот твои деньги.",DIA_Cassia_Acrobat_Ok);
+			Info_AddChoice(DIA_Cassia_Acrobat, " Okay, here's your money. " ,DIA_Cassia_Acrobat_Ok);
 		};
 
-		Info_AddChoice(DIA_Cassia_Acrobat,"У меня нет таких денег.",DIA_Cassia_Acrobat_No);
-		Info_AddChoice(DIA_Cassia_Acrobat,"А не пойти ли тебе куда подальше?",DIA_Cassia_Acrobat_Damn);
+		Info_AddChoice(DIA_Cassia_Acrobat, " I don't have that kind of money. " ,DIA_Cassia_Acrobat_No);
+		Info_AddChoice(DIA_Cassia_Acrobat, " Why don't you go somewhere else? " ,DIA_Cassia_Acrobat_Damn);
 
 		if(RhetorikSkillValue[1] >= 10)
 		{
-			Info_AddChoice(DIA_Cassia_Acrobat,"У меня на этот счет иное мнение.",DIA_Cassia_Acrobat_Agreed);
+			Info_AddChoice(DIA_Cassia_Acrobat, " I have a different opinion on this. " ,DIA_Cassia_Acrobat_Agreed);
 		};
 	}
 	else
@@ -715,21 +716,21 @@ func void DIA_Cassia_Acrobat_Info()
 		{
 			if(B_TeachThiefTalentFree(self,other,NPC_TALENT_ACROBAT))
 			{
-				AI_Output(self,other,"DIA_Cassia_Acrobat_16_01");	//Когда ты контролируешь свое тело, ты можешь прыгать гораздо дальше.
-				AI_Output(self,other,"DIA_Cassia_Acrobat_16_02");	//Я научу тебя откатываться в сторону, покажу, как приземляться после падения.
-				AI_Output(self,other,"DIA_Cassia_Acrobat_16_03");	//Но не стоит забывать, что ты все-таки не бессмертный!
-				AI_Output(self,other,"DIA_Cassia_Acrobat_16_04");	//Кроме этого, акробатика также очень полезна в бою.
-				AI_Output(self,other,"DIA_Cassia_Acrobat_16_05");	//Ты сможешь быстро менять дистанцию между собой и противником.
+				AI_Output(self,other, " DIA_Cassia_Acrobat_16_01 " );	// When you control your body, you can jump much further.
+				AI_Output(self,other, " DIA_Cassia_Acrobat_16_02 " );	// I'll teach you how to roll to the side, show you how to land after a fall.
+				AI_Output(self,other, " DIA_Cassia_Acrobat_16_03 " );	// But don't forget that you're still not immortal!
+				AI_Output(self,other, " DIA_Cassia_Acrobat_16_04 " );	// Other than that, acrobatics are also very useful in combat.
+				AI_Output(self,other, " DIA_Cassia_Acrobat_16_05 " );	// You can quickly change the distance between yourself and the enemy.
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Cassia_Acrobat_16_98");	//Тебе еще не хватает для этого ловкости.
-			AI_Output(self,other,"DIA_Cassia_Acrobat_16_99");	//Поговорим об этом позже.
+			AI_Output(self,other, " DIA_Cassia_Acrobat_16_98 " );	// You don't have the dexterity for that yet.
+			AI_Output(self,other, " DIA_Cassia_Acrobat_16_99 " );	// We'll talk about this later.
 
 			if(CassiaAcrobatPerm == FALSE)
 			{
-				B_LogEntry_Quiet(TOPIC_ThiefTeacher,"Чтобы выучить акробатику, мне необходимо быть более ловким. (Ловкость: 120 и более)");
+				B_LogEntry_Quiet(TOPIC_ThiefTeacher, " To learn acrobatics, I need to be more agile. (Agility: 120 or more) " );
 				CassiaAcrobatPerm = TRUE;
 			};
 		};
@@ -738,26 +739,26 @@ func void DIA_Cassia_Acrobat_Info()
 
 func void DIA_Cassia_Pickpocket_Ok()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Ok_16_01");	//Хорошо, вот твои деньги.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Ok_16_01 " );	// Okay, here's your money.
 	B_GiveInvItems(other,self,ItMi_Gold,1000);
 	Npc_RemoveInvItems(self,ItMi_Gold,1000);
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Ok_16_02");	//Отлично! Теперь можно и потренироваться.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Ok_16_02 " );	// Great! Now you can practice.
 	CassiaRecievePay = TRUE;
 	Info_ClearChoices(DIA_Cassia_Pickpocket);
 };
 
 func void DIA_Cassia_Pickpocket_No()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_No_16_01");	//У меня нет таких денег.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_No_16_02");	//Так найди их! Иначе, можешь забыть о своем обучении.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_No_16_01 " );	// I don't have that kind of money.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_No_16_02 " );	// So find them! Otherwise, you can forget about your training.
 	Info_ClearChoices(DIA_Cassia_Pickpocket);
 };
 
 func void DIA_Cassia_Pickpocket_Damn()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Damn_16_01");	//А не пойти ли тебе куда подальше
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Damn_16_02");	//Мне кажется, это было довольно дерзко с твоей стороны.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Damn_16_03");	//Придется преподать тебе урок хороших манер.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Damn_16_01 " );	// Why don't you go somewhere else
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Damn_16_02 " );	// I think that was pretty cheeky of you.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Damn_16_03 " );	// I'll have to teach you a lesson in good manners.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -765,20 +766,20 @@ func void DIA_Cassia_Pickpocket_Damn()
 func void DIA_Cassia_Pickpocket_Agreed()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_01");	//У меня на этот счет иное мнение.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_02");	//Хммм... Интересно какое?
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_03");	//Аттила хотел убить меня! Причем, хотел убить по твоему же приказу.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_04");	//То, что он не справился, говорит лишь о том, что для такого рода дел нужно подбирать более опытных людей.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_05");	//И уж тем болеее, если он был так важен для тебя, то не стоило посылать его одного.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_06");	//Так что, в его смерти виновата лишь ты сама и никто более.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_07");	//Ну хорошо! Сукин ты сын... Считай, что убедил меня в правильности своего выбора.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_08");	//А теперь давай просто забудем про это недоразумение и вернемся к нашим делам. 
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_09");	//Так, что ты там хотел узнать?
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_01 " );	// I have a different opinion on this.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_02 " );	// Hmmm... I wonder which one?
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_03 " );	// Attila wanted to kill me! Moreover, he wanted to kill on your own orders.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_04 " );	// The fact that he did not cope only says that more experienced people need to be selected for this kind of work.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_05 " );	// And even more so, if he was so important to you, you shouldn't have sent him alone.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_06 " );	// So, only you yourself are to blame for his death and no one else.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_07 " );	// All right! You son of a bitch... Consider that you convinced me of the correctness of your choice.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_08 " );	// Now let's just forget about this misunderstanding and get back to our business.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_09 " );	// So, what did you want to know there?
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	CassiaRecievePay = TRUE;
@@ -787,26 +788,26 @@ func void DIA_Cassia_Pickpocket_Agreed()
 
 func void DIA_Cassia_Acrobat_Ok()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Ok_16_01");	//Хорошо, вот твои деньги.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Ok_16_01 " );	// Okay, here's your money.
 	B_GiveInvItems(other,self,ItMi_Gold,1000);
 	Npc_RemoveInvItems(self,ItMi_Gold,1000);
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Ok_16_02");	//Отлично! Теперь можно и потренироваться.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Ok_16_02 " );	// Great! Now you can practice.
 	CassiaRecievePay = TRUE;
 	Info_ClearChoices(DIA_Cassia_Acrobat);
 };
 
 func void DIA_Cassia_Acrobat_No()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_No_16_01");	//У меня нет таких денег.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_No_16_02");	//Так найди их! Иначе, можешь забыть о своем обучении.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_No_16_01 " );	// I don't have that kind of money.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_No_16_02 " );	// So find them! Otherwise, you can forget about your training.
 	Info_ClearChoices(DIA_Cassia_Acrobat);
 };
 
 func void DIA_Cassia_Acrobat_Damn()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Damn_16_01");	//А не пойти ли тебе куда подальше
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Damn_16_02");	//Мне кажется, это было довольно дерзко с твоей стороны.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Damn_16_03");	//Придется преподать тебе урок хороших манер.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Damn_16_01 " );	// Why don't you go somewhere else
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Damn_16_02 " );	// I think that was pretty cheeky of you.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Damn_16_03 " );	// I'll have to teach you a lesson in good manners.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -814,20 +815,20 @@ func void DIA_Cassia_Acrobat_Damn()
 func void DIA_Cassia_Acrobat_Agreed()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_01");	//У меня на этот счет иное мнение.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_02");	//Хммм... Интересно какое?
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_03");	//Аттила хотел убить меня! Причем, хотел убить по твоему же приказу.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_04");	//То, что он не справился, говорит лишь о том, что для такого рода дел нужно подбирать более опытных людей.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_05");	//И уж тем болеее, если он был так важен для тебя, то не стоило посылать его одного.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_06");	//Так что, в его смерти виновата лишь ты сама и никто более.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_07");	//Ну хорошо! Сукин ты сын... Считай, что убедил меня в правильности своего выбора.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_08");	//А теперь давай просто забудем про это недоразумение и вернемся к нашим делам. 
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_09");	//Так, что ты там хотел узнать?
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_01 " );	// I have a different opinion on this.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_02 " );	// Hmmm... I wonder which one?
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_03 " );	// Attila wanted to kill me! Moreover, he wanted to kill on your own orders.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_04 " );	// The fact that he did not cope only says that more experienced people need to be selected for this kind of work.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_05 " );	// And even more so, if he was so important to you, you shouldn't have sent him alone.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_06 " );	// So, only you yourself are to blame for his death and no one else.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_07 " );	// All right! You son of a bitch... Consider that you convinced me of the correctness of your choice.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_08 " );	// Now let's just forget about this misunderstanding and get back to our business.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_09 " );	// So, what did you want to know there?
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	CassiaRecievePay = TRUE;
@@ -836,26 +837,26 @@ func void DIA_Cassia_Acrobat_Agreed()
 
 func void DIA_Cassia_TEACH_Ok()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Ok_16_01");	//Хорошо, вот твои деньги.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Ok_16_01 " );	// Okay, here's your money.
 	B_GiveInvItems(other,self,ItMi_Gold,1000);
 	Npc_RemoveInvItems(self,ItMi_Gold,1000);
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Ok_16_02");	//Отлично! Теперь можно и потренироваться.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Ok_16_02 " );	// Great! Now you can practice.
 	CassiaRecievePay = TRUE;
 	Info_ClearChoices(DIA_Cassia_TEACH);
 };
 
 func void DIA_Cassia_TEACH_No()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_No_16_01");	//У меня нет таких денег.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_No_16_02");	//Так найди их! Иначе, можешь забыть о своем обучении.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_No_16_01 " );	// I don't have that kind of money.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_No_16_02 " );	// So find them! Otherwise, you can forget about your training.
 	Info_ClearChoices(DIA_Cassia_TEACH);
 };
 
 func void DIA_Cassia_TEACH_Damn()
 {
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Damn_16_01");	//А не пойти ли тебе куда подальше
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Damn_16_02");	//Мне кажется, это было довольно дерзко с твоей стороны.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Damn_16_03");	//Придется преподать тебе урок хороших манер.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Damn_16_01 " );	// Why don't you go somewhere else
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Damn_16_02 " );	// I think that was pretty cheeky of you.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Damn_16_03 " );	// I'll have to teach you a lesson in good manners.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -863,37 +864,37 @@ func void DIA_Cassia_TEACH_Damn()
 func void DIA_Cassia_TEACH_Agreed()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_01");	//У меня на этот счет иное мнение.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_02");	//Хммм... Интересно какое?
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_03");	//Аттила хотел убить меня! Причем, хотел убить по твоему же приказу.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_04");	//То, что он не справился, говорит лишь о том, что для такого рода дел нужно подбирать более опытных людей.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_05");	//И уж тем болеее, если он был так важен для тебя, то не стоило посылать его одного.
-	AI_Output(other,self,"DIA_Cassia_Pickpocket_Agreed_16_06");	//Так что, в его смерти виновата лишь ты сама и никто более.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_07");	//Ну хорошо! Сукин ты сын... Считай, что убедил меня в правильности своего выбора.
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_08");	//А теперь давай просто забудем про это недоразумение и вернемся к нашим делам. 
-	AI_Output(self,other,"DIA_Cassia_Pickpocket_Agreed_16_09");	//Так, что ты там хотел узнать?
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_01 " );	// I have a different opinion on this.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_02 " );	// Hmmm... I wonder which one?
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_03 " );	// Attila wanted to kill me! Moreover, he wanted to kill on your own orders.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_04 " );	// The fact that he did not cope only says that more experienced people need to be selected for this kind of work.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_05 " );	// And even more so, if he was so important to you, you shouldn't have sent him alone.
+	AI_Output(other,self, " DIA_Cassia_Pickpocket_Agreed_16_06 " );	// So, only you yourself are to blame for his death and no one else.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_07 " );	// All right! You son of a bitch... Consider that you convinced me of the correctness of your choice.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_08 " );	// Now let's just forget about this misunderstanding and get back to our business.
+	AI_Output(self,other, " DIA_Cassia_Pickpocket_Agreed_16_09 " );	// So, what did you want to know there?
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	CassiaRecievePay = TRUE;
 	Info_ClearChoices(DIA_Cassia_TEACH);
 };
 
-instance DIA_Cassia_Aufnahme(C_Info)
+instance DIA_Cassia_recording (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
-	condition = DIA_Cassia_Aufnahme_Condition;
-	information = DIA_Cassia_Aufnahme_Info;
+	condition = DIA_Cassia_Recording_Condition;
+	information = DIA_Cassia_Recording_Info;
 	permanent = FALSE;
-	description = "Я принес кольцо Константино.";
+	description = " I brought Constantino's ring. " ;
 };
 
-func int DIA_Cassia_Aufnahme_Condition()
+func int DIA_Cassia_Recording_Condition()
 {
 	if((MIS_CassiaRing == LOG_Running) && (Npc_HasItems(other,ItRi_Prot_Point_01_MIS) >= 1))
 	{
@@ -901,16 +902,16 @@ func int DIA_Cassia_Aufnahme_Condition()
 	};
 };
 
-func void DIA_Cassia_Aufnahme_Info()
+func void DIA_Cassia_Recording_Info()
 {
 	B_GivePlayerXP(XP_CassiaRing);
-	AI_Output(other,self,"DIA_Cassia_Aufnahme_15_00");	//Я принес кольцо Константино.
+	AI_Output(other,self, " DIA_Cassia_Aufnahme_15_00 " );	// I brought Constantino's ring.
 	B_GiveInvItems(other,self,ItRi_Prot_Point_01_MIS,1);
 	Npc_RemoveInvItems(self,ItRi_Prot_Point_01_MIS,1);
-	AI_Output(self,other,"DIA_Cassia_Aufnahme_16_01");	//Поздравляю! Ты прошел вступительный тест. Считай, что теперь ты один из нас!
+	AI_Output(self,other, " DIA_Cassia_Aufnahme_16_01 " );	// Congratulations! You passed the entrance test. Consider that now you are one of us!
 	MIS_CassiaRing = LOG_SUCCESS;
 	Log_SetTopicStatus(Topic_CassiaRing,LOG_SUCCESS);
-	B_LogEntry(Topic_CassiaRing,"Кассия осталась довольна моей работой и предложила мне вступить в гильдию воров Хориниса. По ее словам это даст мне некоторые неоспоримые преимущества.");
+	B_LogEntry(Topic_CassiaRing, " Cassia was satisfied with my work and asked me to join the Khorinis Thieves Guild. According to her, this will give me some undeniable advantages. " );
 };
 
 
@@ -921,7 +922,7 @@ instance DIA_Cassia_In_Guild_Invite(C_Info)
 	condition = DIA_Cassia_In_Guild_Invite_condition;
 	information = DIA_Cassia_In_Guild_Invite_info;
 	permanent = FALSE;
-	description = "Я готов вступить в гильдию воров!";
+	description = " I'm ready to join the Thieves Guild! " ;
 };
 
 func int DIA_Cassia_In_Guild_Invite_condition()
@@ -936,8 +937,8 @@ func void DIA_Cassia_In_Guild_Invite_info()
 {
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR) || (hero.guild == GIL_KDW) || (hero.guild == GIL_NOV) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW))
 	{
-		AI_Output(other,self,"DIA_Cassia_In_Guild_Invite_01_01");	//Я готов вступить в гильдию воров!
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_00");	//Извини, но мы не принимаем в свою гильдию тех, кто уже связал свой путь с одним из божеств.
+		AI_Output(other,self, " DIA_Cassia_In_Guild_Invite_01_01 " );	// I'm ready to join the Thieves Guild!
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_00 " );	// Sorry, but we do not accept into our guild those who have already connected their path with one of the deities.
 		AI_StopProcessInfos(self);
 	}
 	else
@@ -951,22 +952,22 @@ func void DIA_Cassia_In_Guild_Invite_info()
 			THIEF_REPUTATION = THIEF_REPUTATION + 3;
 		};
 
-		AI_Output(other,self,"DIA_Cassia_In_Guild_Invite_01_01");	//Я готов вступить в гильдию воров!
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_02");	//Поздравляю, теперь ты являешься полноправным членом гильдии воров!
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_03");	//Отныне твой путь - это путь вора и мастера шпаги.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_04");	//Со временем для тебя будут открываться все новые и новые возможности, мой друг.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_05");	//Развивай свою ловкость, учись владеть телом, фехтовать шпагой и метко стрелять из лука.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_06");	//И я уверена, что в скором времени ты встанешь в один ряд с другими великими ворами Хориниса.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_07");	//Например таким, каким был мой наставник мастер Фингерс!
+		AI_Output(other,self, " DIA_Cassia_In_Guild_Invite_01_01 " );	// I'm ready to join the Thieves Guild!
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_02 " );	// Congratulations, you are now a full member of the Thieves Guild!
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_03 " );	// From now on, your path is the path of a thief and master of the sword.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_04 " );	// Over time, more and more opportunities will open up for you, my friend.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_05 " );	// Develop your dexterity, learn to control your body, fencing with a sword and shoot accurately from a bow.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_06 " );	// And I'm sure that soon you will stand on a par with other great thieves of Khorinis.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_07 " );	// Like my mentor, Master Fingers, for example!
 		AI_Output(other,self,"DIA_Cassia_In_Guild_Invite_01_08");	//Спасибо.
-		AI_Output(self,other,"DIA_Cassia_Aufnahme_16_02");	//Возьми этот ключ. Он открывает дверь в отель...(улыбается) Теперь тебе не придется каждый раз плыть сюда.
+		AI_Output(self,other, " DIA_Cassia_Aufnahme_16_02 " );	// Take this key. He opens the door to the hotel... (smiles) Now you don't have to swim here every time.
 		B_GiveInvItems(self,other,ItKe_XhiefGuildKey_Hotel_MIS,1);
-		AI_Output(self,other,"DIA_Cassia_Aufnahme_16_03");	//Кроме того, ты должен знать, что у нас есть секретный знак - 'особый' кивок!
+		AI_Output(self,other, " DIA_Cassia_Aufnahme_16_03 " );	// Also, you should know that we have a secret sign - a 'special' nod!
 		AI_PlayAni(self,"T_YES");
-		AI_Output(self,other,"DIA_Cassia_Aufnahme_16_04");	//Вот такой! Когда ты говоришь с правильными людьми и делаешь этот знак, они поймут, что ты один из нас.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_09");	//Кстати, не забудь заглянуть к Рамирезу. Мне кажется он хотел кое-чему тебя научить.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Invite_01_10");	//Полагаю, что в первый раз он это сделает бесплатно.
-		B_LogEntry(Topic_Diebesgilde,"Теперь я полноправный член гильдии воров Хориниса. Кассия посоветовала мне зайти к Рамирезу.");
+		AI_Output(self,other, " DIA_Cassia_Aufnahme_16_04 " );	// Here it is! When you talk to the right people and make this sign, they will know that you are one of us.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_09 " );	// By the way, don't forget to visit Ramirez. I think he wanted to teach you something.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Invite_01_10 " );	// I guess he'll do it for free the first time.
+		B_LogEntry(Topic_Diebesgilde, " I am now a full member of the Khorinis Thieves Guild. Cassia advised me to visit Ramirez. " );
 	};
 };
 
@@ -977,7 +978,7 @@ instance DIA_Cassia_Fingers(C_Info)
 	condition = DIA_Cassia_Fingers_Condition;
 	information = DIA_Cassia_Fingers_Info;
 	permanent = FALSE;
-	description = "Фингерс был твоим наставником?";
+	description = " Fingers was your mentor? " ;
 };
 
 func int DIA_Cassia_Fingers_Condition()
@@ -990,16 +991,16 @@ func int DIA_Cassia_Fingers_Condition()
 
 func void DIA_Cassia_Fingers_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Fingers_01_00");	//Фингерс был твоим наставником?
-	AI_Output(self,other,"DIA_Cassia_Fingers_01_01");	//Да. Это он научил меня всему, что я умею.
-	AI_Output(other,self,"DIA_Cassia_Fingers_01_02");	//А где он сейчас?
-	AI_Output(self,other,"DIA_Cassia_Fingers_01_03");	//Я ничего не слышала о нем с тех пор, как его отправили в колонию.
-	AI_Output(self,other,"DIA_Cassia_Fingers_01_04");	//Так что если вдруг что-то узнаешь о его судьбе, то пожалуйста - дай мне знать.
+	AI_Output(other,self, " DIA_Cassia_Fingers_01_00 " );	// Fingers was your mentor?
+	AI_Output(self,other, " DIA_Cassia_Fingers_01_01 " );	// Yes. He taught me everything I know.
+	AI_Output(other,self, " DIA_Cassia_Fingers_01_02 " );	// Where is he now?
+	AI_Output(self,other, " DIA_Cassia_Fingers_01_03 " );	// I haven't heard from him since he was sent to the colony.
+	AI_Output(self,other, " DIA_Cassia_Fingers_01_04 " );	// So if you suddenly find out something about his fate, then please let me know.
 	AI_Output(other,self,"DIA_Cassia_Fingers_01_05");	//Хорошо.
 	MIS_WhereFingers = LOG_Running;
 	Log_CreateTopic(Topic_WhereFingers,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_WhereFingers,LOG_Running);
-	B_LogEntry(TOPIC_WhereFingers,"Кассии очень хотелось бы знать, что стало с ее наставником - мастером Фингерсом.");
+	B_LogEntry(TOPIC_WhereFingers, " Cassia would love to know what happened to her mentor, Master Fingers. " );
 };
 
 instance DIA_Cassia_Fingers_Done(C_Info)
@@ -1009,7 +1010,7 @@ instance DIA_Cassia_Fingers_Done(C_Info)
 	condition = DIA_Cassia_Fingers_Done_Condition;
 	information = DIA_Cassia_Fingers_Done_Info;
 	permanent = FALSE;
-	description = "Я нашел твоего наставника.";
+	description = " I found your mentor. " ;
 };
 
 func int DIA_Cassia_Fingers_Done_Condition()
@@ -1023,14 +1024,14 @@ func int DIA_Cassia_Fingers_Done_Condition()
 func void DIA_Cassia_Fingers_Done_Info()
 {
 	B_GivePlayerXP(400);
-	AI_Output(other,self,"DIA_Cassia_Fingers_Done_01_00");	//Я нашел твоего наставника.
-	AI_Output(self,other,"DIA_Cassia_Fingers_Done_01_01");	//(взволнованно) Правда? Что с ним?
-	AI_Output(other,self,"DIA_Cassia_Fingers_Done_01_02");	//С ним все в порядке. Он жив и здоров.
-	AI_Output(self,other,"DIA_Cassia_Fingers_Done_01_03");	//Это хорошие новости! Надеюсь, что когда-нибудь он все-таки вернется к нам.
-	AI_Output(self,other,"DIA_Cassia_Fingers_Done_01_04");	//И все будет так же, как и раньше. Спасибо тебе.
+	AI_Output(other,self, " DIA_Cassia_Fingers_Done_01_00 " );	// I found your mentor.
+	AI_Output(self,other, " DIA_Cassia_Fingers_Done_01_01 " );	// (excitedly) Really? What about him?
+	AI_Output(other,self, " DIA_Cassia_Fingers_Done_01_02 " );	// He's fine. He is alive and well.
+	AI_Output(self,other, " DIA_Cassia_Fingers_Done_01_03 " );	// That's good news! I hope that someday he still comes back to us.
+	AI_Output(self,other, " DIA_Cassia_Fingers_Done_01_04 " );	// And everything will be the same as before. Thank you.
 	MIS_WhereFingers = LOG_Success;
 	Log_SetTopicStatus(TOPIC_WhereFingers,LOG_Success);
-	B_LogEntry(TOPIC_WhereFingers,"Кассию обрадовала новость о том, что мастер Фингерс жив.");
+	B_LogEntry(TOPIC_WhereFingers, " Cassia is pleased to learn that Master Fingers is alive. " );
 };
 
 
@@ -1041,7 +1042,7 @@ instance DIA_Cassia_Fingers_Dead(C_Info)
 	condition = DIA_Cassia_Fingers_Dead_Condition;
 	information = DIA_Cassia_Fingers_Dead_Info;
 	permanent = FALSE;
-	description = "Я нашел твоего наставника.";
+	description = " I found your mentor. " ;
 };
 
 func int DIA_Cassia_Fingers_Dead_Condition()
@@ -1055,27 +1056,27 @@ func int DIA_Cassia_Fingers_Dead_Condition()
 func void DIA_Cassia_Fingers_Dead_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Cassia_Fingers_Dead_01_00");	//Я нашел твоего наставника.
-	AI_Output(self,other,"DIA_Cassia_Fingers_Dead_01_01");	//(взволнованно) Правда? Что с ним?
+	AI_Output(other,self, " DIA_Cassia_Fingers_Dead_01_00 " );	// I found your mentor.
+	AI_Output(self,other, " DIA_Cassia_Fingers_Dead_01_01 " );	// (excitedly) Really? What about him?
 	AI_Output(other,self,"DIA_Cassia_Fingers_Dead_01_02");	//Он мертв.
-	AI_Output(self,other,"DIA_Cassia_Fingers_Dead_01_03");	//Это плохие новости. Но нам всем придется смириться с этим.
-	AI_Output(self,other,"DIA_Cassia_Fingers_Dead_01_04");	//В любом случае спасибо.
+	AI_Output(self,other, " DIA_Cassia_Fingers_Dead_01_03 " );	// This is bad news. But we all have to come to terms with it.
+	AI_Output(self,other, " DIA_Cassia_Fingers_Dead_01_04 " );	// Thanks anyway.
 	MIS_WhereFingers = LOG_Success;
 	Log_SetTopicStatus(TOPIC_WhereFingers,LOG_Success);
-	B_LogEntry(TOPIC_WhereFingers,"Кассию сильно опечалило известие о том, что Фингерс мертв.");
+	B_LogEntry(TOPIC_WhereFingers, " Cassia is very saddened to hear that Fingers is dead. " );
 };
 
-instance DIA_Cassia_Versteck(C_Info)
+instances of DIA_Cassia_Versteck (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
 	condition = DIA_Cassia_Versteck_Condition;
 	information = DIA_Cassia_Versteck_Info;
 	permanent = FALSE;
-	description = "А где вы прячете награбленное?";
+	description = " Where do you hide the loot? " ;
 };
 
-func int DIA_Cassia_Versteck_Condition()
+func int DIA_Cassia_Hidden_Condition()
 {
 	if((IS_LOVCACH == TRUE) && Npc_KnowsInfo(other,DIA_Ramirez_Beute))
 	{
@@ -1083,21 +1084,21 @@ func int DIA_Cassia_Versteck_Condition()
 	};
 };
 
-func void DIA_Cassia_Versteck_Info()
+func void DIA_Cassia_hiding_info()
 {
-	AI_Output(other,self,"DIA_Cassia_Versteck_15_00");	//А где вы прячете награбленное?
-	AI_Output(self,other,"DIA_Cassia_Versteck_16_01");	//Ты думаешь, я тебе вот так просто все и выложу?
-	AI_Output(self,other,"DIA_Cassia_Versteck_16_02");	//У тебя будет достаточно возможностей самому сколотить состояние. Помни - жадные обычно остаются ни с чем!
+	AI_Output(other,self, " DIA_Cassia_Versteck_15_00 " );	// Where do you hide the loot?
+	AI_Output(self,other, " DIA_Cassia_Versteck_16_01 " );	// Do you think I'll just lay everything out for you like that?
+	AI_Output(self,other, " DIA_Cassia_Versteck_16_02 " );	// You will have plenty of opportunity to make your own fortune. Remember - the greedy usually end up with nothing!
 };
 
-instance DIA_Cassia_Blutkelche(C_Info)
+instance DIA_Cassia_Blutkelche (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
 	condition = DIA_Cassia_Blutkelche_Condition;
 	information = DIA_Cassia_Blutkelche_Info;
 	permanent = TRUE;
-	description = "У тебя есть работа для меня?";
+	description = " Do you have a job for me? " ;
 };
 
 func int DIA_Cassia_Blutkelche_Condition()
@@ -1110,42 +1111,42 @@ func int DIA_Cassia_Blutkelche_Condition()
 
 func void DIA_Cassia_Blutkelche_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Blutkelche_15_00");	//У тебя есть работа для меня?
+	AI_Output(other,self, " DIA_Cassia_Blutkelche_15_00 " );	// Do you have a job for me?
 
 	if(hero.attribute[ATR_DEXTERITY] >= 50)
 	{
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_03");	//Да, меня интересует коллекция кубков. Всего их шесть!
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_04");	//Король Робар захватил их как-то во время одной из своих кампаний - но для этого ему пришлось положить очень много своих людей. Вот почему они называются Кровавые Кубки.
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_05");	//Каждый из кубков сам по себе не особенно ценен - но все шесть, собранные вместе, стоят целое состояние.
-		AI_Output(other,self,"DIA_Cassia_Blutkelche_15_06");	//Где эти кубки?
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_07");	//Они здесь, в городе - ими владеют богатые торговцы из верхнего квартала.
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_08");	//Принеси их мне. А тем временем я подыщу покупателя для них.
-		AI_Output(other,self,"DIA_Cassia_Blutkelche_15_09");	//А мне что с этого будет?
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_10");	//Либо половина от дохода, либо ты сможешь выбрать что-нибудь из моей сокровищницы.
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_03 " );	// Yes, I'm interested in the cup collection. There are six in total!
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_04 " );	// King Rhobar captured them somehow during one of his campaigns - but for this he had to put a lot of his people. That is why they are called Blood Cups.
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_05 " );	// Each of the cups is not particularly valuable on its own - but all six put together are worth a fortune.
+		AI_Output(other,self, " DIA_Cassia_Blutkelche_15_06 " );	// Where are these cups?
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_07 " );	// They are here in the city - they are owned by rich merchants from the upper quarter.
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_08 " );	// Bring them to me. In the meantime, I'll find a buyer for them.
+		AI_Output(other,self, " DIA_Cassia_Blutkelche_15_09 " );	// What will happen to me?
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_10 " );	// Either half of the income, or you can choose something from my treasury.
 		MIS_CassiaKelche = LOG_Running;
 		Log_CreateTopic(Topic_CassiaKelche,LOG_MISSION);
 		Log_SetTopicStatus(Topic_CassiaKelche,LOG_Running);
-		B_LogEntry(Topic_CassiaKelche,"Кассия хочет, чтобы я принес ей шесть кровавых кубков. По-видимому, они находятся в городе.");
+		B_LogEntry(Topic_CassiaKelche, " Cassia wants me to bring her six blood goblets. Apparently they're in town. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_20");	//Хммм...(оценивающе) Извини, но сейчас с твоей ловкостью тебе только пустые бутылки у пьяниц воровать.
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_21");	//Поэтому вначале ты должен немного повысить свои навыки вора.
-		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_22");	//Тогда, может быть, и работенка найдется.
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_20 " );	// Hmmm...(assessing) I'm sorry, but now with your dexterity all you have to do is steal empty bottles from drunkards.
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_21 " );	// Therefore, you should increase your thief skills a bit first.
+		AI_Output(self,other, " DIA_Cassia_Blutkelche_16_22 " );	// Then maybe there will be a job.
 	};
 };
 
-instance DIA_Cassia_abgeben(C_Info)
+instance DIA_Cassia_giving (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
-	condition = DIA_Cassia_abgeben_Condition;
-	information = DIA_Cassia_abgeben_Info;
+	condition = DIA_Cassia_deliver_Condition;
+	information = DIA_Cassia_giving_Info;
 	permanent = TRUE;
-	description = "Насчет Кровавых Кубков...";
+	description = " About the Blood Cups... " ;
 };
 
-func int DIA_Cassia_abgeben_Condition()
+func int DIA_Cassia_giving_Condition()
 {
 	if(MIS_CassiaKelche == LOG_Running)
 	{
@@ -1153,40 +1154,40 @@ func int DIA_Cassia_abgeben_Condition()
 	};
 };
 
-func void DIA_Cassia_abgeben_Info()
+func void DIA_Cassia_giving_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_abgeben_15_00");	//Насчет Кровавых Кубков...
+	AI_Output(other,self, " DIA_Cassia_abgeben_15_00 " );	// About the Blood Cups...
 
 	if(B_GiveInvItems(other,self,ItMi_ZloodCup_MIS,6))
 	{
 		B_GivePlayerXP(XP_CassiaBlutkelche);
-		AI_Output(other,self,"DIA_Cassia_abgeben_15_01");	//У меня все шесть кубков.
-		AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Отличная работа, а я тем временем подыскала покупателя.
-		AI_Output(self,other,"DIA_Cassia_abgeben_16_03");	//Ты можешь получить свою награду. Спасибо, что сделал это для меня.
+		AI_Output(other,self, " DIA_Cassia_abgeben_15_01 " );	// I have all six cups.
+		AI_Output(self,other, " DIA_Cassia_abgeben_16_02 " );	// Great job, and in the meantime I found a buyer.
+		AI_Output(self,other, " DIA_Cassia_abgeben_16_03 " );	// You can get your reward. Thank you for doing this for me.
 		Npc_RemoveInvItems(self,ItMi_ZloodCup_MIS,6);
 		THIEF_REPUTATION = THIEF_REPUTATION + 3;
 		MIS_CassiaKelche = LOG_SUCCESS;
 		Log_SetTopicStatus(Topic_CassiaKelche,LOG_SUCCESS);
-		B_LogEntry(Topic_CassiaKelche,"Я принес Кассии все шесть кубков.");
+		B_LogEntry(Topic_CassiaKelche, " I brought all six cups to Cassia. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cassia_abgeben_16_05");	//Я могу продать эти кубки только все вместе. Принеси мне все шесть.
+		AI_Output(self,other, " DIA_Cassia_abgeben_16_05 " );	// I can only sell these cups all together. Bring me all six.
 	};
 };
 
 
-instance DIA_Cassia_Belohnung(C_Info)
+instance DIA_Cassia_Belohnung (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
 	condition = DIA_Cassia_Belohnung_Condition;
-	information = DIA_Cassia_Belohnung_Info;
+	information = DIA_Cassia_Reward_Info;
 	permanent = FALSE;
-	description = "Я пришел за своей наградой.";
+	description = " I've come for my reward. " ;
 };
 
-func int DIA_Cassia_Belohnung_Condition()
+func int DIA_Cassia_Reward_Condition()
 {
 	if(MIS_CassiaKelche == LOG_SUCCESS)
 	{
@@ -1194,33 +1195,33 @@ func int DIA_Cassia_Belohnung_Condition()
 	};
 };
 
-func void DIA_Cassia_Belohnung_Info()
+func void DIA_Cassia_Reward_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//Я пришел за своей наградой.
-	AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//Что ты выбираешь?
+	AI_Output(other,self, " DIA_Cassia_Belohnung_15_00 " );	// I've come for my reward.
+	AI_Output(self,other, " DIA_Cassia_Belohnung_16_01 " );	// What do you choose?
 	Info_ClearChoices(DIA_Cassia_Belohnung);
-	Info_AddChoice(DIA_Cassia_Belohnung,"Полторы тысячи золотых монет.",DIA_Cassia_Belohnung_Gold);
-	Info_AddChoice(DIA_Cassia_Belohnung,"Десять эликсиров лечения.",DIA_Cassia_Belohnung_Trank);
-	Info_AddChoice(DIA_Cassia_Belohnung,"Кольцо мошенника.",DIA_Cassia_Belohnung_Ring);
+	Info_AddChoice(DIA_Cassia_Belohnung, " Fifteen thousand gold coins. " ,DIA_Cassia_Belohnung_Gold);
+	Info_AddChoice(DIA_Cassia_Belohnung, " Ten potions of healing. " ,DIA_Cassia_Belohnung_Trank);
+	Info_AddChoice(DIA_Cassia_Belohnung, " Rogue's Ring. " ,DIA_Cassia_Belohnung_Ring);
 };
 
-func void DIA_Cassia_Belohnung_Gold()
+func void DIA_Cassia_Reward_Gold()
 {
-	AI_Output(other,self,"DIA_Cassia_Belohnung_15_02");	//Дай мне золото.
+	AI_Output(other,self, " DIA_Cassia_Belohnung_15_02 " );	// Give me the gold.
 	B_GiveInvItems(self,other,ItMi_Gold,1500);
 	Info_ClearChoices(DIA_Cassia_Belohnung);
 };
 
-func void DIA_Cassia_Belohnung_Trank()
+func void DIA_Cassia_reward_potion()
 {
-	AI_Output(other,self,"DIA_Cassia_Belohnung_15_03");	//Дай мне напитки.
+	AI_Output(other,self, " DIA_Cassia_Belohnung_15_03 " );	// Give me drinks.
 	B_GiveInvItems(self,other,ItPo_Health_03,10);
 	Info_ClearChoices(DIA_Cassia_Belohnung);
 };
 
-func void DIA_Cassia_Belohnung_Ring()
+func void DIA_Cassia_Reward_Ring()
 {
-	AI_Output(other,self,"DIA_Cassia_Belohnung_15_04");	//Дай мне кольцо.
+	AI_Output(other,self, " DIA_Cassia_Belohnung_15_04 " );	// Give me the ring.
 	B_GiveInvItems(self,other,itri_dex_03,1);
 	Info_ClearChoices(DIA_Cassia_Belohnung);
 };
@@ -1232,7 +1233,7 @@ instance DIA_Cassia_In_Guild(C_Info)
 	condition = DIA_Cassia_In_Guild_condition;
 	information = DIA_Cassia_In_Guild_info;
 	permanent = FALSE;
-	description = "Для меня будут еще поручения?";
+	description = " Are there more errands for me? " ;
 };
 
 func int DIA_Cassia_In_Guild_condition()
@@ -1245,19 +1246,19 @@ func int DIA_Cassia_In_Guild_condition()
 
 func void DIA_Cassia_In_Guild_info()
 {
-	AI_Output(other,self,"DIA_Cassia_In_Guild_01_01");	//Для меня будут еще поручения?
-	AI_Output(self,other,"DIA_Cassia_In_Guild_01_02");	//Конечно. Для таких, как ты, всегда найдется работенка.
-	AI_Output(self,other,"DIA_Cassia_In_Guild_01_03");	//Один наш...(замявшись) ...постоянный клиент, скажем так, заказал нам освященную статуэтку Инноса.
-	AI_Output(self,other,"DIA_Cassia_In_Guild_01_04");	//И он готов выложить за нее кругленькую сумму. Интересно?
+	AI_Output(other,self, " DIA_Cassia_In_Guild_01_01 " );	// Will there be more errands for me?
+	AI_Output(self,other, " DIA_Cassia_In_Guild_01_02 " );	// Of course. There is always a job for people like you.
+	AI_Output(self,other, " DIA_Cassia_In_Guild_01_03 " );	// One of our... (hesitatingly) ...a regular customer, let's say, ordered us a consecrated figurine of Innos.
+	AI_Output(self,other, " DIA_Cassia_In_Guild_01_04 " );	// And he is ready to pay a tidy sum for it. Interesting?
 	AI_Output(other,self,"DIA_Cassia_In_Guild_01_05");	//Само собой.
-	AI_Output(self,other,"DIA_Cassia_In_Guild_01_06");	//Отлично! Тогда займись этим...
-	AI_Output(self,other,"DIA_Cassia_In_Guild_01_07");	//Но будь внимателен - я не хочу передать нашему заказчику подделку.
-	AI_Output(self,other,"DIA_Cassia_In_Guild_01_08");	//А настоящую статуэтку наверняка будет достать весьма и весьма непросто, учти это.
-	AI_Output(self,other,"DIA_Cassia_In_Guild_01_09");	//Как только она будет у тебя, мы поговорим о твоей награде, мой милый.
+	AI_Output(self,other, " DIA_Cassia_In_Guild_01_06 " );	// Great! Then get on with it...
+	AI_Output(self,other, " DIA_Cassia_In_Guild_01_07 " );	// But be careful - I don't want to give our customer a fake.
+	AI_Output(self,other, " DIA_Cassia_In_Guild_01_08 " );	// A real figurine will probably be very, very difficult to get, keep that in mind.
+	AI_Output(self,other, " DIA_Cassia_In_Guild_01_09 " );	// Once you have it, we'll talk about your reward, my dear.
 	MISS_KASSIA_IN_GUILD = LOG_Running;
 	Log_CreateTopic(TOPIC_CASSIA_STATUETTE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CASSIA_STATUETTE,LOG_Running);
-	B_LogEntry(TOPIC_CASSIA_STATUETTE,"Кассия хочет, чтобы я принес освященную статуэтку Инноса. Однако Кассия предупредила меня, что могут существовать поддельные статуэтки.");
+	B_LogEntry( TOPIC_CASSIA_STATUETTE , " Cassia wants me to bring back the consecrated statuette of Innos. However, Cassia warned me that fake statuettes might exist. " );
 };
 
 instance DIA_Cassia_In_Guild_Done(C_Info)
@@ -1267,7 +1268,7 @@ instance DIA_Cassia_In_Guild_Done(C_Info)
 	condition = DIA_Cassia_In_Guild_Done_condition;
 	information = DIA_Cassia_In_Guild_Done_info;
 	permanent = FALSE;
-	description = "Статуэтка у меня.";
+	description = " I have the figurine. " ;
 };
 
 func int DIA_Cassia_In_Guild_Done_condition()
@@ -1280,7 +1281,7 @@ func int DIA_Cassia_In_Guild_Done_condition()
 
 func void DIA_Cassia_In_Guild_Done_info()
 {
-	AI_Output(other,self,"DIA_Cassia_In_Guild_Done_01_01");	//Статуэтка у меня.
+	AI_Output(other,self, " DIA_Cassia_In_Guild_Done_01_01 " );	// I have the figurine.
 
 	if(Npc_HasItems(hero,ItMi_LostInnosStatue_Daron) && Npc_HasItems(hero,ItMi_GoblinnosStatue_Daron_New))
 	{
@@ -1288,44 +1289,44 @@ func void DIA_Cassia_In_Guild_Done_info()
 		B_GiveInvItems(hero,self,ItMi_LostInnosStatue_Daron,1);
 		Npc_RemoveInvItems(self,ItMi_LostInnosStatue_Daron,1);
 		Npc_RemoveInvItems(hero,ItMi_GoblinnosStatue_Daron_New,1);
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_02");	//Да, я вижу. И ты даже принес еще одну - только подделку.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_03");	//Ладно, попробую продать и ее.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_04");	//Что же касается тебя лично, то ты великолепно поработал! Даже лучше, чем я ожидала.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_05");	//Вот, возьми этот эликсир. Думаю, это неплохая награда за твои труды.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_02 " );	// Yes, I see. And you even brought another one - only a fake.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_03 " );	// Okay, I'll try to sell it too.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_04 " );	// As for you personally, you did a great job! Even better than I expected.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_05 " );	// Here, take this elixir. I think this is a good reward for your work.
 		B_GiveInvItems(self,other,ItPo_Perm_DEX,1);
 		THIEF_REPUTATION = THIEF_REPUTATION + 3;
 		MISS_KASSIA_IN_GUILD = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_CASSIA_STATUETTE,LOG_SUCCESS);
-		B_LogEntry(TOPIC_CASSIA_STATUETTE,"Каccия осталась в восторге от проделанной мною работы.");
+		B_LogEntry( TOPIC_CASSIA_STATUETTE , " Cassia was delighted with the work I did. " );
 	}
 	else if(Npc_HasItems(hero,ItMi_GoblinnosStatue_Daron_New))
 	{
 		B_GivePlayerXP(100);
 		B_GiveInvItems(hero,self,ItMi_GoblinnosStatue_Daron_New,1);
 		Npc_RemoveInvItems(self,ItMi_GoblinnosStatue_Daron_New,1);
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_06");	//Да, я вижу. Но к моему большому сожалению, это всего лишь подделка!
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_07");	//Ладно, попробую продать и ее.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_08");	//Что касается тебя, то ты подвел меня в этом деле.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_09");	//Однако я не держу на тебя зла. Так что заходи к нам, если что.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_06 " );	// Yes, I see. But to my great regret, it's just a fake!
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_07 " );	// Okay, I'll try to sell it too.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_08 " );	// As for you, you failed me in this case.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_09 " );	// However, I don't hold a grudge against you. So come visit us if you want.
 		THIEF_REPUTATION = THIEF_REPUTATION + 1;
 		MISS_KASSIA_IN_GUILD = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_CASSIA_STATUETTE,LOG_SUCCESS);
-		B_LogEntry(TOPIC_CASSIA_STATUETTE,"Кассия была раздосадована из-за того, что я не смог найти подлинную статуэтку.");
+		B_LogEntry( TOPIC_CASSIA_STATUETTE , " Cassia was annoyed that I couldn't find the real statuette. " );
 	}
-	else if(Npc_HasItems(hero,ItMi_LostInnosStatue_Daron))
+	else  if ( Npc_HasItems ( hero , It'sMy_LostInnosStatue_Daron ) )
 	{
 		B_GivePlayerXP(300);
 		B_GiveInvItems(hero,self,ItMi_LostInnosStatue_Daron,1);
 		Npc_RemoveInvItems(self,ItMi_LostInnosStatue_Daron,1);
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_10");	//Да, я вижу...(довольно) Она самая!
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_11");	//Наш заказчик останется доволен, а мы получим приличный куш с этого дела.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_12");	//Что же касается тебя лично, то ты великолепно поработал!
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_13");	//Вот твоя доля.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_10 " );	// Yes, I see... (pretty) She's the best!
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_11 " );	// Our customer will be satisfied, and we will get a decent jackpot from this case.
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_12 " );	// As for you personally, you did a great job!
+		AI_Output(self,other, " DIA_Cassia_In_Guild_Done_01_13 " );	// Here's your share.
 		B_GiveInvItems(self,other,ItMi_Gold,350);
 		THIEF_REPUTATION = THIEF_REPUTATION + 2;
 		MISS_KASSIA_IN_GUILD = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_CASSIA_STATUETTE,LOG_SUCCESS);
-		B_LogEntry(TOPIC_CASSIA_STATUETTE,"Каccия осталась довольна от проделанной мною работы.");
+		B_LogEntry( TOPIC_CASSIA_STATUETTE , " Cassia was pleased with the work I did. " );
 	};
 };
 
@@ -1336,7 +1337,7 @@ instance DIA_CASSIA_ANOTHERJOB(C_Info)
 	condition = dia_cassia_anotherjob_condition;
 	information = dia_cassia_anotherjob_info;
 	permanent = FALSE;
-	description = "А есть для меня какая-нибудь работа вне города?";
+	description = " Is there any work for me outside the city? " ;
 };
 
 func int dia_cassia_anotherjob_condition()
@@ -1349,20 +1350,20 @@ func int dia_cassia_anotherjob_condition()
 
 func void dia_cassia_anotherjob_info()
 {
-	AI_Output(other,self,"DIA_Cassia_AnotherJob_15_00");	//А есть для меня какая-нибудь работа вне города?
-	AI_Output(self,other,"DIA_Cassia_AnotherJob_16_03");	//Есть одна, но очень сложная. Но ты можешь взяться за нее, если хочешь.
-	AI_Output(other,self,"DIA_Cassia_AnotherJob_16_99");	//В чем она заключается?
-	AI_Output(self,other,"DIA_Cassia_AnotherJob_16_04");	//Один ненормальный просил меня достать чашу Рудного барона! Говорит, она принесет ему удачу.
-	AI_Output(self,other,"DIA_Cassia_AnotherJob_16_05");	//Впрочем, это его дело - вознаграждение он дает щедрое.
-	AI_Output(other,self,"DIA_Cassia_AnotherJob_15_06");	//И как я понимаю, эта чаша хранится в замке Долины Рудников?
-	AI_Output(self,other,"DIA_Cassia_AnotherJob_16_07");	//Да. Причем никто точно не знает, где именно.
-	AI_Output(other,self,"DIA_Cassia_AnotherJob_15_09");	//Что я за это получу?
-	AI_Output(self,other,"DIA_Cassia_AnotherJob_16_10");	//Как всегда - половина от прибыли или ценная вещь из моей сокровищницы.
-	AI_Output(other,self,"DIA_Cassia_AnotherJob_16_98");	//Хорошо, договорились.
+	AI_Output(other,self, " DIA_Cassia_AnotherJob_15_00 " );	// Is there any work for me outside the city?
+	AI_Output(self,other, " DIA_Cassia_AnotherJob_16_03 " );	// There is one, but very difficult. But you can take it on if you want.
+	AI_Output(other,self, " DIA_Cassia_AnotherJob_16_99 " );	// What is it?
+	AI_Output(self,other, " DIA_Cassia_AnotherJob_16_04 " );	// A lunatic asked me to get the Ore Baron's cup! She says she will bring him good luck.
+	AI_Output(self,other, " DIA_Cassia_AnotherJob_16_05 " );	// However, this is his business - he gives a generous reward.
+	AI_Output(other,self, " DIA_Cassia_AnotherJob_15_06 " );	// And as I understand it, this bowl is kept in the castle of the Valley of Mines?
+	AI_Output(self,other, " DIA_Cassia_AnotherJob_16_07 " );	// Yes. And no one knows exactly where.
+	AI_Output(other,self, " DIA_Cassia_AnotherJob_15_09 " );	// What do I get for this?
+	AI_Output(self,other, " DIA_Cassia_AnotherJob_16_10 " );	// As always - half of the profits or a valuable item from my treasury.
+	AI_Output(other,self, " DIA_Cassia_AnotherJob_16_98 " );	// Okay, agreed.
 	MIS_CASSIAGOLDCUP = LOG_Running;
 	Log_CreateTopic(TOPIC_CASSIAGOLDCUP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CASSIAGOLDCUP,LOG_Running);
-	B_LogEntry(TOPIC_CASSIAGOLDCUP,"Кассия хочет, чтобы я принес чашу Рудного барона. Она находится где-то в замке Долины Рудников.");
+	B_LogEntry( TOPIC_CASSIAGOLDCUP , " Cassia wants me to bring the Ore Baron's cup. It's somewhere in the Mine Valley castle. " );
 };
 
 instance DIA_CASSIA_ANOTHERJOB2(C_Info)
@@ -1372,12 +1373,12 @@ instance DIA_CASSIA_ANOTHERJOB2(C_Info)
 	condition = dia_cassia_anotherjob2_condition;
 	information = dia_cassia_anotherjob2_info;
 	permanent = TRUE;
-	description = "Я нашел чашу Рудного Барона.";
+	description = " I found Ore Baron's chalice. " ;
 };
 
 func int dia_cassia_anotherjob2_condition()
 {
-	if((MIS_CASSIAGOLDCUP == LOG_Running) && (Npc_HasItems(hero,ITMI_GOMEZGOLDCUP) >= 1))
+	if (( MIS_CASSIAGOLDCUP  == LOG_Running) && (Npc_HasItems(hero, ITMI_GOMEZGOLDCUP ) >=  1 ))
 	{
 		return TRUE;
 	};
@@ -1385,19 +1386,19 @@ func int dia_cassia_anotherjob2_condition()
 
 func void dia_cassia_anotherjob2_info()
 {
-	AI_Output(other,self,"DIA_Cassia_AnotherJob2_15_00");	//Я нашел чашу Рудного барона.
+	AI_Output(other,self, " DIA_Cassia_AnotherJob2_15_00 " );	// I've found the Ore Baron's chalice.
 
 	if(B_GiveInvItems(other,self,ITMI_GOMEZGOLDCUP,1))
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self,"DIA_Cassia_AnotherJob2_15_01");	//Но для этого пришлось изрядно потрудиться.
-		AI_Output(self,other,"DIA_Cassia_AnotherJob2_16_02");	//Признаюсь - я восхищена!
-		AI_Output(self,other,"DIA_Cassia_AnotherJob2_16_03");	//Благодарю тебя. Теперь ты можешь получить свое вознаграждение.
+		AI_Output(other,self, " DIA_Cassia_AnotherJob2_15_01 " );	// But this took a lot of work.
+		AI_Output(self,other, " DIA_Cassia_AnotherJob2_16_02 " );	// I confess - I'm delighted!
+		AI_Output(self,other, " DIA_Cassia_AnotherJob2_16_03 " );	// Thank you. Now you can get your reward.
 		Npc_RemoveInvItems(self,ITMI_GOMEZGOLDCUP,1);
 		THIEF_REPUTATION = THIEF_REPUTATION + 4;
 		MIS_CASSIAGOLDCUP = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_CASSIAGOLDCUP,LOG_SUCCESS);
-		B_LogEntry(TOPIC_CASSIAGOLDCUP,"Я достал для Кассии чашу Рудного барона.");
+		B_LogEntry( TOPIC_CASSIAGOLDCUP , " I got Cassia the cup of the Ore Baron. " );
 	}
 	else
 	{
@@ -1405,14 +1406,14 @@ func void dia_cassia_anotherjob2_info()
 	};
 };
 
-instance DIA_CASSIA_BELOHNUNG2(C_Info)
+instances DIA_CASSIA_BELOHNUNG2 (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 2;
 	condition = dia_cassia_belohnung2_condition;
-	information = dia_cassia_belohnung2_info;
+	information = dia_cassia_reward2_info;
 	permanent = FALSE;
-	description = "Я хочу забрать свою награду за чашу Рудного барона.";
+	description = " I want to claim my reward for the Ore Baron's chalice. " ;
 };
 
 func int dia_cassia_belohnung2_condition()
@@ -1425,10 +1426,10 @@ func int dia_cassia_belohnung2_condition()
 
 func void dia_cassia_belohnung2_info()
 {
-	AI_Output(other,self,"DIA_Cassia_Belohnung2_15_00");	//Я хочу забрать свою награду за чашу Рудного барона.
-	AI_Output(self,other,"DIA_Cassia_Belohnung2_15_97");	//Ладно. Вот, возьми эти древние таблички.
+	AI_Output(other,self, " DIA_Cassia_Belohnung2_15_00 " );	// I want to claim my reward for the Ore Baron's chalice.
+	AI_Output(self,other, " DIA_Cassia_Belohnung2_15_97 " );	// Okay. Here, take these ancient tablets.
 	B_GiveInvItems(self,other,ItWr_HitPointStonePlate1_Addon,2);
-	AI_Output(self,other,"DIA_Cassia_Belohnung2_15_98");	//Текст на них выбит на каком-то древнем языке, и я не смогла ничего разобрать. Но такому человеку, как ты, они наверняка пригодятся.
+	AI_Output(self,other, " DIA_Cassia_Belohnung2_15_98 " );	// The text on them is embossed in some ancient language, and I could not make out anything. But for a person like you, they will certainly come in handy.
 };
 
 instance DIA_CASSIA_GUILDKILL(C_Info)
@@ -1438,12 +1439,12 @@ instance DIA_CASSIA_GUILDKILL(C_Info)
 	condition = dia_cassia_guildkill_condition;
 	information = dia_cassia_guildkill_info;
 	permanent = FALSE;
-	description = "Ты что-нибудь знаешь про гильдию убийц?";
+	description = " Do you know anything about the Assassin's Guild? " ;
 };
 
 func int dia_cassia_guildkill_condition()
 {
-	if((MIS_GUILDKILL == LOG_Running) && (IS_LOVCACH == TRUE) && (CANCOMPLETEGUILDKILL == FALSE))
+	if (( MY_GUILDKILL  == LOG_Running ) && ( IS_LOVCACH  ==  TRUE ) && ( CANCOMPLETEGUILDKILL  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1451,12 +1452,12 @@ func int dia_cassia_guildkill_condition()
 
 func void dia_cassia_guildkill_info()
 {
-	AI_Output(other,self,"DIA_Cassia_GuildKill_01_00");	//Ты что-нибудь знаешь про гильдию убийц?
-	AI_Output(self,other,"DIA_Cassia_GuildKill_01_01");	//(испуганно) Гильдию убийц? А зачем тебе это?
-	AI_Output(other,self,"DIA_Cassia_GuildKill_01_02");	//Ну, скажем так - у меня есть к ним одно дельце.
-	AI_Output(self,other,"DIA_Cassia_GuildKill_01_03");	//Я бы посоветовала тебе держаться подальше от этих людей. Но если тебе это так необходимо...
-	AI_Output(self,other,"DIA_Cassia_GuildKill_01_04");	//...поговори с Рамирезом. Он расскажет тебе о них больше.
-	B_LogEntry(TOPIC_GUILDKILL,"Кассия ничего не знает про гильдию убийц. Она посоветовала мне поговорить с Рамирезом.");
+	AI_Output(other,self, " DIA_Cassia_GuildKill_01_00 " );	// Do you know anything about the Assassin's Guild?
+	AI_Output(self,other, " DIA_Cassia_GuildKill_01_01 " );	// (frightened) The Assassin's Guild? Why do you want it?
+	AI_Output(other,self, " DIA_Cassia_GuildKill_01_02 " );	// Well, let's just say - I have one business for them.
+	AI_Output(self,other, " DIA_Cassia_GuildKill_01_03 " );	// I would advise you to stay away from these people. But if you really need it...
+	AI_Output(self,other, " DIA_Cassia_GuildKill_01_04 " );	// ...talk to Ramirez. He will tell you more about them.
+	B_LogEntry( TOPIC_GUILDKILL , " Cassia doesn't know anything about the Assassin's Guild. She advised me to talk to Ramirez. " );
 };
 
 
@@ -1480,16 +1481,16 @@ func int DIA_Cassia_Quest_Music_condition()
 
 func void DIA_Cassia_Quest_Music_info()
 {
-	AI_Output(self,other,"DIA_Cassia_Quest_Music_01_01");	//Постой. Для тебя тут есть работенка.
+	AI_Output(self,other, " DIA_Cassia_Quest_Music_01_01 " );	// Wait. There is a job for you here.
 	AI_Output(other,self,"DIA_Cassia_Quest_Music_01_02");	//И какая же?
-	AI_Output(self,other,"DIA_Cassia_Quest_Music_01_03");	//Недавно нам поступил очень выгодный заказ, и я готова на все, чтобы его выполнить.
-	AI_Output(self,other,"DIA_Cassia_Quest_Music_01_04");	//Мне нужны музыкальные инструменты - лютня, волынка, арфа и китаррон.
-	AI_Output(self,other,"DIA_Cassia_Quest_Music_01_05");	//Меня не волнует, где ты их возьмешь. Главное, чтобы они в ближайшее время были у меня.
-	AI_Output(other,self,"DIA_Cassia_Quest_Music_01_06");	//Я понял. Постараюсь достать для тебя эти инструменты.
+	AI_Output(self,other, " DIA_Cassia_Quest_Music_01_03 " );	// We recently received a very lucrative order, and I'm ready to do anything to fulfill it.
+	AI_Output(self,other, " DIA_Cassia_Quest_Music_01_04 " );	// I need musical instruments - a lute, a bagpipe, a harp and a chitarrone.
+	AI_Output(self,other, " DIA_Cassia_Quest_Music_01_05 " );	// I don't care where you get them. The main thing is that I have them in the near future.
+	AI_Output(other,self, " DIA_Cassia_Quest_Music_01_06 " );	// I got it. I'll try to get these tools for you.
 	MIS_KASSIAMUSIC = LOG_Running;
 	Log_CreateTopic(TOPIC_KASSIAMUSIC,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KASSIAMUSIC,LOG_Running);
-	B_LogEntry(TOPIC_KASSIAMUSIC,"Кассия попросила меня принести четыре музыкальных инструмента: волынку, арфу, лютню и китаррон. Ох, чует мое сердце, что просто так их нигде не найти.");
+	B_LogEntry( TOPIC_KASSIAMUSIC , " Kassia asked me to bring four musical instruments: a bagpipe, a harp, a lute, and a chitarrone. Oh, my heart feels that they can't be found anywhere just like that. " );
 };
 
 instance DIA_Cassia_Quest_Music_Done(C_Info)
@@ -1499,12 +1500,12 @@ instance DIA_Cassia_Quest_Music_Done(C_Info)
 	condition = DIA_Cassia_Quest_Music_Done_condition;
 	information = DIA_Cassia_Quest_Music_Done_info;
 	permanent = FALSE;
-	description = "Я принес тебе все инструменты.";
+	description = " I brought you all the tools. " ;
 };
 
 func int DIA_Cassia_Quest_Music_Done_condition()
 {
-	if((Npc_HasItems(hero,ItMi_IEHarfe) >= 1) && (Npc_HasItems(hero,ItMi_IEDrumScheit) >= 1) && (Npc_HasItems(hero,ItMi_IEDudelBlau) >= 1) && (Npc_HasItems(hero,ItMi_IELaute) >= 1) && (MIS_KASSIAMUSIC == LOG_Running))
+	if ((Npc_HasItems(hero,ItMi_IEHarfe) >=  1 ) && (Npc_HasItems(hero,ItMi_IEDrumScheit) >=  1 ) && (Npc_HasItems(hero,ItMi_IEDudelBlau) >=  1 ) && (Npc_HasItems(hero,ItMi_IEDudelBlau) >=  1 ) && ( MIS_KASSIAMUSIC  == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -1513,21 +1514,21 @@ func int DIA_Cassia_Quest_Music_Done_condition()
 func void DIA_Cassia_Quest_Music_Done_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Cassia_Quest_Music_Done_01_01");	//Я принес тебе все инструменты.
-	AI_Output(self,other,"DIA_Cassia_Quest_Music_Done_01_02");	//Отлично! Давай их сюда.
+	AI_Output(other,self, " DIA_Cassia_Quest_Music_Done_01_01 " );	// I brought you all the tools.
+	AI_Output(self,other, " DIA_Cassia_Quest_Music_Done_01_02 " );	// Great! Give them here.
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(hero,ItMi_IEHarfe,1);
 	Npc_RemoveInvItems(hero,ItMi_IEDudelBlau,1);
 	Npc_RemoveInvItems(hero,ItMi_IELaute,1);
 	Npc_RemoveInvItems(hero,ItMi_IEDrumScheit,1);
-	AI_Output(self,other,"DIA_Cassia_Quest_Music_Done_01_03");	//(довольно) Ты славно потрудился! А я выручу за эти вещи огромную кучу золота.
-	AI_Output(other,self,"DIA_Cassia_Quest_Music_Done_01_04");	//А мне что-нибудь перепадет?
-	AI_Output(self,other,"DIA_Cassia_Quest_Music_Done_01_05");	//Уверена, что ты оценишь мою благодарность...
+	AI_Output(self,other, " DIA_Cassia_Quest_Music_Done_01_03 " );	// (pretty) You did a great job! And I'll get a huge pile of gold for these things.
+	AI_Output(other,self, " DIA_Cassia_Quest_Music_Done_01_04 " );	// Will I get anything?
+	AI_Output(self,other, " DIA_Cassia_Quest_Music_Done_01_05 " );	// I'm sure you'll appreciate my gratitude...
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	THIEF_REPUTATION = THIEF_REPUTATION + 4;
 	MIS_KASSIAMUSIC = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KASSIAMUSIC,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KASSIAMUSIC,"Я принес Кассии инструменты. Она была очень довольна, и вручила мне изрядную сумму золота.");
+	B_LogEntry( TOPIC_KASSIAMUSIC , " I brought Cassia the tools. She was very pleased and gave me a hefty amount of gold. " );
 };
 
 instance DIA_Cassia_MagicBook(C_Info)
@@ -1537,7 +1538,7 @@ instance DIA_Cassia_MagicBook(C_Info)
 	condition = DIA_Cassia_MagicBook_condition;
 	information = DIA_Cassia_MagicBook_info;
 	permanent = FALSE;
-	description = "Ты не знаешь, кто обокрал дом Ватраса?";
+	description = " Do you know who robbed Vatras' house? " ;
 };
 
 func int DIA_Cassia_MagicBook_condition()
@@ -1550,50 +1551,50 @@ func int DIA_Cassia_MagicBook_condition()
 
 func void DIA_Cassia_MagicBook_info()
 {
-	AI_Output(other,self,"DIA_Cassia_MagicBook_01_01");	//Ты случайно не знаешь, кто обокрал дом Ватраса?
-	AI_Output(self,other,"DIA_Cassia_MagicBook_01_02");	//Конечно, знаю. (улыбаясь) Такие события просто не могут произойти без моего ведома.
-	AI_Output(other,self,"DIA_Cassia_MagicBook_01_03");	//Тогда, может быть, подскажешь, с кем мне стоит поговорить об этом деле?
-	AI_Output(self,other,"DIA_Cassia_MagicBook_01_04");	//(подозрительно) А зачем тебе это?
+	AI_Output(other,self, " DIA_Cassia_MagicBook_01_01 " );	// Do you happen to know who robbed Vatras' house?
+	AI_Output(self,other, " DIA_Cassia_MagicBook_01_02 " );	// Of course I do. (smiling) Such events simply cannot happen without my knowledge.
+	AI_Output(other,self, " DIA_Cassia_MagicBook_01_03 " );	// Then maybe you could tell me who I should talk to about this case?
+	AI_Output(self,other, " DIA_Cassia_MagicBook_01_04 " );	// (suspiciously) Why are you doing this?
 	Info_ClearChoices(DIA_Cassia_MagicBook);
-	Info_AddChoice(DIA_Cassia_MagicBook,"Просто стало интересно.",DIA_Cassia_MagicBook_JustInt);
-	Info_AddChoice(DIA_Cassia_MagicBook,"Это мерзавец должен сидеть в тюрьме!",DIA_Cassia_MagicBook_Kill);
-	Info_AddChoice(DIA_Cassia_MagicBook,"Я ищу одну вещь, которую там украли.",DIA_Cassia_MagicBook_Stolen);
+	Info_AddChoice(DIA_Cassia_MagicBook, " Just got curious. " ,DIA_Cassia_MagicBook_JustInt);
+	Info_AddChoice(DIA_Cassia_MagicBook, " That bastard should be in jail! " ,DIA_Cassia_MagicBook_Kill);
+	Info_AddChoice(DIA_Cassia_MagicBook, " I'm looking for one thing that was stolen there. " ,DIA_Cassia_MagicBook_Stolen);
 
 	if(RhetorikSkillValue[1] >= 15)
 	{
-		Info_AddChoice(DIA_Cassia_MagicBook,"Просто ходят слухи, знаешь ли.",DIA_Cassia_MagicBook_Rumors);
+		Info_AddChoice(DIA_Cassia_MagicBook, " Just a rumor, you know. " ,DIA_Cassia_MagicBook_Rumors);
 	};
 };
 
 func void DIA_Cassia_MagicBook_JustInt()
 {
-	AI_Output(other,self,"DIA_Cassia_MagicBook_JustInt_01_01");	//Просто стало интересно.
-	AI_Output(self,other,"DIA_Cassia_MagicBook_JustInt_01_02");	//На твоем месте я бы держалась подальше от таких тем.
-	AI_Output(self,other,"DIA_Cassia_MagicBook_JustInt_01_03");	//За лишние вопросы тут можно попасть в большие неприятности.
+	AI_Output(other,self, " DIA_Cassia_MagicBook_JustInt_01_01 " );	// Just got curious.
+	AI_Output(self,other, " DIA_Cassia_MagicBook_JustInt_01_02 " );	// If I were you, I would stay away from such topics.
+	AI_Output(self,other, " DIA_Cassia_MagicBook_JustInt_01_03 " );	// Asking too many questions here can get you in big trouble.
 	MagicBookCantFind = TRUE;
-	B_LogEntry(TOPIC_VatrasMagicBook,"Вряд ли мне теперь удастся выяснить, кто украл дневник Ватраса. Придется сообщить ему эту печальную новость.");	
+	B_LogEntry(TOPIC_VatrasMagicBook, " I don't think I'll be able to find out who stole Vatras' diary. I'll have to tell him this sad news. " );	
 	Info_ClearChoices(DIA_Cassia_MagicBook);
 };
 
 func void DIA_Cassia_MagicBook_Kill()
 {
-	AI_Output(other,self,"DIA_Cassia_MagicBook_Kill_01_01");	//Этот мерзавец должен сидеть в тюрьме!
-	AI_Output(self,other,"DIA_Cassia_MagicBook_Kill_01_02");	//Ты не слишком умен, раз говоришь мне сейчас подобные вещи.
-	AI_Output(self,other,"DIA_Cassia_MagicBook_Kill_01_03");	//На первый раз я тебя прощаю...(грозно) Но впредь хорошенько подумай, прежде чем открыть свой рот.
+	AI_Output(other,self, " DIA_Cassia_MagicBook_Kill_01_01 " );	// This bastard should be in jail!
+	AI_Output(self,other, " DIA_Cassia_MagicBook_Kill_01_02 " );	// You're not too smart to be telling me things like that right now.
+	AI_Output(self,other, " DIA_Cassia_MagicBook_Kill_01_03 " );	// For the first time, I forgive you... (terribly) But from now on, think carefully before you open your mouth.
 	MagicBookCantFind = TRUE;
-	B_LogEntry(TOPIC_VatrasMagicBook,"Вряд ли мне теперь удастся выяснить, кто украл дневник Ватраса. Придется сообщить ему эту печальную новость.");	
+	B_LogEntry(TOPIC_VatrasMagicBook, " I don't think I'll be able to find out who stole Vatras' diary. I'll have to tell him this sad news. " );	
 	Info_ClearChoices(DIA_Cassia_MagicBook);
 };
 
 func void DIA_Cassia_MagicBook_Stolen()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Cassia_MagicBook_Stolen_01_01");	//Я ищу одну вещь, которую там украли.
+	AI_Output(other,self, " DIA_Cassia_MagicBook_Stolen_01_01 " );	// I'm looking for one thing that was stolen there.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Stolen_01_02");	//Какую?
-	AI_Output(other,self,"DIA_Cassia_MagicBook_Stolen_01_03");	//Дневник Ватраса. Не знаешь, где он может быть?
-	AI_Output(self,other,"DIA_Cassia_MagicBook_Stolen_01_04");	//Нет, конечно. Но здесь ты точно его не найдешь.
-	AI_Output(self,other,"DIA_Cassia_MagicBook_Stolen_01_05");	//Поспрашивай лучше торговцев на рыночной площади. Возможно, там твоя книга и объявится.
-	B_LogEntry(TOPIC_VatrasMagicBook,"Кассия посоветовала мне поговорить с торговцами на рыночной площади. Возможно дневник уже ищет своего нового покупателя.");	
+	AI_Output(other,self, " DIA_Cassia_MagicBook_Stolen_01_03 " );	// Diary of Vatras. Do you know where he might be?
+	AI_Output(self,other, " DIA_Cassia_MagicBook_Stolen_01_04 " );	// No, of course not. But you won't find it here for sure.
+	AI_Output(self,other, " DIA_Cassia_MagicBook_Stolen_01_05 " );	// You'd better ask the merchants in the market square. Perhaps your book will show up there.
+	B_LogEntry(TOPIC_VatrasMagicBook, " Cassia advised me to talk to the merchants in the marketplace. Perhaps the diary is already looking for a new buyer. " );	
 	MagicBookFindTrade = TRUE;
 	Info_ClearChoices(DIA_Cassia_MagicBook);
 };
@@ -1601,19 +1602,19 @@ func void DIA_Cassia_MagicBook_Stolen()
 func void DIA_Cassia_MagicBook_Rumors()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Cassia_MagicBook_Rumors_01_01");	//Просто ходят слухи, знаешь ли.
-	AI_Output(other,self,"DIA_Cassia_MagicBook_Rumors_01_02");	//Вот и захотелось посмотреть на того умельца, который столь блестяще провернул это дельце.
-	AI_Output(self,other,"DIA_Cassia_MagicBook_Rumors_01_03");	//Ну, это не секрет...(улыбаясь) Конечно, Рамирез! Только ему под силу такое.
-	AI_Output(self,other,"DIA_Cassia_MagicBook_Rumors_01_04");	//Так что можешь пойти и выразить ему свое восхищение.
+	AI_Output(other,self, " DIA_Cassia_MagicBook_Rumors_01_01 " );	// It's just a rumor, you know.
+	AI_Output(other,self, " DIA_Cassia_MagicBook_Rumors_01_02 " );	// So I wanted to look at the craftsman who turned this business so brilliantly.
+	AI_Output(self,other, " DIA_Cassia_MagicBook_Rumors_01_03 " );	// Well, it's not a secret... (smiling) Of course, Ramirez! Only he can do that.
+	AI_Output(self,other, " DIA_Cassia_MagicBook_Rumors_01_04 " );	// So you can go and express your admiration to him.
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	MagicBookFindTradeExt = TRUE;
-	B_LogEntry(TOPIC_VatrasMagicBook,"Кассия рассказала мне о том, что дом Ватраса обокрал Рамирез. Он должен точно знать, где сейчас этот дневник.");
+	B_LogEntry(TOPIC_VatrasMagicBook, " Cassia told me that Vatras' house was robbed by Ramirez. He must know exactly where the diary is now. " );
 	Info_ClearChoices(DIA_Cassia_MagicBook);
 };
 
@@ -1624,7 +1625,7 @@ instance DIA_Cassia_RichStones(C_Info)
 	condition = DIA_Cassia_RichStones_Condition;
 	information = DIA_Cassia_RichStones_Info;
 	permanent = FALSE;
-	description = "Есть что-нибудь новенькое?";
+	description = " Anything new? " ;
 };
 
 func int DIA_Cassia_RichStones_Condition()
@@ -1637,28 +1638,28 @@ func int DIA_Cassia_RichStones_Condition()
 
 func void DIA_Cassia_RichStones_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_RichStones_01_00");	//Есть что-нибудь новенькое?
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_01");	//Да. Хорошо, что ты зашел.
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_02");	//Недавно до нас дошли слухи, что паладины привезли с собой на остров множество драгоценных камней.
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_03");	//Но нас заинтересовал только один из них - огромный рубин, с размером почти с кулак!
-	AI_Output(other,self,"DIA_Cassia_RichStones_01_04");	//А как ты узнала о нем?
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_05");	//Неважно...(улыбаясь) У нас достаточно источников информации в этом городе.
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_06");	//Так вот, я хочу, чтобы этот камень стал украшением моей сокровищницы.
-	AI_Output(other,self,"DIA_Cassia_RichStones_01_07");	//Намекаешь на то, что я мог бы выкрасть его для тебя?
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_08");	//Ты все правильно понял.
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_09");	//Насколько мне известно, сундук с этими драгоценностями паладины перевезли с корабля в городскую ратушу.
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_10");	//И там он, конечно, надежно охраняется.
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_11");	//Есть и другая проблема - скорее всего, у этого сундука очень сложный замок.
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_12");	//Даже Рамирезу будет крайне сложно вскрыть его быстро и аккуратно.
-	AI_Output(other,self,"DIA_Cassia_RichStones_01_13");	//А я, по-твоему, справлюсь лучше?
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_14");	//Ты вхож в ратушу, а значит, тебе будет проще подступиться к нему.
-	AI_Output(other,self,"DIA_Cassia_RichStones_01_15");	//Ну, хорошо. А что я буду с этого иметь?
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_16");	//Все, что найдешь в сундуке кроме рубина - твое. Договорились?
-	AI_Output(other,self,"DIA_Cassia_RichStones_01_17");	//Хорошо, попробую.
+	AI_Output(other,self, " DIA_Cassia_RichStones_01_00 " );	// Anything new?
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_01 " );	// Yes. It's good that you came.
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_02 " );	// Recently, we heard rumors that the paladins brought many gems with them to the island.
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_03 " );	// But we were only interested in one of them - a huge ruby, almost the size of a fist!
+	AI_Output(other,self, " DIA_Cassia_RichStones_01_04 " );	// How did you find out about him?
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_05 " );	// It doesn't matter... (smiling) We have enough sources of information in this city.
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_06 " );	// So, I want this stone to decorate my treasury.
+	AI_Output(other,self, " DIA_Cassia_RichStones_01_07 " );	// Are you implying that I could steal it for you?
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_08 " );	// You got it right.
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_09 " );	// As far as I know, the paladins moved the chest with these jewels from the ship to the city hall.
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_10 " );	// And there, of course, he is securely guarded.
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_11 " );	// There is another problem - most likely, this chest has a very complex lock.
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_12 " );	// Even Ramirez will find it extremely difficult to open it quickly and accurately.
+	AI_Output(other,self, " DIA_Cassia_RichStones_01_13 " );	// Do you think I can do better?
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_14 " );	// You have access to the town hall, which means it will be easier for you to approach him.
+	AI_Output(other,self, " DIA_Cassia_RichStones_01_15 " );	// Well, okay. And what will I get from this?
+	AI_Output(self,other, " DIA_Cassia_RichStones_01_16 " );	// Everything you find in the chest except the ruby ​​is yours. Deal?
+	AI_Output(other,self, " DIA_Cassia_RichStones_01_17 " );	// Okay, I'll try.
 	MIS_RichStones = LOG_Running;
 	Log_CreateTopic(Topic_RichStones,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RichStones,LOG_Running);
-	B_LogEntry(TOPIC_RichStones,"Кассия хочет, чтобы я выкрал для нее один огромный рубин, размером почти с кулак! Он хранится в городской ратуше вместе с другими драгоценностями. Но есть проблема: замок на том сундуке невероятно сложный.");
+	B_LogEntry(TOPIC_RichStones, " Cassia wants me to steal for her one huge ruby, almost the size of a fist! It's kept in the city hall along with other jewels. But there's a problem: the lock on that chest is incredibly complex. " );
 };
 
 instance DIA_Cassia_RichStones_Done(C_Info)
@@ -1668,7 +1669,7 @@ instance DIA_Cassia_RichStones_Done(C_Info)
 	condition = DIA_Cassia_RichStones_Done_Condition;
 	information = DIA_Cassia_RichStones_Done_Info;
 	permanent = FALSE;
-	description = "Рубин у меня!";
+	description = " I have a ruby! " ;
 };
 
 func int DIA_Cassia_RichStones_Done_Condition()
@@ -1682,21 +1683,21 @@ func int DIA_Cassia_RichStones_Done_Condition()
 func void DIA_Cassia_RichStones_Done_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Cassia_RichStones_Done_01_00");	//Рубин у меня!
-	AI_Output(self,other,"DIA_Cassia_RichStones_Done_01_01");	//Отлично! (жадно) Тогда чего ты ждешь - отдай его мне.
-	AI_Output(other,self,"DIA_Cassia_RichStones_Done_01_02");	//Конечно, вот он. 
+	AI_Output(other,self, " DIA_Cassia_RichStones_Done_01_00 " );	// I have a ruby!
+	AI_Output(self,other, " DIA_Cassia_RichStones_Done_01_01 " );	// Great! (greedily) Then what are you waiting for - give it to me.
+	AI_Output(other,self, " DIA_Cassia_RichStones_Done_01_02 " );	// Of course, here it is.
 	B_GiveInvItems(other,self,ItMi_BigRuby,1);
 	Npc_RemoveInvItems(self,ItMi_BigRuby,1);
-	AI_Output(other,self,"DIA_Cassia_RichStones_Done_01_03");	//Просто захотелось еще немного на него полюбоваться.
-	AI_Output(self,other,"DIA_Cassia_RichStones_Done_01_04");	//Я тебя понимаю. Нечасто в руки попадает такое сокровище.
-	AI_Output(self,other,"DIA_Cassia_RichStones_Done_01_05");	//А ты хорошо поработал. Переплюнул даже Рамиреза.
-	AI_Output(self,other,"DIA_Cassia_RichStones_Done_01_06");	//Только ему об этом не говори. Он не очень-то жалует хвастунов.
-	AI_Output(self,other,"DIA_Cassia_RichStones_Done_01_07");	//(ехидно) И чуть не забыла - вот твоя награда.
+	AI_Output(other,self, " DIA_Cassia_RichStones_Done_01_03 " );	// I just wanted to admire it a little more.
+	AI_Output(self,other, " DIA_Cassia_RichStones_Done_01_04 " );	// I understand you. It is not often that such a treasure falls into the hands.
+	AI_Output(self,other, " DIA_Cassia_RichStones_Done_01_05 " );	// And you did a good job. Outdid even Ramirez.
+	AI_Output(self,other, " DIA_Cassia_RichStones_Done_01_06 " );	// Just don't tell him about it. He doesn't much like braggarts.
+	AI_Output(self,other, " DIA_Cassia_RichStones_Done_01_07 " );	// (maliciously) And I almost forgot - here's your reward.
 	B_GiveInvItems(self,other,ItMi_Gold,1000);
 	THIEF_REPUTATION = THIEF_REPUTATION + 5;
 	MIS_RichStones = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_RichStones,LOG_SUCCESS);
-	B_LogEntry(TOPIC_RichStones,"Кассия была очень довольна тем, что мне удалось выкрасть рубин.");
+	B_LogEntry(TOPIC_RichStones, " Cassia was very pleased that I managed to steal the ruby. " );
 };
 
 instance DIA_Cassia_DragonTreasure(C_Info)
@@ -1711,7 +1712,7 @@ instance DIA_Cassia_DragonTreasure(C_Info)
 
 func int DIA_Cassia_DragonTreasure_Condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (IS_LOVCACH == TRUE) && (Kapitel >= 4) && (MIS_AllDragonsDead == FALSE) && (hero.attribute[ATR_DEXTERITY] >= 200))
+	if (Npc_IsInState(self,ZS_Talk) && ( IS_LOVCACH  ==  TRUE ) && (Chapter >=  4 ) && (MY_AllDragonsDead ==  FALSE ) && (hero.attribute[ ATR_DEXTERITY ] >=  200 )) ;
 	{
 		return TRUE;
 	};
@@ -1719,22 +1720,22 @@ func int DIA_Cassia_DragonTreasure_Condition()
 
 func void DIA_Cassia_DragonTreasure_Info()
 {
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_01_00");	//Решил снова заглянуть к нам?
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_01_01");	//Просто хотел узнать, как у вас тут дела.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_01_02");	//Все хорошо...(улыбаясь) А ты, я слышала, вновь собираешься в Долину Рудников?
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_01_03");	//Ну... Кое-кто попросил меня прикончить там парочку драконов.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_01_04");	//Драконы? В таком случае у меня к тебе есть одно заманчивое предложение.
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_01_05");	//Внимательно тебя слушаю.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_01_06");	//Согласно легенде, драконы очень опасные существа. Но также и очень богатые.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_01_07");	//У каждого из них обычно есть своя сокровищница, где кроме золота они хранят еще и довольно ценные вещи.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_01_08");	//Было бы неплохо заполучить хотя бы одну из таких вещиц. Не говоря уже о чем-то большем!
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_01_09");	//Я же, в свою очередь, щедро вознагражу тебя за твои хлопоты. Что скажешь? 
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_01_10");	//Да, твое предложение довольно интересное. Ладно, я в деле. А что конкретно тебе нужно от драконов?
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_01_11");	//Если бы я знала...(ухмыляясь) Неси мне все необычные вещи, что тебе попадутся в сокровищницах драконов. А потом мы разберемся, что к чему.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_01_00 " );	// Decided to visit us again?
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_01_01 " );	// Just wanted to know how you're doing here.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_01_02 " );	// Everything is fine... (smiling) And you, I heard, are going to the Valley of Mines again?
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_01_03 " );	// Well... Someone asked me to finish off a couple of dragons there.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_01_04 " );	// Dragons? In that case, I have a tempting offer for you.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_01_05 " );	// Listen carefully to you.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_01_06 " );	// According to legend, dragons are very dangerous creatures. But also very rich.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_01_07 " );	// Each of them usually has his own treasury, where, in addition to gold, they also store quite valuable things.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_01_08 " );	// It would be nice to get at least one of these things. Not to mention something more!
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_01_09 " );	// I, in turn, will generously reward you for your efforts. What do you say?
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_01_10 " );	// Yes, your suggestion is quite interesting. Okay, I'm in. What exactly do you need from dragons?
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_01_11 " );	// If I knew... (smirking) Bring me all the unusual things that you come across in the dragon hoards. And then we'll figure out what's what.
 	MIS_DragonTreasure = LOG_Running;
 	Log_CreateTopic(Topic_DragonTreasure,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DragonTreasure,LOG_Running);
-	B_LogEntry(TOPIC_DragonTreasure,"Кассия хочет, чтобы я пошарил в сокровищнице драконов и принес ей какие-нибудь очень ценные вещи. За это она хорошо вознаградит меня. Теперь дело за малым - пойти и убить драконов.");
+	B_LogEntry(TOPIC_DragonTreasure, " Cassia wants me to rummage through the dragon treasury and bring her some very valuable items. She will reward me well for that. Now it's just a matter of going out and killing the dragons. " );
 };
 
 var int OreBaronCrownUp;
@@ -1749,12 +1750,12 @@ instance DIA_Cassia_DragonTreasure_Done(C_Info)
 	condition = DIA_Cassia_DragonTreasure_Done_Condition;
 	information = DIA_Cassia_DragonTreasure_Done_Info;
 	permanent = TRUE;
-	description = "У меня тут для тебя кое-что есть.";
+	description = " I have something here for you. " ;
 };
 
 func int DIA_Cassia_DragonTreasure_Done_Condition()
 {
-	if((MIS_DragonTreasure == LOG_Running) && ((Npc_HasItems(hero,ItMi_DiamondChoker) >= 1) || (Npc_HasItems(hero,ItMi_HuntHornGold) >= 1) || (Npc_HasItems(hero,ItMi_KnifeGold) >= 1) || (Npc_HasItems(hero,ItMi_OreBaronCrown) >= 1)))
+	if ((MIS_DragonTreasure == LOG_Running) && ((Npc_HasItems(hero,ItMi_DiamondChoker) >=  1 ) || (Npc_HasItems(hero,ItMi_HuntHornGold) >=  1 ) || ( Npc_HasItems(hero,ItMi_KnifeGold) >=  1 ) || Npc_HasItems(hero,ItMi_OreBaronCrown) >=  1 )))
 	{
 		return TRUE;
 	};
@@ -1762,50 +1763,50 @@ func int DIA_Cassia_DragonTreasure_Done_Condition()
 
 func void DIA_Cassia_DragonTreasure_Done_Info()
 {
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_01_00");	//У меня тут кое-что для тебя есть.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_01_01");	//Ну что ж, давай посмотрим.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_01_00 " );	// I have something here for you.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_01_01 " );	// Well, let's see.
 	Info_ClearChoices(DIA_Cassia_DragonTreasure_Done);
-	Info_AddChoice(DIA_Cassia_DragonTreasure_Done,"Больше пока ничего.",DIA_Cassia_DragonTreasure_Done_Back);
+	Info_AddChoice(DIA_Cassia_DragonTreasure_Done, " Nothing else yet. " ,DIA_Cassia_DragonTreasure_Done_Back);
 
 	if((Npc_HasItems(hero,ItMi_DiamondChoker) >= 1) && (DiamondChokerUp == FALSE))
 	{
-		Info_AddChoice(DIA_Cassia_DragonTreasure_Done,"Отдать бриллиантовое ожерелье.",DIA_Cassia_DragonTreasure_Done_DiamondChoker);
+		Info_AddChoice(DIA_Cassia_DragonTreasure_Done, " Give Diamond Choker. " ,DIA_Cassia_DragonTreasure_Done_DiamondChoker);
 	};
-	if((Npc_HasItems(hero,ItMi_HuntHornGold) >= 1) && (GoldHuntHornUp == FALSE))
+	if ((Npc_HasItems(hero,ItMy_HuntHornGold) >=  1 ) && (GoldHuntHornUp ==  FALSE ))
 	{
-		Info_AddChoice(DIA_Cassia_DragonTreasure_Done,"Отдать золотой охотничий горн.",DIA_Cassia_DragonTreasure_Done_GoldHuntHorn);
+		Info_AddChoice(DIA_Cassia_DragonTreasure_Done, " Give Gold HuntHorn. " ,DIA_Cassia_DragonTreasure_Done_GoldHuntHorn);
 	};
-	if((Npc_HasItems(hero,ItMi_KnifeGold) >= 1) && (GoldKnifeUp == FALSE))
+	if ((Npc_HasItems(hero,ItMy_KnifeGold) >=  1 ) && (GoldKnifeUp ==  FALSE )) ;
 	{
-		Info_AddChoice(DIA_Cassia_DragonTreasure_Done,"Отдать золотой кинжал.",DIA_Cassia_DragonTreasure_Done_GoldKnife);
+		Info_AddChoice(DIA_Cassia_DragonTreasure_Done, " Give Gold Dagger. " ,DIA_Cassia_DragonTreasure_Done_GoldKnife);
 	};
-	if((Npc_HasItems(hero,ItMi_OreBaronCrown) >= 1) && (OreBaronCrownUp == FALSE))
+	if ((Npc_HasItems(hero,ItMi_OreBaronCrown) >=  1 ) && (OreBaronCrownUp ==  FALSE ))
 	{
-		Info_AddChoice(DIA_Cassia_DragonTreasure_Done,"Отдать корону.",DIA_Cassia_DragonTreasure_Done_OreBaronCrown);
+		Info_AddChoice(DIA_Cassia_DragonTreasure_Done, " Give Crown. " ,DIA_Cassia_DragonTreasure_Done_OreBaronCrown);
 	};
 };
 
 func void DIA_Cassia_DragonTreasure_Done_Back()
 {
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_Back_01_00");	//Больше пока ничего.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_Back_01_01");	//Хорошо. Но я надеюсь, что в скором времени ты меня еще чем-нибудь порадуешь.
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_Back_01_02");	//Можешь в этом не сомневаться.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_Back_01_00 " );	// Nothing else yet.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_Back_01_01 " );	// Good. But I hope that soon you will please me with something else.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_Back_01_02 " );	// You can be sure of that.
 	Info_ClearChoices(DIA_Cassia_DragonTreasure_Done);
 };
 
 func void DIA_Cassia_DragonTreasure_Done_DiamondChoker()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_00");	//Вот, возьми это бриллиантовое ожерелье.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_00 " );	// Here, take this diamond necklace.
 	B_GiveInvItems(other,self,ItMi_DiamondChoker,1);
 	Npc_RemoveInvItems(self,ItMi_DiamondChoker,1);
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_01");	//Какая красота... Такая вещь должна стоить очень дорого!
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_02");	//Думаю, что я оставлю ее себе. Остальным такие дорогие вещи совершенно ни к чему.
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_03");	//Дело твое. А что насчет моей награды?
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_04");	//Конечно, как я и обещала. Вот, возьми свое золото.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_01 " );	// What a beauty... Such a thing must be very expensive!
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_02 " );	// I think I'll keep it for myself. The rest of such expensive things are completely useless.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_03 " );	// It's up to you. What about my reward?
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_04 " );	// Of course, as I promised. Here, take your gold.
 	B_GiveInvItems(self,other,ItMi_Gold,1000);
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_05");	//Сколько тут?
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_06");	//Ровно тысяча золотых. Вдвое больше того, что бы ты выручил за него у торговцев.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_05 " );	// How many are there?
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_DiamondChoker_01_06 " );	// Exactly one thousand gold pieces. Twice as much as what you would get from merchants for it.
 	DiamondChokerUp = TRUE;
 
 	if((DiamondChokerUp == TRUE) && (GoldKnifeUp == TRUE) && (GoldHuntHornUp == TRUE) && (OreBaronCrownUp == TRUE))
@@ -1813,7 +1814,7 @@ func void DIA_Cassia_DragonTreasure_Done_DiamondChoker()
 		THIEF_REPUTATION = THIEF_REPUTATION + 5;
 		MIS_DragonTreasure = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_DragonTreasure,LOG_SUCCESS);
-		B_LogEntry(TOPIC_DragonTreasure,"Думаю, хватит подарков для Кассии! Уверен, что она довольна и так.");
+		B_LogEntry(TOPIC_DragonTreasure, " I think there's enough presents for Cassia! I'm sure she's happy anyway. " );
 	};
 
 };
@@ -1821,13 +1822,13 @@ func void DIA_Cassia_DragonTreasure_Done_DiamondChoker()
 func void DIA_Cassia_DragonTreasure_Done_GoldHuntHorn()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_00");	//Золотой охотничий горн.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_00 " );	// Golden hunting horn.
 	B_GiveInvItems(other,self,ItMi_HuntHornGold,1);
 	Npc_RemoveInvItems(self,ItMi_HuntHornGold,1);
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_01");	//Дорогая вещица...(оценивающе) Обычно такими пользовались только люди очень знатного происхождения.
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_02");	//По всей видимости, он когда-то принадлежал одному из рудных баронов.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_03");	//Возможно. Но сейчас это уже не имеет значения.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_04");	//Вот, возьми обещанную награду.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_01 " );	// Dear little thing... (appreciatively) Usually only people of very noble birth used these.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_02 " );	// Apparently, it once belonged to one of the ore barons.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_03 " );	// Possibly. But now it doesn't matter anymore.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_GoldHuntHorn_01_04 " );	// Here, take the promised reward.
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	GoldHuntHornUp = TRUE;
 
@@ -1836,22 +1837,22 @@ func void DIA_Cassia_DragonTreasure_Done_GoldHuntHorn()
 		THIEF_REPUTATION = THIEF_REPUTATION + 5;
 		MIS_DragonTreasure = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_DragonTreasure,LOG_SUCCESS);
-		B_LogEntry(TOPIC_DragonTreasure,"Думаю, хватит подарков для Кассии! Уверен, что она довольна и так.");
+		B_LogEntry(TOPIC_DragonTreasure, " I think there's enough presents for Cassia! I'm sure she's happy anyway. " );
 	};
 };
 
 func void DIA_Cassia_DragonTreasure_Done_GoldKnife()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_00");	//Вот, взгляни на этот кинжал.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_GoldKnife_01_00 " );	// Here, look at this dagger.
 	B_GiveInvItems(other,self,ItMi_KnifeGold,1);
 	Npc_RemoveInvItems(self,ItMi_KnifeGold,1);
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_01");	//Хммм. Довольно искусная работа. Скорее всего, его сделали на материке.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_02");	//Местные коллекционеры наверняка заинтересуются этим предметом.
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_03");	//А меня больше интересует моя награда.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_04");	//Не волнуйся, я не забыла. (улыбаясь) Вот, возьми этот магический эликсир.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_GoldKnife_01_01 " );	// Hmmm. Quite skillful work. Most likely, it was made on the mainland.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_GoldKnife_01_02 " );	// Local collectors are sure to be interested in this item.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_GoldKnife_01_03 " );	// And I'm more interested in my reward.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_GoldKnife_01_04 " );	// Don't worry, I haven't forgotten. (smiling) Here, take this magical elixir.
 	B_GiveInvItems(self,other,ItPo_Perm_DEX,1);
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_05");	//Он сделает тебя еще более ловким.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_GoldKnife_01_05 " );	// It will make you even more dexterous.
 	GoldKnifeUp = TRUE;
 
 	if((DiamondChokerUp == TRUE) && (GoldKnifeUp == TRUE) && (GoldHuntHornUp == TRUE) && (OreBaronCrownUp == TRUE))
@@ -1859,26 +1860,26 @@ func void DIA_Cassia_DragonTreasure_Done_GoldKnife()
 		THIEF_REPUTATION = THIEF_REPUTATION + 5;
 		MIS_DragonTreasure = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_DragonTreasure,LOG_SUCCESS);
-		B_LogEntry(TOPIC_DragonTreasure,"Думаю, хватит подарков для Кассии! Уверен, что она довольна и так.");
+		B_LogEntry(TOPIC_DragonTreasure, " I think there's enough presents for Cassia! I'm sure she's happy anyway. " );
 	};
 };
 
 func void DIA_Cassia_DragonTreasure_Done_OreBaronCrown()
 {
 	B_GivePlayerXP(1500);
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_00");	//В сокровищнице одного из драконов я нашел эту корону.
-	B_GiveInvItems(other,self,ItMi_OreBaronCrown,1);
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_00 " );	// In the treasury of one of the dragons, I found this crown.
+	B_GiveInvItems(other,self,ItMy_OreBaronCrown, 1 );
 	Npc_RemoveInvItems(self,ItMi_OreBaronCrown,1);
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_01");	//Невероятно! Какая удача...(восхищенно) Это же корона рудных баронов!
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_01 " );	// Incredible! What luck... (delighted) It's the crown of the ore barons!
 	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_02");	//Правда?!
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_03");	//Да, она самая. Подарок самого короля Миртаны!
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_04");	//Когда-то ее носил самый могущественный барон этого острова.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_05");	//Я и представить не могла, что когда-нибудь буду держать ее в руках.
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_06");	//За нее, наверное, любой торговец отвалит кучу золота.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_07");	//Она практически бесценна! Но мне нравится ход твоих мыслей.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_08");	//Сейчас я не знаю, что с ней делать. Надо хорошенько подумать.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_09");	//А что касается тебя, то ты хорошо потрудился и заслужил самую высокую награду.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_10");	//Я научу тебя, как правильно использовать свои силы при беге и прыжках. Согласен?
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_03 " );	// Yes, she is the best. A gift from King Myrtana himself!
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_04 " );	// Once worn by the most powerful baron of this island.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_05 " );	// I never imagined that I would ever hold it in my hands.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_06 " );	// For her, probably, any merchant will roll off a bunch of gold.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_07 " );	// It's practically priceless! But I like the way you think.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_08 " );	// Now I don't know what to do with it. You have to think carefully.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_09 " );	// And as for you, you have worked hard and deserved the highest reward.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_10 " );	// I'll teach you how to properly use your powers when running and jumping. I agree?
 	OreBaronCrownUp = TRUE;
 
 	if((DiamondChokerUp == TRUE) && (GoldKnifeUp == TRUE) && (GoldHuntHornUp == TRUE) && (OreBaronCrownUp == TRUE))
@@ -1886,49 +1887,49 @@ func void DIA_Cassia_DragonTreasure_Done_OreBaronCrown()
 		THIEF_REPUTATION = THIEF_REPUTATION + 5;
 		MIS_DragonTreasure = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_DragonTreasure,LOG_SUCCESS);
-		B_LogEntry(TOPIC_DragonTreasure,"Думаю, хватит подарков для Кассии! Уверен, что она довольна и так.");
+		B_LogEntry(TOPIC_DragonTreasure, " I think there's enough presents for Cassia! I'm sure she's happy anyway. " );
 	};
 
 	Info_ClearChoices(DIA_Cassia_DragonTreasure_Done);
-	Info_AddChoice(DIA_Cassia_DragonTreasure_Done,"Дай мне лучше золото.",DIA_Cassia_DragonTreasure_Done_Gold);
+	Info_AddChoice(DIA_Cassia_DragonTreasure_Done, " Give me better gold. " ,DIA_Cassia_DragonTreasure_Done_Gold);
 	Info_AddChoice(DIA_Cassia_DragonTreasure_Done,"Конечно!",DIA_Cassia_DragonTreasure_Done_Run);
 };
 
 func void DIA_Cassia_DragonTreasure_Done_Run()
 {
 	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_Run_01_01");	//Конечно!
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_Run_01_02");	//Тогда слушай. Главное научиться правильно распределять нагрузку своего тела.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_Run_01_03");	//Это поможет тебе меньше уставать. И следи за тем, чтобы ровно дышать.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_Run_01_04");	//Используй новые знания в своих следующих походах.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_Run_01_02 " );	// Then listen. The main thing is to learn how to properly distribute the load of your body.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_Run_01_03 " );	// This will help you get less tired. And make sure you breathe evenly.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_Run_01_04 " );	// Use your new knowledge on your next adventures.
 	CassiaTeachRegen = TRUE;
-	AI_Print("Изучено: неутомимый бегун");
+	AI_Print( " Learned : tireless runner " );
 	Snd_Play("LevelUP");
 	Info_ClearChoices(DIA_Cassia_DragonTreasure_Done);
 };
 
 func void DIA_Cassia_DragonTreasure_Done_Gold()
 {
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_Gold_01_01");	//Лучше дай мне золото.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_Gold_01_02");	//Ну, как скажешь. (ехидно) Вот, держи свое золото.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_Gold_01_01 " );	// Better give me the gold.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_Gold_01_02 " );	// Well, whatever you say. (sarcastically) Here, keep your gold.
 	B_GiveInvItems(self,other,ItMi_Gold,2000);
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_Gold_01_03");	//Этого достаточно, чтобы с лихвой покрыть все твои расходы.
-	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_Gold_01_04");	//Благодарю.
+	AI_Output(self,other, " DIA_Cassia_DragonTreasure_Done_Gold_01_03 " );	// This is enough to more than cover all your expenses.
+	AI_Output(other,self, " DIA_Cassia_DragonTreasure_Done_Gold_01_04 " );	// Thank you.
 	Info_ClearChoices(DIA_Cassia_DragonTreasure_Done);
 };
 
-instance DIA_Cassia_OrcHide(C_Info)
+instance DIA_Cassia_OrcHide (C_Info)
 {
 	npc = VLK_447_Cassia;
 	nr = 1;
 	condition = DIA_Cassia_OrcHide_condition;
 	information = DIA_Cassia_OrcHide_info;
 	permanent = FALSE;
-	description = "Я думал, тут все мертвы.";
+	description = " I thought everyone was dead here. " ;
 };
 
 func int DIA_Cassia_OrcHide_condition()
 {
-	if(KAPITELORCATC == TRUE)
+	if ( KAPITELORCATC  ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -1937,12 +1938,12 @@ func int DIA_Cassia_OrcHide_condition()
 func void DIA_Cassia_OrcHide_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Cassia_OrcHide_01_01");	//Я думал, тут все мертвы.
-	AI_Output(self,other,"DIA_Cassia_OrcHide_01_02");	//(нервно) Как видишь, нам удалось выжить.
-	AI_Output(self,other,"DIA_Cassia_OrcHide_01_03");	//Сейчас это единственное безопасное место во всем Хоринисе.
-	AI_Output(other,self,"DIA_Cassia_OrcHide_01_04");	//А если они вас все-таки найдут?
-	AI_Output(self,other,"DIA_Cassia_OrcHide_01_05");	//Как? (посмеиваясь) Об этой части канализации и раньше мало кто знал.
-	AI_Output(self,other,"DIA_Cassia_OrcHide_01_06");	//А уж орки о ней и вовсе не догадываются.
+	AI_Output(other,self, " DIA_Cassia_OrcHide_01_01 " );	// I thought everyone was dead here.
+	AI_Output(self,other, " DIA_Cassia_OrcHide_01_02 " );	// (nervously) As you can see, we managed to survive.
+	AI_Output(self,other, " DIA_Cassia_OrcHide_01_03 " );	// Now this is the only safe place in all of Khorinis.
+	AI_Output(other,self, " DIA_Cassia_OrcHide_01_04 " );	// And if they do find you?
+	AI_Output(self,other, " DIA_Cassia_OrcHide_01_05 " );	// How? (chuckling) Few people knew about this part of the sewer before.
+	AI_Output(self,other, " DIA_Cassia_OrcHide_01_06 " );	// Orcs don't even know about it.
 };
 
 instance DIA_Cassia_OrcHideWhat(C_Info)
@@ -1952,12 +1953,12 @@ instance DIA_Cassia_OrcHideWhat(C_Info)
 	condition = DIA_Cassia_OrcHideWhat_condition;
 	information = DIA_Cassia_OrcHideWhat_info;
 	permanent = FALSE;
-	description = "И что вы дальше будете делать?";
+	description = " And what will you do next? " ;
 };
 
 func int DIA_Cassia_OrcHideWhat_condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Cassia_OrcHide) == TRUE)
+	if ( Npc_KnowsInfo ( other , DIA_Cassia_OrcHide ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -1965,10 +1966,10 @@ func int DIA_Cassia_OrcHideWhat_condition()
 
 func void DIA_Cassia_OrcHideWhat_info()
 {
-	AI_Output(other,self,"DIA_Cassia_OrcHideWhat_01_01");	//И что вы будете делать дальше?
-	AI_Output(self,other,"DIA_Cassia_OrcHideWhat_01_02");	//Ничего. Будем спокойно сидеть тут и поменьше высовываться наружу.
-	AI_Output(other,self,"DIA_Cassia_OrcHideWhat_01_03");	//Но вы не сможете просидеть здесь всю оставшуюся жизнь!
-	AI_Output(self,other,"DIA_Cassia_OrcHideWhat_01_04");	//Надеюсь, этого и не случится.
-	AI_Output(self,other,"DIA_Cassia_OrcHideWhat_01_05");	//Паладины скоро вернутся сюда и освободят город. Или наш король зря их только кормит!
-	AI_Output(other,self,"DIA_Cassia_OrcHideWhat_01_06");	//Ну да, в чем-то ты права.
+	AI_Output(other,self, " DIA_Cassia_OrcHideWhat_01_01 " );	// And what will you do next?
+	AI_Output(self,other, " DIA_Cassia_OrcHideWhat_01_02 " );	// Nothing. Let's sit quietly here and lean out less.
+	AI_Output(other,self, " DIA_Cassia_OrcHideWhat_01_03 " );	// But you can't sit here for the rest of your life!
+	AI_Output(self,other, " DIA_Cassia_OrcHideWhat_01_04 " );	// I hope this doesn't happen.
+	AI_Output(self,other, " DIA_Cassia_OrcHideWhat_01_05 " );	// The paladins will soon return here and liberate the city. Or our king only feeds them in vain!
+	AI_Output(other,self, " DIA_Cassia_OrcHideWhat_01_06 " );	// Well, yes, you are right about something.
 };
