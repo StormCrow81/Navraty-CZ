@@ -1,4 +1,5 @@
 
+
 instance DIA_Haupttorwache_EXIT(C_Info)
 {
 	npc = VLK_4143_HaupttorWache;
@@ -21,44 +22,44 @@ func void DIA_Haupttorwache_EXIT_Info()
 };
 
 
-instance DIA_Haupttorwache_AUFGABE(C_Info)
+instance DIA_Haupttorwache_AUSGABE (C_Info)
 {
-	npc = VLK_4143_HaupttorWache;
+	npc = VLK_4143_Main GateGuard;
 	nr = 4;
 	condition = DIA_Haupttorwache_AUFGABE_Condition;
-	information = DIA_Haupttorwache_AUFGABE_Info;
+	information = DIA_Haupttorwache_AUSGABE_Info;
 	permanent = TRUE;
-	description = "Чем ты занимаешься здесь?";
+	description = " What are you doing here? " ;
 };
 
 
-func int DIA_Haupttorwache_AUFGABE_Condition()
+func int DIA_main gate guard_TASK_Condition()
 {
 	return TRUE;
 };
 
-func void DIA_Haupttorwache_AUFGABE_Info()
+func void DIA_main gate guard_TASK_Info()
 {
-	AI_Output(other,self,"DIA_Haupttorwache_AUFGABE_15_00");	//Чем ты занимаешься здесь?
-	AI_Output(self,other,"DIA_Haupttorwache_AUFGABE_13_01");	//Моя задача проста. Я должен следить, чтобы орки не приближались ближе, чем на 30 футов к воротам.
-	AI_Output(self,other,"DIA_Haupttorwache_AUFGABE_13_02");	//Если ты попытаешься поднять решетку, я подниму тревогу. Вот и все.
+	AI_Output(other,self, " DIA_Haupttorwache_AUFGABE_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Haupttorwache_AUFGABE_13_01 " );	// My task is simple. I have to make sure the orcs don't come closer than 30 feet to the gate.
+	AI_Output(self,other, " DIA_Haupttorwache_AUFGABE_13_02 " );	// If you try to raise the bars, I'll sound the alarm. That's all.
 };
 
 
-instance DIA_Haupttorwache_TOROEFFNEN(C_Info)
+instance DIA_Haupttorwache_TOROEFFNEN (C_Info)
 {
-	npc = VLK_4143_HaupttorWache;
+	npc = VLK_4143_Main GateGuard;
 	nr = 5;
 	condition = DIA_Haupttorwache_TOROEFFNEN_Condition;
 	information = DIA_Haupttorwache_TOROEFFNEN_Info;
 	permanent = TRUE;
-	description = "Что нужно сделать, чтобы открыть главные ворота?";
+	description = " What do I need to do to open the main gate? " ;
 };
 
 
 func int DIA_Haupttorwache_TOROEFFNEN_Condition()
 {
-	if(Kapitel >= 5)
+	if (Chapter >=  5 )
 	{
 		return TRUE;
 	};
@@ -66,46 +67,46 @@ func int DIA_Haupttorwache_TOROEFFNEN_Condition()
 
 func void DIA_Haupttorwache_TOROEFFNEN_Info()
 {
-	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_15_00");	//Что нужно сделать, чтобы открыть главные ворота?
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_13_01");	//Ради всего святого! Зачем тебе знать это?
+	AI_Output(other,self, " DIA_Haupttorwache_TOROEFFNEN_15_00 " );	// What needs to be done to open the main gate?
+	AI_Output(self,other, " DIA_Haupttorwache_TOROEFFNEN_13_01 " );	// For God's sake! Why do you need to know this?
 	self.flags = 0;
 	Info_ClearChoices(DIA_Haupttorwache_TOROEFFNEN);
-	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN,"Я беспокоюсь о безопасности замка.",DIA_Haupttorwache_TOROEFFNEN_sicherheit);
-	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN,"Да я просто так спросил.",DIA_Haupttorwache_TOROEFFNEN_frage);
+	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN, " I'm worried about the lock's security. " ,DIA_Haupttorwache_TOROEFFNEN_sicherheit);
+	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN, " I just asked. " ,DIA_Haupttorwache_TOROEFFNEN_frage);
 };
 
-func void DIA_Haupttorwache_TOROEFFNEN_sicherheit()
+func void DIA_Haupttorwache_TOROEFFNEN_Sicherheit()
 {
-	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_15_00");	//Я беспокоюсь о безопасности замка.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_01");	//Я тоже, поверь мне.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_02");	//Я очень добросовестный стражник, и Гаронд даже доверил мне ключ от привратницкой.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_03");	//(гордо) Это большая ответственность. Я буду бережно хранить его. Я поклялся в этом Гаронду.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_04");	//Да. Только представь, что кто-нибудь придет и поднимет рычаг, чтобы открыть ворота, а эту ржавую старую решетку вдруг заклинит.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_05");	//Никто тогда не сможет закрыть эти ворота. Мне даже думать не хочется, что произойдет дальше. Хорошо, что никто не знает, что у меня есть ключ.
+	AI_Output(other,self, " DIA_Haupttorwache_TOROEFFNEN_sicherheit_15_00 " );	// I'm worried about the security of the lock.
+	AI_Output(self,other, " DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_01 " );	// Me too, trust me.
+	AI_Output(self,other, " DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_02 " );	// I am a very conscientious guard, and Garond even entrusted me with the key to the gatekeeper.
+	AI_Output(self,other, " DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_03 " );	// (proudly) That's a big responsibility. I will keep it carefully. I swore this to Garond.
+	AI_Output(self,other, " DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_04 " );	// Yes. Just imagine that someone comes and lifts the lever to open the gate, and suddenly this rusty old grate is jammed.
+	AI_Output(self,other, " DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_05 " );	// Nobody can then close this gate. I don't even want to think about what will happen next. It's good that no one knows that I have the key.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Haupttorwache_TOROEFFNEN_frage()
 {
-	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_frage_15_00");	//Да я просто так спросил.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_frage_13_01");	//В следующий раз думай, что спрашиваешь. У тебя могут быть большие проблемы из-за этого. Сам знаешь, какие сейчас времена. А теперь уходи. Я занят.
+	AI_Output(other,self, " DIA_Haupttorwache_TOROEFFNEN_frage_15_00 " );	// Yes, I just asked.
+	AI_Output(self,other, " DIA_Haupttorwache_TOROEFFNEN_frage_13_01 " );	// Next time think about what you're asking. You could be in big trouble because of this. You know what times are now. Now leave. I'm busy.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Haupttorwache_PICKPOCKET(C_Info)
+instance DIA_Haupttorwache_PICKPOCKET (C_Info)
 {
-	npc = VLK_4143_HaupttorWache;
+	npc = VLK_4143_Main GateGuard;
 	nr = 900;
 	condition = DIA_Haupttorwache_PICKPOCKET_Condition;
 	information = DIA_Haupttorwache_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его ключ) ";
+	description = " (Try to steal his key) " ;
 };
 
 func int DIA_Haupttorwache_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) >= 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,itke_oc_maingate_mis) >= 1) && (Kapitel >= 5))
+	if ((Npc_GetTalentSkill(other, NPC_TALENT_PICKPOCKET ) >=  1 ) && (self.aivar[AIV_PlayerHasPickedMyPocket] ==  ​​FALSE ) && (Npc_HasItems(self,itke_oc_maingate_mis) >=  1 ) && (Chapter >=  5 )) ;
 	{
 		return TRUE;
 	};
@@ -115,7 +116,7 @@ func void DIA_Haupttorwache_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Haupttorwache_PICKPOCKET);
 	Info_AddChoice(DIA_Haupttorwache_PICKPOCKET,Dialog_Back,DIA_Haupttorwache_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Haupttorwache_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Haupttorwache_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Haupttorwache_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Haupttorwache_PICKPOCKET_DoIt);
 };
 
 func void DIA_Haupttorwache_PICKPOCKET_DoIt()
@@ -139,7 +140,7 @@ func void DIA_Haupttorwache_PICKPOCKET_DoIt()
 				GlobalThiefCount = FALSE;
 			};
 		};
-		B_GiveInvItems(self,other,itke_oc_maingate_mis,1);
+		B_GiveInvItems(self,other,itke_oc_maingate_mis, 1 );
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
 		B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Haupttorwache_PICKPOCKET);
@@ -158,7 +159,7 @@ func void DIA_Haupttorwache_PICKPOCKET_DoIt()
 	};
 };
 
-func void DIA_Haupttorwache_PICKPOCKET_BACK()
+func void DIA_main gate guard_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Haupttorwache_PICKPOCKET);
 };
