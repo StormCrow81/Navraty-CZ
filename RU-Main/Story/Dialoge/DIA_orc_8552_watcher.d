@@ -1,4 +1,5 @@
 
+
 instance DIA_ORC_8552_WATCHER_EXIT(C_Info)
 {
 	npc = orc_8552_watcher;
@@ -41,24 +42,24 @@ func void dia_orc_8552_watcher_hello_info()
 {
 	AI_ReadyMeleeWeapon(self);
 	Snd_Play("ORC_Angry");
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_01");	//ГРОТАК НАБАР!!!
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_01 " );	// GROTAK NABAR!!!
 	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_02");	//Человек!?
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_03");	//Носить Улу-Мулу!?
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_04");	//Чужак быть сильный воин - орки уважать сильный воин! Орки не убивать чужака.
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_05");	//Зачем человек прийти сюда?
-	AI_Output(other,self,"DIA_Orc_8552_Watcher_Hello_Info_18_06");	//Мне надо поговорить с орками об одном очень важном деле.
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_07");	//Человек прийти говорить с орками. Хорошо.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_03 " );	// Wearing an Oooo-Mula!?
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_04 " );	// Outlander be a strong warrior - orcs respect a strong warrior! Orcs don't kill the outsider.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_05 " );	// Why would a person come here?
+	AI_Output(other,self, " DIA_Orc_8552_Watcher_Hello_Info_18_06 " );	// I need to talk to the orcs about a very important matter.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_07 " );	// Human come to speak with orcs. Good.
 	AI_RemoveWeapon(self);
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_08");	//Чужак может говорить с орками. Чужак носить Улу-Мулу - орки уважать чужака!
-	AI_Output(other,self,"DIA_Orc_8552_Watcher_Hello_Info_18_12");	//Кто у вас тут главный?
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_10");	//Чужак искать Ур-Тралла! Быть большой вождь орков, быть великий воин.
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_11");	//Чужак говорить с ним о деле.
-	AI_Output(other,self,"DIA_Orc_8552_Watcher_Hello_Info_18_16");	//А где мне найти Ур-Тралла?
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_13");	//Чужак идти дальше в глубь горы. Чужак приходить в город и искать там.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_08 " );	// Outsider can talk to orcs. Stranger wear Ulu-Mulu - orcs respect the stranger!
+	AI_Output(other,self, " DIA_Orc_8552_Watcher_Hello_Info_18_12 " );	// Who's in charge here?
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_10 " );	// Outsider seek Ur-Thrall! Be a great orc leader, be a great warrior.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_11 " );	// Stranger to talk to him about business.
+	AI_Output(other,self, " DIA_Orc_8552_Watcher_Hello_Info_18_16 " );	// Where can I find Ur-Thrall?
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_13 " );	// Stranger go further into the depths of the mountain. Stranger come to town and look there.
 	AI_Output(other,self,"DIA_Orc_8552_Watcher_Hello_Info_18_14");	//Понятно.
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_15");	//Теперь чужак идти.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_Hello_Info_18_15 " );	// Now the alien go.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
 
 instance DIA_ORC_8552_WATCHER_DRINK(C_Info)
@@ -67,7 +68,7 @@ instance DIA_ORC_8552_WATCHER_DRINK(C_Info)
 	condition = dia_orc_8552_watcher_DRINK_condition;
 	information = dia_orc_8552_watcher_DRINK_info;
 	permanent = FALSE;
-	description = "Почему ты постоянно смотришь вниз?";
+	description = " Why are you always looking down? " ;
 };
 
 func int dia_orc_8552_watcher_DRINK_condition()
@@ -80,18 +81,18 @@ func int dia_orc_8552_watcher_DRINK_condition()
 
 func void dia_orc_8552_watcher_DRINK_info()
 {
-	AI_Output(other,self,"DIA_Orc_8552_Watcher_DRINK_01_01");	//Почему ты постоянно смотришь вниз?
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_01_02");	//Вах Грош уронить туда свой фляга с грогом...(качая головой) Быть очень вкусный грог!
-	AI_Output(other,self,"DIA_Orc_8552_Watcher_DRINK_01_03");	//Так спустись вниз и забери ее.
+	AI_Output(other,self, " DIA_Orc_8552_Watcher_DRINK_01_01 " );	// Why are you always looking down?
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_DRINK_01_02 " );	// Wah Grosh drop your flask of grog there... (shaking his head) Be very tasty grog!
+	AI_Output(other,self, " DIA_Orc_8552_Watcher_DRINK_01_03 " );	// So go downstairs and get her.
 	AI_PlayAni(self,"T_NO");
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_01_04");	//Внизу быть очень темно! Вах Грош будет очень долго искать ее.
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_01_05");	//А Ваш Грошу нельзя надолго уходить со свой места.
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_01_06");	//Иначе Фаррок гневаться, Ур-Тралл гневаться, бить Вах Гроша!
-	AI_Output(other,self,"DIA_Orc_8552_Watcher_DRINK_01_07");	//Понимаю, тебе нельзя покидать свой пост.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_DRINK_01_04 " );	// Be very dark downstairs! Wah Grosh will be looking for her for a very long time.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_DRINK_01_05 " );	// And your Grosh cannot leave his place for a long time.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_DRINK_01_06 " );	// Otherwise, Farrok will be angry, Ur-Thrall will be angry, beat Vah Grosh!
+	AI_Output(other,self, " DIA_Orc_8552_Watcher_DRINK_01_07 " );	// I understand you must not leave your post.
 	MIS_GroshBottle = LOG_Running;
 	Log_CreateTopic(TOPIC_GroshBottle,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GroshBottle,LOG_Running);
-	B_LogEntry(TOPIC_GroshBottle,"Вах Грош, охранник у моста, уронил вниз свою флягу с грогом. Спуститься за ней он не может, поскольку ему нельзя надолго покидать свой пост.");
+	B_LogEntry(TOPIC_GroshBottle, " Vah Grosh, guard at the bridge, dropped his grog flask down. He can't go down for it, because he can't leave his post for long. " );
 };
 
 instance DIA_ORC_8552_WATCHER_DRINK_Done(C_Info)
@@ -100,7 +101,7 @@ instance DIA_ORC_8552_WATCHER_DRINK_Done(C_Info)
 	condition = dia_orc_8552_watcher_DRINK_Done_condition;
 	information = dia_orc_8552_watcher_DRINK_Done_info;
 	permanent = FALSE;
-	description = "Вот твоя фляга.";
+	description = " Here's your flask. " ;
 };
 
 func int dia_orc_8552_watcher_DRINK_Done_condition()
@@ -115,26 +116,26 @@ func int dia_orc_8552_watcher_DRINK_Done_condition()
 func void dia_orc_8552_watcher_DRINK_Done_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Orc_8552_Watcher_DRINK_Done_01_01");	//Вот твоя фляга.
+	AI_Output(other,self, " DIA_Orc_8552_Watcher_DRINK_Done_01_01 " );	// Here's your flask.
 	B_GiveInvItems(other,self,ItMi_GroshBottle,1);
 	Npc_RemoveInvItems(self,ItMi_GroshBottle,1);
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_Done_01_02");	//УРАТ ДАР! Вах Грош теперь снова может пить свой грог!
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_Done_01_03");	//Он сильно благодарить человек, что тот помогать Вах Грошу.
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_DRINK_Done_01_02 " );	// URAT GIFT! Wah Grosh can now drink his grog again!
+	AI_Output(self,other, " DIA_Orc_8552_Watcher_DRINK_Done_01_03 " );	// He is very grateful to the man that he helps Wah Grosh.
 	AI_Output(other,self,"DIA_Orc_8552_Watcher_DRINK_Done_01_04");	//Да не за что.
 	ORCRESPECT = ORCRESPECT + 5;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 5");
+		AI_Print( " Respect among orcs + 5 " );
 	};
 
 	MIS_GroshBottle = LOG_Success;
 	Log_SetTopicStatus(TOPIC_GroshBottle,LOG_Success);
-	B_LogEntry(TOPIC_GroshBottle,"Я принес Вах Грошу его флягу.");
+	B_LogEntry(TOPIC_GroshBottle, " I brought Wah Grosh his flask. " );
 };
 
 
-//--------------------------------------страж шахты в городе--------------------------------------------------
+// -------------------------------- mine guard in town------ --------------------------------------------------
 
 
 instance DIA_ORC_8901_GuardMine_EXIT(C_Info)
@@ -178,7 +179,7 @@ func int DIA_ORC_8901_GuardMine_hello_condition()
 
 func void DIA_ORC_8901_GuardMine_hello_info()
 {
-	AI_Output(self,other,"DIA_ORC_8901_GuardMine_hello_01_01");	//(грозно) КАР НАТАРАК! Что человек быть надо от Туррак?
+	AI_Output(self,other, " DIA_ORC_8901_GuardMine_hello_01_01 " );	// (terribly) CAR NATARAK! What man should be from Turrak?
 };
 
 instance DIA_ORC_8901_GuardMine_Enter(C_Info)
@@ -187,7 +188,7 @@ instance DIA_ORC_8901_GuardMine_Enter(C_Info)
 	condition = DIA_ORC_8901_GuardMine_Enter_condition;
 	information = DIA_ORC_8901_GuardMine_Enter_info;
 	permanent = FALSE;
-	description = "Что ты тут охраняешь?";
+	description = " What are you guarding here? " ;
 };
 
 func int DIA_ORC_8901_GuardMine_Enter_condition()
@@ -197,16 +198,16 @@ func int DIA_ORC_8901_GuardMine_Enter_condition()
 
 func void DIA_ORC_8901_GuardMine_Enter_info()
 {
-	AI_Output(other,self,"DIA_ORC_8901_GuardMine_Enter_01_01");	//Что ты тут охраняешь?
-	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Enter_01_02");	//Туррак смотреть за вход в железная шахта орков!
-	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Enter_01_03");	//Никого не впускать, никого не выпускать, если большой вождь не приказать это Туррак.
-	AI_Output(other,self,"DIA_ORC_8901_GuardMine_Enter_01_04");	//А если я все-таки захочу войти в нее?
+	AI_Output(other,self, " DIA_ORC_8901_GuardMine_Enter_01_01 " );	// What are you guarding here?
+	AI_Output(self,other, " DIA_ORC_8901_GuardMine_Enter_01_02 " );	// Turrak look beyond the entrance to the orc iron mine!
+	AI_Output(self,other, " DIA_ORC_8901_GuardMine_Enter_01_03 " );	// Do not let anyone in, do not let anyone out, unless the big leader orders this Turrak.
+	AI_Output(other,self, " DIA_ORC_8901_GuardMine_Enter_01_04 " );	// And if I still want to enter it?
 	AI_PlayAni(self,"T_NO");
-	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Enter_01_05");	//Человек не смочь просто так сделать этого! Братья шаманы делать магию у вход в шахта.
-	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Enter_01_06");	//Она убивать любого, если не быть братом.
-	AI_Output(other,self,"DIA_ORC_8901_GuardMine_Enter_01_07");	//И как быть, если мне вдруг понадобится заглянуть туда?
-	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Enter_01_08");	//(грозно) АРУГ НОР! Только большой вождь может разрешить ходить туда.
-	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Enter_01_09");	//Тогда дверь откроется и магия не убить человек!
+	AI_Output(self,other, " DIA_ORC_8901_GuardMine_Enter_01_05 " );	// A person cannot just do this! The shaman brothers do magic at the entrance to the mine.
+	AI_Output(self,other, " DIA_ORC_8901_GuardMine_Enter_01_06 " );	// She kill anyone, if not be a brother.
+	AI_Output(other,self, " DIA_ORC_8901_GuardMine_Enter_01_07 " );	// And what if I suddenly need to look there?
+	AI_Output(self,other, " DIA_ORC_8901_GuardMine_Enter_01_08 " );	// (terribly) ARUG NOR! Only a great leader can allow you to go there.
+	AI_Output(self,other, " DIA_ORC_8901_GuardMine_Enter_01_09 " );	// Then the door will open and the magic won't kill the person!
 };
 
 //instance DIA_ORC_8901_GuardMine_Closed(C_Info)
@@ -215,7 +216,7 @@ func void DIA_ORC_8901_GuardMine_Enter_info()
 //	condition = DIA_ORC_8901_GuardMine_Closed_condition;
 //	information = DIA_ORC_8901_GuardMine_Closed_info;
 //	permanent = FALSE;
-//	description = "Почему шахта закрыта?";
+// 	description = "Why is the mine closed?";
 //};
 
 //func int DIA_ORC_8901_GuardMine_Closed_condition()
@@ -229,13 +230,13 @@ func void DIA_ORC_8901_GuardMine_Enter_info()
 //func void DIA_ORC_8901_GuardMine_Closed_info()
 //{
 //	B_GivePlayerXP(200);
-//	AI_Output(other,self,"DIA_ORC_8901_GuardMine_Closed_01_01");	//Почему шахта закрыта?
+// 	AI_Output(other,self,"DIA_ORC_8901_GuardMine_Closed_01_01"); //Why is the mine closed?
 //	AI_PlayAni(self,"T_NO");
-//	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Closed_01_02");	//Все рабы сбежать оттуда! Ур-Тралл сильно гневаться!
-//	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Closed_01_03");	//Убивать много братов, закрывать шахта. Человек больше не ходить туда!
+// 	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Closed_01_02"); //All slaves escape from there! Ur-Thrall will be very angry!
+// 	AI_Output(self,other,"DIA_ORC_8901_GuardMine_Closed_01_03"); //Kill a lot of brothers, close the mine. Man no longer go there!
 //};
 
-//-----------------------------------------------------Тар Гор----------------------------------------
+// ------------------------------------------------ -----Tar Gore------------------------------------------
 
 instance DIA_Orc_8205_TarGor_EXIT(C_Info)
 {
@@ -276,17 +277,17 @@ func void DIA_Orc_8205_TarGor_hello_info()
 {
 	AI_ReadyMeleeWeapon(self);
 	Snd_Play("ORC_Angry");
-	AI_Output(self,other,"DIA_Orc_8205_TarGor_hello_01_01");	//(грозно) КРУШАК КАР! Кто впустить тебя сюда, человек?!
-	AI_Output(other,self,"DIA_Orc_8205_TarGor_hello_01_02");	//Спокойно! Ур-Тралл разрешил мне войти в шахту.
-	AI_Output(self,other,"DIA_Orc_8205_TarGor_hello_01_03");	//Хммм... Ну, если быть так, человек может ходить дальше.
+	AI_Output(self,other, " DIA_Orc_8205_TarGor_hello_01_01 " );	// (menacingly) KRUSHAK CAR! Who let you in here, man?!
+	AI_Output(other,self, " DIA_Orc_8205_TarGor_hello_01_02 " );	// Calm down! Ur-Thrall gave me permission to enter the mine.
+	AI_Output(self,other, " DIA_Orc_8205_TarGor_hello_01_03 " );	// Hmmm... Well, if that's the case, the person can walk further.
 	AI_RemoveWeapon(self);
-	AI_Output(self,other,"DIA_Orc_8205_TarGor_hello_01_04");	//Только не создавать тут проблем, человек! И не отвлекать раб от их работа.
-	AI_Output(self,other,"DIA_Orc_8205_TarGor_hello_01_05");	//Иначе Тар Гор гневаться! Ар Дагар гневаться! Делать человек мертвый...
+	AI_Output(self,other, " DIA_Orc_8205_TarGor_hello_01_04 " );	// Just don't make trouble here, man! And do not distract the slave from their work.
+	AI_Output(self,other, " DIA_Orc_8205_TarGor_hello_01_05 " );	// Otherwise Tar Horus will be angry! Ar Dagar be angry! Make a person dead...
 	AI_StopProcessInfos(self);
 };
 
 
-//-----------------------------------------------------Грок----------------------------------------
+// ------------------------------------------------ -----Grock----------------------------------------
 
 instance DIA_Orc_8204_Grok_EXIT(C_Info)
 {
@@ -328,18 +329,18 @@ func int DIA_Orc_8204_Grok_hello_condition()
 
 func void DIA_Orc_8204_Grok_hello_info()
 {
-	AI_Output(self,other,"DIA_Orc_8204_Grok_hello_01_01");	//КРОК ТАР МОР ТА! УКТ ДАР МАР БАР ДУРАТ ГРОК...
-	AI_Output(other,self,"DIA_Orc_8204_Grok_hello_01_02");	//Эммм... я тебя не очень понимаю.
-	AI_PlayAni(self,"T_DONTKNOW");
-	AI_Output(self,other,"DIA_Orc_8204_Grok_hello_01_03");	//УР ДАГАР ТАРОК МОР ДА КУР ЗАР ПАРАК ТУРАБ.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_hello_01_04");	//М-да...(похоже, мне надо знать язык орков, чтобы поговорить с этим парнем)
+	AI_Output(self,other, " DIA_Orc_8204_Grok_hello_01_01 " );	// KROK TAR MOR TA! UKT DAR MAR BAR DURAT GROK...
+	AI_Output(other,self, " DIA_Orc_8204_Grok_hello_01_02 " );	// Umm... I don't really understand you.
+	AI_PlayAni(self, " T_DONTKNOW " );
+	AI_Output(self,other, " DIA_Orc_8204_Grok_hello_01_03 " );	// UR DAGAR TAROK MOR DA KUR ZAR PARAK TURAB.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_hello_01_04 " );	// Hmmm... (looks like I need to know the orc language to talk to this guy)
 	AI_PlayAni(self,"T_GETLOST2");
-	AI_Output(self,other,"DIA_Orc_8204_Grok_hello_01_05");	//УКАТАР ТАРК БОР! НАБАР...
+	AI_Output(self,other, " DIA_Orc_8204_Grok_hello_01_05 " );	// BIGGER DROP LOAD! DON'T...
 	NeedKnowOrcLang = TRUE;
 
 	if((MIS_LowLevel == LOG_Running) && (KnowGrok == TRUE))
 	{
-		B_LogEntry(TOPIC_LowLevel,"Чтобы поговорить с Гроком, мне надо выучить язык орков. Кто бы мне в этом помог?");
+		B_LogEntry(TOPIC_LowLevel, " To speak with Grock, I need to learn the orc language. Who can help me with this? " );
 	};
 
 	AI_StopProcessInfos(self);
@@ -364,10 +365,10 @@ func int DIA_Orc_8204_Grok_hello_OK_condition()
 
 func void DIA_Orc_8204_Grok_hello_OK_info()
 {
-	AI_Output(self,other,"DIA_Orc_8204_Grok_hello_OK_01_01");	//Что тебе быть нужно, человек? Зачем ты тревожить старого Грока?
-	AI_Output(other,self,"DIA_Orc_8204_Grok_hello_OK_01_02");	//Мне нужно поговорить с тобой, орк.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_hello_OK_01_03");	//(удивленно) Человек знать наш язык? Хорошо, Грок говорить с ним.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_hello_OK_01_04");	//О чем человек хотеть говорить с Грок?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_hello_OK_01_01 " );	// What do you need to be, man? Why are you disturbing old Grock?
+	AI_Output(other,self, " DIA_Orc_8204_Grok_hello_OK_01_02 " );	// I need to talk to you, orc.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_hello_OK_01_03 " );	// (surprised) Man know our language? Okay, Grock talk to him.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_hello_OK_01_04 " );	// What would a person want to talk about with Grock?
 };
 
 instance DIA_Orc_8204_Grok_HowThings(C_Info)
@@ -376,7 +377,7 @@ instance DIA_Orc_8204_Grok_HowThings(C_Info)
 	condition = DIA_Orc_8204_Grok_HowThings_condition;
 	information = DIA_Orc_8204_Grok_HowThings_info;
 	permanent = TRUE;
-	description = "Как дела, орк?";
+	description = " How are you, Orc? " ;
 };
 
 func int DIA_Orc_8204_Grok_HowThings_condition()
@@ -389,9 +390,9 @@ func int DIA_Orc_8204_Grok_HowThings_condition()
 
 func void DIA_Orc_8204_Grok_HowThings_info()
 {
-	AI_Output(other,self,"DIA_Orc_8204_Grok_HowThings_01_01");	//Как дела, орк?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_HowThings_01_02");	//Грок не понимать, какое человек до этого быть дело.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_HowThings_01_03");	//Лучше человек ступать делать свои дела и не тревожить старого Грока.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_HowThings_01_01 " );	// How are you, orc?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_HowThings_01_02 " );	// Grock doesn't understand what kind of person it is to be the case.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_HowThings_01_03 " );	// Better man go do your thing and not disturb old Grock.
 	AI_StopProcessInfos(self);
 };
 
@@ -401,7 +402,7 @@ instance DIA_Orc_8204_Grok_WhatYouDo(C_Info)
 	condition = DIA_Orc_8204_Grok_WhatYouDo_condition;
 	information = DIA_Orc_8204_Grok_WhatYouDo_info;
 	permanent = FALSE;
-	description = "Что ты тут делаешь?";
+	description = " What are you doing here? " ;
 };
 
 func int DIA_Orc_8204_Grok_WhatYouDo_condition()
@@ -414,16 +415,16 @@ func int DIA_Orc_8204_Grok_WhatYouDo_condition()
 
 func void DIA_Orc_8204_Grok_WhatYouDo_info()
 {
-	AI_Output(other,self,"DIA_Orc_8204_Grok_WhatYouDo_01_01");	//Что ты тут делаешь?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_02");	//Грок тут стоять и смотреть, чтобы никто не спускаться вниз.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_WhatYouDo_01_03");	//А что там внизу?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_04");	//Там быть большой шахта орков. Но ходить туда нельзя! ХАРАД!
+	AI_Output(other,self, " DIA_Orc_8204_Grok_WhatYouDo_01_01 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_WhatYouDo_01_02 " );	// Grock is here to stand and watch so that no one comes down.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_WhatYouDo_01_03 " );	// What's down there?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_WhatYouDo_01_04 " );	// There be a big orc mine. But you can't go there! HARAD!
 	AI_Output(other,self,"DIA_Orc_8204_Grok_WhatYouDo_01_05");	//Почему?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_06");	//Это дело человек не касаться! Касаться только братов.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_WhatYouDo_01_07");	//Хммм... Интересно. А может, все-таки расскажешь?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_WhatYouDo_01_06 " );	// It's a man's business not to touch! Touch only brothers.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_WhatYouDo_01_07 " );	// Hmmm... Interesting. Or maybe you can tell?
 	AI_PlayAni(self,"T_NO");
-	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_08");	//(сердито) Нет. ХАРАД!
-	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_09");	//Да ну тебя!
+	AI_Output(self,other, " DIA_Orc_8204_Grok_WhatYouDo_01_08 " );	// (angrily) No. HARAD!
+	AI_Output(self,other, " DIA_Orc_8204_Grok_WhatYouDo_01_09 " );	// Come on!
 };
 
 instance DIA_Orc_8204_Grok_Help(C_Info)
@@ -432,7 +433,7 @@ instance DIA_Orc_8204_Grok_Help(C_Info)
 	condition = DIA_Orc_8204_Grok_Help_condition;
 	information = DIA_Orc_8204_Grok_Help_info;
 	permanent = FALSE;
-	description = "Ты как-то нехорошо выглядишь";
+	description = " You don't look good " ;
 };
 
 func int DIA_Orc_8204_Grok_Help_condition()
@@ -445,32 +446,32 @@ func int DIA_Orc_8204_Grok_Help_condition()
 
 func void DIA_Orc_8204_Grok_Help_info()
 {
-	AI_Output(other,self,"DIA_Orc_8204_Grok_Help_01_01");	//Ты как-то нехорошо выглядишь. Болеешь что ли?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_Help_01_02");	//Грок уже быть очень старый орк... Ему тяжело стоять тут все дни. Мало сил!
-	AI_Output(self,other,"DIA_Orc_8204_Grok_Help_01_03");	//Раньше у Грока были зелья братов духа, он восстанавливал ими своя сила.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_Help_01_04");	//Но зелья уже давно кончаться! И теперь Грок становится слабым каждый день.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_Help_01_05");	//А что произойдет, если ты совсем ослабнешь?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_Help_01_06");	//Если Грок становиться слабый и браты видеть это, то тогда они есть Грок.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_Help_01_07");	//М-да, хорошие у вас порядки. Но, может быть, я смогу тебе как-то помочь?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_Help_01_08");	//Человек хотеть помочь Грок?! Грок сильно удивляться этому.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_Help_01_09");	//Обычно люди всегда хотеть только убивать Грок.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_Help_01_10");	//Обычно люди в ваш город не захаживают.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_Help_01_11");	//Так какие, говоришь, тебе нужны зелья?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_Help_01_12");	//Зелья, чтобы делать Грока сильным! Тогда Грок сможет стоять тут еще долго.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_Help_01_13");	//Значит, зелье силы. Попробую его достать.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_Help_01_01 " );	// You don't look well. Are you sick or something?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_Help_01_02 " );	// Grock is already a very old orc... It's hard for him to stand here all day. Little strength!
+	AI_Output(self,other, " DIA_Orc_8204_Grok_Help_01_03 " );	// Grok used to have potions of the spirit brothers, he used them to restore his strength.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_Help_01_04 " );	// But the potions are long gone! And now Grock is getting weak every day.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_Help_01_05 " );	// What happens if you get really weak?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_Help_01_06 " );	// If Grock gets weak and the brothers see it, then they are Grock.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_Help_01_07 " );	// M-yes, you have good orders. But maybe I can help you somehow?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_Help_01_08 " );	// Man want to help Grock?! Grock is greatly surprised by this.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_Help_01_09 " );	// Normally people only want to kill Grock.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_Help_01_10 " );	// Usually people don't come to your city.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_Help_01_11 " );	// So what kind of potions do you say you need?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_Help_01_12 " );	// Potions to make Grock strong! Then Grock can stand here for a long time.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_Help_01_13 " );	// So, potion of strength. I'll try to get it.
 	MIS_GrokBringPotion = LOG_Running;
 	Log_CreateTopic(TOPIC_GrokBringPotion,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GrokBringPotion,LOG_Running);
-	B_LogEntry(TOPIC_GrokBringPotion,"Орк по имени Грок уже очень старый и слабеет с каждым днем. Раньше у него были зелья шаманов, которыми он поддерживал свою силу. Но теперь, когда зелья закончились, он ничего не может с этим сделать. Если он совсем ослабнет, то братья просто съедят его.");
+	B_LogEntry(TOPIC_GrokBringPotion, "The orc named Grok is already very old and getting weaker every day. He used to have shaman potions with which he maintained his strength. But now that the potions are gone, he can't do anything about it. If he gets really weak , then the brothers will just eat it. " );
 };
 
-instance DIA_Orc_8204_Grok_BringPotion(C_Info)
+instances of DIA_Orc_8204_Grok_BringPotion (C_Info)
 {
 	npc = Orc_8204_Grok;
 	condition = DIA_Orc_8204_Grok_BringPotion_condition;
 	information = DIA_Orc_8204_Grok_BringPotion_info;
 	permanent = FALSE;
-	description = "Вот тебе зелье.";
+	description = " Here's a potion for you. " ;
 };
 
 func int DIA_Orc_8204_Grok_BringPotion_condition()
@@ -484,25 +485,25 @@ func int DIA_Orc_8204_Grok_BringPotion_condition()
 func void DIA_Orc_8204_Grok_BringPotion_info()
 {
 	B_GivePlayerXP(400);
-	AI_Output(other,self,"DIA_Orc_8204_Grok_BringPotion_01_01");	//Вот тебе зелье.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_BringPotion_01_01 " );	// Here's a potion for you.
 	B_GiveInvItems(other,self,ItPo_Perm_STR,1);
 	Npc_RemoveInvItems(self,ItPo_Perm_STR,1);
 	B_UseItem(self,ItPo_Perm_STR_Fake);
-	AI_Output(self,other,"DIA_Orc_8204_Grok_BringPotion_01_02");	//Грок благодарить человек! Чувствовать, как сила вновь возвращается к нему.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_BringPotion_01_03");	//Ну, значит, твоим братьям придется съесть тебя чуть позже.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_BringPotion_01_04");	//Человек уметь славно шутить...(хохочет) Гроку это нравиться!
+	AI_Output(self,other, " DIA_Orc_8204_Grok_BringPotion_01_02 " );	// Grock thank man! Feel the power returning to him again.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_BringPotion_01_03 " );	// Well, then your brothers will have to eat you later.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_BringPotion_01_04 " );	// A man to be able to joke nicely... (laughs) Grock likes this!
 	MIS_GrokBringPotion = LOG_Success;
 	Log_SetTopicStatus(TOPIC_GrokBringPotion,LOG_Success);
-	B_LogEntry(TOPIC_GrokBringPotion,"Я принес Гроку зелье. Это помогло ему восстановить силы.");
+	B_LogEntry(TOPIC_GrokBringPotion, " I brought Grok a potion. It helped him recover. " );
 };
 
-instance DIA_Orc_8204_Grok_LowLevel(C_Info)
+instances of DIA_Orc_8204_Grok_LowLevel (C_Info)
 {
 	npc = Orc_8204_Grok;
 	condition = DIA_Orc_8204_Grok_LowLevel_condition;
 	information = DIA_Orc_8204_Grok_LowLevel_info;
 	permanent = FALSE;
-	description = "Мне нужно знать, что случилось на нижнем уровне шахты.";
+	description = " I need to know what happened in the lower level of the mine. " ;
 };
 
 func int DIA_Orc_8204_Grok_LowLevel_condition()
@@ -516,36 +517,36 @@ func int DIA_Orc_8204_Grok_LowLevel_condition()
 func void DIA_Orc_8204_Grok_LowLevel_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_01");	//Мне нужно знать, что случилось на нижнем уровне шахты.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_02");	//А почему человек спрашивать об этом именно Грока?
-	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_03");	//Потому что ты единственный, кто знает причину, вынудившую орков запереть нижний уровень.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_04");	//Грок очень удивляться...(удивленно) Откуда человек знать это?
-	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_05");	//Плавильщик Хильдур сказал, что ты единственный, кто выжил тогда в шахте.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_06");	//Хммм...(задумчиво) Хорошо! Человек помочь Гроку, и тот в знак благодарности рассказать ему о шахта.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_07");	//Грок действительно все видеть и все знать. Хильдур не обманывать человек!
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_09");	//Это быть очень много зим назад. Когда еще Грок быть сильным воином и охранять шахта внизу.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_10");	//Браты копать очень много руда. Хотеть копать еще больше и больше!
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_11");	//Однажды они откопать одна пещера, где найти очень большой и злой демон.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_12");	//Грок видеть его! Видеть, какой он убивать братов и рабов.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_13");	//Он сильно испугаться и убегать оттуда! А все его браты умирать там.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_14");	//Потом браты запирать шахта и не открывать ее больше никогда. Не тревожить больше злой демон!
-	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_15");	//Не думаю, что простая решетка смогла бы остановить настоящего демона.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_16");	//Сначала Грок так и думать! Ждать, что демон еще придти сюда.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_17");	//Но прошло много зим, а демон так больше и не появляться.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_18");	//Интересно, что его тогда остановило?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_19");	//Грок точно не знать, но думать, что демон что-то охранять.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_20");	//Он видеть тогда в пещере яркий свет. Думать, это быть очень сильный магия!
-	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_21");	//Ну да, тогда это многое объясняет.
-	B_LogEntry(TOPIC_LowLevel,"От Грока я узнал, что в свое время орки откопали пещеру, внутри которой оказался огромный и злой демон. Он убил всех орков, только Гроку удалось избежать гибели. По всей видимости, демон что-то там охранял. Но что именно, Грок не знает. Он видел лишь яркий слепящий свет, озаряющий всю пещеру.");
+	AI_Output(other,self, " DIA_Orc_8204_Grok_LowLevel_01_01 " );	// I need to know what happened at the bottom of the mine.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_02 " );	// And why does a person ask Grock about this?
+	AI_Output(other,self, " DIA_Orc_8204_Grok_LowLevel_01_03 " );	// Because you're the only one who knows what caused the orcs to lock down the lower level.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_04 " );	// Grock is very surprised... (surprised) How does a person know this?
+	AI_Output(other,self, " DIA_Orc_8204_Grok_LowLevel_01_05 " );	// Smelter Hildur said you were the only survivor of the mine.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_06 " );	// Hmmm... (thoughtfully) Good! The man help Grock, and he tells him about the mine as a token of gratitude.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_07 " );	// Grock really sees everything and knows everything. Hildur don't deceive people!
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_09 " );	// It's been a lot of winters ago. When else Grock be a strong warrior and guard the mine below.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_10 " );	// Brothers dig a lot of ore. Want to dig even more and more!
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_11 " );	// One day they dig out one cave where they find a very large and evil demon.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_12 " );	// Grock see him! To see what it is like to kill brothers and slaves.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_13 " );	// He gets very frightened and runs away from there! And all his brothers die there.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_14 " );	// Then the brothers lock the mine and never open it again. Don't disturb the evil demon anymore!
+	AI_Output(other,self, " DIA_Orc_8204_Grok_LowLevel_01_15 " );	// I don't think a simple grill would stop a real demon.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_16 " );	// At first Grock think so! Wait for the demon to still come here.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_17 " );	// But many winters have passed, and the demon never appears again.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_LowLevel_01_18 " );	// I wonder what stopped him then?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_19 " );	// Grock doesn't know for sure, but think the demon is guarding something.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_LowLevel_01_20 " );	// He then sees a bright light in the cave. Think it be very strong magic!
+	AI_Output(other,self, " DIA_Orc_8204_Grok_LowLevel_01_21 " );	// Well, yes, then that explains a lot.
+	B_LogEntry(TOPIC_LowLevel, " From Grok, I learned that at one time the orcs dug out a cave, inside of which there was a huge and evil demon. He killed all the orcs, only Grok managed to avoid death. Apparently, the demon was guarding something there. But what exactly, Grock does not know. He saw only a bright blinding light illuminating the entire cave. " );
 };
 
-instance DIA_Orc_8204_Grok_GoLevel(C_Info)
+instances of DIA_Orc_8204_Grok_GoLevel (C_Info)
 {
 	npc = Orc_8204_Grok;
 	condition = DIA_Orc_8204_Grok_GoLevel_condition;
 	information = DIA_Orc_8204_Grok_GoLevel_info;
 	permanent = FALSE;
-	description = "А вы не пытались больше убить этого демона?";
+	description = " Have you tried to kill this demon again? " ;
 };
 
 func int DIA_Orc_8204_Grok_GoLevel_condition()
@@ -558,15 +559,15 @@ func int DIA_Orc_8204_Grok_GoLevel_condition()
 
 func void DIA_Orc_8204_Grok_GoLevel_info()
 {
-	AI_Output(other,self,"DIA_Orc_8204_Grok_GoLevel_01_01");	//А вы не пытались больше убить этого демона?
-	AI_Output(self,other,"DIA_Orc_8204_Grok_GoLevel_01_02");	//Когда Ар Дагар стать тут главный орк, он посылать туда сильный отряд своих воинов.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_GoLevel_01_03");	//Но из них никто не возвращаться! Никто не знать, куда они пропасть.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_GoLevel_01_04");	//Больше браты не ходить вниз, чтобы убить демон.
+	AI_Output(other,self, " DIA_Orc_8204_Grok_GoLevel_01_01 " );	// Have you tried to kill this demon again?
+	AI_Output(self,other, " DIA_Orc_8204_Grok_GoLevel_01_02 " );	// When Ar Dagar becomes the chief orc here, he will send a strong detachment of his warriors there.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_GoLevel_01_03 " );	// But none of them come back! Nobody knows where they go.
+	AI_Output(self,other, " DIA_Orc_8204_Grok_GoLevel_01_04 " );	// No more brothers going downstairs to kill the demon.
 	KnowGrokDemon = TRUE;
-	B_LogEntry(TOPIC_LowLevel,"Ар Дагар посылал вниз отряд воинов, но никто из них так и не вернулся.");
+	B_LogEntry(TOPIC_LowLevel, " Ar Dagar sent a squad of warriors down, but none of them returned. " );
 };
 
-//-----------------------------------------------------Дабар Шак----------------------------------------
+// ------------------------------------------------ -----Beaver Shak-------------------------------------------
 
 instance DIA_Orc_8206_Dakar_EXIT(C_Info)
 {
@@ -608,12 +609,12 @@ func int DIA_Orc_8206_Dakar_hello_condition()
 
 func void DIA_Orc_8206_Dakar_hello_info()
 {
-	AI_Output(self,other,"DIA_Orc_8206_Dakar_hello_01_01");	//Что человек тут делать?! Зачем говорить с Дабар Шаку?!
-	AI_Output(other,self,"DIA_Orc_8206_Dakar_hello_01_02");	//Я просто осматриваюсь. А что ты тут охраняешь?
-	AI_Output(self,other,"DIA_Orc_8206_Dakar_hello_01_03");	//Дабар Шак смотреть за печь, смотреть, чтобы человек делать сталь для орков.
-	AI_Output(self,other,"DIA_Orc_8206_Dakar_hello_01_04");	//Если сталь быть мало, Ар Дагар быть недоволен. Ругать Дабар Шака!
-	AI_Output(self,other,"DIA_Orc_8206_Dakar_hello_01_05");	//Поэтому Дабар Шак смотреть, чтобы человек работать хорошо. 
-	AI_Output(self,other,"DIA_Orc_8206_Dakar_hello_01_06");	//Не отдыхать! Только работать, делать сталь. Много сталь...
+	AI_Output(self,other, " DIA_Orc_8206_Dakar_hello_01_01 " );	// What's a man to do here?! Why talk to Dabar Shaku?!
+	AI_Output(other,self, " DIA_Orc_8206_Dakar_hello_01_02 " );	// I'm just looking around. What are you guarding here?
+	AI_Output(self,other, " DIA_Orc_8206_Dakar_hello_01_03 " );	// Dabar Shak to look behind the furnace, to look for a man to make steel for the orcs.
+	AI_Output(self,other, " DIA_Orc_8206_Dakar_hello_01_04 " );	// If the steel be small, Ar Dagar be dissatisfied. Scold Dabar Shaka!
+	AI_Output(self,other, " DIA_Orc_8206_Dakar_hello_01_05 " );	// So Dabar Shak watch to make a person work well.
+	AI_Output(self,other, " DIA_Orc_8206_Dakar_hello_01_06 " );	// Don't rest! Just work, make steel. Lots of steel...
 };
 
 instance DIA_Orc_8206_Dakar_Steel(C_Info)
@@ -622,7 +623,7 @@ instance DIA_Orc_8206_Dakar_Steel(C_Info)
 	condition = DIA_Orc_8206_Dakar_Steel_condition;
 	information = DIA_Orc_8206_Dakar_Steel_info;
 	permanent = FALSE;
-	description = "Зачем вам столько стали?";
+	description = " Why do you need so much steel? " ;
 };
 
 func int DIA_Orc_8206_Dakar_Steel_condition()
@@ -632,12 +633,12 @@ func int DIA_Orc_8206_Dakar_Steel_condition()
 
 func void DIA_Orc_8206_Dakar_Steel_info()
 {
-	AI_Output(other,self,"DIA_Orc_8206_Dakar_Steel_01_01");	//Зачем вам столько стали?
-	AI_Output(self,other,"DIA_Orc_8206_Dakar_Steel_01_02");	//Орки много воевать! Братам надо много оружия.
+	AI_Output(other,self, " DIA_Orc_8206_Dakar_Steel_01_01 " );	// Why do you need so much steel?
+	AI_Output(self,other, " DIA_Orc_8206_Dakar_Steel_01_02 " );	// Orcs fight a lot! The brothers need a lot of weapons.
 };
 
 
-//-----------------------------------------------------Ар Дагар----------------------------------------
+// ------------------------------------------------ -----Ar Dagar--------------------------------------------------------
 
 
 instance DIA_OrcWarrior_MineCommander_EXIT(C_Info)
@@ -680,9 +681,9 @@ func int DIA_OrcWarrior_MineCommander_hello_condition()
 
 func void DIA_OrcWarrior_MineCommander_hello_info()
 {
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_hello_01_01");	//(гневно) Что человек тут делать?! Почему не работать?
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_hello_01_02");	//Я не из числа твоих рабов.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_hello_01_03");	//Тогда, что тебе быть надо от Ар Дагар?
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_hello_01_01 " );	// (angrily) What's a man to do here?! Why not work?
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_hello_01_02 " );	// I am not one of your slaves.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_hello_01_03 " );	// Then what do you need from Ar Dagar?
 };
 
 instance DIA_OrcWarrior_MineCommander_WhoYou(C_Info)
@@ -691,7 +692,7 @@ instance DIA_OrcWarrior_MineCommander_WhoYou(C_Info)
 	condition = DIA_OrcWarrior_MineCommander_WhoYou_condition;
 	information = DIA_OrcWarrior_MineCommander_WhoYou_info;
 	permanent = FALSE;
-	description = "Ты кто?";
+	description = " Who are you? " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_WhoYou_condition()
@@ -702,11 +703,11 @@ func int DIA_OrcWarrior_MineCommander_WhoYou_condition()
 func void DIA_OrcWarrior_MineCommander_WhoYou_info()
 {
 	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_WhoYou_01_01");	//Ты кто?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhoYou_01_02");	//Меня звать Ар Дагар, человек...(грозно) А это быть мой железная шахта.
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_WhoYou_01_03");	//А я думал, шахта принадлежит оркам Ур-Тралла.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhoYou_01_04");	//Да, быть так. Но приказы отдавать тут только я один!
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhoYou_01_05");	//Так что человек быть осторожным в своих слова, если не хотеть разгневать Ар Дагар.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhoYou_01_06");	//Иначе знак силы не помочь ему!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhoYou_01_02 " );	// My name is Ar Dagar, man... (terribly) And this will be my iron mine.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_WhoYou_01_03 " );	// I thought the mine belonged to the orcs of Ur-Thrall.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhoYou_01_04 " );	// Yes, be like this. But I'm the only one giving orders here!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhoYou_01_05 " );	// So man be careful what you say, if you don't want to anger Ar Dagar.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhoYou_01_06 " );	// Otherwise, the sign of strength won't help him!
 };
 
 instance DIA_OrcWarrior_MineCommander_LowLevel(C_Info)
@@ -715,7 +716,7 @@ instance DIA_OrcWarrior_MineCommander_LowLevel(C_Info)
 	condition = DIA_OrcWarrior_MineCommander_LowLevel_condition;
 	information = DIA_OrcWarrior_MineCommander_LowLevel_info;
 	permanent = FALSE;
-	description = "Я хочу спросить про нижний уровень шахты.";
+	description = " I want to ask about the lower level of the mine. " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_LowLevel_condition()
@@ -728,18 +729,18 @@ func int DIA_OrcWarrior_MineCommander_LowLevel_condition()
 
 func void DIA_OrcWarrior_MineCommander_LowLevel_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_LowLevel_01_01");	//Я хочу спросить про нижний уровень шахты.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_02");	//(грозно) Ар Дагар думать, что это мало касаться человек.
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_LowLevel_01_03");	//Просто ответь - ты ведь посылал туда своих бойцов?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_04");	//Хммм...(мрачно) Ар Дагар не знать, откуда человек быть известно об этом.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_05");	//Но тот быть прав! Когда-то Ар Дагар хотеть освободить глубокий шахта.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_06");	//Он отправлять туда многих сильный брат, но они все погибать там.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_07");	//Никто не возвращаться к Ар Дагар обратно...
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_LowLevel_01_08");	//Тебе же известно, что там находится внизу?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_09");	//Там быть зло...(мрачно) Огромный зло, которое убивать много братов Ар Дагар!
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_10");	//Страшный демон, который не иметь имени, не иметь названия.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_11");	//Ар Дагар больше не посылать туда никто! Не тревожить больше злой демон.
-	B_LogEntry(TOPIC_LowLevel,"Ар Дагар подтвердил слова Грока, что когда-то пытался освободить глубокую шахту. Так назвал ее сам Ар Дагар.");
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_LowLevel_01_01 " );	// I want to ask about the lower level of the mine.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_LowLevel_01_02 " );	// (menacingly) Ar Dagar to think it's a little touching man.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_LowLevel_01_03 " );	// Just answer - you sent your fighters there, didn't you?
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_LowLevel_01_04 " );	// Hmmm...(grimly) Ar Dagar doesn't know how a person would be aware of this.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_LowLevel_01_05 " );	// But he must be right! Once Ar Dagar want to free the deep mine.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_LowLevel_01_06 " );	// He sends many strong brothers there, but they all die there.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_LowLevel_01_07 " );	// No one will return to Ar Dagar back...
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_LowLevel_01_08 " );	// You know what's down there, right?
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_LowLevel_01_09 " );	// There be evil... (gloomy) Huge evil that kill many Ar Dagar brothers!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_LowLevel_01_10 " );	// Terrible demon that doesn't have a name, doesn't have a name.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_LowLevel_01_11 " );	// Ar Dagar don't send anyone there anymore! Do not disturb the evil demon anymore.
+	B_LogEntry(TOPIC_LowLevel, " Ar Dagar confirmed Grok's words that he once tried to free a deep mine. Ar Dagar himself called it that. " );
 };
 
 instance DIA_OrcWarrior_MineCommander_WhyDemon(C_Info)
@@ -748,12 +749,12 @@ instance DIA_OrcWarrior_MineCommander_WhyDemon(C_Info)
 	condition = DIA_OrcWarrior_MineCommander_WhyDemon_condition;
 	information = DIA_OrcWarrior_MineCommander_WhyDemon_info;
 	permanent = FALSE;
-	description = "Ты знаешь, откуда он вообще мог там взяться?";
+	description = " Do you know where it could have come from? " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_WhyDemon_condition()
 {
-	if((MIS_LowLevel == LOG_Running) && (Npc_KnowsInfo(hero,DIA_OrcWarrior_MineCommander_LowLevel) == TRUE))
+	if (( MIS_LowLevel == LOG_Running ) && ( Npc_KnowsInfo ( hero , DIA_OrcWarrior_MineCommander_LowLevel ) ==  TRUE )) .
 	{
 		return TRUE;
 	};
@@ -761,10 +762,10 @@ func int DIA_OrcWarrior_MineCommander_WhyDemon_condition()
 
 func void DIA_OrcWarrior_MineCommander_WhyDemon_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_WhyDemon_01_01");	//Ты знаешь, откуда он вообще мог там взяться?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhyDemon_01_02");	//Ар Дагар не знать этого! Только старый Грок быть там, когда демон пробудиться.
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_WhyDemon_01_03");	//Грок предположил, что он там что-то охранял.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhyDemon_01_04");	//Ар Дагар ничего не известно об этом...(мрачно) Но возможно, Грок быть и прав.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_WhyDemon_01_01 " );	// Do you know where he even could come from there?
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhyDemon_01_02 " );	// Ar Dagar not to know this! Only old Grock be there when the demon awakens.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_WhyDemon_01_03 " );	// Grock assumed he was guarding something there.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhyDemon_01_04 " );	// Ar Dagar knows nothing about this... (grimly) But Grock may be right.
 };
 
 instance DIA_OrcWarrior_MineCommander_HelpDemon(C_Info)
@@ -773,12 +774,12 @@ instance DIA_OrcWarrior_MineCommander_HelpDemon(C_Info)
 	condition = DIA_OrcWarrior_MineCommander_HelpDemon_condition;
 	information = DIA_OrcWarrior_MineCommander_HelpDemon_info;
 	permanent = FALSE;
-	description = "Я хочу помочь вам рассправиться с демоном.";
+	description = " I want to help you deal with the demon. " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_HelpDemon_condition()
 {
-	if((MIS_LowLevel == LOG_Running) && (Npc_KnowsInfo(hero,DIA_OrcWarrior_MineCommander_LowLevel) == TRUE))
+	if (( MIS_LowLevel == LOG_Running ) && ( Npc_KnowsInfo ( hero , DIA_OrcWarrior_MineCommander_LowLevel ) ==  TRUE )) .
 	{
 		return TRUE;
 	};
@@ -786,39 +787,39 @@ func int DIA_OrcWarrior_MineCommander_HelpDemon_condition()
 
 func void DIA_OrcWarrior_MineCommander_HelpDemon_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_HelpDemon_01_01");		//Я хочу помочь вам расправиться с демоном.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_02");		//(хохочет) Неужели человек возомнить себя великий воин?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_03");		//Злой демон раздавить его как жалкий червяк!
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_HelpDemon_01_04");		//На твоем месте я бы не был настолько самоуверен.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_HelpDemon_01_01 " );		// I want to help you deal with the demon.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_02 " );		// (laughs) Can a man imagine himself a great warrior?
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_03 " );		// Evil demon crush him like a pathetic worm!
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_HelpDemon_01_04 " );		// If I were you, I wouldn't be so self-confident.
 
 	if(MIS_PsicampDemon == LOG_Success)
 	{
 		B_GivePlayerXP(250);
-		AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_01");	//Храм на болотах свободен!
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_05");		//Теперь Ар Дагар видеть, что тот не врать ему. Человек уметь хорошо сражаться!
-		AI_Output(other,self,"DIA_OrcWarrior_MineCommander_BringGrah_01_06");		//А что насчет шахты?
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_08");		//Он разрешать человек идти в глубокий шахта сражаться там с демон.
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_09");		//Но у злой демон быть много мертвый слуг! Человек быть тяжело одному ходить туда.
-		AI_Output(other,self,"DIA_OrcWarrior_MineCommander_BringGrah_01_10");		//И что ты предлагаешь?
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_11");		//У Ар Дагар быть мало сильный воин, чтобы отправлять их вместе с человек. 
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_12");		//Поэтому тот сначала ходить к Ур-Тралл, великий вождь братов. Просить, чтобы тот дать много сильный воин.
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_13");		//Они пойти вместе с человек. Будут помогать ему сражаться с демон!
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_14");		//Теперь человек ступать! Приходить к Ар Дагар, когда поговорить с Ур-Тралл.
-		B_LogEntry(TOPIC_LowLevel,"Ар Дагар отправил меня к Ур-Траллу, чтобы тот прислал ему воинов. Эти орки пойдут вместе со мной, чтобы помочь мне расправиться с демоном.");
+		AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_01 " );	// Temple in the swamps is free!
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_05 " );		// Now Ar Dagar can see that he doesn't lie to him. A man to be able to fight well!
+		AI_Output(other,self, " DIA_OrcWarrior_MineCommander_BringGrah_01_06 " );		// What about the mine?
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_08 " );		// He's allowing a person to go into the deep mine to fight a demon there.
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_09 " );		// But the evil demon has many dead servants! Man be hard alone to go there.
+		AI_Output(other,self, " DIA_OrcWarrior_MineCommander_BringGrah_01_10 " );		// And what do you suggest?
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_11 " );		// Ar Dagar have a little strong warrior to send them along with the people.
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_12 " );		// Therefore, he first go to Ur-Thrall, the great leader of the brothers. Ask him to give a lot of strong warrior.
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_13 " );		// They go along with the man. Will help him fight the demon!
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_14 " );		// Now man step! Come to Ar Dagar when talking to Ur-Thrall.
+		B_LogEntry(TOPIC_LowLevel, " Ar Dagar sent me to Ur-Thrall to send him warriors. These orcs will come with me to help me defeat the demon. " );
 		SendForHelp = TRUE;
 	}
 	else
 	{
-	 	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_HelpDemon_01_05");		//По крайней мере, ты хотя бы можешь дать мне шанс.
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_06");		//Хммм...(задумчиво) Человек быть очень храбрый, но очень глупый!
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_07");		//Но Ар Дагар давать ему шанс сразится с тем демон.
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_08");		//Однако для начала человек принести мне Грах Шах!
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_09");		//Ар Дагар проверить, настолько ли человек силен, как говорить.
-		AI_Output(other,self,"DIA_OrcWarrior_MineCommander_HelpDemon_01_10");		//А что такое Грах Шах?
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_11");		//Награда того, кто стать самым сильным воином в городе братов!
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_12");		//Если человек докажет, что достоин носить Грах Шах, то идти сражаться со злой демон.
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_13");		//И Ар Дагар помочь ему в этом.
-		B_LogEntry(TOPIC_LowLevel,"Если я стану чемпионом арены в городе орков, Ар Дагар разрешит мне спуститься на нижний уровень шахты.");
+	 	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_HelpDemon_01_05 " );		// At least you can give me a chance.
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_06 " );		// Hmmm...(thoughtfully) Man be very brave, but very stupid!
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_07 " );		// But Ar Dagar give him a chance to fight that demon.
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_08 " );		// However, for starters, a person bring me Grah Shah!
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_09 " );		// Ar Dagar to check if a person is as strong as they say.
+		AI_Output(other,self, " DIA_OrcWarrior_MineCommander_HelpDemon_01_10 " );		// And what is Grah Shah?
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_11 " );		// Reward the one who becomes the strongest warrior in the city of brothers!
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_12 " );		// If a person proves that he is worthy of wearing the Grah Shah, then go fight the evil demon.
+		AI_Output(self,other, " DIA_OrcWarrior_MineCommander_HelpDemon_01_13 " );		// And Ar Dagar help him with this.
+		B_LogEntry(TOPIC_LowLevel, " If I become the arena champion in the orc city, Ar Dagar will let me go down to the lower level of the mine. " );
 	};
 };
 
@@ -828,12 +829,12 @@ instance DIA_OrcWarrior_MineCommander_BringGrah(C_Info)
 	condition = DIA_OrcWarrior_MineCommander_BringGrah_condition;
 	information = DIA_OrcWarrior_MineCommander_BringGrah_info;
 	permanent = FALSE;
-	description = "У меня есть Грах Шах!";
+	description = " I have Grah Shah! " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_BringGrah_condition()
 {
-	if((MIS_LowLevel == LOG_Running) && (SendForHelp == FALSE) && (Npc_KnowsInfo(hero,DIA_OrcWarrior_MineCommander_HelpDemon) == TRUE) && (Npc_HasItems(hero,ItMi_GrahShar) >= 1))
+	if ((MIS_LowLevel == LOG_Running) && (SendForHelp ==  FALSE ) && (Npc_KnowsInfo(hero,DIA_OrcWarrior_MineCommander_HelpDemon) ==  TRUE ) && (Npc_HasItems(hero,ItI_GrahShar) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -842,23 +843,23 @@ func int DIA_OrcWarrior_MineCommander_BringGrah_condition()
 func void DIA_OrcWarrior_MineCommander_BringGrah_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_BringGrah_01_01");	//У меня есть Грах Шах!
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_02");	//Тогда человек показать его Ар Дагар. Тот будет смотреть!
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_BringGrah_01_01 " );	// I have Grah Shah!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_02 " );	// Then the man show him Ar Dagar. He will watch!
 	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_BringGrah_01_03");	//Вот он.
 	B_GiveInvItems(other,self,ItMi_GrahShar,1);
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_04");	//Хммм...(уважительно) КРАТ КОР! Человек быть Мор Дар! Великий воин братов.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_05");	//Теперь Ар Дагар видеть, что тот не врать ему. Человек уметь хорошо сражаться!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_04 " );	// Hmmm...(respectfully) CRAT KOR! Man be Mor Dar! The great warrior of the brothers.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_05 " );	// Now Ar Dagar can see that he doesn't lie to him. A man to be able to fight well!
 	B_GiveInvItems(self,other,ItMi_GrahShar,1);
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_BringGrah_01_06");	//А что насчет шахты?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_07");	//Ар Дагар давать слово помочь человек, если он приносить Грах Шах! Ар Дагар выполнять свой обещание.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_08");	//Он разрешать человек идти в глубокий шахта сражаться там с демон.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_09");	//Но у злой демон быть много мертвый слуг! Человек быть тяжело одному ходить туда.
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_BringGrah_01_10");	//И что ты предлагаешь?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_11");	//У Ар Дагар быть мало сильный воин, чтобы отправлять их вместе с человек. 
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_12");	//Поэтому тот сначала ходить к Ур-Тралл, великий вождь братов. Просить, чтобы тот дать много сильный воин.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_13");	//Они пойти вместе с человек. Будут помогать ему сражаться с демон!
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_14");	//Теперь человек ступать! Приходить к Ар Дагар, когда поговорить с Ур-Тралл.
-	B_LogEntry(TOPIC_LowLevel,"Ар Дагар отправил меня к Ур-Траллу, чтобы тот прислал ему воинов. Эти орки пойдут вместе со мной, чтобы помочь мне расправиться с демоном.");
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_BringGrah_01_06 " );	// What about the mine?
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_07 " );	// Ar Dagar give the word to help a person if he brings Grah Shah! Ar Dagar to fulfill his promise.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_08 " );	// He's allowing a person to go into the deep mine to fight a demon there.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_09 " );	// But the evil demon has many dead servants! Man be hard alone to go there.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_BringGrah_01_10 " );	// And what do you suggest?
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_11 " );	// Ar Dagar have a little strong warrior to send them along with the people.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_12 " );	// Therefore, he first go to Ur-Thrall, the great leader of the brothers. Ask him to give a lot of strong warrior.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_13 " );	// They go along with the man. Will help him fight the demon!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_BringGrah_01_14 " );	// Now man step! Come to Ar Dagar when talking to Ur-Thrall.
+	B_LogEntry(TOPIC_LowLevel, " Ar Dagar sent me to Ur-Thrall to send him warriors. These orcs will come with me to help me defeat the demon. " );
 	SendForHelp = TRUE;
 };
 
@@ -868,12 +869,12 @@ instance DIA_OrcWarrior_MineCommander_GoShaht(C_Info)
 	condition = DIA_OrcWarrior_MineCommander_GoShaht_condition;
 	information = DIA_OrcWarrior_MineCommander_GoShaht_info;
 	permanent = FALSE;
-	description = "Ур-Тралл поможет с воинами!";
+	description = " Ur-Thrall will help with the warriors! " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_GoShaht_condition()
 {
-	if((MIS_LowLevel == LOG_Running) && (OrcHelpLowLevel == TRUE) && (Npc_IsDead(HaosDemon_Orcmine) == FALSE) && (Npc_IsDead(skeleton_warrior_dark_stoneshpere) == FALSE))
+	if ((MIS_LowLevel == LOG_Running) && (OrcHelpLowLevel ==  TRUE ) && (Npc_IsDead(HaosDemon_Orcmine) ==  FALSE ) && (Npc_IsDead(skeleton_warrior_dark_stoneshpere) ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -882,11 +883,11 @@ func int DIA_OrcWarrior_MineCommander_GoShaht_condition()
 func void DIA_OrcWarrior_MineCommander_GoShaht_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_GoShaht_01_01");	//Ур-Тралл поможет с воинами!
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_GoShaht_01_02");	//Быть хорошо! Тогда человек идти сражаться с демон.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_GoShaht_01_03");	//Ар Дагар желать ему удача!
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_GoShaht_01_01 " );	// Ur-Thrall will help with the warriors!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_GoShaht_01_02 " );	// Be good! Then the man go fight the demon.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_GoShaht_01_03 " );	// Ar Dagar wish him good luck!
 	GoFightDeepMine = TRUE;
-	B_LogEntry(TOPIC_LowLevel,"Я сообщил Ар Дагару, что Ур-Тралл согласился помочь с воинами. Пора покончить с тем злом, что там завелось.");
+	B_LogEntry(TOPIC_LowLevel, " I've informed Ar Dagar that Ur-Thrall has agreed to help with the warriors. It's time to put an end to the evil that's been brewing there. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(STRF_2153_Fighter,"ORCMINE_FIGHTER_01");
 	Wld_InsertNpc(STRF_2154_Fighter,"ORCMINE_FIGHTER_02");
@@ -895,13 +896,13 @@ func void DIA_OrcWarrior_MineCommander_GoShaht_info()
 	Wld_InsertNpc(STRF_2157_Fighter,"ORCMINE_FIGHTER_05");
 };
 
-instance DIA_OrcWarrior_MineCommander_FreeDeepShaht(C_Info)
+instance DIA_OrcWarrior_MineCommander_FreeDeepShaht (C_Info)
 {
 	npc = OrcWarrior_MineCommander;
 	condition = DIA_OrcWarrior_MineCommander_FreeDeepShaht_condition;
 	information = DIA_OrcWarrior_MineCommander_FreeDeepShaht_info;
 	permanent = FALSE;
-	description = "Со злом в глубокой шахте покончено.";
+	description = "The evil in the deep mine is finished. " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_FreeDeepShaht_condition()
@@ -915,16 +916,16 @@ func int DIA_OrcWarrior_MineCommander_FreeDeepShaht_condition()
 func void DIA_OrcWarrior_MineCommander_FreeDeepShaht_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_01");	//Со злом в глубокой шахте покончено.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_02");	//(удивленно) Человек быть точно уверен, что убить злой демон?
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_03");	//Если не веришь, можешь сам спуститься туда и проверить. Там никого нет!
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_04");	//В этом не быть необходимость! Ар Дагар верить человек.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_05");	//Он просто не понимать, как ему удалось это сделать.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_06");	//Человек воистину быть великий и бесстрашный воин! Ар Дагар большая честь говорить с ним.
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_07");	//Приятно это слышать.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_01 " );	// The evil in the deep mine is done.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_02 " );	// (surprised) Man be sure exactly what to kill the evil demon?
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_03 " );	// If you don't believe me, you can go down there and check it out yourself. There is nobody there!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_04 " );	// This shouldn't be necessary! Ar Dagar believe man.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_05 " );	// He just doesn't understand how he managed to do it.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_06 " );	// Man truly be a great and fearless warrior! Ar Dagar is an honor to speak with him.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_FreeDeepShaht_01_07 " );	// Nice to hear that.
 	MIS_LowLevel = LOG_Success;
 	Log_SetTopicStatus(TOPIC_LowLevel,LOG_Success);
-	B_LogEntry(TOPIC_LowLevel,"Я вернулся к Ар Дагару и рассказал о том, что мне удалось покончить с проклятьем орков.");
+	B_LogEntry(TOPIC_LowLevel, " I returned to Ar Dagar and told that I had managed to end the curse of the orcs. " );
 };
 
 instance DIA_OrcWarrior_MineCommander_WhatNow(C_Info)
@@ -933,7 +934,7 @@ instance DIA_OrcWarrior_MineCommander_WhatNow(C_Info)
 	condition = DIA_OrcWarrior_MineCommander_WhatNow_condition;
 	information = DIA_OrcWarrior_MineCommander_WhatNow_info;
 	permanent = FALSE;
-	description = "Теперь орки вновь смогут добывать магическую руду?";
+	description = " Are Orcs able to mine magic ore again? " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_WhatNow_condition()
@@ -946,12 +947,12 @@ func int DIA_OrcWarrior_MineCommander_WhatNow_condition()
 
 func void DIA_OrcWarrior_MineCommander_WhatNow_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_WhatNow_01_01");	//Теперь орки вновь смогут добывать магическую руду?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhatNow_01_02");	//Ар Дагар думать, что нет... Быть нельзя!
-	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_WhatNow_01_03");	//Но почему? Ведь нижний уровень шахты теперь свободен.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhatNow_01_04");	//Орки быть тогда очень глупый, что копать так глубоко шахта!
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhatNow_01_05");	//Ар Дагар не хотеть больше делать ошибки своих братов.
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_WhatNow_01_06");	//Ни один орк никогда не ступать больше туда! Иначе может случиться новый беда.
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_WhatNow_01_01 " );	// Will Orcs be able to mine magic ore again?
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhatNow_01_02 " );	// Ar Dagar to think that it is not... It is impossible to be!
+	AI_Output(other,self, " DIA_OrcWarrior_MineCommander_WhatNow_01_03 " );	// But why? After all, the lower level of the mine is now free.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhatNow_01_04 " );	// The orcs would be very stupid then, what to dig so deep into the mine!
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhatNow_01_05 " );	// Ar Dagar doesn't want to make the mistakes of his brothers anymore.
+	AI_Output(self,other, " DIA_OrcWarrior_MineCommander_WhatNow_01_06 " );	// No orc will ever set foot there again! Otherwise, a new problem may occur.
 };
 
 instance DIA_OrcWarrior_MineCommander_PICKPOCKET(C_Info)
@@ -961,7 +962,7 @@ instance DIA_OrcWarrior_MineCommander_PICKPOCKET(C_Info)
 	condition = DIA_OrcWarrior_MineCommander_pickpocket_condition;
 	information = DIA_OrcWarrior_MineCommander_pickpocket_info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его ключ)";
+	description = " (Try to steal his key) " ;
 };
 
 func int DIA_OrcWarrior_MineCommander_pickpocket_condition()
@@ -989,13 +990,13 @@ func void DIA_OrcWarrior_MineCommander_pickpocket_doit()
 		B_GiveThiefXP();
 		B_GiveInvItems(self,other,ItKe_ArDagar,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_LogEntry(TOPIC_ArDagarKey,"Я выкрал ключ у Ар Дагара! Думаю теперь, мне стоит вернуться к Гарсу.");
+		B_LogEntry(TOPIC_ArDagarKey, " I stole the key from Ar Dagar! I think I should go back to Gars now. " );
 		Info_ClearChoices(DIA_OrcWarrior_MineCommander_pickpocket);
 	}
 	else
 	{
 		B_Say(other,other,"$TOOHEAVYFORME");
-		Print("Необходимая ловкость: 100");
+		Print ( " Required Agility: 100 " );
 		Info_ClearChoices(DIA_OrcWarrior_MineCommander_pickpocket);
 	};
 };
@@ -1005,7 +1006,7 @@ func void DIA_OrcWarrior_MineCommander_pickpocket_back()
 	Info_ClearChoices(DIA_OrcWarrior_MineCommander_pickpocket);
 };
 
-//-----------------------------------------------------Вакур Шак----------------------------------------
+// ------------------------------------------------ -----Vakur Shak----------------------------------------
 
 var int VakurShakNeedGold;
 var int VakurShakNeedMoreGold;
@@ -1039,7 +1040,7 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_Hello(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_Hello_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_Hello_info;
 	permanent = FALSE;
-	description = "Привет тебе, зеленая морда.";
+	description = " Hello, green face. " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_Hello_condition()
@@ -1049,10 +1050,10 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_Hello_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_Hello_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_01");	//Привет тебе, зеленая морда.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_02");	//Человек...(грозно) Зачем приходить сюда? 
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_03");	//Или человек хотеть стать раб братов, как и остальные морра?
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_04");	//Не дождешься, орк.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_01 " );	// Hello, green muzzle.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_02 " );	// Man... (terribly) Why come here?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_03 " );	// Or does a human want to become a slave of the brothers, like the rest of the morra?
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_04 " );	// Can't wait, orc.
 };
 
 instance DIA_OrcWarrior_MineWatcher_Vakur_WhatDo(C_Info)
@@ -1061,7 +1062,7 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_WhatDo(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_info;
 	permanent = FALSE;
-	description = "Чем ты тут занимаешься?";
+	description = " What are you doing here? " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_condition()
@@ -1074,10 +1075,10 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_01_01");	//Чем ты тут занимаешься?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_01_02");	//Вакур Шак следить, чтобы рабы работать хорошо.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_01_03");	//Если работать плохо, Вакур Шак бить их!
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_01_04");	//Как все просто у тебя.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_01_01 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_01_02 " );	// Vakur Shak make sure the slaves work well.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_01_03 " );	// If the work is bad, Wakur Shak beat them!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_WhatDo_01_04 " );	// How easy it is for you.
 };
 
 instance DIA_OrcWarrior_MineWatcher_Vakur_DontLove(C_Info)
@@ -1086,7 +1087,7 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_DontLove(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_DontLove_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_DontLove_info;
 	permanent = FALSE;
-	description = "И много тут вас таких?";
+	description = " And how many of you are there? " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_DontLove_condition()
@@ -1099,19 +1100,19 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_DontLove_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_DontLove_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_DontLove_01_01");	//И много тут вас таких?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_DontLove_01_02");	//Братов быть много, людей быть мало.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_DontLove_01_03");	//Никто не сбежать!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_DontLove_01_01 " );	// And how many of you are there?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_DontLove_01_02 " );	// There will be many brothers, few people.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_DontLove_01_03 " );	// No one can escape!
 	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_DontLove_01_04");	//Само собой.
 };
 
-instance DIA_OrcWarrior_MineWatcher_Vakur_FerdRing(C_Info)
+instance DIA_OrcWarrior_MineWatcher_Vakur_FerdRing (C_Info)
 {
 	npc = OrcWarrior_MineWatcher_Vakur;
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_info;
 	permanent = FALSE;
-	description = "Эй, у меня к тебе одно дело.";
+	description = " Hey, I have something to do with you. " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_condition()
@@ -1124,20 +1125,20 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_01");	//Эй, у меня к тебе одно дело.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_01 " );	// Hey, I have one thing for you.
 	AI_PlayAni(self,"T_NO");
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_02");	//Вакур Шак не иметь дел с человек!
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_03");	//Он только говорить человек, что делать. Но не слушать его!
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_04");	//А если дело касается золота?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_05");	//Хммм...(задумчиво) Тогда человек давать его Вакур Шак и тот тогда слушать.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_06");	//И сколько же тебе надо?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_07");	//Много, много золота! Так много, чтобы Вакур Шак был очень счастлив.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_08");	//Говори точнее!
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_09");	//....(думает) Тридцать золотых самородков! 
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_10");	//Хороший у тебя аппетит. Но если по-другому нельзя, придется достать их для тебя.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_11");	//Человек быть не глупый, если понимать это.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_02 " );	// Wakur Shak don't deal with a man!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_03 " );	// He only tells people what to do. But don't listen to him!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_04 " );	// What about gold?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_05 " );	// Hmmm...(thoughtfully) Then the man give it to Vakur Shak and he then listen.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_06 " );	// And how much do you need?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_07 " );	// Lots and lots of gold! So much to make Vakur Shak very happy.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_08 " );	// Be precise!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_09 " );	// ....(thinks) Thirty gold nuggets!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_10 " );	// You have a good appetite. But if there is no other way, you will have to get them for you.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_FerdRing_01_11 " );	// A person is not stupid, if you understand this.
 	VakurShakNeedGold = TRUE;
-	B_LogEntry(TOPIC_FerdRing,"Этот орк Вакур Шак вообще отказался со мной говорить! Только золото заставит его выслушать меня, а именно тридцать золотых самородков. Да, у этого орка губа не дура...");
+	B_LogEntry(TOPIC_FerdRing, " That orc Vakur Shak refused to talk to me at all! Only gold will make him listen to me, namely thirty gold nuggets. Yes, this orc has a smart mouth... " );
 	AI_StopProcessInfos(self);
 };
 
@@ -1147,12 +1148,12 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_info;
 	permanent = FALSE;
-	description = "Вот твои тридцать самородков.";
+	description = " Here are your thirty nuggets. " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_condition()
 {
-	if((MIS_FerdRing == LOG_Running) && (VakurShakNeedGold == TRUE) && (Npc_HasItems(hero,ItMi_Addon_GoldNugget) >= 30))
+	if ((MIS_FerdRing == LOG_Running) && (VakurShakNeedGold ==  TRUE ) && (Npc_HasItems(hero,ItMi_Addon_GoldNugget) >=  30 ))
 	{
 		return TRUE;
 	};
@@ -1161,28 +1162,28 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_condition()
 func void DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_info()
 {
 	VakurShakNeedGoldCount = FALSE;
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_01");	//Вот твои тридцать самородков.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_01 " );	// Here are your thirty nuggets.
 	B_GiveInvItems(other,self,ItMi_Addon_GoldNugget,30);
 	Npc_RemoveInvItems(self,ItMi_Addon_GoldNugget,30);
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_02");	//Золото! Вакур Шак очень любить золото.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_03");	//Теперь человек может спросить, что он хотеть. Вакур Шак его будет слушать!
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_04");	//Мне нужно то кольцо, которое ты отобрал у раба Ферда.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_05");	//Какое еще быть кольцо?!
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_06");	//Простое серебряное кольцо! Ты что, никогда таких не видел?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_07");	//Аааа, Вакур Шак, кажется, понимать, о чем человек говорить...(доставая кольцо) Он иметь в виду эта вещь?
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_08");	//Да, оно самое. Отдай его мне!
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_09");	//(хохочет) Вакур Шак ничего просто так не даст глупый человек!
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_10");	//Ну хорошо, что ты за него хочешь?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_11");	//Вакур Шак думать, что человек знать это.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_12");	//Что, опять золото?!
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_13");	//Не опять золото! А много золото! Полсотни кусков золота...(жадно)
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_14");	//Ты с ума сошел, если просишь столько за обычное серебряное кольцо!
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_15");	//Человек сам решать, брать или нет! Вакур Шак сказать свой цена.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_16");	//Ну ты и наглец!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_02 " );	// Gold! Wakur Shak loves gold very much.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_03 " );	// Now the person can ask what he wants. Vakur Shak will listen to him!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_04 " );	// I need that ring you took from Slave Ferd.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_05 " );	// What else to be a ring?!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_06 " );	// A simple silver ring! Have you never seen these?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_07 " );	// Ahhh, Vakur Shak seems to understand what the man is talking about... (pulling out his ring) Does he mean this thing?
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_08 " );	// Yes, that's it. Give it to me!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_09 " );	// (laughs) Vakur Shak will not give anything just like that, a stupid person!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_10 " );	// Well, what do you want for him?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_11 " );	// Wakur Shak think that man know this.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_12 " );	// What, gold again?!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_13 " );	// Not gold again! And a lot of gold! Fifty pieces of gold ... (greedily)
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_14 " );	// You're crazy asking that much for a normal silver ring!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_15 " );	// The person himself decides whether to take it or not! Wakur Shak say your price.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_16 " );	// Well, you and impudent!
 	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNugget_01_17");	//Аррргггх...
 	VakurShakNeedMoreGold = TRUE;
 	VakurShakNeedGoldCount = 50;	
-	B_LogEntry(TOPIC_FerdRing,"Я принес Вакур Шаку тридцать золотых самородков и спросил его про кольцо Ферда. И тот заломил за него еще полсотни золотых самородков! И зачем я только с ним связался...");
+	B_LogEntry(TOPIC_FerdRing, " I brought Vakur Shak thirty gold nuggets and asked him about Ferd's ring. And he broke another fifty gold nuggets for him! And why did I only contact him... " );
 };
 
 instance DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount(C_Info)
@@ -1191,12 +1192,12 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_info;
 	permanent = FALSE;
-	description = "Может сойдемся на половине?";
+	description = " Maybe we can meet in half? " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_condition()
 {
-	if((MIS_FerdRing == LOG_Running) && (VakurShakNeedMoreGold == TRUE) && (VakurShakSellRing == FALSE) && (VakurShakNeedGoldCount >= 50))
+	if ((MIS_FerdRing == LOG_Running) && (VakurShakNeedMoreGold ==  TRUE ) && (VakurShakSellRing ==  FALSE ) && (VakurShakNeedGoldCount >=  50 ))
 	{
 		return TRUE;
 	};
@@ -1204,19 +1205,19 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_01_01");	//Может, сойдемся на половине?
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_01_01 " );	// Shall we meet in half?
 
 	if(RhetorikSkillValue[1] >= 65)
 	{
 		AI_PlayAni(self,"T_YES");
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_01_02");	//Хммм... Ну, хорошо! Но это быть последний цена Вакур Шака.
-		B_LogEntry(TOPIC_FerdRing,"Я сторговался с Вакур Шаком на двадцать пять золотых самородков.");
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_01_02 " );	// Hmmm... Well, good! But this will be the last price of Wakur Shaka.
+		B_LogEntry(TOPIC_FerdRing, " I bargained with Vakur Shak for twenty-five gold nuggets. " );
 		VakurShakNeedGoldCount = 25;
 	}
 	else
 	{
 		AI_PlayAni(self,"T_NO");
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_01_03");	//(злобно) Нет... ХАРАД!
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_01_03 " );	// (viciously) No... HARAD!
 	};
 };
 
@@ -1226,12 +1227,12 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_info;
 	permanent = FALSE;
-	description = "Вот, держи свое золото.";
+	description = " Here, keep your gold. " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_condition()
 {
-	if((MIS_FerdRing == LOG_Running) && (VakurShakNeedMoreGold == TRUE) && (Npc_HasItems(hero,ItMi_Addon_GoldNugget) >= VakurShakNeedGoldCount))
+	if ((MIS_FerdRing == LOG_Running) && (VakurShakNeedMoreGold ==  TRUE ) && (Npc_HasItems(hero,ItMi_Addon_GoldNugget) >= VakurShakNeedGoldCount))
 	{
 		return TRUE;
 	};
@@ -1239,42 +1240,42 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_01");	//Вот, держи свое золото.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_01 " );	// Here, keep your gold.
 	B_GiveInvItems(other,self,ItMi_Addon_GoldNugget,VakurShakNeedGoldCount);
 	Npc_RemoveInvItems(self,ItMi_Addon_GoldNugget,VakurShakNeedGoldCount);
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_02");	//(жадно) Золото быть хорошо. Вакур Шак быть очень довольный!
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_03");	//Теперь отдай мне то кольцо.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_04");	//ХАРАД! (хохочет) Вакур Шак быть очень умный! Он перехитрить человек.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_05");	//Тот быть очень глупый, если думать, что Вакур Шак отдать ему это кольцо.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_06");	//Так ты что, решил меня надуть?!
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_07");	//Жалкий морра! Тебе никогда не получить его.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_08");	//Ну что же, тогда мне придется нанести визит Ур-Траллу! Пускай он нас рассудит.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_09");	//(боязно) Ур-Тралл? Человек знать великий вождь?
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_10");	//А как ты думаешь, кто разрешил мне войти в эту шахту?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_11");	//КРОТАК! Человек не надо ходить к Ур-Тралл! Вакур Шак просто шутить.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_12");	//Вот, человек взять то кольцо! Только не надо ходить к великий вождь.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_02 " );	// (greedily) Gold be good. Vakur Shak be very pleased!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_03 " );	// Now give me that ring.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_04 " );	// HARAD! (laughs) Wakur Shak be very smart! He's outsmarting the man.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_05 " );	// He would be very stupid if he thought that Vakur Shak would give him this ring.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_06 " );	// So you decided to cheat me?!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_07 " );	// Pathetic morra! You will never get it.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_08 " );	// Well then, I'll have to pay a visit to Ur-Thrall! Let him judge us.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_09 " );	// (fearful) Ur-Thrall? Man to know the great leader?
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_10 " );	// Who do you think allowed me to enter this mine?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_11 " );	// SMART! Man don't have to go to Ur-Thrall! Wakur Shak is just kidding.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_12 " );	// Here, man take that ring! Just do not go to the great leader.
 	B_GiveInvItems(self,other,ItRi_Ferd,1);
 
 	if(RhetorikSkillValue[1] >= 65)
 	{
-		AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_13");	//Этого мало!
+		AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_13 " );	// Not enough!
 		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_14");	//Что?!
-		AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_15");	//За свое вранье тебе придется заплатить мне гораздо больше.
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_16");	//Аррргггх...(злобно) И что же человек хотеть от Вакур Шака?!
-		AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_17");	//Смотря, что ты можешь мне предложить.
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_18");	//Хммм...(задумчиво) У Вакур Шака есть зелье, которое делать морра сильным.
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_19");	//Он может дать его человек.
-		AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_20");	//Отлично. Давай его сюда.
+		AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_15 " );	// You'll have to pay me much more for your lies.
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_16 " );	// Arrrgggh...(viciously) And what does a human want from Vakur Shaka?!
+		AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_17 " );	// Depending on what you can offer me.
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_18 " );	// Hmmm...(thoughtfully) Vakur Shak has a potion that makes morra strong.
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_19 " );	// He can give it to people.
+		AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_20 " );	// Great. Give it here.
 		B_GiveInvItems(self,other,ItPo_Perm_STR,1);
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_21");	//(злобно) Аррргггх...
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_21 " );	// (evil) Arrrgggh...
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_22");	//Так-то лучше.
+		AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_22 " );	// That's better.
 	};
 
-	VakurShakSellRing = TRUE;
-	B_LogEntry(TOPIC_FerdRing,"Кольцо Ферда теперь у меня.");
+	VakurShakSellRing = TRUE ;
+	B_LogEntry(TOPIC_FerdRing, " I now have Ferd's Ring. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -1284,7 +1285,7 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_Perm(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_Perm_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_Perm_info;
 	permanent = TRUE;
-	description = "Зачем тебе столько золота, орк?";
+	description = " Why do you need so much gold, Orc? " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_Perm_condition()
@@ -1297,9 +1298,9 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_Perm_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_Perm_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_Perm_01_01");	//Зачем тебе столько золота, орк?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_Perm_01_02");	//Человек это мало касаться! 
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_Perm_01_03");	//Лучше человек идти, куда хотеть. Не говорить больше с Вакур Шак.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_Perm_01_01 " );	// Why do you need so much gold, orc?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_Perm_01_02 " );	// Man it's a little touch!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_Perm_01_03 " );	// Better man go where you want. Don't talk to Vakur Shak anymore.
 	AI_StopProcessInfos(self);
 };
 
@@ -1309,7 +1310,7 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_info;
 	permanent = FALSE;
-	description = "Мне нужна новая кирка.";
+	description = " I need a new pickaxe. " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_condition()
@@ -1322,13 +1323,13 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_01");	//Мне нужна новая кирка.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_02");	//Если человек хотеть новый кирка, то платить Вакур Шак золото.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_03");	//И сколько ты хочешь?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_04");	//Десять золотой самородок! И ни куска меньше...
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_05");	//Эй, не слишком ли много для обычной кирки?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_06");	//Вакур Шак думать, цена быть хороший. Хороший, чтобы ее продавать!
-	ElkNeedNewKirka = 3;
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_01 " );	// I need a new pickaxe.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_02 " );	// If a person want a new pickaxe, then pay Vakur Shak gold.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_03 " );	// And how much do you want?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_04 " );	// Ten gold nuggets! And not a piece less...
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_05 " );	// Hey, isn't that too much for a regular pickaxe?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_01_06 " );	// Wakur Shak think price be good. Good to sell!
+	ElkNeedNewKirka = 3 ;
 };
 
 instance DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done(C_Info)
@@ -1337,7 +1338,7 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_info;
 	permanent = TRUE;
-	description = "Продай мне новую кирку. (Цена: 10 золотых самородков)";
+	description = " Sell me a new pickaxe. (Price: 10 gold nuggets) " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_condition()
@@ -1350,25 +1351,25 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_01");	//Продай мне кирку.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_01 " );	// Sell me a pickaxe.
 
 	if(Npc_HasItems(hero,ItMi_Addon_GoldNugget) >= 10)
 	{
 		B_GiveInvItems(other,self,ItMi_Addon_GoldNugget,10);
 		Npc_RemoveInvItems(self,ItMi_Addon_GoldNugget,10);
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_02");	//Быть хороший сделка...(довольно) Теперь человек может забирать свой инструмент!
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_02 " );	// Be a good deal...(pretty) Now the man can pick up his instrument!
 		B_GiveInvItems(self,other,ItMw_Kirka_New,1);
-		ElkNeedNewKirka = 4;
+		ElkNeedNewKirka = 4 ;
 	}
 	else
 	{
 		AI_PlayAni(self,"T_NO");
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_03");	//У человек не быть достаточно золота!
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_04");	//Вакур Шак не давать ему ничего.
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_03 " );	// Humans don't have enough gold!
+		AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_04 " );	// Vakur Shak don't give him anything.
 	};
 };
 
-//-----------------------------------------------------Кор Шак----------------------------------------
+// ------------------------------------------------ -----Work Shack----------------------------------------------------------
 
 instance DIA_OrcWarrior_MineWatcher_Korshak_EXIT(C_Info)
 {
@@ -1397,7 +1398,7 @@ instance DIA_OrcWarrior_MineWatcher_Korshak_Hello(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Korshak_Hello_condition;
 	information = DIA_OrcWarrior_MineWatcher_Korshak_Hello_info;
 	permanent = FALSE;
-	description = "Ты кто?";
+	description = " Who are you? " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Korshak_Hello_condition()
@@ -1408,11 +1409,11 @@ func int DIA_OrcWarrior_MineWatcher_Korshak_Hello_condition()
 func void DIA_OrcWarrior_MineWatcher_Korshak_Hello_info()
 {
 	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_01");	//Ты кто?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_02");	//Меня зовут Кор Шак, человек...
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_03");	//Я слежу за тем, чтобы рабы тут не сидели без дела, а добывали руду.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_04");	//Хммм... Для орка ты довольно неплохо говоришь по-человечески.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_05");	//Кор Шак долго учить человеческий язык.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_06");	//Хорошо понимать своего врага значит не меньше, чем хорошо сражаться с ним.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_02 " );	// My name is Kor Shak, human...
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_03 " );	// I make sure that the slaves do not sit idle here, but mine the ore.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_04 " );	// Hmmm... For an orc, you speak pretty good human.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_05 " );	// Kor Shak long time to learn human language.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_Hello_01_06 " );	// Knowing your enemy well is just as important as fighting them well.
 };
 
 instance DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak(C_Info)
@@ -1421,7 +1422,7 @@ instance DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_condition;
 	information = DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_info;
 	permanent = FALSE;
-	description = "Где ты так хорошо научился говорить?";
+	description = " Where did you learn to speak so well? " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_condition()
@@ -1434,10 +1435,10 @@ func int DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_01_01");	//Где ты так хорошо научился говорить?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_01_02");	//Кор Шак долго находился в плену у людей! Был их рабом на протяжении многих зим.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_01_03");	//Он слушал люди и учился говорить, как они.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_01_04");	//Понятно.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_01_01 " );	// Where did you learn to speak so well?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_01_02 " );	// Kor Shak was held captive by humans for a long time! Was their slave for many winters.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_01_03 " );	// He listened to people and learned to speak like them.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeak_01_04 " );	// Got it.
 };
 
 instance DIA_OrcWarrior_MineWatcher_Korshak_KrowBook(C_Info)
@@ -1446,7 +1447,7 @@ instance DIA_OrcWarrior_MineWatcher_Korshak_KrowBook(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_condition;
 	information = DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_info;
 	permanent = FALSE;
-	description = "Я слышал, у тебя есть дневник одного раба.";
+	description = " I heard you have a diary of a slave. " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_condition()
@@ -1459,16 +1460,16 @@ func int DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_01");	//Я слышал, у тебя есть дневник одного раба.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_02");	//Да, человек прав...
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_03");	//Кор Шак забрать эта книга для себя, но никому ее больше не отдавать.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_04");	//А зачем она тебе?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_05");	//Кор Шак думает, что сможет научиться лучше говорить, если будет читать эту книгу.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_06");	//И как успехи?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_07");	//Пока быть плохо... Кор Шак мало пока понимает, что там написано.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_08");	//Но думает, что если он долго будет ее читать, то у него все получаться.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_09");	//Что-то я в этом сомневаюсь.
-	B_LogEntry(TOPIC_KrowBook,"Кор Шак забрал себе дневник Кроу, чтобы научится лучше говорить по-человечески. Довольно странное желание для орка. Надо как-то помочь ему в этом, если я хочу заполучить дневник Кроу обратно. Возможно, ему поможет какая-нибудь книга?");
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_01 " );	// I heard you have a diary of a slave.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_02 " );	// Yes, the man is right...
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_03 " );	// Kor Shak take this book for himself, but don't give it to anyone else.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_04 " );	// Why do you need it?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_05 " );	// Kor Shak thinks he can learn to speak better if he reads this book.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_06 " );	// And how are you doing?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_07 " );	// It'll be bad for now... Kor Shak doesn't understand what is written there yet.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_08 " );	// But he thinks that if he reads it for a long time, then he will succeed.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBook_01_09 " );	// Something I doubt it.
+	B_LogEntry(TOPIC_KrowBook, " Kor Shak took Crowe's diary to learn to speak better. Quite a strange desire for an orc. I need to help him somehow if I want to get Krow's diary back. Maybe someone will help him book? " );
 };
 
 instance DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack(C_Info)
@@ -1477,12 +1478,12 @@ instance DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_condition;
 	information = DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_info;
 	permanent = FALSE;
-	description = "У меня есть к тебе предложение получше.";
+	description = " I have a better offer for you. " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_condition()
 {
-	if((MIS_KrowBook == LOG_Running) && (Npc_KnowsInfo(hero,DIA_OrcWarrior_MineWatcher_Korshak_KrowBook) == TRUE) && (Npc_HasItems(hero,ITWR_RHETORIKBOOK) >= 1))
+	if ((MIS_KrowBook ​​== LOG_Running) && (Npc_KnowsInfo(hero, DIA_OrcWarrior_MineWatcher_Korshak_KrowBook) ==  TRUE ) && (Npc_HasItems(hero, ITWR_RHETORICBOOK ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -1491,25 +1492,25 @@ func int DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_condition()
 func void DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_01");	//У меня есть к тебе предложение получше.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_02");	//О чем это человек говорит?
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_03");	//Смотри, это учебник риторики! Он позволит тебе куда лучше понять язык людей.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_04");	//(с интересом) У человека есть еще одна книга? А что он хочет за нее?
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_05");	//Давай меняться. Я тебе эту книгу, а ты мне тот дневник.
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_06");	//Соглашайся, орк. Поверь, это честная сделка!
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_07");	//Хммм...(задумчиво) Ну хорошо! Кор Шак согласен меняться.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_08");	//Но если Кор Шаку не понравится книга человека, он не давать ему тогда ничего!
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_09");	//Лучше взгляни на нее сам.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_01 " );	// I have a better offer for you.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_02 " );	// What is this person talking about?
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_03 " );	// Look, it's a rhetoric textbook! It will allow you to understand the language of people much better.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_04 " );	// (with interest) Does the person have another book? What does he want for her?
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_05 " );	// Let's change. I give you this book, and you give me that diary.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_06 " );	// Agree, orc. Trust me, it's a fair deal!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_07 " );	// Hmmm... (thoughtfully) Well, well! Kor Shak agrees to change.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_08 " );	// But if Kor Shak doesn't like a man's book, he won't give him anything then!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_09 " );	// Better take a look at it yourself.
 	B_GiveInvItems(other,self,ITWR_RHETORIKBOOK,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_10");	//КРОДАР КАР! УР ТАР БАР!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_10 " );	// KRODAR CAR! UR TAR BAR!
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_11");	//(довольно) Кор Шак думает, это быть очень интересная книга. Он даже понимать, что тут писать люди!
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_12");	//Вот и наслаждайся. Но сначала верни мне дневник.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_13");	//Держи, человек! Забирать его. Он больше не нужен Кор Шак!
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_11 " );	// (pretty) Kor Shak thinks this is going to be a very interesting book. He even understand what people write here!
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_12 " );	// Here, enjoy. But first, give me back the diary.
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_13 " );	// Hold on, man! Pick him up. He no longer needs Kor Shak!
 	B_GiveInvItems(self,other,ItWr_KrowBook,1);
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_14");	//С тобой приятно иметь дело.
-	B_LogEntry(TOPIC_KrowBook,"Я обменял у Кор Шака учебник риторики на дневник Кроу. Пора вернуть его законному владельцу.");
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_KrowBookBack_01_14 " );	// It's a pleasure doing business with you.
+	B_LogEntry(TOPIC_KrowBook, " I traded Kor Shaq's rhetoric book for Crowe's diary. Time to return it to its rightful owner. " );
 };
 
 instance DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore(C_Info)
@@ -1518,7 +1519,7 @@ instance DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_condition;
 	information = DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_info;
 	permanent = TRUE;
-	description = "Ну и как тебе та книга?";
+	description = " How do you like that book? " ;
 };
 
 func int DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_condition()
@@ -1531,12 +1532,12 @@ func int DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_condition()
 
 func void DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_info()
 {
-	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_01_01");	//Ну и как тебе та книга?
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_01_02");	//Очень интересная! Кор Шак благодарит человек за нее.
+	AI_Output(other,self, " DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_01_01 " );	// Well, how do you like that book?
+	AI_Output(self,other, " DIA_OrcWarrior_MineWatcher_Korshak_GoodSpeakMore_01_02 " );	// Very interesting! Kor Shak thanks the man for her.
 	AI_PlayAni(self,"T_GREETGRD");
 };
 
-//-----------------------------------------------------Орк охраник рядом с Нутсом----------------------------------------
+// ------------------------------------------------ -----Orc guard next to Nuts----------------------------------------
 
 
 instance DIA_Orc_8208_MineGuard_EXIT(C_Info)
@@ -1580,8 +1581,8 @@ func int DIA_Orc_8208_MineGuard_hello_condition()
 func void DIA_Orc_8208_MineGuard_hello_info()
 {
 	AI_PlayAni(self,"T_GETLOST2");
-	AI_Output(self,other,"DIA_Orc_8208_MineGuard_hello_01_01");	//(гневно) КРАТУК КАР ДРАГ БАР КИРАК! ХАРАД МОРРА ТАР!
-	AI_Output(other,self,"DIA_Orc_8208_MineGuard_hello_01_02");	//Эммм... Что ты сказал?
+	AI_Output(self,other, " DIA_Orc_8208_MineGuard_hello_01_01 " );	// (angrily) CRATUK CAR DRAG BAR KIRACK! HARAD MORRA TAR!
+	AI_Output(other,self, " DIA_Orc_8208_MineGuard_hello_01_02 " );	// Umm... What did you say?
 
 	if(MIS_RemoveOrc == FALSE)
 	{
@@ -1595,7 +1596,7 @@ instance DIA_Orc_8208_MineGuard_RemoveOrc(C_Info)
 	condition = DIA_Orc_8208_MineGuard_RemoveOrc_condition;
 	information = DIA_Orc_8208_MineGuard_RemoveOrc_info;
 	permanent = FALSE;
-	description = "Тебя вызывает к себе Ар Дагар!";
+	description = " Ar Dagar is summoning you! " ;
 };
 
 func int DIA_Orc_8208_MineGuard_RemoveOrc_condition()
@@ -1608,12 +1609,12 @@ func int DIA_Orc_8208_MineGuard_RemoveOrc_condition()
 
 func void DIA_Orc_8208_MineGuard_RemoveOrc_info()
 {
-	AI_Output(other,self,"DIA_Orc_8208_MineGuard_RemoveOrc_01_01");	//Тебя вызывает к себе Ар Дагар!
-	AI_PlayAni(self,"T_DONTKNOW");
-	AI_Output(self,other,"DIA_Orc_8208_MineGuard_RemoveOrc_01_02");	//РАТ ТОР КУ БАР ХАК НОР...
-	AI_Output(other,self,"DIA_Orc_8208_MineGuard_RemoveOrc_01_03");	//Если честно, я не понимаю, что ты там бормочешь.
-	AI_Output(other,self,"DIA_Orc_8208_MineGuard_RemoveOrc_01_04");	//Но если не хочешь его разозлить, лучше бы тебе поторопиться.
-	AI_Output(self,other,"DIA_Orc_8208_MineGuard_RemoveOrc_01_05");	//МОРРА ДАХ ТУП ГРОН САКУР ДАР...
+	AI_Output(other,self, " DIA_Orc_8208_MineGuard_RemoveOrc_01_01 " );	// Ar Dagar summons you!
+	AI_PlayAni(self, " T_DONTKNOW " );
+	AI_Output(self,other, " DIA_Orc_8208_MineGuard_RemoveOrc_01_02 " );	// RAT TOR KU BAR HAK NOR...
+	AI_Output(other,self, " DIA_Orc_8208_MineGuard_RemoveOrc_01_03 " );	// To be honest, I don't understand what you're muttering.
+	AI_Output(other,self, " DIA_Orc_8208_MineGuard_RemoveOrc_01_04 " );	// But if you don't want to piss him off, you'd better hurry.
+	AI_Output(self,other, " DIA_Orc_8208_MineGuard_RemoveOrc_01_05 " );	// MORRA DAH TUP GRON SAKUR DAR...
 	RemoveOrcDone = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -1640,9 +1641,9 @@ func void DIA_Orc_8208_MineGuard_Angry_info()
 	AI_ReadyMeleeWeapon(self);
 	Snd_Play("ORC_Angry");
 	AI_PlayAni(self,"T_IGETYOU");
-	AI_Output(self,other,"DIA_Orc_8208_MineGuard_Angry_01_01");	//МОРРА КРАШ ДАР СУР МЕР! АР ДАГАР КАР БИТ МОРРА.
-	AI_Output(other,self,"DIA_Orc_8208_MineGuard_Angry_01_02");	//Ну да, перепутал малость. С кем не бывает!
-	AI_Output(self,other,"DIA_Orc_8208_MineGuard_Angry_01_03");	//ХАРАД КАР ВАК ШАР ТУГ! КРОТАК НАБАР...
+	AI_Output(self,other, " DIA_Orc_8208_MineGuard_Angry_01_01 " );	// MORRA CRASH DAR SUR MER! AR DAGAR CAR BIT MORRA.
+	AI_Output(other,self, " DIA_Orc_8208_MineGuard_Angry_01_02 " );	// Well, yes, I mixed up a little. It happens to everyone!
+	AI_Output(self,other, " DIA_Orc_8208_MineGuard_Angry_01_03 " );	// HARAD KAR VAK SHAR TUG! KROTAK NABAR...
 	AI_RemoveWeapon(self);
 	AI_StopProcessInfos(self);
 };
@@ -1667,11 +1668,11 @@ func int DIA_Orc_8208_MineGuard_Angry_Perm_condition()
 func void DIA_Orc_8208_MineGuard_Angry_Perm_info()
 {
 	AI_PlayAni(self,"T_GETLOST");
-	AI_Output(self,other,"DIA_Orc_8208_MineGuard_Angry_Perm_01_01");	//МОРРА ХАРАД ТАР...
+	AI_Output(self,other, " DIA_Orc_8208_MineGuard_Angry_Perm_01_01 " );	// MORRA HARAD TAR...
 	AI_StopProcessInfos(self);
 };
 
-//-----------------------------------------------------Умрак----------------------------------------
+// ------------------------------------------------ -----Twilight--------------------------------------------------------
 
 instance DIA_Orc_8210_Umrak_EXIT(C_Info)
 {
@@ -1713,11 +1714,11 @@ func int DIA_Orc_8210_Umrak_PreHello_condition()
 
 func void DIA_Orc_8210_Umrak_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -1762,19 +1763,19 @@ func void DIA_Orc_8210_Umrak_PreHello_info()
 	}
 	else
 	{
-		random = Hlp_Random(3);
+		random = Hlp_Random( 3 );
 
 		if(random == 0)
 		{
-			AI_Output(self,other,"DIA_Orc_8210_Umrak_PreHello_01_01");	//Пошел отсюда! А то изрублю тебя на куски...
+			AI_Output(self,other, " DIA_Orc_8210_Umrak_PreHello_01_01 " );	// Get out of here! I'll cut you to pieces...
 		}
 		else if(random == 1)
 		{
-			AI_Output(self,other,"DIA_Orc_8210_Umrak_PreHello_01_02");	//Не сейчас, морра.
+			AI_Output(self,other, " DIA_Orc_8210_Umrak_PreHello_01_02 " );	// Not now, morra.
 		}	
 		else if(random == 2)
 		{
-			AI_Output(self,other,"DIA_Orc_8210_Umrak_PreHello_01_03");	//У меня много дел.
+			AI_Output(self,other, " DIA_Orc_8210_Umrak_PreHello_01_03 " );	// I have a lot to do.
 		};
 	};
 
@@ -1800,19 +1801,19 @@ func int DIA_Orc_8210_Umrak_Hello_condition()
 
 func void DIA_Orc_8210_Umrak_Hello_info()
 {
-	Wld_SendTrigger("EVT_ORCARENA_01");
+	Wld_SendTrigger( " EVT_ORCARENA_01 " );
 	AI_PlayAni(self,"T_GREETGRD");
 	AI_ReadyMeleeWeapon(self);
 	AI_Output(self,other,"DIA_Orc_8210_Umrak_Hello_01_00");	//Хорошо!
-	AI_Output(self,other,"DIA_Orc_8210_Umrak_Hello_01_01");	//Наконец-то достойный противник.
-	AI_Output(self,other,"DIA_Orc_8210_Umrak_Hello_01_02");	//Я раздавлю тебя как червя...
+	AI_Output(self,other, " DIA_Orc_8210_Umrak_Hello_01_01 " );	// Finally a worthy opponent.
+	AI_Output(self,other, " DIA_Orc_8210_Umrak_Hello_01_02 " );	// I'll crush you like a worm...
 	UmrakIsFight = TRUE;
 	KnowAboutUmrak = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,0);
 };
 
-//-------------------------------Уртрок----------------------------
+// ------------------------------Urthrock---------------- ------------
 
 instance DIA_Orc_8211_UrTrok_EXIT(C_Info)
 {
@@ -1854,11 +1855,11 @@ func int DIA_Orc_8211_UrTrok_PreHello_condition()
 
 func void DIA_Orc_8211_UrTrok_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -1903,15 +1904,15 @@ func void DIA_Orc_8211_UrTrok_PreHello_info()
 	}
 	else
 	{
-		random = Hlp_Random(3);
+		random = Hlp_Random( 3 );
 
 		if(random == 0)
 		{
-			AI_Output(self,other,"DIA_Orc_8211_UrTrok_PreHello_01_01");	//Орак Шака!
+			AI_Output(self,other, " DIA_Orc_8211_UrTrok_PreHello_01_01 " );	// Orak Shaka!
 		}
 		else if(random == 1)
 		{
-			AI_Output(self,other,"DIA_Orc_8211_UrTrok_PreHello_01_02");	//Бейся с честью...
+			AI_Output(self,other, " DIA_Orc_8211_UrTrok_PreHello_01_02 " );	// Fight with honor...
 		}	
 		else if(random == 2)
 		{
@@ -1941,18 +1942,18 @@ func int DIA_Orc_8211_UrTrok_Hello_condition()
 
 func void DIA_Orc_8211_UrTrok_Hello_info()
 {
-	Wld_SendTrigger("EVT_ORCARENA_01");
+	Wld_SendTrigger( " EVT_ORCARENA_01 " );
 	AI_PlayAni(self,"T_GREETGRD");
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Orc_8211_UrTrok_Hello_01_01");	//Никто не может победить меня, морра.
-	AI_Output(self,other,"DIA_Orc_8211_UrTrok_Hello_01_02");	//Сейчас я тебя на куски порву!
+	AI_Output(self,other, " DIA_Orc_8211_UrTrok_Hello_01_01 " );	// No one can defeat me, morra.
+	AI_Output(self,other, " DIA_Orc_8211_UrTrok_Hello_01_02 " );	// Now I'll tear you to pieces!
 	UrTrokIsFight = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,0);
 };
 
 
-//-------------------------------Турук----------------------------
+// -------------------------------Constant---------------- ------------
 
 instance DIA_Orc_8212_Turuk_EXIT(C_Info)
 {
@@ -1994,11 +1995,11 @@ func int DIA_Orc_8212_Turuk_PreHello_condition()
 
 func void DIA_Orc_8212_Turuk_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -2043,15 +2044,15 @@ func void DIA_Orc_8212_Turuk_PreHello_info()
 	}
 	else
 	{
-		random = Hlp_Random(3);
+		random = Hlp_Random( 3 );
 
 		if(random == 0)
 		{
-			AI_Output(self,other,"DIA_Orc_8212_Turuk_PreHello_01_01");	//Хорошее оружие должно быть острым!
+			AI_Output(self,other, " DIA_Orc_8212_Turuk_PreHello_01_01 " );	// A good weapon should be sharp!
 		}
 		else if(random == 1)
 		{
-			AI_Output(self,other,"DIA_Orc_8212_Turuk_PreHello_01_02");	//Проваливай!
+			AI_Output(self,other, " DIA_Orc_8212_Turuk_PreHello_01_02 " );	// Get lost!
 		}	
 		else if(random == 2)
 		{
@@ -2073,7 +2074,7 @@ instance DIA_Orc_8212_Turuk_Hello(C_Info)
 
 func int DIA_Orc_8212_Turuk_Hello_condition()
 {
-	if((ArenaBattle_03 == TRUE) && (ArenaBattle_03_Won == FALSE) && (ArenaBattle_03_Lost == FALSE) && (TurukIsFight == FALSE) && (Npc_GetDistToWP(hero,"ORC_CITY_ARENA_HERO") < 200) && (Npc_GetDistToWP(self,"ORC_CITY_ARENA_01") < 200))
+	if ((ArenaBattle_03 ==  TRUE ) && (ArenaBattle_03_Won ==  FALSE ) && (ArenaBattle_03_Lost ==  FALSE ) && (TurkIsFight ==  FALSE ) && ( Npc_GetDistToWP (hero, " ORC_CITY_ARENA_HERO " ) <  200 ) && ( Npc_Get01 " ) <  200 ))
 	{
 		return TRUE;
 	};
@@ -2081,17 +2082,17 @@ func int DIA_Orc_8212_Turuk_Hello_condition()
 
 func void DIA_Orc_8212_Turuk_Hello_info()
 {
-	Wld_SendTrigger("EVT_ORCARENA_01");
+	Wld_SendTrigger( " EVT_ORCARENA_01 " );
 	AI_PlayAni(self,"T_GREETGRD");
 	AI_ReadyMeleeWeapon(self);
 	AI_Output(self,other,"DIA_Orc_8212_Turuk_Hello_01_01");	//Глупец!
-	AI_Output(self,other,"DIA_Orc_8212_Turuk_Hello_01_02");	//Ты действительно считаешь, что сможешь победить меня?
+	AI_Output(self,other, " DIA_Orc_8212_Turuk_Hello_01_02 " );	// Do you really think you can beat me?
 	TurukIsFight = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,0);
 };
 
-//-------------------------------Гуннок----------------------------
+// -------------------------------Gunnok---------------- ------------
 
 instance DIA_Orc_8213_Gunnok_EXIT(C_Info)
 {
@@ -2114,7 +2115,7 @@ func void DIA_Orc_8213_Gunnok_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Orc_8213_Gunnok_PreHello(C_Info)
+instance DIA_Orc_8213_Gunnok_PreHello (C_Info) .
 {
 	npc = STRF_8148_Gunnok;
 	condition = DIA_Orc_8213_Gunnok_PreHello_condition;
@@ -2133,11 +2134,11 @@ func int DIA_Orc_8213_Gunnok_PreHello_condition()
 
 func void DIA_Orc_8213_Gunnok_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -2182,19 +2183,19 @@ func void DIA_Orc_8213_Gunnok_PreHello_info()
 	}
 	else
 	{
-		random = Hlp_Random(3);
+		random = Hlp_Random( 3 );
 
 		if(random == 0)
 		{
-			AI_Output(self,other,"DIA_Orc_8213_Gunnok_PreHello_01_01");	//Ты слишком болтлив, морра.
+			AI_Output(self,other, " DIA_Orc_8213_Gunnok_PreHello_01_01 " );	// You're too talkative, morra.
 		}
 		else if(random == 1)
 		{
-			AI_Output(self,other,"DIA_Orc_8213_Gunnok_PreHello_01_02");	//Орак Шака!
+			AI_Output(self,other, " DIA_Orc_8213_Gunnok_PreHello_01_02 " );	// Orak Shaka!
 		}	
 		else if(random == 2)
 		{
-			AI_Output(self,other,"DIA_Orc_8213_Gunnok_PreHello_01_03");	//Иди отсюда.
+			AI_Output(self,other, " DIA_Orc_8213_Gunnok_PreHello_01_03 " );	// Get out of here.
 		};
 	};
 
@@ -2220,16 +2221,16 @@ func int DIA_Orc_8213_Gunnok_Hello_condition()
 
 func void DIA_Orc_8213_Gunnok_Hello_info()
 {
-	Wld_SendTrigger("EVT_ORCARENA_01");
+	Wld_SendTrigger( " EVT_ORCARENA_01 " );
 	AI_PlayAni(self,"T_GREETGRD");
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Orc_8213_Gunnok_Hello_01_01");	//Да я тебя размажу!
+	AI_Output(self,other, " DIA_Orc_8213_Gunnok_Hello_01_01 " );	// Yes, I'll smear you!
 	GunnokIsFight = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,0);
 };
 
-//-------------------------------Даграт----------------------------
+// ------------------------------ Dagrat---------------- ------------
 
 instance DIA_Orc_8214_Dagrag_EXIT(C_Info)
 {
@@ -2252,7 +2253,7 @@ func void DIA_Orc_8214_Dagrag_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Orc_8214_Dagrag_PreHello(C_Info)
+instance DIA_Orc_8214_Dagrag_PreHello (C_Info) .
 {
 	npc = STRF_8147_Dagrag;
 	condition = DIA_Orc_8214_Dagrag_PreHello_condition;
@@ -2271,11 +2272,11 @@ func int DIA_Orc_8214_Dagrag_PreHello_condition()
 
 func void DIA_Orc_8214_Dagrag_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -2320,19 +2321,19 @@ func void DIA_Orc_8214_Dagrag_PreHello_info()
 	}
 	else
 	{
-		random = Hlp_Random(3);
+		random = Hlp_Random( 3 );
 
 		if(random == 0)
 		{
-			AI_Output(self,other,"DIA_Orc_8214_Dagrag_PreHello_01_01");	//Ищещь проблем на свою голову?
+			AI_Output(self,other, " DIA_Orc_8214_Dagrag_PreHello_01_01 " );	// Looking for problems on your head?
 		}
 		else if(random == 1)
 		{
-			AI_Output(self,other,"DIA_Orc_8214_Dagrag_PreHello_01_02");	//Крепче бей!
+			AI_Output(self,other, " DIA_Orc_8214_Dagrag_PreHello_01_02 " );	// Hit hard!
 		}	
 		else if(random == 2)
 		{
-			AI_Output(self,other,"DIA_Orc_8214_Dagrag_PreHello_01_03");	//Орак Шака!
+			AI_Output(self,other, " DIA_Orc_8214_Dagrag_PreHello_01_03 " );	// Orak Shaka!
 		};
 	};
 
@@ -2358,16 +2359,16 @@ func int DIA_Orc_8214_Dagrag_Hello_condition()
 
 func void DIA_Orc_8214_Dagrag_Hello_info()
 {
-	Wld_SendTrigger("EVT_ORCARENA_01");
+	Wld_SendTrigger( " EVT_ORCARENA_01 " );
 	AI_PlayAni(self,"T_GREETGRD");
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Orc_8214_Dagrag_Hello_01_01");	//Ну, покажи, чего ты стоишь, морра...
+	AI_Output(self,other, " DIA_Orc_8214_Dagrag_Hello_01_01 " );	// Well, show what you're worth, morra...
 	DagragIsFight = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,0);
 };
 
-//-------------------------------Ур Кан----------------------------
+// -------------------------------Ur Kahn--------------- -------------
 
 instance DIA_Orc_8215_Kan_EXIT(C_Info)
 {
@@ -2392,13 +2393,13 @@ func void DIA_Orc_8215_Kan_exit_info()
 
 var int UrKanFirstTime;
 
-instance DIA_Orc_8215_Kan_PreHello(C_Info)
+instance DIA_Orc_8215_Your_PreHello (C_Info);
 {
 	npc = Orc_8215_Kan;
 	condition = DIA_Orc_8215_Kan_PreHello_condition;
-	information = DIA_Orc_8215_Kan_PreHello_info;
+	information = DIA_Orc_8215_Your_PreHello_info;
 	permanent = TRUE;
-	description = "Привет тебе, орк!";
+	description = " Hello Orc! " ;
 
 };
 
@@ -2412,18 +2413,18 @@ func int DIA_Orc_8215_Kan_PreHello_condition()
 
 func void DIA_Orc_8215_Kan_PreHello_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_PreHello_01_00");	//Привет тебе, орк!
+	AI_Output(other,self, " DIA_Orc_8215_Kan_PreHello_01_00 " );	// Hello, orc!
 
 	if(UrKanFirstTime == FALSE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_PreHello_01_01");	//КОР ГАР! ТУР КАР УЛУ МУЛУ ГОР...
-		AI_Output(other,self,"DIA_Orc_8215_Kan_PreHello_01_02");	//Я тебя не понимаю!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_PreHello_01_01 " );	// COR GAR! TOUR CAR ULU MULU M...
+		AI_Output(other,self, " DIA_Orc_8215_Kan_PreHello_01_02 " );	// I don't understand you!
 		NeedKnowOrcLang = TRUE;
 		UrKanFirstTime = TRUE;
 	};
 
-	AI_Output(self,other,"DIA_Orc_8215_Kan_PreHello_01_03");	//ДАБАР КАРАД ГОР ТАК НИР ВАК.
-	AI_Output(other,self,"DIA_Orc_8215_Kan_PreHello_01_04");	//Ах, это бесполезно! Сначала надо выучить ваш язык.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_PreHello_01_03 " );	// DABAR KARAD GOR TAK NIR VAK.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_PreHello_01_04 " );	// Ah, it's useless! First you need to learn your language.
 	AI_StopProcessInfos(self);
 };
 
@@ -2447,11 +2448,11 @@ func int DIA_Orc_8215_Kan_Hello_condition()
 func void DIA_Orc_8215_Kan_Hello_info()
 {
 	AI_PlayAni(self,"T_GREETGRD");
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Hello_01_01");	//КОР ГАР! Человек... Я видеть, ты носить Улу-Мулу.
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Hello_01_03");	//И что с того?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Hello_01_02");	//Я думать, что человек быть очень сильный воин, если у него есть Улу-Мулу.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Hello_01_04");	//А раз так, то человек может тут сражаться с другими воинами, чтобы получать много честь.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Hello_01_05");	//Когда много честь, все браты уважать человек.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Hello_01_01 " );	// COR GAR! Man... I see you wearing Ulu-Mulu.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Hello_01_03 " );	// So what?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Hello_01_02 " );	// I think that a man be a very strong warrior if he has Ulu-Mulu.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Hello_01_04 " );	// And if so, then a person can fight other warriors here to get a lot of honor.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Hello_01_05 " );	// When a lot of honor, all brothers respect the person.
 };
 
 instance DIA_Orc_8215_Kan_WhoYou(C_Info)
@@ -2460,7 +2461,7 @@ instance DIA_Orc_8215_Kan_WhoYou(C_Info)
 	condition = DIA_Orc_8215_Kan_WhoYou_condition;
 	information = DIA_Orc_8215_Kan_WhoYou_info;
 	permanent = FALSE;
-	description = "Ты кто?";
+	description = " Who are you? " ;
 };
 
 func int DIA_Orc_8215_Kan_WhoYou_condition()
@@ -2474,10 +2475,10 @@ func int DIA_Orc_8215_Kan_WhoYou_condition()
 func void DIA_Orc_8215_Kan_WhoYou_info()
 {
 	AI_Output(other,self,"DIA_Orc_8215_Kan_WhoYou_01_01");	//Ты кто?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_WhoYou_01_02");	//Мое звать Ур Кан, человек.
-	AI_Output(other,self,"DIA_Orc_8215_Kan_WhoYou_01_03");	//А что ты тут делаешь?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_WhoYou_01_04");	//Ур Кан следить, чтобы его воины всегда быть готов к бой.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_WhoYou_01_05");	//Быть сильный! Много тренироваться, мало спать...
+	AI_Output(self,other, " DIA_Orc_8215_Kan_WhoYou_01_02 " );	// My name is Ur Kahn, human.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_WhoYou_01_03 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_WhoYou_01_04 " );	// Ur Kahn see to it that his warriors are always ready for battle.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_WhoYou_01_05 " );	// Be strong! Exercise a lot, sleep a little...
 };
 
 instance DIA_Orc_8215_Kan_Place(C_Info)
@@ -2486,7 +2487,7 @@ instance DIA_Orc_8215_Kan_Place(C_Info)
 	condition = DIA_Orc_8215_Kan_Place_condition;
 	information = DIA_Orc_8215_Kan_Place_info;
 	permanent = FALSE;
-	description = "А что это вообще за место?";
+	description = " What is this place anyway? " ;
 };
 
 func int DIA_Orc_8215_Kan_Place_condition()
@@ -2499,21 +2500,21 @@ func int DIA_Orc_8215_Kan_Place_condition()
 
 func void DIA_Orc_8215_Kan_Place_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Place_01_01");	//А что это вообще за место?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Place_01_02");	//Тут быть великий арена орков.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Place_01_03");	//Могучий воин здесь сражаться между собой за честь, за право называться Мор Дар!
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Place_01_04");	//Мор Дар?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Place_01_05");	//На язык братов означать самый лучший, самый сильный воин орков. Много честь, много уважения!
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Place_01_06");	//А, понимаю.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Place_01_01 " );	// What is this place anyway?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Place_01_02 " );	// Here be the great arena of the orcs.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Place_01_03 " );	// A mighty warrior is here to fight among themselves for honor, for the right to be called Mor Dar!
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Place_01_04 " );	// Mor Dar?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Place_01_05 " );	// In the language of the brothers, mean the best, strongest orc warrior. Much honor, much respect!
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Place_01_06 " );	// Ah, I understand.
 };
 
-instance DIA_Orc_8215_Kan_MorDar(C_Info)
+instance DIA_Orc_8215_Kan_MorDar (C_Info)
 {
 	npc = Orc_8215_Kan;
 	condition = DIA_Orc_8215_Kan_MorDar_condition;
-	information = DIA_Orc_8215_Kan_MorDar_info;
+	info = DIA_Orc_8215_Kan_MorDar_info;
 	permanent = FALSE;
-	description = "Кто сейчас является Мор Дар?";
+	description = " Who is Mor Dar now? " ;
 };
 
 func int DIA_Orc_8215_Kan_MorDar_condition()
@@ -2526,29 +2527,29 @@ func int DIA_Orc_8215_Kan_MorDar_condition()
 
 func void DIA_Orc_8215_Kan_MorDar_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_MorDar_01_01");	//Кто сейчас является Мор Дар?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_MorDar_01_02");	//Черный орк по имени Ур-Каррас быть последний, кто удостаиваться подобный честь.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_MorDar_01_01 " );	// Who is Mor Dar now?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_MorDar_01_02 " );	// A black orc named Ur-Karras would be the last to receive such an honor.
 
 	if(UrKarrasInsert == TRUE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_MorDar_01_03");	//Но он уже больше не сражаться на арена!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_MorDar_01_03 " );	// But he no longer fight in the arena!
 		AI_Output(other,self,"DIA_Orc_8215_Kan_MorDar_01_04");	//Почему?
-		AI_Output(self,other,"DIA_Orc_8215_Kan_MorDar_01_05");	//Ур-Каррас стать великий старейшина и идти воевать вместе с Ур-Тралл против людей.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_MorDar_01_05 " );	// Ur-Karras become a great elder and go to war with Ur-Thrall against the humans.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_MorDar_01_07");	//Но он давно уйти из город воевать с человек.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_MorDar_01_08");	//Братам нужен новый Мор Дар!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_MorDar_01_07 " );	// But he's long gone from the city to fight with people.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_MorDar_01_08 " );	// The brothers need a new Mor Dar!
 	};
 };
 
-instance DIA_Orc_8215_Kan_Interes(C_Info)
+instance DIA_Orc_8215_Kan_Interes (C_Info)
 {
 	npc = Orc_8215_Kan;
 	condition = DIA_Orc_8215_Kan_Interes_condition;
 	information = DIA_Orc_8215_Kan_Interes_info;
 	permanent = FALSE;
-	description = "Вы сражаетесь за просто так или есть какая-то награда?";
+	description = " Are you fighting for nothing or is there some kind of reward? " ;
 };
 
 func int DIA_Orc_8215_Kan_Interes_condition()
@@ -2561,32 +2562,32 @@ func int DIA_Orc_8215_Kan_Interes_condition()
 
 func void DIA_Orc_8215_Kan_Interes_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Interes_01_01");	//Вы сражаетесь просто так или есть какая-нибудь награда?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Interes_01_02");	//Если человек хорошо сражаться и побеждать, он получать от Ур Кан награда за каждый бой.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Interes_01_03");	//Если проиграть и хотеть снова сражаться, то давать Ур Кан немного руда магия.
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Interes_01_04");	//А золото вас, значит, мало интересует?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Interes_01_05");	//Орки не любить золото, как любить его люди...
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Interes_01_06");	//Орки любить только хороший меч и крепкий доспех!
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Interes_01_07");	//А зачем тогда вам магическая руда?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Interes_01_08");	//Из нее браты могут делать очень сильный оружие. Потом идти и лучше сражаться!
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Interes_01_09");	//И кто делает для вас такое оружие?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Interes_01_10");	//Человек спросить Хаш Тора! Только он заниматься этим.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Interes_01_01 " );	// Are you just fighting or is there some kind of reward?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Interes_01_02 " );	// If a person fights well and wins, he will receive a reward from Ur Kang for each fight.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Interes_01_03 " );	// If you lose and want to fight again, then give Ur Kang some magic ore.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Interes_01_04 " );	// And gold is of little interest to you, then?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Interes_01_05 " );	// Orcs do not like gold, how people love it...
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Interes_01_06 " );	// Orcs only love a good sword and strong armor!
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Interes_01_07 " );	// Why do you need magic ore then?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Interes_01_08 " );	// The brothers can make a very strong weapon out of it. Then go and fight better!
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Interes_01_09 " );	// And who makes these weapons for you?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Interes_01_10 " );	// Man ask Hash Torah! Only he can do it.
 	KnowAboutHashTor = TRUE;
-	B_LogEntry(TOPIC_OrcArena,"За каждый выигранный бой мне полагается награда. Если я проиграю бой, то для следующего вызова мне необходимо отдать Ур Кану несколько кусков магической руды. Она тут очень ценится, ведь орки делают из нее неплохое оружие.");
+	B_LogEntry(TOPIC_OrcArena, " I get a bounty for every battle I win. If I lose a battle, I need to give Ur Kahn some pieces of magic ore for the next challenge. It is very much appreciated here, because the orcs make good weapons from it. " );
 };
 
-instance DIA_Orc_8215_Kan_GrahShar(C_Info)
+instance DIA_Orc_8215_Kan_GrahShar (C_Info)
 {
 	npc = Orc_8215_Kan;
 	condition = DIA_Orc_8215_Kan_GrahShar_condition;
-	information = DIA_Orc_8215_Kan_GrahShar_info;
+	info = DIA_Orc_8215_Kan_GrahShar_info;
 	permanent = FALSE;
-	description = "А что за главный приз?";
+	description = " What's the grand prize? " ;
 };
 
 func int DIA_Orc_8215_Kan_GrahShar_condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Interes) == TRUE)
+	if (Npc_KnowsInfo(hero,DIA_Orc_8215_Your_Interest) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -2594,11 +2595,11 @@ func int DIA_Orc_8215_Kan_GrahShar_condition()
 
 func void DIA_Orc_8215_Kan_GrahShar_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_GrahShar_01_01");	//А что за главный приз?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_GrahShar_01_02");	//Если человек побеждать всех и становится Мор Дар, то он получать Грах Шах.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_GrahShar_01_01 " );	// And what is the main prize?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_GrahShar_01_02 " );	// If a person defeats everyone and becomes Mor Dar, then he will receive Grah Shah.
 	AI_Output(other,self,"DIA_Orc_8215_Kan_GrahShar_01_03");	//Грах Шах?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_GrahShar_01_04");	//Великий символ могучего воина орков! Делать человек еще сильней...
-	B_LogEntry(TOPIC_OrcArena,"Самый ценный приз арены - Грах Шах. Я не знаю, что это такое. А Ур Кан не объяснил.");
+	AI_Output(self,other, " DIA_Orc_8215_Kan_GrahShar_01_04 " );	// Great symbol of the mighty orc warrior! To make a person stronger...
+	B_LogEntry(TOPIC_OrcArena, " The most valuable prize in the arena is Grah Shah. I don't know what it is. Ur Kahn didn't explain. " );
 };
 
 
@@ -2608,7 +2609,7 @@ instance DIA_Orc_8215_Kan_Join(C_Info)
 	condition = DIA_Orc_8215_Kan_Join_condition;
 	information = DIA_Orc_8215_Kan_Join_info;
 	permanent = FALSE;
-	description = "Я тоже хочу сражаться на арене.";
+	description = " I want to fight in the arena too. " ;
 };
 
 func int DIA_Orc_8215_Kan_Join_condition()
@@ -2621,20 +2622,20 @@ func int DIA_Orc_8215_Kan_Join_condition()
 
 func void DIA_Orc_8215_Kan_Join_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Join_01_01");	//Я тоже хочу сражаться на арене.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Join_01_02");	//Сначала человек придется доказать, что он быть достоин этого.
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Join_01_03");	//И как же это сделать? Набить тебе морду, орк?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Join_01_04");	//(хохочет) А человек быть смешной! Ур Кан нравиться, как тот шутить.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Join_01_05");	//Однако это ему не помочь.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Join_01_06");	//Человек должен победить одного из воинов Ур Кана! Только тогда он доказать, что быть достоин.
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Join_01_07");	//Ну, с этим я как-нибудь справлюсь.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Join_01_08");	//Это быть еще не все...(серьезно) Человек будет сражаться с Улу-Мулу!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Join_01_09");	//Если он взять другой оружие, то быстро умирать! Так сказать Ур Кан...
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Join_01_10");	//Ага, понимаю.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Join_01_01 " );	// I want to fight in the arena too.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Join_01_02 " );	// First the person will have to prove that he is worthy of it.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Join_01_03 " );	// And how to do it? Punch you in the face, orc?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Join_01_04 " );	// (laughs) A man to be funny! Ur Kang like how that joke.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Join_01_05 " );	// However, this does not help him.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Join_01_06 " );	// The human must defeat one of Ur Kahn's warriors! Only then will he prove that he is worthy.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Join_01_07 " );	// Well, I'll deal with that somehow.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Join_01_08 " );	// That's not all...(seriously) Man will fight Ulu-Mulu!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Join_01_09 " );	// If he take another weapon, then die quickly! So to say Ur Kahn...
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Join_01_10 " );	// Yeah, I understand.
 	MIS_OrcArena = LOG_Running;
 	Log_CreateTopic(TOPIC_OrcArena,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_OrcArena,LOG_Running);
-	B_LogEntry(TOPIC_OrcArena,"В городе орков есть арена, на которой сражаются за право носить титул великого воина орков - Мор Дар. А орк Ур Кан заправляет там всем. Я изъявил желание поучаствовать в этом. Для начала Ур Кан хочет проверить меня как бойца. Мне придется победить одного из его воинов, чтобы заслужить право выступать на этой арене.");
+	B_LogEntry(TOPIC_OrcArena, " There is an arena in the Orc City where they fight for the right to bear the title of the great Orc warrior - Mor Dar. And the orc Ur Kahn runs everything there. I expressed a desire to participate in this. First, Ur Kahn wants to test me as a fighter. I will have to defeat one of his warriors to earn the right to compete in this arena. " );
 };
 
 instance DIA_Orc_8215_Kan_JoinNext(C_Info)
@@ -2643,7 +2644,7 @@ instance DIA_Orc_8215_Kan_JoinNext(C_Info)
 	condition = DIA_Orc_8215_Kan_JoinNext_condition;
 	information = DIA_Orc_8215_Kan_JoinNext_info;
 	permanent = FALSE;
-	description = "А если я выиграю бой, что тогда?";
+	description = " And if I win the fight, what then? " ;
 };
 
 func int DIA_Orc_8215_Kan_JoinNext_condition()
@@ -2656,9 +2657,9 @@ func int DIA_Orc_8215_Kan_JoinNext_condition()
 
 func void DIA_Orc_8215_Kan_JoinNext_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_JoinNext_01_01");	//А если я выиграю бой, что тогда?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_JoinNext_01_02");	//Тогда человек становиться одним из воинов Ур Кана и потом сможет бросать вызов его остальным бойцам.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_JoinNext_01_03");	//Пока не стать Мор Дар или не умирать!
+	AI_Output(other,self, " DIA_Orc_8215_Kan_JoinNext_01_01 " );	// And if I win the fight, what then?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_JoinNext_01_02 " );	// Then the person becomes one of the warriors of Ur Kahn and then can challenge his other fighters.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_JoinNext_01_03 " );	// Until you become a Mor Dar or die!
 };
 
 var int UrKanTellRules;
@@ -2669,7 +2670,7 @@ instance DIA_Orc_8215_Kan_Rules(C_Info)
 	condition = DIA_Orc_8215_Kan_Rules_condition;
 	information = DIA_Orc_8215_Kan_Rules_info;
 	permanent = FALSE;
-	description = "Каковы тут правила боя?";
+	description = " What are the combat rules here? " ;
 };
 
 func int DIA_Orc_8215_Kan_Rules_condition()
@@ -2682,20 +2683,20 @@ func int DIA_Orc_8215_Kan_Rules_condition()
 
 func void DIA_Orc_8215_Kan_Rules_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Rules_01_01");	//Каковы тут правила боя?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Rules_01_02");	//Человек сражаться только с Улу-Мулу!
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Rules_01_03");	//Что, всегда?!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Rules_01_04");	//Нет. Он может использовать другой оружие, но только если выиграть свой первый бой.
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Rules_01_05");	//Ладно. Что еще?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Rules_01_06");	//Пускать стрела или болт ХАРАД! Человек умирать...
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Rules_01_07");	//Использовать магия ХАРАД! Человек опять умирать...
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Rules_01_08");	//Начинать бой только после разговора с противник! Если бить раньше, то снова умирать...
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Rules_01_09");	//Не убивать, если победить! Иначе браты быстро делать человек мертвый.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Rules_01_10");	//Если он убегать, то больше не быть сражаться на великий арена.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Rules_01_01 " );	// What are the combat rules here?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Rules_01_02 " );	// Man fight only with Ulu-Mulu!
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Rules_01_03 " );	// What, always?!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Rules_01_04 " );	// No. He can use other weapons, but only if he wins his first fight.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Rules_01_05 " );	// Okay. What else?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Rules_01_06 " );	// Launch an arrow or bolt HARAD! Man to die...
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Rules_01_07 " );	// Use magic HARAD! Man to die again...
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Rules_01_08 " );	// Start the battle only after talking with the enemy! If you hit earlier, then die again ...
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Rules_01_09 " );	// Don't kill if win! Otherwise the brothers quickly make a man dead.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Rules_01_10 " );	// If he run away, then no longer be fight on the grand arena.
 	AI_Output(other,self,"DIA_Orc_8215_Kan_Rules_01_11");	//Это все?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_Rules_01_12");	//Да, Ур Кан сказать все.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_Rules_01_12 " );	// Yes, Ur Kahn say everything.
 	UrKanTellRules = TRUE;
-	B_LogEntry(TOPIC_OrcArena,"Ур Кан рассказал мне правила боев на великой арене орков. Тут нельзя пользоваться ни луком, ни арбалетом и тем более магией. Это неминуемо карается смертью. Я должен сначала поприветствовать своего противника и только после этого начинать бой. Нельзя уходить с арены, когда объявлен вызов, иначе мне больше не разрешат участвовать в боях. Ну и, конечно, нельзя убивать своего противника. В первом своем бою я не могу использовать иное оружие, кроме как Улу-Мулу. В последующих я могу выбрать любое другое оружие. После того как бой на арене будет закончен, мне надо не забыть одеть Улу-Мулу, иначе орки убьют меня. Как у них все сложно... Но это и не удивительно - ведь я для них чужак.");
+	B_LogEntry(TOPIC_OrcArena,"Ur Kahn told me the rules of fighting in the great orc arena. You can't use any bow or crossbow here, let alone magic. This is inevitably punishable by death. I must first greet my opponent and only after that start the battle. You can't leave with arenas when the challenge is announced, otherwise I will no longer be allowed to participate in battles.And, of course, you can’t kill your opponent.In my first fight, I can’t use any other weapon except Ulu-Mulu.In subsequent fights, I can choose any other weapon .After the battle in the arena is over, I must not forget to put on Ulu-Mula, otherwise the orcs will kill me. How difficult it is for them ... But this is not surprising - after all, I am a stranger to them. ");
 };
 
 instance DIA_Orc_8215_Kan_Ready(C_Info)
@@ -2704,12 +2705,12 @@ instance DIA_Orc_8215_Kan_Ready(C_Info)
 	condition = DIA_Orc_8215_Kan_Ready_condition;
 	information = DIA_Orc_8215_Kan_Ready_info;
 	permanent = TRUE;
-	description = "Я готов к сражению.";
+	description = " I'm ready to fight. " ;
 };
 
 func int DIA_Orc_8215_Kan_Ready_condition()
 {
-	if((Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_JoinNext) == TRUE) && (ArenaBattle_01 == FALSE))
+	if ((Npc_KnowsInfo(hero,DIA_Orc_8215_You_JoinNext) ==  TRUE ) && (ArenaBattle_01 ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -2719,17 +2720,17 @@ func void DIA_Orc_8215_Kan_Ready_info()
 {
 	var C_Npc ArenaFighter;
 
-	ArenaFighter = Hlp_GetNpc(STRF_8147_Dagrag);
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Ready_01_01");	//Я готов к сражению.
+	ArenaFighter = Hlp_GetNpc(STRF_8147_Day);
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Ready_01_01 " );	// I'm ready to fight.
 
 	if(UrKanTellRules == TRUE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Ready_01_02");	//Хорошо. Твоего первого противника звать Даграг!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Ready_01_03");	//Он быть самый слабый воин Ур Кана.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Ready_01_04");	//Если человек не смочь одолеть Даграг, ему нечего тут делать.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Ready_01_05");	//Человек уходить и больше не приходить к Ур Кан.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Ready_01_06");	//Теперь он ступать на арена! Даграг его уже ждать там...
-		B_LogEntry(TOPIC_OrcArena,"Итак, первым делом я должен одолеть орка по имени Даграг. Что ж, посмотрим, насколько сильные тут бойцы.");
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Ready_01_02 " );	// Good. Your first opponent is called Dagrag!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Ready_01_03 " );	// He be Ur Kana's weakest warrior.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Ready_01_04 " );	// If a human can't defeat Dagragh, he has nothing to do here.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Ready_01_05 " );	// Man leave and no longer come to Ur Can.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Ready_01_06 " );	// Now he's stepping into the arena! Dagrag is already waiting for him there ...
+		B_LogEntry(TOPIC_OrcArena, " So, the first thing I have to do is defeat an orc named Dagrag. Well, let's see how strong the fighters are here. " );
 		AI_StopProcessInfos(self);
 		ArenaBattle_01 = TRUE;
 		ArenaFightNow = TRUE;
@@ -2737,8 +2738,8 @@ func void DIA_Orc_8215_Kan_Ready_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Ready_01_07");	//Сначала Ур Кан рассказать человек правила бой!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Ready_01_08");	//Потом он уже идти сражаться.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Ready_01_07 " );	// First ur kahn tell the man to rule the fight!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Ready_01_08 " );	// Then he's already going to fight.
 	};
 };
 
@@ -2749,7 +2750,7 @@ var int ReadyForRoundFive;
 var int ReadyForRoundSix;
 var int LostLastOrcFight;
 
-instance DIA_Orc_8215_Kan_PissOff(C_Info)
+instance DIA_Orc_8215_Kan_PissOff (C_Info)
 {
 	npc = Orc_8215_Kan;
 	condition = DIA_Orc_8215_Kan_PissOff_condition;
@@ -2768,7 +2769,7 @@ func int DIA_Orc_8215_Kan_PissOff_condition()
 
 func void DIA_Orc_8215_Kan_PissOff_info()
 {
-	AI_Output(self,other,"DIA_Orc_8215_Kan_PissOff_01_01");	//(небрежно) Человек лучше уходить. Он быть слабый!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_PissOff_01_01 " );	// (carelessly) Man, better get going. He be weak!
 	AI_StopProcessInfos(self);
 };
 
@@ -2778,12 +2779,12 @@ instance DIA_Orc_8215_Kan_Round_First(C_Info)
 	condition = DIA_Orc_8215_Kan_Round_First_condition;
 	information = DIA_Orc_8215_Kan_Round_First_info;
 	permanent = FALSE;
-	description = "Я провел свой первый бой.";
+	description = " I've had my first fight. " ;
 };
 
 func int DIA_Orc_8215_Kan_Round_First_condition()
 {
-	if((ArenaBattle_01_Won == TRUE) || (ArenaBattle_01_Lost == TRUE))
+	if (( ArenaBattle_01_Won ==  TRUE ) || ( ArenaBattle_01_Lost ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -2791,32 +2792,32 @@ func int DIA_Orc_8215_Kan_Round_First_condition()
 
 func void DIA_Orc_8215_Kan_Round_First_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_Round_First_01_01");	//Я провел свой первый бой.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_Round_First_01_01 " );	// I had my first fight.
 
 	if(ArenaBattle_01_Won == TRUE)
 	{
 		B_GivePlayerXP(300);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_02");	//И ты выиграть его...(с уважением) Ур Кан видеть, что человек быть умелый воин!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_03");	//Теперь, если он хотеть, то может сражаться с другими воинами Ур Кана.
-		AI_Output(other,self,"DIA_Orc_8215_Kan_Round_First_01_04");	//А как насчет моей награды?
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_05");	//За этот бой человек ничего не получать. Ур Кан просто проверять человек.
-		B_LogEntry(TOPIC_OrcArena,"Я прошел испытание Ур Кана. Теперь я смогу бросить вызов и другим бойцам арены.");
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Round_First_01_02 " );	// And you win it...(respectfully) Ur Kahn see that man be a skilled warrior!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Round_First_01_03 " );	// Now, if he wants, he can fight with other warriors of Ur Kahn.
+		AI_Output(other,self, " DIA_Orc_8215_Kan_Round_First_01_04 " );	// What about my reward?
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Round_First_01_05 " );	// For this fight, a person does not receive anything. Ur Kang just check man.
+		B_LogEntry(TOPIC_OrcArena, " I've passed Ur Kahn's challenge. Now I can challenge other arena fighters as well. " );
 		ORCRESPECT = ORCRESPECT + 5;
 
 		if(MIS_HeroOrcJoin == LOG_Running)
 		{
-			AI_Print("Уважение среди орков + 5");
+			AI_Print( " Respect among orcs + 5 " );
 		};
 		ArenaFightNow = FALSE;
 		ReadyForRoundTwo = TRUE;
-		CanArenaFightNoUluMulu = TRUE;
+		CanArenaFightNoUluMulu = TRUE ;
 	}
 	else if(ArenaBattle_01_Lost == TRUE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_07");	//И ты проиграть его! Человек быть слабый и не достоин носить Улу-Мулу.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_08");	//Ур Кан больше не говорить с человек! Тот уходить.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Round_First_01_07 " );	// And you lose it! A person to be weak and not worthy to wear Ulu-Mulu.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Round_First_01_08 " );	// Ur Kahn no longer talk to the man! The one to leave.
 		AI_Output(other,self,"DIA_Orc_8215_Kan_Round_First_01_09");	//Эй, постой...
-		B_LogEntry(TOPIC_OrcArena,"Я не прошел испытание Ур Кана. Теперь мне лучше вообще не показываться ему на глаза.");
+		B_LogEntry(TOPIC_OrcArena, " I failed Ur Kahn's test. Now I'd better not show myself to him at all. " );
 		MIS_OrcArena = LOG_FAILED;
 		B_LogEntry_Failed(TOPIC_OrcArena);
 		UrKanPissOff = TRUE;
@@ -2826,7 +2827,7 @@ func void DIA_Orc_8215_Kan_Round_First_info()
 	B_StartOtherRoutine(STRF_8147_Dagrag,"Start");
 };
 
-//-----------------------------цикл битв-----------------------------------------------------
+// -----------------------battle cycle----------------- ------------------------------------
 
 instance DIA_Orc_8215_Kan_RoundTwo(C_Info)
 {
@@ -2834,7 +2835,7 @@ instance DIA_Orc_8215_Kan_RoundTwo(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundTwo_condition;
 	information = DIA_Orc_8215_Kan_RoundTwo_info;
 	permanent = FALSE;
-	description = "Я хочу сражаться!";
+	description = " I want to fight! " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundTwo_condition()
@@ -2851,30 +2852,30 @@ func void DIA_Orc_8215_Kan_RoundTwo_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8148_Gunnok);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundTwo_01_01");	//Я хочу сражаться!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwo_01_02");	//Хорошо. Я знал, что человек это понравиться!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwo_01_03");	//Тогда твой следующий противник - Гуннок.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwo_01_04");	//Он быть довольно крепкий и сильный воин орков. Человек быть не просто!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwo_01_05");	//Теперь он ступать на арена! Ур Кан все сказать...
-	B_LogEntry(TOPIC_OrcArena,"Мой следующий противник - орк по имени Гуннок.");
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundTwo_01_01 " );	// I want to fight!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwo_01_02 " );	// Good. I knew that man would like it!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwo_01_03 " );	// Then your next opponent is Gunnok.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwo_01_04 " );	// He's a pretty tough and strong orc warrior. Being a man is not easy!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwo_01_05 " );	// Now he's stepping into the arena! Ur Kang all say...
+	B_LogEntry(TOPIC_OrcArena, " My next opponent is an orc named Gunnok. " );
 	AI_StopProcessInfos(self);
 	ArenaBattle_02 = TRUE;
 	ArenaFightNow = TRUE;
 	B_StartOtherRoutine(ArenaFighter,"Arena");
 };
 
-instance DIA_Orc_8215_Kan_RoundTwoDone(C_Info)
+instance DIA_Orc_8215_Kan_RoundTwoDone (C_Info)
 {
 	npc = Orc_8215_Kan;
 	condition = DIA_Orc_8215_Kan_RoundTwoDone_condition;
 	information = DIA_Orc_8215_Kan_RoundTwoDone_info;
 	permanent = TRUE;
-	description = "Я сразился с Гунноком.";
+	description = " I fought Gunnok. " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundTwoDone_condition()
 {
-	if((ULUMULUISEQUIP == TRUE) && (ReadyForRoundThree == FALSE) && ((ArenaBattle_02_Won == TRUE) || (ArenaBattle_02_Lost == TRUE)))
+	if (( ULUMULUISEQUIP  ==  TRUE ) && (ReadyForRoundThree ==  FALSE ) && ((ArenaBattle_02_Won ==  TRUE ) || (ArenaBattle_02_Lost ==  TRUE )))
 	{
 		return TRUE;
 	};
@@ -2882,33 +2883,33 @@ func int DIA_Orc_8215_Kan_RoundTwoDone_condition()
 
 func void DIA_Orc_8215_Kan_RoundTwoDone_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundTwoDone_01_01");	//Я сразился с Гунноком.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundTwoDone_01_01 " );	// I fought Gunnok.
 
 	if(ArenaBattle_02_Won == TRUE)
 	{
 		B_GivePlayerXP(400);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwoDone_01_02");	//Ур Кан видеть бой...(с уважением) Человек хорошо сражаться и заслужить награда!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwoDone_01_03");	//Вот, брать эти зелья магия. Они помогать восстановить человек сила.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwoDone_01_02 " );	// Ur Kahn see the fight...(respectfully) Man fight well and deserve a reward!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwoDone_01_03 " );	// Here, take these magic potions. They help restore a person's strength.
 		B_GiveInvItems(self,other,ItPo_Health_03,2);
 		ORCRESPECT = ORCRESPECT + 5;
 
 		if(MIS_HeroOrcJoin == LOG_Running)
 		{
-			AI_Print("Уважение среди орков + 5");
+			AI_Print( " Respect among orcs + 5 " );
 		};
-		AI_Output(other,self,"DIA_Orc_8215_Kan_RoundTwoDone_01_04");	//Благодарю.
+		AI_Output(other,self, " DIA_Orc_8215_Kan_RoundTwoDone_01_04 " );	// Thank you.
 		ArenaFightNow = FALSE;
 		ReadyForRoundThree = TRUE;
 	}
 	else if(ArenaBattle_02_Lost == TRUE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_05");	//Ур Кан видеть бой...(разочарованно) Человек быть недостаточно силен, чтобы одолеть Гуннок.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_06");	//Для этого ему надо больше тренироваться и становиться более сильный.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_07");	//Он снова приходить, когда будет готов сразиться с Гуннок.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_08");	//И не забывать приносить Ур Кан руда магия, потому что проиграть. 
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_09");	//Без нее Ур Кан не разрешить человек сражаться на арена!
-		ArenaBattle_02_Won = FALSE;
-		ArenaBattle_02_Lost = FALSE;
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_05 " );	// Ur Kahn see the fight... (disappointed) A human being not strong enough to take down Gunnok.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_06 " );	// To do this, he needs to train more and become stronger.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_07 " );	// He'll come back when he's ready to fight Gunnok.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_08 " );	// And don't forget to bring Ur Kahn ore magic because lose.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_Kan_RoundTwoDone_01_09 " );	// Without her, Ur Kahn won't allow people to fight in the arena!
+		ArenaBattle_02_Won = FALSE ;
+		ArenaBattle_02_Lost = FALSE ;
 		ArenaBattle_02 = FALSE;
 		ArenaFightNow = FALSE;
 		LostLastOrcFight = TRUE;
@@ -2924,7 +2925,7 @@ instance DIA_Orc_8215_Kan_RoundTwo_Again(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundTwo_Again_condition;
 	information = DIA_Orc_8215_Kan_RoundTwo_Again_info;
 	permanent = TRUE;
-	description = "Я хочу вновь сразиться с Гунноком. (Цена: 10 кусков руды)";
+	description = " I want to fight Gunnok again. (Cost: 10 Ore) " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundTwo_Again_condition()
@@ -2941,13 +2942,13 @@ func void DIA_Orc_8215_Kan_RoundTwo_Again_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8148_Gunnok);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundTwo_Again_01_01");	//Я хочу вновь сразиться с Гунноком.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundTwo_Again_01_01 " );	// I want to fight Gunnok again.
 
 	if(Npc_HasItems(other,ItMi_Nugget) >= 10)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Nugget,10);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwo_Again_01_02");	//Хорошо. Человек попытаться победить Гуннок снова!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwo_Again_01_03");	//Ступать на арена! Тот будет ждать его там...
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwo_Again_01_02 " );	// Good. Man try to defeat Gunnok again!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwo_Again_01_03 " );	// Enter the arena! He will be waiting there...
 		AI_StopProcessInfos(self);
 		ArenaBattle_02 = TRUE;
 		ArenaFightNow = TRUE;
@@ -2956,12 +2957,12 @@ func void DIA_Orc_8215_Kan_RoundTwo_Again_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwo_Again_01_04");	//У человек не хватать руда для этого!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundTwo_Again_01_05");	//Ур Кан не разрешать человек сражаться на арена.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwo_Again_01_04 " );	// Do people not have enough ore for this!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundTwo_Again_01_05 " );	// Ur Kahn does not allow people to fight in the arena.
 	};
 };
 
-//-----------------------------Турук---------------------------------------------------------
+// -----------------------------Constant-------------- -----------------------------------------------------
 
 instance DIA_Orc_8215_Kan_RoundThree(C_Info)
 {
@@ -2969,7 +2970,7 @@ instance DIA_Orc_8215_Kan_RoundThree(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundThree_condition;
 	information = DIA_Orc_8215_Kan_RoundThree_info;
 	permanent = FALSE;
-	description = "Кто твой следующий боец?";
+	description = " Who is your next fighter? " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundThree_condition()
@@ -2986,11 +2987,11 @@ func void DIA_Orc_8215_Kan_RoundThree_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8149_Turuk);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundThree_01_01");	//Кто твой следующий боец?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThree_01_02");	//Турук. Быть очень серьезный противник!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThree_01_03");	//Он очень умело владеть свой топор и победить много сильный воин.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThree_01_04");	//Человек ступать на арена! Турук его уже ждать там...
-	B_LogEntry(TOPIC_OrcArena,"Теперь мне надо сразится с орком по имени Турук.");
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundThree_01_01 " );	// Who's your next fighter?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThree_01_02 " );	// Turuk. Be a very serious opponent!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThree_01_03 " );	// He is very skillful in wielding his ax and defeating many strong warriors.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThree_01_04 " );	// Man step into the arena! Turuk is already waiting for him there ...
+	B_LogEntry(TOPIC_OrcArena, " Now I have to fight an orc named Turuk. " );
 	AI_StopProcessInfos(self);
 	ArenaBattle_03 = TRUE;
 	ArenaFightNow = TRUE;
@@ -2999,18 +3000,18 @@ func void DIA_Orc_8215_Kan_RoundThree_info()
 	B_StartOtherRoutine(ArenaFighter,"Arena");
 };
 
-instance DIA_Orc_8215_Kan_RoundThreeDone(C_Info)
+instance DIA_Orc_8215_Kan_RoundThreeDone (C_Info)
 {
 	npc = Orc_8215_Kan;
 	condition = DIA_Orc_8215_Kan_RoundThreeDone_condition;
 	information = DIA_Orc_8215_Kan_RoundThreeDone_info;
 	permanent = TRUE;
-	description = "Я сразился с Туруком.";
+	description = " I fought Turuk. " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundThreeDone_condition()
 {
-	if((ULUMULUISEQUIP == TRUE) && (ReadyForRoundFour == FALSE) && ((ArenaBattle_03_Won == TRUE) || (ArenaBattle_03_Lost == TRUE)))
+	if (( ULUMULUISEQUIP  ==  TRUE ) && (ReadyForRoundFour ==  FALSE ) && ((ArenaBattle_03_Won ==  TRUE ) || (ArenaBattle_03_Lost ==  TRUE )))
 	{
 		return TRUE;
 	};
@@ -3022,19 +3023,19 @@ func void DIA_Orc_8215_Kan_RoundThreeDone_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8149_Turuk);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundThreeDone_01_01");	//Я сразился с Туруком.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundThreeDone_01_01 " );	// I fought Turuk.
 
 	if(ArenaBattle_03_Won == TRUE)
 	{
 		B_GivePlayerXP(400);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThreeDone_01_02");	//Турук быть очень умелый воин, но человек победить его!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThreeDone_01_03");	//За это Ур Кан давать в награда ему черный жемчужина.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThreeDone_01_02 " );	// Turuk be a very skilled warrior, but the man defeat him!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThreeDone_01_03 " );	// For this Ur Kang give him a black pearl as a reward.
 		B_GiveInvItems(self,other,ItMi_DarkPearl,1);
 		ORCRESPECT = ORCRESPECT + 5;
 
 		if(MIS_HeroOrcJoin == LOG_Running)
 		{
-			AI_Print("Уважение среди орков + 5");
+			AI_Print( " Respect among orcs + 5 " );
 		};
 		AI_Output(other,self,"DIA_Orc_8215_Kan_RoundThreeDone_01_04");	//Неплохо.
 		ArenaFightNow = FALSE;
@@ -3042,11 +3043,11 @@ func void DIA_Orc_8215_Kan_RoundThreeDone_info()
 	}
 	else if(ArenaBattle_03_Lost == TRUE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThreeDone_01_05");	//Турук быть очень умелый воин! Человек не смог победить его.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThreeDone_01_06");	//Человек должен быть быстрее и сильнее, чтобы победить Турук.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThreeDone_01_07");	//Если хотеть сражаться снова, то говорить Ур Кан.
-		ArenaBattle_03_Won = FALSE;
-		ArenaBattle_03_Lost = FALSE;
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThreeDone_01_05 " );	// Turuk be a very skilled warrior! The man could not defeat him.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThreeDone_01_06 " );	// A human must be faster and stronger to defeat Turuk.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThreeDone_01_07 " );	// If you want to fight again, then speak Ur Kahn.
+		ArenaBattle_03_Won = FALSE ;
+		ArenaBattle_03_Lost = FALSE ;
 		ArenaBattle_03 = FALSE;
 		ArenaFightNow = FALSE;
 		LostLastOrcFight = TRUE;
@@ -3064,7 +3065,7 @@ instance DIA_Orc_8215_Kan_RoundThree_Again(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundThree_Again_condition;
 	information = DIA_Orc_8215_Kan_RoundThree_Again_info;
 	permanent = TRUE;
-	description = "Я хочу вновь сразиться с Туруком. (Цена: 20 кусков руды)";
+	description = " I want to fight Turuk again. (Cost: 20 Ore) " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundThree_Again_condition()
@@ -3081,13 +3082,13 @@ func void DIA_Orc_8215_Kan_RoundThree_Again_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8149_Turuk);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundThree_Again_01_01");	//Я хочу вновь сразиться с Туруком.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundThree_Again_01_01 " );	// I want to fight Turuk again.
 
 	if(Npc_HasItems(other,ItMi_Nugget) >= 20)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Nugget,20);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThree_Again_01_02");	//Человек хочет вызвать на бой грозного Турука?
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThree_Again_01_03");	//Ур Кан не быть против! Идти на арена и сражаться с ним.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThree_Again_01_02 " );	// Human wants to challenge the fearsome Turuk?
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThree_Again_01_03 " );	// Ur Kahn don't mind! Go to the arena and fight him.
 		AI_StopProcessInfos(self);
 		ArenaBattle_03 = TRUE;
 		ArenaFightNow = TRUE;
@@ -3098,12 +3099,12 @@ func void DIA_Orc_8215_Kan_RoundThree_Again_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThree_Again_01_04");	//У человек не хватать руда для этого!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundThree_Again_01_05");	//Ур Кан не разрешать человек сражаться на арена.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThree_Again_01_04 " );	// Do people not have enough ore for this!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundThree_Again_01_05 " );	// Ur Kahn does not allow people to fight in the arena.
 	};
 };
 
-//--------------------------------Харт--------------------------------------------------------------------------------------
+// --------------------------------Hart--------------- -------------------------------------------------- ---------------------
 
 instance DIA_Orc_8215_Kan_RoundFour(C_Info)
 {
@@ -3111,7 +3112,7 @@ instance DIA_Orc_8215_Kan_RoundFour(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundFour_condition;
 	information = DIA_Orc_8215_Kan_RoundFour_info;
 	permanent = FALSE;
-	description = "У тебя есть бойцы посильней?";
+	description = " Do you have better fighters? " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundFour_condition()
@@ -3128,11 +3129,11 @@ func void DIA_Orc_8215_Kan_RoundFour_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8146_Hart);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundFour_01_01");	//У тебя есть бойцы посильней?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFour_01_02");	//Конечно. Следующий бой будет с человек по имени Харт!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFour_01_03");	//Он заслужить свое право сражаться тут, убив много грозных братов Ур Кан.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFour_01_04");	//Ступать на арена сейчас! Ур Кан желать человек удача...
-	B_LogEntry(TOPIC_OrcArena,"Пришло время сразиться с Хартом - единственным человеком, выступающим на арене орков.");
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundFour_01_01 " );	// Do you have stronger fighters?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFour_01_02 " );	// Of course. The next fight will be with a man named Hart!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFour_01_03 " );	// He will earn his right to fight here by slaying many of Ur Kang's fearsome brothers.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFour_01_04 " );	// Step into the arena now! Ur Kang wish man good luck...
+	B_LogEntry(TOPIC_OrcArena, " It's time to fight Hart, the only human in the Orc Arena. " );
 	AI_StopProcessInfos(self);
 	ArenaBattle_04 = TRUE;
 	ArenaFightNow = TRUE;
@@ -3141,42 +3142,42 @@ func void DIA_Orc_8215_Kan_RoundFour_info()
 	B_StartOtherRoutine(ArenaFighter,"Arena");
 };
 
-instance DIA_Orc_8215_Kan_RoundFourDone(C_Info)
+instance DIA_Orc_8215_Kan_RoundFourDone (C_Info)
 {
 	npc = Orc_8215_Kan;
 	condition = DIA_Orc_8215_Kan_RoundFourDone_condition;
-	information = DIA_Orc_8215_Kan_RoundFourDone_info;
+	information = DIA_Orc_8215_Can_RoundFourDone_info;
 	permanent = TRUE;
-	description = "Я сразился с Хартом.";
+	description = " I fought Hart. " ;
 };
 
-func int DIA_Orc_8215_Kan_RoundFourDone_condition()
+func int DIA_Orc_8215_Can_RoundFourDone_condition();
 {
-	if((ULUMULUISEQUIP == TRUE) && (ReadyForRoundFive == FALSE) && ((ArenaBattle_04_Won == TRUE) || (ArenaBattle_04_Lost == TRUE)))
+	if (( READYForRoundFive ==  FALSE  ) && ( ( ArenaBattle_04_Won == TRUE  ) || ( ArenaBattle_04_Lost == TRUE ) ) )  
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Orc_8215_Kan_RoundFourDone_info()
+func void DIA_Orc_8215_Our_RoundFourDone_info()
 {
 	var C_Npc ArenaFighter;
 
 	ArenaFighter = Hlp_GetNpc(STRF_8146_Hart);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundFourDone_01_01");	//Я сразился с Хартом.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundFourDone_01_01 " );	// I fought Hart.
 
 	if(ArenaBattle_04_Won == TRUE)
 	{
 		B_GivePlayerXP(500);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFourDone_01_02");	//И ты смог одолеть его! Хотя он быть сильный и ловкий воин.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFourDone_01_03");	//В качестве награда человек получить теперь шкура черный тролль.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFourDone_01_02 " );	// And you were able to defeat him! Although he be a strong and agile warrior.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFourDone_01_03 " );	// As a reward, a person will now receive a black troll skin.
 		B_GiveInvItems(self,other,ItAt_TrollBlackFur,1);
 		ORCRESPECT = ORCRESPECT + 5;
 
 		if(MIS_HeroOrcJoin == LOG_Running)
 		{
-			AI_Print("Уважение среди орков + 5");
+			AI_Print( " Respect among orcs + 5 " );
 		};
 
 		ArenaFightNow = FALSE;
@@ -3184,12 +3185,12 @@ func void DIA_Orc_8215_Kan_RoundFourDone_info()
 	}
 	else if(ArenaBattle_04_Lost == TRUE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFourDone_01_04");	//Человек не смог победить своего брат...
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFourDone_01_05");	//Тот быть слишком сильный и ловкий для него.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFourDone_01_06");	//Теперь он идти учиться лучше сражаться меч.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFourDone_01_07");	//А потом приходить на арена снова.
-		ArenaBattle_04_Won = FALSE;
-		ArenaBattle_04_Lost = FALSE;
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFourDone_01_04 " );	// The man couldn't defeat his brother...
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFourDone_01_05 " );	// That being too strong and agile for him.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFourDone_01_06 " );	// Now he's going to learn how to fight the sword better.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFourDone_01_07 " );	// And then come to the arena again.
+		ArenaBattle_04_Won = FALSE ;
+		ArenaBattle_04_Lost = FALSE ;
 		ArenaBattle_04 = FALSE;
 		ArenaFightNow = FALSE;
 		LostLastOrcFight = TRUE;
@@ -3208,7 +3209,7 @@ instance DIA_Orc_8215_Kan_RoundFour_Again(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundFour_Again_condition;
 	information = DIA_Orc_8215_Kan_RoundFour_Again_info;
 	permanent = TRUE;
-	description = "Я хочу вновь сразиться с Хартом. (Цена: 30 кусков руды)";
+	description = " I want to fight Hart again. (Cost: 30 Ore) " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundFour_Again_condition()
@@ -3225,13 +3226,13 @@ func void DIA_Orc_8215_Kan_RoundFour_Again_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8146_Hart);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundFour_Again_01_01");	//Я хочу вновь сразиться с Хартом.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundFour_Again_01_01 " );	// I want to fight Hart again.
 
 	if(Npc_HasItems(other,ItMi_Nugget) >= 30)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Nugget,30);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFour_Again_01_02");	//У человек есть руда магия, значить быть бой!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFour_Again_01_03");	//Теперь ступать на арена и победить свой враг.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFour_Again_01_02 " );	// A person has an ore of magic, mean to be a fight!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFour_Again_01_03 " );	// Now step into the arena and defeat your enemy.
 		AI_StopProcessInfos(self);
 		ArenaBattle_04 = TRUE;
 		ArenaFightNow = TRUE;
@@ -3242,12 +3243,12 @@ func void DIA_Orc_8215_Kan_RoundFour_Again_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFour_Again_01_04");	//У человек не хватать руда для этого!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFour_Again_01_05");	//Ур Кан не разрешать человек сражаться на арена.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFour_Again_01_04 " );	// Do people not have enough ore for this!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFour_Again_01_05 " );	// Ur Kahn does not allow people to fight in the arena.
 	};
 };
 
-//--------------------------------Ур Трок----------------------------------------
+// --------------------------------Ur Throk-------------- --------------------------
 
 instance DIA_Orc_8215_Kan_RoundFive(C_Info)
 {
@@ -3255,7 +3256,7 @@ instance DIA_Orc_8215_Kan_RoundFive(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundFive_condition;
 	information = DIA_Orc_8215_Kan_RoundFive_info;
 	permanent = FALSE;
-	description = "Мне нужен новый боец.";
+	description = " I need a new fighter. " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundFive_condition()
@@ -3272,11 +3273,11 @@ func void DIA_Orc_8215_Kan_RoundFive_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8150_UrTrok);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundFive_01_01");	//Мне нужен новый боец.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_01_02");	//И человек получить его...(с уважением) Ур Трок быть один из лучший воин Ур Кана!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_01_03");	//Тот бить так сильно, что мочь убить человек с один удар.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_01_04");	//Теперь ступать на арена! Он ждать тебя уже...
-	B_LogEntry(TOPIC_OrcArena,"Ур Трок мой следующий противник.");
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundFive_01_01 " );	// I need a new fighter.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFive_01_02 " );	// And man get it...(respectfully) Ur Throk be one of Ur Kang's finest warrior!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFive_01_03 " );	// The one to hit so hard that he could kill a man with one blow.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFive_01_04 " );	// Now step into the arena! He's waiting for you...
+	B_LogEntry(TOPIC_OrcArena, " Ur Throk is my next opponent. " );
 	AI_StopProcessInfos(self);
 	ArenaBattle_05 = TRUE;
 	ArenaFightNow = TRUE;
@@ -3289,12 +3290,12 @@ instance DIA_Orc_8215_Kan_RoundFiveDone(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundFiveDone_condition;
 	information = DIA_Orc_8215_Kan_RoundFiveDone_info;
 	permanent = TRUE;
-	description = "Я сразился с Ур Троком.";
+	description = " I fought Ur Throk. " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundFiveDone_condition()
 {
-	if((ULUMULUISEQUIP == TRUE) && (ReadyForRoundSix == FALSE) && ((ArenaBattle_05_Won == TRUE) || (ArenaBattle_05_Lost == TRUE)))
+	if (( READYForRoundSix  ==  TRUE ) && ( ( ArenaBattle_05_Won ==  TRUE ) || ( ArenaBattle_05_Lost == TRUE ) ) )  
 	{
 		return TRUE;
 	};
@@ -3302,32 +3303,32 @@ func int DIA_Orc_8215_Kan_RoundFiveDone_condition()
 
 func void DIA_Orc_8215_Kan_RoundFiveDone_info()
 {
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundFiveDone_01_01");	//Я сразился с Ур Троком.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundFiveDone_01_01 " );	// I fought Ur Throk.
 
 	if(ArenaBattle_05_Won == TRUE)
 	{
 		B_GivePlayerXP(600);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFiveDone_01_02");	//Ур Кан восхищаться силой человек! Победить Ур Трок быть очень тяжело.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFiveDone_01_03");	//Поэтому он давать человек очень ценный награда. Зелье сила!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFiveDone_01_02 " );	// Ur Kahn admire the strength of a man! Defeating Ur Throk can be very difficult.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFiveDone_01_03 " );	// So he give the person a very valuable reward. Potion of strength!
 		B_GiveInvItems(self,other,ItPo_Perm_STR,1);
-		AI_Output(other,self,"DIA_Orc_8215_Kan_RoundFiveDone_01_04");	//Оно мне точно не помешает.
+		AI_Output(other,self, " DIA_Orc_8215_Kan_RoundFiveDone_01_04 " );	// It certainly won't hurt me.
 		ArenaFightNow = FALSE;
 		ReadyForRoundSix = TRUE;
 		ORCRESPECT = ORCRESPECT + 5;
 
 		if(MIS_HeroOrcJoin == LOG_Running)
 		{
-			AI_Print("Уважение среди орков + 5");
+			AI_Print( " Respect among orcs + 5 " );
 		};
 	}
 	else if(ArenaBattle_05_Lost == TRUE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFiveDone_01_05");	//Ур Кан предупреждать человек, что Ур Трок быть очень силен.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFiveDone_01_06");	//И тот мог сам убедиться в этом.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFiveDone_01_07");	//Надо быть куда сильнее, чтобы победить Ур Трок!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFiveDone_01_08");	//Человек ступать тренироваться! Если сражаться снова, то говорить Ур Кан.
-		ArenaBattle_05_Won = FALSE;
-		ArenaBattle_05_Lost = FALSE;
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFiveDone_01_05 " );	// Ur Kahn warn people that Ur Throk be very strong.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFiveDone_01_06 " );	// And he could see for himself.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFiveDone_01_07 " );	// You have to be much stronger to defeat Ur Throk!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFiveDone_01_08 " );	// Man step to train! If fighting again, then speak Ur Kahn.
+		ArenaBattle_05_Won = FALSE ;
+		ArenaBattle_05_Lost = FALSE ;
 		ArenaBattle_05 = FALSE;
 		ArenaFightNow = FALSE;
 		LostLastOrcFight = TRUE;
@@ -3343,7 +3344,7 @@ instance DIA_Orc_8215_Kan_RoundFive_Again(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundFive_Again_condition;
 	information = DIA_Orc_8215_Kan_RoundFive_Again_info;
 	permanent = TRUE;
-	description = "Я хочу вновь сразиться с Ур Троком. (Цена: 60 кусков руды)";
+	description = " I want to fight Ur Throk again. (Cost: 60 Ore) " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundFive_Again_condition()
@@ -3360,13 +3361,13 @@ func void DIA_Orc_8215_Kan_RoundFive_Again_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8150_UrTrok);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundFive_Again_01_01");	//Я хочу вновь сразиться с Ур Троком.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundFive_Again_01_01 " );	// I want to fight Ur Throk again.
 
 	if(Npc_HasItems(other,ItMi_Nugget) >= 60)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Nugget,60);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_Again_01_02");	//Если человек быть уверен в свой сила, то Ур Кан начинать бой.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_Again_01_03");	//Идти человек! Ур Трок ждать его.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFive_Again_01_02 " );	// If a person is confident in his strength, then Ur Kahn will start the fight.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFive_Again_01_03 " );	// Go man! Ur Throk wait for him.
 		AI_StopProcessInfos(self);
 		ArenaBattle_05 = TRUE;
 		ArenaFightNow = TRUE;
@@ -3375,12 +3376,12 @@ func void DIA_Orc_8215_Kan_RoundFive_Again_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_Again_01_04");	//У человек не хватать руда для этого!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_Again_01_05");	//Ур Кан не разрешать человек сражаться на арена.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFive_Again_01_04 " );	// Do people not have enough ore for this!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundFive_Again_01_05 " );	// Ur Kahn does not allow people to fight in the arena.
 	};
 };
 
-//----------------------------------Умрак----------------------------------------------
+// -----------------------------------Twilight------------- ----------------------------------
 
 instance DIA_Orc_8215_Kan_RoundSix(C_Info)
 {
@@ -3388,7 +3389,7 @@ instance DIA_Orc_8215_Kan_RoundSix(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundSix_condition;
 	information = DIA_Orc_8215_Kan_RoundSix_info;
 	permanent = FALSE;
-	description = "У тебя еще кто-нибудь остался?";
+	description = " Do you still have anyone left? " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundSix_condition()
@@ -3405,13 +3406,13 @@ func void DIA_Orc_8215_Kan_RoundSix_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8151_Umrak);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSix_01_01");	//У тебя еще кто-нибудь остался?
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSix_01_02");	//Против человек не выступать только Умрак.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSix_01_03");	//Это самый сильный воин Ур Кан! По силе не уступать даже великий Ур-Тралл.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSix_01_04");	//Человек сначала хорошо подумать. Действительно ли он хочет сразиться с Умрак?
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSix_01_05");	//Давай его уже сюда!
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSix_01_06");	//(серьезно) Хорошо. Быть так! Ступать на арена, сражаться с Умрак Дар.
-	B_LogEntry(TOPIC_OrcArena,"Мой последний бой на арене. Против меня выйдет Умрак. По словам Ур Кана, это очень серьезный противник. По силе он не уступает великому вождю орков.");
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSix_01_01 " );	// Do you still have anyone left?
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSix_01_02 " );	// Only Umrak can't oppose people.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSix_01_03 " );	// This is the strongest warrior Ur Kahn! Even the great Ur-Thrall is not inferior in strength.
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSix_01_04 " );	// Man first think well. Does he really want to fight Umrak?
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSix_01_05 " );	// Give it here already!
+	AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSix_01_06 " );	// (seriously) Good. Be so! Enter the arena, fight Umrak Dar.
+	B_LogEntry(TOPIC_OrcArena, " My last battle in the arena. Umrak will fight against me. According to Ur Kahn, this is a very serious opponent. He is not inferior in strength to the great leader of the orcs. " );
 	AI_StopProcessInfos(self);
 	ArenaBattle_06 = TRUE;
 	ArenaFightNow = TRUE;
@@ -3424,12 +3425,12 @@ instance DIA_Orc_8215_Kan_RoundSixDone(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundSixDone_condition;
 	information = DIA_Orc_8215_Kan_RoundSixDone_info;
 	permanent = TRUE;
-	description = "Я сразился с Умраком.";
+	description = " I fought the Dyomk. " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundSixDone_condition()
 {
-	if((ULUMULUISEQUIP == TRUE) && (HeroIsMorDar == FALSE) && ((ArenaBattle_06_Won == TRUE) || (ArenaBattle_06_Lost == TRUE)))
+	if (( ULUMULUISEQUIP  ==  TRUE ) && ( HeroIsMorDar ==  FALSE ) && (( ArenaBattle_06_Won ==  TRUE ) || ( ArenaBattle_06_Lost ==  TRUE )))
 	{
 		return TRUE;
 	};
@@ -3438,41 +3439,41 @@ func int DIA_Orc_8215_Kan_RoundSixDone_condition()
 func void DIA_Orc_8215_Kan_RoundSixDone_info()
 {
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSixDone_01_01");	//Я сразился с Умраком.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSixDone_01_01 " );	// I fought Umrak.
 
 	if(ArenaBattle_06_Won == TRUE)
 	{
 		B_GivePlayerXP(1000);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSixDone_01_02");	//Ур Кан не верить своим глазам! Человек победить сам Умрак!
-		AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSixDone_01_03");	//Да, и это было непросто!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSixDone_01_04");	//Тогда теперь человек становиться Мор Дар! Лучший воин великий арена орков.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSixDone_01_05");	//Сильнее него тут не быть больше никого. Очень много сила, очень много чести и уважения.
-		AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSixDone_01_06");	//А где моя награда?
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSixDone_01_07");	//Вот, человек получать Грах Шах! Самый ценный награда, который только быть у него.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSixDone_01_02 " );	// Ur Kahn can't believe your eyes! Man defeat the Umrak himself!
+		AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSixDone_01_03 " );	// Yes, and it wasn't easy!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSixDone_01_04 " );	// Then now a person becomes Mor Dar! The best warrior of the great orc arena.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSixDone_01_05 " );	// There is no one stronger than him here. A lot of power, a lot of honor and respect.
+		AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSixDone_01_06 " );	// Where's my reward?
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSixDone_01_07 " );	// Here, a person to receive Grah Shah! The most valuable reward he could ever have.
 		B_GiveInvItems(self,other,ItMi_GrahShar,1);
-		AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSixDone_01_08");	//Интересная вещица. А для чего она?
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSixDone_01_09");	//Человек одевать ее и смотреть! Ур Кан думать, что человек это сам понять.
+		AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSixDone_01_08 " );	// Interesting stuff. What is she for?
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSixDone_01_09 " );	// Man dress her up and watch! Ur Kahn think that a person is self-understand.
 		ORCRESPECT = ORCRESPECT + 45;
 
 		if(MIS_HeroOrcJoin == LOG_Running)
 		{
-			AI_Print("Уважение среди орков + 45");
+			AI_Print( " Respect among orcs + 45 " );
 		};
 
 		ArenaFightNow = FALSE;
 		HeroIsMorDar = TRUE;
 		MIS_OrcArena = LOG_Success;
 		Log_SetTopicStatus(TOPIC_OrcArena,LOG_Success);
-		B_LogEntry(TOPIC_OrcArena,"Теперь я Мор Дар - чемпион великой арены орков!");
+		B_LogEntry(TOPIC_OrcArena, " Now I am Mor Dar, champion of the great orc arena! " );
 	}
 	else if(ArenaBattle_06_Lost == TRUE)
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSixDone_01_11");	//Ур Кан не удивляться, что человек проиграть Умрак.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSixDone_01_12");	//Тот еще повезло, что Умрак не убить его!
-		AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSixDone_01_13");	//Да, этот парень довольно крепкий орешек.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSixDone_01_14");	//Потому что быть лучший, быть почти Мор Дар!
-		ArenaBattle_06_Won = FALSE;
-		ArenaBattle_06_Lost = FALSE;
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSixDone_01_11 " );	// Ur Kahn is not surprised that a person lose Umrak.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSixDone_01_12 " );	// He's still lucky that Umrak didn't kill him!
+		AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSixDone_01_13 " );	// Yeah, this guy is pretty tough.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSixDone_01_14 " );	// Because to be the best, to be almost Mor Dar!
+		ArenaBattle_06_Won = FALSE ;
+		ArenaBattle_06_Lost = FALSE ;
 		ArenaBattle_06 = FALSE;
 		ArenaFightNow = FALSE;
 		LostLastOrcFight = TRUE;
@@ -3488,7 +3489,7 @@ instance DIA_Orc_8215_Kan_RoundSix_Again(C_Info)
 	condition = DIA_Orc_8215_Kan_RoundSix_Again_condition;
 	information = DIA_Orc_8215_Kan_RoundSix_Again_info;
 	permanent = TRUE;
-	description = "Я хочу вновь сразиться с Умраком. (Цена: 100 кусков руды)";
+	description = " I want to fight Umrak again. (Cost: 100 Ore) " ;
 };
 
 func int DIA_Orc_8215_Kan_RoundSix_Again_condition()
@@ -3505,14 +3506,14 @@ func void DIA_Orc_8215_Kan_RoundSix_Again_info()
 
 	ArenaFighter = Hlp_GetNpc(STRF_8151_Umrak);
 
-	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSix_Again_01_01");	//Я хочу вновь сразиться с Умраком.
+	AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSix_Again_01_01 " );	// I want to fight Umrak again.
 
 	if(Npc_HasItems(other,ItMi_Nugget) >= 100)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Nugget,100);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSix_Again_01_02");	//Человек уверен, что хотеть этого?
-		AI_Output(other,self,"DIA_Orc_8215_Kan_RoundSix_Again_01_03");	//Я должен его победить.
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSix_Again_01_04");	//Тогда ступать! Великий битва скоро начаться...
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSix_Again_01_02 " );	// Is the person sure to want this?
+		AI_Output(other,self, " DIA_Orc_8215_Kan_RoundSix_Again_01_03 " );	// I have to defeat him.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSix_Again_01_04 " );	// Then go! The great battle is about to begin...
 		AI_StopProcessInfos(self);
 		ArenaBattle_06 = TRUE;
 		ArenaFightNow = TRUE;
@@ -3521,12 +3522,12 @@ func void DIA_Orc_8215_Kan_RoundSix_Again_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSix_Again_01_05");	//У человек не хватать руда для этого!
-		AI_Output(self,other,"DIA_Orc_8215_Kan_RoundSix_Again_01_06");	//Ур Кан не разрешать человек сражаться на арена.
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSix_Again_01_05 " );	// Do people not have enough ore for this!
+		AI_Output(self,other, " DIA_Orc_8215_Kan_RoundSix_Again_01_06 " );	// Ur Kahn does not allow people to fight in the arena.
 	};
 };
 
-//--------------------------------------------------Ур-Так-------------------------------------
+// ------------------------------------------------ --Ur-So-------------------------------
 
 instance DIA_STRF_8152_UrTak_EXIT(C_Info)
 {
@@ -3555,7 +3556,7 @@ instance DIA_STRF_8152_UrTak_Hello(C_Info)
 	condition = DIA_STRF_8152_UrTak_Hello_condition;
 	information = DIA_STRF_8152_UrTak_Hello_info;
 	permanent = FALSE;
-	description = "Тренируешься?";
+	description = " Working out? " ;
 };
 
 func int DIA_STRF_8152_UrTak_Hello_condition()
@@ -3565,25 +3566,25 @@ func int DIA_STRF_8152_UrTak_Hello_condition()
 
 func void DIA_STRF_8152_UrTak_Hello_info()
 {
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_Hello_01_01");	//Тренируешься?
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_Hello_01_02");	//Уртак хотеть быть сильный воин...(серьезно) Хотеть быть как его брат Умрак!
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_Hello_01_03");	//Поэтому человек не мешать Уртак! Иначе тот сильно злиться и будет бить человек.
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_Hello_01_04");	//Какой ты грозный.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_Hello_01_01 " );	// Working out?
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_Hello_01_02 " );	// Urtak wants to be a strong warrior...(seriously) Wants to be like his brother Umrak!
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_Hello_01_03 " );	// Therefore, the person does not interfere with Urtak! Otherwise, he will get very angry and the person will beat.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_Hello_01_04 " );	// How formidable you are.
 };
 
 
-instance DIA_STRF_8152_UrTak_Umrak(C_Info)
+instance DIA_STRF_8152_UrTak_Umrak (C_Info)
 {
 	npc = STRF_8152_UrTak;
 	condition = DIA_STRF_8152_UrTak_Umrak_condition;
 	information = DIA_STRF_8152_UrTak_Umrak_info;
 	permanent = FALSE;
-	description = "Умрак твой брат?";
+	description = " Darkness is your brother? " ;
 };
 
 func int DIA_STRF_8152_UrTak_Umrak_condition()
 {
-	if((Npc_KnowsInfo(hero,DIA_STRF_8152_UrTak_Hello) == TRUE) && (KnowAboutUmrak == TRUE))
+	if ((Npc_KnowsInfo(hero,DIA_STRF_8152_UrTak_Hello) ==  TRUE ) && (KnowAboutUmrak ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -3591,8 +3592,8 @@ func int DIA_STRF_8152_UrTak_Umrak_condition()
 
 func void DIA_STRF_8152_UrTak_Umrak_info()
 {
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_Umrak_01_01");	//Умрак твой брат?
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_Umrak_01_02");	//(гордо) Быть так. Быть очень сильный воин! Сражаться на великий арена братов.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_Umrak_01_01 " );	// Umrak is your brother?
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_Umrak_01_02 " );	// (proudly) Be like that. Be a very strong warrior! Fight in the great arena of brothers.
 };
 
 instance DIA_STRF_8152_UrTak_Teach(C_Info)
@@ -3601,7 +3602,7 @@ instance DIA_STRF_8152_UrTak_Teach(C_Info)
 	condition = DIA_STRF_8152_UrTak_Teach_condition;
 	information = DIA_STRF_8152_UrTak_Teach_info;
 	permanent = FALSE;
-	description = "Покажешь мне пару своих приемчиков?";
+	description = " Show me some of your tricks? " ;
 };
 
 func int DIA_STRF_8152_UrTak_Teach_condition()
@@ -3614,16 +3615,16 @@ func int DIA_STRF_8152_UrTak_Teach_condition()
 
 func void DIA_STRF_8152_UrTak_Teach_info()
 {
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_Teach_01_01");	//Покажешь мне пару своих приемчиков?
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_Teach_01_02");	//А почему Уртак должен это делать? Уртак думать, что человек быть слабый!
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_Teach_01_03");	//Может, проверим?
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_Teach_01_04");	//Ар Дагар запретить тут сражаться! Если ослушаться, то браты убивать человек и Уртак.
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_Teach_01_05");	//Если человек хотеть доказать Уртак, что он быть сильный, то идти и побеждать Умрака!
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_Teach_01_06");	//Тогда Уртак научить его сражаться оружием братов.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_Teach_01_01 " );	// Show me some of your tricks?
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_Teach_01_02 " );	// Why should Urtak do this? Urtak think that man be weak!
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_Teach_01_03 " );	// Can we check?
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_Teach_01_04 " );	// Ar Dagar forbid fighting here! If you disobey, then the brothers will kill people and Urtak.
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_Teach_01_05 " );	// If a person wants to prove to Urtak that he is strong, then go and defeat Umrak!
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_Teach_01_06 " );	// Then Urthak teach him to fight with the weapons of his brothers.
 	MIS_UrTakTeach = LOG_Running;
 	Log_CreateTopic(TOPIC_UrTakTeach,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_UrTakTeach,LOG_Running);
-	B_LogEntry(TOPIC_UrTakTeach,"Уртак покажет мне, как сражаться с орочьим оружием. Но только если я смогу победить его брата Умрака на арене орков.");
+	B_LogEntry(TOPIC_UrTakTeach, " Urtak will show me how to fight with orc weapons. But only if I can defeat his brother Umrak in the orc arena. " );
 };
 
 
@@ -3633,7 +3634,7 @@ instance DIA_STRF_8152_UrTak_TeachDone(C_Info)
 	condition = DIA_STRF_8152_UrTak_TeachDone_condition;
 	information = DIA_STRF_8152_UrTak_TeachDone_info;
 	permanent = FALSE;
-	description = "Я победил твоего брата на арене!";
+	description = " I defeated your brother in the arena! " ;
 };
 
 func int DIA_STRF_8152_UrTak_TeachDone_condition()
@@ -3646,13 +3647,13 @@ func int DIA_STRF_8152_UrTak_TeachDone_condition()
 
 func void DIA_STRF_8152_UrTak_TeachDone_info()
 {
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_TeachDone_01_01");	//Я победил твоего брата на арене!
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_TeachDone_01_02");	//Человек одолеть Умрак? (с уважением) Тогда он быть великий воин!
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_TeachDone_01_03");	//Для Уртак это быть большой честь учить его сражаться.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_TeachDone_01_01 " );	// I defeated your brother in the arena!
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_TeachDone_01_02 " );	// Man to overcome the Twilight? (respectfully) Then he be a great warrior!
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_TeachDone_01_03 " );	// It's a great honor for Urtak to teach him how to fight.
 	AI_PlayAni(self,"T_GREETGRD");
 	MIS_UrTakTeach = LOG_Success;
 	Log_SetTopicStatus(TOPIC_UrTakTeach,LOG_Success);
-	B_LogEntry(TOPIC_UrTakTeach,"Теперь Уртак покажет мне, как сражаться с орочьим оружием.");
+	B_LogEntry(TOPIC_UrTakTeach, " Now Urtak will show me how to fight with orc weapons. " );
 };
 
 instance DIA_STRF_8152_UrTak_OFStyle(C_Info)
@@ -3661,7 +3662,7 @@ instance DIA_STRF_8152_UrTak_OFStyle(C_Info)
 	condition = DIA_STRF_8152_UrTak_OFStyle_condition;
 	information = DIA_STRF_8152_UrTak_OFStyle_info;
 	permanent = TRUE;
-	description = "Научи меня сражаться оружием орков. (Очки обучения: 10)";
+	description = " Teach me how to use orc weapons. (Training Points: 10) " ;
 };
 
 func int DIA_STRF_8152_UrTak_OFStyle_condition()
@@ -3674,29 +3675,29 @@ func int DIA_STRF_8152_UrTak_OFStyle_condition()
 
 func void DIA_STRF_8152_UrTak_OFStyle_info()
 {
-	var int kosten;
+	var int cost;
 
-	kosten = 10;
+	cost = 10 ;
 
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_OFStyle_01_00");	//Научи меня сражаться оружием орков.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_OFStyle_01_00 " );	// Teach me how to fight with orc weapons.
 
 	if(hero.lp < kosten)
 	{
 		AI_Print(PRINT_NotEnoughLearnPoints);
-		AI_Output(self,other,"DIA_STRF_8152_UrTak_OFStyle_01_01");	//У человек не хватать опыт для этого! Уртак не может его учить...
+		AI_Output(self,other, " DIA_STRF_8152_UrTak_OFStyle_01_01 " );	// Do people not have enough experience for this! Urtak can't teach him...
 		AI_StopProcessInfos(self);
 	};
 	if(hero.lp >= kosten)
 	{
-		AI_Output(self,other,"DIA_STRF_8152_UrTak_OFStyle_01_02");	//Тогда слушать Уртак внимательно. Он будет говорить.
-		AI_Output(self,other,"DIA_STRF_8152_UrTak_OFStyle_01_03");	//Оружие братов быть очень тяжелый для человек! Тяжело держать, тяжело сражаться.
-		AI_Output(self,other,"DIA_STRF_8152_UrTak_OFStyle_01_04");	//Тот быстро уставать, терять сила и проиграть битва.
-		AI_Output(self,other,"DIA_STRF_8152_UrTak_OFStyle_01_05");	//Уртак показать, как правильно держать оружие, как правильно наносить удар.
-		AI_Output(self,other,"DIA_STRF_8152_UrTak_OFStyle_01_06");	//Человек должен использовать тяжесть оружия, а не своя сила, чтобы бить.
-		AI_Output(self,other,"DIA_STRF_8152_UrTak_OFStyle_01_07");	//Тогда он сможет использовать оружие братов правильно!
+		AI_Output(self,other, " DIA_STRF_8152_UrTak_OFStyle_01_02 " );	// Then listen to Urtak carefully. He will speak.
+		AI_Output(self,other, " DIA_STRF_8152_UrTak_OFStyle_01_03 " );	// The weapons of the brothers be very heavy for a man! Hard to hold, hard to fight.
+		AI_Output(self,other, " DIA_STRF_8152_UrTak_OFStyle_01_04 " );	// He gets tired quickly, lose strength and lose the battle.
+		AI_Output(self,other, " DIA_STRF_8152_UrTak_OFStyle_01_05 " );	// Urtak to show how to hold a weapon correctly, how to strike correctly.
+		AI_Output(self,other, " DIA_STRF_8152_UrTak_OFStyle_01_06 " );	// A person must use the weight of the weapon, not their own strength, to hit.
+		AI_Output(self,other, " DIA_STRF_8152_UrTak_OFStyle_01_07 " );	// Then he can use his brothers' weapons correctly!
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
-		AI_Print("Изучено: владение орочьим оружием");
+		RankPoints = RankPoints + cost;
+		AI_Print( " Learned: Orc Weapon Proficiency " );
 		OFStyle = TRUE;
 		Snd_Play("LevelUP");
 	};
@@ -3708,7 +3709,7 @@ instance DIA_STRF_8152_UrTak_WhatDo(C_Info)
 	condition = DIA_STRF_8152_UrTak_WhatDo_condition;
 	information = DIA_STRF_8152_UrTak_WhatDo_info;
 	permanent = FALSE;
-	description = "А что ты здесь вообще делаешь?";
+	description = " What are you even doing here? " ;
 };
 
 func int DIA_STRF_8152_UrTak_WhatDo_condition()
@@ -3721,18 +3722,18 @@ func int DIA_STRF_8152_UrTak_WhatDo_condition()
 
 func void DIA_STRF_8152_UrTak_WhatDo_info()
 {
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_WhatDo_01_01");	//А что ты здесь вообще делаешь?
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_WhatDo_01_02");	//Уртак охранять вход в глубокий шахта.
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_WhatDo_01_03");	//Если сниза приходить враг, то Уртак сражаться с ним!
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_WhatDo_01_04");	//А что там за враг?
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_WhatDo_01_05");	//Уртак этого не знать, но другие браты говорить, что он быть очень сильный!
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_WhatDo_01_06");	//Он даже хотеть пойти сам смотреть, но Ар Дагар говорить Уртак нельзя.
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_WhatDo_01_07");	//Уртак сильно печалиться. Уртак хотеть биться с враг!
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_WhatDo_01_08");	//Ну, не расстраивайся! Может быть, тебе еще представится подобная возможность.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_WhatDo_01_01 " );	// What are you even doing here?
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_WhatDo_01_02 " );	// Urtak guard the entrance to the deep mine.
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_WhatDo_01_03 " );	// If an enemy comes from below, then Urtak will fight him!
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_WhatDo_01_04 " );	// And what kind of enemy is there?
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_WhatDo_01_05 " );	// Urtak doesn't know this, but the other brothers say he's very strong!
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_WhatDo_01_06 " );	// He even wants to go see for himself, but Ar Dagar can't say Urtak.
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_WhatDo_01_07 " );	// Urtak is very sad. Urtak want to fight the enemy!
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_WhatDo_01_08 " );	// Well, don't be upset! Maybe you'll get another chance like this.
 	MIS_UrTakWannaFight = LOG_Running;
 	Log_CreateTopic(TOPIC_UrTakWannaFight,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_UrTakWannaFight,LOG_Running);
-	B_LogEntry(TOPIC_UrTakWannaFight,"Орк Уртак хочет сражаться со злом, что затаилось в глубокой шахте. Но поскольку Ар Дагар запретил кому-либо спускаться туда, Уртак очень печалится об этом. Если я вдруг отправлюсь туда, надо не забыть про этого воина.");
+	B_LogEntry(TOPIC_UrTakWannaFight, " Orc Urtak wants to fight the evil that lurks in the deep mine. But since Ar Dagar forbade anyone to go down there, Urtak is very sad about it. If I suddenly go there, I must not forget about this warrior. " ) ;
 };
 
 instance DIA_STRF_8152_UrTak_GoWithMe(C_Info)
@@ -3741,7 +3742,7 @@ instance DIA_STRF_8152_UrTak_GoWithMe(C_Info)
 	condition = DIA_STRF_8152_UrTak_GoWithMe_condition;
 	information = DIA_STRF_8152_UrTak_GoWithMe_info;
 	permanent = FALSE;
-	description = "Пойдешь со мной сражаться в глубокую шахту?";
+	description = " Will you come with me to fight in the deep mine? " ;
 };
 
 func int DIA_STRF_8152_UrTak_GoWithMe_condition()
@@ -3755,19 +3756,19 @@ func int DIA_STRF_8152_UrTak_GoWithMe_condition()
 func void DIA_STRF_8152_UrTak_GoWithMe_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_GoWithMe_01_01");	//Пойдешь со мной сражаться в глубокую шахту?
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_GoWithMe_01_02");	//Человек не шутить с Уртак? Разве Ар Дагар не запрещать никому ходить туда?
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_GoWithMe_01_03");	//Ар Дагар дал мне свое согласие.
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_GoWithMe_01_04");	//Так что теперь я с несколькими вашими воинами отправляюсь вниз, чтобы покончить с обосновавшимся там злом.
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_GoWithMe_01_05");	//Уртак быть рад, что человек не забыть про него! Он идти вместе с ним сражаться в глубокий шахта.
-	AI_Output(other,self,"DIA_STRF_8152_UrTak_GoWithMe_01_06");	//Тогда отправляйся к подъемнику. Сбор там.
-	AI_Output(self,other,"DIA_STRF_8152_UrTak_GoWithMe_01_07");	//Хорошо! Уртак уже идти.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_GoWithMe_01_01 " );	// Will you come with me to fight in a deep mine?
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_GoWithMe_01_02 " );	// Человек не шутить с Отрак? Razve Ar Dagar ne preshechat nikomu hodit there?
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_GoWithMe_01_03 " );	// Ar Dagar gave me his consent.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_GoWithMe_01_04 " );	// So now I'm heading downstairs with a few of your warriors to deal with the evil that's settled there.
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_GoWithMe_01_05 " );	// Urtak be glad that the man didn't forget about him! He go along with him to fight in the deep mine.
+	AI_Output(other,self, " DIA_STRF_8152_UrTak_GoWithMe_01_06 " );	// Then go to the lift. Gathering there.
+	AI_Output(self,other, " DIA_STRF_8152_UrTak_GoWithMe_01_07 " );	// Good! Urtak already go.
 
 	if(MIS_UrTakWannaFight != LOG_Success)
 	{
 		MIS_UrTakWannaFight = LOG_Success;
 		Log_SetTopicStatus(TOPIC_UrTakWannaFight,LOG_Success);
-		B_LogEntry(TOPIC_UrTakWannaFight,"Я взял Уртака с собой в глубокую шахту.");
+		B_LogEntry(TOPIC_UrTakWannaFight, " I took Urtak with me to the deep mine. " );
 	};
 
 	AI_StopProcessInfos(self);
@@ -3783,7 +3784,7 @@ func void DIA_STRF_8152_UrTak_GoWithMe_info()
 };
 
 
-//--------------------------------------------------Орки УрТралла-------------------------------------
+// ------------------------------------------------ --Orcs of UrThrall-------------------------------
 
 instance DIA_STRF_8153_Fighter_EXIT(C_Info)
 {
@@ -3806,7 +3807,7 @@ func void DIA_STRF_8153_Fighter_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_STRF_8153_Fighter_PreHello(C_Info)
+instance DIA_STRF_8153_Fighter_PreHello (C_Info);
 {
 	npc = STRF_2153_Fighter;
 	condition = DIA_STRF_8153_Fighter_PreHello_condition;
@@ -3825,11 +3826,11 @@ func int DIA_STRF_8153_Fighter_PreHello_condition()
 
 func void DIA_STRF_8153_Fighter_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -3874,7 +3875,7 @@ func void DIA_STRF_8153_Fighter_PreHello_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8214_Dagrag_PreHello_01_03");	//Орак Шака!
+		AI_Output(self,other, " DIA_Orc_8214_Dagrag_PreHello_01_03 " );	// Orak Shaka!
 	};
 
 	AI_StopProcessInfos(self);
@@ -3901,7 +3902,7 @@ func void DIA_STRF_8154_Fighter_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_STRF_8154_Fighter_PreHello(C_Info)
+instance DIA_STRF_8154_Fighter_PreHello (C_Info);
 {
 	npc = STRF_2154_Fighter;
 	condition = DIA_STRF_8154_Fighter_PreHello_condition;
@@ -3920,11 +3921,11 @@ func int DIA_STRF_8154_Fighter_PreHello_condition()
 
 func void DIA_STRF_8154_Fighter_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -3969,7 +3970,7 @@ func void DIA_STRF_8154_Fighter_PreHello_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8214_Dagrag_PreHello_01_03");	//Орак Шака!
+		AI_Output(self,other, " DIA_Orc_8214_Dagrag_PreHello_01_03 " );	// Orak Shaka!
 	};
 
 	AI_StopProcessInfos(self);
@@ -3996,7 +3997,7 @@ func void DIA_STRF_8155_Fighter_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_STRF_8155_Fighter_PreHello(C_Info)
+instance DIA_STRF_8155_Fighter_PreHello (C_Info);
 {
 	npc = STRF_2155_Fighter;
 	condition = DIA_STRF_8155_Fighter_PreHello_condition;
@@ -4015,11 +4016,11 @@ func int DIA_STRF_8155_Fighter_PreHello_condition()
 
 func void DIA_STRF_8155_Fighter_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -4064,7 +4065,7 @@ func void DIA_STRF_8155_Fighter_PreHello_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8214_Dagrag_PreHello_01_03");	//Орак Шака!
+		AI_Output(self,other, " DIA_Orc_8214_Dagrag_PreHello_01_03 " );	// Orak Shaka!
 	};
 
 	AI_StopProcessInfos(self);
@@ -4091,7 +4092,7 @@ func void DIA_STRF_8156_Fighter_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_STRF_8156_Fighter_PreHello(C_Info)
+instance DIA_STRF_8156_Fighter_PreHello (C_Info);
 {
 	npc = STRF_2156_Fighter;
 	condition = DIA_STRF_8156_Fighter_PreHello_condition;
@@ -4110,11 +4111,11 @@ func int DIA_STRF_8156_Fighter_PreHello_condition()
 
 func void DIA_STRF_8156_Fighter_PreHello_info()
 {
-	var int random;
+	be int random;
 
 	if(PlayerKnowsOrcLanguage == FALSE)
 	{
-		random = Hlp_Random(8);
+		random = Hlp_Random( 8 );
 
 		if(random == 0)
 		{
@@ -4159,7 +4160,7 @@ func void DIA_STRF_8156_Fighter_PreHello_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8214_Dagrag_PreHello_01_03");	//Орак Шака!
+		AI_Output(self,other, " DIA_Orc_8214_Dagrag_PreHello_01_03 " );	// Orak Shaka!
 	};
 
 	AI_StopProcessInfos(self);
@@ -4186,7 +4187,7 @@ func void DIA_STRF_8157_Fighter_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_STRF_8157_Fighter_PreHello(C_Info)
+instance DIA_STRF_8157_Fighter_PreHello (C_Info);
 {
 	npc = STRF_2157_Fighter;
 	condition = DIA_STRF_8157_Fighter_PreHello_condition;
@@ -4203,12 +4204,12 @@ func int DIA_STRF_8157_Fighter_PreHello_condition()
 func void DIA_STRF_8157_Fighter_PreHello_info()
 {
 	AI_PlayAni(self,"T_GREETGRD");
-	AI_Output(self,other,"DIA_Orc_8214_Dagrag_PreHello_01_03");	//Орак Шака!
-	AI_Output(self,other,"DIA_STRF_8157_Fighter_PreHello_01_01");	//Нас прислать великий вождь идти сражаться в глубокий шахта!
-	AI_Output(other,self,"DIA_STRF_8157_Fighter_PreHello_01_02");	//Не так уж вас и много.
-	AI_Output(self,other,"DIA_STRF_8157_Fighter_PreHello_01_03");	//Все воины, который быть тут, все очень сильный! Много раз сражаться с враг и побеждать его.
-	AI_Output(other,self,"DIA_STRF_8157_Fighter_PreHello_01_04");	//Ну, будем надеяться, что ты прав и они действительно мне помогут.
-	AI_Output(self,other,"DIA_STRF_8157_Fighter_PreHello_01_05");	//Человек давать знать, когда начинать! Мы ждать тут его сигнал...
+	AI_Output(self,other, " DIA_Orc_8214_Dagrag_PreHello_01_03 " );	// Orak Shaka!
+	AI_Output(self,other, " DIA_STRF_8157_Fighter_PreHello_01_01 " );	// Send us a great leader to go fight in the deep mine!
+	AI_Output(other,self, " DIA_STRF_8157_Fighter_PreHello_01_02 " );	// There aren't many of you.
+	AI_Output(self,other, " DIA_STRF_8157_Fighter_PreHello_01_03 " );	// All the warriors here are all very strong! Many times fight with the enemy and defeat him.
+	AI_Output(other,self, " DIA_STRF_8157_Fighter_PreHello_01_04 " );	// Well, let's hope you're right and they really help me.
+	AI_Output(self,other, " DIA_STRF_8157_Fighter_PreHello_01_05 " );	// Man letting you know when to start! We're waiting here for his signal...
 };
 
 instance DIA_STRF_8157_Fighter_Go(C_Info)
@@ -4217,12 +4218,12 @@ instance DIA_STRF_8157_Fighter_Go(C_Info)
 	condition = DIA_STRF_8157_Fighter_Go_condition;
 	information = DIA_STRF_8157_Fighter_Go_info;
 	permanent = FALSE;
-	description = "Грузитесь на платформу! Мы начинаем.";
+	description = " Get on the platform! We're starting. " ;
 };
 
 func int DIA_STRF_8157_Fighter_Go_condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_STRF_8157_Fighter_PreHello) == TRUE)
+	if ( Npc_KnowsInfo ( hero , DIA_STRF_8157_Fighter_PreHello ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -4230,10 +4231,10 @@ func int DIA_STRF_8157_Fighter_Go_condition()
 
 func void DIA_STRF_8157_Fighter_Go_info()
 {
-	AI_Output(other,self,"DIA_STRF_8157_Fighter_Go_01_01");	//Грузитесь на платформу! Мы начинаем.
-	AI_Output(self,other,"DIA_STRF_8157_Fighter_Go_01_02");	//Хорошо! Тогда человек брать ключ, чтобы опускать платформа. 
+	AI_Output(other,self, " DIA_STRF_8157_Fighter_Go_01_01 " );	// Get on the platform! We begin.
+	AI_Output(self,other, " DIA_STRF_8157_Fighter_Go_01_02 " );	// Good! Then the person takes the key to lower the platform.
 	B_GiveInvItems(self,other,ItKe_OrcMine_Elevator,1);
-	AI_Output(self,other,"DIA_STRF_8157_Fighter_Go_01_03");	//Орак Шака!
+	AI_Output(self,other, " DIA_STRF_8157_Fighter_Go_01_03 " );	// Orak Shaka!
 	OrcMineFightReady = TRUE;
 	AI_StopProcessInfos(self);
 	B_SetAttitude(STRF_2153_Fighter,ATT_FRIENDLY);
@@ -4247,15 +4248,15 @@ func void DIA_STRF_8157_Fighter_Go_info()
 	Npc_ExchangeRoutine(STRF_2156_Fighter,"Elevator");
 	Npc_ExchangeRoutine(STRF_2157_Fighter,"Elevator");
 
-	if((MIS_UrTakWannaFight == LOG_Success) && (Npc_IsDead(STRF_8152_UrTak) == FALSE))
+	if ((MIS_UrTakWannaFight == LOG_Success) && (Npc_IsDead(STRF_8152_UrTak) ==  FALSE ))
 	{
 		Npc_ExchangeRoutine(STRF_8152_UrTak,"Elevator");
 		AI_Teleport(STRF_8152_UrTak,"ORCMINE_FIGHTER_URTAK");
-		B_SetAttitude(STRF_8152_UrTak,ATT_FRIENDLY);
+		B_SetAttitude(STRF_8152_UrTak, ATT_FRIENDLY );
 	};
 };
 
-//------------------------------------------------------кузнец орков--------------------------
+// ------------------------------------------------ ------orc blacksmith--------------------------
 
 instance DIA_Orc_8571_HashTor_EXIT(C_Info)
 {
@@ -4297,7 +4298,7 @@ func int DIA_Orc_8571_HashTor_PreHello_condition()
 
 func void DIA_Orc_8571_HashTor_PreHello_info()
 {
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_PreHello_01_01");	//КАРАТ ДАР ПОР НУРАК КАР?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_PreHello_01_01 " );	// KARAT DAR POR NURAK KAR?
 	AI_Output(other,self,"DIA_Orc_8571_HashTor_PreHello_01_02");	//Эммм...
 	AI_StopProcessInfos(self);
 };
@@ -4321,7 +4322,7 @@ func int DIA_Orc_8571_HashTor_UpHello_condition()
 
 func void DIA_Orc_8571_HashTor_UpHello_info()
 {
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_UpHello_01_02");	//Что человек быть надо от Хаш Тор?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_UpHello_01_02 " );	// What man should be from Hash Tor?
 };
 
 instance DIA_Orc_8571_HashTor_HELLO(C_Info)
@@ -4330,7 +4331,7 @@ instance DIA_Orc_8571_HashTor_HELLO(C_Info)
 	condition = dia_Orc_8571_HashTor_hello_condition;
 	information = dia_Orc_8571_HashTor_hello_info;
 	permanent = FALSE;
-	description = "Ты ведь кузнец?";
+	description = " You're a blacksmith, aren't you? " ;
 };
 
 func int dia_Orc_8571_HashTor_hello_condition()
@@ -4343,21 +4344,21 @@ func int dia_Orc_8571_HashTor_hello_condition()
 
 func void dia_Orc_8571_HashTor_hello_info()
 {
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Hello_01_01");	//Ты ведь кузнец?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Hello_01_02");	//(одобрительно) ДАГ ТАКАР. Хаш Тор быть мастер железный руда! Быть кузнец, как говорить люди.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Hello_01_03");	//Ур Кан сказал, что ты делаешь оружие из магической руды. Это так?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Hello_01_04");	//Да, Хаш Тор делать! Но только если браты приносить ему много руда магия.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Hello_01_05");	//Оружие орков быть очень большой и тяжелый! Надо много руда магия, чтобы ковать его.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Hello_01_06");	//А меня можешь этому научить?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Hello_01_07");	//Оружие орков не нужно человек... Тот даже не уметь с ним обращаться!
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Hello_01_08");	//Если человек научиться, как сражаться оружием орков, тогда Хаш Тор показать ему, как его делать.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Hello_01_09");	//А кто этому может научить?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Hello_01_10");	//Хаш Тор не знать! Человек сам спрашивать братов об этом.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Hello_01_11");	//Ладно, я тебя понял.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Hello_01_01 " );	// You're a blacksmith, aren't you?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Hello_01_02 " );	// (approvingly) DAG TAKAR. Hash Tor be the master of iron ore! Being a blacksmith is how people talk.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Hello_01_03 " );	// Ur Kahn said you make weapons from magical ores. This is true?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Hello_01_04 " );	// Yes, Hash Tor do! But only if the brothers bring him a lot of ore magic.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Hello_01_05 " );	// Orc weapons to be very big and heavy! You need a lot of ore magic to forge it.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Hello_01_06 " );	// Can you teach me this?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Hello_01_07 " );	// Orc weapons don't need a human... He doesn't even know how to handle them!
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Hello_01_08 " );	// If a man learn how to fight with orc weapons, then Hash Tor show him how to make it.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Hello_01_09 " );	// And who can teach this?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Hello_01_10 " );	// Hash Tor not to know! The man himself ask the brothers about it.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Hello_01_11 " );	// Okay, I understand you.
 	MIS_HashTorRule = LOG_Running;
 	Log_CreateTopic(TOPIC_HashTorRule,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HashTorRule,LOG_Running);
-	B_LogEntry(TOPIC_HashTorRule,"Кузнец Хаш Тор может научить меня делать оружие орков, если я научусь сражаться им.");	
+	B_LogEntry(TOPIC_HashTorRule, " Blacksmith Hash Tor can teach me how to make orc weapons if I learn how to use them. " );	
 };
 
 instance DIA_Orc_8571_HashTor_Rule(C_Info)
@@ -4366,7 +4367,7 @@ instance DIA_Orc_8571_HashTor_Rule(C_Info)
 	condition = dia_Orc_8571_HashTor_Rule_condition;
 	information = dia_Orc_8571_HashTor_Rule_info;
 	permanent = FALSE;
-	description = "Я умею сражаться орочьим оружием.";
+	description = " I can use orc weapons. " ;
 };
 
 func int dia_Orc_8571_HashTor_Rule_condition()
@@ -4380,16 +4381,16 @@ func int dia_Orc_8571_HashTor_Rule_condition()
 func void dia_Orc_8571_HashTor_Rule_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Rule_01_01");	//Я умею сражаться орочьим оружием.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Rule_01_02");	//УРАК ШАКА МОРА...(одобрительно) Хаш Тор видеть это! Человек быть сильный, если смог научиться этому.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Rule_01_03");	//Теперь покажешь мне, как ковать рудное оружие орков?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Rule_01_04");	//Хаш Тор обещать - Хаш Тор держать свой слово!
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Rule_01_05");	//Он обучить этому человек, если у того хватать руда магия и опыта.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Rule_01_01 " );	// I can use orc weapons.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Rule_01_02 " );	// URAK SHAKA MORA...(approvingly) Hash Tor see this! A man to be strong if he could learn it.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Rule_01_03 " );	// Now will you show me how to forge orc ore weapons?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Rule_01_04 " );	// Hash Tor promise - Hash Tor keep your word!
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Rule_01_05 " );	// He will teach this to a person, if he has enough ore of magic and experience.
 	MIS_HashTorRule = LOG_Success;
 	Log_SetTopicStatus(TOPIC_HashTorRule,LOG_Success);
-	B_LogEntry(TOPIC_HashTorRule,"Теперь, когда я умею сражаться оружием орков наверняка Хаш Тор может научить меня ковать орочьи мечи и топоры. В качестве оплаты Хаш Тор берет магическую руду.");	
+	B_LogEntry(TOPIC_HashTorRule, " Now that I know how to fight with Orc weapons, I'm sure Hash Tor can teach me how to forge Orc swords and axes. Hash Tor takes magic ore as payment. " );	
 	Log_CreateTopic(TOPIC_ORCWEAPON,LOG_NOTE);
-	B_LogEntry_Quiet(TOPIC_ORCWEAPON,"Ковка оружия орков...");
+	B_LogEntry_Quiet( TOPIC_ORCWEAPON , " Forging Orc Weapons... " );
 };
 
 var int HashTorTeachAll;
@@ -4400,7 +4401,7 @@ instance DIA_Orc_8571_HashTor_Teach(C_Info)
 	condition = dia_Orc_8571_HashTor_Teach_condition;
 	information = dia_Orc_8571_HashTor_Teach_info;
 	permanent = TRUE;
-	description = "Научи меня делать рудное оружие орков.";
+	description = " Teach me how to make orc ore weapons. " ;
 };
 
 func int dia_Orc_8571_HashTor_Teach_condition()
@@ -4413,38 +4414,38 @@ func int dia_Orc_8571_HashTor_Teach_condition()
 
 func void dia_Orc_8571_HashTor_Teach_info()
 {
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Teach_01_01");	//Научи меня ковать рудное оружие орков.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Teach_01_02");	//Что именно человек хотеть знать?
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Teach_01_01 " );	// Teach me how to forge orc ore weapons.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Teach_01_02 " );	// What exactly does the person want to know?
 	Info_ClearChoices(DIA_Orc_8571_HashTor_Teach);
 	Info_AddChoice(DIA_Orc_8571_HashTor_Teach,Dialog_Back,DIA_Orc_8571_HashTor_Teach_Back);
 
 	if(ORCWEAPON_LINE_STR_01 == FALSE)
 	{
-		Info_AddChoice(DIA_Orc_8571_HashTor_Teach,"Рудный орочий топор (Кусков руды: 125)",DIA_Orc_8571_HashTor_Teach_STR_01);
+		Info_AddChoice(DIA_Orc_8571_HashTor_Teach, " Ore Orc Ax (Ore: 125) " ,DIA_Orc_8571_HashTor_Teach_STR_01);
 	};
 	if((ORCWEAPON_LINE_STR_01 == TRUE) && (ORCWEAPON_LINE_STR_02 == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8571_HashTor_Teach,"Рудный меч воина (Кусков руды: 250)",DIA_Orc_8571_HashTor_Teach_STR_02);
+		Info_AddChoice(DIA_Orc_8571_HashTor_Teach, " Warrior's Ore Sword (Ore: 250) " ,DIA_Orc_8571_HashTor_Teach_STR_02);
 	};
 	if((ORCWEAPON_LINE_STR_02 == TRUE) && (ORCWEAPON_LINE_STR_03 == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8571_HashTor_Teach,"Рудный боевой топор (Кусков руды: 500)",DIA_Orc_8571_HashTor_Teach_STR_03);
+		Info_AddChoice(DIA_Orc_8571_HashTor_Teach, " Ore Battle Ax (Ore Chunks: 500) " ,DIA_Orc_8571_HashTor_Teach_STR_03);
 	};
 	if((ORCWEAPON_LINE_STR_03 == TRUE) && (ORCWEAPON_LINE_HP_01 == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8571_HashTor_Teach,"Рудный орочий колун (Кусков руды: 125)",DIA_Orc_8571_HashTor_Teach_HP_01);
+		Info_AddChoice(DIA_Orc_8571_HashTor_Teach, " Ore Orc Cleaver (Ore: 125) " ,DIA_Orc_8571_HashTor_Teach_HP_01);
 	};
 	if((ORCWEAPON_LINE_HP_01 == TRUE) && (ORCWEAPON_LINE_HP_02 == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8571_HashTor_Teach,"Рудный меч старейшины (Кусков руды: 250)",DIA_Orc_8571_HashTor_Teach_HP_02);
+		Info_AddChoice(DIA_Orc_8571_HashTor_Teach, " Elder's Ore Sword (Ore: 250) " ,DIA_Orc_8571_HashTor_Teach_HP_02);
 	};
 	if((ORCWEAPON_LINE_HP_02 == TRUE) && (ORCWEAPON_LINE_HP_03 == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8571_HashTor_Teach,"Рудная штурмовая секира (Кусков руды: 500)",DIA_Orc_8571_HashTor_Teach_HP_03);
+		Info_AddChoice(DIA_Orc_8571_HashTor_Teach, " Ore Assault Ax (Ore: 500) " ,DIA_Orc_8571_HashTor_Teach_HP_03);
 	};
 	if((ORCWEAPON_LINE_HP_03 == TRUE) && (ORCPRIMEWEAPON == FALSE))
 	{
-		Info_AddChoice(DIA_Orc_8571_HashTor_Teach,"Рудная клеймора вождя (Кусков руды: 1000, Очки обучения: 10)",DIA_Orc_8571_HashTor_Teach_PRIME);
+		Info_AddChoice(DIA_Orc_8571_HashTor_Teach, " Warchief's Ore Claymore (Ore Chunks: 1000, Training Points: 10) " ,DIA_Orc_8571_HashTor_Teach_PRIME);
 	};
 };
 
@@ -4464,8 +4465,8 @@ func void DIA_Orc_8571_HashTor_Teach_STR_01()
 		RankPoints = RankPoints + 5;
 		Npc_RemoveInvItems(hero,ItMi_Nugget,125);
 		ORCWEAPON_LINE_STR_01 = TRUE;
-		AI_Print("Изучен рецепт ковки - 'Рудный орочий топор'");
-		B_LogEntry(TOPIC_ORCWEAPON,"Теперь я умею ковать рудный орочий топор. Для этого требуется: стальная заготовка, десять кусков магической руды, два куска железной руды, смола и сера.");
+		AI_Print( " Learned forging recipe - 'Ore Orc Axe' " );
+		B_LogEntry( TOPIC_ORCWEAPON , " I can now forge an ore orc axe. It requires: a steel billet, ten magic ore, two iron ore, resin and sulfur. " ​​);
 		Npc_SetTalentSkill(hero,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 	};
@@ -4482,8 +4483,8 @@ func void DIA_Orc_8571_HashTor_Teach_STR_02()
 		RankPoints = RankPoints + 10;
 		Npc_RemoveInvItems(hero,ItMi_Nugget,250);
 		ORCWEAPON_LINE_STR_02 = TRUE;
-		AI_Print("Изучен рецепт ковки - 'Рудный меч воина'");
-		B_LogEntry(TOPIC_ORCWEAPON,"Теперь я умею ковать рудный меч воина. Для этого требуется: стальная заготовка, двадцать кусков магической руды, пять кусков железной руды, два куска угля, два куска серы и две порции смолы.");
+		AI_Print( " Forging recipe learned - 'Warrior's Ore Sword' " );
+		B_LogEntry( TOPIC_ORCWEAPON , " Now I can forge a warrior's ore sword. It requires: a steel billet, twenty magic ore, five iron ore, two coal, two sulfur, and two resin. " );
 		Npc_SetTalentSkill(hero,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 	};
@@ -4500,8 +4501,8 @@ func void DIA_Orc_8571_HashTor_Teach_STR_03()
 		RankPoints = RankPoints + 15;
 		Npc_RemoveInvItems(hero,ItMi_Nugget,500);
 		ORCWEAPON_LINE_STR_03 = TRUE;
-		AI_Print("Изучен рецепт ковки - 'Рудный боевой топор'");
-		B_LogEntry(TOPIC_ORCWEAPON,"Теперь я умею ковать рудный боевой топор. Для этого требуется: стальная заготовка, тридцать кусков магической руды, пять кусков угля, три порции смолы, ртуть и сера.");
+		AI_Print( " Learned the forging recipe - 'Ore War Axe' " );
+		; _ _ _ _ _ _
 		Npc_SetTalentSkill(hero,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 
@@ -4523,8 +4524,8 @@ func void DIA_Orc_8571_HashTor_Teach_HP_01()
 		RankPoints = RankPoints + 5;
 		Npc_RemoveInvItems(hero,ItMi_Nugget,125);
 		ORCWEAPON_LINE_HP_01 = TRUE;
-		AI_Print("Изучен рецепт ковки - 'Рудный орочий колун'");
-		B_LogEntry(TOPIC_ORCWEAPON,"Теперь я умею ковать рудный орочий колун. Для этого требуется: стальная заготовка, пять кусков магической руды, десять кусков железной руды, уголь и сера.");
+		AI_Print( " Forging recipe learned - 'Ore Orc Cleaver' " );
+		B_LogEntry( TOPIC_ORCWEAPON , " I can now forge an ore orc cleaver. Requires a billet of steel, five magic ore, ten iron ore, coal, and sulfur. " ​​);
 		Npc_SetTalentSkill(hero,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 	};
@@ -4541,8 +4542,8 @@ func void DIA_Orc_8571_HashTor_Teach_HP_02()
 		RankPoints = RankPoints + 10;
 		Npc_RemoveInvItems(hero,ItMi_Nugget,250);
 		ORCWEAPON_LINE_HP_02 = TRUE;
-		AI_Print("Изучен рецепт ковки - 'Рудный меч старейшины'");
-		B_LogEntry(TOPIC_ORCWEAPON,"Теперь я умею ковать рудный меч старейшины. Для этого требуется: стальная заготовка, десять кусков магической руды, десять кусков железной руды, сера и ртуть.");
+		AI_Print( " Learned crafting recipe - 'Elder's Ore Sword' " );
+		) ; _ _ _ _ _
 		Npc_SetTalentSkill(hero,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 	};
@@ -4559,8 +4560,8 @@ func void DIA_Orc_8571_HashTor_Teach_HP_03()
 		RankPoints = RankPoints + 15;
 		Npc_RemoveInvItems(hero,ItMi_Nugget,500);
 		ORCWEAPON_LINE_HP_03 = TRUE;
-		AI_Print("Изучен рецепт ковки - 'Рудная штурмовая секира'");
-		B_LogEntry(TOPIC_ORCWEAPON,"Теперь я умею ковать рудную штурмовую секиру. Для этого требуется: стальная заготовка, тридцать кусков магической руды, пять кусков серы, черный жемчуг и два куска угля.");
+		AI_Print( " Learned the forging recipe - 'Ore Assault Ax' " );
+		; _ _ _ _ _ _
 		Npc_SetTalentSkill(hero,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 
@@ -4587,8 +4588,8 @@ func void DIA_Orc_8571_HashTor_Teach_PRIME()
 		RankPoints = RankPoints + 20;
 		Npc_RemoveInvItems(hero,ItMi_Nugget,1000);
 		ORCPRIMEWEAPON = TRUE;
-		AI_Print("Изучен рецепт ковки - 'Рудная клеймора вождя'");
-		B_LogEntry(TOPIC_ORCWEAPON,"Теперь я умею ковать рудную клеймору вождя. Для этого требуется: стальная заготовка, пятьдесят кусков магической руды, два куска черной руды, десять кусков серы, две порции смолы, черный жемчуг, изумруд и ртуть.");
+		AI_Print( " Learned the crafting recipe - 'Ore Claymore of the Warchief' " );
+		; _ _ _ _ _ _
 		Npc_SetTalentSkill(hero,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 
@@ -4605,7 +4606,7 @@ instance DIA_Orc_8571_HashTor_Anvil(C_Info)
 	condition = dia_Orc_8571_HashTor_Anvil_condition;
 	information = dia_Orc_8571_HashTor_Anvil_info;
 	permanent = FALSE;
-	description = "Большая у тебя кузня!";
+	description = " Your forge is big! " ;
 };
 
 func int dia_Orc_8571_HashTor_Anvil_condition()
@@ -4618,10 +4619,10 @@ func int dia_Orc_8571_HashTor_Anvil_condition()
 
 func void dia_Orc_8571_HashTor_Anvil_info()
 {
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Anvil_01_01");	//Большая у тебя кузня!
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Anvil_01_02");	//Когда много ковать, то и надо быть много места.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Anvil_01_03");	//И разжигать большой огонь, чтобы делать большой оружие!
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Anvil_01_04");	//Ну, это понятно.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Anvil_01_01 " );	// You have a big forge!
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Anvil_01_02 " );	// When there is a lot of forging, then there must be a lot of space.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Anvil_01_03 " );	// And kindle a big fire to make a big weapon!
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Anvil_01_04 " );	// Well, that's understandable.
 };
 
 instance DIA_Orc_8571_HashTor_War(C_Info)
@@ -4630,7 +4631,7 @@ instance DIA_Orc_8571_HashTor_War(C_Info)
 	condition = dia_Orc_8571_HashTor_War_condition;
 	information = dia_Orc_8571_HashTor_War_info;
 	permanent = FALSE;
-	description = "Много работы?";
+	description = " Too much work? " ;
 };
 
 func int dia_Orc_8571_HashTor_War_condition()
@@ -4643,10 +4644,10 @@ func int dia_Orc_8571_HashTor_War_condition()
 
 func void dia_Orc_8571_HashTor_War_info()
 {
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_War_01_01");	//Много работы?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_War_01_02");	//Браты идти воевать. Надо иметь много оружие, много доспехов!
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_War_01_03");	//Все это делать Хаш Тор! У него быть очень много дел.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_War_01_04");	//Оно и видно.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_War_01_01 " );	// Too much work?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_War_01_02 " );	// Brothers go to war. One must have a lot of weapons, a lot of armor!
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_War_01_03 " );	// All this is to do Hash Tor! He has a lot to do.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_War_01_04 " );	// It's visible.
 };
 
 instance DIA_Orc_8571_HashTor_Help(C_Info)
@@ -4655,7 +4656,7 @@ instance DIA_Orc_8571_HashTor_Help(C_Info)
 	condition = dia_Orc_8571_HashTor_Help_condition;
 	information = dia_Orc_8571_HashTor_Help_info;
 	permanent = FALSE;
-	description = "А помощь тебе не нужна?";
+	description = " Do you need help? " ;
 };
 
 func int dia_Orc_8571_HashTor_Help_condition()
@@ -4668,15 +4669,15 @@ func int dia_Orc_8571_HashTor_Help_condition()
 
 func void dia_Orc_8571_HashTor_Help_info()
 {
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Help_01_01");	//А помощь тебе не нужна?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Help_01_02");	//Хаш Тору очень нужна быть черный руда. Надо не меньше пяти кусков!
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_Help_01_03");	//Но зачем тебе столько?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Help_01_04");	//Хаш Тор делать новый меч для великий вождь! Большой и очень крепкий.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Help_01_05");	//Но для этого ему нужна быть черный руда. Без нее Хаш Тор не мочь делать оружие.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Help_01_01 " );	// Do you need help?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Help_01_02 " );	// Hash Thor really needs to be a black ore. You need at least five pieces!
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_Help_01_03 " );	// But why do you need so many?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Help_01_04 " );	// Hash Tor make a new sword for the great leader! Big and very strong.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_Help_01_05 " );	// But for this he needs to be a black ore. Without it, Hash Tor cannot make weapons.
 	MIS_HashTorOre = LOG_Running;
 	Log_CreateTopic(TOPIC_HashTorOre,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HashTorOre,LOG_Running);
-	B_LogEntry(TOPIC_HashTorOre,"Кузнецу Хаш Тору нужно пять кусков черной руды. Без нее он не сможет сковать для своего вождя новое оружие.");	
+	B_LogEntry(TOPIC_HashTorOre, " Blacksmith Hash TorOre needs five pieces of black ore. Without it, he will not be able to forge a new weapon for his leader. " );	
 };
 
 
@@ -4686,12 +4687,12 @@ instance DIA_Orc_8571_HashTor_OreDone(C_Info)
 	condition = dia_Orc_8571_HashTor_OreDone_condition;
 	information = dia_Orc_8571_HashTor_OreDone_info;
 	permanent = FALSE;
-	description = "Я принес тебе руду.";
+	description = " I brought you ore. " ;
 };
 
 func int dia_Orc_8571_HashTor_OreDone_condition()
 {
-	if((MIS_HashTorOre == LOG_Running) && (Npc_HasItems(other,ItMi_Zeitspalt_Addon) >= 5))
+	if ((MY_HashTorOre == LOG_Running) && (Npc_HasItems(other,ItMy_TimeSpace_Addon) >=  5 ))
 	{
 		return TRUE;
 	};
@@ -4700,31 +4701,31 @@ func int dia_Orc_8571_HashTor_OreDone_condition()
 func void dia_Orc_8571_HashTor_OreDone_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_OreDone_01_01");	//Я принес тебе руду.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_02");	//Тогда человек давать ее Хаш Тор, и он делать большой меч для великий вождь.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_OreDone_01_03");	//Вот, держи.
-	B_GiveInvItems(other,self,ItMi_Zeitspalt_Addon,5);
-	Npc_RemoveInvItems(self,ItMi_Zeitspalt_Addon,5);
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_04");	//Быть очень хорошо... Теперь человек немного ждать.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_OreDone_01_05");	//Эммм... Чего именно?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_06");	//Хаш Тор сейчас ковать оружие, а человек потом относить его в чертоги, отдавать меч Ур-Тралл!
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_OreDone_01_07");	//А ты не боишься, что я просто-напросто сбегу с ним?
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_08");	//Нет...(посмеивается) Он слишком тяжелый для человек! Тот не сможет ходить с ним на война.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_09");	//Только великий вождь быть такой сильный, что поднимать его.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_10");	//Но если человек не верить, то он может попробовать сам.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_11");	//Вот, он держать его.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_OreDone_01_01 " );	// I brought you ore.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_02 " );	// Then the man give her Hash Tor, and he make a great sword for the great chief.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_OreDone_01_03 " );	// Here, take this.
+	B_GiveInvItems(other,self,ItMi_Zeitspalt_Addon, 5 );
+	Npc_RemoveInvItems(self,ItMi_Zeitspalt_Addon, 5 );
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_04 " );	// Be very good... Now man wait a bit.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_OreDone_01_05 " );	// Umm... What exactly?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_06 " );	// Hash Tor now forge weapons, and then the man takes him to the halls, give the sword to Ur-Thrall!
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_OreDone_01_07 " );	// Aren't you afraid that I'll just run away with him?
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_08 " );	// No... (chuckles) He's too heavy for a human! He will not be able to go to war with him.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_09 " );	// Only a great leader be so strong that raise it.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_10 " );	// But if a person does not believe, then he can try it himself.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_11 " );	// Here, he hold it.
 	B_GiveInvItems(self,other,ITMW_2H_ORCSWORD_05,1);
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_OreDone_01_12");	//Проклятье... Какой же он тяжелый!
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_13");	//Хаш Тор не обмануть человек! Оружие для Ур-Тралл быть очень тяжелый для него.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_OreDone_01_14");	//Все! Теперь человек ступать и отнести его великий вождь. Тот его уже ждать.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_OreDone_01_12 " );	// Damn... He's heavy!
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_13 " );	// Hash Tor don't fool people! A weapon for Ur-Thrall to be very heavy for him.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_OreDone_01_14 " );	// Everyone! Now the man set foot and carry his great chief. He is already waiting for him.
 	ORCRESPECT = ORCRESPECT + 10;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 10");
+		AI_Print( " Respect among orcs + 10 " );
 	};
 
-	B_LogEntry(TOPIC_HashTorOre,"Я принес Хаш Тору пять кусков черной руды. Он завершил работу над мечом и попросил меня отнести его Ур-Траллу.");	
+	B_LogEntry(TOPIC_HashTorOre, " I brought five pieces of black ore to Hash Tor. He finished the sword and asked me to take it to Ur-Thrall. " );	
 };
 
 instance DIA_Orc_8571_HashTor_SwordBack(C_Info)
@@ -4733,7 +4734,7 @@ instance DIA_Orc_8571_HashTor_SwordBack(C_Info)
 	condition = dia_Orc_8571_HashTor_SwordBack_condition;
 	information = dia_Orc_8571_HashTor_SwordBack_info;
 	permanent = FALSE;
-	description = "Я отнес меч Ур-Траллу.";
+	description = " I took the sword to Ur-Thrall. " ;
 };
 
 func int dia_Orc_8571_HashTor_SwordBack_condition()
@@ -4747,16 +4748,16 @@ func int dia_Orc_8571_HashTor_SwordBack_condition()
 func void dia_Orc_8571_HashTor_SwordBack_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_SwordBack_01_01");	//Я отнес меч Ур-Траллу.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_SwordBack_01_02");	//Хорошо. И что сказать великий вождь?
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_SwordBack_01_03");	//Он остался доволен твоей работой и сказал, что ты большой мастер.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_SwordBack_01_04");	//КОР, КОР! (радостно) Большой вождь похвалить Хаш Тор! Он быть очень рад этому.
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_SwordBack_01_05");	//Понимаю твою радость.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_SwordBack_01_01 " );	// I took the sword to Ur-Thrall.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_SwordBack_01_02 " );	// Good. And what to say the great leader?
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_SwordBack_01_03 " );	// He was pleased with your work and said that you are a great master.
+	AI_Output(self,other, " DIA_Orc_8571_HashTor_SwordBack_01_04 " );	// KOR, KOR! (joyfully) Big chief praise Hash Tor! He be very happy about it.
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_SwordBack_01_05 " );	// I understand your joy.
 	MIS_HashTorOre = LOG_Success;
 	Log_SetTopicStatus(TOPIC_HashTorOre,LOG_Success);
-	B_LogEntry(TOPIC_HashTorOre,"Я передал Хаш Тору, что меч понравился Ур-Траллу.");
+	B_LogEntry(TOPIC_HashTorOre, " I told Hash Tor that Ur-Thrall liked the sword. " );
 };
-//------------------------------------------------------шаман орков--------------------------
+// ------------------------------------------------ ------orc shaman--------------------------
 
 instance DIA_Orc_8572_UrHoshNar_EXIT(C_Info)
 {
@@ -4779,11 +4780,11 @@ func void dia_Orc_8572_UrHoshNar_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Orc_8572_UrHoshNar_PreHello(C_Info)
+instance DIA_Orc_8572_UrConscious_PreHello (C_Info);
 {
 	npc = Orc_8572_UrHoshNar;
 	condition = DIA_Orc_8572_UrHoshNar_PreHello_condition;
-	information = DIA_Orc_8572_UrHoshNar_PreHello_info;
+	information = DIA_Orc_8572_UrConscious_PreHello_info;
 	important = TRUE;
 	permanent = TRUE;
 };
@@ -4798,7 +4799,7 @@ func int DIA_Orc_8572_UrHoshNar_PreHello_condition()
 
 func void DIA_Orc_8572_UrHoshNar_PreHello_info()
 {
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PreHello_01_01");	//ДАГАР ХАР МОРА!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PreHello_01_01 " );	// DAGAR KHAR MORA!
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PreHello_01_02");	//Эммм... что?
 	AI_StopProcessInfos(self);
 };
@@ -4809,7 +4810,7 @@ instance DIA_Orc_8572_UrHoshNar_HELLO(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_hello_condition;
 	information = dia_Orc_8572_UrHoshNar_hello_info;
 	permanent = FALSE;
-	description = "Привет!";
+	description = " Hi! " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_hello_condition()
@@ -4823,14 +4824,14 @@ func int dia_Orc_8572_UrHoshNar_hello_condition()
 func void dia_Orc_8572_UrHoshNar_hello_info()
 {
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Hello_01_01");	//Привет!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Hello_01_02");	//Хммм...(удивленно) Я видеть, что человек знать наш язык.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Hello_01_03");	//Хош Нар не знать, что бывать такие люди!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Hello_01_02 " );	// Hmmm...(surprised) I see that person know our language.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Hello_01_03 " );	// Hosh Nar do not know that there are such people!
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Hello_01_04");	//А кто ты?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Hello_01_05");	//Хош Нар быть сын духов, быть великий шаман братов.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Hello_01_06");	//Заклинать духи предков, чтобы те не гневаться и не убивать орков.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Hello_01_07");	//Что это еще за духи?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Hello_01_08");	//Человек не брат! Человек не понять...
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Hello_01_09");	//Ах, ну да, конечно.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Hello_01_05 " );	// Hosh Nar be the son of spirits, be the great shaman of the brothers.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Hello_01_06 " );	// Conjure the spirits of the ancestors so that they do not get angry and kill the orcs.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Hello_01_07 " );	// What is this perfume?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Hello_01_08 " );	// Man is not a brother! Man does not understand...
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Hello_01_09 " );	// Ah, yes, of course.
 };
 
 instance DIA_Orc_8572_UrHoshNar_Clever(C_Info)
@@ -4839,7 +4840,7 @@ instance DIA_Orc_8572_UrHoshNar_Clever(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_Clever_condition;
 	information = dia_Orc_8572_UrHoshNar_Clever_info;
 	permanent = FALSE;
-	description = "Вы, шаманы, ведь самые умные среди орков?";
+	description = " Are you shamans the smartest among orcs? " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_Clever_condition()
@@ -4852,25 +4853,25 @@ func int dia_Orc_8572_UrHoshNar_Clever_condition()
 
 func void dia_Orc_8572_UrHoshNar_Clever_info()
 {
-	AI_Output(other,self,"DIA_Orc_8571_UrHoshNar_Clever_01_01");	//Вы, шаманы, ведь самые умные среди орков?
-	AI_Output(self,other,"DIA_Orc_8571_UrHoshNar_Clever_01_02");	//УР РАТ! Сыны духов много знать...(утвердительно) Но зачем человек это спрашивать?
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Clever_01_03");	//Мне бы хотелось немного узнать о культуре орков. А лучше тебя мне вряд ли кто-либо об этом расскажет.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_05");	//Человек очень сильно удивлять Хош Нар! Тот быть очень странный!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_06");	//Но если он действительно хотеть много знать об орках, он прийти правильно сюда.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_07");	//Хош Нар много знать о братах, много видеть, много слышать...
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_08");	//Человек знать наш язык, понимать, что говорить Хаш Нар!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_09");	//Поэтому тот расскажет ему, что знать сам. Если, конечно, человек хотеть слушать.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_10");	//Однако прежде чем он это сделать, Хаш Нар хотеть, чтобы человек принести ему знания людей!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Clever_01_11");	//Ты имеешь в виду книги людей?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_12");	//Книги? Хммм...(замявшись) Хаш Нар не понимать, о чем человек говорит! 
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_13");	//Но ему нужно то, где люди писать о свой народ.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_14");	//Хаш Нар хотеть больше узнать о люди! Как они жить, что они делать, как они воевать...
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Clever_01_15");	//Ладно, попробую для тебя что-нибудь найти.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Clever_01_16");	//Тогда человек нести Хаш Нар эта вещь...(одобрительно) Тот будет ждать человек тут!
+	AI_Output(other,self, " DIA_Orc_8571_UrHoshNar_Clever_01_01 " );	// You shamans are the smartest among orcs, aren't you?
+	AI_Output(self,other, " DIA_Orc_8571_UrHoshNar_Clever_01_02 " );	// UR RAT! The sons of spirits know a lot... (affirmatively) But why would a person ask this?
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Clever_01_03 " );	// I'd like to know a little about orc culture. And no one can tell me better than you.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_05 " );	// Man very much surprise Hosh Nar! That being very strange!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_06 " );	// But if he really wants to know a lot about orcs, he'll come right here.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_07 " );	// Hosh Nar to know a lot about brothers, to see a lot, to hear a lot...
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_08 " );	// Man to know our language, understand what to say Khash Nar!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_09 " );	// Therefore, he will tell him what to know himself. Unless, of course, a person wants to listen.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_10 " );	// However, before he does that, Hash Nar want the man to bring him the knowledge of the people!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Clever_01_11 " );	// You mean books of people?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_12 " );	// Books? Hmmm... (hesitantly) Hash Nar doesn't understand what the person is talking about!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_13 " );	// But he needs something where people write about their people.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_14 " );	// Hash Nar want to know more about people! How do they live, what do they do, how do they fight...
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Clever_01_15 " );	// Okay, I'll try to find something for you.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Clever_01_16 " );	// Then a man to carry Hash Nar this thing... (approvingly) That one will be waiting for a man here!
 	MIS_HoshNarBooks = LOG_Running;
 	Log_CreateTopic(TOPIC_HoshNarBooks,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HoshNarBooks,LOG_Running);
-	B_LogEntry(TOPIC_HoshNarBooks,"В городе орков я повстречал верховного шамана Ур Хаш Нара. Он хочет узнать больше о культуре людей, и попросил меня достать ему какие-нибудь интересные записи. Например, о быте людей или об их сражениях...");
+	B_LogEntry(TOPIC_HoshNarBooks, " In the city of orcs, I met the high shaman Ur Khash Nar. He wants to learn more about the culture of people, and asked me to get him some interesting records. For example, about the life of people or about their battles... " );
 };
 
 instance DIA_Orc_8572_UrHoshNar_CleverDone(C_Info)
@@ -4879,7 +4880,7 @@ instance DIA_Orc_8572_UrHoshNar_CleverDone(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_CleverDone_condition;
 	information = dia_Orc_8572_UrHoshNar_CleverDone_info;
 	permanent = FALSE;
-	description = "Я принес тебе книгу.";
+	description = " I brought you a book. " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_CleverDone_condition()
@@ -4893,24 +4894,24 @@ func int dia_Orc_8572_UrHoshNar_CleverDone_condition()
 func void dia_Orc_8572_UrHoshNar_CleverDone_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Orc_8571_UrHoshNar_CleverDone_01_01");	//Я принес тебе книгу.
-	AI_Output(self,other,"DIA_Orc_8571_UrHoshNar_CleverDone_01_02");	//(одобрительно) УР ДАГ ТАК. А о чем в ней писать люди?
-	AI_Output(other,self,"DIA_Orc_8571_UrHoshNar_CleverDone_01_03");	//Кажется, здесь описано какое-то крупное сражение. Я точно не помню. Лучше ее сам прочти.
-	B_GiveInvItems(other,self,ItWr_EinhandBuch,1);
-	Npc_RemoveInvItems(self,ItWr_EinhandBuch,1);
-	AI_Output(self,other,"DIA_Orc_8571_UrHoshNar_CleverDone_01_05");	//(с интересом) Большой война? Хаш Нар думать, это быть ему интересно!
-	AI_Output(self,other,"DIA_Orc_8571_UrHoshNar_CleverDone_01_06");	//Он брать ее у человек и благодарить его.
+	AI_Output(other,self, " DIA_Orc_8571_UrHoshNar_CleverDone_01_01 " );	// I brought you a book.
+	AI_Output(self,other, " DIA_Orc_8571_UrHoshNar_CleverDone_01_02 " );	// (approvingly) UR DAG SO. What do people write about?
+	AI_Output(other,self, " DIA_Orc_8571_UrHoshNar_CleverDone_01_03 " );	// Looks like some major battle is described here. I do not remember exactly. Better read it yourself.
+	B_GiveInvItems(other,self,ItWr_EinhandBuch, 1 );
+	Npc_RemoveInvItems(self,ItWr_EinhandBuch, 1 );
+	AI_Output(self,other, " DIA_Orc_8571_UrHoshNar_CleverDone_01_05 " );	// (with interest) Big war? Hash Nar think it be interesting to him!
+	AI_Output(self,other, " DIA_Orc_8571_UrHoshNar_CleverDone_01_06 " );	// He takes it from the man and thank him.
 	ORCRESPECT = ORCRESPECT + 15;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 15");
+		AI_Print( " Respect among orcs + 15 " );
 	};
 
 	TellAboutOrcs = TRUE;
 	MIS_HoshNarBooks = LOG_Success;
 	Log_SetTopicStatus(TOPIC_HoshNarBooks,LOG_Success);
-	B_LogEntry(TOPIC_HoshNarBooks,"Я принес Ур Хаш Нару интересующую его книгу. Он в свою очередь сможет мне рассказать о культуре орков.");
+	B_LogEntry(TOPIC_HoshNarBooks, " I brought Ur Khash Nar a book that he is interested in. He in turn can tell me about Orc culture. " );
 };
 
 instance DIA_Orc_8572_UrHoshNar_WhereFrom(C_Info)
@@ -4919,7 +4920,7 @@ instance DIA_Orc_8572_UrHoshNar_WhereFrom(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_WhereFrom_condition;
 	information = dia_Orc_8572_UrHoshNar_WhereFrom_info;
 	permanent = FALSE;
-	description = "Расскажи мне о городе орков.";
+	description = " Tell me about the orc city. " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_WhereFrom_condition()
@@ -4932,13 +4933,13 @@ func int dia_Orc_8572_UrHoshNar_WhereFrom_condition()
 
 func void dia_Orc_8572_UrHoshNar_WhereFrom_info()
 {
-	AI_Output(other,self,"DIA_Orc_8571_HashTor_WhereFrom_01_01");	//Расскажи мне о городе орков.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_WhereFrom_01_02");	//УР КАР ВАШАР... Это быть не город, как у люди! Быть крепость братов, чтобы идти на война.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_WhereFrom_01_03");	//Так это крепость?!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_WhereFrom_01_04");	//УР АР ШАР...(одобрительно) Орки строить ее очень много зим назад.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_WhereFrom_01_05");	//Быть место, где собираться самый сильный воин братов! Тут же находиться чертоги вождей племен.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_WhereFrom_01_06");	//А что с остальными орками?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_WhereFrom_01_07");	//Остальные браты жить далеко в горах! Но человек туда никогда не смочь попасть. Быть очень высоко!
+	AI_Output(other,self, " DIA_Orc_8571_HashTor_WhereFrom_01_01 " );	// Tell me about the orc city.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_WhereFrom_01_02 " );	// UR CAR VASHAR... This is not to be a city like people! Be a fortress of brothers to go to war.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_WhereFrom_01_03 " );	// So this is a fortress?!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_WhereFrom_01_04 " );	// UR AR SHAR...(approvingly) The orcs built it many winters ago.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_WhereFrom_01_05 " );	// To be the place where the strongest warrior brothers gather! Here are the halls of the leaders of the tribes.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_WhereFrom_01_06 " );	// What about the rest of the orcs?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_WhereFrom_01_07 " );	// The rest of the brothers live far away in the mountains! But a person can never get there. Be very high!
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_WhereFrom_01_08");	//Понимаю.
 };
 
@@ -4948,7 +4949,7 @@ instance DIA_Orc_8572_UrHoshNar_War(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_War_condition;
 	information = dia_Orc_8572_UrHoshNar_War_info;
 	permanent = FALSE;
-	description = "Расскажи мне о войне.";
+	description = " Tell me about the war. " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_War_condition()
@@ -4961,16 +4962,16 @@ func int dia_Orc_8572_UrHoshNar_War_condition()
 
 func void dia_Orc_8572_UrHoshNar_War_info()
 {
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_War_01_01");	//Расскажи мне о войне.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_War_01_02");	//Она идти уже очень давно. Хаш Нар быть еще очень молодой, когда быть война.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_War_01_03");	//А с чего вообще она началась?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_War_01_04");	//(гневно) КОР МОРА ТАР!!! Люди быть слишком жадный, хотеть очень много золото, очень много руда!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_War_01_05");	//Много зим назад приплывать сюда и убивать много братов Ур Хаш Нара.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_War_01_06");	//Тогда орки уходить высоко в горы, собирать много воинов и идти воевать.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_War_01_07");	//Мстить за своих братов! Убивать всех люди, выгонять с остров.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_War_01_08");	//И больше вам ничего не нужно?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_War_01_09");	//Нет! Орки всегда хотят жить мирно, но люди так не уметь. Люди быть злой, очень злой!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_War_01_10");	//Хммм... Ясно.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_War_01_01 " );	// Tell me about the war.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_War_01_02 " );	// She's been going for a very long time. Hash Nar be still very young when there is a war.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_War_01_03 " );	// And how did it even start?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_War_01_04 " );	// (angrily) KOR MORA TAR!!! People be too greedy, want a lot of gold, a lot of ore!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_War_01_05 " );	// Many winters ago sail here and kill many brothers of Ur Hash Nar.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_War_01_06 " );	// Then the orcs go high into the mountains, gather a lot of warriors and go to war.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_War_01_07 " );	// Revenge for your brothers! Kill all people, drive them off the island.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_War_01_08 " );	// And you don't need anything else?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_War_01_09 " );	// No! Orcs always want to live peacefully, but people don't know how to do that. People be angry, very angry!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_War_01_10 " );	// Hmmm... I see.
 };
 
 instance DIA_Orc_8572_UrHoshNar_Faith(C_Info)
@@ -4979,7 +4980,7 @@ instance DIA_Orc_8572_UrHoshNar_Faith(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_Faith_condition;
 	information = dia_Orc_8572_UrHoshNar_Faith_info;
 	permanent = FALSE;
-	description = "Расскажи мне о вашей вере.";
+	description = " Tell me about your faith. " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_Faith_condition()
@@ -4992,20 +4993,20 @@ func int dia_Orc_8572_UrHoshNar_Faith_condition()
 
 func void dia_Orc_8572_UrHoshNar_Faith_info()
 {
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Faith_01_01");	//Расскажи мне о вашей вере.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Faith_01_02");	//Орки всегда почитать только свой великий предок! Мы молиться великим вождям и шаманам прошлого.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Faith_01_03");	//А некоторые из нас могут даже общаться с ними!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Faith_01_04");	//А что насчет Спящего или Белиара?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Faith_01_05");	//(гневно) УР ДАР КРУШАК КАТ ЗО ХАР!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Faith_01_06");	//И что это значит?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Faith_01_07");	//Браты Подгорной Скалы быть глупый, очень глупый, что поклоняться Крушак! Злой демон убивать их всех.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Faith_01_08");	//Подгорной Скалы?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Faith_01_09");	//Так звать племя братов, что жить когда-то там. Это их сыны духов вызывать Крушак в этот мир!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Faith_01_10");	//Ясно. А Белиару вы поклоняетесь?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Faith_01_11");	//Браты никогда не молиться ГРАТ БАШАР, он не быть их великий предок.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Faith_01_12");	//ГРАТ БАШАР это по-вашему Белиар?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Faith_01_13");	//КОР КОР...(одобрительно) Но ГРАТ БАШАР быть очень злой! Все браты очень сильно бояться его.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Faith_01_14");	//(саркастически) Понимаю. Видать, потому вы ему и служите.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Faith_01_01 " );	// Tell me about your faith.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Faith_01_02 " );	// Orcs always honor only their great ancestor! We pray to the great leaders and shamans of the past.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Faith_01_03 " );	// And some of us can even communicate with them!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Faith_01_04 " );	// What about the Sleeper or Beliar?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Faith_01_05 " );	// (angrily) UR DAR KRUSHAK KAT ZO HAR!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Faith_01_06 " );	// And what does that mean?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Faith_01_07 " );	// Brothers of Piedmont Rock be stupid, very stupid to worship Crushak! Evil demon kill them all.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Faith_01_08 " );	// Undermountain Rock?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Faith_01_09 " );	// This is the name of the tribe of brothers, that they would live there once. It is their spirit sons to call Crushak into this world!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Faith_01_10 " );	// Clear. Do you worship Beliar?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Faith_01_11 " );	// Brothers never pray to GRAT BASHAR, he will not be their great ancestor.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Faith_01_12 " );	// GRAT BASHAR do you think this is Beliar?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Faith_01_13 " );	// KOR KOR...(approvingly) But GRAT BASHAR be very angry! All the brothers are very much afraid of him.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Faith_01_14 " );	// (sarcastically) I understand. You see, that's why you serve him.
 };
 
 instance DIA_Orc_8572_UrHoshNar_Peace(C_Info)
@@ -5014,7 +5015,7 @@ instance DIA_Orc_8572_UrHoshNar_Peace(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_Peace_condition;
 	information = dia_Orc_8572_UrHoshNar_Peace_info;
 	permanent = FALSE;
-	description = "А чем вы занимаетесь, когда не воюете?";
+	description = " What do you do when you're not at war? " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_Peace_condition()
@@ -5027,17 +5028,17 @@ func int dia_Orc_8572_UrHoshNar_Peace_condition()
 
 func void dia_Orc_8572_UrHoshNar_Peace_info()
 {
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Peace_01_01");	//А чем вы занимаетесь, когда не воюете?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Peace_01_02");	//Много чем...(довольно) Но в основном браты ходить охотиться!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Peace_01_03");	//Любой орк должен уметь прокормить себя и защищать, если хотеть выжить в горах.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Peace_01_04");	//Ведь там водится много страшный зверь и быть очень холодно!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Peace_01_05");	//А чем занимаетесь вы, шаманы?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Peace_01_06");	//Сыны духов днем спать, ночью молиться духам предков, чтобы те беречь братов.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Peace_01_07");	//Ночь самый опасный время, когда все браты спать и их легко убивать.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Peace_01_08");	//А сами вы не воюете, значит?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Peace_01_09");	//(удивленно) Зачем шаман воевать?! Для этого быть много сильный воин.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Peace_01_10");	//Только в случае крайней необходимости великий шаман может отдавать приказы братам.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Peace_01_11");	//Обычно же это делать старейшины и вожди племен.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Peace_01_01 " );	// What do you do when you're not at war?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Peace_01_02 " );	// A lot of things... (pretty) But mostly the brothers go hunting!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Peace_01_03 " );	// Any orc must be able to feed and protect themselves if they want to survive in the mountains.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Peace_01_04 " );	// After all, there is a lot of scary beast and be very cold!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Peace_01_05 " );	// And what do you shamans do?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Peace_01_06 " );	// Sons of spirits sleep during the day, pray at night to the spirits of their ancestors to protect their brothers.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Peace_01_07 " );	// Night is the most dangerous time, when all the brothers are asleep and easy to kill.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Peace_01_08 " );	// You don't fight yourself, do you?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Peace_01_09 " );	// (surprised) Why fight a shaman?! To do this, be a lot of strong warrior.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Peace_01_10 " );	// Only in case of emergency can a great shaman give orders to brothers.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Peace_01_11 " );	// Usually, this is done by the elders and leaders of the tribes.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Peace_01_12");	//Ясно.
 };
 
@@ -5047,7 +5048,7 @@ instance DIA_Orc_8572_UrHoshNar_Castle(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_Castle_condition;
 	information = dia_Orc_8572_UrHoshNar_Castle_info;
 	permanent = FALSE;
-	description = "У вас так много сильных воинов...";
+	description = " You have so many strong warriors... " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_Castle_condition()
@@ -5060,18 +5061,18 @@ func int dia_Orc_8572_UrHoshNar_Castle_condition()
 
 func void dia_Orc_8572_UrHoshNar_Castle_info()
 {
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Castle_01_01");	//У вас так много сильных воинов. Почему же вы до сих пор не возьмете замок в Долине Рудников?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Castle_01_03");	//Первый штурм замка провалиться... Тогда погибать много братов!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Castle_01_04");	//Как же это произошло?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Castle_01_05");	//У враг паладин быть очень много хороших стрелков и очень сильный магия.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Castle_01_06");	//Они убивать много братов со стен и те даже не мочь ничего сделать.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Castle_01_07");	//Поэтому орки долго думать и решить, что пока больше не атаковать замок.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Castle_01_08");	//Ждать, пока другие браты привезти большой БУДРАК, чтобы ломать главный ворота.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Castle_01_01 " );	// You have so many strong warriors. Why don't you still take the castle in the Valley of Mines?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Castle_01_03 " );	// The first assault on the castle will fail... Then many brothers will die!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Castle_01_04 " );	// How did this happen?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Castle_01_05 " );	// The enemy paladin has a lot of good shooters and very strong magic.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Castle_01_06 " );	// They kill a lot of brothers from the walls and they can't even do anything.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Castle_01_07 " );	// Therefore, the orcs think for a long time and decide that for the time being they will no longer attack the castle.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Castle_01_08 " );	// Wait for the other brothers to bring a big BUDRAK to break down the main gate.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Castle_01_09");	//БУДРАК?!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Castle_01_10");	//Быть большой палка, бить ей большие ворота замка!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Castle_01_11");	//А, ты имеешь в виду таран. И кто же его должен привезти?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Castle_01_12");	//Орки браты с большой остров! Они уже приплыть сюда, уже делать БУДРАК!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Castle_01_13");	//Хммм... Какие вы шустрые.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Castle_01_10 " );	// Be a big stick, beat her big castle gates!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Castle_01_11 " );	// Ah, you mean the battering ram. And who should bring it?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Castle_01_12 " );	// Orc brothers from the big island! They are already sailing here, already doing BUDRAK!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Castle_01_13 " );	// Hmmm... How smart you are.
 };
 
 instance DIA_Orc_8572_UrHoshNar_Myrtana(C_Info)
@@ -5080,7 +5081,7 @@ instance DIA_Orc_8572_UrHoshNar_Myrtana(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_Myrtana_condition;
 	information = dia_Orc_8572_UrHoshNar_Myrtana_info;
 	permanent = FALSE;
-	description = "А что это за 'браты с большой остров'?";
+	description = " What are these 'brothers from the big island'? " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_Myrtana_condition()
@@ -5093,17 +5094,17 @@ func int dia_Orc_8572_UrHoshNar_Myrtana_condition()
 
 func void dia_Orc_8572_UrHoshNar_Myrtana_info()
 {
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_01");	//А что это за 'браты с большой остров'?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_02");	//Туда плыть много дней, быть большой остров! Остров, где жить вождь людей.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_03");	//Так они что, приплыли с материка?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_04");	//Хммм...(удивленно) Ур Хаш Нар не понимать, что человек говорить. Что такое быть мат..рик?
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_05");	//Да ладно, называй его просто 'большой остров'. Не суть важно.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_06");	//Меня интересует другое. Выходит, что вы общаетесь с орками ма...большого острова?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_07");	//Много зим назад к нам приплывать их великий вождь - Кан!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_08");	//Он говорить, чтобы мы идти сражаться с люди. Наш вождь Ур-Тралл согласиться с ним.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_09");	//Теперь наши кланы стать братья, иметь общий враг, во всем помогать друг другу!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_10");	//Потом Кан давать нам БУДРАК! Браты везти его сюда.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_11");	//Понятно.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Myrtana_01_01 " );	// And what are these 'brothers from the big island'?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Myrtana_01_02 " );	// To sail there for many days, to be a big island! The island where the leader of the people lives.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Myrtana_01_03 " );	// So did they come from the mainland?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Myrtana_01_04 " );	// Hmmm...(surprised) Ur Hash Nar doesn't understand what the person is saying. What is it like to be a mat..rick?
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Myrtana_01_05 " );	// Come on, just call it 'big island'. It doesn't matter.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Myrtana_01_06 " );	// I'm interested in something else. It turns out that you communicate with the orcs of the ma ... big island?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Myrtana_01_07 " );	// Many winters ago, their great leader, Kan, will sail to us!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Myrtana_01_08 " );	// He's telling us to go fight the people. Our chieftain Ur-Thrall agrees with him.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Myrtana_01_09 " );	// Now our clans become brothers, have a common enemy, help each other in everything!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Myrtana_01_10 " );	// Then Kahn give us a BUDRAK! Brothers to bring him here.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Myrtana_01_11 " );	// Got it.
 };
 
 instance DIA_Orc_8572_UrHoshNar_Dragon(C_Info)
@@ -5112,12 +5113,12 @@ instance DIA_Orc_8572_UrHoshNar_Dragon(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_Dragon_condition;
 	information = dia_Orc_8572_UrHoshNar_Dragon_info;
 	permanent = FALSE;
-	description = "Что вы знаете о драконах?";
+	description = " What do you know about dragons? " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_Dragon_condition()
 {
-	if((Kapitel < 4) && (Npc_KnowsInfo(hero,DIA_Orc_8572_UrHoshNar_Faith) == TRUE))
+	if ((Capital <  4 ) && (Npc_KnowsInfo(hero,DIA_Orc_8572_UrHoshNar_Faith) ==  TRUE )) .
 	{
 		return TRUE;
 	};
@@ -5125,21 +5126,21 @@ func int dia_Orc_8572_UrHoshNar_Dragon_condition()
 
 func void dia_Orc_8572_UrHoshNar_Dragon_info()
 {
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Dragon_01_01");	//Что вы знаете о драконах?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Dragon_01_02");	//(уважительно) Быть очень древними созданиями... Очень могущественными и опасными!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Dragon_01_03");	//Браты очень сильно боятся их и никогда не подходить близко к их логову.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Dragon_01_04");	//Значит, вы их боитесь, как и Белиара! Ведь драконы служат именно ему.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Dragon_01_01 " );	// What do you know about dragons?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Dragon_01_02 " );	// (respectfully) Being very ancient creatures... Very powerful and dangerous!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Dragon_01_03 " );	// The brothers are very afraid of them and never come close to their lair.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Dragon_01_04 " );	// So you're afraid of them, just like Beliara! After all, dragons serve him.
 	AI_PlayAni(self,"T_NO");
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Dragon_01_05");	//Человек ошибаться... Эти создания не подчиняться воле ГРАТ БАШАРА!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Dragon_01_06");	//Их повелители быть намного могущественнее, чем он сам.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Dragon_01_07");	//Хммм... Ты в этом уверен?!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Dragon_01_08");	//Ур Хаш Нар говорить только то, что знать сам.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Dragon_01_09");	//Но если человек не верить ему, то может идти и спрашивать об этом у самих драконов.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Dragon_01_10");	//Знаешь, мне пока что не слишком хочется это делать.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Dragon_01_05 " );	// Man to err... These creatures disobey the will of GRAT BASHAR!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Dragon_01_06 " );	// Their overlords to be much more powerful than himself.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Dragon_01_07 " );	// Hmmm... Are you sure about that?!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Dragon_01_08 " );	// Ur Hash Nar speak only what he himself knows.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_Dragon_01_09 " );	// But if a person does not believe him, then he can go and ask the dragons themselves about it.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_Dragon_01_10 " );	// You know, I don't feel like doing this yet.
 	MIS_TrueDragonMasters = LOG_Running;
 	Log_CreateTopic(TOPIC_TrueDragonMasters,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TrueDragonMasters,LOG_Running);
-	B_LogEntry(TOPIC_TrueDragonMasters,"Слова верховного шамана Ур Хаш Нара меня немного смутили. Он сказал, что драконы вовсе не служат Белиару, и их повелители куда могущественнее его самого. Думаю, мне стоит поговорить об этом с Ксардасом. Его мнение будет важно в этом вопросе.");
+	B_LogEntry(TOPIC_TrueDragonMasters, " The words of High Shaman Ur Hash Nar confused me a little. He said that dragons do not serve Beliar at all, and their masters are much more powerful than himself. I think I should talk to Xardas about this. His opinion will be important in this matter . " );
 };
 
 instance DIA_Orc_8572_UrHoshNar_OrcHolyPlaces(C_Info)
@@ -5148,7 +5149,7 @@ instance DIA_Orc_8572_UrHoshNar_OrcHolyPlaces(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_OrcHolyPlaces_condition;
 	information = dia_Orc_8572_UrHoshNar_OrcHolyPlaces_info;
 	permanent = FALSE;
-	description = "Тебе помощь никакая больше не нужна?";
+	description = " Do you need any more help? " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_OrcHolyPlaces_condition()
@@ -5161,24 +5162,24 @@ func int dia_Orc_8572_UrHoshNar_OrcHolyPlaces_condition()
 
 func void dia_Orc_8572_UrHoshNar_OrcHolyPlaces_info()
 {
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_01");	//Тебе помощь никакая больше не нужна?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_02");	//(удивленно) Человек хотеть помогать Ур Хаш Нар? Зачем ему это быть надо?
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_03");	//Мне нужно попасть к вашему вождю. Но пока орки не испытывают ко мне уважения, Фаррок не пустит меня к нему.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_05");	//Ур Хаш Нар понимать...
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_06");	//Если он хотеть, чтобы браты его уважать, то он идти в Большой Долина и молиться там великим духам предков!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_07");	//И как мне это сделать?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_08");	//Орки строить для каждого великого предка большой святилище. В Большой Долина их быть всего...ммм...четыре.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_09");	//А где мне искать эти ваши святилища?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_10");	//Ур Хаш Нар говорить это человек...(задумчиво) Одно находиться недалеко от клана Высокой Скалы.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_11");	//Второе там, где рядом высоко падать много вода! Еще одно с большой башней шамана людей.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_12");	//И последнее на высокий гора, где быть море.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_13");	//Ладно, попробую их отыскать.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_14");	//Человек ступать и молиться духам предков! Потом возвращаться к Ур Хаш Нар.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_15");	//Он говорить братам, чтобы они уважать человек.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_01 " );	// Do you need any more help?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_02 " );	// (surprised) Human want to help Ur Hash Nar? Why does he need to be?
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_03 " );	// I need to get to your leader. But as long as the orcs don't respect me, Farrok won't let me see him.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_05 " );	// Ur Hash Nar understand...
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_06 " );	// If he wants his brothers to respect him, then he will go to the Big Valley and pray there to the great spirits of his ancestors!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_07 " );	// And how can I do this?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_08 " );	// Orcs build a large sanctuary for each great ancestor. In the Big Valley there are only... mmm... four of them.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_09 " );	// Where can I find these shrines of yours?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_10 " );	// Ur Hash Nar say it's a human...(thoughtfully) One is near the High Rock clan.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_11 " );	// The second is where a lot of water falls high nearby! Another with a large human shaman tower.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_12 " );	// And the last on the high mountain, where the sea should be.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_13 " );	// Okay, I'll try to find them.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_14 " );	// Man to step and pray to the spirits of the ancestors! Then return to Ur Hash Nar.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_15 " );	// He tell the brothers to respect the man.
 	MIS_OrcHolyPlaces = LOG_Running;
 	Log_CreateTopic(TOPIC_OrcHolyPlaces,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_OrcHolyPlaces,LOG_Running);
-	B_LogEntry(TOPIC_OrcHolyPlaces,"Шаман Ур Хаш Нар сказал мне, что если я хочу завоевать уважение орков, то должен помолиться великим духам предков у орочьих святилищ. По его словам, всего их четыре - одно, как я понял, находится рядом с водопадом, второе - там, где обосновался клан Высокой Скалы, третье рядом с башней мага, ну и четвертое - высоко в горах, недалеко от моря.");
+	B_LogEntry(TOPIC_OrcHolyPlaces, " Shaman Ur Hash Nar told me that if I want to win the respect of the orcs, I must pray to the great spirits of the ancestors at the orc shrines. According to him, there are four of them - one, as I understand it, is located next to the waterfall, the second - where the High Rock clan settled, the third is next to the magician's tower, and the fourth is high in the mountains, not far from the sea. " );
 };
 
 instance DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done(C_Info)
@@ -5187,7 +5188,7 @@ instance DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_condition;
 	information = dia_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_info;
 	permanent = FALSE;
-	description = "Я помолился всем вашим предкам.";
+	description = " I prayed to all your ancestors. " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_condition()
@@ -5201,34 +5202,34 @@ func int dia_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_condition()
 func void dia_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_01");	//Я помолился всем вашим предкам.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_02");	//Ур Хаш Нар уже знать об этом...(одобрительно) Человек все сделать правильно!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_03");	//Откуда тебе это стало известно?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_04");	//Ур Хаш Нар сам говорить с духами, они все рассказать Ур Хаш Нар.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_05");	//Ах, ну да. Я и забыл, что передо мной великий орочий шаман.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_06");	//Значит, теперь твои братья станут больше меня уважать?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_07");	//Ур Хаш Нар рассказать им о человек, как и обещать.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_08");	//Человек может верить Ур Хаш Нар, тот не обмануть его.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_01 " );	// I prayed to all your ancestors.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_02 " );	// Ur Hash Nar already know about it...(approvingly) Man do it right!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_03 " );	// How did you know this?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_04 " );	// Ur Hash Nar himself speak with the spirits, they all tell Ur Hash Nar.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_05 " );	// Oh, yes. I forgot that in front of me is a great orc shaman.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_06 " );	// So now your brothers will respect me more?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_07 " );	// Ur Hash Nar tell them about the man, as promised.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_08 " );	// A person can believe Ur Hash Nar, he will not deceive him.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_Done_01_09");	//Надеюсь.
 	ORCRESPECT = ORCRESPECT + 20;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 20");
+		AI_Print( " Respect among orcs + 20 " );
 	};
 
 	MIS_OrcHolyPlaces = LOG_Success;
 	Log_SetTopicStatus(TOPIC_OrcHolyPlaces,LOG_Success);
-	B_LogEntry(TOPIC_OrcHolyPlaces,"Ур Хаш Нар расскажет обо мне другим оркам. Это поднимет мою репутацию среди них.");
+	B_LogEntry(TOPIC_OrcHolyPlaces, " Ur Hash Nar will tell the other Orcs about me. It will raise my reputation with them. " );
 };
 
-instance DIA_Orc_8572_UrHoshNar_PsicampDemon(C_Info)
+instance DIA_Orc_8572_UrHoshNar_PsicampDemon (C_Info)
 {
 	npc = Orc_8572_UrHoshNar;
 	condition = dia_Orc_8572_UrHoshNar_PsicampDemon_condition;
 	information = dia_Orc_8572_UrHoshNar_PsicampDemon_info;
 	permanent = FALSE;
-	description = "Могу я еще чем-нибудь помочь?";
+	description = " Is there anything else I can help you with? " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_PsicampDemon_condition()
@@ -5239,27 +5240,27 @@ func int dia_Orc_8572_UrHoshNar_PsicampDemon_condition()
 	};
 };
 
-func void dia_Orc_8572_UrHoshNar_PsicampDemon_info()
+func void day_Orc_8572_UrHoshNar_PsicampDemon_info()
 {
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_01");	//Могу я еще чем-нибудь помочь?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_02");	//Хммм...(задумчиво) Да, человек может.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_03");	//Но Ур Хаш Нар думать, что это быть очень опасно для него.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_04");	//Рассказывай.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_05");	//Ур Хаш Нар пару дней назад посылать небольшой отряд братов на большой болота.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_06");	//Духи предков говорить ему, что там последнее время происходить очень странный вещи!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_07");	//Что там не так?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_08");	//Ур Хаш Нар не знать. Браты до сих пор не вернуться обратно.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_09");	//Если человек хотеть еще помогать Ур Хаш Нар, то должен сходить на большой болота и разузнать все.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_10");	//Хорошо.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_11");	//Тогда Ур Хаш Нар будет ждать возвращения человек! Но тот быть очень осторожный.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_12");	//Большие болота быть опасный место - много зла, много мертвых...
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_13");	//Не беспокойся! Я как-нибудь разберусь с этим.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_14");	//КРАТ ШАКА ОР...(одобрительно) Добрый путь, человек.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_15");	//И тебе не хворать.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_01 " );	// Is there anything else I can help with?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_02 " );	// Hmmm...(thoughtfully) Yes, a human can.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_03 " );	// But Ur Hash Nar think it's very dangerous for him.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_04 " );	// Tell me.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_05 " );	// Ur Hash Nar a couple of days ago to send a small detachment of brothers to a large swamp.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_06 " );	// The ancestral spirits tell him that very strange things have been happening there lately!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_07 " );	// What's wrong there?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_08 " );	// Ur Hash Nar not to know. The brothers still do not come back.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_09 " );	// If a person still wants to help Ur Hash Nar, then he must go to the big swamp and find out everything.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_10 " );	// Good.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_11 " );	// Then Ur Hash Nar will wait for the return of man! But thats to be very careful.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_12 " );	// Big swamps be a dangerous place - a lot of evil, a lot of dead...
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_13 " );	// Don't worry! I'll figure it out somehow.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_14 " );	// KRAT SHAKA OR... (approvingly) Bon voyage, man.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemon_01_15 " );	// And you don't get sick.
 	MIS_PsicampDemon = LOG_Running;
 	Log_CreateTopic(TOPIC_PsicampDemon,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PsicampDemon,LOG_Running);
-	B_LogEntry(TOPIC_PsicampDemon,"Ур Хаш Нар послал на болота разведовательный отряд орков. Однако до сих пор от этого отряда нет никаких вестей. Шаман попросил меня сходить на болота и выяснить, что стало с его воинами.");	
+	B_LogEntry(TOPIC_PsicampDemon, " Ur Hash Nar has sent an orc reconnaissance party to the swamps. However, there is no news from this squad yet. The shaman asked me to go to the swamps and find out what became of his warriors. " );	
 	AI_StopProcessInfos(self);
 };
 
@@ -5269,7 +5270,7 @@ instance DIA_Orc_8572_UrHoshNar_What(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_What_condition;
 	information = dia_Orc_8572_UrHoshNar_What_info;
 	permanent = FALSE;
-	description = "Я принес известия от Тор Дала.";
+	description = " I brought word from Tor Dal. " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_What_condition()
@@ -5283,26 +5284,26 @@ func int dia_Orc_8572_UrHoshNar_What_condition()
 func void dia_Orc_8572_UrHoshNar_What_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_01");	//Я принес известия от Тор Дала.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_02");	//Ур Хаш Нар его слушать...(задумчиво) Человек говорить!
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_03");	//Отряд, что ты послал на болота, практически полностью уничтожен.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_04");	//От него остался лишь только сам Тор Дал и еще несколько бойцов.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_05");	//В самом же храме Братства Спящего обосновалось какое-то страшное зло.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_06");	//Однако Тор Дал точно не знает, что это. Лишь по ночам слышит его жуткие стоны.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_07");	//Он просит тебя прислать ему еще воинов, чтобы он смог отбить храм для орков.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_08");	//Хммм...(недовольно) Быть очень плохой новость, что ты принес, человек!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_09");	//Ур Хаш Нар думать строить в храм святилище орков, но теперь уже передумать.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_00");	//И он не мочь отправить туда еще больше братов воинов.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_11");	//А кто может?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_12");	//Только великий вождь Ур-Тралл должен разрешать это!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_13");	//Но он будет ругать Ур Хаш Нар, если узнать о храм на болотах.
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_14");	//Это почему?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_15");	//Ур-Тралл считать, что это быть плохой место для святилища братов.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_16");	//Оно быть проклято Крушак! Там быть много зла...
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_17");	//То есть чтобы помочь Тор Далу, сначала мне надо будет встретиться с великим вождем.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_18");	//Ур Хаш Нар думать так. Человек идти к Ур-Тралл и говорить с ним о храм на болотах.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_01 " );	// I've brought news from Tor Dal.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_02 " );	// Ur Khash Nar listen to him... (thoughtfully) Man speak!
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_03 " );	// The squad you sent to the swamps is almost completely destroyed.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_04 " );	// All that remained of him was Thor Dal himself and a few other fighters.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_05 " );	// In the very temple of the Brotherhood of the Sleeper, some terrible evil has settled.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_06 " );	// However, Thor Dal doesn't know exactly what it is. Only at night hears his terrible moans.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_07 " );	// He asks you to send him more warriors so he can recapture the temple for the orcs.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_08 " );	// Hmmm...(unhappy) Be very bad news that you bring, man!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_09 " );	// Ur Hash Nar to think about building an orc sanctuary in the temple, but now change your mind.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_00 " );	// And he can't send more warrior brothers there.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_11 " );	// Who can?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_12 " );	// Only Great Chieftain Ur-Thrall should allow this!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_13 " );	// But he will scold Ur Hash Nar if he finds out about the temple in the swamps.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_14 " );	// Why is this?
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_15 " );	// Ur-Thrall consider this to be a bad place for a sanctuary of the brothers.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_16 " );	// It be cursed by Crushak! There's a lot of evil...
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_What_01_17 " );	// That is, to help Tor Dal, I first need to meet with the great leader.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_What_01_18 " );	// Ur Hash Nar think so. The man go to Ur-Thrall and talk to him about the temple in the swamps.
 	HoshNarSentMe = TRUE;
-	B_LogEntry(TOPIC_PsicampDemon,"Я передал Ур Хаш Нару слова Тор Дала. Но, к сожалению, послать подмогу он ему не может. Для этого требуется разрешение самого Ур-Тралла. Так что мне придется сначала поговорить с великим вождем.");	
+	B_LogEntry(TOPIC_PsicampDemon, " I've given Tor Dal's words to Ur Khash Nar. Unfortunately, he can't send help to him. This requires Ur-Thrall's own permission. So I'll have to talk to the great warchief first. " );	
 };
 
 instance DIA_Orc_8572_UrHoshNar_PsicampDemonDone(C_Info)
@@ -5311,7 +5312,7 @@ instance DIA_Orc_8572_UrHoshNar_PsicampDemonDone(C_Info)
 	condition = dia_Orc_8572_UrHoshNar_PsicampDemonDone_condition;
 	information = dia_Orc_8572_UrHoshNar_PsicampDemonDone_info;
 	permanent = FALSE;
-	description = "Храм на болотах свободен!";
+	description = " The temple in the swamps is free! " ;
 };
 
 func int dia_Orc_8572_UrHoshNar_PsicampDemonDone_condition()
@@ -5325,10 +5326,10 @@ func int dia_Orc_8572_UrHoshNar_PsicampDemonDone_condition()
 func void dia_Orc_8572_UrHoshNar_PsicampDemonDone_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_01");	//Храм на болотах свободен!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_02");	//Ур Хаш Нар быть очень рад этому!
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_03");	//Теперь орки там могут строить свой святилище и молиться духам предков.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_04");	//Поэтому человек заслужить большая награда от Ур Хаш Нар, что помогать братам.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_01 " );	// Temple in the swamps is free!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_02 " );	// Ur Hash Nar be very happy about this!
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_03 " );	// Orcs can now build their shrine there and pray to the spirits of their ancestors.
+	AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_04 " );	// Therefore, a person deserve a great reward from Ur Hash Nar to help brothers.
 
 	if((hero.guild == GIL_KDM) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDF) || (hero.guild == GIL_GUR) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NOV) || (hero.guild == GIL_NDW))
 	{
@@ -5336,38 +5337,38 @@ func void dia_Orc_8572_UrHoshNar_PsicampDemonDone_info()
 
 		if(MIS_HeroOrcJoin == LOG_Running)
 		{
-			AI_Print("Уважение среди орков + 50");
+			AI_Print( " Respect among orcs + 50 " );
 		};
 		if(ShamanArmor == FALSE)
 		{
-			AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_05");	//Взять этот доспех! Быть доспех сынов духа. Защищать человек от огонь и магия.
+			AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_05 " );	// Take this armor! Be the armor of the sons of the spirit. Protect people from fire and magic.
 			CreateInvItems(other,ItMw_2h_OrcStab,1);
 			B_GiveInvItems(self,other,ITAR_SHAMANROBE,1);
 			ShamanArmor = TRUE;
 		}
 		else
 		{
-			B_GiveInvItems(self,other,ItRu_OrcFireball,1);
+			B_GiveInvItems(self,other,ItRu_OrcFireball, 1 );
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_06");	//Взять этот напиток! Он делать человек сильный, как орк.
+		AI_Output(self,other, " DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_06 " );	// Take this drink! He make a man strong like an orc.
 		ORCRESPECT = ORCRESPECT + 50;
 
 		if(MIS_HeroOrcJoin == LOG_Running)
 		{
-			AI_Print("Уважение среди орков + 50");
+			AI_Print( " Respect among orcs + 50 " );
 		};
 
 		B_GiveInvItems(self,other,ITPO_XORCPOTION02,1);
 	};
 	
-	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_07");	//Спасибо.
+	AI_Output(other,self, " DIA_Orc_8572_UrHoshNar_PsicampDemonDone_01_07 " );	// Thank you.
 };
 
 
-//-------------------------------------------------Тор Дал---------------------------------------------------
+// ------------------------------------------------ -Thor Dahl------------------------------------------------------------ ----
 
 instance DIA_ORC_8216_TorDal_EXIT(C_Info)
 {
@@ -5411,11 +5412,11 @@ func int dia_ORC_8216_TorDal_hello_condition()
 func void dia_ORC_8216_TorDal_hello_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_01");	//(воинственно) Остановиться, человек! Зачем он сюда приходить?!
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_HELLO_01_02");	//А тебе-то что, орк?
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_03");	//ГОР ТАК НАБАР ШАР...(качая головой)
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_04");	//Если глупый человек хотеть умирать, то он может идти дальше!
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_05");	//Тор Дал не будет его останавливать.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_HELLO_01_01 " );	// (belligerently) Stop, man! Why does he come here?
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_HELLO_01_02 " );	// What about you, orc?
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_HELLO_01_03 " );	// GOR TAK NABAR SHAR... (shaking his head)
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_HELLO_01_04 " );	// If a stupid person wants to die, then he can go on!
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_HELLO_01_05 " );	// Thor Dal won't stop him.
 	AI_StopProcessInfos(self);
 };
 
@@ -5425,12 +5426,12 @@ instance DIA_ORC_8216_TorDal_Meet(C_Info)
 	condition = dia_ORC_8216_TorDal_Meet_condition;
 	information = dia_ORC_8216_TorDal_Meet_info;
 	permanent = FALSE;
-	description = "Это тебя послал на болота шаман Ур Хаш Нар?";
+	description = " Did the shaman Ur Hash Nar send you to the swamps? " ;
 };
 
 func int dia_ORC_8216_TorDal_Meet_condition()
 {
-	if((MIS_PsicampDemon == LOG_Running) && (Npc_KnowsInfo(hero,DIA_ORC_8216_TorDal_HELLO) == TRUE))
+	if ((MY_PsychicampDemon == LOG_Running) && (Npc_KnowsInfo(hero, DIA_ORC_8216_TorDal_HELLO) ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -5438,17 +5439,17 @@ func int dia_ORC_8216_TorDal_Meet_condition()
 
 func void dia_ORC_8216_TorDal_Meet_info()
 {
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_Meet_01_01");	//Это тебя шаман Ур Хаш Нар послал на болота?
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_Meet_01_02");	//(удивленно) КОР РАД... Да, великий шаман посылать Тор Дала на большой болота.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_Meet_01_03");	//Но откуда человек это быть известно?!
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_Meet_01_04");	//Я здесь тоже по его заданию. От вас уже давно нет никаких вестей, и Ур Хаш Нар хочет знать, что тут происходит.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_Meet_01_06");	//Значит, человек прийти помогать Тор Дал.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_Meet_01_07");	//Но лучше бы Ур Хаш Нар прислать ему больше воинов. От человека тут быть мало польза...
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_Meet_01_01 " );	// Did the shaman Ur Khash Nar send you to the swamps?
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_Meet_01_02 " );	// (surprised) KOR RAD... Yes, the great shaman sent Tor Dal to the big swamp.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_Meet_01_03 " );	// But how does a person know this?!
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_Meet_01_04 " );	// I'm here on his assignment too. We haven't heard from you in a long time, and Ur Hash Nar wants to know what's going on here.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_Meet_01_06 " );	// Means, the person to come to help Tor Dal.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_Meet_01_07 " );	// But it would be better for Ur Hash Nar to send him more warriors. Being a human is of little use...
 	ORCRESPECT = ORCRESPECT + 5;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 5");
+		AI_Print( " Respect among orcs + 5 " );
 	};
 };
 
@@ -5458,7 +5459,7 @@ instance DIA_ORC_8216_TorDal_Many(C_Info)
 	condition = dia_ORC_8216_TorDal_Many_condition;
 	information = dia_ORC_8216_TorDal_Many_info;
 	permanent = FALSE;
-	description = "Вас как-то не очень много.";
+	description = " There aren't many of you. " ;
 };
 
 func int dia_ORC_8216_TorDal_Many_condition()
@@ -5471,10 +5472,10 @@ func int dia_ORC_8216_TorDal_Many_condition()
 
 func void dia_ORC_8216_TorDal_Many_info()
 {
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_Many_01_01");	//Вас как-то не очень много.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_Many_01_02");	//Много братов Тор Дала погибать... Всех их убивать мертвые!
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_Many_01_03");	//Только Тор Дал и еще несколько воинов смогли выжить.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_Many_01_04");	//Теперь ждать тут, думать, что делать дальше.
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_Many_01_01 " );	// There aren't many of you.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_Many_01_02 " );	// Many brothers of Tor Dal perish... Dead kill all of them!
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_Many_01_03 " );	// Only Thor Dal and a few other warriors survived.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_Many_01_04 " );	// Now wait here, think about what to do next.
 };
 
 instance DIA_ORC_8216_TorDal_What(C_Info)
@@ -5483,12 +5484,12 @@ instance DIA_ORC_8216_TorDal_What(C_Info)
 	condition = dia_ORC_8216_TorDal_What_condition;
 	information = dia_ORC_8216_TorDal_What_info;
 	permanent = FALSE;
-	description = "А зачем Ур Хаш Нар прислал вас сюда?";
+	description = " Why did Ur Hash Nar send you here? " ;
 };
 
 func int dia_ORC_8216_TorDal_What_condition()
 {
-	if((MIS_PsicampDemon == LOG_Running) && (Npc_KnowsInfo(hero,DIA_ORC_8216_TorDal_Meet) == TRUE) && (DemonPsicampIsDead == FALSE))
+	if ((MY_PsicampDemon == LOG_Running) && (Npc_KnowsInfo(hero,DIA_ORC_8216_TorDal_Meet) ==  TRUE ) && (DemonPsicampIsDead ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -5496,23 +5497,23 @@ func int dia_ORC_8216_TorDal_What_condition()
 
 func void dia_ORC_8216_TorDal_What_info()
 {
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_What_01_01");	//А зачем Ур Хаш Нар прислал вас сюда?
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_02");	//Тор Дал ходить на большой болота в Храм, как ему велеть великий шаман.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_03");	//Тот хотеть строить тут большой святилище братов! Молиться духам предков.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_04");	//Но потом сюда прийти темные шаманы и вызывать большой зло в Храме! Очень страшный зло...
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_05");	//Поднимать много мертвых, чтобы служить ему! Те убивать братов Тор Дала.
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_What_01_06");	//Что это еще за зло?
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_07");	//Тор Дал не знать, он не видеть его... Только слышать его ночью! Братам становиться страшно.
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_What_01_08");	//Тебе надо сообщить об этом Ур Хаш Нару! 
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_09");	//Тор Дал не может идти обратно в город. Сначала он должен уничтожить зло! Мстить за своих братов.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_10");	//Но у Тор Дал нет много воинов, чтобы идти обратно в Храм. Он умирать, если попытаться это сделать.
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_What_01_11");	//Может, я помогу тебе расправиться с этим злом?
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_12");	//Хммм... Человек быть слабый! Умирать быстрее, чем Тор Дал.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_13");	//Лучше он идти обратно к Ур Хаш Нар и просить прислать ему больше воинов.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_What_01_14");	//Те приходить и помогать Тор Дал убивать зло в Храм!
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_What_01_01 " );	// Why did Ur Hash Nar send you here?
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_02 " );	// Thor Dal walk on the big swamp to the Temple, as the great shaman tells him to.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_03 " );	// He wants to build a big sanctuary of the brothers here! Pray to the spirits of the ancestors.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_04 " );	// But then dark shamans come here and cause great evil in the Temple! A very scary evil...
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_05 " );	// Raise many dead to serve him! Those to kill the brothers of Tor Dal.
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_What_01_06 " );	// What is this evil?
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_07 " );	// Thor Dal didn't know, he didn't see him... Only hear him at night! The brothers get scared.
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_What_01_08 " );	// You need to report this to Ur Hash Nar!
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_09 " );	// Tor Dal can't go back to the city. First he must destroy the evil! Revenge for your brothers.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_10 " );	// But Thor Dal doesn't have many warriors to go back to the Temple. He's dying if you try to do it.
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_What_01_11 " );	// Maybe I can help you deal with this evil?
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_12 " );	// Hmmm... Man be weak! Dying faster than Thor Dal.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_13 " );	// He'd better go back to Ur Hash Nar and ask for more warriors.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_What_01_14 " );	// Te come and help Thor Dal kill the evil in the Temple!
 	AI_Output(other,self,"DIA_ORC_8216_TorDal_What_01_15");	//Ладно.
 	TorDalSentMe = TRUE;
-	B_LogEntry(TOPIC_PsicampDemon,"На болотах я встретил орка Тор Дала и то, что осталось от его отряда. Похоже, в Храме обосновалось какое-то зло. Тор Дал попросил меня сходить к Ур Хаш Нару и попросить его прислать Тор Далу много воинов, чтобы попытаться отбить у нежити храм. Или же я могу попробовать в одиночку разобраться с этой проблемой...");	
+	B_LogEntry(TOPIC_PsicampDemon, " In the swamps, I met the orc Thor Dal and what was left of his squad. It seems that some evil has settled in the Temple. Thor Dal asked me to go to Ur Hash Nar and ask him to send Tor Dal many warriors to try to recapture the temple from the undead... Or I can try to deal with this problem alone... " );	
 };
 
 instance DIA_ORC_8216_TorDal_PsiCampDone(C_Info)
@@ -5521,7 +5522,7 @@ instance DIA_ORC_8216_TorDal_PsiCampDone(C_Info)
 	condition = dia_ORC_8216_TorDal_PsiCampDone_condition;
 	information = dia_ORC_8216_TorDal_PsiCampDone_info;
 	permanent = FALSE;
-	description = "Храм чист!";
+	description = " Khram chist! " ;
 };
 
 func int dia_ORC_8216_TorDal_PsiCampDone_condition()
@@ -5535,20 +5536,20 @@ func int dia_ORC_8216_TorDal_PsiCampDone_condition()
 func void dia_ORC_8216_TorDal_PsiCampDone_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_PsiCampDone_01_01");	//Храм чист!
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_PsiCampDone_01_02");	//(уважительно) Неужели человек сам убивать там зло?
-	AI_Output(other,self,"DIA_ORC_8216_TorDal_PsiCampDone_01_03");	//Да, я с ним покончил.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_PsiCampDone_01_04");	//Тор Дал извиняться перед человек, когда говорить, что он слаб.
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_PsiCampDone_01_05");	//Тот быть сильный воин! Тор Дал уважать человек... Орак Шака!
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_PsiCampDone_01_01 " );	// The temple is clean!
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_PsiCampDone_01_02 " );	// (respectfully) Is the person himself to kill evil there?
+	AI_Output(other,self, " DIA_ORC_8216_TorDal_PsiCampDone_01_03 " );	// Yes, I'm done with him.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_PsiCampDone_01_04 " );	// Thor Dal apologize to a person when saying he is weak.
+	AI_Output(self,other, " DIA_ORC_8216_TorDal_PsiCampDone_01_05 " );	// That be a strong warrior! Thor gave respect to the man... Orak Shaka!
 	ORCRESPECT = ORCRESPECT + 15;
 
 	if(MIS_HeroOrcJoin == LOG_Running)
 	{
-		AI_Print("Уважение среди орков + 15");
+		AI_Print( " Respect among orcs + 15 " );
 	};
 
 	AI_PlayAni(self,"T_GREETGRD");
 	MIS_PsicampDemon = LOG_Success;
 	Log_SetTopicStatus(TOPIC_PsicampDemon,LOG_Success);
-	B_LogEntry(TOPIC_PsicampDemon,"Я сообщил Тор Далу, что со злом в храме покончено. Теперь орки могут спокойно строить тут свое святилище.");	
+	B_LogEntry(TOPIC_PsicampDemon, " I informed Thor Dal that the evil in the temple is over. The orcs can now safely build their sanctuary here. " );	
 };
