@@ -1,4 +1,5 @@
 
+
 instance DIA_Valentino_EXIT(C_Info)
 {
 	npc = VLK_421_Valentino;
@@ -21,14 +22,14 @@ func void DIA_Valentino_EXIT_Info()
 };
 
 
-instance DIA_Valentino_HALLO(C_Info)
+instance DIA_Valentino_HALLO (C_Info)
 {
 	npc = VLK_421_Valentino;
 	nr = 1;
 	condition = DIA_Valentino_HALLO_Condition;
 	information = DIA_Valentino_HALLO_Info;
 	permanent = FALSE;
-	description = "Так, и что у нас здесь?";
+	description = " So what do we have here? " ;
 };
 
 
@@ -39,20 +40,20 @@ func int DIA_Valentino_HALLO_Condition()
 
 func void DIA_Valentino_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Valentino_HALLO_15_00");	//Ну что же ты за человек?
+	AI_Output(other,self, " DIA_Valentino_HALLO_15_00 " );	// Well, what kind of person are you?
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_PAL) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Valentino_HALLO_03_01");	//Меня зовут Валентино. Я пытаюсь не осквернить этот день, данный мне Инносом, своей работой.
-		AI_Output(other,self,"DIA_Valentino_HALLO_15_02");	//Придержи язык.
-		AI_Output(self,other,"DIA_Valentino_HALLO_03_03");	//Ох, прошу прощения, я не хотел оскорбить нашего Владыку. Еще раз прошу простить меня.
+		AI_Output(self,other, " DIA_Valentino_HALLO_03_01 " );	// My name is Valentino. I'm trying not to pollute this day, given to me by Innos, with my work.
+		AI_Output(other,self, " DIA_Valentino_HALLO_15_02 " );	// Hold your tongue.
+		AI_Output(self,other, " DIA_Valentino_HALLO_03_03 " );	// Oh, I'm sorry, I didn't mean to offend our Lord. Once again, please forgive me.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Valentino_HALLO_03_04");	//Ты незнаком с хорошими манерами? Это отвратительно!
-		AI_Output(self,other,"DIA_Valentino_HALLO_03_05");	//Повсюду этот грязный сброд. У тебя что, нет работы, которой ты должен заниматься?
-		AI_Output(self,other,"DIA_Valentino_HALLO_03_06");	//Но, я полагаю, никто не хватится такого бездельника как ты, да?
-		AI_Output(self,other,"DIA_Valentino_HALLO_03_07");	//Ну, если бы у тебя было столько же золота, сколько у меня, ты бы уж тоже не работал. Но тебе никогда не стать таким богатым.
-		AI_Output(other,self,"DIA_Valentino_HALLO_15_08");	//Ты такой забавный.
+		AI_Output(self,other, " DIA_Valentino_HALLO_03_04 " );	// Are you unfamiliar with good manners? It's disgusting!
+		AI_Output(self,other, " DIA_Valentino_HALLO_03_05 " );	// This dirty rabble is everywhere. Don't you have a job that you should be doing?
+		AI_Output(self,other, " DIA_Valentino_HALLO_03_06 " );	// But I guess no one would miss a slacker like you, right?
+		AI_Output(self,other, " DIA_Valentino_HALLO_03_07 " );	// Well, if you had as much gold as me, you wouldn't be working either. But you'll never be that rich.
+		AI_Output(other,self, " DIA_Valentino_HALLO_15_08 " );	// You're so funny.
 	};
 };
 
@@ -64,13 +65,13 @@ instance DIA_Valentino_WhoAgain(C_Info)
 	condition = DIA_Valentino_WhoAgain_Condition;
 	information = DIA_Valentino_WhoAgain_Info;
 	permanent = FALSE;
-	description = "Я спросил тебя, кто ты такой!";
+	description = " I asked you who you are! " ;
 };
 
 
 func int DIA_Valentino_WhoAgain_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Valentino_HALLO) && (other.guild != GIL_KDF) && (other.guild != GIL_PAL) && (other.guild != GIL_KDW) && (other.guild != GIL_KDM) && (VALENTINOCANJOINPSI == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_VALENTINO_HALLO ) && ( other . guild !=  GIL_KDF ) && ( other . guild !=  GIL_PAL ) && ( other . guild !=  GIL_KDW ) && ( other . guild !=  GIL_KDM ) && ( VALENTINOCANJOINPSI  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -78,37 +79,37 @@ func int DIA_Valentino_WhoAgain_Condition()
 
 func void DIA_Valentino_WhoAgain_Info()
 {
-	AI_Output(other,self,"DIA_Valentino_Add_15_01");	//Я спросил тебя, кто ты такой!
-	AI_Output(self,other,"DIA_Valentino_HALLO_wasmachstdu_03_01");	//Я Валентино Великолепный. Бонвиван и любимчик женщин.
-	AI_Output(self,other,"DIA_Valentino_HALLO_wasmachstdu_03_02");	//Бедный заботами, богатый мудростью и золотом, женщины так и бросаются на меня.
-	AI_Output(self,other,"DIA_Valentino_HALLO_wasmachstdu_03_03");	//Если у тебя есть проблемы, держи их при себе. Мне они не нужны.
+	AI_Output(other,self, " DIA_Valentino_Add_15_01 " );	// I asked you who you are!
+	AI_Output(self,other, " DIA_Valentino_HALLO_wasmachstdu_03_01 " );	// I'm Valentino the Magnificent. Bon vivant and favorite of women.
+	AI_Output(self,other, " DIA_Valentino_HALLO_wasmachstdu_03_02 " );	// Poor worries, rich in wisdom and gold, women rush at me.
+	AI_Output(self,other, " DIA_Valentino_HALLO_wasmachstdu_03_03 " );	// If you have problems, keep them to yourself. I do not need them.
 };
 
 
-instance DIA_Valentino_Manieren(C_Info)
+instances DIA_Valentino_Manieren (C_Info)
 {
 	npc = VLK_421_Valentino;
 	nr = 3;
 	condition = DIA_Valentino_Manieren_Condition;
 	information = DIA_Valentino_Manieren_Info;
 	permanent = FALSE;
-	description = "Похоже, мне придется поучить тебя хорошим манерам!";
+	description = " Looks like I'm going to have to teach you some manners! " ;
 };
 
 
 func int DIA_Valentino_Manieren_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Valentino_HALLO) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF) && (other.guild != GIL_KDW) && (other.guild != GIL_KDM) && (VALENTINOCANJOINPSI == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_VALENTINO_HALLO ) && ( other . guild !=  GIL_PAL ) && ( other . guild !=  GIL_KDF ) && ( other . guild !=  GIL_KDW ) && ( other . guild !=  GIL_KDM ) && ( VALENTINOCANJOINPSI  ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Valentino_Manieren_Info()
+func void DIA_Valentino_Maniers_Info()
 {
-	AI_Output(other,self,"DIA_Valentino_Add_15_02");	//Похоже, мне придется поучить тебя хорошим манерам!
-	AI_Output(self,other,"DIA_Valentino_HALLO_klappe_03_01");	//Меня это не волнует! Молоти меня, сколько хочешь. А когда я встану завтра утром, я опять буду красавчиком.
-	AI_Output(self,other,"DIA_Valentino_HALLO_klappe_03_02");	//Но тебе придется жить дальше с этим преступлением до конца своих дней.
+	AI_Output(other,self, " DIA_Valentino_Add_15_02 " );	// Looks like I'll have to teach you good manners!
+	AI_Output(self,other, " DIA_Valentino_HALLO_klappe_03_01 " );	// I don't care! Thrash me all you want. And when I get up tomorrow morning, I'll be handsome again.
+	AI_Output(self,other, " DIA_Valentino_HALLO_klappe_03_02 " );	// But you will have to live with this crime for the rest of your days.
 };
 
 
@@ -122,13 +123,13 @@ instance DIA_Valentino_WASNUETZLICHES(C_Info)
 	condition = DIA_Valentino_WASNUETZLICHES_Condition;
 	information = DIA_Valentino_WASNUETZLICHES_Info;
 	permanent = TRUE;
-	description = "Ты еще что-нибудь можешь сказать мне?";
+	description = " Is there anything else you can tell me? " ;
 };
 
 
 func int DIA_Valentino_WASNUETZLICHES_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Valentino_HALLO) && (VALENTINOCANJOINPSI == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_VALENTINO_HELLO ) &&  
 	{
 		return TRUE;
 	};
@@ -136,26 +137,26 @@ func int DIA_Valentino_WASNUETZLICHES_Condition()
 
 func void DIA_Valentino_WASNUETZLICHES_Info()
 {
-	AI_Output(other,self,"DIA_Valentino_Add_15_03");	//(спокойно) Ты еще что-нибудь можешь сказать мне?
+	AI_Output(other,self, " DIA_Valentino_Add_15_03 " );	// (calmly) Is there anything else you can tell me?
 	if(self.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
 		B_Say(self,other,"$NOTNOW");
 	}
-	else if((Valentino_Lo_Perm == FALSE) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
+	else  if ((Valentino_Lo_Perm ==  FALSE ) && (other.guild !=  GIL_PAL ) && (other.guild !=  GIL_KDF ))
 	{
-		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_01");	//Стань популярным, никогда ничего никому не обещай, бери то, что можешь, и смотри, чтобы не ввязаться в драку с ополчением.
-		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_02");	//Или с ревнивым мужем, конечно. Это хуже всего, уж поверь мне.
+		AI_Output(self,other, " DIA_Valentino_WASNUETZLICHES_03_01 " );	// Get popular, never promise anything to anyone, take what you can, and be careful not to get into a fight with the militia.
+		AI_Output(self,other, " DIA_Valentino_WASNUETZLICHES_03_02 " );	// Or with a jealous husband, of course. It's the worst, trust me.
 		Valentino_Lo_Perm = TRUE;
 	}
 	else if((Valentino_Hi_Perm == FALSE) && ((other.guild == GIL_PAL) || (other.guild == GIL_KDF)))
 	{
-		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_03");	//Для человека в твоем положении нет ничего невозможного. Ты просто должен знать, когда нужно действовать.
-		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_04");	//Так что не теряй времени и действуй.
+		AI_Output(self,other, " DIA_Valentino_WASNUETZLICHES_03_03 " );	// Nothing is impossible for a person in your position. You just have to know when to act.
+		AI_Output(self,other, " DIA_Valentino_WASNUETZLICHES_03_04 " );	// So don't waste your time and get going.
 		Valentino_Hi_Perm = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_05");	//Я сказал тебе все, что тебе нужно знать. Остальное за тобой.
+		AI_Output(self,other, " DIA_Valentino_WASNUETZLICHES_03_05 " );	// I've told you everything you need to know. The rest is up to you.
 	};
 };
 
@@ -167,7 +168,7 @@ instance DIA_Valentino_PICKPOCKET(C_Info)
 	condition = DIA_Valentino_PICKPOCKET_Condition;
 	information = DIA_Valentino_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его ключ)";
+	description = " (Try to steal his key) " ;
 };
 
 
@@ -232,20 +233,20 @@ func void DIA_Valentino_PICKPOCKET_BACK()
 };
 
 
-instance DIA_VALENTINO_JOINSEKTA(C_Info)
+instance DIA_VALENTINO_JOINSEKTA (C_Info)
 {
 	npc = VLK_421_Valentino;
 	nr = 900;
 	condition = dia_valentino_joinsekta_condition;
 	information = dia_valentino_joinsekta_info;
 	permanent = FALSE;
-	description = "Тебя не очень-то любят в городе.";
+	description = " You're not well liked in the city. " ;
 };
 
 
 func int dia_valentino_joinsekta_condition()
 {
-	if((MIS_NOVICECANJOIN == LOG_Running) && (other.guild == GIL_SEK) && Npc_KnowsInfo(other,DIA_Valentino_HALLO) && (VALENTINOSHIT == TRUE))
+	if (( MY_NOVICECANJOIN  == LOG_Running ) && ( other . guild ==  GIL_SEK ) && Npc_KnowsInfo ( other , DIA_VALENTINO_HELLO ) && ( VALENTINOSHIT  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -253,25 +254,25 @@ func int dia_valentino_joinsekta_condition()
 
 func void dia_valentino_joinsekta_info()
 {
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_00");	//Тебя не очень-то любят в городе, как я заметил.
-	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_01");	//(злобно) А тебе что до этого?
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_02");	//Не горячись. У меня есть одна мысль, как тебе помочь.
-	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_04");	//(кичливо) Мне не нужна ничья помощь! Я сам способен позаботиться о себе!
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_05");	//Ты хочешь добиться уважения людей.
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_07");	//Но все, чего ты смог добиться, - лишь получить пару затрещин от Региса.
-	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_09");	//Я...(неуверенно) я... я пытаюсь, но... да, наверное, ты прав...
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_10");	//Я знаю, что поможет тебе обрести уверенность в себе.
-	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_11");	//Да?! О чем ты?
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_12");	//Ты слышал о болотном Братстве?
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_15");	//Гуру Братства - очень мудрые люди, постигшие истинную веру в долгих годах самопознания.
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_16");	//Я думаю, это именно то, что тебе нужно.
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_17");	//Братство поможет тебе обрести себя и поставит на истинный путь.
-	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_18");	//(с надеждой) Ты действительно так считаешь?
-	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_26");	//Хммм...(думает) Хорошо, идем!
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_27");	//Отлично! Следуй за мной и не отставай.
-	B_LogEntry(TOPIC_NOVICECANJOIN,"Я поговорил с Валентино. Его легко удалось уговорить отправиться со мной к Идолу Парвезу.");
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_00 " );	// You're not well liked in the city, I noticed.
+	AI_Output(self,other, " DIA_Valentino_JoinSekta_01_01 " );	// (angrily) What do you care?
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_02 " );	// Don't get excited. I have one idea how to help you.
+	AI_Output(self,other, " DIA_Valentino_JoinSekta_01_04 " );	// (puffily) I don't need anyone's help! I can take care of myself!
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_05 " );	// You want to earn people's respect.
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_07 " );	// But all you could do was get a couple of slaps from Regis.
+	AI_Output(self,other, " DIA_Valentino_JoinSekta_01_09 " );	// I... (unsure) I... I'm trying, but... yes, you're probably right...
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_10 " );	// I know what will help you gain self-confidence.
+	AI_Output(self,other, " DIA_Valentino_JoinSekta_01_11 " );	// Yes?! What are you talking about?
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_12 " );	// Have you heard of the Swamp Brotherhood?
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_15 " );	// Gurus of the Brotherhood are very wise people who have realized the true faith in long years of self-knowledge.
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_16 " );	// I think this is exactly what you need.
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_17 " );	// Brotherhood will help you find yourself and put you on the true path.
+	AI_Output(self,other, " DIA_Valentino_JoinSekta_01_18 " );	// (hopefully) Do you really think so?
+	AI_Output(self,other, " DIA_Valentino_JoinSekta_01_26 " );	// Hmmm...(thinks) Alright, let's go!
+	AI_Output(other,self, " DIA_Valentino_JoinSekta_01_27 " );	// Great! Follow me and don't fall behind.
+	B_LogEntry( TOPIC_NOVICECANJOIN , " I talked to Valentino. He was easily persuaded to come with me to Parvez's Idol. " );
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	VALENTINOCANJOINPSI = TRUE;
 	Npc_ExchangeRoutine(self,"FOLLOW");
 };
@@ -299,12 +300,12 @@ func int dia_valentino_thanksjoinsekta_condition()
 func void dia_valentino_thanksjoinsekta_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Valentino_ThanksJoinSekta_01_00");	//Спасибо, что помог мне. Я даже не знаю, чем отплатить тебе за твою помощь.
+	AI_Output(self,other, " DIA_Valentino_ThanksJoinSekta_01_00 " );	// Thanks for helping me. I don't even know how to repay you for your help.
 	VALENTINOPSI = TRUE;
 	self.guild = GIL_SEK;
 	Npc_SetTrueGuild(self,GIL_SEK);
 	B_DeletePetzCrime(self);
-	self.aivar[AIV_NpcSawPlayerCommit] = CRIME_NONE;
+	self.aivar[AIV_NpcSawPlayerCommit] = CRIME_NONE ;
 	self.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
 
 	if(MIS_VALENTINOHELP == LOG_Running)
@@ -324,13 +325,13 @@ instance DIA_VALENTINO_TALIASANLETTER(C_Info)
 	condition = dia_valentino_taliasanletter_condition;
 	information = dia_valentino_taliasanletter_info;
 	permanent = FALSE;
-	description = "У тебя есть работа для меня?";
+	description = " Do you have a job for me? " ;
 };
 
 
 func int dia_valentino_taliasanletter_condition()
 {
-	if((MIS_TALIASANHELP == LOG_Running) && !Npc_KnowsInfo(other,DIA_TALIASAN_SENDTOLARIUS) && Npc_KnowsInfo(other,DIA_Valentino_HALLO) && (VALENTINOPSI == FALSE) && ((hero.guild != GIL_KDF) || (hero.guild != GIL_PAL) || (hero.guild != GIL_KDW) || (hero.guild != GIL_KDM)))
+	if (( MIS_TALIASANHELP  == LOG_Running) &&  ! Npc_KnowsInfo(other, DIA_TALIASAN_SENDTOLARIUS ) && Npc_KnowsInfo(other, DIA_VALENTINO_HALLO) && ( VALENTINOPSI  ==  FALSE ) && ((hero.guild !=  GIL_KDF ) || (hero.guild ) =  GIL_PAL || (hero.guild !=  GIL_KDW ) || (hero.guild !=  GIL_KDM )))
 	{
 		return TRUE;
 	};
@@ -338,32 +339,32 @@ func int dia_valentino_taliasanletter_condition()
 
 func void dia_valentino_taliasanletter_info()
 {
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_00");	//У тебя есть работа для меня?
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_06");	//Хммм. Ты не производишь впечатление крутого парня!
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_07");	//А тебе никогда не говорили, что внешность - обманчивая штука?
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_08");	//Да? Ну, тогда...
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_10");	//Тут один парень по имени Регис давеча очень грубо обошелся со мной.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_12");	//Если ты такой крутой, то вот тебе задание: врежь этому олуху от меня пару раз!
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_14");	//Я бы и сам это сделал, да только руки марать неохота.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_18");	//Ах, да. Ты, видимо, хочешь спросить, сколько я заплачу тебе за это?
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_21");	//Золото меня не интересует.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_22");	//(удивленно) Да? Вот-те раз! Так ты что, еще у нас и гордый? От золота отказываешься?
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_23");	//Нет. Дело в другом.
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_25");	//Мне нужна помощь влиятельных людей этого города, чтобы решить одну маленькую проблемку.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_30");	//Хммм. Ну ладно. И какая помощь тебе нужна?
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_31");	//Ты ведь слышал про человека по имени Галлахад?
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_32");	//Галлахад? Конечно! Кто же о нем не слышал.
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_33");	//Так вот - именно ему и нужна твоя помощь.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_34");	//А! Так ты мальчик на побегушках у Галлахада! (смеется) Теперь все ясно.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_35");	//И что же нужно от меня Галлахаду?
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_36");	//Ему нужно, чтобы ты написал для него рекомендательное письмо, в котором бы похвалил его перед Лариусом.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_37");	//Перед губернатором? Но зачем ему это понадобилось?
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_41");	//Но для начала - надавай по шее Регису!
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_44");	//Только учти: Регис должен знать, что это именно я возвращаю ему этот, так сказать, должок! Хе-ха!
+	AI_Output(other,self, " DIA_Valentino_TaliasanLetter_01_00 " );	// Do you have a job for me?
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_06 " );	// Hmmm. You don't come across as a tough guy!
+	AI_Output(other,self, " DIA_Valentino_TaliasanLetter_01_07 " );	// Have you ever been told that looks can be deceiving?
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_08 " );	// Yes? Well then...
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_10 " );	// There was a guy named Regis who was very rude to me just now.
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_12 " );	// If you're that cool, here's a challenge for you: hit that oaf from me a couple of times!
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_14 " );	// I would do it myself, but I don't feel like getting my hands dirty.
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_18 " );	// Oh, yes. You probably want to ask how much I will pay you for this?
+	AI_Output(other,self, " DIA_Valentino_TaliasanLetter_01_21 " );	// I'm not interested in gold.
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_22 " );	// (surprised) Yes? That's it! So are you still proud of us? Refusing gold?
+	AI_Output(other,self, " DIA_Valentino_TaliasanLetter_01_23 " );	// No. The point is different.
+	AI_Output(other,self, " DIA_Valentino_TaliasanLetter_01_25 " );	// I need the help of the powerful people of this city to solve a small problem.
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_30 " );	// Hmmm. OK. And what help do you need?
+	AI_Output(other,self, " DIA_Valentino_TaliasanLetter_01_31 " );	// You've heard of a man named Gallahad, haven't you?
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_32 " );	// Gallahad? Of course! Who hasn't heard of him?
+	AI_Output(other,self, " DIA_Valentino_TaliasanLetter_01_33 " );	// So - it is he who needs your help.
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_34 " );	// Ah! So you're Gallahad's errand boy! (laughs) Now everything is clear.
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_35 " );	// And what does Gallahad need from me?
+	AI_Output(other,self, " DIA_Valentino_TaliasanLetter_01_36 " );	// He needs you to write a letter of recommendation for him to praise him in front of Larius.
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_37 " );	// In front of the governor? But why did he need it?
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_41 " );	// But first, slap Regis in the neck!
+	AI_Output(self,other, " DIA_Valentino_TaliasanLetter_01_44 " );	// Just be aware: Regis needs to know that I'm the one paying him back this, so to speak, debt! He-ha!
 	MIS_VALENTINOHELP = LOG_Running;
 	Log_CreateTopic(TOPIC_VALENTINOHELP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_VALENTINOHELP,LOG_Running);
-	B_LogEntry(TOPIC_VALENTINOHELP,"Валентино напишет рекомендательное письмо для Галлахада, если я устрою взбучку Регису, с которым у него недавно произошла ссора.");
+	B_LogEntry( TOPIC_VALENTINOHELP , " Valentino will write a letter of recommendation for Gallahad if I thrash Regis, whom he recently had a fight with. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -390,36 +391,36 @@ func void dia_valentino_payback_info()
 	if(REGISFIGHTOK == TRUE)
 	{
 		B_GivePlayerXP(150);
-		AI_Output(self,other,"DIA_Valentino_PayBack_01_00");	//Эй! Я слышал, что ты хорошо врезал этому Регису!
-		AI_Output(self,other,"DIA_Valentino_PayBack_01_04");	//Надеюсь, он надолго запомнит тот урок, который ты ему преподал.
+		AI_Output(self,other, " DIA_Valentino_PayBack_01_00 " );	// Hey! I heard you hit that Regis well!
+		AI_Output(self,other, " DIA_Valentino_PayBack_01_04 " );	// I hope he remembers the lesson you taught him for a long time.
 
 		if(MIS_TALIASANHELP == LOG_Running)
 		{
-			AI_Output(other,self,"DIA_Valentino_PayBack_01_05");	//Ты написал письмо для Галлахада?
-			AI_Output(self,other,"DIA_Valentino_PayBack_01_08");	//Вот, держи. Как и договаривались.
-			AI_Output(self,other,"DIA_Valentino_PayBack_01_09");	//Тут самые лучшие рекомендации, которые он только может получить от меня.
+			AI_Output(other,self, " DIA_Valentino_PayBack_01_05 " );	// Did you write a letter for Gallahad?
+			AI_Output(self,other, " DIA_Valentino_PayBack_01_08 " );	// Here, take this. As agreed.
+			AI_Output(self,other, " DIA_Valentino_PayBack_01_09 " );	// This is the best advice he can get from me.
 			B_GiveInvItems(self,other,itwr_valentinoletter,1);
 		};
 		
-		AI_Output(self,other,"DIA_Valentino_PayBack_01_14");	//A ты, если что, обращайся ко мне.
-		AI_Output(self,other,"DIA_Valentino_PayBack_01_15");	//Возможно, у меня в будущем найдется для тебя еще какая-нибудь работка.
+		AI_Output(self,other, " DIA_Valentino_PayBack_01_14 " );	// And you, if anything, contact me.
+		AI_Output(self,other, " DIA_Valentino_PayBack_01_15 " );	// Maybe I'll have some more work for you in the future.
 		MIS_VALENTINOHELP = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_VALENTINOHELP,LOG_SUCCESS);
-		B_LogEntry(TOPIC_VALENTINOHELP,"Валентино был доволен тем, что я накостылял Регису и написал рекомендательное письмо для Галлахада.");
+		B_LogEntry( TOPIC_VALENTINOHELP , " Valentino was pleased that I nailed Regis and wrote a letter of recommendation for Gallahad. " );
 		AI_StopProcessInfos(self);
 	};
 	if(REGISFIGHTNOTOK == TRUE)
 	{
-		AI_Output(self,other,"DIA_Valentino_PayBack_01_18");	//Эй! Я слышал, что Регис хорошо врезал тебе.
-		AI_Output(self,other,"DIA_Valentino_PayBack_01_19");	//Я так и думал, что ты лишь обычный хвастун, как и все остальные.
-		AI_Output(self,other,"DIA_Valentino_PayBack_01_20");	//И ни на что не годный, жалкий оборванец...(с издевкой)
+		AI_Output(self,other, " DIA_Valentino_PayBack_01_18 " );	// Hey! I heard that Regis hit you hard.
+		AI_Output(self,other, " DIA_Valentino_PayBack_01_19 " );	// I thought you were just an ordinary braggart like everyone else.
+		AI_Output(self,other, " DIA_Valentino_PayBack_01_20 " );	// And good for nothing, miserable ragamuffin... (with a sneer)
 
 		if(MIS_TALIASANHELP == LOG_Running)
 		{
-			AI_Output(other,self,"DIA_Valentino_PayBack_01_24");	//Ты написал письмо для Галлахада?
-			AI_Output(self,other,"DIA_Valentino_PayBack_01_25");	//ЧТО? (смеется) И ты еще смеешь его требовать, наглец?
-			AI_Output(self,other,"DIA_Valentino_PayBack_01_26");	//Или ты забыл наш уговор?
-			AI_Output(self,other,"DIA_Valentino_PayBack_01_27");	//Проваливай! Такие идиоты, как ты, ничего не получают от меня.
+			AI_Output(other,self, " DIA_Valentino_PayBack_01_24 " );	// Did you write a letter for Gallahad?
+			AI_Output(self,other, " DIA_Valentino_PayBack_01_25 " );	// WHAT? (laughs) And you still dare to demand it, insolent?
+			AI_Output(self,other, " DIA_Valentino_PayBack_01_26 " );	// Or have you forgotten our agreement?
+			AI_Output(self,other, " DIA_Valentino_PayBack_01_27 " );	// Get lost! Idiots like you get nothing from me.
 		};
 
 		MIS_VALENTINOHELP = LOG_FAILED;
