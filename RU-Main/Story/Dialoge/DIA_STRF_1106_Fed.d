@@ -1,4 +1,5 @@
 
+
 instance DIA_Fed_EXIT(C_Info)
 {
 	npc = STRF_1106_Fed;
@@ -42,10 +43,10 @@ func int DIA_Fed_HALLO_Condition()
 
 func void DIA_Fed_HALLO_Info()
 {
-	AI_Output(self,other,"DIA_Fed_HALLO_08_00");	//Что тебе нужно от меня? Я никуда не пойду!
-	AI_Output(other,self,"DIA_Fed_HALLO_15_01");	//Успокойся - никто не хочет, чтобы ты куда-то шел.
-	AI_Output(self,other,"DIA_Fed_HALLO_08_02");	//Слава Инносу. Знаешь, за последние несколько дней несколько человек покинули лагерь - и никто из них не вернулся.
-	AI_Output(self,other,"DIA_Fed_HALLO_08_03");	//Их всех сожрали снепперы. Но меня им не достать. Я останусь здесь, пока все это не кончится.
+	AI_Output(self,other, " DIA_Fed_HALLO_08_00 " );	// What do you want from me? I'm not going anywhere!
+	AI_Output(other,self, " DIA_Fed_HALLO_15_01 " );	// Calm down - no one wants you to go anywhere.
+	AI_Output(self,other, " DIA_Fed_HALLO_08_02 " );	// Glory to Innos. You know, in the last few days, several people have left the camp - and none of them have returned.
+	AI_Output(self,other, " DIA_Fed_HALLO_08_03 " );	// Snappers ate them all. But they can't get me. I'll stay here until all this is over.
 };
 
 
@@ -56,7 +57,7 @@ instance DIA_Fed_Snapper(C_Info)
 	condition = DIA_Fed_Snapper_Condition;
 	information = DIA_Fed_Snapper_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о снепперах?";
+	description = " What do you know about snappers? " ;
 };
 
 
@@ -70,10 +71,10 @@ func int DIA_Fed_Snapper_Condition()
 
 func void DIA_Fed_Snapper_Info()
 {
-	AI_Output(other,self,"DIA_Fed_Snapper_15_00");	//Что ты знаешь о снепперах?
-	AI_Output(self,other,"DIA_Fed_Snapper_08_01");	//Билгот следил за ними ночью. Часть их пасется у озера рядом со старой башней.
-	AI_Output(self,other,"DIA_Fed_Snapper_08_02");	//А другие находятся прямо над нами - на вершине этого утеса. Они просто выжидают, когда у нас кончатся силы.
-	AI_Output(self,other,"DIA_Fed_Snapper_08_03");	//Они заперли нас здесь. И скоро они нападут на наш лагерь - вот тогда они попируют...
+	AI_Output(other,self, " DIA_Fed_Snapper_15_00 " );	// What do you know about snappers?
+	AI_Output(self,other, " DIA_Fed_Snapper_08_01 " );	// Bilgot watched them at night. Some of them graze by the lake next to the old tower.
+	AI_Output(self,other, " DIA_Fed_Snapper_08_02 " );	// And the others are right above us - at the top of this cliff. They're just waiting for us to run out of energy.
+	AI_Output(self,other, " DIA_Fed_Snapper_08_03 " );	// They locked us in here. And soon they will attack our camp - then they will feast ...
 	AI_Output(other,self,"DIA_Fed_Snapper_15_04");	//Понятно.
 };
 
@@ -85,7 +86,7 @@ instance DIA_Fed_Perm(C_Info)
 	condition = DIA_Fed_Perm_Condition;
 	information = DIA_Fed_Perm_Info;
 	permanent = TRUE;
-	description = "С тобой все в порядке?";
+	description = " Are you all right? " ;
 };
 
 
@@ -96,15 +97,15 @@ func int DIA_Fed_Perm_Condition()
 
 func void DIA_Fed_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Fed_Perm_15_00");	//С тобой все в порядке?
+	AI_Output(other,self, " DIA_Fed_Perm_15_00 " );	// Are you all right?
 	if(MIS_Fajeth_Kill_Snapper != LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Fed_Perm_08_01");	//Там снепперы! Ты чувствуешь их запах?.. Я чувствую...
+		AI_Output(self,other, " DIA_Fed_Perm_08_01 " );	// There are snappers! Can you smell them?.. I can smell...
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fed_Perm_08_02");	//Снепперы, похоже, отступили. Но это ничего не значит. Они вернутся - или волки, или ящеры, или орки.
-		AI_Output(self,other,"DIA_Fed_Perm_08_03");	//И рано или поздно они сожрут нас...
+		AI_Output(self,other, " DIA_Fed_Perm_08_02 " );	// The Snappers seem to have retreated. But that doesn't mean anything. They will return - or wolves, or lizards, or orcs.
+		AI_Output(self,other, " DIA_Fed_Perm_08_03 " );	// And sooner or later they will devour us...
 	};
 	AI_StopProcessInfos(self);
 };
@@ -123,7 +124,7 @@ instance DIA_Fed_PICKPOCKET(C_Info)
 
 func int DIA_Fed_PICKPOCKET_Condition()
 {
-	return C_Beklauen(32,8);
+	return  C_Robbery ( 32 , 8 );
 };
 
 func void DIA_Fed_PICKPOCKET_Info()
@@ -135,7 +136,7 @@ func void DIA_Fed_PICKPOCKET_Info()
 
 func void DIA_Fed_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Fed_PICKPOCKET);
 };
 
