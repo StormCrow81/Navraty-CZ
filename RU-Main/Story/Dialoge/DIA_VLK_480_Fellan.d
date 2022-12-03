@@ -1,4 +1,5 @@
 
+
 instance DIA_Fellan_EXIT(C_Info)
 {
 	npc = VLK_480_Fellan;
@@ -32,7 +33,7 @@ instance DIA_Fellan_PICKPOCKET(C_Info)
 
 func int DIA_Fellan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(18,10);
+	return  C_Robbery ( 18 , 10 );
 };
 
 func void DIA_Fellan_PICKPOCKET_Info()
@@ -44,7 +45,7 @@ func void DIA_Fellan_PICKPOCKET_Info()
 
 func void DIA_Fellan_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Fellan_PICKPOCKET);
 };
 
@@ -66,7 +67,7 @@ instance DIA_Fellan_News(C_Info)
 
 func int DIA_Fellan_News_Condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_LastFightAgainstPlayer] != FIGHT_NONE) && (self.aivar[AIV_LastFightComment] == FALSE) && (MIS_BELIARHELPME == FALSE))
+	if ( Npc_IsInState ( self , ZS_Talk ) && ( self . aivar [ AIV_LastFightAgainstPlayer ] !=  FIGHT_NONE ) && ( self . aivar [ AIV_LastFightComment ] ==  FALSE ) && ( MIS_BELIARHELPME  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -76,43 +77,43 @@ func void DIA_Fellan_News_Info()
 {
 	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
-		AI_Output(self,other,"DIA_Fellan_News_06_00");	//Ох, ты побил меня. Какой героический поступок!
+		AI_Output(self,other, " DIA_Fellan_News_06_00 " );	// Oh, you beat me. What a heroic act!
 
 		if((MIS_AttackFellan == LOG_Running) && (FellanGeschlagen == FALSE))
 		{
-			AI_Output(other,self,"DIA_Fellan_News_15_01");	//Ты прекратишь стучать молотком, или мне задать тебе трепку еще раз?
-			AI_Output(self,other,"DIA_Fellan_News_06_02");	//Нет, не надо бить меня больше. Я перестану. Но здесь все обрушится, и в этом будешь виноват ты!
-			FellanGeschlagen = TRUE;
+			AI_Output(other,self, " DIA_Fellan_News_15_01 " );	// Will you stop hammering or should I give you another beating?
+			AI_Output(self,other, " DIA_Fellan_News_06_02 " );	// No, don't hit me anymore. I will stop. But here everything will collapse, and it will be your fault!
+			FellanBeaten = TRUE ;
 			AI_StopProcessInfos(self);
 			Npc_ExchangeRoutine(self,"OHNEHAMMER");
 		};
 	};
 	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON)
 	{
-		AI_Output(self,other,"DIA_Fellan_News_06_03");	//В чем дело? Хочешь еще получить по морде?
+		AI_Output(self,other, " DIA_Fellan_News_06_03 " );	// What's wrong? Do you still want to get in the face?
 	};
 	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_CANCEL)
 	{
-		AI_Output(self,other,"DIA_Fellan_News_06_04");	//Что ты за псих? То сражаешься, то убегаешь, то болтаешь - что тебе вообще нужно?
+		AI_Output(self,other, " DIA_Fellan_News_06_04 " );	// What kind of psycho are you? You fight, then you run away, then you chat - what do you even need?
 	};
-	self.aivar[AIV_LastFightComment] = TRUE;
+	self.aivar[AIV_LastFightComment] = TRUE ;
 };
 
 
-instance DIA_Fellan_HALLO(C_Info)
+instances DIA_Fellan_HALLO (C_Info)
 {
 	npc = VLK_480_Fellan;
 	nr = 2;
 	condition = DIA_Fellan_HALLO_Condition;
 	information = DIA_Fellan_HALLO_Info;
 	permanent = FALSE;
-	description = "Зачем ты колотишь молотком?";
+	description = " Why are you pounding with a hammer? " ;
 };
 
 
 func int DIA_Fellan_HALLO_Condition()
 {
-	if((FellanGeschlagen == FALSE) && (MIS_BELIARHELPME == FALSE))
+	if ((FellanGeschlagen ==  FALSE ) && ( MY_BELIARHELP  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -120,9 +121,9 @@ func int DIA_Fellan_HALLO_Condition()
 
 func void DIA_Fellan_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Fellan_HALLO_15_00");	//Зачем ты колотишь молотком?
-	AI_Output(self,other,"DIA_Fellan_HALLO_06_01");	//Вот уже несколько дней я отчаянно пытаюсь устранить протечки в моем доме.
-	AI_Output(self,other,"DIA_Fellan_HALLO_06_02");	//Балки крошатся с тех пор, как прошли эти последние дожди. Скоро все это упадет мне на голову!
+	AI_Output(other,self, " DIA_Fellan_HALLO_15_00 " );	// Why are you pounding with a hammer?
+	AI_Output(self,other, " DIA_Fellan_HALLO_06_01 " );	// For several days now, I've been desperately trying to fix the leaks in my house.
+	AI_Output(self,other, " DIA_Fellan_HALLO_06_02 " );	// The beams have been crumbling since these last rains. Soon it will all fall on my head!
 	AI_StopProcessInfos(self);
 };
 
@@ -134,7 +135,7 @@ instance DIA_Fellan_Stop(C_Info)
 	condition = DIA_Fellan_Stop_Condition;
 	information = DIA_Fellan_Stop_Info;
 	permanent = FALSE;
-	description = "Ты не мог бы перестать молотить?";
+	description = " Could you stop thrashing? " ;
 };
 
 
@@ -148,49 +149,49 @@ func int DIA_Fellan_Stop_Condition()
 
 func void DIA_Fellan_Stop_Info()
 {
-	AI_Output(other,self,"DIA_Fellan_Stop_15_00");	//Ты не мог бы перестать молотить?
-	AI_Output(self,other,"DIA_Fellan_Stop_06_01");	//Нет, я должен закончить работу.
+	AI_Output(other,self, " DIA_Fellan_Stop_15_00 " );	// Could you stop thrashing?
+	AI_Output(self,other, " DIA_Fellan_Stop_06_01 " );	// No, I have to finish the job.
 	Info_ClearChoices(DIA_Fellan_Stop);
-	Info_AddChoice(DIA_Fellan_Stop,"Прекрати стучать молотком, или я переломаю тебе все кости.",DIA_Fellan_Stop_Bones);
-	Info_AddChoice(DIA_Fellan_Stop,"Я дам тебе десять монет, чтобы ты перестал колотить.",DIA_Fellan_Stop_Gold);
-	Info_AddChoice(DIA_Fellan_Stop,"Просто перестань молотить. Хорошо?",DIA_Fellan_Stop_Just);
+	Info_AddChoice(DIA_Fellan_Stop, " Stop hammering or I'll break all your bones. " ,DIA_Fellan_Stop_Bones);
+	Info_AddChoice(DIA_Fellan_Stop, " I'll give you ten coins to stop you beating. " ,DIA_Fellan_Stop_Gold);
+	Info_AddChoice(DIA_Fellan_Stop, " Just stop thrashing. OK? " ,DIA_Fellan_Stop_Just);
 };
 
 func void DIA_Fellan_Stop_Bones()
 {
-	AI_Output(other,self,"DIA_Fellan_Stop_Bones_15_00");	//Прекрати стучать молотком, или я переломаю тебе все кости.
-	AI_Output(self,other,"DIA_Fellan_Stop_Bones_06_01");	//Забудь об этом, или мне придется образумить тебя хорошим ударом молотка по голове.
+	AI_Output(other,self, " DIA_Fellan_Stop_Bones_15_00 " );	// Stop hammering or I'll break all your bones.
+	AI_Output(self,other, " DIA_Fellan_Stop_Bones_06_01 " );	// Forget it, or I'll have to reason with you with a good hammer blow to the head.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Fellan_Stop_Gold()
 {
-	AI_Output(other,self,"DIA_Fellan_Stop_Gold_15_00");	//Я дам тебе десять монет, чтобы ты перестал колотить.
-	AI_Output(self,other,"DIA_Fellan_Stop_Gold_06_01");	//Эй... Это очень великодушно с твоей стороны. Но что касается твоего золота, ты можешь...
-	AI_Output(self,other,"DIA_Fellan_Stop_Gold_06_02");	//...ну, ты знаешь, куда его засунуть.
+	AI_Output(other,self, " DIA_Fellan_Stop_Gold_15_00 " );	// I'll give you ten coins to stop you beating.
+	AI_Output(self,other, " DIA_Fellan_Stop_Gold_06_01 " );	// Hey... That's very generous of you. But as for your gold, you can...
+	AI_Output(self,other, " DIA_Fellan_Stop_Gold_06_02 " );	// ...well, you know where to put it.
 };
 
 func void DIA_Fellan_Stop_Just()
 {
-	AI_Output(other,self,"DIA_Fellan_Stop_Just_15_00");	//Просто перестань молотить. Хорошо?
-	AI_Output(self,other,"DIA_Fellan_Stop_Just_06_01");	//Не приставай кол мне, ладно?
+	AI_Output(other,self, " DIA_Fellan_Stop_Just_15_00 " );	// Just stop thrashing. Good?
+	AI_Output(self,other, " DIA_Fellan_Stop_Just_06_01 " );	// Don't pester me, okay?
 };
 
 
-instance DIA_Fellan_klar(C_Info)
+instances of DIA_Fellan_klar (C_Info)
 {
 	npc = VLK_480_Fellan;
 	nr = 5;
 	condition = DIA_Fellan_klar_Condition;
 	information = DIA_Fellan_klar_Info;
 	permanent = TRUE;
-	description = "С тобой все в порядке?";
+	description = " Are you all right? " ;
 };
 
 
 func int DIA_Fellan_klar_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Fellan_HALLO) && (MIS_BELIARHELPME == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Fellan_HELLO ) && ( MY_BELIEVERHELP ME  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -198,15 +199,15 @@ func int DIA_Fellan_klar_Condition()
 
 func void DIA_Fellan_klar_Info()
 {
-	AI_Output(other,self,"DIA_Fellan_klar_15_00");	//Эй! С тобой все в порядке?
+	AI_Output(other,self, " DIA_Fellan_klar_15_00 " );	// Hey! Are you all right?
 
-	if(FellanGeschlagen == FALSE)
+	if (Fellan Beaten ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Fellan_klar_06_01");	//Будет в порядке, если я смогу закончить ремонт вовремя.
+		AI_Output(self,other, " DIA_Fellan_klar_06_01 " );	// It'll be fine if I can finish the repair on time.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fellan_klar_06_02");	//Состояние крыши ухудшается прямо на глазах. В следующий дождь вода в доме поднимется до пояса, и в этом будешь виноват ты!
+		AI_Output(self,other, " DIA_Fellan_klar_06_02 " );	// The condition of the roof is deteriorating right before our eyes. In the next rain, the water in the house will rise to the waist, and it will be your fault!
 	};
 
 	AI_StopProcessInfos(self);
@@ -220,7 +221,7 @@ instance DIA_FELLAN_INSANE(C_Info)
 	condition = dia_fellan_insane_condition;
 	information = dia_fellan_insane_info;
 	permanent = FALSE;
-	description = "Что ты здесь делаешь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -234,11 +235,11 @@ func int dia_fellan_insane_condition()
 
 func void dia_fellan_insane_info()
 {
-	AI_Output(other,self,"DIA_Fellan_Insane_01_00");	//Что ты здесь делаешь?
-	AI_Output(self,other,"DIA_Fellan_Insane_01_01");	//Не мешай мне! (раздраженно) Не видишь, я пытаюсь починить эту сгоревшую хибару.
-	AI_Output(self,other,"DIA_Fellan_Insane_01_03");	//Я решил поселится в ней. Хоринис мне чертовски надоел - а тут все так красиво, тихо и спокойно.
-	AI_Output(other,self,"DIA_Fellan_Insane_01_04");	//А ты не боишься, что тебя здесь съедят волки?
-	AI_Output(self,other,"DIA_Fellan_Insane_01_07");	//Хватит! Оставь меня в покое!
+	AI_Output(other,self, " DIA_Fellan_Insane_01_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Fellan_Insane_01_01 " );	// Don't disturb me! (annoyed) Can't you see, I'm trying to fix this burned-out shack.
+	AI_Output(self,other, " DIA_Fellan_Insane_01_03 " );	// I decided to settle in it. Khorinis is damn tired of me - and here everything is so beautiful, quiet and calm.
+	AI_Output(other,self, " DIA_Fellan_Insane_01_04 " );	// Aren't you afraid that wolves will eat you here?
+	AI_Output(self,other, " DIA_Fellan_Insane_01_07 " );	// Enough! Leave me alone!
 	AI_StopProcessInfos(self);
 };
 
@@ -250,13 +251,13 @@ instance DIA_FELLAN_INSANETWO(C_Info)
 	condition = dia_fellan_insanetwo_condition;
 	information = dia_fellan_insanetwo_info;
 	permanent = FALSE;
-	description = "Ты и вправду хочешь тут остаться?";
+	description = " Do you really want to stay here? " ;
 };
 
 
 func int dia_fellan_insanetwo_condition()
 {
-	if(Npc_KnowsInfo(other,dia_fellan_insane) && (MIS_BELIARHELPME == LOG_Running))
+	if ( Npc_KnowsInfo ( other , dia_fellan_insane ) && ( MY_BELIARHELP  == LOG_Running ))
 	{
 		return TRUE;
 	};
@@ -264,10 +265,10 @@ func int dia_fellan_insanetwo_condition()
 
 func void dia_fellan_insanetwo_info()
 {
-	AI_Output(other,self,"DIA_Fellan_InsaneTwo_01_00");	//Ты и вправду хочешь тут остаться?
-	AI_Output(self,other,"DIA_Fellan_InsaneTwo_01_01");	//Конечно...(восхищенно) Разве ты еще не заметил - как здесь красиво?
-	AI_Output(other,self,"DIA_Fellan_InsaneTwo_01_03");	//Но что может быть красивого в куче обгорелых деревяшек?
-	AI_Output(self,other,"DIA_Fellan_InsaneTwo_01_04");	//Ты просто глупец, если этого не понимаешь! (презренно) Это самое прекрасное место, которое я когда-либо встречал.
+	AI_Output(other,self, " DIA_Fellan_InsaneTwo_01_00 " );	// Do you really want to stay here?
+	AI_Output(self,other, " DIA_Fellan_InsaneTwo_01_01 " );	// Of course...(admiringly) Haven't you noticed how beautiful it is here?
+	AI_Output(other,self, " DIA_Fellan_InsaneTwo_01_03 " );	// But what can be beautiful in a pile of charred pieces of wood?
+	AI_Output(self,other, " DIA_Fellan_InsaneTwo_01_04 " );	// You're just a fool if you don't understand this! (contemptuously) This is the most beautiful place I have ever seen.
 	AI_StopProcessInfos(self);
 };
 
@@ -279,13 +280,13 @@ instance DIA_FELLAN_INSANELAST(C_Info)
 	condition = dia_fellan_insanelast_condition;
 	information = dia_fellan_insanelast_info;
 	permanent = TRUE;
-	description = "Постой! Тут еще одно дело.";
+	description = " Wait! There's one more thing to do. " ;
 };
 
 
 func int dia_fellan_insanelast_condition()
 {
-	if(Npc_KnowsInfo(other,dia_fellan_insanetwo) && (MIS_BELIARHELPME == LOG_Running) && (FELLANGORFIRSTMEET == FALSE))
+	if ( Npc_KnowsInfo ( other , dia_fellan_insanetwo ) && ( MY_BELIARHELP  == LOG_Running ) && ( FELLANGER FIRST MEET  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -293,29 +294,29 @@ func int dia_fellan_insanelast_condition()
 
 func void dia_fellan_insanelast_info()
 {
-	AI_Output(other,self,"DIA_Fellan_InsaneLast_01_01");	//Постой! Тут еще одно дело.
+	AI_Output(other,self, " DIA_Fellan_InsaneLast_01_01 " );	// Wait! There is one more thing.
 	if(TELLFIRSTFELLAN == FALSE)
 	{
-		AI_Output(self,other,"DIA_Fellan_InsaneLast_01_02");	//Опять ты? (злобно) Что тебе от меня нужно?
-		AI_Output(other,self,"DIA_Fellan_InsaneLast_01_03");	//Просто я думаю, что ты именно тот человек, которого я ищу.
-		AI_Output(self,other,"DIA_Fellan_InsaneLast_01_04");	//(раздраженно) Ну, что опять?
+		AI_Output(self,other, " DIA_Fellan_InsaneLast_01_02 " );	// You again? (angrily) What do you want from me?
+		AI_Output(other,self, " DIA_Fellan_InsaneLast_01_03 " );	// I just think you're exactly the person I'm looking for.
+		AI_Output(self,other, " DIA_Fellan_InsaneLast_01_04 " );	// (annoyed) Well, what again?
 		TELLFIRSTFELLAN = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fellan_InsaneLast_01_04");	//(раздраженно) Ну, что опять?
+		AI_Output(self,other, " DIA_Fellan_InsaneLast_01_04 " );	// (annoyed) Well, what again?
 	};
 	Info_ClearChoices(dia_fellan_insanelast);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_fellan_insanelast,"...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!",dia_fellan_insanelast_yes);
+		Info_AddChoice(dia_fellan_insanelast, " ...ARCH BELIAR NOMEN SAKT DAGAR KHAR...! " ,dia_fellan_insanelast_yes);
 	};
-	Info_AddChoice(dia_fellan_insanelast,"Забудь об этом.",dia_fellan_insanelast_no);
+	Info_AddChoice(dia_fellan_insanelast, " Forget it. " ,dia_fellan_insanelast_no);
 };
 
-func void dia_fellan_insanelast_no()
+func void day_fellan_insanelast_no()
 {
-	AI_Output(other,self,"DIA_Fellan_InsaneLast_No_01_00");	//Забудь об этом.
+	AI_Output(other,self, " DIA_Fellan_InsaneLast_No_01_00 " );	// Forget it.
 	AI_Output(self,other,"DIA_Fellan_InsaneLast_No_01_01");	//Хммм...
 	AI_StopProcessInfos(self);
 };
@@ -329,27 +330,27 @@ func void dia_fellan_insanelast_yes()
 	AI_EquipArmor(self,ITAR_Dementor);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	self.flags = NPC_FLAG_IMMORTAL;
-	self.name[0] = "Феллангор";
+	self.name[ 0 ] = " Fellangor " ;
 	FELLANGORFIRSTMEET = TRUE;
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
 	Wld_PlayEffect("spellFX_Fear",other,other,0,0,0,FALSE);
-	AI_Output(other,self,"DIA_Fellan_InsaneLast_Yes_01_00");	//...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!
-	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_01");	//Аргхх!!! (мертвым голосом) Что ты наделал, жалкий человек? Ты раскрыл мою тайну.
-	AI_Output(other,self,"DIA_Fellan_InsaneLast_Yes_01_02");	//Так значит, ты и есть тот избранный, что когда-то служил Белиару, но потом обезумел и отверг своего господина?
-	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_03");	//Да, это я! (властно) И я догадываюсь, зачем ты искал со мной встречи.
-	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_04");	//Но тебе не удастся уничтожить меня, ибо я бессмертен!
-	AI_Output(other,self,"DIA_Fellan_InsaneLast_Yes_01_05");	//Вот, взгляни на этот амулет и испытай его силу!
+	AI_Output(other,self, " DIA_Fellan_InsaneLast_Yes_01_00 " );	// ...ARCH BELIAR NOMEN SAKT DAGAR KHAR...!
+	AI_Output(self,other, " DIA_Fellan_InsaneLast_Yes_01_01 " );	// Arghh!!! (dead voice) What have you done, pathetic man? You revealed my secret.
+	AI_Output(other,self, " DIA_Fellan_InsaneLast_Yes_01_02 " );	// So you are the chosen one who once served Beliar, but then became mad and rejected his master?
+	AI_Output(self,other, " DIA_Fellan_InsaneLast_Yes_01_03 " );	// Yes, it's me! (powerfully) And I can guess why you were looking to meet me.
+	AI_Output(self,other, " DIA_Fellan_InsaneLast_Yes_01_04 " );	// But you will not be able to destroy me, for I am immortal!
+	AI_Output(other,self, " DIA_Fellan_InsaneLast_Yes_01_05 " );	// Here, take a look at this amulet and test its power!
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_06");	//О, нет! Этого не может быть...(обезумевши) Как ты посмел явится с ним ко мне?
-	AI_Output(other,self,"DIA_Fellan_InsaneLast_Yes_01_07");	//Я здесь по приказу твоего хозяина, который хочет забрать у тебя то, что принадлежит ему.
-	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_08");	//Аргххх! (сопротивляясь) Глупец! У тебя все равно ничего не выйдет.
+	AI_Output(self,other, " DIA_Fellan_InsaneLast_Yes_01_06 " );	// Oh no! This can't be... (maddened) How dare you bring him to me?
+	AI_Output(other,self, " DIA_Fellan_InsaneLast_Yes_01_07 " );	// I'm here on orders from your master, who wants to take from you what belongs to him.
+	AI_Output(self,other, " DIA_Fellan_InsaneLast_Yes_01_08 " );	// Arghhh! (resisting) Fool! You still won't get anything.
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_09");	//Магия амулета сильна, но она не способна уничтожить меня до конца!
-	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_10");	//Я уже чувствую, что его сила немного ослабла и теперь мне никто не помешает вновь скрыться от гнева Темного Бога.
-	B_LogEntry(TOPIC_BELIARHELPME,"Мне удалось отыскать Феллангора! Я произнес заклинание и использовал амулет, который мне дал Зигос. Как и предполагалось, его сила не смогла убить избранника Белиара, однако, по всей видимости, сильно ослабила его, после чего сам Феллангор исчез. Мне нужно попытаться отыскать его еще раз.");
+	AI_Output(self,other, " DIA_Fellan_InsaneLast_Yes_01_09 " );	// The amulet's magic is strong, but it can't completely destroy me!
+	AI_Output(self,other, " DIA_Fellan_InsaneLast_Yes_01_10 " );	// I already feel that his strength has weakened a little and now no one will stop me from hiding from the wrath of the Dark God again.
+	B_LogEntry( TOPIC_BELIARHELPME , " I managed to find Fellangor! I cast a spell and used the amulet that Zygos gave me. As expected, its power failed to kill Beliar's chosen one, but apparently greatly weakened him, after which Fellangor himself disappeared. I need to try to find it again. " );
 	Info_ClearChoices(dia_fellan_insanelast);
-	Info_AddChoice(dia_fellan_insanelast,"(закончить разговор)",dia_fellan_insanelast_away);
+	Info_AddChoice(dia_fellan_insanelast, " (end call) " ,dia_fellan_insanelast_away);
 };
 
 func void dia_fellan_insanelast_away()
@@ -368,13 +369,13 @@ instance DIA_FELLAN_MEETTWO(C_Info)
 	condition = dia_fellan_meettwo_condition;
 	information = dia_fellan_meettwo_info;
 	permanent = FALSE;
-	description = "Как ты тут оказалась?";
+	description = " How did you get here? " ;
 };
 
 
 func int dia_fellan_meettwo_condition()
 {
-	if((MIS_BELIARHELPME == LOG_Running) && (FELLANGORFIRSTMEET == TRUE) && (FELLANGORSECONDMEET == FALSE))
+	if (( MY_BELIARHELP  == LOG_Running) && ( FIRST FELLANGERMEET  ==  TRUE ) && ( SECOND FELLANGERMEET  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -382,17 +383,17 @@ func int dia_fellan_meettwo_condition()
 
 func void dia_fellan_meettwo_info()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetTwo_01_00");	//Как ты тут оказалась?
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_01_01");	//Я просто решила прогуляться по лесу.
-	AI_Output(other,self,"DIA_Fellan_MeetTwo_01_02");	//Прогуляться? Одна и в такой глуши?
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_01_03");	//Разве это глушь? Посмотри вокруг - как здесь красиво!
-	AI_Output(other,self,"DIA_Fellan_MeetTwo_01_04");	//Хммм... Мне кажется это немного странным.
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_01_05");	//(удивленно) О чем это ты?
+	AI_Output(other,self, " DIA_Fellan_MeetTwo_01_00 " );	// How did you get here?
+	AI_Output(self,other, " DIA_Fellan_MeetTwo_01_01 " );	// I just decided to take a walk in the woods.
+	AI_Output(other,self, " DIA_Fellan_MeetTwo_01_02 " );	// Take a walk? Alone and in such a wilderness?
+	AI_Output(self,other, " DIA_Fellan_MeetTwo_01_03 " );	// Is it wilderness? Look around - how beautiful it is here!
+	AI_Output(other,self, " DIA_Fellan_MeetTwo_01_04 " );	// Hmmm... I find this a bit odd.
+	AI_Output(self,other, " DIA_Fellan_MeetTwo_01_05 " );	// (surprised) What are you talking about?
 	SPEAKTWOFELLANGORONCE = TRUE;
 	Info_ClearChoices(dia_fellan_meettwo);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_fellan_meettwo,"...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!",dia_fellan_meettwo_yes);
+		Info_AddChoice(dia_fellan_meettwo, " ...ARCH BELIAR NOMEN SAKT DAGAR KHAR...! " ,dia_fellan_meettwo_yes);
 	};
 	Info_AddChoice(dia_fellan_meettwo,"Не важно.",dia_fellan_meettwo_no);
 };
@@ -400,7 +401,7 @@ func void dia_fellan_meettwo_info()
 func void dia_fellan_meettwo_no()
 {
 	AI_Output(other,self,"DIA_Fellan_MeetTwo_No_01_00");	//Не важно.
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_No_01_01");	//Хорошо, как скажешь.
+	AI_Output(self,other, " DIA_Fellan_MeetTwo_No_01_01 " );	// Okay, whatever you say.
 	AI_StopProcessInfos(self);
 };
 
@@ -413,22 +414,22 @@ func void dia_fellan_meettwo_yes()
 	AI_EquipArmor(self,ITAR_Dementor);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	self.flags = NPC_FLAG_IMMORTAL;
-	self.name[0] = "Феллангор";
+	self.name[ 0 ] = " Fellangor " ;
 	FELLANGORSECONDMEET = TRUE;
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
 	Wld_PlayEffect("spellFX_Fear",other,other,0,0,0,FALSE);
-	AI_Output(other,self,"DIA_Fellan_MeetTwo_Yes_01_00");	//...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!
+	AI_Output(other,self, " DIA_Fellan_MeetTwo_Yes_01_00 " );	// ...ARCH BELIAR NOMEN SAKT DAGAR KHAR...!
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_Yes_01_01");	//Аргхх!!! (сопротивляясь) Тебе все-таки удалось найти меня, человек!
-	AI_Output(other,self,"DIA_Fellan_MeetTwo_Yes_01_02");	//Тебе не укрыться от меня, Феллангор! Подчинись воле амулета и верни то, что тебе не принадлежит!
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_Yes_01_03");	//Это только мой дар! И я никому его не отдам. Даже самому Белиару!
+	AI_Output(self,other, " DIA_Fellan_MeetTwo_Yes_01_01 " );	// Arghh!!! (resisting) You still managed to find me, human!
+	AI_Output(other,self, " DIA_Fellan_MeetTwo_Yes_01_02 " );	// You can't hide from me, Fellangor! Submit to the will of the amulet and return what does not belong to you!
+	AI_Output(self,other, " DIA_Fellan_MeetTwo_Yes_01_03 " );	// This is only my gift! And I won't give it to anyone. Even to Beliar himself!
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_Yes_01_04");	//(дико смеясь) Магия амулета вновь не смогла убить меня!
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_Yes_01_06");	//Я скроюсь во мраке, и ты больше никогда не сможешь меня отыскать.
-	B_LogEntry(TOPIC_BELIARHELPME,"Я вновь повстречал Феллангора. Сила амулета снова серьезно ослабила его - еще немного, и избранник Белиара будет уничтожен! На этот раз Феллангору вновь удалось скрыться от меня, но уверен, что это было в последний раз.");
+	AI_Output(self,other, " DIA_Fellan_MeetTwo_Yes_01_04 " );	// (laughing wildly) The amulet's magic failed to kill me again!
+	AI_Output(self,other, " DIA_Fellan_MeetTwo_Yes_01_06 " );	// I will hide in the darkness, and you will never be able to find me again.
+	B_LogEntry( TOPIC_BELIARHELPME , " I met Fellangor again. The power of the amulet again seriously weakened him - just a little more, and Beliar's chosen one will be destroyed! This time, Fellangor managed to hide from me again, but I'm sure that this was the last time. " );
 	Info_ClearChoices(dia_fellan_meettwo);
-	Info_AddChoice(dia_fellan_meettwo,"(закончить разговор)",dia_fellan_meettwo_away);
+	Info_AddChoice(dia_fellan_meettwo, " (end call) " ,dia_fellan_meettwo_away);
 };
 
 func void dia_fellan_meettwo_away()
@@ -448,13 +449,13 @@ instance DIA_FELLAN_MEETTWOAGAIN(C_Info)
 	condition = dia_fellan_meettwoagain_condition;
 	information = dia_fellan_meettwoagain_info;
 	permanent = TRUE;
-	description = "Эй, послушай меня!";
+	description = " Hey, listen to me! " ;
 };
 
 
 func int dia_fellan_meettwoagain_condition()
 {
-	if((MIS_BELIARHELPME == LOG_Running) && (FELLANGORFIRSTMEET == TRUE) && (SPEAKTWOFELLANGORONCE == TRUE) && (FELLANGORSECONDMEET == FALSE))
+	if (( MIS_BELIARHELPME  == LOG_Running) && ( FELLANGORFIRSTMEET  ==  TRUE ) && ( SPEAKTWOFELLANGORONCE  ==  TRUE ) && ( FELLANGORSECONDMEET  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -462,12 +463,12 @@ func int dia_fellan_meettwoagain_condition()
 
 func void dia_fellan_meettwoagain_info()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetTwoAgain_01_00");	//Эй, послушай меня!
+	AI_Output(other,self, " DIA_Fellan_MeetTwoAgain_01_00 " );	// Hey, listen to me!
 	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_01_01");	//Ну, что еще?!
 	Info_ClearChoices(dia_fellan_meettwoagain);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_fellan_meettwoagain,"...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!",dia_fellan_meettwoagain_yes);
+		Info_AddChoice(dia_fellan_meettwoagain, " ...ARCH BELIAR NOMEN SAKT DAGAR HAR... " ,dia_fellan_meettwoagain_yes);
 	};
 	Info_AddChoice(dia_fellan_meettwoagain,"Не важно.",dia_fellan_meettwoagain_no);
 };
@@ -475,7 +476,7 @@ func void dia_fellan_meettwoagain_info()
 func void dia_fellan_meettwoagain_no()
 {
 	AI_Output(other,self,"DIA_Fellan_MeetTwoAgain_No_01_00");	//Не важно.
-	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_No_01_01");	//Тогда оставь меня в покое!
+	AI_Output(self,other, " DIA_Fellan_MeetTwoAgain_No_01_01 " );	// Then leave me alone!
 	AI_StopProcessInfos(self);
 };
 
@@ -488,22 +489,22 @@ func void dia_fellan_meettwoagain_yes()
 	AI_EquipArmor(self,ITAR_Dementor);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	self.flags = NPC_FLAG_IMMORTAL;
-	self.name[0] = "Феллангор";
+	self.name[ 0 ] = " Fellangor " ;
 	FELLANGORSECONDMEET = TRUE;
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
 	Wld_PlayEffect("spellFX_Fear",other,other,0,0,0,FALSE);
-	AI_Output(other,self,"DIA_Fellan_MeetTwoAgain_Yes_01_00");	//...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!
+	AI_Output(other,self, " DIA_Fellan_MeetTwoAgain_Yes_01_00 " );	// ...ARCH BELIAR NOMEN SAKT DAGAR KHAR...!
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_Yes_01_01");	//Аргхх!!! (сопротивляясь) Тебе все-таки удалось найти меня, человек!
-	AI_Output(other,self,"DIA_Fellan_MeetTwoAgain_Yes_01_02");	//Тебе не укрыться от меня, Феллангор! Подчинись воле амулета и верни то, что тебе более не принадлежит!
-	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_Yes_01_03");	//Это только мой дар! И я никому его не отдам. Даже самому Белиару!
+	AI_Output(self,other, " DIA_Fellan_MeetTwoAgain_Yes_01_01 " );	// Arghh!!! (resisting) You still managed to find me, human!
+	AI_Output(other,self, " DIA_Fellan_MeetTwoAgain_Yes_01_02 " );	// You can't hide from me, Fellangor! Submit to the will of the amulet and return what no longer belongs to you!
+	AI_Output(self,other, " DIA_Fellan_MeetTwoAgain_Yes_01_03 " );	// This is only my gift! And I won't give it to anyone. Even to Beliar himself!
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_Yes_01_04");	//(дико смеясь) Магия амулета вновь не смогла убить меня!
-	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_Yes_01_06");	//Я скроюсь во мраке и ты больше никогда не сможешь меня отыскать.
-	B_LogEntry(TOPIC_BELIARHELPME,"Я вновь повстречал Феллангора. Сила амулета снова серьезно ослабила его - еще немного, и избранник Белиара будет уничтожен! На этот раз Феллангору вновь удалось скрыться от меня, но уверен, что это было в последний раз.");
+	AI_Output(self,other, " DIA_Fellan_MeetTwoAgain_Yes_01_04 " );	// (laughing wildly) The amulet's magic failed to kill me again!
+	AI_Output(self,other, " DIA_Fellan_MeetTwoAgain_Yes_01_06 " );	// I will hide in the darkness and you will never be able to find me again.
+	B_LogEntry( TOPIC_BELIARHELPME , " I met Fellangor again. The power of the amulet again seriously weakened him - just a little more, and Beliar's chosen one will be destroyed! This time, Fellangor managed to hide from me again, but I'm sure that this was the last time. " );
 	Info_ClearChoices(dia_fellan_meettwoagain);
-	Info_AddChoice(dia_fellan_meettwoagain,"(закончить разговор)",dia_fellan_meettwoagain_away);
+	Info_AddChoice(dia_fellan_meettwoagain, " (end call) " ,dia_fellan_meettwoagain_away);
 };
 
 func void dia_fellan_meettwoagain_away()
@@ -516,20 +517,20 @@ func void dia_fellan_meettwoagain_away()
 };
 
 
-instance DIA_FELLAN_MEETLAST(C_Info)
+instance DIA_FELLAN_MEASUREMENT (C_Info)
 {
 	npc = VLK_480_Fellan;
 	nr = 1;
 	condition = dia_fellan_meetlast_condition;
 	information = dia_fellan_meetlast_info;
 	permanent = FALSE;
-	description = "Эй, приятель! Что ты тут делаешь?";
+	description = " Hey buddy! What are you doing here? " ;
 };
 
 
-func int dia_fellan_meetlast_condition()
+func int dia_fellan_meet_last_condition()
 {
-	if((MIS_BELIARHELPME == LOG_Running) && (FELLANGORSECONDMEET == TRUE) && (FELLANGORTHIRDMEET == FALSE))
+	if (( MIS_BELIARHELPME  == LOG_Running) && ( FELLANGORSECONDMEET  ==  TRUE ) && ( FELLANGORTHIRDMEET  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -537,26 +538,26 @@ func int dia_fellan_meetlast_condition()
 
 func void dia_fellan_meetlast_info()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetLast_01_00");	//Эй, приятель! Что ты тут делаешь?
-	AI_Output(self,other,"DIA_Fellan_MeetLast_01_01");	//Как что? Торгую. Поэтому не отвлекай меня! Сейчас уже с минуты на минуту придут новые покупатели.
-	AI_Output(other,self,"DIA_Fellan_MeetLast_01_02");	//Торгуешь здесь?! Один посреди леса, который полон монстров?
-	AI_Output(other,self,"DIA_Fellan_MeetLast_01_04");	//Хммм... А где же все твои товары?
-	AI_Output(self,other,"DIA_Fellan_MeetLast_01_05");	//Э-э-э... я оставил все в городе на тот случай, если на меня вдруг нападут бандиты.
-	AI_Output(self,other,"DIA_Fellan_MeetLast_01_07");	//Что ты на меня так смотришь?
+	AI_Output(other,self, " DIA_Fellan_MeetLast_01_00 " );	// Hey buddy! What are you doing here?
+	AI_Output(self,other, " DIA_Fellan_MeetLast_01_01 " );	// Like what? I trade. So don't distract me! New customers are coming in any minute now.
+	AI_Output(other,self, " DIA_Fellan_MeetLast_01_02 " );	// Trading here?! Alone in the middle of a forest full of monsters?
+	AI_Output(other,self, " DIA_Fellan_MeetLast_01_04 " );	// Hmmm... Where are all your goods?
+	AI_Output(self,other, " DIA_Fellan_MeetLast_01_05 " );	// Uh... I left everything in the city in case the bandits suddenly attacked me.
+	AI_Output(self,other, " DIA_Fellan_MeetLast_01_07 " );	// Why are you looking at me like that?
 	SPEAKTHIRDFELLANGORONCE = TRUE;
-	Info_ClearChoices(dia_fellan_meetlast);
+	Info_ClearChoices(slide_fellan_measurement load);
 
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_fellan_meetlast,"...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!",dia_fellan_meetlast_yes);
+		Info_AddChoice(dia_fellan_meetlast, " ...ARCH BELIAR NOMEN SAKT DAGAR HAR... " ,dia_fellan_meetlast_yes);
 	};
-	Info_AddChoice(dia_fellan_meetlast,"Не важно.",dia_fellan_meetlast_no);
+	Info_AddChoice(dia_fellan_meetlast, " Не важно. " ,dia_fellan_meetlast_no);
 };
 
 func void dia_fellan_meetlast_no()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetLast_No_01_00");	//Забудь об этом.
-	AI_Output(self,other,"DIA_Fellan_MeetLast_No_01_01");	//Ну, раз так, тогда я пожалуй вернусь к своей торговле. Не возражаешь?
+	AI_Output(other,self, " DIA_Fellan_MeetLast_No_01_00 " );	// Forget it.
+	AI_Output(self,other, " DIA_Fellan_MeetLast_No_01_01 " );	// Well, if that's the case, then I'll probably get back to my trading. You dont mind?
 	AI_StopProcessInfos(self);
 };
 
@@ -568,31 +569,31 @@ func void dia_fellan_meetlast_yes()
 	AI_EquipArmor(self,ITAR_Dementor);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	self.flags = NPC_FLAG_IMMORTAL;
-	self.name[0] = "Феллангор";
+	self.name[ 0 ] = " Fellangor " ;
 	FELLANGORTHIRDMEET = TRUE;
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
 	Wld_PlayEffect("spellFX_Fear",other,other,0,0,0,FALSE);
-	AI_Output(other,self,"DIA_Fellan_MeetLast_Yes_01_00");	//...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!
-	AI_Output(self,other,"DIA_Fellan_MeetLast_Yes_01_01");	//Мне не скрыться от тебя, человек... Ты опять выследил меня!
-	AI_Output(other,self,"DIA_Fellan_MeetLast_Yes_01_02");	//На этот раз хватит - тебе не уйти! Лучше приготовься умереть.
-	AI_Output(self,other,"DIA_Fellan_MeetLast_Yes_01_03");	//Постой! (умоляюще) Прошу, пощади меня! И моя благодарность не будет знать равных.
-	B_LogEntry(TOPIC_BELIARHELPME,"Я поймал Феллангора! Теперь он от меня не уйдет. Мне только остается использовать амулет, чтобы окончательно положить конец его мучениям.");
-	Info_ClearChoices(dia_fellan_meetlast);
-	Info_AddChoice(dia_fellan_meetlast,"А что ты можешь предложить?",dia_fellan_meetlast_what);
-	Info_AddChoice(dia_fellan_meetlast,"Ну, хорошо. Я согласен.",dia_fellan_meetlast_free);
-	Info_AddChoice(dia_fellan_meetlast,"Я завершу до конца то, что начал.",dia_fellan_meetlast_kill);
+	AI_Output(other,self, " DIA_Fellan_MeetLast_Yes_01_00 " );	// ...ARCH BELIAR NOMEN SAKT DAGAR KHAR...!
+	AI_Output(self,other, " DIA_Fellan_MeetLast_Yes_01_01 " );	// I can't hide from you, human... You tracked me down again!
+	AI_Output(other,self, " DIA_Fellan_MeetLast_Yes_01_02 " );	// Enough this time - you can't get away! Better get ready to die.
+	AI_Output(self,other, " DIA_Fellan_MeetLast_Yes_01_03 " );	// Wait! (beseechingly) Please, have mercy on me! And my gratitude will know no equal.
+	B_LogEntry( TOPIC_BELIARHELPME , " I've caught Fellangor! Now he won't escape me. All I have to do is use the amulet to put an end to his torment. " );
+	Info_ClearChoices(slide_fellan_measurement load);
+	Info_AddChoice(dia_fallan_meetlast, " What do you have to offer? " ,dia_fallan_meetlast_what);
+	Info_AddChoice(dia_fellan_meetlast, " Yes, young. Not married. " ,dia_fellan_meetlast_free);
+	Info_AddChoice(dia_fellan_meetlast, " I will finish what I started. " ,dia_fallan_meetlast_kill);
 };
 
 func void dia_fellan_meetlast_what()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetLast_What_01_00");	//А что ты можешь предложить?
-	AI_Output(self,other,"DIA_Fellan_MeetLast_What_01_01");	//То, что дарует тебе огромную силу и могущество. А владеть этим или нет - это уже решать тебе!
+	AI_Output(other,self, " DIA_Fellan_MeetLast_What_01_00 " );	// What can you suggest?
+	AI_Output(self,other, " DIA_Fellan_MeetLast_What_01_01 " );	// Something that grants you great strength and power. Whether you own it or not is up to you!
 };
 
 func void dia_fellan_meetlast_free()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetLast_Free_01_00");	//Ну, хорошо. Я согласен.
-	AI_Output(self,other,"DIA_Fellan_MeetLast_Free_01_01");	//Благодарю тебя, человек. И в качестве доказательства моих слов, вот - прими это кольцо!
+	AI_Output(other,self, " DIA_Fellan_MeetLast_Free_01_00 " );	// Well, okay. I agree.
+	AI_Output(self,other, " DIA_Fellan_MeetLast_Free_01_01 " );	// Thank you, human. And as proof of my words, here - take this ring!
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR) || (other.guild == GIL_NOV) || (other.guild == GIL_NDW) || (other.guild == GIL_NDM))
 	{
 		CreateInvItems(self,itri_fellangor_magic,1);
@@ -603,13 +604,13 @@ func void dia_fellan_meetlast_free()
 		CreateInvItems(self,itri_fellangor,1);
 		B_GiveInvItems(self,other,itri_fellangor,1);
 	};
-	AI_Output(other,self,"DIA_Fellan_MeetLast_Free_01_02");	//Кольцо? И всего лишь?
-	AI_Output(self,other,"DIA_Fellan_MeetLast_Free_01_03");	//Подобное ему ты вряд ли сможешь отыскать в этом мире.
-	AI_Output(self,other,"DIA_Fellan_MeetLast_Free_01_04");	//Надень его, и ты поймешь, что я говорю истинную правду.
-	AI_Output(self,other,"DIA_Fellan_MeetLast_Free_01_05");	//А теперь прощай!
+	AI_Output(other,self, " DIA_Fellan_MeetLast_Free_01_02 " );	// Ring? And just?
+	AI_Output(self,other, " DIA_Fellan_MeetLast_Free_01_03 " );	// You're unlikely to find anything like him in this world.
+	AI_Output(self,other, " DIA_Fellan_MeetLast_Free_01_04 " );	// Put it on and you'll know I'm telling the truth.
+	AI_Output(self,other, " DIA_Fellan_MeetLast_Free_01_05 " );	// And now goodbye!
 	FELLANGORSAVE = TRUE;
-	Info_ClearChoices(dia_fellan_meetlast);
-	Info_AddChoice(dia_fellan_meetlast,Dialog_Ende,dia_fellan_meetlast_ext);
+	Info_ClearChoices(slide_fellan_measurement load);
+	Info_AddChoice(dia_fellan_meetlast,Dialog_Ende,dia_fellan_measurelast_ext);
 };
 
 func void dia_fellan_meetlast_ext()
@@ -624,13 +625,13 @@ func void dia_fellan_meetlast_kill()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Fellan_MeetLast_Kill_01_00");	//Нет!
-	AI_Output(other,self,"DIA_Fellan_MeetLast_Kill_01_01");	//Тебе не уйти от расплаты! Умри!
+	AI_Output(other,self, " DIA_Fellan_MeetLast_Kill_01_01 " );	// You can't escape retribution! Die!
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	AI_Output(self,other,"DIA_Fellan_MeetLast_Kill_01_02");	//Аргхх...(обреченно)
-	Info_ClearChoices(dia_fellan_meetlast);
-	Info_AddChoice(dia_fellan_meetlast,"...(использовать амулет)",dia_fellan_meetlast_extkill);
+	Info_ClearChoices(slide_fellan_measurement load);
+	Info_AddChoice(dia_fellan_meetlast, " ...(subject to magic) " ,dia_fellan_meetlast_extkill);
 };
 
 func void dia_fellan_meetlast_extkill()
@@ -642,20 +643,20 @@ func void dia_fellan_meetlast_extkill()
 };
 
 
-instance DIA_FELLAN_MEETLASTAGAIN(C_Info)
+instance DIA_FELLAN_MEETLASTAGAIN (C_Info)
 {
 	npc = VLK_480_Fellan;
 	nr = 1;
 	condition = dia_fellan_meetlastagain_condition;
 	information = dia_fellan_meetlastagain_info;
 	permanent = TRUE;
-	description = "Я хочу тебе кое-что сказать.";
+	description = " I want to tell you something. " ;
 };
 
 
 func int dia_fellan_meetlastagain_condition()
 {
-	if((MIS_BELIARHELPME == LOG_Running) && (SPEAKTHIRDFELLANGORONCE == TRUE) && (FELLANGORSECONDMEET == TRUE) && (FELLANGORTHIRDMEET == FALSE))
+	if (( MIS_BELIARHELPME  == LOG_Running) && ( SPEAKTHIRDFELLANGORONCE  ==  TRUE ) && ( FELLANGORSECONDMEET  ==  TRUE ) && ( FELLANGORTHIRDMEET  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -663,20 +664,20 @@ func int dia_fellan_meetlastagain_condition()
 
 func void dia_fellan_meetlastagain_info()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_01_00");	//Я хочу тебе кое-что сказать.
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_01_01");	//Да? (удивленно) И что же это?
+	AI_Output(other,self, " DIA_Fellan_MeetLastAgain_01_00 " );	// I want to tell you something.
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_01_01 " );	// Yes? (surprised) And what is it?
 	Info_ClearChoices(dia_fellan_meetlastagain);
 	if(ZIGOSMAGICISON == TRUE)
 	{
-		Info_AddChoice(dia_fellan_meetlastagain,"...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!",dia_fellan_meetlastagain_yes);
+		Info_AddChoice(dia_fellan_meetlastagain, " ...ARCH BELIAR NOMEN SAKT DAGAR HAR... " ,dia_fellan_meetlastagain_yes);
 	};
-	Info_AddChoice(dia_fellan_meetlastagain,"Не важно.",dia_fellan_meetlastagain_no);
+	Info_AddChoice(dia_fellan_meetlastagain, " Не важно. " ,dia_fellan_meetlastagain_no);
 };
 
-func void dia_fellan_meetlastagain_no()
+func void dia_fellan_meet_no()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_No_01_00");	//Ладно, забудь об этом.
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_No_01_01");	//Ну, раз так, тогда я пожалуй вернусь к своей торговле. Не возражаешь?
+	AI_Output(other,self, " DIA_Fellan_MeetLastAgain_No_01_00 " );	// Okay, forget about it.
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_No_01_01 " );	// Well, if that's the case, then I'll probably get back to my trading. You dont mind?
 	AI_StopProcessInfos(self);
 };
 
@@ -688,31 +689,31 @@ func void dia_fellan_meetlastagain_yes()
 	AI_EquipArmor(self,ITAR_Dementor);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	self.flags = NPC_FLAG_IMMORTAL;
-	self.name[0] = "Феллангор";
+	self.name[ 0 ] = " Fellangor " ;
 	FELLANGORTHIRDMEET = TRUE;
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
 	Wld_PlayEffect("spellFX_Fear",other,other,0,0,0,FALSE);
-	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_Yes_01_00");	//...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...!
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_Yes_01_01");	//Мне не скрыться от тебя, человек... Ты опять выследил меня!
-	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_Yes_01_02");	//На этот раз хватит - тебе не уйти! Лучше приготовься умереть.
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_Yes_01_03");	//Постой! (умоляюще) Прошу, пощади меня! И моя благодарность не будет знать равных.
-	B_LogEntry(TOPIC_BELIARHELPME,"Я поймал Феллангора! Теперь он от меня не уйдет. Мне только остается использовать амулет, чтобы окончательно положить конец его мучениям.");
+	AI_Output(other,self, " DIA_Fellan_MeetLastAgain_Yes_01_00 " );	// ...ARCH BELIAR NOMEN SAKT DAGAR KHAR...!
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_Yes_01_01 " );	// I can't hide from you, human... You tracked me down again!
+	AI_Output(other,self, " DIA_Fellan_MeetLastAgain_Yes_01_02 " );	// Enough this time - you can't get away! Better get ready to die.
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_Yes_01_03 " );	// Wait! (beseechingly) Please, have mercy on me! And my gratitude will know no equal.
+	B_LogEntry( TOPIC_BELIARHELPME , " I've caught Fellangor! Now he won't escape me. All I have to do is use the amulet to put an end to his torment. " );
 	Info_ClearChoices(dia_fellan_meetlastagain);
-	Info_AddChoice(dia_fellan_meetlastagain,"А что ты можешь предложить?",dia_fellan_meetlastagain_what);
-	Info_AddChoice(dia_fellan_meetlastagain,"Ну, хорошо. Я согласен.",dia_fellan_meetlastagain_free);
-	Info_AddChoice(dia_fellan_meetlastagain,"Я завершу до конца то, что начал.",dia_fellan_meetlastagain_kill);
+	Info_AddChoice(dia_fallan_meetlastagain, " What do you have to offer? " ,dia_fallan_meetlastagain_what);
+	Info_AddChoice(dia_fallan_meetlastagain, " Well, okay. I agree. " ,dia_fallan_meetlastagain_free);
+	Info_AddChoice(dia_fellan_meetlastagain, " I will finish what I started. " ,dia_fallan_meetlastagain_kill);
 };
 
 func void dia_fellan_meetlastagain_what()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_What_01_00");	//А что ты можешь предложить?
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_What_01_01");	//То, что дарует тебе огромную силу и могущество...(серьезно) А владеть этим или нет - это уже решать тебе!
+	AI_Output(other,self, " DIA_Fellan_MeetLastAgain_What_01_00 " );	// What can you suggest?
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_What_01_01 " );	// Something that grants you great strength and power... (seriously) And it's up to you to own it or not!
 };
 
-func void dia_fellan_meetlastagain_free()
+func void dia_fellan_meet_free()
 {
-	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_Free_01_00");	//Ну хорошо. Я согласен.
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_Free_01_01");	//Благодарю тебя, человек. И в качестве доказательства моих слов, вот - прими это кольцо!
+	AI_Output(other,self, " DIA_Fellan_MeetLastAgain_Free_01_00 " );	// Okay. I agree.
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_Free_01_01 " );	// Thank you, human. And as proof of my words, here - take this ring!
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR) || (other.guild == GIL_NOV) || (other.guild == GIL_NDW) || (other.guild == GIL_NDM))
 	{
 		CreateInvItems(self,itri_fellangor_magic,1);
@@ -723,10 +724,10 @@ func void dia_fellan_meetlastagain_free()
 		CreateInvItems(self,itri_fellangor,1);
 		B_GiveInvItems(self,other,itri_fellangor,1);
 	};
-	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_Free_01_02");	//Кольцо? И всего лишь?
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_Free_01_03");	//Подобное ему ты вряд ли сможешь отыскать в этом мире.
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_Free_01_04");	//Надень его, и ты поймешь, что я говорю истинную правду.
-	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_Free_01_05");	//А теперь прощай!
+	AI_Output(other,self, " DIA_Fellan_MeetLastAgain_Free_01_02 " );	// Ring? And just?
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_Free_01_03 " );	// You're unlikely to find anything like him in this world.
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_Free_01_04 " );	// Put it on and you'll know I'm telling the truth.
+	AI_Output(self,other, " DIA_Fellan_MeetLastAgain_Free_01_05 " );	// And now goodbye!
 	FELLANGORSAVE = TRUE;
 	Info_ClearChoices(dia_fellan_meetlastagain);
 	Info_AddChoice(dia_fellan_meetlastagain,Dialog_Ende,dia_fellan_meetlastagain_ext);
@@ -744,14 +745,14 @@ func void dia_fellan_meetlastagain_kill()
 {
 	B_GivePlayerXP(1000);
 	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_Kill_01_00");	//Нет!
-	AI_Output(other,self,"DIA_Fellan_MeetLastAgain_Kill_01_01");	//Тебе не уйти от расплаты! Умри!
+	AI_Output(other,self, " DIA_Fellan_MeetLastAgain_Kill_01_01 " );	// You can't escape retribution! Die!
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
 	Wld_PlayEffect("spellFX_Fear",other,other,0,0,0,FALSE);
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_Kill_01_02");	//Аргхх...(обреченно)
 	Info_ClearChoices(dia_fellan_meetlastagain);
-	Info_AddChoice(dia_fellan_meetlastagain,"...(использовать амулет)",dia_fellan_meetlastagain_extkill);
+	Info_AddChoice(dia_fellan_meetlastagain, " ...(use amulet) " ,dia_fallan_meetlastagain_extkill);
 };
 
 func void dia_fellan_meetlastagain_extkill()
