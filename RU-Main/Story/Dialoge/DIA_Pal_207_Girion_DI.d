@@ -1,5 +1,6 @@
 
-instance DIA_Girion_DI_XIT(C_Info)
+
+DIA_Girion_DI_XIT (C_Info) instances
 {
 	npc = Pal_207_Girion_DI;
 	nr = 999;
@@ -21,14 +22,14 @@ func void DIA_Girion_DI_EXIT_Info()
 };
 
 
-instance DIA_Girion_DI_Hallo(C_Info)
+instances DIA_Girion_DI_Hello (C_Info)
 {
 	npc = Pal_207_Girion_DI;
 	nr = 2;
 	condition = DIA_Girion_DI_Hallo_Condition;
-	information = DIA_Girion_DI_Hallo_Info;
+	information = DIA_Girion_DI_Hello_Info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -40,33 +41,33 @@ func int DIA_Girion_DI_Hallo_Condition()
 	};
 };
 
-func void DIA_Girion_DI_Hallo_Info()
+func void DIA_Girion_DI_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Girion_DI_Hallo_15_00");	//Все в порядке?
+	AI_Output(other,self, " DIA_Girion_DI_Hallo_15_00 " );	// Is everything okay?
 	if(ORkSturmDI == TRUE)
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Hallo_08_01");	//У орков хватило мужества, чтобы атаковать меня.
-		AI_Output(self,other,"DIA_Girion_DI_Hallo_08_02");	//Но им стоило лучше подумать, прежде чем нападать на паладина из королевской стражи.
+		AI_Output(self,other, " DIA_Girion_DI_Hallo_08_01 " );	// The orcs had the courage to attack me.
+		AI_Output(self,other, " DIA_Girion_DI_Hallo_08_02 " );	// But they should have thought better before attacking a royal guard paladin.
 	}
 	else if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Hallo_08_03");	//Думаю, да. Долго ты еще будешь возиться на этом утесе?
+		AI_Output(self,other, " DIA_Girion_DI_Hallo_08_03 " );	// I think so. How much longer will you fiddle on this cliff?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Hallo_08_04");	//Не считай меня за идиота. Делай то, что нужно сделать, и побыстрее возвращай корабль мне.
+		AI_Output(self,other, " DIA_Girion_DI_Hallo_08_04 " );	// Don't take me for an idiot. Do what needs to be done and quickly return the ship to me.
 	};
 };
 
 
-instance DIA_Girion_DI_Teach(C_Info)
+DIA_Girion_DI_Teach (C_Info) instances
 {
 	npc = Pal_207_Girion_DI;
 	nr = 5;
 	condition = DIA_Girion_DI_Teach_Condition;
 	information = DIA_Girion_DI_Teach_Info;
 	permanent = TRUE;
-	description = "Обучи меня, тогда мы сможем убраться отсюда быстрее!";
+	description = " Educate me so we can get out of here faster! " ;
 };
 
 
@@ -80,8 +81,8 @@ func int DIA_Girion_DI_Teach_Condition()
 
 func void DIA_Girion_DI_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Girion_DI_Teach_15_00");	//Обучи меня, тогда мы сможем быстрее убраться с этого острова.
-	AI_Output(self,other,"DIA_Girion_DI_Teach_08_01");	//Похоже, у меня нет другого выбора.
+	AI_Output(other,self, " DIA_Girion_DI_Teach_15_00 " );	// Teach me so we can get off this island faster.
+	AI_Output(self,other, " DIA_Girion_DI_Teach_08_01 " );	// Looks like I have no other choice.
 	Info_ClearChoices(DIA_Girion_DI_Teach);
 	Info_AddChoice(DIA_Girion_DI_Teach,Dialog_Back,DIA_Girion_DI_Teach_Back);
 	Info_AddChoice(DIA_Girion_DI_Teach,b_buildlearnstringforfight(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1)),DIA_Girion_DI_Teach_CROSSBOW_1);
@@ -96,7 +97,7 @@ func void DIA_Girion_DI_Teach_CROSSBOW_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,90))
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Teach_CROSSBOW_1_08_00");	//При стрельбе никогда не опирайся локтями. Это сделает твою хватку слишком жесткой, и ты неизбежно собьешь прицел.
+		AI_Output(self,other, " DIA_Girion_DI_Teach_CROSSBOW_1_08_00 " );	// When shooting, never lean on your elbows. This will make your grip too tight and you will inevitably lose aim.
 	};
 	Info_ClearChoices(DIA_Girion_DI_Teach);
 	Info_AddChoice(DIA_Girion_DI_Teach,Dialog_Back,DIA_Girion_DI_Teach_Back);
@@ -112,7 +113,7 @@ func void DIA_Girion_DI_Teach_CROSSBOW_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,90))
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Teach_CROSSBOW_5_08_00");	//Всегда расслабляй свою левую руку перед выстрелом. Это позволит тебе более точно прицелиться.
+		AI_Output(self,other, " DIA_Girion_DI_Teach_CROSSBOW_5_08_00 " );	// Always relax your left hand before firing. This will allow you to aim more accurately.
 	};
 	Info_ClearChoices(DIA_Girion_DI_Teach);
 	Info_AddChoice(DIA_Girion_DI_Teach,Dialog_Back,DIA_Girion_DI_Teach_Back);
@@ -128,7 +129,7 @@ func void DIA_Girion_DI_Teach_1H_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,90))
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Teach_1H_1_08_00");	//Твое лезвие должно скользить по воздуху, как камыш на побережье.
+		AI_Output(self,other, " DIA_Girion_DI_Teach_1H_1_08_00 " );	// Your blade should glide through the air like reeds on a coast.
 	};
 	Info_ClearChoices(DIA_Girion_DI_Teach);
 	Info_AddChoice(DIA_Girion_DI_Teach,Dialog_Back,DIA_Girion_DI_Teach_Back);
@@ -144,7 +145,7 @@ func void DIA_Girion_DI_Teach_1H_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,90))
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Teach_1H_5_08_00");	//Силу нужно применять расчетливо. Если ты слепо будешь бросаться на противника, это не приведет тебя к успеху.
+		AI_Output(self,other, " DIA_Girion_DI_Teach_1H_5_08_00 " );	// Force must be applied sparingly. If you blindly rush at the enemy, it will not lead you to success.
 	};
 	Info_ClearChoices(DIA_Girion_DI_Teach);
 	Info_AddChoice(DIA_Girion_DI_Teach,Dialog_Back,DIA_Girion_DI_Teach_Back);
@@ -160,7 +161,7 @@ func void DIA_Girion_DI_Teach_2H_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,90))
 	{
-		AI_Output(self,other,"DIA_DIA_Girion_DI_Teach_2H_1_08_00");	//Не сжимай судорожно руку, тогда твой удар встретит свою цель.
+		AI_Output(self,other, " DIA_DIA_Girion_DI_Teach_2H_1_08_00 " );	// Do not squeeze your hand convulsively, then your blow will meet its target.
 	};
 	Info_ClearChoices(DIA_Girion_DI_Teach);
 	Info_AddChoice(DIA_Girion_DI_Teach,Dialog_Back,DIA_Girion_DI_Teach_Back);
@@ -176,7 +177,7 @@ func void DIA_Girion_DI_Teach_2H_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,90))
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Teach_2H_5_08_00");	//Не забывай защищаться. Но лучшая защита все же - уклоняться от удара противника.
+		AI_Output(self,other, " DIA_Girion_DI_Teach_2H_5_08_00 " );	// Don't forget to defend yourself. But the best defense is still to dodge the enemy's blow.
 	};
 	Info_ClearChoices(DIA_Girion_DI_Teach);
 	Info_AddChoice(DIA_Girion_DI_Teach,Dialog_Back,DIA_Girion_DI_Teach_Back);
@@ -194,14 +195,14 @@ func void DIA_Girion_DI_Teach_Back()
 };
 
 
-instance DIA_Girion_DI_OrcEliteRing(C_Info)
+instances of DIA_Girion_DI_OrcEliteRing (C_Info)
 {
 	npc = Pal_207_Girion_DI;
 	nr = 99;
 	condition = DIA_Girion_DI_OrcEliteRing_Condition;
 	information = DIA_Girion_DI_OrcEliteRing_Info;
 	permanent = TRUE;
-	description = "У меня есть кольцо предводителей орков.";
+	description = " I have a ring of orc leaders. " ;
 };
 
 
@@ -218,31 +219,31 @@ var int DIA_Girion_DI_OrcEliteRing_OneTime;
 
 func void DIA_Girion_DI_OrcEliteRing_Info()
 {
-	AI_Output(other,self,"DIA_Girion_DI_OrcEliteRing_15_00");	//У меня есть кольцо предводителей орков.
+	AI_Output(other,self, " DIA_Girion_DI_OrcEliteRing_15_00 " );	// I have a ring of orc leaders.
 	if(DIA_Girion_DI_OrcEliteRing_OneTime == FALSE)
 	{
-		AI_Output(self,other,"DIA_Girion_DI_OrcEliteRing_08_01");	//Я думаю, лорд Хаген сможет что-нибудь предпринять.
-		DIA_Girion_DI_OrcEliteRing_OneTime = TRUE;
+		AI_Output(self,other, " DIA_Girion_DI_OrcEliteRing_08_01 " );	// I think Lord Hagen can do something.
+		DIA_Girion_DI_OrcEliteRing_OneTime = TRUE ;
 	};
-	AI_Output(self,other,"DIA_Girion_DI_OrcEliteRing_08_02");	//Дай его мне. Я покажу его лорду Хагену.
+	AI_Output(self,other, " DIA_Girion_DI_OrcEliteRing_08_02 " );	// Give it to me. I'll show it to Lord Hagen.
 	Info_ClearChoices(DIA_Girion_DI_OrcEliteRing);
-	Info_AddChoice(DIA_Girion_DI_OrcEliteRing,"Я лучше оставлю его себе.",DIA_Girion_DI_OrcEliteRing_behalten);
-	Info_AddChoice(DIA_Girion_DI_OrcEliteRing,"Вот, возьми.",DIA_Girion_DI_OrcEliteRing_geben);
+	Info_AddChoice(DIA_Girion_DI_OrcEliteRing, " I'd rather keep him. " ,DIA_Girion_DI_OrcEliteRing_behalten);
+	Info_AddChoice(DIA_Girion_DI_OrcEliteRing, " Вот, возьми. " ,DIA_Girion_DI_OrcEliteRing_geben);
 };
 
-func void DIA_Girion_DI_OrcEliteRing_geben()
+func void DIA_Girion_DI_OrcEliteRing_give()
 {
-	AI_Output(other,self,"DIA_Girion_DI_OrcEliteRing_geben_15_00");	//Вот, возьми.
-	AI_Output(self,other,"DIA_Girion_DI_OrcEliteRing_geben_08_01");	//Спасибо. Все равно я не думаю, что оно может тебе пригодиться.
+	AI_Output(other,self, " DIA_Girion_DI_OrcEliteRing_geben_15_00 " );	// Here, take this.
+	AI_Output(self,other, " DIA_Girion_DI_OrcEliteRing_geben_08_01 " );	// Thank you. Still, I don't think it will be of any use to you.
 	Info_ClearChoices(DIA_Girion_DI_OrcEliteRing);
 	B_GiveInvItems(other,self,ItRi_OrcEliteRing,1);
 	B_GivePlayerXP(XP_PAL_OrcRing);
 };
 
-func void DIA_Girion_DI_OrcEliteRing_behalten()
+func void DIA_Girion_DI_OrcEliteRing_keep()
 {
-	AI_Output(other,self,"DIA_Girion_DI_OrcEliteRing_behalten_15_00");	//Я лучше оставлю его себе.
-	AI_Output(self,other,"DIA_Girion_DI_OrcEliteRing_behalten_08_01");	//Как знаешь. Все равно оно вряд ли тебе пригодится.
+	AI_Output(other,self, " DIA_Girion_DI_OrcEliteRing_behalten_15_00 " );	// I'd rather keep it to myself.
+	AI_Output(self,other, " DIA_Girion_DI_OrcEliteRing_behalten_08_01 " );	// As you know. Still, it probably won't work for you.
 	Info_ClearChoices(DIA_Girion_DI_OrcEliteRing);
 };
 
@@ -254,7 +255,7 @@ instance DIA_Girion_DI_UndeadDragonDead(C_Info)
 	condition = DIA_Girion_DI_UndeadDragonDead_Condition;
 	information = DIA_Girion_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
-	description = "Мы готовы к отплытию.";
+	description = " We are ready to sail. " ;
 };
 
 
@@ -270,31 +271,31 @@ var int DIA_Girion_DI_UndeadDragonDead_OneTime;
 
 func void DIA_Girion_DI_UndeadDragonDead_Info()
 {
-	AI_Output(other,self,"DIA_Girion_DI_UndeadDragonDead_15_00");	//Мы готовы к отплытию.
-	AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_01");	//Это хорошо. А то я уже начал думать, что сгнием здесь на этом утесе.
+	AI_Output(other,self, " DIA_Girion_DI_UndeadDragonDead_15_00 " );	// We're ready to sail.
+	AI_Output(self,other, " DIA_Girion_DI_UndeadDragonDead_08_01 " );	// This is good. And then I already began to think that I would rot here on this cliff.
 	if(DIA_Girion_DI_UndeadDragonDead_OneTime == FALSE)
 	{
-		AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_02");	//Теперь ты немедленно передашь корабль мне!
-		AI_Output(other,self,"DIA_Girion_DI_UndeadDragonDead_15_03");	//Мы еще не в Хоринисе. И, честно говоря, я не очень-то хочу снова в Хоринис.
-		AI_Output(other,self,"DIA_Girion_DI_UndeadDragonDead_15_04");	//Я пробыл там достаточно долго.
-		AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_05");	//Я уже подумывал что-то в этом роде. Однако, сейчас не время и не место. Снова побеседуем об этом в море.
-		AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_06");	//Что это значит... Я все же рад, видеть тебя снова невредимым на борту.
+		AI_Output(self,other, " DIA_Girion_DI_UndeadDragonDead_08_02 " );	// Now you will hand over the ship to me immediately!
+		AI_Output(other,self, " DIA_Girion_DI_UndeadDragonDead_15_03 " );	// We're not in Khorinis yet. And to be honest, I don't really want to go back to Khorinis.
+		AI_Output(other,self, " DIA_Girion_DI_UndeadDragonDead_15_04 " );	// I stayed there long enough.
+		AI_Output(self,other, " DIA_Girion_DI_UndeadDragonDead_08_05 " );	// I've already thought about something like this. However, now is not the time or place. Let's talk about it again at sea.
+		AI_Output(self,other, " DIA_Girion_DI_UndeadDragonDead_08_06 " );	// What does that mean... I'm still glad to see you safe on board again.
 		if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 		{
-			AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_07");	//Ты настоящий воин Инноса. У меня нет сомнений на этот счет. Я рад, что ты на нашей стороне.
+			AI_Output(self,other, " DIA_Girion_DI_UndeadDragonDead_08_07 " );	// You are a true warrior of Innos. I have no doubts about this. I'm glad you're on our side.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_08");	//Даже хотя ты и мошенник, последнее время ты вел себя как настоящий праведник.
+			AI_Output(self,other, " DIA_Girion_DI_UndeadDragonDead_08_08 " );	// Even though you're a swindler, lately you've been acting like a true righteous man.
 		};
 		DIA_Girion_DI_UndeadDragonDead_OneTime = TRUE;
 	};
-	AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_09");	//Хорошо. Теперь иди к капитану. Пусть он поднимает якорь.
+	AI_Output(self,other, " DIA_Girion_DI_UndeadDragonDead_08_09 " );	// Good. Now go to the captain. Let him raise the anchor.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Girion_DI_PICKPOCKET(C_Info)
+instances DIA_Girion_DI_PICKPOCKET (C_Info)
 {
 	npc = Pal_207_Girion_DI;
 	nr = 900;
@@ -307,19 +308,19 @@ instance DIA_Girion_DI_PICKPOCKET(C_Info)
 
 func int DIA_Girion_DI_PICKPOCKET_Condition()
 {
-	return C_Beklauen(71,260);
+	return  C_Robbery ( 71 , 260 );
 };
 
 func void DIA_Girion_DI_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Girion_DI_PICKPOCKET);
 	Info_AddChoice(DIA_Girion_DI_PICKPOCKET,Dialog_Back,DIA_Girion_DI_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Girion_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Girion_DI_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Girion_DI_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Girion_DI_PICKPOCKET_DoIt);
 };
 
 func void DIA_Girion_DI_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Girion_DI_PICKPOCKET);
 };
