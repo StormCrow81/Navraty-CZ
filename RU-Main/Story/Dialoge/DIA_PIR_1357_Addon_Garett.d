@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Garett_EXIT(C_Info)
 {
 	npc = PIR_1357_Addon_Garett;
@@ -34,7 +35,7 @@ instance DIA_Addon_Garett_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Garett_PICKPOCKET_Condition()
 {
-	return C_Beklauen(36,55);
+	return  C_Robbery ( 36 , 55 );
 };
 
 func void DIA_Addon_Garett_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Addon_Garett_PICKPOCKET_Info()
 
 func void DIA_Addon_Garett_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Garett_PICKPOCKET);
 };
 
@@ -56,31 +57,31 @@ func void DIA_Addon_Garett_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Addon_Garett_Anheuern(C_Info)
+instance DIA_Addon_Garet_Hire (C_Info)
 {
 	npc = PIR_1357_Addon_Garett;
 	nr = 1;
-	condition = DIA_Addon_Garett_Anheuern_Condition;
-	information = DIA_Addon_Garett_Anheuern_Info;
+	condition = DIA_Addon_Garett_Hire_Condition;
+	information = DIA_Addon_Garett_Hire_Info;
 	important = TRUE;
 };
 
 
-func int DIA_Addon_Garett_Anheuern_Condition()
+func int DIA_Addon_Garett_Hire_Condition()
 {
 	if(Npc_IsInState(self,ZS_Talk) && (MIS_Addon_Greg_ClearCanyon == LOG_Running))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void DIA_Addon_Garett_Anheuern_Info()
+func void DIA_Addon_Garett_Hire_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Garett_Anheuern_09_00");	//Даже не предлагай мне присоединиться к твоей группе.
-	AI_Output(self,other,"DIA_Addon_Garett_Anheuern_09_01");	//Как ты думаешь, что здесь начнется, если я уйду?
-	AI_Output(self,other,"DIA_Addon_Garett_Anheuern_09_02");	//Да тут к моему возвращению не останется ни одного ящика!
-	AI_Output(self,other,"DIA_Addon_Garett_Anheuern_09_03");	//Нет, я должен оставаться здесь и охранять наши запасы.
+	AI_Output(self,other, " DIA_Addon_Garett_Anheuern_09_00 " );	// Don't even ask me to join your group.
+	AI_Output(self,other, " DIA_Addon_Garett_Anheuern_09_01 " );	// What do you think will happen here if I leave?
+	AI_Output(self,other, " DIA_Addon_Garett_Anheuern_09_02 " );	// There won't be a single crate left when I get back!
+	AI_Output(self,other, " DIA_Addon_Garett_Anheuern_09_03 " );	// No, I have to stay here and guard our supplies.
 };
 
 
@@ -100,15 +101,15 @@ func int DIA_Addon_Garett_Hello_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Garett_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Garett_Hello_09_00");	//Так-так. Новое лицо. Надеюсь, ты не один из этих грязных бандитов?
-	AI_Output(self,other,"DIA_Addon_Garett_Hello_09_01");	//Мое имя Гаретт. Если тебе что-нибудь понадобится, спроси у меня.
-	AI_Output(self,other,"DIA_Addon_Garett_Hello_09_02");	//Я могу достать практически что угодно. Вино, оружие - все, что может тебе понадобиться.
-	AI_Output(self,other,"DIA_Addon_Garett_Hello_09_03");	//Кроме самогона. Если тебе нужен самогон, иди к Сэмюэлю.
+	AI_Output(self,other, " DIA_Addon_Garett_Hello_09_00 " );	// Well, well. New face. I hope you're not one of those dirty bandits?
+	AI_Output(self,other, " DIA_Addon_Garett_Hello_09_01 " );	// My name is Garett. If you need anything, ask me.
+	AI_Output(self,other, " DIA_Addon_Garett_Hello_09_02 " );	// I can get almost anything. Wine, guns, whatever you might need.
+	AI_Output(self,other, " DIA_Addon_Garett_Hello_09_03 " );	// Except moonshine. If you need moonshine, go to Samuel.
 	Log_CreateTopic(Topic_Addon_PIR_Trader,LOG_NOTE);
 	B_LogEntry(Topic_Addon_PIR_Trader,Log_Text_Addon_GarettTrade);
 };
@@ -121,27 +122,27 @@ instance DIA_Addon_Garett_Samuel(C_Info)
 	condition = DIA_Addon_Garett_Samuel_Condition;
 	information = DIA_Addon_Garett_Samuel_Info;
 	permanent = FALSE;
-	description = "Кто такой Сэмюэль?";
+	description = " Who is Samuel? " ;
 };
 
 
 func int DIA_Addon_Garett_Samuel_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Garett_Hello) && (Samuel.aivar[AIV_TalkedToPlayer] == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Garett_Hello ) && ( Samuel . aivar [ AIV_ TalkedToPlayer ] ==  FALSE )) .
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Garett_Samuel_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_Samuel_15_00");	//Кто такой Сэмюэль?
-	AI_Output(self,other,"DIA_Addon_Garett_Samuel_09_01");	//Наш самогонщик. У него есть пещера на берегу, недалеко от лагеря.
-	AI_Output(self,other,"DIA_Addon_Garett_Samuel_09_02");	//Просто иди по берегу на север, и ты ее найдешь.
-	AI_Output(self,other,"DIA_Addon_Garett_Samuel_09_03");	//Я бы посоветовал тебе запастись грогом.
-	AI_Output(self,other,"DIA_Addon_Garett_Samuel_09_04");	//Не все наши ребята приветливо относятся к новичкам, надеюсь, ты меня понимаешь.
-	AI_Output(self,other,"DIA_Addon_Garett_Samuel_09_05");	//А бутылка-другая грога может сотворить настоящие чудеса!
+	AI_Output(other,self, " DIA_Addon_Garett_Samuel_15_00 " );	// Who is Samuel?
+	AI_Output(self,other, " DIA_Addon_Garett_Samuel_09_01 " );	// Our moonshiner. He has a cave on the shore, not far from the camp.
+	AI_Output(self,other, " DIA_Addon_Garett_Samuel_09_02 " );	// Just follow the coast to the north and you will find it.
+	AI_Output(self,other, " DIA_Addon_Garett_Samuel_09_03 " );	// I would advise you to stock up on grog.
+	AI_Output(self,other, " DIA_Addon_Garett_Samuel_09_04 " );	// Not all of our guys are friendly to newcomers, I hope you understand me.
+	AI_Output(self,other, " DIA_Addon_Garett_Samuel_09_05 " );	// A bottle or two of grog can work wonders!
 	B_LogEntry(Topic_Addon_PIR_Trader,Log_Text_Addon_SamuelTrade);
 };
 
@@ -152,7 +153,7 @@ instance DIA_Addon_Garett_Warez(C_Info)
 	nr = 3;
 	condition = DIA_Addon_Garett_Warez_Condition;
 	information = DIA_Addon_Garett_Warez_Info;
-	description = "Откуда ты получаешь свои товары?";
+	description = " Where do you get your products from? " ;
 };
 
 
@@ -163,10 +164,10 @@ func int DIA_Addon_Garett_Warez_Condition()
 
 func void DIA_Addon_Garett_Warez_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_Warez_15_00");	//Откуда ты получаешь свои товары?
-	AI_Output(self,other,"DIA_Addon_Garett_Warez_09_01");	//Когда Скип ездит в Хоринис, он всегда привозит оттуда множество вещей.
-	AI_Output(self,other,"DIA_Addon_Garett_Warez_09_02");	//До недавнего времени часть из них он напрямую продавал бандитам.
-	AI_Output(self,other,"DIA_Addon_Garett_Warez_09_03");	//Но сейчас у нас с бандитами война, так что все товары оказываются у меня.
+	AI_Output(other,self, " DIA_Addon_Garett_Warez_15_00 " );	// Where do you get your goods from?
+	AI_Output(self,other, " DIA_Addon_Garett_Warez_09_01 " );	// When Skip travels to Khorinis, he always brings a lot of things from there.
+	AI_Output(self,other, " DIA_Addon_Garett_Warez_09_02 " );	// Until recently, he sold some of them directly to bandits.
+	AI_Output(self,other, " DIA_Addon_Garett_Warez_09_03 " );	// But now we are at war with the bandits, so all the goods end up with me.
 };
 
 
@@ -176,7 +177,7 @@ instance DIA_Addon_Garett_Bandits(C_Info)
 	nr = 3;
 	condition = DIA_Addon_Garett_Bandits_Condition;
 	information = DIA_Addon_Garett_Bandits_Info;
-	description = "Что ты знаешь об этих бандитах?";
+	description = " What do you know about these bandits? " ;
 };
 
 
@@ -186,15 +187,15 @@ func int DIA_Addon_Garett_Bandits_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Garett_Bandits_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_Bandits_15_00");	//Что ты знаешь о бандитах?
-	AI_Output(self,other,"DIA_Addon_Garett_Bandits_09_01");	//Об этом тебе лучше спросить у Скипа.
-	AI_Output(self,other,"DIA_Addon_Garett_Bandits_09_02");	//Он довольно много общался с этой шайкой.
-	AI_Output(self,other,"DIA_Addon_Garett_Bandits_09_03");	//А сейчас Грэг приказал нам убивать каждого бандита, подходящего к лагерю.
+	AI_Output(other,self, " DIA_Addon_Garett_Bandits_15_00 " );	// What do you know about bandits?
+	AI_Output(self,other, " DIA_Addon_Garett_Bandits_09_01 " );	// You'd better ask Skip about that.
+	AI_Output(self,other, " DIA_Addon_Garett_Bandits_09_02 " );	// He's been around quite a bit with this gang.
+	AI_Output(self,other, " DIA_Addon_Garett_Bandits_09_03 " );	// And now Greg ordered us to kill every bandit approaching the camp.
 };
 
 
@@ -205,7 +206,7 @@ instance DIA_Addon_Garett_Greg(C_Info)
 	condition = DIA_Addon_Garett_Greg_Condition;
 	information = DIA_Addon_Garett_Greg_Info;
 	permanent = FALSE;
-	description = "Ваш капитан Грэг. Какой он?";
+	description = " Your captain is Greg. What is he like? " ;
 };
 
 
@@ -216,14 +217,14 @@ func int DIA_Addon_Garett_Greg_Condition()
 
 func void DIA_Addon_Garett_Greg_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_Greg_15_00");	//Ваш капитан Грэг. Какой он?
-	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_01");	//С этим старым морским волком лучше не шутить.
-	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_02");	//К тому же он жаден до невозможности.
-	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_03");	//Фрэнсис, его казначей, платит нам ровно столько, сколько нужно, чтобы мы не подняли бунт.
-	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_04");	//А если нам попадается что-нибудь действительно ценное, капитан тут же забирает это себе.
-	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_05");	//Однажды на королевском фрегате я нашел золотой компас.
-	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_06");	//Конечно же, этот ублюдок Грэг отобрал его у меня.
-	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_07");	//Наверняка он его где-нибудь закопал. Он так поступает со всеми своими сокровищами.
+	AI_Output(other,self, " DIA_Addon_Garett_Greg_15_00 " );	// Your Captain Greg. What is he?
+	AI_Output(self,other, " DIA_Addon_Garett_Greg_09_01 " );	// Don't mess with this old sea dog.
+	AI_Output(self,other, " DIA_Addon_Garett_Greg_09_02 " );	// Plus, he's greedy to the point of impossibility.
+	AI_Output(self,other, " DIA_Addon_Garett_Greg_09_03 " );	// Francis, his treasurer, pays us just the right amount to keep us from rioting.
+	AI_Output(self,other, " DIA_Addon_Garett_Greg_09_04 " );	// And if we come across something really valuable, the captain immediately takes it for himself.
+	AI_Output(self,other, " DIA_Addon_Garett_Greg_09_05 " );	// Once on a royal frigate, I found a golden compass.
+	AI_Output(self,other, " DIA_Addon_Garett_Greg_09_06 " );	// Of course that bastard Greg took it from me.
+	AI_Output(self,other, " DIA_Addon_Garett_Greg_09_07 " );	// He must have buried it somewhere. He does this with all his treasures.
 };
 
 
@@ -233,7 +234,7 @@ instance DIA_Addon_Garett_Tips(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Garett_Tips_Condition;
 	information = DIA_Addon_Garett_Tips_Info;
-	description = "А где он мог закопать твой компас?";
+	description = " Where could he have buried your compass? " ;
 };
 
 
@@ -243,22 +244,22 @@ func int DIA_Addon_Garett_Tips_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Garett_Tips_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_Tips_15_00");	//А где он мог закопать твой компас?
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_09_01");	//Однажды Грэг сказал мне, что компас охраняет сама Смерть. А потом он расхохотался.
-	AI_Output(other,self,"DIA_Addon_Garett_Tips_15_02");	//Что-нибудь еще?
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_09_03");	//На юге есть бухточка, добраться до которой можно только по морю.
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_09_04");	//Грэг нередко там бывает, Может быть, тебе удастся там что-нибудь найти.
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_09_05");	//Однажды я сам попытался исследовать это место, но оказалось, что оно кишит монстрами.
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_09_06");	//Если ты все же решишься туда отправиться, не забудь кирку.
+	AI_Output(other,self, " DIA_Addon_Garett_Tips_15_00 " );	// Where could he have buried your compass?
+	AI_Output(self,other, " DIA_Addon_Garett_Tips_09_01 " );	// Greg once told me that the compass is guarded by Death itself. And then he laughed.
+	AI_Output(other,self, " DIA_Addon_Garett_Tips_15_02 " );	// Anything else?
+	AI_Output(self,other, " DIA_Addon_Garett_Tips_09_03 " );	// There is a cove to the south that can only be reached by sea.
+	AI_Output(self,other, " DIA_Addon_Garett_Tips_09_04 " );	// Greg often goes there, Maybe you can find something there.
+	AI_Output(self,other, " DIA_Addon_Garett_Tips_09_05 " );	// Once I tried to explore this place myself, but it turned out to be infested with monsters.
+	AI_Output(self,other, " DIA_Addon_Garett_Tips_09_06 " );	// If you do decide to go there, don't forget your pickaxe.
 	MIS_ADDON_GARett_BringKompass = LOG_Running;
 	Log_CreateTopic(TOPIC_Addon_Kompass,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_Kompass,LOG_Running);
-	B_LogEntry(TOPIC_Addon_Kompass,"Грэг отобрал у Гаррета драгоценный компас. Гаррет думает, что Грэг закопал его где-то на южном пляже.");
+	B_LogEntry(TOPIC_Addon_Kompass, " Greg took the precious compass from Garrett. Garrett thinks Greg buried it somewhere on the south beach. " );
 };
 
 instance DIA_Addon_Garett_Tips_Next(C_Info)
@@ -267,7 +268,7 @@ instance DIA_Addon_Garett_Tips_Next(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Garett_Tips_Next_Condition;
 	information = DIA_Addon_Garett_Tips_Next_Info;
-	description = "Клад Грэга охраняет сама смерть?";
+	description = " Greg's treasure is guarded by death itself? " ;
 };
 
 func int DIA_Addon_Garett_Tips_Next_Condition()
@@ -280,9 +281,9 @@ func int DIA_Addon_Garett_Tips_Next_Condition()
 
 func void DIA_Addon_Garett_Tips_Next_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_Tips_Next_01_00");	//Что Грэг имел в виду, когда сказал, что клад охраняет сама Смерть?
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_Next_01_01");	//Ходят слухи, что этот клад проклят! А охраняют его люди, которых сам Грэг когда-то и убил.
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_Next_01_02");	//Поэтому будь очень осторожен, если пойдешь туда.
+	AI_Output(other,self, " DIA_Addon_Garett_Tips_Next_01_00 " );	// What did Greg mean when he said that the treasure is guarded by Death itself?
+	AI_Output(self,other, " DIA_Addon_Garett_Tips_Next_01_01 " );	// Rumor has it that this treasure is cursed! And it is guarded by people whom Greg himself once killed.
+	AI_Output(self,other, " DIA_Addon_Garett_Tips_Next_01_02 " );	// So be very careful if you go there.
 };
 
 instance DIA_Addon_Garett_GiveKompass(C_Info)
@@ -292,7 +293,7 @@ instance DIA_Addon_Garett_GiveKompass(C_Info)
 	condition = DIA_Addon_Garett_GiveKompass_Condition;
 	information = DIA_Addon_Garett_GiveKompass_Info;
 	permanent = FALSE;
-	description = "Вот твой компас.";
+	description = " Here's your compass. " ;
 };
 
 func int DIA_Addon_Garett_GiveKompass_Condition()
@@ -301,31 +302,31 @@ func int DIA_Addon_Garett_GiveKompass_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Garett_GiveKompass_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_GiveKompass_15_00");	//Вот твой компас.
+	AI_Output(other,self, " DIA_Addon_Garett_GiveKompass_15_00 " );	// Here's your compass.
 	if(B_GiveInvItems(other,self,ItMI_Addon_Kompass_Mis,1))
 	{
 		Npc_RemoveInvItems(self,ItMI_Addon_Kompass_Mis,1);
 	};
-	AI_Output(self,other,"DIA_Addon_Garett_GiveKompass_09_01");	//(радостно) Да, это он! Вот уж не думал, что снова его увижу.
-	AI_Output(self,other,"DIA_Addon_Garett_GiveKompass_09_02");	//Спасибо, приятель!
+	AI_Output(self,other, " DIA_Addon_Garett_GiveKompass_09_01 " );	// (joyfully) Yes, it's him! I never thought that I would see him again.
+	AI_Output(self,other, " DIA_Addon_Garett_GiveKompass_09_02 " );	// Thanks mate!
 	if(Npc_HasItems(self,ItBe_Addon_Prot_EdgPoi) > 0)
 	{
-		AI_Output(self,other,"DIA_Addon_Garett_GiveKompass_09_03");	//На этот раз Грэг его не получит.
-		AI_Output(self,other,"DIA_Addon_Garett_GiveKompass_09_04");	//Возьми в награду этот пояс. Это одна из самых ценных моих вещей
+		AI_Output(self,other, " DIA_Addon_Garett_GiveKompass_09_03 " );	// Greg won't get it this time.
+		AI_Output(self,other, " DIA_Addon_Garett_GiveKompass_09_04 " );	// Reward this belt. This is one of my most valuable things.
 		B_GiveInvItems(self,other,ItBe_Addon_Prot_EdgPoi,1);
 	}
-	else if(self.aivar[AIV_DefeatedByPlayer] == FALSE)
+	else  if (self.aivar[AIV_DefeatedByPlayer] ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_Garett_GiveKompass_09_05");	//Помнишь, ты купил у меня пояс.
-		AI_Output(self,other,"DIA_Addon_Garett_GiveKompass_09_06");	//Ты заплатил за него порядочную сумму... Нет, конечно он стоит этих денег. В общем, можешь взять их обратно.
+		AI_Output(self,other, " DIA_Addon_Garett_GiveKompass_09_05 " );	// Remember, you bought the belt from me.
+		AI_Output(self,other, " DIA_Addon_Garett_GiveKompass_09_06 " );	// You paid a fair amount for it... No, of course it's worth the money. Basically, you can take them back.
 		B_GiveInvItems(self,other,ItMi_Gold,Value_ItBE_Addon_Prot_EdgPoi);
 	};
-	B_LogEntry(TOPIC_Addon_Kompass,"Гаррет был очень рад, когда я вернул ему компас.");
+	B_LogEntry(TOPIC_Addon_Kompass, " Garrett was very happy when I returned the compass to him. " );
 	MIS_ADDON_GARett_BringKompass = LOG_SUCCESS;
 	B_GivePlayerXP(XP_ADDON_Garett_Bring_Kompass);
 };
@@ -338,7 +339,7 @@ instance DIA_Addon_Garett_Francis(C_Info)
 	condition = DIA_Addon_Garett_Francis_Condition;
 	information = DIA_Addon_Garett_Francis_Info;
 	permanent = FALSE;
-	description = "Что ты можешь мне сказать о Фрэнсисе?";
+	description = " What can you tell me about Francis? " ;
 };
 
 
@@ -348,21 +349,21 @@ func int DIA_Addon_Garett_Francis_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Garett_Francis_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_Francis_15_00");	//Что ты можешь мне сказать о Фрэнсисе?
-	AI_Output(self,other,"DIA_Addon_Garett_Francis_09_01");	//Когда Грэга нет, он остается за старшего.
-	AI_Output(self,other,"DIA_Addon_Garett_Francis_09_02");	//Но честно говоря, лидер из него никакой.
-	AI_Output(self,other,"DIA_Addon_Garett_Francis_09_03");	//Он даже Моргана не может заставить оторвать свою ленивую задницу от кровати.
-	AI_Output(self,other,"DIA_Addon_Garett_Francis_09_04");	//Чем-то полезным сейчас занимается только Генри со своими ребятами.
-	AI_Output(self,other,"DIA_Addon_Garett_Francis_09_05");	//Остальные же просто бездельничают.
+	AI_Output(other,self, " DIA_Addon_Garett_Francis_15_00 " );	// What can you tell me about Francis?
+	AI_Output(self,other, " DIA_Addon_Garett_Francis_09_01 " );	// When Greg is away, he stays in charge.
+	AI_Output(self,other, " DIA_Addon_Garett_Francis_09_02 " );	// But to be honest, he's no leader.
+	AI_Output(self,other, " DIA_Addon_Garett_Francis_09_03 " );	// He can't even get Morgan to get his lazy ass off the bed.
+	AI_Output(self,other, " DIA_Addon_Garett_Francis_09_04 " );	// Only Henry and his guys are doing something useful now.
+	AI_Output(self,other, " DIA_Addon_Garett_Francis_09_05 " );	// The rest are just messing around.
 	if(GregIsBack == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Garett_Francis_09_06");	//Надеюсь, что Грэг скоро вернется.
-		AI_Output(self,other,"DIA_Addon_Garett_Francis_09_07");	//Он-то покажет этим лентяям, что к чему.
+		AI_Output(self,other, " DIA_Addon_Garett_Francis_09_06 " );	// Hope Greg comes back soon.
+		AI_Output(self,other, " DIA_Addon_Garett_Francis_09_07 " );	// He will show these lazy people what's what.
 	};
 };
 
@@ -374,7 +375,7 @@ instance DIA_Addon_Garett_PERM(C_Info)
 	condition = DIA_Addon_Garett_PERM_Condition;
 	information = DIA_Addon_Garett_PERM_Info;
 	permanent = TRUE;
-	description = "Есть новости?";
+	description = " Any news? " ;
 };
 
 func int DIA_Addon_Garett_PERM_Condition()
@@ -384,15 +385,15 @@ func int DIA_Addon_Garett_PERM_Condition()
 
 func void DIA_Addon_Garett_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_PERM_15_00");	//Есть новости?
+	AI_Output(other,self, " DIA_Addon_Garett_PERM_15_00 " );	// Any news?
 
 	if(GregIsBack == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Garett_PERM_09_02");	//С тех пор как Грэг уехал, ничего интересного не случалось.
+		AI_Output(self,other, " DIA_Addon_Garett_PERM_09_02 " );	// Nothing interesting has happened since Greg left.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Garett_PERM_09_01");	//После того как Грэг вернулся, все начало приходить в норму.
+		AI_Output(self,other, " DIA_Addon_Garett_PERM_09_01 " );	// After Greg returned, everything started to return to normal.
 	};
 };
 
@@ -403,7 +404,7 @@ instance DIA_Addon_Garett_Trade(C_Info)
 	condition = DIA_Addon_Garett_Trade_Condition;
 	information = DIA_Addon_Garett_Trade_Info;
 	permanent = TRUE;
-	description = "Давай займемся делом!";
+	description = " Let's get down to business! " ;
 	trade = TRUE;
 };
 
@@ -414,7 +415,7 @@ func int DIA_Addon_Garett_Trade_Condition()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 
@@ -423,7 +424,7 @@ var int garretarrowsday;
 func void DIA_Addon_Garett_Trade_Info()
 {
 	var int Garett_Random;
-	var int daynow;
+	where int daynow;
 	var int bolzenamount;
 
 	if(C_BodyStateContains(self,BS_SIT))
@@ -432,7 +433,7 @@ func void DIA_Addon_Garett_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	Garett_Random = Hlp_Random(3);
+	Garett_Random = Hlp_Random( 3 );
 
 	if(Garett_Random == 0)
 	{
