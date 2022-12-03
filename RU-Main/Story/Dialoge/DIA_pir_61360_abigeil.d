@@ -34,7 +34,7 @@ instance DIA_ADDON_ABIGEIL_BF_PICKPOCKET(C_Info)
 
 func int dia_addon_abigeil_bf_pickpocket_condition()
 {
-	return C_Beklauen(111,666);
+	return  C_Robbery ( 111 , 666 );
 };
 
 func void dia_addon_abigeil_bf_pickpocket_info()
@@ -46,7 +46,7 @@ func void dia_addon_abigeil_bf_pickpocket_info()
 
 func void dia_addon_abigeil_bf_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_addon_abigeil_bf_pickpocket);
 };
 
