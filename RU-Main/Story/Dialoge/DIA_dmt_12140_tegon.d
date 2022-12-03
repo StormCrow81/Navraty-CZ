@@ -1,4 +1,5 @@
 
+
 instance DMT_12140_TEGON_EXIT(C_Info)
 {
 	npc = dmt_12140_tegon;
@@ -47,41 +48,41 @@ func void dmt_12140_tegon_hello_info()
 		TELLWHATDONE = TRUE;
 		if(CHOOSEDARK == TRUE)
 		{
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_01");	//Тебе следует обратится к Хранителю Даготу, адепт!
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_02");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_03");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_04");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_01 " );	// You should contact Guardian Dagoth, adept!
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_02 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_03 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_04 " );	// Now go!
 			AI_StopProcessInfos(self);
 		}
 		else if(CHOOSESTONE == TRUE)
 		{
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_05");	//Тебе следует обратится к Хранителю Стонносу, адепт!
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_02");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_03");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_04");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_05 " );	// You should contact Guardian Stonnos, adept!
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_02 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_03 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_04 " );	// Now go!
 			AI_StopProcessInfos(self);
 		}
 		else if(CHOOSEWATER == TRUE)
 		{
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_09");	//Тебе следует обратится к Хранителю Вакону, адепт!
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_02");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_03");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_04");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_09 " );	// You should contact Guardian Vakon, adept!
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_02 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_03 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_04 " );	// Now go!
 			AI_StopProcessInfos(self);
 		}
 		else if(CHOOSEFIRE == TRUE)
 		{
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_13");	//Тебе следует обратится к Хранителю Келиосу, адепт!
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_02");	//Теперь он будет твоим наставником.
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_03");	//Я же ничем тебе более не могу помочь.
-			AI_Output(self,other,"DMT_12140_Tegon_Hello_04");	//Теперь ступай!
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_13 " );	// You should contact Guardian Kelios, adept!
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_02 " );	// He will now be your mentor.
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_03 " );	// I can't help you anymore.
+			AI_Output(self,other, " DMT_12140_Tegon_Hello_04 " );	// Now go!
 			AI_StopProcessInfos(self);
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DMT_12140_Tegon_Hello_17");	//Ты уже знаешь, что тебе следует делать.
-		AI_Output(self,other,"DMT_12140_Tegon_Hello_18");	//Теперь ступай!
+		AI_Output(self,other, " DMT_12140_Tegon_Hello_17 " );	// You already know what you should do.
+		AI_Output(self,other, " DMT_12140_Tegon_Hello_18 " );	// Now go!
 		AI_StopProcessInfos(self);
 	};
 };
