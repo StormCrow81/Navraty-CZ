@@ -1,4 +1,5 @@
 
+
 instance DIA_STRF_8122_Addon_Ferd_EXIT(C_Info)
 {
 	npc = STRF_8122_Addon_Ferd;
@@ -19,7 +20,7 @@ func void DIA_STRF_8122_Addon_Ferd_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_STRF_8122_Addon_Ferd_PreHello(C_Info)
+instance DIA_STRF_8122_Feed_Addon_PreHello (C_Info);
 {
 	npc = STRF_8122_Addon_Ferd;
 	nr = 2;
@@ -39,7 +40,7 @@ func int DIA_STRF_8122_Addon_Ferd_PreHello_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_PreHello_info()
 {
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_PreHello_01_00");	//Ну что еще такое?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_PreHello_01_00 " );	// Well, what else is this?
 };
 
 instance DIA_STRF_8122_Addon_Ferd_AfterHello(C_Info)
@@ -49,7 +50,7 @@ instance DIA_STRF_8122_Addon_Ferd_AfterHello(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_AfterHello_condition;
 	information = DIA_STRF_8122_Addon_Ferd_AfterHello_info;
 	permanent = FALSE;
-	description = "Привет. Как дела?";
+	description = " Hi. How are you? " ;
 };
 
 func int DIA_STRF_8122_Addon_Ferd_AfterHello_condition()
@@ -59,14 +60,14 @@ func int DIA_STRF_8122_Addon_Ferd_AfterHello_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_AfterHello_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_00");	//Привет. Как дела?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_01");	//Вот ты нашел что спросить.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_02");	//Хреновые дела! Да и какие еще они тут могут быть?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_03");	//День и ночь только и делаешь, что долбишь эту проклятую жилу.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_04");	//Пройдет еще с десяток лет, а все останется точно также.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_05");	//Ну, если только не брать в расчет то, что можно просто не дожить до этого времени.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_06");	//А я смотрю, ты оптимист!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_07");	//Вот побудешь тут с мое - таким же станешь.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_AfterHello_01_00 " );	// Hello. How are you?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_AfterHello_01_01 " );	// Here you found something to ask.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_AfterHello_01_02 " );	// Fucking business! And what else could they be?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_AfterHello_01_03 " );	// Day and night all you do is gouge that damned vein.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_AfterHello_01_04 " );	// It will take another ten years, and everything will remain exactly the same.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_AfterHello_01_05 " );	// Well, unless you take into account the fact that you can simply not live up to this time.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_AfterHello_01_06 " );	// And I see you are an optimist!
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_AfterHello_01_07 " );	// If you stay here with mine, you will become the same.
 };
 
 instance DIA_STRF_8122_Addon_Ferd_HELLO(C_Info)
@@ -76,12 +77,12 @@ instance DIA_STRF_8122_Addon_Ferd_HELLO(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_hello_condition;
 	information = DIA_STRF_8122_Addon_Ferd_hello_info;
 	permanent = FALSE;
-	description = "Наверное, ты уже тут давно?";
+	description = " Have you been here for a long time? " ;
 };
 
 func int DIA_STRF_8122_Addon_Ferd_hello_condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_STRF_8122_Addon_Ferd_AfterHello) == TRUE)
+	if ( Npc_KnowsInfo ( hero , DIA_STRF_8122_Ferd_Addon_AfterHello ) ==  TRUE ) .
 	{
 		return TRUE;
 	};
@@ -89,11 +90,11 @@ func int DIA_STRF_8122_Addon_Ferd_hello_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_hello_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Hello_01_00");	//Наверное, ты уже тут давно?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_01");	//Больше, чем ты можешь себе представить.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Hello_01_02");	//А это примерно сколько?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_03");	//Слушай, приятель...(ворчливо) Если тебе нечем заняться, то лучше поприставай с вопросами к другим парням.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_04");	//А мне надо работать! Иначе орки с меня шкуру спустят.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Hello_01_00 " );	// Probably, you've been here for a long time?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Hello_01_01 " );	// More than you can imagine.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Hello_01_02 " );	// How much is this?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Hello_01_03 " );	// Listen, buddy...(grouchily) If you don't have anything to do, you better pester the other guys with questions.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Hello_01_04 " );	// And I have to work! Otherwise, the orcs will skin me.
 	AI_StopProcessInfos(self);
 };
 
@@ -104,12 +105,12 @@ instance DIA_STRF_8122_Addon_Ferd_Escape(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_Escape_condition;
 	information = DIA_STRF_8122_Addon_Ferd_Escape_info;
 	permanent = FALSE;
-	description = "Что ты знаешь о побеге рабов?";
+	description = " What do you know about the slave escape? " ;
 };
 
 func int DIA_STRF_8122_Addon_Ferd_Escape_condition()
 {
-	if((Npc_KnowsInfo(hero,DIA_STRF_8122_Addon_Ferd_AfterHello) == TRUE) && (MIS_EscapeMine == LOG_Running))
+	if ((Npc_KnowsInfo(hero,DIA_STRF_8122_Addon_Ferd_AfterHello) ==  TRUE ) && (MY_EscapeMine == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -117,29 +118,29 @@ func int DIA_STRF_8122_Addon_Ferd_Escape_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_Escape_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_00");	//Что ты знаешь о побеге рабов?
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Escape_01_00 " );	// What do you know about slave escape?
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_01");	//Тише ты! Или хочешь, чтобы нас услышали орки?!
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_02");	//А ты что, боишься?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_03");	//Парень, тут такими вещами не шутят! А то в миг можно попрощаться со своей жизнью.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_04");	//Ну, так ты расскажешь или нет?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_05");	//Белиар тебя бы побрал...(недовольно) Вот же навязался на мою голову!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_06");	//Хорошо, я расскажу тебе все, что знаю. Но за это ты окажешь мне одну небольшую услугу.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_07");	//И о чем идет речь?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_01 " );	// Hush you! Or do you want the orcs to hear us?!
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Escape_01_02 " );	// What are you afraid of?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_03 " );	// Man, they don't joke around with stuff like that! And then in a moment you can say goodbye to your life.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Escape_01_04 " );	// Well, are you going to tell or not?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_05 " );	// Beliar would have taken you... (displeasedly) Here he was imposed on my head!
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_06 " );	// Okay, I'll tell you everything I know. But in return, you will do me one small favor.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Escape_01_07 " );	// And what are we talking about?
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_08");	//Для начала достань мне несколько целебных эликсиров. Думаю, что пяти хватит.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_09");	//А то в последний раз долбя жилу, я очень сильно потянул руку.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_10");	//Эта зараза так ноет, а я не могу нормально работать! Еле справляюсь с дневной нормой.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_11");	//Слава богу, что орки пока этого не заметили. А то с такими у них разговор короткий.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_12");	//Для начала?! А будет что-то еще?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_13");	//Сначала принеси эликсиры, а потом мы поговорим обо всем остальном. 
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_14");	//Или тебе уже не интересно узнать про побег?
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_15");	//Ладно, успокойся! Попробую раздобыть для тебя парочку-другую.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_16");	//Так-то лучше.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_08 " );	// First, get me some healing elixirs. I think five is enough.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_09 " );	// And then the last time I was hammering a vein, I pulled my hand very hard.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_10 " );	// This infection is so annoying, and I can't work properly! I can barely manage my daily routine.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_11 " );	// Thank god the orcs haven't noticed this yet. And then with such they have a short conversation.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Escape_01_12 " );	// For starters?! Will there be something else?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_13 " );	// Bring the elixirs first, then we'll talk about everything else.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_14 " );	// Or are you no longer interested in learning about the escape?
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Escape_01_15 " );	// Okay, calm down! I'll try to get you a couple or two.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Escape_01_16 " );	// That's better.
 	MIS_FerdPotions = LOG_Running;
 	Log_CreateTopic(TOPIC_FerdPotions,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FerdPotions,LOG_Running);
-	B_LogEntry(TOPIC_FerdPotions,"Ферд попросил достать для него несколько целебных эликсиров. Он сильно повредил руку и не хочет, чтобы орки о чем-то догадались.");
+	B_LogEntry(TOPIC_FerdPotions, " Ferd asked for some healing elixirs for him. He's badly injured his hand and doesn't want the orcs to guess anything. " );
 };
 
 instance DIA_STRF_8122_Addon_Ferd_Potions(C_Info)
@@ -149,7 +150,7 @@ instance DIA_STRF_8122_Addon_Ferd_Potions(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_Potions_condition;
 	information = DIA_STRF_8122_Addon_Ferd_Potions_info;
 	permanent = FALSE;
-	description = "Вот твои эликсиры.";
+	description = " Here are your elixirs. " ;
 };
 
 func int DIA_STRF_8122_Addon_Ferd_Potions_condition()
@@ -163,36 +164,36 @@ func int DIA_STRF_8122_Addon_Ferd_Potions_condition()
 func void DIA_STRF_8122_Addon_Ferd_Potions_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_00");	//Вот твои эликсиры.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Potions_01_00 " );	// Here are your elixirs.
 	B_GiveInvItems(other,self,ItPo_Health_03,5);
 	Npc_RemoveInvItems(self,ItPo_Health_03,4);
 	AI_PlayAni(self,"T_SEARCH");
 	B_UseItem(self,ItPo_Health_03);
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_01");	//Мммм... Боль как рукой сняло! Остальные пригодятся на будущее.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_02");	//Но, как я говорил, это еще не все.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_03");	//Я тебя слушаю.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_04");	//Мне нужно, чтобы ты вернул мне мое кольцо.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_05");	//Что еще за кольцо?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_06");	//Обыкновенное серебрянное кольцо. Ничего особенного.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_07");	//Но есть одно обстоятельство - дело в том, что его мне подарил мой отец.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_08");	//Ага! Фамильная вещица?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_09");	//Что-то вроде того. Все эти годы, проведенные в шахте, оно хранилось у меня.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_10");	//И когда я смотрел на него, то вспоминал свою семью и те времена, когда все было по-другому.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_11");	//Но однажды этот грязный ублюдок Вакур Шак заметил у меня это кольцо и забрал его себе!
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_12");	//Кто такой Вакур Шак?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_13");	//Один из старших надзирателей орков. Жадный до всего, на что положит свой глаз!
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_14");	//Хочешь, чтобы я попробовал договориться с ним насчет твоего кольца?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_15");	//Я не знаю, как ты это сделаешь. Но вижу, что тебе тут позволено спокойно разгуливать даже с оружием.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_16");	//А значит, что он тебя хотя бы выслушает. 
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_17");	//Я посмотрю, что можно сделать.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_01 " );	// Mmmm... The pain is gone! The rest will come in handy for the future.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_02 " );	// But, as I said, that's not all.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Potions_01_03 " );	// I'm listening to you.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_04 " );	// I need you to give me back my ring.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Potions_01_05 " );	// What else is a ring?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_06 " );	// Ordinary silver ring. Nothing special.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_07 " );	// But there is one circumstance - the fact is that my father gave it to me.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Potions_01_08 " );	// Aha! Family item?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_09 " );	// Something like that. All these years spent in the mine, it was kept by me.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_10 " );	// And when I looked at him, I remembered my family and those times when everything was different.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_11 " );	// But one day that dirty bastard Vakur Shak noticed this ring from me and took it for himself!
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Potions_01_12 " );	// Who is Vakur Shak?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_13 " );	// One of the senior orc overseers. Greedy for everything he sets his eyes on!
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Potions_01_14 " );	// Do you want me to try and negotiate with him about your ring?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_15 " );	// I don't know how you would do it. But I see that you are allowed to roam around in peace even with a weapon.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Potions_01_16 " );	// Which means that he will at least listen to you.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Potions_01_17 " );	// I'll see what I can do.
 	RT_Respect = RT_Respect + 1;
 	MIS_FerdPotions = LOG_Success;
 	Log_SetTopicStatus(TOPIC_FerdPotions,LOG_Success);
-	B_LogEntry(TOPIC_FerdPotions,"Я принес Ферду целебные эликсиры.");
+	B_LogEntry(TOPIC_FerdPotions, " I brought Ferd some health elixirs. " );
 	MIS_FerdRing = LOG_Running;
 	Log_CreateTopic(TOPIC_FerdRing,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FerdRing,LOG_Running);
-	B_LogEntry(TOPIC_FerdRing,"Ферд хочет, чтобы я вернул ему фамильное кольцо, которое отобрал у него Вакур Шак - старший надзиратель рабов.");
+	B_LogEntry(TOPIC_FerdRing, " Ferd wants me to give him back the family ring that Vakur Shak, Senior Slave Overseer, took from him. " );
 };
 
 instance DIA_STRF_8122_Addon_Ferd_Ring(C_Info)
@@ -202,12 +203,12 @@ instance DIA_STRF_8122_Addon_Ferd_Ring(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_Ring_condition;
 	information = DIA_STRF_8122_Addon_Ferd_Ring_info;
 	permanent = FALSE;
-	description = "Это твое кольцо?";
+	description = " Is this your ring? " ;
 };
 
 func int DIA_STRF_8122_Addon_Ferd_Ring_condition()
 {
-	if((MIS_FerdRing == LOG_Running) && (Npc_HasItems(other,ItRi_Ferd) >= 1))
+	if ((MIS_FerdRing == LOG_Running) && (Npc_HasItems(other,ItRi_Ferd) >=  1 ))
 	{
 		return TRUE;
 	};
@@ -216,21 +217,21 @@ func int DIA_STRF_8122_Addon_Ferd_Ring_condition()
 func void DIA_STRF_8122_Addon_Ferd_Ring_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_00");	//Это твое кольцо?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Ring_01_00 " );	// Is this your ring?
 	B_GiveInvItems(other,self,ItRi_Ferd,1);
 	Npc_RemoveInvItems(self,ItRi_Ferd,1);
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_01");	//(радостно) Да, это оно! Как тебе удалось его вырвать из рук Вакур Шака?
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_02");	//Тебе лучше не знать. Этот орк оказался еще тем торгашом!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_03");	//Ну да ладно. Главное, что оно теперь снова у меня.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_04");	//Благодарю тебя, старина.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_05");	//Только смотри, чтобы его снова у тебя не отобрали.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_06");	//А то в следующий раз сам его будешь возвращать.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_07");	//Само собой.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Ring_01_01 " );	// (joyfully) Yes, that's it! How did you manage to wrest it from the hands of Vakur Shak?
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Ring_01_02 " );	// You better not know. This orc turned out to be that huckster!
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Ring_01_03 " );	// Oh well. The main thing is that now I have it again.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Ring_01_04 " );	// Thank you, old man.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Ring_01_05 " );	// Just make sure it's not taken from you again.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Ring_01_06 " );	// Otherwise, next time you will return it yourself.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Ring_01_07 " );	// Of course.
 	RT_Respect = RT_Respect + 1;
 	MIS_FerdRing = LOG_Success;
 	Log_CreateTopic(TOPIC_FerdRing,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FerdRing,LOG_Success);
-	B_LogEntry(TOPIC_FerdRing,"Я вернул Ферду его фамильное кольцо.");
+	B_LogEntry(TOPIC_FerdRing, " I gave Ferd his family ring back. " );
 };
 
 instance DIA_STRF_8122_Addon_Ferd_EscapeTell(C_Info)
@@ -240,12 +241,12 @@ instance DIA_STRF_8122_Addon_Ferd_EscapeTell(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_EscapeTell_condition;
 	information = DIA_STRF_8122_Addon_Ferd_EscapeTell_info;
 	permanent = FALSE;
-	description = "Как насчет нашего уговора?";
+	description = " How about our deal? " ;
 };
 
 func int DIA_STRF_8122_Addon_Ferd_EscapeTell_condition()
 {
-	if(MIS_FerdRing == LOG_Success)
+	if (MIS_FerdRing == LOG_Success)
 	{
 		return TRUE;
 	};
@@ -254,25 +255,25 @@ func int DIA_STRF_8122_Addon_Ferd_EscapeTell_condition()
 func void DIA_STRF_8122_Addon_Ferd_EscapeTell_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_00");	//Как насчет нашего уговора?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_01");	//Конечно, я сдержу свое слово и расскажу тебе все, что я знаю о побеге рабов.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_02");	//Это случилось пару лет назад...(задумчиво) Один раб по имени Барго задумал бежать отсюда.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_03");	//Он подбил большую часть рудокопов поднять бунт в шахте.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_04");	//А сам тем временем, воспользовавшись всеобщей суматохой, хотел проскользнуть незамеченным мимо охраны.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_05");	//В условленный день рабы подняли мятеж. Они убили пару охранников и всей толпой двинулись к выходу.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_06");	//Но орки оказались хитрее! Они перекрыли все выходы из шахты кроме одного.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_07");	//Поэтому восставшим ничего не оставалось делать, как только идти именно туда.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_08");	//Но в конце этого пути их ждал тупик. А сверху уже поджидал карательный отряд орков-арбалетчиков.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_09");	//Что было дальше, я рассказывать не стану...
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_10");	//Могу сказать только одно - в той бойне никто не уцелел!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_11");	//Многие тогда поплатились своей жизнью, доверившись сказкам Барго.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_12");	//А что стало с самим Барго?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_13");	//Ха! Поняв, что его план провалился, эта крыса забилась в самый дальний и темный угол, что только смогла найти.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_14");	//Но орки отыскали его. А потом отрубили ему голову в назидание остальным!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_15");	//Вот так все и закончилось. С тех пор здесь больше никто не помышляет о побеге.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_16");	//Одно только это слово наводит на них ужас...
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_17");	//Да, довольно печальная история.
-	B_LogEntry(TOPIC_EscapeMine,"Ферд рассказал мне, что случилось в день побега. С того момента никто больше и не помышляет о побеге.");
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_00 " );	// How about our deal?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_01 " );	// Of course, I'll keep my word and tell you everything I know about the slave escape.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_02 " );	// It happened a couple of years ago... (thoughtfully) One slave named Bargo decided to run away from here.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_03 " );	// He got most of the miners to start a riot in the mine.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_04 " );	// And in the meantime, taking advantage of the general turmoil, he wanted to slip past the guards unnoticed.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_05 " );	// On the appointed day, the slaves revolted. They killed a couple of guards and the whole crowd moved to the exit.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_06 " );	// But the orcs were smarter! They blocked all the exits from the mine except for one.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_07 " );	// Therefore, the rebels had no choice but to go there.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_08 " );	// But at the end of this path, a dead end awaited them. And from above, a punitive detachment of orc crossbowmen was already waiting.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_09 " );	// What happened next, I won't tell...
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_10 " );	// I can only say one thing - no one survived that massacre!
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_11 " );	// Many then paid with their lives, trusting the tales of Bargo.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_12 " );	// And what happened to Bargo himself?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_13 " );	// Ha! Realizing that his plan had failed, this rat hid in the farthest and darkest corner that it could find.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_14 " );	// But the orcs found him. And then they cut off his head as a warning to the rest!
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_15 " );	// This is how it ended. Since then, no one has thought of escaping here.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_16 " );	// This word alone terrifies them...
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_EscapeTell_01_17 " );	// Yes, quite a sad story.
+	B_LogEntry(TOPIC_EscapeMine, " Ferd told me what happened on the day of the escape. From that moment on, no one thinks about escaping anymore. " );
 };
 
 instance DIA_STRF_8122_Addon_Ferd_NoEscape(C_Info)
@@ -282,7 +283,7 @@ instance DIA_STRF_8122_Addon_Ferd_NoEscape(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_NoEscape_condition;
 	information = DIA_STRF_8122_Addon_Ferd_NoEscape_info;
 	permanent = FALSE;
-	description = "Вам никогда не удастся выбраться из этой шахты.";
+	description = " You will never get out of this mine. " ;
 };
 
 func int DIA_STRF_8122_Addon_Ferd_NoEscape_condition()
@@ -295,24 +296,24 @@ func int DIA_STRF_8122_Addon_Ferd_NoEscape_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_NoEscape_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_00");	//Вам никогда не удастся выбраться из этой шахты.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_01");	//(ехидно) Ты в это и сам не веришь, да?
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_02");	//Нет. Просто главный проход из шахты прямиком ведет в город орков.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_03");	//И там вас уже будут поджидать не простые охранники, а элитные воины!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_05");	//Проклятье! Я такое даже и представить не мог.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_06");	//Теперь ты знаешь об этом.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_07");	//Ну, тогда, полагаю, нам всем стоит смирится с нашей участью.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_08");	//По всей видимости, мы навсегда останемся гнить в этой дыре!
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_NoEscape_01_00 " );	// You will never get out of this shaft.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_NoEscape_01_01 " );	// (sarcastically) You don't believe in that yourself, do you?
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_NoEscape_01_02 " );	// No. It's just that the main passage from the mine leads straight to the orc city.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_NoEscape_01_03 " );	// And there you will be waiting not for ordinary guards, but for elite warriors!
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_NoEscape_01_05 " );	// Damn! I couldn't even imagine it.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_NoEscape_01_06 " );	// Now you know about it.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_NoEscape_01_07 " );	// Well, then I guess we should all accept our fate.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_NoEscape_01_08 " );	// Looks like we'll be left to rot in this hole forever!
 };
 
-instance DIA_STRF_8122_Addon_Ferd_Bunt(C_Info)
+instance DIA_STRF_8122_Addon_Ferd_Bunt (C_Info) .
 {
 	npc = STRF_8122_Addon_Ferd;
 	nr = 2;
 	condition = DIA_STRF_8122_Addon_Ferd_Bunt_condition;
 	information = DIA_STRF_8122_Addon_Ferd_Bunt_info;
 	permanent = FALSE;
-	description = "Что заставит вас снова поднять мятеж?";
+	description = " What will make you rebel again? " ;
 };
 
 func int DIA_STRF_8122_Addon_Ferd_Bunt_condition()
@@ -325,31 +326,31 @@ func int DIA_STRF_8122_Addon_Ferd_Bunt_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_Bunt_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_00");	//Что заставит вас снова поднять мятеж?
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Bunt_01_00 " );	// What will make you rebel again?
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_01");	//Навряд ли такое вообще возможно...(обреченно) Люди слишком сильно напуганы!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_02");	//У них нет ни веры, ни сил, чтобы сражаться, ни доверия к кому-либо.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_03");	//Вам просто нужен сильный лидер.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_04");	//Хммм...(задумчиво) Да, возможно, ты прав! Вот только оглянись вокруг. Кого ты видишь?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_05");	//Тут только простые рудокопы. А долгие годы, проведенные в этой шахте, очень быстро ломают людей.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_06");	//Я слышал, что среди вас есть паладин.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_01 " );	// I don't think that's even possible...(doomed) People are too scared!
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_02 " );	// They have no faith, no strength to fight, no trust in anyone.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Bunt_01_03 " );	// You just need a strong leader.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_04 " );	// Hmmm...(thoughtfully) Yes, you might be right! Just take a look around. Who do you see?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_05 " );	// There are only simple miners here. And the long years spent in this mine break people very quickly.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Bunt_01_06 " );	// I heard that there is a paladin among you.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_07");	//(удивленно) Паладин?! Здесь? Ты что, шутишь?
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_08");	//Даже и в мыслях не было! Именно поэтому я сейчас тут.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_09");	//Вот те новость...
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_10");	//Но знаешь, даже если это и правда, вряд ли он себя как-то здесь проявит.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_11");	//Орки сдерут с него шкуру живьем, если узнают, кто он на самом деле!
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_12");	//А у тебя нет мыслей насчет того, кто бы это мог быть?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_13");	//Откуда, приятель? Я ведь только что сам узнал об этом.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_14");	//А кто может знать?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_15");	//Второй вопрос сложнее первого.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_07 " );	// (surprised) Paladin?! Here? Are you joking?
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Bunt_01_08 " );	// Not even in my mind! That is why I am here now.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_09 " );	// Here's the news...
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_10 " );	// But you know, even if it's true, he's unlikely to show himself here somehow.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_11 " );	// Orcs will skin him alive if they find out who he really is!
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Bunt_01_12 " );	// Do you have any idea who it could be?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_13 " );	// Where, mate? I just found out about this myself.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Bunt_01_14 " );	// And who can know?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_15 " );	// The second question is more difficult than the first.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_16");	//Но если бы я начинал свои поиски, то первым делом поговорил бы с Кроу.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_17");	//Он что, какой-то особенный?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_18");	//Нет. Просто он самый умный из нас. Раньше он был то ли магом, то ли алхимиком.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_19");	//Я уже забыл, если честно. Так что, для начала, поговори с ним.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_20");	//Может быть, он что-нибудь тебе и подскажет.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_21");	//Так и сделаю.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_16 " );	// But if I were to start my search, the first thing I'd do would be talk to Crow.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Bunt_01_17 " );	// Is he special?
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_18 " );	// No. He's just the smartest of us. Previously, he was either a magician or an alchemist.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_19 " );	// I already forgot, to be honest. So, for starters, talk to him.
+	AI_Output(self,other, " DIA_STRF_8122_Addon_Ferd_Bunt_01_20 " );	// Maybe he'll tell you something.
+	AI_Output(other,self, " DIA_STRF_8122_Addon_Ferd_Bunt_01_21 " );	// I'll do that.
 	AskKrow = TRUE;
-	B_LogEntry(TOPIC_LostPaladins,"Ферд удивился, узнав что среди рабов есть паладин. На вопрос кто бы это мог быть, Ферд посоветовал поговорить с неким Кроу.");
+	B_LogEntry(TOPIC_LostPaladins, " Ferd was surprised to learn that there was a paladin among the slaves. When asked who it could be, Ferd suggested talking to a certain Crow. " );
 };
