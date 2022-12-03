@@ -1,4 +1,5 @@
 
+
 instance DIA_JORU_EXIT(C_Info)
 {
 	npc = sek_8013_joru;
@@ -21,7 +22,7 @@ func void dia_joru_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance dia_joru_PICKPOCKET(C_Info)
+instance dia_joru_PICKPOCKET (C_Info)
 {
 	npc = sek_8013_joru;
 	nr = 900;
@@ -33,19 +34,19 @@ instance dia_joru_PICKPOCKET(C_Info)
 
 func int dia_joru_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,43);
+	return  C_Robbery ( 20 , 43 );
 };
 
 func void dia_joru_PICKPOCKET_Info()
 {
 	Info_ClearChoices(dia_joru_PICKPOCKET);
-	Info_AddChoice(dia_joru_PICKPOCKET,Dialog_Back,dia_joru_PICKPOCKET_BACK);
-	Info_AddChoice(dia_joru_PICKPOCKET,DIALOG_PICKPOCKET,dia_joru_PICKPOCKET_DoIt);
+	Info_AddChoice(dia_joru_PICKPOCKET, Dialog_Back, dia_joru_PICKPOCKET_BACK);
+	Info_AddChoice(dia_joru_PICKPOCKET, DIALOG_PICKPOCKET ,dia_joru_PICKPOCKET_DoIt);
 };
 
 func void dia_joru_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_joru_PICKPOCKET);
 };
 
@@ -54,14 +55,14 @@ func void dia_joru_PICKPOCKET_BACK()
 	Info_ClearChoices(dia_joru_PICKPOCKET);
 };
 
-instance DIA_JORU_HELLO(C_Info)
+instance DIA_JORU_HELLO (C_Info)
 {
 	npc = sek_8013_joru;
 	nr = TRUE;
 	condition = dia_joru_hello_condition;
 	information = dia_joru_hello_info;
 	permanent = FALSE;
-	description = "Привет! Я здесь новенький - расскажи мне о Лагере.";
+	description = " Hi! I'm new here - tell me about Camp. " ;
 };
 
 
@@ -72,35 +73,35 @@ func int dia_joru_hello_condition()
 
 func void dia_joru_hello_info()
 {
-	AI_Output(other,self,"DIA_Joru_Hello_15_00");	//Привет! Я здесь новенький и мне нужно, чтобы кто-нибудь рассказал мне о Лагере.
+	AI_Output(other,self, " DIA_Joru_Hello_15_00 " );	// Hello! I'm new here and I need someone to tell me about Camp.
 
 	if(PSI_TALK == TRUE)
 	{
-		AI_Output(self,other,"DIA_Joru_Hello_11_01");	//Ты выбрал не самое удачное время. Стражи готовятся к бою, и мы работаем день и ночь.
-		AI_Output(self,other,"DIA_Joru_Hello_11_02");	//У меня нет времени на болтовню. Так что не отвлекай меня - если, конечно, ты не хочешь что-нибудь купить.
+		AI_Output(self,other, " DIA_Joru_Hello_11_01 " );	// You picked the wrong time. The Guardians are preparing for battle, and we are working day and night.
+		AI_Output(self,other, " DIA_Joru_Hello_11_02 " );	// I don't have time to chat. So do not distract me - unless, of course, you want to buy something.
 		Log_CreateTopic(TOPIC_TRADERPSI,LOG_NOTE);
-		B_LogEntry(TOPIC_TRADERPSI,"Кузнец Йору кует и продает оружие. Он практически все время работает в кузнице.");
+		B_LogEntry( TOPIC_TRADERPSI , " Blacksmith Yoru forges and sells weapons. He works at the forge most of the time. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Joru_Hello_11_03");	//У меня нет времени на болтовню. Так что не отвлекай меня.
+		AI_Output(self,other, " DIA_Joru_Hello_11_03 " );	// I don't have time to chat. So don't distract me.
 	};
 };
 
-instance DIA_JORU_TRADE(C_Info)
+instances of DIA_JORU_TRADE (C_Info)
 {
 	npc = sek_8013_joru;
 	nr = 800;
 	condition = dia_joru_trade_condition;
 	information = dia_joru_trade_info;
 	permanent = TRUE;
-	description = "Покажи, что у тебя есть.";
+	description = " Show me what you've got. " ;
 	trade = TRUE;
 };
 
 func int dia_joru_trade_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_joru_hello) && (PSI_TALK == TRUE) && Wld_IsTime(7,0,22,0))
+	if (Npc_KnowsInfo(hero, dia_joru_hello) && ( PSI_TALK  ==  TRUE ) && Wld_IsTime( 7 , 0 , 22 , 0 )) ;
 	{
 		return TRUE;
 	};
@@ -108,7 +109,7 @@ func int dia_joru_trade_condition()
 
 func void dia_joru_trade_info()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 
 	if(C_BodyStateContains(self,BS_SIT))
@@ -117,8 +118,8 @@ func void dia_joru_trade_info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Joru_Trade_15_00");	//Покажи, что у тебя есть.
-	AI_Output(self,other,"DIA_Joru_Trade_11_01");	//Другое дело! Вот, здесь все, что есть у меня сегодня.
+	AI_Output(other,self, " DIA_Joru_Trade_15_00 " );	// Show what you have.
+	AI_Output(self,other, " DIA_Joru_Trade_11_01 " );	// Another thing! Here, here is everything I have today.
 	Npc_RemoveInvItems(self,itmiswordrawhot_1,Npc_HasItems(self,itmiswordrawhot_1));
 	Npc_RemoveInvItems(self,itmiswordblade_1,Npc_HasItems(self,itmiswordblade_1));
 	Npc_RemoveInvItems(self,ItMiSwordbladehot,Npc_HasItems(self,ItMiSwordbladehot));
@@ -133,14 +134,14 @@ func void dia_joru_trade_info()
 };
 
 
-instance DIA_JORU_ARMORCANTEACH(C_Info)
+instances DIA_JORU_ARMORCANTEACH (C_Info)
 {
 	npc = sek_8013_joru;
 	nr = 5;
 	condition = dia_joru_armorcanteach_condition;
 	information = dia_joru_armorcanteach_info;
 	permanent = TRUE;
-	description = "Ты умеешь ковать доспехи?";
+	description = " Can you forge armor? " ;
 };
 
 func int dia_joru_armorcanteach_condition()
@@ -153,38 +154,38 @@ func int dia_joru_armorcanteach_condition()
 
 func void dia_joru_armorcanteach_info()
 {
-	AI_Output(other,self,"DIA_Joru_ArmorCanTeach_01_00");	//Ты умеешь ковать доспехи?
-	AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_01");	//Я не очень хорошо в этом разбираюсь. Не то, что Даррион!
-	AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_02");	//Он был настоящим мастером этого дела и ковал доспехи для всех Стражей болотного Братства.
-	AI_Output(other,self,"DIA_Joru_ArmorCanTeach_01_03");	//А где сейчас Даррион?
-	AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_04");	//Этого никто не знает. Уже давно ничего о нем не было слышно, и кто знает, что с ним стало!
-	AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_05");	//Так что, если ты хотел научиться ковать хорошие прочные доспехи, - кроме него вряд ли кто-то смог бы тебе помочь.
-	AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_06");	//Единственное, что могу сделать я, так это показать тебе, как можно немного улучшить набедренную повязку новичка...
-	AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_07");	//...или, скажем, я мог бы продать тебе один из доспехов наших послушников. Конечно, при том условии, что ты являешься одним из наших братьев.
-	AI_Output(other,self,"DIA_Joru_ArmorCanTeach_01_08");	//Что необходимо для того, чтобы ты показал мне, как улучшить набедренную повязку?
-	AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_09");	//Ну, для начала тебе необходимо хотя бы немного разбираться в ковке.
+	AI_Output(other,self, " DIA_Joru_ArmorCanTeach_01_00 " );	// Can you forge armor?
+	AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_01 " );	// I'm not very good at this. Not like Darrion!
+	AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_02 " );	// He was a real master of this craft and forged armor for all the Guardians of the Swamp Brotherhood.
+	AI_Output(other,self, " DIA_Joru_ArmorCanTeach_01_03 " );	// Where is Darrion now?
+	AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_04 " );	// Nobody knows this. Nothing has been heard of him for a long time, and who knows what became of him!
+	AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_05 " );	// So, if you wanted to learn how to forge good durable armor, it's unlikely that anyone could help you except him.
+	AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_06 " );	// The only thing I can do is show you how to improve the beginner's loincloth a little...
+	AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_07 " );	// ...or, say, I could sell you one of our acolytes' armor. Of course, provided that you are one of our brothers.
+	AI_Output(other,self, " DIA_Joru_ArmorCanTeach_01_08 " );	// What does it take for you to show me how to upgrade the loincloth?
+	AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_09 " );	// Well, you need to know at least a little about forging first.
 
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
-		AI_Output(other,self,"DIA_Joru_ArmorCanTeach_01_10");	//Я немного разбираюсь в ковке.
-		AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_11");	//Что же, уже неплохо!
-		AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_12");	//Правда, ты, наверное, сам понимаешь, тебе за это придется заплатить.
-		AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_13");	//А так, только скажи, и мы приступим к твоему обучению.
+		AI_Output(other,self, " DIA_Joru_ArmorCanTeach_01_10 " );	// I know a little about forging.
+		AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_11 " );	// Well, not bad already!
+		AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_12 " );	// True, you probably understand yourself, you will have to pay for this.
+		AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_13 " );	// And so, just tell us, and we will begin your training.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_14");	//А как я вижу, ты и понятия не имеешь даже, как держать молот.
-		AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_15");	//Так что, парень, иди сначала научись ковать. Научишься - тогда и приходи.
-		AI_Output(self,other,"DIA_Joru_ArmorCanTeach_01_16");	//И еще. Сам понимаешь, за мои уроки тебе придется заплатить.
+		AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_14 " );	// As far as I can see, you don't even know how to hold a hammer.
+		AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_15 " );	// So boy, go learn to forge first. Learn - then come.
+		AI_Output(self,other, " DIA_Joru_ArmorCanTeach_01_16 " );	// And more. You understand that you will have to pay for my lessons.
 	};
 	JORU_TEACHARMOR = TRUE;
 	Log_CreateTopic(TOPIC_ARMORTEACHER,LOG_NOTE);
-	B_LogEntry(TOPIC_ARMORTEACHER,"Йору может показать мне, как улучшить набедренную повязку послушника. Доспехи для всех Стражей болотного Братства ковал Даррион, он же мог и обучить перековке доспехов Стражей. Но Йору не знает, где Даррион сейчас.");
+	; _ _ _ _ _ _
 };
 
 func void b_joru_teacharmor_1()
 {
-	AI_Output(self,other,"DIA_Joru_TeachArmor_1_01_01");	//Итак, приступим. Проверь, что все необходимые материалы у тебя под рукой. Берешь разогретую стальную заготовку...
+	AI_Output(self,other, " DIA_Joru_TeachArmor_1_01_01 " );	// So let's get started. Make sure you have all the necessary materials at hand. You take a heated steel billet ...
 
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
@@ -192,13 +193,13 @@ func void b_joru_teacharmor_1()
 		AI_GotoWP(self,"NW_PSICAMP_SMITH_ANVIL");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Joru_TeachArmor_1_01_02");	//...на наковальне придаешь ей форму пластины и вковываешь в нее кусок заготовки....
-		AI_Output(self,other,"DIA_Joru_TeachArmor_1_01_03");	//...далее делаешь крепления и соединяешь пластину с ним, тщательно проковывая места схода...
-		AI_Output(self,other,"DIA_Joru_TeachArmor_1_01_04");	//...после этого тщательно крепишь полученный элемент на корпус доспеха - вот таким образом...смотри...(показывает)
+		AI_Output(self,other, " DIA_Joru_TeachArmor_1_01_02 " );	// ...on the anvil you give it the shape of a plate and forge a piece of the workpiece into it....
+		AI_Output(self,other, " DIA_Joru_TeachArmor_1_01_03 " );	// ...then you make fasteners and connect the plate to it, carefully forging the vanishing points...
+		AI_Output(self,other, " DIA_Joru_TeachArmor_1_01_04 " );	// ...after that, carefully fasten the resulting element to the body of the armor - like this... look... (shows)
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Joru_TeachArmor_1_01_05");	//...готово!
-		AI_Output(self,other,"DIA_Joru_TeachArmor_1_01_06");	//Это все, что тебе следует знать, чтобы улучшить этот доспех.
+		AI_Output(self,other, " DIA_Joru_TeachArmor_1_01_06 " );	// That's all you need to know to upgrade this armor.
 	};
 };
 
@@ -209,11 +210,11 @@ func void b_joruarmorchoices()
 
 	if(PLAYER_TALENT_SMITH[28] == FALSE)
 	{
-		Info_AddChoice(dia_joru_armorteach,"Набедренный кушак Братства (Цена обучения: 200 монет)",dia_joru_armorteach_itar_sekbed_v1);
+		Info_AddChoice(dia_joru_armorteach, " Brotherhood Girdle (Training Cost: 200 Coins) " ,dia_joru_armorteach_itar_sekbed_v1);
 	};
 	if((PLAYER_TALENT_SMITH[29] == FALSE) && (BuyTemplerLight == TRUE))
 	{
-		Info_AddChoice(dia_joru_armorteach,B_BuildLearnStringEx("Легкие доспехи Стража (Цена обучения: 3000 монет",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_TPL_L_V1)),dia_joru_armorteach_itar_tpl_l_v1);
+		Info_AddChoice(dia_joru_armorteach,B_BuildLearnStringEx( " Guardian Light Armor (Training Cost: 3000 Coins " ,B_GetLearnCostTalent(other, NPC_TALENT_SMITH , WEAPON_ITAR_TPL_L_V1 )),dia_joru_armorteach_itar_tpl_l_v1);
 	};
 };
 
@@ -224,7 +225,7 @@ instance DIA_JORU_ARMORTEACH(C_Info)
 	condition = dia_joru_armorteach_condition;
 	information = dia_joru_armorteach_info;
 	permanent = TRUE;
-	description = "Научи меня улучшать доспехи.";
+	description = " Teach me how to upgrade my armor. " ;
 };
 
 func int dia_joru_armorteach_condition()
@@ -240,16 +241,16 @@ func int dia_joru_armorteach_condition()
 
 func void dia_joru_armorteach_info()
 {
-	AI_Output(other,self,"DIA_Joru_ArmorTeach_01_00");	//Научи меня улучшать доспехи.
-	if(Wld_IsTime(7,0,22,0))
+	AI_Output(other,self, " DIA_Joru_ArmorTeach_01_00 " );	// Teach me how to upgrade armor.
+	if (Wld_IsTime( 7 , 0 , 22 , 0 ))
 	{
-		AI_Output(self,other,"DIA_Joru_ArmorTeach_01_01");	//И что же ты хочешь узнать?
+		AI_Output(self,other, " DIA_Joru_ArmorTeach_01_01 " );	// And what do you want to know?
 		b_joruarmorchoices();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Joru_ArmorTeach_01_02");	//На сегодня я уже закончил работать в кузне.
-		AI_Output(self,other,"DIA_Joru_ArmorTeach_01_03");	//Приходи завтра утром, тогда и поговорим об этом.
+		AI_Output(self,other, " DIA_Joru_ArmorTeach_01_02 " );	// I've already finished working at the forge for today.
+		AI_Output(self,other, " DIA_Joru_ArmorTeach_01_03 " );	// Come tomorrow morning, then we'll talk about it.
 	};
 };
 
@@ -272,7 +273,7 @@ func void dia_joru_armorteach_itar_sekbed_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Joru_TeachArmor_04_00");	//У тебя не хватает золота! Приходи, когда оно у тебя будет.
+		AI_Output(self,other, " DIA_Joru_TeachArmor_04_00 " );	// You don't have enough gold! Come when you have it.
 	};
 
 	b_joruarmorchoices();
@@ -292,21 +293,21 @@ func void dia_joru_armorteach_itar_tpl_l_v1()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Joru_TeachArmor_04_00");	//У тебя не хватает золота! Приходи, когда оно у тебя будет.
+		AI_Output(self,other, " DIA_Joru_TeachArmor_04_00 " );	// You don't have enough gold! Come when you have it.
 	};
 
 	b_joruarmorchoices();
 };
 
 
-instance DIA_JORU_TRADEARMOR(C_Info)
+instance DIA_JORU_TRADEEARMOR (C_Info)
 {
 	npc = sek_8013_joru;
 	nr = 3;
 	condition = dia_joru_tradearmor_condition;
 	information = dia_joru_tradearmor_info;
 	permanent = TRUE;
-	description = "Продай мне доспехи послушника.";
+	description = " Sell me the acolyte's armor. " ;
 };
 
 
@@ -320,16 +321,16 @@ func int dia_joru_tradearmor_condition()
 
 func void dia_joru_tradearmor_info()
 {
-	AI_Output(other,self,"DIA_Joru_TradeArmor_01_00");	//Продай мне доспехи послушника.
+	AI_Output(other,self, " DIA_Joru_TradeArmor_01_00 " );	// Sell me the acolyte's armor.
 	Info_ClearChoices(dia_joru_tradearmor);
 	Info_AddChoice(dia_joru_tradearmor,Dialog_Back,dia_joru_tradearmor_back);
 	if(JORU_TRADEARMOR_MIDDLE == FALSE)
 	{
-		Info_AddChoice(dia_joru_tradearmor,"Тяжелые доспехи послушника (Цена: 1000 монет)",dia_joru_tradearmor_buy1);
+		Info_AddChoice(dia_joru_tradearmor, " Acolyte Heavy Armor (Price: 1000 coins) " ,dia_joru_tradearmor_buy1);
 	};
-	if(JORU_TRADEARMOR_MIDDLE2 == FALSE)
+	if ( JORU_TRADEARMOR_MIDDLE2  ==  FALSE )
 	{
-		Info_AddChoice(dia_joru_tradearmor,"Доспехи послушника (Цена: 450 монет)",dia_joru_tradearmor_buy11);
+		Info_AddChoice(dia_joru_tradearmor, " Acolyte Armor (Price: 450 coins) " ,dia_joru_tradearmor_buy11);
 	};
 };
 
@@ -342,14 +343,14 @@ func void dia_joru_tradearmor_buy1()
 {
 	if(B_GiveInvItems(other,self,ItMi_Gold,VALUE_ITAR_SLP_L))
 	{
-		AI_Output(self,other,"DIA_Joru_TradeArmor_Buy1_01_01");	//Отлично!
-		AI_Print("Получен тяжелый доспех послушника");
+		AI_Output(self,other, " DIA_Joru_TradeArmor_Buy1_01_01 " );	// Great!
+		AI_Print( " Obtained Heavy Acolyte Armor " );
 		CreateInvItems(other,itar_slp_l,1);
-		JORU_TRADEARMOR_MIDDLE = TRUE;
+		JORU_TRADEARMOR_MIDDLE = TRUE ;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Joru_TradeArmor_Buy1_01_02");	//Нет денег - нет доспеха.
+		AI_Output(self,other, " DIA_Joru_TradeArmor_Buy1_01_02 " );	// No money - no armor.
 	};
 	Info_ClearChoices(dia_joru_tradearmor);
 };
@@ -358,33 +359,33 @@ func void dia_joru_tradearmor_buy11()
 {
 	if(B_GiveInvItems(other,self,ItMi_Gold,450))
 	{
-		AI_Output(self,other,"DIA_Joru_TradeArmor_Buy1_01_01");	//Отлично!
-		AI_Print("Получен доспех послушника");
+		AI_Output(self,other, " DIA_Joru_TradeArmor_Buy1_01_01 " );	// Great!
+		AI_Print( " Obtained Acolyte Armor " );
 		CreateInvItems(other,itar_slp_ul,1);
-		JORU_TRADEARMOR_MIDDLE2 = TRUE;
+		JORU_TRADEARMOR_MIDDLE2 = TRUE ;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Joru_TradeArmor_Buy1_01_02");	//Нет денег - нет доспеха.
+		AI_Output(self,other, " DIA_Joru_TradeArmor_Buy1_01_02 " );	// No money - no armor.
 	};
 	Info_ClearChoices(dia_joru_tradearmor);
 };
 
 
-instance DIA_JORU_SEKTEHEILEN(C_Info)
+instances DIA_JORU_SEKTEHEILEN (C_Info)
 {
 	npc = sek_8013_joru;
 	nr = 1;
 	condition = dia_joru_sekteheilen_condition;
 	information = dia_joru_sekteheilen_info;
 	permanent = FALSE;
-	description = "Выпей напиток! Он помогает от головной боли.";
+	description = " Drink a drink! It helps with a headache. " ;
 };
 
 
 func int dia_joru_sekteheilen_condition()
 {
-	if((Npc_HasItems(other,ItPo_HealObsession_MIS) > 0) && (MIS_SEKTEHEILEN == LOG_Running) && Npc_KnowsInfo(hero,dia_baalorun_sekteheilengot))
+	if ((Npc_HasItems(other,ItPo_Heal_Obsession_MY) >  0 ) && ( MY_SECTS_HEALTH  == LOG_Running) && Npc_KnowsInfo(hero, dia_heal_sectarian_obsession));
 	{
 		return TRUE;
 	};
@@ -393,12 +394,12 @@ func int dia_joru_sekteheilen_condition()
 func void dia_joru_sekteheilen_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Joru_SekteHeilen_01_00");	//Выпей напиток! Он помогает от головной боли.
+	AI_Output(other,self, " DIA_Joru_SekteHeilen_01_00 " );	// Have a drink! It helps with headaches.
 	B_GiveInvItems(other,self,ItPo_HealObsession_MIS,1);
 	B_UseItem(self,ItPo_HealObsession_MIS);
-	SEKTEHEILENCOUNT = SEKTEHEILENCOUNT + 1;
-	AI_Output(self,other,"DIA_Joru_SekteHeilen_01_01");	//Мое самочувствие улучшилось!
-	AI_Output(self,other,"DIA_Joru_SekteHeilen_01_02");	//Большое спасибо!
+	SECTEHEILENCOUNT = SECTEHEILENCOUNT  +  1 ;
+	AI_Output(self,other, " DIA_Joru_SekteHeilen_01_01 " );	// My health has improved!
+	AI_Output(self,other, " DIA_Joru_SekteHeilen_01_02 " );	// Thank you very much!
 };
 
 instance DIA_Joru_DoCrossBow(C_Info)
@@ -408,7 +409,7 @@ instance DIA_Joru_DoCrossBow(C_Info)
 	condition = DIA_Joru_DoCrossBow_condition;
 	information = DIA_Joru_DoCrossBow_info;
 	permanent = FALSE;
-	description = "Ты умеешь делать арбалеты?";
+	description = " Can you make crossbows? " ;
 };
 
 func int DIA_Joru_DoCrossBow_condition()
@@ -422,9 +423,9 @@ func int DIA_Joru_DoCrossBow_condition()
 func void DIA_Joru_DoCrossBow_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Joru_DoCrossBow_01_01");	//Ты умеешь делать арбалеты?
-	AI_Output(self,other,"DIA_Joru_DoCrossBow_01_02");	//Арбалеты? Не-а. Это тебе надо найти плотника или столяра.
-	AI_Output(other,self,"DIA_Joru_DoCrossBow_01_05");	//Понял.
+	AI_Output(other,self, " DIA_Joru_DoCrossBow_01_01 " );	// Can you make crossbows?
+	AI_Output(self,other, " DIA_Joru_DoCrossBow_01_02 " );	// Crossbows? Nope. It's up to you to find a carpenter or joiner.
+	AI_Output(other,self, " DIA_Joru_DoCrossBow_01_05 " );	// Got it.
 	CrossBowNeedPlotnik = TRUE;
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Делать арбалеты меня может научить только плотник или столяр.");
+	B_LogEntry(TOPIC_TagNorGrHunWeap, " Only a carpenter or joiner can teach me how to make crossbows. " );
 };
