@@ -1,4 +1,5 @@
 
+
 instance DIA_DRAGON_GOLD_EXIT(C_Info)
 {
 	npc = none_103_dragon_gold;
@@ -40,29 +41,29 @@ func void dia_dragon_gold_hello_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_00");	//Человек?!
-	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_01");	//Как давно я не видел людей...
-	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_02");	//Так вот что скрывали Зодчие за этим порталом! Еще один дракон - кто бы мог подумать.
+	AI_Output(self,other, " DIA_Dragon_Gold_Hello_01_01 " );	// How long have I not seen people...
+	AI_Output(other,self, " DIA_Dragon_Gold_Hello_01_02 " );	// So that's what the Architects were hiding behind this portal! Another dragon - who would have thought.
 	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_05");	//Кто ты?
-	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_06");	//Я - Аш'Тар, золотой дракон. Немногие удостаивались этой чести.
-	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_11");	//Чести? Быть съеденным драконом, по-твоему, это честь?
-	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_12");	//А ты смешной, человек! Давно меня так никто не веселил.
-	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_14");	//А разве драконы не являются порождением тьмы, чей истинный смысл существования - это уничтожение всего живого?
-	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_18");	//В этом мире существует как добро, так и зло, представленные в одинаковом обличии, человек.
-	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_20");	//Хочешь сказать, что ты не несешь зло в этот мир?
-	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_22");	//Только действия имеют значение - только они могут определять истинный смысл существования!	
-	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_21");	//Вижу смятение в твоих глазах...
+	AI_Output(self,other, " DIA_Dragon_Gold_Hello_01_06 " );	// I am Ash'Thar, the golden dragon. Few have received this honor.
+	AI_Output(other,self, " DIA_Dragon_Gold_Hello_01_11 " );	// Honor? Do you think it's an honor to be eaten by a dragon?
+	AI_Output(self,other, " DIA_Dragon_Gold_Hello_01_12 " );	// And you're funny, man! No one has made me laugh like this in a long time.
+	AI_Output(other,self, " DIA_Dragon_Gold_Hello_01_14 " );	// Aren't dragons a creature of darkness whose true reason for being is the destruction of all life?
+	AI_Output(self,other, " DIA_Dragon_Gold_Hello_01_18 " );	// In this world, there is both good and evil, presented in the same guise, man.
+	AI_Output(other,self, " DIA_Dragon_Gold_Hello_01_20 " );	// Do you want to say that you do not bring evil into this world?
+	AI_Output(self,other, " DIA_Dragon_Gold_Hello_01_22 " );	// Only actions matter - only they can determine the true meaning of existence!	
+	AI_Output(self,other, " DIA_Dragon_Gold_Hello_01_21 " );	// I see confusion in your eyes...
 	self.name[0] = "Аш'Тар";
 	DRAGONGOLDMEET = TRUE;
 
 	if(MIS_GOLDDRAGONPORTAL == LOG_Running)
 	{
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"В древних руинах Зодчих я обнаружил портал. Я смог активировать его с помощью странного магического камня, который нашел в храме Аданоса. Портал привел меня в небольшую долину, где, как оказалось, меня ждала очень интересная встреча.");
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " In the ancient ruins of the Builders, I discovered a portal. I was able to activate it with a strange magic stone that I found in the temple of Adanos. The portal led me to a small valley, where, as it turned out, a very interesting meeting awaited me. " );
 	}
 	else
 	{
 		Log_CreateTopic(TOPIC_GOLDDRAGONPORTAL,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_GOLDDRAGONPORTAL,LOG_Running);
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"В древних руинах Зодчих я обнаружил портал. Я смог активировать его с помощью странного магического камня, который нашел в храме Аданоса. Портал привел меня в небольшую долину, где, как оказалось, меня ждала очень интересная встреча.");
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " In the ancient ruins of the Builders, I discovered a portal. I was able to activate it with a strange magic stone that I found in the temple of Adanos. The portal led me to a small valley, where, as it turned out, a very interesting meeting awaited me. " );
 		MIS_GOLDDRAGONPORTAL = LOG_Running;
 	};
 };
@@ -75,7 +76,7 @@ instance DIA_DRAGON_GOLD_WHOCREATE(C_Info)
 	condition = dia_dragon_gold_whocreate_condition;
 	information = dia_dragon_gold_whocreate_info;
 	permanent = FALSE;
-	description = "Что ты тут делаешь?";
+	description = " What are you doing here? " ;
 };
 
 func int dia_dragon_gold_whocreate_condition()
@@ -88,25 +89,25 @@ func int dia_dragon_gold_whocreate_condition()
 
 func void dia_dragon_gold_whocreate_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_00");	//Что ты тут делаешь?
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_01");	//Я хотел задать тебе тот же вопрос. Как ТЫ смог оказаться здесь?
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_03");	//У меня был магический камень по типу фокусирующего, с помощью него я и активировал портал, ведущий сюда.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_04");	//Под этими словами ты, наверное, имел в виду Ключ Солнца, ибо только он смог бы открыть тебе дорогу сюда.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_06");	//Но как он попал к тебе? Лишь его Хранители - Стражи Солнца - владели этим тайным знанием и имели доступ в мою обитель.
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_08");	//Там, где я обнаружил этот артефакт, не было никаких Хранителей или Стражей Солнца.
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_09");	//Там вообще никого не было, кроме кучки бандитов.
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_12");	//И, сдается мне, тех, кого ты называешь Стражами Солнца, мы называем - Зодчие. Так знай: их цивилизация давно угасла.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_13");	//Не понимаю! Но... как это могло случиться?
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_14");	//Судя по тому, что я знаю, - они нашли один мощный артефакт, с которым они не смогли совладать, но который смог совладать с ними.
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_16");	//И их постигло проклятье Аданоса: была такая катастрофа - жуткое наводнение. Потом вода ушла.
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_17");	//Сейчас вокруг только полуразрушенные храмы.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_18");	//Мою долину не коснулись эти ужасы. А что за люди, про которых ты говорил?
-	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_20");	//Бандиты, которые искали золото и артефакт - Коготь Белиара - который и был причиной падения Зодчих.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_27");	//Коготь?! Так я и думал...
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_28");	//Значит... если это так, значит... они не послушались меня. Они не уничтожили его... глупцы!
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_29");	//Теперь мне все стало ясно...
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_31");	//...зло уже вырвалось на свободу, и ничто не помешает ему осуществить великий план своего создателя.
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Аш'Тар был поражен новостью о гибели Зодчих. Судя по всему, золотой дракон играл существенную роль в жизни этого некогда великого народа и являлся неотъемлемой частью культуры Зодчих. Но еще больше его огорчило то, что Коготь Белиара так и не был уничтожен Зодчими, на чем настаивал в свое время Аш'Тар.");
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_01 " );	// I wanted to ask you the same question. How could YOU be here?
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_03 " );	// I had a magic stone of the focusing type, with the help of which I activated the portal leading here.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_04 " );	// By these words, you probably meant the Key of the Sun, because only he could open the way here for you.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_06 " );	// But how did he get to you? Only his Guardians - the Guardians of the Sun - possessed this secret knowledge and had access to my abode.
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_08 " );	// Where I found this artifact, there were no Guardians or Guardians of the Sun.
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_09 " );	// There was no one there at all, except for a bunch of bandits.
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_12 " );	// And, it seems to me, those whom you call Guardians of the Sun, we call - Architects. So know: their civilization has long since died out.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_13 " );	// I don't understand! But... how could this happen?
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_14 " );	// From what I know, they found one powerful artifact that they couldn't handle, but that was able to handle them.
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_16 " );	// And the curse of Adanos befell them: there was such a catastrophe - a terrible flood. Then the water left.
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_17 " );	// Now there are only dilapidated temples around.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_18 " );	// My valley has not been touched by these horrors. What about the people you were talking about?
+	AI_Output(other,self, " DIA_Dragon_Gold_WhoCreate_01_20 " );	// Bandits who were looking for gold and an artifact - the Claw of Beliar - which was the cause of the fall of the Builders.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_27 " );	// Claw?! So I thought...
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_28 " );	// So... if that's the case, then... they didn't listen to me. They didn't destroy it... fools!
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_29 " );	// Now everything is clear to me...
+	AI_Output(self,other, " DIA_Dragon_Gold_WhoCreate_01_31 " );	// ...evil has already broken free, and nothing will prevent it from carrying out the great plan of its creator.
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Ash'Thar was shocked at the news of the death of the Builders. Apparently, the golden dragon played a significant role in the life of this once great people and was an integral part of the culture of the Builders. But he was even more upset that the Claw of Beliar never was destroyed by the Builders, as Ash'Thar insisted in his time. " );
 };
 
 instance DIA_DRAGON_GOLD_ADANOSVALLEY(C_Info)
@@ -116,12 +117,12 @@ instance DIA_DRAGON_GOLD_ADANOSVALLEY(C_Info)
 	condition = dia_dragon_gold_ADANOSVALLEY_condition;
 	information = dia_dragon_gold_ADANOSVALLEY_info;
 	permanent = FALSE;
-	description = "Эту каменную табличку я нашел в храме Зодчих.";
+	description = " I found this stone tablet in the Temple of the Builders. " ;
 };
 
 func int dia_dragon_gold_ADANOSVALLEY_condition()
 {
-	if((Npc_KnowsInfo(hero,dia_dragon_gold_whatdo)) && (Npc_HasItems(hero,ItWr_CroneAdanos) >= 1) && (MIS_AdanosCrone == LOG_Running))
+	if ((Npc_KnowsInfo(hero, dia_dragon_gold_whatdo)) && (Npc_HasItems(hero, ItWr_CroneAdanos) >=  1 ) && (MY_AdanosCrone == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -129,30 +130,30 @@ func int dia_dragon_gold_ADANOSVALLEY_condition()
 
 func void dia_dragon_gold_ADANOSVALLEY_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_01");	//Эту каменную табличку я нашел в храме Зодчих. Ты знаешь, что это такое?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_02");	//Дай мне взглянуть на нее.
+	AI_Output(other,self, " DIA_Dragon_Gold_ADANOSVALLEY_01_01 " );	// I found this stone tablet in the Temple of the Architects. Do you know what it is?
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_02 " );	// Let me take a look at it.
 	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_03");	//Вот.
 	B_GiveInvItems(other,self,ItWr_CroneAdanos,1);
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_04");	//Каменную табличку? Человек сильно рассмешил меня.
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_05");	//То, что ты называешь каменной табличкой, на самом деле является магическим свитком Древних!
-	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_06");	//Так это магический свиток Зодчих?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_07");	//Да. Но, судя по тому, на каком языке он написан, - время этого предмета уходит ко временам зарождения этого мира.
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_08");	//Правда, сейчас я не ощущаю в этом предмете ни капли магии.
-	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_09");	//Но ты хотя бы можешь перевести, что там написано?
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_04 " );	// stone tablet? The man made me laugh a lot.
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_05 " );	// What you call a stone tablet is actually a magic scroll of the Ancients!
+	AI_Output(other,self, " DIA_Dragon_Gold_ADANOSVALLEY_01_06 " );	// So this is a magical scroll of the Builders?
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_07 " );	// Yes. But, judging by the language in which it is written, the time of this subject goes back to the time of the birth of this world.
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_08 " );	// True, I don't sense any magic in this item right now.
+	AI_Output(other,self, " DIA_Dragon_Gold_ADANOSVALLEY_01_09 " );	// But can you at least translate what it says?
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_10");	//Конечно.
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_11");	//Судя по тексту, этот свиток использовался для призыва...
-	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_12");	//...для призыва?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_13");	//Для призыва древних стражей самого Аданоса.
-	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_14");	//Интересно. А что это за древние стражи?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_15");	//Как я понимаю, речь идет о созданиях, которые в свое время охраняли храм Аданоса.
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_16");	//Однако, насколько мне известно, их время уже давно прошло.
-	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_17");	//Это все, что там написано?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_18");	//Тут еще упоминается какой-то могущественный артефакт, который охраняли эти древние создания.
-	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_19");	//Вот это уже интересней. И о каком именно артефакте идет речь?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_20");	//Тут об этом не сказано...
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_21");	//Так что, если кто-то еще и знает об этом предмете, то только его хранители.
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_11 " );	// Judging by the text, this scroll was used to summon...
+	AI_Output(other,self, " DIA_Dragon_Gold_ADANOSVALLEY_01_12 " );	// ...to summon?
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_13 " );	// To summon the ancient guardians of Adanos himself.
+	AI_Output(other,self, " DIA_Dragon_Gold_ADANOSVALLEY_01_14 " );	// Interesting. And what are these ancient guardians?
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_15 " );	// As I understand it, we are talking about creatures that once guarded the Temple of Adanos.
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_16 " );	// However, as far as I know, their time is long past.
+	AI_Output(other,self, " DIA_Dragon_Gold_ADANOSVALLEY_01_17 " );	// Is that all there is?
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_18 " );	// It also mentions some powerful artifact guarded by these ancient creatures.
+	AI_Output(other,self, " DIA_Dragon_Gold_ADANOSVALLEY_01_19 " );	// Now this is more interesting. And what kind of artifact are we talking about?
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_20 " );	// Not mentioned here...
+	AI_Output(self,other, " DIA_Dragon_Gold_ADANOSVALLEY_01_21 " );	// So if anyone else knows about this item, it's only the custodians.
 	B_GiveInvItems(self,other,ItWr_CroneAdanos,1);
-	B_LogEntry(TOPIC_AdanosCrone,"Хвала Инносу! Золотой дракон помог мне перевести эти древние записи. Похоже, эта каменная табличка когда-то являлась магическим свитком призыва каких-то древних существ, которых Аш'Тар назвал Стражами. Кроме того, в ней упоминалось о каком-то могущественном артефакте, который эти древние создания охраняли.");
+	B_LogEntry(TOPIC_AdanosCrone, " Praise Innos! The golden dragon helped me translate these ancient writings. This stone tablet appears to have once been a magical scroll to summon some ancient creatures that Ash'Thar called Guardians. - some powerful artifact that these ancient creatures guarded. " );
 	KnowsTextAdanos = TRUE;
 };
 
@@ -164,7 +165,7 @@ instance DIA_DRAGON_GOLD_AWAKEGUARDS(C_Info)
 	condition = dia_dragon_gold_AWAKEGUARDS_condition;
 	information = dia_dragon_gold_AWAKEGUARDS_info;
 	permanent = FALSE;
-	description = "Ты сказал, что это свиток призыва.";
+	description = " You said it was a summoning scroll. " ;
 };
 
 func int dia_dragon_gold_AWAKEGUARDS_condition()
@@ -177,25 +178,25 @@ func int dia_dragon_gold_AWAKEGUARDS_condition()
 
 func void dia_dragon_gold_AWAKEGUARDS_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_AWAKEGUARDS_01_00");	//Ты сказал, что это свиток призыва.
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_01");	//Так оно и есть.
-	AI_Output(other,self,"DIA_Dragon_Gold_AWAKEGUARDS_01_02");	//Тогда почему бы нам не вызвать этих стражей и не спросить у них про артефакт?
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_03");	//Это слишком опасно... Гнев этих созданий запросто может убить тебя.
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_04");	//К тому же для использования этого свитка сперва его необходимо вновь наполнить магией...
-	AI_Output(other,self,"DIA_Dragon_Gold_AWAKEGUARDS_01_05");	//И как это можно сделать?
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_06");	//А ты, как я погляжу, настроен решительно, раз тебя даже не останавливает опасность собственной смерти...
-	AI_Output(other,self,"DIA_Dragon_Gold_AWAKEGUARDS_01_08");	//Мне не привыкать смотреть смерти в глаза.
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_09");	//Ну, если так... Тогда я знаю один способ, как можно вернуть этому предмету магическую силу.
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_11");	//Насколько мне известно, в одном из храмов Древних когда-то хранился особый рунический алтарь.
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_12");	//Зодчие использовали его для переноса магии из одного предмета в другой.
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_13");	//С его помощью ты можешь попробовать перенести магию в этот древний свиток.
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_14");	//Для этого сгодится любой другой магический предмет, который содержит в себе магию Зодчих.
-	AI_Output(other,self,"DIA_Dragon_Gold_AWAKEGUARDS_01_16");	//Кажется, ничего сложного. И, если у меня все получится, где мне использовать свиток, чтобы пробудить стражей?
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_17");	//Это мне неизвестно... Но на твоем месте я бы попробовал использовать его в самом сердце храма.
-	AI_Output(self,other,"DIA_Dragon_Gold_AWAKEGUARDS_01_18");	//Там, где все пропитано древней магией... Возможно, это сработает.
-	AI_Output(other,self,"DIA_Dragon_Gold_AWAKEGUARDS_01_19");	//Ладно, попробую отыскать это место.
+	AI_Output(other,self, " DIA_Dragon_Gold_AWAKEGUARDS_01_00 " );	// You said it was a summoning scroll.
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_01 " );	// So it is.
+	AI_Output(other,self, " DIA_Dragon_Gold_AWAKEGUARDS_01_02 " );	// Then why don't we call these guardians and ask them about the artifact?
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_03 " );	// This is too dangerous... The wrath of these creatures could easily kill you.
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_04 " );	// In addition, to use this scroll, it must first be re-infused with magic...
+	AI_Output(other,self, " DIA_Dragon_Gold_AWAKEGUARDS_01_05 " );	// And how can this be done?
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_06 " );	// And you, as I see it, are determined, since you are not even stopped by the danger of your own death...
+	AI_Output(other,self, " DIA_Dragon_Gold_AWAKEGUARDS_01_08 " );	// I'm used to looking death in the eye.
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_09 " );	// Well, if so... Then I know one way to restore this item's magic power.
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_11 " );	// As far as I know, a special runic altar was once kept in one of the temples of the Ancients.
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_12 " );	// Architects used it to transfer magic from one object to another.
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_13 " );	// With it, you can try to transfer magic to this ancient scroll.
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_14 " );	// Any other magic item that contains the Builder's magic will work for this.
+	AI_Output(other,self, " DIA_Dragon_Gold_AWAKEGUARDS_01_16 " );	// Seems like nothing complicated. And, if I succeed, where do I use the scroll to awaken the guardians?
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_17 " );	// I don't know... But if I were you, I'd try to use it in the heart of the temple.
+	AI_Output(self,other, " DIA_Dragon_Gold_AWAKEGUARDS_01_18 " );	// Where everything is steeped in ancient magic... Maybe this will work.
+	AI_Output(other,self, " DIA_Dragon_Gold_AWAKEGUARDS_01_19 " );	// Okay, I'll try to find this place.
 	KnowsMakeOldMgic = TRUE;
-	B_LogEntry(TOPIC_AdanosCrone,"Я решил рискнуть и вызвать этих древних созданий. Но для начала необходимо вернуть магию самому предмету. Аш'Тар подсказал мне, что в одном из храмов Древних когда-то был особый рунический стол, с помощью которого Зодчие переносили магию из одного предмета в другой. Чтобы перенести магию в каменную табличку, мне понадобится предмет, содержащий хотя бы частицу магии Зодчих. И, если у меня все получится, мне нужно будет найти место, где можно использовать свиток призыва. Золотой дракон посоветовал мне сделать это в самом центре храма.");
+	B_LogEntry(TOPIC_AdanosCrone, " I decided to take a chance and summon these ancient creatures. But first I need to return the magic to the item itself. Ash'Thar told me that in one of the temples of the Ancients there was once a special runic table, with which the Architects transferred magic from one item to another.In order to transfer magic into a stone tablet, I need an item that contains at least a fraction of the magic of the Builders.And, if I succeed, I will need to find a place where I can use the summoning scroll.The golden dragon advised me to do this in in the very center of the temple. " );
 };
 
 
@@ -206,7 +207,7 @@ instance DIA_DRAGON_GOLD_AboutAntientGuards(C_Info)
 	condition = DIA_DRAGON_GOLD_AboutAntientGuards_condition;
 	information = DIA_DRAGON_GOLD_AboutAntientGuards_info;
 	permanent = FALSE;
-	description = "Как можно одолеть древних стражей Аданоса?";
+	description = " How can I defeat the ancient guardians of Adanos? " ;
 };
 
 func int DIA_DRAGON_GOLD_AboutAntientGuards_condition()
@@ -220,11 +221,11 @@ func int DIA_DRAGON_GOLD_AboutAntientGuards_condition()
 func void DIA_DRAGON_GOLD_aboutantientguards_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AboutAntientGuards_01_01");	//Как можно одолеть древних стражей Аданоса?
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AboutAntientGuards_01_02");	//Для этого человеку нужен Бич Стражей. Только с его помощью ты сможешь сокрушить этих древних созданий.
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AboutAntientGuards_01_04");	//И где мне его искать?
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AboutAntientGuards_01_05");	//Люди хранили его в одном из своих храмов. Попробуй поискать там.
-	B_LogEntry(TOPIC_AdanosCrone,"В храме у меня возникли проблемы с древним каменным хранителем, поскольку обычным оружием я не смог его одолеть. Аш'Тар поведал мне о существовании некоего оружия, с помощью которого древние усмиряли этих монстров. Возможно, оно поможет и мне. Искать его следует в одном из храмов в Долине.");
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AboutAntientGuards_01_01 " );	// How can you defeat the ancient guardians of Adanos?
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AboutAntientGuards_01_02 " );	// To do this, a person needs the Scourge of the Guardians. Only with his help can you crush these ancient creatures.
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AboutAntientGuards_01_04 " );	// And where can I find it?
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AboutAntientGuards_01_05 " );	// People kept it in one of their temples. Try looking there.
+	B_LogEntry(TOPIC_AdanosCrone, " At the temple, I had a problem with an ancient stone guardian, because I couldn't defeat him with normal weapons. Ash'Thar told me about the existence of a certain weapon with which the ancients pacified these monsters. Maybe it will help me too. You should look for him in one of the temples in the Valley. " );
 	TellAboutAdanosWeapon = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -236,7 +237,7 @@ instance DIA_DRAGON_GOLD_AVGO(C_Info)
 	condition = DIA_DRAGON_GOLD_AVGO_condition;
 	information = DIA_DRAGON_GOLD_AVGO_info;
 	permanent = FALSE;
-	description = "Тут у меня есть еще одна каменная табличка.";
+	description = " Here I have another stone tablet. " ;
 };
 
 func int DIA_DRAGON_GOLD_AVGO_condition()
@@ -250,28 +251,28 @@ func int DIA_DRAGON_GOLD_AVGO_condition()
 func void DIA_DRAGON_GOLD_AVGO_info()
 {
 	B_GivePlayerXP(400);
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_00");	//Тут у меня есть еще одна каменная табличка. Ты можешь ее перевести?
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AVGO_01_00 " );	// Here I have another stone tablet. Can you translate it?
 	B_GiveInvItems(other,self,ItWr_StoneAdanosPortal,1);
 	Npc_RemoveInvItems(self,ItWr_StoneAdanosPortal,1);
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_04");	//Очень интересно...
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_06");	//Здесь описано, каким образом можно открыть портал, ведущий на великое Плато Древних.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_08");	//Эта земля - священная вотчина Аданоса, где он впервые прикоснулся к этому миру.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_09");	//Прекрасное, вечнозеленое место, где веками царили только покой и благоденствие.
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_10");	//Значит, по всей видимости, артефакт находится именно там. И как же туда попасть?
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_11");	//Для начала тебе необходимо рунное сердце Стража. Его надлежит использовать непосредственно перед магическим порталом.
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_13");	//Отлично! Одно такое у меня уже есть.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_14");	//Откуда оно у тебя? Неужели тебе все-таки удалось призвать древних Стражей в этот мир?
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_15");	//Да, одного. Чтобы заполучить его сердце, сперва мне пришлось его убить.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_16");	//Меня до сих пор удивляет, как маленький человек вроде тебя может противостоять таким древним созданиям.
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_17");	//Меня порой тоже.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_18");	//Похоже, сами боги благоволят тебе, раз после стольких испытаний ты до сих пор жив. Иного объяснения у меня просто нет.
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_20");	//Это все, конечно, хорошо, но мы отвлеклись от главного. Где же находится сам портал?
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_21");	//Тут сказано, что он расположен на севере этой долины. 
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_22");	//А можно поточней? 
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_23");	//Это все, что тут написано... Так что тебе придется самому отыскать это место.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_25");	//И еще: хочу тебя предостеречь... Плато Древних может оказаться крайне опасным местом для простого смертного вроде тебя.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_27");	//Так что хорошо подготовься, прежде чем отправиться туда...
-	B_LogEntry(TOPIC_AdanosCrone,"Аш'Тар перевел свиток стража храма. Там упомянут магический портал на севере долины, который ведет на великое Плато Древних - место, где сам Аданос впервые вступил в этот мир! Загадочный артефакт, который мы ищем, должен находиться именно там. Для активации портала мне необходимо использовать рунное сердце Стража. Аш'Тар предупредил меня, что Плато может оказаться очень опасным местом. Мне нужно тщательно подготовиться к этому походу.");
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_04 " );	// Very interesting...
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_06 " );	// Here's how to open a portal leading to the great Plateau of the Ancients.
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_08 " );	// This land is the sacred patrimony of Adanos, where he first touched this world.
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_09 " );	// A beautiful, evergreen place where only peace and prosperity reigned for centuries.
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AVGO_01_10 " );	// So, apparently, the artifact is located there. And how to get there?
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_11 " );	// To get started, you'll need a Guardian's Runic Heart. It should be used directly in front of the magical portal.
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AVGO_01_13 " );	// Great! I already have one of these.
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_14 " );	// Where did you get it from? Have you finally managed to summon the ancient Guardians to this world?
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AVGO_01_15 " );	// Yes, one. To get his heart, I had to kill him first.
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_16 " );	// It still amazes me how a small person like you can stand up to such ancient creatures.
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AVGO_01_17 " );	// Sometimes me too.
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_18 " );	// It seems that the gods themselves favor you, since after so many trials you are still alive. I just don't have any other explanation.
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AVGO_01_20 " );	// This is all, of course, good, but we digress from the main thing. Where is the portal located?
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_21 " );	// It says here that it is located in the north of this valley.
+	AI_Output(other,self, " DIA_DRAGON_GOLD_AVGO_01_22 " );	// Can you be more specific?
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_23 " );	// That's all it says... So you'll have to find this place yourself.
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_25 " );	// And one more thing: I want to warn you... The Plateau of the Ancients can be an extremely dangerous place for a mere mortal like you.
+	AI_Output(self,other, " DIA_DRAGON_GOLD_AVGO_01_27 " );	// So prepare well before you go there...
+	B_LogEntry(TOPIC_AdanosCrone, " Ash'Thar translated the temple guardian's scroll. It mentions a magical portal in the north of the valley that leads to the great Plateau of the Ancients - the place where Adanos himself first stepped into this world! The mysterious artifact we are looking for must be located there "To activate the portal, I need to use the Runeheart of the Guardian. Ash'Thar warned me that the Plateau could be a very dangerous place. I need to carefully prepare for this trip. " );
 	InsFireShadowGuards = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -283,7 +284,7 @@ instance DIA_DRAGON_GOLD_WHATDO(C_Info)
 	condition = dia_dragon_gold_whatdo_condition;
 	information = dia_dragon_gold_whatdo_info;
 	permanent = FALSE;
-	description = "А в чем смысл твоего существования, дракон?";
+	description = " What is the purpose of your existence, dragon? " ;
 };
 
 func int dia_dragon_gold_whatdo_condition()
@@ -296,26 +297,26 @@ func int dia_dragon_gold_whatdo_condition()
 
 func void dia_dragon_gold_whatdo_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_WhatDo_01_00");	//А в чем смысл твоего существования, дракон?
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatDo_01_01");	//Ты задаешь этот вопрос мне, человек, но разве ты можешь утверждать, что осознаешь то, что привело тебя в этот мир?
-	AI_Output(other,self,"DIA_Dragon_Gold_WhatDo_01_03");	//Конечно. Моя цель заключается в том, чтобы искоренить то зло, которое сеют по этой земле твои сородичи.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatDo_01_05");	//Я понимаю, к чему ты ведешь, человек. Если ты так хочешь, ты можешь сразиться со мной.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatDo_01_06");	//Но это не сделает мир лучше, как ты рассчитываешь. Ибо только в жизни может зародиться новая жизнь, но не в смерти.
-	AI_Output(other,self,"DIA_Dragon_Gold_WhatDo_01_09");	//Хммм... А ты и впрямь не похож на служителя Тьмы.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatDo_01_10");	//(обиженно) Много ли ты видел драконов в своей жизни, человек, чтобы так рассуждать?
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatDo_01_11");	//Да... Как сильно изменился этот мир.
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Аш'Тар - золотой дракон, обитающий в этой долине, также был удивлен моему появлению. Невероятно, но его намерения относительно меня не носили враждебный характер, а можно даже сказать - наоборот. Возможно, стоит поговорить об этом с Сатурасом.");
+	AI_Output(other,self, " DIA_Dragon_Gold_WhatDo_01_00 " );	// And what is the meaning of your existence, dragon?
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatDo_01_01 " );	// You're asking me this question, human, but can you claim to be aware of what brought you into this world?
+	AI_Output(other,self, " DIA_Dragon_Gold_WhatDo_01_03 " );	// Of course. My goal is to eradicate the evil that your kindred sow on this earth.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatDo_01_05 " );	// I see where you're going, man. If you so desire, you can fight me.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatDo_01_06 " );	// But it won't make the world a better place than you think. For only in life can new life be born, but not in death.
+	AI_Output(other,self, " DIA_Dragon_Gold_WhatDo_01_09 " );	// Hmmm... You really don't look like a servant of the Darkness.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatDo_01_10 " );	// (offended) How many dragons have you seen in your life, man, to talk like that?
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatDo_01_11 " );	// Yes... How much this world has changed.
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Ash'Thar, the golden dragon that lives in this valley, was also surprised by my appearance. Incredibly, his intentions towards me were not hostile, and one might even say - on the contrary. Perhaps it is worth talking to Saturas about this . " );
 };
 
 
-instance DIA_DRAGON_GOLD_ABOUTCLAW(C_Info)
+instance DIA_DRAGON_GOLD_ABOUTCLAW (C_Info);
 {
 	npc = none_103_dragon_gold;
 	nr = 1;
 	condition = dia_dragon_gold_aboutclaw_condition;
 	information = dia_dragon_gold_aboutclaw_info;
 	permanent = FALSE;
-	description = "Какое зло? Что ты имеешь в виду?";
+	description = " What evil? What do you mean? " ;
 };
 
 func int dia_dragon_gold_aboutclaw_condition()
@@ -328,26 +329,26 @@ func int dia_dragon_gold_aboutclaw_condition()
 
 func void dia_dragon_gold_aboutclaw_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_AboutClaw_01_00");	//Какое зло? Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_01");	//Найдя Коготь Белиара, Стражи Солнца рассчитывали, что это оружие поможет им в битве со злом.
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_03");	//Они даже не догадывались, что именно этот меч и есть истинное зло!
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_06");	//И я подсказал им единственное правильное решение - уничтожить этот меч, пока зло не вырвалось на свободу.
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_07");	//Но, как я вижу, жажда могущества настолько ослепила Стражей, что они забыли об этом.
-	AI_Output(other,self,"DIA_Dragon_Gold_AboutClaw_01_10");	//А что в этом мече такого плохого?
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_11");	//Коготь Белиара и сам по себе достаточно мощный артефакт, но его истинное предназначение заключено в другом.
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_13");	//Вся магическая сила Когтя сосредоточена в основании его клинка - в темном кристалле, что хранит душу могущественного архидемона С'эньяка!
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_15");	//Темный Бог ковал это оружие специально для него, чтобы тот нес еще больше зла в наш мир...
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_17");	//В конечном счете, с огромными усилиями, архидемон был повержен. А его душа была помещена в заточение в его же собственное оружие... какая ирония...
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_20");	//После этого клинок был сокрыт на многие тысячелетия от посторонних глаз. Пока Стражи Солнца случайно не наткнулись на него.
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_22");	//Это и стало началом их конца!
-	AI_Output(other,self,"DIA_Dragon_Gold_AboutClaw_01_23");	//Почему демон не был уничтожен?
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_24");	//Это мне неведомо. Одно могу сказать: если он вырвется на свободу - мир содрогнется под его поступью...
-	AI_Output(other,self,"DIA_Dragon_Gold_AboutClaw_01_27");	//Ты уверен в том, что он вырвался на свободу?
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_28");	//Нельзя быть ни в чем уверенным - к сожалению, только сам Коготь мог бы дать ответ на этот вопрос.
-	AI_Output(other,self,"DIA_Dragon_Gold_AboutClaw_01_34");	//А что если я принесу тебе Коготь?
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_37");	//О, Аданос. Неси его скорее, возможно, они не успели совершить непоправимое.
+	AI_Output(other,self, " DIA_Dragon_Gold_AboutClaw_01_00 " );	// What evil? What do you mean?
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_01 " );	// Having found the Claw of Beliar, the Sun Guardians hoped that this weapon would help them in the battle against evil.
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_03 " );	// They didn't even know that this particular sword is the true evil!
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_06 " );	// And I suggested to them that the only right decision is to destroy this sword before the evil breaks free.
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_07 " );	// But, as I see it, the lust for power has blinded the Guardians so much that they forgot about it.
+	AI_Output(other,self, " DIA_Dragon_Gold_AboutClaw_01_10 " );	// What's so bad about this sword?
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_11 " );	// Beliar's Claw is a powerful artifact in itself, but its true purpose lies elsewhere.
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_13 " );	// All of the Talon's magical power is concentrated at the base of its blade - a dark crystal that holds the soul of the powerful archdemon S'enyak!
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_15 " );	// The Dark God forged this weapon especially for him, so that he would bring even more evil into our world...
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_17 " );	// Ultimately, with great effort, the archdemon was defeated. And his soul was imprisoned in his own weapon... how ironic...
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_20 " );	// After that, the blade was hidden for many millennia from prying eyes. Until the Guardians of the Sun accidentally stumbled upon it.
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_22 " );	// This was the beginning of their end!
+	AI_Output(other,self, " DIA_Dragon_Gold_AboutClaw_01_23 " );	// Why wasn't the daemon destroyed?
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_24 " );	// This is unknown to me. I can say one thing: if he breaks free, the world will tremble under his tread ...
+	AI_Output(other,self, " DIA_Dragon_Gold_AboutClaw_01_27 " );	// Are you sure he broke free?
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_28 " );	// You can't be sure of anything - unfortunately, only Talon himself could answer this question.
+	AI_Output(other,self, " DIA_Dragon_Gold_AboutClaw_01_34 " );	// What if I bring you the Claw?
+	AI_Output(self,other, " DIA_Dragon_Gold_AboutClaw_01_37 " );	// Oh, Adanos. Bring it quickly, perhaps they did not have time to commit the irreparable.
 	TASKFINDCLAW = TRUE;
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Аш'Тар рассказал мне об угрозе, которую скрывает Коготь. Будучи когда-то оружием одного из архидемонов - С'эньяка, этот клинок хранит в себе бессмертную душу своего господина. Аш'Тар был очень обеспокоен, что С'эньяк смог освободиться. Чтобы точно ответить на этот вопрос, золотой дракон попросил меня принести ему Коготь. Вероятно, тогда станет ясно, насколько большие у нас проблемы.");
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Ash'Thar told me about the threat posed by the Talon. Once the weapon of one of the archdemons S'anyak, this blade holds the immortal soul of its master. Ash'Thar was very concerned that S' the cognac was able to free itself. To accurately answer this question, the golden dragon asked me to bring him the Claw. Perhaps then it will become clear how big a problem we have. " );
 };
 
 instance DIA_DRAGON_GOLD_WHATMAN(C_Info)
@@ -357,12 +358,12 @@ instance DIA_DRAGON_GOLD_WHATMAN(C_Info)
 	condition = dia_dragon_gold_whatman_condition;
 	information = dia_dragon_gold_whatman_info;
 	permanent = FALSE;
-	description = "Посмотри на Коготь.";
+	description = " Look at Talon. " ;
 };
 
 func int dia_dragon_gold_whatman_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_dragon_gold_aboutclaw) && C_ScHasBeliarsWeapon())
+	if ( Npc_KnowsInfo ( hero , dia_dragon_gold_aboutclaw ) && C_ScHasBeliarsWeapon ())
 	{
 		return TRUE;
 	};
@@ -371,19 +372,19 @@ func int dia_dragon_gold_whatman_condition()
 func void dia_dragon_gold_whatman_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_00");	//Посмотри на Коготь.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_01");	//Хорошо. Дай мне взглянуть на него.
+	AI_Output(other,self, " DIA_Dragon_Gold_WhatMan_01_00 " );	// Look at Talon.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_01 " );	// Good. Let me take a look at it.
 
 	if((Npc_HasItems(other,itru_beliarsrune01) == TRUE) || (Npc_HasItems(other,itru_beliarsrune02) == TRUE) || (Npc_HasItems(other,itru_beliarsrune03) == TRUE) || (Npc_HasItems(other,itru_beliarsrune04) == TRUE) || (Npc_HasItems(other,itru_beliarsrune05) == TRUE) || (Npc_HasItems(other,itru_beliarsrune06) == TRUE))
 	{
-		AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_02");	//Хмм... Только я перенес силу Когтя в руну.
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_03");	//Это неважно, кристалл должен испускать энергию как в руне, так и в мече.
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_09");	//(внимательно вглядывается) Я так и знал!
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_10");	//Символ на руне тускл, и я не ощущаю в нем энергии.
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_11");	//А это может означать только одно - С'эньяк освободился!
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_13");	//Это ОЧЕНЬ плохо - ты даже не представляешь, насколько!
-		AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_16");	//И что же теперь делать?
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Худшие опасения подтвердились. Символ руны Когтя тускл и безжизнен - а это значит, что древний архидемон С'эньяк вырвался на свободу. Чувствует мое сердце, что эта история c архидемоном не обойдет стороной и меня...");
+		AI_Output(other,self, " DIA_Dragon_Gold_WhatMan_01_02 " );	// Hmm... Only I transferred the Talon's power to the rune.
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_03 " );	// It doesn't matter, the crystal must emit energy in both the rune and the sword.
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_09 " );	// (looks closely) I knew it!
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_10 " );	// The glyph on the rune is dim, and I can't sense the energy in it.
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_11 " );	// And that can only mean one thing - S'enyak is free!
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_13 " );	// This is VERY bad - you have no idea how bad!
+		AI_Output(other,self, " DIA_Dragon_Gold_WhatMan_01_16 " );	// And what do we do now?
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Worst fears are confirmed. The Talon rune symbol is dull and lifeless - which means that the ancient archdemon S'anyak has broken free. My heart feels that this story with the archdemon will not bypass me too... " );
 	}
 	else
 	{
@@ -391,23 +392,23 @@ func void dia_dragon_gold_whatman_info()
 		{
 			AI_ReadyMeleeWeapon(other);
 		};
-		AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_06");	//Вот, смотри.
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_09");	//(внимательно вглядывается) Я так и знал!
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_21");	//Темный кристалл душ тускл и я не ощущаю в нем магической энергии...
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_11");	//А это может означать только одно - С'эньяк освободился!
+		AI_Output(other,self, " DIA_Dragon_Gold_WhatMan_01_06 " );	// Here, look.
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_09 " );	// (looks closely) I knew it!
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_21 " );	// The Dark Soul Crystal is dim and I can't sense magical energy in it...
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_11 " );	// And that can only mean one thing - S'enyak is free!
 		if(C_ScHasEquippedBeliarsWeapon() == TRUE)
 		{
 			AI_RemoveWeapon(other);
 		};
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_13");	//Это ОЧЕНЬ плохо - ты даже не представляешь, насколько!
-		AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_16");	//И что же теперь делать?
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Худшие опасения подтвердились. Символ руны Когтя тускл и безжизнен - а это значит, что древний архидемон С'эньяк вырвался на свободу. Чувствует мое сердце, что эта история c архидемоном не обойдет стороной и меня...");
+		AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_13 " );	// This is VERY bad - you have no idea how bad!
+		AI_Output(other,self, " DIA_Dragon_Gold_WhatMan_01_16 " );	// And what do we do now?
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Worst fears are confirmed. The Talon rune symbol is dull and lifeless - which means that the ancient archdemon S'anyak has broken free. My heart feels that this story with the archdemon will not bypass me too... " );
 	};
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_28");	//Необходимо уничтожить демона, пока еще есть время и пока он слаб.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_32");	//Проклятие Аданоса - лишь отеческое порицание в сравнении с тем, что сотворит этот демон!
-	AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_33");	//Ого, ничего себе!
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_35");	//У нас мало времени, и еще меньше шансов.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_36");	//С'эньяк, конечно, не успел восстановить свои силы после пребывания в заточении, но он все равно очень опасен.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_28 " );	// It is necessary to destroy the demon while there is still time and while it is weak.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_32 " );	// The curse of Adanos is only a paternal rebuke compared to what this demon will do!
+	AI_Output(other,self, " DIA_Dragon_Gold_WhatMan_01_33 " );	// Wow, wow!
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_35 " );	// We don't have much time, and even less chance.
+	AI_Output(self,other, " DIA_Dragon_Gold_WhatMan_01_36 " );	// S'enyak, of course, did not have time to recover his strength after being in captivity, but he is still very dangerous.
 };
 
 
@@ -418,7 +419,7 @@ instance DIA_DRAGON_GOLD_DESTROYWAY(C_Info)
 	condition = dia_dragon_gold_destroyway_condition;
 	information = dia_dragon_gold_destroyway_info;
 	permanent = FALSE;
-	description = "Как можно уничтожить С'эньяка?";
+	description = " How can I destroy S'Egnac? " ;
 };
 
 func int dia_dragon_gold_destroyway_condition()
@@ -431,29 +432,29 @@ func int dia_dragon_gold_destroyway_condition()
 
 func void dia_dragon_gold_destroyway_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWay_01_00");	//Как можно уничтожить С'эньяка?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_01");	//Поскольку обычным оружием его не победить, существуют только два способа, как это можно сделать.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_04");	//Способ первый - с помощью Стихий, истинных Творцов этого мира.
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWay_01_00 " );	// How can S'enyak be destroyed?
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_01 " );	// Since he can't be defeated with normal weapons, there are only two ways to do it.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_04 " );	// Method one - with the help of the Elements, the true Creators of this world.
 	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWay_01_05");	//Стихий?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_07");	//Да, а именно с помощью древнего могущественного заклинания, способного отнять жизнь у любого существа! Его называют Крест Стихий.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_10");	//И неважно, кто это будет - демон, человек или мясной жук. Это заклинание убьет всякого, на кого оно будет возложено.
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWay_01_12");	//И где мне искать этот Крест Стихий?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_13");	//Подожди, я расскажу все по порядку.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_17");	//Смысл необходимого нам заклинания заключается в объединении всех стихий этого мира воедино.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_18");	//Огонь, Вода, Скала и Тьма - только вместе эти элементы смогут образовать Крест Стихий.
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWay_01_22");	//А я уж думал, ты отправишь меня собирать какую-нибудь мерзость по всяким склепам, пещерам и подземельям.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_23");	//Только абсолютные сущности этих элементов способны придать этому заклинанию должный эффект...
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWay_01_24");	//Что это за сущности?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_25");	//У каждой стихии она своя, и содержит в себе первоисточник ее могущества. Эту сущность называют сферой.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_29");	//Поэтому тебе как можно скорее необходимо отыскать все четыре сферы каждой стихии...
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_30");	//...и лишь только после этого из них можно будет сделать Крест Стихий.
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWay_01_31");	//Где я смогу найти эти сферы?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_32");	//К сожалению, я не знаю места их расположения, но, боюсь, тебе придется полазить 'по всяким склепам, пещерам и подземельям'.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWay_01_33");	//А когда ты их найдешь - возвращайся ко мне. Я буду ждать тебя здесь.
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWay_01_34");	//Хорошо, Аш'Тар! Я отправляюсь.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_07 " );	// Yes, namely with the help of an ancient powerful spell that can take the life of any creature! It is called the Cross of the Elements.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_10 " );	// It doesn't matter if it's a demon, a human, or a meat bug. This spell will kill anyone cast on it.
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWay_01_12 " );	// And where can I find this Elemental Cross?
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_13 " );	// Wait, I'll tell you everything in order.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_17 " );	// The meaning of the spell we need is to unite all the elements of this world together.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_18 " );	// Fire, Water, Rock and Darkness - only together these elements can form the Cross of Elements.
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWay_01_22 " );	// And I already thought you would send me to collect some kind of abomination in all sorts of crypts, caves and dungeons.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_23 " );	// Only the absolute essences of these elements can give this spell its proper effect...
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWay_01_24 " );	// What are these entities?
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_25 " );	// Each element has its own, and contains the primary source of its power. This entity is called a sphere.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_29 " );	// Therefore, you need to find all four spheres of each element as soon as possible...
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_30 " );	// ...and only after that it will be possible to make an Elemental Cross out of them.
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWay_01_31 " );	// Where can I find these orbs?
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_32 " );	// Unfortunately, I don't know their location, but I'm afraid you'll have to climb 'all sorts of crypts, caves and dungeons'.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWay_01_33 " );	// And when you find them, come back to me. I will wait for you here.
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWay_01_34 " );	// All right, Ash'Thar! I'm leaving.
 	TASKFINDSPHERE = TRUE;
-	SENYAKSEEKSWORD = TRUE;
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Похоже, мне и тут придется потягаться с тем, что до меня не смогли сделать древние умники. На этот раз это архидемон С'эньяк. Аш'Тар подсказал мне один способ, с помощью которого можно будет уничтожить его. Для этого мне необходимо заполучить одно могущественное заклинание древности - Крест Стихий. Чтобы это сделать, необходимо отыскать все важные компоненты для создания этого заклинания. А именно некие источники сущности стихий - сферы огня, воды, скалы и тьмы. Вот только где их искать?");
+	SENYAKSEEKSWORD = TRUE ;
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Looks like I'm going to have to contend with something that the old wise guys couldn't do before me. This time it's the archdemon S'anyak. Ash'Thar gave me one way to destroy him. For To do this, I need to get one powerful spell of antiquity - the Cross of the Elements. To do this, it is necessary to find all the important components for creating this spell. Namely, some sources of the essence of the elements - the spheres of fire, water, rock and darkness. But where to look for them? " ) ;
 };
 
 instance DIA_DRAGON_GOLD_DESTROYWAYTWO(C_Info)
@@ -463,12 +464,12 @@ instance DIA_DRAGON_GOLD_DESTROYWAYTWO(C_Info)
 	condition = dia_dragon_gold_destroywaytwo_condition;
 	information = dia_dragon_gold_destroywaytwo_info;
 	permanent = FALSE;
-	description = "Ты сказал, что знаешь два способа.";
+	description = " You said you knew two ways. " ;
 };
 
 func int dia_dragon_gold_destroywaytwo_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_dragon_gold_destroyway) && (DESTROYCLAW == FALSE))
+	if ( Npc_KnowsInfo ( hero , dia_dragon_gold_destroyway ) && ( DESTROYCLAW  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -476,62 +477,62 @@ func int dia_dragon_gold_destroywaytwo_condition()
 
 func void dia_dragon_gold_destroywaytwo_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_00");	//Ты сказал, что знаешь два способа уничтожить С'эньяка.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_01");	//Да... Есть и еще один.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_03");	//Второй способ заключается в том, чтобы пленить его душу таким же образом, как это было сделано когда-то.
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_06");	//Интересно. И как можно пленить душу С'эньяка?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_07");	//(с сожалением) Ты повторяешь ошибки Древних...
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_09");	//Для того чтобы пленить демона, тебе понадобится одно очень древнее заклинание.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_11");	//Оно называется Мора Уларту.На языке Древних это означает 'Темница Душ'.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_12");	//Ты должен будешь наложить его на С'эньяка, а после этого лишить его физической оболочки.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_13");	//Проще говоря, убить... А заклинание, в свою очередь, не даст ускользнуть душе после смерти...
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_16");	//Тебе также понадобится темный кристалл, чтобы поместить туда пойманную душу С'эньяка.
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_17");	//А тот кристалл, что находится в Когте - его все еще можно использовать?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_18");	//Хммм... думаю, да. Но, как видишь, это не слишком надежное место.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_19");	//Хотя, безусловно, есть и плюсы: поместив его душу обратно в Коготь, ты вернешь ему былую мощь.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_21");	//Однако одно неловкое движение, одна ошибка - и С'эньяк снова обретет свободу.
-	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_1W");	//Хорошо, я все понял. Но скажи, где мне искать это заклинание, о котором ты говорил?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_2W");	//Я ничего не знаю про это. Мора Уларту - дар темного бога. Возможно, тот, кто владеет магией Тьмы и знает что-то об этом...
-	if(Kapitel >= 5)
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_00 " );	// You said you knew two ways to destroy S'enyak.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_01 " );	// Yes... There is one more.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_03 " );	// The second way is to capture his soul in the same way as it was once done.
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_06 " );	// Interesting. And how can one capture the soul of S'enyak?
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_07 " );	// (regretfully) You're repeating the mistakes of the Ancients...
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_09 " );	// In order to capture a demon, you will need one very ancient spell.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_11 " );	// It's called Mora Ulartu. In the language of the Ancients, it means 'Dungeon of Souls'.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_12 " );	// You'll have to cast it on S'enyak, and then strip him of his physical form.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_13 " );	// Simply put, to kill... And the spell, in turn, will not let the soul escape after death...
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_16 " );	// You'll also need a dark crystal to place the captured soul of S'enyak into.
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_17 " );	// And the crystal in the Talon - can it still be used?
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_18 " );	// Hmmm... I think so. But as you can see, this is not a very reliable place.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_19 " );	// Although, there are certainly advantages: by placing his soul back into the Claw, you will return him to his former power.
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_21 " );	// However, one awkward move, one mistake, and S'enyak will be free again.
+	AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_1W " );	// Okay, I got it. But tell me, where can I find that spell you spoke of?
+	AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_2W " );	// I don't know anything about this. Mora Ulartu is a gift from the dark god. Perhaps someone who owns the magic of Darkness and knows something about it...
+	if (Chapter >=  5 )
 	{
-		if(!Npc_IsDead(none_102_kreol))
+		if ( ! Npc_IsDead(none_102_kreol))
 		{
 			if(KREOL_MYTEACHER == TRUE)
 			{
-				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_22");	//Хммм... Думаю, я знаю одного из тех, кто ей владеет.
+				AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_22 " );	// Hmmm... I think I know one of the people who owns it.
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//...(рычит)
-				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_24");	//А после того как я найду это заклинание, где мне искать С'эньяка?
-				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//Сначала найди Темницу Душ, а потом мы поговорим о твоей встрече с ним.
-				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_27");	//Поспеши, дорога каждая минута!
+				AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_24 " );	// And after I find this spell, where should I look for S'anyak?
+				AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_25 " );	// Find the Dungeon of Souls first, and then we'll talk about your meeting with him.
+				AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_27 " );	// Hurry, every minute counts!
 				TASKFINDDARKSOUL = TRUE;
-				B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Аш'Тар поведал мне еще один способ уничтожить С'эньяка. Точнее, не совсем уничтожить, а лишь пленить его душу тем же образом, каким когда-то это сделали Древние. Мне необходимо достать одно очень редкое заклинание - Мора Уларту. Дракон предположил, что тот, кто связан с темной магией, мог бы помочь мне в этом. Надо бы поговорить с Креолом.");
+				B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Ash'Thar told me another way to destroy S'anyak. Not exactly to destroy, but only to capture his soul in the same way as the Ancients once did. I need to get one very rare spell - Pestilence Ulartu. The dragon suggested that someone who is connected with dark magic could help me with this. I should talk to Creole. " );
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_28");	//Хммм... С этим могут возникнуть проблемы...
+				AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_28 " );	// Hmmm... This might be a problem...
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//...(рычит)
-				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_24");	//А после того как я найду это заклинание, где мне искать С'эньяка?
-				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//Сначала найди Темницу Душ, а потом мы поговорим о твоей встрече с ним.
-				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_27");	//Поспеши, дорога каждая минута!
+				AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_24 " );	// And after I find this spell, where should I look for S'anyak?
+				AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_25 " );	// Find the Dungeon of Souls first, and then we'll talk about your meeting with him.
+				AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_27 " );	// Hurry, every minute counts!
 				TASKFINDDARKSOUL = TRUE;
-				B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Аш'Тар поведал мне еще один способ уничтожить С'эньяка. Точнее, не совсем уничтожить, а лишь пленить его душу тем же образом, каким когда-то это сделали Древние. Мне необходимо достать одно очень редкое заклинание - Мора Уларту. Дракон предположил, что тот, кто связан с темной магией, мог бы помочь мне в этом. Вот только где найти такого?");
+				B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Ash'Thar told me another way to destroy S'anyak. Not exactly to destroy, but only to capture his soul in the same way as the Ancients once did. I need to get one very rare spell - Pestilence Ulartu. The dragon suggested that someone who is connected with dark magic could help me with this. But where can I find one? " );
 			};
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_34");	//Хммм... Боюсь, я не знаю того, кто мог бы мне помочь.
-			AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_35");	//Тогда не теряй времени и отправляйся на поиски сфер.
-			B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Аш'Тар поведал мне еще один способ уничтожить С'эньяка. Точнее не совсем уничтожить, а лишь пленить его душу тем же образом, каким когда-то это сделали Древние. Мне необходимо достать одно очень редкое заклинание - Мора Уларту. Дракон предположил, что тот, кто связан с темной магией, мог бы помочь мне в этом. Вот только где найти такого? Похоже, мне придется выкинуть эту затею из головы...");
+			AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_34 " );	// Hmmm... I'm afraid I don't know anyone who can help me.
+			AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_35 " );	// Then don't waste your time and go looking for orbs.
+			B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Ash'Thar told me another way to destroy S'enyak. Or rather, not completely destroy, but only captivate his soul in the same way that the Ancients once did. I need to get one very rare spell - Mora Ulartu "The dragon suggested that someone who is connected with dark magic could help me with this. But where can I find such a thing? Looks like I'll have to put this idea out of my head... " );
 		};
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_37");	//Хммм... Думаю, я знаю одного из тех, кто ей владеет.
-		AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_24");	//А после того как я найду это заклинание - где мне искать С'эньяка?
-		AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//Сначала найди Темницу Душ, а потом мы поговорим о твоей встрече с ним...
-		AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_27");	//Поспеши, дорога каждая минута!
+		AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_37 " );	// Hmmm... I think I know one of the people who owns it.
+		AI_Output(other,self, " DIA_Dragon_Gold_DestroyWayTwo_01_24 " );	// And after I find this spell, where should I look for S'enyak?
+		AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_25 " );	// Find the Dungeon of Souls first, and then we'll talk about your meeting with him...
+		AI_Output(self,other, " DIA_Dragon_Gold_DestroyWayTwo_01_27 " );	// Hurry, every minute counts!
 		TASKFINDDARKSOUL = TRUE;
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Аш'Тар поведал мне еще один способ уничтожить С'эньяка. Точнее не совсем уничтожить, а лишь пленить его душу тем же образом, каким когда-то это сделали Древние. Для этого мне необходимо достать одно очень редкое заклинание - Мора Уларту, что на языке древних означает 'Темница душ'. Дракон предположил, что тот, кто связан с темной магией, мог бы помочь мне в этом. Надо бы поговорить с Ксардасом.");
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Ash'Thar told me another way to destroy S'enyak. Or rather, not completely destroy, but only captivate his soul in the same way that the Ancients once did. To do this, I need to get one very rare spell - Mora Ulartu, which means "Dungeon of Souls" in the language of the ancients. The dragon suggested that someone who is connected with dark magic could help me with this. I should talk to Xardas. " );
 	};
 };
 
@@ -543,7 +544,7 @@ instance DIA_DRAGON_GOLD_CLAWCARE(C_Info)
 	condition = dia_dragon_gold_clawcare_condition;
 	information = dia_dragon_gold_clawcare_info;
 	permanent = FALSE;
-	description = "А что насчет Когтя?";
+	description = " What about Claw? " ;
 };
 
 func int dia_dragon_gold_clawcare_condition()
@@ -556,13 +557,13 @@ func int dia_dragon_gold_clawcare_condition()
 
 func void dia_dragon_gold_clawcare_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_ClawCare_01_00");	//А что насчет Когтя?
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawCare_01_01");	//Ты можешь оставить его себе. Хотя Коготь Белиара - артефакт Тьмы, он может послужить и добру.
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawCare_01_02");	//Но не забывай: меч был выкован для самого С'эньяка, и если демон вернет себе меч, он станет практически непобедим!
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawCare_01_08");	//Если ты не уверен в том, что сможешь противостоять этому злу, то лучшее решение в данной ситуации...
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawCare_01_09");	//...отдать этот меч мне. Я уничтожу этот источник зла раз и навсегда!
-	AI_Output(other,self,"DIA_Dragon_Gold_ClawCare_01_11");	//Хорошо. Я обдумаю твое предложение.
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Аш'Тар может уничтожить Коготь, если я решу, что эта ноша мне не по силам.");
+	AI_Output(other,self, " DIA_Dragon_Gold_ClawCare_01_00 " );	// What about Talon?
+	AI_Output(self,other, " DIA_Dragon_Gold_ClawCare_01_01 " );	// You can keep it for yourself. Although Beliar's Claw is an artifact of Darkness, it can also serve good.
+	AI_Output(self,other, " DIA_Dragon_Gold_ClawCare_01_02 " );	// But don't forget: the sword was forged for S'enyak himself, and if the demon gets his sword back, he'll be practically invincible!
+	AI_Output(self,other, " DIA_Dragon_Gold_ClawCare_01_08 " );	// If you are not sure that you can resist this evil, then the best solution in this situation...
+	AI_Output(self,other, " DIA_Dragon_Gold_ClawCare_01_09 " );	// ...give this sword to me. I will destroy this source of evil once and for all!
+	AI_Output(other,self, " DIA_Dragon_Gold_ClawCare_01_11 " );	// Good. I will consider your offer.
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , "The Ash'Thar can destroy the Talon if I decide the burden is too much for me. " );
 };
 
 
@@ -573,12 +574,12 @@ instance DIA_DRAGON_GOLD_CLAWDESTROY(C_Info)
 	condition = dia_dragon_gold_clawdestroy_condition;
 	information = dia_dragon_gold_clawdestroy_info;
 	permanent = TRUE;
-	description = "Уничтожь Коготь!";
+	description = " Destroy the Talon! " ;
 };
 
 func int dia_dragon_gold_clawdestroy_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_dragon_gold_clawcare) && (DESTROYCLAW == FALSE) && C_ScHasBeliarsWeapon())
+	if ( Npc_KnowsInfo ( hero , dia_dragon_gold_clawcare ) && ( DESTROYCLAW  ==  FALSE ) && C_ScHasBeliarsWeapon ())
 	{
 		return TRUE;
 	};
@@ -586,9 +587,9 @@ func int dia_dragon_gold_clawdestroy_condition()
 
 func void dia_dragon_gold_clawdestroy_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_ClawDestroy_01_00");	//Уничтожь Коготь!
-	AI_Output(other,self,"DIA_Dragon_Gold_ClawDestroy_01_03");	//Думаю, это будет самое лучшее решение.
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_01_04");	//Ты в этом уверен?..
+	AI_Output(other,self, " DIA_Dragon_Gold_ClawDestroy_01_00 " );	// Destroy the Claw!
+	AI_Output(other,self, " DIA_Dragon_Gold_ClawDestroy_01_03 " );	// I think this would be the best solution.
+	AI_Output(self,other, " DIA_Dragon_Gold_ClawDestroy_01_04 " );	// Are you sure about this?..
 	Info_AddChoice(dia_dragon_gold_clawdestroy,"Нет, постой!",dia_dragon_gold_clawdestroy_no);
 	Info_AddChoice(dia_dragon_gold_clawdestroy,"Да!",dia_dragon_gold_clawdestroy_yes);
 };
@@ -604,19 +605,19 @@ func void dia_dragon_gold_clawdestroy_yes()
 	AI_PlayAni(self,"T_SURPRISE_CCW");
 	AI_PlayAni(self,"T_SURPRISE_CW");
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//...(рычит)
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_Yes_01_01");	//Вот и все... Когтя больше нет!
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_Yes_01_02");	//Его зло никогда больше не потревожит этот мир.
+	AI_Output(self,other, " DIA_Dragon_Gold_ClawDestroy_Yes_01_01 " );	// That's it... Claw is gone!
+	AI_Output(self,other, " DIA_Dragon_Gold_ClawDestroy_Yes_01_02 " );	// His evil will never disturb this world again.
 	DESTROYCLAW = TRUE;
-	TOPIC_END_Klaue = TRUE;
+	TOPIC_END_Klaue = TRUE ;
 	Log_SetTopicStatus(TOPIC_Addon_Klaue,LOG_Success);
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Я отдал меч Аш'Тару и тот уничтожил его.");
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " I gave the sword to Ash'Thar and he destroyed it. " );
 	Info_ClearChoices(dia_dragon_gold_clawdestroy);
 };
 
 func void dia_dragon_gold_clawdestroy_no()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_ClawDestroy_No_01_00");	//Нет, постой!
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_No_01_01");	//Как скажешь.
+	AI_Output(other,self, " DIA_Dragon_Gold_ClawDestroy_No_01_00 " );	// No, wait!
+	AI_Output(self,other, " DIA_Dragon_Gold_ClawDestroy_No_01_01 " );	// As you say.
 	Info_ClearChoices(dia_dragon_gold_clawdestroy);
 };
 
@@ -627,7 +628,7 @@ instance DIA_DRAGON_GOLD_HAVEONEORALL(C_Info)
 	condition = dia_dragon_gold_haveoneorall_condition;
 	information = dia_dragon_gold_haveoneorall_info;
 	permanent = TRUE;
-	description = "Насчет нашего дела...";
+	description = " About our case... " ;
 };
 
 func int dia_dragon_gold_haveoneorall_condition()
@@ -643,79 +644,79 @@ func int dia_dragon_gold_haveoneorall_condition()
 
 func void dia_dragon_gold_haveoneorall_info()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_01_00");	//Насчет нашего дела...
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_01_01");	//Тебе есть что сказать, человек? Ты принес Сферы?
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_01_00 " );	// About our case...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_01_01 " );	// Do you have anything to say, human? Did you bring the Orbs?
 	Info_ClearChoices(dia_dragon_gold_haveoneorall);
 	Info_AddChoice(dia_dragon_gold_haveoneorall,"Пока нет.",dia_dragon_gold_haveoneorall_none);
 
-	if((TASKFINDDARKSOUL == TRUE) && (Npc_HasItems(other,itru_moraulartu) >= 1) && (DESTROYCLAW == FALSE) && (TELLGDMU == FALSE))
+	if (( TASKFINDDARKSOUL  ==  TRUE ) && (Npc_HasItems(other,self_moral) >=  1 ) && ( DESTROYCLAW  ==  FALSE ) && ( TELLGDMU  ==  FALSE )) ;
 	{
-		Info_AddChoice(dia_dragon_gold_haveoneorall,"Я достал Мора Уларту!",dia_dragon_gold_haveoneorall_mora);
+		Info_AddChoice(dia_dragon_gold_haveoneorall, " I got Mora Ulartu! " ,dia_dragon_gold_haveoneorall_mora);
 	};
-	if((TASKFINDSPHERE == TRUE) && (Npc_HasItems(other,itmi_fireshpere) >= 1) && (Npc_HasItems(other,itmi_watershpere) >= 1) && (Npc_HasItems(other,itmi_stoneshpere) >= 1) && (Npc_HasItems(other,itmi_darkshpere) >= 1))
+	if (( TASKFINDSPHERE  ==  TRUE ) && (Npc_HasItems(other,itmi_fireshpere) >=  1 ) && (Npc_HasItems(other,itmi_watershpere) >=  1 ) && (Npc_HasItems(other,itmi_stoneshpere) >= 1 ) && ( Npc_HasItems(other,itmi_stoneshpere) >=  1 ) itmi_darkshpere) >= 1 )) 
 	{
-		Info_AddChoice(dia_dragon_gold_haveoneorall,"Я достал все Сферы!",dia_dragon_gold_haveoneorall_sphere);
+		Info_AddChoice(dia_dragon_gold_haveoneorall, " I got all the Orbs! " ,dia_dragon_gold_haveoneorall_sphere);
 	};
 	if((MIS_STONNOSTEST == LOG_SUCCESS) && (MISSSHEPREFOREVER == TRUE) && (MISSSOULFOREVER == FALSE))
 	{
-		Info_AddChoice(dia_dragon_gold_haveoneorall,"Я отдал их Хранителям.",dia_dragon_gold_haveoneorall_spheregone);
+		Info_AddChoice(dia_dragon_gold_haveoneorall, " I gave them to the Guardians. " ,dia_dragon_gold_haveoneorall_spheregone);
 	};
 };
 
 func void dia_dragon_gold_haveoneorall_none()
 {
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_None_01_00");	//Пока нет.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_None_01_01");	//Тогда чего ты ждешь?
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_None_01_02");	//Иди и принеси то, о чем я тебе говорил! И поспеши - у нас мало времени...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_None_01_01 " );	// Then what are you waiting for?
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_None_01_02 " );	// Go and get what I told you about! And hurry - we don't have much time...
 	AI_StopProcessInfos(self);
 };
 
 func void dia_dragon_gold_haveoneorall_spheregone()
 {
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_00");	//Нет. Я отдал их Хранителям.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_01");	//(рычит) Зачем ты это сделал?
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_02");	//Без них у тебя не будет и малейшего шанса одолеть С'эньяка!
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_03");	//У меня не было другого выбора.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_06");	//Тогда тебе придется сражаться с архидемоном без какой-либо помощи, и, скорее всего, ты проиграешь...
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_00 " );	// No. I gave them to the Guardians.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_01 " );	// (growls) Why did you do that?
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_02 " );	// Without them, you won't have the slightest chance of defeating S'enyak!
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_03 " );	// I had no other choice.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_06 " );	// Then you'll have to fight the archdemon without any help, and you'll most likely lose...
 
-	if((TASKFINDDARKSOUL == TRUE) && (Npc_HasItems(other,itru_moraulartu) >= 1) && (DESTROYCLAW == FALSE) && (TELLGDMU == FALSE))
+	if (( TASKFINDDARKSOUL  ==  TRUE ) && (Npc_HasItems(other,self_moral) >=  1 ) && ( DESTROYCLAW  ==  FALSE ) && ( TELLGDMU  ==  FALSE )) ;
 	{
 		B_GivePlayerXP(200);
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_08");	//Но у меня еще есть Мора Уларту! Как насчет этого?
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09");	//(рычит) Значит, ты умудрился достать этот артефакт.
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14");	//Да, но было бы неплохо понять, как эта штука работает.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Просто - перед тем как начать битву с С'эньяком, используй на нем это заклинание.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//А после того как архидемон будет повержен, забери из его плоти камень с заточенной душой.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Затем возьми этот камень и соедини его с Когтем Белиара на алтаре Темного бога - кристалл в основании клинка поглотит душу С'эньяка, и меч вновь обретет былую мощь!
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_08 " );	// But I still have Mora Ulartu! How about this?
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09 " );	// (growls) So you managed to get that artifact.
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14 " );	// Yes, but it would be nice to understand how this thing works.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15 " );	// Simple - before you start the battle with S'enyak, use this spell on him.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16 " );	// And after the archdemon is defeated, take from his flesh a stone with a sharpened soul.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17 " );	// Then take this stone and combine it with the Claw of Beliar on the altar of the Dark God - the crystal at the base of the blade will absorb the soul of S'enyak, and the sword will regain its former power!
 		TELLGDMU = TRUE;
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Если я намереваюсь использовать Мора Уларту, чтобы пленить душу С'эньяка, мне следует соединить камень с душой архидемона и Коготь Белиара, чтобы последний поглотил содержимое камня. Это вернет оружию его былую мощь.");
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " If I intend to use Mora Ulartu to capture S'enyak's soul, I should fuse the archdemon's soul gem and Beliar's Talon to have the latter consume the gem's contents. This will restore the weapon to its former power. " );
 	}
 	else if((TASKFINDDARKSOUL == TRUE) && (TELLGDMU == FALSE))
 	{
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_22");	//А если мне удастся достать Мора Уларту?
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_25");	//Как я смогу его использовать?
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Просто - перед тем как начать битву с С'эньяком, используй на нем это заклинание.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//А после того как архидемон будет повержен, забери из его плоти камень с заточенной душой.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Затем возьми этот камень и соедини его с Когтем Белиара на алтаре Темного бога - кристалл в основании клинка поглотит душу С'эньяка, и меч вновь обретет былую мощь!
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_22 " );	// And if I manage to get Mora Ulartu?
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_25 " );	// How can I use it?
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15 " );	// Simple - before you start the battle with S'enyak, use this spell on him.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16 " );	// And after the archdemon is defeated, take from his flesh a stone with a sharpened soul.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17 " );	// Then take this stone and combine it with the Claw of Beliar on the altar of the Dark God - the crystal at the base of the blade will absorb the soul of S'enyak, and the sword will regain its former power!
 		TELLGDMU = TRUE;
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Если я намереваюсь использовать Мора Уларту, чтобы пленить душу С'эньяка, мне следует соединить камень с душой архидемона и 'Коготь Белиара', чтобы последний поглотил содержимое камня. Это вернет оружию его былую мощь.");
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " If I intend to use Mora Ulartu to capture S'enyak's soul, I should fuse the archdemon's soul gem and 'Claw of Beliar' to consume the stone's contents. This will restore the weapon to its former power. " );
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33");	//Ну, это мы еще посмотрим.
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33 " );	// Well, we'll see about that later.
 	};
 
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_34");	//Теперь ты мне скажешь, как добраться до С'эньяка?
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_36");	//Его обитель находится в самом центре Лэнга, в мире демонов. Ни одному смертному туда просто так никогда не попасть.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_37");	//Поэтому единственный способ заставить С'эньяка сразиться с тобой - призвать его в этот мир!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_39");	//Просто возьми эту вещь.
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_34 " );	// Now will you tell me how to get to S'enyak?
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_36 " );	// His home is in the very center of Lang, in the demon world. No mortal will ever get there just like that.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_37 " );	// So the only way to get S'anyak to fight you is to summon him to this world!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_39 " );	// Just take this thing.
 	B_GiveInvItems(self,other,ITMI_DRAGONGOLDGORN,1);
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_40");	//Что это?
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_41");	//Золотой рог Ахианти - магический артефакт, звук которого способен призвать любое существо к его владельцу. Но только один раз!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_42");	//С'эньяк не сможет противостоять силе этого артефакта и явится на твой зов.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_43");	//Место встречи с С'эньяком ты выберешь сам. Постарайся сделать это с умом.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_41 " );	// The golden horn of Ahyanti is a magical artifact, the sound of which is able to call any creature to its owner. But only once!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_42 " );	// S'enyak will not be able to resist the power of this artifact and will come to your call.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_43 " );	// The meeting place with S'enyak is up to you. Try to do it wisely.
 	KNOWS_CRESTMAKE = TRUE;
-	AshtarLastWarn = TRUE;
+	AshtarLastWarn = TRUE ;
 	MISSSOULFOREVER = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -723,44 +724,44 @@ func void dia_dragon_gold_haveoneorall_spheregone()
 func void dia_dragon_gold_haveoneorall_mora()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_00");	//Я достал Мора Уларту!	
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09");	//Аргхх...(рычит) Значит, ты как-то умудрился достать этот артефакт.
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14");	//Да, но было бы неплохо понять, как эта штука работает.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Просто - перед тем как начать битву с С'эньяком, используй на нем это заклинание.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//А после того как архидемон будет повержен, забери из его плоти камень с заточенной душой.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Затем возьми этот камень и соедини его с Когтем Белиара на алтаре Темного бога - кристалл в основании клинка поглотит душу С'эньяка, и меч вновь обретет былую мощь!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_13");	//Но хочу тебя сразу предупредить: после того как используешь на С'эньяке магию Мора Уларту...
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_14");	//...Ты не сможешь воспользоваться Крестом Стихий!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_16");	//Сила Мора Уларту не сможет противостоять ужасающей мощи этого заклинания, и камень души будет уничтожен.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_17");	//Поэтому здесь тебе придется сражаться с С'эньяком в честном бою. И скажу прямо: у тебя мало шансов.
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33");	//Ну, это мы еще посмотрим.
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_1W");	//Теперь ты мне скажешь, как добраться до С'эньяка?
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_00 " );	// I got Mora Ulartu!	
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09 " );	// Arghh...(growls) So you somehow managed to get that artifact.
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14 " );	// Yes, but it would be nice to understand how this thing works.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15 " );	// Simple - before you start the battle with S'enyak, use this spell on him.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16 " );	// And after the archdemon is defeated, take from his flesh a stone with a sharpened soul.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17 " );	// Then take this stone and combine it with the Claw of Beliar on the altar of the Dark God - the crystal at the base of the blade will absorb the soul of S'enyak, and the sword will regain its former power!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_13 " );	// But I want to warn you right away: after you use Mora Ulartu's magic on S'Enyak...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_14 " );	// ...You won't be able to use the Elemental Cross!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_16 " );	// The power of Mora Ulartu will not be able to withstand the terrifying power of this spell, and the soulstone will be destroyed.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_17 " );	// So here you have to fight S'enyak in a fair fight. And I'll tell you straight: you have little chance.
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33 " );	// Well, we'll see about that later.
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_1W " );	// Now will you tell me how to get to S'enyak?
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_20");	//Нет...
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_21");	//Но почему?
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_23");	//Ты должен иметь при себе Крест Стихий, как запасной вариант.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_25");	//Если что-то пойдет не так, это заклинание - наш единственный шанс уничтожить С'эньяка!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_26");	//Поэтому принеси мне те сферы. Тогда мы поговорим о твоей встрече с архидемоном.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_23 " );	// You should carry the Cross of Elements as a backup.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_25 " );	// If anything goes wrong, this spell is our only chance to destroy S'anyak!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_26 " );	// So bring me those spheres. Then we'll talk about your encounter with the archdemon.
 	TELLGDMU = TRUE;
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Если я намереваюсь использовать Мора Уларту, чтобы пленить душу С'эньяка, мне не следует потом использовать Крест Стихий, ибо это заклинание уничтожит демона вместе с его душой. После того как с С'эньяком будет покончено, мне необходимо соединить камень с душой архидемона и 'Коготь Белиара', чтобы последний поглотил содержимое камня. Это вернет оружию его былую мощь. Но в любом случае мне необходимо иметь при себе Крест Стихий.");
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " If I intend to use Mora Ulartu to capture S'enyak's soul, I shouldn't use Elemental Cross afterward, as this spell will destroy the demon along with its soul. After S'enyak is done, I need to connect a stone with the soul of an archdemon and 'Claw of Beliar', so that the latter absorbs the contents of the stone. This will return the weapon to its former power. But in any case, I need to have the Cross of Elements with me. " );
 	Info_ClearChoices(dia_dragon_gold_haveoneorall);
 };
 
 func void dia_dragon_gold_haveoneorall_sphere()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_00");	//Я достал все сферы.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_01");	//Очень хорошо.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_02");	//Теперь у тебя есть почти все необходимое, чтобы сделать Крест Стихий и уничтожить С'эньяка!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_04");	//Да, не хватает последней детали...
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_06");	//МОЕГО СЕРДЦА!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_08");	//Только с его помощью ты сможешь объединить сферы элементов и сотворить из них Крест Стихий!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_09");	//Однажды ты спросил меня, человек, - в чем смысл моего существования...
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_11");	//Именно в этом он и заключается - дать шанс смертному, как ты, одолеть такое несокрушимое зло, как С'эньяк!
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_14");	//Ты принесешь себя в жертву?
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_16");	//Не думай об этом. Ты сейчас должен думать только об одном - о своей предстоящей битве с С'эньяком!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_17");	//А теперь отойди...
-	AshtarLastWarn = TRUE;
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Когда я показал Аш'Тару сферы элементов, он поведал мне, как создать Крест Стихий. К сожалению, ему пришлось заплатить мне за помощь своей жизнью, ибо для создания этого заклинания требуется магическая эссенция из его сердца - из сердца золотого дракона! Кроме того, Аш'Тар рассказал мне и некоторые другие детали, которые помогут мне при встрече с С'эньяком.");
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_00 " );	// I got all the spheres.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_01 " );	// Very good.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_02 " );	// You now have almost everything you need to make an Elemental Cross and destroy S'anyak!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_04 " );	// Yes, the last detail is missing...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_06 " );	// MY HEART!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_08 " );	// Only with it will you be able to combine elemental spheres and create an Elemental Cross from them!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_09 " );	// Once you asked me, man, what is the meaning of my existence...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_11 " );	// That's what it's all about - giving a mortal like you a chance to defeat an unstoppable evil like S'anyak!
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_14 " );	// Will you sacrifice yourself?
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_16 " );	// Don't think about it. You have only one thing to think about right now - your upcoming battle with S'anyak!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Sphere_01_17 " );	// Now step back...
+	AshtarLastWarn = TRUE ;
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " When I showed Ash'Thar the Elemental Orbs, he told me how to create the Cross of Elements. Unfortunately, he had to pay me for helping me with his life, for this spell requires magical essence from his heart - from the heart of gold In addition, Ash'Thar told me some other details that will help me when I meet S'anyak. " );
 	Info_ClearChoices(dia_dragon_gold_haveoneorall);
 	Info_AddChoice(dia_dragon_gold_haveoneorall,"(отойти)",dia_dragon_gold_haveoneorall_giveheart);
 };
@@ -773,62 +774,62 @@ func void dia_dragon_gold_haveoneorall_giveheart()
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Snd_Play("DEM_WARN");
 	KNOWS_CRESTMAKE = TRUE;
-	AI_Print("Обучен изготовлению руны - 'Крест Стихий'");
+	AI_Print( " Learned how to make a rune - 'Cross of Elements' " );
 	AI_PlayAni(self,"T_SURPRISE_CCW");
 	AI_PlayAni(self,"T_SURPRISE_CW");
 	B_GiveInvItems(self,other,itat_golddragonheart,1);
 	AI_Wait(self,5);
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_00");	//Вот, возьми его...
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_03");	//Для того чтобы сделать Крест Стихий, окропи все сферы магической эссенцией, взятой из моего сердца, а потом просто соедини их вместе. Используй для этого рунический стол.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_04");	//После того как сделаешь это, настанет время встретиться с архидемоном.
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_05");	//Как добраться до С'эньяка?
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_36");	//Его обитель находится в самом центре Лэнга, в мире демонов. Ни одному смертному туда просто так никогда не попасть.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_37");	//Поэтому единственный способ заставить С'эньяка сразиться с тобой - это призвать его в этот мир!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_39");	//Просто возьми эту вещь.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_00 " );	// Here, take it...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_03 " );	// To make an Elemental Cross, sprinkle all the spheres with magical essence taken from my heart, and then simply combine them together. Use a runic table for this.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_04 " );	// After you've done this, it's time to face the archdemon.
+	AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_05 " );	// How to get to S'Egnac?
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_36 " );	// His home is in the very center of Lang, in the demon world. No mortal will ever get there just like that.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_37 " );	// So the only way to get S'anyak to fight you is to summon him to this world!
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_39 " );	// Just take this thing.
 	B_GiveInvItems(self,other,ITMI_DRAGONGOLDGORN,1);
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_40");	//Что это?
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_41");	//Золотой рог Ахианти - магический артефакт, звук которого способен призвать любое существо к его владельцу. Но только лишь один раз.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_42");	//С'эньяк не сможет противостоять силе этого артефакта и явится на твой зов.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_43");	//Как ты уже наверняка понял, место встречи с С'эньяком ты выберешь сам. Поэтому постарайся использовать его с умом.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_41 " );	// The golden horn of Ahyanti is a magical artifact, the sound of which is able to call any creature to its owner. But only once.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_42 " );	// S'enyak will not be able to resist the power of this artifact and will come to your call.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_43 " );	// As you probably already understood, you will choose the place of meeting with S'enyak yourself. So try to use it wisely.
 
-	if((TASKFINDDARKSOUL == TRUE) && (Npc_HasItems(other,itru_moraulartu) >= 1) && (DESTROYCLAW == FALSE) && (TELLGDMU == FALSE))
+	if (( TASKFINDDARKSOUL  ==  TRUE ) && (Npc_HasItems(other,self_moral) >=  1 ) && ( DESTROYCLAW  ==  FALSE ) && ( TELLGDMU  ==  FALSE )) ;
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_18");	//У меня также есть Мора Уларту!
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09");	//Аргхх...(рычит) Значит, ты как-то умудрился достать этот артефакт.
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14");	//Да, но было бы неплохо понять, как эта штука работает.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Просто - перед тем как начать битву с С'эньяком, используй на нем это заклинание.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//А после того как архидемон будет повержен, забери из его плоти камень с заточенной душой.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Затем возьми этот камень и соедини его с Когтем Белиара на алтаре Темного бога - кристалл в основании клинка поглотит душу С'эньяка, и меч вновь обретет былую мощь!
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_13");	//Но хочу тебя сразу предупредить: после того как используешь на С'эньяке магию Мора Уларту...
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_14");	//...Ты не сможешь воспользоваться Крестом Стихий!
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_18 " );	// I also have Mora Ulartu!
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09 " );	// Arghh...(growls) So you somehow managed to get that artifact.
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14 " );	// Yes, but it would be nice to understand how this thing works.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15 " );	// Simple - before you start the battle with S'enyak, use this spell on him.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16 " );	// And after the archdemon is defeated, take from his flesh a stone with a sharpened soul.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17 " );	// Then take this stone and combine it with the Claw of Beliar on the altar of the Dark God - the crystal at the base of the blade will absorb the soul of S'enyak, and the sword will regain its former power!
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_13 " );	// But I want to warn you right away: after you use Mora Ulartu's magic on S'Enyak...
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_14 " );	// ...You won't be able to use the Elemental Cross!
 		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_15");	//Но почему?
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_16");	//Сила Мора Уларту не сможет противостоять ужасающей мощи этого заклинания и, камень души будет уничтожен!
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_17");	//И тогда тебе придется сражаться с С'эньяком в честном бою. И скажу прямо: у тебя мало шансов.
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33");	//Ну, это мы еще посмотрим.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_16 " );	// The power of Mora Ulartu will not be able to withstand the terrifying power of this spell, and the soul stone will be destroyed!
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Mora_01_17 " );	// And then you'll have to fight S'enyak in a fair fight. And I'll tell you straight: you have little chance.
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33 " );	// Well, we'll see about that later.
 		TELLGDMU = TRUE;
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Если я намереваюсь использовать Мора Уларту, чтобы пленить душу С'эньяка, мне не следует потом использовать Крест Стихий, ибо это заклинание уничтожит демона вместе с его душой. После того как с С'эньяком будет покончено, мне необходимо соединить камень с душой архидемона и 'Коготь Белиара', чтобы последний поглотил содержимое камня. Это вернет оружию его былую мощь.");
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " If I intend to use Mora Ulartu to capture S'enyak's soul, I shouldn't use Elemental Cross afterward, as this spell will destroy the demon along with its soul. After S'enyak is done, I need to connect a stone with the soul of an archdemon and 'Claw of Beliar' so that the latter absorbs the contents of the stone. This will return the weapon to its former power. " );
 	}
 	else if((TASKFINDDARKSOUL == TRUE) && (TELLGDMU == FALSE))
 	{
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_22");	//А если мне удастся достать Мора Уларту - как я смогу его использовать?
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Просто - перед тем, как начать битву с С'эньяком, используй на нем это заклинание.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//А после того как архидемон будет повержен - забери из его плоти камень с заточенной душой.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Затем, возьми этот камень и соедини его с Когтем Белиара на алтаре Темного Бога - кристалл в основании клинка поглотит душу С'эньяка и меч вновь обретет былую мощь!
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_22 " );	// And if I manage to get Mora Ulartu - how can I use it?
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15 " );	// Simple - before you start the battle with S'enyak, use this spell on him.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16 " );	// And after the archdemon is defeated, take a stone with a sharpened soul from its flesh.
+		AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17 " );	// Then, take this stone and combine it with Beliar's Claw on the altar of the Dark God - the crystal at the base of the blade will absorb S'anyak's soul and the sword will regain its former power!
 		TELLGDMU = TRUE;
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Если я намереваюсь использовать Мора Уларту, чтобы пленить душу С'эньяка - мне не следует потом использовать Крест Стихий, ибо это заклинание уничтожит демона вместе с его душой. После того как с С'эньяком будет покончено - мне необходимо соединить камень с душой архидемона и 'Коготь Белиара', чтобы последний поглотил содержимое камня. Это вернет оружию его былую мощь!");
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " If I intend to use Mora Ulartu to capture S'enyak's soul - I shouldn't use the Elemental Cross afterward, as this spell will destroy the demon along with its soul. After S'anyak is finished - I need to connect a stone with the soul of an archdemon and 'Claw of Beliar' so that the latter absorbs the contents of the stone. This will return the weapon to its former power! " );
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33");	//Ну, это мы еще посмотрим.
+		AI_Output(other,self, " DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33 " );	// Well, we'll see about that later.
 	};
 
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_57");	//Теперь это все, что тебе следует знать
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_58");	//И, кажется, мое время вышло...
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_59");	//Я уже чувствую, как мои силы уходят - я слабею...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_57 " );	// Now that's all you need to know
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_58 " );	// And it seems my time is up...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_59 " );	// I can already feel my strength leaving - I'm getting weaker...
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_61");	//...(рычит от боли)
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_62");	//Ступай человек, и запомни все, что я тебе сказал.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Dead_01_00");	//(умирая) Не подведи меня...
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_62 " );	// Go man, and remember everything I told you.
+	AI_Output(self,other, " DIA_Dragon_Gold_HaveOneOrAll_Dead_01_00 " );	// (dying) Don't let me down...
 	Info_ClearChoices(dia_dragon_gold_haveoneorall);
 	Info_AddChoice(dia_dragon_gold_haveoneorall,Dialog_Ende,dia_dragon_gold_haveoneorall_dead);
 };
@@ -837,20 +838,20 @@ func void dia_dragon_gold_haveoneorall_dead()
 {
 	AI_StopProcessInfos(self);
 	DragonGoldIsDead = TRUE;
-	HeroNotMobsi = FALSE;
+	HeroNotMobsi = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	Wld_StopEffect("DIALOGSCOPE_FX");
 };
 
 
-//---------------------Дракон Аданоса-------------------------------------------
+// ---------------------Dragon Adanosa----------------------------------- ------------------
 
-instance DIA_Dragon_AV_EXIT(C_Info)
+instance DIA_Dragon_AV_EXIT (C_Info)
 {
 	npc = Dragon_AV;
 	nr = 999;
 	condition = dia_Dragon_AV_exit_condition;
-	information = dia_Dragon_AV_exit_info;
+	info = dia_Dragon_AV_exit_info;
 	permanent = TRUE;
 	description = Dialog_Ende;
 };
@@ -865,12 +866,12 @@ func void dia_Dragon_AV_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Dragon_AV_HELLO(C_Info)
+instance DIA_Dragon_AV_HELLO (C_Info)
 {
 	npc = Dragon_AV;
 	nr = 1;
 	condition = dia_Dragon_AV_hello_condition;
-	information = dia_Dragon_AV_hello_info;
+	info = dia_Dragon_AV_hello_info;
 	important = TRUE;
 };
 
@@ -882,27 +883,27 @@ func int dia_Dragon_AV_hello_condition()
 func void dia_Dragon_AV_Hello_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_00");	//Наконец-то ты здесь... Я так долго ждал тебя!
-	AI_Output(other,self,"DIA_Dragon_AV_Hello_01_01");	//Ты меня ждал? И как это понимать?
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_02");	//Ты ведь тот, кого Аданос выбрал в качестве своего избранника.
-	AI_Output(other,self,"DIA_Dragon_AV_Hello_01_03");	//С чего ты так решил?
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_04");	//Ты носишь его символы власти, и к тому же смог добраться до этого места.
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_05");	//А это может означать только одно: Аданос выбрал тебя!
-	AI_Output(other,self,"DIA_Dragon_AV_Hello_01_06");	//Ну, допустим. И что теперь?
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_07");	//Теперь пришло время выполнить возложенную им на тебя обязанность!
-	AI_Output(other,self,"DIA_Dragon_AV_Hello_01_08");	//Какую еще обязанность?
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_09");	//Уничтожить то зло, что когда-то посмело вторгнуться в его священную вотчину.
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_10");	//Зло, которое я охраняю здесь уже много веков!
+	AI_Output(self,other, " DIA_Dragon_AV_Hello_01_00 " );	// You're finally here... I've been waiting for you for so long!
+	AI_Output(other,self, " DIA_Dragon_AV_Hello_01_01 " );	// Were you waiting for me? And how to understand it?
+	AI_Output(self,other, " DIA_Dragon_AV_Hello_01_02 " );	// You are the one whom Adanos chose as his chosen one.
+	AI_Output(other,self, " DIA_Dragon_AV_Hello_01_03 " );	// Why did you decide that?
+	AI_Output(self,other, " DIA_Dragon_AV_Hello_01_04 " );	// You're wearing his symbols of power, and besides, you made it to this place.
+	AI_Output(self,other, " DIA_Dragon_AV_Hello_01_05 " );	// And that can only mean one thing: Adanos chose you!
+	AI_Output(other,self, " DIA_Dragon_AV_Hello_01_06 " );	// Well, let's say. And now what?
+	AI_Output(self,other, " DIA_Dragon_AV_Hello_01_07 " );	// Now it's time to fulfill your duty!
+	AI_Output(other,self, " DIA_Dragon_AV_Hello_01_08 " );	// What other duty?
+	AI_Output(self,other, " DIA_Dragon_AV_Hello_01_09 " );	// Destroy the evil that once dared to invade his sacred patrimony.
+	AI_Output(self,other, " DIA_Dragon_AV_Hello_01_10 " );	// The evil I've guarded here for centuries!
 };
 
-instance DIA_Dragon_AV_Evil(C_Info)
+instance DIA_Dragon_AV_Evil (C_Info)
 {
 	npc = Dragon_AV;
 	nr = 1;
 	condition = dia_Dragon_AV_Evil_condition;
 	information = dia_Dragon_AV_Evil_info;
 	permanent = FALSE;
-	description = "Что это за зло?";
+	description = " What is this evil? " ;
 };
 
 func int dia_Dragon_AV_Evil_condition()
@@ -912,43 +913,43 @@ func int dia_Dragon_AV_Evil_condition()
 
 func void dia_Dragon_AV_Evil_info()
 {
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_00");	//Что это за зло?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_01");	//Очень древнее и опасное... Зло, которое было порождено одним из братьев Аданоса.
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_02");	//Ты имеешь ввиду Инноса или Белиара?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_03");	//Белиара! Только он способен сотворить такое.
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_04");	//Хорошо. И как же выглядит это зло?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_05");	//За несколько тысячелетий своего существования оно принимало самые различные формы и очертания.
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_06");	//Как оно выглядит сейчас, я не знаю. Но я чувствую его присутствие... чувствую, что оно до сих пор там.
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_07");	//Там - это где?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_08");	//В храме, что позади меня.
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_09");	//Хочешь сказать, что я должен буду отправиться в этот храм и уничтожить это ЗЛО?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_12");	//Именно так. Такова воля Аданоса!
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_13");	//Ну хорошо. И как мне победить его?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_14");	//Этого я не знаю. Я лишь только страж...
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_15");	//Ох, ну ладно, разберусь как-нибудь сам. А как мне попасть в храм?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_17");	//Я открою двери храма, как только ты скажешь, что готов к этому.
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_18");	//Но хочу предупредить тебя... Кроме меня, храм еще охраняют бессмертные стражи.
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_19");	//Время, проведенное ими внутри, под влиянием могущественного зла превратило их в чудовищных монстров.
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_20");	//Раньше они не посмели бы напасть на избранника самого Аданоса. Но теперь...
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_21");	//Полагаешь, что теперь они захотят сделать мне больно?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_22");	//Теперь они служат этому злу, и наверняка будут до конца защищать своего господина.
+	AI_Output(other,self, " DIA_Dragon_AV_Evil_01_00 " );	// What is this evil?
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_01 " );	// Very ancient and dangerous... An evil that was spawned by one of the brothers of Adanos.
+	AI_Output(other,self, " DIA_Dragon_AV_Evil_01_02 " );	// Do you mean Innos or Beliar?
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_03 " );	// Beliara! Only he can do this.
+	AI_Output(other,self, " DIA_Dragon_AV_Evil_01_04 " );	// Good. And what does this evil look like?
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_05 " );	// For several millennia of its existence, it has taken on a variety of forms and outlines.
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_06 " );	// What it looks like now, I don't know. But I feel its presence... I feel it's still there.
+	AI_Output(other,self, " DIA_Dragon_AV_Evil_01_07 " );	// There is where?
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_08 " );	// At the temple behind me.
+	AI_Output(other,self, " DIA_Dragon_AV_Evil_01_09 " );	// Are you saying that I will have to go to this temple and destroy this EVIL?
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_12 " );	// That's right. Such is the will of Adanos!
+	AI_Output(other,self, " DIA_Dragon_AV_Evil_01_13 " );	// Okay. And how can I defeat him?
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_14 " );	// I don't know this. I'm just a guard...
+	AI_Output(other,self, " DIA_Dragon_AV_Evil_01_15 " );	// Oh, okay, I'll figure it out myself somehow. How can I get to the temple?
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_17 " );	// I'll open the temple doors as soon as you say you're ready for it.
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_18 " );	// But I want to warn you... In addition to me, the temple is also guarded by immortal guardians.
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_19 " );	// The time they spent inside, under the influence of a powerful evil, turned them into monstrous monsters.
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_20 " );	// Previously, they would not have dared to attack the chosen one of Adanos himself. But now...
+	AI_Output(other,self, " DIA_Dragon_AV_Evil_01_21 " );	// Do you think they want to hurt me now?
+	AI_Output(self,other, " DIA_Dragon_AV_Evil_01_22 " );	// Now they serve this evil, and will surely protect their master to the end.
 };
 
 var int HramDoorOpen;
 
-instance DIA_Dragon_AV_OpenHram(C_Info)
+instance DIA_Dragon_AV_OpenHram (C_Info)
 {
 	npc = Dragon_AV;
 	nr = 1;
 	condition = dia_Dragon_AV_OpenHram_condition;
-	information = dia_Dragon_AV_OpenHram_info;
+	info = dia_Dragon_AV_OpenHram_info;
 	permanent = TRUE;
-	description = "Открой ворота храм, страж!";
+	description = " Open the gates of the temple, guardian! " ;
 };
 
 func int dia_Dragon_AV_OpenHram_condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Dragon_AV_Evil) && (HramDoorOpen == FALSE))
+	if ( Npc_KnowsInfo ( hero , DIA_Dragon_AV_Evil ) && ( BlockDoorOpen ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -956,32 +957,32 @@ func int dia_Dragon_AV_OpenHram_condition()
 
 func void dia_Dragon_AV_OpenHram_info()
 {
-	AI_Output(other,self,"DIA_Dragon_AV_OpenHram_01_00");	//Открой ворота храма, страж!
-	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_01_01");	//Ты уверен, что готов к этой битве?
-	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_01_02");	//Если ты потерпишь неудачу, то зло вновь вырвется наружу, и я уже буду не в силах его остановить.
+	AI_Output(other,self, " DIA_Dragon_AV_OpenHram_01_00 " );	// Open the temple gates, guardian!
+	AI_Output(self,other, " DIA_Dragon_AV_OpenHram_01_01 " );	// Are you sure you're ready for this fight?
+	AI_Output(self,other, " DIA_Dragon_AV_OpenHram_01_02 " );	// If you fail, the evil will break out again, and I will no longer be able to stop it.
 	Info_ClearChoices(DIA_Dragon_AV_OpenHram);
-	Info_AddChoice(DIA_Dragon_AV_OpenHram,"Нет, постой.",DIA_Dragon_AV_OpenHram_No);
-	Info_AddChoice(DIA_Dragon_AV_OpenHram,"Открывай уже!",DIA_Dragon_AV_OpenHram_Yes);
+	Info_AddChoice(DIA_Dragon_AV_OpenHram, " No, wait. " ,DIA_Dragon_AV_OpenHram_No);
+	Info_AddChoice(DIA_Dragon_AV_OpenHram, " Open it already! " ,DIA_Dragon_AV_OpenHram_Yes);
 };
 
 func void DIA_Dragon_AV_OpenHram_No()
 {
-	AI_Output(other,self,"DIA_Dragon_AV_OpenHram_No_01_00");	//Нет, постой.
-	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_No_01_01");	//Твоя неуверенность немного пугает меня...
-	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_No_01_02");	//Однако действительно лучше хорошо подготовиться, ибо предстоящий бой будет тяжелым.
+	AI_Output(other,self, " DIA_Dragon_AV_OpenHram_No_01_00 " );	// No, wait.
+	AI_Output(self,other, " DIA_Dragon_AV_OpenHram_No_01_01 " );	// Your lack of confidence scares me a little...
+	AI_Output(self,other, " DIA_Dragon_AV_OpenHram_No_01_02 " );	// However, it's really better to prepare well, because the upcoming fight will be tough.
 	Info_ClearChoices(DIA_Dragon_AV_OpenHram);
 };
 
 func void DIA_Dragon_AV_OpenHram_Yes()
 {
-	AI_Output(other,self,"DIA_Dragon_AV_OpenHram_Yes_01_00");	//Открывай уже!
-	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_Yes_01_01");	//Ворота храма открыты... Удачи тебе в битве, избранник! И да пребудет с тобой Аданос.
+	AI_Output(other,self, " DIA_Dragon_AV_OpenHram_Yes_01_00 " );	// Open already!
+	AI_Output(self,other, " DIA_Dragon_AV_OpenHram_Yes_01_01 " );	// The gates of the temple are open... Good luck in battle, chosen one! And may Adanos be with you.
 	AI_StopProcessInfos(self);
 
 	Wld_PlayEffect("SPELLFX_THUNDERSTORM_RAIN_NOCOL",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("SPELLFX_THUNDERSTORM_SCREENBLEND",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
-	Wld_SendTrigger("EVT_RAVENTEMPLEDOOR_01");
+	Wld_SendTrigger( " EVT_RAVENTEMPLEDOOR_01 " );
 	HramDoorOpen = TRUE;
 
 	if(SBMODE == TRUE)
