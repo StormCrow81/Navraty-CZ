@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_2160_CEDRIC_EXIT(C_Info)
 {
 	npc = pal_2160_cedric;
@@ -28,7 +29,7 @@ instance DIA_PAL_2160_CEDRIC_TEACH(C_Info)
 	condition = dia_pal_2160_cedric_teach_condition;
 	information = dia_pal_2160_cedric_teach_info;
 	permanent = TRUE;
-	description = "Я готов к тренировке.";
+	description = " I'm ready to train. " ;
 };
 
 
@@ -42,10 +43,10 @@ func int dia_pal_2160_cedric_teach_condition()
 
 func void dia_pal_2160_cedric_teach_info()
 {
-	AI_Output(other,self,"DIA_Cedric_Teach_15_00");	//Я готов к тренировке.
+	AI_Output(other,self, " DIA_Cedric_Teach_15_00 " );	// I'm ready to train.
 	if(other.HitChance[NPC_TALENT_1H] >= 90)
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_01");	//Ты выучил все о бое на мечах. Я не могу больше ничего показать тебе.
+		AI_Output(self,other, " DIA_Cedric_Teach_12_01 " );	// You learned all about sword fighting. I can't show you anymore.
 		DIA_Cedric_Teach_permanent = TRUE;
 	}
 	else
