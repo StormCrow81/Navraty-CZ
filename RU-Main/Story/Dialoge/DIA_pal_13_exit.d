@@ -26,7 +26,7 @@ instance DIA_PAL_13_STANDARD(C_Info)
 	condition = dia_pal_13_standard_condition;
 	information = dia_pal_13_standard_info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
@@ -47,4 +47,3 @@ func void b_assignambientinfos_pal_13(var C_Npc slf)
 	dia_pal_13_exit.npc = Hlp_GetInstanceID(slf);
 	dia_pal_13_standard.npc = Hlp_GetInstanceID(slf);
 };
-
