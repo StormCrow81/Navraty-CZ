@@ -1,3 +1,4 @@
+
 instance DIA_VLK_664_Masbo_EXIT(C_Info)
 {
 	npc = VLK_664_Masbo;
@@ -18,7 +19,7 @@ func void DIA_VLK_664_Masbo_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_VLK_664_Masbo_Hallo(C_Info)
+instance DIA_VLK_664_Masbo_Hallo (C_Info)
 {
 	npc = VLK_664_Masbo;
 	nr = 1;
@@ -38,17 +39,17 @@ func int DIA_VLK_664_Masbo_Hallo_Condition()
 
 func void DIA_VLK_664_Masbo_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Hallo_01_00");	//Эй, парень! Хочешь подраться?
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Hallo_01_00 " );	// Hey man! Do you want to fight?
 };
 
-instance DIA_VLK_664_Masbo_Intro(C_Info)
+instance DIA_VLK_664_Masbo_Intro (C_Info)
 {
 	npc = VLK_664_Masbo;
 	nr = 5;
 	condition = DIA_VLK_664_Masbo_Intro_Condition;
 	information = DIA_VLK_664_Masbo_Intro_Info;
 	permanent = FALSE;
-	description = "Что ты имеешь ввиду?";
+	description = " What do you mean? " ;
 };
 
 func int DIA_VLK_664_Masbo_Intro_Condition()
@@ -58,15 +59,15 @@ func int DIA_VLK_664_Masbo_Intro_Condition()
 
 func void DIA_VLK_664_Masbo_Intro_Info()
 {
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Intro_01_00");	//Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Intro_01_01");	//То, что ты можешь неплохо заработать, если умеешь хорошо работать кулаками.
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Intro_01_02");	//Видишь тех парней? Так вот, это - лучшие бойцы Хориниса!
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Intro_01_03");	//Если сможешь победить кого-нибудь из них, заработаешь огромную кучу золота.
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Intro_01_04");	//Звучит неплохо!
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Intro_01_05");	//Еще бы! Однако у нас есть одно правило: тот, кто хочет драться, вначале должен заплатить небольшой денежный взнос.
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Intro_01_06");	//Победивший в драке забирает обе ставки. Ну, а проигравший остается ни с чем.
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Intro_01_07");	//И сколько я должен внести?
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Intro_01_08");	//Всего навсего сто золотых монет! Так что вначале хорошенько подумай, прежде чем решишься выйти на бой.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Intro_01_00 " );	// What do you mean?
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Intro_01_01 " );	// That you can make good money if you can work well with your fists.
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Intro_01_02 " );	// See those guys? So, these are the best fighters of Khorinis!
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Intro_01_03 " );	// If you can defeat any of them, you'll earn a huge pile of gold.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Intro_01_04 " );	// Sounds good!
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Intro_01_05 " );	// Still! However, we have one rule: whoever wants to fight must first pay a small monetary contribution.
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Intro_01_06 " );	// Winner of the fight takes both bets. Well, the loser is left with nothing.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Intro_01_07 " );	// And how much should I deposit?
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Intro_01_08 " );	// Just a hundred gold coins! So first think carefully before you decide to go into battle.
 };
 
 instance DIA_VLK_664_Masbo_Fight(C_Info)
@@ -76,12 +77,12 @@ instance DIA_VLK_664_Masbo_Fight(C_Info)
 	condition = DIA_VLK_664_Masbo_Fight_Condition;
 	information = DIA_VLK_664_Masbo_Fight_Info;
 	permanent = TRUE;
-	description = "Я хочу драться!";
+	description = " I want to fight! " ;
 };
 
 func int DIA_VLK_664_Masbo_Fight_Condition()
 {
-	if((Npc_KnowsInfo(hero,DIA_VLK_664_Masbo_Intro) == TRUE) && (TaverneFightEnd == FALSE) && (TaverneFightStart == FALSE))
+	if ((Npc_KnowsInfo(hero,DIA_VLK_664_Masbo_Intro) ==  TRUE ) && (TavernFightEnd ==  FALSE ) && (TavernFightStart ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -89,13 +90,13 @@ func int DIA_VLK_664_Masbo_Fight_Condition()
 
 func void DIA_VLK_664_Masbo_Fight_Info()
 {
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_01_00");	//Я хочу драться.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_01_00 " );	// I want to fight.
 
-	if((OlafWin == FALSE) || (GradenWin == FALSE) || (BramWin == FALSE) || (ValgardWin == FALSE))
+	if ((OlafWin ==  FALSE ) || (GradenWin ==  FALSE ) || (BramWin ==  FALSE ) || (ValgardWin ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_01_01");	//Хорошо! Но вначале заплати денежный взнос.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_01_01 " );	// Good! But first, pay the cash deposit.
 		Info_ClearChoices(DIA_VLK_664_Masbo_Fight);
-		Info_AddChoice(DIA_VLK_664_Masbo_Fight,"У меня нет столько.",DIA_VLK_664_Masbo_Fight_NoGold);
+		Info_AddChoice(DIA_VLK_664_Masbo_Fight, " I don't have that much. " ,DIA_VLK_664_Masbo_Fight_NoGold);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= 100)
 		{
@@ -105,62 +106,62 @@ func void DIA_VLK_664_Masbo_Fight_Info()
 	else
 	{
 		B_RaiseAttribute_Bonus(hero,ATR_STRENGTH,5);
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_01_02");	//Ты уже всех побил тут! Больше с тобой никто не хочет драться.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_01_02 " );	// You already beat everyone here! Nobody wants to fight you anymore.
 		TaverneFightEnd = TRUE;
 	};
 };
 
 func void DIA_VLK_664_Masbo_Fight_NoGold()
 {
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_NoGold_01_00");	//У меня нет столько золота.
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_NoGold_01_01");	//Тогда найди его! Без вступительного взноса боя не будет.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_NoGold_01_00 " );	// I don't have that much gold.
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_NoGold_01_01 " );	// Then find him! There will be no fight without an entry fee.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_VLK_664_Masbo_Fight_Gold()
 {
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Gold_01_00");	//Вот, держи.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Gold_01_00 " );	// Here, take this.
 	B_GiveInvItems(other,self,ItMi_Gold,100);
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Gold_01_01");	//Отлично! Тогда выбирай, с кем ты хочешь драться.
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Gold_01_01 " );	// Great! Then choose who you want to fight.
 	Npc_RemoveInvItems(self,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 	TaverneFightStart = TRUE;
 	Info_ClearChoices(DIA_VLK_664_Masbo_Fight);
 
 	if(OlafWin == FALSE)
 	{
-		Info_AddChoice(DIA_VLK_664_Masbo_Fight,"Курт 'Железный кулак'.",DIA_VLK_664_Masbo_Fight_Olaf);
+		Info_AddChoice(DIA_VLK_664_Masbo_Fight, " Iron Fist Kurt. " ,DIA_VLK_664_Masbo_Fight_Olaf);
 	};
-	if(GradenWin == FALSE)
+	if (GradenWin ==  FALSE )
 	{
-		Info_AddChoice(DIA_VLK_664_Masbo_Fight,"Граден 'Кувалда'.",DIA_VLK_664_Masbo_Fight_Graden);
+		Info_AddChoice(DIA_VLK_664_Masbo_Fight, " Sledgehammer Graden. " ,DIA_VLK_664_Masbo_Fight_Graden);
 	};
 	if(BramWin == FALSE)
 	{
-		Info_AddChoice(DIA_VLK_664_Masbo_Fight,"Брам 'Дикарь'.",DIA_VLK_664_Masbo_Fight_Bram);
+		Info_AddChoice(DIA_VLK_664_Masbo_Fight, " Bram 'Savage'. " ,DIA_VLK_664_Masbo_Fight_Bram);
 	};
 	if(ValgardWin == FALSE)
 	{
-		Info_AddChoice(DIA_VLK_664_Masbo_Fight,"Вальгард 'Череполом'.",DIA_VLK_664_Masbo_Fight_Valgard);
+		Info_AddChoice(DIA_VLK_664_Masbo_Fight, " Valgard 'Cherepolom'. " ,DIA_VLK_664_Masbo_Fight_Valgard);
 	};
 };
 
 func void DIA_VLK_664_Masbo_Fight_Olaf()
 {
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Olaf_01_00");	//Я хочу драться с Куртом по прозвищу 'Железный кулак'.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Olaf_01_00 " );	// I want to fight 'Iron Fist' Kurt.
 
 	if(KnowFightRulesFist == FALSE)
 	{
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_01");	//Хорошо! Тогда пока вы не начали, я вкратце объясню тебе правила.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_02");	//Вначале, перед боем, обязательно поприветствуй своего противника. У нас так принято!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_03");	//Во вторых, в бою можно использовать только свои кулаки!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_04");	//Если обнажишь свое оружие или используешь какую-нибудь магию, то для тебя бой будет окончен. Причем навсегда!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_05");	//Ну и последнее - вы сражаетесь в пределах этой части таверны. Отступишь дальше и считай, что ты проиграл поединок.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_06");	//Тебе все ясно?
-		AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Olaf_01_07");	//Яснее не бывает.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_01 " );	// Good! Then before you start, I will briefly explain the rules to you.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_02 " );	// First, before the fight, be sure to greet your opponent. We are so accepted!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_03 " );	// Second, you can only use your fists in combat!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_04 " );	// If you draw your weapon or use some kind of magic, then the fight will be over for you. And forever!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_05 " );	// Last but not least, you are fighting within this part of the tavern. Retreat further and consider that you lost the duel.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_06 " );	// Is everything clear to you?
+		AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Olaf_01_07 " );	// It doesn't get any clearer.
 		KnowFightRulesFist = TRUE;
 	};
 
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_08");	//Отлично! Тогда выходи на ринг.
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_08 " );	// Great! Then step into the ring.
 	Fight_Olaf = TRUE;
 	AI_StopProcessInfos(self);
 	B_StartOtherRoutine(VLK_660_Olaf,"GotoFight");
@@ -171,21 +172,21 @@ func void DIA_VLK_664_Masbo_Fight_Olaf()
 
 func void DIA_VLK_664_Masbo_Fight_Graden()
 {
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Graden_01_00");	//Я хочу драться с Граденом по прозвищу 'Кувалда'.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Graden_01_00 " );	// I want to fight 'Maulder' Graden.
 
 	if(KnowFightRulesFist == FALSE)
 	{
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_01");	//Хорошо! Тогда пока вы не начали, я вкратце объясню тебе правила.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_02");	//Вначале, перед боем, обязательно поприветствуй своего противника. У нас так принято!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_03");	//Во вторых, в бою можно использовать только свои кулаки!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_04");	//Если обнажишь свое оружие или используешь какую-нибудь магию, то для тебя бой будет окончен. Причем навсегда!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_05");	//Ну и последнее - вы сражаетесь в пределах этой части таверны. Отступишь дальше и считай, что ты проиграл поединок.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_06");	//Тебе все ясно?
-		AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Olaf_01_07");	//Яснее не бывает.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_01 " );	// Good! Then before you start, I will briefly explain the rules to you.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_02 " );	// First, before the fight, be sure to greet your opponent. We are so accepted!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_03 " );	// Second, you can only use your fists in combat!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_04 " );	// If you draw your weapon or use some kind of magic, then the fight will be over for you. And forever!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_05 " );	// Last but not least, you are fighting within this part of the tavern. Retreat further and consider that you lost the duel.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_06 " );	// Is everything clear to you?
+		AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Olaf_01_07 " );	// It doesn't get any clearer.
 		KnowFightRulesFist = TRUE;
 	};
 
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_08");	//Отлично! Тогда выходи на ринг.
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_08 " );	// Great! Then step into the ring.
 	Fight_Graden = TRUE;
 	AI_StopProcessInfos(self);
 	B_StartOtherRoutine(VLK_661_Graden,"GotoFight");
@@ -196,21 +197,21 @@ func void DIA_VLK_664_Masbo_Fight_Graden()
 
 func void DIA_VLK_664_Masbo_Fight_Bram()
 {
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Bram_01_00");	//Я хочу драться с Брамом по прозвищу 'Дикарь'.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Bram_01_00 " );	// I want to fight 'The Savage' Brahm.
 
 	if(KnowFightRulesFist == FALSE)
 	{
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_01");	//Хорошо! Тогда пока вы не начали, я вкратце объясню тебе правила.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_02");	//Вначале, перед боем, обязательно поприветствуй своего противника. У нас так принято!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_03");	//Во вторых, в бою можно использовать только свои кулаки!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_04");	//Если обнажишь свое оружие или используешь какую-нибудь магию, то для тебя бой будет окончен. Причем навсегда!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_05");	//Ну и последнее - вы сражаетесь в пределах этой части таверны. Отступишь дальше и считай, что ты проиграл поединок.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_06");	//Тебе все ясно?
-		AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Olaf_01_07");	//Яснее не бывает.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_01 " );	// Good! Then before you start, I will briefly explain the rules to you.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_02 " );	// First, before the fight, be sure to greet your opponent. We are so accepted!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_03 " );	// Second, you can only use your fists in combat!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_04 " );	// If you draw your weapon or use some kind of magic, then the fight will be over for you. And forever!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_05 " );	// Last but not least, you are fighting within this part of the tavern. Retreat further and consider that you lost the duel.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_06 " );	// Is everything clear to you?
+		AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Olaf_01_07 " );	// It doesn't get any clearer.
 		KnowFightRulesFist = TRUE;
 	};
 
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_08");	//Отлично! Тогда выходи на ринг.
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_08 " );	// Great! Then step into the ring.
 	Fight_Bram = TRUE;
 	AI_StopProcessInfos(self);
 	B_StartOtherRoutine(VLK_662_Bram,"GotoFight");
@@ -221,21 +222,21 @@ func void DIA_VLK_664_Masbo_Fight_Bram()
 
 func void DIA_VLK_664_Masbo_Fight_Valgard()
 {
-	AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Valgard_01_00");	//Я хочу драться с Вальгардом по прозвищу 'Череполом'.
+	AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Valgard_01_00 " );	// I want to fight 'Skull' Valgarde.
 
 	if(KnowFightRulesFist == FALSE)
 	{
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_01");	//Хорошо! Тогда пока вы не начали, я вкратце объясню тебе правила.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_02");	//Вначале, перед боем, обязательно поприветствуй своего противника. У нас так принято!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_03");	//Во вторых, в бою можно использовать только свои кулаки!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_04");	//Если обнажишь свое оружие или используешь какую-нибудь магию, то для тебя бой будет окончен. Причем навсегда!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_05");	//Ну и последнее - вы сражаетесь в пределах этой части таверны. Отступишь дальше и считай, что ты проиграл поединок.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_06");	//Тебе все ясно?
-		AI_Output(other,self,"DIA_VLK_664_Masbo_Fight_Olaf_01_07");	//Яснее не бывает.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_01 " );	// Good! Then before you start, I will briefly explain the rules to you.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_02 " );	// First, before the fight, be sure to greet your opponent. We are so accepted!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_03 " );	// Second, you can only use your fists in combat!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_04 " );	// If you draw your weapon or use some kind of magic, then the fight will be over for you. And forever!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_05 " );	// Last but not least, you are fighting within this part of the tavern. Retreat further and consider that you lost the duel.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_06 " );	// Is everything clear to you?
+		AI_Output(other,self, " DIA_VLK_664_Masbo_Fight_Olaf_01_07 " );	// It doesn't get any clearer.
 		KnowFightRulesFist = TRUE;
 	};
 
-	AI_Output(self,other,"DIA_VLK_664_Masbo_Fight_Olaf_01_08");	//Отлично! Тогда выходи на ринг.
+	AI_Output(self,other, " DIA_VLK_664_Masbo_Fight_Olaf_01_08 " );	// Great! Then step into the ring.
 	Fight_Valgard = TRUE;
 	AI_StopProcessInfos(self);
 	B_StartOtherRoutine(VLK_663_Valgard,"GotoFight");
@@ -267,14 +268,14 @@ func void DIA_VLK_664_Masbo_FightEnd_Info()
 	if(FightCurrentWin == TRUE)
 	{
 		B_GivePlayerXP(200);
-		AI_Output(self,other,"DIA_VLK_664_Masbo_FightEnd_01_00");	//Поздравляю с победой, приятель!
-		AI_Output(self,other,"DIA_VLK_664_Masbo_FightEnd_01_01");	//Вот, возьми свои деньги.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_FightEnd_01_00 " );	// Congrats on your win, mate!
+		AI_Output(self,other, " DIA_VLK_664_Masbo_FightEnd_01_01 " );	// Here, take your money.
 		B_GiveInvItems(self,other,ItMi_Gold,200);
 	}
 	else if(FightCurrentLost == TRUE)
 	{
-		AI_Output(self,other,"DIA_VLK_664_Masbo_FightEnd_01_02");	//Извини, приятель, но ты проиграл.
-		AI_Output(self,other,"DIA_VLK_664_Masbo_FightEnd_01_03");	//Твои деньги ушли победителю.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_FightEnd_01_02 " );	// Sorry buddy, but you lost.
+		AI_Output(self,other, " DIA_VLK_664_Masbo_FightEnd_01_03 " );	// Your money went to the winner.
 	};
 
 	FightCurrentWin = FALSE;
@@ -283,7 +284,7 @@ func void DIA_VLK_664_Masbo_FightEnd_Info()
 	AI_StopProcessInfos(self);
 };
 
-//------------------------------бойцы--------------------------------------------------------------
+// ------------------------------fighters----------------- ----------------------------------------------------
 
 instance DIA_VLK_660_Olaf_EXIT(C_Info)
 {
@@ -361,9 +362,9 @@ func void DIA_VLK_660_Olaf_Fight_Info()
 	AI_UnequipWeapons(self);
 	B_ClearWeapons(self);
 	Fight_Olaf_Now = TRUE;
-	Fight_Olaf = FALSE;
+	Fight_Olaf = FALSE ;
 	Info_ClearChoices(DIA_VLK_660_Olaf_Fight);
-	Info_AddChoice(DIA_VLK_660_Olaf_Fight,"Начнем бой!",DIA_VLK_660_Olaf_Fight_Now);
+	Info_AddChoice(DIA_VLK_660_Olaf_Fight, " Let's fight! " ,DIA_VLK_660_Olaf_Fight_Now);
 };
 
 func void DIA_VLK_660_Olaf_Fight_Now()
@@ -373,7 +374,7 @@ func void DIA_VLK_660_Olaf_Fight_Now()
 	B_Attack(self,other,AR_NONE,1);
 };
 
-instance DIA_VLK_661_Graden_EXIT(C_Info)
+instance DIA_VLK_661_Graden_EXIT (C_Info)
 {
 	npc = VLK_661_Graden;
 	nr = 999;
@@ -393,12 +394,12 @@ func void DIA_VLK_661_Graden_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_VLK_661_Graden_GetOff(C_Info)
+instance DIA_VLK_661_Degrees_GetOff (C_Info)
 {
 	npc = VLK_661_Graden;
 	nr = 10;
 	condition = DIA_VLK_661_Graden_GetOff_condition;
-	information = DIA_VLK_661_Graden_GetOff_info;
+	information = DIA_VLK_661_Degrees_GetOff_info;
 	permanent = TRUE;
 	important = TRUE;
 };
@@ -411,7 +412,7 @@ func int DIA_VLK_661_Graden_GetOff_Condition()
 	};
 };
 
-func void DIA_VLK_661_Graden_GetOff_Info()
+func void DIA_VLK_661_Degrees_GetOff_Info()
 {
 	if(GradenWin == TRUE)
 	{
@@ -449,9 +450,9 @@ func void DIA_VLK_661_Graden_Fight_Info()
 	AI_UnequipWeapons(self);
 	B_ClearWeapons(self);
 	Fight_Graden_Now = TRUE;
-	Fight_Graden = FALSE;
+	Fight_Graden = FALSE ;
 	Info_ClearChoices(DIA_VLK_661_Graden_Fight);
-	Info_AddChoice(DIA_VLK_661_Graden_Fight,"Начнем бой!",DIA_VLK_661_Graden_Fight_Now);
+	Info_AddChoice(DIA_VLK_661_Graden_Fight, " Let's fight! " ,DIA_VLK_661_Graden_Fight_Now);
 };
 
 func void DIA_VLK_661_Graden_Fight_Now()
@@ -539,7 +540,7 @@ func void DIA_VLK_662_Bram_Fight_Info()
 	Fight_Bram_Now = TRUE;
 	Fight_Bram = FALSE;
 	Info_ClearChoices(DIA_VLK_662_Bram_Fight);
-	Info_AddChoice(DIA_VLK_662_Bram_Fight,"Начнем бой!",DIA_VLK_662_Bram_Fight_Now);
+	Info_AddChoice(DIA_VLK_662_Bram_Fight, " Let's fight! " ,DIA_VLK_662_Bram_Fight_Now);
 };
 
 func void DIA_VLK_662_Bram_Fight_Now()
@@ -625,9 +626,9 @@ func void DIA_VLK_663_Valgard_Fight_Info()
 	AI_UnequipWeapons(self);
 	B_ClearWeapons(self);
 	Fight_Valgard_Now = TRUE;
-	Fight_Valgard = FALSE;
+	Fight_Valgard = FALSE ;
 	Info_ClearChoices(DIA_VLK_663_Valgard_Fight);
-	Info_AddChoice(DIA_VLK_663_Valgard_Fight,"Начнем бой!",DIA_VLK_663_Valgard_Fight_Now);
+	Info_AddChoice(DIA_VLK_663_Valgard_Fight, " No matter what! " ,DIA_VLK_663_Valgard_Fight_Now);
 };
 
 func void DIA_VLK_663_Valgard_Fight_Now()
