@@ -1,4 +1,5 @@
 
+
 instance DIA_Girion_EXIT(C_Info)
 {
 	npc = Pal_207_Girion;
@@ -21,7 +22,7 @@ func void DIA_Girion_EXIT_Info()
 };
 
 
-instance DIA_Girion_Hallo(C_Info)
+instances DIA_Girion_Hello (C_Info)
 {
 	npc = Pal_207_Girion;
 	nr = 2;
@@ -42,7 +43,7 @@ func int DIA_Girion_Hallo_Condition()
 
 func void DIA_Girion_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Girion_Hallo_08_00");	//Я Гирион, мастер боя двуручным оружием и паладин короля. По какому поводу ты беспокоишь меня?
+	AI_Output(self,other, " DIA_Girion_Hallo_08_00 " );	// I am Girion, master of two-handed combat and paladin of the king. Why are you bothering me?
 };
 
 
@@ -53,7 +54,7 @@ instance DIA_Girion_CanTeach(C_Info)
 	condition = DIA_Girion_CanTeach_Condition;
 	information = DIA_Girion_CanTeach_Info;
 	permanent = TRUE;
-	description = "Ты можешь обучить меня?";
+	description = " Can you teach me? " ;
 };
 
 
@@ -67,18 +68,18 @@ func int DIA_Girion_CanTeach_Condition()
 
 func void DIA_Girion_CanTeach_Info()
 {
-	AI_Output(other,self,"DIA_Girion_CanTeach_15_00");	//Ты можешь обучить меня?
+	AI_Output(other,self, " DIA_Girion_CanTeach_15_00 " );	// Can you teach me?
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Girion_CanTeach_08_01");	//Это хорошо, что ты хочешь обучиться самому благородному из всех боевых стилей. Как и подобает настоящему воину Инноса.
-		AI_Output(self,other,"DIA_Girion_CanTeach_08_02");	//Я обучу тебя. Обратись ко мне, когда будешь готов.
+		AI_Output(self,other, " DIA_Girion_CanTeach_08_01 " );	// It's good that you want to learn the noblest of all fighting styles. As befits a true warrior of Innos.
+		AI_Output(self,other, " DIA_Girion_CanTeach_08_02 " );	// I'll teach you. Contact me when you're ready.
 		Girion_Teach2H = TRUE;
-		B_LogEntry(TOPIC_CityTeacher,"Паладин Гирион может обучить меня искусству сражения двуручным оружием.");
+		B_LogEntry(TOPIC_CityTeacher, " Paladin Girion can teach me two-handed combat. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Girion_CanTeach_08_03");	//Если ты хочешь обучиться чему-нибудь, тебе лучше поискать учителя не из нашего ордена.
-		AI_Output(self,other,"DIA_Girion_CanTeach_08_04");	//Я воин, а не учитель.
+		AI_Output(self,other, " DIA_Girion_CanTeach_08_03 " );	// If you want to learn something, you'd better look for a teacher not from our order.
+		AI_Output(self,other, " DIA_Girion_CanTeach_08_04 " );	// I'm a warrior, not a teacher.
 	};
 };
 
@@ -90,7 +91,7 @@ instance DIA_Girion_Teach(C_Info)
 	condition = DIA_Girion_Teach_Condition;
 	information = DIA_Girion_Teach_Info;
 	permanent = TRUE;
-	description = "Я готов к обучению.";
+	description = " I'm ready to learn. " ;
 };
 
 
@@ -110,7 +111,7 @@ var int girion_merk2h;
 func void DIA_Girion_Teach_Info()
 {
 	girion_merk2h = other.HitChance[NPC_TALENT_2H];
-	AI_Output(other,self,"DIA_Girion_Teach_15_00");	//Я готов к обучению.
+	AI_Output(other,self, " DIA_Girion_Teach_15_00 " );	// I'm ready to learn.
 	Info_ClearChoices(DIA_Girion_Teach);
 	Info_AddChoice(DIA_Girion_Teach,Dialog_Back,DIA_Girion_Teach_Back);
 	Info_AddChoice(DIA_Girion_Teach,b_buildlearnstringforfight(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),DIA_Girion_Teach_2H_1);
@@ -121,10 +122,10 @@ func void DIA_Girion_Teach_Back()
 {
 	if(other.HitChance[NPC_TALENT_2H] >= 90)
 	{
-		AI_Output(self,other,"DIA_DIA_Girion_Teach_08_00");	//Вообще-то говоря, твое обучение еще не завершено, но я больше ничему не могу научить тебя.
-		AI_Output(self,other,"DIA_DIA_Girion_Teach_08_01");	//Если ты хочешь отточить свое мастерство еще больше, тебе лучше поискать настоящего мастера меча.
-		AI_Output(other,self,"DIA_DIA_Girion_Teach_15_02");	//Где мне найти такого человека?
-		AI_Output(self,other,"DIA_DIA_Girion_Teach_08_03");	//Лорд Хаген - мастер-мечник. Он, наверняка сможет обучить тебя.
+		AI_Output(self,other, " DIA_DIA_Girion_Teach_08_00 " );	// Generally speaking, your training is not yet complete, but there is nothing more I can teach you.
+		AI_Output(self,other, " DIA_DIA_Girion_Teach_08_01 " );	// If you want to hone your craft even further, you'd better look for a real sword master.
+		AI_Output(other,self, " DIA_DIA_Girion_Teach_15_02 " );	// Where can I find such a person?
+		AI_Output(self,other, " DIA_DIA_Girion_Teach_08_03 " );	// Lord Hagen is a master swordsman. He will surely be able to teach you.
 		DIA_Girion_Teach_permanent = TRUE;
 	};
 	Info_ClearChoices(DIA_Girion_Teach);
@@ -137,19 +138,19 @@ func void DIA_Girion_Teach_2H_1()
 	{
 		if(Girion_Labercount == 0)
 		{
-			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_1_08_00");	//Сражайся с честью. Бой - наша жизнь, а что за жизнь без чести?
+			AI_Output(self,other, " DIA_DIA_Girion_Teach_2H_1_08_00 " );	// Fight with honor. Fight is our life, and what is life without honor?
 		};
 		if(Girion_Labercount == 1)
 		{
-			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_1_08_01");	//Будь осторожен и быстр в бою. Удивляй своего противника.
+			AI_Output(self,other, " DIA_DIA_Girion_Teach_2H_1_08_01 " );	// Be careful and fast in combat. Surprise your opponent.
 		};
 		if(Girion_Labercount == 2)
 		{
-			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_1_08_02");	//Никогда не вступай в бой неподготовленным. Неизвестно, сколько он будет длиться.
+			AI_Output(self,other, " DIA_DIA_Girion_Teach_2H_1_08_02 " );	// Never enter combat unprepared. It is not known how long it will last.
 		};
 		if(Girion_Labercount == 3)
 		{
-			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_1_08_03");	//Паладин всегда готов к бою. Но никогда не начинает бой, в котором не может победить.
+			AI_Output(self,other, " DIA_DIA_Girion_Teach_2H_1_08_03 " );	// The paladin is always ready for battle. But he never starts a fight that he cannot win.
 		};
 		Girion_Labercount = Girion_Labercount + 1;
 		if(Girion_Labercount >= 3)
@@ -170,19 +171,19 @@ func void DIA_Girion_Teach_2H_5()
 	{
 		if(Girion_Labercount == 0)
 		{
-			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_5_08_00");	//Паладин сражается не только мечом, но и головой.
+			AI_Output(self,other, " DIA_DIA_Girion_Teach_2H_5_08_00 " );	// The paladin fights not only with the sword, but also with the head.
 		};
 		if(Girion_Labercount == 1)
 		{
-			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_5_08_01");	//Ты должен понимать, когда лучше отступить.
+			AI_Output(self,other, " DIA_DIA_Girion_Teach_2H_5_08_01 " );	// You need to know when to back off.
 		};
 		if(Girion_Labercount == 2)
 		{
-			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_5_08_02");	//Помни, если ты сражаешься хорошо, ты контролируешь своего противника и не даешь ему шанса контролировать себя.
+			AI_Output(self,other, " DIA_DIA_Girion_Teach_2H_5_08_02 " );	// Remember, if you fight well, you control your opponent and don't give him a chance to control you.
 		};
 		if(Girion_Labercount == 3)
 		{
-			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_5_08_03");	//Отступление - это всегда потеря.
+			AI_Output(self,other, " DIA_DIA_Girion_Teach_2H_5_08_03 " );	// Retreat is always a loss.
 		};
 		Girion_Labercount = Girion_Labercount + 1;
 		if(Girion_Labercount >= 3)
@@ -217,20 +218,20 @@ func int DIA_Girion_CATCHPLAYERSTOLENSHIP_Condition()
 
 func void DIA_Girion_CATCHPLAYERSTOLENSHIP_Info()
 {
-	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_08_00");	//Эй! Ты можешь сказать мне, что ты делаешь здесь?
+	AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_08_00 " );	// Hey! Can you tell me what are you doing here?
 	Info_ClearChoices(DIA_Girion_CATCHPLAYERSTOLENSHIP);
-	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP,"Я не знаю, о чем ты говоришь.",DIA_Girion_CATCHPLAYERSTOLENSHIP_no);
-	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP,"Прочь с моей дороги, или мне придется убить тебя.",DIA_Girion_CATCHPLAYERSTOLENSHIP_weg);
-	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP,"Мне нужен этот корабль.",DIA_Girion_CATCHPLAYERSTOLENSHIP_ship);
+	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP, " I don't know what you're talking about. " ,DIA_Girion_CATCHPLAYERSTOLENSHIP_no);
+	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP, " Get out of my way or I'll have to kill you. " ,DIA_Girion_CATCHPLAYERSTOLENSHIP_weg);
+	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP, " I need this ship. " ,DIA_Girion_CATCHPLAYERSTOLENSHIP_ship);
 };
 
 func void DIA_Girion_CATCHPLAYERSTOLENSHIP_no()
 {
-	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_no_15_00");	//Я не знаю, о чем ты говоришь.
-	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_no_08_01");	//Я говорю о том, что ты сделал с корабельной стражей. Это дело плохо пахнет.
+	AI_Output(other,self, " DIA_Girion_CATCHPLAYERSTOLENSHIP_no_15_00 " );	// I don't know what you're talking about.
+	AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_no_08_01 " );	// I'm talking about what you did to the ship guards. This thing smells bad.
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_no_08_02");	//Даже несмотря на то, что ты маг, я не доверяю тебе.
+		AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_no_08_02 " );	// Even though you're a mage, I don't trust you.
 	};
 };
 
@@ -239,11 +240,11 @@ var int Girion_WantstoKillSC;
 
 func void DIA_Girion_CATCHPLAYERSTOLENSHIP_weg()
 {
-	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_15_00");	//Прочь с моей дороги, или мне придется убить тебя.
-	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_08_01");	//Возможно, тебе удалось обмануть охрану корабля, но со мной тебе так просто не справиться, мой маленький друг.
+	AI_Output(other,self, " DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_15_00 " );	// Get out of my way or I'll have to kill you.
+	AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_08_01 " );	// You may have fooled the ship's guards, but you can't easily deal with me, my little friend.
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_08_02");	//Даже хотя ты один из нас, это не дает тебе права воровать собственность короля. Умри, проклятый предатель.
+		AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_08_02 " );	// Even though you're one of us, that doesn't give you the right to steal the king's property. Die, damned traitor.
 	};
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
@@ -252,29 +253,29 @@ func void DIA_Girion_CATCHPLAYERSTOLENSHIP_weg()
 
 func void B_GirionStayOnShip()
 {
-	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_09");	//Когда мы покончим с этим делом, ты вернешь этот корабль обратно мне, понятно?
+	AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_09 " );	// When we're done with this, you'll return this ship back to me, okay?
 };
 
 func void DIA_Girion_CATCHPLAYERSTOLENSHIP_ship()
 {
-	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_00");	//Мне нужен твой корабль. И я заберу его.
+	AI_Output(other,self, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_00 " );	// I need your ship. And I'll take it.
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF) || (hero.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_01");	//Ты не можешь сделать это. Транспортировка руды...
+		AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_01 " );	// You can't do this. Transportation of ore...
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_02");	//Как ты смеешь?! Ты, вонючее отродье...
+		AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_02 " );	// How dare you?! You smelly bastard...
 	};
-	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_03");	//Руды в Долине Рудников недостаточно, чтобы удовлетворить потребности короля. Я был там. Там нечего делать. Миссия Хагена - фарс чистой воды.
-	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_04");	//Настоящий враг пустил свои корни на острове неподалеку отсюда. Я поплыву туда и положу конец этому всему.
-	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_05");	//Либо присоединяйся ко мне, либо мне придется разделаться с тобой. Выбирай.
-	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_06");	//М-м-м. Похоже, у меня нет выбора.
+	AI_Output(other,self, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_03 " );	// There isn't enough ore in the Valley of Mines to meet the needs of the king. I was there. There is nothing to do. Hagen's mission is a pure farce.
+	AI_Output(other,self, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_04 " );	// The real enemy has taken root on an island not far from here. I will swim there and put an end to all this.
+	AI_Output(other,self, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_05 " );	// Either join me or I'll have to deal with you. Choose.
+	AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_06 " );	// Mmm. It looks like I have no choice.
 	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_07");	//Правильно.
-	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_08");	//Ладно, хорошо. Я присоединюсь к тебе, но при одном условии.
+	AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_08 " );	// Okay, okay. I will join you, but on one condition.
 	B_GirionStayOnShip();
-	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_10");	//Я переживу это.
-	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_11");	//Тогда делай то, что должен. А я подожду тебя здесь.
+	AI_Output(other,self, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_10 " );	// I'll survive this.
+	AI_Output(self,other, " DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_11 " );	// Then do what you must. And I'll wait for you here.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Ship");
 	Crewmember_Count = Crewmember_Count + 1;
@@ -282,12 +283,12 @@ func void DIA_Girion_CATCHPLAYERSTOLENSHIP_ship()
 };
 
 
-instance DIA_Girion_Verrat(C_Info)
+instance DIA_Girion_Verrat (C_Info)
 {
 	npc = Pal_207_Girion;
 	nr = 2;
 	condition = DIA_Girion_Verrat_Condition;
-	information = DIA_Girion_Verrat_Info;
+	information = DIA_Girion_Treason_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
@@ -303,9 +304,9 @@ func int DIA_Girion_Verrat_Condition()
 
 func void DIA_Girion_Verrat_Info()
 {
-	AI_Output(self,other,"DIA_Girion_Verrat_08_00");	//Предатель!
+	AI_Output(self,other, " DIA_Girion_Verrat_08_00 " );	// Traitor!
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_DropDeadAndKill] = TRUE;
+	self.aivar[AIV_DropDeadAndKill] = TRUE ;
 	B_Attack(self,other,AR_NONE,1);
 };
 
@@ -349,7 +350,7 @@ instance DIA_Girion_PICKPOCKET(C_Info)
 
 func int DIA_Girion_PICKPOCKET_Condition()
 {
-	return C_Beklauen(73,280);
+	return  C_Robbery ( 73 , 280 );
 };
 
 func void DIA_Girion_PICKPOCKET_Info()
@@ -361,7 +362,7 @@ func void DIA_Girion_PICKPOCKET_Info()
 
 func void DIA_Girion_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Girion_PICKPOCKET);
 };
@@ -372,14 +373,14 @@ func void DIA_Girion_PICKPOCKET_BACK()
 };
 
 
-instance DIA_GIRION_NW_KAPITELORCATTACK(C_Info)
+instance DIA_GIRION_NW_KAPITELORCATTACK (C_Info)
 {
 	npc = Pal_207_Girion;
 	nr = 1;
 	condition = dia_girion_nw_kapitelorcattack_condition;
 	information = dia_girion_nw_kapitelorcattack_info;
 	permanent = FALSE;
-	description = "Ты уже слышал - город захвачен!";
+	description = " You've already heard - the city is captured! " ;
 };
 
 
@@ -394,15 +395,15 @@ func int dia_girion_nw_kapitelorcattack_condition()
 func void dia_girion_nw_kapitelorcattack_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Girion_NW_KapitelOrcAttack_01_00");	//Ты уже слышал? Город захвачен!
-	AI_Output(self,other,"DIA_Girion_NW_KapitelOrcAttack_01_01");	//(печально) Слышал. И очень сожалею, что меня не было в тот момент рядом с моими братьями.
-	AI_Output(self,other,"DIA_Girion_NW_KapitelOrcAttack_01_03");	//Им нужна была моя помощь! А я их подвел...(обреченно)
-	AI_Output(self,other,"DIA_Girion_NW_KapitelOrcAttack_01_06");	//Я готов отдать свою жизнь во славу Инноса и его величия. В особенности, сражаясь с такими мерзкими тварями, как эти орки!
-	AI_Output(other,self,"DIA_Girion_NW_KapitelOrcAttack_01_07");	//Уверен, что у тебя еще будет хороший шанс доказать это.
-	AI_Output(self,other,"DIA_Girion_NW_KapitelOrcAttack_01_11");	//Да. Я слышал, что несколько парней решили пробиваться из города с боем. Я решил к ним присоединиться!
-	AI_Output(self,other,"DIA_Girion_NW_KapitelOrcAttack_01_12");	//Это хорошая возможность отомстить оркам за смерть моих братьев.
-	AI_Output(other,self,"DIA_Girion_NW_KapitelOrcAttack_01_16");	//Тогда удачи тебе, Гирион! Надеюсь, что мы еще встретимся.
-	B_LogEntry(TOPIC_HELPCREW,"Я не стал отговаривать паладина Гириона от его идеи выбираться из города через толпы орков. Похоже, после всего случившегося он просто сам ищет себе смерть! К таким людям обычно смерть равнодушна.");
+	AI_Output(other,self, " DIA_Girion_NW_KapitelOrcAttack_01_00 " );	// Have you heard? The city has been taken!
+	AI_Output(self,other, " DIA_Girion_NW_KapitelOrcAttack_01_01 " );	// (sadly) I heard. And I am very sorry that I was not at that moment next to my brothers.
+	AI_Output(self,other, " DIA_Girion_NW_KapitelOrcAttack_01_03 " );	// They needed my help! And I let them down ... (doomed)
+	AI_Output(self,other, " DIA_Girion_NW_KapitelOrcAttack_01_06 " );	// I am ready to give my life for the glory of Innos and his greatness. Especially when fighting vile creatures like those orcs!
+	AI_Output(other,self, " DIA_Girion_NW_KapitelOrcAttack_01_07 " );	// I'm sure you'll still have a good chance to prove it.
+	AI_Output(self,other, " DIA_Girion_NW_KapitelOrcAttack_01_11 " );	// Yes. I heard that a few guys decided to fight their way out of the city. I decided to join them!
+	AI_Output(self,other, " DIA_Girion_NW_KapitelOrcAttack_01_12 " );	// This is a good opportunity to get revenge on the orcs for the death of my brothers.
+	AI_Output(other,self, " DIA_Girion_NW_KapitelOrcAttack_01_16 " );	// Then good luck to you, Girion! Hope we meet again.
+	B_LogEntry( TOPIC_HELPCREW , " I didn't dissuade Paladin Girion from his idea of ​​getting out of the city through the crowds of orcs. It seems that after all that has happened, he is just looking for his own death! Death is usually indifferent to such people. " );
 	PERMCOUNTBACKNW = PERMCOUNTBACKNW + 1;
 	GIRIONBATTLETHROUGTH = TRUE;
 	b_countbackcrew();
@@ -423,7 +424,7 @@ instance DIA_PAL_207_GIRION_FUCKOFF(C_Info)
 
 func int dia_pal_207_girion_fuckoff_condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (GIRIONCAPTURED == TRUE) && (HORINISISFREE == FALSE))
+	if ( Npc_IsInState ( self , ZS_Talk ) && ( GIRIONCAPTURED  ==  TRUE ) && ( HORINISISFREE  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -449,7 +450,7 @@ instance DIA_PAL_207_GIRION_YOURFREE(C_Info)
 
 func int dia_pal_207_girion_yourfree_condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (GIRIONCAPTURED == TRUE) && (HORINISISFREE == TRUE) && (CAPTUREDMANSISFREE == FALSE))
+	if ( Npc_IsInState ( self , ZS_Talk ) && ( GIRIONCAPTURED  ==  TRUE ) && ( HORINISISFREE  ==  TRUE ) && ( CAPTUREDMANSISFREE  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -457,26 +458,26 @@ func int dia_pal_207_girion_yourfree_condition()
 
 func void dia_pal_207_girion_yourfree_info()
 {
-	AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_08");	//(удивленно) Иннос праведный! Что все это значит?
-	AI_Output(other,self,"DIA_Pal_207_Girion_YourFree_01_00");	//Ты свободен!
-	AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_01");	//Не может быть! Ты что, разобрался с орками в городе?
-	AI_Output(other,self,"DIA_Pal_207_Girion_YourFree_01_02");	//Да, именно так.
+	AI_Output(self,other, " DIA_Pal_207_Girion_YourFree_01_08 " );	// (surprised) Innos is righteous! What does all of this mean?
+	AI_Output(other,self, " DIA_Pal_207_Girion_YourFree_01_00 " );	// You are free!
+	AI_Output(self,other, " DIA_Pal_207_Girion_YourFree_01_01 " );	// Can't be! Have you dealt with the orcs in the city?
+	AI_Output(other,self, " DIA_Pal_207_Girion_YourFree_01_02 " );	// Yes, that's right.
 	if(COUNTCAPTURED > 1)
 	{
-		AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_03");	//Слава Инносу! Мы уж и не надеялись на спасение.
-		AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_04");	//Открой же скорее решетки, выпусти нас!
+		AI_Output(self,other, " DIA_Pal_207_Girion_YourFree_01_03 " );	// Glory to Innos! We didn't even hope to be saved.
+		AI_Output(self,other, " DIA_Pal_207_Girion_YourFree_01_04 " );	// Open the bars as soon as possible, let us out!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_05");	//Слава Инносу! Я уж и не надеялся на спасение.
-		AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_06");	//Открой же скорее решетку, выпусти меня!
+		AI_Output(self,other, " DIA_Pal_207_Girion_YourFree_01_05 " );	// Glory to Innos! I didn't expect to be saved.
+		AI_Output(self,other, " DIA_Pal_207_Girion_YourFree_01_06 " );	// Open the grate as soon as possible, let me out!
 	};
 	CAPTUREDMANSISFREE = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_207_GIRION_OPENGATENOW(C_Info)
+instances DIA_PAL_207_GIRION_OPENGATENOW (C_Info)
 {
 	npc = Pal_207_Girion;
 	nr = 1;
@@ -497,7 +498,7 @@ func int dia_pal_207_girion_opengatenow_condition()
 
 func void dia_pal_207_girion_opengatenow_info()
 {
-	AI_Output(self,other,"DIA_Pal_207_Girion_OpenGateNow_01_00");	//Давай уже! Открой эту решетку!
+	AI_Output(self,other, " DIA_Pal_207_Girion_OpenGateNow_01_00 " );	// Come on already! Open that grid!
 	AI_StopProcessInfos(self);
 };
 
