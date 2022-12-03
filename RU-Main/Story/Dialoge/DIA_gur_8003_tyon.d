@@ -33,7 +33,7 @@ instance dia_baaltyon_PICKPOCKET(C_Info)
 
 func int dia_baaltyon_PICKPOCKET_Condition()
 {
-	return  C_Robbery ( 49 , 35 );
+	return C_Beklauen(49,35);
 };
 
 func void dia_baaltyon_PICKPOCKET_Info()
