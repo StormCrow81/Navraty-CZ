@@ -1,4 +1,5 @@
 
+
 var int brsharpsword;
 
 instance DIA_Brian_EXIT(C_Info)
@@ -14,7 +15,7 @@ instance DIA_Brian_EXIT(C_Info)
 
 func int DIA_Brian_EXIT_Condition()
 {
-	if(Kapitel < 3)
+	if (chapter <  3 )
 	{
 		return TRUE;
 	};
@@ -39,7 +40,7 @@ instance DIA_Brian_PICKPOCKET(C_Info)
 
 func int DIA_Brian_PICKPOCKET_Condition()
 {
-	return C_Beklauen(55,100);
+	return  C_Robbery ( 55 , 100 );
 };
 
 func void DIA_Brian_PICKPOCKET_Info()
@@ -51,7 +52,7 @@ func void DIA_Brian_PICKPOCKET_Info()
 
 func void DIA_Brian_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Brian_PICKPOCKET);
 };
 
@@ -84,18 +85,18 @@ func void DIA_Brian_NoTalkAtAll_Info()
 {
 	if(FirstTalkBrian == FALSE)
 	{
-		AI_Output(self,other,"DIA_Brian_NoTalkAtAll_12_00");	//Тебе нечего тут делать. Вон!
+		AI_Output(self,other, " DIA_Brian_NoTalkAtAll_12_00 " );	// You have nothing to do here. Out!
 		FirstTalkBrian = TRUE;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Brian_NoTalkAtAll_12_01");	//Оглох что ли? Вон отсюда.
+		AI_Output(self,other, " DIA_Brian_NoTalkAtAll_12_01 " );	// Deaf or what? Go away.
 		AI_StopProcessInfos(self);
 	};
 };
 
-instance DIA_Brian_HALLO(C_Info)
+instances DIA_Brian_HALLO (C_Info)
 {
 	npc = VLK_457_Brian;
 	nr = 1;
@@ -115,7 +116,7 @@ func int DIA_Brian_HALLO_Condition()
 
 func void DIA_Brian_HALLO_Info()
 {
-	AI_Output(self,other,"DIA_Brian_HALLO_04_00");	//Ты недавно в городе, да? Я Брайан! Ученик мастера Харада.
+	AI_Output(self,other, " DIA_Brian_HALLO_04_00 " );	// You're new to town, right? I'm Brian! Master Harad's apprentice.
 };
 
 
@@ -126,7 +127,7 @@ instance DIA_Brian_AboutLehrling(C_Info)
 	condition = DIA_Brian_AboutLehrling_Condition;
 	information = DIA_Brian_AboutLehrling_Info;
 	permanent = FALSE;
-	description = "Каково это, быть учеником кузнеца?";
+	description = " What's it like being a blacksmith's apprentice? " ;
 };
 
 func int DIA_Brian_AboutLehrling_Condition()
@@ -136,11 +137,11 @@ func int DIA_Brian_AboutLehrling_Condition()
 
 func void DIA_Brian_AboutLehrling_Info()
 {
-	AI_Output(other,self,"DIA_Brian_AboutLehrling_15_00");	//Каково это, быть учеником кузнеца?
-	AI_Output(self,other,"DIA_Brian_AboutLehrling_04_01");	//Почему ты спрашиваешь? Ты хочешь стать моим преемником?
-	AI_Output(other,self,"DIA_Brian_AboutLehrling_15_02");	//Может быть.
-	AI_Output(self,other,"DIA_Brian_AboutLehrling_04_03");	//Почему бы и нет... Я почти закончил свое обучение и собираюсь вскоре покинуть город.
-	AI_Output(self,other,"DIA_Brian_AboutLehrling_04_04");	//Но не из-за Харада. Он хороший мастер, я многому научился у него.
+	AI_Output(other,self, " DIA_Brian_AboutLehrling_15_00 " );	// How does it feel to be a blacksmith's apprentice?
+	AI_Output(self,other, " DIA_Brian_AboutLehrling_04_01 " );	// Why are you asking? Do you want to be my successor?
+	AI_Output(other,self, " DIA_Brian_AboutLehrling_15_02 " );	// Maybe.
+	AI_Output(self,other, " DIA_Brian_AboutLehrling_04_03 " );	// Why not... I'm almost done with my training and I'm going to leave town soon.
+	AI_Output(self,other, " DIA_Brian_AboutLehrling_04_04 " );	// But not because of Harad. He is a good master, I learned a lot from him.
 };
 
 
@@ -151,7 +152,7 @@ instance DIA_Brian_WhyLeave(C_Info)
 	condition = DIA_Brian_WhyLeave_Condition;
 	information = DIA_Brian_WhyLeave_Info;
 	permanent = FALSE;
-	description = "Почему ты хочешь покинуть город?";
+	description = " Why do you want to leave the city? " ;
 };
 
 
@@ -165,11 +166,11 @@ func int DIA_Brian_WhyLeave_Condition()
 
 func void DIA_Brian_WhyLeave_Info()
 {
-	AI_Output(other,self,"DIA_Brian_WhyLeave_15_00");	//Почему ты хочешь покинуть город?
-	AI_Output(self,other,"DIA_Brian_WhyLeave_04_00");	//Потому что люди здесь действуют мне на нервы! А особенно остальные мастера.
-	AI_Output(self,other,"DIA_Brian_WhyLeave_04_01");	//Я еще не забыл, чего это стоило - стать учеником Харада.
-	AI_Output(self,other,"DIA_Brian_WhyLeave_04_02");	//Каждый из этих шутников был готов вставить свою шпильку.
-	AI_Output(self,other,"DIA_Brian_WhyLeave_04_03");	//Я хочу сам решать, кого могу, а кого не могу брать в ученики.
+	AI_Output(other,self, " DIA_Brian_WhyLeave_15_00 " );	// Why do you want to leave the city?
+	AI_Output(self,other, " DIA_Brian_WhyLeave_04_00 " );	// Because people here get on my nerves! And especially other masters.
+	AI_Output(self,other, " DIA_Brian_WhyLeave_04_01 " );	// I haven't forgotten what it cost to become Harad's apprentice.
+	AI_Output(self,other, " DIA_Brian_WhyLeave_04_02 " );	// Each of these pranksters was ready to insert his hairpin.
+	AI_Output(self,other, " DIA_Brian_WhyLeave_04_03 " );	// I want to decide for myself who I can and who I can't take as an apprentice.
 };
 
 
@@ -180,7 +181,7 @@ instance DIA_Brian_OtherMasters(C_Info)
 	condition = DIA_Brian_OtherMasters_Condition;
 	information = DIA_Brian_OtherMasters_Info;
 	permanent = FALSE;
-	description = "А кто здесь другие мастера?";
+	description = " Who are the other masters here? " ;
 };
 
 
@@ -194,22 +195,22 @@ func int DIA_Brian_OtherMasters_Condition()
 
 func void DIA_Brian_OtherMasters_Info()
 {
-	AI_Output(other,self,"DIA_Brian_Add_15_00");	//А кто здесь другие мастера?
-	AI_Output(self,other,"DIA_Brian_Add_04_01");	//Ну, это плотник Торбен, мастер-лучник Боспер, алхимик Константино и Маттео.
-	AI_Output(self,other,"DIA_Brian_Add_04_02");	//Он продает доспехи, но, в первую очередь, он торговец.
-	AI_Output(self,other,"DIA_Brian_Add_04_03");	//У каждого мастера есть свой дом на этой улице.
-	AI_Output(self,other,"DIA_Brian_Add_04_04");	//А лавка Константино находится в подземном проходе, ведущем к храму.
+	AI_Output(other,self, " DIA_Brian_Add_15_00 " );	// And who are the other masters here?
+	AI_Output(self,other, " DIA_Brian_Add_04_01 " );	// Well, this is the carpenter Torben, the master archer Bosper, the alchemist Constantino and Matteo.
+	AI_Output(self,other, " DIA_Brian_Add_04_02 " );	// He sells armor, but he's a merchant first and foremost.
+	AI_Output(self,other, " DIA_Brian_Add_04_03 " );	// Each master has his own house on this street.
+	AI_Output(self,other, " DIA_Brian_Add_04_04 " );	// And Constantino's shop is located in the underground passage leading to the temple.
 };
 
 
-instance DIA_Brian_AboutHarad(C_Info)
+instance DIA_Brian_AboutHarad (C_Info)
 {
 	npc = VLK_457_Brian;
 	nr = 2;
 	condition = DIA_Brian_AboutHarad_Condition;
 	information = DIA_Brian_AboutHarad_Info;
 	permanent = FALSE;
-	description = "Расскажи мне о мастере Хараде.";
+	description = " Tell me about Master Harad. " ;
 };
 
 
@@ -223,15 +224,15 @@ func int DIA_Brian_AboutHarad_Condition()
 
 func void DIA_Brian_AboutHarad_Info()
 {
-	AI_Output(other,self,"DIA_Brian_AboutHarad_15_00");	//Расскажи мне о мастере Хараде.
-	AI_Output(self,other,"DIA_Brian_AboutHarad_04_01");	//Он сейчас не в лучшем расположении духа.
-	AI_Output(self,other,"DIA_Brian_AboutHarad_04_02");	//Несколько дней назад пришли паладины и приказали ему ковать мечи для них.
-	AI_Output(self,other,"DIA_Brian_AboutHarad_04_03");	//Они даже запретили ему продавать мечи кому-либо еще.
-	AI_Output(self,other,"DIA_Brian_AboutHarad_04_04");	//Теперь он, как раб, работает дни и ночи напролет, чтобы как можно быстрее закончить свою работу.
-	AI_Output(other,self,"DIA_Brian_NEEDWEAPONS_15_00");	//Могу я купить оружие у тебя?
-	AI_Output(self,other,"DIA_Brian_NEEDWEAPONS_04_01");	//Нет. Я всего лишь помощник.
-	AI_Output(self,other,"DIA_Brian_NEEDWEAPONS_04_02");	//Оружие, которое делается в этой кузнице, забирает ополчение. Они уносят его к башням, где оно хранится.
-	AI_Output(self,other,"DIA_Brian_NEEDWEAPONS_04_03");	//Но во всем остальном, что касается кузнечного дела, я могу помочь.
+	AI_Output(other,self, " DIA_Brian_AboutHarad_15_00 " );	// Tell me about Master Harada.
+	AI_Output(self,other, " DIA_Brian_AboutHarad_04_01 " );	// He's not in the best mood right now.
+	AI_Output(self,other, " DIA_Brian_AboutHarad_04_02 " );	// The paladins came a few days ago and ordered him to forge swords for them.
+	AI_Output(self,other, " DIA_Brian_AboutHarad_04_03 " );	// They even banned him from selling swords to anyone else.
+	AI_Output(self,other, " DIA_Brian_AboutHarad_04_04 " );	// Now he's like a slave, working day and night to finish his job as quickly as possible.
+	AI_Output(other,self, " DIA_Brian_NEEDWEAPONS_15_00 " );	// Can I buy weapons from you?
+	AI_Output(self,other, " DIA_Brian_NEEDWEAPONS_04_01 " );	// No. I'm just an assistant.
+	AI_Output(self,other, " DIA_Brian_NEEDWEAPONS_04_02 " );	// Weapons made at this forge are taken by the militia. They take it to the towers where it is kept.
+	AI_Output(self,other, " DIA_Brian_NEEDWEAPONS_04_03 " );	// But for everything else about blacksmithing, I can help.
 };
 
 
@@ -242,7 +243,7 @@ instance DIA_Brian_NEEDWEAPONS(C_Info)
 	condition = DIA_Brian_NEEDWEAPONS_Condition;
 	information = DIA_Brian_NEEDWEAPONS_Info;
 	permanent = TRUE;
-	description = "Научи меня затачивать оружие. (Очки обучения: 1, Цена: 250 монет)";
+	description = " Teach me how to sharpen a weapon. (Training Points: 1, Cost: 250 coins) " ;
 };
 
 func int DIA_Brian_NEEDWEAPONS_Condition()
@@ -255,7 +256,7 @@ func int DIA_Brian_NEEDWEAPONS_Condition()
 
 func void DIA_Brian_NEEDWEAPONS_Info()
 {
-	AI_Output(other,self,"DIA_Brian_WASKAUFEN_03_89");	//Научи меня затачивать оружие.
+	AI_Output(other,self, " DIA_Brian_WASKAUFEN_03_89 " );	// Teach me how to sharpen weapons.
 
 	if((other.lp >= 1) && (Npc_HasItems(other,ItMi_Gold) >= 250))
 	{
@@ -263,7 +264,7 @@ func void DIA_Brian_NEEDWEAPONS_Info()
 		other.lp = other.lp - 1;
 		RankPoints = RankPoints + 1;
 		Npc_RemoveInvItems(other,ItMi_Gold,250);
-		AI_Output(self,other,"DIA_Brian_NEEDWEAPONS_04_10");	//Хорошо, смотри внимательно, как это делается. Все, что тебе нужно, это ржавое оружие и заготовка меча.
+		AI_Output(self,other, " DIA_Brian_NEEDWEAPONS_04_10 " );	// Okay, watch carefully how this is done. All you need is a rusty weapon and a blank sword.
 
 		if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSSHARP"))
 		{
@@ -271,10 +272,10 @@ func void DIA_Brian_NEEDWEAPONS_Info()
 			AI_GotoWP(self,"NW_CITY_SMITH_SHARP");
 			AI_AlignToWP(self);
 			AI_UseMob(self,"BSSHARP",5);
-			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_12");	//Берешь ржавый меч, сверху прижимаешь заготовкой клинка...
-			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_13");	//...и плавно водишь по точильному камню вправо-влево...
-			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_14");	//...заготовка клинка нужна для более равномерного прижима меча к камню...
-			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_15");	//...и чтобы меч не перегревался и не изгибался при заточке.
+			AI_Output(self,other, " DIA_Brian_WASKAUFEN_04_12 " );	// You take a rusty sword, press it on top with a blade blank...
+			AI_Output(self,other, " DIA_Brian_WASKAUFEN_04_13 " );	// ...and smoothly move the grindstone left and right...
+			AI_Output(self,other, " DIA_Brian_WASKAUFEN_04_14 " );	// ...the blank of the blade is needed for a more uniform pressing of the sword to the stone...
+			AI_Output(self,other, " DIA_Brian_WASKAUFEN_04_15 " );	// ...and to keep the sword from overheating and bending while sharpening.
 			AI_UseMob(self,"BSSHARP",-1);
 			B_TurnToNpc(self,other);
 		};
@@ -291,7 +292,7 @@ func void DIA_Brian_NEEDWEAPONS_Info()
 	else if(Npc_HasItems(other,ItMi_Gold) < 250)
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Brian_WASKAUFEN_03_90");	//У тебя не хватает для этого золота! Приходи позже.
+		AI_Output(self,other, " DIA_Brian_WASKAUFEN_03_90 " );	// You don't have enough gold for this! Come back later.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -303,7 +304,7 @@ instance DIA_Brian_GiveSharpStone(C_Info)
 	condition = DIA_Brian_GiveSharpStone_Condition;
 	information = DIA_Brian_GiveSharpStone_Info;
 	permanent = FALSE;
-	description = "Затачивать оружие можно только в кузнице?";
+	description = " Can you only sharpen weapons at the forge? " ;
 };
 
 func int DIA_Brian_GiveSharpStone_Condition()
@@ -316,15 +317,15 @@ func int DIA_Brian_GiveSharpStone_Condition()
 
 func void DIA_Brian_GiveSharpStone_Info()
 {
-	AI_Output(other,self,"DIA_Brian_GiveSharpStone_01_00");	//Затачивать оружие можно только в кузнице?
-	AI_Output(self,other,"DIA_Brian_GiveSharpStone_01_01");	//Естественно. Если, конечно, у тебя нет с собой точильного оселка.
-	AI_Output(other,self,"DIA_Brian_GiveSharpStone_01_02");	//А у тебя он есть?
-	AI_Output(self,other,"DIA_Brian_GiveSharpStone_01_03");	//Был, пока какой-то мерзкий вор не стащил его у меня.
-	AI_Output(self,other,"DIA_Brian_GiveSharpStone_01_04");	//Стоило мне только отвернуться - и вот... И зачем кому-то понадобился простой кусок камня?
+	AI_Output(other,self, " DIA_Brian_GiveSharpStone_01_00 " );	// Can you only sharpen weapons at the forge?
+	AI_Output(self,other, " DIA_Brian_GiveSharpStone_01_01 " );	// Naturally. Unless, of course, you have a whetstone with you.
+	AI_Output(other,self, " DIA_Brian_GiveSharpStone_01_02 " );	// Do you have it?
+	AI_Output(self,other, " DIA_Brian_GiveSharpStone_01_03 " );	// Was until some nasty thief stole it from me.
+	AI_Output(self,other, " DIA_Brian_GiveSharpStone_01_04 " );	// As soon as I turned away - and here... And why did someone need a simple piece of stone?
 	MIS_BrianSharpStone = LOG_Running;
 	Log_CreateTopic(TOPIC_BrianSharpStone,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BrianSharpStone,LOG_Running);
-	B_LogEntry(TOPIC_BrianSharpStone,"У Брайана какой-то вор стащил точильный оселок. Похоже, парень был бы не прочь вернуть его.");
+	B_LogEntry(TOPIC_BrianSharpStone, " Someone stole Brian's whetstone. Looks like the guy would like to return it. " );
 };
 
 instance DIA_Brian_GiveSharpStoneDone(C_Info)
@@ -334,7 +335,7 @@ instance DIA_Brian_GiveSharpStoneDone(C_Info)
 	condition = DIA_Brian_GiveSharpStoneDone_Condition;
 	information = DIA_Brian_GiveSharpStoneDone_Info;
 	permanent = FALSE;
-	description = "Я нашел твой оселок.";
+	description = " I found your donkey. " ;
 };
 
 func int DIA_Brian_GiveSharpStoneDone_Condition()
@@ -348,25 +349,25 @@ func int DIA_Brian_GiveSharpStoneDone_Condition()
 func void DIA_Brian_GiveSharpStoneDone_Info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Brian_GiveSharpStoneDone_01_00");	//Я нашел твой оселок.
-	AI_Output(self,other,"DIA_Brian_GiveSharpStoneDone_01_01");	//Правда? (удивленно) Я уж и не надеялся, что он все-таки отыщется.
-	AI_Output(self,other,"DIA_Brian_GiveSharpStoneDone_01_02");	//Знаешь, что? Можешь оставь его себе. Мне он уже без надобности, а тебе может пригодиться.
-	AI_Output(other,self,"DIA_Brian_GiveSharpStoneDone_01_03");	//Как скажешь.
+	AI_Output(other,self, " DIA_Brian_GiveSharpStoneDone_01_00 " );	// I found your donkey.
+	AI_Output(self,other, " DIA_Brian_GiveSharpStoneDone_01_01 " );	// True? (surprised) I did not hope that he would still be found.
+	AI_Output(self,other, " DIA_Brian_GiveSharpStoneDone_01_02 " );	// You know what? You can leave it to yourself. I don't need it anymore, but you might need it.
+	AI_Output(other,self, " DIA_Brian_GiveSharpStoneDone_01_03 " );	// As you say.
 	MIS_BrianSharpStone = LOG_Success;
 	Log_SetTopicStatus(TOPIC_BrianSharpStone,LOG_Success);
-	B_LogEntry(TOPIC_BrianSharpStone,"Я рассказал Брайану, что нашел его оселок. Тот бы рад это услышать и подарил его мне.");
+	B_LogEntry(TOPIC_BrianSharpStone, " I told Brian that I found his whetstone. He would love to hear it and give it to me. " );
 };
 
-var int Brian_Trade_einmal;
+var int Brian_Trade_once;
 
-instance DIA_Brian_WASKAUFEN(C_Info)
+instance DIA_Brian_WASKAUFEN (C_Info)
 {
 	npc = VLK_457_Brian;
 	nr = 4;
 	condition = DIA_Brian_WASKAUFEN_Condition;
 	information = DIA_Brian_WASKAUFEN_Info;
 	permanent = TRUE;
-	description = "Что я могу купить у тебя?";
+	description = " What can I buy from you? " ;
 	trade = TRUE;
 };
 
@@ -380,7 +381,7 @@ func int DIA_Brian_WASKAUFEN_Condition()
 
 func void DIA_Brian_WASKAUFEN_Info()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 
 	if(C_BodyStateContains(self,BS_SIT))
@@ -389,27 +390,27 @@ func void DIA_Brian_WASKAUFEN_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Brian_WASKAUFEN_15_00");	//Что я могу купить у тебя?
+	AI_Output(other,self, " DIA_Brian_WASKAUFEN_15_00 " );	// What can I buy from you?
 
-	if(Npc_IsDead(Harad))
+	if (Npc_IsDead(Harad))
 	{
-		AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_01");	//Если у меня еще есть парочка лишних стальных болванок, ты можешь взять их. Боюсь, что это все.
+		AI_Output(self,other, " DIA_Brian_WASKAUFEN_04_01 " );	// If I still have a couple of spare steel bars, you can take them. I'm afraid that's all.
 
 		if(MIS_Jack_NewLighthouseOfficer == 0)
 		{
-			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_02");	//С тех пор как Харада больше нет здесь, ополчение глаз с меня не спускает.
-			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_03");	//Мне не позволено продолжать работать в кузнице. Они боятся, что я все распродам и свалю.
+			AI_Output(self,other, " DIA_Brian_WASKAUFEN_04_02 " );	// Since Harad is no longer here, the militia has been keeping an eye on me.
+			AI_Output(self,other, " DIA_Brian_WASKAUFEN_04_03 " );	// I'm not allowed to continue working at the forge. They are afraid that I will sell everything and dump.
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_01");	//Если у меня еще есть парочка лишних стальных болванок, ты можешь взять их. Боюсь, что это все.
+		AI_Output(self,other, " DIA_Brian_WASKAUFEN_04_01 " );	// If I still have a couple of spare steel bars, you can take them. I'm afraid that's all.
 	};
 
-	if(Brian_Trade_einmal == FALSE)
+	if (Brian_Trade_once ==  FALSE )
 	{
 		Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-		B_LogEntry(TOPIC_CityTrader,"Брайан, подмастерье Харада, продает стальные заготовки.");
+		B_LogEntry(TOPIC_CityTrader, " Brian, Harad's apprentice, sells steel billets. " );
 		Brian_Trade_einmal = TRUE;
 	};
 
@@ -431,7 +432,7 @@ instance DIA_Brian_KAP3_EXIT(C_Info)
 
 func int DIA_Brian_KAP3_EXIT_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
@@ -450,7 +451,7 @@ instance DIA_Brian_RepairNecklace(C_Info)
 	condition = DIA_Brian_RepairNecklace_Condition;
 	information = DIA_Brian_RepairNecklace_Info;
 	permanent = FALSE;
-	description = "Ты можешь ремонтировать ювелирные изделия?";
+	description = " Can you repair jewelry? " ;
 };
 
 
@@ -464,11 +465,11 @@ func int DIA_Brian_RepairNecklace_Condition()
 
 func void DIA_Brian_RepairNecklace_Info()
 {
-	AI_Output(other,self,"DIA_Brian_RepairNecklace_15_00");	//Ты можешь ремонтировать ювелирные изделия?
-	AI_Output(self,other,"DIA_Brian_RepairNecklace_04_01");	//Я всего лишь помощник, я радуюсь, когда мне позволяют сделать хотя бы кинжал.
-	if(Npc_IsDead(Harad) == FALSE)
+	AI_Output(other,self, " DIA_Brian_RepairNecklace_15_00 " );	// Can you repair jewelry?
+	AI_Output(self,other, " DIA_Brian_RepairNecklace_04_01 " );	// I'm just a helper, I'm glad when they let me make at least a dagger.
+	if (Npc_IsDead(Harad) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Brian_RepairNecklace_04_02");	//Ювелирные изделия? Тебе лучше обратиться к мастеру.
+		AI_Output(self,other, " DIA_Brian_RepairNecklace_04_02 " );	// Jewelry? You'd better go to the master.
 	};
 	MIS_SCKnowsInnosEyeIsBroken = TRUE;
 };
@@ -487,7 +488,7 @@ instance DIA_Brian_KAP4_EXIT(C_Info)
 
 func int DIA_Brian_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -512,7 +513,7 @@ instance DIA_Brian_KAP5_EXIT(C_Info)
 
 func int DIA_Brian_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -530,7 +531,7 @@ instance DIA_Brian_NEWLIGHTHOUSEOFFICER(C_Info)
 	nr = 51;
 	condition = DIA_Brian_NEWLIGHTHOUSEOFFICER_Condition;
 	information = DIA_Brian_NEWLIGHTHOUSEOFFICER_Info;
-	description = "Я слышал, что ты интересовался маяком старого Джека.";
+	description = " I heard you were interested in Old Jack's lighthouse. " ;
 };
 
 
@@ -544,12 +545,12 @@ func int DIA_Brian_NEWLIGHTHOUSEOFFICER_Condition()
 
 func void DIA_Brian_NEWLIGHTHOUSEOFFICER_Info()
 {
-	AI_Output(other,self,"DIA_Brian_NEWLIGHTHOUSEOFFICER_15_00");	//Я слышал, что ты интересовался маяком старого Джека.
-	AI_Output(other,self,"DIA_Brian_NEWLIGHTHOUSEOFFICER_15_01");	//Джек собирается выйти в море. Но ему не на кого оставить маяк.
-	AI_Output(self,other,"DIA_Brian_NEWLIGHTHOUSEOFFICER_04_02");	//Но Джек должен понимать, что в его отсутствие я превращу маяк в кузницу.
-	AI_Output(other,self,"DIA_Brian_NEWLIGHTHOUSEOFFICER_15_03");	//Это проблема?!
-	AI_Output(self,other,"DIA_Brian_NEWLIGHTHOUSEOFFICER_04_04");	//Не для меня! Мне все равно не заполучить кузницу Харада. Я уже выбросил эту мысль из головы.
-	AI_Output(self,other,"DIA_Brian_NEWLIGHTHOUSEOFFICER_04_05");	//Согласен! Встретимся у Джека.
+	AI_Output(other,self, " DIA_Brian_NEWLIGHTHOUSEOFFICER_15_00 " );	// I heard you were interested in old Jack's lighthouse.
+	AI_Output(other,self, " DIA_Brian_NEWLIGHTHOUSEOFFICER_15_01 " );	// Jack is going to sea. But he has no one to leave the beacon on.
+	AI_Output(self,other, " DIA_Brian_NEWLIGHTHOUSEOFFICER_04_02 " );	// But Jack must understand that in his absence, I will turn the lighthouse into a forge.
+	AI_Output(other,self, " DIA_Brian_NEWLIGHTHOUSEOFFICER_15_03 " );	// Is this a problem?!
+	AI_Output(self,other, " DIA_Brian_NEWLIGHTHOUSEOFFICER_04_04 " );	// Not for me! I still can't get Harad's forge. I've already put that thought out of my head.
+	AI_Output(self,other, " DIA_Brian_NEWLIGHTHOUSEOFFICER_04_05 " );	// Agree! We'll meet at Jack's.
 	MIS_Jack_NewLighthouseOfficer = LOG_SUCCESS;
 	CreateInvItems(self,ItMw_1h_Vlk_Axe,1);
 	EquipItem(self,ItMw_1h_Vlk_Axe);
@@ -565,7 +566,7 @@ instance DIA_Brian_LIGHTHOUSEFREE(C_Info)
 	condition = DIA_Brian_LIGHTHOUSEFREE_Condition;
 	information = DIA_Brian_LIGHTHOUSEFREE_Info;
 	permanent = TRUE;
-	description = "И, что скажешь?";
+	description = " And what do you say? " ;
 };
 
 
@@ -579,8 +580,8 @@ func int DIA_Brian_LIGHTHOUSEFREE_Condition()
 
 func void DIA_Brian_LIGHTHOUSEFREE_Info()
 {
-	AI_Output(other,self,"DIA_Brian_LIGHTHOUSEFREE_15_00");	//И что скажешь?
-	AI_Output(self,other,"DIA_Brian_LIGHTHOUSEFREE_04_01");	//Боже, какой бардак. Джек не узнает это место, когда я все здесь устрою как надо.
+	AI_Output(other,self, " DIA_Brian_LIGHTHOUSEFREE_15_00 " );	// And what do you say?
+	AI_Output(self,other, " DIA_Brian_LIGHTHOUSEFREE_04_01 " );	// God, what a mess. Jack won't recognize this place when I get everything right here.
 };
 
 instance DIA_Brian_SharpKnife(C_Info)
@@ -590,12 +591,12 @@ instance DIA_Brian_SharpKnife(C_Info)
 	condition = DIA_Brian_SharpKnife_Condition;
 	information = DIA_Brian_SharpKnife_Info;
 	permanent = TRUE;
-	description = "Мне нужно, чтобы ты заточил этот нож.";
+	description = " I need you to sharpen this knife. " ;
 };
 
 func int DIA_Brian_SharpKnife_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Brian_AboutLehrling) && (Npc_GetDistToWP(self,"NW_CITY_SMITH_SHARP") <= 500) && (MIS_Hilda_SharpKnife == LOG_Running) && (HildaSharpKnife == FALSE) && (Npc_HasItems(other,ItMi_HildaKnife) >= 1))
+	if ( Npc_KnowsInfo ( other , DIA_Brian_AboutLehrling ) && ( Npc_ GetDistToWP ( self , " NW_CITY_SMITH_SHARP " ) < =  500 ) && ( MIS_Hilda_SharpKnife == LOG_Running ) && ( MIS_Hilda_SharpKnife ==  FALSE ) && ( Npc_Has_1Items (other, Kni 
 	{
 		return TRUE;
 	};
@@ -603,35 +604,35 @@ func int DIA_Brian_SharpKnife_Condition()
 
 func void DIA_Brian_SharpKnife_Info()
 {
-	AI_Output(other,self,"DIA_Brian_SharpKnife_15_00");	//Мне нужно, чтобы ты заточил этот нож.
-	AI_Output(self,other,"DIA_Brian_SharpKnife_04_01");	//Конечно. Но это будет стоить тебе десять золотых.
+	AI_Output(other,self, " DIA_Brian_SharpKnife_15_00 " );	// I need you to sharpen this knife.
+	AI_Output(self,other, " DIA_Brian_SharpKnife_04_01 " );	// Of course. But it will cost you ten gold.
 	Info_ClearChoices(DIA_Brian_SharpKnife);
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 10)
 	{
-		Info_AddChoice(DIA_Brian_SharpKnife,"Вот золото.",DIA_Brian_SharpKnife_Ok);
+		Info_AddChoice(DIA_Brian_SharpKnife, " Вот золото. " ,DIA_Brian_SharpKnife_Ok);
 	};
 
-	Info_AddChoice(DIA_Brian_SharpKnife,"У меня нет таких денег.",DIA_Brian_SharpKnife_No);
+	Info_AddChoice(DIA_Brian_SharpKnife, " I don't have that kind of money. " ,DIA_Brian_SharpKnife_No);
 
 };
 
 func void DIA_Brian_SharpKnife_Ok()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Brian_SharpKnife_Ok_15_00");	//Вот золото.
+	AI_Output(other,self, " DIA_Brian_SharpKnife_Ok_15_00 " );	// Here's the gold.
 	B_GiveInvItems(other,self,ItMi_Gold,10);
 	Npc_RemoveInvItems(self,ItMi_Gold,10);
-	AI_Output(self,other,"DIA_Brian_SharpKnife_Ok_04_01");	//Хорошо! Подожди минутку...
-	AI_Output(self,other,"DIA_Brian_SharpKnife_Ok_04_02");	//...ну, вот и все. Теперь этот нож острее бритвы!
+	AI_Output(self,other, " DIA_Brian_SharpKnife_Ok_04_01 " );	// Good! Wait a minute...
+	AI_Output(self,other, " DIA_Brian_SharpKnife_Ok_04_02 " );	// ...well, that's it. Now this knife is sharper than a razor!
 	HildaSharpKnife = TRUE;
-	B_LogEntry(TOPIC_Hilda_SharpKnife,"Ученик кузнеца Брайн заточил для меня нож Хильды.");
+	B_LogEntry(TOPIC_Hilda_SharpKnife, " Blacksmith's apprentice Brian sharpened Hilda's knife for me. " );
 	Info_ClearChoices(DIA_Brian_SharpKnife);
 };
 
 func void DIA_Brian_SharpKnife_No()
 {
-	AI_Output(other,self,"DIA_Brian_SharpKnife_No_15_00");	//У меня нет таких денег.
-	AI_Output(self,other,"DIA_Brian_SharpKnife_No_04_01");	//Извини, тогда ничем не могу помочь.
+	AI_Output(other,self, " DIA_Brian_SharpKnife_No_15_00 " );	// I don't have that kind of money.
+	AI_Output(self,other, " DIA_Brian_SharpKnife_No_04_01 " );	// Sorry, can't help then.
 	Info_ClearChoices(DIA_Brian_SharpKnife);
 };
