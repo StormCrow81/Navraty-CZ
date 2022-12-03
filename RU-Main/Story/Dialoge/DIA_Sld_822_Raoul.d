@@ -1,4 +1,5 @@
 
+
 instance DIA_Raoul_EXIT(C_Info)
 {
 	npc = Sld_822_Raoul;
@@ -12,7 +13,7 @@ instance DIA_Raoul_EXIT(C_Info)
 
 func int DIA_Raoul_EXIT_Condition()
 {
-	if(Kapitel < 3)
+	if (chapter <  3 )
 	{
 		return TRUE;
 	};
@@ -45,20 +46,20 @@ func int DIA_Raoul_NoSentenza_Condition()
 
 func void DIA_Raoul_NoSentenza_Info()
 {
-	AI_Output(self,other,"DIA_Raoul_NoSentenza_01_00");	//Минутку, приятель!
-	AI_Output(self,other,"DIA_Raoul_NoSentenza_01_01");	//Я не видел, чтобы Сентеза обыскивал тебя.
+	AI_Output(self,other, " DIA_Raoul_NoSentenza_01_00 " );	// Wait a minute, mate!
+	AI_Output(self,other, " DIA_Raoul_NoSentenza_01_01 " );	// I didn't see Senteza searching you.
 
-	if(Hlp_IsValidNpc(Sentenza) && !C_NpcIsDown(Sentenza))
+	if (Hlp_IsValidNpc(Sentence) &&  ! C_NpcIsDown(Sentence))
 	{
-		AI_Output(self,other,"DIA_Raoul_NoSentenza_01_02");	//Сентеза! Иди сюда!
-		AI_Output(self,other,"DIA_Raoul_NoSentenza_01_03");	//Подожди секундочку...(вежливо) Cейчас он подойдет!
-		AI_Output(self,other,"DIA_Raoul_NoSentenza_01_04");	//И тогда тебя ждет неприятный сюрприз.
+		AI_Output(self,other, " DIA_Raoul_NoSentenza_01_02 " );	// Sentesa! Go here!
+		AI_Output(self,other, " DIA_Raoul_NoSentenza_01_03 " );	// Wait a second... (politely) He'll be right there!
+		AI_Output(self,other, " DIA_Raoul_NoSentenza_01_04 " );	// And then an unpleasant surprise awaits you.
 		Info_ClearChoices(DIA_Raoul_NoSentenza);
 		Info_AddChoice(DIA_Raoul_NoSentenza,Dialog_Ende,DIA_Raoul_NoSentenza_End);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Raoul_NoSentenza_01_05");	//Где же он? А, ладно, не важно, тебе повезло...
+		AI_Output(self,other, " DIA_Raoul_NoSentenza_01_05 " );	// Where is he? Oh well, whatever, you're in luck...
 	};
 };
 
@@ -89,18 +90,18 @@ func int DIA_Raoul_Hello_Condition()
 
 func void DIA_Raoul_Hello_Info()
 {
-	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
+	if (self.aivar[AIV_TalkedToPlayer] ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Raoul_Hello_01_00");	//(скучающе) Чего тебе нужно?
+		AI_Output(self,other, " DIA_Raoul_Hello_01_00 " );	// (bored) What do you want?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Raoul_Hello_01_01");	//(раздраженно) Что тебе нужно на этот раз?
+		AI_Output(self,other, " DIA_Raoul_Hello_01_01 " );	// (irritated) What do you want this time?
 	};
 };
 
 
-var int Raoul_gesagt;
+var int Raoul_said;
 
 instance DIA_Raoul_PERMNone(C_Info)
 {
@@ -109,7 +110,7 @@ instance DIA_Raoul_PERMNone(C_Info)
 	condition = DIA_Raoul_PERMNone_Condition;
 	information = DIA_Raoul_PERMNone_Info;
 	permanent = TRUE;
-	description = "Я хочу осмотреться на этой ферме!";
+	description = " I want to look around this farm! " ;
 };
 
 
@@ -123,12 +124,12 @@ func int DIA_Raoul_PERMNone_Condition()
 
 func void DIA_Raoul_PERMNone_Info()
 {
-	if(Raoul_gesagt == FALSE)
+	if (Raoul_said ==  FALSE )
 	{
-		AI_Output(other,self,"DIA_Raoul_PERMNone_15_00");	//Я хочу осмотреться на этой ферме!
-		AI_Output(self,other,"DIA_Raoul_PERMNone_01_01");	//Не заходи в здание слева. Там Сильвио. Он сейчас не в самом лучшем расположении духа.
-		AI_Output(self,other,"DIA_Raoul_PERMNone_01_02");	//Если он увидит слабака, не работающего на этой ферме, он может решить выместить на нем свою злобу.
-		Raoul_gesagt = TRUE;
+		AI_Output(other,self, " DIA_Raoul_PERMNone_15_00 " );	// I want to look around this farm!
+		AI_Output(self,other, " DIA_Raoul_PERMNone_01_01 " );	// Don't enter the building on the left. Silvio is there. He's not in the best mood right now.
+		AI_Output(self,other, " DIA_Raoul_PERMNone_01_02 " );	// If he sees a weakling who doesn't work on this farm, he might decide to take his anger out on him.
+		Raoul_gesagt = TRUE ;
 	}
 	else
 	{
@@ -145,7 +146,7 @@ instance DIA_Raoul_WannaJoin(C_Info)
 	condition = DIA_Raoul_WannaJoin_Condition;
 	information = DIA_Raoul_WannaJoin_Info;
 	permanent = FALSE;
-	description = "Я хочу присоединиться к Ли!";
+	description = " I want to join Lee! " ;
 };
 
 
@@ -159,11 +160,11 @@ func int DIA_Raoul_WannaJoin_Condition()
 
 func void DIA_Raoul_WannaJoin_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_WannaJoin_15_00");	//Я хочу присоединиться к Ли!
-	AI_Output(self,other,"DIA_Raoul_WannaJoin_01_01");	//Если Ли будет продолжать в том же духе, ему скоро некем будет командовать!
-	AI_Output(other,self,"DIA_Raoul_WannaJoin_15_02");	//Что ты хочешь этим сказать?
-	AI_Output(self,other,"DIA_Raoul_WannaJoin_01_03");	//Он хочет, чтобы мы сидели здесь и били баклуши. Иногда приходится задавать взбучку фермерам - и это все.
-	AI_Output(self,other,"DIA_Raoul_WannaJoin_01_04");	//Сильвио всегда говорил, что нападение - это лучшая оборона, и, черт возьми, он прав.
+	AI_Output(other,self, " DIA_Raoul_WannaJoin_15_00 " );	// I want to join Lee!
+	AI_Output(self,other, " DIA_Raoul_WannaJoin_01_01 " );	// If Lee keeps going like this, he'll soon have no one to command!
+	AI_Output(other,self, " DIA_Raoul_WannaJoin_15_02 " );	// What do you mean by that?
+	AI_Output(self,other, " DIA_Raoul_WannaJoin_01_03 " );	// He wants us to sit here and twiddle our thumbs. Sometimes you have to give a thrashing to the farmers - and that's it.
+	AI_Output(self,other, " DIA_Raoul_WannaJoin_01_04 " );	// Silvio always said that offense is the best defense, and damn it, he's right.
 };
 
 
@@ -174,7 +175,7 @@ instance DIA_Raoul_AboutSylvio(C_Info)
 	condition = DIA_Raoul_AboutSylvio_Condition;
 	information = DIA_Raoul_AboutSylvio_Info;
 	permanent = FALSE;
-	description = "Кто такой Сильвио?";
+	description = " Who is Silvio? " ;
 };
 
 
@@ -188,9 +189,9 @@ func int DIA_Raoul_AboutSylvio_Condition()
 
 func void DIA_Raoul_AboutSylvio_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_AboutSylvio_15_00");	//Кто такой Сильвио?
-	AI_Output(self,other,"DIA_Raoul_AboutSylvio_01_01");	//Наш следующий предводитель, если тебе интересно мое мнение. Если ты собираешься просить его, чтобы он позволил тебе присоединиться к нашим рядам, забудь об этом!
-	AI_Output(self,other,"DIA_Raoul_AboutSylvio_01_02");	//Судя по твоему виду, ты не подходишь даже для того, чтобы пасти овец.
+	AI_Output(other,self, " DIA_Raoul_AboutSylvio_15_00 " );	// Who is Silvio?
+	AI_Output(self,other, " DIA_Raoul_AboutSylvio_01_01 " );	// Our next leader, if you want my opinion. If you're going to beg him to let you join our ranks, forget it!
+	AI_Output(self,other, " DIA_Raoul_AboutSylvio_01_02 " );	// By the looks of you, you're not even fit to herd sheep.
 };
 
 
@@ -199,9 +200,9 @@ instance DIA_Raoul_Stimme(C_Info)
 	npc = Sld_822_Raoul;
 	nr = 2;
 	condition = DIA_Raoul_Stimme_Condition;
-	information = DIA_Raoul_Stimme_Info;
+	information = DIA_Raoul_Voice_Info;
 	permanent = FALSE;
-	description = "Я бы хотел стать наемником. Ты не возражаешь?";
+	description = " I'd like to be a mercenary. Do you mind? " ;
 };
 
 
@@ -215,11 +216,11 @@ func int DIA_Raoul_Stimme_Condition()
 
 func void DIA_Raoul_Stimme_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_Stimme_15_00");	//Я бы хотел стать наемником. Ты не возражаешь?
-	AI_Output(self,other,"DIA_Raoul_Stimme_01_01");	//Ааа, делай, что хочешь...
+	AI_Output(other,self, " DIA_Raoul_Stimme_15_00 " );	// I would like to become a mercenary. You do not mind, do you?
+	AI_Output(self,other, " DIA_Raoul_Stimme_01_01 " );	// Ahh, do whatever you want...
 	Log_CreateTopic(TOPIC_SLDRespekt,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SLDRespekt,LOG_Running);
-	B_LogEntry(TOPIC_SLDRespekt,"Рауль не возражает против моего вступления в ряды наемников.");
+	B_LogEntry(TOPIC_SLDRespekt, " Raoul doesn't mind my joining the mercenaries. " );
 };
 
 
@@ -230,7 +231,7 @@ instance DIA_Raoul_Duell(C_Info)
 	condition = DIA_Raoul_Duell_Condition;
 	information = DIA_Raoul_Duell_Info;
 	permanent = TRUE;
-	description = "Я думаю, тебе стоит дать по морде...";
+	description = " I think you should punch you in the face... " ;
 };
 
 
@@ -244,10 +245,10 @@ func int DIA_Raoul_Duell_Condition()
 
 func void DIA_Raoul_Duell_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_Duell_15_00");	//Я думаю, тебе стоит дать по морде...
+	AI_Output(other,self, " DIA_Raoul_Duell_15_00 " );	// I think you should punch you in the face...
 	AI_Output(self,other,"DIA_Raoul_Duell_01_01");	//Что?
-	AI_Output(other,self,"DIA_Raoul_Duell_15_02");	//Это именно то, что тебе сейчас нужно...
-	AI_Output(self,other,"DIA_Raoul_Duell_01_03");	//По-моему, я был с тобой слишком вежлив!
+	AI_Output(other,self, " DIA_Raoul_Duell_15_02 " );	// This is exactly what you need now...
+	AI_Output(self,other, " DIA_Raoul_Duell_01_03 " );	// I think I was too polite to you!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -260,7 +261,7 @@ instance DIA_Raoul_PERM(C_Info)
 	condition = DIA_Raoul_PERM_Condition;
 	information = DIA_Raoul_PERM_Info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -274,17 +275,17 @@ func int DIA_Raoul_PERM_Condition()
 
 func void DIA_Raoul_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_PERM_15_00");	//Все в порядке?
+	AI_Output(other,self, " DIA_Raoul_PERM_15_00 " );	// Is everything okay?
 	if(MIS_Raoul_KillTrollBlack == LOG_Running)
 	{
-		AI_Output(self,other,"DIA_Raoul_PERM_01_01");	//Не болтай попусту. Или и принеси шкуру черного тролля.
+		AI_Output(self,other, " DIA_Raoul_PERM_01_01 " );	// Don't talk in vain. Or bring the skin of a black troll.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Raoul_PERM_01_02");	//Ты пытаешься подлизаться ко мне? Забудь об этом!
+		AI_Output(self,other, " DIA_Raoul_PERM_01_02 " );	// Are you trying to suck up to me? Forget it!
 		if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 		{
-			AI_Output(self,other,"DIA_Raoul_PERM_01_03");	//Я не забыл, что ты сделал со мной.
+			AI_Output(self,other, " DIA_Raoul_PERM_01_03 " );	// I haven't forgotten what you did to me.
 		};
 	};
 };
@@ -310,93 +311,93 @@ func int DIA_Raoul_TROLL_Condition()
 
 func void DIA_Raoul_TROLL_Info()
 {
-	AI_Output(self,other,"DIA_Raoul_TROLL_01_00");	//(цинично) Только посмотрите на это!
-	AI_Output(other,self,"DIA_Raoul_TROLL_15_01");	//Чего тебе нужно?
+	AI_Output(self,other, " DIA_Raoul_TROLL_01_00 " );	// (cynically) Just look at this!
+	AI_Output(other,self, " DIA_Raoul_TROLL_15_01 " );	// What do you need?
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Raoul_TROLL_01_02");	//Ты присоединился к городским нищим? Похоже на то.
+		AI_Output(self,other, " DIA_Raoul_TROLL_01_02 " );	// Have you joined the city beggars? It looks like it.
 	};
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Raoul_TROLL_01_03");	//Не думай, что я стану уважать тебя только за то, что ты стал одним из нас.
+		AI_Output(self,other, " DIA_Raoul_TROLL_01_03 " );	// Don't think I'll respect you just for being one of us.
 	};
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Raoul_TROLL_01_04");	//Разыгрываешь из себя великого мага, ха?
+		AI_Output(self,other, " DIA_Raoul_TROLL_01_04 " );	// Playing great mage, huh?
 	};
 	if((hero.guild == GIL_SEK) || (hero.guild == GIL_TPL) || (hero.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Raoul_TROLL_01_0A");	//Еще один из этих сумашедших болотников! Что думаешь - обкурился и уже бога за яйца поймал?!
+		AI_Output(self,other, " DIA_Raoul_TROLL_01_0A " );	// Another one of those crazy swamps! What do you think - you got stoned and already caught God by the balls ?!
 	};
-	AI_Output(self,other,"DIA_Raoul_TROLL_01_05");	//Я скажу тебе одну вещь: не важно, что ты носишь - я вижу тебя насквозь.
-	AI_Output(self,other,"DIA_Raoul_TROLL_01_06");	//По мне, так ты просто скользкий, маленький бездельник - и ничего больше.
+	AI_Output(self,other, " DIA_Raoul_TROLL_01_05 " );	// I'll tell you one thing: no matter what you wear, I can see right through you.
+	AI_Output(self,other, " DIA_Raoul_TROLL_01_06 " );	// Seems to me like you're just a slippery little bum and nothing more.
 	Info_ClearChoices(DIA_Raoul_TROLL);
-	Info_AddChoice(DIA_Raoul_TROLL,"Я должен идти.",DIA_Raoul_TROLL_weg);
-	Info_AddChoice(DIA_Raoul_TROLL,"В чем твоя проблема?",DIA_Raoul_TROLL_rechnung);
+	Info_AddChoice(DIA_Raoul_TROLL, " I must go. " ,DIA_Raoul_TROLL_weg);
+	Info_AddChoice(DIA_Raoul_TROLL, " What's your problem? " ,DIA_Raoul_TROLL_rechnung);
 };
 
 func void DIA_Raoul_TROLL_weg()
 {
-	AI_Output(other,self,"DIA_Raoul_TROLL_weg_15_00");	//Я должен идти.
-	AI_Output(self,other,"DIA_Raoul_TROLL_weg_01_01");	//Да, проваливай.
+	AI_Output(other,self, " DIA_Raoul_TROLL_weg_15_00 " );	// I have to go.
+	AI_Output(self,other, " DIA_Raoul_TROLL_weg_01_01 " );	// Yes, get lost.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Raoul_TROLL_rechnung()
 {
-	AI_Output(other,self,"DIA_Raoul_TROLL_rechnung_15_00");	//В чем твоя проблема?
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_01_01");	//Я вижу таких людей, как ты, насквозь. Способны только на слова, а когда доходит до дела - в кусты.
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_01_02");	//Я ненавижу тех, кто одевается как вельможа и повсюду хвастает своими героическими делами.
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_01_03");	//Не далее как вчера я набил морду одному такому. Он утверждал, что может завалить черного тролля одной левой.
+	AI_Output(other,self, " DIA_Raoul_TROLL_rechnung_15_00 " );	// What's your problem?
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_01_01 " );	// I see through people like you. Capable only of words, and when it comes to deeds - in the bushes.
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_01_02 " );	// I hate those who dress like nobles and boast about their heroic deeds everywhere.
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_01_03 " );	// As recently as yesterday, I stuffed one of these in the face. He claimed he could take down a black troll with one left hand.
 	AI_Output(other,self,"DIA_Raoul_TROLL_rechnung_15_04");	//И что?
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_01_05");	//(язвительно) Что ты хочешь сказать этим 'и что'?
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_01_06");	//Ты хоть раз в своей жизни видел черного тролля, болтун? Ты хотя бы представляешь себе, насколько велики эти монстры?
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_01_07");	//Если ты подойдешь к ним слишком близко, они разорвут тебя на куски.
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_01_05 " );	// (sarcastically) What do you mean by 'and what'?
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_01_06 " );	// Have you ever seen a black troll in your life, talker? Do you have any idea how big these monsters are?
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_01_07 " );	// If you get too close to them, they'll tear you to pieces.
 	Info_ClearChoices(DIA_Raoul_TROLL);
-	Info_AddChoice(DIA_Raoul_TROLL,"Это мне не интересно.",DIA_Raoul_TROLL_rechnung_hastrecht);
-	if(Npc_IsDead(troll_black_ext) || Npc_IsDead(Troll_Black))
+	Info_AddChoice(DIA_Raoul_TROLL, " I'm not interested. " ,DIA_Raoul_TROLL_rechnung_hastrecht);
+	if (Npc_IsDead(troll_black_ext) || Npc_IsDead(Troll_Black))
 	{
-		Info_AddChoice(DIA_Raoul_TROLL,"Я уже убил черного тролля.",DIA_Raoul_TROLL_rechnung_ich);
+		Info_AddChoice(DIA_Raoul_TROLL, " I already killed the black troll. " ,DIA_Raoul_TROLL_rechnung_ich);
 	}
 	else
 	{
-		Info_AddChoice(DIA_Raoul_TROLL,"Черный тролль? Запросто.",DIA_Raoul_TROLL_rechnung_noProb);
+		Info_AddChoice(DIA_Raoul_TROLL, " Black troll? Easily. " ,DIA_Raoul_TROLL_rechnung_noProb);
 	};
 };
 
 func void B_Raoul_Blame()
 {
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_00");	//Ты напрашиваешься, да? Я должен был уже оторвать тебе голову. Но у меня есть идея получше.
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_01");	//Если ты такой великий боец, докажи это.
-	AI_Output(other,self,"DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_15_02");	//А что мне с этого будет?
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_03");	//Глупый вопрос. Почет, и твоя челюсть останется не сломанной.
-	AI_Output(other,self,"DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_15_04");	//Не так уж много.
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_05");	//Ммм. Скажем, я заплачу тебе целую кучу денег, если ты принесешь мне шкуру черного тролля. Как тебе?
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_00 " );	// You're asking for it, right? I should have torn your head off by now. But I have a better idea.
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_01 " );	// If you're such a great fighter, prove it.
+	AI_Output(other,self, " DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_15_02 " );	// What will happen to me?
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_03 " );	// Stupid question. Honor, and your jaw will not be broken.
+	AI_Output(other,self, " DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_15_04 " );	// Not much.
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_05 " );	// Mmm. Let's say I pay you a whole lot of money if you bring me the skin of a black troll. What do you think?
 	AI_Output(other,self,"DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_15_06");	//Уже лучше.
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_07");	//Тогда чего ты ждешь?
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_B_Raoul_Blame_01_07 " );	// Then what are you waiting for?
 	Log_CreateTopic(TOPIC_KillTrollBlack,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KillTrollBlack,LOG_Running);
-	B_LogEntry(TOPIC_KillTrollBlack,"Рауль хочет, чтобы я принес ему шкуру черного тролля.");
+	B_LogEntry(TOPIC_KillTrollBlack, " Raoul wants me to bring him a black troll skin. " );
 	MIS_Raoul_KillTrollBlack = LOG_Running;
 	Info_ClearChoices(DIA_Raoul_TROLL);
 };
 
 func void DIA_Raoul_TROLL_rechnung_hastrecht()
 {
-	AI_Output(other,self,"DIA_Raoul_TROLL_rechnung_hastrecht_15_00");	//Мне это не интересно.
-	AI_Output(self,other,"DIA_Raoul_TROLL_rechnung_hastrecht_01_01");	//Ну, как знаешь.
+	AI_Output(other,self, " DIA_Raoul_TROLL_rechnung_hastrecht_15_00 " );	// I'm not interested.
+	AI_Output(self,other, " DIA_Raoul_TROLL_rechnung_hastrecht_01_01 " );	// Well, as you know.
 	Info_ClearChoices(DIA_Raoul_TROLL);
 };
 
 func void DIA_Raoul_TROLL_rechnung_ich()
 {
-	AI_Output(other,self,"DIA_Raoul_TROLL_rechnung_ich_15_00");	//Я уже убил черного тролля.
+	AI_Output(other,self, " DIA_Raoul_TROLL_rechnung_ich_15_00 " );	// I've already killed the black troll.
 	B_Raoul_Blame();
 };
 
 func void DIA_Raoul_TROLL_rechnung_noProb()
 {
-	AI_Output(other,self,"DIA_Raoul_TROLL_rechnung_noProb_15_00");	//Черного тролля? Нет проблем.
+	AI_Output(other,self, " DIA_Raoul_TROLL_rechnung_noProb_15_00 " );	// Black troll? No problem.
 	B_Raoul_Blame();
 };
 
@@ -408,7 +409,7 @@ instance DIA_Raoul_TrophyFur(C_Info)
 	condition = DIA_Raoul_TrophyFur_Condition;
 	information = DIA_Raoul_TrophyFur_Info;
 	permanent = TRUE;
-	description = "Сначала скажи мне, как снять шкуру с черного тролля.";
+	description = " First, tell me how to skin a black troll. " ;
 };
 
 
@@ -422,12 +423,12 @@ func int DIA_Raoul_TrophyFur_Condition()
 
 func void DIA_Raoul_TrophyFur_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_TrophyFur_15_00");	//Сначала скажи мне, как снять шкуру с черного тролля.
+	AI_Output(other,self, " DIA_Raoul_TrophyFur_15_00 " );	// First tell me how to skin a black troll.
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Fur))
 	{
-		AI_Output(self,other,"DIA_Raoul_TrophyFur_01_01");	//Тогда прочисть свои уши. Этот совет бесплатный.
-		AI_Output(self,other,"DIA_Raoul_TrophyFur_01_02");	//Ты хватаешь этого зверя и делаешь надрез на каждой из его лап.
-		AI_Output(self,other,"DIA_Raoul_TrophyFur_01_03");	//Затем снимаешь с него шкуру через голову. Разве это так сложно?
+		AI_Output(self,other, " DIA_Raoul_TrophyFur_01_01 " );	// Then clear your ears. This advice is free.
+		AI_Output(self,other, " DIA_Raoul_TrophyFur_01_02 " );	// You grab this beast and make an incision in each of its paws.
+		AI_Output(self,other, " DIA_Raoul_TrophyFur_01_03 " );	// Then skin him over his head. Is it so difficult?
 	};
 };
 
@@ -438,7 +439,7 @@ instance DIA_Raoul_TROLLFELL(C_Info)
 	nr = 3;
 	condition = DIA_Raoul_TROLLFELL_Condition;
 	information = DIA_Raoul_TROLLFELL_Info;
-	description = "Я принес шкуру черного тролля.";
+	description = " I brought the skin of a black troll. " ;
 };
 
 
@@ -452,14 +453,14 @@ func int DIA_Raoul_TROLLFELL_Condition()
 
 func void DIA_Raoul_TROLLFELL_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_TROLLFELL_15_00");	//Я принес шкуру черного тролля.
-	AI_Output(self,other,"DIA_Raoul_TROLLFELL_01_01");	//Невероятно. Покажи.
+	AI_Output(other,self, " DIA_Raoul_TROLLFELL_15_00 " );	// I brought the skin of a black troll.
+	AI_Output(self,other, " DIA_Raoul_TROLLFELL_01_01 " );	// Incredible. Show me.
 	B_GiveInvItems(other,self,ItAt_TrollBlackFur,1);
-	AI_Output(self,other,"DIA_Raoul_TROLLFELL_01_02");	//Невероятно. Что ты хочешь за нее?
-	AI_Output(other,self,"DIA_Raoul_TROLLFELL_15_03");	//Отдай мне все, что у тебя есть.
-	AI_Output(self,other,"DIA_Raoul_TROLLFELL_01_04");	//Хорошо! Я дам тебе пятьсот золотых монет и три сильных лечебных зелья. Что скажешь?
+	AI_Output(self,other, " DIA_Raoul_TROLLFELL_01_02 " );	// Incredible. What do you want for her?
+	AI_Output(other,self, " DIA_Raoul_TROLLFELL_15_03 " );	// Give me everything you have.
+	AI_Output(self,other, " DIA_Raoul_TROLLFELL_01_04 " );	// Good! I will give you five hundred gold coins and three powerful healing potions. What do you say?
 	Info_ClearChoices(DIA_Raoul_TROLLFELL);
-	Info_AddChoice(DIA_Raoul_TROLLFELL,"Этого недостаточно.",DIA_Raoul_TROLLFELL_nein);
+	Info_AddChoice(DIA_Raoul_TROLLFELL, " This is not enough. " ,DIA_Raoul_TROLLFELL_nein);
 	Info_AddChoice(DIA_Raoul_TROLLFELL,"Готово.",DIA_Raoul_TROLLFELL_ja);
 	MIS_Raoul_KillTrollBlack = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Raoul_KillTrollBlack);
@@ -468,7 +469,7 @@ func void DIA_Raoul_TROLLFELL_Info()
 func void DIA_Raoul_TROLLFELL_ja()
 {
 	AI_Output(other,self,"DIA_Raoul_TROLLFELL_ja_15_00");	//Продано.
-	AI_Output(self,other,"DIA_Raoul_TROLLFELL_ja_01_01");	//Отличная сделка.
+	AI_Output(self,other, " DIA_Raoul_TROLLFELL_ja_01_01 " );	// Great deal.
 	CreateInvItems(self,ItPo_Health_03,3);
 	B_GiveInvItems(self,other,ItPo_Health_03,3);
 	CreateInvItems(self,ItMi_Gold,500);
@@ -477,11 +478,11 @@ func void DIA_Raoul_TROLLFELL_ja()
 	Info_ClearChoices(DIA_Raoul_TROLLFELL);
 };
 
-func void DIA_Raoul_TROLLFELL_nein()
+func void DIA_Raoul_TROLLFELL_no()
 {
-	AI_Output(other,self,"DIA_Raoul_TROLLFELL_nein_15_00");	//Этого недостаточно.
-	AI_Output(self,other,"DIA_Raoul_TROLLFELL_nein_01_01");	//Как знаешь. Я все равно заберу эту шкуру.
-	AI_Output(self,other,"DIA_Raoul_TROLLFELL_nein_01_02");	//Я не прощу себе, если упущу такую возможность.
+	AI_Output(other,self, " DIA_Raoul_TROLLFELL_nein_15_00 " );	// This is not enough.
+	AI_Output(self,other, " DIA_Raoul_TROLLFELL_nein_01_01 " );	// As you know. I'll take this skin anyway.
+	AI_Output(self,other, " DIA_Raoul_TROLLFELL_nein_01_02 " );	// I won't forgive myself if I miss this opportunity.
 	MIS_Raoul_DoesntPayTrollFur = LOG_Running;
 	AI_StopProcessInfos(self);
 };
@@ -494,7 +495,7 @@ instance DIA_Raoul_FELLZURUECK(C_Info)
 	condition = DIA_Raoul_FELLZURUECK_Condition;
 	information = DIA_Raoul_FELLZURUECK_Info;
 	permanent = TRUE;
-	description = "Верни мне мою шкуру черного тролля.";
+	description = " Give me back my black troll skin. " ;
 };
 
 
@@ -508,7 +509,7 @@ func int DIA_Raoul_FELLZURUECK_Condition()
 
 func void DIA_Raoul_FELLZURUECK_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_FELLZURUECK_15_00");	//Верни мне мою шкуру черного тролля.
+	AI_Output(other,self, " DIA_Raoul_FELLZURUECK_15_00 " );	// Give me back my black troll skin.
 	AI_Output(self,other,"DIA_Raoul_FELLZURUECK_01_01");	//Нет.
 	AI_StopProcessInfos(self);
 };
@@ -520,7 +521,7 @@ instance DIA_Raoul_GotTrollFurBack(C_Info)
 	nr = 3;
 	condition = DIA_Raoul_GotTrollFurBack_Condition;
 	information = DIA_Raoul_GotTrollFurBack_Info;
-	description = "Никогда больше не пытайся обмануть меня, понятно?";
+	description = " Don't ever try to fool me again, okay? " ;
 };
 
 
@@ -534,8 +535,8 @@ func int DIA_Raoul_GotTrollFurBack_Condition()
 
 func void DIA_Raoul_GotTrollFurBack_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_GotTrollFurBack_15_00");	//Никогда больше не пытайся обмануть меня, понятно?
-	AI_Output(self,other,"DIA_Raoul_GotTrollFurBack_01_01");	//Хорошо. Ты знаешь здешние законы. Так что успокойся.
+	AI_Output(other,self, " DIA_Raoul_GotTrollFurBack_15_00 " );	// Don't ever try to fool me again, okay?
+	AI_Output(self,other, " DIA_Raoul_GotTrollFurBack_01_01 " );	// Good. You know the local laws. So take it easy.
 	MIS_Raoul_DoesntPayTrollFur = LOG_SUCCESS;
 	AI_StopProcessInfos(self);
 };
@@ -554,7 +555,7 @@ instance DIA_Raoul_KAP3_EXIT(C_Info)
 
 func int DIA_Raoul_KAP3_EXIT_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
@@ -579,7 +580,7 @@ instance DIA_Raoul_KAP4_EXIT(C_Info)
 
 func int DIA_Raoul_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -604,7 +605,7 @@ instance DIA_Raoul_KAP5_EXIT(C_Info)
 
 func int DIA_Raoul_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -622,13 +623,13 @@ instance DIA_Raoul_Ship(C_Info)
 	nr = 2;
 	condition = DIA_Raoul_Ship_Condition;
 	information = DIA_Raoul_Ship_Info;
-	description = "Ты не отказался бы от океанского круиза?";
+	description = " Would you like an ocean cruise? " ;
 };
 
 
 func int DIA_Raoul_Ship_Condition()
 {
-	if((Kapitel >= 5) && (MIS_SCKnowsWayToIrdorath == TRUE) && (KAPITELORCATC == FALSE))
+	if ((Capital >=  5 ) && (MY_SCKnowsWayToIrdorath ==  TRUE ) && ( CAPITALORCATC  ==  FALSE )) .
 	{
 		return TRUE;
 	};
@@ -636,16 +637,16 @@ func int DIA_Raoul_Ship_Condition()
 
 func void DIA_Raoul_Ship_Info()
 {
-	AI_Output(other,self,"DIA_Raoul_Ship_15_00");	//Ты не отказался бы от океанского круиза?
-	AI_Output(self,other,"DIA_Raoul_Ship_01_01");	//Что ты замышляешь? Ты хочешь захватить корабль паладинов? (смеется)
-	AI_Output(other,self,"DIA_Raoul_Ship_15_02");	//А что если и так?
-	AI_Output(self,other,"DIA_Raoul_Ship_01_03");	//(серьезно) У тебя совсем крыша поехала. Нет, спасибо. Это не для меня.
-	AI_Output(self,other,"DIA_Raoul_Ship_01_04");	//Я не вижу причин покидать Хоринис. Мне все равно, где зарабатывать деньги, здесь или на материке.
-	AI_Output(self,other,"DIA_Raoul_Ship_01_05");	//Найди кого-нибудь еще.
+	AI_Output(other,self, " DIA_Raoul_Ship_15_00 " );	// Would you mind taking an ocean cruise?
+	AI_Output(self,other, " DIA_Raoul_Ship_01_01 " );	// What are you up to? Do you want to take over the paladin ship? (laughs)
+	AI_Output(other,self, " DIA_Raoul_Ship_15_02 " );	// What if it does?
+	AI_Output(self,other, " DIA_Raoul_Ship_01_03 " );	// (seriously) You've gone crazy. No thanks. This is not for me.
+	AI_Output(self,other, " DIA_Raoul_Ship_01_04 " );	// I see no reason to leave Khorinis. I don't care where I make money, here or on the mainland.
+	AI_Output(self,other, " DIA_Raoul_Ship_01_05 " );	// Find someone else.
 
-	if(Npc_IsDead(Torlof) == FALSE)
+	if (Npc_IsDead(Torlof) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Raoul_Ship_01_06");	//Спроси Торлофа! Он ходил по морям, насколько я знаю.
+		AI_Output(self,other, " DIA_Raoul_Ship_01_06 " );	// Ask Torlof! He walked the seas, as far as I know.
 	};
 };
 
@@ -663,7 +664,7 @@ instance DIA_Raoul_KAP6_EXIT(C_Info)
 
 func int DIA_Raoul_KAP6_EXIT_Condition()
 {
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		return TRUE;
 	};
@@ -688,7 +689,7 @@ instance DIA_Raoul_PICKPOCKET(C_Info)
 
 func int DIA_Raoul_PICKPOCKET_Condition()
 {
-	return C_Beklauen(45,85);
+	return  C_Robbery ( 45 , 85 );
 };
 
 func void DIA_Raoul_PICKPOCKET_Info()
@@ -700,7 +701,7 @@ func void DIA_Raoul_PICKPOCKET_Info()
 
 func void DIA_Raoul_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Raoul_PICKPOCKET);
 };
 
@@ -709,7 +710,7 @@ func void DIA_Raoul_PICKPOCKET_BACK()
 	Info_ClearChoices(DIA_Raoul_PICKPOCKET);
 };
 
-//-------------------------------кости-------------------------------------------------
+// -------------------------------bones---------------- ---------------------------------
 
 instance DIA_Sld_822_Raoul_Game(C_Info)
 {
@@ -717,7 +718,7 @@ instance DIA_Sld_822_Raoul_Game(C_Info)
 	nr = 3;
 	condition = DIA_Sld_822_Raoul_Game_condition;
 	information = DIA_Sld_822_Raoul_Game_info;
-	description = "Говорят, что ты неплохо играешь в кости.";
+	description = " You are said to be good at dice. " ;
 };
 
 func int DIA_Sld_822_Raoul_Game_condition()
@@ -730,10 +731,10 @@ func int DIA_Sld_822_Raoul_Game_condition()
 
 func void DIA_Sld_822_Raoul_Game_info()
 {
-	AI_Output(other,self,"DIA_Sld_822_Raoul_Game_01_00");	//Говорят, что ты неплохо играешь в кости.
-	AI_Output(self,other,"DIA_Sld_822_Raoul_Game_01_01");	//Неплохо?! Это еще слабо сказано! Я лучший игрок в округе.
-	AI_Output(other,self,"DIA_Sld_822_Raoul_Game_01_02");	//Может быть тогда покажешь свой умение.
-	AI_Output(self,other,"DIA_Sld_822_Raoul_Game_01_03");	//Только потом не говори, что я тебе не предупреждал.
+	AI_Output(other,self, " DIA_Sld_822_Raoul_Game_01_00 " );	// They say you're good at dice.
+	AI_Output(self,other, " DIA_Sld_822_Raoul_Game_01_01 " );	// Not bad?! That's too weak to say! I'm the best player around.
+	AI_Output(other,self, " DIA_Sld_822_Raoul_Game_01_02 " );	// Maybe then you'll show your skill.
+	AI_Output(self,other, " DIA_Sld_822_Raoul_Game_01_03 " );	// Don't say later that I didn't warn you.
 	RaoulPlayResult = 300;
 	Menu_WriteInt("AST","SysTimer04",0);
 };
@@ -745,12 +746,12 @@ instance DIA_Sld_822_Raoul_GamePlay(C_Info)
 	condition = DIA_Sld_822_Raoul_GamePlay_condition;
 	information = DIA_Sld_822_Raoul_GamePlay_info;
 	permanent = TRUE;
-	description = "Сыграем в кости!";
+	description = " Let's play dice! " ;
 };
 
 func int DIA_Sld_822_Raoul_GamePlay_condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Sld_822_Raoul_Game) == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE))
+	if (( Npc_KnowsInfo ( other , DIA_Sld_822_Raoul_Game ) ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -768,33 +769,33 @@ func void DIA_Sld_822_Raoul_GamePlay_info()
 		CheckLastSum = CheckLastGame - RaoulPlayResult;
 	};
 
-	AI_Output(other,self,"DIA_Sld_822_Raoul_GamePlay_01_00");	//Сыграем в кости!
+	AI_Output(other,self, " DIA_Sld_822_Raoul_GamePlay_01_00 " );	// Let's play dice!
 
 	if(RaoulPlayResult >= CheckLastGame)
 	{
 		if((RaoulPlayResult > 0) && (RaoulDayFlag == FALSE))
 		{
-			AI_Output(self,other,"DIA_Sld_822_Raoul_GamePlay_01_01");	//Ну держись, парень! Сейчас твой кошелек изрядно похудеет.
+			AI_Output(self,other, " DIA_Sld_822_Raoul_GamePlay_01_01 " );	// Hold on, man! Now your wallet will lose a lot of weight.
 			PlayPocker(1,self);
 		}
 		else
 		{
 			if(RaoulDayFlag == FALSE)
 			{
-				AI_Output(self,other,"DIA_Sld_822_Raoul_GamePlay_01_02");	//Что бы я еще раз сел с тобой играть?! Вот уж дудки.
+				AI_Output(self,other, " DIA_Sld_822_Raoul_GamePlay_01_02 " );	// Why would I sit down to play with you again?! Here are the boobies.
 				RaoulDayPlay = Wld_GetDay();
 				RaoulDayFlag = TRUE;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Sld_822_Raoul_GamePlay_01_03");	//Отстань! Луше как-нибудь в другой раз.
+				AI_Output(self,other, " DIA_Sld_822_Raoul_GamePlay_01_03 " );	// Back off! Better some other time.
 			};
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Sld_822_Raoul_GamePlay_01_04");	//Само собой! Только верни мне сначала мое золото, которое я у тебя выиграл в прошлый раз.
-		AI_Output(self,other,"DIA_Sld_822_Raoul_GamePlay_01_05");	//Иначе, можешь проваливать.
+		AI_Output(self,other, " DIA_Sld_822_Raoul_GamePlay_01_04 " );	// Of course! Just give me back my gold first, which I won from you last time.
+		AI_Output(self,other, " DIA_Sld_822_Raoul_GamePlay_01_05 " );	// Otherwise, you can fail.
 		Info_ClearChoices(DIA_Sld_822_Raoul_GamePlay);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= CheckLastSum)
@@ -802,7 +803,7 @@ func void DIA_Sld_822_Raoul_GamePlay_info()
 			Info_AddChoice(DIA_Sld_822_Raoul_GamePlay,"Вот твои деньги.",DIA_Sld_822_Raoul_GamePlay_Here);
 		};
 
-		Info_AddChoice(DIA_Sld_822_Raoul_GamePlay,"У меня нет столько денег.",DIA_Sld_822_Raoul_GamePlay_No);
+		Info_AddChoice(DIA_Sld_822_Raoul_GamePlay, " I don't have that much money. " ,DIA_Sld_822_Raoul_GamePlay_No);
 	};
 };
 
@@ -811,15 +812,15 @@ func void DIA_Sld_822_Raoul_GamePlay_Here()
 	Snd_Play("Geldbeutel");
 	Npc_RemoveInvItems(hero,ItMi_Gold,CheckLastSum);
 	RaoulPlayResult = CheckLastGame;
-	AI_Output(other,self,"DIA_Sld_822_Raoul_GamePlay_Here_01_01");	//Вот твои деньги.
-	AI_Output(self,other,"DIA_Sld_822_Raoul_GamePlay_Here_01_02");	//Как честный! Кто бы мог подумать. Ну давай, сыграем.
+	AI_Output(other,self, " DIA_Sld_822_Raoul_GamePlay_Here_01_01 " );	// Here's your money.
+	AI_Output(self,other, " DIA_Sld_822_Raoul_GamePlay_Here_01_02 " );	// How honest! Who would have thought. Come on, let's play.
 	PlayPocker(1,self);
 };
 
 func void DIA_Sld_822_Raoul_GamePlay_No()
 {
-	AI_Output(other,self,"DIA_Sld_822_Raoul_GamePlay_No_01_01");	//У меня нет столько денег.
-	AI_Output(self,other,"DIA_Sld_822_Raoul_GamePlay_No_01_02");	//Нет золота - нет игры!
+	AI_Output(other,self, " DIA_Sld_822_Raoul_GamePlay_No_01_01 " );	// I don't have that much money.
+	AI_Output(self,other, " DIA_Sld_822_Raoul_GamePlay_No_01_02 " );	// No gold - no game!
 	Info_ClearChoices(DIA_Sld_822_Raoul_GamePlay);
 };
 
@@ -845,12 +846,12 @@ func void DIA_Sld_822_Raoul_GameEnd_info()
 {
 	if(RaoulLost == TRUE)
 	{
-		AI_Output(self,other,"DIA_Sld_822_Raoul_GameEnd_00");	//Ну ты и плут! Зря я только с тобой связался.
+		AI_Output(self,other, " DIA_Sld_822_Raoul_GameEnd_00 " );	// Well, you're a rogue! I just got in touch with you.
 		RaoulLost = FALSE;
 	}
 	else if(RaoulWon == TRUE)
 	{
-		AI_Output(self,other,"DIA_Sld_822_Raoul_GameEnd_01");	//Твое золото теперь мое золото! Хе-хе...
+		AI_Output(self,other, " DIA_Sld_822_Raoul_GameEnd_01 " );	// Your gold is now my gold! Hehe...
 		RaoulWon = FALSE;
 	};
 
