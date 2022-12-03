@@ -1,4 +1,5 @@
 
+
 instance DIA_Salandril_EXIT(C_Info)
 {
 	npc = VLK_422_Salandril;
@@ -12,7 +13,7 @@ instance DIA_Salandril_EXIT(C_Info)
 
 func int DIA_Salandril_EXIT_Condition()
 {
-	if(Kapitel < 3)
+	if (chapter <  3 )
 	{
 		return TRUE;
 	};
@@ -31,7 +32,7 @@ instance DIA_Salandril_PICKPOCKET(C_Info)
 	condition = DIA_Salandril_PICKPOCKET_Condition;
 	information = DIA_Salandril_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его ключ) ";
+	description = " (Try to steal his key) " ;
 };
 
 
@@ -100,12 +101,12 @@ func void DIA_Salandril_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Salandril_Hallo(C_Info)
+instance DIA_Salandril_Hallo (C_Info)
 {
 	npc = VLK_422_Salandril;
 	nr = 2;
 	condition = DIA_Salandril_Hallo_Condition;
-	information = DIA_Salandril_Hallo_Info;
+	information = DIA_Salandril_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -121,10 +122,10 @@ func int DIA_Salandril_Hallo_Condition()
 
 func void DIA_Salandril_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Salandril_PERM_13_00");	//Добро пожаловать, путник. Ищешь хорошее зелье?
-	AI_Output(self,other,"DIA_Salandril_PERM_13_01");	//У меня большой выбор и умеренные цены. Мои зелья лучше, чем та отрава, что продает Зурис.
+	AI_Output(self,other, " DIA_Salandril_PERM_13_00 " );	// Welcome traveler. Looking for a good potion?
+	AI_Output(self,other, " DIA_Salandril_PERM_13_01 " );	// I have a large selection and reasonable prices. My potions are better than the poison Zuris sells.
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Саландрил торгует зельями. Его лавка находится в верхнем квартале.");
+	B_LogEntry(TOPIC_CityTrader, " Salandril sells potions. His shop is in the upper quarter. " );
 };
 
 instance DIA_Salandril_Trade(C_Info)
@@ -134,14 +135,14 @@ instance DIA_Salandril_Trade(C_Info)
 	condition = DIA_Salandril_Trade_Condition;
 	information = DIA_Salandril_Trade_Info;
 	permanent = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 	trade = TRUE;
 };
 
 
 func int DIA_Salandril_Trade_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Salandril_KLOSTER) == FALSE) && Wld_IsTime(8,0,22,0))
+	if ((Npc_KnowsInfo(other,DIA_Salandril_Closter) ==  FALSE ) && Wld_IsTime( 8 , 0 , 22 , 0 )) ;
 	{
 		return TRUE;
 	};
@@ -160,11 +161,11 @@ func void DIA_Salandril_Trade_Info()
 		CreateInvItems(self,itpo_anpois,3);
 	};
 
-	AI_Output(other,self,"DIA_Salandril_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Salandril_Trade_15_00 " );	// Show me your products.
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Salandril_Trade_13_01");	//С удовольствием, преподобный брат.
+		AI_Output(self,other, " DIA_Salandril_Trade_13_01 " );	// With pleasure, Reverend Brother.
 		if(MIS_Serpentes_MinenAnteil_KDF == LOG_Running)
 		{
 			SC_KnowsProspektorSalandril = TRUE;
@@ -172,11 +173,11 @@ func void DIA_Salandril_Trade_Info()
 	};
 	if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Salandril_Trade_13_02");	//С удовольствием, о, благородный воин.
+		AI_Output(self,other, " DIA_Salandril_Trade_13_02 " );	// With pleasure, oh noble warrior.
 	};
 	if(other.guild == GIL_GUR)
 	{
-		AI_Output(self,other,"DIA_Salandril_Trade_13_03");	//С удовольствием!
+		AI_Output(self,other, " DIA_Salandril_Trade_13_03 " );	// With pleasure!
 	};
 
 	B_GiveTradeInv(self);
@@ -196,7 +197,7 @@ instance DIA_Salandril_KAP3_EXIT(C_Info)
 
 func int DIA_Salandril_KAP3_EXIT_Condition()
 {
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		return TRUE;
 	};
@@ -207,13 +208,13 @@ func void DIA_Salandril_KAP3_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Salandril_KLOSTER(C_Info)
+instance DIA_Salandril_CLOSE (C_Info)
 {
 	npc = VLK_422_Salandril;
 	nr = 2;
 	condition = DIA_Salandril_KLOSTER_Condition;
 	information = DIA_Salandril_KLOSTER_Info;
-	description = "Ты должен отправиться в монастырь, чтобы предстать перед судом.";
+	description = " You must go to the monastery to stand trial. " ;
 };
 
 func int DIA_Salandril_KLOSTER_Condition()
@@ -226,35 +227,35 @@ func int DIA_Salandril_KLOSTER_Condition()
 
 func void DIA_Salandril_KLOSTER_Info()
 {
-	AI_Output(other,self,"DIA_Salandril_KLOSTER_15_00");	//Ты должен отправиться в монастырь, чтобы предстать перед судом.
-	AI_Output(self,other,"DIA_Salandril_KLOSTER_13_01");	//Что? У тебя крыша поехала? Черта с два! У этих жалких магов нет никаких доказательств против меня.
+	AI_Output(other,self, " DIA_Salandril_KLOSTER_15_00 " );	// You must go to the monastery to stand trial.
+	AI_Output(self,other, " DIA_Salandril_KLOSTER_13_01 " );	// What? Have you lost your roof? Hell no! These pathetic magicians have no evidence against me.
 
 	if((hero.guild == GIL_KDF) && (SC_KnowsProspektorSalandril == TRUE))
 	{
-		AI_Output(other,self,"DIA_Salandril_KLOSTER_15_02");	//А как насчет этих фальшивых акций, которыми ты наводнил всю страну? На них твоя подпись. Ты виновен.
+		AI_Output(other,self, " DIA_Salandril_KLOSTER_15_02 " );	// What about those fake stocks you've been flooding the country with? They have your signature on them. You are guilty.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Salandril_KLOSTER_15_03");	//У меня есть приказ, и я выполню его. Так что, либо ты пойдешь сам, либо мне придется заставить тебя.
+		AI_Output(other,self, " DIA_Salandril_KLOSTER_15_03 " );	// I have an order and I will follow it. So either you go on your own or I have to force you.
 	};
-	AI_Output(self,other,"DIA_Salandril_KLOSTER_13_04");	//Что? Да я протащу тебя через весь город за шиворот, как паршивого щенка, и вышвырну за ворота.
+	AI_Output(self,other, " DIA_Salandril_KLOSTER_13_04 " );	// What? Yes, I will drag you through the whole city by the scruff of the neck, like a lousy puppy, and throw you out the gate.
 	CreateInvItems(self,ItKe_Salandril,1);
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
 
-instance DIA_Salandril_GehinsKloster(C_Info)
+instance DIA_Salandril_GehinsMonastery (C_Info)
 {
 	npc = VLK_422_Salandril;
 	nr = 2;
 	condition = DIA_Salandril_GehinsKloster_Condition;
 	information = DIA_Salandril_GehinsKloster_Info;
-	description = "Так ты пойдешь в монастырь, или тебя еще раз проучить?";
+	description = " So are you going to the monastery, or are you going to have another lesson? " ;
 };
 
 func int DIA_Salandril_GehinsKloster_Condition()
 {
-	if(((SC_KnowsProspektorSalandril == TRUE) || (MIS_Serpentes_BringSalandril_SLD == LOG_Running)) && (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) && Npc_KnowsInfo(other,DIA_Salandril_KLOSTER))
+	if (((SC_KnowsProspectorSalandril ==  TRUE ) || (MIS_Serpents_BringSalandril_SLD == LOG_Running)) && (self.aivar[AIV_LastFightAgainstPlayer] ==  FIGHT_LOST ) && Npc_KnowsInfo(other,DIA_Salandril_CLOSE));
 	{
 		return TRUE;
 	};
@@ -262,8 +263,8 @@ func int DIA_Salandril_GehinsKloster_Condition()
 
 func void DIA_Salandril_GehinsKloster_Info()
 {
-	AI_Output(other,self,"DIA_Salandril_GehinsKloster_15_00");	//Так ты пойдешь в монастырь, или тебя еще раз проучить?
-	AI_Output(self,other,"DIA_Salandril_GehinsKloster_13_01");	//Ты еще пожалеешь об этом. Да, черт тебя побери, я пойду в этот монастырь, но тебе это просто так с рук не сойдет.
+	AI_Output(other,self, " DIA_Salandril_GehinsKloster_15_00 " );	// So are you going to the monastery, or will you be taught another lesson?
+	AI_Output(self,other, " DIA_Salandril_GehinsKloster_13_01 " );	// You'll regret it. Yes, damn you, I'll go to this monastery, but you won't get away with it just like that.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"KlosterUrteil");
 	MIS_Serpentes_BringSalandril_SLD = LOG_SUCCESS;
@@ -275,18 +276,18 @@ func void DIA_Salandril_GehinsKloster_Info()
 };
 
 
-instance DIA_Salandril_Verschwinde(C_Info)
+instance DIA_Salandril_Disappear (C_Info)
 {
 	npc = VLK_422_Salandril;
 	nr = 2;
-	condition = DIA_Salandril_Verschwinde_Condition;
-	information = DIA_Salandril_Verschwinde_Info;
+	condition = DIA_Salandril_Disappear_Condition;
+	information = DIA_Salandril_Disappear_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int DIA_Salandril_Verschwinde_Condition()
+func int DIA_Salandril_Disappear_Condition()
 {
 	if((MIS_Serpentes_BringSalandril_SLD == LOG_SUCCESS) && Npc_IsInState(self,ZS_Talk))
 	{
@@ -294,14 +295,14 @@ func int DIA_Salandril_Verschwinde_Condition()
 	};
 };
 
-func void DIA_Salandril_Verschwinde_Info()
+func void DIA_Salandril_Disappear_Info()
 {
 	if(MIS_SALANDRILHELP == LOG_Running)
 	{
 		MIS_SALANDRILHELP = LOG_FAILED;
 		B_LogEntry_Failed(TOPIC_SALANDRILHELP);
 	};
-	B_Verschwinde_Stimme13();
+	B_Disappear_Voice13();
 	AI_StopProcessInfos(self);
 };
 
@@ -319,7 +320,7 @@ instance DIA_Salandril_KAP4_EXIT(C_Info)
 
 func int DIA_Salandril_KAP4_EXIT_Condition()
 {
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		return TRUE;
 	};
@@ -344,7 +345,7 @@ instance DIA_Salandril_KAP5_EXIT(C_Info)
 
 func int DIA_Salandril_KAP5_EXIT_Condition()
 {
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		return TRUE;
 	};
@@ -369,7 +370,7 @@ instance DIA_Salandril_KAP6_EXIT(C_Info)
 
 func int DIA_Salandril_KAP6_EXIT_Condition()
 {
-	if(Kapitel == 6)
+	if (chapter ==  6 )
 	{
 		return TRUE;
 	};
@@ -388,7 +389,7 @@ instance DIA_SALANDRIL_RECEPTFORTYON(C_Info)
 	condition = dia_salandril_receptfortyon_condition;
 	information = dia_salandril_receptfortyon_info;
 	permanent = FALSE;
-	description = "Я слышал про одно редкое зелье...";
+	description = " I heard about a rare potion... " ;
 };
 
 
@@ -402,10 +403,10 @@ func int dia_salandril_receptfortyon_condition()
 
 func void dia_salandril_receptfortyon_info()
 {
-	AI_Output(other,self,"DIA_Salandril_ReceptForTyon_01_00");	//Я слышал про одно очень редкое зелье...
-	AI_Output(other,self,"DIA_Salandril_ReceptForTyon_01_02");	//Оно некоторым образом способно воздействовать на сознание человека. Не слышал ничего про это?
-	AI_Output(self,other,"DIA_Salandril_ReceptForTyon_01_03");	//Нет. Первый раз слышу про подобный эликсир.
-	AI_Output(self,other,"DIA_Salandril_ReceptForTyon_01_05");	//Но, может быть, другие алхимики в городе смогут помочь тебе.
+	AI_Output(other,self, " DIA_Salandril_ReceptForTyon_01_00 " );	// I heard about a very rare potion...
+	AI_Output(other,self, " DIA_Salandril_ReceptForTyon_01_02 " );	// It is in some way able to influence the consciousness of a person. Haven't heard anything about it?
+	AI_Output(self,other, " DIA_Salandril_ReceptForTyon_01_03 " );	// No. This is the first time I hear about such an elixir.
+	AI_Output(self,other, " DIA_Salandril_ReceptForTyon_01_05 " );	// But maybe the other alchemists in town can help you.
 };
 
 
@@ -416,7 +417,7 @@ instance DIA_SALANDRIL_TALIASANLETTER(C_Info)
 	condition = dia_salandril_taliasanletter_condition;
 	information = dia_salandril_taliasanletter_info;
 	permanent = FALSE;
-	description = "Ты можешь мне помочь?";
+	description = " Can you help me? " ;
 };
 
 
@@ -430,29 +431,29 @@ func int dia_salandril_taliasanletter_condition()
 
 func void dia_salandril_taliasanletter_info()
 {
-	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_00");	//Ты можешь мне помочь?
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_01");	//А в чем дело?
-	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_02");	//Мне очень необходимо, чтобы ты написал для меня одно рекомендательное письмо.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_03");	//О! (смеется) Похоже, ты подыскал себе работенку, и там от тебя требуют хороших рекомендаций, да?
-	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_06");	//Ты меня немного не понял. Мне нужно письмо, в котором буду рекомендован не я, а другой человек.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_07");	//И кто это, если не секрет?
-	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_08");	//Этого человека зовут Галлахад.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_13");	//А кому я должен рекомендовать его?
-	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_14");	//Письмо должно быть адресовано Лариусу.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_20");	//(задумался) Ну хорошо, я напишу для Галлахада это письмо.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_21");	//Однако прежде ты должен будешь оказать мне небольшую услугу.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_24");	//Достань для меня образец одного редкого зелья - и считай, что письмо у тебя в кармане.
-	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_32");	//Какое зелье тебе нужно?
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_33");	//Я предполагаю, что этим зельем пользуются орки, чтобы повышать свою силу и выносливость.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_34");	//Поэтому, думаю, достать его будет можно только у одного из них.
-	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_38");	//Хорошо, я постараюсь найти этот напиток.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_39");	//Я тут слышал от одного охотника, что какого-то орка видели недалеко от города. Кажется, в том месте была еще пещера.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_40");	//Возможно, эта информация будет полезна в твоих поисках.
+	AI_Output(other,self, " DIA_Salandril_TaliasanLetter_01_00 " );	// Can you help me?
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_01 " );	// What's the matter?
+	AI_Output(other,self, " DIA_Salandril_TaliasanLetter_01_02 " );	// I really need you to write one letter of recommendation for me.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_03 " );	// Oh! (laughs) Looks like you've found yourself a job and they want good references from you, right?
+	AI_Output(other,self, " DIA_Salandril_TaliasanLetter_01_06 " );	// You misunderstood me a little. I need a letter that recommends not me, but another person.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_07 " );	// And who is this, if not a secret?
+	AI_Output(other,self, " DIA_Salandril_TaliasanLetter_01_08 " );	// This man's name is Gallahad.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_13 " );	// To whom should I recommend it?
+	AI_Output(other,self, " DIA_Salandril_TaliasanLetter_01_14 " );	// The letter must be addressed to Larius.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_20 " );	// (thinking) All right, I'll write this letter for Gallahad.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_21 " );	// But first, you'll have to do me a little favor.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_24 " );	// Get me a sample of one rare potion - and consider the letter in your pocket.
+	AI_Output(other,self, " DIA_Salandril_TaliasanLetter_01_32 " );	// What potion do you need?
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_33 " );	// I'm guessing Orcs use this potion to increase their strength and stamina.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_34 " );	// Therefore, I think it will be possible to get it only from one of them.
+	AI_Output(other,self, " DIA_Salandril_TaliasanLetter_01_38 " );	// Okay, I'll try to find this drink.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_39 " );	// I heard from a hunter here that some orc was seen near the city. It looks like there was a cave in that place.
+	AI_Output(self,other, " DIA_Salandril_TaliasanLetter_01_40 " );	// Perhaps this information will be useful in your search.
 	Wld_InsertNpc(orcwarrior_salandril,"NW_CITY_SMFOREST_03_M");
 	MIS_SALANDRILHELP = LOG_Running;
 	Log_CreateTopic(TOPIC_SALANDRILHELP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SALANDRILHELP,LOG_Running);
-	B_LogEntry(TOPIC_SALANDRILHELP,"Саландрил напишет рекомендательное письмо для Галлахада, если я принесу ему орочье зелье. По его словам, недалеко от города видели одного орка. Возможно, у него окажется при себе необходимый мне напиток.");
+	B_LogEntry( TOPIC_SALANDRILHELP , " Salandril will write a letter of recommendation for Gallahad if I bring him an orc potion. According to him, an orc was seen near the city. Perhaps he will have the drink I need with him. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -464,7 +465,7 @@ instance DIA_SALANDRIL_GIVEPOTION(C_Info)
 	condition = dia_salandril_givepotion_condition;
 	information = dia_salandril_givepotion_info;
 	permanent = FALSE;
-	description = "Я принес тебе орочье зелье.";
+	description = " I brought you an orc potion. " ;
 };
 
 
@@ -479,30 +480,30 @@ func int dia_salandril_givepotion_condition()
 func void dia_salandril_givepotion_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Salandril_GivePotion_01_00");	//Я принес тебе орочье зелье.
-	AI_Output(self,other,"DIA_Salandril_GivePotion_01_01");	//Правда? Покажи!
-	AI_Output(other,self,"DIA_Salandril_GivePotion_01_02");	//Вот. Как ты и говорил, оно было у одного из орков.
+	AI_Output(other,self, " DIA_Salandril_GivePotion_01_00 " );	// I brought you an orc potion.
+	AI_Output(self,other, " DIA_Salandril_GivePotion_01_01 " );	// True? Show me!
+	AI_Output(other,self, " DIA_Salandril_GivePotion_01_02 " );	// Here. Like you said, one of the orcs had it.
 	B_GiveInvItems(other,self,itpo_xorcpotion,1);
 	Npc_RemoveInvItems(self,itpo_xorcpotion,1);
-	AI_Output(self,other,"DIA_Salandril_GivePotion_01_03");	//Отлично! Наконец-то я смогу изучить его состав!
-	AI_Output(other,self,"DIA_Salandril_GivePotion_01_04");	//А что насчет письма?
-	AI_Output(self,other,"DIA_Salandril_GivePotion_01_05");	//Ах да. Вот, держи.
+	AI_Output(self,other, " DIA_Salandril_GivePotion_01_03 " );	// Great! Finally, I can study its composition!
+	AI_Output(other,self, " DIA_Salandril_GivePotion_01_04 " );	// What about the letter?
+	AI_Output(self,other, " DIA_Salandril_GivePotion_01_05 " );	// Oh yeah. Here you are.
 	B_GiveInvItems(self,other,itwr_salandrilletter,1);
-	AI_Output(self,other,"DIA_Salandril_GivePotion_01_09");	//А теперь мне пора изучать этот эликсир.
+	AI_Output(self,other, " DIA_Salandril_GivePotion_01_09 " );	// And now it's time for me to study this elixir.
 	MIS_SALANDRILHELP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SALANDRILHELP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_SALANDRILHELP,"Я принес Саландрилу орочье зелье. Он был вне себя от счастья, и едва не забыл отдать мне рекомендательное письмо для Галлахада.");
+	B_LogEntry( TOPIC_SALANDRILHELP , " I brought Salandril an orc potion. He was beside himself with happiness and almost forgot to give me a letter of recommendation for Gallahad. " );
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_SALANDRIL_ORCRUM(C_Info)
+DIA_SALANDRIL_ORCRUM (C_Info) instances
 {
 	npc = VLK_422_Salandril;
 	nr = 2;
 	condition = dia_salandril_orcrum_condition;
 	information = dia_salandril_orcrum_info;
 	permanent = FALSE;
-	description = "Посмотри, что у меня есть.";
+	description = " Look what I have. " ;
 };
 
 func int dia_salandril_orcrum_condition()
@@ -516,15 +517,15 @@ func int dia_salandril_orcrum_condition()
 func void dia_salandril_orcrum_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Salandril_ORCRUM_01_00");	//Посмотри, что у меня есть. Какое-то орочье пойло. Ты знаешь, что с ним можно сделать?
+	AI_Output(other,self, " DIA_Salandril_ORCRUM_01_00 " );	// Look what I have. Some kind of orc swill. Do you know what can be done with it?
 	B_GiveInvItems(other,self,itfo_addon_orcrum,1);
 	Npc_RemoveInvItems(self,itfo_addon_orcrum,1);
-	AI_Output(self,other,"DIA_Salandril_ORCRUM_01_01");	//Такого я еще не встречал. Оставь зелье у меня и приходи через пару дней. Мне нужно время на исследования.
+	AI_Output(self,other, " DIA_Salandril_ORCRUM_01_01 " );	// I've never seen this before. Leave the potion with me and come back in a couple of days. I need time to research.
 	ORCRUMDAY = Wld_GetDay();
 	MIS_SALANDRILRESECH = LOG_Running;
 	Log_CreateTopic(TOPIC_SALANDRILRESECH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SALANDRILRESECH,LOG_Running);
-	B_LogEntry(TOPIC_SALANDRILRESECH,"Саландрил попробует исследовать орочье пойло на предмет практического применения. Через пару дней будет известен результат.");
+	B_LogEntry( TOPIC_SALANDRILRESECH , " Salandril will try to research orc brew for practical use. We'll know the result in a couple of days. " );
 };
 
 
@@ -535,7 +536,7 @@ instance DIA_SALANDRIL_ORCRUM2(C_Info)
 	condition = dia_salandril_orcrum2_condition;
 	information = dia_salandril_orcrum2_info;
 	permanent = FALSE;
-	description = "Как исследования?";
+	description = " How's the research? " ;
 };
 
 func int dia_salandril_orcrum2_condition()
@@ -549,13 +550,13 @@ func int dia_salandril_orcrum2_condition()
 func void dia_salandril_orcrum2_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_00");	//Как исследования?
-	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_01");	//Зелья оказалось очень мало, и мне его хватило только на начальные опыты.
-	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_02");	//Но очевидно, что оно обладает интересными и уникальными свойствами, раскрыть которые можно только продолжив исследования.
-	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_04");	//Ты хочешь сказать, что мне надо принести тебе еще этого пойла для экспериментов?
-	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_05");	//Ты правильно понял. Если принесешь мне десять бутылок этого пойла, я продолжу исследования.
+	AI_Output(other,self, " DIA_Salandril_ORCRUM2_01_00 " );	// How's the research?
+	AI_Output(self,other, " DIA_Salandril_ORCRUM2_01_01 " );	// The potion turned out to be very small, and it was enough for me only for the initial experiments.
+	AI_Output(self,other, " DIA_Salandril_ORCRUM2_01_02 " );	// But it is obvious that it has interesting and unique properties, which can be revealed only by continuing research.
+	AI_Output(other,self, " DIA_Salandril_ORCRUM2_01_04 " );	// Are you saying that I should bring you more of this drink for experiments?
+	AI_Output(self,other, " DIA_Salandril_ORCRUM2_01_05 " );	// You got it right. If you bring me ten bottles of this drink, I'll continue my research.
 	SALFIRST = TRUE;
-	B_LogEntry(TOPIC_SALANDRILRESECH,"Саландрил хочет получить десять бутылок орочьего пойла для исследований.");
+	B_LogEntry( TOPIC_SALANDRILRESECH , " Salandril wants ten bottles of Orc liquor for research. " );
 };
 
 
@@ -566,7 +567,7 @@ instance DIA_SALANDRIL_ORCRUM3(C_Info)
 	condition = dia_salandril_orcrum3_condition;
 	information = dia_salandril_orcrum3_info;
 	permanent = FALSE;
-	description = "Я принес десять бутылок пойла.";
+	description = " I brought ten bottles of booze. " ;
 };
 
 func int dia_salandril_orcrum3_condition()
@@ -580,24 +581,24 @@ func int dia_salandril_orcrum3_condition()
 func void dia_salandril_orcrum3_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Salandril_ORCRUM3_01_00");	//Я принес десять бутылок пойла.
+	AI_Output(other,self, " DIA_Salandril_ORCRUM3_01_00 " );	// I brought ten bottles of booze.
 	B_GiveInvItems(other,self,itfo_addon_orcrum,10);
 	Npc_RemoveInvItems(self,itfo_addon_orcrum,10);
-	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_01");	//Прекрасно! Значит, я могу продолжить свои исследования.
-	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_03");	//Зайди ко мне как-нибудь потом, может, появятся новости.
+	AI_Output(self,other, " DIA_Salandril_ORCRUM3_01_01 " );	// Great! So I can continue my research.
+	AI_Output(self,other, " DIA_Salandril_ORCRUM3_01_03 " );	// Come see me sometime later, maybe there'll be some news.
 	SALANDRILRESECHPOTION = Wld_GetDay();
-	B_LogEntry(TOPIC_SALANDRILRESECH,"Саландрил получил десять бутылок пойла для исследований. Пока можно заняться своими делами.");
+	B_LogEntry( TOPIC_SALANDRILRESECH , " Salandril got ten bottles of swill for research. For now, mind your own business. " );
 };
 
 
-instance DIA_SALANDRIL_ORCRUM4(C_Info)
+DIA_SALANDRIL_ORCRUM4 (C_Info) instances
 {
 	npc = VLK_422_Salandril;
 	nr = 2;
 	condition = dia_salandril_orcrum4_condition;
 	information = dia_salandril_orcrum4_info;
 	permanent = TRUE;
-	description = "Как исследования?";
+	description = " How's the research? " ;
 };
 
 func int dia_salandril_orcrum4_condition()
@@ -610,23 +611,23 @@ func int dia_salandril_orcrum4_condition()
 
 func void dia_salandril_orcrum4_info()
 {
-	AI_Output(other,self,"DIA_Salandril_ORCRUM4_01_00");	//Как исследования?
+	AI_Output(other,self, " DIA_Salandril_ORCRUM4_01_00 " );	// How's the research?
 
-	if((Kapitel >= 2) && (SALANDRILRESECHPOTION <= (Wld_GetDay() - 2)))
+	if ((Capital >=  2 ) && ( SALANDRILRESECHPOTION  <= (Wld_GetDay() -  2 ))) .
 	{
 		B_GivePlayerXP(250);
-		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_01");	//Я сделал открытие...
-		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_02");	//Я могу сделать зелье с очень интересными свойствами из орочьего пойла!
-		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_03");	//Для одной бутылки зелья мне понадобятся десять бутылок орочьего пойла и триста золотых. И учти, что эта цена со скидкой - только для тебя!
+		AI_Output(self,other, " DIA_Salandril_ORCRUM4_01_01 " );	// I made a discovery...
+		AI_Output(self,other, " DIA_Salandril_ORCRUM4_01_02 " );	// I can make a potion with very interesting properties from orc liquor!
+		AI_Output(self,other, " DIA_Salandril_ORCRUM4_01_03 " );	// For one bottle of potion, I'll need ten bottles of Orc brew and three hundred gold. And keep in mind that this discounted price is just for you!
 		CanMakeSimpleOrcPotion = TRUE;
 		MIS_SALANDRILRESECH = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_SALANDRILRESECH,LOG_SUCCESS);
-		B_LogEntry(TOPIC_SALANDRILRESECH,"Саландрил закончил свои исследования. Теперь он может приготовить мне новое зелье. Правда, мне понадобится еще десять бутылок этого орочьего пойла и триста золотых за работу.");
+		; _ _ _ _ _ _
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_09");	//Лучше не отрывай меня от работы! Зайди через пару дней.
+		AI_Output(self,other, " DIA_Salandril_ORCRUM4_01_09 " );	// Better keep me busy! Come back in a couple of days.
 	};
 };
 
@@ -637,12 +638,12 @@ instance DIA_SALANDRIL_ORCRUM5(C_Info)
 	condition = dia_salandril_orcrum5_condition;
 	information = dia_salandril_orcrum5_info;
 	permanent = FALSE;
-	description = "Приготовь мне то зелье. (Цена: 300 монет)";
+	description = " Prepare me that potion. (Price: 300 coins) " ;
 };
 
 func int dia_salandril_orcrum5_condition()
 {
-	if((CanMakeSimpleOrcPotion == TRUE) && (Npc_HasItems(other,itfo_addon_orcrum) >= 10) && (SalPotionOneTime == FALSE))
+	if (( CanMakeSimpleOrcPotion ==  TRUE ) && ( Npc_HasItems ( other , itfo_addon_orcrum ) >=  10 ) && ( SaltPotionOneTime ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -650,32 +651,32 @@ func int dia_salandril_orcrum5_condition()
 
 func void dia_salandril_orcrum5_info()
 {
-	AI_Output(other,self,"DIA_Salandril_ORCRUM51_01_00");	//Приготовь мне то зелье.
+	AI_Output(other,self, " DIA_Salandril_ORCRUM51_01_00 " );	// Prepare that potion for me.
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 300)
 	{
 		B_GiveInvItems(other,self,itfo_addon_orcrum,10);
 		Npc_RemoveInvItems(self,itfo_addon_orcrum,10);
 		Npc_RemoveInvItems(other,ItMi_Gold,300);
-		AI_Output(self,other,"DIA_Salandril_ORCRUM51_01_01");	//Значит, ты решился попробовать. Отлично! Заходи завтра, зелье будет готово.
+		AI_Output(self,other, " DIA_Salandril_ORCRUM51_01_01 " );	// So you decided to try. Excellent! Come in tomorrow, the potion will be ready.
 		ORCRUMDAY4 = Wld_GetDay();
 	}
 	else
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Salandril_ORCRUM51_03_90");	//У тебя не хватает золота!
+		AI_Output(self,other, " DIA_Salandril_ORCRUM51_03_90 " );	// You don't have enough gold!
 		AI_StopProcessInfos(self);
 	};
 };
 
-instance DIA_SALANDRIL_ORCRUM6(C_Info)
+DIA_SALANDRIL_ORCRUM6 (C_Info) instances
 {
 	npc = VLK_422_Salandril;
 	nr = 2;
 	condition = dia_salandril_orcrum6_condition;
 	information = dia_salandril_orcrum6_info;
 	permanent = FALSE;
-	description = "Мое зелье готово?";
+	description = " Is my potion ready? " ;
 };
 
 func int dia_salandril_orcrum6_condition()
@@ -692,10 +693,10 @@ func int dia_salandril_orcrum6_condition()
 
 func void dia_salandril_orcrum6_info()
 {
-	AI_Output(other,self,"DIA_Salandril_ORCRUM6_01_00");	//Мое зелье готово?
-	AI_Output(self,other,"DIA_Salandril_ORCRUM6_01_01");	//Да. Вот, держи.
+	AI_Output(other,self, " DIA_Salandril_ORCRUM6_01_00 " );	// Is my potion ready?
+	AI_Output(self,other, " DIA_Salandril_ORCRUM6_01_01 " );	// Yes. Here you are.
 	B_GiveInvItems(self,other,itfo_addon_orcrumsal,1);
-	AI_Output(self,other,"DIA_Salandril_ORCRUM6_01_02");	//Только эффект от его применения может быть довольно необычный. И за последствия я не отвечаю!
+	AI_Output(self,other, " DIA_Salandril_ORCRUM6_01_02 " );	// Only the effect of using it can be quite unusual. And I'm not responsible for the consequences!
 	SalPotionOneTime = TRUE;
 };
 
@@ -706,7 +707,7 @@ instance DIA_SALANDRIL_MyBrew(C_Info)
 	condition = dia_salandril_MyBrew_condition;
 	information = dia_salandril_MyBrew_info;
 	permanent = FALSE;
-	description = "Можешь взглянуть на один алхимический рецепт?";
+	description = " Can you take a look at one alchemy recipe? " ;
 };
 
 func int dia_salandril_MyBrew_condition()
@@ -720,23 +721,23 @@ func int dia_salandril_MyBrew_condition()
 func void dia_salandril_MyBrew_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Salandril_MyBrew_01_00");	//Можешь взглянуть на один алхимический рецепт?
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_01");	//Конечно! Давай его сюда.
-	AI_Output(other,self,"DIA_Salandril_MyBrew_01_02");	//Вот, держи.
+	AI_Output(other,self, " DIA_Salandril_MyBrew_01_00 " );	// Can you take a look at one alchemy recipe?
+	AI_Output(self,other, " DIA_Salandril_MyBrew_01_01 " );	// Of course! Give it here.
+	AI_Output(other,self, " DIA_Salandril_MyBrew_01_02 " );	// Here, take this.
 	B_GiveInvItems(other,self,ItWr_ConstRecept,1);
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_03");	//Так, что тут у нас...
+	AI_Output(self,other, " DIA_Salandril_MyBrew_01_03 " );	// So what do we have here...
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_04");	//Хммм...(задумчиво) И какой же болван писал это?!
-	AI_Output(other,self,"DIA_Salandril_MyBrew_01_05");	//В смысле?
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_06");	//Те ингредиенты, что тут перечислены, абсолютно несовместимы друг с другом.
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_07");	//Мало того, некоторые из них вообще никогда не используются в алхимии. Бред какой-то!
+	AI_Output(self,other, " DIA_Salandril_MyBrew_01_04 " );	// Hmmm... (thoughtfully) And what kind of idiot wrote this?!
+	AI_Output(other,self, " DIA_Salandril_MyBrew_01_05 " );	// What do you mean?
+	AI_Output(self,other, " DIA_Salandril_MyBrew_01_06 " );	// Those ingredients that are listed here are absolutely incompatible with each other.
+	AI_Output(self,other, " DIA_Salandril_MyBrew_01_07 " );	// Not only that, some of them are never used in alchemy at all. This is some nonsense!
 	B_GiveInvItems(self,other,ItWr_ConstRecept,1);
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_08");	//Так кто же это все-таки писал?
-	AI_Output(other,self,"DIA_Salandril_MyBrew_01_09");	//Тебе лучше не знать.
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_10");	//Ладно, не хочешь - не говори...(посмеиваясь) Но этому парню точно надо сменить род занятий!
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_11");	//Алхимик из него просто никудышный.
+	AI_Output(self,other, " DIA_Salandril_MyBrew_01_08 " );	// So who wrote this anyway?
+	AI_Output(other,self, " DIA_Salandril_MyBrew_01_09 " );	// You better not know.
+	AI_Output(self,other, " DIA_Salandril_MyBrew_01_10 " );	// Okay, if you don't want to, don't say... (chuckling) But this guy definitely needs to change his occupation!
+	AI_Output(self,other, " DIA_Salandril_MyBrew_01_11 " );	// Alchemist from him is simply useless.
 	KnowFakeRecept = TRUE;
-	B_LogEntry(TOPIC_MyBrew,"Я показал Саландрилу алхимический рецепт, который дал мне Константино. Похоже, что он просто пытался надуть меня с ним, ибо этот рецепт совершенно бесполезен для настоящего алхимика.");
+	B_LogEntry(TOPIC_MyBrew, " I showed Salandril the alchemy recipe Constantino gave me. It looks like he was just trying to trick me with it, because this recipe is completely useless for a real alchemist. " );
 };
 
 instance DIA_SALANDRIL_PureElixir(C_Info)
@@ -746,7 +747,7 @@ instance DIA_SALANDRIL_PureElixir(C_Info)
 	condition = dia_salandril_PureElixir_condition;
 	information = dia_salandril_PureElixir_info;
 	permanent = FALSE;
-	description = "Ватрас хочет сделать заказ на эликсиры чистой магической энергии.";
+	description = " Vatras wants to place an order for elixirs of pure magical energy. " ;
 };
 
 func int dia_salandril_PureElixir_condition()
@@ -759,37 +760,37 @@ func int dia_salandril_PureElixir_condition()
 
 func void dia_salandril_PureElixir_info()
 {
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_00");	//Ватрас, маг Воды, хочет сделать тебе заказ на эликсиры чистой магической энергии.
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_01");	//Вот двести золотых, которые он передает тебе в качестве аванса за работу.
+	AI_Output(other,self, " DIA_Salandril_PureElixir_01_00 " );	// Vatras, the Waterbender wants to place an order with you for elixirs of pure magical energy.
+	AI_Output(other,self, " DIA_Salandril_PureElixir_01_01 " );	// Here are the two hundred gold coins he gives you as an advance for your work.
 	B_GiveInvItems(other,self,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMi_Gold,200);
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_02");	//Конечно...(с уважением) Для меня большая честь выполнить этот заказ.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_03");	//Однако формула этого зелья слишком сложна, поэтому на выполнение заказа у меня уйдет не меньше недели.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_04");	//Мне бы, конечно, не хотелось расстраивать многоуважаемого Ватраса, но, к сожалению, быстрее не получится.
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_05");	//Ладно. Так ему и передам.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_06");	//Эм-м, погоди немного...(суетливо) Кажется, у меня тут оставались небольшие запасы этого эликсира.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_07");	//Ах, да, вот они. Тут пара зелий на случай того, если вдруг они у него закончатся.
+	AI_Output(self,other, " DIA_Salandril_PureElixir_01_02 " );	// Of course... (respectfully) I am honored to fulfill this order.
+	AI_Output(self,other, " DIA_Salandril_PureElixir_01_03 " );	// However, the formula for this potion is too complicated, so it will take me at least a week to complete the order.
+	AI_Output(self,other, " DIA_Salandril_PureElixir_01_04 " );	// Of course, I would not want to upset the esteemed Vatras, but, unfortunately, it will not work faster.
+	AI_Output(other,self, " DIA_Salandril_PureElixir_01_05 " );	// Okay. So I'll give it to him.
+	AI_Output(self,other, " DIA_Salandril_PureElixir_01_06 " );	// Um, wait a bit...(fussily) I seem to have a small supply of this elixir here.
+	AI_Output(self,other, " DIA_Salandril_PureElixir_01_07 " );	// Oh yes, here they are. Here are a couple of potions in case he suddenly runs out of them.
 	B_GiveInvItems(self,other,ItPo_Mana_Addon_04,2);
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_08");	//Передай ему их с моими наилучшими пожеланиями! Не забудешь?
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_09");	//Само собой.
+	AI_Output(self,other, " DIA_Salandril_PureElixir_01_08 " );	// Give them to him with my best wishes! Do not forget?
+	AI_Output(other,self, " DIA_Salandril_PureElixir_01_09 " );	// Of course.
 	SalandrilPureElixir = TRUE;
-	B_LogEntry(TOPIC_VatrasPotion,"Саландрил принял заказ от Ватраса, однако сказал, что на его выполнение уйдет не меньше недели. Вдобавок он дал мне пару эликсиров из своих запасов, чтобы я передал их Ватрасу.");
+	B_LogEntry(TOPIC_VatrasPotion, " Salandril accepted Vatras' order, but said it would take at least a week to complete. In addition, he gave me a couple of elixirs from his supply to give to Vatras. " );
 };
 
-//------------------------------------------кости-------------------------------------
+// -----------------------------------------bones----- --------------------------------
 
-instance DIA_VLK_422_Salandril_Game(C_Info)
+instance DIA_VLK_422_Salandril_Game (C_Info)
 {
 	npc = VLK_422_Salandril;
 	nr = 3;
 	condition = DIA_VLK_422_Salandril_Game_condition;
 	information = DIA_VLK_422_Salandril_Game_info;
-	description = "Кардиф сказал, что ты играешь в кости.";
+	description = " Cardiff said you were playing dice. " ;
 };
 
 func int DIA_VLK_422_Salandril_Game_condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Salandril_Hallo) && (GameOtherPlayers == TRUE))
+	if ( Npc_KnowsInfo ( other , DIA_Salandril_Hello ) && ( GameOtherPlayers ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -797,29 +798,29 @@ func int DIA_VLK_422_Salandril_Game_condition()
 
 func void DIA_VLK_422_Salandril_Game_info()
 {
- 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_00"); //Кардиф сказал, что ты играешь в кости.
- 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_01"); //Да, он прав. Но не с кем попало!
- 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_02"); //А со мной станешь играть?
- 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_03"); //С тобой? Хочешь сказать, что кое-что смылишь в этом?
- 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_04"); //Давай сыграем - и узнаешь.
- 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_05"); //Ну хорошо. Будь по-твоему.
-	SalandrilPlayResult = 250;
+ 	AI_Output(other,self, " DIA_VLK_422_Salandril_Game_01_00 " ); // Cardiff said you were playing dice.
+ 	AI_Output(self,other, " DIA_VLK_422_Salandril_Game_01_01 " ); // Yes, he's right. But not with just anyone!
+ 	AI_Output(other,self, " DIA_VLK_422_Salandril_Game_01_02 " ); // Will you play with me?
+ 	AI_Output(self,other, " DIA_VLK_422_Salandril_Game_01_03 " ); // With you? Are you saying that you'll get something out of this?
+ 	AI_Output(other,self, " DIA_VLK_422_Salandril_Game_01_04 " ); // Let's play and find out.
+ 	AI_Output(self,other, " DIA_VLK_422_Salandril_Game_01_05 " ); // Okay. As you wish.
+	SalandrilPlayResult = 250 ;
 	Menu_WriteInt("AST","SysTimer02",0);
 };
 
-instance DIA_VLK_422_Salandril_GamePlay(C_Info)
+instance DIA_VLK_422_Salandril_GamePlay (C_Info)
 {
 	npc = VLK_422_Salandril;
 	nr = 900;
 	condition = DIA_VLK_422_Salandril_GamePlay_condition;
 	information = DIA_VLK_422_Salandril_GamePlay_info;
 	permanent = TRUE;
-	description = "Сыграем в кости!";
+	description = " Let's play dice! " ;
 };
 
 func int DIA_VLK_422_Salandril_GamePlay_condition()
 {
-	if((Npc_KnowsInfo(other,DIA_VLK_422_Salandril_Game) == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE))
+	if ((Npc_KnowsInfo(other,DIA_VLK_422_Salandril_Game) ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -837,41 +838,41 @@ func void DIA_VLK_422_Salandril_GamePlay_info()
 		CheckLastSum = CheckLastGame - SalandrilPlayResult;
 	};
 
-	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_01_00");	//Сыграем в кости!
+	AI_Output(other,self, " DIA_VLK_422_Salandril_GamePlay_01_00 " );	// Let's play dice!
 
 	if(SalandrilPlayResult >= CheckLastGame)
 	{
 		if((SalandrilPlayResult > 0) && (SalandrilDayFlag == FALSE))
 		{
-			AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_01");	//Само собой. Начнем!
+			AI_Output(self,other, " DIA_VLK_422_Salandril_GamePlay_01_01 " );	// Of course. Let's start!
 			PlayPocker(1,self);
 		}
 		else
 		{
 			if(SalandrilDayFlag == FALSE)
 			{
-				AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_02");	//Нет, довольно! Ты и так обчистил почти весь мой кошелек. 
-				SalandrilDayPlay = Wld_GetDay();
+				AI_Output(self,other, " DIA_VLK_422_Salandril_GamePlay_01_02 " );	// No, that's enough! You've cleared almost all of my wallet anyway.
+				SandrilDayPlay = Wld_GetDay();
 				SalandrilDayFlag = TRUE;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_03");	//Забудь об этом.
+				AI_Output(self,other, " DIA_VLK_422_Salandril_GamePlay_01_03 " );	// Forget it.
 			};
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_04");	//В прошлый раз ты не отдал мне мой выигрыш.
-		AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_05");	//Ну же, я жду!
+		AI_Output(self,other, " DIA_VLK_422_Salandril_GamePlay_01_04 " );	// Last time you didn't give me my winnings.
+		AI_Output(self,other, " DIA_VLK_422_Salandril_GamePlay_01_05 " );	// Ну же, я жду!
 		Info_ClearChoices(DIA_VLK_422_Salandril_GamePlay);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= CheckLastSum)
 		{
-			Info_AddChoice(DIA_VLK_422_Salandril_GamePlay,"Вот твои деньги.",DIA_VLK_422_Salandril_GamePlay_Here);
+			Info_AddChoice(DIA_VLK_422_Salandril_GamePlay, " Here's your money. " ,DIA_VLK_422_Salandril_GamePlay_Here);
 		};
 
-		Info_AddChoice(DIA_VLK_422_Salandril_GamePlay,"У меня нет столько денег.",DIA_VLK_422_Salandril_GamePlay_No);
+		Info_AddChoice(DIA_VLK_422_Salandril_GamePlay, " I don't have that much money. " ,DIA_VLK_422_Salandril_GamePlay_No);
 	};
 };
 
@@ -880,24 +881,24 @@ func void DIA_VLK_422_Salandril_GamePlay_Here()
 	Snd_Play("Geldbeutel");
 	Npc_RemoveInvItems(hero,ItMi_Gold,CheckLastSum);
 	SalandrilPlayResult = CheckLastGame;
-	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_Here_01_01");	//Вот твои деньги.
-	AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_Here_01_02");	//Славно! Теперь можно поиграть...
+	AI_Output(other,self, " DIA_VLK_422_Salandril_GamePlay_Here_01_01 " );	// Here's your money.
+	AI_Output(self,other, " DIA_VLK_422_Salandril_GamePlay_Here_01_02 " );	// Nice! Now you can play...
 	PlayPocker(1,self);
 };
 
 func void DIA_VLK_422_Salandril_GamePlay_No()
 {
-	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_No_01_01");	//У меня нет столько денег.
-	AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_No_01_02");	//Это не мои проблемы.
+	AI_Output(other,self, " DIA_VLK_422_Salandril_GamePlay_No_01_01 " );	// I don't have that much money.
+	AI_Output(self,other, " DIA_VLK_422_Salandril_GamePlay_No_01_02 " );	// These are not my problems.
 	Info_ClearChoices(DIA_VLK_422_Salandril_GamePlay);
 };
 
-instance DIA_VLK_422_Salandril_GameEnd(C_Info)
+instance DIA_VLK_422_Salandril_GameEnd (C_Info)
 {
 	npc = VLK_422_Salandril;
 	nr = 3;
 	condition = DIA_VLK_422_Salandril_GameEnd_condition;
-	information = DIA_VLK_422_Salandril_GameEnd_info;
+	info = DIA_VLK_422_Salandril_GameEnd_info;
 	permanent = TRUE;
 	important = TRUE;
 };
@@ -914,19 +915,19 @@ func void DIA_VLK_422_Salandril_GameEnd_info()
 {
 	if(SalandrilLost == TRUE)
 	{
-		AI_Output(self,other,"DIA_VLK_422_Salandril_GameEnd_00");	//И как это у тебя получается делать? Ума не приложу.
+		AI_Output(self,other, " DIA_VLK_422_Salandril_GameEnd_00 " );	// And how do you manage to do it? I won't put my mind to it.
 		SalandrilLost = FALSE;
 	}
 	else if(SalandrilWon == TRUE)
 	{
-		AI_Output(self,other,"DIA_VLK_422_Salandril_GameEnd_01");	//В этот раз фортуна была на мой стороне, приятель.
+		AI_Output(self,other, " DIA_VLK_422_Salandril_GameEnd_01 " );	// Fortune was on my side this time, mate.
 		SalandrilWon = FALSE;
 	};
 
-	MustTellResult_Salandril = FALSE;
+	MustTellResult_Salandril = FALSE ;
 };
 
-instance DIA_Fernando_Minental(C_Info)
+instance DIA_Fernando_Minental (C_Info)
 {
 	npc = VLK_422_Salandril;
 	nr = 2;
@@ -938,7 +939,7 @@ instance DIA_Fernando_Minental(C_Info)
 
 func int DIA_Fernando_Minental_Condition()
 {
-	if((MIS_OLDWORLD == LOG_Running) && (Kapitel == 2))
+	if (( MY_OLDWORLD  == LOG_Running) && (Chapter ==  2 ))
 	{
 		return TRUE;
 	};
@@ -946,9 +947,9 @@ func int DIA_Fernando_Minental_Condition()
 
 func void DIA_Fernando_Minental_Info()
 {
-	AI_Output(self,other,"DIA_Fernando_Minental_14_00");	//Эй, ты - подожди минутку. Ты ведь направляешься в Долину Рудников, да?
+	AI_Output(self,other, " DIA_Fernando_Minental_14_00 " );	// Hey, you - wait a minute. You're heading to the Valley of Mines, right?
 	AI_Output(other,self,"DIA_Fernando_Minental_15_01");	//И?
-	AI_Output(self,other,"DIA_Fernando_Minental_14_02");	//Я хочу предложить тебе сделку. Ты приносишь мне доклад о том, что там происходит с рудой, а за это я дам тебе...
+	AI_Output(self,other, " DIA_Fernando_Minental_14_02 " );	// I want to offer you a deal. You bring me a report on what's going on with the ore, and for that I'll give you...
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_GUR) || (other.guild == GIL_KDM) || (other.guild == GIL_KDW))
 	{
@@ -956,14 +957,14 @@ func void DIA_Fernando_Minental_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fernando_Minental_14_04");	//...кольцо, которое повысит твою жизненную энергию.
+		AI_Output(self,other, " DIA_Fernando_Minental_14_04 " );	// ...a ring that will boost your vitality.
 	};
 
-	AI_Output(other,self,"DIA_Fernando_Minental_15_05");	//Я посмотрю, что можно сделать.
+	AI_Output(other,self, " DIA_Fernando_Minental_15_05 " );	// I'll see what I can do.
 	MIS_SalandrilOre = LOG_Running;
 	Log_CreateTopic(TOPIC_Fernando,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Fernando,LOG_Running);
-	B_LogEntry(TOPIC_Fernando,"Алхимик Саландрил хочет знать, как обстоят дела с рудой в Долине Рудников.");
+	B_LogEntry(TOPIC_Fernando, " The alchemist Salandril wants to know how the ore is doing in the Valley of Mines. " );
 };
 
 instance DIA_Fernando_Success(C_Info)
@@ -973,7 +974,7 @@ instance DIA_Fernando_Success(C_Info)
 	condition = DIA_Fernando_Success_Condition;
 	information = DIA_Fernando_Success_Info;
 	permanent = FALSE;
-	description = "Я был в Долине Рудников.";
+	description = " I was in the Valley of Mines. " ;
 };
 
 func int DIA_Fernando_Success_Condition()
@@ -987,25 +988,25 @@ func int DIA_Fernando_Success_Condition()
 func void DIA_Fernando_Success_Info()
 {
 	B_GivePlayerXP(XP_Ambient);
-	AI_Output(other,self,"DIA_Fernando_Success_15_00");	//Я был в Долине Рудников.
-	AI_Output(self,other,"DIA_Fernando_Success_14_01");	//И? Как там обстоят дела?
-	AI_Output(other,self,"DIA_Fernando_Success_15_02");	//Шахты истощены, там можно добыть всего каких-нибудь несколько ящиков руды. Вряд ли эта овчинка стоит выделки.
-	AI_Output(self,other,"DIA_Fernando_Success_14_03");	//Этого не может быть! Это означает, что я разорен...
-	AI_Output(other,self,"DIA_Fernando_Success_15_04");	//А как наша сделка?
-	AI_Output(self,other,"DIA_Fernando_Success_14_05");	//Ну, что касается вознаграждения...
+	AI_Output(other,self, " DIA_Fernando_Success_15_00 " );	// I was in the Valley of Mines.
+	AI_Output(self,other, " DIA_Fernando_Success_14_01 " );	// And? How are things going there?
+	AI_Output(other,self, " DIA_Fernando_Success_15_02 " );	// The mines are depleted, only a few boxes of ore can be mined there. It is unlikely that this game is worth the candle.
+	AI_Output(self,other, " DIA_Fernando_Success_14_03 " );	// This can't be! That means I'm broke...
+	AI_Output(other,self, " DIA_Fernando_Success_15_04 " );	// How's our deal?
+	AI_Output(self,other, " DIA_Fernando_Success_14_05 " );	// Well, as for the reward...
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_GUR) || (other.guild == GIL_KDM) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Fernando_Minental_14_06");	//Вот, держи этот рунный камень.
+		AI_Output(self,other, " DIA_Fernando_Minental_14_06 " );	// Here, hold this runestone.
 		B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fernando_Minental_14_07");	//Вот твое кольцо.
+		AI_Output(self,other, " DIA_Fernando_Minental_14_07 " );	// Here's your ring.
 		B_GiveInvItems(self,other,ItRi_Hp_02,1);
 	};
 
 	MIS_SalandrilOre = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Fernando,LOG_SUCCESS);
-	B_LogEntry(TOPIC_Fernando,"Я рассказал о ситуации в Долине Рудников алхимику Саландрилу. Странно, что эти новости его очень огорчили...");
+	B_LogEntry(TOPIC_Fernando, " I told the alchemist Salandril about the situation in the Valley of Mines. It is strange that this news upset him very much... " );
 };
