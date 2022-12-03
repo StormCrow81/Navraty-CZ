@@ -1,4 +1,5 @@
 
+
 instance DIA_HUN_743_NIX_EXIT(C_Info)
 {
 	npc = hun_743_nix;
@@ -28,13 +29,13 @@ instance DIA_HUN_743_NIX_WHOSDOGS(C_Info)
 	condition = dia_hun_743_nix_whosdogs_condition;
 	information = dia_hun_743_nix_whosdogs_info;
 	permanent = FALSE;
-	description = "Это твоя собака?";
+	description = " Is this your dog? " ;
 };
 
 
 func int dia_hun_743_nix_whosdogs_condition()
 {
-	if((HEROISHUNTER == TRUE) && (CLAWISDEAD == FALSE))
+	if (( HEROISHUNTER  ==  TRUE ) && ( CLAWISDEAD  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -42,17 +43,17 @@ func int dia_hun_743_nix_whosdogs_condition()
 
 func void dia_hun_743_nix_whosdogs_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_WhosDogs_01_00");	//Это твоя собака?
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_01");	//Если ты имеешь в виду Клыка, то да, моя. Хотя это и не совсем собака.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_02");	//Ты, быть может, и не поверишь, но Клык от рождения чистокровный волк!
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_06");	//Лет пять назад, во время одной своей охоты, я натолкнулся в лесу на маленького волчонка.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_09");	//Видимо, все его бросили, поскольку рядом с ним никого из волков не оказалось.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_10");	//К тому же у малыша была сломана нога, а с такой раной он стал бы легкой добычей для других зверей.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_11");	//В общем, я подобрал его и принес сюда к нам в лагерь.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_12");	//Пришлось приложить немало усилий, чтобы его выходить. Бедолага был крайне плох и практически без сил.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_13");	//Но, в конце концов, все встало на свои места - нога зажила, а малыш постепенно поправился и окреп.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_14");	//Кстати, за то время, что он провел у нас в лагере, большинство ребят, так же, как и я, очень привыкли к нему.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WhosDogs_01_15");	//Вот с тех пор этот волчонок и живет вместе с нами, постепенно став таким же настоящим охотником, как и все мы!
+	AI_Output(other,self, " DIA_HUN_743_Nix_WhosDogs_01_00 " );	// Is this your dog?
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_01 " );	// If you mean Fang, then yes, mine. It's not really a dog though.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_02 " );	// You may not believe it, but Fang is born a purebred wolf!
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_06 " );	// About five years ago, during one of my hunts, I came across a little wolf cub in the forest.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_09 " );	// Apparently, everyone abandoned him, since none of the wolves were near him.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_10 " );	// In addition, the baby had a broken leg, and with such a wound, he would become easy prey for other animals.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_11 " );	// Anyway, I picked it up and brought it here to our camp.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_12 " );	// It took a lot of effort to get it out. The poor fellow was extremely ill and practically without strength.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_13 " );	// But, in the end, everything fell into place - the leg healed, and the baby gradually recovered and got stronger.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_14 " );	// By the way, during the time that he spent in our camp, most of the guys, just like me, got very used to him.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WhosDogs_01_15 " );	// Since then, this wolf cub has been living with us, gradually becoming the same real hunter as all of us!
 };
 
 
@@ -63,13 +64,13 @@ instance DIA_HUN_743_NIX_NEXDOG(C_Info)
 	condition = dia_hun_743_nix_nexdog_condition;
 	information = dia_hun_743_nix_nexdog_info;
 	permanent = FALSE;
-	description = "Но разве волк может быть охотником?";
+	description = " But can a wolf be a hunter? " ;
 };
 
 
 func int dia_hun_743_nix_nexdog_condition()
 {
-	if(Npc_KnowsInfo(other,dia_hun_743_nix_whosdogs) && (HEROISHUNTER == TRUE) && (CLAWISDEAD == FALSE))
+	if ( Npc_KnowsInfo ( other , dia_hun_743_nix_whosdogs ) && ( HEROISHUNTER  ==  TRUE ) && ( CLAWISDEAD  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -77,11 +78,11 @@ func int dia_hun_743_nix_nexdog_condition()
 
 func void dia_hun_743_nix_nexdog_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_NexDog_01_00");	//Разве волк может быть охотником?
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_03");	//Конечно. Я и другие парни частенько берем его с собой в лес на охоту.
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_05");	//Один раз он даже спас мне жизнь.
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_06");	//Так что этот волк значит для меня намного больше, чем просто обычный зверь.
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_07");	//Клык - мой друг!
+	AI_Output(other,self, " DIA_HUN_743_Nix_NexDog_01_00 " );	// Can a wolf be a hunter?
+	AI_Output(self,other, " DIA_HUN_743_Nix_NexDog_01_03 " );	// Of course. Me and other guys often take it with us to the forest to hunt.
+	AI_Output(self,other, " DIA_HUN_743_Nix_NexDog_01_05 " );	// He even saved my life once.
+	AI_Output(self,other, " DIA_HUN_743_Nix_NexDog_01_06 " );	// So this wolf means a lot more to me than just a normal beast.
+	AI_Output(self,other, " DIA_HUN_743_Nix_NexDog_01_07 " );	// Fang is my friend!
 	AI_Output(other,self,"DIA_HUN_743_Nix_NexDog_01_08");	//Ясно.
 };
 
@@ -93,13 +94,13 @@ instance DIA_HUN_743_NIX_NEXILLDOG(C_Info)
 	condition = dia_hun_743_nix_nexilldog_condition;
 	information = dia_hun_743_nix_nexilldog_info;
 	permanent = FALSE;
-	description = "На вид твой друг немного слабоват.";
+	description = " Your friend looks a bit weak. " ;
 };
 
 
 func int dia_hun_743_nix_nexilldog_condition()
 {
-	if(Npc_KnowsInfo(other,dia_hun_743_nix_nexdog) && (HEROISHUNTER == TRUE) && (CLAWISDEAD == FALSE))
+	if ( Npc_KnowsInfo ( other , dia_hun_743_nix_nexdog ) && ( HEROISHUNTER  ==  TRUE ) && ( CLAWISDEAD  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -107,11 +108,11 @@ func int dia_hun_743_nix_nexilldog_condition()
 
 func void dia_hun_743_nix_nexilldog_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_NexIllDog_01_00");	//На вид твой друг немного слабоват.
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexIllDog_01_01");	//Это кажется только на первый взгляд.
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexIllDog_01_02");	//На самом деле Клык куда сильнее и выносливее, чем его обычные сородичи.
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexIllDog_01_06");	//Правда, во время последней охоты один варг тяжело ранил его.
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexIllDog_01_07");	//Я сделал все, что смог, - но, кажется, этого недостаточно, чтобы он окончательно поправился.
+	AI_Output(other,self, " DIA_HUN_743_Nix_NexIllDog_01_00 " );	// Your friend looks a little weak.
+	AI_Output(self,other, " DIA_HUN_743_Nix_NexIllDog_01_01 " );	// It seems only at first glance.
+	AI_Output(self,other, " DIA_HUN_743_Nix_NexIllDog_01_02 " );	// In fact, the Fang is much stronger and more resilient than his ordinary relatives.
+	AI_Output(self,other, " DIA_HUN_743_Nix_NexIllDog_01_06 " );	// True, during the last hunt, one warg seriously injured him.
+	AI_Output(self,other, " DIA_HUN_743_Nix_NexIllDog_01_07 " );	// I did everything I could - but it seems that this is not enough for him to finally recover.
 };
 
 
@@ -122,13 +123,13 @@ instance DIA_HUN_743_NIX_RECOVERDOG(C_Info)
 	condition = dia_hun_743_nix_recoverdog_condition;
 	information = dia_hun_743_nix_recoverdog_info;
 	permanent = FALSE;
-	description = "Могу ли я чем-то помочь?";
+	description = " Is there something I can help you with? " ;
 };
 
 
 func int dia_hun_743_nix_recoverdog_condition()
 {
-	if(Npc_KnowsInfo(other,dia_hun_743_nix_nexilldog) && (HEROISHUNTER == TRUE) && (CLAWISDEAD == FALSE))
+	if ( Npc_KnowsInfo ( other , dia_hun_743_nix_nexilldog ) && ( HEROISHUNTER  ==  TRUE ) && ( CLAWISDEAD  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -136,23 +137,23 @@ func int dia_hun_743_nix_recoverdog_condition()
 
 func void dia_hun_743_nix_recoverdog_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDog_01_00");	//Могу ли я чем-то помочь?
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDog_01_01");	//Единственная мысль, которая мне приходит на ум, - это обратиться к Сагитте, лесной целительнице.
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDog_01_02");	//Она живет в глубине леса за фермой Секоба.
-	if(Npc_KnowsInfo(other,DIA_Sagitta_HALLO))
+	AI_Output(other,self, " DIA_HUN_743_Nix_RecoverDog_01_00 " );	// Is there anything I can do to help?
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDog_01_01 " );	// The only thought that comes to my mind is to turn to Sagitta, the forest healer.
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDog_01_02 " );	// She lives deep in the woods behind the Secoba farm.
+	if ( Npc_KnowsInfo ( other , DIA_Say_HELLO ))
 	{
-		AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDog_01_03");	//Я знаю, где она живет.
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDog_01_04");	//Это хорошо.
+		AI_Output(other,self, " DIA_HUN_743_Nix_RecoverDog_01_03 " );	// I know where she lives.
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDog_01_04 " );	// This is good.
 	};
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDog_01_05");	//Однако я не уверен в том, что и она сможет помочь Клыку.
-	AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDog_01_07");	//Но в любом случае стоит попробовать.
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDog_01_08");	//Хорошо. Только умоляю тебя, поспеши!
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDog_01_09");	//Клык слабеет с каждым днем все больше и больше. Я даже и думать не хочу, что может произойти!
-	CLAWTIMER = Wld_GetDay();
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDog_01_05 " );	// However, I'm not sure if she can help Fang either.
+	AI_Output(other,self, " DIA_HUN_743_Nix_RecoverDog_01_07 " );	// But it's worth a try anyway.
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDog_01_08 " );	// Good. I beg you, hurry up!
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDog_01_09 " );	// The Fang is getting weaker every day. I don't even want to think about what could happen!
+	CLOCKTIMER = Wld_GetDay();
 	MIS_RECOVERDOG = LOG_Running;
 	Log_CreateTopic(TOPIC_RECOVERDOG,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RECOVERDOG,LOG_Running);
-	B_LogEntry(TOPIC_RECOVERDOG,"Никса беспокоит состояние Клыка, его ручного волка. Во время последней охоты Клыка тяжело ранил варг, и его состояние становится все хуже. Я вызвался помочь Никсу и наведаться к целительнице Сагитте.");
+	; _ _ _ _ _ _
 };
 
 
@@ -163,13 +164,13 @@ instance DIA_HUN_743_NIX_RECOVERDOGBRING(C_Info)
 	condition = dia_hun_743_nix_recoverdogbring_condition;
 	information = dia_hun_743_nix_recoverdogbring_info;
 	permanent = FALSE;
-	description = "Я принес лекарcтво для твоего волка.";
+	description = " I brought medicine for your wolf. " ;
 };
 
 
 func int dia_hun_743_nix_recoverdogbring_condition()
 {
-	if((MIS_RECOVERDOG == LOG_Running) && (SAGITTAHELPSCLAW == TRUE) && (Npc_HasItems(other,itpo_sagittaclawpotion) >= 1))
+	if (( MIS_RECOVERDOG  == LOG_Running ) && ( SAGITTAHELPSCLAW  ==  TRUE ) && ( Npc_HasItems ( other , itpo_sagittaclawpotion ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -177,14 +178,14 @@ func int dia_hun_743_nix_recoverdogbring_condition()
 
 func void dia_hun_743_nix_recoverdogbring_info()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
-	AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDogBring_01_00");	//Я принес лекарcтво для твоего волка.
+	AI_Output(other,self, " DIA_HUN_743_Nix_RecoverDogBring_01_00 " );	// I brought medicine for your wolf.
 	if(CLAWTIMER < (daynow - 3))
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_01");	//Эх, приятель! Спасибо тебе, конечно.
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_02");	//Но, к сожалению, ты опоздал - Клыка больше с нами нет.
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_03");	//Он умер, и я ничем не смог ему помочь... хотя был просто обязан это сделать.
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogBring_01_01 " );	// Hey buddy! Thank you, of course.
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogBring_01_02 " );	// But, unfortunately, you're too late - Fang is no longer with us.
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogBring_01_03 " );	// He died and there was nothing I could do to help him... although I simply had to do it.
 		AI_StopProcessInfos(self);
 		MIS_RECOVERDOG = LOG_FAILED;
 		B_LogEntry_Failed(TOPIC_RECOVERDOG);
@@ -192,14 +193,14 @@ func void dia_hun_743_nix_recoverdogbring_info()
 	else
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_04");	//Правда? Думаешь, оно действительно поможет ему?
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_06");	//А что нужно делать?
-		AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDogBring_01_07");	//Нужно обработать его рану этим настоем из трав, что она дала.
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_08");	//Ладно, давай сюда это лекарcтво.
-		AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDogBring_01_09");	//Вот, держи.
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogBring_01_04 " );	// True? Do you think it will really help him?
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogBring_01_06 " );	// What should be done?
+		AI_Output(other,self, " DIA_HUN_743_Nix_RecoverDogBring_01_07 " );	// We need to treat his wound with this herbal infusion she gave.
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogBring_01_08 " );	// Okay, give this medicine here.
+		AI_Output(other,self, " DIA_HUN_743_Nix_RecoverDogBring_01_09 " );	// Here, take this.
 		B_GiveInvItems(other,self,itpo_sagittaclawpotion,1);
 		Npc_RemoveInvItems(self,itpo_sagittaclawpotion,1);
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_10");	//Хорошо! Теперь я обработаю рану...
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogBring_01_10 " );	// Good! Now I'll treat the wound...
 		AI_SetWalkMode(self,NPC_WALK);
 		AI_GotoWP(self,"NW_HUNTERCAMP_CLAW");
 		AI_AlignToWP(self);
@@ -207,8 +208,8 @@ func void dia_hun_743_nix_recoverdogbring_info()
 		AI_GotoNpc(self,hero);
 		AI_TurnToNPC(self,other);
 		AI_LookAtNpc(self,other);
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_11");	//Все. Надеюсь, это поможет.
-		B_LogEntry(TOPIC_RECOVERDOG,"Я принес лекарство для Клыка, а Никс сразу же обработал им его рану. Теперь остается ждать и надеяться, что Клык поправится.");
+		AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogBring_01_11 " );	// All. Hope this helps.
+		; _ _ _ _ _ _
 		CLAWTIMERRECOVER = Wld_GetDay();
 		Npc_ExchangeRoutine(self,"Recover");
 		CLAWBEGINRECOVER = TRUE;
@@ -223,7 +224,7 @@ instance DIA_HUN_743_NIX_RECOVERDOGABOUT(C_Info)
 	condition = dia_hun_743_nix_recoverdogabout_condition;
 	information = dia_hun_743_nix_recoverdogabout_info;
 	permanent = TRUE;
-	description = "Как чувствует себя Клык?";
+	description = " How does Fang feel? " ;
 };
 
 
@@ -237,9 +238,9 @@ func int dia_hun_743_nix_recoverdogabout_condition()
 
 func void dia_hun_743_nix_recoverdogabout_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDogAbout_01_01");	//Как самочувствие Клыка?
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogAbout_01_02");	//Эх...(печально вздыхая) пока все так же плохо.
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogAbout_01_03");	//Возможно, должно пройти больше времени, чтобы он окончательно поправился.
+	AI_Output(other,self, " DIA_HUN_743_Nix_RecoverDogAbout_01_01 " );	// How is Fang feeling?
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogAbout_01_02 " );	// Eh... (sighing sadly) so far so bad.
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogAbout_01_03 " );	// It may take more time for him to fully recover.
 };
 
 
@@ -265,15 +266,15 @@ func int dia_hun_743_nix_recoverdogdone_condition()
 func void dia_hun_743_nix_recoverdogdone_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_00");	//Эй, приятель!
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogDone_01_00 " );	// Hey buddy!
 	AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDogDone_01_01");	//Что?
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_02");	//Благодаря нашим с тобой усилиям и лекарству Сагитты, рана Клыка уже затянулась, и он пошел на поправку.
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_03");	//Так что я хочу от всей души поблагодарить тебя за то, что ты помог мне его вылечить.
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_04");	//Вот, возьми эту вещицу в качестве моей благодарности.
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogDone_01_02 " );	// Thanks to our efforts and Sagitta's medicine, Fang's wound has already healed and he is on the mend.
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogDone_01_03 " );	// So I want to thank you from the bottom of my heart for helping me heal him.
+	AI_Output(self,other, " DIA_HUN_743_Nix_RecoverDogDone_01_04 " );	// Here, take this little thing as my thanks.
 	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
 	MIS_RECOVERDOG = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_RECOVERDOG,LOG_SUCCESS);
-	B_LogEntry(TOPIC_RECOVERDOG,"Никс сказал мне, что лекарcтво Сагитты помогло Клыку и он пошел поправку.");
+	B_LogEntry( TOPIC_RECOVERDOG , " Nyx told me Sagitta's medicine helped Fang and he got better. " );
 };
 
 
@@ -284,7 +285,7 @@ instance DIA_HUN_743_NIX_CLAWGOHUNT(C_Info)
 	condition = dia_hun_743_nix_clawgohunt_condition;
 	information = dia_hun_743_nix_clawgohunt_info;
 	permanent = FALSE;
-	description = "Когда теперь на охоту?";
+	description = " When are you going to hunt now? " ;
 };
 
 
@@ -300,12 +301,12 @@ func void dia_hun_743_nix_clawgohunt_info()
 {
 	var C_Npc dog;
 	dog = Hlp_GetNpc(nixdog);
-	AI_Output(other,self,"DIA_HUN_743_Nix_ClawGoHunt_01_00");	//Когда теперь на охоту?
-	AI_Output(self,other,"DIA_HUN_743_Nix_ClawGoHunt_01_01");	//Не знаю, приятель. У меня пока дел хватает и в лагере.
-	AI_Output(self,other,"DIA_HUN_743_Nix_ClawGoHunt_01_02");	//Кстати, если вдруг сам соберешься поохотиться, то можешь захватить с собой и Клыка.
-	AI_Output(self,other,"DIA_HUN_743_Nix_ClawGoHunt_01_05");	//Заодно и увидишь, на что он способен!
-	AI_Output(self,other,"DIA_HUN_743_Nix_ClawGoHunt_01_06");	//Правда, прямо сейчас этого лучше не делать, - пусть Клык окончательно поправится. Ну, а через пару дней...
-	AI_Output(other,self,"DIA_HUN_743_Nix_ClawGoHunt_01_07");	//Хорошо, я подумаю над этим.
+	AI_Output(other,self, " DIA_HUN_743_Nix_ClawGoHunt_01_00 " );	// When are you going to hunt now?
+	AI_Output(self,other, " DIA_HUN_743_Nix_ClawGoHunt_01_01 " );	// I don't know, mate. I still have enough things to do in the camp.
+	AI_Output(self,other, " DIA_HUN_743_Nix_ClawGoHunt_01_02 " );	// By the way, if you suddenly decide to go hunting yourself, you can take Fang with you.
+	AI_Output(self,other, " DIA_HUN_743_Nix_ClawGoHunt_01_05 " );	// At the same time, you will see what he is capable of!
+	AI_Output(self,other, " DIA_HUN_743_Nix_ClawGoHunt_01_06 " );	// True, it's better not to do this right now - let Fang finally recover. Well, in a couple of days...
+	AI_Output(other,self, " DIA_HUN_743_Nix_ClawGoHunt_01_07 " );	// Okay, I'll think about it.
 	CLAWTIMERCLAWGOHUNT = Wld_GetDay();
 	dog.start_aistate = zs_mm_rtn_huntgone;
 };
@@ -334,7 +335,7 @@ func void dia_hun_743_nix_clawrevenge_info()
 {
 	if(NIXFIRSTWARN == FALSE)
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_ClawRevenge_01_01");	//Зачем ты убил Клыка, сволочь! Что он сделал тебе плохого?!
+		AI_Output(self,other, " DIA_HUN_743_Nix_ClawRevenge_01_01 " );	// Why did you kill Fang, you bastard! What did he do wrong to you?!
 		if(MIS_RECOVERDOG == LOG_Running)
 		{
 			MIS_RECOVERDOG = LOG_FAILED;
@@ -343,16 +344,16 @@ func void dia_hun_743_nix_clawrevenge_info()
 		else
 		{
 		};
-		AI_Output(self,other,"DIA_HUN_743_Nix_ClawRevenge_01_04");	//Идиот! Он был моим другом и не заслужил подобной смерти!
-		AI_Output(self,other,"DIA_HUN_743_Nix_ClawRevenge_01_05");	//За это я убью тебя, ублюдок!
+		AI_Output(self,other, " DIA_HUN_743_Nix_ClawRevenge_01_04 " );	// Idiot! He was my friend and didn't deserve to die like that!
+		AI_Output(self,other, " DIA_HUN_743_Nix_ClawRevenge_01_05 " );	// I'll kill you for this, you bastard!
 		AI_StopProcessInfos(self);
 		NIXFIRSTWARN = TRUE;
 		B_Attack(self,other,AR_KILL,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_ClawRevenge_01_06");	//Я помню, что ты сделал, подонок!
-		AI_Output(self,other,"DIA_HUN_743_Nix_ClawRevenge_01_08");	//Этого я тебе никогда не прощу - умри, ублюдок!
+		AI_Output(self,other, " DIA_HUN_743_Nix_ClawRevenge_01_06 " );	// I remember what you did, you bastard!
+		AI_Output(self,other, " DIA_HUN_743_Nix_ClawRevenge_01_08 " );	// I'll never forgive you for this - die, you bastard!
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_KILL,1);
 	};
@@ -372,7 +373,7 @@ instance DIA_HUN_743_NIX_WELCOME(C_Info)
 
 func int dia_hun_743_nix_welcome_condition()
 {
-	if((HEROISHUNTER == FALSE) && (KAPITELORCATC == FALSE))
+	if (( HEROISHUNTER  ==  FALSE ) && ( CAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -384,23 +385,23 @@ func void dia_hun_743_nix_welcome_info()
 	itm = Npc_GetEquippedArmor(other);
 	if(Hlp_IsItem(itm,ITAR_Leather_L) == TRUE)
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_Welcome_01_01");	//Эй, поглядите-ка, кто у нас тут. Еще один охотник!
-		AI_Output(self,other,"DIA_HUN_743_Nix_Welcome_01_03");	//В нашем лагере всегда найдется местечко для таких парней, как ты.
-		AI_Output(self,other,"DIA_HUN_743_Nix_Welcome_01_04");	//А если захочешь остаться с нами, то просто поговори с Фальком.
-		AI_Output(self,other,"DIA_HUN_743_Nix_Welcome_01_05");	//Он у нас тут главный.
+		AI_Output(self,other, " DIA_HUN_743_Nix_Welcome_01_01 " );	// Hey, look who we have here. Another hunter!
+		AI_Output(self,other, " DIA_HUN_743_Nix_Welcome_01_03 " );	// There's always room in our camp for guys like you.
+		AI_Output(self,other, " DIA_HUN_743_Nix_Welcome_01_04 " );	// And if you want to stay with us, just talk to Falk.
+		AI_Output(self,other, " DIA_HUN_743_Nix_Welcome_01_05 " );	// He's in charge here.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_Welcome_01_06");	//Эй ты! Чего тебе здесь надо, а?!
-		AI_Output(other,self,"DIA_HUN_743_Nix_Welcome_01_07");	//Да я так, просто прогуливаюсь тут.
-		AI_Output(self,other,"DIA_HUN_743_Nix_Welcome_01_09");	//Парень, тут живут охотники и тебе тут не место!
-		AI_Output(self,other,"DIA_HUN_743_Nix_Welcome_01_11");	//И, если создашь в лагере проблемы, я лично научу тебя хорошим манерам! Понял?!
+		AI_Output(self,other, " DIA_HUN_743_Nix_Welcome_01_06 " );	// Hey you! What do you want here, huh?!
+		AI_Output(other,self, " DIA_HUN_743_Nix_Welcome_01_07 " );	// Yes, I'm just walking around here.
+		AI_Output(self,other, " DIA_HUN_743_Nix_Welcome_01_09 " );	// Boy, hunters live here and you don't belong here!
+		AI_Output(self,other, " DIA_HUN_743_Nix_Welcome_01_11 " );	// And if you cause trouble in the camp, I will personally teach you good manners! Understood?!
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_HUN_743_NIX_WELCOMEHUNT(C_Info)
+instance DIA_HUN_743_NIX_WELCOMEHUNT (C_Info)
 {
 	npc = hun_743_nix;
 	nr = 1;
@@ -421,9 +422,9 @@ func int dia_hun_743_nix_welcomehunt_condition()
 
 func void dia_hun_743_nix_welcomehunt_info()
 {
-	AI_Output(self,other,"DIA_HUN_743_Nix_WelcomeHunt_01_00");	//Так ты теперь один из нас, приятель?
-	AI_Output(other,self,"DIA_HUN_743_Nix_WelcomeHunt_01_01");	//Да, Фальк принял меня в лагерь.
-	AI_Output(self,other,"DIA_HUN_743_Nix_WelcomeHunt_01_02");	//Ну что же, тогда поздравляю! И я наверняка уверен в том, что ты не пожалеешь о своем решении присоединиться к нам.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WelcomeHunt_01_00 " );	// So you're one of us now, mate?
+	AI_Output(other,self, " DIA_HUN_743_Nix_WelcomeHunt_01_01 " );	// Yes, Falk accepted me to the camp.
+	AI_Output(self,other, " DIA_HUN_743_Nix_WelcomeHunt_01_02 " );	// Well then, congratulations! And I am sure that you will not regret your decision to join us.
 };
 
 
@@ -434,7 +435,7 @@ instance DIA_HUN_743_NIX_NEWS(C_Info)
 	condition = dia_hun_743_nix_news_condition;
 	information = dia_hun_743_nix_news_info;
 	permanent = TRUE;
-	description = "В лагере все спокойно?";
+	description = " Is everything calm in the camp? " ;
 };
 
 
@@ -448,55 +449,55 @@ func int dia_hun_743_nix_news_condition()
 
 func void dia_hun_743_nix_news_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_News_01_00");	//В лагере все спокойно?
-	if((Kapitel >= 3) && (MIS_INSBLACKSANPPER == FALSE))
+	AI_Output(other,self, " DIA_HUN_743_Nix_News_01_00 " );	// Is everything calm in the camp?
+	if ((Chapter >=  3 ) && ( MY_INBLACKSANPPER  ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_01");	//Да есть кое-что...
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_02");	//Говорят, что на севере долины около древних пирамид видели какого-то необычного снеппера.
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_03");	//В отличие от своих сородичей этот был черным, как ночь! И кроме этого, вел себя как-то странно.
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_04");	//Причем, по слухам, этот черный снеппер там охотился в одиночку, хотя обычно эти твари живут только стаей.
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_06");	//Некоторые люди поговаривают, что убить такого зверя считается для охотника большой удачей!
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_01 " );	// Yes, there is something...
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_02 " );	// They say that some unusual snapper was seen in the north of the valley near the ancient pyramids.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_03 " );	// Unlike its kin, this one was black as night! And besides that, he was behaving strangely.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_04 " );	// Moreover, according to rumors, this black snapper hunted alone there, although usually these creatures live only in a flock.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_06 " );	// Some people say that killing such an animal is considered a great success for the hunter!
 		AI_Output(other,self,"DIA_HUN_743_Nix_News_01_07");	//Почему?
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_08");	//Да потому, что повстречать его - это уже огромное везение! Не говоря уже обо всем остальном.
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_09");	//Хотя лично для меня это всего лишь глупые суеверия.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_08 " );	// Yes, because meeting him is already a great luck! Not to mention everything else.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_09 " );	// Although for me personally, these are just stupid superstitions.
 		MIS_INSBLACKSANPPER = LOG_Running;
 		Log_CreateTopic(TOPIC_INSBLACKSANPPER,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_INSBLACKSANPPER,LOG_Running);
-		B_LogEntry(TOPIC_INSBLACKSANPPER,"По словам охотника Никса, рядом с древними пирамидами видели необычного черного снеппера. Поговаривают, что убить такого снеппера для охотника - большая удача.");
+		B_LogEntry( TOPIC_INSBLACKSANPPER , " According to the hunter Nyx, an unusual black snapper was seen near the ancient pyramids. They say that killing such a snapper is a great success for a hunter. " );
 		Wld_InsertNpc(blacksnapper,"NW_TROLLAREA_RUINS_22");
 	}
-	else if(Kapitel == 3)
+	else  if (chapter ==  3 )
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_11");	//Вроде да. Однако многих ребят беспокоит появление в округе этих парней в черном.
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_12");	//Думаю, они здесь не просто так объявились!
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_13");	//Видимо, что-то ищут или кого-то...(загадачно)
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_11 " );	// Looks like yes. However, many guys are worried about the appearance in the district of these guys in black.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_12 " );	// I think they didn't show up here just like that!
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_13 " );	// Apparently, they are looking for something or someone... (mysteriously)
 	}
-	else if(Kapitel == 5)
+	else  if (chapter ==  5 )
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_16");	//Пока да. Хотя меня немного беспокоит, что в последнее время тут частенько стали появляться орки.
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_17");	//Не нравится мне все это.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_16 " );	// For now, yes. Although I'm a little worried that orcs have been appearing here quite often lately.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_17 " );	// I don't like all this.
 	}
-	else if(Kapitel == 6)
+	else  if (chapter ==  6 )
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_18");	//Все парни на нервах!
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_19");	//Округа просто кишит орками - просто так и шага отсюда не сделаешь.
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_18 " );	// All the guys are on their nerves!
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_19 " );	// The county is just teeming with orcs - you just can't take a step out of here.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_20");	//Ну да. А почему тут должно быть неспокойно?
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_21");	//Скажу даже больше - спокойнее места тебе во всем Хоринисе не найти!
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_20 " );	// Well, yes. And why should there be restlessness?
+		AI_Output(self,other, " DIA_HUN_743_Nix_News_01_21 " );	// I will say even more - you will not find a calmer place in all Khorinis!
 	};
 };
 
 
-instance DIA_HUN_743_NIX_INSBLACKSANPPER(C_Info)
+instance DIA_HUN_743_NIX_INSBLACKSANPPER (C_Info)
 {
 	npc = hun_743_nix;
 	nr = 2;
 	condition = dia_hun_743_nix_insblacksanpper_condition;
-	information = dia_hun_743_nix_insblacksanpper_info;
+	info = dia_hun_743_nix_insblacksanpper_info;
 	permanent = FALSE;
-	description = "Я убил черного снеппера.";
+	description = " I killed the black snapper. " ;
 };
 
 
@@ -511,18 +512,18 @@ func int dia_hun_743_nix_insblacksanpper_condition()
 func void dia_hun_743_nix_insblacksanpper_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_HUN_743_Nix_InsBlackSanpper_01_00");	//Я убил черного снеппера.
-	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_01");	//Правда? А где доказательства?
-	AI_Output(other,self,"DIA_HUN_743_Nix_InsBlackSanpper_01_02");	//Вот его когти.
+	AI_Output(other,self, " DIA_HUN_743_Nix_InsBlackSanpper_01_00 " );	// I killed the black snapper.
+	AI_Output(self,other, " DIA_HUN_743_Nix_InsBlackSanpper_01_01 " );	// True? Where is the evidence?
+	AI_Output(other,self, " DIA_HUN_743_Nix_InsBlackSanpper_01_02 " );	// Here are his claws.
 	B_GiveInvItems(other,self,itat_clawblacksnapper,1);
 	Npc_RemoveInvItems(self,itat_clawblacksnapper,1);
-	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_03");	//Вот это да... Просто невероятно!
-	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_04");	//Парень, да ты просто везунчик!
-	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_05");	//Прими мои поздравления.
-	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_06");	//Ты просто отличный охотник!
+	AI_Output(self,other, " DIA_HUN_743_Nix_InsBlackSanpper_01_03 " );	// Wow... Just incredible!
+	AI_Output(self,other, " DIA_HUN_743_Nix_InsBlackSanpper_01_04 " );	// Guy, you're just lucky!
+	AI_Output(self,other, " DIA_HUN_743_Nix_InsBlackSanpper_01_05 " );	// Congratulations.
+	AI_Output(self,other, " DIA_HUN_743_Nix_InsBlackSanpper_01_06 " );	// You're just a great hunter!
 	MIS_INSBLACKSANPPER = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_INSBLACKSANPPER,LOG_SUCCESS);
-	B_LogEntry(TOPIC_INSBLACKSANPPER,"Никс был просто изумлен, когда я показал ему когти убитого мной черного снеппера.");
+	B_LogEntry( TOPIC_INSBLACKSANPPER , " Nyx was amazed when I showed him the claws of the black snapper I killed. " );
 };
 
 
@@ -533,13 +534,13 @@ instance DIA_HUN_743_NIX_RESPECT(C_Info)
 	condition = dia_hun_743_nix_respect_condition;
 	information = dia_hun_743_nix_respect_info;
 	permanent = FALSE;
-	description = "Мне нужна твоя помощь.";
+	description = " I need your help. " ;
 };
 
 
 func int dia_hun_743_nix_respect_condition()
 {
-	if((CANHUNTERCHALLANGE == TRUE) && (NIX_RESPECT == FALSE) && (MIS_HUNTERCHALLANGE == FALSE))
+	if (( CANHUNTERCHALLANGE  ==  TRUE ) && ( NIX_RESPECT  ==  FALSE ) && ( MY_HUNTERCHALLANGE  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -547,32 +548,32 @@ func int dia_hun_743_nix_respect_condition()
 
 func void dia_hun_743_nix_respect_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_Respect_01_00");	//Мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_01");	//И какая же именно?
-	AI_Output(other,self,"DIA_HUN_743_Nix_Respect_01_02");	//Я собираюсь вызвать Фалька на поединок, но для этого я должен заручиться поддержкой большинства охотников.
-	AI_Output(other,self,"DIA_HUN_743_Nix_Respect_01_03");	//Могу ли я рассчитывать на твой голос?
+	AI_Output(other,self, " DIA_HUN_743_Nix_Respect_01_00 " );	// I need your help.
+	AI_Output(self,other, " DIA_HUN_743_Nix_Respect_01_01 " );	// And which one exactly?
+	AI_Output(other,self, " DIA_HUN_743_Nix_Respect_01_02 " );	// I'm going to challenge Falk to a duel, but I'll have to enlist the support of most of the hunters to do so.
+	AI_Output(other,self, " DIA_HUN_743_Nix_Respect_01_03 " );	// Can I count on your vote?
 	if((MIS_RECOVERDOG == LOG_SUCCESS) || (MIS_INSBLACKSANPPER == LOG_SUCCESS))
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_04");	//Конечно, приятель!
+		AI_Output(self,other, " DIA_HUN_743_Nix_Respect_01_04 " );	// Of course, mate!
 		if(MIS_RECOVERDOG == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_05");	//Ведь ты помог мне выходить Клыка, а таких вещей я никогда не забываю!
-			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_06");	//Так что можешь смело идти к Фальку и сказать, что я поддерживаю тебя.
+			AI_Output(self,other, " DIA_HUN_743_Nix_Respect_01_05 " );	// After all, you helped me get out of the Fang, and I never forget such things!
+			AI_Output(self,other, " DIA_HUN_743_Nix_Respect_01_06 " );	// So feel free to go to Falk and say that I support you.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_07");	//Одно то, что ты смог завалить того черного снеппера, уже говорит о том, что ты - отличный охотник и достоин уважения!
-			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_08");	//Так что можешь смело идти к Фальку и сказать, что я поддерживаю тебя.
+			AI_Output(self,other, " DIA_HUN_743_Nix_Respect_01_07 " );	// The mere fact that you were able to take down that black snapper already says that you are an excellent hunter and worthy of respect!
+			AI_Output(self,other, " DIA_HUN_743_Nix_Respect_01_08 " );	// So feel free to go to Falk and say that I support you.
 		};
-		B_LogEntry(TOPIC_HUNTERSWORK,"Никс отдаст за меня голос, если я решу бросить Фальку вызов.");
+		B_LogEntry( TOPIC_HUNTERSWORK , " Nyx will vote for me if I decide to challenge Falk. " );
 		NIX_RESPECT = TRUE;
 		HUNTCHALLENGECOUNT = HUNTCHALLENGECOUNT + 1;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_10");	//Ты еще не доказал того, что достоин этого.
-		AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_11");	//Так что для начала прояви себя каким-нибудь образом, а потом мы уже и поговорим.
+		AI_Output(self,other, " DIA_HUN_743_Nix_Respect_01_10 " );	// You haven't proven yourself worthy yet.
+		AI_Output(self,other, " DIA_HUN_743_Nix_Respect_01_11 " );	// So first, show yourself in some way, and then we'll talk.
 	};
 };
 
@@ -584,13 +585,13 @@ instance DIA_HUN_743_NIX_RESPECTDONE(C_Info)
 	condition = dia_hun_743_nix_respectdone_condition;
 	information = dia_hun_743_nix_respectdone_info;
 	permanent = TRUE;
-	description = "Как насчет моей просьбы?";
+	description = " What about my request? " ;
 };
 
 
 func int dia_hun_743_nix_respectdone_condition()
 {
-	if(Npc_KnowsInfo(other,dia_hun_743_nix_respect) && (CANHUNTERCHALLANGE == TRUE) && (NIX_RESPECT == FALSE) && (MIS_HUNTERCHALLANGE == FALSE))
+	if ( Npc_KnowsInfo ( other , dia_hun_743_nix_respect ) && ( CANHUNTERCHALLANGE  ==  TRUE ) && ( NIX_RESPECT  ==  FALSE ) && ( MIS_HUNTERCHALLANGE  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -598,29 +599,29 @@ func int dia_hun_743_nix_respectdone_condition()
 
 func void dia_hun_743_nix_respectdone_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_RespectDone_01_00");	//Как насчет моей просьбы?
+	AI_Output(other,self, " DIA_HUN_743_Nix_RespectDone_01_00 " );	// What about my request?
 	if((MIS_RECOVERDOG == LOG_SUCCESS) || (MIS_INSBLACKSANPPER == LOG_SUCCESS))
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_01");	//Ну, почему бы и нет?
+		AI_Output(self,other, " DIA_HUN_743_Nix_RespectDone_01_01 " );	// Well, why not?
 		if(MIS_RECOVERDOG == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_02");	//Ведь ты помог мне выходить Клыка, а таких вещей я никогда не забываю!
-			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_03");	//Так что можешь смело идти к Фальку и сказать, что я поддерживаю тебя.
+			AI_Output(self,other, " DIA_HUN_743_Nix_RespectDone_01_02 " );	// After all, you helped me get out of the Fang, and I never forget such things!
+			AI_Output(self,other, " DIA_HUN_743_Nix_RespectDone_01_03 " );	// So feel free to go to Falk and say that I support you.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_04");	//Одно то, что ты смог завалить того черного снеппера, уже говорит о том, что ты отличный охотник и достоин уважения!
-			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_05");	//Так что можешь смело идти к Фальку и сказать, что я поддерживаю тебя.
+			AI_Output(self,other, " DIA_HUN_743_Nix_RespectDone_01_04 " );	// The mere fact that you were able to take down that black snapper already says that you are an excellent hunter and worthy of respect!
+			AI_Output(self,other, " DIA_HUN_743_Nix_RespectDone_01_05 " );	// So feel free to go to Falk and say that I support you.
 		};
-		B_LogEntry(TOPIC_HUNTERSWORK,"Никс отдаст за меня голос, если я решу бросить Фальку вызов.");
+		B_LogEntry( TOPIC_HUNTERSWORK , " Nyx will vote for me if I decide to challenge Falk. " );
 		NIX_RESPECT = TRUE;
 		HUNTCHALLENGECOUNT = HUNTCHALLENGECOUNT + 1;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_06");	//Парень! Я же сказал, что тебе нужно проявить себя на деле, а не доставать меня вопросами!
-		AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_07");	//Что тут непонятного?
+		AI_Output(self,other, " DIA_HUN_743_Nix_RespectDone_01_06 " );	// Guy! I told you that you need to prove yourself in practice, and not bother me with questions!
+		AI_Output(self,other, " DIA_HUN_743_Nix_RespectDone_01_07 " );	// What's wrong here?
 	};
 };
 
@@ -632,7 +633,7 @@ instance DIA_HUN_743_NIX_HELLO(C_Info)
 	condition = dia_hun_743_nix_hello_condition;
 	information = dia_hun_743_nix_hello_info;
 	permanent = FALSE;
-	description = "Ты можешь меня чему-нибудь научить?";
+	description = " Can you teach me something? " ;
 };
 
 
@@ -646,22 +647,22 @@ func int dia_hun_743_nix_hello_condition()
 
 func void dia_hun_743_nix_hello_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_Hello_01_00");	//Ты можешь меня чему-нибудь научить?
-	AI_Output(self,other,"DIA_HUN_743_Nix_Hello_01_01");	//Я могу показать тебе, как стать более ловким.
-	AI_Output(self,other,"DIA_HUN_743_Nix_Hello_01_02");	//Если, конечно, захочешь.
+	AI_Output(other,self, " DIA_HUN_743_Nix_Hello_01_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_HUN_743_Nix_Hello_01_01 " );	// I can show you how to get more agile.
+	AI_Output(self,other, " DIA_HUN_743_Nix_Hello_01_02 " );	// If you want, of course.
 	Log_CreateTopic(TOPIC_HUNTERTEACHERS,LOG_NOTE);
-	B_LogEntry(TOPIC_HUNTERTEACHERS,"Никс может показать мне, как стать более ловким.");
+	B_LogEntry( TOPIC_HUNTERTEACHERS , " Nyx can show me how to be more agile. " );
 };
 
 
-instance DIA_HUN_743_NIX_DEX(C_Info)
+instance DIA_HUN_743_NIX_DEX (C_Info)
 {
 	npc = hun_743_nix;
 	nr = 3;
 	condition = dia_hun_743_nix_dex_condition;
 	information = dia_hun_743_nix_dex_info;
 	permanent = TRUE;
-	description = "Покажи мне, как стать более ловким.";
+	description = " Show me how to become more agile. " ;
 };
 
 
@@ -675,8 +676,8 @@ func int dia_hun_743_nix_dex_condition()
 
 func void dia_hun_743_nix_dex_info()
 {
-	AI_Output(other,self,"DIA_HUN_743_Nix_Dex_01_00");	//Покажи мне, как стать более ловким.
-	AI_Output(self,other,"DIA_HUN_743_Nix_Dex_01_01");	//Успех охоты во многом зависит от ловкости!
+	AI_Output(other,self, " DIA_HUN_743_Nix_Dex_01_00 " );	// Show me how to get more agile.
+	AI_Output(self,other, " DIA_HUN_743_Nix_Dex_01_01 " );	// Hunting success depends a lot on dexterity!
 	Info_ClearChoices(dia_hun_743_nix_dex);
 	Info_AddChoice(dia_hun_743_nix_dex,Dialog_Back,dia_hun_743_nix_dex_back);
 	Info_AddChoice(dia_hun_743_nix_dex,b_buildlearnstringforskills(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),dia_hun_743_nix_dex_1);
@@ -720,7 +721,7 @@ instance DIA_HUN_743_NIX_SHADOWFUR(C_Info)
 
 func int dia_hun_743_nix_shadowfur_condition()
 {
-	if((Kapitel >= 2) && (HEROISHUNTER == TRUE))
+	if ((Capital >=  2 ) && ( HEROISHUNTER  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -728,18 +729,18 @@ func int dia_hun_743_nix_shadowfur_condition()
 
 func void dia_hun_743_nix_shadowfur_info()
 {
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFur_01_00");	//Эй, постой. У меня к тебе есть одно дельце.
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFur_01_02");	//Мне позарез нужна шкура мракориса! Но я не могу уйти на охоту - я должен охранять этот лагерь.
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFur_01_03");	//А вот ты - другое дело! Достань мне эту шкуру, и я обещаю, что ты не пожалеешь об этом.
-	AI_Output(other,self,"DIA_HUN_743_Nix_ShadowFur_01_04");	//Где мне искать мракорисов?
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFur_01_05");	//Обычно они живут в пещерах или в глухом лесу.
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFur_01_06");	//Эти звери не слишком любят дневной свет, поэтому стараются от него как можно лучше спрятаться.
-	AI_Output(other,self,"DIA_HUN_743_Nix_ShadowFur_01_07");	//Я посмотрю, что можно сделать.
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFur_01_08");	//Спасибо, приятель. Поверь мне, я в долгу не останусь!
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFur_01_00 " );	// Hey, wait. I have one thing for you.
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFur_01_02 " );	// I desperately need a mrakoris hide! But I can't go hunting - I have to guard this camp.
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFur_01_03 " );	// But you are another matter! Get me that skin and I promise you won't regret it.
+	AI_Output(other,self, " DIA_HUN_743_Nix_ShadowFur_01_04 " );	// Where can I find the obscurantists?
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFur_01_05 " );	// They usually live in caves or deep forests.
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFur_01_06 " );	// These animals don't like daylight too much, so they do their best to hide from it.
+	AI_Output(other,self, " DIA_HUN_743_Nix_ShadowFur_01_07 " );	// I'll see what I can do.
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFur_01_08 " );	// Thanks mate. Believe me, I will not stay in debt!
 	MIS_SHADOWFURNIX = LOG_Running;
 	Log_CreateTopic(TOPIC_SHADOWFURNIX,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SHADOWFURNIX,LOG_Running);
-	B_LogEntry(TOPIC_SHADOWFURNIX,"Охотнику Никсу нужна шкура мракориса. Он сказал, что обычно эти животные живут в пещерах или тех частях леса, где мало солнца.");
+	; _ _ _ _ _ _
 	AI_StopProcessInfos(self);
 };
 
@@ -751,7 +752,7 @@ instance DIA_HUN_743_NIX_SHADOWFURDONE(C_Info)
 	condition = dia_hun_743_nix_shadowfurdone_condition;
 	information = dia_hun_743_nix_shadowfurdone_info;
 	permanent = FALSE;
-	description = "Вот шкура мракориса, которую ты просил.";
+	description = " Here is the mrakoris hide you asked for. " ;
 };
 
 
@@ -766,16 +767,16 @@ func int dia_hun_743_nix_shadowfurdone_condition()
 func void dia_hun_743_nix_shadowfurdone_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_HUN_743_Nix_ShadowFurDone_01_00");	//Вот шкура мракориса, которую ты просил.
+	AI_Output(other,self, " DIA_HUN_743_Nix_ShadowFurDone_01_00 " );	// Here's the mrakoris skin you asked for.
 	B_GiveInvItems(other,self,ItAt_ShadowFur,1);
 	Npc_RemoveInvItems(self,ItAt_ShadowFur,1);
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_01");	//Отлично! Наверное, тебе пришлось немного повозиться с этим делом, да?
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_02");	//Совсем немного.
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_03");	//Ну тогда ладно! Вот, возьми это золото - ты его честно заработал!
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFurDone_01_01 " );	// Great! You must have had a little tinkering with this case, right?
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFurDone_01_02 " );	// Quite a bit.
+	AI_Output(self,other, " DIA_HUN_743_Nix_ShadowFurDone_01_03 " );	// Well then, okay! Here, take this gold - you honestly earned it!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	MIS_SHADOWFURNIX = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SHADOWFURNIX,LOG_SUCCESS);
-	B_LogEntry(TOPIC_SHADOWFURNIX,"Я достал для охотника Никса шкуру мракориса.");
+	B_LogEntry( TOPIC_SHADOWFURNIX , " I've obtained a Shadowhide Hide for Hunter Nyx. " );
 };
 
 
@@ -792,7 +793,7 @@ instance DIA_HUN_743_NIXNW_PICKPOCKET(C_Info)
 
 func int dia_hun_743_nixnw_pickpocket_condition()
 {
-	return C_Beklauen(65,90);
+	return  C_Robbery ( 65 , 90 );
 };
 
 func void dia_hun_743_nixnw_pickpocket_info()
@@ -804,7 +805,7 @@ func void dia_hun_743_nixnw_pickpocket_info()
 
 func void dia_hun_743_nixnw_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_hun_743_nixnw_pickpocket);
 };
 
