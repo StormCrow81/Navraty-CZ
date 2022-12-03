@@ -1,4 +1,5 @@
 
+
 instance DIA_SKELETON_LORD_KELTUZED_SOUL_EXIT(C_Info)
 {
 	npc = skeleton_lord_keltuzed;
@@ -43,23 +44,23 @@ func void dia_skeleton_lord_keltuzed_soul_hallo_info()
 	//Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	Snd_Play("DEM_Warn");
-	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_00");	//(мертвым голосом) Кто посмел побеспокоить меня?! Кто меня вызвал?!
-	AI_Output(other,self,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_01");	//Это был я.
-	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_02");	//Человек?! А я-то думал, что уничтожил вас всех, жалкие черви!
-	AI_Output(other,self,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_03");	//Ты ошибся.
-	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_04");	//Аарггг... А ты дерзок, смертный. Но тебе это все равно не поможет.
-	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_05");	//Поскольку сейчас я убью тебя, и твоя никчемная жизнь оборвется навеки!
-	AI_Output(other,self,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_06");	//Попробуй, если сможешь.
+	AI_Output(self,other, " DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_00 " );	// (dead voice) Who dares to disturb me?! Who called me?!
+	AI_Output(other,self, " DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_01 " );	// That was me.
+	AI_Output(self,other, " DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_02 " );	// Human?! I thought I had destroyed all of you, you wretched worms!
+	AI_Output(other,self, " DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_03 " );	// You're wrong.
+	AI_Output(self,other, " DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_04 " );	// Aarggg... And you're cheeky, mortal. But it still won't help you.
+	AI_Output(self,other, " DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_05 " );	// Because now I will kill you, and your worthless life will end forever!
+	AI_Output(other,self, " DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_06 " );	// Try it if you can.
 	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_07");	//Ааргггг...
 	Info_ClearChoices(dia_skeleton_lord_keltuzed_soul_hallo);
-	Info_AddChoice(dia_skeleton_lord_keltuzed_soul_hallo,"(закончить разговор)",dia_skeleton_lord_keltuzed_soul_hallo_ex1);
+	Info_AddChoice(dia_skeleton_lord_keltuzed_soul_hallo, " (end conversation) " ,dia_skeleton_lord_keltuzed_soul_hallo_ex1);
 };
 
 func void dia_skeleton_lord_keltuzed_soul_hallo_ex1()
 {
 	Wld_StopEffect("DEMENTOR_FX");
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	self.start_aistate = ZS_MM_AllScheduler;
 	skeleton_knight_death_01.aivar[AIV_EnemyOverride] = FALSE;
 	skeleton_knight_death_02.aivar[AIV_EnemyOverride] = FALSE;
