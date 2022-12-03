@@ -1,4 +1,5 @@
 
+
 instance DIA_Sarah_EXIT(C_Info)
 {
 	npc = VLK_470_Sarah;
@@ -34,7 +35,7 @@ instance DIA_Sarah_PICKPOCKET(C_Info)
 
 func int DIA_Sarah_PICKPOCKET_Condition()
 {
-	return C_Beklauen(57,60);
+	return  C_Robbery ( 57 , 60 );
 };
 
 func void DIA_Sarah_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Sarah_PICKPOCKET_Info()
 
 func void DIA_Sarah_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Sarah_PICKPOCKET);
 };
 
@@ -77,17 +78,17 @@ func int DIA_Sarah_Greet_Condition()
 
 func void DIA_Sarah_Greet_Info()
 {
-	AI_Output(self,other,"DIA_Sarah_Add_16_07");	//Ах! Опять ты!
+	AI_Output(self,other, " DIA_Sarah_Add_16_07 " );	// Ah! You again!
 };
 
 
-instance DIA_Sarah_HALLO(C_Info)
+instances DIA_Sarah_HALLO (C_Info)
 {
 	npc = VLK_470_Sarah;
 	condition = DIA_Sarah_HALLO_Condition;
 	information = DIA_Sarah_HALLO_Info;
 	permanent = FALSE;
-	description = "Как торговля?";
+	description = " How is trading? " ;
 };
 
 
@@ -98,24 +99,24 @@ func int DIA_Sarah_HALLO_Condition()
 
 func void DIA_Sarah_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Sarah_HALLO_15_00");	//Как торговля?
-	AI_Output(self,other,"DIA_Sarah_HALLO_16_01");	//Когда пришли паладины, я сначала думала, что это хорошо для бизнеса.
-	AI_Output(self,other,"DIA_Sarah_HALLO_16_02");	//Но теперь Харад делает для них оружие. А ни я, ни Хакон еще не получили от них ни одной монеты.
-	AI_Output(self,other,"DIA_Sarah_HALLO_16_03");	//И, что еще хуже, фермеры больше не поставляют нам продовольствие, и цены на все взлетели до небес.
-	AI_Output(self,other,"DIA_Sarah_Add_16_00");	//Одно маленькое утешение - паладины оплачивают мою комнату в отеле.
+	AI_Output(other,self, " DIA_Sarah_HALLO_15_00 " );	// How is trading?
+	AI_Output(self,other, " DIA_Sarah_HALLO_16_01 " );	// When the paladins came, at first I thought it was good for business.
+	AI_Output(self,other, " DIA_Sarah_HALLO_16_02 " );	// But now Harad makes weapons for them. And neither I nor Hakon have yet received a single coin from them.
+	AI_Output(self,other, " DIA_Sarah_HALLO_16_03 " );	// And to make matters worse, the farmers no longer supply us with food, and the prices of everything have skyrocketed.
+	AI_Output(self,other, " DIA_Sarah_Add_16_00 " );	// One small consolation - the paladins pay for my hotel room.
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Сара торгует оружием на рыночной площади.");
+	B_LogEntry(TOPIC_CityTrader, " Sarah trades weapons in the marketplace. " );
 };
 
 
-instance DIA_Sarah_Bauern(C_Info)
+instance DIA_Sarah_Bauern (C_Info)
 {
 	npc = VLK_470_Sarah;
 	nr = 2;
 	condition = DIA_Sarah_Bauern_Condition;
 	information = DIA_Sarah_Bauern_Info;
 	permanent = FALSE;
-	description = "А что за проблема с фермерами?";
+	description = " What's the problem with farmers? " ;
 };
 
 
@@ -129,30 +130,30 @@ func int DIA_Sarah_Bauern_Condition()
 
 func void DIA_Sarah_Bauern_Info()
 {
-	AI_Output(other,self,"DIA_Sarah_Bauern_15_00");	//А что за проблема с фермерами?
-	AI_Output(self,other,"DIA_Sarah_Bauern_16_01");	//Они отказываются поставлять нам продовольствие.
-	AI_Output(self,other,"DIA_Sarah_Bauern_16_02");	//Теперь, когда корабли больше не заходят в наш порт, город полностью зависит от продуктов, производимых нашими фермерами.
-	AI_Output(self,other,"DIA_Sarah_Bauern_16_03");	//А Онар, самый крупный фермер, нанял наемников, чтобы защищать свою ферму от городской стражи. До этого они забирали у него все подчистую.
-	AI_Output(self,other,"DIA_Sarah_Add_16_01");	//Но наемники не просто охраняют ферму Онара.
-	AI_Output(self,other,"DIA_Sarah_Add_16_02");	//Они добрались даже до маленьких ферм у города, и запугивают их владельцев.
-	AI_Output(self,other,"DIA_Sarah_Add_16_03");	//Я видела их, когда ходила на ферму Акила. Не хотела бы я сейчас оказаться на его месте.
+	AI_Output(other,self, " DIA_Sarah_Bauern_15_00 " );	// What's the problem with farmers?
+	AI_Output(self,other, " DIA_Sarah_Bauern_16_01 " );	// They refuse to supply us with food.
+	AI_Output(self,other, " DIA_Sarah_Bauern_16_02 " );	// Now that ships no longer call at our port, the city is completely dependent on the products produced by our farmers.
+	AI_Output(self,other, " DIA_Sarah_Bauern_16_03 " );	// And Onar, the biggest farmer, hired mercenaries to protect his farm from city guards. Before that, they took everything clean from him.
+	AI_Output(self,other, " DIA_Sarah_Add_16_01 " );	// But the mercenaries aren't just guarding Onar's farm.
+	AI_Output(self,other, " DIA_Sarah_Add_16_02 " );	// They've even reached the small farms near the city, and they're bullying their owners.
+	AI_Output(self,other, " DIA_Sarah_Add_16_03 " );	// I saw them when I went to the Akila farm. I wouldn't want to be in his place now.
 };
 
 
-instance DIA_Sarah_AkilsHof(C_Info)
+DIA_Sarah_AkilsHof (C_Info) instance
 {
 	npc = VLK_470_Sarah;
 	nr = 3;
 	condition = DIA_Sarah_AkilsHof_Condition;
 	information = DIA_Sarah_AkilsHof_Info;
 	permanent = FALSE;
-	description = "Где мне найти ферму Акила?";
+	description = " Where can I find Akila Farm? " ;
 };
 
 
 func int DIA_Sarah_AkilsHof_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Sarah_Bauern))
+	if (Npc_KnowsInfo(other,DIA_Sarah_Bauern))
 	{
 		return TRUE;
 	};
@@ -160,10 +161,10 @@ func int DIA_Sarah_AkilsHof_Condition()
 
 func void DIA_Sarah_AkilsHof_Info()
 {
-	AI_Output(other,self,"DIA_Sarah_AkilsHof_15_00");	//Где мне найти ферму Акила?
-	AI_Output(self,other,"DIA_Sarah_Add_16_04");	//Если выйдешь из восточных ворот и пойдешь по дороге направо, скоро ты увидишь каменную лестницу.
-	AI_Output(self,other,"DIA_Sarah_Add_16_05");	//Она ведет прямо к ферме Акила.
-	AI_Output(self,other,"DIA_Sarah_Add_16_06");	//Но я бы сейчас туда не совалась! Эти наемники, наверняка, все еще там.
+	AI_Output(other,self, " DIA_Sarah_AkilsHof_15_00 " );	// Where can I find the Akila farm?
+	AI_Output(self,other, " DIA_Sarah_Add_16_04 " );	// If you exit the east gate and follow the road to the right, you will soon see a stone staircase.
+	AI_Output(self,other, " DIA_Sarah_Add_16_05 " );	// It leads straight to Akila's farm.
+	AI_Output(self,other, " DIA_Sarah_Add_16_06 " );	// But I wouldn't go there now! Those mercenaries are probably still out there.
 };
 
 
@@ -175,16 +176,16 @@ instance DIA_Sarah_Trade(C_Info)
 	information = DIA_Sarah_Trade_Info;
 	trade = TRUE;
 	permanent = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 };
 
 func int DIA_Sarah_Trade_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Sarah_HALLO) && Wld_IsTime(5,15,20,15) && (Sarah_Ausgeliefert == FALSE) && (SARAFLEE == FALSE) && (SARAISDEAD == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Sarah_HALLO ) && Wld_IsTime ( 5 , 15 , 20 , 15 ) && ( Sarah_Died ==  FALSE ) && ( SARAFLEE  ==  FALSE ) && ( SARAISDEAD  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	if((SARAHELPYOUDONE == TRUE) && Wld_IsTime(5,15,20,15))
+	if (( SARAHELPYOUDONE  ==  TRUE ) && Wld_IsTime( 5 , 15 , 20 , 15 ))
 	{
 		return TRUE;
 	};
@@ -198,9 +199,9 @@ func void DIA_Sarah_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Sarah_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Sarah_Trade_15_00 " );	// Show me your products.
 	B_GiveTradeInv(self);
-	Sarah_WaffenGesehen = TRUE;
+	Sarah_WeaponsSeen = TRUE ;
 };
 
 
@@ -225,8 +226,8 @@ func int DIA_Sarah_IMKNAST_Condition()
 
 func void DIA_Sarah_IMKNAST_Info()
 {
-	AI_Output(self,other,"DIA_Sarah_IMKNAST_16_00");	//Ты?! Ты осмелился появиться здесь! Я, конечно, не могу доказать этого, но я готова поклясться, что это твоих рук дело!
-	AI_Output(self,other,"DIA_Sarah_IMKNAST_16_01");	//Это ты виноват, что я здесь. Ты и этот проклятый Кантар - да накажет вас Иннос!
+	AI_Output(self,other, " DIA_Sarah_IMKNAST_16_00 " );	// You?! You dare to appear here! Of course, I cannot prove this, but I am ready to swear that this is your doing!
+	AI_Output(self,other, " DIA_Sarah_IMKNAST_16_01 " );	// It's your fault that I'm here. You and that accursed Kantar - may Innos punish you!
 	Npc_RemoveInvItems(self,ItWr_Canthars_KomproBrief_MIS,Npc_HasItems(self,ItWr_Canthars_KomproBrief_MIS));
 	AI_StopProcessInfos(self);
 };
@@ -239,13 +240,13 @@ instance DIA_Sarah_Success(C_Info)
 	condition = DIA_Sarah_Success_Condition;
 	information = DIA_Sarah_Success_Info;
 	permanent = FALSE;
-	description = "Кантар пытался подставить тебя!";
+	description = " Kantar tried to set you up! " ;
 };
 
 
 func int DIA_Sarah_Success_Condition()
 {
-	if((Canthar_Ausgeliefert == TRUE) && (Canthar_WiederRaus == FALSE))
+	if ((Canthar_Ausgeliefer ==  TRUE ) && (Canthar_WeederRaus ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -253,9 +254,9 @@ func int DIA_Sarah_Success_Condition()
 
 func void DIA_Sarah_Success_Info()
 {
-	AI_Output(other,self,"DIA_Sarah_Success_15_00");	//Кантар пытался подставить тебя и заполучить твой прилавок. Но я сдал его городской страже.
-	AI_Output(self,other,"DIA_Sarah_Success_16_01");	//Ты этим нажил себе очень опасного врага. Я давно знаю этого ублюдка. И он всегда хотел заполучить мой прилавок.
-	AI_Output(self,other,"DIA_Sarah_Success_16_02");	//Возьми это оружие в знак моей благодарности!
+	AI_Output(other,self, " DIA_Sarah_Success_15_00 " );	// Kantar tried to set you up and get your stall. But I turned him in to the city guard.
+	AI_Output(self,other, " DIA_Sarah_Success_16_01 " );	// You've made yourself a very dangerous enemy. I've known this bastard for a long time. And he always wanted to get my counter.
+	AI_Output(self,other, " DIA_Sarah_Success_16_02 " );	// Take this weapon as a token of my gratitude!
 	B_GivePlayerXP(XP_CantharImKnast);
 	B_GiveInvItems(self,other,ItMw_Piratensaebel,1);
 	SARAKNOWSABOUTCANTHAR = TRUE;
@@ -269,7 +270,7 @@ instance DIA_SARAH_FLEE(C_Info)
 	condition = dia_sarah_flee_condition;
 	information = dia_sarah_flee_info;
 	permanent = FALSE;
-	description = "Ты в порядке?";
+	description = " Are you okay? " ;
 };
 
 func int dia_sarah_flee_condition()
@@ -283,11 +284,11 @@ func int dia_sarah_flee_condition()
 func void dia_sarah_flee_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Sarah_Flee_15_00");	//Ты в порядке?
-	AI_Output(self,other,"DIA_Sarah_Flee_16_01");	//Хорошо, что ты меня предупредил в прошлый раз. А то бы мне не жить!
-	AI_Output(self,other,"DIA_Sarah_Flee_16_02");	//Кантар вышел из тюрьмы, и я едва унесла ноги. Теперь я сыта городом по горло.
-	AI_Output(self,other,"DIA_Sarah_Flee_16_03");	//Не знаю только, что мне делать - тут совсем никакой торговли.
-	AI_Output(self,other,"DIA_Sarah_Flee_16_04");	//Но в любом случае благодарю тебя за помощь.
+	AI_Output(other,self, " DIA_Sarah_Flee_15_00 " );	// Are you okay?
+	AI_Output(self,other, " DIA_Sarah_Flee_16_01 " );	// Good thing you warned me last time. Otherwise I wouldn't live!
+	AI_Output(self,other, " DIA_Sarah_Flee_16_02 " );	// Kantar got out of prison, and I could barely fly away. Now I'm fed up with the city.
+	AI_Output(self,other, " DIA_Sarah_Flee_16_03 " );	// I just don't know what to do - there's no trading at all.
+	AI_Output(self,other, " DIA_Sarah_Flee_16_04 " );	// But anyway, thanks for your help.
 };
 
 instance DIA_SARAH_RETURN(C_Info)
@@ -297,12 +298,12 @@ instance DIA_SARAH_RETURN(C_Info)
 	condition = dia_sarah_return_condition;
 	information = dia_sarah_return_info;
 	permanent = FALSE;
-	description = "Ты можешь вернуться на рынок.";
+	description = " You can return to the market. " ;
 };
 
 func int dia_sarah_return_condition()
 {
-	if((SARAFLEE == TRUE) && (SARAAGREE == FALSE) && (Npc_IsDead(Canthar) == TRUE) && (SARAHELPYOU == FALSE))
+	if (( SARAFLEE  ==  TRUE ) && ( SARAAGREE  ==  FALSE ) && ( Npc_IsDead( Canthar ) ==  TRUE ) && ( SARAHELPYOU  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -311,13 +312,13 @@ func int dia_sarah_return_condition()
 func void dia_sarah_return_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Sarah_Return_01_00");	//Ты можешь вернуться на рынок.
-	AI_Output(self,other,"DIA_Sarah_Return_01_01");	//Но... но там же Кантар! Если он увидит меня - я не знаю, что он со мной сделает!
-	AI_Output(other,self,"DIA_Sarah_Return_01_02");	//О Кантаре можешь не беспокоиться - с ним произошел несчастный случай.
-	AI_Output(other,self,"DIA_Sarah_Return_01_03");	//Теперь твое место вновь свободно!
-	AI_Output(self,other,"DIA_Sarah_Return_01_04");	//Правда? Ну и поделом этому ублюдку - он заслужил это, мерзавец!
-	AI_Output(self,other,"DIA_Sarah_Return_01_05");	//Однако я все же лучше останусь тут - от того места на рынке у меня мурашки по коже.
-	AI_Output(self,other,"DIA_Sarah_Return_01_07");	//Но в любом случае спасибо, что немного порадовал меня...
+	AI_Output(other,self, " DIA_Sarah_Return_01_00 " );	// You can return to the market.
+	AI_Output(self,other, " DIA_Sarah_Return_01_01 " );	// But... but Kantar is there! If he sees me, I don't know what he will do to me!
+	AI_Output(other, self, " DIA_Sarah_Return_01_02 " );	// Don't worry about Kantar - he had an accident.
+	AI_Output(other,self, " DIA_Sarah_Return_01_03 " );	// Now your place is free again!
+	AI_Output(self,other, " DIA_Sarah_Return_01_04 " );	// True? Well, serve this bastard - he deserved it, bastard!
+	AI_Output(self,other, " DIA_Sarah_Return_01_05 " );	// However, I'd rather stay here - that place in the market gives me goosebumps.
+	AI_Output(self,other, " DIA_Sarah_Return_01_07 " );	// But anyway, thanks for making me feel a little better...
 };
 
 
@@ -342,43 +343,43 @@ func int dia_sarah_afterimknast_condition()
 
 func void dia_sarah_afterimknast_info()
 {
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_01_00");	//Ах! Это ты, мерзавец?
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_01_01");	//Это ты виноват в том, что меня засадили в тюрьму! (гневно) Ты и твой проклятый Кантар!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_01_02");	//Теперь все люди из-за тебя думают, что я - грязная преступница!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_01_04");	//Я не желаю с тобой разговаривать, ублюдок!
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_01_05");	//Подожди, хотя бы выслушай меня!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_01_06");	//Назови хоть одну причину, по которой я должна сделать это.
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_01_07");	//Для начала, хотя бы то, что это я вытащил тебя из тюрьмы.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_01_08");	//ЧТО?! Это сделал ты?
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_01_09");	//Да, это я заплатил за тебя штраф лорду Андрэ.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_01_12");	//Ты сначала упрятал меня в тюрьму - а потом вытащил оттуда?
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_01_14");	//Что все это значит?
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_01_00 " );	// Ah! Is that you, bastard?
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_01_01 " );	// It's your fault that they put me in jail! (angrily) You and your damn Kantar!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_01_02 " );	// Now all the people because of you think that I'm a dirty criminal!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_01_04 " );	// I don't want to talk to you, you bastard!
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_01_05 " );	// Wait, at least listen to me!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_01_06 " );	// Give me one reason why I should do this.
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_01_07 " );	// For starters, at least that I got you out of jail.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_01_08 " );	// WHAT?! Did you do it?
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_01_09 " );	// Yes, it was I who paid the fine to Lord Andre for you.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_01_12 " );	// You put me in prison first - and then pulled me out?
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_01_14 " );	// What does all this mean?
 	Npc_RemoveInvItems(self,ItWr_Canthars_KomproBrief_MIS,Npc_HasItems(self,ItWr_Canthars_KomproBrief_MIS));
 	Info_ClearChoices(dia_sarah_afterimknast);
-	Info_AddChoice(dia_sarah_afterimknast,"Мне нечего тебе сказать.",dia_sarah_afterimknast_unknown);
-	Info_AddChoice(dia_sarah_afterimknast,"Я прошу прощения за тот случай.",dia_sarah_afterimknast_sorry);
-	Info_AddChoice(dia_sarah_afterimknast,"У меня тогда не было выбора.",dia_sarah_afterimknast_nochoice);
+	Info_AddChoice(dia_sarah_afterimknast, " I have nothing to tell you. " ,dia_sarah_afterimknast_unknown);
+	Info_AddChoice(dia_sarah_afterimknast, " I'm sorry about that incident. " ,dia_sarah_afterimknast_sorry);
+	Info_AddChoice(dia_sarah_afterimknast, " I had no choice then. " ,dia_sarah_afterimknast_nochoice);
 };
 
 func void dia_sarah_afterimknast_unknown()
 {
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_Unknown_01_00");	//Мне нечего тебе сказать.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Unknown_01_01");	//(презирающе) Я так и знала!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Unknown_01_03");	//Убирайся с глаз моих, подлец!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Unknown_01_04");	//Не желаю больше тебя слушать!
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Я попытался поговорить с Сарой, но она даже и слушать меня не захотела. Пожалуй, стоит вернуться к Лютеро и поговорить с ним об этом.");
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_Unknown_01_00 " );	// I have nothing to tell you.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_Unknown_01_01 " );	// (contemptuously) I knew it!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_Unknown_01_03 " );	// Get out of my sight, you scoundrel!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_Unknown_01_04 " );	// I don't want to listen to you anymore!
+	B_LogEntry( TOPIC_SARAHTOGUILD , " I tried to talk to Sarah, but she wouldn't even listen to me. Maybe I should go back to Luthero and talk to him about this. " );
 	SARAPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_sarah_afterimknast_sorry()
 {
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_Sorry_01_00");	//Я прошу прощения за тот случай.
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_Sorry_01_02");	//Поверь, я очень сожалею, что так получилось и приношу тебе свои извинения.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Sorry_01_03");	//Хммм...(недоверчиво) Я удивлена, что тебе хватило смелости признать это.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Sorry_01_05");	//На этот раз я поверю тебе и приму твои извинения.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Sorry_01_06");	//Но не более того.
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Я попытался поговорить с Сарой и вновь наладить с ней хорошие отношения. Думаю, это немного удалось. Однако, мне кажется, что стоит немного повременить с предложением Лютеро, пока Сара окончательно не придет в себя. После всего случившегося, она еще не слишком сильно мне доверяет. Возможно, мне пока стоит попробовать чем-нибудь еще завоевать ее доверие.");
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_Sorry_01_00 " );	// I apologize for that incident.
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_Sorry_01_02 " );	// Believe me, I am very sorry that this happened and I apologize to you.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_Sorry_01_03 " );	// Hmmm...(incredulous) I'm surprised you had the courage to admit it.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_Sorry_01_05 " );	// This time I'll believe you and accept your apology.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_Sorry_01_06 " );	// But no more than that.
+	B_LogEntry( TOPIC_SARAHTOGUILD , " I tried to talk to Sarah and get back on good terms with her. I think that worked out a little. However, I think it's worth holding off on Luthero's proposal for a while until Sarah finally comes to her senses. After everything that happened, she doesn't trust me too much yet. Maybe I should try something else to gain her trust in the meantime. " );
 	SARAPROOFBEFRIEND = TRUE;
 	SARAHELPYOU = TRUE;
 	Info_ClearChoices(dia_sarah_afterimknast);
@@ -386,34 +387,34 @@ func void dia_sarah_afterimknast_sorry()
 
 func void dia_sarah_afterimknast_nochoice()
 {
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_NoChoice_01_00");	//Пойми, у меня тогда не было выбора. Кантар шантажировал меня!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_02");	//И поэтому ты решил, что лучше подставить меня? (гневно) Ну ты и подлец!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_03");	//Знаешь, что я тебе скажу - ты человек, у которого нет ни чести, ни достоинства!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_04");	//Я еще удивлена, что у тебя хватило совести заплатить за меня штраф.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_05");	//И мне кажется, что даже это ты сделал не просто так. Видимо, тебе что-то понадобилось от меня.
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_NoChoice_01_00 " );	// See, I didn't have a choice back then. Kantar blackmailed me!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_NoChoice_01_02 " );	// And that's why you thought it best to set me up? (angrily) Well, you're a scoundrel!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_NoChoice_01_03 " );	// You know what I'll tell you - you are a man who has neither honor nor dignity!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_NoChoice_01_04 " );	// I'm still surprised you had the guts to pay the fine for me.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_NoChoice_01_05 " );	// And it seems to me that even this you did for a reason. Apparently you need something from me.
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_06");	//Я права?
 	Info_ClearChoices(dia_sarah_afterimknast);
-	Info_AddChoice(dia_sarah_afterimknast,"Нет. Я просто решил исправить свою ошибку.",dia_sarah_afterimknast_no);
-	Info_AddChoice(dia_sarah_afterimknast,"В общем, да. У меня есть к тебе одно дельце.",dia_sarah_afterimknast_yes);
+	Info_AddChoice(dia_sarah_afterimknast, " No. I just decided to correct my mistake. " ,dia_sarah_afterimknast_no);
+	Info_AddChoice(dia_sarah_afterimknast, " Well , yes. I have something for you. " ,dia_sarah_afterimknast_yes);
 };
 
 func void dia_sarah_afterimknast_yes()
 {
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_Yes_01_00");	//В общем, да. У меня есть к тебе дело...
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Yes_01_02");	//Я не имею дел с такими мерзавцами, как ты!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Yes_01_03");	//Так что лучше убирайся с глаз моих!
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Я попытался поговорить с Сарой, но она даже и слушать меня не захотела. Пожалуй, стоит вернуться к Лютеро и поговорить с ним об этом.");
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_Yes_01_00 " );	// In general, yes. I have business for you...
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_Yes_01_02 " );	// I don't deal with scoundrels like you!
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_Yes_01_03 " );	// So you better get out of my sight!
+	B_LogEntry( TOPIC_SARAHTOGUILD , " I tried to talk to Sarah, but she wouldn't even listen to me. Maybe I should go back to Luthero and talk to him about this. " );
 	SARAPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_sarah_afterimknast_no()
 {
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_No_01_00");	//Нет. Я просто решил исправить свою ошибку.
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_No_01_01");	//Поверь, я сожалею, что так получилось и приношу тебе свои извинения.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_No_01_03");	//На этот раз я поверю тебе и приму их.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_No_01_04");	//Но не более того.
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Я попытался поговорить с Сарой и вновь наладить с ней хорошие отношения. Думаю, это немного удалось. Однако, мне кажется, что стоит немного повременить с предложением Лютеро, пока Сара окончательно не придет в себя. После всего случившегося, она еще не слишком сильно мне доверяет. Возможно, мне пока стоит попробовать чем-нибудь еще завоевать ее доверие.");
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_No_01_00 " );	// No. I just decided to correct my mistake.
+	AI_Output(other,self, " DIA_Sarah_AfterImKnast_No_01_01 " );	// Believe me, I'm sorry that this happened and I apologize to you.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_No_01_03 " );	// This time I will believe you and accept them.
+	AI_Output(self,other, " DIA_Sarah_AfterImKnast_No_01_04 " );	// But no more than that.
+	B_LogEntry( TOPIC_SARAHTOGUILD , " I tried to talk to Sarah and get back on good terms with her. I think that worked out a little. However, I think it's worth holding off on Luthero's proposal for a while until Sarah finally comes to her senses. After everything that happened, she doesn't trust me too much yet. Maybe I should try something else to gain her trust in the meantime. " );
 	SARAPROOFBEFRIEND = TRUE;
 	SARAHELPYOU = TRUE;
 	Info_ClearChoices(dia_sarah_afterimknast);
@@ -454,7 +455,7 @@ instance DIA_SARAH_SARAHELPSONE(C_Info)
 	condition = dia_sarah_sarahelpsone_condition;
 	information = dia_sarah_sarahelpsone_info;
 	permanent = FALSE;
-	description = "Ты неважно выглядишь.";
+	description = " You don't look good. " ;
 };
 
 
@@ -468,33 +469,33 @@ func int dia_sarah_sarahelpsone_condition()
 
 func void dia_sarah_sarahelpsone_info()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsOne_01_00");	//Ты неважно выглядишь.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOne_01_01");	//Я уже целый день ничего не ела и очень голодна.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOne_01_03");	//Но у меня нет денег, чтобы заплатить за еду.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOne_01_05");	//Так что, пока я не нашла себе новую работу - придется немного поголодать.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsOne_01_00 " );	// You don't look well.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOne_01_01 " );	// I haven't eaten anything all day and I'm very hungry.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOne_01_03 " );	// But I don't have the money to pay for the food.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOne_01_05 " );	// So, until I find myself a new job, I'll have to starve a little.
 	Info_ClearChoices(dia_sarah_sarahelpsone);
-	Info_AddChoice(dia_sarah_sarahelpsone,"Понятно.",dia_sarah_sarahelpsone_no);
-	Info_AddChoice(dia_sarah_sarahelpsone,"Я принесу тебе еды.",dia_sarah_sarahelpsone_yes);
+	Info_AddChoice(dia_sarah_sarahelpsone, " Got it . " ,dia_sarah_sarahelpsone_no);
+	Info_AddChoice(dia_sarah_sarahelpsone, " I'll get you some food. " ,dia_sarah_sarahelpsone_yes);
 };
 
 func void dia_sarah_sarahelpsone_no()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsOne_No_01_00");	//У меня нет на это времени.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsOne_No_01_00 " );	// I don't have time for this.
 	Info_ClearChoices(dia_sarah_sarahelpsone);
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Думаю, теперь Сара не захочет со мной разговаривать о предложении Лютеро.");
+	B_LogEntry( TOPIC_SARAHTOGUILD , " I think Sarah won't want to talk to me about the Luthero proposal now. " );
 	SARAREFUSEHELPS = TRUE;
 };
 
 func void dia_sarah_sarahelpsone_yes()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsOne_Yes_01_01");	//Я принесу тебе еды.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOne_Yes_01_02");	//(улыбается) Спасибо тебе.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOne_Yes_01_03");	//Думаю, двух кусков прожаренного мяса и бутылки молока будет вполне достаточно, чтобы немного утолить мой голод.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsOne_Yes_01_01 " );	// I'll bring you food.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOne_Yes_01_02 " );	// (smiles) Thank you.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOne_Yes_01_03 " );	// I think two pieces of cooked meat and a bottle of milk will be enough to satisfy my hunger a little.
 	Info_ClearChoices(dia_sarah_sarahelpsone);
 	MIS_SARAHELPSONE = LOG_Running;
 	Log_CreateTopic(TOPIC_SARAHELPSONE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SARAHELPSONE,LOG_Running);
-	B_LogEntry(TOPIC_SARAHELPSONE,"Сара очень голодна, и я решил принести ей еды. Она попросила два куска прожаренного мяса и бутылку молока.");
+	B_LogEntry( TOPIC_SARAHELPSONE , " Sarah is very hungry and I decided to bring her food. She asked for two pieces of grilled meat and a bottle of milk. " );
 };
 
 
@@ -505,7 +506,7 @@ instance DIA_SARAH_SARAHELPSONEDONE(C_Info)
 	condition = dia_sarah_sarahelpsonedone_condition;
 	information = dia_sarah_sarahelpsonedone_info;
 	permanent = FALSE;
-	description = "Я принес тебе поесть.";
+	description = " I brought you something to eat. " ;
 };
 
 
@@ -520,28 +521,28 @@ func int dia_sarah_sarahelpsonedone_condition()
 func void dia_sarah_sarahelpsonedone_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsOneDone_01_00");	//Я принес тебе поесть. Вот, возьми.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOneDone_01_01");	//Благодарю тебя.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsOneDone_01_00 " );	// I brought you food. Here, take it.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOneDone_01_01 " );	// Thank you.
 	Npc_RemoveInvItems(other,ItFoMutton,2);
 	Npc_RemoveInvItems(other,ItFo_Milk,1);
 	CreateInvItems(self,ItFoMutton,2);
 	CreateInvItems(self,ItFo_Milk,1);
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOneDone_01_02");	//Этой еды мне хватит на какое-то время.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOneDone_01_02 " );	// This food will last me for a while.
 	B_UseItem(self,ItFoMutton);
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOneDone_01_03");	//Мммм... Как вкусно!
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOneDone_01_03 " );	// Mmmm... How delicious!
 	B_UseItem(self,ItFo_Milk);
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsOneDone_01_04");	//После тех помоев, которыми кормили меня в тюрьме - эта еда кажется пищей богов!
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsOneDone_01_04 " );	// After the slop they fed me in prison - this food seems to be the food of the gods!
 	MIS_SARAHELPSONE = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SARAHELPSONE,LOG_SUCCESS);
-	B_LogEntry(TOPIC_SARAHELPSONE,"Я принес Саре поесть.");
+	B_LogEntry( TOPIC_SARAHELPSONE , " I brought Sarah some food. " );
 	SARAHELPSONEDONE = TRUE;
-	if((MIS_SARAHTOGUILD == LOG_Running) && (SARAHELPSONEDONE == TRUE) && (SARAHELPSTWODONE == TRUE) && (SARAHELPSTHREEDONE == TRUE) && (SARABEFRIEND == FALSE))
+	if (( MY_SARAHTOGUILD  == LOG_Running ) && ( SARAHELPSONEDONE  ==  TRUE ) && ( SARAHELPSTWODONE  ==  TRUE ) && ( SARAHELPSTHREEDONE  ==  TRUE ) && ( SARABEFRIEND  ==  FALSE )) ;
 	{
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsOneDone_01_06");	//И знаешь, после всего, что ты для меня сделал - мне кажется, тебе можно доверять.
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsOneDone_01_07");	//Ведь мерзавцы, вроде того Кантара, так бы никогда не поступили. А ты помог мне в тяжелой ситуации!
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsOneDone_01_08");	//Ты хороший человек!
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsOneDone_01_06 " );	// And you know, after everything you've done for me, I think you can be trusted.
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsOneDone_01_07 " );	// A scoundrel like that Kantar would never do that. And you helped me in a difficult situation!
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsOneDone_01_08 " );	// You're a good person!
 		SARABEFRIEND = TRUE;
-		Log_AddEntry(TOPIC_SARAHTOGUILD,"Кажется, теперь Сара мне доверяет и считает меня хорошим человеком. Думаю, пора поговорить с ней насчет предложения Лютеро.");
+		Log_AddEntry( TOPIC_SARAHTOGUILD , " Sarah seems to trust me now and thinks I'm a good person. I think it's time to talk to her about Luthero's proposal. " );
 	};
 };
 
@@ -553,7 +554,7 @@ instance DIA_SARAH_SARAHELPSTWO(C_Info)
 	condition = dia_sarah_sarahelpstwo_condition;
 	information = dia_sarah_sarahelpstwo_info;
 	permanent = FALSE;
-	description = "Тебя что-то беспокоит?";
+	description = " Is something bothering you? " ;
 };
 
 
@@ -567,35 +568,35 @@ func int dia_sarah_sarahelpstwo_condition()
 
 func void dia_sarah_sarahelpstwo_info()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsTwo_01_00");	//Тебя что-то беспокоит?
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwo_01_03");	//У меня была с собой одна вещица - фамильное драгоценное кольцо, которое мне подарили мои родители на память.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwo_01_04");	//Но когда я находилась в тюрьме, один из охранников отнял его у меня!
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwo_01_05");	//Подонок! Я до сих пор помню, с каким жадным лицом он сдирал его с моего пальца!
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwo_01_13");	//Теперь он навряд ли мне отдаст это кольцо.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsTwo_01_00 " );	// Is something bothering you?
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwo_01_03 " );	// I had one little thing with me - a precious family ring that my parents gave me as a keepsake.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwo_01_04 " );	// But when I was in prison, one of the guards took it from me!
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwo_01_05 " );	// Trash! I still remember with what a greedy face he ripped it off my finger!
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwo_01_13 " );	// Now he is unlikely to give me this ring.
 	Info_ClearChoices(dia_sarah_sarahelpstwo);
-	Info_AddChoice(dia_sarah_sarahelpstwo,"У меня нет на это времени.",dia_sarah_sarahelpstwo_no);
-	Info_AddChoice(dia_sarah_sarahelpstwo,"Я помогу тебе вернуть это кольцо.",dia_sarah_sarahelpstwo_yes);
+	Info_AddChoice(dia_sarah_sarahelpstwo, " I don't have time for this. " ,dia_sarah_sarahelpstwo_no);
+	Info_AddChoice(dia_sarah_sarahelpstwo, " I'll help you get this ring back. " ,dia_sarah_sarahelpstwo_yes);
 };
 
 func void dia_sarah_sarahelpstwo_no()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsOne_No_01_00");	//У меня нет на это времени.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsOne_No_01_00 " );	// I don't have time for this.
 	Info_ClearChoices(dia_sarah_sarahelpstwo);
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Думаю, теперь Сара не захочет со мной разговаривать о предложении Лютеро.");
+	B_LogEntry( TOPIC_SARAHTOGUILD , " I think Sarah won't want to talk to me about the Luthero proposal now. " );
 	SARAREFUSEHELPS = TRUE;
 };
 
 func void dia_sarah_sarahelpstwo_yes()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsTwo_Yes_01_00");	//Я помогу тебе вернуть это кольцо.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwo_Yes_01_01");	//Правда? Это было бы так мило с твоей стороны!
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwo_Yes_01_02");	//Кажется, того охранника, что отнял у меня мое кольцо, звали Болтан.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwo_Yes_01_03");	//Только будь с ним поосторожнее - он еще тот подонок!
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsTwo_Yes_01_00 " );	// I'll help you get this ring back.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwo_Yes_01_01 " );	// True? That would be so kind of you!
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwo_Yes_01_02 " );	// It seems that the guard who took my ring from me was called Boltan.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwo_Yes_01_03 " );	// Just be careful with him - he's still that bastard!
 	Info_ClearChoices(dia_sarah_sarahelpstwo);
 	MIS_SARAHELPSTWO = LOG_Running;
 	Log_CreateTopic(TOPIC_SARAHELPSTWO,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SARAHELPSTWO,LOG_Running);
-	B_LogEntry(TOPIC_SARAHELPSTWO,"Сара очень расcтроена. Охранник по имени Болтан отнял у нее фамильное кольцо. Саре очень дорога эта вещица, и она хотела бы его вернуть.");
+	B_LogEntry( TOPIC_SARAHELPSTWO , " Sarah is very upset. A guard named Dumpty took her family ring from her. Sarah loves this little thing and would like it back. " );
 };
 
 
@@ -606,7 +607,7 @@ instance DIA_SARAH_SARAHELPSTWODONE(C_Info)
 	condition = dia_sarah_sarahelpstwodone_condition;
 	information = dia_sarah_sarahelpstwodone_info;
 	permanent = FALSE;
-	description = "Я принес твое кольцо.";
+	description = " I brought your ring. " ;
 };
 
 
@@ -621,22 +622,22 @@ func int dia_sarah_sarahelpstwodone_condition()
 func void dia_sarah_sarahelpstwodone_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsTwoDone_01_00");	//Я принес твое кольцо.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsTwoDone_01_00 " );	// I brought your ring.
 	B_GiveInvItems(other,self,itri_sarafamilyring,1);
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwoDone_01_03");	//О, Иннос! Как я благодарна тебе!
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwoDone_01_04");	//Однако мне даже нечем тебя отблагодарить...
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsTwoDone_01_06");	//Но все же спасибо тебе!
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwoDone_01_03 " );	// Oh, Innos! How grateful I am to you!
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwoDone_01_04 " );	// However, I don't even have anything to thank you with...
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsTwoDone_01_06 " );	// But thank you anyway!
 	MIS_SARAHELPSTWO = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SARAHELPSTWO,LOG_SUCCESS);
-	B_LogEntry(TOPIC_SARAHELPSTWO,"Я принес Саре ее фамильное кольцо.");
+	B_LogEntry( TOPIC_SARAHELPSTWO , " I brought Sarah her family ring. " );
 	SARAHELPSTWODONE = TRUE;
-	if((MIS_SARAHTOGUILD == LOG_Running) && (SARAHELPSONEDONE == TRUE) && (SARAHELPSTWODONE == TRUE) && (SARAHELPSTHREEDONE == TRUE) && (SARABEFRIEND == FALSE))
+	if (( MY_SARAHTOGUILD  == LOG_Running ) && ( SARAHELPSONEDONE  ==  TRUE ) && ( SARAHELPSTWODONE  ==  TRUE ) && ( SARAHELPSTHREEDONE  ==  TRUE ) && ( SARABEFRIEND  ==  FALSE )) ;
 	{
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsTwoDone_01_07");	//И знаешь, после всего, что ты для меня сделал - мне кажется, тебе можно доверять.
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsTwoDone_01_08");	//Ведь мерзавцы, вроде того Кантара, так бы никогда не поступили. А ты помог мне в тяжелой ситуации!
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsTwoDone_01_09");	//Ты хороший человек!
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsTwoDone_01_07 " );	// And you know, after everything you've done for me, I think you can be trusted.
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsTwoDone_01_08 " );	// A scoundrel like that Kantar would never do that. And you helped me in a difficult situation!
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsTwoDone_01_09 " );	// You're a good person!
 		SARABEFRIEND = TRUE;
-		Log_AddEntry(TOPIC_SARAHTOGUILD,"Кажется, теперь Сара мне доверяет и считает меня хорошим человеком. Думаю, пора поговорить с ней насчет предложения Лютеро.");
+		Log_AddEntry( TOPIC_SARAHTOGUILD , " Sarah seems to trust me now and thinks I'm a good person. I think it's time to talk to her about Luthero's proposal. " );
 	};
 };
 
@@ -648,7 +649,7 @@ instance DIA_SARAH_SARAHELPSTHREE(C_Info)
 	condition = dia_sarah_sarahelpsthree_condition;
 	information = dia_sarah_sarahelpsthree_info;
 	permanent = FALSE;
-	description = "Могу я еще чем-то тебе помочь?";
+	description = " Is there anything else I can help you with? " ;
 };
 
 
@@ -662,41 +663,41 @@ func int dia_sarah_sarahelpsthree_condition()
 
 func void dia_sarah_sarahelpsthree_info()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsThree_01_00");	//Могу я тебе еще чем-то помочь?
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_01_05");	//Понимаешь, я задолжала немного денег кузнецу Хараду за последнюю партию оружия.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_01_06");	//Тогда я просто не успела с ним до конца расплатиться. А сейчас у меня и гроша за душой нет!
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_01_08");	//Конечно, Харад - человек неплохой и понимает трудности других людей, но мне от этого не легче.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_01_09");	//Я привыкла честно вести свое дело и всегда платить по долгам.
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsThree_01_10");	//Я понимаю тебя. И что же нужно сделать?
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_01_11");	//Поэтому если бы ты смог заплатить за меня Хараду ту недостающую сумму - я бы была тебе очень признательна за это!
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsThree_01_12");	//А сколько ты еще должна Хараду?
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_01_13");	//Сумма совсем немаленькая - две тысячи золотых монет.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsThree_01_00 " );	// Is there anything else I can help you with?
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_01_05 " );	// You see, I owe some money to Blacksmith Harad for the last batch of weapons.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_01_06 " );	// Then I just didn't have time to pay him off. And now I don’t even have a penny for my soul!
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_01_08 " );	// Of course, Harad is a good person and understands the difficulties of other people, but that doesn't make it any easier for me.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_01_09 " );	// I'm used to doing my business honestly and always paying my debts.
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsThree_01_10 " );	// I understand you. And what should be done?
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_01_11 " );	// Therefore, if you could pay Harad that missing amount for me - I would be very grateful to you for it!
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsThree_01_12 " );	// How much more do you owe Harad?
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_01_13 " );	// The amount is quite big - two thousand gold coins.
 	Info_ClearChoices(dia_sarah_sarahelpsthree);
-	Info_AddChoice(dia_sarah_sarahelpsthree,"Извини, но это мне не по карману.",dia_sarah_sarahelpsthree_no);
-	Info_AddChoice(dia_sarah_sarahelpsthree,"Я разберусь с этим.",dia_sarah_sarahelpsthree_yes);
+	Info_AddChoice(dia_sarah_sarahelpsthree, " Sorry, but I can't afford it. " ,dia_sarah_sarahelpsthree_no);
+	Info_AddChoice(dia_sarah_sarahelpsthree, " I'll deal with this. " ,dia_sarah_sarahelpsthree_yes);
 };
 
 func void dia_sarah_sarahelpsthree_no()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsThree_No_01_00");	//Извини, но это мне не по карману.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_No_01_01");	//Я понимаю...
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsThree_No_01_00 " );	// Sorry, but I can't afford it.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_No_01_01 " );	// I understand...
 	Info_ClearChoices(dia_sarah_sarahelpsthree);
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Думаю, теперь Сара не захочет со мной разговаривать о предложении Лютеро.");
+	B_LogEntry( TOPIC_SARAHTOGUILD , " I think Sarah won't want to talk to me about the Luthero proposal now. " );
 	SARAREFUSEHELPS = TRUE;
 };
 
 func void dia_sarah_sarahelpsthree_yes()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsThree_Yes_01_00");	//Я разберусь с этим.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_Yes_01_01");	//(удивленно) Ты и вправду это сделаешь?
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_Yes_01_03");	//Благослови тебя Иннос!
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsThree_Yes_01_05");	//В конце концов, все это случилось по моей вине - так что мне и разбираться с этим.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThree_Yes_01_06");	//Хорошо, как скажешь. Однако я все равно тебе благодарна за помощь!
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsThree_Yes_01_00 " );	// I'll deal with this.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_Yes_01_01 " );	// (surprised) Are you really going to do this?
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_Yes_01_03 " );	// Bless you Innos!
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsThree_Yes_01_05 " );	// In the end, this was all my fault - so I'll deal with it.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThree_Yes_01_06 " );	// Okay, whatever you say. However, I still appreciate your help!
 	Info_ClearChoices(dia_sarah_sarahelpsthree);
 	MIS_SARAHELPSTHREE = LOG_Running;
 	Log_CreateTopic(TOPIC_SARAHELPSTHREE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SARAHELPSTHREE,LOG_Running);
-	B_LogEntry(TOPIC_SARAHELPSTHREE,"Сара задолжала кузнецу Хараду денег. Я вызвался решить эту проблему... проблему ценой в две тысячи золотых монет.");
+	B_LogEntry( TOPIC_SARAHELPSTHREE , " Sarah owes Blacksmith Harad money. I volunteered to solve this problem... a two thousand gold piece problem. " );
 };
 
 
@@ -707,7 +708,7 @@ instance DIA_SARAH_SARAHELPSTHREEDONE(C_Info)
 	condition = dia_sarah_sarahelpsthreedone_condition;
 	information = dia_sarah_sarahelpsthreedone_info;
 	permanent = FALSE;
-	description = "Я отдал Хараду твой долг.";
+	description = " I paid your debt to Harad. " ;
 };
 
 
@@ -722,20 +723,20 @@ func int dia_sarah_sarahelpsthreedone_condition()
 func void dia_sarah_sarahelpsthreedone_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Sarah_SaraHelpsThreeDone_01_00");	//Я отдал Хараду твой долг.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThreeDone_01_01");	//Спасибо! Теперь я смогу без стыда смотреть ему в глаза.
-	AI_Output(self,other,"DIA_Sarah_SaraHelpsThreeDone_01_02");	//Благодарю тебя!
+	AI_Output(other,self, " DIA_Sarah_SaraHelpsThreeDone_01_00 " );	// I have repaid your debt to Harad.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThreeDone_01_01 " );	// Thank you! Now I can look him in the eye without shame.
+	AI_Output(self,other, " DIA_Sarah_SaraHelpsThreeDone_01_02 " );	// Thank you!
 	MIS_SARAHELPSTHREE = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SARAHELPSTHREE,LOG_SUCCESS);
-	B_LogEntry(TOPIC_SARAHELPSTHREE,"Сара поблагодарила меня за то, что я отдал Хараду ее долг.");
+	B_LogEntry( TOPIC_SARAHELPSTHREE , " Sarah thanked me for giving Harad her debt. " );
 	SARAHELPSTHREEDONE = TRUE;
-	if((MIS_SARAHTOGUILD == LOG_Running) && (SARAHELPSONEDONE == TRUE) && (SARAHELPSTWODONE == TRUE) && (SARAHELPSTHREEDONE == TRUE) && (SARABEFRIEND == FALSE))
+	if (( MY_SARAHTOGUILD  == LOG_Running ) && ( SARAHELPSONEDONE  ==  TRUE ) && ( SARAHELPSTWODONE  ==  TRUE ) && ( SARAHELPSTHREEDONE  ==  TRUE ) && ( SARABEFRIEND  ==  FALSE )) ;
 	{
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsThreeDone_01_04");	//И знаешь, после всего, что ты для меня сделал - мне кажется, тебе можно доверять.
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsThreeDone_01_05");	//Ведь мерзавцы, вроде того Кантара, так бы никогда не поступили. А ты помог мне в тяжелой ситуации!
-		AI_Output(self,other,"DIA_Sarah_SaraHelpsThreeDone_01_06");	//Ты хороший человек!
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsThreeDone_01_04 " );	// And you know, after everything you've done for me, I think you can be trusted.
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsThreeDone_01_05 " );	// A scoundrel like that Kantar would never do that. And you helped me in a difficult situation!
+		AI_Output(self,other, " DIA_Sarah_SaraHelpsThreeDone_01_06 " );	// You're a good person!
 		SARABEFRIEND = TRUE;
-		Log_AddEntry(TOPIC_SARAHTOGUILD,"Кажется, теперь Сара мне доверяет и считает меня хорошим человеком. Думаю, пора поговорить с ней насчет предложения Лютеро.");
+		Log_AddEntry( TOPIC_SARAHTOGUILD , " Sarah seems to trust me now and thinks I'm a good person. I think it's time to talk to her about Luthero's proposal. " );
 	};
 };
 
@@ -747,13 +748,13 @@ instance DIA_SARAH_SARAHTOGUILD(C_Info)
 	condition = dia_sarah_sarahtoguild_condition;
 	information = dia_sarah_sarahtoguild_info;
 	permanent = TRUE;
-	description = "У меня есть к тебе одно дело.";
+	description = " I have something to do with you. " ;
 };
 
 
 func int dia_sarah_sarahtoguild_condition()
 {
-	if((MIS_SARAHTOGUILD == LOG_Running) && (SARAHELPYOU == TRUE) && (SARAAGREE == FALSE) && (SARAREFUSEHELPS == FALSE))
+	if (( MIS_SARAHTOGUILD  == LOG_Running ) && ( SARAHELPYOU  ==  TRUE ) && ( SARAAGREE  ==  FALSE ) && ( SARAREFUSEHELPS  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -761,73 +762,73 @@ func int dia_sarah_sarahtoguild_condition()
 
 func void dia_sarah_sarahtoguild_info()
 {
-	AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_00");	//У меня есть к тебе дело.
+	AI_Output(other,self, " DIA_Sarah_SarahToGuild_01_00 " );	// I have business with you.
 	if(SARAPROOFBEFRIEND == TRUE)
 	{
 		if(SARABEFRIEND == TRUE)
 		{
 			B_GivePlayerXP(250);
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_01");	//И в чем оно заключается?
-			AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_02");	//Ты знаешь торговца по имени Лютеро?
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_03");	//Конечно! (улыбается) Кто же его не знает - он ведь один из самых крупных торговцев Хориниса.
-			AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_04");	//Он предлагает тебе работу, а именно вступить в гильдию торговцев.
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_13");	//Правда? Я согласна!
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_14");	//Многие торговцы об этом мечтают. Это действительно вернет меня к жизни.
-			AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_15");	//Отлично. Я передам твои слова Лютеро.
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_01 " );	// And what is it?
+			AI_Output(other,self, " DIA_Sarah_SarahToGuild_01_02 " );	// Do you know a merchant named Luthero?
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_03 " );	// Of course! (smiles) Who does not know him - he is one of the largest merchants of Khorinis.
+			AI_Output(other,self, " DIA_Sarah_SarahToGuild_01_04 " );	// He offers you a job, namely to join the guild of merchants.
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_13 " );	// True? I agree!
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_14 " );	// Many merchants dream about this. It will really bring me back to life.
+			AI_Output(other,self, " DIA_Sarah_SarahToGuild_01_15 " );	// Great. I'll pass on your words to Luthero.
 			SARAAGREE = TRUE;
-			B_LogEntry(TOPIC_SARAHTOGUILD,"Сара согласилась на предложение, которое сделал ей Лютеро. Теперь надо вернуться к нему и рассказать эту новость.");
+			B_LogEntry( TOPIC_SARAHTOGUILD , " Sarah agreed to Luthero's proposal. Now we need to go back to tell him the news. " );
 			AI_StopProcessInfos(self);
 		}
 		else if((SARAHELPSONEDONE == FALSE) && (SARAHELPSONEDONE == FALSE) && (SARAHELPSONEDONE == FALSE))
 		{
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_28");	//Извини, но я не разговариваю о делах с людьми, которым не доверяю.
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_31");	//Так что ты напрасно тратишь свое время - я не стану обсуждать с тобой никаких дел, пока не начну полностью доверять тебе.
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_28 " );	// Sorry, but I don't talk business with people I don't trust.
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_31 " );	// So you're wasting your time - I won't discuss any business with you until I start trusting you completely.
 			AI_StopProcessInfos(self);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_35");	//Извини, но я пока не совсем тебе доверяю, чтобы обсуждать с тобой какие-то дела.
-			AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_36");	//А разве я еще не доказал тебе - что мне можно доверять?
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_37");	//(недоверчиво) Ну, только отчасти...
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_35 " );	// I'm sorry, but I don't quite trust you yet to discuss any business with you.
+			AI_Output(other,self, " DIA_Sarah_SarahToGuild_01_36 " );	// Haven't I already proved to you that I can be trusted?
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_37 " );	// (incredulously) Well, only partly...
 			if((SARAHELPSONEDONE == TRUE) && (SARAHELPSTWODONE == FALSE) && (SARAHELPSTHREEDONE == FALSE))
 			{
-				AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_38");	//Конечно, я благодарна тебе за то, что ты принес мне немного еды.
+				AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_38 " );	// Of course, I thank you for bringing me some food.
 			}
 			else if((SARAHELPSONEDONE == FALSE) && (SARAHELPSTWODONE == TRUE) && (SARAHELPSTHREEDONE == FALSE))
 			{
-				AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_39");	//Безусловно, вернуть мне мое кольцо было очень мило с твоей стороны...
+				AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_39 " );	// Of course, it was very nice of you to return my ring to me...
 			}
 			else if((SARAHELPSONEDONE == TRUE) && (SARAHELPSTWODONE == TRUE) && (SARAHELPSTHREEDONE == FALSE))
 			{
-				AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_40");	//Конечно, я благодарна тебе за то, что ты принес мне немного еды.
-				AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_41");	//Вернуть мне мое кольцо - тоже было очень мило с твоей стороны...
+				AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_40 " );	// Of course, I thank you for bringing me some food.
+				AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_41 " );	// Giving me back my ring was also very nice of you...
 			}
 			else if((SARAHELPSONEDONE == TRUE) && (SARAHELPSTWODONE == FALSE) && (SARAHELPSTHREEDONE == TRUE))
 			{
-				AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_42");	//Конечно, я благодарна тебе за то, что ты принес мне немного еды.
-				AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_43");	//И то, что ты заплатил за меня долг Хараду - тоже, безусловно, говорит в твою пользу.
+				AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_42 " );	// Of course, I thank you for bringing me some food.
+				AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_43 " );	// And the fact that you paid Harad's debt for me also certainly speaks in your favor.
 			}
 			else if((SARAHELPSONEDONE == FALSE) && (SARAHELPSTWODONE == TRUE) && (SARAHELPSTHREEDONE == TRUE))
 			{
-				AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_44");	//Вернуть мне мое кольцо было очень мило с твоей стороны...
-				AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_45");	//И то, что ты заплатил за меня долг Хараду - тоже, безусловно, говорит в твою пользу.
+				AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_44 " );	// Giving me back my ring was very nice of you...
+				AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_45 " );	// And the fact that you paid Harad's debt for me also certainly speaks in your favor.
 			};
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_46");	//Однако этого мало, чтобы начать тебе полностью доверять.
-			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_47");	//Пойми меня правильно - я просто боюсь, что ты опять меня втянешь в какую-нибудь грязную историю.
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_46 " );	// However, this is not enough to start trusting you completely.
+			AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_47 " );	// Don't get me wrong - I'm just afraid that you will drag me into some dirty business again.
 		};
 	}
 	else
 	{
 		B_GivePlayerXP(500);
-		AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_50");	//А в чем оно заключается?
-		AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_51");	//Ты знаешь торговца по имени Лютеро?
-		AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_52");	//Конечно! (улыбается) Кто же его не знает - он ведь один из самых крупных торговцев Хориниса.
-		AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_53");	//Он предлагает тебе работу, а именно вступить в гильдию торговцев.
-		AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_54");	//Правда? Я согласна!
-		AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_58");	//Многие торговцы об этом мечтают. Это действительно вернет меня к жизни.
-		AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_60");	//Отлично. Я передам твои слова Лютеро.
+		AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_50 " );	// What is it?
+		AI_Output(other,self, " DIA_Sarah_SarahToGuild_01_51 " );	// Do you know a merchant named Luthero?
+		AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_52 " );	// Of course! (smiles) Who does not know him - he is one of the largest merchants of Khorinis.
+		AI_Output(other,self, " DIA_Sarah_SarahToGuild_01_53 " );	// He offers you a job, namely to join the guild of merchants.
+		AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_54 " );	// True? I agree!
+		AI_Output(self,other, " DIA_Sarah_SarahToGuild_01_58 " );	// Many merchants dream about this. It will really bring me back to life.
+		AI_Output(other,self, " DIA_Sarah_SarahToGuild_01_60 " );	// Great. I'll pass on your words to Luthero.
 		SARAAGREE = TRUE;
-		B_LogEntry(TOPIC_SARAHTOGUILD,"Сара согласилась на предложение, которое сделал ей Лютеро. Теперь надо вернуться к нему и рассказать эту новость.");
+		B_LogEntry( TOPIC_SARAHTOGUILD , " Sarah agreed to Luthero's proposal. Now we need to go back to tell him the news. " );
 		AI_StopProcessInfos(self);
 	};
 };
@@ -840,7 +841,7 @@ instance DIA_SARAH_SARAHELPYOUDONE(C_Info)
 	condition = dia_sarah_sarahelpyoudone_condition;
 	information = dia_sarah_sarahelpyoudone_info;
 	permanent = TRUE;
-	description = "Как тебе новое место?";
+	description = " How do you like the new place? " ;
 };
 
 func int dia_sarah_sarahelpyoudone_condition()
@@ -853,6 +854,6 @@ func int dia_sarah_sarahelpyoudone_condition()
 
 func void dia_sarah_sarahelpyoudone_info()
 {
-	AI_Output(other,self,"DIA_Sarah_SaraHelpYouDone_01_00");	//Как тебе новое место?
-	AI_Output(self,other,"DIA_Sarah_SaraHelpYouDone_01_01");	//Благодарю тебя за все, что ты для меня сделал!
+	AI_Output(other,self, " DIA_Sarah_SaraHelpYouDone_01_00 " );	// How do you like the new place?
+	AI_Output(self,other, " DIA_Sarah_SaraHelpYouDone_01_01 " );	// Thank you for everything you've done for me!
 };
