@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_9158_VARUS_EXIT(C_Info)
 {
 	npc = pal_9158_varus;
@@ -21,7 +22,7 @@ func void dia_pal_9158_varus_exit_info()
 };
 
 
-instance DIA_PAL_9158_VARUS_HALLO(C_Info)
+instances DIA_PAL_9158_VARUS_HALLO (C_Info)
 {
 	npc = pal_9158_varus;
 	nr = 1;
@@ -45,35 +46,35 @@ func void dia_pal_9158_varus_hallo_info()
 	B_GivePlayerXP(100);
 	if((other.guild == GIL_PAL) || (other.guild == GIL_MIL))
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_00");	//Эй, парень! Мне кажется, ты не из моего отряда!
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_00 " );	// Hey man! I don't think you're in my squad!
 	}
 	else if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_02");	//Приветствую тебя, маг Огня!
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_03");	//Позволь узнать, что нужно от меня слуге Инноса?
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_02 " );	// Greetings, Fire Mage!
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_03 " );	// Let me know what the servant of Innos needs from me?
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_04");	//Приветствую тебя, маг Воды!
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_05");	//Позволь узнать, что нужно от меня слуге Аданоса?
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_04 " );	// Greetings, waterbender!
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_05 " );	// Let me know what the servant of Adanos needs from me?
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_06");	//Глазам своим не верю - некромант в форте паладинов!
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_07");	//Кто пустил тебя сюда? Что тебе тут нужно?
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_06 " );	// I can't believe my eyes - the necromancer is in the paladin fort!
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_07 " );	// Who let you in here? What do you need here?
 	}
 	else if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_08");	//Быть того не может! (удивленно) Подумать только - наемник в форте паладинов!
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_09");	//Кто пустил тебя сюда? Что тебе тут нужно?
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_08 " );	// It can't be! (surprised) Just think - a mercenary in a paladin fort!
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_09 " );	// Who let you in here? What do you need here?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_10");	//Эй, ты кто такой?
-		AI_Output(self,other,"DIA_Pal_9158_Varus_HALLO_01_11");	//Кто пустил тебя сюда? (грозно) Что тебе тут нужно?
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_10 " );	// Hey, who are you?
+		AI_Output(self,other, " DIA_Pal_9158_Varus_HALLO_01_11 " );	// Who let you in here? (terribly) What do you want here?
 	};
 
-	VarusMeet = TRUE;
+	VarusMeet = TRUE ;
 };
 
 
@@ -84,7 +85,7 @@ instance DIA_PAL_9158_VARUS_FORT(C_Info)
 	condition = dia_pal_9158_varus_fort_condition;
 	information = dia_pal_9158_varus_fort_info;
 	permanent = FALSE;
-	description = "Это и есть форт паладинов?";
+	description = " Is this the paladin fort? " ;
 };
 
 
@@ -98,22 +99,22 @@ func int dia_pal_9158_varus_fort_condition()
 
 func void dia_pal_9158_varus_fort_info()
 {
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Fort_01_01");	//Это и есть форт паладинов?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Fort_01_02");	//Он самый...(ворчливо) Или, по-твоему, это место похоже на что-то другое?!
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Fort_01_03");	//Я просто спросил.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Fort_01_04");	//(раздраженно) Хватит доставать меня глупыми вопросами!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Fort_01_07");	//Так что либо говори по делу, либо проваливай.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Fort_01_01 " );	// Is this the paladin fort?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Fort_01_02 " );	// He's the most...(grouchily) Or do you think this place looks like something else?!
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Fort_01_03 " );	// I just asked.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Fort_01_04 " );	// (annoyed) Stop pestering me with stupid questions!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Fort_01_07 " );	// So either talk to the point or get lost.
 };
 
 
-instance DIA_PAL_9158_VARUS_MATTER(C_Info)
+instances DIA_PAL_9158_VARUS_MATTER (C_Info)
 {
 	npc = pal_9158_varus;
 	nr = 1;
 	condition = dia_pal_9158_varus_matter_condition;
 	information = dia_pal_9158_varus_matter_info;
 	permanent = FALSE;
-	description = "Я здесь по поручению лорда Хагена.";
+	description = " I'm here on behalf of Lord Hagen. " ;
 };
 
 
@@ -127,21 +128,21 @@ func int dia_pal_9158_varus_matter_condition()
 
 func void dia_pal_9158_varus_matter_info()
 {
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Matter_01_00");	//Я здесь по поручению лорда Хагена.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Matter_01_01");	//Тебя прислал сам лорд Хаген? Хммм...(задумчиво) Очень интересно!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Matter_01_02");	//И в чем оно заключается?
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Matter_01_03");	//В данный момент Хаген занят вопросом о налаживании поставок продовольствия для паладинов.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Matter_01_04");	//Поэтому он хочет, чтобы ты подготовил для него список необходимой тебе провизии.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Matter_01_06");	//Ну наконец-то! Как это вовремя. (ехидно) А я уж думал, что про нас тут просто забыли!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Matter_01_07");	//Даже сам хотел послать к нему человека, но теперь вижу - что в этом нет особой необходимости.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Matter_01_08");	//А что со списком?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Matter_01_09");	//Не беспокойся, я немедленно приступлю к его составлению.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Matter_01_10");	//Правда, это займет немного времени...(задумчиво)
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Matter_01_14");	//Думаю, через пару дней - но не раньше!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Matter_01_15");	//Так что пока осмотрись тут, познакомься с моими парнями - в общем, займись чем-нибудь полезным.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Matter_01_16");	//Хорошо, так и сделаю.
-	VARUSTIMER = Wld_GetDay();
-	B_LogEntry(TOPIC_PALADINFOOD,"Лорд Варус составит для Хагена список с перечнем необходимого для его людей провианта, однако это займет не менее двух дней.");
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Matter_01_00 " );	// I'm here on behalf of Lord Hagen.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Matter_01_01 " );	// Lord Hagen himself sent you? Hmmm... (thoughtfully) Very interesting!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Matter_01_02 " );	// And what is it?
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Matter_01_03 " );	// At the moment, Hagen is busy with the issue of establishing a food supply for the paladins.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Matter_01_04 " );	// So he wants you to prepare a list of the provisions you need for him.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Matter_01_06 " );	// Well, finally! Like it's on time. (maliciously) And I already thought that they simply forgot about us here!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Matter_01_07 " );	// Even I myself wanted to send a man to him, but now I see that there is no special need for this.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Matter_01_08 " );	// What about the list?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Matter_01_09 " );	// Don't worry, I'll start compiling it immediately.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Matter_01_10 " );	// True, this will take a little time... (thoughtfully)
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Matter_01_14 " );	// I think in a couple of days - but not before!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Matter_01_15 " );	// So in the meantime, look around here, meet my guys - basically, do something useful.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Matter_01_16 " );	// Okay, I'll do that.
+	ITEM TIMER = Wld_GetDay();
+	B_LogEntry( TOPIC_PALADINFOOD , " Lord Varus will provide Hagen with a list of provisions for his people, but this will take at least two days. " );
 };
 
 
@@ -152,13 +153,13 @@ instance DIA_PAL_9158_VARUS_MATTERDONE(C_Info)
 	condition = dia_pal_9158_varus_matterdone_condition;
 	information = dia_pal_9158_varus_matterdone_info;
 	permanent = TRUE;
-	description = "Насчет списка...";
+	description = " About the list... " ;
 };
 
 
 func int dia_pal_9158_varus_matterdone_condition()
 {
-	if((MIS_PALADINFOOD == LOG_Running) && Npc_KnowsInfo(hero,dia_pal_9158_varus_matter) && (VARUSSENTTOHAGEN == FALSE))
+	if (( MIS_PALADINFOOD  == LOG_Running) && Npc_KnowsInfo(hero,dia_pal_9158_varus_matter) && ( VARUSSENTTOHAGEN  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -166,23 +167,23 @@ func int dia_pal_9158_varus_matterdone_condition()
 
 func void dia_pal_9158_varus_matterdone_info()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MatterDone_01_00");	//Насчет списка...
-	if(VARUSTIMER <= (daynow - 2))
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MatterDone_01_00 " );	// About the list...
+	if ( VARUSHOURS  <= (daynow -  2 ))
 	{
 		B_GivePlayerXP(250);
-		VARUSSENTTOHAGEN = TRUE;
-		AI_Output(self,other,"DIA_Pal_9158_Varus_MatterDone_01_01");	//Да, ты как раз вовремя - он уже готов.
-		AI_Output(self,other,"DIA_Pal_9158_Varus_MatterDone_01_02");	//Вот - возьми его и отнеси лорду Хагену.
+		EQUIPMENT HAGEN = TRUE ;
+		AI_Output(self,other, " DIA_Pal_9158_Varus_MatterDone_01_01 " );	// Yes, you're just in time - it's ready.
+		AI_Output(self,other, " DIA_Pal_9158_Varus_MatterDone_01_02 " );	// Here - take it and take it to Lord Hagen.
 		B_GiveInvItems(self,other,itwr_varuscontent,1);
 		AI_Output(other,self,"DIA_Pal_9158_Varus_MatterDone_01_03");	//Отлично!
-		B_LogEntry(TOPIC_PALADINFOOD,"Лорд Варус подготовил нужный мне список. Теперь я должен отнести его лорду Хагену.");
+		B_LogEntry( TOPIC_PALADINFOOD , " Lord Varus has prepared the list I need. Now I must take it to Lord Hagen. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_MatterDone_01_04");	//Я же сказал тебе, что он будет готов не раньше, чем через пару дней.
-		AI_Output(self,other,"DIA_Pal_9158_Varus_MatterDone_01_05");	//Так что заходи позже.
+		AI_Output(self,other, " DIA_Pal_9158_Varus_MatterDone_01_04 " );	// I told you it wouldn't be ready until a couple of days later.
+		AI_Output(self,other, " DIA_Pal_9158_Varus_MatterDone_01_05 " );	// So check back later.
 		AI_Output(other,self,"DIA_Pal_9158_Varus_MatterDone_01_06");	//Хорошо.
 	};
 };
@@ -195,7 +196,7 @@ instance DIA_PAL_9158_VARUS_PALCOUNT(C_Info)
 	condition = dia_pal_9158_varus_palcount_condition;
 	information = dia_pal_9158_varus_palcount_info;
 	permanent = FALSE;
-	description = "Сколько паладинов в форте?";
+	description = " How many paladins are in the fort? " ;
 };
 
 
@@ -209,31 +210,31 @@ func int dia_pal_9158_varus_palcount_condition()
 
 func void dia_pal_9158_varus_palcount_info()
 {
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalCount_01_01");	//Сколько паладинов в форте?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_02");	//Мой отряд насчитывает около пятидесяти бойцов. А почему ты спрашиваешь?
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalCount_01_03");	//Мне кажется, что пятьдесят бойцов не смогут сдержать орков, если те начнут прорываться в Хоринис.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_04");	//Ха! Ты недооцениваешь моих парней, сынок...(смеется) Это лучшие солдаты королевства!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_05");	//Каждый из них способен запросто уложить двоих, а то троих орков.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_06");	//И это не просто пустые слова - это действительно так!
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalCount_01_07");	//А что насчет элитных орков?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_08");	//Хммм...(задумчиво) Ты прав! Элитные орки действительно серьезные противники.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_09");	//Однако единственное их преимущество перед нами - это их количество и ничего более!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_10");	//А само численное превосходство еще не гарантирует им победу.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_11");	//Что же касается тактики и стратегии - то в этом оркам никогда не превзойти нас.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_12");	//Поверь, я побывал на многих войнах и могу утверждать это без всякой тени сомнения.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_13");	//Так что мы и с ними как-нибудь разберемся!
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalCount_01_14");	//Хочется в это верить.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalCount_01_01 " );	// How many paladins are in the fort?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_02 " );	// My squad has about fifty fighters. Why are you asking?
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalCount_01_03 " );	// It seems to me that fifty fighters will not be able to hold back the orcs if they begin to break into Khorinis.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_04 " );	// Ha! You underestimate my guys, son... (laughs) They are the best soldiers in the kingdom!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_05 " );	// Each of them is able to easily lay down two or even three orcs.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_06 " );	// And these are not just empty words - it really is!
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalCount_01_07 " );	// What about elite orcs?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_08 " );	// Hmmm...(thoughtfully) You're right! Elite orcs are really serious opponents.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_09 " );	// However, their only advantage over us is their number and nothing more!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_10 " );	// And numerical superiority itself does not guarantee them victory.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_11 " );	// As for tactics and strategy, the orcs will never surpass us in this.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_12 " );	// Believe me, I have been to many wars and I can say this without a shadow of a doubt.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalCount_01_13 " );	// So we'll deal with them somehow!
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalCount_01_14 " );	// I want to believe it.
 };
 
 
-instance DIA_PAL_9158_VARUS_PALMORALE(C_Info)
+instance DIA_PAL_9158_VARUS_PALMORALE (C_Info)
 {
 	npc = pal_9158_varus;
 	nr = 1;
 	condition = dia_pal_9158_varus_palmorale_condition;
 	information = dia_pal_9158_varus_palmorale_info;
 	permanent = FALSE;
-	description = "Какой настрой у твоих людей?";
+	description = " How are your people feeling? " ;
 };
 
 
@@ -247,25 +248,25 @@ func int dia_pal_9158_varus_palmorale_condition()
 
 func void dia_pal_9158_varus_palmorale_info()
 {
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalMorale_01_01");	//Какой настрой у твоих людей?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalMorale_01_02");	//Не беспокойся, с этим все в порядке!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalMorale_01_03");	//Каждый из них готов броситься в бой по первому зову, если в этом будет необходимость.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalMorale_01_04");	//Поверь, этим людям не привыкать смотреть смерти в лицо!
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalMorale_01_05");	//Я не сомневаюсь в их смелости - я лишь сомневаюсь в их боевом духе.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalMorale_01_06");	//Вздор! (гневно) Паладин никогда не потеряет боевого духа, даже если окажется в самой отчаянной ситуации!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalMorale_01_07");	//Ведь с нами благословление Инноса, а это не пустой звук!
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalMorale_01_01 " );	// How are your people feeling?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalMorale_01_02 " );	// Don't worry, it's all right!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalMorale_01_03 " );	// Each of them is ready to rush into battle at the first call, if necessary.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalMorale_01_04 " );	// Believe me, these people are used to looking death in the face!
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalMorale_01_05 " );	// I don't doubt their courage - I only doubt their fighting spirit.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalMorale_01_06 " );	// Nonsense! (angrily) A paladin will never lose morale, even if he finds himself in the most desperate situation!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalMorale_01_07 " );	// After all, the blessing of Innos is with us, and this is not an empty phrase!
 	if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_PalMorale_01_08");	//Ты ведь паладин! (удивленно) Ты тоже должен знать об этом!
+		AI_Output(self,other, " DIA_Pal_9158_Varus_PalMorale_01_08 " );	// You're a paladin! (surprised) You should know about it too!
 	}
 	else if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_PalMorale_01_09");	//(ехидно) Не так ли, достопочтенный маг Огня?
-		AI_Output(other,self,"DIA_Pal_9158_Varus_PalMorale_01_10");	//Именно так.
+		AI_Output(self,other, " DIA_Pal_9158_Varus_PalMorale_01_09 " );	// (snickeringly) Isn't that right, venerable Fire Mage?
+		AI_Output(other,self, " DIA_Pal_9158_Varus_PalMorale_01_10 " );	// That's right.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_9158_Varus_PalMorale_01_11");	//Но ты не паладин...(разочарованно) Тебе этого не понять!
+		AI_Output(self,other, " DIA_Pal_9158_Varus_PalMorale_01_11 " );	// But you're not a paladin... (disappointed) You don't understand!
 	};
 };
 
@@ -277,7 +278,7 @@ instance DIA_PAL_9158_VARUS_PALTIMEFORT(C_Info)
 	condition = dia_pal_9158_varus_paltimefort_condition;
 	information = dia_pal_9158_varus_paltimefort_info;
 	permanent = FALSE;
-	description = "Как долго вы еще будете находиться в форте?";
+	description = " How long will you stay at the fort? " ;
 };
 
 
@@ -291,12 +292,12 @@ func int dia_pal_9158_varus_paltimefort_condition()
 
 func void dia_pal_9158_varus_paltimefort_info()
 {
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalTimeFort_01_01");	//Как долго вы еще будете находиться в форте?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalTimeFort_01_02");	//Мы будем оставаться здесь столько времени, сколько потребуется.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalTimeFort_01_03");	//К тому же это решать не мне, а лорду Хагену.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalTimeFort_01_04");	//А что ты сам думаешь по этому поводу?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalTimeFort_01_05");	//Хммм...(задумчиво) Мне кажется, этот форт - отличная стратегическая точка на случай вторжения орков.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalTimeFort_01_06");	//Только сумасшедший пойдет на штурм этой крепости, а для нас это отличный плацдарм для наступления.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalTimeFort_01_01 " );	// How long will you be in the fort?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalTimeFort_01_02 " );	// We'll stay here for as long as it takes.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalTimeFort_01_03 " );	// Besides, it's not for me to decide, but for Lord Hagen.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalTimeFort_01_04 " );	// What do you think about this?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalTimeFort_01_05 " );	// Hmmm...(thoughtfully) I think this fort is a great strategic point in case the orcs invade.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalTimeFort_01_06 " );	// Only a madman will storm this fortress, but for us it is an excellent springboard for the offensive.
 };
 
 
@@ -307,7 +308,7 @@ instance DIA_PAL_9158_VARUS_PALNEWS(C_Info)
 	condition = dia_pal_9158_varus_palnews_condition;
 	information = dia_pal_9158_varus_palnews_info;
 	permanent = TRUE;
-	description = "Есть новости?";
+	description = " Any news? " ;
 };
 
 
@@ -321,8 +322,8 @@ func int dia_pal_9158_varus_palnews_condition()
 
 func void dia_pal_9158_varus_palnews_info()
 {
-	AI_Output(other,self,"DIA_Pal_9158_Varus_PalNews_01_01");	//Есть новости?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalNews_01_02");	//Ничего такого, чтобы тебе следовало знать.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_PalNews_01_01 " );	// Any news?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_PalNews_01_02 " );	// Nothing you should know.
 };
 
 
@@ -333,13 +334,13 @@ instance DIA_PAL_9158_VARUS_HUNT(C_Info)
 	condition = dia_pal_9158_varus_hunt_condition;
 	information = dia_pal_9158_varus_hunt_info;
 	permanent = FALSE;
-	description = "Тут одно дело...";
+	description = " It's one thing... " ;
 };
 
 
 func int dia_pal_9158_varus_hunt_condition()
 {
-	if((MIS_ORTOHUNT == LOG_Running) && (VARUSAGREEDHUNT == FALSE))
+	if (( MIS_ORTOHUNT  == LOG_Running ) && ( VARUSAGREEDHUNT  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -347,21 +348,21 @@ func int dia_pal_9158_varus_hunt_condition()
 
 func void dia_pal_9158_varus_hunt_info()
 {
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Hunt_01_01");	//Тут одно дело...
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Hunt_01_02");	//(ворчливо) Что еще?
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Hunt_01_03");	//Несколько паладинов просят твоего разрешения, чтобы отправиться на охоту вглубь острова.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Hunt_01_04");	//Но зачем это им?
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Hunt_01_05");	//Просто они сидят без дела и не знают чем заняться.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Hunt_01_06");	//Хммм...(задумчиво) Не думал, что это действительно так.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Hunt_01_07");	//Они просто умирают от скуки!
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Hunt_01_08");	//Ты должен знать, что спокойная жизнь не для паладинов.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Hunt_01_09");	//Хммм...(задумчиво) Ну да, здесь ты абсолютно прав.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_Hunt_01_10");	//Так ты дашь им это разрешение?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Hunt_01_11");	//Вообще-то это не положено, но...(задумчиво)
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Hunt_01_12");	//Хорошо! Думаю, в данном случае парни действительно засиделись на месте, и им не помешает немного развеяться.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_Hunt_01_13");	//Я одобряю их идею.
-	B_LogEntry(TOPIC_ORTOHUNT,"Лорд Варус разрешил паладинам Орто отправиться на охоту.");
-	VARUSAGREEDHUNT = TRUE;
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Hunt_01_01 " );	// It's one thing...
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Hunt_01_02 " );	// (grouchily) What else?
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Hunt_01_03 " );	// Several paladins are asking for your permission to go hunting inland.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Hunt_01_04 " );	// But why would they?
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Hunt_01_05 " );	// They just sit around and don't know what to do.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Hunt_01_06 " );	// Hmmm...(thoughtfully) I didn't think that was really the case.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Hunt_01_07 " );	// They're just dying of boredom!
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Hunt_01_08 " );	// You should know that a quiet life is not for paladins.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Hunt_01_09 " );	// Hmmm...(thoughtfully) Well, yes, you are absolutely right here.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_Hunt_01_10 " );	// So will you give them this permission?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Hunt_01_11 " );	// Actually, it's not supposed to, but... (thoughtfully)
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Hunt_01_12 " );	// Good! I think, in this case, the guys really stayed up in place, and it would not hurt them to unwind a little.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_Hunt_01_13 " );	// I approve of their idea.
+	B_LogEntry( TOPIC_ORTOHUNT , " Lord Varus has allowed Ortho's paladins to go hunting. " );
+	VARUSAGREEDHUNT = TRUE ;
 };
 
 
@@ -372,7 +373,7 @@ instance DIA_PAL_9158_VARUS_HELPRAYNE(C_Info)
 	condition = dia_pal_9158_varus_helprayne_condition;
 	information = dia_pal_9158_varus_helprayne_info;
 	permanent = FALSE;
-	description = "Паладину Рэйну нужна помощь.";
+	description = " Paladin Rayne needs help. " ;
 };
 
 func int dia_pal_9158_varus_helprayne_condition()
@@ -386,18 +387,18 @@ func int dia_pal_9158_varus_helprayne_condition()
 func void dia_pal_9158_varus_helprayne_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pal_9158_Varus_HelpRayne_01_00");	//Паладину Рэйну нужна помощь.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_HelpRayne_01_01");	//(ворчливо) Что еще такое?  Какая помощь?
-	AI_Output(other,self,"DIA_Pal_9158_Varus_HelpRayne_01_02");	//Он один просто не справляется с работой на складе.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_HelpRayne_01_03");	//Ты можешь послать к нему кого-нибудь?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_HelpRayne_01_04");	//У меня нет для этого лишних людей!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_HelpRayne_01_05");	//Тем более именно ему поручено заниматься нашими запасами - так что никто другой не обязан помогать ему выполнять его же обязанности.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_HelpRayne_01_06");	//Ладно, как скажешь.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_HelpRayne_01_07");	//К тому же, если вдруг со склада что-нибудь пропадет, - ты сам потом найдешь ему замену!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_HelpRayne_01_12");	//Хммм...(задумчиво) Ну... ну, хорошо!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_HelpRayne_01_13");	//Я приставлю к нему кого-нибудь в помощники. Но передай ему - что если вдруг...
-	AI_Output(self,other,"DIA_Pal_9158_Varus_HelpRayne_01_15");	//Для него же лучше...(ворчливо)
-	B_LogEntry(TOPIC_RAYNEHELP,"Лорд Варус согласился предоставить Рэйну человека, который бы помогал ему на складе. Теперь думаю, надо сообщить об этом самому Рэйну.");
+	AI_Output(other,self, " DIA_Pal_9158_Varus_HelpRayne_01_00 " );	// Paladin Rayne needs help.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_HelpRayne_01_01 " );	// (grouchily) What else is this? What kind of help?
+	AI_Output(other,self, " DIA_Pal_9158_Varus_HelpRayne_01_02 " );	// He just can't keep up with the work in the warehouse.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_HelpRayne_01_03 " );	// Can you send someone to him?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_HelpRayne_01_04 " );	// I don't have extra people for this!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_HelpRayne_01_05 " );	// Moreover, it is he who is entrusted with handling our supplies - so no one else is obliged to help him fulfill his own duties.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_HelpRayne_01_06 " );	// Okay, whatever you say.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_HelpRayne_01_07 " );	// In addition, if something suddenly disappears from the warehouse, then you yourself will find a replacement for it!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_HelpRayne_01_12 " );	// Hmmm... (thoughtfully) Well... well, good!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_HelpRayne_01_13 " );	// I'll assign someone to help him. But tell him what if...
+	AI_Output(self,other, " DIA_Pal_9158_Varus_HelpRayne_01_15 " );	// Better for him... (grouchily)
+	B_LogEntry( TOPIC_RAYNEHELP , " Lord Varus has agreed to provide Rayne with a man to help him in the warehouse. Now I think we should report this to Rayne himself. " );
 	FINDHELPERRAYNE = TRUE;
 };
 
@@ -408,7 +409,7 @@ instance DIA_Pal_9158_Varus_MissKey(C_Info)
 	condition = DIA_Pal_9158_Varus_MissKey_condition;
 	information = DIA_Pal_9158_Varus_MissKey_info;
 	permanent = FALSE;
-	description = "Ключ от склада, он у тебя?";
+	description = " Key to the warehouse, do you have it? " ;
 };
 
 func int DIA_Pal_9158_Varus_MissKey_condition()
@@ -421,22 +422,22 @@ func int DIA_Pal_9158_Varus_MissKey_condition()
 
 func void DIA_Pal_9158_Varus_MissKey_info()
 {
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_01_00");	//Ключ от склада - он у тебя?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_01");	//(недовольно) Был - до последнего времени!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_02");	//Но теперь у меня его нет, и это большая проблема.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_01_03");	//Ты его потерял?!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_04");	//Потерял или украли - какая разница? Главное, что его нет.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_05");	//И мы не можем попасть внутрь склада.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_01_06");	//Так сделайте новый ключ!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_07");	//Это не так просто. (ворчливо) Замок у двери слишком сложный!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_08");	//А просто сломать дверь мы не можем.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_01_09");	//И, естественно, у вас нет того, кто разбирался бы во взломе замков?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_10");	//Какой ты догадливый...(грозно) Мы же паладины! А не воры...
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_11");	//А тут без мастера-взломщика явно не обойтись.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_01_00 " );	// Key to the warehouse - do you have it?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_01_01 " );	// (unsatisfied) Was - until recently!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_01_02 " );	// But now I don't have it, and that's a big problem.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_01_03 " );	// You lost him?!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_01_04 " );	// Lost or stolen - what's the difference? The main thing is that it is not.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_01_05 " );	// And we can't get inside the warehouse.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_01_06 " );	// So make a new key!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_01_07 " );	// It's not that easy. (grouchily) The lock on the door is too complicated!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_01_08 " );	// We can't just break the door.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_01_09 " );	// And, of course, you don't have someone who knows how to pick locks?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_01_10 " );	// How smart you are... (terribly) We're paladins! Not thieves...
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_01_11 " );	// And here you can't do without a master cracker.
 	MIS_FingersOpenDoor = LOG_Running;
 	Log_CreateTopic(Topic_FingersOpenDoor,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FingersOpenDoor,LOG_Running);
-	B_LogEntry(TOPIC_FingersOpenDoor,"Лорд Варус потерял ключ от склада в форте паладинов. Теперь, чтобы открыть дверь, нужен настоящий мастер-взломщик!");
+	B_LogEntry(TOPIC_FingersOpenDoor, " Lord Varus has lost the key to the warehouse at the paladin fort. Now it takes a real master burglar to open the door! " );
 };
 
 instance DIA_Pal_9158_Varus_MissKey_Ok(C_Info)
@@ -446,7 +447,7 @@ instance DIA_Pal_9158_Varus_MissKey_Ok(C_Info)
 	condition = DIA_Pal_9158_Varus_MissKey_Ok_condition;
 	information = DIA_Pal_9158_Varus_MissKey_Ok_info;
 	permanent = FALSE;
-	description = "Я нашел вам того, кто справиться с замком.";
+	description = " I found you someone who can handle the lock. " ;
 };
 
 func int DIA_Pal_9158_Varus_MissKey_Ok_condition()
@@ -460,19 +461,19 @@ func int DIA_Pal_9158_Varus_MissKey_Ok_condition()
 func void DIA_Pal_9158_Varus_MissKey_Ok_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_Ok_01_00");	//Я нашел вам того, кто справится с замком.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Ok_01_01");	//Правда?! (удивленно) И кто же он?
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_Ok_01_02");	//Бывший каторжник из Долины Рудников. Он тут недалеко, отдыхает на пляже.
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_Ok_01_03");	//И он поможет вам, но только при условии, что ты дашь слово не трогать его.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Ok_01_04");	//Хммм...(грозно) Я так и думал, что это будет кто-то из числа этих негодяев.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Ok_01_05");	//Но... Но мне нужен этот чертов склад!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Ok_01_06");	//Поэтому можешь передать ему, что я согласен на его условия.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Ok_01_07");	//Он может прийти сюда. Мои люди его не тронут! Клянусь Инносом...
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Ok_01_08");	//Но если он только попробует здесь что-то украсть, я немедленно прикажу вздернуть его на виселице!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Ok_01_09");	//(грозно) Это понятно?!
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_Ok_01_10");	//Само собой.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_Ok_01_00 " );	// I found you someone who can handle the lock.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Ok_01_01 " );	// Really?! (surprised) And who is he?
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_Ok_01_02 " );	// Former convict from the Valley of Mines. He's not far away, relaxing on the beach.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_Ok_01_03 " );	// And he will help you, but only on the condition that you give your word not to touch him.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Ok_01_04 " );	// Hmmm... (terribly) I thought it would be one of those scoundrels.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Ok_01_05 " );	// But... But I need the damn warehouse!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Ok_01_06 " );	// So you can tell him that I agree to his terms.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Ok_01_07 " );	// He can come here. My people won't touch him! I swear by Innos...
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Ok_01_08 " );	// But if he ever tries to steal something here, I'll have him hanged on the gallows immediately!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Ok_01_09 " );	// (terribly) Is that clear?!
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_Ok_01_10 " );	// Of course.
 	VarusFingersAgree = TRUE;
-	B_LogEntry(TOPIC_FingersOpenDoor,"Лорд Варус согласился на условие Фингерса и дал слово не трогать его.");
+	B_LogEntry(TOPIC_FingersOpenDoor, " Lord Varus agreed to Fingers' terms and promised not to touch him. " );
 };
 
 
@@ -483,7 +484,7 @@ instance DIA_Pal_9158_Varus_MissKey_Finish(C_Info)
 	condition = DIA_Pal_9158_Varus_MissKey_Finish_condition;
 	information = DIA_Pal_9158_Varus_MissKey_Finish_info;
 	permanent = FALSE;
-	description = "Ну как дела с замком?";
+	description = " How are you with the castle? " ;
 };
 
 func int DIA_Pal_9158_Varus_MissKey_Finish_condition()
@@ -497,18 +498,18 @@ func int DIA_Pal_9158_Varus_MissKey_Finish_condition()
 func void DIA_Pal_9158_Varus_MissKey_Finish_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_Finish_01_00");	//Как дела с замком?
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Finish_01_01");	//(одобрительно) Твой друг оказался весьма полезным человеком. 
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Finish_01_02");	//Первый раз вижу такого искусного взломщика!
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Finish_01_03");	//Полагаю, что и в дальнейшем он нам может пригодиться.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Finish_01_04");	//Что касается тебя, то ты заслужил небольшую награду в качестве поощрения за свою помощь.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Finish_01_05");	//Вот, возьми это золото!
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_Finish_01_00 " );	// How's the lock?
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Finish_01_01 " );	// (approvingly) Your friend has been a very helpful person.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Finish_01_02 " );	// This is the first time I've seen such a skilled cracker!
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Finish_01_03 " );	// I believe that in the future it can be useful to us.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Finish_01_04 " );	// As for you, you deserve a small reward as a reward for your help.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Finish_01_05 " );	// Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_Finish_01_07");	//(надменно) Но большего не проси. 
-	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_Finish_01_08");	//И на том спасибо.
+	AI_Output(self,other, " DIA_Pal_9158_Varus_MissKey_Finish_01_07 " );	// (arrogantly) But don't ask for more.
+	AI_Output(other,self, " DIA_Pal_9158_Varus_MissKey_Finish_01_08 " );	// And thanks for that.
 	MIS_FingersOpenDoor = LOG_Success;
 	Log_SetTopicStatus(TOPIC_FingersOpenDoor,LOG_Success);
-	B_LogEntry(TOPIC_FingersOpenDoor,"Лорд Варус был доволен тем, что паладины вновь имеют доступ к складу.");
+	B_LogEntry(TOPIC_FingersOpenDoor, " Lord Varus was pleased that the paladins had access to the warehouse again. " );
 };
 
 instance DIA_PAL_9158_VARUS_PICKPOCKET(C_Info)
@@ -518,7 +519,7 @@ instance DIA_PAL_9158_VARUS_PICKPOCKET(C_Info)
 	condition = dia_pal_9158_varus_pickpocket_condition;
 	information = dia_pal_9158_varus_pickpocket_info;
 	permanent = TRUE;
-	description = "(Попробовать украсть его ключ)";
+	description = " (Try to steal his key) " ;
 };
 
 func int dia_pal_9158_varus_pickpocket_condition()
@@ -556,13 +557,13 @@ func void dia_pal_9158_varus_pickpocket_doit()
 		};
 		B_GiveInvItems(self,other,itke_varuskey,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		HavePalSkladMeKey = TRUE;
+		HavePalSkladMeKey = TRUE ;
 		B_GiveThiefXP();
 		Info_ClearChoices(dia_pal_9158_varus_pickpocket);
 	}
 	else
 	{
-		Print("Необходимая ловкость: 175");
+		Print ( " Required Agility: 175 " );
 
 		if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 		{
