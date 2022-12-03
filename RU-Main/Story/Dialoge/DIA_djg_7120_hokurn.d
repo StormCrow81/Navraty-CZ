@@ -1,4 +1,5 @@
 
+
 instance DIA_DJG_7120_HOKURN_EXIT(C_Info)
 {
 	npc = djg_7120_hokurn;
@@ -27,7 +28,7 @@ instance DIA_DJG_7120_HOKURN_PERM(C_Info)
 	condition = dia_djg_7120_hokurn_perm_condition;
 	information = dia_djg_7120_hokurn_perm_info;
 	permanent = TRUE;
-	description = "Что теперь будешь делать?";
+	description = " What are you going to do now? " ;
 };
 
 
@@ -41,10 +42,10 @@ func int dia_djg_7120_hokurn_perm_condition()
 
 func void dia_djg_7120_hokurn_perm_info()
 {
-	AI_Output(other,self,"DIA_DJG_7120_Hokurn_Perm_01_00");	//Что теперь будешь делать?
-	AI_Output(self,other,"DIA_DJG_7120_Hokurn_Perm_01_01");	//Сидеть и ждать, пока ситуация не изменится в лучшую сторону. Другого нам просто не остается.
-	AI_Output(self,other,"DIA_DJG_7120_Hokurn_Perm_01_02");	//Хотя, полагаю, и это долго не продлится. Наверняка эти зеленокожие твари скоро пожалуют и сюда!
-	AI_Output(self,other,"DIA_DJG_7120_Hokurn_Perm_01_03");	//Проклятые орки! Как же я их ненавижу!
+	AI_Output(other,self, " DIA_DJG_7120_Hokurn_Perm_01_00 " );	// What are you going to do now?
+	AI_Output(self,other, " DIA_DJG_7120_Hokurn_Perm_01_01 " );	// Sit and wait until the situation changes for the better. We simply have no other choice.
+	AI_Output(self,other, " DIA_DJG_7120_Hokurn_Perm_01_02 " );	// Though I guess it won't last long either. Surely these green-skinned creatures will soon come here too!
+	AI_Output(self,other, " DIA_DJG_7120_Hokurn_Perm_01_03 " );	// Damned orcs! How I hate them!
 };
 
 
@@ -61,7 +62,7 @@ instance DIA_DJG_7120_HOKURN_PICKPOCKET(C_Info)
 
 func int dia_djg_7120_hokurn_pickpocket_condition()
 {
-	return C_Beklauen(100,350);
+	return  C_Robbery ( 100 , 350 );
 };
 
 func void dia_djg_7120_hokurn_pickpocket_info()
@@ -73,7 +74,7 @@ func void dia_djg_7120_hokurn_pickpocket_info()
 
 func void dia_djg_7120_hokurn_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_djg_7120_hokurn_pickpocket);
 };
 
