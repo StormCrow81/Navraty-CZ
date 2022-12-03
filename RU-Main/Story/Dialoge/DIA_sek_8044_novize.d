@@ -1,7 +1,8 @@
 
-instance DIA_SEK_8044_NOVIZE_NOFOREVER(C_Info)
+
+instance DIA_SEK_8044_NOVIZE_NOFOREVER (C_Info)
 {
-	npc = sek_8044_novize;
+	npc = sec_8044_novice;
 	nr = 5;
 	condition = dia_sek_8044_novize_noforever_condition;
 	information = dia_sek_8044_novize_noforever_info;
@@ -20,14 +21,14 @@ func int dia_sek_8044_novize_noforever_condition()
 
 func void dia_sek_8044_novize_noforever_info()
 {
-	if(Wld_IsTime(8,0,21,0))
+	if (Wld_IsTime( 8 , 0 , 21 , 0 ))
 	{
-		AI_Output(self,other,"DIA_SEK_8044_Novize_NoForever_01_00");	//Не мешай мне работать!
+		AI_Output(self,other, " DIA_SEK_8044_Novize_NoForever_01_00 " );	// Don't interfere with my work!
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_SEK_8044_Novize_NoForever_01_01");	//Не приставай ко мне!
+		AI_Output(self,other, " DIA_SEK_8044_Novize_NoForever_01_01 " );	// Don't bother me!
 		AI_StopProcessInfos(self);
 	};
 };
