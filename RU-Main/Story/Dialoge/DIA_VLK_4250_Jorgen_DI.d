@@ -1,5 +1,6 @@
 
-instance DIA_Jorgen_DI_KAP3_EXIT(C_Info)
+
+instance DIA_Jorgen_DI_KAP3_EXIT (C_Info)
 {
 	npc = VLK_4250_Jorgen_DI;
 	nr = 999;
@@ -21,18 +22,18 @@ func void DIA_Jorgen_DI_KAP3_EXIT_Info()
 };
 
 
-instance DIA_Jorgen_DI_Hallo(C_Info)
+instance DIA_Jorgen_DI_Hello (C_Info)
 {
 	npc = VLK_4250_Jorgen_DI;
 	nr = 4;
 	condition = DIA_Jorgen_DI_Hallo_Condition;
-	information = DIA_Jorgen_DI_Hallo_Info;
+	information = DIA_Jorgen_DI_Hello_Info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 
-func int DIA_Jorgen_DI_Hallo_Condition()
+func int DIA_Jorgen_DI_Hello_Condition()
 {
 	if(UndeadDragonIsDead == FALSE)
 	{
@@ -40,16 +41,16 @@ func int DIA_Jorgen_DI_Hallo_Condition()
 	};
 };
 
-func void DIA_Jorgen_DI_Hallo_Info()
+func void DIA_Jorgen_DI_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Jorgen_DI_Hallo_15_00");	//Все в порядке?
+	AI_Output(other,self, " DIA_Jorgen_DI_Hallo_15_00 " );	// Is everything okay?
 	if(ORkSturmDI == FALSE)
 	{
-		AI_Output(self,other,"DIA_Jorgen_DI_Hallo_07_01");	//Конечно - пока эти монстры не приближаются к нам...
+		AI_Output(self,other, " DIA_Jorgen_DI_Hallo_07_01 " );	// Of course - as long as these monsters don't get close to us...
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jorgen_DI_Hallo_07_02");	//Нам не пережить следующую атаку орков. Так что поторопись - нужно убираться отсюда.
+		AI_Output(self,other, " DIA_Jorgen_DI_Hallo_07_02 " );	// We won't survive the next ork attack. So hurry up - you need to get out of here.
 		B_StartOtherRoutine(Jorgen_DI,"Start");
 	};
 	AI_StopProcessInfos(self);
@@ -63,7 +64,7 @@ instance DIA_Jorgen_DI_UndeadDragonDead(C_Info)
 	condition = DIA_Jorgen_DI_UndeadDragonDead_Condition;
 	information = DIA_Jorgen_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
-	description = "Врагу настал конец.";
+	description = "The enemy is finished. " ;
 };
 
 
@@ -77,26 +78,26 @@ func int DIA_Jorgen_DI_UndeadDragonDead_Condition()
 
 func void DIA_Jorgen_DI_UndeadDragonDead_Info()
 {
-	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_15_00");	//Врагу настал конец.
-	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_07_01");	//Это хорошие новости! Надеюсь, нам больше ничего не нужно на этом острове?
+	AI_Output(other,self, " DIA_Jorgen_DI_UndeadDragonDead_15_00 " );	// The enemy is finished.
+	AI_Output(self,other, " DIA_Jorgen_DI_UndeadDragonDead_07_01 " );	// That's good news! I hope we don't need anything else on this island?
 	Info_ClearChoices(DIA_Jorgen_DI_UndeadDragonDead);
-	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead,"Подожди минутку.",DIA_Jorgen_DI_UndeadDragonDead_moment);
-	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead,"Все, мы можем отправляться в путь.",DIA_Jorgen_DI_UndeadDragonDead_over);
+	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead, " Wait a minute. " ,DIA_Jorgen_DI_UndeadDragonDead_moment);
+	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead, " That's it, we can go. " ,DIA_Jorgen_DI_UndeadDragonDead_over);
 };
 
 func void DIA_Jorgen_DI_UndeadDragonDead_moment()
 {
-	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_moment_15_00");	//Подожди минутку. Я забыл сделать кое-что.
-	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_moment_07_01");	//Хорошо. Но поторопись.
+	AI_Output(other,self, " DIA_Jorgen_DI_UndeadDragonDead_moment_15_00 " );	// Wait a minute. I forgot to do something.
+	AI_Output(self,other, " DIA_Jorgen_DI_UndeadDragonDead_moment_07_01 " );	// Good. But hurry up.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Jorgen_DI_UndeadDragonDead_over()
 {
 	CAPITANORDERDIAWAY = TRUE;
-	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_over_15_00");	//Да, все нормально! Давайте двигаться в путь.
-	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_over_07_01");	//Отлично! Поднять паруса - мыотчаливаем!
-	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_over_07_02");	//А ты иди поспи - в капитанской каюте для тебя приготовлена кровать.
+	AI_Output(other,self, " DIA_Jorgen_DI_UndeadDragonDead_over_15_00 " );	// Yes, everything is fine! Let's move on.
+	AI_Output(self,other, " DIA_Jorgen_DI_UndeadDragonDead_over_07_01 " );	// Great! Raise the sails - we set sail!
+	AI_Output(self,other, " DIA_Jorgen_DI_UndeadDragonDead_over_07_02 " );	// And you go to sleep - a bed is prepared for you in the captain's cabin.
 	AI_StopProcessInfos(self);
 };
 
