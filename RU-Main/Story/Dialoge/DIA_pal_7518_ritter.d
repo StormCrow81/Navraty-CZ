@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_7518_RITTER_EXIT(C_Info)
 {
 	npc = pal_7518_ritter;
@@ -28,13 +29,13 @@ instance DIA_PAL_7518_RITTER_PEOPLE(C_Info)
 	condition = dia_pal_7518_ritter_people_condition;
 	information = dia_pal_7518_ritter_people_info;
 	permanent = TRUE;
-	description = "Кто у вас командир?";
+	description = " Who is your commander? " ;
 };
 
 
 func int dia_pal_7518_ritter_people_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -42,9 +43,9 @@ func int dia_pal_7518_ritter_people_condition()
 
 func void dia_pal_7518_ritter_people_info()
 {
-	AI_Output(other,self,"DIA_PAL_7518_RITTER_People_01_00");	//Кто командует здесь?
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_People_01_01");	//Нашим отрядом сейчас командует паладин Альберт.
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_PEOPLE_01_02");	//Ты найдешь его в глубине пещеры, что недалеко отсюда.
+	AI_Output(other,self, " DIA_PAL_7518_RITTER_People_01_00 " );	// Who's in charge here?
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_People_01_01 " );	// Our squad is now led by paladin Albert.
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_PEOPLE_01_02 " );	// You'll find him deep in a cave not far from here.
 };
 
 
@@ -55,13 +56,13 @@ instance DIA_PAL_7518_RITTER_LOCATION(C_Info)
 	condition = dia_pal_7518_ritter_location_condition;
 	information = dia_pal_7518_ritter_location_info;
 	permanent = TRUE;
-	description = "Что ты можешь рассказать о местности?";
+	description = " What can you tell us about the area? " ;
 };
 
 
 func int dia_pal_7518_ritter_location_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -69,11 +70,11 @@ func int dia_pal_7518_ritter_location_condition()
 
 func void dia_pal_7518_ritter_location_info()
 {
-	AI_Output(other,self,"DIA_PAL_7518_RITTER_LOCATION_01_00");	//Что ты можешь рассказать интересного об этой местности?
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_LOCATION_01_01");	//Наверху, над нами находится лагерь бывших каторжников.
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_LOCATION_01_02");	//Хотя они и не почитают Инноса, но однако с ними все же можно иметь дело.
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_LOCATION_01_03");	//За рекой достаточно опасный лес, но орков в нем нет!
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_LOCATION_01_04");	//Все они внизу, на побережье - у них там вроде лагеря.
+	AI_Output(other,self, " DIA_PAL_7518_RITTER_LOCATION_01_00 " );	// What can you tell interesting about this area?
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_LOCATION_01_01 " );	// Upstairs, above us is a camp of former convicts.
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_LOCATION_01_02 " );	// Although they do not revere Innos, they can still be dealt with.
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_LOCATION_01_03 " );	// Across the river is a rather dangerous forest, but there are no orcs in it!
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_LOCATION_01_04 " );	// They're all down on the coast - they kind of have a camp there.
 };
 
 
@@ -84,7 +85,7 @@ instance DIA_PAL_7518_RITTER_STANDARD(C_Info)
 	condition = dia_pal_7518_ritter_standard_condition;
 	information = dia_pal_7518_ritter_standard_info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
@@ -95,8 +96,8 @@ func int dia_pal_7518_ritter_standard_condition()
 
 func void dia_pal_7518_ritter_standard_info()
 {
-	AI_Output(other,self,"DIA_PAL_7518_RITTER_Standard_01_00");	//Как обстановка?
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_Standard_01_01");	//Пока все тихо.
+	AI_Output(other,self, " DIA_PAL_7518_RITTER_Standard_01_00 " );	// How setting?
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_Standard_01_01 " );	// So far everything is quiet.
 };
 
 
@@ -113,7 +114,7 @@ instance DIA_PAL_7518_RITTER_GOTOKILLORCSLAVES(C_Info)
 
 func int dia_pal_7518_ritter_gotokillorcslaves_condition()
 {
-	if((MIS_ORCORDER == LOG_Running) && (GOTOKILLORCSLAVES == TRUE) && (GOTOKILLORCSLAVESDONE == FALSE))
+	if (( MY_ORDER  == LOG_Running ) && ( GOTOKILLORCSLAVES  ==  TRUE ) && ( GOTOKILLORCSLAVESDONE  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -121,11 +122,11 @@ func int dia_pal_7518_ritter_gotokillorcslaves_condition()
 
 func void dia_pal_7518_ritter_gotokillorcslaves_info()
 {
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_GoToKillOrcSlaves_01_00");	//Я получил приказ от Альберта, помочь тебе с отрядом орков.
-	AI_Output(other,self,"DIA_PAL_7518_RITTER_GoToKillOrcSlaves_01_01");	//Конечно! Следуй за мной.
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_GoToKillOrcSlaves_01_00 " );	// I received an order from Albert to help you with the orc squad.
+	AI_Output(other,self, " DIA_PAL_7518_RITTER_GoToKillOrcSlaves_01_01 " );	// Of course! Follow me.
 	AI_Output(self,other,"DIA_PAL_7518_RITTER_GoToKillOrcSlaves_01_02");	//Хорошо.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"FOLLOW");
 	PALONEORCSLAVE = TRUE;
 };
@@ -152,10 +153,10 @@ func int dia_pal_7518_ritter_gotokillorcslavesdone_condition()
 
 func void dia_pal_7518_ritter_gotokillorcslavesdone_info()
 {
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_GoToKillOrcSlavesDone_01_00");	//Поганые орки! (злобно) Мы их всех прикончили!
-	AI_Output(self,other,"DIA_PAL_7518_RITTER_GoToKillOrcSlavesDone_01_01");	//Теперь ты должен вернуться в наш лагерь и рассказать обо всем Альберту.
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_GoToKillOrcSlavesDone_01_00 " );	// Filthy orcs! (viciously) We killed them all!
+	AI_Output(self,other, " DIA_PAL_7518_RITTER_GoToKillOrcSlavesDone_01_01 " );	// Now you must return to our camp and tell Albert about everything.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"AfterBattle");
 };
 
