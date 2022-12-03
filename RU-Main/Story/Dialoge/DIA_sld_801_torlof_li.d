@@ -1,4 +1,5 @@
 
+
 instance DIA_TORLOF_LI_KAP3_EXIT(C_Info)
 {
 	npc = sld_801_torlof_li;
@@ -114,7 +115,7 @@ instance DIA_TORLOF_LI_PICKPOCKET(C_Info)
 
 func int dia_torlof_li_pickpocket_condition()
 {
-	return C_Beklauen(76,120);
+	return  C_Robbery ( 76 , 120 );
 };
 
 func void dia_torlof_li_pickpocket_info()
@@ -126,7 +127,7 @@ func void dia_torlof_li_pickpocket_info()
 
 func void dia_torlof_li_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_torlof_li_pickpocket);
 };
 
@@ -154,20 +155,20 @@ func int dia_torlof_li_storm_condition()
 
 func void dia_torlof_li_storm_info()
 {
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_01");	//Наконец-то ты пришел в себя! Как себя чувствуешь?
-	AI_Output(other,self,"DIA_Torlof_LI_Storm_01_02");	//Голова раскалывается, как будто по ней ударили чем-то тяжелым.
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_03");	//Да уж, приятель...(смеется) Тебе прилично досталось!
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_08");	//Во время шторма одна из волн с такой силой обрушилась на наш корабль, что сбила тебя с ног и отбросила на фальшкот!
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_09");	//Видимо, ты очень сильно ударился об него головой, поскольку сразу же потерял сознание.
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_13");	//Черт! (вне себя) Да этот шторм вообще чуть не отправил всех нас на тот свет!
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_15");	//Благодари Инноса, что мы наткнулись на этот остров!
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_21");	//В этой бухте можно чувствовать себя в полной безопасности.
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_23");	//Но радоваться еще рано. Теперь надо подумать, как починить наш корабль.
-	AI_Output(other,self,"DIA_Torlof_LI_Storm_01_24");	//А разве он нуждается в ремонте?
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_25");	//Еще бы. Шторм его прилично потрепал.
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_26");	//Пару дыр залатать, конечно, не проблема, но у нас сломан руль. А без него мы далеко не уплывем!
-	AI_Output(other,self,"DIA_Torlof_LI_Storm_01_27");	//Сколько это займет времени?
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_28");	//Я не знаю. Может, пару дней, а может быть, и неделю. Точно не могу сказать.
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_01 " );	// You've finally come to your senses! How are you feeling?
+	AI_Output(other,self, " DIA_Torlof_LI_Storm_01_02 " );	// Head splits as if hit with something heavy.
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_03 " );	// Yeah, buddy... (laughs) You've had enough!
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_08 " );	// During a storm, one of the waves hit our ship with such force that it knocked you off your feet and threw you onto a false cot!
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_09 " );	// You must have hit your head really hard on him, because you immediately lost consciousness.
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_13 " );	// Damn! (besides himself) Yes, this storm almost sent us all to the next world!
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_15 " );	// Thank Innos that we stumbled upon this island!
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_21 " );	// In this bay, you can feel completely safe.
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_23 " );	// But it's too early to rejoice. Now we need to think about how to fix our ship.
+	AI_Output(other,self, " DIA_Torlof_LI_Storm_01_24 " );	// Does it need repair?
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_25 " );	// Still. The storm had beaten him up.
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_26 " );	// Patch a couple of holes, of course, not a problem, but we have a broken steering wheel. Without it, we won't get far!
+	AI_Output(other,self, " DIA_Torlof_LI_Storm_01_27 " );	// How long will it take?
+	AI_Output(self,other, " DIA_Torlof_LI_Storm_01_28 " );	// I don't know. Maybe a couple of days, maybe a week. I can not say exactly.
 };
 
 
@@ -178,7 +179,7 @@ instance DIA_TORLOF_LI_REPAIR(C_Info)
 	condition = dia_torlof_li_repair_condition;
 	information = dia_torlof_li_repair_info;
 	permanent = FALSE;
-	description = "Могу ли я чем-то помочь тебе с ремонтом?";
+	description = " Is there anything I can help you do with the repair? " ;
 };
 
 
@@ -192,16 +193,16 @@ func int dia_torlof_li_repair_condition()
 
 func void dia_torlof_li_repair_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_Repair_01_01");	//Могу ли я чем-то помочь тебе с ремонтом?
-	AI_Output(self,other,"DIA_Torlof_LI_Repair_01_02");	//Ты?! Хммм...(задумался) Даже не знаю.
-	AI_Output(self,other,"DIA_Torlof_LI_Repair_01_03");	//Мне для начала надо получше осмотреть повреждения и потом еще придумать, как это можно все исправить.
-	AI_Output(self,other,"DIA_Torlof_LI_Repair_01_04");	//Так что сейчас твоя помощь навряд ли может мне пригодиться. Если только позже...
+	AI_Output(other,self, " DIA_Torlof_LI_Repair_01_01 " );	// Can I help you with the repair?
+	AI_Output(self,other, " DIA_Torlof_LI_Repair_01_02 " );	// You?! Hmmm... (thinking) I don't even know.
+	AI_Output(self,other, " DIA_Torlof_LI_Repair_01_03 " );	// I need to get a better look at the damage first and then figure out how to fix it.
+	AI_Output(self,other, " DIA_Torlof_LI_Repair_01_04 " );	// So I don't think I'll need your help right now. If only later...
 	AI_Output(other,self,"DIA_Torlof_LI_Repair_01_05");	//Ясно.
 	TORLOFLITIMER = Wld_GetDay();
 	MIS_REPAIRSHIP = LOG_Running;
 	Log_CreateTopic(TOPIC_REPAIRSHIP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_REPAIRSHIP,LOG_Running);
-	B_LogEntry(TOPIC_REPAIRSHIP,"Я предложил Торлофу помочь ему с ремонтом нашего корабля. Он ответил, что сперва ему нужно осмотреть все повреждения и решить, как это можно исправить. Так что пока Торлофу моя помощь не нужна. Надо спросить его об этом чуть позже.");
+	B_LogEntry( TOPIC_REPAIRSHIP , " I offered to help Torlof with the repair of our ship. He replied that he needed to inspect all the damage first and decide how to fix it. So for now, Torlof does not need my help. We should ask him about it a little later. " );
 };
 
 
@@ -212,13 +213,13 @@ instance DIA_TORLOF_LI_REPAIRHELP(C_Info)
 	condition = dia_torlof_li_repairhelp_condition;
 	information = dia_torlof_li_repairhelp_info;
 	permanent = FALSE;
-	description = "Как продвигается ремонт корабля?";
+	description = " How is the repair going on the ship? " ;
 };
 
 
 func int dia_torlof_li_repairhelp_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 	if((MIS_REPAIRSHIP == LOG_Running) && (TORLOFLITIMER <= (daynow - 2)))
 	{
@@ -228,21 +229,21 @@ func int dia_torlof_li_repairhelp_condition()
 
 func void dia_torlof_li_repairhelp_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelp_01_01");	//Как продвигается ремонт корабля?
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_02");	//Хорошо, что поинтересовался! Похоже, мне все-таки понадобится твоя помощь.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_05");	//За эти дни я осмотрел все повреждения на корабле и пришел к выводу, что большинство из них совсем незначительные.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_06");	//С ними я и сам справлюсь. Но у нас есть и одна серьезная проблема - это наш штурвал!
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_08");	//Он вообще не работает! Похоже, его полностью сорвало, и теперь эта штука совершенно бесполезная вещь.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_09");	//А без него, как ты сам понимаешь, корабль абсолютно неуправляем!
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelp_01_10");	//И что будем делать?
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_11");	//Мне думается, что вся эта проблема в одной из шестеренок.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_12");	//Видимо, во время шторма у нее сорвало зубья, и по этой причине наш штурвал и потерял управление.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_13");	//Так что если мы сможем найти ей замену - то наверняка решим эту проблему.
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelp_01_14");	//Но где мы возьмем новую шестеренку?
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_15");	//Именно этим я и хотел попросить тебя заняться. Может быть, тебе повезет, и ты сможешь найти для этого дела какую-нибудь подходящую вещицу.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_17");	//Другого выхода у нас нет...(печально) Иначе мы тут застрянем надолго!
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelp_01_18");	//Я посмотрю, что можно сделать.
-	B_LogEntry(TOPIC_REPAIRSHIP,"Торлоф попросил меня помочь ему со штурвалом, который был сломан во время шторма. У руля сорвало одну из шестеренок, и теперь корабль абсолютно неуправляем. Надо поискать замену этой детали - какую-нибудь вещь, которая могла бы послужить в качестве шестеренки.");
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelp_01_01 " );	// How is the ship's repair progressing?
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_02 " );	// Good thing you asked! Looks like I still need your help.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_05 " );	// Over the past few days, I've examined all the damage on the ship and come to the conclusion that most of them are quite minor.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_06 " );	// I can handle them myself. But we also have one serious problem - this is our steering wheel!
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_08 " );	// It doesn't work at all! Looks like it got ripped off completely, and now it's a completely useless thing.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_09 " );	// And without it, as you yourself understand, the ship is absolutely uncontrollable!
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelp_01_10 " );	// And what are we going to do?
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_11 " );	// I think that the whole problem is in one of the gears.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_12 " );	// Apparently, during the storm, her teeth were torn off, and for this reason our steering wheel lost control.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_13 " );	// So if we can find a replacement for her, we'll probably solve this problem.
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelp_01_14 " );	// But where do we get the new gear?
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_15 " );	// That's exactly what I wanted to ask you to do. Maybe you will be lucky and you will be able to find some suitable little thing for this business.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelp_01_17 " );	// We have no other choice... (sadly) Otherwise, we'll be stuck here for a long time!
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelp_01_18 " );	// I'll see what I can do.
+	B_LogEntry( TOPIC_REPAIRSHIP , " Torlof asked me to help him with the steering wheel, which was broken during the storm. One of the gears on the steering wheel was torn off, and now the ship is completely uncontrollable. We need to look for a replacement for this part - something that could serve as gears. " );
 };
 
 
@@ -253,13 +254,13 @@ instance DIA_TORLOF_LI_REPAIRHELPDONE(C_Info)
 	condition = dia_torlof_li_repairhelpdone_condition;
 	information = dia_torlof_li_repairhelpdone_info;
 	permanent = FALSE;
-	description = "Я тут нашел кое-что.";
+	description = " I found something here. " ;
 };
 
 
 func int dia_torlof_li_repairhelpdone_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 	if((MIS_REPAIRSHIP == LOG_Running) && Npc_KnowsInfo(hero,dia_torlof_li_repairhelp) && (Npc_HasItems(hero,itmi_stuff_gearwheel_02) >= 1))
 	{
@@ -270,15 +271,15 @@ func int dia_torlof_li_repairhelpdone_condition()
 func void dia_torlof_li_repairhelpdone_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_01");	//Я тут нашел кое-что.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_02");	//Что именно?
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_03");	//Вот, взгляни.
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelpDone_01_01 " );	// I found something here.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_02 " );	// What exactly?
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelpDone_01_03 " );	// Here, take a look.
 	B_GiveInvItems(other,self,itmi_stuff_gearwheel_02,1);
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_04");	//Какая интересная штуковина! Где ты ее откопал?
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_05");	//В небольшой пирамиде, расположенной на острове.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_06");	//Совсем неплохо! Смотрю, ты зря времени не терял.
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_07");	//Она подойдет в качестве шестеренки?
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_08");	//(задумчиво) Сейчас поглядим.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_04 " );	// What an interesting thing! Where did you dig it up?
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelpDone_01_05 " );	// In a small pyramid located on an island.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_06 " );	// Not bad at all! I see you didn't waste any time.
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelpDone_01_07 " );	// Will it work as a gear?
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_08 " );	// (thoughtfully) Let's see.
 	AI_SetWalkMode(self,NPC_WALK);
 	AI_GotoWP(self,"SHIP_EXTRO");
 	AI_AlignToWP(self);
@@ -286,8 +287,8 @@ func void dia_torlof_li_repairhelpdone_info()
 	AI_GotoNpc(self,hero);
 	AI_TurnToNPC(self,other);
 	AI_LookAtNpc(self,other);
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_10");	//Похоже, она действительно подходит!
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_12");	//(серьезно) Подожди одну секундочку...
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_10 " );	// Looks like it really fits!
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_12 " );	// (seriously) Wait a second...
 	AI_SetWalkMode(self,NPC_WALK);
 	AI_GotoWP(self,"SHIP_EXTRO");
 	AI_AlignToWP(self);
@@ -295,48 +296,48 @@ func void dia_torlof_li_repairhelpdone_info()
 	AI_GotoNpc(self,hero);
 	AI_TurnToNPC(self,other);
 	AI_LookAtNpc(self,other);
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_14");	//Кажется, все в порядке.
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_15");	//Теперь мы сможем смыться с этого острова!
-	AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_16");	//Когда отплываем?
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_14 " );	// Everything seems to be ok.
+	AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_15 " );	// Now we can get off this island!
+	AI_Output(other,self, " DIA_Torlof_LI_RepairHelpDone_01_16 " );	// When do we sail?
 	MIS_REPAIRSHIP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_REPAIRSHIP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_REPAIRSHIP,"Я принес Торлофу найденный мной кусок камня в виде шестеренки. И к его большому удивлению, эта вещь отлично подошла на роль шестеренки для нашего штурвала.");
+	B_LogEntry( TOPIC_REPAIRSHIP , " I brought Torlof the cog-shaped piece of stone I found. And much to his surprise, this thing fit perfectly as a gear for our steering wheel. " );
 	if((MIS_LOSTISLAND == LOG_SUCCESS) && (MIS_REPAIRSHIP == LOG_SUCCESS) && (MIS_CHANGECOURSE == LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_17");	//Да хоть прямо сейчас!
+		AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_17 " );	// Yes, right now!
 		if(((Gorn_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_fighter_li) == FALSE) && (GORNLIHERE == TRUE)) || ((MiltenNW_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_mage_li) == FALSE) && (MILTENLIHERE == TRUE)) || ((Lester_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_psionic_li) == FALSE) && (LESTERLIHERE == TRUE)) || ((Diego_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_thief_li) == FALSE) && (DIEGOLIHERE == TRUE)) || ((Angar_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(djg_705_angar_li) == FALSE) && (ANGARLIHERE == TRUE)))
 		{
-			AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_18");	//Только вначале надо сообщить парням на берегу, что мы снимаемся с якоря.
-			AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_20");	//Хорошо, я передам им.
-			CANAWAYFROMLI = TRUE;
+			AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_18 " );	// Only first we need to inform the guys on the shore that we are weighing anchor.
+			AI_Output(other,self, " DIA_Torlof_LI_RepairHelpDone_01_20 " );	// Okay, I'll pass it on to them.
+			CANWAYFROMLI = TRUE ;
 			MIS_GATHERCREW = LOG_Running;
 			Log_CreateTopic(TOPIC_GATHERCREW,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_GATHERCREW,LOG_Running);
-			Log_AddEntry(TOPIC_GATHERCREW,"Торлоф попросил меня сообщить всем парням на берегу, что мы снимаемся с якоря.");
+			Log_AddEntry( TOPIC_GATHERCREW , " Torlof asked me to tell all the guys on the beach that we are weighing anchor. " );
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_21");	//Так что только скажи - и мы сразу же поднимем паруса.
+			AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_21 " );	// So just say it and we'll set sail in no time.
 			AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_22");	//Хорошо.
-			CANAWAYFROMLI = TRUE;
+			CANWAYFROMLI = TRUE ;
 			NOPEOPLEONLANDLI = TRUE;
 		};
 	}
 	else
 	{
 		TORLOFLITIMERAWAY = Wld_GetDay();
-		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_23");	//Не так быстро, приятель! Корабль еще не готов к отплытию.
-		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_24");	//Я еще не успел починить некоторые другие небольшие повреждения!
+		AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_23 " );	// Not so fast, mate! The ship is not yet ready to sail.
+		AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_24 " );	// I haven't had time to fix some other minor damage yet!
 		if(MIS_LOSTISLAND == LOG_Running)
 		{
-			AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_25");	//Тем более мы еще до сих пор не знаем, где находимся!
+			AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_25 " );	// Moreover, we still don't know where we are!
 		}
 		else if(MIS_CHANGECOURSE == LOG_Running)
 		{
-			AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_26");	//Тем более мы еще до сих не решили, куда нам плыть.
+			AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_26 " );	// Moreover, we still haven't decided where to go.
 		};
-		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_27");	//Так что спешить не будем.
-		AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_28");	//Ладно, тогда сам скажешь.
+		AI_Output(self,other, " DIA_Torlof_LI_RepairHelpDone_01_27 " );	// So let's not rush.
+		AI_Output(other,self, " DIA_Torlof_LI_RepairHelpDone_01_28 " );	// Okay, then you'll say it yourself.
 		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_29");	//Конечно.
 	};
 };
@@ -349,15 +350,15 @@ instance DIA_TORLOF_LI_AWAY(C_Info)
 	condition = dia_torlof_li_away_condition;
 	information = dia_torlof_li_away_info;
 	permanent = TRUE;
-	description = "Когда отплываем?";
+	description = " When are we leaving? " ;
 };
 
 
 func int dia_torlof_li_away_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
-	if((MIS_REPAIRSHIP == LOG_SUCCESS) && (CANAWAYFROMLI == FALSE) && (TORLOFLITIMERAWAY <= (daynow - 1)))
+	if (( MIS_REPAIRSHIP  ==  LOG_SUCCESS ) && ( CANAWAYFROMLI  ==  FALSE ) && ( TORLOFLITIMERAWAY  <= ( daynow -  1 )))
 	{
 		return TRUE;
 	};
@@ -365,44 +366,44 @@ func int dia_torlof_li_away_condition()
 
 func void dia_torlof_li_away_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_Away_01_00");	//Когда отплываем?
+	AI_Output(other,self, " DIA_Torlof_LI_Away_01_00 " );	// When do we sail?
 
 	if((MIS_LOSTISLAND == LOG_SUCCESS) && (MIS_REPAIRSHIP == LOG_SUCCESS) && (MIS_CHANGECOURSE == LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_Torlof_LI_Away_01_01");	//Да хоть прямо сейчас!
+		AI_Output(self,other, " DIA_Torlof_LI_Away_01_01 " );	// Yes, right now!
 
 		if(((Gorn_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_fighter_li) == FALSE) && (GORNLIHERE == TRUE)) || ((MiltenNW_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_mage_li) == FALSE) && (MILTENLIHERE == TRUE)) || ((Lester_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_psionic_li) == FALSE) && (LESTERLIHERE == TRUE)) || ((Diego_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_thief_li) == FALSE) && (DIEGOLIHERE == TRUE)) || ((Angar_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(djg_705_angar_li) == FALSE) && (ANGARLIHERE == TRUE)))
 		{
-			AI_Output(self,other,"DIA_Torlof_LI_Away_01_02");	//Только вначале надо сообщить парням на берегу, что мы снимаемся с якоря.
-			AI_Output(other,self,"DIA_Torlof_LI_Away_01_04");	//Хорошо, я передам им.
-			CANAWAYFROMLI = TRUE;
+			AI_Output(self,other, " DIA_Torlof_LI_Away_01_02 " );	// Only first we need to inform the guys on the shore that we are weighing anchor.
+			AI_Output(other,self, " DIA_Torlof_LI_Away_01_04 " );	// Okay, I'll pass it on to them.
+			CANWAYFROMLI = TRUE ;
 			MIS_GATHERCREW = LOG_Running;
 			Log_CreateTopic(TOPIC_GATHERCREW,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_GATHERCREW,LOG_Running);
-			B_LogEntry(TOPIC_GATHERCREW,"Торлоф попросил меня сообщить всем парням на берегу, что мы снимаемся с якоря.");
+			B_LogEntry( TOPIC_GATHERCREW , " Torlof asked me to tell all the guys on the beach that we are weighing anchor. " );
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Torlof_LI_Away_01_05");	//Так что только скажи - и мы сразу же поднимем паруса.
+			AI_Output(self,other, " DIA_Torlof_LI_Away_01_05 " );	// So just say it and we'll set sail in no time.
 			AI_Output(other,self,"DIA_Torlof_LI_Away_01_06");	//Хорошо.
-			CANAWAYFROMLI = TRUE;
+			CANWAYFROMLI = TRUE ;
 			NOPEOPLEONLANDLI = TRUE;
 		};
 	}
-	else if(MIS_LOSTISLAND == LOG_Running)
+	else  if ( MIS_LOST_ISLAND  == LOG_Running )
 	{
-		AI_Output(self,other,"DIA_Torlof_LI_Away_01_07");	//Но мы же еще до сих пор не знаем, где находимся!
-		AI_Output(self,other,"DIA_Torlof_LI_Away_01_08");	//Так что об этом пока рано думать.
+		AI_Output(self,other, " DIA_Torlof_LI_Away_01_07 " );	// But we still don't know where we are!
+		AI_Output(self,other, " DIA_Torlof_LI_Away_01_08 " );	// So it's too early to think about it.
 	}
 	else if(MIS_CHANGECOURSE == LOG_Running)
 	{
-		AI_Output(self,other,"DIA_Torlof_LI_Away_01_10");	//Но мы же еще до сих пор не решили, куда нам плыть!
-		AI_Output(self,other,"DIA_Torlof_LI_Away_01_11");	//Так что об этом пока рано думать.
+		AI_Output(self,other, " DIA_Torlof_LI_Away_01_10 " );	// But we still haven't decided where to go!
+		AI_Output(self,other, " DIA_Torlof_LI_Away_01_11 " );	// So it's too early to think about it.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Torlof_LI_Away_01_13");	//Пока я не закончу с ремонтом корабля, об этом рано думать.
-		AI_Output(self,other,"DIA_Torlof_LI_Away_01_14");	//Так что лучше займись пока каким-нибудь полезным делом.
+		AI_Output(self,other, " DIA_Torlof_LI_Away_01_13 " );	// It's too soon to think about it until I've finished repairing the ship.
+		AI_Output(self,other, " DIA_Torlof_LI_Away_01_14 " );	// So it's better to do something useful for now.
 	};
 };
 
@@ -414,16 +415,16 @@ instance DIA_TORLOF_LI_AWAYDONE(C_Info)
 	condition = dia_torlof_li_awaydone_condition;
 	information = dia_torlof_li_awaydone_info;
 	permanent = TRUE;
-	description = "Пора отправляться.";
+	description = " Time to go. " ;
 };
 
 
 func int dia_torlof_li_awaydone_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 
-	if((CANAWAYFROMLI == TRUE) && (CAPITANORDERLIAWAY == FALSE))
+	if (( CANAWAYFROMLI  ==  TRUE ) && ( NORTH CAPTAINLIAWAY  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -435,12 +436,12 @@ func void dia_torlof_li_awaydone_info()
 	var string concatText;
 	var string text;
 	var string text2;
-	AI_Output(other,self,"DIA_Torlof_LI_AwayDone_01_00");	//Пора отправляться.
+	AI_Output(other,self, " DIA_Torlof_LI_AwayDone_01_00 " );	// Time to go.
 
 	if(NOPEOPLEONLANDLI == TRUE)
 	{
-		AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_01");	//Хорошо! Снимаемся с якоря.
-		AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_02");	//А ты пока можешь пойти и отдохнуть у себя в каюте.
+		AI_Output(self,other, " DIA_Torlof_LI_AwayDone_01_01 " );	// Good! We weigh anchor.
+		AI_Output(self,other, " DIA_Torlof_LI_AwayDone_01_02 " );	// In the meantime, you can go and relax in your cabin.
 		CAPITANORDERLIAWAY = TRUE;
 		AI_StopProcessInfos(self);
 	}
@@ -456,7 +457,7 @@ func void dia_torlof_li_awaydone_info()
 		{
 			Npc_ExchangeRoutine(pc_mage_li,"RunAway");
 			AI_Teleport(pc_mage_li,"SHIP_CREW_19");
-			MILTENLIHEREDONE = TRUE;
+			MILTENLIHEREDONE = TRUE ;
 		};
 		if((Lester_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_psionic_li) == FALSE) && (LESTERLIONBOARD == TRUE) && (LESTERLIHERE == TRUE) && (LESTERLIHEREDONE == FALSE))
 		{
@@ -464,13 +465,13 @@ func void dia_torlof_li_awaydone_info()
 			AI_Teleport(pc_psionic_li,"SHIP_DECK_28");
 			LESTERLIHEREDONE = TRUE;
 		};
-		if((Diego_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_thief_li) == FALSE) && (DIEGOLIONBOARD == TRUE) && (DIEGOLIHERE == TRUE) && (DIEGOLIHEREDONE == FALSE))
+		if (( Diego_IsOnBoard ==  LOG_SUCCESS ) && ( Npc_IsDead ( pc_thief_li ) ==  FALSE ) && ( DIEGOLIONBOARD  ==  TRUE ) && ( DIEGOLIHERE  ==  TRUE ) && ( DIEGOLIHEREDONE  ==  FALSE ))
 		{
 			Npc_ExchangeRoutine(pc_thief_li,"RunAway");
 			AI_Teleport(pc_thief_li,"SHIP_CREW_04");
 			DIEGOLIHEREDONE = TRUE;
 		};
-		if((Angar_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(djg_705_angar_li) == FALSE) && (ANGARLIONBOARD == TRUE) && (ANGARLIHERE == TRUE) && (ANGARLIHEREDONE == FALSE))
+		if ((Angar_IsOnBoard ==  LOG_SUCCESS ) && (Npc_IsDead(djg_705_angar_li) ==  FALSE ) && ( ANGARLIONBOARD  ==  TRUE ) && ( ANGARLIHERE  ==  TRUE ) && ( ANGARLIHEREDONE  ==  FALSE )) ;
 		{
 			Npc_ExchangeRoutine(djg_705_angar_li,"RunAway");
 			AI_Teleport(djg_705_angar_li,"SHIP_CREW_03");
@@ -479,19 +480,19 @@ func void dia_torlof_li_awaydone_info()
 		if(LICREWONBOARD == TRUE)
 		{
 			B_GivePlayerXP(500);
-			AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_06");	//Хорошо! Вроде бы все парни на корабле, а значит, можно сниматься с якоря.
-			AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_07");	//А ты пока можешь пойти и отдохнуть у себя в каюте.
+			AI_Output(self,other, " DIA_Torlof_LI_AwayDone_01_06 " );	// Good! It seems that all the guys are on the ship, which means that you can weigh anchor.
+			AI_Output(self,other, " DIA_Torlof_LI_AwayDone_01_07 " );	// In the meantime, you can go and relax in your cabin.
 			CAPITANORDERLIAWAY = TRUE;
 			MIS_GATHERCREW = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_GATHERCREW,LOG_SUCCESS);
-			B_LogEntry(TOPIC_GATHERCREW,"Вся команда на корабле, и теперь можно отправляться в путь!");
+			B_LogEntry( TOPIC_GATHERCREW , " All the crew is on the ship, and now we can go! " );
 			AI_StopProcessInfos(self);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_11");	//Но еще не все парни вернулись с берега! Мы не можем их бросить!
-			AI_Output(other,self,"DIA_Torlof_LI_AwayDone_01_12");	//А кто отсутствует?
-			AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_13");	//(осматриваясь) Хммм, кажется нет...
+			AI_Output(self,other, " DIA_Torlof_LI_AwayDone_01_11 " );	// But not all the guys have returned from the shore yet! We can't leave them!
+			AI_Output(other,self, " DIA_Torlof_LI_AwayDone_01_12 " );	// Who's missing?
+			AI_Output(self,other, " DIA_Torlof_LI_AwayDone_01_13 " );	// (looking around) Hmmm, I don't think so...
 			if((Gorn_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_fighter_li) == FALSE) && (GORNLIHERE == TRUE) && (GORNLIONBOARD == FALSE))
 			{
 				AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_14");	//...Горна
@@ -533,14 +534,14 @@ func void dia_torlof_li_awaydone_info()
 				AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_18");	//...Кор Ангара
 				crewlicountmiss = crewlicountmiss + 1;
 			};
-			AI_Output(self,other,"DIA_Torlof_LI_AwayDone_01_19");	//Остальные парни, вроде бы, на месте.
+			AI_Output(self,other, " DIA_Torlof_LI_AwayDone_01_19 " );	// The rest of the guys seem to be in place.
 			if(crewlicountmiss >= 2)
 			{
-				AI_Output(other,self,"DIA_Torlof_LI_AwayDone_01_20");	//Я передам им, чтобы возвращались на корабль.
+				AI_Output(other,self, " DIA_Torlof_LI_AwayDone_01_20 " );	// I'll tell them to get back to the ship.
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Torlof_LI_AwayDone_01_21");	//Я передам ему, чтобы возвращался на корабль.
+				AI_Output(other,self, " DIA_Torlof_LI_AwayDone_01_21 " );	// I'll tell him to get back to the ship.
 			};
 		};
 	};
@@ -554,7 +555,7 @@ instance DIA_TORLOF_LI_ISLAND(C_Info)
 	condition = dia_torlof_li_island_condition;
 	information = dia_torlof_li_island_info;
 	permanent = FALSE;
-	description = "Где мы и что это за остров?";
+	description = " Where are we and what is this island? " ;
 };
 
 
@@ -568,19 +569,19 @@ func int dia_torlof_li_island_condition()
 
 func void dia_torlof_li_island_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_Island_01_01");	//Где мы и что это за остров?
-	AI_Output(self,other,"DIA_Torlof_LI_Island_01_02");	//Я этот остров так же, как и ты, вижу впервые в жизни!
-	AI_Output(self,other,"DIA_Torlof_LI_Island_01_03");	//И я абсолютно не имею понятия, где мы сейчас находимся.
-	AI_Output(self,other,"DIA_Torlof_LI_Island_01_05");	//Один только Иннос знает, куда нас занесло.
-	AI_Output(other,self,"DIA_Torlof_LI_Island_01_07");	//И что будем делать?
-	AI_Output(self,other,"DIA_Torlof_LI_Island_01_13");	//Если сможем хотя бы приблизительно понять, в какой части океана мы очутились - то сможем вернуться на прежний курс.
-	AI_Output(self,other,"DIA_Torlof_LI_Island_01_15");	//Возможно, стоит прогуляться по самому острову.
-	AI_Output(self,other,"DIA_Torlof_LI_Island_01_16");	//Думаю, если и искать ответы на все наши вопросы, то только там.
-	MIS_LOSTISLAND = LOG_Running;
+	AI_Output(other,self, " DIA_Torlof_LI_Island_01_01 " );	// Where are we and what is this island?
+	AI_Output(self,other, " DIA_Torlof_LI_Island_01_02 " );	// I, like you, see this island for the first time in my life!
+	AI_Output(self,other, " DIA_Torlof_LI_Island_01_03 " );	// And I have absolutely no idea where we are right now.
+	AI_Output(self,other, " DIA_Torlof_LI_Island_01_05 " );	// Only Innos knows where we've gone.
+	AI_Output(other,self, " DIA_Torlof_LI_Island_01_07 " );	// And what are we going to do?
+	AI_Output(self,other, " DIA_Torlof_LI_Island_01_13 " );	// If we can at least roughly understand in which part of the ocean we ended up, then we can return to our previous course.
+	AI_Output(self,other, " DIA_Torlof_LI_Island_01_15 " );	// It might be worth taking a walk around the island itself.
+	AI_Output(self,other, " DIA_Torlof_LI_Island_01_16 " );	// I think if we look for answers to all our questions, then only there.
+	MY_LOST ISLAND = LOG_Running;
 	Log_CreateTopic(TOPIC_LOSTISLAND,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LOSTISLAND,LOG_Running);
-	B_LogEntry(TOPIC_LOSTISLAND,"Похоже, что мы основательно заблудились. Наш капитан абсолютно не имеет понятия о том, что это за остров и где мы вообще очутились! Так что единственное, что нам остается, это попробовать самим как-то во всем разобраться и выяснить, где мы сейчас находимся.");
-	Log_AddEntry(TOPIC_LOSTISLAND,"Поговорив с Торлофом на эту тему, мы пришли к обоюдному согласию, что для начала стоило бы просто наведаться на этот загадочный остров и как-можно тщательней его осмотреть. Возможно, там что-нибудь и удастся выяснить.");
+	B_LogEntry( TOPIC_LOSTISLAND , " It looks like we're completely lost. Our captain has absolutely no idea what kind of island this is and where we ended up at all! So the only thing left for us is to try to sort things out and find out for ourselves somehow where we are now. " );
+	Log_AddEntry( TOPIC_LOSTISLAND , " After talking with Torlof about this, we both agreed that the first thing to do would be to just visit this mysterious island and inspect it as carefully as possible. Perhaps something can be found there. " );
 };
 
 
@@ -591,13 +592,13 @@ instance DIA_TORLOF_LI_ISLANDPROGRESS(C_Info)
 	condition = dia_torlof_li_islandprogress_condition;
 	information = dia_torlof_li_islandprogress_info;
 	permanent = FALSE;
-	description = "Посмотри, я нашел эту плитку.";
+	description = " Look, I found this tile. " ;
 };
 
 
 func int dia_torlof_li_islandprogress_condition()
 {
-	if((MIS_LOSTISLAND == LOG_Running) && (Npc_HasItems(hero,itwr_lostislandmap) >= 1))
+	if (( MY_LOST_COUNTRY  == LOG_Running ) && ( Npc_HasItems ( hero , itwr_lost_countrymap ) >=  1 )) .
 	{
 		return TRUE;
 	};
@@ -606,29 +607,29 @@ func int dia_torlof_li_islandprogress_condition()
 func void dia_torlof_li_islandprogress_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_00");	//Посмотри, я нашел эту плитку.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_01");	//Хммм...(удивленно) Какая интересная штука!
-	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_03");	//На ней изображены какие-то странного рода символы.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_05");	//(с интересом) Дай мне посмотреть.
-	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_06");	//Вот, держи.
+	AI_Output(other,self, " DIA_Torlof_LI_IslandProgress_01_00 " );	// Look, I found this tile.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_01 " );	// Hmmm... (surprised) What an interesting thing!
+	AI_Output(other,self, " DIA_Torlof_LI_IslandProgress_01_03 " );	// It has some weird symbols on it.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_05 " );	// (with interest) Let me see.
+	AI_Output(other,self, " DIA_Torlof_LI_IslandProgress_01_06 " );	// Here, take this.
 	B_GiveInvItems(other,self,itwr_lostislandmap,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_07");	//Хммм...(задумчиво) Все это очень странно.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_08");	//(нерешительно) Хотя, если приглядеться получше, то все это очень смахивает на...
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_10");	//Точно не уверен, но это каменная плитка немного напоминает карту.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_07 " );	// Hmmm... (thoughtfully) This is all very strange.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_08 " );	// (hesitantly) Although, if you look closely, it all looks very much like...
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_10 " );	// Not exactly sure, but this stone tile looks a bit like a map.
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_11");	//Карту?!
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_12");	//Да, карту! Вот только что она показывает - этого я не могу сказать.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_12 " );	// Yes, a map! That's just what she shows - this I can not say.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_13");	//Похоже, тут еще выбиты какие-то цифры. Возможно, они и есть ключ к расшифровке того, что изображено на самой карте!
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_17");	//Возможно, эти цифры означают широту и долготу этого острова.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_18");	//Если это действительно окажется именно так, то мы без труда сможем определить - где мы сейчас находимся.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_19");	//Правда для этого мне бы понадобился морской секстант.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_21");	//Без него я не смогу сделать точные расчеты.
-	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_22");	//Хорошо! Я попробую найти его.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_23");	//Попробуй, конечно! Хотя и не думаю, что здесь на острове можно отыскать подобного рода вещь.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_24");	//Но, может быть, тебе опять как всегда повезет...(смеется) И тогда, кто знает!
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_13 " );	// It looks like some numbers are still stamped here. Perhaps they are the key to deciphering what is depicted on the card itself!
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_17 " );	// Perhaps these numbers represent the latitude and longitude of this island.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_18 " );	// If this really turns out to be the case, then we can easily determine where we are now.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_19 " );	// True, for this I would need a sea sextant.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_21 " );	// Without it, I can't do accurate calculations.
+	AI_Output(other,self, " DIA_Torlof_LI_IslandProgress_01_22 " );	// Good! I will try to find it.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_23 " );	// Try it, of course! Although I do not think that here on the island you can find this kind of thing.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgress_01_24 " );	// But maybe you'll get lucky again... (laughs) And then, who knows!
 	CAPNEEDSEXTANT = TRUE;
-	B_LogEntry(TOPIC_LOSTISLAND,"Я показал Торлофу каменную плитку, которую нашел в древних развалинах на острове. Осмотрев ее, он предположил, что на плитке изображена некая таинственная карта. Кроме того, на обратной стороне этой каменной таблички нацарапано несколько цифр, которые могут означать что-то важное - например, широту и долготу самого острова. Однако чтобы проверить эту версию, Торлофу нужен морской секстант, иначе его расчеты будут неточны.");
+	B_LogEntry( TOPIC_LOSTISLAND , " I showed Torlof a stone slab I found in the ancient ruins on the island. Upon examining it, he assumed that the slab depicted some kind of mysterious map. In addition, several numbers were scrawled on the back of this stone tablet, which could mean that something important - for example, the latitude and longitude of the island itself. However, to verify this version, Torlof needs a marine sextant, otherwise his calculations will be inaccurate. " );
 };
 
 
@@ -639,7 +640,7 @@ instance DIA_TORLOF_LI_ISLANDPROGRESSNEXT(C_Info)
 	condition = dia_torlof_li_islandprogressnext_condition;
 	information = dia_torlof_li_islandprogressnext_info;
 	permanent = FALSE;
-	description = "У меня есть секстант.";
+	description = " I have a sextant. " ;
 };
 
 
@@ -654,18 +655,18 @@ func int dia_torlof_li_islandprogressnext_condition()
 func void dia_torlof_li_islandprogressnext_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Torlof_LI_IslandProgressNext_01_00");	//У меня есть секстант.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgressNext_01_01");	//(удивленно) Правда?
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgressNext_01_03");	//Давай его сюда.
+	AI_Output(other,self, " DIA_Torlof_LI_IslandProgressNext_01_00 " );	// I have a sextant.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgressNext_01_01 " );	// (surprised) Really?
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgressNext_01_03 " );	// Give it here.
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgressNext_01_04");	//Вот, держи.
 	B_GiveInvItems(other,self,ItMi_Sextant,1);
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgressNext_01_05");	//Отлично! Теперь я наконец-то смогу заняться расшифровкой тех странных символов.
-	AI_Output(other,self,"DIA_Torlof_LI_IslandProgressNext_01_06");	//И сколько времени тебе на это понадобится?
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgressNext_01_07");	//Думаю, не больше пары дней.
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgressNext_01_05 " );	// Great! Now I can finally work on deciphering those strange symbols.
+	AI_Output(other,self, " DIA_Torlof_LI_IslandProgressNext_01_06 " );	// And how long will it take you?
+	AI_Output(self,other, " DIA_Torlof_LI_IslandProgressNext_01_07 " );	// I think not more than a couple of days.
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgressNext_01_08");	//Хорошо.
 	TORLOFDESCRTIMER = Wld_GetDay();
 	TORLOFBEGINSEARCH = TRUE;
-	B_LogEntry(TOPIC_LOSTISLAND,"Я достал для Торлофа секстант. И теперь он сможет приступить к своим расчетам. По его словам, на это уйдет не более двух дней.");
+	B_LogEntry( TOPIC_LOSTISLAND , " I've got a sextant for Torlof. And now he can start his calculations. According to him, it will take no more than two days. " );
 };
 
 instance DIA_TORLOF_LI_SEARCH(C_Info)
@@ -680,7 +681,7 @@ instance DIA_TORLOF_LI_SEARCH(C_Info)
 
 func int dia_torlof_li_search_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 
 	if((MIS_LOSTISLAND == LOG_Running) && (TORLOFBEGINSEARCH == TRUE) && (TORLOFBEGINSEARCH <= (daynow - 2)))
@@ -692,20 +693,20 @@ func int dia_torlof_li_search_condition()
 func void dia_torlof_li_search_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_00");	//Хорошо, что ты здесь. Я уже закончил свои расчеты.
-	AI_Output(other,self,"DIA_Torlof_LI_Search_01_01");	//И как успехи?
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_04");	//Хммм...(задумчиво) Кажется, мы не ошиблись, полагая, что эти символы действительно кое-что значат!
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_05");	//Я сверился по карте с нашим предыдущим курсом и ввел небольшую поправку с учетом возможного отклонения во время шторма.
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_06");	//А потом подставил в свои расчеты те цифры, что были нарисованы на обратной стороне найденной тобой каменной плитки.
-	AI_Output(other,self,"DIA_Torlof_LI_Search_01_08");	//Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_09");	//Если наложить их на карту в определенной последовательности, то они указывают место, где мы вполне бы могли находиться в данный момент.
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_10");	//Это дает приблизительное представление о том, что нам делать и куда плыть!
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_12");	//Так что как только корабль будет готов к отплытию - можем сниматься с якоря.
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_17");	//Да, и еще. (серьезно) Вот, возьми эту карту. На ней отмечен непосредственно сам остров и точный к нему курс.
+	AI_Output(self,other, " DIA_Torlof_LI_Search_01_00 " );	// Good to have you here. I have already finished my calculations.
+	AI_Output(other,self, " DIA_Torlof_LI_Search_01_01 " );	// And how are you doing?
+	AI_Output(self,other, " DIA_Torlof_LI_Search_01_04 " );	// Hmmm...(thoughtfully) It looks like we weren't wrong in assuming that these symbols actually mean something!
+	AI_Output(self,other, " DIA_Torlof_LI_Search_01_05 " );	// I checked the chart against our previous course and made a small correction for possible drift during the storm.
+	AI_Output(self,other, " DIA_Torlof_LI_Search_01_06 " );	// And then I substituted into my calculations the numbers that were drawn on the back of the stone tile you found.
+	AI_Output(other,self, " DIA_Torlof_LI_Search_01_08 " );	// What do you mean?
+	AI_Output(self,other, " DIA_Torlof_LI_Search_01_09 " );	// If we overlay them on the map in a certain sequence, then they indicate the place where we could well be at the moment.
+	AI_Output(self,other, " DIA_Torlof_LI_Search_01_10 " );	// This gives a rough idea of ​​what to do and where to go!
+	AI_Output(self,other, " DIA_Torlof_LI_Search_01_12 " );	// So as soon as the ship is ready to sail, we can weigh anchor.
+	AI_Output(self,other, " DIA_Torlof_LI_Search_01_17 " );	// Yes, and more. (seriously) Here, take this card. It marks the island itself and the exact course to it.
 	B_GiveInvItems(self,other,itmi_seamaplostisland,1);
 	MIS_LOSTISLAND = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_LOSTISLAND,LOG_SUCCESS);
-	B_LogEntry(TOPIC_LOSTISLAND,"Торлоф закончил свои расчеты, и кажется, они оказались весьма удачными. Та плитка, что я нашел на этом острове, похоже, действительно была своеобразной картой, а записи ней помогли Торлофу с большой долей вероятности определить наше местоположение. И как только наш корабль приобретет надлежащий вид, можно будет наконец-то убраться с этого острова.");
+	B_LogEntry( TOPIC_LOSTISLAND , " Torlof finished his calculations, and they seem to be very successful. The tile that I found on this island really seemed to be a kind of map, and recording it helped Torlof with a high degree of probability to determine our location. And how only our ship will acquire the proper form, it will be possible to finally get out of this island. " );
 };
 
 
@@ -716,7 +717,7 @@ instance DIA_TORLOF_LI_ABOUTISLAND(C_Info)
 	condition = dia_torlof_li_aboutisland_condition;
 	information = dia_torlof_li_aboutisland_info;
 	permanent = FALSE;
-	description = "Интересно, на этом острове кто-нибудь живет?";
+	description = " I wonder if anyone lives on this island? " ;
 };
 
 
@@ -730,11 +731,11 @@ func int dia_torlof_li_aboutisland_condition()
 
 func void dia_torlof_li_aboutisland_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_AboutIsland_01_01");	//Интересно, на этом острове кто-нибудь живет?
-	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_02");	//Навряд ли...(сомнительно) Похоже на то, что он вообще необитаем.
-	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_05");	//Наше появление тут не могло пройти незамеченным.
-	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_06");	//Так что если бы тут кто-то и жил, то наверняка бы уже дал о себе знать.
-	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_07");	//А пока что кроме пары огненных ящериц на берегу мы так никого и не встретили.
+	AI_Output(other,self, " DIA_Torlof_LI_AboutIsland_01_01 " );	// I wonder if anyone lives on this island?
+	AI_Output(self,other, " DIA_Torlof_LI_AboutIsland_01_02 " );	// Hardly...(doubtful) It looks like it's not inhabited at all.
+	AI_Output(self,other, " DIA_Torlof_LI_AboutIsland_01_05 " );	// Our appearance here could not go unnoticed.
+	AI_Output(self,other, " DIA_Torlof_LI_AboutIsland_01_06 " );	// So if someone lived here, they would probably have already made themselves felt.
+	AI_Output(self,other, " DIA_Torlof_LI_AboutIsland_01_07 " );	// In the meantime, apart from a couple of fire lizards on the shore, we have not met anyone.
 };
 
 
@@ -745,7 +746,7 @@ instance DIA_TORLOF_LI_WHEREGUYS(C_Info)
 	condition = dia_torlof_li_whereguys_condition;
 	information = dia_torlof_li_whereguys_info;
 	permanent = FALSE;
-	description = "А где все остальные парни?!";
+	description = " Where are all the other guys?! " ;
 };
 
 
@@ -759,9 +760,9 @@ func int dia_torlof_li_whereguys_condition()
 
 func void dia_torlof_li_whereguys_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_WhereGuys_01_01");	//А где все остальные парни?
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGuys_01_02");	//Большинство ребят сошло на берег, как только мы причалили к этому острову.
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGuys_01_04");	//Ну...(замялся) Они сказали, что хотят разведать ближайшие окрестности этого острова.
+	AI_Output(other,self, " DIA_Torlof_LI_WhereGuys_01_01 " );	// Where are all the other guys?
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGuys_01_02 " );	// Most of the guys went ashore as soon as we landed on this island.
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGuys_01_04 " );	// Well... (he hesitated) They said they wanted to scout the immediate surroundings of this island.
 };
 
 
@@ -772,7 +773,7 @@ instance DIA_TORLOF_LI_WHEREGOLD(C_Info)
 	condition = dia_torlof_li_wheregold_condition;
 	information = dia_torlof_li_wheregold_info;
 	permanent = FALSE;
-	description = "А куда подевалось мое золото?";
+	description = " Where did my gold go? " ;
 };
 
 
@@ -786,13 +787,13 @@ func int dia_torlof_li_wheregold_condition()
 
 func void dia_torlof_li_wheregold_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_WhereGold_01_01");	//А куда подевалось мое золото?
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGold_01_02");	//(непонимающе) О чем ты, приятель?!
-	AI_Output(other,self,"DIA_Torlof_LI_WhereGold_01_03");	//О большой куче золота, которую мы забрали с острова Ирдорат. Оно находилось в трюме нашего корабля!
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGold_01_08");	//Извини, приятель. Но я и понятия не имею, куда оно подевалось!
+	AI_Output(other,self, " DIA_Torlof_LI_WhereGold_01_01 " );	// Where did my gold go?
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGold_01_02 " );	// (uncomprehending) What are you talking about, buddy?!
+	AI_Output(other,self, " DIA_Torlof_LI_WhereGold_01_03 " );	// About the big pile of gold we took from the island of Irdorath. It was in the hold of our ship!
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGold_01_08 " );	// Sorry mate. But I have no idea where it went!
 	BEGINGOLDSEEK = TRUE;
 	Wld_InsertItem(itmi_misstorlofthing,"FP_ITEM_CAPITANTHING");
-	B_LogEntry(TOPIC_MISSMYGOLD,"Торлоф сказал, что не знает, куда пропало мое золото. Он посоветовал мне поспрашивать об этом других ребят.");
+	B_LogEntry( TOPIC_MISSMYGOLD , " Torlof said he didn't know where my gold went. He told me to ask the other guys about it. " );
 };
 
 
@@ -803,7 +804,7 @@ instance DIA_TORLOF_LI_MISSCOMPAS(C_Info)
 	condition = dia_torlof_li_misscompas_condition;
 	information = dia_torlof_li_misscompas_info;
 	permanent = FALSE;
-	description = "Горн сказал, что ты потерял свой компас.";
+	description = "The bugle said you lost your compass. " ;
 };
 
 
@@ -818,16 +819,16 @@ func int dia_torlof_li_misscompas_condition()
 func void dia_torlof_li_misscompas_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Torlof_LI_MissCompas_01_01");	//Горн сказал, что ты потерял свой компас.
+	AI_Output(other,self, " DIA_Torlof_LI_MissCompas_01_01 " );	// Horn said you lost your compass.
 	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_02");	//Да...(расстроенно)
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_04");	//Наверное, во время шторма он выпал у меня из кармана.
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_05");	//Но я в этом точно не уверен...
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_07");	//Эх...(грустно) Эта вещица была по-настоящему мне дорога - подарок на память от одного моего старого друга.
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_08");	//Я всегда полагал, что она приносит мне удачу, и поверь мне - так оно и было!
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_09");	//Но теперь понимаю, что эта самая удача на этот раз отвернулась от меня.
-	AI_Output(other,self,"DIA_Torlof_LI_MissCompas_01_10");	//А ты не пробовал его искать?
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_11");	//Пробовал, конечно...(печально) Я обшарил всю верхнюю палубу, но все оказалось напрасно - его тут нет!
-	B_LogEntry(TOPIC_MISSMYGOLD,"Я спросил Торлофа про его компас. Кажется, он очень расстроен по поводу этой пропажи. Он обыскал всю верхнюю палубу корабля, но так и не нашел его.");
+	AI_Output(self,other, " DIA_Torlof_LI_MissCompas_01_04 " );	// It must have fallen out of my pocket during the storm.
+	AI_Output(self,other, " DIA_Torlof_LI_MissCompas_01_05 " );	// But I'm not exactly sure...
+	AI_Output(self,other, " DIA_Torlof_LI_MissCompas_01_07 " );	// Eh... (sadly) This little thing was really dear to me - a keepsake from an old friend of mine.
+	AI_Output(self,other, " DIA_Torlof_LI_MissCompas_01_08 " );	// I always thought it brought me luck, and trust me, it did!
+	AI_Output(self,other, " DIA_Torlof_LI_MissCompas_01_09 " );	// But now I understand that this very luck turned away from me this time.
+	AI_Output(other,self, " DIA_Torlof_LI_MissCompas_01_10 " );	// Have you tried searching for it?
+	AI_Output(self,other, " DIA_Torlof_LI_MissCompas_01_11 " );	// I tried, of course... (sadly) I searched the entire upper deck, but it turned out to be in vain - he's not here!
+	B_LogEntry( TOPIC_MISSMYGOLD , " I asked Torlof about his compass. He seems very upset about this loss. He searched the entire upper deck of the ship, but could not find it. " );
 };
 
 
@@ -838,7 +839,7 @@ instance DIA_TORLOF_LI_WHEREGOLDDONE(C_Info)
 	condition = dia_torlof_li_wheregolddone_condition;
 	information = dia_torlof_li_wheregolddone_info;
 	permanent = FALSE;
-	description = "Это случаем не твоя вещица?";
+	description = " This isn't your item, is it? " ;
 };
 
 
@@ -853,22 +854,22 @@ func int dia_torlof_li_wheregolddone_condition()
 func void dia_torlof_li_wheregolddone_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Torlof_LI_WhereGoldDone_01_01");	//Это случайно не твой компас?
+	AI_Output(other,self, " DIA_Torlof_LI_WhereGoldDone_01_01 " );	// Is this your compass by any chance?
 	B_GiveInvItems(other,self,itmi_misstorlofthing,1);
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_04");	//(восторженно) Приятель... это же мой компас!
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_05");	//Как тебе удалось его найти?
-	AI_Output(other,self,"DIA_Torlof_LI_WhereGoldDone_01_08");	//Я нашел его там, где раньше лежала куча моего золота.
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_09");	//На что это ты намекаешь, приятель?
-	AI_Output(other,self,"DIA_Torlof_LI_WhereGoldDone_01_12");	//На твоем месте я бы лучше сказал всю правду.
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_13");	//Правду?! Хммм...(растерянно) Но...
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_15");	//Эх, ладно! В общем...(замялся) к большому сожалению многих членов экипажа, его пришлось выкинуть за борт.
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_18");	//А вот так...(серьезно) Корабль дал сильный крен, и если бы мы этого не сделали, то все бы пошли на корм рыбам.
-	AI_Output(other,self,"DIA_Torlof_LI_WhereGoldDone_01_19");	//Вы выбросили все золото?!
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_27");	//Золото дело наживное, и ты еще успеешь стать богатым!
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_28");	//Лучше стоит поблагодарить Инноса за то, что он помог нам всем остаться в живых. Это куда важнее!
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGoldDone_01_04 " );	// (enthusiastic) Buddy... that's my compass!
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGoldDone_01_05 " );	// How did you manage to find it?
+	AI_Output(other,self, " DIA_Torlof_LI_WhereGoldDone_01_08 " );	// I found it where my pile of gold used to be.
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGoldDone_01_09 " );	// What are you implying, mate?
+	AI_Output(other,self, " DIA_Torlof_LI_WhereGoldDone_01_12 " );	// If I were you, I'd rather tell the whole truth.
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGoldDone_01_13 " );	// Truth?! Hmmm... (confused) But...
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGoldDone_01_15 " );	// Oh, okay! In general ... (he hesitated) to the great regret of many crew members, he had to be thrown overboard.
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGoldDone_01_18 " );	// And like this... (seriously) The ship rolled a lot, and if we didn't, then everyone would go to feed the fish.
+	AI_Output(other,self, " DIA_Torlof_LI_WhereGoldDone_01_19 " );	// Did you throw away all the gold?!
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGoldDone_01_27 " );	// Gold can be acquired, and you still have time to become rich!
+	AI_Output(self,other, " DIA_Torlof_LI_WhereGoldDone_01_28 " );	// Better thank Innos for keeping us all alive. This is much more important!
 	MIS_MISSMYGOLD = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_MISSMYGOLD,LOG_SUCCESS);
-	B_LogEntry(TOPIC_MISSMYGOLD,"Теперь все стало ясно - мое золото просто выкинули за борт во время шторма, поскольку из-за большой загруженности наш корабль дал крен и мог запросто опрокинуться. Сначала парни не хотели говорить мне всю правду, поскольку думали, что я сильно расстроюсь из-за этого. Что ж, они оказались правы, но я как-нибудь переживу эту потерю.");
+	B_LogEntry( TOPIC_MISSMYGOLD , " Now everything became clear - my gold was simply thrown overboard during a storm, because due to the heavy workload, our ship listed and could easily capsize. At first, the guys did not want to tell me the whole truth, because they thought that I was very upset about it. Well, they were right, but I'll get over this loss somehow. " );
 };
 
 
@@ -879,7 +880,7 @@ instance DIA_TORLOF_LI_HALLO(C_Info)
 	condition = dia_torlof_li_hallo_condition;
 	information = dia_torlof_li_hallo_info;
 	permanent = TRUE;
-	description = "Все спокойно?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -893,8 +894,8 @@ func int dia_torlof_li_hallo_condition()
 
 func void dia_torlof_li_hallo_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_Hallo_15_00");	//Все спокойно?
-	AI_Output(self,other,"DIA_Torlof_LI_Hallo_01_01");	//Пока вроде да.
+	AI_Output(other,self, " DIA_Torlof_LI_Hallo_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Torlof_LI_Hallo_01_01 " );	// So far, yes.
 };
 
 
@@ -905,7 +906,7 @@ instance DIA_TORLOF_LI_BRINGFOODDONE(C_Info)
 	condition = dia_torlof_li_bringfooddone_condition;
 	information = dia_torlof_li_bringfooddone_info;
 	permanent = FALSE;
-	description = "Как у нас дела с провиантом?";
+	description = " How are we doing with the provisions? " ;
 };
 
 
@@ -920,20 +921,20 @@ func int dia_torlof_li_bringfooddone_condition()
 func void dia_torlof_li_bringfooddone_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Torlof_LI_BringFoodDone_01_01");	//Как у нас дела с провиантом?
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_02");	//Не очень хорошо. Он понемногу начинает подходить к концу.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_03");	//А почему ты спросил?
-	AI_Output(other,self,"DIA_Torlof_LI_BringFoodDone_01_04");	//Некоторые парни жалуются на то, что ты урезал их дневные нормы еды.
-	AI_Output(other,self,"DIA_Torlof_LI_BringFoodDone_01_05");	//И на мой взгляд, большинству из них эта новость не очень пришлась по душе!
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_06");	//К сожалению, у меня не было другого выхода.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_07");	//Зная аппетиты некоторых наших парней, то у нас бы уже через пару дней ничего не осталось бы.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_08");	//Особенно это касается Горна. Если этого троглодита пустить на камбуз, то он сразу же за один присест изничтожит все наши запасы еды!
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_09");	//И что мы потом будем делать?
-	AI_Output(other,self,"DIA_Torlof_LI_BringFoodDone_01_12");	//Я принес тебе свежего мяса. Тут пять дюжин кусков.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_17");	//Ого! Совсем неплохо. Думаю, такого запаса нам надолго хватит.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_23");	//Сначала сходи на камбуз и хорошенько прожарь все эти куски.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDone_01_24");	//А после этого возвращайся ко мне.
-	B_LogEntry(TOPIC_BRINGFOOD,"Торлоф был удивлен, что мне удалось достать такое количество свежего мяса. Однако брать он его отказался, поскольку ему сейчас некогда всем этим заниматься. Поэтому он попросил меня сходить на камбуз и хорошо прожарить каждый кусок, чтобы они не испортились, а потом уже принести это мясо ему.");
+	AI_Output(other,self, " DIA_Torlof_LI_BringFoodDone_01_01 " );	// How are we doing with provisions?
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_02 " );	// Not very good. It is slowly starting to come to an end.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_03 " );	// Why did you ask?
+	AI_Output(other,self, " DIA_Torlof_LI_BringFoodDone_01_04 " );	// Some guys complain that you cut their daily food allowances.
+	AI_Output(other,self, " DIA_Torlof_LI_BringFoodDone_01_05 " );	// And in my opinion, most of them did not really like this news!
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_06 " );	// Unfortunately, I had no other choice.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_07 " );	// Knowing the appetites of some of our guys, we would have nothing left in a couple of days.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_08 " );	// This is especially true for Gorn. If this troglodyte is allowed into the galley, then it will immediately destroy all our food supplies in one sitting!
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_09 " );	// And what are we going to do next?
+	AI_Output(other,self, " DIA_Torlof_LI_BringFoodDone_01_12 " );	// I brought you fresh meat. There are five dozen pieces.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_17 " );	// Wow! Quite good. I think this stock will last us a long time.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_23 " );	// First, go to the galley and fry all these pieces well.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDone_01_24 " );	// And then come back to me.
+	B_LogEntry( TOPIC_BRINGFOOD , " Torlof was surprised that I managed to get such a quantity of fresh meat. However, he refused to take it, because he now has no time to do all this. So he asked me to go to the galley and fry each piece well so that they do not spoil, and then bring this meat to him. " );
 };
 
 
@@ -944,7 +945,7 @@ instance DIA_TORLOF_LI_BRINGFOODDONEEXT(C_Info)
 	condition = dia_torlof_li_bringfooddoneext_condition;
 	information = dia_torlof_li_bringfooddoneext_info;
 	permanent = FALSE;
-	description = "Я пожарил мясо.";
+	description = " I've fried meat. " ;
 };
 
 
@@ -958,12 +959,12 @@ func int dia_torlof_li_bringfooddoneext_condition()
 
 func void dia_torlof_li_bringfooddoneext_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_BringFoodDoneExt_01_01");	//Я пожарил мясо, как ты и просил.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_01_02");	//Если так, то давай его сюда.
+	AI_Output(other,self, " DIA_Torlof_LI_BringFoodDoneExt_01_01 " );	// I fried the meat like you asked.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_01_02 " );	// If so, then give it here.
 	Info_ClearChoices(dia_torlof_li_bringfooddoneext);
 	if(GORNTELLABOUTMEAT == TRUE)
 	{
-		Info_AddChoice(dia_torlof_li_bringfooddoneext,"(отдать 14 кусков мяса и яблоки)",dia_torlof_li_bringfooddoneext_fifty);
+		Info_AddChoice(dia_torlof_li_bringfooddoneext, " (give 14 meats and apples) " ,dia_torlof_li_bringfooddoneext_fifty);
 	};
 	Info_AddChoice(dia_torlof_li_bringfooddoneext,"Вот, держи.",dia_torlof_li_bringfooddoneext_sixty);
 };
@@ -976,15 +977,15 @@ func void dia_torlof_li_bringfooddoneext_fifty()
 	B_GiveInvItems(other,self,ItFo_Apple,20);
 	Npc_RemoveInvItems(self,ItFoMutton,14);
 	Npc_RemoveInvItems(self,ItFo_Apple,20);
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_01");	//Хммм...(задумчиво) А где же все остальное?!
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_02");	//Мне казалось, что у тебя было тогда больше мяса, чем сейчас.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_13");	//Хотя ладно! Чего уж теперь говорить об этом.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_14");	//Спасибо тебе!
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_01 " );	// Hmmm...(thoughtfully) Where is everything else?!
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_02 " );	// I thought you had more meat then than you do now.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_13 " );	// Alright though! What can we say about it now.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_14 " );	// Thank you!
 	NOTTHANKSTELLALLMEAT = TRUE;
 	Info_ClearChoices(dia_torlof_li_bringfooddoneext);
 	MIS_BRINGFOOD = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_BRINGFOOD,LOG_SUCCESS);
-	B_LogEntry(TOPIC_BRINGFOOD,"Я отдал Торлофу жареное мясо, правда при этом не забыв про просьбу Горна. Торлоф слегка расстроился, поскольку хотел немного увеличить суточный рацион для других парней. Но теперь это уже не имеет значения.");
+	B_LogEntry( TOPIC_BRINGFOOD , " I gave Torlof the fried meat, but I didn't forget Gorn's request. Torlof was a little upset, because he wanted to increase the daily ration for the other guys a little. But now it doesn't matter anymore. " );
 };
 
 func void dia_torlof_li_bringfooddoneext_sixty()
@@ -995,15 +996,15 @@ func void dia_torlof_li_bringfooddoneext_sixty()
 	B_GiveInvItems(other,self,ItFo_Apple,20);
 	Npc_RemoveInvItems(self,ItFoMutton,24);
 	Npc_RemoveInvItems(self,ItFo_Apple,20);
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_01");	//Отлично! Теперь-то у парней уж точно будет чем подкрепиться в ближайшие дни.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_02");	//И к тому же я смогу даже немного увеличить суточный рацион для всех членов нашего экипажа.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_03");	//Наверняка после нескольких дней небольшой голодовки для них это будет хорошей новостью.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_04");	//И все это благодаря тебе, приятель!
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_01 " );	// Great! Now the guys will certainly have something to eat in the coming days.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_02 " );	// And besides, I can even slightly increase the daily ration for all members of our crew.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_03 " );	// Surely, after a few days of a little hunger strike, this will be good news for them.
+	AI_Output(self,other, " DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_04 " );	// And it's all thanks to you, mate!
 	Info_ClearChoices(dia_torlof_li_bringfooddoneext);
 	THANKSTELLALLMEAT = TRUE;
 	MIS_BRINGFOOD = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_BRINGFOOD,LOG_SUCCESS);
-	B_LogEntry(TOPIC_BRINGFOOD,"Я отдал Торлофу все жареное мясо, и теперь он сможет немного увеличить суточный рацион для всех членов экипажа.");
+	B_LogEntry( TOPIC_BRINGFOOD , " I gave Torlof all the grilled meat, and now he can increase the daily ration for all crew members a little. " );
 };
 
 
@@ -1014,7 +1015,7 @@ instance DIA_TORLOF_LI_FINDMAGICORECAVE(C_Info)
 	condition = dia_torlof_li_findmagicorecave_condition;
 	information = dia_torlof_li_findmagicorecave_info;
 	permanent = FALSE;
-	description = "У меня есть интересные новости.";
+	description = " I have some interesting news. " ;
 };
 
 
@@ -1028,39 +1029,39 @@ func int dia_torlof_li_findmagicorecave_condition()
 
 func void dia_torlof_li_findmagicorecave_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_01");	//У меня есть интересные новости.
+	AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCave_01_01 " );	// I have some interesting news.
 	if((FINDLIORE_CAVE_01 == TRUE) && (FINDLIORE_CAVE_02 == TRUE))
 	{
 		B_GivePlayerXP(1000);
-		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_03");	//Я обнаружил несколько пещер с огромными залежами магической руды.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_04");	//(удивленно) Правда?!
-		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_05");	//Думаю, весь этот остров до основания забит ею.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_06");	//Хммм...(задумчиво) Что же, это действительно довольно необычные новости.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_07");	//Залежи магической руды - очень большая редкость! Тем более, как ты говоришь, в таких огромных размерах.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_08");	//Насколько я знаю, до последнего времени такие запасы были только в Долине Рудников, пока туда не пришли орки.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_09");	//Так что если ты прав - это поистине великое открытие!
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_10");	//Хотя мне все равно до сих пор в это как-то мало верится...(с сомнением) Скорее всего, ты перепутал магическую руду просто с обычными камнями.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_16");	//Принеси мне небольшой кусок той руды, что ты обнаружил на этом острове.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_17");	//Думаю, этого будет вполне достаточно, чтобы полностью удостовериться в твоих словах.
-		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_18");	//Хорошо. Я принесу руду.
+		AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCave_01_03 " );	// I discovered several caves with huge deposits of magical ores.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_04 " );	// (surprised) Really?!
+		AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCave_01_05 " );	// I think this whole island is crammed to the ground with it.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_06 " );	// Hmmm...(thoughtfully) Well, that's actually pretty unusual news.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_07 " );	// Magical ore deposits are very rare! Especially, as you say, in such huge sizes.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_08 " );	// As far as I know, until recently, such reserves were only in the Valley of Mines, until the orcs came there.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_09 " );	// So if you're right - this is truly a great discovery!
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_10 " );	// Though I still don't really believe it... (doubtfully) You probably confused magic ore with ordinary stones.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_16 " );	// Bring me a small piece of the ore you found on this island.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_17 " );	// I think this will be quite enough to fully verify your words.
+		AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCave_01_18 " );	// Good. I'll bring the ore.
 		LITESTOK = TRUE;
-		B_LogEntry(TOPIC_FINDMAGICORECAVE,"Я рассказал Торлофу о том, что обнаружил на острове несколько пещер с огромными залежами магической руды. Он был удивлен, и в качестве доказательства моих слов попросил меня принести ему небольшой кусок этой породы.");
+		) ; _ _ _ _ _
 	}
 	else
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_19");	//В одной из пещер на этом острове я обнаружил большие залежи магической руды.
-		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_20");	//Возможно, на этом острове скрываются еще большие запасы!
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_21");	//Хммм...(задумчиво) Что же, это действительно довольно необычные новости.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_22");	//Встретить залежи магической руды - очень большая удача! Тем более, как ты говоришь, в таких больших размерах.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_23");	//Насколько я знаю, до последнего времени такие запасы были только в Долине Рудников, пока туда не пришли орки.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_24");	//Так что если ты окажешься прав - это будет поистине великое открытие!
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_25");	//Хотя мне в это как-то мало верится...(с сомнением) Скорее всего, ты перепутал руду просто с обычными камнями.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_26");	//К тому же найденные тобой залежи в этой пещере еще не говорят о том, что здесь ее может быть много.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_29");	//На твоем месте я бы попробовал более тщательно обследовать этот остров.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_30");	//Возможно, это бы немного прояснило ситуацию с найденной тобою рудой.
+		AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCave_01_19 " );	// In one of the caves on this island, I discovered large deposits of magical ore.
+		AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCave_01_20 " );	// There might be even more hoards lurking on this island!
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_21 " );	// Hmmm...(thoughtfully) Well, that's actually pretty unusual news.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_22 " );	// Encountering a deposit of magical ore is very lucky! Especially, as you say, in such large sizes.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_23 " );	// As far as I know, until recently, such reserves were only in the Valley of Mines, until the orcs came there.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_24 " );	// So if you're right, it will be a truly great discovery!
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_25 " );	// Though I don't really believe it... (doubtfully) You probably confused the ore with ordinary stones.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_26 " );	// In addition, the deposits you found in this cave do not yet indicate that there can be a lot of it here.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_29 " );	// If I were you, I'd try to explore this island more carefully.
+		AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCave_01_30 " );	// Maybe this would clear things up a bit with the ore you found.
 		LIBEFORETESTOK = TRUE;
-		B_LogEntry(TOPIC_FINDMAGICORECAVE,"Я сообщил Торлофу о том, что обнаружил на острове пещеру с большими залежами магической руды. Он засомневался в моих словах и попросил меня тщательнее обследовать остров, чтобы найти еще доказательства присутствия здесь залежей этой породы.");
+		B_LogEntry( TOPIC_FINDMAGICORECAVE , " I told Torlof that I discovered a cave with large deposits of magical ore on the island. He doubted my words and asked me to more carefully examine the island in order to find more evidence of the presence of this rock here. " );
 	};
 };
 
@@ -1072,7 +1073,7 @@ instance DIA_TORLOF_LI_FINDMAGICORECAVEPROGRESS(C_Info)
 	condition = dia_torlof_li_findmagicorecaveprogress_condition;
 	information = dia_torlof_li_findmagicorecaveprogress_info;
 	permanent = FALSE;
-	description = "Я обследовал остров.";
+	description = " I've explored the island. " ;
 };
 
 
@@ -1087,15 +1088,15 @@ func int dia_torlof_li_findmagicorecaveprogress_condition()
 func void dia_torlof_li_findmagicorecaveprogress_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCaveProgress_01_01");	//Я обследовал остров...
+	AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCaveProgress_01_01 " );	// I explored the island...
 	AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCaveProgress_01_02");	//И?!
-	AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCaveProgress_01_03");	//...и нашел еще одну пещеру. В ней руды еще больше, чем в первой!
-	AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCaveProgress_01_06");	//Мне до сих пор не верится в то, что нам так повезло!
-	AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCaveProgress_01_12");	//Принеси мне небольшой кусок той руды, что ты обнаружил на этом острове.
-	AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCaveProgress_01_13");	//Думаю, этого будет вполне достаточно, чтобы полностью удостовериться в твоих словах.
-	AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCaveProgress_01_14");	//Хорошо. Я принесу руду.
+	AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCaveProgress_01_03 " );	// ...and found another cave. It contains even more ore than the first one!
+	AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCaveProgress_01_06 " );	// I still can't believe we're so lucky!
+	AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCaveProgress_01_12 " );	// Bring me a small piece of the ore you found on this island.
+	AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCaveProgress_01_13 " );	// I think this will be quite enough to fully verify your words.
+	AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCaveProgress_01_14 " );	// Good. I'll bring the ore.
 	LITESTOK = TRUE;
-	B_LogEntry(TOPIC_FINDMAGICORECAVE,"Я сказал Торлофу, что нашел еще одну пещеру с залежами магической руды. Он попросил меня принести ему небольшой кусок этой породы, чтобы окончательно удостовериться в правдивости моих слов.");
+	B_LogEntry( TOPIC_FINDMAGICORECAVE , " I told Torlof that I had found another magical ore cave. He asked me to bring him a small piece of this rock to make sure I was right. " );
 };
 
 
@@ -1106,7 +1107,7 @@ instance DIA_TORLOF_LI_FINDMAGICORECAVEDONE(C_Info)
 	condition = dia_torlof_li_findmagicorecavedone_condition;
 	information = dia_torlof_li_findmagicorecavedone_info;
 	permanent = FALSE;
-	description = "Я принес тебе кусок той руды.";
+	description = " I brought you a piece of that ore. " ;
 };
 
 
@@ -1121,14 +1122,14 @@ func int dia_torlof_li_findmagicorecavedone_condition()
 func void dia_torlof_li_findmagicorecavedone_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCaveDone_01_01");	//Я принес тебе кусок той руды.
-	AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCaveDone_01_02");	//Отлично! (ехидно) Покажи мне его.
+	AI_Output(other,self, " DIA_Torlof_LI_FindMagicOreCaveDone_01_01 " );	// I brought you a piece of that ore.
+	AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCaveDone_01_02 " );	// Great! (sarcastically) Show it to me.
 	B_GiveInvItems(other,self,itmi_testnugget,1);
-	AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCaveDone_01_04");	//Хммм...(очень удивленно) Да, парень - похоже, ты был прав!
-	AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCaveDone_01_05");	//Это действительно магическая руда.
+	AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCaveDone_01_04 " );	// Hmmm...(very surprised) Yeah man - looks like you were right!
+	AI_Output(self,other, " DIA_Torlof_LI_FindMagicOreCaveDone_01_05 " );	// This is indeed a magical ore.
 	MIS_FINDMAGICORECAVE = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_FINDMAGICORECAVE,LOG_SUCCESS);
-	B_LogEntry(TOPIC_FINDMAGICORECAVE,"Я принес Торлофу кусок руды, отколотого мною от магической породы. После этого он не стал сомневаться в моих словах.");
+	B_LogEntry( TOPIC_FINDMAGICORECAVE , " I brought Torlof a piece of ore that I chipped from magical rock. After that, he did not doubt my words. " );
 };
 
 
@@ -1139,7 +1140,7 @@ instance DIA_TORLOF_LI_CHANGECOURSE(C_Info)
 	condition = dia_torlof_li_changecourse_condition;
 	information = dia_torlof_li_changecourse_info;
 	permanent = FALSE;
-	description = "И что мы теперь будем делать?";
+	description = " So what are we going to do now? " ;
 };
 
 
@@ -1153,69 +1154,69 @@ func int dia_torlof_li_changecourse_condition()
 
 func void dia_torlof_li_changecourse_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_01_01");	//И что мы теперь будем делать?
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_02");	//Хммм...(растерянно) Понятия не имею!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_03");	//Конечно, было бы неплохо прибрать всю эту руду к рукам.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_04");	//На материке за нее мы бы смогли выручить просто огромную кучу золота!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_07");	//Но наш корабль и так набит под завязку. А сама руда весит немало.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_08");	//К тому же из нас навряд ли получаться хорошие рудокопы.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_09");	//У тебя есть какие-нибудь идеи?
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_01_01 " );	// And what are we going to do now?
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_01_02 " );	// Hmmm...(confused) I have no idea!
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_01_03 " );	// Of course, it would be nice to get our hands on all this ore.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_01_04 " );	// On the mainland, we could get a huge pile of gold for it!
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_01_07 " );	// But our ship is already packed to capacity. And the ore itself weighs a lot.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_01_08 " );	// Besides, we don't make good miners.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_01_09 " );	// Do you have any ideas?
 	Info_ClearChoices(dia_torlof_li_changecourse);
 	if((other.guild == GIL_MIL) || (other.guild == GIL_PAL) || (other.guild == GIL_KDF) || (other.guild == GIL_KDW))
 	{
-		Info_AddChoice(dia_torlof_li_changecourse,"Думаю, нам стоит сообщить об этой руде лорду Хагену.",dia_torlof_li_changecourse_paladin);
+		Info_AddChoice(dia_torlof_li_changecourse, " I think we should report this ore to Lord Hagen. " ,dia_torlof_li_changecourse_paladin);
 	};
-	Info_AddChoice(dia_torlof_li_changecourse,"Мы можем кому-нибудь продать этот остров вместе с рудой!",dia_torlof_li_changecourse_sell);
-	Info_AddChoice(dia_torlof_li_changecourse,"Давай останемся на острове и начнем добывать эту руду.",dia_torlof_li_changecourse_here);
+	Info_AddChoice(dia_torlof_li_changecourse, " We can sell this island along with the ore to someone! " ,dia_torlof_li_changecourse_sell);
+	Info_AddChoice(dia_torlof_li_changecourse, " Let's stay on the island and start mining this ore. " ,dia_torlof_li_changecourse_here);
 };
 
 func void dia_torlof_li_changecourse_paladin()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_01");	//Думаю, нам стоит сообщить об этой руде лорду Хагену.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_02");	//Что? (озадаченно) Отдать эту руду паладинам?
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_03");	//Без нее у них нет ни единого шанса выиграть эту войну.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_04");	//И что с того?! Возможно, они уже ее и так проиграли!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_07");	//Эх...(с досадой) Ладно, пусть будет по-твоему.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_08");	//Правда, нам тогда придется вернуться обратно в Хоринис.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_09");	//Не думаю, что большинству парней придется по душе эта идея...(с сомнением)
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_10");	//Я попробую их уговорить.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_11");	//Как скажешь! Тогда дай знать, если тебе это удастся...(ехидно)
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_Paladin_01_01 " );	// I think we should report this ore to Lord Hagen.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Paladin_01_02 " );	// What? (puzzled) Give this ore to the paladins?
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_Paladin_01_03 " );	// Without her, they have no chance of winning this war.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Paladin_01_04 " );	// So what?! Perhaps they have already lost it!
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Paladin_01_07 " );	// Eh... (with annoyance) Okay, let it be your way.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Paladin_01_08 " );	// True, then we will have to return back to Khorinis.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Paladin_01_09 " );	// I don't think most guys would like this idea... (doubtfully)
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_Paladin_01_10 " );	// I'll try to persuade them.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Paladin_01_11 " );	// As you say! Then let me know if you succeed...(snidely)
 	MIS_CHANGECOURSE = LOG_Running;
 	Log_CreateTopic(TOPIC_CHANGECOURSE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CHANGECOURSE,LOG_Running);
-	B_LogEntry(TOPIC_CHANGECOURSE,"Теперь нам необходимо решить, что делать с той рудой, которую мы нашли на этом загадочном острове. Я предложил Торлофу вернуться в Хоринис и рассказать о ней паладинам, но ему эта идея не пришлась по душе. Посмотрим, что скажут остальные. А там уж, как большинство из них решит - так и будет.");
+	B_LogEntry( TOPIC_CHANGECOURSE , " Now we need to decide what to do with the ore we found on this mysterious island. I suggested that Torlof return to Khorinis and tell the paladins about it, but he did not like this idea. Let's see what the others say And there, as most of them decide, it will be so. " );
 	Info_ClearChoices(dia_torlof_li_changecourse);
 };
 
 func void dia_torlof_li_changecourse_sell()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Sell_01_01");	//Мы можем продать этот остров вместе с рудой!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_02");	//Интересно...(с сомнением) И кто же его у нас купит?
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Sell_01_04");	//Может быть, паладины?
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_05");	//Хммм...(задумчиво) А что, идея совсем неплоха!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_06");	//Учитывая их ситуацию, они наверняка с радостью ухватятся за это предложение.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_07");	//Кто из паладинов сможет принять наши условия?
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Sell_01_08");	//Возможно, нам стоит обратится с этим к лорду Хагену.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_10");	//Скорее всего, ты прав. После того, что ты сделал - в этом можно точно не сомневаться!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_11");	//Правда тогда нам придется вернуться обратно в Хоринис.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_12");	//Не думаю, что большинству парней придется по душе эта идея...(с сомнением)
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Sell_01_13");	//Я попробую их уговорить.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_14");	//Ладно! Тогда дай знать, если тебе это удастся...(ехидно)
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_Sell_01_01 " );	// We can sell this island along with the ore!
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Sell_01_02 " );	// Interesting... (doubtfully) And who will buy it from us?
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_Sell_01_04 " );	// Maybe paladins?
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Sell_01_05 " );	// Hmmm... (thoughtfully) Well, the idea is not bad at all!
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Sell_01_06 " );	// Given their situation, they'll probably jump at this offer happily.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Sell_01_07 " );	// Which paladin will be able to accept our terms?
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_Sell_01_08 " );	// Perhaps we should take this to Lord Hagen.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Sell_01_10 " );	// You're probably right. After what you did - you can definitely not doubt it!
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Sell_01_11 " );	// True, then we will have to return back to Khorinis.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Sell_01_12 " );	// I don't think most guys would like this idea... (doubtfully)
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_Sell_01_13 " );	// I'll try to persuade them.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Sell_01_14 " );	// Okay! Then let me know if you succeed...(snidely)
 	MIS_CHANGECOURSE = LOG_Running;
 	Log_CreateTopic(TOPIC_CHANGECOURSE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CHANGECOURSE,LOG_Running);
-	B_LogEntry(TOPIC_CHANGECOURSE,"Теперь нам необходимо решить, что делать с той рудой, которую мы нашли на этом загадочном острове. Я подкинул Торлофу идею, что можно было бы продать эту руду паладинам. Она пришлась ему по душе. Правда для этого нам придется вернуться в Хоринис, поэтому сперва надо посоветоваться и узнать мнение других членов нашей команды. А там уж, как большинство из них решит - так и будет.");
+	B_LogEntry( TOPIC_CHANGECOURSE , " Now we need to decide what to do with the ore we found on this mysterious island. I gave Torlof the idea that we could sell this ore to the paladins. He liked it. However, for this we will have to return to Khorinis, so first we need to consult and find out the opinion of other members of our team. And then, as most of them decide, it will be so. " );
 	Info_ClearChoices(dia_torlof_li_changecourse);
 };
 
 func void dia_torlof_li_changecourse_here()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Here_01_01");	//Давай останемся на острове и будем добывать руду.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_02");	//Хммм...(задумчиво) Не думаю, что это хорошая идея..
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_05");	//На то, чтобы добыть более или менее достаточное количество руды, потребуются годы. Если не больше!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_06");	//К тому же я не собираюсь проводить остаток своей жизни на этом поганом островке.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_07");	//(ворчливо) Он мне и так уже порядком поднадоел!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_08");	//Так что будет лучше, если ты выбросишь эту идею из своей головы.
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourse_Here_01_01 " );	// Let's stay on the island and mine.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Here_01_02 " );	// Hmmm...(thoughtfully) I don't think that's a good idea..
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Here_01_05 " );	// It will take years to get more or less enough ore. If not more!
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Here_01_06 " );	// Besides, I'm not going to spend the rest of my life on this rotten island.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Here_01_07 " );	// (grouchily) I'm already getting fed up with him!
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourse_Here_01_08 " );	// So it's best if you get that idea out of your head.
 };
 
 
@@ -1226,7 +1227,7 @@ instance DIA_TORLOF_LI_CHANGECOURSEDONE(C_Info)
 	condition = dia_torlof_li_changecoursedone_condition;
 	information = dia_torlof_li_changecoursedone_info;
 	permanent = FALSE;
-	description = "Я поговорил со всеми парнями.";
+	description = " I've talked to all the guys. " ;
 };
 
 
@@ -1240,33 +1241,33 @@ func int dia_torlof_li_changecoursedone_condition()
 
 func void dia_torlof_li_changecoursedone_info()
 {
-	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourseDone_01_01");	//Я поговорил со всеми парнями.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_02");	//(с интересом) И что они сказали?
+	AI_Output(other,self, " DIA_Torlof_LI_ChangeCourseDone_01_01 " );	// I talked to all the guys.
+	AI_Output(self,other, " DIA_Torlof_LI_ChangeCourseDone_01_02 " );	// (with interest) And what did they say?
 	if(CREWAGREEAWAYBACKPAL > CREWAGREEAWAYBACKSELL)
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self,"DIA_Torlof_LI_ChangeCourseDone_01_03");	//Большинство из них согласно плыть в Хоринис, чтобы помочь паладинам.
-		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_05");	//Ну ладно. Если так решило большинство...
-		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_06");	//Остается только надеяться, что лорду Хагену и его людям все это действительно поможет.
-		B_LogEntry(TOPIC_CHANGECOURSE,"В итоге, с учетом мнения большинства членов команды, было решено отправиться обратно в Хоринис, чтобы сообщить паладинам о найденной нами на острове магической руде.");
+		AI_Output(other,self, " DIA_Torlof_LI_ChangeCourseDone_01_03 " );	// Most of them agree to sail to Khorinis to help the paladins.
+		AI_Output(self,other, " DIA_Torlof_LI_ChangeCourseDone_01_05 " );	// Okay. If the majority decides so...
+		AI_Output(self,other, " DIA_Torlof_LI_ChangeCourseDone_01_06 " );	// One can only hope that Lord Hagen and his people will really benefit from all this.
+		B_LogEntry( TOPIC_CHANGECOURSE , " As a result, taking into account the opinion of the majority of the team members, it was decided to go back to Khorinis to inform the paladins about the magic ore we found on the island. " );
 		LIGOFORFREE = TRUE;
 	}
 	else if(CREWAGREEAWAYBACKPAL < CREWAGREEAWAYBACKSELL)
 	{
 		B_GivePlayerXP(450);
-		AI_Output(other,self,"DIA_Torlof_LI_ChangeCourseDone_01_10");	//Большинству из них пришлась по вкусу идея потребовать с паладинов приличную сумму золота за найденную нами руду.
-		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_12");	//Иного я и не ожидал!
-		B_LogEntry(TOPIC_CHANGECOURSE,"Большая часть парней одобрила идею стребовать с паладинов приличную сумму за руду. Так что наш курс лежит обратно на Хоринис.");
+		AI_Output(other,self, " DIA_Torlof_LI_ChangeCourseDone_01_10 " );	// Most of them liked the idea of ​​demanding a decent amount of gold from the paladins for the ore we found.
+		AI_Output(self,other, " DIA_Torlof_LI_ChangeCourseDone_01_12 " );	// I didn't expect anything else!
+		B_LogEntry( TOPIC_CHANGECOURSE , " Most of the guys approved of charging paladins for a decent amount of ore. So our course is back to Khorinis. " );
 		LIGOFORGOLD = TRUE;
 	}
 	else
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self,"DIA_Torlof_LI_ChangeCourseDone_01_16");	//Мнения разделились! Половина за то, чтобы помочь паладинам - остальные против.
-		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_17");	//Хммм...(задумчиво) Непростая ситуация!
-		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_19");	//В любом случае нам, наверное, все-таки стоит вернуться на остров!
-		AI_Output(other,self,"DIA_Torlof_LI_ChangeCourseDone_01_20");	//Хорошо. Так и сделаем.
-		B_LogEntry(TOPIC_CHANGECOURSE,"Мнения команды разделились. Половина выступила за то, чтобы помочь паладинам - остальные против. Но несмотря на это, мы с Торлофом приняли решение вернуться обратно в Хоринис. А там уже решить, как поступить с найденной на острове рудой.");
+		AI_Output(other,self, " DIA_Torlof_LI_ChangeCourseDone_01_16 " );	// Opinions are divided! Half for helping the paladins - the rest against.
+		AI_Output(self,other, " DIA_Torlof_LI_ChangeCourseDone_01_17 " );	// Hmmm... (thoughtfully) Not an easy situation!
+		AI_Output(self,other, " DIA_Torlof_LI_ChangeCourseDone_01_19 " );	// In any case, we should probably return to the island after all!
+		AI_Output(other,self, " DIA_Torlof_LI_ChangeCourseDone_01_20 " );	// Good. So let's do it.
+		B_LogEntry( TOPIC_CHANGECOURSE , " The opinions of the team were divided. Half were in favor of helping the paladins - the rest were against. But despite this, Torlof and I decided to return back to Khorinis. And then decide what to do with the ore found on the island. " );
 		LIGOFORUNKNOWN = TRUE;
 	};
 	MIS_CHANGECOURSE = LOG_SUCCESS;
