@@ -1,5 +1,6 @@
 
-instance DIA_Gerbrandt_EXIT(C_Info)
+
+instance DIA_Gerbrandt_EXIT (C_Info)
 {
 	npc = VLK_403_Gerbrandt;
 	nr = 999;
@@ -33,14 +34,14 @@ func void DIA_Gerbrandt_EXIT_Info()
 	AI_SetWalkMode(self,NPC_RUN);
 };
 
-instance DIA_Gerbrandt_Hello(C_Info)
+instance DIA_Gerbrandt_Hello (C_Info)
 {
 	npc = VLK_403_Gerbrandt;
 	nr = 5;
 	condition = DIA_Gerbrandt_Hello_Condition;
 	information = DIA_Gerbrandt_Hello_Info;
 	permanent = FALSE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -54,69 +55,69 @@ func int DIA_Gerbrandt_Hello_Condition()
 
 func void DIA_Gerbrandt_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_Hello_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_10_01");	//А ты кто такой? Похоже, ты недавно здесь и понятия не имеешь, с кем имеешь дело.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_10_02");	//Меня зовут Гербрандт. А для тебя я мистер Гербрандт. Понял?
+	AI_Output(other,self, " DIA_Gerbrandt_Hello_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_10_01 " );	// Who are you? Looks like you're new here and have no idea who you're dealing with.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_10_02 " );	// My name is Gerbrandt. And for you, I'm Mr. Gerbrandt. Understood?
 	Info_ClearChoices(DIA_Gerbrandt_Hello);
-	Info_AddChoice(DIA_Gerbrandt_Hello,"Я понял, Гербрандт.",DIA_Gerbrandt_Hello_No);
-	Info_AddChoice(DIA_Gerbrandt_Hello,"Я понял, мистер Гербрандт.",DIA_Gerbrandt_Hello_Yes);
+	Info_AddChoice(DIA_Gerbrandt_Hello, " I got it, Gerbrandt. " ,DIA_Gerbrandt_Hello_No);
+	Info_AddChoice(DIA_Gerbrandt_Hello, " I got it Mr. Gerbrandt. " ,DIA_Gerbrandt_Hello_Yes);
 };
 
 func void DIA_Gerbrandt_Hello_No()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_Hello_No_15_00");	//Я понял, Гербрандт.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_No_10_01");	//Попридержи язык! Тебе лучше проявлять уважение ко мне, иначе у тебя будут большие проблемы...
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_No_10_02");	//Здесь я вершу закон. Тому, кто создает проблемы, придется держать ответ передо мной. И лучше ему сразу бежать из города со всех ног, потому что после того, как я разберусь с ним, он пожалеет, что попался мне на глаза!
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_No_10_03");	//Большинство людей в порту работает на меня. И если ты ищешь работу, тебе лучше побеспокоиться, чтобы мои воспоминания о тебе были приятными.
+	AI_Output(other,self, " DIA_Gerbrandt_Hello_No_15_00 " );	// I got it, Gerbrandt.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_No_10_01 " );	// Hold your tongue! You better show respect to me or you'll be in big trouble...
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_No_10_02 " );	// This is where I make the law. Whoever creates problems will have to answer to me. And it’s better for him to immediately run out of the city as fast as possible, because after I deal with him, he will regret that he caught my eye!
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_No_10_03 " );	// Most of the people in the port work for me. And if you're looking for a job, you'd better make sure that my memories of you are pleasant.
 	Info_ClearChoices(DIA_Gerbrandt_Hello);
 };
 
 func void DIA_Gerbrandt_Hello_Yes()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_Hello_Yes_15_00");	//Я понял, мистер Гербрандт.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_10_01");	//Ну, по крайней мере, тебе не потребовалось много времени, чтобы понять, куда здесь ветер дует.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_10_02");	//Как только бизнес опять пойдет в гору, у меня наверняка найдется работа для такого смышленого паренька, как ты.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_10_03");	//Из тебя бы получился отличный кладовщик.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_10_04");	//Ты умеешь читать?
+	AI_Output(other,self, " DIA_Gerbrandt_Hello_Yes_15_00 " );	// I understand, Mr. Gerbrandt.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_10_01 " );	// Well, at least it didn't take you long to figure out which way the wind was blowing here.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_10_02 " );	// As soon as business picks up again, I'll probably have a job for a smart kid like you.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_10_03 " );	// You'd make a great storekeeper.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_10_04 " );	// Can you read?
 	Info_ClearChoices(DIA_Gerbrandt_Hello);
-	Info_AddChoice(DIA_Gerbrandt_Hello,"Нет.",DIA_Gerbrandt_Hello_Yes_No);
-	Info_AddChoice(DIA_Gerbrandt_Hello,"Мне не нужна работа.",DIA_Gerbrandt_Hello_NoJob);
-	Info_AddChoice(DIA_Gerbrandt_Hello,"Конечно.",DIA_Gerbrandt_Hello_Yes_Yes);
+	Info_AddChoice(DIA_Gerbrandt_Hello, " Нет. " ,DIA_Gerbrandt_Hello_Yes_No);
+	Info_AddChoice(DIA_Gerbrandt_Hello, " I don't need a job. " ,DIA_Gerbrandt_Hello_NoJob);
+	Info_AddChoice(DIA_Gerbrandt_Hello, " Конечно. " ,DIA_Gerbrandt_Hello_Yes_Yes);
 };
 
 func void DIA_Gerbrandt_Hello_Yes_No()
 {
 	AI_Output(other,self,"DIA_Gerbrandt_Hello_Yes_No_15_00");	//Нет.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_No_10_01");	//Ничего, по крайне мере, ты сможешь переложить несколько мешков с места на место.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_No_10_02");	//И если я буду доволен тобой, возможно, я даже предложу тебе постоянное место. Здесь всегда много работы.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_No_10_03");	//Что ж, тогда я жду тебя у себя, как только к пристани пришвартуется первый торговый корабль.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_No_10_01 " );	// Nothing, at least you can move a few sacks from place to place.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_No_10_02 " );	// And if I'm pleased with you, I might even offer you a permanent position. There is always a lot of work here.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_No_10_03 " );	// Well, then I'll be waiting for you at my place as soon as the first merchant ship docks at the pier.
 	Info_ClearChoices(DIA_Gerbrandt_Hello);
 };
 
 func void DIA_Gerbrandt_Hello_NoJob()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_Hello_NoJob_15_00");	//Мне не нужна работа.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_NoJob_10_01");	//Ты думаешь, ты ужасно крут. Смотри, никто не может получить работу здесь без моего одобрения.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_NoJob_10_02");	//И если ты продолжишь оскорблять меня, ты можешь сразу искать себе соломенный тюфяк с клопами, потому что это будет все, что ты сможешь себе позволить.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_NoJob_10_03");	//Еще придет время, когда ты будешь умолять меня дать тебе работу.
+	AI_Output(other,self, " DIA_Gerbrandt_Hello_NoJob_15_00 " );	// I don't need a job.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_NoJob_10_01 " );	// You think you're awfully cool. Look, no one can get a job here without my approval.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_NoJob_10_02 " );	// And if you continue to insult me, you can immediately look for a straw mattress with bugs, because it will be all you can afford.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_NoJob_10_03 " );	// There will come a time when you will beg me to give you a job.
 	Info_ClearChoices(DIA_Gerbrandt_Hello);
 };
 
 func void DIA_Gerbrandt_Hello_Yes_Yes()
 {
 	AI_Output(other,self,"DIA_Gerbrandt_Hello_Yes_Yes_15_00");	//Конечно.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_Yes_10_01");	//Отлично. В наши времена тяжело найти обученных работников.
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_Yes_10_02");	//Как насчет твоих рекомендаций?
-	AI_Output(other,self,"DIA_Gerbrandt_Hello_Yes_Yes_15_03");	//Рекомендаций?
-	AI_Output(self,other,"DIA_Gerbrandt_Hello_Yes_Yes_10_04");	//Хорошо, я запомню твое лицо. Когда торговля возобновится опять, приходи ко мне. Тогда я дам тебе работу.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_Yes_10_01 " );	// Great. It's hard to find trained workers these days.
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_Yes_10_02 " );	// What about your recommendations?
+	AI_Output(other,self, " DIA_Gerbrandt_Hello_Yes_Yes_15_03 " );	// Recommendations?
+	AI_Output(self,other, " DIA_Gerbrandt_Hello_Yes_Yes_10_04 " );	// Okay, I'll remember your face. When trading resumes again, come to me. Then I'll give you a job.
 	Info_ClearChoices(DIA_Gerbrandt_Hello);
 };
 
 func void B_GErbrandt_PissOff()
 {
-	AI_Output(self,other,"B_Gerbrandt_PissOff_10_00");	//Что это все значит - ты издеваешься надо мной?
-	AI_Output(self,other,"B_Gerbrandt_PissOff_10_01");	//Ты и твой приятель Диего уже и так дел натворили.
-	AI_Output(self,other,"B_Gerbrandt_PissOff_10_02");	//Оставь меня в покое!
+	AI_Output(self,other, " B_Gerbrandt_PissOff_10_00 " );	// What does it all mean - are you kidding me?
+	AI_Output(self,other, " B_Gerbrandt_PissOff_10_01 " );	// You and your buddy Diego are already done.
+	AI_Output(self,other, " B_Gerbrandt_PissOff_10_02 " );	// Leave me alone!
 	if(DIEGO_COMING != TRUE)
 	{
 		AI_StopProcessInfos(self);
@@ -130,20 +131,20 @@ func void B_GErbrandt_PissOff()
 };
 
 
-instance DIA_Gerbrandt_Perm(C_Info)
+instance DIA_Gerbrandt_Perm (C_Info)
 {
 	npc = VLK_403_Gerbrandt;
 	nr = 800;
 	condition = DIA_Gerbrandt_Perm_Condition;
 	information = DIA_Gerbrandt_Perm_Info;
 	permanent = TRUE;
-	description = "Есть новости?";
+	description = " Any news? " ;
 };
 
 
 func int DIA_Gerbrandt_Perm_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gerbrandt_Hello))
+	if ( Npc_KnowsInfo ( other , DIA_Gerbrandt_Hello ))
 	{
 		return TRUE;
 	};
@@ -151,47 +152,47 @@ func int DIA_Gerbrandt_Perm_Condition()
 
 func void DIA_Gerbrandt_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_Perm_15_00");	//Есть новости?
-	if(Kapitel <= 2)
+	AI_Output(other,self, " DIA_Gerbrandt_Perm_15_00 " );	// Any news?
+	if (chapter <=  2 )
 	{
-		if((hero.guild != GIL_KDF) && (hero.guild != GIL_PAL) && (hero.guild != GIL_KDW) && (hero.guild != GIL_KDM))
+		if ((hero.guild !=  GIL_KDF ) && (hero.guild !=  GIL_PAL ) && (hero.guild !=  GIL_KDW ) && (hero.guild !=  GIL_KDM ))
 		{
 			if((MIS_GERBRANDTHELP == LOG_SUCCESS) && (GERBRANDTPISSOFF == FALSE))
 			{
-				AI_Output(self,other,"DIA_Gerbrandt_Perm_10_20");	//Нет. Ничего такого последнее время не происходило.
-				AI_Output(self,other,"DIA_Gerbrandt_Perm_10_21");	//Хорошо, что заглянул! Был рад увидеть тебя.
+				AI_Output(self,other, " DIA_Gerbrandt_Perm_10_20 " );	// No. Nothing like this has happened lately.
+				AI_Output(self,other, " DIA_Gerbrandt_Perm_10_21 " );	// Good thing you looked! Was glad to see you.
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Gerbrandt_Perm_10_01");	//Людям, вроде тебя, нечего делать здесь. Здесь живут порядочные члены общества, а не какие-нибудь бродяги и проходимцы.
-				AI_Output(self,other,"DIA_Gerbrandt_Perm_10_02");	//Если тебе когда-нибудь удастся стать богатым и уважаемым, возможно, тебе будут более рады здесь.
+				AI_Output(self,other, " DIA_Gerbrandt_Perm_10_01 " );	// People like you have nothing to do here. Decent members of society live here, and not some vagabonds and rogues.
+				AI_Output(self,other, " DIA_Gerbrandt_Perm_10_02 " );	// If you ever manage to become rich and respected, perhaps you will be more welcome here.
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Gerbrandt_Perm_10_03");	//Мне не на что жаловаться, о, благородный рыцарь.
+			AI_Output(self,other, " DIA_Gerbrandt_Perm_10_03 " );	// I have nothing to complain about, oh noble knight.
 		};
 	}
-	else if(Kapitel >= 3)
+	else  if (chapter >=  3 )
 	{
 		if(MIS_DiegosResidence != LOG_SUCCESS)
 		{
-			if((hero.guild != GIL_KDF) && (hero.guild != GIL_PAL) && (hero.guild != GIL_KDW) && (hero.guild != GIL_KDM))
+			if ((hero.guild !=  GIL_KDF ) && (hero.guild !=  GIL_PAL ) && (hero.guild !=  GIL_KDW ) && (hero.guild !=  GIL_KDM ))
 			{
 				if((MIS_GERBRANDTHELP == LOG_SUCCESS) && (GERBRANDTPISSOFF == FALSE))
 				{
-					AI_Output(self,other,"DIA_Gerbrandt_Perm_10_22");	//Нет. Ничего такого последнее время не происходило.
-					AI_Output(self,other,"DIA_Gerbrandt_Perm_10_23");	//Хорошо, что заглянул! Был рад увидеть тебя.
+					AI_Output(self,other, " DIA_Gerbrandt_Perm_10_22 " );	// No. Nothing like this has happened lately.
+					AI_Output(self,other, " DIA_Gerbrandt_Perm_10_23 " );	// Good thing you looked! Was glad to see you.
 				}
 				else
 				{
-					AI_Output(self,other,"DIA_Gerbrandt_Perm_10_04");	//Много я видел таких людей, как ты. Вы просто не знаете своего места!
-					AI_Output(self,other,"DIA_Gerbrandt_Perm_10_05");	//Мне стоит поговорить с губернатором об усилении мер безопасности в верхнем квартале.
+					AI_Output(self,other, " DIA_Gerbrandt_Perm_10_04 " );	// I've seen a lot of people like you. You just don't know your place!
+					AI_Output(self,other, " DIA_Gerbrandt_Perm_10_05 " );	// I should talk to the governor about tightening security in the upper block.
 				};
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Gerbrandt_Perm_10_06");	//Это никого не касается кроме меня. Я занят!
+				AI_Output(self,other, " DIA_Gerbrandt_Perm_10_06 " );	// This concerns no one but me. I'm busy!
 			};
 		}
 		else
@@ -202,7 +203,7 @@ func void DIA_Gerbrandt_Perm_Info()
 };
 
 
-instance DIA_GERBRANDT_FUCKOFF(C_Info)
+instance DIA_GERBRANDT_FUCKOFF (C_Info)
 {
 	npc = VLK_403_Gerbrandt;
 	nr = 10;
@@ -229,14 +230,14 @@ func void dia_gerbrandt_fuckoff_info()
 };
 
 
-instance DIA_Gerbrandt_GreetingsFromDiego(C_Info)
+instance DIA_Gerbrandt_GreetingsFromDiego (C_Info)
 {
 	npc = VLK_403_Gerbrandt;
 	nr = 10;
 	condition = DIA_Gerbrandt_GreetingsFromDiego_Condition;
 	information = DIA_Gerbrandt_GreetingsFromDiego_Info;
 	permanent = FALSE;
-	description = "Диего передает тебе привет.";
+	description = " Diego says hello to you. " ;
 };
 
 
@@ -250,18 +251,18 @@ func int DIA_Gerbrandt_GreetingsFromDiego_Condition()
 
 func void DIA_Gerbrandt_GreetingsFromDiego_Info()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_GreetingsFromDiego_15_00");	//Диего передает тебе привет.
-	AI_Output(self,other,"DIA_Gerbrandt_GreetingsFromDiego_10_01");	//(испуганно) Что? Кто? Какой Диего?
-	AI_Output(other,self,"DIA_Gerbrandt_GreetingsFromDiego_15_02");	//Он попросил меня вручить тебе это письмо.
+	AI_Output(other,self, " DIA_Gerbrandt_GreetingsFromDiego_15_00 " );	// Diego says hello to you.
+	AI_Output(self,other, " DIA_Gerbrandt_GreetingsFromDiego_10_01 " );	// (frightened) What? Who? Which Diego?
+	AI_Output(other,self, " DIA_Gerbrandt_GreetingsFromDiego_15_02 " );	// He asked me to give you this letter.
 	B_GiveInvItems(other,self,ItWr_DiegosLetter_MIS,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Gerbrandt_GreetingsFromDiego_10_03");	//(возбужденно) Этого не может быть. Нет. Мне конец!
-	AI_Output(self,other,"DIA_Gerbrandt_GreetingsFromDiego_10_04");	//(в страхе) Он что, уже в городе?
+	AI_Output(self,other, " DIA_Gerbrandt_GreetingsFromDiego_10_03 " );	// (excitedly) It can't be. No. I'm finished!
+	AI_Output(self,other, " DIA_Gerbrandt_GreetingsFromDiego_10_04 " );	// (in fear) Is he already in town?
 	AI_Output(other,self,"DIA_Gerbrandt_GreetingsFromDiego_15_05");	//Кто?
-	AI_Output(self,other,"DIA_Gerbrandt_GreetingsFromDiego_10_06");	//Диего, конечно же!
-	AI_Output(other,self,"DIA_Gerbrandt_GreetingsFromDiego_15_07");	//Да, я должен скоро встретиться с ним.
-	AI_Output(self,other,"DIA_Gerbrandt_GreetingsFromDiego_10_08");	//(в отчаянии, про себя) Это конец! Все пропало!
-	AI_Output(self,other,"DIA_Gerbrandt_GreetingsFromDiego_10_09");	//У меня нет времени, мне нужно уходить отсюда. Быстро. Если он найдет меня здесь, мне конец!
+	AI_Output(self,other, " DIA_Gerbrandt_GreetingsFromDiego_10_06 " );	// Diego, of course!
+	AI_Output(other,self, " DIA_Gerbrandt_GreetingsFromDiego_15_07 " );	// Yes, I should meet him soon.
+	AI_Output(self,other, " DIA_Gerbrandt_GreetingsFromDiego_10_08 " );	// (in desperation, to himself) This is the end! Everything is lost!
+	AI_Output(self,other, " DIA_Gerbrandt_GreetingsFromDiego_10_09 " );	// I don't have time, I have to get out of here. Fast. If he finds me here, I'm done for!
 	MIS_DiegosResidence = LOG_SUCCESS;
 	B_GivePlayerXP(XP_DiegosResidence);
 	DIEGO_COMING = TRUE;
@@ -274,12 +275,12 @@ instance DIA_GERBRANDT_WORKSFOR(C_Info)
 	condition = dia_gerbrandt_worksfor_condition;
 	information = dia_gerbrandt_worksfor_info;
 	permanent = FALSE;
-	description = "У тебя не найдется для меня какой-нибудь работы?";
+	description = " Do you have any work for me to do? " ;
 };
 
 func int dia_gerbrandt_worksfor_condition()
 {
-	if((MIS_TALIASANHELP == LOG_Running) && (MIS_DiegosResidence != LOG_SUCCESS) && Npc_KnowsInfo(other,DIA_Gerbrandt_Hello))
+	if (( MY_TALIASANHELP  == LOG_Running) && (MY_DiegosResidence !=  LOG_SUCCESS ) && Npc_KnowsInfo(other,DIA_Gerbrandt_Hello))
 	{
 		return TRUE;
 	};
@@ -287,76 +288,76 @@ func int dia_gerbrandt_worksfor_condition()
 
 func void dia_gerbrandt_worksfor_info()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_01_00");	//У тебя не найдется для меня какой-нибудь работы?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_01_01");	//И почему же ты решил, что я нуждаюсь в твоих услугах?
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_01_00 " );	// Do you have any work for me?
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_01_01 " );	// And why did you think that I need your services?
 	Info_ClearChoices(dia_gerbrandt_worksfor);
-	Info_AddChoice(dia_gerbrandt_worksfor,"Я просто поинтересовался.",dia_gerbrandt_worksfor_interes);
-	Info_AddChoice(dia_gerbrandt_worksfor,"Думаю, это именно так.",dia_gerbrandt_worksfor_think);
-	Info_AddChoice(dia_gerbrandt_worksfor,"Понятия не имею. А разве нет?",dia_gerbrandt_worksfor_dontknow);
-	Info_AddChoice(dia_gerbrandt_worksfor,"Мне очень нужна эта работа.",dia_gerbrandt_worksfor_needwork);
+	Info_AddChoice(dia_gerbrandt_worksfor, " I was just wondering. " ,dia_gerbrandt_worksfor_interes);
+	Info_AddChoice(dia_gerbrandt_worksfor, " I think so. " ,dia_gerbrandt_worksfor_think);
+	Info_AddChoice(dia_gerbrandt_worksfor, " I have no idea. Don't I? " ,dia_gerbrandt_worksfor_dontknow);
+	Info_AddChoice(dia_gerbrandt_worksfor, " I really need this job. " ,dia_gerbrandt_worksfor_needwork);
 };
 
 func void dia_gerbrandt_worksfor_interes()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Interes_01_00");	//Я просто спросил.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Interes_01_02");	//Тогда я тебе просто отвечу: у меня нет для тебя никакой работы.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Interes_01_03");	//Поищи ее где-нибудь в другом месте. Например, в портовом квартале.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Interes_01_04");	//Здесь же такому болвану, как ты, никогда ее не заполучить.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Interes_01_00 " );	// I just asked.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Interes_01_02 " );	// Then I'll just answer you: I don't have any work for you.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Interes_01_03 " );	// Look for it somewhere else. For example, in the port quarter.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Interes_01_04 " );	// Here, a fool like you will never get her.
 	AI_StopProcessInfos(self);
 };
 
 func void dia_gerbrandt_worksfor_dontknow()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_DontKnow_01_00");	//Понятия не имею. А разве нет?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_DontKnow_01_01");	//Что? Ты предлагаешь свои услуги и при этом сам не знаешь, что ты можешь предложить?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_DontKnow_01_02");	//В таком случае я тоже не знаю, что за работу предложить такому идиоту, как ты.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_DontKnow_01_03");	//А теперь будь так добр, исчезни с глаз моих.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_DontKnow_01_00 " );	// I have no idea. Is not it so?
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_DontKnow_01_01 " );	// What? Do you offer your services and at the same time you do not know what you can offer?
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_DontKnow_01_02 " );	// In that case, I don't know what kind of job to offer to an idiot like you either.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_DontKnow_01_03 " );	// And now be so kind as to disappear from my sight.
 	AI_StopProcessInfos(self);
 };
 
 func void dia_gerbrandt_worksfor_needwork()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_NeedWork_01_00");	//Мне очень нужна эта работа.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_NeedWork_01_01");	//Всем нужна работа. Но я не вижу ни одной причины, почему я должен предлагать ее именно тебе.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_NeedWork_01_02");	//Кругом одни болваны, которые только и делают, что пытаются одурачить меня.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_NeedWork_01_00 " );	// I really need this job.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_NeedWork_01_01 " );	// Everyone needs a job. But I don't see any reason why I should offer it to you.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_NeedWork_01_02 " );	// All around are fools who only do what they try to fool me.
 	AI_StopProcessInfos(self);
 };
 
 func void dia_gerbrandt_worksfor_think()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_00");	//Думаю, это именно так.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_02");	//Я подумал, что у такого делового человека, как вы, господин Гербрандт, всегда найдется пара каких-нибудь срочных поручений.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_07");	//А я посмотрю, ты парень не промах!
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_08");	//Может быть, твоя помощь действительно будет к месту...
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_10");	//Хммм... Есть у меня тут одно дельце. Думаю, как раз для тебя.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_11");	//И в чем оно заключается?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_12");	//Ничего особенного. Надо встретиться с одним человеком и просто кое-что ему передать.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_13");	//Что именно я должен ему передать, и кто этот человек?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_14");	//У меня сегодня назначена с ним встреча. Ровно в полночь в таверне 'Мертвая Гарпия'.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_15");	//Ты должен будешь отдать ему этот кошелек с деньгами и это письмо.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_16");	//Как я его узнаю?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_17");	//Поверь мне, это будет не так сложно, как кажется. Кроме этого, есть еще одно условие.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_19");	//Этот человек, с кем ты встретишься, ни при каких обстоятельствах не должен знать о том, что это я послал тебя.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_1A");	//То есть я должен действовать от своего имени?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_1B");	//Да. Он не должен ничего заподозрить.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_22");	//Вот, возьми кошелек...
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_00 " );	// I think it is.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_02 " );	/ / I thought that a businessman like you, Mr. Gerbrandt, always has a couple of some urgent assignments.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_07 " );	// And I'll see, you're a good guy!
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_08 " );	// Maybe your help will really be in place...
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_10 " );	// Hmmm... I have a little business here. I think just for you.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_11 " );	// And what is it?
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_12 " );	// Nothing special. You need to meet with one person and just give him something.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_13 " );	// What exactly should I tell him, and who is this person?
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_14 " );	// I have an appointment with him today. Exactly at midnight in the tavern 'Dead Harpy'.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_15 " );	// You will have to give him this wallet with money and this letter.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_16 " );	// How do I recognize it?
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_17 " );	// Trust me, it won't be as hard as it looks. In addition, there is one more condition.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_19 " );	// This person you will meet must under no circumstances know that I sent you.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_1A " );	// So I have to act on my own behalf?
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_1B " );	// Yes. He shouldn't suspect anything.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_22 " );	// Here, take your wallet...
 	B_GiveInvItems(self,other,itse_gerbrandpocket,1);
 	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_23");	//...и письмо.
 	B_GiveInvItems(self,other,itwr_gerbrandseclet,1);
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_24");	//Не вздумай читать его! И оставь все мысли о том, чтобы присвоить себе мои деньги.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_26");	//Теперь поговорим о твоем гонораре. Думаю, пятиста золотых монет будет вполне достаточно.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_27");	//Деньги меня не интересуют.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_30");	//Тогда чего же ты хочешь?
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_31");	//Мне нужно, чтобы, в свою очередь, ты написал письмо Лариусу, главе города.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_33");	//В нем ты должен хорошо отозваться об одном человеке - Галлахаде.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_36");	//Галлахад? Да, я его хорошо знаю. Не скажу, чтобы мы были с ним друзьями, но и врагами нас назвать трудно.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_37");	//(задумчиво) Значит, ему нужна моя помощь. Видимо, он хочет восстановить свое былое положение в городе...
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_40");	//Хорошо! Выполни все то, что я тебе поручил, - и ты получишь нужное тебе рекомендательное письмо.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_24 " );	// Don't you dare read it! And leave all thoughts of taking my money for yourself.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_26 " );	// Now let's talk about your fee. I think five hundred gold coins will be enough.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_27 " );	// Money doesn't interest me.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_30 " );	// Then what do you want?
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_31 " );	// I need you, in turn, to write a letter to Larius, the head of the city.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksFor_Think_01_33 " );	// In it, you must speak well of one person - Gallahad.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_36 " );	// Gallahad? Yes, I know him well. I won’t say that we were friends with him, but it’s hard to call us enemies either.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_37 " );	// (thoughtfully) So he needs my help. Apparently, he wants to restore his former position in the city...
+	AI_Output(self,other, " DIA_Gerbrandt_WorksFor_Think_01_40 " );	// Good! Do everything that I have instructed you to do, and you will receive the letter of recommendation you need.
 	MIS_GERBRANDT_MEETINTAVERNE_DAY = Wld_GetDay();
 	MIS_GERBRANDTHELP = LOG_Running;
 	Log_CreateTopic(TOPIC_GERBRANDTHELP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GERBRANDTHELP,LOG_Running);
-	B_LogEntry(TOPIC_GERBRANDTHELP,"Гербрандт напишет рекомендательное письмо для Галлахада, если я выполню для него небольшое дельце. Мне необходимо встретиться с одним человеком. Он будет ждать меня после полуночи в таверне 'Мертвая Гарпия'. При встрече мне необходимо передать ему письмо и кошелек с деньгами.");
+	B_LogEntry( TOPIC_GERBRANDTHELP , " Gerbrandt will write a letter of recommendation for Gallahad if I do a little business for him. I need to meet a certain person. money. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -368,7 +369,7 @@ instance DIA_GERBRANDT_WORKSFORDONE(C_Info)
 	condition = dia_gerbrandt_worksfordone_condition;
 	information = dia_gerbrandt_worksfordone_info;
 	permanent = FALSE;
-	description = "По поводу встречи...";
+	description = " About the meeting... " ;
 };
 
 
@@ -382,24 +383,24 @@ func int dia_gerbrandt_worksfordone_condition()
 
 func void dia_gerbrandt_worksfordone_info()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_00");	//По поводу встречи...
+	AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_00 " );	// Regarding the meeting...
 	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_01");	//Да?
 	if(MEETCHIEFKILLERSLAIT == TRUE)
 	{
-		AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_02");	//К сожалению, я опоздал на нее.
-		AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_03");	//(разгневанно) ЧТО?! Никчемный идиот! И как я только мог поручить это дело тебе!..
-		AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_07");	//Надеюсь, хоть сейчас мои деньги и письмо при тебе?
+		AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_02 " );	// Sorry, I missed it.
+		AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_03 " );	// (angrily) WHAT?! Worthless idiot! And how could I entrust this matter to you! ..
+		AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_07 " );	// I hope you still have my money and letter with you?
 		if((Npc_HasItems(other,itse_gerbrandpocket) >= 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) >= 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) >= 1)))
 		{
 			if(Npc_HasItems(other,itwr_gerbrandseclet) >= 1)
 			{
-				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_08");	//Да, вот они.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_09");	//Давай сюда!
+				AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_08 " );	// Yes, here they are.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_09 " );	// Come here!
 				B_GiveInvItems(other,self,itse_gerbrandpocket,1);
 				B_GiveInvItems(other,self,itwr_gerbrandseclet,1);
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_10");	//У тебя хотя бы хватило ума принести мне их обратно.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_13");	//А теперь пошел прочь с глаз моих, недоносок!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_14");	//Убирайся!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_10 " );	// At least you were smart enough to bring them back to me.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_13 " );	// And now get out of my sight, you bastard!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_14 " );	// Get out!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				GERBRANDTPISSOFF = TRUE;
 				B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -407,15 +408,15 @@ func void dia_gerbrandt_worksfordone_info()
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_15");	//Да, вот они.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_16");	//Давай сюда!
+				AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_15 " );	// Yes, here they are.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_16 " );	// Come here!
 				B_GiveInvItems(other,self,itse_gerbrandpocket,1);
 				B_GiveInvItems(other,self,itwr_gerbrandseclet_open,1);
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_17");	//У тебя хотя бы хватило ума принести мне их обратно. (темнеет лицом) Постой...
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_18");	//Ты что, читал мое письмо?!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_20");	//Ах ты ублюдок!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_21");	//Кажется, я предупреждал тебя, чтобы ты не смел этого делать.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_22");	//Теперь ты горько пожалеешь об этом!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_17 " );	// At least you were smart enough to bring them back to me. (fading face) Wait...
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_18 " );	// Did you read my letter?!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_20 " );	// Oh you bastard!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_21 " );	// I think I warned you not to do this.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_22 " );	// Now you will regret it bitterly!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
 				GERBRANDTPISSOFF = TRUE;
@@ -427,12 +428,12 @@ func void dia_gerbrandt_worksfordone_info()
 		{
 			if(Npc_HasItems(other,itwr_gerbrandseclet) >= 1)
 			{
-				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_23");	//У меня осталось только письмо. Вот, возьми его.
+				AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_23 " );	// I only have a letter left. Here, take it.
 				B_GiveInvItems(other,self,itwr_gerbrandseclet,1);
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_24");	//ЧТО?! А где мой кошелек?
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_26");	//Ах ты ублюдок!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_27");	//Ты, значит, решил, что можешь вот так просто присвоить себе то, что принадлежит мне?!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_28");	//Сейчас я тебе покажу, что бывает с теми, кто ворует у меня!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_24 " );	// WHAT?! Where is my wallet?
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_26 " );	// Oh you bastard!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_27 " );	// So you thought you could easily take what belongs to me?!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_28 " );	// Now I'll show you what happens to those who steal from me!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				GERBRANDTPISSOFF = TRUE;
 				B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -441,14 +442,14 @@ func void dia_gerbrandt_worksfordone_info()
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_29");	//У меня осталось только письмо. Вот, возьми его.
+				AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_29 " );	// I only have a letter left. Here, take it.
 				B_GiveInvItems(other,self,itwr_gerbrandseclet_open,1);
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_30");	//ЧТО?! А где мой кошелек?!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_32");	//Ах ты ублюдок!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_33");	//Ты, значит, решил, что можешь вот так просто присвоить себе то, что принадлежит мне?!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_34");	//Постой...(темнеет лицом) Ты что, еще и читал мое письмо?
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_36");	//Кажется, я предупреждал тебя, чтобы ты не смел этого делать.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_37");	//Теперь ты горько пожалеешь об этом!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_30 " );	// WHAT?! Where's my wallet?!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_32 " );	// Oh you bastard!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_33 " );	// So you thought you could easily take what belongs to me?!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_34 " );	// Wait... (darkens) Have you read my letter yet?
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_36 " );	// I think I warned you not to do this.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_37 " );	// Now you will regret it bitterly!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
 				GERBRANDTPISSOFF = TRUE;
@@ -458,12 +459,12 @@ func void dia_gerbrandt_worksfordone_info()
 		}
 		else if((Npc_HasItems(other,itse_gerbrandpocket) >= 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) < 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) < 1)))
 		{
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_38");	//У меня остались только деньги. Вот, возьми их.
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_38 " );	// I only have money left. Here, take them.
 			B_GiveInvItems(other,self,itse_gerbrandpocket,1);
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_39");	//ЧТО?! А где мое письмо?!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_41");	//Ах ты ублюдок!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_42");	//Ты, значит, решил, что можешь вот так просто присвоить себе то, что принадлежит мне?!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_43");	//Как бы не так! Сейчас я тебе покажу, что значит воровать у меня!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_39 " );	// WHAT?! Where is my letter?
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_41 " );	// Oh you bastard!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_42 " );	// So you thought you could easily take what belongs to me?!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_43 " );	// No matter how! Now I'll show you what it means to steal from me!
 			MIS_GERBRANDTHELP = LOG_FAILED;
 			B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
 			GERBRANDTPISSOFF = TRUE;
@@ -472,10 +473,10 @@ func void dia_gerbrandt_worksfordone_info()
 		}
 		else if((Npc_HasItems(other,itse_gerbrandpocket) < 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) < 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) < 1)))
 		{
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_44");	//У меня их нет.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_45");	//ЧТО?! Ах ты ублюдок!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_46");	//Ты, значит, решил, что можешь вот так просто присвоить себе то, что принадлежит мне?!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_47");	//Как бы не так! Сейчас я тебе покажу, что значит воровать у меня!
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_44 " );	// I don't have them.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_45 " );	// WHAT?! Oh you bastard!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_46 " );	// So you thought you could easily take what belongs to me?!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_47 " );	// No matter how! Now I'll show you what it means to steal from me!
 			MIS_GERBRANDTHELP = LOG_FAILED;
 			B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
 			GERBRANDTPISSOFF = TRUE;
@@ -487,24 +488,24 @@ func void dia_gerbrandt_worksfordone_info()
 	{
 		if(MEETCHIEFKILLERSMISSTIME == TRUE)
 		{
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_48");	//Я встретился с тем, с кем ты просил.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_49");	//И как прошла встреча? Ты передал ему мое письмо и кошелек?
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_50");	//К сожалению нет. У меня их не оказалось при себе.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_52");	//ЧТО?! Что ты сказал?!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_53");	//Никчемный идиот! Что ты наделал? Ты запорол все дело!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_54");	//(вне себя) И как я только мог поручить его тебе?!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_59");	//Надеюсь, хоть сейчас мои деньги и письмо при тебе?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_48 " );	// I met with the one you asked for.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_49 " );	// And how was the meeting? Did you give him my letter and purse?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_50 " );	// Unfortunately not. I didn't have them with me.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_52 " );	// WHAT?! What you said?!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_53 " );	// Worthless idiot! What have you done? You screwed up the whole thing!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_54 " );	// (besides himself) And how could I entrust it to you?!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_59 " );	// I hope you still have my money and letter with you?
 			if((Npc_HasItems(other,itse_gerbrandpocket) >= 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) >= 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) >= 1)))
 			{
 				if(Npc_HasItems(other,itwr_gerbrandseclet) >= 1)
 				{
-					AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_60");	//Да, вот они.
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_61");	//Давай сюда!
+					AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_60 " );	// Yes, here they are.
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_61 " );	// Come here!
 					B_GiveInvItems(other,self,itse_gerbrandpocket,1);
 					B_GiveInvItems(other,self,itwr_gerbrandseclet,1);
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_62");	//У тебя хотя бы хватило ума принести мне их обратно!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_65");	//А теперь пошел прочь с глаз моих, недоносок!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_66");	//Убирайся!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_62 " );	// At least you were smart enough to bring them back to me!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_65 " );	// And now get out of my sight, you bastard!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_66 " );	// Get out!
 					MIS_GERBRANDTHELP = LOG_FAILED;
 					GERBRANDTPISSOFF = TRUE;
 					B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -512,15 +513,15 @@ func void dia_gerbrandt_worksfordone_info()
 				}
 				else
 				{
-					AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_67");	//Да, вот они.
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_68");	//Давай сюда!
+					AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_67 " );	// Yes, here they are.
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_68 " );	// Come here!
 					B_GiveInvItems(other,self,itse_gerbrandpocket,1);
 					B_GiveInvItems(other,self,itwr_gerbrandseclet_open,1);
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_69");	//У тебя хотя бы хватило ума принести мне их обратно! (темнеет лицом) Постой...
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_70");	//Ты что, читал мое письмо?!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_72");	//Ах ты ублюдок!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_73");	//Кажется, я предупреждал тебя, чтобы ты не смел этого делать.
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_74");	//Теперь ты горько пожалеешь об этом!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_69 " );	// At least you were smart enough to bring them back to me! (fading face) Wait...
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_70 " );	// Did you read my letter?!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_72 " );	// Oh you bastard!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_73 " );	// I think I warned you not to do this.
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_74 " );	// Now you will regret it bitterly!
 					MIS_GERBRANDTHELP = LOG_FAILED;
 					GERBRANDTPISSOFF = TRUE;
 					B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -532,12 +533,12 @@ func void dia_gerbrandt_worksfordone_info()
 			{
 				if(Npc_HasItems(other,itwr_gerbrandseclet) >= 1)
 				{
-					AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_75");	//У меня осталось только письмо. Вот, возьми его.
+					AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_75 " );	// I only have a letter left. Here, take it.
 					B_GiveInvItems(other,self,itwr_gerbrandseclet,1);
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_76");	//ЧТО?! А где мой кошелек?!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_78");	//Ах ты ублюдок!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_79");	//Ты, значит, решил, что можешь вот так просто присвоить себе то, что принадлежит мне?!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_80");	//Как бы не так! Сейчас я тебе покажу, что бывает с теми, кто ворует у меня!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_76 " );	// WHAT?! Where's my wallet?!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_78 " );	// Oh you bastard!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_79 " );	// So you thought you could easily take what belongs to me?!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_80 " );	// No matter how! Now I'll show you what happens to those who steal from me!
 					MIS_GERBRANDTHELP = LOG_FAILED;
 					B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
 					GERBRANDTPISSOFF = TRUE;
@@ -546,14 +547,14 @@ func void dia_gerbrandt_worksfordone_info()
 				}
 				else
 				{
-					AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_81");	//У меня осталось только письмо. Вот, возьми его.
+					AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_81 " );	// I only have a letter left. Here, take it.
 					B_GiveInvItems(other,self,itwr_gerbrandseclet_open,1);
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_82");	//ЧТО?! А где мой кошелек?!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_84");	//Ах ты ублюдок!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_85");	//Ты, значит, решил, что можешь вот так просто присвоить себе то, что принадлежит мне?!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_86");	//Постой...(темнеет лицом) Ты что, еще и читал мое письмо?!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_88");	//Кажется, я предупреждал тебя, чтобы ты не смел этого делать.
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_89");	//Теперь ты горько пожалеешь об этом!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_82 " );	// WHAT?! Where's my wallet?!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_84 " );	// Oh you bastard!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_85 " );	// So you thought you could easily take what belongs to me?!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_86 " );	// Wait... (face darkens) Have you even read my letter?!
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_88 " );	// I think I warned you not to do this.
+					AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_89 " );	// Now you will regret it bitterly!
 					MIS_GERBRANDTHELP = LOG_FAILED;
 					GERBRANDTPISSOFF = TRUE;
 					B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -563,12 +564,12 @@ func void dia_gerbrandt_worksfordone_info()
 			}
 			else if((Npc_HasItems(other,itse_gerbrandpocket) >= 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) < 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) < 1)))
 			{
-				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_90");	//У меня остались только деньги. Вот, возьми их.
+				AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_90 " );	// I only have money left. Here, take them.
 				B_GiveInvItems(other,self,itse_gerbrandpocket,1);
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_91");	//ЧТО?! А где мое письмо?!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_93");	//Ах ты ублюдок!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_94");	//Ты, значит, решил, что можешь вот так просто присвоить себе то, что принадлежит мне?!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_95");	//Как бы не так! Сейчас я тебе покажу, что значит воровать у меня!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_91 " );	// WHAT?! Where is my letter?
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_93 " );	// Oh you bastard!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_94 " );	// So you thought you could easily take what belongs to me?!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_95 " );	// No matter how! Now I'll show you what it means to steal from me!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
 				GERBRANDTPISSOFF = TRUE;
@@ -577,10 +578,10 @@ func void dia_gerbrandt_worksfordone_info()
 			}
 			else if((Npc_HasItems(other,itse_gerbrandpocket) < 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) < 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) < 1)))
 			{
-				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_96");	//У меня их нет.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_97");	//ЧТО?! Ах ты ублюдок!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_98");	//Ты, значит, решил, что можешь вот так просто присвоить себе то, что принадлежит мне?!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_99");	//Как бы не так! Сейчас я тебе покажу, что значит воровать у меня!
+				AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_01_96 " );	// I don't have them.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_97 " );	// WHAT?! Oh you bastard!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_98 " );	// So you thought you could easily take what belongs to me?!
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_01_99 " );	// No matter how! Now I'll show you what it means to steal from me!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				GERBRANDTPISSOFF = TRUE;
 				B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -591,46 +592,46 @@ func void dia_gerbrandt_worksfordone_info()
 		else if((MEETCHIEFKILLERSOK == TRUE) && (MEETCHIEFKILLERSNOTOK == TRUE) && (MEETCHIEFKILLERSTELLSGER == FALSE))
 		{
 			B_GivePlayerXP(100);
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_02_00");	//Я встретился с тем, с кем ты просил.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_01");	//И как прошла встреча? Ты передал ему мое письмо и кошелек?
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_02_02");	//Да, я передал ему все, о чем ты просил.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_03");	//Отлично! Были проблемы?
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_02_06");	//Кажется, он понял, что я подставное лицо. Мне не удалось обмануть его.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_08");	//ЧТО?! Ты идиот!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_09");	//Надеюсь, ты не назвал моего имени?!
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_02_10");	//Не беспокойся! Этого он не узнал.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_11");	//(с облегчением) Ну, хоть на это у тебя ума хватило!
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_02_14");	//Что насчет письма для Галлахада?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_02_00 " );	// I met with the one you asked for.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_01 " );	// And how was the meeting? Did you give him my letter and purse?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_02_02 " );	// Yes, I gave him everything you asked for.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_03 " );	// Great! I had some problems?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_02_06 " );	// He seems to have figured out that I'm a figurehead. I failed to deceive him.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_08 " );	// WHAT?! You're an idiot!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_09 " );	// I hope you didn't say my name?!
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_02_10 " );	// Don't worry! He did not know this.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_11 " );	// (relieved) Well, at least you had enough sense for that!
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_02_14 " );	// What about a letter for Gallahad?
 			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_15");	//Хммм...(задумался)
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_16");	//Хорошо, так уж и быть. Ты получишь его.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_17");	//Хотя бы за то, что все-таки умеешь держать свой язык за зубами.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_18");	//Вот, возьми - оно тут.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_16 " );	// Okay, so be it. You will get it.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_17 " );	// At least for the fact that you still know how to keep your mouth shut.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_18 " );	// Here, take it - it's here.
 			B_GiveInvItems(self,other,itwr_gerbrantletter,1);
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_19");	//Но на будущее учти, что больше от меня работы ты никогда не получишь!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_02_21");	//А теперь проваливай!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_19 " );	// But for the future, you'll never get another job from me!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_02_21 " );	// Now get out!
 			MIS_GERBRANDTHELP = LOG_SUCCESS;
 			GERBRANDTPISSOFF = TRUE;
 			Log_SetTopicStatus(TOPIC_GERBRANDTHELP,LOG_SUCCESS);
-			B_LogEntry(TOPIC_GERBRANDTHELP,"Гербрандт был вне себя от того, что мне не удалось выполнить часть порученного мне задания. Хотя его немного успокоил тот факт, что его имя осталось загадкой для человека в таверне. Скрепя сердце, он дал мне рекомендательное письмо для Галлахада.");
+			B_LogEntry( TOPIC_GERBRANDTHELP , " Gerbrandt was beside himself with the fact that I had failed to complete part of the task assigned to me. Although he was somewhat relieved by the fact that his name remained a mystery to the man in the tavern. Reluctantly, he gave me a letter of introduction for Gallahad. " );
 			AI_StopProcessInfos(self);
 		}
 		else if((MEETCHIEFKILLERSOK == TRUE) && (MEETCHIEFKILLERSNOTOK == TRUE) && (MEETCHIEFKILLERSTELLSGER == TRUE))
 		{
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_03_00");	//Я встретился с тем, с кем ты просил.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_01");	//И как прошла встреча? Ты передал ему мое письмо и кошелек?
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_03_02");	//Да, я передал ему все, о чем ты просил.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_03");	//Отлично! Были проблемы?
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_03_06");	//Кажется, он понял, что я подставное лицо. Мне не удалось обмануть его.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_08");	//ЧТО?! Ты идиот!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_09");	//Надеюсь, ты не назвал моего имени?!
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_03_10");	//Извини, но он заставил меня сказать это.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_12");	//ЧТО?! (темнеет лицом) Ты заложил меня! О, Иннос!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_13");	//Никчемный идиот! (в панике) Что ты наделал?! О, Иннос.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_14");	//И как я только мог поручить тебе это дело?!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_15");	//Надо было найти кого-нибудь другого - и о чем я только думал?
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_03_18");	//А что насчет письма для Галлахада?
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_19");	//(разгневанно) ЧТО?! И у тебя хватает еще наглости спрашивать меня про это?!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_03_20");	//Пошел прочь с глаз моих, недоносок!
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_03_00 " );	// I met with the one you asked for.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_01 " );	// And how was the meeting? Did you give him my letter and purse?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_03_02 " );	// Yes, I gave him everything you asked for.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_03 " );	// Great! I had some problems?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_03_06 " );	// He seems to have figured out that I'm a figurehead. I failed to deceive him.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_08 " );	// WHAT?! You're an idiot!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_09 " );	// I hope you didn't say my name?!
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_03_10 " );	// Sorry, but he made me say it.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_12 " );	// WHAT?! (face darkens) You nailed me! Oh Innos!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_13 " );	// Worthless idiot! (panicked) What have you done?! Oh Innos.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_14 " );	// And how could I entrust this task to you?!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_15 " );	// I should have found someone else - and what was I thinking?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_03_18 " );	// What about a letter for Gallahad?
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_19 " );	// (angrily) WHAT?! And you still have the audacity to ask me about it?!
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_03_20 " );	// Get out of my sight, you bastard!
 			MIS_GERBRANDTHELP = LOG_FAILED;
 			GERBRANDTPISSOFF = TRUE;
 			B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -639,30 +640,30 @@ func void dia_gerbrandt_worksfordone_info()
 		else if((MEETCHIEFKILLERSOK == TRUE) && (MEETCHIEFKILLERSNOTOK == FALSE) && (MEETCHIEFKILLERSTELLSGER == FALSE))
 		{
 			B_GivePlayerXP(200);
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_04_01");	//Я встретился с тем, с кем ты просил.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_04_02");	//И как прошла встреча? Ты передал ему мое письмо и кошелек?
-			AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_04_03_01");	//Да, я передал ему их.
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_04_03");	//Отлично! Были проблемы?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_04_01 " );	// I met with the one you asked for.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_04_02 " );	// And how was the meeting? Did you give him my letter and purse?
+			AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_04_03_01 " );	// Yes, I gave them to him.
+			AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_04_03 " );	// Great! I had some problems?
 			if(MEETCHIEFKILLERSDANGER == TRUE)
 			{
 				Info_ClearChoices(dia_gerbrandt_worksfordone);
-				Info_AddChoice(dia_gerbrandt_worksfordone,"К сожалению да.",dia_gerbrandt_worksfordone_ok);
+				Info_AddChoice(dia_gerbrandt_worksfordone, " Unfortunately yes. " ,dia_gerbrandt_worksfordone_ok);
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_04_05");	//Никаких! Все прошло как по маслу.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_04_06");	//Ты молодец! Я знал, что на тебя было можно положиться в этом нелегком деле.
-				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_04_08");	//Что насчет письма для Галлахада?
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_04_09");	//Ах да, конечно. Я его уже написал, как мы и договаривались.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_04_10");	//Вот, возьми.
+				AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_04_05 " );	// None! Everything went like clockwork.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_04_06 " );	// You're great! I knew that I could rely on you in this difficult matter.
+				AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_04_08 " );	// What about a letter for Gallahad?
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_04_09 " );	// Oh yes, of course. I already wrote it, as we agreed.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_04_10 " );	// Here, take this.
 				B_GiveInvItems(self,other,itwr_gerbrantletter,1);
 				B_UseItem(other,itwr_gerbrantletter);
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_04_13");	//Да, и хочу сказать еще одну вещь...
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_04_14");	//Если тебе вдруг вновь понадобится работа - то ты всегда можешь смело обращаться ко мне.
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_04_15");	//Ведь такие люди, как ты - на вес золота в наше-то время.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_04_13 " );	// Yes, and I want to say one more thing...
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_04_14 " );	// If you suddenly need a job again - then you can always feel free to contact me.
+				AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_04_15 " );	// After all, people like you are worth their weight in gold in our time.
 				MIS_GERBRANDTHELP = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_GERBRANDTHELP,LOG_SUCCESS);
-				B_LogEntry(TOPIC_GERBRANDTHELP,"Гербрандт был доволен тем, как я справился с его поручением. Он передал мне рекомендательное письмо для Галлахада и также добавил, что он будет рад воспользоваться моими услугами вновь, если представится такое дело.");
+				B_LogEntry( TOPIC_GERBRANDTHELP , " Gerbrandt was pleased with the way I handled his assignment. He gave me a letter of recommendation for Gallahad and also added that he would be happy to use my services again if such a case presented itself. " );
 
 				if((MIS_GERBRANDTHELP == LOG_SUCCESS) && (CHIEFKILLERISDEAD == FALSE) && (STARTKILLERWAY == FALSE) && (STARTKILLERWAY_ANDRE == FALSE))
 				{
@@ -681,25 +682,25 @@ func void dia_gerbrandt_worksfordone_ok()
 	hero.exp = hero.exp + 500;
 	AI_NoticePrint(3000,4098,NAME_ADDON_BRAVEBONUS);
 	BRAVEBONUS = TRUE;
-	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_00");	//К сожалению, да.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_01");	//(встревоженно) Какие?
-	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_02");	//Кажется, он понял, что я подставное лицо. Мне не удалось обмануть его.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_03");	//Он даже угрожал мне расправой, чтобы я назвал твое имя.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_04");	//Но, в конце концов, мы сумели договориться.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_06");	//Так что можешь не волноваться.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_07");	//М-да...(хватаясь за сердце) Ты... ты удивил даже меня!
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_08");	//Если все, что ты рассказал, - правда, то мне действительно не о чем переживать.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_09");	//Ха! А ты молодец! Я знал, что на тебя было можно положиться в этом нелегком деле.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_11");	//Что насчет письма для Галлахада?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_12");	//Ах да, конечно. Я его уже написал, как мы и договаривались.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_13");	//Вот, возьми, - оно твое.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_Ok_04_00 " );	// Unfortunately, yes.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_01 " );	// (alarmed) What?
+	AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_Ok_04_02 " );	// He seems to have figured out that I'm a figurehead. I failed to deceive him.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_Ok_04_03 " );	// He even threatened me with death to tell me your name.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_Ok_04_04 " );	// But, in the end, we managed to agree.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_Ok_04_06 " );	// So don't worry.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_07 " );	// Hmmm... (grabbing his heart) You... you even surprised me!
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_08 " );	// If everything you said is true, then I really have nothing to worry about.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_09 " );	// Ha! Well done! I knew that I could rely on you in this difficult matter.
+	AI_Output(other,self, " DIA_Gerbrandt_WorksForDone_Ok_04_11 " );	// What about a letter for Gallahad?
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_12 " );	// Oh yes, of course. I already wrote it, as we agreed.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_13 " );	// Here, take it - it's yours.
 	B_GiveInvItems(self,other,itwr_gerbrantletter,1);
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_16");	//Да, и хочу сказать еще одну вещь...
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_17");	//Если тебе вдруг вновь понадобится работа, то ты всегда можешь смело обращаться ко мне.
-	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_18");	//Ведь такие люди, как ты, на вес золота в наше-то время.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_16 " );	// Yes, and I want to say one more thing...
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_17 " );	// If you suddenly need a job again, then you can always feel free to contact me.
+	AI_Output(self,other, " DIA_Gerbrandt_WorksForDone_Ok_04_18 " );	// After all, people like you are worth their weight in gold in our time.
 	MIS_GERBRANDTHELP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_GERBRANDTHELP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_GERBRANDTHELP,"Гербрандт был доволен тем, как я справился с его поручением. Особенно его удивило то, что я произвел хорошее впечатление на человека в таверне. Он передал мне рекомендательное письмо для Галлахада и также добавил, что он будет рад воспользоваться моими услугами вновь, если представится такое дело.");
+	B_LogEntry( TOPIC_GERBRANDTHELP , " Gerbrandt was pleased with the way I handled his task. He was especially surprised that I made a good impression on the man in the tavern. He handed me a letter of introduction for Gallahad and also added that he would be happy to use my services again, if such a case presents itself. " );
 
 	if((MIS_GERBRANDTHELP == LOG_SUCCESS) && (CHIEFKILLERISDEAD == FALSE) && (STARTKILLERWAY == FALSE) && (STARTKILLERWAY_ANDRE == FALSE))
 	{
@@ -717,7 +718,7 @@ instance DIA_GERBRANDT_HEARKILL(C_Info)
 	condition = dia_gerbrandt_hearkill_condition;
 	information = dia_gerbrandt_hearkill_info;
 	permanent = FALSE;
-	description = "А что это был за человек, с которым я встречался в таверне?";
+	description = " Who was the man I met at the tavern? " ;
 };
 
 
@@ -731,16 +732,16 @@ func int dia_gerbrandt_hearkill_condition()
 
 func void dia_gerbrandt_hearkill_info()
 {
-	AI_Output(other,self,"DIA_Gerbrandt_HearKill_01_00");	//А что это был за человек, с которым я встречался в таверне?
-	AI_Output(self,other,"DIA_Gerbrandt_HearKill_01_01");	//Поверь, тебе лучше не знать.
-	AI_Output(self,other,"DIA_Gerbrandt_HearKill_01_03");	//Не понимаю, что он тебя так заинтересовал?
-	AI_Output(other,self,"DIA_Gerbrandt_HearKill_01_04");	//Может, все-таки скажешь?
-	AI_Output(self,other,"DIA_Gerbrandt_HearKill_01_05");	//Хех...(явно нервничает) Ладно! Но никому не слова об этом. Понял?!
-	AI_Output(self,other,"DIA_Gerbrandt_HearKill_01_07");	//В общем...
+	AI_Output(other,self, " DIA_Gerbrandt_HearKill_01_00 " );	// And who was this person I met in the tavern?
+	AI_Output(self,other, " DIA_Gerbrandt_HearKill_01_01 " );	// Trust me, you're better off not knowing.
+	AI_Output(self,other, " DIA_Gerbrandt_HearKill_01_03 " );	// I don't understand why you're so interested in him?
+	AI_Output(other,self, " DIA_Gerbrandt_HearKill_01_04 " );	// Can you tell me?
+	AI_Output(self,other, " DIA_Gerbrandt_HearKill_01_05 " );	// Heh... (clearly nervous) Okay! But don't tell anyone about it. Understood?!
+	AI_Output(self,other, " DIA_Gerbrandt_HearKill_01_07 " );	// Basically...
 	AI_Standup(self);
 	AI_TurnToNPC(self,other);
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_Gerbrandt_HearKill_01_08");	//Если хочешь еще раз встретиться с этим человеком, не ложись сегодня ночью спать - погуляй в верхнем квартале города до полуночи. Может быть, и встретишь его.
+	AI_Output(self,other, " DIA_Gerbrandt_HearKill_01_08 " );	// If you want to meet this person again, stay up tonight - walk uptown until midnight. Maybe you will meet him.
 	ASMALCANAPPEAR = TRUE;
 	AsmalDayMeet = Wld_GetDay();
 	AI_StopProcessInfos(self);
