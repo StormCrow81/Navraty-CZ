@@ -1,4 +1,5 @@
 
+
 instance DIA_LESTER_LI_EXIT(C_Info)
 {
 	npc = pc_psionic_li;
@@ -28,7 +29,7 @@ instance DIA_LESTER_LI_HELLO(C_Info)
 	condition = dia_lester_li_hello_condition;
 	information = dia_lester_li_hello_info;
 	permanent = TRUE;
-	description = "Ты можешь мне что-нибудь сообщить?";
+	description = " Can you tell me something? " ;
 };
 
 
@@ -39,8 +40,8 @@ func int dia_lester_li_hello_condition()
 
 func void dia_lester_li_hello_info()
 {
-	AI_Output(other,self,"DIA_Lester_LI_Hello_15_00");	//Ты можешь мне что-нибудь сообщить?
-	AI_Output(self,other,"DIA_Lester_LI_Hello_13_06");	//На данный момент ничего. Может, позднее.
+	AI_Output(other,self, " DIA_Lester_LI_Hello_15_00 " );	// Can you tell me something?
+	AI_Output(self,other, " DIA_Lester_LI_Hello_13_06 " );	// Nothing at the moment. Maybe later.
 };
 
 
@@ -57,7 +58,7 @@ instance DIA_PSIONIC_LI_PICKPOCKET(C_Info)
 
 func int dia_psionic_li_pickpocket_condition()
 {
-	return C_Beklauen(56,25);
+	return  C_Robbery ( 56 , 25 );
 };
 
 func void dia_psionic_li_pickpocket_info()
@@ -69,7 +70,7 @@ func void dia_psionic_li_pickpocket_info()
 
 func void dia_psionic_li_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_psionic_li_pickpocket);
 };
 
@@ -86,7 +87,7 @@ instance DIA_PSIONIC_LI_REDJOINT(C_Info)
 	condition = dia_psionic_li_redjoint_condition;
 	information = dia_psionic_li_redjoint_info;
 	permanent = FALSE;
-	description = "Я тут нашел необычный сорт болотника.";
+	description = " I found an unusual variety of bogweed here. " ;
 };
 
 
@@ -101,23 +102,23 @@ func int dia_psionic_li_redjoint_condition()
 func void dia_psionic_li_redjoint_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Psionic_LI_RedJoint_01_01");	//Я тут нашел необычный сорт болотника. Хочешь взглянуть?
-	AI_Output(self,other,"DIA_Psionic_LI_RedJoint_01_02");	//(удивленно) Необычный сорт? Ну что же, давай посмотрим.
+	AI_Output(other,self, " DIA_Psionic_LI_RedJoint_01_01 " );	// I found an unusual variety of bogweed here. Do you want to take a look?
+	AI_Output(self,other, " DIA_Psionic_LI_RedJoint_01_02 " );	// (surprised) Unusual variety? Well, let's see.
 	AI_Output(other,self,"DIA_Psionic_LI_RedJoint_01_03");	//Вот, держи.
 	B_GiveInvItems(other,self,itpl_swampherb_02,1);
-	AI_Output(self,other,"DIA_Psionic_LI_RedJoint_01_04");	//Хммм...(внимательно рассматривая) С виду это действительно болотник. Только он... красный!
-	AI_Output(other,self,"DIA_Psionic_LI_RedJoint_01_05");	//Ты когда-нибудь встречал нечто подобное?
-	AI_Output(self,other,"DIA_Psionic_LI_RedJoint_01_06");	//Нет, приятель. Первый раз в жизни вижу такое!
-	AI_Output(self,other,"DIA_Psionic_LI_RedJoint_01_09");	//Возможно, конечно, что этот болотник обладает куда более загадочными свойствами, чем обычный... Но я бы не стал торопиться с выводами.
-	AI_Output(self,other,"DIA_Psionic_LI_RedJoint_01_10");	//Одно мне ясно точно: этот остров таит в себе множество сюрпризов, раз здесь встречаются подобные вещи!
-	AI_Output(other,self,"DIA_Psionic_LI_RedJoint_01_11");	//И что нам теперь делать с этим болотником?
-	AI_Output(self,other,"DIA_Psionic_LI_RedJoint_01_12");	//Хммм. Ну, думаю, что для начала нам стоит изучить это загадочное растение.
-	AI_Output(self,other,"DIA_Psionic_LI_RedJoint_01_13");	//Возможно, его свойства будут полезны для какого-либо рода дел.
-	AI_Output(self,other,"DIA_Psionic_LI_RedJoint_01_14");	//Если тебе попадется еще что-нибудь нечто подобное - приноси мне!
+	AI_Output(self,other, " DIA_Psionic_LI_RedJoint_01_04 " );	// Hmmm... (carefully examining) It really looks like a swamp. Only he is... red!
+	AI_Output(other,self, " DIA_Psionic_LI_RedJoint_01_05 " );	// Have you ever seen something like this?
+	AI_Output(self,other, " DIA_Psionic_LI_RedJoint_01_06 " );	// No, buddy. For the first time in my life I see this!
+	AI_Output(self,other, " DIA_Psionic_LI_RedJoint_01_09 " );	// It is possible, of course, that this swamp has much more mysterious properties than the usual one... But I would not rush to conclusions.
+	AI_Output(self,other, " DIA_Psionic_LI_RedJoint_01_10 " );	// One thing is clear to me: this island is fraught with many surprises, since such things are found here!
+	AI_Output(other,self, " DIA_Psionic_LI_RedJoint_01_11 " );	// And now what do we do with this swamp?
+	AI_Output(self,other, " DIA_Psionic_LI_RedJoint_01_12 " );	// Hmmm. Well, I think we should first study this mysterious plant.
+	AI_Output(self,other, " DIA_Psionic_LI_RedJoint_01_13 " );	// Perhaps its properties will be useful for some kind of business.
+	AI_Output(self,other, " DIA_Psionic_LI_RedJoint_01_14 " );	// If you come across anything else like this, bring it to me!
 	MIS_REDJOINT = LOG_Running;
 	Log_CreateTopic(TOPIC_REDJOINT,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_REDJOINT,LOG_Running);
-	B_LogEntry(TOPIC_REDJOINT,"Я показал Лестеру необычный болотник, который нашел на этом острове. Его удивила моя находка, и он захотел тщательно изучить его свойства, а также попросил принести еще несколько подобных экземпляров, если они мне попадутся на глаза.");
+	B_LogEntry( TOPIC_REDJOINT , " I showed Lester an unusual bogweed I found on this island. He was surprised by my find and wanted to carefully study its properties, and also asked me to bring a few more similar specimens if they caught my eye. " );
 };
 
 
@@ -128,7 +129,7 @@ instance DIA_PSIONIC_LI_REDJOINTMORE(C_Info)
 	condition = dia_psionic_li_redjointmore_condition;
 	information = dia_psionic_li_redjointmore_info;
 	permanent = TRUE;
-	description = "У меня есть несколько стеблей красного болотника.";
+	description = " I have some red bog stalks. " ;
 };
 
 
@@ -143,8 +144,8 @@ func int dia_psionic_li_redjointmore_condition()
 func void dia_psionic_li_redjointmore_info()
 {
 	var int redjointcount;
-	AI_Output(other,self,"DIA_Psionic_LI_RedJointMore_01_01");	//У меня есть несколько стеблей красного болотника.
-	AI_Output(self,other,"DIA_Psionic_LI_RedJointMore_01_02");	//Хорошо! Давай их сюда.
+	AI_Output(other,self, " DIA_Psionic_LI_RedJointMore_01_01 " );	// I have some red bog stalks.
+	AI_Output(self,other, " DIA_Psionic_LI_RedJointMore_01_02 " );	// Good! Give them here.
 	redjointcount = Npc_HasItems(other,itpl_swampherb_02);
 	GLOBALREDJOINTCOUNT = GLOBALREDJOINTCOUNT + redjointcount;
 	B_GiveInvItems(other,self,itpl_swampherb_02,redjointcount);
@@ -152,16 +153,16 @@ func void dia_psionic_li_redjointmore_info()
 	B_GivePlayerXP(redjointcount);
 	if(GLOBALREDJOINTCOUNT >= 5)
 	{
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointMore_01_04");	//Отлично! Думаю, что теперь у меня вполне достаточно этого болотника, чтобы попробовать определить его свойства.
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointMore_01_06");	//Это займет немного времени...
-		B_LogEntry(TOPIC_REDJOINT,"Я принес Лестеру достаточное количество красного болотника. Нужно немного времени, чтобы понять, в чем именно заключаются загадочные свойства этого растения.");
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointMore_01_04 " );	// Great! I think that now I have quite enough of this swamp to try to determine its properties.
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointMore_01_06 " );	// This will take some time...
+		B_LogEntry( TOPIC_REDJOINT , " I've brought Lester enough red bogweed. It will take a little time to figure out exactly what this plant's mysterious properties are. " );
 		TESTSWAMPHERB = TRUE;
 		TESTSWAMPHERBTIMER = Wld_GetDay();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointMore_01_08");	//Совсем неплохо. Правда, боюсь, что для моих исследований мне нужно немного больше этого болотника.
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointMore_01_09");	//Если тебе попадется еще что-нибудь подобное - приноси мне.
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointMore_01_08 " );	// Not bad at all. True, I'm afraid that for my research I need a little more of this bog.
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointMore_01_09 " );	// If you come across anything else like that, bring it to me.
 	};
 };
 
@@ -173,7 +174,7 @@ instance DIA_PSIONIC_LI_REDJOINTDONE(C_Info)
 	condition = dia_psionic_li_redjointdone_condition;
 	information = dia_psionic_li_redjointdone_info;
 	permanent = TRUE;
-	description = "Как успехи?";
+	description = " How are you? " ;
 };
 
 
@@ -187,23 +188,23 @@ func int dia_psionic_li_redjointdone_condition()
 
 func void dia_psionic_li_redjointdone_info()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
-	AI_Output(other,self,"DIA_Psionic_LI_RedJointDone_01_00");	//Как успехи?
+	AI_Output(other,self, " DIA_Psionic_LI_RedJointDone_01_00 " );	// How are you doing?
 	if(TESTSWAMPHERBTIMER <= (daynow - 1))
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointDone_01_01");	//Кажется, я понял, в чем заключается секрет этого болотника...
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointDone_01_03");	//Если его обработать надлежащим образом, а после выдержать определенную пропорцию - то эффект от воскурения этой травы будет просто потрясающим!
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointDone_01_04");	//Даже 'Северный темный' не сравниться с ним!
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointDone_01_01 " );	// I think I figured out what the secret of this swamp is...
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointDone_01_03 " );	// If it is processed properly, and then maintained in a certain proportion, then the effect of burning this herb will be simply amazing!
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointDone_01_04 " );	// Even the 'Northern Dark' is no match!
 		B_GiveInvItems(self,other,itmi_redjoint,1);
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointDone_01_07");	//Вот, возьми вот это, и сам все поймешь!
-		B_LogEntry(TOPIC_REDJOINT,"Лестер наконец-то закончил свои исследования. Он не стал вдаваться в их подробности, а просто вручил мне одну порцию уже обработанного красного болотника.");
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointDone_01_07 " );	// Here, take this, and you will understand everything yourself!
+		B_LogEntry( TOPIC_REDJOINT , " Lester finally finished his research. He didn't go into details, but just handed me one portion of the already processed red bog. " );
 		TESTSWAMPHERBREADY = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Psionic_LI_RedJointDone_01_09");	//Я еще работаю над этим. Так что поговорим об этом позже.
+		AI_Output(self,other, " DIA_Psionic_LI_RedJointDone_01_09 " );	// I'm still working on this. So we'll talk about that later.
 	};
 };
 
@@ -229,10 +230,10 @@ func int dia_psionic_li_redjointdoneext_condition()
 
 func void dia_psionic_li_redjointdoneext_info()
 {
-	AI_Output(self,other,"DIA_Psionic_LI_RedJointDoneExt_01_01");	//Ну и как тебе болотник?
-	AI_Output(other,self,"DIA_Psionic_LI_RedJointDoneExt_01_02");	//Как ты и говорил - превосходно! Правда, от всего этого у меня немного странные ощущения.
-	AI_Output(self,other,"DIA_Psionic_LI_RedJointDoneExt_01_03");	//Оно и понятно... Все-таки это не обычный болотник!
-	AI_Output(self,other,"DIA_Psionic_LI_RedJointDoneExt_01_04");	//Мой тебе совет: иди поспи. Все как рукой снимет.
+	AI_Output(self,other, " DIA_Psionic_LI_RedJointDoneExt_01_01 " );	// Well, how do you like the swamp?
+	AI_Output(other,self, " DIA_Psionic_LI_RedJointDoneExt_01_02 " );	// Like you said - excellent! Admittedly, I feel a little strange about all of this.
+	AI_Output(self,other, " DIA_Psionic_LI_RedJointDoneExt_01_03 " );	// It's understandable... After all, this is not an ordinary swamp!
+	AI_Output(self,other, " DIA_Psionic_LI_RedJointDoneExt_01_04 " );	// My advice to you: go to sleep. Everything will be removed by hand.
 };
 
 
@@ -243,7 +244,7 @@ instance DIA_PSIONIC_LI_REDJOINTDONEEXTMORE(C_Info)
 	condition = dia_psionic_li_redjointdoneextmore_condition;
 	information = dia_psionic_li_redjointdoneextmore_info;
 	permanent = FALSE;
-	description = "А у тебя есть еще этот болотник?";
+	description = " Do you still have this swamp? " ;
 };
 
 
@@ -257,11 +258,11 @@ func int dia_psionic_li_redjointdoneextmore_condition()
 
 func void dia_psionic_li_redjointdoneextmore_info()
 {
-	AI_Output(other,self,"DIA_Psionic_LI_RedJointDoneExtMore_01_01");	//У тебя есть еще такой болотник?
-	AI_Output(self,other,"DIA_Psionic_LI_RedJointDoneExtMore_01_02");	//Что, понравилось? Это и понятно - вещь действительно хорошая.
-	AI_Output(self,other,"DIA_Psionic_LI_RedJointDoneExtMore_01_03");	//Но на твоем месте я бы не слишком увлекался!
-	AI_Output(self,other,"DIA_Psionic_LI_RedJointDoneExtMore_01_05");	//Нам еще до конца не известно, как именно он будет действовать в дальнейшем.
-	AI_Output(self,other,"DIA_Psionic_LI_RedJointDoneExtMore_01_06");	//Возможно, у этой травы есть какие-нибудь побочные эффекты. Так что лучше не рисковать.
+	AI_Output(other,self, " DIA_Psionic_LI_RedJointDoneExtMore_01_01 " );	// Do you still have such a swamp?
+	AI_Output(self,other, " DIA_Psionic_LI_RedJointDoneExtMore_01_02 " );	// What, did you like it? This is understandable - the thing is really good.
+	AI_Output(self,other, " DIA_Psionic_LI_RedJointDoneExtMore_01_03 " );	// But if I were you, I wouldn't get too carried away!
+	AI_Output(self,other, " DIA_Psionic_LI_RedJointDoneExtMore_01_05 " );	// We still do not fully know how it will act in the future.
+	AI_Output(self,other, " DIA_Psionic_LI_RedJointDoneExtMore_01_06 " );	// This herb may have some side effects. So it's better not to risk it.
 };
 
 
@@ -272,7 +273,7 @@ instance DIA_PSIONIC_LI_MISSMYGOLD(C_Info)
 	condition = dia_psionic_li_missmygold_condition;
 	information = dia_psionic_li_missmygold_info;
 	permanent = FALSE;
-	description = "Ничего не знаешь о моем золоте?";
+	description = " You don't know anything about my gold? " ;
 };
 
 
@@ -286,13 +287,13 @@ func int dia_psionic_li_missmygold_condition()
 
 func void dia_psionic_li_missmygold_info()
 {
-	AI_Output(other,self,"DIA_Psionic_LI_MissMyGold_01_01");	//Ничего не знаешь о моем золоте?
-	AI_Output(self,other,"DIA_Psionic_LI_MissMyGold_01_02");	//Нет. А что с ним?
-	AI_Output(other,self,"DIA_Psionic_LI_MissMyGold_01_03");	//Оно куда-то пропало.
-	AI_Output(self,other,"DIA_Psionic_LI_MissMyGold_01_04");	//(удивленно) Пропало? Но как же это могло случиться?
-	AI_Output(other,self,"DIA_Psionic_LI_MissMyGold_01_05");	//Вот и меня интересует тот же вопрос.
-	AI_Output(self,other,"DIA_Psionic_LI_MissMyGold_01_06");	//Извини, приятель... но я вряд ли смогу тебе здесь чем-то помочь.
-	B_LogEntry(TOPIC_MISSMYGOLD,"Лестер не в курсе моей проблемы.");
+	AI_Output(other,self, " DIA_Psionic_LI_MissMyGold_01_01 " );	// Know nothing about my gold?
+	AI_Output(self,other, " DIA_Psionic_LI_MissMyGold_01_02 " );	// No. And what happened to him?
+	AI_Output(other,self, " DIA_Psionic_LI_MissMyGold_01_03 " );	// It's gone somewhere.
+	AI_Output(self,other, " DIA_Psionic_LI_MissMyGold_01_04 " );	// (surprised) Lost? But how could this happen?
+	AI_Output(other,self, " DIA_Psionic_LI_MissMyGold_01_05 " );	// Here I am interested in the same question.
+	AI_Output(self,other, " DIA_Psionic_LI_MissMyGold_01_06 " );	// Sorry, mate... but I can't seem to be of much help here.
+	B_LogEntry( TOPIC_MISSMYGOLD , " Lester is not aware of my problem. " );
 };
 
 
@@ -303,7 +304,7 @@ instance DIA_PSIONIC_LI_AWAY(C_Info)
 	condition = dia_psionic_li_away_condition;
 	information = dia_psionic_li_away_info;
 	permanent = FALSE;
-	description = "Тебе нужно вернуться.";
+	description = " You need to go back. " ;
 };
 
 
@@ -319,18 +320,18 @@ func void dia_psionic_li_away_info()
 {
 	var int countpeopple;
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Psionic_LI_Away_01_01");	//Тебе нужно вернуться.
-	AI_Output(self,other,"DIA_Psionic_LI_Away_01_02");	//А что случилось?
-	AI_Output(other,self,"DIA_Psionic_LI_Away_01_03");	//С ближайшим приливом мы снимаемся с якоря.
-	AI_Output(self,other,"DIA_Psionic_LI_Away_01_04");	//Наконец-то! Давно уже пора.
-	AI_Output(self,other,"DIA_Psionic_LI_Away_01_05");	//А то за последнее время мне этот остров уже порядком поднадоел.
-	B_LogEntry(TOPIC_GATHERCREW,"Лестер рад был услышать о нашем отплытии с острова.");
+	AI_Output(other,self, " DIA_Psionic_LI_Away_01_01 " );	// You need to go back.
+	AI_Output(self,other, " DIA_Psionic_LI_Away_01_02 " );	// What happened?
+	AI_Output(other,self, " DIA_Psionic_LI_Away_01_03 " );	// At the next high tide, we weigh anchor.
+	AI_Output(self,other, " DIA_Psionic_LI_Away_01_04 " );	// Finally! It's long overdue.
+	AI_Output(self,other, " DIA_Psionic_LI_Away_01_05 " );	// I've been getting fed up with this island lately.
+	B_LogEntry( TOPIC_GATHERCREW , " Lester was glad to hear of our departure from the island. " );
 	LESTERLIONBOARD = TRUE;
 	if((GORNLIHERE == TRUE) && (GORNLIONBOARD == TRUE))
 	{
 		countpeopple = countpeopple + 1;
 	};
-	if((MILTENLIONBOARD == TRUE) && (MILTENLIHERE == TRUE))
+	if (( MILTENLIONBOARD  ==  TRUE ) && ( MILTENLIHERE  ==  TRUE ))
 	{
 		countpeopple = countpeopple + 1;
 	};
@@ -361,7 +362,7 @@ instance DIA_PSIONIC_LI_FINDMAGICORECAVE(C_Info)
 	condition = dia_psionic_li_findmagicorecave_condition;
 	information = dia_psionic_li_findmagicorecave_info;
 	permanent = FALSE;
-	description = "Я нашел пещеру с залежами магической руды.";
+	description = " I found a cave with magical ore deposits. " ;
 };
 
 
@@ -375,9 +376,9 @@ func int dia_psionic_li_findmagicorecave_condition()
 
 func void dia_psionic_li_findmagicorecave_info()
 {
-	AI_Output(other,self,"DIA_Psionic_LI_FindMagicOreCave_01_01");	//Я нашел пещеру с залежами магической руды.
-	AI_Output(self,other,"DIA_Psionic_LI_FindMagicOreCave_01_02");	//Правда?! Тогда тебе стоит поговорить об этом с нашим капитаном.
-	AI_Output(self,other,"DIA_Psionic_LI_FindMagicOreCave_01_03");	//Думаю, ему будет интересно услышать эту новость.
+	AI_Output(other,self, " DIA_Psionic_LI_FindMagicOreCave_01_01 " );	// I found a cave with magical ore deposits.
+	AI_Output(self,other, " DIA_Psionic_LI_FindMagicOreCave_01_02 " );	// Really?! Then you should talk to our captain about it.
+	AI_Output(self,other, " DIA_Psionic_LI_FindMagicOreCave_01_03 " );	// I think he will be interested to hear this news.
 	GOTOORECAPITAN = TRUE;
 };
 
@@ -389,7 +390,7 @@ instance DIA_PSIONIC_LI_CHANGECOURSE(C_Info)
 	condition = dia_psionic_li_changecourse_condition;
 	information = dia_psionic_li_changecourse_info;
 	permanent = FALSE;
-	description = "У меня есть к тебе один вопрос.";
+	description = " I have one question for you. " ;
 };
 
 
@@ -403,33 +404,33 @@ func int dia_psionic_li_changecourse_condition()
 
 func void dia_psionic_li_changecourse_info()
 {
-	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_01_02");	//Что ты скажешь на то, если мы вернемся обратно Хоринис?
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_01_03");	//Интересно! Даже, честно говоря, очень неожиданное предложение!
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_01_04");	//А в чем дело?
+	AI_Output(other,self, " DIA_Psionic_LI_ChangeCourse_01_02 " );	// What do you say if we go back to Khorinis?
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_01_03 " );	// Interesting! Even, frankly, a very unexpected proposal!
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_01_04 " );	// What's the matter?
 	Info_ClearChoices(dia_psionic_li_changecourse);
-	Info_AddChoice(dia_psionic_li_changecourse,"Все дело в магической руде.",dia_psionic_li_changecourse_ore);
-	Info_AddChoice(dia_psionic_li_changecourse,"Золото - главная тому причина.",dia_psionic_li_changecourse_gold);
+	Info_AddChoice(dia_psionic_li_changecourse, " It's all about the magic ore. " ,dia_psionic_li_changecourse_ore);
+	Info_AddChoice(dia_psionic_li_changecourse, " Gold is the main reason. " ,dia_psionic_li_changecourse_gold);
 };
 
 func void dia_psionic_li_changecourse_ore()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_Ore_01_01");	//Все дело в магической руде, которую мы отыскали на этом острове.
-	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_Ore_01_02");	//Думаю, нам стоит сообщить о ней паладинам, пока те окончательно не проиграли эту войну оркам.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Ore_01_03");	//Хммм...(задумчиво) Выходит, что дело действительно серьезное.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Ore_01_05");	//Но мне кажется, что какая-то жалкая горстка руды уже вряд ли сможет изменить ситуацию паладинов в целом.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Ore_01_06");	//Думаю, эта война ими уже давно проиграна, и наши усилия, скорее всего, окажутся напрасными.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Ore_01_07");	//По крайней мере, слухи, приходящие с материка, свидетельствуют именно об этом.
-	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_Ore_01_08");	//Возможно, и так. Но мы все равно должны сделать все, что в наших силах.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Ore_01_10");	//Ладно. Если хочешь знать мое мнение, то я не против составить тебе компанию.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Ore_01_11");	//В любом случае твои решения всегда имели необъяснимый для меня смысл, но, несмотря на это, в итоге они всегда оказывались верными.
-	B_LogEntry(TOPIC_CHANGECOURSE,"Лестер дал свое согласие на то, чтобы мы отправились обратно в Хоринис.");
+	AI_Output(other,self, " DIA_Psionic_LI_ChangeCourse_Ore_01_01 " );	// It's all about the magical ore we found on this island.
+	AI_Output(other,self, " DIA_Psionic_LI_ChangeCourse_Ore_01_02 " );	// I think we should report it to the paladins before they finally lose this war to the orcs.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Ore_01_03 " );	// Hmmm... (thoughtfully) It turns out that the case is really serious.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Ore_01_05 " );	// But it seems to me that some pathetic handful of ore is unlikely to be able to change the situation of the paladins as a whole.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Ore_01_06 " );	// I think they lost this war a long time ago, and our efforts will most likely be in vain.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Ore_01_07 " );	// At least that's what the rumors coming from the mainland are.
+	AI_Output(other,self, " DIA_Psionic_LI_ChangeCourse_Ore_01_08 " );	// Maybe so. But we still have to do our best.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Ore_01_10 " );	// Okay. If you want to know my opinion, I don't mind keeping you company.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Ore_01_11 " );	// In any case, your decisions always made sense to me, but despite this, in the end they always turned out to be correct.
+	B_LogEntry( TOPIC_CHANGECOURSE , " Lester has given his consent for us to travel back to Khorinis. " );
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKPAL + 1;
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Пора сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Time to tell our captain. " );
 	};
 	Info_ClearChoices(dia_psionic_li_changecourse);
 };
@@ -437,19 +438,19 @@ func void dia_psionic_li_changecourse_ore()
 func void dia_psionic_li_changecourse_gold()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_Gold_01_01");	//Золото - главная тому причина.
-	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_Gold_01_03");	//Паладины наверняка хорошо нам заплатят за ту руду, которую мы отыскали на этом острове.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Gold_01_04");	//Вот уж не думал, что ты так любишь золото... По моему мнению, вся эта затея все равно слишком рискованная!
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Gold_01_06");	//Когда мы отплывали на Ирдорат, Хоринис уже был под угрозой вторжения орков!
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Gold_01_08");	//Возможно, что орки уже захватили весь остров.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Gold_01_10");	//Эх... Но все же я не против составить тебе компанию.
-	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Gold_01_11");	//В любом случае твои решения всегда имели необъяснимый для меня смысл, но, несмотря на это, в итоге они всегда оказывались верными.
-	B_LogEntry(TOPIC_CHANGECOURSE,"Лестер с большой неохотой дал свое согласие на то, чтобы отправиться обратно в Хоринис.");
+	AI_Output(other,self, " DIA_Psionic_LI_ChangeCourse_Gold_01_01 " );	// Gold is the main reason.
+	AI_Output(other,self, " DIA_Psionic_LI_ChangeCourse_Gold_01_03 " );	// The paladins will surely pay us well for the ore we found on this island.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Gold_01_04 " );	// I didn't think you liked gold so much... In my opinion, this whole idea is still too risky!
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Gold_01_06 " );	// By the time we set sail for Irdorath, Khorinis was already under threat of an orc invasion!
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Gold_01_08 " );	// It's possible that the orcs have already taken over the entire island.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Gold_01_10 " );	// Eh... But still, I don't mind keeping you company.
+	AI_Output(self,other, " DIA_Psionic_LI_ChangeCourse_Gold_01_11 " );	// In any case, your decisions always made sense to me, but despite this, in the end they always turned out to be correct.
+	B_LogEntry( TOPIC_CHANGECOURSE , " Leicester reluctantly gave his consent to go back to Khorinis. " );
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Пора сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Time to tell our captain. " );
 	};
 	Info_ClearChoices(dia_psionic_li_changecourse);
 };
