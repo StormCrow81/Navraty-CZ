@@ -136,7 +136,7 @@ func void 2017_2018_pmschildren_info()
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_PSICAMP,tsettext2);
 			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_36 " );	// More precisely, he is alone... this question.
 			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_37 " );	// All the brothers in the camp are tired of your cruel murders.
-			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_38 " );	// And the only way to stop your antics with impunity is to kill you...
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_38 " );	// And the only option to stop your antics with impunity is to kill you...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
@@ -2080,7 +2080,7 @@ func void dia_baalorun_teach_mana_1()
 
 	if ((Chapter >=  2 ) && (hero.guild ==  GIL_GUR ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
 	{
-		Info_AddChoice(DIA_BaalOrun_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 10000 Coins) " ,DIA_BaalOrun_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_BaalOrun_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 10000 coins) " ,DIA_BaalOrun_TEACH_MANA_Regen);
 	};
 };
 
@@ -2094,7 +2094,7 @@ func void dia_baalorun_teach_mana_5()
 
 	if ((Chapter >=  2 ) && (hero.guild ==  GIL_GUR ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
 	{
-		Info_AddChoice(DIA_BaalOrun_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 10000 Coins) " ,DIA_BaalOrun_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_BaalOrun_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 10000 coins) " ,DIA_BaalOrun_TEACH_MANA_Regen);
 	};
 };
 
