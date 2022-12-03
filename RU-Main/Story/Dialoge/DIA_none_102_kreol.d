@@ -1,5 +1,6 @@
 
 
+
 instance DIA_KREOL_EXIT(C_Info)
 {
 	npc = none_102_kreol;
@@ -568,7 +569,7 @@ instance DIA_CREOL_DEMONLANGUAGETEACH ( C_Info ) ;
 
 func int dia_kreol_demonlanguageteach_condition()
 {
-	if (( CREOL_TEACHDEMONLANGUAGE  ==  TRUE ) && ( KNOWDEMENTORLANGUAGE  ==  FALSE ))
+	if (( CREOL_TEACHDEMONLANGUAGE   ==   TRUE ) && ( KNOWDEMENTORLANGUAGE   ==   FALSE ))
 	{
 		return TRUE;
 	};
@@ -584,9 +585,9 @@ func void dia_creole_demonlanguageteach_info()
 		Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 		Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 		AI_PlayAni(self,"T_PRACTICEMAGIC5");
-		AI_Output(self,other,"DIA_Kreol_DemonLanguageTeach_01_01");	//Познай же силу и могущество этого знания!
-		AI_Output(self,other,"DIA_Kreol_DemonLanguageTeach_01_02");	//Черпай в нем мудрость, дарованную нам Белиаром - повелителем багровой Тьмы! Овладей тем сокровищем, что доступно лишь избранным.
-		AI_Output(self,other,"DIA_Kreol_DemonLanguageTeach_01_03");	//Да будет так!
+		AI_Output(self,other, " DIA_Kreol_DemonLanguageTeach_01_01 " );	// Know the strength and power of this knowledge!
+		AI_Output(self,other, " DIA_Kreol_DemonLanguageTeach_01_02 " );	// Draw in it the wisdom bestowed upon us by Beliar - the lord of the crimson Darkness! Take possession of the treasure that is available only to the elite.
+		AI_Output(self,other, " DIA_Kreol_DemonLanguageTeach_01_03 " );	// So be it!
 		KNOWDEMENTORLANGUAGE = TRUE;
 	};
 };
@@ -598,7 +599,7 @@ instance DIA_KREOL_PERM(C_Info)
 	condition = dia_kreol_perm_condition;
 	information = dia_kreol_perm_info;
 	permanent = TRUE;
-	description = "Как дела на магическом фронте?";
+	description = " How are things on the magical front? " ;
 };
 
 func int dia_kreol_perm_condition()
@@ -611,8 +612,8 @@ func int dia_kreol_perm_condition()
 
 func void dia_kreol_perm_info()
 {
-	AI_Output(other,self,"DIA_Kreol_PERM_15_00");	//Как дела на магическом фронте?
-	AI_Output(self,other,"DIA_Kreol_PERM_04_01");	//Не твоего ума дело!
+	AI_Output(other,self, " DIA_Kreol_PERM_15_00 " );	// How are things on the magical front?
+	AI_Output(self,other, " DIA_Kreol_PERM_04_01 " );	// none of your business!
 };
 
 var int KreolBuyWeap;
@@ -625,12 +626,12 @@ instance DIA_KREOL_XARDASMISS(C_Info)
 	information = dia_kreol_xardasmiss_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "Ксардас исчез!";
+	description = " Xardas is gone! " ;
 };
 
 func int dia_kreol_xardasmiss_condition()
 {
-	if (( hero . guild ==  GIL_KDM ) && ( XARDAS_MISS  ==  TRUE ))
+	if (( hero . guild ==   GIL_KDM ) && ( XARDAS_MISS   ==   TRUE ))
 	{
 		return TRUE;
 	};
@@ -1017,7 +1018,7 @@ func void dia_kreol_teach_mana_info()
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_kreol_teach_mana_1);
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_kreol_teach_mana_5);
 
-	if ((Chapter >=  2 ) && (hero.guild ==  GIL_KDM ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
+	if ((Chapter >=   2 ) && (hero.guild ==   GIL_KDM ) && ( BACK_TEACHREGENMANA   ==   FALSE ))
 	{
 		Info_AddChoice(DIA_Kreol_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 15000 coins) " ,DIA_Kreol_TEACH_MANA_Regen);
 	};
@@ -1078,7 +1079,7 @@ func void dia_kreol_teach_mana_1()
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_kreol_teach_mana_1);
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_kreol_teach_mana_5);
 
-	if ((Chapter >=  2 ) && (hero.guild ==  GIL_KDM ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
+	if ((Chapter >=   2 ) && (hero.guild ==   GIL_KDM ) && ( BACK_TEACHREGENMANA   ==   FALSE ))
 	{
 		Info_AddChoice(DIA_Kreol_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 15000 coins) " ,DIA_Kreol_TEACH_MANA_Regen);
 	};
@@ -1092,7 +1093,7 @@ func void dia_kreol_teach_mana_5()
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_kreol_teach_mana_1);
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_kreol_teach_mana_5);
 
-	if ((Chapter >=  2 ) && (hero.guild ==  GIL_KDM ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
+	if ((Chapter >=   2 ) && (hero.guild ==   GIL_KDM ) && ( BACK_TEACHREGENMANA   ==   FALSE ))
 	{
 		Info_AddChoice(DIA_Kreol_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 15000 coins) " ,DIA_Kreol_TEACH_MANA_Regen);
 	};
@@ -1114,7 +1115,7 @@ instance DIA_KREOL_CIRCLE(C_Info)
 
 func int dia_kreol_circle_condition()
 {
-	if ((Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) <=  6 ) && ( CREOL_MYTEACHER  ==  TRUE ) && ( DIA_CREOL_CIRCLE_NOPERM  ==  FALSE )) ;
+	if ((Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) <=   6 ) && ( CREOL_MYTEACHER   ==   TRUE ) && ( DIA_CREOL_CIRCLE_NOPERM   ==   FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -1416,7 +1417,7 @@ func void dia_kreol_findetlu_info()
 		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_20 " );	// Even though you're a Firebender!
 		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_21 " );	// There, on the island, your status won't save you anymore!
 	}
-	else  if (hero.guild ==  GIL_KDW )
+	else   if (hero.guild ==   GIL_KDW )
 	{
 		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_22 " );	// Even though you're a Waterbender!
 		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_23 " );	// There, on the island, your status won't save you anymore!
@@ -1445,7 +1446,7 @@ instance DIA_KREOL_ASKABOUTPEACEWAY(C_Info)
 
 func int dia_kreol_askaboutpeaceway_condition()
 {
-	if (Npc_KnowsInfo(other,dia_kreol_found) && ( MEHASTRIRAVAR  ==  FALSE ) && ( ASKABOUTPEACEWAY  ==  FALSE ) && (other.guild !=  GIL_PAL ) && (other.guild !=  GIL_KDF )) ;
+	if (Npc_KnowsInfo(other,dia_kreol_found) && ( MEHASTRIRAVAR   ==   FALSE ) && ( ASKABOUTPEACEWAY   ==   FALSE ) && (other.guild !=   GIL_PAL ) && (other.guild !=   GIL_KDF )) ;
 	{
 		return TRUE;
 	};
@@ -1493,7 +1494,7 @@ instance DIA_KREOL_FINDAMULET(C_Info)
 
 func int dia_kreol_findamulet_condition()
 {
-	if ((Npc_HasItems(other,itmi_triramar) >=  1 ) && Npc_KnowsInfo(other,dia_creole_finddarksoul))
+	if ((Npc_HasItems(other,itmi_triramar) >=   1 ) && Npc_KnowsInfo(other,dia_creole_finddarksoul))
 	{
 		return TRUE;
 	};
@@ -1540,7 +1541,7 @@ instance DIA_KREOL_GETSUPERBELIARWEAPON(C_Info)
 
 func int dia_kreol_getsuperbeliarweapon_condition()
 {
-	if (( Npc_HasItems( hero , self_moral ) >=  1 ) && Npc_KnowsInfo ( other , dia_kreol_finddarksoul ))
+	if (( Npc_HasItems( hero , self_moral ) >=   1 ) && Npc_KnowsInfo ( other , dia_creole_finddarksoul ))
 	{
 		return TRUE;
 	};
@@ -1591,7 +1592,7 @@ instance DIA_KREOL_GETSUPERSOUL(C_Info)
 
 func int dia_kreol_getsupersoul_condition()
 {
-	if ((Npc_HasItems(hero,itmi_stonesoul_senyak) >=  1 ) && ( TELLCANSUPERBELIERWEAPON  ==  FALSE ) && ( KNOWSHOWDEALSOULS  ==  TRUE ))
+	if ((Npc_HasItems(hero,itmi_stonesoul_senyak) >=   1 ) && ( TELLCANSUPERBELIERWEAPON   ==   FALSE ) && ( KNOWSHOWDEALSOULS   ==   TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -1633,7 +1634,7 @@ instance DIA_KREOL_NDM_TACHDEMONOLOG (C_Info)
 
 func int dia_kreol_ndm_teachdemenolog_condition()
 {
-	if ((hero.guild ==  GIL_KDM ) && ( CREOL_MYTEACHER  ==  TRUE ) && ( XARDASTELLABOUTDEMONOLOG  ==  TRUE ) && (( XARDASTEACHCASTDEMON_SIMPLE  ==  FALSE ) || ( XARDASTEACHCASTDEMON_LORD  ==  FALSE )))
+	if ((hero.guild ==   GIL_KDM ) && ( CREOL_MYTEACHER   ==   TRUE ) && ( XARDASTELLABOUTDEMONOLOG   ==   TRUE ) && (( XARDASTEACHCASTDEMON_SIMPLE   ==   FALSE ) || ( XARDASTEACHCASTDEMON_LORD   ==   FALSE )))
 	{
 		return TRUE;
 	};
@@ -1711,7 +1712,7 @@ instance DIA_KREOL_TEACHSACTANOME(C_Info)
 
 func int dia_kreol_teachsactanome_condition()
 {
-	if ((hero.guild ==  GIL_KDM ) && ( XARDAS_TEACHSACTANOME  ==  TRUE ) && ( XARDAS_KNOWSSACTANOME  ==  FALSE ))
+	if ((hero.guild ==   GIL_KDM ) && ( XARDAS_TEACHSACTANOME   ==   TRUE ) && ( XARDAS_KNOWSSACTANOME   ==   FALSE ))
 	{
 		return TRUE;
 	};
@@ -1788,7 +1789,7 @@ instance DIA_KREOL_Kill_Pals(C_Info)
 
 func int DIA_KREOL_Kill_Pals_condition()
 {
-	if ((hero.guild ==  GIL_KDM ) && ( CAPITELORCATC  ==  FALSE ))
+	if ((hero.guild ==   GIL_KDM ) && ( CAPITELORCATC   ==   FALSE ))
 	{
 		return TRUE;
 	};
@@ -1861,7 +1862,7 @@ instance DIA_KREOL_Kill_Pals_Done(C_Info)
 
 func int DIA_KREOL_Kill_Pals_Done_condition()
 {
-	if ((hero.guild ==  GIL_KDM ) && ( CAPITELORCATC  ==  FALSE ) && ( MY_KILL_PALS  == LOG_Running ) && ( ALBERTISDEAD  ==  TRUE )) ;
+	if ((hero.guild ==   GIL_KDM ) && ( CAPITELORCATC   ==   FALSE ) && ( MY_KILL_PALS   == LOG_Running ) && ( ALBERTISDEAD   ==   TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -1924,24 +1925,24 @@ func void DIA_KREOL_Kill_Done_Rings_info()
 
 	if(RingSum == 1)
 	{
-		RingSumXP = RingSum *  100 ;
-		RingSumGold = RingSum *  100 ;
+		RingSumXP = RingSum *   100 ;
+		RingSumGold = RingSum *   100 ;
 		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_11 " );	// How? One ring? Are you kidding me?!
 		AI_Output(other,self, " DIA_KREOL_Kill_Done_Rings_01_12 " );	// Sorry, but I don't have any more.
 		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_13 " );	// Here, take your reward and get the hell out of here!
 	}
 	else if(RingSum <= 3)
 	{
-		RingSumXP = RingSum *  150 ;
-		RingSumGold = RingSum *  150 ;
+		RingSumXP = RingSum *   150 ;
+		RingSumGold = RingSum *   150 ;
 		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_14 " );	// Hmmm. You don't have that many.
 		AI_Output(other,self, " DIA_KREOL_Kill_Done_Rings_01_15 " );	// Sorry, but I don't have any more.
 		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_16 " );	// Okay, here's your reward. Even though you don't deserve it!
 	}
 	else if(RingSum > 3)
 	{
-		RingSumXP = RingSum *  200 ;
-		RingSumGold = RingSum *  200 ;
+		RingSumXP = RingSum *   200 ;
+		RingSumGold = RingSum *   200 ;
 		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_17 " );	// Great! This amount is enough for me.
 		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_18 " );	// Here's your reward. You honestly deserve it!
 	};
@@ -2015,7 +2016,7 @@ instance DIA_Kreol_MonasterySecret_Done(C_Info)
 
 func int DIA_Kreol_MonasterySecret_Done_condition()
 {
-	if ((Kapitel <  6 ) && (MonasterySecret_Kreol ==  TRUE ) && (MIS_MonasterySecret == LOG_Running) && (Npc_HasItems(hero,ItMi_DragonStaffPiece_01) >=  1 ) && (Npc_HasItems(hero,ItMi_DragonStaff_03 ) > =  1 ) ,ItMi_DragonStaffPiece_04) >= 1 )) 
+	if ((Kapitel <   6 ) && (MonasterySecret_Kreol ==   TRUE ) && (MIS_MonasterySecret == LOG_Running) && (Npc_HasItems(hero,ItMi_DragonStaffPiece_01) > =   1 ) && (Npc_HasItems(hero,ItMi_DragonStaff_04) > =   1 ) 1 )) 
 	{
 		return TRUE;
 	};
@@ -2121,7 +2122,7 @@ func void DIA_Kreol_Sleeper_info()
 	Info_ClearChoices(DIA_Kreol_Sleeper);
 	Info_AddChoice(DIA_Kreol_Sleeper, " Unfortunately, nothing equals. " ,DIA_Kreol_Sleeper_No);
 
-	if ((Npc_HasItems(hero, ITMI_HELMSLEEPER ) >=  1 ) || (Npc_HasItems(hero, ITMI_HELMSLEEPER_MIS ) >=  1 ))
+	if ((Npc_HasItems(hero, ITMI_HELMSLEEPER ) >=   1 ) || (Npc_HasItems(hero, ITMI_HELMSLEEPER_MIS ) >=   1 ))
 	{
 		Info_AddChoice(DIA_Kreol_Sleeper, " Here's the Sleeper mask! " ,DIA_Kreol_Sleeper_Mask);
 	};
@@ -2140,13 +2141,13 @@ func void DIA_Kreol_Sleeper_info()
 	{
 		Info_AddChoice(DIA_Kreol_Sleeper, " (offer Bow Color of Death) " ,DIA_Kreol_Sleeper_Bow);
 	};
-	if ((EligorNoStaff ==  FALSE ) && (Npc_HasItems(hero, ITMW_2H_KMR_DAEMONSTAFF_01 ) >=  1 ))
+	if ((EligorNoStaff ==   FALSE ) && (Npc_HasItems(hero, ITMW_2H_KMR_DAEMONSTAFF_01 ) >=   1 ))
 	{
 		Info_AddChoice(DIA_Kreol_Sleeper, " (offer Staff Soul Suppressor) " ,DIA_Kreol_Sleeper_Staff);
 	};
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
-		if ((Npc_HasItems(hero,ItMi_InnosEye_MIS) >=  1 ) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >=  1 ))
+		if ((Npc_HasItems(hero,ItMi_InnosEye_MIS) >=   1 ) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >=   1 ))
 		{
 			Info_AddChoice(DIA_Kreol_Sleeper, " (suggest Eye of Innos) " ,DIA_Kreol_Sleeper_Innos);
 		};
@@ -2247,7 +2248,7 @@ func void DIA_Kreol_Sleeper_Innos()
 	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_06 " );	// Agree?
 	AI_Output(other,self, " DIA_Kreol_Sleeper_Innos_01_07 " );	// Okay, hold the amulet.
 
-	if (Npc_HasItems(hero,ItMi_InnosEye_MIS) >=  1 )
+	if (Npc_HasItems(hero,ItMi_InnosEye_MIS) >=   1 )
 	{
 		B_GiveInvItems(other,self,ItMi_InnosEye_MIS,1);
 		Npc_RemoveInvItems(self,ItMi_InnosEye_MIS,1);
@@ -2293,7 +2294,7 @@ func void DIA_Kreol_Sleeper_Again_info()
 	Info_ClearChoices(DIA_Kreol_Sleeper_Again);
 	Info_AddChoice(DIA_Kreol_Sleeper_Again, " Unfortunately, nothing worthwhile. " ,DIA_Kreol_Sleeper_Again_No);
 
-	if ((Npc_HasItems(hero, ITMI_HELMSLEEPER ) >=  1 ) || (Npc_HasItems(hero, ITMI_HELMSLEEPER_MIS ) >=  1 ))
+	if ((Npc_HasItems(hero, ITMI_HELMSLEEPER ) >=   1 ) || (Npc_HasItems(hero, ITMI_HELMSLEEPER_MIS ) >=   1 ))
 	{
 		Info_AddChoice(DIA_Kreol_Sleeper, " Here's the Sleeper mask! " ,DIA_Kreol_Sleeper_Mask);
 	};
@@ -2312,13 +2313,13 @@ func void DIA_Kreol_Sleeper_Again_info()
 	{
 		Info_AddChoice(DIA_Kreol_Sleeper_Again, " (offer Bow Color of Death) " ,DIA_Kreol_Sleeper_Again_Bow);
 	};
-	if ((EligorNoStaff ==  FALSE ) && (Npc_HasItems(hero, ITMW_2H_KMR_DAEMONSTAFF_01 ) >=  1 ))
+	if ((EligorNoStaff ==   FALSE ) && (Npc_HasItems(hero, ITMW_2H_KMR_DAEMONSTAFF_01 ) >=   1 ))
 	{
 		Info_AddChoice(DIA_Kreol_Sleeper_Again, " (offer to hand over Soul Extinguisher staff) " ,DIA_Kreol_Sleeper_Again_Staff);
 	};
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
-		if ((Npc_HasItems(hero,ItMi_InnosEye_MIS) >=  1 ) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >=  1 ))
+		if ((Npc_HasItems(hero,ItMi_InnosEye_MIS) >=   1 ) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >=   1 ))
 		{
 			Info_AddChoice(DIA_Kreol_Sleeper_Again, " (offer Eye of Innos) " ,DIA_Kreol_Sleeper_Again_Innos);
 		};
@@ -2419,7 +2420,7 @@ func void DIA_Kreol_Sleeper_Again_Innos()
 	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_06 " );	// Agree?
 	AI_Output(other,self, " DIA_Kreol_Sleeper_Innos_01_07 " );	// Okay, hold the amulet.
 
-	if (Npc_HasItems(hero,ItMi_InnosEye_MIS) >=  1 )
+	if (Npc_HasItems(hero,ItMi_InnosEye_MIS) >=   1 )
 	{
 		B_GiveInvItems(other,self,ItMi_InnosEye_MIS,1);
 		Npc_RemoveInvItems(self,ItMi_InnosEye_MIS,1);
@@ -2710,7 +2711,7 @@ instance DIA_Kreol_MAXROBE(C_Info)
 
 func int DIA_Kreol_MAXROBE_condition()
 {
-	if ((hero.guild ==  GIL_KDM ) && (Chapter >=  5 ) && (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) ==  6 ) && (LastRobeKDM ==  FALSE ) && (MAXROBE_Permanent ==  FALSE )) ;
+	if ((hero.guild ==   GIL_KDM ) && (Chapter >=   5 ) && (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) ==   6 ) && (LastRobeKDM ==   FALSE ) && (MAXROBE_Permanent ==   FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -2737,7 +2738,7 @@ instance DIA_Kreol_MAXROBE_Buy(C_Info)
 
 func int DIA_Kreol_MAXROBE_Buy_condition()
 {
-	if (( hero . guild ==  GIL_KDM ) && ( LastRobeKDM ==  TRUE ) && ( MAXROBE_Permanent ==  FALSE ))
+	if (( hero . guild ==   GIL_KDM ) && ( LastRobeKDM ==   TRUE ) && ( MAXROBE_Permanent ==   FALSE ))
 	{
 		return TRUE;
 	};
@@ -2882,7 +2883,7 @@ instance DIA_Kreol_BuyWeapons(C_Info)
 
 func int DIA_Kreol_BuyWeapons_condition()
 {
-	if (( Npc_KnowsInfo( hero , DIA_Xardas_Mechi ) ==  TRUE ) && ( CreoleBuyWeap ==  TRUE ))
+	if (( Npc_KnowsInfo( hero , DIA_Xardas_Mechi ) ==   TRUE ) && ( CreoleBuyWeap ==   TRUE ))
 	{
 		if((Npc_HasItems(hero,ItMw_1H_ChelDrak_Left) > 0) || (Npc_HasItems(hero,ItMw_1H_ChelDrak_Right) > 0) || (Npc_HasItems(hero,ItMw_2H_ShadowBlade_Xert) > 0) || (Npc_HasItems(hero,ITMW_SHADOWPRIEST_Elair) > 0) || (Npc_HasItems(hero,ITMW_SHADOWPRIEST_Ober) > 0) || (Npc_HasItems(hero,ItMw_PlagueStaff) > 0) || (Npc_HasItems(hero,ItMw_SoulKeeperStaff) > 0) || (Npc_HasItems(hero,ITMW_1H_DoomSpeer_Elite) > 0) || (Npc_HasItems(hero,ITMW_2H_DOOMAXE) > 0) || (Npc_HasItems(hero,ITMW_2H_HAOSHAND) > 0) || (Npc_HasItems(hero,ITMW_2H_RAVENELITE) > 0) || (Npc_HasItems(hero,ITMW_1H_GHOSTSWORD) > 0) || (Npc_HasItems(hero,ItMw_Doom_OldPiratensaebel) > 0) || (Npc_HasItems(hero,ItAr_Shield_01_Damn) > 0) || (Npc_HasItems(hero,ItAr_Shield_02_Damn) > 0) || (Npc_HasItems(hero,ItAr_Shield_03_Damn) > 0) || (Npc_HasItems(hero,ITMW_1H_DOOMSPEER) > 0) || (Npc_HasItems(hero,ITMW_1H_DOOMSWORD) > 0) || (Npc_HasItems(hero,ITMW_2H_DRACONSWORD_DEAD) > 0) || (Npc_HasItems(hero,ITMW_1H_DOOMSWORD_Elite) > 0) || (Npc_HasItems(hero,ITMW_2H_DOOMSWORD) > 0) || (Npc_HasItems(hero,ITMW_2H_DOOMSWORD_PreElite) > 0) || (Npc_HasItems(hero,ITMW_SHADOWPRIEST_Elite) > 0) || (Npc_HasItems(hero,ITMW_SHADOWPRIEST) > 0) || (Npc_HasItems(hero,ItRw_Crossbow_Undead) > 0) || (Npc_HasItems(hero,ItRw_Undead) > 0) || (Npc_HasItems(hero,ITMW_2H_DOOMSWORD_Elite) > 0))
 		{
