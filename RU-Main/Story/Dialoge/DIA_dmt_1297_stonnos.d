@@ -1,4 +1,5 @@
 
+
 const int BONUSSTR = 15;
 const int BONUSDEX = 15;
 const int BONUSMAN = 100;
@@ -19,7 +20,7 @@ func int dmt_1297_stonnos_exit_condition()
 {
 	if((GUARDIANADEPT == TRUE) && (CHOOSENATUREISDONE == FALSE))
 	{
-		return FALSE;
+		return  FALSE ;
 	};
 	return TRUE;
 };
@@ -50,37 +51,37 @@ func int dmt_1297_stonnos_hello_condition()
 
 func void dmt_1297_stonnos_hello_info()
 {
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_00");	//(властно) Наконец-то пришло время нам с тобой повстречаться, смертный!
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_01");	//Не стану от тебя скрывать, что я с большим интересом ожидал нашей встречи.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_02");	//И не сомневаюсь, что ты также в свою очередь догадался - кто я такой и зачем сейчас здесь...(могущественно) Не так ли?
-	AI_Output(other,self,"DMT_1297_Stonnos_Hello_03");	//Думаю, ты - Хранитель Стоннос, самый могущественный из Стражей Стихий и глава божественного Круга Хранителей.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_04");	//Все верно, человек.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_07");	//Итак. Настало время тебе закончить тот путь, на который ты вступил и наконец-то стать тем, кем тебе предначертано быть.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_08");	//Но вначале тебе необходимо будет пройти еще одно испытание, которое мы, Хранители, именуем как Испытание Веры!
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_09");	//Пройдя его, ты докажешь, что целиком и полностью осознаешь свой выбор и готов пожертвовать всем ради воплощения в жизнь наших священных замыслов.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_00 " );	// (imperiously) The time has finally come for you and me to meet, mortal!
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_01 " );	// I will not hide from you that I was looking forward to our meeting with great interest.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_02 " );	// And I have no doubt that you also, in turn, guessed who I am and why I am here now ... (powerfully) Didn't you?
+	AI_Output(other,self, " DMT_1297_Stonnos_Hello_03 " );	// I think you are Guardian Stonnos, the most powerful of the Guardians of the Elements and head of the divine Circle of Guardians.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_04 " );	// That's right, man.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_07 " );	// So. It's time for you to finish the path you started on and finally become who you were meant to be.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_08 " );	// But first, you will need to pass another test, which we, the Guardians, refer to as the Test of Faith!
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_09 " );	// By passing it, you will prove that you are fully aware of your choice and are ready to sacrifice everything for the sake of bringing our sacred plans to life.
 	Info_ClearChoices(dmt_1297_stonnos_hello);
-	Info_AddChoice(dmt_1297_stonnos_hello,"А в чем заключается мое Испытание Веры, мастер?",dmt_1297_stonnos_hello_test);
+	Info_AddChoice(dmt_1297_stonnos_hello, " What is my Test of Faith, master? " ,dmt_1297_stonnos_hello_test);
 };
 
 func void dmt_1297_stonnos_hello_test()
 {
-	AI_Output(other,self,"DMT_1297_Stonnos_Hello_11");	//В чем заключается мое Испытание Веры, мастер?
+	AI_Output(other,self, " DMT_1297_Stonnos_Hello_11 " );	// What is my Test of Faith, master?
 	Wld_PlayEffect("spellFX_INCOVATION_WHITE",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_12");	//Тебе необходимо отыскать и принести мне четыре древних магических артефакта, именуемых Сферами.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_13");	//Эти древнейшие реликвии являют собой источник магии каждой из существующих стихий и дают власть над их созданиями.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_14");	//Однако сами по себе Сферы не являются творением богов или самих сил природы. Их сущность заключена исключительно в магии!
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_15");	//Поэтому обычно появление сиих артефактов в этом мире вызвано сильнейшими магическими волнениями - и ничем более.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_20");	//Разрушив магический барьер и уничтожив Спящего, ты вызвал мощнейший магический взрыв, что в свою очередь породило появление магических сфер в этой части мира.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_24");	//Каждая Сфера обладает собственной волей и окружает себя различными созданиями с целью собственной защиты.
-	AI_Output(self,other,"DMT_1297_Stonnos_Hello_28");	//Теперь иди, человек! И помни, что от твоих действий зависит твое дальнейшее будущее.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_12 " );	// You need to find and bring me four ancient magical artifacts called Orbs.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_13 " );	// These ancient relics are the source of the magic of each of the existing elements and give power over their creations.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_14 " );	// However, the Orbs themselves are not the creation of the gods or the forces of nature themselves. Their essence lies solely in magic!
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_15 " );	// Therefore, the appearance of these artifacts in this world is usually caused by the strongest magical unrest - and nothing more.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_20 " );	// By destroying the magical barrier and destroying the Sleeper, you caused a powerful magical explosion, which in turn gave rise to the appearance of magical spheres in this part of the world.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_24 " );	// Each Sphere has its own will and surrounds itself with various creatures for its own protection.
+	AI_Output(self,other, " DMT_1297_Stonnos_Hello_28 " );	// Now go man! And remember that your future depends on your actions.
 	AI_StopProcessInfos(self);
 	MIS_STONNOSTEST = LOG_Running;
 	Log_CreateTopic(TOPIC_STONNOSTEST,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_STONNOSTEST,LOG_Running);
-	B_LogEntry(TOPIC_STONNOSTEST,"Я повстречал главного Хранителя – Стонноса, назначившего мне Испытание Веры. После его прохождения меня примут в адепты Круга Хранителей. Для этого необходимо отыскать и принести Стонносу четыре магических Сферы стихий. Найти их будет непросто и крайне опасно. Но ведь мне не привыкать к трудностям?");
+	B_LogEntry( TOPIC_STONNOSTEST , " I met the chief Guardian, Stonnos, who appointed me the Test of Faith. After passing it, I will be accepted as an adherent of the Circle of Guardians. To do this, I need to find and bring four magical Elemental Spheres to Stonnos. Finding them will not be easy and extremely dangerous. But for me not get used to difficulties? " );
 };
 
 
@@ -91,7 +92,7 @@ instance DMT_1297_STONNOS_TESTFAIL(C_Info)
 	condition = dmt_1297_stonnos_testfail_condition;
 	information = dmt_1297_stonnos_testfail_info;
 	permanent = FALSE;
-	description = "По поводу твоего поручения, мастер...";
+	description = " Regarding your errand, master... " ;
 };
 
 
@@ -106,26 +107,26 @@ func int dmt_1297_stonnos_testfail_condition()
 func void dmt_1297_stonnos_testfail_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DMT_1297_Stonnos_TestFail_00");	//По поводу твоего поручения, мастер...
-	AI_Output(self,other,"DMT_1297_Stonnos_TestFail_01");	//Да, человек?
-	AI_Output(other,self,"DMT_1297_Stonnos_TestFail_02");	//Боюсь, я не смогу принести тебе эти Сферы Стихий, поскольку их больше нет.
-	AI_Output(other,self,"DMT_1297_Stonnos_TestFail_04");	//Я использовал эти артефакты для создания одной магической руны, чтобы с ее помощью уничтожить могущественного демона по имени С'эньяк.
-	AI_Output(self,other,"DMT_1297_Stonnos_TestFail_05");	//(крайне удивленно) С'эньяк?! Древнейший архидемон Лэнга?
-	AI_Output(self,other,"DMT_1297_Stonnos_TestFail_07");	//(задумчиво) Ну что ж, должен признать, это довольно непредвиденный ход событий.
-	AI_Output(self,other,"DMT_1297_Stonnos_TestFail_08");	//Я и представить себе не мог, что обычному смертному такое под силу!
-	AI_Output(other,self,"DMT_1297_Stonnos_TestFail_10");	//У меня просто не было выбора.
-	AI_Output(other,self,"DMT_1297_Stonnos_TestFail_12");	//И что теперь будет с моим Испытанием Веры?
-	AI_Output(self,other,"DMT_1297_Stonnos_TestFail_13");	//Хммм... Ты разочаровал меня.
-	AI_Output(self,other,"DMT_1297_Stonnos_TestFail_14");	//Однако, если посмотреть на все это немного с другой стороны, - то, возможно, последствия твоего выбора оказались нам только на руку.
-	AI_Output(self,other,"DMT_1297_Stonnos_TestFail_15");	//Так что, после небольших раздумий, я пришел к выводу... что будет правильным признать твое испытание пройденным.
+	AI_Output(other,self, " DMT_1297_Stonnos_TestFail_00 " );	// Regarding your assignment, master...
+	AI_Output(self,other, " DMT_1297_Stonnos_TestFail_01 " );	// Yes, human?
+	AI_Output(other,self, " DMT_1297_Stonnos_TestFail_02 " );	// I'm afraid I won't be able to bring you these Elemental Orbs since they're gone.
+	AI_Output(other,self, " DMT_1297_Stonnos_TestFail_04 " );	// I used these artifacts to create a single magical rune to use to destroy a powerful demon named S'enyak.
+	AI_Output(self,other, " DMT_1297_Stonnos_TestFail_05 " );	// (very surprised) S'enyak?! Lang's oldest archdemon?
+	AI_Output(self,other, " DMT_1297_Stonnos_TestFail_07 " );	// (thoughtfully) Well, I must admit, this is a rather unforeseen turn of events.
+	AI_Output(self,other, " DMT_1297_Stonnos_TestFail_08 " );	// I couldn't even imagine that an ordinary mortal could do this!
+	AI_Output(other,self, " DMT_1297_Stonnos_TestFail_10 " );	// I just didn't have a choice.
+	AI_Output(other,self, " DMT_1297_Stonnos_TestFail_12 " );	// And what will happen to my Trial of Faith now?
+	AI_Output(self,other, " DMT_1297_Stonnos_TestFail_13 " );	// Hmmm... You disappoint me.
+	AI_Output(self,other, " DMT_1297_Stonnos_TestFail_14 " );	// However, if you look at all this a little from the other side, then perhaps the consequences of your choice turned out to be only to our advantage.
+	AI_Output(self,other, " DMT_1297_Stonnos_TestFail_15 " );	// So, after a little thought, I've come to the conclusion... that it's only right to pass your test.
 	MIS_STONNOSTEST = LOG_SUCCESS;
 	MIS_GUARDIANSTEST = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_STONNOSTEST,LOG_SUCCESS);
 	Log_SetTopicStatus(TOPIC_GUARDIANSTEST,LOG_SUCCESS);
-	B_LogEntry(TOPIC_STONNOSTEST,"Несмотря на то, что я не смог принести сферы Хранителю Стонносу, он посчитал, что я все-таки смог пройти его Испытание Веры.");
-	Log_AddEntry(TOPIC_GUARDIANSTEST,"Я прошел все испытания Хранителей. Думаю, теперь я наконец-то удостоюсь чести стать адептом божественного Круга Хранителей!");
+	B_LogEntry( TOPIC_STONNOSTEST , " Even though I couldn't bring the Orbs to Keeper Stonnos, he thought I still passed his Test of Faith. " );
+	Log_AddEntry( TOPIC_GUARDIANSTEST , " I have passed all the Guardian tests. I think now I will finally be honored to become an adept of the divine Circle of Guardians! " );
 	Info_ClearChoices(dmt_1297_stonnos_testfail);
-	Info_AddChoice(dmt_1297_stonnos_testfail,"Значит, я все-таки смогу вступить в Круг Хранителей?",dmt_1297_stonnos_testdone_pass);
+	Info_AddChoice(dmt_1297_stonnos_testfail, " So I can still join the Circle of Guardians? " ,dmt_1297_stonnos_testdone_pass);
 };
 
 instance DMT_1297_STONNOS_TESTDONE(C_Info)
@@ -135,12 +136,12 @@ instance DMT_1297_STONNOS_TESTDONE(C_Info)
 	condition = dmt_1297_stonnos_testdone_condition;
 	information = dmt_1297_stonnos_testdone_info;
 	permanent = FALSE;
-	description = "Я принес тебе Сферы Стихий, мастер.";
+	description = " I brought you Elemental Orbs, master. " ;
 };
 
 func int dmt_1297_stonnos_testdone_condition()
 {
-	if((MIS_STONNOSTEST == LOG_Running) && (CRESTNATUREISDONE == FALSE) && (Npc_HasItems(other,itmi_fireshpere) >= 1) && (Npc_HasItems(other,itmi_watershpere) >= 1) && (Npc_HasItems(other,itmi_stoneshpere) >= 1) && (Npc_HasItems(other,itmi_darkshpere) >= 1))
+	if (( MIS_STONNOSTEST  == LOG_Running) && ( CRESTNATUREISDONE  ==  FALSE ) && (Npc_HasItems(other,itmi_fireshpere) >=  1 ) && (Npc_HasItems(other,itmi_watershpere) >=  1 ) && (Npc_HasItems(other,itmi_stoneshpere) >=  1 ) && (Npc_HasItems(other,itmi_darkshpere) >=  1 ))
 	{
 		return TRUE;
 	};
@@ -149,42 +150,42 @@ func int dmt_1297_stonnos_testdone_condition()
 func void dmt_1297_stonnos_testdone_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DMT_1297_Stonnos_TestDone_00");	//Я принес тебе Сферы Стихий, мастер.
+	AI_Output(other,self, " DMT_1297_Stonnos_TestDone_00 " );	// I brought you Elemental Orbs, master.
 	Npc_RemoveInvItems(other,itmi_fireshpere,1);
 	Npc_RemoveInvItems(other,itmi_watershpere,1);
 	Npc_RemoveInvItems(other,itmi_stoneshpere,1);
 	Npc_RemoveInvItems(other,itmi_darkshpere,1);
 	b_giveinvitemsmanythings(other,self);
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_03");	//Да, все верно...(властно) Это они - божественные артефакты древности, порожденные магией самих создателей.
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_07");	//Ты справился с испытанием!
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_08");	//И по моему мнению, безусловно, заслужил того, чтобы стать одним из нас.
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_03 " );	// Yes, that's right... (imperiously) These are the divine artifacts of antiquity, generated by the magic of the creators themselves.
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_07 " );	// You passed the test!
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_08 " );	// And in my opinion, certainly deserved to be one of us.
 	MISSSHEPREFOREVER = TRUE;
 	MIS_STONNOSTEST = LOG_SUCCESS;
 	MIS_GUARDIANSTEST = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_GUARDIANSTEST,LOG_SUCCESS);
 	Log_SetTopicStatus(TOPIC_STONNOSTEST,LOG_SUCCESS);
-	B_LogEntry(TOPIC_STONNOSTEST,"После того, как я принес Хранителю Стонносу все Сферы Стихий, он объявил, что я смог пройти его Испытание Веры...");
-	Log_AddEntry(TOPIC_GUARDIANSTEST,"Я прошел все испытания Хранителей. Думаю, теперь я наконец-то удостоюсь чести стать адептом божественного Круга Хранителей!");
+	B_LogEntry( TOPIC_STONNOSTEST , " After I brought all the Elemental Orbs to Guardian Stonnos, he announced that I was able to pass his Test of Faith... " );
+	Log_AddEntry( TOPIC_GUARDIANSTEST , " I have passed all the Guardian tests. I think now I will finally be honored to become an adept of the divine Circle of Guardians! " );
 	Info_ClearChoices(dmt_1297_stonnos_testdone);
-	Info_AddChoice(dmt_1297_stonnos_testdone,"Значит, теперь я смогу вступить в Круг Хранителей?",dmt_1297_stonnos_testdone_pass);
+	Info_AddChoice(dmt_1297_stonnos_testdone, " So now I can join the Circle of Guardians? " ,dmt_1297_stonnos_testdone_pass);
 };
 
 func void dmt_1297_stonnos_testdone_pass()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DMT_1297_Stonnos_TestDone_Pass_01");	//Значит, я смогу вступить в Круг Хранителей?
+	AI_Output(other,self, " DMT_1297_Stonnos_TestDone_Pass_01 " );	// So I can join the Circle of Guardians?
 	Wld_PlayEffect("spellFX_INCOVATION_WHITE",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_Pass_02");	//(могущественно) Так оно и будет, человек. Ведь в этом твое предназначение!
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_Pass_03");	//Поэтому властью, данной мне создателями этого мира, я, Хранитель Стоннос, главный страж Чертогов Хаоса и божественного камня...
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_Pass_04");	//...возвожу тебя в степень Адепта Стихий, даруя это кольцо как символ твоего причастия к нашему священному Кругу!
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_Pass_02 " );	// (mightily) So be it, man. After all, this is your purpose!
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_Pass_03 " );	// Therefore, by the power given to me by the creators of this world, I, Guardian Stonnos, the main guardian of the Halls of Chaos and the divine stone...
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_Pass_04 " );	// ...I elevate you to the degree of Adept of the Elements, bestowing this ring as a symbol of your participation in our sacred Circle!
 	B_GiveInvItems(self,other,itri_guardians_02,1);
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_Pass_05");	//Отныне твоя судьба нераздельно связана с судьбами тех, кто так же как и ты избрал этот путь и дал клятву следовать ему.
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_Pass_06");	//И пусть твои решения будут мудрыми, как темные воды Хурона, а твоя вера - тверда, как божественная скала Амшора!
-	AI_Output(self,other,"DMT_1297_Stonnos_TestDone_Pass_07");	//ЭРРАТ КНАР ХАК...(властно) Да будет так!
-	B_LogEntry(TOPIC_GUARDIANS,"Хранитель Стоннос возвел меня в статус адепта их священного Круга - с этого момента я один из них! Правда, что теперь ждет меня впереди, я не знаю...");
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_Pass_05 " );	// From now on, your fate is inseparably linked with the fate of those who, like you, chose this path and swore an oath to follow it.
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_Pass_06 " );	// And may your decisions be wise, like the dark waters of Huron, and your faith be firm, like the divine rock of Amshor!
+	AI_Output(self,other, " DMT_1297_Stonnos_TestDone_Pass_07 " );	// ERRAT KNAR HAK...(imperiously) So be it!
+	B_LogEntry( TOPIC_GUARDIANS , " Guardian Stonnos elevated me to the status of an adherent of their sacred Circle - from now on I am one of them! True, what lies ahead of me now, I do not know... " );
 	STONNOS_AGREE = TRUE;
 	ADEPTGUARDIAN = TRUE;
 };
@@ -197,7 +198,7 @@ instance DMT_1297_STONNOS_CHOOSENATURE(C_Info)
 	condition = dmt_1297_stonnos_choosenature_condition;
 	information = dmt_1297_stonnos_choosenature_info;
 	permanent = TRUE;
-	description = "То есть теперь - я один из вас?";
+	description = " So now I'm one of you? " ;
 };
 
 
@@ -211,19 +212,19 @@ func int dmt_1297_stonnos_choosenature_condition()
 
 func void dmt_1297_stonnos_choosenature_info()
 {
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_01");	//То есть теперь я один из вас?
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_02");	//Да, отныне, ты - избранник Стихий!
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_07");	//Прежде чем ты продолжишь свой путь, тебе необходимо будет сделать еще одну вещь.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_09");	//Поскольку ты теперь являешься адептом нашего Круга, тебе придется решить для себя - с какой именно из стихий ты хочешь связать свою судьбу.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_10");	//(властно) Как ты уже наверно знаешь, всего их четыре - Огонь, Вода, Камень и Тьма.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_11");	//Каждая из них способна даровать тебе то, что не смогут даровать остальные! Однако свой выбор ты сможешь сделать только в пользу одной.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_12");	//Поэтому хорошенько подумай, прежде чем принять решение.
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_01 " );	// So now I'm one of you?
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_02 " );	// Yes, from now on, you are the chosen one of the Elements!
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_07 " );	// Before you continue on your journey, you will need to do one more thing.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_09 " );	// Since you are now an adept of our Circle, you will have to decide for yourself which of the elements you want to connect your fate with.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_10 " );	// (imperiously) As you probably already know, there are four of them - Fire, Water, Stone and Darkness.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_11 " );	// Each of them is able to grant you something that the rest cannot grant! However, you can only make your choice in favor of one.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_12 " );	// So think carefully before making a decision.
 	Info_ClearChoices(dmt_1297_stonnos_choosenature);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"Я еще подумаю, мастер.",dmt_1297_stonnos_choosenature_later);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"Я выбираю стихию Тьмы, мастер.",dmt_1297_stonnos_choosenature_dark);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"Я выбираю стихию Камня, мастер.",dmt_1297_stonnos_choosenature_stone);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"Я выбираю стихию Воды, мастер.",dmt_1297_stonnos_choosenature_water);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"Я выбираю стихию Огня, мастер.",dmt_1297_stonnos_choosenature_fire);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " I'll think about it, master. " ,dmt_1297_stonnos_choosenature_later);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " I choose Darkness, master. " ,dmt_1297_stonnos_choosenature_dark);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " I choose Stone element, master. " ,dmt_1297_stonnos_choosenature_stone);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " I choose Water, master. " ,dmt_1297_stonnos_choosenature_water);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " I choose Fire, master. " ,dmt_1297_stonnos_choosenature_fire);
 };
 
 func void dmt_1297_stonnos_choosenature_later()
@@ -252,26 +253,26 @@ func void dmt_1297_stonnos_choosenature_dark()
 	};
 
 	Wld_PlayEffect("SPELLFX_INCOVATION_VIOLET",hero,hero,0,0,0,FALSE);
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_Dark_01_00");	//Я выбираю стихию Тьмы, мастер.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_01");	//(властно) Хорошо, смертный. Пусть будет так! Ты сделал свой окончательный выбор.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_02");	//Отныне твоя судьба будет нераздельно связана только с ней, а все твои деяния и помыслы будут направлены исключительно во благо ее величия.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_04");	//Теперь ты должен следовать дальше по тому пути, который только что выбрал для себя.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_07");	//Отправляйся к Хранителю Даготу! Теперь он, как главный из стражей Тьмы, станет твои наставником и учителем.
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_Dark_01_08");	//А где мне его искать?
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_09");	//Вот, - возьми эту магическую руну телепортации. Она приведет тебя в нужное место.
-	B_GiveInvItems(self,other,itru_teleportdagot,1);
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_11");	//Теперь прощай, смертный...(могущественно) И да хранят тебя стихии!
-	B_LogEntry(TOPIC_GUARDIANS,"Хранитель Стоннос предложил мне выбрать стихию, с которой я хочу связать свою дальнейшую судьбу в качестве их адепта. Я предпочел стихию Тьмы.");
-	Log_AddEntry(TOPIC_GUARDIANS,"Стоннос также дал мне руну телепортации, с помощью которой я смогу отправиться в священную обитель Стражей Стихий. Там я должен буду встретиться с Хранителем Даготом, который отныне будет моим наставником.");
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_Dark_01_00 " );	// I choose the element of Darkness, master.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_01 " );	// (imperiously) All right, mortal. So be it! You have made your final choice.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_02 " );	// From now on, your fate will be inseparably connected only with her, and all your deeds and thoughts will be directed exclusively for the benefit of her greatness.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_04 " );	// Now you must continue on the path you just chose for yourself.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_07 " );	// Go to Guardian Dagoth! Now he, as the chief of the guards of Darkness, will become your mentor and teacher.
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_Dark_01_08 " );	// Where can I find it?
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_09 " );	// Here, take this magic rune of teleportation. She will take you to the right place.
+	B_GiveInvItems(self,other,itru_teleportdagot, 1 );
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_11 " );	// Now farewell, mortal... (mightily) And may the elements protect you!
+	B_LogEntry( TOPIC_GUARDIANS , " Guardian Stonnos suggested that I choose the element with which I want to link my further fate as their adept. I preferred the element of Darkness. " );
+	Log_AddEntry( TOPIC_GUARDIANS , " Stonnos also gave me a teleportation rune that would allow me to travel to the sacred abode of the Elemental Guardians. There I would meet Guardian Dagoth, who would be my mentor from now on. " );
 	Info_ClearChoices(dmt_1297_stonnos_choosenature);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"(закончить разговор)",dmt_1297_stonnos_test_end);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " (end call) " ,dmt_1297_stonnos_test_end);
 };
 
 func void dmt_1297_stonnos_choosenature_stone()
 {
 	CHOOSESTONE = TRUE;
 	CHOOSENATUREISDONE = TRUE;
-	AI_Print(PRINT_BONUSSTONE);
+	AI_Print( PRINT_BONUSSTONE );
 	hero.protection[PROT_EDGE] += 10;
 	hero.protection[PROT_BLUNT] += 10;
 	hero.protection[PROT_POINT] += 10;
@@ -292,19 +293,19 @@ func void dmt_1297_stonnos_choosenature_stone()
 	};
 
 	Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_Stone_01_00");	//Я выбираю стихию Камня, мастер.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_01");	//(властно) Хорошо, смертный. Пусть будет так! Ты сделал свой окончательный выбор.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_02");	//Отныне твоя судьба будет нераздельно связана только с ней, а все твои деяния и помыслы будут направлены исключительно во благо ее величия.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Stone_01_04");	//Что же касается меня, то с этого момента, как главный и единственный страж божественной Скалы, я стану твоим наставником и открою перед тобой древние таинства этой стихии.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Stone_01_05");	//Однако это будет позже. Сейчас же для начала тебе необходимо добраться до нашей священной обители, где мы и продолжим эту беседу.
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_Stone_01_06");	//Как я смогу туда добраться?
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_09");	//Вот, - возьми эту магическую руну телепортации. Она приведет тебя в нужное место.
-	B_GiveInvItems(self,other,itru_teleportdagot,1);
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_11");	//Теперь прощай, смертный...(могущественно) И да хранят тебя стихии!
-	B_LogEntry(TOPIC_GUARDIANS,"Хранитель Стоннос предложил мне выбрать стихию, с которой я хочу связать свою дальнейшую судьбу в качестве их адепта. Я предпочел стихию Камня.");
-	Log_AddEntry(TOPIC_GUARDIANS,"Стоннос также дал мне руну телепортации, с помощью которой я смогу отправиться в священную обитель Стражей Стихий. Там я снова должен буду встретиться с ним, но уже в качестве его ученика.");
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_Stone_01_00 " );	// I choose the Stone element, master.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_01 " );	// (imperiously) All right, mortal. So be it! You have made your final choice.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_02 " );	// From now on, your fate will be inseparably connected only with her, and all your deeds and thoughts will be directed exclusively for the benefit of her greatness.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Stone_01_04 " );	// As for me, from now on, as the main and only guardian of the divine Rock, I will become your mentor and reveal to you the ancient mysteries of this element.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Stone_01_05 " );	// However, that will come later. Now, for starters, you need to get to our sacred abode, where we will continue this conversation.
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_Stone_01_06 " );	// How can I get there?
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_09 " );	// Here, take this magic rune of teleportation. She will take you to the right place.
+	B_GiveInvItems(self,other,itru_teleportdagot, 1 );
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_11 " );	// Now farewell, mortal... (mightily) And may the elements protect you!
+	B_LogEntry( TOPIC_GUARDIANS , " Guardian Stonnos suggested that I choose the element with which I want to link my future fate as their adept. I preferred the element of Stone. " );
+	Log_AddEntry( TOPIC_GUARDIANS , " Stonnos also gave me a teleportation rune that would allow me to travel to the Elemental Guardians' sacred retreat. There I would meet him again as his apprentice. " );
 	Info_ClearChoices(dmt_1297_stonnos_choosenature);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"(закончить разговор)",dmt_1297_stonnos_test_end);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " (end call) " ,dmt_1297_stonnos_test_end);
 };
 
 func void dmt_1297_stonnos_choosenature_water()
@@ -314,7 +315,7 @@ func void dmt_1297_stonnos_choosenature_water()
 	AI_Print(PRINT_BONUSWATER);
 	NPC_DAM_DIVE_TIME = 10000000;
 	Npc_ChangeAttribute(hero,ATR_MANA_MAX,BONUSMAN);
-	hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA] + BONUSMAN;
+	hero. attribute[ ATR_MANA ] = hero. attribute[ ATR_MANA ] +  BONUSMAN ;
 
 	if(hero.guild == GIl_KDW)
 	{
@@ -329,26 +330,26 @@ func void dmt_1297_stonnos_choosenature_water()
 	};
 
 	Wld_PlayEffect("SPELLFX_INCOVATION_BLUE",hero,hero,0,0,0,FALSE);
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_Water_01_00");	//Я выбираю стихию Воды, мастер.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_01");	//(властно) Хорошо, смертный. Пусть будет так! Ты сделал свой окончательный выбор.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_02");	//Отныне твоя судьба будет нераздельно связана только с ней, а все твои деяния и помыслы будут направлены исключительно во благо ее величия.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_04");	//Теперь ты должен следовать дальше по тому пути, который только что выбрал для себя.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Water_01_07");	//Отправляйся к Хранителю Вакону! Теперь он, как главный из стражей Воды, станет твои наставником и учителем.
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_Dark_01_08");	//А где мне его искать?
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_09");	//Вот, - возьми эту магическую руну телепортации. Она приведет тебя в нужное место.
-	B_GiveInvItems(self,other,itru_teleportdagot,1);
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_11");	//Теперь прощай, смертный...(могущественно) И да хранят тебя стихии!
-	B_LogEntry(TOPIC_GUARDIANS,"Хранитель Стоннос предложил мне выбрать стихию, с которой я хочу связать свою дальнейшую судьбу в качестве их адепта. Я предпочел стихию Воды.");
-	Log_AddEntry(TOPIC_GUARDIANS,"Стоннос также дал мне руну телепортации, с помощью которой я смогу отправиться в священную обитель Стражей Стихий. Там я должен буду встретиться с Хранителем Ваконом, который отныне будет моим наставником.");
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_Water_01_00 " );	// I choose the Water element, master.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_01 " );	// (imperiously) All right, mortal. So be it! You have made your final choice.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_02 " );	// From now on, your fate will be inseparably connected only with her, and all your deeds and thoughts will be directed exclusively for the benefit of her greatness.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_04 " );	// Now you must continue on the path you just chose for yourself.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Water_01_07 " );	// Go to Guardian Wakon! Now he, as the chief of the guardians of Water, will become your mentor and teacher.
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_Dark_01_08 " );	// Where can I find it?
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_09 " );	// Here, take this magic rune of teleportation. She will take you to the right place.
+	B_GiveInvItems(self,other,itru_teleportdagot, 1 );
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_11 " );	// Now farewell, mortal... (mightily) And may the elements protect you!
+	B_LogEntry( TOPIC_GUARDIANS , " Guardian Stonnos suggested that I choose the element with which I want to link my further fate as their adept. I preferred the element of Water. " );
+	Log_AddEntry( TOPIC_GUARDIANS , " Stonnos also gave me a teleportation rune that would allow me to travel to the Elemental Guardians' sacred retreat. There I would meet Guardian Wakon, who would be my mentor from now on. " );
 	Info_ClearChoices(dmt_1297_stonnos_choosenature);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"(закончить разговор)",dmt_1297_stonnos_test_end);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " (end call) " ,dmt_1297_stonnos_test_end);
 };
 
 func void dmt_1297_stonnos_choosenature_fire()
 {
 	CHOOSEFIRE = TRUE;
 	CHOOSENATUREISDONE = TRUE;
-	AI_Print(PRINT_BONUSFIRE);
+	AI_Print( PRINT_BONUSFIRE );
 	hero.protection[PROT_FIRE] += 20;
 	REALPROTFIRE += 20;
 
@@ -365,19 +366,19 @@ func void dmt_1297_stonnos_choosenature_fire()
 	};
 
 	Wld_PlayEffect("SPELLFX_INCOVATION_FIRE",hero,hero,0,0,0,FALSE);
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_Fire_01_00");	//Я выбираю стихию Огня, мастер.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_01");	//(властно) Хорошо, смертный. Пусть будет так! Ты сделал свой окончательный выбор.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_02");	//Отныне твоя судьба будет нераздельно связана только с ней, а все твои деяния и помыслы будут направлены исключительно во благо ее величия.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_04");	//Теперь ты должен следовать дальше по тому пути, который только что выбрал для себя.
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Fire_01_07");	//Отправляйся к Хранителю Келиосу! Теперь он, как главный из стражей Огня, станет твои наставником и учителем.
-	AI_Output(other,self,"DMT_1297_Stonnos_ChooseNature_Dark_01_08");	//А где мне его искать?
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_09");	//Вот, - возьми эту магическую руну телепортации. Она приведет тебя в нужное место.
-	B_GiveInvItems(self,other,itru_teleportdagot,1);
-	AI_Output(self,other,"DMT_1297_Stonnos_ChooseNature_Dark_01_11");	//Теперь прощай, смертный...(могущественно) И да хранят тебя стихии!
-	B_LogEntry(TOPIC_GUARDIANS,"Хранитель Стоннос предложил мне выбрать стихию, с которой я хочу связать свою дальнейшую судьбу в качестве их адепта. Я предпочел стихию Огня.");
-	Log_AddEntry(TOPIC_GUARDIANS,"Стоннос также дал мне руну телепортации, с помощью которой я смогу отправиться в священную обитель Стражей Стихий. Там я должен буду встретиться с Хранителем Келиосом, который отныне будет моим наставником.");
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_Fire_01_00 " );	// I choose the Fire element, master.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_01 " );	// (imperiously) All right, mortal. So be it! You have made your final choice.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_02 " );	// From now on, your fate will be inseparably connected only with her, and all your deeds and thoughts will be directed exclusively for the benefit of her greatness.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_04 " );	// Now you must continue on the path you just chose for yourself.
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Fire_01_07 " );	// Go to Guardian Kelios! Now he, as the chief of the guardians of Fire, will become your mentor and teacher.
+	AI_Output(other,self, " DMT_1297_Stonnos_ChooseNature_Dark_01_08 " );	// Where can I find it?
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_09 " );	// Here, take this magic rune of teleportation. She will take you to the right place.
+	B_GiveInvItems(self,other,itru_teleportdagot, 1 );
+	AI_Output(self,other, " DMT_1297_Stonnos_ChooseNature_Dark_01_11 " );	// Now farewell, mortal... (mightily) And may the elements protect you!
+	B_LogEntry( TOPIC_GUARDIANS , " Guardian Stonnos suggested that I choose the element with which I want to link my further fate as their adept. I preferred the element of Fire. " );
+	Log_AddEntry( TOPIC_GUARDIANS , " Stonnos also gave me a teleportation rune that would allow me to travel to the sacred abode of the Elemental Guardians. There I would meet Guardian Kelios, who would be my mentor from now on. " );
 	Info_ClearChoices(dmt_1297_stonnos_choosenature);
-	Info_AddChoice(dmt_1297_stonnos_choosenature,"(закончить разговор)",dmt_1297_stonnos_test_end);
+	Info_AddChoice(dmt_1297_stonnos_choosenature, " (end call) " ,dmt_1297_stonnos_test_end);
 };
 
 func void dmt_1297_stonnos_test_end()
