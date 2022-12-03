@@ -1,4 +1,5 @@
 
+
 instance DIA_Carl_EXIT(C_Info)
 {
 	npc = VLK_461_Carl;
@@ -23,8 +24,8 @@ func void DIA_Carl_EXIT_Info()
 
 func void B_CarlSayHallo()
 {
-	AI_Output(self,other,"DIA_Carl_Hallo_05_00");	//Похоже, в городе есть несколько воров, которые крадут у зажиточных горожан.
-	AI_Output(self,other,"DIA_Carl_Hallo_05_01");	//Городская стража недавно перевернула портовый квартал вверх дном, но они ничего не нашли.
+	AI_Output(self,other, " DIA_Carl_Hallo_05_00 " );	// Looks like there are a few thieves in the city who steal from wealthy citizens.
+	AI_Output(self,other, " DIA_Carl_Hallo_05_01 " );	// The City Watch recently turned the waterfront upside down, but they didn't find anything.
 };
 
 
@@ -41,7 +42,7 @@ instance DIA_Carl_PICKPOCKET(C_Info)
 
 func int DIA_Carl_PICKPOCKET_Condition()
 {
-	return C_Beklauen(34,40);
+	return  C_Robbery ( 34 , 40 );
 };
 
 func void DIA_Carl_PICKPOCKET_Info()
@@ -53,7 +54,7 @@ func void DIA_Carl_PICKPOCKET_Info()
 
 func void DIA_Carl_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Carl_PICKPOCKET);
 };
 
@@ -84,24 +85,24 @@ func int DIA_Carl_Hallo_Condition()
 
 func void DIA_Carl_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Carl_Hallo_05_02");	//Что привело тебя в этот бедный район? Что ты ищешь здесь?
+	AI_Output(self,other, " DIA_Carl_Hallo_05_02 " );	// What brings you to this poor area? What are you looking for here?
 	Info_ClearChoices(DIA_Carl_Hallo);
-	Info_AddChoice(DIA_Carl_Hallo,"Я заблудился.",DIA_Carl_Hallo_verlaufen);
-	Info_AddChoice(DIA_Carl_Hallo,"Я просто брожу, осматриваю окрестности.",DIA_Carl_Hallo_umsehen);
+	Info_AddChoice(DIA_Carl_Hallo, " I'm lost. " ,DIA_Carl_Hallo_verlaufen);
+	Info_AddChoice(DIA_Carl_Hallo, " I'm just wandering around looking around. " ,DIA_Carl_Hallo_umsehen);
 };
 
-func void DIA_Carl_Hallo_verlaufen()
+func void DIA_Carl_Hello_lost()
 {
-	AI_Output(other,self,"DIA_Carl_Hallo_verlaufen_15_00");	//Я заблудился.
-	AI_Output(self,other,"DIA_Carl_Hallo_verlaufen_05_01");	//Тогда смотри, чтобы тебя не ограбили.
+	AI_Output(other,self, " DIA_Carl_Hallo_verlaufen_15_00 " );	// I'm lost.
+	AI_Output(self,other, " DIA_Carl_Hallo_verlaufen_05_01 " );	// Then make sure you don't get robbed.
 	B_CarlSayHallo();
 	Info_ClearChoices(DIA_Carl_Hallo);
 };
 
-func void DIA_Carl_Hallo_umsehen()
+func void DIA_Carl_Hello_look around()
 {
-	AI_Output(other,self,"DIA_Carl_Hallo_umsehen_15_00");	//Я просто брожу, осматриваю окрестности.
-	AI_Output(self,other,"DIA_Carl_Hallo_umsehen_05_01");	//Ага. Смотри, зазеваешься и лишишься кошелька.
+	AI_Output(other,self, " DIA_Carl_Hallo_umsehen_15_00 " );	// I'm just wandering around, looking around.
+	AI_Output(self,other, " DIA_Carl_Hallo_umsehen_05_01 " );	// Yeah. Look, gape and lose your wallet.
 	B_CarlSayHallo();
 	Info_ClearChoices(DIA_Carl_Hallo);
 };
@@ -113,12 +114,12 @@ instance DIA_Carl_HelpPath(C_Info)
 	condition = DIA_Carl_HelpPath_Condition;
 	information = DIA_Carl_HelpPath_Info;
 	permanent = FALSE;
-	description = "Могу ли я быть тебе полезен?";
+	description = " Can I help you? " ;
 };
 
 func int DIA_Carl_HelpPath_Condition()
 {
-	if((CanTeachTownMaster == FALSE) && (MIS_PathFromDown == LOG_Running) && (PabloQuestsUp == TRUE))
+	if (( CanTeachTownMaster ==  FALSE ) && ( MY_PathFromDown == LOG_Running ) && ( PaulQuestsUp ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -126,21 +127,21 @@ func int DIA_Carl_HelpPath_Condition()
 
 func void DIA_Carl_HelpPath_Info()
 {
-	AI_Output(other,self,"DIA_Carl_HelpPath_01_00");	//Могу ли я быть тебе полезен?
-	AI_Output(self,other,"DIA_Carl_HelpPath_01_01");	//(удивленно) А с чего ты взял, что я вообще нуждаюсь в твоей помощи?
-	AI_Output(other,self,"DIA_Carl_HelpPath_01_02");	//Я хочу стать подмастерьем, и мне нужно произвести на местных хорошее впечатление. 
-	AI_Output(self,other,"DIA_Carl_HelpPath_01_03");	//(ухмыляясь) Теперь мне все понятно. К сожалению, у меня уже есть помощник!
-	AI_Output(self,other,"DIA_Carl_HelpPath_01_04");	//Но ты можешь впечатлить меня, если поможешь доставить в мою кузницу материал для работы.
+	AI_Output(other,self, " DIA_Carl_HelpPath_01_00 " );	// Can I be of service to you?
+	AI_Output(self,other, " DIA_Carl_HelpPath_01_01 " );	// (surprised) What makes you think I need your help at all?
+	AI_Output(other,self, " DIA_Carl_HelpPath_01_02 " );	// I want to become an apprentice and I need to make a good impression on the locals.
+	AI_Output(self,other, " DIA_Carl_HelpPath_01_03 " );	// (grinning) Now I understand everything. Unfortunately, I already have a helper!
+	AI_Output(self,other, " DIA_Carl_HelpPath_01_04 " );	// But you can impress me if you help me get some materials to work with in my forge.
 	AI_Output(other,self,"DIA_Carl_HelpPath_01_05");	//Что именно? 
-	AI_Output(self,other,"DIA_Carl_HelpPath_01_06");	//Мне нужен уголь. Хотя бы пять кусков!
-	AI_Output(self,other,"DIA_Carl_HelpPath_01_07");	//Достань его - и считай, что мое одобрение уже у тебя в кармане.
-	AI_Output(other,self,"DIA_Carl_HelpPath_01_08");	//А где я смогу найти его?
-	AI_Output(self,other,"DIA_Carl_HelpPath_01_09");	//Уголь можно найти в сгоревших строениях, купить у торговцев или накопать в шахтах.
-	AI_Output(other,self,"DIA_Carl_HelpPath_01_10");	//Хорошо. Я постараюсь достать все, о чем ты просил.
+	AI_Output(self,other, " DIA_Carl_HelpPath_01_06 " );	// I need coal. At least five pieces!
+	AI_Output(self,other, " DIA_Carl_HelpPath_01_07 " );	// Take it out - and consider that my approval is already in your pocket.
+	AI_Output(other,self, " DIA_Carl_HelpPath_01_08 " );	// Where can I find it?
+	AI_Output(self,other, " DIA_Carl_HelpPath_01_09 " );	// Coal can be found in burnt buildings, bought from merchants, or found in mines.
+	AI_Output(other, self, " DIA_Carl_HelpPath_01_10 " );	// Good. I'll try to get everything you asked for.
 	MIS_CarlCoal = LOG_Running;
 	Log_CreateTopic(TOPIC_CarlCoal,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CarlCoal,LOG_Running);
-	B_LogEntry(TOPIC_CarlCoal,"Кузнец Карл попросил достать для него пять кусков угля. Тогда он замолвит за меня словечко.");
+	B_LogEntry(TOPIC_CarlCoal, " Blacksmith Carl asked me to get five lumps of coal for him. Then he will put in a good word for me. " );
 };
 
 instance DIA_Carl_HelpPath_Done(C_Info)
@@ -150,7 +151,7 @@ instance DIA_Carl_HelpPath_Done(C_Info)
 	condition = DIA_Carl_HelpPath_Done_Condition;
 	information = DIA_Carl_HelpPath_Done_Info;
 	permanent = FALSE;
-	description = "Я принес уголь.";
+	description = " I brought coal. " ;
 };
 
 func int DIA_Carl_HelpPath_Done_Condition()
@@ -164,26 +165,26 @@ func int DIA_Carl_HelpPath_Done_Condition()
 func void DIA_Carl_HelpPath_Done_Info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Carl_HelpPath_Done_01_00");	//Я принес уголь.
-	AI_Output(self,other,"DIA_Carl_HelpPath_Done_01_01");	//Отлично. (довольно) Давай его сюда. Мои запасы почти на исходе.
-	AI_Output(other,self,"DIA_Carl_HelpPath_Done_01_02");	//Конечно, вот он. А что насчет твоего одобрения?
+	AI_Output(other,self, " DIA_Carl_HelpPath_Done_01_00 " );	// I brought coal.
+	AI_Output(self,other, " DIA_Carl_HelpPath_Done_01_01 " );	// Great. (pretty) Give it here. My supplies are almost low.
+	AI_Output(other,self, " DIA_Carl_HelpPath_Done_01_02 " );	// Of course, here it is. What about your approval?
 	B_GiveInvItems(other,self,ItMi_Coal,5);
 	Npc_RemoveInvItems(self,ItMi_Coal,5);
-	AI_Output(self,other,"DIA_Carl_HelpPath_Done_01_03");	//Можешь не переживать...(улыбаясь) Как мы и договаривались!
-	AI_Output(self,other,"DIA_Carl_HelpPath_Done_01_04");	//Если вдруг кто-нибудь спросит меня о тебе, то узнает только самое хорошее.
+	AI_Output(self,other, " DIA_Carl_HelpPath_Done_01_03 " );	// Don't worry... (smiling) As we agreed!
+	AI_Output(self,other, " DIA_Carl_HelpPath_Done_01_04 " );	// If suddenly someone asks me about you, they will only know the best.
 	MIS_CarlCoal = LOG_Success;
 	Log_SetTopicStatus(TOPIC_CarlCoal,LOG_Success);
-	B_LogEntry(TOPIC_CarlCoal,"Я принес уголь кузнецу Карлу. Теперь он замолвит за меня словечко в квартале ремесленников.");
+	B_LogEntry(TOPIC_CarlCoal, " I've brought coal to Blacksmith Carl. Now he'll put in a good word for me in the Craftsmen's quarter. " );
 };
 
-instance DIA_Carl_Diebe(C_Info)
+instance DIA_Carl_Diebe (C_Info)
 {
 	npc = VLK_461_Carl;
 	nr = 3;
 	condition = DIA_Carl_Diebe_Condition;
 	information = DIA_Carl_Diebe_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о ворах?";
+	description = " What do you know about thieves? " ;
 };
 
 func int DIA_Carl_Diebe_Condition()
@@ -193,21 +194,21 @@ func int DIA_Carl_Diebe_Condition()
 
 func void DIA_Carl_Diebe_Info()
 {
-	AI_Output(other,self,"DIA_Carl_Diebe_15_00");	//Что ты знаешь о ворах?
-	AI_Output(self,other,"DIA_Carl_Diebe_05_01");	//Ничего. Но все горожане напуганы и становятся недоверчивыми - особенно к чужакам.
-	AI_Output(self,other,"DIA_Carl_Diebe_05_02");	//Смотри, чтобы тебя не застали в чужом доме. У нас этого не любят.
-	AI_Output(self,other,"DIA_Carl_Diebe_05_03");	//Да, ты должен сам защищаться от воров. Хорошая дубинка - лучше всего.
+	AI_Output(other,self, " DIA_Carl_Diebe_15_00 " );	// What do you know about thieves?
+	AI_Output(self,other, " DIA_Carl_Diebe_05_01 " );	// Nothing. But all the townspeople are frightened and become distrustful - especially towards strangers.
+	AI_Output(self,other, " DIA_Carl_Diebe_05_02 " );	// Be careful not to be caught in someone else's house. We don't like this.
+	AI_Output(self,other, " DIA_Carl_Diebe_05_03 " );	// Yes, you have to protect yourself from thieves. A good club is the best.
 };
 
 
-instance DIA_Carl_Lernen(C_Info)
+instance DIA_Carl_Lernen (C_Info)
 {
 	npc = VLK_461_Carl;
 	nr = 3;
 	condition = DIA_Carl_Lernen_Condition;
 	information = DIA_Carl_Lernen_Info;
 	permanent = FALSE;
-	description = "Ты можешь научить меня чему-нибудь?";
+	description = " Can you teach me something? " ;
 };
 
 
@@ -218,65 +219,65 @@ func int DIA_Carl_Lernen_Condition()
 
 func void DIA_Carl_Lernen_Info()
 {
-	AI_Output(other,self,"DIA_Carl_Lernen_15_00");	//Ты можешь меня чему-нибудь научить?
-	AI_Output(self,other,"DIA_Carl_Lernen_05_01");	//Ах, я кую здесь подковы, гвозди и чиню металлические предметы.
-	AI_Output(self,other,"DIA_Carl_Lernen_05_02");	//Но в порту не приобретешь много опыта в кузнечном деле, чтобы было чему учить.
-	AI_Output(self,other,"DIA_Carl_Lernen_05_02A");	//Хотя конечно, выковать простой обычный меч - я и сам смог бы и тебя научил бы, как это сделать.
-	AI_Output(self,other,"DIA_Carl_Lernen_05_03");	//А если хочешь действительно научиться ковать настоящее оружие - иди к Хараду. Да..., он кует роскошные клинки!
-	AI_Output(self,other,"DIA_Carl_Lernen_05_04");	//Но если ты хочешь только чуть-чуть потренировать свои мускулы - могу тебе и в этом помочь.
+	AI_Output(other,self, " DIA_Carl_Lernen_15_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_Carl_Lernen_05_01 " );	// Ah, here I forge horseshoes, nails, and repair metal objects.
+	AI_Output(self,other, " DIA_Carl_Lernen_05_02 " );	// But you don't get much experience in blacksmithing in the port, so that there is something to teach.
+	AI_Output(self,other, " DIA_Carl_Lernen_05_02A " );	// Although, of course, to forge a simple ordinary sword - I could do it myself and I would teach you how to do it.
+	AI_Output(self,other, " DIA_Carl_Lernen_05_03 " );	// And if you really want to learn how to forge real weapons, go to Harad. Yes... he forges luxurious blades!
+	AI_Output(self,other, " DIA_Carl_Lernen_05_04 " );	// But if you just want to exercise your muscles a little, I can help you with that too.
 	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
 	CARL_TEACHSMITH = TRUE;
-	B_LogEntry(TOPIC_CityTeacher,"Карл, кузнец в портовом районе, сможет помочь мне стать сильнее и обучить ковке.");
+	B_LogEntry(TOPIC_CityTeacher, " Karl, the blacksmith in the waterfront, can help me get stronger and teach me how to forge. " );
 };
 
 
-instance DIA_Carl_Wieviel(C_Info)
+instance DIA_Carl_Wieviel (C_Info)
 {
 	npc = VLK_461_Carl;
 	nr = 3;
 	condition = DIA_Carl_Wieviel_Condition;
-	information = DIA_Carl_Wieviel_Info;
+	information = DIA_Carl_How much_Info;
 	permanent = FALSE;
-	description = "Сколько ты берешь за обучение?";
+	description = " How much do you charge for tuition? " ;
 };
 
 func int DIA_Carl_Wieviel_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Carl_Lernen))
+	if ( Npc_KnowsInfo ( other , DIA_Carl_Lernen ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Carl_Wieviel_Info()
+func void DIA_Carl_How much_Info()
 {
-	AI_Output(other,self,"DIA_Carl_Wieviel_15_00");	//Сколько ты берешь за обучение?
+	AI_Output(other,self, " DIA_Carl_Wieviel_15_00 " );	// How much do you charge for tuition?
 
 	if(Npc_KnowsInfo(other,DIA_Edda_Statue))
 	{
 		B_GivePlayerXP(50);
-		AI_Output(self,other,"DIA_Carl_Wieviel_05_01");	//Я слышал, что ты сделал для Эдды. Я буду тренировать тебя бесплатно.
+		AI_Output(self,other, " DIA_Carl_Wieviel_05_01 " );	// I heard what you did for Edda. I will train you for free.
 		Carl_TeachSTR = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Carl_Wieviel_05_02");	//Пятьдесят золотых монет - и я помогу тебе стать сильнее.
+		AI_Output(self,other, " DIA_Carl_Wieviel_05_02 " );	// Fifty gold coins and I'll help you get stronger.
 	};
 };
 
-instance DIA_Carl_bezahlen(C_Info)
+instance DIA_Carl_pay (C_Info)
 {
 	npc = VLK_461_Carl;
 	nr = 3;
 	condition = DIA_Carl_bezahlen_Condition;
 	information = DIA_Carl_bezahlen_Info;
 	permanent = TRUE;
-	description = "Я хочу потренироваться с тобой. (Цена: 50 монет)";
+	description = " I want to work out with you. (Price: 50 coins) " ;
 };
 
 func int DIA_Carl_bezahlen_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Carl_Wieviel) && (Carl_TeachSTR == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Carl_Wieviel ) && ( Carl_TeachSTR ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -284,21 +285,21 @@ func int DIA_Carl_bezahlen_Condition()
 
 func void DIA_Carl_bezahlen_Info()
 {
-	AI_Output(other,self,"DIA_Carl_bezahlen_15_00");	//Я хочу потренироваться с тобой.
+	AI_Output(other,self, " DIA_Carl_bezahlen_15_00 " );	// I want to practice with you.
 
 	if(Npc_KnowsInfo(other,DIA_Edda_Statue))
 	{
-		AI_Output(self,other,"DIA_Carl_bezahlen_05_01");	//Я слышал, что ты сделал для Эдды. Я буду тренировать тебя бесплатно.
+		AI_Output(self,other, " DIA_Carl_bezahlen_05_01 " );	// I heard what you did for Edda. I will train you for free.
 		Carl_TeachSTR = TRUE;
 	}
 	else if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
-		AI_Output(self,other,"DIA_Carl_bezahlen_05_02");	//Хорошо, мы можем начать, как только ты будешь готов.
+		AI_Output(self,other, " DIA_Carl_bezahlen_05_02 " );	// Okay, we can start as soon as you're ready.
 		Carl_TeachSTR = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Carl_bezahlen_05_03");	//Принеси деньги, тогда начнем обучение.
+		AI_Output(self,other, " DIA_Carl_bezahlen_05_03 " );	// Bring the money, then we'll start training.
 	};
 };
 
@@ -309,7 +310,7 @@ instance DIA_Carl_Teach(C_Info)
 	condition = DIA_Carl_Teach_Condition;
 	information = DIA_Carl_Teach_Info;
 	permanent = TRUE;
-	description = "Я хочу стать сильнее.";
+	description = " I want to get stronger. " ;
 };
 
 func int DIA_Carl_Teach_Condition()
@@ -322,7 +323,7 @@ func int DIA_Carl_Teach_Condition()
 
 func void DIA_Carl_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Carl_Teach_15_00");	//Я хочу стать сильнее.
+	AI_Output(other,self, " DIA_Carl_Teach_15_00 " );	// I want to get stronger.
 	Info_ClearChoices(DIA_Carl_Teach);
 	Info_AddChoice(DIA_Carl_Teach,Dialog_Back,DIA_Carl_Teach_Back);
 	Info_AddChoice(DIA_Carl_Teach,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Carl_Teach_STR_1);
@@ -354,8 +355,8 @@ func void DIA_Carl_Teach_STR_5()
 
 func void b_carl_teachsmith()
 {
-	AI_Output(self,other,"DIA_Carl_TeachCommon_12_01");	//Это просто, парень. Достань кусок чистой стали и держи в огне, пока не начнет плавиться.
-	AI_Output(self,other,"DIA_Carl_TeachCommon_12_02");	//Потом выкуй на наковальне клинок.
+	AI_Output(self,other, " DIA_Carl_TeachCommon_12_01 " );	// It's easy, man. Get a piece of clean steel and keep it on fire until it starts to melt.
+	AI_Output(self,other, " DIA_Carl_TeachCommon_12_02 " );	// Then forge a blade on the anvil.
 };
 
 func void b_carlsmithchoices()
@@ -376,7 +377,7 @@ instance DIA_CARL_TEACHSMITH(C_Info)
 	condition = dia_carl_teachsmith_condition;
 	information = dia_carl_teachsmith_info;
 	permanent = TRUE;
-	description = "Научи меня ковать оружие.";
+	description = " Teach me how to forge weapons. " ;
 };
 
 
@@ -390,7 +391,7 @@ func int dia_carl_teachsmith_condition()
 
 func void dia_carl_teachsmith_info()
 {
-	AI_Output(other,self,"DIA_Carl_TeachCommon_15_00");	//Научи меня ковать.
+	AI_Output(other,self, " DIA_Carl_TeachCommon_15_00 " );	// Teach me how to forge.
 	b_carlsmithchoices();
 };
 
@@ -404,7 +405,7 @@ func void dia_carl_teachsmith_common()
 	if(B_TeachPlayerTalentSmith(self,other,WEAPON_Common))
 	{
 		b_carl_teachsmith();
-		AI_Output(self,other,"DIA_Carl_TeachCommon_12_03");	//Твои первые мечи не будут произведением искусства, но остальное можно и потом выучить.
+		AI_Output(self,other, " DIA_Carl_TeachCommon_12_03 " );	// Your first swords won't be art, but the rest can be learned later.
 	};
 	b_carlsmithchoices();
 };
@@ -417,7 +418,7 @@ instance DIA_CARL_ARMORCANTEACH(C_Info)
 	condition = dia_carl_armorcanteach_condition;
 	information = dia_carl_armorcanteach_info;
 	permanent = TRUE;
-	description = "Ты тоже принадлежишь к 'Кольцу Воды'?";
+	description = " Are you also a member of the 'Ring of Water'? " ;
 };
 
 
@@ -431,37 +432,37 @@ func int dia_carl_armorcanteach_condition()
 
 func void dia_carl_armorcanteach_info()
 {
-	AI_Output(other,self,"DIA_Carl_ArmorCanTeach_01_00");	//Ты тоже принадлежишь к Кольцу Воды?
-	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_01");	//К какому Кольцу Воды? Ты о чем это, парень?
-	AI_Output(other,self,"DIA_Carl_ArmorCanTeach_01_02");	//Да ладно, не прикидывайся, что не понимаешь, о чем идет речь. Ларес мне все рассказал про тебя.
-	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_03");	//А, ну, если он так сказал, значит, оно так и есть...(ехидно смеется)
-	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_04");	//И что же он еще про меня рассказал?
-	AI_Output(other,self,"DIA_Carl_ArmorCanTeach_01_05");	//Ларес сказал, что ты сможешь достать для меня доспех получше, чем этот.
-	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_06");	//А! Вот теперь я точно уверен в том, что перед мной брат по Кольцу. Значит, Ларес так и сказал...
-	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_07");	//Думаю, он немного погорячился в своих словах. Другого доспеха у меня для тебя нет. Но...
-	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_08");	//...я мог показать тебе, как улучшить тот доспех, который ты только что мне показал.
-	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_09");	//Правда, для этого ты должен хотя бы чуть-чуть разбираться в кузнечном деле.
+	AI_Output(other,self, " DIA_Carl_ArmorCanTeach_01_00 " );	// Do you also belong to the Water Ring?
+	AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_01 " );	// Which Water Ring? What are you talking about, boy?
+	AI_Output(other,self, " DIA_Carl_ArmorCanTeach_01_02 " );	// Come on, don't pretend you don't understand what I'm talking about. Lares told me everything about you.
+	AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_03 " );	// Ah, well, if he said so, then it is so... (laughs sarcastically)
+	AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_04 " );	// And what else did he say about me?
+	AI_Output(other,self, " DIA_Carl_ArmorCanTeach_01_05 " );	// Lares said you could get me better armor than this.
+	AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_06 " );	// Ah! Now I am sure that in front of me is a brother in the Ring. So that's what Lares said...
+	AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_07 " );	// I think he got a little carried away with his words. I have no other armor for you. But...
+	AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_08 " );	// ...I could show you how to upgrade that armor you just showed me.
+	AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_09 " );	// True, for this you must have at least a little knowledge of blacksmithing.
 
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
-		AI_Output(other,self,"DIA_Carl_ArmorCanTeach_01_10");	//Я немного разбираюсь в кузнечном деле...
-		AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_11");	//Это хорошо.
-		AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_12");	//Тогда скажи, как будешь готов, и я научу тебя всему, что сам знаю.
+		AI_Output(other,self, " DIA_Carl_ArmorCanTeach_01_10 " );	// I know a little about blacksmithing...
+		AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_11 " );	// This is good.
+		AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_12 " );	// Then tell me when you're ready, and I'll teach you everything I know.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_13");	//А судя по всему, ты даже понятия не имеешь, что это такое.
-		AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_14");	//Поэтому для начала научись ковать. А как научишься, я с радостью научу тебя всему, что сам знаю.
+		AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_13 " );	// And apparently, you don't even know what it is.
+		AI_Output(self,other, " DIA_Carl_ArmorCanTeach_01_14 " );	// So learn to forge first. And when you learn, I will gladly teach you everything that I myself know.
 	};
 
 	CARL_TEACHARMOR = TRUE;
 	Log_CreateTopic(TOPIC_ARMORTEACHER,LOG_NOTE);
-	B_LogEntry(TOPIC_ARMORTEACHER,"Карл может научить меня улучшать доспехи Кольца Воды.");
+	B_LogEntry( TOPIC_ARMORTEACHER , " Karl can teach me how to upgrade the Water Ring armor. " );
 };
 
 func void b_carl_teacharmor_1()
 {
-	AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_01");	//Хорошо. Смотри внимательно, как это делается. Все, что тебе нужно, это несколько железных слитков...
+	AI_Output(self,other, " DIA_Carl_TeachArmor_1_01_01 " );	// Good. Watch carefully how it's done. All you need is a few iron ingots...
 
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
@@ -478,14 +479,14 @@ func void b_carl_teacharmor_1()
 
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_02");	//...самое тяжелое - это сделать элементы кольчужной сетки...
-		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_03");	//...делишь раскаленную заготовку на десяток равных частей, потом отбиваешь нагар, и медленным движением каждой части...
-		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_04");	//...придаешь ровную форму кольца и проковываешь его крепление...
-		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_05");	//...вот так, как это делаю я сейчас...(показывает) ...скрепляешь кольца и крепишь кольчужную сетку на доспех.
+		AI_Output(self,other, " DIA_Carl_TeachArmor_1_01_02 " );	// ...the hardest part is making the elements of the chain mail mesh...
+		AI_Output(self,other, " DIA_Carl_TeachArmor_1_01_03 " );	// ...divide the red-hot workpiece into ten equal parts, then beat off the soot, and with the slow movement of each part...
+		AI_Output(self,other, " DIA_Carl_TeachArmor_1_01_04 " );	// ...you give the ring an even shape and forge its fastening...
+		AI_Output(self,other, " DIA_Carl_TeachArmor_1_01_05 " );	// ...that's how I do it now... (demonstrates) ...you fasten the rings and attach the chain mail mesh to the armor.
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_06");	//...вот и все!
-		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_07");	//Попробуй теперь сам. Думаю, у тебя не должно возникнуть больших проблем с этим.
+		AI_Output(self,other, " DIA_Carl_TeachArmor_1_01_07 " );	// Try it yourself now. I don't think you should have much of a problem with this.
 	};
 };
 
@@ -496,7 +497,7 @@ func void b_carlarmorchoices()
 
 	if(PLAYER_TALENT_SMITH[32] == FALSE)
 	{
-		Info_AddChoice(dia_carl_armorteach,"Улучшить 'Кольчугу Кольца Воды' (Цена: 500 монет)",dia_carl_armorteach_itar_ranger_addon_v1);
+		Info_AddChoice(dia_carl_armorteach, " Upgrade 'Water Ring Mail' (Cost: 500 coins) " ,dia_carl_armorteach_itar_ranger_addon_v1);
 	};
 };
 
@@ -508,7 +509,7 @@ instance DIA_CARL_ARMORTEACH(C_Info)
 	condition = dia_carl_armorteach_condition;
 	information = dia_carl_armorteach_info;
 	permanent = TRUE;
-	description = "Научи меня улучшать доспехи.";
+	description = " Teach me how to upgrade my armor. " ;
 };
 
 func int dia_carl_armorteach_condition()
@@ -524,17 +525,17 @@ func int dia_carl_armorteach_condition()
 
 func void dia_carl_armorteach_info()
 {
-	AI_Output(other,self,"DIA_Carl_ArmorTeach_01_00");	//Научи меня улучшать доспехи.
+	AI_Output(other,self, " DIA_Carl_ArmorTeach_01_00 " );	// Teach me how to upgrade armor.
 
-	if(Wld_IsTime(6,10,20,0))
+	if (Wld_IsTime( 6 , 10 , 20 , 0 ))
 	{
-		AI_Output(self,other,"DIA_Carl_ArmorTeach_01_01");	//Всегда готов помочь тебе, брат по Кольцу...
+		AI_Output(self,other, " DIA_Carl_ArmorTeach_01_01 " );	// Always ready to help you, brother in the Ring...
 		b_carlarmorchoices();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Carl_ArmorTeach_01_02");	//И как же я, по-твоему, сейчас смогу тебя обучить этому? Или ты видишь тут наковальню с горнилом? (смеется)
-		AI_Output(self,other,"DIA_Carl_ArmorTeach_01_03");	//Приходи завтра с утра. Тогда и поговорим.
+		AI_Output(self,other, " DIA_Carl_ArmorTeach_01_02 " );	// And how do you think I can teach you this now? Or do you see an anvil with a furnace here? (laughs)
+		AI_Output(self,other, " DIA_Carl_ArmorTeach_01_03 " );	// Come back tomorrow morning. Then we'll talk.
 	};
 };
 
@@ -560,7 +561,7 @@ func void dia_carl_armorteach_itar_ranger_addon_v1()
 	else
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Carl_bezahlen_05_03");	//Принеси деньги, тогда начнем обучение.
+		AI_Output(self,other, " DIA_Carl_bezahlen_05_03 " );	// Bring the money, then we'll start training.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -573,7 +574,7 @@ instance DIA_Carl_PrioratBlade(C_Info)
 	condition = DIA_Carl_PrioratBlade_condition;
 	information = DIA_Carl_PrioratBlade_info;
 	permanent = FALSE;
-	description = "Мне нужна твоя помощь.";
+	description = " I need your help. " ;
 };
 
 
@@ -588,12 +589,12 @@ func int DIA_Carl_PrioratBlade_condition()
 func void DIA_Carl_PrioratBlade_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Carl_PrioratBlade_01_01");	//Мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_Carl_PrioratBlade_01_02");	//А в чем дело?
-	AI_Output(other,self,"DIA_Carl_PrioratBlade_01_03");	//У меня с собой есть очень необычный клинок.
-	AI_Output(other,self,"DIA_Carl_PrioratBlade_01_04");	//И мне необходимо узнать, откуда он и кто его сделал.
-	AI_Output(self,other,"DIA_Carl_PrioratBlade_01_05");	//(с интересом) Ну ладно. Покажи мне его.
-	AI_Output(other,self,"DIA_Carl_PrioratBlade_01_06");	//Вот, держи.
+	AI_Output(other,self, " DIA_Carl_PrioratBlade_01_01 " );	// I need your help.
+	AI_Output(self,other, " DIA_Carl_PrioratBlade_01_02 " );	// What's the matter?
+	AI_Output(other,self, " DIA_Carl_PrioratBlade_01_03 " );	// I have a very unusual blade with me.
+	AI_Output(other,self, " DIA_Carl_PrioratBlade_01_04 " );	// And I need to know where it came from and who made it.
+	AI_Output(self,other, " DIA_Carl_PrioratBlade_01_05 " );	// (with interest) Okay. Show it to me.
+	AI_Output(other,self, " DIA_Carl_PrioratBlade_01_06 " );	// Here, take this.
 	CreateInvItems(other,ItMw_1H_AssBlade_View,1);
 	B_GiveInvItems(other,self,ItMw_1H_AssBlade_View,1);
 	AI_UnequipWeapons(self);
@@ -602,9 +603,9 @@ func void DIA_Carl_PrioratBlade_info()
 	AI_PlayAni(self,"T_1HSINSPECT");
 	AI_RemoveWeapon(self);
 	AI_UnequipWeapons(self);
-	AI_Output(self,other,"DIA_Carl_PrioratBlade_01_07");	//(озадаченно) Такое оружие мне еще не приходилось держать в руках.
-	AI_Output(self,other,"DIA_Carl_PrioratBlade_01_08");	//Возьми его обратно. Боюсь, я ничем не могу тебе помочь.
-	B_LogEntry(TOPIC_PrioratStart,"Кузнец Карл ничего не смог сказать про загадочный клинок.");
+	AI_Output(self,other, " DIA_Carl_PrioratBlade_01_07 " );	// (puzzled) I've never held a weapon like this before.
+	AI_Output(self,other, " DIA_Carl_PrioratBlade_01_08 " );	// Take it back. I'm afraid I can't help you.
+	B_LogEntry(TOPIC_PrioratStart, " Blacksmith Carl couldn't say anything about the mysterious blade. " );
 };
 
 instance DIA_Carl_FatherNews(C_Info)
@@ -614,7 +615,7 @@ instance DIA_Carl_FatherNews(C_Info)
 	condition = DIA_Carl_FatherNews_Condition;
 	information = DIA_Carl_FatherNews_Info;
 	permanent = FALSE;
-	description = "У меня есть для тебя весточка от Моригана.";
+	description = " I have a message for you from Morgan. " ;
 };
 
 func int DIA_Carl_FatherNews_Condition()
@@ -628,23 +629,23 @@ func int DIA_Carl_FatherNews_Condition()
 func void DIA_Carl_FatherNews_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Carl_FatherNews_01_00");	//У меня для тебя весточка от Моригана.
-	AI_Output(self,other,"DIA_Carl_FatherNews_01_01");	//(остолбенев) От кого?
-	AI_Output(other,self,"DIA_Carl_FatherNews_01_02");	//От Моригана, твоего сына!
+	AI_Output(other,self, " DIA_Carl_FatherNews_01_00 " );	// I have word for you from Morgan.
+	AI_Output(self,other, " DIA_Carl_FatherNews_01_01 " );	// (stupefied) From whom?
+	AI_Output(other,self, " DIA_Carl_FatherNews_01_02 " );	// From Morgan, your son!
 	AI_PlayAni(self,"T_STAND_2_SIT");
-	AI_Output(self,other,"DIA_Carl_FatherNews_01_03");	//О Иннос! (ошарашенно) Неужели ты услышал мои молитвы?
+	AI_Output(self,other, " DIA_Carl_FatherNews_01_03 " );	// O Innos! (dazed) Have you heard my prayers?
 	AI_PlayAni(self,"T_SIT_2_STAND");
-	AI_Output(self,other,"DIA_Carl_FatherNews_01_04");	//Что с ним? Расскажи мне все!
-	AI_Output(other,self,"DIA_Carl_FatherNews_01_05");	//Он до сих пор жив, но находится в плену у орков.
-	AI_Output(self,other,"DIA_Carl_FatherNews_01_06");	//Проклятье...(с досадой) Не сказать, что это слишком хорошие новости.
-	AI_Output(self,other,"DIA_Carl_FatherNews_01_07");	//Но, по крайней мере, у меня все еще остается хоть какая-то надежда увидеть его вновь.
-	AI_Output(self,other,"DIA_Carl_FatherNews_01_08");	//Теперь я буду молится каждый день, чтобы Иннос помог мне в этом.
-	AI_Output(self,other,"DIA_Carl_FatherNews_01_09");	//Благодарю от всей души! Порадовал старика...
-	AI_Output(other,self,"DIA_Carl_FatherNews_01_10");	//Да не за что.
+	AI_Output(self,other, " DIA_Carl_FatherNews_01_04 " );	// What's wrong with him? Tell me everything!
+	AI_Output(other,self, " DIA_Carl_FatherNews_01_05 " );	// He's still alive, but he's being held captive by the orcs.
+	AI_Output(self,other, " DIA_Carl_FatherNews_01_06 " );	// Damn... (annoyed) Not to say that this is too good news.
+	AI_Output(self,other, " DIA_Carl_FatherNews_01_07 " );	// But at least I still have some hope of seeing him again.
+	AI_Output(self,other, " DIA_Carl_FatherNews_01_08 " );	// Now I will pray every day for Innos to help me with this.
+	AI_Output(self,other, " DIA_Carl_FatherNews_01_09 " );	// Thank you from the bottom of my heart! Made the old man happy...
+	AI_Output(other,self, " DIA_Carl_FatherNews_01_10 " );	// No reason.
 	RT_Respect = RT_Respect + 1;
 	MIS_FatherNews = LOG_Success;
 	Log_SetTopicStatus(TOPIC_FatherNews,LOG_Success);
-	B_LogEntry(TOPIC_FatherNews,"Я передал весточку отцу Моригана. Старик был просто вне себя от счастья, узнав, что его сын до сих пор жив.");
+	B_LogEntry(TOPIC_FatherNews, " I gave word to Morgan's father. The old man was overjoyed to hear that his son was still alive. " );
 };
 
 instance DIA_Carl_DoCrossBow(C_Info)
@@ -654,7 +655,7 @@ instance DIA_Carl_DoCrossBow(C_Info)
 	condition = DIA_Carl_DoCrossBow_condition;
 	information = DIA_Carl_DoCrossBow_info;
 	permanent = FALSE;
-	description = "Ты умеешь делать арбалеты?";
+	description = " Can you make crossbows? " ;
 };
 
 func int DIA_Carl_DoCrossBow_condition()
@@ -668,13 +669,13 @@ func int DIA_Carl_DoCrossBow_condition()
 func void DIA_Carl_DoCrossBow_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Carl_DoCrossBow_01_01");	//Ты умеешь делать арбалеты?
-	AI_Output(self,other,"DIA_Carl_DoCrossBow_01_02");	//Арбалеты? (удивленно) Ты что - нет, конечно.
-	AI_Output(self,other,"DIA_Carl_DoCrossBow_01_03");	//Тебе нужен хороший плотник или столяр.
-	AI_Output(self,other,"DIA_Carl_DoCrossBow_01_04");	//Возможно, он сможет помочь тебе в этом деле.
+	AI_Output(other,self, " DIA_Carl_DoCrossBow_01_01 " );	// Can you make crossbows?
+	AI_Output(self,other, " DIA_Carl_DoCrossBow_01_02 " );	// Crossbows? (surprised) Are you - no, of course.
+	AI_Output(self,other, " DIA_Carl_DoCrossBow_01_03 " );	// You need a good carpenter or joiner.
+	AI_Output(self,other, " DIA_Carl_DoCrossBow_01_04 " );	// He may be able to help you with this.
 	AI_Output(other,self,"DIA_Carl_DoCrossBow_01_05");	//Понял.
 	CrossBowNeedPlotnik = TRUE;
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Делать арбалеты меня сможет научить только плотник или столяр. И где же мне найти такого?");
+	B_LogEntry(TOPIC_TagNorGrHunWeap, " Only a carpenter or joiner can teach me how to make crossbows. And where can I find one? " );
 };
 
 instance DIA_Carl_MySmith(C_Info)
@@ -684,7 +685,7 @@ instance DIA_Carl_MySmith(C_Info)
 	condition = DIA_Carl_MySmith_condition;
 	information = DIA_Carl_MySmith_info;
 	permanent = FALSE;
-	description = "Мне нужен кузнец.";
+	description = " I need a blacksmith. " ;
 };
 
 func int DIA_Carl_MySmith_condition()
@@ -698,29 +699,29 @@ func int DIA_Carl_MySmith_condition()
 func void DIA_Carl_MySmith_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Carl_MySmith_01_00");	//Мне нужен кузнец.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_01");	//А я, по-твоему, кто?
-	AI_Output(other,self,"DIA_Carl_MySmith_01_02");	//Ты не понял. Мне нужен кузнец в моем лагере!
-	AI_Output(self,other,"DIA_Carl_MySmith_01_03");	//У тебя есть лагерь?!
-	AI_Output(other,self,"DIA_Carl_MySmith_01_04");	//Да, недалеко от фермы Онара, в старой башне.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_05");	//Хммм... Неплохо для того, кто сам только недавно бегал в поисках работы.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_06");	//Предложение, конечно, заманчивое. Но что мне оно даст?
-	AI_Output(other,self,"DIA_Carl_MySmith_01_07");	//Ну ты сам посуди. Какие у тебя тут перспективы? Работы у тебя мало, денег тоже.
-	AI_Output(other,self,"DIA_Carl_MySmith_01_08");	//А если учитывать тот факт, что в городе работает такой кузнец, как Харад, то у тебя вообще нет никаких шансов подняться.
-	AI_Output(other,self,"DIA_Carl_MySmith_01_09");	//Я же тебе предлагаю кров, пищу и стабильный заработок.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_10");	//Тут ты прав. В золоте я, конечно, не купаюсь, но на жизнь пока хватало.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_11");	//Ладно, в конце концов, хуже уже не будет. Если вдруг что-то не понравится - вернусь обратно в город.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_12");	//И сколько же ты готов мне платить за мою работу?
-	AI_Output(other,self,"DIA_Carl_MySmith_01_13");	//Скажем, восемьдесят золотых монет в день. Уверен, ты и половину этой суммы не набирал здесь.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_14");	//Какое щедрое предложение с твоей стороны! Хорошо, - считай, что у тебя в лагере появился кузнец. Только дай мне время собраться.
-	AI_Output(other,self,"DIA_Carl_MySmith_01_15");	//Тогда увидимся в лагере. Да, и кстати, - паролем для входа туда является фраза 'Драконовы сокровища'.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_16");	//Хорошо, я запомню. До встречи!
-	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Карл теперь будет работать в моей кузне.");
+	AI_Output(other,self, " DIA_Carl_MySmith_01_00 " );	// I need a blacksmith.
+	AI_Output(self,other, " DIA_Carl_MySmith_01_01 " );	// Who do you think I am?
+	AI_Output(other,self, " DIA_Carl_MySmith_01_02 " );	// You don't understand. I need a blacksmith in my camp!
+	AI_Output(self,other, " DIA_Carl_MySmith_01_03 " );	// Do you have a camp?!
+	AI_Output(other,self, " DIA_Carl_MySmith_01_04 " );	// Yes, not far from Onar's farm, in the old tower.
+	AI_Output(self,other, " DIA_Carl_MySmith_01_05 " );	// Hmmm... Not bad for someone who's only recently been running around looking for work.
+	AI_Output(self,other, " DIA_Carl_MySmith_01_06 " );	// The offer is certainly tempting. But what will it give me?
+	AI_Output(other,self, " DIA_Carl_MySmith_01_07 " );	// Well, judge for yourself. What are your prospects here? You have little work, money too.
+	AI_Output(other,self, " DIA_Carl_MySmith_01_08 " );	// And given the fact that a blacksmith like Harad works in the city, there's no chance for you to rise at all.
+	AI_Output(other,self, " DIA_Carl_MySmith_01_09 " );	// I offer you shelter, food and a stable income.
+	AI_Output(self,other, " DIA_Carl_MySmith_01_10 " );	// You're right here. Of course, I don’t bathe in gold, but so far I have had enough to live on.
+	AI_Output(self,other, " DIA_Carl_MySmith_01_11 " );	// Okay, it won't get any worse after all. If suddenly something does not like it, I will return back to the city.
+	AI_Output(self,other, " DIA_Carl_MySmith_01_12 " );	// And how much are you willing to pay me for my work?
+	AI_Output(other,self, " DIA_Carl_MySmith_01_13 " );	// Let's say eighty gold coins a day. I'm sure you didn't earn half that amount here.
+	AI_Output(self,other, " DIA_Carl_MySmith_01_14 " );	// What a generous offer of you! Okay, consider that you have a blacksmith in your camp. Just give me time to get myself together.
+	AI_Output(other,self, " DIA_Carl_MySmith_01_15 " );	// See you at the camp then. Oh, and by the way - the password to enter there is the phrase 'Dragon Treasures'.
+	AI_Output(self,other, " DIA_Carl_MySmith_01_16 " );	// Okay, I'll remember. See you!
+	B_LogEntry( TOPIC_PPL_FOR_TOWER , " Carl will now work at my forge. " );
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 	CARLRECRUITEDDT = TRUE;
 	CarlDayHire = Wld_GetDay();
 	AI_StopProcessInfos(self);
@@ -734,7 +735,7 @@ instance DIA_Carl_InTower(C_Info)
 	condition = DIA_Carl_InTower_condition;
 	information = DIA_Carl_InTower_info;
 	permanent = TRUE;
-	description = "Как работается?";
+	description = " How does it work? " ;
 };
 
 func int DIA_Carl_InTower_condition()
@@ -747,8 +748,8 @@ func int DIA_Carl_InTower_condition()
 
 func void DIA_Carl_InTower_info()
 {
-	AI_Output(other,self,"DIA_Carl_InTower_15_00");	//Как работается?
-	AI_Output(self,other,"DIA_Carl_InTower_01_01");	//Отлично! Жаловаться не на что.
+	AI_Output(other, self, " DIA_Carl_InTower_15_00 " );	// How does it work?
+	AI_Output(self,other, " DIA_Carl_InTower_01_01 " );	// Great! Nothing to complain about.
 };
 
 instance DIA_Carl_SharpKnife(C_Info)
@@ -758,12 +759,12 @@ instance DIA_Carl_SharpKnife(C_Info)
 	condition = DIA_Carl_SharpKnife_Condition;
 	information = DIA_Carl_SharpKnife_Info;
 	permanent = TRUE;
-	description = "Мне нужно, чтобы ты заточил этот нож.";
+	description = " I need you to sharpen this knife. " ;
 };
 
 func int DIA_Carl_SharpKnife_Condition()
 {
-	if((MIS_Hilda_SharpKnife == LOG_Running) && Wld_IsTime(6,10,19,55) && (HildaSharpKnife == FALSE) && (Npc_HasItems(other,ItMi_HildaKnife) >= 1))
+	if ((MY_Hilda_SharpKnife == LOG_Running) && Wld_IsTime( 6 , 10 , 19 , 55 ) && (HildaSharpKnife ==  FALSE ) && (Npc_HasItems(other,ItMy_HildaKnife) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -771,35 +772,35 @@ func int DIA_Carl_SharpKnife_Condition()
 
 func void DIA_Carl_SharpKnife_Info()
 {
-	AI_Output(other,self,"DIA_Carl_SharpKnife_15_00");	//Мне нужно, чтобы ты заточил этот нож.
-	AI_Output(self,other,"DIA_Carl_SharpKnife_04_01");	//Конечно. Но это будет стоить тебе пять золотых.
+	AI_Output(other,self, " DIA_Carl_SharpKnife_15_00 " );	// I need you to sharpen this knife.
+	AI_Output(self,other, " DIA_Carl_SharpKnife_04_01 " );	// Of course. But it will cost you five gold.
 	Info_ClearChoices(DIA_Carl_SharpKnife);
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 5)
 	{
-		Info_AddChoice(DIA_Carl_SharpKnife,"Вот золото.",DIA_Carl_SharpKnife_Ok);
+		Info_AddChoice(DIA_Carl_SharpKnife, " You're right. " ,DIA_Carl_SharpKnife_Ok);
 	};
 
-	Info_AddChoice(DIA_Carl_SharpKnife,"У меня нет таких денег.",DIA_Carl_SharpKnife_No);
+	Info_AddChoice(DIA_Carl_SharpKnife, " I don't have that kind of money. " ,DIA_Carl_SharpKnife_No);
 
 };
 
 func void DIA_Carl_SharpKnife_Ok()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Carl_SharpKnife_Ok_15_00");	//Вот золото.
+	AI_Output(other,self, " DIA_Carl_SharpKnife_Ok_15_00 " );	// Here's the gold.
 	B_GiveInvItems(other,self,ItMi_Gold,5);
 	Npc_RemoveInvItems(self,ItMi_Gold,5);
-	AI_Output(self,other,"DIA_Carl_SharpKnife_Ok_04_01");	//Хорошо! Подожди минутку...
-	AI_Output(self,other,"DIA_Carl_SharpKnife_Ok_04_02");	//...ну, вот и все. Теперь этот нож острее бритвы!
+	AI_Output(self,other, " DIA_Carl_SharpKnife_Ok_04_01 " );	// Good! Wait a minute...
+	AI_Output(self,other, " DIA_Carl_SharpKnife_Ok_04_02 " );	// ...well, that's it. Now this knife is sharper than a razor!
 	HildaSharpKnife = TRUE;
-	B_LogEntry(TOPIC_Hilda_SharpKnife,"Кузнец Карл заточил для меня нож Хильды.");
+	B_LogEntry(TOPIC_Hilda_SharpKnife, " Blacksmith Carl sharpened Hilda's knife for me. " );
 	Info_ClearChoices(DIA_Carl_SharpKnife);
 };
 
 func void DIA_Carl_SharpKnife_No()
 {
-	AI_Output(other,self,"DIA_Carl_SharpKnife_No_15_00");	//У меня нет таких денег.
-	AI_Output(self,other,"DIA_Carl_SharpKnife_No_04_01");	//Извини, тогда ничем не могу помочь.
+	AI_Output(other,self, " DIA_Carl_SharpKnife_No_15_00 " );	// I don't have that kind of money.
+	AI_Output(self,other, " DIA_Carl_SharpKnife_No_04_01 " );	// Sorry, can't help then.
 	Info_ClearChoices(DIA_Carl_SharpKnife);
 };
