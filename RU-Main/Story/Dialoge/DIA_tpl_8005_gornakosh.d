@@ -1,3 +1,4 @@
+
 var int CheckTadeNaKosh;
 
 func void B_GorNaKoshEquipWeapon(var C_Npc slf)
@@ -8,7 +9,7 @@ func void B_GorNaKoshEquipWeapon(var C_Npc slf)
 
 	if(CheckTadeNaKosh == TRUE)
 	{
-		if(Hlp_IsItem(EquipWeapon,ITMW_ZWEIHAENDER_GORNAKOSH) == FALSE)
+		if (Hlp_IsItem(EquipWeapon, ITMW_ZWEIHAENDER_GORNAKOSH ) ==  FALSE )
 		{
 			AI_UnequipWeapons(slf);
 
@@ -17,10 +18,10 @@ func void B_GorNaKoshEquipWeapon(var C_Npc slf)
 				CreateInvItem(slf,ITMW_ZWEIHAENDER_GORNAKOSH);
 			};
 
-			Npc_EquipItem(slf,ITMW_ZWEIHAENDER_GORNAKOSH);
+			Npc_EquipItem(slf, ITMW_ZWEIHANDER_GORNAKOSH );
 		};
 
-		CheckTadeNaKosh = FALSE;
+		CheckTadeNaKosh = FALSE ;
 	};
 };
 
@@ -58,7 +59,7 @@ instance dia_gornakosh_PICKPOCKET(C_Info)
 
 func int dia_gornakosh_PICKPOCKET_Condition()
 {
-	return C_Beklauen(15,35);
+	return  C_Robbery ( 15 , 35 );
 };
 
 func void dia_gornakosh_PICKPOCKET_Info()
@@ -70,7 +71,7 @@ func void dia_gornakosh_PICKPOCKET_Info()
 
 func void dia_gornakosh_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_gornakosh_PICKPOCKET);
 };
 
@@ -87,13 +88,13 @@ instance DIA_GORNAKOSH_WHOYOU(C_Info)
 	condition = dia_gornakosh_whoyou_condition;
 	information = dia_gornakosh_whoyou_info;
 	permanent = FALSE;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
 func int dia_gornakosh_whoyou_condition()
 {
-	if((Kapitel < 5) && (PSI_TALK == TRUE))
+	if ((Capital <  5 ) && ( PSI_TALK  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -102,14 +103,14 @@ func int dia_gornakosh_whoyou_condition()
 func void dia_gornakosh_whoyou_info()
 {
 	AI_Output(other,self,"DIA_GorNaKosh_WhoYou_01_00");	//Кто ты?
-	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_01");	//Мое имя - Гор На Кош, верховный Страж Братства! (гордо) У тебя еще вопрос?
-	AI_Output(other,self,"DIA_GorNaKosh_WhoYou_01_02");	//Как мне получить такие же доспехи, как у тебя?
-	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_03");	//Ха! Для начала тебе придется стать одним из нас, и, может, после этого ты будешь удостоен чести носить доспехи Стражей.
-	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_04");	//И скажу тебе прямо, парень - просто пустой болтовней ты этого точно не добьешься!
-	AI_Output(other,self,"DIA_GorNaKosh_WhoYou_01_05");	//А каково это - быть Стражем?
-	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_06");	//Это как и большая честь, так и огромная ответственность!
-	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_07");	//Мы сражаемся во имя нашего Братства - и готовы отдать свои жизни за наши идеи, если это потребуется.
-	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_08");	//Только опытные и сильные духом воины могут вступить на этот путь.
+	AI_Output(self,other, " DIA_GorNaKosh_WhoYou_01_01 " );	// My name is Gor Na Kosh, High Guardian of the Brotherhood! (proudly) Do you have another question?
+	AI_Output(other,self, " DIA_GorNaKosh_WhoYou_01_02 " );	// How can I get the same armor as you?
+	AI_Output(self,other, " DIA_GorNaKosh_WhoYou_01_03 " );	// Ha! To begin with, you will have to become one of us, and perhaps after that you will be honored to wear the armor of the Guardians.
+	AI_Output(self,other, " DIA_GorNaKosh_WhoYou_01_04 " );	// And I'll tell you straight, boy - you won't get it just with idle chatter!
+	AI_Output(other,self, " DIA_GorNaKosh_WhoYou_01_05 " );	// What's it like being a Guardian?
+	AI_Output(self,other, " DIA_GorNaKosh_WhoYou_01_06 " );	// This is both a great honor and a huge responsibility!
+	AI_Output(self,other, " DIA_GorNaKosh_WhoYou_01_07 " );	// We fight in the name of our Brotherhood - and we are ready to give our lives for our ideas, if necessary.
+	AI_Output(self,other, " DIA_GorNaKosh_WhoYou_01_08 " );	// Only experienced and strong-willed warriors can embark on this path.
 };
 
 
@@ -120,13 +121,13 @@ instance DIA_GORNAKOSH_WHAT(C_Info)
 	condition = dia_gornakosh_what_condition;
 	information = dia_gornakosh_what_info;
 	permanent = FALSE;
-	description = "Чем ты здесь занимаешься?";
+	description = " What are you doing here? " ;
 };
 
 
 func int dia_gornakosh_what_condition()
 {
-	if((Kapitel < 5) && (PSI_TALK == TRUE) && Npc_KnowsInfo(other,dia_gornakosh_whoyou))
+	if ((Capital <  5 ) && ( PSI_TALK  ==  TRUE ) && Npc_KnowsInfo(other,dia_gornakosh_whoyou));
 	{
 		return TRUE;
 	};
@@ -134,27 +135,27 @@ func int dia_gornakosh_what_condition()
 
 func void dia_gornakosh_what_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_What_01_00");	//Чем ты здесь занимаешься?
-	AI_Output(self,other,"DIA_GorNaKosh_What_01_01");	//(гордо) Я тренирую стражей Братства!
-	AI_Output(self,other,"DIA_GorNaKosh_What_01_02");	//В отсутствии нашего наставника - Кор Ангара, теперь эту обязанность в Братстве исполняю я.
-	AI_Output(self,other,"DIA_GorNaKosh_What_01_03");	//Но меня не покидает надежда, что когда-нибудь наш учитель вновь вернется к нам.
+	AI_Output(other,self, " DIA_GorNaKosh_What_01_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_GorNaKosh_What_01_01 " );	// (proudly) I train the Guardians of the Brotherhood!
+	AI_Output(self,other, " DIA_GorNaKosh_What_01_02 " );	// In the absence of our mentor, Kor Angara, I now fulfill this duty in the Brotherhood.
+	AI_Output(self,other, " DIA_GorNaKosh_What_01_03 " );	// But the hope does not leave me that someday our teacher will return to us again.
 };
 
 
-instance DIA_GORNAKOSH_ANGAR(C_Info)
+instance DIA_GORNAKOSH_ANGAR (C_Info)
 {
 	npc = tpl_8005_gornakosh;
 	nr = 1;
 	condition = dia_gornakosh_angar_condition;
 	information = dia_gornakosh_angar_info;
 	permanent = FALSE;
-	description = "(рассказать о Кор Ангаре)";
+	description = " (tell about Kor Angara) " ;
 };
 
 
-func int dia_gornakosh_angar_condition()
+func int dia_cold_condition()
 {
-	if((PSI_TALK == TRUE) && (GORNAKOSHKNOWSANGAR == FALSE) && Npc_KnowsInfo(other,dia_gornakosh_what) && Npc_KnowsInfo(other,DIA_AngarDJG_HALLO))
+	if (( PSI_TALK  ==  TRUE ) && ( GORNAKOSHKNOWSANGAR  ==  FALSE ) && Npc_KnowsInfo(other,dia_gornakosh_what) && Npc_KnowsInfo(other,DIA_AngarDJG_HELLO))
 	{
 		return TRUE;
 	};
@@ -162,23 +163,23 @@ func int dia_gornakosh_angar_condition()
 
 func void dia_gornakosh_angar_info()
 {
-	if(ANGARISDEAD == FALSE)
+	if ( ANGARISDEAD  ==  FALSE )
 	{
 		B_GivePlayerXP(250);
-		AI_Output(other,self,"DIA_GorNaKosh_Angar_01_01");	//Кор Ангар жив!
-		AI_Output(self,other,"DIA_GorNaKosh_Angar_01_02");	//Откуда тебе это известно?! (непонимающе) Но... 
-		AI_Output(other,self,"DIA_GorNaKosh_Angar_01_03");	//Я встретил его в Долине Рудников. С ним все в порядке.
-		AI_Output(self,other,"DIA_GorNaKosh_Angar_01_04");	//(радостно) О, это воистину чудесная новость, которой возрадуются все Братья без исключения!
+		AI_Output(other,self, " DIA_GorNaKosh_Angar_01_01 " );	// Kor Angar is alive!
+		AI_Output(self,other, " DIA_GorNaKosh_Angar_01_02 " );	// How do you know this?! (uncomprehending) But...
+		AI_Output(other,self, " DIA_GorNaKosh_Angar_01_03 " );	// I met him in the Valley of Mines. He is OK.
+		AI_Output(self,other, " DIA_GorNaKosh_Angar_01_04 " );	// (joyfully) Oh, this is truly wonderful news, which will rejoice all the Brothers without exception!
 		GORNAKOSHKNOWSANGAR = TRUE;
 	}
 	else
 	{
 		B_GivePlayerXP(50);
-		AI_Output(other,self,"DIA_GorNaKosh_Angar_01_05");	//Боюсь, у меня плохие новости. Кор Ангар мертв.
-		AI_Output(self,other,"DIA_GorNaKosh_Angar_01_06");	//ЧТО?! (гневно) Откуда тебе это известно?
-		AI_Output(other,self,"DIA_GorNaKosh_Angar_01_07");	//Он нашел свою судьбу в Долине Рудников. Мне очень жаль.
-		AI_Output(self,other,"DIA_GorNaKosh_Angar_01_08");	//О, нет. Как это могло произойти? Нет! Этого не может быть!
-		AI_Output(self,other,"DIA_GorNaKosh_Angar_01_10");	//(печально) Это большая утрата для всего Братства. Мы все будем оплакивать смерть нашего лидера и учителя.
+		AI_Output(other,self, " DIA_GorNaKosh_Angar_01_05 " );	// I'm afraid I have bad news. Kor Angar is dead.
+		AI_Output(self,other, " DIA_GorNaKosh_Angar_01_06 " );	// WHAT?! (angrily) How do you know that?
+		AI_Output(other,self, " DIA_GorNaKosh_Angar_01_07 " );	// He found his destiny in the Valley of Mines. I'm really sorry.
+		AI_Output(self,other, " DIA_GorNaKosh_Angar_01_08 " );	// Oh, no. How could this happen? Not! It can't be!
+		AI_Output(self,other, " DIA_GorNaKosh_Angar_01_10 " );	// (sadly) This is a great loss for the entire Brotherhood. We will all mourn the death of our leader and teacher.
 		GORNAKOSHKNOWSANGAR = TRUE;
 		AI_StopProcessInfos(self);
 		B_GorNaKoshEquipWeapon(self);
@@ -193,13 +194,13 @@ instance DIA_GORNAKOSH_CANBETPL(C_Info)
 	condition = dia_gornakosh_canbetpl_condition;
 	information = dia_gornakosh_canbetpl_info;
 	permanent = FALSE;
-	description = "А ты бы мог принять меня в Стражи Братства?";
+	description = " Would you like me to join the Brotherhood Guard? " ;
 };
 
 
 func int dia_gornakosh_canbetpl_condition()
 {
-	if((Kapitel < 5) && (PSI_TALK == TRUE) && Npc_KnowsInfo(other,dia_gornakosh_whoyou))
+	if ((Capital <  5 ) && ( PSI_TALK  ==  TRUE ) && Npc_KnowsInfo(other,dia_gornakosh_whoyou));
 	{
 		return TRUE;
 	};
@@ -207,12 +208,12 @@ func int dia_gornakosh_canbetpl_condition()
 
 func void dia_gornakosh_canbetpl_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_CanBeTPL_01_00");	//А ты бы мог принять меня в Стражи Братства?
+	AI_Output(other,self, " DIA_GorNaKosh_CanBeTPL_01_00 " );	// Could you accept me into the Guards of the Brotherhood?
 
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_01");	//Для начала ты должен стать одним из братьев.
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_02");	//Поговори с Идолом Ораном - он поможет тебе в этом.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_01 " );	// First you must become one of the brothers.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_02 " );	// Talk to the Idol Auran - he will help you with this.
 		CANBETPL = TRUE;
 
 		if(MIS_CanDoTempler == FALSE)
@@ -220,16 +221,16 @@ func void dia_gornakosh_canbetpl_info()
 			MIS_CanDoTempler = LOG_Running;
 			Log_CreateTopic(TOPIC_CanDoTempler,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_CanDoTempler,LOG_Running);
-			B_LogEntry(TOPIC_CanDoTempler,"Для того, чтобы вступить в Стражи, необходимо произвести впечатление на Гор На Коша и других наставников Братства.");
+			B_LogEntry(TOPIC_CanDoTempler, " In order to join the Guardians, you must impress Gor Na Kosh and other mentors of the Brotherhood. " );
 		};
 	}
 	else if(other.guild == GIL_SEK)
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_03");	//Я вижу, ты стал одним из наших Братьев. Это хорошо.
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_04");	//Ты сделал правильный выбор.
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_05");	//Но ты также должен понимать, что быть Стражем - это не просто пустые слова.
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_06");	//Только достойные из достойнейших могут войти в наш Круг. Эта огромная честь и, естественно, ее надо заслужить.
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_07");	//Поэтому перед тем как просить меня посвятить тебя в круг Стражей - ты должен будешь доказать, что на деле являешься одним из них.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_03 " );	// I see you have become one of our Brothers. This is good.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_04 " );	// You made the right choice.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_05 " );	// But you also need to understand that being a Guardian is not just empty words.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_06 " );	// Only the worthiest of the worthiest can enter our Circle. This is a great honor and, of course, it must be earned.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_07 " );	// Therefore, before asking me to initiate you into the circle of the Guardians, you will have to prove that you are in fact one of them.
 		CANBETPL = TRUE;
 
 		if(MIS_CanDoTempler == FALSE)
@@ -237,18 +238,18 @@ func void dia_gornakosh_canbetpl_info()
 			MIS_CanDoTempler = LOG_Running;
 			Log_CreateTopic(TOPIC_CanDoTempler,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_CanDoTempler,LOG_Running);
-			B_LogEntry(TOPIC_CanDoTempler,"Для того, чтобы вступить в Стражи, необходимо произвести впечатление на Гор На Коша и других наставников Братства.");
+			B_LogEntry(TOPIC_CanDoTempler, " In order to join the Guardians, you must impress Gor Na Kosh and other mentors of the Brotherhood. " );
 		};
 	}
 	else if(other.guild == GIL_GUR)
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_08");	//Ты уже выбрал священный путь Гуру! И вместе с тем определил свою судьбу.
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_09");	//Так что ступай смело по нему и не сомневайся в своем выборе.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_08 " );	// You have already chosen the sacred path of the Guru! And at the same time he sealed his own destiny.
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_09 " );	// So go boldly on it and do not doubt your choice.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_10");	//Только тот, кто принадлежит к нашему Братству, может быть удостоен этой чести!
-		AI_Output(self,other,"DIA_GorNaKosh_CanBeTPL_01_11");	//Так что не трать мое время попусту, неверный!
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_10 " );	// Only one who belongs to our Brotherhood can be given this honor!
+		AI_Output(self,other, " DIA_GorNaKosh_CanBeTPL_01_11 " );	// So don't waste my time, infidel!
 		AI_StopProcessInfos(self);
 		B_GorNaKoshEquipWeapon(self);
 	};
@@ -262,7 +263,7 @@ instance DIA_GORNAKOSH_TEST(C_Info)
 	condition = dia_gornakosh_test_condition;
 	information = dia_gornakosh_test_info;
 	permanent = FALSE;
-	description = "Как я могу доказать тебе, что достоин стать Стражем?";
+	description = " How can I prove to you that I am worthy of becoming a Guardian? " ;
 };
 
 
@@ -276,36 +277,36 @@ func int dia_gornakosh_test_condition()
 
 func void dia_gornakosh_test_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_Test_01_00");	//Как я могу доказать тебе, что достоин стать Стражем?
-	AI_Output(self,other,"DIA_GorNaKosh_Test_01_01");	//Видимо, ты хочешь, чтобы я проверил тебя?
-	AI_Output(other,self,"DIA_GorNaKosh_Test_01_02");	//Да, испытай меня!
-	AI_Output(self,other,"DIA_GorNaKosh_Test_01_04");	//Возможно, у меня и есть одно поручение, как раз подходящее для тебя.
-	AI_Output(self,other,"DIA_GorNaKosh_Test_01_08");	//Мне стало доподлинно известно, что где-то в этой части острова сокрыт один могущественный артефакт - Молот Таракота, оружие великого воина древности.
-	AI_Output(self,other,"DIA_GorNaKosh_Test_01_09");	//Доселе неизвестно, где точно спрятан этот молот, но если бы Братство завладело этим сокровищем - оно бы только выиграло от этого!
-	AI_Output(self,other,"DIA_GorNaKosh_Test_01_10");	//Если ты и вправду хочешь произвести на меня впечатление - принеси мне этот молот.
-	AI_Output(self,other,"DIA_GorNaKosh_Test_01_11");	//Правда, я также слышал, что этот артефакт очень хорошо охраняется. Поэтому поиски не обещают быть легкими.
-	AI_Output(other,self,"DIA_GorNaKosh_Test_01_17");	//Я постараюсь добыть этот молот для тебя.
-	AI_Output(self,other,"DIA_GorNaKosh_Test_01_20");	//Тогда возвращайся ко мне, когда выполнишь мое поручение.
+	AI_Output(other,self, " DIA_GorNaKosh_Test_01_00 " );	// How can I prove to you that I am worthy to become a Guardian?
+	AI_Output(self,other, " DIA_GorNaKosh_Test_01_01 " );	// Apparently you want me to check you out?
+	AI_Output(other,self, " DIA_GorNaKosh_Test_01_02 " );	// Yes, test me!
+	AI_Output(self,other, " DIA_GorNaKosh_Test_01_04 " );	// I may have one errand just right for you.
+	AI_Output(self,other, " DIA_GorNaKosh_Test_01_08 " );	// It became known to me for certain that somewhere in this part of the island one powerful artifact is hidden - the Hammer of Tarakot, the weapon of the great warrior of antiquity.
+	AI_Output(self,other, " DIA_GorNaKosh_Test_01_09 " );	// It is still unknown where exactly this hammer is hidden, but if the Brotherhood took possession of this treasure, it would only benefit from it!
+	AI_Output(self,other, " DIA_GorNaKosh_Test_01_10 " );	// If you really want to impress me, bring me this hammer.
+	AI_Output(self,other, " DIA_GorNaKosh_Test_01_11 " );	// True, I also heard that this artifact is very well guarded. Therefore, the search does not promise to be easy.
+	AI_Output(other,self, " DIA_GorNaKosh_Test_01_17 " );	// I'll try to get this hammer for you.
+	AI_Output(self,other, " DIA_GorNaKosh_Test_01_20 " );	// Then come back to me when you've completed my task.
 	MIS_TARACOTHAMMER = LOG_Running;
 	Log_CreateTopic(TOPIC_TARACOTHAMMER,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TARACOTHAMMER,LOG_Running);
-	B_LogEntry(TOPIC_TARACOTHAMMER,"Для того, чтобы произвести впечатление на Гор На Коша и получить шанс стать Стражем, я должен принести ему некий могущественный артефакт - Молот Таракота. По словам верховного стража, молот сокрыт где-то в этих краях. Однако Гор На Кош предупредил меня, что сокровище хорошо охраняется, поэтому не стоит рассчитывать на легкую прогулку.");
+	B_LogEntry( TOPIC_TARACOTHAMMER , " In order to impress Gor Na Kosh and have a chance to become a Guardian, I must bring him some powerful artifact - the Hammer of Tarakot. According to the high guard, the hammer is hidden somewhere in these parts. However, Gor Na Kosh warned me that the treasure was well guarded, so don't count on an easy walk. " );
 };
 
 
-instance DIA_GORNAKOSH_TESTOK(C_Info)
+instances DIA_GORNAKOSH_TESTOK (C_Info)
 {
 	npc = tpl_8005_gornakosh;
 	nr = 1;
 	condition = dia_gornakosh_testok_condition;
 	information = dia_gornakosh_testok_info;
 	permanent = FALSE;
-	description = "Я принес Молот!";
+	description = " I brought the Hammer! " ;
 };
 
 func int dia_gornakosh_testok_condition()
 {
-	if((MIS_TARACOTHAMMER == LOG_Running) && (Npc_HasItems(other,itmi_taracothammer) >= 1))
+	if (( MIS_TARACOTHAMMER  == LOG_Running) && (Npc_HasItems(other,itmi_taracothammer) >=  1 ))
 	{
 		return TRUE;
 	};
@@ -314,21 +315,21 @@ func int dia_gornakosh_testok_condition()
 func void dia_gornakosh_testok_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_GorNaKosh_TestOk_01_00");	//Я принес Молот!
-	B_GiveInvItems(other,self,itmi_taracothammer,1);
+	AI_Output(other,self, " DIA_GorNaKosh_TestOk_01_00 " );	// I brought the Hammer!
+	B_GiveInvItems(other,self,itmi_taracothammer, 1 );
 	Npc_RemoveInvItems(self,itmi_taracothammer,Npc_HasItems(self,itmi_taracothammer));
-	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_02");	//Невероятно! Это... это действительно Молот Таракота!
-	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_03");	//Отличная работа! Честно говоря, я и не надеялся на то, что ты справишься с этим заданием.
-	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_06");	//Ну, что же, судя по всему, ты прошел мое испытание и доказал, что обладаешь недюжей смелостью и силой духа. Все это достойно большого уважения!
-	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_07");	//Кроме того, ты еще и оказал неоценимую услугу всему Братству, что также не может не вызывать должного внимания к тебе.
-	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_08");	//Если твои поступки и дальше будут носить столь же плодотворный характер - то вскоре можно будет подумать и о твоем вступлении в ряды Стражей.
-	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_09");	//Нам бы пригодились таки люди, как ты!
-	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_10");	//С моей же стороны, в знак благодарности всего Братства и от меня лично - прими этот скромный дар.
+	AI_Output(self,other, " DIA_GorNaKosh_TestOk_01_02 " );	// Incredible! It's... it's really Tarakot's Hammer!
+	AI_Output(self,other, " DIA_GorNaKosh_TestOk_01_03 " );	// Great job! To be honest, I didn't expect you to be up to the task.
+	AI_Output(self,other, " DIA_GorNaKosh_TestOk_01_06 " );	// Well, it looks like you passed my test and proved that you have remarkable courage and fortitude. All this is worthy of great respect!
+	AI_Output(self,other, " DIA_GorNaKosh_TestOk_01_07 " );	// In addition, you also rendered an invaluable service to the entire Brotherhood, which also cannot but cause due attention to you.
+	AI_Output(self,other, " DIA_GorNaKosh_TestOk_01_08 " );	// If your deeds continue to be just as fruitful, then soon you will be able to think about joining the ranks of the Guardians.
+	AI_Output(self,other, " DIA_GorNaKosh_TestOk_01_09 " );	// We could use people like you!
+	AI_Output(self,other, " DIA_GorNaKosh_TestOk_01_10 " );	// On my part, as a token of gratitude from the entire Brotherhood and from me personally, accept this modest gift.
 	B_GiveInvItems(self,other,ItPo_Perm_STR,1);
 	GORNAKOSHTEST = TRUE;
 	MIS_TARACOTHAMMER = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_TARACOTHAMMER,LOG_SUCCESS);
-	B_LogEntry(TOPIC_TARACOTHAMMER,"Я прошел испытание Гор На Коша.");
+	B_LogEntry( TOPIC_TARACOTHAMMER , " I passed Gor Na Kosh's challenge. " );
 };
 
 
@@ -339,7 +340,7 @@ instance DIA_GORNAKOSH_READYBETPL(C_Info)
 	condition = dia_gornakosh_readybetpl_condition;
 	information = dia_gornakosh_readybetpl_info;
 	permanent = TRUE;
-	description = "Я хочу присоединиться к Стражам.";
+	description = " I want to join the Guardians. " ;
 };
 
 
@@ -353,68 +354,68 @@ func int dia_gornakosh_readybetpl_condition()
 
 func void dia_gornakosh_readybetpl_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_ReadyBeTPL_01_00");	//Я хочу присоединиться к Стражам.
-	AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_01");	//Я уже говорил тебе, что одного твоего желания будет маловато для того, чтобы присоединиться к священному кругу Стражей.
-	AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_02");	//Ты должен доказать, что достоин этой чести!
-	AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_03");	//А лучшие доказательства - это твои действия и поступки на благо нашего Братства.
+	AI_Output(other,self, " DIA_GorNaKosh_ReadyBeTPL_01_00 " );	// I want to join the Guardians.
+	AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_01 " );	// I have already told you that your desire alone will not be enough to join the sacred circle of Guardians.
+	AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_02 " );	// You must prove yourself worthy of this honor!
+	AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_03 " );	// And the best evidence is your actions and deeds for the good of our Brotherhood.
 
 	if((CADARAGREED == TRUE) || (CANJOINPSI == TRUE) || (PARVEZAGREED == TRUE) || (GORNAKOSHTEST == TRUE))
 	{
-		AI_Output(other,self,"DIA_GorNaKosh_ReadyBeTPL_01_04");	//А разве их недостаточно?
-		AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_05");	//И что же ты сделал?
+		AI_Output(other,self, " DIA_GorNaKosh_ReadyBeTPL_01_04 " );	// Aren't they enough?
+		AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_05 " );	// And what did you do?
 
 		if(GORNAKOSHTEST == TRUE)
 		{
-			AI_Output(other,self,"DIA_GorNaKosh_ReadyBeTPL_01_06");	//Я прошел твое испытание!
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_07");	//Хммм... Да, ты его действительно прошел.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_08");	//Этим ты доказал, что являешься неплохим бойцом и тебе можно поручать выполнение серьезных задач.
+			AI_Output(other,self, " DIA_GorNaKosh_ReadyBeTPL_01_06 " );	// I passed your test!
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_07 " );	// Hmmm... Yes, you really passed it.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_08 " );	// By this you proved that you are a good fighter and you can be entrusted with the implementation of serious tasks.
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_09");	//Что еще?
 		};
 		if(CADARAGREED == TRUE)
 		{
-			AI_Output(other,self,"DIA_GorNaKosh_ReadyBeTPL_01_10");	//Идол Кадар считает, что моя вера в Братство не может поддаваться сомнению.
+			AI_Output(other,self, " DIA_GorNaKosh_ReadyBeTPL_01_10 " );	// Idol Kadar believes that my faith in the Brotherhood cannot be questioned.
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_13");	//Что еще?
 		};
 		if(PARVEZAGREED == TRUE)
 		{
-			AI_Output(other,self,"DIA_GorNaKosh_ReadyBeTPL_01_14");	//Идол Парвез согласен на мое принятие...
+			AI_Output(other,self, " DIA_GorNaKosh_ReadyBeTPL_01_14 " );	// Idol Parvez agrees to my acceptance...
 		};
 		if(CANJOINPSI == TRUE)
 		{
-			AI_Output(other,self,"DIA_GorNaKosh_ReadyBeTPL_01_19");	//Идол Оран доверяет мне.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_21");	//Я вижу - Гуру доверяют тебе! Это говорит мне о многом...
+			AI_Output(other,self, " DIA_GorNaKosh_ReadyBeTPL_01_19 " );	// Idol Auran trusts me.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_21 " );	// I see - Gurus trust you! This tells me a lot...
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_22");	//Что еще?
 		};
 		if((CADARAGREED == TRUE) && (CANJOINPSI == TRUE) && (PARVEZAGREED == TRUE) && (GORNAKOSHTEST == TRUE))
 		{
 			B_GivePlayerXP(200);
 			AI_Output(other,self,"DIA_GorNaKosh_ReadyBeTPL_01_23");	//Это все!
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_24");	//Хммм... Хорошо! Ты доказал, что способен на многое.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_25");	//И, безусловно, про тебя я могу сказать лишь только одно - нам нужны такие люди!
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_26");	//Однако ты должен понимать, что став Стражем, ты не сможешь уже просто так отказаться от этого выбора.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_27");	//Если ты хочешь посвятить себя божественному пути Гуру - то тогда тебе следует поговорить на эту тему с Идолом Ораном.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_28");	//Если же ты все-таки твердо решил вступить на путь Стража - то я без колебаний готов принять тебя в наш священный Круг.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_29");	//В любом случае выбор за тобой...
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_30");	//...но ты должен целиком и полностью осознавать его - и только после этого принять свое окончательное решение.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_31");	//Подумай хорошенько о том, что я тебе сказал.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_24 " );	// Hmmm... Good! You have proven that you can do a lot.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_25 " );	// And, of course, I can only say one thing about you - we need such people!
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_26 " );	// However, you must understand that once you become a Guardian, you can't simply refuse this choice.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_27 " );	// If you want to dedicate yourself to the divine path of the Guru, then you should talk about this topic with Idol Oran.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_28 " );	// If you nevertheless firmly decided to embark on the path of the Guardian, then I am ready to accept you into our sacred Circle without hesitation.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_29 " );	// Either way, the choice is yours...
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_30 " );	// ...but you must be fully aware of it - and only then make your final decision.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_31 " );	// Think carefully about what I told you.
 			READYBETPL = TRUE;
 
 			if(MIS_CanDoTempler == LOG_Running)
 			{
-				B_LogEntry(TOPIC_CanDoTempler,"Гор На Кош готов принять меня в Круг стражей Братства.");
+				B_LogEntry(TOPIC_CanDoTempler, " Gor Na Kosh is ready to accept me into the Brotherhood Guard Circle. " );
 			};
 		}
 		else
 		{
 			AI_Output(other,self,"DIA_GorNaKosh_ReadyBeTPL_01_33");	//Это все.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_34");	//Хммм...(задумался) Извини, но этого мало.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_35");	//Твои деяния перед Братством велики, но их недостаточно для того, чтобы я принял тебя в священный круг Стражей!
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_37");	//Продолжай в том же духе - и вскоре ты будешь удостоен чести примерить доспех Стража!
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_34 " );	// Hmmm... (thinking) Sorry, but that's not enough.
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_35 " );	// Your deeds before the Brotherhood are great, but they are not enough for me to accept you into the sacred circle of Guardians!
+			AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_37 " );	// Keep up the good work and you'll soon be honored to try on the Guardian's armor!
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_38");	//Поэтому поговорим о твоем вступлении позже, когда на то будут веские причины.
+		AI_Output(self,other, " DIA_GorNaKosh_ReadyBeTPL_01_38 " );	// So we'll talk about your introduction later, when there are good reasons.
 	};
 };
 
@@ -428,7 +429,7 @@ instance DIA_GORNAKOSH_BETPL(C_Info)
 	condition = dia_gornakosh_betpl_condition;
 	information = dia_gornakosh_betpl_info;
 	permanent = TRUE;
-	description = "Прими меня в священный круг Стражей.";
+	description = " Accept me to the sacred circle of the Guardians. " ;
 };
 
 
@@ -447,42 +448,42 @@ func void dia_gornakosh_betpl_info()
 		Snd_Play("GUILD_INV");
 		hero.guild = GIL_TPL;
 		CheckHeroGuild[0] = TRUE;
-		AI_Output(other,self,"DIA_GorNaKosh_BeTPL_01_00");	//Прими меня в священный круг Стражей.
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_01");	//Да будет так!
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_02");	//Я посвящаю тебя в Стражи Братства - отныне ты один из нас!
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_03");	//Вот - возьми этот доспех.
+		AI_Output(other,self, " DIA_GorNaKosh_BeTPL_01_00 " );	// Receive me into the sacred circle of the Guardians.
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_01 " );	// So be it!
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_02 " );	// I initiate you into the Guardians of the Brotherhood - from now on you are one of us!
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_03 " );	// Here, take this armor.
 		CreateInvItems(self,itar_tpl_lst,1);
 		B_GiveInvItems(self,other,itar_tpl_lst,1);
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_04");	//Носи его с гордостью. Лишь немногие удостаивались такой чести!
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_05");	//Также прими от меня этот меч - символ нашего священного Круга.
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_04 " );	// Wear it with pride. Only a few have received such an honor!
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_05 " );	// Also accept this sword from me - the symbol of our sacred Circle.
 		CreateInvItems(self,itmw_zweihaender6,1);
 		B_GiveInvItems(self,other,itmw_zweihaender6,1);
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_06");	//Он поможет тебе одолеть твоих врагов!
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_07");	//И не забудь, что быть Стражем - это не только носить их доспехи...
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_08");	//...это означает целиком и полностью посвятить себя служению Братству и его целям!
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_09");	//Мы находим применение и физической, и духовной силе. Лишь те, чье тело и дух представляют единое целое, могут считаться истинными Стражами.
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_11");	//И запомни: невозмутимый дух и тренированное тело помогут тебе выстоять против любого врага.
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_06 " );	// He will help you defeat your enemies!
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_07 " );	// And don't forget that being a Guardian isn't just about wearing their armor...
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_08 " );	// ...it means dedicating yourself entirely to the service of the Brotherhood and its goals!
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_09 " );	// We find uses for both physical and spiritual strength. Only those whose body and spirit are a single whole can be considered true Guardians.
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_11 " );	// And remember: a calm spirit and a trained body will help you stand against any enemy.
 		MIS_CanDoTempler = LOG_Success;
 		Log_SetTopicStatus(TOPIC_CanDoTempler,LOG_Success);
-		B_LogEntry(TOPIC_CanDoTempler,"Гор На Кош принял меня в Стражи.");
+		B_LogEntry(TOPIC_CanDoTempler, " Gor Na Kosh accepted me into the Guard. " );
 	}
 	else if(other.attribute[ATR_STRENGTH] < 50)
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_12");	//Твоей силы не хватит поднять двуручник и одеть броню.
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_12 " );	// Your strength is not enough to lift a two-hander and put on armor.
 
 		if((MIS_CanDoTempler == LOG_Running) && (TplNeedStr == FALSE))
 		{
-			B_LogEntry(TOPIC_CanDoTempler,"Гор На Кош считает, что я пока слабоват для вступления в Стражи. (требуемая сила: 50 и более)");
+			B_LogEntry(TOPIC_CanDoTempler, " Gor Na Kosh thinks I'm too weak to join the Guardians yet. (Required strength: 50 or more) " );
 			TplNeedStr = TRUE;
 		};
 	}
 	else if(other.HitChance[NPC_TALENT_2H] < 30)
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_BeTPL_01_13");	//Твои навыки владения двуручным оружием недостаточны.
+		AI_Output(self,other, " DIA_GorNaKosh_BeTPL_01_13 " );	// Your two-handed weapon skills are insufficient.
 
 		if((MIS_CanDoTempler == LOG_Running) && (TplNeedTwoH == FALSE))
 		{
-			B_LogEntry(TOPIC_CanDoTempler,"Гор На Кош считает, что пока я не достаточно хорошо обращаюсь с двуручным оружием, чтобы стать Стражем. (требуемый навык владения двуручным оружием: 30 и более)");
+			B_LogEntry(TOPIC_CanDoTempler, " Gor Na Kosh doesn't think I'm good enough with two-handed weapons to become a Guardian yet. (Two-handed skill required: 30 or more) " );
 			TplNeedTwoH = TRUE;
 		};
 	};
@@ -500,7 +501,7 @@ instance DIA_GorNaKosh_TRADE(C_Info)
 	condition = DIA_GorNaKosh_TRADE_Condition;
 	information = DIA_GorNaKosh_TRADE_Info;
 	permanent = TRUE;
-	description = "Какое еще оружие ты можешь мне предложить?";
+	description = " What other weapon can you offer me? " ;
 	trade = TRUE;
 };
 
@@ -514,26 +515,26 @@ func int DIA_GorNaKosh_TRADE_Condition()
 
 func void DIA_GorNaKosh_TRADE_Info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_TRADE_15_00");	//Какое еще оружие ты можешь мне предложить?
+	AI_Output(other,self, " DIA_GorNaKosh_TRADE_15_00 " );	// What other weapon can you offer me?
 
 	if((GorNaKosh_Trade_OneTime == FALSE) && (hero.guild == GIL_TPL))
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_TRADE_11_01");	//Поскольку ты теперь один из нас, я могу продать тебе самое лучшее оружие, которое только могут носить Стражи.
-		AI_Output(self,other,"DIA_GorNaKosh_TRADE_11_02");	//Но за него, естественно, придется заплатить.
+		AI_Output(self,other, " DIA_GorNaKosh_TRADE_11_01 " );	// Since you're one of us now, I can sell you the finest weapons the Guardians can carry.
+		AI_Output(self,other, " DIA_GorNaKosh_TRADE_11_02 " );	// But, of course, you have to pay for it.
 		CreateInvItems(self,ITMW_TAMPLIER_SPECIAL_2H_SWORD_1,1);
 		GorNaKosh_Trade_OneTime = TRUE;
 	};
-	if((Kapitel >= 2) && (TPLSword2 == FALSE))
+	if ((Chapter >=  2 ) && (TPLSword2 ==  FALSE ))
 	{
 		CreateInvItems(self,ITMW_TAMPLIER_SPECIAL_2H_SWORD_2,1);
 		TPLSword2 = TRUE;
 	};
-	if((Kapitel >= 3) && (TPLSword3 == FALSE))
+	if ((Capital >=  3 ) && (TPLSword3 ==  FALSE ))
 	{
 		CreateInvItems(self,ITMW_TAMPLIER_SPECIAL_2H_SWORD_3,1);
 		TPLSword3 = TRUE;
 	};
-	if((Kapitel >= 4) && (TPLSword4 == FALSE))
+	if ((Chapter >=  4 ) && (TPLSword4 ==  FALSE ))
 	{
 		CreateInvItems(self,ITMW_TAMPLIER_SPECIAL_2H_SWORD_4,1);
 		TPLSword4 = TRUE;
@@ -555,17 +556,17 @@ func void DIA_GorNaKosh_TRADE_Info()
 	CheckTadeNaKosh = TRUE;
 };
 
-instance DIA_GORNAKOSH_ABWEISEND(C_Info)
+instance DIA_GORNAKOSH_REJECTING (C_Info)
 {
 	npc = tpl_8005_gornakosh;
 	nr = 1;
-	condition = dia_gornakosh_abweisend_condition;
-	information = dia_gornakosh_abweisend_info;
+	condition = dia_gornakosh_repellent_condition;
+	information = dia_gornakosh_repellent_info;
 	permanent = TRUE;
-	description = "Ты можешь чему-нибудь научить меня?";
+	description = " Can you teach me something? " ;
 };
 
-func int dia_gornakosh_abweisend_condition()
+func int dia_gornakosh_forbidding_condition()
 {
 	if((other.guild != GIL_SEK) && (other.guild != GIL_GUR) && (other.guild != GIL_TPL) && Npc_KnowsInfo(other,dia_gornakosh_what))
 	{
@@ -573,27 +574,27 @@ func int dia_gornakosh_abweisend_condition()
 	};
 };
 
-func void dia_gornakosh_abweisend_info()
+func void dia_gornakosh_repellent_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_Abweisend_01_00");	//Ты можешь чему-нибудь научить меня?
-	AI_Output(self,other,"DIA_GorNaKosh_Abweisend_01_01");	//Убирайся с глаз, неверный!
+	AI_Output(other,self, " DIA_GorNaKosh_Abweisend_01_00 " );	// Can you teach me something?
+	AI_Output(self,other, " DIA_GorNaKosh_Abweisend_01_01 " );	// Get out of my sight, infidel!
 	AI_StopProcessInfos(self);
 	B_GorNaKoshEquipWeapon(self);
 };
 
 
-instance DIA_GORNAKOSH_ABWEISENDTWO(C_Info)
+instance DIA_GORNAKOSH_ABWEISENDTWO (C_Info)
 {
 	npc = tpl_8005_gornakosh;
 	nr = 1;
-	condition = dia_gornakosh_abweisendtwo_condition;
-	information = dia_gornakosh_abweisendtwo_info;
+	condition = dia_gornakosh_repellenttwo_condition;
+	information = dia_gornakosh_repellenttwo_info;
 	permanent = TRUE;
-	description = "Ты можешь чему-нибудь научить меня?";
+	description = " Can you teach me something? " ;
 };
 
 
-func int dia_gornakosh_abweisendtwo_condition()
+func int dia_gornakosh_forbiddingtwo_condition()
 {
 	if(Npc_KnowsInfo(other,dia_gornakosh_what) && (GORNAKOSHTEACH == FALSE) && ((other.guild == GIL_SEK) || (other.guild == GIL_GUR) || (other.guild == GIL_TPL)))
 	{
@@ -601,26 +602,26 @@ func int dia_gornakosh_abweisendtwo_condition()
 	};
 };
 
-func void dia_gornakosh_abweisendtwo_info()
+func void dia_gornakosh_repellenttwo_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_AbweisendTwo_01_00");	//Ты можешь чему-нибудь научить меня?
+	AI_Output(other,self, " DIA_GorNaKosh_AbweisendTwo_01_00 " );	// Can you teach me something?
 	if(other.guild == GIL_SEK)
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_AbweisendTwo_01_01");	//Я учу только Стражей, послушник.
-		AI_Output(self,other,"DIA_GorNaKosh_AbweisendTwo_01_02");	//Так что не трать мое время попусту.
+		AI_Output(self,other, " DIA_GorNaKosh_AbweisendTwo_01_01 " );	// I only teach Guardians, acolyte.
+		AI_Output(self,other, " DIA_GorNaKosh_AbweisendTwo_01_02 " );	// So don't waste my time.
 	}
 	else if(other.guild == GIL_GUR)
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_AbweisendTwo_01_03");	//Я обучаю только Стражей, господин.
-		AI_Output(self,other,"DIA_GorNaKosh_AbweisendTwo_01_04");	//Обучением Гуру занимаются Идолы Братства.
+		AI_Output(self,other, " DIA_GorNaKosh_AbweisendTwo_01_03 " );	// I only train Guardians, lord.
+		AI_Output(self,other, " DIA_GorNaKosh_AbweisendTwo_01_04 " );	// The Guru is trained by the Idols of the Brotherhood.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_AbweisendTwo_01_05");	//Поскольку ты входишь в священный круг Стражей Братства - я готов заняться твоим обучением.
-		AI_Output(self,other,"DIA_GorNaKosh_AbweisendTwo_01_06");	//Я могу научить тебя сражаться одноручным и двуручным оружием, а также помогу тебе повысить твою силу и ловкость.
-		AI_Output(self,other,"DIA_GorNaKosh_AbweisendTwo_01_07");	//Кроме этого, Гор На Тоф сможет обучить тебя использованию боевых рун Стражей, а Гор На Вид покажет тебе, как обращаться со стрелковым оружием - если ты предпочитаешь дальний бой ближнему.
+		AI_Output(self,other, " DIA_GorNaKosh_AbweisendTwo_01_05 " );	// Since you are part of the sacred circle of the Guardians of the Brotherhood, I am ready to train you.
+		AI_Output(self,other, " DIA_GorNaKosh_AbweisendTwo_01_06 " );	// I can teach you how to fight with one-handed and two-handed weapons, as well as help you increase your strength and agility.
+		AI_Output(self,other, " DIA_GorNaKosh_AbweisendTwo_01_07 " );	// In addition, Gor Na Tof can teach you how to use Guardian War Runes, and Gor Na Vid will show you how to handle ranged weapons - if you prefer ranged combat to melee.
 		Log_CreateTopic(TOPIC_ADDON_TPLTEACHER,LOG_NOTE);
-		B_LogEntry(TOPIC_ADDON_TPLTEACHER,"Гор На Кош научит меня сражаться одноручным и двуручным оружием, а также поможет мне увеличить мои навыки силы и ловкости.");
+		B_LogEntry( TOPIC_ADDON_TPLTEACHER , " Gor Na Kosh will teach me how to use one-handed and two-handed weapons, as well as help me increase my strength and agility skills. " );
 		GORNAKOSHTEACH = TRUE;
 	};
 };
@@ -633,7 +634,7 @@ instance DIA_GORNAKOSH_TEACH(C_Info)
 	condition = dia_gornakosh_teach_condition;
 	information = dia_gornakosh_teach_info;
 	permanent = TRUE;
-	description = "Я нуждаюсь в тренировке.";
+	description = " I need a workout. " ;
 };
 
 func int dia_gornakosh_teach_condition()
@@ -646,8 +647,8 @@ func int dia_gornakosh_teach_condition()
 
 func void dia_gornakosh_teach_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_Teach_15_00");	//Я нуждаюсь в тренировке.
-	AI_Output(self,other,"DIA_GorNaKosh_Teach_04_01");	//Что точно ты хочешь тренировать?
+	AI_Output(other,self, " DIA_GorNaKosh_Teach_15_00 " );	// I need a workout.
+	AI_Output(self,other, " DIA_GorNaKosh_Teach_04_01 " );	// What exactly do you want to train?
 	Info_ClearChoices(dia_gornakosh_teach);
 	Info_AddChoice(dia_gornakosh_teach,Dialog_Back,dia_gornakosh_teach_back);
 	Info_AddChoice(dia_gornakosh_teach,b_buildlearnstringforfight(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),dia_gornakosh_teach_2h_1);
@@ -660,7 +661,7 @@ func void dia_gornakosh_teach_1h_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,60))
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_Teach_1H_1_04_00");	//Твоя оборона еще ни куда не годится, но когда-нибудь ты станешь настоящим мастером.
+		AI_Output(self,other, " DIA_GorNaKosh_Teach_1H_1_04_00 " );	// Your defenses aren't good enough yet, but someday you'll be a true master.
 	};
 	Info_ClearChoices(dia_gornakosh_teach);
 	Info_AddChoice(dia_gornakosh_teach,Dialog_Back,dia_gornakosh_teach_back);
@@ -674,7 +675,7 @@ func void dia_gornakosh_teach_1h_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,60))
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_Teach_1H_5_04_00");	//Твое запястье еще очень негнущееся. Оружие ты должен держать свободно.
+		AI_Output(self,other, " DIA_GorNaKosh_Teach_1H_5_04_00 " );	// Your wrist is still very stiff. You must keep your weapons free.
 	};
 	Info_ClearChoices(dia_gornakosh_teach);
 	Info_AddChoice(dia_gornakosh_teach,Dialog_Back,dia_gornakosh_teach_back);
@@ -688,7 +689,7 @@ func void dia_gornakosh_teach_2h_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,100))
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_Teach_2H_1_04_00");	//Думай всегда о том, что бросок идет от бедра, не от запястья.
+		AI_Output(self,other, " DIA_GorNaKosh_Teach_2H_1_04_00 " );	// Always think about throwing from the hip, not from the wrist.
 	};
 	Info_ClearChoices(dia_gornakosh_teach);
 	Info_AddChoice(dia_gornakosh_teach,Dialog_Back,dia_gornakosh_teach_back);
@@ -702,7 +703,7 @@ func void dia_gornakosh_teach_2h_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,100))
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_Teach_2H_5_04_00");	//Самый сильный удар бесполезен, если он идет в пустоту. Так что используй свою силу обдуманно.
+		AI_Output(self,other, " DIA_GorNaKosh_Teach_2H_5_04_00 " );	// The strongest hit is useless if it goes into the void. So use your power wisely.
 	};
 	Info_ClearChoices(dia_gornakosh_teach);
 	Info_AddChoice(dia_gornakosh_teach,Dialog_Back,dia_gornakosh_teach_back);
@@ -719,7 +720,7 @@ func void dia_gornakosh_teach_back()
 
 
 var int gornakosh_merke_str;
-var int gornakosh_merke_dex;
+var int gornakosh_brand_dex;
 
 instance DIA_GORNAKOSH_TEACHATT(C_Info)
 {
@@ -728,7 +729,7 @@ instance DIA_GORNAKOSH_TEACHATT(C_Info)
 	condition = dia_gornakosh_teachatt_condition;
 	information = dia_gornakosh_teachatt_info;
 	permanent = TRUE;
-	description = "Я хочу увеличить свои навыки.";
+	description = " I want to increase my skills. " ;
 };
 
 func int dia_gornakosh_teachatt_condition()
@@ -741,7 +742,7 @@ func int dia_gornakosh_teachatt_condition()
 
 func void dia_gornakosh_teachatt_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_TeachATT_15_00");	//Я хочу увеличить свои навыки.
+	AI_Output(other,self, " DIA_GorNaKosh_TeachATT_15_00 " );	// I want to increase my skills.
 	GORNAKOSH_MERKE_STR = other.attribute[ATR_STRENGTH];
 	GORNAKOSH_MERKE_DEX = other.attribute[ATR_DEXTERITY];
 	Info_ClearChoices(dia_gornakosh_teachatt);
@@ -755,9 +756,9 @@ func void dia_gornakosh_teachatt_info()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -765,7 +766,7 @@ func void dia_gornakosh_teachatt_back()
 {
 	if((GORNAKOSH_MERKE_STR < other.attribute[ATR_STRENGTH]) || (GORNAKOSH_MERKE_DEX < other.attribute[ATR_DEXTERITY]))
 	{
-		AI_Output(self,other,"DIA_GorNaKosh_TeachATT_Back_01_00");	//Хорошо! Теперь ты можешь использовать свои способности с большим успехом!
+		AI_Output(self,other, " DIA_GorNaKosh_TeachATT_Back_01_00 " );	// Good! Now you can use your abilities with great success!
 	};
 
 	Info_ClearChoices(dia_gornakosh_teachatt);
@@ -773,12 +774,12 @@ func void dia_gornakosh_teachatt_back()
 
 func void DIA_GorNaKosh_TeachATT_RegenStam()
 {
-	var int kosten;
+	var int cost;
 	var int money;
 
-	AI_Output(other,self,"DIA_Vatras_Teach_regen_15_03");	//Научи меня ускоренному восстановлению выносливости.
+	AI_Output(other,self, " DIA_Vatras_Teach_regen_15_03 " );	// Teach me faster stamina recovery.
 
-	kosten = 15;
+	cost = 15 ;
 	money = 5000;
 
 	if(hero.lp < kosten)
@@ -796,10 +797,10 @@ func void DIA_GorNaKosh_TeachATT_RegenStam()
 	if((hero.lp >= kosten) && (Npc_HasItems(other,ItMi_Gold) >= money))
 	{
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_RemoveInvItems(other,ItMi_Gold,money);
-		AI_Print("Обучение: Ускоренная регенерация выносливости");
-		VATRAS_TEACHREGENSTAM = TRUE;
+		AI_Print( " Tutorial: Accelerated Stamina Regeneration " );
+		VATRAS_TEACHREGENSTAM = TRUE ;
 		Snd_Play("LevelUP");
 	};
 
@@ -829,9 +830,9 @@ func void dia_gornakosh_teachatt_str_1()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -849,9 +850,9 @@ func void dia_gornakosh_teachatt_str_5()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -869,9 +870,9 @@ func void dia_gornakosh_teachatt_dex_1()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -889,9 +890,9 @@ func void dia_gornakosh_teachatt_dex_5()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -909,9 +910,9 @@ func void dia_gornakosh_teachatt_stamina_1()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -929,9 +930,9 @@ func void dia_gornakosh_teachatt_stamina_5()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -949,9 +950,9 @@ func void dia_gornakosh_teachatt_hp_1()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -969,9 +970,9 @@ func void dia_gornakosh_teachatt_hp_5()
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_gornakosh_teachatt_str_1);
 	Info_AddChoice(dia_gornakosh_teachatt,b_buildlearnstringforskills(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_gornakosh_teachatt_str_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && (other.guild == GIL_TPL)) 
+	if ((Chapter >=  2 ) && ( BATRAS_TEACHREGENSTAM  ==  FALSE ) && (other.guild ==  GIL_TPL ))
 	{
-		Info_AddChoice(DIA_GorNaKosh_TeachATT,"Регенерация выносливости (Очки обучения: 15, Цена: 5000 монет)",DIA_GorNaKosh_TeachATT_RegenStam);
+		Info_AddChoice(DIA_GorNaKosh_TeachATT, " Stamina Regeneration (Teach Points: 15, Cost: 5000 coins) " ,DIA_GorNaKosh_TeachATT_RegenStam);
 	};
 };
 
@@ -983,7 +984,7 @@ instance DIA_GORNAKOSH_ADVANTAGE(C_Info)
 	condition = dia_gornakosh_advantage_condition;
 	information = dia_gornakosh_advantage_info;
 	permanent = FALSE;
-	description = "Каковы преимущества двуручного оружия?";
+	description = " What are the benefits of a two-handed weapon? " ;
 };
 
 
@@ -997,20 +998,20 @@ func int dia_gornakosh_advantage_condition()
 
 func void dia_gornakosh_advantage_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_Advantage_15_00");	//Каковы преимущества двуручного оружия?
-	AI_Output(self,other,"DIA_GorNaKosh_Advantage_04_01");	//Все очень просто. С одноручным мечом ты быстрее. В битве это может сыграть решающую роль.
-	AI_Output(self,other,"DIA_GorNaKosh_Advantage_04_02");	//С двуручным мечом все наоборот. Ты должен быть внимательней, но сможешь нанести больше вреда, чем одноручным мечом.
+	AI_Output(other,self, " DIA_GorNaKosh_Advantage_15_00 " );	// What are the advantages of two-handed weapons?
+	AI_Output(self,other, " DIA_GorNaKosh_Advantage_04_01 " );	// It's very simple. With a one-handed sword, you're faster. In battle, this can play a decisive role.
+	AI_Output(self,other, " DIA_GorNaKosh_Advantage_04_02 " );	// With a two-handed sword, it's the other way around. You have to be careful, but you can do more damage than with a one-handed sword.
 };
 
 
-instance DIA_GORNAKOSH_HOWTOBEGIN(C_Info)
+instances DIA_GORNAKOSH_HOWTOBEGIN (C_Info)
 {
 	npc = tpl_8005_gornakosh;
 	nr = 6;
 	condition = dia_gornakosh_howtobegin_condition;
 	information = dia_gornakosh_howtobegin_info;
 	permanent = FALSE;
-	description = "С чего мне лучше начать? С одноручного или двуручного оружия?";
+	description = " Where should I start? With one-handed or two-handed weapons? " ;
 };
 
 
@@ -1024,13 +1025,13 @@ func int dia_gornakosh_howtobegin_condition()
 
 func void dia_gornakosh_howtobegin_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_HowToBegin_15_00");	//С чего мне лучше начать? С одноручного или двуручного оружия?
-	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_01");	//Можешь начинать как тебе удобно.
-	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_02");	//Если ты научишься владеть только одним видом оружия, ничего страшного, остальное приложится.
-	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_03");	//Если ты, например, хорошо владеешь одноручным мечом, но плохо двуручным...
-	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_04");	//... все выпады, какие ты освоишь с одноручным мечом, улучшат и твое умение биться двуручным мечом.
-	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_05");	//Если ты будешь учиться владеть обоими видами оружия, тренировки будут исключительно жесткие.
-	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_06");	//Просто начни, потом поймешь, о чем я говорил.
+	AI_Output(other,self, " DIA_GorNaKosh_HowToBegin_15_00 " );	// Where should I start? With one-handed or two-handed weapons?
+	AI_Output(self,other, " DIA_GorNaKosh_HowToBegin_04_01 " );	// You can start however you like.
+	AI_Output(self,other, " DIA_GorNaKosh_HowToBegin_04_02 " );	// If you learn to wield only one type of weapon, it's okay, the rest will follow.
+	AI_Output(self,other, " DIA_GorNaKosh_HowToBegin_04_03 " );	// If, for example, you are good with a one-handed sword, but bad with a two-handed one...
+	AI_Output(self,other, " DIA_GorNaKosh_HowToBegin_04_04 " );	// ... all the lunges you master with a one-handed sword will also improve your ability to fight with a two-handed sword.
+	AI_Output(self,other, " DIA_GorNaKosh_HowToBegin_04_05 " );	// If you learn to wield both weapons, the training will be extremely tough.
+	AI_Output(self,other, " DIA_GorNaKosh_HowToBegin_04_06 " );	// Just start, then you will understand what I was talking about.
 };
 
 var int BuyTemplerHeavy;
@@ -1043,7 +1044,7 @@ instance TPL_8005_GORNAKOSH_ARMOR(C_Info)
 	condition = tpl_8005_gornakosh_armor_condition;
 	information = tpl_8005_gornakosh_armor_info;
 	permanent = TRUE;
-	description = "Мне нужны доспехи получше.";
+	description = " I need better armor. " ;
 };
 
 
@@ -1059,36 +1060,36 @@ func void tpl_8005_gornakosh_armor_info()
 {
 	var C_Item itm;
 	itm = Npc_GetEquippedArmor(other);
-	AI_Output(other,self,"TPL_8005_GorNaKosh_ARMOR_01_00");	//Я хочу доспехи получше.
-	AI_Output(self,other,"TPL_8005_GorNaKosh_ARMOR_01_01");	//У меня есть хорошие доспехи, но тебе придется внести щедрое пожертвование на нужды Братства.
+	AI_Output(other,self, " TPL_8005_GorNaKosh_ARMOR_01_00 " );	// I want better armor.
+	AI_Output(self,other, " TPL_8005_GorNaKosh_ARMOR_01_01 " );	// I have good armor, but you'll have to make a generous donation to the Brotherhood.
 	Info_ClearChoices(tpl_8005_gornakosh_armor);
 	Info_AddChoice(tpl_8005_gornakosh_armor,Dialog_Back,tpl_8005_gornakosh_armor_back);
 
 	if(BuyTemplerHeavy == FALSE)
 	{
-		Info_AddChoice(tpl_8005_gornakosh_armor,"Тяжелые доспехи Стража (Цена: 14000 монет)",tpl_8005_gornakosh_armor_h);
+		Info_AddChoice(tpl_8005_gornakosh_armor, " Heavy Guardian Armor (Price: 14000 coins) " ,tpl_8005_gornakosh_armor_h);
 	};
 	if(BuyTemplerMed == FALSE)
 	{
-		Info_AddChoice(tpl_8005_gornakosh_armor,"Доспехи Стража (Цена: 9500 монет)",tpl_8005_gornakosh_armor_m);
+		Info_AddChoice(tpl_8005_gornakosh_armor, " Guardian Armor (Price: 9500 coins) " ,tpl_8005_gornakosh_armor_m);
 	};
 	if(BuyTemplerLight == FALSE)
 	{
-		Info_AddChoice(tpl_8005_gornakosh_armor,"Легкие доспехи Стража (Цена: 1500 монет)",tpl_8005_gornakosh_armor_l);
+		Info_AddChoice(tpl_8005_gornakosh_armor, " Guardian Light Armor (Price: 1500 coins) " ,tpl_8005_gornakosh_armor_l);
 	};
 };
 
 func void tpl_8005_gornakosh_armor_m()
 {
-	AI_Output(hero,self,"TPL_8005_GorNaKosh_ARMOR_M_01_00");	//Мне нужны средние доспехи Стража.
+	AI_Output(hero,self, " TPL_8005_GorNaKosh_ARMOR_M_01_00 " );	// I need Guardian medium armor.
 
 	if(Npc_HasItems(hero,ItMi_Gold) < VALUE_ITAR_TPL_M)
 	{
-		AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_M_01_02");	//Как только у тебя появится возможность внести пожертвование на нужды Братства, ты получишь новые доспехи.
+		AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_M_01_02 " );	// As soon as you have the opportunity to make a donation to the needs of the Brotherhood, you will receive new armor.
 	}
-	else if((Kapitel >= 2) && (FORTUNOBACK == TRUE) && (MIS_KORANGAR == LOG_SUCCESS))
+	else  if ((Capital >=  2 ) && ( FORTUNOBACK  ==  TRUE ) && ( MY_CORRECTION  ==  LOG_SUCCESS ))
 	{
-		AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_M_01_03");	//Теперь, когда ты можешь внести пожертвование, ты получишь новые доспехи.
+		AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_M_01_03 " );	// Now that you can make a donation, you will receive new armor.
 		B_GiveInvItems(hero,self,ItMi_Gold,VALUE_ITAR_TPL_M);
 		CreateInvItems(hero,itar_tpl_m,1);
 		Npc_RemoveInvItems(self,ItMi_Gold,VALUE_ITAR_TPL_M);
@@ -1096,26 +1097,26 @@ func void tpl_8005_gornakosh_armor_m()
 	}
 	else
 	{
-		AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_M_01_01");	//Для этого у тебя еще недостаточно опыта. Покажи себя достойным Стражем, и ты заслужишь право носить лучшие доспехи.
+		AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_M_01_01 " );	// You don't have enough experience for this yet. Prove yourself a worthy Guardian and you will earn the right to wear the finest armor.
 	};
 	Info_ClearChoices(tpl_8005_gornakosh_armor);
 };
 
 func void tpl_8005_gornakosh_armor_h()
 {
-	AI_Output(hero,self,"TPL_8005_GorNaKosh_ARMOR_H_01_00");	//Мне нужны тяжелые доспехи Стража.
+	AI_Output(hero,self, " TPL_8005_GorNaKosh_ARMOR_H_01_00 " );	// I need heavy Guardian armor.
 
-	if(Kapitel < 4)
+	if (chapter <  4 )
 	{
-		AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_H_01_01");	//Для этого у тебя еще недостаточно опыта. Прояви себя достойным членом нашего Братства, и ты заслужишь право носить столь совершенные доспехи.
+		AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_H_01_01 " );	// You don't have enough experience for this yet. Prove yourself a worthy member of our Brotherhood, and you will earn the right to wear such perfect armor.
 	}
 	else if(Npc_HasItems(hero,ItMi_Gold) < VALUE_ITAR_TPL_S)
 	{
-		AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_H_01_02");	//Как только у тебя появится возможность внести пожертвование на нужды Братства, ты получишь новые доспехи.
+		AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_H_01_02 " );	// As soon as you have the opportunity to make a donation to the needs of the Brotherhood, you will receive new armor.
 	}
 	else
 	{
-		AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_H_01_03");	//Теперь ты будешь носить эти доспехи в знак высочайшей чести, оказанной тебе Братством.
+		AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_H_01_03 " );	// You will now wear this armor as a token of the highest honor bestowed upon you by the Brotherhood.
 		B_GiveInvItems(hero,self,ItMi_Gold,VALUE_ITAR_TPL_S);
 		CreateInvItems(hero,itar_tpl_s,1);
 		Npc_RemoveInvItems(self,ItMi_Gold,VALUE_ITAR_TPL_S);
@@ -1127,15 +1128,15 @@ func void tpl_8005_gornakosh_armor_h()
 
 func void tpl_8005_gornakosh_armor_l()
 {
-	AI_Output(hero,self,"TPL_8005_GorNaKosh_ARMOR_L_01_00");	//Мне нужны легкие доспехи Стража.
+	AI_Output(hero,self, " TPL_8005_GorNaKosh_ARMOR_L_01_00 " );	// I need Guardian Light Armor.
 
 	if(Npc_HasItems(hero,ItMi_Gold) < VALUE_ITAR_TPL_L)
 	{
-		AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_L_01_02");	//Как только у тебя появится возможность внести пожертвование на нужды Братства, ты получишь новые доспехи.
+		AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_L_01_02 " );	// As soon as you have the opportunity to make a donation to the needs of the Brotherhood, you will receive new armor.
 	}
 	else
 	{
-		AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_L_01_03");	//Теперь ты будешь носить эти доспехи в знак высочайшей чести, оказанной тебе Братством.
+		AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_L_01_03 " );	// You will now wear this armor as a token of the highest honor bestowed upon you by the Brotherhood.
 		B_GiveInvItems(hero,self,ItMi_Gold,VALUE_ITAR_TPL_L);
 		CreateInvItems(hero,itar_tpl_l,1);
 		Npc_RemoveInvItems(self,ItMi_Gold,VALUE_ITAR_TPL_L);
@@ -1146,8 +1147,8 @@ func void tpl_8005_gornakosh_armor_l()
 
 func void tpl_8005_gornakosh_armor_back()
 {
-	AI_Output(hero,self,"TPL_8005_GorNaKosh_ARMOR_BACK_01_01");	//Я передумал.
-	AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_BACK_01_02");	//Как хочешь. Ты знаешь, где меня найти.
+	AI_Output(hero,self, " TPL_8005_GorNaKosh_ARMOR_BACK_01_01 " );	// I changed my mind.
+	AI_Output(self,hero, " TPL_8005_GorNaKosh_ARMOR_BACK_01_02 " );	// As you wish. You know where to find me.
 	Info_ClearChoices(tpl_8005_gornakosh_armor);
 };
 
@@ -1159,13 +1160,13 @@ instance DIA_GORNAKOSH_GATHERARMY(C_Info)
 	condition = dia_gornakosh_gatherarmy_condition;
 	information = dia_gornakosh_gatherarmy_info;
 	permanent = FALSE;
-	description = "Меня прислал Идол Оран.";
+	description = "The Idol of Oran sent me. " ;
 };
 
 
 func int dia_gornakosh_gatherarmy_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_baalorun_gatherarmy))
+	if ( Npc_KnowsInfo ( hero , dia_balorun_gatherarmy ))
 	{
 		return TRUE;
 	};
@@ -1173,27 +1174,27 @@ func int dia_gornakosh_gatherarmy_condition()
 
 func void dia_gornakosh_gatherarmy_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_GatherArmy_01_00");	//Меня прислал Идол Оран.
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_01");	//И что от меня хочет верховный Гуру?
-	AI_Output(other,self,"DIA_GorNaKosh_GatherArmy_01_02");	//Он просил тебе передать, что Братство готово выступить против орков! Вы будете сражаться вместе с паладинами!
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_06");	//Что же, отлично! (решительно) Я уже давно говорил, что нельзя просто так сидеть сложа руки и ждать, пока орки сами заявятся сюда.
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_09");	//Но видишь ли...(замялся) Тут все-таки остается еще одна небольшая проблема.
-	AI_Output(other,self,"DIA_GorNaKosh_GatherArmy_01_10");	//Что еще за проблема?
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_13");	//Многие из наших послушников тоже наверняка захотят присоединится к нам. Это меня и беспокоит!
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_15");	//Выйти на битву с целой армией орков для них будет равносильно неминуемой гибели. Ведь у них даже нет нормальных доспехов!
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_16");	//Не думаю, что набедренная повязка послушника надежно защитит кого-либо из них от топоров орков.
-	AI_Output(other,self,"DIA_GorNaKosh_GatherArmy_01_17");	//Тогда раздай им доспехи Стражей!
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_18");	//Наши запасы крайне ограничены с тех пор, как мы покинули лагерь на болотах в Долине Рудников.
-	AI_Output(other,self,"DIA_GorNaKosh_GatherArmy_01_22");	//Что ты предлагаешь?
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_23");	//Насколько я знаю орков - эти твари достаточно медлительные в бою.
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_24");	//Так что если мы дадим моим людям преимущество в скорости, то, возможно, у них будет шанс выстоять против них.
-	AI_Output(other,self,"DIA_GorNaKosh_GatherArmy_01_25");	//И что нам в этом поможет?
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_26");	//Единственная вещь, которая мне приходит в голову - это зелье ускорения или что-то в этом роде! Только оно способно вызвать подобный эффект на длительное время.
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_28");	//Полагаю, полсотни порций этого напитка будет достаточно, чтобы хватило на всех.
+	AI_Output(other,self, " DIA_GorNaKosh_GatherArmy_01_00 " );	// Idol Oran sent me.
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_01 " );	// And what does the supreme Guru want from me?
+	AI_Output(other,self, " DIA_GorNaKosh_GatherArmy_01_02 " );	// He told you to tell you that the Brotherhood is ready to take on the orcs! You will fight alongside the paladins!
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_06 " );	// Well, great! (decidedly) I've been saying for a long time that you can't just sit back and wait for the orcs to show up here on their own.
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_09 " );	// But you see... (he hesitated) There still remains one more small problem.
+	AI_Output(other,self, " DIA_GorNaKosh_GatherArmy_01_10 " );	// What's the problem?
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_13 " );	// Many of our acolytes will also want to join us. This is what worries me!
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_15 " );	// Going into battle with an entire army of orcs will be tantamount to certain death for them. They don't even have proper armor!
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_16 " );	// I don't think an acolyte's loincloth will reliably protect either of them from orc axes.
+	AI_Output(other,self, " DIA_GorNaKosh_GatherArmy_01_17 " );	// Then give them Guardian Armor!
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_18 " );	// Our supplies are extremely limited since we left the camp in the swamps in the Valley of Mines.
+	AI_Output(other,self, " DIA_GorNaKosh_GatherArmy_01_22 " );	// What do you suggest?
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_23 " );	// As far as I know orcs - these creatures are quite slow in combat.
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_24 " );	// So if we give my people a speed advantage, maybe they'll have a chance to hold their own against them.
+	AI_Output(other,self, " DIA_GorNaKosh_GatherArmy_01_25 " );	// And what will help us with this?
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_26 " );	// The only thing I can think of is a haste potion or something! Only it can cause such an effect for a long time.
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmy_01_28 " );	// I guess 50 servings of this drink will be enough for everyone.
 	MIS_GORNAKOSHSPEEDPOTION = LOG_Running;
 	Log_CreateTopic(TOPIC_GORNAKOSHSPEEDPOTION,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GORNAKOSHSPEEDPOTION,LOG_Running);
-	B_LogEntry(TOPIC_GORNAKOSHSPEEDPOTION,"Для того, чтобы Гор На Кош и воины Братства поддержали паладинов в битве - мне необходимо достать ему полсотни напитков ускорения или чего-нибудь подобного. Он полагает, что если его люди получат преимущество в скорости боя перед орками, то у них будет шанс выжить. Это его условие. Придется достать ему эти напитки.");
+	B_LogEntry( TOPIC_GORNAKOSHSPEEDPOTION , " In order for Gor Na Kosh and the Brotherhood to support the paladins in battle - I need to get him fifty drinks of haste or something like that. He believes that if his people gain an advantage in combat speed over the orcs, then they will have a chance to survive. This is his condition. We'll have to get him these drinks. " );
 };
 
 
@@ -1204,7 +1205,7 @@ instance DIA_GORNAKOSH_GATHERARMYDONE(C_Info)
 	condition = dia_gornakosh_gatherarmydone_condition;
 	information = dia_gornakosh_gatherarmydone_info;
 	permanent = FALSE;
-	description = "Я достал зелья для твоих людей.";
+	description = " I got potions for your people. " ;
 };
 
 func int dia_gornakosh_gatherarmydone_condition()
@@ -1217,16 +1218,16 @@ func int dia_gornakosh_gatherarmydone_condition()
 
 func void dia_gornakosh_gatherarmydone_info()
 {
-	AI_Output(other,self,"DIA_GorNaKosh_GatherArmyDone_01_01");	//Я достал зелья ускорения для твоих людей.
+	AI_Output(other,self, " DIA_GorNaKosh_GatherArmyDone_01_01 " );	// I've got some haste potions for your people.
 
 	if(Npc_HasItems(other,ItFo_Addon_SchnellerHering) >= 50)
 	{
 		B_GivePlayerXP(500);
 		B_GiveInvItems(other,self,ItFo_Addon_SchnellerHering,50);
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_04");	//Хммм...(с подозрением) И что это?
-		AI_Output(other,self,"DIA_GorNaKosh_GatherArmyDone_01_05");	//Этот напиток называется 'Быстрая селедка'! Он куда лучше обычных эликсиров.
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_08");	//Кхмм...(с опаской) Ну ладно. Надеюсь, ты знаешь, что говоришь.
-		if(Npc_HasItems(self,ItFo_Addon_SchnellerHering) == 0)
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_04 " );	// Hmmm... (suspiciously) And what is this?
+		AI_Output(other,self, " DIA_GorNaKosh_GatherArmyDone_01_05 " );	// This drink is called 'Quick Herring'! It is much better than regular elixirs.
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_08 " );	// Hmm...(with caution) Okay. I hope you know what you're talking about.
+		if (Npc_HasItems(self,ItFo_Addon_SchnellerHering) ==  0 )
 		{
 			CreateInvItem(self,ItFo_Addon_SchnellerHering);
 		};
@@ -1234,37 +1235,37 @@ func void dia_gornakosh_gatherarmydone_info()
 		AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_09");	//Ааархх...
 		AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_10");	//Черт...(морщась) Какой крепкий напиток! У меня даже уши заложило.
-		AI_Output(other,self,"DIA_GorNaKosh_GatherArmyDone_01_11");	//Что-нибудь еще кроме этого чувствуешь?
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_12");	//Кажется, да...(удивленно) Сейчас у меня вдруг появилось такое ощущение, что теперь я смогу обогнать и самого дракона.
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_13");	//Где ты достал это пойло?
-		AI_Output(other,self,"DIA_GorNaKosh_GatherArmyDone_01_14");	//У пиратов. Они действительно знают толк в хорошем самогоне.
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_15");	//Ну что же, ладно...(решительно) Думаю, этого вполне хватит моим людям. Заодно и мозги им прочистит!
-		B_LogEntry(TOPIC_GORNAKOSHSPEEDPOTION,"Я принес Гор На Кошу полсотни бутылок 'Быстрой селедки'. Поначалу он засомневался в моем выборе, но попробовав разок этот замечательный напиток, решил, что он подойдет его парням.");
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_10 " );	// Damn... (grimacing) What a strong drink! I even got my ears stuffed up.
+		AI_Output(other,self, " DIA_GorNaKosh_GatherArmyDone_01_11 " );	// Do you feel anything else besides this?
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_12 " );	// I think so... (surprised) Now I suddenly have the feeling that now I can overtake the dragon itself.
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_13 " );	// Where did you get this drink?
+		AI_Output(other,self, " DIA_GorNaKosh_GatherArmyDone_01_14 " );	// Pirates. They really know a lot about good moonshine.
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_15 " );	// Well, okay... (decidedly) I think this will be enough for my people. At the same time, and clean their brains!
+		; _ _ _ _ _ _
 	}
 	else if(Npc_HasItems(other,itpo_speed_02) >= 50)
 	{
 		B_GivePlayerXP(400);
 		B_GiveInvItems(other,self,itpo_speed_02,50);
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_18");	//Двойной напиток ускорения? Отлично! Это даже лучше, чем я предполагал.
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_21");	//Теперь у моих людей будет преимущество перед орками в бою. Спасибо тебе за помощь.
-		B_LogEntry(TOPIC_GORNAKOSHSPEEDPOTION,"Я достал для Гор На Коша полсотни двойных эликсиров ускорения.");
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_18 " );	// Double boost drink? Excellent! It's even better than I imagined.
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_21 " );	// Now my people will have an advantage over the orcs in combat. Thanks for your help.
+		B_LogEntry( TOPIC_GORNAKOSHSPEEDPOTION , " I got fifty double elixirs of haste for Gorna Kosh. " );
 	}
 	else if(Npc_HasItems(other,ITPO_SPEED_03) >= 50)
 	{
 		B_GivePlayerXP(300);
 		B_GiveInvItems(other,self,ITPO_SPEED_03,50);
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_24");	//Хорошо! Это как раз то, что нужно.
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_25");	//Теперь у моих людей будет преимущество перед орками в бою. Спасибо тебе за помощь.
-		B_LogEntry(TOPIC_GORNAKOSHSPEEDPOTION,"Я достал для Гор На Коша полсотни эликсиров ускорения.");
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_24 " );	// Good! This is exactly what is needed.
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_25 " );	// Now my people will have an advantage over the orcs in combat. Thanks for your help.
+		B_LogEntry( TOPIC_GORNAKOSHSPEEDPOTION , " I got fifty elixirs of haste for Gorna Kosh. " );
 	}
 	else if(Npc_HasItems(other,ItPo_Speed) >= 50)
 	{
 		B_GivePlayerXP(300);
 		B_GiveInvItems(other,self,ItPo_Speed,50);
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_24");	//Хорошо! Это как раз то, что нужно.
-		AI_Output(self,other,"DIA_GorNaKosh_GatherArmyDone_01_25");	//Теперь у моих людей будет преимущество перед орками в бою. Спасибо тебе за помощь.
-		B_LogEntry(TOPIC_GORNAKOSHSPEEDPOTION,"Я достал для Гор На Коша полсотни эликсиров ускорения.");
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_24 " );	// Good! This is exactly what is needed.
+		AI_Output(self,other, " DIA_GorNaKosh_GatherArmyDone_01_25 " );	// Now my people will have an advantage over the orcs in combat. Thanks for your help.
+		B_LogEntry( TOPIC_GORNAKOSHSPEEDPOTION , " I got fifty elixirs of haste for Gorna Kosh. " );
 	};
 	MIS_GORNAKOSHSPEEDPOTION = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_GORNAKOSHSPEEDPOTION,LOG_SUCCESS);
@@ -1277,7 +1278,7 @@ instance DIA_GORNAKOSH_GATHERARMYGO(C_Info)
 	condition = dia_gornakosh_gatherarmygo_condition;
 	information = dia_gornakosh_gatherarmygo_info;
 	permanent = FALSE;
-	description = "Теперь вы готовы поддержать паладинов?";
+	description = " Are you ready to support paladins now? " ;
 };
 
 func int dia_gornakosh_gatherarmygo_condition()
@@ -1291,11 +1292,11 @@ func int dia_gornakosh_gatherarmygo_condition()
 func void dia_gornakosh_gatherarmygo_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_GorNaKosh_GatherArmyGo_01_01");	//Теперь вы готовы поддержать паладинов?
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmyGo_01_02");	//Да, можешь пойти и передать мой ответ самому лорду Хагену.
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmyGo_01_03");	//И заодно узнай у него - где он планирует сражение с орками!
+	AI_Output(other,self, " DIA_GorNaKosh_GatherArmyGo_01_01 " );	// Are you ready to support the paladins now?
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmyGo_01_02 " );	// Yes, you can go and deliver my answer to Lord Hagen himself.
+	AI_Output(self,other, " DIA_GorNaKosh_GatherArmyGo_01_03 " );	// And at the same time ask him where he plans to fight the orcs!
 	TPL_JOINHAGEN = TRUE;
-	B_LogEntry(TOPIC_ORсGREATWAR,"Гор На Кош и его воины присоединятся к армии паладинов. Мне необходимо сообщить об этом лорду Хагену, а заодно и выяснить, где он планирует дать бой оркам.");
+	B_LogEntry( TOPIC_OR with GREATWAR , " Gor Na Kosh and his warriors will join the paladin army. I need to inform Lord Hagen about this and find out where he plans to fight the orcs. " );
 	AI_StopProcessInfos(self);
 	B_GorNaKoshEquipWeapon(self);
 };
