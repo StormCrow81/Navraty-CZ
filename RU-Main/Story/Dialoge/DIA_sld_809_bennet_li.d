@@ -1,4 +1,5 @@
 
+
 var int trd_bennetli;
 
 instance DIA_BENNET_LI_EXIT(C_Info)
@@ -31,7 +32,7 @@ instance DIA_BENNET_LI_TRADE(C_Info)
 	information = dia_bennet_li_trade_info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Какое оружие ты можешь мне продать?";
+	description = " What weapon can you sell me? " ;
 };
 
 
@@ -48,8 +49,8 @@ func void dia_bennet_li_trade_info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Bennet_DI_TRADE_15_00");	//Какое оружие ты можешь мне продать?
-	AI_Output(self,other,"DIA_Bennet_DI_TRADE_06_01");	//Сам знаешь - только лучшее.
+	AI_Output(other,self, " DIA_Bennet_DI_TRADE_15_00 " );	// What weapon can you sell me?
+	AI_Output(self,other, " DIA_Bennet_DI_TRADE_06_01 " );	// You know - only the best.
 
 	if(TRD_BENNETLI != TRUE)
 	{
@@ -74,7 +75,7 @@ instance DIA_BENNET_LI_SMITH(C_Info)
 	condition = dia_bennet_li_smith_condition;
 	information = dia_bennet_li_smith_info;
 	permanent = TRUE;
-	description = "Ты сможешь научить меня ковать оружие?";
+	description = " Can you teach me how to forge weapons? " ;
 };
 
 
@@ -88,8 +89,8 @@ func int dia_bennet_li_smith_condition()
 
 func void dia_bennet_li_smith_info()
 {
-	AI_Output(other,self,"DIA_Bennet_DI_Smith_15_00");	//Ты можешь обучить меня своему мастерству?
-	AI_Output(self,other,"DIA_Bennet_DI_Smith_06_01");	//Зависит от того, что ты хочешь уметь.
+	AI_Output(other,self, " DIA_Bennet_DI_Smith_15_00 " );	// Can you teach me your craft?
+	AI_Output(self,other, " DIA_Bennet_DI_Smith_06_01 " );	// Depends on what you want to be able to do.
 	Info_ClearChoices(dia_bennet_li_smith);
 	Info_AddChoice(dia_bennet_li_smith,Dialog_Back,dia_bennet_li_smith_back);
 	if(PLAYER_TALENT_SMITH[WEAPON_Common] == FALSE)
@@ -197,7 +198,7 @@ instance DIA_BENNET_LI_PICKPOCKET(C_Info)
 
 func int dia_bennet_li_pickpocket_condition()
 {
-	return C_Beklauen(35,65);
+	return  C_Robbery ( 35 , 65 );
 };
 
 func void dia_bennet_li_pickpocket_info()
@@ -209,7 +210,7 @@ func void dia_bennet_li_pickpocket_info()
 
 func void dia_bennet_li_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_bennet_li_pickpocket);
 };
 
@@ -226,7 +227,7 @@ instance DIA_BENNET_LI_MISSMYGOLD(C_Info)
 	condition = dia_bennet_li_missmygold_condition;
 	information = dia_bennet_li_missmygold_info;
 	permanent = FALSE;
-	description = "Есть одно дело.";
+	description = " There is one thing. " ;
 };
 
 
@@ -240,13 +241,13 @@ func int dia_bennet_li_missmygold_condition()
 
 func void dia_bennet_li_missmygold_info()
 {
-	AI_Output(other,self,"DIA_Bennet_LI_MissMyGold_01_01");	//Есть одно дело.
-	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_02");	//(ворчливо) Тогда говори, если есть...
-	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_03");	//Только давай быстрее. А то, как ты видишь, я сейчас немного занят.
-	AI_Output(other,self,"DIA_Bennet_LI_MissMyGold_01_04");	//Куда подевалось мое золото?
-	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_05");	//Парень...(ворчливо) Я целыми днями торчу у своей кузницы.
-	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_06");	//Откуда, по-твоему, мне знать, куда оно подевалось?
-	B_LogEntry(TOPIC_MISSMYGOLD,"Беннет тоже не в курсе, куда подевалось мое золото.");
+	AI_Output(other,self, " DIA_Bennet_LI_MissMyGold_01_01 " );	// There is one thing.
+	AI_Output(self,other, " DIA_Bennet_LI_MissMyGold_01_02 " );	// (grouchily) Then tell me if there is...
+	AI_Output(self,other, " DIA_Bennet_LI_MissMyGold_01_03 " );	// Just hurry up. And as you can see, I'm a little busy right now.
+	AI_Output(other,self, " DIA_Bennet_LI_MissMyGold_01_04 " );	// Where did my gold go?
+	AI_Output(self,other, " DIA_Bennet_LI_MissMyGold_01_05 " );	// Guy... (grouchily) I spend all day at my forge.
+	AI_Output(self,other, " DIA_Bennet_LI_MissMyGold_01_06 " );	// How do you think I should know where it went?
+	B_LogEntry( TOPIC_MISSMYGOLD , " Bennet doesn't know where my gold went either. " );
 };
 
 
@@ -257,7 +258,7 @@ instance DIA_BENNET_LI_FINDMAGICORECAVE(C_Info)
 	condition = dia_bennet_li_findmagicorecave_condition;
 	information = dia_bennet_li_findmagicorecave_info;
 	permanent = FALSE;
-	description = "Я нашел пещеру с залежами магической руды.";
+	description = " I found a cave with magical ore deposits. " ;
 };
 
 
@@ -271,9 +272,9 @@ func int dia_bennet_li_findmagicorecave_condition()
 
 func void dia_bennet_li_findmagicorecave_info()
 {
-	AI_Output(other,self,"DIA_Bennet_LI_FindMagicOreCave_01_01");	//Я нашел пещеру с залежами магической руды.
-	AI_Output(self,other,"DIA_Bennet_LI_FindMagicOreCave_01_02");	//Правда? Тогда тебе стоит поговорить об этом с нашим капитаном.
-	AI_Output(self,other,"DIA_Bennet_LI_FindMagicOreCave_01_03");	//Думаю, ему будет интересно услышать эту новость.
+	AI_Output(other,self, " DIA_Bennet_LI_FindMagicOreCave_01_01 " );	// I found a cave with magical ore deposits.
+	AI_Output(self,other, " DIA_Bennet_LI_FindMagicOreCave_01_02 " );	// Really? Then you should talk to our captain about it.
+	AI_Output(self,other, " DIA_Bennet_LI_FindMagicOreCave_01_03 " );	// I think he will be interested to hear this news.
 	GOTOORECAPITAN = TRUE;
 };
 
@@ -285,7 +286,7 @@ instance DIA_BENNET_LI_CHANGECOURSE(C_Info)
 	condition = dia_bennet_li_changecourse_condition;
 	information = dia_bennet_li_changecourse_info;
 	permanent = FALSE;
-	description = "Ты не хотел бы вернуться обратно в Хоринис?";
+	description = " Would you like to go back to Khorinis? " ;
 };
 
 
@@ -300,18 +301,18 @@ func int dia_bennet_li_changecourse_condition()
 func void dia_bennet_li_changecourse_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Bennet_LI_ChangeCourse_01_00");	//Нам надо вернуться в Хоринис.
-	AI_Output(self,other,"DIA_Bennet_LI_ChangeCourse_01_07");	//Конечно, приятель! Я и не хотел плыть на материк.
-	AI_Output(self,other,"DIA_Bennet_LI_ChangeCourse_01_08");	//Сейчас я больше всего хочу вернуться на ферму Онара к своей старой кузнице.
-	AI_Output(other,self,"DIA_Bennet_LI_ChangeCourse_01_12");	//Понятно.
-	B_LogEntry(TOPIC_CHANGECOURSE,"Кузнец Беннет только и ждет того момента, когда мы вернемся обратно в Хоринис.");
+	AI_Output(other,self, " DIA_Bennet_LI_ChangeCourse_01_00 " );	// We need to get back to Khorinis.
+	AI_Output(self,other, " DIA_Bennet_LI_ChangeCourse_01_07 " );	// Of course, mate! I didn't want to sail to the mainland.
+	AI_Output(self,other, " DIA_Bennet_LI_ChangeCourse_01_08 " );	// What I want most now is to go back to Onar's farm to my old forge.
+	AI_Output(other,self, " DIA_Bennet_LI_ChangeCourse_01_12 " );	// Got it.
+	B_LogEntry( TOPIC_CHANGECOURSE , " Blacksmith Bennet is just waiting for us to get back to Khorinis. " );
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKPAL + 1;
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKSELL + 1;
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Пора сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Time to tell our captain. " );
 	};
 };
 
@@ -322,12 +323,12 @@ instance DIA_Bennet_LI_BetterArmor_Done(C_Info)
 	condition = DIA_Bennet_LI_BetterArmor_Done_Condition;
 	information = DIA_Bennet_LI_BetterArmor_Done_Info;
 	permanent = FALSE;
-	description = "У меня есть все, что ты просил.";
+	description = " I have everything you asked for. " ;
 };
 
 func int DIA_Bennet_LI_BetterArmor_Done_Condition()
 {
-	if((MIS_BetterArmor == LOG_Running) && (DayStartArmor == FALSE) && (Npc_HasItems(other,ItAt_DragonScale) >= 50) && (Npc_HasItems(other,ItAt_XragonSkull) >= 4) && (Npc_HasItems(other,ItMi_Nugget) >= 20) && (Npc_HasItems(other,ItMi_Sulfur) >= 10) && (Npc_HasItems(other,ItMi_Pitch) >= 2) && (Npc_HasItems(other,ItMi_DarkPearl) >= 5))
+	if ((MY_BetterArmor == LOG_Running) && (DayStartArmor ==  FALSE ) && (Npc_HasItems(other,It's_DragonScale) >=  50 ) && (Npc_HasItems(other,It's_XragonSkull) >=  4 ) && (Npc_HasItems(other,It's_XragonSkull) >= 20 ) && (Npc_HasItems(other,It's_DragonSkull) >=  20 ) ) && (Npc_HasItems(other,ItMi_Sulfur) >=  10 ) && (Npc_HasItems(other,ItMi_Pitch) >=  2 ) && (Npc_HasItems(other,ItMi_DarkPearl) >=  5 ))
 	{
 		return TRUE;
 	};
@@ -336,7 +337,7 @@ func int DIA_Bennet_LI_BetterArmor_Done_Condition()
 func void DIA_Bennet_LI_BetterArmor_Done_Info()
 {
 	B_GivePlayerXP(2500);
-	AI_Output(other,self,"DIA_Bennet_DI_BetterArmor_Done_01_00");	//У меня есть все, что ты просил.
+	AI_Output(other,self, " DIA_Bennet_DI_BetterArmor_Done_01_00 " );	// I have everything you asked for.
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(hero,ItAt_DragonScale,50);
 	Npc_RemoveInvItems(hero,ItAt_XragonSkull,4);
@@ -355,13 +356,13 @@ func void DIA_Bennet_LI_BetterArmor_Done_Info()
 		};
 	};
 
-	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_Done_01_01");	//Хорошо. Тогда я немедленно принимаюсь за работу.
-	AI_Output(other,self,"DIA_Bennet_DI_BetterArmor_Done_01_02");	//Сколько тебе понадобится времени, чтобы их изготовить?
-	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_Done_01_03");	//Трудно сказать. Но я дам тебе знать, как только они будут готовы.
+	AI_Output(self,other, " DIA_Bennet_DI_BetterArmor_Done_01_01 " );	// Good. Then I immediately get to work.
+	AI_Output(other,self, " DIA_Bennet_DI_BetterArmor_Done_01_02 " );	// How long will it take you to make them?
+	AI_Output(self,other, " DIA_Bennet_DI_BetterArmor_Done_01_03 " );	// Hard to say. But I'll let you know as soon as they're ready.
 	AI_Output(other,self,"DIA_Bennet_DI_BetterArmor_Done_01_04");	//Хорошо.
 	DayStartArmor = TRUE;
 	DayStartArmorCount = Wld_GetDay();
-	B_LogEntry(TOPIC_BetterArmor,"Я отдал Беннету все необходимые материалы для доспехов, и он немедленно принялся за работу. Правда, он не знает, сколько времени займет их изготовление.");
+	B_LogEntry(TOPIC_BetterArmor, " I gave Bennett all the materials he needed for the armor, and he immediately got to work. However, he doesn't know how long it will take. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -377,7 +378,7 @@ instance DIA_Bennet_LI_BetterArmor_Finish(C_Info)
 
 func int DIA_Bennet_LI_BetterArmor_Finish_Condition()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -390,11 +391,11 @@ func int DIA_Bennet_LI_BetterArmor_Finish_Condition()
 func void DIA_Bennet_LI_BetterArmor_Finish_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_Finish_01_00");	//Насчет твоих доспехов...(устало) Они готовы!
-	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_Finish_01_01");	//Вот, возьми их. Они надежно защитят тебя от любого врага.
+	AI_Output(self,other, " DIA_Bennet_DI_BetterArmor_Finish_01_00 " );	// About your armor...(wearily) They're ready!
+	AI_Output(self,other, " DIA_Bennet_DI_BetterArmor_Finish_01_01 " );	// Here, take them. They will reliably protect you from any enemy.
 	B_GiveInvItems(self,other,ItAr_DragonKiller,1);
 	MIS_BetterArmor = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_BetterArmor,LOG_SUCCESS);
-	B_LogEntry(TOPIC_BetterArmor,"Беннет выковал доспехи и отдал их мне.");
+	B_LogEntry(TOPIC_BetterArmor, " Bennet forged the armor and gave it to me. " );
 	AI_StopProcessInfos(self);
 };
