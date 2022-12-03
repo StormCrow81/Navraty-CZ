@@ -1,4 +1,5 @@
 
+
 instance DIA_VIRAN_EXIT(C_Info)
 {
 	npc = sek_8009_viran;
@@ -38,13 +39,13 @@ func int dia_viran_PICKPOCKET_Condition()
 func void dia_viran_PICKPOCKET_Info()
 {
 	Info_ClearChoices(dia_viran_PICKPOCKET);
-	Info_AddChoice(dia_viran_PICKPOCKET,Dialog_Back,dia_viran_PICKPOCKET_BACK);
+	Info_AddChoice(dia_viran_PICKPOCKET, Dialog_Back, dia_viran_PICKPOCKET_BACK);
 	Info_AddChoice(dia_viran_PICKPOCKET,DIALOG_PICKPOCKET,dia_viran_PICKPOCKET_DoIt);
 };
 
 func void dia_viran_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_viran_PICKPOCKET);
 };
 
@@ -61,7 +62,7 @@ instance DIA_VIRAN_MAGICSYMBOLS(C_Info)
 	information = dia_viran_magicsymbols_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "У меня к тебе есть дело.";
+	description = " I have business with you. " ;
 };
 
 
@@ -75,26 +76,26 @@ func int dia_viran_magicsymbols_condition()
 
 func void dia_viran_magicsymbols_info()
 {
-	AI_Output(other,self,"DIA_Viran_MagicSymbols_01_00");	//У меня есть к тебе дело.
+	AI_Output(other,self, " DIA_Viran_MagicSymbols_01_00 " );	// I have business with you.
 
 	if(VIRANFIRSTTALKSYMBOLS == FALSE)
 	{
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_01");	//(недовольно) Что еще такое?  Выкладывай, но только быстро.
-		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_02");	//Идол Оран сказал, что ты сможешь помочь мне нанести магические символы на тело.
-		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_03");	//Как один из членов Братства, я теперь тоже могу носить их!
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_04");	//А, вот в чем дело. Конечно, я помогу тебе. Это не займет много времени.
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_05");	//Ты точно уверен, что хочешь это сделать?
+		AI_Output(self,other, " DIA_Viran_MagicSymbols_01_01 " );	// (angrily) What else is this? Spread, but only quickly.
+		AI_Output(other,self, " DIA_Viran_MagicSymbols_01_02 " );	// Idol Oran said that you could help me put the magic symbols on the body.
+		AI_Output(other,self, " DIA_Viran_MagicSymbols_01_03 " );	// As one of the members of the Brotherhood, I can now wear them too!
+		AI_Output(self,other, " DIA_Viran_MagicSymbols_01_04 " );	// Ah, here's the thing. Of course I will help you. It does not take a lot of time.
+		AI_Output(self,other, " DIA_Viran_MagicSymbols_01_05 " );	// Are you sure you want to do this?
 		VIRANFIRSTTALKSYMBOLS = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_06");	//(ворчливо) Ну и что на этот раз?
-		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_07");	//Я все-таки решил нанести магические символы на свое тело. Ты поможешь мне?
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Хорошо...(с сомнением) Ты в этом полностью уверен?
+		AI_Output(self,other, " DIA_Viran_MagicSymbols_01_06 " );	// (grouchily) So what this time?
+		AI_Output(other,self, " DIA_Viran_MagicSymbols_01_07 " );	// I still decided to put magic symbols on my body. Will you help me?
+		AI_Output(self,other, " DIA_Viran_MagicSymbols_01_08 " );	// Okay...(doubtfully) Are you sure about that?
 	};
 	Info_ClearChoices(dia_viran_magicsymbols);
-	Info_AddChoice(dia_viran_magicsymbols,"Да, конечно!",dia_viran_magicsymbols_yes);
-	Info_AddChoice(dia_viran_magicsymbols,"Нет, это не для меня.",dia_viran_magicsymbols_no);
+	Info_AddChoice(dia_viran_magicsymbols, " Yes, of course! " ,dia_viran_magicsymbols_yes);
+	Info_AddChoice(dia_viran_magicsymbols, " No, that's not for me. " ,dia_viran_magicsymbols_no);
 };
 
 func void dia_viran_magicsymbols_yes()
@@ -105,16 +106,16 @@ func void dia_viran_magicsymbols_yes()
 	AI_Print(NAME_SEK_MAGIC);
 	Snd_Play("LevelUp");
 	SYMBOLSMAKEDONE = TRUE;
-	HelmIsUpTemp = FALSE;
-	AI_Output(self,other,"DIA_Viran_MagicSymbols_Yes_01_01");	//Вот все и готово! Магия этих священных символов теперь защитит тебя.
+	HelmIsUpTemp = FALSE ;
+	AI_Output(self,other, " DIA_Viran_MagicSymbols_Yes_01_01 " );	// That's all and done! The magic of these sacred symbols will now protect you.
 	AI_Output(other,self,"DIA_Viran_MagicSymbols_Yes_01_02");	//Спасибо.
 	Info_ClearChoices(dia_viran_magicsymbols);
 };
 
-func void dia_viran_magicsymbols_no()
+func void day_viran_magicsymbols_no()
 {
-	AI_Output(other,self,"DIA_Viran_MagicSymbols_No_01_01");	//Нет, пожалуй, это не для меня.
-	AI_Output(self,other,"DIA_Viran_MagicSymbols_No_01_02");	//Ладно, как скажешь.
+	AI_Output(other,self, " DIA_Viran_MagicSymbols_No_01_01 " );	// No, it's probably not for me.
+	AI_Output(self,other, " DIA_Viran_MagicSymbols_No_01_02 " );	// Okay, whatever you say.
 	Info_ClearChoices(dia_viran_magicsymbols);
 };
 
@@ -125,7 +126,7 @@ instance DIA_Viran_Bold(C_Info)
 	condition = DIA_Viran_Bold_condition;
 	information = DIA_Viran_Bold_info;
 	permanent = TRUE;
-	description = "Побрей меня наголо.";
+	description = " Shave my head. " ;
 };
 
 func int DIA_Viran_Bold_condition()
@@ -138,11 +139,11 @@ func int DIA_Viran_Bold_condition()
 
 func void DIA_Viran_Bold_info()
 {
-	AI_Output(other,self,"DIA_Viran_Bold_01_00");	//Побрей меня наголо.
-	AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Хорошо...(с сомнением) Ты в этом полностью уверен?
+	AI_Output(other,self, " DIA_Viran_Bold_01_00 " );	// Shave my head.
+	AI_Output(self,other, " DIA_Viran_MagicSymbols_01_08 " );	// Okay...(doubtfully) Are you sure about that?
 	Info_ClearChoices(DIA_Viran_Bold);
-	Info_AddChoice(DIA_Viran_Bold,"Да, конечно!",DIA_Viran_Bold_Yes);
-	Info_AddChoice(DIA_Viran_Bold,"Нет, это не для меня.",DIA_Viran_Bold_No);
+	Info_AddChoice(DIA_Viran_Bold, " Yes, of course! " ,DIA_Viran_Bold_Yes);
+	Info_AddChoice(DIA_Viran_Bold, " No, this is not for me. " ,DIA_Viran_Bold_No);
 };
 
 func void DIA_Viran_Bold_Yes()
@@ -151,7 +152,7 @@ func void DIA_Viran_Bold_Yes()
 	HeroBoldHead = TRUE;
 	Ext_RemoveFromSlot(hero,"BIP01 HEAD");
 	Npc_RemoveInvItems(hero,ITMI_GERALTHAIR,Npc_HasItems(hero,ITMI_GERALTHAIR));
-	GeraltHead = FALSE;
+	GeraltHead = FALSE ;
 
 	if((SYMBOLSMAKEGURUDONE == TRUE) && (SYMBOLSMAKEDONE == TRUE))
 	{
@@ -176,8 +177,8 @@ func void DIA_Viran_Bold_Yes()
 
 func void DIA_Viran_Bold_No()
 {
-	AI_Output(other,self,"DIA_Viran_MagicSymbols_No_01_01");	//Нет, пожалуй, это не для меня.
-	AI_Output(self,other,"DIA_Viran_MagicSymbols_No_01_02");	//Ладно, как скажешь.
+	AI_Output(other,self, " DIA_Viran_MagicSymbols_No_01_01 " );	// No, it's probably not for me.
+	AI_Output(self,other, " DIA_Viran_MagicSymbols_No_01_02 " );	// Okay, whatever you say.
 	Info_ClearChoices(DIA_Viran_Bold);
 };
 
@@ -189,7 +190,7 @@ instance DIA_VIRAN_WHATYOUDO(C_Info)
 	information = dia_viran_whatyoudo_info;
 	permanent = FALSE;
 	important = FALSE;
-	description = "Чем ты занимаешься?";
+	description = " What are you doing? " ;
 };
 
 func int dia_viran_whatyoudo_condition()
@@ -199,11 +200,11 @@ func int dia_viran_whatyoudo_condition()
 
 func void dia_viran_whatyoudo_info()
 {
-	AI_Output(other,self,"DIA_Viran_WhatYouDo_01_00");	//Чем ты занимаешься?
-	AI_Output(self,other,"DIA_Viran_WhatYouDo_01_01");	//А разве не видно? Помогаю Йоре затачивать клинки для мечей Стражей.
-	AI_Output(other,self,"DIA_Viran_WhatYouDo_01_02");	//А зачем вам столько оружия?
-	AI_Output(self,other,"DIA_Viran_WhatYouDo_01_03");	//Парень, разуй глаза! Вся Долина Рудников просто кишит орками, а несколько дней назад их видели уже неподалеку от прохода.
-	AI_Output(self,other,"DIA_Viran_WhatYouDo_01_04");	//Наверняка они скоро пожалуют и сюда. А мы не хотим, чтобы нас застали врасплох.
+	AI_Output(other,self, " DIA_Viran_WhatYouDo_01_00 " );	// What are you doing?
+	AI_Output(self,other, " DIA_Viran_WhatYouDo_01_01 " );	// Can't you see? Helping Yora sharpen blades for Guardian swords.
+	AI_Output(other,self, " DIA_Viran_WhatYouDo_01_02 " );	// Why do you need so many weapons?
+	AI_Output(self,other, " DIA_Viran_WhatYouDo_01_03 " );	// Guy, open your eyes! The entire Valley of Mines is simply teeming with orcs, and a few days ago they were already seen not far from the passage.
+	AI_Output(self,other, " DIA_Viran_WhatYouDo_01_04 " );	// I'm sure they'll be here soon too. And we don't want to be taken by surprise.
 };
 
 
@@ -214,7 +215,7 @@ instance DIA_VIRAN_NEEDWEAPONS(C_Info)
 	condition = dia_viran_needweapons_condition;
 	information = dia_viran_needweapons_info;
 	permanent = FALSE;
-	description = "Я могу купить здесь оружие?";
+	description = " Can I buy weapons here? " ;
 };
 
 
@@ -225,8 +226,8 @@ func int dia_viran_needweapons_condition()
 
 func void dia_viran_needweapons_info()
 {
-	AI_Output(other,self,"DIA_Viran_NeedWeapons_01_00");	//Я могу купить здесь оружие?
-	AI_Output(self,other,"DIA_Viran_NeedWeapons_01_01");	//У меня его нет. Им занимается Йору - поговори с ним.
+	AI_Output(other,self, " DIA_Viran_NeedWeapons_01_00 " );	// Can I buy weapons here?
+	AI_Output(self,other, " DIA_Viran_NeedWeapons_01_01 " );	// I don't have one. Yoru is doing it - talk to him.
 };
 
 
@@ -237,13 +238,13 @@ instance DIA_VIRAN_HOWTHINGS(C_Info)
 	condition = dia_viran_howthings_condition;
 	information = dia_viran_howthings_info;
 	permanent = TRUE;
-	description = "Ну, как идет подготовка к обороне?";
+	description = " So, how are the preparations for the defense going? " ;
 };
 
 
 func int dia_viran_howthings_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_viran_whatyoudo) && Wld_IsTime(8,0,22,0))
+	if ( Npc_KnowsInfo ( hero , dia_viran_whatyoudo ) & & Wld_IsTime ( 8 , 0 , 22 , 0 ))
 	{
 		return TRUE;
 	};
@@ -251,8 +252,8 @@ func int dia_viran_howthings_condition()
 
 func void dia_viran_howthings_info()
 {
-	AI_Output(other,self,"DIA_Viran_HowThings_01_00");	//Ну, как идет подготовка к обороне?
-	AI_Output(self,other,"DIA_Viran_HowThings_01_01");	//(раздраженно) Не мешай мне работать!
+	AI_Output(other,self, " DIA_Viran_HowThings_01_00 " );	// Well, how are the preparations for the defense going?
+	AI_Output(self,other, " DIA_Viran_HowThings_01_01 " );	// (annoyed) Don't disturb my work!
 };
 
 
@@ -269,7 +270,7 @@ instance DIA_VIRAN_NEEDSTEEL(C_Info)
 
 func int dia_viran_needsteel_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_viran_whatyoudo) && (PSI_TALK == TRUE))
+	if ( Npc_KnowsInfo ( hero , dia_become_whatyoudo ) && ( PSI_TALK  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -277,42 +278,42 @@ func int dia_viran_needsteel_condition()
 
 func void dia_viran_needsteel_info()
 {
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_00");	//Подожди минутку...
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_00 " );	// Wait a minute...
 	AI_Output(other,self,"DIA_Viran_NeedSteel_01_01");	//Что еще?
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_02");	//Тут есть одна работенка, как раз для такого парня, как ты.
-	AI_Output(other,self,"DIA_Viran_NeedSteel_01_03");	//И в чем она заключается?
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_05");	//Видишь ли, последнее время мы испытываем крайнюю нехватку материала для производства оружия и доспехов.
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_06");	//А именно стальных заготовок.
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_02 " );	// There's one job here, just right for a guy like you.
+	AI_Output(other,self, " DIA_Viran_NeedSteel_01_03 " );	// And what is it?
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_05 " );	// You see, lately we have been experiencing an extreme shortage of material for the production of weapons and armor.
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_06 " );	// Namely, steel billets.
 	AI_Output(other,self,"DIA_Viran_NeedSteel_01_07");	//И что же?
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_08");	//А то, что, если бы ты сумел добыть для нас небольшое количество стали, - было бы уже совсем неплохо.
-	AI_Output(other,self,"DIA_Viran_NeedSteel_01_09");	//И что же я получу за свою услугу?
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_13");	//Скажем, за твою помощь я бы мог дать тебе... ммм...
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_14");	//...одно очень неплохое оружие из запасов нашего арсенала.
-	AI_Output(other,self,"DIA_Viran_NeedSteel_01_15");	//А какое именно?
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_16");	//Сначала выполни то, о чем я тебя попросил. А потом узнаешь, какое именно.
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_17");	//Могу сказать только одно. Сколько стали принесешь - такое оружие и получишь.
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_18");	//Ну, что скажешь?
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_08 " );	// And the fact that if you managed to get a small amount of steel for us, it would be quite good.
+	AI_Output(other,self, " DIA_Viran_NeedSteel_01_09 " );	// And what will I get for my service?
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_13 " );	// Say, for your help, I could give you... mmm...
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_14 " );	// ...one very good weapon from our arsenal.
+	AI_Output(other,self, " DIA_Viran_NeedSteel_01_15 " );	// Which one exactly?
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_16 " );	// Do what I asked you to do first. And then you'll know which one.
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_17 " );	// I can only say one thing. How much steel you bring - you will receive such a weapon.
+	AI_Output(self,other, " DIA_Viran_NeedSteel_01_18 " );	// Well, what do you say?
 	Info_ClearChoices(dia_viran_needsteel);
-	Info_AddChoice(dia_viran_needsteel,"Хорошо. Но только попробуй меня надуть!",dia_viran_needsteel_ja);
-	Info_AddChoice(dia_viran_needsteel,"Об этом не может быть и речи.",dia_viran_needsteel_nein);
+	Info_AddChoice(dia_viran_needsteel, " Okay. But just try to fool me! " ,dia_viran_needsteel_ja);
+	Info_AddChoice(dia_viran_needsteel, " This is out of the question. " ,dia_viran_needsteel_nein);
 };
 
 func void dia_viran_needsteel_ja()
 {
-	AI_Output(other,self,"DIA_Viran_NeedSteel_Ja_01_00");	//Хорошо. Но только попробуй меня надуть!
-	AI_Output(self,other,"DIA_Viran_NeedSteel_Ja_01_01");	//Ну что ты! Поверь, ты об этом не пожалеешь.
+	AI_Output(other,self, " DIA_Viran_NeedSteel_Ja_01_00 " );	// Good. But just try to fool me!
+	AI_Output(self,other, " DIA_Viran_NeedSteel_Ja_01_01 " );	// What are you doing! Trust me, you won't regret it.
 	AI_Output(other,self,"DIA_Viran_NeedSteel_Ja_01_02");	//Надеюсь.
 	VIRAN_BRINGSTEEL = LOG_Running;
 	Log_CreateTopic(TOPIC_VIRANBRINGSTEEL,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_VIRANBRINGSTEEL,LOG_Running);
-	B_LogEntry(TOPIC_VIRANBRINGSTEEL,"Виран попросил меня принести ему как можно больше стальных заготовок.");
+	B_LogEntry( TOPIC_VIRANBRINGSTEEL , " Viran asked me to bring him as many steel pieces as possible. " );
 	Info_ClearChoices(dia_viran_needsteel);
 };
 
 func void dia_viran_needsteel_nein()
 {
-	AI_Output(other,self,"DIA_Viran_NeedSteel_Nein_01_00");	//Меня не устраивают эти условия.
-	AI_Output(self,other,"DIA_Viran_NeedSteel_Nein_01_01");	//Ну, как знаешь.
+	AI_Output(other,self, " DIA_Viran_NeedSteel_Nein_01_00 " );	// I'm not satisfied with these conditions.
+	AI_Output(self,other, " DIA_Viran_NeedSteel_Nein_01_01 " );	// Well, as you know.
 	Info_ClearChoices(dia_viran_needsteel);
 };
 
@@ -324,7 +325,7 @@ instance DIA_VIRAN_BRINGSTEEL(C_Info)
 	condition = dia_viran_bringsteel_condition;
 	information = dia_viran_bringsteel_info;
 	permanent = TRUE;
-	description = "Я принес сталь.";
+	description = " I brought steel. " ;
 };
 
 
@@ -340,17 +341,17 @@ func void dia_viran_bringsteel_info()
 {
 	var C_Item EquipWeap;
 	var int countsteel;
-	AI_Output(other,self,"DIA_Viran_BringSteel_01_00");	//Я принес сталь.
-	AI_Output(self,other,"DIA_Viran_BringSteel_01_01");	//Хорошо, давай посмотрим, сколько стали ты принес.
+	AI_Output(other,self, " DIA_Viran_BringSteel_01_00 " );	// I brought steel.
+	AI_Output(self,other, " DIA_Viran_BringSteel_01_01 " );	// Okay, let's see how much steel you brought in.
 	countsteel = Npc_HasItems(other,ItMiSwordraw);
 	if((countsteel >= 1) && (countsteel <= 3))
 	{
 		B_GiveInvItems(other,self,ItMiSwordraw,countsteel);
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_02");	//(негодующе) И это все, что ты смог раздобыть?!
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_03");	//Да этого даже не хватит и на то, чтобы выковать более или менее приличный клинок!
-		AI_Output(other,self,"DIA_Viran_BringSteel_01_04");	//Где моя награда?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_05");	//Ах да, твоя награда...(ехидно)
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_06");	//Вот - возьми. Как раз по твоим заслугам.
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_02 " );	// (indignantly) Is that all you could get?!
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_03 " );	// Yes, this is not even enough to forge a more or less decent blade!
+		AI_Output(other,self, " DIA_Viran_BringSteel_01_04 " );	// Where is my reward?
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_05 " );	// Oh yeah, your reward... (snidely)
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_06 " );	// Here - take it. Just to your credit.
 		if(countsteel == 1)
 		{
 			B_GiveInvItems(self,other,itmw_1h_misc_gsword,1);
@@ -365,43 +366,43 @@ func void dia_viran_bringsteel_info()
 	{
 		B_GivePlayerXP(200);
 		B_GiveInvItems(other,self,ItMiSwordraw,countsteel);
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_07");	//Неплохо. Хотя, если признаться, я ожидал больше...
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_08");	//Но все-таки это лучше, чем ничего.
-		AI_Output(other,self,"DIA_Viran_BringSteel_01_09");	//Где моя награда?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_10");	//Ах да, твоя награда...(вздыхая)
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_11");	//Вот, возьми. Большего все равно не заслужил!
-		B_GiveInvItems(self,other,ItMw_Schwert,1);
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_07 " );	// Not bad. Although, to be honest, I was expecting more...
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_08 " );	// But it's still better than nothing.
+		AI_Output(other,self, " DIA_Viran_BringSteel_01_09 " );	// Where is my reward?
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_10 " );	// Oh yeah, your reward... (sigh)
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_11 " );	// Here, take this. You still don't deserve more!
+		B_GiveInvItems(self,other,ItMw_Schwert, 1 );
 	}
 	else if((countsteel > 5) && (countsteel <= 7))
 	{
 		B_GivePlayerXP(400);
 		B_GiveInvItems(other,self,ItMiSwordraw,countsteel);
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_12");	//О! Совсем неплохо!
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_13");	//Приблизительно столько я и рассчитывал от тебя получить.
-		AI_Output(other,self,"DIA_Viran_BringSteel_01_14");	//Как насчет моей награды?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_16");	//Вот, возьми эту вещицу. Думаю, тебе она сослужит неплохую службу.
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_12 " );	// Oh! Quite good!
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_13 " );	// That's about as much as I expected from you.
+		AI_Output(other,self, " DIA_Viran_BringSteel_01_14 " );	// How about my reward?
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_16 " );	// Here, take this thing. I think it will serve you well.
 		B_GiveInvItems(self,other,ItMw_Bartaxt,1);
 	}
 	else if((countsteel > 7) && (countsteel <= 15))
 	{
 		B_GivePlayerXP(600);
 		B_GiveInvItems(other,self,ItMiSwordraw,countsteel);
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_17");	//Парень, откуда ты взял столько стальных заготовок?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_18");	//Это куда больше, чем я рассчитывал.
-		AI_Output(other,self,"DIA_Viran_BringSteel_01_19");	//Как насчет моей награды?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_20");	//Конечно! Поверь, я в долгу не останусь.
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_21");	//Вот, возьми. Отличная вещь.
-		B_GiveInvItems(self,other,ItMw_Schwert4,1);
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_17 " );	// Man, where did you get all these steel billets from?
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_18 " );	// This is way more than I expected.
+		AI_Output(other,self, " DIA_Viran_BringSteel_01_19 " );	// How about my reward?
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_20 " );	// Of course! Believe me, I will not remain in debt.
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_21 " );	// Here, take this. Excellent thing.
+		B_GiveInvItems(self,other,ItMw_Schwert4, 1 );
 	}
 	else if(countsteel > 15)
 	{
 		B_GivePlayerXP(1000);
 		B_GiveInvItems(other,self,ItMiSwordraw,countsteel);
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_22");	//Глазам своим не верю! Откуда у тебя столько стальных заготовок?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_23");	//Это превысило все мои ожидания. Я даже и подумать не мог, что ты сможешь раздобыть столько стали.
-		AI_Output(other,self,"DIA_Viran_BringSteel_01_24");	//Как насчет моей награды?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_25");	//Без проблем, парень!
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_26");	//Вот, возьми эту вещицу. Поверь, это лучшее оружие, что у меня имеется!
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_22 " );	// I can't believe my eyes! Where do you get so many steel blanks from?
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_23 " );	// This exceeded all my expectations. I didn't even think you'd be able to get that much steel.
+		AI_Output(other,self, " DIA_Viran_BringSteel_01_24 " );	// How about my reward?
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_25 " );	// No problem, man!
+		AI_Output(self,other, " DIA_Viran_BringSteel_01_26 " );	// Here, take this thing. Believe me, this is the best weapon that I have!
 		B_GiveInvItems(self,other,itmw_1h_mace_107,1);
 	};
 	Npc_RemoveInvItems(self,ItMiSwordraw,Npc_HasItems(self,ItMiSwordraw));
@@ -410,20 +411,20 @@ func void dia_viran_bringsteel_info()
 };
 
 
-instance DIA_VIRAN_SEKTEHEILEN(C_Info)
+DIA_VIRAN_SEKTEHEILEN (C_Info) instances
 {
 	npc = sek_8009_viran;
 	nr = 1;
 	condition = dia_viran_sekteheilen_condition;
 	information = dia_viran_sekteheilen_info;
 	permanent = FALSE;
-	description = "Выпей напиток! Он помогает от головной боли.";
+	description = " Drink a drink! It helps with a headache. " ;
 };
 
 
 func int dia_viran_sekteheilen_condition()
 {
-	if((Npc_HasItems(other,ItPo_HealObsession_MIS) > 0) && (MIS_SEKTEHEILEN == LOG_Running) && Npc_KnowsInfo(hero,dia_baalorun_sekteheilengot))
+	if ((Npc_HasItems(other,ItPo_Heal_Obsession_MY) >  0 ) && ( MY_SECTS_HEALTH  == LOG_Running) && Npc_KnowsInfo(hero, dia_heal_sectarian_obsession));
 	{
 		return TRUE;
 	};
@@ -432,11 +433,11 @@ func int dia_viran_sekteheilen_condition()
 func void dia_viran_sekteheilen_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Viran_SekteHeilen_01_00");	//Выпей напиток! Он помогает от головной боли.
+	AI_Output(other,self, " DIA_Viran_SekteHeilen_01_00 " );	// Have a drink! It helps with headaches.
 	B_GiveInvItems(other,self,ItPo_HealObsession_MIS,1);
 	B_UseItem(self,ItPo_HealObsession_MIS);
-	SEKTEHEILENCOUNT = SEKTEHEILENCOUNT + 1;
-	AI_Output(self,other,"DIA_Viran_SekteHeilen_01_01");	//Моя голова...она прошла!
-	AI_Output(self,other,"DIA_Viran_SekteHeilen_01_02");	//Спасибо тебе, брат.
+	SECTEHEILENCOUNT = SECTEHEILENCOUNT  +  1 ;
+	AI_Output(self,other, " DIA_Viran_SekteHeilen_01_01 " );	// My head...it's gone!
+	AI_Output(self,other, " DIA_Viran_SekteHeilen_01_02 " );	// Thank you brother.
 };
 
