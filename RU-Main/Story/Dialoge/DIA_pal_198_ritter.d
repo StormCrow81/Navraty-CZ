@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_190_RITTER_EXIT(C_Info)
 {
 	npc = pal_190_ritter;
