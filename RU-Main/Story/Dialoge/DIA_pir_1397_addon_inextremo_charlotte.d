@@ -1,4 +1,5 @@
 
+
 instance DIA_ADDON_INEXTREMO_CHARLOTTE_EXIT(C_Info)
 {
 	npc = pir_1397_addon_inextremo_charlotte;
@@ -34,7 +35,7 @@ instance DIA_ADDON_INEXTREMO_CHARLOTTE_PICKPOCKET(C_Info)
 
 func int dia_addon_inextremo_charlotte_pickpocket_condition()
 {
-	return C_Beklauen(118,300);
+	return  C_Robbery ( 118 , 300 );
 };
 
 func void dia_addon_inextremo_charlotte_pickpocket_info()
@@ -109,26 +110,26 @@ func void dia_addon_inextremo_charlotte_hi_info()
 			hero.exp = hero.exp + 500;
 			AI_NoticePrint(3000,4098,NAME_Addon_KillerBonus);
 			KillerBonus = TRUE;
-			AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Hi_01_00");	//Так, так. И кто это у нас здесь?
-			AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Hi_01_01");	//Честно говоря, я рада, что ты смог справиться с Асмалом. Нам он всем не очень-то и нравился.
-			AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Hi_01_02");	//Ну, если только Лютеру. Хотя, по большому счету, этому парню вообще все равно, кто у руля. (смеется)
-			AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Hi_01_03");	//Так что прими мои поздравления! Думаю, из тебя получится неплохой глава гильдии.
+			AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Hi_01_00 " );	// Yes, yes. And who do we have here?
+			AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Hi_01_01 " );	// Honestly, I'm glad you were able to handle Asmal. We all didn't like him very much.
+			AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Hi_01_02 " );	// Well, if only Luther. Although, by and large, this guy does not care who is at the helm. (laughs)
+			AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Hi_01_03 " );	// So congratulations! I think you'll make a good guild leader.
 			AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Hi_01_04");	//Спасибо!
 			KILLMEMBER5 = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Hi_01_05");	//Чем порадуешь на этот раз?
+			AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Hi_01_05 " );	// What will please you this time?
 		};
 	}
-	else if(Wld_IsTime(8,30,19,30))
+	else  if (Wld_IsTime( 8 , 30 , 19 , 30 ))
 	{
 		if(IS_INEXTREMO_PLAYING_DONE == FALSE)
 		{
 			if((MIS_JESPERMUSIC == LOG_Running) && (MSINEXTREMO == FALSE))
 			{
 				Info_ClearChoices(dia_addon_inextremo_charlotte_hi);
-				Info_AddChoice(dia_addon_inextremo_charlotte_hi,"Сыграйте что-нибудь веселенькое! (Цена: 100 монет)",dia_addon_inextremo_charlotte_hi_doit);
+				Info_AddChoice(dia_addon_inextremo_charlotte_hi, " Play something fun! (Cost: 100 coins) " ,dia_addon_inextremo_charlotte_hi_doit);
 			}
 			else
 			{
@@ -166,9 +167,9 @@ func void dia_addon_inextremo_charlotte_hi_doit()
 	if(Npc_HasItems(hero,ItMi_Gold) >= 100)
 	{
 		B_TurnToNpc(self,MusHer);
-		AI_Output(self,other,"dia_addon_inextremo_charlotte_hi_doit_01_00");	//(улыбаясь) Конечно. Эй, ребята! У нас заказ... Что-нибудь веселенькое!
+		AI_Output(self,other, " dia_addon_inextremo_charlotte_hi_doit_01_00 " );	// (smiling) Of course. Hey guys! We've got an order... Something fun!
 		B_TurnToNpc(self,hero);
-		AI_Output(self,other,"dia_addon_inextremo_charlotte_hi_doit_01_01");	//Cейчас все будет...
+		AI_Output(self,other, " dia_addon_inextremo_charlotte_hi_doit_01_01 " );	// Now everything will be...
 		Npc_RemoveInvItems(other,ItMi_Gold,100);
 		IS_INEXTREMO_PLAYING = TRUE;
 		IS_INEXTREMO_PLAYING_DONE = TRUE;
@@ -176,7 +177,7 @@ func void dia_addon_inextremo_charlotte_hi_doit()
 	}
 	else
 	{
-		AI_Output(self,other,"dia_addon_inextremo_charlotte_hi_doit_01_02");	//А золото где? Если нет золота, то нет и музыки.
+		AI_Output(self,other, " dia_addon_inextremo_charlotte_hi_doit_01_02 " );	// Where's the gold? If there is no gold, then there is no music.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -188,7 +189,7 @@ instance DIA_ADDON_INEXTREMO_CHARLOTTE_WhatNext(C_Info)
 	condition = dia_addon_inextremo_charlotte_WhatNext_condition;
 	information = dia_addon_inextremo_charlotte_WhatNext_info;
 	permanent = FALSE;
-	description = "Что будем делать дальше?";
+	description = " What are we going to do next? " ;
 };
 
 func int dia_addon_inextremo_charlotte_WhatNext_condition()
@@ -201,19 +202,19 @@ func int dia_addon_inextremo_charlotte_WhatNext_condition()
 
 func void dia_addon_inextremo_charlotte_WhatNext_info()
 {
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_01");	//Что будем делать дальше?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_02");	//Не знаю. Ты теперь тут босс.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_03");	//Но, будь я на твоем месте, то прежде всего я бы подыскала для нас новое укромное местечко.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_04");	//Здесь оставаться опасно. Кругом полно диких тварей, да и мы тут как на ладони.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_05");	//Не ровен час, кто-нибудь заметит нас, - и тогда нам несдобровать.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_06");	//И какое, по-твоему, это должно быть место?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_07");	//Не знаю... Какая-нибудь уютная пещерка или домик.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_08");	//В общем, такое, где мы не опасались бы за свою жизнь.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_WhatNext_01_09");	//Ладно, постараюсь подыскать для вас теплое гнездышко.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_01 " );	// What do we do next?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_02 " );	// I don't know. You are the boss here now.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_03 " );	// But if I were you, the first thing I would do is find a new secluded place for us.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_04 " );	// It's dangerous to stay here. There are a lot of wild creatures around, and we are here in full view.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_05 " );	// The hour is not even, someone will notice us - and then we will not do well.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_06 " );	// And what do you think this place should be?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_07 " );	// I don't know... Some cozy cave or house.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_08 " );	// In general, one where we would not fear for our lives.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_WhatNext_01_09 " );	// Okay, I'll try to find a warm nest for you.
 	MIS_FindKillPlace = LOG_Running;
 	Log_CreateTopic(TOPIC_FindKillPlace,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FindKillPlace,LOG_Running);
-	B_LogEntry(TOPIC_FindKillPlace,"Надо найти для ребят какое-нибудь тихое и спокойное местечко. Тут оставаться для них слишком опасно.");
+	B_LogEntry(TOPIC_FindKillPlace, " We need to find somewhere quiet and peaceful for the guys. It's too dangerous for them to stay here. " );
 };
 
 instance DIA_ADDON_INEXTREMO_CHARLOTTE_WhatNextTwo(C_Info)
@@ -223,7 +224,7 @@ instance DIA_ADDON_INEXTREMO_CHARLOTTE_WhatNextTwo(C_Info)
 	condition = dia_addon_inextremo_charlotte_WhatNextTwo_condition;
 	information = dia_addon_inextremo_charlotte_WhatNextTwo_info;
 	permanent = FALSE;
-	description = "Что я еще должен знать?";
+	description = " What else should I know? " ;
 };
 
 func int dia_addon_inextremo_charlotte_WhatNextTwo_condition()
@@ -236,16 +237,16 @@ func int dia_addon_inextremo_charlotte_WhatNextTwo_condition()
 
 func void dia_addon_inextremo_charlotte_WhatNextTwo_info()
 {
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_01");	//Что я еще должен знать?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_02");	//Думаю, тебе стоит позаботится о том, чтобы ребята не сидели без дела.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_03");	//Иначе от безделья они начинают тупеть и злиться.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_04");	//А это не очень хорошо для нашего дела.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_05");	//Но у меня нет времени всем этим заниматься. Может быть, ты мне в этом поможешь?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_06");	//Ну, если ты мне доверяешь...
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_07");	//Просто из всех вас ты мне кажешься самой умной.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_08");	//Тогда можешь положиться на меня. Уж я-то знаю, как управляться с этими болванами.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_09");	//Договорились. Только держи меня в курсе происходящего.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_10");	//Конечно, можешь не переживать.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_01 " );	// What else should I know?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_02 " );	// I think you should make sure the guys don't sit idle.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_03 " );	// Otherwise, from idleness, they begin to grow dull and angry.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_04 " );	// And this is not very good for our business.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_05 " );	// But I don't have time to do all that. Maybe you can help me with this?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_06 " );	// Well, if you trust me...
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_07 " );	// It's just that you seem the smartest of all of you.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_08 " );	// Then you can rely on me. I already know how to deal with these fools.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_09 " );	// Agreed. Just keep me posted on what's going on.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_WhatNextTwo_01_10 " );	// Of course, don't worry.
 	CharlotteMyAss = TRUE;
 };
 
@@ -256,7 +257,7 @@ instance DIA_ADDON_INEXTREMO_CHARLOTTE_FindPlace(C_Info)
 	condition = dia_addon_inextremo_charlotte_FindPlace_condition;
 	information = dia_addon_inextremo_charlotte_FindPlace_info;
 	permanent = FALSE;
-	description = "Кажется, я нашел для вас подходящее место.";
+	description = " I think I found the right place for you. " ;
 };
 
 func int dia_addon_inextremo_charlotte_FindPlace_condition()
@@ -270,16 +271,16 @@ func int dia_addon_inextremo_charlotte_FindPlace_condition()
 func void dia_addon_inextremo_charlotte_FindPlace_info()
 {
 	B_GivePlayerXP(350);
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_FindPlace_01_01");	//Кажется, я нашел для вас подходящее место.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_FindPlace_01_02");	//Какое именно?
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_FindPlace_01_03");	//Недалеко от круга камней, если идти в глубь леса, есть укромная пещерка.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_FindPlace_01_04");	//Хммм...(задумчиво) Да, это вполне сгодится.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_FindPlace_01_05");	//Ладно, я поговорю с ребятами насчет нее.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_FindPlace_01_06");	//Если в следующий раз нас здесь не будет - значит, мы уже там.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_FindPlace_01_01 " );	// I think I found the right place for you.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_FindPlace_01_02 " );	// Which one exactly?
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_FindPlace_01_03 " );	// Not far from the circle of stones, if you go deep into the forest, there is a secluded cave.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_FindPlace_01_04 " );	// Hmmm...(thoughtfully) Yes, that would do just fine.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_FindPlace_01_05 " );	// Okay, I'll talk to the guys about her.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_FindPlace_01_06 " );	// If next time we won't be here, then we're already there.
 	MIS_FindKillPlace = LOG_Success;
 	KillersMoveInCave = TRUE;
 	Log_SetTopicStatus(TOPIC_FindKillPlace,LOG_Success);
-	B_LogEntry(TOPIC_FindKillPlace,"Шарлотте пришлась по душе идея с пещерой. Думаю, все они вскоре отправятся туда.");
+	B_LogEntry(TOPIC_FindKillPlace, " Charlotte liked the idea of ​​the cave. I think they'll all go there soon. " );
 };
 
 instance DIA_ADDON_INEXTREMO_CHARLOTTE_Cave(C_Info)
@@ -289,7 +290,7 @@ instance DIA_ADDON_INEXTREMO_CHARLOTTE_Cave(C_Info)
 	condition = dia_addon_inextremo_charlotte_Cave_condition;
 	information = dia_addon_inextremo_charlotte_Cave_info;
 	permanent = FALSE;
-	description = "Как идут дела?";
+	description = " How are things going? " ;
 };
 
 func int dia_addon_inextremo_charlotte_Cave_condition()
@@ -303,19 +304,19 @@ func int dia_addon_inextremo_charlotte_Cave_condition()
 func void dia_addon_inextremo_charlotte_Cave_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Cave_01_01");	//Как идут дела?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Cave_01_02");	//Все хорошо. Здесь оказалось даже лучше, чем было до этого в городе.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_Cave_01_01 " );	// How are things going?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Cave_01_02 " );	// All is well. It turned out to be even better here than it was before in the city.
 	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Cave_01_03");	//Правда?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Cave_01_04");	//Уж не знаю, что раньше было в этой пещере, но здесь оказались большие запасы рисового солода. 
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Cave_01_05");	//И теперь Флейл целыми сутками напролет гонит из него шнапс. А я продаю его торговцам в городе.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Cave_01_06");	//К тому же я смогла договориться с один фермером, что мы будем приглядывать за его хозяйством.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Cave_01_07");	//Каким же образом?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Cave_01_08");	//Ну, ты же знаешь, сейчас такие времена, что кругом полно разного рода сброда и отребья.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Cave_01_09");	//Городское ополчение не слишком-то и чешется, если вдруг случаются проблемы.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Cave_01_10");	//А с нашими парнями особо не забалуешь! Вот он и платит нам.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Cave_01_11");	//Он платит вам за защиту?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Cave_01_12");	//(лукаво) Что-то в этом роде.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Cave_01_13");	//Да, неплохо вы тут устроились.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Cave_01_04 " );	// I don't know what used to be in this cave, but there were large reserves of rice malt here.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Cave_01_05 " );	// And now Flail's been making schnapps out of him for days on end. And I sell it to merchants in the city.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Cave_01_06 " );	// In addition, I was able to agree with one farmer that we would look after his farm.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_Cave_01_07 " );	// In what way?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Cave_01_08 " );	// Well, you know, these are the times when all sorts of rabble and scum are around.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Cave_01_09 " );	// The city militia doesn't itch too much when things get in trouble.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Cave_01_10 " );	// And with our guys, you won't spoil too much! That's what he pays us.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_Cave_01_11 " );	// Does he pay you for protection?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Cave_01_12 " );	// (slyly) Something like that.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_Cave_01_13 " );	// Yes, you're doing well here.
 };
 
 instance DIA_ADDON_INEXTREMO_CHARLOTTE_Perm(C_Info)
@@ -325,7 +326,7 @@ instance DIA_ADDON_INEXTREMO_CHARLOTTE_Perm(C_Info)
 	condition = dia_addon_inextremo_charlotte_Perm_condition;
 	information = dia_addon_inextremo_charlotte_Perm_info;
 	permanent = TRUE;
-	description = "Все тихо?";
+	description = " Is everything quiet? " ;
 };
 
 func int dia_addon_inextremo_charlotte_Perm_condition()
@@ -339,7 +340,7 @@ func int dia_addon_inextremo_charlotte_Perm_condition()
 func void dia_addon_inextremo_charlotte_Perm_info()
 {
 	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Perm_01_01");	//Все тихо?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Perm_01_02");	//Да, лучше не придумаешь.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Perm_01_02 " );	// Yes, you can't imagine better.
 };
 
 var int MyGuildMoney;
@@ -352,7 +353,7 @@ instance DIA_ADDON_INEXTREMO_CHARLOTTE_Navar(C_Info)
 	condition = dia_addon_inextremo_charlotte_Navar_condition;
 	information = dia_addon_inextremo_charlotte_Navar_info;
 	permanent = FALSE;
-	description = "А я что-нибудь с этого поимею?";
+	description = " Will I get anything out of this? " ;
 };
 
 func int dia_addon_inextremo_charlotte_Navar_condition()
@@ -365,10 +366,10 @@ func int dia_addon_inextremo_charlotte_Navar_condition()
 
 func void dia_addon_inextremo_charlotte_Navar_info()
 {
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Navar_01_01");	//А я что-нибудь с этого поимею?
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Navar_01_02");	//Конечно. Ты же наш босс! И это ты отыскал для нас эту пещеру.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Navar_01_03");	//Можешь заходить сюда раз в неделю. Твоя доля будет ждать тебя прямо тут.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Navar_01_04");	//Вот это дело!
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_Navar_01_01 " );	// Will I get anything out of this?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Navar_01_02 " );	// Of course. You are our boss! And it was you who found this cave for us.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Navar_01_03 " );	// You can come here once a week. Your share will be waiting for you right here.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_Navar_01_04 " );	// That's it!
 	MyGuildMoney = TRUE;
 };
 
@@ -379,7 +380,7 @@ instance dia_addon_inextremo_charlotte_PERMJOBPAY(C_Info)
 	condition = dia_addon_inextremo_charlotte_permjobpay_condition;
 	information = dia_addon_inextremo_charlotte_permjobpay_info;
 	permanent = TRUE;
-	description = "Как насчет моей доли?";
+	description = " How about my share? " ;
 };
 
 func int dia_addon_inextremo_charlotte_permjobpay_condition()
@@ -392,25 +393,25 @@ func int dia_addon_inextremo_charlotte_permjobpay_condition()
 
 func void dia_addon_inextremo_charlotte_permjobpay_info()
 {
-	var int daynow;
-	var int sumpay;
+	where int daynow;
+	var int link;
 
 	daynow = Wld_GetDay();
 
-	AI_Output(other,self,"DIA_Сharlotte_PermJobPay_01_00");	//Как насчет моей доли?
+	AI_Output(other,self, " DIA_Сharlotte_PermJobPay_01_00 " );	// How about my share?
 
 	if((KILLPAYDAY <= (daynow - 7)) || (FirstKillPay == FALSE))
 	{
-		AI_Output(self,other,"DIA_Сharlotte_PermJobPay_01_01");	//Конечно! Вот, возьми ее.
-		sumpay = Hlp_Random(300) + 200;
+		AI_Output(self,other, " DIA_Сharlotte_PermJobPay_01_01 " );	// Of course! Here, take her.
+		link = Hlp_Random( 300 ) +  200 ;
 		B_GiveInvItems(self,other,ItMi_Gold,sumpay);
 		KILLPAYDAY = Wld_GetDay();
 		FirstKillPay = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Сharlotte_PermJobPay_01_03");	//Но ты ведь уже получил свою долю! Теперь надо немного подождать.
-		AI_Output(other,self,"DIA_Сharlotte_PermJobPay_01_04");	//Ах да, я и забыл.
+		AI_Output(self,other, " DIA_Сharlotte_PermJobPay_01_03 " );	// But you already got your share! Now we have to wait a bit.
+		AI_Output(other,self, " DIA_Сharlotte_PermJobPay_01_04 " );	// Oh yeah, I forgot.
 	};
 };
 
@@ -421,12 +422,12 @@ instance DIA_ADDON_INEXTREMO_CHARLOTTE_Siege(C_Info)
 	condition = dia_addon_inextremo_charlotte_Siege_condition;
 	information = dia_addon_inextremo_charlotte_Siege_info;
 	permanent = FALSE;
-	description = "Орки захватили Хоринис.";
+	description = " Horinis captured orc. " ;
 };
 
 func int dia_addon_inextremo_charlotte_Siege_condition()
 {
-	if(KAPITELORCATC == TRUE)
+	if ( KAPITELORCATC  ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -435,9 +436,9 @@ func int dia_addon_inextremo_charlotte_Siege_condition()
 func void dia_addon_inextremo_charlotte_Siege_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Siege_01_01");	//Орки захватили Хоринис.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Siege_01_02");	//Мы знаем об этом. Поэтому нам лучше сейчас оставаться здесь, в этой пещере.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Siege_01_03");	//Орки сюда навряд ли сунутся.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Charlotte_Siege_01_04");	//Но будьте наготове. В любой момент мне может понадобиться ваша помощь.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Charlotte_Siege_01_05");	//Само собой.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_Siege_01_01 " );	// Orcs have captured Khorinis.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Siege_01_02 " );	// We know about it. So it's better for us to stay here in this cave for now.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Siege_01_03 " );	// Orcs are unlikely to come here.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Charlotte_Siege_01_04 " );	// But be ready. At any moment I may need your help.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Charlotte_Siege_01_05 " );	// Of course.
 };
