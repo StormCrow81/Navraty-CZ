@@ -1,7 +1,8 @@
 
+
 instance DIA_Dobar_EXIT(C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 999;
 	condition = DIA_Dobar_EXIT_Condition;
 	information = DIA_Dobar_EXIT_Info;
@@ -21,12 +22,12 @@ func void DIA_Dobar_EXIT_Info()
 };
 
 
-instance DIA_Dobar_HALLO(C_Info)
+instance DIA_Dobar_HELLO (C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 2;
 	condition = DIA_Dobar_HALLO_Condition;
-	information = DIA_Dobar_HALLO_Info;
+	information = DIA_Dobar_HELLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -40,20 +41,20 @@ func int DIA_Dobar_HALLO_Condition()
 	};
 };
 
-func void DIA_Dobar_HALLO_Info()
+func void DIA_Dobar_HELLO_Info()
 {
-	AI_Output(self,other,"DIA_Dobar_HALLO_08_00");	//Что тебе нужно?!
+	AI_Output(self,other, " DIA_Dobar_HALLO_08_00 " );	// What do you need?!
 };
 
 
-instance DIA_Dobar_Talent(C_Info)
+instance DIA_Dobar_Talent (C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 3;
 	condition = DIA_Dobar_Talent_Condition;
 	information = DIA_Dobar_Talent_Info;
 	permanent = FALSE;
-	description = "Я немного знаю кузнечное дело.";
+	description = " I know a little blacksmithing. " ;
 };
 
 
@@ -67,25 +68,25 @@ func int DIA_Dobar_Talent_Condition()
 
 func void DIA_Dobar_Talent_Info()
 {
-	AI_Output(other,self,"DIA_Dobar_Talent_15_00");	//Я немного знаю кузнечное дело.
-	AI_Output(self,other,"DIA_Dobar_Talent_08_01");	//Хорошо... и что?
+	AI_Output(other, self, " DIA_Dobar_Talent_15_00 " );	// I know a little blacksmithing.
+	AI_Output(self,other, " DIA_Dobar_Talent_08_01 " );	// Ok... so what?
 };
 
 
-instance DIA_Dobar_Schmiede(C_Info)
+instance DIA_Dobar_Schmiede (C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 3;
 	condition = DIA_Dobar_Schmiede_Condition;
 	information = DIA_Dobar_Schmiede_Info;
 	permanent = FALSE;
-	description = "Могу я воспользоваться твоей кузницей?";
+	description = " Can I use your forge? " ;
 };
 
 
 func int DIA_Dobar_Schmiede_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Dobar_Talent))
+	if ( Npc_KnowsInfo ( other , DIA_Dobar_Talent ))
 	{
 		return TRUE;
 	};
@@ -93,19 +94,19 @@ func int DIA_Dobar_Schmiede_Condition()
 
 func void DIA_Dobar_Schmiede_Info()
 {
-	AI_Output(other,self,"DIA_Dobar_Schmiede_15_00");	//Могу я воспользоваться твоей кузницей?
-	AI_Output(self,other,"DIA_Dobar_Schmiede_08_01");	//У меня много работы. Мы будем только мешать друг другу. Лучше дождись темноты.
-	AI_Output(self,other,"DIA_Dobar_Schmiede_08_02");	//Тогда Парлаф и я пойдем спать, и ты сможешь спокойно поработать.
+	AI_Output(other,self, " DIA_Dobar_Schmiede_15_00 " );	// Can I use your forge?
+	AI_Output(self,other, " DIA_Dobar_Schmiede_08_01 " );	// I have a lot of work to do. We will only interfere with each other. Better wait until dark.
+	AI_Output(self,other, " DIA_Dobar_Schmiede_08_02 " );	// Then Parlaf and I will go to sleep, and you can work in peace.
 };
 
-instance DIA_Dobar_Waffe(C_Info)
+instance DIA_Dobar_Weapon (C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 80;
 	condition = DIA_Dobar_Waffe_Condition;
-	information = DIA_Dobar_Waffe_Info;
+	information = DIA_Dobar_Weapon_Info;
 	permanent = FALSE;
-	description = "Ты можешь сделать оружие для меня?";
+	description = " Can you make a weapon for me? " ;
 };
 
 func int DIA_Dobar_Waffe_Condition()
@@ -113,22 +114,22 @@ func int DIA_Dobar_Waffe_Condition()
 	return TRUE;
 };
 
-func void DIA_Dobar_Waffe_Info()
+func void DIA_Dobar_Weapon_Info()
 {
-	AI_Output(other,self,"DIA_Dobar_Waffe_15_00");	//Ты можешь сделать оружие для меня?
-	AI_Output(self,other,"DIA_Dobar_Waffe_08_01");	//У меня нет времени на это. Тандор распоряжается всем оружием - я только кую его, а Парлаф затачивает.
+	AI_Output(other,self, " DIA_Dobar_Waffe_15_00 " );	// Can you make a weapon for me?
+	AI_Output(self,other, " DIA_Dobar_Waffe_08_01 " );	// I don't have time for this. Tandor disposes of all the weapons - I only forge them, and Parlaf sharpens them.
 	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
-	B_LogEntry(TOPIC_Trader_OC,"Тандор продает оружие в замке.");
+	B_LogEntry(TOPIC_Trader_OC, " Tandor sells weapons in the castle. " );
 };
 
-instance DIA_Dobar_NEWS(C_Info)
+instance DIA_Dobar_NEWS (C_Info)
 {
-	npc = VLK_4106_Dobar;
+	npc = VLK_4106_Good;
 	nr = 900;
 	condition = DIA_Dobar_NEWS_Condition;
 	information = DIA_Dobar_NEWS_Info;
 	permanent = TRUE;
-	description = "Как работа?";
+	description = " How are you? " ;
 };
 
 func int DIA_Dobar_NEWS_Condition()
@@ -534,7 +535,7 @@ func void DIA_Dobar_OrcsWeaponTeach_info()
 			else
 			{
 				AI_Print(Print_NotEnoughOre);
-				AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_12");	//Парень, а где руда? Без нее я не стану тебя обучать.
+				AI_Output(self,other, " DIA_Dobar_OrcsWeaponTeach_01_12 " );	// Man, where's the ore? Without it, I won't teach you.
 			};
 		};
 	};
