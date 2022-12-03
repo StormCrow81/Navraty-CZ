@@ -1,3 +1,4 @@
+
 instance DIA_Alrik_EXIT(C_Info)
 {
 	npc = VLK_438_Alrik;
@@ -20,7 +21,7 @@ func void DIA_Alrik_EXIT_Info()
 };
 
 
-instance DIA_Alrik_PICKPOCKET(C_Info)
+instance DIA_Alrik_PICKPOCKET (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 900;
@@ -33,19 +34,19 @@ instance DIA_Alrik_PICKPOCKET(C_Info)
 
 func int DIA_Alrik_PICKPOCKET_Condition()
 {
-	return C_Beklauen(55,50);
+	return  C_Robbery ( 55 , 50 );
 };
 
 func void DIA_Alrik_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Alrik_PICKPOCKET);
 	Info_AddChoice(DIA_Alrik_PICKPOCKET,Dialog_Back,DIA_Alrik_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Alrik_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Alrik_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Alrik_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Alrik_PICKPOCKET_DoIt);
 };
 
 func void DIA_Alrik_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Alrik_PICKPOCKET);
 };
 
@@ -55,59 +56,59 @@ func void DIA_Alrik_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Alrik_Hallo(C_Info)
+instance DIA_Alrik_Hello (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
-	condition = DIA_Alrik_Hallo_Condition;
-	information = DIA_Alrik_Hallo_Info;
+	condition = DIA_Alrik_Hello_Condition;
+	information = DIA_Alrik_Hello_Info;
 	permanent = FALSE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
-func int DIA_Alrik_Hallo_Condition()
+func int DIA_Alrik_Hello_Condition()
 {
 	return TRUE;
 };
 
-func void DIA_Alrik_Hallo_Info()
+func void DIA_Alrik_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Hallo_15_00");	//Что ты делаешь здесь?
+	AI_Output(other,self, " DIA_Alrik_Hallo_15_00 " );	// What are you doing here?
 
 	if(Npc_GetDistToWP(self,"NW_CITY_PATH_HABOUR_16_01") <= 500)
 	{
-		AI_Output(self,other,"DIA_Alrik_Hallo_09_01");	//(смеется) Это мой дом!
+		AI_Output(self,other, " DIA_Alrik_Hallo_09_01 " );	// (laughs) This is my house!
 	}
 	else if(Npc_GetDistToWP(self,"NW_CITY_HABOUR_TAVERN01_01") <= 500)
 	{
-		AI_Output(self,other,"DIA_Alrik_Hallo_09_02");	//А что мне еще делать здесь? Я пью.
+		AI_Output(self,other, " DIA_Alrik_Hallo_09_02 " );	// What else can I do here? I drink.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Alrik_Hallo_09_03");	//Я собираюсь немного прогуляться.
+		AI_Output(self,other, " DIA_Alrik_Hallo_09_03 " );	// I'm going to take a little walk.
 	};
 
 	if(AlrikRECRUITEDDT == FALSE)
 	{
-		AI_Output(self,other,"DIA_Alrik_Hallo_09_04");	//Но если ты имеешь в виду, что я делаю днем - то я устраиваю бои.
+		AI_Output(self,other, " DIA_Alrik_Hallo_09_04 " );	// But if you mean what I do during the day, then I make fights.
 	};
 };
 
 
-instance DIA_Alrik_YouFight(C_Info)
+instances of DIA_Alrik_YouFight (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_YouFight_Condition;
-	information = DIA_Alrik_YouFight_Info;
+	info = DIA_Alrik_YouFight_Info;
 	permanent = FALSE;
-	description = "Ты устраиваешь бои?";
+	description = " Do you make fights? " ;
 };
 
 func int DIA_Alrik_YouFight_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Alrik_Hallo) && (AlrikRECRUITEDDT == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Alrik_Hello ) && ( Alrik_RECRUITEDT ==  FALSE )) .
 	{
 		return TRUE;
 	};
@@ -115,50 +116,50 @@ func int DIA_Alrik_YouFight_Condition()
 
 func void DIA_Alrik_YouFight_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_YouFight_15_00");	//Ты устраиваешь бои?
-	AI_Output(self,other,"DIA_Alrik_YouFight_09_01");	//Каждый день, с полудня до вечера.
+	AI_Output(other,self, " DIA_Alrik_YouFight_15_00 " );	// Do you make fights?
+	AI_Output(self,other, " DIA_Alrik_YouFight_09_01 " );	// Every day, from noon to evening.
 
 	if(Npc_GetDistToWP(self,"NW_CITY_PATH_HABOUR_16_01") <= 500)
 	{
-		AI_Output(self,other,"DIA_Alrik_YouFight_09_02");	//И прямо здесь!
+		AI_Output(self,other, " DIA_Alrik_YouFight_09_02 " );	// And right here!
 	};
-	AI_Output(self,other,"DIA_Alrik_YouFight_09_03");	//За складом в портовом квартале - здесь мой дом!
+	AI_Output(self,other, " DIA_Alrik_YouFight_09_03 " );	// Behind the warehouse in the port district - this is my home!
 };
 
 
-instance DIA_Alrik_Regeln(C_Info)
+instance DIA_Alrik_Rules (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_Regeln_Condition;
-	information = DIA_Alrik_Regeln_Info;
+	information = DIA_Alrik_Rules_Info;
 	permanent = FALSE;
-	description = "Каковы правила боев?";
+	description = " What are the rules of combat? " ;
 };
 
 
-func int DIA_Alrik_Regeln_Condition()
+func int DIA_Alrik_Rule_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Alrik_YouFight) && (AlrikRECRUITEDDT == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Alrik_YouFight ) && ( Alrik_RECRUITEDT ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Alrik_Regeln_Info()
+func void DIA_Alrik_Rules_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Regeln_15_00");	//Каковы правила боев?
-	AI_Output(self,other,"DIA_Alrik_Regeln_09_01");	//Это просто! Разрешено все обычное оружие. Никаких луков, арбалетов и НИКАКОЙ магии!
-	AI_Output(self,other,"DIA_Alrik_Regeln_09_02");	//Мы сражаемся, пока один из нас не упадет. Как только один из нас окажется распростертым на земле, бой окончен, понятно?
-	AI_Output(self,other,"DIA_Alrik_Regeln_09_03");	//Кто сбежит - тот проиграл! То есть, если ты вышел из боя, то я победил!
-	AI_Output(self,other,"DIA_Alrik_Regeln_09_04");	//Ставка - пятьдесят золотых! Если ты победишь, ты получишь сто монет. Если нет...(ухмыляется) Ну, тогда твои деньги останутся у меня.
-	AI_Output(self,other,"DIA_Alrik_Regeln_09_05");	//Понял?
+	AI_Output(other,self, " DIA_Alrik_Regeln_15_00 " );	// What are the combat rules?
+	AI_Output(self,other, " DIA_Alrik_Regeln_09_01 " );	// It's easy! All conventional weapons are allowed. No bows, crossbows and NO magic!
+	AI_Output(self,other, " DIA_Alrik_Regeln_09_02 " );	// We fight until one of us falls. As soon as one of us is prone on the ground, the fight is over, okay?
+	AI_Output(self,other, " DIA_Alrik_Regeln_09_03 " );	// Whoever runs away loses! That is, if you left the battle, then I won!
+	AI_Output(self,other, " DIA_Alrik_Regeln_09_04 " );	// The bet is fifty gold! If you win, you will get one hundred coins. If not... (grins) Well, then I'll keep your money.
+	AI_Output(self,other, " DIA_Alrik_Regeln_09_05 " );	// Got it?
 	AI_Output(other,self,"DIA_Alrik_Regeln_15_06");	//Да!
 };
 
 func void B_Alrik_Again()
 {
-	AI_Output(self,other,"DIA_Alrik_Add_09_03");	//Как дела? Ты хочешь сразиться со мной еще раз? Я думаю, за это время я стал лучше...
+	AI_Output(self,other, " DIA_Alrik_Add_09_03 " );	// How are you? Do you want to fight me again? I think I've gotten better over the years...
 };
 
 
@@ -167,7 +168,7 @@ instance DIA_Alrik_NewFights3(C_Info)
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_NewFights3_Condition;
-	information = DIA_Alrik_NewFights3_Info;
+	info = DIA_Alrik_NewFights3_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -175,7 +176,7 @@ instance DIA_Alrik_NewFights3(C_Info)
 
 func int DIA_Alrik_NewFights3_Condition()
 {
-	if((Kapitel >= 3) && (Kapitel <= 4) && (Alrik_ArenaKampfVerloren <= 6))
+	if ((Chapter >=  3 ) && (Chapter <=  4 ) && (Alrik_ArenaBattlefVerloren <=  6 ))
 	{
 		return TRUE;
 	};
@@ -202,7 +203,7 @@ instance DIA_Alrik_NewFights5(C_Info)
 
 func int DIA_Alrik_NewFights5_Condition()
 {
-	if((Kapitel >= 5) && (Alrik_ArenaKampfVerloren <= 9))
+	if ((Chapter >=  5 ) && (Alrik_ArenaBattlefLord <=  9 ))
 	{
 		return TRUE;
 	};
@@ -217,13 +218,13 @@ func void DIA_Alrik_NewFights5_Info()
 
 func void B_Alrik_Enough()
 {
-	AI_Output(self,other,"DIA_Alrik_WannaFight_09_05");	//Мне кажется, ты побеждаешь слишком часто.
-	AI_Output(self,other,"DIA_Alrik_WannaFight_09_06");	//Не пойми меня неверно, но моя башка все еще гудит после прошлого раза...
+	AI_Output(self,other, " DIA_Alrik_WannaFight_09_05 " );	// I think you win too often.
+	AI_Output(self,other, " DIA_Alrik_WannaFight_09_06 " );	// Don't get me wrong, but my head is still buzzing from last time...
 };
 
 func void B_Alrik_ComeBackLater()
 {
-	AI_Output(self,other,"DIA_Alrik_Add_09_02");	//Заходи позже. А пока я потренируюсь...
+	AI_Output(self,other, " DIA_Alrik_Add_09_02 " );	// Come back later. And while I practice...
 };
 
 
@@ -234,12 +235,12 @@ instance DIA_Alrik_WannaFight(C_Info)
 	condition = DIA_Alrik_WannaFight_Condition;
 	information = DIA_Alrik_WannaFight_Info;
 	permanent = TRUE;
-	description = "Я хочу сразиться с тобой!";
+	description = " I want to fight you! " ;
 };
 
 func int DIA_Alrik_WannaFight_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Alrik_Regeln) && (self.aivar[AIV_ArenaFight] == AF_NONE) && (AlrikRECRUITEDDT == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Alrik_Rule ) && ( self . aivar [ AIV_ArenaFight ] ==  OF_NONE ) && ( Alrik RECRUITED ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -247,65 +248,65 @@ func int DIA_Alrik_WannaFight_Condition()
 
 func void DIA_Alrik_WannaFight_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_WannaFight_15_00");	//Я хочу сразиться с тобой!
+	AI_Output(other,self, " DIA_Alrik_WannaFight_15_00 " );	// I want to fight you!
 	Info_ClearChoices(DIA_Alrik_WannaFight);
 
-	if((Alrik_ArenaKampfVerloren > 0) && (Npc_HasItems(self,ItMw_AlriksSword_Mis) == 0))
+	if ((Alrik_ArenaKampfVerloren >  0 ) && (Npc_HasItems(self,ItMw_AlriksSword_Mis) ==  0 ))
 	{
 		if(MIS_Alrik_Sword == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_Alrik_WannaFight_09_01");	//Сначала верни мне мой меч. А там посмотрим...
+			AI_Output(self,other, " DIA_Alrik_WannaFight_09_01 " );	// First, give me back my sword. And then we'll see...
 
 			if(Npc_HasItems(other,ItMw_AlriksSword_Mis) >= 1)
 			{
 				Info_ClearChoices(DIA_Alrik_WannaFight);
-				Info_AddChoice(DIA_Alrik_WannaFight,"...(отдать меч)",DIA_Alrik_WannaFight_GiveSword);
+				Info_AddChoice(DIA_Alrik_WannaFight, " ...(отдать меч) " ,DIA_Alrik_WannaFight_GiveSword);
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Alrik_WannaFight_09_02");	//Нет, нет. Прежде чем выйти против тебя еще раз, мне раздобыть нужно оружие получше!
-			AI_Output(self,other,"DIA_Alrik_WannaFight_09_03");	//Мне несколько дней назад пришлось продать свой меч.
-			AI_Output(self,other,"DIA_Alrik_WannaFight_09_04");	//С ним я непобедим! Если ты вернешь его мне, я готов опять сражаться с тобой!
-			Alrik_VomSchwertErzaehlt = TRUE;
+			AI_Output(self,other, " DIA_Alrik_WannaFight_09_02 " );	// No, no. Before I go against you again, I need to get a better weapon!
+			AI_Output(self,other, " DIA_Alrik_WannaFight_09_03 " );	// I had to sell my sword a few days ago.
+			AI_Output(self,other, " DIA_Alrik_WannaFight_09_04 " );	// With him, I'm invincible! If you return it to me, I'm ready to fight you again!
+			Alrik_Told by the Sword = TRUE ;
 		};
 	}
-	else if((Kapitel <= 2) && (Alrik_ArenaKampfVerloren > 3))
+	else  if ((Chapter <=  2 ) && (Alrik_ArenaKampfVerloren >  3 ))
 	{
-		AI_Output(self,other,"DIA_Alrik_Add_09_00");	//Я думаю, пока хватит...
-		AI_Output(self,other,"DIA_Alrik_Add_09_01");	//Дай мне немного передохнуть.
+		AI_Output(self,other, " DIA_Alrik_Add_09_00 " );	// I think that's enough for now...
+		AI_Output(self,other, " DIA_Alrik_Add_09_01 " );	// Give me a break.
 		B_Alrik_ComeBackLater();
 	}
-	else if((Kapitel >= 3) && (Kapitel <= 4) && (Alrik_ArenaKampfVerloren > 6))
+	else  if ((Chapter >=  3 ) && (Chapter <=  4 ) && (Alrik_ArenaKampfVerloren >  6 ))
 	{
 		B_Alrik_Enough();
 		B_Alrik_ComeBackLater();
 	}
-	else if(Kapitel >= 5)
+	else  if (chapter >=  5 )
 	{
-		if(Alrik_ArenaKampfVerloren > 9)
+		if (Alrik_ArenaKampfVerloren >  9 )
 		{
 			B_Alrik_Enough();
-			AI_Output(self,other,"DIA_Alrik_Add_09_04");	//Кроме того, у меня уже достаточно золота.
+			AI_Output(self,other, " DIA_Alrik_Add_09_04 " );	// Besides, I already have enough gold.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Alrik_Add_09_04A");	//У меня уже набралось достаточно золота.
+			AI_Output(self,other, " DIA_Alrik_Add_09_04A " );	// I already have enough gold.
 		};
-		if(Npc_IsDead(edda) == FALSE)
+		if (Npc_IsDead(edda) ==  FALSE )
 		{
-			AI_Output(self,other,"DIA_Alrik_Add_09_05");	//И я завязал с этим делом и, даже, нашел общий язык с Эддой.
-			AI_Output(self,other,"DIA_Alrik_Add_09_06");	//Кхм... Думаю, ты понимаешь, о чем я...
+			AI_Output(self,other, " DIA_Alrik_Add_09_05 " );	// And I quit this business and even found a common language with Edda.
+			AI_Output(self,other, " DIA_Alrik_Add_09_06 " );	// Ahem... I think you understand what I mean...
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Alrik_Add_09_05A");	//И я завязал с этим делом! Прикупил хибарку Эдды.
-			AI_Output(self,other,"DIA_Alrik_Add_09_06A");	//И теперь я не живу за складом.
+			AI_Output(self,other, " DIA_Alrik_Add_09_05A " );	// And I'm done with this business! Bought Edda's shack.
+			AI_Output(self,other, " DIA_Alrik_Add_09_06A " );	// And now I don't live behind a warehouse.
 		};
 	}
-	else if(Wld_IsTime(11,0,19,0))
+	else  if (Wld_IsTime( 11 , 0 , 19 , 0 ))
 	{
-		AI_Output(self,other,"DIA_Alrik_WannaFight_09_07");	//У тебя есть полсотни золотых?
+		AI_Output(self,other, " DIA_Alrik_WannaFight_09_07 " );	// Do you have fifty gold coins?
 		Info_ClearChoices(DIA_Alrik_WannaFight);
 		Info_AddChoice(DIA_Alrik_WannaFight,"Хм...",DIA_Alrik_WannaFight_NoGold);
 
@@ -316,22 +317,22 @@ func void DIA_Alrik_WannaFight_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Alrik_WannaFight_09_08");	//Я сражаюсь только с полудня до вечера.
-		AI_Output(self,other,"DIA_Alrik_WannaFight_09_09");	//Бои имеют смысл, только если есть достаточно зрителей, делающих ставки!
-		if(Wld_IsTime(19,0,3,30))
+		AI_Output(self,other, " DIA_Alrik_WannaFight_09_08 " );	// I only fight from noon to evening.
+		AI_Output(self,other, " DIA_Alrik_WannaFight_09_09 " );	// Fights only make sense if there are enough spectators to bet!
+		if (Wld_IsTime( 19 , 0 , 3 , 30 ))
 		{
-			AI_Output(self,other,"DIA_Alrik_WannaFight_09_10");	//Сейчас слишком поздно. Приходи завтра в полдень!
+			AI_Output(self,other, " DIA_Alrik_WannaFight_09_10 " );	// It's too late now. Come tomorrow at noon!
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Alrik_WannaFight_09_11");	//Все еще слишком рано, заходи позже!
+			AI_Output(self,other, " DIA_Alrik_WannaFight_09_11 " );	// It's still too early, come back later!
 		};
 	};
 };
 
 func void DIA_Alrik_WannaFight_GiveSword()
 {
-	AI_Output(other,self,"DIA_Alrik_WannaFight_Gold_15_00");	//Вот, держи...
+	AI_Output(other,self, " DIA_Alrik_WannaFight_Gold_15_00 " );	// Here, take this...
 	B_GiveInvItems(other,self,ItMw_AlriksSword_Mis,1);
 	AI_EquipBestMeleeWeapon(self);
 	AI_StopProcessInfos(self);
@@ -339,30 +340,30 @@ func void DIA_Alrik_WannaFight_GiveSword()
 
 func void DIA_Alrik_WannaFight_Gold()
 {
-	AI_Output(other,self,"DIA_Alrik_WannaFight_Gold_15_00");	//Вот, держи...
+	AI_Output(other,self, " DIA_Alrik_WannaFight_Gold_15_00 " );	// Here, take this...
 	B_GiveInvItems(other,self,ItMi_Gold,50);
-	AI_Output(self,other,"DIA_Alrik_WannaFight_Gold_09_01");	//(громко) У нас новый боец!
-	AI_Output(self,other,"DIA_Alrik_WannaFight_Gold_09_02");	//Ставки сделаны...
+	AI_Output(self,other, " DIA_Alrik_WannaFight_Gold_09_01 " );	// (loudly) We have a new fighter!
+	AI_Output(self,other, " DIA_Alrik_WannaFight_Gold_09_02 " );	// Bets are placed...
 	Npc_RemoveInvItems(self,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
-	AI_Output(self,other,"DIA_Alrik_WannaFight_Gold_09_03");	//Ты готов?
-	self.aivar[AIV_ArenaFight] = AF_RUNNING;
-	Alrik_Kaempfe = Alrik_Kaempfe + 1;
+	AI_Output(self,other, " DIA_Alrik_WannaFight_Gold_09_03 " );	// Are you ready?
+	self.aivar[AIV_ArenaFight] = AF_RUNNING ;
+	Alrik_Battles = Alrik_Battles +  1 ;
 	Info_ClearChoices(DIA_Alrik_WannaFight);
-	Info_AddChoice(DIA_Alrik_WannaFight,"Подожди секундочку...",DIA_Alrik_WannaFight_Moment);
+	Info_AddChoice(DIA_Alrik_WannaFight, " Wait a second... " ,DIA_Alrik_WannaFight_Moment);
 	Info_AddChoice(DIA_Alrik_WannaFight,"Иди сюда!",DIA_Alrik_WannaFight_NOW);
 };
 
 func void DIA_Alrik_WannaFight_NoGold()
 {
 	AI_Output(other,self,"DIA_Alrik_WannaFight_NoGold_15_00");	//Нет...
-	AI_Output(self,other,"DIA_Alrik_WannaFight_NoGold_09_01");	//Тогда найди их! Без ставок боя не будет!
+	AI_Output(self,other, " DIA_Alrik_WannaFight_NoGold_09_01 " );	// Then find them! There will be no fight without stakes!
 	Info_ClearChoices(DIA_Alrik_WannaFight);
 };
 
 func void DIA_Alrik_WannaFight_NOW()
 {
-	AI_Output(other,self,"DIA_Alrik_WannaFight_NOW_15_00");	//Иди сюда!
-	AI_Output(self,other,"DIA_Alrik_WannaFight_NOW_09_01");	//Посмотрим, на что ты способен!
+	AI_Output(other,self, " DIA_Alrik_WannaFight_NOW_15_00 " );	// Come here!
+	AI_Output(self,other, " DIA_Alrik_WannaFight_NOW_09_01 " );	// Let's see what you can do!
 
 	if(self.attribute[ATR_HITPOINTS] < self.attribute[ATR_HITPOINTS_MAX])
 	{
@@ -377,8 +378,8 @@ func void DIA_Alrik_WannaFight_NOW()
 
 func void DIA_Alrik_WannaFight_Moment()
 {
-	AI_Output(other,self,"DIA_Alrik_WannaFight_Moment_15_00");	//Подожди секундочку...
-	AI_Output(self,other,"DIA_Alrik_WannaFight_Moment_09_01");	//Как хочешь... а я начинаю сейчас!
+	AI_Output(other,self, " DIA_Alrik_WannaFight_Moment_15_00 " );	// Wait a second...
+	AI_Output(self,other, " DIA_Alrik_WannaFight_Moment_09_01 " );	// As you wish... and I'm starting now!
 
 	if(self.attribute[ATR_HITPOINTS] < self.attribute[ATR_HITPOINTS_MAX])
 	{
@@ -396,7 +397,7 @@ instance DIA_Alrik_AfterFight(C_Info)
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_AfterFight_Condition;
-	information = DIA_Alrik_AfterFight_Info;
+	info = DIA_Alrik_AfterFight_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
@@ -406,7 +407,7 @@ func int DIA_Alrik_AfterFight_Condition()
 {
 	if((self.aivar[AIV_LastFightComment] == FALSE) && (self.aivar[AIV_LastFightAgainstPlayer] != FIGHT_NONE))
 	{
-		if(self.aivar[AIV_ArenaFight] != AF_NONE)
+		if (self.aivar[AIV_ArenaFight] !=  AF_NONE )
 		{
 			return TRUE;
 		}
@@ -419,98 +420,98 @@ func int DIA_Alrik_AfterFight_Condition()
 
 func void DIA_Alrik_AfterFight_Info()
 {
-	if((self.aivar[AIV_ArenaFight] != AF_NONE) && (self.aivar[AIV_ArenaFight] != AF_AFTER_PLUS_DAMAGE))
+	if ((self.aivar[AIV_ArenaFight] !=  AF_NONE ) && (self.aivar[AIV_ArenaFight] !=  AF_AFTER_PLUS_DAMAGE ))
 	{
 		if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 		{
 			B_GivePlayerXP(100);
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_00");	//Ох, парень. Ну и удары у тебя!
+			AI_Output(self,other, " DIA_Alrik_AfterFight_09_00 " );	// Oh boy. Well, you've got hits!
 
 			if(Npc_HasItems(self,ItMi_Gold) >= 100)
 			{
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_01");	//Вот твои сто золотых! Ты заработал их!
+				AI_Output(self,other, " DIA_Alrik_AfterFight_09_01 " );	// Here's your hundred gold! You have earned them!
 				B_GiveInvItems(self,other,ItMi_Gold,100);
 			}
 			else if(Npc_HasItems(self,ItMi_Gold) == 0)
 			{
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_02");	//Я вижу, ты уже забрал свое золото.
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_03");	//Ты мог бы подождать, пока я сам не отдам его тебе - я держу свое слово!
+				AI_Output(self,other, " DIA_Alrik_AfterFight_09_02 " );	// I see you've already taken your gold.
+				AI_Output(self,other, " DIA_Alrik_AfterFight_09_03 " );	// You could wait until I give it to you myself - I keep my word!
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_04");	//Ты пошарил в моих карманах, пока я был без сознания!
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_05");	//Это дурной тон! Но ладно, эти деньги все равно были твоими! Вот остальное.
+				AI_Output(self,other, " DIA_Alrik_AfterFight_09_04 " );	// You rummaged through my pockets while I was unconscious!
+				AI_Output(self,other, " DIA_Alrik_AfterFight_09_05 " );	// This is bad manners! But okay, that money was still yours! Here's the rest.
 				B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 			};
 
-			Alrik_ArenaKampfVerloren = Alrik_ArenaKampfVerloren + 1;
+			Alrik_ArenaKampfVerloren = Alrik_ArenaKampfVerloren +  1 ;
 
-			if(Alrik_Ok_01 == FALSE)
+			if (Alrik_Ok_01 ==  FALSE )
 			{
-				Alrik_Ok_01 = TRUE;
+				Alrik_Ok_01 = TRUE ;
 			};
 		}
 		else if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON)
 		{
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_06");	//Ты хорошо дрался. Но твоя ставка пропала - не расстраивайся особенно, она пойдет на доброе дело! (ухмыляется)
+			AI_Output(self,other, " DIA_Alrik_AfterFight_09_06 " );	// You fought well. But your bet is gone - don't be especially upset, it will go to a good deed! (grins)
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_07");	//Эй, я же предупреждал, тот, кто убежит за угол проигрывает! Если хочешь попробовать еще раз, я к твоим услугам!
+			AI_Output(self,other, " DIA_Alrik_AfterFight_09_07 " );	// Hey, I told you, whoever runs around the corner loses! If you want to try again, I'm at your service!
 		};
-		if(Alrik_Kaempfe == 1)
+		if (Alrik_Kaempfe ==  1 )
 		{
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_08");	//И еще одно: никто не говорит о том, что происходит за складом.
+			AI_Output(self,other, " DIA_Alrik_AfterFight_09_08 " );	// And one more thing: no one talks about what's going on behind the warehouse.
 			if((other.guild != GIL_MIL) && (other.guild != GIL_PAL))
 			{
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_09");	//Ополчение готово за малейшее прегрешение засунуть тебя за решетку. А эти парни не любят когда делаются ставки на бой.
+				AI_Output(self,other, " DIA_Alrik_AfterFight_09_09 " );	// The militia is ready to put you behind bars for the slightest transgression. And these guys don't like betting on a fight.
 			};
 		};
-		self.aivar[AIV_ArenaFight] = AF_NONE;
-		self.aivar[AIV_LastFightComment] = TRUE;
+		self.aivar[AIV_ArenaFight] = AF_NONE ;
+		self.aivar[AIV_LastFightComment] = TRUE ;
 	}
 	else
 	{
-		if(self.aivar[AIV_ArenaFight] == AF_AFTER_PLUS_DAMAGE)
+		if (self.aivar[AIV_ArenaFight] ==  ​​AF_AFTER_PLUS_DAMAGE )
 		{
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_10");	//Бой был окончен, ты, кретин!
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_11");	//Я не люблю, когда кто-нибудь не подчиняется моим правилам.
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_12");	//Убирайся отсюда!
+			AI_Output(self,other, " DIA_Alrik_AfterFight_09_10 " );	// The fight was over, you nerd!
+			AI_Output(self,other, " DIA_Alrik_AfterFight_09_11 " );	// I don't like it when someone doesn't follow my rules.
+			AI_Output(self,other, " DIA_Alrik_AfterFight_09_12 " );	// Get out of here!
 		}
 		else
 		{
-			if(Alrik_Kaempfe == 0)
+			if (Alrik_Battles ==  0 )
 			{
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_13");	//Если ты хотел сразиться со мной, тебе нужно было вызвать меня.
+				AI_Output(self,other, " DIA_Alrik_AfterFight_09_13 " );	// If you wanted to fight me, you should have called me.
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_14");	//Если ты хотел сразиться еще раз, тебе нужно было вызвать меня!
+				AI_Output(self,other, " DIA_Alrik_AfterFight_09_14 " );	// If you wanted to fight again, you should have called me!
 			};
 
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_15");	//Я не хочу иметь дела с таким дерьмом, как ты! Проваливай!
+			AI_Output(self,other, " DIA_Alrik_AfterFight_09_15 " );	// I don't want to deal with shit like you! Get out!
 		};
 
-		self.aivar[AIV_ArenaFight] = AF_NONE;
+		self.aivar[AIV_ArenaFight] = AF_NONE ;
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_Alrik_DuWohnst(C_Info)
+instance DIA_Alrik_DuWohnst (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_DuWohnst_Condition;
 	information = DIA_Alrik_DuWohnst_Info;
 	permanent = FALSE;
-	description = "Ты 'живешь' за этим складом?";
+	description = " Do you 'live' behind this warehouse? " ;
 };
 
 
 func int DIA_Alrik_DuWohnst_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Alrik_YouFight) && (Kapitel < 5) && (AlrikRECRUITEDDT == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Alrik_YouFight ) && ( Chapter <  5 ) && ( AlrikRECRUITEDT ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -518,28 +519,28 @@ func int DIA_Alrik_DuWohnst_Condition()
 
 func void DIA_Alrik_DuWohnst_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_DuWohnst_15_00");	//(удивленно)...Ты живешь за этим складом?
-	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_01");	//Только временно. (ухмыляется) Когда имеешь столько денег, как у меня, можно позволить себе немного роскоши!
-	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_02");	//Я был инструктором в армии, но я бросил это занятие и выбрал судьбу искателя приключений.
-	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_03");	//И вот я застрял в этой дыре. Мои последние сто золотых ушли в карман стражникам у городских ворот.
-	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_04");	//Теперь я пытаюсь опять разбогатеть! Мне даже пришлось продать мой меч.
-	Alrik_VomSchwertErzaehlt = TRUE;
+	AI_Output(other,self, " DIA_Alrik_DuWohnst_15_00 " );	// (surprised)...Do you live behind this warehouse?
+	AI_Output(self,other, " DIA_Alrik_DuWohnst_09_01 " );	// Only temporarily. (grins) When you have as much money as I do, you can afford a little luxury!
+	AI_Output(self,other, " DIA_Alrik_DuWohnst_09_02 " );	// I used to be an instructor in the army, but I quit and chose to be an adventurer.
+	AI_Output(self,other, " DIA_Alrik_DuWohnst_09_03 " );	// And now I'm stuck in this hole. My last hundred gold went into the pocket of the guards at the city gates.
+	AI_Output(self,other, " DIA_Alrik_DuWohnst_09_04 " );	// Now I'm trying to get rich again! I even had to sell my sword.
+	Alrik_Told by the Sword = TRUE ;
 };
 
 
-instance DIA_Alrik_WerSchwert(C_Info)
+instance DIA_Alrik_WerSchwert (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_WerSchwert_Condition;
 	information = DIA_Alrik_WerSchwert_Info;
 	permanent = FALSE;
-	description = "Кому ты продал свой меч?";
+	description = " Who did you sell your sword to? " ;
 };
 
 func int DIA_Alrik_WerSchwert_Condition()
 {
-	if(Alrik_VomSchwertErzaehlt == TRUE)
+	if (Alrik_VomSchwertErzaehlt ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -547,27 +548,27 @@ func int DIA_Alrik_WerSchwert_Condition()
 
 func void DIA_Alrik_WerSchwert_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_WerSchwert_15_00");	//Кому ты продал свой меч?
-	AI_Output(self,other,"DIA_Alrik_WerSchwert_09_01");	//Я обменял его у торговца с рыночной площади на кое-какие вещи.
-	AI_Output(self,other,"DIA_Alrik_WerSchwert_09_02");	//Его зовут Джора. Факелы и мясо, что он дал мне, давно закончились.
-	AI_Output(other,self,"DIA_Alrik_WerSchwert_15_03");	//Он вряд ли отдаст мне этот меч просто так...
-	AI_Output(self,other,"DIA_Alrik_WerSchwert_09_04");	//Это старый меч. Он вряд ли много за него запросит. Просто думай об этих деньгах, как о дополнительной ставке. (ухмыляется)
+	AI_Output(other,self, " DIA_Alrik_WerSchwert_15_00 " );	// Who did you sell your sword to?
+	AI_Output(self,other, " DIA_Alrik_WerSchwert_09_01 " );	// I traded it with the marketplace merchant for some items.
+	AI_Output(self,other, " DIA_Alrik_WerSchwert_09_02 " );	// His name is Jora. The torches and the meat he gave me are long gone.
+	AI_Output(other,self, " DIA_Alrik_WerSchwert_15_03 " );	// He's not likely to give me this sword just like that...
+	AI_Output(self,other, " DIA_Alrik_WerSchwert_09_04 " );	// This is an old sword. He is unlikely to ask much for it. Just think of this money as an extra bet. (grins)
 	MIS_Alrik_Sword = LOG_Running;
 	Log_CreateTopic(TOPIC_AlrikSchwert,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_AlrikSchwert,LOG_Running);
-	B_LogEntry(TOPIC_AlrikSchwert,"Альрик продал свой меч торговцу Джоре. Он будет сражаться со мной, только если я верну ему его меч.");
+	B_LogEntry(TOPIC_AlrikSchwert, " Alrik has sold his sword to the merchant Jora. He will only fight me if I return his sword to him. " );
 };
 
-var int Alrik_EinmalSchwertBonus;
+var int Alrik_OneSwordBonus;
 
-instance DIA_Alrik_HaveSword(C_Info)
+instance DIA_Alrik_HaveSword (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_HaveSword_Condition;
-	information = DIA_Alrik_HaveSword_Info;
+	info = DIA_Alrik_HaveSword_Info;
 	permanent = FALSE;
-	description = "Я принес твой меч!";
+	description = " I brought your sword! " ;
 };
 
 func int DIA_Alrik_HaveSword_Condition()
@@ -581,101 +582,101 @@ func int DIA_Alrik_HaveSword_Condition()
 func void DIA_Alrik_HaveSword_Info()
 {
 	B_GivePlayerXP(XP_AlriksSword);
-	AI_Output(other,self,"DIA_Alrik_HaveSword_15_00");	//Я принес твой меч!
+	AI_Output(other,self, " DIA_Alrik_HaveSword_15_00 " );	// I brought your sword!
 	B_GiveInvItems(other,self,ItMw_AlriksSword_Mis,1);
-	AI_Output(self,other,"DIA_Alrik_HaveSword_09_01");	//Ах! Им значительно удобнее сражаться, чем палкой!
-	AI_Output(self,other,"DIA_Alrik_HaveSword_09_02");	//Отлично! Интересно, осмелишься ли ты вызвать меня теперь!
+	AI_Output(self,other, " DIA_Alrik_HaveSword_09_01 " );	// Ah! They are much more comfortable to fight than with a stick!
+	AI_Output(self,other, " DIA_Alrik_HaveSword_09_02 " );	// Great! I wonder if you dare to call me now!
 	MIS_Alrik_Sword = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_AlrikSchwert,LOG_SUCCESS);
-	B_LogEntry(TOPIC_AlrikSchwert,"Я вернул Альрику его меч.");
+	B_LogEntry(TOPIC_AlrikSchwert, " I gave Alrik back his sword. " );
 
-	if(Alrik_EinmalSchwertBonus == FALSE)
+	if (Alrik_OneSwordBonus ==  FALSE )
 	{
 		B_AddFightSkill(self,NPC_TALENT_1H,5);
-		Alrik_EinmalSchwertBonus = TRUE;
+		Alrik_OnceSwordBonus = TRUE ;
 	};
-	if(Alrik_Ok_02 == FALSE)
+	if (Alrik_Ok_02 ==  FALSE )
 	{
-		Alrik_Ok_02 = TRUE;
+		Alrik_Ok_02 = TRUE ;
 	};
 
 	AI_EquipBestMeleeWeapon(self);
 };
 
-instance DIA_Alrik_Krieg(C_Info)
+instance DIA_Alrik_Krieg (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_Krieg_Condition;
 	information = DIA_Alrik_Krieg_Info;
 	permanent = FALSE;
-	description = "Что ты знаешь о войне с орками?";
+	description = " What do you know about the orc war? " ;
 };
 
 
 func int DIA_Alrik_Krieg_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Alrik_DuWohnst) || (hero.guild != GIL_NONE))
+	if ( Npc_KnowsInfo ( other , DIA_Alrik_DuWohnst ) || ( hero . guild !=  GIL_NONE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Alrik_Krieg_Info()
+func void DIA_Alrik_War_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Krieg_15_00");	//Что ты знаешь о войне с орками?
-	AI_Output(self,other,"DIA_Alrik_Krieg_09_01");	//Мне почти нечего сказать. Эта война идет уже очень давно.
-	AI_Output(self,other,"DIA_Alrik_Krieg_09_02");	//Народ голодает. Повсюду поднимаются крестьянские восстания, которые безжалостно подавляются королем.
-	AI_Output(self,other,"DIA_Alrik_Krieg_09_03");	//Но их слишком много. Если война вскоре не закончится, королевство развалится.
+	AI_Output(other,self, " DIA_Alrik_Krieg_15_00 " );	// What do you know about the war with the orcs?
+	AI_Output(self,other, " DIA_Alrik_Krieg_09_01 " );	// I don't have much to say. This war has been going on for a very long time.
+	AI_Output(self,other, " DIA_Alrik_Krieg_09_02 " );	// The people are starving. Peasant uprisings are rising everywhere, which are ruthlessly suppressed by the king.
+	AI_Output(self,other, " DIA_Alrik_Krieg_09_03 " );	// But there are too many of them. If the war does not end soon, the kingdom will fall apart.
 };
 
-var int Alrik_VorausErzaehlt;
+var int Alrik_Predicted;
 
-instance DIA_Alrik_Ausbilden(C_Info)
+instance DIA_Alrik_Ausbildungen (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_Ausbilden_Condition;
-	information = DIA_Alrik_Ausbilden_Info;
+	information = DIA_Alrik_Ausbildung_Info;
 	permanent = TRUE;
-	description = "Ты можешь обучить меня?";
+	description = " Can you teach me? " ;
 };
 
 func int DIA_Alrik_Ausbilden_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Alrik_DuWohnst) || (hero.guild != GIL_NONE)) && (Alrik_Teach1H == FALSE))
+	if ((Npc_KnowsInfo(other,DIA_Alrik_DuWohnst) || (hero.guild !=  GIL_NONE )) && (Alrik_Teach1H ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Alrik_Ausbilden_Info()
+func void DIA_Alrik_Ausbildung_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Ausbilden_15_00");	//Ты можешь обучить меня?
+	AI_Output(other,self, " DIA_Alrik_Ausbilden_15_00 " );	// Can you teach me?
 
-	if((Alrik_Kaempfe == 0) && (hero.guild == GIL_NONE))
+	if (( Hero_Hero ==  0 ) && ( hero . guild ==  GIL_NONE ))
 	{
-		AI_Output(self,other,"DIA_Alrik_Ausbilden_09_01");	//Если ты действительно хочешь научиться сражаться, то выходи против меня...(ухмыляется) За этот урок я не возьму дополнительной платы.
-		Alrik_VorausErzaehlt = TRUE;
+		AI_Output(self,other, " DIA_Alrik_Ausbilden_09_01 " );	// If you really want to learn how to fight, then come out against me... (grins) I won't charge extra for this lesson.
+		Alrik_Predicted = TRUE ;
 	}
 	else
 	{
-		if(Alrik_VorausErzaehlt == TRUE)
+		if (Alrik_VorausErzaehlt ==  TRUE )
 		{
-			AI_Output(self,other,"DIA_Alrik_Ausbilden_09_02");	//Я держу свое слово. Я научу тебя всему, что я знаю - если у тебя достаточно опыта.
+			AI_Output(self,other, " DIA_Alrik_Ausbilden_09_02 " );	// I keep my word. I will teach you everything I know - if you have enough experience.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Alrik_Ausbilden_09_03");	//Как только у тебя будет необходимый опыт - пожалуйста.
+			AI_Output(self,other, " DIA_Alrik_Ausbilden_09_03 " );	// As soon as you have the necessary experience - please.
 		};
-		Alrik_Teach1H = TRUE;
+		Alrik_Teach1H = TRUE ;
 		Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
-		B_LogEntry(TOPIC_CityTeacher,"Альрик может обучить меня искусству владения одноручным оружием. Он ошивается за складом в портовом квартале.");
+		B_LogEntry(TOPIC_CityTeacher, " Alrik can teach me the art of one-handed weapons. He hangs around behind a warehouse in the waterfront. " );
 	};
 };
 
 
-var int Alrik_Merke_1h;
+var int Alrik_Brand_1h;
 
 instance DIA_Alrik_Teach(C_Info)
 {
@@ -684,7 +685,7 @@ instance DIA_Alrik_Teach(C_Info)
 	condition = DIA_Alrik_Teach_Condition;
 	information = DIA_Alrik_Teach_Info;
 	permanent = TRUE;
-	description = "Научи меня сражаться.";
+	description = " Teach me how to fight. " ;
 };
 
 func int DIA_Alrik_Teach_Condition()
@@ -697,7 +698,7 @@ func int DIA_Alrik_Teach_Condition()
 
 func void DIA_Alrik_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Cord_Teach_15_00");	//Научи меня сражаться.
+	AI_Output(other,self, " DIA_Cord_Teach_15_00 " );	// Teach me how to fight.
 	Alrik_Merke_1h = other.HitChance[NPC_TALENT_1H];
 	Info_ClearChoices(DIA_Alrik_Teach);
 	Info_AddChoice(DIA_Alrik_Teach,Dialog_Back,DIA_Alrik_Teach_Back);
@@ -937,9 +938,9 @@ instance DIA_Alrik_Shield(C_Info)
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_Shield_Condition;
-	information = DIA_Alrik_Shield_Info;
+	info = DIA_Alrik_Shield_Info;
 	permanent = FALSE;
-	description = "Ты сражаешься с щитом?";
+	description = " Are you fighting with a shield? " ;
 };
 
 func int DIA_Alrik_Shield_Condition()
@@ -952,29 +953,29 @@ func int DIA_Alrik_Shield_Condition()
 
 func void DIA_Alrik_Shield_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Shield_01_00");	//Ты сражаешься с щитом?
-	AI_Output(self,other,"DIA_Alrik_Shield_01_01");	//Конечно! С ним я никогда не расстаюсь...(гордо) Он моя основная надежда и опора в бою!
-	AI_Output(other,self,"DIA_Alrik_Shield_01_02");	//А меня ты бы мог обучить владению щитом?
+	AI_Output(other,self, " DIA_Alrik_Shield_01_00 " );	// Are you fighting with a shield?
+	AI_Output(self,other, " DIA_Alrik_Shield_01_01 " );	// Of course! I will never part with him ... (proudly) He is my main hope and support in battle!
+	AI_Output(other,self, " DIA_Alrik_Shield_01_02 " );	// Could you teach me how to use a shield?
 
-	if((Alrik_Ok_01 == TRUE) && (Alrik_Ok_02 == TRUE))
+	if ((Alrik_Ok_01 ==  TRUE ) && (Alrik_Ok_02 ==  TRUE ))
 	{
-		AI_Output(self,other,"DIA_Alrik_Shield_01_03");	//Хммм...(оценивающе) Почему бы и нет? Ты производишь впечатление довольно способного ученика.
-		AI_Output(self,other,"DIA_Alrik_Shield_01_04");	//Но тебе понадобится иметь некоторый опыт, чтобы овладеть этой техникой боя.
-		AI_Output(self,other,"DIA_Alrik_Shield_01_05");	//И немного золота. Бесплатно я этого делать не стану.
-		Alrik_Ok_Final = TRUE;
+		AI_Output(self,other, " DIA_Alrik_Shield_01_03 " );	// Hmmm... (appreciatively) Why not? You seem like a pretty capable student.
+		AI_Output(self,other, " DIA_Alrik_Shield_01_04 " );	// But you will need to have some experience to master this combat technique.
+		AI_Output(self,other, " DIA_Alrik_Shield_01_05 " );	// And some gold. I won't do it for free.
+		Alrik_Ok_Final = TRUE ;
 	}
-	else if(Alrik_Ok_01 == FALSE)
+	else  if (Alrik_Ok_01 ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Alrik_Shield_01_06");	//Для начала покажи мне, на что ты способен. А там будет видно!
+		AI_Output(self,other, " DIA_Alrik_Shield_01_06 " );	// First, show me what you can do. And there you will see!
 	}
-	else if(Alrik_Ok_02 == FALSE)
+	else  if (Alrik_Ok_02 ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Alrik_Shield_01_07");	//Для начала мне нужно обзавестись нормальным оружием вместо этой дубины.
-		AI_Output(self,other,"DIA_Alrik_Shield_01_08");	//Иначе я просто не смогу ничему тебя обучить.
+		AI_Output(self,other, " DIA_Alrik_Shield_01_07 " );	// First I need to get a normal weapon instead of this club.
+		AI_Output(self,other, " DIA_Alrik_Shield_01_08 " );	// Otherwise, I simply won't be able to teach you anything.
 	};
 
 	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTeacher,"Альрик может обучить меня искусству владения щитом.");
+	B_LogEntry(TOPIC_CityTeacher, " Alric can teach me the art of shielding. " );
 };
 
 instance DIA_Alrik_Shield_Teach(C_Info)
@@ -984,12 +985,12 @@ instance DIA_Alrik_Shield_Teach(C_Info)
 	condition = DIA_Alrik_Shield_Teach_Condition;
 	information = DIA_Alrik_Shield_Teach_Info;
 	permanent = TRUE;
-	description = "Научи меня обращаться с щитом. (Очки обучения: 10, Цена: 1000 монет)";
+	description = " Teach me how to use a shield. (Training Points: 10, Cost: 1000 coins) " ;
 };
 
 func int DIA_Alrik_Shield_Teach_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Alrik_Shield) && (hero.attribute[ATR_REGENERATEMANA] == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Alrik_Shield ) && ( hero . attribute [ ATR_REGENERATETHEME ] ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -997,9 +998,9 @@ func int DIA_Alrik_Shield_Teach_Condition()
 
 func void DIA_Alrik_Shield_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Shield_Teach_01_00");	//Научи меня обращаться с щитом.
+	AI_Output(other,self, " DIA_Alrik_Shield_Teach_01_00 " );	// Teach me how to use a shield.
 
-	if((Alrik_Ok_Final == TRUE) || ((Alrik_Ok_01 == TRUE) && (Alrik_Ok_02 == TRUE)))
+	if ((Alrik_Ok_Final ==  TRUE ) || ((Alrik_Ok_01 ==  TRUE ) && (Alrik_Ok_02 ==  TRUE )))
 	{
 		if((hero.lp >= 10) && (Npc_HasItems(other,ItMi_Gold) >= 1000))
 		{
@@ -1007,19 +1008,19 @@ func void DIA_Alrik_Shield_Teach_Info()
 			RankPoints = RankPoints + 10;
 			B_GiveInvItems(other,self,ItMi_Gold,1000);
 			Npc_RemoveInvItems(self,ItMi_Gold,1000);
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_01");	//Хорошо! Слушай внимательно. (серьезно)
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_02");	//Щит - это то, что в трудную минуту может прикрыть твою задницу от смертельного удара.
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_03");	//Техникой боя со щитом владеет далеко не каждый! Но эти знания определенно того стоят.
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_04");	//Самое главное - старайся держать щит на уровне глаз. Не ниже и не выше.
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_05");	//Это одновременно поможет тебе видеть своего противника и надежно прикрыть тело от удара.
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_06");	//Удары меча должны быть быстрыми и короткими. Открылся, ударил и снова прикрылся щитом!
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_07");	//Противнику придется изрядно поломать голову над тем, как пройти твою оборону.
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_08");	//И рано или поздно он допустит ошибку, которой ты должен будешь воспользоваться.
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_09");	//Если все сделаешь правильно, то когда-нибудь обязательно сможешь стать настоящим мастером-щитоносцем!
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_10");	//И вот еще что. Возьми это деревянный щит в качестве небольшого подарка от меня.
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_01 " );	// Good! Listen carefully. (Seriously)
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_02 " );	// A shield is something that in difficult times can cover your ass from a fatal blow.
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_03 " );	// Not everyone knows how to fight with a shield! But this knowledge is definitely worth it.
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_04 " );	// Most importantly, try to keep your shield at eye level. Not lower and not higher.
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_05 " );	// This will simultaneously help you see your opponent and securely cover your body from a blow.
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_06 " );	// Sword strikes should be quick and short. Opened, struck and again covered himself with a shield!
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_07 " );	// The enemy will have to pretty rack their brains on how to pass your defense.
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_08 " );	// And sooner or later he will make a mistake, which you will have to use.
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_09 " );	// If you do it right, you'll definitely be able to become a real shield-bearer someday!
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_10 " );	// And one more thing. Take this wooden shield as a small gift from me.
 			B_GiveInvItems(self,other,ItAr_Shield_01,1);
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_11");	//Ведь с чем-то тебе придется тренироваться!
-			AI_Print("Бой с щитом - обучен!");
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_11 " );	// After all, you have to train with something!
+			AI_Print( " Shield combat trained! " );
 			Snd_Play("LevelUP");
 			hero.attribute[ATR_REGENERATEMANA] = TRUE;
 			Npc_SetTalentSkill(hero,NPC_TALENT_RHETORIKA,1);
@@ -1029,42 +1030,42 @@ func void DIA_Alrik_Shield_Teach_Info()
 		{
 			if(hero.lp < 10)
 			{
-				AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_16");	//У тебя не хватает опыта, приятель! Извини.
+				AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_16 " );	// You don't have enough experience, mate! I'm sorry.
 			}
 			else if(Npc_HasItems(other,ItMi_Gold) < 1000)
 			{
-				AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_17");	//У тебя не хватает золота, приятель! Извини.	
+				AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_17 " );	// You don't have enough gold, mate! I'm sorry.	
 			};
 		};
 	}
 	else
 	{
-		if(Alrik_Ok_01 == FALSE)
+		if (Alrik_Ok_01 ==  FALSE )
 		{
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_12");	//Я же сказал - сначала покажи мне, на что ты способен!
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_13");	//А потом поговорим.
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_12 " );	// I told you - show me what you can do first!
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_13 " );	// And then we'll talk.
 		}
-		else if(Alrik_Ok_02 == FALSE)
+		else  if (Alrik_Ok_02 ==  FALSE )
 		{
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_14");	//Ты разве не видишь, что в моей руке до сих пор это чертова дубина?
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_15");	//Без нормального оружия я не стану тебя ничему учить!
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_14 " );	// Can't you see I still have that damn club in my hand?
+			AI_Output(self,other, " DIA_Alrik_Shield_Teach_01_15 " );	// Without a proper weapon, I won't teach you anything!
 		};
 	};
 };
 
-instance DIA_Alrik_Armor(C_Info)
+instance DIA_Alrik_Armor (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_Armor_Condition;
 	information = DIA_Alrik_Armor_Info;
 	permanent = FALSE;
-	description = "Неплохие у тебя доспехи.";
+	description = " Your armor is pretty good. " ;
 };
 
 func int DIA_Alrik_Armor_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Alrik_YouFight) == TRUE) && (AlrikRECRUITEDDT == FALSE))
+	if (( Npc_KnowsInfo ( other , DIA_Alrik_YouFight ) ==  TRUE ) && ( Alrik_RECRUITEDT ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1072,35 +1073,35 @@ func int DIA_Alrik_Armor_Condition()
 
 func void DIA_Alrik_Armor_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Armor_01_00");	//Неплохие у тебя доспехи.
-	AI_Output(self,other,"DIA_Alrik_Armor_01_01");	//Нравятся, да? (улыбаясь) Бьюсь об заклад, таких ты здесь больше нигде не найдешь.
-	AI_Output(other,self,"DIA_Alrik_Armor_01_02");	//Да, я был бы не прочь примерить их.
-	AI_Output(self,other,"DIA_Alrik_Armor_01_03");	//Нет ничего проще, приятель! Кажется, у меня оставался еще один комплект.
-	AI_Output(self,other,"DIA_Alrik_Armor_01_04");	//Но тебе придется за него заплатить.
-	AI_Output(other,self,"DIA_Alrik_Armor_01_05");	//И сколько?
-	AI_Output(self,other,"DIA_Alrik_Armor_01_06");	//Эммм... Ну, думаю... Пятьсот золотых монет мне вполне хватит!
-	AI_Output(other,self,"DIA_Alrik_Armor_01_07");	//А почему так дорого?
-	AI_Output(self,other,"DIA_Alrik_Armor_01_08");	//Ну, видишь ли... (замялся) Мне очень нужны деньги.
-	AI_Output(self,other,"DIA_Alrik_Armor_01_09");	//С их помощью я наконец-то смогу начать здесь новую жизнь.
-	AI_Output(self,other,"DIA_Alrik_Armor_01_10");	//Ну и заодно расплатиться с некоторыми долгами.
-	AI_Output(self,other,"DIA_Alrik_Armor_01_11");	//Так что извини, парень. Дешевле я не смогу их тебе продать.
+	AI_Output(other,self, " DIA_Alrik_Armor_01_00 " );	// You have good armor.
+	AI_Output(self,other, " DIA_Alrik_Armor_01_01 " );	// Like it, huh? (smiling) I bet you won't find them anywhere else around here.
+	AI_Output(other,self, " DIA_Alrik_Armor_01_02 " );	// Yes, I would love to try them on.
+	AI_Output(self,other, " DIA_Alrik_Armor_01_03 " );	// Nothing easier, mate! Looks like I have one more set left.
+	AI_Output(self,other, " DIA_Alrik_Armor_01_04 " );	// But you'll have to pay for it.
+	AI_Output(other,self, " DIA_Alrik_Armor_01_05 " );	// And how much?
+	AI_Output(self,other, " DIA_Alrik_Armor_01_06 " );	// Umm... Well, I guess... Five hundred gold coins will be enough for me!
+	AI_Output(other,self, " DIA_Alrik_Armor_01_07 " );	// Why so expensive?
+	AI_Output(self,other, " DIA_Alrik_Armor_01_08 " );	// Well, you see... (he hesitated) I really need money.
+	AI_Output(self,other, " DIA_Alrik_Armor_01_09 " );	// With their help, I can finally start a new life here.
+	AI_Output(self,other, " DIA_Alrik_Armor_01_10 " );	// Well, at the same time pay off some debts.
+	AI_Output(self,other, " DIA_Alrik_Armor_01_11 " );	// So sorry man. I can't sell them to you for less.
 };
 
-var int BuyAlrikArmor;
+var int buyAlrikArmor;
 
-instance DIA_Alrik_Armor_Trade(C_Info)
+instance DIA_Alrik_Armor_Trade (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 1;
 	condition = DIA_Alrik_Armor_Trade_Condition;
-	information = DIA_Alrik_Armor_Trade_Info;
+	info = DIA_Alrik_Armor_Trade_Info;
 	permanent = TRUE;
-	description = "Купить доспехи Альрика. (Цена: 500 монет)";
+	description = " Buy Alric's armor. (Price: 500 coins) " ;
 };
 
 func int DIA_Alrik_Armor_Trade_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Alrik_Armor) && (BuyAlrikArmor == FALSE) && (AlrikRECRUITEDDT == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Alrik_Armor ) && ( BuyAlrik Armor ==  FALSE ) && ( Alrik RECRUITED ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1108,31 +1109,31 @@ func int DIA_Alrik_Armor_Trade_Condition()
 
 func void DIA_Alrik_Armor_Trade_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Armor_Trade_01_00");	//Продай мне свои доспехи.
+	AI_Output(other,self, " DIA_Alrik_Armor_Trade_01_00 " );	// Sell me your armor.
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 500)
 	{
 		B_GiveInvItems(other,self,ItMi_Gold,500);
 		Npc_RemoveInvItems(self,ItMi_Gold,500);
-		AI_Output(self,other,"DIA_Alrik_Armor_Trade_01_01");	//Отлично, приятель! Вот, держи.
+		AI_Output(self,other, " DIA_Alrik_Armor_Trade_01_01 " );	// Great, mate! Here you are.
 		B_GiveInvItems(self,other,ITAR_ADVENTURE_HERO,1);
-		AI_Output(self,other,"DIA_Alrik_Armor_Trade_01_02");	//Поверь, ты не пожалеешь, что потратился на них.
+		AI_Output(self,other, " DIA_Alrik_Armor_Trade_01_02 " );	// Believe me, you won't regret spending money on them.
 		BuyAlrikArmor = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Alrik_Armor_Trade_01_03");	//У тебя не хватает золота, приятель! Извини.
+		AI_Output(self,other, " DIA_Alrik_Armor_Trade_01_03 " );	// You don't have enough gold, mate! I'm sorry.
 	};
 };
 
-instance DIA_Alrik_ASKFORDT(C_Info)
+instance DIA_Alrik_ASKFORDT (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 6;
 	condition = DIA_Alrik_askfordt_condition;
 	information = DIA_Alrik_askfordt_info;
 	permanent = FALSE;
-	description = "Мне нужны люди.";
+	description = " I need people. " ;
 };
 
 func int DIA_Alrik_askfordt_condition()
@@ -1141,7 +1142,7 @@ func int DIA_Alrik_askfordt_condition()
 
 	DayNow = Wld_GetDay();
 
-	if((HURRAYICANHIRE == TRUE) && (WOLFRECRUITEDDT == TRUE) && (WolfDayHire < DayNow) && (Alrik_Ok_01 == TRUE) && (Alrik_Ok_02 == TRUE))
+	if (( HURRAYICANHIRE  ==  TRUE ) && ( WOLFRECRUITEDDT  ==  TRUE ) && ( WolfDayHire < DayNow ) && ( Alrik_Ok_01 ==  TRUE ) && ( Alrik_Ok_02 ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1150,38 +1151,38 @@ func int DIA_Alrik_askfordt_condition()
 func void DIA_Alrik_askfordt_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Alrik_AskforDT_15_00");	//Мне нужны люди.
-	AI_Output(self,other,"DIA_Alrik_AskforDT_17_01");	//Для чего, позволь поинтересоваться?
-	AI_Output(other,self,"DIA_Alrik_AskforDT_17_02");	//Для охраны моего лагеря. А ты вроде опытный боец, драться умеешь, вот я и подумал...
-	AI_Output(self,other,"DIA_Alrik_AskforDT_17_03");	//Правда? У тебя есть лагерь?
-	AI_Output(other,self,"DIA_Alrik_AskforDT_17_04");	//Да, неподалеку от фермы Онара, на месте старой башни.
-	AI_Output(self,other,"DIA_Alrik_AskforDT_17_05");	//Хммм... А я смотрю, ты парень не промах! И когда ты только все успеваешь.
-	AI_Output(other,self,"DIA_Alrik_AskforDT_17_06");	//Ну так, что скажешь? В конце концов, это лучше, чем получать каждый день по физиономии за складом в порту.
-	AI_Output(self,other,"DIA_Alrik_AskforDT_17_07");	//И то верно. В принципе, я согласен на твое предложение. Но я хочу получать каждый день не меньше того, что я зарабатываю тут на арене.
-	AI_Output(other,self,"DIA_Alrik_AskforDT_17_08");	//Ареной это назвать трудно! Но пятьдесят золотых монет в день я готов тебе платить. Если ты об этом...
-	AI_Output(self,other,"DIA_Alrik_AskforDT_17_09");	//Хорошо, договорились. 
-	AI_Output(other,self,"DIA_Alrik_AskforDT_17_10");	//Тогда не теряй времени и немедленно отправляйся в мой лагерь.
-	AI_Output(other,self,"DIA_Alrik_AskforDT_17_11");	//Если что, охране у ворот скажешь пароль - 'Драконовы сокровища'. Тогда они тебя пропустят.
-	AI_Output(self,other,"DIA_Alrik_AskforDT_17_12");	//Хорошо, увидимся.
-	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Альрик теперь будет охранять мой лагерь.");
+	AI_Output(other,self, " DIA_Alrik_AskforDT_15_00 " );	// I need people.
+	AI_Output(self,other, " DIA_Alrik_AskforDT_17_01 " );	// For what, may I ask?
+	AI_Output(other,self, " DIA_Alrik_AskforDT_17_02 " );	// To guard my camp. And you seem to be an experienced fighter, you know how to fight, so I thought ...
+	AI_Output(self,other, " DIA_Alrik_AskforDT_17_03 " );	// True? Do you have a camp?
+	AI_Output(other,self, " DIA_Alrik_AskforDT_17_04 " );	// Yes, not far from Onar's farm, on the site of the old tower.
+	AI_Output(self,other, " DIA_Alrik_AskforDT_17_05 " );	// Hmmm... And I see that you are a good guy! And when you just do everything.
+	AI_Output(other,self, " DIA_Alrik_AskforDT_17_06 " );	// Well, what do you say? After all, it's better than getting punched in the face every day behind a warehouse in the port.
+	AI_Output(self,other, " DIA_Alrik_AskforDT_17_07 " );	// And that's right. Basically, I agree with your proposal. But I want to get every day no less than what I earn here in the arena.
+	AI_Output(other,self, " DIA_Alrik_AskforDT_17_08 " );	// It's hard to call it an arena! But fifty gold coins a day I am ready to pay you. If you are talking about it...
+	AI_Output(self,other, " DIA_Alrik_AskforDT_17_09 " );	// Okay, agreed.
+	AI_Output(other,self, " DIA_Alrik_AskforDT_17_10 " );	// Then don't waste any time and head to my camp immediately.
+	AI_Output(other,self, " DIA_Alrik_AskforDT_17_11 " );	// If anything, tell the guards at the gate the password - 'Dragon Treasures'. Then they will let you through.
+	AI_Output(self,other, " DIA_Alrik_AskforDT_17_12 " );	// Okay, see you.
+	B_LogEntry( TOPIC_PPL_FOR_TOWER , " Alric will now guard my camp. " );
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 	AlrikRECRUITEDDT = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"InTower");
 };
 
-instance DIA_Alrik_INTOWER(C_Info)
+instance DIA_Alrik_INTOWER (C_Info)
 {
 	npc = VLK_438_Alrik;
 	nr = 22;
 	condition = DIA_Alrik_intower_condition;
-	information = DIA_Alrik_intower_info;
+	info = DIA_Alrik_intower_info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 func int DIA_Alrik_intower_condition()
@@ -1194,8 +1195,8 @@ func int DIA_Alrik_intower_condition()
 
 func void DIA_Alrik_intower_info()
 {
-	AI_Output(other,self,"DIA_Alrik_InTower_OrcKap_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_Alrik_InTower_OrcKap_01_01");	//Пока все тихо.
+	AI_Output(other,self, " DIA_Alrik_InTower_OrcKap_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Alrik_InTower_OrcKap_01_01 " );	// So far everything is quiet.
 };
 
 instance DIA_Alrik_BackShield(C_Info)
@@ -1205,7 +1206,7 @@ instance DIA_Alrik_BackShield(C_Info)
 	condition = DIA_Alrik_BackShield_Condition;
 	information = DIA_Alrik_BackShield_Info;
 	permanent = FALSE;
-	description = "Держи свой щит обратно.";
+	description = " Hold your shield back. " ;
 };
 
 func int DIA_Alrik_BackShield_Condition()
@@ -1219,7 +1220,7 @@ func int DIA_Alrik_BackShield_Condition()
 func void DIA_Alrik_BackShield_Info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Alrik_WannaFight_Gold_15_00");	//Вот, держи...
+	AI_Output(other,self, " DIA_Alrik_WannaFight_Gold_15_00 " );	// Here, take this...
 	B_GiveInvItems(other,self,ItAr_Shield_01_Alrik,1);
 	Npc_RemoveInvItems(self,ItAr_Shield_01_Alrik,Npc_HasItems(self,ItAr_Shield_01_Alrik));
 	AI_Output(self,other,"DIA_Rod_GiveItBack_06_01");	//Вовремя!
