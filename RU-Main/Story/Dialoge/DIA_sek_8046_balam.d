@@ -1,4 +1,5 @@
 
+
 instance DIA_BALAM_EXIT(C_Info)
 {
 	npc = sek_8046_balam;
@@ -28,7 +29,7 @@ instance DIA_BALAM_NOFOREVER(C_Info)
 	condition = dia_balam_noforever_condition;
 	information = dia_balam_noforever_info;
 	permanent = FALSE;
-	description = "Кто вы?";
+	description = " Who are you? " ;
 };
 
 
@@ -40,25 +41,25 @@ func int dia_balam_noforever_condition()
 func void dia_balam_noforever_info()
 {
 	AI_Output(other,self,"DIA_Balam_NoForever_01_00");	//Кто вы?
-	AI_Output(self,other,"DIA_Balam_NoForever_01_01");	//(гордо) Мы - сборщики болотника!
-	AI_Output(self,other,"DIA_Balam_NoForever_01_02");	//Братству требуется очень много болотника. И наша задача - собрать его как можно больше.
+	AI_Output(self,other, " DIA_Balam_NoForever_01_01 " );	// (proudly) We are the bog collectors!
+	AI_Output(self,other, " DIA_Balam_NoForever_01_02 " );	// The Brotherhood needs a lot of bogging. And our task is to collect it as much as possible.
 };
 
 
-instance DIA_BALAM_PSIINFO(C_Info)
+instances DIA_BALAM_PSIINFO (C_Info)
 {
 	npc = sek_8046_balam;
 	nr = 5;
 	condition = dia_balam_psiinfo_condition;
 	information = dia_balam_psiinfo_info;
 	permanent = FALSE;
-	description = "Братству? Какому Братству?!";
+	description = " Brotherhood? Which Brotherhood? " ;
 };
 
 
 func int dia_balam_psiinfo_condition()
 {
-	if(!Npc_KnowsInfo(hero,dia_tpl_8014_templer_first) && !Npc_KnowsInfo(hero,dia_hanis_psiinfo) && !Npc_KnowsInfo(hero,dia_shrat_psiinfo) && Npc_KnowsInfo(hero,dia_balam_noforever))
+	if ( ! Npc_KnowsInfo(hero,dia_tpl_8014_templer_first) && !  Npc_KnowsInfo (hero, dia_hanis_psiinfo ) &&  !
 	{
 		return TRUE;
 	};
@@ -66,25 +67,25 @@ func int dia_balam_psiinfo_condition()
 
 func void dia_balam_psiinfo_info()
 {
-	AI_Output(other,self,"DIA_Balam_PsiInfo_01_00");	//Братству? Какому Братству?
-	AI_Output(self,other,"DIA_Balam_PsiInfo_01_01");	//Братству Спящего! Хотя теперь его можно называть просто - Братство.
-	AI_Output(other,self,"DIA_Balam_PsiInfo_01_02");	//Но я думал, что после падения барьера Братство Спящего перестало существовать!
-	AI_Output(self,other,"DIA_Balam_PsiInfo_01_03");	//Это не так! Конечно, большинство наших братьев погибли, а многие сошли с ума от тлетворного влияния демонических сил.
-	AI_Output(self,other,"DIA_Balam_PsiInfo_01_04");	//Но были и такие, кто все же выжил. Именно они стали лидерами нашего нового лагеря.
-	AI_Output(other,self,"DIA_Balam_PsiInfo_01_05");	//А где находится ваш лагерь?
-	AI_Output(self,other,"DIA_Balam_PsiInfo_01_06");	//Ступай по направлению к проходу в Долину Рудников. Не доходя до самого прохода, ты найдешь небольшую ферму.
-	AI_Output(self,other,"DIA_Balam_PsiInfo_01_07");	//Недалеко от нее и находится наша новая обитель.
+	AI_Output(other,self, " DIA_Balam_PsiInfo_01_00 " );	// Brotherhood? Which Brotherhood?
+	AI_Output(self,other, " DIA_Balam_PsiInfo_01_01 " );	// To the Brotherhood of the Sleeper! Although now it can be called simply - the Brotherhood.
+	AI_Output(other,self, " DIA_Balam_PsiInfo_01_02 " );	// But I thought that after the fall of the barrier, the Brotherhood of the Sleeper ceased to exist!
+	AI_Output(self,other, " DIA_Balam_PsiInfo_01_03 " );	// It's not! Of course, most of our brothers died, and many went crazy from the corrupting influence of demonic forces.
+	AI_Output(self,other, " DIA_Balam_PsiInfo_01_04 " );	// But there were those who still survived. It was they who became the leaders of our new camp.
+	AI_Output(other,self, " DIA_Balam_PsiInfo_01_05 " );	// Where is your camp?
+	AI_Output(self,other, " DIA_Balam_PsiInfo_01_06 " );	// Head towards the passage to the Valley of Mines. Before reaching the passage itself, you will find a small farm.
+	AI_Output(self,other, " DIA_Balam_PsiInfo_01_07 " );	// Not far from it is our new abode.
 };
 
 
-instance DIA_BALAM_HELLO(C_Info)
+instance DIA_BALAM_HELLO (C_Info)
 {
 	npc = sek_8046_balam;
 	nr = 5;
 	condition = dia_balam_hello_condition;
 	information = dia_balam_hello_info;
 	permanent = FALSE;
-	description = "А почему ты не помогаешь остальным?";
+	description = " Why don't you help others? " ;
 };
 
 
@@ -98,10 +99,10 @@ func int dia_balam_hello_condition()
 
 func void dia_balam_hello_info()
 {
-	AI_Output(other,self,"DIA_Balam_Hello_01_00");	//А почему ты не помогаешь остальным?
-	AI_Output(self,other,"DIA_Balam_Hello_01_01");	//А кто, по-твоему, будет следить за тем, чтобы к сборщикам не подобралась какая-нибудь тварь и не сожрала их, а?
-	AI_Output(self,other,"DIA_Balam_Hello_01_02");	//Эта местность просто кишит всяким зверьем. Тут надо глядеть в оба!
-	AI_Output(other,self,"DIA_Balam_Hello_01_03");	//Об этом я и не подумал.
+	AI_Output(other,self, " DIA_Balam_Hello_01_00 " );	// Why don't you help the others?
+	AI_Output(self,other, " DIA_Balam_Hello_01_01 " );	// And who do you think is going to make sure that some creature doesn't sneak up on the harvesters and devour them, huh?
+	AI_Output(self,other, " DIA_Balam_Hello_01_02 " );	// This area is just teeming with all sorts of beasts. Here you need to look at both!
+	AI_Output(other,self, " DIA_Balam_Hello_01_03 " );	// I didn't even think about that.
 	AI_Output(self,other,"DIA_Balam_Hello_01_04");	//Вот-вот.
 };
 
@@ -113,7 +114,7 @@ instance DIA_BALAM_HELLOTWO(C_Info)
 	condition = dia_balam_hellotwo_condition;
 	information = dia_balam_hellotwo_info;
 	permanent = TRUE;
-	description = "Как продвигается сбор болотника?";
+	description = " How's the bog harvest going? " ;
 };
 
 
@@ -127,8 +128,8 @@ func int dia_balam_hellotwo_condition()
 
 func void dia_balam_hellotwo_info()
 {
-	AI_Output(other,self,"DIA_Balam_HelloTwo_01_00");	//Как продвигается сбор болотника?
-	AI_Output(self,other,"DIA_Balam_HelloTwo_01_01");	//Если ты не будешь приставать к нашим сборщикам, он будет продвигаться еще быстрее!
+	AI_Output(other,self, " DIA_Balam_HelloTwo_01_00 " );	// How's the bog harvest progressing?
+	AI_Output(self,other, " DIA_Balam_HelloTwo_01_01 " );	// If you don't pester our pickers, he'll move even faster!
 };
 
 instance DIA_BALAM_GIVEPLANT(C_Info)
@@ -138,13 +139,13 @@ instance DIA_BALAM_GIVEPLANT(C_Info)
 	condition = dia_balam_giveplant_condition;
 	information = dia_balam_giveplant_info;
 	permanent = TRUE;
-	description = "Меня прислал Идол Кадар.";
+	description = " Idol Kadar sent me. " ;
 };
 
 
 func int dia_balam_giveplant_condition()
 {
-	if((MIS_PLANTSFORBAALCADAR == LOG_Running) && (SEKONGROUPSEK == FALSE) && (other.guild == GIL_SEK) && Npc_KnowsInfo(hero,dia_balam_noforever))
+	if (( MIS_PLANTFORBAALFRAME  == LOG_Running) && ( SECONDGROUPSEK  ==  FALSE ) && (other.guild ==  GIL_SEK ) && Npc_KnowsInfo(hero,dia_balam_noforever));
 	{
 		return TRUE;
 	};
@@ -154,34 +155,34 @@ func void dia_balam_giveplant_info()
 {
 	var C_Item itm;
 	itm = Npc_GetEquippedArmor(other);
-	AI_Output(other,self,"DIA_Balam_GivePlant_01_00");	//Меня прислал Идол Кадар.
-	AI_Output(self,other,"DIA_Balam_GivePlant_01_01");	//И зачем он это сделал?
-	AI_Output(other,self,"DIA_Balam_GivePlant_01_02");	//Он хочет, чтобы я доставил ему собранный вами болотник.
+	AI_Output(other,self, " DIA_Balam_GivePlant_01_00 " );	// Idol Kadar sent me.
+	AI_Output(self,other, " DIA_Balam_GivePlant_01_01 " );	// And why did he do it?
+	AI_Output(other,self, " DIA_Balam_GivePlant_01_02 " );	// He wants me to deliver the bog you collected to him.
 	if((Hlp_IsItem(itm,itar_sekbed) == TRUE) || (Hlp_IsItem(itm,itar_sekbed_v1) == TRUE) || (Hlp_IsItem(itm,itar_slp_ul) == TRUE) || (Hlp_IsItem(itm,itar_slp_l) == TRUE))
 	{
-		AI_Output(self,other,"DIA_Balam_GivePlant_01_03");	//Хорошо. Вот, возьми. Тут все, что у нас есть.
+		AI_Output(self,other, " DIA_Balam_GivePlant_01_03 " );	// Good. Here, take it. Here is everything we have.
 		B_GiveInvItems(self,other,ItPl_SwampHerb,50);
-		AI_Output(self,other,"DIA_Balam_GivePlant_01_04");	//Будь аккуратен с ним! На его сбор мы потратили не меньше месяца.
-		SEKONGROUPSEK = TRUE;
+		AI_Output(self,other, " DIA_Balam_GivePlant_01_04 " );	// Be careful with him! We spent at least a month collecting it.
+		SECONGROUPSEK = TRUE ;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Balam_GivePlant_01_05");	//Ты не похож на человека, которого мог бы прислать Идол Кадар.
-		AI_Output(self,other,"DIA_Balam_GivePlant_01_06");	//Я бы не доверил тебе и стебля этой травы!
+		AI_Output(self,other, " DIA_Balam_GivePlant_01_05 " );	// You don't look like the kind of person Idol Kadar could send.
+		AI_Output(self,other, " DIA_Balam_GivePlant_01_06 " );	// I wouldn't trust you with a stalk of this herb!
 	};
 };
 
-//-----------------PRIORAT---------------------
+// -----------------PRIORITY--------------------
 
 
-instance dia_balam_PrioratStart(C_Info)
+instance dia_balam_PrioratStart (C_Info)
 {
 	npc = sek_8046_balam;
 	nr = 1;
 	condition = dia_balam_PrioratStart_condition;
 	information = dia_balam_PrioratStart_info;
 	permanent = FALSE;
-	description = "Меня прислал Идол Намиб.";
+	description = "The Namib Idol sent me. " ;
 };
 
 
@@ -196,22 +197,22 @@ func int dia_balam_PrioratStart_condition()
 func void dia_balam_PrioratStart_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"dia_balam_PrioratStart_01_00");	//Меня прислал Идол Намиб.
-	AI_Output(self,other,"dia_balam_PrioratStart_01_01");	//О! (уважительно) Так тебя прислал один из наших духовных наставников. И что же ему нужно?
-	AI_Output(other,self,"dia_balam_PrioratStart_01_02");	//Он просто хочет удостовериться, что с вами все в порядке.
-	AI_Output(self,other,"dia_balam_PrioratStart_01_03");	//С нами все в порядке. Можешь так ему и передать.
-	AI_Output(other,self,"dia_balam_PrioratStart_01_04");	//Ну, также ему очень интересно, что вы знаете о пропаже нескольких послушников из лагеря Братства.
-	AI_Output(self,other,"dia_balam_PrioratStart_01_05");	//(озадаченно) Откуда же нам знать об этом? Все новости мы узнаем только тогда, когда возвращаемся в лагерь с очередной партией болотной травы.
-	AI_Output(self,other,"dia_balam_PrioratStart_01_06");	//А о пропавших послушниках я вообще слышу первый раз.
-	AI_Output(other,self,"dia_balam_PrioratStart_01_07");	//Ну, возможно, вы их видели?
-	AI_Output(self,other,"dia_balam_PrioratStart_01_08");	//Если бы это было так, то Идол Намиб первым же узнал бы об этом.
-	AI_Output(self,other,"dia_balam_PrioratStart_01_09");	//Так что больше мне нечего сказать.
-	AI_Output(other,self,"dia_balam_PrioratStart_01_10");	//Ладно, я тебя понял.
+	AI_Output(other,self, " dia_balam_PrioratStart_01_00 " );	// The Namib Idol sent me.
+	AI_Output(self,other, " dia_balam_PrioratStart_01_01 " );	// Oh! (respectfully) So one of our spirit guides sent you. And what does he need?
+	AI_Output(other,self, " dia_balam_PrioratStart_01_02 " );	// He just wants to make sure you're okay.
+	AI_Output(self,other, " dia_balam_PrioratStart_01_03 " );	// We're fine. You can pass it on to him.
+	AI_Output(other,self, " dia_balam_PrioratStart_01_04 " );	// Well, he's also very interested in what you know about the disappearance of several acolytes from the Brotherhood camp.
+	AI_Output(self,other, " dia_balam_PrioratStart_01_05 " );	// (puzzled) How do we know about this? We learn all the news only when we return to the camp with another batch of swamp grass.
+	AI_Output(self,other, " dia_balam_PrioratStart_01_06 " );	// And about the missing novices, I generally hear for the first time.
+	AI_Output(other,self, " dia_balam_PrioratStart_01_07 " );	// Well, maybe you've seen them?
+	AI_Output(self,other, " dia_balam_PrioratStart_01_08 " );	// If that were the case, the Namib Idol would be the first to know about it.
+	AI_Output(self,other, " dia_balam_PrioratStart_01_09 " );	// So I have nothing more to say.
+	AI_Output(other,self, " dia_balam_PrioratStart_01_10 " );	// Okay, I understand you.
 	PsiCamp_01_Ok = TRUE;
-	B_LogEntry(TOPIC_PrioratStart,"В лагере сборщиков под управлением Балама все спокойно. О пропавших послушниках они ничего не знают.");
+	B_LogEntry(TOPIC_PrioratStart, " All is quiet in the gathering camp under Balam's control. They know nothing about the missing acolytes. " );
 };
 
-instance DIA_BALAM_NamibSendTempler(C_Info)
+instances DIA_BALAM_NamibSendTempler (C_Info)
 {
 	npc = sek_8046_balam;
 	nr = 5;
@@ -233,26 +234,26 @@ func int dia_balam_NamibSendTempler_condition()
 func void dia_balam_NamibSendTempler_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Balam_NamibSendTempler_01_01");	//Опять ты? С чем на этот раз пожаловал?
-	AI_Output(other,self,"DIA_Balam_NamibSendTempler_01_02");	//Я тут по просьбе Идола Намиба. Ваш лагерь сборщиков может подвергнуться нападению!
-	AI_Output(self,other,"DIA_Balam_NamibSendTempler_01_03");	//(встревоженно) Нападению? Так вот зачем Гуру прислал к нам несколько Стражей.
-	AI_Output(other,self,"DIA_Balam_NamibSendTempler_01_04");	//Именно так.
-	AI_Output(self,other,"DIA_Balam_NamibSendTempler_01_05");	//Ну хорошо. Надеюсь, что с ними нам будет куда спокойней тут.
-	AI_Output(other,self,"DIA_Balam_NamibSendTempler_01_06");	//Можешь в этом не сомневаться.
+	AI_Output(self,other, " DIA_Balam_NamibSendTempler_01_01 " );	// You again? What did you complain about this time?
+	AI_Output(other,self, " DIA_Balam_NamibSendTempler_01_02 " );	// I'm here at the request of the Namib Idol. Your gathering camp may be under attack!
+	AI_Output(self,other, " DIA_Balam_NamibSendTempler_01_03 " );	// (alarmed) Attack? So that's why the Guru sent several Guardians to us.
+	AI_Output(other,self, " DIA_Balam_NamibSendTempler_01_04 " );	// That's right.
+	AI_Output(self,other, " DIA_Balam_NamibSendTempler_01_05 " );	// Okay. I hope that with them we will be much calmer here.
+	AI_Output(other,self, " DIA_Balam_NamibSendTempler_01_06 " );	// You can be sure of that.
 	CountDownAssInvasion = TRUE;
 	CountDownAssInvasionDay = Wld_GetDay();
 	CountDownAssInvasionRandomDay = Hlp_Random(2);
 };
 
 
-instance DIA_BALAM_JobInCamp(C_Info)
+instances DIA_BALAM_JobInCamp (C_Info)
 {
 	npc = sek_8046_balam;
 	nr = 5;
 	condition = dia_balam_JobInCamp_condition;
 	information = dia_balam_JobInCamp_info;
 	permanent = FALSE;
-	description = "Найдется тут для меня какая-нибудь работенка?";
+	description = " Is there any job for me here? " ;
 };
 
 func int dia_balam_JobInCamp_condition()
@@ -265,15 +266,15 @@ func int dia_balam_JobInCamp_condition()
 
 func void dia_balam_JobInCamp_info()
 {
-	AI_Output(other,self,"DIA_Balam_JobInCamp_01_01");	//Найдется тут для меня какая-нибудь работенка?
-	AI_Output(self,other,"DIA_Balam_JobInCamp_01_02");	//Хммм...(задумчиво) Если хочешь, то можешь помочь нашим парням со сбором болотника.
-	AI_Output(self,other,"DIA_Balam_JobInCamp_01_03");	//По правде говоря, нам действительно не помешали бы лишние руки.
-	AI_Output(other,self,"DIA_Balam_JobInCamp_01_04");	//Хорошо. И где мне его искать?
-	AI_Output(self,other,"DIA_Balam_JobInCamp_01_05");	//Здесь, вблизи лагеря. Или можешь поискать его на берегу озера. В общем, приноси все, что найдешь. Но не меньше десяти стеблей.
-	AI_Output(self,other,"DIA_Balam_JobInCamp_01_06");	//Только будь осторожен! В здешних зарослях иногда водятся довольно опасные твари.
+	AI_Output(other,self, " DIA_Balam_JobInCamp_01_01 " );	// Is there any work for me here?
+	AI_Output(self,other, " DIA_Balam_JobInCamp_01_02 " );	// Hmmm... (thoughtfully) If you want, you can help our guys with the collection of the bogweed.
+	AI_Output(self,other, " DIA_Balam_JobInCamp_01_03 " );	// Truth be told, we really could use some extra hands.
+	AI_Output(other,self, " DIA_Balam_JobInCamp_01_04 " );	// Good. And where can I look for it?
+	AI_Output(self,other, " DIA_Balam_JobInCamp_01_05 " );	// Here, near the camp. Or you can look for him by the lake. Basically, bring whatever you can find. But not less than ten stems.
+	AI_Output(self,other, " DIA_Balam_JobInCamp_01_06 " );	// Just be careful! In the local thickets, quite dangerous creatures are sometimes found.
 	Log_CreateTopic(TOPIC_JobInCamp,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_JobInCamp,LOG_Running);
-	B_LogEntry(TOPIC_JobInCamp,"Балам попросил меня помочь его сборщикам собрать болотную траву. Заняться в лагере нечем, поэтому я решил прогуляться в окрестностях и найти не меньше десяти стеблей болотника.");
+	B_LogEntry(TOPIC_JobInCamp, " Balam asked me to help his pickers collect swamp grass. There is nothing to do in the camp, so I decided to walk around and find at least ten bog grass stalks. " );
 	MIS_JobInCamp = LOG_Running;
 	AI_StopProcessInfos(self);
 	Wld_InsertItem(ItPl_SwampHerb,"FP_ITEM_BALAMSWAMP_01");
@@ -300,7 +301,7 @@ instance DIA_BALAM_JobInCamp_Done(C_Info)
 	condition = dia_balam_JobInCamp_Done_condition;
 	information = dia_balam_JobInCamp_Done_info;
 	permanent = FALSE;
-	description = "У меня есть для тебя немного болотной травы.";
+	description = " I have some swamp grass for you. " ;
 };
 
 func int dia_balam_JobInCamp_Done_condition()
@@ -317,8 +318,8 @@ func void dia_balam_JobInCamp_Done_info()
 	var int swamp_xp;
 	var int swamp_xp_big;
 
-	AI_Output(other,self,"DIA_Balam_JobInCamp_Done_01_01");	//У меня есть для тебя немного болотной травы.
-	AI_Output(self,other,"DIA_Balam_JobInCamp_Done_01_02");	//Отлично, парень! Давай ее сюда.
+	AI_Output(other,self, " DIA_Balam_JobInCamp_Done_01_01 " );	// I have some swamp grass for you.
+	AI_Output(self,other, " DIA_Balam_JobInCamp_Done_01_02 " );	// Great, man! Give her here.
 
 	swamp_xp_big = FALSE;	
 	swamp_herbz = Npc_HasItems(hero,ItPl_SwampHerb);
@@ -329,36 +330,36 @@ func void dia_balam_JobInCamp_Done_info()
 
 	if(swamp_herbz >= 10)
 	{
-		AI_Output(other,self,"DIA_Balam_JobInCamp_Done_01_03");	//Вот, держи. Собрал все, что смог найти.
-		AI_Output(self,other,"DIA_Balam_JobInCamp_Done_01_04");	//Хорошо. Думаю, этого количества вполне хватит для следующей партии в лагерь.
-		AI_Output(self,other,"DIA_Balam_JobInCamp_Done_01_05");	//Ты здорово потрудился! Вот, возьми этот напиток в качестве награды за свои труды.
+		AI_Output(other,self, " DIA_Balam_JobInCamp_Done_01_03 " );	// Here, take this. I collected everything I could find.
+		AI_Output(self,other, " DIA_Balam_JobInCamp_Done_01_04 " );	// Good. I think this amount is quite enough for the next party to the camp.
+		AI_Output(self,other, " DIA_Balam_JobInCamp_Done_01_05 " );	// You did a great job! Here, take this drink as a reward for your labors.
 		B_GiveInvItems(self,other,ItPo_Perm_Health,1);
-		AI_Output(other,self,"DIA_Balam_JobInCamp_Done_01_06");	//С удовольствием.
+		AI_Output(other,self, " DIA_Balam_JobInCamp_Done_01_06 " );	// With pleasure.
 	}
 	else
 	{
 		B_GivePlayerXP(swamp_xp_big);
-		AI_Output(other,self,"DIA_Balam_JobInCamp_Done_01_07");	//Вот - все, что у меня есть.
-		AI_Output(self,other,"DIA_Balam_JobInCamp_Done_01_08");	//Да, неплохо. Хотя, по правде говоря, я рассчитывал чуть на большее количество.
-		AI_Output(other,self,"DIA_Balam_JobInCamp_Done_01_09");	//Разве тебе этого мало?
-		AI_Output(self,other,"DIA_Balam_JobInCamp_Done_01_10");	//Видишь ли, последний сбор, отправленный в лагерь, был не слишком большим.
-		AI_Output(self,other,"DIA_Balam_JobInCamp_Done_01_11");	//Ну да ладно. Сколько уж есть.
+		AI_Output(other,self, " DIA_Balam_JobInCamp_Done_01_07 " );	// This is all I have.
+		AI_Output(self,other, " DIA_Balam_JobInCamp_Done_01_08 " );	// Yes, not bad. Although, to be honest, I expected a little more.
+		AI_Output(other,self, " DIA_Balam_JobInCamp_Done_01_09 " );	// Isn't that enough for you?
+		AI_Output(self,other, " DIA_Balam_JobInCamp_Done_01_10 " );	// You see, the last collection sent to the camp was not too big.
+		AI_Output(self,other, " DIA_Balam_JobInCamp_Done_01_11 " );	// Oh well. How much is there.
 	};
 
 	MIS_JobInCamp = LOG_SUCCESS;
 	Log_CreateTopic(TOPIC_JobInCamp,LOG_SUCCESS);
-	B_LogEntry(TOPIC_JobInCamp,"Я собрал для Балама достаточно болотной травы для следующей отправки в лагерь Братства.");
+	B_LogEntry(TOPIC_JobInCamp, " I've collected enough swamp grass for Balam to be sent to the Brotherhood's next camp. " );
 };
 
 
-instance DIA_BALAM_StrangeCave(C_Info)
+instances of DIA_BALAM_StrangeCave (C_Info)
 {
 	npc = sek_8046_balam;
 	nr = 5;
 	condition = dia_balam_StrangeCave_condition;
 	information = dia_balam_StrangeCave_info;
 	permanent = FALSE;
-	description = "Еще работенка для меня найдется?";
+	description = " Is there another job for me? " ;
 };
 
 func int dia_balam_StrangeCave_condition()
@@ -371,17 +372,17 @@ func int dia_balam_StrangeCave_condition()
 
 func void dia_balam_StrangeCave_info()
 {
-	AI_Output(other,self,"DIA_Balam_StrangeCave_01_01");	//Еще работенка для меня найдется?
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_02");	//Хммм...(задумчиво) Ну, если тебе больше нечем заняться...
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_03");	//...то можешь наведаться в пещеру, что находится неподалеку от нашего лагеря.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_05");	//Последнее время оттуда по ночам стали доноситься странного рода звуки!
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_06");	//Мы с парнями уже не раз днем наведывались туда, но никого, кроме пары мясных жуков не нашли.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_07");	//Может быть, тебе повезет, и ты сможешь выяснить, что там, черт возьми, происходит.
-	AI_Output(other,self,"DIA_Balam_StrangeCave_01_08");	//Ладно, попробую.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_09");	//Было бы неплохо, приятель. Было бы неплохо!
+	AI_Output(other,self, " DIA_Balam_StrangeCave_01_01 " );	// Is there another job for me?
+	AI_Output(self,other, " DIA_Balam_StrangeCave_01_02 " );	// Hmmm...(thoughtfully) Well, if you have nothing else to do...
+	AI_Output(self,other, " DIA_Balam_StrangeCave_01_03 " );	// ...then you can visit the cave, which is located not far from our camp.
+	AI_Output(self,other, " DIA_Balam_StrangeCave_01_05 " );	// Recently, strange sounds have been coming from there at night!
+	AI_Output(self,other, " DIA_Balam_StrangeCave_01_06 " );	// The guys and I have been there several times during the day, but we did not find anyone but a couple of meat bugs.
+	AI_Output(self,other, " DIA_Balam_StrangeCave_01_07 " );	// Maybe you'll get lucky and be able to figure out what the hell is going on.
+	AI_Output(other,self, " DIA_Balam_StrangeCave_01_08 " );	// Okay, I'll try.
+	AI_Output(self,other, " DIA_Balam_StrangeCave_01_09 " );	// That would be nice, mate. It would be nice!
 	Log_CreateTopic(TOPIC_StrangeCave,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_StrangeCave,LOG_Running);
-	B_LogEntry(TOPIC_StrangeCave,"Балам попросил меня выяснить, что за странные звуки раздаются по ночам из пещеры. Сборщики болотника обнаружили там лишь мясных жуков. По всей видимости, надо прокрасться туда, не привлекая лишнего шума.");
+	B_LogEntry(TOPIC_StrangeCave, " Balam asked me to find out what strange noises are coming from the cave at night. Swamp collectors found only meat bugs there. Apparently, we need to sneak in without making too much noise. " );
 	MIS_StrangeCave = LOG_Running;
 	AI_StopProcessInfos(self);
 	Wld_InsertItem(ITSC_TRFMEATBUG,"FP_ITEM_NW_TROLLAREA_TRFMEATBUG");
@@ -395,7 +396,7 @@ instance DIA_BALAM_StrangeCave_News(C_Info)
 	condition = dia_balam_StrangeCave_News_condition;
 	information = dia_balam_StrangeCave_News_info;
 	permanent = FALSE;
-	description = "Что ты можешь еще рассказать по поводу той пещеры?";
+	description = " What else can you say about that cave? " ;
 };
 
 func int dia_balam_StrangeCave_News_condition()
@@ -408,16 +409,16 @@ func int dia_balam_StrangeCave_News_condition()
 
 func void dia_balam_StrangeCave_News_info()
 {
-	AI_Output(other,self,"DIA_Balam_StrangeCave_News_01_01");	//Что ты можешь мне еще рассказать по поводу той пещеры?
-	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_02");	//Ну, есть тут еще кое-что...(серьезно) Возможно, тебе это как-то поможет.
-	AI_Output(other,self,"DIA_Balam_StrangeCave_News_01_03");	//Ну, выкладывай же, не тяни.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_04");	//В общем, когда мы заходили в ту пещеру, то один из сборщиков заметил, что на стене мелькнула чья-то тень и потом мгновенно исчезла.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_05");	//Я так думаю, что, возможно, своим присутствием мы спугнули кого-то!
-	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_06");	//Ну а дальше ты уже знаешь. Кроме вонючих мясных жуков там никого больше не было.
-	AI_Output(other,self,"DIA_Balam_StrangeCave_News_01_07");	//Больше ничего?
-	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_08");	//Ничего такого, чтобы показалось интересным.
+	AI_Output(other,self, " DIA_Balam_StrangeCave_News_01_01 " );	// What else can you tell me about that cave?
+	AI_Output(self,other, " DIA_Balam_StrangeCave_News_01_02 " );	// Well, there's something else... (seriously) Maybe this will help you somehow.
+	AI_Output(other,self, " DIA_Balam_StrangeCave_News_01_03 " );	// Well, lay it out, don't delay.
+	AI_Output(self,other, " DIA_Balam_StrangeCave_News_01_04 " );	// In general, when we entered that cave, one of the collectors noticed that someone's shadow flickered on the wall and then instantly disappeared.
+	AI_Output(self,other, " DIA_Balam_StrangeCave_News_01_05 " );	// I think that perhaps we scared someone away with our presence!
+	AI_Output(self,other, " DIA_Balam_StrangeCave_News_01_06 " );	// Well, then you already know. There was no one else there besides stinky meat bugs.
+	AI_Output(other,self, " DIA_Balam_StrangeCave_News_01_07 " );	// Nothing else?
+	AI_Output(self,other, " DIA_Balam_StrangeCave_News_01_08 " );	// Nothing to be interesting.
 	AI_Output(other,self,"DIA_Balam_StrangeCave_News_01_09");	//Ладно.
-	B_LogEntry(TOPIC_StrangeCave,"Балам рассказал, что один из его сборщиков мимолетно заметил чью-то тень в пещере. Однако внутри никого, кроме мясных жуков, не оказалось.");
+	B_LogEntry(TOPIC_StrangeCave, " Balam said that one of his harvesters had a glimpse of a shadow in the cave. However, there was nothing inside except meat bugs. " );
 };
 
 
@@ -428,7 +429,7 @@ instance DIA_BALAM_StrangeCave_Done(C_Info)
 	condition = dia_balam_StrangeCave_Done_condition;
 	information = dia_balam_StrangeCave_Done_info;
 	permanent = FALSE;
-	description = "Я разобрался с тем, что было в пещере.";
+	description = " I figured out what was in the cave. " ;
 };
 
 func int dia_balam_StrangeCave_Done_condition()
@@ -442,13 +443,13 @@ func int dia_balam_StrangeCave_Done_condition()
 func void dia_balam_StrangeCave_Done_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Balam_StrangeCave_Done_01_01");	//Я разобрался с тем, что было в пещере.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_Done_01_02");	//И кто же издавал эти звуки по ночам?
-	AI_Output(other,self,"DIA_Balam_StrangeCave_Done_01_03");	//Обычная нечисть. Но будь спокоен, теперь она больше вас не потревожит.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_Done_01_04");	//Надеюсь, что ты прав.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_Done_01_05");	//Ладно, вот, возьми за свои труды. Эту награду ты заслужил по праву!
+	AI_Output(other,self, " DIA_Balam_StrangeCave_Done_01_01 " );	// I figured out what was in the cave.
+	AI_Output(self,other, " DIA_Balam_StrangeCave_Done_01_02 " );	// And who made these sounds at night?
+	AI_Output(other,self, " DIA_Balam_StrangeCave_Done_01_03 " );	// Ordinary evil spirits. But rest easy, now she won't bother you anymore.
+	AI_Output(self,other, " DIA_Balam_StrangeCave_Done_01_04 " );	// Hope you're right.
+	AI_Output(self,other, " DIA_Balam_StrangeCave_Done_01_05 " );	// Okay, here, take it for your work. You rightfully deserve this award!
 	B_GiveInvItems(self,other,ItMi_Joint,10);
-	B_LogEntry(TOPIC_StrangeCave,"Я сообщил Баламу, что с проблемой в пещере покончено.");
+	B_LogEntry(TOPIC_StrangeCave, " I told Balam that the problem in the cave is over. " );
 	Log_CreateTopic(TOPIC_StrangeCave,LOG_SUCCESS);
 	MIS_StrangeCave = LOG_SUCCESS;
 };
@@ -460,7 +461,7 @@ instance DIA_BALAM_Proviant(C_Info)
 	condition = dia_balam_Proviant_condition;
 	information = dia_balam_Proviant_info;
 	permanent = FALSE;
-	description = "Как обстоят дела?";
+	description = " How are things? " ;
 };
 
 func int dia_balam_Proviant_condition()
@@ -473,27 +474,27 @@ func int dia_balam_Proviant_condition()
 
 func void dia_balam_Proviant_info()
 {
-	AI_Output(other,self,"DIA_Balam_Proviant_01_01");	//Как обстоят дела?
-	AI_Output(self,other,"DIA_Balam_Proviant_01_02");	//Вроде пока все без изменений. 
-	AI_Output(self,other,"DIA_Balam_Proviant_01_03");	//Однако вскоре нам будет необходимо пополнить наши запасы пищи. Те, что остались, уже почти на исходе.
-	AI_Output(other,self,"DIA_Balam_Proviant_01_04");	//И у тебя есть идеи на этот счет?
-	AI_Output(self,other,"DIA_Balam_Proviant_01_05");	//Хммм...(задумчиво) Тут недалеко от лагеря днем обычно пасется целая стая горных падальщиков.
-	AI_Output(self,other,"DIA_Balam_Proviant_01_06");	//Полагаю, что было бы неплохо подстрелить парочку из них.
-	AI_Output(self,other,"DIA_Balam_Proviant_01_07");	//Этого мяса хватило бы нам на пару недель точно!
-	AI_Output(other,self,"DIA_Balam_Proviant_01_08");	//И кого ты хочешь послать на охоту? 
-	AI_Output(self,other,"DIA_Balam_Proviant_01_09");	//Поначалу я хотел попросить об этом Тиракса. Но он последнее время какой-то раздражительный, что навряд ли станет меня слушать.
-	AI_Output(self,other,"DIA_Balam_Proviant_01_10");	//Поэтому хочу предложить эту работенку тебе. Ты как, не против?
-	AI_Output(other,self,"DIA_Balam_Proviant_01_11");	//Почему бы и нет. Это куда лучше, чем умирать целыми днями от скуки.
-	AI_Output(self,other,"DIA_Balam_Proviant_01_12");	//Хорошо, тогда я могу рассчитывать на тебя. 
-	AI_Output(other,self,"DIA_Balam_Proviant_01_13");	//А где именно пасутся горные падальщики?
-	AI_Output(self,other,"DIA_Balam_Proviant_01_14");	//Если пойдешь прямо от нашей палатки, как раз наткнешься на то место. 
-	AI_Output(self,other,"DIA_Balam_Proviant_01_15");	//Но будь осторожен! Эти птицы, хоть и кажутся с виду беззащитными, но могут заклевать тебя насмерть.
-	AI_Output(other,self,"DIA_Balam_Proviant_01_16");	//Не волнуйся, мне не впервой на них охотиться.
-	AI_Output(self,other,"DIA_Balam_Proviant_01_17");	//Ну, если так, тогда жду твоего возвращения. И, надеюсь, не с пустыми руками.
-	AI_Output(self,other,"DIA_Balam_Proviant_01_18");	//Принеси мяса столько, сколько сможешь унести.
+	AI_Output(other,self, " DIA_Balam_Proviant_01_01 " );	// How are things going?
+	AI_Output(self,other, " DIA_Balam_Proviant_01_02 " );	// So far everything seems to be unchanged.
+	AI_Output(self,other, " DIA_Balam_Proviant_01_03 " );	// However, we will soon need to replenish our food supplies. Those that remain are almost gone.
+	AI_Output(other,self, " DIA_Balam_Proviant_01_04 " );	// And do you have any ideas about this?
+	AI_Output(self,other, " DIA_Balam_Proviant_01_05 " );	// Hmmm... (thoughtfully) There's usually a whole flock of mountain scavengers grazing near the camp during the day.
+	AI_Output(self,other, " DIA_Balam_Proviant_01_06 " );	// I guess it would be nice to shoot a couple of them.
+	AI_Output(self,other, " DIA_Balam_Proviant_01_07 " );	// This meat would be enough for us for a couple of weeks for sure!
+	AI_Output(other,self, " DIA_Balam_Proviant_01_08 " );	// And who do you want to send to hunt?
+	AI_Output(self,other, " DIA_Balam_Proviant_01_09 " );	// At first, I wanted to ask Tyrax about this. But lately he has been kind of irritable, which is unlikely to listen to me.
+	AI_Output(self,other, " DIA_Balam_Proviant_01_10 " );	// That's why I want to offer this job to you. How do you not mind?
+	AI_Output(other,self, " DIA_Balam_Proviant_01_11 " );	// Why not. It's much better than dying of boredom all day long.
+	AI_Output(self,other, " DIA_Balam_Proviant_01_12 " );	// Okay, then I can count on you.
+	AI_Output(other,self, " DIA_Balam_Proviant_01_13 " );	// And where exactly do mountain scavengers graze?
+	AI_Output(self,other, " DIA_Balam_Proviant_01_14 " );	// If you walk straight from our tent, you'll just run into that place.
+	AI_Output(self,other, " DIA_Balam_Proviant_01_15 " );	// But be careful! These birds, although seemingly defenseless, can peck you to death.
+	AI_Output(other,self, " DIA_Balam_Proviant_01_16 " );	// Don't worry, it's not the first time I've hunted them.
+	AI_Output(self,other, " DIA_Balam_Proviant_01_17 " );	// Well, if so, then I look forward to your return. And hopefully not empty handed.
+	AI_Output(self,other, " DIA_Balam_Proviant_01_18 " );	// Bring as much meat as you can carry.
 	Log_CreateTopic(TOPIC_BalamProviant,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BalamProviant,LOG_Running);
-	B_LogEntry(TOPIC_BalamProviant,"Баламу нужно пополнить запасы провианта. Он попросил меня поохотиться на горных падальщиков рядом с лагерем.");
+	B_LogEntry(TOPIC_BalamProviant, " Balam needs to replenish his supplies. He asked me to hunt mountain scavengers near the camp. " );
 	MIS_BalamProviant = LOG_Running;
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Scavenger_Mount,"NW_TROLLAREA_BALAMMEAT_01");
@@ -515,7 +516,7 @@ instance DIA_BALAM_Proviant_Done(C_Info)
 	condition = dia_balam_Proviant_Done_condition;
 	information = dia_balam_Proviant_Done_info;
 	permanent = FALSE;
-	description = "Я принес тебе мясо горных падальщиков.";
+	description = " I brought you mountain scavenger meat. " ;
 };
 
 func int dia_balam_Proviant_Done_condition()
@@ -531,9 +532,9 @@ func void dia_balam_Proviant_Done_info()
 	var int Raw_Mount;
 	var int Xp_Raw_Mount;
 
-	AI_Output(other,self,"DIA_Balam_Proviant_Done_01_01");	//Я принес тебе мясо горных падальщиков.
-	AI_Output(self,other,"DIA_Balam_Proviant_Done_01_02");	//Отлично! И как много тебе его удалось добыть?
-	AI_Output(other,self,"DIA_Balam_Proviant_Done_01_03");	//Вот, взгляни сам.
+	AI_Output(other,self, " DIA_Balam_Proviant_Done_01_01 " );	// I brought you mountain scavenger meat.
+	AI_Output(self,other, " DIA_Balam_Proviant_Done_01_02 " );	// Great! And how much did you manage to get?
+	AI_Output(other,self, " DIA_Balam_Proviant_Done_01_03 " );	// Here, take a look for yourself.
 
 	Raw_Mount = Npc_HasItems(other,ItFoMuttonRaw_Mount);
 	Xp_Raw_Mount = Raw_Mount * 10;
@@ -544,40 +545,40 @@ func void dia_balam_Proviant_Done_info()
 
 	if(Raw_Mount >= 10)
 	{
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_04");	//Да, тут именно столько мяса, сколько и требовалось. Я вижу, что ты хорошо поохотился!
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_05");	//Тогда вот, возьми этот напиток и немного золота за свои хлопоты.
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_06");	//К сожалению, это самое большое, чем я могу отблагодарить тебя сейчас.
-		AI_Output(other,self,"DIA_Balam_Proviant_Done_01_07");	//Мне этого вполне хватит. К тому же приятно, когда твою работу ценят подобным образом.
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_08");	//(улыбаясь) Не сомневаюсь.
+		AI_Output(self,other, " DIA_Balam_Proviant_Done_01_04 " );	// Yes, there is exactly as much meat as needed. I see you've had a good hunt!
+		AI_Output(self,other, " DIA_Balam_Proviant_Done_01_05 " );	// Then here, take this drink and some gold for your troubles.
+		AI_Output(self,other, " DIA_Balam_Proviant_Done_01_06 " );	// Unfortunately, that's the most I can thank you for right now.
+		AI_Output(other,self, " DIA_Balam_Proviant_Done_01_07 " );	// This is enough for me. It's also nice when your work is appreciated in this way.
+		AI_Output(self,other, " DIA_Balam_Proviant_Done_01_08 " );	// (smiling) No doubt.
 		B_GiveInvItemsManyThings(self,other);
 		CreateInvItems(other,ItMi_Gold,150);
 		CreateInvItems(other,ITPO_FALLDEFENCE,1);
 	}
 	else if(Raw_Mount >= 4)
 	{
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_09");	//Неплохо. Хотя, по правде говоря, я ожидал от тебя немного большего количества мяса.
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_10");	//Ну да ладно. Думаю, пока и этого хватит. Вот, возьми это золото за свои хлопоты.
+		AI_Output(self,other, " DIA_Balam_Proviant_Done_01_09 " );	// Not bad. Although, to be honest, I expected a little more meat from you.
+		AI_Output(self,other, " DIA_Balam_Proviant_Done_01_10 " );	// Oh well. I think this is enough for now. Here, take this gold for your troubles.
 		B_GiveInvItems(self,other,ItMi_Gold,75);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_12");	//Хммм... Видимо, ты не очень хороший охотник, раз принес мне так мало мяса.
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_13");	//Хотя в любом случае я благодарен тебе за твою помощь.
+		AI_Output(self,other, " DIA_Balam_Proviant_Done_01_12 " );	// Hmmm... Apparently you're not a very good hunter for bringing me so little meat.
+		AI_Output(self,other, " DIA_Balam_Proviant_Done_01_13 " );	// Though I'm grateful for your help anyway.
 	};
 
-	B_LogEntry(TOPIC_BalamProviant,"Я принес Баламу мясо горных падальщиков. Сборщики болотника не останутся голодными.");
+	B_LogEntry(TOPIC_BalamProviant, " I brought mountain carrion meat to Balam. The bog harvesters won't go hungry. " );
 	Log_CreateTopic(TOPIC_BalamProviant,LOG_SUCCESS);
 	MIS_BalamProviant = LOG_SUCCESS;
 };
 
-instance DIA_BALAM_AssasinsAttack(C_Info)
+instance DIA_BALAM_AssassinsAttack (C_Info)
 {
 	npc = sek_8046_balam;
 	nr = 5;
 	condition = dia_balam_AssasinsAttack_condition;
-	information = dia_balam_AssasinsAttack_info;
+	information = dia_balam_AssassinsAttack_info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 func int dia_balam_AssasinsAttack_condition()
@@ -588,32 +589,32 @@ func int dia_balam_AssasinsAttack_condition()
 	};
 };
 
-func void dia_balam_AssasinsAttack_info()
+func void dia_balam_AssassinsAttack_info()
 {
-	AI_Output(other,self,"DIA_Balam_AssasinsAttack_01_01");	//Все в порядке?
+	AI_Output(other,self, " DIA_Balam_AssasinsAttack_01_01 " );	// Is everything okay?
 
-	if(Wld_IsTime(20,59,7,59))
+	if (Wld_IsTime( 20 , 59 , 7 , 59 ))
 	{
-		AI_Output(self,other,"DIA_Balam_AssasinsAttack_01_02");	//Лучше не придумаешь...(раcслабленно) Последние дни в лагере были крайне спокойными.
-		AI_Output(self,other,"DIA_Balam_AssasinsAttack_01_03");	//И все благодаря тебе и тем стражам, что прислал Гор На Тоф.
-		AI_Output(self,other,"DIA_Balam_AssasinsAttack_01_04");	//Не думаю, что нам здесь что-то угрожает...
+		AI_Output(self,other, " DIA_Balam_AssasinsAttack_01_02 " );	// You can't imagine better... (relaxedly) The last days in the camp were extremely calm.
+		AI_Output(self,other, " DIA_Balam_AssasinsAttack_01_03 " );	// And it's all thanks to you and those guards that Gor Na Tof sent.
+		AI_Output(self,other, " DIA_Balam_AssasinsAttack_01_04 " );	// I don't think we're in danger here...
 		AI_PlayAni(self,"T_SEARCH");
-		AI_Output(self,other,"DIA_Balam_AssasinsAttack_01_05");	//Хммм...(встревоженно) Ты это слышал?
+		AI_Output(self,other, " DIA_Balam_AssasinsAttack_01_05 " );	// Hmmm...(alarmed) Did you hear that?
 		Info_ClearChoices(DIA_Balam_AssasinsAttack);
-		Info_AddChoice(DIA_Balam_AssasinsAttack,"Что именно?",dia_balam_AssasinsAttack_Done);
+		Info_AddChoice(DIA_Balam_AssasinsAttack, " What exactly? " ,dia_balam_AssasinsAttack_Done);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Balam_AssasinsAttack_01_08");	//Как видишь. Но лучше поговорим об этом позже. Вечером.
-		AI_Output(self,other,"DIA_Balam_AssasinsAttack_01_09");	//Сейчас мне надо присматривать за сборщиками.
+		AI_Output(self,other, " DIA_Balam_AssasinsAttack_01_08 " );	// As you can see. But we'd better talk about it later. In the evening.
+		AI_Output(self,other, " DIA_Balam_AssasinsAttack_01_09 " );	// Now I have to look after the faucets.
 		AI_StopProcessInfos(self);
 	};
 };
 
 func void dia_balam_AssasinsAttack_Done()
 {
-	AI_Output(other,self,"DIA_Balam_AssasinsAttack_01_06");	//Что именно?
-	AI_Output(self,other,"DIA_Balam_AssasinsAttack_01_07");	//Осторожно, сзади!
+	AI_Output(other,self, " DIA_Balam_AssasinsAttack_01_06 " );	// What exactly?
+	AI_Output(self,other, " DIA_Balam_AssasinsAttack_01_07 " );	// Watch out from behind!
 	AssasinsAttackCamp = TRUE;
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Ass_121_Adept,"NW_FOREST_ASS_START_01");
