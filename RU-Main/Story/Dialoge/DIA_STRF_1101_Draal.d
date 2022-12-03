@@ -1,5 +1,6 @@
 
-instance DIA_Draal_EXIT(C_Info)
+
+instance DIA_Draal_EXIT (C_Info)
 {
 	npc = STRF_1101_Draal;
 	nr = 999;
@@ -15,13 +16,13 @@ func int DIA_Draal_EXIT_Condition()
 	return TRUE;
 };
 
-func void DIA_Draal_EXIT_Info()
+func void SLIDE_Draw_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Draal_DRAGON(C_Info)
+instance DIA_Draal_DRAGON (C_Info)
 {
 	npc = STRF_1101_Draal;
 	nr = 1;
@@ -40,10 +41,10 @@ func int DIA_Draal_DRAGON_Condition()
 	};
 };
 
-func void DIA_Draal_DRAGON_Info()
+func void SLIDE_Draw_DRAGON_Info()
 {
-	AI_Output(self,other,"DIA_Draal_DRAGON_03_00");	//Я был снаружи, когда напал дракон.
-	AI_Output(self,other,"DIA_Draal_DRAGON_03_01");	//Я видел его, он больше, чем 10 людей - его огненное дыхание уничтожило хижины в мгновение ока!
-	AI_Output(self,other,"DIA_Draal_DRAGON_03_02");	//Дракон! Я лучше останусь здесь. Ничто не сдвинет меня с места. Но я не безумен!
+	AI_Output(self,other, " DIA_Draal_DRAGON_03_00 " );	// I was outside when the dragon attacked.
+	AI_Output(self,other, " DIA_Draal_DRAGON_03_01 " );	// I saw him, he is more than 10 people - his fiery breath destroyed the huts in the blink of an eye!
+	AI_Output(self,other, " DIA_Draal_DRAGON_03_02 " );	// Dragon! I'd rather stay here. Nothing will move me. But I'm not crazy!
 };
 
