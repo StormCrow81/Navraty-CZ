@@ -1,4 +1,5 @@
 
+
 instance DIA_Lutero_EXIT(C_Info)
 {
 	npc = VLK_404_Lutero;
@@ -18,19 +19,19 @@ func int DIA_Lutero_EXIT_Condition()
 func void DIA_Lutero_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
-	if((Lutero_Krallen == LOG_Running) && (MIS_Fajeth_Kill_Snapper == LOG_SUCCESS) && (Npc_KnowsInfo(other,DIA_Bilgot_KNOWSLEADSNAPPER) == FALSE))
+	if ((Luther_Krallen == LOG_Running) && (MY_Fajeth_Kill_Snapper ==  LOG_SUCCESS ) && (Npc_KnowsInfo(other,DIA_Bilgot_KNOWSLEADSNAPPER) ==  FALSE )) ;
 	{
-		Lutero_Krallen = LOG_OBSOLETE;
+		Lutero_claws = LOG_OBSOLETE ;
 	};
 };
 
 
-instance DIA_Lutero_Hallo(C_Info)
+instances DIA_Lutero_Hello (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = DIA_Lutero_Hallo_Condition;
-	information = DIA_Lutero_Hallo_Info;
+	information = DIA_Lutero_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -44,22 +45,22 @@ func int DIA_Lutero_Hallo_Condition()
 	};
 };
 
-func void DIA_Lutero_Hallo_Info()
+func void DIA_Lutero_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Lutero_Hallo_13_00");	//Меня зовут Лютеро. Я торгую практически всем.
-	AI_Output(other,self,"DIA_Lutero_Hallo_15_01");	//Какие товары ты предлагаешь?
-	AI_Output(self,other,"DIA_Lutero_Hallo_13_02");	//Ну, в основном редкие и необычные вещи. Я готов удовлетворить даже самые причудливые прихоти моих клиентов.
+	AI_Output(self,other, " DIA_Lutero_Hallo_13_00 " );	// My name is Luthero. I trade almost everything.
+	AI_Output(other,self, " DIA_Lutero_Hallo_15_01 " );	// What products do you offer?
+	AI_Output(self,other, " DIA_Lutero_Hallo_13_02 " );	// Well, mostly rare and unusual things. I am ready to satisfy even the most bizarre whims of my clients.
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Лютеро торгует необычными и редкими предметами в верхнем квартале.");
+	B_LogEntry(TOPIC_CityTrader, " Luthero trades uncommon and rare items in the top quarter. " );
 };
 
 
-instance DIA_Lutero_GetLost(C_Info)
+instance DIA_Luther_GetLost (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = DIA_Lutero_GetLost_Condition;
-	information = DIA_Lutero_GetLost_Info;
+	information = DIA_Lutheran_GetLost_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -73,15 +74,15 @@ func int DIA_Lutero_GetLost_Condition()
 	};
 };
 
-func void DIA_Lutero_GetLost_Info()
+func void DIA_Luther_GetLost_Info()
 {
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Lutero_GetLost_13_00");	//Проваливай отсюда! Тебе что, нечего делать? Тогда найди себе работу - только где-нибудь еще!
+		AI_Output(self,other, " DIA_Lutero_GetLost_13_00 " );	// Get out of here! What, you have nothing to do? Then find yourself a job - only somewhere else!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lutero_GetLost_13_01");	//Что тебе нужно, послушник? Разве ты не должен быть в монастыре?
+		AI_Output(self,other, " DIA_Lutero_GetLost_13_01 " );	// What do you want, novice? Shouldn't you be in a monastery?
 	};
 };
 
@@ -93,7 +94,7 @@ instance DIA_Lutero_Snapper(C_Info)
 	condition = DIA_Lutero_Snapper_Condition;
 	information = DIA_Lutero_Snapper_Info;
 	permanent = FALSE;
-	description = "Ты ищешь что-нибудь конкретное?";
+	description = " Are you looking for something specific? " ;
 };
 
 
@@ -107,66 +108,66 @@ func int DIA_Lutero_Snapper_Condition()
 
 func void DIA_Lutero_Snapper_Info()
 {
-	AI_Output(other,self,"DIA_Lutero_Snapper_15_00");	//Ты ищешь что-нибудь конкретное?
-	AI_Output(self,other,"DIA_Lutero_Snapper_13_01");	//Да, для одного из моих клиентов мне нужны когти снеппера.
-	AI_Output(self,other,"DIA_Lutero_Snapper_13_02");	//Но не просто обычные когти. Это должно быть что-то особенное - когти очень большого зверя, убившего много людей, например.
-	AI_Output(other,self,"DIA_Lutero_Snapper_15_03");	//Где мне найти снепперов?
-	AI_Output(self,other,"DIA_Lutero_Snapper_13_04");	//На этом острове они встречаются повсеместно, но большинство из них живет в Долине Рудников.
-	AI_Output(other,self,"DIA_Lutero_Snapper_15_05");	//А что я с этого получу?
+	AI_Output(other,self, " DIA_Lutero_Snapper_15_00 " );	// Are you looking for something specific?
+	AI_Output(self,other, " DIA_Lutero_Snapper_13_01 " );	// Yes, I need snapper claws for one of my clients.
+	AI_Output(self,other, " DIA_Lutero_Snapper_13_02 " );	// But not just ordinary claws. It must be something special - the claws of a very large beast that killed a lot of people, for example.
+	AI_Output(other,self, " DIA_Lutero_Snapper_15_03 " );	// Where can I find snappers?
+	AI_Output(self,other, " DIA_Lutero_Snapper_13_04 " );	// They are ubiquitous on this island, but most of them live in the Vale of Mines.
+	AI_Output(other,self, " DIA_Lutero_Snapper_15_05 " );	// What do I get out of this?
 	if((other.guild == GIL_KDF) || (other.guild == GIL_GUR) || (other.guild == GIL_KDM) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Lutero_Hello_13_06");	//Я могу дать тебе рунный камень.
+		AI_Output(self,other, " DIA_Lutero_Hello_13_06 " );	// I can give you a runestone.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lutero_Hello_13_07");	//Я могу дать тебе кольцо неуязвимости.
+		AI_Output(self,other, " DIA_Lutero_Hello_13_07 " );	// I can give you an invulnerability ring.
 	};
-	AI_Output(other,self,"DIA_Lutero_Hello_15_08");	//Я посмотрю, что можно сделать.
+	AI_Output(other,self, " DIA_Lutero_Hello_15_08 " );	// I'll see what I can do.
 	Log_CreateTopic(TOPIC_Lutero,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Lutero,LOG_Running);
-	B_LogEntry(TOPIC_Lutero,"Торговец Лютеро ищет когти необычайно сильного снеппера.");
-	Lutero_Krallen = LOG_Running;
+	B_LogEntry(TOPIC_Lutero, " Trader Luthero is looking for the claws of an unusually strong snapper. " );
+	Lutero_claws = LOG_Running;
 };
 
 
-instance DIA_Lutero_Kralle(C_Info)
+instance DIA_Lutero_claw (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = DIA_Lutero_Kralle_Condition;
 	information = DIA_Lutero_Kralle_Info;
 	permanent = FALSE;
-	description = "У меня есть особенные когти снеппера для тебя.";
+	description = " I have some special snapper claws for you. " ;
 };
 
 
 func int DIA_Lutero_Kralle_Condition()
 {
-	if((Npc_HasItems(other,ItAt_ClawLeader) >= 1) && Npc_KnowsInfo(other,DIA_Lutero_Snapper))
+	if (( Npc_HasItems ( other , ItAt_ClawLeader ) >=  1 ) && Npc_KnowsInfo ( other , DIA_Lutero_Snapper ) ) ;
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Lutero_Kralle_Info()
+func void DIA_Lutero_claw_Info()
 {
-	AI_Output(other,self,"DIA_Lutero_Kralle_15_00");	//У меня есть особенные когти снеппера для тебя.
-	Lutero_Krallen = LOG_SUCCESS;
+	AI_Output(other,self, " DIA_Lutero_Kralle_15_00 " );	// I have special snapper claws for you.
+	Lutero_claws = LOG_SUCCESS ;
 	Log_SetTopicStatus(TOPIC_Lutero,LOG_SUCCESS);
 	B_GivePlayerXP(XP_Ambient);
-	AI_Output(self,other,"DIA_Lutero_Kralle_13_01");	//Мой клиент будет счастлив услышать это.
+	AI_Output(self,other, " DIA_Lutero_Kralle_13_01 " );	// My client will be happy to hear this.
 	B_GiveInvItems(other,self,ItAt_ClawLeader,1);
 	Npc_RemoveInvItems(self,ItAt_ClawLeader,1);
 	if((other.guild == GIL_KDF) || (other.guild == GIL_GUR) || (other.guild == GIL_KDM) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Lutero_Hello_13_02");	//У меня нет этого рунного камня с собой. Но я знаю, где его можно найти.
-		AI_Output(self,other,"DIA_Lutero_Hello_13_03");	//По пути от города к таверне, ты пойдешь под мостом.
-		AI_Output(self,other,"DIA_Lutero_Hello_13_04");	//Там, в пещере, мой друг спрятал в сундуке рунный камень. Вот ключ.
+		AI_Output(self,other, " DIA_Lutero_Hello_13_02 " );	// I don't have this runestone with me. But I know where to find it.
+		AI_Output(self,other, " DIA_Lutero_Hello_13_03 " );	// On the way from the city to the tavern, you will go under the bridge.
+		AI_Output(self,other, " DIA_Lutero_Hello_13_04 " );	// There, in the cave, my friend hid a runestone in a chest. Here is the key.
 		B_GiveInvItems(self,other,itke_rune_mis,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lutero_Hello_13_05");	//Вот кольцо, как я и обещал тебе.
+		AI_Output(self,other, " DIA_Lutero_Hello_13_05 " );	// Here's the ring, just like I promised you.
 		B_GiveInvItems(self,other,ItRi_Prot_Total_01,1);
 	};
 };
@@ -179,14 +180,14 @@ instance DIA_Lutero_Trade(C_Info)
 	condition = DIA_Lutero_Trade_Condition;
 	information = DIA_Lutero_Trade_Info;
 	permanent = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 	trade = TRUE;
 };
 
 
 func int DIA_Lutero_Trade_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Lutero_Hallo) == TRUE) && Wld_IsTime(8,0,23,59))
+	if ((Npc_KnowsInfo(other,DIA_Luther_Hello) ==  TRUE ) && Wld_IsTime( 8 , 0 , 23 , 59 ))
 	{
 		return TRUE;
 	};
@@ -200,12 +201,12 @@ func void DIA_Lutero_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Lutero_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Lutero_Trade_15_00 " );	// Show me your products.
 	B_GiveTradeInv(self);
 };
 
 
-instance DIA_Lutero_PICKPOCKET(C_Info)
+instances DIA_Lutero_PICKPOCKET (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 900;
@@ -218,19 +219,19 @@ instance DIA_Lutero_PICKPOCKET(C_Info)
 
 func int DIA_Lutero_PICKPOCKET_Condition()
 {
-	return C_Beklauen(58,65);
+	return  C_Robbery ( 58 , 65 );
 };
 
 func void DIA_Lutero_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Lutero_PICKPOCKET);
 	Info_AddChoice(DIA_Lutero_PICKPOCKET,Dialog_Back,DIA_Lutero_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Lutero_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Lutero_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Lutero_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Lutero_PICKPOCKET_DoIt);
 };
 
 func void DIA_Lutero_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Lutero_PICKPOCKET);
 };
 
@@ -240,14 +241,14 @@ func void DIA_Lutero_PICKPOCKET_BACK()
 };
 
 
-instance DIA_LUTERO_TALIASANLETTER(C_Info)
+instance DIA_LUTERO_TALIASANLETTER (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_taliasanletter_condition;
 	information = dia_lutero_taliasanletter_info;
 	permanent = FALSE;
-	description = "У тебя не найдется для меня какой-нибудь работы?";
+	description = " Do you have any work for me to do? " ;
 };
 
 
@@ -261,60 +262,60 @@ func int dia_lutero_taliasanletter_condition()
 
 func void dia_lutero_taliasanletter_info()
 {
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_00");	//У тебя не найдется для меня какой-нибудь работы?
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_01");	//Ты ищешь работу?
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_02");	//Хммм. Возможно, мне бы и пригодились услуги такого человека, как ты. Хотя тут есть проблема...
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_03");	//И в чем же твоя проблема?
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_04");	//Проблема в том, что мои дела сейчас идут не слишком хорошо, и я не смогу заплатить тебе за твою работу золотом.
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_05");	//Золото меня не интересует.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_06");	//(удивленно) Да? Тогда что ты хочешь в качестве оплаты?
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_09");	//Мне нужно, чтобы ты написал одно письмо. Оно должно быть адресовано Лариусу, главе Хориниса.
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_10");	//Необходимо, чтобы в нем ты восхищался магическими способности Галлахада и вообще, что он хороший человек...
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_13");	//Хммм. Конечно, мне ничего не стоит написать такое письмо...
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_14");	//Хорошо! Но прежде чем я это сделаю, ты выполнишь одну работенку для меня.
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_15");	//В чем она заключается?
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_00 " );	// Do you have any work for me?
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_01 " );	// Are you looking for a job?
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_02 " );	// Hmmm. Perhaps I could use the services of a man like you. Although there is a problem...
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_03 " );	// And what's your problem?
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_04 " );	// The problem is that my business is not going well right now, and I can't pay you for your work in gold.
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_05 " );	// I'm not interested in gold.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_06 " );	// (surprised) Yes? Then what do you want as payment?
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_09 " );	// I need you to write one letter. It must be addressed to Larius, head of Khorinis.
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_10 " );	// It is necessary that in it you admire the magical abilities of Gallahad and in general that he is a good person...
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_13 " );	// Hmmm. Of course, it doesn't cost me anything to write such a letter...
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_14 " );	// Good! But before I do that, you'll do one job for me.
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_15 " );	// What is it?
 
 	if(!C_BodyStateContains(self,BS_SIT))
 	{
 		AI_PlayAni(self,"T_SEARCH");
 	};
 
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_16");	//Ну, понимаешь... Это очень специфическое дело.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_16 " );	// Well, you see... This is a very specific case.
 	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_17");	//И?
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_18");	//Как я тебе говорил, у меня сейчас не очень хорошо с деньгами...(замялся) ммм...
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_19");	//...В общем, чтобы как-то поправить свои дела, мне недавно пришлось занять небольшую сумму денег у одного человека.
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_20");	//У кого?
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_21");	//У Лемара, ростовщика. И, естественно, как ты понимаешь, этот долг в скором времени мне придется отдать ему.
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_22");	//И ты хочешь, чтобы я заплатил за тебя?
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_23");	//Нет, этого делать не надо.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_24");	//У меня есть идея получше. Беря у него деньги, я написал Лемару долговую расписку.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_25");	//И мне бы очень хотелось, чтобы эта бумажка просто-напросто у него исчезла...(взволнованно) ...или чтобы он ее потерял, например.
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_26");	//Если я тебя правильно понял, ты хочешь, чтобы я украл у него эту твою расписку?
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_27");	//Тише, тише! Не так громко.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_18 " );	// As I told you, I'm not very good with money right now... (stammered) hmm...
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_19 " );	// ...In general, in order to somehow improve my affairs, I recently had to borrow a small amount of money from one person.
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_20 " );	// Who?
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_21 " );	// At Lemar, the usurer. And, of course, as you understand, I will soon have to pay this debt to him.
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_22 " );	// And you want me to pay for you?
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_23 " );	// No, you don't need to do this.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_24 " );	// I have a better idea. Taking money from him, I wrote an IOU to Lemar.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_25 " );	// And I would very much like this piece of paper to simply disappear from him ... (excitedly) ... or for him to lose it, for example.
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_01_26 " );	// If I understand you correctly, you want me to steal this receipt of yours from him?
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_27 " );	// Hush, hush! Not so loud.
 
 	if(!C_BodyStateContains(self,BS_SIT))
 	{
 		AI_PlayAni(self,"T_SEARCH");
 	};
 
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_28");	//Ну, можно и так сказать... примерно в этом духе.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_29");	//Главное, чтобы Лемар не смог доказать, что я ему что-то должен.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_30");	//Давай сделаем так. Если ты принесешь мне эту расписку, то я тогда напишу рекомендательное письмо для Галлахада.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_31");	//Тебя устраивают эти условия?
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_28 " );	// Well, you could say that... something along those lines.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_29 " );	// The main thing is that Lemar cannot prove that I owe him something.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_30 " );	// Let's do this. If you bring me this receipt, then I will write a letter of recommendation for Gallahad.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_01_31 " );	// Are you satisfied with these conditions?
 	Info_ClearChoices(dia_lutero_taliasanletter);
-	Info_AddChoice(dia_lutero_taliasanletter,"Извини, но на такое я не могу пойти.",dia_lutero_taliasanletter_no);
+	Info_AddChoice(dia_lutero_taliasanletter, " Sorry, but I can't do that. " ,dia_lutero_taliasanletter_no);
 	Info_AddChoice(dia_lutero_taliasanletter,"Да, вполне.",dia_lutero_taliasanletter_ok);
 };
 
 func void dia_lutero_taliasanletter_no()
 {
-	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_No_01_00");	//Извини, но на такое я не могу пойти.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_No_01_01");	//Что ж, очень жаль.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_No_01_02");	//Да, и еще: надеюсь, наш разговор останется между нами.
+	AI_Output(other,self, " DIA_Lutero_TaliasanLetter_No_01_00 " );	// Sorry, but I can't do that.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_No_01_01 " );	// Well, that's too bad.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_No_01_02 " );	// Oh, and one more thing: I hope our conversation stays between us.
 	if(MEMBERTRADEGUILD == FALSE)
 	{
-		AI_Output(self,other,"DIA_Lutero_TaliasanLetter_No_01_03");	//(раздраженно) В ином же случае я позабочусь о том, чтобы ты поменьше трепал своим языком.
-		AI_Output(self,other,"DIA_Lutero_TaliasanLetter_No_01_04");	//А теперь проваливай! У меня нет для тебя больше работы.
+		AI_Output(self,other, " DIA_Lutero_TaliasanLetter_No_01_03 " );	// (annoyed) Otherwise, I'll make sure you talk less with your tongue.
+		AI_Output(self,other, " DIA_Lutero_TaliasanLetter_No_01_04 " );	// Now get out! I don't have any more work for you.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -322,30 +323,30 @@ func void dia_lutero_taliasanletter_no()
 func void dia_lutero_taliasanletter_ok()
 {
 	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_Ok_01_00");	//Да, вполне.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_Ok_01_01");	//Вот и отлично! Возвращайся ко мне, когда у тебя будет моя расписка.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_Ok_01_02");	//А я тем временем напишу письмо, что так интересует... тебя.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_Ok_01_01 " );	// That's great! Come back to me when you have my receipt.
+	AI_Output(self,other, " DIA_Lutero_TaliasanLetter_Ok_01_02 " );	// In the meantime, I'll write a letter that interests... you so much.
 	AI_StopProcessInfos(self);
 	MIS_LUTEROHELP = LOG_Running;
 	Log_CreateTopic(TOPIC_LUTEROHELP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LUTEROHELP,LOG_Running);
-	B_LogEntry(TOPIC_LUTEROHELP,"Чтобы получить рекомендательное письмо для Галлахада от торговца Лютеро, я должен достать ему его долговую расписку, которую он написал ростовщику Лемару.");
+	B_LogEntry( TOPIC_LUTEROHELP , " In order to get a letter of recommendation for Gallahad from merchant Luthero, I have to get him an IOU he wrote to moneylender Lemar. " );
 };
 
 
-instance DIA_LUTERO_BRINGLETTER(C_Info)
+instance DIA_LUTHER_BRINGLETTER (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_bringletter_condition;
 	information = dia_lutero_bringletter_info;
 	permanent = FALSE;
-	description = "Твоя расписка у меня.";
+	description = " I have your receipt. " ;
 };
 
 
 func int dia_lutero_bringletter_condition()
 {
-	if((MIS_TALIASANHELP == LOG_Running) && (MIS_LUTEROHELP == LOG_Running) && (Npc_HasItems(other,itwr_luteroloan) >= 1))
+	if (( MY_TALIASANHELP  == LOG_Running ) && ( MY_LUTEROHELP  == LOG_Running ) && ( Npc_HasItems ( other , itwr_luteroloan ) >=  1 )) .
 	{
 		return TRUE;
 	};
@@ -354,22 +355,22 @@ func int dia_lutero_bringletter_condition()
 func void dia_lutero_bringletter_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Lutero_BringLetter_01_00");	//Твоя расписка у меня.
-	AI_Output(self,other,"DIA_Lutero_BringLetter_01_01");	//(взволнованно) Покажи мне ее.
+	AI_Output(other,self, " DIA_Lutero_BringLetter_01_00 " );	// I have your receipt.
+	AI_Output(self,other, " DIA_Lutero_BringLetter_01_01 " );	// (excitedly) Show it to me.
 	B_GiveInvItems(other,self,itwr_luteroloan,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Lutero_BringLetter_01_02");	//(вне себя от счастья) ДА! Это она! У тебя все получилось!
+	AI_Output(self,other, " DIA_Lutero_BringLetter_01_02 " );	// (overjoyed) YES! That's her! You did it!
 	Npc_RemoveInvItems(self,itwr_luteroloan,1);
-	AI_Output(self,other,"DIA_Lutero_BringLetter_01_03");	//Ты сделал меня счастливым человеком!
-	AI_Output(other,self,"DIA_Lutero_BringLetter_01_04");	//Я рад за тебя. А что насчет нашего уговора? Где мое письмо?
-	AI_Output(self,other,"DIA_Lutero_BringLetter_01_05");	//Конечно, конечно. Не беспокойся, я уже его написал.
-	AI_Output(self,other,"DIA_Lutero_BringLetter_01_06");	//Вот оно. Думаю, тебе понравится.
+	AI_Output(self,other, " DIA_Lutero_BringLetter_01_03 " );	// You made me a happy person!
+	AI_Output(other,self, " DIA_Lutero_BringLetter_01_04 " );	// I'm happy for you. What about our deal? Where is my letter?
+	AI_Output(self,other, " DIA_Lutero_BringLetter_01_05 " );	// Of course, of course. Don't worry, I already wrote it.
+	AI_Output(self,other, " DIA_Lutero_BringLetter_01_06 " );	// Here it is. I think you'll like it.
 	B_GiveInvItems(self,other,itwr_luteroletter,1);
-	AI_Output(other,self,"DIA_Lutero_BringLetter_01_07");	//Отлично. Главное, чтобы оно понравилось не мне, а Галлахаду...
-	AI_Output(self,other,"DIA_Lutero_BringLetter_01_08");	//Я не сомневаюсь, что он будет им доволен.
-	AI_Output(self,other,"DIA_Lutero_BringLetter_01_09");	//Ну, а теперь извини - у меня есть другие дела.
+	AI_Output(other,self, " DIA_Lutero_BringLetter_01_07 " );	// Great. The main thing is that it should be liked not by me, but by Gallahad...
+	AI_Output(self,other, " DIA_Lutero_BringLetter_01_08 " );	// I have no doubt that he will be pleased with it.
+	AI_Output(self,other, " DIA_Lutero_BringLetter_01_09 " );	// Well, now excuse me - I have other things to do.
 	Log_SetTopicStatus(TOPIC_LUTEROHELP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_LUTEROHELP,"Я принес Лютеро его долговую расписку. Взамен он дал мне рекомендательное письмо для Галлахада.");
+	B_LogEntry( TOPIC_LUTEROHELP , " I brought Luther his IOU. In return, he gave me a letter of recommendation for Gallahad. " );
 	MIS_LUTEROHELP = LOG_SUCCESS;
 	AI_StopProcessInfos(self);
 };
@@ -382,7 +383,7 @@ instance DIA_LUTERO_NIGELLETTER(C_Info)
 	condition = dia_lutero_nigelletter_condition;
 	information = dia_lutero_nigelletter_info;
 	permanent = FALSE;
-	description = "У меня письмо для тебя.";
+	description = " I have a letter for you. " ;
 };
 
 
@@ -397,114 +398,114 @@ func int dia_lutero_nigelletter_condition()
 func void dia_lutero_nigelletter_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_01_00");	//У меня письмо для тебя.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_01_01");	//Что за письмо?
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_01_00 " );	// I have a letter for you.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_01_01 " );	// What is the letter?
 	if(Npc_HasItems(other,itwr_nigelletter) >= 1)
 	{
-		AI_Output(other,self,"DIA_Lutero_NigelLetter_01_02");	//От торговца Найджела. Ты, кажется, должен знать его.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_03");	//(удивленно) От старины Найджела?
-		AI_Output(other,self,"DIA_Lutero_NigelLetter_01_04");	//Вот, держи.
+		AI_Output(other,self, " DIA_Lutero_NigelLetter_01_02 " );	// From merchant Nigel. You seem to know him.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_03 " );	// (surprised) From old Nigel?
+		AI_Output(other,self, " DIA_Lutero_NigelLetter_01_04 " );	// Here, take this.
 		B_GiveInvItems(other,self,itwr_nigelletter,1);
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_05");	//(задумчиво) Очень интересно.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_05 " );	// (thoughtfully) Very interesting.
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_06");	//В этом письме он очень хорошо отзывается о твоей персоне и ручается за тебя, как за надежного человека.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_06 " );	// In this letter, he speaks very well of your person and vouches for you as a reliable person.
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_07");	//И еще...(очень удивленно) Просит меня помочь тебе вступить в нашу гильдию торговцев!
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_08");	//Хммм, да. Очень смело с его стороны обратиться ко мне с такой просьбой.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_09");	//Интересно, что же такое ТЫ для него сделал, что заставило его похлопотать за тебя?
-		AI_Output(other,self,"DIA_Lutero_NigelLetter_01_10");	//Как он сам сказал, я спас его репутацию.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_11");	//Теперь мне более или менее понятна причина такой его любезности...(смеется)
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_12");	//Для нас, торговцев, репутация - это одна из самых важных вещей.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_14");	//Если у тебя плохая репутация, никто и никогда не будет вести с тобой никаких дел.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_15");	//Эх, ну да ладно. Значит, Найджел ручается за тебя и просит меня принять тебя в нашу гильдию...(задумчиво)
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_16");	//Ну что же, я не вижу ни одной причины, почему бы мне стоило отказать Найджелу.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_17");	//Но решение в любом случае принимать тебе.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_18");	//Что скажешь? Хочешь попробовать себя в торговле?
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_07 " );	// And one more thing... (very surprised) Asks me to help you join our merchants guild!
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_08 " );	// Hmmm, yes. It's very brave of him to make such a request to me.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_09 " );	// I wonder what did YOU do for him that made him plead for you?
+		AI_Output(other,self, " DIA_Lutero_NigelLetter_01_10 " );	// Like he said himself, I saved his reputation.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_11 " );	// Now I more or less understand the reason for his kindness... (laughs)
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_12 " );	// For us merchants, reputation is one of the most important things.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_14 " );	// If you have a bad reputation, no one will ever do business with you.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_15 " );	// Oh, oh well. So Nigel vouches for you and asks me to accept you into our guild... (thoughtfully)
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_16 " );	// Well, I don't see any reason why I should refuse Nigel.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_17 " );	// But the decision is up to you anyway.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_18 " );	// What do you say? Do you want to try your hand at trading?
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Lutero_NigelLetter_01_19");	//От торговца Эрола. Ты, кажется, должен знать его.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_20");	//(удивленно) От старины Эрола? Покажи-ка мне это письмо.
-		AI_Output(other,self,"DIA_Lutero_NigelLetter_01_21");	//Вот, держи.
+		AI_Output(other,self, " DIA_Lutero_NigelLetter_01_19 " );	// From Merchant Erol. You seem to know him.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_20 " );	// (surprised) From old Erol? Show me this letter.
+		AI_Output(other,self, " DIA_Lutero_NigelLetter_01_21 " );	// Here, take this.
 		B_GiveInvItems(other,self,itwr_erolletter,1);
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_22");	//(задумчиво) Очень интересно.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_22 " );	// (thoughtfully) Very interesting.
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_23");	//В этом письме он очень хорошо отзывается о твоей персоне и ручается за тебя, как за надежного человека.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_23 " );	// In this letter, he speaks very well of your person and vouches for you as a reliable person.
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_24");	//И еще...(очень удивленно) Просит меня помочь тебе вступить в нашу гильдию торговцев!
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_24 " );	// And one more thing... (very surprised) Asks me to help you join our merchants guild!
 		Npc_RemoveInvItems(self,itwr_erolletter,1);
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_25");	//Хммм, да. Очень смело с его стороны обратиться ко мне с такой просьбой.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_26");	//Интересно, что же такое ты для него сделал, что заставило его похлопотать за тебя?
-		AI_Output(other,self,"DIA_Lutero_NigelLetter_01_27");	//Как он сам сказал, я спас его репутацию.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_28");	//Теперь мне более или менее понятна причина такой его любезности...(смеется)
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_29");	//Для нас, торговцев, репутация - это одна из самых важных вещей.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_31");	//Если у тебя плохая репутация, никто и никогда не будет вести с тобой никаких дел.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_32");	//Эх, ну да ладно. Значит, Эрол ручается за тебя и просит меня принять тебя в нашу гильдию...(задумчиво)
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_33");	//Ну что же, я не вижу ни одной причины, почему бы мне стоило отказать ему.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_34");	//Но решение в любом случае принимать тебе.
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_35");	//Что скажешь? Хочешь попробовать себя в торговле?
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_25 " );	// Hmmm, yes. It's very brave of him to make such a request to me.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_26 " );	// I wonder what you did for him that made him flirt for you?
+		AI_Output(other,self, " DIA_Lutero_NigelLetter_01_27 " );	// Like he said himself, I saved his reputation.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_28 " );	// Now I more or less understand the reason for his kindness... (laughs)
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_29 " );	// For us merchants, reputation is one of the most important things.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_31 " );	// If you have a bad reputation, no one will ever do business with you.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_32 " );	// Oh, oh well. So Erol vouches for you and asks me to accept you into our guild... (thoughtfully)
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_33 " );	// Well, I don't see any reason why I should refuse him.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_34 " );	// But the decision is up to you anyway.
+		AI_Output(self,other, " DIA_Lutero_NigelLetter_01_35 " );	// What do you say? Do you want to try your hand at trading?
 	};
 	Info_ClearChoices(dia_lutero_nigelletter);
-	Info_AddChoice(dia_lutero_nigelletter,"Не думаю, что мне это будет интересно.",dia_lutero_nigelletter_no);
-	Info_AddChoice(dia_lutero_nigelletter,"Почему бы и нет.",dia_lutero_nigelletter_yes);
+	Info_AddChoice(dia_lutero_nigelletter, " I don't think I would be interested. " ,dia_lutero_nigelletter_no);
+	Info_AddChoice(dia_lutero_nigelletter, " Why not. " ,dia_lutero_nigelletter_yes);
 };
 
 func void dia_lutero_nigelletter_no()
 {
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_No_01_00");	//Не думаю, что мне это будет интересно.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_No_01_01");	//(разочарованно) Хммм. Ну что же, дело, конечно, твое.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_No_01_02");	//Хотя, думаю, ты делаешь большую ошибку, отказываясь от этой возможности.
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_No_01_00 " );	// I don't think I'll be interested.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_No_01_01 " );	// (disappointed) Hmmm. Well, it's up to you, of course.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_No_01_02 " );	// Though I think you're making a big mistake by refusing this feature.
 	Info_ClearChoices(dia_lutero_nigelletter);
 };
 
 func void dia_lutero_nigelletter_yes()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_Yes_01_00");	//Почему бы и нет.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_01");	//Хорошо. Тогда, добро пожаловать в гильдию торговцев!
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_02");	//Теперь ты один из нас, поздравляю!
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_Yes_01_03");	//Спасибо. И что теперь?
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_04");	//Теперь поговорим о твоих обязанностях в гильдии.
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_Yes_01_05");	//Каковы будут мои обязанности?
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_07");	//Пойми, состоять в нашей гильдии - это не только быть одним из нас. Этот статус еще и накладывает на тебя некоторую ответственность.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_09");	//Правда, от тебя не потребуется ничего сверхъестественного.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_10");	//Просто изредка, время от времени, я буду давать тебе некоторые поручения.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_11");	//И как раз сейчас у меня для тебя есть одно такое.
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_Yes_01_12");	//И что же нужно делать?
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_13");	//Необходимо отнести новый заказ на ферму Бенгара и забрать у него прошлую партию товара.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_14");	//Вот, - возьми это письмо. Тут все написано.
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_Yes_01_00 " );	// Why not.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_01 " );	// Good. Then, welcome to the merchants guild!
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_02 " );	// Now you're one of us, congratulations!
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_Yes_01_03 " );	// Thank you. And now what?
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_04 " );	// Now let's talk about your duties in the guild.
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_Yes_01_05 " );	// What will be my responsibilities?
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_07 " );	// Understand, being in our guild is not just about being one of us. This status also imposes some responsibility on you.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_09 " );	// True, nothing supernatural is required of you.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_10 " );	// Just occasionally, from time to time, I will give you some instructions.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_11 " );	// And just now I have one for you.
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_Yes_01_12 " );	// And what should be done?
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_13 " );	// You need to take a new order to Bengar's farm and pick up the last batch of goods from him.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_14 " );	// Here, take this letter. Everything is written here.
 	B_GiveInvItems(self,other,itwr_bengarorderletter,1);
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_Yes_01_15");	//А Бенгар знает об этом?
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_16");	//Да, он в курсе дел и будет ждать тебя.
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_Yes_01_17");	//Что мне с ним делать, когда я заберу у него товар? Принести его тебе?
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_18");	//Нет. Я этим не занимаюсь.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_19");	//Отнести его торговцу Джоре. Он позаботится обо всем остальном.
-	AI_Output(other,self,"DIA_Lutero_NigelLetter_Yes_01_20");	//Джоре? Торговцу?
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_21");	//Да. Ты найдешь его на торговой площади у восточных ворот.
-	AI_Output(self,other,"DIA_Lutero_NigelLetter_Yes_01_24");	//Когда выполнишь это поручение, возвращайся ко мне. У нас будет что с тобой обсудить.
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_Yes_01_15 " );	// Does Bengar know about this?
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_16 " );	// Yes, he is in the know and will be waiting for you.
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_Yes_01_17 " );	// What should I do with him when I take the goods from him? Bring it to you?
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_18 " );	// No. I do not do that.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_19 " );	// Take it to trader Jora. He will take care of everything else.
+	AI_Output(other,self, " DIA_Lutero_NigelLetter_Yes_01_20 " );	// Jore? Merchant?
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_21 " );	// Yes. You will find him in the market square at the east gate.
+	AI_Output(self,other, " DIA_Lutero_NigelLetter_Yes_01_24 " );	// When you complete this task, return to me. We will have something to discuss with you.
 	Info_ClearChoices(dia_lutero_nigelletter);
 	MEMBERTRADEGUILD = TRUE;
 	MIS_TRADEGUILD = LOG_Running;
 	Log_CreateTopic(TOPIC_TRADEGUILD,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_Running);
-	B_LogEntry(TOPIC_TRADEGUILD,"Торговец Лютеро принял меня в гильдию.");
+	B_LogEntry( TOPIC_TRADEGUILD , " Trader Luthero has accepted me into the guild. " );
 	MIS_BENGARORDER = LOG_Running;
 	Log_CreateTopic(TOPIC_BENGARORDER,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BENGARORDER,LOG_Running);
-	Log_AddEntry(TOPIC_BENGARORDER,"Лютеро дал мне поручение: я должен отнести фермеру Бенгару письмо с новым заказом на продовольствие и заодно забрать у него прошлую партию товара. После этого его необходимо будет доставить Джоре, торговцу на рыночной площади.");
+	Log_AddEntry( TOPIC_BENGARORDER , " Luthero has given me an assignment: I must take a letter with a new food order to Farmer Bengar and at the same time take the last batch of goods from him. After that, it will need to be delivered to Jora, a merchant in the market place. " );
 };
 
 
-instance DIA_LUTERO_BENGARPACKETOPEN(C_Info)
+instance DIA_LUTERO_BENGARPACKETOPEN (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_bengarpacketopen_condition;
 	information = dia_lutero_bengarpacketopen_info;
 	permanent = FALSE;
-	description = "У меня тут возникла одна проблемка.";
+	description = " I have a problem here. " ;
 };
 
 
@@ -518,20 +519,20 @@ func int dia_lutero_bengarpacketopen_condition()
 
 func void dia_lutero_bengarpacketopen_info()
 {
-	AI_Output(other,self,"DIA_Lutero_BengarPacketOpen_01_00");	//У меня тут возникла одна проблема.
-	AI_Output(self,other,"DIA_Lutero_BengarPacketOpen_01_01");	//Что случилось?
-	AI_Output(other,self,"DIA_Lutero_BengarPacketOpen_01_02");	//Ну... я не смог доставить товар торговцу Джоре.
+	AI_Output(other,self, " DIA_Lutero_BengarPacketOpen_01_00 " );	// I have a problem here.
+	AI_Output(self,other, " DIA_Lutero_BengarPacketOpen_01_01 " );	// What happened?
+	AI_Output(other,self, " DIA_Lutero_BengarPacketOpen_01_02 " );	// Well... I couldn't deliver the goods to Trader Jora.
 	AI_Output(self,other,"DIA_Lutero_BengarPacketOpen_01_03");	//Но почему?
-	AI_Output(other,self,"DIA_Lutero_BengarPacketOpen_01_04");	//Я потерял посылку Бенгара.
-	AI_Output(self,other,"DIA_Lutero_BengarPacketOpen_01_05");	//Как ты сумел это сделать? (с досадой) Черт!
-	AI_Output(other,self,"DIA_Lutero_BengarPacketOpen_01_06");	//Так получилось.
-	AI_Output(self,other,"DIA_Lutero_BengarPacketOpen_01_07");	//Не стоило тебе поручать это дело. (зло) Ты меня сильно подвел, а еще больше разочаровал!
-	AI_Output(other,self,"DIA_Lutero_BengarPacketOpen_01_08");	//Мне очень жаль...
-	AI_Output(self,other,"DIA_Lutero_BengarPacketOpen_01_09");	//Мне не нужны твои извинения! И вообще, теперь можешь забыть обо всем том, что я тебе обещал!
-	AI_Output(other,self,"DIA_Lutero_BengarPacketOpen_01_10");	//То есть как?! Хочешь сказать, что я больше не состою в гильдии?
-	AI_Output(self,other,"DIA_Lutero_BengarPacketOpen_01_11");	//Да. Таким людям, как ты, не место среди нас! Уходи!
+	AI_Output(other,self, " DIA_Lutero_BengarPacketOpen_01_04 " );	// I lost Bengar's package.
+	AI_Output(self,other, " DIA_Lutero_BengarPacketOpen_01_05 " );	// How did you manage to do this? (angrily) Damn!
+	AI_Output(other,self, " DIA_Lutero_BengarPacketOpen_01_06 " );	// So it happened.
+	AI_Output(self,other, " DIA_Lutero_BengarPacketOpen_01_07 " );	// You shouldn't have been assigned this task. (angrily) You let me down, and disappointed me even more!
+	AI_Output(other,self, " DIA_Lutero_BengarPacketOpen_01_08 " );	// I'm sorry...
+	AI_Output(self,other, " DIA_Lutero_BengarPacketOpen_01_09 " );	// I don't need your apologies! And in general, now you can forget about everything that I promised you!
+	AI_Output(other,self, " DIA_Lutero_BengarPacketOpen_01_10 " );	// So how?! Are you saying I'm no longer in the guild?
+	AI_Output(self,other, " DIA_Lutero_BengarPacketOpen_01_11 " );	// Yes. People like you have no place among us! Leave!
 	AI_Output(other,self,"DIA_Lutero_BengarPacketOpen_01_12");	//Но я...
-	AI_Output(self,other,"DIA_Lutero_BengarPacketOpen_01_13");	//(перебивая) Проваливай! И не смей больше обращаться ко мне!
+	AI_Output(self,other, " DIA_Lutero_BengarPacketOpen_01_13 " );	// (interrupting) Get out! And don't you dare contact me!
 	AI_StopProcessInfos(self);
 	MIS_TRADEGUILD = LOG_FAILED;
 	LUTEROPISSOFF = TRUE;
@@ -567,14 +568,14 @@ func void dia_lutero_fuckoff_info()
 };
 
 
-instance DIA_LUTERO_JORAHELP(C_Info)
+instance DIA_LUTHER_HELP (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 10;
 	condition = dia_lutero_jorahelp_condition;
-	information = dia_lutero_jorahelp_info;
+	information = dia_lutheran_jorahelp_info;
 	permanent = FALSE;
-	description = "У тебя есть еще для меня поручения?";
+	description = " Do you have any more errands for me? " ;
 };
 
 
@@ -586,38 +587,38 @@ func int dia_lutero_jorahelp_condition()
 	};
 };
 
-func void dia_lutero_jorahelp_info()
+func void dia_luther_jorahelp_info()
 {
-	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_00");	//У тебя есть еще поручения для меня?
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_01");	//У Джоры возникли проблемы с торговцем Зурисом.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_02");	//Он не входит в нашу гильдию, но это не означает, что с его мнением нельзя не считаться.
-	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_03");	//Я знаю Зуриса. Судя по всему, он достаточно влиятельный торговец в этом городе. А в чем именно возникла проблема?
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_04");	//Видишь ли, то место, на котором торгует Джора, принадлежит Зурису. Он просто сдает его Джоре за определенную месячную плату.
-	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_05");	//И что с этим не так?
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_06");	//Недавно Зурис отказал Джоре в продлении аренды, сказав, что у него появилось более выгодное предложение от другого торговца.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_07");	//Это место достаточно доходно, и потерять его не в наших интересах.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_08");	//Поэтому я прошу тебя заняться этим вопросом и постараться как можно скорее его уладить.
-	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_09");	//А почему именно я?
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_10");	//Потому что Зурис пока не знает, что ты состоишь в нашей гильдии. Иначе бы он даже не стал тебя слушать.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_11");	//У него в последнее время не очень-то хорошие отношения с нами. И это еще мягко говоря.
+	AI_Output(other,self, " DIA_Lutero_JoraHelp_01_00 " );	// Do you have any more errands for me?
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_01 " );	// Jora is having trouble with the trader Zuris.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_02 " );	// He's not in our guild, but that doesn't mean his opinion can't be ignored.
+	AI_Output(other,self, " DIA_Lutero_JoraHelp_01_03 " );	// I know Zuris. Apparently, he is quite an influential merchant in this city. What exactly was the problem?
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_04 " );	// You see, the place where Jora trades belongs to Zuris. He just rents it to Jora for a certain monthly fee.
+	AI_Output(other,self, " DIA_Lutero_JoraHelp_01_05 " );	// And what's wrong with that?
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_06 " );	// Zuris recently turned down Jora's lease renewal, saying he had a better offer from another merchant.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_07 " );	// This place is profitable enough, and losing it is not in our interests.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_08 " );	// Therefore, I ask you to look into this issue and try to resolve it as soon as possible.
+	AI_Output(other,self, " DIA_Lutero_JoraHelp_01_09 " );	// Why me?
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_10 " );	// Because Zuris doesn't know you're in our guild yet. Otherwise he wouldn't even listen to you.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_11 " );	// He hasn't been on very good terms with us lately. And that's putting it mildly.
 	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_12");	//Почему?
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_13");	//Причиной стали некоторые мои разногласия с Зурисом, после чего он, кажется, стал иметь на нас зуб.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_14");	//Поэтому мне бы очень не хотелось, чтобы Зурис думал, что гильдия крайне заинтересована в разрешении этой проблемы.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_15");	//Поскольку, узнав об этом, он может сыграть на наших потребностях и, естественно, не в нашу пользу.
-	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_16");	//Хорошо. Но каким образом я должен это сделать?
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_17");	//Ну...(задумчиво) Даже не знаю, что тебе посоветовать.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_18");	//Попробуй для начала просто поговорить с ним. Возможно, тебе удастся нащупать ниточки, за которые впоследствии можно будет дернуть.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_19");	//(ехидно) Понимаешь, о чем я?
-	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_20");	//Хммм... И ты думаешь, это поможет?
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_21");	//Возможно. По крайней мере, это даст нам представление о том, как действовать в этой ситуации.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_22");	//Также можешь попробовать его чем-нибудь заинтересовать.
-	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_25");	//Ладно. Постараюсь что-нибудь придумать.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_26");	//Вот именно! И прошу тебя, если тебе что-то удастся выяснить по этому делу - обязательно сообщай это мне. Непременно держи меня в курсе дела.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_28");	//Надеюсь, у тебя все получится.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_13 " );	// The reason was some of my disagreements with Zuris, after which he seems to have a grudge against us.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_14 " );	// So I really don't want Zuris to think that the guild is extremely interested in solving this problem.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_15 " );	// Because, having learned about this, he can play on our needs and, of course, not in our favor.
+	AI_Output(other,self, " DIA_Lutero_JoraHelp_01_16 " );	// Good. But how should I do it?
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_17 " );	// Well... (thoughtfully) I don't even know what to advise you.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_18 " );	// Try just talking to him first. Perhaps you will be able to find some strings that you can later pull.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_19 " );	// (sarcastically) You know what I mean?
+	AI_Output(other,self, " DIA_Lutero_JoraHelp_01_20 " );	// Hmmm... And you think this will help?
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_21 " );	// Possibly. At the very least, it will give us an idea of ​​how to proceed in this situation.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_22 " );	// You can also try to interest him in something.
+	AI_Output(other,self, " DIA_Lutero_JoraHelp_01_25 " );	// Okay. I'll try to come up with something.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_26 " );	// That's it! And I ask you, if you manage to find out something on this case, be sure to let me know. Be sure to keep me posted.
+	AI_Output(self,other, " DIA_Lutero_JoraHelp_01_28 " );	// I hope everything works out for you.
 	MIS_JORAHELP = LOG_Running;
 	Log_CreateTopic(TOPIC_JORAHELP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_JORAHELP,LOG_Running);
-	B_LogEntry(TOPIC_JORAHELP,"Лютеро дал мне очередное поручение - теперь я должен буду помочь Джоре сохранить его место на торговой площади. Зурис, торговец зельями, не захотел продлевать срок аренды для Джоры, объяснив это тем, что нашел более выгодный способ его использования. Лютеро, как и всю гильдию торговцев, такой поворот дел, конечно, не устраивает. Поэтому мне необходимо каким-то образом решить эту проблему. Для начала мне стоит поговорить с самим Зурисом по этому вопросу. Лютеро предупредил меня, что крайне важно не ставить Зуриса в известность о том, что я действую от имени гильдии.");
+	B_LogEntry(TOPIC_JORAHELP,"Luthero gave me another assignment - now I will have to help Jora keep his place in the marketplace. Zuris, the potion merchant, did not want to extend the lease for Jora, explaining that he found a more profitable way to use it. Luthero "Like the rest of the merchants guild, this turn of affairs is of course not satisfactory. Therefore, I need to somehow solve this problem. First, I should talk to Zuris himself on this issue. Luthero warned me that it is extremely important not to put Zuris in notoriety that I am acting on behalf of the guild.");
 };
 
 
@@ -626,9 +627,9 @@ instance DIA_LUTERO_JORAHELPDO(C_Info)
 	npc = VLK_404_Lutero;
 	nr = 10;
 	condition = dia_lutero_jorahelpdo_condition;
-	information = dia_lutero_jorahelpdo_info;
+	information = dia_lutheran_jorahelpdo_info;
 	permanent = TRUE;
-	description = "По поводу аренды Джоры...";
+	description = " Regarding Jora's rent... " ;
 };
 
 
@@ -642,33 +643,33 @@ func int dia_lutero_jorahelpdo_condition()
 
 func void dia_lutero_jorahelpdo_info()
 {
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_00");	//По поводу аренды места Джоры...
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_01");	//Да? У тебя есть новости?
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_00 " );	// About renting Jora's seat...
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_01 " );	// Yes? Do you have any news?
 	if((ZURISPISSOFF == TRUE) || (ZURISFUCKOFF == TRUE))
 	{
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_02");	//Боюсь, у меня плохие новости.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_03");	//ЧТО?! Что именно?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_04");	//Мне не удалось убедить Зуриса переменить свое решение относительно места на площади.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_05");	//(вне себя) Но почему?!
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_02 " );	// I'm afraid I have bad news.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_03 " );	// WHAT?! What exactly?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_04 " );	// I failed to convince Zuris to change his mind about the place in the square.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_05 " );	// (besides himself) But why?!
 		if(ZURISPISSOFF == TRUE)
 		{
-			AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_08");	//Сам не знаю, но теперь Зурис даже и слушать меня не станет, если я вновь решу обсудить с ним эту тему.
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_09");	//Черт! Как это могло случиться?!
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_10");	//Видимо, ты что-нибудь ляпнул несуразное, если Зурис отреагировал таким образом.
+			AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_08 " );	// I don't know myself, but now Zuris won't even listen to me if I decide to discuss this topic with him again.
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_09 " );	// Damn! How could this happen?!
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_10 " );	// Apparently, you blurted out something awkward, if Zuris reacted in this way.
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_11");	//Я случайно проболтался ему, что работаю на тебя.
-			AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_12");	//После этого он даже и слушать меня не стал!
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_13");	//Черт побери! Я же предупреждал тебя, чтобы ты держал свой язык за зубами относительно меня.
-			AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_14");	//Он как-то сам обо всем догадался.
+			AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_11 " );	// I accidentally let him know that I work for you.
+			AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_12 " );	// After that, he didn't even listen to me!
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_13 " );	// Damn it! I warned you to keep your mouth shut about me.
+			AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_14 " );	// He somehow guessed everything himself.
 		};
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_15");	//Эх. Ладно, что уж теперь говорить об этом. Что сделано, то сделано - уже не воротишь...(с досадой)
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_16");	//Теперь Джоре придется искать себе новую работу, а гильдия из-за тебя потеряла прибыльное место.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_17");	//Мне очень жаль.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_18");	//(смеется) Ему, видите ли, очень жаль! (гневно) Головой надо думать, прежде чем открывать свой рот!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_19");	//Не надо было мне посылать тебя к Зурису...(с досадой) Хотя у нас и выбора-то особо не было.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_20");	//Ладно, забудем об этом. Есть дела и поважней.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_15 " );	// Eh. Okay, now what to talk about it. What's done is done - you can't turn it back ... (with annoyance)
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_16 " );	// Now Jora will have to look for a new job, and the guild has lost a profitable job because of you.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_17 " );	// I'm sorry.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_18 " );	// (laughs) He is, you see, very sorry! (angrily) You have to think with your head before you open your mouth!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_19 " );	// I shouldn't have sent you to Zuris... (with annoyance) Although we didn't really have a choice.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_20 " );	// Okay, let's forget about it. There are more important things to do.
 		MIS_JORAHELP = LOG_FAILED;
 		B_LogEntry_Failed(TOPIC_JORAHELP);
 
@@ -679,184 +680,184 @@ func void dia_lutero_jorahelpdo_info()
 	}
 	else if((ZURISTRADEPLACEYES == TRUE) && (ZURISTRADEPLACEMEOK == FALSE) && (ZURISTRADEPLACEYESINFO == FALSE))
 	{
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_21");	//Есть, правда, не знаю - придутся ли они тебе по душе.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_22");	//(взволнованно) А в чем дело?!
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_23");	//Зурис оказался не слишком сговорчивым в этом вопросе.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_24");	//Я случайно проболтался ему, что работаю на тебя.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_25");	//Черт побери! Я же предупреждал тебя, чтобы ты держал свой язык за зубами относительно меня.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_26");	//Он как-то сам обо всем догадался.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_29");	//И единственное, что мне пришло в голову на тот момент - это предложить ему продать мне место Джоры.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_30");	//Продать? (удивленно) Насколько я знаю, Зурис никогда бы не пошел на такую сделку.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_31");	//Как это ни странно, но он согласился.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_32");	//Правда при этом поставил достаточно жесткие условия - за это место он хочет получить никак не меньше десяти тысяч золотых!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_33");	//ЧТО?! (чуть не подавился) ДЕСЯТЬ ТЫСЯЧ?! Да он с ума сошел!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_34");	//(нервно) И что, ты согласился с этими условиями?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_35");	//А что мне оставалось делать - у меня не было выбора.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_36");	//Безумец! Да это же целое состояние - даже у меня нет таких денег!
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_37");	//В любом случае другого варианта нет. Так что если мы хотим сохранить место Джоры, придется раскошелиться.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_38");	//М-да...(приходя в себя) Просто нет слов - отличные новости! Лучше просто и не придумаешь.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_39");	//Я не понимаю, а разве гильдии такая сделка не по карману?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_40");	//Гильдия не в состоянии заплатить ему такую сумму.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_45");	//К тому же, даже если учесть все выгоды и плюсы места Джоры, оно не стоит таких денег.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_46");	//В лучшем случае, ее максимальная цена - это половина того, на что ты согласился...(гневно)
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_47");	//И что же теперь делать?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_49");	//Максимум, что может гильдия выделить на эту сделку - это две с половиной тысячи золотых.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_51");	//А остальное, мой друг, тебе придется оплатить самому!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_52");	//В конце концов, это ведь ты у нас гений переговоров и заключения таких выгодных сделок...(ехидно)
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_55");	//Тебя за язык никто не тянул - сам принимал решение, сам и отвечай за него.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_57");	//И, естественно, я очень надеюсь, что тебе все-таки удастся уладить этот вопрос.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_58");	//Потому что если ты снова подведешь нас и сделка не состоится, то...
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_60");	//...то Зурис раструбит об этом по всему городу.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_62");	//А это запятнает в глазах людей нашу репутацию честных торговцев, которые держат свое слово!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_63");	//Люди перестанут нам доверять - в том числе и мне! А для торговца, как ты понимаешь, репутация и доверие людей - это все!!!
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_64");	//И ты думаешь, что Зурис пойдет на такое?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_65");	//Зная Зуриса и его отношение к нам - думаю, да. Так что постарайся в этот раз не наломать дров - от этого, кстати, зависит и твое место в гильдии.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_66");	//Поэтому решить эту проблему и в твоих интересах тоже!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_67");	//А теперь хватит пустой болтовни - не теряй времени и займись поиском денег. Как ты их достанешь - меня не интересует!
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_68");	//А что насчет обещанных денег от гильдии?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_69");	//Сначала достань свою часть, а потом мы поговорим и о доле гильдии в этом вопросе.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_70");	//Хорошо. Я постараюсь сделать все, что смогу.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_71");	//(ехидно) Надеюсь на это.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_21 " );	// Yes, but I don't know if you'll like them.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_22 " );	// (excitedly) What's the matter?!
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_23 " );	// Zuris was not very accommodating in this matter.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_24 " );	// I accidentally let him know that I work for you.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_25 " );	// Damn it! I warned you to keep your mouth shut about me.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_26 " );	// He somehow guessed everything himself.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_29 " );	// And the only thing that came to my mind at that moment was to offer him to sell me Jora's place.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_30 " );	// Sell? (surprised) As far as I know, Zuris would never make such a deal.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_31 " );	// Oddly enough, he agreed.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_32 " );	// However, at the same time, he set rather tough conditions - for this place he wants to receive no less than ten thousand gold!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_33 " );	// WHAT?! (almost choked) TEN THOUSAND?! Yes, he's crazy!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_34 " );	// (nervously) And what, you agreed to these terms?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_35 " );	// And what I had to do - I had no choice.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_36 " );	// Crazy! Yes, this is a fortune - even I do not have that kind of money!
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_37 " );	// In any case, there is no other option. So if we want to keep Jora's place, we'll have to fork out.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_38 " );	// M-yes... (recovering) Just no words - great news! It's better to just not imagine.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_39 " );	// I don't get it, can't the guilds afford this deal?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_40 " );	// The guild is unable to pay him that amount.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_45 " );	// Plus, even with all the perks and perks of Jora's place, it's not worth the money.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_46 " );	// At best, her max price is half of what you agreed to...(angrily)
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_47 " );	// And what do we do now?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_49 " );	// The maximum that the guild can allocate for this deal is two and a half thousand gold.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_51 " );	// And the rest, my friend, you have to pay for yourself!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_52 " );	// In the end, it's you who are the genius of negotiations and conclusion of such lucrative deals... (sarcastically)
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_55 " );	// No one pulled you by the tongue - he made the decision himself, and you yourself answer for it.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_57 " );	// And, of course, I really hope that you still manage to resolve this issue.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_58 " );	// Because if you fail us again and the deal doesn't go through, then...
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_60 " );	// ...then Zuris will trumpet it throughout the city.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_62 " );	// And this will tarnish our reputation as honest traders who keep their word in the eyes of the people!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_63 " );	// People will stop trusting us - including me! And for a trader, as you understand, the reputation and trust of people is everything!!!
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_64 " );	// And you think Zuris would do that?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_65 " );	// Knowing Zuris and his attitude towards us - I think so. So try not to mess things up this time - by the way, your place in the guild also depends on this.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_66 " );	// So it's in your best interest to solve this problem too!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_67 " );	// And now enough empty talk - do not waste time and start looking for money. How you get them - I'm not interested!
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_68 " );	// What about the promised money from the guild?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_69 " );	// First, get your share, and then we'll talk about the guild's share in this matter.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_70 " );	// Good. I will try to do my best.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_71 " );	// (sarcastically) I hope so.
 		ZURISTRADEPLACEYESINFO = TRUE;
-		B_LogEntry(TOPIC_JORAHELP,"Лютеро был разочарован тем, что я согласился на такие неприемлемые для гильдии условия покупки места Джоры. Он сказал, что гильдия готова выделить на это дело лишь две с половиной тысячи золотых. Остальные деньги мне придется доставать самому.");
+		; _ _ _ _ _ _
 	}
 	else if((ZURISTRADEPLACEYESCHIP == TRUE) && (ZURISTRADEPLACEMEOK == FALSE) && (ZURISTRADEPLACEYESCHIPINFO == FALSE))
 	{
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_72");	//Есть, правда, не знаю - придутся ли они тебе по душе.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_73");	//(взволнованно) А в чем дело?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_74");	//Зурис оказался не слишком сговорчивым в этом вопросе.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_75");	//И единственное, что мне пришло в голову на тот момент - это предложить ему продать мне место Джоры.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_76");	//Продать? (удивленно) Хммм, а идея интересная. Скажи, а Зурис понял, что ты входишь в нашу гильдию?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_77");	//Кажется, нет.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_78");	//Это очень хорошо! Тогда, если подумать...(задумчиво) Ведь Зурис не знает, что ты работаешь на меня.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_79");	//А значит, ты безо всяких подозрений с его стороны мог вполне заинтересоваться таким раскладом дел с местом Джоры.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_80");	//И главное - твое предложение выглядит вполне естественным.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_83");	//И что же сказал Зурис по этому поводу?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_84");	//Вначале он немного колебался, но потом все-таки поставил свои условия для этой сделки.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_85");	//И каковы они?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_86");	//Он хочет получить пять тысяч золотых монет за место Джоры.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_87");	//Пять тысяч?! Хммм... Сумма, конечно, немалая, но на меньше в этом случае, я думаю, рассчитывать не приходится.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_88");	//И что же теперь?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_89");	//Теперь...(задумался) Теперь нужно достать деньги - вот и все.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_90");	//Со своей стороны гильдия готова выделить на это дело две с половиной тысячи золотых.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_91");	//Это ровно половина того, что хочет Зурис.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_92");	//А что с остальными?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_93");	//А остальные деньги тебе придется достать как-то самому.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_104");	//Хммм... Ну хорошо. А что насчет обещанных денег от гильдии?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_105");	//Сначала достань свою часть, а потом мы поговорим и о доле гильдии в этом вопросе.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_106");	//Хорошо. Я постараюсь сделать все, что смогу.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_107");	//(ехидно) Надеюсь на это.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_72 " );	// Yes, but I don't know if you'll like them.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_73 " );	// (excitedly) What's the matter?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_74 " );	// Zuris was not very accommodating in this matter.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_75 " );	// And the only thing that came to my mind at that moment was to offer him to sell me Jora's place.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_76 " );	// Sell? (surprised) Hmmm, interesting idea. Tell me, did Zuris understand that you are a member of our guild?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_77 " );	// Doesn't seem to.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_78 " );	// This is very good! Then, if you think about it... (thoughtfully) Because Zuris doesn't know that you work for me.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_79 " );	// So, without any suspicion on his part, you could be quite interested in this alignment of affairs with Jora's place.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_80 " );	// And most importantly - your proposal looks quite natural.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_83 " );	// And what did Zuris say about this?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_84 " );	// At first he hesitated a little, but then he nevertheless set his own conditions for this transaction.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_85 " );	// And what are they?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_86 " );	// He wants five thousand gold coins for Jora's place.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_87 " );	// Five thousand?! Hmmm... The amount, of course, is considerable, but in this case, I think, one should not count on less.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_88 " );	// And now what?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_89 " );	// Now... (thinking) Now you need to get the money - that's all.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_90 " );	// For its part, the guild is ready to allocate two and a half thousand gold for this cause.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_91 " );	// This is exactly half of what Zuris wants.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_92 " );	// What about the rest?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_93 " );	// And you will have to get the rest of the money somehow yourself.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_104 " );	// Hmmm... Well, okay. What about the promised money from the guild?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_105 " );	// First, get your share, and then we'll talk about the guild's share in this matter.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_106 " );	// Good. I will try to do my best.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_107 " );	// (sarcastically) I hope so.
 		ZURISTRADEPLACEYESCHIPINFO = TRUE;
-		B_LogEntry(TOPIC_JORAHELP,"Лютеро был вполне доволен тем, что я смог договориться с Зурисом о покупке места Джоры - причем на достаточно выгодных для гильдии условиях. Он сказал, что гильдия готова выделить на это дело две с половиной тысячи золотых. Остальные деньги мне необходимо достать самому.");
+		B_LogEntry( TOPIC_JORAHELP , " Luthero was quite pleased that I was able to negotiate with Zuris to buy Jora's place - and on quite favorable terms for the guild. He said that the guild was ready to allocate two and a half thousand gold for this business. I need the rest of the money get it yourself. " );
 	}
 	else if((ZURISISDEAD == TRUE) && (Npc_HasItems(other,itwr_zurisdocs) >= 1))
 	{
 		B_GivePlayerXP(100);
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_108");	//Есть, правда, не знаю - придутся ли они тебе по душе.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_109");	//(взволнованно) А в чем дело?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_110");	//Мне не удалось убедить Зуриса переменить свое решение насчет Джоры.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_111");	//Поэтому я предпринял кое-какие действия и уладил эту проблему другим способом.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_112");	//То есть? На что ты намекаешь?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_113");	//Я просто убил его.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_117");	//О, Иннос! Ты что, с ума сошел?!
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_118");	//А что мне оставалось делать? У меня не было выбора.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_119");	//(дрожащим голосом) Неужели в этом была такая необходимость?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_121");	//В его кармане я обнаружил вот эти документы. Думаю, тебе будет интересно на них взглянуть.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_122");	//(дрожащим голосом) Какие еще документы?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_123");	//Вот, сам посмотри.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_108 " );	// Yes, but I don't know if you'll like them.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_109 " );	// (excitedly) What's the matter?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_110 " );	// I failed to convince Zuris to change his mind about Jora.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_111 " );	// So I took some action and fixed this problem in a different way.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_112 " );	// That is? What you're suggesting?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_113 " );	// I just killed him.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_117 " );	// Oh, Innos! Are you crazy?!
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_118 " );	// What should I do? I had no choice.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_119 " );	// (voice trembling) Was it really necessary?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_121 " );	// In his pocket, I found these documents. I think you'll be interested in seeing them.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_122 " );	// (voice trembling) What other documents?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_123 " );	// Here, see for yourself.
 		B_GiveInvItems(other,self,itwr_zurisdocs,1);
 		Npc_RemoveInvItems(self,itwr_zurisdocs,1);
 		B_UseFakeScroll();
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_125");	//Ну, что скажешь?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_125 " );	// Well, what do you say?
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_130");	//Хммм...(задумчиво) Однако это не оправдывает твое убийство!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_131");	//Ты должен понимать, что мы - торговцы, а не сборище убийц!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_132");	//Твои действия бросают тень на всю нашу гильдию!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_133");	//Не говоря уже о том, что и всех нас это все выставляют далеко не в лучшем свете.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_134");	//Я просто старался решить эту проблему. Вот и все.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_135");	//Но не такой же ценой!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_137");	//Учти на будущее, что более не стоит решать наши проблемы подобного рода действиями.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_138");	//Иначе можешь считать, что в гильдии ты больше не состоишь!
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_139");	//Это больше не повторится.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_130 " );	// Hmmm...(thoughtfully) That doesn't justify killing you though!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_131 " );	// You must understand that we are merchants, not a bunch of killers!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_132 " );	// Your actions cast a shadow over our entire guild!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_133 " );	// Not to mention the fact that all of us are not shown in the best light.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_134 " );	// I was just trying to solve this problem. That's all.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_135 " );	// But not at the same cost!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_137 " );	// Bear in mind for the future that it's no longer worth solving our problems with this kind of action.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_138 " );	// Otherwise, you may think that you are no longer a member of the guild!
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_139 " );	// This won't happen again.
 		Log_SetTopicStatus(TOPIC_JORAHELP,LOG_SUCCESS);
 		MIS_JORAHELP = LOG_SUCCESS;
-		B_LogEntry(TOPIC_JORAHELP,"Лютеро был крайне возмущен, что я убил Зуриса. Правда, он немного поостыл, когда я ему показал документы на право собственности торгового места на площади, где сейчас еще торгует Джора. И, в конце концов, согласился с тем, что проблема решена - а остальное уже не важно. Однако Лютеро предупредил меня, что в будущем подобные действия могут повлечь за собой мое отчисление из гильдии.");
+		B_LogEntry( TOPIC_JORAHELP , " Luthero was extremely indignant that I killed Zuris. However, he cooled off a little when I showed him the documents on the ownership of the trading place on the square, where Jora still trades now. And, in the end, he agreed, that the problem is solved - and the rest is no longer important. However, Luthero warned me that in the future such actions could entail my expulsion from the guild. " );
 	}
 	else if((ZURISGIVEMETASKOK == FALSE) && (ZURISGIVEMETASK == TRUE) && (ZURISGIVEMETASKINFO == FALSE))
 	{
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_143");	//Зурис рассказал мне о вашем давнем конфликте с ним.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_144");	//Кажется, он считает, что ты остался ему кое-что должен.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_145");	//(удивленно) Должен? О чем это ты?!
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_146");	//Речь тогда шла о зелье, известном как Пламя Элигора.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_147");	//По словам Зуриса, у вас был договор на счет того, что ты достанешь ему этот эликсир.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_148");	//А...(задумчиво) Кажется, я начинаю понимать, о чем ты говоришь.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_149");	//Но ты тогда нарушил условия этого договора, переиграв их в свою пользу.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_150");	//И как мне кажется, в этом и есть причина, почему сейчас у гильдии возникли такие проблемы.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_151");	//Хммм...(задумчиво) А я смотрю, тебе здорово удалось разговорить Зуриса, если он решил упомянуть об этом...
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_152");	//Хотя дело тогда обстояло несколько иначе.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_153");	//И как же именно?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_154");	//Поверь, я никогда не решился бы на изменения условий этой сделки.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_155");	//Для меня понятие чести торговца - не последние слова в этой жизни!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_156");	//Но меня заставили это сделать некоторые обстоятельства и, видимо, о которых Зурис даже наверняка не подозревает.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_157");	//Расскажи мне об этом поподробней.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_158");	//Дело в том, что меня тогда просто обокрали.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_159");	//Кажется, Зурис упоминал об этом в нашем разговоре.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_160");	//Но он сказал, что это произошло уже после того, как ты нарушил ваш договор - подняв цену на это зелье в несколько раз!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_161");	//Он ошибается - все было как раз наоборот!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_163");	//Ограбив меня, те воры прихватили с собой и тот эликсир, что я обещал Зурису.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_165");	//И продавать мне уже было нечего.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_167");	//Я обратился к городской страже, чтобы они помогли мне разыскать этих ворюг.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_168");	//Но, к сожалению, их поиски не увенчались успехом.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_169");	//Поэтому мне не оставалось ничего другого, кроме как попробовать самому найти способ вернуть этот эликсир.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_170");	//И тебе это удалось?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_171");	//Отчасти да. Мне удалось выяснить, кто может стоять за этим ограблением.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_172");	//В конце концов, через своих доверенных людей я вышел на след этих воров и предложил им выкупить у них этот эликсир.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_173");	//Но они, видимо, поняв, насколько для меня ценен этот эликсир, назначили такую сумму за него, что я просто был не в состоянии ее оплатить.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_174");	//В итоге мне ничего не осталось, как пойти к Зурису и предложить ему эти условия возврата эликсира.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_175");	//Я попытался тогда ему объяснить, что иного способа решения этой проблемы нет.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_176");	//И чем все это кончилось?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_177");	//Зурис был вне себя от того, что сделка сорвалась.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_178");	//И слушать меня не захотел - а просто выставил меня за дверь.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_179");	//И с тех пор, как видишь, у нас с ним не очень-то хорошие отношения.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_143 " );	// Zuris told me about your old conflict with him.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_144 " );	// He seems to think you owe him something.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_145 " );	// (surprised) Must? What are you talking about?!
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_146 " );	// It was then about the potion known as Eligor's Flame.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_147 " );	// According to Zuris, you had a contract to get him this elixir.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_148 " );	// Ah...(thoughtfully) I think I'm beginning to understand what you're talking about.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_149 " );	// But then you violated the terms of this agreement, outplaying them in your favor.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_150 " );	// And I think this is the reason why the guild is having such problems now.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_151 " );	// Hmmm... (thoughtfully) And I see, you did a great job of getting Zuris to talk, if he decided to mention it...
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_152 " );	// Although things were a little different back then.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_153 " );	// And how exactly?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_154 " );	// Trust me, I would never change the terms of this deal.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_155 " );	// For me, the concept of the honor of a merchant is not the last words in this life!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_156 " );	// But I was forced to do this by some circumstances and, apparently, of which Zuris is not even aware of it.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_157 " );	// Tell me more about this.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_158 " );	// The fact is that I was just robbed then.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_159 " );	// Zuris seems to have mentioned this in our conversation.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_160 " );	// But he said that this happened after you broke your contract - by raising the price of this potion several times!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_161 " );	// He's wrong - it was just the opposite!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_163 " );	// Having robbed me, those thieves took with them the elixir that I promised Zuris.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_165 " );	// And I had nothing to sell.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_167 " );	// I asked the city guards to help me track down these thieves.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_168 " );	// But, unfortunately, their search was unsuccessful.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_169 " );	// So I had no choice but to try and find a way to get this elixir back.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_170 " );	// Did you succeed?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_171 " );	// Partially yes. I was able to figure out who might be behind this robbery.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_172 " );	// In the end, through my trusted people, I got on the trail of these thieves and offered them to buy this elixir from them.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_173 " );	// But they, apparently, realizing how valuable this elixir is to me, assigned such an amount for it that I simply was not able to pay for it.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_174 " );	// In the end, I had no choice but to go to Zuris and offer him these conditions for returning the elixir.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_175 " );	// I tried to explain to him then that there is no other way to solve this problem.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_176 " );	// And how did it all end?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_177 " );	// Zuris was beside himself with the fact that the deal fell through.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_178 " );	// And he didn't want to listen to me - he just put me out the door.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_179 " );	// And since then, as you can see, we have not been on very good terms with him.
 		Info_ClearChoices(dia_lutero_jorahelpdo);
-		Info_AddChoice(dia_lutero_jorahelpdo,"Думаю, тебе стоит попытаться вновь поговорить с Зурисом...",dia_lutero_jorahelpdo_yes);
-		Info_AddChoice(dia_lutero_jorahelpdo,"Мне кажется Зурис сам виноват.",dia_lutero_jorahelpdo_no);
+		Info_AddChoice(dia_lutero_jorahelpdo, " I think you should try talking to Zuris again... " ,dia_lutero_jorahelpdo_yes);
+		Info_AddChoice(dia_lutero_jorahelpdo, " I think it's Zuris' fault. " ,dia_lutero_jorahelpdo_no);
 	}
 	else if((ZURISGIVEMETASKOK == TRUE) && (ZURISGIVEMETASK == TRUE))
 	{
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_180");	//Конечно.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_181");	//Тогда рассказывай - не тяни.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_182");	//Я достал Зурису тот эликсир, что он просил.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_183");	//Так тебе это удалось? (удивленно) Невероятно!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_185");	//Да, парень - ты не перестаешь меня удивлять!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_187");	//А что насчет места Джоры?
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_188");	//Зурис продлит срок его аренды и даже немного снизит цену за предоставляемую им услугу.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_189");	//Отличная работа! Я знал, что ты справишься с этой проблемой!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_192");	//Прими мою благодарность от меня и всей гильдии в целом.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_193");	//И, естественно, эту небольшую сумму золота, которая положена за твои успехи.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_180 " );	// Of course.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_181 " );	// Then tell me - don't delay.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_182 " );	// I got Zuris the elixir he asked for.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_183 " );	// So did you succeed? (surprised) Unbelievable!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_185 " );	// Yes, boy - you never cease to amaze me!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_187 " );	// What about Jora's place?
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_188 " );	// Zuris will extend his lease and even slightly lower the price for the service he provides.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_189 " );	// Great job! I knew you could handle this problem!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_192 " );	// Please accept my thanks from me and the entire guild.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_193 " );	// And, of course, this small amount of gold, which is due for your success.
 		B_GiveInvItems(self,other,ItMi_Gold,200);
 		if(ZURISGIVEMETASKOKBONUS == TRUE)
 		{
 			B_GivePlayerXP(200);
-			AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_194");	//Спасибо. А можно задать тебе еще один вопрос?
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_195");	//Конечно, задавай.
-			AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_196");	//Зурис сказал мне, что после нашего с тобой разговора ты заходил к нему.
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_197");	//Ну да...(ехидно) Я все-таки решил воспользоваться твоим советом и нанести ему визит.
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_199");	//Хотя поначалу я сомневался в том, что Зурис выслушает меня.
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_200");	//Но все прошло как нельзя удачно.
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_203");	//Теперь мы собираемся совместно организовать одно небольшое дельце, которое сулит совсем неплохой доход.
-			AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_208");	//Вот, прими это кольцо в качестве моей благодарности.
+			AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_194 " );	// Thank you. Can I ask you one more question?
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_195 " );	// Of course, ask.
+			AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_196 " );	// Zuris told me that after our conversation with you, you came to him.
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_197 " );	// Well, yes... (sarcastically) I decided to take your advice and pay him a visit.
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_199 " );	// Although at first I doubted that Zuris would listen to me.
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_200 " );	// But everything went very well.
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_203 " );	// Now we're going to start a little business together that promises a pretty good income.
+			AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_208 " );	// Here, take this ring as my thanks.
 			B_GiveInvItems(self,other,ItRi_Prot_Total_02,1);
 			AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_210");	//Спасибо.
 		}
 		else
 		{
 			B_GivePlayerXP(300);
-			AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_212");	//Большое спасибо.
+			AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_212 " );	// Thank you very much.
 		};
 		Log_SetTopicStatus(TOPIC_JORAHELP,LOG_SUCCESS);
 		MIS_JORAHELP = LOG_SUCCESS;
-		B_LogEntry(TOPIC_JORAHELP,"Лютеро был рад услышать о том, что мне удалось достать эликсир для Зуриса и тем самым уладить проблему с Джорой.");
+		B_LogEntry( TOPIC_JORAHELP , " Luthero was delighted to hear that I was able to get the elixir for Zuris and thus fix the problem with Jora. " );
 		TRADEGUILDREP = TRADEGUILDREP + 1;
 	}
 	else if((ZURISTRADEPLACEMEOK == TRUE) && (Npc_HasItems(other,itwr_zurisdocs) >= 1))
@@ -870,92 +871,92 @@ func void dia_lutero_jorahelpdo_info()
 			B_GivePlayerXP(150);
 		};
 		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_214");	//Да, есть.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_215");	//Тогда рассказывай - не тяни.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_216");	//Я отдал Зурису ту сумму, о которой мы с ним договаривались.
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_217");	//А он дал мне вот эти документы, подтверждающие право собственности на торговое место Джоры.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_215 " );	// Then tell me - don't delay.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_216 " );	// I gave Zuris the amount we agreed on.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_217 " );	// And he gave me these documents to prove the ownership of Jora's trading place.
 		B_GiveInvItems(other,self,itwr_zurisdocs,1);
 		Npc_RemoveInvItems(self,itwr_zurisdocs,1);
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_222");	//Совсем неплохо!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_223");	//Судя по всему, остается только вписать в эти документы имя нового владельца - и вопрос можно считать закрытым.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_224");	//Хотя, конечно, я рассчитывал обойтись в этом деле без таких больших капиталовложений...
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_225");	//Думаю, по-другому навряд ли бы вышло.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_226");	//Ну да ладно - хватит об этом!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_227");	//Главное, что теперь место Джоры принадлежит гильдии и более нет поводов для беспокойства.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_222 " );	// Not bad at all!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_223 " );	// Apparently, it remains only to enter the name of the new owner in these documents - and the issue can be considered closed.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_224 " );	// Although, of course, I expected to do this without such a large investment ...
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_225 " );	// I don't think it would have happened any other way.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_226 " );	// Oh well, enough of that!
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_227 " );	// The main thing is that now Jora's place belongs to the guild and there is no more reason to worry.
 		Log_SetTopicStatus(TOPIC_JORAHELP,LOG_SUCCESS);
 		MIS_JORAHELP = LOG_SUCCESS;
-		B_LogEntry(TOPIC_JORAHELP,"Я отдал Лютеро документы, подтверждающие права гильдии на место Джоры. Этот вопрос можно считать закрытым.");
+		B_LogEntry( TOPIC_JORAHELP , " I have given Luthero the guild's right to take Jora's place. This matter is now closed. " );
 		TRADEGUILDREP = TRADEGUILDREP + 1;
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_229");	//Нет, пока ничего нового.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_230");	//Жаль. Когда что-нибудь выяснишь, поставь меня в известность.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpDo_01_229 " );	// No, nothing new yet.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpDo_01_230 " );	// Sorry. When you find out something, let me know.
 	};
 };
 
 func void dia_lutero_jorahelpdo_yes()
 {
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_Yes_01_00");	//Думаю, тебе стоит попытаться вновь поговорить с Зурисом на эту тему...
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_Yes_01_01");	//(удивленно) И что я ему скажу?
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_Yes_01_02");	//Просто расскажи ему правду! Возможно, это поможет вам наладить хорошие отношения.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_Yes_01_03");	//Хммм...(задумчиво) Я, конечно, уже подумывал об этом.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_Yes_01_07");	//И думаешь, это поможет решить проблему с арендой Джоры?
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_Yes_01_09");	//Я уже договорился с Зурисом насчет решения этой проблемы.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_Yes_01_10");	//Правда? Хммм, неплохо. И на каких условиях?
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_Yes_01_11");	//Если я достану ему тот эликсир, то он пересмотрит свое решение насчет Джоры.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_Yes_01_16");	//Хммм... Значит Зурис все еще хочет заполучить Пламя Элигора.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_Yes_01_17");	//Он знает, что просит.
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_Yes_01_00 " );	// I think you should try talking to Zuris about this again...
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_Yes_01_01 " );	// (surprised) What am I going to tell him?
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_Yes_01_02 " );	// Just tell him the truth! Perhaps this will help you build a good relationship.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_Yes_01_03 " );	// Hmmm...(thoughtfully) Of course, I've already thought about it.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_Yes_01_07 " );	// And you think this will solve Jora's rent problem?
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_Yes_01_09 " );	// I have already agreed with Zuris about solving this problem.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_Yes_01_10 " );	// True? Hmmm, not bad. And on what terms?
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_Yes_01_11 " );	// If I get him that elixir, he'll reconsider his decision about Jora.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_Yes_01_16 " );	// Hmmm... So Zuris still wants to get Eligor's Flame.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_Yes_01_17 " );	// He knows what he's asking.
 	LUTEROAGREEMEETZURIS = TRUE;
 	Info_ClearChoices(dia_lutero_jorahelpdo);
-	Info_AddChoice(dia_lutero_jorahelpdo,"Я как раз собирался тебя расспросить об этом.",dia_lutero_jorahelpdo_eleksirinfo);
+	Info_AddChoice(dia_lutero_jorahelpdo, " I was just about to ask you about this. " ,dia_lutero_jorahelpdo_eleksirinfo);
 };
 
 func void dia_lutero_jorahelpdo_no()
 {
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_No_01_00");	//Мне кажется, Зурис сам виноват.
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_No_01_01");	//Если бы он умел слушать людей, думаю, сейчас бы все было нормально.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_No_01_02");	//Ну да, скорее всего, ты прав.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_No_01_03");	//Хммм...(задумчиво) Хотя я уже последнее время подумывал о том, чтобы попробовать еще раз поговорить с ним.
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_No_01_05");	//Я уже договорился с Зурисом насчет решения этой проблемы.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_No_01_06");	//Правда? Хммм, неплохо. И на каких условиях?
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_No_01_08");	//Если я достану ему тот эликсир, то он пересмотрит свое решение насчет Джоры.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_No_01_09");	//Хммм... Значит Зурис все еще хочет заполучить Пламя Элигора.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_No_01_10");	//Он знает, что просит.
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_No_01_00 " );	// It seems to me that Zuris is to blame.
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_No_01_01 " );	// If he knew how to listen to people, I think everything would be fine now.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_No_01_02 " );	// Well, yes, you're probably right.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_No_01_03 " );	// Hmmm...(thoughtfully) Although I've been thinking about trying to talk to him again lately.
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_No_01_05 " );	// I have already agreed with Zuris about solving this problem.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_No_01_06 " );	// True? Hmmm, not bad. And on what terms?
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_No_01_08 " );	// If I get him that elixir, he'll reconsider his decision about Jora.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_No_01_09 " );	// Hmmm... So Zuris still wants to get Eligor's Flame.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_No_01_10 " );	// He knows what he's asking.
 	Info_ClearChoices(dia_lutero_jorahelpdo);
-	Info_AddChoice(dia_lutero_jorahelpdo,"Я как раз собирался тебя расспросить о эликсире.",dia_lutero_jorahelpdo_eleksirinfo);
+	Info_AddChoice(dia_lutero_jorahelpdo, " I was just about to ask you about the elixir. " ,dia_lutero_jorahelpdo_eleksirinfo);
 };
 
-func void dia_lutero_jorahelpdo_eleksirinfo()
+func void dia_luthero_jorahelpdo_electrinfo()
 {
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_00");	//Я как раз собирался тебя расспросить о эликсире.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_03");	//Я же сказал тебе, что меня обокрали!
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_04");	//Но ты же наверняка предпринимал еще какие-нибудь попытки вернуть себе это зелье?
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_05");	//Что касается эликсира - то после того, как я отказался от условий, выдвинутых мне теми бандитами...
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_06");	//...его след канул в неизвестность вместе с ними же самими.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_07");	//Хотя, правда, есть один момент в этом деле, который, возможно, сможет тебе помочь.
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_08");	//Какой именно?
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_09");	//До меня доходили слухи, что тогда городская стража поймала одного парня, который промышлял воровством здесь в городе.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_10");	//Кажется, он что-то знал про ограбление моего дома. Правда выяснить, что именно - я так толком и не успел.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_12");	//Через пару дней его отправили за барьер в Долину Рудников.
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_14");	//А как звали того парня?
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_15");	//То ли Граймс, то ли Грим - точно уже не помню.
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_16");	//Ясно...(имя кажется знакомым)
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_18");	//Не думаю, что тебе удастся найти его - хотя попытаться, конечно, можно.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_24");	//В любом случае удачи тебе.
-	B_LogEntry(TOPIC_JORAHELP,"Лютеро немногое смог рассказать о судьбе украденного у него эликсира, но вспомнил небольшую деталь, которая может помочь мне его отыскать. Человек по имени то ли Граймс, то ли Грим знал кое-какие интересные подробности об этой краже. Однако его уже очень давно отправили в Долину Рудников за воровство, и о его судьбе ничего не известно. В любом случае эта единственная ниточка, ведущая к потерянному эликсиру Пламя Элигора.");
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_00 " );	// I was just about to ask you about the elixir.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_03 " );	// I told you I was robbed!
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_04 " );	// But you've probably made some other attempts to get this potion back, haven't you?
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_05 " );	// As for the elixir, after I refused the conditions that those bandits put forward to me...
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_06 " );	// ...his trail has sunk into obscurity along with them.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_07 " );	// However, there is one point in this matter that might help you.
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_08 " );	// Which one?
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_09 " );	// I've heard rumors that the city guards caught a guy back then who was stealing here in the city.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_10 " );	// Looks like he knew something about my house being robbed. The truth is to find out what exactly - I really did not have time.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_12 " );	// After a couple of days, he was sent behind the barrier to the Valley of Mines.
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_14 " );	// What was that guy's name?
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_15 " );	// Either Grimes or Grim - I don't remember exactly.
+	AI_Output(other,self, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_16 " );	// I see... (the name seems familiar)
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_18 " );	// I don't think you'll be able to find it - although you can certainly try.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpDo_EleksirInfo_01_24 " );	// In any case, good luck to you.
+	B_LogEntry( TOPIC_JORAHELP , " Luthero had little to say about the fate of the elixir stolen from him, but remembered a small detail that might help me find it. A man named either Grimes or Grim knew some interesting details about this theft. However, his sent to the Valley of Mines for theft a very long time ago, and nothing is known about his fate. In any case, this is the only thread leading to the lost Eligor's Flame elixir. " );
 	ZURISGIVEMETASKINFO = TRUE;
 };
 
 
-instance DIA_LUTERO_JORAHELPGIVEGOLD(C_Info)
+instance DIA_LUTHER_JOURNAL_HELPGIVEGOLD (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_jorahelpgivegold_condition;
 	information = dia_lutero_jorahelpgivegold_info;
 	permanent = TRUE;
-	description = "Насчет денег гильдии...";
+	description = " About the guild money... " ;
 };
 
 
@@ -967,37 +968,37 @@ func int dia_lutero_jorahelpgivegold_condition()
 	};
 };
 
-func void dia_lutero_jorahelpgivegold_info()
+func void dia_luther_jorahelpgivegold_info()
 {
-	AI_Output(other,self,"DIA_Lutero_JoraHelpGiveGold_01_00");	//Насчет денег гильдии...
-	AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_01");	//(удивленно) Каких денег?
-	AI_Output(other,self,"DIA_Lutero_JoraHelpGiveGold_01_02");	//Денег на сделку с Зурисом!
-	AI_Output(other,self,"DIA_Lutero_JoraHelpGiveGold_01_03");	//Кажется, ты говорил, что гильдия готова выделить часть той суммы, которую затребовал Зурис за место Джоры.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_04");	//А! Ты об этом...(задумчиво) Я же сказал тебе, что сначала достань свою часть, а потом мы поговорим.
-	AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_05");	//У тебя есть эти деньги?
+	AI_Output(other,self, " DIA_Lutero_JoraHelpGiveGold_01_00 " );	// About guild money...
+	AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_01 " );	// (surprised) What money?
+	AI_Output(other,self, " DIA_Lutero_JoraHelpGiveGold_01_02 " );	// Money for a deal with Zuris!
+	AI_Output(other,self, " DIA_Lutero_JoraHelpGiveGold_01_03 " );	// I think you said that the guild is willing to share a portion of the amount that Zuris demanded for Jora's place.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_04 " );	// Ah! You're talking about this ... (thoughtfully) I told you that first get your part, and then we'll talk.
+	AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_05 " );	// Do you have this money?
 	if((ZURISTRADEPLACEYESINFO == TRUE) && (Npc_HasItems(other,ItMi_Gold) >= 7500))
 	{
-		AI_Output(other,self,"DIA_Lutero_JoraHelpGiveGold_01_09");	//Вот, смотри - тут ровно семь с половиной тысяч.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_12");	//Хммм...(задумчиво) Хорошо. Ты убедил меня.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_13");	//Держи этот кошелек. Тут ровно две с половиной тысячи золотых монет.
+		AI_Output(other,self, " DIA_Lutero_JoraHelpGiveGold_01_09 " );	// Here, look - there are exactly seven and a half thousand.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_12 " );	// Hmmm... (thoughtfully) Good. You persuaded me.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_13 " );	// Hold this wallet. There are exactly two and a half thousand gold coins.
 		B_GiveInvItems(self,other,itse_lutterobigpocket,1);
-		AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_16");	//И я надеюсь, тебе удастся решить эту проблему.
-		LUTEROJORAHELPGIVEGOLD = TRUE;
+		AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_16 " );	// And I hope you can solve this problem.
+		LUTEROJORAHELPGIVEGOLD = TRUE ;
 	}
 	else if((ZURISTRADEPLACEYESCHIPINFO == TRUE) && (Npc_HasItems(other,ItMi_Gold) >= 2500))
 	{
-		AI_Output(other,self,"DIA_Lutero_JoraHelpGiveGold_01_20");	//Вот, смотри - тут ровно две с половиной тысячи.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_23");	//Хммм...(задумчиво) Хорошо. Ты убедил меня.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_24");	//Держи этот кошелек. Тут ровно столько же, сколько и у тебя в руках!...(неохотно протягивая)
+		AI_Output(other,self, " DIA_Lutero_JoraHelpGiveGold_01_20 " );	// Here, look - there are exactly two and a half thousand.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_23 " );	// Hmmm... (thoughtfully) Good. You persuaded me.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_24 " );	// Hold this wallet. There is exactly the same amount as you have in your hands! ... (reluctantly holding out)
 		B_GiveInvItems(self,other,itse_lutterobigpocket,1);
-		AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_27");	//И я надеюсь, тебе удастся решить эту проблему.
-		LUTEROJORAHELPGIVEGOLD = TRUE;
+		AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_27 " );	// And I hope you can solve this problem.
+		LUTEROJORAHELPGIVEGOLD = TRUE ;
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Lutero_JoraHelpGiveGold_01_28");	//Пока нет.
-		AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_29");	//(раздраженно) Тогда зачем ты тратишь мое время попусту?
-		AI_Output(self,other,"DIA_Lutero_JoraHelpGiveGold_01_32");	//Приходи, когда они у тебя будут, тогда и поговорим.
+		AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_29 " );	// (annoyed) Then why are you wasting my time?
+		AI_Output(self,other, " DIA_Lutero_JoraHelpGiveGold_01_32 " );	// Come when you have them, then we'll talk.
 	};
 };
 
@@ -1024,30 +1025,30 @@ func int dia_lutero_churchdeal_condition()
 func void dia_lutero_churchdeal_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_00");	//Хорошо, что ты пришел! Я ждал тебя.
-	AI_Output(other,self,"DIA_Lutero_ChurchDeal_01_01");	//Я отдал посылку Джоре.
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_02");	//Да, я знаю. Думаю, что я не зря доверил тебе это поручение.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_00 " );	// It's good that you came! I was waiting for you.
+	AI_Output(other,self, " DIA_Lutero_ChurchDeal_01_01 " );	// I gave the package to Jora.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_02 " );	// Yes, I know. I think that I knowingly entrusted you with this assignment.
 	TRADEGUILDREP = TRADEGUILDREP + 1;
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_04");	//И у меня для тебя есть еще одно поручение.
-	AI_Output(other,self,"DIA_Lutero_ChurchDeal_01_10");	//Что нужно делать?
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_11");	//Всего-то навсего надо забрать партию вина из монастыря у мастера Горакса и доставить ее мне. Об остальном я позабочусь сам.
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_12");	//Правда в этом деле могут возникнуть некоторые осложнения.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_04 " );	// And I have one more task for you.
+	AI_Output(other,self, " DIA_Lutero_ChurchDeal_01_10 " );	// What should be done?
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_11 " );	// All you have to do is pick up a shipment of wine from the monastery from Master Gorax and deliver it to me. I'll take care of the rest myself.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_12 " );	// True, there may be some complications in this case.
 	AI_Output(other,self,"DIA_Lutero_ChurchDeal_01_13");	//Какие?
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_14");	//У меня нет четкой договоренности с Гораксом насчет стоимости этой партии вина.
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_15");	//Поэтому тебе придется самому договориться с ним.
-	AI_Output(other,self,"DIA_Lutero_ChurchDeal_01_16");	//То есть, выходит, мне придется с ним торговаться?
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_17");	//Это решать тебе. Ты можешь принять его условия или можешь постараться выбить из него условия получше.
-	AI_Output(other,self,"DIA_Lutero_ChurchDeal_01_18");	//А что я получу с этой сделки?
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_19");	//Твоя награда будет зависеть от того, насколько дешево ты сможешь купить у него это вино.
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_20");	//Я дам тебе пятьсот золотых монет. Этого вполне должно хватить.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_14 " );	// I don't have a clear agreement with Gorax about the cost of this batch of wine.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_15 " );	// So you'll have to negotiate with him yourself.
+	AI_Output(other,self, " DIA_Lutero_ChurchDeal_01_16 " );	// Does that mean I'll have to bargain with him?
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_17 " );	// It's up to you. You can accept his terms or you can try to beat better terms out of him.
+	AI_Output(other,self, " DIA_Lutero_ChurchDeal_01_18 " );	// And what will I get from this deal?
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_19 " );	// Your reward will depend on how cheaply you can buy this wine from him.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_20 " );	// I'll give you five hundred gold coins. This should be enough.
 	B_GiveInvItems(self,other,ItMi_Gold,500);
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_21");	//Однако ты сам понимаешь, что для гильдии куда более выгодно, если не все эти деньги окажутся у него в кармане.
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_23");	//А теперь не теряй времени и отправляйся в монастырь к Гораксу.
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_24");	//А я в свою очередь жду тебя с партией вина и с докладом о совершенной сделке.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_21 " );	// However, you yourself understand that it is much more profitable for the guild if not all this money ends up in his pocket.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_23 " );	// Now, don't waste any time and go to Gorax's monastery.
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_24 " );	// And I, in turn, am waiting for you with a batch of wine and a report on the perfect deal.
 	MIS_CHURCHDEAL = LOG_Running;
 	Log_CreateTopic(TOPIC_CHURCHDEAL,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CHURCHDEAL,LOG_Running);
-	B_LogEntry(TOPIC_CHURCHDEAL,"Мне необходимо отправиться в монастырь к мастеру Гораксу и доставить от него небольшую партию монастырского вина. Лютеро предупредил меня, что цена на это вино не обговорена, поэтому мне предстоит самому договариваться с Гораксом о стоимости покупки. На заключение этой сделки Лютеро выделил мне пятьсот золотых монет. Моя же награда будет зависеть от того, насколько выгодно я смогу заключить сделку.");
+	B_LogEntry( TOPIC_CHURCHDEAL , " I need to go to the monastery to Master Gorax and deliver a small shipment of monastery wine from him. Luthero warned me that the price of this wine was not negotiated, so I have to negotiate with Gorax on the purchase price myself. Luthero concludes this deal gave me five hundred gold coins. My reward will depend on how profitable I can make a deal. " );
 };
 
 
@@ -1058,7 +1059,7 @@ instance DIA_LUTERO_CHURCHDEALDO(C_Info)
 	condition = dia_lutero_churchdealdo_condition;
 	information = dia_lutero_churchdealdo_info;
 	permanent = FALSE;
-	description = "По поводу сделки с Гораксом...";
+	description = " About the deal with Gorax... " ;
 };
 
 
@@ -1073,40 +1074,40 @@ func int dia_lutero_churchdealdo_condition()
 func void dia_lutero_churchdealdo_info()
 {
 	var int bonuswineindex;
-	AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_00");	//По поводу сделки с Гораксом...
-	AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_01");	//Тебе есть, что мне сказать?
+	AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_00 " );	// Regarding the deal with Gorax...
+	AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_01 " );	// Do you have something to tell me?
 
 	if(GORAXSNOTRADEMEWINE == TRUE)
 	{
-		AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_02");	//К сожалению, я не смог договориться о покупке вина.
-		AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_03");	//(вне себя) Как?!
+		AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_02 " );	// Unfortunately, I could not agree on the purchase of wine.
+		AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_03 " );	// (besides himself) How?!
 		if(GORAXSNOTENOUGHTGOLD == TRUE)
 		{
-			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_04");	//Мне не хватило денег на эту сделку!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_05");	//То есть?! (удивленно) Как ты договаривался на ту сумму, которой у тебя нет?!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_06");	//(вне себя) Ты что, совсем идиот?!	
+			AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_04 " );	// I didn't have enough money for this deal!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_05 " );	// That is?! (surprised) How did you negotiate for the amount you don't have?!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_06 " );	// (besides himself) Are you an idiot?!	
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_09");	//Ему не подошли те условия, на которых я был согласен купить у него это вино.
-			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_10");	//А те цены, которые предложил он, были просто абсурдны.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_11");	//Знаешь, я не очень-то склонен верить твоим словам...(гневно)
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_12");	//Я хорошо знаю Горакса! Он никогда бы не предложил те условия, которые бы ставили под сомнения его репутацию честного торговца.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_13");	//Видимо, ты сам настолько перегнул палку, что Гораксу просто ничего не оставалось другого, как отказать тебе.
+			AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_09 " );	// The conditions under which I agreed to buy this wine from him did not suit him.
+			AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_10 " );	// And the prices he offered were simply absurd.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_11 " );	// You know, I'm not very inclined to believe what you say... (angrily)
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_12 " );	// I know Gorax well! He would never offer conditions that would call into question his reputation as an honest trader.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_13 " );	// Apparently, you yourself went too far, that Gorax simply had no choice but to refuse you.
 		};
-		AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_15");	//И теперь нам придется теперь заплатить ему в два раза дороже обычной цены, если мы хотим все-таки получить эту партию вина.
-		AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_16");	//Иначе он просто не станет нас слушать. И все благодаря тебе!...(срываясь на крик)
-		AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_17");	//И что еще хуже, он запросто может продать это вино кому-нибудь другому!
+		AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_15 " );	// And now we'll have to pay him twice the regular price if we want to get this batch of wine after all.
+		AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_16 " );	// Otherwise, he just won't listen to us. And all thanks to you! ... (breaking into a cry)
+		AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_17 " );	// And what's worse, he could easily sell this wine to someone else!
 		if(MIS_JORAHELP == LOG_FAILED)
 		{
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_20");	//(разочаровано) Я так рассчитывал на тебя! Видимо, зря я это делал!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_24");	//Ты совершенно не годишься для подобного рода дел!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_25");	//Своими действиями ты приносишь нашей гильдии лишь одни убытки!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_26");	//Поэтому будет правильнее, если мы в дальнейшем откажемся от твоей помощи!
-			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_27");	//Что это значит?
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_28");	//Это значит, что ты больше не член нашей гильдии!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_29");	//(гневно) Таким людям, как ты, не место среди нас!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_31");	//Проваливай! Нам нечего больше обсуждать.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_20 " );	// (disappointed) I was counting on you! Apparently, in vain I did it!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_24 " );	// You're completely unsuited for this kind of work!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_25 " );	// You're only causing our guild a loss with your actions!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_26 " );	// Therefore, it would be more correct if we refuse your help in the future!
+			AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_27 " );	// What does this mean?
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_28 " );	// That means you're no longer a member of our guild!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_29 " );	// (angrily) People like you don't belong among us!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_31 " );	// Get lost! We have nothing more to discuss.
 			MIS_CHURCHDEAL = LOG_FAILED;
 			Log_SetTopicStatus(TOPIC_CHURCHDEAL,LOG_OBSOLETE);
 			MIS_TRADEGUILD = LOG_FAILED;
@@ -1117,24 +1118,24 @@ func void dia_lutero_churchdealdo_info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_33");	//Видимо я сам виноват - слишком сильно переоценил твои возможности.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_34");	//Надо было поручить это дело кому-нибудь другому!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_35");	//А ты, видимо, еще не готов для таких серьезных дел.
-			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_36");	//Скорее всего, ты прав.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_37");	//Ладно! Забудем об этом. Я лично отправлюсь в монастырь и поговорю с Гораксом.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_39");	//А что касается тебя - то постарайся больше не совершать таких ошибок!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_40");	//Иначе нашему сотрудничеству в скором времени придет конец.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_43");	//Подожди, те деньги, что я дал тебе на эту сделку, остались при тебе. Где они?
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_33 " );	// Apparently it's my own fault - I overestimated your capabilities too much.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_34 " );	// Should've left this job to someone else!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_35 " );	// And you, apparently, are not yet ready for such serious matters.
+			AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_36 " );	// You're probably right.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_37 " );	// Okay! Let's forget about it. I will personally go to the monastery and speak with Gorax.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_39 " );	// And as for you, try not to make such mistakes again!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_40 " );	// Otherwise, our cooperation will soon come to an end.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_43 " );	// Wait, the money I gave you for this deal is still with you. Where are they?
 			MIS_CHURCHDEAL = LOG_FAILED;
 			Log_SetTopicStatus(TOPIC_CHURCHDEAL,LOG_OBSOLETE);
 			if(Npc_HasItems(other,ItMi_Gold) >= 500)
 			{
 				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_44");	//Они у меня.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_45");	//Тогда, чего же ты ждешь - отдавай их обратно! Или ты думал оставить их себе?
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_46");	//Вот, держи.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_45 " );	// Then what are you waiting for - give them back! Or were you thinking about keeping them?
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_46 " );	// Here, take this.
 				B_GiveInvItems(other,self,ItMi_Gold,500);
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_47");	//Ну, хоть деньги не потерял, и то радует.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_48");	//Ладно, давай теперь поговорим о другом.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_47 " );	// Well, at least I didn't lose money, and that makes me happy.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_48 " );	// Okay, now let's talk about something else.
 				if(TRADEGUILDREP > 0)
 				{
 					TRADEGUILDREP = TRADEGUILDREP - 1;
@@ -1142,13 +1143,13 @@ func void dia_lutero_churchdealdo_info()
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_49");	//У меня их нет.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_50");	//Что? (возмущенно) И как это понимать?!
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_52");	//Ты думаешь, что это вот так вот просто сойдет тебе с рук?
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_56");	//Ты можешь более не считать себя членом нашей гильдии!
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_57");	//Таким людям, как ты, не место среди нас!
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_49 " );	// I don't have them.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_50 " );	// What? (indignantly) And how is this to be understood?!
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_52 " );	// You think you can just get away with it like that?
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_56 " );	// You can no longer consider yourself a member of our guild!
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_57 " );	// People like you don't belong among us!
 				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_60");	//Но я...
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_61");	//(перебивая) Проваливай! Нам нечего больше обсуждать!
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_61 " );	// (interrupting) Get out! We have nothing more to discuss!
 				MIS_TRADEGUILD = LOG_FAILED;
 				LUTEROPISSOFF = TRUE;
 				MEMBERTRADEGUILD = FALSE;
@@ -1159,24 +1160,24 @@ func void dia_lutero_churchdealdo_info()
 	};
 	if(GORAXSTRADEMEWINE == TRUE)
 	{
-		AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_63");	//Я договорился с Гораксом о цене на партию вина.
-		AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_64");	//Отлично! (радостно) Это очень хорошие новости!
-		AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_65");	//А где само вино?
-		AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_66");	//У тебя по моим подсчетам должно быть не меньше двадцати пяти бутылок.
+		AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_63 " );	// I agreed with Gorax on the price of a shipment of wine.
+		AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_64 " );	// Great! (joyfully) That's very good news!
+		AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_65 " );	// And where is the wine itself?
+		AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_66 " );	// You should have at least twenty-five bottles by my calculations.
 
 		if(Npc_HasItems(other,ItFo_Wine) >= 25)
 		{
-			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_67");	//Вот они! Все до одной бутылки - в целости и сохранности.
+			AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_67 " );	// Here they are! Every single bottle is safe and sound.
 			B_GiveInvItems(other,self,ItFo_Wine,25);
 			Npc_RemoveInvItems(self,ItFo_Wine,25);
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_68");	//(радостно) Замечательно!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_69");	//Моя интуиция меня не подвела - я знал, что тебе можно доверить это дело.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_70");	//Теперь же давай обговорим подробности этой сделки.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_71");	//За какую цену Горакс согласился продать тебе это вино?
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_68 " );	// (joyfully) Great!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_69 " );	// My intuition did not fail me - I knew that you could be trusted with this matter.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_70 " );	// Now let's discuss the details of this deal.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_71 " );	// For what price did Gorax agree to sell you this wine?
 			TRADEGUILDREP = TRADEGUILDREP + 1;
 			MIS_CHURCHDEAL = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_CHURCHDEAL,LOG_SUCCESS);
-			B_LogEntry(TOPIC_TRADEGUILD,"Я доставил монастырское вино Лютеро.");
+			B_LogEntry( TOPIC_TRADEGUILD , " I delivered the monastery wine to Luthero. " );
 
 			if(GORAXCURRENTPRICE > 500)
 			{
@@ -1186,13 +1187,13 @@ func void dia_lutero_churchdealdo_info()
 				{
 					TRADEGUILDREP = 0;
 				};
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_72");	//К сожалению, мне не хватило тех денег, которые ты мне дал.
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_75");	//В общем, я заплатил ему чуть больше пятиста монет.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_77");	//Ты меня сильно расстроил...
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_78");	//Я думал, что тебе все-таки удастся сбить немного цену на эту партию вина.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_79");	//Ну да ладно! (отмахиваясь)
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_80");	//Главное, что ты выполнил мое поручение. А остальное уже не так и важно.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_81");	//В конце концов, мы всегда сможем отыграться на покупателях...(ехидно)
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_72 " );	// Unfortunately, I didn't have enough money you gave me.
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_75 " );	// All in all, I paid him a little over five hundred coins.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_77 " );	// You really upset me...
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_78 " );	// I thought you might be able to bring down the price of this batch of wine a little.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_79 " );	// Oh well! (waving)
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_80 " );	// The main thing is that you fulfilled my order. And the rest is not so important.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_81 " );	// In the end, we can always recoup the buyers... (snidely)
 			}
 			else if(GORAXCURRENTPRICE == 500)
 			{
@@ -1202,10 +1203,10 @@ func void dia_lutero_churchdealdo_info()
 				{
 					TRADEGUILDREP = 0;
 				};
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_84");	//Я уложился ровно в пятьсот монет.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_87");	//М-да. Ты меня немного расстроил...
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_88");	//Я думал, что тебе все-таки удастся договориться с ним на более выгодных условиях.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_91");	//В конце концов, мы всегда сможем отыграться на покупателях...(ехидно)
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_84 " );	// I hit exactly five hundred coins.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_87 " );	// M-yes. You upset me a little...
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_88 " );	// I thought you'd still be able to negotiate with him on more favorable terms.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_91 " );	// In the end, we can always recoup the buyers... (snidely)
 			}
 			else if(GORAXCURRENTPRICE > 400)
 			{
@@ -1215,45 +1216,45 @@ func void dia_lutero_churchdealdo_info()
 				{
 					TRADEGUILDREP = 0;
 				};
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_94");	//Я отдал ему чуть больше четырехсот монет.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_97");	//(без эмоций) Что же, неплохо.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_98");	//Хотя я думал, что тебе удастся договориться с ним на чуть более выгодных условиях.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_100");	//Главное, что ты выполнил мое поручение. А остальное уже не так и важно.
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_94 " );	// I gave him a little over four hundred coins.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_97 " );	// (no emotion) Well, not bad.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_98 " );	// Though I thought you'd be able to negotiate with him on slightly better terms.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_100 " );	// The main thing is that you fulfilled my order. And the rest is not so important.
 			}
 			else if(GORAXCURRENTPRICE > 300)
 			{
 				B_GivePlayerXP(200);
 				TRADEGUILDREP = TRADEGUILDREP - 1;
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_101");	//Я заплатил Гораксу чуть больше трехсот монет.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_102");	//Ого! Совсем неплохо.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_103");	//И я честно говоря не ожидал от тебя подобных успехов.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_104");	//Что же, прими мои поздравления! (смеется)
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_101 " );	// I paid Gorax a little over three hundred coins.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_102 " );	// Wow! Quite good.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_103 " );	// And I honestly did not expect such success from you.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_104 " );	// Well, congratulations! (laughs)
 			}
 			else if(GORAXCURRENTPRICE > 200)
 			{
 				B_GivePlayerXP(200);
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_105");	//Мы договорились с ним о цене чуть большей, чем двести монет!
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_107");	//Неужели Горакс пошел на это?
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_110");	//Ну что же, могу сказать только одно - отличная работа!
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_105 " );	// We agreed with him on a price slightly more than two hundred coins!
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_107 " );	// Did Gorax go for it?
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_110 " );	// Well, I can only say one thing - great work!
 			}
 			else if(GORAXCURRENTPRICE > 100)
 			{
 				TRADEGUILDREP = TRADEGUILDREP + 1;
 				B_GivePlayerXP(250);
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_111");	//Чуть больше одной сотни монет.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_114");	//Невероятно! (смеется) Поверить не могу, что Горакс принял такие условия!
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_116");	//Как я погляжу, ты умеешь добиваться своего. Молодец!
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_111 " );	// A little over one hundred coins.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_114 " );	// Incredible! (laughs) I can't believe that Gorax accepted such conditions!
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_116 " );	// As I see it, you know how to get your way. Well done!
 			}
 			else if(GORAXCURRENTPRICE > 50)
 			{
 				TRADEGUILDREP = TRADEGUILDREP + 2;
 				B_GivePlayerXP(300);
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_117");	//Все это вино мне обошлось меньше сотни монет!
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_120");	//М-да!...(смеется) Бедный Горакс!
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_121");	//Выходит, ты его развел просто как маленького мальчика! Кто бы мог подумать.
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_122");	//Что-то не так?
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_124");	//До сих пор в голове не укладывается - как у тебя это вышло.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_125");	//Хммм...(задумчиво) Удивил ты меня! Очень сильно удивил!
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_117 " );	// All this wine cost me less than a hundred coins!
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_120 " );	// M-yes!...(laughs) Poor Gorax!
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_121 " );	// It turns out that you just bred him like a little boy! Who would have thought.
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_122 " );	// Is something wrong?
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_124 " );	// It still doesn't fit in my head - how did you do it.
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_125 " );	// Hmmm... (thoughtfully) You surprised me! Very much surprised!
 			}
 			else if(GORAXCURRENTPRICE <= 50)
 			{
@@ -1262,29 +1263,29 @@ func void dia_lutero_churchdealdo_info()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Риторика + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rhetoric + 1 " );
 				};
 
-				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_126");	//Он отдал мне свое вино меньше чем за полсотни монет!
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_127");	//Не понял... Горакс что, занялся благотворительностью?
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_132");	//Видимо, у бедняги совсем крыша поехала, если он согласился на такие условия. (про себя) Да простит меня Иннос за мои слова.
+				AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_126 " );	// He gave me his wine for less than fifty coins!
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_127 " );	// I don't understand... Is Gorax doing charity work?
+				AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_132 " );	// Apparently, the poor fellow is completely crazy if he agreed to such conditions. (to himself) May Innos forgive me for my words.
 			};
 
-			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_134");	//А что насчет моей доли в этом деле?
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_135");	//(ехидно) Твоя доля уже у тебя в кармане.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_136");	//Те деньги, что ты смог выторговать у Горакса, - она самая и есть.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_138");	//А гильдия получила возможность покупать у него вино по более низкой цене.
+			AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_134 " );	// What about my stake in this business?
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_135 " );	// (sarcastically) Your share is already in your pocket.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_136 " );	// The money that you were able to bargain with Gorax - she is the very one.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_138 " );	// And the guild got the opportunity to buy wine from him at a lower price.
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_144");	//У меня их нет.
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_145");	//Что? (возмущенно) И как это понимать?!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_150");	//Ты думаешь, что это вот так вот просто сойдет тебе с рук?
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_154");	//Ты можешь более не считать себя членом нашей гильдии!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_155");	//(гневно) Таким людям, как ты, не место среди нас!
+			AI_Output(other,self, " DIA_Lutero_ChurchDealDo_01_144 " );	// I don't have them.
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_145 " );	// What? (indignantly) And how is this to be understood?!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_150 " );	// You think you can just get away with it like that?
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_154 " );	// You can no longer consider yourself a member of our guild!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_155 " );	// (angrily) People like you don't belong among us!
 			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_158");	//Но я...
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_159");	//(перебивая) Проваливай! Нам нечего больше обсуждать!
+			AI_Output(self,other, " DIA_Lutero_ChurchDealDo_01_159 " );	// (interrupting) Get out! We have nothing more to discuss!
 			MIS_CHURCHDEAL = LOG_FAILED;
 			Log_SetTopicStatus(TOPIC_CHURCHDEAL,LOG_OBSOLETE);
 			MIS_TRADEGUILD = LOG_FAILED;
@@ -1304,7 +1305,7 @@ instance DIA_LUTERO_RARETHINGS(C_Info)
 	condition = dia_lutero_rarethings_condition;
 	information = dia_lutero_rarethings_info;
 	permanent = FALSE;
-	description = "Очередное поручение?";
+	description = " Next task? " ;
 };
 
 
@@ -1318,46 +1319,46 @@ func int dia_lutero_rarethings_condition()
 
 func void dia_lutero_rarethings_info()
 {
-	AI_Output(other,self,"DIA_Lutero_RareThings_01_00");	//Очередное поручение?
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_02");	//Да, мне действительно требуется твоя помощь в одном несложном деле.
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_04");	//Один из моих постоянных покупателей сделал мне заказ на несколько очень редких вещей.
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_05");	//Если быть точным - конкретно на три вещи. И я хочу, чтобы именно ты непосредственно занялся их поиском.
+	AI_Output(other,self, " DIA_Lutero_RareThings_01_00 " );	// Another task?
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_02 " );	// Yes, I really need your help with one simple matter.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_04 " );	// One of my regular customers made me an order for some very rare items.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_05 " );	// To be precise - specifically for three things. And I want you to be the one to look for them directly.
 	AI_Output(other,self,"DIA_Lutero_RareThings_01_06");	//Почему я?
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_07");	//Да потому что ты человек, который нигде и никогда не сидит на одном и том же месте! (смеется)
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_10");	//Для поиска этих вещей как раз такой человек и нужен.
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_11");	//Поскольку найти их будет совсем непросто. Уж поверь мне.
-	AI_Output(other,self,"DIA_Lutero_RareThings_01_12");	//А что ты ищешь?
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_13");	//Речь идет о трех драгоценных статуэтках с изображением Инноса, сделанных из черного нордмарского мрамора!
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_16");	//Могу сказать, что уже сам по себе этот материал ценится достаточно высоко, поскольку достать его невероятно трудно.
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_17");	//А если ему еще придать красивую и изящную форму, например в виде тех же статуэток - то все это уже тянет на целое состояние!
-	AI_Output(other,self,"DIA_Lutero_RareThings_01_18");	//И твой покупатель готов выложить за эти статуэтки большие деньги?
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_19");	//Я бы сказал просто огромные! Поэтому это заказ очень важен для нас.
-	AI_Output(other,self,"DIA_Lutero_RareThings_01_20");	//Я понимаю. И откуда мне стоит начать свои поиски?
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_22");	//Насколько мне известно, несколько лет назад эти статуэтки были отправлены в Миненталь, в качестве оплаты баронам большого груза магической руды.
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_24");	//Видимо, кто-то из баронов был настоящим ценителем искусства, если решил потребовать у короля Робара именно их. (смеется)
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_29");	//Но тогда магическая руда была куда важнее для короля, нежели какие-то дорогие безделушки.
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_30");	//Ведь только с ее помощью его паладины могли хоть как-то сдерживать орды орков.
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_31");	//Поэтому король без колебаний согласился на эти условия...(нерешительно) Ну, я так думаю.
-	AI_Output(other,self,"DIA_Lutero_RareThings_01_32");	//И ты полагаешь, что эти статуэтки до сих пор находятся именно в колонии?
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_33");	//Скорее всего. По крайней мере, со времени падения барьера, никто толком о них ничего и не слышал.
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_35");	//И запомни - меня интересуют исключительно все три статуэтки!
-	AI_Output(self,other,"DIA_Lutero_RareThings_01_37");	//Поэтому возвращайся ко мне только тогда, когда у тебя на руках будут они все.
-	AI_Output(other,self,"DIA_Lutero_RareThings_01_40");	//Я постараюсь сделать все, что в моих силах.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_07 " );	// Yes, because you are a person who never sits in the same place anywhere! (laughs)
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_10 " );	// To search for these things, just such a person is needed.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_11 " );	// Since it won't be easy to find them. Trust me.
+	AI_Output(other,self, " DIA_Lutero_RareThings_01_12 " );	// What are you looking for?
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_13 " );	// We are talking about three precious statuettes with the image of Innos, made of black Nordmar marble!
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_16 " );	// I can say that in itself this material is highly valued, since it is incredibly difficult to get it.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_17 " );	// And if you give it a beautiful and elegant shape, for example, in the form of the same figurines, then all this already pulls on a fortune!
+	AI_Output(other,self, " DIA_Lutero_RareThings_01_18 " );	// And your buyer is ready to pay a lot of money for these figurines?
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_19 " );	// I would say just huge! Therefore, this order is very important to us.
+	AI_Output(other,self, " DIA_Lutero_RareThings_01_20 " );	// I understand. Where should I start my search?
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_22 " );	// As far as I know, a few years ago, these figurines were sent to Minenthal, as payment to the barons for a large shipment of magic ore.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_24 " );	// Apparently, one of the barons was a true connoisseur of art, if he decided to demand them from King Rhobar. (laughs)
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_29 " );	// But back then, magic ore was much more important to the king than some expensive trinkets.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_30 " );	// It was only with her help that his paladins could somehow hold back the hordes of orcs.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_31 " );	// Therefore, the king agreed to these terms without hesitation... (hesitantly) Well, I think so.
+	AI_Output(other,self, " DIA_Lutero_RareThings_01_32 " );	// And you think these figurines are still in the colony?
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_33 " );	// Most likely. At least since the fall of the barrier, no one really heard anything about them.
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_35 " );	// And remember - I'm only interested in all three figurines!
+	AI_Output(self,other, " DIA_Lutero_RareThings_01_37 " );	// So come back to me only when you have all of them in your hands.
+	AI_Output(other,self, " DIA_Lutero_RareThings_01_40 " );	// I'll try my best.
 	MIS_RARETHINGS = LOG_Running;
 	Log_CreateTopic(TOPIC_RARETHINGS,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RARETHINGS,LOG_Running);
-	B_LogEntry(TOPIC_RARETHINGS,"Один из постоянных покупателей Лютеро заказал ему три драгоценных статуэтки Инноса, сделанных из черного мрамора. Лютеро хочет, чтобы я нашел их и принес ему. Известно, что эти статуэтки в свое время были отправлены рудным баронам в уплату долга за богатый груз магической руды. Вероятно, они до сих пор находятся где-то в Долине Рудников. Думаю, начать поиски стоит с помещений замка.");
+	B_LogEntry( TOPIC_RARETHINGS , " One of Luthero's regular customers ordered three precious statuettes of Innos, made of black marble. Luthero wants me to find them and bring them to him. It is known that these statuettes were once sent to the ore barons in payment of a debt for the rich a cargo of magic ore. They are probably still somewhere in the Valley of Mines. I think it’s worth starting the search from the castle premises. " );
 };
 
 
-instance DIA_LUTERO_RARETHINGSDO(C_Info)
+instance DIA_LUTHER_RARETHINGSDO (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_rarethingsdo_condition;
 	information = dia_lutero_rarethingsdo_info;
 	permanent = FALSE;
-	description = "Я принес нордмарские статуэтки.";
+	description = " I've brought figurines from Nordmar. " ;
 };
 
 
@@ -1372,34 +1373,34 @@ func int dia_lutero_rarethingsdo_condition()
 func void dia_lutero_rarethingsdo_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Lutero_RareThingsDo_01_00");	//Я принес нордмарские статуэтки. Как ты и просил!
-	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_01");	//Все три?! Покажи...(недоверчиво)
+	AI_Output(other,self, " DIA_Lutero_RareThingsDo_01_00 " );	// I brought the Nordmar figurines. Just like you asked!
+	AI_Output(self,other, " DIA_Lutero_RareThingsDo_01_01 " );	// All three?! Show me... (incredulously)
 	B_GiveInvItems(other,self,itmi_innosmramorstatue,3);
 	Npc_RemoveInvItems(self,itmi_innosmramorstatue,3);
-	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_03");	//Невероятно! (вне себя) У тебя получилось!
-	AI_Output(other,self,"DIA_Lutero_RareThingsDo_01_04");	//Да, мне удалось сделать это.
-	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_07");	//Ты очень сильно помог мне!
-	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_10");	//Вот, прими от меня этот небольшой подарок. Думаю, тебе он должен понравиться.
+	AI_Output(self,other, " DIA_Lutero_RareThingsDo_01_03 " );	// Incredible! (besides herself) You did it!
+	AI_Output(other,self, " DIA_Lutero_RareThingsDo_01_04 " );	// Yes, I managed to do it.
+	AI_Output(self,other, " DIA_Lutero_RareThingsDo_01_07 " );	// You helped me a lot!
+	AI_Output(self,other, " DIA_Lutero_RareThingsDo_01_10 " );	// Here, take this little gift from me. I think you should like it.
 	B_GiveInvItems(self,other,itpo_megapotionskill,1);
-	AI_Output(other,self,"DIA_Lutero_RareThingsDo_01_11");	//Что это за эликсир?
-	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_12");	//Выпей и узнаешь. По крайней мере, могу заверить тебя точно, что от него ты не умрешь...(смеется)
-	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_13");	//А в придачу еще тысяча золотых. От этого, думаю, ты тоже не откажешься.
+	AI_Output(other,self, " DIA_Lutero_RareThingsDo_01_11 " );	// What is this elixir?
+	AI_Output(self,other, " DIA_Lutero_RareThingsDo_01_12 " );	// Drink and find out. At least I can assure you for sure that you won't die from it... (laughs)
+	AI_Output(self,other, " DIA_Lutero_RareThingsDo_01_13 " );	// And a thousand gold coins to boot. I don't think you can resist this either.
 	B_GiveInvItems(self,other,ItMi_Gold,1000);
 	TRADEGUILDREP = TRADEGUILDREP + 1;
 	MIS_RARETHINGS = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_RARETHINGS,LOG_SUCCESS);
-	B_LogEntry(TOPIC_RARETHINGS,"Лютеро был очень доволен моей работой и щедро отблагодарил меня.");
+	B_LogEntry( TOPIC_RARETHINGS , " Luthero was very pleased with my work and thanked me generously. " );
 };
 
 
-instance DIA_LUTERO_RARETHINGSFAIL(C_Info)
+instance DIA_LUTERO_RARETHINGSFAIL (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_rarethingsfail_condition;
 	information = dia_lutero_rarethingsfail_info;
 	permanent = FALSE;
-	description = "Я не смог найти эти статуэтки.";
+	description = " I couldn't find these figurines. " ;
 };
 
 
@@ -1413,10 +1414,10 @@ func int dia_lutero_rarethingsfail_condition()
 
 func void dia_lutero_rarethingsfail_info()
 {
-	AI_Output(other,self,"DIA_Lutero_RareThingsFail_01_00");	//Я не смог найти эти статуэтки.
-	AI_Output(self,other,"DIA_Lutero_RareThingsFail_01_01");	//Ты в этом уверен?
-	AI_Output(other,self,"DIA_Lutero_RareThingsFail_01_02");	//Теперь их вообще никто не найдет.
-	AI_Output(self,other,"DIA_Lutero_RareThingsFail_01_03");	//Очень жаль. (печально) А я так рассчитывал на эту сделку...
+	AI_Output(other,self, " DIA_Lutero_RareThingsFail_01_00 " );	// I couldn't find these figurines.
+	AI_Output(self,other, " DIA_Lutero_RareThingsFail_01_01 " );	// Are you sure about this?
+	AI_Output(other,self, " DIA_Lutero_RareThingsFail_01_02 " );	// Now no one will find them at all.
+	AI_Output(self,other, " DIA_Lutero_RareThingsFail_01_03 " );	// Very sorry. (sadly) And I was counting on this deal...
 	if(TRADEGUILDREP > 0)
 	{
 		TRADEGUILDREP = TRADEGUILDREP - 1;
@@ -1426,14 +1427,14 @@ func void dia_lutero_rarethingsfail_info()
 };
 
 
-instance DIA_LUTERO_MISSBRENDI(C_Info)
+instances DIA_LUTERO_MISSBRENDI (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_missbrendi_condition;
-	information = dia_lutero_missbrendi_info;
+	information = dia_lutero_missbrandy_info;
 	permanent = FALSE;
-	description = "Есть еще работенка?";
+	description = " Got another job to do? " ;
 };
 
 
@@ -1447,22 +1448,22 @@ func int dia_lutero_missbrendi_condition()
 
 func void dia_lutero_missbrendi_info()
 {
-	AI_Output(other,self,"DIA_Lutero_MissBrendi_01_00");	//Есть еще работа?
-	AI_Output(self,other,"DIA_Lutero_MissBrendi_01_01");	//Работы всегда полно! (смеется) Но меня сейчас больше беспокоит немного другой вопрос.
-	AI_Output(self,other,"DIA_Lutero_MissBrendi_01_03");	//Недавно я отправил одного своего посыльного - парня по имени Бенчел, в таверну 'Мертвая Гарпия'.
-	AI_Output(self,other,"DIA_Lutero_MissBrendi_01_04");	//Он должен был забрать там партию черного бренди, которую для меня подготовил Орлан, хозяин этой таверны.
-	AI_Output(other,self,"DIA_Lutero_MissBrendi_01_07");	//И что с этим не так?
-	AI_Output(self,other,"DIA_Lutero_MissBrendi_01_08");	//Проблема в том, что от Бенчела до сих пор не поступало вообще никаких вестей.
-	AI_Output(self,other,"DIA_Lutero_MissBrendi_01_09");	//Я до сих пор не знаю, где он и где мое бренди.
-	AI_Output(self,other,"DIA_Lutero_MissBrendi_01_14");	//Я уже начинаю беспокоиться - а не приключилось ли с Бенчелом чего-нибудь дурного?
-	AI_Output(other,self,"DIA_Lutero_MissBrendi_01_16");	//А я могу чем-нибудь тебе помочь в этом деле?
-	AI_Output(self,other,"DIA_Lutero_MissBrendi_01_17");	//Конечно можешь. Необходимо как можно скорее отыскать Бенчела и узнать, что случилось.
-	AI_Output(self,other,"DIA_Lutero_MissBrendi_01_18");	//И, естественно, доставить мне это черное бренди в количестве пяти бутылок не позднее завтрашнего полудня.
+	AI_Output(other,self, " DIA_Lutero_MissBrendi_01_00 " );	// Any more work?
+	AI_Output(self,other, " DIA_Lutero_MissBrendi_01_01 " );	// There's always work to do! (laughs) But now I'm more worried about a slightly different question.
+	AI_Output(self,other, " DIA_Lutero_MissBrendi_01_03 " );	// I recently sent one of my messengers, a guy named Benchel, to the 'Dead Harpy' tavern.
+	AI_Output(self,other, " DIA_Lutero_MissBrendi_01_04 " );	// He was supposed to pick up a batch of black brandy there, which Orlan, the owner of this tavern, prepared for me.
+	AI_Output(other,self, " DIA_Lutero_MissBrendi_01_07 " );	// And what's wrong with that?
+	AI_Output(self,other, " DIA_Lutero_MissBrendi_01_08 " );	// Problem is, there hasn't been any word from Benchel yet.
+	AI_Output(self,other, " DIA_Lutero_MissBrendi_01_09 " );	// I still don't know where he is or where my brandy is.
+	AI_Output(self,other, " DIA_Lutero_MissBrendi_01_14 " );	// I'm starting to worry - has something bad happened to Benchel?
+	AI_Output(other,self, " DIA_Lutero_MissBrendi_01_16 " );	// Can I help you with this?
+	AI_Output(self,other, " DIA_Lutero_MissBrendi_01_17 " );	// Of course you can. We need to find Benchel as soon as possible and find out what happened.
+	AI_Output(self,other, " DIA_Lutero_MissBrendi_01_18 " );	// And, of course, deliver five bottles of this black brandy to me no later than tomorrow noon.
 	BLACKBRENDITIMER = Wld_GetDay();
 	MIS_BLACKBRENDI = LOG_Running;
 	Log_CreateTopic(TOPIC_BLACKBRENDI,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BLACKBRENDI,LOG_Running);
-	B_LogEntry(TOPIC_BLACKBRENDI,"Посыльный по имени Бенчел должен был доставить Лютеро пять бутылок дорогого черного бренди, которое подготовил для него Орлан. Но Бенчел куда-то запропастился, и Лютеро очень обеспокоен этим - скоро за ним должен прийти покупатель. Лютеро попросил меня выяснить, что стряслось с Бенчелом и постараться доставить ему пять бутылок этого бренди не позднее завтрашнего полудня.");
+	B_LogEntry( TOPIC_BLACKBRENDI , " A messenger named Benchel was supposed to deliver to Luthero five bottles of expensive black brandy that Orlan prepared for him. But Benchel has gone missing somewhere, and Luthero is very worried about this - a buyer should come for him soon. Luthero asked me to find out what happened to Benchel and try to get him five bottles of this brandy no later than tomorrow afternoon. " );
 	Wld_InsertNpc(vlk_6130_benchel,"NW_BENCHELBANDITS_01");
 	Wld_InsertNpc(bdt_9000_bandit,"NW_BENCHELBANDITS_02");
 	Wld_InsertNpc(bdt_9001_bandit,"NW_BENCHELBANDITS_03");
@@ -1472,14 +1473,14 @@ func void dia_lutero_missbrendi_info()
 };
 
 
-instance DIA_LUTERO_MISSBRENDIDO(C_Info)
+instance DIA_LUTERO_MISSBRENDIDO (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_missbrendido_condition;
 	information = dia_lutero_missbrendido_info;
 	permanent = TRUE;
-	description = "Я насчет Бенчела...";
+	description = " I'm talking about Benchel... " ;
 };
 
 
@@ -1491,75 +1492,75 @@ func int dia_lutero_missbrendido_condition()
 	};
 };
 
-func void dia_lutero_missbrendido_info()
+func void luther_day_missbrendido_info()
 {
-	var int daynow;
+	where int daynow;
 	var int paynow;
 	var int solnow;
 	daynow = Wld_GetDay();
-	AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_00");	//Я насчет Бенчела...
-	AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_01");	//Да? (оживленно) Есть новости?
-	if(Npc_HasItems(hero,itmi_blackbrendi) >= 5)
+	AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_00 " );	// I'm talking about Benchel...
+	AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_01 " );	// Yes? (animated) Any news?
+	if (Npc_HasItems(hero,itmi_blackbrendi) >=  5 )
 	{
 		paynow = paynow + 1;
-		AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_02");	//Для начала вот - твой бренди.
+		AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_02 " );	// For starters, here's your brandy.
 		B_GiveInvItems(other,self,itmi_blackbrendi,5);
 		Npc_RemoveInvItems(self,itmi_blackbrendi,5);
-		AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_03");	//Пять бутылок, как ты и просил.
+		AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_03 " );	// Five bottles, just like you asked.
 		MIS_BLACKBRENDI = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_BLACKBRENDI,LOG_SUCCESS);
 		if((BLACKBRENDITIMER >= daynow) || ((BLACKBRENDITIMER == (daynow - 1)) && Wld_IsTime(0,1,12,0)))
 		{
 			paynow = paynow + 1;
 			TRADEGUILDREP = TRADEGUILDREP + 1;
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_04");	//Отлично - как раз вовремя. Покупатель здесь будет с минуты на минуту.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_05");	//Это будет просто отличнейшая сделка. Ты хорошо потрудился.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_04 " );	// Great - just in time. The buyer will be here any minute.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_05 " );	// This is going to be the best deal ever. You've done well.
 			B_GiveInvItems(self,other,ItMi_Gold,500);
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_06");	//Спасибо. Теперь насчет того, что касается Бенчела...
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_07");	//Да, кстати, где он?
-			B_LogEntry(TOPIC_BLACKBRENDI,"Я принес Лютеро черный бренди в назначенный срок, что очень обрадовало Лютеро.");
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_06 " );	// Thank you. Now, as far as Benchel is concerned...
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_07 " );	// By the way, where is he?
+			B_LogEntry( TOPIC_BLACKBRENDI , " I brought Luthero black brandy at the appointed time, which made Luther very happy. " );
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_08");	//Что ж, это совсем неплохо, конечно. Правда, к сожалению, ты опоздал с его доставкой...(печально)
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_09");	//У меня уже побывал покупатель и я, как ты понимаешь, попал в совсем неловкое положение.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_11");	//И мне придется сделать ему приличную скидку, а иначе этой сделке не бывать.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_13");	//Ты не особо торопился...(задумчиво) Что-нибудь еще?
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_14");	//Теперь насчет того, что касается Бенчела...
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_15");	//Да, кстати, где он?
-			B_LogEntry(TOPIC_BLACKBRENDI,"Я принес Лютеро черный бренди, хоть и с опозданием, чем Лютеро был немного расстроен.");
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_08 " );	// Well, that's not bad at all, of course. True, unfortunately, you were late with its delivery ... (sadly)
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_09 " );	// I already had a buyer and, as you understand, I was in a very awkward position.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_11 " );	// And I'll have to give him a decent discount, otherwise this deal will not happen.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_13 " );	// You're in no hurry...(thoughtfully) Anything else?
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_14 " );	// Now, about Benchel...
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_15 " );	// By the way, where is he?
+			B_LogEntry( TOPIC_BLACKBRENDI , " I brought Luthero black brandy, albeit belatedly, which Luthero was a little upset about. " );
 		};
 		if(BENCHELISDEAD == TRUE)
 		{
 			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_16");	//Он мертв.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_19");	//Кххх... М-да, ты принес совсем плохие новости.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_20");	//Бенчел был непросто моим посыльным - он был моим помощником.
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_22");	//Мне очень жаль.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_24");	//Теперь мне даже и представить трудно, как я буду обходиться без его помощи.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_25");	//Эх, ладно! Теперь уж ничего не поделаешь - придется поискать кого-нибудь другого.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_19 " );	// Khhh... Hmmm, you brought some really bad news.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_20 " );	// Benchel was not just my messenger - he was my assistant.
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_22 " );	// I'm sorry.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_24 " );	// Now it's hard for me to even imagine how I will manage without his help.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_25 " );	// Oh, okay! Now there's nothing to be done - you'll have to look for someone else.
 			paynow = paynow + 1;
-			Log_AddEntry(TOPIC_BLACKBRENDI,"Я также сообщил ему о смерти его посыльного - Бенчела. Теперь Лютеро придется искать себе нового помощника.");
+			Log_AddEntry( TOPIC_BLACKBRENDI , " I also informed him of the death of his messenger, Benchel. Now Luthero will have to look for a new assistant. " );
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_27");	//Парень сейчас накачивает себя пивом в ближайшей таверне.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_28");	//ЧТО?!  Так этот мерзавец прохлаждался все это время, вместо того чтобы выполнять свою работу?!
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_29");	//Ну, пусть только теперь попробует ко мне заявиться - я его поучу уму разуму! (гневно)
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_30");	//Подожди, он не виноват!
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_32");	//Он сделал все, как ты и велел, но...
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_33");	//...когда он уже возвращался к тебе с твоим бренди - неподалеку от города на него напали бандиты.
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_34");	//И он просто чудом смог избежать гибели!
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_35");	//Хммм, правда? (задумчиво) Что же, тогда это несколько меняет суть дела.
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_41");	//Вот-вот. Так что нет ничего плохого в том, если парень немного расслабится и успокоится.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_42");	//Согласен... Я был не прав по отношению к нему.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_43");	//Пусть отдохнет пару дней, ну а после этого вновь примется за работу.
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_44");	//Боюсь, он не вернется.
-			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_46");	//После всего случившегося, Бенчел решил завязать с работой посыльного.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_48");	//М-да, этого я никак не ожидал. Его решение очень сильно огорчило меня.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_50");	//Людей-то много, но только Бенчел был не просто моим посыльным - он был моим помощником.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_51");	//Да и к тому же отлично разбирался в торговле.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_58");	//Эх, ладно! Теперь уж ничего не поделаешь - придется поискать кого-нибудь другого.
-			Log_AddEntry(TOPIC_BLACKBRENDI,"Я также сообщил ему о решении Бенчела оставить эту работу. Теперь Лютеро придется искать себе нового помощника.");
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_27 " );	// The guy is now drugging himself with beer at a nearby tavern.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_28 " );	// WHAT?! So this bastard has been chilling out all this time instead of doing his job?!
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_29 " );	// Well, just now let him try to come to me - I'll teach him the mind of the mind! (angrily)
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_30 " );	// Wait, it's not his fault!
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_32 " );	// He did everything you said, but...
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_33 " );	// ...when he was already returning to you with your brandy - not far from the city he was attacked by bandits.
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_34 " );	// And he miraculously escaped death!
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_35 " );	// Hmmm, really? (thoughtfully) Well, then that changes things a bit.
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_41 " );	// That's it. So there is nothing wrong with the guy relaxing a little and calming down.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_42 " );	// I agree... I was wrong about him.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_43 " );	// Let him rest for a couple of days, and after that he will start working again.
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_44 " );	// I'm afraid he won't come back.
+			AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_46 " );	// After everything that happened, Benchel decided to give up his job as a messenger.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_48 " );	// Hmm, I didn't expect this at all. His decision made me very sad.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_50 " );	// There are a lot of people, but Benchel was not just my messenger - he was my assistant.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_51 " );	// Yes, and besides, he was well versed in trading.
+			AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_58 " );	// Oh, okay! Now there's nothing to be done - you'll have to look for someone else.
+			Log_AddEntry( TOPIC_BLACKBRENDI , " I also informed him of Benchel's decision to leave this job. Now Luthero will have to look for a new assistant. " );
 			paynow = paynow + 2;
 		};
 		solnow = 150 * paynow;
@@ -1567,20 +1568,20 @@ func void dia_lutero_missbrendido_info()
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_59");	//Пока нет.
-		AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_60");	//Очень жаль...(печально) Дай мне знать, если что-то станет известным.
+		AI_Output(other,self, " DIA_Lutero_MissBrendiDo_01_59 " );	// Not yet.
+		AI_Output(self,other, " DIA_Lutero_MissBrendiDo_01_60 " );	// Too bad...(sadly) Let me know if anything comes up.
 	};
 };
 
 
-instance DIA_LUTERO_TRADEHELPER(C_Info)
+instance DIA_LUTERO_TRADEHELPER (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_tradehelper_condition;
 	information = dia_lutero_tradehelper_info;
 	permanent = FALSE;
-	description = "Ты выглядишь совсем озадаченным.";
+	description = " You look quite puzzled. " ;
 };
 
 
@@ -1594,29 +1595,29 @@ func int dia_lutero_tradehelper_condition()
 
 func void dia_lutero_tradehelper_info()
 {
-	AI_Output(other,self,"DIA_Lutero_TradeHelper_01_00");	//Ты выглядишь совсем озадаченным.
-	AI_Output(self,other,"DIA_Lutero_TradeHelper_01_01");	//Да? (задумчиво) Хммм. Хотя, возможно, ты прав.
-	AI_Output(self,other,"DIA_Lutero_TradeHelper_01_03");	//Эх... Теперь, когда Бенчел отказался работать на меня - я один просто не справляюсь с таким объемом работы!
-	AI_Output(self,other,"DIA_Lutero_TradeHelper_01_07");	//Да и где мне искать такого человека, который хотя бы немного разбирался в нашем деле.
-	AI_Output(other,self,"DIA_Lutero_TradeHelper_01_09");	//Может я смогу помочь тебе?
-	AI_Output(self,other,"DIA_Lutero_TradeHelper_01_10");	//Ты? Хммм...(задумчиво) Ну да, ты бы вполне мог помочь мне в этом деле.
-	AI_Output(self,other,"DIA_Lutero_TradeHelper_01_11");	//Постарайся найти замену Бенчелу. И пусть это будет достойная замена.
+	AI_Output(other,self, " DIA_Lutero_TradeHelper_01_00 " );	// You look quite puzzled.
+	AI_Output(self,other, " DIA_Lutero_TradeHelper_01_01 " );	// Yes? (thoughtfully) Hmmm. Although you may be right.
+	AI_Output(self,other, " DIA_Lutero_TradeHelper_01_03 " );	// Eh... Now that Benchel refused to work for me - I just can't handle this amount of work alone!
+	AI_Output(self,other, " DIA_Lutero_TradeHelper_01_07 " );	// And where can I look for such a person who at least a little understood our business.
+	AI_Output(other,self, " DIA_Lutero_TradeHelper_01_09 " );	// Can I help you?
+	AI_Output(self,other, " DIA_Lutero_TradeHelper_01_10 " );	// You? Hmmm... (thoughtfully) Well, yes, you could very well help me in this matter.
+	AI_Output(self,other, " DIA_Lutero_TradeHelper_01_11 " );	// Try to find a replacement for Benchel. And let it be a worthy replacement.
 	MIS_TRADEHELPER = LOG_Running;
 	Log_CreateTopic(TOPIC_TRADEHELPER,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TRADEHELPER,LOG_Running);
-	B_LogEntry(TOPIC_TRADEHELPER,"Лютеро ищет человека, который помог бы ему вести торговые дела. Я должен подыскать для Лютеро подходящего кандидата.");
+	B_LogEntry( TOPIC_TRADEHELPER , " Luthero is looking for someone to help him trade. I must find a suitable candidate for Luthero. " );
 };
 
 var int LuteroDealNow;
 
-instance DIA_LUTERO_TRADEHELPERDONE(C_Info)
+instance DIA_LUTERO_TRADEHELPERDONE (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_tradehelperdone_condition;
 	information = dia_lutero_tradehelperdone_info;
 	permanent = FALSE;
-	description = "Я нашел для тебя человека.";
+	description = " I found someone for you. " ;
 };
 
 func int dia_lutero_tradehelperdone_condition()
@@ -1630,8 +1631,8 @@ func int dia_lutero_tradehelperdone_condition()
 func void dia_lutero_tradehelperdone_info()
 {
 	var C_Npc helperlutero;
-	AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_00");	//Я нашел для тебя человека.
-	AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_01");	//Да? (с интересом) И кто же он?
+	AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_00 " );	// I found a person for you.
+	AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_01 " );	// Yes? (with interest) And who is he?
 
 	if(FINDPERSONONE == TRUE)
 	{
@@ -1643,72 +1644,72 @@ func void dia_lutero_tradehelperdone_info()
 			TRADEGUILDREP = TRADEGUILDREP - 1;
 		};
 
-		MIS_TRADEHELPER = LOG_FAILED;
+		MIS_TRADEHELPER = LOG_FAILED ;
 		B_LogEntry_Failed(TOPIC_TRADEHELPER);
 		helperlutero = Hlp_GetNpc(vlk_6132_gayvern);
-		helperlutero.aivar[AIV_PARTYMEMBER] = FALSE;
+		helperlutero.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		AI_GotoNpc(helperlutero,self);
 		AI_TurnToNPC(helperlutero,self);
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_02");	//Он прямо перед тобой. Познакомься, его зовут Гэйверн.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_03");	//Хммм...(внимательно вглядывается) Ну, хорошо. И что же он умеет делать?
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_04");	//А что он должен уметь?
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_05");	//Ну, для начала он хотя бы должен уметь писать и читать.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_06");	//Или как, по-твоему, он собирается вести учетную книгу закупок или те же платежные ведомости?
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_07");	//Нет, этого он не умеет. Но зато этот парень очень крепкий.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_09");	//Если мне понадобятся обыкновенные грузчики или вышибалы - я найму их в портовом квартале.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_11");	//А мне нужен человек, который хотя бы немного разбирается в торговле!
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_15");	//Этот человек абсолютно не годится для той работы, которую я хотел бы ему поручить.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_16");	//Таким, как он самое место в порту работать чернорабочим, а не обращаться с торговыми бумагами или распоряжаться складом.
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_17");	//Значит, он тебе не подходит?
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_18");	//Нет! Извини меня, но то что ты мне предлагаешь, меня не устраивает.
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_19");	//Может, мне стоит поискать для тебя кого-нибудь еще?
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_20");	//Не стоит. Так что лучше забудь о моей просьбе.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_21");	//Я сам займусь этим вопросом и постараюсь подыскать себе нового помощника.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_02 " );	// He's right in front of you. Meet his name Gavern.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_03 " );	// Hmmm... (looks closely) Well, okay. And what can he do?
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_04 " );	// What should he be able to do?
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_05 " );	// Well, for starters, he should at least be able to write and read.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_06 " );	// Or how do you think he's going to keep a purchasing ledger or payrolls?
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_07 " );	// No, he can't do that. But this guy is very strong.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_09 " );	// If I need ordinary movers or bouncers, I'll hire them in the port area.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_11 " );	// And I need a person who knows at least a little about trading!
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_15 " );	// This man is absolutely unsuited for the job I would like him to do.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_16 " );	// Like him, the best place in the port is to work as a laborer, and not handle trading papers or dispose of a warehouse.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_17 " );	// So it doesn't suit you?
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_18 " );	// No! Excuse me, but what you offer me does not suit me.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_19 " );	// Maybe I should look for someone else for you?
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_20 " );	// Don't. So you better forget about my request.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_21 " );	// I'll take care of this myself and try to find myself a new assistant.
 
-		if((SARAISDEAD == TRUE) || ((SARAFLEE == FALSE) && (Sarah_Ausgeliefert == FALSE)))
+		if (( SARAISDEAD  ==  TRUE ) || (( SARAFLEE  ==  FALSE ) && (Sarah_Ausgeliefert ==  FALSE )))
 		{
-			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_57");	//Для меня будут еще поручения?
-			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_58");	//(задумчиво) В ближайшее время - вряд ли. Так что можешь заняться другими делами.
-			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_59");	//Хорошо, как скажешь.
+			AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_57 " );	// Will there be more errands for me?
+			AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_58 " );	// (thoughtfully) In the near future - hardly. So you can do other things.
+			AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_59 " );	// Okay, whatever you say.
 			NEXTQUESTSARAHTOGUILD = TRUE;
 			MIS_TRADEGUILD = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
 			AI_StopProcessInfos(self);
-			B_StartOtherRoutine(vlk_6132_gayvern,"BackToDrink");
+			B_StartOtherRoutine(vlk_6132_gayvern, " BackToDrink " );
 		}
 		else
 		{
-			if((NEXTQUESTSARAHTOGUILD == FALSE) && (Kapitel >= 4) && ((MIS_TRADEHELPER == LOG_SUCCESS) || (MIS_TRADEHELPER == LOG_FAILED)))
+			if (( NEXTQUESTSARAHTOGUILD  ==  FALSE ) && (Chapter >=  4 ) && (( MY_TRADING_HELPERS  ==  LOG_SUCCESS ) || ( MY_TRADING_HELPERS  ==  LOG_FAILURE )))
 			{
-				if((SARAISDEAD == FALSE) && ((SARAFLEE == TRUE) || (Sarah_Ausgeliefert == TRUE)))
+				if (( SARAISDEAD  ==  FALSE ) && (( SARAFLEE  ==  TRUE ) || (Sarah_Ausgeliefert ==  TRUE )))
 				{
 					LuteroDealNow = TRUE;
-					AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_22");	//А сейчас давай обсудим еще одно важное дело.
+					AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_22 " );	// And now let's discuss one more important matter.
 					Info_ClearChoices(dia_lutero_tradehelperdone);
-					Info_AddChoice(dia_lutero_tradehelperdone,"Хорошо, давай обсудим.",dia_lutero_tradehelperdone_gayvernaway);
+					Info_AddChoice(dia_lutero_tradehelperdone, " Okay, let's talk about it. " ,dia_lutero_tradehelperdone_gayvernaway);
 				}
 				else
 				{
-					AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_57");	//Для меня будут еще поручения?
-					AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_58");	//(задумчиво) В ближайшее время - вряд ли. Можешь заняться другими делами.
-					AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_59");	//Хорошо, как скажешь.
+					AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_57 " );	// Will there be more errands for me?
+					AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_58 " );	// (thoughtfully) In the near future - hardly. You can do other things.
+					AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_59 " );	// Okay, whatever you say.
 					NEXTQUESTSARAHTOGUILD = TRUE;
 					MIS_TRADEGUILD = LOG_SUCCESS;
 					Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
 					AI_StopProcessInfos(self);
-					B_StartOtherRoutine(vlk_6132_gayvern,"BackToDrink");
+					B_StartOtherRoutine(vlk_6132_gayvern, " BackToDrink " );
 				};
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_57");	//Для меня будут еще поручения?
-				AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_58");	//(задумчиво) В ближайшее время - вряд ли. Так что можешь заняться другими делами.
-				AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_59");	//Хорошо, как скажешь.
+				AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_57 " );	// Will there be more errands for me?
+				AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_58 " );	// (thoughtfully) In the near future - hardly. So you can do other things.
+				AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_59 " );	// Okay, whatever you say.
 				NEXTQUESTSARAHTOGUILD = TRUE;
 				MIS_TRADEGUILD = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
 				AI_StopProcessInfos(self);
-				B_StartOtherRoutine(vlk_6132_gayvern,"BackToDrink");
+				B_StartOtherRoutine(vlk_6132_gayvern, " BackToDrink " );
 			};
 		};
 	}
@@ -1719,29 +1720,29 @@ func void dia_lutero_tradehelperdone_info()
 		TRADEGUILDREP = TRADEGUILDREP + 1;
 		MIS_TRADEHELPER = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_TRADEHELPER,LOG_SUCCESS);
-		B_LogEntry(TOPIC_TRADEHELPER,"Лютеро согласился взять к себе в помощники человека, которого я привел к нему, хоть он и не произвел на него особого впечатления.");
+		B_LogEntry( TOPIC_TRADEHELPER , " Luthero agreed to take on the man I brought to him as his assistant, even though he didn't make much of an impression on him. " );
 		helperlutero = Hlp_GetNpc(vlk_6133_maxi);
-		helperlutero.aivar[AIV_PARTYMEMBER] = FALSE;
+		helperlutero.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		AI_GotoNpc(helperlutero,self);
 		AI_TurnToNPC(helperlutero,self);
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_23");	//Вот - он прямо перед тобой. Познакомься, его зовут Макси.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_24");	//Хммм...(внимательно вглядывается) Ну, хорошо. И что же он умеет делать?
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_25");	//Ну, для начала он хотя бы должен уметь писать и читать.
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_26");	//Судя по всему, немного умеет. Парень раньше работал на одного торговца - был у него посыльным и выполнял некоторые мелкие поручения.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_27");	//Хммм...(задумчиво) Что же, для начала неплохо.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_28");	//Хотя, конечно, я рассчитывал на то, что ты найдешь мне человека более сведущего в торговле.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_29");	//Но в конце концов, всему можно научиться, а главное, что он хотя бы с виду не выглядит совсем непроходимым тупицей.
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_30");	//Так значит, он тебе подходит?
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_31");	//Хммм...(задумчиво) Хорошо, я беру его к себе на работу. И надеюсь, я не пожалею о своем решении.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_34");	//Вот, возьми эти деньги в качестве награды за оказанную мне услугу.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_35");	//Думаю, этого вполне должно хватить, чтобы компенсировать твои хлопоты.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_23 " );	// There he is right in front of you. Meet him, his name is Maxi.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_24 " );	// Hmmm... (looks closely) Well, okay. And what can he do?
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_25 " );	// Well, for starters, he should at least be able to write and read.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_26 " );	// Apparently, he knows a little. The guy used to work for one merchant - he was a messenger and carried out some small orders.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_27 " );	// Hmmm...(thoughtfully) Well, that's a good start.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_28 " );	// Although, of course, I was counting on you to find me a person more knowledgeable in trading.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_29 " );	// But in the end, everything can be learned, and the main thing is that at least he does not look like a completely impenetrable dumbass.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_30 " );	// So it suits you?
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_31 " );	// Hmmm... (thoughtfully) Okay, I'm taking him to work with me. And I hope I don't regret my decision.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_34 " );	// Here, take this money as a reward for doing me a favor.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_35 " );	// I think this should be enough to make up for your trouble.
 		B_GiveInvItems(self,other,ItMi_Gold,500);
 
-		if((SARAISDEAD == TRUE) || ((SARAFLEE == FALSE) && (Sarah_Ausgeliefert == FALSE)))
+		if (( SARAISDEAD  ==  TRUE ) || (( SARAFLEE  ==  FALSE ) && (Sarah_Ausgeliefert ==  FALSE )))
 		{
-			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_60");	//Благодарю! Для меня еще будут поручения?
-			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_61");	//Хммм...(задумчиво ) В ближайшее время, навряд ли! Так что, можешь заняться другими делами.
-			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_62");	//Хорошо, как скажешь.
+			AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_60 " );	// Thank you! Will there be more errands for me?
+			AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_61 " );	// Hmmm... (thoughtfully) In the near future, hardly! So you can do other things.
+			AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_62 " );	// Okay, whatever you say.
 			NEXTQUESTSARAHTOGUILD = TRUE;
 			MIS_TRADEGUILD = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
@@ -1750,20 +1751,20 @@ func void dia_lutero_tradehelperdone_info()
 		}
 		else
 		{
-			if((NEXTQUESTSARAHTOGUILD == FALSE) && (Kapitel >= 4) && ((MIS_TRADEHELPER == LOG_SUCCESS) || (MIS_TRADEHELPER == LOG_FAILED)))
+			if (( NEXTQUESTSARAHTOGUILD  ==  FALSE ) && (Chapter >=  4 ) && (( MY_TRADING_HELPERS  ==  LOG_SUCCESS ) || ( MY_TRADING_HELPERS  ==  LOG_FAILURE )))
 			{
-				if((SARAISDEAD == FALSE) && ((SARAFLEE == TRUE) || (Sarah_Ausgeliefert == TRUE)))
+				if (( SARAISDEAD  ==  FALSE ) && (( SARAFLEE  ==  TRUE ) || (Sarah_Ausgeliefert ==  TRUE )))
 				{
 					LuteroDealNow = TRUE;
-					AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_37");	//А теперь давай обсудим еще одно важное дело. Оно не терпит отлагательств!
+					AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_37 " );	// And now let's discuss one more important matter. It can't wait!
 					Info_ClearChoices(dia_lutero_tradehelperdone);
-					Info_AddChoice(dia_lutero_tradehelperdone,"Хорошо, давай обсудим.",dia_lutero_tradehelperdone_maxiaway);
+					Info_AddChoice(dia_lutero_tradehelperdone, " Okay, let's talk about it. " ,dia_lutero_tradehelperdone_maxiaway);
 				}
 				else
 				{
-					AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_60");	//Благодарю. Для меня еще будут поручения?
-					AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_61");	//(задумчиво) В ближайшее время - вряд ли. Так что можешь заняться другими делами.
-					AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_62");	//Хорошо, как скажешь.
+					AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_60 " );	// Thank you. Will there be more errands for me?
+					AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_61 " );	// (thoughtfully) In the near future - hardly. So you can do other things.
+					AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_62 " );	// Okay, whatever you say.
 					NEXTQUESTSARAHTOGUILD = TRUE;
 					MIS_TRADEGUILD = LOG_SUCCESS;
 					Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
@@ -1773,9 +1774,9 @@ func void dia_lutero_tradehelperdone_info()
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_60");	//Благодарю. Для меня еще будут поручения?
-				AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_61");	//(задумчиво) В ближайшее время - вряд ли. Можешь заняться другими делами.
-				AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_62");	//Хорошо, как скажешь.
+				AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_60 " );	// Thank you. Will there be more errands for me?
+				AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_61 " );	// (thoughtfully) In the near future - hardly. You can do other things.
+				AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_62 " );	// Okay, whatever you say.
 				NEXTQUESTSARAHTOGUILD = TRUE;
 				MIS_TRADEGUILD = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
@@ -1791,32 +1792,32 @@ func void dia_lutero_tradehelperdone_info()
 		TRADEGUILDREP = TRADEGUILDREP + 2;
 		MIS_TRADEHELPER = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_TRADEHELPER,LOG_SUCCESS);
-		B_LogEntry(TOPIC_TRADEHELPER,"Лютеро очень понравилась предложенная мной кандидатура на место его помощника.");
+		B_LogEntry( TOPIC_TRADEHELPER , " Luthero was very pleased with my proposal to be his assistant. " );
 		helperlutero = Hlp_GetNpc(vlk_6134_valeran);
-		helperlutero.aivar[AIV_PARTYMEMBER] = FALSE;
+		helperlutero.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		AI_GotoNpc(helperlutero,self);
 		AI_TurnToNPC(helperlutero,self);
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_38");	//Вот - он прямо перед тобой. Познакомься, его зовут Валеран.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_39");	//Валеран? Хммм...(задумчиво) Постой!
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_40");	//Не тот ли это Валеран, который раньше работал у торговца Фернандо?
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_41");	//Тот самый. Теперь, когда Фернандо за решеткой - он ищет себе новую работу.
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_42");	//Вот я и подумал, что его услуги вполне бы могли тебе заинтересовать.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_43");	//Ты поступил очень верно, приведя его ко мне.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_44");	//Я знаю Валерана - он очень умен и отлично разбирается в нашем деле.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_45");	//И я всегда мечтал иметь такого помощника!
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_46");	//Я даже предлагал ему перейти работать ко мне, но тогда он отказался - посчитал, что это будет не слишком красиво с его стороны.
-		AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_49");	//Так значит, он тебе подходит?
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_50");	//Безусловно! (радостно) Ты сделал максимум того, что мог бы сделать.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_51");	//И я не останусь перед тобой в долгу.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_52");	//Вот, возьми эти деньги в качестве награды за оказанную мне услугу.
-		AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_53");	//Думаю, этого вполне должно хватить, чтобы компенсировать твои хлопоты.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_38 " );	// There he is right in front of you. Meet him, his name is Valeran.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_39 " );	// Waleran? Hmmm... (thoughtfully) Wait!
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_40 " );	// Isn't this the Valeran who used to work for Fernando the trader?
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_41 " );	// The same one. Now that Fernando is behind bars, he is looking for a new job.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_42 " );	// So I thought you might be interested in his services.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_43 " );	// You did the right thing by bringing him to me.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_44 " );	// I know Valeran - he is very smart and knows our business very well.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_45 " );	// And I always dreamed of having such a helper!
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_46 " );	// I even offered him to go to work for me, but then he refused - he considered that it would not be too nice of him.
+		AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_49 " );	// So it suits you?
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_50 " );	// Absolutely! (happily) You did the best you could.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_51 " );	// And I won't be indebted to you.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_52 " );	// Here, take this money as a reward for doing me a favor.
+		AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_53 " );	// I think this should be enough to make up for your trouble.
 		B_GiveInvItems(self,other,ItMi_Gold,1000);
 
-		if((SARAISDEAD == TRUE) || ((SARAFLEE == FALSE) && (Sarah_Ausgeliefert == FALSE)))
+		if (( SARAISDEAD  ==  TRUE ) || (( SARAFLEE  ==  FALSE ) && (Sarah_Ausgeliefert ==  FALSE )))
 		{
-			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_63");	//Благодарю! Для меня еще будут поручения?
-			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//Хммм...(задумчиво) В ближайшее время навряд ли. Так что можешь заняться другими делами.
-			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_65");	//Хорошо, как скажешь.
+			AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_63 " );	// Thank you! Will there be more errands for me?
+			AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_64 " );	// Hmmm... (thoughtfully) Not in the near future. So you can do other things.
+			AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_65 " );	// Okay, whatever you say.
 			NEXTQUESTSARAHTOGUILD = TRUE;
 			MIS_TRADEGUILD = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
@@ -1825,20 +1826,20 @@ func void dia_lutero_tradehelperdone_info()
 		}
 		else
 		{
-			if((NEXTQUESTSARAHTOGUILD == FALSE) && (Kapitel >= 4) && ((MIS_TRADEHELPER == LOG_SUCCESS) || (MIS_TRADEHELPER == LOG_FAILED)))
+			if (( NEXTQUESTSARAHTOGUILD  ==  FALSE ) && (Chapter >=  4 ) && (( MY_TRADING_HELPERS  ==  LOG_SUCCESS ) || ( MY_TRADING_HELPERS  ==  LOG_FAILURE )))
 			{
-				if((SARAISDEAD == FALSE) && ((SARAFLEE == TRUE) || (Sarah_Ausgeliefert == TRUE)))
+				if (( SARAISDEAD  ==  FALSE ) && (( SARAFLEE  ==  TRUE ) || (Sarah_Ausgeliefert ==  TRUE )))
 				{
 					LuteroDealNow = TRUE;
-					AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_56");	//И как раз вовремя, поскольку мне необходимо обсудить с тобой одно очень важное дельце, требующее большого внимания.
+					AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_56 " );	// And just in time, because I need to discuss with you one very important business that requires a lot of attention.
 					Info_ClearChoices(dia_lutero_tradehelperdone);
-					Info_AddChoice(dia_lutero_tradehelperdone,"Хорошо, как скажешь.",dia_lutero_tradehelperdone_valeranaway);
+					Info_AddChoice(dia_lutero_tradehelperdone, " Хорошо, как скажешь. " , dia_lutero_tradehelperdone_valeranaway);
 				}
 				else
 				{
-					AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_63");	//Благодарю. Для меня еще будут поручения?
-					AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//(задумчиво) В ближайшее время - вряд ли. Так что можешь заняться другими делами.
-					AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_65");	//Хорошо, как скажешь.
+					AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_63 " );	// Thank you. Will there be more errands for me?
+					AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_64 " );	// (thoughtfully) In the near future - hardly. So you can do other things.
+					AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_65 " );	// Okay, whatever you say.
 					NEXTQUESTSARAHTOGUILD = TRUE;
 					MIS_TRADEGUILD = LOG_SUCCESS;
 					Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
@@ -1848,9 +1849,9 @@ func void dia_lutero_tradehelperdone_info()
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_63");	//Благодарю. Для меня еще будут поручения?
-				AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//(задумчиво) В ближайшее время - вряд ли. Так что можешь заняться другими делами.
-				AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_65");	//Хорошо, как скажешь.
+				AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_63 " );	// Thank you. Will there be more errands for me?
+				AI_Output(self,other, " DIA_Lutero_TradeHelperDone_01_64 " );	// (thoughtfully) In the near future - hardly. So you can do other things.
+				AI_Output(other,self, " DIA_Lutero_TradeHelperDone_01_65 " );	// Okay, whatever you say.
 				NEXTQUESTSARAHTOGUILD = TRUE;
 				MIS_TRADEGUILD = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
@@ -1863,37 +1864,37 @@ func void dia_lutero_tradehelperdone_info()
 
 func void dia_lutero_tradehelperdone_gayvernaway()
 {
-	AI_Output(other,self,"DIA_Lutero_TradeHelperDone_GayvernAway_01_01");	//Хорошо, давай обсудим.
-	B_StartOtherRoutine(vlk_6132_gayvern,"BackToDrink");
+	AI_Output(other,self, " DIA_Lutero_TradeHelperDone_GayvernAway_01_01 " );	// Okay, let's discuss.
+	B_StartOtherRoutine(vlk_6132_gayvern, " BackToDrink " );
 };
 
 func void dia_lutero_tradehelperdone_maxiaway()
 {
-	AI_Output(other,self,"DIA_Lutero_TradeHelperDone_MaxiAway_01_01");	//Хорошо, давай обсудим.
+	AI_Output(other,self, " DIA_Lutero_TradeHelperDone_MaxiAway_01_01 " );	// Okay, let's discuss.
 	B_StartOtherRoutine(vlk_6133_maxi,"WorkAgain");
 };
 
 func void dia_lutero_tradehelperdone_valeranaway()
 {
-	AI_Output(other,self,"DIA_Lutero_TradeHelperDone_ValeranAway_01_01");	//Хорошо, как скажешь.
+	AI_Output(other,self, " DIA_Lutero_TradeHelperDone_ValeranAway_01_01 " );	// Okay, whatever you say.
 	B_StartOtherRoutine(vlk_6134_valeran,"WorkAgain");
 };
 
-instance DIA_LUTERO_SARAHTOGUILD(C_Info)
+instances DIA_LUTERO_SARAHTOGUILD (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_sarahtoguild_condition;
 	information = dia_lutero_sarahtoguild_info;
 	permanent = FALSE;
-	description = "Что за дело?";
+	description = " What's up? " ;
 };
 
 func int dia_lutero_sarahtoguild_condition()
 {
-	if((NEXTQUESTSARAHTOGUILD == FALSE) && (Kapitel >= 4) && ((MIS_TRADEHELPER == LOG_SUCCESS) || (MIS_TRADEHELPER == LOG_FAILED)))
+	if (( NEXTQUESTSARAHTOGUILD  ==  FALSE ) && (Chapter >=  4 ) && (( MY_TRADING_HELPERS  ==  LOG_SUCCESS ) || ( MY_TRADING_HELPERS  ==  LOG_FAILURE )))
 	{
-		if((SARAISDEAD == FALSE) && ((SARAFLEE == TRUE) || (Sarah_Ausgeliefert == TRUE)))
+		if (( SARAISDEAD  ==  FALSE ) && (( SARAFLEE  ==  TRUE ) || (Sarah_Ausgeliefert ==  TRUE )))
 		{
 			if(LuteroDealNow == TRUE) 
 			{
@@ -1903,102 +1904,102 @@ func int dia_lutero_sarahtoguild_condition()
 	};
 };
 
-func void dia_lutero_sarahtoguild_info()
+func void luther_day_sarahtoguild_info()
 {
-	AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_00");	//Что за дело?
-	AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_01");	//Дело очень щекотливое и требует предельной аккуратности.
-	AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_02");	//Я бы даже сказал - особой тактичности.
-	AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_03");	//Что случилось?
-	AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_04");	//Скажи, ты встречал на рыночной площади торговку по имени Сара?
-	AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_05");	//Да, я ее знаю.
-	AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_06");	//Хорошо. Тогда тебе должно быть известно, что недавно она угодила в одну очень неприятную историю.
+	AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_00 " );	// What's up?
+	AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_01 " );	// The matter is very sensitive and requires extreme accuracy.
+	AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_02 " );	// I would even say - special tact.
+	AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_03 " );	// What happened?
+	AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_04 " );	// Tell me, did you meet a merchant named Sarah in the market place?
+	AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_05 " );	// Yes, I know her.
+	AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_06 " );	// Good. Then you should know that she recently got into a very unpleasant affair.
 
-	if(Sarah_Ausgeliefert == TRUE)
+	if (Sarah_Ausgeliefer ==  TRUE )
 	{
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_07");	//И кстати, некоторые злые языки поговаривают, что именно по твоей вине...(ехидно)
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_08");	//А что с ней произошло?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_09");	//Она обвиняется в том, что продавала оружие людям Онара. Хотя я с трудом в это верю.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_10");	//Я хорошо знаю Сару и не думаю, что она способна на такое.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_13");	//Сейчас ополчение держит ее за решеткой - согласись, не самое лучшее место для молодой девушки.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_14");	//Так вот, я хочу помочь ей. И не просто помочь, а попробовать в корне исправить всю ту ситуацию, в которой она очутилась.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_15");	//А что именно ты хочешь для нее сделать?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_16");	//Для начала необходимо восстановить ее честное имя - иначе, без этого на карьере торговца можно сразу поставить крест.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_17");	//Ну а потом, я хочу предложить ей работу в нашей гильдии.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_18");	//У Сары несомненный талант на поприще торговли, и я хочу, чтобы он приносил пользу не только ей...(ехидно)
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_19");	//Да, ты я вижу, своего не упустишь!
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_20");	//Ты правильно меня понял...(смеется) Однако это не значит, что я действую исключительно в корыстных целях.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_21");	//Я действительно хочу помочь ей, но при этом не забываю и о своей выгоде.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_23");	//Мне кажется, ты именно тот человек, который мог бы заняться всем этим.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_24");	//Почему я?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_25");	//Потому что, если начну действовать я - это привлечет слишком много внимания к моей персоне.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_28");	//Хорошо. С чего мне начать?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_29");	//Прежде всего тебе необходимо вытащить Сару из тюрьмы.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_33");	//Насколько мне известно, за любого заключенного можно заплатить штраф и тем самым снять с него некоторые обвинения.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_34");	//И чем больше эта сумма - тем проще договориться с лордом Андрэ.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_37");	//Так вот - как ты сам понимаешь, Сара девушка небогатая и у нее нет таких больших денег. А свобода стоит очень дорого!
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_38");	//Нам такие расходы вполне по силам.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_39");	//Нам - это тебе и мне?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_40");	//Да, ты, как член гильдии, тоже ведь должен быть заинтересован в этом деле.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_42");	//Вот, возьми эти пять сотен монет. Это мой вклад в данное мероприятие. Остальное за тобой.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_07 " );	// And by the way, some evil tongues say that it's your fault... (sarcastically)
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_08 " );	// What happened to her?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_09 " );	// She is accused of selling weapons to Onar's people. Although I have a hard time believing it.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_10 " );	// I know Sara well and don't think she's capable of that.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_13 " );	// Now the militia keeps her behind bars - you must admit, not the best place for a young girl.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_14 " );	// So, I want to help her. And not just to help, but to try to fundamentally correct the whole situation in which she found herself.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_15 " );	// What exactly do you want to do for her?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_16 " );	// First you need to restore her honest name - otherwise, without this, you can immediately put an end to the career of a merchant.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_17 " );	// And then, I want to offer her a job in our guild.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_18 " );	// Sarah has an undoubted talent in the field of trade, and I want it to benefit not only her ... (snidely)
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_19 " );	// Yes, I see you, you won't miss yours!
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_20 " );	// You understood me correctly... (laughs) However, this does not mean that I act solely for selfish purposes.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_21 " );	// I really want to help her, but I don't forget about my own benefit.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_23 " );	// I think you're the right person to do all this.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_24 " );	// Почему я?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_25 " );	// Because if I act, it will draw too much attention to my person.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_28 " );	// Good. Where do I begin?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_29 " );	// First of all, you need to get Sarah out of prison.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_33 " );	// As far as I know, it is possible to pay a fine for any prisoner and thereby remove some charges from him.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_34 " );	// And the larger this amount, the easier it is to negotiate with Lord Andre.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_37 " );	// So - as you yourself understand, Sarah is not a rich girl and she does not have such a lot of money. And freedom is very expensive!
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_38 " );	// We can afford such expenses.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_39 " );	// Us - is it for you and me?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_40 " );	// Yes, you, as a guild member, should also be interested in this matter.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_42 " );	// Here, take these five hundred coins. This is my contribution to this event. The rest is up to you.
 		B_GiveInvItems(self,other,ItMi_Gold,500);
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_43");	//Думаю, что лорд Андрэ не назначит слишком большой штраф за голову простой торговки.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_47");	//После того, как Сара выйдет из тюрьмы - попробуй поговорить с ней.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_48");	//Постарайся ее убедить в том, что работа в нашей гильдии - это самое лучшее, что она сможет найти в этом городе после всего случившегося.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_52");	//Я буду ждать от тебя новостей.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_43 " );	// I don't think Lord Andre would put too much fine on the head of a common merchant.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_47 " );	// After Sarah gets out of prison - try talking to her.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_48 " );	// Try to convince her that working in our guild is the best thing she can find in this city after everything that happened.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_52 " );	// I'll be waiting for news from you.
 		SARAHELPYOUANDFREE = TRUE;
 		MIS_SARAHTOGUILD = LOG_Running;
 		Log_CreateTopic(TOPIC_SARAHTOGUILD,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_SARAHTOGUILD,LOG_Running);
-		B_LogEntry(TOPIC_SARAHTOGUILD,"Лютеро хочет помочь одной девушке - торговке Саре. Недавно с ней приключилась неприятная история и ее отправили в тюрьму. Кстати, по моей вине! Теперь я должен отправиться к лорду Андрэ и заплатить штраф за ее освобождение, а потом попытаться уговорить Сару вступить в гильдию торговцев, поскольку Лютеро считает, что она - хорошее подспорье для его бизнеса.");
+		B_LogEntry( TOPIC_SARAHTOGUILD , " Luthero wants to help a girl, Sarah, a merchant. She recently had an unpleasant experience and was sent to prison. By the way, it was my fault! Now I have to go to Lord Andre and pay a fine for her release, and then try to persuade Saru to join the Merchant's Guild, as Luthero thinks she's a good fit for his business. " );
 	}
 	else if(SARAFLEE == TRUE)
 	{
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_55");	//Что с ней случилось?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_56");	//Я слышал, один торговец по имени Кантар угрожал ей расправой, если она не уступит ему свое место на торговой площади.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_57");	//Бедная девушка просто в ужасе, и теперь она просто боится ходить туда торговать.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_58");	//Я знаю этого Кантара - это еще тот мерзавец!
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_59");	//Но у него в этом городе есть очень могучие покровители. А у Сары их нет.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_60");	//Поэтому он и позволял себе слишком много.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_55 " );	// What happened to her?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_56 " );	// I heard a merchant named Kantar threatened her with death if she didn't give him her place in the marketplace.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_57 " );	// The poor girl is just terrified, and now she's just afraid to go there to trade.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_58 " );	// I know this Kantar - he's still that scoundrel!
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_59 " );	// But he has very powerful patrons in this city. Sarah doesn't.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_60 " );	// That's why he allowed himself too much.
 
 		if(Npc_IsDead(Canthar) == TRUE)
 		{
-			AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_61");	//Уже нет. Недавно кто-то убил его.
-			AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_62");	//Да? Ну что ж - поделом ему.
-			AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_63");	//Однако это не меняет сути дела. В городе еще много подонков, которые не хотят вести честную игру.
+			AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_61 " );	// No more. Recently, someone killed him.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_62 " );	// Yes? Well, serve him right.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_63 " );	// However, this does not change the essence of the matter. There are still a lot of scumbags in the city who do not want to play fair.
 		};
 
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_65");	//В общем, я хочу помочь Саре.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_66");	//Каким образом?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_67");	//Я хочу предложить ей работу в нашей гильдии и, тем самым, защиту от всяких посягательств разного рода мерзавцев вроде Кантара.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_69");	//У Сары несомненный талант на поприще торговли, и я хочу, чтобы он приносил пользу не только ей...(ехидно)
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_70");	//Да, ты, я вижу, своего не упустишь.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_72");	//Я действительно хочу помочь ей, но при этом не забываю и о своей выгоде.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_80");	//Найди Сару и попробуй поговорить с ней.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_81");	//Постарайся ее убедить в том, что работа в нашей гильдии - это самое лучшее, что она сможет найти в этом городе после всего случившегося.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_85");	//Я буду ждать от тебя новостей.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_65 " );	// Anyway, I want to help Sarah.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_66 " );	// How?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_67 " );	// I want to offer her a job in our guild and thus protection from all sorts of encroachments of various kinds of scoundrels like Kantar.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_69 " );	// Sarah has an undoubted talent in the field of trade, and I want it to benefit not only her ... (snidely)
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_70 " );	// Yes, I see you won't miss yours.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_72 " );	// I really want to help her, but I don't forget about my own benefit.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_80 " );	// Find Sarah and try to talk to her.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_81 " );	// Try to convince her that working in our guild is the best thing she can find in this city after everything that happened.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_85 " );	// I'll be waiting for news from you.
 		SARAHELPYOU = TRUE;
 		MIS_SARAHTOGUILD = LOG_Running;
 		Log_CreateTopic(TOPIC_SARAHTOGUILD,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_SARAHTOGUILD,LOG_Running);
-		B_LogEntry(TOPIC_SARAHTOGUILD,"Лютеро хочет помочь одной девушке - торговке Саре. Недавно с ней приключилась неприятная история - торговец Кантар угрожал ей расправой, если она не уступит ему свое торговое место на рыночной площади. Лютеро хочет взять бизнес Сары под свою опеку, чтобы помочь ей избежать подобных ситуаций в дальнейшем. Для этого мне необходимо найти Сару и уговорить ее вступить в гильдию торговцев, поскольку Лютеро считает, что она хорошее подспорье для его бизнеса.");
+		B_LogEntry( TOPIC_SARAHTOGUILD , " Luthero wants to help a girl, trader Sarah. Recently, an unpleasant story happened to her - merchant Kantar threatened her with death if she did not give him her trading place in the market square. Luthero wants to take Sarah's business under his wing to help she will avoid similar situations in the future.To do this, I need to find Sarah and persuade her to join the merchants guild, since Luthero believes that she is a good help for his business. " );
 	};
 };
 
-instance DIA_LUTERO_SARAHTOGUILD_EX(C_Info)
+instance DAY_LUTERO_SARAHTOGUILD_EX (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_sarahtoguild_EX_condition;
 	information = dia_lutero_sarahtoguild_EX_info;
 	permanent = FALSE;
-	description = "У тебя есть еще поручения для меня?";
+	description = " Do you have any more errands for me? " ;
 };
 
 func int dia_lutero_sarahtoguild_EX_condition()
 {
-	if((NEXTQUESTSARAHTOGUILD == FALSE) && (Kapitel >= 4) && ((MIS_TRADEHELPER == LOG_SUCCESS) || (MIS_TRADEHELPER == LOG_FAILED)))
+	if (( NEXTQUESTSARAHTOGUILD  ==  FALSE ) && (Chapter >=  4 ) && (( MY_TRADING_HELPERS  ==  LOG_SUCCESS ) || ( MY_TRADING_HELPERS  ==  LOG_FAILURE )))
 	{
-		if((SARAISDEAD == FALSE) && ((SARAFLEE == TRUE) || (Sarah_Ausgeliefert == TRUE)))
+		if (( SARAISDEAD  ==  FALSE ) && (( SARAFLEE  ==  TRUE ) || (Sarah_Ausgeliefert ==  TRUE )))
 		{
 			if(LuteroDealNow == FALSE) 
 			{
@@ -2008,101 +2009,101 @@ func int dia_lutero_sarahtoguild_EX_condition()
 	};
 };
 
-func void dia_lutero_sarahtoguild_EX_info()
+func void luther_day_sarahtoguild_EX_info()
 {
-	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_00");	//У тебя есть еще поручения для меня?
-	AI_Output(self,other,"DIA_Lutero_ChurchDeal_01_00");	//Хорошо, что ты пришел! Я ждал тебя.
-	AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_01");	//Дело очень щекотливое и требует предельной аккуратности.
-	AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_02");	//Я бы даже сказал - особой тактичности.
-	AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_03");	//Что случилось?
-	AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_04");	//Скажи, ты встречал на рыночной площади торговку по имени Сара?
-	AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_05");	//Да, я ее знаю.
-	AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_06");	//Хорошо. Тогда тебе должно быть известно, что недавно она угодила в одну очень неприятную историю.
+	AI_Output(other,self, " DIA_Lutero_JoraHelp_01_00 " );	// Do you have any more errands for me?
+	AI_Output(self,other, " DIA_Lutero_ChurchDeal_01_00 " );	// It's good that you came! I was waiting for you.
+	AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_01 " );	// The matter is very sensitive and requires extreme accuracy.
+	AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_02 " );	// I would even say - special tact.
+	AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_03 " );	// What happened?
+	AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_04 " );	// Tell me, did you meet a merchant named Sarah in the market place?
+	AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_05 " );	// Yes, I know her.
+	AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_06 " );	// Good. Then you should know that she recently got into a very unpleasant affair.
 
-	if(Sarah_Ausgeliefert == TRUE)
+	if (Sarah_Ausgeliefer ==  TRUE )
 	{
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_07");	//И кстати, некоторые злые языки поговаривают, что именно по твоей вине...(ехидно)
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_08");	//А что с ней произошло?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_09");	//Она обвиняется в том, что продавала оружие людям Онара. Хотя я с трудом в это верю.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_10");	//Я хорошо знаю Сару и не думаю, что она способна на такое.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_13");	//Сейчас ополчение держит ее за решеткой - согласись, не самое лучшее место для молодой девушки.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_14");	//Так вот, я хочу помочь ей. И не просто помочь, а попробовать в корне исправить всю ту ситуацию, в которой она очутилась.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_15");	//А что именно ты хочешь для нее сделать?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_16");	//Для начала, необходимо восстановить ее честное имя - иначе, без этого на карьере торговца можно сразу поставить крест.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_17");	//Ну а потом, я хочу предложить ей работу в нашей гильдии.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_18");	//У Сары несомненный талант на поприще торговли, и я хочу, чтобы он приносил пользу не только ей...(ехидно)
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_19");	//Да, ты я вижу, своего не упустишь!
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_20");	//Ты правильно меня понял...(смеется) Однако это не значит, что я действую исключительно в корыстных целях.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_21");	//Я действительно хочу помочь ей, но при этом не забываю и о своей выгоде.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_23");	//Мне кажется, ты именно тот человек, который мог бы заняться всем этим.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_24");	//Почему я?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_25");	//Потому что, если начну действовать я - это привлечет слишком много внимания к моей персоне.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_28");	//Хорошо. С чего мне начать?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_29");	//Прежде всего тебе необходимо вытащить Сару из тюрьмы.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_33");	//Насколько мне известно, за любого заключенного можно заплатить штраф и тем самым снять с него некоторые обвинения.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_34");	//И чем больше эта сумма - тем проще договориться с лордом Андрэ.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_37");	//Так вот - как ты сам понимаешь, Сара девушка небогатая и у нее нет таких больших денег. А свобода стоит очень дорого!
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_38");	//Нам такие расходы вполне по силам.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_39");	//Нам - это тебе и мне?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_40");	//Да, ты, как член гильдии, тоже ведь должен быть заинтересован в этом деле.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_42");	//Вот, возьми эти пять сотен монет. Это мой вклад в данное мероприятие. Остальное за тобой.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_07 " );	// And by the way, some evil tongues say that it's your fault... (sarcastically)
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_08 " );	// What happened to her?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_09 " );	// She is accused of selling weapons to Onar's people. Although I have a hard time believing it.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_10 " );	// I know Sara well and don't think she's capable of that.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_13 " );	// Now the militia keeps her behind bars - you must admit, not the best place for a young girl.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_14 " );	// So, I want to help her. And not just to help, but to try to fundamentally correct the whole situation in which she found herself.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_15 " );	// What exactly do you want to do for her?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_16 " );	// First, you need to restore her honest name - otherwise, without this, you can immediately put an end to the merchant's career.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_17 " );	// And then, I want to offer her a job in our guild.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_18 " );	// Sarah has an undoubted talent in the field of trade, and I want it to benefit not only her ... (snidely)
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_19 " );	// Yes, I see you, you won't miss yours!
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_20 " );	// You understood me correctly... (laughs) However, this does not mean that I act solely for selfish purposes.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_21 " );	// I really want to help her, but I don't forget about my own benefit.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_23 " );	// I think you're the right person to do all this.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_24 " );	// Почему я?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_25 " );	// Because if I act, it will draw too much attention to my person.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_28 " );	// Good. Where do I begin?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_29 " );	// First of all, you need to get Sarah out of prison.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_33 " );	// As far as I know, it is possible to pay a fine for any prisoner and thereby remove some charges from him.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_34 " );	// And the larger this amount, the easier it is to negotiate with Lord Andre.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_37 " );	// So - as you yourself understand, Sarah is not a rich girl and she does not have such a lot of money. And freedom is very expensive!
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_38 " );	// We can afford such expenses.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_39 " );	// Us - is it for you and me?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_40 " );	// Yes, you, as a guild member, should also be interested in this matter.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_42 " );	// Here, take these five hundred coins. This is my contribution to this event. The rest is up to you.
 		B_GiveInvItems(self,other,ItMi_Gold,500);
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_43");	//Думаю, что лорд Андрэ не назначит слишком большой штраф за голову простой торговки.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_47");	//После того, как Сара выйдет из тюрьмы - попробуй поговорить с ней.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_48");	//Постарайся ее убедить в том, что работа в нашей гильдии - это самое лучшее, что она сможет найти в этом городе после всего случившегося.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_52");	//Я буду ждать от тебя новостей.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_43 " );	// I don't think Lord Andre would put too much fine on the head of a common merchant.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_47 " );	// After Sarah gets out of prison - try talking to her.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_48 " );	// Try to convince her that working in our guild is the best thing she can find in this city after everything that happened.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_52 " );	// I'll be waiting for news from you.
 		SARAHELPYOUANDFREE = TRUE;
 		MIS_SARAHTOGUILD = LOG_Running;
 		Log_CreateTopic(TOPIC_SARAHTOGUILD,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_SARAHTOGUILD,LOG_Running);
-		B_LogEntry(TOPIC_SARAHTOGUILD,"Лютеро хочет помочь одной девушке - торговке Саре. Недавно с ней приключилась неприятная история и ее отправили в тюрьму. Кстати, по моей вине! Теперь я должен отправиться к лорду Андрэ и заплатить штраф за ее освобождение, а потом попытаться уговорить Сару вступить в гильдию торговцев, поскольку Лютеро считает, что она - хорошее подспорье для его бизнеса.");
+		B_LogEntry( TOPIC_SARAHTOGUILD , " Luthero wants to help a girl, Sarah, a merchant. She recently had an unpleasant experience and was sent to prison. By the way, it was my fault! Now I have to go to Lord Andre and pay a fine for her release, and then try to persuade Saru to join the Merchant's Guild, as Luthero thinks she's a good fit for his business. " );
 	}
 	else if(SARAFLEE == TRUE)
 	{
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_55");	//Что с ней случилось?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_56");	//Я слышал, один торговец по имени Кантар угрожал ей расправой, если она не уступит ему свое место на торговой площади.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_57");	//Бедная девушка просто в ужасе, и теперь она просто боится ходить туда торговать.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_58");	//Я знаю этого Кантара - это еще тот мерзавец!
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_59");	//Но у него в этом городе есть очень могучие покровители. А у Сары их нет.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_60");	//Поэтому он и позволял себе слишком много.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_55 " );	// What happened to her?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_56 " );	// I heard a merchant named Kantar threatened her with death if she didn't give him her place in the marketplace.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_57 " );	// The poor girl is just terrified, and now she's just afraid to go there to trade.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_58 " );	// I know this Kantar - he's still that scoundrel!
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_59 " );	// But he has very powerful patrons in this city. Sarah doesn't.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_60 " );	// That's why he allowed himself too much.
 
 		if(Npc_IsDead(Canthar) == TRUE)
 		{
-			AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_61");	//Уже нет. Недавно кто-то убил его.
-			AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_62");	//Да? Ну что ж - поделом ему.
-			AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_63");	//Однако это не меняет сути дела. В городе еще много подонков, которые не хотят вести честную игру.
+			AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_61 " );	// No more. Recently, someone killed him.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_62 " );	// Yes? Well, serve him right.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_63 " );	// However, this does not change the essence of the matter. There are still a lot of scumbags in the city who do not want to play fair.
 		};
 
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_65");	//В общем, я хочу помочь Саре.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_66");	//Каким образом?
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_67");	//Я хочу предложить ей работу в нашей гильдии и, тем самым, защиту от всяких посягательств разного рода мерзавцев вроде Кантара.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_69");	//У Сары несомненный талант на поприще торговли, и я хочу, чтобы он приносил пользу не только ей...(ехидно)
-		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_70");	//Да, ты, я вижу, своего не упустишь.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_72");	//Я действительно хочу помочь ей, но при этом не забываю и о своей выгоде.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_80");	//Найди Сару и попробуй поговорить с ней.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_81");	//Постарайся ее убедить в том, что работа в нашей гильдии - это самое лучшее, что она сможет найти в этом городе после всего случившегося.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_85");	//Я буду ждать от тебя новостей.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_65 " );	// Anyway, I want to help Sarah.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_66 " );	// How?
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_67 " );	// I want to offer her a job in our guild and thus protection from all sorts of encroachments of various kinds of scoundrels like Kantar.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_69 " );	// Sarah has an undoubted talent in the field of trade, and I want it to benefit not only her ... (snidely)
+		AI_Output(other,self, " DIA_Lutero_SarahToGuild_01_70 " );	// Yes, I see you won't miss yours.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_72 " );	// I really want to help her, but I don't forget about my own benefit.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_80 " );	// Find Sarah and try to talk to her.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_81 " );	// Try to convince her that working in our guild is the best thing she can find in this city after everything that happened.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuild_01_85 " );	// I'll be waiting for news from you.
 		SARAHELPYOU = TRUE;
 		MIS_SARAHTOGUILD = LOG_Running;
 		Log_CreateTopic(TOPIC_SARAHTOGUILD,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_SARAHTOGUILD,LOG_Running);
-		B_LogEntry(TOPIC_SARAHTOGUILD,"Лютеро хочет помочь одной девушке - торговке Саре. Недавно с ней приключилась неприятная история - торговец Кантар угрожал ей расправой, если она не уступит ему свое торговое место на рыночной площади. Лютеро хочет взять бизнес Сары под свою опеку, чтобы помочь ей избежать подобных ситуаций в дальнейшем. Для этого мне необходимо найти Сару и уговорить ее вступить в гильдию торговцев, поскольку Лютеро считает, что она хорошее подспорье для его бизнеса.");
+		B_LogEntry( TOPIC_SARAHTOGUILD , " Luthero wants to help a girl, trader Sarah. Recently, an unpleasant story happened to her - merchant Kantar threatened her with death if she did not give him her trading place in the market square. Luthero wants to take Sarah's business under his wing to help she will avoid similar situations in the future.To do this, I need to find Sarah and persuade her to join the merchants guild, since Luthero believes that she is a good help for his business. " );
 	};
 };
 
-instance DIA_LUTERO_SARAHTOGUILDDONE(C_Info)
+instances DIA_LUTERO_SARAHTOGUILDDONE (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 5;
 	condition = dia_lutero_sarahtoguilddone_condition;
 	information = dia_lutero_sarahtoguilddone_info;
 	permanent = FALSE;
-	description = "Я поговорил с Сарой.";
+	description = " I talked to Sarah. " ;
 };
 
 func int dia_lutero_sarahtoguilddone_condition()
 {
-	if((MIS_SARAHTOGUILD == LOG_Running) && ((SARAPISSOFF == TRUE) || (SARAREFUSEHELPS == TRUE) || (SARAAGREE == TRUE)))
+	if (( MIS_SARAHTOGUILD  == LOG_Running) && (( SARAPISSOFF  ==  TRUE ) || ( SARAREFUSEHELPS  ==  TRUE ) || ( SARAAGREE  ==  TRUE )))
 	{
 		return TRUE;
 	};
@@ -2110,8 +2111,8 @@ func int dia_lutero_sarahtoguilddone_condition()
 
 func void dia_lutero_sarahtoguilddone_info()
 {
-	AI_Output(other,self,"DIA_Lutero_SarahToGuildDone_01_00");	//Я поговорил с Сарой.
-	AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_01");	//Да? И что она сказала?
+	AI_Output(other,self, " DIA_Lutero_SarahToGuildDone_01_00 " );	// I talked to Sarah.
+	AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_01 " );	// Yes? And what did she say?
 
 	if((SARAPISSOFF == TRUE) || (SARAREFUSEHELPS == TRUE))
 	{
@@ -2122,35 +2123,35 @@ func void dia_lutero_sarahtoguilddone_info()
 		NEXTQUESTSARAHTOGUILD = TRUE;
 		MIS_SARAHTOGUILD = LOG_FAILED;
 		B_LogEntry_Failed(TOPIC_SARAHTOGUILD);
-		AI_Output(other,self,"DIA_Lutero_SarahToGuildDone_01_02");	//Ничего. Она была просто вне себя, когда я попытался к ней обратиться.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_03");	//Хммм... Интересно, почему же Сара так резко отреагировала на тебя?
-		AI_Output(other,self,"DIA_Lutero_SarahToGuildDone_01_04");	//Она думает, что это я виноват в том, что с ней произошло.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_05");	//(ехидно) Теперь понятно.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_06");	//И знаешь, какое-то чувство мне подсказывает - что это именно так и было.
-		AI_Output(other,self,"DIA_Lutero_SarahToGuildDone_01_07");	//Ну, если честно признаться - она немного права.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_08");	//Вот поэтому и неудивительно, что она не стала с тобой разговаривать.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_09");	//Я же тебе говорил, что в этом деле нужно будет проявить особый такт!
-		AI_Output(other,self,"DIA_Lutero_SarahToGuildDone_01_11");	//Я сделал все, что смог.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_12");	//Эх, ладно. По крайней мере, мы хотя бы немного помогли ей и восстановили некоторую справедливость в этом деле.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_14");	//И может быть со временем, когда Сара немного успокоится и забудет старые обиды - я попробую поговорить с ней сам.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_15");	//Что же касается тебя - то постарайся больше не забивать этим свою голову. Есть дела и поважнее!
-		AI_Output(other,self,"DIA_Lutero_SarahToGuildDone_01_16");	//Хорошо, как скажешь.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuildDone_01_02 " );	// Nothing. She was just beside herself when I tried to contact her.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_03 " );	// Hmmm... I wonder why Sarah reacted so harshly to you?
+		AI_Output(other,self, " DIA_Lutero_SarahToGuildDone_01_04 " );	// She thinks I'm the one to blame for what happened to her.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_05 " );	// (maliciously) Now it's clear.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_06 " );	// And you know, some feeling tells me that this is exactly what happened.
+		AI_Output(other,self, " DIA_Lutero_SarahToGuildDone_01_07 " );	// Well, to be honest, she's a bit right.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_08 " );	// That's why it's no wonder she didn't talk to you.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_09 " );	// I told you that in this matter you will need to show special tact!
+		AI_Output(other,self, " DIA_Lutero_SarahToGuildDone_01_11 " );	// I did my best.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_12 " );	// Oh, okay. At least we helped her a little and restored some justice in this case.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_14 " );	// And maybe in time, when Sarah calms down a bit and forgets old grievances - I'll try to talk to her myself.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_15 " );	// As for you, try not to fill your head with this anymore. There are more important things to do!
+		AI_Output(other,self, " DIA_Lutero_SarahToGuildDone_01_16 " );	// Okay, whatever you say.
 
 		if(TRADEGUILDREP >= 9)
 		{
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_25");	//Вот - возьми эти деньги и в довесок к ним еще эту небольшую вещицу.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_25 " );	// Here, take this money and, in addition to it, this little thing.
 			B_GiveInvItems(self,other,ItMi_Gold,500);
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_26");	//Думаю ее вполне хватит, чтобы окупить все твои хлопоты, связанные с этим делом.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_26 " );	// I think it will be enough to pay for all your troubles associated with this case.
 			B_GiveInvItems(self,other,itri_pilligrimring,1);
-			AI_Output(other,self,"DIA_Lutero_SarahToGuildDone_01_27");	//Спасибо!
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_28");	//Не стоит благодарностей - ты по праву заслужил эту честь!
+			AI_Output(other,self, " DIA_Lutero_SarahToGuildDone_01_27 " );	// Thank you!
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_28 " );	// No need to thank you - you rightfully deserve this honor!
 			TRADEGUILDISOVERMASTER = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_30");	//Вот - возьми эти деньги.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_30 " );	// Here, take this money.
 			B_GiveInvItems(self,other,ItMi_Gold,500);
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_31");	//Думаю их вполне хватит, чтобы окупить все твои хлопоты, связанные с этим делом.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_31 " );	// I think they will be enough to pay for all your troubles associated with this case.
 			TRADEGUILDISOVER = TRUE;
 			MIS_TRADEGUILD = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
@@ -2165,35 +2166,35 @@ func void dia_lutero_sarahtoguilddone_info()
 		MIS_SARAHTOGUILD = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_SARAHTOGUILD,LOG_SUCCESS);
 		Npc_ExchangeRoutine(VLK_470_Sarah,"Trade");
-		B_LogEntry(TOPIC_SARAHTOGUILD,"Лютеро был очень доволен тем, что мне удалось договориться с Сарой.");
-		AI_Output(other,self,"DIA_Lutero_SarahToGuildDone_01_17");	//Она согласна с твоим предложением.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_18");	//Отлично! Именно это, я и рассчитывал услышать от тебя.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_19");	//Теперь можешь более не беспокоить себя этим вопросом - обо всем остальном я позабочусь сам лично.
-		AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_20");	//Что же касается тебя - то вот, прими от меня этот маленький подарок, в качестве компенсации за свои хлопоты.
+		B_LogEntry( TOPIC_SARAHTOGUILD , " Luthero was very pleased that I was able to negotiate with Sarah. " );
+		AI_Output(other,self, " DIA_Lutero_SarahToGuildDone_01_17 " );	// She agrees with your proposal.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_18 " );	// Great! That's exactly what I expected to hear from you.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_19 " );	// Now you don't have to worry about this anymore - I'll take care of the rest myself.
+		AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_20 " );	// As for you, take this little gift from me as compensation for your troubles.
 
 		if(TRADEGUILDREP >= 9)
 		{
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_25");	//Вот - возьми эти деньги и в довесок к ним еще эту небольшую вещицу.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_25 " );	// Here, take this money and, in addition to it, this little thing.
 			B_GiveInvItems(self,other,ItMi_Gold,500);
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_26");	//Думаю, ее вполне хватит, чтобы окупить все твои хлопоты, связанные с этим делом.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_26 " );	// I think it's enough to pay for all your troubles with this case.
 			B_GiveInvItems(self,other,itri_pilligrimring,1);
 			TRADEGUILDISOVERMASTER = TRUE;
-			if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDM) || (hero.guild == GIL_KDW) || (hero.guild == GIL_GUR))
+			if ((hero.guild ==  GIL_KDF ) || (hero.guild ==  GIL_KDM ) || (hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_GUR ))
 			{
-				AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_34");	//Для уважаемого мага у меня особая награда.
+				AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_34 " );	// For a respected mage, I have a special reward.
 				B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_35");	//Для бравого воина у меня есть специальная награда.
+				AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_35 " );	// For a brave warrior, I have a special reward.
 				B_GiveInvItems(self,other,ItPo_Perm_STR,1);
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_30");	//Вот - возьми эти деньги.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_30 " );	// Here, take this money.
 			B_GiveInvItems(self,other,ItMi_Gold,500);
-			AI_Output(self,other,"DIA_Lutero_SarahToGuildDone_01_31");	//Думаю, этого вполне должно хватить, чтобы компенсировать твои хлопоты.
+			AI_Output(self,other, " DIA_Lutero_SarahToGuildDone_01_31 " );	// I think this should be enough to make up for your trouble.
 			TRADEGUILDISOVER = TRUE;
 			MIS_TRADEGUILD = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
@@ -2209,7 +2210,7 @@ instance DIA_LUTERO_PALADINFOOD(C_Info)
 	condition = dia_lutero_paladinfood_condition;
 	information = dia_lutero_paladinfood_info;
 	permanent = FALSE;
-	description = "Какое у тебя ко мне дело?";
+	description = " What's your business with me? " ;
 };
 
 
@@ -2223,30 +2224,30 @@ func int dia_lutero_paladinfood_condition()
 
 func void dia_lutero_paladinfood_info()
 {
-	AI_Output(other,self,"DIA_Lutero_PaladinFood_01_00");	//Какое у тебя ко мне дело?
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_02");	//Паладины хотят заключить с нашей гильдией соглашение о поставке для них продовольствия и питьевых припасов.
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_03");	//Это очень хорошее предложение, и мы не должны упускать его.
-	AI_Output(other,self,"DIA_Lutero_PaladinFood_01_04");	//А как же город и близлежащие фермы?
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_05");	//Они не смогут справиться с их потребностями. А после того, как Онар отказался торговать с городом - ситуация уже выглядит совсем плачевно.
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_06");	//Да и потом, мало найдется желающих даром отдавать весь свой урожай. Даже если это паладины короля...(смеется)
-	AI_Output(other,self,"DIA_Lutero_PaladinFood_01_07");	//Понятно. А что тебе от меня нужно?
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_08");	//У меня уже есть некоторая устная договоренность с лордом Хагеном по этому вопросу.
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_09");	//Однако мы до сих пор не знаем точных объемов этих поставок.
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_11");	//Поэтому отправляйся к лорду Хагену и досконально обсуди с ним эту тему.
+	AI_Output(other,self, " DIA_Lutero_PaladinFood_01_00 " );	// What business do you have with me?
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_02 " );	// The paladins want to make an agreement with our guild to supply them with food and drink.
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_03 " );	// This is a very good offer and we shouldn't pass it up.
+	AI_Output(other,self, " DIA_Lutero_PaladinFood_01_04 " );	// What about the city and nearby farms?
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_05 " );	// They won't be able to handle their needs. And after Onar refused to trade with the city, the situation already looks quite deplorable.
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_06 " );	// And besides, there are few who want to give away their entire harvest for nothing. Even if it's the king's paladins... (laughs)
+	AI_Output(other,self, " DIA_Lutero_PaladinFood_01_07 " );	// Got it. What do you want from me?
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_08 " );	// I already have some verbal agreement with Lord Hagen on this matter.
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_09 " );	// However, we still do not know the exact volumes of these deliveries.
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_11 " );	// Therefore, go to Lord Hagen and thoroughly discuss this topic with him.
 
 	if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Lutero_PaladinFood_01_12");	//Конечно то обстоятельство, что ты один из наемников Онара, может немного помешать тебе в этом деле.
-		AI_Output(self,other,"DIA_Lutero_PaladinFood_01_13");	//Но думаю, что лорд Хаген все-таки выслушает тебя, если ты будешь с ним немного повежливее.
+		AI_Output(self,other, " DIA_Lutero_PaladinFood_01_12 " );	// Of course, the fact that you're one of Onar's mercenaries might get in the way a bit.
+		AI_Output(self,other, " DIA_Lutero_PaladinFood_01_13 " );	// But I think Lord Hagen will still listen to you if you're a little more polite to him.
 	};
-	AI_Output(other,self,"DIA_Lutero_PaladinFood_01_16");	//А что именно мне должен сообщить лорд Хаген?
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_17");	//От тебя мне нужны точные сведения о том количестве еды, которое необходимо паладинам.
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_18");	//И лучше в письменном виде.
-	AI_Output(self,other,"DIA_Lutero_PaladinFood_01_26");	//Теперь отправляйся к паладинам и постарайся не наломать дров.
+	AI_Output(other,self, " DIA_Lutero_PaladinFood_01_16 " );	// What exactly should Lord Hagen tell me?
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_17 " );	// I need you to tell me exactly how much food the paladins need.
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_18 " );	// And better in writing.
+	AI_Output(self,other, " DIA_Lutero_PaladinFood_01_26 " );	// Now go to the paladins and try not to mess things up.
 	MIS_PALADINFOOD = LOG_Running;
 	Log_CreateTopic(TOPIC_PALADINFOOD,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PALADINFOOD,LOG_Running);
-	B_LogEntry(TOPIC_PALADINFOOD,"Лютеро направил меня к лорду Хагену, чтобы обсудить с ним объем поставок продовольствия для паладинов, которое им собирается обеспечить гильдия.");
+	B_LogEntry( TOPIC_PALADINFOOD , " Luthero referred me to Lord Hagen to discuss the amount of paladin food the guild is going to provide. " );
 };
 
 
@@ -2257,7 +2258,7 @@ instance DIA_LUTERO_PALADINFOODDONE(C_Info)
 	condition = dia_lutero_paladinfooddone_condition;
 	information = dia_lutero_paladinfooddone_info;
 	permanent = FALSE;
-	description = "Я поговорил с Хагеном.";
+	description = " I talked to Hagen. " ;
 };
 
 
@@ -2275,37 +2276,37 @@ func void dia_lutero_paladinfooddone_info()
 	TRADEGUILDREP = TRADEGUILDREP + 1;
 	MIS_PALADINFOOD = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_PALADINFOOD,LOG_SUCCESS);
-	Log_AddEntry(TOPIC_PALADINFOOD,"Я доставил список Лютеро.");
-	AI_Output(other,self,"DIA_Lutero_PaladinFoodDone_01_00");	//Я поговорил с Хагеном.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_01");	//И что он сказал?
-	AI_Output(other,self,"DIA_Lutero_PaladinFoodDone_01_02");	//Он дал мне этот список - тут все, что нужно паладинам.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_03");	//Хорошо, дай я посмотрю на него.
+	Log_AddEntry( TOPIC_PALADINFOOD , " I delivered Luthero's list. " );
+	AI_Output(other,self, " DIA_Lutero_PaladinFoodDone_01_00 " );	// I talked to Hagen.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_01 " );	// And what did he say?
+	AI_Output(other,self, " DIA_Lutero_PaladinFoodDone_01_02 " );	// He gave me this list - it's all paladins need.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_03 " );	// Okay, let me take a look at it.
 	B_GiveInvItems(other,self,itwr_hagencontent,1);
 	B_UseFakeScroll();
 	Npc_RemoveInvItems(self,itwr_hagencontent,1);
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_05");	//Хммм. Мне кажется лорд Хаген просит слишком много.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_07");	//У нашей гильдии просто нет таких огромных запасов продовольствия!
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_08");	//Максимум, что мы сможем обеспечить - это половина от того, что ему нужно...(растерянно)
-	AI_Output(other,self,"DIA_Lutero_PaladinFoodDone_01_09");	//Тогда, думаю, нужно сообщить об этом самому Хагену.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_10");	//Нет, не стоит. Если мы это сделаем, то боюсь, тогда этой сделке вообще не состояться!
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_12");	//Необходимо придумать что-то другое.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_15");	//Такими большими запасами продовольствия может располагать только один человек.
-	AI_Output(other,self,"DIA_Lutero_PaladinFoodDone_01_16");	//Ты имеешь в виду Онара?
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_17");	//Да, именно его.
-	AI_Output(other,self,"DIA_Lutero_PaladinFoodDone_01_18");	//Но он никогда не станет продавать продовольствие ни паладинам, ни городу.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_20");	//Да, это действительно так. Однако Онар все же деловой человек и, к тому же, уж очень любит звук золота.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_21");	//Мне кажется, что нам стоит попробовать с ним договориться.
-	AI_Output(other,self,"DIA_Lutero_PaladinFoodDone_01_22");	//А если об этом кто-нибудь узнает?
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_23");	//Безусловно, риск, конечно, большой. Но выгода от этой сделки его вполне оправдывает.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_25");	//И я поручаю это дело тебе.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_31");	//Так что отправляйся к нему на ферму и попытайся его уговорить продать нам часть продовольствия.
-	AI_Output(other,self,"DIA_Lutero_PaladinFoodDone_01_32");	//Я постараюсь сделать это.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_34");	//Если тебе все-таки удастся договориться с ним, то не сомневайся - моя благодарность тебе не будет знать границ.
-	AI_Output(self,other,"DIA_Lutero_PaladinFoodDone_01_36");	//А теперь ступай и не теряй времени.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_05 " );	// Hmmm. I think Lord Hagen is asking too much.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_07 " );	// Our guild just doesn't have such huge food supplies!
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_08 " );	// The most we can provide is half of what he needs...(confused)
+	AI_Output(other,self, " DIA_Lutero_PaladinFoodDone_01_09 " );	// Then I think we should report this to Hagen himself.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_10 " );	// No, don't. If we do that, then I'm afraid this deal won't go through at all!
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_12 " );	// Need to come up with something else.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_15 " );	// Only one person can have such a large supply of food.
+	AI_Output(other,self, " DIA_Lutero_PaladinFoodDone_01_16 " );	// Do you mean Onar?
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_17 " );	// Yes, that's it.
+	AI_Output(other,self, " DIA_Lutero_PaladinFoodDone_01_18 " );	// But he will never sell food to the paladins or the city.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_20 " );	// Yes, it really is. However, Onar is still a business man and, besides, he really loves the sound of gold.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_21 " );	// I think we should try to negotiate with him.
+	AI_Output(other,self, " DIA_Lutero_PaladinFoodDone_01_22 " );	// What if someone finds out about this?
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_23 " );	// Of course, the risk is, of course, great. But the benefit of this deal justifies it.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_25 " );	// And I entrust this matter to you.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_31 " );	// So go to his farm and try to talk him into selling us some of the food.
+	AI_Output(other,self, " DIA_Lutero_PaladinFoodDone_01_32 " );	// I'll try to do it.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_34 " );	// If you still manage to negotiate with him, then do not hesitate - my gratitude to you will know no bounds.
+	AI_Output(self,other, " DIA_Lutero_PaladinFoodDone_01_36 " );	// Now go and don't waste your time.
 	MIS_ONARBUSINESS = LOG_Running;
 	Log_CreateTopic(TOPIC_ONARBUSINESS,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ONARBUSINESS,LOG_Running);
-	B_LogEntry(TOPIC_ONARBUSINESS,"Те объемы провианта, которые запросил лорд Хаген для своих паладинов, оказались просто невыполнимы - Лютеро не сможет поставить все необходимое продовольствие целиком. Однако и упускать из рук выгодную сделку он тоже не хочет. Поэтому он решил попробовать договориться о поставке части продовольствия с мятежным помещиком Онаром. Точнее, договариваться с Онаром он отправил меня, поскольку сам Лютеро слишком заметная фигура для таких дел. Что из этой затеи получится, теперь даже и представить трудно.");
+	B_LogEntry( TOPIC_ONARBUSINESS , " The volumes of provisions that Lord Hagen requested for his paladins turned out to be simply impossible - Luthero will not be able to supply all the necessary food in full. However, he also does not want to lose a good deal. Therefore, he decided to try to negotiate the supply of part food with the rebellious landowner Onar. More precisely, he sent me to negotiate with Onar, since Luthero himself is too prominent a figure for such matters. What will come of this venture is now even hard to imagine. " );
 };
 
 
@@ -2316,7 +2317,7 @@ instance DIA_LUTERO_ONARBUSINESS(C_Info)
 	condition = dia_lutero_onarbusiness_condition;
 	information = dia_lutero_onarbusiness_info;
 	permanent = TRUE;
-	description = "Насчет этой твоей идеи...";
+	description = " About that idea of ​​yours... " ;
 };
 
 
@@ -2330,20 +2331,20 @@ func int dia_lutero_onarbusiness_condition()
 
 func void dia_lutero_onarbusiness_info()
 {
-	AI_Output(other,self,"DIA_Lutero_OnarBusiness_01_00");	//Насчет этой твоей идеи...
-	AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_01");	//Что? Есть новости?
+	AI_Output(other,self, " DIA_Lutero_OnarBusiness_01_00 " );	// About that idea of ​​yours...
+	AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_01 " );	// What? Any news?
 	if(ONARAGREED == TRUE)
 	{
 		B_GivePlayerXP(300);
 		TRADEGUILDREP = TRADEGUILDREP + 1;
 		MIS_ONARBUSINESS = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_ONARBUSINESS,LOG_SUCCESS);
-		B_LogEntry(TOPIC_ONARBUSINESS,"Лютеро был несказанно рад, что мне удалось договориться с Онаром о поставках продовольствия для гильдии.");
-		AI_Output(other,self,"DIA_Lutero_OnarBusiness_01_02");	//Я договорился с Онаром.
-		AI_Output(other,self,"DIA_Lutero_OnarBusiness_01_03");	//Он согласился предоставить гильдии часть недостающего провианта.
-		AI_Output(other,self,"DIA_Lutero_OnarBusiness_01_04");	//Хотя и отметил, что тебе это обойдется совсем не дешево!
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_05");	//Отлично! (восхищенно) Вот уж не думал, что тебе действительно удастся уговорить этого старого борова.
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_11");	//Вот! Возьми эту награду. Ты ее полностью заслужил.
+		B_LogEntry( TOPIC_ONARBUSINESS , " Luthero was incredibly happy that I was able to arrange food supplies for the guild with Onar. " );
+		AI_Output(other,self, " DIA_Lutero_OnarBusiness_01_02 " );	// I agreed with Onar.
+		AI_Output(other,self, " DIA_Lutero_OnarBusiness_01_03 " );	// He agreed to provide the guild with some of the missing supplies.
+		AI_Output(other,self, " DIA_Lutero_OnarBusiness_01_04 " );	// Although he noted that it will cost you a lot!
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_05 " );	// Great! (admiringly) I didn't think you'd actually be able to talk that old hog into it.
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_11 " );	// Here! Take this award. You totally deserve it.
 		B_GiveInvItems(self,other,itwr_elementarearcanei,1);
 	}
 	else if(ONARNOTAGREED == TRUE)
@@ -2351,24 +2352,24 @@ func void dia_lutero_onarbusiness_info()
 		B_GivePlayerXP(250);
 		MIS_ONARBUSINESS = LOG_FAILED;
 		B_LogEntry_Failed(TOPIC_ONARBUSINESS);
-		AI_Output(other,self,"DIA_Lutero_OnarBusiness_01_23");	//К сожалению, я не смог договориться с Онаром.
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_24");	//Я так и думал...(расстроенно) А что он сказал?
-		AI_Output(other,self,"DIA_Lutero_OnarBusiness_01_25");	//Этот жирный боров даже не стал меня слушать, а просто выставил за дверь.
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_26");	//Это очень похоже на него!
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_27");	//Ладно, забудем об этом - в конце концов на этот вариант было мало надежды.
-		AI_Output(other,self,"DIA_Lutero_OnarBusiness_01_28");	//И что теперь?
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_29");	//Теперь нам придется как-то самим найти эту недостающую часть провианта для паладинов.
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_34");	//Что же касается тебя - то несмотря на то, что ты не смог выполнить это мое поручение...
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_35");	//...я не хочу отпускать тебя с пустыми руками.
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_43");	//Вот - возьми эти деньги.
+		AI_Output(other,self, " DIA_Lutero_OnarBusiness_01_23 " );	// Unfortunately, I could not agree with Onar.
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_24 " );	// I thought so...(frustrated) What did he say?
+		AI_Output(other,self, " DIA_Lutero_OnarBusiness_01_25 " );	// That fat boar didn't even listen to me, he just kicked me out the door.
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_26 " );	// It looks a lot like him!
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_27 " );	// Okay, let's forget about it - after all, there was little hope for this option.
+		AI_Output(other,self, " DIA_Lutero_OnarBusiness_01_28 " );	// And now what?
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_29 " );	// Now we'll have to somehow find this missing piece of paladin supplies ourselves.
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_34 " );	// As for you, despite the fact that you could not fulfill this order of mine...
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_35 " );	// ...I don't want to let you go empty-handed.
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_43 " );	// Here, take this money.
 		B_GiveInvItems(self,other,ItMi_Gold,300);
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_44");	//Думаю, этого вполне должно хватить, чтобы компенсировать твои хлопоты.
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_44 " );	// I think this should be enough to make up for your trouble.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Lutero_OnarBusiness_01_47");	//Пока нет.
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_48");	//Тогда зачем ты попусту тратишь мое время?
-		AI_Output(self,other,"DIA_Lutero_OnarBusiness_01_49");	//Иди и поговори с Онаром!
+		AI_Output(other,self, " DIA_Lutero_OnarBusiness_01_47 " );	// Not yet.
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_48 " );	// Then why are you wasting my time?
+		AI_Output(self,other, " DIA_Lutero_OnarBusiness_01_49 " );	// Go and talk to Onar!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -2380,7 +2381,7 @@ instance DIA_LUTERO_MASTERRING(C_Info)
 	condition = dia_lutero_masterring_condition;
 	information = dia_lutero_masterring_info;
 	permanent = FALSE;
-	description = "Что это за кольцо, которое ты мне дал?";
+	description = " What is this ring you gave me? " ;
 };
 
 func int dia_lutero_masterring_condition()
@@ -2395,38 +2396,38 @@ func void dia_lutero_masterring_info()
 {
 	Snd_Play("LevelUp");
 	hero.exp = hero.exp + 1000;
-	AI_NoticePrint(3000,4098,NAME_ADDON_TRADEBONUS);
-	TRADEBONUS = TRUE;
-	AI_Output(other,self,"DIA_Lutero_MasterRing_01_00");	//Что это за кольцо, которое ты мне дал?
-	AI_Output(self,other,"DIA_Lutero_MasterRing_01_01");	//Я знал, что ты поинтересуешься этим...(смеется) Позволь мне тебе кое-что объяснить.
-	AI_Output(self,other,"DIA_Lutero_MasterRing_01_02");	//Это кольцо - знак мастера торговой гильдии. Это большая честь, и немногие заслужили ее.
-	AI_Output(other,self,"DIA_Lutero_MasterRing_01_03");	//Мастера гильдии торговцев?
-	AI_Output(other,self,"DIA_Lutero_MasterRing_01_04");	//Но мне казалось, что им являешься ты.
-	AI_Output(self,other,"DIA_Lutero_MasterRing_01_05");	//Это действительно так...(смеется) Однако это не означает, что только я единственный могу носить это звание.
-	AI_Output(self,other,"DIA_Lutero_MasterRing_01_08");	//Заметь, надев это кольцо - ты не просто обретешь статус мастера, это еще и даст тебе определенные привилегии!
-	AI_Output(other,self,"DIA_Lutero_MasterRing_01_09");	//Что за привилегии?
-	AI_Output(self,other,"DIA_Lutero_MasterRing_01_10");	//Те торговцы, которые состоят в нашей гильдии, увидев это кольцо...
-	AI_Output(self,other,"DIA_Lutero_MasterRing_01_11");	//...с радостью предложат тебе на продажу свой самый лучший товар, что у них есть.
-	AI_Output(self,other,"DIA_Lutero_MasterRing_01_12");	//Просто поговори с любым из них, и ты поймешь, в чем заключается разница...(смеется)
-	AI_Output(self,other,"DIA_Lutero_MasterRing_01_13");	//Только не забудь перед этим надеть свое кольцо мастера гильдии - иначе они просто не поймут, кто стоит перед ними.
-	AI_Output(other,self,"DIA_Lutero_MasterRing_01_14");	//Хорошо, я это запомню. Спасибо.
-	NAME_TRADEMASTERRING = "Это кольцо - знак мастера гильдии торговцев Хориниса...";
+	AI_NoticePrint( 3000 , 4098 , NAME_ADDON_TRADEBONUS );
+	TRADEBONUS = TRUE ;
+	AI_Output(other,self, " DIA_Lutero_MasterRing_01_00 " );	// What is this ring you gave me?
+	AI_Output(self,other, " DIA_Lutero_MasterRing_01_01 " );	// I knew you'd be interested in this...(laughs) Let me explain something to you.
+	AI_Output(self,other, " DIA_Lutero_MasterRing_01_02 " );	// This ring is the trade guild master's mark. This is a great honor, and few deserve it.
+	AI_Output(other,self, " DIA_Lutero_MasterRing_01_03 " );	// Merchant guild masters?
+	AI_Output(other,self, " DIA_Lutero_MasterRing_01_04 " );	// But I thought it was you.
+	AI_Output(self,other, " DIA_Lutero_MasterRing_01_05 " );	// It's true...(laughs) However, that doesn't mean that I'm the only one who can hold this title.
+	AI_Output(self,other, " DIA_Lutero_MasterRing_01_08 " );	// Note that by wearing this ring, you will not only acquire the status of a master, it will also give you certain privileges!
+	AI_Output(other,self, " DIA_Lutero_MasterRing_01_09 " );	// What are the privileges?
+	AI_Output(self,other, " DIA_Lutero_MasterRing_01_10 " );	// Those merchants who are members of our guild, seeing this ring...
+	AI_Output(self,other, " DIA_Lutero_MasterRing_01_11 " );	// ...will gladly sell you the best product they have.
+	AI_Output(self,other, " DIA_Lutero_MasterRing_01_12 " );	// Just talk to any of them and you'll see the difference...(laughs)
+	AI_Output(self,other, " DIA_Lutero_MasterRing_01_13 " );	// Just don't forget to put on your guild master's ring before this - otherwise they just won't understand who is standing in front of them.
+	AI_Output(other,self, " DIA_Lutero_MasterRing_01_14 " );	// Okay, I'll remember that. Thank you.
+	NAME_TRADEMASTERRING = " This ring is the mark of Trader's Guild Master Khorinis... " ;
 	Npc_RemoveInvItems(other,itri_pilligrimring,1);
 	CreateInvItems(other,itri_pilligrimring,1);
 	MIS_TRADEGUILD = LOG_SUCCESS;
 	TRADEMASTERBEGAN = TRUE;
 	Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
-	B_LogEntry(TOPIC_TRADEGUILD,"Теперь я мастер гильдии торговцев Хориниса!");
+	B_LogEntry( TOPIC_TRADEGUILD , " I am now the Master of the Khorinis Traders Guild! " );
 };
 
-instance DIA_LUTERO_ENDTRADEGUILD(C_Info)
+instance DIA_LUTHER_TRADEGUILD (C_Info)
 {
 	npc = VLK_404_Lutero;
 	nr = 2;
 	condition = dia_lutero_endtradeguild_condition;
-	information = dia_lutero_endtradeguild_info;
+	information = dia_lutheran_endtradeguild_info;
 	permanent = TRUE;
-	description = "У тебя еще будут для меня поручения?";
+	description = " Do you have any more errands for me? " ;
 };
 
 func int dia_lutero_endtradeguild_condition()
@@ -2437,32 +2438,32 @@ func int dia_lutero_endtradeguild_condition()
 	};
 };
 
-func void dia_lutero_endtradeguild_info()
+func void dia_luther_endtradeguild_info()
 {
-	AI_Output(other,self,"DIA_Lutero_EndTradeGuild_01_00");	//У тебя еще будут для меня поручения?
+	AI_Output(other,self, " DIA_Lutero_EndTradeGuild_01_00 " );	// Do you have any more errands for me?
 
 	if(TRADEGUILDISOVERMASTER == TRUE)
 	{
-		AI_Output(self,other,"DIA_Lutero_EndTradeGuild_01_01");	//Нет, у меня пока больше нет для тебя работы.
-		AI_Output(self,other,"DIA_Lutero_EndTradeGuild_01_02");	//Сейчас я слишком занят тем делом с паладинами, чтобы отвлекаться на что-то другое.
-		AI_Output(other,self,"DIA_Lutero_EndTradeGuild_01_03");	//Хорошо, как скажешь.
+		AI_Output(self,other, " DIA_Lutero_EndTradeGuild_01_01 " );	// No, I don't have any more work for you yet.
+		AI_Output(self,other, " DIA_Lutero_EndTradeGuild_01_02 " );	// Right now I'm too busy with the paladin business to be distracted by anything else.
+		AI_Output(other,self, " DIA_Lutero_EndTradeGuild_01_03 " );	// Okay, whatever you say.
 
 		if(TRADEMASTERBEGAN == TRUE)
 		{
-			AI_Output(self,other,"DIA_Lutero_EndTradeGuild_01_04");	//Да и потом: ты уже проделал огромную работу и заслужил немного отдохнуть...(смеется)
+			AI_Output(self,other, " DIA_Lutero_EndTradeGuild_01_04 " );	// And besides: you've already done a great job and deserve some rest...(laughs)
 		};
 	}
 	else if(TRADEGUILDISOVER == TRUE)
 	{
-		AI_Output(self,other,"DIA_Lutero_EndTradeGuild_01_08");	//Нет, у меня пока больше нет для тебя работы.
-		AI_Output(self,other,"DIA_Lutero_EndTradeGuild_01_09");	//Сейчас я слишком занят тем делом с паладинами, чтобы отвлекаться на что-то другое.
-		AI_Output(other,self,"DIA_Lutero_EndTradeGuild_01_10");	//Хорошо, как скажешь.
+		AI_Output(self,other, " DIA_Lutero_EndTradeGuild_01_08 " );	// No, I don't have any more work for you yet.
+		AI_Output(self,other, " DIA_Lutero_EndTradeGuild_01_09 " );	// Right now I'm too busy with the paladin business to be distracted by anything else.
+		AI_Output(other,self, " DIA_Lutero_EndTradeGuild_01_10 " );	// Okay, whatever you say.
 
 		if(MIS_TRADEGUILD == LOG_Running)
 		{
 			MIS_TRADEGUILD = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_TRADEGUILD,LOG_SUCCESS);
-			B_LogEntry(TOPIC_TRADEGUILD,"У Лютеро больше нет для меня поручений. Думаю, об этом можно на время забыть.");
+			B_LogEntry( TOPIC_TRADEGUILD , " Luthero has no more errands for me. I think we can forget about this for a while. " );
 		};
 	};
 };
@@ -2475,7 +2476,7 @@ instance DIA_LUTERO_WHOISTRADEGUILD(C_Info)
 	condition = dia_lutero_whoistradeguild_condition;
 	information = dia_lutero_whoistradeguild_info;
 	permanent = TRUE;
-	description = "Кто состоит в гильдии торговцев?";
+	description = " Who is in the Merchant's Guild? " ;
 };
 
 func int dia_lutero_whoistradeguild_condition()
@@ -2488,38 +2489,38 @@ func int dia_lutero_whoistradeguild_condition()
 
 func void dia_lutero_whoistradeguild_info()
 {
-	AI_Output(other,self,"DIA_Lutero_WhoIsTradeGuild_01_00");	//Кто состоит в гильдии торговцев?
+	AI_Output(other,self, " DIA_Lutero_WhoIsTradeGuild_01_00 " );	// Who is in the merchants guild?
 	if(TRADEMASTERBEGAN == TRUE)
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_Lutero_WhoIsTradeGuild_01_01");	//Поскольку теперь ты также являешься мастером нашей гильдии - я могу тебе рассказать об этом.
+		AI_Output(self,other, " DIA_Lutero_WhoIsTradeGuild_01_01 " );	// Since you are now also the master of our guild, I can tell you about it.
 		if(MIS_SARAHTOGUILD == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_Lutero_WhoIsTradeGuild_01_02");	//С некоторыми ты уже знаком - это Джора и Сара...(ехидно)
+			AI_Output(self,other, " DIA_Lutero_WhoIsTradeGuild_01_02 " );	// You already know some of them - these are Jora and Sarah... (snidely)
 			if(KNOWS_GUILDTRADERS == FALSE)
 			{
 				Log_CreateTopic(TOPIC_GUILDTRADERS,LOG_NOTE);
-				B_LogEntry(TOPIC_GUILDTRADERS,"Лютеро назвал мне имена торговцев, состоящих в гильдии. Это Маттео, Саландрил, Джора, Эрол, Найджел и Сара.");
+				B_LogEntry( TOPIC_GUILTRADERS , " Luthero gave me the names of the guild traders. They are Matteo, Salandril, Jora, Erol, Nigel and Sarah. " );
 				KNOWS_GUILDTRADERS = TRUE;
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Lutero_WhoIsTradeGuild_01_03");	//С одним ты уже знаком - это торговец Джора.
+			AI_Output(self,other, " DIA_Lutero_WhoIsTradeGuild_01_03 " );	// One you're already familiar with is Jor's trader.
 			if(KNOWS_GUILDTRADERS == FALSE)
 			{
 				Log_CreateTopic(TOPIC_GUILDTRADERS,LOG_NOTE);
-				B_LogEntry(TOPIC_GUILDTRADERS,"Лютеро назвал мне имена торговцев, состоящих в гильдии. Это Маттео, Саландрил, Джора, Эрол и Найджел.");
+				B_LogEntry( TOPIC_GUILDTRADERS , " Luthero gave me the names of the guild traders. They are Matteo, Salandril, Jora, Erol and Nigel. " );
 				KNOWS_GUILDTRADERS = TRUE;
 			};
 		};
-		AI_Output(self,other,"DIA_Lutero_WhoIsTradeGuild_01_04");	//Кроме этого, в нашей гильдии состоят и другие - Маттео, Саландрил, Эрол и Найджел.
-		AI_Output(self,other,"DIA_Lutero_WhoIsTradeGuild_01_05");	//Все они, как я уже сказал, будут рады предложить тебе самые лучшие товары, что у них есть.
-		AI_Output(self,other,"DIA_Lutero_WhoIsTradeGuild_01_06");	//Только не забудь одеть кольцо.
+		AI_Output(self,other, " DIA_Lutero_WhoIsTradeGuild_01_04 " );	// In addition, there are others in our guild - Matteo, Salandril, Erol and Nigel.
+		AI_Output(self,other, " DIA_Lutero_WhoIsTradeGuild_01_05 " );	// All of them, as I said, will be happy to offer you the best goods they have.
+		AI_Output(self,other, " DIA_Lutero_WhoIsTradeGuild_01_06 " );	// Just don't forget to wear the ring.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lutero_WhoIsTradeGuild_01_08");	//Тебе пока рано об этом знать.
-		AI_Output(self,other,"DIA_Lutero_WhoIsTradeGuild_01_09");	//Прежде чем задавать такие вопросы, для начала нужно кем-то стать в нашей гильдии.
+		AI_Output(self,other, " DIA_Lutero_WhoIsTradeGuild_01_08 " );	// It's too early for you to know about it.
+		AI_Output(self,other, " DIA_Lutero_WhoIsTradeGuild_01_09 " );	// Before asking such questions, we first need to become someone in our guild.
 	};
 };
