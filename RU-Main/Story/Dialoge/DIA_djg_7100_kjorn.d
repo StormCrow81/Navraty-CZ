@@ -1,4 +1,5 @@
 
+
 instance DIA_DJG_7100_KJORN_EXIT(C_Info)
 {
 	npc = djg_7100_kjorn;
@@ -27,7 +28,7 @@ instance DIA_DJG_7100_KJORN_PERM(C_Info)
 	condition = dia_djg_7100_kjorn_perm_condition;
 	information = dia_djg_7100_kjorn_perm_info;
 	permanent = TRUE;
-	description = "Какие новости?";
+	description = " What's new? " ;
 };
 
 
@@ -41,12 +42,12 @@ func int dia_djg_7100_kjorn_perm_condition()
 
 func void dia_djg_7100_kjorn_perm_info()
 {
-	AI_Output(other,self,"DIA_DJG_7100_Kjorn_Perm_01_00");	//Какие новости?
-	AI_Output(self,other,"DIA_DJG_7100_Kjorn_Perm_01_01");	//Нам наконец-то удалось выбраться из этой проклятой долины!
-	AI_Output(self,other,"DIA_DJG_7100_Kjorn_Perm_01_02");	//По правде говоря, я до сих пор не могу в это поверить.
-	AI_Output(self,other,"DIA_DJG_7100_Kjorn_Perm_01_03");	//А вот сейчас сижу и думаю - и какого черта меня тогда дернуло отправиться туда?
-	AI_Output(other,self,"DIA_DJG_7100_Kjorn_Perm_01_04");	//Думаю, ты просто слишком любишь золото.
-	AI_Output(self,other,"DIA_DJG_7100_Kjorn_Perm_01_05");	//Ну да, это верно подмечено.  Хотя кто его не любит!
+	AI_Output(other,self, " DIA_DJG_7100_Kjorn_Perm_01_00 " );	// What's the news?
+	AI_Output(self,other, " DIA_DJG_7100_Kjorn_Perm_01_01 " );	// We've finally managed to get out of this cursed valley!
+	AI_Output(self,other, " DIA_DJG_7100_Kjorn_Perm_01_02 " );	// To be honest, I still can't believe it.
+	AI_Output(self,other, " DIA_DJG_7100_Kjorn_Perm_01_03 " );	// But now I'm sitting and thinking - and why the hell did I then pull to go there?
+	AI_Output(other,self, " DIA_DJG_7100_Kjorn_Perm_01_04 " );	// I think you're just too fond of gold.
+	AI_Output(self,other, " DIA_DJG_7100_Kjorn_Perm_01_05 " );	// Well, yes, that's right. But who doesn't love him!
 };
 
 
@@ -63,7 +64,7 @@ instance DIA_DJG_7100_KJORN_PICKPOCKET(C_Info)
 
 func int dia_djg_7100_kjorn_pickpocket_condition()
 {
-	return C_Beklauen(100,350);
+	return  C_Robbery ( 100 , 350 );
 };
 
 func void dia_djg_7100_kjorn_pickpocket_info()
@@ -75,7 +76,7 @@ func void dia_djg_7100_kjorn_pickpocket_info()
 
 func void dia_djg_7100_kjorn_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_djg_7100_kjorn_pickpocket);
 };
 
