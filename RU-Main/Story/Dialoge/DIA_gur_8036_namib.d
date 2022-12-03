@@ -1,4 +1,5 @@
 
+
 instance DIA_BAALNAMIB_EXIT(C_Info)
 {
 	npc = gur_8036_namib;
@@ -33,7 +34,7 @@ instance DIA_BAALNAMIB_PICKPOCKET(C_Info)
 
 func int DIA_BAALNAMIB_PICKPOCKET_Condition()
 {
-	return C_Beklauen(49,35);
+	return  C_Robbery ( 49 , 35 );
 };
 
 func void DIA_BAALNAMIB_PICKPOCKET_Info()
@@ -45,7 +46,7 @@ func void DIA_BAALNAMIB_PICKPOCKET_Info()
 
 func void DIA_BAALNAMIB_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_BAALNAMIB_PICKPOCKET);
 };
 
@@ -63,7 +64,7 @@ instance DIA_BAALNAMIB_NOTALK_SLEEPER(C_Info)
 	information = dia_baalnamib_notalk_sleeper_info;
 	permanent = FALSE;
 	important = FALSE;
-	description = "Да пребудет с тобой Спящий!";
+	description = " May the Sleeper be with you! " ;
 };
 
 
@@ -77,7 +78,7 @@ func int dia_baalnamib_notalk_sleeper_condition()
 
 func void dia_baalnamib_notalk_sleeper_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_NoTalk_Sleeper_01_00");	//Да пребудет с тобой Спящий!
+	AI_Output(other,self, " DIA_BaalNamib_NoTalk_Sleeper_01_00 " );	// May the Sleeper be with you!
 	AI_Output(self,other,"DIA_BaalNamib_NoTalk_Sleeper_01_01");	//(вздох)
 	AI_StopProcessInfos(self);
 };
@@ -91,7 +92,7 @@ instance DIA_BAALNAMIB_NOTALK_IMP(C_Info)
 	information = dia_baalnamib_notalk_imp_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Все в порядке, приятель?";
+	description = " Is everything all right, buddy? " ;
 };
 
 
@@ -105,7 +106,7 @@ func int dia_baalnamib_notalk_imp_condition()
 
 func void dia_baalnamib_notalk_imp_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_NoTalk_Imp_01_00");	//Все в порядке, приятель?
+	AI_Output(other,self, " DIA_BaalNamib_NoTalk_Imp_01_00 " );	// Are you all right, mate?
 	AI_Output(self,other,"DIA_BaalNamib_NoTalk_Sleeper_01_01");	//(вздох)
 	AI_StopProcessInfos(self);
 };
@@ -141,28 +142,28 @@ func int dia_baalnamib_sleepspell_condition()
 func void dia_baalnamib_sleepspell_info()
 {
 	B_GivePlayerXP(200);
-	 AI_Output(self,other,"DIA_BaalNamib_SleepSpell_01_00"); //Не отвлекай меня от размышлений, коим предался я и подопечные мои.
-	 AI_Output(self,other,"DIA_BaalNamib_SleepSpell_01_01"); //Магия Спящего! Откуда ведомо тебе это искусство?!
-	 AI_Output(other,self,"DIA_BaalNamib_SleepSpell_01_02"); //Разве в нем есть что-то сложное?
-	 AI_Output(self,other,"DIA_BaalNamib_SleepSpell_01_03"); //Да это дар и ничто иное. Я готов помочь тебе развить его.
-	 AI_Output(self,other,"DIA_BaalNamib_SleepSpell_01_04"); //Стань одним из нас, и тебе откроются новые вершины знания!
+	 AI_Output(self,other, " DIA_BaalNamib_SleepSpell_01_00 " ); // Do not distract me from the reflections to which I and my wards indulged.
+	 AI_Output(self,other, " DIA_BaalNamib_SleepSpell_01_01 " ); // Sleeper Magic! How do you know this art?
+	 AI_Output(other,self, " DIA_BaalNamib_SleepSpell_01_02 " ); // Is there anything complicated in it?
+	 AI_Output(self,other, " DIA_BaalNamib_SleepSpell_01_03 " ); // Yes, this is a gift and nothing else. I am ready to help you develop it.
+	 AI_Output(self,other, " DIA_BaalNamib_SleepSpell_01_04 " ); // Become one of us, and new heights of knowledge will open to you!
 	IDOLNAMIB_YES = TRUE;
 };
 
 
-instance DIA_BAALNAMIB_AUFGABE(C_Info)
+instance DIA_BAALNAMIB_TASK (C_Info)
 {
 	npc = gur_8036_namib;
 	nr = 800;
-	condition = dia_baalnamib_aufgabe_condition;
-	information = dia_baalnamib_aufgabe_info;
+	condition = dia_baalnamib_task_condition;
+	information = dia_baalnamib_task_info;
 	permanent = FALSE;
 	important = FALSE;
-	description = "Я хочу стать одним из Гуру.";
+	description = " I want to become one of the Gurus. " ;
 };
 
 
-func int dia_baalnamib_aufgabe_condition()
+func int dia_baalnamib_task_condition()
 {
 	if((IDOLNAMIB_YES == TRUE) && (other.guild == GIL_SEK))
 	{
@@ -170,51 +171,51 @@ func int dia_baalnamib_aufgabe_condition()
 	};
 };
 
-func void dia_baalnamib_aufgabe_info()
+func void dia_baalnamib_task_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_Aufgabe_01_00");	//Я хочу стать одним из Гуру.
-	AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_01");	//Ты хочешь стать одним из нас?
+	AI_Output(other,self, " DIA_BaalNamib_Aufgabe_01_00 " );	// I want to become one of the Gurus.
+	AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_01 " );	// Do you want to be one of us?
 
 	if(other.attribute[ATR_MANA_MAX] >= 60)
 	{
 		B_GivePlayerXP(400);
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_02");	//Дай посмотреть на тебя... мммм...(внимательно разглядывает)
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_03");	//Ты не похож на человека, который слаб духом...
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_04");	//Я ощущаю в тебе великую духовную силу!
-		AI_Output(other,self,"DIA_BaalNamib_Aufgabe_01_05");	//Значит ли это, господин, что вы даете свое согласие на мое принятие в Круг Гуру?
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_06");	//Ты все верно понял. Ступай к Идолу Орану.
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_02 " );	// Let me see you... mmmm... (looks closely)
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_03 " );	// You don't look like a person who is weak in spirit...
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_04 " );	// I sense great spiritual power in you!
+		AI_Output(other,self, " DIA_BaalNamib_Aufgabe_01_05 " );	// Does this mean, sir, that you give your consent to my acceptance into the Circle of the Guru?
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_06 " );	// You got it right. Go to the Idol Oran.
 		Log_SetTopicStatus(TOPIC_NAMIBWORK,LOG_SUCCESS);
-		B_LogEntry(TOPIC_NAMIBWORK,"По мнению Идола Намиба, мой дух достаточно силен. Он дал согласие на мое принятие в Круг Гуру.");
+		B_LogEntry( TOPIC_NAMIBWORK , " According to the Namib Idol, my spirit is strong enough. He agreed to my acceptance into the Guru Circle. " );
 		MIS_NAMIBWORK = LOG_SUCCESS;
 		NAMIBAGREED = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_07");	//Дай посмотреть на тебя... мммм...(внимательно разглядывает)
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_08");	//Ты еще не готов принять нашу веру. Твой дух еще слишком слаб для этого!
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_09");	//Возвращайся ко мне, когда твоя духовная сила возрастет и окрепнет.
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_10");	//Только тогда мы поговорим о твоем вступлении в Братство.
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_07 " );	// Let me see you... mmmm... (looks closely)
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_08 " );	// You are not yet ready to accept our faith. Your spirit is still too weak for that!
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_09 " );	// Come back to me when your spiritual power grows and becomes stronger.
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_10 " );	// Only then will we talk about your entry into the Brotherhood.
 		Log_CreateTopic(TOPIC_NAMIBWORK,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_NAMIBWORK,LOG_Running);
-		B_LogEntry(TOPIC_NAMIBWORK,"Идол Намиб считает, что я еще не достаточно крепок духом, чтобы быть готовым обрести веру Братства.");
-		B_LogEntry(TOPIC_NAMIBWORK,"Он сказал, чтобы я возвращался, когда моя духовная сила возрастет и окрепнет (требуется не менее 60 единиц магической энергии).");
+		B_LogEntry( TOPIC_NAMIBWORK , "The Namib Idol doesn't think I'm strong enough yet to be ready to enter the faith of the Brotherhood. " );
+		B_LogEntry( TOPIC_NAMIBWORK , " He told me to come back when my Reiatsu is up and strong (requires at least 60 Magical Energy). " );
 		MIS_NAMIBWORK = LOG_Running;
 	};
 };
 
 
-instance DIA_BAALNAMIB_ZUSTIMMUNG(C_Info)
+instance DIA_BAALNAMIB_CONSENT (C_Info)
 {
 	npc = gur_8036_namib;
 	nr = 2;
-	condition = dia_baalnamib_zustimmung_condition;
-	information = dia_baalnamib_zustimmung_info;
+	condition = dia_baalnamib_approval_condition;
+	information = dia_baalnamib_approval_info;
 	permanent = TRUE;
-	description = "Достаточно ли силен мой дух, господин?";
+	description = " Is my spirit strong enough, lord? " ;
 };
 
 
-func int dia_baalnamib_zustimmung_condition()
+func int dia_baalnamib_approval_condition()
 {
 	if((MIS_NAMIBWORK == LOG_Running) && ((other.guild == GIL_NONE) || (other.guild == GIL_SEK)))
 	{
@@ -222,26 +223,26 @@ func int dia_baalnamib_zustimmung_condition()
 	};
 };
 
-func void dia_baalnamib_zustimmung_info()
+func void dia_baalnamib_approval_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_Zustimmung_01_00");	//Достаточно ли силен мой дух, господин?
-	AI_Output(self,other,"DIA_BaalNamib_Zustimmung_01_01");	//Дай посмотреть на тебя... мммм...(внимательно разглядывает)
+	AI_Output(other,self, " DIA_BaalNamib_Zustimmung_01_00 " );	// Is my spirit strong enough, lord?
+	AI_Output(self,other, " DIA_BaalNamib_Zustimmung_01_01 " );	// Let me see you... mmmm... (looks closely)
 
 	if(other.attribute[ATR_MANA_MAX] >= 60)
 	{
 		B_GivePlayerXP(150);
-		AI_Output(self,other,"DIA_BaalNamib_Aufgabe_01_04");	//Я ощущаю в тебе великую духовную силу!
-		AI_Output(other,self,"DIA_BaalNamib_Zustimmung_01_03");	//Значит ли это, господин, что вы даете свое согласие на мое принятие в Круг Гуру?
-		AI_Output(self,other,"DIA_BaalNamib_Zustimmung_01_04");	//Ты все верно понял. Ступай к Идолу Орану.
+		AI_Output(self,other, " DIA_BaalNamib_Aufgabe_01_04 " );	// I sense great spiritual power in you!
+		AI_Output(other,self, " DIA_BaalNamib_Zustimmung_01_03 " );	// Does this mean, sir, that you give your consent to my acceptance into the Circle of the Guru?
+		AI_Output(self,other, " DIA_BaalNamib_Zustimmung_01_04 " );	// You got it right. Go to the Idol Oran.
 		Log_SetTopicStatus(TOPIC_NAMIBWORK,LOG_SUCCESS);
-		B_LogEntry(TOPIC_NAMIBWORK,"По мнению Идола Намиба, мой дух достаточно силен. Он дал согласие на мое принятие в Круг Гуру.");
+		B_LogEntry( TOPIC_NAMIBWORK , " According to the Namib Idol, my spirit is strong enough. He agreed to my acceptance into the Guru Circle. " );
 		MIS_NAMIBWORK = LOG_SUCCESS;
 		NAMIBAGREED = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalNamib_Zustimmung_01_05");	//Нет - ты все так же слаб!
-		AI_Output(self,other,"DIA_BaalNamib_Zustimmung_01_06");	//Не трать мое время. Возвращайся ко мне только тогда, когда твоя духовная сила еще больше возрастет и окрепнет.
+		AI_Output(self,other, " DIA_BaalNamib_Zustimmung_01_05 " );	// No - you're still weak!
+		AI_Output(self,other, " DIA_BaalNamib_Zustimmung_01_06 " );	// Don't waste my time. Come back to me only when your spiritual power grows even stronger and stronger.
 	};
 };
 
@@ -252,7 +253,7 @@ instance DIA_BAALNAMIB_PRETEACH(C_Info)
 	nr = 99;
 	condition = dia_baalnamib_preteach_condition;
 	information = dia_baalnamib_preteach_info;
-	description = "Идол Оран сказал, что ты можешь обучить меня созданию рун.";
+	description = " Idol Oran said you could teach me how to make runes. " ;
 };
 
 
@@ -266,30 +267,30 @@ func int dia_baalnamib_preteach_condition()
 
 func void dia_baalnamib_preteach_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_PreTeach_15_00");	//Идол Оран сказал, что ты можешь обучить меня созданию рун магии Спящего.
-	AI_Output(self,other,"DIA_BaalNamib_PreTeach_05_01");	//Конечно, я могу помочь тебе освоить это искусство!
-	AI_Output(self,other,"DIA_BaalNamib_PreTeach_05_02");	//С постижением каждого нового магического Круга тебе будут становиться доступны все более и более могущественные заклинания.
-	AI_Output(self,other,"DIA_BaalNamib_PreTeach_05_03");	//Кроме этого, для создания некоторых рун тебе понадобятся магические свитки с заклинаниями. Идол Тион сможет продать тебе их.
-	AI_Output(self,other,"DIA_BaalNamib_PreTeach_05_04");	//Также у него всегда с есть собой книги рун на тот случай, если ты захочешь узнать больше о магии Спящего.
+	AI_Output(other,self, " DIA_BaalNamib_PreTeach_15_00 " );	// Idol Oran said you could teach me how to make runes of Sleeper magic.
+	AI_Output(self,other, " DIA_BaalNamib_PreTeach_05_01 " );	// Of course I can help you master this art!
+	AI_Output(self,other, " DIA_BaalNamib_PreTeach_05_02 " );	// With the comprehension of each new magic Circle, more and more powerful spells will become available to you.
+	AI_Output(self,other, " DIA_BaalNamib_PreTeach_05_03 " );	// In addition, you will need magical spell scrolls to create some runes. Idol Tion will be able to sell them to you.
+	AI_Output(self,other, " DIA_BaalNamib_PreTeach_05_04 " );	// He also always has rune books with him in case you want to know more about the Sleeper's magic.
 	Log_CreateTopic(TOPIC_ADDON_GURTEACHER,LOG_NOTE);
-	B_LogEntry(TOPIC_ADDON_GURTEACHER,"Идол Намиб может научить меня создавать руны магии Спящего.");
+	B_LogEntry( TOPIC_ADDON_GURTEACHER , "The Namib Idol can teach me how to create sleeper magic runes. " );
 };
 
 
-instance DIA_BAALNAMIB_RUNEN(C_Info)
+instance DIA_BAALNAMIB_RUNEN (C_Info)
 {
 	npc = gur_8036_namib;
 	nr = 99;
 	condition = dia_baalnamib_runen_condition;
 	information = dia_baalnamib_runen_info;
 	permanent = TRUE;
-	description = "Научи меня создавать руны.";
+	description = " Teach me how to make runes. " ;
 };
 
 
 func int dia_baalnamib_runen_condition()
 {
-	if((hero.guild == GIL_GUR) && (BAALNAMIB_TEACHRUNES == TRUE) && Npc_KnowsInfo(other,dia_baalnamib_preteach))
+	if ((hero.guild ==  GIL_GUR ) && ( BAALNAMIB_TEACHRUNES  ==  TRUE ) && Npc_KnowsInfo(other,dia_baalnamib_preteach))
 	{
 		return TRUE;
 	};
@@ -297,32 +298,32 @@ func int dia_baalnamib_runen_condition()
 
 func void dia_baalnamib_runen_info()
 {
-	AI_Output(other,self,"DIA_Parlan_TEACH_15_00");	//Обучи меня!
+	AI_Output(other,self, " DIA_Parlan_TEACH_15_00 " );	// Train me!
 	Info_ClearChoices(dia_baalnamib_runen);
 	Info_AddChoice(dia_baalnamib_runen,Dialog_Back,dia_baalnamib_runen_back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 6)
 	{
-		Info_AddChoice(dia_baalnamib_runen,"6 Круг магии",dia_baalnamib_runen_6);
+		Info_AddChoice(dia_baalnamib_runen, " 6 Circle of Magic " ,dia_baalnamib_runen_6);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 5)
 	{
-		Info_AddChoice(dia_baalnamib_runen,"5 Круг магии",dia_baalnamib_runen_5);
+		Info_AddChoice(dia_baalnamib_runen, " 5 Circle of Magic " ,dia_baalnamib_runen_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 4)
 	{
-		Info_AddChoice(dia_baalnamib_runen,"4 Круг магии",dia_baalnamib_runen_4);
+		Info_AddChoice(dia_baalnamib_runen, " 4 Circle of Magic " ,dia_baalnamib_runen_4);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3)
 	{
-		Info_AddChoice(dia_baalnamib_runen,"3 Круг магии",dia_baalnamib_runen_3);
+		Info_AddChoice(dia_baalnamib_runen, " 3 Circle of Magic " ,dia_baalnamib_runen_3);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2)
 	{
-		Info_AddChoice(dia_baalnamib_runen,"2 Круг магии",dia_baalnamib_runen_2);
+		Info_AddChoice(dia_baalnamib_runen, " 2 Circle of Magic " ,dia_baalnamib_runen_2);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 1)
 	{
-		Info_AddChoice(dia_baalnamib_runen,"1 Круг магии",dia_baalnamib_runen_1);
+		Info_AddChoice(dia_baalnamib_runen, " 1 Circle of Magic " ,dia_baalnamib_runen_1);
 	};
 };
 
@@ -520,7 +521,7 @@ instance DIA_BAALNAMIB_RUNEMAGICNOTWORK(C_Info)
 	condition = dia_baalnamib_runemagicnotwork_condition;
 	information = dia_baalnamib_runemagicnotwork_info;
 	permanent = FALSE;
-	description = "Как обстоят дела с вашей магией?";
+	description = " How is your magic doing? " ;
 };
 
 
@@ -535,16 +536,16 @@ func int dia_baalnamib_runemagicnotwork_condition()
 func void dia_baalnamib_runemagicnotwork_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_BaalNamib_RuneMagicNotWork_01_00");	//Как обстоят дела с вашей магией?
-	AI_Output(self,other,"DIA_BaalNamib_RuneMagicNotWork_01_01");	//Наши магические руны ослабли и не способны больше творить заклинания!
-	AI_Output(self,other,"DIA_BaalNamib_RuneMagicNotWork_01_03");	//Все это очень странно.
-	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Гуру Братства также лишились власти над магией рун!");
+	AI_Output(other,self, " DIA_BaalNamib_RuneMagicNotWork_01_00 " );	// How's your magic doing?
+	AI_Output(self,other, " DIA_BaalNamib_RuneMagicNotWork_01_01 " );	// Our magic runes are weak and unable to cast spells anymore!
+	AI_Output(self,other, " DIA_BaalNamib_RuneMagicNotWork_01_03 " );	// All this is very strange.
+	B_LogEntry( TOPIC_RUNEMAGICNOTWORK , "The Gurus of the Brotherhood have also lost their power over rune magic! " );
 	GURUMAGERUNESNOT = TRUE;
 };
 
-//-----------------PRIORAT---------------------
+// -----------------PRIORITY--------------------
 
-instance DIA_BAALNAMIB_PrioratStart(C_Info)
+instance DIA_BAALNAMIB_PrioratStart (C_Info)
 {
 	npc = gur_8036_namib;
 	nr = 1;
@@ -569,56 +570,56 @@ func void dia_baalnamib_PrioratStart_info()
 	{
 		if(hero.guild == GIL_SEK)
 		{
-			AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_01");	//Хорошо, что ты пришел, послушник.
+			AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_01 " );	// It's good that you came, novice.
 		}
-		else if(hero.guild == GIL_GUR)
+		else  if (hero.guild ==  GIL_GUR )
 		{
-			AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_02");	//Хорошо, что ты пришел.
+			AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_02 " );	// It's good that you came.
 		}
 		else if(hero.guild == GIL_TPL)
 		{
-			AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_03");	//Хорошо, что ты пришел, страж.
+			AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_03 " );	// It's good that you came, guard.
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_04");	//Хорошо, что ты пришел, незнакомец.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_04 " );	// It's good that you came, stranger.
 	};
 
 
-	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_01_05");	//Ты хотел меня видеть?
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_06");	//Да, все верно. У меня есть к тебе дело, которое не терпит отлагательств.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_07");	//В последнее время из лагеря стали пропадать послушники Братства.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_08");	//Причем никто не знает, сами ли они решили уйти, или с ними что-то случилось.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_09");	//Мы никого не держим в лагере насильно. Однако такая тенденция может привести к печальным последствиям для нашей общины.
-	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_01_10");	//А что ты хочешь от меня?
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_11");	//Мне нужно, чтобы ты выяснил причину, которая заставила этих послушников покинуть ряды нашего Братства.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_12");	//Или же узнать, что с ними случилось.
-	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_01_13");	//Все это очень интересно, но почему именно я?
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_14");	//Понимаешь, этот вопрос довольно щекотлив.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_15");	//Если я доверю это кому-нибудь другому, могут пойти разные слухи, что крайне нежелательно для нас в нынешней ситуации.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratStart_01_05 " );	// You wanted to see me?
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_06 " );	// Yes, that's right. I have an urgent matter for you.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_07 " );	// Recently, acolytes of the Brotherhood have been disappearing from the camp.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_08 " );	// And no one knows whether they themselves decided to leave, or something happened to them.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_09 " );	// We do not keep anyone in the camp by force. However, this trend can lead to sad consequences for our community.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratStart_01_10 " );	// What do you want from me?
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_11 " );	// I need you to find out the reason that forced these acolytes to leave the ranks of our Brotherhood.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_12 " );	// Or find out what happened to them.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratStart_01_13 " );	// All this is very interesting, but why me?
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_14 " );	// You see, this question is rather delicate.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_15 " );	// If I trust this to someone else, various rumors may spread, which is highly undesirable for us in the current situation.
 
 	if((hero.guild == GIL_SEK) || (hero.guild == GIL_GUR) || (hero.guild == GIL_TPL))
 	{
-		AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_16");	//А ты здесь человек новый и к тому же хорошо зарекомендовавший себя в глазах наших братьев.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_16 " );	// And you are a new person here and, besides, you have proven yourself well in the eyes of our brothers.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_17");	//А ты, как я слышал, надежный человек, хоть и не являешься членом нашего Братства.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_17 " );	// And you, as I heard, are a reliable person, although you are not a member of our Brotherhood.
 	};
 
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_01_18");	//Этим и объясняется мой выбор. Так я могу рассчитывать на твою помощь? 
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_01_18 " );	// This explains my choice. So can I count on your help?
 	Info_ClearChoices(DIA_BaalNamib_PrioratStart);
-	Info_AddChoice(DIA_BaalNamib_PrioratStart,"Хорошо. С чего я должен начать?",DIA_BaalNamib_PrioratStart_yes);
-	Info_AddChoice(DIA_BaalNamib_PrioratStart,"У меня нет на это времени.",DIA_BaalNamib_PrioratStart_no);
+	Info_AddChoice(DIA_BaalNamib_PrioratStart, " Ok. Where should I start? " ,DIA_BaalNamib_PrioratStart_yes);
+	Info_AddChoice(DIA_BaalNamib_PrioratStart, " I don't have time for this. " ,DIA_BaalNamib_PrioratStart_no);
 };
 
 func void DIA_BaalNamib_PrioratStart_no()
 {
-	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_no_01_01");	//К сожалению, у меня нет времени на это.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_no_01_02");	//Что ж, ты очень сильно разочаровал меня своим ответом.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_no_01_03");	//Надеюсь, что у тебя действительно есть более важные дела, нежели помощь нашему Братству.
-	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_no_01_04");	//Мне очень жаль.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratStart_no_01_01 " );	// Unfortunately, I don't have time for that.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_no_01_02 " );	// Well, you really disappointed me with your answer.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_no_01_03 " );	// I hope that you really have more important things to do than help our Brotherhood.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratStart_no_01_04 " );	// I'm sorry.
 	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_no_01_05");	//(вздох)
 	AI_StopProcessInfos(self);
 };
@@ -626,21 +627,21 @@ func void DIA_BaalNamib_PrioratStart_no()
 func void DIA_BaalNamib_PrioratStart_yes()
 {
 	Wld_SendTrigger("NW_ASS_BLOOD_01");
-	B_StartOtherRoutine(SEK_8039_NOVIZE,"TOT");
-	B_StartOtherRoutine(SEK_8040_NOVIZE,"TOT");
+	B_StartOtherRoutine( SEK_8039_NOVIZE , " TOT " );
+	B_StartOtherRoutine( SEK_8040_NOVIZE , " TOT " );
 	B_StartOtherRoutine(tpl_8045_hanis,"Death");
-	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_yes_01_01");	//Хорошо. С чего я должен начать свои поиски?
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_02");	//Думаю, сперва тебе стоит проверить лагеря наших сборщиков болотника.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_03");	//Мы уже давно не получали от них никаких известий.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_04");	//Я очень волнуюсь за их судьбу. Здешняя местность не слишком дружелюбна.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_05");	//Заодно и выяснишь, что они знают о пропавших послушниках. Нам будет полезна любая информация.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_06");	//После того как побываешь у сборщиков, отправляйся в город к Идолу Парвезу.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_07");	//Узнай, есть ли у него какие-нибудь новости относительно этого дела. Пока это все.
-	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_yes_01_08");	//Ладно, я все понял.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_09");	//Жду от тебя новостей. И, надеюсь, хороших.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratStart_yes_01_01 " );	// Good. Where should I start my search?
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_yes_01_02 " );	// I think you should check out our bog harvester camps first.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_yes_01_03 " );	// We haven't heard from them in a long time.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_yes_01_04 " );	// I'm very worried about their fate. The local area is not very friendly.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_yes_01_05 " );	// At the same time, you will find out what they know about the missing acolytes. Any information will be useful to us.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_yes_01_06 " );	// After you visit the pickers, go to the city to the Parvez Idol.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_yes_01_07 " );	// See if he has any news on this case. That's all for now.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratStart_yes_01_08 " );	// Okay, I got it.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratStart_yes_01_09 " );	// Waiting for news from you. And hopefully good ones.
 	Log_CreateTopic(TOPIC_PrioratStart,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PrioratStart,LOG_Running);
-	B_LogEntry(TOPIC_PrioratStart,"Идол Намиб сильно обеспокоен тем, что из лагеря таинственным образом стали пропадать послушники Братства. Он попросил меня помочь ему в этом запутанном деле. Для начала мне стоит наведаться в лагеря сборщиков болотника и расспросить их на предмет этих странных исчезновений, а после - заглянуть к Идолу Парвезу в Хоринисе.");
+	B_LogEntry(TOPIC_PrioratStart, " The Namib Idol is very concerned about the mysterious disappearance of Brotherhood acolytes from the camp. He asked me to help him in this complicated matter. First, I should visit the camps of the swamp collectors and question them about these strange disappearances, and after - look at the Idol Parvez in Khorinis. " );
 	MIS_PrioratStart = LOG_Running;
 	AI_StopProcessInfos(self);
 };
@@ -654,7 +655,7 @@ instance DIA_BAALNAMIB_PrioratNews(C_Info)
 	condition = dia_baalnamib_PrioratNews_condition;
 	information = dia_baalnamib_PrioratNews_info;
 	permanent = TRUE;
-	description = "У меня есть для тебя новости.";
+	description = " I have news for you. " ;
 };
 
 
@@ -670,56 +671,56 @@ func void dia_baalnamib_PrioratNews_info()
 {
 	var int ExpAll;
 
-	ExpAll = FALSE;
+	ExpAll = FALSE ;
 
-	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_01");	//У меня есть для тебя новости.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_02");	//Я тебя внимательно слушаю.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_01 " );	// I have news for you.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_02 " );	// I'm listening to you carefully.
 
 	if((PsiCamp_01_Ok == TRUE) && (PsiCamp_01_Done == FALSE))
 	{
 		ExpAll = ExpAll + 100;
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_03");	//В лагере сборщиков Балама все спокойно - новая партия болотника будет доставлена в срок. 
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_04");	//А что насчет пропавших послушников?
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_05");	//Они ничего не слышали об этом. 
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_06");	//Хорошо. Что-нибудь еще? 
+		AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_03 " );	// Everything is calm in Balam's gathering camp - a new batch of bogweed will be delivered on time.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_04 " );	// What about the missing acolytes?
+		AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_05 " );	// They haven't heard anything about it.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_06 " );	// Good. Anything else?
 		PsiCamp_01_Done = TRUE;
 	};
 
 	if((PsiCamp_02_Ok == TRUE) && (PsiCamp_02_Done == FALSE))
 	{
 		ExpAll = ExpAll + 100;
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_07");	//У Шрэта и его сборщиков болотника все в полном порядке.
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_08");	//Это радует. А известно им что-нибудь о пропавших братьях?
+		AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_07 " );	// Shrat and his bog harvesters are doing just fine.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_08 " );	// This pleases. Do they know anything about the missing brothers?
 		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_09");	//Нет.
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_10");	//Что же, - нет так нет. Есть еще какие-нибудь новости?
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_10 " );	// Well, - no, no. Any other news?
 		PsiCamp_02_Done = TRUE;
 	};
 
 	if((PsiCamp_04_Ok == TRUE) && (PsiCamp_04_Done == FALSE))
 	{
 		ExpAll = ExpAll + 100;
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_11");	//Я поговорил с Идолом Парвезом. 
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_12");	//И что он сказал?
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_13");	//По его словам, в городе никто не видел послушников из лагеря. 
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_14");	//Он в это уверен?
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_15");	//Абсолютно. Городская стража не оставила бы это без внимания.
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_16");	//Хорошо. Есть еще новости?
+		AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_11 " );	// I've spoken to Idol Parvez.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_12 " );	// And what did he say?
+		AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_13 " );	// According to him, in the city no one saw novices from the camp.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_14 " );	// Is he sure?
+		AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_15 " );	// Absolutely. The city guard wouldn't let this go unnoticed.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_16 " );	// Good. Any more news?
 		PsiCamp_04_Done = TRUE;
 	};
 	if((PsiCamp_03_Ok == TRUE) && (PsiCamp_03_Done == FALSE))
 	{
-		if(MissKillerHanis == FALSE)
+		if (MissKillerHanis ==  FALSE )
 		{
-			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_17");	//Полагаю, что они тебе не очень понравятся. На лагерь стража Ханиса было совершено нападение.
-			AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_18");	//Что?! Но кто мог это сделать и, главное, зачем?
-			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_19");	//Этого я не знаю.
-			AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_20");	//О, боги... А что же сам Ханис?
-			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_21");	//Он храбро сражался и даже сумел ранить одного из нападавших, но был смертельно ранен. Я ничем не мог ему помочь.
-			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_23");	//Правда, перед тем как умереть, он сообщил мне, что нападавшие забрали с собой всех сборщиков болотника.
+			AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_17 " );	// I guess you won't like them very much. The camp of Hanis's guard was attacked.
+			AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_18 " );	// What?! But who could do it and, most importantly, why?
+			AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_19 " );	// I don't know this.
+			AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_20 " );	// Oh, gods... And what about Hanis himself?
+			AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_21 " );	// He fought bravely and even managed to wound one of the attackers, but was mortally wounded. There was nothing I could do to help him.
+			AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_23 " );	// True, before he died, he told me that the attackers took all the bog harvesters with them.
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_53");	//По поводу нападения на лагерь Ханиса...
+			AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_53 " );	// Regarding the attack on Khanis's camp...
 		};
 
 		if(FirstAssas == TRUE)
@@ -729,48 +730,48 @@ func void dia_baalnamib_PrioratNews_info()
 				ExpAll = ExpAll + 500;
 			};
 
-			if(MissKillerHanis == FALSE)
+			if (MissKillerHanis ==  FALSE )
 			{
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_24");	//И что ты предпринял?
-				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_25");	//По словам Ханиса, один из убийц сильно истекал кровью. Это помогло мне выследить его и убить.
-				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_26");	//Однако кто он и откуда, выяснить не удалось. При нем был только странного вида клинок.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_27");	//Дай мне взглянуть на него.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_24 " );	// And what did you do?
+				AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_25 " );	// According to Hanis, one of the killers was bleeding heavily. It helped me track him down and kill him.
+				AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_26 " );	// However, who he is and where he came from, it was not possible to find out. He carried only a strange-looking blade.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_27 " );	// Let me take a look at it.
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_54");	//Я тебя слушаю.
-				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_55");	//Мне удалось выследить и убить одного из нападавших.
-				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_56");	//Однако кто он и откуда, выяснить не удалось. При нем был только странного вида клинок.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_57");	//Дай мне взглянуть на него.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_54 " );	// I'm listening to you.
+				AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_55 " );	// I managed to track down and kill one of the attackers.
+				AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_56 " );	// However, who he is and where he came from, it was not possible to find out. He carried only a strange-looking blade.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_57 " );	// Let me take a look at it.
 			};
 
 			if(Npc_HasItems(other,ItMw_1H_AssBlade) >= 1)
 			{
 				AI_UnequipWeapons(self);
 				CreateInvItems(other,ItMw_1H_AssBlade_View,1);
-				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_28");	//Вот, возьми.
+				AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_28 " );	// Here, take this.
 				B_GiveInvItems(other,self,ItMw_1H_AssBlade_View,1);
 				AI_EquipBestMeleeWeapon(self);
 				AI_ReadyMeleeWeapon(self);
 				AI_PlayAni(self,"T_1HSINSPECT");
 				AI_RemoveWeapon(self);
 				AI_UnequipWeapons(self);
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_29");	//Да, очень странный клинок. Никогда не видел подобного оружия.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_30");	//Возьми его обратно и попытайся о нем что-нибудь выяснить.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_31");	//Узнай, кому мог бы принадлежать такой клинок.
-				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_32");	//Это будет непросто. У тебя есть какие-нибудь мысли на этот счет?
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_33");	//Попробуй поговорить с опытными кузнецами. Кто, как не они, лучше всего разбираются в оружии.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_34");	//Возможно, нам повезет, и кто-нибудь из них знает, откуда оно могло взяться.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_35");	//Больше новостей у тебя нет?
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_29 " );	// Yes, a very strange blade. I have never seen such a weapon.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_30 " );	// Take it back and try to find out something about it.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_31 " );	// Find out who might own such a blade.
+				AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_32 " );	// This won't be easy. Do you have any thoughts on this?
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_33 " );	// Try talking to experienced blacksmiths. Who, if not they, are best versed in weapons.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_34 " );	// Maybe we'll get lucky and one of them knows where it came from.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_35 " );	// Do you have any more news?
 				BladePrioratSeek = TRUE;
-				B_LogEntry(TOPIC_PrioratStart,"Я рассказал Идолу Намибу о нападении на лагерь сборщиков и показал ему загадочный клинок, который я обнаружил у одного из нападавших. Гуру попросил меня разузнать о нем поподробнее. Для начала стоит поспрашивать о нем местных кузнецов.");
+				B_LogEntry(TOPIC_PrioratStart, " I told Namib Idol about the attack on the gathering camp and showed him a mysterious blade that I found on one of the attackers. Guru asked me to find out more about it. You should first ask the local blacksmiths about it. " );
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_36");	//К сожалению, у меня нет его с собой.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_37");	//Тогда принеси мне его, чтобы я мог взглянуть на него.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_39");	//Еще какие-нибудь новости есть?
-				B_LogEntry(TOPIC_PrioratStart,"Я рассказал Идолу Намибу о нападении на лагерь сборщиков и о загадочном клинке, который я обнаружил у одного из нападавших. Гуру попросил меня показать меч ему, а затем разузнать о нем поподробнее. Для начала стоит поспрашивать о нем местных кузнецов.");
+				AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_36 " );	// Unfortunately, I don't have it with me.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_37 " );	// Then bring it to me so I can have a look at it.
+				AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_39 " );	// Any other news?
+				B_LogEntry(TOPIC_PrioratStart, " I told Namib Idol about the attack on the gathering camp and about the mysterious blade I found on one of the attackers. Guru asked me to show him the sword and then find out more about it. First, ask the local blacksmiths about it. " );
 				MissAssBlade = TRUE;
 			};
 
@@ -783,10 +784,10 @@ func void dia_baalnamib_PrioratNews_info()
 				B_GivePlayerXP(ExpAll);
 			};
 
-			AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_40");	//И что ты предпринял?
-			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_41");	//По словам Ханиса, один из убийц сильно истекал кровью.
-			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_42");	//Но я пока его не нашел.
-			AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_43");	//Тогда выследи его! Нам нужно знать, что это за люди.
+			AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_40 " );	// And what did you do?
+			AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_41 " );	// According to Hanis, one of the killers was bleeding heavily.
+			AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_42 " );	// But I haven't found it yet.
+			AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_43 " );	// Then hunt him down! We need to know who these people are.
 			MissKillerHanis = TRUE;
 			AI_StopProcessInfos(self);
 		};
@@ -799,16 +800,16 @@ func void dia_baalnamib_PrioratNews_info()
 
 	if((PsiCamp_01_Done == TRUE) && (PsiCamp_02_Done == TRUE) && (PsiCamp_03_Done == TRUE) && (PsiCamp_04_Done == TRUE) && (BladePrioratSeek == TRUE))
 	{
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_45");	//Полагаю, это все новости, которые я мог узнать о пропавших послушниках.
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_46");	//Ты хорошо поработал! Теперь нам надо решить, как быть дальше.
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_47");	//И пока я думаю над этим, постарайся узнать что-нибудь насчет клинка.
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_48");	//Возможно, это единственная ниточка, которая сможет привести нас к истине.
+		AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_45 " );	// I guess that's all the news I could get about the missing acolytes.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_46 " );	// You did a good job! Now we need to decide what to do next.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_47 " );	// And while I think about it, try to find out something about the blade.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_48 " );	// Perhaps this is the only thread that can lead us to the truth.
 		BladePrioratSeekInProgress = TRUE;
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_50");	//Пока это все новости.
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_51");	//Хорошо, но этого мало! Постарайся узнать еще что-нибудь.
+		AI_Output(other,self, " DIA_BaalNamib_PrioratNews_01_50 " );	// That's all news for now.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_01_51 " );	// Okay, but that's not enough! Try to find out more.
 	};
 };
 
@@ -820,7 +821,7 @@ instance DIA_BAALNAMIB_PrioratNews_Blade(C_Info)
 	condition = dia_baalnamib_PrioratNews_Blade_condition;
 	information = dia_baalnamib_PrioratNews_Blade_info;
 	permanent = FALSE;
-	description = "У меня есть с собой тот клинок.";
+	description = " I have that blade with me. " ;
 };
 
 
@@ -835,9 +836,9 @@ func int dia_baalnamib_PrioratNews_Blade_condition()
 func void dia_baalnamib_PrioratNews_Blade_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_Blade_01_01");	//У меня есть с собой тот клинок.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_02");	//Хорошо. Дай мне взглянуть на него.
-	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_Blade_01_03");	//Вот, держи.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratNews_Blade_01_01 " );	// I have that blade with me.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratNews_Blade_01_02 " );	// Good. Let me take a look at it.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratNews_Blade_01_03 " );	// Here, take this.
 	CreateInvItems(self,ItMw_1H_AssBlade_View,1);
 	AI_UnequipWeapons(self);
 	AI_EquipBestMeleeWeapon(self);
@@ -845,21 +846,21 @@ func void dia_baalnamib_PrioratNews_Blade_info()
 	AI_PlayAni(self,"T_1HSINSPECT");
 	AI_RemoveWeapon(self);
 	AI_UnequipWeapons(self);
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_04");	//Да, очень странный клинок. Никогда не видел подобного оружия!
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_05");	//Возьми его обратно и попытайся выяснить о нем что-нибудь.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratNews_Blade_01_04 " );	// Yes, a very strange blade. I have never seen such a weapon!
+	AI_Output(self,other, " DIA_BaalNamib_PrioratNews_Blade_01_05 " );	// Take it back and try to find out something about it.
 	Npc_RemoveInvItems(self,ItMw_1H_AssBlade_View,Npc_HasItems(self,ItMw_1H_AssBlade_View));
 	AI_EquipBestMeleeWeapon(self);
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_06");	//Узнай, кому мог бы принадлежать такой клинок.
-	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_Blade_01_07");	//Это будет непросто. У тебя есть какие-нибудь мысли на этот счет?
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_08");	//Попробуй поговорить с опытными кузнецами. Кто, как не они, лучше всего разбираются в оружии!
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_09");	//Возможно, нам повезет, и кто-нибудь из них знает, откуда оно могло взяться.
+	AI_Output(self,other, " DIA_BaalNamib_PrioratNews_Blade_01_06 " );	// Find out who might own such a blade.
+	AI_Output(other,self, " DIA_BaalNamib_PrioratNews_Blade_01_07 " );	// This won't be easy. Do you have any thoughts on this?
+	AI_Output(self,other, " DIA_BaalNamib_PrioratNews_Blade_01_08 " );	// Try talking to experienced blacksmiths. Who, if not they, are best versed in weapons!
+	AI_Output(self,other, " DIA_BaalNamib_PrioratNews_Blade_01_09 " );	// Maybe we'll get lucky and one of them knows where it came from.
 	BladePrioratSeek = TRUE;
-	B_LogEntry(TOPIC_PrioratStart,"Я принес Идолу Намибу загадочный клинок, найденный мною у одного из нападавших. Гуру очень заинтересовался им и попросил меня разузнать о нем более подробно. Для начала стоит поспрашивать местных кузнецов.");
+	B_LogEntry(TOPIC_PrioratStart, " I brought the Namib Idol a mysterious blade that I found from one of the attackers. The Guru was very interested in it and asked me to find out more about it. You should first ask the local blacksmiths. " );
 
 
 	if((PsiCamp_01_Done == TRUE) && (PsiCamp_02_Done == TRUE) && (PsiCamp_03_Done == TRUE) && (PsiCamp_04_Done == TRUE) && (BladePrioratSeek == TRUE))
 	{
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_10");	//Возможно, это единственная ниточка, которая сможет привести нас к истине.
+		AI_Output(self,other, " DIA_BaalNamib_PrioratNews_Blade_01_10 " );	// Perhaps this is the only thread that can lead us to the truth.
 		BladePrioratSeekInProgress = TRUE;
 	};
 };
@@ -871,7 +872,7 @@ instance DIA_BAALNAMIB_ShadowKnown(C_Info)
 	condition = dia_baalnamib_ShadowKnown_condition;
 	information = dia_baalnamib_ShadowKnown_info;
 	permanent = FALSE;
-	description = "Мне удалось выяснить, кто напал на лагерь сборщиков болотника.";
+	description = " I was able to find out who attacked the swamp harvester camp. " ;
 };
 
 
@@ -886,24 +887,24 @@ func int dia_baalnamib_ShadowKnown_condition()
 func void dia_baalnamib_ShadowKnown_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_01");	//Мне удалось выяснить, кто напал на лагерь сборщиков болотника.
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_02");	//В самом деле?
-	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_03");	//Это были бойцы древнего ордена убийц, именующие себя Тенями Масиафа!
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_04");	//Хммм... Кажется, я догадываюсь, о ком ты говоришь. 
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_05");	//Но, насколько я знаю, их Братство всегда располагалось в землях ассасинов в Варанте.
-	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_06");	//Ты прав - так и было до недавнего времени.
-	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_07");	//Но клинок, который я нашел у одного из убийц, говорит об обратном. 
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_08");	//Если это так, то мы все в большой опасности!
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_09");	//И особенно те братья, которые сейчас находятся за пределами нашего лагеря.
-	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_10");	//И что мы будем делать?
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_11");	//Для начала отправляйся к Гор На Тофу и скажи, что я распорядился обеспечить безопасность сборщиков.
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_12");	//Пусть он отправит к ним несколько своих Стражей.
-	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_13");	//Хорошо. А что делать мне?
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_14");	//Полагаю, что сейчас у меня нет для тебя никаких поручений.
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_15");	//Но если ты все-таки хочешь помочь, отправляйся вместе со стражами в один из лагерей.
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_16");	//Уверен, что лишний человек им там не помешает.
+	AI_Output(other,self, " DIA_BaalNamib_ShadowKnown_01_01 " );	// I was able to find out who attacked the bog harvester's camp.
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_02 " );	// Really?
+	AI_Output(other,self, " DIA_BaalNamib_ShadowKnown_01_03 " );	// These were the fighters of an ancient order of assassins who call themselves the Shadows of Masyaf!
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_04 " );	// Hmmm... I think I can guess who you're talking about.
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_05 " );	// But, as far as I know, their Brotherhood has always been located in the lands of the assassins in Varant.
+	AI_Output(other,self, " DIA_BaalNamib_ShadowKnown_01_06 " );	// You're right - that's how it was until recently.
+	AI_Output(other,self, " DIA_BaalNamib_ShadowKnown_01_07 " );	// But the blade I found on one of the assassins says otherwise.
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_08 " );	// If so, then we are all in great danger!
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_09 " );	// And especially those brothers who are now outside of our camp.
+	AI_Output(other,self, " DIA_BaalNamib_ShadowKnown_01_10 " );	// And what are we going to do?
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_11 " );	// First, go to Gor Na Tofu and tell them I've ordered that the harvesters be kept safe.
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_12 " );	// Have him send some of his Guardians to them.
+	AI_Output(other,self, " DIA_BaalNamib_ShadowKnown_01_13 " );	// Good. What should I do?
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_14 " );	// Guess I don't have any errands for you right now.
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_15 " );	// But if you still want to help, go with the guards to one of the camps.
+	AI_Output(self,other, " DIA_BaalNamib_ShadowKnown_01_16 " );	// I'm sure that an extra person will not interfere with them there.
 	NamibSendTempler = TRUE;
-	B_LogEntry(TOPIC_PrioratStart,"Я рассказал Идолу Намибу все, что смог узнать о нападавших. Намиб послал меня к наставнику стражей Гор на Тофу, чтобы тот распорядился обеспечить безопасность оставшихся лагерей сборщиков болотника. Я тоже могу помочь стражам в этом деле.");
+	B_LogEntry(TOPIC_PrioratStart, " I told the Namib Idol everything I could about the attackers. The Namib sent me to the Master Guard of the Mountains on Tofu to instruct him to secure the remaining bog harvester camps. I can help the guards with this as well. " );
 };
 
 
@@ -914,7 +915,7 @@ instance DIA_BAALNAMIB_WhereToGo(C_Info)
 	condition = dia_baalnamib_WhereToGo_condition;
 	information = dia_baalnamib_WhereToGo_info;
 	permanent = FALSE;
-	description = "В какой лагерь сборщиков мне лучше отправиться?";
+	description = " Which gathering camp should I go to? " ;
 };
 
 
@@ -928,12 +929,12 @@ func int dia_baalnamib_WhereToGo_condition()
 
 func void dia_baalnamib_WhereToGo_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_WhereToGo_01_01");	//В какой лагерь сборщиков мне лучше отправиться?
-	AI_Output(self,other,"DIA_BaalNamib_WhereToGo_01_02");	//Полагаю, в тот, что располагается на севере, недалеко от пирамид. Уверен, там ты будешь нужнее.
-	AI_Output(other,self,"DIA_BaalNamib_WhereToGo_01_03");	//А откуда такая уверенность?
-	AI_Output(self,other,"DIA_BaalNamib_WhereToGo_01_04");	//Вряд ли Масиаф осмелится напасть на лагерь вблизи города. Для них это слишком рискованно.
-	AI_Output(self,other,"DIA_BaalNamib_WhereToGo_01_05");	//Ведь они и так раскрыли свое присутствие на этом острове.
-	B_LogEntry(TOPIC_PrioratStart,"Идол Намиб посоветовал мне отправиться в лагерь, что располагается на севере Хориниса, вблизи пирамид.");
+	AI_Output(other,self, " DIA_BaalNamib_WhereToGo_01_01 " );	// Which gathering camp should I go to?
+	AI_Output(self,other, " DIA_BaalNamib_WhereToGo_01_02 " );	// I'm guessing the one to the north, near the pyramids. I'm sure you'll be needed there.
+	AI_Output(other,self, " DIA_BaalNamib_WhereToGo_01_03 " );	// And where does such confidence come from?
+	AI_Output(self,other, " DIA_BaalNamib_WhereToGo_01_04 " );	// It is unlikely that Masyaf will dare to attack the camp near the city. It's too risky for them.
+	AI_Output(self,other, " DIA_BaalNamib_WhereToGo_01_05 " );	// After all, they have already revealed their presence on this island.
+	B_LogEntry(TOPIC_PrioratStart, "The Namib idol advised me to go to the camp located in the north of Khorinis, near the pyramids. " );
 };
 
 instance DIA_BAALNAMIB_AssStopAttack(C_Info)
@@ -943,7 +944,7 @@ instance DIA_BAALNAMIB_AssStopAttack(C_Info)
 	condition = dia_baalnamib_AssStopAttack_condition;
 	information = dia_baalnamib_AssStopAttack_info;
 	permanent = FALSE;
-	description = "Лагерь сборщиков подвергся нападению!";
+	description = " The gathering camp is under attack! " ;
 };
 
 func int dia_baalnamib_AssStopAttack_condition()
@@ -956,64 +957,64 @@ func int dia_baalnamib_AssStopAttack_condition()
 
 func void dia_baalnamib_AssStopAttack_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_01");	//Лагерь сборщиков на севере Хориниса подвергся нападению!
-	AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_02");	//(серьезно) Как я и предвидел. Полагаю, за этим стояли Тени?
-	AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_03");	//Да, именно они.
+	AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_01 " );	// The gathering camp in northern Khorinis is under attack!
+	AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_02 " );	// (seriously) As I foresaw. I assume the Shadows were behind this?
+	AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_03 " );	// Yes, they are.
 
 	if(TPLBalamDead == TRUE)
 	{
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_04");	//И вам удалось отбить нападение?
-		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_05");	//Конечно, хотя и не без потерь.
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_06");	//Увы, но с таким опасным врагом без этого не обойтись.
-		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_07");	//Уверен, стражи Гор На Тофа прекрасно осознавали, на что шли.
-		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_08");	//Все они сражались до последнего! Гор На Тоф мог бы ими гордиться.
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_09");	//Не сомневаюсь. Но давай лучше вернемся к самому нападению.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_04 " );	// And you managed to fight off the attack?
+		AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_05 " );	// Of course, though not without loss.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_06 " );	// Alas, but with such a dangerous enemy, this is indispensable.
+		AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_07 " );	// I'm sure the guardians of the Na Tofa Mountains were well aware of what they were getting into.
+		AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_08 " );	// They all fought to the last! Gor Na Tof would be proud of them.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_09 " );	// No doubt. But let's get back to the attack itself.
 	};
 
-	AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_10");	//Тебе удалось узнать что-нибудь еще об этих людях?
+	AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_10 " );	// Did you manage to find out anything else about these people?
 
-	if(Npc_HasItems(other,ItAm_MasiafKey) >= 1)
+	if (Npc_HasItems(other,ItAm_MasiafKey) >=  1 )
 	{
 		NamibAmuletResearch = TRUE;
 		NamibAmuletResearchDayEnd = Wld_GetDay();
 
-		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_11");	//У одного из нападавших я обнаружил этот странный амулет.
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_12");	//Дай мне взглянуть на него.
-		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_13");	//Вот, держи.
+		AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_11 " );	// I found this strange amulet on one of the attackers.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_12 " );	// Let me take a look at it.
+		AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_13 " );	// Here, take this.
 		B_GiveInvItems(other,self,ItAm_MasiafKey,1);
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_14");	//Да...(задумчиво) Странная вещица. 
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_15");	//Надеюсь, ты не будешь возражать, если я пока оставлю ее у себя. 
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_16");	//Возможно, мне удастся выяснить более детально, что она из себя представляет.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_14 " );	// Yes... (thoughtfully) A strange little thing.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_15 " );	// I hope you don't mind if I keep her for now.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_16 " );	// Perhaps I can find out in more detail what it is.
 
 		if(PlayerKnowsMasiafKey == TRUE)
 		{
 			B_GivePlayerXP(1000);
-			AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_17");	//Я тебе и так могу сказать, что это. У тебя в руках своего рода ключ.
-			AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_18");	//Откуда тебе это стало известно?
-			AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_19");	//Один человек в Хоринисе узнал этот амулет.
-			AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_20");	//А ты в этом уверен?
-			AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_21");	//Можешь в этом не сомневаться. Я ему доверяю.
-			AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_22");	//Хорошо. Тогда нам остается только найти то, что он открывает.
-			AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_23");	//К сожалению, этого он мне не сказал. Так что нам самим придется это выяснить.
-			AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_24");	//Я даже не представляю, с чего стоит начать поиски.
-			AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_25");	//Мне надо подумать... Возможно, это займет у меня пару дней.
-			AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_26");	//Приходи позже и мы решим, как нам быть дальше.
-			B_LogEntry(TOPIC_PrioratStart,"Идола Намиба заинтересовал ключ-амулет, который я обнаружил на теле одного из нападавших. Осталось выяснить, что именно он открывает.");
+			AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_17 " );	// I can already tell you what it is. You have a kind of key in your hands.
+			AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_18 " );	// How did you know this?
+			AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_19 " );	// One person in Khorinis recognized this amulet.
+			AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_20 " );	// Are you sure about this?
+			AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_21 " );	// You can be sure of that. I trust him.
+			AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_22 " );	// Good. Then we only have to find what it reveals.
+			AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_23 " );	// Unfortunately, he didn't tell me that. So we'll have to find out for ourselves.
+			AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_24 " );	// I don't even know where to start looking.
+			AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_25 " );	// I need to think... It might take me a couple of days.
+			AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_26 " );	// Come back later and we'll decide what to do next.
+			B_LogEntry(TOPIC_PrioratStart, "The Namib Idol is interested in an amulet key that I found on the body of one of the attackers. It remains to find out what exactly it opens. " );
 		}
 		else
 		{
 			B_GivePlayerXP(500);
-			AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_28");	//Думаю, если ты заглянешь ко мне через пару дней, я смогу сказать больше об этом предмете.
-			B_LogEntry(TOPIC_PrioratStart,"Идола Намиба заинтересовал амулет, который я обнаружил на теле одного из нападавших. Возможно, эта вещица приоткроет нам тайну Масиафа. Гуру необходимо некоторое время, чтобы понять, с чем мы имеем дело.");
+			AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_28 " );	// I think if you stop by in a couple of days, I can say more about this subject.
+			; _ _ _ _
 		};
 	}
 	else
 	{
 		B_GivePlayerXP(250);
 		NamibAmuletSearch = TRUE;
-		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_30");	//Пока ничего.
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_31");	//Это очень плохо. Нам нужно больше информации об этих нападениях.
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_32");	//Ладно, ты пока свободен. Но если что-то найдешь, незамедлительно сообщи мне об этом!
+		AI_Output(other,self, " DIA_BaalNamib_AssStopAttack_01_30 " );	// Nothing yet.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_31 " );	// This is very bad. We need more information about these attacks.
+		AI_Output(self,other, " DIA_BaalNamib_AssStopAttack_01_32 " );	// Okay, you're free for now. But if you find something, let me know immediately!
 	};
 };
 
@@ -1024,7 +1025,7 @@ instance DIA_BAALNAMIB_MasiafAmulet(C_Info)
 	condition = dia_baalnamib_MasiafAmulet_condition;
 	information = dia_baalnamib_MasiafAmulet_info;
 	permanent = FALSE;
-	description = "У меня кое-что есть для тебя.";
+	description = " I have something for you. " ;
 };
 
 func int dia_baalnamib_MasiafAmulet_condition()
@@ -1037,37 +1038,37 @@ func int dia_baalnamib_MasiafAmulet_condition()
 
 func void dia_baalnamib_MasiafAmulet_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_01");	//У меня кое-что есть для тебя.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_02");	//Что именно?
-	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_03");	//Странного вида амулет, который я обнаружил у одного из нападавших.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_04");	//Хммм... Дай мне взглянуть на него.
-	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_05");	//Вот, держи.
+	AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_01_01 " );	// I have something for you.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_02 " );	// What exactly?
+	AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_01_03 " );	// Strange-looking amulet I found on one of the attackers.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_04 " );	// Hmmm... Let me take a look at it.
+	AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_01_05 " );	// Вот, держи.
 	B_GiveInvItems(other,self,ItAm_MasiafKey,1);
 	Npc_RemoveInvItems(self,ItAm_MasiafKey,Npc_HasItems(self,ItAm_MasiafKey));
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_06");	//Да...(задумчиво) Странная вещица. 
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_07");	//Надеюсь, ты не будешь возражать, если я пока оставлю ее у себя. 
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_08");	//Возможно, мне удастся выяснить более детально, что она из себя представляет.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_06 " );	// Yes... (thoughtfully) A strange little thing.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_07 " );	// I hope you don't mind if I keep her for now.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_08 " );	// Perhaps I can find out in more detail what it is.
 
 	if(PlayerKnowsMasiafKey == TRUE)
 	{
 		B_GivePlayerXP(250);
-		AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_09");	//Я тебе и так могу сказать, что это. У тебя в руках своего рода ключ.
-		AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_10");	//Откуда тебе это стало известно?
-		AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_11");	//Один человек в Хоринисе узнал этот амулет.
-		AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_12");	//А ты в этом уверен?
-		AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_13");	//Можешь в этом не сомневаться. Я ему доверяю.
-		AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_14");	//Хорошо. Тогда нам остается только найти то, что он открывает.
-		AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_15");	//К сожалению, этого он мне не сказал. Так что нам самим придется это выяснить.
-		AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_16");	//Я даже не представляю, с чего стоит начать поиски.
-		AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_17");	//Мне надо подумать... Возможно, это займет у меня пару дней.
-		AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_18");	//Приходи позже и мы решим, как нам быть дальше.
-		B_LogEntry(TOPIC_PrioratStart,"Идола Намиба заинтересовал ключ-амулет, который я обнаружил на теле одного из нападавших. Осталось выяснить, что именно он открывает.");
+		AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_01_09 " );	// I can already tell you what it is. You have a kind of key in your hands.
+		AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_10 " );	// How did you know this?
+		AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_01_11 " );	// One person in Khorinis recognized this amulet.
+		AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_12 " );	// Are you sure about this?
+		AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_01_13 " );	// You can be sure of that. I trust him.
+		AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_14 " );	// Good. Then we only have to find what it reveals.
+		AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_01_15 " );	// Unfortunately, he didn't tell me that. So we'll have to find out for ourselves.
+		AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_16 " );	// I don't even know where to start looking.
+		AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_17 " );	// I need to think... It might take me a couple of days.
+		AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_18 " );	// Come back later and we'll decide what to do next.
+		B_LogEntry(TOPIC_PrioratStart, "The Namib Idol is interested in an amulet key that I found on the body of one of the attackers. It remains to find out what exactly it opens. " );
 	}
 	else
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_20");	//Думаю, если ты заглянешь ко мне через пару дней, я смогу сказать больше об этом предмете.
-		B_LogEntry(TOPIC_PrioratStart,"Идола Намиба заинтересовал амулет, который я обнаружил на теле одного из нападавших. Возможно, эта вещица приоткроет нам тайну Масиафа. Гуру необходимо некоторое время, чтобы понять, с чем мы имеем дело.");
+		AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_01_20 " );	// I think if you stop by in a couple of days, I can say more about this subject.
+		; _ _ _ _
 	};
 
 	NamibAmuletResearch = TRUE;
@@ -1082,16 +1083,16 @@ instance DIA_BAALNAMIB_MasiafAmulet_News(C_Info)
 	condition = dia_baalnamib_MasiafAmulet_News_condition;
 	information = dia_baalnamib_MasiafAmulet_News_info;
 	permanent = FALSE;
-	description = "Есть какие-нибудь новости?";
+	description = " Any news? " ;
 };
 
 func int dia_baalnamib_MasiafAmulet_News_condition()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
-	if((MIS_PrioratStart == LOG_Running) && (NamibAmuletResearch == TRUE) && (NamibAmuletResearchDayEnd <= (daynow - 1)))
+	if (( MIS_PriorityStart == LOG_Running ) && ( NamibAmuletResearch ==  TRUE ) && ( NamibAmuletResearchDayEnd <= ( daynow --  1 ))) ;
 	{
 		return TRUE;
 	};
@@ -1099,20 +1100,20 @@ func int dia_baalnamib_MasiafAmulet_News_condition()
 
 func void dia_baalnamib_MasiafAmulet_News_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_News_01_01");	//Есть какие-нибудь новости?
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_02");	//Хорошо, что ты зашел. Мне действительно удалось кое-что выяснить.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_03");	//Это касается того символа, что изображен в центре амулета.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_04");	//Дело в том, что недавно на наших послушников было совершено новое нападение.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_05");	//Однако на этот раз одному из них все-таки удалось выжить и скрыться от нападавших.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_06");	//Когда он вернулся в лагерь и рассказал о случившемся, то я сразу же решил расспросить его подробнее.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_07");	//Правда, он был сильно напуган и еле подбирал слова, пытаясь рассказать мне, как все происходило.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_08");	//Потом я показал ему этот амулет. Он долго на него смотрел, но так толком ничего и не сказал. 
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_09");	//Но по его взгляду я понял, что он ему все-таки знаком.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_10");	//Думаю, тебе стоит поговорить с ним об этом.
-	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_News_01_11");	//Как зовут этого послушника?
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_12");	//Его имя Локи. Сейчас он в городе, вместе с идолом Парвезом.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_13");	//Духовная медитация и покой - это именно то, что необходимо человеку, побывавшему в подобной переделке. 
-	B_LogEntry(TOPIC_PrioratStart,"Идол Намиб сообщил мне, что на послушников недавно было совершено еще одно нападение. В этот раз одному из них удалось скрыться от нападавших. Выжившего послушника зовут Локи и, по словам гуру, он что-то знает об амулете.");
+	AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_News_01_01 " );	// Any news?
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_02 " );	// It's good that you came. I really managed to find out something.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_03 " );	// This applies to the symbol that is depicted in the center of the amulet.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_04 " );	// The fact is that recently a new attack was made on our novices.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_05 " );	// However, this time one of them still managed to survive and escape from the attackers.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_06 " );	// When he returned to the camp and told about what had happened, I immediately decided to ask him more.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_07 " );	// True, he was very frightened and barely picked his words, trying to tell me how everything happened.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_08 " );	// Then I showed him this amulet. He looked at him for a long time, but didn't really say anything.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_09 " );	// But by his look, I realized that he was still familiar to him.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_10 " );	// I think you should talk to him about this.
+	AI_Output(other,self, " DIA_BaalNamib_MasiafAmulet_News_01_11 " );	// What is the name of this acolyte?
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_12 " );	// His name is Loki. Now he is in the city, along with the idol Parvez.
+	AI_Output(self,other, " DIA_BaalNamib_MasiafAmulet_News_01_13 " );	// Spiritual meditation and peace - this is exactly what a person who has been in such a mess needs.
+	B_LogEntry(TOPIC_PrioratStart, "The Namib Idol informed me that the acolytes were recently attacked again. This time, one of them managed to escape from the attackers. The surviving acolyte is called Loki and, according to the guru, he knows something about the amulet. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(SEK_8049_LOKI,"NW_CITY_LOKI");
 };
@@ -1125,12 +1126,12 @@ instance DIA_BAALNAMIB_Assasins_Door_Found(C_Info)
 	condition = dia_baalnamib_Assasins_Door_Found_condition;
 	information = dia_baalnamib_Assasins_Door_Found_info;
 	permanent = FALSE;
-	description = "Мне нужен тот амулет.";
+	description = " I need that amulet. " ;
 };
 
 func int dia_baalnamib_Assasins_Door_Found_condition()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -1142,12 +1143,12 @@ func int dia_baalnamib_Assasins_Door_Found_condition()
 
 func void dia_baalnamib_Assasins_Door_Found_info()
 {
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_Door_Found_01_00");	//Мне нужен тот амулет.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_Door_Found_01_01");	//Значит, тебе удалось что-то узнать?
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_Door_Found_01_02");	//Послушник Локи отвел меня к тому месту, где он видел символ, изображенный на амулете.
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_Door_Found_01_03");	//Там я обнаружил странную каменную плиту и пьедестал с рельефным разъемом с тем же изображением.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_Door_Found_01_04");	//(задумчиво) Кажется, я понимаю, о чем ты сейчас думаешь.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_Door_Found_01_05");	//Хорошо, держи амулет. Надеюсь, у тебя все получится.
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_Door_Found_01_00 " );	// I need that amulet.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_Door_Found_01_01 " );	// So, did you manage to learn something?
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_Door_Found_01_02 " );	// Loki's acolyte took me to the place where he saw the symbol depicted on the amulet.
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_Door_Found_01_03 " );	// There I found a strange stone slab and a pedestal with an embossed connector with the same image.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_Door_Found_01_04 " );	// (thoughtfully) I think I understand what you're thinking now.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_Door_Found_01_05 " );	// Okay, hold the amulet. I hope everything works out for you.
 	B_GiveInvItems(self,other,ItKe_Masiaf_Open,1);
 	NamibSendToMasiaf = TRUE;
 	AI_StopProcessInfos(self);
@@ -1160,12 +1161,12 @@ instance DIA_BAALNAMIB_Assasins_Door_Found_Ok(C_Info)
 	condition = dia_baalnamib_Assasins_Door_Found_Ok_condition;
 	information = dia_baalnamib_Assasins_Door_Found_Ok_info;
 	permanent = FALSE;
-	description = "Я обнаружил тайный проход, скрытый в горе.";
+	description = " I found a secret passage hidden in the mountain. " ;
 };
 
 func int dia_baalnamib_Assasins_Door_Found_Ok_condition()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -1178,11 +1179,11 @@ func int dia_baalnamib_Assasins_Door_Found_Ok_condition()
 func void dia_baalnamib_Assasins_Door_Found_Ok_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_Door_Found_Ok_01_00");	//Я обнаружил тайный проход, скрытый в горе.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_Door_Found_Ok_01_01");	//Как интересно! И что ты теперь собираешься предпринять?
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_Door_Found_Ok_01_02");	//Надо обыскать эту пещеру. Там определенно кроются ответы на интересующие нас вопросы.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_Door_Found_Ok_01_03");	//Хорошо, - я рассчитываю на тебя. Но будь осторожен, ведь точно неизвестно, что тебя там ждет.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_Door_Found_Ok_01_04");	//Вот, возьми этот эликсир. Он поможет тебе в твоих поисках.
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_Door_Found_Ok_01_00 " );	// I found a secret passage hidden in the mountain.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_Door_Found_Ok_01_01 " );	// How interesting! And what are you going to do now?
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_Door_Found_Ok_01_02 " );	// We need to search this cave. There are definitely answers to our questions.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_Door_Found_Ok_01_03 " );	// Okay, I'm counting on you. But be careful, because it is not known exactly what awaits you there.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_Door_Found_Ok_01_04 " );	// Here, take this elixir. He will help you in your search.
 	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
 };
 
@@ -1193,7 +1194,7 @@ instance DIA_BAALNAMIB_Assasins_DoneAll(C_Info)
 	condition = dia_baalnamib_Assasins_DoneAll_condition;
 	information = dia_baalnamib_Assasins_DoneAll_info;
 	permanent = FALSE;
-	description = "Братство теперь в безопасности.";
+	description = " The Brotherhood is now safe. " ;
 };
 
 func int dia_baalnamib_Assasins_DoneAll_condition()
@@ -1207,14 +1208,14 @@ func int dia_baalnamib_Assasins_DoneAll_condition()
 func void dia_baalnamib_Assasins_DoneAll_info()
 {
 	B_GivePlayerXP(1500);
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneAll_01_00");	//Братство теперь в безопасности.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneAll_01_01");	//Ты в этом уверен?
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneAll_01_02");	//Абсолютно. Угрозы больше нет.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneAll_01_03");	//Хорошо, я тебе верю. И кто же стоял за всем этим?
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneAll_01_04");	//Это был Кор-Галом! Только в виде могущественного демона.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneAll_01_05");	//Кор-Галом? Тогда это многое объясняет.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneAll_01_06");	//Но в любом случае мы все благодарны тебе за помощь. Без тебя бы мы не справились!
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneAll_01_08");	//Вот, возьми эти эликсиры. Уверен, они придутся тебе очень кстати.
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_DoneAll_01_00 " );	// The Brotherhood is now safe.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneAll_01_01 " );	// Are you sure about this?
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_DoneAll_01_02 " );	// Absolutely. There is no more threat.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneAll_01_03 " );	// Okay, I believe you. And who was behind all this?
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_DoneAll_01_04 " );	// It was Kor-Gal! Only in the form of a powerful demon.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneAll_01_05 " );	// Kor-Galom? Then that explains a lot.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneAll_01_06 " );	// But anyway, we're all grateful for your help. We wouldn't have made it without you!
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneAll_01_08 " );	// Here, take these elixirs. I'm sure they will come in handy for you.
 	B_GiveInvItems(self,other,ItPo_Perm_Health,2);
 };
 
@@ -1225,7 +1226,7 @@ instance DIA_BAALNAMIB_Assasins_DoneHram(C_Info)
 	condition = dia_baalnamib_Assasins_DoneHram_condition;
 	information = dia_baalnamib_Assasins_DoneHram_info;
 	permanent = FALSE;
-	description = "Это еще не все.";
+	description = " That's not all. " ;
 };
 
 func int dia_baalnamib_Assasins_DoneHram_condition()
@@ -1239,13 +1240,13 @@ func int dia_baalnamib_Assasins_DoneHram_condition()
 func void dia_baalnamib_Assasins_DoneHram_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_00");	//Это еще не все. Помнишь, я рассказывал тебе про тайный проход, скрытый в горе?
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_01");	//Само собой. Я помню об этом.
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_02");	//Так вот, по другую сторону этого прохода находится небольшая долина. Именно там располагался храм Кор-Галома и Братства Масиаф.
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_03");	//И там же они держали похищенных ими людей. В том числе и ваших послушников.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_04");	//Что ты этим хочешь сказать?
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_05");	//Сейчас проход завален камнями, и многие из тех, кто попал к ним в плен, до сих пор остались в той долине.
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_06");	//Без вашей помощи они не смогут выбраться оттуда.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_07");	//Я тебя понял...(серьезно) Я немедленно пошлю туда стражей, чтобы они расчистили завалы.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_08");	//Мы поможем нашим братьям и не оставим на произвол судьбы!
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_DoneHram_01_00 " );	// That's not all. Do you remember I told you about the secret passage hidden in the mountain?
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneHram_01_01 " );	// Of course. I remember that.
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_DoneHram_01_02 " );	// So, on the other side of this passage is a small valley. It was there that the temple of Kor-Galom and the Brotherhood of Masyaf was located.
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_DoneHram_01_03 " );	// And that's where they kept the people they kidnapped. Including your followers.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneHram_01_04 " );	// What do you mean by that?
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_DoneHram_01_05 " );	// Now the passage is littered with stones, and many of those who were captured by them still remain in that valley.
+	AI_Output(other,self, " DIA_BaalNamib_Assasins_DoneHram_01_06 " );	// Without your help, they won't be able to get out of there.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneHram_01_07 " );	// I understand you... (seriously) I will immediately send guards there to clear the rubble.
+	AI_Output(self,other, " DIA_BaalNamib_Assasins_DoneHram_01_08 " );	// We will help our brothers and will not leave them to their fate!
 };
