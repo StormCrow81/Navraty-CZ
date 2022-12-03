@@ -1,4 +1,5 @@
 
+
 instance DIA_Jergan_EXIT(C_Info)
 {
 	npc = VLK_4110_Jergan;
@@ -43,25 +44,25 @@ func void dia_jergan_stop_info()
 {
 	AI_Output(self,other,"DIA_Jergan_STOP_01_01");	//Эй, ты!
 	AI_Output(other,self,"DIA_Jergan_STOP_01_02");	//Кто? Я?
-	AI_Output(self,other,"DIA_Jergan_STOP_01_03");	//Нет, твоя бабушка... К кому еще я могу обращаться?
-	AI_Output(self,other,"DIA_Jergan_STOP_01_04");	//На твоем месте я бы не ходил туда.
-	AI_Output(other,self,"DIA_Jergan_STOP_01_05");	//Почему нет?
-	AI_Output(self,other,"DIA_Jergan_STOP_01_06");	//Сразу видно, что ты новичок.
-	AI_Output(self,other,"DIA_Jergan_STOP_01_07");	//Парень, эта дорога ведет к землям орков...
-	AI_Output(self,other,"DIA_Jergan_STOP_01_08");	//Они с радостью приготовят из тебя закуску к шнапсу!
-	AI_Output(other,self,"DIA_Jergan_STOP_01_09");	//Буду иметь в виду.
+	AI_Output(self,other, " DIA_Jergan_STOP_01_03 " );	// No, your grandmother... Who else can I turn to?
+	AI_Output(self,other, " DIA_Jergan_STOP_01_04 " );	// If I were you, I wouldn't go there.
+	AI_Output(other,self, " DIA_Jergan_STOP_01_05 " );	// Why not?
+	AI_Output(self,other, " DIA_Jergan_STOP_01_06 " );	// It is immediately obvious that you are a beginner.
+	AI_Output(self,other, " DIA_Jergan_STOP_01_07 " );	// Boy, this road leads to orc lands...
+	AI_Output(self,other, " DIA_Jergan_STOP_01_08 " );	// They'll gladly make you a schnapps appetizer!
+	AI_Output(other,self, " DIA_Jergan_STOP_01_09 " );	// I'll keep that in mind.
 	AI_Output(self,other,"DIA_Jergan_STOP_01_10");	//Не за что!
 };
 
 
-instance DIA_Jergan_Hallo(C_Info)
+instance DIA_Jergan_Hallo (C_Info)
 {
 	npc = VLK_4110_Jergan;
 	nr = 2;
 	condition = DIA_Jergan_Hallo_Condition;
 	information = DIA_Jergan_Hallo_Info;
 	permanent = FALSE;
-	description = "Что ты здесь делаешь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -70,48 +71,48 @@ func int DIA_Jergan_Hallo_Condition()
 	return TRUE;
 };
 
-func void DIA_Jergan_Hallo_Info()
+func void DIA_Jergan_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Jergan_Hallo_15_00");	//Что ты здесь делаешь?
-	AI_Output(self,other,"DIA_Jergan_Hallo_13_01");	//Я пришел из замка. Меня послали поискать пропавших и разведать эту местность.
+	AI_Output(other,self, " DIA_Jergan_Hallo_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Jergan_Hallo_13_01 " );	// I came from the castle. I was sent to look for the missing and scout the area.
 };
 
 
-instance DIA_Jergan_Vermisste(C_Info)
+instance DIA_Jergan_Missing (C_Info)
 {
 	npc = VLK_4110_Jergan;
 	nr = 2;
-	condition = DIA_Jergan_Vermisste_Condition;
-	information = DIA_Jergan_Vermisste_Info;
+	condition = DIA_Jergan_Missing_Condition;
+	information = DIA_Jergan_Missing_Info;
 	permanent = FALSE;
-	description = "Пропавших?";
+	description = " Missing? " ;
 };
 
 
-func int DIA_Jergan_Vermisste_Condition()
+func int DIA_Jergan_Missing_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Jergan_Hallo))
+	if ( Npc_KnowsInfo ( other , DIA_Germany_Hello ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Jergan_Vermisste_Info()
+func void DIA_Jergan_missing_info()
 {
-	AI_Output(other,self,"DIA_Jergan_Vermisste_15_00");	//Пропавших?
-	AI_Output(self,other,"DIA_Jergan_Vermisste_13_01");	//Некоторые сбежали, когда на нас напали драконы. Большинству из них не удалось выжить - это и неудивительно!
-	AI_Output(self,other,"DIA_Jergan_Vermisste_13_02");	//Но все же, если кому-то удалось выжить, я должен привести их назад.
+	AI_Output(other,self, " DIA_Jergan_Vermisste_15_00 " );	// Lost?
+	AI_Output(self,other, " DIA_Jergan_Vermisste_13_01 " );	// Some fled when we were attacked by dragons. Most of them did not manage to survive - this is not surprising!
+	AI_Output(self,other, " DIA_Jergan_Vermisste_13_02 " );	// But still, if anyone managed to survive, I must bring them back.
 };
 
 
-instance DIA_Jergan_Burg(C_Info)
+instances DIA_Jergan_Burg (C_Info)
 {
 	npc = VLK_4110_Jergan;
 	nr = 3;
 	condition = DIA_Jergan_Burg_Condition;
 	information = DIA_Jergan_Burg_Info;
 	permanent = FALSE;
-	description = "Ты можешь помочь мне пробраться в замок?";
+	description = " Can you help me get into the castle? " ;
 };
 
 
@@ -125,29 +126,29 @@ func int DIA_Jergan_Burg_Condition()
 
 func void DIA_Jergan_Burg_Info()
 {
-	AI_Output(other,self,"DIA_Jergan_Burg_15_00");	//Ты можешь помочь мне пробраться в замок?
-	AI_Output(self,other,"DIA_Jergan_Burg_13_01");	//Конечно, но ты должен оказать мне услугу.
-	AI_Output(self,other,"DIA_Jergan_Burg_13_02");	//Если тебе удастся добраться до замка, поговори с паладином Ориком. Скажи ему, что его брат погиб здесь, у Прохода.
+	AI_Output(other,self, " DIA_Jergan_Burg_15_00 " );	// Can you help me get into the castle?
+	AI_Output(self,other, " DIA_Jergan_Burg_13_01 " );	// Of course, but you have to do me a favor.
+	AI_Output(self,other, " DIA_Jergan_Burg_13_02 " );	// If you manage to reach the castle, talk to paladin Orik. Tell him his brother died here at the Passage.
 	Log_CreateTopic(Topic_OricBruder,LOG_MISSION);
 	Log_SetTopicStatus(Topic_OricBruder,LOG_Running);
-	B_LogEntry(Topic_OricBruder,"Когда я буду в замке, я должен сказать Орику, что его брат погиб в Проходе.");
+	B_LogEntry(Topic_OricBruder, " When I get to the castle, I should tell Oric that his brother died in the Passage. " );
 };
 
 
-instance DIA_Jergan_Gegend(C_Info)
+instance DIA_Jergan_Area (C_Info)
 {
 	npc = VLK_4110_Jergan;
 	nr = 9;
 	condition = DIA_Jergan_Gegend_Condition;
-	information = DIA_Jergan_Gegend_Info;
+	information = DIA_Jergan_Area_Info;
 	permanent = TRUE;
-	description = "Что мне нужно знать об этой местности?";
+	description = " What do I need to know about this area? " ;
 };
 
 
-func int DIA_Jergan_Gegend_Condition()
+func int DIA_Jergan_Area_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Jergan_Hallo))
+	if ( Npc_KnowsInfo ( other , DIA_Germany_Hello ))
 	{
 		return TRUE;
 	};
@@ -156,32 +157,32 @@ func int DIA_Jergan_Gegend_Condition()
 
 var int Jergan_Tell;
 
-func void DIA_Jergan_Gegend_Info()
+func void DIA_Jergan_Area_Info()
 {
-	AI_Output(other,self,"DIA_Jergan_Gegend_15_00");	//Что мне нужно знать об этой местности?
+	AI_Output(other,self, " DIA_Jergan_Gegend_15_00 " );	// What do I need to know about this area?
 
 	if(Jergan_Tell == FALSE)
 	{
-		AI_Output(self,other,"DIA_Jergan_Gegend_13_01");	//Если ты хочешь выжить, беги от всего, что тебе встретится.
-		AI_Output(self,other,"DIA_Jergan_Gegend_13_02");	//Эти зеленокожие твари взяли замок в кольцо уже несколько недель назад. К тому же где-то здесь спрятались драконы.
+		AI_Output(self,other, " DIA_Jergan_Gegend_13_01 " );	// If you want to survive, run away from everything you see.
+		AI_Output(self,other, " DIA_Jergan_Gegend_13_02 " );	// Those green-skinned creatures have been encircling the castle for weeks now. Besides, there are dragons hiding somewhere.
 	};
-	AI_Output(self,other,"DIA_Jergan_Gegend_13_03");	//Вся Долина Рудников кишит орками. Куда бы ты ни направился, ты рискуешь нарваться на них.
+	AI_Output(self,other, " DIA_Jergan_Gegend_13_03 " );	// The entire Valley of Mines is crawling with orcs. Wherever you go, you run the risk of running into them.
 	Jergan_Tell = TRUE;
 };
 
 
-instance DIA_Jergan_Hilfe(C_Info)
+instance DIA_Jergan_Help (C_Info)
 {
 	npc = VLK_4110_Jergan;
 	nr = 3;
-	condition = DIA_Jergan_Hilfe_Condition;
-	information = DIA_Jergan_Hilfe_Info;
+	condition = DIA_Jergan_Help_Condition;
+	information = DIA_Jergan_Help_Info;
 	permanent = FALSE;
-	description = "Как мне попасть в замок?";
+	description = " How do I get to the castle? " ;
 };
 
 
-func int DIA_Jergan_Hilfe_Condition()
+func int DIA_Jergan_Help_Condition()
 {
 	if(Npc_KnowsInfo(other,DIA_Jergan_Burg) && (Npc_GetDistToWP(self,"OW_STAND_JERGAN") <= 1000))
 	{
@@ -189,13 +190,13 @@ func int DIA_Jergan_Hilfe_Condition()
 	};
 };
 
-func void DIA_Jergan_Hilfe_Info()
+func void DIA_Jergan_Help_Info()
 {
-	AI_Output(other,self,"DIA_Jergan_Hilfe_15_00");	//Как мне попасть в замок?
-	AI_Output(self,other,"DIA_Jergan_Hilfe_13_01");	//Прежде всего, забудь о прямой дороге. Но если ты обойдешь замок с другой стороны, возможно, у тебя будет шанс.
-	AI_Output(self,other,"DIA_Jergan_Hilfe_13_02");	//Тебе лучше держаться подальше от дорог и использовать реку. Лучше всего, если ты будешь плыть вниз по течению.
-	AI_Output(self,other,"DIA_Jergan_Hilfe_13_03");	//Орки установили таран за замком. Ты можешь сделать так - подкрасться к оркам как можно ближе, а затем бежать со всех ног к тарану.
-	AI_Output(self,other,"DIA_Jergan_Hilfe_13_04");	//У тебя может получиться, если ты достаточно быстр.
+	AI_Output(other,self, " DIA_Jergan_Hilfe_15_00 " );	// How do I get to the castle?
+	AI_Output(self,other, " DIA_Jergan_Hilfe_13_01 " );	// First of all, forget about the straight road. But if you go around the castle from the other side, you might have a chance.
+	AI_Output(self,other, " DIA_Jergan_Hilfe_13_02 " );	// You'd better stay off the roads and use the river. It's best if you swim downstream.
+	AI_Output(self,other, " DIA_Jergan_Hilfe_13_03 " );	// Orcs set up a battering ram behind the castle. You can do this - sneak up on the orcs as close as possible, and then run as fast as you can to the battering ram.
+	AI_Output(self,other, " DIA_Jergan_Hilfe_13_04 " );	// You can make it if you're fast enough.
 };
 
 
@@ -206,7 +207,7 @@ instance DIA_Jergan_Mine(C_Info)
 	condition = DIA_Jergan_Mine_Condition;
 	information = DIA_Jergan_Mine_Info;
 	permanent = FALSE;
-	description = "Что ты делаешь здесь?";
+	description = " What are you doing here? " ;
 };
 
 
@@ -220,9 +221,9 @@ func int DIA_Jergan_Mine_Condition()
 
 func void DIA_Jergan_Mine_Info()
 {
-	AI_Output(other,self,"DIA_Jergan_Mine_15_00");	//Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Jergan_Mine_13_01");	//Я разведчик. Моя работа - следить за врагом. Но все эти снепперы совсем не облегчают мне жизнь.
-	AI_Output(self,other,"DIA_Jergan_Mine_13_02");	//Хотя, сейчас самое время насобирать трофеев - если, конечно, ты знаешь, что делаешь.
+	AI_Output(other,self, " DIA_Jergan_Mine_15_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Jergan_Mine_13_01 " );	// I'm a scout. My job is to watch the enemy. But all these snappers don't make my life easier at all.
+	AI_Output(self,other, " DIA_Jergan_Mine_13_02 " );	// Although, now is the time to collect trophies - if, of course, you know what you are doing.
 };
 
 
@@ -233,7 +234,7 @@ instance DIA_Jergan_Claw(C_Info)
 	condition = DIA_Jergan_Claw_Condition;
 	information = DIA_Jergan_Claw_Info;
 	permanent = FALSE;
-	description = "Ты можешь напучить меня этому?";
+	description = " Can you teach me this? " ;
 };
 
 
@@ -247,8 +248,8 @@ func int DIA_Jergan_Claw_Condition()
 
 func void DIA_Jergan_Claw_Info()
 {
-	AI_Output(other,self,"DIA_Jergan_Claw_15_00");	//Ты можешь напучить меня этому?
-	AI_Output(self,other,"DIA_Jergan_Claw_13_01");	//Я могу показать тебе, как отделять когти этих тварей.
+	AI_Output(other,self, " DIA_Jergan_Claw_15_00 " );	// Can you teach me this?
+	AI_Output(self,other, " DIA_Jergan_Claw_13_01 " );	// I can show you how to separate the claws of these creatures.
 };
 
 
@@ -259,7 +260,7 @@ instance DIA_Jergan_Teach(C_Info)
 	condition = DIA_Jergan_Teach_Condition;
 	information = DIA_Jergan_Teach_Info;
 	permanent = TRUE;
-	description = "(Изучить удаление когтей)";
+	description = " (Learn declawing) " ;
 };
 
 
@@ -273,29 +274,29 @@ func int DIA_Jergan_Teach_Condition()
 
 func void DIA_Jergan_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Jergan_Teach_15_00");	//Покажи мне, как отделять когти.
+	AI_Output(other,self, " DIA_Jergan_Teach_15_00 " );	// Show me how to separate the claws.
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Claws))
 	{
-		AI_Output(self,other,"DIA_Jergan_Teach_13_01");	//Когти нужно отрубить одним точным и резким ударом. Тут нельзя колебаться, иначе ты испортишь трофей.
-		AI_Output(self,other,"DIA_Jergan_Teach_13_02");	//Таким образом ты можешь отделять не только когти снепперов, но также ящеров и мракорисов.
+		AI_Output(self,other, " DIA_Jergan_Teach_13_01 " );	// Claws must be cut off with one precise and sharp blow. You can't hesitate here, otherwise you'll spoil the trophy.
+		AI_Output(self,other, " DIA_Jergan_Teach_13_02 " );	// This way you can separate not only the claws of snappers, but also lizards and obscurants.
 	};
 };
 
 
-instance DIA_Jergan_Diego(C_Info)
+instances DIA_Jergan_Diego (C_Info)
 {
 	npc = VLK_4110_Jergan;
 	nr = 9;
 	condition = DIA_Jergan_Diego_Condition;
 	information = DIA_Jergan_Diego_Info;
 	permanent = FALSE;
-	description = "Ты знаешь, куда отправился Диего? ";
+	description = " Do you know where Diego went? " ;
 };
 
 
 func int DIA_Jergan_Diego_Condition()
 {
-	if((Npc_GetDistToWP(self,"OW_NEWMINE_04") < 1000) && (Npc_KnowsInfo(other,DIA_DiegoOw_Hallo) == FALSE) && Npc_KnowsInfo(other,DIA_Parcival_Diego))
+	if (( Npc_GetDistToWP ( self , " OW_NEWMINE_04 " ) <  1000 ) && ( Npc_KnowsInfo ( other , DIA_DiegoOw_Hallo ) ==  FALSE ) && Npc_KnowsInfo ( other , DIA_Parcival_Diego ) ) ;
 	{
 		return TRUE;
 	};
@@ -303,11 +304,11 @@ func int DIA_Jergan_Diego_Condition()
 
 func void DIA_Jergan_Diego_Info()
 {
-	AI_Output(other,self,"DIA_Jergan_Diego_15_00");	//Ты знаешь, куда отправился Диего?
-	AI_Output(self,other,"DIA_Jergan_Diego_13_01");	//Диего? Он был одним из старателей Сильвестро. Но потом сбежал.
-	AI_Output(self,other,"DIA_Jergan_Diego_13_02");	//Я видел его с двумя рыцарями и ящиком, недалеко отсюда.
-	AI_Output(self,other,"DIA_Jergan_Diego_13_03");	//Видишь старую башню вон там справа? Иди туда, а затем по направлению к замку.
-	AI_Output(self,other,"DIA_Jergan_Diego_13_04");	//Дорога идет через скалы справа. Вот туда они и пошли.
+	AI_Output(other,self, " DIA_Jergan_Diego_15_00 " );	// Do you know where Diego went?
+	AI_Output(self,other, " DIA_Jergan_Diego_13_01 " );	// Diego? He was one of Silvestro's prospectors. But then he ran away.
+	AI_Output(self,other, " DIA_Jergan_Diego_13_02 " );	// I saw him with two knights and a box, not far from here.
+	AI_Output(self,other, " DIA_Jergan_Diego_13_03 " );	// See the old tower over there on the right? Go there and then towards the castle.
+	AI_Output(self,other, " DIA_Jergan_Diego_13_04 " );	// The road goes through the rocks on the right. That's where they went.
 };
 
 
@@ -332,17 +333,17 @@ func int DIA_Jergan_Leader_Condition()
 
 func void DIA_Jergan_Leader_Info()
 {
-	AI_Output(self,other,"DIA_Jergan_Leader_13_00");	//Ты убил вожака стаи. И как - ты забрал когти этого зверя?
+	AI_Output(self,other, " DIA_Jergan_Leader_13_00 " );	// You killed the leader of the pack. And how - you took the claws of this beast?
 	if(Npc_HasItems(other,ItAt_ClawLeader) >= 1)
 	{
 		AI_Output(other,self,"DIA_Jergan_Leader_15_01");	//Да.
-		AI_Output(self,other,"DIA_Jergan_Leader_13_02");	//Они, стоят целое состояние. Есть люди, которые коллекционируют такие вещи.
-		AI_Output(self,other,"DIA_Jergan_Leader_13_03");	//Если ты найдешь правильного покупателя, то получишь за них целую кучу золота.
+		AI_Output(self,other, " DIA_Jergan_Leader_13_02 " );	// They cost a fortune. There are people who collect such things.
+		AI_Output(self,other, " DIA_Jergan_Leader_13_03 " );	// If you find the right buyer, you'll get a whole bunch of gold for them.
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Jergan_Leader_15_04");	//Нет.
-		AI_Output(self,other,"DIA_Jergan_Leader_13_05");	//Это ты зря. Я уверен, они стоят целое состояние.
+		AI_Output(self,other, " DIA_Jergan_Leader_13_05 " );	// It's you in vain. I'm sure they cost a fortune.
 	};
 };
 
@@ -360,7 +361,7 @@ instance DIA_Jergan_PICKPOCKET(C_Info)
 
 func int DIA_Jergan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(84,110);
+	return  C_Robbery ( 84 , 110 );
 };
 
 func void DIA_Jergan_PICKPOCKET_Info()
@@ -372,7 +373,7 @@ func void DIA_Jergan_PICKPOCKET_Info()
 
 func void DIA_Jergan_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Jergan_PICKPOCKET);
 };
 
@@ -388,12 +389,12 @@ instance DIA_Jergan_Venzel(C_Info)
 	condition = DIA_Jergan_Venzel_Condition;
 	information = DIA_Jergan_Venzel_Info;
 	permanent = FALSE;
-	description = "Заметил что-нибудь интересное?";
+	description = " Notice anything interesting? " ;
 };
 
 func int DIA_Jergan_Venzel_Condition()
 {
-	if((MIS_LostPaladins == LOG_Running) && (HintVenzelOrcs_01 == TRUE))
+	if (( MIS_LostPaladins == LOG_Running ) && ( HintVenzelOrcs_01 ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -402,19 +403,19 @@ func int DIA_Jergan_Venzel_Condition()
 func void DIA_Jergan_Venzel_Info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Jergan_Venzel_01_00");	//Заметил что-нибудь интересное?
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_01");	//Хм, да пожалуй, ничего такого, что бы смогло тебя заинтересовать.
-	AI_Output(other,self,"DIA_Jergan_Venzel_01_02");	//Как, совсем ничего?
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_03");	//Ну, если подумать...(почесывая затылок) Единственное, что приходит мне на ум - это...
+	AI_Output(other,self, " DIA_Jergan_Venzel_01_00 " );	// Notice anything interesting?
+	AI_Output(self,other, " DIA_Jergan_Venzel_01_01 " );	// Hmm, yes, perhaps, nothing that could interest you.
+	AI_Output(other,self, " DIA_Jergan_Venzel_01_02 " );	// Like, nothing at all?
+	AI_Output(self,other, " DIA_Jergan_Venzel_01_03 " );	// Well, if you think about it... (scratching the back of his head) The only thing that comes to my mind is...
 	AI_Output(other,self,"DIA_Jergan_Venzel_01_04");	//Что?
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_05");	//Во время своей последней разведки я видел, как орки вели куда-то небольшую группу пленных людей.
-	AI_Output(other,self,"DIA_Jergan_Venzel_01_06");	//Это уже интереснее. А паладинов случайно среди них не было?
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_07");	//Нет, не было. Иначе бы я заметил!
-	AI_Output(other,self,"DIA_Jergan_Venzel_01_08");	//И куда они пошли?
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_09");	//Кажется, по направлению к большой горе, что на северо-востоке долины.
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_10");	//Сдается мне, что там у них находится небольшой лагерь!
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_11");	//Но на твоем месте, я бы проверять не стал.
-	AI_Output(other,self,"DIA_Jergan_Venzel_01_12");	//(иронично) Кому, как не мне?
+	AI_Output(self,other, " DIA_Jergan_Venzel_01_05 " );	// During my last reconnaissance, I saw how the orcs were leading a small group of captured people somewhere.
+	AI_Output(other,self, " DIA_Jergan_Venzel_01_06 " );	// This is more interesting. Were there any paladins among them?
+	AI_Output(self,other, " DIA_Jergan_Venzel_01_07 " );	// No, it wasn't. Otherwise I would have noticed!
+	AI_Output(other,self, " DIA_Jergan_Venzel_01_08 " );	// And where did they go?
+	AI_Output(self,other, " DIA_Jergan_Venzel_01_09 " );	// Seems to be towards a large mountain in the northeast of the valley.
+	AI_Output(self,other, " DIA_Jergan_Venzel_01_10 " );	// Seems to me they have a small camp there!
+	AI_Output(self,other, " DIA_Jergan_Venzel_01_11 " );	// But if I were you, I wouldn't check.
+	AI_Output(other,self, " DIA_Jergan_Venzel_01_12 " );	// (ironic) Who, if not me?
 	HintVenzelOrcs_02 = TRUE;
-	B_LogEntry(TOPIC_LostPaladins,"Разведчик Йерган недавно видел, как орки вели небольшую группу пленных людей. Правда, паладинов в ней не было. По словам Йергана, орки направились к большой горе, что на северо востоке Долины Рудников. Думаю, что пора рассказать об всем Гаронду...");
+	B_LogEntry(TOPIC_LostPaladins, " Scout Yergan recently saw the orcs leading a small group of captured people. True, there were no paladins in it. According to Yergan, the orcs headed for a large mountain in the northeast of the Valley of Mines. I think it's time to tell everything Garondu... " );
 };
