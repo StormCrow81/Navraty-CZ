@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Matt_EXIT(C_Info)
 {
 	npc = PIR_1365_Addon_Matt;
@@ -46,7 +47,7 @@ func void DIA_Addon_Matt_PICKPOCKET_Info()
 
 func void DIA_Addon_Matt_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Matt_PICKPOCKET);
 };
 
@@ -73,12 +74,12 @@ func int DIA_Addon_Matt_Hello_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Matt_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Matt_Hello_10_01");	//А, новичок? Прекрасно. Нам сейчас пригодится каждый человек.
+	AI_Output(self,other, " DIA_Addon_Matt_Hello_10_01 " );	// A newbie? Wonderful. We need every person right now.
 };
 
 
@@ -89,7 +90,7 @@ instance DIA_Addon_Matt_PERM(C_Info)
 	condition = DIA_Addon_Matt_PERM_Condition;
 	information = DIA_Addon_Matt_PERM_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -101,27 +102,27 @@ func int DIA_Addon_Matt_PERM_Condition()
 func void DIA_Addon_Matt_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Matt_Alright_15_01");	//Как дела?
-	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
+	if (self.aivar[ AIV_PARTYMEMBER ] ==  TRUE )
 	{
 		if(self.attribute[ATR_HITPOINTS] < 100)
 		{
-			AI_Output(self,other,"DIA_Addon_Matt_Alright_10_02");	//Какую часть фразы 'ЛЕЧЕБНОЕ ЗЕЛЬЕ' ты не понял?
+			AI_Output(self,other, " DIA_Addon_Matt_Alright_10_02 " );	// What part of the phrase 'HEALING POTION' don't you understand?
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_Matt_Alright_10_01");	//Все в порядке, капитан!
+			AI_Output(self,other, " DIA_Addon_Matt_Alright_10_01 " );	// It's all right, captain!
 		};
 	}
 	else if((GregIsBack == TRUE) && !Npc_IsDead(Greg))
 	{
-		AI_Output(self,other,"DIA_Addon_Matt_Job_10_01");	//Шутишь? У нас больше нет корабля.
-		AI_Output(self,other,"DIA_Addon_Matt_Job_10_02");	//Остается только ждать, пока Грэг решит, что делать дальше.
+		AI_Output(self,other, " DIA_Addon_Matt_Job_10_01 " );	// Are you kidding? We no longer have a ship.
+		AI_Output(self,other, " DIA_Addon_Matt_Job_10_02 " );	// All we have to do is wait for Greg to decide what to do next.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Matt_Job_10_03");	//Сейчас в лагере все спокойно. Так что я собираюсь немного отдохнуть.
-		AI_Output(self,other,"DIA_Addon_Matt_Job_10_04");	//На твоем месте, кстати, я бы сделал то же самое.
-		AI_Output(self,other,"DIA_Addon_Matt_Job_10_05");	//Бандиты здесь, так что ситуация может измениться быстрее, чем мы предполагали.
+		AI_Output(self,other, " DIA_Addon_Matt_Job_10_03 " );	// All is quiet in the camp now. So I'm going to take some rest.
+		AI_Output(self,other, " DIA_Addon_Matt_Job_10_04 " );	// If I were you, by the way, I would do the same.
+		AI_Output(self,other, " DIA_Addon_Matt_Job_10_05 " );	// The bandits are here, so the situation may change faster than we thought.
 	};
 };
 
@@ -132,7 +133,7 @@ instance DIA_Addon_Matt_Bandits(C_Info)
 	nr = 3;
 	condition = DIA_Addon_Matt_Bandits_Condition;
 	information = DIA_Addon_Matt_Bandits_Info;
-	description = "Что ты знаешь об этих бандитах?";
+	description = " What do you know about these bandits? " ;
 };
 
 
@@ -143,13 +144,13 @@ func int DIA_Addon_Matt_Bandits_Condition()
 
 func void DIA_Addon_Matt_Bandits_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Matt_Bandits_15_03");	//Что ты знаешь о бандитах?
-	AI_Output(self,other,"DIA_Addon_Matt_Bandits_10_01");	//Ты имеешь в виду, кроме того, что они смертельно опасны и во много раз превосходят нас числом?
+	AI_Output(other,self, " DIA_Addon_Matt_Bandits_15_03 " );	// What do you know about bandits?
+	AI_Output(self,other, " DIA_Addon_Matt_Bandits_10_01 " );	// You mean, besides the fact that they are deadly and outnumber us many times over?
 	AI_Output(other,self,"DIA_Addon_Matt_Bandits_15_02");	//Да.
-	AI_Output(self,other,"DIA_Addon_Matt_Bandits_10_02");	//У них полно золота.
-	AI_Output(self,other,"DIA_Addon_Matt_Bandits_10_03");	//Ну, по крайней мере, у них БЫЛО полно золота. За последнюю партию товара они нам так и не заплатили.
-	AI_Output(self,other,"DIA_Addon_Matt_Bandits_10_04");	//Но я сомневаюсь, что они сделали это от нехватки средств.
-	AI_Output(self,other,"DIA_Addon_Matt_Bandits_10_05");	//Думаю, что они просто слишком зазнались.
+	AI_Output(self,other, " DIA_Addon_Matt_Bandits_10_02 " );	// They're full of gold.
+	AI_Output(self,other, " DIA_Addon_Matt_Bandits_10_03 " );	// Well, at least they HAVE plenty of gold. They never paid us for the last batch of goods.
+	AI_Output(self,other, " DIA_Addon_Matt_Bandits_10_04 " );	// But I doubt they did it for lack of funds.
+	AI_Output(self,other, " DIA_Addon_Matt_Bandits_10_05 " );	// I think they're just too arrogant.
 };
 
 
@@ -159,83 +160,83 @@ instance DIA_Addon_Matt_Francis(C_Info)
 	nr = 4;
 	condition = DIA_Addon_Matt_Francis_Condition;
 	information = DIA_Addon_Matt_Francis_Info;
-	description = "Что ты знаешь о Фрэнсисе?";
+	description = " What do you know about Francis? " ;
 };
 
 
 func int DIA_Addon_Matt_Francis_Condition()
 {
-	if(Francis_ausgeschissen == FALSE)
+	if (Francis_shit out ==  FALSE )
 	{
 		if(Npc_KnowsInfo(other,DIA_Addon_Skip_GregsHut) || (Francis.aivar[AIV_TalkedToPlayer] == TRUE))
 		{
 			return TRUE;
 		};
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Matt_Francis_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Brandon_Matt_15_00");	//Что ты знаешь о Фрэнсисе?
-	AI_Output(self,other,"DIA_Addon_Matt_Francis_10_01");	//Кроме того, что он ленив и не справляется со своими обязанностями?
+	AI_Output(other,self, " DIA_Addon_Brandon_Matt_15_00 " );	// What do you know about Francis?
+	AI_Output(self,other, " DIA_Addon_Matt_Francis_10_01 " );	// Besides being lazy and failing to do his job?
 	AI_Output(other,self,"DIA_Addon_Brandon_Matt_15_02");	//Да.
-	AI_Output(self,other,"DIA_Addon_Matt_Francis_10_03");	//Надо подумать! Хммм...(задумчиво) Нет, больше ничего в голову не приходит.
+	AI_Output(self,other, " DIA_Addon_Matt_Francis_10_03 " );	// Need to think! Hmmm... (thoughtfully) No, nothing else comes to mind.
 };
 
 
-instance DIA_Addon_Matt_Anheuern(C_Info)
+instance DIA_Addon_Matt_Hire (C_Info)
 {
 	npc = PIR_1365_Addon_Matt;
 	nr = 11;
-	condition = DIA_Addon_Matt_Anheuern_Condition;
-	information = DIA_Addon_Matt_Anheuern_Info;
+	condition = DIA_Addon_Matt_Hire_Condition;
+	information = DIA_Addon_Matt_Hire_Info;
 	permanent = FALSE;
-	description = "Пойдем со мной.";
+	description = " Come with me. " ;
 };
 
 
-func int DIA_Addon_Matt_Anheuern_Condition()
+func int DIA_Addon_Matt_Hire_Condition()
 {
 	if(MIS_Addon_Greg_ClearCanyon == LOG_Running)
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void DIA_Addon_Matt_Anheuern_Info()
+func void DIA_Addon_Matt_Hire_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Matt_FollowMe_15_00");	//Пойдем со мной.
-	AI_Output(self,other,"DIA_Addon_Matt_FollowMe_10_01");	//Я не могу сейчас никуда идти. Я отдыхаю.
+	AI_Output(other,self, " DIA_Addon_Matt_FollowMe_15_00 " );	// Come with me.
+	AI_Output(self,other, " DIA_Addon_Matt_FollowMe_10_01 " );	// I can't go anywhere right now. I rest.
 	AI_Output(other,self,"DIA_Addon_Matt_FollowMe_15_02");	//Приказ Грэга.
-	AI_Output(self,other,"DIA_Addon_Matt_FollowMe_10_03");	//Понимаю, понимаю. Это, конечно, все меняет. Уже иду.
-	AI_Output(self,other,"DIA_Addon_Matt_FollowMe_10_04");	//А куда мы направляемся?
-	Info_ClearChoices(DIA_Addon_Matt_Anheuern);
-	Info_AddChoice(DIA_Addon_Matt_Anheuern,"Заткнись и иди за мной.",DIA_Addon_Matt_Anheuern_ShutUp);
-	Info_AddChoice(DIA_Addon_Matt_Anheuern,"Мы должны очистить каньон от зверей.",DIA_Addon_Matt_Anheuern_ClearCanyon);
+	AI_Output(self,other, " DIA_Addon_Matt_FollowMe_10_03 " );	// I understand, I understand. This, of course, changes everything. Already going.
+	AI_Output(self,other, " DIA_Addon_Matt_FollowMe_10_04 " );	// Where are we going?
+	Info_ClearChoices(DIA_Addon_Matt_Hire);
+	Info_AddChoice(DIA_Addon_Matt_Anheuern, " Shut up and follow me. " ,DIA_Addon_Matt_Anheuern_ShutUp);
+	Info_AddChoice(DIA_Addon_Matt_Anheuern, " We must clear the canyon of animals. " ,DIA_Addon_Matt_Anheuern_ClearCanyon);
 };
 
-func void DIA_Addon_Matt_Anheuern_ShutUp()
+func void DIA_Addon_Matt_Hire_ShutUp()
 {
-	AI_Output(other,self,"DIA_Addon_Matt_FollowMe_ShutUp_15_00");	//Заткнись и иди за мной.
-	AI_Output(self,other,"DIA_Addon_Matt_FollowMe_ShutUp_10_01");	//(саркастически) Есть, капитан!
-	Info_ClearChoices(DIA_Addon_Matt_Anheuern);
+	AI_Output(other,self, " DIA_Addon_Matt_FollowMe_ShutUp_15_00 " );	// Shut up and follow me.
+	AI_Output(self,other, " DIA_Addon_Matt_FollowMe_ShutUp_10_01 " );	// (sarcastically) Yes, Captain!
+	Info_ClearChoices(DIA_Addon_Matt_Hire);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FOLLOW");
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 };
 
 func void DIA_Addon_Matt_Anheuern_ClearCanyon()
 {
-	AI_Output(other,self,"DIA_Addon_Matt_FollowMe_ClearCanyon_15_00");	//Мы должны очистить каньон от зверей.
-	AI_Output(self,other,"DIA_Addon_Matt_FollowMe_ClearCanyon_10_01");	//Ты рехнулся. Там их полно! А с этими бритвозубами шутки плохи.
-	AI_Output(other,self,"DIA_Addon_Matt_FollowMe_ClearCanyon_15_02");	//Я знаю. Ну так что, ты идешь?
-	AI_Output(self,other,"DIA_Addon_Matt_FollowMe_ClearCanyon_10_03");	//(вздыхает) Надеюсь, у тебя достаточно бутылок с лечебным зельем. Они нам понадобятся.
-	Info_ClearChoices(DIA_Addon_Matt_Anheuern);
+	AI_Output(other,self, " DIA_Addon_Matt_FollowMe_ClearCanyon_15_00 " );	// We must clear the canyon of the beasts.
+	AI_Output(self,other, " DIA_Addon_Matt_FollowMe_ClearCanyon_10_01 " );	// You're crazy. There are plenty of them! And these razor teeth are not to be trifled with.
+	AI_Output(other,self, " DIA_Addon_Matt_FollowMe_ClearCanyon_15_02 " );	// I know. So, are you coming?
+	AI_Output(self,other, " DIA_Addon_Matt_FollowMe_ClearCanyon_10_03 " );	// (sighs) I hope you have enough bottles of healing potion. We will need them.
+	Info_ClearChoices(DIA_Addon_Matt_Hire);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FOLLOW");
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 };
 
 
@@ -246,22 +247,22 @@ instance DIA_Addon_Matt_ComeOn(C_Info)
 	condition = DIA_Addon_Matt_ComeOn_Condition;
 	information = DIA_Addon_Matt_ComeOn_Info;
 	permanent = TRUE;
-	description = "Пойдем со мной.";
+	description = " Come with me. " ;
 };
 
 
 func int DIA_Addon_Matt_ComeOn_Condition()
 {
-	if((self.aivar[AIV_PARTYMEMBER] == FALSE) && (MIS_Addon_Greg_ClearCanyon == LOG_Running) && Npc_KnowsInfo(other,DIA_Addon_Matt_Anheuern))
+	if ((self.aivar[ AIV_PARTYMEMBER ] ==  FALSE ) && (MIS_Addon_Greg_ClearCanyon == LOG_Running) && Npc_KnowsInfo(other,DIA_Addon_Matt_Anheuern));
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Matt_ComeOn_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Matt_ComeOn_15_00");	//Идем со мной.
+	AI_Output(other,self, " DIA_Addon_Matt_ComeOn_15_00 " );	// Come with me.
 	if(C_GregsPiratesTooFar() == TRUE)
 	{
 		B_Say(self,other,"$RUNAWAY");
@@ -269,11 +270,11 @@ func void DIA_Addon_Matt_ComeOn_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Matt_ComeOn_10_01");	//Есть, капитан!
+		AI_Output(self,other, " DIA_Addon_Matt_ComeOn_10_01 " );	// Yes, captain!
 		AI_StopProcessInfos(self);
 		B_Addon_PiratesFollowAgain();
 		Npc_ExchangeRoutine(self,"FOLLOW");
-		self.aivar[AIV_PARTYMEMBER] = TRUE;
+		self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	};
 };
 
@@ -285,25 +286,25 @@ instance DIA_Addon_Matt_GoHome(C_Info)
 	condition = DIA_Addon_Matt_GoHome_Condition;
 	information = DIA_Addon_Matt_GoHome_Info;
 	permanent = TRUE;
-	description = "Ты мне больше не нужен.";
+	description = " I don't need you anymore. " ;
 };
 
 
 func int DIA_Addon_Matt_GoHome_Condition()
 {
-	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
+	if (self.aivar[ AIV_PARTYMEMBER ] ==  TRUE )
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Matt_GoHome_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Matt_DontNeedYou_15_00");	//Ты мне больше не нужен.
-	AI_Output(self,other,"DIA_Addon_Matt_GoHome_10_01");	//(бормочет под нос) Мне не помешает выпить кружечку грога!
+	AI_Output(other,self, " DIA_Addon_Matt_DontNeedYou_15_00 " );	// I don't need you anymore.
+	AI_Output(self,other, " DIA_Addon_Matt_GoHome_10_01 " );	// (mumbles under his breath) I could use a glass of grog!
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	Npc_ExchangeRoutine(self,"START");
 };
 
@@ -321,23 +322,23 @@ instance DIA_Addon_Matt_TooFar(C_Info)
 
 func int DIA_Addon_Matt_TooFar_Condition()
 {
-	if((self.aivar[AIV_PARTYMEMBER] == TRUE) && (C_GregsPiratesTooFar() == TRUE))
+	if ((self.aivar[ AIV_PARTYMEMBER ] ==  TRUE ) && (C_GregsPiratesTooFar() ==  TRUE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Matt_TooFar_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Matt_TooFar_10_01");	//Дальше тебе придется идти одному, (саркастически) капитан.
+	AI_Output(self,other, " DIA_Addon_Matt_TooFar_10_01 " );	// You'll have to go on alone, (sarcastically) captain.
 	if(C_HowManyPiratesInParty() >= 2)
 	{
-		AI_Output(self,other,"DIA_Addon_Matt_TooFar_10_03");	//Мы с ребятами возвращаемся в лагерь!
+		AI_Output(self,other, " DIA_Addon_Matt_TooFar_10_03 " );	// The guys and I are going back to the camp!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Matt_TooFar_10_02");	//Я возвращаюсь в лагерь!
+		AI_Output(self,other, " DIA_Addon_Matt_TooFar_10_02 " );	// I'm going back to camp!
 	};
 	B_Addon_PiratesGoHome();
 	AI_StopProcessInfos(self);
@@ -361,11 +362,11 @@ func int DIA_Addon_Matt_Healing_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Matt_Healing_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Matt_Healing_10_01");	//Эй, капитан, мне не помешало бы лечебное зелье!
+	AI_Output(self,other, " DIA_Addon_Matt_Healing_10_01 " );	// Hey Captain, I could use a healing potion!
 };
 
