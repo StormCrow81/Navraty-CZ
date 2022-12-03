@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_2000_HAGEN_EXIT(C_Info)
 {
 	npc = pal_2000_hagen;
@@ -28,7 +29,7 @@ instance DIA_PAL_2000_HAGEN_TEACH(C_Info)
 	condition = dia_pal_2000_hagen_teach_condition;
 	information = dia_pal_2000_hagen_teach_info;
 	permanent = TRUE;
-	description = "Давай начнем тренировку.";
+	description = " Let's start training. " ;
 };
 
 
@@ -42,7 +43,7 @@ func int dia_pal_2000_hagen_teach_condition()
 
 func void dia_pal_2000_hagen_teach_info()
 {
-	AI_Output(other,self,"DIA_Hagen_Teach_15_00");	//Приступим к обучению.
+	AI_Output(other,self, " DIA_Hagen_Teach_15_00 " );	// Let's start learning.
 	Info_ClearChoices(dia_pal_2000_hagen_teach);
 	Info_AddChoice(dia_pal_2000_hagen_teach,Dialog_Back,dia_pal_2000_hagen_teach_back);
 	Info_AddChoice(dia_pal_2000_hagen_teach,b_buildlearnstringforfight(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),dia_pal_2000_hagen_teach_2h_1);
@@ -53,8 +54,8 @@ func void dia_pal_2000_hagen_teach_back()
 {
 	if(other.HitChance[NPC_TALENT_2H] >= 100)
 	{
-		AI_Output(self,other,"DIA_Hagen_Teach_04_00");	//Теперь ты достойный мастер меча. Я больше не могу ничему тебя научить.
-		AI_Output(self,other,"DIA_Hagen_Teach_04_01");	//Да ведет твою руку в будущих свершениях мудрость мастера-мечника.
+		AI_Output(self,other, " DIA_Hagen_Teach_04_00 " );	// You are now a worthy swordmaster. I can't teach you anymore.
+		AI_Output(self,other, " DIA_Hagen_Teach_04_01 " );	// May the wisdom of the master swordsman guide your hand in future accomplishments.
 		DIA_Hagen_Teach_permanent = TRUE;
 	};
 	Info_ClearChoices(dia_pal_2000_hagen_teach);
@@ -100,16 +101,16 @@ func int dia_pal_2000_hagen_warstart_condition()
 
 func void dia_pal_2000_hagen_warstart_info()
 {
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_WarStart_01_00");	//(удивленно) Ты? А я уж, честно говоря, и не надеялся, что снова увижу тебя!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_WarStart_01_01");	//В особенности после того, как ты увел у нас из под носа наш единственный корабль! (гневно) Или ты думал, что я ничего об этом не знаю?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_WarStart_01_02");	//Сейчас не самое лучшее время выяснять наши отношения.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_WarStart_01_03");	//Да?! (гневно) Ты так считаешь? И почему же?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_WarStart_01_04");	//Потому что орки вторглись в Хоринис!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_WarStart_01_05");	//И мне кажется, что сейчас именно эта вещь должна волновать тебя больше всего.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_WarStart_01_06");	//Ах да... Еще эти чертовы орки! Эти проклятые твари уже практически заполонили всю долину.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_WarStart_01_07");	//Вот именно. И с этим нужно что-то делать.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_WarStart_01_08");	//Хммм...(задумчиво) Ну, хорошо! О наших с тобою делах мы поговорим позже. Только не надейся, что я забуду про это!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_WarStart_01_09");	//А сейчас отвечай: что привело тебя ко мне?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_WarStart_01_00 " );	// (surprised) You? And to be honest, I didn't expect to see you again!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_WarStart_01_01 " );	// Especially after you stole our only ship from under our noses! (angrily) Or did you think I didn't know anything about it?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_WarStart_01_02 " );	// Now is not the best time to sort things out.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_WarStart_01_03 " );	// Yes?! (angrily) Do you think so? Why?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_WarStart_01_04 " );	// Because the orcs have invaded Khorinis!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_WarStart_01_05 " );	// And it seems to me that right now this is the thing that should worry you the most.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_WarStart_01_06 " );	// Oh yeah... More of those damn orcs! These damned creatures have practically filled the entire valley.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_WarStart_01_07 " );	// That's it. And something needs to be done about it.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_WarStart_01_08 " );	// Hmmm... (thoughtfully) Well, good! We will talk about our affairs with you later. Just don't expect me to forget about it!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_WarStart_01_09 " );	// Now answer: what brings you to me?
 };
 
 
@@ -120,13 +121,13 @@ instance DIA_PAL_2000_HAGEN_HIDDENORE(C_Info)
 	condition = dia_pal_2000_hagen_hiddenore_condition;
 	information = dia_pal_2000_hagen_hiddenore_info;
 	permanent = FALSE;
-	description = "У меня есть для тебя одно очень важное сообщение.";
+	description = " I have a very important message for you. " ;
 };
 
 
 func int dia_pal_2000_hagen_hiddenore_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_warstart) && (Npc_HasItems(hero,itmi_seamaplostisland) >= 1))
+	if ( Npc_KnowsInfo ( hero , dia_pal_2000_hagen_warstart ) && ( Npc_HasItems ( hero , itmi_seamaplasticland ) >=  1 )) .
 	{
 		return TRUE;
 	};
@@ -134,40 +135,40 @@ func int dia_pal_2000_hagen_hiddenore_condition()
 
 func void dia_pal_2000_hagen_hiddenore_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_01_00");	//У меня есть для тебя одно очень важное сообщение.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_01");	//(надменно) И в чем же оно заключается?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_01_03");	//Когда мы были в море, то случайно наткнулись на один необитаемый остров, доверху набитый залежами магической руды!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_01_04");	//Вот я и решил, что возможно паладинам было бы интересно узнать об этом.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_05");	//Что?! Ты серьезно? (очень удивленно) Но этого просто быть не может!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_01_06");	//Поверь мне, это так. Найденная нами магическая руда и была одной из тех причин, по которой мы вернулись обратно.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_07");	//Невероятно! Я и представить себе не мог, что такое возможно.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_08");	//Если все что ты говоришь - правда, то это самая лучшая новость, которую я мог только услышать!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_09");	//А то в последнее время они стали уж слишком большой редкостью.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_12");	//А как далеко отсюда находится этот остров?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_01_13");	//Всего лишь в нескольких днях плавания от Хориниса. Вот, взгляни сам.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_01_00 " );	// I have a very important message for you.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_01 " );	// (arrogantly) And what is it?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_01_03 " );	// When we were at sea, we accidentally stumbled upon an uninhabited island, filled to the brim with deposits of magical ore!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_01_04 " );	// So I figured it might be interesting for paladins to know about this.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_05 " );	// What?! Are you serious? (very surprised) But that just can't be!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_01_06 " );	// Trust me, it is. The magic ore we found was one of the reasons why we returned back.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_07 " );	// Incredible! I couldn't even imagine that this was possible.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_08 " );	// If everything you say is true, then this is the best news I could ever hear!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_09 " );	// And lately they have become too rare.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_12 " );	// How far is this island from here?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_01_13 " );	// Just a few days' sail from Khorinis. Here, take a look for yourself.
 	B_GiveInvItems(other,self,itmi_seamaplostisland,1);
 	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_14");	//Что это?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_01_15");	//Это морская карта. Мой капитан сделал на ней пару отметин и проложил точный курс.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_01_16");	//Так что найти этот остров теперь будет для вас не очень трудно.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_01_15 " );	// This is a sea chart. My captain made a couple of marks on it and plotted an accurate course.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_01_16 " );	// So finding this island won't be too hard for you now.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_17");	//(внимательно разглядывая) Да, очень интересно.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_18");	//Судя по этой карте, найденный вами клочок суши находится в неизведанной нами доселе части океана. Как вас туда занесло?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_01_19");	//По дороге мы угодили в очень сильный шторм. Он-то нас и вывел к этому острову.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_20");	//Да уж. И вправду говорят, что пути Инноса неисповедимы!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_21");	//Уверен, что без его воли тут уж точно не обошлось.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_23");	//Ну что же. (серьезно) Тогда от имени всего нашего ордена прими мою искреннюю благодарность!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_01_24");	//Будем надеяться, что найденная вами руда еще сможет помочь королю в войне против орков.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_17 " );	// (looking closely) Yes, very interesting.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_18 " );	// Judging by this map, the piece of land you found is located in a part of the ocean that we have not yet explored. How did you get there?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_01_19 " );	// On the way we got into a very strong storm. He led us to this island.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_20 " );	// Yeah. And indeed they say that the ways of Innos are inscrutable!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_21 " );	// I'm sure that it certainly could not have happened without his will.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_23 " );	// Well then. (seriously) Then on behalf of our entire order, please accept my sincere thanks!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_01_24 " );	// Let's hope that the ore you found can still help the king in the war against the orcs.
 	HAGENTAKESMAPSORE = TRUE;
 
 	if(LIGOFORGOLD == TRUE)
 	{
 		Info_ClearChoices(dia_pal_2000_hagen_hiddenore);
-		Info_AddChoice(dia_pal_2000_hagen_hiddenore,"Не так быстро, паладин!",dia_pal_2000_hagen_hiddenore_gold);
+		Info_AddChoice(dia_pal_2000_hagen_hiddenore, " Not so fast, paladin! " ,dia_pal_2000_hagen_hiddenore_gold);
 	}
 	else if(LIGOFORUNKNOWN == TRUE)
 	{
 		Info_ClearChoices(dia_pal_2000_hagen_hiddenore);
-		Info_AddChoice(dia_pal_2000_hagen_hiddenore,"Не так быстро, паладин!",dia_pal_2000_hagen_hiddenore_gold);
+		Info_AddChoice(dia_pal_2000_hagen_hiddenore, " Not so fast, paladin! " ,dia_pal_2000_hagen_hiddenore_gold);
 		Info_AddChoice(dia_pal_2000_hagen_hiddenore,"Само собой.",dia_pal_2000_hagen_hiddenore_nothing);
 	}
 	else if(LIGOFORFREE == TRUE)
@@ -179,29 +180,29 @@ func void dia_pal_2000_hagen_hiddenore_info()
 
 func void dia_pal_2000_hagen_hiddenore_gold()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_01");	//Не так быстро, паладин! Боюсь, одной твоей благодарности будет маловато.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_02");	//То есть? (удивленно) Что ты хочешь этим сказать?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_03");	//Каждая информация всегда чего-то стоит. Тем более такая ценная.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_06");	//(надменно) Ах, ну да. Естественно! Было бы странно, если бы ты не заговорил со мной об этом.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_01 " );	// Not so fast, paladin! I'm afraid your gratitude alone won't be enough.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_02 " );	// That is? (surprised) What do you mean by that?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_03 " );	// Each information is always worth something. Especially so valuable.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_06 " );	// (arrogantly) Oh, yes. Naturally! It would be strange if you didn't talk to me about it.
 	if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_07");	//Хотя, по правде говоря, я никак не ожидал таких слов от паладина!
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_07 " );	// Although, to tell the truth, I did not expect such words from a paladin!
 	}
 	else if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_08");	//Хотя, по правде говоря, я никак не ожидал таких слов от достопочтенного мага Огня!
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_08 " );	// Although, to be honest, I didn't expect such words from a venerable Fire Mage!
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_09");	//Хотя, по правде говоря, я никак не ожидал таких слов от достопочтенного мага Воды!
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_09 " );	// Although, to tell the truth, I never expected such words from the venerable Waterbender!
 	};
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_10");	//Давай оставим подробности. Лучше скажи - сколько ты мне заплатишь?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_11");	//Хммм... Ну, скажем, десять тысяч золотых монет. Тебя это устроит?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_12");	//Вполне. Надеюсь, что я не продешевил.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_13");	//Тебе решать! Вот, возьми свои деньги.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_10 " );	// Let's leave the details. Better tell me - how much will you pay me?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_11 " );	// Hmmm... Well, let's say ten thousand gold coins. Will that suit you?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_12 " );	// Quite. Hope I didn't go cheap.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_13 " );	// You decide! Here, take your money.
 	B_GiveInvItems(self,other,ItMi_Gold,10000);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_14");	//С тобой приятно иметь дело.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_HiddenOre_Gold_01_15");	//(недовольно) Хммм...
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_14 " );	// It's a pleasure doing business with you.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_HiddenOre_Gold_01_15 " );	// (angrily) Hmmm...
 	Info_ClearChoices(dia_pal_2000_hagen_hiddenore);
 };
 
@@ -220,7 +221,7 @@ instance DIA_PAL_2000_HAGEN_TELLFROMPYROKAR(C_Info)
 	condition = dia_pal_2000_hagen_tellfrompyrokar_condition;
 	information = dia_pal_2000_hagen_tellfrompyrokar_info;
 	permanent = FALSE;
-	description = "Меня прислал Пирокар.";
+	description = " Pyrocar sent me. " ;
 };
 
 
@@ -235,26 +236,26 @@ func int dia_pal_2000_hagen_tellfrompyrokar_condition()
 func void dia_pal_2000_hagen_tellfrompyrokar_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_00");	//Меня прислал Пирокар.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_01");	//И чего же он хочет?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_02");	//Для начала хотя бы выяснить то, как у вас обстоят дела. Насколько велики ваши потери?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_03");	//(ворчливо) А то он и сам не знает, как они обстоят!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_04");	//При защите города я потерял практически треть своих людей. Не думаю, что это можно назвать хорошим поворотом дел.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_05");	//А что с остальными?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_06");	//Все, кто выжил в этой заварушке, сейчас находятся здесь.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_07");	//А если говорить конкретнее, то в моем распоряжении сейчас порядка полсотни бойцов. Может, чуть больше.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_08");	//И каков их настрой?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_09");	//(грозно) Если ты думаешь, что после всего случившегося они пали духом, то ты ошибаешься!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_10");	//Их боевой дух как никогда высок! И в скором времени ты сам в этом убедишься.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_11");	//Тогда почему вы до сих пор здесь?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_12");	//Орки уже вовсю хозяйничают в долине - грабя и уничтожая все, что встречается им на пути.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_13");	//Или вы просто боитесь дать им открытый бой?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_17");	//Для открытого сражения с орками нас слишком мало. У нас просто не хватит сил, чтобы противостоять им всем!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_18");	//И что же вы собираетесь делать дальше?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_19");	//Полагаю, что пока мы останемся здесь. Мне нужно перегруппировать свои войска и основательно подготовиться к дальнейшим боевым действиям.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_20");	//К тому же Азган практически неприступен, так что здесь можно себя чувствовать в полной безопасности.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_21");	//А если эти твари и попытаются нас атаковать, то уж будь уверен - они прилично пообломают себе зубы о стены этой крепости.
-	B_LogEntry(TOPIC_ORсGREATWAR,"Потеряв при защите Хориниса почти треть паладинов, лорд Хаген не собирается в ближайшее время что-то делать против вторжения орков. Паладины останутся в форте, что более выгодно в сложившейся обстановке. Форт Азган - практически неприступная крепость, и взять ее штурмом орки вряд ли смогут.");
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_00 " );	// Pirokar sent me.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_01 " );	// And what does he want?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_02 " );	// For starters, at least figure out how things are going for you. How big are your losses?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_03 " );	// (grouchily) And he himself does not know how they are!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_04 " );	// In defending the city, I lost almost a third of my people. I don't think this is a good turn of events.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_05 " );	// What about the rest?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_06 " );	// Everyone who survived this mess is here now.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_07 " );	// And to be more specific, I now have about fifty fighters at my disposal. Maybe a little more.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_08 " );	// And what is their mood?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_09 " );	// (terribly) If you think that after everything that happened they lost heart, then you are mistaken!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_10 " );	// Their morale is as high as ever! And soon you will see for yourself.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_11 " );	// Then why are you still here?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_12 " );	// The orcs are already running the valley, plundering and destroying everything in their path.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_13 " );	// Or are you just afraid to give them an open fight?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_17 " );	// There are too few of us for an open battle with the orcs. We just don't have the strength to resist them all!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_18 " );	// And what are you going to do next?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_19 " );	// Guess we'll stay here for now. I need to regroup my troops and thoroughly prepare for further hostilities.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_20 " );	// In addition, Azgan is almost impregnable, so you can feel completely safe here.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_TellFromPyrokar_01_21 " );	// And if these creatures try to attack us, then be sure - they will decently break their teeth on the walls of this fortress.
+	B_LogEntry( TOPIC_OR with GREATWAR , " Having lost almost a third of the paladins in the defense of Khorinis, Lord Hagen is not going to do anything against the orc invasion anytime soon. The paladins will remain in the fort, which is more advantageous in the current situation. Fort Azgan is an almost impregnable fortress, and the orcs are unlikely to be able to take it by storm. " );
 	TELLTOHAGENFORT = TRUE;
 };
 
@@ -266,7 +267,7 @@ instance DIA_PAL_2000_HAGEN_MAYJOINOTHERS(C_Info)
 	condition = dia_pal_2000_hagen_mayjoinothers_condition;
 	information = dia_pal_2000_hagen_mayjoinothers_info;
 	permanent = FALSE;
-	description = "Но нам нельзя просто сидеть сложа руки!";
+	description = " But we can't just sit back! " ;
 };
 
 
@@ -280,33 +281,33 @@ func int dia_pal_2000_hagen_mayjoinothers_condition()
 
 func void dia_pal_2000_hagen_mayjoinothers_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_00");	//Но нам нельзя просто сидеть сложа руки!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_01");	//Рано или поздно орки перебьют всех оставшихся в долине людей и после этого наверняка пожалуют сюда.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_03");	//Я и без тебя все это прекрасно знаю!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_04");	//Но, как уже говорил ранее, у меня слишком мало людей, чтобы в открытую выступить против такого количества орков.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_05");	//Тогда тебе нужно найти себе еще воинов!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_06");	//Да?! (ехидно) И где же ты предлагаешь мне их искать? Может быть, посоветуешь?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_07");	//Откуда мне еще взять хотя бы сотню отважных смельчаков, готовых отдать свои жизни ради призрачной надежды на успех?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_08");	//Нет, друг мой - в этой битве мы одиноки. Нам неоткуда ждать какой-либо помощи.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_09");	//А как же наемники или люди из болотного Братства? Может, обратиться к ним за помощью?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_10");	//Что?! Сражаться бок о бок с преступниками и беглыми каторжниками?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_11");	//Да ты в своем уме предлагать мне такое? Я никогда не соглашусь иметь дело с подобного рода личностями, даже если дело будет касаться вопроса жизни и смерти.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_12");	//Все это позорит честное имя паладина! Не говоря уже о том, что многим из них и вовсе нельзя доверять.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_13");	//Я знаю, что для паладина честь превыше всего. Но только не в данной ситуации!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_15");	//Пока ты здесь стоишь и рассуждаешь о понятиях чести - в долине от топоров орков гибнет все больше и больше ни в чем не повинных людей!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_16");	//(недоуменно) Что ты этим хочешь сказать?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_17");	//Твой долг как паладина короля - сделать все необходимое для того, чтобы их как-то спасти!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_21");	//Хммм. Ну, хорошо...(скрепя сердце) Да, ты прав.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_22");	//Мне действительно не следовало бы быть столь заносчивым и самонадеянным. Жизнь подданных короля превыше всего!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_23");	//Ведь их защита - это наш священный долг. И кроме нас им не на кого больше надеяться.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_25");	//Я уверен, что тебе стоит обратиться за помощью ко всем тем, кто сейчас сможет держать оружие в руках.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_26");	//А думаю, таких наберется немало.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_27");	//К тому же если эти самые преступники, как ты их называешь, согласятся выступить вместе с тобой против орков - это уже будет достойно хоть какого-то уважения.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_28");	//В конце концов, многие из них заплатят жизнью, а это чего-то все-таки стоит.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_29");	//Ладно! Считай, что ты меня почти уговорил. Однако мне все равно нужно немного времени, чтобы все это обдумать.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_30");	//Думай быстрее, времени у нас и так уже нет.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_31");	//Постараюсь!
-	B_LogEntry(TOPIC_ORсGREATWAR,"После долгих споров с лордом Хагеном мне удалось убедить его, что единственный способ одолеть орков - это собрать под знамена паладинов всех, кто способен держать в руках оружие. Наемников, сектантов или еще кого-нибудь. Однако глава паладинов все-таки взял время подумать над моим предложением. Но я не сомневаюсь, что он примет правильное решение.");
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_00 " );	// But we can't just sit back!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_01 " );	// Sooner or later, the orcs will kill all the remaining people in the valley and after that they will surely come here.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_03 " );	// I know all this very well without you!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_04 " );	// But, as I said before, I have too few people to openly oppose so many orcs.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_05 " );	// Then you need to find yourself more warriors!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_06 " );	// Yes?! (maliciously) And where do you suggest that I look for them? Maybe you can advise?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_07 " );	// Where else can I get at least a hundred brave daredevils, ready to give their lives for the illusory hope of success?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_08 " );	// No, my friend - we are alone in this battle. We can't wait for any help.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_09 " );	// But what about mercenaries or people from the Swamp Brotherhood? Maybe ask them for help?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_10 " );	// What?! Fight side by side with criminals and runaway convicts?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_11 " );	// Are you in your right mind to suggest this to me? I will never agree to deal with this kind of person, even if the matter concerns a matter of life and death.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_12 " );	// All of this dishonors the good name of the paladin! Not to mention that many of them cannot be trusted at all.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_13 " );	// I know that for a paladin, honor is everything. But not in this situation!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_15 " );	// While you're standing here and talking about the concepts of honor - more and more innocent people die from orc axes in the valley!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_16 " );	// (bewildered) What do you mean by that?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_17 " );	// As a paladin of the king, it is your duty to do whatever is necessary to save them somehow!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_21 " );	// Hmmm. Well, well... (reluctantly) Yes, you're right.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_22 " );	// I really shouldn't be so arrogant and presumptuous. The life of the subjects of the king is above all!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_23 " );	// After all, their protection is our sacred duty. And besides us, they have no one else to rely on.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_25 " );	// I'm sure you should ask for help from all those who can now hold a weapon in their hands.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_26 " );	// And I think there are quite a few of them.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_27 " );	// In addition, if these very criminals, as you call them, agree to join you against the orcs, this will already be worthy of at least some respect.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_28 " );	// In the end, many of them will pay with their lives, and it's worth something.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_29 " );	// Okay! Consider that you almost persuaded me. However, I still need some time to think it all over.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthers_01_30 " );	// Think faster, we don't have time anyway.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthers_01_31 " );	// I'll try!
+	B_LogEntry( TOPIC_OR with GREATWAR , " After much arguing with Lord Hagen, I managed to convince him that the only way to defeat the orcs is to gather under the banner of the paladins all who are capable of wielding weapons. Mercenaries, cultists or anyone else. However, the head of the paladins still took time to think about my proposal. But I have no doubt that he will make the right decision. " );
 };
 
 
@@ -317,13 +318,13 @@ instance DIA_PAL_2000_HAGEN_MAYJOINOTHERSAGREED(C_Info)
 	condition = dia_pal_2000_hagen_mayjoinothersagreed_condition;
 	information = dia_pal_2000_hagen_mayjoinothersagreed_info;
 	permanent = TRUE;
-	description = "Так что ты решил?";
+	description = " So what did you decide? " ;
 };
 
 
 func int dia_pal_2000_hagen_mayjoinothersagreed_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_mayjoinothers) && (HAGENOTHERSAGREED == FALSE))
+	if ( Npc_KnowsInfo ( hero , dia_pal_2000_hagen_mayjoinothers ) && ( HAGENOTHERSAGREED  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -331,35 +332,35 @@ func int dia_pal_2000_hagen_mayjoinothersagreed_condition()
 
 func void dia_pal_2000_hagen_mayjoinothersagreed_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_00");	//Так что ты решил?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_00 " );	// So what did you decide?
 	if((MIS_RESCUEGAROND == LOG_SUCCESS) || (GARONDISBACK == TRUE))
 	{
 		B_GivePlayerXP(200);
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_01");	//Хммм...(задумчиво) Ну, хорошо! Я согласен принять помощь наемников или кого-либо другого.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_02");	//Но только потому, что иного выхода у нас действительно просто нет.
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_03");	//Уверен, что ты поступил правильно.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_04");	//Надеюсь. (серьезно) Очень не хотелось бы потом пожалеть о своем решении. Оно мне и так далось с большим трудом!
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_05");	//И что теперь?
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_06");	//Это ты у меня спрашиваешь? Я уже тебе и так сказал все, что думал по этому поводу.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_07");	//Теперь же все остальное зависит только от тебя.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_09");	//Или ты полагаешь, что я собственнолично буду бегать и упрашивать всех подряд присоединиться к армии паладинов?
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_10");	//Хватит и того, что мне, по всей видимости, скоро придется якшаться с разного рода преступниками и прочими темными личностями.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_11");	//К тому же ты сам предложил эту идею - вот теперь и думай, как быть дальше.
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_12");	//Ладно, я что-нибудь придумаю.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_13");	//Только не затягивай с этим! Не думаю, что орки дадут нам много времени на раздумия.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_01 " );	// Hmmm... (thoughtfully) Well, good! I agree to accept the help of mercenaries or anyone else.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_02 " );	// But only because we really just have no other choice.
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_03 " );	// I'm sure you did the right thing.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_04 " );	// I hope. (seriously) I really don't want to regret my decision later. It worked so hard for me!
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_05 " );	// And now what?
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_06 " );	// Are you asking me? I already told you everything I thought about it.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_07 " );	// Now everything else is up to you.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_09 " );	// Or do you think that I myself will run around and beg everyone to join the army of paladins?
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_10 " );	// Enough of the fact that I, apparently, will soon have to rub shoulders with all sorts of criminals and other dark personalities.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_11 " );	// In addition, you yourself proposed this idea - now think about how to proceed.
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_12 " );	// Okay, I'll think of something.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_13 " );	// Just don't delay it! I don't think the orcs will give us much time to think.
 		ALLFRACTIONS = 6;
 		HAGENOTHERSAGREED = TRUE;
 		HAGENCOUNTSTIME = Wld_GetDay();
-		B_LogEntry(TOPIC_ORсGREATWAR,"Лорд Хаген согласился с моим предложением и поручил именно мне заняться, так сказать, набором ополченцев в армию паладинов. Посмотрим, что из этого получится.");
+		B_LogEntry( TOPIC_OR with GREATWAR , " Lord Hagen agreed with my proposal and instructed me to take care of, so to speak, the recruitment of militia in the paladin army. Let's see what happens. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_15");	//(нервно) Пока ничего. Так что не надо мне действовать на нервы!
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_15 " );	// (nervously) Nothing yet. So don't get on my nerves!
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
-			AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_16");	//Лучше займись моим поручением насчет отряда Гаронда! Это сейчас куда важнее.
+			AI_Output(self,other, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_16 " );	// You'd better take care of my errand about Garond's squad! This is much more important now.
 		};
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_17");	//Хорошо, как скажешь.
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_MayJoinOthersAgreed_01_17 " );	// Okay, whatever you say.
 	};
 };
 
@@ -371,7 +372,7 @@ instance DIA_PAL_2000_HAGEN_ALREADYJOINOTHERSAGREED(C_Info)
 	condition = dia_pal_2000_hagen_alreadyjoinothersagreed_condition;
 	information = dia_pal_2000_hagen_alreadyjoinothersagreed_info;
 	permanent = TRUE;
-	description = "Насчет людей, готовых поддержать тебя...";
+	description = " As for the people who are ready to support you... " ;
 };
 
 
@@ -385,44 +386,44 @@ func int dia_pal_2000_hagen_alreadyjoinothersagreed_condition()
 
 func void dia_pal_2000_hagen_alreadyjoinothersagreed_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_01_00");	//Насчет людей, готовых поддержать тебя...
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_01_01");	//Да? (с интересом) У тебя есть какие-то новости?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_01_00 " );	// As for people willing to support you...
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_01_01 " );	// Yes? (with interest) Do you have any news?
 	Info_ClearChoices(dia_pal_2000_hagen_alreadyjoinothersagreed);
 	if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_sldanswer) && (SLD_JOINHAGEN == TRUE) && (FRACTIONSLDJOIN == FALSE))
 	{
-		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed,"Наемники будут сражаться на твоей стороне.",dia_pal_2000_hagen_alreadyjoinothersagreed_sld);
+		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed, " Mercenaries will fight for you. " ,dia_pal_2000_hagen_alreadyjoinothersagreed_sld);
 	};
 	if((PIR_JOINHAGEN == TRUE) && (FRACTIONPIRJOIN == FALSE))
 	{
-		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed,"Пираты согласились присоединиться к твоей армии.",dia_pal_2000_hagen_alreadyjoinothersagreed_pir);
+		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed, " Pirates have agreed to join your army. " ,dia_pal_2000_hagen_alreadyjoinothersagreed_pir);
 	};
 	if((TPL_JOINHAGEN == TRUE) && (FRACTIONTPLJOIN == FALSE))
 	{
-		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed,"Люди из Братства готовы помочь тебе с орками.",dia_pal_2000_hagen_alreadyjoinothersagreed_tpl);
+		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed, " The Brotherhood are ready to help you with the orcs. " ,dia_pal_2000_hagen_alreadyjoinothersagreed_tpl);
 	};
 	if((HUN_JOINHAGEN == TRUE) && (FRACTIONHUNJOIN == FALSE))
 	{
-		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed,"Охотники тоже будут сражаться вместе с вами.",dia_pal_2000_hagen_alreadyjoinothersagreed_hun);
+		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed, " Hunters will also fight with you. " ,dia_pal_2000_hagen_alreadyjoinothersagreed_hun);
 	};
 	if((KDW_JOINHAGEN == TRUE) && (FRACTIONKDWJOIN == FALSE))
 	{
-		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed,"Маги Воды с радостью приняли твое предложение.",dia_pal_2000_hagen_alreadyjoinothersagreed_kdw);
+		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed, " The Waterbenders gladly accepted your offer. " ,dia_pal_2000_hagen_alreadyjoinothersagreed_kdw);
 	};
-	if((KDF_JOINHAGEN == TRUE) && (FRACTIONKDFJOIN == FALSE))
+	if (( KDF_JOINHAGEN  ==  TRUE ) && ( FRACTIONKDFJOIN  ==  FALSE ))
 	{
-		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed,"Ты можешь рассчитывать на помощь со стороны Магов Огня.",dia_pal_2000_hagen_alreadyjoinothersagreed_kdf);
+		Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed, " You can count on help from the Fire Mages. " ,dia_pal_2000_hagen_alreadyjoinothersagreed_kdf);
 	};
-	Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed,"Пока ничего нового.",dia_pal_2000_hagen_alreadyjoinothersagreed_no);
+	Info_AddChoice(dia_pal_2000_hagen_alreadyjoinothersagreed, " Nothing new yet. " ,dia_pal_2000_hagen_alreadyjoinothersagreed_no);
 };
 
 func void dia_pal_2000_hagen_alreadyjoinothersagreed_sld()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_00");	//Наемники будут сражаться на твоей стороне.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_01");	//Это я уже знаю! (раздраженно) Какой смысл сообщать мне об этом еще один раз?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_02");	//Просто решил тебе напомнить.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_03");	//Не держи меня за идиота! Я всегда отлично помню, что говорят мне люди.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_04");	//Ну ладно, как скажешь.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_00 " );	// Mercenaries will fight by your side.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_01 " );	// I already know that! (annoyed) What's the point of telling me this one more time?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_02 " );	// Just thought I'd remind you.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_03 " );	// Don't take me for an idiot! I always remember very well what people say to me.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_SLD_01_04 " );	// Well, whatever you say.
 	FRACTIONSLDJOIN = TRUE;
 	AVAILABLEFRACTIONS = AVAILABLEFRACTIONS + 1;
 	if(AVAILABLEFRACTIONS >= ALLFRACTIONS)
@@ -435,11 +436,11 @@ func void dia_pal_2000_hagen_alreadyjoinothersagreed_sld()
 func void dia_pal_2000_hagen_alreadyjoinothersagreed_pir()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_00");	//Пираты согласились присоединиться к твоей армии.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_01");	//Не сказать, что я очень сильно рад этому факту...(ворчливо) Но уж лучше так, чем ничего!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_02");	//Хотя, по правде говоря, я думал, что они все-таки предпочтут виселицу, нежели быть у меня в подчинении.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_03");	//Я их смог отговорить от этой идеи. Тем более ты обещал им корабль!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_04");	//Да, я помню про свое обещание! Можешь в этом не сомневаться.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_00 " );	// The pirates have agreed to join your army.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_01 " );	// Not to say that I'm very happy about this fact... (grouchily) But it's better than nothing!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_02 " );	// Although, to tell the truth, I thought that they would still prefer the gallows than to be under my command.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_03 " );	// I was able to dissuade them from this idea. Moreover, you promised them a ship!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_PIR_01_04 " );	// Yes, I remember my promise! You can be sure of that.
 	FRACTIONPIRJOIN = TRUE;
 	AVAILABLEFRACTIONS = AVAILABLEFRACTIONS + 1;
 	if(AVAILABLEFRACTIONS >= ALLFRACTIONS)
@@ -452,10 +453,10 @@ func void dia_pal_2000_hagen_alreadyjoinothersagreed_pir()
 func void dia_pal_2000_hagen_alreadyjoinothersagreed_tpl()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_TPL_01_00");	//Люди из Братства готовы помочь тебе с орками.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_TPL_01_01");	//Хммм. (удивленно) Серьезно? По правде говоря, на их помощь я совсем не рассчитывал!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_TPL_01_02");	//Поскольку всегда считал, что им вообще нет никакого дела до всего происходящего вокруг.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_TPL_01_03");	//Но на сей раз я, видимо, все-таки ошибся! Хотя, может быть, это и к лучшему.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_TPL_01_00 " );	// The people of the Brotherhood are ready to help you with the orcs.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_TPL_01_01 " );	// Hmmm. (surprised) Seriously? To tell the truth, I did not count on their help at all!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_TPL_01_02 " );	// Because I always thought they didn't care at all about everything going on around them.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_TPL_01_03 " );	// But this time, I must have made a mistake! Although maybe that's for the best.
 	FRACTIONTPLJOIN = TRUE;
 	AVAILABLEFRACTIONS = AVAILABLEFRACTIONS + 1;
 	if(AVAILABLEFRACTIONS >= ALLFRACTIONS)
@@ -468,10 +469,10 @@ func void dia_pal_2000_hagen_alreadyjoinothersagreed_tpl()
 func void dia_pal_2000_hagen_alreadyjoinothersagreed_hun()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_HUN_01_00");	//Охотники тоже будут сражаться вместе с вами.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_HUN_01_01");	//Охотники? Но они же фермеры, а не воины! Может быть, ты тогда и простых крестьян призовешь под мои знамена?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_HUN_01_02");	//Уверен, что лишние люди тебе в любом случае не помешают.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_HUN_01_03");	//Хммм...(ворчливо) Ну ладно! Надеюсь, что от них будет хоть какой-то толк.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_HUN_01_00 " );	// Hunters will also fight alongside you.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_HUN_01_01 " );	// Hunters? But they are farmers, not warriors! Maybe then you will call ordinary peasants under my banner?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_HUN_01_02 " );	// I'm sure that extra people won't bother you anyway.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_HUN_01_03 " );	// Hmmm... (grouchily) Okay! I hope that they will be of some use.
 	FRACTIONHUNJOIN = TRUE;
 	AVAILABLEFRACTIONS = AVAILABLEFRACTIONS + 1;
 	if(AVAILABLEFRACTIONS >= ALLFRACTIONS)
@@ -484,9 +485,9 @@ func void dia_pal_2000_hagen_alreadyjoinothersagreed_hun()
 func void dia_pal_2000_hagen_alreadyjoinothersagreed_kdw()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDW_01_00");	//Маги Воды с радостью приняли твое предложение.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDW_01_01");	//Что же, это очень хорошая новость. Я хорошо знаю Сатураса, и уверен, что он попросту не мог принять иного решения.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDW_01_02");	//Это будет большой честью для меня сражаться бок о бок с таким благородным человеком, как он.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDW_01_00 " );	// The Waterbenders gladly accepted your offer.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDW_01_01 " );	// Well, that's very good news. I know Saturas well, and I am sure that he simply could not have made a different decision.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDW_01_02 " );	// It will be a great honor for me to fight alongside a noble man like him.
 	FRACTIONKDWJOIN = TRUE;
 	AVAILABLEFRACTIONS = AVAILABLEFRACTIONS + 1;
 	if(AVAILABLEFRACTIONS >= ALLFRACTIONS)
@@ -499,9 +500,9 @@ func void dia_pal_2000_hagen_alreadyjoinothersagreed_kdw()
 func void dia_pal_2000_hagen_alreadyjoinothersagreed_kdf()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDF_01_00");	//Ты можешь рассчитывать на помощь со стороны магов Огня.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDF_01_01");	//В этом я ни капли не сомневался...(с уважением) Поскольку сражаться со злом - это их священный долг перед Инносом!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDF_01_02");	//Уверен, что их знания и мудрость помогут нам в борьбе против орков.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDF_01_00 " );	// You can count on help from the Firebenders.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDF_01_01 " );	// I didn't doubt it a bit... (respectfully) Since fighting evil is their sacred duty to Innos!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDF_01_02 " );	// I'm sure that their knowledge and wisdom will help us in the fight against the orcs.
 	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_KDF_01_03");	//Само собой.
 	FRACTIONKDFJOIN = TRUE;
 	AVAILABLEFRACTIONS = AVAILABLEFRACTIONS + 1;
@@ -514,8 +515,8 @@ func void dia_pal_2000_hagen_alreadyjoinothersagreed_kdf()
 
 func void dia_pal_2000_hagen_alreadyjoinothersagreed_no()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_No_01_00");	//У меня пока нет новостей.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_No_01_01");	//Тогда зачем ты попросту тратишь мое время? (раздраженно) Лучше иди и займись каким-нибудь полезным делом!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_No_01_00 " );	// I don't have news yet.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_AlreadyJoinOthersAgreed_No_01_01 " );	// Then why are you just wasting my time? (annoyed) Better go and do something useful!
 	Info_ClearChoices(dia_pal_2000_hagen_alreadyjoinothersagreed);
 };
 
@@ -527,7 +528,7 @@ instance DIA_PAL_2000_HAGEN_DONEJOINOTHERSAGREED(C_Info)
 	condition = dia_pal_2000_hagen_donejoinothersagreed_condition;
 	information = dia_pal_2000_hagen_donejoinothersagreed_info;
 	permanent = FALSE;
-	description = "Думаю, это все, кто сможет присоединиться к твоей армии.";
+	description = " I think that's all who can join your army. " ;
 };
 
 
@@ -541,63 +542,63 @@ func int dia_pal_2000_hagen_donejoinothersagreed_condition()
 
 func void dia_pal_2000_hagen_donejoinothersagreed_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_00");	//Думаю, это все, кто сможет присоединиться к твоей армии.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_01");	//Ну что же, совсем неплохо. Теперь у нас действительно достаточно людей, чтобы открыто выступить против орков. И медлить с этим уже не имеет никакого смысла!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_02");	//Тем более что по моим сведениям, орки уже начали стягивать свои силы вблизи фермы Онара, и наверняка захотят нанести свой удар именно туда.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_03");	//Тогда надо предупредить остальных, что вы выступаете.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_04");	//Не беспокойся, об этом я сам позабочусь. За исключением, конечно, магов Огня. С этим как раз могут возникнуть серьезные проблемы.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_00 " );	// I think that's all who can join your army.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_01 " );	// Well, not bad at all. Now we really have enough people to openly oppose the orcs. And there is no point in delaying it!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_02 " );	// Moreover, according to my information, the orcs have already begun to gather their forces near Onar's farm, and they will certainly want to strike there.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_03 " );	// Then let the others know you're speaking.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_04 " );	// Don't worry, I'll take care of it myself. Except, of course, the Fire Mages. With this, serious problems can arise.
 	AI_Output(other,self,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_05");	//Почему?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_06");	//Насколько мне известно, монастырь до сих пор еще находится под осадой, и я не думаю, что орки с распростертыми объятиями встретят там моего гонца.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_07");	//Пожалуй, я справлюсь с этим. У меня уже не раз получалось проникать туда незамеченным.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_08");	//Ну ладно, пускай будет по-твоему. Тогда сообщи Пирокару, что мы встанем лагерем рядом с фермой, и пусть он будет готов в ближайшее время присоединиться к нам.
-	B_LogEntry(TOPIC_ORсGREATWAR,"Теперь лорд Хаген готов выступить со своими людьми из форта, чтобы атаковать орков. Мне же необходимо немедленно отправиться в монастырь и сообщить об этом магам Огня.");
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_06 " );	// As far as I know, the monastery is still under siege, and I don't think the orcs will welcome my messenger there with open arms.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_07 " );	// I guess I can handle this. I've been able to sneak in there more than once without being seen.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_08 " );	// Okay, let it be your way. Then inform Pyrokar that we will camp near the farm, and have him ready to join us soon.
+	B_LogEntry( TOPIC_OR with GREATWAR , " Lord Hagen is now ready to march with his men from the fort to attack the orcs. I must immediately go to the monastery and inform the Firebenders. " );
 	HAGENNOMORETIMEWAIT = TRUE;
 	OTH_JOINHAGEN = TRUE;
 };
 
 
-instance DIA_PAL_2000_HAGEN_RESCUEGAROND(C_Info)
+instance DIA_PAL_2000_HAGEN_RESCUEGAROND (C_Info)
 {
 	npc = pal_2000_hagen;
 	nr = 2;
 	condition = dia_pal_2000_hagen_rescuegarond_condition;
-	information = dia_pal_2000_hagen_rescuegarond_info;
+	information = day_pal_2000_hagen_rescuegarond_info;
 	permanent = FALSE;
-	description = "Могу я еще чем-то помочь?";
+	description = " Is there anything else I can help you with? " ;
 };
 
 
 func int dia_pal_2000_hagen_rescuegarond_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_mayjoinothers) && (GARONDISBACK == FALSE))
+	if ( Npc_KnowsInfo ( hero , his_pal_2000_may_joinothers ) && ( GARONDISBACK  ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_2000_hagen_rescuegarond_info()
+func void day_pal_2000_hagen_rescuegarond_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarond_01_01");	//Могу я еще чем-то помочь?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarond_01_02");	//(задумчиво) Возможно, что у меня действительно для тебя есть одно очень важное поручение.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarond_01_03");	//Хотя, откровенно говоря, оно связанно с крайне большим риском и опасностью.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarond_01_04");	//Звучит уже заманчиво! И что надо делать?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarond_01_06");	//Дело в том, что я до сих пор так и не знаю, что стало с моей экспедицией в Долине Рудников.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarond_01_07");	//От Гаронда давно уже не поступало никаких вестей! Честно говоря, я уж и не знаю, что думать.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarond_01_08");	//Возможно, что все они уже мертвы, но возможно и нет...(серьезно) И вся эта неопределенность крайне достает меня!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarond_01_09");	//Поэтому я хочу, чтобы ты немедленно отправился в долину и разузнал там всю обстановку, связанную с замком.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarond_01_01 " );	// Is there anything else I can help with?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarond_01_02 " );	// (thoughtfully) Perhaps I really have one very important task for you.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarond_01_03 " );	// Although, frankly, it is associated with extremely high risk and danger.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarond_01_04 " );	// Sounds tempting already! And what should be done?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarond_01_06 " );	// The fact is that I still don't know what happened to my expedition in the Valley of Mines.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarond_01_07 " );	// Haven't heard from Garond for a long time! To be honest, I really don't know what to think.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarond_01_08 " );	// It's possible they're all dead already, but maybe they aren't... (seriously) And all this uncertainty makes me extremely sick!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarond_01_09 " );	// Therefore, I want you to immediately go to the valley and inquire about the whole situation related to the castle there.
 	if(MIS_OCGateOpen == TRUE)
 	{
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarond_01_10");	//Насколько я знаю, до недавнего времени их ситуация была крайне тяжелой!
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarond_01_11");	//Орки уже пытались штурмовать замок, но тогда паладинам удалось отбить их атаку.
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarond_01_12");	//Однако не думаю, что это продлится вечно!
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarond_01_10 " );	// As far as I know, until recently, their situation was extremely difficult!
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarond_01_11 " );	// Orcs have already tried to storm the castle, but then the paladins managed to repel their attack.
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarond_01_12 " );	// However, I don't think this will last forever!
 	};
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarond_01_13");	//В любом случае я должен знать, что стало с моими людьми. Даже если они уже все мертвы!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarond_01_14");	//Хорошо, я постараюсь это выяснить.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarond_01_15");	//Тогда ступай. И да пребудет с тобой Иннос!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarond_01_13 " );	// In any case, I need to know what became of my people. Even if they are already dead!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarond_01_14 " );	// Okay, I'll try to figure it out.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarond_01_15 " );	// Then go. And may Innos be with you!
 	MIS_RESCUEGAROND = LOG_Running;
 	Log_CreateTopic(TOPIC_RESCUEGAROND,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RESCUEGAROND,LOG_Running);
-	B_LogEntry(TOPIC_RESCUEGAROND,"Лорд Хаген поручил мне разузнать все о судьбе экспедиции, которую он направил в Долину Рудников. Последнее время от Гаронда не поступало никаких вестей, что очень сильно тревожит главу паладинов. Лорд Хаген хочет знать, что стало с его людьми.");
+	B_LogEntry( TOPIC_RESCUEGAROND , " Lord Hagen has asked me to find out everything about the fate of the expedition he sent to the Valley of Mines. There hasn't been any news from Garond lately, which greatly worries the paladin leader. Lord Hagen wants to know what became of his people. " );
 };
 
 
@@ -608,7 +609,7 @@ instance DIA_PAL_2000_HAGEN_HOWTHINGS(C_Info)
 	condition = dia_pal_2000_hagen_howthings_condition;
 	information = dia_pal_2000_hagen_howthings_info;
 	permanent = TRUE;
-	description = "Как обстановка в форте?";
+	description = " How is the situation in the fort? " ;
 };
 
 
@@ -622,27 +623,27 @@ func int dia_pal_2000_hagen_howthings_condition()
 
 func void dia_pal_2000_hagen_howthings_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_HowThings_01_01");	//Как обстановка в форте?
-	if((PERMGARONDNEWS == FALSE) && (GARONDISBACK == TRUE))
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_HowThings_01_01 " );	// How is the situation in the fort?
+	if (( PERMGARONDNEWS  ==  FALSE ) && ( GARONDISBACK  ==  TRUE ))
 	{
 		B_GivePlayerXP(50);
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HowThings_01_02");	//Лучше, чем было раньше! Возвращение Гаронда стало для многих радостным известием и хорошим знаком на будущее.
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_HowThings_01_03");	//Ты это серьезно?
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HowThings_01_04");	//Конечно! Ведь в сложившейся ситуации выбраться живым из Долины раньше вообще никому не представлялось возможным.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HowThings_01_06");	//Но он, несмотря ни на что, все-таки смог это сделать, хотя и с твоей помощью.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HowThings_01_07");	//К тому же не стоит забывать, что все это время его небольшой отряд сдерживал натиск целой армии орков, не давая им продвинуться дальше вглубь острова.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HowThings_01_08");	//А все это также крайне немаловажно. В особенности, учитывая нынешнее положение всех наших дел.
-		AI_Output(other,self,"DIA_PAL_2000_Hagen_HowThings_01_09");	//Само собой.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HowThings_01_02 " );	// Better than before! The return of Garond was good news for many and a good sign for the future.
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_HowThings_01_03 " );	// Are you serious?
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HowThings_01_04 " );	// Of course! Indeed, in the current situation, it was not possible for anyone to get out of the Valley alive before.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HowThings_01_06 " );	// But despite everything, he still managed to do it, albeit with your help.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HowThings_01_07 " );	// In addition, do not forget that all this time his small detachment held back the onslaught of an entire army of orcs, preventing them from advancing further inland.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HowThings_01_08 " );	// And all this is also extremely important. Especially given the current state of all our affairs.
+		AI_Output(other,self, " DIA_PAL_2000_Hagen_HowThings_01_09 " );	// Of course.
 		PERMGARONDNEWS = TRUE;
 	}
 	else if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_donejoinothersagreed))
 	{
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HowThings_01_16");	//Как будто ты и сам не курсе происходящего! Мы готовимся выступить на позиции в Хоринис и занять там оборону рядом с фермой.
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HowThings_01_17");	//Надеюсь, это станет сюрпризом для орков! По крайне мере, я на это очень рассчитываю.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HowThings_01_16 " );	// As if you don't even know what's going on! We are preparing to move into position in Khorinis and take up defenses there near the farm.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HowThings_01_17 " );	// I hope this comes as a surprise to the orcs! At least, I really hope so.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PAL_2000_Hagen_HowThings_01_14");	//За последнее время пока что ничего не изменилось.
+		AI_Output(self,other, " DIA_PAL_2000_Hagen_HowThings_01_14 " );	// So far, nothing has changed.
 	};
 };
 
@@ -654,7 +655,7 @@ instance DIA_PAL_2000_HAGEN_RESCUEGARONDOTHERS(C_Info)
 	condition = dia_pal_2000_hagen_rescuegarondothers_condition;
 	information = dia_pal_2000_hagen_rescuegarondothers_info;
 	permanent = FALSE;
-	description = "Ты уже кого-то посылал в долину выяснить обстановку?";
+	description = " Have you sent someone to the valley to investigate the situation yet? " ;
 };
 
 
@@ -668,15 +669,15 @@ func int dia_pal_2000_hagen_rescuegarondothers_condition()
 
 func void dia_pal_2000_hagen_rescuegarondothers_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarondOthers_01_01");	//Ты уже кого-то посылал в долину выяснить обстановку?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarondOthers_01_02");	//Да, я уже отправил туда одного человека, но от него также пока нет никаких вестей.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarondOthers_01_03");	//Эх...(печально) Боюсь, орки не дали ему далеко уйти. Хотя, может быть, он еще и жив!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarondOthers_01_04");	//И как звали того парня?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarondOthers_01_05");	//Его звали Натан. Славный малый, хочу тебе сказать!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_RescueGarondOthers_01_06");	//И он тоже был паладином?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarondOthers_01_07");	//Само собой! Другие бы просто не взялись за столь опасное дело, как это.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_RescueGarondOthers_01_08");	//Натан был одним из тех людей лорда Варуса, которые добровольно вызвались плыть с моей экспедицией на этот остров.
-	B_LogEntry(TOPIC_RESCUEGAROND,"Лорд Хаген уже посылал человека разведать обстановку в долине, но он также пропал без вести. Его звали Натан.");
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarondOthers_01_01 " );	// Have you sent someone to the valley to investigate the situation?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarondOthers_01_02 " );	// Yes, I already sent one person there, but there is no news from him yet either.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarondOthers_01_03 " );	// Eh...(sadly) I'm afraid the orcs didn't let him get far. Although he may still be alive!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarondOthers_01_04 " );	// And what was that guy's name?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarondOthers_01_05 " );	// His name was Nathan. Nice fellow, I want to tell you!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_RescueGarondOthers_01_06 " );	// And he was also a paladin?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarondOthers_01_07 " );	// Of course! Others simply wouldn't take on something as dangerous as this.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_RescueGarondOthers_01_08 " );	// Nathan was one of Lord Varus' men who volunteered to sail with my expedition to this island.
+	B_LogEntry( TOPIC_RESCUEGAROND , " Lord Hagen already sent a man to scout the valley, but he also went missing. His name was Nathan. " );
 };
 
 
@@ -687,7 +688,7 @@ instance DIA_PAL_2000_HAGEN_GARONDISBACK(C_Info)
 	condition = dia_pal_2000_hagen_garondisback_condition;
 	information = dia_pal_2000_hagen_garondisback_info;
 	permanent = FALSE;
-	description = "Гаронд и его люди прибыли в форт!";
+	description = " Garond and his men have arrived at the fort! " ;
 };
 
 
@@ -702,16 +703,16 @@ func int dia_pal_2000_hagen_garondisback_condition()
 func void dia_pal_2000_hagen_garondisback_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_GarondIsBack_01_01");	//Гаронд и его люди прибыли в форт!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_GarondIsBack_01_02");	//Это по-настоящему отличная новость. И она наверняка еще больше укрепит боевой дух моих солдат и нашу общую веру в победу!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_GarondIsBack_01_03");	//Поэтому прими от меня мою благодарность и вот это золото в качестве награды за свои труды. Ты это заслужил!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_GarondIsBack_01_01 " );	// Garond and his men have arrived at the fort!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_GarondIsBack_01_02 " );	// This is really great news. And it will certainly further strengthen the morale of my soldiers and our common faith in victory!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_GarondIsBack_01_03 " );	// Therefore, accept my gratitude from me and this gold as a reward for your labors. You deserved it!
 	B_GiveInvItems(self,other,ItMi_Gold,1000);
 	AI_Output(other,self,"DIA_PAL_2000_Hagen_GarondIsBack_01_04");	//Спасибо.
 	if(MIS_RESCUEGAROND == LOG_Running)
 	{
 		MIS_RESCUEGAROND = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_RESCUEGAROND,LOG_SUCCESS);
-		B_LogEntry(TOPIC_RESCUEGAROND,"Гаронд и его люди прибыли в форт паладинов. Думаю, теперь лорд Хаген должен согласиться с моим предложением.");
+		B_LogEntry( TOPIC_RESCUEGAROND , " Garond and his men have arrived at the paladin fort. I think Lord Hagen should now agree to my proposal. " );
 	};
 };
 
@@ -723,7 +724,7 @@ instance DIA_PAL_2000_HAGEN_PIRATENEEDSHIP(C_Info)
 	condition = dia_pal_2000_hagen_pirateneedship_condition;
 	information = dia_pal_2000_hagen_pirateneedship_info;
 	permanent = FALSE;
-	description = "Пиратам нужен ваш корабль.";
+	description = " Pirates want your ship. " ;
 };
 
 
@@ -737,27 +738,27 @@ func int dia_pal_2000_hagen_pirateneedship_condition()
 
 func void dia_pal_2000_hagen_pirateneedship_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_01");	//Пиратам нужен ваш корабль.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_02");	//Только на этих условиях они готовы присоединиться к вашей армии.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_03");	//Отдать им наш корабль? (гневно) Что они, черт побери, о себе возомнили?!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_04");	//Да я скорее сдамся в плен к оркам, чем приму такие условия!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_05");	//Но нам очень нужна их помощь!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_06");	//В конце концов, он тебе больше не пригодится в случае нашей неудачи.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_07");	//Ты прав! Но я не могу вот так просто идти у всех на поводу. Тем более у этих грязных мошенников!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_08");	//А что будет, если они завтра попросят принять их всех в орден паладинов - ты мне и это прикажешь сделать?!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_09");	//Довольно неплохая мысль с твоей стороны.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_10");	//Что?! (гневно) Какая мысль? Да ты в своем уме, парень?!
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_11");	//Конечно! Ведь сделав это и отдав им свой корабль, ты ничего не потеряешь.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_12");	//Но Орден Паладинов священен! Лишь только достойные этой чести могут быть приняты в наши ряды.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_13");	//Только в скором времени может получиться так, что достойных уже не будет.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_14");	//Поскольку всех просто-напросто перебьют орки.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_15");	//(потерянно) О, Иннос! И за что только ты мне посылаешь подобные испытания?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_PirateNeedShip_01_16");	//Насколько я вижу, что ты уже почти согласен с подобным предложением. Не так ли?
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_17");	//Эх...(обреченно) Ну, хорошо. Считай, что ты смог убедить меня в целесообразности этих действий.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_18");	//Передай им, что если они готовы послужить делу Инноса и вступить в наши ряды, то я отдам им свой корабль.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_PirateNeedShip_01_19");	//И да простит меня он за подобные решения.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_01 " );	// Pirates need your ship.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_02 " );	// Only under these conditions are they ready to join your army.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_03 " );	// Give them our ship? (angrily) What the hell do they think they are?!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_04 " );	// Yes, I would rather surrender to the orcs than accept such conditions!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_05 " );	// But we really need their help!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_06 " );	// After all, you won't need it anymore if we fail.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_07 " );	// You're right! But I can't just follow everyone's lead like that. Especially with these dirty scammers!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_08 " );	// And what will happen if they ask tomorrow to accept them all into the order of paladins - will you order me to do this too?!
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_09 " );	// Pretty good idea of ​​you.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_10 " );	// What?! (angrily) What's the thought? Are you out of your mind, boy?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_11 " );	// Of course! After all, by doing this and giving them your ship, you will not lose anything.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_12 " );	// But the Order of Paladins is sacred! Only those worthy of this honor can be accepted into our ranks.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_13 " );	// Only in the near future it may turn out that there will no longer be worthy.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_14 " );	// Since everyone will simply be killed by the orcs.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_15 " );	// (lost) Oh, Innos! And why are you sending me such tests?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_PirateNeedShip_01_16 " );	// As far as I can see, you almost agree with this proposal. Is not it?
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_17 " );	// Eh... (doomed) Well, okay. Consider that you were able to convince me of the expediency of these actions.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_18 " );	// Tell them that if they are ready to serve the cause of Innos and join our ranks, then I will give them my ship.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_PirateNeedShip_01_19 " );	// And may he forgive me for such decisions.
 	HAGENINVITEPIRATES = TRUE;
-	B_LogEntry(TOPIC_PIRATENEEDSHIP,"Лорд Хаген был крайне возмущен требованиям пиратов, но в конце концов, мне удалось убедить его в необходимости подобной сделки. С условием, что сами пираты вступят в его орден.");
+	B_LogEntry( TOPIC_PIRATENEEDSHIP , " Lord Hagen was extremely indignant at the demands of the pirates, but in the end I managed to convince him of the need for such a deal. On the condition that the pirates themselves join his order. " );
 };
 
 
@@ -768,7 +769,7 @@ instance DIA_PAL_2000_HAGEN_SLDANSWER(C_Info)
 	condition = dia_pal_2000_hagen_sldanswer_condition;
 	information = dia_pal_2000_hagen_sldanswer_info;
 	permanent = FALSE;
-	description = "Я принес ответ от наемников.";
+	description = " I brought back a response from the mercenaries. " ;
 };
 
 
@@ -782,25 +783,25 @@ func int dia_pal_2000_hagen_sldanswer_condition()
 
 func void dia_pal_2000_hagen_sldanswer_info()
 {
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_SldAnswer_01_01");	//Я принес ответ от наемников.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_02");	//(угрюмо) И что они сказали?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_SldAnswer_01_03");	//Ли согласен поддержать вас и выступить со своими людьми против орков.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_SldAnswer_01_04");	//Однако он хочет, чтобы ты вооружил его людей рудными клинками.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_05");	//Что?! А не слишком ли многого он хочет?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_SldAnswer_01_06");	//По его мнению, это сделает его людей более боеспособными. А остальное уже решать тебе.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_07");	//Так я и знал...(ворчливо) Стоит только раз пойти на уступки по отношению к этим мерзавцам, так они сразу начнут от тебя требовать невесть что!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_08");	//Надеюсь, тебе известно, что рудные клинки носят только паладины короля. Почему я должен нарушать это правило?
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_SldAnswer_01_09");	//Потому что этого требует ситуация!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_10");	//Ну, допустим. Однако, даже если бы я согласился на это, то у меня все равно нет такого количества этого оружия, чтобы вооружить всех его головорезов.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_SldAnswer_01_11");	//Тогда их нужно просто выковать.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_12");	//И как ты мне прикажешь это сделать? Ведь для этого нужна магическая руда!
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_13");	//А единственное место, где ее можно еще добыть - это Долина Рудников, в которой сейчас заправляют орки.
-	AI_Output(other,self,"DIA_PAL_2000_Hagen_SldAnswer_01_14");	//Если дело только в руде, то я ее достану.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_15");	//Какой же ты все-таки упрямец, это что-то! Никогда еще не встречал людей, подобных тебе.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_16");	//Эх, ладно! Если ты действительно так в этом уверен, пускай будет по-твоему.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_17");	//Найди магическую руду и выкуй из нее столько рудных клинков, сколько посчитаешь нужным.
-	AI_Output(self,other,"DIA_PAL_2000_Hagen_SldAnswer_01_18");	//Вот, возьми этот свиток. Там ты найдешь все инструкции касательно этого.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_SldAnswer_01_01 " );	// I brought a response from the mercenaries.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_02 " );	// (sullenly) And what did they say?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_SldAnswer_01_03 " );	// Lee agrees to support you and march with his people against the orcs.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_SldAnswer_01_04 " );	// However, he wants you to equip his men with ore blades.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_05 " );	// What?! Doesn't he want too much?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_SldAnswer_01_06 " );	// In his opinion, this will make his people more combat-ready. And the rest is up to you.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_07 " );	// That's what I knew...(grouchily) Once you make concessions to these bastards, they will immediately begin to demand God knows what from you!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_08 " );	// I hope you know that ore blades are only worn by the king's paladins. Why should I break this rule?
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_SldAnswer_01_09 " );	// Because the situation calls for it!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_10 " );	// Well, let's say. However, even if I agreed to this, I still do not have enough of these weapons to arm all of his thugs.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_SldAnswer_01_11 " );	// Then they just need to be forged.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_12 " );	// And how do you tell me to do this? After all, this requires magic ore!
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_13 " );	// And the only place where it can still be mined is the Valley of Mines, which is currently ruled by orcs.
+	AI_Output(other,self, " DIA_PAL_2000_Hagen_SldAnswer_01_14 " );	// If it's all about the ore, then I'll get it.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_15 " );	// What a stubborn person you are, that's something! Never met people like you.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_16 " );	// Oh, okay! If you're really so sure about it, let it be your way.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_17 " );	// Find magic ore and forge as many ore blades from it as you see fit.
+	AI_Output(self,other, " DIA_PAL_2000_Hagen_SldAnswer_01_18 " );	// Here, take this scroll. There you will find all the instructions regarding this.
 	B_GiveInvItems(self,other,itwr_letteroresword,1);
-	B_LogEntry(TOPIC_OREWEAPONSLD,"После долгих споров мне удалось убедить лорда Хагена в необходимости вооружить людей Ли рудными клинками. Он дал мне свиток, где описан процесс ковки этого священного оружия. Осталось достать магическую руду и узнать, сколько клинков нужно Ли и его людям.");
+	B_LogEntry( TOPIC_OREWEAPONSLD , " After much discussion, I managed to convince Lord Hagen to equip Li's people with ore blades. He gave me a scroll describing the forging process of this sacred weapon. It remains to get the magic ore and find out how many blades Li and his people need. " );
 };
 
