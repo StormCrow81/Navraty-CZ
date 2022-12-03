@@ -1,5 +1,6 @@
 
-instance DIA_DJG_7080_KURGAN_EXIT(C_Info)
+
+instances DIA_DJG_7080_KURGAN_EXIT (C_Info)
 {
 	npc = djg_7080_kurgan;
 	nr = 999;
@@ -21,7 +22,7 @@ func void dia_djg_7080_kurgan_exit_info()
 };
 
 
-instance DIA_DJG_7080_KURGAN_HELLO(C_Info)
+instance DIA_DJG_7080_KURGAN_HELLO (C_Info)
 {
 	npc = djg_7080_kurgan;
 	condition = dia_djg_7080_kurgan_hello_condition;
@@ -41,10 +42,10 @@ func int dia_djg_7080_kurgan_hello_condition()
 
 func void dia_djg_7080_kurgan_hello_info()
 {
-	AI_Output(self,other,"DIA_DJG_7080_Kurgan_HELLO_01_00");	//Так, так... А вот и ты, дружок. А мы тебя ждали.
-	AI_Output(other,self,"DIA_DJG_7080_Kurgan_HELLO_01_01");	//Что еще такое?
-	AI_Output(self,other,"DIA_DJG_7080_Kurgan_HELLO_01_02");	//Только не делай вид, будто ничего не понимаешь! Думаю, что пришло время платить по счетам.
-	AI_Output(self,other,"DIA_DJG_7080_Kurgan_HELLO_01_03");	//Или ты думал, что я забуду про свое обещание? Сейчас мы с тобой за все поквитаемся, ублюдок!
+	AI_Output(self,other, " DIA_DJG_7080_Kurgan_HELLO_01_00 " );	// So, so... And here you are, my friend. And we were waiting for you.
+	AI_Output(other,self, " DIA_DJG_7080_Kurgan_HELLO_01_01 " );	// What else is this?
+	AI_Output(self,other, " DIA_DJG_7080_Kurgan_HELLO_01_02 " );	// Just don't act like you don't understand anything! I think it's time to pay the bills.
+	AI_Output(self,other, " DIA_DJG_7080_Kurgan_HELLO_01_03 " );	// Or did you think I'd forget my promise? Now we'll get even with you, you bastard!
 	Info_ClearChoices(dia_djg_7080_kurgan_hello);
 	Info_AddChoice(dia_djg_7080_kurgan_hello,Dialog_Ende,dia_djg_7080_kurgan_hello_attack);
 };
@@ -59,13 +60,13 @@ func void dia_djg_7080_kurgan_hello_attack()
 };
 
 
-instance DIA_DJG_7080_KURGAN_PERM(C_Info)
+instances DIA_DJG_7080_KURGAN_PERM (C_Info)
 {
 	npc = djg_7080_kurgan;
 	condition = dia_djg_7080_kurgan_perm_condition;
 	information = dia_djg_7080_kurgan_perm_info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -79,15 +80,15 @@ func int dia_djg_7080_kurgan_perm_condition()
 
 func void dia_djg_7080_kurgan_perm_info()
 {
-	AI_Output(other,self,"DIA_DJG_7080_Kurgan_Perm_01_00");	//Как дела?
-	AI_Output(self,other,"DIA_DJG_7080_Kurgan_Perm_01_01");	//Получше, чем было в Долине Рудников.
-	AI_Output(self,other,"DIA_DJG_7080_Kurgan_Perm_01_02");	//По крайней мере, тут пока можно чувствовать себя в безопасности.
-	AI_Output(self,other,"DIA_DJG_7080_Kurgan_Perm_01_03");	//Хотя сомнений нет, что орки скоро доберутся и сюда.
-	AI_Output(other,self,"DIA_DJG_7080_Kurgan_Perm_01_04");	//Вполне вероятно.
+	AI_Output(other,self, " DIA_DJG_7080_Kurgan_Perm_01_00 " );	// How are you?
+	AI_Output(self,other, " DIA_DJG_7080_Kurgan_Perm_01_01 " );	// Better than it was in the Valley of Mines.
+	AI_Output(self,other, " DIA_DJG_7080_Kurgan_Perm_01_02 " );	// At least you can feel safe here for now.
+	AI_Output(self,other, " DIA_DJG_7080_Kurgan_Perm_01_03 " );	// Although there is no doubt that the orcs will soon get here.
+	AI_Output(other,self, " DIA_DJG_7080_Kurgan_Perm_01_04 " );	// Quite likely.
 };
 
 
-instance DIA_DJG_7080_KURGAN_PICKPOCKET(C_Info)
+instances DIA_DJG_7080_KURGAN_PICKPOCKET (C_Info)
 {
 	npc = djg_7080_kurgan;
 	nr = 900;
@@ -112,7 +113,7 @@ func void dia_djg_7080_kurgan_pickpocket_info()
 
 func void dia_djg_7080_kurgan_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_djg_7080_kurgan_pickpocket);
 };
 
