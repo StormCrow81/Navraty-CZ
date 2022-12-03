@@ -1,4 +1,5 @@
 
+
 instance DIA_ADDON_GREG_BF_EXIT(C_Info)
 {
 	npc = pir_13200_addon_greg;
@@ -34,7 +35,7 @@ instance DIA_ADDON_GREG_BF_PICKPOCKET(C_Info)
 
 func int dia_addon_greg_bf_pickpocket_condition()
 {
-	return C_Beklauen(111,666);
+	return  C_Robbery ( 111 , 666 );
 };
 
 func void dia_addon_greg_bf_pickpocket_info()
@@ -46,7 +47,7 @@ func void dia_addon_greg_bf_pickpocket_info()
 
 func void dia_addon_greg_bf_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_addon_greg_bf_pickpocket);
 };
 
@@ -63,7 +64,7 @@ instance DIA_ADDON_GREG_BF_ARMOR(C_Info)
 	condition = dia_addon_greg_bf_armor_condition;
 	information = dia_addon_greg_bf_armor_info;
 	permanent = FALSE;
-	description = "Ну как, доспехи не жмут?";
+	description = " Well, isn't the armor too tight? " ;
 };
 
 
@@ -74,12 +75,12 @@ func int dia_addon_greg_bf_armor_condition()
 
 func void dia_addon_greg_bf_armor_info()
 {
-	AI_Output(other,self,"DIA_Addon_Greg_BF_Armor_01_00");	//Ну что, доспехи не жмут?
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Armor_01_01");	//А ты все остришь, шутник...(ехидно) Нет, они мне в самый раз!
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Armor_01_02");	//И кстати, хочу поблагодарить тебя за то, что убедил меня тогда принять предложение паладинов.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Armor_01_03");	//Теперь у нас есть чем набить себе брюхо, а в наших карманах завелись звонкие монеты!
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Armor_01_04");	//Хотя, конечно... теперь нам всем в скором времени придется сражаться с орками.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Armor_01_05");	//Но, думаю, это мы как-нибудь переживем.
+	AI_Output(other,self, " DIA_Addon_Greg_BF_Armor_01_00 " );	// Well, the armor doesn't hurt?
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Armor_01_01 " );	// And you'll make a joke, joker... (maliciously) No, they're just right for me!
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Armor_01_02 " );	// By the way, I want to thank you for convincing me to accept the paladins' offer back then.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Armor_01_03 " );	// Now we have something to fill our belly, and in our pockets there are ringing coins!
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Armor_01_04 " );	// Although, of course... now we'll all have to fight the orcs soon.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Armor_01_05 " );	// But I think we'll get through this somehow.
 };
 
 
@@ -90,7 +91,7 @@ instance DIA_ADDON_GREG_BF_HOW(C_Info)
 	condition = dia_addon_greg_bf_how_condition;
 	information = dia_addon_greg_bf_how_info;
 	permanent = FALSE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -115,7 +116,7 @@ instance DIA_ADDON_GREG_BF_CAPITAN(C_Info)
 	condition = dia_addon_greg_bf_capitan_condition;
 	information = dia_addon_greg_bf_capitan_info;
 	permanent = FALSE;
-	description = "Так ты теперь капитан?";
+	description = " So you're the captain now? " ;
 };
 
 
@@ -130,22 +131,22 @@ func int dia_addon_greg_bf_capitan_condition()
 func void dia_addon_greg_bf_capitan_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_00");	//Так ты теперь капитан королевской галеры?
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_01");	//(важно) Да, лорд Хаген назначил меня на эту должность.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_02");	//Правда, у него не было выбора в этом вопросе. Ведь как ты помнишь, он обещал нам свой корабль.
-	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_03");	//И, судя по всему, он выполнил свое обещание.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_04");	//Ну да, как видишь...(ворчливо) Хотя, по правде говоря, это не совсем то, чего я ожидал на самом деле.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_05");	//А почему ты, собственно, спрашиваешь?
-	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_06");	//Мне нужно немедленно отплыть на материк. Приказ главы паладинов!
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_07");	//(облегченно) Ну наконец-то! А то я уж думал, что мне придется вечно торчать на этой ферме.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_08");	//И когда мы снимаемся с якоря?
-	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_09");	//Прямо сейчас.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_10");	//Хорошо. Тогда я отправляюсь в гавань, чтобы подготовить корабль к отплытию.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_11");	//Да, и не забудь. Мне понадобится еще несколько человек, чтобы каким-то образом управляться с этой посудиной.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_12");	//Полагаю, что пяти или шести человек будет вполне достаточно!
+	AI_Output(other,self, " DIA_Addon_Greg_BF_Capitan_01_00 " );	// So you're the captain of the royal galley now?
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_01 " );	// (important) Yes, Lord Hagen appointed me to this position.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_02 " );	// True, he had no choice in this matter. After all, as you remember, he promised us his ship.
+	AI_Output(other,self, " DIA_Addon_Greg_BF_Capitan_01_03 " );	// And, apparently, he kept his promise.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_04 " );	// Well, yes, as you can see... (grouchily) Although, to tell the truth, this is not quite what I really expected.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_05 " );	// Why are you even asking?
+	AI_Output(other,self, " DIA_Addon_Greg_BF_Capitan_01_06 " );	// I need to sail to the mainland immediately. Command of the Paladin Master!
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_07 " );	// (relieved) Finally! Otherwise, I thought I would have to hang around on this farm forever.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_08 " );	// And when do we weigh anchor?
+	AI_Output(other,self, " DIA_Addon_Greg_BF_Capitan_01_09 " );	// Right now.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_10 " );	// Good. Then I go to the harbor to prepare the ship for sailing.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_11 " );	// Yes, and don't forget. I'll need a few more people to somehow manage this vessel.
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_12 " );	// I guess five or six people would be enough!
 	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_13");	//Ладно.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_14");	//Отлично! Тогда встретимся на корабле.
-	B_LogEntry(TOPIC_SALETOBIGLAND,"Теперь Грэг мой капитан. Однако, чтобы отплыть, мне понадобятся еще несколько людей. По словам Грэга, пяти или шести человек будет достаточно.");
+	AI_Output(self,other, " DIA_Addon_Greg_BF_Capitan_01_14 " );	// Great! Then we'll meet on the ship.
+	B_LogEntry( TOPIC_SALETOBIGLAND , " Greg is now my captain. However, I'll need a few more people to sail. According to Greg, five or six people will be enough. " );
 	WHOTRAVELONBIGLAND = TRUE;
 	b_piratemoveonboard();
 	AI_StopProcessInfos(self);
@@ -159,7 +160,7 @@ instance DIA_ADDON_GREG_BF_TRAVELONBIGLAND(C_Info)
 	condition = dia_addon_greg_bf_travelonbigland_condition;
 	information = dia_addon_greg_bf_travelonbigland_info;
 	permanent = TRUE;
-	description = "Мой корабль готов?";
+	description = " Is my ship ready? " ;
 };
 
 
@@ -173,30 +174,30 @@ func int dia_addon_greg_bf_travelonbigland_condition()
 
 func void dia_addon_greg_bf_travelonbigland_info()
 {
-	AI_Output(other,self,"DIA_Addon_Greg_BF_TravelOnBigLand_01_00");	//Мой корабль готов?
+	AI_Output(other,self, " DIA_Addon_Greg_BF_TravelOnBigLand_01_00 " );	// Is my ship ready?
 
 	if(COUNTTRAVELONBIGLAND >= 5)
 	{
 		B_GivePlayerXP(1000);
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_01");	//Конечно. Все готово.
-		AI_Output(other,self,"DIA_Addon_Greg_BF_TravelOnBigLand_01_02");	//Ну, раз так, тогда мы можем отплывать.
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_03");	//Ты в этом полностью уверен?
-		AI_Output(other,self,"DIA_Addon_Greg_BF_TravelOnBigLand_01_04");	//Да. Время не ждет.
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_05");	//Хорошо. Будь по-твоему.
+		AI_Output(self,other, " DIA_Addon_Greg_BF_TravelOnBigLand_01_01 " );	// Of course. All is ready.
+		AI_Output(other,self, " DIA_Addon_Greg_BF_TravelOnBigLand_01_02 " );	// Well, if so, then we can sail.
+		AI_Output(self,other, " DIA_Addon_Greg_BF_TravelOnBigLand_01_03 " );	// Are you sure about this?
+		AI_Output(other,self, " DIA_Addon_Greg_BF_TravelOnBigLand_01_04 " );	// Yes. Time does not wait.
+		AI_Output(self,other, " DIA_Addon_Greg_BF_TravelOnBigLand_01_05 " );	// Good. As you wish.
 		AI_TurnToNPC(self,DiegoNW);
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_06");	//...(кричит) Эй, вы все, крысы сухопутные! А ну по местам!
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_07");	//...(кричит) Поднять якорь, отдать швартовые, ставить паруса!
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_08");	//...(кричит) Закрепить узлы и лебедку! Держать нос по ветру!
+		AI_Output(self,other, " DIA_Addon_Greg_BF_TravelOnBigLand_01_06 " );	// ...(shouting) Hey, all you land rats! Well, in places!
+		AI_Output(self,other, " DIA_Addon_Greg_BF_TravelOnBigLand_01_07 " );	// ...(shouting) Raise the anchor, give up the mooring lines, set the sails!
+		AI_Output(self,other, " DIA_Addon_Greg_BF_TravelOnBigLand_01_08 " );	// ...(shouting) Secure knots and winch! Keep your nose to the wind!
 		ALLSAYGOODBUY = TRUE;
 		MIS_SALETOBIGLAND = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_SALETOBIGLAND,LOG_SUCCESS);
-		B_LogEntry(TOPIC_SALETOBIGLAND,"Мы покидаем Хоринис и отправляемся на материк! Что нас там ждем, никто не знает...");
+		B_LogEntry( TOPIC_SALETOBIGLAND , " We are leaving Khorinis and going to the mainland! No one knows what we are waiting for there... " );
 		Info_ClearChoices(dia_addon_greg_bf_travelonbigland);
 		Info_AddChoice(dia_addon_greg_bf_travelonbigland,Dialog_Ende,dia_addon_greg_bf_travelonbigland_ok);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_09");	//Конечно... Все готово.
+		AI_Output(self,other, " DIA_Addon_Greg_BF_TravelOnBigLand_01_09 " );	// Of course... Everything is ready.
 	};
 };
 
