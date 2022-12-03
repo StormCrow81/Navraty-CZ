@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Monty_NW_EXIT(C_Info)
 {
 	npc = STRF_1124_Addon_Monty_NW;
@@ -28,7 +29,7 @@ instance DIA_Addon_Monty_NW_Hi(C_Info)
 	condition = DIA_Addon_Monty_NW_Hi_Condition;
 	information = DIA_Addon_Monty_NW_Hi_Info;
 	permanent = FALSE;
-	description = "Ну что, ты вернулся к своей работе?";
+	description = " So, are you back to your work? " ;
 };
 
 
@@ -40,10 +41,10 @@ func int DIA_Addon_Monty_NW_Hi_Condition()
 func void DIA_Addon_Monty_NW_Hi_Info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Addon_Monty_NW_Hi_15_00");	//Ну что, ты вернулся к своей работе?
-	AI_Output(self,other,"DIA_Addon_Monty_NW_Hi_08_01");	//Представляешь, пока меня не было, они ничуть не продвинулись вперед. Мне пришлось снова засесть за чертежи.
-	AI_Output(other,self,"DIA_Addon_Monty_NW_Hi_15_02");	//Что ж, не буду тебя отвлекать.
-	AI_Output(self,other,"DIA_Addon_Monty_NW_Hi_08_03");	//Спасибо. Удачи!
+	AI_Output(other,self, " DIA_Addon_Monty_NW_Hi_15_00 " );	// Well, are you back to your work?
+	AI_Output(self,other, " DIA_Addon_Monty_NW_Hi_08_01 " );	// Imagine, while I was gone, they did not move forward at all. I had to sit down again for the drawings.
+	AI_Output(other,self, " DIA_Addon_Monty_NW_Hi_15_02 " );	// Well, I won't distract you.
+	AI_Output(self,other, " DIA_Addon_Monty_NW_Hi_08_03 " );	// Thank you. Good luck!
 };
 
 
@@ -60,7 +61,7 @@ instance DIA_Addon_Monty_NW_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Monty_NW_PICKPOCKET_Condition()
 {
-	return C_Beklauen(60,60);
+	return  C_Robbery ( 60 , 60 );
 };
 
 func void DIA_Addon_Monty_NW_PICKPOCKET_Info()
@@ -72,7 +73,7 @@ func void DIA_Addon_Monty_NW_PICKPOCKET_Info()
 
 func void DIA_Addon_Monty_NW_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Monty_NW_PICKPOCKET);
 };
 
