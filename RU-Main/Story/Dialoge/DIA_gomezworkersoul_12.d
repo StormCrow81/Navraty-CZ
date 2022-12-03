@@ -1,4 +1,5 @@
 
+
 instance DIA_GOMEZWORKERSOUL_122_EXIT(C_Info)
 {
 	npc = gomezworkersoul_12;
@@ -21,12 +22,12 @@ func void dia_gomezworkersoul_12_exit_info()
 };
 
 
-instance DIA_GOMEZWORKERSOUL_12_HALLO(C_Info)
+instance DIA_GOMEZWORKERSOUL_12_HELLO (C_Info)
 {
 	npc = gomezworkersoul_12;
 	nr = 1;
 	condition = dia_gomezworkersoul_12_hallo_condition;
-	information = dia_gomezworkersoul_12_hallo_info;
+	information = dia_gomezworkersoul_12_hello_info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -40,30 +41,30 @@ func int dia_gomezworkersoul_12_hallo_condition()
 	};
 };
 
-func void dia_gomezworkersoul_12_hallo_info()
+func void dia_gomezworkersoul_12_hello_info()
 {
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	Snd_Play("MFX_FEAR_CAST");
 	B_GivePlayerXP(50);
-	AI_Output(self,other,"DIA_GomezWorkerSoul_12_HALLO_01_00");	//(мертвым голосом) ЗАЧЕМ ТЫ ТРЕВОЖИШЬ МЕРТВЫХ, ЧЕЛОВЕК? ЧТО ТЕБЕ НУЖНО?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_12_HALLO_01_02");	//Я помогу тебе упокоить твою проклятую душу. Ведь ты этого хочешь?
-	AI_Output(self,other,"DIA_GomezWorkerSoul_12_HALLO_01_03");	//Ты догадлив, человек. За это я готов отдать все то немногое, что у меня есть.
-	AI_Output(other,self,"DIA_GomezWorkerSoul_12_HALLO_01_04");	//Мне от тебя ничего не надо, кроме твоего прощения такой же проклятой, как и ты, душе.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_12_HALLO_01_05");	//Чья душа нуждается в моем прощении?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_12_HALLO_01_06");	//Душа рудного барона Гомеза! Думаю, тебе должно быть знакомо это имя.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_12_HALLO_01_07");	//Оно знакомо всем, кто находится здесь, человек...(мертвый вздох) Это имя никто и никогда не забудет!
-	AI_Output(other,self,"DIA_GomezWorkerSoul_12_HALLO_01_10");	//Эта цена твоей свободы, призрак.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_12_HALLO_01_00 " );	// (dead voice) WHY DO YOU ALARM THE DEAD, HUMAN? WHAT DO YOU NEED?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_12_HALLO_01_02 " );	// I'll help you put your damned soul to rest. Is that what you want?
+	AI_Output(self,other, " DIA_GomezWorkerSoul_12_HALLO_01_03 " );	// You're smart, man. For this I am ready to give all the little that I have.
+	AI_Output(other,self, " DIA_GomezWorkerSoul_12_HALLO_01_04 " );	// I don't need anything from you, except for your forgiveness to a soul as damned as you.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_12_HALLO_01_05 " );	// Whose soul needs my forgiveness?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_12_HALLO_01_06 " );	// Soul of Ore Baron Gomez! I think you should be familiar with this name.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_12_HALLO_01_07 " );	// It's familiar to everyone here, human... (dead breath) This name will never be forgotten!
+	AI_Output(other,self, " DIA_GomezWorkerSoul_12_HALLO_01_10 " );	// This is the price of your freedom, ghost.
 	Info_ClearChoices(dia_gomezworkersoul_12_hallo);
-	Info_AddChoice(dia_gomezworkersoul_12_hallo,"Так ты прощаешь его душу?",dia_gomezworkersoul_12_hallo_end);
+	Info_AddChoice(dia_gomezworkersoul_12_hallo, " So you forgive his soul? " ,dia_gomezworkersoul_12_hallo_end);
 };
 
-func void dia_gomezworkersoul_12_hallo_end()
+func void dia_gomezworkersoul_12_hello_end()
 {
 	Snd_Play("SFX_INNOSEYE");
-	AI_Output(other,self,"DIA_GomezWorkerSoul_12_HALLO_End_01_01");	//Так ты прощаешь его душу?
-	AI_Output(self,other,"DIA_GomezWorkerSoul_12_HALLO_End_01_02");	//Да... Его душа получит мое прощение.
-	AI_Output(other,self,"DIA_GomezWorkerSoul_12_HALLO_End_01_03");	//Это все, что мне было нужно от тебя.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_12_HALLO_End_01_04");	//Аргххх... Теперь освободи меня!
+	AI_Output(other,self, " DIA_GomezWorkerSoul_12_HALLO_End_01_01 " );	// So you forgive his soul?
+	AI_Output(self,other, " DIA_GomezWorkerSoul_12_HALLO_End_01_02 " );	// Yes... His soul will receive my forgiveness.
+	AI_Output(other,self, " DIA_GomezWorkerSoul_12_HALLO_End_01_03 " );	// That's all I needed from you.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_12_HALLO_End_01_04 " );	// Arghhh... Now release me!
 	GOMEZSOULTALK_12 = TRUE;
 	AI_StopProcessInfos(self);
 };
