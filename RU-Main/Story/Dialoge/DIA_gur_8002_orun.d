@@ -1,10 +1,11 @@
 
-instance DIA_BAALORUN_EXIT(C_Info)
+
+instance DIA_EXIT_EXIT (C_Info) .
 {
 	npc = gur_8002_orun;
 	nr = 999;
 	condition = dia_baalorun_exit_condition;
-	information = dia_baalorun_exit_info;
+	information = dia_running_exit_info;
 	permanent = TRUE;
 	description = Dialog_Ende;
 };
@@ -15,18 +16,18 @@ func int dia_baalorun_exit_condition()
 	return TRUE;
 };
 
-func void dia_baalorun_exit_info()
+func void load_exit_info()
 {
 	if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(other,self,"DIA_BaalOrun_exit_01_01");	//До встречи!
-		AI_Output(self,other,"DIA_BaalOrun_exit_01_02");	//Да просветит тебя Спящий!
+		AI_Output(other,self, " DIA_BaalOrun_exit_01_01 " );	// See you soon!
+		AI_Output(self,other, " DIA_BaalOrun_exit_01_02 " );	// May the Sleeper enlighten you!
 	};
 
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_BAALORUN_PICKPOCKET(C_Info)
+instance DIA_PICKPOCKET ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 900;
@@ -38,7 +39,7 @@ instance DIA_BAALORUN_PICKPOCKET(C_Info)
 
 func int DIA_BAALORUN_PICKPOCKET_Condition()
 {
-	return C_Beklauen(49,35);
+	return  C_Robbery ( 49 , 35 );
 };
 
 func void DIA_BAALORUN_PICKPOCKET_Info()
@@ -50,7 +51,7 @@ func void DIA_BAALORUN_PICKPOCKET_Info()
 
 func void DIA_BAALORUN_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_BAALORUN_PICKPOCKET);
 };
 
@@ -60,23 +61,23 @@ func void DIA_BAALORUN_PICKPOCKET_BACK()
 };
 
 
-var int baalorun_lastpetzcounter;
-var int baalorun_lastpetzcrime;
+var int baalorun_loadpetzcounter;
+var int ballorun_loadcrime;
 
-instance DIA_BAALORUN_PMSCHULDEN(C_Info)
+instance DIA_PRINTER_PMSCHULDEN ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_pmschulden_condition;
-	information = dia_baalorun_pmschulden_info;
+	information = dia_content_pmschildren_info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_baalorun_pmschulden_condition()
+func int dia_build_pmschild_condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (BAALORUN_SCHULDEN > 0) && (B_GetGreatestPetzCrime(self) <= BAALORUN_LASTPETZCRIME))
+	if ( Npc_IsInState ( self , ZS_Talk ) && ( BAALORUN_SCHULDEN  >  0 ) && ( B_GetGreatestPetzCrime ( self ) <=  BAALORUN_LASTPETZCRIME ))
 	{
 		return TRUE;
 	};
@@ -88,7 +89,7 @@ func void dia_baalorun_petzmaster_attackmurder()
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_HumanMurderedHuman,0);
 	GLOBAL_MAKE_BANDIT_FORPSICAMP = 1;
-	concatText = "Братство объявило вас вне закона!";
+	concatText = " The Brotherhood has outlawed you! " ;
 	AI_Print(concatText);
 };
 
@@ -98,33 +99,33 @@ func void dia_baalorun_pmschulden_attackmurder()
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_HumanMurderedHuman,0);
 	GLOBAL_MAKE_BANDIT_FORPSICAMP = 1;
-	concatText = "Братство объявило вас вне закона!";
+	concatText = " The Brotherhood has outlawed you! " ;
 	AI_Print(concatText);
 };
 
-func void dia_baalorun_pmschulden_info()
+func void 2017_2018_pmschildren_info()
 {
 	var int diff;
 	var string concatText1;
 	var string concatText2;
-	var string concattextschulden;
+	var string contexttextdebts;
 	var string tsettext1;
 	var string tsettext2;
 	var string tsettext3;
 	var int temp1;
-	AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_00");	//Прежде чем что-нибудь обсудить, мы уладим с тобой некоторые вопросы.
-	temp1 = 0;
+	AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_00 " );	// Before we discuss anything, we'll settle some issues with you.
+	temp1 = 0 ;
 	if(GLOBAL_PSICAMP_MURDER > 2)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(GLOBAL_PSICAMP_THEFT > 5)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(GLOBAL_PSICAMP_ATTACK > 5)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(temp1 == 1)
 	{
@@ -133,72 +134,72 @@ func void dia_baalorun_pmschulden_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_MURDER),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_MURDERCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_36");	//Точнее он один... этот вопрос.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_37");	//Всем братьям в лагере надоели твои жестокие убийства.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_38");	//И единственный вариант прекратить твои безнаказанные выходки - это убить тебя...
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_36 " );	// More precisely, he is alone... this question.
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_37 " );	// All the brothers in the camp are tired of your cruel murders.
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_38 " );	// And the only way to stop your antics with impunity is to kill you...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_39");	//Умри, неверный!
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_39 " );	// Die, infidel!
 		}
 		else if(GLOBAL_PSICAMP_ATTACK > 5)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_ATTACK),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_40");	//Точнее он один... этот вопрос.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_41");	//Всем братьям в лагере надоели твои постоянные драки.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_42");	//И единственный вариант прекратить твои безнаказанные выходки - это убить тебя...
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_40 " );	// More precisely, he is alone... this question.
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_41 " );	// All the brothers in the camp are tired of your constant fights.
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_42 " );	// And the only option to stop your antics with impunity is to kill you...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_43");	//Умри, неверный!
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_43 " );	// Die, infidel!
 		}
 		else if(GLOBAL_PSICAMP_THEFT > 5)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_THEFT),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_THEFTCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_THEFTCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_44");	//Точнее он один... этот вопрос.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_45");	//В нашем лагере нет места ворам!
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_46");	//И единственный вариант прекратить твои безнаказанные выходки - это убить тебя...
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_44 " );	// More precisely, he is alone... this question.
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_45 " );	// There is no place for thieves in our camp!
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_46 " );	// And the only option to stop your antics with impunity is to kill you...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_47");	//Умри, неверный!
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_08_47 " );	// Die, infidel!
 		};
 		Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
-		B_LogEntry(TOPIC_DIPLOM,"Из-за моих постоянных бесчинств мои отношения с Братством испорчены. Теперь меня там считают бандитом!");
-		Info_ClearChoices(dia_baalorun_pmschulden);
+		B_LogEntry( TOPIC_DIPLOM , " My relationship with the Brotherhood has been damaged due to my constant outrages. Now they consider me a bandit there! " );
+		Info_ClearChoices(dia_running_pmsshould);
 		Info_ClearChoices(dia_baalorun_petzmaster);
-		Info_AddChoice(dia_baalorun_pmschulden,"Постой... (пора сматываться)",dia_baalorun_pmschulden_attackmurder);
+		Info_AddChoice(dia_baalorun_pmschulden, " Wait... (it's time to leave) " ,dia_baalorun_pmschulden_attackmurder);
 	}
 	else
 	{
-		if(B_GetTotalPetzCounter(self) > BAALORUN_LASTPETZCOUNTER)
+		if ( B_GetTotalPetzCounter ( self ) >  B_GetTotalPetzCounter )
 		{
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_01");	//За последнее время ты добавил нам проблем.
-			diff = B_GetTotalPetzCounter(self) - BAALORUN_LASTPETZCOUNTER;
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_01 " );	// You've given us problems lately.
+			diff = B_GetTotalPetzCounter(self) -  BAALORUN_LASTPETZCOUNTER ;
 			if(diff > 0)
 			{
-				BAALORUN_SCHULDEN = BAALORUN_SCHULDEN + (diff * 250);
+				BAALORUN_DUTIES = BAALORUN_DUTIES  + (diff *  250 );
 			};
-			if(BAALORUN_SCHULDEN < 1000)
+			if ( BAALORUN_DEBTS  <  1000 )
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_03");	//Но я надеюсь, что ты компенсируешь их все! В целом это...
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_03 " );	// But I hope you make up for them all! In general, this...
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_04");	//Я не ожидал такого от тебя. Сумма составляет...
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_04 " );	// I didn't expect this from you. The amount is...
 			};
 			AI_Output(other,self,"DIA_BaalOrun_PMAdd_15_00");	//Сколько?
-			if(BAALORUN_SCHULDEN <= 1000)
+			if ( BAALORUN_DEBTS  <=  1000 )
 			{
 				B_Say_Gold(self,other,BAALORUN_SCHULDEN);
 			}
@@ -212,11 +213,11 @@ func void dia_baalorun_pmschulden_info()
 		}
 		else if(B_GetGreatestPetzCrime(self) < BAALORUN_LASTPETZCRIME)
 		{
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_05");	//Выяснилось несколько новых вещей.
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_05 " );	// Found out a few new things.
 
 			if(BAALORUN_LASTPETZCRIME == CRIME_MURDER)
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_06");	//Почему-то никто больше не обвиняет тебя в убийстве.
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_06 " );	// Somehow no one accuses you of murder anymore.
 				GLOBAL_PSICAMP_MURDER = GLOBAL_PSICAMP_MURDER - 1;
 				if(GLOBAL_PSICAMP_MURDER < 0)
 				{
@@ -225,7 +226,7 @@ func void dia_baalorun_pmschulden_info()
 			};
 			if((BAALORUN_LASTPETZCRIME == CRIME_THEFT) || ((BAALORUN_LASTPETZCRIME > CRIME_THEFT) && (B_GetGreatestPetzCrime(self) < CRIME_THEFT)))
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_07");	//Никто не вспоминает о том, что видел тебя при краже.
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_07 " );	// No one remembers seeing you while stealing.
 				GLOBAL_PSICAMP_THEFT = GLOBAL_PSICAMP_THEFT - 1;
 				if(GLOBAL_PSICAMP_THEFT < 0)
 				{
@@ -234,7 +235,7 @@ func void dia_baalorun_pmschulden_info()
 			};
 			if((BAALORUN_LASTPETZCRIME == CRIME_ATTACK) || ((BAALORUN_LASTPETZCRIME > CRIME_ATTACK) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK)))
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_08");	//Больше нет ни одного свидетеля твоего участия в драке.
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_08 " );	// There are no more witnesses to your participation in the fight.
 				GLOBAL_PSICAMP_ATTACK = GLOBAL_PSICAMP_ATTACK - 1;
 				if(GLOBAL_PSICAMP_ATTACK < 0)
 				{
@@ -243,22 +244,22 @@ func void dia_baalorun_pmschulden_info()
 			};
 			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_09");	//По-видимому, ребята простили тебе все то, что ты натворил.
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_09 " );	// Apparently, the guys forgave you for everything you did.
 			};
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_10");	//Не заходи больше в своих делах так далеко!
+			AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_10 " );	// Do not go so far in your affairs!
 			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_11");	//И не создавай тут неприятностей!
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_12");	//У нас их было достаточно за последнее время.
-				BAALORUN_SCHULDEN = 0;
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_11 " );	// And don't make trouble here!
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_12 " );	// We've had enough of them lately.
+				BAALORUN_DEBTS = 0 ;
 				BAALORUN_LASTPETZCOUNTER = 0;
 				BAALORUN_LASTPETZCRIME = CRIME_NONE;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_13");	//Чтобы было ясно: ты должен заплатить компенсацию в полном размере!
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_13 " );	// To be clear: you must pay the full compensation!
 				AI_Output(other,self,"DIA_BaalOrun_PMAdd_15_00A");	//Сколько?
-				if(BAALORUN_SCHULDEN <= 1000)
+				if ( BAALORUN_DEBTS  <=  1000 )
 				{
 					B_Say_Gold(self,other,BAALORUN_SCHULDEN);
 				}
@@ -269,18 +270,18 @@ func void dia_baalorun_pmschulden_info()
 					concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 					AI_Print(concattextschulden);
 				};
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_14");	//Итак, что ты решил?
+				AI_Output(self,other, " DIA_BaalOrun_PMSchulden_10_14 " );	// So what did you decide?
 			};
 		};
 		if(B_GetGreatestPetzCrime(self) != CRIME_NONE)
 		{
-			Info_ClearChoices(dia_baalorun_pmschulden);
+			Info_ClearChoices(dia_running_pmsshould);
 			Info_ClearChoices(dia_baalorun_petzmaster);
-			Info_AddChoice(dia_baalorun_pmschulden,"У меня недостаточно золота!",dia_baalorun_petzmaster_paylater);
-			Info_AddChoice(dia_baalorun_pmschulden,"Сколько я должен заплатить?",dia_baalorun_pmschulden_howmuchagain);
-			if(Npc_HasItems(other,ItMi_Gold) >= BAALORUN_SCHULDEN)
+			Info_AddChoice(dia_baalorun_pmschulden, " I don't have enough gold! " ,dia_baalorun_petzmaster_paylater);
+			Info_AddChoice(dia_baalorun_pmschulden, " How much do I have to pay? " ,dia_baalorun_pmschulden_howmuchagain);
+			if (Npc_HasItems(other,ItMi_Gold) >=  BAALORUN_SCHULDEN )
 			{
-				Info_AddChoice(dia_baalorun_pmschulden,"Я заплачу.",dia_baalorun_petzmaster_paynow);
+				Info_AddChoice(dia_baalorun_pmschulden, " Я заплачу. " ,dia_baalorun_petzmaster_paynow);
 			};
 		};
 	};
@@ -290,9 +291,9 @@ func void dia_baalorun_pmschulden_howmuchagain()
 {
 	var string concatText1;
 	var string concatText2;
-	var string concattextschulden;
-	AI_Output(other,self,"DIA_BaalOrun_PMSchulden_HowMuchAgain_15_00");	//Сколько я должен заплатить?
-	if(BAALORUN_SCHULDEN <= 1000)
+	var string contexttextdebts;
+	AI_Output(other,self, " DIA_BaalOrun_PMSchulden_HowMuchAgain_15_00 " );	// How much do I have to pay?
+	if ( BAALORUN_DEBTS  <=  1000 )
 	{
 		B_Say_Gold(self,other,BAALORUN_SCHULDEN);
 	}
@@ -303,18 +304,18 @@ func void dia_baalorun_pmschulden_howmuchagain()
 		concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 		AI_Print(concattextschulden);
 	};
-	Info_ClearChoices(dia_baalorun_pmschulden);
+	Info_ClearChoices(dia_running_pmsshould);
 	Info_ClearChoices(dia_baalorun_petzmaster);
-	Info_AddChoice(dia_baalorun_pmschulden,"У меня недостаточно золота!",dia_baalorun_petzmaster_paylater);
-	Info_AddChoice(dia_baalorun_pmschulden,"Сколько я должен заплатить?",dia_baalorun_pmschulden_howmuchagain);
-	if(Npc_HasItems(other,ItMi_Gold) >= BAALORUN_SCHULDEN)
+	Info_AddChoice(dia_baalorun_pmschulden, " I don't have enough gold! " ,dia_baalorun_petzmaster_paylater);
+	Info_AddChoice(dia_baalorun_pmschulden, " How much do I have to pay? " ,dia_baalorun_pmschulden_howmuchagain);
+	if (Npc_HasItems(other,ItMi_Gold) >=  BAALORUN_SCHULDEN )
 	{
-		Info_AddChoice(dia_baalorun_pmschulden,"Я заплачу.",dia_baalorun_petzmaster_paynow);
+		Info_AddChoice(dia_baalorun_pmschulden, " Я заплачу. " ,dia_baalorun_petzmaster_paynow);
 	};
 };
 
 
-instance DIA_BAALORUN_PETZMASTER(C_Info)
+instance DIA_BAALORUN_PETSMASTER ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 1;
@@ -333,32 +334,32 @@ func int dia_baalorun_petzmaster_condition()
 	};
 };
 
-func void dia_baalorun_petzmaster_info()
+func void petzmaster_info()
 {
 	var string concatText1;
 	var string concatText2;
-	var string concattextschulden;
+	var string contexttextdebts;
 	var string tsettext1;
 	var string tsettext2;
 	var string tsettext3;
 	var int temp1;
-	BAALORUN_SCHULDEN = 0;
-	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
+	BAALORUN_DEBTS = 0 ;
+	if (self.aivar[AIV_TalkedToPlayer] ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_00");	//Эй, новичок. Зачем ты устроил у нас неприятности? Тебе придется уладить со мной этот вопрос.
+		AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_00 " );	// Hey newbie. Why are you making trouble for us? You will have to settle this matter with me.
 	};
-	temp1 = 0;
+	temp1 = 0 ;
 	if(GLOBAL_PSICAMP_MURDER > 2)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(GLOBAL_PSICAMP_THEFT > 5)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(GLOBAL_PSICAMP_ATTACK > 5)
 	{
-		temp1 = 1;
+		temp1 = 1 ;
 	};
 	if(temp1 == 1)
 	{
@@ -367,85 +368,85 @@ func void dia_baalorun_petzmaster_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_MURDER),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_MURDERCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_48");	//Точнее он один... этот вопрос.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_49");	//Всем братьям в лагере надоели твои жестокие убийства.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_50");	//И единственный вариант прекратить твои безнаказанные выходки - это убить тебя...
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_48 " );	// More precisely, he is alone... this question.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_49 " );	// All the brothers in the camp are tired of your cruel murders.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_50 " );	// And the only option to stop your antics with impunity is to kill you...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_51");	//Умри, неверный!
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_51 " );	// Die, infidel!
 		}
 		else if(GLOBAL_PSICAMP_ATTACK > 5)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_ATTACK),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_52");	//Точнее он один... этот вопрос.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_53");	//Всем братьям в лагере надоели твои постоянные драки.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_54");	//И единственный вариант прекратить твои безнаказанные выходки - это убить тебя...
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_52 " );	// More precisely, he is alone... this question.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_53 " );	// All the brothers in the camp are tired of your constant fights.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_54 " );	// And the only option to stop your antics with impunity is to kill you...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_55");	//Умри, неверный!
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_55 " );	// Die, infidel!
 		}
 		else if(GLOBAL_PSICAMP_THEFT > 5)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_THEFT),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_THEFTCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_THEFTCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_56");	//Точнее он один... этот вопрос.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_57");	//В нашем лагере нет места ворам!
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_58");	//И единственный вариант прекратить твои безнаказанные выходки - это убить тебя...
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_56 " );	// More precisely, he is alone... this question.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_57 " );	// There is no place for thieves in our camp!
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_58 " );	// And the only option to stop your antics with impunity is to kill you...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_59");	//Умри, неверный!
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_08_59 " );	// Die, infidel!
 		};
 		Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
-		B_LogEntry(TOPIC_DIPLOM,"Из-за моих постоянных бесчинств мои отношения с Братством испорчены. Теперь меня там считают бандитом!");
-		Info_ClearChoices(dia_baalorun_pmschulden);
+		B_LogEntry( TOPIC_DIPLOM , " My relationship with the Brotherhood has been damaged due to my constant outrages. Now they consider me a bandit there! " );
+		Info_ClearChoices(dia_running_pmsshould);
 		Info_ClearChoices(dia_baalorun_petzmaster);
-		Info_AddChoice(dia_baalorun_petzmaster,"Постой... (пора сматываться)",dia_baalorun_petzmaster_attackmurder);
+		Info_AddChoice(dia_baalorun_petzmaster, " Wait... (Time to get out) " ,dia_baalorun_petzmaster_attackmurder);
 	}
 	else
 	{
 		if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 		{
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_02");	//Убийство - самое это последнее, что мы хотели бы видеть здесь!
-			BAALORUN_SCHULDEN = B_GetTotalPetzCounter(self) * 1500;
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_02 " );	// Murder is the last thing we want to see here!
+			BAALORUN_DEBT = B_GetTotalPetzCounter(self) *  1500 ;
 			if((PETZCOUNTER_PSICAMP_THEFT + PETZCOUNTER_PSICAMP_ATTACK) > 0)
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_04");	//Я даже не вспоминаю об остальных делах, которые ты натворил.
+				AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_04 " );	// I don't even remember the rest of the things you did.
 			};
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_06");	//Ты оплатишь похороны наших братьев.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_07");	//Это не исправит сделанного, и тебе придется отвечать за свое преступление перед богами.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_08");	//Но это, хотя бы, примирит всех с тем, что ты тут по-прежнему шастаешь.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_06 " );	// You will pay for our brothers' funerals.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_07 " );	// This won't fix what you've done, and you'll have to answer to the gods for your crime.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_08 " );	// But this will at least reconcile everyone with the fact that you're still hanging around here.
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 		{
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_09");	//Я слышал, ты занимаешься воровством?
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_09 " );	// I heard you're into stealing?
 			if(PETZCOUNTER_PSICAMP_ATTACK > 0)
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_10");	//Помимо прочих неприятных дел.
+				AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_10 " );	// In addition to other unpleasant things.
 			};
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_11");	//Не нужно было этого делать.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_12");	//Ты заплатишь штраф за свои преступления!
-			BAALORUN_SCHULDEN = B_GetTotalPetzCounter(self) * 500;
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_11 " );	// Shouldn't have done this.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_12 " );	// You will pay the fine for your crimes!
+			BAALORUN_DEBT = B_GetTotalPetzCounter(self) *  500 ;
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 		{
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_13");	//Никому не нравятся драки - ты знаешь это? Если хочешь помахать кулаками - иди в Хоринис.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_15");	//Тебе придется оплатить свои преступления! Может, тогда все о них забудут.
-			BAALORUN_SCHULDEN = B_GetTotalPetzCounter(self) * 750;
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_13 " );	// Nobody likes fights - you know that? If you want to wave your fists, go to Khorinis.
+			AI_Output(self,other, " DIA_BaalOrun_PetzMaster_10_15 " );	// You will have to pay for your crimes! Maybe then everyone will forget about them.
+			BAALORUN_DEBT = B_GetTotalPetzCounter(self) *  750 ;
 		};
 		AI_Output(other,self,"DIA_BaalOrun_PetzMaster_15_18");	//Сколько?
-		if(BAALORUN_SCHULDEN <= 1000)
+		if ( BAALORUN_DEBTS  <=  1000 )
 		{
 			B_Say_Gold(self,other,BAALORUN_SCHULDEN);
 		}
@@ -456,91 +457,91 @@ func void dia_baalorun_petzmaster_info()
 			concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 			AI_Print(concattextschulden);
 		};
-		Info_ClearChoices(dia_baalorun_pmschulden);
+		Info_ClearChoices(dia_running_pmsshould);
 		Info_ClearChoices(dia_baalorun_petzmaster);
-		Info_AddChoice(dia_baalorun_petzmaster,"У меня мало золота.",dia_baalorun_petzmaster_paylater);
-		if(Npc_HasItems(other,ItMi_Gold) >= BAALORUN_SCHULDEN)
+		Info_AddChoice(dia_baalorun_petzmaster, " I'm low on gold. " ,dia_baalorun_petzmaster_paylater);
+		if (Npc_HasItems(other,ItMi_Gold) >=  BAALORUN_SCHULDEN )
 		{
-			Info_AddChoice(dia_baalorun_petzmaster,"Я заплачу.",dia_baalorun_petzmaster_paynow);
+			Info_AddChoice(the_petzmaster, " No matter. " ,the_petzmaster_paynow);
 		};
 	};
 };
 
 func void dia_baalorun_petzmaster_paynow()
 {
-	AI_Output(other,self,"DIA_BaalOrun_PetzMaster_PayNow_15_00");	//Я заплачу!
-	B_GiveInvItems(other,self,ItMi_Gold,BAALORUN_SCHULDEN);
-	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayNow_10_01");	//Хорошо, тогда я успокою братьев. Но не повторяй подобного снова!
+	AI_Output(other,self, " DIA_BaalOrun_PetzMaster_PayNow_15_00 " );	// I'll pay!
+	B_GiveInvItems(other,self,ItMi_Gold, BAALORUN_DEBT );
+	AI_Output(self,other, " DIA_BaalOrun_PetzMaster_PayNow_10_01 " );	// Okay, then I'll calm the brothers down. But don't do that again!
 	B_GrantAbsolution(LOC_PSICAMP);
-	BAALORUN_SCHULDEN = 0;
+	BAALORUN_DEBTS = 0 ;
 	BAALORUN_LASTPETZCOUNTER = 0;
 	BAALORUN_LASTPETZCRIME = CRIME_NONE;
 	Info_ClearChoices(dia_baalorun_petzmaster);
-	Info_ClearChoices(dia_baalorun_pmschulden);
+	Info_ClearChoices(dia_running_pmsshould);
 };
 
 func void dia_baalorun_petzmaster_paylater()
 {
-	AI_Output(other,self,"DIA_BaalOrun_PetzMaster_PayLater_15_00");	//У меня мало золота.
-	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayLater_10_01");	//Тогда найди его как можно скорее.
-	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayLater_10_02");	//И не создавай больше проблем - мы собрались тут не для их поиска.
+	AI_Output(other,self, " DIA_BaalOrun_PetzMaster_PayLater_15_00 " );	// I don't have much gold.
+	AI_Output(self,other, " DIA_BaalOrun_PetzMaster_PayLater_10_01 " );	// Then find him as soon as possible.
+	AI_Output(self,other, " DIA_BaalOrun_PetzMaster_PayLater_10_02 " );	// And don't create more trouble - we're not here to find them.
 	BAALORUN_LASTPETZCOUNTER = B_GetTotalPetzCounter(self);
 	BAALORUN_LASTPETZCRIME = B_GetGreatestPetzCrime(self);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BAALORUN_NOTALK_HI(C_Info)
+instance DIA_BAALORUN_NOTALK_HI ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_notalk_hi_condition;
-	information = dia_baalorun_notalk_hi_info;
+	information = dia_content_notalk_hi_info;
 	permanent = FALSE;
 	important = FALSE;
-	description = "Привет! Я здесь новенький.";
+	description = " Hi! I'm new here. " ;
 };
 
 
 func int dia_baalorun_notalk_hi_condition()
 {
-	if((IDOLORAN_YES == FALSE) && (MIS_ORUNPACKET != LOG_FAILED) && (other.guild == GIL_NONE) && (IDOLORAN_NO == FALSE))
+	if (( IDOLORAN_YES  ==  FALSE ) && ( MY_ORUNPACKET  !=  LOG_FAILED ) && ( other.guild ==  GIL_NONE ) && ( IDOLORAN_NO  ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_baalorun_notalk_hi_info()
+func void load_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_NoTalk_Hi_15_00");	//Привет! Я здесь новенький!
+	AI_Output(other,self, " DIA_BaalOrun_NoTalk_Hi_15_00 " );	// Hello! I'm new here!
 	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Hi_02_01");	//(вздох)
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BAALORUN_NOTALK_SLEEPER(C_Info)
+instance DIA_BAALORUN_NOTALK_SLEEPER ( C_Info ) .
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_notalk_sleeper_condition;
-	information = dia_baalorun_notalk_sleeper_info;
+	information = dia_control_notalk_sleeper_info;
 	permanent = FALSE;
 	important = FALSE;
-	description = "Да пребудет с тобой Спящий!";
+	description = " May the Sleeper be with you! " ;
 };
 
 
 func int dia_baalorun_notalk_sleeper_condition()
 {
-	if((IDOLORAN_YES == FALSE) && (MIS_ORUNPACKET != LOG_FAILED) && (other.guild == GIL_NONE) && (IDOLORAN_NO == FALSE))
+	if (( IDOLORAN_YES  ==  FALSE ) && ( MY_ORUNPACKET  !=  LOG_FAILED ) && ( other.guild ==  GIL_NONE ) && ( IDOLORAN_NO  ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_baalorun_notalk_sleeper_info()
+func void sleeper_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_NoTalk_Sleeper_15_00");	//Да пребудет с тобой Спящий!
+	AI_Output(other,self, " DIA_BaalOrun_NoTalk_Sleeper_15_00 " );	// May the Sleeper be with you!
 	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Sleeper_02_01");	//(вздох)
 	AI_StopProcessInfos(self);
 };
@@ -551,16 +552,16 @@ instance DIA_BAALORUN_NOTALK_IMP(C_Info)
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_notalk_imp_condition;
-	information = dia_baalorun_notalk_imp_info;
+	information = dia_control_notalk_imp_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Все в порядке, приятель?";
+	description = " Is everything all right, buddy? " ;
 };
 
 
 func int dia_baalorun_notalk_imp_condition()
 {
-	if((IDOLORAN_YES == FALSE) && (MIS_ORUNPACKET != LOG_FAILED) && (other.guild == GIL_NONE) && (IDOLORAN_NO == FALSE))
+	if (( IDOLORAN_YES  ==  FALSE ) && ( MY_ORUNPACKET  !=  LOG_FAILED ) && ( other.guild ==  GIL_NONE ) && ( IDOLORAN_NO  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -568,7 +569,7 @@ func int dia_baalorun_notalk_imp_condition()
 
 func void dia_baalorun_notalk_imp_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_NoTalk_Imp_15_00");	//Все в порядке, приятель?
+	AI_Output(other,self, " DIA_BaalOrun_NoTalk_Imp_15_00 " );	// Are you all right, mate?
 	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Imp_02_01");	//(вздох)
 	AI_StopProcessInfos(self);
 };
@@ -579,7 +580,7 @@ instance DIA_BAALORUN_FIRST(C_Info)
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_first_condition;
-	information = dia_baalorun_first_info;
+	information = dia_running_first_info;
 	permanent = TRUE;
 	important = TRUE;
 };
@@ -595,22 +596,22 @@ func int dia_baalorun_first_condition()
 
 func void dia_baalorun_first_info()
 {
-	AI_Output(self,other,"DIA_BaalOrun_FIRST_01_00");	//Что тебе нужно?
+	AI_Output(self,other, " DIA_BaalOrun_FIRST_01_00 " );	// What do you need?
 };
 
 
-instance DIA_BAALORUN_AUFGABE(C_Info)
+instance DIA_BAALORUN_TASK (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 1;
-	condition = dia_baalorun_aufgabe_condition;
-	information = dia_baalorun_aufgabe_info;
+	condition = dia_baalorun_task_condition;
+	information = dia_baalorun_task_info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_baalorun_aufgabe_condition()
+func int dia_baalorun_task_condition()
 {
 	var C_Item itm;
 	itm = Npc_GetEquippedArmor(other);
@@ -621,125 +622,125 @@ func int dia_baalorun_aufgabe_condition()
 	};
 };
 
-func void dia_baalorun_aufgabe_info()
+func void dia_baalorun_task_info()
 {
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_00");	//Постой... Откуда у тебя набедренная повязка послушника нашего Братства?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_01");	//Ты похож на искателя - искателя истинной веры. Разве не ощущаешь ты внутри бушующее пламя - то, что не дает тебе спать по ночам?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_02");	//Вижу, тебя терзают сомнения - есть ли правда в том, что пытаются навязать тебе прислужники лживых богов?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_03");	//И ты знаешь, откуда берутся эти сомнения. Они все лгут!
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_04");	//Разве не ощущаешь ты стремление к свободе? Как день ото дня оно становится все сильнее, как направляет оно твой дух? Освободи его!
-	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_05");	//Ты заговорил со мной. Как я помню, это значит, что теперь и я могу обратиться к тебе?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_06");	//Ты знаешь наши правила. Это похвально!
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_07");	//Остальные наши братья не станут с тобой разговаривать, пока ты не докажешь то, что тебе можно доверять.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_08");	//А я заговорил с тобой, дабы дать тебе шанс проявить себя.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_09");	//Если ты хорошо зарекомендуешь себя в наших глазах, то впоследствии сможешь присоединиться к нашему Братству. Если захочешь, конечно!
-	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_10");	//Как я могу доказать свою преданность?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_11");	//У меня есть для тебя одно очень деликатное поручение.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_12");	//Если ты его выполнишь, то думаю, этого будет достаточно, чтобы мы смогли начать доверять тебе.
-	Info_ClearChoices(dia_baalorun_aufgabe);
-	Info_AddChoice(dia_baalorun_aufgabe,"Хорошо. Что я должен сделать?",dia_baalorun_aufgabe_yes);
-	Info_AddChoice(dia_baalorun_aufgabe,"К сожалению, у меня нет времени на это.",dia_baalorun_aufgabe_no);
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_00 " );	// Wait... Where did you get the loincloth of an acolyte of our Brotherhood?
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_01 " );	// You look like a seeker - a seeker of the true faith. Don't you feel the raging fire inside - that which keeps you awake at night?
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_02 " );	// I see you are tormented by doubts - is there any truth in what the minions of false gods are trying to impose on you?
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_03 " );	// And you know where these doubts come from. They all lie!
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_04 " );	// Don't you feel the longing for freedom? How does it grow stronger day by day, how does it guide your spirit? Release him!
+	AI_Output(other,self, " DIA_BaalOrun_Aufgabe_01_05 " );	// You spoke to me. As I remember, this means that now I can also turn to you?
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_06 " );	// You know our rules. It is commendable!
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_07 " );	// The rest of our brothers won't talk to you until you prove you can be trusted.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_08 " );	// And I spoke to you to give you a chance to prove yourself.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_09 " );	// If you prove yourself well in our eyes, then you can later join our Brotherhood. If you want, of course!
+	AI_Output(other,self, " DIA_BaalOrun_Aufgabe_01_10 " );	// How can I prove my loyalty?
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_11 " );	// I have a very delicate task for you.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_12 " );	// If you complete it, I think it will be enough for us to start trusting you.
+	Info_ClearChoices(dia_baalorun_task);
+	Info_AddChoice(dia_baalorun_aufgabe, " Okay. What should I do? " ,dia_baalorun_aufgabe_yes);
+	Info_AddChoice(dia_baalorun_aufgabe, " Unfortunately, I don't have time for this. " ,dia_baalorun_aufgabe_no);
 };
 
-func void dia_baalorun_aufgabe_no()
+func void dia_baalorun_task_no()
 {
-	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_13");	//К сожалению, у меня нет времени на это.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_14");	//(вздох) Ах!
-	IDOLORAN_NO = TRUE;
-	Info_ClearChoices(dia_baalorun_aufgabe);
+	AI_Output(other,self, " DIA_BaalOrun_Aufgabe_01_13 " );	// Unfortunately, I don't have time for that.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_14 " );	// (sigh) Ah!
+	IDOLORAN_NO = TRUE ;
+	Info_ClearChoices(dia_baalorun_task);
 	AI_StopProcessInfos(self);
 };
 
-func void dia_baalorun_aufgabe_yes()
+func void dia_baalorun_task_yes()
 {
-	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_15");	//Хорошо. Что я должен сделать?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_16");	//Я дам тебе одну вещь. Вот эту посылку. А ты должен доставить ее одному человеку.
-	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_17");	//Кто этот человек?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_18_01");	//Его зовут Лариус, он городской глава Хориниса. Хотя, пока паладины находятся в городе, он таковым не является.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_19");	//Просто передай ему эту посылку - он в курсе всего остального. Ты найдешь его в городской ратуше.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_22");	//После того, как ты отдашь ему пакет, он должен будет передать тебе кое-что и для меня.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_23");	//Принеси эту вещь мне. Если сделаешь все как надо, то заслужишь наше доверие к тебе.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_24");	//И самое главное. Лариус - человек очень подозрительный, и, возможно, даже не станет тебя слушать, если ты вызовешь у него подозрения.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_25");	//Поэтому постарайся его убедить в том, что ты - именно тот человек, которого прислал я.
+	AI_Output(other,self, " DIA_BaalOrun_Aufgabe_01_15 " );	// Good. What I should do?
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_16 " );	// I'll give you one thing. Here is the parcel. And you have to deliver it to one person.
+	AI_Output(other,self, " DIA_BaalOrun_Aufgabe_01_17 " );	// Who is this person?
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_18_01 " );	// His name is Larius, he is the mayor of Khorinis. Although, while the paladins are in the city, it is not.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_19 " );	// Just give him this package - he knows everything else. You will find it in the city hall.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_22 " );	// After you give him the package, he will have to give you something for me too.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_23 " );	// Bring this thing to me. If you do everything right, you will earn our trust in you.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_24 " );	// And most importantly. Larius is a very suspicious person, and probably won't even listen to you if you arouse his suspicions.
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_25 " );	// Therefore, try to convince him that you are exactly the person I sent.
 	if(PALGUARD == TRUE)
 	{
-		AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_26");	//А как мне миновать охрану в ратуше? Паладины не пропустят меня к нему.
-		AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_27");	//Ну, постарайся придумать что-нибудь. Возможно, есть какой-нибудь способ миновать стражу или встретится с Лариусом вне стен ратуши.
-		AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_28");	//Вот, держи пакет. И смотри не потеряй его.
+		AI_Output(other,self, " DIA_BaalOrun_Aufgabe_01_26 " );	// How do I get past the guards at the town hall? Paladins won't let me see him.
+		AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_27 " );	// Well, try to come up with something. Perhaps there is some way to bypass the guards or meet with Larius outside the walls of the town hall.
+		AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_28 " );	// Here, take the package. And don't lose it.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_29");	//Я все понял.
-		AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_30");	//Вот и хорошо. Держи пакет и смотри не потеряй его.
+		AI_Output(other,self, " DIA_BaalOrun_Aufgabe_01_29 " );	// I got it.
+		AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_30 " );	// That's good. Hold the package and be careful not to lose it.
 	};
 	B_GiveInvItems(self,other,itmi_drogenpocket,1);
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_31");	//Теперь ступай.
-	Info_ClearChoices(dia_baalorun_aufgabe);
+	AI_Output(self,other, " DIA_BaalOrun_Aufgabe_01_31 " );	// Now go.
+	Info_ClearChoices(dia_baalorun_task);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(VLK_400_Larius,"Start");
 	Log_CreateTopic(TOPIC_ORUNPACKET,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ORUNPACKET,LOG_Running);
 	MIS_ORUNPACKET = LOG_Running;
-	IDOLORAN_YES = TRUE;
-	B_LogEntry(TOPIC_ORUNPACKET,"Я согласился помочь Идолу Орану выполнить для него одно деликатное дело. Мне необходимо доставить посылку городскому советнику Лариусу. И забрать то, что Лариус, в свою очередь, даст мне для Идола Орана.");
+	IDOLORAN_YES = TRUE ;
+	B_LogEntry( TOPIC_ORUNPACKET , " I've agreed to help the Idol of Oran do a delicate job for him. I need to deliver a package to City Councilor Larius. And pick up what Larius will give me in return for the Idol of Oran. " );
 };
 
 
-instance DIA_BAALORUN_ZUSTIMMUNG(C_Info)
+instance DIA_BAALORUN_CONSENT (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 5;
-	condition = dia_baalorun_zustimmung_condition;
-	information = dia_baalorun_zustimmung_info;
+	condition = dia_baalorun_approval_condition;
+	information = dia_baalorun_approval_info;
 	permanent = FALSE;
-	description = "Я передал посылку Лариусу.";
+	description = " I delivered the package to Larius. " ;
 };
 
 
-func int dia_baalorun_zustimmung_condition()
+func int dia_baalorun_approval_condition()
 {
-	if((Npc_HasItems(other,itmi_lariusgoldpocket) >= 1) && (MIS_ORUNPACKET == LOG_Running))
+	if ((Npc_HasItems(other,itmi_lariusgoldpocket) >=  1 ) && ( MIS_ORUNPACKET  == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_baalorun_zustimmung_info()
+func void dia_baalorun_approval_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_BaalOrun_Zustimmung_01_00");	//Я передал посылку Лариусу. Взамен, он попросил передать тебе вот эту сумму.
-	B_GiveInvItems(other,self,itmi_lariusgoldpocket,1);
+	AI_Output(other,self, " DIA_BaalOrun_Zustimmung_01_00 " );	// I gave the package to Larius. In return, he asked me to give you this amount.
+	B_GiveInvItems(other,self,itmi_lariusgoldpocket, 1 );
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_BaalOrun_Zustimmung_01_01");	//Я знал, что ты не подведешь меня. Были проблемы?
-		AI_Output(other,self,"DIA_BaalOrun_Zustimmung_01_02");	//Да так, ничего существенного.
-		AI_Output(self,other,"DIA_BaalOrun_Zustimmung_01_03");	//Хорошо! Ты проявил себя с самой лучшей стороны и доказал, что тебе можно доверять.
-		AI_Output(self,other,"DIA_BaalOrun_Zustimmung_01_04");	//Я расскажу о тебе другим нашим братьям!
-		AI_Output(self,other,"DIA_BaalOrun_Zustimmung_01_05");	//А если у тебя есть намерение присоединиться к нам, то многие из них не откажутся помочь тебе в этом!
+		AI_Output(self,other, " DIA_BaalOrun_Zustimmung_01_01 " );	// I knew you wouldn't let me down. I had some problems?
+		AI_Output(other,self, " DIA_BaalOrun_Zustimmung_01_02 " );	// Yes, nothing significant.
+		AI_Output(self,other, " DIA_BaalOrun_Zustimmung_01_03 " );	// Good! You showed yourself from the very best side and proved that you can be trusted.
+		AI_Output(self,other, " DIA_BaalOrun_Zustimmung_01_04 " );	// I'll tell our other brothers about you!
+		AI_Output(self,other, " DIA_BaalOrun_Zustimmung_01_05 " );	// And if you have an intention to join us, then many of them will not refuse to help you with this!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalOrun_Zustimmung_01_01");	//Я знал, что ты не подведешь меня. Были проблемы?
+		AI_Output(self,other, " DIA_BaalOrun_Zustimmung_01_01 " );	// I knew you wouldn't let me down. I had some problems?
 	};
 	Log_SetTopicStatus(TOPIC_ORUNPACKET,LOG_SUCCESS);
 	Npc_ExchangeRoutine(VLK_400_Larius,"Always");
-	B_LogEntry(TOPIC_ORUNPACKET,"Я отдал суму Идолу Орану и тем самым заслужил его благодарность и доверие всего Братства.");
+	B_LogEntry( TOPIC_ORUNPACKET , " I gave the bag to the Idol of Oran and thus earned his gratitude and the trust of the entire Brotherhood. " );
 	MIS_ORUNPACKET = LOG_SUCCESS;
 };
 
 
-instance DIA_BAALORUN_NOZUSTIMMUNG(C_Info)
+instance DIA_BACKGROUND (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 5;
 	condition = dia_baalorun_nozustimmung_condition;
-	information = dia_baalorun_nozustimmung_info;
+	information = dia_baalorun_noapproval_info;
 	permanent = FALSE;
-	description = "Я не смог передать посылку Лариусу.";
+	description = " I was unable to deliver the package to Larius. " ;
 };
 
 
-func int dia_baalorun_nozustimmung_condition()
+func int dia_condition_reset()
 {
 	if(MIS_ORUNPACKET == LOG_FAILED)
 	{
@@ -747,42 +748,42 @@ func int dia_baalorun_nozustimmung_condition()
 	};
 };
 
-func void dia_baalorun_nozustimmung_info()
+func void dia_builder_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_00");	//Я не смог передать посылку Лариусу.
-	AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_01");	//Почему?
+	AI_Output(other,self, " DIA_BaalOrun_NoZustimmung_01_00 " );	// I couldn't deliver the package to Larius.
+	AI_Output(self,other, " DIA_BaalOrun_NoZustimmung_01_01 " );	// Why?
 	if(LARIUSCANCELPACKET > 1)
 	{
-		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_02");	//Он отказался брать ее, а потом его стражники чуть не сделали из меня отбивную!
+		AI_Output(other,self, " DIA_BaalOrun_NoZustimmung_01_02 " );	// He refused to take it, and then his guards almost made a chop out of me!
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_02A");	//Эээ... так получилось, что...
+		AI_Output(other,self, " DIA_BaalOrun_NoZustimmung_01_02A " );	// Uh... it so happened that...
 	};
 
-	AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_03");	//А где мой пакет?
+	AI_Output(self,other, " DIA_BaalOrun_NoZustimmung_01_03 " );	// Where's my package?
 
 	if(Npc_HasItems(other,itmi_drogenpocket) >= 1)
 	{
-		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_04");	//А, ну да. Вот, возьми его обратно.
+		AI_Output(other,self, " DIA_BaalOrun_NoZustimmung_01_04 " );	// Oh, yes. Here, take it back.
 		B_GiveInvItems(other,self,itmi_drogenpocket,1);
-		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_05");	//Хоть его ты умудрился не потерять. Как я ошибся, что доверил ТЕБЕ это дело!
-		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_06");	//Ты сильно разочаровал меня. Убирайся с глаз моих!
-		IDOLORAN_YES = FALSE;
-		IDOLORAN_NOFOREVER = TRUE;
+		AI_Output(self,other, " DIA_BaalOrun_NoZustimmung_01_05 " );	// At least you managed not to lose it. How wrong I was that I entrusted YOU with this business!
+		AI_Output(self,other, " DIA_BaalOrun_NoZustimmung_01_06 " );	// You disappoint me greatly. Get out of my sight!
+		IDOLOGY_YES = FALSE ;
+		IDOLORAN_NOFOREVER = TRUE ;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(VLK_400_Larius,"Always");
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_07");	//У меня его нет. Я... эээ... потерял его.
+		AI_Output(other,self, " DIA_BaalOrun_NoZustimmung_01_07 " );	// I don't have one. I... uh... lost it.
 		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_08");	//ЧТО?
-		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_09");	//Ты что, принимаешь меня за идиота?
-		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_10");	//Тебе это так не сойдет с рук! Сейчас ты умрешь за свою подлость!
-		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_11");	//Умри, неверный!
-		IDOLORAN_YES = FALSE;
-		IDOLORAN_NOFOREVER = TRUE;
-		IDOLORAN_NOFOREVERKILL = TRUE;
+		AI_Output(self,other, " DIA_BaalOrun_NoZustimmung_01_09 " );	// Are you taking me for an idiot?
+		AI_Output(self,other, " DIA_BaalOrun_NoZustimmung_01_10 " );	// You won't get away with this! Now you will die for your meanness!
+		AI_Output(self,other, " DIA_BaalOrun_NoZustimmung_01_11 " );	// Die, infidel!
+		IDOLOGY_YES = FALSE ;
+		IDOLORAN_NOFOREVER = TRUE ;
+		IDOLORAN_NOFOREVERKILL = TRUE ;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(VLK_400_Larius,"Always");
 		B_Attack(self,other,AR_GuardCalledToKill,1);
@@ -810,35 +811,35 @@ func int dia_baalorun_noforever_condition()
 
 func void dia_baalorun_noforever_info()
 {
-	if(IDOLORAN_NOFOREVERKILL == FALSE)
+	if ( IDOLORAN_NOFOREVERKILL  ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_BaalOrun_NoForever_01_00");	//Убирайся с глаз моих!
-		IDOLORAN_NOFOREVER = TRUE;
+		AI_Output(self,other, " DIA_BaalOrun_NoForever_01_00 " );	// Get out of my sight!
+		IDOLORAN_NOFOREVER = TRUE ;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalOrun_NoForever_01_01");	//Умри, неверный!
-		IDOLORAN_NOFOREVER = TRUE;
-		IDOLORAN_NOFOREVERKILL = TRUE;
+		AI_Output(self,other, " DIA_BaalOrun_NoForever_01_01 " );	// Die, infidel!
+		IDOLORAN_NOFOREVER = TRUE ;
+		IDOLORAN_NOFOREVERKILL = TRUE ;
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_GuardCalledToKill,1);
 	};
 };
 
 
-instance DIA_BAALORUN_JOINSEKTA(C_Info)
+instance DIA_BAALORUN_JOINSECTS (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 5;
 	condition = dia_baalorun_joinsekta_condition;
-	information = dia_baalorun_joinsekta_info;
+	information = dia_balorun_join_sector_info;
 	permanent = FALSE;
-	description = "Ты сказал, что я смогу присоединиться к вам.";
+	description = " You said I could join you. " ;
 };
 
 
-func int dia_baalorun_joinsekta_condition()
+func int dia_build_join_sector_condition()
 {
 	if((hero.guild == GIL_NONE) && (MIS_ORUNPACKET == LOG_SUCCESS))
 	{
@@ -846,69 +847,69 @@ func int dia_baalorun_joinsekta_condition()
 	};
 };
 
-func void dia_baalorun_joinsekta_info()
+func void dia_builder_join_sector_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_JoinSekta_01_00");	//Ты сказал, что я смогу присоединиться к вам.
-	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_01");	//Теперь, когда ты помог нам и доказал свою преданность, ты по праву можешь просить об этом.
-	AI_Output(other,self,"DIA_BaalOrun_JoinSekta_01_02");	//Тогда прими меня в послушники Братства!
-	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_03");	//Я считаю, что ты достоин этой чести.
-	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_04");	//Теперь ты в любой момент можешь присоединиться к нам.
-	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_05");	//Но запомни: одев робу нашего Братства, ты уже не сможешь ее просто так снять и отказаться от нашей веры.
-	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_06");	//Поэтому хорошенько подумай, прежде чем принять такое решение!
+	AI_Output(other,self, " DIA_BaalOrun_JoinSekta_01_00 " );	// You said I could join you.
+	AI_Output(self,other, " DIA_BaalOrun_JoinSekta_01_01 " );	// Now that you've helped us and proven your loyalty, you can rightfully ask for it.
+	AI_Output(other,self, " DIA_BaalOrun_JoinSekta_01_02 " );	// Then accept me as a disciple of the Brotherhood!
+	AI_Output(self,other, " DIA_BaalOrun_JoinSekta_01_03 " );	// I believe you are worthy of this honor.
+	AI_Output(self,other, " DIA_BaalOrun_JoinSekta_01_04 " );	// Now you can join us at any time.
+	AI_Output(self,other, " DIA_BaalOrun_JoinSekta_01_05 " );	// But remember: having put on the robe of our Brotherhood, you can no longer just take it off and renounce our faith.
+	AI_Output(self,other, " DIA_BaalOrun_JoinSekta_01_06 " );	// So think carefully before making such a decision!
 	Log_CreateTopic(TOPIC_PSICAMPJOIN,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PSICAMPJOIN,LOG_Running);
 	CANJOINPSI = TRUE;
-	B_LogEntry(TOPIC_PSICAMPJOIN,"Идол Оран дал свое согласие на принятие меня в Братство.");
+	B_LogEntry( TOPIC_PSICAMPJOIN , "The Idol of Oran has agreed to accept me into the Fellowship. " );
 };
 
 
-instance DIA_BAALORUN_SEKTAADVANTAGE(C_Info)
+instance DIA_BAALORUN_SEKTAADVANTAGE (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 5;
 	condition = dia_baalorun_sektaadvantage_condition;
 	information = dia_baalorun_sektaadvantage_info;
 	permanent = FALSE;
-	description = "А какую выгоду я извлеку, присоединившись к вам?";
+	description = " How will I benefit by joining you? " ;
 };
 
 
-func int dia_baalorun_sektaadvantage_condition()
+func int dia_build_sectoradvantage_condition()
 {
-	if((hero.guild == GIL_NONE) && Npc_KnowsInfo(other,dia_baalorun_joinsekta))
+	if (( hero . guild ==  GIL_NONE ) && Npc_KnowsInfo ( other , dia_balorun_joins ) )
 	{
 		return TRUE;
 	};
 };
 
-func void dia_baalorun_sektaadvantage_info()
+func void dia_builder_sectoradvantage_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_SektaAdvantage_01_00");	//А какую выгоду я извлеку для себя, присоединившись к вам?
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_01");	//Ты сомневаешься в том, правильный ли делаешь выбор? Позволь, я объясню тебе кое-что.
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_02");	//Хотя наше Братство и не обладает уже тем могуществом и влиянием, которое было во времена существования Барьера...
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_03");	//...однако мудрость и знания, которые нам в свое время даровал Спящий, мы не только сохранили, но и преумножили!
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_04");	//Возможно, ты станешь одним из избранных - Гуру, и получишь возможность познать древнюю магию, открытую когда-то нам Спящим.
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_05");	//Или же ты сможешь удостоиться высшей чести - стать Стражем. Только лучшие из воинов могут носить это звание!
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_06");	//Если будет на то воля судьбы, ты сможешь даже совместить оба этих занятия: лучшие из Стражей также обладают магическими знаниями.
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_07");	//Как видишь, наше Братство предоставит тебе массу возможностей.
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_08");	//Подумай о том, что я тебе сказал, прежде чем ты решишь сделать свой выбор.
+	AI_Output(other,self, " DIA_BaalOrun_SektaAdvantage_01_00 " );	// What benefit will I get by joining you?
+	AI_Output(self,other, " DIA_BaalOrun_SektaAdvantage_01_01 " );	// Do you doubt whether you are making the right choice? Let me explain something to you.
+	AI_Output(self,other, " DIA_BaalOrun_SektaAdvantage_01_02 " );	// Although our Brotherhood does not already have the power and influence that it had during the existence of the Barrier...
+	AI_Output(self,other, " DIA_BaalOrun_SektaAdvantage_01_03 " );	// ...however, we have not only preserved the wisdom and knowledge that the Sleeping One gave us, but also increased it!
+	AI_Output(self,other, " DIA_BaalOrun_SektaAdvantage_01_04 " );	// Perhaps you will become one of the chosen ones - the Guru, and you will get the opportunity to learn the ancient magic, once revealed to us by the Sleepers.
+	AI_Output(self,other, " DIA_BaalOrun_SektaAdvantage_01_05 " );	// Or you can be honored with the highest honor - to become a Guardian. Only the best of warriors can bear this title!
+	AI_Output(self,other, " DIA_BaalOrun_SektaAdvantage_01_06 " );	// If fate wills, you can even combine both of these activities: the best of the Guardians also have magical knowledge.
+	AI_Output(self,other, " DIA_BaalOrun_SektaAdvantage_01_07 " );	// As you can see, our Brotherhood will provide you with a lot of opportunities.
+	AI_Output(self,other, " DIA_BaalOrun_SektaAdvantage_01_08 " );	// Think about what I told you before you decide to make your choice.
 };
 
 
-instance DIA_BAALORUN_TELLABOUT(C_Info)
+instance DIA_BAALORUN_TELLABOUT (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_tellabout_condition;
 	information = dia_baalorun_tellabout_info;
 	permanent = FALSE;
-	description = "Расскажи мне о Братстве.";
+	description = " Tell me about the Brotherhood. " ;
 };
 
 
 func int dia_baalorun_tellabout_condition()
 {
-	if((other.guild == GIL_SEK) && Npc_KnowsInfo(other,dia_baalorun_joinsekta))
+	if ( ( other . guild ==  GIL_SEK ) && Npc_KnowsInfo ( other , dia_balorun_joinsect ) )
 	{
 		return TRUE;
 	};
@@ -916,57 +917,57 @@ func int dia_baalorun_tellabout_condition()
 
 func void dia_baalorun_tellabout_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_TellAbout_01_01");	//Расскажи мне о Братстве.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_02");	//После того как Спящий - демон, которому мы все ошибочно поклонялись, принимая его за нашего спасителя, был изгнан из этого мира...
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_03");	//...Братство оказалось на грани полного уничтожения!
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_04");	//Большинство наших братьев либо погибли, либо сошли с ума. Они буквально обезумели, и уже практически не походили на людей!
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_05");	//Те же, кто все-таки сумел сохранить свою жизнь и спасти свой разум от безумия, отправились сюда в Хоринис...
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_06");	//...в надежде обрести здесь покой и возможность осмыслить все пережитое.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_07");	//Мы основали тут свой небольшой лагерь, и стали проводить время в поисках истинного знания, способного вернуть нам душевное равновесие...
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_08");	//...и помочь найти новый путь познания этого мира. И вскоре нам это удалось.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_09");	//Мы извлекли правильные уроки из наших познаний в этой области. Теперь мы пытаемся познать сущность происходящего иным путем.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_10");	//Суть нашего нового учения - это раскрытие потаенных возможностей своего сознания при помощи длительной медитации.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_11");	//Естественно, в этом нам помогает также и воскурение болотной травы.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_12");	//Болотник расслабляет тело и успокаивает сознание, помогает сосредоточиться на главном и способствует познанию истины.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_13");	//К сожалению, в этих местах его найти куда сложнее, чем на тех болотах, где раньше находилось наше Братство.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_14");	//Но мы решили и эту проблему. Оказалось, он неплохо приживается и в этих условиях.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_15");	//Разумеется, прежде чем курить, его нужно обработать должным образом. Этим как раз занимаются наши новые послушники.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_16");	//Верховную гильдию представляем мы - Гуру. В нас живет дух этого лагеря. Мы более опытны в управлении своим подсознанием и обладаем великим знанием истины.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_17");	//Следом идут Стражи. Их сила находит применение в боях. Стражи славятся неукротимой силой духа. БОЙСЯ встать у них на пути!
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_18");	//Их возглавляет Гор На Кош - лучший из Стражей нашего Братства.
-	AI_Output(other,self,"DIA_BaalOrun_TellAbout_01_19");	//А что насчет Кор Ангара?
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_20");	//К сожалению, мы не знаем, где он и что стало с ним. Когда началось то безумие во время падения Барьера, его не было в лагере.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_21");	//Возможно, он еще жив. Возможно - нет. Если вдруг встретишь его, то передай ему, что Братство еще живо и нуждается в его помощи.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_22");	//Остальные наши братья - послушники. Многие из них - те, кого ты, возможно, встречал в нашем лагере на болотах.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_23");	//Но есть и те, кто уже присоединился к нам здесь. Естественно, их не так много.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_24");	//Обычно их направляет сюда Идол Парвез - он постоянно находится в городе в поисках новых рекрутов.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_25");	//Это нелегкая работа - узреть среди толпы человека, способного к самопознанию и готовому разделить с нами нашу веру.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_26");	//Если встретишь его - поговори с ним.
-	AI_Output(other,self,"DIA_BaalOrun_TellAbout_01_27");	//А если он не захочет разговаривать со мной?
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_28");	//Конечно, он не станет говорить с тобой просто так - он же ничего не знает про тебя и про тот путь, который ты, возможно, изберешь.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_29");	//Просто передай ему от меня этот подарок - думаю, он сделает для тебя исключение.
+	AI_Output(other,self, " DIA_BaalOrun_TellAbout_01_01 " );	// Tell me about the Brotherhood.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_02 " );	// After the Sleeper, the demon we all mistakenly worship as our savior, was cast out of this world...
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_03 " );	// ...The Brotherhood is on the verge of total annihilation!
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_04 " );	// Most of our brothers have either died or gone insane. They literally went crazy, and almost did not look like people!
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_05 " );	// Those who still managed to save their lives and save their minds from madness went here to Khorinis...
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_06 " );	// ...in the hope of finding peace here and the opportunity to comprehend everything experienced.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_07 " );	// We established our small camp here, and began to spend time in search of true knowledge that can restore our peace of mind...
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_08 " );	// ...and help find a new way of knowing this world. And soon we succeeded.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_09 " );	// We have learned the right lessons from our knowledge in this area. Now we are trying to know the essence of what is happening in a different way.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_10 " );	// The essence of our new teaching is the disclosure of the hidden possibilities of your consciousness with the help of prolonged meditation.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_11 " );	// Naturally, the incense of marsh grass also helps us in this.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_12 " );	// Swamp relaxes the body and calms the mind, helps to focus on the main thing and contributes to the knowledge of the truth.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_13 " );	// Unfortunately, in these places it is much more difficult to find him than in those swamps where our Brotherhood used to be.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_14 " );	// But we also solved this problem. It turned out that he takes root well in these conditions.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_15 " );	// Of course, before smoking, it must be processed properly. This is exactly what our new novices are doing.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_16 " );	// We represent the Supreme Guild - Guru. The spirit of this camp lives in us. We are more experienced in controlling our subconscious and have a great knowledge of the truth.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_17 " );	// Guardians follow. Their strength is used in battles. Guardians are famous for their indomitable fortitude. DON'T get in their way!
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_18 " );	// They are led by Gor Na Kosh, the best of the Guardians of our Brotherhood.
+	AI_Output(other,self, " DIA_BaalOrun_TellAbout_01_19 " );	// What about Kor Angar?
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_20 " );	// Unfortunately, we don't know where he is or what became of him. When that madness began during the fall of the Barrier, he was not in the camp.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_21 " );	// Maybe he's still alive. Probably no. If you suddenly meet him, then tell him that the Brotherhood is still alive and needs his help.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_22 " );	// The rest of our brothers are novices. Many of them are the ones you may have met in our swamp camp.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_23 " );	// But there are those who have already joined us here. Naturally, there are not many of them.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_24 " );	// They are usually sent here by Idol Parvez - he is constantly in the city in search of new recruits.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_25 " );	// It is not an easy job to see among the crowd a person capable of self-knowledge and ready to share our faith with us.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_26 " );	// If you meet him, talk to him.
+	AI_Output(other,self, " DIA_BaalOrun_TellAbout_01_27 " );	// And if he doesn't want to talk to me?
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_28 " );	// Of course, he won't talk to you just like that - he doesn't know anything about you or the path you might choose.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_29 " );	// Just give him this gift from me - I think he'll make an exception for you.
 	B_GiveInvItems(self,other,itmi_specialjoint,1);
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_30");	//Вот, возьми. Я думаю, это все, что мог рассказать о нашем Братстве.
-	AI_Output(other,self,"DIA_BaalOrun_TellAbout_01_31");	//Спасибо, господин.
+	AI_Output(self,other, " DIA_BaalOrun_TellAbout_01_30 " );	// Here, take this. I think that's all I could tell about our Brotherhood.
+	AI_Output(other,self, " DIA_BaalOrun_TellAbout_01_31 " );	// Thank you sir.
 	Log_CreateTopic(TOPIC_KORANGARMEET,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KORANGARMEET,LOG_Running);
 	MIS_KORANGAR = LOG_Running;
-	B_LogEntry(TOPIC_KORANGARMEET,"Идол Оран не знает, что случилось с бывшим лидером Стражей Кор Ангаром. И, если я вдруг его встречу, он попросил передать ему, что Братство живо и нуждается в нем.");
+	; _ _ _ _ _ _
 };
 
 
-instance DIA_BAALORUN_TELLKORANGAR(C_Info)
+instance DIA_DIA_INFO (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_tellkorangar_condition;
-	information = dia_baalorun_tellkorangar_info;
+	information = dia_content_info;
 	permanent = FALSE;
-	description = "Я нашел Кор Ангара.";
+	description = " I found Kor Angar. " ;
 };
 
 
-func int dia_baalorun_tellkorangar_condition()
+func int dia_condition_condition()
 {
 	if(MIS_KORANGAR == LOG_SUCCESS)
 	{
@@ -974,58 +975,58 @@ func int dia_baalorun_tellkorangar_condition()
 	};
 };
 
-func void dia_baalorun_tellkorangar_info()
+func void load_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_00");	//Я нашел Кор Ангара.
+	AI_Output(other,self, " DIA_BaalOrun_TellKorAngar_01_00 " );	// I found Kor Angar.
 	if((other.guild == GIL_GUR) || (other.guild == GIL_TPL) || (other.guild == GIL_SEK))
 	{
-		AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_01");	//Что с ним?
+		AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_01 " );	// What's wrong with him?
 		if(ANGARISDEAD == TRUE)
 		{
-			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_02");	//Он мертв.
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_03");	//(в ужасе) О нет! Этого не может быть!
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_04");	//Это огромная потеря для Братства и для всех нас...
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_05");	//Нам будет нелегко свыкнуться с этой мыслью.
+			AI_Output(other,self, " DIA_BaalOrun_TellKorAngar_01_02 " );	// He's dead.
+			AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_03 " );	// (horrified) Oh no! It can't be!
+			AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_04 " );	// This is a huge loss for the Brotherhood and for all of us...
+			AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_05 " );	// We'll have a hard time getting used to this idea.
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_06");	//Все в порядке - он жив. Я встретил его в Долине Рудников.
-			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_07");	//Я рассказал ему о нашем Братстве, и, думаю, скоро он вновь присоединится к нам.
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_08");	//Это отличная новость!
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_09");	//Все братья возрадуются его возвращению!
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_10");	//Вот, возьми это в качестве вознаграждения за свои труды.
+			AI_Output(other,self, " DIA_BaalOrun_TellKorAngar_01_06 " );	// It's okay - he's alive. I met him in the Valley of Mines.
+			AI_Output(other,self, " DIA_BaalOrun_TellKorAngar_01_07 " );	// I told him about our Brotherhood, and I think he will join us again soon.
+			AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_08 " );	// That's great news!
+			AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_09 " );	// All brothers will rejoice at his return!
+			AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_10 " );	// Here, take this as a reward for your labors.
 			B_GiveInvItems(self,other,ItMi_Gold,200);
 			ANGARCANBACK = TRUE;
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_11");	//(вопросительный вздох)
+		AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_11 " );	// (questioning breath)
 		if(ANGARISDEAD == TRUE)
 		{
-			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_12");	//Он мертв!
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_13");	//(печальный вздох)
+			AI_Output(other,self, " DIA_BaalOrun_TellKorAngar_01_12 " );	// He's dead!
+			AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_13 " );	// (sad sigh)
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_14");	//И он жив. Я встретил его в Долине Рудников.
-			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_15");	//Я рассказал ему о вашем Братстве, и, думаю, скоро он вновь присоединится к вам.
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_16");	//(вздох с облегчением)
+			AI_Output(other,self, " DIA_BaalOrun_TellKorAngar_01_14 " );	// And he's alive. I met him in the Valley of Mines.
+			AI_Output(other,self, " DIA_BaalOrun_TellKorAngar_01_15 " );	// I told him about your Brotherhood, and I think he will join you again soon.
+			AI_Output(self,other, " DIA_BaalOrun_TellKorAngar_01_16 " );	// (sigh of relief)
 			ANGARCANBACK = TRUE;
 		};
 	};
 };
 
 
-instance DIA_BAALORUN_TELLPALADIN(C_Info)
+instance DIA_BAALORUN_TELLPALADIN (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_tellpaladin_condition;
 	information = dia_baalorun_tellpaladin_info;
 	permanent = FALSE;
-	description = "У меня есть одна проблема.";
+	description = " I have one problem. " ;
 };
 
 
@@ -1039,26 +1040,26 @@ func int dia_baalorun_tellpaladin_condition()
 
 func void dia_baalorun_tellpaladin_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_00");	//У меня есть одна проблема.
-	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_01");	//Какая проблема?
-	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_02");	//Мне нужно срочно поговорить с главой паладинов в городе. Но стражники вряд ли пропустят меня к лорду Хагену.
-	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_03");	//Ты сможешь мне помочь в этом?
-	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_04");	//А зачем тебе это нужно?
-	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_05");	//У меня есть одно очень важное сообщение для него.
-	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_06");	//Хмм... Ну, если для тебя это так важно...
-	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_07");	//Как ты уже понял, Братство обладает некоторым влиянием и связями в высших кругах городской знати.
-	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_08");	//И, думаю, мы решим эту проблему, если ты станешь одним из нас - Гуру или Стражем Братства.
+	AI_Output(other,self, " DIA_BaalOrun_TellPaladin_01_00 " );	// I have one problem.
+	AI_Output(self,other, " DIA_BaalOrun_TellPaladin_01_01 " );	// What's the problem?
+	AI_Output(other,self, " DIA_BaalOrun_TellPaladin_01_02 " );	// I need to speak to the paladin chief in town urgently. But the guards are unlikely to let me through to Lord Hagen.
+	AI_Output(other,self, " DIA_BaalOrun_TellPaladin_01_03 " );	// Can you help me with this?
+	AI_Output(self,other, " DIA_BaalOrun_TellPaladin_01_04 " );	// Why do you need it?
+	AI_Output(other,self, " DIA_BaalOrun_TellPaladin_01_05 " );	// I have one very important message for him.
+	AI_Output(self,other, " DIA_BaalOrun_TellPaladin_01_06 " );	// Hmm... Well, if it's that important to you...
+	AI_Output(self,other, " DIA_BaalOrun_TellPaladin_01_07 " );	// As you have already understood, the Brotherhood has some influence and connections in the highest circles of the city's nobility.
+	AI_Output(self,other, " DIA_BaalOrun_TellPaladin_01_08 " );	// And I think we will solve this problem if you become one of us - Guru or Guardian of the Brotherhood.
 };
 
 
-instance DIA_BAALORUN_CANJOINPSI(C_Info)
+instance DIA_CANJOINPSI ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_canjoinpsi_condition;
-	information = dia_baalorun_canjoinpsi_info;
+	information = dia_user_canjoinpsi_info;
 	permanent = TRUE;
-	description = "Я хочу присоединиться к Братству.";
+	description = " I want to join the Brotherhood. " ;
 };
 
 
@@ -1070,20 +1071,20 @@ func int dia_baalorun_canjoinpsi_condition()
 	};
 };
 
-func void dia_baalorun_canjoinpsi_info()
+func void psi_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_CanJoinPsi_01_01");	//Я хочу присоединиться к Братству.
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_01_02");	//Это твое окончательное решение? Ты точно готов принять нашу веру?
+	AI_Output(other,self, " DIA_BaalOrun_CanJoinPsi_01_01 " );	// I want to join the Brotherhood.
+	AI_Output(self,other, " DIA_BaalOrun_CanJoinPsi_01_02 " );	// Is this your final decision? Are you sure you're ready to accept our faith?
 	Info_ClearChoices(dia_baalorun_canjoinpsi);
-	Info_AddChoice(dia_baalorun_canjoinpsi,"Я передумал.",dia_baalorun_canjoinpsi_no);
-	Info_AddChoice(dia_baalorun_canjoinpsi,"Да, я готов.",dia_baalorun_canjoinpsi_yes);
+	Info_AddChoice(dia_baalorun_canjoinpsi, " I changed my mind. " ,dia_baalorun_canjoinpsi_no);
+	Info_AddChoice(dia_baalorun_canjoinpsi, " Yes, if you. " ,dia_baalorun_canjoinpsi_yes);
 };
 
 func void dia_baalorun_canjoinpsi_yes()
 {
-	AI_Output(other,self,"DIA_BaalOrun_CanJoinPsi_Yes_01_00");	//Да, я готов.
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_01");	//Хорошо. Я знал, что ты сделаешь правильный выбор, и ты его сделал.
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_02");	//Добро пожаловать в наше Братство!
+	AI_Output(other,self, " DIA_BaalOrun_CanJoinPsi_Yes_01_00 " );	// Yes, I'm ready.
+	AI_Output(self,other, " DIA_BaalOrun_CanJoinPsi_Yes_01_01 " );	// Good. I knew you would make the right choice and you did.
+	AI_Output(self,other, " DIA_BaalOrun_CanJoinPsi_Yes_01_02 " );	// Welcome to our Brotherhood!
 	other.guild = GIL_SEK;
 	Snd_Play("LEVELUP");
 	CheckHeroGuild[0] = TRUE;
@@ -1095,13 +1096,13 @@ func void dia_baalorun_canjoinpsi_yes()
 		CanTeachTownMaster = TRUE;
 	};
 
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_04");	//Теперь ты один из нас, брат.
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_05");	//Как послушник Братства, ты должен будешь выполнять некоторые обязанности в лагере.
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_07");	//Ты также можешь приходить и ко мне, если вдруг понадобится моя помощь.
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_08");	//А теперь ступай и постарайся приносить пользу во имя нашей общей веры!
-	SLD_Aufnahme = LOG_OBSOLETE;
-	KDF_Aufnahme = LOG_OBSOLETE;
-	MIL_Aufnahme = LOG_OBSOLETE;
+	AI_Output(self,other, " DIA_BaalOrun_CanJoinPsi_Yes_01_04 " );	// You're one of us now, brother.
+	AI_Output(self,other, " DIA_BaalOrun_CanJoinPsi_Yes_01_05 " );	// As an acolyte of the Brotherhood, you will have to perform certain duties in the camp.
+	AI_Output(self,other, " DIA_BaalOrun_CanJoinPsi_Yes_01_07 " );	// You can also come to me if you need my help.
+	AI_Output(self,other, " DIA_BaalOrun_CanJoinPsi_Yes_01_08 " );	// And now go and try to be useful in the name of our common faith!
+	SLD_recording = LOG_OBSOLETE ;
+	KDF_Recording = LOG_OBSOLETE ;
+	MIL_recording = LOG_OBSOLETE ;
 	MIS_BECOMEKDW = LOG_OBSOLETE;
 	MIS_BECOMEKDM = LOG_OBSOLETE;
 	MIS_PSICAMPJOIN = LOG_SUCCESS;
@@ -1119,15 +1120,15 @@ func void dia_baalorun_canjoinpsi_yes()
 		Log_SetTopicStatus(TOPIC_SLDRespekt,LOG_OBSOLETE);
 	};
 
-	B_LogEntry(TOPIC_PSICAMPJOIN,"Я вступил в Братство.");
+	B_LogEntry( TOPIC_PSICAMPJOIN , " I joined the Brotherhood. " );
 	B_GivePlayerXP(500);
 	Info_ClearChoices(dia_baalorun_canjoinpsi);
 };
 
 func void dia_baalorun_canjoinpsi_no()
 {
-	AI_Output(other,self,"DIA_BaalOrun_CanJoinPsi_No_01_00");	//Я передумал.
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_No_01_01");	//Я тебя не тороплю с ответом. Можешь думать об этом столько времени, сколько тебе нужно.
+	AI_Output(other,self, " DIA_BaalOrun_CanJoinPsi_No_01_00 " );	// I changed my mind.
+	AI_Output(self,other, " DIA_BaalOrun_CanJoinPsi_No_01_01 " );	// I'm not rushing you with an answer. You can think about it for as long as you need.
 	Info_ClearChoices(dia_baalorun_canjoinpsi);
 };
 
@@ -1139,7 +1140,7 @@ instance DIA_BAALORUN_MAGICSYMBOLS(C_Info)
 	condition = dia_baalorun_magicsymbols_condition;
 	information = dia_baalorun_magicsymbols_info;
 	permanent = FALSE;
-	description = "Что это за рисунки у всех членов Братства на теле?";
+	description = " What are these drawings on the bodies of all members of the Brotherhood? " ;
 };
 
 
@@ -1153,26 +1154,26 @@ func int dia_baalorun_magicsymbols_condition()
 
 func void dia_baalorun_magicsymbols_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_MagicSymbols_01_00");	//Что это за рисунки у всех членов Братства на теле?
-	AI_Output(self,other,"DIA_BaalOrun_MagicSymbols_01_01");	//Это не рисунки, а магические символы, которые способны защитить их обладателя от магии.
-	AI_Output(self,other,"DIA_BaalOrun_MagicSymbols_01_03");	//И поскольку ты теперь один из нас, то сможешь носить их, так же, как и остальные наши братья.
-	AI_Output(self,other,"DIA_BaalOrun_MagicSymbols_01_04");	//Обратись к послушнику Вирану. Он поможет тебе с этим.
+	AI_Output(other,self, " DIA_BaalOrun_MagicSymbols_01_00 " );	// What are these drawings on the body of all members of the Brotherhood?
+	AI_Output(self,other, " DIA_BaalOrun_MagicSymbols_01_01 " );	// These are not drawings, but magical symbols that can protect their owner from magic.
+	AI_Output(self,other, " DIA_BaalOrun_MagicSymbols_01_03 " );	// And since you're one of us now, you can wear them, just like the rest of our brothers.
+	AI_Output(self,other, " DIA_BaalOrun_MagicSymbols_01_04 " );	// Talk to Acolyte Viran. He will help you with this.
 	CANMAKESYMBOLS = TRUE;
 };
 
 
-instance DIA_BAALORUN_TELLPALADINOK(C_Info)
+instance DIA_THE_THE_THE_THE_THE_THE_THE_THE_THE_THE_THE_THE_THE_THE (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_tellpaladinok_condition;
-	information = dia_baalorun_tellpaladinok_info;
+	information = dia_company_tellpaladinok_info;
 	permanent = FALSE;
-	description = "Помоги мне попасть к лорду Хагену.";
+	description = " Help me get to Lord Hagen. " ;
 };
 
 
-func int dia_baalorun_tellpaladinok_condition()
+func int dia_condition_condition()
 {
 	if(((other.guild == GIL_GUR) || (other.guild == GIL_TPL)) && (Kapitel < 2))
 	{
@@ -1180,57 +1181,57 @@ func int dia_baalorun_tellpaladinok_condition()
 	};
 };
 
-func void dia_baalorun_tellpaladinok_info()
+func void _info_info()
 {
-	if(Npc_KnowsInfo(other,dia_baalorun_tellpaladin))
+	if ( Npc_KnowsInfo ( other , this_builder_info ))
 	{
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_00");	//Помоги мне попасть к лорду Хагену.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_01");	//Ну, поскольку ты теперь один из братьев, мы попробуем решить твою проблему.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_02");	//Ты уже встречался с городской главой Хориниса. Думаю, он тебя тоже запомнил.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_03");	//Я договорюсь с ним о том, что якобы у тебя с ним назначена встреча в ратуше.
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_04");	//Ты думаешь, стражники пустят меня?
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_05");	//Думаю, да. Ставить под сомнение слова такого уважаемого и высокопоставленного человека, как Лариус, - просто глупо.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_06");	//А для полной уверенности я сообщу Лариусу некий, так скажем, пароль...
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_07");	//...который откроет тебе доступ в саму ратушу. Так стражи поймут, что ты именно тот человек, которого ждет мэр.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_08");	//Думаю, слово 'ЮБЕРИОН' вполне подойдет для этого. Запомни его!
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_09");	//Я помню мастера Юбериона - имя такого человека трудно забыть.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_10");	//Хорошо. А теперь ступай - у меня еще много других дел.
+		AI_Output(other,self, " DIA_BaalOrun_TellPaladinOk_01_00 " );	// Help me get to Lord Hagen.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_01 " );	// Well, since you're one of the brothers now, we'll try to solve your problem.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_02 " );	// You've already met with the mayor of Khorinis. I think he remembers you too.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_03 " );	// I'll arrange with him that supposedly you have an appointment with him at the town hall.
+		AI_Output(other,self, " DIA_BaalOrun_TellPaladinOk_01_04 " );	// Do you think the guards will let me in?
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_05 " );	// I think so. To question the words of such a respected and high-ranking person as Larius is simply stupid.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_06 " );	// And for complete certainty, I will tell Larius some, so to speak, password...
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_07 " );	// ...which will give you access to the town hall itself. So the guards will understand that you are exactly the person that the mayor is waiting for.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_08 " );	// I think the word 'Uberion' is fine for this. Remember it!
+		AI_Output(other,self, " DIA_BaalOrun_TellPaladinOk_01_09 " );	// I remember Master Uberion - the name of such a man is hard to forget.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_10 " );	// Good. Now go - I have a lot of other things to do.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_11");	//Помоги мне попасть к лорду Хагену.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_12");	//(удивленно) А зачем тебе это нужно?
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_13");	//У меня есть для него одно очень важное сообщение, но стражники вряд ли пропустят меня к нему.
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_14");	//Ты сможешь мне помочь в этом?
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_15");	//Ну, если для тебя это так важно...
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_16");	//Как ты уже понял, Братство обладает некоторым влиянием и связями в высших кругах городской знати.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_17");	//Думаю, мы найдем способ помочь тебе в решении этого вопроса.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_18");	//Ты уже встречался с городской главой Хориниса. Думаю, он тебя тоже запомнил.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_19");	//Я договорюсь с ним о том, что якобы у тебя с ним назначена встреча в ратуше.
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_20");	//Ты думаешь, стражники пустят меня?
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_21");	//Думаю, да. Ставить под сомнение слова такого уважаемого и высокопоставленного человека, как Лариус, - просто глупо.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_22");	//А для полной уверенности я сообщу Лариусу некий, так скажем, пароль...
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_23");	//...который откроет тебе доступ в саму ратушу. Так стражи поймут, что ты именно тот человек, которого ждет мэр.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_24");	//Думаю, слово 'ЮБЕРИОН' вполне подойдет для этого. Запомни его!
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_25");	//Я помню мастера Юбериона - имя такого человека трудно забыть.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_26");	//Хорошо. А теперь ступай - у меня еще много других дел.
+		AI_Output(other,self, " DIA_BaalOrun_TellPaladinOk_01_11 " );	// Help me get to Lord Hagen.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_12 " );	// (surprised) Why do you need this?
+		AI_Output(other,self, " DIA_BaalOrun_TellPaladinOk_01_13 " );	// I have one very important message for him, but the guards are unlikely to let me through to him.
+		AI_Output(other,self, " DIA_BaalOrun_TellPaladinOk_01_14 " );	// Can you help me with this?
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_15 " );	// Well, if it's that important to you...
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_16 " );	// As you have already understood, the Brotherhood has some influence and connections in the highest circles of the city's nobility.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_17 " );	// I think we'll find a way to help you with this issue.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_18 " );	// You've already met with the mayor of Khorinis. I think he remembers you too.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_19 " );	// I'll arrange with him that supposedly you have an appointment with him at the town hall.
+		AI_Output(other,self, " DIA_BaalOrun_TellPaladinOk_01_20 " );	// Do you think the guards will let me in?
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_21 " );	// I think so. To question the words of such a respected and high-ranking person as Larius is simply stupid.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_22 " );	// And for complete certainty, I will tell Larius some, so to speak, password...
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_23 " );	// ...which will give you access to the town hall itself. So the guards will understand that you are exactly the person that the mayor is waiting for.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_24 " );	// I think the word 'Uberion' is fine for this. Remember it!
+		AI_Output(other,self, " DIA_BaalOrun_TellPaladinOk_01_25 " );	// I remember Master Uberion - the name of such a man is hard to forget.
+		AI_Output(self,other, " DIA_BaalOrun_TellPaladinOk_01_26 " );	// Good. Now go - I have a lot of other things to do.
 	};
 	LARIUSAWAITS = TRUE;
 };
 
 
-instance DIA_BAALORUN_PALADINWATCH(C_Info)
+instance DIA_LORD_WATCH (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_paladinwatch_condition;
-	information = dia_baalorun_paladinwatch_info;
+	information = dia_battery_palacewatch_info;
 	permanent = FALSE;
-	description = "У тебя есть для меня задания?";
+	description = " Do you have tasks for me? " ;
 };
 
 
-func int dia_baalorun_paladinwatch_condition()
+func int dia_battery_palacewatch_condition()
 {
 	if((hero.guild == GIL_GUR) || (hero.guild == GIL_TPL))
 	{
@@ -1238,54 +1239,54 @@ func int dia_baalorun_paladinwatch_condition()
 	};
 };
 
-func void dia_baalorun_paladinwatch_info()
+func void dia_paladywatch_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_0A");	//У тебя есть поручения для меня?
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_00");	//Хорошо, что ты спросил.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_01");	//У меня есть для тебя одно чрезвычайно важное поручение.
-	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_02");	//Что я должен сделать?
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_04");	//Ты уже знаешь, что недавно в Хоринис прибыл большой отряд паладинов.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_05");	//Их возглавляет лорд Хаген - один из самых высокопоставленных генералов их ордена.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_06");	//Как ты сам можешь догадываться, появление здесь такой многозначительной фигуры, как лорд Хаген, - достаточно необычная вещь.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_07");	//Как утверждают сами паладины, причина их появления на острове объясняется возможной угрозой атаки Хориниса со стороны орков.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_08");	//Однако совершено ясно, что тех сил, которыми здесь располагает лорд Хаген, не хватит на то, чтобы обеспечить должную защиту города в случае нападения.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_09");	//Кроме того, по слухам, рудниковую колонию наводнили орки. И я не думаю, что тот маленький отряд сможет выбить их оттуда. Скорее всего произойдет обратное.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_10");	//Лорд Хаген должен был это понимать, а если так...
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_11");	//...тогда паладины преследуют на острове совершенно иные цели, нежели те, о которых сами всем говорят.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_12");	//В связи с этой непонятной ситуацией, наше Братство не может оставаться в стороне от происходящих здесь событий.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_13");	//В конце концов, если вторжение орков в Хоринис действительно не миф, а реальность...
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_14");	//...то от развития дальнейших событий зависит и наша судьба.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_15");	//Поэтому Братству было бы чрезвычайно полезно и необходимо знать точную причину появления паладинов на острове и располагать информацией о возможном вторжении орков в эту часть острова.
-	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_16");	//И ты хочешь, чтобы я узнал обо всем об этом побольше?
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_17");	//Да, именно это я и хочу поручить тебе.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_18");	//Мне нужны ответы...
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_19");	//...ответы на вопросы, от которых зависит наша дальнейшая судьба.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_20");	//Я понимаю, что установить истинные причины всего происходящего будет совсем не легкой задачей. Но у нас нет другого выбора.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_21");	//Сам понимаешь, кто предупрежден - тот вооружен.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_22");	//Итак, меня интересуют три вопроса...
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_23");	//Первое - зачем паладины прибыли в Хоринис.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_34");	//Второе - какова ситуация в Долине Рудников и что слышно он вторжении орков.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_25");	//И последнее - что постараются предпринять паладины в случае атаки на Хоринис.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_26");	//Я очень рассчитываю на тебя и на твой успех в этом деле.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_27");	//На твоем бы месте я попробовал добиться ответов на эти вопросы от самого лорда Хагена.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_28");	//Конечно, возможно, он даже и не станет разговаривать с тобой, но все-таки попробовать стоит.
-	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_29");	//Хорошо. Я постараюсь узнать все, что смогу.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_30");	//Как только тебе станет что-нибудь известно, немедленно сообщи мне.
+	AI_Output(other,self, " DIA_BaalOrun_PaladinWatch_01_0A " );	// Do you have errands for me?
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_00 " );	// Good thing you asked.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_01 " );	// I have one extremely important task for you.
+	AI_Output(other,self, " DIA_BaalOrun_PaladinWatch_01_02 " );	// What should I do?
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_04 " );	// You already know that a large band of paladins recently arrived in Khorinis.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_05 " );	// They are led by Lord Hagen, one of the highest ranking generals of their order.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_06 " );	// As you can imagine, the appearance of such a significant figure as Lord Hagen here is quite an unusual thing.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_07 " );	// According to the paladins themselves, the reason for their appearance on the island is due to the possible threat of an attack by Khorinis from the orcs.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_08 " );	// However, it is clear that the forces that Lord Hagen has here will not be enough to ensure proper defense of the city in the event of an attack.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_09 " );	// Also, Orcs are rumored to have overrun the mining colony. And I don't think that little band can get them out of there. Most likely the opposite will happen.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_10 " );	// Lord Hagen should have understood this, but if so...
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_11 " );	// ...then the paladins pursue completely different goals on the island than those they themselves tell everyone about.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_12 " );	// In connection with this incomprehensible situation, our Brotherhood cannot remain aloof from the events taking place here.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_13 " );	// After all, if the orc invasion of Khorinis is really not a myth, but a reality...
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_14 " );	// ...then our fate also depends on the development of further events.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_15 " );	// Therefore, it would be extremely useful and necessary for the Brotherhood to know the exact reason for the appearance of paladins on the island and to have information about a possible invasion of orcs in this part of the island.
+	AI_Output(other,self, " DIA_BaalOrun_PaladinWatch_01_16 " );	// And you want me to know more about all this?
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_17 " );	// Yes, that's exactly what I want you to do.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_18 " );	// I need answers...
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_19 " );	// ...answers to questions on which our future fate depends.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_20 " );	// I understand that establishing the true causes of everything that is happening will not be an easy task at all. But we have no other choice.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_21 " );	// You yourself understand who is warned - he is armed.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_22 " );	// So, I'm interested in three questions...
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_23 " );	// First, why did the paladins come to Khorinis.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_34 " );	// Second - what is the situation in the Valley of the Mines and what is heard about the orc invasion.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_25 " );	// And finally, what will the paladins try to do in case of an attack on Khorinis.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_26 " );	// I'm counting on you and your success in this endeavor.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_27 " );	// If I were you, I'd try to get answers to these questions from Lord Hagen himself.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_28 " );	// Of course, he probably won't even talk to you, but it's still worth a try.
+	AI_Output(other,self, " DIA_BaalOrun_PaladinWatch_01_29 " );	// Good. I'll try to find out everything I can.
+	AI_Output(self,other, " DIA_BaalOrun_PaladinWatch_01_30 " );	// As soon as you know anything, let me know immediately.
 	Log_CreateTopic(TOPIC_PALADINWATCH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PALADINWATCH,LOG_Running);
 	MIS_PALADINWATCH = LOG_Running;
-	B_LogEntry(TOPIC_PALADINWATCH,"Идол Оран хочет знать, почему паладины прибыли в Хоринис. Его настораживает то, что они скрывают истинные причины своего появления здесь. Также Идол Оран интересуется ситуацией в Долине Рудников, где, по слухам, расположилась армия орков.");
+	B_LogEntry( TOPIC_PALADINWATCH , " Idol Oran wants to know why the paladins have come to Khorinis. He is worried that they hide the true reasons for their presence here. Idol Oran is also interested in the situation in the Valley of Mines, where the orc army is rumored to be located. " );
 };
 
 
-instance DIA_BAALORUN_SPYBERICHT(C_Info)
+instance DIA_SPI_BERICHT ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 1;
 	condition = dia_baalorun_spybericht_condition;
-	information = dia_baalorun_spybericht_info;
+	information = dia_baalorun_spymessage_info;
 	permanent = TRUE;
-	description = "Я подумал, мне стоит доложить о прибытии...";
+	description = " I thought I should report back... " ;
 };
 
 
@@ -1301,135 +1302,135 @@ func void dia_baalorun_spybericht_info()
 {
 	var int countnews;
 	countnews = 0;
-	AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_00");	//Я подумал, мне стоит доложить о прибытии...
-	AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_01");	//Хорошо! Я хочу быть в курсе всего происходящего.
-	AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_02");	//Что ты узнал?
-	if((IDOLORANQUESTIONFULLCOMPLETE == TRUE) && (TELLORANQUESTIONONE == FALSE) && (TELLORANQUESTIONTWO == FALSE) && (TELLORANQUESTIONTHREE == FALSE) && (TELLORANQUESTIONFOUR == FALSE) && (TELLORANQUESTIONFIVE == FALSE))
+	AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_00 " );	// I thought I should announce my arrival...
+	AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_01 " );	// Good! I want to be aware of everything that is happening.
+	AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_02 " );	// What did you learn?
+	if (( IDOLORANQUESTIONFULL  ==  TRUE ) && ( TELLORANQUESTIONONE  ==  FALSE ) && ( TELLORANQUESTIONTWO  ==  FALSE ) && ( TELLORANQUESTIONTHREE  ==  FALSE ) && ( TELLORANQUESTIONFOUR  ==  FALSE ) && ( TELLORANQUESTIONFIVE  ==  FALSE ))
 	{
 		B_GivePlayerXP(1000);
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_03");	//Мне кое-что удалось узнать о причине появления паладинов в Хоринисе.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_04");	//Судя по всему, приказ об их прибытии на остров поступил от самого короля Робара...
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_05");	//...и, по словам самого лорда Хагена, их миссия очень важна для судьбы всего королевства.
-		AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_06");	//Продолжай...
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_07");	//Основная причина, по которой паладины прибыли на этот остров, - это магическая руда.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_08");	//Без достаточного количества оружия из магической руды армия короля не будет иметь ни единого шанса в войне против орков.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_09");	//Отряд, который лорд Хаген отправил в Долину Рудников, должен был выяснить ситуацию с возможностью добычи руды на острове.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_10");	//А после этого паладины планировали вернуться обратно на материк.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_11");	//Тот отряд, что отправился для разъяснения ситуации с рудой, обосновался в старом замке баронов.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_12");	//И, похоже, их дела обстоят очень плохо.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_15");	//Ко всему прочему, орки взяли замок в кольцо, окружив паладинов со всех сторон.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_16");	//А недавно замок был атакован драконами.
-		AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_17");	//Драконами?
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_18");	//Да. Гаронд послал меня с донесением к лорду Хагену, чтобы рассказать обо всем там происходящем.
-		AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_19");	//Ты передал его лорду Хагену?
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_20");	//Да, я доставил письмо. Он был сильно огорчен всем этим.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_21");	//Теперь у него одна головная боль - как вывести своих людей из окружения.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_22");	//Пока он этого не сделает, паладины не покинут остров.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_23");	//Так что, в случае нападения орков, - а, судя по всему, этого осталось ждать недолго...
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_24");	//...паладины останутся на острове и будут защищать Хоринис.
-		AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_25");	//Хорошо! Думаю, того, что ты узнал, вполне достаточно, чтобы прояснить сложившуюся ситуацию.
-		AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_26");	//(задумчиво) Все те новости, что ты принес, вырисовывают достаточно темную картину. Рано или поздно сюда заявятся орки, и тогда...
-		AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_27");	//Радует одно, что паладины не оставят Хоринис на растерзание оркам, хотя и волей случая.
-		AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_28");	//Я должен поблагодарить тебя. Ты оказал Братству неоценимую услугу!
-		AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_30");	//Вот, возьми это в качестве награды за свои труды.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_03 " );	// I managed to learn something about the reason for the appearance of paladins in Khorinis.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_04 " );	// Apparently, the order for their arrival on the island came from King Rhobar himself...
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_05 " );	// ...and, according to Lord Hagen himself, their mission is very important for the fate of the entire kingdom.
+		AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_06 " );	// Continue...
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_07 " );	// The main reason the paladins came to this island is the magic ore.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_08 " );	// Without enough magic ore weapons, the king's army won't stand a chance against the orcs.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_09 " );	// The detachment that Lord Hagen sent to the Valley of Mines was to investigate the situation with the possibility of mining on the island.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_10 " );	// And after that, the paladins planned to go back to the mainland.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_11 " );	// The detachment that went to clarify the situation with the ore settled in the old castle of the barons.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_12 " );	// And they seem to be doing really badly.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_15 " );	// In addition, the orcs took the castle in the ring, surrounding the paladins from all sides.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_16 " );	// And recently the castle was attacked by dragons.
+		AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_17 " );	// Dragons?
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_18 " );	// Yes. Garond sent me with a report to Lord Hagen to tell him everything that was going on there.
+		AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_19 " );	// Did you hand it over to Lord Hagen?
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_20 " );	// Yes, I delivered the letter. He was very upset by all this.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_21 " );	// Now he has one headache - how to get his people out of the environment.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_22 " );	// Until he does, the paladins won't leave the island.
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_23 " );	// So, in case of an orc attack, - and, apparently, this will not be long to wait...
+		AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_24 " );	// ...the paladins will stay on the island and protect Khorinis.
+		AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_25 " );	// Good! I think what you have learned is enough to clarify the current situation.
+		AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_26 " );	// (thoughtfully) All the news you brought paints a pretty dark picture. Sooner or later the orcs will show up here, and then...
+		AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_27 " );	// The only good news is that the paladins will not leave Khorinis to be torn apart by the orcs, although by chance.
+		AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_28 " );	// I have to thank you. You have rendered the Brotherhood an invaluable service!
+		AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_30 " );	// Here, take this as a reward for your labors.
 		B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
 		Log_SetTopicStatus(TOPIC_PALADINWATCH,LOG_SUCCESS);
 		MIS_PALADINWATCH = LOG_SUCCESS;
-		IDOLORANTEST = TRUE;
+		IDOLORANTEST = TRUE ;
 	}
 	else
 	{
-		if((IDOLORANQUESTIONONE == TRUE) && (TELLORANQUESTIONONE == FALSE))
+		if (( QUESTION IDOLOGY  ==  TRUE ) && ( QUESTION QUESTION  ==  FALSE ))
 		{
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_36");	//Мне кое-что удалось узнать о причине появления паладинов в Хоринисе.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_37");	//Судя по всему, приказ об их прибытии на остров поступил от самого короля Робара...
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_38");	//...и, по словам самого лорда Хагена, их миссия очень важна для судьбы всего королевства.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_39");	//Что-нибудь еще?
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_36 " );	// I managed to learn something about the reason for the appearance of paladins in Khorinis.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_37 " );	// Apparently, the order for their arrival on the island came from King Rhobar himself...
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_38 " );	// ...and, according to Lord Hagen himself, their mission is very important for the fate of the entire kingdom.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_39 " );	// Anything else?
 			TELLORANQUESTIONONE = TRUE;
 			countnews = countnews + 1;
 		};
-		if((IDOLORANQUESTIONTWO == TRUE) && (TELLORANQUESTIONTWO == FALSE))
+		if (( TWO IDOLORANCE QUESTIONS  ==  TRUE ) && ( TWO TELLORANQUESTIONS  ==  FALSE ))
 		{
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_40");	//Основная причина, по которой паладины прибыли на этот остров, - это магическая руда.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_41");	//Без достаточного количества оружия из магической руды армия короля не будет иметь ни единого шанса в войне против орков.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_42");	//Отряд, который лорд Хаген отправил в Долину Рудников, должен был выяснить ситуацию с возможностью добычи руды на острове.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_43");	//А после этого паладины планировали вернуться обратно на материк.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_44");	//(встревоженно) Еще есть новости?
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_40 " );	// The main reason the paladins came to this island is the magic ore.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_41 " );	// Without enough magic ore weapons, the king's army won't stand a chance against the orcs.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_42 " );	// The detachment that Lord Hagen sent to the Valley of Mines was to investigate the situation with the possibility of mining on the island.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_43 " );	// And after that, the paladins planned to go back to the mainland.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_44 " );	// (alarmed) Any more news?
 			TELLORANQUESTIONTWO = TRUE;
 			countnews = countnews + 1;
 		};
 		if((IDOLORANQUESTIONTHREE == TRUE) && (TELLORANQUESTIONTHREE == FALSE))
 		{
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_45");	//Тот отряд, что отправился для разъяснения ситуации с рудой, обосновался в старом замке баронов.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_46");	//И, похоже, их дела обстоят очень плохо.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_48");	//Ко всему прочему, орки взяли замок в кольцо, окружив паладинов со всех сторон.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_49");	//А недавно замок был атакован драконами.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_50");	//Драконами?
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_52");	//Что еще?
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_45 " );	// The detachment that went to clarify the situation with the ore settled in the old castle of the barons.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_46 " );	// And they seem to be doing really badly.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_48 " );	// In addition, the orcs took the castle in the ring, surrounding the paladins from all sides.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_49 " );	// And recently the castle was attacked by dragons.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_50 " );	// Dragons?
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_52 " );	// What else?
 			TELLORANQUESTIONTHREE = TRUE;
 			countnews = countnews + 1;
 		};
 		if((IDOLORANQUESTIONFOUR == TRUE) && (TELLORANQUESTIONFOUR == FALSE))
 		{
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_53");	//В общем, экспедиция в Долину Рудников потерпела полный провал.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_54");	//Те залежи руды, что еще доступны для добычи, - судя по всему, не смогут обеспечить потребности всей королевской армии.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_55");	//А паладины понесли ужасающие потери в ходе этой экспедиции.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_56");	//Гаронд послал меня с донесением к лорду Хагену, чтобы рассказать обо всем там происходящем.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_57");	//Это дело не терпит промедления! Немедленно отправляйся к нему.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_53 " );	// In general, the expedition to the Valley of Mines was a complete failure.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_54 " );	// Those ore deposits that are still available for mining, apparently, will not be able to meet the needs of the entire royal army.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_55 " );	// And the paladins suffered horrendous losses during this expedition.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_56 " );	// Garond sent me with a report to Lord Hagen to tell him about everything going on there.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_57 " );	// This business can't wait! Go to him immediately.
 			TELLORANQUESTIONFOUR = TRUE;
 			countnews = countnews + 1;
 		};
 		if((IDOLORANQUESTIONFIVE == TRUE) && (TELLORANQUESTIONFIVE == FALSE))
 		{
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_58");	//Я доставил письмо лорду Хагену. Он был сильно огорчен всем случившимся!
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_59");	//Теперь у него одна головная боль - как вывести своих людей из окружения.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_60");	//Пока он этого не сделает, паладины не покинут остров.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_61");	//Так что, в случае нападения орков, - а, судя по всему, этого осталось ждать недолго...
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_62");	//...паладины останутся на острове и будут защищать Хоринис.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_58 " );	// I delivered a letter to Lord Hagen. He was very upset by everything that happened!
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_59 " );	// Now he has one headache - how to get his people out of the environment.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_60 " );	// Until he does, the paladins won't leave the island.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_61 " );	// So, in case of an orc attack, - and, apparently, this will not be long to wait...
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_62 " );	// ...the paladins will stay on the island and protect Khorinis.
 			TELLORANQUESTIONFIVE = TRUE;
 			countnews = countnews + 1;
 		};
 		if((IDOLORANQUESTIONFULLCOMPLETE == TRUE) && (TELLORANQUESTIONONE == TRUE) && (TELLORANQUESTIONTWO == TRUE) && (TELLORANQUESTIONTHREE == TRUE) && (TELLORANQUESTIONFOUR == TRUE) && (TELLORANQUESTIONFIVE == TRUE))
 		{
 			B_GivePlayerXP(1000);
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_63");	//Хорошо! Думаю, того, что ты узнал, вполне достаточно, чтобы прояснить сложившуюся ситуацию.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_64");	//(задумчиво) Все те новости, что ты принес, вырисовывают достаточно темную картину. Рано или поздно сюда заявятся орки, и тогда...
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_67");	//Радует одно, что паладины не оставят Хоринис на растерзание оркам, хотя и волей случая.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_68");	//Я должен поблагодарить тебя. Ты оказал Братству неоценимую услугу!
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_71");	//Вот, возьми это в качестве награды за свои труды.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_63 " );	// Good! I think what you have learned is enough to clarify the current situation.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_64 " );	// (thoughtfully) All the news you brought paints a pretty dark picture. Sooner or later the orcs will show up here, and then...
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_67 " );	// The only good news is that the paladins will not leave Khorinis to be torn apart by the orcs, although by chance.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_68 " );	// I have to thank you. You have rendered the Brotherhood an invaluable service!
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_71 " );	// Here, take this as a reward for your labors.
 			B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
 			Log_SetTopicStatus(TOPIC_PALADINWATCH,LOG_SUCCESS);
 			MIS_PALADINWATCH = LOG_SUCCESS;
-			IDOLORANTEST = TRUE;
+			IDOLORANTEST = TRUE ;
 		}
 		else if(countnews >= 1)
 		{
 			countnews = countnews * 100;
 			B_GivePlayerXP(countnews);
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_72");	//Пока это все, что мне удалось узнать.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_73");	//Хорошо.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_74");	//Держи меня и далее в курсе дел.
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_72 " );	// So far this is all I've been able to find out.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_73 " );	// Good.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_74 " );	// Keep me updated.
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_75");	//Пока ничего нового.
-			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_76");	//Тогда зачем ты меня отрываешь от дел?
+			AI_Output(other,self, " DIA_BaalOrun_SpyBericht_01_75 " );	// Nothing new yet.
+			AI_Output(self,other, " DIA_BaalOrun_SpyBericht_01_76 " );	// Then why are you interrupting me?
 		};
 	};
 };
 
 
-instance DIA_BAALORUN_CANBEGURU(C_Info)
+instance DIA_CANBEGURU (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 99;
-	condition = dia_baalorun_canbeguru_condition;
-	information = dia_baalorun_canbeguru_info;
+	condition = dia_running_canbeguru_condition;
+	information = dia_user_canbeguru_info;
 	permanent = FALSE;
-	description = "А могу ли я стать Гуру, как ты?";
+	description = " Can I become a Guru like you? " ;
 };
 
-func int dia_baalorun_canbeguru_condition()
+func int dia_condition_condition()
 {
 	if(hero.guild == GIL_SEK)
 	{
@@ -1437,42 +1438,42 @@ func int dia_baalorun_canbeguru_condition()
 	};
 };
 
-func void dia_baalorun_canbeguru_info()
+func void snow_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_CanBeGuru_01_00");	//А могу ли я стать гуру, как ты?
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_01");	//(удивленно) Ты хочешь связать свою линию жизни со священным путем гуру?
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_02");	//Тебе рано еще об этом думать.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_03");	//Чтобы стать одним из нас, мало просто желать этого.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_04");	//Носить робу гуру - это величайшая честь, которой могут быть удостоены только избранные братья!
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_05");	//А ты не входишь в их число.
-	AI_Output(other,self,"DIA_BaalOrun_CanBeGuru_01_06");	//А что для этого надо сделать?
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_07");	//Если ты действительно решил следовать этому пути до конца, то, прежде всего, тебе следует знать несколько вещей.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_08");	//Во-первых, ты должен быть тверд в своей вере.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_09");	//Тот, кто сомневается в своих убеждениях, - тот слаб духом, а это никак не допустимо в нашем случае.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_10");	//Священный Круг Гуру является источником веры для всего нашего Братства.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_11");	//Идолы, своей мудростью, несут божественное просвещение в ума наших братьев, и последние никогда не должны сомневаться в их правоте и могуществе!
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_12");	//Кроме этого, стать Гуру означает быть готовым к самопожертвованию ради Братства.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_13");	//Есть и еще несколько моментов, обозначенных священным путем Гуру, но они не столь существенны по сравнению с теми, что я только что перечислил.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_14");	//Если ты докажешь ими твердость своих убеждений и силу своего духа, то только тогда ты сможешь вступить в наш священный Круг.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_15");	//К сожалению, сейчас ты еще не готов к этому, и твои деяния во славу Братства не столь значимы.
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_16");	//Но я думаю, такое время может настать, и тогда, будь уверен, мы сможем поговорить об этом.
-	AI_Output(other,self,"DIA_BaalOrun_CanBeGuru_01_17");	//Мне все ясно, господин.
+	AI_Output(other,self, " DIA_BaalOrun_CanBeGuru_01_00 " );	// Can I become a guru like you?
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_01 " );	// (surprised) Do you want to connect your lifeline with the sacred path of the guru?
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_02 " );	// It's too early for you to think about it.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_03 " );	// To become one of us, it is not enough just to wish for it.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_04 " );	// Wearing the robe of a guru is the greatest honor that only the chosen brothers can be bestowed!
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_05 " );	// And you are not one of them.
+	AI_Output(other,self, " DIA_BaalOrun_CanBeGuru_01_06 " );	// What should be done for this?
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_07 " );	// If you really decide to follow this path to the end, then, first of all, you should know a few things.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_08 " );	// First, you must be firm in your faith.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_09 " );	// Anyone who doubts his beliefs is weak in spirit, and this is in no way acceptable in our case.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_10 " );	// The Sacred Circle of the Guru is the source of faith for our entire Brotherhood.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_11 " );	// Idols, with their wisdom, bring divine enlightenment into the minds of our brothers, and the latter should never doubt their rightness and power!
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_12 " );	// In addition, to become a Guru means to be ready for self-sacrifice for the sake of the Brotherhood.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_13 " );	// There are a few more points marked by the sacred path of the Guru, but they are not so significant compared to those that I have just listed.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_14 " );	// If you prove with them the firmness of your convictions and the strength of your spirit, then only then will you be able to enter our sacred Circle.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_15 " );	// Unfortunately, you are not yet ready for this, and your deeds for the glory of the Brotherhood are not so significant.
+	AI_Output(self,other, " DIA_BaalOrun_CanBeGuru_01_16 " );	// But I think that time may come, and then, rest assured, we can talk about it.
+	AI_Output(other,self, " DIA_BaalOrun_CanBeGuru_01_17 " );	// It's all clear to me, sir.
 	CANBEGURU = TRUE;
 };
 
 
-instance DIA_BAALORUN_FORTUNOBACK(C_Info)
+instance DIA_FORTUNOBACK ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_fortunoback_condition;
-	information = dia_baalorun_fortunoback_info;
+	information = dia_conversion_fortunoback_info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_baalorun_fortunoback_condition()
+func int dia_condition_fortunoback_condition()
 {
 	if(Npc_IsInState(self,ZS_Talk) && ((hero.guild == GIL_GUR) || (hero.guild == GIL_TPL)) && (FORTUNOBACK == TRUE) && (FORTUNOAWFLAG == TRUE))
 	{
@@ -1480,16 +1481,16 @@ func int dia_baalorun_fortunoback_condition()
 	};
 };
 
-func void dia_baalorun_fortunoback_info()
+func void load_fortunoback_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_00");	//Я слышал, в лагерь вернулся один из наших бывших послушников.
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_01");	//Кажется, его зовут Фортуно.
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_02");	//Он рассказал, что ты сделал для него...
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_03");	//Это было очень правильно с твоей стороны, оказать ему помощь.
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_04");	//Теперь Братство позаботится о нем.
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_05");	//Его дух ослаб, а силы истощены, но мы исправим эту ситуацию. Наша вера поможет ему вновь обрести себя!
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_06");	//С моей же стороны я хочу просто поблагодарить тебя.
+	AI_Output(self,other, " DIA_BaalOrun_FortunoBack_01_00 " );	// I heard one of our former acolytes has returned to the camp.
+	AI_Output(self,other, " DIA_BaalOrun_FortunoBack_01_01 " );	// I think his name is Fortuno.
+	AI_Output(self,other, " DIA_BaalOrun_FortunoBack_01_02 " );	// He told what you did for him...
+	AI_Output(self,other, " DIA_BaalOrun_FortunoBack_01_03 " );	// It was very right of you to help him.
+	AI_Output(self,other, " DIA_BaalOrun_FortunoBack_01_04 " );	// Now the Brotherhood will take care of him.
+	AI_Output(self,other, " DIA_BaalOrun_FortunoBack_01_05 " );	// His spirit is weakened and his strength is exhausted, but we will fix this situation. Our faith will help him rediscover himself!
+	AI_Output(self,other, " DIA_BaalOrun_FortunoBack_01_06 " );	// For my part, I just want to thank you.
 };
 
 
@@ -1515,29 +1516,29 @@ func int dia_baalorun_hammerback_condition()
 func void dia_baalorun_hammerback_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_00");	//Гор На Кош рассказал мне о том, что ты принес ему Молот Таракота.
-	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_01");	//Я очень удивлен, что тебе удалось это сделать!
-	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_02");	//Братство давно хотело заполучить этот древний артефакт в свое распоряжение.
-	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_03");	//И теперь благодаря тебе он - у нас!
-	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_04");	//Твои поступки делают тебе честь.
-	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_05");	//От имени всего нашего Братства прими мою благодарность!
+	AI_Output(self,other, " DIA_BaalOrun_HammerBack_01_00 " );	// Gor Na Kosh told me that you brought him the Hammer of Tarakoth.
+	AI_Output(self,other, " DIA_BaalOrun_HammerBack_01_01 " );	// I'm really surprised you managed to do this!
+	AI_Output(self,other, " DIA_BaalOrun_HammerBack_01_02 " );	// The Brotherhood has long wanted to get their hands on this ancient artifact.
+	AI_Output(self,other, " DIA_BaalOrun_HammerBack_01_03 " );	// And now, thanks to you, we have it!
+	AI_Output(self,other, " DIA_BaalOrun_HammerBack_01_04 " );	// Your deeds do you credit.
+	AI_Output(self,other, " DIA_BaalOrun_HammerBack_01_05 " );	// On behalf of our entire Brotherhood, accept my thanks!
 };
 
 
-instance DIA_BAALORUN_SEKTEHEILEN(C_Info)
+instance DIA_BACKGROUND_SECTION (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_sekteheilen_condition;
-	information = dia_baalorun_sekteheilen_info;
+	information = dia_second_info;
 	permanent = FALSE;
-	description = "Что ты знаешь о людях в черных рясах?";
+	description = " What do you know about people in black cassocks? " ;
 };
 
 
-func int dia_baalorun_sekteheilen_condition()
+func int dia_build_sequence_condition()
 {
-	if(((hero.guild == GIL_GUR) || (hero.guild == GIL_TPL)) && (Kapitel >= 3))
+	if (((hero.guild ==  GIL_GUR ) || (hero.guild ==  GIL_TPL )) && (Chapter >=  3 ))
 	{
 		return TRUE;
 	};
@@ -1545,43 +1546,43 @@ func int dia_baalorun_sekteheilen_condition()
 
 func void dia_baalorun_sekteheilen_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_SekteHeilen_01_00");	//Что ты знаешь о людях в черных рясах?
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_01");	//Не очень много. Судя по всему, все они - темные маги.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_02");	//Но их истинное происхождение мне неизвестно.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_03");	//Однако иногда мне кажется, что с некоторыми из них у Братства есть какая-то невидимая связь...(задумчиво)
-	AI_Output(other,self,"DIA_BaalOrun_SekteHeilen_01_04");	//Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_05");	//У многих наших братьев начались сильные головные боли.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_06");	//Я не могу объяснить, с чем это связано.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_07");	//Но, боюсь, что пагубное влияние этих созданий как-то отражается на их подсознании.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_08");	//И мне кажется, это все очень сильно смахивает на одержимость.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_09");	//Мы можем что-нибудь сделать с этим?
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_10");	//Мудрость и могущество Идолов пока позволяет нам немного смягчать последствия этих контактов, но неизвестно - насколько долго нас хватит самих.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_11");	//Возможно, существует какой-то другой способ избавиться от этого влияния.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_12");	//Я слышал, что в монастыре магов Огня существует зелье, которое способно излечить от одержимости.
-	AI_Output(other,self,"DIA_BaalOrun_SekteHeilen_01_13");	//Я попробую его достать.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_14");	//О, это было бы замечательно!
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_15");	//Я бы и сам занялся этой проблемой, но все мое свободное время уходит на облегчение участи наших Братьев.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_16");	//Прошу тебя, поспеши со своими поисками.
+	AI_Output(other,self, " DIA_BaalOrun_SekteHeilen_01_00 " );	// What do you know about people in black cassocks?
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_01 " );	// Not very many. Apparently, they are all dark magicians.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_02 " );	// But their true origin is unknown to me.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_03 " );	// However, sometimes it seems to me that the Brotherhood has some invisible connection with some of them... (thoughtfully)
+	AI_Output(other,self, " DIA_BaalOrun_SekteHeilen_01_04 " );	// What do you mean?
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_05 " );	// Many of our brothers started having severe headaches.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_06 " );	// I can't explain what this is about.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_07 " );	// But, I'm afraid that the pernicious influence of these creatures is somehow reflected in their subconscious.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_08 " );	// And I think it all looks very much like an obsession.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_09 " );	// Is there anything we can do about this?
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_10 " );	// The wisdom and power of the Idols still allows us to slightly mitigate the consequences of these contacts, but it is not known how long we ourselves will last.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_11 " );	// Perhaps there is some other way to get rid of this influence.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_12 " );	// I heard that there is a potion in the Fire Mage Monastery that can cure possession.
+	AI_Output(other,self, " DIA_BaalOrun_SekteHeilen_01_13 " );	// I'll try to get it.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_14 " );	// Oh, that would be great!
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_15 " );	// I would take care of this problem myself, but all my free time is spent on alleviating the lot of our Brothers.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilen_01_16 " );	// Please hurry up with your searches.
 	Log_CreateTopic(TOPIC_SEKTEHEILEN,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SEKTEHEILEN,LOG_Running);
-	MIS_SEKTEHEILEN = LOG_Running;
-	B_LogEntry(TOPIC_SEKTEHEILEN,"Идол Оран обеспокоен появлением в Хоринисе магов в черных плащах. Они как-то связаны с Братством. С появлением этих магов послушников начали мучить сильные головные боли. Идол боится, что это первые признаки одержимости. Он попросил меня отправиться в монастырь к магам Огня, где существует средство против этой заразы.");
+	MIS_SKTHEILEN = LOG_Running;
+	B_LogEntry( TOPIC_SEKTEHEILEN , " The Idol of Oran is concerned about the appearance of magicians in Khorinis in black cloaks. They are somehow connected with the Brotherhood. With the appearance of these magicians, the novices began to suffer severe headaches. The idol is afraid that these are the first signs of possession. He asked me to go to the monastery to the magicians of Fire, where there is a remedy against this infection. " );
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BAALORUN_SEKTEHEILENGOT(C_Info)
+instance DIA_BAALORUN_SECTION (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_sekteheilengot_condition;
-	information = dia_baalorun_sekteheilengot_info;
+	information = dia_balorun_sector_info;
 	permanent = FALSE;
-	description = "Я достал это зелье.";
+	description = " I got this potion. " ;
 };
 
 
-func int dia_baalorun_sekteheilengot_condition()
+func int dia_build_sector_condition()
 {
 	if((Npc_HasItems(other,ItPo_HealObsession_MIS) > 0) && (MIS_SEKTEHEILEN == LOG_Running) && (FIRSTGIVEHEALPOTIONS == TRUE))
 	{
@@ -1589,30 +1590,30 @@ func int dia_baalorun_sekteheilengot_condition()
 	};
 };
 
-func void dia_baalorun_sekteheilengot_info()
+func void dia_sector_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_SekteHeilenGot_01_00");	//Я достал это зелье.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_01");	//Очень хорошо! Теперь его необходимо раздать всем послушникам.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_02");	//Но только им! Гор На Кош и его Стражи очень сильны духом. Им не страшна эта зараза, так же, как и нам - Гуру.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_03");	//И проследи за тем, чтобы лекарства хватило всем.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_04");	//Когда выполнишь это, приходи ко мне.
-	B_LogEntry(TOPIC_SEKTEHEILEN,"Я достал лекарство. Теперь его необходимо раздать всем послушникам.");
-	SEKTEHEILENCOUNT = 0;
+	AI_Output(other,self, " DIA_BaalOrun_SekteHeilenGot_01_00 " );	// I got this potion.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilenGot_01_01 " );	// Very good! Now it must be distributed to all novices.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilenGot_01_02 " );	// But only them! Gor Na Kosh and his Guardians are very strong in spirit. They are not afraid of this infection, just like us - the Guru.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilenGot_01_03 " );	// And make sure there's enough medicine for everyone.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilenGot_01_04 " );	// When you've done this, come to me.
+	B_LogEntry( TOPIC_SEKTEHEILEN , " I got the medicine. Now it needs to be distributed to all the novices. " );
+	SECTEHEILENCOUNT = 0 ;
 };
 
 
-instance DIA_BAALORUN_SEKTEHEILENOK(C_Info)
+instance DIA_BAALORUN_SECTION (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_sekteheilenok_condition;
-	information = dia_baalorun_sekteheilenok_info;
+	information = dia_balorun_sector_info;
 	permanent = FALSE;
-	description = "Я раздал лекарство, как ты и просил.";
+	description = " I distributed the medicine as you requested. " ;
 };
 
 
-func int dia_baalorun_sekteheilenok_condition()
+func int dia_build_sector_condition()
 {
 	if((MIS_SEKTEHEILEN == LOG_Running) && (SEKTEHEILENCOUNT >= 15))
 	{
@@ -1620,65 +1621,65 @@ func int dia_baalorun_sekteheilenok_condition()
 	};
 };
 
-func void dia_baalorun_sekteheilenok_info()
+func void dia_builder_sector_info()
 {
 	B_GivePlayerXP(2150);
-	AI_Output(other,self,"DIA_BaalOrun_SekteHeilenOk_01_00");	//Я раздал лекарство, как ты и просил.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenOk_01_02");	//Да, очень хорошо. Его действие действительно избавило всех наших братьев от этих ужасных головных болей!
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenOk_01_03");	//Ты хорошо потрудился! Прими мою благодарность.
+	AI_Output(other,self, " DIA_BaalOrun_SekteHeilenOk_01_00 " );	// I distributed the medicine, just like you asked.
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilenOk_01_02 " );	// Yes, very good. His action has truly delivered all of our brethren from those terrible headaches!
+	AI_Output(self,other, " DIA_BaalOrun_SekteHeilenOk_01_03 " );	// You did a good job! Please accept my thanks.
 	B_GiveInvItems(self,other,ItMi_Gold,2000);
-	B_LogEntry(TOPIC_SEKTEHEILEN,"Я раздал лекарство всем послушникам. Теперь братья более не будут страдать от влияния темных магов!");
+	B_LogEntry( TOPIC_SEKTEHEILEN , " I have distributed the medicine to all the acolytes. Now the brothers will no longer suffer from the influence of the dark magicians! " );
 	Log_SetTopicStatus(TOPIC_SEKTEHEILEN,LOG_SUCCESS);
-	MIS_SEKTEHEILEN = LOG_SUCCESS;
+	MIS_SEKTEHEILEN = LOG_SUCCESS ;
 };
 
 
-instance DIA_BAALORUN_BEGURU(C_Info)
+instance DIA_CONTROLLER (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_beguru_condition;
-	information = dia_baalorun_beguru_info;
+	information = dia_processing_info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
-func int dia_baalorun_beguru_condition()
+func int dia_condition_uncertainty()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (hero.guild == GIL_SEK) && (CANBEGURU == TRUE) && (CADARAGREED == TRUE) && (NAMIBAGREED == TRUE) && (PARVEZAGREED == TRUE) && (TYONAGREED == TRUE))
+	if ( Npc_IsInState ( self , ZS_Talk ) && ( hero . guild ==  GIL_SEK ) && ( CANBEGURU  ==  TRUE ) && ( CADARAGREED  ==  TRUE ) && ( NAMIBAGREED  ==  TRUE ) && ( PARVEZAGREED  ==  TRUE ) && ( TYONAGREED  ==  TRUE ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_baalorun_beguru_info()
+func void load_info()
 {
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_00");	//Ты здесь? Очень хорошо - я должен поговорить с тобой...
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_02");	//Своими действиями ты доказал свою преданность идеям нашего Братства, и даже более того.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_03");	//Твои деяния говорят сами за себя: ты тверд духом, верен своим убеждениям и рассудителен в поступках!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_04");	//Поэтому я считаю, что ты достоин чести носить робу Гуру и быть принятым в наш священный Круг!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_05");	//Однако последний выбор за тобой.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_06");	//Ты должен понимать, что, выбрав этот путь, ты уже никогда не сможешь просто так сойти с него.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_07");	//У меня также состоялся разговор с Гор На Кошем, наставником Стражей.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_08");	//Он также хочет видеть тебя в своих рядах!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_09");	//Не спорю, быть Стражем, несомненно, большая честь, но это не идет ни в какое сравнение с посвящением в гуру.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_10");	//Это наивысшая честь, которой может быть удостоен последователь нашей веры!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_11");	//К тому же только для Гуру открыты секреты магии, кои нам даровал Спящий...
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_12");	//...и только мы способны использовать эти бесценные знания.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_13");	//Поэтому прежде, чем дать свой окончательный ответ, - подумай хорошенько над всем тем, что я тебе сказал.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_14");	//И дай мне знать о нем, если будешь готов принять посвящение в наш Круг.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_00 " );	// Are you there? Very well - I have to talk to you...
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_02 " );	// By your actions, you have proven your loyalty to the ideas of our Brotherhood, and even more.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_03 " );	// Your deeds speak for themselves: you are firm in spirit, true to your convictions and prudent in your actions!
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_04 " );	// Therefore, I believe that you are worthy of the honor of wearing the Guru's robe and being accepted into our sacred Circle!
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_05 " );	// However, the final choice is yours.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_06 " );	// You must understand that, having chosen this path, you will never be able to just leave it.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_07 " );	// I also had a conversation with Gor Na Kosh, the mentor of the Guardians.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_08 " );	// He also wants to have you in his ranks!
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_09 " );	// I'm not arguing that it's certainly a great honor to be a Guardian, but it's nothing compared to becoming a guru.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_10 " );	// This is the highest honor a follower of our faith can receive!
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_11 " );	// In addition, only for the Guru are the secrets of magic revealed to us by the Sleeper...
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_12 " );	// ...and only we can use this invaluable knowledge.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_13 " );	// Therefore, before giving your final answer, think carefully about all that I have told you.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuru_01_14 " );	// And let me know if you're ready to be initiated into our Circle.
 	READYBEGURU = TRUE;
 };
 
 
-instance DIA_BAALORUN_BEGURUOK(C_Info)
+instance 2010_02_02 (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_beguruok_condition;
-	information = dia_baalorun_beguruok_info;
+	information = dia_configuration_info;
 	permanent = TRUE;
-	description = "Я хочу стать Гуру Братства.";
+	description = " I want to become a Brotherhood Guru. " ;
 };
 
 func int dia_baalorun_beguruok_condition()
@@ -1691,7 +1692,7 @@ func int dia_baalorun_beguruok_condition()
 
 func void dia_baalorun_beguruok_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_BeGuruOk_01_00");	//Я хочу стать Гуру Братства.
+	AI_Output(other,self, " DIA_BaalOrun_BeGuruOk_01_00 " );	// I want to become the Guru of the Brotherhood.
 
 	if(CanTeachTownMaster == FALSE)
 	{
@@ -1705,40 +1706,40 @@ func void dia_baalorun_beguruok_info()
 	};
 
 	Snd_Play("GUILD_INV");
-	hero.guild = GIL_GUR;
+	hero.guild = GIL_GUR ;
 	CheckHeroGuild[0] = TRUE;
 	SYMBOLSMAKEGURUDONE = TRUE;
-	HelmIsUpTemp = FALSE;
+	HelmIsUpTemp = FALSE ;
 	hero.protection[PROT_MAGIC] += 10;
 	REALPROTMAGIC += 10;
-	AI_PrintClr("Защита от магии + 10",83,152,48);
+	AI_PrintClr( " Spell Defense + 10 " , 83 , 152 , 48 );
 	Mdl_ApplyOverlayMds(hero,"Humans_Mage.mds");
 	AI_Print(NAME_GUR_MAGIC);
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_01");	//Да будет так!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_02");	//Я принимаю тебя в наш священный Круг и наделяю тебя властью Гуру!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_03");	//Отныне ты один из нас.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_04");	//Возьми эту робу в качестве символа нашего Круга.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_01 " );	// So be it!
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_02 " );	// I accept you into our sacred Circle and give you the power of Guru!
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_03 " );	// From now on, you are one of us.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_04 " );	// Take this robe as a symbol of our Circle.
 	CreateInvItems(self,itar_gur_l,1);
 	B_GiveInvItems(self,other,itar_gur_l,1);
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_05");	//Носи ее с гордостью. Лишь немногие удостаивались такой чести!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_06");	//Также прими от меня этот посох. Только нам, Гуру, дарована честь обладать им и распоряжаться его силой!
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_05 " );	// Wear it with pride. Only a few have received such an honor!
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_06 " );	// Also accept this staff from me. Only we, the Guru, have been granted the honor of possessing him and commanding his power!
 	CreateInvItems(self,ITMW_2H_G3_STAFFDRUID_01,1);
 	B_GiveInvItems(self,other,ITMW_2H_G3_STAFFDRUID_01,1);
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_07");	//И не забудь, что быть Гуру - это не просто быть посвященным в наш Круг...
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_08");	//...Это знак! Знак твоей судьбы и твоего выбора.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_09");	//Будь верен до конца своим убеждениям, и постарайся быть мудрым и рассудительным в своих деяниях.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_10");	//Это все, что я хотел тебе сказать перед тем, как ты продолжишь свой путь.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_07 " );	// And don't forget that being a Guru is not just about being initiated into our Circle...
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_08 " );	// ...It's a sign! The sign of your destiny and your choice.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_09 " );	// Be faithful to your convictions to the end, and try to be wise and prudent in your deeds.
+	AI_Output(self,other, " DIA_BaalOrun_BeGuruOk_01_10 " );	// That's all I wanted to tell you before you continue on your way.
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_BAALORUN_PRETEACH(C_Info)
+instance DIA_BAALORUN_PRETEACH (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_preteach_condition;
 	information = dia_baalorun_preteach_info;
 	permanent = FALSE;
-	description = "Могу ли я теперь познать секреты магии Спящего?";
+	description = " Can I now learn the secrets of the Sleeper's magic? " ;
 };
 
 
@@ -1752,24 +1753,24 @@ func int dia_baalorun_preteach_condition()
 
 func void dia_baalorun_preteach_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_PreTeach_01_00");	//Могу ли я теперь познать секреты магии Спящего?
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_01");	//Да. Теперь ты готов к обладанию истинных знаний, которые доступны только Гуру нашего Братства.
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_02");	//И, безусловно, тебе понадобится некоторая помощь в постижении последних.
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_03");	//Я могу ввести тебя в магические круги, которые необходимы для использования магических рун.
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_04");	//Идол Кадар поможет тебе увеличить твою магическую силу.
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_05");	//Идол Намиб научит тебя создавать руны с магией Спящего.
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_06");	//А Идол Тион продаст тебе магические свитки и необходимые ингредиенты для создания этих рун.
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_07");	//Обретя все эти знания, в твоих руках будет сосредоточена огромная сила!
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_08");	//Помни об этом и постарайся распоряжаться ею мудро.
-	BAALTYON_CANTRADE = TRUE;
-	BAALNAMIB_TEACHRUNES = TRUE;
+	AI_Output(other,self, " DIA_BaalOrun_PreTeach_01_00 " );	// Can I now learn the secrets of the Sleeper's magic?
+	AI_Output(self,other, " DIA_BaalOrun_PreTeach_01_01 " );	// Yes. Now you are ready to possess true knowledge, which is available only to the Guru of our Brotherhood.
+	AI_Output(self,other, " DIA_BaalOrun_PreTeach_01_02 " );	// And, of course, you'll need some help understanding the latter.
+	AI_Output(self,other, " DIA_BaalOrun_PreTeach_01_03 " );	// I can introduce you to the magic circles needed to use the magic runes.
+	AI_Output(self,other, " DIA_BaalOrun_PreTeach_01_04 " );	// Idol Kadar will help you increase your magic power.
+	AI_Output(self,other, " DIA_BaalOrun_PreTeach_01_05 " );	// The Namib Idol will teach you how to create runes with Sleeper magic.
+	AI_Output(self,other, " DIA_BaalOrun_PreTeach_01_06 " );	// And the Idol of Tion will sell you magic scrolls and the necessary ingredients to create these runes.
+	AI_Output(self,other, " DIA_BaalOrun_PreTeach_01_07 " );	// By gaining all this knowledge, great power will be concentrated in your hands!
+	AI_Output(self,other, " DIA_BaalOrun_PreTeach_01_08 " );	// Keep this in mind and try to use it wisely.
+	BAALTYON_CANTRADE = TRUE ;
+	BAALNAMIB_TEACHRUNES = TRUE ;
 	BAALCADAR_TEACHMANA = TRUE;
-	BAALORUN_TEACHCIRCLE = TRUE;
+	BAALORUN_TEACHCIRCLE = TRUE ;
 	Log_CreateTopic(TOPIC_ADDON_GURTEACHER,LOG_NOTE);
-	B_LogEntry(TOPIC_ADDON_GURTEACHER,"Идол Оран поможет мне освоить магические круги.");
-	B_LogEntry(TOPIC_ADDON_GURTEACHER,"Идол Намиб научит меня создавать руны с магией Спящего.");
-	B_LogEntry(TOPIC_ADDON_GURTEACHER,"Идол Кадар поможет мне увеличить магическую силу.");
-	B_LogEntry(TOPIC_ADDON_GURTEACHER,"Идол Тион продает магические свитки и ингредиенты для создания рун.");
+	B_LogEntry( TOPIC_ADDON_GURTEACHER , "The Oran Idol will help me learn magic circles. " );
+	B_LogEntry( TOPIC_ADDON_GURTEACHER , "The Namib Idol will teach me how to make sleeper runes. " );
+	B_LogEntry( TOPIC_ADDON_GURTEACHER , " Idol Kadar will help me increase my magical power. " );
+	B_LogEntry( TOPIC_ADDON_GURTEACHER , " Idol Tion sells magic scrolls and rune-making ingredients. " );
 };
 
 
@@ -1779,13 +1780,13 @@ instance DIA_BAALORUN_EXPLAINCIRCLES(C_Info)
 	condition = dia_baalorun_explaincircles_condition;
 	information = dia_baalorun_explaincircles_info;
 	permanent = FALSE;
-	description = "Объясни мне, в чем смысл магических Кругов?";
+	description = " Explain to me what is the meaning of Magic Circles? " ;
 };
 
 
 func int dia_baalorun_explaincircles_condition()
 {
-	if((hero.guild == GIL_GUR) && Npc_KnowsInfo(other,dia_baalorun_preteach))
+	if (( hero . guild ==  GIL_GUR ) && Npc_KnowsInfo ( other , his_balorun_preteach ))
 	{
 		return TRUE;
 	};
@@ -1793,70 +1794,70 @@ func int dia_baalorun_explaincircles_condition()
 
 func void dia_baalorun_explaincircles_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_EXPLAINCIRCLES_Info_15_01");	//Объясни мне, в чем смысл магических Кругов?
-	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_02");	//Круги символизируют твое понимание магии.
-	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_03");	//Они обозначают уровень твоих знаний и навыков, способность обучаться новым заклинаниям.
-	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_04");	//Ты должен пройти каждый Круг до конца, прежде чем сможешь вступить в следующий.
-	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_05");	//Потребуются долгие часы обучения и намного больше опыта, чтобы достичь высших Кругов.
-	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_06");	//Твои старания каждый раз будут вознаграждаться новыми могущественными заклинаниями. Но в любом случае магические Круги значат куда больше.
-	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_08");	//Для того чтобы понять их силу, ты должен познать себя.
+	AI_Output(other,self, " DIA_BaalOrun_EXPLAINCIRCLES_Info_15_01 " );	// Explain to me what the meaning of magic circles is?
+	AI_Output(self,other, " DIA_BaalOrun_EXPLAINCIRCLES_Info_14_02 " );	// Circles represent your understanding of magic.
+	AI_Output(self,other, " DIA_BaalOrun_EXPLAINCIRCLES_Info_14_03 " );	// They indicate the level of your knowledge and skills, the ability to learn new spells.
+	AI_Output(self,other, " DIA_BaalOrun_EXPLAINCIRCLES_Info_14_04 " );	// You must complete each Circle before you can enter the next one.
+	AI_Output(self,other, " DIA_BaalOrun_EXPLAINCIRCLES_Info_14_05 " );	// It will take long hours of study and a lot more experience to reach the higher Circles.
+	AI_Output(self,other, " DIA_BaalOrun_EXPLAINCIRCLES_Info_14_06 " );	// Your efforts will be rewarded with powerful new spells every time. But in any case, magic Circles mean much more.
+	AI_Output(self,other, " DIA_BaalOrun_EXPLAINCIRCLES_Info_14_08 " );	// In order to understand their power, you must know yourself.
 	EXPLAINCIRCLEMEAN = TRUE;
 };
 
 
 var int dia_baalorun_circle_noperm;
 
-instance DIA_BAALORUN_CIRCLE(C_Info)
+instance DIA_ROUND_CIRCLE ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_circle_condition;
-	information = dia_baalorun_circle_info;
+	information = dia_circle_info;
 	permanent = TRUE;
-	description = "Я хочу постигать суть магии.";
+	description = " I want to learn the essence of magic. " ;
 };
 
 func int dia_baalorun_circle_condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) <= 6) && (BAALORUN_TEACHCIRCLE == TRUE) && (DIA_BAALORUN_CIRCLE_NOPERM == FALSE))
+	if (( NPC_GetTalentSkill ( other , NPC_TALENT_MAGE ) <=  6 ) && ( BAALORUN_TEACHCIRCLE  ==  TRUE ) && ( DIA_BAALORUN_CIRCLE_NOPERM  ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_baalorun_circle_info()
+func void circle_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_CIRCLE_15_00");	//Я хочу постигать суть магии.
+	AI_Output(other,self, " DIA_BaalOrun_CIRCLE_15_00 " );	// I want to understand the essence of magic.
 	Info_ClearChoices(DIA_BaalOrun_CIRCLE);
-	Info_AddChoice(DIA_BaalOrun_CIRCLE,Dialog_Back,DIA_BaalOrun_CIRCLE_Back);
+	Info_AddChoice(DIA_Sun_Circle,Dialog_Back,DIA_Sun_Circle_Back);
 
 	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 1) && (Kapitel >= 1))
 	{
-		Info_AddChoice(DIA_BaalOrun_CIRCLE,"1 Круг магии (Очков обучения: 20)",DIA_BaalOrun_CIRCLE_1);
+		Info_AddChoice(DIA_BaalOrun_CIRCLE, " 1 Circle of Magic (Training Points: 20) " ,DIA_BaalOrun_CIRCLE_1);
 	}
 	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1) && (Kapitel >= 2))
 	{
-		Info_AddChoice(DIA_BaalOrun_CIRCLE,"2 Круг магии (Очков обучения: 30)",DIA_BaalOrun_CIRCLE_2);
+		Info_AddChoice(DIA_BaalOrun_CIRCLE, " 2 Circle of Magic (Training Points: 30) " ,DIA_BaalOrun_CIRCLE_2);
 	}
 	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2) && (Kapitel >= 3))
 	{
-		Info_AddChoice(DIA_BaalOrun_CIRCLE,"3 Круг магии (Очков обучения: 40)",DIA_BaalOrun_CIRCLE_3);
+		Info_AddChoice(DIA_BaalOrun_CIRCLE, " 3 Circle of Magic (Training Points: 40) " ,DIA_BaalOrun_CIRCLE_3);
 	}
 	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3) && (MIS_ReadyforChapter4 == TRUE))
 	{
-		Info_AddChoice(DIA_BaalOrun_CIRCLE,"4 Круг магии (Очков обучения: 60)",DIA_BaalOrun_CIRCLE_4);
+		Info_AddChoice(DIA_BaalOrun_CIRCLE, " 4 Circle of Magic (Training Points: 60) " ,DIA_BaalOrun_CIRCLE_4);
 	}
 	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4) && (Kapitel >= 5))
 	{
-		Info_AddChoice(DIA_BaalOrun_CIRCLE,"5 Круг магии (Очков обучения: 80)",DIA_BaalOrun_CIRCLE_5);
+		Info_AddChoice(DIA_BaalOrun_CIRCLE, " 5 Circle of Magic (Training Points: 80) " ,DIA_BaalOrun_CIRCLE_5);
 	}
-	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && (Kapitel >= 5) && (MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS))
+	else  if ((Npc_GetTalentSkill(other, NPC_TALENT_MAGE ) ==  5 ) && (Chapter >=  5 ) && (MY_DarkOrder == LOG_Success) && (MY_JarCurse == LOG_Success) && ( MY_URNAZULRAGE  ==  LOG_SUCCESS )) ;
 	{
-		Info_AddChoice(DIA_BaalOrun_CIRCLE,"6 Круг магии (Очков обучения: 100)",DIA_BaalOrun_CIRCLE_6);
+		Info_AddChoice(DIA_BaalOrun_CIRCLE, " 6 Circle of Magic (Training Points: 100) " ,DIA_BaalOrun_CIRCLE_6);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_42");	//Еще не время. Возвращайся позже.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_42 " );	// It's not time yet. Come back later.
 	};
 };
 
@@ -1869,16 +1870,16 @@ func void DIA_BaalOrun_CIRCLE_1()
 {
 	if(B_TeachMagicCircle(self,other,1))
 	{
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_0A");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_BaalOrun_CIRCLE_15_01");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_01");	//Вступив в Первый Круг, ты научишься использовать магические руны.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_02");	//Каждая руна содержит структуру особого магического заклинания.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_03");	//Использовав свою собственную магическую силу, ты сможешь высвободить магию руны.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_04");	//Но в отличие от свитков, которые, по сути, являются магическими формулами, магия рун поддерживает структуру заклинания всегда.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_05");	//Каждая руна таит в себе магическую силу, которую ты можешь забрать в любой момент.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_06");	//Так же, как и со свитком, в момент, когда ты используешь руну, расходуется твоя собственная магическая сила.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_07");	//С каждым новым Кругом ты будешь узнавать о рунах все больше и больше.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_08");	//Используй их силу, для того чтобы познать себя.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_0A " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_BaalOrun_CIRCLE_15_01 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_01 " );	// By joining the First Circle, you will learn how to use magical runes.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_02 " );	// Each rune contains the structure of a special magic spell.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_03 " );	// By using your own magical power, you can release the rune's magic.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_04 " );	// But unlike scrolls, which are essentially magic formulas, rune magic maintains the structure of the spell at all times.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_05 " );	// Each rune contains a magical power that you can take away at any time.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_06 " );	// Just like with the scroll, the moment you use a rune, your own magic power is consumed.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_07 " );	// With each new Circle you will learn more and more about runes.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_08 " );	// Use their power to know yourself.
 	};
 	Info_ClearChoices(DIA_BaalOrun_CIRCLE);
 };
@@ -1887,15 +1888,15 @@ func void DIA_BaalOrun_CIRCLE_2()
 {
 	if(B_TeachMagicCircle(self,other,2))
 	{
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_0A");	//Готов ли ты вступить в следующий Круг магии?
-		AI_Output(other,self,"DIA_BaalOrun_CIRCLE_15_02");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_09");	//Ты уже научился понимать руны. Пришло время углубить твои познания.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_10");	//Вступив во Второй Круг, ты постигнешь основы мощных боевых заклятий.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_11");	//Но для того чтобы познать истинные секреты магии, тебе предстоит многому научиться.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_12");	//Ты уже знаешь о том, что можешь использовать любую руну бессчетное число раз, но лишь до тех пор, пока не израсходуешь собственную магическую силу.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_13");	//Но прежде чем сделать что-либо, подумай о том, есть ли в этом смысл. Ты обладаешь силой, которая позволяет с легкостью сеять смерть и разрушения.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_14");	//Но истинный маг использует ее лишь по необходимости.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_15");	//Научись оценивать ситуацию, и ты познаешь истинную силу рун.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_0A " );	// Are you ready to enter the next Circle of Magic?
+		AI_Output(other,self, " DIA_BaalOrun_CIRCLE_15_02 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_09 " );	// You've already learned to understand runes. It's time to deepen your knowledge.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_10 " );	// As you enter the Second Circle, you will learn the basics of powerful combat spells.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_11 " );	// But in order to know the true secrets of magic, you have a lot to learn.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_12 " );	// You already know that you can use any rune countless times, but only until you use up your own magic power.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_13 " );	// But before you do anything, think about whether it makes sense. You have the power to sow death and destruction with ease.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_14 " );	// But a true magician uses it only when necessary.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_15 " );	// Learn to assess the situation, and you will know the true power of the runes.
 	};
 	Info_ClearChoices(DIA_BaalOrun_CIRCLE);
 };
@@ -1904,14 +1905,14 @@ func void DIA_BaalOrun_CIRCLE_3()
 {
 	if(B_TeachMagicCircle(self,other,3))
 	{
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_0A");	//Готов ли ты вступить в следующий Круг магии?
-		AI_Output(other,self,"DIA_BaalOrun_CIRCLE_15_03");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_16");	//Третий Круг является одним из важнейших этапов в жизни каждого мага. Достигнув его, ты завершаешь свой поиск.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_17");	//Ты уже преодолел значительный этап на пути магии. Ты научился использовать руны.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_18");	//Это знание послужит основой для следующего этапа. Используй руны осмотрительно.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_19");	//Ты можешь использовать их или нет. Но ты должен определиться с выбором.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_20");	//Сделав выбор, используй свою силу без колебаний.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_21");	//Найди свой путь, и тогда ты познаешь силу решения.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_0A " );	// Are you ready to enter the next Circle of Magic?
+		AI_Output(other,self, " DIA_BaalOrun_CIRCLE_15_03 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_16 " );	// The Third Circle is one of the most important stages in the life of every magician. When you reach it, you complete your search.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_17 " );	// You have already crossed a significant stage on the path of magic. You have learned how to use runes.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_18 " );	// This knowledge will serve as the basis for the next step. Use runes carefully.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_19 " );	// You can use them or not. But you must make a choice.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_20 " );	// Once you've made your choice, use your power without hesitation.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_21 " );	// Find your way, and then you will know the power of decision.
 	};
 	Info_ClearChoices(DIA_BaalOrun_CIRCLE);
 };
@@ -1920,16 +1921,16 @@ func void DIA_BaalOrun_CIRCLE_4()
 {
 	if(B_TeachMagicCircle(self,other,4))
 	{
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_0A");	//Готов ли ты вступить в следующий Круг магии?
-		AI_Output(other,self,"DIA_BaalOrun_CIRCLE_15_04");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_22");	//Ты завершил первые три Круга. Пришло время тебе постичь секреты магии.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_23");	//Основа магии рун - камень. Магический камень, добытый из магической руды.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_24");	//Это та самая руда, которую добывают в шахтах. В храмах она наделяется магическими формулами, и там же руны превращаются в орудия нашей силы.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_25");	//Теперь ты обладаешь всеми знаниями, которые были накоплены храмами.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_27");	//Познай магию, и ты откроешь для себя секрет власти.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_28");	//И еще кое-что. Войдя в четвертый Круг магии - ты удостаиваешься чести носить облачение высших Гуру!
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_29");	//Немногим удавалось такое. Теперь ты - один из избранных священного круга!
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_30");	//Вот, возьми эту робу и магический посох в качестве признания твоего статуса.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_0A " );	// Are you ready to enter the next Circle of Magic?
+		AI_Output(other,self, " DIA_BaalOrun_CIRCLE_15_04 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_22 " );	// You have completed the first three Circles. It's time for you to learn the secrets of magic.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_23 " );	// The basis of rune magic is stone. A magical stone mined from magical ore.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_24 " );	// This is the same ore that is mined in the mines. In the temples, she is endowed with magical formulas, and there the runes turn into tools of our power.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_25 " );	// You now have all the knowledge that the temples have accumulated.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_27 " );	// Learn magic and you will discover the secret of power.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_28 " );	// And one more thing. Entering the fourth Circle of magic - you are honored to wear the vestments of the highest Gurus!
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_29 " );	// Few have been able to do this. Now you are one of the chosen ones of the sacred circle!
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_30 " );	// Here, take this robe and magical staff as an acknowledgment of your status.
 		CreateInvItems(self,ItMW_Addon_Stab04,1);
 		B_GiveInvItems(self,other,ItMW_Addon_Stab04,1);
 		CreateInvItems(other,itar_gur_h,1);
@@ -1941,12 +1942,12 @@ func void DIA_BaalOrun_CIRCLE_5()
 {
 	if(B_TeachMagicCircle(self,other,5))
 	{
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_0A");	//Готов ли ты вступить в следующий Круг магии?
-		AI_Output(other,self,"DIA_BaalOrun_CIRCLE_15_05");	//Да, мастер. Я готов.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_15_5A");	//Да будет так. Я открою тебе истинный смысл Пятого Круга.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_31");	//Познай предел своих возможностей, и ты познаешь свою истинную силу.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_32");	//Заклинания, которые ты сможешь изучать, могут быть воистину разрушительными.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_33");	//Так что знай меру своей силе и остерегайся мании величия.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_0A " );	// Are you ready to enter the next Circle of Magic?
+		AI_Output(other,self, " DIA_BaalOrun_CIRCLE_15_05 " );	// Yes, master. I'm ready.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_15_5A " );	// So be it. I will reveal to you the true meaning of the Fifth Circle.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_31 " );	// Know your limits, and you will know your true power.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_32 " );	// The spells you can learn can be truly devastating.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_33 " );	// So know the measure of your strength and beware of megalomania.
 	};
 	Info_ClearChoices(DIA_BaalOrun_CIRCLE);
 };
@@ -1955,29 +1956,29 @@ func void DIA_BaalOrun_CIRCLE_6()
 {
 	if(B_TeachMagicCircle(self,other,6))
 	{
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_34");	//Я подниму тебя в Шестой Круг магии.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_35");	//Заметь, в Шестой Круг могут вступить лишь самые могущественные из магов. Он предназначен для тех, чья жизнь это знак.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_38");	//Твой знак - Скала!
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_39");	//Шестой Круг позволит тебе использовать магию любой руны.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_40");	//И не забудь: не захватывать силу, но быть ее источником.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_41");	//Будь мудр и рассудителен в своих деяниях и постарайся использовать свои знания во благо Братства!
-		DIA_BAALORUN_CIRCLE_NOPERM = TRUE;
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_34 " );	// I will lift you up to the Sixth Circle of Magic.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_35 " );	// Note that only the most powerful of magicians can enter the Sixth Circle. It is for those whose life is a sign.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_38 " );	// Your sign is the Rock!
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_39 " );	// The Sixth Circle will allow you to use the magic of any rune.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_40 " );	// And don't forget: don't capture power, but be its source.
+		AI_Output(self,other, " DIA_BaalOrun_CIRCLE_14_41 " );	// Be wise and prudent in your actions and try to use your knowledge for the good of the Brotherhood!
+		DIA_BAALORUN_CIRCLE_NOPERM = TRUE ;
 	};
 	Info_ClearChoices(DIA_BaalOrun_CIRCLE);
 };
 
-instance DIA_BAALORUN_SENDCADAR(C_Info)
+instance DIA_CONTROLLER_SEND_CADER (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 99;
 	condition = dia_baalorun_sendcadar_condition;
-	information = dia_baalorun_sendcadar_info;
+	information = dia_transport_send_cadar_info;
 	permanent = FALSE;
-	description = "Идол Кадар послал меня...";
+	description = " Idol Kadar sent me... " ;
 };
 
 
-func int dia_baalorun_sendcadar_condition()
+func int dia_condition_send_cadar_condition()
 {
 	if((hero.guild == GIL_GUR) && (BAALORUN_TEACHMANA == TRUE))
 	{
@@ -1985,25 +1986,25 @@ func int dia_baalorun_sendcadar_condition()
 	};
 };
 
-func void dia_baalorun_sendcadar_info()
+func void send_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_SendCadar_15_00");	//Идол Кадар послал меня. Я хочу увеличить свою силу.
-	AI_Output(self,other,"DIA_BaalOrun_SendCadar_11_01");	//Я вижу - ты много выучил и твоя сила возросла! Теперь ты будешь учиться у меня.
+	AI_Output(other,self, " DIA_BaalOrun_SendCadar_15_00 " );	// Idol Kadar sent me. I want to increase my strength.
+	AI_Output(self,other, " DIA_BaalOrun_SendCadar_11_01 " );	// I see - you have learned a lot and your strength has increased! Now you will learn from me.
 };
 
-instance DIA_BAALORUN_TEACH_MANA(C_Info)
+instances DIA_BAALORUN_TEACH_MANA (C_Info)
 {
 	npc = gur_8002_orun;
 	nr = 10;
 	condition = dia_baalorun_teach_mana_condition;
-	information = dia_baalorun_teach_mana_info;
+	information = dia_balorun_teach_home_info;
 	permanent = TRUE;
-	description = "Я хочу увеличить свою магическую энергию.";
+	description = " I want to increase my magical energy. " ;
 };
 
 func int dia_baalorun_teach_mana_condition()
 {
-	if((other.guild == GIL_GUR) && (BAALORUN_TEACHMANA == TRUE) && Npc_KnowsInfo(other,DIA_BAALORUN_SENDCADAR) && ((other.attribute[ATR_MANA_MAX] < T_MEGA) || (VATRAS_TEACHREGENMANA == FALSE)))
+	if ((other.guild == GIL_GUR  ) && ( BAALORUN_TEACHMANA ==  TRUE  ) && Npc_KnowsInfo ( other , BAALORUN_SEND_DAY ) && (( other.attribute [ ATR_MANA_MAX ] <  T_MEGA ) ||  
 	{
 		return TRUE;
 	};
@@ -2011,15 +2012,15 @@ func int dia_baalorun_teach_mana_condition()
 
 func void dia_baalorun_teach_mana_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_TEACH_MANA_15_00");	//Я хочу увеличить свою магическую энергию.
+	AI_Output(other,self, " DIA_BaalOrun_TEACH_MANA_15_00 " );	// I want to increase my magical energy.
 	Info_ClearChoices(dia_baalorun_teach_mana);
 	Info_AddChoice(dia_baalorun_teach_mana,Dialog_Back,dia_baalorun_teach_mana_back);
 	Info_AddChoice(dia_baalorun_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_baalorun_teach_mana_1);
 	Info_AddChoice(dia_baalorun_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_baalorun_teach_mana_5);
 
-	if((Kapitel >= 2) && (VATRAS_TEACHREGENMANA == FALSE))
+	if ((Chapter >=  2 ) && ( BACK_TEACREGEN  ==  FALSE ))
 	{
-		Info_AddChoice(DIA_BaalOrun_TEACH_MANA,"Регенерация маны (Очки обучения: 5, Цена: 7500 монет)",DIA_BaalOrun_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_BaalOrun_TEACH_MANA, " Mana Regen (Training Points: 5, Cost: 7500 Coins) " ,DIA_BaalOrun_TEACH_MANA_Regen);
 	};
 };
 
@@ -2027,7 +2028,7 @@ func void dia_baalorun_teach_mana_back()
 {
 	if(other.attribute[ATR_MANA_MAX] >= T_MEGA)
 	{
-		AI_Output(self,other,"DIA_BaalOrun_TEACH_MANA_05_00");	//Ты на пределе своих возможностей - я научил тебя всему, что сам знал!
+		AI_Output(self,other, " DIA_BaalOrun_TEACH_MANA_05_00 " );	// You're at your limits - I taught you everything I knew!
 	};
 
 	Info_ClearChoices(dia_baalorun_teach_mana);
@@ -2035,12 +2036,12 @@ func void dia_baalorun_teach_mana_back()
 
 func void DIA_BaalOrun_TEACH_MANA_Regen()
 {
-	var int kosten;
+	var int cost;
 	var int money;
 
-	AI_Output(other,self,"DIA_Vatras_Teach_regen_15_05");	//Научи меня регенерации маны.
+	AI_Output(other,self, " DIA_Vatras_Teach_regen_15_05 " );	// Teach me mana regeneration.
 
-	kosten = 5;
+	cost = 5 ;
 	money = 7500;
 
 	if(hero.lp < kosten)
@@ -2056,10 +2057,10 @@ func void DIA_BaalOrun_TEACH_MANA_Regen()
 	if((hero.lp >= kosten) && (Npc_HasItems(other,ItMi_Gold) >= money))
 	{
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_RemoveInvItems(other,ItMi_Gold,money);
-		AI_Print("Обучение: Регенерация маны");
-		VATRAS_TEACHREGENMANA = TRUE;
+		AI_Print( " Training: Mana Regeneration " );
+		VATRAS_TEACHREGENMANA = TRUE ;
 		Snd_Play("LevelUP");
 	};
 
@@ -2077,9 +2078,9 @@ func void dia_baalorun_teach_mana_1()
 	Info_AddChoice(dia_baalorun_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_baalorun_teach_mana_1);
 	Info_AddChoice(dia_baalorun_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_baalorun_teach_mana_5);
 
-	if((Kapitel >= 2) && (hero.guild == GIL_GUR) && (VATRAS_TEACHREGENMANA == FALSE))
+	if ((Chapter >=  2 ) && (hero.guild ==  GIL_GUR ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
 	{
-		Info_AddChoice(DIA_BaalOrun_TEACH_MANA,"Регенерация маны (Очки обучения: 10, Цена: 10000 монет)",DIA_BaalOrun_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_BaalOrun_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 10000 Coins) " ,DIA_BaalOrun_TEACH_MANA_Regen);
 	};
 };
 
@@ -2091,9 +2092,9 @@ func void dia_baalorun_teach_mana_5()
 	Info_AddChoice(dia_baalorun_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_baalorun_teach_mana_1);
 	Info_AddChoice(dia_baalorun_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_baalorun_teach_mana_5);
 
-	if((Kapitel >= 2) && (hero.guild == GIL_GUR) && (VATRAS_TEACHREGENMANA == FALSE))
+	if ((Chapter >=  2 ) && (hero.guild ==  GIL_GUR ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
 	{
-		Info_AddChoice(DIA_BaalOrun_TEACH_MANA,"Регенерация маны (Очки обучения: 10, Цена: 10000 монет)",DIA_BaalOrun_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_BaalOrun_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 10000 Coins) " ,DIA_BaalOrun_TEACH_MANA_Regen);
 	};
 };
 
@@ -2104,7 +2105,7 @@ instance DIA_BAALORUN_GATHERARMY(C_Info)
 	condition = dia_baalorun_gatherarmy_condition;
 	information = dia_baalorun_gatherarmy_info;
 	permanent = FALSE;
-	description = "Нам нужно срочно поговорить!";
+	description = " We need to talk urgently! " ;
 };
 
 
@@ -2119,38 +2120,38 @@ func int dia_baalorun_gatherarmy_condition()
 func void dia_baalorun_gatherarmy_info()
 {
 	B_GivePlayerXP(400);
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_00");	//Нам нужно срочно поговорить!
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_00 " );	// We need to talk urgently!
 	if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_01");	//О чем именно, брат?
+		AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_01 " );	// About what, brother?
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_02");	//(вздох)
-		AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_03");	//Послушай, скоро сюда нагрянут орки!
-		AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_04");	//Орки?! Хммм... С чего ты это взял?
+		AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_03 " );	// Listen, orcs are coming here soon!
+		AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_04 " );	// Orcs?! Hmmm... Where did you get that from?
 	};
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_05");	//Я пришел с предложением от лорда Хагена, главы ордена паладинов.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_06");	//Да? И в чем оно заключается?
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_07");	//Он просит вашей помощи в войне с этими зеленокожими тварями.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_08");	//Так, значит, лорд Хаген хочет в открытую выступить против орков?
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_09");	//Да, - правда, сейчас у него слишком мало людей, чтобы дать им открытый бой.
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_10");	//Но он полагает, что с вашей помощью у него будет шанс выиграть эту битву.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_11");	//Мне нужно некоторое время для раздумий...
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_12");	//Но орки уже и так прибрали к рукам большую часть острова! Еще немного - и они завладеют им целиком.
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_13");	//Орки там никого не пощадили, устроив всем его жителям кровавую резню. Поэтому вряд ли они будут к вам более благосклонны.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_14");	//(решительно) Ну хорошо! Считай, что ты смог убедить меня в необходимости подобного союза.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_15");	//Братство поможет паладинам, ибо по всей видимости теперь это стало нашим общим делом.
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_16");	//Хорошо, я передам твои слова лорду Хагену. Когда вы выступаете?
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_17");	//Это уже решать не мне. Думаю, будет лучше, если ты поговоришь об этом с Гор На Кошем.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_18");	//Именно он сейчас возглавляет священный Круг стражей.
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_19");	//А как же вы - Гуру?
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_20");	//Все, что касается аспектов ведения войны - это удел воинов Братства! И в этом мы полностью полагаемся на них.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_21");	//Конечно, наши познания в области магии, дарованной нам когда-то Спящим, безусловно, могли бы помочь нам в предстоящей битве.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_22");	//Однако ты должен понять, что Гуру - это прежде всего духовные наставники Братства, а не его воины.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_23");	//Так что иди к Гор На Кошу и передай мои слова. Все остальное он решит сам.
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_24");	//Хорошо, так и сделаю.
-	B_LogEntry(TOPIC_ORсGREATWAR,"Я смог убедить Идола Орана в необходимости сражаться на стороне паладинов. Теперь мне необходимо поговорить с Гор На Кошем - наставником круга стражей и узнать, когда его воины готовы выступить в поход.");
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_05 " );	// I've come with an offer from Lord Hagen, head of the paladin order.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_06 " );	// Yes? And what is it?
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_07 " );	// He asks for your help in the war against these green-skinned creatures.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_08 " );	// So, Lord Hagen wants to openly oppose the orcs?
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_09 " );	// Yes, though, right now he has too few people to give them an open fight.
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_10 " );	// But he believes that with your help he will have a chance to win this battle.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_11 " );	// I need some time to think...
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_12 " );	// But the orcs have already taken over most of the island! A little more - and they will take over it entirely.
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_13 " );	// The orcs there spared no one, arranging a bloody massacre for all its inhabitants. Therefore, they are unlikely to be more favorable to you.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_14 " );	// (decidedly) All right! Consider that you were able to convince me of the need for such an alliance.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_15 " );	// The Fellowship will help the paladins, because apparently now it has become our common cause.
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_16 " );	// All right, I'll pass on your words to Lord Hagen. When do you perform?
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_17 " );	// It's not up to me to decide. I think it's best if you talk to Gor Na Kosh about it.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_18 " );	// It is he who now leads the sacred Circle of Guardians.
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_19 " );	// And what about you - Guru?
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_20 " );	// Everything related to aspects of warfare is the lot of the warriors of the Brotherhood! And in this we completely rely on them.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_21 " );	// Of course, our knowledge of the magic bestowed upon us by the Sleepers could certainly help us in the upcoming battle.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_22 " );	// However, you must understand that the Gurus are primarily the spiritual mentors of the Brotherhood, and not its warriors.
+	AI_Output(self,other, " DIA_BaalOrun_GatherArmy_01_23 " );	// So go to Gor Na Kosh and deliver my words. Everything else he decides himself.
+	AI_Output(other,self, " DIA_BaalOrun_GatherArmy_01_24 " );	// Okay, I'll do that.
+	B_LogEntry( TOPIC_OR with GREATWAR , " I was able to convince the Idol of Oran to fight on the side of the paladins. Now I need to speak with Gor Na Kosh, the guardian's circle master, to find out when his warriors are ready to march. " );
 };
 
 
@@ -2160,13 +2161,13 @@ instance DIA_BAALORUN_GETSHIP(C_Info)
 	nr = 1;
 	condition = dia_baalorun_getship_condition;
 	information = dia_baalorun_getship_info;
-	description = "Мне нужно попасть на корабль паладинов.";
+	description = " I need to get on the paladin ship. " ;
 };
 
 
 func int dia_baalorun_getship_condition()
 {
-	if((MIS_SCKnowsWayToIrdorath == TRUE) && (KAPITELORCATC == FALSE) && ((hero.guild == GIL_SEK) || (hero.guild == GIL_TPL) || (hero.guild == GIL_GUR)))
+	if ((MIS_SCKnowsWayToIrdorath ==  TRUE ) && ( KAPITELORCATC  ==  FALSE ) && ((hero.guild ==  GIL_SEK ) || (hero.guild ==  GIL_TPL ) || (hero.guild ==  GIL_GUR )))
 	{
 		return TRUE;
 	};
@@ -2174,22 +2175,22 @@ func int dia_baalorun_getship_condition()
 
 func void dia_baalorun_getship_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_GetShip_01_00");	//Мне нужно попасть на корабль паладинов. Ты можешь мне в этом помочь?
-	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_01");	//Хммм... И зачем тебе это только понадобилось?
-	AI_Output(other,self,"DIA_BaalOrun_GetShip_01_02");	//Я узнал, где скрывается наш главный враг. И мне необходим корабль, чтобы добраться туда.
-	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_03");	//В таком случае я знаю, как нам лучше всего поступить.
-	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_04");	//Полагаю, тебе хорошо известно, что у нас довольно неплохие связи с некоторыми влиятельными людьми в городе.
-	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_05");	//И наверняка кое-кому из них будет вполне по силам решить эту проблему. Думаю, нам стоит обратиться именно к ним!
-	AI_Output(other,self,"DIA_BaalOrun_GetShip_01_06");	//И что мне для этого нужно сделать?
-	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_07");	//Не волнуйся. Я сам обо всем позабочусь.
-	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_08");	//Однако хочу тебя сразу предупредить, что услуги подобного рода обойдутся тебе не слишком дешево!
-	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_09");	//Не говоря уже о времени, которое понадобится, чтобы утрясти все формальности в этом вопросе.
-	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_10");	//Заходи ко мне через пару дней. Возможно, что у меня будут для тебя новости на этот счет.
+	AI_Output(other,self, " DIA_BaalOrun_GetShip_01_00 " );	// I need to get on the paladin ship. Can you help me with this?
+	AI_Output(self,other, " DIA_BaalOrun_GetShip_01_01 " );	// Hmmm... And why did you even need this?
+	AI_Output(other,self, " DIA_BaalOrun_GetShip_01_02 " );	// I found out where our main enemy is hiding. And I need a ship to get there.
+	AI_Output(self,other, " DIA_BaalOrun_GetShip_01_03 " );	// In that case, I know what's best for us to do.
+	AI_Output(self,other, " DIA_BaalOrun_GetShip_01_04 " );	// I guess you're well aware that we have pretty good connections with some of the powerful people in town.
+	AI_Output(self,other, " DIA_BaalOrun_GetShip_01_05 " );	// And surely some of them will be quite able to solve this problem. I think we should go to them!
+	AI_Output(other,self, " DIA_BaalOrun_GetShip_01_06 " );	// And what do I need to do for this?
+	AI_Output(self,other, " DIA_BaalOrun_GetShip_01_07 " );	// Don't worry. I'll take care of everything myself.
+	AI_Output(self,other, " DIA_BaalOrun_GetShip_01_08 " );	// However, I want to warn you right away that services of this kind will not cost you too cheap!
+	AI_Output(self,other, " DIA_BaalOrun_GetShip_01_09 " );	// Not to mention the time it will take to settle all the formalities in this matter.
+	AI_Output(self,other, " DIA_BaalOrun_GetShip_01_10 " );	// Come see me in a couple of days. Perhaps I will have some news for you on this matter.
 	DAYORUNHELP = Wld_GetDay();
 	MIS_ORUNHELPSHIP = LOG_Running;
 	Log_CreateTopic(TOPIC_ORUNHELPSHIP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ORUNHELPSHIP,LOG_Running);
-	B_LogEntry(TOPIC_ORUNHELPSHIP,"Идол Оран обещал мне помочь с кораблем. Однако это будет стоить мне огромной кучи золота! Мне стоит заглянуть к нему через пару дней.");
+	B_LogEntry( TOPIC_ORUNHELPSHIP , " Idol Oran promised to help me with the ship. However, it will cost me a huge pile of gold! I should visit him in a couple of days. " );
 };
 
 
@@ -2206,7 +2207,7 @@ instance DIA_BAALORUN_GETSHIPDONE(C_Info)
 
 func int dia_baalorun_getshipdone_condition()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
 	if((MIS_ORUNHELPSHIP == LOG_Running) && (DAYORUNHELP <= (daynow - 2)))
 	{
@@ -2216,41 +2217,41 @@ func int dia_baalorun_getshipdone_condition()
 
 func void dia_baalorun_getshipdone_info()
 {
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_00");	//Хорошо, что ты зашел. У меня появились некоторые новости относительно твоей недавней просьбы.
-	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_01_01");	//Какие именно?
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_02");	//Мне удалось достать для тебя письменное разрешение на доступ к кораблю паладинов.
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_03");	//Однако, как я уже ранее говорил, тебе за него придется заплатить.
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_05");	//Всего-навсего две тысячи золотых монет. Итак, что скажешь?
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDone_01_00 " );	// It's good that you came. I have some news regarding your recent request.
+	AI_Output(other,self, " DIA_BaalOrun_GetShipDone_01_01 " );	// Which ones exactly?
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDone_01_02 " );	// I managed to get you a written permission to access the paladin ship.
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDone_01_03 " );	// However, as I said earlier, you will have to pay for it.
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDone_01_05 " );	// Only two thousand gold coins. So what do you say?
 	Info_ClearChoices(dia_baalorun_getshipdone);
-	Info_AddChoice(dia_baalorun_getshipdone,"У меня сейчас с собой недостаточно золота.",dia_baalorun_getshipdone_paylater);
+	Info_AddChoice(dia_baalorun_getshipdone, " I don't have enough gold with me right now. " ,dia_baalorun_getshipdone_paylater);
 	if(Npc_HasItems(other,ItMi_Gold) >= 2000)
 	{
-		Info_AddChoice(dia_baalorun_getshipdone,"Хорошо, вот твои деньги.",dia_baalorun_getshipdone_money);
+		Info_AddChoice(dia_baalorun_getshipdone, " Okay, here's your money. " ,dia_baalorun_getshipdone_money);
 	};
 };
 
 func void dia_baalorun_getshipdone_paylater()
 {
-	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_PayLater_01_00");	//У меня сейчас с собой недостаточно золота.
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_PayLater_01_01");	//Тогда поговорим об этом, когда оно у тебя будет.
+	AI_Output(other,self, " DIA_BaalOrun_GetShipDone_PayLater_01_00 " );	// I don't have enough gold with me right now.
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDone_PayLater_01_01 " );	// Then we'll talk about it when you have it.
 	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_PayLater_01_02");	//Само собой.
 	ORUNCANGIVEMEPASS = TRUE;
-	B_LogEntry(TOPIC_ORUNHELPSHIP,"Мне нужно заплатить две тысячи золотых, после чего Идол Оран согласится отдать мне письменное разрешение на доступ к кораблю.");
+	B_LogEntry( TOPIC_ORUNHELPSHIP , " I need to pay two thousand gold pieces, after which the Idol of Oran will agree to give me written permission to access the ship. " );
 	Info_ClearChoices(dia_baalorun_getshipdone);
 };
 
 func void dia_baalorun_getshipdone_money()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_Money_01_00");	//Хорошо, вот твои деньги.
+	AI_Output(other,self, " DIA_BaalOrun_GetShipDone_Money_01_00 " );	// Okay, here's your money.
 	B_GiveInvItems(other,self,ItMi_Gold,2000);
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_Money_01_01");	//Отлично! В таком случае можешь забрать его у меня.
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDone_Money_01_01 " );	// Great! In that case, you can take it from me.
 	B_GiveInvItems(self,other,ITWr_ForgedShipLetter_MIS,1);
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_Money_01_02");	//И надеюсь, что оно тебе поможет.
-	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_Money_01_03");	//Можешь в этом не сомневаться.
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDone_Money_01_02 " );	// And I hope it helps you.
+	AI_Output(other,self, " DIA_BaalOrun_GetShipDone_Money_01_03 " );	// You can be sure of that.
 	MIS_ORUNHELPSHIP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_ORUNHELPSHIP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ORUNHELPSHIP,"Идол Оран дал мне письменное разрешение, с помощью которого я смогу теперь подняться на борт Эсмеральды.");
+	B_LogEntry( TOPIC_ORUNHELPSHIP , "The Idol of Oran has given me written permission to board the Esmeralda now. " );
 	Info_ClearChoices(dia_baalorun_getshipdone);
 };
 
@@ -2262,7 +2263,7 @@ instance DIA_BAALORUN_GETSHIPDONEAGAIN(C_Info)
 	condition = dia_baalorun_getshipdoneagain_condition;
 	information = dia_baalorun_getshipdoneagain_info;
 	permanent = TRUE;
-	description = "Дай мне это письменное разрешение.";
+	description = " Give me this written permission. " ;
 };
 
 
@@ -2276,35 +2277,35 @@ func int dia_baalorun_getshipdoneagain_condition()
 
 func void dia_baalorun_getshipdoneagain_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_GetShipDoneAgain_01_00");	//Дай мне это письменное разрешение.
+	AI_Output(other,self, " DIA_BaalOrun_GetShipDoneAgain_01_00 " );	// Give me this written permission.
 	AI_Output(self,other,"DIA_BaalOrun_GetShipDoneAgain_01_01");	//А деньги?
 	Info_ClearChoices(dia_baalorun_getshipdoneagain);
-	Info_AddChoice(dia_baalorun_getshipdoneagain,"У меня сейчас с собой недостаточно золота.",dia_baalorun_getshipdoneagain_paylater);
+	Info_AddChoice(dia_baalorun_getshipdoneagain, " I don't have enough gold with me right now. " ,dia_baalorun_getshipdoneagain_paylater);
 	if(Npc_HasItems(other,ItMi_Gold) >= 2000)
 	{
-		Info_AddChoice(dia_baalorun_getshipdoneagain,"Хорошо, вот твое золото.",dia_baalorun_getshipdoneagain_money);
+		Info_AddChoice(dia_baalorun_getshipdoneagain, " Okay, here's your gold. " ,dia_baalorun_getshipdoneagain_money);
 	};
 };
 
 func void dia_baalorun_getshipdoneagain_paylater()
 {
-	AI_Output(other,self,"DIA_BaalOrun_GetShipDoneAgain_PayLater_01_00");	//У меня недостаточно золота.
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDoneAgain_PayLater_01_01");	//Тогда поговорим об этом, когда оно у тебя будет.
+	AI_Output(other,self, " DIA_BaalOrun_GetShipDoneAgain_PayLater_01_00 " );	// I don't have enough gold.
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDoneAgain_PayLater_01_01 " );	// Then we'll talk about it when you have it.
 	Info_ClearChoices(dia_baalorun_getshipdoneagain);
 };
 
 func void dia_baalorun_getshipdoneagain_money()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_BaalOrun_GetShipDoneAgain_Money_01_00");	//Хорошо, вот твое золото.
+	AI_Output(other,self, " DIA_BaalOrun_GetShipDoneAgain_Money_01_00 " );	// Okay, here's your gold.
 	B_GiveInvItems(other,self,ItMi_Gold,2000);
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDoneAgain_Money_01_01");	//Отлично! В таком случае можешь забрать его у меня.
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDoneAgain_Money_01_01 " );	// Great! In that case, you can take it from me.
 	B_GiveInvItems(self,other,ITWr_ForgedShipLetter_MIS,1);
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDoneAgain_Money_01_02");	//И надеюсь, что оно тебе поможет.
-	AI_Output(other,self,"DIA_BaalOrun_GetShipDoneAgain_Money_01_03");	//Можешь в этом не сомневаться.
+	AI_Output(self,other, " DIA_BaalOrun_GetShipDoneAgain_Money_01_02 " );	// And I hope it helps you.
+	AI_Output(other,self, " DIA_BaalOrun_GetShipDoneAgain_Money_01_03 " );	// You can be sure of that.
 	MIS_ORUNHELPSHIP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_ORUNHELPSHIP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ORUNHELPSHIP,"Идол Оран дал мне письменное разрешение, с помощью которого я смогу теперь подняться на борт Эсмеральды.");
+	B_LogEntry( TOPIC_ORUNHELPSHIP , "The Idol of Oran has given me written permission to board the Esmeralda now. " );
 	Info_ClearChoices(dia_baalorun_getshipdoneagain);
 };
 
@@ -2316,7 +2317,7 @@ instance DIA_BAALORUN_RUNEMAGICNOTWORK(C_Info)
 	condition = dia_baalorun_runemagicnotwork_condition;
 	information = dia_baalorun_runemagicnotwork_info;
 	permanent = FALSE;
-	description = "Как обстоят дела с вашей магией?";
+	description = " How is your magic doing? " ;
 };
 
 
@@ -2331,38 +2332,38 @@ func int dia_baalorun_runemagicnotwork_condition()
 func void dia_baalorun_runemagicnotwork_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_BaalOrun_RuneMagicNotWork_01_00");	//Как обстоят дела с вашей магией?
-	AI_Output(self,other,"DIA_BaalOrun_RuneMagicNotWork_01_01");	//Наши магические руны ослабли и более не способны творить заклинания!
-	AI_Output(self,other,"DIA_BaalOrun_RuneMagicNotWork_01_02");	//Мы все крайне удивлены этому обстоятельству, но ничего не можем сделать.
-	AI_Output(self,other,"DIA_BaalOrun_RuneMagicNotWork_01_03");	//Все это довольно странно.
-	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Гуру Братства также лишились власти над магией рун!");
+	AI_Output(other,self, " DIA_BaalOrun_RuneMagicNotWork_01_00 " );	// How's your magic doing?
+	AI_Output(self,other, " DIA_BaalOrun_RuneMagicNotWork_01_01 " );	// Our magic runes have weakened and are no longer able to cast spells!
+	AI_Output(self,other, " DIA_BaalOrun_RuneMagicNotWork_01_02 " );	// We are all extremely surprised by this circumstance, but there is nothing we can do.
+	AI_Output(self,other, " DIA_BaalOrun_RuneMagicNotWork_01_03 " );	// This is all pretty weird.
+	B_LogEntry( TOPIC_RUNEMAGICNOTWORK , "The Gurus of the Brotherhood have also lost their power over rune magic! " );
 	GURUMAGERUNESNOT = TRUE;
 };
 
-instance DIA_BaalOrun_MAXROBE(C_Info)
+instance DIA_Day_Sun_MAXROBE ( C_Info ) ;
 {
 	npc = gur_8002_orun;
 	nr = 2;
 	condition = DIA_BaalOrun_MAXROBE_condition;
-	information = DIA_BaalOrun_MAXROBE_info;
+	information = DIA_Sunny_Sun_info;
 	permanent = FALSE;
-	description = "Как насчет робы получше?";
+	description = " How about a better robe? " ;
 };
 
-func int DIA_BaalOrun_MAXROBE_condition()
+func int DIA_MAXROBE_condition()
 {
-	if((hero.guild == GIL_GUR) && (Kapitel >= 5) && (Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 6) && (LastRobeGUR == FALSE) && (MAXROBEGUR_Permanent == FALSE))
+	if ((hero.guild ==  GIL_GUR ) && (Chapter >=  5 ) && (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) ==  6 ) && (LastRobeGUR ==  FALSE ) && (MAXROBEGUR_Permanent ==  FALSE )) ;
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_BaalOrun_MAXROBE_info()
+func void DIA_INFO_INFO()
 {
-	AI_Output(other,self,"DIA_BaalOrun_MAXROBE_01_00");	//Как насчет робы получше?
-	AI_Output(self,other,"DIA_BaalOrun_MAXROBE_01_01");	//Поскольку ты владеешь всеми шестью кругами магии, ты достоин носить робу верховного Гуру!
-	AI_Output(self,other,"DIA_BaalOrun_MAXROBE_01_02");	//Однако тебе придется за нее заплатить. Ее изготовление обходится нам недешево, поэтому мы не можем отдать ее даром.
-	LastRobeGUR = TRUE;
+	AI_Output(other,self, " DIA_BaalOrun_MAXROBE_01_00 " );	// How about a better robe?
+	AI_Output(self,other, " DIA_BaalOrun_MAXROBE_01_01 " );	// Since you are proficient in all six circles of magic, you are worthy to wear the robe of the supreme Guru!
+	AI_Output(self,other, " DIA_BaalOrun_MAXROBE_01_02 " );	// However, you will have to pay for it. Its production costs us dearly, so we cannot give it away for free.
+	LastRobeGUR = TRUE ;
 };
 
 instance DIA_BaalOrun_MAXROBE_Buy(C_Info)
@@ -2372,12 +2373,12 @@ instance DIA_BaalOrun_MAXROBE_Buy(C_Info)
 	condition = DIA_BaalOrun_MAXROBE_Buy_condition;
 	information = DIA_BaalOrun_MAXROBE_Buy_info;
 	permanent = TRUE;
-	description = "Продай мне робу верховного Гуру. (Цена: 25000 монет)";
+	description = " Sell me the Robe of the Supreme Guru. (Price: 25000 coins) " ;
 };
 
 func int DIA_BaalOrun_MAXROBE_Buy_condition()
 {
-	if((hero.guild == GIL_GUR) && (LastRobeGUR == TRUE) && (MAXROBEGUR_Permanent == FALSE))
+	if (( hero . guild ==  GIL_GUR ) && ( LastRobeGUR ==  TRUE ) && ( MAXROBEGUR_Permanent ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -2385,20 +2386,20 @@ func int DIA_BaalOrun_MAXROBE_Buy_condition()
 
 func void DIA_BaalOrun_MAXROBE_Buy_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_MAXROBE_Buy_01_00");	//Продай мне робу верховного Гуру.
+	AI_Output(other,self, " DIA_BaalOrun_MAXROBE_Buy_01_00 " );	// Sell me the robe of the supreme Guru.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 25000)
 	{
 		B_GiveInvItems(other,self,ItMi_Gold,25000);
 		Npc_RemoveInvItems(self,ItMi_Gold,25000);
-		AI_Output(self,other,"DIA_BaalOrun_MAXROBE_Buy_01");	//Хорошо! Вот, держи ее.
-		AI_Output(self,other,"DIA_BaalOrun_MAXROBE_Buy_02");	//Это огромная честь носить подобное одеяние. Помни об этом!
+		AI_Output(self,other, " DIA_BaalOrun_MAXROBE_Buy_01 " );	// Good! Here, hold her.
+		AI_Output(self,other, " DIA_BaalOrun_MAXROBE_Buy_02 " );	// It's a great honor to wear such an attire. Remember this!
 		CreateInvItems(self,ITAR_GUR_TOP,1);
 		B_GiveInvItems(self,other,ITAR_GUR_TOP,1);
 		MAXROBEGUR_Permanent = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalOrun_MAXROBE_Buy_01_03");	//У тебя недостаточно золота.
+		AI_Output(self,other, " DIA_BaalOrun_MAXROBE_Buy_01_03 " );	// You don't have enough gold.
 	};
 };
