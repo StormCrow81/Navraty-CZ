@@ -1,4 +1,5 @@
 
+
 instance DIA_WOLF_LI_EXIT(C_Info)
 {
 	npc = sld_811_wolf_li;
@@ -28,7 +29,7 @@ instance DIA_WOLF_LI_TRAINING(C_Info)
 	condition = dia_wolf_li_training_condition;
 	information = dia_wolf_li_training_info;
 	permanent = TRUE;
-	description = "Тренируй меня в стрельбе.";
+	description = " Train me at shooting. " ;
 };
 
 
@@ -39,7 +40,7 @@ func int dia_wolf_li_training_condition()
 
 func void dia_wolf_li_training_info()
 {
-	AI_Output(other,self,"DIA_Wolf_DI_Training_15_00");	//Обучи меня стрельбе.
+	AI_Output(other,self, " DIA_Wolf_DI_Training_15_00 " );	// Teach me how to shoot.
 	AI_Output(self,other,"DIA_Wolf_DI_Training_08_01");	//Из чего?
 	Info_ClearChoices(dia_wolf_li_training);
 	Info_AddChoice(dia_wolf_li_training,Dialog_Back,dia_wolf_li_training_back);
@@ -58,7 +59,7 @@ func void dia_wolf_li_training_bow_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,1,90))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_Training_BOW_1_08_00");	//В отличии от арбалета, лук - громоздкий и требует много места. Смотри, что в во время боя его у тебя хватало.
+		AI_Output(self,other, " DIA_Wolf_DI_Training_BOW_1_08_00 " );	// Unlike a crossbow, a bow is bulky and takes up a lot of space. Look what you had enough of during the battle.
 	};
 	Info_ClearChoices(dia_wolf_li_training);
 	Info_AddChoice(dia_wolf_li_training,Dialog_Back,dia_wolf_li_training_back);
@@ -72,7 +73,7 @@ func void dia_wolf_li_training_bow_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,5,90))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_Training_BOW_5_08_00");	//Пускай тетиву с легкостью, когда пускаешь стрелу. Неповоротливый палец задает стреле неправильную траекторию.
+		AI_Output(self,other, " DIA_Wolf_DI_Training_BOW_5_08_00 " );	// String with ease when you shoot an arrow. A clumsy finger gives the arrow the wrong trajectory.
 	};
 	Info_ClearChoices(dia_wolf_li_training);
 	Info_AddChoice(dia_wolf_li_training,Dialog_Back,dia_wolf_li_training_back);
@@ -86,7 +87,7 @@ func void dia_wolf_li_training_crossbow_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,100))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_Training_CROSSBOW_1_08_00");	//Пытайся при стрельбе не расшатывать арбалет. Для этого осторожно спускай курок.
+		AI_Output(self,other, " DIA_Wolf_DI_Training_CROSSBOW_1_08_00 " );	// Try not to loosen the crossbow when shooting. To do this, carefully pull the trigger.
 	};
 	Info_ClearChoices(dia_wolf_li_training);
 	Info_AddChoice(dia_wolf_li_training,Dialog_Back,dia_wolf_li_training_back);
@@ -100,7 +101,7 @@ func void dia_wolf_li_training_crossbow_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,100))
 	{
-		AI_Output(self,other,"DIA_Wolf_DI_Training_CROSSBOW_5_08_00");	//Смышленый стрелок всегда обращает внимание на ветер и не стреляет против него.
+		AI_Output(self,other, " DIA_Wolf_DI_Training_CROSSBOW_5_08_00 " );	// A smart shooter always pays attention to the wind and doesn't shoot against it.
 	};
 	Info_ClearChoices(dia_wolf_li_training);
 	Info_AddChoice(dia_wolf_li_training,Dialog_Back,dia_wolf_li_training_back);
@@ -124,7 +125,7 @@ instance DIA_WOLF_LI_PICKPOCKET(C_Info)
 
 func int dia_wolf_li_pickpocket_condition()
 {
-	return C_Beklauen(32,45);
+	return  C_Robbery ( 32 , 45 );
 };
 
 func void dia_wolf_li_pickpocket_info()
@@ -136,7 +137,7 @@ func void dia_wolf_li_pickpocket_info()
 
 func void dia_wolf_li_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_wolf_li_pickpocket);
 };
 
@@ -153,7 +154,7 @@ instance DIA_WOLF_LI_MISSMYGOLD(C_Info)
 	condition = dia_wolf_li_missmygold_condition;
 	information = dia_wolf_li_missmygold_info;
 	permanent = FALSE;
-	description = "У меня есть вопрос.";
+	description = " I have a question. " ;
 };
 
 
@@ -167,10 +168,10 @@ func int dia_wolf_li_missmygold_condition()
 
 func void dia_wolf_li_missmygold_info()
 {
-	AI_Output(other,self,"DIA_Wolf_LI_MissMyGold_01_01");	//У меня есть вопрос.
-	AI_Output(other,self,"DIA_Wolf_LI_MissMyGold_01_03");	//Куда подевалось мое золото?
-	AI_Output(self,other,"DIA_Wolf_LI_MissMyGold_01_04");	//Не имею ни малейшего понятия. Спроси лучше об этом у других парней.
-	B_LogEntry(TOPIC_MISSMYGOLD,"Наемник Вольф ничего не знает о пропаже золота.");
+	AI_Output(other,self, " DIA_Wolf_LI_MissMyGold_01_01 " );	// I have a question.
+	AI_Output(other,self, " DIA_Wolf_LI_MissMyGold_01_03 " );	// Where did my gold go?
+	AI_Output(self,other, " DIA_Wolf_LI_MissMyGold_01_04 " );	// I have no idea. Ask other guys about it.
+	B_LogEntry( TOPIC_MISSMYGOLD , " Mercenary Wolf knows nothing about missing gold. " );
 };
 
 
@@ -181,7 +182,7 @@ instance DIA_WOLF_LI_FINDMAGICORECAVE(C_Info)
 	condition = dia_wolf_li_findmagicorecave_condition;
 	information = dia_wolf_li_findmagicorecave_info;
 	permanent = FALSE;
-	description = "Я нашел пещеру с залежами магической руды.";
+	description = " I found a cave with magical ore deposits. " ;
 };
 
 
@@ -195,9 +196,9 @@ func int dia_wolf_li_findmagicorecave_condition()
 
 func void dia_wolf_li_findmagicorecave_info()
 {
-	AI_Output(other,self,"DIA_Wolf_LI_FindMagicOreCave_01_01");	//Я нашел пещеру с залежами магической руды.
-	AI_Output(self,other,"DIA_Wolf_LI_FindMagicOreCave_01_02");	//Правда? Тогда тебе стоит поговорить об этом с нашим капитаном.
-	AI_Output(self,other,"DIA_Wolf_LI_FindMagicOreCave_01_03");	//Думаю, ему будет интересно услышать эту новость.
+	AI_Output(other,self, " DIA_Wolf_LI_FindMagicOreCave_01_01 " );	// I found a cave with magical ore deposits.
+	AI_Output(self,other, " DIA_Wolf_LI_FindMagicOreCave_01_02 " );	// Really? Then you should talk to our captain about it.
+	AI_Output(self,other, " DIA_Wolf_LI_FindMagicOreCave_01_03 " );	// I think he will be interested to hear this news.
 	GOTOORECAPITAN = TRUE;
 };
 
@@ -209,7 +210,7 @@ instance DIA_WOLF_LI_CHANGECOURSE(C_Info)
 	condition = dia_wolf_li_changecourse_condition;
 	information = dia_wolf_li_changecourse_info;
 	permanent = FALSE;
-	description = "Ты не прочь отправиться обратно в Хоринис?";
+	description = " Would you mind heading back to Khorinis? " ;
 };
 
 
@@ -223,30 +224,30 @@ func int dia_wolf_li_changecourse_condition()
 
 func void dia_wolf_li_changecourse_info()
 {
-	AI_Output(other,self,"DIA_Wolf_LI_ChangeCourse_01_00");	//Ты не хотел бы вернуться обратно в Хоринис?
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_01_01");	//Хммм...(задумчиво) А почему ты спрашиваешь?
+	AI_Output(other,self, " DIA_Wolf_LI_ChangeCourse_01_00 " );	// Would you like to go back to Khorinis?
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_01_01 " );	// Hmmm...(thoughtfully) Why do you ask?
 	Info_ClearChoices(dia_wolf_li_changecourse);
-	Info_AddChoice(dia_wolf_li_changecourse,"Нужно вернуться на остров и помочь паладинам.",dia_wolf_li_changecourse_ore);
-	Info_AddChoice(dia_wolf_li_changecourse,"Есть возможность неплохо заработать.",dia_wolf_li_changecourse_gold);
+	Info_AddChoice(dia_wolf_li_changecourse, " Go back to the island and help the paladins. " ,dia_wolf_li_changecourse_ore);
+	Info_AddChoice(dia_wolf_li_changecourse, " There is a good opportunity to earn good money. " ,dia_wolf_li_changecourse_gold);
 };
 
 func void dia_wolf_li_changecourse_ore()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Wolf_LI_ChangeCourse_Ore_01_01");	//Нужно вернуться на остров и помочь паладинам!
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_Ore_01_02");	//(удивленно) Паладинам? И ты полагаешь, что ради этого нам стоит вернуться обратно?
-	AI_Output(other,self,"DIA_Wolf_LI_ChangeCourse_Ore_01_03");	//Надо сообщить им о руде, которую мы обнаружили на этом острове.
-	AI_Output(other,self,"DIA_Wolf_LI_ChangeCourse_Ore_01_04");	//Это даст им небольшое преимущество в войне против орков.
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_Ore_01_05");	//Извини, приятель, но я против этой идеи!
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_Ore_01_06");	//Я не имею никакого желания рисковать собственной шкурой ради того, что меня интересует меньше всего.
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_Ore_01_07");	//К тому же мне и так хватило по горло тех лет, которые я провел в Долине Рудников, добывая руду для этих болванов.
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_Ore_01_08");	//Пусть паладины сами заботятся о своей судьбе. И на мою помощь пусть не рассчитывают.
-	B_LogEntry(TOPIC_CHANGECOURSE,"Наемник Вольф категорически отказался от идеи плыть обратно в Хоринис, чтобы помочь паладинам.");
+	AI_Output(other,self, " DIA_Wolf_LI_ChangeCourse_Ore_01_01 " );	// We need to get back to the island and help the paladins!
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_Ore_01_02 " );	// (surprised) Paladins? And you think we should go back for that?
+	AI_Output(other,self, " DIA_Wolf_LI_ChangeCourse_Ore_01_03 " );	// We need to tell them about the ore we found on this island.
+	AI_Output(other,self, " DIA_Wolf_LI_ChangeCourse_Ore_01_04 " );	// This will give them a slight advantage in the war against the orcs.
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_Ore_01_05 " );	// Sorry mate, but I'm against the idea!
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_Ore_01_06 " );	// I have no desire to risk my own skin for what interests me the least.
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_Ore_01_07 " );	// Plus, I've had enough of the years I've spent in the Valley of Mines mining ore for these idiots.
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_Ore_01_08 " );	// Let the paladins take care of their own fate. And don't count on my help.
+	B_LogEntry( TOPIC_CHANGECOURSE , " Mercenary Wolf has categorically abandoned the idea of ​​sailing back to Khorinis to help the paladins. " );
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Пора сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Time to tell our captain. " );
 	};
 	Info_ClearChoices(dia_wolf_li_changecourse);
 };
@@ -254,19 +255,19 @@ func void dia_wolf_li_changecourse_ore()
 func void dia_wolf_li_changecourse_gold()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Wolf_LI_ChangeCourse_Gold_01_01");	//Есть возможность неплохо заработать.
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_Gold_01_02");	//Правда? И как же?
-	AI_Output(other,self,"DIA_Wolf_LI_ChangeCourse_Gold_01_03");	//Нужно вернуться на остров и сообщить паладинам о руде, которую мы обнаружили на этом острове.
-	AI_Output(other,self,"DIA_Wolf_LI_ChangeCourse_Gold_01_04");	//Думаю, им придется хорошенько раскошелиться, чтобы узнать где находится этот остров.
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_Gold_01_05");	//(ехидно) Отличная идея, приятель! Мне она очень нравится.
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_Gold_01_08");	//Раз такое дело - плывем обратно в Хоринис!
-	B_LogEntry(TOPIC_CHANGECOURSE,"Наемник Вольф поддержал идею отплыть обратно в Хоринис, чтобы стребовать с паладинов золото за найденную нами магическую руду.");
+	AI_Output(other,self, " DIA_Wolf_LI_ChangeCourse_Gold_01_01 " );	// There is an opportunity to make good money.
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_Gold_01_02 " );	// Really? And how?
+	AI_Output(other,self, " DIA_Wolf_LI_ChangeCourse_Gold_01_03 " );	// We need to return to the island and inform the paladins about the ore we found on this island.
+	AI_Output(other,self, " DIA_Wolf_LI_ChangeCourse_Gold_01_04 " );	// I think they'll have to shell out a lot to find out where this island is.
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_Gold_01_05 " );	// (snickeringly) Great idea, mate! I really like her.
+	AI_Output(self,other, " DIA_Wolf_LI_ChangeCourse_Gold_01_08 " );	// Since this is the case, let's sail back to Khorinis!
+	B_LogEntry( TOPIC_CHANGECOURSE , " Mercenary Wolf supported the idea of ​​sailing back to Khorinis to demand gold from the paladins for the magic ore we found. " );
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKSELL + 1;
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Пора сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Time to tell our captain. " );
 	};
 	Info_ClearChoices(dia_wolf_li_changecourse);
 };
