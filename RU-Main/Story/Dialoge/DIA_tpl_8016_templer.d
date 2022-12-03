@@ -1,5 +1,6 @@
 
-instance DIA_KALOMSGUARD_EXIT(C_Info)
+
+instance DIA_CLOCKGUARD_EXIT (C_Info) .
 {
 	npc = tpl_8016_templer;
 	nr = 999;
@@ -43,9 +44,9 @@ func int dia_kalomsguard_perm_condition()
 
 func void dia_kalomsguard_perm_info()
 {
-	AI_Output(self,other,"DIA_KalomsGuard_PERM_13_00");	//СТОЙ! Что ты делаешь?
-	AI_Output(other,self,"DIA_KalomsGuard_PERM_15_00");	//Думаю, ты не будешь против, если я зайду?
-	AI_Output(self,other,"DIA_KalomsGuard_PERM_13_01");	//Если ты проявишь неуважение к моему господину, я убью тебя.
+	AI_Output(self,other, " DIA_KalomsGuard_PERM_13_00 " );	// STOP! What are you doing?
+	AI_Output(other,self, " DIA_KalomsGuard_PERM_15_00 " );	// Think you won't mind if I drop by?
+	AI_Output(self,other, " DIA_KalomsGuard_PERM_13_01 " );	// If you disrespect my lord, I will kill you.
 	AI_StopProcessInfos(self);
 };
 
