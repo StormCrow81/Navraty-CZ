@@ -1,4 +1,5 @@
 
+
 instance DIA_Grimes_EXIT(C_Info)
 {
 	npc = VLK_4111_Grimes;
@@ -44,8 +45,8 @@ func int DIA_Grimes_Hallo_Condition()
 
 func void DIA_Grimes_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Grimes_Hallo_05_00");	//Ты? Кто бы мог подумать, что мы опять свидимся!
-	AI_Output(self,other,"DIA_Grimes_Hallo_05_01");	//Похоже, мы оба умеем выживать, но, как видишь, я застрял в этой шахте.
+	AI_Output(self,other, " DIA_Grimes_Hallo_05_00 " );	// You? Who would have thought that we would meet again!
+	AI_Output(self,other, " DIA_Grimes_Hallo_05_01 " );	// Looks like we both know how to survive, but as you can see, I'm stuck in this shaft.
 	if(Grimes_First == FALSE)
 	{
 		Wld_InsertNpc(DragonSnapper,"OW_PATH_148_A");
@@ -65,7 +66,7 @@ instance DIA_Grimes_Erz(C_Info)
 	condition = DIA_Grimes_Erz_Condition;
 	information = DIA_Grimes_Erz_Info;
 	permanent = FALSE;
-	description = "Сколько руды вам удалось добыть?";
+	description = " How much ore did you mine? " ;
 };
 
 
@@ -77,11 +78,11 @@ func int DIA_Grimes_Erz_Condition()
 	};
 };
 
-func void DIA_Grimes_Erz_Info()
+func void DIA_Grimes_Ore_Info()
 {
-	AI_Output(other,self,"DIA_Grimes_Erz_15_00");	//Сколько руды вам удалось добыть?
-	AI_Output(self,other,"DIA_Grimes_Erz_05_01");	//Несколько ящиков. Но их здесь уже нет.
-	AI_Output(self,other,"DIA_Grimes_Erz_05_02");	//Паладин Маркос решил отправить руду в замок, так как нас все время атаковали орки.
+	AI_Output(other,self, " DIA_Grimes_Erz_15_00 " );	// How much ore did you mine?
+	AI_Output(self,other, " DIA_Grimes_Erz_05_01 " );	// Multiple boxes. But they are no longer here.
+	AI_Output(self,other, " DIA_Grimes_Erz_05_02 " );	// Paladin Markos decided to send the ore to the castle, since we were constantly attacked by orcs.
 };
 
 
@@ -92,13 +93,13 @@ instance DIA_Grimes_Weg(C_Info)
 	condition = DIA_Grimes_Weg_Condition;
 	information = DIA_Grimes_Weg_Info;
 	permanent = FALSE;
-	description = "Ты знаешь, в каком направлении пошел Маркос?";
+	description = " Do you know which direction Marcos went in? " ;
 };
 
 
 func int DIA_Grimes_Weg_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Grimes_Erz) && (Npc_KnowsInfo(other,DIA_Marcos_Garond) == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Grimes_Erz ) && ( Npc_KnowsInfo ( other , DIA_Marcos_Garond ) ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -106,9 +107,9 @@ func int DIA_Grimes_Weg_Condition()
 
 func void DIA_Grimes_Weg_Info()
 {
-	AI_Output(other,self,"DIA_Grimes_Weg_15_00");	//Ты знаешь, в каком направлении пошел Маркос?
-	AI_Output(self,other,"DIA_Grimes_Weg_05_01");	//Он не пошел прямой дорогой. Вместо этого он хотел пересечь реку там, где она замерзла.
-	AI_Output(self,other,"DIA_Grimes_Weg_05_02");	//Он хотел пойти в обход и подойти к замку с запада.
+	AI_Output(other,self, " DIA_Grimes_Weg_15_00 " );	// Do you know which direction Marcos went?
+	AI_Output(self,other, " DIA_Grimes_Weg_05_01 " );	// He didn't go straight. Instead, he wanted to cross the river where it froze over.
+	AI_Output(self,other, " DIA_Grimes_Weg_05_02 " );	// He wanted to go around and approach the castle from the west.
 };
 
 instance DIA_Grimes_PERM(C_Info)
@@ -118,13 +119,13 @@ instance DIA_Grimes_PERM(C_Info)
 	condition = DIA_Grimes_PERM_Condition;
 	information = DIA_Grimes_PERM_Info;
 	permanent = TRUE;
-	description = "Как твоя работа?";
+	description = " How is your job? " ;
 };
 
 
 func int DIA_Grimes_PERM_Condition()
 {
-	if(Kapitel >= 2)
+	if (Chapter >=  2 )
 	{
 		return TRUE;
 	};
@@ -132,8 +133,8 @@ func int DIA_Grimes_PERM_Condition()
 
 func void DIA_Grimes_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Grimes_PERM_15_00");	//Как твоя работа?
-	AI_Output(self,other,"DIA_Grimes_PERM_05_01");	//Эта скала ужасно твердая - она как будто не хочет отдавать нам руду.
+	AI_Output(other,self, " DIA_Grimes_PERM_15_00 " );	// How is your job?
+	AI_Output(self,other, " DIA_Grimes_PERM_05_01 " );	// This rock is terribly hard - it doesn't seem to want to give us the ore.
 };
 
 
@@ -150,7 +151,7 @@ instance DIA_Grimes_PICKPOCKET(C_Info)
 
 func int DIA_Grimes_PICKPOCKET_Condition()
 {
-	return C_Beklauen(43,21);
+	return  C_Robbery ( 43 , 21 );
 };
 
 func void DIA_Grimes_PICKPOCKET_Info()
@@ -162,7 +163,7 @@ func void DIA_Grimes_PICKPOCKET_Info()
 
 func void DIA_Grimes_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Grimes_PICKPOCKET);
 };
 
@@ -179,7 +180,7 @@ instance DIA_GRIMES_KNOWABOUTERZHUNT(C_Info)
 	condition = dia_grimes_knowabouterzhunt_condition;
 	information = dia_grimes_knowabouterzhunt_info;
 	permanent = FALSE;
-	description = "Ты что-нибудь знаешь о добыче руды?";
+	description = " Do you know anything about mining? " ;
 };
 
 
@@ -190,18 +191,18 @@ func int dia_grimes_knowabouterzhunt_condition()
 
 func void dia_grimes_knowabouterzhunt_info()
 {
-	AI_Output(other,self,"DIA_Grimes_KnowAboutErzHunt_01_00");	//Ты что-нибудь знаешь о добыче руды?
-	AI_Output(self,other,"DIA_Grimes_KnowAboutErzHunt_01_01");	//Я половину своей жизни только тем и занимаюсь, что добываю ее.
-	AI_Output(other,self,"DIA_Grimes_KnowAboutErzHunt_01_03");	//Я хочу научиться добывать руду. Ты можешь мне помочь?
-	AI_Output(self,other,"DIA_Grimes_KnowAboutErzHunt_01_04");	//Нет проблем. Я научу тебя всему, что знаю сам.
+	AI_Output(other,self, " DIA_Grimes_KnowAboutErzHunt_01_00 " );	// Do you know anything about mining?
+	AI_Output(self,other, " DIA_Grimes_KnowAboutErzHunt_01_01 " );	// For half of my life I've been doing nothing but extracting it.
+	AI_Output(other,self, " DIA_Grimes_KnowAboutErzHunt_01_03 " );	// I want to learn how to mine ore. Can you help me?
+	AI_Output(self,other, " DIA_Grimes_KnowAboutErzHunt_01_04 " );	// No problem. I will teach you everything I know myself.
 	if(ORE_TOPIC_EXIST == TRUE)
 	{
-		B_LogEntry(TOPIC_MAGICORE,"Граймс может научить меня добывать магическую руду из породы.");
+		B_LogEntry( TOPIC_MAGICORE , " Grimes can teach me how to extract magic ore from rock. " );
 	}
 	else
 	{
 		Log_CreateTopic(TOPIC_MAGICORE,LOG_NOTE);
-		B_LogEntry(TOPIC_MAGICORE,"Граймс может научить меня добывать магическую руду из породы.");
+		B_LogEntry( TOPIC_MAGICORE , " Grimes can teach me how to extract magic ore from rock. " );
 		ORE_TOPIC_EXIST = TRUE;
 	};
 };
@@ -213,7 +214,7 @@ instance DIA_GRIMES_LEARNABOUTERZHUNT(C_Info)
 	condition = dia_grimes_learnabouterzhunt_condition;
 	information = dia_grimes_learnabouterzhunt_info;
 	permanent = TRUE;
-	description = "Научи меня добывать руду.";
+	description = " Teach me how to mine. " ;
 };
 
 func int dia_grimes_learnabouterzhunt_condition()
@@ -228,11 +229,11 @@ func void dia_grimes_learnabouterzhunt_info()
 {
 	if(KNOWHOWPICKORE == TRUE)
 	{
-		AI_Output(other,self,"DIA_Grimes_LearnAboutErzHunt_01_0A");	//Расскажи мне больше о добыче руды.
+		AI_Output(other,self, " DIA_Grimes_LearnAboutErzHunt_01_0A " );	// Tell me more about mining.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Grimes_LearnAboutErzHunt_01_00");	//Научи меня добывать руду.
+		AI_Output(other,self, " DIA_Grimes_LearnAboutErzHunt_01_00 " );	// Teach me how to mine.
 	};
 
 	Info_ClearChoices(dia_grimes_learnabouterzhunt);
@@ -253,30 +254,30 @@ func void dia_grimes_learnabouterzhunt_ERZWORK()
 		{
 			if(GRIMESTEACHMOREORE == FALSE)
 			{
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_01");	//Хорошо! Слушай внимательно...
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_02");	//Для начала тебе необходимо обзавестись хорошей киркой - это половина дела.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_03");	//Потом начинай обрабатывать найденную тобой рудную жилу.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_04");	//Бить надо не по краю породы, а точно в центр. Наноси один мощный удар, а после - несколько ударов послабее.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_05");	//Тем самым ты немного нарушишь структуру самородка, и при следующем сильном ударе какой-нибудь кусок от него обязательно отколется.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_06");	//А потом повторяй все заново...
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_07");	//Это главное, что тебе нужно знать о добыче руды.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_01 " );	// Good! Listen carefully...
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_02 " );	// First you need to get a good pickaxe - that's half the battle.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_03 " );	// Then start processing the ore vein you found.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_04 " );	// It is necessary to hit not along the edge of the rock, but exactly in the center. Strike one powerful blow, and then several weaker blows.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_05 " );	// By doing so, you will slightly break the structure of the nugget, and with the next strong blow, some piece of it will definitely break off.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_06 " );	// And then do it all over again...
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_07 " );	// This is the main thing you need to know about mining.
 				GRIMESTEACHMOREORE = TRUE;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_09");	//Ладно! Слушай внимательно...(рассказывает)
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_09 " );	// Okay! Listen carefully ... (tells)
 			};
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_10");	//Я научил тебя всему, что знаю. Дальше сам набирайся опыта, махая киркой.
+		AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_10 " );	// I taught you everything I know. Then you gain experience yourself, waving a pickaxe.
 	};
 
 	Info_ClearChoices(dia_grimes_learnabouterzhunt);
 };
 
-var int grimes_einmal;
+var int grimes_once;
 var int grimes_gratulation;
 
 instance DIA_GRIMES_ELIGORPOTION(C_Info)
@@ -286,12 +287,12 @@ instance DIA_GRIMES_ELIGORPOTION(C_Info)
 	condition = dia_grimes_eligorpotion_condition;
 	information = dia_grimes_eligorpotion_info;
 	permanent = FALSE;
-	description = "Что тебе известно об ограблении торговца Лютеро?";
+	description = " What do you know about the robbery of the Luthero merchant? " ;
 };
 
 func int dia_grimes_eligorpotion_condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Grimes_Hallo) && (MIS_JORAHELP == LOG_Running) && (ZURISGIVEMETASKINFO == TRUE))
+	if ( Npc_KnowsInfo ( other , DIA_Grimes_Hello ) && ( MY_HELP  == LOG_Running ) && ( ZURISGIVEMETASKINFO  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -299,50 +300,50 @@ func int dia_grimes_eligorpotion_condition()
 
 func void dia_grimes_eligorpotion_info()
 {
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_00");	//Что тебе известно об ограблении торговца Лютеро?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_01");	//(удивленно) Кого? О чем это ты говоришь?
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_03");	//Это произошло много лет назад.
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_04");	//Дело было громкое, и ты наверняка должен об этом что-нибудь помнить.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_05");	//Хммм...(задумчиво) ну я...(вспоминает)
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_07");	//...ну да - кажется, я кое-что такое припоминаю. (прищуриваясь) Только тебе зачем это?
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_08");	//Ходили слухи, что ты был причастен к этому ограблению.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_09");	//(удивленно) Я?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_13");	//Я понятия не имею, кто грабанул того торговца!
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_14");	//То есть ты ничего не знаешь об этом?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_15");	//(ехидно) Вообще ничего.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_16");	//А даже если бы и знал что-то - с какой стати я должен тебе об этом рассказывать?
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_01_00 " );	// What do you know about the Luthero robbery?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_01_01 " );	// (surprised) Who? What are you talking about?
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_01_03 " );	// This happened many years ago.
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_01_04 " );	// It was a high-profile case, and you should probably remember something about it.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_01_05 " );	// Hmmm...(thoughtfully) well, I...(remembers)
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_01_07 " );	// ...well, yes - I seem to remember something like that. (squinting) But why are you doing this?
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_01_08 " );	// There were rumors that you were involved in this heist.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_01_09 " );	// (surprised) Me?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_01_13 " );	// I have no idea who robbed that merchant!
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_01_14 " );	// So you don't know anything about this?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_01_15 " );	// (sarcastically) Nothing at all.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_01_16 " );	// And even if I knew something - why on earth should I tell you about it?
 	Info_ClearChoices(dia_grimes_eligorpotion);
-	Info_AddChoice(dia_grimes_eligorpotion,"Если ты не расскажешь, я убью тебя!",dia_grimes_eligorpotion_kill);
+	Info_AddChoice(dia_grimes_eligorpotion, " If you don't tell me, I'll kill you! " ,dia_grimes_eligorpotion_kill);
 
 	if(RhetorikSkillValue[1] >= 30)
 	{
-		Info_AddChoice(dia_grimes_eligorpotion,"Сделай это по старой дружбе.",dia_grimes_eligorpotion_memory);
+		Info_AddChoice(dia_grimes_eligorpotion, " Do it for an old friend. " ,dia_grimes_eligorpotion_memory);
 	};
 
-	Info_AddChoice(dia_grimes_eligorpotion,"Я могу заплатить тебе за эту информацию.",dia_grimes_eligorpotion_money);
+	Info_AddChoice(dia_grimes_eligorpotion, " I can pay you for this information. " ,dia_grimes_eligorpotion_money);
 };
 
 func void dia_grimes_eligorpotion_kill()
 {
 	CreateInvItems(self,itke_grimkey,1);
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Kill_01_00");	//Если ты не расскажешь, я убью тебя!
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Kill_01_01");	//Угрозы здесь не помогут, мой мальчик.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Kill_01_02");	//Я уже стар, и смертью меня испугать трудно.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Kill_01_03");	//А если внимательно осмотреться по сторонам, то и так станет понятно, что вряд ли мы выберемся отсюда живыми.
-	B_LogEntry(TOPIC_JORAHELP,"Я поинтересовался у Граймса о деле, связанным с ограблением торговца Лютеро. Мне показалось, что он что-то знает об этом. Но, к сожалению, Граймс не стал посвящать меня в подробности, даже несмотря на то, что я угрожал ему расправой. Теперь мне нужно думать, что делать дальше.");
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Kill_01_00 " );	// If you don't tell me, I'll kill you!
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Kill_01_01 " );	// Threats won't help here, my boy.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Kill_01_02 " );	// I'm already old, and it's hard to scare me with death.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Kill_01_03 " );	// And if you carefully look around, then it will become clear that we are unlikely to get out of here alive.
+	B_LogEntry( TOPIC_JORAHELP , " I asked Grimes about the Luthero robbery case. I thought he knew something about it. Unfortunately, Grimes didn't fill me in on the details, even though I threatened him with violence. Now I need to think what to do next. " );
 	AI_StopProcessInfos(self);
 };
 
 func void dia_grimes_eligorpotion_money()
 {
 	CreateInvItems(self,itke_grimkey,1);
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Money_01_00");	//Я могу заплатить тебе за эту информацию.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_01");	//Э-хе-хе! И на что здесь я смогу потратить твои деньги?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_02");	//На новую кирку?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_04");	//Нет, парень. Деньги тут абсолютно бестолковая вещь.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_05");	//Да и к чему они мне? (печально) Я уже стар, и знаю, что здесь, в этой проклятой долине моя жизнь и закончится.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_06");	//Отсюда уже не выбраться - кругом только орды орков да ужасные твари, готовые всех нас сожрать!
-	B_LogEntry(TOPIC_JORAHELP,"Я поинтересовался у Граймса о деле, связанным с ограблением торговца Лютеро. Мне показалось, что он что-то знает об этом. Но, к сожалению, Граймс не стал посвящать меня в подробности, даже несмотря на то, что я предложил ему золото за эту информацию. Теперь мне нужно думать, что делать дальше.");
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Money_01_00 " );	// I can pay you for this information.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Money_01_01 " );	// E-he-he! And what can I spend your money on here?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Money_01_02 " );	// To a new pickaxe?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Money_01_04 " );	// No, man. Money here is absolutely stupid thing.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Money_01_05 " );	// Yes, and why do I need them? (sadly) I am already old, and I know that here, in this damned valley, my life will end.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Money_01_06 " );	// There's no getting out of here - only hordes of orcs and terrible creatures are around, ready to devour us all!
+	B_LogEntry( TOPIC_JORAHELP , " I asked Grimes about the case involving the Luthero robbery. I thought he knew something about it. But, unfortunately, Grimes did not fill me in on the details, even though I offered him gold for this information. Now I need to think about what to do next. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -350,42 +351,42 @@ func void dia_grimes_eligorpotion_memory()
 {
 	B_GivePlayerXP(500);
 	CreateInvItems(self,itke_grimkey,1);
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_00");	//Сделай это по старой дружбе.
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_01");	//Мы же долгое время плыли с тобой в одной лодке, Граймс! Ты помнишь Старую шахту?
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_02");   //А жизнь в Старом лагере?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_04");	//Эх... Ну ладно, что ты хочешь?
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_08");	//Расскажи, откуда ты знаешь об этом ограблении?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_14");	//Хмм... Это было несколько лет назад. Однажды вечером я сидел в кабаке у Кардифа и подслушал разговор двух парней.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_18");	//Они говорили, что у какого-то крупного торговца в верхнем квартале есть чем поживиться.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_27");	//А на следующее утро я узнал, что в верхнем квартале города обокрали дом одного богача!
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_2F");	//М-да... Значит, тебе так и не удалось узнать имена тех людей, которые совершили это ограбление?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_43");	//Ну, почему же. Через год я встретил одного из них в колонии. Его звали Руфус.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_44");	//Он сказал, что это они ограбили дом богатого торговца и вынесли оттуда все, что только можно было вынести.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_47");	//Более того, Руфус сказал, что одна из вещичек, которые они прихватили, стоила целое состояние!
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_51");	//Кажется, это был какой-то эликсир.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_57");	//А потом произошел один случай...
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_59");	//Что за случай?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_60");	//Как-то в заброшенной шахте в одном из туннелей шахты начался обвал. Стражники поспешно начали выводить нас оттуда. Но тут Руфус отстал.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_67");	//Мы увидели его, бегущего сквозь град падающих каменных глыб!
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_69");	//Он же почти достиг конца туннеля, когда один из падающих камней угодил ему прямо в голову. Он упал замертво.
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_76");	//А что стало с эликсиром Руфуса?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_77");	//Его забрали охранники шахты и спрятали в своем сундуке, подальше от посторонних глаз.
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_81");	//Но насколько мне известно, в заброшенной шахте давно уже никто не работает.
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_82");	//Наверняка охранники забрали его перед тем, как оттуда уйти.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_83");	//Не думаю, что у них тогда было время копаться в своем барахле.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_84");	//(удивленно) Разве ты не знаешь, что там случилось?
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_85");	//Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_89");	//Однажды рудокопы наткнулись на одну необычную пещеру, спрятанную в скале.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_92");	//Несколько рудокопов вместе с тремя охранниками отправились, чтобы осмотреть ту пещеру.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_93");	//Оттуда доносились странные звуки, похожие на ужасающие стоны.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_99");	//Та пещера просто кишела нежитью!
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_106");	//Там была настоящая кровавая бойня! Много народу погибло...
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_108");	//Я тогда был рядом и успел прихватить ключ, который валялся рядом с изуродованным телом одного охранника.
-	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_113");	//А ты можешь отдать мне этот ключ?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_123");	//Зачем? Хотя ладно, дело твое. Но лучше держись подальше от того места.
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_00 " );	// Do it as an old friend.
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_01 " );	// We've been in the same boat with you for a long time, Grimes! Do you remember the Old Mine?
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_02 " );   // And what about life in the Old Camp?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_04 " );	// Eh... Well, what do you want?
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_08 " );	// Tell me, how do you know about this robbery?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_14 " );	// Hmm... That was a few years ago. One evening I was sitting in a pub near Cardiff and overheard a conversation between two guys.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_18 " );	// They said that some big merchant in the upper quarter had something to profit from.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_27 " );	// And the next morning I found out that in the upper quarter of the city, a rich man's house was robbed!
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_2F " );	// Hmmm... So you never managed to find out the names of those people who committed this robbery?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_43 " );	// Well, why not. A year later I met one of them in the colony. His name was Rufus.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_44 " );	// He said that it was they who robbed the house of a rich merchant and took out everything that could be taken out of there.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_47 " );	// What's more, Rufus said that one of the little things they grabbed was worth a fortune!
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_51 " );	// Looks like it was some kind of elixir.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_57 " );	// And then one incident happened...
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_59 " );	// What's the case?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_60 " );	// Somehow, in an abandoned mine, a collapse began in one of the tunnels of the mine. The guards hurriedly began to lead us out of there. But then Rufus fell behind.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_67 " );	// We saw him running through a hail of falling rocks!
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_69 " );	// He had almost reached the end of the tunnel when one of the falling rocks hit him squarely in the head. He dropped dead.
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_76 " );	// What happened to Rufus' elixir?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_77 " );	// The mine guards took it and hid it in their chest, away from prying eyes.
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_81 " );	// But as far as I know, no one has been working in the abandoned mine for a long time.
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_82 " );	// The guards must have taken him before they left.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_83 " );	// I don't think they had time to dig through their junk back then.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_84 " );	// (surprised) Don't you know what happened there?
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_85 " );	// What do you mean?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_89 " );	// Once the miners stumbled upon an unusual cave hidden in the rock.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_92 " );	// Several miners, along with three guards, went to inspect that cave.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_93 " );	// From there came strange sounds, similar to terrifying moans.
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_99 " );	// That cave was full of undead!
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_106 " );	// There was a real carnage! A lot of people died...
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_108 " );	// I was nearby then and managed to grab the key, which was lying next to the mutilated body of one of the guards.
+	AI_Output(other,self, " DIA_Grimes_EligorPotion_Memory_01_113 " );	// Can you give me this key?
+	AI_Output(self,other, " DIA_Grimes_EligorPotion_Memory_01_123 " );	// Why? It's okay though, it's up to you. But better stay away from that place.
 	B_GiveInvItems(self,other,itke_grimkey,1);
-	B_LogEntry(TOPIC_JORAHELP,"Я поинтересовался у Граймса о деле, связанным с ограблением торговца Лютеро. Мне показалось, что он что-то знает об этом, и я оказался прав! Граймс рассказал мне историю одного человека по имени Руфус. Он был одним из тех парней, что ограбили дом Лютеро. Потом Руфуса сослали в Долину на рудники. По словам Граймса, когда они оба были рудокопами и работали в заброшенной шахте, у Руфуса всегда при себе был один странный эликсир, который, как он сам говорил, был простым лекарством от кашля. Однако Руфус очень дорожил своим эликсиром - дорожил так, что отдал за него собственную жизнь! Похоже, этот пузырек с лекарством и есть тот самый эликсир, известный как Пламя Элигора.");
-	Log_AddEntry(TOPIC_JORAHELP,"Граймс также поведал событиях, которые много лет назад произошли в заброшенной шахте. Рудокопы тогда наткнулись на скрытую в скале пещеру, которая просто кишела нежитью. Она и перебила практически всех обитателей шахты. Граймсу удалось выбраться из этого кошмара живым, да и к тому же, не с пустыми руками. Спасаясь бегством, он прихватил ключ, принадлежавший одному из охранников. Возможно, этот ключ поможет мне в поисках эликсира, следы которого обрываются в глубинах шахты. Однако мне стоит быть осторожнее, если я захочу наведаться туда.");
+	B_LogEntry(TOPIC_JORAHELP,"I asked Grimes about the Luthero robbery case. I thought he knew something about it, and I was right! Grimes told me the story of a man named Rufus. He was one of those The boys who robbed Luthero's house.Then Rufus was exiled to the Valley to the mines.According to Grimes, when they were both miners and worked in an abandoned mine, Rufus always had one strange elixir with him, which, as he himself said, was a simple medicine cough. However, Rufus treasured his elixir so much that he gave his own life for it! It seems that this vial of medicine is the same elixir known as Eligor's Flame.");
+	Log_AddEntry( TOPIC_JORAHELP , " Grimes also told the events that took place many years ago in an abandoned mine. The miners then stumbled upon a cave hidden in the rock, which was simply teeming with undead. She killed almost all the inhabitants of the mine. Grimes managed to get out of this nightmare alive, yes and not empty-handed either. While fleeing, he grabbed a key that belonged to one of the guards. Perhaps this key will help me find the elixir, traces of which are found in the depths of the mine. However, I should be careful if I want to visit there . " );
 	GrimesCanEscape = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -397,12 +398,12 @@ instance DIA_GRIMES_POSSECCELIGORPOTION(C_Info)
 	condition = dia_grimes_possecceligorpotion_condition;
 	information = dia_grimes_possecceligorpotion_info;
 	permanent = FALSE;
-	description = "Я был в заброшенной шахте.";
+	description = " I was in an abandoned mine. " ;
 };
 
 func int dia_grimes_possecceligorpotion_condition()
 {
-	if((MIS_JORAHELP == LOG_Running) && (Npc_HasItems(other,itpo_eligorfire) >= 1))
+	if (( MIS_JORAHELP  == LOG_Running ) && ( Npc_HasItems ( other , itpo_eligorfire ) >=  1 )) .
 	{
 		return TRUE;
 	};
@@ -410,19 +411,19 @@ func int dia_grimes_possecceligorpotion_condition()
 
 func void dia_grimes_possecceligorpotion_info()
 {
-	AI_Output(other,self,"DIA_Grimes_PosseccEligorPotion_01_00");	//Я был в заброшенной шахте.
-	AI_Output(self,other,"DIA_Grimes_PosseccEligorPotion_01_01");	//(недоверчиво) Да ну? Не может быть...
-	AI_Output(other,self,"DIA_Grimes_PosseccEligorPotion_01_02");	//Там я нашел вот этот эликсир. Узнаешь?
-	AI_Output(self,other,"DIA_Grimes_PosseccEligorPotion_01_03");	//Невероятно. Это же то самое зелье Руфуса!
-	AI_Output(self,other,"DIA_Grimes_PosseccEligorPotion_01_05");	//Да, парень... Смелости тебе не занимать.
+	AI_Output(other,self, " DIA_Grimes_PosseccEligorPotion_01_00 " );	// I was in an abandoned mine.
+	AI_Output(self,other, " DIA_Grimes_PosseccEligorPotion_01_01 " );	// (incredulously) Huh? Can't be...
+	AI_Output(other,self, " DIA_Grimes_PosseccEligorPotion_01_02 " );	// There I found this elixir. Do you recognize?
+	AI_Output(self,other, " DIA_Grimes_PosseccEligorPotion_01_03 " );	// Incredible. It's the same Rufus potion!
+	AI_Output(self,other, " DIA_Grimes_PosseccEligorPotion_01_05 " );	// Yes, lad... You must have the courage.
 
-	if(Npc_IsDead(demonlord_am))
+	if (Npc_IsDead(demonlord_am))
 	{
 		B_GivePlayerXP(200);
-		AI_Output(self,other,"DIA_Grimes_PosseccEligorPotion_01_07");	//Что ты там видел?
-		AI_Output(other,self,"DIA_Grimes_PosseccEligorPotion_01_08");	//Там был демон, но я его прикончил.
-		AI_Output(other,self,"DIA_Grimes_PosseccEligorPotion_01_09");	//В общем, как и всю ту нежить, что была в шахте.
-		AI_Output(self,other,"DIA_Grimes_PosseccEligorPotion_01_15");	//Да, удивительный ты человек!
+		AI_Output(self,other, " DIA_Grimes_PosseccEligorPotion_01_07 " );	// What did you see there?
+		AI_Output(other,self, " DIA_Grimes_PosseccEligorPotion_01_08 " );	// There was a demon, but I killed him.
+		AI_Output(other,self, " DIA_Grimes_PosseccEligorPotion_01_09 " );	// In general, like all the undead that were in the mine.
+		AI_Output(self,other, " DIA_Grimes_PosseccEligorPotion_01_15 " );	// Yes, you are an amazing person!
 	}
 	else
 	{
@@ -437,7 +438,7 @@ instance DIA_GRIMES_LETSGETOUTSUGG(C_Info)
 	condition = dia_grimes_letsgetoutsugg_condition;
 	information = dia_grimes_letsgetoutsugg_info;
 	permanent = FALSE;
-	description = "Ты не хотел бы выбраться из Долины Рудников?";
+	description = " Would you like to get out of the Mining Valley? " ;
 };
 
 func int dia_grimes_letsgetoutsugg_condition()
@@ -450,35 +451,35 @@ func int dia_grimes_letsgetoutsugg_condition()
 
 func void dia_grimes_letsgetoutsugg_info()
 {
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_00");	//Ты не думал о том, чтобы выбраться из этой шахты и из Долины Рудников?
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_01");	//Как же не думал. Да только толку от этого?
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_02");	//Паладины меня никуда не пустят. И даже если я как-нибудь сумею мимо них проскользнуть, вокруг толпы орков.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_03");	//Я и двадцати минут снаружи не проживу. Так что нет, лучше я останусь здесь.
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_04");	//Ясно. А если бы кто-то, кого ты знаешь, помог тебе выбраться отсюда?
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_05");	//Ты? Но как ты сумеешь пробраться через орды орков, даже если забыть о паладинах?
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_06");	//Так же, как и в предыдущие несколько раз.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_07");	//Хмм… хорошо, но зачем я тебе? Ты же не просто так хочешь помочь мне?
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_08");	//Мне нужны люди, хорошо орудующие киркой. В Хоринисе, как оказалось, имеется немного магической руды.
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_09");	//Сейчас я пытаюсь освоить это месторождение, но одному мне этого не сделать.
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_10");	//Если коротко, я хочу, чтобы ты работал на меня.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_11");	//(Разочарованно) Опять шахта? Но чем твоя шахта лучше этой?
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_12");	//Дай подумать...
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_13");	//Вокруг нее не бродят орды орков, тебе не придется работать сутками, у тебя будет жилье и трехразовое питание.
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_14");	//Краулеров там тоже больше нет.
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_15");	//Ах да, добытая там руда совершенно точно пойдет на дело, а не будет валяться рядом с шахтой в ожидании, когда орки смогут забрать ее себе.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_16");	//Ну, если все это правда, то предлагаемые тобой условия работы будут получше, чем здесь.
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_00 " );	// Have you thought about getting out of this mine and out of the Valley of Mines?
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_01 " );	// I didn't think so. Yes, but what's the point of this?
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_02 " );	// Paladins won't let me go anywhere. And even if I somehow manage to slip past them, around the crowd of orcs.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_03 " );	// I won't live twenty minutes outside. So no, I'd rather stay here.
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_04 " );	// Clear. What if someone you know helped you get out of here?
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_05 " );	// You? But how will you manage to get through the hordes of orcs, even if you forget about the paladins?
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_06 " );	// Same as the previous few times.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_07 " );	// Hmm... okay, but why do you need me? You don't just want to help me, do you?
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_08 " );	// I need people who are good with pickaxes. In Khorinis, as it turns out, there is some magical ore.
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_09 " );	// Now I'm trying to develop this deposit, but I can't do it alone.
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_10 " );	// In short, I want you to work for me.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_11 " );	// (Disappointed) Mine again? But why is your mine better than this one?
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_12 " );	// Let me think...
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_13 " );	// Hordes of orcs don't roam around it, you won't have to work for days, you'll have housing and three meals a day.
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_14 " );	// There are no more crawlers there either.
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_15 " );	// Oh, yes, the ore mined there will definitely go to work, and not lie next to the mine, waiting for the orcs to take it for themselves.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_16 " );	// Well, if all this is true, then the working conditions you propose will be better than here.
 
 	if(HuntyIsDead == FALSE)
 	{
-		AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_17");	//Хорошо, я согласен. Но один я не пойду, ты должен захватить и моего приятеля.
-		AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_18");	//Нет проблем. Четыре руки всяко лучше двух.
+		AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_17 " );	// Okay, I agree. But I won't go alone, you must take my friend too.
+		AI_Output(other,self, " DIA_GRIMES_LetsGetOutSugg_15_18 " );	// No problem. Four hands are better than two.
 	};
 
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_19");	//Отлично. Тогда нам нужно для начала выбраться из шахты.	
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_20");	//К сожалению, эти паладины вечно на карауле, просто так мимо них не проскользнуть...
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_21");	//Хотя подожди. У меня есть идея! Я слышал о заклинании, способном усыплять человека.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_22");	//Если бы ты смог достать пару свитков...
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_23");	//Кроме того, мне надо подготовиться. Дай мне денек, а потом возвращайся со свитками.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_19 " );	// Great. Then we need to get out of the mine first.	
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_20 " );	// Unfortunately, these paladins are always on guard, you can't just slip past them...
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_21 " );	// But wait. I have an idea! I've heard of a spell that can put a person to sleep.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_22 " );	// If you could get a couple of scrolls...
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutSugg_01_23 " );	// Also, I need to get ready. Give me a day and then come back with the scrolls.
 	GRIMESDAYDT = Wld_GetDay();
 	AI_StopProcessInfos(self);
 };
@@ -490,7 +491,7 @@ instance DIA_GRIMES_LETSGETOUTOFHERE(C_Info)
 	condition = dia_grimes_letsgetoutofhere_condition;
 	information = dia_grimes_letsgetoutofhere_info;
 	permanent = FALSE;
-	description = "Я достал свитки. Собирайтесь.";
+	description = " I got the scrolls. Get ready. " ;
 };
 
 func int dia_grimes_letsgetoutofhere_condition()
@@ -503,19 +504,19 @@ func int dia_grimes_letsgetoutofhere_condition()
 
 func void dia_grimes_letsgetoutofhere_info()
 {
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutOfHere_15_00");	//Я достал свитки. Собирайтесь.
-	AI_Output(other,self,"DIA_GRIMES_LetsGetOutOfHere_15_01");	//Как только мы выберемся из этого лагеря, я проведу вас безопасным путем к Проходу.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutOfHere_01_02");	//Забудь про свитки! Я недавно был на улице и слышал, что паладины вскоре намеревались молиться Инносу.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutOfHere_01_03");	//Из того места не видно входа в шахту!
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutOfHere_01_04");	//Стой. Кажется, я слышу позванивание доспехов.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutOfHere_01_05");	//А теперь тишина...
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutOfHere_01_06");	//Думаю, они ушли.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutOfHere_01_07");	//Вперед! Сейчас или никогда.
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutOfHere_15_00 " );	// I got the scrolls. Get ready.
+	AI_Output(other,self, " DIA_GRIMES_LetsGetOutOfHere_15_01 " );	// Once we get out of this camp, I'll guide you safely to the Passage.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutOfHere_01_02 " );	// Forget scrolls! I was recently on the street and heard that the paladins soon intended to pray to Innos.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutOfHere_01_03 " );	// You can't see the entrance to the mine from that place!
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutOfHere_01_04 " );	// Stop. I think I hear armor tinkling.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutOfHere_01_05 " );	// And now silence...
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutOfHere_01_06 " );	// I think they're gone.
+	AI_Output(self,other, " DIA_GRIMES_LetsGetOutOfHere_01_07 " );	// Go! Now or never.
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 
 	if(HuntyIsDead == FALSE)
 	{
-		STRF_1117_Straefling.aivar[AIV_PARTYMEMBER] = TRUE;
+		STRF_1117_Straefling.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	};
 
 	AI_StopProcessInfos(self);
@@ -543,7 +544,7 @@ instance DIA_GRIMES_WEGOTOUTOFHERE(C_Info)
 	condition = dia_grimes_wegotoutofhere_condition;
 	information = dia_grimes_wegotoutofhere_info;
 	permanent = FALSE;
-	description = "Мы на месте.";
+	description = " We're here. " ;
 };
 
 func int dia_grimes_wegotoutofhere_condition()
@@ -556,17 +557,17 @@ func int dia_grimes_wegotoutofhere_condition()
 
 func void dia_grimes_wegotoutofhere_info()
 {
-	AI_Output(other,self,"DIA_GRIMES_WeGotOutOfHere_15_00");	//Мы на месте! Через эту шахту можно пробраться в Хоринис. Просто следуй за мной.
-	AI_Output(self,other,"DIA_GRIMES_WeGotOutOfHere_01_01");	//Как скажешь.
+	AI_Output(other,self, " DIA_GRIMES_WeGotOutOfHere_15_00 " );	// We're here! Through this mine you can get to Khorinis. Just follow me.
+	AI_Output(self,other, " DIA_GRIMES_WeGotOutOfHere_01_01 " );	// As you say.
 	HUNTYGRIMESESCAPEOW = TRUE;
 	Pal_219_Ritter.flags = 0;
 	Pal_218_Ritter.flags = 0;
-	vlk_7527_waffenknecht.flags = 0;
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	vlk_7527_waffenknecht.flags = 0 ;
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 
 	if(HuntyIsDead == FALSE)
 	{
-		STRF_1117_Straefling.aivar[AIV_PARTYMEMBER] = FALSE;
+		STRF_1117_Straefling.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	};
 
 	AI_StopProcessInfos(self);
@@ -588,7 +589,7 @@ func void dia_grimes_wegotoutofhere_info()
 	Wld_InsertNpc(orkelite_addon3,"OW_PAL_WESTMINE_SIT");
 };
 
-//-----------------------новый-----------------------------------------------------------
+// ----------------------- new------------------------ ------------------------------------
 
 instance DIA_GRIMESNW_EXIT(C_Info)
 {
@@ -631,13 +632,13 @@ func int dia_grimesnw_freedom_condition()
 
 func void dia_grimesnw_freedom_info()
 {
-	AI_Output(self,other,"DIA_GRIMESNW_Freedom_01_00");	//(глубоко вдыхает воздух) Свобода...
-	AI_Output(self,other,"DIA_GRIMESNW_Freedom_01_01");	//Последние несколько лет я был уверен, что мне так и суждено умереть в этой проклятой долине.
-	AI_Output(self,other,"DIA_GRIMESNW_Freedom_01_02");	//Не могу поверить, что я наконец-то покинул ее...
-	AI_Output(other,self,"DIA_GRIMESNW_Freedom_15_03");	//Погоди радоваться. Мы еще не добрались до моего лагеря.
-	AI_Output(self,other,"DIA_GRIMESNW_Freedom_01_04");	//Ты прав! Не будем задерживаться.
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
-	vlk_41111_huntynw.aivar[AIV_PARTYMEMBER] = TRUE;
+	AI_Output(self,other, " DIA_GRIMESNW_Freedom_01_00 " );	// (takes a deep breath) Freedom...
+	AI_Output(self,other, " DIA_GRIMESNW_Freedom_01_01 " );	// For the last few years, I've been convinced that I was destined to die in this damned valley.
+	AI_Output(self,other, " DIA_GRIMESNW_Freedom_01_02 " );	// I can't believe I finally left her...
+	AI_Output(other,self, " DIA_GRIMESNW_Freedom_15_03 " );	// Wait a minute to rejoice. We haven't reached my camp yet.
+	AI_Output(self,other, " DIA_GRIMESNW_Freedom_01_04 " );	// You're right! Let's not delay.
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
+	vlk_41111_huntynw.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FollowMe");
 	B_StartOtherRoutine(vlk_41111_huntynw,"FollowMe");
@@ -650,7 +651,7 @@ instance DIA_GRIMESNW_FINALLYINTOWER(C_Info)
 	condition = dia_grimesnw_finallyintower_condition;
 	information = dia_grimesnw_finallyintower_info;
 	permanent = FALSE;
-	description = "Мы на месте. Вот мой лагерь.";
+	description = " We're here. Here's my camp. " ;
 };
 
 func int dia_grimesnw_finallyintower_condition()
@@ -664,21 +665,21 @@ func int dia_grimesnw_finallyintower_condition()
 func void dia_grimesnw_finallyintower_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_GRIMESNW_FinallyInTower_15_00");	//Мы на месте. Вот мой лагерь. Вон там вход в шахту.
-	AI_Output(self,other,"DIA_GRIMESNW_FinallyInTower_01_01");	//Отличное место! Спасибо тебе, что вывел меня из долины.
-	AI_Output(other,self,"DIA_GRIMESNW_FinallyInTower_15_02");	//Не за что. Первое время можете отдохнуть, а когда наберешься сил, принимайся за работу.
-	AI_Output(other,self,"DIA_GRIMESNW_FinallyInTower_15_03");	//Надеюсь, ты помнишь наш уговор?
-	AI_Output(self,other,"DIA_GRIMESNW_FinallyInTower_01_04");	//Разумеется! Я не забываю данных мною слов.
-	AI_Output(other,self,"DIA_GRIMESNW_FinallyInTower_15_05");	//Тогда располагайся! Ах да, за твою работу я буду платить тебе по тридцать пять золотых в день. Согласен?
-	AI_Output(self,other,"DIA_GRIMESNW_FinallyInTower_01_06");	//Деньги? Я уже и забыл, что это такое.
-	AI_Output(self,other,"DIA_GRIMESNW_FinallyInTower_01_07");	//Еще раз спасибо тебе.
-	B_LogEntry_Quiet(TOPIC_PPL_FOR_TOWER,"Мне удалось вытащить шахтеров Граймса и Ханти из Долины Рудников. Теперь они будут работать на меня.");
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(other,self, " DIA_GRIMESNW_FinallyInTower_15_00 " );	// We're there. Here is my camp. Over there is the entrance to the mine.
+	AI_Output(self,other, " DIA_GRIMESNW_FinallyInTower_01_01 " );	// Great place! Thank you for leading me out of the valley.
+	AI_Output(other,self, " DIA_GRIMESNW_FinallyInTower_15_02 " );	// Nothing. At first you can relax, and when you gain strength, get to work.
+	AI_Output(other,self, " DIA_GRIMESNW_FinallyInTower_15_03 " );	// I hope you remember our agreement?
+	AI_Output(self,other, " DIA_GRIMESNW_FinallyInTower_01_04 " );	// Of course! I do not forget the words I have given.
+	AI_Output(other,self, " DIA_GRIMESNW_FinallyInTower_15_05 " );	// Then settle down! Oh yes, for your work I will pay you thirty-five gold a day. I agree?
+	AI_Output(self,other, " DIA_GRIMESNW_FinallyInTower_01_06 " );	// Money? I already forgot what it is.
+	AI_Output(self,other, " DIA_GRIMESNW_FinallyInTower_01_07 " );	// Thank you again.
+	B_LogEntry_Quiet( TOPIC_PPL_FOR_TOWER , " I managed to get miners Grimes and Hunty out of Mining Valley. Now they will work for me. " );
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 	HUNTYGRIMESRECRUITEDDT = TRUE;
 
 	if(DT_OREGATHER_START == FALSE)
@@ -698,7 +699,7 @@ instance DIA_GRIMESNW_INTOWER(C_Info)
 	condition = dia_grimesnw_intower_condition;
 	information = dia_grimesnw_intower_info;
 	permanent = TRUE;
-	description = "Как тебе новое место работы?";
+	description = " How do you like your new job? " ;
 };
 
 func int dia_grimesnw_intower_condition()
@@ -711,8 +712,8 @@ func int dia_grimesnw_intower_condition()
 
 func void dia_grimesnw_intower_info()
 {
-	AI_Output(other,self,"DIA_GrimesNW_InTower_15_00");	//Как тебе новое место работы?
-	AI_Output(self,other,"DIA_GrimesNW_InTower_01_01");	//Отличное! Клянусь, я не оставлю в твоей шахте ни грамма недобытой руды.
+	AI_Output(other,self, " DIA_GrimesNW_InTower_15_00 " );	// How do you like your new job?
+	AI_Output(self,other, " DIA_GrimesNW_InTower_01_01 " );	// Excellent! I swear I won't leave an ounce of unmined ore in your mine.
 };
 
 instance DIA_GRIMES_NW_KNOWABOUTERZHUNT(C_Info)
@@ -722,7 +723,7 @@ instance DIA_GRIMES_NW_KNOWABOUTERZHUNT(C_Info)
 	condition = dia_grimes_NW_knowabouterzhunt_condition;
 	information = dia_grimes_NW_knowabouterzhunt_info;
 	permanent = FALSE;
-	description = "Ты что-нибудь знаешь о добыче руды?";
+	description = " Do you know anything about mining? " ;
 };
 
 func int dia_grimes_NW_knowabouterzhunt_condition()
@@ -732,19 +733,19 @@ func int dia_grimes_NW_knowabouterzhunt_condition()
 
 func void dia_grimes_NW_knowabouterzhunt_info()
 {
-	AI_Output(other,self,"DIA_Grimes_KnowAboutErzHunt_01_00");	//Ты что-нибудь знаешь о добыче руды?
-	AI_Output(self,other,"DIA_Grimes_KnowAboutErzHunt_01_01");	//Я половину своей жизни только тем и занимаюсь, что добываю ее.
-	AI_Output(other,self,"DIA_Grimes_KnowAboutErzHunt_01_03");	//Я хочу научиться добывать руду. Ты можешь мне помочь?
-	AI_Output(self,other,"DIA_Grimes_KnowAboutErzHunt_01_04");	//Нет проблем. Я научу тебя всему, что знаю сам.
+	AI_Output(other,self, " DIA_Grimes_KnowAboutErzHunt_01_00 " );	// Do you know anything about mining?
+	AI_Output(self,other, " DIA_Grimes_KnowAboutErzHunt_01_01 " );	// For half of my life I've been doing nothing but extracting it.
+	AI_Output(other,self, " DIA_Grimes_KnowAboutErzHunt_01_03 " );	// I want to learn how to mine ore. Can you help me?
+	AI_Output(self,other, " DIA_Grimes_KnowAboutErzHunt_01_04 " );	// No problem. I will teach you everything I know myself.
 
 	if(ORE_TOPIC_EXIST == TRUE)
 	{
-		B_LogEntry(TOPIC_MAGICORE,"Граймс может научить меня добывать магическую руду из породы.");
+		B_LogEntry( TOPIC_MAGICORE , " Grimes can teach me how to extract magic ore from rock. " );
 	}
 	else
 	{
 		Log_CreateTopic(TOPIC_MAGICORE,LOG_NOTE);
-		B_LogEntry(TOPIC_MAGICORE,"Граймс может научить меня добывать магическую руду из породы.");
+		B_LogEntry( TOPIC_MAGICORE , " Grimes can teach me how to extract magic ore from rock. " );
 		ORE_TOPIC_EXIST = TRUE;
 	};
 };
@@ -756,7 +757,7 @@ instance DIA_GRIMES_NW_LEARNABOUTERZHUNT(C_Info)
 	condition = dia_grimes_NW_learnabouterzhunt_condition;
 	information = dia_grimes_NW_learnabouterzhunt_info;
 	permanent = TRUE;
-	description = "Научи меня добывать руду.";
+	description = " Teach me how to mine. " ;
 };
 
 func int dia_grimes_NW_learnabouterzhunt_condition()
@@ -771,11 +772,11 @@ func void dia_grimes_NW_learnabouterzhunt_info()
 {
 	if(KNOWHOWPICKORE == TRUE)
 	{
-		AI_Output(other,self,"DIA_Grimes_LearnAboutErzHunt_01_0A");	//Расскажи мне больше о добыче руды.
+		AI_Output(other,self, " DIA_Grimes_LearnAboutErzHunt_01_0A " );	// Tell me more about mining.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Grimes_LearnAboutErzHunt_01_00");	//Научи меня добывать руду.
+		AI_Output(other,self, " DIA_Grimes_LearnAboutErzHunt_01_00 " );	// Teach me how to mine.
 	};
 
 	Info_ClearChoices(dia_grimes_NW_learnabouterzhunt);
@@ -796,30 +797,30 @@ func void dia_grimes_NW_learnabouterzhunt_ERZWORK()
 		{
 			if(GRIMESTEACHMOREORE == FALSE)
 			{
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_01");	//Хорошо! Слушай внимательно...
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_02");	//Для начала тебе необходимо обзавестись хорошей киркой - это половина дела.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_03");	//Потом начинай обрабатывать найденную тобой рудную жилу.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_04");	//Бить надо не по краю породы, а точно в центр. Наноси один мощный удар, а после - несколько ударов послабее.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_05");	//Тем самым ты немного нарушишь структуру самородка, и при следующем сильном ударе какой-нибудь кусок от него обязательно отколется.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_06");	//А потом повторяй все заново...
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_07");	//Это главное, что тебе нужно знать о добыче руды.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_01 " );	// Good! Listen carefully...
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_02 " );	// First you need to get a good pickaxe - that's half the battle.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_03 " );	// Then start processing the ore vein you found.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_04 " );	// It is necessary to hit not along the edge of the rock, but exactly in the center. Strike one powerful blow, and then several weaker blows.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_05 " );	// By doing so, you will slightly break the structure of the nugget, and with the next strong blow, some piece of it will definitely break off.
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_06 " );	// And then do it all over again...
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_07 " );	// This is the main thing you need to know about mining.
 				GRIMESTEACHMOREORE = TRUE;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_09");	//Ладно! Слушай внимательно...(рассказывает)
+				AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_09 " );	// Okay! Listen carefully ... (tells)
 			};
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_10");	//Я научил тебя всему, что знаю. Дальше сам набирайся опыта, махая киркой.
+		AI_Output(self,other, " DIA_Grimes_LearnAboutErzHunt_01_10 " );	// I taught you everything I know. Then you gain experience yourself, waving a pickaxe.
 	};
 
 	Info_ClearChoices(dia_grimes_NW_learnabouterzhunt);
 };
 
-//------------------------------Ханти------------------------------------------
+// ------------------------------Hanti----------------- -------------------------
 
 instance DIA_HUNTYNW_EXIT(C_Info)
 {
@@ -861,13 +862,13 @@ func int dia_huntynw_intower_IRON_condition()
 
 func void dia_huntynw_intower_IRON_info()
 {
-	AI_Output(self,other,"DIA_HuntyNW_InTower_01_01");	//Спасибо, что помог выбраться из долины!
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(self,other, " DIA_HuntyNW_InTower_01_01 " );	// Thanks for helping me get out of the valley!
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 
 	if(DT_IRONGATHER_START == FALSE)
 	{
@@ -886,7 +887,7 @@ instance DIA_HUNTYNW_INTOWER(C_Info)
 	condition = dia_huntynw_intower_condition;
 	information = dia_huntynw_intower_info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 func int dia_huntynw_intower_condition()
@@ -899,6 +900,6 @@ func int dia_huntynw_intower_condition()
 
 func void dia_huntynw_intower_info()
 {
-	AI_Output(other,self,"DIA_HuntyNW_InTower_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_HuntyNW_InTower_01_01");	//Все в порядке.
+	AI_Output(other,self, " DIA_HuntyNW_InTower_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_HuntyNW_InTower_01_01 " );	// Everything is fine.
 };
