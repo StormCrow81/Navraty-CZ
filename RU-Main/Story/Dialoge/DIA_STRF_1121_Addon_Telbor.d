@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Telbor_EXIT(C_Info)
 {
 	npc = STRF_1121_Addon_Telbor;
@@ -23,7 +24,7 @@ func void DIA_Addon_Telbor_EXIT_Info()
 
 var int Telbor_Once;
 
-instance DIA_Addon_Telbor_Hi(C_Info)
+instances of DIA_Addon_Telbor_Hi (C_Info)
 {
 	npc = STRF_1121_Addon_Telbor;
 	nr = 2;
@@ -40,21 +41,21 @@ func int DIA_Addon_Telbor_Hi_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Telbor_Hi_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Telbor_Hi_12_00");	//Эй, я в порядке.
-	if(Sklaven_Flucht == FALSE)
+	AI_Output(self,other, " DIA_Addon_Telbor_Hi_12_00 " );	// Hey, I'm fine.
+	if (slave_escape ==  FALSE )
 	{
-		if(Pardos_Geheilt == FALSE)
+		if (Pardos_Healed ==  FALSE )
 		{
-			AI_Output(self,other,"DIA_Addon_Telbor_Hi_12_01");	//А вот Пардос совсем неважно выглядит.
+			AI_Output(self,other, " DIA_Addon_Telbor_Hi_12_01 " );	// But Pardos doesn't look good at all.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_Telbor_Hi_12_02");	//Спасибо за то, что помог Пардосу.
+			AI_Output(self,other, " DIA_Addon_Telbor_Hi_12_02 " );	// Thanks for helping Pardos.
 			if(Telbor_Once == FALSE)
 			{
 				B_GivePlayerXP(XP_Ambient);
@@ -62,7 +63,7 @@ func void DIA_Addon_Telbor_Hi_Info()
 			};
 		};
 	};
-	AI_Output(self,other,"DIA_Addon_Telbor_Hi_12_03");	//Если тебе что-то нужно, поговори с Патриком. Он у нас старший.
+	AI_Output(self,other, " DIA_Addon_Telbor_Hi_12_03 " );	// If you need anything, talk to Patrick. He is our senior.
 	AI_StopProcessInfos(self);
 };
 
