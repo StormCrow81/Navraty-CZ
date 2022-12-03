@@ -1,4 +1,5 @@
 
+
 instance DIA_GOMEZWORKERSOUL_8_EXIT(C_Info)
 {
 	npc = gomezworkersoul_8;
@@ -21,12 +22,12 @@ func void dia_gomezworkersoul_8_exit_info()
 };
 
 
-instance DIA_GOMEZWORKERSOUL_8_HALLO(C_Info)
+instance DIA_GOMEZWORKERSOUL_8_HELLO (C_Info)
 {
 	npc = gomezworkersoul_8;
 	nr = 1;
 	condition = dia_gomezworkersoul_8_hallo_condition;
-	information = dia_gomezworkersoul_8_hallo_info;
+	information = dia_gomezworkersoul_8_hello_info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -40,28 +41,28 @@ func int dia_gomezworkersoul_8_hallo_condition()
 	};
 };
 
-func void dia_gomezworkersoul_8_hallo_info()
+func void dia_gomezworkersoul_8_hello_info()
 {
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	Snd_Play("MFX_FEAR_CAST");
 	B_GivePlayerXP(50);
-	AI_Output(self,other,"DIA_GomezWorkerSoul_8_HALLO_01_00");	//(мертвым голосом) ЧЕЛОВЕК, ЗАЧЕМ ТЫ ЗДЕСЬ? РАЗВЕ ТВОЕ МЕСТО СРЕДИ МЕРТВЫХ?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_8_HALLO_01_02");	//Одна душа ищет твоего прощения, призрак, и я пришел, чтобы получить его от тебя.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_8_HALLO_01_03");	//Мое прощение? Кого я должен простить и за что?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_8_HALLO_01_04");	//Того, кто проклял тебя и обрек на пребывание в качестве нежити.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_8_HALLO_01_05");	//Я понял, о ком ты говоришь, смертный. Но почему я должен простить его?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_8_HALLO_01_06");	//Потому что только так я смогу снять с тебя это проклятие!
-	AI_Output(other,self,"DIA_GomezWorkerSoul_8_HALLO_01_07");	//И это единственный способ даровать тебе свободу.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_8_HALLO_01_00 " );	// (dead voice) HUMAN, WHY ARE YOU HERE? IS YOUR PLACE AMONG THE DEAD?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_8_HALLO_01_02 " );	// One soul seeks your forgiveness, ghost, and I have come to receive it from you.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_8_HALLO_01_03 " );	// My forgiveness? Whom should I forgive and why?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_8_HALLO_01_04 " );	// The one who cursed you and doomed you to stay as undead.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_8_HALLO_01_05 " );	// I understand what you're talking about, mortal. But why should I forgive him?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_8_HALLO_01_06 " );	// Because that's the only way I can lift this curse from you!
+	AI_Output(other,self, " DIA_GomezWorkerSoul_8_HALLO_01_07 " );	// And that's the only way to grant you freedom.
 	Info_ClearChoices(dia_gomezworkersoul_8_hallo);
-	Info_AddChoice(dia_gomezworkersoul_8_hallo,"Ты согласен?",dia_gomezworkersoul_8_hallo_end);
+	Info_AddChoice(dia_gomezworkersoul_8_hello, " Ты согласен? " ,dia_gomezworkersoul_8_hello_end);
 };
 
-func void dia_gomezworkersoul_8_hallo_end()
+func void dia_gomezworkersoul_8_hello_end()
 {
 	Snd_Play("SFX_INNOSEYE");
-	AI_Output(other,self,"DIA_GomezWorkerSoul_8_HALLO_End_01_01");	//Ну, что скажешь, - ты согласен?
-	AI_Output(self,other,"DIA_GomezWorkerSoul_8_HALLO_End_01_02");	//Хорошо. Я дарую ему свое прощение...
-	AI_Output(other,self,"DIA_GomezWorkerSoul_8_HALLO_End_01_03");	//Отлично. А теперь я убью тебя и навсегда успокою твою душу!
+	AI_Output(other,self, " DIA_GomezWorkerSoul_8_HALLO_End_01_01 " );	// Well, what do you say - do you agree?
+	AI_Output(self,other, " DIA_GomezWorkerSoul_8_HALLO_End_01_02 " );	// Good. I grant him my forgiveness...
+	AI_Output(other,self, " DIA_GomezWorkerSoul_8_HALLO_End_01_03 " );	// Great. And now I will kill you and put your soul at rest forever!
 	GOMEZSOULTALK_8 = TRUE;
 	AI_StopProcessInfos(self);
 };
