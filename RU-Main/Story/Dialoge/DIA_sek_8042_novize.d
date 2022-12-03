@@ -1,9 +1,9 @@
 
-instance DIA_SEK_8042_NOVIZE_NOFOREVER(C_Info)
+instance DIA_SEK_8042_NOVIZE_NOFOREVER (C_Info)
 {
-	npc = sek_8042_novize;
+	npc = sec_8042_novice;
 	nr = 5;
-	condition = dia_sek_8042_novize_noforever_condition;
+	condition = dia_sek_8042_noize_noforever_condition;
 	information = dia_sek_8042_novize_noforever_info;
 	permanent = TRUE;
 	important = TRUE;
@@ -20,15 +20,14 @@ func int dia_sek_8042_novize_noforever_condition()
 
 func void dia_sek_8042_novize_noforever_info()
 {
-	if(Wld_IsTime(8,0,21,0))
+	if (Wld_IsTime( 8 , 0 , 21 , 0 ))
 	{
-		AI_Output(self,other,"DIA_SEK_8042_Novize_NoForever_01_00");	//Не мешать мне работать!
+		AI_Output(self,other, " DIA_SEK_8042_Novize_NoForever_01_00 " );	// Don't interfere with my work!
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_SEK_8042_Novize_NoForever_01_01");	//Отстань! Не мешай мне отдыхать...
+		AI_Output(self,other, " DIA_SEK_8042_Novize_NoForever_01_01 " );	// Back off! Don't let me rest...
 		AI_StopProcessInfos(self);
 	};
 };
-
