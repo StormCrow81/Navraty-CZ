@@ -1,4 +1,5 @@
 
+
 instance DIA_ORC_8524_BUMSHAK_EXIT(C_Info)
 {
 	npc = orc_8524_bumshak;
@@ -30,7 +31,7 @@ instance DIA_ORC_8524_BUMSHAK_HELLO(C_Info)
 	information = dia_orc_8524_bumshak_hello_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -45,11 +46,11 @@ func int dia_orc_8524_bumshak_hello_condition()
 func void dia_orc_8524_bumshak_hello_info()
 {
 	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Hello_Info_18_01");	//Кто ты?
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_Info_18_03");	//Помощь, помочь!!!
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Hello_Info_18_04");	//Что случилось?
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_Info_18_05");	//Таррок нужно помочь. Таррок ранен!
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_Info_18_07");	//Таррок нужен сильный зелье. А то Таррок умереть!
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_Info_18_08");	//Таррок был зелье, но потом терять. Таррок не найти...
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_Info_18_03 " );	// Help, help!!!
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Hello_Info_18_04 " );	// What happened?
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_Info_18_05 " );	// Tarrok needs help. Tarrok is wounded!
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_Info_18_07 " );	// Tarrok needs a strong potion. And then Tarrok die!
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_Info_18_08 " );	// Tarrok had a potion, but then lose it. Tarrok not to be found...
 	FIRSTTARROK = TRUE;
 	self.flags = 0;
 };
@@ -63,13 +64,13 @@ instance DIA_ORC_8524_BUMSHAK_HELLO_2(C_Info)
 	information = dia_orc_8524_bumshak_hello_2_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Ты случайно не друг шамана Ур-Шака?";
+	description = " Are you by any chance a friend of the shaman Ur-Shak? " ;
 };
 
 
 func int dia_orc_8524_bumshak_hello_2_condition()
 {
-	if((FIRSTTARROK == TRUE) && (MEETTARROK == FALSE))
+	if (( FIRSTROCK  ==  TRUE ) && ( SECONDROCK  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -77,29 +78,29 @@ func int dia_orc_8524_bumshak_hello_2_condition()
 
 func void dia_orc_8524_bumshak_hello_2_info()
 {
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_01");	//Ты случайно не друг шамана Ур-Шака?
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_02");	//Таррок думать так. Таррок знать Ур-Шак - быть когда-то великий шаман... Таррок уважать Ур-Шак!
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_03");	//Твой друг сказал мне, что ты можешь сделать для меня Улу-Мулу...
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_04");	//Чужак помогать Таррок - Таррок помогать чужак.
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_04А");	//Чем я могу помочь тебе?
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_05");	//Таррок очень слабый, нет зелье! Таррок умереть.
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_06");	//Чужак принести зелье, а Таррок помогать.
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_07");	//Таррок делать Улу-Мулу.
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_08");	//Я найду твои лекарства!
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Hello_2_Info_18_09");	//Таррок слабый очень. Чужак быстрей, а то Таррок умереть.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_01 " );	// Are you by any chance a friend of the shaman Ur-Shak?
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_02 " );	// Tarrok think so. Tarrok to know Ur-Shak - to be once a great shaman... Tarrok to respect Ur-Shak!
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_03 " );	// Your friend told me what you can do for me Ulu-Mulu...
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_04 " );	// Stranger help Tarrok - Tarrok help the stranger.
+	AI_Output(other, self, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_04А " );	// How can I help you?
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_05 " );	// Tarrok is very weak, no potion! Tarrok die.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_06 " );	// Stranger bring the potion, and Tarrok help.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_07 " );	// Tarrok do Ulu-Mulu.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_08 " );	// I'll find your cures!
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Hello_2_Info_18_09 " );	// Tarrok is very weak. Stranger quickly, otherwise Tarrok will die.
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	Log_CreateTopic(TOPIC_TARROKWOUND,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TARROKWOUND,LOG_Running);
 	MEETTARROK = TRUE;
-	TARROKHEALTHY = FALSE;
+	TARROKHEALTHY = FALSE ;
 	if(URSHAK_SUCKED == FALSE)
 	{
-		B_LogEntry(TOPIC_TARROKWOUND,"Я помог одному орку отбиться от напавших на него скелетов. Как оказалось позже, этот орк и есть друг, о котором говорил Ур-Шак. В этой заварушке Таррок был сильно ранен, и я должен поскорее найти для него орочье зелье, чтобы Таррок поправился. Взамен он обещал сделать для меня Улу-Мулу. Остается вопрос: где мне искать это зелье? Может, Ур-Шак поможет мне в моих поисках.");
+		B_LogEntry( TOPIC_TARROKWOUND , " I helped an orc fight off some skeletons that attacked him. As it turns out, this orc is the friend Ur-Shak was talking about. Tarrok was badly injured in this mess, and I should quickly find an orc potion for him for Tarrok to recover. In return, he promised to make Ulu-Mulu for me. The question remains: where should I look for this potion? Maybe Ur-Shak will help me in my search. " );
 	}
 	else
 	{
-		B_LogEntry(TOPIC_TARROKWOUND,"Я помог одному орку отбиться от напавших на него скелетов. Как оказалось позже, этот орк и есть друг, о котором говорил Ур-Шак. В этой заварушке Таррок был сильно ранен, и я должен поскорее найти для него орочье зелье, чтобы Таррок поправился. Взамен он обещал сделать для меня Улу-Мулу. Остается вопрос: где мне искать это зелье?");
+		B_LogEntry( TOPIC_TARROKWOUND , " I helped an orc fight off some skeletons that attacked him. As it turns out, this orc is the friend Ur-Shak was talking about. Tarrok was badly injured in this mess, and I should quickly find an orc potion for him so that Tarrok will get better. In return, he promised to make Ulu-Mulu for me. The question remains: where should I look for this potion? " );
 	};
 };
 
@@ -112,13 +113,13 @@ instance DIA_ORC_8524_BUMSHAK_POTION(C_Info)
 	information = dia_orc_8524_bumshak_potion_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Вот, я нашел тебе зелье.";
+	description = " Here, I found you a potion. " ;
 };
 
 
 func int dia_orc_8524_bumshak_potion_condition()
 {
-	if((Npc_HasItems(other,itpo_xorcpotion) >= 1) && (TARROKHEALTHY == FALSE) && (MEETTARROK == TRUE))
+	if ((Npc_HasItems(other,itpo_xorcpotion) >=  1 ) && ( TARROKHEALTHY  ==  FALSE ) && ( MEETTARROK  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -126,20 +127,20 @@ func int dia_orc_8524_bumshak_potion_condition()
 
 func void dia_orc_8524_bumshak_potion_info()
 {
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Potion_Info_18_01");	//Вот, я нашел тебе зелье.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Potion_Info_18_01 " );	// Here, I found you a potion.
 	B_GiveInvItems(other,self,itpo_xorcpotion,1);
 	Npc_RemoveInvItems(self,itpo_xorcpotion,1);
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Potion_Info_18_02");	//Чужак не плохой, как другой солдат. Чужак хороший!!!
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Potion_Info_18_03");	//Таррок сказать спасибо.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Potion_Info_18_02 " );	// The stranger is not bad, like the other soldier. The stranger is good!!!
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Potion_Info_18_03 " );	// Tarrok say thank you.
 	TARROKHEALTHY = TRUE;
 	SEARCHULUMULU = FALSE;
 	B_GivePlayerXP(200);
 	Log_SetTopicStatus(TOPIC_TARROKWOUND,LOG_SUCCESS);
-	B_LogEntry(TOPIC_TARROKWOUND,"Я принес Тарроку орочье зелье. Теперь он поправится.");
+	B_LogEntry( TOPIC_TARROKWOUND , " I brought Tarrok an orc potion. He'll get better now. " );
 };
 
 
-instance DIA_ORC_8524_BUMSHAK_ULUMULU(C_Info)
+instance DIA_ORC_8524_BUMSHAK_ULUMULU (C_Info)
 {
 	npc = orc_8524_bumshak;
 	nr = 1;
@@ -147,7 +148,7 @@ instance DIA_ORC_8524_BUMSHAK_ULUMULU(C_Info)
 	information = dia_orc_8524_bumshak_ulumulu_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Теперь ты можешь дать мне Улу-Мулу?";
+	description = " Now can you give me Ulu-Mulu? " ;
 };
 
 
@@ -161,28 +162,28 @@ func int dia_orc_8524_bumshak_ulumulu_condition()
 
 func void dia_orc_8524_bumshak_ulumulu_info()
 {
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_04");	//Теперь ты можешь дать мне Улу-Мулу?
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_05");	//Чужак помогать Таррок - Таррок помогать чужак.
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_06");	//Чужак надо: КРОТАК, ХОСТАГ, ДВАХТКАР и ОРФАРТАГ!
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_07");	//Чужак принести это и Таррок делать Улу-Мулу.
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_08");	//Что такое КРОТАК?!
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_09");	//Язык огня. Быть язык ящерица огня.
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_10");	//Что значит ХОСТАГ?!
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_11");	//Рог мракорис. Острый как нож, твердый как камень.
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_12");	//ДВАХТКАР?! А что это такое?
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_13");	//Зуб от болотожор. Когда он кусать - никто больше не убегать.
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_14");	//Что такое ОРФАРТАГ?!
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_15");	//Зуб большой тролль. Делать дырка насквозь.
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_Ulumulu_Info_18_16");	//Чужак искать все. Таррок ждать здесь.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_04 " );	// Now can you give me Ulu-Mulu?
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_05 " );	// Stranger help Tarrok - Tarrok help the stranger.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_06 " );	// A stranger is necessary: ​​KROTAK, HOSTAG, DVAKHTKAR and ORFARTAG!
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_07 " );	// Outsider bring it and Tarrok do Ulu-Mulu.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_08 " );	// What is KROTAK?!
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_09 " );	// Language of fire. Be the language of the fire lizard.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_10 " );	// What does HOSTAG mean?!
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_11 " );	// Horn of darkness. Sharp as a knife, hard as a rock.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_12 " );	// DOUBLE CAR?! And what is it?
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_13 " );	// Tooth from a swamp. When he bite - no one else run away.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_14 " );	// What is ORFARTAG?!
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_15 " );	// Big troll tooth. Make a hole through.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_Ulumulu_Info_18_16 " );	// Stranger search all. Tarrok wait here.
 	SEARCHULUMULU = TRUE;
-	FINDULUMULU = FALSE;
+	FINDULUMULU = FALSE ;
 	Log_CreateTopic(TOPIC_ULUMULUFIND,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_ULUMULUFIND,LOG_Running);
-	B_LogEntry(TOPIC_ULUMULUFIND,"Таррок сделает мне Улу-Мулу, если я ему принесу КРОТАК, ХОСТАГ, ДВАХТКАР и ОРФАРТАГ.");
-	B_LogEntry_Quiet(TOPIC_ULUMULUFIND,"Как я понял из слов Таррока: КРОТАК - это язык огненной ящерицы, ХОСТАГ - рог мракориса, ДВАХТКАР - зуб болотожора, а ОРФАРТАГ - клык тролля.");
-	B_LogEntry_Quiet(TOPIC_ULUMULUFIND,"Осталось собрать все эти предметы и принести их Тарроку.");
+	Log_SetTopicStatus( TOPIC_ULUMULUFIND ,LOG_Running);
+	B_LogEntry( TOPIC_ULUMULUFIND , " Tarrok will make me Ulu-Mula if I bring him KROTAK, HOSTAG, DVAKHTKAR and ORFARTAG. " );
+	B_LogEntry_Quiet( TOPIC_ULUMULUFIND , " As I understood from the words of Tarrok: KROTAK is the tongue of the fire lizard, HOSTAG is the horn of the mrakoris, DVAHTKAR is the tooth of the swamp, and ORFARTAG is the fang of the troll. " );
+	B_LogEntry_Quiet( TOPIC_ULUMULUFIND , " It remains to collect all these items and bring them to Tarrok. " );
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
 
 
@@ -194,7 +195,7 @@ instance DIA_ORC_8524_BUMSHAK_FINDULUMULU(C_Info)
 	information = dia_orc_8524_bumshak_findulumulu_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Я принес то, что ты просил для Улу-Мулу.";
+	description = " I brought what you requested for Ulu Mulu. " ;
 };
 
 
@@ -209,21 +210,21 @@ func int dia_orc_8524_bumshak_findulumulu_condition()
 func void dia_orc_8524_bumshak_findulumulu_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_01");	//Теперь у меня есть все, что нужно для Улу-Мулу.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_01 " );	// Now I have everything I need for Ulu-Mulu.
 	b_giveinvitemsmanythings(other,self);
 	Npc_RemoveInvItems(other,ItAt_WaranFiretongue,1);
 	Npc_RemoveInvItems(other,ItAt_ShadowHorn,1);
 	Npc_RemoveInvItems(other,ItAt_SharkTeeth,1);
 	Npc_RemoveInvItems(other,ItAt_TrollTooth,1);
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_02");	//(восхищенно) Чужак сильный солдат! Дать мне вещи - Таррок делать Улу-Мулу.
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_03");	//Вот. Чужак нести Улу-Мулу и быть гордый. Таррок теперь спать.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_02 " );	// (admiringly) The stranger is a strong soldier! Give me things - Tarrok do Ulu-Mulu.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_03 " );	// Here. Stranger to carry Ulu-Mulu and be proud. Tarrok now sleep.
 	B_GiveInvItems(self,other,itmw_2h_orcprestige,1);
-	AI_Output(other,self,"DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_04");	//Спасибо, а теперь мне нужно уходить.
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_05");	//Хорошая дорога, чужак.
+	AI_Output(other,self, " DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_04 " );	// Thanks, now I have to leave.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_FindUlumulu_Info_18_05 " );	// Good road, stranger.
 	FINDULUMULU = TRUE;
-	URSHAKKNOWULUMULU = FALSE;
+	URSHAKKNOWULUMULU = FALSE ;
 	Log_SetTopicStatus(TOPIC_ULUMULUFIND,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ULUMULUFIND,"Я принес Тарроку все необходимое и он сделал мне Улу-Мулу. Теперь я могу отправиться в город орков и попытаться узнать у них, как открыть решетку у входа в храм Спящего.");
+	B_LogEntry( TOPIC_ULUMULUFIND , " I brought Tharrok everything he needed and he made me Ulu-Mulu. Now I can go to the orc city and try to ask them how to open the portcullis at the entrance to the Temple of the Sleeper. " );
 };
 
 
@@ -248,7 +249,7 @@ func int dia_orc_8524_bumshak_after_condition()
 
 func void dia_orc_8524_bumshak_after_info()
 {
-	AI_Output(self,other,"DIA_Orc_8524_Bumshak_After_Info_18_00");	//Чужак идти еще.
+	AI_Output(self,other, " DIA_Orc_8524_Bumshak_After_Info_18_00 " );	// Stranger to go some more.
 	AI_StopProcessInfos(self);
 	FINDULUMULU = TRUE;
 };
