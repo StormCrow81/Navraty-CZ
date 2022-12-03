@@ -1,4 +1,5 @@
 
+
 instance DIA_KREOL_EXIT(C_Info)
 {
 	npc = none_102_kreol;
@@ -67,7 +68,7 @@ func void dia_kreol_hello_ext()
 	};
 
 	Info_ClearChoices(dia_kreol_hello);
-	Info_AddChoice(dia_kreol_hello,"(закончить разговор)",dia_kreol_hello_end_trans);
+	Info_AddChoice(dia_kreol_hello, " (end call) " ,dia_kreol_hello_end_trans);
 };
 
 func void dia_kreol_noforever_ext()
@@ -83,11 +84,11 @@ func void dia_kreol_noforever_ext()
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Kreol_DemonLanguage_14_54");	//Из тебя получится отличный маг-скелет!
+		AI_Output(self,other, " DIA_Kreol_DemonLanguage_14_54 " );	// You'll make a great Skeleton Mage!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_DemonLanguage_14_55");	//Из тебя получится отличный скелет-воин!
+		AI_Output(self,other, " DIA_Kreol_DemonLanguage_14_55 " );	// You'll make a great skeleton warrior!
 	};
 
 	Snd_Play("MFX_FEAR_CAST");
@@ -109,12 +110,12 @@ func void dia_kreol_noforever_ext()
 	};
 
 	Info_ClearChoices(dia_kreol_hello);
-	Info_AddChoice(dia_kreol_hello,"(закончить разговор)",dia_kreol_hello_end_trans);
+	Info_AddChoice(dia_kreol_hello, " (end call) " ,dia_kreol_hello_end_trans);
 };
 
 func void dia_kreol_demonlanguage_ext()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_14_53");	//Больно будет сейчас тебе!
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_14_53 " );	// It will hurt you now!
 	KREOL_KILL = TRUE;
 	KREOL_WARN = TRUE;
 	self.guild = GIL_DMT;
@@ -126,11 +127,11 @@ func void dia_kreol_demonlanguage_ext()
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Kreol_DemonLanguage_14_54");	//Из тебя получится отличный маг-скелет!
+		AI_Output(self,other, " DIA_Kreol_DemonLanguage_14_54 " );	// You'll make a great Skeleton Mage!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_DemonLanguage_14_55");	//Из тебя получится отличный скелет-воин!
+		AI_Output(self,other, " DIA_Kreol_DemonLanguage_14_55 " );	// You'll make a great skeleton warrior!
 	};
 
 	Snd_Play("MFX_FEAR_CAST");
@@ -152,7 +153,7 @@ func void dia_kreol_demonlanguage_ext()
 	};
 
 	Info_ClearChoices(dia_kreol_hello);
-	Info_AddChoice(dia_kreol_hello,"(закончить разговор)",dia_kreol_hello_end_trans);
+	Info_AddChoice(dia_kreol_hello, " (end call) " ,dia_kreol_hello_end_trans);
 };
 
 func void dia_kreol_hello_end_trans()
@@ -178,18 +179,18 @@ func int dia_kreol_hello_condition()
 func void dia_kreol_hello_info()
 {
 	Npc_ExchangeRoutine(self,"KreolRoutine");
-	AI_Output(self,other,"DIA_Kreol_Hello_14_00");	//КТО ПОСМЕЛ ОТВЛЕЧЬ МЕНЯ ОТ МОИХ ИССЛЕДОВАНИЙ?
-	AI_Output(self,other,"DIA_Kreol_Hello_14_03");	//Как ты смог попасть сюда?!
-	AI_Output(other,self,"DIA_Kreol_Hello_14_04");	//Не скажу, что это было легко. Это место просто кишело нежитью!
-	AI_Output(self,other,"DIA_Kreol_Hello_14_05");	//То были мои слуги, и я очень удивлен, что ты до сих пор жив.
-	AI_Output(other,self,"DIA_Kreol_Hello_14_06");	//Ты некромант?
-	AI_Output(self,other,"DIA_Kreol_Hello_14_08");	//(раздраженно) Да! Что тебе от меня нужно?
+	AI_Output(self,other, " DIA_Kreol_Hello_14_00 " );	// WHO DARE TO DISTRACT ME FROM MY RESEARCH?
+	AI_Output(self,other, " DIA_Kreol_Hello_14_03 " );	// How did you get here?!
+	AI_Output(other,self, " DIA_Kreol_Hello_14_04 " );	// I won't say it was easy. This place was infested with undead!
+	AI_Output(self,other, " DIA_Kreol_Hello_14_05 " );	// Those were my servants, and I am very surprised that you are still alive.
+	AI_Output(other,self, " DIA_Kreol_Hello_14_06 " );	// Are you a necromancer?
+	AI_Output(self,other, " DIA_Kreol_Hello_14_08 " );	// (annoyed) Yes! What do you want from me?
 
 	if(MIS_FINDKREOL == LOG_Running)
 	{
 		B_GivePlayerXP(100);
 		Log_SetTopicStatus(TOPIC_FINDKREOL,LOG_SUCCESS);
-		B_LogEntry(TOPIC_FINDKREOL,"Я все-таки отыскал Креола. Похоже, он неплохо обосновался в старой Башне Туманов. Пришлось постараться, чтобы попасть к нему на прием. Похоже, Креол очень ценит свой покой и уединение.");
+		B_LogEntry( TOPIC_FINDKREOL , " I did find Creole after all. He seems to be well settled in the old Tower of Mists. I had to work hard to get an appointment with him. Creole seems to appreciate his peace and solitude very much. " );
 		MIS_FINDKREOL = LOG_SUCCESS;
 	};
 
@@ -197,143 +198,143 @@ func void dia_kreol_hello_info()
 
 	if(XARDASTELLABOUTKREOL == TRUE)
 	{
-		Info_AddChoice(dia_kreol_hello,"Думаю, наша встреча не случайна.",dia_kreol_hello_prophecy);
+		Info_AddChoice(dia_kreol_hello, " I don't think we met by chance. " ,dia_kreol_hello_prophecy);
 	};
 	if((TASKFINDDARKSOUL == TRUE) && (MIS_GOLDDRAGONPORTAL == LOG_Running) && (TELLABOUTDS == FALSE))
 	{
-		Info_AddChoice(dia_kreol_hello,"Мне нужна твоя помощь, некромант.",dia_kreol_hello_mora);
+		Info_AddChoice(dia_kreol_hello, " I need your help, necromancer. " ,dia_kreol_hello_mora);
 	};
 	if(other.guild == GIL_KDM)
 	{
-		Info_AddChoice(dia_kreol_hello,"Я ищу учителя темной магии, мастер.",dia_kreol_hello_teach);
+		Info_AddChoice(dia_kreol_hello, " I'm looking for a dark magic teacher, master. " ,dia_kreol_hello_teach);
 	};
 
-	Info_AddChoice(dia_kreol_hello,"Я пришел убить тебя!",dia_kreol_hello_kill);
-	Info_AddChoice(dia_kreol_hello,"Тебя это мало касается.",dia_kreol_hello_fuckoff);
+	Info_AddChoice(dia_kreol_hello, " I came to kill you! " ,dia_kreol_hello_kill);
+	Info_AddChoice(dia_kreol_hello, " This is of little concern to you. " ,dia_kreol_hello_fuckoff);
 
 	if(RhetorikSkillValue[1] >= 40)
 	{
-		Info_AddChoice(dia_kreol_hello,"Я не хотел помешать твоему уединению.",dia_kreol_hello_sorry);
+		Info_AddChoice(dia_kreol_hello, " I didn't mean to disturb your privacy. " ,dia_kreol_hello_sorry);
 	};
 
-	Info_AddChoice(dia_kreol_hello,"Я случайно здесь оказался.",dia_kreol_hello_dontknow);
+	Info_AddChoice(dia_kreol_hello, " I ended up here by accident. " ,dia_kreol_hello_dontknow);
 };
 
 func void dia_kreol_hello_mora()
 {
-	AI_Output(other,self,"DIA_Kreol_Hello_Mora_01_00");	//Мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_Kreol_Hello_Mora_01_02");	//Назови хотя бы одну причину, почему я должен помогать тебе...
-	AI_Output(self,other,"DIA_Kreol_Hello_Mora_01_03");	//...вместо того, чтобы размазать тебя по стенке, наглый червь!
+	AI_Output(other,self, " DIA_Kreol_Hello_Mora_01_00 " );	// I need your help.
+	AI_Output(self,other, " DIA_Kreol_Hello_Mora_01_02 " );	// Give me at least one reason why I should help you...
+	AI_Output(self,other, " DIA_Kreol_Hello_Mora_01_03 " );	// ...instead of smearing you against the wall, you impudent worm!
 	AI_Output(other,self,"DIA_Kreol_Hello_Mora_01_04");	//С'эньяк!
-	AI_Output(self,other,"DIA_Kreol_Hello_Mora_01_06");	//(задумался) Ну что же, действительно, эта причина могла привести тебя именно ко мне.
-	AI_Output(self,other,"DIA_Kreol_Hello_Mora_01_07");	//Хорошо! Задавай свои вопросы.
+	AI_Output(self,other, " DIA_Kreol_Hello_Mora_01_06 " );	// (thinking) Well, really, this reason could lead you to me.
+	AI_Output(self,other, " DIA_Kreol_Hello_Mora_01_07 " );	// Good! Ask your questions.
 	Info_ClearChoices(dia_kreol_hello);
 };
 
 func void dia_kreol_hello_teach()
 {
-	AI_Output(other,self,"DIA_Kreol_Hello_Teach_01_00");	//Я ищу учителя темной магии, мастер.
-	AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_01");	//Ха ха ха! (смеется)
-	AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_02");	//И почему же ты думаешь, что я буду учить тебя?
-	AI_Output(other,self,"DIA_Kreol_Hello_Teach_01_03");	//Как видишь, я тоже некромант, но я еще не постиг всей сути темной магии.
-	if(Kapitel >= 5)
+	AI_Output(other,self, " DIA_Kreol_Hello_Teach_01_00 " );	// I'm looking for a dark magic teacher, master.
+	AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_01 " );	// Ha ha ha! (laughs)
+	AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_02 " );	// And why do you think that I will teach you?
+	AI_Output(other,self, " DIA_Kreol_Hello_Teach_01_03 " );	// As you can see, I am also a necromancer, but I have not yet grasped the full essence of dark magic.
+	if (Chapter >=  5 )
 	{
-		AI_Output(other,self,"DIA_Kreol_Hello_Teach_01_04");	//К тому же мой бывший учитель бесследно исчез, и я...
-		AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_05");	//(перебивая) А кто был раньше твоим учителем?
+		AI_Output(other,self, " DIA_Kreol_Hello_Teach_01_04 " );	// In addition, my former teacher disappeared without a trace, and I...
+		AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_05 " );	// (interrupting) Who was your teacher before?
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_06");	//(перебивая) А кто был раньше твоим учителем?
+		AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_06 " );	// (interrupting) Who was your teacher before?
 	};
-	AI_Output(other,self,"DIA_Kreol_Hello_Teach_01_08");	//Ксардас!
-	AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_09");	//Ксардас...
-	AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_10");	//Ну, если Ксардас учил тебя, это уже кое-что значит.
-	AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_11");	//Он не берет в ученики кого попало!
-	AI_Output(other,self,"DIA_Kreol_Hello_Teach_01_13");	//Так ты будешь моим наставником?
-	AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_23");	//Хорошо! Я приму тебя в ученики, и ты будешь обучаться у меня искусству темной магии.
-	AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_26");	//Надеюсь, я не пожалею о своем решении.
-	AI_Output(self,other,"DIA_Kreol_Hello_Teach_01_27");	//А теперь иди займись чем-нибудь полезным!
+	AI_Output(other,self, " DIA_Kreol_Hello_Teach_01_08 " );	// Xardas!
+	AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_09 " );	// Xardas...
+	AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_10 " );	// Well, if Xardas taught you, it already means something.
+	AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_11 " );	// He doesn't take just anyone as a student!
+	AI_Output(other,self, " DIA_Kreol_Hello_Teach_01_13 " );	// So will you be my mentor?
+	AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_23 " );	// Good! I will accept you as a student, and you will be trained by me in the art of dark magic.
+	AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_26 " );	// I hope I don't regret my decision.
+	AI_Output(self,other, " DIA_Kreol_Hello_Teach_01_27 " );	// Now go do something useful!
 	Info_ClearChoices(dia_kreol_hello);
 	Log_CreateTopic(TOPIC_ADDON_DMTTEACHER,LOG_NOTE);
-	B_LogEntry(TOPIC_ADDON_DMTTEACHER,"Креол научит меня создавать руны некромантов, поможет освоить магические круги и повысит мою магическую силу.");
+	B_LogEntry( TOPIC_ADDON_DMTTEACHER , " Creole will teach me how to create necromancer runes, help me learn magic circles and increase my magic power. " );
 	KREOL_MYTEACHER = TRUE;
 };
 
 func void dia_kreol_hello_prophecy()
 {
-	AI_Output(other,self,"DIA_Kreol_Hello_14_52");	//Наша встреча не случайна.
-	AI_Output(self,other,"DIA_Kreol_Hello_14_55");	//Кто рассказал тебе обо мне?!
-	AI_Output(other,self,"DIA_Kreol_Hello_14_56");	//Ксардас!
-	AI_Output(self,other,"DIA_Kreol_Hello_14_57");	//Ксардас? Я вспомнил его. Он бывший маг Огня!
+	AI_Output(other,self, " DIA_Kreol_Hello_14_52 " );	// Our meeting is not accidental.
+	AI_Output(self,other, " DIA_Kreol_Hello_14_55 " );	// Who told you about me?!
+	AI_Output(other,self, " DIA_Kreol_Hello_14_56 " );	// Xardas!
+	AI_Output(self,other, " DIA_Kreol_Hello_14_57 " );	// Xardas? I remembered him. He's a former firebender!
 
 	if(other.guild == GIL_KDM)
 	{
-		AI_Output(other,self,"DIA_Kreol_Hello_14_61");	//Ксардас мой наставник. Как ты заметил, я также принадлежу к кругу темных магов.
-		AI_Output(self,other,"DIA_Kreol_Hello_14_63");	//Значит, ты тоже некромант...(вдумчиво) Ты выбрал трудный путь, хотя, возможно, даже и не представляешь, насколько трудный.	
+		AI_Output(other,self, " DIA_Kreol_Hello_14_61 " );	// Xardas is my mentor. As you noticed, I also belong to the circle of dark magicians.
+		AI_Output(self,other, " DIA_Kreol_Hello_14_63 " );	// So you're also a necromancer... (thoughtfully) You've chosen a difficult path, although you probably don't even realize how difficult it is.	
 	};
 
-	AI_Output(self,other,"DIA_Kreol_Hello_14_65");	//Но довольно! Хватит пустой болтовни. Если ты встречи со мной, то считай, что ты ее нашел и я перед тобой!
-	AI_Output(self,other,"DIA_Kreol_Hello_14_66");	//Говори, что тебе нужно от меня?
+	AI_Output(self,other, " DIA_Kreol_Hello_14_65 " );	// But enough! Enough empty talk. If you are meeting with me, then consider that you have found her and I am in front of you!
+	AI_Output(self,other, " DIA_Kreol_Hello_14_66 " );	// Tell me what you want from me?
 	Info_ClearChoices(dia_kreol_hello);
 };
 
 func void dia_kreol_hello_kill()
 {
-	AI_Output(other,self,"DIA_Kreol_Hello_14_10");	//Я пришел убить тебя!
+	AI_Output(other,self, " DIA_Kreol_Hello_14_10 " );	// I've come to kill you!
 
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 	{
 		if(other.guild == GIL_PAL)
 		{
-			AI_Output(other,self,"DIA_Kreol_Hello_14_11");	//Как слуги Инноса, моя святая обязанность истреблять порождения Тьмы, подобные тебе!
-			AI_Output(self,other,"DIA_Kreol_Hello_14_14");	//Ты посмел бросить вызов МНЕ - одному из избранных Белиара, и это станет твоей последней ошибкой!
-			AI_Output(self,other,"DIA_Kreol_Hello_14_15");	//Умри, жалкий червь!
+			AI_Output(other,self, " DIA_Kreol_Hello_14_11 " );	// As servants of Innos, it is my holy duty to exterminate the creatures of Darkness like you!
+			AI_Output(self,other, " DIA_Kreol_Hello_14_14 " );	// You dared to challenge ME - one of the chosen ones of Beliar, and this will be your last mistake!
+			AI_Output(self,other, " DIA_Kreol_Hello_14_15 " );	// Die, miserable worm!
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Kreol_Hello_14_16");	//Как слуги Инноса, моя святая обязанность истреблять порождения Тьмы, подобные тебе!
-			AI_Output(self,other,"DIA_Kreol_Hello_14_19");	//Ты посмел бросить вызов МНЕ - одному из избранных Белиара, и это станет твоей последней ошибкой!
-			AI_Output(self,other,"DIA_Kreol_Hello_14_20");	//Иннос не поможет тебе! Умри, жалкий червь!
+			AI_Output(other,self, " DIA_Kreol_Hello_14_16 " );	// As servants of Innos, it is my holy duty to exterminate the creatures of Darkness like you!
+			AI_Output(self,other, " DIA_Kreol_Hello_14_19 " );	// You dared to challenge ME - one of the chosen ones of Beliar, and this will be your last mistake!
+			AI_Output(self,other, " DIA_Kreol_Hello_14_20 " );	// Innos won't help you! Die, wretched worm!
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_Hello_14_22");	//Ты посмел бросить вызов МНЕ - одному из избранных Белиара, и это станет твоей последней ошибкой!
-		AI_Output(self,other,"DIA_Kreol_Hello_14_23");	//Сейчас ты умрешь, и твое тело до скончания времен будет служить мне в виде бездушной нежити!
-		AI_Output(self,other,"DIA_Kreol_Hello_14_24");	//Умри, жалкий червь!
+		AI_Output(self,other, " DIA_Kreol_Hello_14_22 " );	// You dared to challenge ME - one of the chosen ones of Beliar, and this will be your last mistake!
+		AI_Output(self,other, " DIA_Kreol_Hello_14_23 " );	// Now you will die, and your body will serve me until the end of time in the form of a soulless undead!
+		AI_Output(self,other, " DIA_Kreol_Hello_14_24 " );	// Die, miserable worm!
 	};
 	AI_ReadyMeleeWeapon(other);
 	Info_ClearChoices(dia_kreol_hello);
-	Info_AddChoice(dia_kreol_hello,"Это мы еще посмотрим, кто из нас умрет.",dia_kreol_hello_ext);
+	Info_AddChoice(dia_kreol_hello, " We'll see which of us dies. " ,dia_kreol_hello_ext);
 };
 
 func void dia_kreol_hello_fuckoff()
 {
-	AI_Output(other,self,"DIA_Kreol_Hello_14_25");	//Тебя это не касается!
-	AI_Output(self,other,"DIA_Kreol_Hello_14_26");	//(злобно) Похоже, ты так и не понял, с кем имеешь дело!
-	AI_Output(self,other,"DIA_Kreol_Hello_14_30");	//Сейчас я тебе это объясню. Умри, жалкий червь!
+	AI_Output(other,self, " DIA_Kreol_Hello_14_25 " );	// This doesn't concern you!
+	AI_Output(self,other, " DIA_Kreol_Hello_14_26 " );	// (viciously) Looks like you still don't know who you're dealing with!
+	AI_Output(self,other, " DIA_Kreol_Hello_14_30 " );	// Now I'll explain it to you. Die, wretched worm!
 	AI_ReadyMeleeWeapon(other);
 	Info_ClearChoices(dia_kreol_hello);
-	Info_AddChoice(dia_kreol_hello,"Это мы еще посмотрим, кто из нас умрет.",dia_kreol_hello_ext);
+	Info_AddChoice(dia_kreol_hello, " We'll see which of us dies. " ,dia_kreol_hello_ext);
 };
 
 func void dia_kreol_hello_dontknow()
 {
-	AI_Output(other,self,"DIA_Kreol_Hello_14_31");	//Я случайно здесь оказался.
-	AI_Output(self,other,"DIA_Kreol_Hello_14_33");	//Я очень ценю свой покой и уединение. И ненавижу, когда в мои владения вторгаются непрошеные гости!
-	AI_Output(self,other,"DIA_Kreol_Hello_14_34");	//Сейчас я тебе это объясню. Умри, жалкий червь!
+	AI_Output(other,self, " DIA_Kreol_Hello_14_31 " );	// I ended up here by accident.
+	AI_Output(self,other, " DIA_Kreol_Hello_14_33 " );	// I really appreciate my peace and solitude. And I hate it when uninvited guests invade my domain!
+	AI_Output(self,other, " DIA_Kreol_Hello_14_34 " );	// Now I'll explain it to you. Die, wretched worm!
 	AI_ReadyMeleeWeapon(other);
 	Info_ClearChoices(dia_kreol_hello);
-	Info_AddChoice(dia_kreol_hello,"Это мы еще посмотрим, кто из нас умрет.",dia_kreol_hello_ext);
+	Info_AddChoice(dia_kreol_hello, " We'll see which of us dies. " ,dia_kreol_hello_ext);
 };
 
 func void dia_kreol_hello_sorry()
 {
-	AI_Output(other,self,"DIA_Kreol_Hello_14_40");	//Я и понятия не имел, что кроме нежити тут кто-то есть.
-	AI_Output(self,other,"DIA_Kreol_Hello_14_43");	//Никто не смеет нарушать мой покой и вторгаться сюда без приглашения!
-	AI_Output(self,other,"DIA_Kreol_Hello_14_45");	//Но я дам тебе шанс исчезнуть отсюда и сохраню тебе жизнь.
-	AI_Output(self,other,"DIA_Kreol_Hello_14_50");	//Так что лучше тебе убраться с глаз моих, пока я передумал!
-	AI_Output(self,other,"DIA_Kreol_Hello_14_51");	//И запомни: при следующей нашей встрече я убью тебя! Пошел вон!
+	AI_Output(other,self, " DIA_Kreol_Hello_14_40 " );	// I had no idea there was anyone besides the undead.
+	AI_Output(self,other, " DIA_Kreol_Hello_14_43 " );	// No one dares to disturb my peace and invade here without an invitation!
+	AI_Output(self,other, " DIA_Kreol_Hello_14_45 " );	// But I'll give you a chance to get out of here and keep you alive.
+	AI_Output(self,other, " DIA_Kreol_Hello_14_50 " );	// So you'd better get out of my sight before I change my mind!
+	AI_Output(self,other, " DIA_Kreol_Hello_14_51 " );	// And remember: the next time we meet, I will kill you! Go away!
 	KREOL_WARN = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -363,69 +364,69 @@ func void dia_kreol_noforever_info()
 	{
 		if(other.guild == GIL_KDM)
 		{
-			AI_Output(self,other,"DIA_Kreol_NoForever_01_00");	//Так-так. Как я вижу, ты стал некромантом! И кто же посвятил тебя в круг темных магов?
+			AI_Output(self,other, " DIA_Kreol_NoForever_01_00 " );	// Well, well. As I see it, you have become a necromancer! And who initiated you into the circle of dark magicians?
 			AI_Output(other,self,"DIA_Kreol_NoForever_01_01");	//Ксардас!
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Kreol_NoForever_01_02");	//Ты испытываешь мое терпение! Кажется, я велел тебе убираться отсюда!
-			AI_Output(other,self,"DIA_Kreol_NoForever_01_03");	//Меня прислал Ксардас.
+			AI_Output(self,other, " DIA_Kreol_NoForever_01_02 " );	// You're testing my patience! I think I told you to get out of here!
+			AI_Output(other,self, " DIA_Kreol_NoForever_01_03 " );	// Xardas sent me.
 		};
 
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_04");	//Ксардас? Я вспомнил его. Он бывший маг Огня!
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_04 " );	// Xardas? I remembered him. He's a former firebender!
 
 		if(other.guild == GIL_KDM)
 		{
-			AI_Output(self,other,"DIA_Kreol_NoForever_01_08");	//Значит, ты тоже некромант...(вдумчиво) Ты выбрал трудный путь, хотя, возможно, даже и не представляешь, насколько трудный.
+			AI_Output(self,other, " DIA_Kreol_NoForever_01_08 " );	// So you're also a necromancer... (thoughtfully) You've chosen a difficult path, although you probably don't even realize how difficult it is.
 		};
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_10");	//Но хватит об этом! Говори, что теперь тебе нужно от меня?
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_10 " );	// But enough about that! Tell me what do you want from me now?
 	}
 	else if((TASKFINDDARKSOUL == TRUE) && (MIS_GOLDDRAGONPORTAL == LOG_Running) && (TELLABOUTDS == FALSE) && (XARDASTELLABOUTKREOL == FALSE) && (KREOL_KILL == FALSE))
 	{
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_13");	//Ты испытываешь мое терпение! Кажется, я велел тебе убираться отсюда!
-		AI_Output(other,self,"DIA_Kreol_NoForever_01_14");	//Мне нужна твоя помощь.
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_16");	//Назови хотя бы одну причину, почему я должен помогать тебе...
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_17");	//...вместо того, чтобы размазать тебя по стенке, жалкий червь!
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_13 " );	// You're testing my patience! I think I told you to get out of here!
+		AI_Output(other,self, " DIA_Kreol_NoForever_01_14 " );	// I need your help.
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_16 " );	// Give me at least one reason why I should help you...
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_17 " );	// ...instead of smashing you against the wall, you pathetic worm!
 		AI_Output(other,self,"DIA_Kreol_NoForever_01_18");	//С'эньяк!
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_20");	//(задумался) Ну что же, действительно, эта причина могла привести тебя именно ко мне.
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_21");	//Хорошо! Задавай свои вопросы.
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_20 " );	// (thinking) Well, really, this reason could lead you to me.
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_21 " );	// Good! Ask your questions.
 		Info_ClearChoices(dia_kreol_noforever);
 	}
-	else if((other.guild == GIL_KDM) && (XARDASTELLABOUTKREOL == FALSE) && (KREOL_KILL == FALSE))
+	else  if ((other.guild ==  GIL_KDM ) && ( XARDASTELLABOUTKREOL  ==  FALSE ) && ( KREOL_KILL  ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_22");	//Так-так. Как я вижу, ты стал некромантом! И кто же посвятил тебя в круг темных магов?
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_22 " );	// Well, well. As I see it, you have become a necromancer! And who initiated you into the circle of dark magicians?
 		AI_Output(other,self,"DIA_Kreol_NoForever_01_22a");	//Ксардас!
 		AI_Output(self,other,"DIA_Kreol_NoForever_01_23");	//Ксардас...
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_25");	//Он не берет в ученики кого попало!
-		AI_Output(other,self,"DIA_Kreol_NoForever_01_26");	//Как видишь, я тоже некромант, но я еще не постиг всей сути темной магии.
-		AI_Output(other,self,"DIA_Kreol_NoForever_01_29");	//Ты будешь моим наставником?
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_36");	//Хорошо! Я приму тебя в ученики, и ты будешь обучаться у меня искусству темной магии.
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_40");	//Надеюсь, я не пожалею о своем решении.
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_41");	//А теперь иди займись чем-нибудь полезным!
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_25 " );	// He doesn't take just anyone as a student!
+		AI_Output(other,self, " DIA_Kreol_NoForever_01_26 " );	// As you can see, I am also a necromancer, but I have not yet grasped the full essence of dark magic.
+		AI_Output(other,self, " DIA_Kreol_NoForever_01_29 " );	// Will you be my mentor?
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_36 " );	// Good! I will accept you as a student, and you will be trained by me in the art of dark magic.
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_40 " );	// I hope I don't regret my decision.
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_41 " );	// Now go do something useful!
 		Info_ClearChoices(dia_kreol_noforever);
 		Log_CreateTopic(TOPIC_ADDON_DMTTEACHER,LOG_NOTE);
-		B_LogEntry(TOPIC_ADDON_DMTTEACHER,"Креол научит меня создавать руны некромантов, поможет освоить магические круги и повысит мою магическую силу.");
+		B_LogEntry( TOPIC_ADDON_DMTTEACHER , " Creole will teach me how to create necromancer runes, help me learn magic circles and increase my magic power. " );
 		KREOL_MYTEACHER = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_11");	//Ты испытываешь мое терпение! Кажется, я велел тебе убираться отсюда!
-		AI_Output(self,other,"DIA_Kreol_NoForever_01_12");	//Зря ты не последовал моему совету. Теперь ты умрешь!!!
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_11 " );	// You're testing my patience! I think I told you to get out of here!
+		AI_Output(self,other, " DIA_Kreol_NoForever_01_12 " );	// You shouldn't have followed my advice. Now you will die!!!
 		Info_ClearChoices(dia_kreol_noforever);
 		Info_AddChoice(dia_kreol_noforever,"Эй, постой!",dia_kreol_noforever_ext);
 	};
 };
 
 
-instance DIA_KREOL_DEMONLANGUAGE(C_Info)
+instance DIA_CREOL_DEMONLANGUAGE (C_Info) .
 {
 	npc = none_102_kreol;
 	nr = 5;
 	condition = dia_kreol_demonlanguage_condition;
-	information = dia_kreol_demonlanguage_info;
+	information = dia_creole_demon_language_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "Что ты знаешь про язык демонов Лэнга?";
+	description = " What do you know about Lang's demon language? " ;
 };
 
 func int dia_kreol_demonlanguage_condition()
@@ -436,51 +437,51 @@ func int dia_kreol_demonlanguage_condition()
 	};
 };
 
-func void dia_kreol_demonlanguage_info()
+func void dia_creole_demonlanguage_info()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_00");	//Что ты знаешь про язык демонов Лэнга?
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_01");	//О, это редкий дар! Не многие обладают этим знанием, но те, кто посвящен в эту тайну, могут достичь небывалых для себя высот в познании темной магии.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_03");	//Большинство темных фолиантов и манускриптов написано именно на этом языке.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_04");	//В них содержится мудрость, которую даровал нам Белиар. Но лишь избранные достойны чести постигать эту мудрость!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_05");	//Но скажи мне, почему ты интересуешься этим?
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_06");	//Я бы хотел изучить этот древний язык. Ты можешь мне в этом помочь?
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_08");	//Назови мне хотя бы одну причину, почему я должен передать тебе эти знания?
-	Info_AddChoice(dia_kreol_demonlanguage,"Если ты этого не сделаешь - я убью тебя!",dia_kreol_demonlanguage_kill);
-	Info_AddChoice(dia_kreol_demonlanguage,"Ксардас сказал, что ты мне поможешь в этом.",dia_kreol_demonlanguage_xardas);
-	Info_AddChoice(dia_kreol_demonlanguage,"Без этого я не смогу пройти испытание Хранителей!",dia_kreol_demonlanguage_guardian);
-	Info_AddChoice(dia_kreol_demonlanguage,"Мне очень нужно это.",dia_kreol_demonlanguage_need);
-	Info_AddChoice(dia_kreol_demonlanguage,"Хочу убедиться в твоем могуществе.",dia_kreol_demonlanguage_knowledge);
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_00 " );	// What do you know about Lang's demon language?
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_01 " );	// Oh, that's a rare gift! Not many people have this knowledge, but those who are initiated into this secret can reach unprecedented heights in the knowledge of dark magic.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_03 " );	// Most of the dark tomes and manuscripts are written in this language.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_04 " );	// They contain the wisdom given to us by Beliar. But only the elect are worthy of honor to comprehend this wisdom!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_05 " );	// But tell me, why are you interested in this?
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_06 " );	// I'd like to learn this ancient language. Can you help me with this?
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_08 " );	// Give me at least one reason why I should pass this knowledge on to you?
+	Info_AddChoice(dia_kreol_demonlanguage, " If you don't, I'll kill you! " ,dia_kreol_demonlanguage_kill);
+	Info_AddChoice(dia_kreol_demonlanguage, " Xardas said you could help me with this. " ,dia_kreol_demonlanguage_xardas);
+	Info_AddChoice(dia_kreol_demonlanguage, " Without this, I won't be able to pass the Guardians' test! " ,dia_kreol_demonlanguage_guardian);
+	Info_AddChoice(dia_kreol_demonlanguage, " I really need this. " ,dia_kreol_demonlanguage_need);
+	Info_AddChoice(dia_kreol_demonlanguage, " I want to see your power. " ,dia_kreol_demonlanguage_knowledge);
 };
 
 func void dia_kreol_demonlanguage_kill()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_09");	//Потому, что, если ты этого не сделаешь, - я убью тебя!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_10");	//Как смело и безрассудно! Мне это даже нравится!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_11");	//Но твоя дерзость не может остаться безнаказанной!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_12");	//Приготовься узнать боль, какую еще не испытывал, храбрец!
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_09 " );	// Because if you don't, I'll kill you!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_10 " );	// How bold and reckless! I even like it!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_11 " );	// But your insolence cannot go unpunished!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_12 " );	// Get ready to experience pain like you've never experienced before, brave one!
 	AI_ReadyMeleeWeapon(other);
-	Info_ClearChoices(dia_kreol_demonlanguage);
-	Info_AddChoice(dia_kreol_demonlanguage,"Больно будет сейчас тебе.",dia_kreol_demonlanguage_ext);
+	Info_ClearChoices(dia_creole_demonlanguage);
+	Info_AddChoice(dia_kreol_demonlanguage, " It will hurt you now. " ,dia_kreol_demonlanguage_ext);
 };
 
-func void dia_kreol_demonlanguage_xardas()
+func void dia_creole_demon_language_xardas()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_13");	//Ксардас сказал, что ты мне поможешь в этом.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_14");	//Ксардас?! С каких это пор Ксардас начал отдавать мне приказания?
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_15");	//Пусть сам учит тебя!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_17");	//А теперь убирайся с глаз моих и не смей больше появляться здесь!
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_13 " );	// Xardas said you'd help me with this.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_14 " );	// Xardas?! Since when did Xardas start giving me orders?
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_15 " );	// Let him teach you!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_17 " );	// Now get out of my sight and don't you dare come back here!
 	KREOL_WARN = TRUE;
 	KREOL_KILL = TRUE;
 	AI_StopProcessInfos(self);
 };
 
-func void dia_kreol_demonlanguage_guardian()
+func void dia_creole_demonlanguage_guardian()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_1A");	//Без этого я не смогу пройти испытание Хранителей!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_18");	//Хранителей?
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_19");	//Я не стану помогать тому, кто выбрал дорогу Хранителя Стихий!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_20");	//Можешь забыть об этом. Он меня ты не получишь даже и крупицы этих знаний!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_21");	//А теперь убирайся с глаз моих и не смей больше появляться здесь!
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_1A " );	// Without this, I won't be able to pass the Guardian test!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_18 " );	// Keepers?
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_19 " );	// I won't help someone who chooses the path of the Guardian of the Elements!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_20 " );	// You can forget about it. He told me you will not get even a grain of this knowledge!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_21 " );	// Now get out of my sight and don't you dare come back here!
 	KREOL_WARN = TRUE;
 	KREOL_KILL = TRUE;
 	AI_StopProcessInfos(self);
@@ -488,9 +489,9 @@ func void dia_kreol_demonlanguage_guardian()
 
 func void dia_kreol_demonlanguage_need()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_22");	//Это для моего друга Мада. Я познакомился с ним в колонии...
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_23");	//Что за бред ты несешь?
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_27");	//Проваливай! И больше не смей появляться здесь!
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_22 " );	// This is for my friend Mad. I met him in prison...
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_23 " );	// What the hell are you talking about?
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_27 " );	// Get lost! And don't you dare come here again!
 	KREOL_WARN = TRUE;
 	KREOL_KILL = TRUE;
 	AI_StopProcessInfos(self);
@@ -498,84 +499,84 @@ func void dia_kreol_demonlanguage_need()
 
 func void dia_kreol_demonlanguage_knowledge()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_28");	//Я хочу убедиться в твоем могуществе.
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_29");	//Прав ли был Ксардас, говоря, что только очень могущественный маг вроде тебя смог бы помочь мне обрести эти знания?
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_32");	//Жалкий червь, да как ты смеешь, сомневаться в моем могуществе?!
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_34");	//(гордо) Я был избран самим Белиаром! В моих жилах течет сила Бога Тьмы!
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_35");	//Это все лишь слова - не более того.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_36");	//ЧТО?! Ты все еще сомневаешься в этом? Глупец!
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_28 " );	// I want to make sure of your power.
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_29 " );	// Was Xardas right when he said that only a very powerful mage like you could help me acquire this knowledge?
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_32 " );	// Poor worm, how dare you doubt my power?!
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_34 " );	// (proudly) I was chosen by Beliar himself! The power of the God of Darkness flows through my veins!
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_35 " );	// These are just words - nothing more.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_36 " );	// WHAT?! Do you still doubt it? Fool!
 	if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_44");	//Хотя чего еще ожидать от ученика этого Ксардаса? (смеется)
+		AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_44 " );	// Though what else can you expect from this Xardas' apprentice? (laughs)
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_45");	//Еще немного - и ты бы убедился в этом - ценой своей собственной жизни!
+		AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_45 " );	// A little more - and you would be convinced of this - at the cost of your own life!
 	};
-	AI_Output(other,self,"DIA_Kreol_DemonLanguage_01_46");	//Так ты научишь меня языку демонов?
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_47");	//(думает) Хммм...
-	AI_Output(self,other,"DIA_Kreol_DemonLanguage_01_48");	//Хорошо, я открою тебе эту священную тайну! Но только не думай, что я это делаю из-за того, что ты сомневаешься в моем могуществе.
-	KREOL_TEACHDEMONLANG = TRUE;
-	Info_ClearChoices(dia_kreol_demonlanguage);
+	AI_Output(other,self, " DIA_Kreol_DemonLanguage_01_46 " );	// So will you teach me the language of demons?
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_47 " );	// (thinks) Hmmm...
+	AI_Output(self,other, " DIA_Kreol_DemonLanguage_01_48 " );	// Okay, I'll reveal this sacred secret to you! But don't think that I'm doing this because you doubt my power.
+	KREOL_TACHDEMONLANG = TRUE ;
+	Info_ClearChoices(dia_creole_demonlanguage);
 };
 
 
-instance DIA_KREOL_DEMONLANGUAGETELL(C_Info)
+instance DIA_CREOL_DEMONLANGUAGETELL ( C_Info );
 {
 	npc = none_102_kreol;
 	nr = 5;
 	condition = dia_kreol_demonlanguagetell_condition;
-	information = dia_kreol_demonlanguagetell_info;
+	information = dia_creole_demonlanguagetell_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "Расскажи мне про язык Демонов Лэнга.";
+	description = " Tell me about Lang's Demon language. " ;
 };
 
 
-func int dia_kreol_demonlanguagetell_condition()
+func int dia_creole_demonlanguagetell_condition()
 {
-	if(KREOL_TEACHDEMONLANG == TRUE)
+	if ( KREOL_TACHDEMONLANG  ==  TRUE )
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kreol_demonlanguagetell_info()
+func void dia_creole_demonlanguagetell_info()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguageTell_01_00");	//Расскажи мне про язык демонов Лэнга.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguageTell_01_03");	//Его ценность заключается в том, что самые сокровенные тайны, уходящие своими корнями ко временам создания этого мира, написаны именно на этом языке.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguageTell_01_04");	//Каждый из этих текстов - настоящее сокровище, если понять его смысл.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguageTell_01_05");	//Кроме того, это язык Темного бога! Все существа, сотворенные Белиаром и подвластные ему, способны понимать этот язык.
-	AI_Output(other,self,"DIA_Kreol_DemonLanguageTell_01_07");	//А что такое Лэнг?
-	AI_Output(self,other,"DIA_Kreol_DemonLanguageTell_01_08");	//Лэнг это царство демонов. Он является частью Мордрага, обители Темного бога.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguageTell_01_09");	//Многие из демонов Лэнга также служат Темному богу. Но есть и такие, над которыми Белиар не имеет власти.
-	AI_Output(self,other,"DIA_Kreol_DemonLanguageTell_01_10");	//Как например, легион Элигора, повелителя демонов Лэнга!
+	AI_Output(other,self, " DIA_Kreol_DemonLanguageTell_01_00 " );	// Tell me about Lang's demon language.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguageTell_01_03 " );	// Its value lies in the fact that the most intimate secrets, dating back to the time of the creation of this world, are written in this language.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguageTell_01_04 " );	// Each of these texts is a real treasure if you understand its meaning.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguageTell_01_05 " );	// Also, this is the language of the Dark God! All creatures created by Beliar and subject to him are able to understand this language.
+	AI_Output(other,self, " DIA_Kreol_DemonLanguageTell_01_07 " );	// What is Lang?
+	AI_Output(self,other, " DIA_Kreol_DemonLanguageTell_01_08 " );	// Lang is the realm of demons. It is part of Mordrag, the home of the Dark God.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguageTell_01_09 " );	// Many of Lang's demons also serve the Dark God. But there are those over whom Beliar has no power.
+	AI_Output(self,other, " DIA_Kreol_DemonLanguageTell_01_10 " );	// Like the legion of Eligor, the demon lord Lang!
 };
 
 
-instance DIA_KREOL_DEMONLANGUAGETEACH(C_Info)
+instance DIA_CREOL_DEMONLANGUAGETEACH ( C_Info ) ;
 {
 	npc = none_102_kreol;
 	nr = 5;
 	condition = dia_kreol_demonlanguageteach_condition;
-	information = dia_kreol_demonlanguageteach_info;
+	information = dia_creole_demon_languageteach_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Научи меня языку демонов. (Очки обучения: 10, Цена: 2000 монет)";
+	description = " Teach me the language of demons. (Learning points: 10, Cost: 2000 coins) " ;
 };
 
 
 func int dia_kreol_demonlanguageteach_condition()
 {
-	if((KREOL_TEACHDEMONLANG == TRUE) && (KNOWDEMENTORLANGUAGE == FALSE))
+	if (( CREOL_TEACHDEMONLANGUAGE  ==  TRUE ) && ( KNOWDEMENTORLANGUAGE  ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kreol_demonlanguageteach_info()
+func void dia_creole_demonlanguageteach_info()
 {
-	AI_Output(other,self,"DIA_Kreol_DemonLanguageTeach_01_00");	//Научи меня языку демонов.
+	AI_Output(other,self, " DIA_Kreol_DemonLanguageTeach_01_00 " );	// Teach me the language of demons.
 
 	if(B_TeachPlayerTalentForeignLanguage(self,other,LANGUAGE_4))
 	{
@@ -629,7 +630,7 @@ instance DIA_KREOL_XARDASMISS(C_Info)
 
 func int dia_kreol_xardasmiss_condition()
 {
-	if((hero.guild == GIL_KDM) && (XARDAS_MISS == TRUE))
+	if (( hero . guild ==  GIL_KDM ) && ( XARDAS_MISS  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -638,26 +639,26 @@ func int dia_kreol_xardasmiss_condition()
 func void dia_kreol_xardasmiss_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Kreol_XardasMiss_01_00");	//Ксардас исчез!
-	AI_Output(self,other,"DIA_Kreol_XardasMiss_01_01");	//Что?! Что еще задумал этот хитрец?
-	AI_Output(other,self,"DIA_Kreol_XardasMiss_01_02");	//Я думал, ты знаешь причину.
-	AI_Output(self,other,"DIA_Kreol_XardasMiss_01_03");	//Откуда же мне знать это?
-	AI_Output(self,other,"DIA_Kreol_XardasMiss_01_04");	//Но его исчезновение - очень, очень странно...
+	AI_Output(other,self, " DIA_Kreol_XardasMiss_01_00 " );	// Xardas is gone!
+	AI_Output(self,other, " DIA_Kreol_XardasMiss_01_01 " );	// What?! What else is this sly one up to?
+	AI_Output(other,self, " DIA_Kreol_XardasMiss_01_02 " );	// I thought you knew the reason.
+	AI_Output(self,other, " DIA_Kreol_XardasMiss_01_03 " );	// How do I know this?
+	AI_Output(self,other, " DIA_Kreol_XardasMiss_01_04 " );	// But his disappearance is very, very strange...
 	KreolBuyWeap = TRUE;
 
 	if(KREOL_MYTEACHER == FALSE)
 	{
-		AI_Output(other,self,"DIA_Kreol_XardasMiss_01_05");	//Теперь я лишился возможности продолжить свое обучение темной магии.
-		AI_Output(self,other,"DIA_Kreol_XardasMiss_01_06");	//И что с того?
-		AI_Output(other,self,"DIA_Kreol_XardasMiss_01_07");	//Я еще не постиг всей сути темной магии. Ты будешь моим наставником?
-		AI_Output(self,other,"DIA_Kreol_XardasMiss_01_08");	//Хм... Хорошо! Я приму тебя в свои ученики и ты будешь обучаться у меня искусству темной магии.
-		AI_Output(self,other,"DIA_Kreol_XardasMiss_01_20");	//Надеюсь, я не пожалею о своем решении.
-		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_08");	//И вот еще что. Раз ты теперь мой ученик, прими это кольцо.
+		AI_Output(other,self, " DIA_Kreol_XardasMiss_01_05 " );	// Now I have lost the opportunity to continue my training in dark magic.
+		AI_Output(self,other, " DIA_Kreol_XardasMiss_01_06 " );	// So what?
+		AI_Output(other,self, " DIA_Kreol_XardasMiss_01_07 " );	// I haven't figured out the whole point of dark magic yet. Will you be my mentor?
+		AI_Output(self,other, " DIA_Kreol_XardasMiss_01_08 " );	// Hmm... Good! I will accept you as my student and you will learn from me the art of dark magic.
+		AI_Output(self,other, " DIA_Kreol_XardasMiss_01_20 " );	// I hope I don't regret my decision.
+		AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_08 " );	// And one more thing. Since you are now my student, accept this ring.
 		B_GiveInvItems(self,other,ITRI_KREOLPLACE,1);
-		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_09");	//Оно позволит тебе оказаться в этой башне быстрее, чем ты можешь себе представить.
-		AI_Output(self,other,"DIA_Kreol_XardasMiss_01_21");	//А теперь иди и займись чем-нибудь полезным!
+		AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_09 " );	// It will allow you to get to this tower faster than you can imagine.
+		AI_Output(self,other, " DIA_Kreol_XardasMiss_01_21 " );	// Now go and do something useful!
 		Log_CreateTopic(TOPIC_ADDON_DMTTEACHER,LOG_NOTE);
-		B_LogEntry(TOPIC_ADDON_DMTTEACHER,"Креол научит меня создавать руны некромантов, поможет освоить магические круги и повысит мою магическую силу.");
+		B_LogEntry( TOPIC_ADDON_DMTTEACHER , " Creole will teach me how to create necromancer runes, help me learn magic circles and increase my magic power. " );
 		KREOL_MYTEACHER = TRUE;
 	};
 };
@@ -670,7 +671,7 @@ instance DIA_KREOL_TRADE(C_Info)
 	information = dia_kreol_trade_info;
 	trade = TRUE;
 	permanent = TRUE;
-	description = "Покажи мне свои магические свитки.";
+	description = " Show me your magical scrolls. " ;
 };
 
 func int dia_kreol_trade_condition()
@@ -693,7 +694,7 @@ func void dia_kreol_trade_info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Kreol_Trade_01_01");	//Покажи мне свои магические свитки.
+	AI_Output(other,self, " DIA_Kreol_Trade_01_01 " );	// Show me your magical scrolls.
 
 	if((Kapitel == 5) && (KREOLGIVEFIVECHAPTERSPELLS == FALSE))
 	{
@@ -741,14 +742,14 @@ func void dia_kreol_trade_info()
 };
 
 
-instance DIA_KREOL_RUNEN(C_Info)
+instance DIA_KREOL_RUNEN (C_Info)
 {
 	npc = none_102_kreol;
 	nr = 5;
 	condition = dia_kreol_runen_condition;
 	information = dia_kreol_runen_info;
 	permanent = TRUE;
-	description = "Научи меня создавать руны.";
+	description = " Teach me how to make runes. " ;
 };
 
 
@@ -762,37 +763,37 @@ func int dia_kreol_runen_condition()
 
 func void dia_kreol_runen_info()
 {
-	AI_Output(other,self,"DIA_Parlan_TEACH_15_00");	//Обучи меня!
+	AI_Output(other,self, " DIA_Parlan_TEACH_15_00 " );	// Train me!
 	Info_ClearChoices(dia_kreol_runen);
 	Info_AddChoice(dia_kreol_runen,Dialog_Back,dia_kreol_runen_back);
 
 	if((Npc_GetTalentSkill(other,NPC_TALENT_DEMONOLOG) == 1) && (PLAYER_TALENT_RUNES[SPL_SummonDemon] == FALSE))
 	{
-		Info_AddChoice(dia_kreol_runen,"Руна демонолога",dia_kreol_runen_dem);
+		Info_AddChoice(dia_kreol_runen, " Demonologist Rune " , dia_kreol_runen_dem);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 6)
 	{
-		Info_AddChoice(dia_kreol_runen,"6 Круг магии",dia_kreol_runen_6);
+		Info_AddChoice(dia_kreol_runen, " 6 Circle of Magic " ,dia_kreol_runen_6);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 5)
 	{
-		Info_AddChoice(dia_kreol_runen,"5 Круг магии",dia_kreol_runen_5);
+		Info_AddChoice(dia_kreol_runen, " 5 Circle of Magic " ,dia_kreol_runen_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 4)
 	{
-		Info_AddChoice(dia_kreol_runen,"4 Круг магии",dia_kreol_runen_4);
+		Info_AddChoice(dia_kreol_runen, " 4 Circle of Magic " ,dia_kreol_runen_4);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3)
 	{
-		Info_AddChoice(dia_kreol_runen,"3 Круг магии",dia_kreol_runen_3);
+		Info_AddChoice(dia_kreol_runen, " 3 Circle of Magic " ,dia_kreol_runen_3);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2)
 	{
-		Info_AddChoice(dia_kreol_runen,"2 Круг магии",dia_kreol_runen_2);
+		Info_AddChoice(dia_kreol_runen, " 2 Circle of Magic " ,dia_kreol_runen_2);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 1)
 	{
-		Info_AddChoice(dia_kreol_runen,"1 Круг магии",dia_kreol_runen_1);
+		Info_AddChoice(dia_kreol_runen, " 1 Circle of Magic " ,dia_kreol_runen_1);
 	};
 };
 
@@ -996,7 +997,7 @@ instance DIA_KREOL_TEACH_MANA(C_Info)
 	condition = dia_kreol_teach_mana_condition;
 	information = dia_kreol_teach_mana_info;
 	permanent = TRUE;
-	description = "Я хочу увеличить свою магическую энергию.";
+	description = " I want to increase my magical energy. " ;
 };
 
 func int dia_kreol_teach_mana_condition()
@@ -1009,16 +1010,16 @@ func int dia_kreol_teach_mana_condition()
 
 func void dia_kreol_teach_mana_info()
 {
-	AI_Output(other,self,"DIA_Kreol_TEACH_MANA_15_00");	//Я хочу увеличить свою магическую энергию.
-	AI_Output(self,other,"DIA_Kreol_TEACH_MANA_15_01");	//Я могу помочь тебе в этом. Как ты ее используешь, зависит только от тебя.
+	AI_Output(other,self, " DIA_Kreol_TEACH_MANA_15_00 " );	// I want to increase my magical energy.
+	AI_Output(self,other, " DIA_Kreol_TEACH_MANA_15_01 " );	// I can help you with this. How you use it is up to you.
 	Info_ClearChoices(dia_kreol_teach_mana);
 	Info_AddChoice(dia_kreol_teach_mana,Dialog_Back,dia_kreol_teach_mana_back);
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_kreol_teach_mana_1);
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_kreol_teach_mana_5);
 
-	if((Kapitel >= 2) && (hero.guild == GIL_KDM) && (VATRAS_TEACHREGENMANA == FALSE))
+	if ((Chapter >=  2 ) && (hero.guild ==  GIL_KDM ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
 	{
-		Info_AddChoice(DIA_Kreol_TEACH_MANA,"Регенерация маны (Очки обучения: 10, Цена: 15000 монет)",DIA_Kreol_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Kreol_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 15000 coins) " ,DIA_Kreol_TEACH_MANA_Regen);
 	};
 };
 
@@ -1026,8 +1027,8 @@ func void dia_kreol_teach_mana_back()
 {
 	if(other.attribute[ATR_MANA_MAX] >= T_MEGA)
 	{
-		AI_Output(self,other,"DIA_Kreol_TEACH_MANA_05_00");	//Я больше не в силах помочь тебе в этом.
-		AI_Output(self,other,"DIA_Kreol_TEACH_MANA_05_01");	//Ты на пределе своих возможностей!
+		AI_Output(self,other, " DIA_Kreol_TEACH_MANA_05_00 " );	// I can't help you with this anymore.
+		AI_Output(self,other, " DIA_Kreol_TEACH_MANA_05_01 " );	// You're at your limits!
 	};
 
 	Info_ClearChoices(dia_kreol_teach_mana);
@@ -1035,12 +1036,12 @@ func void dia_kreol_teach_mana_back()
 
 func void DIA_Kreol_TEACH_MANA_Regen()
 {
-	var int kosten;
+	var int cost;
 	var int money;
 
-	AI_Output(other,self,"DIA_Vatras_Teach_regen_15_05");	//Научи меня регенерации маны.
+	AI_Output(other,self, " DIA_Vatras_Teach_regen_15_05 " );	// Teach me mana regeneration.
 
-	kosten = 10;
+	cost = 10 ;
 	money = 15000;
 
 	if(hero.lp < kosten)
@@ -1056,10 +1057,10 @@ func void DIA_Kreol_TEACH_MANA_Regen()
 	if((hero.lp >= kosten) && (Npc_HasItems(other,ItMi_Gold) >= money))
 	{
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_RemoveInvItems(other,ItMi_Gold,money);
-		AI_Print("Обучение: Регенерация маны");
-		VATRAS_TEACHREGENMANA = TRUE;
+		AI_Print( " Training: Mana Regeneration " );
+		VATRAS_TEACHREGENMANA = TRUE ;
 		Snd_Play("LevelUP");
 	};
 
@@ -1077,9 +1078,9 @@ func void dia_kreol_teach_mana_1()
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_kreol_teach_mana_1);
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_kreol_teach_mana_5);
 
-	if((Kapitel >= 2) && (hero.guild == GIL_KDM) && (VATRAS_TEACHREGENMANA == FALSE))
+	if ((Chapter >=  2 ) && (hero.guild ==  GIL_KDM ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
 	{
-		Info_AddChoice(DIA_Kreol_TEACH_MANA,"Регенерация маны (Очки обучения: 10, Цена: 15000 монет)",DIA_Kreol_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Kreol_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 15000 coins) " ,DIA_Kreol_TEACH_MANA_Regen);
 	};
 };
 
@@ -1091,14 +1092,14 @@ func void dia_kreol_teach_mana_5()
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_kreol_teach_mana_1);
 	Info_AddChoice(dia_kreol_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_kreol_teach_mana_5);
 
-	if((Kapitel >= 2) && (hero.guild == GIL_KDM) && (VATRAS_TEACHREGENMANA == FALSE))
+	if ((Chapter >=  2 ) && (hero.guild ==  GIL_KDM ) && ( BACK_TEACHREGENMANA  ==  FALSE ))
 	{
-		Info_AddChoice(DIA_Kreol_TEACH_MANA,"Регенерация маны (Очки обучения: 10, Цена: 15000 монет)",DIA_Kreol_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Kreol_TEACH_MANA, " Mana Regen (Training Points: 10, Cost: 15000 coins) " ,DIA_Kreol_TEACH_MANA_Regen);
 	};
 };
 
 
-var int dia_kreol_circle_noperm;
+var int day_kreol_circle_noperm;
 
 instance DIA_KREOL_CIRCLE(C_Info)
 {
@@ -1107,13 +1108,13 @@ instance DIA_KREOL_CIRCLE(C_Info)
 	condition = dia_kreol_circle_condition;
 	information = dia_kreol_circle_info;
 	permanent = TRUE;
-	description = "Я хочу постигать суть магии.";
+	description = " I want to learn the essence of magic. " ;
 };
 
 
 func int dia_kreol_circle_condition()
 {
-	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) <= 6) && (KREOL_MYTEACHER == TRUE) && (DIA_KREOL_CIRCLE_NOPERM == FALSE))
+	if ((Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) <=  6 ) && ( CREOL_MYTEACHER  ==  TRUE ) && ( DIA_CREOL_CIRCLE_NOPERM  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -1121,37 +1122,37 @@ func int dia_kreol_circle_condition()
 
 func void dia_kreol_circle_info()
 {
-	AI_Output(other,self,"DIA_Kreol_CIRCLE_15_00");	//Я хочу постигать суть магии.
+	AI_Output(other, self, " DIA_Kreol_CIRCLE_15_00 " );	// I want to understand the essence of magic.
 	Info_ClearChoices(DIA_Kreol_CIRCLE);
 	Info_AddChoice(DIA_Kreol_CIRCLE,Dialog_Back,DIA_Kreol_CIRCLE_Back);
 
 	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) < 1) && (Kapitel >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_CIRCLE,"1 Круг магии (Очков обучения: 20)",DIA_Kreol_CIRCLE_1);
+		Info_AddChoice(DIA_Kreol_CIRCLE, " 1 Circle of Magic (Training Points: 20) " ,DIA_Kreol_CIRCLE_1);
 	}
 	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (Kapitel >= 2))
 	{
-		Info_AddChoice(DIA_Kreol_CIRCLE,"2 Круг магии (Очков обучения: 30)",DIA_Kreol_CIRCLE_2);
+		Info_AddChoice(DIA_Kreol_CIRCLE, " 2 Circle of Magic (Training Points: 30) " ,DIA_Kreol_CIRCLE_2);
 	}
 	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (Kapitel >= 3))
 	{
-		Info_AddChoice(DIA_Kreol_CIRCLE,"3 Круг магии (Очков обучения: 40)",DIA_Kreol_CIRCLE_3);
+		Info_AddChoice(DIA_Kreol_CIRCLE, " 3 Circle of Magic (Training Points: 40) " ,DIA_Kreol_CIRCLE_3);
 	}
 	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3) && (MIS_ReadyforChapter4 == TRUE))
 	{
-		Info_AddChoice(DIA_Kreol_CIRCLE,"4 Круг магии (Очков обучения: 60)",DIA_Kreol_CIRCLE_4);
+		Info_AddChoice(DIA_Kreol_CIRCLE, " 4 Circle of Magic (Training Points: 60) " ,DIA_Kreol_CIRCLE_4);
 	}
 	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 4) && (Kapitel >= 5))
 	{
-		Info_AddChoice(DIA_Kreol_CIRCLE,"5 Круг магии (Очков обучения: 80)",DIA_Kreol_CIRCLE_5);
+		Info_AddChoice(DIA_Kreol_CIRCLE, " 5 Circle of Magic (Training Points: 80) " ,DIA_Kreol_CIRCLE_5);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 5) && (Kapitel >= 5) && (MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS))
+	else  if ((Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) ==  5 ) && (Chapter >=  5 ) && (MY_DarkOrder == LOG_Success) && (MY_JarCurse == LOG_Success) && ( MY_URNAZULRAGE  ==  LOG_SUCCESS )) ;
 	{
-		Info_AddChoice(DIA_Kreol_CIRCLE,"6 Круг магии (Очков обучения: 100)",DIA_Kreol_CIRCLE_6);
+		Info_AddChoice(DIA_Kreol_CIRCLE, " 6 Circle of Magic (Training Points: 100) " ,DIA_Kreol_CIRCLE_6);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_31");	//Еще не время. Возвращайся позже.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_31 " );	// It's not time yet. Come back later.
 	};
 };
 
@@ -1164,16 +1165,16 @@ func void DIA_Kreol_CIRCLE_1()
 {
 	if(B_TeachMagicCircle(self,other,1))
 	{
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_0A");	//Готов ли ты вступить в Первый круг магии?
-		AI_Output(other,self,"DIA_Kreol_CIRCLE_15_01");	//Я готов вступить в Первый Круг.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_01");	//Вступив в Первый Круг, ты научишься использовать магические руны.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_02");	//Каждая руна содержит структуру особого магического заклинания.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_03");	//Использовав свою собственную магическую силу, ты сможешь высвободить магию руны.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_04");	//Но в отличие от свитков, которые по сути являются магическими формулами, магия рун поддерживает структуру заклинания всегда.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_05");	//Каждая руна таит в себе магическую силу, которую ты можешь забрать в любой момент.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_06");	//Использование руны, как и использование свитка, требует затрат магической энергии.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_07");	//С каждым новым Кругом ты будешь узнавать о рунах все больше и больше.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_08");	//Направь их силу на то, чтобы познать себя.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_0A " );	// Are you ready to enter the First Circle of Magic?
+		AI_Output(other,self, " DIA_Kreol_CIRCLE_15_01 " );	// I'm ready to enter the First Circle.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_01 " );	// By joining the First Circle, you will learn how to use magical runes.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_02 " );	// Each rune contains the structure of a special magic spell.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_03 " );	// By using your own magical power, you can release the rune's magic.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_04 " );	// But unlike scrolls, which are essentially magic formulas, rune magic maintains the structure of the spell at all times.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_05 " );	// Each rune contains a magical power that you can take away at any time.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_06 " );	// Using a rune, like using a scroll, costs magical energy.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_07 " );	// With each new Circle you will learn more and more about runes.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_08 " );	// Use their power to know yourself.
 	};
 	Info_ClearChoices(DIA_Kreol_CIRCLE);
 };
@@ -1182,15 +1183,15 @@ func void DIA_Kreol_CIRCLE_2()
 {
 	if(B_TeachMagicCircle(self,other,2))
 	{
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_0B");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_Kreol_CIRCLE_15_02");	//Я готов вступить во Второй Круг.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_09");	//Ты уже научился понимать руны. Пришло время углубить твои познания.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_10");	//Вступив во Второй Круг, ты постигнешь основы мощных боевых заклятий.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_11");	//Но для того чтобы познать истинные секреты магии, тебе предстоит многому научиться.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_12");	//Ты уже знаешь о том, что можешь использовать любую руну бессчетное число раз, но лишь до тех пор, пока не израсходуешь всю магическую силу.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_13");	//Но прежде чем сделать что-либо, подумай о том, есть ли в этом смысл. Ты обладаешь силой, которая позволяет с легкостью сеять смерть и разрушения.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_14");	//Задача темных магов состоит именно в этом, но настоящую пользу Белиару приносят лишь те, кто практикует рациональный подход. Истинная мощь рун заключается в грамотном расчете их использования.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_15");	//Научись оценивать ситуацию и распределять свои силы.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_0B " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_Kreol_CIRCLE_15_02 " );	// I'm ready to enter the Second Circle.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_09 " );	// You've already learned to understand runes. It's time to deepen your knowledge.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_10 " );	// As you enter the Second Circle, you will learn the basics of powerful combat spells.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_11 " );	// But in order to know the true secrets of magic, you have a lot to learn.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_12 " );	// You already know that you can use any rune countless times, but only until you use up all the magic power.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_13 " );	// But before you do anything, think about whether it makes sense. You have the power to sow death and destruction with ease.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_14 " );	// The task of dark magicians is precisely this, but only those who practice a rational approach bring real benefit to Beliar. The true power of runes lies in the proper calculation of their use.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_15 " );	// Learn to assess the situation and distribute your forces.
 	};
 	Info_ClearChoices(DIA_Kreol_CIRCLE);
 };
@@ -1199,14 +1200,14 @@ func void DIA_Kreol_CIRCLE_3()
 {
 	if(B_TeachMagicCircle(self,other,3))
 	{
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_0C");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_Kreol_CIRCLE_15_03");	//Какие знания сопутствуют Третьему Кругу?
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_16");	//Третий Круг является одним из важнейших этапов в жизни каждого мага. Достигнув его, ты завершишь свой поиск.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_17");	//Ты уже преодолел значительный этап на пути магии. Ты научился использовать руны.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_18");	//Это знание предусматривает в том, кто им владеет, осмотрительность, рассудительность и решимость. Помни об этом. Также оно послужит основой для следующего этапа.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_19");	//Обладая пониманием сути рунической магии и методами её применения, ты можешь уничтожать врагов с её помощью, а можешь и содержать эти сокровенные знания в закромах своего разума. Оставлять их в состоянии покоя.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_20");	//Но ты должен сделать выбор. Сделав его в пользу применения этой доступной далеко не каждому магии, отбрось все сомнения и во славу Белиара ввергай противников в небытие.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_21");	//Найди свой путь, и тогда ты познаешь силу решения.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_0C " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_Kreol_CIRCLE_15_03 " );	// What knowledge comes with the Third Circle?
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_16 " );	// The Third Circle is one of the most important stages in the life of every magician. Once you reach it, you will complete your search.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_17 " );	// You have already crossed a significant stage on the path of magic. You have learned how to use runes.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_18 " );	// This knowledge provides in the one who owns it, prudence, prudence and determination. Remember this. It will also serve as the basis for the next step.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_19 " );	// Possessing an understanding of the essence of runic magic and the methods of its application, you can destroy enemies with its help, or you can keep this secret knowledge in the bins of your mind. Leave them at rest.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_20 " );	// But you have to make a choice. Having made it in favor of using this magic, which is far from accessible to everyone, cast aside all doubts and, for the glory of Beliar, plunge opponents into oblivion.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_21 " );	// Find your way, and then you will know the power of decision.
 	};
 	Info_ClearChoices(DIA_Kreol_CIRCLE);
 };
@@ -1215,16 +1216,16 @@ func void DIA_Kreol_CIRCLE_4()
 {
 	if(B_TeachMagicCircle(self,other,4))
 	{
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_0D");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_Kreol_CIRCLE_15_04");	//Я готов вступить в Четвертый Круг.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_22");	//Ты завершил первые три Круга. Пришло время тебе постичь секреты магии, освоением которых грезят жаждущие великой силы, непреклонные и несгибаемые, истинные маги. Упрямые и преданные Темному богу.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_23");	//Основа магии рун - камень. Магический камень, добытый из магической руды, добываемой в шахтах.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_24");	//В храмах она наделяется магическими формулами, и там же руны превращаются в орудия нашей силы.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_25");	//Теперь ты обладаешь знаниями всех храмов этого мира.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_27");	//Познай магию, и ты откроешь для себя секрет власти, даруемой нам ею.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_28");	//И еще кое-что. Войдя в четвертый круг магии, ты удостаиваешься чести носить облачение высших темных магов.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_29");	//Немногим удавалось такое. Теперь ты один из избранных бога Тьмы!
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_30");	//Вот, возьми эту робу в знак признания твоего статуса.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_0D " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_Kreol_CIRCLE_15_04 " );	// I am ready to enter the Fourth Circle.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_22 " );	// You have completed the first three Circles. The time has come for you to comprehend the secrets of magic, the mastery of which thirsty for great power, adamant and inflexible, true magicians dream of mastering. Stubborn and devoted to the Dark God.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_23 " );	// The basis of rune magic is stone. A magical stone obtained from magical ore mined in mines.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_24 " );	// In the temples, she is endowed with magical formulas, and there the runes are turned into tools of our power.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_25 " );	// You now have the knowledge of all the temples of this world.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_27 " );	// Learn magic, and you will discover the secret of the power it bestows on us.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_28 " );	// And one more thing. Entering the fourth circle of magic, you are honored to wear the garb of the highest dark magicians.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_29 " );	// Few have been able to do this. Now you are one of the chosen ones of the God of Darkness!
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_30 " );	// Here, take this robe in recognition of your status.
 		CreateInvItems(other,itar_dmt_h,1);
 		AI_EquipArmor(other,itar_dmt_h);
 	};
@@ -1235,16 +1236,16 @@ func void DIA_Kreol_CIRCLE_5()
 {
 	if(B_TeachMagicCircle(self,other,5))
 	{
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_0E");	//Готов ли ты вступить в следующий круг магии?
-		AI_Output(other,self,"DIA_Kreol_CIRCLE_15_05");	//Я готов вступить в Пятый Круг.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_32");	//Если ты будешь использовать свою силу, не зная механизм ее действия, ты рискуешь своей жизнью.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_33");	//Поэтому запомни мои слова. Их важность ты поймешь со временем.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_34");	//Повсюду в природе нас окружают силы, действие которых не поддается нашему восприятию.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_35");	//Духи природы и элементов составляют малую часть того, о невидимом присутствии которого мы можем только догадываться.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_36");	//То, что воспринимается как твое собственное действие, может быть просто игрой духов.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_37");	//Маг - это тот, кто сам может проникнуть в мир таинственного, кто может понять, что даже в невидимом мире есть собственные законы.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_38");	//Это описание магической картины мира подобно закону, высшей силой высеченному в камне.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_39");	//Запомни его хорошенько.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_0E " );	// Are you ready to enter the next circle of magic?
+		AI_Output(other,self, " DIA_Kreol_CIRCLE_15_05 " );	// I am ready to enter the Fifth Circle.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_32 " );	// If you use your power without knowing how it works, you risk your life.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_33 " );	// So mark my words. You will understand their importance with time.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_34 " );	// Everywhere in nature we are surrounded by forces whose action is beyond our perception.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_35 " );	// The spirits of nature and the elements are a small part of that, whose invisible presence we can only guess.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_36 " );	// What is perceived as your own action may just be a game of spirits.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_37 " );	// The magician is the one who can penetrate the world of the mysterious, who can understand that even the invisible world has its own laws.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_38 " );	// This description of the magical picture of the world is like a law carved in stone by a higher power.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_39 " );	// Remember it well.
 	};
 	Info_ClearChoices(DIA_Kreol_CIRCLE);
 };
@@ -1253,13 +1254,13 @@ func void DIA_Kreol_CIRCLE_6()
 {
 	if(B_TeachMagicCircle(self,other,6))
 	{
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_40");	//Я поднимаю тебя в Шестой Круг магии.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_41");	//Заметь, в Шестой Круг могут вступить лишь самые могущественные из магов. Он предназначен для тех, чья жизнь - это знак.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_42");	//Твой знак - багровая Тьма!
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_43");	//Шестой Круг позволит тебе использовать магию любой руны.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_44");	//Не забывай не захватывать силу, но быть ее источником.
-		AI_Output(self,other,"DIA_Kreol_CIRCLE_14_45");	//Будь мудр и рассудителен в своих деяниях. Да придаст тебе сил Белиар - Темный бог и повелитель Тьмы!
-		DIA_KREOL_CIRCLE_NOPERM = TRUE;
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_40 " );	// I lift you up to the Sixth Circle of Magic.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_41 " );	// Note that only the most powerful of magicians can enter the Sixth Circle. It is for those whose life is a sign.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_42 " );	// Your sign is crimson Darkness!
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_43 " );	// The Sixth Circle will allow you to use the magic of any rune.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_44 " );	// Remember not to capture power, but be its source.
+		AI_Output(self,other, " DIA_Kreol_CIRCLE_14_45 " );	// Be wise and prudent in your deeds. May Beliar, the Dark God and Lord of Darkness, give you strength!
+		DIA_KREOL_CIRCLE_NOPERM = TRUE ;
 	};
 	Info_ClearChoices(DIA_Kreol_CIRCLE);
 };
@@ -1271,7 +1272,7 @@ instance DIA_KREOL_FINDDARKSOUL(C_Info)
 	condition = dia_kreol_finddarksoul_condition;
 	information = dia_kreol_finddarksoul_info;
 	permanent = FALSE;
-	description = "Тебе что-нибудь говорят слова Мора Уларту?";
+	description = " Do the words of Mora Ulartu mean anything to you? " ;
 };
 
 
@@ -1285,98 +1286,98 @@ func int dia_kreol_finddarksoul_condition()
 
 func void dia_kreol_finddarksoul_info()
 {
-	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_00");	//Тебе что-нибудь говорят слова Мора Уларту?
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_01");	//Откуда тебе стало про это известно?
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_03");	//Я знаю не очень много, но попытаюсь вкратце объяснить тебе его суть.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_05");	//Мора Уларту - очень древнее могущественное заклинание. Его иногда также называют Темницей Душ.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_06");	//Оно пришло с тех незапамятных времен, когда человечество лишь начинало свой путь в этом мире.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_07");	//Точно неизвестно, каким образом это заклинание попало в наш мир, но, судя по всему, к этому приложил руку сам Белиар!
-	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_09");	//Скажи, а как мне заполучить Мора Уларту?
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_10");	//ЧТО? Зачем тебе это?
-	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_14");	//Мне нужно это заклинание, чтобы изловить душу одного демона.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_22");	//Проблема заключается в том, что Мора Уларту не просто обычное заклинание.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_23");	//Это дар! Дар Белиара тому, кто, по его мнению, достоин владеть этим сокровенным знанием. Лишь сам Темный бог может даровать его тебе!
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_24");	//И не думаю, что он посчитает тебя достойным!
+	AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_00 " );	// Do Mora Ulartu's words mean anything to you?
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_01 " );	// How did you know about this?
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_03 " );	// I don't know much, but I'll try to briefly explain its essence to you.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_05 " );	// Mora Ulartu is a very ancient powerful spell. It is sometimes also called the Dungeon of Souls.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_06 " );	// It came from those time immemorial, when humanity was just beginning its journey in this world.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_07 " );	// It is not known exactly how this spell got into our world, but, apparently, Beliar himself had a hand in this!
+	AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_09 " );	// Tell me, how can I get Mora Ulartu?
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_10 " );	// WHAT? Why do you need it?
+	AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_14 " );	// I need this spell to capture the soul of one demon.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_22 " );	// The problem is that Mora Ulartu isn't just an ordinary spell.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_23 " );	// It's a gift! Beliar's gift to those who, in his opinion, are worthy of owning this secret knowledge. Only the Dark God himself can grant it to you!
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_24 " );	// And I don't think he'll consider you worthy!
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_25");	//К тому же ты маг Огня, служитель Инноса!
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_26");	//Боюсь, у тебя нет на это никаких шансов!
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_25 " );	// And besides, you're a fire mage, servant of Innos!
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_26 " );	// I'm afraid you don't stand a chance!
 		CHANCEGETDARKSOUL = 1;
 	}
 	else if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_27");	//К тому же ты паладин Инноса!
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_28");	//Боюсь, твои шансы ничтожно малы!
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_27 " );	// Plus, you're a paladin of Innos!
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_28 " );	// I'm afraid your chances are negligible!
 		CHANCEGETDARKSOUL = 5;
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_29");	//К тому же ты маг Воды, служитель Аданоса!
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_30");	//Хотя между ним и Белиаром нет особой вражды, но, думаю, сильно рассчитывать не стоит!
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_29 " );	// And besides, you're a water mage, servant of Adanos!
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_30 " );	// Though there isn't much enmity between him and Beliar, I don't think it's worth counting too much!
 		CHANCEGETDARKSOUL = 25;
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_31");	//Хотя то, что ты темный маг, безусловно, плюс в этом деле.
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_32");	//Но, думаю, все равно на это не стоит сильно рассчитывать!
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_31 " );	// Although the fact that you are a dark magician is definitely a plus in this case.
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_32 " );	// But I don't think you should count on it too much anyway!
 		CHANCEGETDARKSOUL = 50;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_33");	//Хотя, с другой стороны, ты не давал обет другим богам.
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_34");	//Возможно, это сможет стать твоим преимуществом в этом деле.
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_33 " );	// Although, on the other hand, you did not make a vow to other gods.
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_34 " );	// Maybe this could be to your advantage in this case.
 		CHANCEGETDARKSOUL = 75;
 	};
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_35");	//В любом случае попробовать стоит. Если, конечно, тебя все еще это интересует.
-	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_39");	//И что мне нужно сделать для того, чтобы Белиар даровал мне Мора Уларту?
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_42");	//Для начала тебе необходимо иметь что-то, что заинтересует Темного бога. Есть еще одна вещь, которая могла бы заинтересовать его.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_46");	//Существует один очень могущественный артефакт - Амулет Трирамар.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_47");	//Я точно не знаю, кто был его создателем. Но предполагаю, что это был сам Белиар!
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_48");	//Иначе как объяснить, что со времени своего создания и до последнего момента артефакт находился в одном из храмов, посвященных Темному богу.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_51");	//Правда, полвека назад паладины Инноса разрушили этот храм.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_52");	//Они не оставили без внимания и сам артефакт. Не в силах его уничтожить, они надежно сокрыли его от посторонних глаз.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_53");	//А сила Инноса помогла им противостоять гневу Белиара, желавшего вернуть его себе.
-	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_54");	//А что в нем такого особенного?
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_55");	//В нем сокрыта одна из четырех сущностей Темного бога.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_56");	//Для тех, кто служил Белиару, этот артефакт являлся источником их силы...
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_57");	//...а для Темного бога он являлся неотъемлемой частью его самого!
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_60");	//Помни: Белиар хитер и коварен!
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_61");	//Безусловно, он будет рад вернуть себе этот артефакт. Но может оказаться и так, что на этом его благодарность и закончится.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_63");	//Кроме того, если паладины узнают об этом - сам понимаешь, чем это тебе грозит.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_64");	//Но как поступать в этом случае, решать только тебе.
-	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_65");	//А где паладины хранят этот артефакт?
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_66");	//Полагаю, они спрятали его где-то здесь на острове.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_68");	//Скорее всего, это место надежно сокрыто от посторонних глаз, и попасть туда практически невозможно.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_35 " );	// Worth a try anyway. Unless, of course, you're still interested.
+	AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_39 " );	// And what do I need to do in order for Beliar to grant me Mora Ulartu?
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_42 " );	// First you need to have something that will interest the Dark God. There is one more thing that might interest him.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_46 " );	// There is one very powerful artifact - the Triramar Amulet.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_47 " );	// I don't know exactly who created it. But I guess it was Beliar himself!
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_48 " );	// How else to explain that from the time of its creation until the last moment, the artifact was in one of the temples dedicated to the Dark God.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_51 " );	// However, half a century ago, the paladins of Innos destroyed this temple.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_52 " );	// They didn't ignore the artifact itself. Unable to destroy it, they safely hid it from prying eyes.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_53 " );	// And the power of Innos helped them resist the wrath of Beliar, who wanted to return him to himself.
+	AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_54 " );	// What's so special about it?
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_55 " );	// One of the four essences of the Dark God is hidden in it.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_56 " );	// For those who served Beliar, this artifact was the source of their power...
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_57 " );	// ...and for the Dark God, he was an integral part of himself!
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_60 " );	// Remember: Beliar is cunning and cunning!
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_61 " );	// Of course, he will be glad to have this artifact back. But it may turn out that this is where his gratitude ends.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_63 " );	// Besides, if the paladins find out about this, you yourself will understand what it threatens you with.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_64 " );	// But what to do in this case is up to you.
+	AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_65 " );	// Where do paladins store this artifact?
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_66 " );	// I guess they hid it somewhere here on the island.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_68 " );	// Most likely, this place is securely hidden from prying eyes, and it is almost impossible to get there.
 	if(Npc_KnowsInfo(other,dia_pal_199_ritter_firstwarn) || Npc_KnowsInfo(other,dia_pal_199_ritter_hagen))
 	{
-		AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_69");	//Может, они хранят его в королевском форте Азган?
-		AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_70");	//Никогда не слышал о таком!
+		AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_69 " );	// Maybe they keep it in the royal fort Azgan?
+		AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_70 " );	// Never heard of this!
 	};
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_72");	//Вряд ли кто-нибудь из паладинов станет говорить с тобой об этом.
-	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_74");	//А что мне делать, если я все-таки найду способ заполучить этот амулет?
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_75");	//Все очень просто! Произнеси молитву Белиару и возложи амулет к подножию его алтаря.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_76");	//Ну а после этого проси его даровать тебе Мора Уларту.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_77");	//Возможно, тебе повезет, и ты получишь то, что искал.
-	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_78");	//Хорошо, так и сделаю.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_79");	//И еще кое-что...
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_80");	//Держи меня в курсе событий. Дай мне знать, если что-то узнаешь про амулет.
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_83");	//Теперь все - можешь идти.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_72 " );	// It is unlikely that any of the paladins will talk to you about this.
+	AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_74 " );	// What should I do if I do find a way to get this amulet?
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_75 " );	// It's very simple! Say a prayer to Beliar and place the amulet at the foot of his altar.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_76 " );	// Well, after that, ask him to grant you Mora Ulartu.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_77 " );	// Maybe you'll get lucky and get what you were looking for.
+	AI_Output(other,self, " DIA_Kreol_FindDarkSoul_01_78 " );	// Okay, I'll do that.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_79 " );	// And one more thing...
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_80 " );	// Keep me updated. Let me know if you know anything about the amulet.
+	AI_Output(self,other, " DIA_Kreol_FindDarkSoul_01_83 " );	// Now everything - you can go.
 	KREOLLINE = TRUE;
 	TELLABOUTDS = TRUE;
 	TELLMORAKREOL = TRUE;
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Креол поведал мне о древнем заклинании Мора Уларту - Темнице Душ. Судя по всему, это заклинание может быть даровано только самим Белиаром и мои шансы на это не очень высоки. Однако Креол подсказал мне идею, как возможно заполучить благосклонность Темного Бога. Для этого мне необходимо достать некий Амулет Трирамар - могущественный артефакт, в который Белиар вложил часть своей божественной силы и который был захвачен паладинами во время уничтожения одного из храмов Темного Бога. Креол точно не знает, где паладины прячут этот древний артефакт.");
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Если мне все-таки удастся достать артефакт, о котором говорил Креол - мне следует вознести молитву Темному богу, возложить амулет на его алтарь и просить Белиара даровать за оказанную к нему учтивость нужное мне заклинание. Правда Креол предупредил, что возможно меня постигнет неудача в этом деле - поэтому мне не стоит особо обольщаться.");
+	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Kreole told me about Mora Ulartu's ancient spell - the Dungeon of Souls. Apparently, this spell can only be bestowed by Beliar himself and my chances of it are not very high. However, Creole gave me an idea of ​​how it is possible to get the favor of the Dark God To do this, I need to get a certain Triramar Amulet - a powerful artifact in which Beliar invested part of his divine power and which was captured by the paladins during the destruction of one of the temples of the Dark God. Creole does not know exactly where the paladins hide this ancient artifact. ");
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " If I still manage to get the artifact Creole spoke of, I should offer a prayer to the Dark God, place the amulet on his altar and ask Beliar to grant him the spell I need for courtesy. True, Creole warned that it is possible I will fail in this matter - so I should not flatter myself too much. " );
 };
 
 
-instance DIA_KREOL_FINDETLU(C_Info)
+instance DIA_KREOL_FINDETLU (C_Info)
 {
 	npc = none_102_kreol;
 	nr = 1;
 	condition = dia_kreol_findetlu_condition;
 	information = dia_kreol_findetlu_info;
 	permanent = FALSE;
-	description = "Я узнал, где паладины прячут амулет Трирамар.";
+	description = " I found out where the paladins hide the Triramar amulet. " ;
 };
 
 
@@ -1391,43 +1392,43 @@ func int dia_kreol_findetlu_condition()
 func void dia_kreol_findetlu_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_00");	//Я узнал, где паладины прячут амулет Трирамар.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_01");	//И где же?
-	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_02");	//На острове Этлу.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_03");	//Этлу? Да, они его хорошенько припрятали.
-	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_04");	//И как туда попасть я тоже узнал.
-	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_05");	//Здесь на острове есть магический портал, который ведет прямиком на этот остров.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_06");	//Портал? Интересно, откуда он взялся?
-	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_07");	//Его построили паладины.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_09");	//Тогда тебе осталось только найти этот портал.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_11");	//Да, и еще кое-что. Думаю, мне стоит сразу предупредить тебя об этом.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_13");	//Я почти уверен, что паладины на острове не будут рады твоему визиту.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_14");	//Судя по всему, это запретная зона...
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_15");	//...и каждого, кто заявится туда без приглашения, ожидает только одно.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_17");	//Думаю, ты сам понимаешь что!
+	AI_Output(other,self, " DIA_Kreol_FindEtlu_01_00 " );	// I found out where the paladins hide the Triramar amulet.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_01 " );	// And where is it?
+	AI_Output(other,self, " DIA_Kreol_FindEtlu_01_02 " );	// On the island of Etlu.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_03 " );	// Etlu? Yes, they hid it well.
+	AI_Output(other,self, " DIA_Kreol_FindEtlu_01_04 " );	// And I also learned how to get there.
+	AI_Output(other,self, " DIA_Kreol_FindEtlu_01_05 " );	// Here on the island there is a magical portal that leads straight to this island.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_06 " );	// Portal? I wonder where he came from?
+	AI_Output(other,self, " DIA_Kreol_FindEtlu_01_07 " );	// It was built by the paladins.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_09 " );	// Then all you have to do is find this portal.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_11 " );	// Yes, and one more thing. I think I should immediately warn you about this.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_13 " );	// I'm pretty sure the paladins on the island won't welcome your visit.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_14 " );	// Apparently, this is a restricted area...
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_15 " );	// ...and anyone who shows up there uninvited has only one thing to look forward to.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_17 " );	// I think you know what!
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Kreol_FindEtlu_01_18");	//Даже несмотря на то, что ты паладин!
-		AI_Output(self,other,"DIA_Kreol_FindEtlu_01_19");	//Там на острове твой статус тебя уже не спасет!
+		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_18 " );	// Even though you're a paladin!
+		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_19 " );	// There, on the island, your status won't save you anymore!
 	}
 	else if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Kreol_FindEtlu_01_20");	//Даже несмотря на то, что ты маг Огня!
-		AI_Output(self,other,"DIA_Kreol_FindEtlu_01_21");	//Там на острове твой статус тебя уже не спасет!
+		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_20 " );	// Even though you're a Firebender!
+		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_21 " );	// There, on the island, your status won't save you anymore!
 	}
-	else if(hero.guild == GIL_KDW)
+	else  if (hero.guild ==  GIL_KDW )
 	{
-		AI_Output(self,other,"DIA_Kreol_FindEtlu_01_22");	//Даже несмотря на то, что ты маг Воды!
-		AI_Output(self,other,"DIA_Kreol_FindEtlu_01_23");	//Там на острове твой статус тебя уже не спасет!
+		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_22 " );	// Even though you're a Waterbender!
+		AI_Output(self,other, " DIA_Kreol_FindEtlu_01_23 " );	// There, on the island, your status won't save you anymore!
 	};
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_24");	//Поэтому прежде чем туда отправляться, хорошенько подготовься. Тебя ожидает тяжелый бой!
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_25");	//Паладины будут стоять насмерть, защищая этот артефакт!
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_26");	//В этом ты можешь не сомневаться.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_27");	//И хорошенько запомни - не смей надевать этот амулет!
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_28");	//Он убьет тебя!
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_29");	//У тебя просто не хватит сил сопротивляться его мощи!
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_31");	//Теперь ступай.
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Креол сказал мне о том, что мне не стоит ожидать гостеприимного приема на острове. Видимо, мне придется прорубать себе дорогу мечом. Также он предупредил меня, чтобы я не надевал Амулет Трирамар, если он окажется у меня. А противном случае, я просто погибну.");
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_24 " );	// Therefore, before you go there, be well prepared. A tough fight awaits you!
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_25 " );	// Paladins will fight to the death protecting this artifact!
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_26 " );	// You can be sure of that.
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_27 " );	// And remember well - don't you dare wear this amulet!
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_28 " );	// He will kill you!
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_29 " );	// You just don't have the strength to resist his might!
+	AI_Output(self,other, " DIA_Kreol_FindEtlu_01_31 " );	// Now go.
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Creole told me that I shouldn't expect a hospitable welcome on the island. I guess I'll have to cut my way with a sword. He also warned me not to wear the Triramar Amulet if I had it. Otherwise If so, I'll just die. " );
 };
 
 
@@ -1438,13 +1439,13 @@ instance DIA_KREOL_ASKABOUTPEACEWAY(C_Info)
 	condition = dia_kreol_askaboutpeaceway_condition;
 	information = dia_kreol_askaboutpeaceway_info;
 	permanent = FALSE;
-	description = "Еще один вопрос.";
+	description = " One more question. " ;
 };
 
 
 func int dia_kreol_askaboutpeaceway_condition()
 {
-	if(Npc_KnowsInfo(other,dia_kreol_findetlu) && (MEHASTRIRAVAR == FALSE) && (ASKABOUTPEACEWAY == FALSE) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
+	if (Npc_KnowsInfo(other,dia_kreol_found) && ( MEHASTRIRAVAR  ==  FALSE ) && ( ASKABOUTPEACEWAY  ==  FALSE ) && (other.guild !=  GIL_PAL ) && (other.guild !=  GIL_KDF )) ;
 	{
 		return TRUE;
 	};
@@ -1452,28 +1453,28 @@ func int dia_kreol_askaboutpeaceway_condition()
 
 func void dia_kreol_askaboutpeaceway_info()
 {
-	AI_Output(other,self,"DIA_Kreol_AskAboutPeaceWay_01_00");	//Еще один вопрос.
-	AI_Output(other,self,"DIA_Kreol_AskAboutPeaceWay_01_03");	//Неужели нет способа заполучить у паладинов этот амулет, не сражаясь с ними?
-	AI_Output(self,other,"DIA_Kreol_AskAboutPeaceWay_01_04");	//Хммм...(задумчиво) Как я уже сказал, мне это неведомо. Да и сами паладины вряд ли отдадут тебе его просто так.
+	AI_Output(other,self, " DIA_Kreol_AskAboutPeaceWay_01_00 " );	// One more question.
+	AI_Output(other,self, " DIA_Kreol_AskAboutPeaceWay_01_03 " );	// Is there really no way to get this amulet from paladins without fighting them?
+	AI_Output(self,other, " DIA_Kreol_AskAboutPeaceWay_01_04 " );	// Hmmm...(thoughtfully) Like I said, I don't know. And the paladins themselves are unlikely to give it to you just like that.
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Kreol_AskAboutPeaceWay_01_05");	//Возможно, на твоем месте я бы попробовал попросить помощи у хозяина амулета - Белиара!
+		AI_Output(self,other, " DIA_Kreol_AskAboutPeaceWay_01_05 " );	// Perhaps, if I were you, I would try to ask for help from the owner of the amulet - Beliar!
 		if(other.guild == GIL_PAL)
 		{
-			AI_Output(self,other,"DIA_Kreol_AskAboutPeaceWay_01_06");	//Но ты паладин Инноса! Так что он навряд ли станет тебе помогать.
+			AI_Output(self,other, " DIA_Kreol_AskAboutPeaceWay_01_06 " );	// But you are the paladin of Innos! So he won't be able to help you.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Kreol_AskAboutPeaceWay_01_07");	//Но ты маг Огня! Так что он навряд ли станет тебе помогать.
+			AI_Output(self,other, " DIA_Kreol_AskAboutPeaceWay_01_07 " );	// But you're a fire mage! So he won't be able to help you.
 		};
-		AI_Output(other,self,"DIA_Kreol_AskAboutPeaceWay_01_08");	//Ладно, придумаю что-нибудь сам.
+		AI_Output(other,self, " DIA_Kreol_AskAboutPeaceWay_01_08 " );	// Okay, I'll come up with something myself.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_AskAboutPeaceWay_01_09");	//Однако на твоем месте я бы попробовал попросить помощи у самого хозяина амулета.
-		AI_Output(other,self,"DIA_Kreol_AskAboutPeaceWay_01_10");	//Ты имеешь в виду Белиара?
-		AI_Output(self,other,"DIA_Kreol_AskAboutPeaceWay_01_11");	//Именно его. Обратись к нему с молитвой, и, возможно, у тебя появится шанс.
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Я задал вопрос Креолу о том, существует ли иной способ забрать у паладинов амулет, не устраивая бойни. И он посоветовал мне обратить к самому Белиара! Надеюсь, он услышит мои мольбы.");
+		AI_Output(self,other, " DIA_Kreol_AskAboutPeaceWay_01_09 " );	// However, if I were you, I would try to ask the owner of the amulet for help.
+		AI_Output(other,self, " DIA_Kreol_AskAboutPeaceWay_01_10 " );	// You mean Beliar?
+		AI_Output(self,other, " DIA_Kreol_AskAboutPeaceWay_01_11 " );	// Exactly him. Turn to him with a prayer, and perhaps you will have a chance.
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " I asked Creole if there was another way to take the amulet from the paladins without causing a massacre. And he advised me to turn to Beliar himself! I hope he hears my pleas. " );
 	};
 	ASKABOUTPEACEWAY = TRUE;
 };
@@ -1486,13 +1487,13 @@ instance DIA_KREOL_FINDAMULET(C_Info)
 	condition = dia_kreol_findamulet_condition;
 	information = dia_kreol_findamulet_info;
 	permanent = FALSE;
-	description = "Я достал амулет Трирамар!";
+	description = " I got the Triramar amulet! " ;
 };
 
 
 func int dia_kreol_findamulet_condition()
 {
-	if((Npc_HasItems(other,itmi_triramar) >= 1) && Npc_KnowsInfo(other,dia_kreol_finddarksoul))
+	if ((Npc_HasItems(other,itmi_triramar) >=  1 ) && Npc_KnowsInfo(other,dia_creole_finddarksoul))
 	{
 		return TRUE;
 	};
@@ -1511,17 +1512,17 @@ func void dia_kreol_findamulet_info()
 		Npc_RemoveInvItems(other,ITKE_HAGEN_SECRETKEY,1);
 	};
 
-	AI_Output(other,self,"DIA_Kreol_FindAmulet_01_00");	//Я достал амулет Трирамар!
-	AI_Output(self,other,"DIA_Kreol_FindAmulet_01_01");	//(удивленно) ЧТО?! Неужели тебе это все-таки удалось?
-	AI_Output(self,other,"DIA_Kreol_FindAmulet_01_03");	//Да, ты умеешь удивлять! Хотя это уже перестает быть для меня откровением.
-	AI_Output(self,other,"DIA_Kreol_FindAmulet_01_07");	//Возможно, ты совершил ошибку - а возможно и нет. Ладно, хватит попусту молоть языком!
-	AI_Output(self,other,"DIA_Kreol_FindAmulet_01_08");	//Теперь, чтобы получить Мора Уларту, тебе осталось сделать только одну вещь – совершить церемонию подношения дара Белиару.
-	AI_Output(self,other,"DIA_Kreol_FindAmulet_01_09");	//Отправляйся к ближайшему алтарю Темного бога, возложи амулет его к основанию и проси даровать тебе Темницу Душ - обо всем остальном позаботиться сам Белиар!
-	AI_Output(self,other,"DIA_Kreol_FindAmulet_01_10");	//Один из таких алтарей ты найдешь в дальней комнате моей башни.
-	AI_Output(self,other,"DIA_Kreol_FindAmulet_01_11");	//И помни, что я тебе сказал: Темный бог хитер и коварен!
-	AI_Output(self,other,"DIA_Kreol_FindAmulet_01_12");	//Не думай, что если ты отдашь ему амулет, то обязательно получишь свою награду!
-	AI_Output(other,self,"DIA_Kreol_FindAmulet_01_13");	//Я надеюсь, что все мои усилия не пропадут даром.
-	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Я показал амулет Креол - это очень сильно удивило его! Теперь мне следует отправиться к любому алтарю Белиара, возложить амулет к его основанию и просить Темного Бога принять этот амулет и даровать мне Мора Уларту.");
+	AI_Output(other,self, " DIA_Kreol_FindAmulet_01_00 " );	// I got the Triramar amulet!
+	AI_Output(self,other, " DIA_Kreol_FindAmulet_01_01 " );	// (surprised) WHAT?! Did you manage to do it anyway?
+	AI_Output(self,other, " DIA_Kreol_FindAmulet_01_03 " );	// Yes, you know how to surprise! Although it already ceases to be a revelation for me.
+	AI_Output(self,other, " DIA_Kreol_FindAmulet_01_07 " );	// Maybe you made a mistake - maybe not. Okay, stop talking in vain!
+	AI_Output(self,other, " DIA_Kreol_FindAmulet_01_08 " );	// Now, in order to get Mora Ulartu, you have only one thing left to do - perform the ceremony of offering a gift to Beliar.
+	AI_Output(self,other, " DIA_Kreol_FindAmulet_01_09 " );	// Go to the nearest altar of the Dark God, lay his amulet at the base and ask to grant you the Prison of Souls - Beliar himself will take care of the rest!
+	AI_Output(self,other, " DIA_Kreol_FindAmulet_01_10 " );	// You can find one of these altars in the back room of my tower.
+	AI_Output(self,other, " DIA_Kreol_FindAmulet_01_11 " );	// And remember what I told you: The dark god is cunning and cunning!
+	AI_Output(self,other, " DIA_Kreol_FindAmulet_01_12 " );	// Don't think that if you give him the amulet, you will definitely get your reward!
+	AI_Output(other,self, " DIA_Kreol_FindAmulet_01_13 " );	// I hope all my efforts are not in vain.
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " I showed the Creole amulet - it surprised him a lot! Now I should go to any Beliar altar, place the amulet at its base and ask the Dark God to accept this amulet and bestow Mora Ulartu on me. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -1533,13 +1534,13 @@ instance DIA_KREOL_GETSUPERBELIARWEAPON(C_Info)
 	condition = dia_kreol_getsuperbeliarweapon_condition;
 	information = dia_kreol_getsuperbeliarweapon_info;
 	permanent = FALSE;
-	description = "Темный бог даровал мне Мора Уларту!";
+	description = " The dark god gave me Mora Ulartu! " ;
 };
 
 
 func int dia_kreol_getsuperbeliarweapon_condition()
 {
-	if((Npc_HasItems(hero,itru_moraulartu) >= 1) && Npc_KnowsInfo(other,dia_kreol_finddarksoul))
+	if (( Npc_HasItems( hero , self_moral ) >=  1 ) && Npc_KnowsInfo ( other , dia_kreol_finddarksoul ))
 	{
 		return TRUE;
 	};
@@ -1548,32 +1549,32 @@ func int dia_kreol_getsuperbeliarweapon_condition()
 func void dia_kreol_getsuperbeliarweapon_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Kreol_GetSuperBeliarWeapon_01_00");	//Темный бог даровал мне Мора Уларту!
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_01");	//ЧТО?! Неужели тебе это удалось?
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_02");	//Ты все больше и больше удивляешь меня!
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_07");	//Теперь в твоих руках находится могущественный артефакт, дарующий тебе способность Ловца Душ!
+	AI_Output(other,self, " DIA_Kreol_GetSuperBeliarWeapon_01_00 " );	// The dark god gave me Mora Ulartu!
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_01 " );	// WHAT?! Have you succeeded?
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_02 " );	// You surprise me more and more!
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_07 " );	// You now hold a powerful artifact that grants you the Soul Catcher ability!
 	AI_Output(other,self,"DIA_Kreol_GetSuperBeliarWeapon_01_08");	//Ловца Душ?
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_09");	//Именно так называют тех, кто способен использовать этот воистину божественный дар!
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_10");	//И скажу тебе честно: не многие владеют этим знанием!
-	AI_Output(other,self,"DIA_Kreol_GetSuperBeliarWeapon_01_11");	//А кто именно?
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_12");	//В основном это демоны и подобные им существа, которые унаследовали эту способность при рождении, или же им были дарованы эти знания. Правда, не всем, а только самым могущественным из них!
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_13");	//Для людей же эти знания практически недоступны, хотя, как оказалось, бывают и исключения.
-	AI_Output(other,self,"DIA_Kreol_GetSuperBeliarWeapon_01_14");	//Но зачем нужны души?
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_15");	//(смеется) Ты до сих пор не осознаешь, чем теперь владеешь.
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_16");	//Душа это самое ценное, что есть у живого существа! Это источник нашей магической силы, или проще говоря - маны, что мы используем для сотворения магии.
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_17");	//Ко всему прочему, душа живого существа обладает рядом других необычных свойств. Но о них мне практически ничего не известно.
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_19");	//Это ключ к безграничному могуществу!
-	AI_Output(other,self,"DIA_Kreol_GetSuperBeliarWeapon_01_20");	//Объясни, как использовать все эти знания?
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_21");	//Это не так уж и сложно. У тебя есть Мора Уларту - этого вполне хватит, чтобы не дать душе ускользнуть после смерти ее обладателя.
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_22");	//Однако использовать ее силу ты не сможешь.
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_24");	//Люди не умеют обращаться с ними так же, как это делают, например, демоны - пожирать их, тем самым увеличивая свою силу и могущество.
-	AI_Output(other,self,"DIA_Kreol_GetSuperBeliarWeapon_01_25");	//Тогда что мне с ними делать?
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_26");	//Возможно, Темный бог сможет принять пойманные тобой души в качестве дара.
-	AI_Output(self,other,"DIA_Kreol_GetSuperBeliarWeapon_01_27");	//А ты сможешь выпросить у него что-либо ценное взамен.
-	AI_Output(other,self,"DIA_Kreol_GetSuperBeliarWeapon_01_29");	//Хорошо, мне все ясно.
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_09 " );	// That's what they call those who are able to use this truly divine gift!
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_10 " );	// And I'll tell you honestly: not many people have this knowledge!
+	AI_Output(other,self, " DIA_Kreol_GetSuperBeliarWeapon_01_11 " );	// And who exactly?
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_12 " );	// Mostly demons and similar beings who have inherited this ability at birth, or have been granted this knowledge. True, not all, but only the most powerful of them!
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_13 " );	// For people, this knowledge is practically inaccessible, although, as it turned out, there are exceptions.
+	AI_Output(other,self, " DIA_Kreol_GetSuperBeliarWeapon_01_14 " );	// But why do we need souls?
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_15 " );	// (laughs) You still don't realize what you own now.
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_16 " );	// The soul is the most valuable thing that a living being has! This is the source of our magical power, or more simply - the mana that we use to create magic.
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_17 " );	// In addition, the soul of a living being has a number of other unusual properties. But I don't know much about them.
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_19 " );	// This is the key to unlimited power!
+	AI_Output(other,self, " DIA_Kreol_GetSuperBeliarWeapon_01_20 " );	// Explain how to use all this knowledge?
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_21 " );	// It's not that hard. You have Mora Ulartu - this is quite enough to prevent the soul from slipping away after the death of its owner.
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_22 " );	// However, you can't use her power.
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_24 " );	// People do not know how to treat them in the same way as demons do, for example - to devour them, thereby increasing their strength and power.
+	AI_Output(other,self, " DIA_Kreol_GetSuperBeliarWeapon_01_25 " );	// Then what should I do with them?
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_26 " );	// Perhaps the Dark God will be able to accept the souls you captured as a gift.
+	AI_Output(self,other, " DIA_Kreol_GetSuperBeliarWeapon_01_27 " );	// And you can ask him for something valuable in return.
+	AI_Output(other,self, " DIA_Kreol_GetSuperBeliarWeapon_01_29 " );	// Okay, I'm clear.
 	KNOWSHOWDEALSOULS = TRUE;
 	Log_CreateTopic(TOPIC_SUPERBELIARWEAPON_UPG,LOG_NOTE);
-	B_LogEntry(TOPIC_SUPERBELIARWEAPON_UPG,"Полученная мной руна Мора Уларту даровала мне способность Ловца Душ, с помощью которой я смогу пленить и захватывать души любого существа. В свою очередь, собранные души я могу преподнести в дар Темному Богу, естественно не забыв при этом выпросить у него для себя что-нибудь полезное!");
+	B_LogEntry( TOPIC_SUPERBELIARWEAPON_UPG , " The Mora Ulartu rune I received gave me the Soul Catcher ability, with which I can captivate and capture the souls of any creature. In turn, I can present the collected souls as a gift to the Dark God, naturally not forgetting to beg from him something useful for yourself! " );
 };
 
 
@@ -1584,13 +1585,13 @@ instance DIA_KREOL_GETSUPERSOUL(C_Info)
 	condition = dia_kreol_getsupersoul_condition;
 	information = dia_kreol_getsupersoul_info;
 	permanent = FALSE;
-	description = "У меня есть душа архидемона С'эньяка!";
+	description = " I have the soul of the archdemon S'anyak! " ;
 };
 
 
 func int dia_kreol_getsupersoul_condition()
 {
-	if((Npc_HasItems(hero,itmi_stonesoul_senyak) >= 1) && (TELLCANSUPERBELIARWEAPON == FALSE) && (KNOWSHOWDEALSOULS == TRUE))
+	if ((Npc_HasItems(hero,itmi_stonesoul_senyak) >=  1 ) && ( TELLCANSUPERBELIERWEAPON  ==  FALSE ) && ( KNOWSHOWDEALSOULS  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1599,51 +1600,51 @@ func int dia_kreol_getsupersoul_condition()
 func void dia_kreol_getsupersoul_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Kreol_GetSuperSoul_01_00");	//У меня есть душа архидемона С'эньяка!
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_01");	//С'эньяка?! (ехидно) А ты зря времени не терял!
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_02");	//Что же, в твоих руках воистину настоящее сокровище! Но ты, как я вижу, совершенно не знаешь, что с ней делать.
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_05");	//Душа архидемона не похожа на все остальные. Ее магическая сила огромна, и просто так совладать с ней ты не в состоянии.
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_06");	//Но с помощью мощного магического артефакта тебе это может оказаться под силу.
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_07");	//Вложив в этот предмет магическую основу души, ты сможешь увеличить его мощь!
-	AI_Output(other,self,"DIA_Kreol_GetSuperSoul_01_08");	//И что это должен быть за предмет?
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_09");	//(задумался) Ну, для начала он должен иметь магическую суть создания, ибо только структура подобных артефактов позволяет заключить в них магическую силу души.
-	AI_Output(other,self,"DIA_Kreol_GetSuperSoul_01_10");	//А как насчет Когтя Белиара?
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_11");	//КОГОТЬ?! Думаю, он бы идеально подошел для этого.
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_12");	//Ведь его создателем была магия Тьмы Белиара!
-	AI_Output(other,self,"DIA_Kreol_GetSuperSoul_01_14");	//Как мне тогда перенести душу архидемона в этот артефакт?
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_15");	//Подойдет любой магический алтарь Темного бога.
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_16");	//Его аура позволит тебе осуществить ритуал переноса души. Больше от тебя ничего не потребуется.
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_17");	//Кроме благосклонности самого Белиара!
+	AI_Output(other,self, " DIA_Kreol_GetSuperSoul_01_00 " );	// I have the soul of the archdemon S'enyak!
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_01 " );	// S'anyaka?! (maliciously) You didn't waste your time!
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_02 " );	// Well, in your hands is truly a real treasure! But you, as I see it, do not know at all what to do with it.
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_05 " );	// An archdemon's soul is unlike any other. Her magic power is huge, and you just can't cope with it.
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_06 " );	// But with a powerful magical artifact, you might be able to do it.
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_07 " );	// By investing a magical soul core into this item, you can increase its power!
+	AI_Output(other,self, " DIA_Kreol_GetSuperSoul_01_08 " );	// And what should this item be?
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_09 " );	// (thinking) Well, for starters, it must have the magical essence of creation, because only the structure of such artifacts allows you to conclude in them the magical power of the soul.
+	AI_Output(other,self, " DIA_Kreol_GetSuperSoul_01_10 " );	// What about Beliar's Claw?
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_11 " );	// CLAW?! I think he would be perfect for this.
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_12 " );	// Beliar's Dark magic was its creator!
+	AI_Output(other,self, " DIA_Kreol_GetSuperSoul_01_14 " );	// How do I then transfer the soul of the archdemon to this artifact?
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_15 " );	// Any magical altar of the Dark God will do.
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_16 " );	// Its aura will allow you to perform a soul transfer ritual. Nothing more is required of you.
+	AI_Output(self,other, " DIA_Kreol_GetSuperSoul_01_17 " );	// Except for the favor of Beliar himself!
 	TELLCANSUPERBELIARWEAPON = TRUE;
-	B_LogEntry(TOPIC_SUPERBELIARWEAPON_UPG,"Чтобы использовать силу плененной мной души архидемона С'эньяка - мне необходим артефакт, способный поглотить ее силу. Единственный предмет, который может сгодиться для таких целей - это Коготь Белиара! Чтобы осуществить ритуал переноса души в этот артефакт подойдет магический алтарь Темного Бога. Кроме этого сам Белиар должен одобрить мои действия, иначе никак!");
+	B_LogEntry( TOPIC_SUPERBELIARWEAPON_UPG , " In order to use the power of the soul of the archdemon S'enyak that I captured, I need an artifact that can absorb its power. The only item that can be used for such purposes is the Claw of Beliar! To perform the ritual of transferring the soul to this artifact, a magic altar will do Dark God. In addition, Beliar himself must approve my actions, otherwise nothing! " );
 };
 
 
-instance DIA_KREOL_NDM_TEACHDEMONOLOG(C_Info)
+instance DIA_KREOL_NDM_TACHDEMONOLOG (C_Info)
 {
 	npc = none_102_kreol;
 	nr = 1;
-	condition = dia_kreol_ndm_teachdemonolog_condition;
-	information = dia_kreol_ndm_teachdemonolog_info;
+	condition = dia_kreol_ndm_teachdemolog_condition;
+	information = dia_kreol_ndm_teachdemenolog_info;
 	permanent = TRUE;
-	description = "Обучи меня искусству демонологии.";
+	description = " Teach me the art of demonology. " ;
 };
 
 
-func int dia_kreol_ndm_teachdemonolog_condition()
+func int dia_kreol_ndm_teachdemenolog_condition()
 {
-	if((hero.guild == GIL_KDM) && (KREOL_MYTEACHER == TRUE) && (XARDASTELLABOUTDEMONOLOG == TRUE) && ((XARDASTEACHCASTDEMON_SIMPLE == FALSE) || (XARDASTEACHCASTDEMON_LORD == FALSE)))
+	if ((hero.guild ==  GIL_KDM ) && ( CREOL_MYTEACHER  ==  TRUE ) && ( XARDASTELLABOUTDEMONOLOG  ==  TRUE ) && (( XARDASTEACHCASTDEMON_SIMPLE  ==  FALSE ) || ( XARDASTEACHCASTDEMON_LORD  ==  FALSE )))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kreol_ndm_teachdemonolog_info()
+func void dia_kreol_ndm_teachdemolog_info()
 {
-	AI_Output(other,self,"DIA_Xardas_NDM_TeachDemonolog_01_00");	//Обучи меня искусству демонологии.
-	AI_Output(self,other,"DIA_Kreol_NDM_TeachDemonolog_01_00");	//Если ты считаешь, что готов к этому - я научу тебе все тому, что знаю сам.
-	Info_ClearChoices(dia_kreol_ndm_teachdemonolog);
-	Info_AddChoice(dia_kreol_ndm_teachdemonolog,Dialog_Back,dia_kreol_ndm_teachdemonolog_back);
+	AI_Output(other,self, " DIA_Xardas_NDM_TeachDemonolog_01_00 " );	// Teach me the art of demonology.
+	AI_Output(self,other, " DIA_Kreol_NDM_TeachDemonolog_01_00 " );	// If you think you're ready for this, I'll teach you everything I know myself.
+	Info_ClearChoices(dia_kreol_ndm_teachdemolog);
+	Info_AddChoice(dia_kreol_ndm_teachdemolog,Dialog_Back,dia_kreol_ndm_teachdemolog_back);
 
 	if((XARDASTEACHCASTDEMON_SIMPLE == FALSE) && (XARDASTEACHCASTDEMON_LORD == FALSE))
 	{
@@ -1651,29 +1652,29 @@ func void dia_kreol_ndm_teachdemonolog_info()
 	};
 	if((XARDASTEACHCASTDEMON_SIMPLE == TRUE) && (XARDASTEACHCASTDEMON_LORD == FALSE) && (	DemonologSkill[0] >= 3))
 	{
-		Info_AddChoice(dia_kreol_ndm_teachdemonolog,b_buildlearnstringfordemonolog("Изучить высшую демонологию.",B_GetLearnCostTalent(other,NPC_TALENT_DEMONOLOG,1)),dia_kreol_ndm_teachdemonolog_high);
+		Info_AddChoice(dia_kreol_ndm_teachdemonolog,b_buildlearnstringfordemonolog( " Learn high demonology. " ,B_GetLearnCostTalent(other, NPC_TALENT_DEMONOLOG , 1 )),dia_kreol_ndm_teachdemonolog_high);
 	};
 };
 
-func void dia_kreol_ndm_teachdemonolog_back()
+func void dia_kreol_ndm_teachdemolog_back()
 {
 	if(XARDASTEACHCASTDEMON_LORD == TRUE)
 	{
-		AI_Output(self,other,"DIA_Kreol_NDM_TeachDemonolog_BACK_01_00");	//Теперь в твоей власти призывать самих высших демонов.
-		AI_Output(self,other,"DIA_Kreol_NDM_TeachDemonolog_BACK_01_01");	//Но будь осторожен! Помни: подчинить этих созданий невероятно трудно!
-		AI_Output(self,other,"DIA_Kreol_NDM_TeachDemonolog_BACK_01_02");	//Ошибка в этом деле равнозначна неминуемой смерти.
+		AI_Output(self,other, " DIA_Kreol_NDM_TeachDemonolog_BACK_01_00 " );	// Now it's up to you to summon the highest demons themselves.
+		AI_Output(self,other, " DIA_Kreol_NDM_TeachDemonolog_BACK_01_01 " );	// But be careful! Remember: to subdue these creatures is incredibly difficult!
+		AI_Output(self,other, " DIA_Kreol_NDM_TeachDemonolog_BACK_01_02 " );	// A mistake in this case is tantamount to certain death.
 	};
-	Info_ClearChoices(dia_kreol_ndm_teachdemonolog);
+	Info_ClearChoices(dia_kreol_ndm_teachdemolog);
 };
 
-func void dia_kreol_ndm_teachdemonolog_simple()
+func void dia_kreol_ndm_teachdemolog_simple()
 {
 	if(b_teachdemonologtalent(self,other,NPC_TALENT_DEMONOLOG))
 	{
 		XARDASTEACHCASTDEMON_SIMPLE = TRUE;
 	};
-	Info_ClearChoices(dia_kreol_ndm_teachdemonolog);
-	Info_AddChoice(dia_kreol_ndm_teachdemonolog,Dialog_Back,dia_kreol_ndm_teachdemonolog_back);
+	Info_ClearChoices(dia_kreol_ndm_teachdemolog);
+	Info_AddChoice(dia_kreol_ndm_teachdemolog,Dialog_Back,dia_kreol_ndm_teachdemolog_back);
 
 	if((XARDASTEACHCASTDEMON_SIMPLE == FALSE) && (XARDASTEACHCASTDEMON_LORD == FALSE))
 	{
@@ -1681,19 +1682,19 @@ func void dia_kreol_ndm_teachdemonolog_simple()
 	};
 	if((XARDASTEACHCASTDEMON_SIMPLE == TRUE) && (XARDASTEACHCASTDEMON_LORD == FALSE) && (	DemonologSkill[0] >= 3))
 	{
-		Info_AddChoice(dia_kreol_ndm_teachdemonolog,b_buildlearnstringfordemonolog("Изучить высшую демонологию.",B_GetLearnCostTalent(other,NPC_TALENT_DEMONOLOG,1)),dia_kreol_ndm_teachdemonolog_high);
+		Info_AddChoice(dia_kreol_ndm_teachdemonolog,b_buildlearnstringfordemonolog( " Learn high demonology. " ,B_GetLearnCostTalent(other, NPC_TALENT_DEMONOLOG , 1 )),dia_kreol_ndm_teachdemonolog_high);
 	};
 };
 
-func void dia_kreol_ndm_teachdemonolog_high()
+func void dia_kreol_ndm_teachdemanolog_high()
 {
 	if(b_teachdemonologtalent(self,other,NPC_TALENT_DEMONOLOG))
 	{
-		AI_Output(self,other,"DIA_Kreol_NDM_TeachDemonolog_High_01_00");	//Познай данную тебе силу, и ты обретешь истинное могущество!
+		AI_Output(self,other, " DIA_Kreol_NDM_TeachDemonolog_High_01_00 " );	// Know the power given to you, and you will gain true power!
 		XARDASTEACHCASTDEMON_LORD = TRUE;
 	};
-	Info_ClearChoices(dia_kreol_ndm_teachdemonolog);
-	Info_AddChoice(dia_kreol_ndm_teachdemonolog,Dialog_Back,dia_kreol_ndm_teachdemonolog_back);
+	Info_ClearChoices(dia_kreol_ndm_teachdemolog);
+	Info_AddChoice(dia_kreol_ndm_teachdemolog,Dialog_Back,dia_kreol_ndm_teachdemolog_back);
 };
 
 
@@ -1704,13 +1705,13 @@ instance DIA_KREOL_TEACHSACTANOME(C_Info)
 	condition = dia_kreol_teachsactanome_condition;
 	information = dia_kreol_teachsactanome_info;
 	permanent = TRUE;
-	description = "Обучи меня искусству Сакта Номен! (Очков опыта: 50, Цена: 50000 монет)";
+	description = " Teach me the art of Sakta Nomen! (Exp: 50, Cost: 50,000 coins) " ;
 };
 
 
 func int dia_kreol_teachsactanome_condition()
 {
-	if((hero.guild == GIL_KDM) && (XARDAS_TEACHSACTANOME == TRUE) && (XARDAS_KNOWSSACTANOME == FALSE))
+	if ((hero.guild ==  GIL_KDM ) && ( XARDAS_TEACHSACTANOME  ==  TRUE ) && ( XARDAS_KNOWSSACTANOME  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1718,17 +1719,17 @@ func int dia_kreol_teachsactanome_condition()
 
 func void dia_kreol_teachsactanome_info()
 {
-	AI_Output(other,self,"DIA_Kreol_TeachSactaNome_01_00");	//Обучи меня искусству Сакта Номен!
-	AI_Output(self,other,"DIA_Kreol_TeachSactaNome_01_01");	//Ты действительно в этом уверен?
+	AI_Output(other,self, " DIA_Kreol_TeachSactaNome_01_00 " );	// Teach me the art of Sakta Nomen!
+	AI_Output(self,other, " DIA_Kreol_TeachSactaNome_01_01 " );	// Are you really sure about this?
 	Info_ClearChoices(dia_kreol_teachsactanome);
-	Info_AddChoice(dia_kreol_teachsactanome,"Пока нет.",dia_kreol_teachsactanome_no);
+	Info_AddChoice(dia_kreol_teachsactanome, " Not yet. " ,dia_kreol_teachsactanome_no);
 	Info_AddChoice(dia_kreol_teachsactanome,"Да, уверен.",dia_kreol_teachsactanome_yes);
 };
 
 func void dia_kreol_teachsactanome_no()
 {
-	AI_Output(other,self,"DIA_Kreol_TeachSactaNome_No_01_00");	//Пока нет.
-	AI_Output(self,other,"DIA_Kreol_TeachSactaNome_No_01_01");	//Хорошо, как скажешь.
+	AI_Output(other,self, " DIA_Kreol_TeachSactaNome_No_01_00 " );	// Not yet.
+	AI_Output(self,other, " DIA_Kreol_TeachSactaNome_No_01_01 " );	// Okay, whatever you say.
 	Info_ClearChoices(dia_kreol_teachsactanome);
 };
 
@@ -1741,36 +1742,36 @@ func void dia_kreol_teachsactanome_yes()
 		Wld_PlayEffect("spellFX_INCOVATION_RED",self,self,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 		Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
-		AI_Output(self,other,"DIA_Kreol_TeachSactaNome_Yes_01_01");	//Тогда познай же истинную силу темной магии, и пусть твоя жертва не будет напрасной.
+		AI_Output(self,other, " DIA_Kreol_TeachSactaNome_Yes_01_01 " );	// Then know the true power of dark magic, and may your sacrifice not be in vain.
 		AI_PlayAni(self,"T_PRACTICEMAGIC5");
-		AI_Output(self,other,"DIA_Kreol_TeachSactaNome_Yes_01_02");	//САКТА ШАДАР НОМЕН ТАР МАДАР САТАГ!
+		AI_Output(self,other, " DIA_Kreol_TeachSactaNome_Yes_01_02 " );	// SAKTA SHADAR NOMEN TAR MADAR SATAG!
 		AI_PlayAni(self,"T_PRACTICEMAGIC5");
-		AI_Output(self,other,"DIA_Kreol_TeachSactaNome_Yes_01_03");	//Используй полученные тобой знания мудро, и пусть багровая Тьма хранит твой путь!
+		AI_Output(self,other, " DIA_Kreol_TeachSactaNome_Yes_01_03 " );	// Use the knowledge you have gained wisely, and may the crimson Darkness guide your path!
 		other.lp = other.lp - 50;
 		RankPoints = RankPoints + 50;
 		Npc_RemoveInvItems(other,ItMi_Gold,50000);
 		XARDAS_KNOWSSACTANOME = TRUE;
-		B_LogEntry(TOPIC_ADDON_DMTTEACHER,"Я обучился искусству Сакта Номен - 'Жертва Крови'.");
+		B_LogEntry( TOPIC_ADDON_DMTTEACHER , " I have learned the art of Sakta Nomen - 'Blood Sacrifice'. " );
 
 		if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW) || (hero.guild == GIL_NOV))
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(hero,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
+			AI_Print( " Intelligence + 1 " );
 		};
 
 		Info_ClearChoices(dia_kreol_teachsactanome);
 	}
 	else if(other.lp < 50)
 	{
-		AI_Output(self,other,"DIA_Kreol_TeachSactaNome_01_04");	//Ты еще не готов к тому, чтобы овладеть этими знаниями.
-		AI_Output(self,other,"DIA_Kreol_TeachSactaNome_01_05");	//У тебя еще слишком мало опыта! Поговорим об этом позже.
+		AI_Output(self,other, " DIA_Kreol_TeachSactaNome_01_04 " );	// You are not yet ready to master this knowledge.
+		AI_Output(self,other, " DIA_Kreol_TeachSactaNome_01_05 " );	// You don't have much experience yet! Let's talk about it later.
 		Info_ClearChoices(dia_kreol_teachsactanome);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_TeachSactaNome_01_07");	//У тебя не хватает золота!
-		AI_Output(self,other,"DIA_Kreol_TeachSactaNome_01_08");	//Поговорим об этом тогда, когда оно у тебя будет.
+		AI_Output(self,other, " DIA_Kreol_TeachSactaNome_01_07 " );	// You don't have enough gold!
+		AI_Output(self,other, " DIA_Kreol_TeachSactaNome_01_08 " );	// Let's talk about it when you have it.
 		Info_ClearChoices(dia_kreol_teachsactanome);
 	};
 };
@@ -1782,12 +1783,12 @@ instance DIA_KREOL_Kill_Pals(C_Info)
 	condition = DIA_KREOL_Kill_Pals_condition;
 	information = DIA_KREOL_Kill_Pals_info;
 	permanent = FALSE;
-	description = "Могу я сделать что-нибудь для Темного бога?";
+	description = " Can I do something for the Dark God? " ;
 };
 
 func int DIA_KREOL_Kill_Pals_condition()
 {
-	if((hero.guild == GIL_KDM) && (KAPITELORCATC == FALSE))
+	if ((hero.guild ==  GIL_KDM ) && ( CAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1795,28 +1796,28 @@ func int DIA_KREOL_Kill_Pals_condition()
 
 func void DIA_KREOL_Kill_Pals_info()
 {
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_01_01");	//Могу ли я сделать что-нибудь для Темного бога?
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_02");	//(надменно) Это ты можешь спросить у него самого. А вот мне помощь действительно не помешала бы!
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_01_03");	//А о чем идет речь?
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_04");	//Дело в том, что я тут решил провести один темный магический ритуал.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_05");	//Но, к сожалению, обнаружил, что мне не хватает для этого определенного материала.
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_01_06");	//Какого именно?
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_07");	//Ничего особенного. Всего лишь свежей человеческой плоти!
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_01_08");	//И ты называешь это 'всего лишь'?!
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_09");	//Для меня эти жалкие людишки всего лишь материал для опытов и исследований.  
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_10");	//А их никчемные жизни меня не интересуют!
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_11");	//Так ты поможешь мне решить эту проблему или нет?
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_01_01 " );	// Can I do something for the Dark God?
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_01_02 " );	// (arrogantly) You can ask him yourself. But I really could use some help!
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_01_03 " );	// What are we talking about?
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_01_04 " );	// The fact is that I decided to perform one dark magic ritual here.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_01_05 " );	// But, unfortunately, I found that I lacked certain material for this.
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_01_06 " );	// Which one exactly?
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_01_07 " );	// Nothing special. Just fresh human flesh!
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_01_08 " );	// And you call it 'just'?!
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_01_09 " );	// For me, these pathetic people are just material for experiments and research.  
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_01_10 " );	// I'm not interested in their worthless lives!
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_01_11 " );	// So will you help me solve this problem or not?
 	Info_ClearChoices(DIA_KREOL_Kill_Pals);
-	Info_AddChoice(DIA_KREOL_Kill_Pals,"Нет, такое не для меня.",DIA_KREOL_Kill_Pals_no);
-	Info_AddChoice(DIA_KREOL_Kill_Pals,"Да, конечно.",DIA_KREOL_Kill_Pals_yes);
+	Info_AddChoice(DIA_KREOL_Kill_Pals, " No, that's not for me. " ,DIA_KREOL_Kill_Pals_no);
+	Info_AddChoice(DIA_KREOL_Kill_Pals, " Yes, of course. " ,DIA_KREOL_Kill_Pals_yes);
 };
 
 func void DIA_KREOL_Kill_Pals_no()
 {
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_no_01_01");	//Нет, такое не для меня.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_no_01_02");	//Я так и думал, что ты окажешься слабаком...(с презрением) Я вообще не понимаю, как ты смог стать темным магом!
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_no_01_03");	//Твое место скорее всего среди этих неженок, что поклоняются своему огненному лжебогу.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_no_01_04");	//Так что пошел прочь с глаз моих!
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_no_01_01 " );	// No, that's not for me.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_no_01_02 " );	// I thought you'd turn out to be a weakling... (with contempt) I don't understand how you could become a dark magician at all!
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_no_01_03 " );	// Your place is most likely among these sissies who worship their fiery false god.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_no_01_04 " );	// So get out of my sight!
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,30);
 
@@ -1824,27 +1825,27 @@ func void DIA_KREOL_Kill_Pals_no()
 
 func void DIA_KREOL_Kill_Pals_yes()
 {
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_yes_01_01");	//Да, конечно.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_02");	//Что же. Твое рвение достойно уважения.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_03");	//Тогда слушай! Тут неподалеку есть два небольших лагеря людей.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_04");	//Один находится над обрывом моря, а второй внизу, в расщелине.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_05");	//Я уже пробовал насылать на них моих слуг. Но безрезультатно!
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_yes_01_06");	//А в чем причина?
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_07");	//Дело в том, что лагерь, расположенный сверху, защищает какая-то очень сильная магия!
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_08");	//Ее природа мне не совсем ясна, и пока я ничего не могу с этим сделать.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_09");	//Но вот лагерь, что находится внизу, мне кажется более беззащитным.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_10");	//Однако проблема в том, что среди них есть паладины!
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_11");	//А эти воины Инноса очень легко расправляются с нежитью.
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_yes_01_12");	//И что ты хочешь от меня?
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_13");	//Я хочу, чтобы ты воспользовался своими умениями темного мага и уничтожил всех этих ублюдков!
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_14");	//А когда паладины падут, остальное довершат мои слуги.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_15");	//Но можешь и сам всех убить. Нюансы меня мало интересуют.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_yes_01_16");	//Главное, что это даст мне возможность продолжить свою подготовку к моему магическому ритуалу.
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_yes_01_17");	//Хорошо, я позабочусь о паладинах.
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_yes_01_01 " );	// Yes, of course.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_02 " );	// Well. Your zeal is commendable.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_03 " );	// Then listen! There are two small human camps nearby.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_04 " );	// One is above the cliff of the sea, and the second is below, in the crevice.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_05 " );	// I've already tried sending my servants to them. But to no avail!
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_yes_01_06 " );	// What's the reason?
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_07 " );	// The fact is that the camp located above is protected by some very strong magic!
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_08 " );	// Its nature is not entirely clear to me, and so far I can't do anything about it.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_09 " );	// But the camp below seems more defenseless to me.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_10 " );	// However, the problem is that there are paladins among them!
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_11 " );	// And these warriors of Innos deal with the undead very easily.
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_yes_01_12 " );	// And what do you want from me?
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_13 " );	// I want you to use your dark mage skills and destroy all those bastards!
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_14 " );	// And when the paladins fall, my servants will do the rest.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_15 " );	// But you can kill everyone yourself. The nuances are of little interest to me.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_yes_01_16 " );	// The main thing is that this will give me the opportunity to continue my preparations for my magic ritual.
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_yes_01_17 " );	// Okay, I'll take care of the paladins.
 	MIS_KILL_PALS = LOG_Running;
 	Log_CreateTopic(TOPIC_KILL_PALS,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KILL_PALS,LOG_Running);
-	B_LogEntry(TOPIC_KILL_PALS,"Креол хочет чтобы я уничтожил лагерь в расщелине, недалеко от его башни. Ему будет достаточно, если я убью всех паладинов. Что же, если уж и быть злом - то быть до конца!");
+	; _ _ _ _ _ _
 	AI_StopProcessInfos(self);
 };
 
@@ -1855,12 +1856,12 @@ instance DIA_KREOL_Kill_Pals_Done(C_Info)
 	condition = DIA_KREOL_Kill_Pals_Done_condition;
 	information = DIA_KREOL_Kill_Pals_Done_info;
 	permanent = FALSE;
-	description = "Паладины мертвы.";
+	description = " Paladins are dead. " ;
 };
 
 func int DIA_KREOL_Kill_Pals_Done_condition()
 {
-	if((hero.guild == GIL_KDM) && (KAPITELORCATC == FALSE) && (MIS_KILL_PALS == LOG_Running) && (ALBERTISDEAD == TRUE))
+	if ((hero.guild ==  GIL_KDM ) && ( CAPITELORCATC  ==  FALSE ) && ( MY_KILL_PALS  == LOG_Running ) && ( ALBERTISDEAD  ==  TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -1870,16 +1871,16 @@ func int DIA_KREOL_Kill_Pals_Done_condition()
 func void DIA_KREOL_Kill_Pals_Done_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_Done_01_01");	//Паладины мертвы.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_Done_01_02");	//Отлично! Я сейчас же пошлю своих слуг собрать этот урожай смерти.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_Done_01_03");	//А тебя ждет щедрая награда за твои старания.
-	AI_Output(other,self,"DIA_KREOL_Kill_Pals_Done_01_04");	//Надеюсь, действительно щедрая.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_Done_01_05");	//Можешь не сомневаться. Вот, возьми эти магические зелья.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_Done_01_06");	//Уверен, ты знаешь что с ними делать.
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_Done_01_01 " );	// Paladins are dead.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_Done_01_02 " );	// Great! I will immediately send my servants to harvest this harvest of death.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_Done_01_03 " );	// And you will be richly rewarded for your efforts.
+	AI_Output(other,self, " DIA_KREOL_Kill_Pals_Done_01_04 " );	// Really generous, I hope.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_Done_01_05 " );	// You can be sure. Here, take these magic potions.
+	AI_Output(self,other, " DIA_KREOL_Kill_Pals_Done_01_06 " );	// I'm sure you know what to do with them.
 	B_GiveInvItems(self,other,ITPO_DEMON_POTION,1);
 	MIS_KILL_PALS = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KILL_PALS,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KILL_PALS,"Креол остался доволен проделанной мной работой.");
+	B_LogEntry( TOPIC_KILL_PALS , " Creole was satisfied with my work. " );
 };
 
 
@@ -1890,7 +1891,7 @@ instance DIA_KREOL_Kill_Done_Rings(C_Info)
 	condition = DIA_KREOL_Kill_Done_Rings_condition;
 	information = DIA_KREOL_Kill_Done_Rings_info;
 	permanent = FALSE;
-	description = "У меня есть кольца паладинов.";
+	description = " I have paladin rings. " ;
 };
 
 func int DIA_KREOL_Kill_Done_Rings_condition()
@@ -1907,15 +1908,15 @@ func void DIA_KREOL_Kill_Done_Rings_info()
 	var int RingSumXP;
 	var int RingSumGold;
 
-	AI_Output(other,self,"DIA_KREOL_Kill_Done_Rings_01_01");	//У меня есть кольца паладинов. Тебя они интересуют?
-	AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_03");	//(в бешенстве) Немедленно убери от меня эту гадость! Ты что, сошел с ума, предлагать мне такое?!
-	AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_04");	//Хотя постой. Ты говоришь, что они принадлежали паладинам?
-	AI_Output(other,self,"DIA_KREOL_Kill_Done_Rings_01_05");	//Да, именно так.
-	AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_06");	//Возможно, они мне действительно пригодятся.
-	AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_07");	//Я могу превратить их в артефакты тьмы, способные подчинять моей воле их хозяина.
-	AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_08");	//(зловеще) И у меня будет своя армия. Армия обращенных паладинов!
-	AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_09");	//Так что немедленно давай их сюда!
-	AI_Output(other,self,"DIA_KREOL_Kill_Done_Rings_01_10");	//Вот, держи.
+	AI_Output(other,self, " DIA_KREOL_Kill_Done_Rings_01_01 " );	// I have paladin rings. Are you interested in them?
+	AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_03 " );	// (infuriated) Get this nasty thing away from me immediately! Are you out of your mind to suggest this to me?!
+	AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_04 " );	// But wait. Are you saying they belonged to paladins?
+	AI_Output(other,self, " DIA_KREOL_Kill_Done_Rings_01_05 " );	// Yes, that's right.
+	AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_06 " );	// Maybe they will really come in handy for me.
+	AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_07 " );	// I can turn them into artifacts of darkness that can bend their master to my will.
+	AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_08 " );	// (ominously) And I'll have my own army. An army of converted paladins!
+	AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_09 " );	// So get them here immediately!
+	AI_Output(other,self, " DIA_KREOL_Kill_Done_Rings_01_10 " );	// Here, take this.
 
 	RingSum = Npc_HasItems(hero,itri_quest_pal_ring);
 	B_GiveInvItems(other,self,itri_quest_pal_ring,RingSum);
@@ -1923,26 +1924,26 @@ func void DIA_KREOL_Kill_Done_Rings_info()
 
 	if(RingSum == 1)
 	{
-		RingSumXP = RingSum * 100;
-		RingSumGold = RingSum * 100;
-		AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_11");	//Как? Одно кольцо? Ты что, издеваешься надо мной?!
-		AI_Output(other,self,"DIA_KREOL_Kill_Done_Rings_01_12");	//Извини, но у меня больше нет.
-		AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_13");	//Вот, забирай свою награду и проваливай отсюда!
+		RingSumXP = RingSum *  100 ;
+		RingSumGold = RingSum *  100 ;
+		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_11 " );	// How? One ring? Are you kidding me?!
+		AI_Output(other,self, " DIA_KREOL_Kill_Done_Rings_01_12 " );	// Sorry, but I don't have any more.
+		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_13 " );	// Here, take your reward and get the hell out of here!
 	}
 	else if(RingSum <= 3)
 	{
-		RingSumXP = RingSum * 150;
-		RingSumGold = RingSum * 150;
-		AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_14");	//Хммм. Не так уж у тебя их и много.
-		AI_Output(other,self,"DIA_KREOL_Kill_Done_Rings_01_15");	//Извини, но у меня больше нет.
-		AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_16");	//Ладно, вот твоя награда. Хотя ты и этого не заслужил!
+		RingSumXP = RingSum *  150 ;
+		RingSumGold = RingSum *  150 ;
+		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_14 " );	// Hmmm. You don't have that many.
+		AI_Output(other,self, " DIA_KREOL_Kill_Done_Rings_01_15 " );	// Sorry, but I don't have any more.
+		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_16 " );	// Okay, here's your reward. Even though you don't deserve it!
 	}
 	else if(RingSum > 3)
 	{
-		RingSumXP = RingSum * 200;
-		RingSumGold = RingSum * 200;
-		AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_17");	//Отлично! Этого количества мне вполне хватит.
-		AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_18");	//Вот твоя награда. Ты ее честно заслужил!
+		RingSumXP = RingSum *  200 ;
+		RingSumGold = RingSum *  200 ;
+		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_17 " );	// Great! This amount is enough for me.
+		AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_18 " );	// Here's your reward. You honestly deserve it!
 	};
 
 	B_GivePlayerXP(RingSumXP);
@@ -1962,7 +1963,7 @@ instance DIA_Kreol_MonasterySecret(C_Info)
 	condition = DIA_Kreol_MonasterySecret_condition;
 	information = DIA_Kreol_MonasterySecret_info;
 	permanent = FALSE;
-	description = "У меня есть один свиток.";
+	description = " I have one scroll. " ;
 };
 
 func int DIA_Kreol_MonasterySecret_condition()
@@ -1976,30 +1977,30 @@ func int DIA_Kreol_MonasterySecret_condition()
 func void DIA_Kreol_MonasterySecret_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_01");	//У меня есть один свиток.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_02");	//(пренебрежительно) И почему это должно интересовать меня?
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_03");	//Потому что в нем упоминается твое имя.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_04");	//Правда? Хорошо, дай мне взглянуть на него.
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_01_01 " );	// I have one scroll.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_02 " );	// (disparagingly) And why should I care?
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_01_03 " );	// Because it mentions your name.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_04 " );	// True? Okay, let me take a look at it.
 	B_GiveInvItems(other,self,ITWr_MonasterySecretLeadOW,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_05");	//Хммм...(задумчиво) Откуда он у тебя?
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_06");	//Я нашел его в башне Амон Шен.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_07");	//В старой башне некроманта Нергала?!
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_08");	//Ну, судя по всему, да. Именно там.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_09");	//Так значит, этот безумец до конца своих дней мечтал заполучить этот артефакт!
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_10");	//Ты говоришь о предмете, способным управлять живым драконом?
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_11");	//Именно о нем!
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_12");	//И что ты о нем знаешь?
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_13");	//(ехидно) Немного. Одно мне известно точно: выглядит он как магический жезл, в основании которого находится огненный глаз дракона.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_14");	//Маг, который создал этот артефакт, перед смертью разбил жезл на четыре равные части и спрятал их на этом острове!
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_15");	//Но откуда тебе все это известно?
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_16");	//Один из кусков этого жезла находится у меня! Но тебе его никогда не заполучить, даже и не мечтай.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_17");	//К тому же без трех остальных частей это всего лишь груда металлолома, не более.
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_18");	//А если я принесу тебе оставшиеся части, что тогда?
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_19");	//Вот тогда и продолжим этот разговор! Ясно?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_05 " );	// Hmmm...(thoughtfully) Where did you get it from?
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_01_06 " );	// I found it in the tower of Amon Shen.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_07 " );	// In the old tower of the necromancer Nergal?!
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_01_08 " );	// Well, apparently, yes. Exactly there.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_09 " );	// So this madman dreamed of getting this artifact for the rest of his days!
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_01_10 " );	// Are you talking about an item that can control a living dragon?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_11 " );	// About him!
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_01_12 " );	// And what do you know about him?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_13 " );	// (sarcastically) Not much. One thing I know for sure: it looks like a magic wand, at the base of which is the dragon's fiery eye.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_14 " );	// The magician who created this artifact broke the wand into four equal parts before his death and hid them on this island!
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_01_15 " );	// But how do you know all this?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_16 " );	// I have one of the pieces of this wand! But you'll never get it, don't even dream about it.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_17 " );	// Besides, without the other three parts, it's just a pile of scrap metal, no more.
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_01_18 " );	// And if I bring you the rest of the pieces, what then?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_01_19 " );	// Then let's continue this conversation! It's clear?
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_20");	//Вполне.
 	MonasterySecret_Kreol = TRUE;
-	B_LogEntry(TOPIC_MonasterySecret,"Креол рассказал мне об артефакте, которым я заинтересовался. Оказывается выглядит он, как магический жезл в основании которого вставлен настоящий драконий глаз! Однако маг, который создал этот предмет, перед своей смертью разделил жезл на четыре равные части и спрятал их где-то на острове. Одна часть находится у самого Креола, а вот другие по всей видимости мне предстоит найти самому. Если конечно я хочу услышать продолжение этой истории.");
+	B_LogEntry(TOPIC_MonasterySecret, " Creole told me about an artifact that I was interested in. It turns out that it looks like a magical wand at the base of which a real dragon's eye is inserted! However, the magician who created this item, before his death, divided the wand into four equal parts and hid them somewhere on the island. One part is located near Creole itself, but the others, apparently, I have to find myself. Unless, of course, I want to hear the continuation of this story. " );
 };
 
 instance DIA_Kreol_MonasterySecret_Done(C_Info)
@@ -2009,12 +2010,12 @@ instance DIA_Kreol_MonasterySecret_Done(C_Info)
 	condition = DIA_Kreol_MonasterySecret_Done_condition;
 	information = DIA_Kreol_MonasterySecret_Done_info;
 	permanent = FALSE;
-	description = "Я принес все недостающие куски жезла.";
+	description = " I've brought back all the missing pieces of the wand. " ;
 };
 
 func int DIA_Kreol_MonasterySecret_Done_condition()
 {
-	if((Kapitel < 6) && (MonasterySecret_Kreol == TRUE) && (MIS_MonasterySecret == LOG_Running) && (Npc_HasItems(hero,ItMi_DragonStaffPiece_01) >= 1) && (Npc_HasItems(hero,ItMi_DragonStaffPiece_03) >= 1) && (Npc_HasItems(hero,ItMi_DragonStaffPiece_04) >= 1))
+	if ((Kapitel <  6 ) && (MonasterySecret_Kreol ==  TRUE ) && (MIS_MonasterySecret == LOG_Running) && (Npc_HasItems(hero,ItMi_DragonStaffPiece_01) >=  1 ) && (Npc_HasItems(hero,ItMi_DragonStaff_03 ) > =  1 ) ,ItMi_DragonStaffPiece_04) >= 1 )) 
 	{
 		return TRUE;
 	};
@@ -2023,41 +2024,41 @@ func int DIA_Kreol_MonasterySecret_Done_condition()
 func void DIA_Kreol_MonasterySecret_Done_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_01");	//Я принес все недостающие куски жезла.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_02");	//(надменно) Не поверю, пока не увижу их собственными глазами!
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_03");	//Вот, смотри.
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_Two_01_01 " );	// I've brought back all the missing pieces of the wand.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_02 " );	// (arrogantly) I won't believe it until I see it with my own eyes!
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_Two_01_03 " );	// Here, look.
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(other,ItMi_DragonStaffPiece_01,1);
 	Npc_RemoveInvItems(other,ItMi_DragonStaffPiece_03,1);
 	Npc_RemoveInvItems(other,ItMi_DragonStaffPiece_04,1);
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_04");	//Да, похоже, это действительно они! Никогда бы не подумал, что кому-то удастся это сделать.
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_05");	//Ты обещал рассказать мне больше об этом артефакте.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_06");	//(властно) Конечно. Я сдержу свое слово!
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_07");	//Ты уже знаешь, что с помощью этого жезла можно призвать в этот мир настоящего дракона.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_08");	//По своей силе он, конечно, уступит тем древним созданиям, что обитали здесь, в Долине Рудников.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_09");	//Однако это не означает, что он будет абсолютно бесполезен для своего хозяина!
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_10");	//Но для того, чтобы придать жезлу его полную силу, необходима еще одна вещь.
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_11");	//Что еще нужно?
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_12");	//Глаз дракона! Эти железки бесполезны, если не наполнены силой настоящего ока этого древнего существа.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_13");	//Именно с его помощью хозяин контролирует призываемое существо. В ином случае оно просто не подчинится его воле.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_14");	//К сожалению, ты убил всех драконов в этой Долине.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_15");	//Поэтому можешь оставить этот мусор себе!
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_04 " );	// Yes, it looks like they really are! I would never have thought that someone would be able to do this.
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_Two_01_05 " );	// You promised to tell me more about this artifact.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_06 " );	// (imperiously) Of course. I will keep my word!
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_07 " );	// You already know that with this wand you can summon a real dragon to this world.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_08 " );	// In terms of its strength, it will certainly yield to those ancient creatures that lived here in the Valley of Mines.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_09 " );	// However, this does not mean that it will be absolutely useless for its owner!
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_10 " );	// But in order to give the wand its full power, one more thing is needed.
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_Two_01_11 " );	// What else do you need?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_12 " );	// Dragon eye! These pieces of iron are useless unless imbued with the power of the true eye of this ancient being.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_13 " );	// It is with his help that the master controls the summoned creature. Otherwise, it simply will not obey his will.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_14 " );	// Unfortunately, you killed all the dragons in this Valley.
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_15 " );	// So you can keep this garbage for yourself!
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(other,ItMi_DragonStaffPiece_01,1);
 	CreateInvItems(other,ItMi_DragonStaffPiece_02,1);
 	CreateInvItems(other,ItMi_DragonStaffPiece_03,1);
 	CreateInvItems(other,ItMi_DragonStaffPiece_04,1);
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_16");	//Неужели ничего нельзя сделать?
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_17");	//(ворчливо) А ты видишь вокруг себя целые стаи древних созданий?!
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_18");	//Но если я все-таки повстречаю дракона, как можно будет воссоздать этот артефакт?
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_19");	//Ты упрям как осел! Но если ты и впрямь считаешь, что тебе еще представиться шанс встретить одного из них...
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_20");	//...то нужно будет просто сковать все части жезла воедино и вставить око в его основание!
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_21");	//Сила жезла оживит глаз, и после этого можно будет использовать сам жезл.
-	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_22");	//С оком все ясно. А что насчет костей?
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_23");	//Тебе понадобится четыре драконьих черепа для изготовления крепежа. Ни больше, ни меньше!
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_Two_01_16 " );	// Can't do anything?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_17 " );	// (grouchily) Do you see whole flocks of ancient creatures around you?!
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_Two_01_18 " );	// But if I do meet a dragon, how can I recreate this artifact?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_19 " );	// You're stubborn as a donkey! But if you really think you'll get another chance to meet one of them...
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_20 " );	// ...then you just need to forge all the parts of the wand together and insert the eye into its base!
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_21 " );	// The power of the wand will animate the eye, and then the wand itself can be used.
+	AI_Output(other,self, " DIA_Kreol_MonasterySecret_Two_01_22 " );	// Everything is clear with the eye. What about bones?
+	AI_Output(self,other, " DIA_Kreol_MonasterySecret_Two_01_23 " );	// You will need four dragon skulls to make the fasteners. No more, no less!
 	MIS_MonasterySecret = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_MonasterySecret,LOG_SUCCESS);
-	B_LogEntry(TOPIC_MonasterySecret,"Для создания жезла мне понадобится еще несколько предметов - четыре драконьих черепа и глаз дракона!");
+	B_LogEntry(TOPIC_MonasterySecret, " I'll need a few more items to make the wand - four dragon skulls and a dragon's eye! " );
 };
 
 var int EligorNoSword;
@@ -2072,7 +2073,7 @@ instance DIA_Kreol_Sleeper(C_Info)
 	condition = DIA_Kreol_Sleeper_condition;
 	information = DIA_Kreol_Sleeper_info;
 	permanent = FALSE;
-	description = "Что ты знаешь о Спящем?";
+	description = " What do you know about the Sleeper? " ;
 };
 
 func int DIA_Kreol_Sleeper_condition()
@@ -2086,89 +2087,89 @@ func int DIA_Kreol_Sleeper_condition()
 func void DIA_Kreol_Sleeper_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_01");	//Что ты знаешь о Спящем?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_02");	//(задумчиво) Он древнейший из демонов еще тех времен, когда этот мир только зарождался.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_03");	//Именно его присутствие в этой части острова заставило меня появиться здесь.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_04");	//А зачем он вообще тебе понадобился?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_05");	//Я хотел более тщательно исследовать демоническую ауру этого существа, его магические свойства.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_06");	//Но, к сожалению, один местный олух каким-то образом смог изгнать этого демона из мира людей.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_07");	//И многие годы моих исследований пошли прахом!
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_08");	//Ты ошибаешься! Спящий вернулся.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_09");	//(недоверчиво) Что? Откуда тебе это известно?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_10");	//Потому что я и есть тот олух, что тогда изгнал его.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_11");	//Ты?! (пристально вглядываясь) Хотя да, ты вполне мог это сделать!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_12");	//Если тебе удалось уничтожить Аватара самого Белиара, то и со Спящим у тебя могло получиться.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_13");	//Как мне в этот раз одолеть его?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_14");	//Может, великий темный маг и избранный самого Белиара подскажет мне, как это сделать?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_15");	//Хммм...(довольно) И что же тебе мешает сделать это снова?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_16");	//Его магия! Она сводит меня с ума.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_17");	//Ну конечно! Это и неудивительно!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_18");	//Ведь ты лишь простой смертный! А он древнейший из демонов...
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_19");	//Так ты мне дашь совет или нет?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_20");	//Ну хорошо. Мы поступим так! Давай заключим сделку.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_21");	//Я расскажу тебе, как можно противостоять его ментальным атакам, а ты в свою очередь принесешь мне его сердце!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_22");	//Этого мне вполне хватит для моих исследований. Ну как, договорились?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_23");	//У меня нет выбора. Так что я согласен.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_24");	//Хорошо. Тогда слушай меня внимательно.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_25");	//Тебе нужен артефакт, способный защитить твой разум от влияния демона.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_26");	//Его называют Венцом Демонов! Он был создан самим Белиаром и преподнесен в дар самому могущественному демону этого мира.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_27");	//Интересно, кто это?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_28");	//Элигор, повелитель Лэнга - обители демонов...(с уважением) Но просто так он тебе его не отдаст!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_29");	//Ведь это то же самое, что корона на голове у короля.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_30");	//И я даже представить боюсь, что он может потребовать от тебя взамен.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_31");	//Хммм...(пристально вглядываясь) А что ты вообще можешь предложить?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_01_01 " );	// What do you know about the Sleeper?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_02 " );	// (thoughtfully) He is the oldest of the demons from the time when this world was just born.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_03 " );	// It was his presence in this part of the island that made me appear here.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_01_04 " );	// Why do you even need it?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_05 " );	// I wanted to more thoroughly explore the demonic aura of this creature, its magical properties.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_06 " );	// But, unfortunately, one local oaf somehow managed to exorcise this demon from the human world.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_07 " );	// And many years of my research went to waste!
+	AI_Output(other, self, " DIA_Kreol_Sleeper_01_08 " );	// You're wrong! The sleeper has returned.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_09 " );	// (in disbelief) What? How do you know this?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_01_10 " );	// Because I'm the idiot who banished him back then.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_11 " );	// You?! (gazing intently) Although, yes, you could have done it!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_12 " );	// If you managed to destroy the Avatar of Beliar himself, then you could succeed with the Sleeper.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_01_13 " );	// How can I defeat him this time?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_01_14 " );	// Maybe the great dark magician and the chosen one of Beliar himself will tell me how to do this?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_15 " );	// Hmmm...(enough) And what's stopping you from doing it again?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_01_16 " );	// His magic! She drives me crazy.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_17 " );	// Of course! This is not surprising!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_18 " );	// After all, you're just a mere mortal! And he is the oldest of the demons...
+	AI_Output(other,self, " DIA_Kreol_Sleeper_01_19 " );	// So will you give me advice or not?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_20 " );	// Okay. We will do so! Let's make a deal.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_21 " );	// I'll tell you how to counter his mental attacks, and you in turn will bring me his heart!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_22 " );	// This is enough for my research. Well, agreed?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_01_23 " );	// I don't have a choice. So I agree.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_24 " );	// Good. Then listen to me carefully.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_25 " );	// You need an artifact that can protect your mind from demonic influence.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_26 " );	// It's called the Crown of Demons! It was created by Beliar himself and presented as a gift to the most powerful demon of this world.
+	AI_Output(other, self, " DIA_Kreol_Sleeper_01_27 " );	// I wonder who it is?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_28 " );	// Eligor, the lord of Lang - the abode of demons... (respectfully) But he won't give it to you just like that!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_29 " );	// After all, this is the same as the crown on the head of the king.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_30 " );	// And I'm even afraid to imagine what he might demand from you in return.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_01_31 " );	// Hmmm...( peering intently) What do you even have to offer?
 	Info_ClearChoices(DIA_Kreol_Sleeper);
-	Info_AddChoice(DIA_Kreol_Sleeper,"К сожалению, ничего равного.",DIA_Kreol_Sleeper_No);
+	Info_AddChoice(DIA_Kreol_Sleeper, " Unfortunately, nothing equals. " ,DIA_Kreol_Sleeper_No);
 
-	if((Npc_HasItems(hero,ITMI_HELMSLEEPER) >= 1) || (Npc_HasItems(hero,ITMI_HELMSLEEPER_MIS) >= 1))
+	if ((Npc_HasItems(hero, ITMI_HELMSLEEPER ) >=  1 ) || (Npc_HasItems(hero, ITMI_HELMSLEEPER_MIS ) >=  1 ))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper,"Вот маска Спящего!",DIA_Kreol_Sleeper_Mask);
+		Info_AddChoice(DIA_Kreol_Sleeper, " Here's the Sleeper mask! " ,DIA_Kreol_Sleeper_Mask);
 	};
 	if(hero.guild != GIL_KDW)
 	{
 		if(Npc_HasItems(hero,G3_ARMOR_HELMET_CRONE) >= 1)
 		{
-			Info_AddChoice(DIA_Kreol_Sleeper,"У меня есть Корона Льда!",DIA_Kreol_Sleeper_Adanos);
+			Info_AddChoice(DIA_Kreol_Sleeper, " I have a Crown of Ice! " ,DIA_Kreol_Sleeper_Adanos);
 		};
 	};
 	if((EligorNoSword == FALSE) && (Npc_HasItems(hero,ITMW_2H_DRAGONMASTER) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper,"(предложить меч Повелитель драконов)",DIA_Kreol_Sleeper_Sword);
+		Info_AddChoice(DIA_Kreol_Sleeper, " (offer Dragonlord Sword) " ,DIA_Kreol_Sleeper_Sword);
 	};
 	if((EligorNoBow == FALSE) && (Npc_HasItems(hero,ITRW_G3_DEMON_BOW_01) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper,"(предложить лук Цвет Смерти)",DIA_Kreol_Sleeper_Bow);
+		Info_AddChoice(DIA_Kreol_Sleeper, " (offer Bow Color of Death) " ,DIA_Kreol_Sleeper_Bow);
 	};
-	if((EligorNoStaff == FALSE) && (Npc_HasItems(hero,ITMW_2H_KMR_DAEMONSTAFF_01) >= 1))
+	if ((EligorNoStaff ==  FALSE ) && (Npc_HasItems(hero, ITMW_2H_KMR_DAEMONSTAFF_01 ) >=  1 ))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper,"(предложить посох Гаситель Душ)",DIA_Kreol_Sleeper_Staff);
+		Info_AddChoice(DIA_Kreol_Sleeper, " (offer Staff Soul Suppressor) " ,DIA_Kreol_Sleeper_Staff);
 	};
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
-		if((Npc_HasItems(hero,ItMi_InnosEye_MIS) >= 1) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >= 1))
+		if ((Npc_HasItems(hero,ItMi_InnosEye_MIS) >=  1 ) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >=  1 ))
 		{
-			Info_AddChoice(DIA_Kreol_Sleeper,"(предложить Глаз Инноса)",DIA_Kreol_Sleeper_Innos);
+			Info_AddChoice(DIA_Kreol_Sleeper, " (suggest Eye of Innos) " ,DIA_Kreol_Sleeper_Innos);
 		};
 	};
 };
 
 func void DIA_Kreol_Sleeper_No()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_No_01_01");	//К сожалению, ничего стоящего.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_No_01_02");	//Тогда нам нечего обсуждать.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_No_01_01 " );	// Unfortunately, nothing worthwhile.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_No_01_02 " );	// Then we have nothing to discuss.
 	CanTellSleeperAgain = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Kreol_Sleeper_Mask()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Mask_01_01");	//У меня есть маска Спящего!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_02");	//Да, это довольно ценная вещь!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_03");	//И она вполне бы могла заинтересовать Элигора.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_04");	//Думаю, мы поступим так...(задумчиво) Ты сейчас отдашь ее мне.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_05");	//А я в свою очередь подготовлю все необходимое для ритуала вызова демона.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Mask_01_01 " );	// I have a Sleeper mask!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_02 " );	// Yes, it's pretty valuable stuff!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_03 " );	// And she could well interest Eligor.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_04 " );	// I think we'll do this... (thoughtfully) You'll give it to me now.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_05 " );	// And I, in turn, will prepare everything necessary for the demon summoning ritual.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_06");	//Согласен?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Mask_01_07");	//Ладно, держи ее.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Mask_01_07 " );	// Okay, hold her.
 
 	if(Npc_HasItems(hero,ITMI_HELMSLEEPER) >= 1)
 	{
@@ -2181,11 +2182,11 @@ func void DIA_Kreol_Sleeper_Mask()
 		Npc_RemoveInvItems(self,ITMI_HELMSLEEPER_MIS,1);
 	};
 
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_08");	//Отлично! Попробуй заглянуть ко мне через пару дней.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_09");	//Этого времени мне хватит, чтобы уладить вопрос с самим Элигором.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Mask_01_10");	//Хорошо! Но только не вздумай меня обмануть.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_11");	//(надменно) Не беспокойся. Сделка есть сделка!
-	B_LogEntry(TOPIC_SLEEPERBACK,"Я отдал Креолу маску Спящего в надежде заполучить могущественный артефакт, называемый 'Венцом Демонов'! Только с его помощью я смогу противостоять магии Спящего. Его нынешний владелец - Элигор, самый могущественный демон этого мира. Через пару дней мне стоит вновь заглянуть к Креолу, чтобы получить последние инструкции...");
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_08 " );	// Great! Try to visit me in a couple of days.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_09 " );	// This is enough time for me to settle the matter with Eligor himself.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Mask_01_10 " );	// Good! But don't try to fool me.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_11 " );	// (arrogantly) Don't worry. A deal is a deal!
+	B_LogEntry( TOPIC_SLEEPERBACK , " I gave the Sleeper Mask to Creole in hopes of obtaining a powerful artifact called the 'Crown of Demons'! It's the only way I can resist the Sleeper's magic. Its current owner is Eligor, the most powerful demon in this world. In a couple of days, I'll be standing again drop by Creole for the latest instructions... " );
 	DemonCrownRitualDay = Wld_GetDay();
 	HasSleeperDefence = 1;
 	AI_StopProcessInfos(self);
@@ -2193,20 +2194,20 @@ func void DIA_Kreol_Sleeper_Mask()
 
 func void DIA_Kreol_Sleeper_Adanos()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Adanos_01_01");	//У меня есть Корона Льда!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_02");	//Древнейший артефакт, созданный самим Аданосом?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_03");	//Да, это вполне бы могло заинтересовать Элигора.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_04");	//Думаю, мы поступим так...(задумчиво) Ты сейчас отдашь ее мне.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_05");	//А я в свою очередь подготовлю все необходимое для ритуала вызова демона.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Adanos_01_01 " );	// I have the Crown of Ice!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_02 " );	// The oldest artifact created by Adanos himself?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_03 " );	// Yes, that might well interest Eligor.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_04 " );	// I think we'll do this... (thoughtfully) You'll give it to me now.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_05 " );	// And I, in turn, will prepare everything necessary for the demon summoning ritual.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_06");	//Согласен?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Adanos_01_07");	//Ладно, держи корону.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Adanos_01_07 " );	// Okay, hold the crown.
 	B_GiveInvItems(other,self,G3_ARMOR_HELMET_CRONE,1);
 	Npc_RemoveInvItems(self,G3_ARMOR_HELMET_CRONE,1);
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_08");	//Отлично! Тогда, попробуй заглянуть ко мне через пару дней.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_09");	//Этого времени мне хватит, чтобы уладить вопрос с самим Элигором.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Adanos_01_10");	//Хорошо! Но только не вздумай меня обмануть.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_11");	//(надменно) Не беспокойся. Сделка есть сделка!
-	B_LogEntry(TOPIC_SLEEPERBACK,"Я отдал Креолу 'Корона Льда' в надежде заполучить могущественный артефакт, называемый 'Венцом Демонов'! Только с его помощью я смогу противостоять магии Спящего. Его нынешний владелец - Элигор, самый могущественный демон этого мира. Через пару дней мне стоит вновь заглянуть к Креолу, чтобы получить последние инструкции...");
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_08 " );	// Great! Then try to visit me in a couple of days.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_09 " );	// This is enough time for me to settle the matter with Eligor himself.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Adanos_01_10 " );	// Good! But don't try to fool me.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_11 " );	// (arrogantly) Don't worry. A deal is a deal!
+	B_LogEntry( TOPIC_SLEEPERBACK , " I gave Creole the 'Crown of Ice' in hopes of obtaining a powerful artifact called the 'Crown of Demons'! It's the only way I can resist the Sleeper's magic. Its current owner is Eligor, the most powerful demon in this world. I'll be back in a couple of days it is worth visiting Creole again to get the latest instructions... " );
 	DemonCrownRitualDay = Wld_GetDay();
 	HasSleeperDefence = 2;
 	AI_StopProcessInfos(self);
@@ -2214,39 +2215,39 @@ func void DIA_Kreol_Sleeper_Adanos()
 
 func void DIA_Kreol_Sleeper_Sword()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Sword_01_01");	//У меня есть меч Повелитель драконов!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_02");	//Хммм...(задумчиво) Хорошее оружие! Но вряд ли оно заинтересует Элигора.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_03");	//Попробуй предложить что-нибудь еще.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Sword_01_01 " );	// I have the Dragonlord sword!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Sword_01_02 " );	// Hmmm... (thoughtfully) Nice weapon! But it is unlikely that it will interest Eligor.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Sword_01_03 " );	// Try suggesting something else.
 	EligorNoSword = TRUE;
 };
 
 func void DIA_Kreol_Sleeper_Bow()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Bow_01_01");	//У меня есть лук Цвет Смерти!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Bow_01_02");	//Нет, это все не то.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Bow_01_03");	//Нужно что-то действительно ценное, чтобы произвести впечатление на Элигора!
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Bow_01_01 " );	// I have a Bow Color of Death!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Bow_01_02 " );	// No, that's not it.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Bow_01_03 " );	// Need something really valuable to impress Eligor!
 	EligorNoBow = TRUE;
 };
 
 func void DIA_Kreol_Sleeper_Staff()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Staff_01_01");	//У меня есть посох Гаситель Душ!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Staff_01_02");	//(презрительно) И зачем он владыке демонов?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Staff_01_03");	//Лучше хорошенько подумай, прежде чем предлагать ему всякий мусор.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Staff_01_01 " );	// I have a Soul Extinguisher staff!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Staff_01_02 " );	// (contemptuously) Why would a demon lord need him?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Staff_01_03 " );	// You'd better think twice before offering him any rubbish.
 	EligorNoStaff = TRUE;
 };
 
 func void DIA_Kreol_Sleeper_Innos()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Innos_01_01");	//У меня есть Глаз Инноса!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_02");	//Хммм...(задумчиво) Древнейший артефакт паладинов?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_03");	//Да, это вполне бы могло заинтересовать Элигора.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_04");	//Думаю, мы поступим так...(задумчиво) Ты сейчас отдашь его мне.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_05");	//А я в свою очередь подготовлю все необходимое для ритуала вызова демона.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_06");	//Согласен?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Innos_01_07");	//Ладно, держи амулет.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Innos_01_01 " );	// I have the Eye of Innos!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_02 " );	// Hmmm... (thoughtfully) The oldest paladin artifact?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_03 " );	// Yes, that might well interest Eligor.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_04 " );	// I think we'll do this... (thoughtfully) You'll give it to me now.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_05 " );	// And I, in turn, will prepare everything necessary for the demon summoning ritual.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_06 " );	// Agree?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Innos_01_07 " );	// Okay, hold the amulet.
 
-	if(Npc_HasItems(hero,ItMi_InnosEye_MIS) >= 1)
+	if (Npc_HasItems(hero,ItMi_InnosEye_MIS) >=  1 )
 	{
 		B_GiveInvItems(other,self,ItMi_InnosEye_MIS,1);
 		Npc_RemoveInvItems(self,ItMi_InnosEye_MIS,1);
@@ -2257,11 +2258,11 @@ func void DIA_Kreol_Sleeper_Innos()
 		Npc_RemoveInvItems(self,ItMi_InnosEye_Discharged_Mis,1);
 	};
 
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_08");	//Отлично! Попробуй заглянуть ко мне через пару дней.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_09");	//Этого времени мне хватит, чтобы уладить вопрос с самим Элигором.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Innos_01_10");	//Хорошо! Но только не вздумай меня обмануть.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_11");	//(надменно) Не беспокойся. Сделка есть сделка!
-	B_LogEntry(TOPIC_SLEEPERBACK,"Я отдал Креолу 'Глаз Инноса' в надежде заполучить могущественный артефакт, называемый 'Венцом Демонов'! Только с его помощью я смогу противостоять магии Спящего. Его нынешний владелец - Элигор, самый могущественный демон этого мира. Через пару дней мне стоит вновь заглянуть к Креолу, чтобы получить последние инструкции...");
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_08 " );	// Great! Try to visit me in a couple of days.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_09 " );	// This is enough time for me to settle the matter with Eligor himself.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Innos_01_10 " );	// Good! But don't try to fool me.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_11 " );	// (arrogantly) Don't worry. A deal is a deal!
+	B_LogEntry( TOPIC_SLEEPERBACK , " I gave Creole the 'Eye of Innos' in hopes of obtaining a powerful artifact called the 'Crown of Demons'! Only with its help will I be able to resist the Sleeper's magic. Its current owner is Eligor, the most powerful demon of this world. In a couple of days I it is worth visiting Creole again to get the latest instructions... " );
 	DemonCrownRitualDay = Wld_GetDay();
 	HasSleeperDefence = 3;
 	AI_StopProcessInfos(self);
@@ -2274,7 +2275,7 @@ instance DIA_Kreol_Sleeper_Again(C_Info)
 	condition = DIA_Kreol_Sleeper_Again_condition;
 	information = DIA_Kreol_Sleeper_Again_info;
 	permanent = TRUE;
-	description = "По поводу нашего последнего разговора...";
+	description = " Regarding our last conversation... " ;
 };
 
 func int DIA_Kreol_Sleeper_Again_condition()
@@ -2287,60 +2288,60 @@ func int DIA_Kreol_Sleeper_Again_condition()
 
 func void DIA_Kreol_Sleeper_Again_info()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Again_01_01");	//По поводу нашего последнего разговора...
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Again_01_02");	//Что? Принес мне кое-что интересное?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Again_01_01 " );	// Regarding our last conversation...
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Again_01_02 " );	// What? Did you bring me something interesting?
 	Info_ClearChoices(DIA_Kreol_Sleeper_Again);
-	Info_AddChoice(DIA_Kreol_Sleeper_Again,"К сожалению, ничего стоящего.",DIA_Kreol_Sleeper_Again_No);
+	Info_AddChoice(DIA_Kreol_Sleeper_Again, " Unfortunately, nothing worthwhile. " ,DIA_Kreol_Sleeper_Again_No);
 
-	if((Npc_HasItems(hero,ITMI_HELMSLEEPER) >= 1) || (Npc_HasItems(hero,ITMI_HELMSLEEPER_MIS) >= 1))
+	if ((Npc_HasItems(hero, ITMI_HELMSLEEPER ) >=  1 ) || (Npc_HasItems(hero, ITMI_HELMSLEEPER_MIS ) >=  1 ))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper,"Вот маска Спящего!",DIA_Kreol_Sleeper_Mask);
+		Info_AddChoice(DIA_Kreol_Sleeper, " Here's the Sleeper mask! " ,DIA_Kreol_Sleeper_Mask);
 	};
 	if(hero.guild != GIL_KDW)
 	{
 		if(Npc_HasItems(hero,G3_ARMOR_HELMET_CRONE) >= 1)
 		{
-			Info_AddChoice(DIA_Kreol_Sleeper_Again,"У меня есть Корона Льда!",DIA_Kreol_Sleeper_Again_Adanos);
+			Info_AddChoice(DIA_Kreol_Sleeper_Again, " I have a Crown of Ice! " ,DIA_Kreol_Sleeper_Again_Adanos);
 		};
 	};
 	if((EligorNoSword == FALSE) && (Npc_HasItems(hero,ITMW_2H_DRAGONMASTER) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(предложить меч Повелитель драконов)",DIA_Kreol_Sleeper_Again_Sword);
+		Info_AddChoice(DIA_Kreol_Sleeper_Again, " (offer Dragon Master sword) " ,DIA_Kreol_Sleeper_Again_Sword);
 	};
 	if((EligorNoBow == FALSE) && (Npc_HasItems(hero,ITRW_G3_DEMON_BOW_01) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(предложить лук Цвет Смерти)",DIA_Kreol_Sleeper_Again_Bow);
+		Info_AddChoice(DIA_Kreol_Sleeper_Again, " (offer Bow Color of Death) " ,DIA_Kreol_Sleeper_Again_Bow);
 	};
-	if((EligorNoStaff == FALSE) && (Npc_HasItems(hero,ITMW_2H_KMR_DAEMONSTAFF_01) >= 1))
+	if ((EligorNoStaff ==  FALSE ) && (Npc_HasItems(hero, ITMW_2H_KMR_DAEMONSTAFF_01 ) >=  1 ))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(предложить отдать посох Гаситель Душ)",DIA_Kreol_Sleeper_Again_Staff);
+		Info_AddChoice(DIA_Kreol_Sleeper_Again, " (offer to hand over Soul Extinguisher staff) " ,DIA_Kreol_Sleeper_Again_Staff);
 	};
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
-		if((Npc_HasItems(hero,ItMi_InnosEye_MIS) >= 1) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >= 1))
+		if ((Npc_HasItems(hero,ItMi_InnosEye_MIS) >=  1 ) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >=  1 ))
 		{
-			Info_AddChoice(DIA_Kreol_Sleeper_Again,"(предложить Глаз Инноса)",DIA_Kreol_Sleeper_Again_Innos);
+			Info_AddChoice(DIA_Kreol_Sleeper_Again, " (offer Eye of Innos) " ,DIA_Kreol_Sleeper_Again_Innos);
 		};
 	};
 };
 
 func void DIA_Kreol_Sleeper_Again_No()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_No_01_01");	//К сожалению, ничего стоящего.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_No_01_02");	//Тогда нам нечего обсуждать. И хватит тратить мое время попусту!
+	AI_Output(other,self, " DIA_Kreol_Sleeper_No_01_01 " );	// Unfortunately, nothing worthwhile.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_No_01_02 " );	// Then we have nothing to discuss. And stop wasting my time!
 	CanTellSleeperAgain = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Kreol_Sleeper_Again_Mask()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Mask_01_01");	//У меня есть маска Спящего.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_02");	//Да, это довольно ценная вещь.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_03");	//И она вполне бы могла заинтересовать Элигора.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_04");	//Думаю, мы поступим так...(задумчиво) Ты сейчас отдашь ее мне.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_05");	//А я в свою очередь подготовлю все необходимое для ритуала вызова демона.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Mask_01_01 " );	// I have a Sleeper mask.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_02 " );	// Yes, it's pretty valuable stuff.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_03 " );	// And she could well interest Eligor.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_04 " );	// I think we'll do this... (thoughtfully) You'll give it to me now.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_05 " );	// And I, in turn, will prepare everything necessary for the demon summoning ritual.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_06");	//Согласен?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Mask_01_07");	//Ладно, держи ее.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Mask_01_07 " );	// Okay, hold her.
 
 	if(Npc_HasItems(hero,ITMI_HELMSLEEPER) >= 1)
 	{
@@ -2353,11 +2354,11 @@ func void DIA_Kreol_Sleeper_Again_Mask()
 		Npc_RemoveInvItems(self,ITMI_HELMSLEEPER_MIS,1);
 	};
 
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_08");	//Отлично! Тогда, попробуй заглянуть ко мне через пару дней.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_09");	//Этого времени мне хватит, чтобы уладить вопрос с самим Элигором.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Mask_01_10");	//Хорошо! Но только не вздумай меня обмануть.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Mask_01_11");	//(надменно) Не беспокойся. Сделка есть сделка!
-	B_LogEntry(TOPIC_SLEEPERBACK,"Я отдал Креолу маску Спящего в надежде заполучить могущественный артефакт, называемый 'Венцом Демонов'! Только с его помощью я смогу противостоять магии Спящего. Его нынешний владелец - Элигор, самый могущественный демон этого мира. Через пару дней мне стоит вновь заглянуть к Креолу, чтобы получить последние инструкции...");
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_08 " );	// Great! Then try to visit me in a couple of days.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_09 " );	// This is enough time for me to settle the matter with Eligor himself.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Mask_01_10 " );	// Good! But don't try to fool me.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Mask_01_11 " );	// (arrogantly) Don't worry. A deal is a deal!
+	B_LogEntry( TOPIC_SLEEPERBACK , " I gave the Sleeper Mask to Creole in hopes of obtaining a powerful artifact called the 'Crown of Demons'! It's the only way I can resist the Sleeper's magic. Its current owner is Eligor, the most powerful demon in this world. In a couple of days, I'll be standing again drop by Creole for the latest instructions... " );
 	DemonCrownRitualDay = Wld_GetDay();
 	HasSleeperDefence = 1;
 	AI_StopProcessInfos(self);
@@ -2365,20 +2366,20 @@ func void DIA_Kreol_Sleeper_Again_Mask()
 
 func void DIA_Kreol_Sleeper_Again_Adanos()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Adanos_01_01");	//У меня есть Корона Льда!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_02");	//Хммм...(задумчиво) Древнейший артефакт, созданный самим Аданосом?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_03");	//Да, это вполне бы могло заинтересовать Элигора.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_04");	//Думаю, мы поступим так...(задумчиво) Ты сейчас отдашь ее мне.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_05");	//А я в свою очередь подготовлю все необходимое для ритуала вызова демона.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Adanos_01_01 " );	// I have the Crown of Ice!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_02 " );	// Hmmm... (thoughtfully) The oldest artifact created by Adanos himself?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_03 " );	// Yes, that might well interest Eligor.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_04 " );	// I think we'll do this... (thoughtfully) You'll give it to me now.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_05 " );	// And I, in turn, will prepare everything necessary for the demon summoning ritual.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_06");	//Согласен?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Adanos_01_07");	//Ладно, держи корону.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Adanos_01_07 " );	// Okay, hold the crown.
 	B_GiveInvItems(other,self,G3_ARMOR_HELMET_CRONE,1);
 	Npc_RemoveInvItems(self,G3_ARMOR_HELMET_CRONE,1);
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_08");	//Отлично! Тогда, попробуй заглянуть ко мне через пару дней.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_09");	//Этого времени мне хватит, чтобы уладить вопрос с самим Элигором.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Adanos_01_10");	//Хорошо! Но только не вздумай меня обмануть.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Adanos_01_11");	//(надменно) Не беспокойся. Сделка есть сделка!
-	B_LogEntry(TOPIC_SLEEPERBACK,"Я отдал Креолу 'Корона Льда' в надежде заполучить могущественный артефакт, называемый 'Венцом Демонов'! Только с его помощью я смогу противостоять магии Спящего. Его нынешний владелец - Элигор, самый могущественный демон этого мира. Через пару дней мне стоит вновь заглянуть к Креолу, чтобы получить последние инструкции...");
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_08 " );	// Great! Then try to visit me in a couple of days.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_09 " );	// This is enough time for me to settle the matter with Eligor himself.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Adanos_01_10 " );	// Good! But don't try to fool me.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Adanos_01_11 " );	// (arrogantly) Don't worry. A deal is a deal!
+	B_LogEntry( TOPIC_SLEEPERBACK , " I gave Creole the 'Crown of Ice' in hopes of obtaining a powerful artifact called the 'Crown of Demons'! It's the only way I can resist the Sleeper's magic. Its current owner is Eligor, the most powerful demon in this world. I'll be back in a couple of days it is worth visiting Creole again to get the latest instructions... " );
 	DemonCrownRitualDay = Wld_GetDay();
 	HasSleeperDefence = 2;
 	AI_StopProcessInfos(self);
@@ -2386,39 +2387,39 @@ func void DIA_Kreol_Sleeper_Again_Adanos()
 
 func void DIA_Kreol_Sleeper_Again_Sword()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Sword_01_01");	//У меня есть меч Повелитель драконов!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_02");	//Хммм...(задумчиво) Хорошее оружие! Но оно вряд ли заинтересует Элигора.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_03");	//Попробуй предложить что-нибудь еще.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Sword_01_01 " );	// I have the Dragonlord sword!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Sword_01_02 " );	// Hmmm... (thoughtfully) Nice weapon! But it is unlikely to interest Eligor.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Sword_01_03 " );	// Try suggesting something else.
 	EligorNoSword = TRUE;
 };
 
 func void DIA_Kreol_Sleeper_Again_Bow()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Bow_01_01");	//У меня есть лук Цвет Смерти!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Bow_01_02");	//Нет, это все не то.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Bow_01_03");	//Нужно что-то действительно ценное, чтобы произвести впечатление на Элигора!
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Bow_01_01 " );	// I have a Bow Color of Death!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Bow_01_02 " );	// No, that's not it.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Bow_01_03 " );	// Need something really valuable to impress Eligor!
 	EligorNoBow = TRUE;
 };
 
 func void DIA_Kreol_Sleeper_Again_Staff()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Staff_01_01");	//У меня есть посох Гаситель Душ!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Staff_01_02");	//(презрительно) И к чему он владыке демонов, а?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Staff_01_03");	//Лучше хорошенько подумай, прежде чем предлагать ему всякий мусор.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Staff_01_01 " );	// I have a Soul Extinguisher staff!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Staff_01_02 " );	// (contemptuously) And why is he a demon lord, huh?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Staff_01_03 " );	// You'd better think twice before offering him any rubbish.
 	EligorNoStaff = TRUE;
 };
 
 func void DIA_Kreol_Sleeper_Again_Innos()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Innos_01_01");	//У меня есть Глаз Инноса!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_02");	//Хммм...(задумчиво) Древнейший артефакт паладинов?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_03");	//Да, это вполне бы могло заинтересовать Элигора.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_04");	//Думаю, мы поступим так...(задумчиво) Ты сейчас отдашь его мне.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_05");	//А я в свою очередь подготовлю все необходимое для ритуала вызова демона.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_06");	//Согласен?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Innos_01_07");	//Ладно, держи амулет.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Innos_01_01 " );	// I have the Eye of Innos!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_02 " );	// Hmmm... (thoughtfully) The oldest paladin artifact?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_03 " );	// Yes, that might well interest Eligor.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_04 " );	// I think we'll do this... (thoughtfully) You'll give it to me now.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_05 " );	// And I, in turn, will prepare everything necessary for the demon summoning ritual.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_06 " );	// Agree?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Innos_01_07 " );	// Okay, hold the amulet.
 
-	if(Npc_HasItems(hero,ItMi_InnosEye_MIS) >= 1)
+	if (Npc_HasItems(hero,ItMi_InnosEye_MIS) >=  1 )
 	{
 		B_GiveInvItems(other,self,ItMi_InnosEye_MIS,1);
 		Npc_RemoveInvItems(self,ItMi_InnosEye_MIS,1);
@@ -2429,11 +2430,11 @@ func void DIA_Kreol_Sleeper_Again_Innos()
 		Npc_RemoveInvItems(self,ItMi_InnosEye_Discharged_Mis,1);
 	};
 
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_08");	//Отлично! Тогда, попробуй заглянуть ко мне через пару дней.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_09");	//Этого времени мне хватит, чтобы уладить вопрос с самим Элигором.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Innos_01_10");	//Хорошо! Но только не вздумай меня обмануть.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Innos_01_11");	//(надменно) Не беспокойся. Сделка есть сделка!
-	B_LogEntry(TOPIC_SLEEPERBACK,"Я отдал Креолу Глаз Инноса в надежде заполучить могущественный артефакт, называемый 'Венцом Демонов'! Только с его помощью я смогу противостоять магии Спящего. Его нынешний владелец - Элигор, самый могущественный демон этого мира. Через пару дней мне стоит вновь заглянуть к Креолу, чтобы получить последние инструкции...");
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_08 " );	// Great! Then try to visit me in a couple of days.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_09 " );	// This is enough time for me to settle the matter with Eligor himself.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Innos_01_10 " );	// Good! But don't try to fool me.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Innos_01_11 " );	// (arrogantly) Don't worry. A deal is a deal!
+	B_LogEntry( TOPIC_SLEEPERBACK , " I gave the Eye of Innos to Creole in hopes of obtaining a powerful artifact called the 'Crown of Demons'! It's the only way I can resist the Sleeper's magic. Its current owner is Eligor, the most powerful demon in this world. In a couple of days, I'll be standing again drop by Creole for the latest instructions... " );
 	DemonCrownRitualDay = Wld_GetDay();
 	HasSleeperDefence = 3;
 	AI_StopProcessInfos(self);
@@ -2451,7 +2452,7 @@ instance DIA_Kreol_Sleeper_MaskTrade(C_Info)
 
 func int DIA_Kreol_Sleeper_MaskTrade_condition()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -2464,18 +2465,18 @@ func int DIA_Kreol_Sleeper_MaskTrade_condition()
 func void DIA_Kreol_Sleeper_MaskTrade_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_01");	//Ты уже здесь? Хммм...(небрежно) Хорошо! У меня уже практически все готово.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_MaskTrade_01_02");	//Это насчет нашей договоренности?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_03");	//Само собой...(властно) Вот, возьми эту руну! С ее помощью ты сможешь призвать в этот мир самого Элигора.
-	B_GiveInvItems(self,other,ItRu_EligorSummon,1);
-	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_04");	//Но не думай, что это можно сделать там, где тебе вздумается.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_05");	//Отправляйся в старую башню Ксардаса, что в Долине Рудников.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_06");	//Используй там магическую пентаграмму для ритуала вызова.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_07");	//Об остальном ты узнаешь уже у самого Элигора!
-	AI_Output(other,self,"DIA_Kreol_Sleeper_MaskTrade_01_08");	//Но ты же говорил, что...
-	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_09");	//Хватит уже глупых вопросов! Ступай, и не забудь принести мне сердце Спящего, когда убьешь его.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_MaskTrade_01_01 " );	// Are you here already? Hmmm...(carelessly) Good! I have almost everything ready.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_MaskTrade_01_02 " );	// Is this about our deal?
+	AI_Output(self,other, " DIA_Kreol_Sleeper_MaskTrade_01_03 " );	// Of course...(imperiously) Here, take this rune! With its help, you will be able to summon Eligor himself into this world.
+	B_GiveInvItems(self,other,ItRu_EligorSummon, 1 );
+	AI_Output(self,other, " DIA_Kreol_Sleeper_MaskTrade_01_04 " );	// But don't think you can do it wherever you want.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_MaskTrade_01_05 " );	// Go to the old tower of Xardas in the Valley of Mines.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_MaskTrade_01_06 " );	// Use the magical pentagram there for the summoning ritual.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_MaskTrade_01_07 " );	// You will learn about the rest from Eligor himself!
+	AI_Output(other,self, " DIA_Kreol_Sleeper_MaskTrade_01_08 " );	// But you said that...
+	AI_Output(self,other, " DIA_Kreol_Sleeper_MaskTrade_01_09 " );	// No more stupid questions! Go, and don't forget to bring me the Sleeper's heart when you kill him.
 	ReadyToSumEligor = TRUE;
-	B_LogEntry(TOPIC_SLEEPERBACK,"Креол дал мне руну, чтобы я смог вызвать Элигора в этот мир. Место ритуала - магическая пентаграмма в старой башне Ксардаса.");
+	B_LogEntry( TOPIC_SLEEPERBACK , "The Creole gave me a rune to summon Eligor to this world. The place of the ritual is a magical pentagram in the old tower of Xardas. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -2486,7 +2487,7 @@ instance DIA_Kreol_Sleeper_Dead(C_Info)
 	condition = DIA_Kreol_Sleeper_Dead_condition;
 	information = DIA_Kreol_Sleeper_Dead_info;
 	permanent = FALSE;
-	description = "Я убил Спящего!";
+	description = " I killed the Sleeper! " ;
 };
 
 func int DIA_Kreol_Sleeper_Dead_condition()
@@ -2500,13 +2501,13 @@ func int DIA_Kreol_Sleeper_Dead_condition()
 func void DIA_Kreol_Sleeper_Dead_info()
 {
 	B_GivePlayerXP(1500);
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Dead_01_01");	//Я убил Спящего!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_01_02");	//Хорошо. Надеюсь, его темный кристалл души при тебе?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Dead_01_03");	//Это не имеет значения! Я тебе все равно его не отдал бы.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_01_04");	//Глупец! Ну что же, тогда ты сам выбрал свою судьбу.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_01_05");	//Вместо его сердца я заберу твое!
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Dead_01_01 " );	// I killed the Sleeper!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Dead_01_02 " );	// Good. I hope you have his dark soul crystal with you?
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Dead_01_03 " );	// It doesn't matter! I wouldn't give it to you anyway.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Dead_01_04 " );	// Stupid! Well, then you chose your own fate.
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Dead_01_05 " );	// Instead of his heart, I'll take yours!
 	Info_ClearChoices(DIA_Kreol_Sleeper_Dead);
-	Info_AddChoice(DIA_Kreol_Sleeper_Dead,"Можешь так не стараться!",DIA_Kreol_Sleeper_Dead_Ext);
+	Info_AddChoice(DIA_Kreol_Sleeper_Dead, " You don't have to try so hard! " ,DIA_Kreol_Sleeper_Dead_Ext);
 };
 
 func void DIA_Kreol_Sleeper_Dead_Ext()
@@ -2517,23 +2518,23 @@ func void DIA_Kreol_Sleeper_Dead_Ext()
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
 	Snd_Play("MFX_FEAR_CAST");
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Dead_Ext_01_01");	//Можешь так не стараться! Никто тебе не поможет.
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Dead_Ext_01_02");	//Сегодня ты умрешь, ибо такова воля самого Инноса!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_Ext_01_03");	//(усмехаясь) Так значит, это он прислал тебя. Да, теперь я чувствую в тебе его силу!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_Ext_01_04");	//Но тебе это не поможет! Я и один способен с легкостью сокрушить тебя, жалкий червь.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Dead_Ext_01_01 " );	// Don't try so hard! Nobody will help you.
+	AI_Output(other,self, " DIA_Kreol_Sleeper_Dead_Ext_01_02 " );	// Today you will die, for this is the will of Innos himself!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Dead_Ext_01_03 " );	// (chuckles) So he sent you. Yes, now I feel his power in you!
+	AI_Output(self,other, " DIA_Kreol_Sleeper_Dead_Ext_01_04 " );	// But that won't help you! I alone can easily crush you, miserable worm.
 	CanKillKreol = TRUE;
 	KREOL_KILL = TRUE;
 	KREOL_WARN = TRUE;
 	self.guild = GIL_DMT;
 	Npc_SetTrueGuild(self,GIL_DMT);
 	Info_ClearChoices(DIA_Kreol_Sleeper_Dead);
-	Info_AddChoice(DIA_Kreol_Sleeper_Dead,"(закончить разговор)",DIA_Kreol_Sleeper_Dead_End);
+	Info_AddChoice(DIA_Kreol_Sleeper_Dead, " (end call) " ,DIA_Kreol_Sleeper_Dead_End);
 };
 
 func void DIA_Kreol_Sleeper_Dead_End()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	B_Attack(self,other,AR_KILL,1);
 };
 
@@ -2544,7 +2545,7 @@ instance DIA_Kreol_Hromanin(C_Info)
 	condition = DIA_Kreol_Hromanin_condition;
 	information = DIA_Kreol_Hromanin_info;
 	permanent = FALSE;
-	description = "Что тебе известно о Хроманине?";
+	description = " What do you know about Chromanin? " ;
 };
 
 func int DIA_Kreol_Hromanin_condition()
@@ -2558,46 +2559,46 @@ func int DIA_Kreol_Hromanin_condition()
 func void DIA_Kreol_Hromanin_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_01");	//Что тебе известно о Хроманине?
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_02");	//Твои вопросы не перестают меня удивлять. Однако я все же отвечу тебе на этот вопрос.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_03");	//Слово 'хроманин' на языке древних означает сущность любого живого существа. Если точнее – его душу.
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_04");	//А если им называют, скажем, какой-то определенный предмет?
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_05");	//Совершенно неважно, как выглядит сам Хроманин! Им может быть любой предмет.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_06");	//Главное, что этот артефакт имеет одно очень ценное свойство.
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_01 " );	// What do you know about Chromanin?
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_02 " );	// Your questions never cease to amaze me. However, I will still answer this question for you.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_03 " );	// The word 'chromanin' in the language of the ancients means the essence of any living being. More specifically, his soul.
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_04 " );	// And if they call, say, some specific object?
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_05 " );	// It doesn't matter what Chromanin looks like! They can be any item.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_06 " );	// The main thing is that this artifact has one very valuable property.
 	AI_Output(other,self,"DIA_Kreol_Hromanin_01_07");	//Какое?
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_08");	//Хроманин порабощает души всех тех, кто осмелился завладеть им.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_09");	//Не сразу, конечно, постепенно...(зловеще) Изо дня в день он сводит своего обладателя с ума!
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_10");	//И приходит время, когда тот готов отдать все, лишь бы избавиться от этого проклятия.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_11");	//Тогда появляется истинный хозяин артефакта и забирает душу безумца!
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_12");	//А кто его хозяин?
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_13");	//У каждого Хроманина он свой! Я не могу тебе точно сказать, как он выглядит.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_14");	//Мне все еще дорога своя собственная душа.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_15");	//Кстати, а почему ты интересуешься этим?
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_16");	//Хоринис наводнила нежить! Маги Огня полагают, что всему виной именно Хроманин.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_17");	//Глупцы! Какие же они глупцы! Не видят дальше своего носа.
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_18");	//А ты, видимо, знаешь, что явилось тому причиной?
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_19");	//Естественно! Еще бы я этого не знал. Вот только не думай, что я открою тебе эту тайну.
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_20");	//Но у каждой тайны есть и своя цена. Какова твоя?
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_21");	//А торговаться ты умеешь, как я погляжу. Но в данном случае она будет тебе не по карману!
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_22");	//Сначала назови ее, а потом уже делай выводы.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_23");	//Ну что же...(зловеще) Если ты так настаиваешь.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_24");	//Мы с тобой начали этот разговор с вопроса о Хроманине. Вот это, пожалуй, и будет моей ценой!
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_25");	//Ты хочешь, чтобы я достал его для тебя?
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_26");	//(властно) Да, именно этого я и хочу.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_27");	//Мне стало известно, что на этом острове существует один из подобных артефактов.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_28");	//Принеси мне его! Только не вздумай отдать его мне, не избавившись от его хранителя!
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_29");	//Я еще окончательно не выжил из ума, чтобы проститься со своей душой.
-	AI_Output(other,self,"DIA_Kreol_Hromanin_01_30");	//А мою тебе, значит, не жалко.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_01_31");	//Ну, ты ведь сам просил назвать тебе цену. Или она тебя не устраивает?
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_08 " );	// Chromanin enslaves the souls of all those who dare to possess it.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_09 " );	// Not immediately, of course, gradually... (ominously) Day after day, he drives his owner crazy!
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_10 " );	// And the time comes when he is ready to give everything, just to get rid of this curse.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_11 " );	// Then the true owner of the artifact appears and takes the madman's soul!
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_12 " );	// And who is its owner?
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_13 " );	// Each Chromanin has his own! I can't tell you exactly what he looks like.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_14 " );	// I still love my own soul.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_15 " );	// By the way, why are you interested in this?
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_16 " );	// Khorinis has been overrun by the undead! The Fire Mages believe that it is Chromanin who is to blame.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_17 " );	// Fools! What fools they are! Can't see past their nose.
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_18 " );	// And you, apparently, know what was the reason for this?
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_19 " );	// Naturally! Still I wouldn't know. Just don't think that I will reveal this secret to you.
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_20 " );	// But every secret has its price. What is yours?
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_21 " );	// And you know how to bargain, I see. But in this case, it will not be affordable for you!
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_22 " );	// First, name it, and then draw conclusions.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_23 " );	// Well... (ominously) If you insist.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_24 " );	// You and I started this conversation with a question about Chromanin. This, perhaps, will be my price!
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_25 " );	// Do you want me to get it for you?
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_26 " );	// (imperiously) Yes, that's exactly what I want.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_27 " );	// I've learned that one of these artifacts exists on this island.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_28 " );	// Bring it to me! Don't you dare give it to me without getting rid of its keeper!
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_29 " );	// I have not completely lost my mind yet to say goodbye to my soul.
+	AI_Output(other,self, " DIA_Kreol_Hromanin_01_30 " );	// And you don't feel sorry for mine.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_01_31 " );	// Well, you asked for the price yourself. Or does it not suit you?
 	Info_ClearChoices(DIA_Kreol_Hromanin);
-	Info_AddChoice(DIA_Kreol_Hromanin,"Нет, это для меня слишком.",DIA_Kreol_Hromanin_No);
-	Info_AddChoice(DIA_Kreol_Hromanin,"Хорошо! Считай, что мы договорились.",DIA_Kreol_Hromanin_Yes);
+	Info_AddChoice(DIA_Kreol_Hromanin, " No, this is too much for me. " ,DIA_Kreol_Hromanin_No);
+	Info_AddChoice(DIA_Kreol_Hromanin, " Good! Consider that we have agreed. " ,DIA_Kreol_Hromanin_Yes);
 };
 
 func void DIA_Kreol_Hromanin_No()
 {
-	AI_Output(other,self,"DIA_Kreol_Hromanin_No_01_01");	//Нет, это для меня слишком.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_No_01_02");	//Так я и думал. Тогда нам с тобой больше не о чем разговаривать.
+	AI_Output(other,self, " DIA_Kreol_Hromanin_No_01_01 " );	// No, this is too much for me.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_No_01_02 " );	// That's what I thought. Then we have nothing more to talk about.
 	MIS_DarkOrden = LOG_Failed;
 	B_LogEntry_Failed(TOPIC_DarkOrden);
 	AI_StopProcessInfos(self);
@@ -2605,26 +2606,26 @@ func void DIA_Kreol_Hromanin_No()
 
 func void DIA_Kreol_Hromanin_Yes()
 {
-	AI_Output(other,self,"DIA_Kreol_Hromanin_Yes_01_01");	//Хорошо! Считай, что мы договорились.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_02");	//Отлично! Тогда не теряй времени! Ступай и принеси мне этот артефакт.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_03");	//Да, и вот еще что...
-	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_04");	//Перед тем как умереть, оставь мне какую-нибудь весточку о том, где потом искать твое бездыханное тело.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_05");	//Думаю, из тебя получится отличный скелет-слуга! В меру исполнительный и в меру глупый.
-	AI_Output(other,self,"DIA_Kreol_Hromanin_Yes_01_06");	//Даже не думай об этом!
-	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_07");	//(посмеивается)
+	AI_Output(other,self, " DIA_Kreol_Hromanin_Yes_01_01 " );	// Good! Consider that we have agreed.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_Yes_01_02 " );	// Great! Then don't waste your time! Go and bring me this artifact.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_Yes_01_03 " );	// Yes, and one more thing...
+	AI_Output(self,other, " DIA_Kreol_Hromanin_Yes_01_04 " );	// Before you die, leave me some news about where to look for your lifeless body later.
+	AI_Output(self,other, " DIA_Kreol_Hromanin_Yes_01_05 " );	// I think you'll make a great skeleton servant! Moderately executive and moderately stupid.
+	AI_Output(other,self, " DIA_Kreol_Hromanin_Yes_01_06 " );	// Don't even think about it!
+	AI_Output(self,other, " DIA_Kreol_Hromanin_Yes_01_07 " );	// (chuckles)
 	KreolOpenHromaninSaga = TRUE;
-	B_LogEntry(TOPIC_DarkOrden,"Я согласился на сделку с Креолом, и теперь мне надо будет отыскать для него этот Хроманин. Тогда он расскажет, почему Хоринис наводнила нежить.");
+	B_LogEntry(TOPIC_DarkOrden, " I've agreed to a deal with Creole, and now I'll have to find this Chromanin for him. Then he'll tell you why Khorinis has been overrun by the undead. " );
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Kreol_HromaninDone(C_Info)
+instance DIA_Kreol_HromaninDone (C_Info)
 {
 	npc = none_102_kreol;
 	nr = 1;
 	condition = DIA_Kreol_HromaninDone_condition;
 	information = DIA_Kreol_HromaninDone_info;
 	permanent = FALSE;
-	description = "Я принес тебе Хроманин.";
+	description = " I brought you Chromanin. " ;
 };
 
 func int DIA_Kreol_HromaninDone_condition()
@@ -2638,29 +2639,29 @@ func int DIA_Kreol_HromaninDone_condition()
 func void DIA_Kreol_HromaninDone_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Kreol_HromaninDone_01_01");	//Я принес тебе Хроманин.
-	AI_Output(self,other,"DIA_Kreol_HromaninDone_01_02");	//Дай мне взглянуть на него!
-	AI_Output(other,self,"DIA_Kreol_HromaninDone_01_03");	//Вот, держи.
+	AI_Output(other,self, " DIA_Kreol_HromaninDone_01_01 " );	// I brought you Chromanin.
+	AI_Output(self,other, " DIA_Kreol_HromaninDone_01_02 " );	// Let me see it!
+	AI_Output(other,self, " DIA_Kreol_HromaninDone_01_03 " );	// Here, take this.
 	B_GiveInvItems(other,self,ITWR_HROMANIN,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Kreol_HromaninDone_01_04");	//Хммм...(оценивающе) Так значит, это всего лишь обычная книга!
-	AI_Output(self,other,"DIA_Kreol_HromaninDone_01_05");	//И судя по тому, что я чувствую, глядя в нее - ее хранитель уже мертв.
-	AI_Output(other,self,"DIA_Kreol_HromaninDone_01_06");	//Да, я убил его.
-	AI_Output(self,other,"DIA_Kreol_HromaninDone_01_07");	//Признаться, я немного удивлен, что тебе удалось остаться в живых.
-	AI_Output(self,other,"DIA_Kreol_HromaninDone_01_08");	//Хотя это могло оказаться всего лишь случайным стечением обстоятельств.
-	AI_Output(self,other,"DIA_Kreol_HromaninDone_01_09");	//В любом случае ты заслужил свою награду.
+	AI_Output(self,other, " DIA_Kreol_HromaninDone_01_04 " );	// Hmmm...(assessing) So it's just an ordinary book!
+	AI_Output(self,other, " DIA_Kreol_HromaninDone_01_05 " );	// And judging by how I feel looking into her, her keeper is already dead.
+	AI_Output(other,self, " DIA_Kreol_HromaninDone_01_06 " );	// Yes, I killed him.
+	AI_Output(self,other, " DIA_Kreol_HromaninDone_01_07 " );	// Frankly, I'm a little surprised that you managed to stay alive.
+	AI_Output(self,other, " DIA_Kreol_HromaninDone_01_08 " );	// Although it could be just a coincidence.
+	AI_Output(self,other, " DIA_Kreol_HromaninDone_01_09 " );	// Either way, you deserve your reward.
 	DO_KreolTell = TRUE;
-	B_LogEntry(TOPIC_DarkOrden,"Я принес Хроманин Креолу.");
+	B_LogEntry(TOPIC_DarkOrden, " I brought Chromanin to Creole. " );
 };
 
-instance DIA_Kreol_TellDarkOrden(C_Info)
+instance DIA_Kreol_TellDarkOrden (C_Info)
 {
 	npc = none_102_kreol;
 	nr = 1;
 	condition = DIA_Kreol_TellDarkOrden_condition;
 	information = DIA_Kreol_TellDarkOrden_info;
 	permanent = FALSE;
-	description = "Пришла пора ответить на мой вопрос.";
+	description = " It's time to answer my question. " ;
 };
 
 func int DIA_Kreol_TellDarkOrden_condition()
@@ -2673,28 +2674,28 @@ func int DIA_Kreol_TellDarkOrden_condition()
 
 func void DIA_Kreol_TellDarkOrden_info()
 {
-	AI_Output(other,self,"DIA_Kreol_TellDarkOrden_01_01");	//Пришла пора ответить на мой вопрос.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_02");	//(небрежно) Как скажешь. Во всем виноваты паладины! Такой ответ тебя устроит?
-	AI_Output(other,self,"DIA_Kreol_TellDarkOrden_01_03");	//Паладины?!
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_04");	//Да, именно они. Тебя это очень сильно удивляет?
-	AI_Output(other,self,"DIA_Kreol_TellDarkOrden_01_05");	//Еще как. Может объяснишь, что ты имел в виду?
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_06");	//(смеется) Без меня тебе никогда не понять суть происходящего. Не так ли?
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_07");	//Но так уж и быть, сжалюсь над тобой и немного приоткрою завесу этой тайны.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_08");	//Слушай внимательно! Повторять дважды я не стану.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_09");	//Как ты, наверное, знаешь, орден паладинов Инноса насчитывает уже не одну тысячу лет.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_10");	//И на протяжении всего этого времени они только и делают, что выполняют любой каприз их божка!
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_11");	//Однако некоторые из них были настолько фанатичны и преданны своему богу, что порой даже не отличали добра от зла.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_12");	//Они творили ужасные вещи от имени Инноса! И не было этому конца...
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_13");	//Глядя на них и на все происходящее вокруг, Иннос не мог больше терпеть этих бесчинств.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_14");	//Поэтому он лишил этих паладинов своей божественной силы и оставил их наедине только лишь с одной их верой.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_15");	//Многие из тех паладинов были похоронены на этом острове. Со славой и почестями, как и полагается воинам ордена.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_16");	//Однако после смерти они восстали в виде могущественной нежити.
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_17");	//И теперь они полководцы бесчисленной армии мертвых, которые ведут свои легионы во славу Белиара!
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_18");	//Теперь тебе понятно?
-	AI_Output(other,self,"DIA_Kreol_TellDarkOrden_01_19");	//Значит, эти мертвые паладины и есть причина, по которой нежить атаковала Хоринис?
-	AI_Output(self,other,"DIA_Kreol_TellDarkOrden_01_20");	//Именно так! И эти нападения не прекратятся до тех пор, пока кто-нибудь не упокоит души этих проклятых воинов.
+	AI_Output(other,self, " DIA_Kreol_TellDarkOrden_01_01 " );	// It's time to answer my question.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_02 " );	// (carelessly) As you say. It's all the paladins' fault! Will this answer suit you?
+	AI_Output(other,self, " DIA_Kreol_TellDarkOrden_01_03 " );	// Paladins?!
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_04 " );	// Yes, they are. Does this surprise you a lot?
+	AI_Output(other,self, " DIA_Kreol_TellDarkOrden_01_05 " );	// More like. Can you explain what you mean?
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_06 " );	// (laughs) Without me, you will never understand the essence of what is happening. Is not it?
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_07 " );	// But so be it, I will take pity on you and slightly open the veil of this mystery.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_08 " );	// Listen carefully! I won't repeat myself twice.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_09 " );	// As you probably know, Innos' order of paladins has been around for thousands of years.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_10 " );	// And during all this time, they do nothing but fulfill their god's every whim!
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_11 " );	// However, some of them were so fanatical and devoted to their god that sometimes they did not even distinguish good from evil.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_12 " );	// They did terrible things in the name of Innos! And there was no end to it...
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_13 " );	// Looking at them and at everything happening around, Innos could no longer endure these atrocities.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_14 " );	// Therefore, he stripped these paladins of his divine power and left them alone with their faith alone.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_15 " );	// Many of those paladins were buried on this island. With glory and honors, as befits the warriors of the order.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_16 " );	// However, when they died, they resurfaced as powerful undead.
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_17 " );	// And now they are the commanders of the countless army of the dead, who lead their legions to the glory of Beliar!
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_18 " );	// Do you understand now?
+	AI_Output(other,self, " DIA_Kreol_TellDarkOrden_01_19 " );	// So these dead paladins are the reason the undead attacked Khorinis?
+	AI_Output(self,other, " DIA_Kreol_TellDarkOrden_01_20 " );	// That's right! And these attacks will not stop until someone puts the souls of these damned warriors to rest.
 	DO_KnowAboutDO = TRUE;
-	B_LogEntry(TOPIC_DarkOrden,"Креол рассказал мне историю про паладинов, которые при жизни были настолько фанатично преданы Инносу, что порой творили просто ужасающие вещи от его имени. Иннос не мог этого позволить и лишил их своей силы и покровительства. Многие из этих паладинов были похоронены именно на этом острове. Но после своей смерти они восстали в виде могущественной нежити и теперь ведут легионы мертвых в бой во славу Белиара! Пока их души не будут упокоены, нападения нежити на Хоринис не прекратятся.");
+	B_LogEntry(TOPIC_DarkOrden, " Creole told me a story about paladins who, during their lifetime, were so fanatically devoted to Innos that sometimes they did simply horrific things on his behalf. Innos could not allow this and deprived them of his power and protection. Many of these paladins were buried it is on this island. But after their death, they rose in the form of powerful undead and now lead the legions of the dead into battle for the glory of Beliar! Until their souls are laid to rest, the attacks of the undead on Khorinis will not stop. " );
 };
 
 instance DIA_Kreol_MAXROBE(C_Info)
@@ -2704,12 +2705,12 @@ instance DIA_Kreol_MAXROBE(C_Info)
 	condition = DIA_Kreol_MAXROBE_condition;
 	information = DIA_Kreol_MAXROBE_info;
 	permanent = FALSE;
-	description = "Как насчет робы получше?";
+	description = " How about a better robe? " ;
 };
 
 func int DIA_Kreol_MAXROBE_condition()
 {
-	if((hero.guild == GIL_KDM) && (Kapitel >= 5) && (Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 6) && (LastRobeKDM == FALSE) && (MAXROBE_Permanent == FALSE))
+	if ((hero.guild ==  GIL_KDM ) && (Chapter >=  5 ) && (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE ) ==  6 ) && (LastRobeKDM ==  FALSE ) && (MAXROBE_Permanent ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -2717,9 +2718,9 @@ func int DIA_Kreol_MAXROBE_condition()
 
 func void DIA_Kreol_MAXROBE_info()
 {
-	AI_Output(other,self,"DIA_Kreol_MAXROBE_01_00");	//Как насчет робы получше?
-	AI_Output(self,other,"DIA_Kreol_MAXROBE_01_01");	//Поскольку ты владеешь всеми шестью кругами магии, ты достоин носить робу архимага Тьмы!
-	AI_Output(self,other,"DIA_Kreol_MAXROBE_01_02");	//Однако тебе придется за нее заплатить!
+	AI_Output(other,self, " DIA_Kreol_MAXROBE_01_00 " );	// How about a better robe?
+	AI_Output(self,other, " DIA_Kreol_MAXROBE_01_01 " );	// Since you are proficient in all six circles of magic, you are worthy to wear the Robe of the Archmage of Darkness!
+	AI_Output(self,other, " DIA_Kreol_MAXROBE_01_02 " );	// However, you will have to pay for it!
 	AI_Output(other,self,"DIA_Kreol_MAXROBE_01_03");	//Понимаю.
 	LastRobeKDM = TRUE;
 };
@@ -2731,12 +2732,12 @@ instance DIA_Kreol_MAXROBE_Buy(C_Info)
 	condition = DIA_Kreol_MAXROBE_Buy_condition;
 	information = DIA_Kreol_MAXROBE_Buy_info;
 	permanent = TRUE;
-	description = "Продай мне робу архимага Тьмы. (Цена: 30000 монет)";
+	description = " Sell me the Robe of the Archmage of Darkness. (Price: 30,000 coins) " ;
 };
 
 func int DIA_Kreol_MAXROBE_Buy_condition()
 {
-	if((hero.guild == GIL_KDM) && (LastRobeKDM == TRUE) && (MAXROBE_Permanent == FALSE))
+	if (( hero . guild ==  GIL_KDM ) && ( LastRobeKDM ==  TRUE ) && ( MAXROBE_Permanent ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -2744,21 +2745,21 @@ func int DIA_Kreol_MAXROBE_Buy_condition()
 
 func void DIA_Kreol_MAXROBE_Buy_info()
 {
-	AI_Output(other,self,"DIA_Kreol_MAXROBE_Buy_01_00");	//Продай мне робу архимага Тьмы!
+	AI_Output(other,self, " DIA_Kreol_MAXROBE_Buy_01_00 " );	// Sell me the robe of the Archmage of Darkness!
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 30000)
 	{
 		B_GiveInvItems(other,self,ItMi_Gold,30000);
 		Npc_RemoveInvItems(self,ItMi_Gold,30000);
-		AI_Output(self,other,"DIA_Kreol_MAXROBE_Buy_01");	//Хорошо! Держи ее.
-		AI_Output(self,other,"DIA_Kreol_MAXROBE_Buy_02");	//Это огромная честь носить подобное одеяние. Помни об этом!
+		AI_Output(self,other, " DIA_Kreol_MAXROBE_Buy_01 " );	// Good! Hold her.
+		AI_Output(self,other, " DIA_Kreol_MAXROBE_Buy_02 " );	// It's a great honor to wear such an attire. Remember this!
 		CreateInvItems(self,itar_kdm_sh,1);
 		B_GiveInvItems(self,other,itar_kdm_sh,1);
 		MAXROBE_Permanent = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Kreol_MAXROBE_Buy_01_03");	//У тебя недостаточно золота!
+		AI_Output(self,other, " DIA_Kreol_MAXROBE_Buy_01_03 " );	// You don't have enough gold!
 	};
 };
 
@@ -2769,7 +2770,7 @@ instance DIA_Kreol_Nergal(C_Info)
 	condition = DIA_Kreol_Nergal_condition;
 	information = DIA_Kreol_Nergal_info;
 	permanent = FALSE;
-	description = "Ты случайно не знаешь, как можно попасть в башню Нергала?";
+	description = " Do you happen to know how to get into Nergal's tower? " ;
 };
 
 func int DIA_Kreol_Nergal_condition()
@@ -2783,13 +2784,13 @@ func int DIA_Kreol_Nergal_condition()
 func void DIA_Kreol_Nergal_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Kreol_Nergal_01_00");	//Ты случайно не знаешь, как попасть в башню Нергала?
-	AI_Output(self,other,"DIA_Kreol_Nergal_01_01");	//(надменно) Конечно, знаю. Через дверь! Вот только она заперта.
-	AI_Output(other,self,"DIA_Kreol_Nergal_01_02");	//А где мне взять ключ?
-	AI_Output(self,other,"DIA_Kreol_Nergal_01_03");	//Ключ от той двери находится у меня.
-	AI_Output(self,other,"DIA_Kreol_Nergal_01_04");	//Если хочешь, я могу отдать его тебе. Только там тебя ничего не ждет, кроме смерти.
-	AI_Output(other,self,"DIA_Kreol_Nergal_01_05");	//Просто дай его мне. Хорошо?
-	AI_Output(self,other,"DIA_Kreol_Nergal_01_06");	//(презрительно) Ладно, если тебе не терпится умереть - возьми его!
+	AI_Output(other,self, " DIA_Kreol_Nergal_01_00 " );	// Do you happen to know how to get to Nergal's tower?
+	AI_Output(self,other, " DIA_Kreol_Nergal_01_01 " );	// (arrogantly) Of course I do. Through the door! It's just that it's locked.
+	AI_Output(other,self, " DIA_Kreol_Nergal_01_02 " );	// Where can I get the key?
+	AI_Output(self,other, " DIA_Kreol_Nergal_01_03 " );	// I have the key to that door.
+	AI_Output(self,other, " DIA_Kreol_Nergal_01_04 " );	// If you want, I can give it to you. Only there you will find nothing but death.
+	AI_Output(other, self, " DIA_Kreol_Nergal_01_05 " );	// Just give it to me. Good?
+	AI_Output(self,other, " DIA_Kreol_Nergal_01_06 " );	// (contemptuously) Well, if you can't wait to die - take it!
 	B_GiveInvItems(self,other,itke_darktower_01,1);
 	KreolGiveKey = TRUE;
 	AI_StopProcessInfos(self);
@@ -2802,7 +2803,7 @@ instance DIA_Kreol_DarkMageBuySwords(C_Info)
 	condition = DIA_Kreol_DarkMageBuySwords_condition;
 	information = DIA_Kreol_DarkMageBuySwords_info;
 	permanent = FALSE;
-	description = "Тебя могло бы заинтересовать это оружие?";
+	description = " Could you be interested in this weapon? " ;
 };
 
 func int DIA_Kreol_DarkMageBuySwords_condition()
@@ -2816,19 +2817,19 @@ func int DIA_Kreol_DarkMageBuySwords_condition()
 func void DIA_Kreol_DarkMageBuySwords_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Kreol_DarkMageBuySwords_01_00");	//Тебя могло бы заинтересовать это оружие?
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwords_01_01");	//(с интересом) Дай мне взглянуть на него.
-	AI_Output(other,self,"DIA_Kreol_DarkMageBuySwords_01_02");	//Вот, держи.
+	AI_Output(other,self, " DIA_Kreol_DarkMageBuySwords_01_00 " );	// Would you be interested in this weapon?
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwords_01_01 " );	// (with interest) Let me take a look at it.
+	AI_Output(other,self, " DIA_Kreol_DarkMageBuySwords_01_02 " );	// Here, take this.
 	B_GiveInvItems(other,self,ITMW_FAKESWORD_01,1);
 	Npc_RemoveInvItems(self,ITMW_FAKESWORD_01,1);
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwords_01_03");	//Так-так...(разглядывая) Да, это интересная вещица!
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwords_01_04");	//Я ощущаю в ней легкое присутствие темной магии Белиара.
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwords_01_05");	//Ты правильно поступил, что принес его именно мне! В неумелых руках подобные вещи могут быть смертельно опасными.
-	AI_Output(other,self,"DIA_Kreol_DarkMageBuySwords_01_06");	//Ну хорошо. И что дальше?
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwords_01_07");	//Все очень просто! Этот клинок я оставлю у себя для дальнейшего изучения его свойств.
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwords_01_08");	//А если вдруг ты найдешь еще что-нибудь подобное, приноси мне!
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwords_01_09");	//И можешь не переживать насчет своей награды! Я щедро отблагодарю тебя за это.
-	B_LogEntry(Topic_OutTrader,"Креол купит у меня все ритуальное оружие Масиаф, что я принесу ему.");
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwords_01_03 " );	// Well, well... (looking) Yes, this is an interesting little thing!
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwords_01_04 " );	// I sense a slight presence of Beliar's dark magic in her.
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwords_01_05 " );	// You did the right thing bringing it to me! In the wrong hands, these things can be deadly.
+	AI_Output(other,self, " DIA_Kreol_DarkMageBuySwords_01_06 " );	// Okay. So, what is next?
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwords_01_07 " );	// It's very simple! I will keep this blade for further study of its properties.
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwords_01_08 " );	// And if you happen to find something else like that, bring it to me!
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwords_01_09 " );	// And don't worry about your reward! I will thank you very much for this.
+	B_LogEntry(Topic_OutTrader, "The Creole will buy from me all the Masyaf ritual weapons that I bring him. " );
 	KreolBuyMasiafSwrods = TRUE;
 };
 
@@ -2839,7 +2840,7 @@ instance DIA_Kreol_DarkMageBuySwordsDone(C_Info)
 	condition = DIA_Kreol_DarkMageBuySwordsDone_condition;
 	information = DIA_Kreol_DarkMageBuySwordsDone_info;
 	permanent = TRUE;
-	description = "Я принес тебе еще ритуального оружия.";
+	description = " I brought you more ritual weapons. " ;
 };
 
 func int DIA_Kreol_DarkMageBuySwordsDone_condition()
@@ -2857,15 +2858,15 @@ func void DIA_Kreol_DarkMageBuySwordsDone_info()
 	SummSword = FALSE;
 	SummSword = Npc_HasItems(hero,ITMW_FAKESWORD_01);
 
-	AI_Output(other,self,"DIA_Kreol_DarkMageBuySwordsDone_01_00");	//Я принес тебе еще ритуального оружия.
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwordsDone_01_01");	//Отлично! Давай его сюда.
+	AI_Output(other,self, " DIA_Kreol_DarkMageBuySwordsDone_01_00 " );	// I brought you more ritual weapons.
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwordsDone_01_01 " );	// Great! Give it here.
 	B_GiveInvItems(other,self,ITMW_FAKESWORD_01,Npc_HasItems(other,ITMW_FAKESWORD_01));
 	Npc_RemoveInvItems(self,ITMW_FAKESWORD_01,Npc_HasItems(self,ITMW_FAKESWORD_01));
-	AI_Output(other,self,"DIA_Kreol_DarkMageBuySwordsDone_01_03");	//А как насчет обещанной награды?
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwordsDone_01_04");	//Не волнуйся... Вот, возьми это золото!
+	AI_Output(other,self, " DIA_Kreol_DarkMageBuySwordsDone_01_03 " );	// What about the promised reward?
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwordsDone_01_04 " );	// Don't worry... Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,SummSword * 500);
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwordsDone_01_05");	//Оно будет для тебя самой подходящей наградой.
-	AI_Output(self,other,"DIA_Kreol_DarkMageBuySwordsDone_01_06");	//А теперь можешь идти. У меня нет времени на болтовню.
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwordsDone_01_05 " );	// It will be the most suitable reward for you.
+	AI_Output(self,other, " DIA_Kreol_DarkMageBuySwordsDone_01_06 " );	// And now you can go. I don't have time for chatting.
 	AI_StopProcessInfos(self);
 };
 
@@ -2876,12 +2877,12 @@ instance DIA_Kreol_BuyWeapons(C_Info)
 	condition = DIA_Kreol_BuyWeapons_condition;
 	information = DIA_Kreol_BuyWeapons_info;
 	permanent = TRUE;
-	description = "У меня есть для тебя проклятое оружие.";
+	description = " I have a cursed weapon for you. " ;
 };
 
 func int DIA_Kreol_BuyWeapons_condition()
 {
-	if((Npc_KnowsInfo(hero,DIA_Xardas_Mechi) == TRUE) && (KreolBuyWeap == TRUE))
+	if (( Npc_KnowsInfo( hero , DIA_Xardas_Mechi ) ==  TRUE ) && ( CreoleBuyWeap ==  TRUE ))
 	{
 		if((Npc_HasItems(hero,ItMw_1H_ChelDrak_Left) > 0) || (Npc_HasItems(hero,ItMw_1H_ChelDrak_Right) > 0) || (Npc_HasItems(hero,ItMw_2H_ShadowBlade_Xert) > 0) || (Npc_HasItems(hero,ITMW_SHADOWPRIEST_Elair) > 0) || (Npc_HasItems(hero,ITMW_SHADOWPRIEST_Ober) > 0) || (Npc_HasItems(hero,ItMw_PlagueStaff) > 0) || (Npc_HasItems(hero,ItMw_SoulKeeperStaff) > 0) || (Npc_HasItems(hero,ITMW_1H_DoomSpeer_Elite) > 0) || (Npc_HasItems(hero,ITMW_2H_DOOMAXE) > 0) || (Npc_HasItems(hero,ITMW_2H_HAOSHAND) > 0) || (Npc_HasItems(hero,ITMW_2H_RAVENELITE) > 0) || (Npc_HasItems(hero,ITMW_1H_GHOSTSWORD) > 0) || (Npc_HasItems(hero,ItMw_Doom_OldPiratensaebel) > 0) || (Npc_HasItems(hero,ItAr_Shield_01_Damn) > 0) || (Npc_HasItems(hero,ItAr_Shield_02_Damn) > 0) || (Npc_HasItems(hero,ItAr_Shield_03_Damn) > 0) || (Npc_HasItems(hero,ITMW_1H_DOOMSPEER) > 0) || (Npc_HasItems(hero,ITMW_1H_DOOMSWORD) > 0) || (Npc_HasItems(hero,ITMW_2H_DRACONSWORD_DEAD) > 0) || (Npc_HasItems(hero,ITMW_1H_DOOMSWORD_Elite) > 0) || (Npc_HasItems(hero,ITMW_2H_DOOMSWORD) > 0) || (Npc_HasItems(hero,ITMW_2H_DOOMSWORD_PreElite) > 0) || (Npc_HasItems(hero,ITMW_SHADOWPRIEST_Elite) > 0) || (Npc_HasItems(hero,ITMW_SHADOWPRIEST) > 0) || (Npc_HasItems(hero,ItRw_Crossbow_Undead) > 0) || (Npc_HasItems(hero,ItRw_Undead) > 0) || (Npc_HasItems(hero,ITMW_2H_DOOMSWORD_Elite) > 0))
 		{
@@ -2896,10 +2897,10 @@ func void DIA_Kreol_BuyWeapons_info()
 	var int goldplus;
 	var int goldplus_all;
 
-	goldplus = FALSE;
+	goldplus = FALSE ;
 	goldplus_all = FALSE;
 
-	AI_Output(other,self,"DIA_Xardas_BuyWeapons_01_00");	//У меня есть для тебя проклятое оружие.
+	AI_Output(other,self, " DIA_Xardas_BuyWeapons_01_00 " );	// I have a cursed weapon for you.
 
 	if(Npc_HasItems(hero,ItMw_1H_ChelDrak_Left) > 0)
 	{
@@ -3064,6 +3065,6 @@ func void DIA_Kreol_BuyWeapons_info()
 		goldplus_all = goldplus_all + (goldplus * 10);
 	};
 
-	AI_Output(self,other,"DIA_KREOL_Kill_Done_Rings_01_13");	//Вот, забирай свою награду и проваливай отсюда!
+	AI_Output(self,other, " DIA_KREOL_Kill_Done_Rings_01_13 " );	// Here, take your reward and get the hell out of here!
 	B_GiveInvItems(self,other,ItMi_Gold,goldplus_all);
 };
