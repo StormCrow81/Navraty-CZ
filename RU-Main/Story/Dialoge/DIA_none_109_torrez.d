@@ -1,4 +1,5 @@
 
+
 instance DIA_NONE_109_TORREZ_EXIT(C_Info)
 {
 	npc = none_109_torrez;
@@ -21,18 +22,18 @@ func void dia_none_109_torrez_exit_info()
 };
 
 
-instance DIA_NONE_109_TORREZ_HALLO(C_Info)
+instance DIA_NONE_109_TORREZ_HALLO (C_Info)
 {
 	npc = none_109_torrez;
 	nr = 1;
 	condition = dia_none_109_torrez_hallo_condition;
-	information = dia_none_109_torrez_hallo_info;
+	information = day_none_109_torrez_hallo_info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_none_109_torrez_hallo_condition()
+func int day_none_109_torrez_hallo_condition()
 {
 	if(Npc_IsInState(self,ZS_Talk))
 	{
@@ -40,14 +41,14 @@ func int dia_none_109_torrez_hallo_condition()
 	};
 };
 
-func void dia_none_109_torrez_hallo_info()
+func void day_none_109_torrez_hallo_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(other,self,"DIA_NONE_109_Torrez_HALLO_01_00");	//Приветствую тебя, маг!
-	AI_Output(self,other,"DIA_NONE_109_Torrez_HALLO_01_01");	//Да пребудет с тобой Иннос...(мертвым голосом) Что тебе нужно от меня?
-	AI_Output(other,self,"DIA_NONE_109_Torrez_HALLO_01_02");	//Мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_NONE_109_Torrez_HALLO_01_03");	//Боюсь, я ничем не смогу тебе помочь...
-	AI_Output(self,other,"DIA_NONE_109_Torrez_HALLO_01_04");	//Обратись лучше к мастеру Корристо. Возможно, он выслушает твою просьбу.
+	AI_Output(other,self, " DIA_NONE_109_Torrez_HALLO_01_00 " );	// Greetings, mage!
+	AI_Output(self,other, " DIA_NONE_109_Torrez_HALLO_01_01 " );	// May Innos be with you... (dead voice) What do you want from me?
+	AI_Output(other,self, " DIA_NONE_109_Torrez_HALLO_01_02 " );	// I need your help.
+	AI_Output(self,other, " DIA_NONE_109_Torrez_HALLO_01_03 " );	// I'm afraid I can't help you...
+	AI_Output(self,other, " DIA_NONE_109_Torrez_HALLO_01_04 " );	// You'd better go to Master Corristo. Perhaps he will listen to your request.
 	AI_StopProcessInfos(self);
 };
 
