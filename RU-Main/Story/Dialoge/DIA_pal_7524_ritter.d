@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_7524_EXIT(C_Info)
 {
 	npc = pal_7524_ritter;
@@ -28,13 +29,13 @@ instance DIA_PAL_7524_PASS(C_Info)
 	condition = dia_pal_7524_pass_condition;
 	information = dia_pal_7524_pass_info;
 	permanent = FALSE;
-	description = "Что тут находится?";
+	description = " What's in here? " ;
 };
 
 
 func int dia_pal_7524_pass_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -42,10 +43,10 @@ func int dia_pal_7524_pass_condition()
 
 func void dia_pal_7524_pass_info()
 {
-	AI_Output(other,self,"DIA_PAL_7524_Pass_01_00");	//Что тут находится?
-	AI_Output(self,other,"DIA_PAL_7524_Pass_01_01");	//Тут расположен лагерь паладинов.
-	AI_Output(self,other,"DIA_PAL_7524_Pass_01_02");	//После стычки с орками нам пришлось отойти сюда и занять оборону.
-	AI_Output(self,other,"DIA_PAL_7524_Pass_01_03");	//Но вскоре после этого тут вырос этот лес, и орки отступили.
+	AI_Output(other,self, " DIA_PAL_7524_Pass_01_00 " );	// What's in here?
+	AI_Output(self,other, " DIA_PAL_7524_Pass_01_01 " );	// There is a paladin camp here.
+	AI_Output(self,other, " DIA_PAL_7524_Pass_01_02 " );	// After the skirmish with the orcs, we had to retreat here and take up defenses.
+	AI_Output(self,other, " DIA_PAL_7524_Pass_01_03 " );	// But shortly after that, this forest grew here, and the orcs retreated.
 };
 
 
@@ -62,7 +63,7 @@ instance DIA_PAL_7524_TRESPASS(C_Info)
 
 func int dia_pal_7524_trespass_condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -70,10 +71,10 @@ func int dia_pal_7524_trespass_condition()
 
 func void dia_pal_7524_trespass_info()
 {
-	AI_Output(self,other,"DIA_PAL_7524_TRESPASS_01_00");	//СТОЙ! Именем Инноса, отвечай - КТО ТЫ?!
-	AI_Output(other,self,"DIA_PAL_7524_TRESPASS_01_01");	//Не волнуйся! Я пришел из замка.
-	AI_Output(self,other,"DIA_PAL_7524_TRESPASS_01_02");	//Да? (с сомнением) Ну, хорошо, проходи.
-	AI_Output(self,other,"DIA_PAL_7524_TRESPASS_01_03");	//Только не создавай тут проблем - у нас их и так предостаточно.
+	AI_Output(self,other, " DIA_PAL_7524_TRESPASS_01_00 " );	// STOP! In the name of Innos, answer - WHO ARE YOU?!
+	AI_Output(other,self, " DIA_PAL_7524_TRESPASS_01_01 " );	// Don't worry! I have come from the castle.
+	AI_Output(self,other, " DIA_PAL_7524_TRESPASS_01_02 " );	// Yes? (doubtfully) All right, come on in.
+	AI_Output(self,other, " DIA_PAL_7524_TRESPASS_01_03 " );	// Just don't create problems here - we already have enough of them.
 };
 
 
@@ -84,7 +85,7 @@ instance DIA_PAL_7524_PERM2(C_Info)
 	condition = dia_pal_7524_perm2_condition;
 	information = dia_pal_7524_perm2_info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 
@@ -95,8 +96,8 @@ func int dia_pal_7524_perm2_condition()
 
 func void dia_pal_7524_perm2_info()
 {
-	AI_Output(other,self,"DIA_PAL_7524_Perm2_01_00");	//Как обстановка?
-	AI_Output(self,other,"DIA_PAL_7524_Perm2_01_01");	//Пока все спокойно.
+	AI_Output(other,self, " DIA_PAL_7524_Perm2_01_00 " );	// How are things?
+	AI_Output(self,other, " DIA_PAL_7524_Perm2_01_01 " );	// So far so good.
 	AI_StopProcessInfos(self);
 };
 
