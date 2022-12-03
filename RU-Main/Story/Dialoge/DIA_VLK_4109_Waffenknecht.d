@@ -1,10 +1,11 @@
 
+
 instance DIA_WAFFEN4109_EXIT(C_Info)
 {
 	npc = VLK_4109_Waffenknecht;
 	nr = 999;
 	condition = dia_waffen4109_exit_condition;
-	information = dia_waffen4109_exit_info;
+	information = dia_waffe4109_exit_info;
 	permanent = TRUE;
 	description = Dialog_Ende;
 };
@@ -21,13 +22,13 @@ func void dia_waffen4109_exit_info()
 };
 
 
-instance DIA_WAFFEN4109_HALLO(C_Info)
+instance DIA_WAFFEN4109_HELLO (C_Info)
 {
 	npc = VLK_4109_Waffenknecht;
 	nr = 1;
 	condition = dia_waffen4109_hallo_condition;
-	information = dia_waffen4109_hallo_info;
-	description = "Эй, как дела?";
+	information = dia_waffe4109_hello_info;
+	description = " Hey, how are you? " ;
 	permanent = TRUE;
 };
 
@@ -40,27 +41,27 @@ func int dia_waffen4109_hallo_condition()
 
 var int waffen4109firsttime;
 
-func void dia_waffen4109_hallo_info()
+func void dia_waffe4109_hello_info()
 {
-	AI_Output(other,self,"DIA_Waffen4109_HALLO_15_00");	//Эй, как дела?
+	AI_Output(other,self, " DIA_Waffen4109_HALLO_15_00 " );	// Hey, how are you?
 	if(COOK1107_GOBASE == TRUE)
 	{
-		AI_Output(self,other,"DIA_Waffen4109_HALLO_03_01");	//Этот чертов повар удрал, и мне приходится кашеварить за него.
+		AI_Output(self,other, " DIA_Waffen4109_HALLO_03_01 " );	// That damn cook's gone and I have to cook for him.
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Waffen4109_HALLO_03_02");	//Думаешь, это здорово - целый день распиливать тут эти ящики?
+		AI_Output(self,other, " DIA_Waffen4109_HALLO_03_02 " );	// You think it's great to saw these boxes all day long?
 		if(WAFFEN4109FIRSTTIME == FALSE)
 		{
-			AI_Output(other,self,"DIA_Waffen4109_HALLO_15_01");	//А зачем ты их распиливаешь?
-			AI_Output(self,other,"DIA_Waffen4109_HALLO_03_03");	//Чтобы изготовить из них стрелы. Нам нужно много стрел!
-			AI_Output(other,self,"DIA_Waffen4109_HALLO_15_02");	//Да, это точно.
+			AI_Output(other,self, " DIA_Waffen4109_HALLO_15_01 " );	// Why are you sawing them?
+			AI_Output(self,other, " DIA_Waffen4109_HALLO_03_03 " );	// To make arrows out of them. We need more arrows!
+			AI_Output(other,self, " DIA_Waffen4109_HALLO_15_02 " );	// Yes, that's right.
 			if(KNOWHOWTOMAKEARROWS == FALSE)
 			{
-				AI_Output(other,self,"DIA_Waffen4109_HALLO_15_03");	//Так ты умеешь делать стрелы? Может научишь?
-				AI_Output(self,other,"DIA_Waffen4109_HALLO_03_04");	//Хммм... А ты думаешь, у меня на это есть время?
-				AI_Output(self,other,"DIA_Waffen4109_HALLO_03_05");	//Поищи лучше кого-нибудь другого.
+				AI_Output(other,self, " DIA_Waffen4109_HALLO_15_03 " );	// So you can make arrows? Can you teach?
+				AI_Output(self,other, " DIA_Waffen4109_HALLO_03_04 " );	// Hmmm... Do you think I have time for this?
+				AI_Output(self,other, " DIA_Waffen4109_HALLO_03_05 " );	// Look for someone else.
 			};
 			WAFFEN4109FIRSTTIME = TRUE;
 		};
