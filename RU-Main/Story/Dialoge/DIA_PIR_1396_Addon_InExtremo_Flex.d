@@ -1,4 +1,5 @@
 
+
 instance DIA_ADDON_INEXTREMO_FLEX_EXIT(C_Info)
 {
 	npc = PIR_1396_Addon_InExtremo_Flex;
@@ -34,7 +35,7 @@ instance DIA_ADDON_INEXTREMO_FLEX_PICKPOCKET(C_Info)
 
 func int dia_addon_inextremo_flex_pickpocket_condition()
 {
-	return C_Beklauen(65,100);
+	return  C_Robbery ( 65 , 100 );
 };
 
 func void dia_addon_inextremo_flex_pickpocket_info()
@@ -46,7 +47,7 @@ func void dia_addon_inextremo_flex_pickpocket_info()
 
 func void dia_addon_inextremo_flex_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_addon_inextremo_flex_pickpocket);
 };
 
@@ -81,32 +82,32 @@ func void dia_addon_inextremo_flex_hi_info()
 	{
 		if(KILLMEMBER4 == FALSE)
 		{
-			AI_Output(self,other,"DIA_Addon_InExtremo_Flex_Hi_01_00");	//(удивленно) Эй, парень! Как это дебе удалось надрать задницу Асмалу?
-			AI_Output(self,other,"DIA_Addon_InExtremo_Flex_Hi_01_01");	//До сих пор представить не могу...(смеется) А ты, видать, крутой, если такие люди, как Асмал, для тебя не проблема.
-			AI_Output(other,self,"DIA_Addon_InExtremo_Flex_Hi_01_02");	//Есть немного. Хочешь проверить?
-			AI_Output(self,other,"DIA_Addon_InExtremo_Flex_Hi_01_03");	//Нет, нет! Что ты! (испуганно) Это я так... в общем, забудь об этом.
+			AI_Output(self,other, " DIA_Addon_InExtremo_Flex_Hi_01_00 " );	// (surprised) Hey man! How did the deba manage to kick Asmal's ass?
+			AI_Output(self,other, " DIA_Addon_InExtremo_Flex_Hi_01_01 " );	// I still can't imagine... (laughs) And you, you see, are cool, if people like Asmal are not a problem for you.
+			AI_Output(other,self, " DIA_Addon_InExtremo_Flex_Hi_01_02 " );	// There are few. Do you want to check?
+			AI_Output(self,other, " DIA_Addon_InExtremo_Flex_Hi_01_03 " );	// No, no! What you! (frightened) It's just me... well, forget about it.
 			KILLMEMBER4 = TRUE;
 		}
 		else if(CharlotteMyAss == TRUE)
 		{
-			AI_Output(self,other,"DIA_Addon_InExtremo_Flex_Hi_01_77");	//По всем вопросам к Шарлотте, босс.
-			AI_Output(self,other,"DIA_Addon_InExtremo_Flex_Hi_01_78");	//Ты ведь сам назначил ее своей помощницей.
-			AI_Output(other,self,"DIA_Addon_InExtremo_Flex_Hi_01_79");	//Ну да, конечно.
+			AI_Output(self,other, " DIA_Addon_InExtremo_Flex_Hi_01_77 " );	// Any questions to Charlotte, boss.
+			AI_Output(self,other, " DIA_Addon_InExtremo_Flex_Hi_01_78 " );	// You yourself appointed her as your assistant.
+			AI_Output(other,self, " DIA_Addon_InExtremo_Flex_Hi_01_79 " );	// Well, yes, of course.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_InExtremo_Flex_Hi_01_04");	//Как дела, босс?
+			AI_Output(self,other, " DIA_Addon_InExtremo_Flex_Hi_01_04 " );	// How are you, boss?
 		};
 	}
 	else if(Wld_IsTime(8,0,20,0) && (JOINKILLERS == FALSE))
 	{
-		AI_Output(self,other,"DIA_Addon_InExtremo_Flex_Hi_01_05");	//Не отвлекай меня!
+		AI_Output(self,other, " DIA_Addon_InExtremo_Flex_Hi_01_05 " );	// Don't distract me!
 		AI_StopProcessInfos(self);
 		Npc_SetRefuseTalk(self,300);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_InExtremo_Flex_Hi_01_06");	//Отстань! Не мешай мне отдыхать...
+		AI_Output(self,other, " DIA_Addon_InExtremo_Flex_Hi_01_06 " );	// Back off! Don't let me rest...
 		AI_StopProcessInfos(self);
 		Npc_SetRefuseTalk(self,300);
 	};
@@ -119,7 +120,7 @@ instance DIA_Addon_InExtremo_Flex_DudelBlau(C_Info)
 	condition = DIA_Addon_InExtremo_Flex_DudelBlau_condition;
 	information = DIA_Addon_InExtremo_Flex_DudelBlau_info;
 	permanent = FALSE;
-	description = "Я помню, у тебя была волынка.";
+	description = " I remember you had a bagpipe. " ;
 };
 
 func int DIA_Addon_InExtremo_Flex_DudelBlau_condition()
@@ -133,14 +134,14 @@ func int DIA_Addon_InExtremo_Flex_DudelBlau_condition()
 func void DIA_Addon_InExtremo_Flex_DudelBlau_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Addon_InExtremo_Flex_DudelBlau_01_01");	//Я помню, у тебя была волынка.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Flex_DudelBlau_01_02");	//Ну, была...(смеется) А тебе-то она зачем?
-	AI_Output(other,self,"DIA_Addon_InExtremo_Flex_DudelBlau_01_03");	//Да так, просто хочу научиться играть на ней.
-	AI_Output(other,self,"DIA_Addon_InExtremo_Flex_DudelBlau_01_04");	//Можешь отдать ее мне? 
-	AI_Output(self,other,"DIA_Addon_InExtremo_Flex_DudelBlau_01_05");	//Да, почему бы и нет. Все равно от нее тут никакой пользы.
-	AI_Output(self,other,"DIA_Addon_InExtremo_Flex_DudelBlau_01_06");	//Вот, забирай. Только сильно не дуй! А то у нее немного меха порваны.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Flex_DudelBlau_01_01 " );	// I remember you had a bagpipe.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Flex_DudelBlau_01_02 " );	// Well, it was... (laughs) Why do you need it?
+	AI_Output(other,self, " DIA_Addon_InExtremo_Flex_DudelBlau_01_03 " );	// Yeah, I just want to learn how to play it.
+	AI_Output(other,self, " DIA_Addon_InExtremo_Flex_DudelBlau_01_04 " );	// Can you give it to me?
+	AI_Output(self,other, " DIA_Addon_InExtremo_Flex_DudelBlau_01_05 " );	// Yes, why not. Still, it's of no use to her.
+	AI_Output(self,other, " DIA_Addon_InExtremo_Flex_DudelBlau_01_06 " );	// Here, take it. Just don't blow too hard! And then she has a little fur torn.
 	B_GiveInvItems(self,other,ItMi_IEDudelBlau,1);
 	Npc_RemoveInvItems(self,ItMi_IEDudelBlau,1);
 	AI_Output(other,self,"DIA_Addon_InExtremo_Flex_DudelBlau_01_07");	//Спасибо!
-	B_LogEntry(TOPIC_KASSIAMUSIC,"Флекс отдал мне свою волынку.");
+	B_LogEntry( TOPIC_KASSIAMUSIC , " Flex gave me his bagpipe. " );
 };
