@@ -1,4 +1,5 @@
 
+
 instance DIA_Fenia_EXIT(C_Info)
 {
 	npc = VLK_476_Fenia;
@@ -19,11 +20,11 @@ func void DIA_Fenia_EXIT_Info()
 {
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Fenia_EXIT_17_00");	//Приветствую, мистер Паладин.
+		AI_Output(self,other, " DIA_Fenia_EXIT_17_00 " );	// Greetings, Mr. Paladin.
 	};
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Fenia_EXIT_17_01");	//Удачной тебе дороги, о, достопочтенный маг.
+		AI_Output(self,other, " DIA_Fenia_EXIT_17_01 " );	// Good luck to you, oh venerable mage.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -42,7 +43,7 @@ instance DIA_Fenia_PICKPOCKET(C_Info)
 
 func int DIA_Fenia_PICKPOCKET_Condition()
 {
-	return C_Beklauen(50,75);
+	return  C_Robbery ( 50 , 75 );
 };
 
 func void DIA_Fenia_PICKPOCKET_Info()
@@ -54,7 +55,7 @@ func void DIA_Fenia_PICKPOCKET_Info()
 
 func void DIA_Fenia_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Fenia_PICKPOCKET);
 };
 
@@ -64,12 +65,12 @@ func void DIA_Fenia_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Fenia_Hallo(C_Info)
+instance DIA_Fenia_Hallo (C_Info)
 {
 	npc = VLK_476_Fenia;
 	nr = 3;
 	condition = DIA_Fenia_Hallo_Condition;
-	information = DIA_Fenia_Hallo_Info;
+	information = DIA_Fenia_Hello_Info;
 	important = TRUE;
 };
 
@@ -86,16 +87,16 @@ func void DIA_Fenia_Hallo_Info()
 {
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Fenia_Hallo_17_00");	//Ты выглядишь уставшим. Давно не спал, да?
-		AI_Output(other,self,"DIA_Fenia_Hallo_15_01");	//Слишком давно, я бы сказал.
+		AI_Output(self,other, " DIA_Fenia_Hallo_17_00 " );	// You look tired. Haven't slept in a while, huh?
+		AI_Output(other,self, " DIA_Fenia_Hallo_15_01 " );	// Too long, I would say.
 	};
-	AI_Output(self,other,"DIA_Fenia_Hallo_17_02");	//Подойди поближе, не робей. У меня ты найдешь все, что тебе нужно!
+	AI_Output(self,other, " DIA_Fenia_Hallo_17_02 " );	// Come closer, don't be shy. With me you will find everything you need!
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Фения торгует едой по пути в гавань.");
+	B_LogEntry(TOPIC_CityTrader, " Fenya trades food on her way to the harbor. " );
 };
 
 
-instance DIA_Fenia_HANDELN(C_Info)
+instance DIA_Fenia_HANDELN (C_Info)
 {
 	npc = VLK_476_Fenia;
 	nr = 10;
@@ -103,13 +104,13 @@ instance DIA_Fenia_HANDELN(C_Info)
 	information = DIA_Fenia_HANDELN_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 };
 
 
 func int DIA_Fenia_HANDELN_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Fenia_Hallo) && Wld_IsTime(4,55,20,5))
+	if ( Npc_KnowsInfo ( hero , DIA_Fenia_Hallo ) & & Wld_IsTime ( 4 , 55 , 20 , 5 ))
 	{
 		return TRUE;
 	};
@@ -123,19 +124,19 @@ func void DIA_Fenia_HANDELN_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Fenia_HANDELN_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Fenia_HANDELN_15_00 " );	// Show me your products.
 	B_GiveTradeInv(self);
 };
 
 
-instance DIA_Fenia_Infos(C_Info)
+instance DIA_Fenia_Infos (C_Info)
 {
 	npc = VLK_476_Fenia;
 	nr = 10;
 	condition = DIA_Fenia_Infos_Condition;
 	information = DIA_Fenia_Infos_Info;
 	permanent = FALSE;
-	description = "Ты сказала, у тебя есть все, что мне нужно. Это включает информацию?";
+	description = " You said you have everything I need. Does that include information? " ;
 };
 
 
@@ -147,10 +148,10 @@ func int DIA_Fenia_Infos_Condition()
 	};
 };
 
-func void DIA_Fenia_Infos_Info()
+func void DAY_Fenia_Infos_Info()
 {
-	AI_Output(other,self,"DIA_Fenia_Infos_15_00");	//Ты сказала, у тебя есть все, что мне нужно. Это включает информацию?
-	AI_Output(self,other,"DIA_Fenia_Infos_17_01");	//Конечно. Что ты хочешь узнать?
+	AI_Output(other,self, " DIA_Fenia_Infos_15_00 " );	// You said you have everything I need. Does it include information?
+	AI_Output(self,other, " DIA_Fenia_Infos_17_01 " );	// Of course. What do you want to know?
 };
 
 
@@ -161,7 +162,7 @@ instance DIA_Fenia_MoreTraders(C_Info)
 	condition = DIA_Fenia_MoreTraders_Condition;
 	information = DIA_Fenia_MoreTraders_Info;
 	permanent = FALSE;
-	description = "Есть здесь, в порту, другие торговцы?";
+	description = " Are there any other merchants here at the port? " ;
 };
 
 
@@ -175,26 +176,26 @@ func int DIA_Fenia_MoreTraders_Condition()
 
 func void DIA_Fenia_MoreTraders_Info()
 {
-	AI_Output(other,self,"DIA_Fenia_Infos_haendler_15_00");	//Есть здесь, в порту, другие торговцы?
-	AI_Output(self,other,"DIA_Fenia_Infos_haendler_17_01");	//Если ты пойдешь налево вдоль причала, то увидишь Халвора, моего мужа. Он торгует рыбой.
-	AI_Output(self,other,"DIA_Fenia_Infos_haendler_17_02");	//А если пойдешь в другую сторону, там живет Ибрагим, картограф.
+	AI_Output(other,self, " DIA_Fenia_Infos_haendler_15_00 " );	// Are there other merchants here at the port?
+	AI_Output(self,other, " DIA_Fenia_Infos_haendler_17_01 " );	// If you go left along the dock, you will see Halvor, my husband. He sells fish.
+	AI_Output(self,other, " DIA_Fenia_Infos_haendler_17_02 " );	// And if you go the other way, Ibrahim, the cartographer, lives there.
 };
 
 
-instance DIA_Fenia_OV(C_Info)
+instance DIA_Fenia_OV (C_Info)
 {
 	npc = VLK_476_Fenia;
 	nr = 13;
 	condition = DIA_Fenia_OV_Condition;
 	information = DIA_Fenia_OV_Info;
 	permanent = FALSE;
-	description = "Ты знаешь кого-нибудь из верхнего квартала?";
+	description = " Do you know anyone from the Upper Quarter? " ;
 };
 
 
 func int DIA_Fenia_OV_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Fenia_Infos) && (other.guild == GIL_NONE))
+	if ( Npc_KnowsInfo ( other , DIA_Fenia_Info ) & & ( other . guild == GIL_NONE  ) )
 	{
 		return TRUE;
 	};
@@ -202,8 +203,8 @@ func int DIA_Fenia_OV_Condition()
 
 func void DIA_Fenia_OV_Info()
 {
-	AI_Output(other,self,"DIA_Fenia_Infos_oberesViertel_15_00");	//Ты знаешь кого-нибудь из верхнего квартала?
-	AI_Output(self,other,"DIA_Fenia_Infos_oberesViertel_17_01");	//Если бы я кого-нибудь там знала, я бы здесь не стояла, малыш.
+	AI_Output(other,self, " DIA_Fenia_Infos_oberesViertel_15_00 " );	// Do you know anyone from the upper quarter?
+	AI_Output(self,other, " DIA_Fenia_Infos_oberesViertel_17_01 " );	// If I knew anyone there, I wouldn't be standing here, kid.
 };
 
 
@@ -214,7 +215,7 @@ instance DIA_Fenia_Interesting(C_Info)
 	condition = DIA_Fenia_Interesting_Condition;
 	information = DIA_Fenia_Interesting_Info;
 	permanent = FALSE;
-	description = "На что интересное стоит обратить внимание в порту?";
+	description = " What interesting things to pay attention to in the port? " ;
 };
 
 
@@ -228,22 +229,22 @@ func int DIA_Fenia_Interesting_Condition()
 
 func void DIA_Fenia_Interesting_Info()
 {
-	AI_Output(other,self,"DIA_Fenia_Infos_interessantes_15_00");	//На что интересное стоит обратить внимание в порту?
-	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_01");	//Ну... Если ты ищешь приключений, иди в кабак Кардифа у причала. Там всегда что-нибудь затевается.
-	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_02");	//Ты вряд ли пропустишь его. Парень, стоящий перед входом туда, обязательно привлечет твое внимание к нему.
-	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_03");	//Кроме того, в порту стоит большой корабль паладинов. Королевская военная галера. На это действительно стоит посмотреть.
-	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_04");	//Ты увидишь ее, если пойдешь влево вдоль причала, а затем пройдешь под большой скалой.
+	AI_Output(other,self, " DIA_Fenia_Infos_interessantes_15_00 " );	// What interesting things to look out for in the port?
+	AI_Output(self,other, " DIA_Fenia_Infos_interessantes_17_01 " );	// Well... If you're looking for adventure, go to Cardiff's bar by the pier. There is always something going on.
+	AI_Output(self,other, " DIA_Fenia_Infos_interessantes_17_02 " );	// You're unlikely to miss it. The guy standing in front of the entrance there will definitely draw your attention to him.
+	AI_Output(self,other, " DIA_Fenia_Infos_interessantes_17_03 " );	// In addition, there is a large paladin ship in the port. Royal war galley. It's really worth looking at.
+	AI_Output(self,other, " DIA_Fenia_Infos_interessantes_17_04 " );	// You'll see it if you go left along the dock and then go under the big rock.
 };
 
 
-instance DIA_Fenia_Aufregend(C_Info)
+instance DIA_Fenia_Exciting (C_Info)
 {
 	npc = VLK_476_Fenia;
 	nr = 15;
 	condition = DIA_Fenia_Aufregend_Condition;
-	information = DIA_Fenia_Aufregend_Info;
+	information = DIA_Fenia_Exciting_Info;
 	permanent = FALSE;
-	description = "Ничего интересного не было?";
+	description = " Nothing interesting? " ;
 };
 
 
@@ -255,12 +256,12 @@ func int DIA_Fenia_Aufregend_Condition()
 	};
 };
 
-func void DIA_Fenia_Aufregend_Info()
+func void DIA_Fenia_Exciting_Info()
 {
-	AI_Output(other,self,"DIA_Fenia_Add_15_00");	//Ничего интересного не было?
-	AI_Output(self,other,"DIA_Fenia_Add_17_01");	//Было. И совсем недавно.
-	AI_Output(self,other,"DIA_Fenia_Add_17_02");	//Здесь пробежал вор. Он, похоже, украл лук где-то в нижней части города.
-	AI_Output(self,other,"DIA_Fenia_Add_17_03");	//Конечно, как всегда ополчение прибыло слишком поздно.
-	AI_Output(self,other,"DIA_Fenia_Add_17_04");	//Ему удалось сбежать от них - он прыгнул в море и был таков.
+	AI_Output(other,self, " DIA_Fenia_Add_15_00 " );	// Was there anything interesting?
+	AI_Output(self,other, " DIA_Fenia_Add_17_01 " );	// It was. And very recently.
+	AI_Output(self,other, " DIA_Fenia_Add_17_02 " );	// A thief ran through here. He seems to have stolen the bow somewhere in the lower part of the city.
+	AI_Output(self,other, " DIA_Fenia_Add_17_03 " );	// Of course, as always, the militia arrived too late.
+	AI_Output(self,other, " DIA_Fenia_Add_17_04 " );	// He managed to escape from them - he jumped into the sea and was like that.
 };
 
