@@ -1,5 +1,6 @@
 
-instance DIA_Torlof_DI_KAP3_EXIT(C_Info)
+
+instance DIA_Torlof_DI_CAP3_EXIT (C_Info) .
 {
 	npc = SLD_801_Torlof_DI;
 	nr = 999;
@@ -21,14 +22,14 @@ func void DIA_Torlof_DI_KAP3_EXIT_Info()
 };
 
 
-instance DIA_Torlof_DI_Hallo(C_Info)
+instance DIA_Torlof_DI_Hello (C_Info)
 {
 	npc = SLD_801_Torlof_DI;
 	nr = 4;
 	condition = DIA_Torlof_DI_Hallo_Condition;
 	information = DIA_Torlof_DI_Hallo_Info;
 	permanent = TRUE;
-	description = "Все спокойно?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -42,29 +43,29 @@ func int DIA_Torlof_DI_Hallo_Condition()
 
 func void DIA_Torlof_DI_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_Torlof_DI_Hallo_15_00");	//Все спокойно?
+	AI_Output(other,self, " DIA_Torlof_DI_Hallo_15_00 " );	// Is everything okay?
 
 	if(ORkSturmDI == FALSE)
 	{
-		AI_Output(self,other,"DIA_Torlof_DI_Hallo_01_01");	//Пока да. Но все может измениться в одно мгновение. Будь осторожен.
+		AI_Output(self,other, " DIA_Torlof_DI_Hallo_01_01 " );	// For now, yes. But everything can change in an instant. Be careful.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Torlof_DI_Hallo_01_02");	//Если эти презренные орки будут оставаться там, где они есть сейчас, я не вижу никакой проблемы.
+		AI_Output(self,other, " DIA_Torlof_DI_Hallo_01_02 " );	// If those despicable orcs stay where they are now, I don't see any problem.
 		B_StartOtherRoutine(Torlof_DI,"Start");
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Torlof_DI_Teach(C_Info)
+instance DIA_Please_Teach (C_Info)
 {
 	npc = SLD_801_Torlof_DI;
 	nr = 150;
 	condition = DIA_Torlof_DI_Teach_Condition;
 	information = DIA_Torlof_DI_Teach_Info;
 	permanent = TRUE;
-	description = "Я хочу улучшить свои способности!";
+	description = " I want to improve my abilities! " ;
 };
 
 func int DIA_Torlof_DI_Teach_Condition()
@@ -77,7 +78,7 @@ func int DIA_Torlof_DI_Teach_Condition()
 
 func void DIA_Torlof_DI_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Torlof_DI_Teach_15_00");	//Я хочу улучшить свои способности!
+	AI_Output(other, self, " DIA_Torlof_DI_Teach_15_00 " );	// I want to improve my abilities!
 	Info_ClearChoices(DIA_Torlof_DI_Teach);
 	Info_AddChoice(DIA_Torlof_DI_Teach,Dialog_Back,DIA_Torlof_DI_Teach_Back);
 	Info_AddChoice(DIA_Torlof_DI_Teach,b_buildlearnstringforskills(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Torlof_DI_Teach_DEX_1);
@@ -142,7 +143,7 @@ instance DIA_Torlof_DI_UndeadDragonDead(C_Info)
 	condition = DIA_Torlof_DI_UndeadDragonDead_Condition;
 	information = DIA_Torlof_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
-	description = "Я уничтожил врагов.";
+	description = " I have destroyed the enemies. " ;
 };
 
 func int DIA_Torlof_DI_UndeadDragonDead_Condition()
@@ -155,16 +156,16 @@ func int DIA_Torlof_DI_UndeadDragonDead_Condition()
 
 func void DIA_Torlof_DI_UndeadDragonDead_Info()
 {
-	AI_Output(other,self,"DIA_Torlof_DI_UndeadDragonDead_15_00");	//Я уничтожил врагов.
-	AI_Output(self,other,"DIA_Torlof_DI_UndeadDragonDead_01_01");	//Я ничего другого и не ожидал. Как все прошло? Мы можем отправляться назад?
+	AI_Output(other,self, " DIA_Torlof_DI_UndeadDragonDead_15_00 " );	// I destroyed the enemies.
+	AI_Output(self,other, " DIA_Torlof_DI_UndeadDragonDead_01_01 " );	// I didn't expect anything else. How did everything go? Can we go back?
 	Info_ClearChoices(DIA_Torlof_DI_UndeadDragonDead);
-	Info_AddChoice(DIA_Torlof_DI_UndeadDragonDead,"Мне нужно еще пару минут.",DIA_Torlof_DI_UndeadDragonDead_moment);
-	Info_AddChoice(DIA_Torlof_DI_UndeadDragonDead,"Да. Все кончено.",DIA_Torlof_DI_UndeadDragonDead_over);
+	Info_AddChoice(DIA_Torlof_DI_UndeadDragonDead, " I need a couple more minutes. " ,DIA_Torlof_DI_UndeadDragonDead_moment);
+	Info_AddChoice(DIA_Torlof_DI_UndeadDragonDead, " Yes. It's over. " ,DIA_Torlof_DI_UndeadDragonDead_over);
 };
 
 func void DIA_Torlof_DI_UndeadDragonDead_moment()
 {
-	AI_Output(other,self,"DIA_Torlof_DI_UndeadDragonDead_moment_15_00");	//Мне нужно еще пару минут.
+	AI_Output(other,self, " DIA_Torlof_DI_UndeadDragonDead_moment_15_00 " );	// I need a couple more minutes.
 	AI_Output(self,other,"DIA_Torlof_DI_UndeadDragonDead_moment_01_01");	//Поторопись!
 	AI_StopProcessInfos(self);
 };
@@ -172,13 +173,13 @@ func void DIA_Torlof_DI_UndeadDragonDead_moment()
 func void DIA_Torlof_DI_UndeadDragonDead_over()
 {
 	CAPITANORDERDIAWAY = TRUE;
-	AI_Output(other,self,"DIA_Torlof_DI_UndeadDragonDead_over_15_00");	//Да, все позади. Мы можем смываться!
-	AI_Output(self,other,"DIA_Torlof_DI_UndeadDragonDead_over_01_01");	//Если ты уверен, то пойди поспи в капитанской каюте. Мы скоро отчалим!
-	AI_Output(self,other,"DIA_Torlof_DI_UndeadDragonDead_over_01_02");	//Все на борт! Поднять паруса!
+	AI_Output(other,self, " DIA_Torlof_DI_UndeadDragonDead_over_15_00 " );	// Yes, it's over. We can flush!
+	AI_Output(self,other, " DIA_Torlof_DI_UndeadDragonDead_over_01_01 " );	// If you're sure, then go sleep in the captain's cabin. We'll be leaving soon!
+	AI_Output(self,other, " DIA_Torlof_DI_UndeadDragonDead_over_01_02 " );	// All aboard! Raise the sails!
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Torlof_DI_PICKPOCKET(C_Info)
+instances DIA_Torlof_DI_PICKPOCKET (C_Info)
 {
 	npc = SLD_801_Torlof_DI;
 	nr = 900;
@@ -191,19 +192,19 @@ instance DIA_Torlof_DI_PICKPOCKET(C_Info)
 
 func int DIA_Torlof_DI_PICKPOCKET_Condition()
 {
-	return C_Beklauen(76,120);
+	return  C_Robbery ( 76 , 120 );
 };
 
 func void DIA_Torlof_DI_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Torlof_DI_PICKPOCKET);
 	Info_AddChoice(DIA_Torlof_DI_PICKPOCKET,Dialog_Back,DIA_Torlof_DI_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Torlof_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Torlof_DI_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Torlof_DI_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Torlof_DI_PICKPOCKET_DoIt);
 };
 
 func void DIA_Torlof_DI_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Torlof_DI_PICKPOCKET);
 };
 
