@@ -1,7 +1,8 @@
 
+
 instance DMT_1220_WAKON_EXIT(C_Info)
 {
-	npc = dmt_1220_wakon;
+	npc = dmt_1220_song;
 	nr = 999;
 	condition = dmt_1220_wakon_exit_condition;
 	information = dmt_1220_wakon_exit_info;
@@ -23,7 +24,7 @@ func void dmt_1220_wakon_exit_info()
 
 instance DMT_1220_WAKON_HELLO(C_Info)
 {
-	npc = dmt_1220_wakon;
+	npc = dmt_1220_song;
 	condition = dmt_1220_wakon_hello_condition;
 	information = dmt_1220_wakon_hello_info;
 	important = TRUE;
@@ -33,7 +34,7 @@ instance DMT_1220_WAKON_HELLO(C_Info)
 
 func int dmt_1220_wakon_hello_condition()
 {
-	if((MIS_GUARDIANSTEST == LOG_Running) && (NARUS_AGREE == TRUE))
+	if (( MY_GUARDIANTEST  == LOG_Running ) && ( NARUS_AGREE  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -41,75 +42,75 @@ func int dmt_1220_wakon_hello_condition()
 
 func void dmt_1220_wakon_hello_info()
 {
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_00");	//Итак...(могущественно) Наконец-то мы с тобой встретились!
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_01");	//Надеюсь, мне не стоит тебе объяснять, кто я такой?
-	AI_Output(other,self,"DMT_1220_Wakon_Hello_02");	//Я думаю, что ты один из Хранителей. Я прав?
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_03");	//Все верно, перед тобой Вакон - третий страж Воды и Хранитель священных врат Вакхана.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_04");	//Уверен, что ты уже знаешь причину моего появления здесь. Пришло время принять тебе свое последнее испытание!
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_05");	//И только пройдя его, ты заслужишь мое расположение и согласие на принятие тебя в адепты нашего Круга.
-	AI_Output(other,self,"DMT_1220_Wakon_Hello_06");	//Я знаю это, мастер. И я уверен, что справлюсь.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_07");	//Твоя уверенность порой поражает. Хорошо...(серьезно) На этот раз тебе придется показать все, на что ты способен!
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_08");	//(могущественно) Не будем терять времени. Ты готов принять мое испытание?
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_00 " );	// So...(powerfully) We finally meet!
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_01 " );	// I hope I don't have to explain to you who I am?
+	AI_Output(other,self, " DMT_1220_Wakon_Hello_02 " );	// I think you're one of the Guardians. I'm right?
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_03 " );	// That's right, in front of you is Vakon - the third guardian of Water and the Keeper of the sacred gates of Vakhan.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_04 " );	// I'm sure you already know why I'm here. It's time for you to take your final test!
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_05 " );	// And only after passing it, you will earn my favor and consent to accept you as an adherent of our Circle.
+	AI_Output(other,self, " DMT_1220_Wakon_Hello_06 " );	// I know it, master. And I'm sure I can handle it.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_07 " );	// Your confidence is sometimes amazing. Okay...(seriously) This time you'll have to show your best!
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_08 " );	// (powerfully) Let's not waste time. Are you ready to take my test?
 	Info_ClearChoices(dmt_1220_wakon_hello);
-	Info_AddChoice(dmt_1220_wakon_hello,"Да, мастер! Я готов.",dmt_1220_wakon_hello_test);
+	Info_AddChoice(dmt_1220_wakon_hello, " Yes master! I'm ready. " ,dmt_1220_wakon_hello_test);
 };
 
 func void dmt_1220_wakon_hello_test()
 {
-	AI_Output(other,self,"DMT_1220_Wakon_Hello_09");	//Да, мастер! Я готов.
+	AI_Output(other,self, " DMT_1220_Wakon_Hello_09 " );	// Yes, master! I'm ready.
 	Wld_PlayEffect("spellFX_INCOVATION_BLUE",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_10");	//Тогда слушай меня внимательно, человек...(властно)
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_11");	//Твой путь лежит в место, именуемое Гадесом, или - как называют его люди - Долина Рудников.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_12");	//Думаю, ты и сам понимаешь, о чем я говорю.
-	AI_Output(other,self,"DMT_1220_Wakon_Hello_13");	//Да, мастер, я хорошо знаком с этим местом.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_14");	//Хорошо. Там ты должен будешь отыскать одного из пяти духов священных вод Адана и освободить его.
-	AI_Output(other,self,"DMT_1220_Wakon_Hello_15");	//Освободить Духа Воды?
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_16");	//Я понимаю твое большое удивление такому поручению, ибо ты навряд ли когда-либо встречал подобных созданий и не имеешь ни малейшего представления, кто они такие.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_17");	//Однако, несмотря на это, тебе все равно придется это сделать, - если ты, конечно, хочешь пройти мое испытание.
-	AI_Output(other,self,"DMT_1220_Wakon_Hello_18");	//А кто такие эти Духи Воды?
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_19");	//Духи Воды - это дети своей стихии! Древние существа, в которых мы - Хранители - отчасти черпаем свои жизненные силы.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_20");	//Кроме этого, они также являются источником нашей мудрости и магической силы.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_22");	//Вот поэтому много веков назад один из таких духов был пленен шаманами одного орочьего племени, которые полагали с его помощью обрести безграничную власть.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_23");	//Правда, у них так ничего и не вышло.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_24");	//Поэтому орки оставили Духа Воды у себя в заточении в надежде, что когда-нибудь им удастся постигнуть тайны его могущества.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_27");	//Не имея возможности черпать магию из родной ему стихии, Дух Воды стал понемногу терять свою жизненную силу и угасать на глазах.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_28");	//Так что, скорее всего, за многие века, проведенные в заточении, это создание уже полностью утратило свое былое могущество, которое когда-то казалось безграничным.
-	AI_Output(other,self,"DMT_1220_Wakon_Hello_29");	//Но почему Хранители сами не освободили Духа Воды?
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_30");	//Ты уже давно должен был понять, что мы никогда не вмешиваемся в ход событий и времени.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_31");	//Наше вмешательство может нарушить и без того хрупкое равновесие этого мира, и последствия всего этого будут просто ужасающими!
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_32");	//Именно поэтому исполнение нашей божественной воли возложено на простых смертных вроде тебя, - и иного пути быть не может!
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_34");	//Отправляйся в Гадес и освободи пленника из его темницы...(властно) Я же буду ждать тебя здесь.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_10 " );	// Then listen to me carefully, human... (imperiously)
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_11 " );	// Your path lies to a place called Hades, or - as people call it - the Valley of Mines.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_12 " );	// I think you yourself understand what I'm talking about.
+	AI_Output(other,self, " DMT_1220_Wakon_Hello_13 " );	// Yes, master, I am well acquainted with this place.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_14 " );	// Good. There you will have to find one of the five spirits of the sacred waters of Adan and free him.
+	AI_Output(other,self, " DMT_1220_Wakon_Hello_15 " );	// Release the Water Spirit?
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_16 " );	// I understand your great surprise at such an assignment, for you hardly ever met such creatures and have no idea who they are.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_17 " );	// However, despite this, you still have to do it - if you want to pass my test, of course.
+	AI_Output(other,self, " DMT_1220_Wakon_Hello_18 " );	// And who are these Spirits of Water?
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_19 " );	// Spirits of Water are children of their element! Ancient beings, in which we - Guardians - partly draw our vitality.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_20 " );	// In addition, they are also the source of our wisdom and magical power.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_22 " );	// That's why many centuries ago one of these spirits was captivated by the shamans of an orc tribe, who believed that with its help they would gain unlimited power.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_23 " );	// True, they did not succeed.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_24 " );	// Therefore, the orcs left the Spirit of Water in their captivity in the hope that someday they will be able to comprehend the secrets of its power.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_27 " );	// Not being able to draw magic from his native element, the Water Spirit began to gradually lose its vitality and fade before our eyes.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_28 " );	// So, most likely, over the many centuries spent in captivity, this creature has already completely lost its former power, which once seemed limitless.
+	AI_Output(other,self, " DMT_1220_Wakon_Hello_29 " );	// But why didn't the Guardians free the Water Spirit themselves?
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_30 " );	// You should have learned a long time ago that we never interfere with the course of events and time.
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_31 " );	// Our interference could upset the already fragile balance of this world, and the consequences of all this would be simply terrifying!
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_32 " );	// That is why the execution of our divine will is entrusted to mere mortals like you - and there can be no other way!
+	AI_Output(self,other, " DMT_1220_Wakon_Hello_34 " );	// Go to Hades and free the prisoner from his dungeon... (powerfully) I'll be waiting for you here.
 	AI_StopProcessInfos(self);
 	MIS_WAKONTEST = LOG_Running;
 	Log_CreateTopic(TOPIC_WAKONTEST,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_WAKONTEST,LOG_Running);
-	B_LogEntry(TOPIC_WAKONTEST,"Хранитель Вакон приказал мне отправиться в Долину Рудников, чтобы найти и освободить древнейшее создание - Духа Воды. Когда-то Дух был пленен шаманами орочьего племени. Ну почему он не потерял кольцо, как предыдущий Хранитель?");
+	B_LogEntry( TOPIC_WAKONTEST , " Guardian Vakon ordered me to go to the Valley of Mines to find and free the oldest creature - the Spirit of Water. Once the Spirit was captured by the shamans of an orc tribe. Why didn't he lose the ring, like the previous Guardian? " );
 
 	if(URSHAKISDEAD == FALSE)
 	{
-		Log_AddEntry(TOPIC_WAKONTEST,"По всей видимости, мне придется вновь иметь дело с орками. Возможно, Ур-Шак подскажет мне, с чего начать поиски.");
+		Log_AddEntry( TOPIC_WAKONTEST , " It looks like I'll have to deal with the orcs again. Maybe Ur-Shak can tell me where to start looking. " );
 	};
 };
 
 
 instance DMT_1220_WAKON_TEST(C_Info)
 {
-	npc = dmt_1220_wakon;
+	npc = dmt_1220_song;
 	nr = 1;
 	condition = dmt_1220_wakon_test_condition;
 	information = dmt_1220_wakon_test_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Дух Воды свободен!";
+	description = " The Water Spirit is free! " ;
 };
 
 
 func int dmt_1220_wakon_test_condition()
 {
-	if((MIS_GUARDIANSTEST == LOG_Running) && (MIS_WAKONTEST == LOG_Running) && (FREEWATERSOUL == TRUE))
+	if (( MY_GUARDIANTEST  == LOG_Running) && ( MY_CONTEST  == LOG_Running) && ( FREEWATERSOUL  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -118,40 +119,40 @@ func int dmt_1220_wakon_test_condition()
 func void dmt_1220_wakon_test_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DMT_1220_Wakon_Test_00");	//Дух Воды свободен!
-	AI_Output(self,other,"DMT_1220_Wakon_Test_01");	//Что же, это очень хорошие новости. Хотя, по правде говоря, мне уже они и так известны.
-	AI_Output(other,self,"DMT_1220_Wakon_Test_02");	//Как ты это почувствовал?!
-	AI_Output(self,other,"DMT_1220_Wakon_Test_03");	//(серьезно) Все просто, человек. Не забывай о том, что мы - Хранители Воды - тесно связаны с этими древними существами.
-	AI_Output(self,other,"DMT_1220_Wakon_Test_04");	//Любое, хотя бы малейшее магическое волнение, вызванное этими созданиями - в свою очередь очень сильно влияет на каждого из нас.
-	AI_Output(self,other,"DMT_1220_Wakon_Test_06");	//Но сейчас это уже не так важно. Важно другое - ты выполнил мое поручение и тем самым прошел свое последнее испытание!
-	AI_Output(self,other,"DMT_1220_Wakon_Test_07");	//Думаю, ты и сам догадываешься, что это означает. Не так ли?
+	AI_Output(other,self, " DMT_1220_Wakon_Test_00 " );	// The Water Spirit is free!
+	AI_Output(self,other, " DMT_1220_Wakon_Test_01 " );	// Well, that's very good news. Although, to tell the truth, I already know them.
+	AI_Output(other,self, " DMT_1220_Wakon_Test_02 " );	// How did you feel it?!
+	AI_Output(self,other, " DMT_1220_Wakon_Test_03 " );	// (seriously) It's simple, man. Don't forget that we, the Keepers of the Water, are closely related to these ancient beings.
+	AI_Output(self,other, " DMT_1220_Wakon_Test_04 " );	// Any, even the slightest magical disturbance caused by these creatures - in turn, greatly affects each of us.
+	AI_Output(self,other, " DMT_1220_Wakon_Test_06 " );	// But now it's not so important. Another thing is important - you fulfilled my order and thus passed your last test!
+	AI_Output(self,other, " DMT_1220_Wakon_Test_07 " );	// I think you can guess what that means. Is not it?
 	MIS_WAKONTEST = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_WAKONTEST,LOG_SUCCESS);
-	B_LogEntry(TOPIC_WAKONTEST,"Я прошел испытание Хранителя Вакона.");
+	B_LogEntry( TOPIC_WAKONTEST , " I passed the Wakon Keeper test. " );
 	Info_ClearChoices(dmt_1220_wakon_test);
-	Info_AddChoice(dmt_1220_wakon_test,"Да, кажется, догадываюсь.",dmt_1220_wakon_test_pass);
+	Info_AddChoice(dmt_1220_wakon_test, " Yes, I think I can guess. " ,dmt_1220_wakon_test_pass);
 };
 
 func void dmt_1220_wakon_test_pass()
 {
-	AI_Output(other,self,"DMT_1220_Wakon_Test_08");	//Да, кажется догадываюсь.
+	AI_Output(other,self, " DMT_1220_Wakon_Test_08 " );	// Yes, I think I guess.
 	Wld_PlayEffect("spellFX_INCOVATION_BLUE",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	B_LogEntry(TOPIC_GUARDIANSTEST,"Я получил согласие последнего из Хранителей - Вакона. Теперь мне нужно предстать перед главой их Божественного Круга. Судя по всему, я смогу найти его в месте, что олицетворяет стихию, породившую его. Насколько я помню, это стихия есть не что иное, как Священный Камень.");
+	B_LogEntry( TOPIC_GUARDIANSTEST , " I received the consent of the last of the Guardians - Wakon. Now I need to appear before the head of their Divine Circle. Apparently, I can find him in a place that represents the element that gave birth to him. As far as I remember, this element is not anything but the Sacred Stone. " );
 	WAKON_AGREE = TRUE;
-	AI_Output(self,other,"DMT_1220_Wakon_Test_09");	//Тогда властью, данной мне Аданосом и Священной Водой, я - Вакон, третий страж Воды и первый Хранитель священных врат Вакхана, - даю тебе свое согласие на посвящение тебя в ранг адепта нашего Круга.
-	AI_Output(self,other,"DMT_1220_Wakon_Test_10");	//Отныне мое решение вписано в великую Книгу Судеб, и никто не сможет этого изменить!
-	AI_Output(other,self,"DMT_1220_Wakon_Test_11");	//Теперь я буду служить Хранителям?
-	AI_Output(self,other,"DMT_1220_Wakon_Test_12");	//Да, ты заслужил эту честь по праву!
-	AI_Output(self,other,"DMT_1220_Wakon_Test_13");	//Теперь же тебе осталось только одно - предстать перед тем, кто своим могуществом объединил всех нас.
-	AI_Output(self,other,"DMT_1220_Wakon_Test_15");	//(властно) Хранитель Стоннос! Он - самый могущественный из Стражей Стихий и ко всему прочему является главой нашего Божественного Ордена.
-	AI_Output(other,self,"DMT_1220_Wakon_Test_17");	//Но где мне его искать?
-	AI_Output(self,other,"DMT_1220_Wakon_Test_18");	//Ищи его там, где является божественная мудрость стихии, породившей его...(вкрадчиво) И тем самым олицетворяет саму ее суть!
-	AI_Output(self,other,"DMT_1220_Wakon_Test_20");	//Теперь все. Прощай. И да хранит тебя мудрость Воды!
+	AI_Output(self,other, " DMT_1220_Wakon_Test_09 " );	// Then, by the power given to me by Adanos and the Holy Water, I - Vakon, the third guardian of the Water and the first Keeper of the sacred gates of Vakhan - give you my consent to initiate you into the rank of an adept of our Circle.
+	AI_Output(self,other, " DMT_1220_Wakon_Test_10 " );	// From now on, my decision is inscribed in the great Book of Fates, and no one can change it!
+	AI_Output(other,self, " DMT_1220_Wakon_Test_11 " );	// Will I serve the Guardians now?
+	AI_Output(self,other, " DMT_1220_Wakon_Test_12 " );	// Yes, you rightfully deserve this honor!
+	AI_Output(self,other, " DMT_1220_Wakon_Test_13 " );	// Now you have only one thing left - to appear before the one who united us all with his power.
+	AI_Output(self,other, " DMT_1220_Wakon_Test_15 " );	// (imperiously) Guardian Stonnos! He is the most powerful of the Guardians of the Elements and in addition is the head of our Divine Order.
+	AI_Output(other,self, " DMT_1220_Wakon_Test_17 " );	// But where can I find it?
+	AI_Output(self,other, " DMT_1220_Wakon_Test_18 " );	// Look for it where the divine wisdom of the element that gave birth to it appears... (insinuatingly) And thus embodies its very essence!
+	AI_Output(self,other, " DMT_1220_Wakon_Test_20 " );	// Now everything. Goodbye. And may the wisdom of Water keep you!
 	Info_ClearChoices(dmt_1220_wakon_test);
-	Info_AddChoice(dmt_1220_wakon_test,"(закончить разговор)",dmt_1220_wakon_test_end);
+	Info_AddChoice(dmt_1220_wakon_test, " (end call) " ,dmt_1220_wakon_test_end);
 };
 
 func void dmt_1220_wakon_test_end()
