@@ -1,4 +1,5 @@
 
+
 instance DIA_Talbin_NW_EXIT(C_Info)
 {
 	npc = VLK_4132_Talbin_NW;
@@ -25,7 +26,7 @@ instance DIA_Talbin_NW(C_Info)
 	nr = 15;
 	condition = DIA_Talbin_NW_Condition;
 	information = DIA_Talbin_NW_Info;
-	description = "Этот проход был не таким уж и страшным, правда?";
+	description = " This passage wasn't that scary, was it? " ;
 };
 
 func int DIA_Talbin_NW_Condition()
@@ -35,24 +36,24 @@ func int DIA_Talbin_NW_Condition()
 
 func void DIA_Talbin_NW_Info()
 {
-	AI_Output(other,self,"DIA_Talbin_NW_15_00");	//Этот проход был не таким уж и страшным, правда?
-	AI_Output(self,other,"DIA_Talbin_NW_07_01");	//Спасибо, что спас меня.
-	AI_Output(self,other,"DIA_Talbin_NW_07_02");	//Вот. Я нашел этот камень на перевале. Я думаю, он тебе еще пригодится.
+	AI_Output(other,self, " DIA_Talbin_NW_15_00 " );	// This passage wasn't that scary, was it?
+	AI_Output(self,other, " DIA_Talbin_NW_07_01 " );	// Thanks for saving me.
+	AI_Output(self,other, " DIA_Talbin_NW_07_02 " );	// Here. I found this stone on the pass. I think you'll still need it.
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_GUR) || (other.guild == GIL_KDM) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Talbin_NW_07_03");	//Мне кажется, это рунный камень.
+		AI_Output(self,other, " DIA_Talbin_NW_07_03 " );	// I think it's a runestone.
 		CreateInvItems(self,ItMi_RuneBlank,1);
 		B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Talbin_NW_07_04");	//Мне кажется, это кусок руды.
+		AI_Output(self,other, " DIA_Talbin_NW_07_04 " );	// I think it's a piece of ore.
 		CreateInvItems(self,ItMi_Nugget,1);
 		B_GiveInvItems(self,other,ItMi_Nugget,1);
 	};
 
-	AI_Output(self,other,"DIA_Talbin_NW_07_05");	//Да защитит тебя Иннос.
+	AI_Output(self,other, " DIA_Talbin_NW_07_05 " );	// May Innos protect you.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Farm");
 	TOPIC_END_Talbin_Runs = TRUE;
@@ -66,7 +67,7 @@ instance DIA_Talbin_NW_PERM(C_Info)
 	condition = DIA_Talbin_NW_PERM_Condition;
 	information = DIA_Talbin_NW_PERM_Info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 func int DIA_Talbin_NW_PERM_Condition()
@@ -79,8 +80,8 @@ func int DIA_Talbin_NW_PERM_Condition()
 
 func void DIA_Talbin_NW_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Talbin_NW_PERM_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_Talbin_NW_PERM_07_01");	//Да, спасибо тебе. А теперь иди. Со мной будет все в порядке.
+	AI_Output(other,self, " DIA_Talbin_NW_PERM_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Talbin_NW_PERM_07_01 " );	// Yes, thank you. Now go. I'll be all right.
 	AI_StopProcessInfos(self);
 };
 
@@ -91,12 +92,12 @@ instance DIA_Talbin_NW_HuntCamp(C_Info)
 	condition = DIA_Talbin_NW_HuntCamp_Condition;
 	information = DIA_Talbin_NW_HuntCamp_Info;
 	permanent = FALSE;
-	description = "Ты ведь охотник?";
+	description = " You're a hunter, aren't you? " ;
 };
 
 func int DIA_Talbin_NW_HuntCamp_Condition()
 {
-	if((MIS_NewHunters == LOG_Running) && (TALBINRECRUITEDDT == FALSE) && (Npc_KnowsInfo(other,DIA_Talbin_NW)))
+	if ((MIS_NewHunters == LOG_Running) && ( TALBINRECRUITEDT  ==  FALSE ) && (Npc_KnowsInfo(other,DIA_Talbin_NW)))
 	{
 		return TRUE;
 	};
@@ -105,21 +106,21 @@ func int DIA_Talbin_NW_HuntCamp_Condition()
 func void DIA_Talbin_NW_HuntCamp_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Talbin_NW_HuntCamp_01_00");	//Ты ведь охотник?
-	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_01");	//Теперь даже не знаю. Я собирался бросить это занятие.
+	AI_Output(other,self, " DIA_Talbin_NW_HuntCamp_01_00 " );	// Are you a hunter?
+	AI_Output(self,other, " DIA_Talbin_NW_HuntCamp_01_01 " );	// Now I don't even know. I was about to quit this job.
 	AI_Output(other,self,"DIA_Talbin_NW_HuntCamp_01_02");	//Почему?
-	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_03");	//Да, как сказать... Я никак не могу прийти в себя после всего, что мне пришлось пережить в Долине Рудников.
-	AI_Output(other,self,"DIA_Talbin_NW_HuntCamp_01_04");	//Мне кажется, тебе просто надо расслабиться и заняться любимым делом. Это отвлечет тебя от дурных мыслей!
-	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_06");	//Я бы с радостью...(печально) Но для охоты одного желания мало!
-	AI_Output(other,self,"DIA_Talbin_NW_HuntCamp_01_07");	//А что же еще нужно?
-	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_08");	//Для начала хорошее оружие и доспехи, чтобы не стать кормом для всяких тварей. А где мне все это раздобыть, я ума не приложу!
-	AI_Output(other,self,"DIA_Talbin_NW_HuntCamp_01_10");	//Ну, например, в лагере охотников, что находится неподалеку от фермы Онара.
-	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_11");	//В лагере охотников? (с надеждой) Я уже слышал про него. Хотя и подумал, что это всего лишь сказки.
-	AI_Output(other,self,"DIA_Talbin_NW_HuntCamp_01_12");	//Нет, лагерь действительно существует и как раз сейчас остро нуждается в таких опытных людях, как ты.
-	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_13");	//Ты не шутишь, приятель?
-	AI_Output(other,self,"DIA_Talbin_NW_HuntCamp_01_14");	//Какие шутки! Можешь сам сходить и убедиться в этом.
-	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_15");	//Тогда, пожалуй, не буду терять времени. Сразу отправлюсь туда!
-	B_LogEntry(TOPIC_NewHunters,"Тальбин очень заинтересовался лагерем охотников.");
+	AI_Output(self,other, " DIA_Talbin_NW_HuntCamp_01_03 " );	// Yeah, how to say... I can't seem to get over everything I've been through in the Valley of Mines.
+	AI_Output(other,self, " DIA_Talbin_NW_HuntCamp_01_04 " );	// I think you just need to relax and do what you love. It will distract you from bad thoughts!
+	AI_Output(self,other, " DIA_Talbin_NW_HuntCamp_01_06 " );	// I would love to... (sadly) But for hunting, one desire is not enough!
+	AI_Output(other,self, " DIA_Talbin_NW_HuntCamp_01_07 " );	// What else do you need?
+	AI_Output(self,other, " DIA_Talbin_NW_HuntCamp_01_08 " );	// For starters, good weapons and armor, so as not to become food for all sorts of creatures. And where can I get all this, I have no idea!
+	AI_Output(other,self, " DIA_Talbin_NW_HuntCamp_01_10 " );	// Well, for example, in the camp of hunters, which is located near Onar's farm.
+	AI_Output(self,other, " DIA_Talbin_NW_HuntCamp_01_11 " );	// At the hunter's camp? (hopefully) I've heard of him before. Although I thought it was just a fairy tale.
+	AI_Output(other,self, " DIA_Talbin_NW_HuntCamp_01_12 " );	// No, the camp really exists and right now it is in dire need of experienced people like you.
+	AI_Output(self,other, " DIA_Talbin_NW_HuntCamp_01_13 " );	// You're not kidding, buddy?
+	AI_Output(other,self, " DIA_Talbin_NW_HuntCamp_01_14 " );	// What a joke! You can go and see for yourself.
+	AI_Output(self,other, " DIA_Talbin_NW_HuntCamp_01_15 " );	// Then, perhaps, I will not waste time. I'll go there right away!
+	B_LogEntry(TOPIC_NewHunters, " Talbin is very interested in the hunter camp. " );
 	TalbinBecameHunt = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"GoHuntCamp");
@@ -133,12 +134,12 @@ instance DIA_TALBIN_RECRUITDT(C_Info)
 	condition = dia_talbin_recruitdt_condition;
 	information = dia_talbin_recruitdt_info;
 	permanent = FALSE;
-	description = "Где ты теперь будешь жить?";
+	description = " Where will you live now? " ;
 };
 
 func int dia_talbin_recruitdt_condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Talbin_NW) && (TalbinBecameHunt == FALSE) && (HURRAYICANHIRE == TRUE))
+	if ( Npc_KnowsInfo ( other , DIA_Talbin_NW ) && ( TalbinBecameHunt ==  FALSE ) && ( HURRAYICANHIRE  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -146,38 +147,38 @@ func int dia_talbin_recruitdt_condition()
 
 func void dia_talbin_recruitdt_info()
 {
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_00");	//Где ты теперь будешь жить?
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_01");	//Я остановлюсь на ферме Акила. Я там жил до Долины Рудников.
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_02");	//Если не сильно углубляться в лес, то там вполне неплохие охотничьи угодья.
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_03");	//Ну да. Если только ты не наткнешься на орков.
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_04");	//О-о-орков? Каких еще орков?
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_05");	//Некоторое время тому назад как раз в лесу у фермы Акила бродил отряд орков.
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_06");	//(В отчаянии) Нееет, только не снова эти чертовы орки! Неужели они уже и до Хориниса добрались?
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_07");	//Боюсь, что да.
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_08");	//Проклятье! Где же мне тогда теперь охотиться?
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_09");	//Ты можешь остановиться у меня, в башне рядом с фермой Онара. Поблизости как раз есть лес.
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_10");	//Там рядом и наемники, и форт паладинов. Орки туда не сунутся.
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_11");	//Да? Я радостью приму твое предложение. Спасибо! Только что ты за это хочешь?
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_12");	//Мне нужен охотник, который добывал бы мясо для моего лагеря.
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_00 " );	// Where will you live now?
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_01 " );	// I'll stop at the Akila farm. I lived there until the Valley of Mines.
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_02 " );	// If you don't go deep into the forest, then there are quite good hunting grounds.
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_03 " );	// Well, yes. Unless you run into orcs.
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_04 " );	// Oh-orcs? What other orcs?
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_05 " );	// Some time ago, just in the forest near Akila's farm, a band of orcs roamed.
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_06 " );	// (Desperate) No, not those damn orcs again! Have they already reached Khorinis?
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_07 " );	// I'm afraid so.
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_08 " );	// Damn! Where can I hunt now?
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_09 " );	// You can stay with me, in the tower next to Onar's farm. There is a forest nearby.
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_10 " );	// There are both mercenaries and a paladin fort nearby. Orcs don't go there.
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_11 " );	// Yes? I will gladly accept your offer. Thank you! Just what do you want for it?
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_12 " );	// I need a hunter to get meat for my camp.
 
 	if(NICLASRECRUITEDDT == TRUE)
 	{
-		AI_Output(other,self,"Dia_Talbin_RecruitDT_15_13");	//Одного я уже нашел, его зовут Никлас. Но он хочет напарника.
-		AI_Output(self,other,"Dia_Talbin_RecruitDT_07_14");	//Никлас? Хороший охотник! Я был бы непрочь вновь с ним поохотиться.
+		AI_Output(other,self, " Dia_Talbin_RecruitDT_15_13 " );	// I already found one, his name is Niklas. But he wants a partner.
+		AI_Output(self,other, " Dia_Talbin_RecruitDT_07_14 " );	// Niklas? Good hunter! I wouldn't mind hunting with him again.
 	};
 
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_15");	//Я согласен на твои условия.
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_16");	//Отлично. Сколько ты хочешь, чтобы я тебе платил за это?
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_17");	//(Удивленно) Деньги? Да нисколько. Ты мне - безопасный дом, я тебе - мясо. Кроме того, я с охоты себе наберу массу трофеев для продажи.
-	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_18");	//Тогда договорились. И да, чтобы тебя пустили в башню, назови пароль - "Драконовы сокровища".
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_19");	//Хорошо. Говоришь, башня что у фермы Онара? Ну тогда увидимся там.
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_15 " );	// I agree to your terms.
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_16 " );	// Great. How much do you want me to pay you for this?
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_17 " );	// (Surprised) Money? Not at all. You are my safe house, I am meat for you. In addition, I will hunt for myself a lot of trophies for sale.
+	AI_Output(other,self, " Dia_Talbin_RecruitDT_15_18 " );	// Then agreed. And yes, in order to be allowed into the tower, name the password - "Dragon Treasures".
+	AI_Output(self,other, " Dia_Talbin_RecruitDT_07_19 " );	// Good. You say the tower is near Onar's farm? Well then, see you there.
 	B_GivePlayerXP(300);
-	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Охотник Тальбин присоединился к лагерю.");
+	B_LogEntry( TOPIC_PPL_FOR_TOWER , " Hunter Talbin has joined the camp. " );
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 	TALBINRECRUITEDDT = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(VLK_4132_Talbin_NW,"InCastle");
@@ -190,7 +191,7 @@ instance DIA_TALBIN_INTOWER(C_Info)
 	condition = dia_talbin_intower_condition;
 	information = dia_talbin_intower_info;
 	permanent = TRUE;
-	description = "Как охота?";
+	description = " How are you hunting? " ;
 };
 
 func int dia_talbin_intower_condition()
@@ -203,23 +204,23 @@ func int dia_talbin_intower_condition()
 
 func void dia_talbin_intower_info()
 {
-	AI_Output(other,self,"DIA_Talbin_InTower_15_00");	//Как охота?
-	AI_Output(self,other,"DIA_Talbin_InTower_01_01");	//Хорошо, спасибо. Орков здесь действительно нет, а это – главное.
+	AI_Output(other,self, " DIA_Talbin_InTower_15_00 " );	// How's the hunting?
+	AI_Output(self,other, " DIA_Talbin_InTower_01_01 " );	// Ok, thanks. Orcs are really not here, and this is the main thing.
 };
 
-instance DIA_TALBIN_INTOWER_ORCKAP(C_Info)
+DIA_TALBIN_INTOWER_ORCKAP (C_Info) instances
 {
 	npc = VLK_4132_Talbin_NW;
 	nr = 22;
 	condition = dia_talbin_intower_orckap_condition;
 	information = dia_talbin_intower_orckap_info;
 	permanent = TRUE;
-	description = "Ты в порядке?";
+	description = " Are you okay? " ;
 };
 
 func int dia_talbin_intower_orckap_condition()
 {
-	if((TALBINRECRUITEDDT == TRUE) && (KAPITELORCATC == TRUE))
+	if (( TALBINRECRUITEDT  ==  TRUE ) && ( CAPITELORCATC  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -227,6 +228,6 @@ func int dia_talbin_intower_orckap_condition()
 
 func void dia_talbin_intower_orckap_info()
 {
-	AI_Output(other,self,"DIA_Talbin_InTower_OrcKap_15_00");	//Ты в порядке?
-	AI_Output(self,other,"DIA_Talbin_InTower_OrcKap_01_01");	//Одно слово - орки. Слишком. Много. Орков.
+	AI_Output(other,self, " DIA_Talbin_InTower_OrcKap_15_00 " );	// Are you okay?
+	AI_Output(self,other, " DIA_Talbin_InTower_OrcKap_01_01 " );	// One word - orcs. Too much. A lot of. Orcs.
 };
