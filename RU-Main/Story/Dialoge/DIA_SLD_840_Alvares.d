@@ -1,4 +1,5 @@
 
+
 instance DIA_Alvares_EXIT(C_Info)
 {
 	npc = SLD_840_Alvares;
@@ -43,10 +44,10 @@ func int DIA_Alvares_HAUAB_Condition()
 func void DIA_Alvares_HAUAB_Info()
 {
 	Akils_SLDStillthere = TRUE;
-	AI_Output(self,other,"DIA_Alvares_HAUAB_11_00");	//Что бы ни привело тебя сюда - тебе лучше забыть об этом и убраться подальше.
+	AI_Output(self,other, " DIA_Alvares_HAUAB_11_00 " );	// Whatever brings you here, you better forget about it and get out of here.
 	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
-	B_LogEntry(TOPIC_AkilsSLDStillthere,"Фермеру Акилу угрожают наемники.");
+	B_LogEntry(TOPIC_AkilsSLDStillthere, " Farmer Akils is threatened by mercenaries. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -72,63 +73,63 @@ func int DIA_Alvares_ATTACK_Condition()
 
 func void DIA_Alvares_ATTACK_Info()
 {
-	AI_Output(self,other,"DIA_Alvares_ATTACK_11_00");	//Эй, ты все еще здесь. Я дам тебе выбор, чужак - проваливай или умри!
+	AI_Output(self,other, " DIA_Alvares_ATTACK_11_00 " );	// Hey, you're still here. I'll give you a choice, stranger - get lost or die!
 	Info_ClearChoices(DIA_Alvares_ATTACK);
-	Info_AddChoice(DIA_Alvares_ATTACK,"Кто вы такие, парни - пара клоунов?",DIA_Alvares_ATTACK_Kerle);
-	Info_AddChoice(DIA_Alvares_ATTACK,"Я хочу присоединиться к вам, наемникам.",DIA_Alvares_ATTACK_Soeldner);
-	Info_AddChoice(DIA_Alvares_ATTACK,"Вы, парни, сейчас исчезнете отсюда!",DIA_Alvares_ATTACK_Witz);
-	Info_AddChoice(DIA_Alvares_ATTACK,"Мне не нужны проблемы.",DIA_Alvares_ATTACK_Aerger);
+	Info_AddChoice(DIA_Alvares_ATTACK, " Who are you guys a pair of clowns? " ,DIA_Alvares_ATTACK_Kerle);
+	Info_AddChoice(DIA_Alvares_ATTACK, " I want to join you mercenaries. " ,DIA_Alvares_ATTACK_Soeldner);
+	Info_AddChoice(DIA_Alvares_ATTACK, " You guys are out of here now! " ,DIA_Alvares_ATTACK_Witz);
+	Info_AddChoice(DIA_Alvares_ATTACK, " I don't want trouble. " ,DIA_Alvares_ATTACK_Aerger);
 
 	if(MIS_Baltram_ScoutAkil == LOG_Running)
 	{
-		Info_AddChoice(DIA_Alvares_ATTACK,"Я просто пришел сюда за товаром.",DIA_Alvares_ATTACK_Lieferung);
+		Info_AddChoice(DIA_Alvares_ATTACK, " I just came here for some goods. " ,DIA_Alvares_ATTACK_Lieferung);
 	};
 };
 
 func void DIA_Alvares_ATTACK_Witz()
 {
-	AI_Output(other,self,"DIA_Alvares_ATTACK_Witz_15_00");	//Вы, парни, сейчас исчезнете отсюда. Все понятно?
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Witz_11_01");	//Смотри-ка, новый герой нарисовался - и очень глупый герой.
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Witz_11_02");	//Ты знаешь, о чем я думаю?
-	AI_Output(other,self,"DIA_Alvares_ATTACK_Witz_15_03");	//Да кому какое дело, о чем ты думаешь?
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Witz_11_04");	//Я думаю, что хороший герой - это мертвый герой. Так что сделай мне одолжение - умри поскорее!
+	AI_Output(other,self, " DIA_Alvares_ATTACK_Witz_15_00 " );	// You guys are going to disappear from here. All clear?
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Witz_11_01 " );	// Look, a new hero has shown up - and a very stupid hero.
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Witz_11_02 " );	// Do you know what I'm thinking?
+	AI_Output(other,self, " DIA_Alvares_ATTACK_Witz_15_03 " );	// Who cares what you think?
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Witz_11_04 " );	// I think a good hero is a dead hero. So do me a favor - die quickly!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 
 func void DIA_Alvares_ATTACK_Kerle()
 {
-	AI_Output(other,self,"DIA_Alvares_ATTACK_Kerle_15_00");	//Кто вы такие, парни - пара клоунов?
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Kerle_11_01");	//Ты правильно понял. И я буду продолжать смеяться, когда твой труп будет лежать в дорожной пыли.
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Kerle_11_02");	//(зовет) Энгардо, давай начинать! Ты берешь на себя фермера - а я разберусь с этим клоуном!
+	AI_Output(other,self, " DIA_Alvares_ATTACK_Kerle_15_00 " );	// Who are you guys - a pair of clowns?
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Kerle_11_01 " );	// You got it right. And I will keep laughing as your corpse lies in the road dust.
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Kerle_11_02 " );	// (calling) Engardo, let's get started! You take on the farmer - and I'll deal with this clown!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 
 func void DIA_Alvares_ATTACK_Aerger()
 {
-	AI_Output(other,self,"DIA_Alvares_ATTACK_Aerger_15_00");	//Мне не нужны проблемы.
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Aerger_11_01");	//А мы как раз ищем проблемы. Мы проделали долгий путь, чтобы найти их.
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Aerger_11_02");	//Да, мы собираемся создать целую кучу проблем. И начну я с тебя, если ты сейчас же не свалишь отсюда.
+	AI_Output(other,self, " DIA_Alvares_ATTACK_Aerger_15_00 " );	// I don't want problems.
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Aerger_11_01 " );	// And we're just looking for problems. We have come a long way to find them.
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Aerger_11_02 " );	// Yes, we're going to create a whole bunch of problems. And I'll start with you, if you don't get out of here right now.
 	AI_StopProcessInfos(self);
 };
 
-func void DIA_Alvares_ATTACK_Lieferung()
+func void DIA_Alvares_ATTACK_Delivery()
 {
-	AI_Output(other,self,"DIA_Alvares_ATTACK_Lieferung_15_00");	//Я просто пришел сюда за товаром.
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Lieferung_11_01");	//И мы тоже. Но мы были здесь первыми. Так что проваливай, пока я не сделал тебе больно.
+	AI_Output(other,self, " DIA_Alvares_ATTACK_Lieferung_15_00 " );	// I just came here for the goods.
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Lieferung_11_01 " );	// So do we. But we were here first. So get out before I hurt you.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Alvares_ATTACK_Soeldner()
 {
-	AI_Output(other,self,"DIA_Alvares_ATTACK_Soeldner_15_00");	//Я хочу присоединиться к вам, наемникам.
-	AI_Output(self,other,"DIA_Alvares_ATTACK_Soeldner_11_01");	//Ох, правда? Тогда проваливай - или ты уже никогда не сможешь ни к кому присоединиться.
+	AI_Output(other,self, " DIA_Alvares_ATTACK_Soeldner_15_00 " );	// I want to join you mercenaries.
+	AI_Output(self,other, " DIA_Alvares_ATTACK_Soeldner_11_01 " );	// Oh, really? Get out then, or you'll never be able to join anyone again.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Alvares_Schluss(C_Info)
+instance DIA_Alvares_Schloss (C_Info)
 {
 	npc = SLD_840_Alvares;
 	nr = 4;
@@ -139,7 +140,7 @@ instance DIA_Alvares_Schluss(C_Info)
 };
 
 
-func int DIA_Alvares_Schluss_Condition()
+func int DIA_Alvares_Final_Condition()
 {
 	if(Npc_IsInState(self,ZS_Talk) && Npc_KnowsInfo(other,DIA_Alvares_ATTACK))
 	{
@@ -149,8 +150,8 @@ func int DIA_Alvares_Schluss_Condition()
 
 func void DIA_Alvares_Schluss_Info()
 {
-	AI_Output(self,other,"DIA_Alvares_Schluss_11_00");	//Я дал тебе шанс. Но, похоже, ты не прислушиваешься к здравому смыслу.
-	AI_Output(self,other,"DIA_Alvares_Schluss_11_01");	//Хорошо - значит, мне придется убить тебя. (зовет) Энгардо, давай, прикончим их!
+	AI_Output(self,other, " DIA_Alvares_Schluss_11_00 " );	// I gave you a chance. But you don't seem to be listening to common sense.
+	AI_Output(self,other, " DIA_Alvares_Schluss_11_01 " );	// Okay, so I'll have to kill you. (calling) Engardo, let's finish them off!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
@@ -169,19 +170,19 @@ instance DIA_Alvares_PICKPOCKET(C_Info)
 
 func int DIA_Alvares_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,15);
+	return  C_Robbery ( 20 , 15 );
 };
 
 func void DIA_Alvares_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Alvares_PICKPOCKET);
 	Info_AddChoice(DIA_Alvares_PICKPOCKET,Dialog_Back,DIA_Alvares_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Alvares_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Alvares_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Alvares_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Alvares_PICKPOCKET_DoIt);
 };
 
 func void DIA_Alvares_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Alvares_PICKPOCKET);
 };
 
@@ -190,7 +191,7 @@ func void DIA_Alvares_PICKPOCKET_BACK()
 	Info_ClearChoices(DIA_Alvares_PICKPOCKET);
 };
 
-//--------------------------------Харим-------------------------------------------
+// --------------------------------Harim-------------- ----------------------------
 
 instance DIA_Kharim_EXIT(C_Info)
 {
@@ -212,7 +213,7 @@ func void DIA_Kharim_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Kharim_PICKPOCKET(C_Info)
+instance DIA_Kharim_PICKPOCKET (C_Info)
 {
 	npc = SLD_850_Kharim;
 	nr = 900;
@@ -224,19 +225,19 @@ instance DIA_Kharim_PICKPOCKET(C_Info)
 
 func int DIA_Kharim_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,15);
+	return  C_Robbery ( 20 , 15 );
 };
 
 func void DIA_Kharim_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Kharim_PICKPOCKET);
-	Info_AddChoice(DIA_Kharim_PICKPOCKET,Dialog_Back,DIA_Kharim_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Kharim_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Kharim_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Kharim_PICKPOCKET, Dialog_Back, DIA_Kharim_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Kharim_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Kharim_PICKPOCKET_DoIt);
 };
 
 func void DIA_Kharim_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Kharim_PICKPOCKET);
 };
 
@@ -245,14 +246,14 @@ func void DIA_Kharim_PICKPOCKET_BACK()
 	Info_ClearChoices(DIA_Kharim_PICKPOCKET);
 };
 
-instance DIA_Kharim_Hello(C_Info)
+instance DIA_Kharim_Hello (C_Info)
 {
 	npc = SLD_850_Kharim;
 	nr = 1;
 	condition = DIA_Kharim_Hello_Condition;
 	information = DIA_Kharim_Hello_Info;
 	permanent = FALSE;
-	description = "Рад тебя видеть, Харим!";
+	description = " Good to see you, Harim! " ;
 };
 
 func int DIA_Kharim_Hello_Condition()
@@ -262,54 +263,54 @@ func int DIA_Kharim_Hello_Condition()
 
 func void DIA_Kharim_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Kharim_Hello_01_00");	//Рад тебя видеть, Харим!
-	AI_Output(self,other,"DIA_Kharim_Hello_01_01");	//Что? Ты кто такой?
-	AI_Output(other,self,"DIA_Kharim_Hello_01_02");	//Вспомни арену Скатти! Я провел там пару боев, в том числе и с тобой.
-	AI_Output(self,other,"DIA_Kharim_Hello_01_03");	//(недоверчиво) На арене сражалось много народу. Разве всех упомнишь?
-	AI_Output(self,other,"DIA_Kharim_Hello_01_04");	//Лучше напомни мне - как ты тогда смог вызвать меня на бой?
+	AI_Output(other,self, " DIA_Kharim_Hello_01_00 " );	// Good to see you, Harim!
+	AI_Output(self,other, " DIA_Kharim_Hello_01_01 " );	// What? Who are you?
+	AI_Output(other,self, " DIA_Kharim_Hello_01_02 " );	// Remember Scutty's arena! I spent a couple of fights there, including with you.
+	AI_Output(self,other, " DIA_Kharim_Hello_01_03 " );	// (incredulously) A lot of people fought in the arena. Do you remember everyone?
+	AI_Output(self,other, " DIA_Kharim_Hello_01_04 " );	// Better remind me - how could you challenge me to a fight then?
 	Info_ClearChoices(DIA_Kharim_Hello);
-	Info_AddChoice(DIA_Kharim_Hello,"Я сказал, что ты целовал задницу Гомезу.",DIA_Kharim_Hello_Ok);
-	Info_AddChoice(DIA_Kharim_Hello,"Я назвал тебя трусом!",DIA_Kharim_Hello_NoTwo);
-	Info_AddChoice(DIA_Kharim_Hello,"Я просто вызвал тебя на бой.",DIA_Kharim_Hello_NoOne);
-	Info_AddChoice(DIA_Kharim_Hello,"Я сказал, что твоя рожа ужасна!",DIA_Kharim_Hello_NoThree);
-	Info_AddChoice(DIA_Kharim_Hello,"Я что-то сказал о твоих ручонках.",DIA_Kharim_Hello_NoFour);
+	Info_AddChoice(DIA_Kharim_Hello, " I said you kissed Gomez's ass. " ,DIA_Kharim_Hello_Ok);
+	Info_AddChoice(DIA_Kharim_Hello, " I called you a coward! " ,DIA_Kharim_Hello_NoTwo);
+	Info_AddChoice(DIA_Kharim_Hello, " I just challenged you to a fight. " ,DIA_Kharim_Hello_NoOne);
+	Info_AddChoice(DIA_Kharim_Hello, " I said your face was terrible! " ,DIA_Kharim_Hello_NoThree);
+	Info_AddChoice(DIA_Kharim_Hello, " I said something about your hands. " ,DIA_Kharim_Hello_NoFour);
 };
 
 func void DIA_Kharim_Hello_NoTwo()
 {
-	AI_Output(other,self,"DIA_Kharim_Hello_NoTwo_01_00");	//Я назвал тебя трусом!
-	AI_Output(self,other,"DIA_Kharim_Hello_NoTwo_01_01");	//Что-то я такого не помню...
-	AI_Output(self,other,"DIA_Kharim_Hello_NoTwo_01_02");	//Наверное, ты ошибся, приятель.
+	AI_Output(other,self, " DIA_Kharim_Hello_NoTwo_01_00 " );	// I called you a coward!
+	AI_Output(self,other, " DIA_Kharim_Hello_NoTwo_01_01 " );	// I don't remember something like that...
+	AI_Output(self,other, " DIA_Kharim_Hello_NoTwo_01_02 " );	// You must be wrong, mate.
 	KharimPissOff = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Kharim_Hello_NoOne()
 {
-	AI_Output(other,self,"DIA_Kharim_Hello_NoOne_01_00");	//Я просто вызвал тебя на бой.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoOne_01_01");	//Хммм... Не думаю, что оно так и было.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoOne_01_02");	//Скорее всего, ты был простым рудокопом, который видел мои бои.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoOne_01_03");	//Так что мы вряд ли знакомы. Извини!
+	AI_Output(other,self, " DIA_Kharim_Hello_NoOne_01_00 " );	// I just challenged you to a fight.
+	AI_Output(self,other, " DIA_Kharim_Hello_NoOne_01_01 " );	// Hmmm... I don't think it was.
+	AI_Output(self,other, " DIA_Kharim_Hello_NoOne_01_02 " );	// Most likely, you were a simple miner who saw my fights.
+	AI_Output(self,other, " DIA_Kharim_Hello_NoOne_01_03 " );	// So we hardly know each other. Sorry!
 	KharimPissOff = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Kharim_Hello_NoThree()
 {
-	AI_Output(other,self,"DIA_Kharim_Hello_NoThree_01_00");	//Я сказал, что твоя рожа ужасна!
-	AI_Output(self,other,"DIA_Kharim_Hello_NoThree_01_01");	//(задумчиво) Что-то припоминаю, но не совсем.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoThree_01_02");	//Похоже, что ты все-таки ошибся, приятель.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoThree_01_03");	//Мы вряд ли знакомы. Извини!
+	AI_Output(other,self, " DIA_Kharim_Hello_NoThree_01_00 " );	// I said your face is terrible!
+	AI_Output(self,other, " DIA_Kharim_Hello_NoThree_01_01 " );	// (thoughtfully) I remember something, but not quite.
+	AI_Output(self,other, " DIA_Kharim_Hello_NoThree_01_02 " );	// Looks like you got it wrong, mate.
+	AI_Output(self,other, " DIA_Kharim_Hello_NoThree_01_03 " );	// We hardly know each other. Sorry!
 	KharimPissOff = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Kharim_Hello_NoFour()
 {
-	AI_Output(other,self,"DIA_Kharim_Hello_NoFour_01_00");	//Я что-то сказал о твоих ручонках.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoFour_01_01");	//(задумчиво) Я что-то не припоминаю такого.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoFour_01_02");	//Похоже, что ты все-таки ошибся, приятель.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoFour_01_03");	//Мы вряд ли знакомы. Извини!
+	AI_Output(other,self, " DIA_Kharim_Hello_NoFour_01_00 " );	// I said something about your hands.
+	AI_Output(self,other, " DIA_Kharim_Hello_NoFour_01_01 " );	// (thoughtfully) I don't remember anything like that.
+	AI_Output(self,other, " DIA_Kharim_Hello_NoFour_01_02 " );	// Looks like you got it wrong, mate.
+	AI_Output(self,other, " DIA_Kharim_Hello_NoFour_01_03 " );	// We hardly know each other. Sorry!
 	KharimPissOff = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -317,20 +318,20 @@ func void DIA_Kharim_Hello_NoFour()
 func void DIA_Kharim_Hello_Ok()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Kharim_Hello_Ok_01_00");	//Я сказал, что ты целовал задницу Гомезу.
+	AI_Output(other,self, " DIA_Kharim_Hello_Ok_01_00 " );	// I said you were kissing Gomez's ass.
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_01");	//Что?! А ну-ка повтори!
-	AI_Output(other,self,"DIA_Kharim_Hello_Ok_01_02");	//Судя по твоей реакции, сомнений в нашем знакомстве у тебя больше не возникает.
-	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_03");	//О да...(ухмыляясь) Теперь и я тебя вспомнил!
+	AI_Output(self,other, " DIA_Kharim_Hello_Ok_01_01 " );	// What?! Well, repeat!
+	AI_Output(other,self, " DIA_Kharim_Hello_Ok_01_02 " );	// Judging by your reaction, you no longer have doubts about our acquaintance.
+	AI_Output(self,other, " DIA_Kharim_Hello_Ok_01_03 " );	// Oh yes... (smirking) Now I remember you too!
 	AI_RemoveWeapon(self);
-	AI_Output(other,self,"DIA_Kharim_Hello_Ok_01_04");	//И тот бой рассудил нас.
-	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_05");	//Конечно. И как это всегда бывает, не прав был тот, кто грызет землю.
-	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_06");	//Ладно! Кто старое помянет - тому глаз долой...
-	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_07");	//(улыбаясь) И кстати - я тоже рад тебя видеть, приятель!
+	AI_Output(other,self, " DIA_Kharim_Hello_Ok_01_04 " );	// And that fight judged us.
+	AI_Output(self,other, " DIA_Kharim_Hello_Ok_01_05 " );	// Of course. And as it always happens, the one who gnaws the earth was wrong.
+	AI_Output(self,other, " DIA_Kharim_Hello_Ok_01_06 " );	// Okay! Whoever remembers the old is out of sight ...
+	AI_Output(self,other, " DIA_Kharim_Hello_Ok_01_07 " );	// (smiling) And by the way - nice to see you too, mate!
 	Info_ClearChoices(DIA_Kharim_Hello);
 };
 
-instance DIA_Kharim_HAUAB(C_Info)
+instance DIA_Kharim_HAUAB (C_Info)
 {
 	npc = SLD_850_Kharim;
 	nr = 4;
@@ -350,24 +351,24 @@ func int DIA_Kharim_HAUAB_Condition()
 
 func void DIA_Kharim_HAUAB_Info()
 {
-	AI_Output(self,other,"DIA_Kharim_HAUAB_01_00");	//(недовольно) Эй, отвали...
+	AI_Output(self,other, " DIA_Kharim_HAUAB_01_00 " );	// (angrily) Hey, back off...
 	KharimPissOff = TRUE;
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Kharim_Escape(C_Info)
+instance DIA_Kharim_Escape (C_Info)
 {
 	npc = SLD_850_Kharim;
 	nr = 1;
 	condition = DIA_Kharim_Escape_Condition;
 	information = DIA_Kharim_Escape_Info;
 	permanent = FALSE;
-	description = "Как тебе удалось выбраться из Старого лагеря?";
+	description = " How did you get out of the Old Camp? " ;
 };
 
 func int DIA_Kharim_Escape_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Kharim_Hello) == TRUE)
+	if ( Npc_KnowsInfo ( other , DIA_Kharim_Hello ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -375,25 +376,25 @@ func int DIA_Kharim_Escape_Condition()
 
 func void DIA_Kharim_Escape_Info()
 {
-	AI_Output(other,self,"DIA_Kharim_Escape_01_00");	//Как тебе удалось выбраться из Старого лагеря?
-	AI_Output(self,other,"DIA_Kharim_Escape_01_01");	//Скатти как-то узнал, что затевает Гомез и успел предупредить нас с Гор Ханисом об опасности.
-	AI_Output(self,other,"DIA_Kharim_Escape_01_02");	//Я чудом успел сбежать за ворота замка! Один из стражников даже успел выстрелить мне в спину из арбалета.
-	AI_Output(self,other,"DIA_Kharim_Escape_01_03");	//Но видимо, крепкое похмелье не дало ему возможности прицелиться точнее.
+	AI_Output(other,self, " DIA_Kharim_Escape_01_00 " );	// How did you manage to get out of the Old Camp?
+	AI_Output(self,other, " DIA_Kharim_Escape_01_01 " );	// Scutty somehow found out what Gomez was up to and managed to warn Gor Hanis and me of the danger.
+	AI_Output(self,other, " DIA_Kharim_Escape_01_02 " );	// I miraculously escaped the castle gates! One of the guards even managed to shoot me in the back with a crossbow.
+	AI_Output(self,other, " DIA_Kharim_Escape_01_03 " );	// But apparently, a strong hangover did not give him the opportunity to aim more accurately.
 };
 
-instance DIA_Kharim_Cup(C_Info)
+DIA_Kharim_Cup instance (C_Info)
 {
 	npc = SLD_850_Kharim;
 	nr = 1;
 	condition = DIA_Kharim_Cup_Condition;
 	information = DIA_Kharim_Cup_Info;
 	permanent = FALSE;
-	description = "Ты вспоминаешь об этом с некоторой досадой.";
+	description = " You remember this with some annoyance. " ;
 };
 
 func int DIA_Kharim_Cup_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Kharim_Escape) == TRUE)
+	if ( Npc_KnowsInfo ( other , DIA_Kharim_Escape ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -401,23 +402,23 @@ func int DIA_Kharim_Cup_Condition()
 
 func void DIA_Kharim_Cup_Info()
 {
-	AI_Output(other,self,"DIA_Kharim_Cup_01_00");	//Ты вспоминаешь об этом с некоторой досадой.
-	AI_Output(self,other,"DIA_Kharim_Cup_01_01");	//Эх... Да все дело в моем золотом кубке.
-	AI_Output(self,other,"DIA_Kharim_Cup_01_02");	//Я так быстро уносил ноги из Старого лагеря, что совсем позабыл о нем.
-	AI_Output(other,self,"DIA_Kharim_Cup_01_03");	//Что это за кубок?
-	AI_Output(self,other,"DIA_Kharim_Cup_01_04");	//Это награда, как самому сильному бойцу арены!
-	AI_Output(self,other,"DIA_Kharim_Cup_01_05");	//Хоть он и получен из рук самого Гомеза, я берег его, как самую дорогую для меня вещь.
-	AI_Output(self,other,"DIA_Kharim_Cup_01_06");	//Он напоминал мне о моих былых победах.
-	AI_Output(self,other,"DIA_Kharim_Cup_01_07");	//Вдобавок, этот кубок отлит из чистого золота, и стоил бы тут немало денег.
-	AI_Output(other,self,"DIA_Kharim_Cup_01_08");	//А почему бы тебе самому не отправиться туда и не забрать его?
-	AI_Output(self,other,"DIA_Kharim_Cup_01_09");	//Я не уверен, что он до сих пор там. Все-таки вещица дорогая, и на нее позарился бы любой.
-	AI_Output(self,other,"DIA_Kharim_Cup_01_10");	//К тому же проход в Долину Рудников охраняется паладинами, и Ли приказал нам охранять эту ферму.
-	AI_Output(self,other,"DIA_Kharim_Cup_01_11");	//Так что я не могу уйти отсюда.
-	AI_Output(self,other,"DIA_Kharim_Cup_01_12");	//Вот если бы кто-нибудь помог мне в этом - уж я бы его отблагодарил от всей души!
+	AI_Output(other,self, " DIA_Kharim_Cup_01_00 " );	// You remember this with some annoyance.
+	AI_Output(self,other, " DIA_Kharim_Cup_01_01 " );	// Eh... It's all about my golden goblet.
+	AI_Output(self,other, " DIA_Kharim_Cup_01_02 " );	// I was running away from the Old Camp so fast that I forgot about it.
+	AI_Output(other,self, " DIA_Kharim_Cup_01_03 " );	// What is this cup?
+	AI_Output(self,other, " DIA_Kharim_Cup_01_04 " );	// This is an award as the strongest fighter in the arena!
+	AI_Output(self,other, " DIA_Kharim_Cup_01_05 " );	// Even though it came from the hands of Gomez himself, I kept it as the most precious thing for me.
+	AI_Output(self,other, " DIA_Kharim_Cup_01_06 " );	// He reminded me of my past victories.
+	AI_Output(self,other, " DIA_Kharim_Cup_01_07 " );	// In addition, this goblet is made of solid gold, and would be worth a lot of money here.
+	AI_Output(other,self, " DIA_Kharim_Cup_01_08 " );	// Why don't you go there yourself and pick him up?
+	AI_Output(self,other, " DIA_Kharim_Cup_01_09 " );	// I'm not sure if it's still there. Still, the little thing is expensive, and anyone would covet it.
+	AI_Output(self,other, " DIA_Kharim_Cup_01_10 " );	// In addition, the passage to the Valley of Mines is guarded by paladins, and Lee ordered us to guard this farm.
+	AI_Output(self,other, " DIA_Kharim_Cup_01_11 " );	// So I can't get out of here.
+	AI_Output(self,other, " DIA_Kharim_Cup_01_12 " );	// Now, if someone helped me with this, I would thank him with all my heart!
 	MIS_KharimCup = LOG_Running;
 	Log_CreateTopic(TOPIC_KharimCup,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KharimCup,LOG_Running);
-	B_LogEntry(TOPIC_KharimCup,"Харим забыл в Старом лагере свой золотой кубок. Это был символ чемпиона арены, врученный ему лично Гомезом. Харим был бы не прочь его вернуть.");
+	B_LogEntry(TOPIC_KharimCup, " Kharim forgot his golden cup in the Old Camp. It was the symbol of the arena champion given to him personally by Gomez. Kharim would not mind returning it. " );
 };
 
 instance DIA_Kharim_Cup_Done(C_Info)
@@ -427,12 +428,12 @@ instance DIA_Kharim_Cup_Done(C_Info)
 	condition = DIA_Kharim_Cup_Done_Condition;
 	information = DIA_Kharim_Cup_Done_Info;
 	permanent = FALSE;
-	description = "Кажется, я нашел твой кубок.";
+	description = " I think I found your goblet. " ;
 };
 
 func int DIA_Kharim_Cup_Done_Condition()
 {
-	if((MIS_KharimCup == LOG_Running) && (Npc_HasItems(other,ItMi_HarimCup) >= 1))
+	if ((MIS_KharimCup == LOG_Running) && (Npc_HasItems(other,ItMi_HarimCup) >=  1 ))
 	{
 		return TRUE;
 	};
@@ -441,24 +442,24 @@ func int DIA_Kharim_Cup_Done_Condition()
 func void DIA_Kharim_Cup_Done_Info()
 {
 	B_GivePlayerXP(400);
-	AI_Output(other,self,"DIA_Kharim_Cup_Done_01_00");	//Кажется, я нашел твой кубок.
-	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_01");	//Ну-ка, дай мне взглянуть на него...
+	AI_Output(other,self, " DIA_Kharim_Cup_Done_01_00 " );	// I think I found your goblet.
+	AI_Output(self,other, " DIA_Kharim_Cup_Done_01_01 " );	// Come on, let me take a look at it...
 	B_GiveInvItems(other,self,ItMi_HarimCup,1);
 	Npc_RemoveInvItems(self,ItMi_HarimCup,1);
-	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_02");	//Да, черт возьми, это он! Я никогда не забуду тот бой, когда получил его.
-	AI_Output(other,self,"DIA_Kharim_Cup_Done_01_03");	//Теперь ты доволен?
-	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_04");	//Не то слово, приятель. Это все, что мне было нужно для счастья!
-	AI_Output(other,self,"DIA_Kharim_Cup_Done_01_05");	//А что насчет обещанной награды?
-	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_06");	//Конечно! Вот, возьми этот рудный слиток.
+	AI_Output(self,other, " DIA_Kharim_Cup_Done_01_02 " );	// Hell yeah, it's him! I will never forget that fight when I got it.
+	AI_Output(other,self, " DIA_Kharim_Cup_Done_01_03 " );	// Are you happy now?
+	AI_Output(self,other, " DIA_Kharim_Cup_Done_01_04 " );	// Not the right word, mate. That's all I needed to be happy!
+	AI_Output(other,self, " DIA_Kharim_Cup_Done_01_05 " );	// What about the promised reward?
+	AI_Output(self,other, " DIA_Kharim_Cup_Done_01_06 " );	// Of course! Here, take this ore ingot.
 	B_GiveInvItems(self,other,ItMi_OreStuck,1);
-	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_07");	//Беннет изготовил мне его из остатков магической руды, которую я принес из колонии.
-	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_08");	//И кто знает, возможно, он окажется для тебя куда ценнее, чем золото.
+	AI_Output(self,other, " DIA_Kharim_Cup_Done_01_07 " );	// Bennet made it for me from the leftover magical ore I brought back from the colony.
+	AI_Output(self,other, " DIA_Kharim_Cup_Done_01_08 " );	// And who knows, maybe it will be more valuable to you than gold.
 	MIS_KharimCup = LOG_Success;
 	Log_SetTopicStatus(TOPIC_KharimCup,LOG_Success);
-	B_LogEntry(TOPIC_KharimCup,"Харим был рад заполучить свой кубок обратно.");
+	B_LogEntry(TOPIC_KharimCup, " Kharim was happy to have his cup back. " );
 };
 
-//--------------------------------Роско-------------------------------------------
+// --------------------------------Rosco--------------- ----------------------------
 
 instance DIA_Roscoe_EXIT(C_Info)
 {
@@ -492,7 +493,7 @@ instance DIA_Roscoe_PICKPOCKET(C_Info)
 
 func int DIA_Roscoe_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,15);
+	return  C_Robbery ( 20 , 15 );
 };
 
 func void DIA_Roscoe_PICKPOCKET_Info()
@@ -504,7 +505,7 @@ func void DIA_Roscoe_PICKPOCKET_Info()
 
 func void DIA_Roscoe_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Roscoe_PICKPOCKET);
 };
 
@@ -533,7 +534,7 @@ func int DIA_Roscoe_HAUAB_Condition()
 
 func void DIA_Roscoe_HAUAB_Info()
 {
-	AI_Output(self,other,"DIA_Roscoe_HAUAB_01_00");	//(недовольно) Что?
+	AI_Output(self,other, " DIA_Roscoe_HAUAB_01_00 " );	// (angrily) What?
 };
 
 instance DIA_Roscoe_Hello(C_Info)
@@ -543,7 +544,7 @@ instance DIA_Roscoe_Hello(C_Info)
 	condition = DIA_Roscoe_Hello_Condition;
 	information = DIA_Roscoe_Hello_Info;
 	permanent = FALSE;
-	description = "Эй! Как твои дела, Роско?";
+	description = " Hey! How are you Roscoe? " ;
 };
 
 func int DIA_Roscoe_Hello_Condition()
@@ -553,14 +554,14 @@ func int DIA_Roscoe_Hello_Condition()
 
 func void DIA_Roscoe_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Roscoe_Hello_01_00");	//Эй! Как твои дела, Роско?
-	AI_Output(self,other,"DIA_Roscoe_Hello_01_01");	//(недоверчиво) А мы что, разве знакомы?
-	AI_Output(other,self,"DIA_Roscoe_Hello_01_02");	//Короткая же у тебя память, как я погляжу. 
-	AI_Output(self,other,"DIA_Roscoe_Hello_01_03");	//Ах, ну да...(вглядываясь) Теперь я тебя, кажется, припоминаю.
-	AI_Output(self,other,"DIA_Roscoe_Hello_01_04");	//Ты тот парень, что так настойчиво добивался аудиенции Лареса в Новом лагере.
-	AI_Output(other,self,"DIA_Roscoe_Hello_01_05");	//Все еще работаешь на него?
-	AI_Output(self,other,"DIA_Roscoe_Hello_01_06");	//Конечно! Я же был его телохранителем в колонии, и мы всегда хорошо ладили.
-	AI_Output(self,other,"DIA_Roscoe_Hello_01_07");	//Да и потом, с Ларесом очень выгодно иметь дело. Он всегда знает больше, чем говорит.
+	AI_Output(other,self, " DIA_Roscoe_Hello_01_00 " );	// Hey! How are you, Roscoe?
+	AI_Output(self,other, " DIA_Roscoe_Hello_01_01 " );	// (incredulously) Are we really familiar?
+	AI_Output(other,self, " DIA_Roscoe_Hello_01_02 " );	// You have a short memory, I see.
+	AI_Output(self,other, " DIA_Roscoe_Hello_01_03 " );	// Oh, yes... (looking) Now I seem to remember you.
+	AI_Output(self,other, " DIA_Roscoe_Hello_01_04 " );	// You're the guy who insisted on Lares's audience at the New Camp.
+	AI_Output(other,self, " DIA_Roscoe_Hello_01_05 " );	// Still working for him?
+	AI_Output(self,other, " DIA_Roscoe_Hello_01_06 " );	// Of course! I was his bodyguard in the colony, and we always got along well.
+	AI_Output(self,other, " DIA_Roscoe_Hello_01_07 " );	// And besides, it's very profitable to deal with Lares. He always knows more than he says.
 };
 
 instance DIA_Roscoe_WhatDo(C_Info)
@@ -570,7 +571,7 @@ instance DIA_Roscoe_WhatDo(C_Info)
 	condition = DIA_Roscoe_WhatDo_Condition;
 	information = DIA_Roscoe_WhatDo_Info;
 	permanent = FALSE;
-	description = "А что ты здесь делаешь?";
+	description = " What are you doing here? " ;
 };
 
 func int DIA_Roscoe_WhatDo_Condition()
@@ -583,12 +584,12 @@ func int DIA_Roscoe_WhatDo_Condition()
 
 func void DIA_Roscoe_WhatDo_Info()
 {
-	AI_Output(other,self,"DIA_Roscoe_WhatDo_01_00");	//А что ты здесь делаешь?
-	AI_Output(self,other,"DIA_Roscoe_WhatDo_01_01");	//Да так...(замявшись) Наблюдаю за всем происходящим вокруг.
+	AI_Output(other,self, " DIA_Roscoe_WhatDo_01_00 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Roscoe_WhatDo_01_01 " );	// Yes, so... (hesitantly) Watching everything that happens around.
 	AI_Output(other,self,"DIA_Roscoe_WhatDo_01_02");	//Зачем?
-	AI_Output(self,other,"DIA_Roscoe_WhatDo_01_03");	//(ухмыляясь) Приятель, тут же проходят все дороги, ведущие в Долину Рудников и в саму глубь острова.
-	AI_Output(self,other,"DIA_Roscoe_WhatDo_01_04");	//Отсюда легко можно проследить за паладинами и городским ополчением, если они вдруг здесь появятся.
-	AI_Output(self,other,"DIA_Roscoe_WhatDo_01_05");	//К тому же Ларес иногда передает мне полезные сведения для Ли через местного бармена.
+	AI_Output(self,other, " DIA_Roscoe_WhatDo_01_03 " );	// (grinning) Buddy, all the roads leading to the Valley of Mines and into the very depths of the island pass right there.
+	AI_Output(self,other, " DIA_Roscoe_WhatDo_01_04 " );	// From here you can easily track the paladins and the city militia if they suddenly appear here.
+	AI_Output(self,other, " DIA_Roscoe_WhatDo_01_05 " );	// In addition, Lares sometimes gives me useful information for Lee through a local bartender.
 	AI_Output(other,self,"DIA_Roscoe_WhatDo_01_06");	//Понимаю.
 };
 
@@ -599,7 +600,7 @@ instance DIA_Roscoe_News(C_Info)
 	condition = DIA_Roscoe_News_Condition;
 	information = DIA_Roscoe_News_Info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 func int DIA_Roscoe_News_Condition()
@@ -612,24 +613,24 @@ func int DIA_Roscoe_News_Condition()
 
 func void DIA_Roscoe_News_Info()
 {
-	AI_Output(other,self,"DIA_Roscoe_News_01_00");	//Как обстановка?
+	AI_Output(other,self, " DIA_Roscoe_News_01_00 " );	// How are things?
 
- 	if(Kapitel < 3)
+ 	if (chapter <  3 )
 	{
-		AI_Output(self,other,"DIA_Roscoe_News_01_01");	//Все под контролем, приятель.
+		AI_Output(self,other, " DIA_Roscoe_News_01_01 " );	// Everything's under control, mate.
 	}
 	else if(MIS_RoscoeMage == FALSE)
 	{
-		AI_Output(self,other,"DIA_Roscoe_News_01_02");	//Не очень. Кругом постоянно снуют эти странные существа в черных робах.
-		AI_Output(self,other,"DIA_Roscoe_News_01_03");	//Они явно кого-то ищут. Вот только понять не могу, кого!
-		AI_Output(other,self,"DIA_Roscoe_News_01_04");	//И много их тут прошло?
-		AI_Output(self,other,"DIA_Roscoe_News_01_05");	//Я видел только одного. (нервно) Кажется, он шел по направлению к старому кладбищу, что находится тут недалеко, в лесу.
-		AI_Output(self,other,"DIA_Roscoe_News_01_06");	//Теперь я стараюсь держаться подальше от того места.
-		AI_Output(self,other,"DIA_Roscoe_News_01_07");	//У меня мурашки по коже от этих людей! Если это, конечно, люди.
+		AI_Output(self,other, " DIA_Roscoe_News_01_02 " );	// Not really. These strange creatures in black robes are constantly scurrying around.
+		AI_Output(self,other, " DIA_Roscoe_News_01_03 " );	// They're obviously looking for someone. I just can't figure out who!
+		AI_Output(other,self, " DIA_Roscoe_News_01_04 " );	// And many of them passed here?
+		AI_Output(self,other, " DIA_Roscoe_News_01_05 " );	// I've only seen one. (nervously) It seems he was walking towards the old cemetery, which is not far away, in the forest.
+		AI_Output(self,other, " DIA_Roscoe_News_01_06 " );	// Now I try to stay away from that place.
+		AI_Output(self,other, " DIA_Roscoe_News_01_07 " );	// I get goosebumps from these people! If it is, of course, people.
 		MIS_RoscoeMage = LOG_Running;
 		Log_CreateTopic(TOPIC_RoscoeMage,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_RoscoeMage,LOG_Running);
-		B_LogEntry(TOPIC_RoscoeMage,"Роско напуган появлением людей в черных робах. По его словам, один из них отправился в сторону старого кладбища, что в лесу.");
+		B_LogEntry(TOPIC_RoscoeMage, " Roscoe is frightened by the appearance of people in black robes. According to him, one of them went towards the old cemetery in the forest. " );
 		AI_StopProcessInfos(self);
 		Wld_InsertNpc(DMT_1812_Dementor,"NW_FARM2_TO_TAVERN_09_MONSTER4");
 		Wld_InsertNpc(SKELETON_DARK,"FP_ROAM_NW_FARM2_TO_TAVERN_09_MONSTER4_04");
@@ -639,7 +640,7 @@ func void DIA_Roscoe_News_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Roscoe_News_01_09");	//Бывало и лучше, приятель.
+		AI_Output(self,other, " DIA_Roscoe_News_01_09 " );	// I've been better, mate.
 	};
 };
 
@@ -650,7 +651,7 @@ instance DIA_Roscoe_RoscoeMage(C_Info)
 	condition = DIA_Roscoe_RoscoeMage_Condition;
 	information = DIA_Roscoe_RoscoeMage_Info;
 	permanent = FALSE;
-	description = "Я убил того мага.";
+	description = " I killed that mage. " ;
 };
 
 func int DIA_Roscoe_RoscoeMage_Condition()
@@ -664,13 +665,13 @@ func int DIA_Roscoe_RoscoeMage_Condition()
 func void DIA_Roscoe_RoscoeMage_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Roscoe_RoscoeMage_01_01");	//Я убил того мага.
-	AI_Output(self,other,"DIA_Roscoe_RoscoeMage_01_02");	//Хорошо. Туда ему и дорога!
-	AI_Output(self,other,"DIA_Roscoe_RoscoeMage_01_03");	//А мне будет гораздо спокойней от этой мысли.
-	AI_Output(self,other,"DIA_Roscoe_RoscoeMage_01_04");	//Вот, возьми за свои труды.
+	AI_Output(other,self, " DIA_Roscoe_RoscoeMage_01_01 " );	// I killed that mage.
+	AI_Output(self,other, " DIA_Roscoe_RoscoeMage_01_02 " );	// Good. There he is dear!
+	AI_Output(self,other, " DIA_Roscoe_RoscoeMage_01_03 " );	// And I will be much calmer from this thought.
+	AI_Output(self,other, " DIA_Roscoe_RoscoeMage_01_04 " );	// Here, take this for your work.
 	B_GiveInvItems(self,other,ItMi_Gold,350);
 	AI_Output(other,self,"DIA_Roscoe_RoscoeMage_01_05");	//Спасибо.
 	MIS_RoscoeMage = LOG_Success;
 	Log_SetTopicStatus(TOPIC_RoscoeMage,LOG_Success);
-	B_LogEntry(TOPIC_RoscoeMage,"Роско вздохнул с облегчением, узнав о том, что темный маг мертв.");
+	B_LogEntry(TOPIC_RoscoeMage, " Roscoe breathed a sigh of relief that the dark mage is dead. " );
 };
