@@ -1,4 +1,5 @@
 
+
 instance DIA_STRF_8121_Addon_Krow_EXIT(C_Info)
 {
 	npc = STRF_8121_Addon_Krow;
@@ -21,7 +22,7 @@ func void DIA_STRF_8121_Addon_Krow_exit_info()
 };
 
 
-instance DIA_STRF_8121_Addon_Krow_PreHello(C_Info)
+instance DIA_STRF_8121_Crow_Addon_PreHello (C_Info);
 {
 	npc = STRF_8121_Addon_Krow;
 	nr = 2;
@@ -41,14 +42,14 @@ func int DIA_STRF_8121_Addon_Krow_PreHello_condition()
 
 func void DIA_STRF_8121_Addon_Krow_PreHello_info()
 {
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_00");	//(спокойно) А, новое лицо в шахте.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_01");	//Нечасто тут у нас бывают гости. Ты тут по своей воле или как, странник?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_PreHello_01_02");	//Да, по своей.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_03");	//Тогда странно, что орки впустили тебя сюда.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_04");	//Обычно в шахту попадают только в цепях с ошейником для рабов.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_05");	//По всей видимости, ты ведешь с ними какие-то дела, не иначе.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_PreHello_01_06");	//Скажем так, у меня с ними есть некоторые общие интересы.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_07");	//Ну, в конце концов, это не мое дело. Я тут просто обычный раб.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_PreHello_01_00 " );	// (calmly) Ah, a new face in the mine.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_PreHello_01_01 " );	// We don't often have guests here. Are you here on your own or as a stranger?
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_PreHello_01_02 " );	// Yes, in my own way.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_PreHello_01_03 " );	// Then it's strange that the orcs let you in here.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_PreHello_01_04 " );	// Normally, the only way to get into the mine is in chains with slave collars.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_PreHello_01_05 " );	// Apparently, you are doing some business with them, not otherwise.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_PreHello_01_06 " );	// Let's just say I have some common interests with them.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_PreHello_01_07 " );	// Well, it's none of my business after all. I'm just an ordinary slave here.
 };
 
 instance DIA_STRF_8121_Addon_Krow_HELLO(C_Info)
@@ -58,7 +59,7 @@ instance DIA_STRF_8121_Addon_Krow_HELLO(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_hello_condition;
 	information = DIA_STRF_8121_Addon_Krow_hello_info;
 	permanent = FALSE;
-	description = "Как ты сюда попал?";
+	description = " How did you get here? " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_hello_condition()
@@ -68,14 +69,14 @@ func int DIA_STRF_8121_Addon_Krow_hello_condition()
 
 func void DIA_STRF_8121_Addon_Krow_hello_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_00");	//Как ты сюда попал?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_01");	//Видимо, я чем-то прогневал Инноса, раз оказался здесь.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_02");	//А кем ты был раньше?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_03");	//Я был магом и служил под началом рудных баронов.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_04");	//Ты разбираешься в магии?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_05");	//Немного. Конечно, я не настолько хорош в искусстве магии, как, скажем... маги Огня.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_06");	//Но кое-что все-таки умею. Точнее, умел, пока не попал в лапы орков.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_07");	//К сожалению, за долгие годы, проведенные в шахте, я уже успел многое позабыть.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Hello_01_00 " );	// How did you get here?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Hello_01_01 " );	// Apparently, I somehow angered Innos, since I ended up here.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Hello_01_02 " );	// Who were you before?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Hello_01_03 " );	// I was a mage and served under the ore barons.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Hello_01_04 " );	// Are you good at magic?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Hello_01_05 " );	// Not much. Of course, I'm not as good at the art of magic as, say... Firebenders.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Hello_01_06 " );	// But I still know how to do something. More precisely, he knew how, until he fell into the clutches of the orcs.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Hello_01_07 " );	// Unfortunately, over the long years spent in the mine, I have already managed to forget a lot.
 };
 
 instance DIA_STRF_8121_Addon_Krow_Help(C_Info)
@@ -85,7 +86,7 @@ instance DIA_STRF_8121_Addon_Krow_Help(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Help_condition;
 	information = DIA_STRF_8121_Addon_Krow_Help_info;
 	permanent = FALSE;
-	description = "У тебя все в порядке?";
+	description = " Are you all right? " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_Help_condition()
@@ -95,22 +96,22 @@ func int DIA_STRF_8121_Addon_Krow_Help_condition()
 
 func void DIA_STRF_8121_Addon_Krow_Help_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_00");	//У тебя все в порядке?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_01");	//Более или менее. Но я бы чувствовал себя лучше, если при мне был бы мой дневник.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_02");	//Дневник?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_03");	//Туда я записывал свои наблюдения, мысли и прочее.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_04");	//Но когда орки поймали меня, то вместе со всеми вещами они забрали и его.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_05");	//Эта вещь была очень дорога мне. Можно сказать, что это был труд всей моей жизни!
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_06");	//И ты понятия не имеешь, где он сейчас?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_07");	//Скорее всего, он до сих пор у орков. Но, думаю, они не отдадут его просто так.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_08");	//А где ты видел свой дневник в последний раз?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_09");	//У того орка, что обыскивал меня. Кажется, его звали Кор Шак.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_10");	//Уже что-то. Ладно, если представится случай, я верну твой дневник.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_11");	//Благодарю тебя, странник.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Help_01_00 " );	// Are you okay?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Help_01_01 " );	// More or less. But I would feel better if I had my diary with me.
+	AI_Output(other,self, " DIA_STRF_8121_Krow_Addon_Help_01_02 " );	// Дневник?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Help_01_03 " );	// There I wrote down my observations, thoughts and so on.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Help_01_04 " );	// But when the orcs caught me, they took him along with all the things.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Help_01_05 " );	// This thing was very dear to me. We can say that it was the work of my life!
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Help_01_06 " );	// And you have no idea where he is now?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Help_01_07 " );	// Most likely, the orcs still have it. But I don't think they'll just give it away.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Help_01_08 " );	// Where did you last see your diary?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Help_01_09 " );	// From the orc that searched me. I think his name was Kor Shak.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Help_01_10 " );	// Already something. Okay, if the opportunity presents itself, I'll return your diary.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Help_01_11 " );	// Thank you, wanderer.
 	MIS_KrowBook = LOG_Running;
 	Log_CreateTopic(TOPIC_KrowBook,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KrowBook,LOG_Running);
-	B_LogEntry(TOPIC_KrowBook,"Орки отобрали у Кроу его дневник, которым он очень дорожил. В последний раз Кроу видел его в руках орка по имени Кор Шак.");
+	B_LogEntry(TOPIC_KrowBook, " The orcs took away his treasured diary from Krow. The last time Krow saw it was in the hands of an orc named Kor Shak. " );
 };
 
 instance DIA_STRF_8121_Addon_Krow_Book(C_Info)
@@ -120,7 +121,7 @@ instance DIA_STRF_8121_Addon_Krow_Book(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Book_condition;
 	information = DIA_STRF_8121_Addon_Krow_Book_info;
 	permanent = FALSE;
-	description = "Это твой дневник?";
+	description = " Is this your diary? " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_Book_condition()
@@ -134,18 +135,18 @@ func int DIA_STRF_8121_Addon_Krow_Book_condition()
 func void DIA_STRF_8121_Addon_Krow_Book_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_00");	//Это твой дневник?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Book_01_01");	//Да, это он! Как тебе удалось его достать?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_02");	//Это не столь важно.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_03");	//Просто возьми и спрячь подальше, чтобы орки вновь не отняли его у тебя.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Book_01_00 " );	// Is this your diary?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Book_01_01 " );	// Yes, it's him! How did you manage to get it?
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Book_01_02 " );	// It's not that important.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Book_01_03 " );	// Just take it and hide it away so the orcs don't take it from you again.
 	B_GiveInvItems(other,self,ItWr_KrowBook,1);
 	Npc_RemoveInvItems(self,ItWr_KrowBook,1);
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Book_01_04");	//Я так и сделаю. Благодарю тебя!
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Book_01_04 " );	// I'll do that. Thank you!
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_05");	//Не стоит.
 	RT_Respect = RT_Respect + 1;
 	MIS_KrowBook = LOG_Success;
 	Log_SetTopicStatus(TOPIC_KrowBook,LOG_Success);
-	B_LogEntry(TOPIC_KrowBook,"Я вернул Кроу его дневник. Тот был на седьмом небе от счастья.");
+	B_LogEntry(TOPIC_KrowBook, " I returned Krow's diary. He was in seventh heaven. " );
 };
 
 instance DIA_STRF_8121_Addon_Krow_Paladin(C_Info)
@@ -155,7 +156,7 @@ instance DIA_STRF_8121_Addon_Krow_Paladin(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Paladin_condition;
 	information = DIA_STRF_8121_Addon_Krow_Paladin_info;
 	permanent = FALSE;
-	description = "У меня к тебе есть один вопрос.";
+	description = " I have one question for you. " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_Paladin_condition()
@@ -168,22 +169,22 @@ func int DIA_STRF_8121_Addon_Krow_Paladin_condition()
 
 func void DIA_STRF_8121_Addon_Krow_Paladin_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_00");	//У меня к тебе есть один вопрос.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_01");	//Хорошо! Я отвечу на него, если смогу.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_02");	//Дело в том, что я ищу тут одного паладина.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Paladin_01_00 " );	// I have one question for you.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Paladin_01_01 " );	// Good! I will answer it if I can.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Paladin_01_02 " );	// The thing is, I'm looking for a paladin here.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_03");	//(шепотом) Тише, тише, друг мой. Не так громко. Нас могут услышать.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_04");	//Здесь крайне опасно обсуждать подобные темы. А орки ошибок не прощают.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_05");	//И все же. Ты что-нибудь знаешь об этом?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_06");	//Хммм...(пристально вглядываясь) На мой взгляд, ты действуешь слишком прямолинейно. 
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_07");	//Неужели ты полагаешь, что я стану обсуждать подобные вопросы с тем, кому пока не особо доверяю?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_08");	//Ведь ты якшаешься с орками! А это, друг мой, крайне отрицательно сказывается на твоей репутации среди рабов.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_09");	//А мы не можем так рисковать, ибо это может быть наша последняя надежда выбраться отсюда живыми.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_10");	//Так что давай лучше вернемся к этому разговору тогда, когда положение дел немного изменится.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Paladin_01_03 " );	// (whispers) Hush, hush, my friend. Not so loud. We can be heard.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Paladin_01_04 " );	// It is extremely dangerous to discuss such topics here. Orcs don't forgive mistakes.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Paladin_01_05 " );	// And yet. Do you know anything about it?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Paladin_01_06 " );	// Hmmm...(looks closely) You're being too direct in my opinion.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Paladin_01_07 " );	// Do you expect me to discuss such matters with someone I don't really trust yet?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Paladin_01_08 " );	// You're hanging out with orcs! And this, my friend, is extremely bad for your reputation among the slaves.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Paladin_01_09 " );	// And we can't risk it, because it might be our last hope of getting out of here alive.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Paladin_01_10 " );	// So let's get back to this conversation when things change a bit.
 	MIS_TrustMe = LOG_Running;
 	Log_CreateTopic(TOPIC_TrustMe,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TrustMe,LOG_Running);
-	B_LogEntry(TOPIC_TrustMe,"Мне нужно завоевать доверие рудокопов, если я хочу узнать больше о пропавшем паладине. Мне надо как-то попробовать помочь этим людям с их проблемами...");
+	B_LogEntry(TOPIC_TrustMe, " I need to gain the miners' trust if I want to know more about the missing paladin. I need to try to help these people with their problems somehow... " );
 };
 
 instance DIA_STRF_8121_Addon_Krow_Respect(C_Info)
@@ -193,12 +194,12 @@ instance DIA_STRF_8121_Addon_Krow_Respect(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Respect_condition;
 	information = DIA_STRF_8121_Addon_Krow_Respect_info;
 	permanent = TRUE;
-	description = "Что здесь говорят про меня?";
+	description = " What do they say about me here? " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_Respect_condition()
 {
-	if((MIS_LostPaladins == LOG_Running) && (MIS_TrustMe != LOG_Success) && (Npc_KnowsInfo(hero,DIA_STRF_8121_Addon_Krow_Paladin) == TRUE))
+	if ((MY_LostPaladins == LOG_Running) && (MY_TrustMe != LOG_Success) && (Npc_KnowsInfo(hero, DIA_STRF_8121_Addon_Krow_Paladin) ==  TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -206,49 +207,49 @@ func int DIA_STRF_8121_Addon_Krow_Respect_condition()
 
 func void DIA_STRF_8121_Addon_Krow_Respect_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_00");	//Что здесь говорят про меня?
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Respect_01_00 " );	// What do they say about me here?
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_01");	//Хммм...(задумчиво)
 
 	if(RT_Respect >= 8)
 	{
 		B_GivePlayerXP(250);
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_02");	//Похоже, что ты смог тут завоевать всеобщее доверие, странник.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_03");	//А значит, пришло время встретиться тебе с тем, кого ты так искал.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_04");	//Однако у нас есть одна небольшая проблема.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_05");	//Что еще за проблема?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_06");	//Тут кругом полно охраны. Поэтому нам надо найти такое место, где орки нас точно не услышат.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_07");	//А есть мысли на этот счет?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_08");	//Хммм...(задумчиво) В той пещере, где работает Нутс, обычно находится всего лишь один охранник.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_09");	//Вот если бы ты как-нибудь смог отвлечь его, это дало бы нам время поговорить с паладином.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_10");	//Ладно, я попытаюсь увести его оттуда.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_11");	//Хорошо! Тогда я буду ждать твоего сигнала.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_02 " );	// Looks like you've won everyone's trust here, wanderer.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_03 " );	// So, it's time for you to meet the one you've been looking for.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_04 " );	// However, we have one small problem.
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Respect_01_05 " );	// What's the problem?
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_06 " );	// There are a lot of guards around here. Therefore, we need to find a place where the orcs will definitely not hear us.
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Respect_01_07 " );	// Any thoughts on this?
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_08 " );	// Hmmm... (thoughtfully) In the cave where Nuts works, there is usually only one guard.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_09 " );	// Now, if you could somehow distract him, it would give us time to talk to the paladin.
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Respect_01_10 " );	// Okay, I'll try to get him out of there.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_11 " );	// Good! Then I'll wait for your signal.
 		MIS_TrustMe = LOG_Success;
 		Log_SetTopicStatus(TOPIC_TrustMe,LOG_Success);
-		B_LogEntry(TOPIC_TrustMe,"Я завоевал доверие рудокопов.");
+		B_LogEntry(TOPIC_TrustMe, " I won the trust of the miners. " );
 		MIS_RemoveOrc = LOG_Running;
 		Log_CreateTopic(TOPIC_RemoveOrc,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_RemoveOrc,LOG_Running);
-		B_LogEntry_Quiet(TOPIC_RemoveOrc,"Мне нужно отвлечь внимание охранника орков в пещере, где работает рудокоп Нутс. Тогда я смогу встретиться с паладином с глазу на глаз.");
+		B_LogEntry_Quiet(TOPIC_RemoveOrc, " I need to distract the orc guard in the cave where miner Nuts works. Then I can meet the paladin face to face. " );
 	}
 	else if(RT_Respect >= 6)
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_12");	//Ты уже близок к своей цели!
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_13");	//Многие из нас уже прониклись доверием к тебе.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_14");	//Осталось лишь сделать пару шагов.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_12 " );	// You are already close to your goal!
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_13 " );	// Many of us have already gained confidence in you.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_14 " );	// It remains only to take a couple of steps.
 	}
 	else if(RT_Respect >= 3)
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_15");	//Люди начинают потихоньку доверять тебе.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_16");	//Однако тебе предстоит сделать еще больше.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_15 " );	// People are slowly starting to trust you.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_16 " );	// However, you still have more to do.
 	}
 	else if(RT_Respect >= 0)
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_17");	//Ты уже помог некоторым из нас.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_18");	//Но этого мало. Тебе нужно как-то больше проявиться себя.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_17 " );	// You've already helped some of us.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_18 " );	// But that's not enough. You need to show yourself more.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_19");	//Боюсь, мой друг, пока что ничего.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Respect_01_19 " );	// I'm afraid, my friend, nothing yet.
 	};
 };
 
@@ -260,7 +261,7 @@ instance DIA_STRF_8121_Addon_Krow_RemoveOrc(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_RemoveOrc_condition;
 	information = DIA_STRF_8121_Addon_Krow_RemoveOrc_info;
 	permanent = FALSE;
-	description = "Я избавился от охранника.";
+	description = " I got rid of the guard. " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_RemoveOrc_condition()
@@ -274,13 +275,13 @@ func int DIA_STRF_8121_Addon_Krow_RemoveOrc_condition()
 func void DIA_STRF_8121_Addon_Krow_RemoveOrc_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_00");	//Я избавился от охранника.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_RemoveOrc_01_00 " );	// I got rid of the guard.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_01");	//(шепотом) Хорошо. Об остальном я позабочусь сам.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_02");	//А ты ступай обратно в пещеру и жди.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_RemoveOrc_01_01 " );	// (whispers) Good. I'll take care of the rest myself.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_RemoveOrc_01_02 " );	// And you go back to the cave and wait.
 	MIS_RemoveOrc = LOG_Success;
 	Log_SetTopicStatus(TOPIC_RemoveOrc,LOG_Success);
-	B_LogEntry(TOPIC_RemoveOrc,"Я сообщил Кроу, что пещера сейчас пуста. Теперь он позаботится о том, чтобы наша встреча состоялась.");
+	B_LogEntry(TOPIC_RemoveOrc, " I informed Crowe that the cave is now empty. Now he will make sure that our meeting takes place. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(STRF_8120_Addon_Gars,"Meet");
 	AI_Teleport(STRF_8120_Addon_Gars,"OM_LEVEL_02_BELIAR_04");
@@ -293,7 +294,7 @@ instance DIA_STRF_8121_Addon_Krow_Teleport(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Teleport_condition;
 	information = DIA_STRF_8121_Addon_Krow_Teleport_info;
 	permanent = FALSE;
-	description = "Я слышал, что ты интересовался старой табличкой Нутса.";
+	description = " I heard you were interested in the old Nuts sign. " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_Teleport_condition()
@@ -307,59 +308,59 @@ func int DIA_STRF_8121_Addon_Krow_Teleport_condition()
 func void DIA_STRF_8121_Addon_Krow_Teleport_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_00");	//Я слышал, что ты интересовался старой табличкой Нутса.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_01");	//Да, это так. Но, к сожалению, он никому ее не отдает.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_02");	//А мне вот отдал. Вот она!
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_03");	//На него это не похоже. Надеюсь, это произошло по доброй воле?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_04");	//Само собой. Лучше ответь, что тебя в ней так заинтересовало?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_05");	//Ну, как...(почесывая затылок) Тут довольно редко можно встретить подобные вещи.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_06");	//К тому же мне было просто интересно, что же в ней написано. 
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_07");	//Вот, можешь взглянуть на нее, если хочешь. Нутс так ее и не смог прочитать.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_08");	//Что же, давай посмотрим...
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_00 " );	// I heard you were interested in Nuts' old sign.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_01 " );	// Yes, it is. But, unfortunately, he does not give it to anyone.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_02 " );	// But he gave it to me. There she is!
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_03 " );	// It doesn't look like him. I hope this happened in good faith?
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_04 " );	// Of course. It is better to answer what you are so interested in it?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_05 " );	// Well, how... (scratching the back of his head) It's pretty rare to see stuff like this around here.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_06 " );	// Besides, I was just wondering what it says.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_07 " );	// Here, you can take a look at it if you want. Nuts never read it.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_08 " );	// Well, let's see...
 	B_GiveInvItems(other,self,ItWr_OldTextMine,1);
 	Npc_RemoveInvItems(self,ItWr_OldTextMine,1);
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_09");	//Хммм, по всей видимости, она написана на старомиртанском наречье.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_10");	//В здешних краях на нем уже давно никто не разговаривает.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_11");	//А ты его знаешь?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_12");	//Немного...(задумчиво) Однако мне понадобится мой старый дневник.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_13");	//В нем у меня были записи, объясняющие некоторые обороты и связки этого языка.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_14");	//Тогда загляни в него.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_09 " );	// Hmmm, apparently it's written in Old Myrtan.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_10 " );	// In these parts, no one speaks it for a long time.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_11 " );	// Do you know him?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_12 " );	// A little... (thoughtfully) I'll need my old diary, though.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_13 " );	// In it, I had entries explaining some of the phrases and copulas of this language.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_14 " );	// Then look into it.
 
 	if(MIS_KrowBook == LOG_Success)
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_15");	//Конечно. Одну минутку...(читая) Так, посмотрим.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_15 " );	// Of course. Wait a minute... (reading) Well, we'll see.
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_16");	//Хммм...(задумчиво) Очень интересно!
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_17");	//Ну, выкладывай же, не тяни.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_18");	//Если верить этим записям, в этой шахте когда-то существовал некий магический портал!
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_19");	//Не очень понятно - кто именно им пользовался, но с его помощью можно было переместиться из одной части острова в другую.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_20");	//Действительно интересно. И где же он мог бы находится?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_21");	//Об этом здесь не написано. Но насколько я могу судить, на верхних уровнях шахты таких мест точно нет.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_22");	//Ты в этом уверен?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_23");	//Абсолютно. Нет ничего такого, чтобы как-то отдаленно напоминало портал.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_24");	//Да и орки им наверняка заинтересовались бы, если нашли.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_25");	//Тогда где же он?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_26");	//Возможно, глубоко внизу. А там, кто его знает!
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_27");	//Ладно, я тебя понял. Больше там ничего не написано?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_28");	//Нет, больше ничего.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_29");	//Тогда можешь пока оставить эту табличку себе. Вдруг выяснится что-нибудь еще.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_30");	//Благодарю.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_16 " );	// Hmmm... (thoughtfully) Very interesting!
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_17 " );	// Well, lay it out, don't delay.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_18 " );	// According to these notes, there was once a magical portal in this mine!
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_19 " );	// It is not very clear who exactly used it, but with its help it was possible to move from one part of the island to another.
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_20 " );	// Really interesting. And where could he be?
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_21 " );	// This is not written here. But as far as I can tell, there are definitely no such places in the upper levels of the mine.
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_22 " );	// Are you sure about this?
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_23 " );	// Absolutely. There is nothing that remotely resembles a portal.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_24 " );	// And the orcs would certainly be interested in them if they found them.
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_25 " );	// Then where is he?
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_26 " );	// Maybe deep down. And there, who knows!
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_27 " );	// Okay, I understand you. Is there nothing else written there?
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_28 " );	// No, nothing else.
+		AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_29 " );	// Then you can keep this sign for yourself. Suddenly, something else will come up.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_30 " );	// Thank you.
 		MIS_MineTeleport = LOG_Running;
 		Log_CreateTopic(TOPIC_MineTeleport,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_MineTeleport,LOG_Running);
-		B_LogEntry_Quiet(TOPIC_MineTeleport,"Кроу перевел табличку Нутса. Выяснилось, что где-то в шахте раньше находился магический портал, позволявший перемещаться из одной части острова в другую. Кроу считает, что искать его надо на нижнем уровне шахты.");
+		B_LogEntry_Quiet(TOPIC_MineTeleport, " Crow translated Nuts' tablet. It turned out that somewhere in the mine there used to be a magical portal that allowed you to move from one part of the island to another. Crow believes that it should be found on the lower level of the mine. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_31");	//К сожалению, его отобрали у меня орки! В тот день, когда я попал сюда.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_31 " );	// Unfortunately, the orcs took it from me! The day I got here.
 
 		if(MIS_KrowBook == LOG_Running)
 		{
-			AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_32");	//Но, помнится, что я тебе уже рассказывал об этом.
-			AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_33");	//Да, рассказывал. Просто как-то вылетело из головы.
+			AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_32 " );	// But, I remember that I already told you about this.
+			AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_01_33 " );	// Yes, I did. It just kind of slipped out of my head.
 		};
 
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_34");	//Но, как бы то ни было, без него я ничего не могу сделать.
+		AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_01_34 " );	// But anyway, I can't do anything without it.
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_35");	//Понимаю.
 	};
 };
@@ -371,12 +372,12 @@ instance DIA_STRF_8121_Addon_Krow_Teleport_Again(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Teleport_Again_condition;
 	information = DIA_STRF_8121_Addon_Krow_Teleport_Again_info;
 	permanent = FALSE;
-	description = "Теперь у тебя есть дневник.";
+	description = " You now have a diary. " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_Teleport_Again_condition()
 {
-	if((Npc_KnowsInfo(hero,DIA_STRF_8121_Addon_Krow_Teleport) == TRUE) && (MIS_MineTeleport == FALSE) && (MIS_KrowBook == LOG_Success))
+	if ((Npc_KnowsInfo(hero,DIA_STRF_8121_Krow_Teleport_Addon) ==  TRUE ) && (MY_MineTeleport ==  FALSE ) && (MY_KrowBook ​​== LOG_Success));
 	{
 		return TRUE;
 	};
@@ -384,28 +385,28 @@ func int DIA_STRF_8121_Addon_Krow_Teleport_Again_condition()
 
 func void DIA_STRF_8121_Addon_Krow_Teleport_Again_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_00");	//Теперь у тебя есть дневник. Можешь попробовать прочитать ту табличку?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_01");	//Конечно! Одну минутку...(читая) Так, посмотрим.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_00 " );	// Now you have a diary. Can you try reading that sign?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_01 " );	// Of course! Wait a minute... (reading) Well, we'll see.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_02");	//Хммм...(задумчиво) Очень интересно!
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_03");	//Ну, выкладывай же, не тяни.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_04");	//Если верить этим записям, в этой шахте когда-то существовал некий магический портал!
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_05");	//Не очень понятно - кто именно им пользовался, но с его помощью можно было переместиться из одной части острова в другую.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_06");	//Действительно интересно. И где же он мог бы находится?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_07");	//Об этом здесь не написано. Но насколько я могу судить, на верхних уровнях шахты таких мест точно нет.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_08");	//Ты в этом уверен?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_09");	//Абсолютно. Нет ничего такого, чтобы как-то отдаленно напоминало портал.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_10");	//Да и орки им наверняка заинтересовались бы, если нашли!
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_11");	//Тогда где же он?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_12");	//Возможно, глубоко внизу. А там, кто его знает!
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_13");	//Ладно, я тебя понял. Больше там ничего не написано?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_14");	//Нет, больше ничего.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_15");	//Тогда можешь пока оставить эту табличку себе. Вдруг выяснится что-нибудь еще.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_16");	//Благодарю.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_02 " );	// Hmmm... (thoughtfully) Very interesting!
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_03 " );	// Well, lay it out, don't delay.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_04 " );	// According to these notes, there was once a magical portal in this mine!
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_05 " );	// It is not very clear who exactly used it, but with its help it was possible to move from one part of the island to another.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_06 " );	// Really interesting. And where could he be?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_07 " );	// This is not written here. But as far as I can tell, there are definitely no such places in the upper levels of the mine.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_08 " );	// Are you sure about this?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_09 " );	// Absolutely. There is nothing that remotely resembles a portal.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_10 " );	// And the orcs would certainly be interested in them if they found them!
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_11 " );	// Then where is he?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_12 " );	// Maybe deep down. And there, who knows!
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_13 " );	// Okay, I understand you. Is there nothing else written there?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_14 " );	// No, nothing else.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_15 " );	// Then you can keep this sign for yourself. Suddenly, something else will come up.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Again_01_16 " );	// Thank you.
 	MIS_MineTeleport = LOG_Running;
 	Log_CreateTopic(TOPIC_MineTeleport,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MineTeleport,LOG_Running);
-		B_LogEntry_Quiet(TOPIC_MineTeleport,"Кроу перевел табличку Нутса. Выяснилось, что где-то в шахте раньше находился магический портал, позволявший перемещаться из одной части острова в другую. Кроу считает, что искать его надо на нижнем уровне шахты.");
+		B_LogEntry_Quiet(TOPIC_MineTeleport, " Crow translated Nuts' tablet. It turned out that somewhere in the mine there used to be a magical portal that allowed you to move from one part of the island to another. Crow believes that it should be found on the lower level of the mine. " );
 };
 
 instance DIA_STRF_8121_Addon_Krow_Teleport_Focus(C_Info)
@@ -415,7 +416,7 @@ instance DIA_STRF_8121_Addon_Krow_Teleport_Focus(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Teleport_Focus_condition;
 	information = DIA_STRF_8121_Addon_Krow_Teleport_Focus_info;
 	permanent = FALSE;
-	description = "Можешь взглянуть на этот камень?";
+	description = " Can you take a look at this stone? " ;
 };
 
 func int DIA_STRF_8121_Addon_Krow_Teleport_Focus_condition()
@@ -429,31 +430,31 @@ func int DIA_STRF_8121_Addon_Krow_Teleport_Focus_condition()
 func void DIA_STRF_8121_Addon_Krow_Teleport_Focus_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_00");	//Можешь взглянуть на этот камень?
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_00 " );	// Can you take a look at this stone?
 	B_GiveInvItems(other,self,ItMi_PortalCrystal,1);
 	Npc_RemoveInvItems(self,ItMi_PortalCrystal,1);
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_01");	//Хммм...(с интересом) Да, давно я не держал в руках подобных вещей.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_02");	//Венцель сказал, что он немного напоминает магический юнитор.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_03");	//Так это он и есть! Только довольно необычного вида... Интересно, где ты его взял?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_04");	//Скажем так, я нашел его на нижнем уровне шахты.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_05");	//Выходит, что тебе удалось обнаружить и портал. Не так ли?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_01 " );	// Hmmm... (with interest) Yes, I haven't held such things in my hands for a long time.
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_02 " );	// Wenzel said it looks a bit like a magic unit.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_03 " );	// So this is it! Only a rather unusual kind... I wonder where you got it?
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_04 " );	// Let's just say I found it in the lower level of the mine.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_05 " );	// Looks like you've found the portal as well. Is not it?
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_06");	//Все верно.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_07");	//Об этом нетрудно было догадаться, поскольку только с помощью таких юниторов можно заставить портал работать.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_08");	//Однако, судя по всему, этот юнитор был изготовлен на материке. Скорее всего, в Венгарде...
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_09");	//С чего это ты взял?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_10");	//Видишь? На нем стоит клеймо королевского ордена магов Огня. Такие вещи трудно с чем-либо перепутать!
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_11");	//Хочешь сказать, что портал ведет на материк?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_12");	//Вполне возможно. Меня смущает только одно - каким образом он попал в орочью шахту?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_13");	//Боюсь, что на этот вопрос не ответят даже сами орки.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_14");	//Ну, мы у них и не будем это спрашивать...(посмеиваясь) Не правда ли?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_15");	//Само собой. А ты сможешь с его помощью активировать тот портал?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_16");	//Конечно! Я же все-таки маг...(гордо) Но сейчас этого лучше не делать.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_17");	//Если орки пронюхают о том, что за штука - они либо его сломают, либо начнут тщательно охранять.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_18");	//В любом случае к нему уже не будет возможности подступиться.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_19");	//Поэтому пока лучше все это держать в тайне.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_20");	//Ведь для нас тот портал теперь реальный шанс наконец-то выбраться отсюда.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_21");	//Ступай поговори с Венцелем! Он подскажет, как нам следует поступить дальше.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_07 " );	// This was not difficult to guess, since only with the help of such units can the portal be made to work.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_08 " );	// However, this unit appears to have been made on the mainland. Most likely in Vengard...
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_09 " );	// Where did you get this from?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_10 " );	// See? It bears the mark of the royal order of the Fire Mages. Such things are difficult to confuse with anything!
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_11 " );	// Are you saying that the portal leads to the mainland?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_12 " );	// Quite possible. Only one thing confuses me - how did he get into the orc mine?
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_13 " );	// I'm afraid even the orcs themselves won't answer this question.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_14 " );	// Well, we won't ask them that... (chuckling) Isn't it?
+	AI_Output(other,self, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_15 " );	// Of course. Can you use it to activate that portal?
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_16 " );	// Of course! I'm still a magician ... (proudly) But now it's better not to do this.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_17 " );	// If the orcs get wind of what the thing is, they'll either break it or start heavily guarding it.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_18 " );	// In any case, it will no longer be possible to approach it.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_19 " );	// So for now it's best to keep it all a secret.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_20 " );	// For us, that portal is now a real chance to finally get out of here.
+	AI_Output(self,other, " DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_21 " );	// Go talk to Wenzel! He will tell you how we should proceed.
 	MIS_MineTeleport = LOG_Success;
 	Log_SetTopicStatus(TOPIC_MineTeleport,LOG_Success);
-	B_LogEntry_Quiet(TOPIC_MineTeleport,"Камень, который я обнаружил на нижнем уровне шахты, оказался магическим юнитором. Именно с его помощью можно активировать магический портал. По словам Кроу, сам юнитор был сделан мастерами Венгарда - столицы Миртаны, и есть вероятность, что портал ведет на материк.");
+	B_LogEntry_Quiet(TOPIC_MineTeleport, " The stone I found in the lower level of the mine turned out to be a magic unit. It is with it that you can activate the magic portal. According to Crow, the unit itself was made by the masters of Vengard - the capital of Myrtana, and it is likely that the portal leads to mainland. " );
 };
