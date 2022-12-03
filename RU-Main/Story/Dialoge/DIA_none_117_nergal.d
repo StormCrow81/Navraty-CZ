@@ -1,4 +1,5 @@
 
+
 instance NONE_117_NERGAL_EXIT(C_Info)
 {
 	npc = none_117_nergal;
@@ -41,49 +42,49 @@ func int none_117_nergal_hallo_condition()
 
 func void none_117_nergal_hallo_info()
 {
-	self.name[0] = "Душа Нергала";
+	self.name[ 0 ] = " Soul Nergala " ;
 	B_GivePlayerXP(100);
 	//Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	Snd_Play("DEM_Warn");
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_01");	//(мертвым голосом) СМЕРТНЫЙ... Значит, именно тебя я должен поблагодарить.
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_01 " );	// (dead voice) MORTAL... So you're the one I have to thank.
 	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_02");	//За что?
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_03");	//За то, что ты избавил меня от необходимости отвечать на вопросы этого никчемного старикашки-мага.
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_04");	//И думаю, что в качестве награды за твою услугу... я позволю тебе умереть последним!
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_06");	//Ну, раз ты собрался убить меня, - может, тогда перед этим ответишь мне всего на один вопрос?
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_07");	//Хочешь задать вопрос? Ну что же, попробуй, задай его.
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_08");	//Ответь мне, где я смогу найти Некрономикон?
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_09");	//Некрономикон? Так меня призвали сюда, чтобы узнать, где я спрятал этот древний артефакт?
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_10");	//А разве для тебя сейчас это имеет большое значение?
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_11");	//Нет, абсолютно никакого... Причины могут быть подчас разными, однако итог будет всегда только один.
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_12");	//Ладно, хватит болтать! Просто ответь на мой вопрос.
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_13");	//А ты дерзок, как я погляжу... Но мне это нравится!
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_14");	//Хорошо. Я отвечу на твой вопрос, поскольку ты уже навряд ли сможешь воспользоваться моим ответом.
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_15");	//Я спрятал эту реликвию там, куда ни одному смертному вроде тебя никогда не попасть...
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_17");	//На вершине темной башни Ашерона!
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_18");	//Башня Ашерона? А где она находится?
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_19");	//Я уже точно не помню...(ностальгически) Ведь это было так давно...
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_20");	//Выходит, что надо только отыскать эту башню, и, можно считать, что этот артефакт уже у меня в руках.
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_21");	//Не все так просто, смертный... Мое сокровище охраняет бессмертное создание Тьмы, которое тебе навряд ли удастся одолеть.
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_22");	//Уверен, что многие пытались это сделать. Но я также уверен в том, что все они сейчас мертвы.
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_23");	//И что, нет ни одного способа уничтожить это создание?
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_24");	//Почему же, есть один. Но тебе я его не скажу... Можешь даже не просить.
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_25");	//Ладно, спасибо и на этом.
-	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_26");	//Не за что. А теперь приготовься к смерти... Сейчас я тебя уничтожу!
-	B_LogEntry(TOPIC_XARDASTASKSFOUR,"Перед тем как напасть на меня, душа некроманта Нергала заговорила со мной, и любезно согласилась ответить на вопрос о Некрономиконе. Как оказалось, этот артефакт спрятан на вершине некой башни Ашерона, а вход в нее охраняет бессмертное существо, порожденное самой Тьмой. Есть лишь один способ убить его, о котором Нергал мне, конечно, рассказывать не стал. Придется самому найти башню и придумать, как справиться с этим созданием.");
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_03 " );	// For saving me the trouble of answering that worthless old mage's questions.
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_04 " );	// And I think that as a reward for your service... I'll let you die last!
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_01_06 " );	// Well, since you're going to kill me, maybe you can answer just one question before that?
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_07 " );	// Want to ask a question? Well, try it, ask it.
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_01_08 " );	// Tell me, where can I find the Necronomicon?
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_09 " );	// Necronomicon? So I was called here to find out where I hid this ancient artifact?
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_01_10 " );	// Does it really matter to you now?
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_11 " );	// No, absolutely nothing... The reasons may sometimes be different, but the result will always be the same.
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_01_12 " );	// Okay, stop talking! Just answer my question.
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_13 " );	// And you're cheeky, as I see... But I like it!
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_14 " );	// Good. I will answer your question, since you are unlikely to be able to use my answer.
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_15 " );	// I hid this relic where no mortal like you could ever go...
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_17 " );	// Atop the dark tower of Acheron!
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_01_18 " );	// Tower of Acheron? Where is she?
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_19 " );	// I don't remember exactly... (nostalgically) It was so long ago...
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_01_20 " );	// It turns out that I just need to find this tower, and we can assume that this artifact is already in my hands.
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_21 " );	// Not everything is so simple, mortal... My treasure is guarded by an immortal creature of the Darkness, which you are unlikely to be able to defeat.
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_22 " );	// I'm sure a lot of people have tried this. But I am also sure that they are all dead now.
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_01_23 " );	// And what, there is no way to destroy this creature?
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_24 " );	// Why, there is one. But I won't tell you... You don't even have to ask.
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_01_25 " );	// Okay, thanks for that.
+	AI_Output(self,other, " NONE_117_Nergal_Hallo_01_26 " );	// Nothing. Now get ready to die... Now I will destroy you!
+	B_LogEntry( TOPIC_XARDASTASKSFOUR , " Before attacking me, the soul of the necromancer Nergal spoke to me, and kindly agreed to answer a question about the Necronomicon. As it turned out, this artifact is hidden on top of a certain tower of Acheron, and the entrance to it is guarded by an immortal creature generated by Darkness. There is only one way to kill him, which Nergal, of course, did not tell me about. You will have to find the tower yourself and figure out how to deal with this creature. " );
 	KNOWWHERENERCONOMICON = TRUE;
 	Info_ClearChoices(none_117_nergal_hallo);
-	Info_AddChoice(none_117_nergal_hallo,"Ну что же, попробуй, если получится.",none_117_nergal_hallo_ex1);
+	Info_AddChoice(none_117_nergal_hallo, " Well, try it if you can. " ,none_117_nergal_hallo_ex1);
 };
 
 func void none_117_nergal_hallo_ex1()
 {
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_Ex1_01_01");	//Ну что же, попробуй, если получится.
+	AI_Output(other,self, " NONE_117_Nergal_Hallo_Ex1_01_01 " );	// Well, try it if you can.
 	AI_Output(self,other,"NONE_117_Nergal_Hallo_Ex1_01_02");	//Аргххх...(мертвым голосом)
 	self.flags = NPC_FLAG_NONE;
 	Wld_StopEffect("DEMENTOR_FX");
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
 
 
