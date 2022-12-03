@@ -1,4 +1,5 @@
 
+
 instance DIA_ADDON_INEXTREMO_DRPYMONTE_EXIT(C_Info)
 {
 	npc = PIR_1390_Addon_InExtremo_DrPymonte;
@@ -34,7 +35,7 @@ instance DIA_ADDON_INEXTREMO_DRPYMONTE_PICKPOCKET(C_Info)
 
 func int dia_addon_inextremo_drpymonte_pickpocket_condition()
 {
-	return C_Beklauen(80,100);
+	return  C_Robbery ( 80 , 100 );
 };
 
 func void dia_addon_inextremo_drpymonte_pickpocket_info()
@@ -46,7 +47,7 @@ func void dia_addon_inextremo_drpymonte_pickpocket_info()
 
 func void dia_addon_inextremo_drpymonte_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_addon_inextremo_drpymonte_pickpocket);
 };
 
@@ -80,21 +81,21 @@ func void dia_addon_inextremo_drpymonte_hi_info()
 	{
 		if(KILLMEMBER1 == FALSE)
 		{
-			AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_00");	//Тебе удалось прикончить Асмала? Я потрясен!
-			AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_01");	//Уж думал, это никому не удастся.
-			AI_Output(other,self,"DIA_Addon_InExtremo_DrPymonte_Hi_01_02");	//Выходит, что ты ошибался.
-			AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_03");	//Выходит, что так. Ну что ж, теперь ты тут за главного.
+			AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_00 " );	// Did you manage to finish off Asmal? I'm shocked!
+			AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_01 " );	// I thought no one would succeed.
+			AI_Output(other,self, " DIA_Addon_InExtremo_DrPymonte_Hi_01_02 " );	// It turns out that you were wrong.
+			AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_03 " );	// It turns out that it is. Well, now you're in charge here.
 			KILLMEMBER1 = TRUE;
 		}
 		else if(CharlotteMyAss == TRUE)
 		{
-			AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_77");	//По всем вопросам к Шарлотте, босс.
-			AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_78");	//Ты ведь сам сделал ее своей помощницей!
-			AI_Output(other,self,"DIA_Addon_InExtremo_DrPymonte_Hi_01_79");	//Ну да, конечно.
+			AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_77 " );	// Any questions to Charlotte, boss.
+			AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_78 " );	// You yourself made her your assistant!
+			AI_Output(other,self, " DIA_Addon_InExtremo_DrPymonte_Hi_01_79 " );	// Well, yes, of course.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_04");	//Что скажешь?
+			AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_04 " );	// What do you say?
 		};
 	}
 	else if(Wld_IsTime(8,0,20,0) && (JOINKILLERS == FALSE))
@@ -109,7 +110,7 @@ func void dia_addon_inextremo_drpymonte_hi_info()
 		{
 			if(CHIEFKILLERISDEAD == FALSE)
 			{
-				AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_06");	//Если тебе что-то нужно - поговори с Асмалом.
+				AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_06 " );	// If you need something, talk to Asmal.
 				AI_StopProcessInfos(self);
 				Npc_SetRefuseTalk(self,300);
 			}
@@ -122,8 +123,8 @@ func void dia_addon_inextremo_drpymonte_hi_info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_07");	//Не приставай ко мне!
-			AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Hi_01_08");	//Если тебе что-то нужно - поговори с Гиллианом. Он тут за главного.
+			AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_07 " );	// Don't bother me!
+			AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Hi_01_08 " );	// If you need anything, talk to Gillian. He's in charge here.
 			AI_StopProcessInfos(self);
 			Npc_SetRefuseTalk(self,300);
 		};
@@ -137,7 +138,7 @@ instance DIA_Addon_InExtremo_DrPymonte_Harfe(C_Info)
 	condition = DIA_Addon_InExtremo_DrPymonte_Harfe_condition;
 	information = DIA_Addon_InExtremo_DrPymonte_Harfe_info;
 	permanent = FALSE;
-	description = "Помнится, у тебя была арфа.";
+	description = " I remember you had a harp. " ;
 };
 
 func int DIA_Addon_InExtremo_DrPymonte_Harfe_condition()
@@ -151,13 +152,13 @@ func int DIA_Addon_InExtremo_DrPymonte_Harfe_condition()
 func void DIA_Addon_InExtremo_DrPymonte_Harfe_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Addon_InExtremo_DrPymonte_Harfe_01_01");	//Помнится, у тебя была арфа. Не так ли?
-	AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Harfe_01_02");	//Да, было дело.
-	AI_Output(other,self,"DIA_Addon_InExtremo_DrPymonte_Harfe_01_03");	//А она тебе еще нужна?
-	AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Harfe_01_04");	//(задумчиво) Да к чему она мне тут? Только место занимает...
-	AI_Output(self,other,"DIA_Addon_InExtremo_DrPymonte_Harfe_01_05");	//Если хочешь, можешь забрать ее. Мне не жалко.
+	AI_Output(other,self, " DIA_Addon_InExtremo_DrPymonte_Harfe_01_01 " );	// I remember you had a harp. Is not it?
+	AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Harfe_01_02 " );	// Yes, it was.
+	AI_Output(other,self, " DIA_Addon_InExtremo_DrPymonte_Harfe_01_03 " );	// Do you still need it?
+	AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Harfe_01_04 " );	// (thoughtfully) Why is she here for me? It only takes up space...
+	AI_Output(self,other, " DIA_Addon_InExtremo_DrPymonte_Harfe_01_05 " );	// If you want, you can take her. I do not mind.
 	B_GiveInvItems(self,other,ItMi_IEHarfe,1);
 	Npc_RemoveInvItems(self,ItMi_IEHarfe,1);
-	AI_Output(other,self,"DIA_Addon_InExtremo_DrPymonte_Harfe_01_06");	//Благодарю.
-	B_LogEntry(TOPIC_KASSIAMUSIC,"Паймон отдал мне свою арфу.");
+	AI_Output(other,self, " DIA_Addon_InExtremo_DrPymonte_Harfe_01_06 " );	// Thank you.
+	B_LogEntry( TOPIC_KASSIAMUSIC , " Paimon gave me his harp. " );
 };
