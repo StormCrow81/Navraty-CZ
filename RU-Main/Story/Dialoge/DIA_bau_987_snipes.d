@@ -1,4 +1,5 @@
 
+
 instance DIA_SNIPES_EXIT(C_Info)
 {
 	npc = bau_987_snipes;
@@ -28,7 +29,7 @@ instance DIA_SNIPES_HALLO(C_Info)
 	condition = dia_snipes_hallo_condition;
 	information = dia_snipes_hallo_info;
 	permanent = FALSE;
-	description = "Эй, Снайпс! Как дела?";
+	description = " Hey Snipes! How are you? " ;
 };
 
 
@@ -39,94 +40,94 @@ func int dia_snipes_hallo_condition()
 
 func void dia_snipes_hallo_info()
 {
-	AI_Output(other,self,"DIA_Snipes_HALLO_01_00");	//Эй, Снайпс! Как дела?
-	AI_Output(self,other,"DIA_Snipes_HALLO_01_01");	//(удивленно) Что? Ты кто такой? Что тебе от меня нужно?
-	AI_Output(other,self,"DIA_Snipes_HALLO_01_02");	//Тебе привет от Вайпера.
-	AI_Output(self,other,"DIA_Snipes_HALLO_01_03");	//От кого?!
-	AI_Output(other,self,"DIA_Snipes_HALLO_01_04");	//От Вайпера! Мне кажется, ты должен был его знать.
-	AI_Output(self,other,"DIA_Snipes_HALLO_01_05");	//Что-то я не особо припоминаю, чтобы был знаком с этим парнем...
-	AI_Output(self,other,"DIA_Snipes_HALLO_01_06");	//Может, напомнишь мне, где бы я с ним мог познакомиться? А?
-	Info_AddChoice(dia_snipes_hallo,"Откуда мне знать?",dia_snipes_hallo_answer1);
-	Info_AddChoice(dia_snipes_hallo,"Вы были вместе в Долине Рудников.",dia_snipes_hallo_answer2);
-	Info_AddChoice(dia_snipes_hallo,"Странно, что ты его не помнишь.",dia_snipes_hallo_answer3);
-	Info_AddChoice(dia_snipes_hallo,"Кажется, у вас осталось одно незаконченное дело.",dia_snipes_hallo_answer4);
+	AI_Output(other,self, " DIA_Snipes_HALLO_01_00 " );	// Hey Snipes! How are you?
+	AI_Output(self,other, " DIA_Snipes_HALLO_01_01 " );	// (surprised) What? Who are you? What do you want from me?
+	AI_Output(other,self, " DIA_Snipes_HALLO_01_02 " );	// Hello from Viper.
+	AI_Output(self,other, " DIA_Snipes_HALLO_01_03 " );	// From whom?!
+	AI_Output(other,self, " DIA_Snipes_HALLO_01_04 " );	// From Viper! I think you should have known him.
+	AI_Output(self,other, " DIA_Snipes_HALLO_01_05 " );	// I don't really remember being familiar with this guy...
+	AI_Output(self,other, " DIA_Snipes_HALLO_01_06 " );	// Can you remind me where I could meet him? BUT?
+	Info_AddChoice(dia_snipes_hallo, " How should I know? " ,dia_snipes_hallo_answer1);
+	Info_AddChoice(dia_snipes_hallo, " You were together in Mining Valley. " ,dia_snipes_hallo_answer2);
+	Info_AddChoice(dia_snipes_hallo, " It's strange that you don't remember him. " ,dia_snipes_hallo_answer3);
+	Info_AddChoice(dia_snipes_hallo, " Looks like you have one unfinished business. " ,dia_snipes_hallo_answer4);
 };
 
 func void dia_snipes_hallo_answer1()
 {
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer1_01_00");	//Откуда мне знать?
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer1_01_01");	//А мне тогда откуда? (смеется) Хммм... Видно, ты ошибся, парень.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer1_01_02");	//Я не знаю и никогда не знал никакого Вайпера. И хватит меня отвлекать от работы.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer1_01_04");	//Ну, как скажешь.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer1_01_00 " );	// How should I know?
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer1_01_01 " );	// And then where do I come from? (laughs) Hmmm... Looks like you made a mistake, man.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer1_01_02 " );	// I don't know and never knew any Viper. And stop distracting me from work.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer1_01_04 " );	// Well, whatever you say.
 	Info_ClearChoices(dia_snipes_hallo);
 };
 
 func void dia_snipes_hallo_answer2()
 {
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer2_01_00");	//Вы были вместе в Долине Рудников.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer2_01_01");	//ЧТО?! Ха! Послушай, что я тебе скажу...
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer2_01_03");	//Я понятия не имею, кто этот Вайпер и откуда он взялся! И с бывшими каторжниками дел не имею.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer2_01_04");	//Так что не приставай ко мне с глупыми вопросами.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer2_01_05");	//Хорошо. Как скажешь.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer2_01_00 " );	// You were together in the Valley of Mines.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer2_01_01 " );	// WHAT?! Ha! Hear what I tell you...
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer2_01_03 " );	// I have no idea who this Viper is or where he came from! And I have no business with former convicts.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer2_01_04 " );	// So don't pester me with stupid questions.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer2_01_05 " );	// Good. As you say.
 	Info_ClearChoices(dia_snipes_hallo);
 };
 
 func void dia_snipes_hallo_answer3()
 {
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer3_01_00");	//Странно, что ты его не помнишь.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer3_01_01");	//А вот Вайпер прекрасно тебя помнит еще с тех времен, когда вы вместе сидели в Старой шахте.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer3_01_02");	//Старой шахте?! О чем ты говоришь, парень?
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer3_01_03");	//Не знаю никакого Вайпера и никакой шахты. И отвали от меня, пока Лобарт не заметил, что я тут с тобой болтаю!
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer3_01_05");	//Знаешь что, мне кажется, ты просто обознался. Такое бывает! Думаю, будет лучше, если ты оставишь меня в покое.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer3_01_10");	//Ну ладно, ладно... Как скажешь.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer3_01_00 " );	// Strange that you don't remember him.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer3_01_01 " );	// But Viper remembers you very well from the time when you were together in the Old Mine.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer3_01_02 " );	// Old mine?! What are you talking about boy?
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer3_01_03 " );	// Don't know any viper and no mine. Get off me before Lobart sees me talking to you!
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer3_01_05 " );	// You know what, I think you just miscalculated. It happens! I think it's better if you leave me alone.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer3_01_10 " );	// All right, all right... As you say.
 	AI_StopProcessInfos(self);
 };
 
 func void dia_snipes_hallo_answer4()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_00");	//Кажется, у вас осталось одно незаконченное дело.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_01");	//Да?! И что же это за дело?
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_02");	//Дело касается небольшого груза руды.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_03");	//(с интересом) Руды? Какой руды?
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_04");	//Которую, по словам Вайпера, вы вывозили из Старой шахты как раз в тот момент, когда она обрушилась.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_05");	//И, как ты сам понимаешь, его очень интересует судьба этого груза.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_06");	//Ну ты и сказочник! (смеется) Если бы у меня была эта руда, мне бы не пришлось батрачить на эту скотину Лобарта!
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_07");	//И даже если бы это было так, я бы не стал рассказывать об этом незнакомцу.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_08");	//А вот мне кажется, что мы с тобой раньше тоже встречались.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_09");	//Встречались? Вот уж вряд ли.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_10");	//Может, я и ошибаюсь, но, кажется, в свое время ты очень любил издеваться над стражниками в Старой шахте. Ключ от сундука Арона, помнишь?
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_13");	//Ааа... Хммм. Ну да, ну да. Возможно, ты свой паренек. Никогда бы не подумал!
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_00 " );	// Looks like you have one piece of unfinished business left.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_01 " );	// Yes?! And what is this thing?
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_02 " );	// It's about a small load of ore.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_03 " );	// (with interest) Ores? What ore?
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_04 " );	// Which Viper said you were hauling out of the Old Mine just as it collapsed.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_05 " );	// And, as you understand, he is very interested in the fate of this cargo.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_06 " );	// Well, you are a storyteller! (laughs) If I had this ore, I wouldn't have to work for this Lobart beast!
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_07 " );	// And even if it was, I wouldn't tell a stranger about it.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_08 " );	// But it seems to me that we also met before.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_09 " );	// Have you met? That's hardly.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_10 " );	// Maybe I'm wrong, but it seems that in your time you really liked to mock the guards in the Old Mine. Aaron's chest key, remember?
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_13 " );	// Ahh... Hmmm. Yes Yes. Maybe you are your boyfriend. Never would have thought!
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_14");	//Значит, говоришь, Вайпер объявился, и передает мне привет? А я то думал, что он мертв.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_15");	//Нет, с ним все в порядке. Он сейчас ошивается в портовом кабаке Хориниса.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_16");	//Ну что же, это не может не радовать.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_17");	//Так что насчет руды?
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_18");	//Хммм... Это Вайпер рассказал тебе про нее?
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_19");	//Ну да, кто же еще. И про то, как вам удалось избежать гибели, когда произошел обвал в шахте.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_20");	//Хммм... м-да...(задумчиво) Если честно, я бы и сам хотел знать, где эта руда.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_22");	//Дело в том, что я знаю о руде практически столько же, сколько знает и Вайпер.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_24");	//Когда Вайпер остался следить за тем, чтобы никто не проследил нас, мы с Алефом пошли дальше.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_2A");	//Некоторое время спустя мы набрели на одну из пещер и решили, что это будет как раз отличное место для того, чтобы зарыть нашу руду.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_25");	//Я остался стоять у входа в ту пещеру - так сказать, прикрывать тыл. (смеется)
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_26");	//А Алеф с рудой пошел в пещеру. А через несколько минут раздался взрыв такой оглушительной силы, что я даже не смог устоять на ногах.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_27");	//Падая, я ударился головой о камень и потерял сознание...
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_28");	//Видимо, это рухнул магический барьер.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_29");	//Да, именно он! Когда я очнулся, то увидел, что вход в пещеру завален камнями.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_30");	//Алефа поблизости не было. Видимо, он так и остался в той пещере, как и та руда, которая необыкновенным образом оказалась в наших руках...
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_31");	//Я встал и пошел искать Вайпера. Когда я вернулся к тому месту, Вайпера там уже не было, а вот орки - были. И я решил сваливать...
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_34");	//Попав в Хоринис, я пару дней наедался в таверне, а потом и нанялся к Лобарту.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_36");	//Значит, и ты не знаешь где руда?
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_37");	//Нет, парень. Кто и знает, так это Алеф! Но, боюсь, вряд ли он еще в живых.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_38");	//А где та пещера, в которой вы решили закопать руду?
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_39");	//А ты что, решил наведаться в Долину Рудников? Ну ты псих... Там же орки!
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_40");	//С орками я как-нибудь разберусь. Так где эта пещера?
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_41");	//Как я помню, она находилась по пути в лагерь баронов, недалеко от старой хижины Кавалорна. Попробуй поискать там.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_42");	//И еще кое-что. Если найдешь ее, запомни, что треть - моя! А если обманешь меня, кое-кто узнает о твоем каторжном прошлом.
-	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_52");	//Не беспокойся! Все-таки я тоже был заключенным. А нам, бывшим каторжникам, лучше всего держаться вместе.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_53");	//Да, парень, ты прав. Ну, а теперь мне пора за работу. (нехотя) Лобарт выгонит, если заметит что я бью баклуши.
-	B_LogEntry(TOPIC_VIPERNUGGETS,"Я встретил Снайпса, рабочего на ферме Лобарта. Он оказался тем самым Снайпсом, что когда-то со своими товарищами, Алефом и Вайпером, имел отношение к грузу руды. Однако Снайпс и сам не знает, где эта руда. Единственное, в чем он смог мне помочь, так это указать пещеру, где они с Алефом решили зарыть руду. Она находится по пути из Нового лагеря в Старый, недалеко от старой хижины Кавалорна.");
-	MEETSNIPS = TRUE;
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_14 " );	// So you're saying Viper showed up and says hello to me? And I thought he was dead.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_15 " );	// No, he's fine. He is now hanging around in the port tavern of Khorinis.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_16 " );	// Well, this is good news.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_17 " );	// So what about ore?
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_18 " );	// Hmmm... Did Viper tell you about her?
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_19 " );	// Well, yes, who else. And about how you managed to avoid death when there was a collapse in the mine.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_20 " );	// Hmmm... hmmm... (thoughtfully) To be honest, I myself would like to know where this ore is.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_22 " );	// Thing is, I know almost as much about ore as Viper does.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_24 " );	// When Viper stayed behind to make sure no one followed us, Aleph and I moved on.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_2A " );	// Some time later, we came across one of the caves and decided that it would be just the right place to bury our ore.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_25 " );	// I stayed at the entrance to that cave - to cover the rear, so to speak. (laughs)
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_26 " );	// And Aleph with the ore went to the cave. A few minutes later there was an explosion of such deafening force that I could not even stand on my feet.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_27 " );	// Falling, I hit my head on a stone and lost consciousness...
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_28 " );	// Looks like a magic barrier has collapsed.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_29 " );	// Yes, it is! When I woke up, I saw that the entrance to the cave was littered with stones.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_30 " );	// Aleph wasn't around. Apparently, he remained in that cave, like the ore, which in an unusual way ended up in our hands ...
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_31 " );	// I got up and went looking for Viper. When I returned to that place, Viper was no longer there, but the orcs were. And I decided to leave...
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_34 " );	// Once in Khorinis, I ate in a tavern for a couple of days, and then I got hired by Lobart.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_36 " );	// So you don't know where the ore is either?
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_37 " );	// No, man. Who knows, it's Aleph! But I'm afraid he's probably still alive.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_38 " );	// Where is the cave where you decided to bury the ore?
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_39 " );	// Have you decided to visit the Valley of Mines? Well, you're crazy ... There are orcs!
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_40 " );	// I'll deal with the orcs somehow. So where is this cave?
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_41 " );	// As I remember, she was on the way to the barons' camp, not far from the old hut of Cavalorn. Try looking there.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_42 " );	// And one more thing. If you find her, remember that a third is mine! And if you deceive me, someone will find out about your hard labor past.
+	AI_Output(other,self, " DIA_Snipes_HALLO_Answer4_01_52 " );	// Don't worry! After all, I was also a prisoner. And we, former convicts, it is best to stick together.
+	AI_Output(self,other, " DIA_Snipes_HALLO_Answer4_01_53 " );	// Yeah man, you're right. Well, now it's time for me to get to work. (reluctantly) Lobart will kick me out if he notices that I'm thrashing around.
+	B_LogEntry( TOPIC_VIPERNUGGETS , " I met Snipes, a worker at the Lobart farm. He turned out to be the same Snipes that once with his comrades, Aleph and Viper, was involved in a cargo of ore. However, Snipes himself does not know where this ore is. The only thing what he was able to help me with was pointing out the cave where he and Aleph decided to bury the ore. It is located on the way from the New Camp to the Old, not far from the old hut of Cavalorn. " );
+	MEASURING NIPS = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
@@ -138,13 +139,13 @@ instance DIA_SNIPES_HOWWORK(C_Info)
 	condition = dia_snipes_howwork_condition;
 	information = dia_snipes_howwork_info;
 	permanent = TRUE;
-	description = "Как продвигается работа?";
+	description = " How is the work progressing? " ;
 };
 
 
 func int dia_snipes_howwork_condition()
 {
-	if(Npc_KnowsInfo(other,dia_snipes_hallo) && (MEETSNIPS == FALSE) && (SNIPESRECRUITEDDT == FALSE))
+	if ( Npc_KnowsInfo ( other , dia_snipes_hello ) && ( MEETSNIPS  ==  FALSE ) && ( SNIPESRECRUITED  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -152,8 +153,8 @@ func int dia_snipes_howwork_condition()
 
 func void dia_snipes_howwork_info()
 {
-	AI_Output(other,self,"DIA_Snipes_HowWork_01_00");	//Как продвигается работа?
-	AI_Output(self,other,"DIA_Snipes_HowWork_01_01");	//Отвали! Не мешай работать!
+	AI_Output(other,self, " DIA_Snipes_HowWork_01_00 " );	// How is the work going?
+	AI_Output(self,other, " DIA_Snipes_HowWork_01_01 " );	// Back off! Don't stop working!
 	AI_StopProcessInfos(self);
 };
 
@@ -165,12 +166,12 @@ instance DIA_SNIPES_HOWWORKGOOD(C_Info)
 	condition = dia_snipes_howworkgood_condition;
 	information = dia_snipes_howworkgood_info;
 	permanent = TRUE;
-	description = "Как дела, Снайпс?";
+	description = " How are you, Snipes? " ;
 };
 
 func int dia_snipes_howworkgood_condition()
 {
-	if(Npc_KnowsInfo(other,dia_snipes_hallo) && (MEETSNIPS == TRUE) && (SNIPESRECRUITEDDT == FALSE) && (MIS_VIPERNUGGETS == LOG_Running) && (SNIPSGETNUGGETS == FALSE) && (SNIPSGETNUGGETS == FALSE))
+	if (Npc_KnowsInfo(other,dia_snipes_hallo) && ( MEETSNIPS  ==  TRUE ) && ( SNIPESRECRUITED  ==  FALSE ) && ( MY_VIPERNUGGETS  == LOG_Running) && ( SNIPSGETNUGGETS  ==  FALSE ) && ( SNIPSGETNUGGETS  ==  FALSE )) ;
 	{
 		return TRUE;
 	};
@@ -178,9 +179,9 @@ func int dia_snipes_howworkgood_condition()
 
 func void dia_snipes_howworkgood_info()
 {
-	AI_Output(other,self,"DIA_Snipes_HowWorkGood_01_00");	//Как дела, Снайпс?
-	AI_Output(self,other,"DIA_Snipes_HowWorkGood_01_01");	//Да как, парень. Вкалываю с утра до вечера...
-	AI_Output(self,other,"DIA_Snipes_HowWorkGood_01_02");	//Скорей бы ты нашел нашу руду. Вот тогда бы - эээх! (грустно вздыхая)
+	AI_Output(other,self, " DIA_Snipes_HowWorkGood_01_00 " );	// How are you, Snipes?
+	AI_Output(self,other, " DIA_Snipes_HowWorkGood_01_01 " );	// Yes, boy. I work from morning to evening...
+	AI_Output(self,other, " DIA_Snipes_HowWorkGood_01_02 " );	// If only you could find our ore. Then it would be - uh! (sighing sadly)
 };
 
 
@@ -191,12 +192,12 @@ instance DIA_SNIPES_GETTREASURE(C_Info)
 	condition = dia_snipes_gettreasure_condition;
 	information = dia_snipes_gettreasure_info;
 	permanent = FALSE;
-	description = "Эй, Снайпс! У меня кое-что для тебя есть.";
+	description = " Hey Snipes! I have something for you. " ;
 };
 
 func int dia_snipes_gettreasure_condition()
 {
-	if((MIS_VIPERNUGGETS == LOG_Running) && (Npc_HasItems(other,ItMi_Nugget) >= 200) && (SNIPSGETNUGGETS == FALSE) && (TALKTOALEF == TRUE))
+	if (( MIS_VIPERNUGGETS  == LOG_Running) && (Npc_HasItems(other,ItMy_Nugget) >=  200 ) && ( SNIPSGETNUGGETS  ==  FALSE ) && ( TALKTOALEF  ==  TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -204,48 +205,48 @@ func int dia_snipes_gettreasure_condition()
 
 func void dia_snipes_gettreasure_info()
 {
-	AI_Output(other,self,"DIA_Snipes_GetTreasure_01_00");	//Эй, Снайпс! У меня кое-что есть для тебя.
-	AI_Output(self,other,"DIA_Snipes_GetTreasure_01_01");	//Единственное, что мне нужно, парень, - это моя руда.
-	AI_Output(other,self,"DIA_Snipes_GetTreasure_01_02");	//Хммм... И как ты догадался?
-	AI_Output(self,other,"DIA_Snipes_GetTreasure_01_03");	//(недоумевающе) ЧТО? Неужели? Но... где она?
-	AI_Output(other,self,"DIA_Snipes_GetTreasure_01_04");	//Вот, держи свою долю. Ровно двести кусков руды.
+	AI_Output(other,self, " DIA_Snipes_GetTreasure_01_00 " );	// Hey Snipes! I have something for you.
+	AI_Output(self,other, " DIA_Snipes_GetTreasure_01_01 " );	// The only thing I need, man, is my ore.
+	AI_Output(other,self, " DIA_Snipes_GetTreasure_01_02 " );	// Hmmm... And how did you guess?
+	AI_Output(self,other, " DIA_Snipes_GetTreasure_01_03 " );	// (perplexed) WHAT? Really? But... where is she?
+	AI_Output(other,self, " DIA_Snipes_GetTreasure_01_04 " );	// Here, take your share. Exactly two hundred pieces of ore.
 	B_GiveInvItems(other,self,ItMi_Nugget,200);
 	Npc_RemoveInvItems(self,ItMi_Nugget,Npc_HasItems(self,ItMi_Nugget));
-	AI_Output(self,other,"DIA_Snipes_GetTreasure_01_05");	//Потрясающе! Моя ненаглядная! Заживу теперь не хуже баронов из Старого лагеря!
-	AI_Output(self,other,"DIA_Snipes_GetTreasure_01_08");	//Спасибо тебе. Я никогда не забуду, что ты для меня сделал! Кстати, что же стало с Алефом?
-	AI_Output(other,self,"DIA_Snipes_GetTreasure_01_11");	//Боюсь огорчить тебя, но он мертв. К сожалению, ему так и не удалось миновать орков в Долине.
-	AI_Output(self,other,"DIA_Snipes_GetTreasure_01_12");	//Жаль! Он был неплохим парнем...
+	AI_Output(self,other, " DIA_Snipes_GetTreasure_01_05 " );	// Awesome! My darling! I will now live as well as the barons from the Old Camp!
+	AI_Output(self,other, " DIA_Snipes_GetTreasure_01_08 " );	// Thank you. I will never forget what you did for me! By the way, what happened to Aleph?
+	AI_Output(other,self, " DIA_Snipes_GetTreasure_01_11 " );	// I'm afraid to disappoint you, but he's dead. Unfortunately, he never managed to get past the orcs in the Valley.
+	AI_Output(self,other, " DIA_Snipes_GetTreasure_01_12 " );	// Sorry! He was a good guy...
 
 	if(VIPERGETNUGGETS == TRUE)
 	{
 		B_GivePlayerXP(200);
-		AI_Output(self,other,"DIA_Snipes_GetTreasure_01_13");	//Скажи, а что насчет Вайпера?
-		AI_Output(other,self,"DIA_Snipes_GetTreasure_01_14");	//Вайперу я уже отдал его часть руды. Скажу тебе: он был на седьмом небе от счастья.
-		AI_Output(self,other,"DIA_Snipes_GetTreasure_01_15");	//Хммм... Я рад за него!
+		AI_Output(self,other, " DIA_Snipes_GetTreasure_01_13 " );	// Tell me, what about Viper?
+		AI_Output(other,self, " DIA_Snipes_GetTreasure_01_14 " );	// I already gave Viper some of the ore. I'll tell you: he was in seventh heaven with happiness.
+		AI_Output(self,other, " DIA_Snipes_GetTreasure_01_15 " );	// Hmmm... I'm happy for him!
 		MIS_VIPERNUGGETS = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_VIPERNUGGETS,LOG_SUCCESS);
-		B_LogEntry(TOPIC_VIPERNUGGETS,"Я отдал Снайпсу его долю. Он был вне себя от радости.");
+		B_LogEntry( TOPIC_VIPERNUGGETS , " I gave Snipes his cut. He was overjoyed. " );
 	}
 	else
 	{
 		B_GivePlayerXP(50);
-		AI_Output(self,other,"DIA_Snipes_GetTreasure_01_16");	//А как насчет Вайпера?
-		AI_Output(other,self,"DIA_Snipes_GetTreasure_01_17");	//Я как раз хотел встретиться с ним.
-		AI_Output(self,other,"DIA_Snipes_GetTreasure_01_18");	//Хммм... Ну, это правильно!
-		B_LogEntry(TOPIC_VIPERNUGGETS,"Я отдал Снайпсу его долю. Он был вне себя от радости.");
+		AI_Output(self,other, " DIA_Snipes_GetTreasure_01_16 " );	// What about Viper?
+		AI_Output(other,self, " DIA_Snipes_GetTreasure_01_17 " );	// I just wanted to meet him.
+		AI_Output(self,other, " DIA_Snipes_GetTreasure_01_18 " );	// Hmmm... Well, that's right!
+		B_LogEntry( TOPIC_VIPERNUGGETS , " I gave Snipes his cut. He was overjoyed. " );
 	};
 
 	if(SNIPESRECRUITEDDT == FALSE)
 	{
-		AI_Output(other,self,"DIA_Snipes_GetTreasure_01_19");	//Что будешь делать дальше?
-		AI_Output(self,other,"DIA_Snipes_GetTreasure_01_20");	//Думаю, для начала пойду в кабак к Орлану и нажрусь до чертиков.
-		AI_Output(self,other,"DIA_Snipes_GetTreasure_01_21");	//А потом не знаю - посмотрим.
+		AI_Output(other,self, " DIA_Snipes_GetTreasure_01_19 " );	// What are you going to do next?
+		AI_Output(self,other, " DIA_Snipes_GetTreasure_01_20 " );	// I think, for starters, I'll go to Orlan's tavern and drink myself to hell.
+		AI_Output(self,other, " DIA_Snipes_GetTreasure_01_21 " );	// And then I don't know - we'll see.
 	};
 
-	AI_Output(other,self,"DIA_Snipes_GetTreasure_01_22");	//Понятно. Ладно, мне пора.
-	AI_Output(self,other,"DIA_Snipes_GetTreasure_01_23");	//Давай, приятель! Буду рад тебя встретить вновь. И еще раз спасибо!
-	AI_Output(self,other,"DIA_Snipes_GetTreasure_01_24");	//Ах да, чуть не забыл. Вот, возьми это в награду за свои хлопоты.
-	AI_Output(self,other,"DIA_Snipes_GetTreasure_01_25");	//Уверен, это пойло тебе пригодится...
+	AI_Output(other,self, " DIA_Snipes_GetTreasure_01_22 " );	// Got it. Well, I have to go.
+	AI_Output(self,other, " DIA_Snipes_GetTreasure_01_23 " );	// Come on, buddy! I will be glad to meet you again. And thanks again!
+	AI_Output(self,other, " DIA_Snipes_GetTreasure_01_24 " );	// Oh yeah, I almost forgot. Here, take this as a reward for your efforts.
+	AI_Output(self,other, " DIA_Snipes_GetTreasure_01_25 " );	// I'm sure you'll need this swill...
 	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
 	SNIPSGETNUGGETS = TRUE;
 	AI_StopProcessInfos(self);
@@ -264,7 +265,7 @@ instance DIA_SNIPES_HOWLIFE(C_Info)
 	condition = dia_snipes_howlife_condition;
 	information = dia_snipes_howlife_info;
 	permanent = TRUE;
-	description = "Теперь все в порядке?";
+	description = " Is everything all right now? " ;
 };
 
 
@@ -278,8 +279,8 @@ func int dia_snipes_howlife_condition()
 
 func void dia_snipes_howlife_info()
 {
-	AI_Output(other,self,"DIA_Snipes_HowLife_01_00");	//Теперь все в порядке?
-	AI_Output(self,other,"DIA_Snipes_HowLife_01_01");	//Лучше не бывает, приятель.
+	AI_Output(other,self, " DIA_Snipes_HowLife_01_00 " );	// Is everything okay now?
+	AI_Output(self,other, " DIA_Snipes_HowLife_01_01 " );	// It doesn't get any better, mate.
 };
 
 
@@ -296,7 +297,7 @@ instance DIA_SNIPES_PICKPOCKET(C_Info)
 
 func int dia_snipes_pickpocket_condition()
 {
-	return C_Beklauen(15,25);
+	return  C_Robbery ( 15 , 25 );
 };
 
 func void dia_snipes_pickpocket_info()
@@ -308,7 +309,7 @@ func void dia_snipes_pickpocket_info()
 
 func void dia_snipes_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_snipes_pickpocket);
 };
 
@@ -325,7 +326,7 @@ instance DIA_SNIPES_HOWOREHUCK(C_Info)
 	condition = dia_snipes_howorehuck_condition;
 	information = dia_snipes_howorehuck_info;
 	permanent = FALSE;
-	description = "Ты ведь добывал руду?";
+	description = " You mined ore, didn't you? " ;
 };
 
 func int dia_snipes_howorehuck_condition()
@@ -338,13 +339,13 @@ func int dia_snipes_howorehuck_condition()
 
 func void dia_snipes_howorehuck_info()
 {
-	AI_Output(other,self,"DIA_Snipes_HOWOREHUCK_01_00");	//Снайпс! Ты ведь добывал руду и знаешь, как это делается?
-	AI_Output(self,other,"DIA_Snipes_HOWOREHUCK_01_01");	//Конечно, малыш! Ты знаешь, сколько времени я провел в Старой шахте?
-	AI_Output(other,self,"DIA_Snipes_HOWOREHUCK_01_02");	//Ты можешь научить меня добывать руду?
-	AI_Output(self,other,"DIA_Snipes_HOWOREHUCK_01_03");	//Да, я могу дать тебе пару уроков.
-	AI_Output(other,self,"DIA_Snipes_HOWOREHUCK_01_04");	//Отлично. А ты, случайно, не знаешь, кто умеет плавить руду?
-	AI_Output(self,other,"DIA_Snipes_HOWOREHUCK_01_05");	//Вайпер всю свою каторжную жизнь провел около плавильной печи. Может, чему и научился.
-	B_LogEntry(TOPIC_STEELDRAW,"Снайпс может научить добывать руду. Правда, подзабыл он многое. Плавить же руду меня, возможно, сможет научить Вайпер.");
+	AI_Output(other,self, " DIA_Snipes_HOWOREHUCK_01_00 " );	// Snipes! You've mined ore, and you know how it's done?
+	AI_Output(self,other, " DIA_Snipes_HOWOREHUCK_01_01 " );	// Of course baby! Do you know how much time I spent in the Old Mine?
+	AI_Output(other,self, " DIA_Snipes_HOWOREHUCK_01_02 " );	// Can you teach me how to mine ore?
+	AI_Output(self,other, " DIA_Snipes_HOWOREHUCK_01_03 " );	// Yes, I can give you a couple of lessons.
+	AI_Output(other,self, " DIA_Snipes_HOWOREHUCK_01_04 " );	// Great. Do you happen to know who can smelt ore?
+	AI_Output(self,other, " DIA_Snipes_HOWOREHUCK_01_05 " );	// Viper spent his entire hard labor near the smelter. Maybe he learned something.
+	; _ _ _ _ _ _
 };
 
 instance DIA_SNIPES_LEARNABOUTERZHUNT(C_Info)
@@ -354,7 +355,7 @@ instance DIA_SNIPES_LEARNABOUTERZHUNT(C_Info)
 	condition = dia_snipes_learnabouterzhunt_condition;
 	information = dia_snipes_learnabouterzhunt_info;
 	permanent = TRUE;
-	description = "Научи меня добывать руду.";
+	description = " Teach me how to mine. " ;
 };
 
 func int dia_snipes_learnabouterzhunt_condition()
@@ -369,11 +370,11 @@ func void dia_snipes_learnabouterzhunt_info()
 {
 	if(KNOWHOWPICKORE == TRUE)
 	{
-		AI_Output(other,self,"DIA_SNIPES_LearnAboutErzHunt_01_10");	//Расскажи мне больше о добыче руды.
+		AI_Output(other,self, " DIA_SNIPES_LearnAboutErzHunt_01_10 " );	// Tell me more about mining.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_SNIPES_LearnAboutErzHunt_01_00");	//Научи меня добывать руду.
+		AI_Output(other,self, " DIA_SNIPES_LearnAboutErzHunt_01_00 " );	// Teach me how to mine.
 	};
 
 	Info_ClearChoices(dia_snipes_learnabouterzhunt);
@@ -394,25 +395,25 @@ func void dia_snipes_learnabouterzhunt_ERZWORK()
 		{
 			if(GRIMESTEACHMOREORE == FALSE)
 			{
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_01");	//Хорошо! Слушай внимательно...
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_02");	//Для начала тебе необходимо обзавестись хорошей киркой - это половина дела.
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_03");	//Потом начинай обрабатывать найденный тобой рудный самородок.
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_04");	//Бить надо не по краю породы, а точно в центр. Наноси один мощный удар, после - несколько более слабых.
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_05");	//Тем самым ты немного нарушишь структуру самородка, и при следующем сильном ударе наверняка какой-нибудь кусок от него обязательно отколется.
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_06");	//А потом повторяй все заново, пока не надоест. (смеется)
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_07");	//Это главное, что тебе нужно знать о добыче руды.
+				AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_01 " );	// Good! Listen carefully...
+				AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_02 " );	// First you need to get a good pickaxe - that's half the battle.
+				AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_03 " );	// Then start processing the ore nugget you found.
+				AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_04 " );	// It is necessary to hit not along the edge of the rock, but exactly in the center. Deal one powerful blow, after - several weaker ones.
+				AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_05 " );	// Thus, you will break the structure of the nugget a little, and at the next strong blow, some piece will surely break off from it.
+				AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_06 " );	// And then repeat everything again until you get bored. (laughs)
+				AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_07 " );	// This is the main thing you need to know about mining.
 				AI_Output(other,self,"DIA_SNIPES_LearnAboutErzHunt_01_08");	//Спасибо!
 				GRIMESTEACHMOREORE = TRUE;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_09");	//Ладно! Слушай внимательно...(рассказывает)
+				AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_09 " );	// Okay! Listen carefully ... (tells)
 			};
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_11");	//Я научил тебя всему, что мог вспомнить. Попробуй поискать другого учителя.
+		AI_Output(self,other, " DIA_SNIPES_LearnAboutErzHunt_01_11 " );	// I taught you everything I could remember. Try looking for another teacher.
 	};
 
 	Info_ClearChoices(dia_snipes_learnabouterzhunt);
@@ -425,12 +426,12 @@ instance DIA_SNIPES_AskforDT(C_Info)
 	condition = DIA_SNIPES_AskforDT_condition;
 	information = DIA_SNIPES_AskforDT_info;
 	permanent = FALSE;
-	description = "Мне нужен опытный рудокоп в шахту.";
+	description = " I need an experienced miner for the mine. " ;
 };
 
 func int DIA_SNIPES_askfordt_condition()
 {
-	if((HURRAYICANHIRE == TRUE) && (SearchOreMine == TRUE) && (MEETSNIPS == TRUE))
+	if (( HURRAYICANHIRE  ==  TRUE ) && ( SearchOreMine ==  TRUE ) && ( MEETSNIPS  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -438,51 +439,51 @@ func int DIA_SNIPES_askfordt_condition()
 
 func void DIA_SNIPES_AskforDT_info()
 {
-	AI_Output(other,self,"DIA_SNIPES_AskforDT_15_00");	//Мне нужен опытный рудокоп в шахту.
-	AI_Output(self,other,"DIA_SNIPES_AskforDT_17_01");	//И с чего ты вдруг решил, что я снова хочу гнуть свою спину на руднике?
-	AI_Output(self,other,"DIA_SNIPES_AskforDT_17_02");	//Нет уж! Хватит с меня всего этого.
+	AI_Output(other,self, " DIA_SNIPES_AskforDT_15_00 " );	// I need an experienced miner for the mine.
+	AI_Output(self,other, " DIA_SNIPES_AskforDT_17_01 " );	// And why did you suddenly think that I want to bend my back in the mine again?
+	AI_Output(self,other, " DIA_SNIPES_AskforDT_17_02 " );	// No! I've had enough of all this.
 
 	if(RhetorikSkillValue[1] >= 60)
 	{
-		Info_AddChoice(DIA_SNIPES_AskforDT,"(попытаться убедить)",DIA_SNIPES_AskforDT_yes);
+		Info_AddChoice(DIA_SNIPES_AskforDT, " (try to persuade) " ,DIA_SNIPES_AskforDT_yes);
 	};
 };
 
 func void DIA_SNIPES_AskforDT_yes()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_00");	//Послушай! Никто и не собирается заставлять тебя торчать в шахте целыми сутками.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_01");	//Всего пару часов в день с кайлом в руках, а за все это - кров, пища и достойная оплата.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_02");	//Уверен, с твоим то опытом рудокопа это не должно для тебя составить особого труда.
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_03");	//Что? Хочешь сказать, ты еще и платить мне за это будешь?
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_04");	//Ну да - скажем, по тридцать золотых монет в день. 
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_05");	//Тридцать золотых? Хммм... Звучит неплохо. По крайней мере, это вдвое больше, чем я получал, работая на ферме Лобарта.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_06");	//Вот видишь. Не все так плохо, как могло бы показаться на первый взгляд.
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_07");	//Ну допустим. А где находится эта шахта?
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_08");	//В моем лагере недалеко от фермы Онара, рядом со старой башней.
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_09");	//Ах да... Кажется, я знаю это место. В свое время я уже работал там, пока меня не бросили гнить в этой проклятой колонии.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_10");	//Так ты уже бывал там? Может, тогда расскажешь, что тебе еще известно о той шахте?
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_11");	//Да что тут рассказывать. Шахта как шахта. Сама по себе не очень большая, но главное - довольно сухая. 
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_12");	//Сырость и обвалы породы там практически никогда не случались. В общем и целом - не самое плохое место для работы.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_13");	//Ну раз так, то почему бы тебе там снова не поработать?
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_14");	//Эх... Ладно, я согласен. В конце концов, хуже чем сейчас уже точно не будет, а деньги за работу ты платишь все-таки приличные.
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_15");	//Когда мне туда отправляться?
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_16");	//Можешь прямо сейчас! Если что, паролем для входа туда является фраза 'Драконовы сокровища'.
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_17");	//Хорошо! Тогда до встречи.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_18");	//Увидимся.
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_00 " );	// Listen! No one is going to make you hang around in the mine for days on end.
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_01 " );	// Just a couple of hours a day with a pick in hand, and for all this - shelter, food and decent pay.
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_02 " );	// I'm sure with your experience as a miner, this shouldn't be too hard for you.
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_03 " );	// What? Are you saying you're also going to pay me for this?
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_04 " );	// Well, yes - say, thirty gold coins a day.
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_05 " );	// Thirty gold pieces? Hmmm... Sounds good. That's at least double what I got when I worked on Lobart's farm.
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_06 " );	// You see. Not everything is as bad as it might seem at first glance.
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_07 " );	// Well, let's say. Where is this mine located?
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_08 " );	// In my camp near Onar's farm, next to the old tower.
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_09 " );	// Oh yeah... I think I know this place. I used to work there before they left me to rot in that damned colony.
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_10 " );	// So you've been there before? Maybe then you can tell me what else you know about that mine?
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_11 " );	// What is there to tell. A mine is like a mine. By itself, not very big, but most importantly - quite dry.
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_12 " );	// Dampness and landslides almost never happened there. All in all, not the worst place to work.
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_13 " );	// If so, why don't you work there again?
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_14 " );	// Eh... Okay, I agree. In the end, it will definitely not be worse than now, and you still pay decent money for work.
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_15 " );	// When should I go there?
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_16 " );	// You can now! If anything, the password to enter there is the phrase 'Dragon Treasures'.
+	AI_Output(self,other, " DIA_SNIPES_askfordt_yes_15_17 " );	// Good! See you then.
+	AI_Output(other,self, " DIA_SNIPES_askfordt_yes_15_18 " );	// See you.
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
-	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Снайпс согласился работать у меня в шахте.");
+	B_LogEntry( TOPIC_PPL_FOR_TOWER , " Snipes agreed to work for me in the mine. " );
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 	SNIPESRECRUITEDDT = TRUE;
 
 	if(DT_IRONGATHER_START == FALSE)
@@ -497,7 +498,7 @@ func void DIA_SNIPES_AskforDT_yes()
 
 func void DIA_SNIPES_AskforDT_no()
 {
-	AI_Output(other,self,"DIA_SNIPES_AskforDT_no_15_00");	//Хорошо, как скажешь.
+	AI_Output(other,self, " DIA_SNIPES_AskforDT_no_15_00 " );	// Okay, whatever you say.
 	AI_StopProcessInfos(self);
 };
 
@@ -508,7 +509,7 @@ instance DIA_SNIPES_INTOWER(C_Info)
 	condition = DIA_SNIPES_intower_condition;
 	information = DIA_SNIPES_intower_info;
 	permanent = TRUE;
-	description = "Как продвигается работа?";
+	description = " How is the work progressing? " ;
 };
 
 func int DIA_SNIPES_intower_condition()
@@ -521,6 +522,6 @@ func int DIA_SNIPES_intower_condition()
 
 func void DIA_SNIPES_intower_info()
 {
-	AI_Output(other,self,"DIA_Snipes_HowWork_01_00");	//Как продвигается работа?
-	AI_Output(self,other,"DIA_SNIPES_InTower_OrcKap_01_01");	//Копаем потихоньку!
+	AI_Output(other,self, " DIA_Snipes_HowWork_01_00 " );	// How is the work going?
+	AI_Output(self,other, " DIA_SNIPES_InTower_OrcKap_01_01 " );	// Digging slowly!
 };
