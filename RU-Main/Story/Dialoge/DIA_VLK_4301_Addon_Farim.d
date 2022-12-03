@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_Farim_EXIT(C_Info)
 {
 	npc = VLK_4301_Addon_Farim;
@@ -34,19 +35,19 @@ instance DIA_Addon_Farim_PICKPOCKET(C_Info)
 
 func int DIA_Addon_Farim_PICKPOCKET_Condition()
 {
-	return C_Beklauen(20,11);
+	return  C_Robbery ( 20 , 11 );
 };
 
 func void DIA_Addon_Farim_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Addon_Farim_PICKPOCKET);
 	Info_AddChoice(DIA_Addon_Farim_PICKPOCKET,Dialog_Back,DIA_Addon_Farim_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Addon_Farim_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Addon_Farim_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Addon_Farim_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Addon_Farim_PICKPOCKET_DoIt);
 };
 
 func void DIA_Addon_Farim_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Addon_Farim_PICKPOCKET);
 };
 
@@ -56,17 +57,17 @@ func void DIA_Addon_Farim_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Addon_Farim_Hallo(C_Info)
+instance DIA_Addon_Farim_Hallo (C_Info)
 {
 	npc = VLK_4301_Addon_Farim;
 	nr = 5;
 	condition = DIA_Addon_Farim_Hallo_Condition;
 	information = DIA_Addon_Farim_Hallo_Info;
-	description = "Ты рыбак?";
+	description = " Are you a fisherman? " ;
 };
 
 
-func int DIA_Addon_Farim_Hallo_Condition()
+func int DIA_Addon_Farim_Hello_Condition()
 {
 	return TRUE;
 };
@@ -74,16 +75,16 @@ func int DIA_Addon_Farim_Hallo_Condition()
 func void DIA_Addon_Farim_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Farim_Hallo_15_00");	//Ты рыбак?
-	AI_Output(self,other,"DIA_Addon_Farim_Hallo_11_01");	//Интересно, как ты догадался?
-	AI_Output(self,other,"DIA_Addon_Farim_Hallo_11_02");	//Не мог бы ты оставить меня в покое?
+	AI_Output(self,other, " DIA_Addon_Farim_Hallo_11_01 " );	// I wonder how you guessed?
+	AI_Output(self,other, " DIA_Addon_Farim_Hallo_11_02 " );	// Could you leave me alone?
 
 	if(hero.guild == GIL_MIL)
 	{
-		AI_Output(self,other,"DIA_Addon_Farim_Landstreicher_Add_11_02");	//Не принимай это на свой счет, но в последнее время от ополчения у меня одни неприятности.
+		AI_Output(self,other, " DIA_Addon_Farim_Landstreicher_Add_11_02 " );	// Don't take it personally, but the militia has been giving me a hard time lately.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Farim_Landstreicher_Add_11_03");	//Не принимай на свой счет. Просто в последнее время у меня неприятности с ополчением.
+		AI_Output(self,other, " DIA_Addon_Farim_Landstreicher_Add_11_03 " );	// Don't take it personally. It's just that I've been having trouble with the militia lately.
 	};
 };
 
@@ -94,39 +95,39 @@ instance DIA_Addon_Farim_MilizProbs(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Farim_MilizProbs_Condition;
 	information = DIA_Addon_Farim_MilizProbs_Info;
-	description = "Неприятности с ополчением?";
+	description = " Trouble with the militia? " ;
 };
 
 func int DIA_Addon_Farim_MilizProbs_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Farim_Hallo))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Request_Hello ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Farim_MilizProbs_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_MilizProbs_15_00");	//Неприятности с ополчением?
+	AI_Output(other,self, " DIA_Addon_Farim_MilizProbs_15_00 " );	// Trouble with the militia?
 	if(((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL)) == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_11_01");	//Эти подонки приходят ко мне и забирают все, что им вздумается.
+		AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_11_01 " );	// Those bastards come to me and take whatever they want.
 	};
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_11_02");	//На прошлой неделе они забрали весь мой улов. Сказали, что он пойдет на благое дело.
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_11_03");	//Я, конечно, понимаю, что после того, как фермеры прекратили торговать с городом, все выкручиваются, как могут.
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_11_04");	//Иногда им не хватает еды. Не удивительно, что они забирают мою рыбу.
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_11_05");	//Но если они продолжат так поступать, мне самому нечего будет есть.
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_11_02 " );	// They took all my catch last week. They said he was going to a good cause.
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_11_03 " );	// Of course, I understand that after the farmers stopped trading with the city, everyone gets out as best they can.
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_11_04 " );	// Sometimes they don't have enough food. No wonder they take my fish.
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_11_05 " );	// But if they continue to do this, I myself will have nothing to eat.
 	Info_ClearChoices(DIA_Addon_Farim_MilizProbs);
-	Info_AddChoice(DIA_Addon_Farim_MilizProbs,"Отдай мне всю свою рыбу.",DIA_Addon_Farim_MilizProbs_klauen);
-	Info_AddChoice(DIA_Addon_Farim_MilizProbs,"Может быть, я смогу помочь.",DIA_Addon_Farim_MilizProbs_helfen);
-	Info_AddChoice(DIA_Addon_Farim_MilizProbs,"Ты рассказывал об этом паладинам?",DIA_Addon_Farim_MilizProbs_paladine);
+	Info_AddChoice(DIA_Addon_Farim_MilizProbs, " Give me all your fish. " ,DIA_Addon_Farim_MilizProbs_klauen);
+	Info_AddChoice(DIA_Addon_Farim_MilizProbs, " Maybe I can help. " ,DIA_Addon_Farim_MilizProbs_helfen);
+	Info_AddChoice(DIA_Addon_Farim_MilizProbs, " Did you tell the paladins about this? " ,DIA_Addon_Farim_MilizProbs_paladine);
 };
 
 func void DIA_Addon_Farim_MilizProbs_paladine()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_MilizProbs_paladine_15_00");	//Ты рассказывал об этом паладинам?
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_paladine_11_01");	//Ты шутишь? Ты действительно думаешь, что их заинтересует, что у какого-то бедняка возникли проблемы с ополчением?
+	AI_Output(other,self, " DIA_Addon_Farim_MilizProbs_paladine_15_00 " );	// Did you tell the paladins about this?
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_paladine_11_01 " );	// Are you kidding? Do you really think they'd be interested that some poor man was having trouble with the militia?
 };
 
 
@@ -134,27 +135,27 @@ var int Farim_PissedOff;
 
 func void DIA_Addon_Farim_MilizProbs_klauen()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_MilizProbs_klauen_15_00");	//Отдай мне всю свою рыбу.
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_klauen_11_01");	//(сердито) Я так и знал! Ты просто очередной подонок.
+	AI_Output(other,self, " DIA_Addon_Farim_MilizProbs_klauen_15_00 " );	// Give me all your fish.
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_klauen_11_01 " );	// (angrily) I knew it! You're just another bastard.
 	if((other.guild == GIL_MIL) || (other.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_klauen_11_02");	//Боюсь, ты опоздал. Здесь уже побывали твои друзья, которые все забрали.
+		AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_klauen_11_02 " );	// I'm afraid you're too late. Your friends have already been here and they took everything.
 	};
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_klauen_11_04");	//Думаю, тебе лучше уйти.
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_klauen_11_04 " );	// I think you'd better leave.
 	Farim_PissedOff = TRUE;
 	Info_ClearChoices(DIA_Addon_Farim_MilizProbs);
 };
 
 func void DIA_Addon_Farim_MilizProbs_helfen()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_MilizProbs_helfen_15_00");	//Может быть, я смогу тебе помочь.
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_helfen_11_02");	//Не знаю... Полагаю, тут нужен кто-нибудь, имеющий влияние на ополчение или паладинов.
-	AI_Output(self,other,"DIA_Addon_Farim_MilizProbs_helfen_11_03");	//Хотя вряд ли паладины будут покупать у меня рыбу.
-	AI_Output(other,self,"DIA_Addon_Farim_MilizProbs_helfen_15_04");	//Я посмотрю, что можно сделать.
+	AI_Output(other,self, " DIA_Addon_Farim_MilizProbs_helfen_15_00 " );	// Maybe I can help you.
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_helfen_11_02 " );	// I don't know... I guess we need someone with influence over the militia or paladins.
+	AI_Output(self,other, " DIA_Addon_Farim_MilizProbs_helfen_11_03 " );	// Although it's unlikely that paladins will buy fish from me.
+	AI_Output(other,self, " DIA_Addon_Farim_MilizProbs_helfen_15_04 " );	// I'll see what I can do.
 	Info_ClearChoices(DIA_Addon_Farim_MilizProbs);
 	Log_CreateTopic(TOPIC_Addon_FarimsFish,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_FarimsFish,LOG_Running);
-	B_LogEntry(TOPIC_Addon_FarimsFish,"У рыбака Фарима проблемы с ополчением. Они забирают у него столько рыбы, что ему не хватает на жизнь. Чтобы помочь ему, я должен поговорить с кем-нибудь, имеющим влияние среди паладинов.");
+	B_LogEntry(TOPIC_Addon_FarimsFish, " Fisherman Farim is having trouble with the militia. They're taking so many fish from him that he doesn't have enough to live on. To help him, I need to talk to someone with influence among the paladins. " );
 	MIS_Addon_Farim_PaladinFisch = LOG_Running;
 };
 
@@ -165,57 +166,57 @@ instance DIA_Addon_Farim_MartinHelps(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Farim_MartinHelps_Condition;
 	information = DIA_Addon_Farim_MartinHelps_Info;
-	description = "Я знаю, как решить твои проблемы с ополчением.";
+	description = " I know how to solve your militia problems. " ;
 };
 
 
 func int DIA_Addon_Farim_MartinHelps_Condition()
 {
-	if((MIS_Addon_Farim_PaladinFisch == LOG_Running) && (Martin_KnowsFarim == TRUE))
+	if ((MY_Addon_Farm_PaladinFisch == LOG_Running) && (Martin_KnowsFarm ==  TRUE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Farim_MartinHelps_Info()
 {
 	B_GivePlayerXP(XP_Addon_Farim_PaladinFisch);
-	AI_Output(other,self,"DIA_Addon_Farim_MartinHelps_15_00");	//Я знаю, как решить твои проблемы с ополчением.
+	AI_Output(other,self, " DIA_Addon_Farim_MartinHelps_15_00 " );	// I know how to solve your militia problems.
 	AI_Output(self,other,"DIA_Addon_Farim_MartinHelps_11_01");	//И как же?
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 	{
-		AI_Output(other,self,"DIA_Addon_Farim_MartinHelps_15_02");	//Я бываю здесь слишком редко, чтобы постоянно присматривать за твоей рыбой.
-		AI_Output(other,self,"DIA_Addon_Farim_MartinHelps_15_03");	//Но я знаю кое-кого, кто может тебе помочь.
+		AI_Output(other,self, " DIA_Addon_Farim_MartinHelps_15_02 " );	// I'm too infrequent here to keep an eye on your fish.
+		AI_Output(other,self, " DIA_Addon_Farim_MartinHelps_15_03 " );	// But I know someone who can help you.
 	};
-	AI_Output(other,self,"DIA_Addon_Farim_MartinHelps_15_04");	//Мартин, интендант паладинов, хочет выслушать твою историю об ополчении и рыбе.
-	AI_Output(self,other,"DIA_Addon_Farim_MartinHelps_11_05");	//Думаешь, он сможет сделать так, чтобы люди из ополчения оставили меня в покое?
-	AI_Output(other,self,"DIA_Addon_Farim_MartinHelps_15_06");	//Он так сказал.
-	AI_Output(self,other,"DIA_Addon_Farim_MartinHelps_11_07");	//Отлично! Спасибо тебе! Мне нечем тебе заплатить... Хотя постой...
-	AI_Output(self,other,"DIA_Addon_Farim_MartinHelps_11_08");	//Я нашел этот странный камень на одном из островов у побережья Хориниса.
-	AI_Output(self,other,"DIA_Addon_Farim_MartinHelps_11_09");	//Не думаю, что он очень ценный, но такой человек, как ты, наверняка найдет ему применение.
-	AI_Output(self,other,"DIA_Addon_Farim_MartinHelps_11_10");	//Кроме этого, если хочешь, я смогу продать тебе немного рыбы и все остальное, чем одаряет меня море.
+	AI_Output(other,self, " DIA_Addon_Farim_MartinHelps_15_04 " );	// Martin, quartermaster of the paladins, wants to hear your story about the militia and the fish.
+	AI_Output(self,other, " DIA_Addon_Farim_MartinHelps_11_05 " );	// Do you think he can get the militia people to leave me alone?
+	AI_Output(other,self, " DIA_Addon_Farim_MartinHelps_15_06 " );	// He said so.
+	AI_Output(self,other, " DIA_Addon_Farim_MartinHelps_11_07 " );	// Great! Thank you! I have nothing to pay you... But wait...
+	AI_Output(self,other, " DIA_Addon_Farim_MartinHelps_11_08 " );	// I found this strange stone on one of the islands off the coast of Khorinis.
+	AI_Output(self,other, " DIA_Addon_Farim_MartinHelps_11_09 " );	// I don't think it's very valuable, but someone like you will surely find a use for it.
+	AI_Output(self,other, " DIA_Addon_Farim_MartinHelps_11_10 " );	// In addition, if you want, I can sell you some fish and everything else that the sea gives me.
 	B_GiveInvItems(self,other,ItMi_Aquamarine,1);
 	MIS_Addon_Farim_PaladinFisch = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Addon_FarimsFish,LOG_SUCCESS);
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Фарим теперь сможет продавать мне рыбу и другие дары моря.");
+	B_LogEntry(TOPIC_CityTrader, " Farim will now be able to sell me fish and other seafood. " );
 };
 
-instance DIA_Addon_Farim_Trade(C_Info)
+instance DIA_Addon_Farm_Trade ( C_Info );
 {
 	npc = VLK_4301_Addon_Farim;
 	nr = 5;
 	condition = DIA_Addon_Farim_Trade_Condition;
 	information = DIA_Addon_Farim_Trade_Info;
 	permanent = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 	trade = TRUE;
 };
 
 func int DIA_Addon_Farim_Trade_Condition()
 {
-	if((MIS_Addon_Farim_PaladinFisch == LOG_SUCCESS) && Wld_IsTime(7,0,22,0))
+	if ((MIS_Addon_Paladin_Fisch ==  LOG_SUCCESS ) && Wld_IsTime( 7 , 0 , 22 , 0 ))
 	{
 		return TRUE;
 	};
@@ -229,33 +230,33 @@ func void DIA_Addon_Farim_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Lutero_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Lutero_Trade_15_00 " );	// Show me your products.
 	B_GiveTradeInv(self);
 };
 
-instance DIA_Addon_Farim_Landstreicher(C_Info)
+instance DIA_Addon_Farim_Landstreicher (C_Info)
 {
 	npc = VLK_4301_Addon_Farim;
 	nr = 5;
 	condition = DIA_Addon_Farim_Landstreicher_Condition;
 	information = DIA_Addon_Farim_Landstreicher_Info;
-	description = "Ты знаешь что-нибудь о пропавших людях?";
+	description = " Do you know anything about missing people? " ;
 };
 
-func int DIA_Addon_Farim_Landstreicher_Condition()
+func int DIA_Addon_Farim_Tramper_Condition()
 {
 	if(Npc_KnowsInfo(other,DIA_Addon_Farim_Hallo) && (MIS_Addon_Vatras_WhereAreMissingPeople == LOG_Running))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void DIA_Addon_Farim_Landstreicher_Info()
+func void DIA_Addon_Farim_Tramper_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_Landstreicher_15_01");	//Ты знаешь что-нибудь о пропавших людях?
-	AI_Output(self,other,"DIA_Addon_Farim_Landstreicher_11_02");	//Мой друг Вильям встречался с какими-то подозрительными типами. И к чему это его привело?
-	AI_Output(self,other,"DIA_Addon_Farim_Landstreicher_11_03");	//Однажды он просто не пришел на работу. Больше я его не видел.
+	AI_Output(other,self, " DIA_Addon_Farim_Landstreicher_15_01 " );	// Do you know anything about missing people?
+	AI_Output(self,other, " DIA_Addon_Farim_Landstreicher_11_02 " );	// My friend William met with some suspicious types. And what did it lead him to?
+	AI_Output(self,other, " DIA_Addon_Farim_Landstreicher_11_03 " );	// One day he just didn't show up for work. I didn't see him again.
 	SCKnowsFarimAsWilliamsFriend = TRUE;
 };
 
@@ -266,87 +267,87 @@ instance DIA_Addon_Farim_William(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Farim_William_Condition;
 	information = DIA_Addon_Farim_William_Info;
-	description = "Пропал твой приятель Вильям?";
+	description = " Is your friend William missing? " ;
 };
 
 
 func int DIA_Addon_Farim_William_Condition()
 {
-	if((SCKnowsFarimAsWilliamsFriend == TRUE) && Npc_KnowsInfo(other,DIA_Addon_Farim_Hallo))
+	if (( SCKnowsFriendAsWilliamsFriend ==  TRUE ) && Npc_KnowsInfo(other,DIA_Addon_Friend_Hello))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Farim_William_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_15_00");	//Пропал твой приятель Вильям?
-	AI_Output(self,other,"DIA_Addon_Farim_William_11_01");	//Именно так. Он был рыбаком, но на мой взгляд он слишком зазнался.
-	AI_Output(self,other,"DIA_Addon_Farim_William_11_02");	//Ему следовало держаться подальше от этой шайки.
+	AI_Output(other,self, " DIA_Addon_Farim_William_15_00 " );	// Is your friend William missing?
+	AI_Output(self,other, " DIA_Addon_Farim_William_11_01 " );	// That's right. He was a fisherman, but in my opinion he was too conceited.
+	AI_Output(self,other, " DIA_Addon_Farim_William_11_02 " );	// He should have stayed away from this gang.
 	Log_CreateTopic(TOPIC_Addon_MissingPeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_MissingPeople,LOG_Running);
 	Log_AddEntry(TOPIC_Addon_MissingPeople,LogText_Addon_WilliamMissing);
 	Info_ClearChoices(DIA_Addon_Farim_William);
-	Info_AddChoice(DIA_Addon_Farim_William,"Но что это были за люди?",DIA_Addon_Farim_William_typen);
-	Info_AddChoice(DIA_Addon_Farim_William,"Думаю, он еще появится.",DIA_Addon_Farim_William_auftauchen);
-	Info_AddChoice(DIA_Addon_Farim_William,"Чем он занимался?",DIA_Addon_Farim_William_WasGemacht);
-	Info_AddChoice(DIA_Addon_Farim_William,"Когда ты видел Вильяма в последний раз?",DIA_Addon_Farim_William_WannWeg);
+	Info_AddChoice(DIA_Addon_Farim_William, " But who were these people? " ,DIA_Addon_Farim_William_typen);
+	Info_AddChoice(DIA_Addon_Farim_William, " I think he'll show up again. " ,DIA_Addon_Farim_William_auftauchen);
+	Info_AddChoice(DIA_Addon_Farim_William, " What did he do? " ,DIA_Addon_Farim_William_WasGemacht);
+	Info_AddChoice(DIA_Addon_Farim_William, " When did you last see William? " ,DIA_Addon_Farim_William_WannWeg);
 };
 
-func void DIA_Addon_Farim_William_WasGemacht()
+func void DIA_Addon_Farim_William_WhatMade()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_WasGemacht_15_00");	//Чем он занимался?
-	AI_Output(self,other,"DIA_Addon_Farim_William_WasGemacht_11_01");	//У него были какие-то темные делишки с этими жуликами.
-	AI_Output(self,other,"DIA_Addon_Farim_William_WasGemacht_11_02");	//Думаю, он продавал им контрабанду.
+	AI_Output(other,self, " DIA_Addon_Farim_William_WasGemacht_15_00 " );	// What did he do?
+	AI_Output(self,other, " DIA_Addon_Farim_William_WasGemacht_11_01 " );	// He had some dark dealings with these crooks.
+	AI_Output(self,other, " DIA_Addon_Farim_William_WasGemacht_11_02 " );	// I think he was selling them contraband.
 };
 
 func void DIA_Addon_Farim_William_typen()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_typen_15_00");	//Но что это были за люди?
-	AI_Output(self,other,"DIA_Addon_Farim_William_typen_11_01");	//Я не знаю ни кто они, ни что им было нужно в Хоринисе.
-	AI_Output(self,other,"DIA_Addon_Farim_William_typen_11_02");	//Могу только сказать тебе, где они встречались с Вильямом.
-	AI_Output(self,other,"DIA_Addon_Farim_William_typen_11_03");	//Я один раз увидел его, когда рыбачил в заливе.
-	Info_AddChoice(DIA_Addon_Farim_William,"Где именно находится это место?",DIA_Addon_Farim_William_Wo);
+	AI_Output(other,self, " DIA_Addon_Farim_William_typen_15_00 " );	// But what kind of people were they?
+	AI_Output(self,other, " DIA_Addon_Farim_William_typen_11_01 " );	// I don't know who they are or what they needed in Khorinis.
+	AI_Output(self,other, " DIA_Addon_Farim_William_typen_11_02 " );	// I can only tell you where they met William.
+	AI_Output(self,other, " DIA_Addon_Farim_William_typen_11_03 " );	// I saw him once when I was fishing in the bay.
+	Info_AddChoice(DIA_Addon_Farim_William, " Where exactly is this place? " ,DIA_Addon_Farim_William_Wo);
 };
 
 func void DIA_Addon_Farim_William_Wo()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_Wo_15_00");	//Где именно находится это место?
-	AI_Output(self,other,"DIA_Addon_Farim_William_Wo_11_01");	//К северу отсюда есть небольшая бухта.
-	AI_Output(self,other,"DIA_Addon_Farim_William_Wo_11_02");	//Туда можно приплыть самому или на лодке.
-	AI_Output(self,other,"DIA_Addon_Farim_William_Wo_11_03");	//На берегу этой бухты расположен небольшой рыбацкий лагерь. Там-то я их и видел.
+	AI_Output(other,self, " DIA_Addon_Farim_William_Wo_15_00 " );	// Where exactly is this place?
+	AI_Output(self,other, " DIA_Addon_Farim_William_Wo_11_01 " );	// There's a small cove to the north of here.
+	AI_Output(self,other, " DIA_Addon_Farim_William_Wo_11_02 " );	// You can sail there yourself or by boat.
+	AI_Output(self,other, " DIA_Addon_Farim_William_Wo_11_03 " );	// There is a small fishing camp on the shore of this bay. That's where I saw them.
 	self.flags = 0;
 	Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_WhoStolePeople,LOG_Running);
-	B_LogEntry(TOPIC_Addon_WhoStolePeople,"Рыбак Фарим пожаловался мне, что пропал его приятель Вильям. Фарим рассказал, что Вильям встречался с какими-то головорезами на пляже к северу от гавани.");
-	Info_AddChoice(DIA_Addon_Farim_William,"Я услышал все, что хотел знать.",DIA_Addon_Farim_William_Tschau);
+	B_LogEntry(TOPIC_Addon_WhoStolePeople, " Fisherman Farim complained to me that his friend William was missing. Farim told me that William met some thugs on the beach north of the harbor. " );
+	Info_AddChoice(DIA_Addon_Farim_William, " I heard everything I wanted to know. " ,DIA_Addon_Farim_William_Tschau);
 };
 
 func void DIA_Addon_Farim_William_WannWeg()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_WannWeg_15_00");	//Когда ты видел Вильяма в последний раз?
-	AI_Output(self,other,"DIA_Addon_Farim_William_WannWeg_11_01");	//Несколько дней назад.
-	Info_AddChoice(DIA_Addon_Farim_William,"Может быть, он просто ушел в море рыбачить?",DIA_Addon_Farim_William_Fischen);
+	AI_Output(other,self, " DIA_Addon_Farim_William_WannWeg_15_00 " );	// When did you last see William?
+	AI_Output(self,other, " DIA_Addon_Farim_William_WannWeg_11_01 " );	// A few days ago.
+	Info_AddChoice(DIA_Addon_Farim_William, " Maybe he just went out to sea to fish? " ,DIA_Addon_Farim_William_Fischen);
 };
 
 func void DIA_Addon_Farim_William_Fischen()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_Fischen_15_00");	//Может быть, он просто ушел в море рыбачить?
-	AI_Output(self,other,"DIA_Addon_Farim_William_Fischen_11_01");	//Не похоже. Его лодка стоит на якоре в гавани.
+	AI_Output(other,self, " DIA_Addon_Farim_William_Fischen_15_00 " );	// Maybe he just went out to sea to fish?
+	AI_Output(self,other, " DIA_Addon_Farim_William_Fischen_11_01 " );	// Doesn't look like it. His boat is anchored in the harbor.
 };
 
-func void DIA_Addon_Farim_William_auftauchen()
+func void DIA_Addon_Farim_William_appear()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_auftauchen_15_00");	//Думаю, он еще появится.
-	AI_Output(self,other,"DIA_Addon_Farim_William_auftauchen_11_01");	//Вряд ли. Его не было слишком долго.
-	AI_Output(self,other,"DIA_Addon_Farim_William_auftauchen_11_02");	//Боюсь, через некоторое время его тело прибьет к берегу волнами.
+	AI_Output(other,self, " DIA_Addon_Farim_William_auftauchen_15_00 " );	// I think it will still appear.
+	AI_Output(self,other, " DIA_Addon_Farim_William_auftauchen_11_01 " );	// Hardly. He was gone for too long.
+	AI_Output(self,other, " DIA_Addon_Farim_William_auftauchen_11_02 " );	// I'm afraid his body will wash ashore in waves after a while.
 };
 
 func void DIA_Addon_Farim_William_Tschau()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_Tschau_15_00");	//Я услышал все, что хотел знать.
-	AI_Output(self,other,"DIA_Addon_Farim_William_Tschau_11_01");	//Тебе не стоит беспокоиться. Не думаю, что ты его найдешь.
+	AI_Output(other,self, " DIA_Addon_Farim_William_Tschau_15_00 " );	// I've heard everything I wanted to know.
+	AI_Output(self,other, " DIA_Addon_Farim_William_Tschau_11_01 " );	// You don't have to worry. I don't think you will find it.
 	Info_ClearChoices(DIA_Addon_Farim_William);
 };
 
@@ -358,12 +359,12 @@ instance DIA_Addon_Farim_Perm(C_Info)
 	condition = DIA_Addon_Farim_Perm_Condition;
 	information = DIA_Addon_Farim_Perm_Info;
 	permanent = TRUE;
-	description = "Как клюет?";
+	description = " How does it bite? " ;
 };
 
 func int DIA_Addon_Farim_Perm_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Farim_Hallo) && (FARIMRECRUITEDDT == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Farm_Hello ) && ( FARIMRECRUITEDT  ==  FALSE )) .
 	{
 		return TRUE;
 	};
@@ -375,11 +376,11 @@ func void DIA_Addon_Farim_Perm_Info()
 
 	if(Farim_PissedOff == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Farim_Perm_11_01");	//Прекрати изображать интерес.
+		AI_Output(self,other, " DIA_Addon_Farim_Perm_11_01 " );	// Stop pretending to be interested.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Farim_Perm_11_02");	//Бывало и получше. Выжить сейчас сложно, а вот погибнуть - проще простого.
+		AI_Output(self,other, " DIA_Addon_Farim_Perm_11_02 " );	// Used to be better. Surviving is difficult now, but dying is easier than ever.
 	};
 };
 
@@ -396,27 +397,27 @@ instance DIA_Addon_Farim_WilliamReport(C_Info)
 
 func int DIA_Addon_Farim_WilliamReport_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Farim_William))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Farim_William ))
 	{
-		if((Npc_HasItems(other,ITWr_Addon_William_01) > 0) || (Saturas_AboutWilliam == TRUE))
+		if (( Npc_HasItems ( other , ITWr_Addon_William_01 ) >  0 ) || ( Saturation_AboutWilliam ==  TRUE )) ;
 		{
 			return TRUE;
 		};
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_Farim_WilliamReport_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Farim_Add_11_01");	//А, это снова ты!
-	AI_Output(self,other,"DIA_Addon_Farim_Add_11_02");	//Есть какие-нибудь новости о Вильяме?
+	AI_Output(self,other, " DIA_Addon_Farim_Add_11_01 " );	// Ah, it's you again!
+	AI_Output(self,other, " DIA_Addon_Farim_Add_11_02 " );	// Any news about William?
 	AI_Output(other,self,"DIA_Addon_Farim_Add_15_02");	//Он мертв.
-	AI_Output(self,other,"DIA_Addon_Farim_Add_11_03");	//(вздыхает) Так я и думал.
-	AI_Output(self,other,"DIA_Addon_Farim_Add_11_04");	//Что ж, спасибо, что рассказал.
-	AI_Output(self,other,"DIA_Addon_Farim_Add_11_05");	//Пойду-ка я в кабак и пропью его долю из нашего последнего улова. Он бы хотел, чтобы я так поступил...
+	AI_Output(self,other, " DIA_Addon_Farim_Add_11_03 " );	// (sighs) That's what I thought.
+	AI_Output(self,other, " DIA_Addon_Farim_Add_11_04 " );	// Well, thanks for telling me.
+	AI_Output(self,other, " DIA_Addon_Farim_Add_11_05 " );	// I'll go to the tavern and drink his share of our last catch. He would like me to do this...
 };
 
-instance DIA_Addon_Farim_Uha(C_Info)
+instances of DIA_Addon_Farim_Uha (C_Info)
 {
 	npc = VLK_4301_Addon_Farim;
 	nr = 5;
@@ -436,60 +437,60 @@ func int DIA_Addon_Farim_Uha_condition()
 
 func void DIA_Addon_Farim_Uha_info()
 {
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_01_01");	//Погоди минутку...
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_01_02");	//Что еще такое?
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_01_03");	//У тебя случайно не найдется немного времени, чтобы выслушать старика?
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_01_01 " );	// Wait a minute...
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_01_02 " );	// What else is this?
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_01_03 " );	// Do you happen to have some time to listen to the old man?
 	Info_ClearChoices(DIA_Addon_Farim_Uha);
-	Info_AddChoice(DIA_Addon_Farim_Uha,"Мне некогда.",DIA_Addon_Farim_Uha_no);
-	Info_AddChoice(DIA_Addon_Farim_Uha,"Да, конечно.",DIA_Addon_Farim_Uha_yes);
+	Info_AddChoice(DIA_Addon_Farim_Uha, " Мне некогда. " ,DIA_Addon_Farim_Uha_no);
+	Info_AddChoice(DIA_Addon_Farim_Uha, " Да, конечно. " ,DIA_Addon_Farim_Uha_yes);
 };
 
 func void DIA_Addon_Farim_Uha_no()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_no_01_00");	//Мне некогда.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_no_01_01");	//Ну, извини, что снова побеспокоил...
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_no_01_00 " );	// I don't have time.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_no_01_01 " );	// Well, sorry to bother you again...
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Addon_Farim_Uha_yes()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_yes_01_01");	//Да, конечно.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_02");	//Понимаешь, тут такое дело...(покашливая) Прихворал я в общем немного.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_03");	//Изо дня в день эта возня у воды с сетями, рыбой...
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_04");	//Вот, видимо, и продуло меня на сквознячке. А работать-то нужно, чтобы хоть как-то сводить концы с концами.
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_yes_01_05");	//А я чем могу помочь?
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_06");	//Помню, во времена моей молодости я ел замечательную уху - не простую, а сборную!
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_07");	//Туда, помимо рыбы, шел старый сыр, грибы и зелень. А приправлялось это блюдо красным перцем.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_08");	//Съешь уху - и тебя сразу же всего пробирает до костей! Чувствуешь себя богатырем, и есть не хочется долго.
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_yes_01_09");	//Так в чем проблема? Возьми да приготовь эту свою сборную уху.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_10");	//Да я бы с радостью... если бы знал, как!
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_12");	//В общем, самому мне эту прелесть никак не приготовить, а силы поправить хочется.
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_yes_01_13");	//Ладно, старик, помогу чем смогу.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_14");	//Тогда вот, возьми хотя бы рыбу. Надеюсь, что ты поможешь, а я в долгу не останусь.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_yes_01_15");	//Поверь, у меня есть чем отблагодарить - недавно после шторма море принесло много всякого добра.
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_yes_01_01 " );	// Yes, of course.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_02 " );	// You see, it's such a thing... (coughing) I was sick, in general, a little.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_03 " );	// Day after day, this fuss by the water with nets, fish ...
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_04 " );	// Here, apparently, it blew me in a draft. And you need to work to somehow make ends meet.
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_yes_01_05 " );	// How can I help?
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_06 " );	// I remember, in my youth, I ate a wonderful fish soup - not a simple one, but a combined one!
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_07 " );	// There, in addition to fish, there was old cheese, mushrooms and herbs. And this dish was seasoned with red pepper.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_08 " );	// Eat an ear - and you immediately get all the way to the bone! You feel like a hero, and you don’t want to eat for a long time.
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_yes_01_09 " );	// So what's the problem? Take and prepare this your combined fish soup.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_10 " );	// Yes, I would love to... if I knew how!
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_12 " );	// In general, I can’t cook this charm myself, but I want to improve my strength.
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_yes_01_13 " );	// Okay, old man, I'll help in any way I can.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_14 " );	// Then here, take at least the fish. I hope that you will help, and I will not remain in debt.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_yes_01_15 " );	// Believe me, I have something to thank - recently, after a storm, the sea brought a lot of good things.
 	B_GiveInvItems(self,other,ItFo_Fish,5);
 	MIS_FARIM_QUEST = LOG_Running;
 	Log_CreateTopic(TOPIC_ADDON_FARIMFISH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ADDON_FARIMFISH,LOG_Running);
-	B_LogEntry(TOPIC_ADDON_FARIMFISH,"Рыбак Фарим попросил меня приготовить для него особую уху, называемую 'сборной'.");
+	B_LogEntry( TOPIC_ADDON_FARIMFISH , " Fisherman Farim asked me to cook a special fish soup for him called 'team'. " );
 	Info_ClearChoices(DIA_Addon_Farim_Uha);
 };
 
 
-instance DIA_Addon_Farim_Uha_Done(C_Info)
+instance DIA_Addon_Create_Done (C_Info) .
 {
 	npc = VLK_4301_Addon_Farim;
 	nr = 5;
 	condition = DIA_Addon_Farim_Uha_Done_condition;
 	information = DIA_Addon_Farim_Uha_Done_info;
 	permanent = FALSE;
-	description = "Я принес твою сборную уху.";
+	description = " I brought your prefabricated ear. " ;
 };
 
 func int DIA_Addon_Farim_Uha_Done_condition()
 {
-	if((Npc_HasItems(hero,itfo_schildkroetesoup_sborka) >= 1) && (MIS_FARIM_QUEST == LOG_Running))
+	if ((Npc_HasItems(hero,itfo_schildkroetesoup_sborka) >=  1 ) && ( MIS_FARIM_QUEST  == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -498,51 +499,51 @@ func int DIA_Addon_Farim_Uha_Done_condition()
 func void DIA_Addon_Farim_Uha_Done_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_Done_01_01");	//Я принес твою сборную уху.
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_Done_01_01 " );	// I brought your prefabricated fish soup.
 	B_GiveInvItems(other,self,itfo_schildkroetesoup_sborka,1);
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_Done_01_02");	//Ох, спасибо приятель...(покашливая) Это как раз то, что мне сейчас надо!
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_Done_01_03");	//Ты уж прости, что из рук вырываю, просто так не терпится ее попробовать снова.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_Done_01_02 " );	// Oh, thanks mate...(coughing) That's exactly what I need right now!
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_Done_01_03 " );	// Forgive me for tearing it out of my hands, I just can't wait to try it again.
 	B_UseItem(self,itfo_schildkroetesoup_sborka);
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_Done_01_04");	//Ммм, как вкусно... Ну, а награду можешь выбрать сам.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_Done_01_04 " );	// Mmm, how tasty... Well, you can choose the reward yourself.
 	KNOWS_UHA = TRUE;
 	MIS_FARIM_QUEST = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_ADDON_FARIMFISH,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ADDON_FARIMFISH,"Я принес уху Фариму. Он был очень благодарен и неплохо меня наградил за старания.");
+	B_LogEntry( TOPIC_ADDON_FARIMFISH , " I brought Farim's fish soup. He was very grateful and rewarded me well for my efforts. " );
 	Info_ClearChoices(DIA_Addon_Farim_Uha_Done);
-	Info_AddChoice(DIA_Addon_Farim_Uha_Done,"Дай мне черную жемчужину.",DIA_Addon_Farim_Uha_Done_Gemchug);
-	Info_AddChoice(DIA_Addon_Farim_Uha_Done,"Дай мне гребешки и креветки.",DIA_Addon_Farim_Uha_Done_Grebni);
+	Info_AddChoice(DIA_Addon_Farim_Uha_Done, " Give me a black pearl. " ,DIA_Addon_Farim_Uha_Done_Gemchug);
+	Info_AddChoice(DIA_Addon_Farim_Uha_Done, " Give me scallops and shrimp. " ,DIA_Addon_Farim_Uha_Done_Grebni);
 };
 
 func void DIA_Addon_Farim_Uha_Done_Gemchug()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_Done_Gemchug_01_01");	//Дай мне черную жемчужину.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_Done_Gemchug_01_02");	//Вот, держи.
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_Done_Gemchug_01_01 " );	// Give me the black pearl.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_Done_Gemchug_01_02 " );	// Here, take this.
 	B_GiveInvItems(self,other,ItMi_DarkPearl,1);
 	AI_StopProcessInfos(self);
 };
 
-func void DIA_Addon_Farim_Uha_Done_Grebni()
+func void DIA_Addon_Add_Read_Done()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_Uha_Done_Grebni_01_01");	//Отдай мне те гребешки и креветки, которые ты нашел после шторма.
-	AI_Output(self,other,"DIA_Addon_Farim_Uha_Done_Grebni_01_02");	//Вот, держи.
+	AI_Output(other,self, " DIA_Addon_Farim_Uha_Done_Grebni_01_01 " );	// Give me those scallops and shrimp you found after the storm.
+	AI_Output(self,other, " DIA_Addon_Farim_Uha_Done_Grebni_01_02 " );	// Here, take this.
 	B_GiveInvItems(self,other,ItMi_Addon_Shell_01,10);
 	B_GiveInvItems(self,other,ItMi_Addon_Shell_02,5);
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_FARIM_RECRDTSUGG(C_Info)
+instance DIA_FARIM_RECRDTSUGG (C_Info)
 {
 	npc = VLK_4301_Addon_Farim;
 	nr = 8;
 	condition = dia_farim_recrdtsugg_condition;
 	information = dia_farim_recrdtsugg_info;
 	permanent = FALSE;
-	description = "Как рыба? Клюет?";
+	description = " How is the fish? Biting? " ;
 };
 
 func int dia_farim_recrdtsugg_condition()
 {
-	if((MIS_Addon_Farim_PaladinFisch == LOG_SUCCESS) && (HURRAYICANHIRE == TRUE))
+	if ((MY_Addon_Paladin_Fisch ==  LOG_SUCCESS ) && ( HURRAYICANHIRE  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -550,82 +551,82 @@ func int dia_farim_recrdtsugg_condition()
 
 func void dia_farim_recrdtsugg_info()
 {
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_15_00");	//Как рыба? Клюет?
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_01");	//Ой, не спрашивай. Не сыпь мне соль на рану.
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_15_02");	//Что, неужели совсем плохой улов?
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_03");	//Эх, улов-то как раз сейчас неплохой. Сезон, понимаешь ли.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_04");	//Да вот как на зло, покупать мою рыбу никто не хочет.
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_15_00 " );	// How's the fish? Biting?
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_01 " );	// Oh, don't ask. Do not put salt on my wound.
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_15_02 " );	// What, really bad catch?
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_03 " );	// Eh, the catch is just now not bad. Season, you know.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_04 " );	// Yes, as for evil, no one wants to buy my fish.
 	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_15_05");	//Почему?
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_06");	//Неужели ты не слышал? На весь город скандал был.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_07");	//Какая-то богачка из верхнего квартала начиталась всяких экзотических рецептов, ну и решила блеснуть своими познаниями перед знакомыми.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_08");	//Накупила у меня рыбы и понаделала из нее этих ... как их...
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_09");	//А, неважно! Главное, что все блюда у нее были из сырой рыбы. Представляешь, сырой!
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_10");	//Ну ведь любому здравомыслящему человеку ясно, что рыбу нужно или прожарить, или отварить, или протушить.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_11");	//Как можно додуматься есть ее сырой? Гадость какая...
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_12");	//Впрочем, я отвлекся.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_13");	//Так вот, эта особо одаренная барышня накупила рыбы, наделала этих самых сусей, небось, еще и неправильно, созвала гостей и устроила званый ужин.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_14");	//Естественно, после ужина всем сильно поплохело.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_15");	//А кто виноват, что у дамы нет мозгов?
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_16");	//Ну, конечно же, рыбак Фарим!
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_17");	//В общем, она на весь город растрезвонила о том, что у меня некачественная рыба.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_18");	//Даже к лорду Андрэ ходила и губернатору жаловалась.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_19");	//К счастью, лорд Андрэ оказался человеком неглупым и не стал ее слушать.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_20");	//Еще бы: весь город годами ел мою рыбу, никаких претензий, и вдруг какая-то тупая су... сепроизводительница завопила 'У него некачественная рыба!'. Вот ведь шала... Шаланда!
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_21");	//Тем не менее, большинство горожан послушало эту идиотку.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_22");	//Кто-то даже стал меня обвинять, что я какое-то гемео в рыбу добавляю, и что из-за этого гемео у них жабры потом вырастут.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_23");	//Одним словом, теперь я сижу с рыбой, но без клиентов и золота.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_24");	//А ты чего-то хотел?
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_06 " );	// Haven't you heard? There was a scandal throughout the city.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_07 " );	// Some rich woman from the upper quarter read all sorts of exotic recipes, well, she decided to show off her knowledge in front of her friends.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_08 " );	// She bought some fish from me and made these ... like them ...
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_09 " );	// Oh, never mind! The main thing is that all her dishes were from raw fish. Imagine raw!
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_10 " );	// Well, after all, it is clear to any sane person that fish needs to be either fried, or boiled, or stewed.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_11 " );	// How can you think of eating it raw? What a mess...
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_12 " );	// However, I digress.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_13 " );	// So, this especially gifted young lady bought some fish, made these very susy, I suppose, also incorrectly, called the guests and arranged a dinner party.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_14 " );	// Naturally, after dinner, everyone got very sick.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_15 " );	// And who is to blame that the lady has no brains?
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_16 " );	// Well, of course, fisherman Farim!
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_17 " );	// In general, she rang the whole city about the fact that I had low-quality fish.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_18 " );	// I even went to Lord Andre and complained to the governor.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_19 " );	// Fortunately, Lord Andre turned out to be a smart man and did not listen to her.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_20 " );	// You bet: the whole city has been eating my fish for years, no complaints, and suddenly some stupid su... seproducer yelled 'He has poor quality fish!'. That's shala... Shalanda!
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_21 " );	// However, most of the townspeople listened to this idiot.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_22 " );	// Someone even began to accuse me that I add some kind of gemeo to the fish, and that because of this gemeo their gills will then grow.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_23 " );	// In a word, now I'm sitting with fish, but without clients and gold.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_99_24 " );	// Did you want something?
 	Info_ClearChoices(dia_farim_recrdtsugg);
-	Info_AddChoice(dia_farim_recrdtsugg,"Нет, просто спросил.",dia_farim_recrdtsugg_no);
-	Info_AddChoice(dia_farim_recrdtsugg,"Я куплю твою рыбу.",dia_farim_recrdtsugg_yes);
+	Info_AddChoice(dia_farim_recrdtsugg, " No, just asking. " ,dia_farim_recrdtsugg_no);
+	Info_AddChoice(dia_farim_recrdtsugg, " I'll buy your fish. " ,dia_farim_recrdtsugg_yes);
 };
 
 func void dia_farim_recrdtsugg_no()
 {
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_No_15_00");	//Ничего, просто поинтересовался.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_No_99_01");	//Ааа... а я уж подумал...ладно тогда, бывай!
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_No_15_00 " );	// Nothing, just wondering.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_No_99_01 " );	// Ahh... and I already thought... okay then, come on!
 	AI_StopProcessInfos(self);
 };
 
 func void dia_farim_recrdtsugg_yes()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_00");	//Я куплю твою рыбу.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_01");	//О, это без проблем. Тебе сколько? Одну, две? Если купишь сразу пять, сделаю скидку!
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_02");	//Ты меня не совсем понял. Я куплю ВСЮ твою рыбу.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_03");	//Эээ...всю рыбу? Но ты же ее один не съешь! Она же спортится!
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_04");	//А я не один. Нас много. Мне нужен постоянный поставщик пищи для моего лагеря.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_05");	//У тебя есть лагерь? Где?
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_06");	//Рядом с фермой Онара.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_06");	//Неплохо! Я буду только рад тебе помочь.
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_07");	//Рыбу можешь отдавать моему управляющему. Кстати, сколько рыбы ты сможешь предоставлять для лагеря в день и сколько за это хочешь?
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_07");	//Это зависит от улова. Но дюжиной-то рыбин в день смогу обеспечивать стабильно. А цена стандартная - пять монет за рыбину.
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_08");	//Договорились.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_08");	//Ну что ж, тогда увидимся в лагере.
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_Yes_15_00 " );	// I'll buy your fish.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_Yes_99_01 " );	// Oh, no problem. How much would you like? One, two? If you buy five at once, I'll give you a discount!
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_Yes_15_02 " );	// You misunderstood me. I will buy ALL your fish.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_Yes_99_03 " );	// Uh... all the fish? But you can't eat it alone! She's sporting!
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_Yes_15_04 " );	// And I'm not alone. There are a lot of us. I need a permanent food supplier for my camp.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_Yes_99_05 " );	// Do you have a camp? Where?
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_Yes_15_06 " );	// Near Onar's farm.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_Yes_99_06 " );	// Not bad! I'll be only too happy to help you.
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_Yes_15_07 " );	// You can give the fish to my manager. By the way, how many fish can you provide for the camp per day and how much do you want for it?
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_Yes_99_07 " );	// It depends on the catch. But I can provide a dozen fish a day stably. And the price is standard - five coins per fish.
+	AI_Output(other,self, " DIA_FARIM_RecrDTSugg_Yes_15_08 " );	// Agreed.
+	AI_Output(self,other, " DIA_FARIM_RecrDTSugg_Yes_99_08 " );	// Well then, see you at the camp.
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;
-	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE;
-	self.aivar[AIV_IgnoresArmor] = TRUE;
+	self.aivar[AIV_IGNORE_Sheepkiller] = TRUE ;
+	self.aivar[AIV_IgnoresArmor] = TRUE ;
 	FARIMRECRUITEDDT = TRUE;
-	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Фарим обеспечит мой лагерь рыбой.");
+	B_LogEntry( TOPIC_PPL_FOR_TOWER , " Farim will provide my camp with fish. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"InTower");
 };
 
-instance DIA_FARIM_INTOWER(C_Info)
+instance DIA_FARIM_INTOWER (C_Info)
 {
 	npc = VLK_4301_Addon_Farim;
 	nr = 22;
 	condition = dia_farim_intower_condition;
 	information = dia_farim_intower_info;
 	permanent = TRUE;
-	description = "Как клюет?";
+	description = " How does it bite? " ;
 };
 
 func int dia_farim_intower_condition()
 {
-	if((FARIMRECRUITEDDT == TRUE) && (KAPITELORCATC == FALSE))
+	if (( FARIMRECRUITEDDT  ==  TRUE ) && ( CAPITELORCATC  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -634,22 +635,22 @@ func int dia_farim_intower_condition()
 func void dia_farim_intower_info()
 {
 	AI_Output(other,self,"DIA_Addon_Farim_Perm_15_00");	//Как клюет?
-	AI_Output(self,other,"DIA_Farim_InTower_01_01");	//Отлично! А главное - мне снова есть, кому продавать улов.
+	AI_Output(self,other, " DIA_Farim_InTower_01_01 " );	// Great! And most importantly, I again have someone to sell the catch to.
 };
 
-instance DIA_FARIM_INTOWER_ORCKAP(C_Info)
+instance DIA_FARIM_INTOWER_ORCKAP (C_Info)
 {
 	npc = VLK_4301_Addon_Farim;
 	nr = 22;
 	condition = dia_farim_intower_orckap_condition;
 	information = dia_farim_intower_orckap_info;
 	permanent = TRUE;
-	description = "Все в порядке?";
+	description = " Is everything okay? " ;
 };
 
 func int dia_farim_intower_orckap_condition()
 {
-	if((FARIMRECRUITEDDT == TRUE) && (KAPITELORCATC == TRUE))
+	if (( FARIMRECRUITEDDT  ==  TRUE ) && ( CAPITELORCATC  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -657,6 +658,6 @@ func int dia_farim_intower_orckap_condition()
 
 func void dia_farim_intower_orckap_info()
 {
-	AI_Output(other,self,"DIA_Farim_InTower_OrcKap_15_00");	//Все в порядке?
-	AI_Output(self,other,"DIA_Farim_InTower_OrcKap_01_01");	//Ох, парень. Если бы я не согласился на твое предложение, уже был бы мертв. Спасибо тебе!
+	AI_Output(other,self, " DIA_Farim_InTower_OrcKap_15_00 " );	// Is everything okay?
+	AI_Output(self,other, " DIA_Farim_InTower_OrcKap_01_01 " );	// Oh boy. If I didn't agree to your offer, I'd be dead by now. Thank you!
 };
