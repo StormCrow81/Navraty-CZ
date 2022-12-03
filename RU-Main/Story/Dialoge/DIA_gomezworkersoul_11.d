@@ -1,5 +1,4 @@
 
-
 instance DIA_GOMEZWORKERSOUL_111_EXIT(C_Info)
 {
 	npc = gomezworkersoul_11;
@@ -71,4 +70,3 @@ func void dia_gomezworkersoul_11_hello_end()
 	GOMEZSOULTALK_11 = TRUE;
 	AI_StopProcessInfos(self);
 };
-
