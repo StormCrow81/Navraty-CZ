@@ -1,4 +1,5 @@
 
+
 instance DIA_Cedric_EXIT(C_Info)
 {
 	npc = Pal_216_Cedric;
@@ -42,7 +43,7 @@ func int DIA_Cedric_Hallo_Condition()
 
 func void DIA_Cedric_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Cedric_Hallo_12_00");	//Я Седрик, мастер меча и паладин короля.
+	AI_Output(self,other, " DIA_Cedric_Hallo_12_00 " );	// I am Cedric, master of the sword and paladin of the king.
 };
 
 
@@ -53,7 +54,7 @@ instance DIA_Cedric_CanTeach(C_Info)
 	condition = DIA_Cedric_CanTeach_Condition;
 	information = DIA_Cedric_CanTeach_Info;
 	permanent = TRUE;
-	description = "Ты можешь обучить меня?";
+	description = " Can you teach me? " ;
 };
 
 
@@ -67,17 +68,17 @@ func int DIA_Cedric_CanTeach_Condition()
 
 func void DIA_Cedric_CanTeach_Info()
 {
-	AI_Output(other,self,"DIA_Cedric_CanTeach_15_00");	//Ты можешь обучить меня?
+	AI_Output(other,self, " DIA_Cedric_CanTeach_15_00 " );	// Can you teach me?
 
 	if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Cedric_CanTeach_12_01");	//Я могу научить тебя сражаться одноручным оружием.
+		AI_Output(self,other, " DIA_Cedric_CanTeach_12_01 " );	// I can teach you how to use one-handed weapons.
 		Cedric_Teach1H = TRUE;
-		B_LogEntry(TOPIC_CityTeacher,"Паладин Седрик может обучить меня искусству сражения одноручным оружием.");
+		B_LogEntry(TOPIC_CityTeacher, " Paladin Cedric can teach me the art of one-handed combat. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cedric_CanTeach_12_02");	//Я тренирую только паладинов.
+		AI_Output(self,other, " DIA_Cedric_CanTeach_12_02 " );	// I only train paladins.
 	};
 };
 
@@ -88,7 +89,7 @@ instance DIA_Cedric_CanTeachShield(C_Info)
 	condition = DIA_Cedric_CanTeachShield_Condition;
 	information = DIA_Cedric_CanTeachShield_Info;
 	permanent = FALSE;
-	description = "Интересный у тебя щит!";
+	description = " Your shield is interesting! " ;
 };
 
 func int DIA_Cedric_CanTeachShield_Condition()
@@ -101,17 +102,17 @@ func int DIA_Cedric_CanTeachShield_Condition()
 
 func void DIA_Cedric_CanTeachShield_Info()
 {
-	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_00");	//Интересный у тебя щит!
-	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_01");	//Нравится? (ехидно) Вижу, он тебя очень заинтересовал.
-	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_02");	//Так оно и есть.
-	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_03");	//Только мы, паладины короля, удостоены чести носить их!
-	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_04");	//Хотя многие и считают, что это не больше, чем обычный кусок железа.
-	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_05");	//А что на самом деле?
-	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_06");	//Пусть говорят, что хотят. (серьезно) Но настоящий мастер всегда знает цену хорошего щита в умелых руках!
-	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_07");	//Я тоже паладин, и хотел бы носить такой щит.
-	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_08");	//Тогда тебе стоит обратиться к Ингмару.
-	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_09");	//Уверен, он подыщет для тебя что-нибудь стоящее.
-	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_10");	//Я поговорю с ним.
+	AI_Output(other,self, " DIA_Cedric_CanTeachShield_01_00 " );	// Interesting shield you have!
+	AI_Output(self,other, " DIA_Cedric_CanTeachShield_01_01 " );	// Like it? (maliciously) I see you are very interested in him.
+	AI_Output(other,self, " DIA_Cedric_CanTeachShield_01_02 " );	// So it is.
+	AI_Output(self,other, " DIA_Cedric_CanTeachShield_01_03 " );	// Only we, the king's paladins, are honored to wear them!
+	AI_Output(self,other, " DIA_Cedric_CanTeachShield_01_04 " );	// Although many people think that this is no more than an ordinary piece of iron.
+	AI_Output(other,self, " DIA_Cedric_CanTeachShield_01_05 " );	// What is it really?
+	AI_Output(self,other, " DIA_Cedric_CanTeachShield_01_06 " );	// Let them say what they want. (seriously) But a true master always knows the value of a good shield in capable hands!
+	AI_Output(other,self, " DIA_Cedric_CanTeachShield_01_07 " );	// I'm also a paladin, and would like to wear such a shield.
+	AI_Output(self,other, " DIA_Cedric_CanTeachShield_01_08 " );	// Then you should contact Ingmar.
+	AI_Output(self,other, " DIA_Cedric_CanTeachShield_01_09 " );	// I'm sure he'll find something worthwhile for you.
+	AI_Output(other,self, " DIA_Cedric_CanTeachShield_01_10 " );	// I'll talk to him.
 	CedricSendIngmar = TRUE;
 };
 
@@ -122,7 +123,7 @@ instance DIA_Cedric_DoTeachShield(C_Info)
 	condition = DIA_Cedric_DoTeachShield_Condition;
 	information = DIA_Cedric_DoTeachShield_Info;
 	permanent = FALSE;
-	description = "А ты можешь научить меня сражаться с щитом?";
+	description = " Can you teach me how to fight with a shield? " ;
 };
 
 func int DIA_Cedric_DoTeachShield_Condition()
@@ -135,12 +136,12 @@ func int DIA_Cedric_DoTeachShield_Condition()
 
 func void DIA_Cedric_DoTeachShield_Info()
 {
-	AI_Output(other,self,"DIA_Cedric_DoTeachShield_01_00");	//А ты можешь научить меня сражаться со щитом?
-	AI_Output(self,other,"DIA_Cedric_DoTeachShield_01_01");	//Конечно. Я могу показать тебе пару приемов.
-	AI_Output(other,self,"DIA_Cedric_DoTeachShield_01_02");	//И что для этого от меня потребуется?
-	AI_Output(self,other,"DIA_Cedric_DoTeachShield_01_03");	//Немного опыта и терпения, ничего более.
+	AI_Output(other,self, " DIA_Cedric_DoTeachShield_01_00 " );	// Can you teach me how to fight with a shield?
+	AI_Output(self,other, " DIA_Cedric_DoTeachShield_01_01 " );	// Of course. I can show you a couple tricks.
+	AI_Output(other,self, " DIA_Cedric_DoTeachShield_01_02 " );	// And what does this require from me?
+	AI_Output(self,other, " DIA_Cedric_DoTeachShield_01_03 " );	// A little experience and patience, nothing more.
 	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTeacher,"Паладин Седрик может обучить меня искусству сражения с щитом.");
+	B_LogEntry(TOPIC_CityTeacher, " Paladin Cedric can teach me the art of shield fighting. " );
 	CedricTeachShield = TRUE;
 };
 
@@ -151,7 +152,7 @@ instance DIA_Cedric_Teach(C_Info)
 	condition = DIA_Cedric_Teach_Condition;
 	information = DIA_Cedric_Teach_Info;
 	permanent = TRUE;
-	description = "Я хочу потренироваться.";
+	description = " I want to work out. " ;
 };
 
 func int DIA_Cedric_Teach_Condition()
@@ -168,16 +169,16 @@ func int DIA_Cedric_Teach_Condition()
 
 func void DIA_Cedric_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Cedric_Teach_15_00");	//Я готов к тренировке.
+	AI_Output(other,self, " DIA_Cedric_Teach_15_00 " );	// I'm ready to train.
 
 	if((other.HitChance[NPC_TALENT_1H] >= 100) && (DIA_Cedric_Teach_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_01");	//Ты выучил все о бое на мечах. Я не могу больше ничего показать тебе!
+		AI_Output(self,other, " DIA_Cedric_Teach_12_01 " );	// You learned all about sword fighting. I can't show you anymore!
 		DIA_Cedric_Teach_permanent = TRUE;
 	};
 	if((hero.attribute[ATR_REGENERATEMANA] >= 100) && (DIA_Cedric_Teach_Shield_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_91");	//Тренировки с щитом закончены! Я научил тебя всему, что только знал сам.
+		AI_Output(self,other, " DIA_Cedric_Teach_12_91 " );	// Shield training is over! I taught you everything I knew myself.
 		DIA_Cedric_Teach_Shield_permanent = TRUE;
 	};
 	if((DIA_Cedric_Teach_permanent == FALSE) || (DIA_Cedric_Teach_Shield_permanent == FALSE))
@@ -213,12 +214,12 @@ func void DIA_Cedric_Teach_2H_1()
 
 	if((other.HitChance[NPC_TALENT_1H] >= 100) && (DIA_Cedric_Teach_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_01");	//Ты выучил все о бое на мечах. Я не могу больше ничего показать тебе!
+		AI_Output(self,other, " DIA_Cedric_Teach_12_01 " );	// You learned all about sword fighting. I can't show you anymore!
 		DIA_Cedric_Teach_permanent = TRUE;
 	};
 	if((hero.attribute[ATR_REGENERATEMANA] >= 100) && (DIA_Cedric_Teach_Shield_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_91");	//Тренировки с щитом закончены! Я научил тебя всему, что только знал сам.
+		AI_Output(self,other, " DIA_Cedric_Teach_12_91 " );	// Shield training is over! I taught you everything I knew myself.
 		DIA_Cedric_Teach_Shield_permanent = TRUE;
 	};
 	if((DIA_Cedric_Teach_permanent == FALSE) || (DIA_Cedric_Teach_Shield_permanent == FALSE))
@@ -249,12 +250,12 @@ func void DIA_Cedric_Teach_2H_5()
 
 	if((other.HitChance[NPC_TALENT_1H] >= 100) && (DIA_Cedric_Teach_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_01");	//Ты выучил все о бое на мечах. Я не могу больше ничего показать тебе!
+		AI_Output(self,other, " DIA_Cedric_Teach_12_01 " );	// You learned all about sword fighting. I can't show you anymore!
 		DIA_Cedric_Teach_permanent = TRUE;
 	};
 	if((hero.attribute[ATR_REGENERATEMANA] >= 100) && (DIA_Cedric_Teach_Shield_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_91");	//Тренировки с щитом закончены! Я научил тебя всему, что только знал сам.
+		AI_Output(self,other, " DIA_Cedric_Teach_12_91 " );	// Shield training is over! I taught you everything I knew myself.
 		DIA_Cedric_Teach_Shield_permanent = TRUE;
 	};
 	if((DIA_Cedric_Teach_permanent == FALSE) || (DIA_Cedric_Teach_Shield_permanent == FALSE))
@@ -285,12 +286,12 @@ func void DIA_Cedric_Teach_ShieldNoMoney_1()
 
 	if((other.HitChance[NPC_TALENT_1H] >= 100) && (DIA_Cedric_Teach_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_01");	//Ты выучил все о бое на мечах. Я не могу больше ничего показать тебе!
+		AI_Output(self,other, " DIA_Cedric_Teach_12_01 " );	// You learned all about sword fighting. I can't show you anymore!
 		DIA_Cedric_Teach_permanent = TRUE;
 	};
 	if((hero.attribute[ATR_REGENERATEMANA] >= 100) && (DIA_Cedric_Teach_Shield_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_91");	//Тренировки с щитом закончены! Я научил тебя всему, что только знал сам.
+		AI_Output(self,other, " DIA_Cedric_Teach_12_91 " );	// Shield training is over! I taught you everything I knew myself.
 		DIA_Cedric_Teach_Shield_permanent = TRUE;
 	};
 	if((DIA_Cedric_Teach_permanent == FALSE) || (DIA_Cedric_Teach_Shield_permanent == FALSE))
@@ -321,12 +322,12 @@ func void DIA_Cedric_Teach_ShieldNoMoney_5()
 
 	if((other.HitChance[NPC_TALENT_1H] >= 100) && (DIA_Cedric_Teach_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_01");	//Ты выучил все о бое на мечах. Я не могу больше ничего показать тебе!
+		AI_Output(self,other, " DIA_Cedric_Teach_12_01 " );	// You learned all about sword fighting. I can't show you anymore!
 		DIA_Cedric_Teach_permanent = TRUE;
 	};
 	if((hero.attribute[ATR_REGENERATEMANA] >= 100) && (DIA_Cedric_Teach_Shield_permanent == FALSE))
 	{
-		AI_Output(self,other,"DIA_Cedric_Teach_12_91");	//Тренировки с щитом закончены! Я научил тебя всему, что только знал сам.
+		AI_Output(self,other, " DIA_Cedric_Teach_12_91 " );	// Shield training is over! I taught you everything I knew myself.
 		DIA_Cedric_Teach_Shield_permanent = TRUE;
 	};
 	if((DIA_Cedric_Teach_permanent == FALSE) || (DIA_Cedric_Teach_Shield_permanent == FALSE))
@@ -363,7 +364,7 @@ instance DIA_Cedric_PICKPOCKET(C_Info)
 
 func int DIA_Cedric_PICKPOCKET_Condition()
 {
-	return C_Beklauen(37,55);
+	return  C_Robbery ( 37 , 55 );
 };
 
 func void DIA_Cedric_PICKPOCKET_Info()
@@ -375,7 +376,7 @@ func void DIA_Cedric_PICKPOCKET_Info()
 
 func void DIA_Cedric_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(DIA_Cedric_PICKPOCKET);
 };
