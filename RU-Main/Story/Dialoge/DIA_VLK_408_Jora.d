@@ -1,4 +1,5 @@
 
+
 instance DIA_Jora_EXIT(C_Info)
 {
 	npc = VLK_408_Jora;
@@ -20,7 +21,7 @@ func void DIA_Jora_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Jora_Sperre(C_Info)
+instance DIA_Jora_Sperre (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 2;
@@ -39,9 +40,9 @@ func int DIA_Jora_Sperre_Condition()
 	};
 };
 
-func void DIA_Jora_Sperre_Info()
+func void DAY_Jora_Sperre_Info()
 {
-	AI_Output(self,other,"DIA_Jora_Sperre_08_00");	//Ты каторжник из колонии. Я ничего не буду тебе продавать!
+	AI_Output(self,other, " DIA_Jora_Sperre_08_00 " );	// You are a convict from the colony. I won't sell you anything!
 	AI_StopProcessInfos(self);
 };
 
@@ -65,10 +66,10 @@ func int DIA_Jora_HowsMoney_Condition()
 
 func void DIA_Jora_HowsMoney_Info()
 {
-	AI_Output(self,other,"DIA_Jora_EXIT_08_00");	//Эй! Как насчет моих денег?
+	AI_Output(self,other, " DIA_Jora_EXIT_08_00 " );	// Hey! How about my money?
 };
 
-instance DIA_Jora_WAREZ(C_Info)
+instances of DIA_Jora_WAREZ (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 700;
@@ -76,19 +77,19 @@ instance DIA_Jora_WAREZ(C_Info)
 	information = DIA_Jora_WAREZ_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 };
 
 
 func int DIA_Jora_WAREZ_Condition()
 {
-	if(Wld_IsTime(5,15,20,4))
+	if (Wld_IsTime( 5 , 15 , 20 , 4 ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Jora_WAREZ_Info()
+func void DAY_Jora_WAREZ_Info()
 {
 	if(C_BodyStateContains(self,BS_SIT))
 	{
@@ -96,12 +97,12 @@ func void DIA_Jora_WAREZ_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Jora_WAREZ_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Jora_WAREZ_15_00 " );	// Show me your products.
 	B_GiveTradeInv(self);
 };
 
 
-instance DIA_Jora_GREET(C_Info)
+instance DIA_Jora_GREET (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 1;
@@ -120,65 +121,65 @@ func int DIA_Jora_GREET_Condition()
 	};
 };
 
-func void DIA_Jora_GREET_Info()
+func void DAY_Jora_GREET_Info()
 {
-	AI_Output(self,other,"DIA_Jora_GREET_08_00");	//Да пребудет с тобой Иннос, чужеземец. Если тебе что-то нужно для твоих странствий, ты обратился по адресу.
-	AI_Output(self,other,"DIA_Jora_GREET_08_01");	//Но я предупреждаю тебя - если ты хочешь взять что-нибудь, не заплатив, я позову стражу!
-	AI_Output(other,self,"DIA_Jora_GREET_15_02");	//Минутку! Я что, похож на вора?
-	AI_Output(self,other,"DIA_Jora_GREET_08_03");	//Ха! Ты будешь не первым, кто что-нибудь спер у меня сегодня.
+	AI_Output(self,other, " DIA_Jora_GREET_08_00 " );	// May Innos be with you, outlander. If you need anything for your travels, you've come to the right place.
+	AI_Output(self,other, " DIA_Jora_GREET_08_01 " );	// But I warn you - if you want to take something without paying, I'll call the guards!
+	AI_Output(other,self, " DIA_Jora_GREET_15_02 " );	// Wait a minute! Do I look like a thief?
+	AI_Output(self,other, " DIA_Jora_GREET_08_03 " );	// Ha! You won't be the first to steal something from me today.
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Джора торгует различным оружием на рыночной площади.");
+	B_LogEntry(TOPIC_CityTrader, " Jora trades various weapons in the marketplace. " );
 };
 
 
-instance DIA_Jora_Bestohlen(C_Info)
+instance DIA_Jora_Bestolen (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 1;
-	condition = DIA_Jora_Bestohlen_Condition;
-	information = DIA_Jora_Bestohlen_Info;
+	condition = DIA_Jora_Bestolen_Condition;
+	information = DIA_Jora_Bestolen_Info;
 	permanent = FALSE;
-	description = "Кто-то обокрал тебя?";
+	description = " Did someone rob you? " ;
 };
 
 
-func int DIA_Jora_Bestohlen_Condition()
+func int DIA_Jora_Bestolen_Condition()
 {
 	return TRUE;
 };
 
 func void DIA_Jora_Bestohlen_Info()
 {
-	AI_Output(other,self,"DIA_Jora_Bestohlen_15_00");	//Кто-то обокрал тебя?
-	AI_Output(self,other,"DIA_Jora_Bestohlen_08_01");	//Я не могу доказать это. Этот парень был чертовски хитер. Представился как Ренгару - если это действительно его имя.
-	AI_Output(self,other,"DIA_Jora_Bestohlen_08_02");	//Он уже несколько дней ошивается на рыночной площади.
+	AI_Output(other,self, " DIA_Jora_Bestohlen_15_00 " );	// Someone robbed you?
+	AI_Output(self,other, " DIA_Jora_Bestohlen_08_01 " );	// I can't prove it. This guy was pretty damn smart. Introduced himself as Rengar - if that's really his name.
+	AI_Output(self,other, " DIA_Jora_Bestohlen_08_02 " );	// He's been hanging around the marketplace for days now.
 	if(Npc_GetDistToWP(self,"NW_CITY_MERCHANT_PATH_38") <= 500)
 	{
-		AI_Output(self,other,"DIA_Jora_Bestohlen_08_03");	//А каждый вечер он зависает у пивной бочки вниз по улице. Готов поклясться, этот ублюдок пропивает МОИ деньги!
+		AI_Output(self,other, " DIA_Jora_Bestohlen_08_03 " );	// And every evening he hangs out by a beer barrel down the street. I swear this bastard is drinking MY money!
 	};
-	AI_Output(self,other,"DIA_Jora_Bestohlen_08_04");	//Я отвернулся всего на мгновение, и мой кошелек пропал!
+	AI_Output(self,other, " DIA_Jora_Bestohlen_08_04 " );	// I turned away just for a moment and my wallet was gone!
 };
 
 func void B_Jora_GoldForClue()
 {
-	AI_Output(self,other,"DIA_Jora_Add_08_04");	//Послушай - если ты вернешь золото, украденное этим Ренгару, я расскажу тебе кое-что.
+	AI_Output(self,other, " DIA_Jora_Add_08_04 " );	// Look - if you return the gold that Rengar stole, I'll tell you something.
 };
 
 
-instance DIA_Jora_HolDeinGold(C_Info)
+instance DIA_Jora_HolDeinGold (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 1;
 	condition = DIA_Jora_HolDeinGold_Condition;
 	information = DIA_Jora_HolDeinGold_Info;
 	permanent = FALSE;
-	description = "Я мог бы вернуть тебе это золото.";
+	description = " I could return that gold to you. " ;
 };
 
 
 func int DIA_Jora_HolDeinGold_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Jora_Bestohlen))
+	if ( Npc_KnowsInfo ( other , DIA_Add_Order ) )
 	{
 		return TRUE;
 	};
@@ -186,88 +187,88 @@ func int DIA_Jora_HolDeinGold_Condition()
 
 func void DIA_Jora_HolDeinGold_Info()
 {
-	AI_Output(other,self,"DIA_Jora_HolDeinGold_15_00");	//Я мог бы вернуть тебе это золото.
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_08_01");	//Да?...(недоверчиво) А зачем тебе это?!
+	AI_Output(other,self, " DIA_Jora_HolDeinGold_15_00 " );	// I could return that gold to you.
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_08_01 " );	// Yes?...(incredulously) Why are you doing this?!
 	Info_ClearChoices(DIA_Jora_HolDeinGold);
-	Info_AddChoice(DIA_Jora_HolDeinGold,"Я хочу получить часть золота в качестве вознаграждения!",DIA_Jora_HolDeinGold_WillBelohnung);
+	Info_AddChoice(DIA_Jora_HolDeinGold, " I want to get some gold as a reward! " ,DIA_Jora_HolDeinGold_WillBelohnung);
 	if(MIS_Andre_GuildOfThieves == LOG_Running)
 	{
-		Info_AddChoice(DIA_Jora_HolDeinGold,"Я ищу подходы к гильдии воров!",DIA_Jora_HolDeinGold_GHDG);
+		Info_AddChoice(DIA_Jora_HolDeinGold, " I'm looking for approaches to the Thieves Guild! " ,DIA_Jora_HolDeinGold_GHDG);
 	};
 	if((other.guild == GIL_NONE) && (Player_IsApprentice == APP_NONE))
 	{
-		Info_AddChoice(DIA_Jora_HolDeinGold,"Ты мог бы помочь мне попасть в верхний квартал?",DIA_Jora_HolDeinGold_ToOV);
+		Info_AddChoice(DIA_Jora_HolDeinGold, " Could you help me get to the upper quarter? " ,DIA_Jora_HolDeinGold_ToOV);
 	};
 };
 
 func void DIA_Jora_HolDeinGold_ToOV()
 {
-	AI_Output(other,self,"DIA_Jora_Add_15_00");	//Как сказать... ну, ты мог бы, например, помочь мне попасть в верхний квартал?
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_08_03");	//Ты обратился не по адресу...(смеется) Я нездешний, как и большинство торговцев на этой площади.
-	AI_Output(self,other,"DIA_Jora_Add_08_01");	//Если ты хочешь попасть в верхний квартал, поговори с местными торговцами в нижней части города.
+	AI_Output(other,self, " DIA_Jora_Add_15_00 " );	// How to say... well, could you help me get to the upper quarter, for example?
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_08_03 " );	// You've come to the wrong place... (laughs) I'm from outside, like most of the merchants in this square.
+	AI_Output(self,other, " DIA_Jora_Add_08_01 " );	// If you want to get to the upper quarter, talk to the local merchants in the lower part of the city.
 };
 
 func void DIA_Jora_HolDeinGold_GHDG()
 {
-	AI_Output(other,self,"DIA_Jora_Add_15_02");	//Я ищу подходы к гильдии воров!
-	AI_Output(self,other,"DIA_Jora_Add_08_03");	//Тут я мог бы помочь тебе.
+	AI_Output(other,self, " DIA_Jora_Add_15_02 " );	// I'm looking for approaches to the thieves guild!
+	AI_Output(self,other, " DIA_Jora_Add_08_03 " );	// Here I could help you.
 	B_Jora_GoldForClue();
 	Info_ClearChoices(DIA_Jora_HolDeinGold);
-	Info_AddChoice(DIA_Jora_HolDeinGold,"Я попробую.",DIA_Jora_HolDeinGold_DoIt);
-	Info_AddChoice(DIA_Jora_HolDeinGold,"Сколько золота было в этом кошельке?",DIA_Jora_HolDeinGold_HowMuch);
-	Info_AddChoice(DIA_Jora_HolDeinGold,"Почему ты не позвал стражу?",DIA_Jora_HolDeinGold_Wache);
+	Info_AddChoice(DIA_Jora_HolDeinGold, " I'll try. " ,DIA_Jora_HolDeinGold_DoIt);
+	Info_AddChoice(DIA_Jora_HolDeinGold, " How much gold was in this wallet? " ,DIA_Jora_HolDeinGold_HowMuch);
+	Info_AddChoice(DIA_Jora_HolDeinGold, " Why didn't you call the guard? " ,DIA_Jora_HolDeinGold_Wache);
 };
 
-func void DIA_Jora_HolDeinGold_WillBelohnung()
+func void DIA_Jora_GetYourGold_WillReward()
 {
-	AI_Output(other,self,"DIA_Jora_HolDeinGold_WillBelohnung_15_00");	//Я хочу получить часть золота в качестве вознаграждения!
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_WillBelohnung_08_01");	//Сначала верни мне мой кошелек. А там уж поговорим о твоем вознаграждении!
+	AI_Output(other,self, " DIA_Jora_HolDeinGold_WillBelohnung_15_00 " );	// I want to get some of the gold as a reward!
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_WillBelohnung_08_01 " );	// Give me back my wallet first. And then we'll talk about your reward!
 	Info_ClearChoices(DIA_Jora_HolDeinGold);
-	Info_AddChoice(DIA_Jora_HolDeinGold,"Я попробую.",DIA_Jora_HolDeinGold_DoIt);
-	Info_AddChoice(DIA_Jora_HolDeinGold,"Сколько золота было в этом кошельке?",DIA_Jora_HolDeinGold_HowMuch);
-	Info_AddChoice(DIA_Jora_HolDeinGold,"Почему ты не позвал стражу?",DIA_Jora_HolDeinGold_Wache);
+	Info_AddChoice(DIA_Jora_HolDeinGold, " I'll try. " ,DIA_Jora_HolDeinGold_DoIt);
+	Info_AddChoice(DIA_Jora_HolDeinGold, " How much gold was in this wallet? " ,DIA_Jora_HolDeinGold_HowMuch);
+	Info_AddChoice(DIA_Jora_HolDeinGold, " Why didn't you call the guard? " ,DIA_Jora_HolDeinGold_Wache);
 };
 
-func void DIA_Jora_HolDeinGold_Wache()
+func void DIA_Jora_GetYourGold_Guard()
 {
-	AI_Output(other,self,"DIA_Jora_HolDeinGold_Wache_15_00");	//Почему ты не позвал стражу?
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_Wache_08_01");	//Стража реагирует, если только вор пойман с поличным.
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_Wache_08_02");	//А когда я заметил, что мой кошелек пропал, его и след простыл!
+	AI_Output(other,self, " DIA_Jora_HolDeinGold_Wache_15_00 " );	// Why didn't you call the guards?
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_Wache_08_01 " );	// The guard reacts only if the thief is caught red-handed.
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_Wache_08_02 " );	// And when I noticed that my wallet was gone, it was gone!
 };
 
 func void DIA_Jora_HolDeinGold_HowMuch()
 {
-	AI_Output(other,self,"DIA_Jora_HolDeinGold_HowMuch_15_00");	//Сколько золота было в этом кошельке?
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_HowMuch_08_01");	//Пятьдесят золотых. Это солидная сумма по нынешним временам!
+	AI_Output(other,self, " DIA_Jora_HolDeinGold_HowMuch_15_00 " );	// How much gold was in this wallet?
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_HowMuch_08_01 " );	// Fifty gold. That's a hefty sum these days!
 };
 
 func void DIA_Jora_HolDeinGold_DoIt()
 {
-	AI_Output(other,self,"DIA_Jora_HolDeinGold_DoIt_15_00");	//Я посмотрю, что можно сделать.
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_DoIt_08_01");	//Будь осторожен! Если ты просто вырубишь этого ублюдка, на тебя самого набросится стража.
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_DoIt_08_02");	//Последнее время обстановка здесь значительно обострилась. С тех пор, как паладины прибыли в город, стража набрасывается на всех, кто вступает в драку.
-	AI_Output(self,other,"DIA_Jora_HolDeinGold_DoIt_08_03");	//Так что придумай что-нибудь...
-	AI_Output(other,self,"DIA_Jora_HolDeinGold_DoIt_15_04");	//Попробую.
-	Jora_Dieb = LOG_Running;
+	AI_Output(other,self, " DIA_Jora_HolDeinGold_DoIt_15_00 " );	// I'll see what I can do.
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_DoIt_08_01 " );	// Be careful! If you just knock out that bastard, the guards will turn on you.
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_DoIt_08_02 " );	// Recently, the situation here has escalated significantly. Ever since the paladins arrived in the city, the guards have turned on anyone who gets into a fight.
+	AI_Output(self,other, " DIA_Jora_HolDeinGold_DoIt_08_03 " );	// So come up with something...
+	AI_Output(other,self, " DIA_Jora_HolDeinGold_DoIt_15_04 " );	// I'll try.
+	Jora_thief = LOG_Running;
 	Jora_Gold = LOG_Running;
 	Log_CreateTopic(TOPIC_JoraDieb,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_JoraDieb,LOG_Running);
 	Log_CreateTopic(TOPIC_Jora,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Jora,LOG_Running);
-	B_LogEntry(TOPIC_Jora,"Парень по имени Ренгару ограбил торговца Джору. Он весь день околачивается на рынке. Я должен вернуть украденное золото Джоры.");
-	B_LogEntry_Quiet(TOPIC_JoraDieb,"Ренгару ограбил торговца Джору. Если я поймаю его, мне за это полагается награда.");
+	B_LogEntry(TOPIC_Jora, " A guy named Rengaru robbed Jora the merchant. He hangs around the market all day. I have to return Jora's stolen gold. " );
+	B_LogEntry_Quiet(TOPIC_JoraDieb, " Rengaru robbed merchant Jora. If I catch him, I'll be rewarded for it. " );
 	Info_ClearChoices(DIA_Jora_HolDeinGold);
 };
 
 
-instance DIA_Jora_WegenDieb(C_Info)
+instance DIA_Jora_WegenDieb (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 2;
 	condition = DIA_Jora_WegenDieb_Condition;
 	information = DIA_Jora_WegenDieb_Info;
 	permanent = TRUE;
-	description = "Насчет вора...";
+	description = " About the thief... " ;
 };
 
 
@@ -281,65 +282,65 @@ func int DIA_Jora_WegenDieb_Condition()
 
 func void DIA_Jora_WegenDieb_Info()
 {
-	AI_Output(other,self,"DIA_Jora_WegenDieb_15_00");	//Насчет вора...
-	AI_Output(self,other,"DIA_Jora_WegenDieb_08_01");	//Да, как продвигается дело? Ты поймал его? И что более важно, ты забрал у него мое золото?
+	AI_Output(other,self, " DIA_Jora_WegenDieb_15_00 " );	// About the thief...
+	AI_Output(self,other, " DIA_Jora_WegenDieb_08_01 " );	// Yes, how's it going? Did you catch him? And more importantly, did you take my gold from him?
 	Info_ClearChoices(DIA_Jora_WegenDieb);
-	if(Npc_IsDead(Rengaru))
+	if (Npc_IsDead(Rengaru))
 	{
-		Info_AddChoice(DIA_Jora_WegenDieb,"Ну, с ним произошел несчастный случай.",DIA_Jora_WegenDieb_Tot);
+		Info_AddChoice(DIA_Jora_WegenDieb, " Well, he had an accident. " ,DIA_Jora_WegenDieb_Tot);
 	}
 	else if(Rengaru_InKnast == TRUE)
 	{
-		Info_AddChoice(DIA_Jora_WegenDieb,"Да, я поймал его.",DIA_Jora_WegenDieb_ImKnast);
+		Info_AddChoice(DIA_Jora_WegenDieb, " Yes, I caught him. " ,DIA_Jora_WegenDieb_ImKnast);
 	}
 	else if(Npc_KnowsInfo(other,DIA_Rengaru_HALLODIEB))
 	{
-		Info_AddChoice(DIA_Jora_WegenDieb,"Он сбежал от меня.",DIA_Jora_WegenDieb_Entkommen);
+		Info_AddChoice(DIA_Jora_WegenDieb, " He ran away from me. " ,DIA_Jora_WegenDieb_Entkommen);
 	};
-	Info_AddChoice(DIA_Jora_WegenDieb,"Я все еще работаю над этим!",DIA_Jora_WegenDieb_Continue);
+	Info_AddChoice(DIA_Jora_WegenDieb, " I'm still working on it! " ,DIA_Jora_WegenDieb_Continue);
 };
 
 func void DIA_Jora_WegenDieb_Continue()
 {
-	AI_Output(other,self,"DIA_Jora_WegenDieb_Continue_15_00");	//Я все еще работаю над этим!
-	AI_Output(self,other,"DIA_Jora_WegenDieb_Continue_08_01");	//Не забудь принести мне это золото назад!
+	AI_Output(other,self, " DIA_Jora_WegenDieb_Continue_15_00 " );	// I'm still working on it!
+	AI_Output(self,other, " DIA_Jora_WegenDieb_Continue_08_01 " );	// Don't forget to bring that gold back to me!
 	Info_ClearChoices(DIA_Jora_WegenDieb);
 };
 
-func void DIA_Jora_WegenDieb_Entkommen()
+func void DIA_Jora_BecauseThieb_Escape()
 {
-	AI_Output(other,self,"DIA_Jora_WegenDieb_Entkommen_15_00");	//Он сбежал от меня.
-	AI_Output(self,other,"DIA_Jora_WegenDieb_Entkommen_08_01");	//А мое золото? Он унес его с собой?
-	Jora_Dieb = LOG_SUCCESS;
+	AI_Output(other,self, " DIA_Jora_WegenDieb_Entkommen_15_00 " );	// He ran away from me.
+	AI_Output(self,other, " DIA_Jora_WegenDieb_Entkommen_08_01 " );	// And my gold? Did he take it with him?
+	Jora_thief = LOG_SUCCESS ;
 	Info_ClearChoices(DIA_Jora_WegenDieb);
 };
 
 func void DIA_Jora_WegenDieb_ImKnast()
 {
-	AI_Output(other,self,"DIA_Jora_WegenDieb_ImKnast_15_00");	//Да, я поймал его. Пусть немного посидит за решеткой, подумает...
-	AI_Output(self,other,"DIA_Jora_WegenDieb_ImKnast_08_01");	//А что насчет моего золота?
-	Jora_Dieb = LOG_SUCCESS;
+	AI_Output(other,self, " DIA_Jora_WegenDieb_ImKnast_15_00 " );	// Yes, I caught it. Let him sit behind bars for a while, think...
+	AI_Output(self,other, " DIA_Jora_WegenDieb_ImKnast_08_01 " );	// What about my gold?
+	Jora_thief = LOG_SUCCESS ;
 	Info_ClearChoices(DIA_Jora_WegenDieb);
 };
 
 func void DIA_Jora_WegenDieb_Tot()
 {
-	AI_Output(other,self,"DIA_Jora_WegenDieb_Tot_15_00");	//Ну, с ним произошел несчастный случай.
-	AI_Output(self,other,"DIA_Jora_WegenDieb_Tot_08_01");	//Ну, хотя бы он теперь не сможет никого обокрасть! Правосудие Инноса свершилось!
-	AI_Output(self,other,"DIA_Jora_WegenDieb_Tot_08_02");	//Где мое золото?
-	Jora_Dieb = LOG_SUCCESS;
+	AI_Output(other,self, " DIA_Jora_WegenDieb_Tot_15_00 " );	// Well, he had an accident.
+	AI_Output(self,other, " DIA_Jora_WegenDieb_Tot_08_01 " );	// Well, at least he won't be able to rob anyone now! The justice of Innos has been done!
+	AI_Output(self,other, " DIA_Jora_WegenDieb_Tot_08_02 " );	// Where is my gold?
+	Jora_thief = LOG_SUCCESS ;
 	Info_ClearChoices(DIA_Jora_WegenDieb);
 };
 
 
-instance DIA_Jora_BringGold(C_Info)
+instances of DIA_Jora_BringGold (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 2;
 	condition = DIA_Jora_BringGold_Condition;
 	information = DIA_Jora_BringGold_Info;
 	permanent = TRUE;
-	description = "Вот пятьдесят золотых, что он украл у тебя.";
+	description = " Here's the fifty gold he stole from you. " ;
 };
 
 
@@ -353,22 +354,22 @@ func int DIA_Jora_BringGold_Condition()
 
 func void DIA_Jora_BringGold_Info()
 {
-	AI_Output(other,self,"DIA_Jora_BringGold_15_00");	//Вот пятьдесят золотых, что он украл у тебя.
+	AI_Output(other,self, " DIA_Jora_BringGold_15_00 " );	// Here are the fifty gold coins he stole from you.
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
-		AI_Output(self,other,"DIA_Jora_BringGold_08_01");	//Хвала Инносу! Есть еще правосудие в этом городе.
+		AI_Output(self,other, " DIA_Jora_BringGold_08_01 " );	// Praise Innos! There is still justice in this city.
 		Jora_Gold = LOG_SUCCESS;
 		B_GivePlayerXP(XP_Jora_Gold);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jora_BringGold_08_03");	//Эй, здесь не все полсотни золотых! Ты что, тоже пытаешься меня обокрасть?
+		AI_Output(self,other, " DIA_Jora_BringGold_08_03 " );	// Hey, it's not all fifty gold! Are you trying to rob me too?
 	};
 };
 
 
-var int Jora_GhdgHinweis;
+var int Jora_GhdgHint;
 
 instance DIA_Jora_GHDgInfo(C_Info)
 {
@@ -377,13 +378,13 @@ instance DIA_Jora_GHDgInfo(C_Info)
 	condition = DIA_Jora_GHDgInfo_Condition;
 	information = DIA_Jora_GHDgInfo_Info;
 	permanent = TRUE;
-	description = "Что ты знаешь о гильдии воров?";
+	description = " What do you know about the Thieves Guild? " ;
 };
 
 
 func int DIA_Jora_GHDgInfo_Condition()
 {
-	if((MIS_Andre_GuildOfThieves == LOG_Running) && Npc_KnowsInfo(other,DIA_Jora_Bestohlen) && (Jora_GhdgHinweis == FALSE))
+	if ((MIS_Other_GuildOfThieves == LOG_Running) && Npc_KnowsInfo(other,DIA_Jora_Ordered) && (Jora_GhdgHinweis ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -391,36 +392,36 @@ func int DIA_Jora_GHDgInfo_Condition()
 
 func void DIA_Jora_GHDgInfo_Info()
 {
-	AI_Output(other,self,"DIA_Jora_Add_15_05");	//Что ты знаешь о гильдии воров?
+	AI_Output(other,self, " DIA_Jora_Add_15_05 " );	// What do you know about the Thieves Guild?
 	if(Jora_Gold != LOG_SUCCESS)
 	{
 		B_Jora_GoldForClue();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jora_Add_08_06");	//Хорошо - я скажу - но ты ничего не слышал от меня, если что, понятно?
-		AI_Output(self,other,"DIA_Jora_Add_08_07");	//В портовом кабаке постоянно ошиваются какие-то темные личности.
-		AI_Output(self,other,"DIA_Jora_Add_08_08");	//Готов поклясться, что бармен что-то знает об этом...
-		AI_Output(self,other,"DIA_Jora_Add_08_09");	//Если ты хочешь выследить этих воров, тебе стоит поговорить с НИМ.
-		AI_Output(self,other,"DIA_Jora_Add_08_10");	//Ты можешь притвориться, что ищешь какую-нибудь темную работенку, например. Может, он купится на это.
-		AI_Output(self,other,"DIA_Jora_Add_08_11");	//Но будь осторожен. С этими людьми лучше не шутить.
+		AI_Output(self,other, " DIA_Jora_Add_08_06 " );	// Okay - I'll tell you - but you haven't heard anything from me, if anything, understand?
+		AI_Output(self,other, " DIA_Jora_Add_08_07 " );	// Some dark personalities are constantly hanging around in the port tavern.
+		AI_Output(self,other, " DIA_Jora_Add_08_08 " );	// I bet the bartender knows something about this...
+		AI_Output(self,other, " DIA_Jora_Add_08_09 " );	// If you want to track down these thieves, you should talk to HIM.
+		AI_Output(self,other, " DIA_Jora_Add_08_10 " );	// You can pretend to be looking for some dark job, for example. Maybe he'll buy into it.
+		AI_Output(self,other, " DIA_Jora_Add_08_11 " );	// But be careful. It's better not to joke with these people.
 		Jora_GhdgHinweis = TRUE;
 	};
 };
 
 
-instance DIA_Jora_Belohnung(C_Info)
+instance DIA_Jora_Reward (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 1;
-	condition = DIA_Jora_Belohnung_Condition;
-	information = DIA_Jora_Belohnung_Info;
+	condition = DIA_Jora_Reward_Condition;
+	information = DIA_Jora_Rewards_Info;
 	permanent = FALSE;
-	description = "Я хочу получить часть золота в качестве вознаграждения!";
+	description = " I want to get some of the gold as a reward! " ;
 };
 
 
-func int DIA_Jora_Belohnung_Condition()
+func int DIA_Jora_Reward_Condition()
 {
 	if(Jora_Gold == LOG_SUCCESS)
 	{
@@ -428,31 +429,31 @@ func int DIA_Jora_Belohnung_Condition()
 	};
 };
 
-func void DIA_Jora_Belohnung_Info()
+func void DIA_Jora_Reward_Info()
 {
-	AI_Output(other,self,"DIA_Jora_Belohnung_15_00");	//Я хочу получить часть золота в качестве вознаграждения!
+	AI_Output(other,self, " DIA_Jora_Belohnung_15_00 " );	// I want to get some of the gold as a reward!
 	if(Jora_GhdgHinweis == TRUE)
 	{
-		AI_Output(self,other,"DIA_Jora_Add_08_12");	//Но я уже дал тебе ценный совет.
-		AI_Output(self,other,"DIA_Jora_Add_08_13");	//Этого должно хватить в качестве вознаграждения.
+		AI_Output(self,other, " DIA_Jora_Add_08_12 " );	// But I already gave you valuable advice.
+		AI_Output(self,other, " DIA_Jora_Add_08_13 " );	// This should be enough as a reward.
 	};
-	AI_Output(self,other,"DIA_Jora_Add_08_14");	//А сели тебе нужно золото, то выслеживай воров и получай награду за их голову у лорда Андрэ.
+	AI_Output(self,other, " DIA_Jora_Add_08_14 " );	// And if you need gold, then hunt down the thieves and get a reward for their head from Lord Andre.
 	if(Npc_GetDistToWP(self,"NW_CITY_MERCHANT_PATH_38") <= 500)
 	{
-		AI_Output(self,other,"DIA_Jora_Belohnung_08_03");	//А теперь извини, меня ждут клиенты...
+		AI_Output(self,other, " DIA_Jora_Belohnung_08_03 " );	// Now excuse me, I have clients waiting...
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Jora_AlriksSchwert(C_Info)
+instance DIA_Jora_Alrik's sword (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 1;
 	condition = DIA_Jora_AlriksSchwert_Condition;
 	information = DIA_Jora_AlriksSchwert_Info;
 	permanent = FALSE;
-	description = "Альрик говорит, что у тебя его меч...";
+	description = " Alrik says you have his sword... " ;
 };
 
 
@@ -466,53 +467,53 @@ func int DIA_Jora_AlriksSchwert_Condition()
 
 func void DIA_Jora_AlriksSchwert_Info()
 {
-	AI_Output(other,self,"DIA_Jora_AlriksSchwert_15_00");	//Альрик говорит, что у тебя его меч...
-	AI_Output(self,other,"DIA_Jora_AlriksSchwert_08_01");	//Ты имеешь в виду этого оборванца, что продал мне свое оружие за несколько факелов и кусок мяса?
-	AI_Output(other,self,"DIA_Jora_AlriksSchwert_15_02");	//Да, это он.
+	AI_Output(other,self, " DIA_Jora_AlriksSchwert_15_00 " );	// Alric says you have his sword...
+	AI_Output(self,other, " DIA_Jora_AlriksSchwert_08_01 " );	// You mean that ragamuffin who sold his weapon to me for a few torches and a piece of meat?
+	AI_Output(other,self, " DIA_Jora_AlriksSchwert_15_02 " );	// Yes, this is it.
 
 	if(Npc_HasItems(self,ItMw_AlriksSword_Mis) > 0)
 	{
-		AI_Output(self,other,"DIA_Jora_AlriksSchwert_08_03");	//Его меч все еще у меня.
-		AI_Output(other,self,"DIA_Jora_AlriksSchwert_15_04");	//Сколько ты хочешь за него?
+		AI_Output(self,other, " DIA_Jora_AlriksSchwert_08_03 " );	// I still have his sword.
+		AI_Output(other,self, " DIA_Jora_AlriksSchwert_15_04 " );	// How much do you want for it?
 
 		if(Jora_Gold == LOG_SUCCESS)
 		{
 			if(RhetorikSkillValue[1] < 100)
 			{
-				RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-				AI_Print("Риторика + 1");
+				RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+				AI_Print( " Rhetoric + 1 " );
 			};
 
-			AI_Output(self,other,"DIA_Jora_AlriksSchwert_08_05");	//Ну - для тебя...
-			AI_Output(self,other,"DIA_Jora_AlriksSchwert_08_06");	//А, ладно! Забирай его так. Ведь ты помог мне вернуть мое золото...
+			AI_Output(self,other, " DIA_Jora_AlriksSchwert_08_05 " );	// Well - for you...
+			AI_Output(self,other, " DIA_Jora_AlriksSchwert_08_06 " );	// Oh, okay! Take it like this. After all, you helped me get my gold back...
 			B_GiveInvItems(self,other,ItMw_AlriksSword_Mis,1);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Jora_AlriksSchwert_08_07");	//Ну...только для тебя...пятьдесят золотых монет!
+			AI_Output(self,other, " DIA_Jora_AlriksSchwert_08_07 " );	// Well...just for you...fifty gold coins!
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jora_AlriksSchwert_08_08");	//(раздраженно) У меня его больше нет! Черт его знает, кому я его продал!
+		AI_Output(self,other, " DIA_Jora_AlriksSchwert_08_08 " );	// (annoyed) I don't have it anymore! God knows who I sold it to!
 	};
 };
 
 
-instance DIA_Jora_BUYAlriksSchwert(C_Info)
+instance DIA_Jora_BUYAlrik's sword (C_Info)
 {
 	npc = VLK_408_Jora;
 	nr = 2;
 	condition = DIA_Jora_BUYAlriksSchwert_Condition;
-	information = DIA_Jora_BUYAlriksSchwert_Info;
+	information = DIA_Jora_BUYAlrik's sword_Info;
 	permanent = TRUE;
-	description = "Вот полсотни золотых монет! Давай мне меч Альрика.";
+	description = " Here are fifty gold coins! Give me Alric's sword. " ;
 };
 
 
-func int DIA_Jora_BUYAlriksSchwert_Condition()
+func int DIA_Expenditure_BUYAlRicksSpecial_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Jora_AlriksSchwert) && (Npc_HasItems(self,ItMw_AlriksSword_Mis) > 0))
+	if ( Npc_KnowsInfo ( other , DIA_Jora_AlriksSchwert ) && ( Npc_HasItems ( self , ItMw_AlriksSword_Mis ) >  0 ))
 	{
 		return TRUE;
 	};
@@ -520,15 +521,15 @@ func int DIA_Jora_BUYAlriksSchwert_Condition()
 
 func void DIA_Jora_BUYAlriksSchwert_Info()
 {
-	AI_Output(other,self,"DIA_Jora_BUYAlriksSchwert_15_00");	//Вот полсотни золотых монет! Давай мне меч Альрика.
+	AI_Output(other,self, " DIA_Jora_BUYAlriksSchwert_15_00 " );	// Here are fifty gold coins! Give me Alric's sword.
 	if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
-		AI_Output(self,other,"DIA_Jora_BUYAlriksSchwert_08_04");	//Вот, держи - (ухмыляется) это выгодная сделка.
+		AI_Output(self,other, " DIA_Jora_BUYAlriksSchwert_08_04 " );	// Here you go - (grins) this is a good deal.
 		B_GiveInvItems(self,other,ItMw_AlriksSword_Mis,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jora_BUYAlriksSchwert_08_05");	//У тебя недостаточно золота. Но не волнуйся - я попридержу пока этот меч. Заходи позже, если хочешь...
+		AI_Output(self,other, " DIA_Jora_BUYAlriksSchwert_08_05 " );	// You don't have enough gold. But don't worry - I'll hold onto that sword for now. Come back later if you want...
 	};
 };
 
@@ -546,7 +547,7 @@ instance DIA_Jora_PICKPOCKET(C_Info)
 
 func int DIA_Jora_PICKPOCKET_Condition()
 {
-	return C_Beklauen(31,45);
+	return  C_Robbery ( 31 , 45 );
 };
 
 func void DIA_Jora_PICKPOCKET_Info()
@@ -558,7 +559,7 @@ func void DIA_Jora_PICKPOCKET_Info()
 
 func void DIA_Jora_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Jora_PICKPOCKET);
 };
 
@@ -573,39 +574,39 @@ instance DIA_JORA_BENGARGOODS(C_Info)
 	npc = VLK_408_Jora;
 	nr = 700;
 	condition = dia_jora_bengargoods_condition;
-	information = dia_jora_bengargoods_info;
+	information = dia_close_bengargoods_info;
 	permanent = FALSE;
-	description = "У меня для тебя посылка от фермера Бенгара.";
+	description = " I have a package for you from Farmer Bengar. " ;
 };
 
 
 func int dia_jora_bengargoods_condition()
 {
-	if((MIS_BENGARORDER == LOG_Running) && (Npc_HasItems(other,itmi_bengarpacket) >= 1))
+	if (( MIS_BENGARORDER  == LOG_Running) && (Npc_HasItems(other,itmi_bengarpacket) >=  1 ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jora_bengargoods_info()
+func void dia_close_bengargoods_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Jora_BengarGoods_01_00");	//У меня для тебя посылка от фермера Бенгара.
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_01");	//Отлично! А то я ее уже заждался.
+	AI_Output(other,self, " DIA_Jora_BengarGoods_01_00 " );	// I have a package for you from Farmer Bengar.
+	AI_Output(self,other, " DIA_Jora_BengarGoods_01_01 " );	// Great! And then I was already waiting for her.
 	B_GiveInvItems(other,self,itmi_bengarpacket,1);
 	Npc_RemoveInvItems(self,itmi_bengarpacket,1);
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_02");	//Так, что у нас здесь...
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_03");	//Хммм, совсем неплохо. И как раз то, что я и просил. Замечательно!
-	AI_Output(other,self,"DIA_Jora_BengarGoods_01_06");	//Что мне теперь делать?
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_07");	//Ступай к Лютеро - он попросил меня передать тебе, что ему срочно нужно кое-что с тобой обсудить.
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_09");	//Еще можешь сказать ему, что я получил посылку.
-	AI_Output(other,self,"DIA_Jora_BengarGoods_01_11");	//Скажи, а ты тоже состоишь в гильдии?
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_12");	//Хммм...(улыбается) Конечно. Иначе бы Лютеро не поручил тебе доставить эту посылку именно мне.
-	AI_Output(other,self,"DIA_Jora_BengarGoods_01_16");	//Ясно. Пойду встречусь с Лютеро.
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_17");	//Да, да. Ступай. Еще увидимся.
+	AI_Output(self,other, " DIA_Jora_BengarGoods_01_02 " );	// So what do we have here...
+	AI_Output(self,other, " DIA_Jora_BengarGoods_01_03 " );	// Hmmm, not bad at all. And just what I asked for. Wonderful!
+	AI_Output(other,self, " DIA_Jora_BengarGoods_01_06 " );	// What should I do now?
+	AI_Output(self,other, " DIA_Jora_BengarGoods_01_07 " );	// Go to Luthero - he asked me to tell you that he urgently needs to discuss something with you.
+	AI_Output(self,other, " DIA_Jora_BengarGoods_01_09 " );	// You can also tell him that I received the package.
+	AI_Output(other,self, " DIA_Jora_BengarGoods_01_11 " );	// Tell me, are you also a member of the guild?
+	AI_Output(self,other, " DIA_Jora_BengarGoods_01_12 " );	// Hmmm... (smiles) Of course. Otherwise, Luthero would not have commissioned you to deliver this package to me.
+	AI_Output(other,self, " DIA_Jora_BengarGoods_01_16 " );	// Clear. I'm going to see Luthero.
+	AI_Output(self,other, " DIA_Jora_BengarGoods_01_17 " );	// Yes, yes. Go. See you.
 	AI_StopProcessInfos(self);
 	JORATAKEPACK = TRUE;
 	MIS_BENGARORDER = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_BENGARORDER,LOG_SUCCESS);
-	B_LogEntry(TOPIC_BENGARORDER,"Я передал Джоре пакет с товаром. Теперь мне нужно идти к Лютеро - он срочно хотел меня видеть.");
+	B_LogEntry( TOPIC_BENGARORDER , " I gave Jora a package of goods. Now I need to go to Luthero - he urgently wanted to see me. " );
 };
