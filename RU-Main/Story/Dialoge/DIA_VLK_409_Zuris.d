@@ -1,4 +1,5 @@
 
+
 instance DIA_Zuris_EXIT(C_Info)
 {
 	npc = VLK_409_Zuris;
@@ -25,7 +26,7 @@ instance DIA_Zuris_Sperre(C_Info)
 	npc = VLK_409_Zuris;
 	nr = 2;
 	condition = DIA_Zuris_Sperre_Condition;
-	information = DIA_Zuris_Sperre_Info;
+	information = DIA_Zuris_Lock_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
@@ -40,7 +41,7 @@ func int DIA_Zuris_Sperre_Condition()
 
 func void DIA_Zuris_Sperre_Info()
 {
-	AI_Output(self,other,"DIA_Zuris_Sperre_14_00");	//Ты заключенный, сбежавший из горнодобывающей колонии. Проваливай!
+	AI_Output(self,other, " DIA_Zuris_Sperre_14_00 " );	// You're a prisoner who escaped from a mining colony. Get out!
 	AI_StopProcessInfos(self);
 };
 
@@ -58,7 +59,7 @@ instance DIA_Zuris_GREET(C_Info)
 
 func int DIA_Zuris_GREET_Condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (Canthar_Sperre == FALSE) && (self.aivar[AIV_TalkedToPlayer] == FALSE))
+	if ( Npc_IsInState ( self , ZS_Talk ) && ( Canthar_Sperre ==  FALSE ) && ( self . aivar [ AIV_TalkedToPlayer ] ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -66,19 +67,19 @@ func int DIA_Zuris_GREET_Condition()
 
 func void DIA_Zuris_GREET_Info()
 {
-	AI_Output(self,other,"DIA_Zuris_GREET_14_00");	//Я Зурис, специалист по зельям.
-	AI_Output(self,other,"DIA_Zuris_GREET_14_01");	//Тебе нужна лечебная эссенция или магический эликсир? Тогда ты обратился по адресу.
+	AI_Output(self,other, " DIA_Zuris_GREET_14_00 " );	// I'm Zuris, Potions Specialist.
+	AI_Output(self,other, " DIA_Zuris_GREET_14_01 " );	// Do you need healing essence or magic elixir? Then you came to the address.
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Зурис торгует зельями на рыночной площади.");
+	B_LogEntry(TOPIC_CityTrader, " Zuris is trading potions in the marketplace. " );
 };
 
-var int Zuris_einmal;
+var int Zuris_once;
 var int VatrasBookIns;
 var int TrollPlantUp;
 var int GrokBringPotionUp;
 var int ZurisAddPermMana;
 
-instance DIA_Zuris_WAREZ(C_Info)
+DIA_Zuris_WAREZ (C_Info) instances
 {
 	npc = VLK_409_Zuris;
 	nr = 2;
@@ -86,12 +87,12 @@ instance DIA_Zuris_WAREZ(C_Info)
 	information = DIA_Zuris_WAREZ_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 };
 
 func int DIA_Zuris_WAREZ_Condition()
 {
-	if(Wld_IsTime(5,30,20,0))
+	if (Wld_IsTime( 5 , 30 , 20 , 0 ))
 	{
 		return TRUE;
 	};
@@ -105,23 +106,23 @@ func void DIA_Zuris_WAREZ_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Zuris_WAREZ_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Zuris_WAREZ_15_00 " );	// Show me your products.
 
-	if((Zuris_einmal == FALSE) && !Npc_KnowsInfo(other,DIA_Zuris_Potions))
+	if (( Use_once ==  FALSE ) &&  ! Npc_KnowsInfo ( other , DIA_Use_Potions ) ) .
 	{
-		AI_Output(self,other,"DIA_Zuris_GREET_14_02");	//Я только что получил несколько новых зелий! Мой гость, Мастер Дарон, Маг Огня, принес мне их из монастыря.
-		Zuris_einmal = TRUE;
+		AI_Output(self,other, " DIA_Zuris_GREET_14_02 " );	// I just got some new potions! My guest, Master Daron, Mage of Fire, brought them to me from the monastery.
+		Zuris_once = TRUE ;
 	};
-	if((Kapitel >= 1) && (VatrasBookIns == FALSE) && (MagicBookFindTrade == TRUE) && (MIS_VatrasMagicBook == LOG_Running))
+	if ((Chapter >=  1 ) && (BacklogBookIns ==  FALSE ) && (MagicBookFindTrade ==  TRUE ) && (MY_BacklogMagicBook == LOG_Running))
 	{
 		CreateInvItems(self,ItWr_VatrasDiary,1);
 		VatrasBookIns = TRUE;
 	};
-	if((SeekCactus == TRUE) && (ZurisAddPermMana == FALSE))
+	if ((SeekCactus ==  TRUE ) && (SearchAddPermHome ==  FALSE ))
 	{
 		CreateInvItems(self,ItPo_Perm_Mana,1);
 		CreateInvItems(self,ItPl_Perm_Herb,1);	
-		ZurisAddPermMana = TRUE;
+		ZurisAddPermMana = TRUE ;
 	};
 	if((XardasDoMagicRoot == TRUE) && (TrollPlantUp == FALSE))
 	{
@@ -144,7 +145,7 @@ instance DIA_Zuris_Potions(C_Info)
 	condition = DIA_Zuris_POTIONS_Condition;
 	information = DIA_Zuris_POTIONS_Info;
 	permanent = FALSE;
-	description = "Ты сам готовишь свои зелья?";
+	description = " Do you make your own potions? " ;
 };
 
 
@@ -158,26 +159,26 @@ func int DIA_Zuris_POTIONS_Condition()
 
 func void DIA_Zuris_POTIONS_Info()
 {
-	AI_Output(other,self,"DIA_Zuris_POTIONS_15_00");	//Ты сам готовишь свои зелья?
-	AI_Output(self,other,"DIA_Zuris_POTIONS_14_01");	//Нет, я получаю их из монастыря или покупаю у Константино, алхимика.
+	AI_Output(other, self, " DIA_Zuris_POTIONS_15_00 " );	// Do you make your own potions?
+	AI_Output(self,other, " DIA_Zuris_POTIONS_14_01 " );	// No, I get them from the monastery or buy them from Constantino, the alchemist.
 
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Zuris_POTIONS_14_02");	//Если тебя интересуют рецепты приготовления зелий, тебе нужно поговорить с ним. Ему как раз нужен помощник.
-		AI_Output(self,other,"DIA_Zuris_POTIONS_14_03");	//Но он слишком туп, чтобы нанять кого-нибудь самому. И к тому же упрям как мул.
+		AI_Output(self,other, " DIA_Zuris_POTIONS_14_02 " );	// If you're interested in potion recipes, you should talk to him. He just needs an assistant.
+		AI_Output(self,other, " DIA_Zuris_POTIONS_14_03 " );	// But he's too dumb to hire anyone himself. And besides, stubborn as a mule.
 	};
 
-	AI_Output(self,other,"DIA_Zuris_Add_14_00");	//Он всегда проходит мимо меня, когда выходит через восточные ворота собирать растения для своих зелий.
+	AI_Output(self,other, " DIA_Zuris_Add_14_00 " );	// He always walks past me when he comes out through the east gate to collect plants for his potions.
 };
 
-instance DIA_Zuris_Kraut(C_Info)
+instances of DIA_Zuris_Kraut (C_Info)
 {
 	npc = VLK_409_Zuris;
 	nr = 2;
 	condition = DIA_Zuris_Kraut_Condition;
 	information = DIA_Zuris_Kraut_Info;
 	permanent = FALSE;
-	description = "А где именно Константино собирает травы?";
+	description = " Where exactly does Constantino collect herbs? " ;
 };
 
 func int DIA_Zuris_Kraut_Condition()
@@ -190,9 +191,9 @@ func int DIA_Zuris_Kraut_Condition()
 
 func void DIA_Zuris_Kraut_Info()
 {
-	AI_Output(other,self,"DIA_Zuris_Add_15_01");	//А где именно Константино собирает травы?
-	AI_Output(self,other,"DIA_Zuris_Add_14_02");	//Он всегда выходит через восточные ворота города, а затем исчезает в лесу налево.
-	AI_Output(self,other,"DIA_Zuris_Add_14_03");	//Он как-то сказал мне, что почти все, что ему нужно, растет там, за исключением царского щавеля.
+	AI_Output(other,self, " DIA_Zuris_Add_15_01 " );	// Where exactly does Constantino collect herbs?
+	AI_Output(self,other, " DIA_Zuris_Add_14_02 " );	// He always exits through the east gate of the city, and then disappears into the forest to the left.
+	AI_Output(self,other, " DIA_Zuris_Add_14_03 " );	// He once told me that almost everything he needs grows there, with the exception of royal sorrel.
 	MikaHaveKey = TRUE;
 	Wld_InsertItem(ItPl_Mana_Herb_01,"FP_ITEM_HERB_01");
 	Wld_InsertItem(ItPl_Mana_Herb_02,"FP_ITEM_HERB_02");
@@ -208,14 +209,14 @@ func void DIA_Zuris_Kraut_Info()
 };
 
 
-instance DIA_Zuris_Kronstoeckel(C_Info)
+instance DIA_Zuris_Kronstoeckel (C_Info)
 {
 	npc = VLK_409_Zuris;
 	nr = 2;
 	condition = DIA_Zuris_Kronstoeckel_Condition;
 	information = DIA_Zuris_Kronstoeckel_Info;
 	permanent = FALSE;
-	description = "Константино говорил тебе, где можно найти царский щавель?";
+	description = " Did Constantino tell you where to find king sorrel? " ;
 };
 
 
@@ -229,10 +230,10 @@ func int DIA_Zuris_Kronstoeckel_Condition()
 
 func void DIA_Zuris_Kronstoeckel_Info()
 {
-	AI_Output(other,self,"DIA_Zuris_Add_15_04");	//Константино говорил тебе, где можно найти царский щавель?
-	AI_Output(self,other,"DIA_Zuris_Add_14_05");	//Он как-то упоминал, что он растет около каменных кругов.
-	AI_Output(self,other,"DIA_Zuris_Add_14_06");	//Около фермы Лобарта, эта ферма находится неподалеку от других ворот, есть один из таких каменных кругов.
-	AI_Output(self,other,"DIA_Zuris_Add_14_07");	//Насколько я помню, он стоит на холме. Там когда-то была могила, или что-то вроде этого.
+	AI_Output(other,self, " DIA_Zuris_Add_15_04 " );	// Did Constantino tell you where you can find king sorrel?
+	AI_Output(self,other, " DIA_Zuris_Add_14_05 " );	// He once mentioned that it grows near stone circles.
+	AI_Output(self,other, " DIA_Zuris_Add_14_06 " );	// Near the Lobart farm, this farm is not far from the other gate, there is one of these stone circles.
+	AI_Output(self,other, " DIA_Zuris_Add_14_07 " );	// As far as I remember, he stands on a hill. There used to be a grave there, or something like that.
 	Wld_InsertItem(ItPl_Perm_Herb,"FP_ITEM_HERB_11");
 };
 
@@ -243,13 +244,13 @@ instance DIA_Zuris_WHERE(C_Info)
 	condition = DIA_Zuris_WHERE_Condition;
 	information = DIA_Zuris_WHERE_Info;
 	permanent = FALSE;
-	description = "Где я могу найти Константино?";
+	description = " Where can I find Constantino? " ;
 };
 
 
 func int DIA_Zuris_WHERE_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Zuris_Potions) && (Constantino.aivar[AIV_TalkedToPlayer] == FALSE))
+	if ( Npc_KnowsInfo ( hero , DIA_Zuris_Potions ) && ( Constantino . aivar [ AIV_TalkedToPlayer ] ==  FALSE )) .
 	{
 		return TRUE;
 	};
@@ -257,8 +258,8 @@ func int DIA_Zuris_WHERE_Condition()
 
 func void DIA_Zuris_WHERE_Info()
 {
-	AI_Output(other,self,"DIA_Zuris_WHERE_15_00");	//Где я могу найти Константино?
-	AI_Output(self,other,"DIA_Zuris_WHERE_14_01");	//Его дом находится в тоннеле около кузницы Харада. Его будет нетрудно найти!
+	AI_Output(other,self, " DIA_Zuris_WHERE_15_00 " );	// Where can I find Constantino?
+	AI_Output(self,other, " DIA_Zuris_WHERE_14_01 " );	// His home is in a tunnel near Harad's forge. It won't be hard to find!
 };
 
 
@@ -268,49 +269,49 @@ instance DIA_Zuris_Kloster(C_Info)
 	nr = 2;
 	condition = DIA_Zuris_Kloster_Condition;
 	information = DIA_Zuris_Kloster_Info;
-	description = "Расскажи мне о монастыре.";
+	description = " Tell me about the monastery. " ;
 };
 
 
 func int DIA_Zuris_Kloster_Condition()
 {
-	if(Zuris_einmal == TRUE)
+	if (Zuris_once ==  TRUE )
 	{
-		return FALSE;
+		return  FALSE ;
 	};
 	return TRUE;
 };
 
 func void DIA_Zuris_Kloster_Info()
 {
-	AI_Output(other,self,"DIA_Zuris_Kloster_14_00");	//Расскажи мне о монастыре.
-	AI_Output(self,other,"DIA_Zuris_Kloster_14_01");	//Тебе лучше поговорить об этом с самим Мастером Дароном. Он знает больше меня.
+	AI_Output(other,self, " DIA_Zuris_Kloster_14_00 " );	// Tell me about the monastery.
+	AI_Output(self,other, " DIA_Zuris_Kloster_14_01 " );	// You'd better talk to Master Daron himself about this. He knows more than me.
 };
 
 
-instance DIA_Zuris_Minenanteil(C_Info)
+instance DIA_Zuris_Minenanteil (C_Info)
 {
 	npc = VLK_409_Zuris;
 	nr = 3;
 	condition = DIA_Zuris_Minenanteil_Condition;
-	information = DIA_Zuris_Minenanteil_Info;
-	description = "Ты продаешь шахтерские акции?";
+	information = DIA_Zuris_MinenTeil_Info;
+	description = " Do you sell mining shares? " ;
 };
 
 
 func int DIA_Zuris_Minenanteil_Condition()
 {
-	if((hero.guild == GIL_KDF) && (MIS_Serpentes_MinenAnteil_KDF == LOG_Running))
+	if ((hero.guild ==  GIL_KDF ) && (MY_Serpent_MineBefore_KDF == LOG_Running))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Zuris_Minenanteil_Info()
 {
-	AI_Output(other,self,"DIA_Zuris_Minenanteil_15_00");	//Ты продаешь шахтерские акции?
-	AI_Output(self,other,"DIA_Zuris_Minenanteil_14_01");	//Да. Это не самое прибыльное дело. Никогда больше не буду связываться с этим!
+	AI_Output(other,self, " DIA_Zuris_Minenanteil_15_00 " );	// Do you sell mining shares?
+	AI_Output(self,other, " DIA_Zuris_Minenanteil_14_01 " );	// Yes. It's not the most profitable business. I will never do business with this again!
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -321,7 +322,7 @@ instance DIA_ZURIS_TRADEPLACE(C_Info)
 	nr = 3;
 	condition = dia_zuris_tradeplace_condition;
 	information = dia_zuris_tradeplace_info;
-	description = "Говорят, у тебя возникли проблемы с торговцем Джорой.";
+	description = " They say you're having trouble with the trader Jora. " ;
 };
 
 
@@ -335,140 +336,140 @@ func int dia_zuris_tradeplace_condition()
 
 func void dia_zuris_tradeplace_info()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_01_00");	//Говорят, у тебя возникли проблемы с торговцем Джорой.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_01_04");	//Действительно, у меня возникли некоторые трения с Джорой по одному вопросу.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_01_06");	//(раздраженно) Не думаю, что тебя это касается, но раз ты уже и так в курсе, то...
-	AI_Output(self,other,"DIA_Zuris_TradePlace_01_07");	//...я отказал Джоре в аренде места на площади, где он сейчас торгует.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_01_08");	//Конечно, ему это совсем не понравилось, как и его коллегам по торговой гильдии.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_01_09");	//Ты ведь уже слышал о ней?
+	AI_Output(other,self, " DIA_Zuris_TradePlace_01_00 " );	// They say you're having trouble with merchant Jora.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_01_04 " );	// Indeed, I had some friction with Jorah on one issue.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_01_06 " );	// (annoyed) I don't think it's your business, but since you already know, then...
+	AI_Output(self,other, " DIA_Zuris_TradePlace_01_07 " );	// ...I refused Jora's lease on the square where he now trades.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_01_08 " );	// Of course, he didn't like it at all, and neither did his colleagues in the Commerce Guild.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_01_09 " );	// You've heard of her, haven't you?
 	Info_ClearChoices(dia_zuris_tradeplace);
-	Info_AddChoice(dia_zuris_tradeplace,"Не думаю, что приходилось.",dia_zuris_tradeplace_hearguildno);
-	Info_AddChoice(dia_zuris_tradeplace,"Да, я слышал о ней.",dia_zuris_tradeplace_hearguildyes);
+	Info_AddChoice(dia_zuris_tradeplace, " I don't think so. " ,dia_zuris_tradeplace_hearguildno);
+	Info_AddChoice(dia_zuris_tradeplace, " Yes, I've heard of her. " ,dia_zuris_tradeplace_hearguildyes);
 };
 
 func void dia_zuris_tradeplace_hearguildno()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_HearGuildNo_01_00");	//Никогда о такой не слышал.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildNo_01_01");	//Да? Интересно. Ну, неважно.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_HearGuildNo_01_02");	//Так почему ты отказал Джоре?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildNo_01_05");	//Недавно я получил выгодное предложение о покупке его места.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildNo_01_06");	//Предложение, от которого я не смог отказаться...
+	AI_Output(other,self, " DIA_Zuris_TradePlace_HearGuildNo_01_00 " );	// Never heard of this one.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildNo_01_01 " );	// Yes? Interesting. Nevermind.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_HearGuildNo_01_02 " );	// So why did you say no to Jora?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildNo_01_05 " );	// I recently received a lucrative offer to buy his seat.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildNo_01_06 " );	// An offer I couldn't refuse...
 	Info_ClearChoices(dia_zuris_tradeplace);
-	Info_AddChoice(dia_zuris_tradeplace,"Так это все из-за денег?",dia_zuris_tradeplace_ask);
+	Info_AddChoice(dia_zuris_tradeplace, " So it's all about money? " ,dia_zuris_tradeplace_ask);
 };
 
 func void dia_zuris_tradeplace_hearguildyes()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_HearGuildYes_01_00");	//Я кое-что слышал о ней.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildYes_01_01");	//Да?! Интересно, откуда?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildYes_01_04");	//(ехидно) Только члены гильдии торговцев знают о ее существовании.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildYes_01_05");	//Ну, и некоторые влиятельные торговцы вроде меня, к коим ты не относишься.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_HearGuildYes_01_06");	//К чему ты клонишь?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildYes_01_07");	//Похоже, ты работаешь на этого болвана Лютеро!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildYes_01_08");	//Именно он мог рассказать тебе о моих делах с Джорой.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildYes_01_10");	//Думал, что сумеешь провести меня? Принимаешь меня за идиота?!
-	AI_Output(other,self,"DIA_Zuris_TradePlace_HearGuildYes_01_11");	//Послушай...
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildYes_01_12");	//...(перебивая) Я не стану тебя слушать!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_HearGuildYes_01_13");	//И не изменю своего решения по поводу Джоры! Так можешь Лютеро и передать!
+	AI_Output(other,self, " DIA_Zuris_TradePlace_HearGuildYes_01_00 " );	// I heard something about her.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildYes_01_01 " );	// Yes?! I wonder where?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildYes_01_04 " );	// (snickeringly) Only members of the Merchants' Guild know of its existence.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildYes_01_05 " );	// Well, and some powerful merchants like me, which you are not one of.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_HearGuildYes_01_06 " );	// What are you getting at?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildYes_01_07 " );	// Looks like you're working for that Luthero fool!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildYes_01_08 " );	// He was the one who could tell you about my dealings with Jorah.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildYes_01_10 " );	// Thought you could trick me? Do you take me for an idiot?!
+	AI_Output(other,self, " DIA_Zuris_TradePlace_HearGuildYes_01_11 " );	// Listen...
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildYes_01_12 " );	// ...(interrupting) I won't listen to you!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_HearGuildYes_01_13 " );	// And I won't change my mind about Jora! So you can pass on Luthero!
 	Info_ClearChoices(dia_zuris_tradeplace);
-	Info_AddChoice(dia_zuris_tradeplace,"Лютеро очень обеспокоен этим фактом.",dia_zuris_tradeplace_lutero);
-	Info_AddChoice(dia_zuris_tradeplace,"Твоя месть Лютеро не решит ваших с ним проблем.",dia_zuris_tradeplace_problem);
-	Info_AddChoice(dia_zuris_tradeplace,"Мы можем договориться.",dia_zuris_tradeplace_deal);
-	Info_AddChoice(dia_zuris_tradeplace,"Ecли ты не передумаешь - я убью тебя!",dia_zuris_tradeplace_dead);
+	Info_AddChoice(dia_zuris_tradeplace, " Luthero is very concerned about this fact. " ,dia_zuris_tradeplace_lutero);
+	Info_AddChoice(dia_zuris_tradeplace, " Your revenge on Luthero won't solve your problems with him. " ,dia_zuris_tradeplace_problem);
+	Info_AddChoice(dia_zuris_tradeplace, " We can agree. " ,dia_zuris_tradeplace_deal);
+	Info_AddChoice(dia_zuris_tradeplace, " If you don't change your mind, I'll kill you! " ,dia_zuris_tradeplace_dead);
 };
 
 func void dia_zuris_tradeplace_ask()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Ask_01_00");	//Выходит, проблема из-за денег?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Ask_01_01");	//(ехидно) Ну, не совсем.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Ask_01_02");	//В последнее время у меня напряженные отношения с гильдией торговцев.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Ask_01_04");	//А в чем дело?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Ask_01_05");	//Я смотрю, тебя очень заинтересовала эта тема.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Ask_01_06");	//Скажи, почему тебя это так волнует?
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Ask_01_00 " );	// So money is the problem?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Ask_01_01 " );	// (sarcastically) Well, not really.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Ask_01_02 " );	// I've been having a tense relationship with the Merchants' Guild lately.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Ask_01_04 " );	// What's the matter?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Ask_01_05 " );	// I see you are very interested in this topic.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Ask_01_06 " );	// Tell me, why do you care so much?
 	Info_ClearChoices(dia_zuris_tradeplace);
-	Info_AddChoice(dia_zuris_tradeplace,"Я беспокоюсь за Джору.",dia_zuris_tradeplace_jora);
-	Info_AddChoice(dia_zuris_tradeplace,"Меня интересует место Джоры.",dia_zuris_tradeplace_place);
-	Info_AddChoice(dia_zuris_tradeplace,"Просто стало интересно.",dia_zuris_tradeplace_interes);
-	Info_AddChoice(dia_zuris_tradeplace,"Лютеро послал меня обсудить с тобой эту проблему.",dia_zuris_tradeplace_luterozuris);
+	Info_AddChoice(dia_zuris_tradeplace, " I'm worried about Jora. " ,dia_zuris_tradeplace_jora);
+	Info_AddChoice(dia_zuris_tradeplace, " I'm interested in Jora's place. " ,dia_zuris_tradeplace_place);
+	Info_AddChoice(dia_zuris_tradeplace, " Just wondering. " ,dia_zuris_tradeplace_interes);
+	Info_AddChoice(dia_zuris_tradeplace, " Luthero sent me to discuss this issue with you. " ,dia_zuris_tradeplace_luterozuris);
 };
 
 func void dia_zuris_tradeplace_interes()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Interes_01_00");	//Ну, мне просто интересно.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Interes_01_01");	//Дам тебе совет - не суй всюду свой нос!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Interes_01_04");	//К тому же у меня совсем нет времени на тебя.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Interes_01_05");	//Так что оставь меня в покое!
-	B_LogEntry(TOPIC_JORAHELP,"Я не смог объяснить Зурису, почему меня интересуют его проблемы с Джорой и с гильдией торговцев. Вряд ли Зурис снова станет обсуждать эту тему со мной. Похоже, я провалил это поручение. Надо сообщить об этом Лютеро.");
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Interes_01_00 " );	// Well, I'm just curious.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Interes_01_01 " );	// I'll give you advice - don't stick your nose everywhere!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Interes_01_04 " );	// Besides, I don't have time for you.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Interes_01_05 " );	// So leave me alone!
+	B_LogEntry( TOPIC_JORAHELP , " I couldn't explain to Zuris why I'm interested in his problems with Jora and the merchants guild. I don't think Zuris will discuss this with me again. Looks like I failed this errand. I should report this to Luthero. " );
 	ZURISPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
 
-func void dia_zuris_tradeplace_luterozuris()
+func void dia_zuris_tradeplace_luterosuris()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_LuteroZuris_01_00");	//Лютеро послал меня обсудить с тобой эту проблему.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_LuteroZuris_01_01");	//Что?! (гневно) Так это Лютеро прислал тебя ко мне?!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_LuteroZuris_01_04");	//Похоже, Лютеро полагал, что ты сможешь повлиять на мое решение по поводу Джоры? (смеется)
-	AI_Output(self,other,"DIA_Zuris_TradePlace_LuteroZuris_01_06");	//Если он хочет обсудить эту проблему, то пусть приходит сам!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_LuteroZuris_01_10");	//Я не отменю своего решения по поводу Джоры! Так можешь Лютеро и передать.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_LuteroZuris_01_00 " );	// Luthero sent me to discuss this issue with you.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_LuteroZuris_01_01 " );	// What?! (angrily) So Luthero sent you to me?!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_LuteroZuris_01_04 " );	// Looks like Luthero thought you could influence my decision about Jora? (laughs)
+	AI_Output(self,other, " DIA_Zuris_TradePlace_LuteroZuris_01_06 " );	// If he wants to discuss this problem, then let him come!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_LuteroZuris_01_10 " );	// I won't change my decision about Jora! So you can pass on Luthero.
 	Info_ClearChoices(dia_zuris_tradeplace);
-	Info_AddChoice(dia_zuris_tradeplace,"Лютеро очень обеспокоен этим фактом.",dia_zuris_tradeplace_lutero);
-	Info_AddChoice(dia_zuris_tradeplace,"Мы можем договориться!",dia_zuris_tradeplace_deal);
+	Info_AddChoice(dia_zuris_tradeplace, " Luthero is very concerned about this fact. " ,dia_zuris_tradeplace_lutero);
+	Info_AddChoice(dia_zuris_tradeplace, " We can deal! " ,dia_zuris_tradeplace_deal);
 };
 
 func void dia_zuris_tradeplace_lutero()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Lutero_01_00");	//Лютеро очень обеспокоен этим.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Lutero_01_01");	//Ваши разногласия могут сказаться на доходах гильдии. К тому же...
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Lutero_01_02");	//...(перебивая) То, он чем-то обеспокоен - это его личные проблемы!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Lutero_01_03");	//Возможно, это его чему-нибудь научит. А тебе я все сказал.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Lutero_01_04");	//И больше я не намерен это обсуждать. Оставь меня в покое!
-	B_LogEntry(TOPIC_JORAHELP,"Я случайно проболтался Зурису о том, что меня к нему подослал Лютеро. После этого Зурис не захотел говорить со мной. Похоже, я провалил это поручение. Надо сообщить об этом Лютеро.");
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Lutero_01_00 " );	// Luthero is very concerned about this.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Lutero_01_01 " );	// Your disagreements may affect the guild's income. Besides...
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Lutero_01_02 " );	// ...(interrupting) What he's worried about is his personal problems!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Lutero_01_03 " );	// Maybe this will teach him something. And I told you everything.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Lutero_01_04 " );	// And I'm not going to discuss this anymore. Leave me alone!
+	; _ _ _ _ _ _
 	ZURISFUCKOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_zuris_tradeplace_deal()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Deal_01_00");	//Мы ведь можем договориться.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_01");	//Да? (ехидно) И каким же образом ты собираешься со мной договариваться?
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Deal_01_02");	//А что, если я куплю это торговое место?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_03");	//Что? И ты думаешь, что я его тебе продам?!
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Deal_01_04");	//А почему бы и нет? В конце концов, все имеет свою цену. Даже твои отношение с Лютеро.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_08");	//Ну, хорошо, боюсь только, что цена будет тебе не по зубам!
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Deal_01_09");	//Сколько тебе предлагал тот торговец?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_10");	//Это не твоего ума дело. Для тебя цена будет совершенно другой!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_13");	//(задумался) Если все учесть и посчитать, то, думаю...
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_14");	//...десять тысяч золотых монет могли бы заставить меня отказаться от предыдущего предложения.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Deal_01_15");	//Десять тысяч?! Да ты сдурел!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_16");	//Это мои условия! Примешь ты их или нет - это уже твое личное дело.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_20");	//Разумеется, у такого оборванца как ты вряд ли когда-то будет такая сумма.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_21");	//Но гильдия, в которой ты, как я понял, состоишь - вполне способна заплатить...(смеется)
-	B_LogEntry(TOPIC_JORAHELP,"Я случайно проболтался Зурису о том, что меня подослал Лютеро. Зурис уже собирался прекратить со мной разговор, но я смог убедить его в том, что еще можно прийти к обоюдному согласию в этом вопросе. Я предложил Зурису купить место Джоры, и, немного подумав, он согласился с моим предложением, правда запросив при этом просто огромную сумму - десять тысяч золотых монет! Не думаю, что Лютеро будет в восторге от этой идеи.");
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Deal_01_00 " );	// We can agree.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_01 " );	// Yes? (maliciously) And how are you going to negotiate with me?
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Deal_01_02 " );	// What if I buy this trading place?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_03 " );	// What? And you think I'll sell it to you?!
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Deal_01_04 " );	// Why not? In the end, everything has its price. Even your relationship with Luthero.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_08 " );	// Well, well, I'm just afraid that the price will be too tough for you!
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Deal_01_09 " );	// How much did that merchant offer you?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_10 " );	// It's none of your business. For you, the price will be completely different!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_13 " );	// (thinking) If everything is taken into account and calculated, then I think...
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_14 " );	// ...ten thousand gold coins could make me refuse the previous offer.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Deal_01_15 " );	// Ten thousand?! Yes, you're crazy!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_16 " );	// These are my conditions! Whether you accept them or not is your own business.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_20 " );	// Of course, a ragamuffin like you is unlikely to ever have such an amount.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Deal_01_21 " );	// But the guild you belong to, as I understand it, is quite capable of paying... (laughs)
+	B_LogEntry( TOPIC_JORAHELP , " I accidentally blabbed to Zuris that Luthero sent me. Zuris was about to end the conversation with me, but I was able to convince him that it was still possible to reach a mutual agreement on this issue. I suggested that Zuris buy Jora's place , and after a little thought, he agreed with my proposal, although he asked for a huge amount of money - ten thousand gold coins! I don't think Luthero will be delighted with this idea. " );
 	ZURISTRADEPLACEYES = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_zuris_tradeplace_jora()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Jora_01_00");	//Я беспокоюсь за Джору.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Jora_01_01");	//Да?! (удивленно) И чем же вызвано такое твое беспокойство за его персону?
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Jora_01_02");	//Я знаю Джору и думаю, что он - хороший человек и честный торговец.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Jora_01_03");	//Отняв у него место, ты лишаешь его главного - любимой работы.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Jora_01_11");	//Я ничего не имею против Джоры! Он достойный человек, имеющий некоторые личные качества, не присущие другим торговцам.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Jora_01_12");	//Но он тоже состоит в гильдии, а значит, слушается этого напыщенного болвана Лютеро.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Jora_01_13");	//Поэтому его головная боль - всегда радость для меня!
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Jora_01_15");	//Так значит, это все из-за твоих отношений с Лютеро?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Jora_01_16");	//А что с того? Я в любом случае проучу этого наглеца, и неважно, что из-за этого пострадают другие люди.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Jora_01_00 " );	// I'm worried about Jora.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Jora_01_01 " );	// Yes?! (surprised) And what caused your concern for his person?
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Jora_01_02 " );	// I know Jora and I think he is a good man and an honest trader.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Jora_01_03 " );	// By taking away his place, you deprive him of the main thing - his favorite job.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Jora_01_11 " );	// I have nothing against Jora! He is a decent man with some personal qualities that other merchants don't have.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Jora_01_12 " );	// But he's also in the guild, which means he listens to that pompous Luthero fool.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Jora_01_13 " );	// Therefore, his headache is always a joy to me!
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Jora_01_15 " );	// So this is all because of your relationship with Luthero?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Jora_01_16 " );	// So what? In any case, I will teach this insolent man a lesson, and it does not matter that other people suffer because of this.
 	Info_ClearChoices(dia_zuris_tradeplace);
-	Info_AddChoice(dia_zuris_tradeplace,"Твоя месть Лютеро не решит ваших с ним проблем.",dia_zuris_tradeplace_problem);
-	Info_AddChoice(dia_zuris_tradeplace,"С того, что если ты не передумаешь - я убью тебя!",dia_zuris_tradeplace_dead);
+	Info_AddChoice(dia_zuris_tradeplace, " Your revenge on Luthero won't solve your problems with him. " ,dia_zuris_tradeplace_problem);
+	Info_AddChoice(dia_zuris_tradeplace, " If you don't change your mind, I'll kill you! " ,dia_zuris_tradeplace_dead);
 };
 
 func void dia_zuris_tradeplace_dead()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Dead_01_00");	//Если ты не передумаешь - я убью тебя!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Dead_01_01");	//ЧТО?! Да как ты смеешь мне угрожать?!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Dead_01_07");	//СТРАЖА!!! СТРАЖА!!!
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Dead_01_00 " );	// If you don't change your mind, I'll kill you!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Dead_01_01 " );	// WHAT?! How dare you threaten me?!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Dead_01_07 " );	// GUARD!!! GUARD!!!
 	CreateInvItems(self,itwr_zurisdocs,1);
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
@@ -476,60 +477,60 @@ func void dia_zuris_tradeplace_dead()
 
 func void dia_zuris_tradeplace_place()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Place_01_00");	//Меня интересует место торговца Джоры.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Place_01_02");	//Ты бы мог продать мне его?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Place_01_03");	//(удивленно) Но у меня уже есть договоренность с другим торговцем.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Place_01_05");	//Я мог бы предложить тебе лучшую цену.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Place_01_10");	//Да? Ну, хорошо. Хммм... Если все учесть и посчитать, то, думаю...
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Place_01_11");	//...пяти тысяч золотых монет будет вполне достаточно. И я забуду о старом предложении.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Place_01_12");	//Пять тысяч?! Да это грабеж!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Place_01_13");	//А как ты хотел? Приличные деньги за приличное место.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Place_01_14");	//Ладно. Но мне нужно какое-то время, чтобы собрать эту сумму.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Place_01_15");	//Времени у тебя предостаточно. Срок аренды Джоры истекает через три недели, так что все в твоих руках.
-	B_LogEntry(TOPIC_JORAHELP,"Я уговорил Зуриса, и теперь он готов перепродать мне место Джоры. Он запросил пять тысяч золотых. Надо сообщить об этом Лютеро. Возможно, этот вариант решит проблемы гильдии.");
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Place_01_00 " );	// I'm interested in Jora's merchant position.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Place_01_02 " );	// Could you sell it to me?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Place_01_03 " );	// (surprised) But I already have an arrangement with another merchant.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Place_01_05 " );	// I could offer you a better price.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Place_01_10 " );	// Yes? OK then. Hmmm ... If you take everything into account and calculate, then I think ...
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Place_01_11 " );	// ...five thousand gold coins will be enough. And I'll forget about the old sentence.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Place_01_12 " );	// Five thousand?! Yes, it's a robbery!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Place_01_13 " );	// How would you like it? Good money for a decent place.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Place_01_14 " );	// Okay. But I need some time to collect this amount.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Place_01_15 " );	// You have plenty of time. Jora's lease expires in three weeks, so it's up to you.
+	; _ _ _ _ _ _
 	ZURISTRADEPLACEYESCHIP = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_zuris_tradeplace_problem()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_00");	//Мне кажется, твоя месть Лютеро не решит ваших с ним проблем.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_02");	//Месть - это не лучший выход из сложившейся ситуации.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_05");	//Не я это начал...
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_09");	//(задумчиво) В общем, у меня с Лютеро когда-то была одна договоренность.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_11");	//Как-то он пообещал достать мне одно очень редкое зелье - Пламя Элигора.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_12");	//Тот, кто его выпьет, становится просто невосприимчив к огню.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_13");	//Но так как в Хоринисе нет нужного ингредиента, достать его - большая проблема.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_23");	//Но у Лютеро были связи на материке с другими крупными торговцами Миртаны, и через них он мог достать этот эликсир.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_24");	//Конечно, мне пришлось бы выложить просто огромную кучу золота, но поверь - эта вещь того стоила.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_28");	//Так вот. Когда этот эликсир оказался у Лютеро на руках, он заломил за него просто баснословную цену!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_29");	//Почти втрое больше, чем мы договаривались изначально!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_30");	//(зло) Конечно, у меня не было таких денег - это же целое состояние!
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_31");	//Значит, он нарушил условия договора?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_32");	//Именно! Этот болван был так ослеплен жаждой золота, что забыл о кодексе торговца.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_33");	//Правда он так и не успел распорядится этим сокровищем должным образом.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_34");	//Пару дней спустя кто-то забрался к нему в дом и обчистил его до нитки, прихватив заодно и эликсир.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_38");	//Теперь ты понимаешь меня? Я хочу отплатить Лютеро той же монетой.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_39");	//Я понимаю, но кроме него пострадают и другие люди, непричастные к вашей ссоре.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_40");	//Возможно, Лютеро сожалеет о тогдашнем поступке.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_43");	//Может быть, я смогу помочь тебе заполучить этот эликсир?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_48");	//Хммм... Ну, допустим. Только зачем тебе это?
-	B_LogEntry(TOPIC_JORAHELP,"Я обсудил с Зурисом проблему касательно Джоры и выяснил истинную причину того, почему Зурис решил отказать Джоре в продлении аренды торгового места на площади. Выяснилось, этот отказ ни что иное, как месть Зуриса Лютеро. Как-то раз Лютеро не выполнил условия договора, заключенного между ним и Зурисом, о приобретении последним очень редкого эликсира под названием 'Пламя Элигора'. Теперь Зурис хочет отплатить Лютеро той же монетой. После долгих разговоров, мне все-таки удалось убедить Зуриса, что в этом вопросе еще можно прийти к обоюдному согласию сторон, и предложил помочь ему в этом вопросе.");
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Problem_01_00 " );	// I don't think your revenge on Luthero will solve your problems with him.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Problem_01_02 " );	// Revenge is not the best way out of this situation.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_05 " );	// I didn't start this...
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_09 " );	// (thoughtfully) In general, I once had one agreement with Luthero.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_11 " );	// Once he promised to get me one very rare potion - Eligor's Flame.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_12 " );	// Whoever drinks it becomes simply immune to fire.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_13 " );	// But since Khorinis does not have the required ingredient, getting it is a big problem.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_23 " );	// But Luthero had connections on the mainland with other major merchants of Myrtana, and through them he could get this elixir.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_24 " );	// Of course, I would have to shell out just a huge pile of gold, but believe me - this thing was worth it.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_28 " );	// So. When this elixir was in Luthero's hands, he broke a fabulous price for it!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_29 " );	// Almost three times more than we originally agreed!
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_30 " );	// (angrily) Of course I didn't have that kind of money - that's a fortune!
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Problem_01_31 " );	// So he violated the terms of the contract?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_32 " );	// Exactly! This fool was so blinded by the lust for gold that he forgot about the trader's code.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_33 " );	// True, he did not have time to dispose of this treasure properly.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_34 " );	// A couple of days later, someone broke into his house and cleaned it to the skin, taking along with the elixir.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_38 " );	// Do you understand me now? I want to repay Luthero in kind.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Problem_01_39 " );	// I understand, but besides him, other people who are not involved in your quarrel will also suffer.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Problem_01_40 " );	// Perhaps Luthero regrets what he did then.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Problem_01_43 " );	// Maybe I can help you get this elixir?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Problem_01_48 " );	// Hmmm... Well, let's say. But why are you doing this?
+	B_LogEntry(TOPIC_JORAHELP,"I discussed the issue regarding Jora with Zuris and found out the real reason why Zuris decided to refuse to renew Jora's lease on the market place in the square. It turned out that this refusal was nothing more than Zuris's revenge on Luthero. fulfilled the terms of the agreement concluded between him and Zuris, for the latter to acquire a very rare elixir called 'Flame of Eligor' Now Zuris wants to repay Luthero in the same coin. come to a mutual agreement of the parties, and offered to help him in this matter.");
 	Info_ClearChoices(dia_zuris_tradeplace);
-	Info_AddChoice(dia_zuris_tradeplace,"Просто хочу помочь.",dia_zuris_tradeplace_help);
+	Info_AddChoice(dia_zuris_tradeplace, " Just want to help. " ,dia_zuris_tradeplace_help);
 };
 
 func void dia_zuris_tradeplace_help()
 {
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Help_01_00");	//Просто хочу помочь.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_07");	//Хорошо. Если сможешь достать его для меня - я отменю свое решение по поводу Джоры.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_08");	//Ну и, конечно, я компенсирую тебе некоторые затраты на его поиски. В разумных пределах.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Help_01_15");	//Как думаешь, куда вор дел этот эликсир?
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_16");	//Вряд ли он стал бы пить неизвестное зелье. Скорее всего, он продал его кому-нибудь за небольшую цену.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_19");	//Я совершенно не представляю, откуда начать поиски.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_20");	//Но могу дать совет - поговори об этом с Лютеро...(ехидно)
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_21");	//Возможно, он подскажет тебе, с чего начать поиски.
-	B_LogEntry(TOPIC_JORAHELP,"Зурис согласился, но только с тем условием, что я достану ему эликсир Пламя Элигора. Думаю, это будет совсем не легкая задача. Единственный в Хоринисе экземпляр был украден у Лютеро. Неизвестно, где он может быть сейчас. Зурис посоветовал мне узнать подробности этого дела у Лютеро.");
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Help_01_00 " );	// Just want to help.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Help_01_07 " );	// Good. If you can get it for me, I'll reverse my decision on Jora.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Help_01_08 " );	// And, of course, I will compensate you for some of the costs of finding him. Within reasonable limits.
+	AI_Output(other,self, " DIA_Zuris_TradePlace_Help_01_15 " );	// Where do you think the thief put this elixir?
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Help_01_16 " );	// It is unlikely that he would drink an unknown potion. Most likely, he sold it to someone for a small price.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Help_01_19 " );	// I have absolutely no idea where to start looking.
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Help_01_20 " );	// But I can give advice - talk about it with Luthero... (snidely)
+	AI_Output(self,other, " DIA_Zuris_TradePlace_Help_01_21 " );	// Maybe he'll tell you where to start looking.
+	B_LogEntry( TOPIC_JORAHELP , " Zuris agreed, but only on the condition that I get him Eligor's Flame elixir. I think it will not be an easy task at all. The only copy in Khorinis was stolen from Luthero. It is not known where he might be now. Zuris advised I should learn the details of this case from Luthero. " );
 	ZURISGIVEMETASK = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -568,7 +569,7 @@ instance DIA_ZURIS_GIVEMETASKOK(C_Info)
 	condition = dia_zuris_givemetaskok_condition;
 	information = dia_zuris_givemetaskok_info;
 	permanent = FALSE;
-	description = "Я нашел утерянный эликсир.";
+	description = " I found the lost elixir. " ;
 };
 
 
@@ -583,34 +584,34 @@ func int dia_zuris_givemetaskok_condition()
 func void dia_zuris_givemetaskok_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_01_00");	//Я нашел пламя Элигора.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_03");	//Невероятно! Не могу в это поверить!
+	AI_Output(other,self, " DIA_Zuris_GiveMeTaskOk_01_00 " );	// I found Eligor's flame.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_03 " );	// Incredible! I can not believe it!
 	B_GiveInvItems(other,self,itpo_eligorfire,1);
 	Npc_RemoveInvItems(self,itpo_eligorfire,1);
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_07");	//О Иннос! Наконец-то это сокровище у меня в руках!
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_08");	//Ты сделал меня по-настоящему счастливым человеком!
-	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_01_09");	//Так значит, Джора сможет продолжать торговать на рыночной площади?
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_10");	//Можешь не беспокоиться - теперь я выполню свою часть нашей сделки.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_07 " );	// O Innos! Finally, this treasure is in my hands!
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_08 " );	// You made me a truly happy person!
+	AI_Output(other,self, " DIA_Zuris_GiveMeTaskOk_01_09 " );	// So Jora will be able to continue trading in the marketplace?
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_10 " );	// Don't worry, now I'll keep my end of our deal.
 
 	if(LUTEROAGREEMEETZURIS == TRUE)
 	{
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_13");	//В твое отсутствие я немного пораскинул мозгами и пришел к выводу, что твоя помощь имела под собой несколько иные мотивы.
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_14");	//...нежели те, о которых ты говорил ранее.
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_15");	//К тому же недавно мне нанес визит Лютеро, и эта встреча окончательно убедила меня в правоте своих доводов.
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_21");	//Мы долго говорили с ним. В конце концов мы пришли к единому мнению, что наши разногласия не выгодны нам обоим.
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_22");	//Ну, ты же понимаешь, о чем я?
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_13 " );	// In your absence, I did some thinking and came to the conclusion that your help had a slightly different motive.
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_14 " );	// ...than the ones you mentioned earlier.
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_15 " );	// In addition, Luthero recently paid me a visit, and this meeting finally convinced me of the correctness of my arguments.
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_21 " );	// We talked with him for a long time. In the end, we came to a consensus that our differences are not beneficial to both of us.
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_22 " );	// Well, you know what I mean?
 		Info_ClearChoices(dia_zuris_givemetaskok);
-		Info_AddChoice(dia_zuris_givemetaskok,"Да, я в курсе...(признаться)",dia_zuris_givemetaskok_iknow);
-		Info_AddChoice(dia_zuris_givemetaskok,"Не понимаю, о чем ты!",dia_zuris_givemetaskok_tellme);
+		Info_AddChoice(dia_zuris_givemetaskok, " Yes, I know...(I confess) " ,dia_zuris_givemetaskok_iknow);
+		Info_AddChoice(dia_zuris_givemetaskok, " I don't know what you mean! " ,dia_zuris_givemetaskok_tellme);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_01_25");	//Так значит, Джора сможет продолжать торговать на рыночной площади?
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_26");	//Ты правильно меня понял - я продлю срок его аренды и даже немного скину цену на нее.
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_27");	//Само собой, твои труды также не останутся в долгу. Вот, прими от меня это золото в качестве награды.
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_28");	//Ты заслужил его.
+		AI_Output(other,self, " DIA_Zuris_GiveMeTaskOk_01_25 " );	// So Jora will be able to continue trading in the marketplace?
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_26 " );	// You understood me correctly - I will extend his lease and even drop the price of it a little.
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_27 " );	// Of course, your work will also pay off. Here, take this gold from me as a reward.
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_28 " );	// You deserve it.
 		B_GiveInvItems(self,other,ItMi_Gold,200);
-		AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_01_30");	//А теперь...(задумчиво)...извини, но меня ждут дела.
+		AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_01_30 " );	// And now...(thoughtfully)...sorry, but I have things to do.
 		ZURISGIVEMETASKOK = TRUE;
 		NoEligorBuy = TRUE;
 		AI_StopProcessInfos(self);
@@ -620,14 +621,14 @@ func void dia_zuris_givemetaskok_info()
 func void dia_zuris_givemetaskok_iknow()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_Iknow_01_00");	//Да, я в курсе.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Iknow_01_01");	//Я так и думал! К тому же Лютеро все мне рассказал - в том числе и о твоем поручении насчет Джоры.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Iknow_01_14");	//Теперь я хочу отблагодарить тебя за твои хлопоты в этом деле.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Iknow_01_15");	//Взамен Пламени Элигора, что ты мне принес, я дам тебе другой. Конечно, он не настолько ценный, но...
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Iknow_01_16");	//...его свойства от этого не становятся менее ценными.
+	AI_Output(other,self, " DIA_Zuris_GiveMeTaskOk_Iknow_01_00 " );	// Yes, I'm aware.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Iknow_01_01 " );	// I thought so! Besides, Luthero told me everything, including your commission about Jora.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Iknow_01_14 " );	// Now I want to thank you for your efforts in this matter.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Iknow_01_15 " );	// In exchange for the Flame of Eligor that you brought me, I will give you another one. Of course, it's not that valuable, but...
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Iknow_01_16 " );	// ...it doesn't make its properties any less valuable.
 	B_GiveInvItems(self,other,ItPo_Perm_STR,1);
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Iknow_01_17");	//Постарайся использовать его с умом.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Iknow_01_19");	//А теперь извини, меня ждут дела.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Iknow_01_17 " );	// Try to use it wisely.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Iknow_01_19 " );	// Now excuse me, I have things to do.
 	ZURISGIVEMETASKOK = TRUE;
 	ZURISGIVEMETASKOKBONUS = TRUE;
 	NoEligorBuy = TRUE;
@@ -637,21 +638,21 @@ func void dia_zuris_givemetaskok_iknow()
 func void dia_zuris_givemetaskok_tellme()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_Tellme_01_00");	//Не понимаю, о чем ты!
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_01");	//Правда? (задумчиво) Я ожидал услышать от тебя немного другой ответ.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_05");	//Лютеро все мне рассказал - в том числе и и о твоем поручении насчет Джоры.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_21");	//И я хочу отблагодарить тебя за твои хлопоты в этом деле.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_22");	//Взамен Пламени Элигора, что ты мне принес, я дам тебе другой. Конечно, он не настолько ценен, но...
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_23");	//...его свойства от этого не становятся менее ценными.
+	AI_Output(other,self, " DIA_Zuris_GiveMeTaskOk_Tellme_01_00 " );	// I don't know what you mean!
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_01 " );	// True? (thoughtfully) I was expecting a slightly different answer from you.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_05 " );	// Luthero told me everything, including your assignment about Jora.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_21 " );	// And I want to thank you for your efforts in this matter.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_22 " );	// In exchange for the Flame of Eligor that you brought me, I will give you another one. Of course, it's not that valuable, but...
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_23 " );	// ...it doesn't make its properties any less valuable.
 	B_GiveInvItems(self,other,ItPo_Perm_STR,1);
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_25");	//И это еще не все.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_26");	//Немного подумав, я решил, что, оказавшись в моих руках, найденный тобой эликсир уже не представляет для меня такой ценности, как раньше.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_29");	//Теперь же он представляет для меня такую же ценность, как и другие эликсиры, что я продаю. Отличие заключается лишь в цене.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_30");	//Поэтому теперь мне бы хотелось как можно выгоднее продать эту вещицу.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_31");	//И мне кажется, что тебя должно заинтересовать это предложение.
-	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_Tellme_01_32");	//Ты мне предлагаешь купить у тебя эликсир, который добыл я?
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_35");	//Да. Всего за семь тысяч золотых!
-	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_Tellme_01_36");	//Да, ты действительно мошенник, Зурис! Я подумаю.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_25 " );	// And that's not all.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_26 " );	// After a little thought, I decided that once in my hands, the elixir you found is no longer of such value to me as before.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_29 " );	// Now it's as valuable to me as the other elixirs I sell. The only difference is the price.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_30 " );	// Therefore, now I would like to sell this little thing as profitably as possible.
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_31 " );	// And I think you should be interested in this offer.
+	AI_Output(other,self, " DIA_Zuris_GiveMeTaskOk_Tellme_01_32 " );	// Are you offering me to buy the elixir I got from you?
+	AI_Output(self,other, " DIA_Zuris_GiveMeTaskOk_Tellme_01_35 " );	// Yes. For only seven thousand gold!
+	AI_Output(other,self, " DIA_Zuris_GiveMeTaskOk_Tellme_01_36 " );	// Yes, you really are a swindler, Zuris! I will think.
 	ZURISGIVEMETASKOK = TRUE;
 	ZURISGIVEMETASKOKBONUS = TRUE;
 	TRADEELIGORFIRE = TRUE;
@@ -665,7 +666,7 @@ instance DIA_ZURIS_TRADEELIGORFIRE(C_Info)
 	condition = dia_zuris_tradeeligorfire_condition;
 	information = dia_zuris_tradeeligorfire_info;
 	permanent = TRUE;
-	description = "Продай мне Пламя Элигора.";
+	description = " Sell me Eligor's Flame. " ;
 };
 
 func int dia_zuris_tradeeligorfire_condition()
@@ -678,11 +679,11 @@ func int dia_zuris_tradeeligorfire_condition()
 
 func void dia_zuris_tradeeligorfire_info()
 {
-	AI_Output(other,self,"DIA_Zuris_TradeEligorFire_01_00");	//Продай мне Пламя Элигора.
+	AI_Output(other,self, " DIA_Zuris_TradeEligorFire_01_00 " );	// Sell me the Flame of Eligor.
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 7000)
 	{
-		AI_Output(self,other,"DIA_Zuris_TradeEligorFire_01_02");	//Хорошо, как и договаривались - эликсир твой!
+		AI_Output(self,other, " DIA_Zuris_TradeEligorFire_01_02 " );	// Well, as agreed - the elixir is yours!
 		Npc_RemoveInvItems(other,ItMi_Gold,7000);
 		B_GiveInvItems(self,other,itpo_eligorfire,1);
 		AI_Output(other,self,"DIA_Zuris_TradeEligorFire_01_03");	//Спасибо!
@@ -690,8 +691,8 @@ func void dia_zuris_tradeeligorfire_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Zuris_TradeEligorFire_01_05");	//Но подожди - у тебя же не хватает золота!
-		AI_Output(self,other,"DIA_Zuris_TradeEligorFire_01_08");	//Приходи, когда у тебя будут деньги.
+		AI_Output(self,other, " DIA_Zuris_TradeEligorFire_01_05 " );	// But wait - you don't have enough gold!
+		AI_Output(self,other, " DIA_Zuris_TradeEligorFire_01_08 " );	// Come back when you have money.
 	};
 };
 
@@ -703,7 +704,7 @@ instance DIA_ZURIS_ZURISTRADEPLACEME(C_Info)
 	condition = dia_zuris_zuristradeplaceme_condition;
 	information = dia_zuris_zuristradeplaceme_info;
 	permanent = TRUE;
-	description = "Продай мне торговое место Джоры.";
+	description = " Sell me Jora's marketplace. " ;
 };
 
 
@@ -717,47 +718,47 @@ func int dia_zuris_zuristradeplaceme_condition()
 
 func void dia_zuris_zuristradeplaceme_info()
 {
-	AI_Output(other,self,"DIA_Zuris_ZurisTradePlaceMe_01_00");	//Продай мне торговое место Джоры.
+	AI_Output(other,self, " DIA_Zuris_ZurisTradePlaceMe_01_00 " );	// Sell me Jora's trading post.
 
 	if((ZURISTRADEPLACEYES == TRUE) && (Npc_HasItems(other,ItMi_Gold) >= 10000))
 	{
 		B_GiveInvItems(other,self,ItMi_Gold,10000);
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_06");	//Похоже, это самая успешная моя сделка за всю прожитую жизнь!
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_08");	//Вот, возьми этот документ.
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_06 " );	// This looks like the most successful trade I've ever made!
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_08 " );	// Here, take this document.
 		B_GiveInvItems(self,other,itwr_zurisdocs,1);
-		AI_Output(other,self,"DIA_Zuris_ZurisTradePlaceMe_01_09");	//Что за документ?
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_10");	//Это договор собственности на торговое место, где сейчас работает Джора.
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_11");	//Просто впиши в него свое имя или имя другого человека - и документ обретет официальный статус.
-		B_LogEntry(TOPIC_JORAHELP,"Я отдал Зурису золото, которое он запросил у меня за торговое место Джоры. Он дал мне договор собственника, в котором нужно просто указать имя будущего владельца и после этого документ обретет официальный статус. Теперь мне необходимо отнести эти бумаги Лютеро.");
+		AI_Output(other,self, " DIA_Zuris_ZurisTradePlaceMe_01_09 " );	// What is the document?
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_10 " );	// This is the ownership agreement for the trading place where Jora currently works.
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_11 " );	// Just write your name or the name of another person in it - and the document will acquire official status.
+		B_LogEntry( TOPIC_JORAHELP , " I gave Zuris the gold he asked me for Jora's trading space. He gave me an owner's agreement in which you just need to enter the name of the future owner and after that the document will become official. Now I need to take these papers to Luthero. " );
 		ZURISTRADEPLACEMEOK = TRUE;
 		AI_StopProcessInfos(self);
 	}
 	else if((ZURISTRADEPLACEYESCHIP == TRUE) && (Npc_HasItems(other,ItMi_Gold) >= 5000))
 	{
 		B_GiveInvItems(other,self,ItMi_Gold,5000);
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_24");	//Похоже, это одна из моих самых успешных сделок за всю прожитую жизнь!
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_26");	//Вот, возьми этот документ.
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_24 " );	// This looks like one of the most successful trades I've ever made!
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_26 " );	// Here, take this document.
 		B_GiveInvItems(self,other,itwr_zurisdocs,1);
-		AI_Output(other,self,"DIA_Zuris_ZurisTradePlaceMe_01_27");	//Что за документ?
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_28");	//Это договор собственности на торговое место, где сейчас работает Джора.
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_29");	//Просто впиши в него свое имя или имя другого человека - и документ обретет официальный статус.
-		B_LogEntry(TOPIC_JORAHELP,"Я отдал Зурису золото, которое он запросил у меня за торговое место Джоры. Он дал мне договор собственника, в котором нужно просто указать имя будущего владельца и после этого документ обретет официальный статус. Теперь мне необходимо отнести эти бумаги Лютеро.");
+		AI_Output(other,self, " DIA_Zuris_ZurisTradePlaceMe_01_27 " );	// What is the document?
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_28 " );	// This is the ownership agreement for the trading place where Jora currently works.
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_29 " );	// Just write your name or the name of another person in it - and the document will acquire official status.
+		B_LogEntry( TOPIC_JORAHELP , " I gave Zuris the gold he asked me for Jora's trading space. He gave me an owner's agreement in which you just need to enter the name of the future owner and after that the document will become official. Now I need to take these papers to Luthero. " );
 		ZURISTRADEPLACEMEOK = TRUE;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Zuris_ZurisTradePlaceMe_01_38");	//Но, кажется, у меня недостаточно денег для нашей сделки.
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_39");	//Тогда зачем ты отвлекаешь меня? (раздраженно) Я же тебе сказал...
+		AI_Output(other,self, " DIA_Zuris_ZurisTradePlaceMe_01_38 " );	// But I don't seem to have enough money for our deal.
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_39 " );	// Then why are you distracting me? (annoyed) I told you...
 		if(ZURISTRADEPLACEYES == TRUE)
 		{
-			AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_42");	//...десять тысяч золотых монет и ни монетой меньше!
+			AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_42 " );	// ...ten thousand gold coins and not a coin less!
 		}
 		else if(ZURISTRADEPLACEYESCHIP == TRUE)
 		{
-			AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_43");	//...пять тысяч золотых монет и ни монетой меньше!
+			AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_43 " );	// ...five thousand gold coins and not a coin less!
 		};
-		AI_Output(self,other,"DIA_Zuris_ZurisTradePlaceMe_01_44");	//А сейчас нам не о чем с тобой разговаривать.
+		AI_Output(self,other, " DIA_Zuris_ZurisTradePlaceMe_01_44 " );	// And now we have nothing to talk about with you.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -769,7 +770,7 @@ instance DIA_ZURIS_ABOUTKILLIGNAZ(C_Info)
 	condition = dia_zuris_aboutkillignaz_condition;
 	information = dia_zuris_aboutkillignaz_info;
 	permanent = FALSE;
-	description = "Насчет убийства алхимика Игнаца.";
+	description = " About killing the alchemist Ignaz. " ;
 };
 
 func int dia_zuris_aboutkillignaz_condition()
@@ -783,16 +784,16 @@ func int dia_zuris_aboutkillignaz_condition()
 func void dia_zuris_aboutkillignaz_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Zuris_AboutKillIgnaz_01_01");	//Насчет убийства алхимика Игнаца...
-	AI_Output(self,other,"DIA_Zuris_AboutKillIgnaz_01_06");	//Подожди... Я лишь простой торговец, и в такие дела свой нос не сую.
-	AI_Output(other,self,"DIA_Zuris_AboutKillIgnaz_01_07");	//Но ведь здесь, на рыночной площади всегда полным полно слухов.
-	AI_Output(other,self,"DIA_Zuris_AboutKillIgnaz_01_08");	//Может быть, ты слышал что-то необычное за последнее время?
-	AI_Output(self,other,"DIA_Zuris_AboutKillIgnaz_01_09");	//Нет, ничего такого. А если бы что-нибудь и узнал, то давно бы уже сообщил об этом городской страже.
-	AI_Output(self,other,"DIA_Zuris_AboutKillIgnaz_01_10");	//Хотя, по правде говоря, толку от этих парней абсолютно никакого.
-	AI_Output(self,other,"DIA_Zuris_AboutKillIgnaz_01_12");	//Эти болваны из ополчения слишком ленивы, чтобы заниматься подобными вещами.
-	AI_Output(self,other,"DIA_Zuris_AboutKillIgnaz_01_13");	//Представляешь, они даже не удосужились осмотреть ту хибару, где жил Игнац.
-	AI_Output(self,other,"DIA_Zuris_AboutKillIgnaz_01_14");	//А ведь там наверняка могло бы остаться что-нибудь такое, что помогло бы им найти убийцу.
-	B_LogEntry(TOPIC_KILLIGNAZ,"Похоже, торговец зельями Зурис тоже ничего не знает об убийстве Игнаца.");
+	AI_Output(other,self, " DIA_Zuris_AboutKillIgnaz_01_01 " );	// About killing the alchemist Ignaz...
+	AI_Output(self,other, " DIA_Zuris_AboutKillIgnaz_01_06 " );	// Wait... I'm just a simple merchant, and I don't poke my nose into such things.
+	AI_Output(other,self, " DIA_Zuris_AboutKillIgnaz_01_07 " );	// But here, in the market square, there are always rumors.
+	AI_Output(other,self, " DIA_Zuris_AboutKillIgnaz_01_08 " );	// Maybe you've heard something unusual lately?
+	AI_Output(self,other, " DIA_Zuris_AboutKillIgnaz_01_09 " );	// No, nothing like that. And if he had learned anything, he would have already reported this to the city guard long ago.
+	AI_Output(self,other, " DIA_Zuris_AboutKillIgnaz_01_10 " );	// Although, to tell the truth, these guys are absolutely useless.
+	AI_Output(self,other, " DIA_Zuris_AboutKillIgnaz_01_12 " );	// Those militia morons are too lazy to do that sort of thing.
+	AI_Output(self,other, " DIA_Zuris_AboutKillIgnaz_01_13 " );	// Imagine, they didn't even bother to inspect the hut where Ignaz lived.
+	AI_Output(self,other, " DIA_Zuris_AboutKillIgnaz_01_14 " );	// But there might be something left there that would help them find the killer.
+	B_LogEntry( TOPIC_KILLIGNAZ , " Looks like potion dealer Zuris doesn't know anything about killing Ignaz either. " );
 	Wld_InsertItem(itmi_poisonbottle,"FP_ITEM_POISONIGNAZ");
 };
 
@@ -804,7 +805,7 @@ instance DIA_Zuris_LOKIPOTION(C_Info)
 	condition = DIA_Zuris_LOKIPOTION_Condition;
 	information = DIA_Zuris_LOKIPOTION_Info;
 	permanent = FALSE;
-	description = "Ты ведь торгуешь травами?";
+	description = " You sell herbs, right? " ;
 };
 
 
@@ -819,17 +820,17 @@ func int DIA_Zuris_LOKIPOTION_Condition()
 func void DIA_Zuris_LOKIPOTION_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_00");	//Ты ведь торгуешь травами?
-	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_01");	//Конечно. Что конкретно тебя интересует?
-	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_02");	//Я ищу крайне редкий для здешних мест ингредиент - цветок кактуса. У тебя его случайно нет?
-	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_03");	//Да, у меня был один такой.
-	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_04");	//Но пару дней назад его купил один маг из монастыря.
-	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_05");	//Черт, как это не вовремя. А он не сказал, для чего он ему вдруг понадобился?
-	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_06");	//Он сказал, что хочет использовать этот ингредиент для своих алхимических экспериментов.
-	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_07");	//И выложил за этот цветок приличную сумму золота.
-	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_08");	//Так что извини. Теперь уже ничем не могу помочь.
+	AI_Output(other,self, " DIA_Zuris_LOKIPOTION_01_00 " );	// You sell herbs, right?
+	AI_Output(self,other, " DIA_Zuris_LOKIPOTION_01_01 " );	// Of course. What specifically interests you?
+	AI_Output(other,self, " DIA_Zuris_LOKIPOTION_01_02 " );	// I'm looking for an extremely rare ingredient here - a cactus flower. Do you happen to have it?
+	AI_Output(self,other, " DIA_Zuris_LOKIPOTION_01_03 " );	// Yes, I had one of these.
+	AI_Output(self,other, " DIA_Zuris_LOKIPOTION_01_04 " );	// But a mage from the monastery bought it a couple of days ago.
+	AI_Output(other,self, " DIA_Zuris_LOKIPOTION_01_05 " );	// Damn, this is not the right time. And he did not say why he suddenly needed it?
+	AI_Output(self,other, " DIA_Zuris_LOKIPOTION_01_06 " );	// He said he wanted to use this ingredient for his alchemical experiments.
+	AI_Output(self,other, " DIA_Zuris_LOKIPOTION_01_07 " );	// And paid a decent amount of gold for this flower.
+	AI_Output(self,other, " DIA_Zuris_LOKIPOTION_01_08 " );	// So sorry. Now there is nothing I can do to help.
 	FindCactus = TRUE;
-	B_LogEntry(TOPIC_PrioratStart,"У торговца Зуриса было это растение, но пару дней назад он продал его какому-то магу Огня из монастыря. Мне надо как-то попытаться заполучить этот редкий экземпляр у служителей Инноса.");
+	B_LogEntry(TOPIC_PrioratStart, " Merchant Zuris had this plant, but a couple of days ago he sold it to some fire mage from the monastery. I need to somehow try to get this rare specimen from the servants of Innos. " );
 };
 
 
@@ -840,7 +841,7 @@ instance DIA_Zuris_FromWhomCactus(C_Info)
 	condition = DIA_Zuris_FromWhomCactus_Condition;
 	information = DIA_Zuris_FromWhomCactus_Info;
 	permanent = FALSE;
-	description = "Откуда у тебя это растение?";
+	description = " Where did you get this plant from? " ;
 };
 
 
@@ -854,10 +855,10 @@ func int DIA_Zuris_FromWhomCactus_Condition()
 
 func void DIA_Zuris_FromWhomCactus_Info()
 {
-	AI_Output(other,self,"DIA_Zuris_FromWhomCactus_01_00");	//Откуда у тебя это растение?
-	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_01");	//Его мне привез один знакомый торговец из Варанта. Правда, это было уже давно.
-	AI_Output(other,self,"DIA_Zuris_FromWhomCactus_01_02");	//Значит, достать еще один экземпляр этого растения никак не представляется возможным?
-	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_03");	//Раньше это не было бы такой проблемой. А сейчас ты и сам знаешь, какие настали времена.
-	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_04");	//Да и единственный корабль, который зашел в наш порт за полгода, оказался боевым кораблем паладинов.
-	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_05");	//(смеется) А они вряд ли станут заниматься перевозкой каких-то растений.
+	AI_Output(other,self, " DIA_Zuris_FromWhomCactus_01_00 " );	// Where did you get this plant from?
+	AI_Output(self,other, " DIA_Zuris_FromWhomCactus_01_01 " );	// It was brought to me by a familiar merchant from Varant. True, it was a long time ago.
+	AI_Output(other,self, " DIA_Zuris_FromWhomCactus_01_02 " );	// So it's impossible to get another copy of this plant?
+	AI_Output(self,other, " DIA_Zuris_FromWhomCactus_01_03 " );	// Previously, this would not have been such a problem. And now you yourself know what times have come.
+	AI_Output(self,other, " DIA_Zuris_FromWhomCactus_01_04 " );	// And the only ship that came to our port in half a year turned out to be a paladin warship.
+	AI_Output(self,other, " DIA_Zuris_FromWhomCactus_01_05 " );	// (laughs) And they are unlikely to be engaged in the transportation of some plants.
 };
