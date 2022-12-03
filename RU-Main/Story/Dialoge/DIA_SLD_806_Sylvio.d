@@ -1,4 +1,5 @@
 
+
 instance DIA_Sylvio_EXIT(C_Info)
 {
 	npc = SLD_806_Sylvio;
@@ -21,14 +22,14 @@ func void DIA_Sylvio_EXIT_Info()
 };
 
 
-instance DIA_Sylvio_Hallo(C_Info)
+instance DIA_Sylvio_Hello (C_Info)
 {
 	npc = SLD_806_Sylvio;
 	nr = 1;
 	condition = DIA_Sylvio_Hallo_Condition;
-	information = DIA_Sylvio_Hallo_Info;
+	information = DIA_Sylvio_Hello_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -37,23 +38,23 @@ func int DIA_Sylvio_Hallo_Condition()
 	return TRUE;
 };
 
-func void DIA_Sylvio_Hallo_Info()
+func void DIA_Sylvio_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Sylvio_Hallo_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Sylvio_Hallo_09_01");	//Разве я давал тебе разрешение обратиться ко мне?
-	Sylvio_angequatscht = Sylvio_angequatscht + 1;
+	AI_Output(other,self, " DIA_Sylvio_Hallo_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Sylvio_Hallo_09_01 " );	// Did I give you permission to contact me?
+	Sylvio_angequatscht = Sylvio_angequatscht +  1 ;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Sylvio_Thekla(C_Info)
+instance DIA_Sylvio_Thekla (C_Info)
 {
 	npc = SLD_806_Sylvio;
 	nr = 2;
 	condition = DIA_Sylvio_Thekla_Condition;
 	information = DIA_Sylvio_Thekla_Info;
 	permanent = FALSE;
-	description = "Текла говорит, что у нее проблемы с тобой.";
+	description = " Thekla says she has a problem with you. " ;
 };
 
 
@@ -67,11 +68,11 @@ func int DIA_Sylvio_Thekla_Condition()
 
 func void DIA_Sylvio_Thekla_Info()
 {
-	AI_Output(other,self,"DIA_Sylvio_Thekla_15_00");	//Текла говорит, что у нее проблемы с тобой.
-	AI_Output(self,other,"DIA_Sylvio_Thekla_09_01");	//Да? И что за проблемы у этой милой леди? И почему она не пришла сама?
-	AI_Output(other,self,"DIA_Sylvio_Thekla_15_02");	//Ты прекрасно знаешь, черт побери...
-	AI_Output(self,other,"DIA_Sylvio_Thekla_09_03");	//Почему бы тебе не обсудить этот вопрос с моим другом Булко?
-	Sylvio_angequatscht = Sylvio_angequatscht + 1;
+	AI_Output(other,self, " DIA_Sylvio_Thekla_15_00 " );	// Thecla says she has a problem with you.
+	AI_Output(self,other, " DIA_Sylvio_Thekla_09_01 " );	// Yes? And what's the problem with this nice lady? Why didn't she come herself?
+	AI_Output(other,self, " DIA_Sylvio_Thekla_15_02 " );	// You know damn well...
+	AI_Output(self,other, " DIA_Sylvio_Thekla_09_03 " );	// Why don't you discuss this matter with my friend Bulko?
+	Sylvio_angequatscht = Sylvio_angequatscht +  1 ;
 	AI_StopProcessInfos(self);
 };
 
@@ -83,7 +84,7 @@ instance DIA_Sylvio_Gossip(C_Info)
 	condition = DIA_Sylvio_Gossip_Condition;
 	information = DIA_Sylvio_Gossip_Info;
 	permanent = FALSE;
-	description = "О тебе многие говорят...";
+	description = " Many people talk about you... " ;
 };
 
 
@@ -94,9 +95,9 @@ func int DIA_Sylvio_Gossip_Condition()
 
 func void DIA_Sylvio_Gossip_Info()
 {
-	AI_Output(other,self,"DIA_Sylvio_Gossip_15_00");	//О тебе многие говорят...
-	AI_Output(self,other,"DIA_Sylvio_Gossip_09_01");	//Эти многие говорят слишком много.
-	Sylvio_angequatscht = Sylvio_angequatscht + 1;
+	AI_Output(other,self, " DIA_Sylvio_Gossip_15_00 " );	// A lot of people talk about you...
+	AI_Output(self,other, " DIA_Sylvio_Gossip_09_01 " );	// These many talk too much.
+	Sylvio_angequatscht = Sylvio_angequatscht +  1 ;
 	AI_StopProcessInfos(self);
 };
 
@@ -108,7 +109,7 @@ instance DIA_Sylvio_AboutLee(C_Info)
 	condition = DIA_Sylvio_AboutLee_Condition;
 	information = DIA_Sylvio_AboutLee_Info;
 	permanent = FALSE;
-	description = "Что ты думаешь о Ли?";
+	description = " What do you think of Lee? " ;
 };
 
 
@@ -119,15 +120,15 @@ func int DIA_Sylvio_AboutLee_Condition()
 
 func void DIA_Sylvio_AboutLee_Info()
 {
-	AI_Output(other,self,"DIA_Sylvio_AboutLee_15_00");	//Что ты думаешь о Ли?
-	AI_Output(self,other,"DIA_Sylvio_AboutLee_09_01");	//Ох, он хороший боец. Я бы не стал вступать в схватку с ним.
-	AI_Output(self,other,"DIA_Sylvio_AboutLee_09_02");	//Если конечно, ее можно было бы избежать.
-	Sylvio_angequatscht = Sylvio_angequatscht + 1;
+	AI_Output(other,self, " DIA_Sylvio_AboutLee_15_00 " );	// What do you think of Lee?
+	AI_Output(self,other, " DIA_Sylvio_AboutLee_09_01 " );	// Oh, he's a good fighter. I wouldn't get into a fight with him.
+	AI_Output(self,other, " DIA_Sylvio_AboutLee_09_02 " );	// Unless, of course, it could have been avoided.
+	Sylvio_angequatscht = Sylvio_angequatscht +  1 ;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Sylvio_MenDefeated(C_Info)
+instance DIA_Sylvio_MenDefeated (C_Info)
 {
 	npc = SLD_806_Sylvio;
 	nr = 5;
@@ -158,7 +159,7 @@ func int DIA_Sylvio_MenDefeated_Condition()
 	{
 		victories = victories + 1;
 	};
-	if(Bullco.aivar[AIV_DefeatedByPlayer] == TRUE)
+	if ( Bullco . aivar [ AIV_DefeatedByPlayer ] ==  TRUE )
 	{
 		victories = victories + 1;
 	};
@@ -170,9 +171,9 @@ func int DIA_Sylvio_MenDefeated_Condition()
 
 func void DIA_Sylvio_MenDefeated_Info()
 {
-	AI_Output(self,other,"DIA_Sylvio_MenDefeated_09_00");	//Мне кажется, ты имеешь зуб на моих парней!
-	AI_Output(self,other,"DIA_Sylvio_MenDefeated_09_01");	//Насколько я знаю, ты один из протеже Ли.
-	AI_Output(self,other,"DIA_Sylvio_MenDefeated_09_02");	//Я предупреждаю тебя! Скоро здесь многое переменится, и тогда мы вернемся к этому разговору!
+	AI_Output(self,other, " DIA_Sylvio_MenDefeated_09_00 " );	// I think you have a grudge against my guys!
+	AI_Output(self,other, " DIA_Sylvio_MenDefeated_09_01 " );	// As far as I know, you're one of Lee's protégés.
+	AI_Output(self,other, " DIA_Sylvio_MenDefeated_09_02 " );	// I'm warning you! Soon a lot will change here, and then we will return to this conversation!
 	Sylvio_MenDefeated = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -185,13 +186,13 @@ instance DIA_Sylvio_Asshole(C_Info)
 	condition = DIA_Sylvio_Asshole_Condition;
 	information = DIA_Sylvio_Asshole_Info;
 	permanent = FALSE;
-	description = "Эй, дерьмо...";
+	description = " Hey crap... " ;
 };
 
 
 func int DIA_Sylvio_Asshole_Condition()
 {
-	if(Sylvio_angequatscht >= 1)
+	if (Sylvio_angequatscht >=  1 )
 	{
 		return TRUE;
 	};
@@ -199,10 +200,10 @@ func int DIA_Sylvio_Asshole_Condition()
 
 func void DIA_Sylvio_Asshole_Info()
 {
-	AI_Output(other,self,"DIA_Sylvio_Asshole_15_00");	//Эй, дерьмо...
-	AI_Output(self,other,"DIA_Sylvio_Asshole_09_01");	//Ты что, действительно думаешь, что я вызову тебя на дуэль?
-	AI_Output(self,other,"DIA_Sylvio_Asshole_09_02");	//Проваливай туда, откуда ты выполз.
-	Sylvio_angequatscht = Sylvio_angequatscht + 1;
+	AI_Output(other,self, " DIA_Sylvio_Asshole_15_00 " );	// Hey shit...
+	AI_Output(self,other, " DIA_Sylvio_Asshole_09_01 " );	// Do you really think I'm going to challenge you to a duel?
+	AI_Output(self,other, " DIA_Sylvio_Asshole_09_02 " );	// Get back where you crawled out from.
+	Sylvio_angequatscht = Sylvio_angequatscht +  1 ;
 	AI_StopProcessInfos(self);
 };
 
@@ -220,7 +221,7 @@ instance DIA_SylvioSLD_PICKPOCKET(C_Info)
 
 func int DIA_SylvioSLD_PICKPOCKET_Condition()
 {
-	return C_Beklauen(80,210);
+	return  C_Robbery ( 80 , 210 );
 };
 
 func void DIA_SylvioSLD_PICKPOCKET_Info()
@@ -232,7 +233,7 @@ func void DIA_SylvioSLD_PICKPOCKET_Info()
 
 func void DIA_SylvioSLD_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_SylvioSLD_PICKPOCKET);
 };
 
