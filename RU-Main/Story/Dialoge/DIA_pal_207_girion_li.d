@@ -1,5 +1,6 @@
 
-instance DIA_GIRION_LI_XIT(C_Info)
+
+instance DIA_GIRION_LI_XIT (C_Info)
 {
 	npc = pal_207_girion_li;
 	nr = 999;
@@ -28,7 +29,7 @@ instance DIA_GIRION_LI_TEACH(C_Info)
 	condition = dia_girion_li_teach_condition;
 	information = dia_girion_li_teach_info;
 	permanent = TRUE;
-	description = "Может быть поупражняемся с мечом?";
+	description = " Maybe we should practice with the sword? " ;
 };
 
 
@@ -39,8 +40,8 @@ func int dia_girion_li_teach_condition()
 
 func void dia_girion_li_teach_info()
 {
-	AI_Output(other,self,"DIA_Girion_LI_Teach_15_00");	//Может, поупражняемся с мечом?
-	AI_Output(self,other,"DIA_Girion_LI_Teach_08_01");	//Ну, давай. Хоть как-то скоротаем время.
+	AI_Output(other,self, " DIA_Girion_LI_Teach_15_00 " );	// Shall we practice with the sword?
+	AI_Output(self,other, " DIA_Girion_LI_Teach_08_01 " );	// Well, come on. Let's pass the time somehow.
 	Info_ClearChoices(dia_girion_li_teach);
 	Info_AddChoice(dia_girion_li_teach,Dialog_Back,dia_girion_li_teach_back);
 	Info_AddChoice(dia_girion_li_teach,b_buildlearnstringforfight(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),dia_girion_li_teach_2h_1);
@@ -58,7 +59,7 @@ func void dia_girion_li_teach_1h_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,90))
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Teach_1H_1_08_00");	//Твое лезвие должно скользить по воздуху, как камыш на побережье.
+		AI_Output(self,other, " DIA_Girion_DI_Teach_1H_1_08_00 " );	// Your blade should glide through the air like reeds on a coast.
 	};
 	Info_ClearChoices(dia_girion_li_teach);
 	Info_AddChoice(dia_girion_li_teach,Dialog_Back,dia_girion_li_teach_back);
@@ -72,7 +73,7 @@ func void dia_girion_li_teach_1h_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,90))
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Teach_1H_5_08_00");	//Силу нужно применять расчетливо. Если ты слепо будешь бросаться на противника, это не приведет тебя к успеху.
+		AI_Output(self,other, " DIA_Girion_DI_Teach_1H_5_08_00 " );	// Force must be applied sparingly. If you blindly rush at the enemy, it will not lead you to success.
 	};
 	Info_ClearChoices(dia_girion_li_teach);
 	Info_AddChoice(dia_girion_li_teach,Dialog_Back,dia_girion_li_teach_back);
@@ -86,7 +87,7 @@ func void dia_girion_li_teach_2h_1()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,90))
 	{
-		AI_Output(self,other,"DIA_DIA_Girion_DI_Teach_2H_1_08_00");	//Не сжимай судорожно руку, тогда твой удар встретит свою цель.
+		AI_Output(self,other, " DIA_DIA_Girion_DI_Teach_2H_1_08_00 " );	// Do not squeeze your hand convulsively, then your blow will meet its target.
 	};
 	Info_ClearChoices(dia_girion_li_teach);
 	Info_AddChoice(dia_girion_li_teach,Dialog_Back,dia_girion_li_teach_back);
@@ -100,7 +101,7 @@ func void dia_girion_li_teach_2h_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,90))
 	{
-		AI_Output(self,other,"DIA_Girion_DI_Teach_2H_5_08_00");	//Не забывай защищаться. Но лучшая защита все же - уклоняться от удара противника.
+		AI_Output(self,other, " DIA_Girion_DI_Teach_2H_5_08_00 " );	// Don't forget to defend yourself. But the best defense is still to dodge the enemy's blow.
 	};
 	Info_ClearChoices(dia_girion_li_teach);
 	Info_AddChoice(dia_girion_li_teach,Dialog_Back,dia_girion_li_teach_back);
@@ -124,7 +125,7 @@ instance DIA_GIRION_LI_PICKPOCKET(C_Info)
 
 func int dia_girion_li_pickpocket_condition()
 {
-	return C_Beklauen(71,260);
+	return  C_Robbery ( 71 , 260 );
 };
 
 func void dia_girion_li_pickpocket_info()
@@ -136,7 +137,7 @@ func void dia_girion_li_pickpocket_info()
 
 func void dia_girion_li_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 	Info_ClearChoices(dia_girion_li_pickpocket);
 };
@@ -154,7 +155,7 @@ instance DIA_GIRION_LI_MISSMYGOLD(C_Info)
 	condition = dia_girion_li_missmygold_condition;
 	information = dia_girion_li_missmygold_info;
 	permanent = FALSE;
-	description = "У меня пропало мое золото.";
+	description = " I lost my gold. " ;
 };
 
 
@@ -168,10 +169,10 @@ func int dia_girion_li_missmygold_condition()
 
 func void dia_girion_li_missmygold_info()
 {
-	AI_Output(other,self,"DIA_Girion_LI_MissMyGold_01_01");	//У меня пропало мое золото.
-	AI_Output(self,other,"DIA_Girion_LI_MissMyGold_01_02");	//Погоди-ка. Уж не думаешь ли ты, что паладин короля способен на кражу?
-	AI_Output(self,other,"DIA_Girion_LI_MissMyGold_01_04");	//Мне ничего об этом не известно.
-	B_LogEntry(TOPIC_MISSMYGOLD,"Гирион ничего не знает о моем золоте.");
+	AI_Output(other,self, " DIA_Girion_LI_MissMyGold_01_01 " );	// I lost my gold.
+	AI_Output(self,other, " DIA_Girion_LI_MissMyGold_01_02 " );	// Wait a minute. Don't you think a king's paladin is capable of stealing?
+	AI_Output(self,other, " DIA_Girion_LI_MissMyGold_01_04 " );	// I don't know anything about this.
+	B_LogEntry( TOPIC_MISSMYGOLD , " Girion doesn't know anything about my gold. " );
 };
 
 
@@ -196,28 +197,28 @@ func int dia_girion_li_changecourse_condition()
 
 func void dia_girion_li_changecourse_info()
 {
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_01_00");	//Я слышал, что тебе удалось найти на этом острове большие залежи магической руды.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_01_02");	//Полагаю, теперь мы просто обязаны вернуться в Хоринис и сообщить об этом лорду Хагену.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_01_03");	//Паладины должны узнать об этой руде!
+	AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_01_00 " );	// I heard that you managed to find large deposits of magic ore on this island.
+	AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_01_02 " );	// I guess now we just have to return to Khorinis and report this to Lord Hagen.
+	AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_01_03 " );	// Paladins need to know about this ore!
 	Info_ClearChoices(dia_girion_li_changecourse);
-	Info_AddChoice(dia_girion_li_changecourse,"Я полностью с тобой согласен.",dia_girion_li_changecourse_ore);
-	Info_AddChoice(dia_girion_li_changecourse,"Только если паладины заплатят за эту информацию.",dia_girion_li_changecourse_gold);
+	Info_AddChoice(dia_girion_li_changecourse, " I totally agree with you. " ,dia_girion_li_changecourse_ore);
+	Info_AddChoice(dia_girion_li_changecourse, " Only if paladins pay for this information. " ,dia_girion_li_changecourse_gold);
 };
 
 func void dia_girion_li_changecourse_ore()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Girion_LI_ChangeCourse_Ore_01_00");	//Я полностью с тобой согласен. Мы отправимся туда, как только починим наш корабль.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_01");	//(с уважением) Других слов я от тебя и не ожидал.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_02");	//Найденная тобой руда повысит наши шансы на успех в войне против орков.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_03");	//Возможно, это даже наша последняя надежда...
-	B_LogEntry(TOPIC_CHANGECOURSE,"Гирион рад был услышать о том, что мы возвращаемся в Хоринис, чтобы сообщить лорду Хагену о магической руде на острове.");
+	AI_Output(other,self, " DIA_Girion_LI_ChangeCourse_Ore_01_00 " );	// I totally agree with you. We'll go there as soon as we fix our ship.
+	AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Ore_01_01 " );	// (respectfully) I didn't expect other words from you.
+	AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Ore_01_02 " );	// The ore you find will increase our chances of success in the war against the orcs.
+	AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Ore_01_03 " );	// Maybe even our last hope...
+	B_LogEntry( TOPIC_CHANGECOURSE , " Girion was glad to hear that we were returning to Khorinis to inform Lord Hagen about the magical ore on the island. " );
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKPAL + 1;
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Пора сообщить об этом нашему капитану.");
+		Log_AddEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Time to tell our captain. " );
 	};
 	Info_ClearChoices(dia_girion_li_changecourse);
 };
@@ -225,44 +226,44 @@ func void dia_girion_li_changecourse_ore()
 func void dia_girion_li_changecourse_gold()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Girion_LI_ChangeCourse_Gold_01_00");	//Только если паладины заплатят за эту информацию.
+	AI_Output(other,self, " DIA_Girion_LI_ChangeCourse_Gold_01_00 " );	// Only if paladins pay for this information.
 	if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_02");	//Что?! Ты же паладин! Как ты можешь так поступать?
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_03");	//Неужели в тебе нет ни капли чести и благородства?
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_02 " );	// What?! You are a paladin! How can you do that?
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_03 " );	// Don't you have a drop of honor and nobility?
 	}
 	else if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_04");	//Что?! Очень странно слышать подобные слова от достопочтенного мага Огня!
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_05");	//Неужели слуга Инноса ценит золото дороже, чем свой священный долг?
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_04 " );	// What?! It is very strange to hear such words from a venerable Fire Mage!
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_05 " );	// Does the servant of Innos value gold more than his sacred duty?
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_06");	//Что?! Очень странно слышать подобные слова от достопочтенного мага Воды!
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_07");	//Неужели слуга Аданоса ценит золото дороже, чем честь и благородство?
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_06 " );	// What?! It is very strange to hear such words from a venerable Waterbender!
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_07 " );	// Does the servant of Adanos value gold more than honor and nobility?
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_08");	//(надменно) Ничего другого я от тебя услышать не ожидал.
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_09");	//Вас, темных магов, всегда интересует только собственные дела, и вам наплевать на судьбу других!
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_08 " );	// (arrogantly) I didn't expect to hear anything else from you.
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_09 " );	// You, dark magicians, are always interested only in your own affairs, and you do not care about the fate of others!
 	}
 	else if((other.guild == GIL_DJG) || (other.guild == GIL_SLD))
 	{
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_10");	//Ну, конечно. Других слов я от тебя и не ожидал!
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_11");	//Вас, наемников, всегда интересует только золото.
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_10 " );	// Well, of course. I did not expect other words from you!
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_11 " );	// You mercenaries are only interested in gold.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_12");	//Что?! Неужели в тебе нет ни капли чести и благородства?
+		AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_12 " );	// What?! Don't you have a drop of honor and nobility?
 	};
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_15");	//Я все же надеюсь, что ты изменишь свое решение.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_16");	//Ведь от этого зависит жизнь многих людей!
-	B_LogEntry(TOPIC_CHANGECOURSE,"Гирион был возмущен моей идеей нажиться на нужде паладинов.");
+	AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_15 " );	// I still hope you change your mind.
+	AI_Output(self,other, " DIA_Girion_LI_ChangeCourse_Gold_01_16 " );	// After all, the lives of many people depend on it!
+	B_LogEntry( TOPIC_CHANGECOURSE , " Girion was outraged by my idea of ​​cashing in on paladin needs. " );
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Пора сообщить об этом нашему капитану.");
+		B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Time to tell our captain. " );
 	};
 	Info_ClearChoices(dia_girion_li_changecourse);
 };
