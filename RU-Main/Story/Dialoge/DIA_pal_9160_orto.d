@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_9160_ORTO_EXIT(C_Info)
 {
 	npc = pal_9160_orto;
@@ -21,7 +22,7 @@ func void dia_pal_9160_orto_exit_info()
 };
 
 
-instance DIA_PAL_9160_ORTO_MATTER(C_Info)
+instances DIA_PAL_9160_ORTO_MATTER (C_Info)
 {
 	npc = pal_9160_orto;
 	nr = 1;
@@ -39,25 +40,25 @@ func int dia_pal_9160_orto_matter_condition()
 
 func void dia_pal_9160_orto_matter_info()
 {
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_00");	//Эй, парень! Ты откуда такой взялся?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Matter_01_01");	//Я прошел через горный проход. А что, тебя это удивляет?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Matter_01_00 " );	// Hey man! Where did you come from?
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Matter_01_01 " );	// I passed through the mountain pass. What surprises you?
 
 	if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_02");	//Конечно! Тут не так часто можно встретить новое лицо - особенно, наемника...(с презрением)
+		AI_Output(self,other, " DIA_Pal_9160_Orto_Matter_01_02 " );	// Of course! It's not often you see a new face here - especially a mercenary... (with contempt)
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_03");	//Конечно! Тут не так часто можно встретить новое лицо - особенно, некроманта.
+		AI_Output(self,other, " DIA_Pal_9160_Orto_Matter_01_03 " );	// Of course! It's not often you see a new face here - especially a necromancer.
 	};
 
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_04");	//Интересно, что за дело привело в форт паладинов такого человека, как ты?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Matter_01_05");	//А мне обязательно отвечать на твои вопросы, или можно просто зайти в форт?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_06");	//Хммм...(с усмешкой) да нет, можешь и не отвечать, если тебе так хочется.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_08");	//Ладно, проходи - только постарайся особо не доставать наших парней!
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_09");	//Они и так последнее время все на нервах.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_10");	//Так что сам понимаешь - лишние проблемы нам здесь не нужны.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Matter_01_11");	//Я постараюсь.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Matter_01_04 " );	// I wonder what kind of business brought a man like you to the paladin fort?
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Matter_01_05 " );	// Do I have to answer your questions, or can I just go to the fort?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Matter_01_06 " );	// Hmmm... (with a grin) no, you don't have to answer if you want to.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Matter_01_08 " );	// Okay, come on in - just try not to bother our guys too much!
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Matter_01_09 " );	// They've been on edge lately anyway.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Matter_01_10 " );	// So you yourself understand - we don't need extra problems here.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Matter_01_11 " );	// I'll try.
 };
 
 
@@ -68,7 +69,7 @@ instance DIA_PAL_9160_ORTO_WHO(C_Info)
 	condition = dia_pal_9160_orto_who_condition;
 	information = dia_pal_9160_orto_who_info;
 	permanent = FALSE;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 func int dia_pal_9160_orto_who_condition()
@@ -79,18 +80,18 @@ func int dia_pal_9160_orto_who_condition()
 func void dia_pal_9160_orto_who_info()
 {
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_00");	//Кто ты?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_01");	//Мое имя Орто. Я паладин короля и покорный слуга Инноса.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_02");	//А чем ты тут занимаешься?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_03");	//Ха. Странный вопрос - а чем, по-твоему, может заниматься паладин короля?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_04");	//Понятия не имею. Может, скажешь?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_05");	//Единственный удел паладина - это битвы во славу Инноса и короля. Этим мы живем и дышим!
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_06");	//Но мне кажется, что здесь сейчас не с кем сражаться.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_07");	//К сожалению, ты прав. И это сильно меня огорчает. Да и не только меня.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_08");	//Вся эта безмятежность и присущая ей скука - наихудшее, что вообще может быть.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_10");	//Ну раз так - почему же вы тогда торчите в этом форте, а не отправитесь, например, в Долину Рудников?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_11");	//Насколько мне известно, там скучать вам точно не придется.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_12");	//С радостью! Но пока лорд Варус не отдаст нам такой приказ - мы не сможем покинуть этот форт.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_13");	//Так что приходится пока сидеть здесь без дела.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Who_01_01 " );	// My name is Ortho. I am the paladin of the king and obedient servant of Innos.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Who_01_02 " );	// What are you doing here?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Who_01_03 " );	// Ha. Strange question - what do you think a king's paladin can do?
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Who_01_04 " );	// I have no idea. Can you say?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Who_01_05 " );	// The paladin's only destiny is to fight for the glory of Innos and the king. This is what we live and breathe!
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Who_01_06 " );	// But I don't think there's anyone to fight here right now.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Who_01_07 " );	// Unfortunately, you're right. And this makes me very sad. And not only me.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Who_01_08 " );	// All this serenity and its inherent boredom is the worst thing ever.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Who_01_10 " );	// Well, if so, then why are you stuck in this fort, and not go, for example, to the Valley of Mines?
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Who_01_11 " );	// As far as I know, you definitely won't be bored there.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Who_01_12 " );	// With joy! But until Lord Varus gives us such an order, we will not be able to leave this fort.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Who_01_13 " );	// So we have to sit here doing nothing for now.
 };
 
 instance DIA_Pal_9160_Orto_Map(C_Info)
@@ -100,12 +101,12 @@ instance DIA_Pal_9160_Orto_Map(C_Info)
 	condition = DIA_Pal_9160_Orto_Map_condition;
 	information = DIA_Pal_9160_Orto_Map_info;
 	permanent = FALSE;
-	description = "И еще ты штурман 'Эсмеральды'?";
+	description = " Are you also the navigator of the Esmeralda? " ;
 };
 
 func int DIA_Pal_9160_Orto_Map_condition()
 {
-	if((MIS_SylvioCrew == LOG_Running) && (Npc_KnowsInfo(hero,dia_pal_9160_orto_who) == TRUE) && (GotoFortMap == TRUE))
+	if ((MIS_SylvioCrew == LOG_Running) && (Npc_KnowsInfo(hero,dia_pal_9160_orto_who) ==  TRUE ) && (GotoFortMap ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -114,17 +115,17 @@ func int DIA_Pal_9160_Orto_Map_condition()
 func void DIA_Pal_9160_Orto_Map_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_00");	//И еще ты штурман 'Эсмеральды'?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Map_01_01");	//Да, это так. (удивленно) Хотя я не понимаю, откуда тебе это стало известно?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_02");	//Мне сказал об этом сам лорд Хаген.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Map_01_03");	//Ну, тогда понятно! А с чего ты вдруг заговорил об этом?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_04");	//Мне нужна карта, на которой указан путь от этого острова до материка.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_05");	//Ведь она у тебя есть?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Map_01_06");	//Естественно. Любой штурман без точной карты в море как без рук.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Map_01_07");	//Однако с собой ее у меня нет. Она осталась на корабле.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_08");	//Ну вот, знал бы я об этом раньше!
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Map_01_00 " );	// And you're also the navigator of the Esmeralda?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Map_01_01 " );	// Yes, it is. (surprised) Though I don't understand, how did you know that?
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Map_01_02 " );	// Lord Hagen himself told me about it.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Map_01_03 " );	// Well, then it's understandable! Why are you suddenly talking about it?
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Map_01_04 " );	// I need a map showing the path from this island to the mainland.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Map_01_05 " );	// You have it, don't you?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Map_01_06 " );	// Naturally. Any navigator without an accurate map at sea is like without hands.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Map_01_07 " );	// However, I don't have it with me. She stayed on the ship.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Map_01_08 " );	// Well, I wish I knew about this sooner!
 	SeaMapIns = TRUE;
-	B_LogEntry(Topic_SylvioCrew,"Я только зря промотался в форт паладинов. Орто оставил свою карту на корабле! Придется теперь его хорошенько обыскать...");
+	B_LogEntry(Topic_SylvioCrew, " I wasted my time in the paladin fort. Ortho left his card on the ship! I'll have to search it thoroughly now... " );
 };
 
 instance DIA_PAL_9160_ORTO_FORT(C_Info)
@@ -134,7 +135,7 @@ instance DIA_PAL_9160_ORTO_FORT(C_Info)
 	condition = dia_pal_9160_orto_FORT_condition;
 	information = dia_pal_9160_orto_FORT_info;
 	permanent = FALSE;
-	description = "Расскажи мне о форте.";
+	description = " Tell me about the fort. " ;
 };
 
 func int dia_pal_9160_orto_FORT_condition()
@@ -147,11 +148,11 @@ func int dia_pal_9160_orto_FORT_condition()
 
 func void dia_pal_9160_orto_FORT_info()
 {
-	AI_Output(other,self,"DIA_Pal_9160_Orto_FORT_01_00");		//Расскажи мне о форте.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_FORT_01_01");		//Он был основан еще при короле Робаре I для прикрытия южных рубежей Хориниса.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_FORT_01_02");		//До войны с орками здесь в основном жили рыцари и паладины.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_FORT_01_03");		//Но после того, как над Долиной Рудников был возведен магический купол, почти весь гарнизон был отправлен обратно в Миртану.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_FORT_01_04");		//А тут остался лишь небольшой отряд королевских гвардейцев и местное ополчение.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_FORT_01_00 " );		// Tell me about the fort.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_FORT_01_01 " );		// It was founded under King Rhobar I to cover the southern borders of Khorinis.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_FORT_01_02 " );		// Before the war with the orcs, this was mostly inhabited by knights and paladins.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_FORT_01_03 " );		// But after the magical dome was erected over the Valley of Mines, almost the entire garrison was sent back to Myrtana.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_FORT_01_04 " );		// And then there was only a small detachment of the royal guards and the local militia.
 };
 
 instance DIA_PAL_9160_ORTO_HOWWAY(C_Info)
@@ -161,7 +162,7 @@ instance DIA_PAL_9160_ORTO_HOWWAY(C_Info)
 	condition = dia_pal_9160_orto_HOWWAY_condition;
 	information = dia_pal_9160_orto_HOWWAY_info;
 	permanent = FALSE;
-	description = "Как вы попали сюда?!";
+	description = " How did you get here?! " ;
 };
 
 func int dia_pal_9160_orto_HOWWAY_condition()
@@ -174,24 +175,24 @@ func int dia_pal_9160_orto_HOWWAY_condition()
 
 func void dia_pal_9160_orto_HOWWAY_info()
 {
-	AI_Output(other,self,"DIA_Pal_9160_Orto_HOWWAY_01_00");	//Как вы попали сюда?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_01");	//Большую часть из нас перевезли сюда морем, на корабле! Остальные же остались в Хоринисе.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_HOWWAY_01_02");	//А почему вы просто не прошли по суше?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_03");	//Путь морем намного короче! К тому же вход в форт располагается рядом с фермой Онара и поддерживающими его наемниками.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_HOWWAY_01_04");	//Вы что, испугались этих людей?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_05");	//Нет, конечно. Паладинов короля вряд ли можно испугать обычными наемниками!
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_06");	//Но сейчас мне кажется довольно нецелесообразно вступать с ними в открытый конфликт.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_07");	//К тому же пока не прояснилась ситуация в Долине Рудников, лорд Варус вряд ли отдаст приказ о начале атаки.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_HOWWAY_01_00 " );	// How did you get here?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HOWWAY_01_01 " );	// Most of us were transported here by sea, by ship! The rest remained in Khorinis.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_HOWWAY_01_02 " );	// Why didn't you just walk on land?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HOWWAY_01_03 " );	// Way by sea is much shorter! In addition, the entrance to the fort is located next to Onar's farm and the mercenaries supporting it.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_HOWWAY_01_04 " );	// Are you afraid of these people?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HOWWAY_01_05 " );	// No, of course not. The paladins of the king can hardly be frightened by ordinary mercenaries!
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HOWWAY_01_06 " );	// But now it seems rather inappropriate for me to enter into an open conflict with them.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HOWWAY_01_07 " );	// In addition, until the situation in the Vale of Mines is cleared up, Lord Varus is unlikely to give the order to launch an attack.
 };
 
-instance DIA_PAL_9160_ORTO_VARUS(C_Info)
+instances DIA_PAL_9160_ORTO_VARUS (C_Info)
 {
 	npc = pal_9160_orto;
 	nr = 1;
 	condition = dia_pal_9160_orto_varus_condition;
 	information = dia_pal_9160_orto_varus_info;
 	permanent = FALSE;
-	description = "Лорд Варус?";
+	description = " Lord Varus? " ;
 };
 
 
@@ -205,14 +206,14 @@ func int dia_pal_9160_orto_varus_condition()
 
 func void dia_pal_9160_orto_varus_info()
 {
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Varus_01_00");	//Лорд Варус?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Varus_01_01");	//Ну да. Он командир нашего гарнизона - суровый человек, я тебе скажу.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Varus_01_03");	//А где я могу встретиться с ним?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Varus_01_04");	//Дом, что в центре форта. Там, на втором этаже ты найдешь его.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Varus_01_05");	//Вот только не думаю, что Гланц пропустит тебя.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Varus_01_06");	//А кто такой Гланц?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Varus_01_07");	//Охранник, что стоит на входе.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Varus_01_08");	//Поэтому если у тебя нет серьезных причин для встречи с лордом Варусом - можешь даже и не пробовать.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Varus_01_00 " );	// Lord Varus?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Varus_01_01 " );	// Well, yes. He is the commander of our garrison - a stern man, I'll tell you.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Varus_01_03 " );	// Where can I meet him?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Varus_01_04 " );	// The house in the center of the fort. There, on the second floor, you will find it.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Varus_01_05 " );	// I just don't think Glantz will let you through.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Varus_01_06 " );	// And who is Glantz?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Varus_01_07 " );	// The guard at the entrance.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Varus_01_08 " );	// So unless you have a good reason to meet Lord Varus, you don't even have to try.
 };
 
 
@@ -223,7 +224,7 @@ instance DIA_PAL_9160_ORTO_HOW(C_Info)
 	condition = dia_pal_9160_orto_how_condition;
 	information = dia_pal_9160_orto_how_info;
 	permanent = TRUE;
-	description = "Как жизнь?";
+	description = " How are you? " ;
 };
 
 
@@ -238,17 +239,17 @@ func int dia_pal_9160_orto_how_condition()
 func void dia_pal_9160_orto_how_info()
 {
 	AI_Output(other,self,"DIA_Pal_9160_Orto_How_01_00");	//Как жизнь?
-	if(VARUSAGREEDHUNTDONE == FALSE)
+	if ( VARUSAGREEDHUNTDONE  ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_01");	//(печально) Спросил бы что-нибудь повеселее этого.
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_02");	//Все так же, без изменений.
+		AI_Output(self,other, " DIA_Pal_9160_Orto_How_01_01 " );	// (sadly) Would have asked something more fun than this.
+		AI_Output(self,other, " DIA_Pal_9160_Orto_How_01_02 " );	// Still the same, no change.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_03");	//Все просто отлично, приятель!
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_04");	//Никогда не думал, что охота - такое интересное занятие.
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_05");	//И это куда веселее, чем просто сидеть и изнывать от скуки.
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_06");	//Так что спасибо тебе, что помог уговорить Варуса! Теперь мы все твои должники...(смеется)
+		AI_Output(self,other, " DIA_Pal_9160_Orto_How_01_03 " );	// Everything is just fine, mate!
+		AI_Output(self,other, " DIA_Pal_9160_Orto_How_01_04 " );	// I never thought hunting was such an interesting activity.
+		AI_Output(self,other, " DIA_Pal_9160_Orto_How_01_05 " );	// And it's way more fun than just sitting around and getting bored.
+		AI_Output(self,other, " DIA_Pal_9160_Orto_How_01_06 " );	// So thank you for helping me talk Varus around! Now we are all your debtors... (laughs)
 	};
 };
 
@@ -260,7 +261,7 @@ instance DIA_PAL_9160_ORTO_HUNT(C_Info)
 	condition = dia_pal_9160_orto_hunt_condition;
 	information = dia_pal_9160_orto_hunt_info;
 	permanent = FALSE;
-	description = "Ну, попробуй найти себе какое-нибудь занятие.";
+	description = " Well, try to find something to do. " ;
 };
 
 
@@ -274,62 +275,62 @@ func int dia_pal_9160_orto_hunt_condition()
 
 func void dia_pal_9160_orto_hunt_info()
 {
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_01_00");	//Ну, попробуй найти себе какое-нибудь занятие.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_02");	//Парень, о чем ты? В этом форте вообще нечем заняться!
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_03");	//Хотя правда, есть у меня тут одна идейка...
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Hunt_01_00 " );	// Well, try to find something to do.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_02 " );	// Guy, what are you talking about? Nothing to do in this fort!
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_03 " );	// Although it's true, I have one idea here...
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_01_04");	//Какая?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_05");	//(оживленно) Ну, мы с несколькими парнями подумываем отправиться поохотиться вглубь острова.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_06");	//Говорят, там водятся опасные твари - как раз то, что нам и надо.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_01_07");	//А в чем тогда проблема?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_08");	//Эх...(печально) Дело в том, что лорд Варус навряд ли нам это разрешит сделать.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_01_09");	//Откуда ты знаешь? Ты уже говорил с ним на эту тему?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_10");	//Ты что, смеешься? (нервно) Нет, парень - этого я делать точно не буду.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_12");	//Ты просто не знаешь Варуса! Знал бы - не задавал подобных вопросов.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_01_14");	//Тогда, может быть, я смогу помочь?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_15");	//Ты? Хммм...(задумчиво) а что, это хорошая идея!
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_16");	//Тебе действительно ничего не стоит обратиться к нему с такой просьбой. Ты ничем не рискуешь.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_01_17");	//Скажи, а ты вправду решил это сделать?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_05 " );	// (animated) Well, a few of the guys and I are thinking of going hunting inland.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_06 " );	// They say there are dangerous creatures out there - just what we need.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Hunt_01_07 " );	// What's the problem then?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_08 " );	// Eh... (sadly) The fact is that Lord Varus is unlikely to allow us to do this.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Hunt_01_09 " );	// How do you know? Have you talked to him about this before?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_10 " );	// Are you laughing? (nervously) No, man - I definitely won't do that.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_12 " );	// You just don't know Varus! Had I known, I wouldn't have asked such questions.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Hunt_01_14 " );	// Then maybe I can help?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_15 " );	// You? Hmmm...(thoughtfully) what a good idea!
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_16 " );	// You really don't have to ask him anything like that. You risk nothing.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_01_17 " );	// Tell me, did you really decide to do this?
 	Info_ClearChoices(dia_pal_9160_orto_hunt);
-	Info_AddChoice(dia_pal_9160_orto_hunt,"Да нет, я просто пошутил.",dia_pal_9160_orto_hunt_no);
-	Info_AddChoice(dia_pal_9160_orto_hunt,"Да, я поговорю с Варусом.",dia_pal_9160_orto_hunt_ok);
+	Info_AddChoice(dia_pal_9160_orto_hunt, " No, I was just joking. " ,dia_pal_9160_orto_hunt_no);
+	Info_AddChoice(dia_pal_9160_orto_hunt, " Yes, I'll talk to Varus. " ,dia_pal_9160_orto_hunt_ok);
 };
 
 func void dia_pal_9160_orto_hunt_ok()
 {
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_Ok_01_00");	//Да, я поговорю с Варусом.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_Ok_01_01");	//Спасибо тебе, дружище! Ты просто спасешь всех нас.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_Ok_01_05");	//Я сделаю все, что смогу.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Hunt_Ok_01_00 " );	// Yes, I'll talk to Varus.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_Ok_01_01 " );	// Thank you, mate! You just save us all.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Hunt_Ok_01_05 " );	// I'll do my best.
 	MIS_ORTOHUNT = LOG_Running;
 	Log_CreateTopic(TOPIC_ORTOHUNT,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ORTOHUNT,LOG_Running);
-	B_LogEntry(TOPIC_ORTOHUNT,"Паладин Орто попросил меня поговорить с лордом Варусом, чтобы тот разрешил нескольким паладинам отправиться на охоту вглубь острова. Посмотрим, что на это скажет сам Варус.");
+	B_LogEntry( TOPIC_ORTOHUNT , " Paladin Ortho has asked me to speak with Lord Varus to allow a few paladins to go hunting inland. Let's see what Varus has to say. " );
 	Info_ClearChoices(dia_pal_9160_orto_hunt);
 };
 
 func void dia_pal_9160_orto_hunt_no()
 {
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_No_01_00");	//Да нет, я просто пошутил.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_No_01_01");	//Ну и шуточки у тебя. (раздраженно) Хотя ладно.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_No_01_02");	//В конце концов - ты действительно не обязан ничего для нас делать.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_No_01_03");	//Так что давай просто забудем об этом разговоре.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_Hunt_No_01_00 " );	// No, I was just joking.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_No_01_01 " );	// Well, you have jokes. (annoyed) Okay.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_No_01_02 " );	// After all - you don't really have to do anything for us.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_Hunt_No_01_03 " );	// So let's just forget about this conversation.
 	Info_ClearChoices(dia_pal_9160_orto_hunt);
 };
 
 
-instance DIA_PAL_9160_ORTO_HUNTDONE(C_Info)
+instance DIA_PAL_9160_ORTO_HUNTDONE (C_Info)
 {
 	npc = pal_9160_orto;
 	nr = 1;
 	condition = dia_pal_9160_orto_huntdone_condition;
 	information = dia_pal_9160_orto_huntdone_info;
 	permanent = FALSE;
-	description = "Лорд Варус не возражает против вашей затеи.";
+	description = " Lord Varus has no objection to your venture. " ;
 };
 
 
 func int dia_pal_9160_orto_huntdone_condition()
 {
-	if((MIS_ORTOHUNT == LOG_Running) && (VARUSAGREEDHUNT == TRUE))
+	if (( MIS_ORTOHUNT  == LOG_Running ) && ( VARUSAGREEDHUNT  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -338,29 +339,29 @@ func int dia_pal_9160_orto_huntdone_condition()
 func void dia_pal_9160_orto_huntdone_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Pal_9160_Orto_HuntDone_01_01");	//Лорд Варус не возражает против вашей затеи.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_02");	//Ты это серьезно?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_HuntDone_01_03");	//Абсолютно! Так что можешь брать с собой людей и отправляться на охоту.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_04");	//Ох, спасибо, парень! Я даже и не знаю, как тебя отблагодарить.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_05");	//Хотя, нет - думаю, знаю...(смеется)
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_06");	//Я расскажу тебе, как правильнее использовать свою силу в бою.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_07");	//Думаю, тебе это наверняка пригодится!
+	AI_Output(other,self, " DIA_Pal_9160_Orto_HuntDone_01_01 " );	// Lord Varus has no objection to your venture.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_01_02 " );	// Are you serious?
+	AI_Output(other,self, " DIA_Pal_9160_Orto_HuntDone_01_03 " );	// Absolutely! So you can take people with you and go hunting.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_01_04 " );	// Oh, thanks man! I don't even know how to thank you.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_01_05 " );	// Although, no - I think I know ... (laughs)
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_01_06 " );	// I'll tell you how to properly use your power in combat.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_01_07 " );	// I think you will definitely need this!
 	MIS_ORTOHUNT = LOG_SUCCESS;
-	VARUSAGREEDHUNTDONE = TRUE;
+	VARUSAGREEDHUNTDONE = TRUE ;
 	Log_SetTopicStatus(TOPIC_ORTOHUNT,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ORTOHUNT,"Орто был благодарен мне за то, что я смог уговорить Варуса. За эту услугу он показал мне один из своих боевых приемов, который увеличит силу моего удара.");
+	B_LogEntry( TOPIC_ORTOHUNT , " Ortho was grateful to me that I was able to persuade Varus. For this favor, he showed me one of his fighting moves, which will increase the power of my blow. " );
 	Info_ClearChoices(dia_pal_9160_orto_huntdone);
-	Info_AddChoice(dia_pal_9160_orto_huntdone,"С удовольствием тебя выслушаю!",dia_pal_9160_orto_huntdone_teach);
+	Info_AddChoice(dia_pal_9160_orto_huntdone, " Would love to hear from you! " ,dia_pal_9160_orto_huntdone_teach);
 };
 
 func void dia_pal_9160_orto_huntdone_teach()
 {
-	AI_Output(other,self,"DIA_Pal_9160_Orto_HuntDone_Teach_01_00");	//У меня как раз есть свободная минутка!
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_01");	//Тогда запоминай, это довольно просто - когда на тебя кто-нибудь нападает, постарайся использовать инерцию своего врага.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_02");	//Особенно это касается парирования ударов. Заставь своего противника действовать так, как тебе это нужно.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_03");	//Сделай это - и ты всегда будешь иметь приимущество в бою! Запомнил?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_HuntDone_Teach_01_04");	//Да - спасибо за совет.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_05");	//Тебе спасибо! (смеется) Ну а теперь - охотиться!
+	AI_Output(other,self, " DIA_Pal_9160_Orto_HuntDone_Teach_01_00 " );	// I just have a free minute!
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_Teach_01_01 " );	// Then remember, it's pretty simple - when someone attacks you, try to use your enemy's momentum.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_Teach_01_02 " );	// This is especially true for parrying. Make your opponent act the way you need it.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_Teach_01_03 " );	// Do this and you'll always have the upper hand in combat! Remember?
+	AI_Output(other,self, " DIA_Pal_9160_Orto_HuntDone_Teach_01_04 " );	// Yes - thanks for the tip.
+	AI_Output(self,other, " DIA_Pal_9160_Orto_HuntDone_Teach_01_05 " );	// Thank you! (laughs) Well, now - to hunt!
 	B_RaiseAttribute_Bonus(other,ATR_STRENGTH,1);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(pal_9160_orto,"Hunt");
@@ -371,14 +372,14 @@ func void dia_pal_9160_orto_huntdone_teach()
 };
 
 
-instance DIA_PAL_9160_ORTO_RAYNEHELP(C_Info)
+instance DIA_PAL_9160_ORTO_RAYNEHELP (C_Info)
 {
 	npc = pal_9160_orto;
 	nr = 1;
 	condition = dia_pal_9160_orto_raynehelp_condition;
-	information = dia_pal_9160_orto_raynehelp_info;
+	information = dia_pal_9160_ortho_raynehelp_info;
 	permanent = FALSE;
-	description = "Ты мог бы помочь Рэйну на складе?";
+	description = " Could you help Rain at the warehouse? " ;
 };
 
 
@@ -392,15 +393,15 @@ func int dia_pal_9160_orto_raynehelp_condition()
 
 func void dia_pal_9160_orto_raynehelp_info()
 {
-	AI_Output(other,self,"DIA_Pal_9160_Orto_RayneHelp_01_00");	//Ты мог бы помочь Рэйну на складе?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_RayneHelp_01_01");	//Что? (смеется) Не уж - у меня есть занятие поинтереснее, чем целый день торчать на складе!
-	AI_Output(self,other,"DIA_Pal_9160_Orto_RayneHelp_01_02");	//Так что извини - ничем помочь не могу.
-	AI_Output(other,self,"DIA_Pal_9160_Orto_RayneHelp_01_03");	//Я так и думал.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_RayneHelp_01_00 " );	// Could you help Rain at the warehouse?
+	AI_Output(self,other, " DIA_Pal_9160_Orto_RayneHelp_01_01 " );	// What? (laughs) Not really - I have more interesting things to do than hang around in a warehouse all day!
+	AI_Output(self,other, " DIA_Pal_9160_Orto_RayneHelp_01_02 " );	// So I'm sorry - I can't help.
+	AI_Output(other,self, " DIA_Pal_9160_Orto_RayneHelp_01_03 " );	// I thought so.
 	HELPCOUNTRAYNE = HELPCOUNTRAYNE + 1;
-	if((HELPCOUNTRAYNE > 10) && (MAYTALKVARUSRAYNE == FALSE) && (MIS_RAYNEHELP == LOG_Running))
+	if (( HELPCOUNTRAYNE  >  10 ) && ( MAYTALKVARUSRAYNE  ==  FALSE ) && ( MY_RAYHELP  == LOG_Running ))
 	{
-		MAYTALKVARUSRAYNE = TRUE;
-		B_LogEntry(TOPIC_RAYNEHELP,"Кажется, я попусту трачу время - никто из паладинов не хочет помогать Рэйну. Может, мне стоит предпринять более кардинальные действия?");
+		MAYTALKVARUSRAYNE = TRUE ;
+		B_LogEntry( TOPIC_RAYNEHELP , " I feel like I'm wasting my time - none of the paladins want to help Rayne. Maybe I should take more drastic action? " );
 	};
 };
 
@@ -418,7 +419,7 @@ instance DIA_PAL_9160_ORTO_PICKPOCKET(C_Info)
 
 func int dia_pal_9160_orto_pickpocket_condition()
 {
-	return C_Beklauen(100,150);
+	return  C_Robbery ( 100 , 150 );
 };
 
 func void dia_pal_9160_orto_pickpocket_info()
@@ -430,7 +431,7 @@ func void dia_pal_9160_orto_pickpocket_info()
 
 func void dia_pal_9160_orto_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_pal_9160_orto_pickpocket);
 };
 
