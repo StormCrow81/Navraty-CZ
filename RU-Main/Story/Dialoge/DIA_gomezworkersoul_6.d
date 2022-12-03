@@ -1,4 +1,5 @@
 
+
 instance DIA_GOMEZWORKERSOUL_6_EXIT(C_Info)
 {
 	npc = gomezworkersoul_6;
@@ -21,12 +22,12 @@ func void dia_gomezworkersoul_6_exit_info()
 };
 
 
-instance DIA_GOMEZWORKERSOUL_6_HALLO(C_Info)
+instance DIA_GOMEZWORKERSOUL_6_HELLO (C_Info)
 {
 	npc = gomezworkersoul_6;
 	nr = 1;
 	condition = dia_gomezworkersoul_6_hallo_condition;
-	information = dia_gomezworkersoul_6_hallo_info;
+	information = dia_gomezworkersoul_6_hello_info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -40,29 +41,29 @@ func int dia_gomezworkersoul_6_hallo_condition()
 	};
 };
 
-func void dia_gomezworkersoul_6_hallo_info()
+func void dia_gomezworkersoul_6_hello_info()
 {
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	Snd_Play("MFX_FEAR_CAST");
 	B_GivePlayerXP(50);
-	AI_Output(self,other,"DIA_GomezWorkerSoul_6_HALLO_01_00");	//(мертвым голосом) КТО БЕСПОКОИТ МЕНЯ?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_6_HALLO_01_01");	//Я хочу помочь тебе.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_6_HALLO_01_02");	//ХА ХА ХА! КАК ТЫ МОЖЕШЬ ПОМОЧЬ МНЕ, СМЕРТНЫЙ? МНЕ НИКТО НЕ В СИЛАХ ПОМОЧЬ!
-	AI_Output(other,self,"DIA_GomezWorkerSoul_6_HALLO_01_03");	//А я помогу! Но это возможно только при одном условии...
-	AI_Output(self,other,"DIA_GomezWorkerSoul_6_HALLO_01_04");	//ЧТО ЭТО ЗА УСЛОВИЕ?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_6_HALLO_01_05");	//Ты дашь свое прощение душе того человека, который проклял вас. А именно рудному барону Гомезу.
-	AI_Output(other,self,"DIA_GomezWorkerSoul_6_HALLO_01_06");	//И только после этого я смогу снять с тебя твое проклятие!
-	AI_Output(self,other,"DIA_GomezWorkerSoul_6_HALLO_01_08");	//Я устал от мучительной боли и ужасных страданий и пойду на все, чтобы избавиться от них навсегда.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_6_HALLO_01_00 " );	// (dead voice) WHO IS TROUBLE ME?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_6_HALLO_01_01 " );	// I want to help you.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_6_HALLO_01_02 " );	// HA HA HA! HOW CAN YOU HELP ME, MORTAL? NO ONE CAN HELP ME!
+	AI_Output(other,self, " DIA_GomezWorkerSoul_6_HALLO_01_03 " );	// And I'll help! But this is only possible under one condition...
+	AI_Output(self,other, " DIA_GomezWorkerSoul_6_HALLO_01_04 " );	// WHAT IS THIS CONDITION?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_6_HALLO_01_05 " );	// You will give your forgiveness to the soul of the person who cursed you. Namely, the ore baron Gomez.
+	AI_Output(other,self, " DIA_GomezWorkerSoul_6_HALLO_01_06 " );	// Only then will I be able to remove your curse from you!
+	AI_Output(self,other, " DIA_GomezWorkerSoul_6_HALLO_01_08 " );	// I'm tired of excruciating pain and terrible suffering and will do anything to get rid of them forever.
 	Info_ClearChoices(dia_gomezworkersoul_6_hallo);
-	Info_AddChoice(dia_gomezworkersoul_6_hallo,"Так ты согласен дать ему свое прощение?",dia_gomezworkersoul_6_hallo_end);
+	Info_AddChoice(dia_gomezworkersoul_6_hallo, " So you agree to give him your forgiveness? " ,dia_gomezworkersoul_6_hallo_end);
 };
 
-func void dia_gomezworkersoul_6_hallo_end()
+func void dia_gomezworkersoul_6_hello_end()
 {
 	Snd_Play("SFX_INNOSEYE");
-	AI_Output(other,self,"DIA_GomezWorkerSoul_6_HALLO_End_01_01");	//Так ты согласен дать ему свое прощение?
-	AI_Output(self,other,"DIA_GomezWorkerSoul_6_HALLO_End_01_02");	//Я согласен, смертный... Гомез будет прощен!
-	AI_Output(other,self,"DIA_GomezWorkerSoul_6_HALLO_End_01_03");	//Что ж, тогда осталось только упокоить твою душу, призрак.
+	AI_Output(other,self, " DIA_GomezWorkerSoul_6_HALLO_End_01_01 " );	// So you agree to give him your forgiveness?
+	AI_Output(self,other, " DIA_GomezWorkerSoul_6_HALLO_End_01_02 " );	// I agree, mortal... Gomez will be forgiven!
+	AI_Output(other,self, " DIA_GomezWorkerSoul_6_HALLO_End_01_03 " );	// Well, then all that's left is to put your soul to rest, ghost.
 	GOMEZSOULTALK_6 = TRUE;
 	AI_StopProcessInfos(self);
 };
