@@ -1,4 +1,5 @@
 
+
 instance DIA_Bosper_EXIT(C_Info)
 {
 	npc = VLK_413_Bosper;
@@ -17,14 +18,14 @@ func int DIA_Bosper_EXIT_Condition()
 
 func void DIA_Bosper_EXIT_Info()
 {
-	Value_Pfeil = 5;
-	Value_Bolzen = 10;
+	Value_Arrow = 5 ;
+	Value_Bolzen = 10 ;
 	AI_StopProcessInfos(self);
 };
 
 var int FirstTalkBosper;
 
-instance DIA_Bosper_NoTalkAtAll(C_Info)
+instance DIA_Bosper_NoTalkAtAll (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
@@ -46,29 +47,29 @@ func void DIA_Bosper_NoTalkAtAll_Info()
 {
 	if(FirstTalkBosper == FALSE)
 	{
-		AI_Output(self,other,"DIA_Bosper_NoTalkAtAll_12_00");	//Чего тебе здесь надо, а?
-		AI_Output(self,other,"DIA_Bosper_NoTalkAtAll_12_01");	//Тебе нечего здесь делать. Прочь отсюда!
+		AI_Output(self,other, " DIA_Bosper_NoTalkAtAll_12_00 " );	// What do you want here, huh?
+		AI_Output(self,other, " DIA_Bosper_NoTalkAtAll_12_01 " );	// You have nothing to do here. Get out of here!
 		FirstTalkBosper = TRUE;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_NoTalkAtAll_12_03");	//Я сказал, вон!
+		AI_Output(self,other, " DIA_Bosper_NoTalkAtAll_12_03 " );	// I said get out!
 		AI_StopProcessInfos(self);
 	};
 };
 
-instance DIA_Bosper_HALLO(C_Info)
+instance DIA_Bosper_HELLO (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 2;
-	condition = DIA_Bosper_HALLO_Condition;
-	information = DIA_Bosper_HALLO_Info;
+	condition = DIA_Bosper_HELLO_Condition;
+	information = DIA_Bosper_HELLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
-func int DIA_Bosper_HALLO_Condition()
+func int DIA_Bosper_HELLO_Condition()
 {
 	if(Npc_IsInState(self,ZS_Talk) && (CanTeachTownMaster == TRUE))
 	{
@@ -76,28 +77,28 @@ func int DIA_Bosper_HALLO_Condition()
 	};
 };
 
-func void DIA_Bosper_HALLO_Info()
+func void DIA_Bosper_HELLO_Info()
 {
-	if(Wld_IsTime(14,0,16,0) == FALSE)
+	if (Wld_IsTime( 14 , 0 , 16 , 0 ) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Bosper_HALLO_11_00");	//Добро пожаловать в мою лавку, чужеземец!
+		AI_Output(self,other, " DIA_Bosper_HALLO_11_00 " );	// Welcome to my shop, outlander!
 	};
 
-	AI_Output(self,other,"DIA_Bosper_HALLO_11_01");	//Я Боспер! Я делаю луки и торгую шкурами.
-	AI_Output(self,other,"DIA_Bosper_HALLO_11_02");	//Что привело тебя в Хоринис?
+	AI_Output(self,other, " DIA_Bosper_HALLO_11_01 " );	// I'm Bosper! I make bows and sell skins.
+	AI_Output(self,other, " DIA_Bosper_HALLO_11_02 " );	// What brings you to Khorinis?
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Боспер делает луки и торгует шкурами. Его лавка находится у восточных ворот, в нижней части города.");
+	B_LogEntry(TOPIC_CityTrader, " Bosper makes bows and sells skins. His shop is at the east gate, in the lower part of the city. " );
 };
 
 
-instance DIA_Bosper_IntoOV(C_Info)
+instance DIA_Bosper_IntoOV (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
 	condition = DIA_Bosper_IntoOV_Condition;
 	information = DIA_Bosper_IntoOV_Info;
 	permanent = FALSE;
-	description = "Мне нужно попасть в верхний квартал...";
+	description = " I need to get to the upper quarter... " ;
 };
 
 
@@ -111,28 +112,28 @@ func int DIA_Bosper_IntoOV_Condition()
 
 func void DIA_Bosper_IntoOV_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_IntoOV_15_00");	//Мне нужно попасть в верхний квартал...
-	AI_Output(self,other,"DIA_Bosper_IntoOV_11_01");	//Где живут паладины? Забудь об этом.
-	AI_Output(self,other,"DIA_Bosper_IntoOV_11_02");	//Тебе нужно быть уважаемым гражданином или, хотя бы, иметь приличную работу.
-	AI_Output(self,other,"DIA_Bosper_IntoOV_11_03");	//А чужаку вроде тебя ни за что туда не попасть.
-	if(Torwache_305.aivar[AIV_TalkedToPlayer] == TRUE)
+	AI_Output(other,self, " DIA_Bosper_IntoOV_15_00 " );	// I need to get to the top quarter...
+	AI_Output(self,other, " DIA_Bosper_IntoOV_11_01 " );	// Where do paladins live? Forget it.
+	AI_Output(self,other, " DIA_Bosper_IntoOV_11_02 " );	// You need to be a respectable citizen, or at least have a decent job.
+	AI_Output(self,other, " DIA_Bosper_IntoOV_11_03 " );	// And a stranger like you would never get there.
+	if (Torwache_305.aivar[AIV_TalkedToPlayer] ==  TRUE )
 	{
-		AI_Output(other,self,"DIA_Bosper_IntoOV_15_04");	//Я это заметил...
+		AI_Output(other,self, " DIA_Bosper_IntoOV_15_04 " );	// I noticed this...
 	};
 	Log_CreateTopic(TOPIC_OV,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_OV,LOG_Running);
-	B_LogEntry(TOPIC_OV,"Чтобы попасть в верхний квартал, я либо должен стать уважаемым гражданином, либо получить работу.");
+	B_LogEntry( TOPIC_OV , " To get to the top quarter, I either have to become a respected citizen or get a job. " );
 };
 
 
-instance DIA_Bosper_SeekWork(C_Info)
+instance DIA_Bosper_SeekWork (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 2;
 	condition = DIA_Bosper_SeekWork_Condition;
 	information = DIA_Bosper_SeekWork_Info;
 	permanent = FALSE;
-	description = "Я ищу работу!";
+	description = " I'm looking for a job! " ;
 };
 
 
@@ -143,37 +144,37 @@ func int DIA_Bosper_SeekWork_Condition()
 
 func void DIA_Bosper_SeekWork_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_SeekWork_15_00");	//Я ищу работу!
-	AI_Output(self,other,"DIA_Bosper_SeekWork_11_01");	//Ммм...(задумчиво) Мне не помешал бы новый ученик.
-	AI_Output(self,other,"DIA_Bosper_SeekWork_11_02");	//Последний, что у меня был, бросил свою работу пару дней назад.
-	AI_Output(self,other,"DIA_Bosper_SeekWork_11_03");	//Ты что-нибудь знаешь об охоте, а?
+	AI_Output(other,self, " DIA_Bosper_SeekWork_15_00 " );	// I'm looking for a job!
+	AI_Output(self,other, " DIA_Bosper_SeekWork_11_01 " );	// Mmm...(thoughtfully) I could use a new student.
+	AI_Output(self,other, " DIA_Bosper_SeekWork_11_02 " );	// The last one I had quit my job a couple of days ago.
+	AI_Output(self,other, " DIA_Bosper_SeekWork_11_03 " );	// You know anything about hunting, huh?
 
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 	{
 		AI_Output(other,self,"DIA_Bosper_SeekWork_15_04");	//Нуууу...
-		AI_Output(self,other,"DIA_Bosper_SeekWork_11_05");	//Я мог бы научить тебя снимать шкуры с животных.
-		AI_Output(self,other,"DIA_Bosper_SeekWork_11_06");	//Я буду хорошо платить тебе за каждую шкуру, что ты принесешь мне.
+		AI_Output(self,other, " DIA_Bosper_SeekWork_11_05 " );	// I could teach you how to skin animals.
+		AI_Output(self,other, " DIA_Bosper_SeekWork_11_06 " );	// I'll pay you well for every skin you bring me.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Bosper_SeekWork_15_07");	//Я могу дать тебе несколько шкур, если ты это имел в виду.
-		AI_Output(self,other,"DIA_Bosper_SeekWork_11_08");	//Превосходно! Приноси мне все шкуры, что тебе удастся добыть - я куплю их у тебя по очень хорошей цене.
+		AI_Output(other,self, " DIA_Bosper_SeekWork_15_07 " );	// I can give you some skins, if that's what you meant.
+		AI_Output(self,other, " DIA_Bosper_SeekWork_11_08 " );	// Great! Bring me all the skins you can get - I will buy them from you at a very good price.
 	};
-	B_LogEntry(TOPIC_Lehrling,"Боспер ищет нового ученика. Я могу начать работать у него.");
+	B_LogEntry(TOPIC_Lehrling, " Bosper is looking for a new student. I can start working for him. " );
 };
 
 
 var int Bosper_HintToJob;
 var int Bosper_StartGuild;
 
-instance DIA_Bosper_LEHRLING(C_Info)
+instance DIA_Bosper_LEHRLING (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 2;
 	condition = DIA_Bosper_LEHRLING_Condition;
 	information = DIA_Bosper_LEHRLING_Info;
 	permanent = TRUE;
-	description = "Я хочу стать твоим учеником!";
+	description = " I want to be your student! " ;
 };
 
 func int DIA_Bosper_LEHRLING_Condition()
@@ -186,155 +187,155 @@ func int DIA_Bosper_LEHRLING_Condition()
 
 func void DIA_Bosper_LEHRLING_Info()
 {
-	var int stimmen;
-	stimmen = 0;
-	AI_Output(other,self,"DIA_Bosper_LEHRLING_15_00");	//Я хочу стать твоим учеником!
-	if(MIS_Bosper_WolfFurs == LOG_SUCCESS)
+	var int vote;
+	vote = 0 ;
+	AI_Output(other,self, " DIA_Bosper_LEHRLING_15_00 " );	// I want to be your student!
+	if (MIS_Bosper_WolfFurs ==  LOG_SUCCESS )
 	{
-		AI_Output(self,other,"DIA_Bosper_LEHRLING_11_01");	//(ухмыляется) Отлично! Похоже, ты уже знаешь основы.
-		stimmen = stimmen + 1;
-		if(Harad.aivar[AIV_TalkedToPlayer] == TRUE)
+		AI_Output(self,other, " DIA_Bosper_LEHRLING_11_01 " );	// (grins) Great! It looks like you already know the basics.
+		vote = vote +  1 ;
+		if (Harad.aivar[AIV_TalkedToPlayer] ==  TRUE )
 		{
 			if((MIS_Harad_Orc == LOG_SUCCESS) || (MIS_HakonBandits == LOG_SUCCESS))
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_02");	//Харад считает, что ты хороший человек.
-				stimmen = stimmen + 1;
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_02 " );	// Harad thinks you're a good person.
+				vote = vote +  1 ;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_03");	//Но Харад пока не уверен в твоих способностях.
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_03 " );	// But Harad isn't sure of your abilities yet.
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_04");	//Но Харад говорит, что никогда не видел тебя.
+			AI_Output(self,other, " DIA_Bosper_LEHRLING_11_04 " );	// But Harad says he never saw you.
 		};
-		if(Thorben.aivar[AIV_TalkedToPlayer] == TRUE)
+		if (Thorben.aivar[AIV_TalkedToPlayer] ==  TRUE )
 		{
 			if(MIS_Thorben_GetBlessings == LOG_SUCCESS)
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_05");	//Торбен дает тебе свое благословение. Я не так набожен, как он, но все же это хорошо.
-				stimmen = stimmen + 1;
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_05 " );	// Torben gives you his blessing. I'm not as devout as he is, but it's still good.
+				vote = vote +  1 ;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_06");	//Торбен даст тебе свое одобрение только с благословения богов.
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_06 " );	// Torben will give you his approval only with the blessing of the gods.
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_07");	//Торбен понятия не имеет, кто ты такой.
+			AI_Output(self,other, " DIA_Bosper_LEHRLING_11_07 " );	// Torben has no idea who you are.
 		};
-		if(Constantino.aivar[AIV_TalkedToPlayer] == TRUE)
+		if (Constantino.aivar[AIV_TalkedToPlayer] ==  TRUE )
 		{
 			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_08");	//Константино говорит, что ты можешь стать учеником кого захочешь.
-				stimmen = stimmen + 1;
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_08 " );	// Constantino says you can become a student of whoever you want.
+				vote = vote +  1 ;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_09");	//Константино говорит, что ты обвиняешься в преступлении в городе - надеюсь, это какая-нибудь ерунда?
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_10");	//Позаботься, чтобы этот вопрос был улажен.
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_09 " );	// Constantino says you're accused of a crime in the city - I hope this is some kind of nonsense?
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_10 " );	// Make sure this issue is resolved.
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_11");	//Константино никогда даже не слышал о тебе.
+			AI_Output(self,other, " DIA_Bosper_LEHRLING_11_11 " );	// Constantino has never even heard of you.
 		};
-		if(Matteo.aivar[AIV_TalkedToPlayer] == TRUE)
+		if (Matteo.aivar[AIV_TalkedToPlayer] ==  TRUE )
 		{
 			if(MIS_Matteo_Gold == LOG_SUCCESS)
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_12");	//Маттео говорит, что ты стоишь столько же, сколько золото равное твоему весу.
-				stimmen = stimmen + 1;
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_12 " );	// Matteo says you're worth as much as gold equal to your weight.
+				vote = vote +  1 ;
 			}
 			else if(MIS_Matteo_Gold == LOG_Running)
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_13");	//Маттео упомянул о каких-то долгах - я не знаю, что он имеет в виду, но тебе лучше поговорить с ним.
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_13 " );	// Matteo mentioned some debt - I don't know what he means, but you better talk to him.
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_14");	//Маттео говорит, что еще не говорил с тобой об этом.
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_14 " );	// Matteo says he hasn't talked to you about this yet.
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_15");	//Маттео говорит, что никогда не видел тебя.
+			AI_Output(self,other, " DIA_Bosper_LEHRLING_11_15 " );	// Matteo says he never saw you.
 		};
-		if(stimmen >= 4)
+		if (vote >=  4 )
 		{
-			if(stimmen == 5)
+			if (vote ==  5 )
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_16");	//Это означает, что ты получил одобрение всех мастеров!
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_16 " );	// This means that you have received the approval of all the masters!
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_17");	//Ты получил одобрение четырех мастеров. Этого достаточно, чтобы быть принятым в ученики.
+				AI_Output(self,other, " DIA_Bosper_LEHRLING_11_17 " );	// You have received the approval of the four masters. This is enough to be accepted as a student.
 			};
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_18");	//Ты можешь начать работать на меня когда только захочешь.
+			AI_Output(self,other, " DIA_Bosper_LEHRLING_11_18 " );	// You can start working for me whenever you want.
 			Info_ClearChoices(DIA_Bosper_LEHRLING);
-			Info_AddChoice(DIA_Bosper_LEHRLING,"Хорошо, я подумаю над этим.",DIA_Bosper_LEHRLING_Later);
-			Info_AddChoice(DIA_Bosper_LEHRLING,"Я готов стать твоим учеником.",DIA_Bosper_LEHRLING_OK);
+			Info_AddChoice(DIA_Bosper_LEHRLING, " Okay, I'll think about it. " ,DIA_Bosper_LEHRLING_Later);
+			Info_AddChoice(DIA_Bosper_LEHRLING, " I'm ready to be your student. " ,DIA_Bosper_LEHRLING_OK);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_19");	//Тебе нужно получить одобрение хотя бы четырех мастеров. Без этого ты не сможешь стать учеником в нижней части города.
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_20");	//Это означает, что ты должен поговорить со всеми, кто еще сомневается в тебе.
+			AI_Output(self,other, " DIA_Bosper_LEHRLING_11_19 " );	// You need to get the approval of at least four masters. Without that, you won't be able to become a disciple in the lower part of the city.
+			AI_Output(self,other, " DIA_Bosper_LEHRLING_11_20 " );	// This means you should talk to anyone who still doubts you.
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_LEHRLING_11_21");	//Прежде чем взять тебя к себе, я должен сначала понять, годен ли ты вообще хоть на что-то.
-		if(MIS_Bosper_Bogen == LOG_SUCCESS)
+		AI_Output(self,other, " DIA_Bosper_LEHRLING_11_21 " );	// Before I take you in, I first need to know if you're good for anything at all.
+		if (MIS_Bosper_Bogen ==  LOG_SUCCESS )
 		{
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_22");	//Ты вернул назад мой лук, но это ничего не говорит о твоем таланте охотника.
+			AI_Output(self,other, " DIA_Bosper_LEHRLING_11_22 " );	// You got my bow back, but that says nothing about your talent as a hunter.
 		};
-		Bosper_HintToJob = TRUE;
+		Bosper_HintToJob = TRUE ;
 	};
 };
 
 func void DIA_Bosper_LEHRLING_OK()
 {
-	AI_Output(other,self,"DIA_Bosper_LEHRLING_OK_15_00");	//Я готов стать твоим учеником.
-	AI_Output(self,other,"DIA_Bosper_LEHRLING_OK_11_01");	//Ты не пожалеешь об этом! Думаю, мы сработаемся.
-	AI_Output(self,other,"DIA_Bosper_LEHRLING_OK_11_02");	//Ах да, чуть не забыл. Вот - возьми этот доспех! Он надежно защитит тебя, когда ты пойдешь на охоту.
+	AI_Output(other,self, " DIA_Bosper_LEHRLING_OK_15_00 " );	// I'm ready to become your student.
+	AI_Output(self,other, " DIA_Bosper_LEHRLING_OK_11_01 " );	// You won't regret it! I think we'll work.
+	AI_Output(self,other, " DIA_Bosper_LEHRLING_OK_11_02 " );	// Oh yeah, I almost forgot. Here, take this armor! It will reliably protect you when you go hunting.
 	B_GiveInvItems(self,other,ITAR_Leather_L,1);
-	AI_Output(self,other,"DIA_Bosper_LEHRLING_OK_11_03");	//И этот лук!
+	AI_Output(self,other, " DIA_Bosper_LEHRLING_OK_11_03 " );	// And this bow!
 	B_GiveInvItems(self,other,itrw_bospbow_l_03,1);
-	AI_Output(self,other,"DIA_Bosper_LEHRLING_OK_11_04");	//И чтобы ты мог им правильно пользоваться - я научу тебя паре новых трюков.
+	AI_Output(self,other, " DIA_Bosper_LEHRLING_OK_11_04 " );	// And so you can use it properly - I'll teach you a couple of new tricks.
 	B_RaiseAttribute_Bonus_Many(other,ATR_DEXTERITY,5);
 	B_RaiseFightTalent_Bonus(other,NPC_TALENT_BOW,5);
-	AI_Print(PRINT_BOSPERBONUS);
+	AI_Print( PRINT_BOSPERBONUS );
 	Player_IsApprentice = APP_Bosper;
 	Npc_ExchangeRoutine(Lothar,"START");
 	Bosper_StartGuild = other.guild;
 	Bosper_Lehrling_Day = Wld_GetDay();
 	Wld_AssignRoomToGuild("gritta",GIL_NONE);
 	MIS_Apprentice = LOG_SUCCESS;
-	B_GivePlayerXP(XP_Lehrling);
+	B_GivePlayerXP(XP_apprentice);
 	Log_CreateTopic(Topic_Bonus,LOG_NOTE);
-	B_LogEntry(Topic_Bonus,"Боспер взял меня к себе в ученики. Теперь я имею доступ в верхний район города. ");
+	B_LogEntry(Topic_Bonus, " Bosper took me on as his apprentice. Now I have access to the uptown. " );
 	Info_ClearChoices(DIA_Bosper_LEHRLING);
 };
 
 func void DIA_Bosper_LEHRLING_Later()
 {
-	AI_Output(other,self,"DIA_Bosper_LEHRLING_Later_15_00");	//Хорошо, я подумаю над этим.
-	AI_Output(self,other,"DIA_Bosper_LEHRLING_Later_11_01");	//Смотри, не прими ошибочного решения! Ты лучше всего подходишь именно для моей работы.
+	AI_Output(other,self, " DIA_Bosper_LEHRLING_Later_15_00 " );	// Okay, I'll think about it.
+	AI_Output(self,other, " DIA_Bosper_LEHRLING_Later_11_01 " );	// Watch out, don't make the wrong decision! You are the best fit for my job.
 	Info_ClearChoices(DIA_Bosper_LEHRLING);
 };
 
 var int Bosper_LeatherBought;
 
-instance DIA_Bosper_LEATHER(C_Info)
+instance DIA_Bosper_LEATHER (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 850;
 	condition = DIA_Bosper_LEATHER_Condition;
 	information = DIA_Bosper_LEATHER_Info;
 	permanent = TRUE;
-	description = "Купить тяжелый кожаный доспех. (Цена: 500 монет)";
+	description = " Buy heavy leather armor. (Price: 500 coins) " ;
 };
 
 func int DIA_Bosper_LEATHER_Condition()
@@ -347,28 +348,28 @@ func int DIA_Bosper_LEATHER_Condition()
 
 func void DIA_Bosper_LEATHER_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_LEATHER_01_00");	//Продай мне тяжелый кожаный доспех.
+	AI_Output(other,self, " DIA_Bosper_LEATHER_01_00 " );	// Sell me some heavy leather armor.
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,500))
 	{
-		AI_Output(self,other,"DIA_Bosper_LEATHER_01_01");	//Как скажешь! Вот, держи. Он тебе понравится!
+		AI_Output(self,other, " DIA_Bosper_LEATHER_01_01 " );	// As you say! Here you are. You will like it!
 		B_GiveInvItems(self,other,ITAR_Leather_M,1);
 		Bosper_LeatherBought = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_LEATHER_01_02");	//У тебя недостаточно золота, приятель.
+		AI_Output(self,other, " DIA_Bosper_LEATHER_01_02 " );	// You don't have enough gold, mate.
 	};
 };
 
-instance DIA_Bosper_OtherMasters(C_Info)
+instance DIA_Bosper_OtherMasters (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 3;
 	condition = DIA_Bosper_OtherMasters_Condition;
 	information = DIA_Bosper_OtherMasters_Info;
 	permanent = FALSE;
-	description = "А что если я захочу поступить в ученики к другому мастеру?";
+	description = " What if I want to apprentice with another master? " ;
 };
 
 func int DIA_Bosper_OtherMasters_Condition()
@@ -381,23 +382,23 @@ func int DIA_Bosper_OtherMasters_Condition()
 
 func void DIA_Bosper_OtherMasters_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_OtherMasters_15_00");	//А что если я захочу поступить в ученики к другому мастеру?
+	AI_Output(other,self, " DIA_Bosper_OtherMasters_15_00 " );	// What if I want to be apprenticed to another master?
 	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_01");	//Бред!
-	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_02");	//Харад и Маттео уже имеют учеников.
-	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_03");	//Алхимик Константино - одиночка! У него не было ученика уже многие годы.
-	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_04");	//А что касается Торбена - все знают, что он слишком беден. Он, вероятно, даже не сможет платить тебе.
-	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_05");	//А мне вот, например, очень нужен ученик. И плачу я хорошо.
-	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_06");	//Но не важно, чьим учеником ты хочешь стать - тебе понадобится одобрение всех мастеров из нижней части города...
+	AI_Output(self,other, " DIA_Bosper_OtherMasters_11_02 " );	// Harad and Matteo already have students.
+	AI_Output(self,other, " DIA_Bosper_OtherMasters_11_03 " );	// Alchemist Constantino is a loner! He had not had an apprentice for many years.
+	AI_Output(self,other, " DIA_Bosper_OtherMasters_11_04 " );	// As for Torben, everyone knows he's too poor. He probably won't even be able to pay you.
+	AI_Output(self,other, " DIA_Bosper_OtherMasters_11_05 " );	// And here, for example, I really need a student. And I cry well.
+	AI_Output(self,other, " DIA_Bosper_OtherMasters_11_06 " );	// But no matter whose apprentice you want to become, you'll need the approval of all the masters from the bottom of the city...
 };
 
-instance DIA_Bosper_Bartok(C_Info)
+instance DIA_Bosper_Bartok (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 4;
 	condition = DIA_Bosper_Bartok_Condition;
 	information = DIA_Bosper_Bartok_Info;
 	permanent = FALSE;
-	description = "А почему твой ученик бросил работу?";
+	description = " Why did your student quit his job? " ;
 };
 
 func int DIA_Bosper_Bartok_Condition()
@@ -410,24 +411,24 @@ func int DIA_Bosper_Bartok_Condition()
 
 func void DIA_Bosper_Bartok_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_Bartok_15_00");	//А почему твой ученик бросил работу?
-	AI_Output(self,other,"DIA_Bosper_Bartok_11_01");	//Как он сказал, последнее время охотиться стало слишком опасно.
-	AI_Output(self,other,"DIA_Bosper_Bartok_11_02");	//Если тебе это действительно интересно, ты можешь спросить его об этом сам.
-	AI_Output(self,other,"DIA_Bosper_Bartok_11_03");	//Его зовут Барток. Он, вероятно, ошивается где-то у таверны Корагона.
-	AI_Output(self,other,"DIA_Bosper_Bartok_11_04");	//Пройди через подземный проход у кузницы и окажешься прямо перед ним.
+	AI_Output(other,self, " DIA_Bosper_Bartok_15_00 " );	// Why did your student quit his job?
+	AI_Output(self,other, " DIA_Bosper_Bartok_11_01 " );	// Like he said, hunting has become too dangerous lately.
+	AI_Output(self,other, " DIA_Bosper_Bartok_11_02 " );	// If you're really interested, you can ask him about it yourself.
+	AI_Output(self,other, " DIA_Bosper_Bartok_11_03 " );	// His name is Bartok. He's probably hanging around at Koragon's tavern somewhere.
+	AI_Output(self,other, " DIA_Bosper_Bartok_11_04 " );	// Go through the underground passage at the forge and you'll be right in front of it.
 };
 
-instance DIA_Bosper_ZUSTIMMUNG(C_Info)
+instance DIA_Bosper_CONSENT (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 3;
-	condition = DIA_Bosper_ZUSTIMMUNG_Condition;
-	information = DIA_Bosper_ZUSTIMMUNG_Info;
+	condition = DIA_Bosper_APPROVAL_Condition;
+	information = DIA_Bosper_APPROVAL_Info;
 	permanent = TRUE;
-	description = "Я получу твое одобрение на работу с другим мастером?";
+	description = " Will I get your approval to work with another master? " ;
 };
 
-func int DIA_Bosper_ZUSTIMMUNG_Condition()
+func int DIA_Bosper_APPROVAL_Condition()
 {
 	if(Npc_KnowsInfo(other,DIA_Bosper_OtherMasters) && (Player_IsApprentice == APP_NONE))
 	{
@@ -435,56 +436,56 @@ func int DIA_Bosper_ZUSTIMMUNG_Condition()
 	};
 };
 
-var int Bosper_Zustimmung_Once;
+var int Bosper_Consent_Once;
 
-func void DIA_Bosper_ZUSTIMMUNG_Info()
+func void DIA_Bosper_CONSENT_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_ZUSTIMMUNG_15_00");	//Я получу твое одобрение на работу с другим мастером?
-	if((MIS_Bosper_Bogen == LOG_SUCCESS) || (MIS_Bosper_WolfFurs == LOG_SUCCESS))
+	AI_Output(other,self, " DIA_Bosper_ZUSTIMMUNG_15_00 " );	// Will I get your approval to work with another master?
+	if ((MIS_Bosper_Bogen ==  LOG_SUCCESS ) || (MIS_Bosper_WolfFurs ==  LOG_SUCCESS ))
 	{
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_01");	//(разочарованно) Я надеялся, что ты выберешь меня.
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_02");	//Но если ты решил так...
-		AI_Output(other,self,"DIA_Bosper_ZUSTIMMUNG_15_03");	//Это означает, что ты проголосуешь за меня?
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_04");	//Если никто больше из мастеров не будет возражать - то да.
-		if(MIS_Bosper_Bogen == LOG_SUCCESS)
+		AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_01 " );	// (disappointed) I was hoping you'd pick me.
+		AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_02 " );	// But if you decide so...
+		AI_Output(other,self, " DIA_Bosper_ZUSTIMMUNG_15_03 " );	// Does this mean you will vote for me?
+		AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_04 " );	// If no other masters object, then yes.
+		if (MIS_Bosper_Bogen ==  LOG_SUCCESS )
 		{
-			AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_05");	//Ты ведь все же вернул назад мой лук.
+			AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_05 " );	// You got my bow back after all.
 		};
-		if(MIS_Bosper_WolfFurs == LOG_SUCCESS)
+		if (MIS_Bosper_WolfFurs ==  LOG_SUCCESS )
 		{
-			AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_06");	//Но из тебя бы получился такой хороший охотник!
+			AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_06 " );	// But you'd make such a good hunter!
 		};
-		if(Bosper_Zustimmung_Once == FALSE)
+		if (Bosper_Approval_Once ==  FALSE )
 		{
-			B_GivePlayerXP(XP_Zustimmung);
-			Bosper_Zustimmung_Once = TRUE;
-			B_LogEntry(TOPIC_Lehrling,"Боспер даст свое согласие, если я захочу стать учеником у другого мастера.");
+			B_GivePlayerXP(XP_Consent);
+			Bosper_Agreement_Once = TRUE ;
+			B_LogEntry(TOPIC_Lehrling, " Bosper will give his consent if I want to become an apprentice with another master. " );
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_07");	//(вздыхает) Хорошо! Ты получишь мое одобрение - но при одном условии.
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_08");	//Поработай на меня, хотя бы недолго.
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_09");	//Таким образом, ты сможешь понять, нравится тебе мое ремесло или нет.
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_10");	//И кто знает - может это тебе так понравится, что ты останешься со мной.
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_11");	//Если ты достаточно хорош, чтобы стать МОИМ учеником, то ты также подойдешь и другим мастерам.
-		Bosper_HintToJob = TRUE;
+		AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_07 " );	// (sighs) Good! You will have my approval - but on one condition.
+		AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_08 " );	// Work for me, at least for a little while.
+		AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_09 " );	// This way you can see if you like my craft or not.
+		AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_10 " );	// And who knows - maybe you'll like it so much that you'll stay with me.
+		AI_Output(self,other, " DIA_Bosper_ZUSTIMMUNG_11_11 " );	// If you're good enough to be MY apprentice, then you'll be good enough for other masters as well.
+		Bosper_HintToJob = TRUE ;
 	};
 };
 
-instance DIA_Bosper_Job(C_Info)
+instance DIA_Bosper_Job (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 2;
 	condition = DIA_Bosper_Job_Condition;
 	information = DIA_Bosper_Job_Info;
 	permanent = FALSE;
-	description = "Что ты хочешь, чтобы я сделал для тебя?";
+	description = " What do you want me to do for you? " ;
 };
 
 func int DIA_Bosper_Job_Condition()
 {
-	if(Bosper_HintToJob == TRUE)
+	if (Bosper_HintToJob ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -492,48 +493,48 @@ func int DIA_Bosper_Job_Condition()
 
 func void DIA_Bosper_Job_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_Job_15_00");	//Что ты хочешь, чтобы я сделал для тебя?
+	AI_Output(other,self, " DIA_Bosper_Job_15_00 " );	// What do you want me to do for you?
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 	{
-		AI_Output(self,other,"DIA_Bosper_Job_11_01");	//Я научу тебя снимать шкуры с животных, и ты принесешь мне - скажем - полдюжины волчьих шкур.
+		AI_Output(self,other, " DIA_Bosper_Job_11_01 " );	// I'll teach you how to skin animals, and you'll bring me - say - half a dozen wolf skins.
 		Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
-		B_LogEntry(TOPIC_CityTeacher,"Боспер может обучить меня снимать шкуры с животных.");
+		B_LogEntry(TOPIC_CityTeacher, " Bosper can teach me how to skin animals. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_Job_11_02");	//Принеси мне полдюжины волчьих шкур.
+		AI_Output(self,other, " DIA_Bosper_Job_11_02 " );	// Bring me half a dozen wolf pelts.
 	};
-	AI_Output(self,other,"DIA_Bosper_Job_11_03");	//Тогда я пойму, что ты освоил это ремесло.
-	AI_Output(self,other,"DIA_Bosper_Job_11_04");	//Если только у тебя не уйдет на это целая вечность, и если шкуры будут в приемлемом состоянии. И тогда я возьму тебя к себе, если ты захочешь.
+	AI_Output(self,other, " DIA_Bosper_Job_11_03 " );	// Then I will understand that you have mastered this craft.
+	AI_Output(self,other, " DIA_Bosper_Job_11_04 " );	// Unless it takes you forever, and if the skins are in acceptable condition. And then I'll take you to me, if you want.
 	if(Npc_KnowsInfo(other,DIA_Bosper_OtherMasters))
 	{
-		AI_Output(self,other,"DIA_Bosper_Job_11_05");	//Или (вздыхает) ты сможешь стать учеником другого мастера - если ты этого действительно хочешь.
+		AI_Output(self,other, " DIA_Bosper_Job_11_05 " );	// Or (sighs) you can become another master's apprentice - if that's what you really want.
 	};
 	MIS_Bosper_WolfFurs = LOG_Running;
 	Log_CreateTopic(TOPIC_BosperWolf,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BosperWolf,LOG_Running);
-	B_LogEntry(TOPIC_BosperWolf,"Я должен принести Босперу шесть волчьих шкур. Тогда я смогу либо работать на него, либо получу его одобрение на работу с другими мастерами.");
+	B_LogEntry(TOPIC_BosperWolf, " I have to bring six wolf skins to Bosper. Then I can either work for him or get his approval to work with other masters. " );
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 	{
-		B_LogEntry(TOPIC_BosperWolf,"Я должен попросить его обучить меня снимать шкуры с животных.");
+		B_LogEntry(TOPIC_BosperWolf, " I should ask him to teach me how to skin animals. " );
 	};
 };
 
 
-instance DIA_Bosper_BringFur(C_Info)
+instance DIA_Bosper_BringFur (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 102;
 	condition = DIA_Bosper_BringFur_Condition;
 	information = DIA_Bosper_BringFur_Info;
 	permanent = TRUE;
-	description = "Насчет волчьих шкур...";
+	description = " About the wolf skins... " ;
 };
 
 
 func int DIA_Bosper_BringFur_Condition()
 {
-	if(MIS_Bosper_WolfFurs == LOG_Running)
+	if (MIS_Bosper_WolfFurs == LOG_Running)
 	{
 		return TRUE;
 	};
@@ -541,39 +542,39 @@ func int DIA_Bosper_BringFur_Condition()
 
 func void DIA_Bosper_BringFur_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_BringFur_15_00");	//Насчет волчьих шкур...
+	AI_Output(other,self, " DIA_Bosper_BringFur_15_00 " );	// About wolf skins...
 
 	if(Player_IsApprentice > APP_NONE)
 	{
-		AI_Output(self,other,"DIA_Bosper_BringFur_11_01");	//Ты уже стал учеником другого мастера. Я буду покупать у тебя шкуры по обычной цене.
-		MIS_Bosper_WolfFurs = LOG_OBSOLETE;
+		AI_Output(self,other, " DIA_Bosper_BringFur_11_01 " );	// You've already become another master's apprentice. I will buy skins from you at the regular price.
+		MIS_Bosper_WolfFurs = LOG_OBSOLETE ;
 		return;
 	};
 	if(B_GiveInvItems(other,self,ItAt_WolfFur,6))
 	{
-		B_GivePlayerXP(XP_Bosper_Bogen);
-		AI_Output(other,self,"DIA_Bosper_BringFur_15_02");	//Я принес их - вот.
-		AI_Output(self,other,"DIA_Bosper_BringFur_11_03");	//Отлично! Я знал, что ты подходишь для этой работы.
-		AI_Output(self,other,"DIA_Bosper_BringFur_11_04");	//Вот деньги, как я и обещал тебе.
+		B_GivePlayerXP(XP_Bosper_Book);
+		AI_Output(other,self, " DIA_Bosper_BringFur_15_02 " );	// I brought them - here.
+		AI_Output(self,other, " DIA_Bosper_BringFur_11_03 " );	// Great! I knew you were right for the job.
+		AI_Output(self,other, " DIA_Bosper_BringFur_11_04 " );	// Here's the money, as I promised you.
 		B_GiveInvItems(self,other,ItMi_Gold,Value_WolfFur * 3);
-		AI_Output(self,other,"DIA_Bosper_BringFur_11_05");	//И? Что скажешь? Разве это не лучше, чем корпеть над мечами день напролет или наполнять бутылочки в пыльной каморке?
-		MIS_Bosper_WolfFurs = LOG_SUCCESS;
-		B_LogEntry(TOPIC_Lehrling,"Боспер примет меня в ученики, если другие мастера не будут против.");
+		AI_Output(self,other, " DIA_Bosper_BringFur_11_05 " );	// And? What do you say? Isn't that better than poring over swords all day long or filling bottles in a dusty closet?
+		MIS_Bosper_WolfFurs = LOG_SUCCESS ;
+		B_LogEntry(TOPIC_Lehrling, " Bosper will accept me as an apprentice if the other masters don't mind. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_BringFur_11_06");	//Мы договорились на полдюжины - но у тебя еще есть время. Иди и добудь эти шкуры.
+		AI_Output(self,other, " DIA_Bosper_BringFur_11_06 " );	// We agreed on half a dozen - but you still have time. Go and get those skins.
 	};
 };
 
-instance DIA_Bosper_TeachFUR(C_Info)
+instance DIA_Bosper_TeachFUR (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 2;
 	condition = DIA_Bosper_TeachFUR_Condition;
 	information = DIA_Bosper_TeachFUR_Info;
 	permanent = TRUE;
-	description = "Научи меня снимать шкуры с животных.";
+	description = " Teach me how to skin animals. " ;
 };
 
 func int DIA_Bosper_TeachFUR_Condition()
@@ -586,7 +587,7 @@ func int DIA_Bosper_TeachFUR_Condition()
 
 func void DIA_Bosper_TeachFUR_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_TeachFUR_15_00");	//Научи меня снимать шкуры с животных.
+	AI_Output(other,self, " DIA_Bosper_TeachFUR_15_00 " );	// Teach me how to skin animals.
 	Info_ClearChoices(DIA_Bosper_TeachFUR);
 	Info_AddChoice(DIA_Bosper_TeachFUR,Dialog_Back,DIA_Bosper_TeachFUR_Back);
 	Info_AddChoice(DIA_Bosper_TeachFUR,b_buildlearnstringforsmithhunt("Содрать шкуру",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Fur)),DIA_Bosper_TeachFUR_Fur);
@@ -601,14 +602,14 @@ func void DIA_Bosper_TeachFUR_Fur()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Fur))
 	{
-		AI_Output(self,other,"DIA_Bosper_TeachFUR_11_01");	//Хорошо! Слушай. Это довольно просто.
-		AI_Output(self,other,"DIA_Bosper_TeachFUR_11_02");	//Берешь острый нож и разрезаешь брюхо животного. Затем делаешь несколько небольших надрезов на внутренней стороне ног, и снимаешь шкуру.
+		AI_Output(self,other, " DIA_Bosper_TeachFUR_11_01 " );	// Good! Listen. It's pretty simple.
+		AI_Output(self,other, " DIA_Bosper_TeachFUR_11_02 " );	// You take a sharp knife and cut open the animal's belly. Then you make a few small incisions on the inside of the legs, and remove the skin.
 	};
 
 	Info_ClearChoices(DIA_Bosper_TeachFUR);
 };
 
-instance DIA_Bosper_Trade(C_Info)
+instance DIA_Bosper_Trade (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 700;
@@ -616,12 +617,12 @@ instance DIA_Bosper_Trade(C_Info)
 	information = DIA_Bosper_Trade_Info;
 	permanent = TRUE;
 	trade = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 };
 
 func int DIA_Bosper_Trade_Condition()
 {
-	if((MIS_Bosper_WolfFurs == LOG_Success) && (Wld_IsTime(5,0,14,0) || Wld_IsTime(16,0,23,0)))
+	if ((MIS_Bosper_WolfFurs == LOG_Success) && (Wld_IsTime( 5 , 0 , 14 , 0 ) || Wld_IsTime( 16 , 0 , 23 , 0 )))
 	{
 		return TRUE;
 	};
@@ -637,7 +638,7 @@ var int BosperTradeLowBows;
 
 func void DIA_Bosper_Trade_Info()
 {
-	var int daynow;
+	where int daynow;
 	var int bolzenamount;
 
 	if(C_BodyStateContains(self,BS_SIT))
@@ -646,18 +647,18 @@ func void DIA_Bosper_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Bosper_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Bosper_Trade_15_00 " );	// Show me your products.
 
 	daynow = Wld_GetDay();
 
-	if((Player_IsApprentice == APP_Bosper) && (BosperTradeBows == FALSE) && (MIS_Bosper_Bogen == LOG_SUCCESS))
+	if ((Player_IsApprentice == APP_Bosper) && (BosperTradeBows ==  FALSE ) && (MIS_Bosper_Bogen ==  LOG_SUCCESS ))
 	{
-		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_06");	//Поскольку ты помог мне вернуть мой лук и к тому же еще и мой ученик...
-		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_07");	//...то я, пожалуй, смогу продавать тебе не только болты и стрелы, но и довольно неплохие луки.
-		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_08");	//Их, конечно, нельзя назвать произведением искусства, но они вполне годятся для охоты.
-		BosperTradeBows = TRUE;
+		AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_06 " );	// Because you helped me get my bow back, and my apprentice too...
+		AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_07 " );	// ...then I can probably sell you not only bolts and arrows, but pretty good bows as well.
+		AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_08 " );	// Of course, they cannot be called a work of art, but they are quite suitable for hunting.
+		BosperTradeBows = TRUE ;
 	};
-	if((BosperTradeBows == TRUE) && (BosperTradeLowBows == FALSE))
+	if ((BosperTradeBows ==  TRUE ) && (BosperTradeLowBows ==  FALSE ))
 	{
 		CreateInvItems(self,ItRw_Bow_L_01,1);
 		CreateInvItems(self,ItRw_Bow_L_02,1);
@@ -667,13 +668,13 @@ func void DIA_Bosper_Trade_Info()
 		CreateInvItems(self,ItRw_Bow_M_02,1);
 		CreateInvItems(self,ItRw_Bow_M_03,1);
 		CreateInvItems(self,ItRw_Bow_M_04,1);
-		BosperTradeLowBows = TRUE;
+		BosperTradeLowBows = TRUE ;
 	};
-	if(BOSPERARROWSDAY < daynow)
+	if ( BOSPERARROWSDAY  < daynow)
 	{
 		if(Wld_IsTime(12,0,23,59) || (BOSPERARROWSDAY < (daynow - 1)))
 		{
-			bolzenamount = (Kapitel * 25) + (10 * (daynow - BOSPERARROWSDAY - 1));
+			bolzenamount = (Chapter *  25 ) + ( 10  * (daynow -  BOSPERARROWSDAY  -  1 ));
 
 			if(bolzenamount > Npc_HasItems(self,ItRw_Bolt))
 			{
@@ -687,41 +688,41 @@ func void DIA_Bosper_Trade_Info()
 			BOSPERARROWSDAY = daynow;
 		};
 	}
-	else if(BOSPERARROWSSAY == FALSE)
+	else  if ( FOREST PERROWSSAY  ==  FALSE )
 	{
 		if((Npc_HasItems(self,ItRw_Bolt) == 0) && (Npc_HasItems(self,ItRw_Arrow) == 0))
 		{
-			AI_Output(self,other,"DIA_Bosper_Trade_11_03");	//Стрелы и болты закончились - приходи завтра.
+			AI_Output(self,other, " DIA_Bosper_Trade_11_03 " );	// Arrows and bolts are out - come back tomorrow.
 		}
 		else if(Npc_HasItems(self,ItRw_Bolt) == 0)
 		{
-			AI_Output(self,other,"DIA_Bosper_Trade_11_04");	//Болты закончились - приходи завтра.
+			AI_Output(self,other, " DIA_Bosper_Trade_11_04 " );	// Bolts out - come back tomorrow.
 		}
 		else if(Npc_HasItems(self,ItRw_Arrow) == 0)
 		{
-			AI_Output(self,other,"DIA_Bosper_Trade_11_05");	//Стрелы закончились - приходи завтра.
+			AI_Output(self,other, " DIA_Bosper_Trade_11_05 " );	// Arrows out - come back tomorrow.
 		};
 
-		AI_Output(self,other,"DIA_Bosper_Trade_11_06");	//Новые поступления - только завтра к полудню.
-		BOSPERARROWSSAY = TRUE;
+		AI_Output(self,other, " DIA_Bosper_Trade_11_06 " );	// New arrivals - only tomorrow by noon.
+		FOREST PERROWSSAY = TRUE ;
 	};
 
 	B_GiveTradeInv(self);
 };
 
-instance DIA_Bosper_BogenRunning(C_Info)
+instance DIA_Bosper_BogenRunning (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 5;
 	condition = DIA_Bosper_BogenRunning_Condition;
 	information = DIA_Bosper_BogenRunning_Info;
 	permanent = FALSE;
-	description = "Я слышал, что у тебя что-то украли.";
+	description = " I heard something was stolen from you. " ;
 };
 
 func int DIA_Bosper_BogenRunning_Condition()
 {
-	if(MIS_Bosper_Bogen == LOG_Running)
+	if (MIS_Bosper_Bogen == LOG_Running)
 	{
 		return TRUE;
 	};
@@ -729,33 +730,33 @@ func int DIA_Bosper_BogenRunning_Condition()
 
 func void DIA_Bosper_BogenRunning_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_BogenRunning_15_00");	//Я слышал, что у тебя что-то украли.
-	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_01");	//Кто сказал тебе это? Вероятно Барток, да? Ему что, больше нечего было сказать тебе? Ох, ладно.
-	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_02");	//Но если я доберусь до этого ублюдка, никакие молитвы ему не помогут!
-	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_03");	//Я отлучился из своей лавки всего на минуту. А когда вернулся, я увидел только, как он выходил - с моим луком на плече.
-	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_04");	//Я тут же позвал стражу, но этот подонок побежал к гавани. И они потеряли его там!
-	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_05");	//Я спустил на них всех собак за это, и стражники обыскали весь портовый квартал. Но ничего не нашли.
-	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_06");	//Бестолочи!
-	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_07");	//Готов поклясться, что мой лук все еще находится где-то в городе. Я поговорил со стражей у обоих городских ворот, но они не видели, чтобы кто-нибудь выходил из города с луком.
-	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_08");	//Когда я доберусь до этого ублюдка...
+	AI_Output(other,self, " DIA_Bosper_BogenRunning_15_00 " );	// I heard something was stolen from you.
+	AI_Output(self,other, " DIA_Bosper_BogenRunning_11_01 " );	// Who told you this? Probably Bartok, right? Did he have nothing more to say to you? Oh, okay.
+	AI_Output(self,other, " DIA_Bosper_BogenRunning_11_02 " );	// But if I get to that bastard, no amount of prayer will help him!
+	AI_Output(self,other, " DIA_Bosper_BogenRunning_11_03 " );	// I've been out of my shop for just a minute. And when I returned, I only saw how he was leaving - with my bow on his shoulder.
+	AI_Output(self,other, " DIA_Bosper_BogenRunning_11_04 " );	// I immediately called the guards, but this bastard ran to the harbor. And they lost it there!
+	AI_Output(self,other, " DIA_Bosper_BogenRunning_11_05 " );	// I unleashed all the dogs on them for this, and the guards searched the entire port area. But they didn't find anything.
+	AI_Output(self,other, " DIA_Bosper_BogenRunning_11_06 " );	// Stupid!
+	AI_Output(self,other, " DIA_Bosper_BogenRunning_11_07 " );	// I bet my bow is still somewhere in the city. I spoke to the guards at both city gates, but they did not see anyone leaving the city with a bow.
+	AI_Output(self,other, " DIA_Bosper_BogenRunning_11_08 " );	// When I get to that bastard...
 	Log_CreateTopic(TOPIC_BosperBogen,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BosperBogen,LOG_Running);
-	B_LogEntry(TOPIC_BosperBogen,"У Боспера был украден лук. Вор побежал к гавани, и скрылся там. Ополчение обыскало портовый квартал, но они ничего не нашли, хотя лук все еще должен быть в городе.");
+	B_LogEntry(TOPIC_BosperBogen, " Bosper's bow was stolen. The thief ran to the harbor and escaped there. The militia searched the waterfront, but they didn't find anything, although the bow should still be in town. " );
 };
 
-instance DIA_Bosper_BogenSuccess(C_Info)
+instance DIA_Bosper_BogenSuccess (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 6;
 	condition = DIA_Bosper_BogenSuccess_Condition;
 	information = DIA_Bosper_BogenSuccess_Info;
 	permanent = FALSE;
-	description = "Я думаю, это твой лук.";
+	description = " I think this is your bow. " ;
 };
 
 func int DIA_Bosper_BogenSuccess_Condition()
 {
-	if((MIS_Bosper_Bogen == LOG_Running) && (Npc_KnowsInfo(other,DIA_Bosper_BogenRunning) == TRUE) && (Npc_HasItems(other,ItRw_Bow_L_03_MIS) >= 1))
+	if ((MIS_Bosper_Book == LOG_Running) && (Npc_KnowsInfo(other,DIA_Bosper_BookRunning) ==  TRUE ) && (Npc_HasItems(other,ItRw_Bow_L_03_MIS) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -763,41 +764,41 @@ func int DIA_Bosper_BogenSuccess_Condition()
 
 func void DIA_Bosper_BogenSuccess_Info()
 {
-	B_GivePlayerXP(XP_Bosper_Bogen);
-	AI_Output(other,self,"DIA_Bosper_BogenSuccess_15_00");	//Я думаю, это твой лук.
+	B_GivePlayerXP(XP_Bosper_Book);
+	AI_Output(other,self, " DIA_Bosper_BogenSuccess_15_00 " );	// I think it's your bow.
 	B_GiveInvItems(other,self,ItRw_Bow_L_03_MIS,1);
 	Npc_RemoveInvItems(self,ItRw_Bow_L_03_MIS,1);
-	AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_01");	//Мой лук! Где ты нашел его?
-	AI_Output(other,self,"DIA_Bosper_BogenSuccess_15_02");	//В темной дыре, полной крыс.
-	AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_03");	//Надеюсь, у тебя не возникло проблем из-за этого?
-	AI_Output(other,self,"DIA_Bosper_BogenSuccess_15_04");	//Нет! Мне приходилось делать такое и раньше.
-	AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_05");	//Хммм...(одобрительно) Но все же спасибо. Я твой должник!
-	MIS_Bosper_Bogen = LOG_SUCCESS;
-	Log_SetTopicStatus(TOPIC_BosperBogen,LOG_SUCCESS);
-	B_LogEntry(TOPIC_BosperBogen,"Я вернул Босперу его лук.");
+	AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_01 " );	// My bow! Where did you find it?
+	AI_Output(other,self, " DIA_Bosper_BogenSuccess_15_02 " );	// In a dark hole full of rats.
+	AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_03 " );	// I hope you don't get in trouble for this?
+	AI_Output(other,self, " DIA_Bosper_BogenSuccess_15_04 " );	// No! I've had to do this before.
+	AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_05 " );	// Hmmm... (approvingly) Thanks anyway. I owe you!
+	MIS_Bosper_Bogen = LOG_SUCCESS ;
+	Log_SetTopicStatus(TOPIC_BosperBogen, LOG_SUCCESS );
+	B_LogEntry(TOPIC_BosperBogen, " I gave Bosper back his bow. " );
 
-	if((Player_IsApprentice == APP_Bosper) && (BosperTradeBows == FALSE))
+	if ((Player_IsApprentice == APP_Bosper) && (BosperTradeBows ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_06");	//Поскольку ты помог мне вернуть мой лук и к тому же еще и мой ученик...
-		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_07");	//...то я, пожалуй, смогу продавать тебе не только болты и стрелы, но и довольно неплохие луки.
-		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_08");	//Их, конечно, нельзя назвать произведением искусства, но они вполне годятся для охоты.
-		BosperTradeBows = TRUE;
+		AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_06 " );	// Because you helped me get my bow back, and my apprentice too...
+		AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_07 " );	// ...then I can probably sell you not only bolts and arrows, but pretty good bows as well.
+		AI_Output(self,other, " DIA_Bosper_BogenSuccess_11_08 " );	// Of course, they cannot be called a work of art, but they are quite suitable for hunting.
+		BosperTradeBows = TRUE ;
 	};
 };
 
-instance DIA_Bosper_MakeBow(C_Info)
+instance DIA_Bosper_MakeBow (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
 	condition = DIA_Bosper_MakeBow_Condition;
 	information = DIA_Bosper_MakeBow_Info;
 	permanent = FALSE;
-	description = "А откуда ты берешь свои луки?";
+	description = " Where do you get your bows from? " ;
 };
 
 func int DIA_Bosper_MakeBow_Condition()
 {
-	if((BosperTradeBows == TRUE) && (Player_IsApprentice == APP_Bosper))
+	if ((BosperTradeBows ==  TRUE ) && (Player_IsApprentice == APP_Bosper))
 	{
 		return TRUE;
 	};
@@ -805,27 +806,27 @@ func int DIA_Bosper_MakeBow_Condition()
 
 func void DIA_Bosper_MakeBow_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_MakeBow_01_00");	//А откуда ты берешь свои луки?
-	AI_Output(self,other,"DIA_Bosper_MakeBow_01_01");	//(удивленно) Как откуда? Я их делаю сам!
-	AI_Output(self,other,"DIA_Bosper_MakeBow_01_02");	//Правда, совсем немного, поскольку производство каждого из них отнимает довольно много времени.
-	AI_Output(self,other,"DIA_Bosper_MakeBow_01_03");	//Но в конечном счете оно того стоит! Это занятие вполне окупает себя.
-	AI_Output(other,self,"DIA_Bosper_MakeBow_01_04");	//А меня ты мог бы этому научить?
-	AI_Output(self,other,"DIA_Bosper_MakeBow_01_05");	//(задумчиво) Ну, почему бы и нет. В конце концов, ты ведь мой ученик.
-	AI_Output(self,other,"DIA_Bosper_MakeBow_01_06");	//Правда, для этого тебе понадобится некоторый опыт, ибо ремесло это довольно непростое! 
-	AI_Output(self,other,"DIA_Bosper_MakeBow_01_07");	//Ну а денег за это я с тебя, конечно, не возьму.
-	BosperTeachMakeBows = TRUE;
+	AI_Output(other,self, " DIA_Bosper_MakeBow_01_00 " );	// Where do you get your bows from?
+	AI_Output(self,other, " DIA_Bosper_MakeBow_01_01 " );	// (surprised) How from where? I make them myself!
+	AI_Output(self,other, " DIA_Bosper_MakeBow_01_02 " );	// Not much, though, since each of them takes quite a long time to produce.
+	AI_Output(self,other, " DIA_Bosper_MakeBow_01_03 " );	// But it's worth it in the end! This activity is well worth it.
+	AI_Output(other,self, " DIA_Bosper_MakeBow_01_04 " );	// Could you teach me this?
+	AI_Output(self,other, " DIA_Bosper_MakeBow_01_05 " );	// (thoughtfully) Well, why not. After all, you are my student.
+	AI_Output(self,other, " DIA_Bosper_MakeBow_01_06 " );	// True, for this you will need some experience, because the craft is quite difficult!
+	AI_Output(self,other, " DIA_Bosper_MakeBow_01_07 " );	// Well, of course, I won’t take money from you for this.
+	BosperTeachMakeBows = TRUE ;
 	Log_CreateTopic(Topic_TalentMakeBows,LOG_NOTE);
-	B_LogEntry(Topic_TalentMakeBows,"Боспер может научить меня делать луки.");
+	B_LogEntry(Topic_TalentMakeBows, " Bosper can teach me how to make bows. " );
 };
 
-instance DIA_Bosper_BOWTEACH1(C_Info)
+instance DIA_Bosper_BOWTEACH1 (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 5;
 	condition = DIA_Bosper_BOWTEACH1_condition;
 	information = DIA_Bosper_BOWTEACH1_info;
 	permanent = TRUE;
-	description = "Научи меня делать луки (Очки обучения: 1 LP)";
+	description = " Teach me how to make bows (Training Points: 1 LP) " ;
 };
 
 func int DIA_Bosper_BOWTEACH1_condition()
@@ -838,53 +839,53 @@ func int DIA_Bosper_BOWTEACH1_condition()
 
 func void DIA_Bosper_BOWTEACH1_info()
 {
-	AI_Output(other,self,"DIA_Bosper_BOWTEACH1_01_00");	//Научи меня делать луки.
+	AI_Output(other,self, " DIA_Bosper_BOWTEACH1_01_00 " );	// Teach me how to make bows.
 
 	if(hero.lp >= 1)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_01");	//Хорошо. Тогда, пожалуй, начнем с основ.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_02");	//Главное, что тебе следует знать, - это то, что лук состоит из двух основополагающих компонентов - древка и тетивы.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_03");	//Чем лучше качество этих составляющих, тем лучше будет лук, который ты собираешься сделать.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_04");	//Для древка используются разные сорта древесины, каждое из которых имеет разные сочетания изгиба и упругости. 
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_05");	//Если ты возьмешь обычное бревно и сделаешь из него лук, то он треснет пополам при первом же выстреле.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_06");	//Поэтому следует тщательно подходить к выбору того материала, который будет использоваться в производстве.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_07");	//Теперь насчет тетивы. Здесь тоже существуют свои некоторые нюансы.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_08");	//В основном тетива изготавливается из шкур животных - волков, кабанов, мракорисов или варгов. 
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_09");	//Этот материал позволяет тетиве сохранять свои свойства натяжения в любую погоду.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_10");	//Она никогда не размокнет при дожде и не задубеет при лютом морозе.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_11");	//Правда, для этого ее также необходимо будет обработать различными смазками вроде жира или смолы.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_12");	//Что касается самого процесса производства, то тут все просто.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_13");	//Берешь нужную тебе заготовку древесины, щипцы и аккуратно вытачиваешь на столярном верстаке само древко.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_14");	//Затем берешь кусок шкуры, разделочный нож и на шкуродере нарезаешь ее тонкими кусками. 
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_15");	//Далее обрабатываешь каждый из этих кусков жиром или смолой, переплетаешь и высушиваешь их. 
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_16");	//Собственно, так делается тетива. Ну а после на том же верстаке собираешь уже сам лук.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_17");	//Твои первые луки не будут произведением искусств, но если будешь долго практиковаться, то...
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_18");	//...в общем - все придет с опытом.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_19");	//Ну а в дальнейшем я смогу показать тебе, как делать еще более прочные и смертоносные луки.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_01 " );	// Good. Then let's start with the basics.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_02 " );	// The main thing you should know is that the bow has two fundamental components - the shaft and the bowstring.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_03 " );	// The better the quality of these ingredients, the better the bow you're going to make.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_04 " );	// Shafts use different types of wood, each with different combinations of flex and resilience.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_05 " );	// If you take an ordinary log and make a bow out of it, it will crack in half on the first shot.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_06 " );	// Therefore, you should carefully choose the material that will be used in production.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_07 " );	// Now about the string. Here, too, there are some nuances.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_08 " );	// Basically, the bowstring is made from the skins of animals - wolves, wild boars, obscurantists or wargs.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_09 " );	// This material allows the bowstring to maintain its tension properties in any weather.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_10 " );	// She will never get wet in the rain and will not harden in the bitter cold.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_11 " );	// True, for this it will also need to be treated with various lubricants like fat or resin.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_12 " );	// As for the production process itself, everything is simple.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_13 " );	// You take the piece of wood you need, the tongs, and carefully grind the shaft itself on the carpenter's workbench.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_14 " );	// Then you take a piece of the skin, a carving knife and cut it into thin pieces on the skinner.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_15 " );	// Then you process each of these pieces with fat or resin, intertwine and dry them.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_16 " );	// Actually, this is how the string is made. Well, after that, on the same workbench, you already collect the bow itself.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_17 " );	// Your first bows won't be a work of art, but if you practice long enough...
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_18 " );	// ...in general - everything will come with experience.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_19 " );	// Well, in the future, I can show you how to make even more durable and deadly bows.
 		hero.lp = hero.lp - 1;
 		BowMake_01 = TRUE;
-		AI_Print("Изучен рецепт изготовления луков - 'Короткий деревянный лук'");
-		B_LogEntry(Topic_TalentMakeBows,"Для создания древков луков мне понадобится: столярный верстак, заготовка из определенной породы древесины и обычные щипцы.");
-		B_LogEntry_Quiet(Topic_TalentMakeBows,"Для создания тетивы мне понадобится: шкуродер, разделочный нож, кусок шкуры животного и смазочный материал в виде жира или смолы.");
-		B_LogEntry_Quiet(Topic_TalentMakeBows,"Для создания самого лука мне понадобится: столярный верстак, готовое древко лука, тетива и обычные щипцы.");
-		B_LogEntry_Quiet(Topic_TalentMakeBows,"Чтобы сделать короткий деревянный лук, мне понадобится тетива из шкуры волка, обычное древко лука и смола.");
+		AI_Print( " Learned bow crafting recipe - 'Short wooden bow' " );
+		; _ _ _ _
+		B_LogEntry_Quiet(Topic_TalentMakeBows, " To create a bowstring I will need: a skinner, a carving knife, a piece of animal skin and a lubricant in the form of fat or resin. " );
+		; _ _ _ _
+		B_LogEntry_Quiet(Topic_TalentMakeBows, " To make a short wooden bow, I need a wolfskin string, a regular bow shaft, and resin. " );
 		Snd_Play("LevelUP");
 	}
 	else if(hero.lp < 1)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_22");	//Ты еще не готов к этому! Приходи, когда наберешься опыта.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH1_01_22 " );	// You're not ready for this yet! Come back when you've gained experience.
 		AI_StopProcessInfos(self);
 	};
 };
 
-instance DIA_Bosper_WhereBowWood(C_Info)
+instances DIA_Bosper_WhereBowWood (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 4;
 	condition = DIA_Bosper_WhereBowWood_Condition;
 	information = DIA_Bosper_WhereBowWood_Info;
 	permanent = FALSE;
-	description = "Где мне взять заготовки из древесины?";
+	description = " Where can I get wood pieces? " ;
 };
 
 func int DIA_Bosper_WhereBowWood_Condition()
@@ -897,22 +898,22 @@ func int DIA_Bosper_WhereBowWood_Condition()
 
 func void DIA_Bosper_WhereBowWood_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_WhereBowWood_01_00");	//Где мне взять заготовки из древесины?
-	AI_Output(self,other,"DIA_Bosper_WhereBowWood_01_01");	//Поговори об этом с Торбеном. Наверняка у него их навалом.
-	AI_Output(self,other,"DIA_Bosper_WhereBowWood_01_02");	//Может быть, он что-нибудь тебе и продаст.
-	TorbenSellWood = TRUE;
+	AI_Output(other,self, " DIA_Bosper_WhereBowWood_01_00 " );	// Where can I get wood blanks?
+	AI_Output(self,other, " DIA_Bosper_WhereBowWood_01_01 " );	// Talk to Torben about it. He probably has a lot of them.
+	AI_Output(self,other, " DIA_Bosper_WhereBowWood_01_02 " );	// Maybe he'll sell you something.
+	TorbenSellWood = TRUE ;
 	Log_CreateTopic(Topic_TalentMakeBows,LOG_NOTE);
-	B_LogEntry(Topic_TalentMakeBows,"По поводу заготовок из древесины Боспер посоветовал мне поговорить с Торбеном.");
+	B_LogEntry(Topic_TalentMakeBows, " Bosper told me to talk to Torben about the wood blanks. " );
 };
 
-instance DIA_Bosper_BosperBuyAllBows(C_Info)
+instance DIA_Bosper_BosperBuyAllBows (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 4;
 	condition = DIA_Bosper_BosperBuyAllBows_Condition;
 	information = DIA_Bosper_BosperBuyAllBows_Info;
 	permanent = FALSE;
-	description = "А что мне делать с изготовленными луками?";
+	description = " What should I do with crafted bows? " ;
 };
 
 func int DIA_Bosper_BosperBuyAllBows_Condition()
@@ -925,23 +926,23 @@ func int DIA_Bosper_BosperBuyAllBows_Condition()
 
 func void DIA_Bosper_BosperBuyAllBows_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_BosperBuyAllBows_01_00");	//А что мне делать с изготовленными луками?
-	AI_Output(self,other,"DIA_Bosper_BosperBuyAllBows_01_01");	//Ну, если хочешь, то можешь продать их торговцам на площади. Правда, они тебе дадут за них сущие гроши!
-	AI_Output(self,other,"DIA_Bosper_BosperBuyAllBows_01_02");	//Лучше приноси их мне. Я уверен, мы сумеем договориться.
-	AI_Output(other,self,"DIA_Bosper_BosperBuyAllBows_01_03");	//Я подумаю над этим.
-	BosperBuyAllBows = TRUE;
+	AI_Output(other,self, " DIA_Bosper_BosperBuyAllBows_01_00 " );	// What should I do with the crafted bows?
+	AI_Output(self,other, " DIA_Bosper_BosperBuyAllBows_01_01 " );	// Well, if you want, you can sell them to the merchants in the square. True, they will give you mere pennies for them!
+	AI_Output(self,other, " DIA_Bosper_BosperBuyAllBows_01_02 " );	// Better bring them to me. I'm sure we can come to an agreement.
+	AI_Output(other,self, " DIA_Bosper_BosperBuyAllBows_01_03 " );	// I'll think about it.
+	BosperBuyAllBows = TRUE ;
 	Log_CreateTopic(Topic_TalentMakeBows,LOG_NOTE);
-	B_LogEntry(Topic_TalentMakeBows,"Боспер купит у меня все луки, что я изготовлю.");
+	B_LogEntry(Topic_TalentMakeBows, " Bosper will buy all the bows I make from me. " );
 };
 
-instance DIA_Bosper_SellBows(C_Info)
+instance DIA_Bosper_SellBows (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 200;
 	condition = DIA_Bosper_SellBows_Condition;
 	information = DIA_Bosper_SellBows_Info;
 	permanent = TRUE;
-	description = "Я хочу продать изготовленные луки.";
+	description = " I want to sell crafted bows. " ;
 };
 
 func int DIA_Bosper_SellBows_Condition()
@@ -955,90 +956,90 @@ func int DIA_Bosper_SellBows_Condition()
 func void DIA_Bosper_SellBows_Info()
 {
 	var C_Item EquipWeap;
-	var int anzahl_common;
-	var int anzahl_eve;
-	var int anzahl_vyz;
-	var int anzahl_ysuo;
-	var int anzahl_bok;
-	var int gesamt;
+	var int number_common;
+	var int number_eve;
+	var int number_vyz;
+	var int number_ysuo;
+	var int number_bok;
+	var int total;
 	var int lohnbow;
 	var string concatText;
 
 
-	AI_Output(other,self,"DIA_Bosper_SellBows_15_00");	//Я хочу продать изготовленные луки.
+	AI_Output(other,self, " DIA_Bosper_SellBows_15_00 " );	// I want to sell crafted bows.
 	EquipWeap = Npc_GetEquippedRangedWeapon(other);
 
-	anzahl_common = Npc_HasItems(other,ItRw_BowCraft_01);
+	number_common = Npc_HasItems(other,ItRw_BowCraft_01);
 
 	if(Hlp_IsItem(EquipWeap,ItRw_BowCraft_01) == TRUE)
 	{
-		if(anzahl_common > 1)
+		if (number_common >  1 )
 		{
 			Npc_RemoveInvItems(other,ItRw_BowCraft_01,anzahl_common);
 		};
-		anzahl_common -= 1;
+		number_common -=  1 ;
 	};
 
-	anzahl_eve = Npc_HasItems(other,ItRw_BowCraft_02);
+	number_eve = Npc_HasItems(other,ItRw_BowCraft_02);
 
 	if(Hlp_IsItem(EquipWeap,ItRw_BowCraft_02) == TRUE)
 	{
-		if(anzahl_eve > 1)
+		if (number_eve >  1 )
 		{
 			Npc_RemoveInvItems(other,ItRw_BowCraft_02,anzahl_eve);
 		};
-		anzahl_eve = anzahl_eve - 1;
+		number_eve = number_eve -  1 ;
 	};
 
-	anzahl_vyz = Npc_HasItems(other,ItRw_BowCraft_03);
+	number_vyz = Npc_HasItems(other,ItRw_BowCraft_03);
 
 	if(Hlp_IsItem(EquipWeap,ItRw_BowCraft_03) == TRUE)
 	{
-		if(anzahl_vyz > 1)
+		if (number_vyz >  1 )
 		{
 			Npc_RemoveInvItems(other,ItRw_BowCraft_03,anzahl_vyz);
 		};
-		anzahl_vyz = anzahl_vyz - 1;
+		number_vyz = number_vyz -  1 ;
 	};
 
-	anzahl_ysuo = Npc_HasItems(other,ItRw_BowCraft_04);
+	number_ysuo = Npc_HasItems(other,ItRw_BowCraft_04);
 
 	if(Hlp_IsItem(EquipWeap,ItRw_BowCraft_04) == TRUE)
 	{
-		if(anzahl_ysuo > 1)
+		if (number_ysuo >  1 )
 		{
-			Npc_RemoveInvItems(other,ItRw_BowCraft_04,anzahl_ysuo);
+			Npc_RemoveInvItems(other,ItRw_BowCraft_04,number_ysuo);
 		};
-		anzahl_ysuo = anzahl_ysuo - 1;
+		number_ysuo = number_ysuo -  1 ;
 	};
 
-	anzahl_bok = Npc_HasItems(other,ItRw_BowCraft_05);
+	number_bok = Npc_HasItems(other,ItRw_BowCraft_05);
 
 	if(Hlp_IsItem(EquipWeap,ItRw_BowCraft_05) == TRUE)
 	{
-		if(anzahl_bok > 1)
+		if (number_bok >  1 )
 		{
-			Npc_RemoveInvItems(other,ItRw_BowCraft_05,anzahl_bok);
+			Npc_RemoveInvItems(other,ItRw_BowCraft_05,number_bok);
 		};
-		anzahl_bok = anzahl_bok - 1;
+		number_bok = number_bok -  1 ;
 	};
 
-	gesamt = anzahl_common + anzahl_eve + anzahl_vyz + anzahl_ysuo + anzahl_bok;
+	total = number_common + number_eve + number_vyz + number_ysuo + number_bok;
 
-	if(gesamt == 0)
+	if (total ==  0 )
 	{
 		if((Hlp_IsItem(EquipWeap,ItRw_BowCraft_01) == TRUE) || (Hlp_IsItem(EquipWeap,ItRw_BowCraft_02) == TRUE) || (Hlp_IsItem(EquipWeap,ItRw_BowCraft_03) == TRUE) || (Hlp_IsItem(EquipWeap,ItRw_BowCraft_04) == TRUE) || (Hlp_IsItem(EquipWeap,ItRw_BowCraft_05) == TRUE))
 		{
-			AI_Output(self,other,"DIA_Bosper_SellBows_12_01");	//Но кроме того, что висит у тебя за спиной, я не вижу у тебя ни одного лука!
+			AI_Output(self,other, " DIA_Bosper_SellBows_12_01 " );	// But besides what's hanging on your back, I don't see any of your bows!
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Bosper_SellBows_12_04");	//Так сделай их сначала!
+			AI_Output(self,other, " DIA_Bosper_SellBows_12_04 " );	// So make them first!
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_SellBows_12_02");	//Хорошо - давай сюда.
+		AI_Output(self,other, " DIA_Bosper_SellBows_12_02 " );	// Okay - come here.
 
 		if(Hlp_IsItem(EquipWeap,ItRw_BowCraft_01) != TRUE)
 		{
@@ -1054,29 +1055,29 @@ func void DIA_Bosper_SellBows_Info()
 		};
 		if(Hlp_IsItem(EquipWeap,ItRw_BowCraft_04) != TRUE)
 		{
-			Npc_RemoveInvItems(other,ItRw_BowCraft_04,anzahl_ysuo);
+			Npc_RemoveInvItems(other,ItRw_BowCraft_04,number_ysuo);
 		};
 		if(Hlp_IsItem(EquipWeap,ItRw_BowCraft_05) != TRUE)
 		{
-			Npc_RemoveInvItems(other,ItRw_BowCraft_05,anzahl_bok);
+			Npc_RemoveInvItems(other,ItRw_BowCraft_05,number_bok);
 		};
 
 		concatText = b_formgivestring(other,gesamt);
 		AI_Print(concatText);
-		AI_Output(self,other,"DIA_Bosper_SellBows_12_03");	//Отлично! А вот твое золото.
-		lohnbow = (anzahl_common * 50) + (anzahl_eve * 100) + (anzahl_vyz * 200) + (anzahl_ysuo * 300) + (anzahl_bok * 500);
+		AI_Output(self,other, " DIA_Bosper_SellBows_12_03 " );	// Great! Here is your gold.
+		wagebow = (number_common *  50 ) + (number_eve *  100 ) + (number_vyz *  200 ) + (number_ysuo *  300 ) + (number_bok *  500 );
 		B_GiveInvItems(self,other,ItMi_Gold,lohnbow);
 	};
 };
 
-instance DIA_Bosper_BOWTEACH_Other(C_Info)
+instance DIA_Bosper_BOWTEACH_Other (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 5;
 	condition = DIA_Bosper_BOWTEACH_Other_condition;
 	information = DIA_Bosper_BOWTEACH_Other_info;
 	permanent = TRUE;
-	description = "Изготовлению каких луков я еще смогу у тебя обучиться?";
+	description = " What other bows can I learn how to make from you? " ;
 };
 
 func int DIA_Bosper_BOWTEACH_Other_condition()
@@ -1089,26 +1090,26 @@ func int DIA_Bosper_BOWTEACH_Other_condition()
 
 func void DIA_Bosper_BOWTEACH_Other_info()
 {
-	AI_Output(other,self,"DIA_Bosper_BOWTEACH_Other_01_00");	//Изготовлению каких луков я еще смогу у тебя обучиться?
-	AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_01_01");	//Смотри сам...
+	AI_Output(other,self, " DIA_Bosper_BOWTEACH_Other_01_00 " );	// What kind of bows can I still learn from you?
+	AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_01_01 " );	// See for yourself...
 	Info_ClearChoices(DIA_Bosper_BOWTEACH_Other);
 	Info_AddChoice(DIA_Bosper_BOWTEACH_Other,Dialog_Back,DIA_Bosper_BOWTEACH_Other_Back);
 
 	if((BowMake_01 == TRUE) && (BowMake_02 == FALSE) && (hero.attribute[ATR_DEXTERITY] >= Condition_Weidenbogen))
 	{
-		Info_AddChoice(DIA_Bosper_BOWTEACH_Other,"Ивовый лук (Очки обучения: 1)",DIA_Bosper_BOWTEACH_Other_Bow_01);
+		Info_AddChoice(DIA_Bosper_BOWTEACH_Other, " Willow Bow (Training Points: 1) " ,DIA_Bosper_BOWTEACH_Other_Bow_01);
 	};
 	if((BowMake_02 == TRUE) && (BowMake_03 == FALSE) && (hero.attribute[ATR_DEXTERITY] >= Condition_Ulmenbogen))
 	{
-		Info_AddChoice(DIA_Bosper_BOWTEACH_Other,"Вязовый лук (Очки обучения: 2)",DIA_Bosper_BOWTEACH_Other_Bow_02);
+		Info_AddChoice(DIA_Bosper_BOWTEACH_Other, " Elm Bow (Training Points: 2) " ,DIA_Bosper_BOWTEACH_Other_Bow_02);
 	};
 	if((BowMake_03 == TRUE) && (BowMake_04 == FALSE) && (hero.attribute[ATR_DEXTERITY] >= Condition_Eschenbogen))
 	{
-		Info_AddChoice(DIA_Bosper_BOWTEACH_Other,"Ясеневый лук (Очки обучения: 3)",DIA_Bosper_BOWTEACH_Other_Bow_03);
+		Info_AddChoice(DIA_Bosper_BOWTEACH_Other, " Ash Bow (Training Points: 3) " ,DIA_Bosper_BOWTEACH_Other_Bow_03);
 	};
 	if((BowMake_04 == TRUE) && (BowMake_05 == FALSE) && (hero.attribute[ATR_DEXTERITY] >= Condition_Buchenbogen))
 	{
-		Info_AddChoice(DIA_Bosper_BOWTEACH_Other,"Буковый лук (Очки обучения: 4)",DIA_Bosper_BOWTEACH_Other_Bow_04);
+		Info_AddChoice(DIA_Bosper_BOWTEACH_Other, " Beech Bow (Training Points: 4) " ,DIA_Bosper_BOWTEACH_Other_Bow_04);
 	};
 };
 
@@ -1121,17 +1122,17 @@ func void DIA_Bosper_BOWTEACH_Other_Bow_01()
 {
 	if(hero.lp >= 1)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_01_01_01");	//Хорошо. Теперь ты знаешь, как сделать этот лук.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_01_01_02");	//Надеюсь, что у тебя все получится.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_01_01_01 " );	// Good. Now you know how to make this bow.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_01_01_02 " );	// I hope everything works out for you.
 		hero.lp = hero.lp - 1;
 		BowMake_02 = TRUE;
-		AI_Print("Изучен рецепт изготовления луков - 'Ивовый лук'");
-		B_LogEntry(Topic_TalentMakeBows,"Чтобы сделать ивовый лук, мне понадобится тетива из шкуры кабана, ивовое древко лука и смола.");
+		AI_Print( " Learned bow crafting recipe - 'Willow Bow' " );
+		B_LogEntry(Topic_TalentMakeBows, " To make a willow bow, I need a boar skin string, a willow bow shaft, and resin. " );
 		Snd_Play("LevelUP");
 	}
 	else if(hero.lp < 1)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_01_01_03");	//Ты еще не готов к этому! Приходи, когда наберешься опыта.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_01_01_03 " );	// You're not ready for this yet! Come back when you've gained experience.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -1140,17 +1141,17 @@ func void DIA_Bosper_BOWTEACH_Other_Bow_02()
 {
 	if(hero.lp >= 2)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_02_01_01");	//Хорошо. Теперь ты знаешь, как сделать этот лук.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_02_01_02");	//Надеюсь, что у тебя все получится.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_02_01_01 " );	// Good. Now you know how to make this bow.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_02_01_02 " );	// I hope everything works out for you.
 		hero.lp = hero.lp - 2;
 		BowMake_03 = TRUE;
-		AI_Print("Изучен рецепт изготовления луков - 'Вязовый лук'");
-		B_LogEntry(Topic_TalentMakeBows,"Чтобы сделать вязовый лук, мне понадобится тетива из шкуры варга, вязовое древко лука и смола.");
+		AI_Print( " Learned the recipe for crafting bows - 'Elm Bow' " );
+		B_LogEntry(Topic_TalentMakeBows, " To make an elm bow, I'll need a warg hide string, an elm pole, and resin. " );
 		Snd_Play("LevelUP");
 	}
 	else if(hero.lp < 2)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_02_01_03");	//Ты еще не готов к этому! Приходи, когда наберешься опыта.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_02_01_03 " );	// You're not ready for this yet! Come back when you've gained experience.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -1159,17 +1160,17 @@ func void DIA_Bosper_BOWTEACH_Other_Bow_03()
 {
 	if(hero.lp >= 3)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_03_01_01");	//Хорошо. Теперь ты знаешь, как сделать этот лук.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_03_01_02");	//Надеюсь, что у тебя все получится.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_03_01_01 " );	// Good. Now you know how to make this bow.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_03_01_02 " );	// I hope everything works out for you.
 		hero.lp = hero.lp - 3;
 		BowMake_04 = TRUE;
-		AI_Print("Изучен рецепт изготовления луков - 'Ясеневый лук'");
-		B_LogEntry(Topic_TalentMakeBows,"Чтобы сделать ясеневый лук, мне понадобится тетива из шкуры мракориса, ясеневое древко лука и смола.");
+		AI_Print( " Izuchen recipe for making onions - 'Ashley onions' " );
+		B_LogEntry(Topic_TalentMakeBows, " To make an ash bow, I need a mracoris skin string, an ash bow shaft, and resin. " );
 		Snd_Play("LevelUP");
 	}
 	else if(hero.lp < 3)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_03_01_03");	//Ты еще не готов к этому! Приходи, когда наберешься опыта.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_03_01_03 " );	// You're not ready for this yet! Come back when you've gained experience.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -1178,36 +1179,36 @@ func void DIA_Bosper_BOWTEACH_Other_Bow_04()
 {
 	if(hero.lp >= 4)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_04_01_01");	//Хорошо. Теперь ты знаешь, как сделать этот лук.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_04_01_02");	//Надеюсь, что у тебя все получится.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_04_01_01 " );	// Good. Now you know how to make this bow.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_04_01_02 " );	// I hope everything works out for you.
 		hero.lp = hero.lp - 4;
 		BowMake_05 = TRUE;
-		AI_Print("Изучен рецепт изготовления луков - 'Буковый лук'");
-		B_LogEntry(Topic_TalentMakeBows,"Чтобы сделать буковый лук, мне понадобится тетива из шкуры тролля, буковое древко лука и две порции смолы.");
+		AI_Print( " Learned the recipe for crafting bows - 'Beech Bow' " );
+		B_LogEntry(Topic_TalentMakeBows, " To make a beech bow, I need a trollskin string, a beech bow shaft, and two resins. " );
 		Snd_Play("LevelUP");
 	}
 	else if(hero.lp < 4)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH_Other_Bow_04_01_03");	//Ты еще не готов к этому! Приходи, когда наберешься опыта.
+		AI_Output(self,other, " DIA_Bosper_BOWTEACH_Other_Bow_04_01_03 " );	// You're not ready for this yet! Come back when you've gained experience.
 		AI_StopProcessInfos(self);
 	};
 };
 
 var int Bosper_Island;
 
-instance DIA_Bosper_PERM(C_Info)
+instance DIA_Bosper_PERM (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 10;
 	condition = DIA_Bosper_PERM_Condition;
 	information = DIA_Bosper_PERM_Info;
 	permanent = TRUE;
-	description = "Как обстановка в городе?";
+	description = " How is the city? " ;
 };
 
 func int DIA_Bosper_PERM_Condition()
 {
-	if(Kapitel >= 2)
+	if (Chapter >=  2 )
 	{
 		return TRUE;
 	};
@@ -1215,18 +1216,18 @@ func int DIA_Bosper_PERM_Condition()
 
 func void DIA_Bosper_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_PERM_15_00");	//Как обстановка в городе?
-	if(Bosper_Island == FALSE)
+	AI_Output(other,self, " DIA_Bosper_PERM_15_00 " );	// How is the situation in the city?
+	if (Bosper_Island ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Bosper_PERM_11_01");	//Если орки действительно решатся напасть на нас, здесь станет совсем паршиво.
-		AI_Output(self,other,"DIA_Bosper_PERM_11_02");	//В гавани стоит только один корабль - и его охраняют паладины. Я не думаю, что они используют его для спасения горожан.
-		AI_Output(other,self,"DIA_Bosper_PERM_15_03");	//А нет другого способа выбраться отсюда?
-		AI_Output(self,other,"DIA_Bosper_PERM_11_04");	//Нет, никому из нас не покинуть этот остров без корабля.
-		Bosper_Island = TRUE;
+		AI_Output(self,other, " DIA_Bosper_PERM_11_01 " );	// If the orcs really decide to attack us, it's going to be really bad in here.
+		AI_Output(self,other, " DIA_Bosper_PERM_11_02 " );	// There is only one ship in the harbor - and it is guarded by paladins. I don't think they're using it to save the townspeople.
+		AI_Output(other,self, " DIA_Bosper_PERM_15_03 " );	// Is there any other way to get out of here?
+		AI_Output(self,other, " DIA_Bosper_PERM_11_04 " );	// No, none of us can leave this island without a ship.
+		Bosper_Island = TRUE ;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_PERM_11_05");	//Пока нет никаких новостей. Если хочешь, зайди позже.
+		AI_Output(self,other, " DIA_Bosper_PERM_11_05 " );	// No news yet. Come back later if you want.
 	};
 };
 
@@ -1234,10 +1235,10 @@ var int Bosper_MILKommentar;
 var int Bosper_PALKommentar;
 var int Bosper_INNOSKommentar;
 var int Bosper_KDWKommentar;
-var int Bosper_SEKKommentar;
+var int Bosper_SEKComment;
 var int Bosper_KDMKommentar;
 
-instance DIA_Bosper_AlsLehrling(C_Info)
+instance DIA_Bosper_AlsLehrling (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
@@ -1257,137 +1258,137 @@ func int DIA_Bosper_AlsLehrling_Condition()
 
 func void DIA_Bosper_AlsLehrling_Info()
 {
-	if((other.guild == GIL_MIL) && (Bosper_StartGuild != GIL_MIL) && (Bosper_MILKommentar == FALSE))
+	if ((other.guild ==  GIL_MIL ) && (Bosper_StartGuild !=  GIL_MIL ) && (Bosper_MILKommentar ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_00");	//Ты что, вступил в ополчение, да?
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_01");	//Мне, в общем-то, все равно. Лишь бы ты, помимо орков и бандитов, охотился также и на волков. (ухмыляется)
-		Bosper_MILKommentar = TRUE;
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_00 " );	// You joined the militia, didn't you?
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_01 " );	// I don't really care. If only you, in addition to orcs and bandits, also hunted wolves. (grins)
+		Bosper_MILcomment = TRUE ;
 	}
-	else if((other.guild == GIL_PAL) && (Bosper_StartGuild != GIL_PAL) && (Bosper_PALKommentar == FALSE))
+	else  if ((other.guild ==  GIL_PAL ) && (Bosper_StartGuild !=  GIL_PAL ) && (Bosper_PALKommentar ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_02");	//Похоже, твоя карьера переживает стремительный взлет. Паладин короля!
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_03");	//Но куда бы ни занесло тебя, прошу, не забывай своего старого учителя...
-		Bosper_PALKommentar = TRUE;
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_02 " );	// Looks like your career is on the rise. King's paladin!
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_03 " );	// But wherever you go, please don't forget your old teacher...
+		Bosper_PALKommentar = TRUE ;
 	}
-	else if(((other.guild == GIL_NOV) || (other.guild == GIL_KDF)) && (Bosper_StartGuild != GIL_NOV) && (Bosper_StartGuild != GIL_KDF) && (Bosper_INNOSKommentar == FALSE))
+	else  if (((other.guild ==  GIL_NOV ) || (other.guild ==  GIL_KDF )) && (Bosper_StartGuild !=  GIL_NOV ) && (Bosper_StartGuild !=  GIL_KDF ) && (Bosper_INNOSKommentar ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_04");	//Ты постригся в монастырь, да? Надеюсь, они будут отпускать тебя хоть иногда, и ты сможешь приносить мне шкуры...
-		Bosper_INNOSKommentar = TRUE;
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_04 " );	// You took the vows in the monastery, didn't you? I hope they will let you go at least sometimes, and you can bring me the skins...
+		Bosper_INNOSKommentar = TRUE ;
 	}
-	else if((other.guild == GIL_KDW) && (Bosper_KDWKommentar == FALSE))
+	else  if ((other.guild ==  GIL_KDW ) && (Bosper_KDWcomment ==  FALSE ))
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_08");	//Ты примкнул к Кругу Воды. Надеюсь, твой обет не помешает тебе охотиться и приносить мне шкуры, как раньше. Ты не забудешь старика Боспера, ведь так?
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_09");	//Только... не мочи шкуры почем зря, хорошо? Ты - водный маг, а я терпеть не могу мокрые шкуры. 
-		Bosper_KDWKommentar = TRUE;
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_08 " );	// You joined the Circle of Water. I hope your vow doesn't stop you from hunting and bringing me skins like you used to. You won't forget old Bosper, will you?
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_09 " );	// Just... don't piss the skins for nothing, okay? You're a water mage, and I can't stand wet skins.
+		Bosper_KDWKommentar = TRUE ;
 	}
 	else if((Bosper_SEKKommentar == FALSE) && ((other.guild == GIL_TPL) || (other.guild == GIL_GUR) || (other.guild == GIL_SEK)))
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_10");	//О, ты теперь с этими чудными ребятами! Отлично! Ты сделал правильный выбор! Болотное братство - очень хорошее место для тебя!
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_10 " );	// Oh, you're with these wonderful guys now! Excellent! You made the right choice! Swamp Brotherhood is a very good place for you!
 
 		if(other.guild == GIL_TPL)
 		{
-			AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_11");	//Монастырь Инноса, скажем, наверняка прервал бы наше сотрудничество, а с Братством ты будешь ближе к природе, к зверям, к шкурам и ко мне...
+			AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_11 " );	// The Monastery of Innos, for example, would certainly have interrupted our cooperation, and with the Brotherhood you will be closer to nature, to animals, to skins and to me...
 		};
 
-		Bosper_SEKKommentar = TRUE;
+		Bosper_SEKComment = TRUE ;
 	}
 	else if((Bosper_KDMKommentar == FALSE) && ((other.guild == GIL_KDM) || (other.guild == GIL_NDM)))
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_12");	//Ты - темный маг? Некромант, да? Это... меня нисколько не смущает, клянусь. 
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_13");	//Я буду покупать у тебя шкуры, даже если ты обратишься в самого Белиара! Только приноси их лично. Не присылай сюда своих... как их? Поднятых слуг. Договорились?
-		Bosper_KDMKommentar = TRUE;
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_12 " );	// Are you a dark mage? Necromancer, right? It... doesn't bother me at all, I swear.
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_13 " );	// I will buy skins from you even if you turn into Beliar himself! Just bring them in person. Don't send your people here... how are they? Raised servants. Deal?
+		Bosper_KDMKommentar = TRUE ;
 	}
 	else if((Bosper_Lehrling_Day <= (Wld_GetDay() - 4)) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_05");	//Где ты болтался так долго?
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_06");	//Мне нужны еще шкуры. Ты принес их?
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_05 " );	// Where have you been hanging out for so long?
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_06 " );	// I need more skins. Did you bring them?
 		Bosper_Lehrling_Day = Wld_GetDay();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_07");	//Пришел, наконец...
+		AI_Output(self,other, " DIA_Bosper_AlsLehrling_11_07 " );	// Finally arrived...
 		Bosper_Lehrling_Day = Wld_GetDay();
 	};
 };
 
 
-instance DIA_Bosper_Aufgaben(C_Info)
+instance DIA_Bosper_Tasks (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
-	condition = DIA_Bosper_Aufgaben_Condition;
-	information = DIA_Bosper_Aufgaben_Info;
+	condition = DIA_Bosper_Tasks_Condition;
+	information = DIA_Bosper_Tasks_Info;
 	permanent = FALSE;
-	description = "Что должен делать ученик?";
+	description = " What should the student do? " ;
 };
 
-func int DIA_Bosper_Aufgaben_Condition()
+func int DIA_Bosper_Tasks_Condition()
 {
-	if(Player_IsApprentice == APP_Bosper)
+	if (Player_IsApprentice == APP_Bosper)
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Bosper_Aufgaben_Info()
+func void DIA_Bosper_Tasks_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_Aufgaben_15_00");	//Что должен делать ученик?
-	AI_Output(self,other,"DIA_Bosper_Aufgaben_11_01");	//Это просто. Приноси мне все шкуры, что сможешь добыть.
-	AI_Output(self,other,"DIA_Bosper_Aufgaben_11_02");	//Я дам тебе за них более высокую цену, чем любой другой из местных торговцев.
-	AI_Output(self,other,"DIA_Bosper_Aufgaben_11_03");	//Ну, а в остальное время, тебе не обязательно появляться в моей лавке. Я и один тут неплохо справляюсь.
+	AI_Output(other,self, " DIA_Bosper_Aufgaben_15_00 " );	// What should the student do?
+	AI_Output(self,other, " DIA_Bosper_Aufgaben_11_01 " );	// It's simple. Bring me all the skins you can get.
+	AI_Output(self,other, " DIA_Bosper_Aufgaben_11_02 " );	// I'll give you a higher price for them than any of the local merchants.
+	AI_Output(self,other, " DIA_Bosper_Aufgaben_11_03 " );	// Well, the rest of the time, you don't have to show up at my shop. I'm doing pretty well on my own here.
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(other,self,"DIA_Bosper_Aufgaben_15_04");	//А где я буду спать?
-		AI_Output(self,other,"DIA_Bosper_Aufgaben_11_05");	//У меня здесь нет места для тебя. Но ты всегда найдешь свободную койку в отеле на рыночной площади.
+		AI_Output(other,self, " DIA_Bosper_Aufgaben_15_04 " );	// Where will I sleep?
+		AI_Output(self,other, " DIA_Bosper_Aufgaben_11_05 " );	// I don't have a place for you here. But you can always find a free bed in a hotel in the market square.
 	};
 	Log_CreateTopic(Topic_Bonus,LOG_NOTE);
-	B_LogEntry(Topic_Bonus,"Боспер готов платить очень хорошую цену за шкуры животных.");
+	B_LogEntry(Topic_Bonus, " Bosper is willing to pay a very good price for animal skins. " );
 };
 
 
 var int Bosper_TrollFurSold;
 
-instance DIA_Bosper_SellFur(C_Info)
+instance DIA_Bosper_SellFur (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 600;
 	condition = DIA_Bosper_SellFur_Condition;
 	information = DIA_Bosper_SellFur_Info;
 	permanent = TRUE;
-	description = "Я принес несколько шкур для тебя.";
+	description = " I brought some skins for you. " ;
 };
 
-func int DIA_Bosper_SellFur_Condition()
+func int DIA_Bosper_SellFur_Condition ()
 {
-	if(Player_IsApprentice == APP_Bosper)
+	if (Player_IsApprentice == APP_Bosper)
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Bosper_SellFur_Info()
+func void DIA_Bosper_SellFur_Info ()
 {
-	var int wargfur;
-	var int SummRabbitFur;
+	be int warfur;
+	var int SumRabbitFur;
 	var int dogfur;
 	var int wolffur;
 	var int icewolffur;
 	var int summwolf;
 	var int LurkerSkin;
 	var int SharkSkin;
-	var int SummSkin;
+	var int SumSkin;
 	var int pumafur;
 	var int icepumafur;
-	var int summpuma;
+	be int sumpuma;
 
-	AI_Output(other,self,"DIA_Bosper_SellFur_15_00");	//Я принес несколько шкур для тебя.
+	AI_Output(other,self, " DIA_Bosper_SellFur_15_00 " );	// I brought some skins for you.
 
 	if((Npc_HasItems(other,ItAt_RabbitFur) > 0) || (Npc_HasItems(other,ItAt_SheepFur) > 0) || (Npc_HasItems(other,ItAt_SharkSkin) > 0) || (Npc_HasItems(other,ItAt_IceWolfFur) > 0) || (Npc_HasItems(other,ItAt_WolfFur) > 0) || (Npc_HasItems(other,ItAt_OrcDogFur) > 0) || (Npc_HasItems(other,ItAt_WargFur) > 0) || (Npc_HasItems(other,ItAt_ShadowFur) > 0) || (Npc_HasItems(other,ItAt_TrollFur) > 0) || (Npc_HasItems(other,ItAt_TrollBlackFur) > 0) || (Npc_HasItems(other,ItAt_Addon_KeilerFur) > 0) || (Npc_HasItems(other,itat_pumafur) > 0) || (Npc_HasItems(other,itat_LurkerSkin) > 0))
 	{
 		if(Npc_HasItems(other,ItAt_RabbitFur) > 0)
 		{
 			SummRabbitFur = Npc_HasItems(other,ItAt_RabbitFur) * 5;
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_95A");	//Хмм... Кроличьи шкуры? Ладно, давай их сюда. Сгодятся для чего-нибудь.
+			AI_Output(self,other, " DIA_Bosper_SellFur_11_95A " );	// Hmm... Rabbit skins? Okay, give them here. Suitable for anything.
 			B_GiveInvItems(self,other,ItMi_Gold,SummRabbitFur);
 			Npc_RemoveInvItems(other,ItAt_RabbitFur,Npc_HasItems(other,ItAt_RabbitFur));
 		};
@@ -1397,21 +1398,21 @@ func void DIA_Bosper_SellFur_Info()
 			SharkSkin = Npc_HasItems(other,ItAt_SharkSkin);
 			SummSkin = (LurkerSkin * Value_ReptileSkin) + (SharkSkin * Value_SharkSkin);
 
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_15A");	//Шкуры рептилий? Пригодятся для доспехов стражи.
+			AI_Output(self,other, " DIA_Bosper_SellFur_11_15A " );	// Reptile skins? Useful for armor guards.
 			B_GiveInvItems(self,other,ItMi_Gold,SummSkin);
 			Npc_RemoveInvItems(other,itat_LurkerSkin,Npc_HasItems(other,itat_LurkerSkin));
 			Npc_RemoveInvItems(other,ItAt_SharkSkin,Npc_HasItems(other,ItAt_SharkSkin));
 		};
 		if(Npc_HasItems(other,ItAt_Addon_KeilerFur) > 0)
 		{
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_15B");	//Шкура кабана? Неплохо для начала...
+			AI_Output(self,other, " DIA_Bosper_SellFur_11_15B " );	// Boar skin? Good for a start...
 			B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(other,ItAt_Addon_KeilerFur) * Value_Keilerfur);
 			Npc_RemoveInvItems(other,ItAt_Addon_KeilerFur,Npc_HasItems(other,ItAt_Addon_KeilerFur));
 		};
 		if(Npc_HasItems(other,ItAt_SheepFur) > 0)
 		{
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_01");	//Овечьи шкура? Ты ведь не убивал овец фермеров на пастбищах, нет?
-			AI_Output(other,self,"DIA_Bosper_SellFur_15_02");	//Я даже и не думал заниматься этим.
+			AI_Output(self,other, " DIA_Bosper_SellFur_11_01 " );	// Sheepskin? You didn't kill the farmers' sheep in the pastures, did you?
+			AI_Output(other,self, " DIA_Bosper_SellFur_15_02 " );	// I didn't even think about doing this.
 			B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(other,ItAt_SheepFur) * Value_SheepFur);
 			Npc_RemoveInvItems(other,ItAt_SheepFur,Npc_HasItems(other,ItAt_SheepFur));
 		};
@@ -1421,7 +1422,7 @@ func void DIA_Bosper_SellFur_Info()
 			icewolffur = Npc_HasItems(other,ItAt_IceWolfFur);
 			summwolf = (wolffur * Value_WolfFur) + (icewolffur * Value_IceWolfFur);
 
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_03");	//Волчьи шкуры, это хорошо...
+			AI_Output(self,other, " DIA_Bosper_SellFur_11_03 " );	// Wolf skins, that's good...
 			B_GiveInvItems(self,other,ItMi_Gold,summwolf);
 			Npc_RemoveInvItems(other,ItAt_WolfFur,Npc_HasItems(other,ItAt_WolfFur));
 			Npc_RemoveInvItems(other,ItAt_IceWolfFur,Npc_HasItems(other,ItAt_IceWolfFur));
@@ -1430,9 +1431,9 @@ func void DIA_Bosper_SellFur_Info()
 		{
 			wargfur = Npc_HasItems(other,ItAt_WargFur);
 			dogfur = Npc_HasItems(other,ItAt_OrcDogFur);
-			wargfur = wargfur + dogfur;
+			wagfur = wagfur + dogfur;
 
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_04");	//Шкура варга? Это опасные звери...
+			AI_Output(self,other, " DIA_Bosper_SellFur_11_04 " );	// Warg hide? They are dangerous animals...
 			B_GiveInvItems(self,other,ItMi_Gold,wargfur * Value_WargFur);
 			Npc_RemoveInvItems(other,ItAt_WargFur,Npc_HasItems(other,ItAt_WargFur));
 			Npc_RemoveInvItems(other,ItAt_OrcDogFur,Npc_HasItems(other,ItAt_OrcDogFur));
@@ -1443,30 +1444,30 @@ func void DIA_Bosper_SellFur_Info()
 			icepumafur = Npc_HasItems(other,ItAt_WhitePuma);
 			summpuma = (pumafur * Value_PumaFur) + (icepumafur * Value_IcePumaFur);
 
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_14");	//Шкура пантеры? Это большая редкость в наших краях.
+			AI_Output(self,other, " DIA_Bosper_SellFur_11_14 " );	// Panther skin? This is a rarity in our area.
 			B_GiveInvItems(self,other,ItMi_Gold,summpuma);
 			Npc_RemoveInvItems(other,itat_pumafur,Npc_HasItems(other,itat_pumafur));
 			Npc_RemoveInvItems(other,ItAt_WhitePuma,Npc_HasItems(other,ItAt_WhitePuma));
 		};
 		if(Npc_HasItems(other,ItAt_ShadowFur) > 0)
 		{
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_05");	//Ага...(пораженно) И даже шкура мракориса? Она дорогого стоит!
+			AI_Output(self,other, " DIA_Bosper_SellFur_11_05 " );	// Yeah... (amazed) And even the skin of the mrakoris? She is worth a lot!
 			B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(other,ItAt_ShadowFur) * Value_ShadowFur);
 			Npc_RemoveInvItems(other,ItAt_ShadowFur,Npc_HasItems(other,ItAt_ShadowFur));
 		};
 		if((Npc_HasItems(other,ItAt_TrollFur) > 0) || (Npc_HasItems(other,ItAt_TrollBlackFur) > 0))
 		{
-			if(Bosper_TrollFurSold == FALSE)
+			if (Bosper_TrollFurSold ==  FALSE )
 			{
-				AI_Output(self,other,"DIA_Bosper_SellFur_11_06");	//А это что за шкура, черт побери?
-				AI_Output(other,self,"DIA_Bosper_SellFur_15_07");	//Я снял ее с тролля.
-				AI_Output(self,other,"DIA_Bosper_SellFur_11_08");	//Это... Она стоит целое состояние!
-				Bosper_TrollFurSold = TRUE;
+				AI_Output(self,other, " DIA_Bosper_SellFur_11_06 " );	// What the hell is that skin?
+				AI_Output(other,self, " DIA_Bosper_SellFur_15_07 " );	// I took it off the troll.
+				AI_Output(self,other, " DIA_Bosper_SellFur_11_08 " );	// This... She costs a fortune!
+				Bosper_TrollFurSold = TRUE ;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Bosper_SellFur_11_09");	//Еще одна огромная шкура тролля! Ты на них охотишься?!
-				AI_Output(other,self,"DIA_Bosper_SellFur_15_10");	//Если мне вдруг один попадется, так я уж момент не упущу...
+				AI_Output(self,other, " DIA_Bosper_SellFur_11_09 " );	// Another huge troll skin! Are you after them?!
+				AI_Output(other,self, " DIA_Bosper_SellFur_15_10 " );	// If I suddenly come across one, I won't miss the moment...
 			};
 			if(Npc_HasItems(other,ItAt_TrollFur) > 0)
 			{
@@ -1475,32 +1476,32 @@ func void DIA_Bosper_SellFur_Info()
 			};
 			if(Npc_HasItems(other,ItAt_TrollBlackFur) > 0)
 			{
-				AI_Output(self,other,"DIA_Bosper_SellFur_11_11");	//И шкура ЧЕРНОГО тролля! Надо же!
+				AI_Output(self,other, " DIA_Bosper_SellFur_11_11 " );	// And a BLACK troll skin! Wow!
 				B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(other,ItAt_TrollBlackFur) * Value_TrollBlackFur);
 				Npc_RemoveInvItems(other,ItAt_TrollBlackFur,Npc_HasItems(other,ItAt_TrollBlackFur));
 			};
 		};
-		AI_Output(self,other,"DIA_Bosper_SellFur_11_12");	//Отличная работа! Заходи ко мне еще, когда у тебя будут шкуры.
+		AI_Output(self,other, " DIA_Bosper_SellFur_11_12 " );	// Great job! Come see me again when you have the skins.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_SellFur_11_13");	//Но знаешь, меня интересуют только шкуры волков, мракорисов и им подобные.
+		AI_Output(self,other, " DIA_Bosper_SellFur_11_13 " );	// But you know, I'm only interested in the skins of wolves, obscurantists and the like.
 	};
 };
 
 
-instance DIA_Bosper_Minenanteil(C_Info)
+instance DIA_Bosper_Minenanteil (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 3;
 	condition = DIA_Bosper_Minenanteil_Condition;
-	information = DIA_Bosper_Minenanteil_Info;
-	description = "Я вижу, ты продаешь акции шахт.";
+	information = DIA_Bosper_MinenTeil_Info;
+	description = " I see you're selling shares in the mines. " ;
 };
 
 func int DIA_Bosper_Minenanteil_Condition()
 {
-	if((hero.guild == GIL_KDF) && (MIS_Serpentes_MinenAnteil_KDF == LOG_Running))
+	if ((hero.guild ==  GIL_KDF ) && (MY_Serpent_MineBefore_KDF == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -1508,13 +1509,13 @@ func int DIA_Bosper_Minenanteil_Condition()
 
 func void DIA_Bosper_Minenanteil_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_Minenanteil_15_00");	//Я вижу, ты продаешь акции шахт.
-	AI_Output(self,other,"DIA_Bosper_Minenanteil_11_01");	//Гм. Я ничего не знаю об этом. Ты можешь забрать их, если хочешь.
+	AI_Output(other,self, " DIA_Bosper_Minenanteil_15_00 " );	// I see you're selling shares in the mines.
+	AI_Output(self,other, " DIA_Bosper_Minenanteil_11_01 " );	// Hm. I don't know anything about it. You can take them if you want.
 	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_Bosper_PICKPOCKET(C_Info)
+instances DIA_Bosper_PICKPOCKET (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 900;
@@ -1527,19 +1528,19 @@ instance DIA_Bosper_PICKPOCKET(C_Info)
 
 func int DIA_Bosper_PICKPOCKET_Condition()
 {
-	return C_Beklauen(67,120);
+	return  C_Robbery ( 67 , 120 );
 };
 
 func void DIA_Bosper_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Bosper_PICKPOCKET);
 	Info_AddChoice(DIA_Bosper_PICKPOCKET,Dialog_Back,DIA_Bosper_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Bosper_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Bosper_PICKPOCKET_DoIt);
+	Info_AddChoice(DIA_Bosper_PICKPOCKET, DIALOG_PICKPOCKET ,DIA_Bosper_PICKPOCKET_DoIt);
 };
 
 func void DIA_Bosper_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Bosper_PICKPOCKET);
 };
 
@@ -1549,14 +1550,14 @@ func void DIA_Bosper_PICKPOCKET_BACK()
 };
 
 
-instance DIA_BOSPER_BRINGARROW(C_Info)
+instance DIA_BOSPER_BRINGARROW (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 3;
 	condition = dia_bosper_bringarrow_condition;
 	information = dia_bosper_bringarrow_info;
 	permanent = FALSE;
-	description = "У меня для тебя письмо.";
+	description = " I have a letter for you. " ;
 };
 
 
@@ -1570,46 +1571,46 @@ func int dia_bosper_bringarrow_condition()
 
 func void dia_bosper_bringarrow_info()
 {
-	AI_Output(other,self,"DIA_Bosper_BringArrow_01_00");	//У меня для тебя письмо от охотника Фалька.
-	AI_Output(self,other,"DIA_Bosper_BringArrow_01_03");	//Ну, тогда давай его сюда.
+	AI_Output(other,self, " DIA_Bosper_BringArrow_01_00 " );	// I have a letter for you from the hunter Falk.
+	AI_Output(self,other, " DIA_Bosper_BringArrow_01_03 " );	// Well, then give it here.
 	if(Npc_HasItems(hero,itwr_letterfalk) >= 1)
 	{
 		B_GivePlayerXP(150);
 		B_GiveInvItems(other,self,itwr_letterfalk,1);
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_05");	//Ага! Все ясно. Думаю, с этим заказом не будет никаких проблем.
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_06");	//Вот, возьми эти стрелы и отнеси их Фальку.
+		AI_Output(self,other, " DIA_Bosper_BringArrow_01_05 " );	// Aha! All clear. I don't think there will be any problems with this order.
+		AI_Output(self,other, " DIA_Bosper_BringArrow_01_06 " );	// Here, take these arrows and take them to Falk.
 		B_GiveInvItems(self,other,ITRW_ZUNTARROW,100);
 		Npc_RemoveInvItems(self,itwr_letterfalk,1);
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_07");	//И смотри не потеряй их...(серьезно) Иначе за это он тебе спасибо не скажет!
-		B_LogEntry(TOPIC_LETTERFALK,"Торговец Боспер прочитал письмо, а потом вручил мне сто стрел, которые я должен отнести Фальку.");
-		BOSPERGIVEARROWS = TRUE;
+		AI_Output(self,other, " DIA_Bosper_BringArrow_01_07 " );	// And don't lose them...(seriously) Otherwise, he won't thank you for it!
+		B_LogEntry( TOPIC_LETTERFALK , " Merchant Bosper read the letter and then handed me a hundred arrows to take to Falk. " );
+		BOSPERGIVEARROWS = TRUE ;
 		AI_StopProcessInfos(self);
 	}
 	else if(Npc_HasItems(hero,itwr_letterfalk_open) >= 1)
 	{
 		B_GiveInvItems(other,self,itwr_letterfalk_open,1);
 		Npc_RemoveInvItems(self,itwr_letterfalk_open,1);
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_13");	//Так, посмотрим, что он пишет. Но постой, его письмо... оно же вскрыто! Печать сломана!
-		AI_Output(other,self,"DIA_Bosper_BringArrow_01_14");	//Правда?! Я не знаю, как так случилось.
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_17");	//Не держи меня за идиота, мальчик! (гневно) Такого не может быть!
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_18");	//Так что лучше убирайся с моих глаз, пока я не испытал на тебе свой новый лук.
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_19");	//От меня ты ничего не получишь. Прочь!
-		B_LogEntry(TOPIC_LETTERFALK,"Торговец Боспер выставил меня за дверь, когда увидел, что предназначавшееся для него письмо вскрыто. Теперь не остается ничего другого, как сказать об этом самому Фальку.");
+		AI_Output(self,other, " DIA_Bosper_BringArrow_01_13 " );	// Ok, let's see what he writes. But wait, his letter... it's been opened! The seal is broken!
+		AI_Output(other,self, " DIA_Bosper_BringArrow_01_14 " );	// Really?! I don't know how it happened.
+		AI_Output(self,other, " DIA_Bosper_BringArrow_01_17 " );	// Don't take me for an idiot, boy! (angrily) This can't be!
+		AI_Output(self,other, " DIA_Bosper_BringArrow_01_18 " );	// So you'd better get out of my sight before I test my new bow on you.
+		AI_Output(self,other, " DIA_Bosper_BringArrow_01_19 " );	// You won't get anything from me. Away!
+		B_LogEntry( TOPIC_LETTERFALK , " Merchant Bosper kicked me out the door when he saw that the letter intended for him was opened. Now there is nothing left but to tell Falk about it himself. " );
 		BOSPERREFUSEARROW = TRUE;
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_BOSPER_SHADOWBOW(C_Info)
+instance DIA_BOSPER_SHADOWBOW (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
 	condition = dia_bosper_shadowbow_condition;
 	information = dia_bosper_shadowbow_info;
 	permanent = FALSE;
-	description = "Тебе знаком этот лук?";
+	description = " Do you recognize this bow? " ;
 };
 
 func int dia_bosper_shadowbow_condition()
@@ -1622,33 +1623,33 @@ func int dia_bosper_shadowbow_condition()
 
 func void dia_bosper_shadowbow_info()
 {
-	AI_Output(other,self,"DIA_Bosper_ShadowBow_01_00");	//Тебе знаком этот лук?
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_01");	//Хммм, кереновый лук...(разглядывая) Конечно знаком - его трудно спутать с какой-либо другой вещью.
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_02");	//Правда, я пока не очень понимаю, что этот лук делает у тебя?!
-	AI_Output(other,self,"DIA_Bosper_ShadowBow_01_03");	//Мне подарил его Фальк.
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_04");	//Фальк?! Хммм...(удивленно) Тогда это может означать только одно - у нас появился еще один великий охотник!
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_06");	//Тогда прими мои поздравления, приятель! Поверь мне: лишь единицы удостаивались этой чести!
-	if(Player_IsApprentice == APP_Bosper)
+	AI_Output(other,self, " DIA_Bosper_ShadowBow_01_00 " );	// Are you familiar with this bow?
+	AI_Output(self,other, " DIA_Bosper_ShadowBow_01_01 " );	// Hmmm, keren bow... (looking) Certainly familiar - it's hard to confuse it with any other thing.
+	AI_Output(self,other, " DIA_Bosper_ShadowBow_01_02 " );	// Really, I still don't really understand what this bow does with you?!
+	AI_Output(other,self, " DIA_Bosper_ShadowBow_01_03 " );	// Falk gave it to me.
+	AI_Output(self,other, " DIA_Bosper_ShadowBow_01_04 " );	// Falk?! Hmmm... (surprised) Then that can only mean one thing - we have another great hunter!
+	AI_Output(self,other, " DIA_Bosper_ShadowBow_01_06 " );	// Then congratulations, mate! Believe me: only a few have received this honor!
+	if (Player_IsApprentice == APP_Bosper)
 	{
-		AI_Output(self,other,"DIA_Bosper_ShadowBow_01_07");	//Хотя я никогда и не сомневался в том, что ты сможешь достигнуть подобных высот.
-		AI_Output(self,other,"DIA_Bosper_ShadowBow_01_10");	//Я это понял еще тогда, когда ты первый раз зашел в мою лавку.
-		AI_Output(self,other,"DIA_Bosper_ShadowBow_01_11");	//И сейчас очень рад тому, что принял тогда решение взять тебя к себе в ученики.
+		AI_Output(self,other, " DIA_Bosper_ShadowBow_01_07 " );	// Although I never doubted that you could reach such heights.
+		AI_Output(self,other, " DIA_Bosper_ShadowBow_01_10 " );	// I understood this even when you first came into my shop.
+		AI_Output(self,other, " DIA_Bosper_ShadowBow_01_11 " );	// And now I am very glad that I made the decision to take you as my student.
 	};
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_14");	//И тебе, видимо, нужны стрелы для этого лука.
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_16");	//Я смогу их сделать для тебя.
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_17");	//Правда, это будет не бесплатно.
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_18");	//За свою работу я с тебя ничего не возьму, но за материал для этих стрел тебе придется заплатить.
-	BOSPERMAKESHADOWARROW = TRUE;
+	AI_Output(self,other, " DIA_Bosper_ShadowBow_01_14 " );	// And you probably need arrows for this bow.
+	AI_Output(self,other, " DIA_Bosper_ShadowBow_01_16 " );	// I can make them for you.
+	AI_Output(self,other, " DIA_Bosper_ShadowBow_01_17 " );	// True, it won't be free.
+	AI_Output(self,other, " DIA_Bosper_ShadowBow_01_18 " );	// I won't charge you anything for my work, but you'll have to pay for the material for these arrows.
+	FOREST PERMAKESHADOWARROW = TRUE ;
 };
 
-instance DIA_Bosper_ShadowBowArrowMake(C_Info)
+instance DIA_Bosper_ShadowBowArrowMake (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
 	condition = DIA_Bosper_ShadowBowArrowMake_condition;
 	information = DIA_Bosper_ShadowBowArrowMake_info;
 	permanent = FALSE;
-	description = "А сам я их делать могу?";
+	description = " Can I make them myself? " ;
 };
 
 func int DIA_Bosper_ShadowBowArrowMake_condition()
@@ -1661,23 +1662,23 @@ func int DIA_Bosper_ShadowBowArrowMake_condition()
 
 func void DIA_Bosper_ShadowBowArrowMake_info()
 {
-	AI_Output(other,self,"DIA_Bosper_ShadowBowArrowMake_01_00");	//А сам я их делать могу?
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_01");	//(задумчиво) Изготовление подобных стрел на самом деле - большой секрет!
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_02");	//Но раз уж так вышло, что ты мой ученик... так уж и быть.
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_03");	//Я расскажу тебе, как изготовить кереновые стрелы.
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_04");	//Но тебе за это придется заплатить. Бесплатно я не стану этому учить.
+	AI_Output(other,self, " DIA_Bosper_ShadowBowArrowMake_01_00 " );	// Can I make them myself?
+	AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMake_01_01 " );	// (thoughtfully) Making those arrows is actually a big secret!
+	AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMake_01_02 " );	// But since you happen to be my apprentice... so be it.
+	AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMake_01_03 " );	// I'll tell you how to make core arrows.
+	AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMake_01_04 " );	// But you'll have to pay for it. I won't teach it for free.
 	Log_CreateTopic(TOPIC_TALENTMAKEARROWS,LOG_NOTE);
-	B_LogEntry(TOPIC_TALENTMAKEARROWS,"Поскольку я ученик Боспера, он может обучить меня изготовлению кереновых стрел.");
+	B_LogEntry( TOPIC_TALENTMAKEARROWS , " Because I'm Bosper's apprentice, he can teach me how to make Keren arrows. " );
 };
 
-instance DIA_Bosper_ShadowBowArrowMakeDone(C_Info)
+instance DIA_Bosper_ShadowBowArrowMakeDone (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 5;
 	condition = DIA_Bosper_ShadowBowArrowMakeDone_condition;
 	information = DIA_Bosper_ShadowBowArrowMakeDone_info;
 	permanent = TRUE;
-	description = "Научи меня изготавливать кереновые стрелы. (Очки обучения: 5, Цена: 3000 монет)";
+	description = " Teach me how to make Keren Arrows. (Training Points: 5, Cost: 3000 coins) " ;
 };
 
 func int DIA_Bosper_ShadowBowArrowMakeDone_condition()
@@ -1690,13 +1691,13 @@ func int DIA_Bosper_ShadowBowArrowMakeDone_condition()
 
 func void DIA_Bosper_ShadowBowArrowMakeDone_info()
 {
-	var int kosten;
+	var int cost;
 	var int money;
 
-	kosten = 5;
+	cost = 5 ;
 	money = 3000;
 
-	AI_Output(other,self,"DIA_Bosper_ShadowBowArrowMakeDone_01_00");	//Научи меня изготавливать кереновые стрелы.
+	AI_Output(other,self, " DIA_Bosper_ShadowBowArrowMakeDone_01_00 " );	// Teach me how to make core arrows.
 
 	if(hero.lp < kosten)
 	{
@@ -1707,42 +1708,42 @@ func void DIA_Bosper_ShadowBowArrowMakeDone_info()
 	else if(Npc_HasItems(other,ItMi_Gold) < money)
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMakeDone_03_90");	//У тебя не хватает золота для обучения! Приходи позже.
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMakeDone_03_90 " );	// You don't have enough gold to train! Come back later.
 		AI_StopProcessInfos(self);
 	};
 	if((hero.lp >= kosten) && (Npc_HasItems(other,ItMi_Gold) >= money))
 	{
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMakeDone_01_01");	//Хорошо. Слушай внимательно.
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMakeDone_01_02");	//Секрет кереновых стрел кроется в их идеальном балансе.
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMakeDone_01_03");	//Именно он позволяет этим стрелам лететь намного дальше обычных и пробивать самые прочные доспехи.
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMakeDone_01_04");	//Их древка делаются из обычной древесины, а вот наконечники куются из магической руды, вместо обычной железной.
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMakeDone_01_05");	//А так, собственно, и все.
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMakeDone_01_01 " );	// Good. Listen carefully.
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMakeDone_01_02 " );	// The secret of keren arrows lies in their perfect balance.
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMakeDone_01_03 " );	// It is he who allows these arrows to fly much further than usual and pierce the most durable armor.
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMakeDone_01_04 " );	// Their shafts are made from normal wood, but the tips are forged from magic ore instead of regular iron.
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrowMakeDone_01_05 " );	// And so, in fact, that's all.
 		hero.lp = hero.lp - kosten;
 		Npc_RemoveInvItems(other,ItMi_Gold,money);
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_SetTalentSkill(hero,NPC_TALENT_MAKEARROWS,1);
-		AI_Print("Изучен рецепт изготовления - 'Кереновые стрелы'");
+		AI_Print( " Recipe learned - 'Keren Arrows' " );
 		KNOWHOWTOMAKEARROWSKER = TRUE;
 		Snd_Play("LevelUP");
 		Log_CreateTopic(TOPIC_TALENTMAKEARROWS,LOG_NOTE);
-		B_LogEntry(TOPIC_TALENTMAKEARROWS,"Для изготовления кереновых стрел мне понадобится древко стрелы, наконечник, выкованный из магической руды, и перо гарпии, в количестве одного стака на полсотни стрел.");
+		B_LogEntry( TOPIC_TALENTMAKEARROWS , " To make Keren Arrows, I need an arrow shaft, a tip forged from magic ore, and a harpy feather, in the amount of one stack for fifty arrows. " );
 	};
 };
 
-instance DIA_BOSPER_SHADOWBOWARROW(C_Info)
+instance DIA_BOSPER_SHADOWBOWARROW (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
 	condition = dia_bosper_shadowbowarrow_condition;
 	information = dia_bosper_shadowbowarrow_info;
 	permanent = TRUE;
-	description = "Мне нужны стрелы для керенового лука.";
+	description = " I need arrows for my keren bow. " ;
 };
 
 
 func int dia_bosper_shadowbowarrow_condition()
 {
-	if((BOSPERMAKESHADOWARROW == TRUE) && (BOSPERMAKESHADOWARROWPROGRESS == FALSE))
+	if (( BOSPERMAKESHADOWARROW  ==  TRUE ) && ( BOSPERMAKESHADOWARROWPROGRESS  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -1750,60 +1751,60 @@ func int dia_bosper_shadowbowarrow_condition()
 
 func void dia_bosper_shadowbowarrow_info()
 {
-	AI_Output(other,self,"DIA_Bosper_ShadowBowArrow_01_00");	//Мне нужны стрелы для керенового лука.
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrow_01_01");	//Нет проблем! Если, конечно, у тебя есть золото.
+	AI_Output(other,self, " DIA_Bosper_ShadowBowArrow_01_00 " );	// I need arrows for the keren bow.
+	AI_Output(self,other, " DIA_Bosper_ShadowBowArrow_01_01 " );	// No problem! Unless, of course, you have gold.
 	if(KNOWSHADOWBOWARROW == FALSE)
 	{
 		AI_Output(other,self,"DIA_Bosper_ShadowBowArrow_01_02");	//Сколько?
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrow_01_03");	//Думаю, двухсот золотых монет будет вполне достаточно.
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrow_01_03 " );	// I think two hundred gold coins will be enough.
 		KNOWSHADOWBOWARROW = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrow_01_04");	//Ты мою цену знаешь - двести золотых монет.
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrow_01_04 " );	// You know my price - two hundred gold coins.
 	};
 	Info_ClearChoices(dia_bosper_shadowbowarrow);
-	Info_AddChoice(dia_bosper_shadowbowarrow,"Пожалуй, в другой раз.",dia_bosper_shadowbowarrow_no);
+	Info_AddChoice(dia_bosper_shadowbowarrow, " Perhaps another time. " ,dia_bosper_shadowbowarrow_no);
 	if(Npc_HasItems(hero,ItMi_Gold) >= 200)
 	{
-		Info_AddChoice(dia_bosper_shadowbowarrow,"Вот твое золото.",dia_bosper_shadowbowarrow_yes);
+		Info_AddChoice(dia_bosper_shadowbowarrow, " Вот твое золото. " ,dia_bosper_shadowbowarrow_yes);
 	};
 };
 
 func void dia_bosper_shadowbowarrow_no()
 {
-	AI_Output(other,self,"DIA_Bosper_ShadowBowArrow_No_01_00");	//Пожалуй, в другой раз.
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrow_No_01_01");	//Как скажешь.
+	AI_Output(other,self, " DIA_Bosper_ShadowBowArrow_No_01_00 " );	// Maybe some other time.
+	AI_Output(self,other, " DIA_Bosper_ShadowBowArrow_No_01_01 " );	// As you say.
 	Info_ClearChoices(dia_bosper_shadowbowarrow);
 };
 
 func void dia_bosper_shadowbowarrow_yes()
 {
-	AI_Output(other,self,"DIA_Bosper_ShadowBowArrow_Yes_01_00");	//Вот твое золото.
+	AI_Output(other,self, " DIA_Bosper_ShadowBowArrow_Yes_01_00 " );	// Here's your gold.
 	B_GiveInvItems(other,self,ItMi_Gold,200);
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrow_Yes_01_01");	//Отлично! Тогда я немедленно приступаю к работе.
-	AI_Output(other,self,"DIA_Bosper_ShadowBowArrow_Yes_01_02");	//Когда будут готовы мои стрелы?
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrow_Yes_01_03");	//Думаю, до завтрашнего полудня управлюсь с твоим заказом. Так что придется немного подождать.
-	BOSPERMAKESHADOWARROWPROGRESS = TRUE;
+	AI_Output(self,other, " DIA_Bosper_ShadowBowArrow_Yes_01_01 " );	// Great! Then I immediately get to work.
+	AI_Output(other,self, " DIA_Bosper_ShadowBowArrow_Yes_01_02 " );	// When will my arrows be ready?
+	AI_Output(self,other, " DIA_Bosper_ShadowBowArrow_Yes_01_03 " );	// I think I can finish your order by noon tomorrow. So you'll have to wait a bit.
+	BOSPERMAKESHADOWARROWPROGRESS = TRUE ;
 	TIMER_SHADOWBOWARROW = Wld_GetDay();
 	Info_ClearChoices(dia_bosper_shadowbowarrow);
 };
 
 
-instance DIA_BOSPER_SHADOWBOWARROWDONE(C_Info)
+instance DIA_BOSPER_SHADOWBOWARROWDONE (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 1;
 	condition = dia_bosper_shadowbowarrowdone_condition;
 	information = dia_bosper_shadowbowarrowdone_info;
 	permanent = TRUE;
-	description = "Как поживает мой заказ?";
+	description = " How is my order doing? " ;
 };
 
 
 func int dia_bosper_shadowbowarrowdone_condition()
 {
-	if((BOSPERMAKESHADOWARROW == TRUE) && (BOSPERMAKESHADOWARROWPROGRESS == TRUE))
+	if (( BOSPERMAKESHADOWARROW  ==  TRUE ) && ( BOSPERMAKESHADOWARROWPROGRESS  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -1811,28 +1812,28 @@ func int dia_bosper_shadowbowarrowdone_condition()
 
 func void dia_bosper_shadowbowarrowdone_info()
 {
-	var int daynow;
+	where int daynow;
 	daynow = Wld_GetDay();
-	AI_Output(other,self,"DIA_Bosper_ShadowBowArrowDone_01_00");	//Как поживает мой заказ?
+	AI_Output(other,self, " DIA_Bosper_ShadowBowArrowDone_01_00 " );	// How is my order doing?
 
 	if(TIMER_SHADOWBOWARROW < daynow)
 	{
 		if(Wld_IsTime(12,0,23,59) || (TIMER_SHADOWBOWARROW < (daynow - 1)))
 		{
-			AI_Output(self,other,"DIA_Bosper_ShadowBowArrowDone_01_01");	//Все готово! Вот, держи - тут пятьдесят кереновых стрел лучшего качества!
+			AI_Output(self,other, " DIA_Bosper_ShadowBowArrowDone_01_01 " );	// Everything is ready! Here, take it - here are fifty Keren arrows of the best quality!
 			B_GiveInvItems(self,other,ITRW_MYHUNTARROW,50);
-			AI_Output(self,other,"DIA_Bosper_ShadowBowArrowDone_01_04");	//Но если тебе понадобятся еще, можешь смело обращаться ко мне.
-			BOSPERMAKESHADOWARROWPROGRESS = FALSE;
+			AI_Output(self,other, " DIA_Bosper_ShadowBowArrowDone_01_04 " );	// But if you need more, feel free to contact me.
+			BOSPERMAKESHADOWARROWPROGRESS = FALSE ;
 			TIMER_SHADOWBOWARROW = 0;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Bosper_ShadowBowArrowDone_01_06");	//Пока еще не готов. Приходи позже!
+			AI_Output(self,other, " DIA_Bosper_ShadowBowArrowDone_01_06 " );	// Not ready yet. Come back later!
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_ShadowBowArrowDone_01_06");	//Пока еще не готов. Приходи позже!
+		AI_Output(self,other, " DIA_Bosper_ShadowBowArrowDone_01_06 " );	// Not ready yet. Come back later!
 	};
 };
 
@@ -1858,34 +1859,34 @@ func int DIA_Bosper_CanBuyGoblinWeapon_Condition()
 
 func void DIA_Bosper_CanBuyGoblinWeapon_Info()
 {
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_00");	//Постой! У меня к тебе есть одно предложение.
-	AI_Output(other,self,"DIA_Bosper_CanBuyGoblinWeapon_01_01");	//Я тебя слушаю.
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_02");	//Если тебе попадутся гоблинские палки, то я бы мог выменять их у тебя на стрелы!
-	AI_Output(other,self,"DIA_Bosper_CanBuyGoblinWeapon_01_03");	//А зачем тебе это?
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_04");	//Понимаешь, хотя гоблины и кажутся весьма примитивными созданиями, но на самом деле это вовсе не так.
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_05");	//Для своих дубинок они выбирают самые ровные ветви и тщательно высушивают их.
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_06");	//Из одной такой дубинки можно сделать несколько отличных стрел, причем без предварительной просушки.
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_07");	//Палку гоблина всего лишь нужно расщепить и немного обработать. Для такого мастера, как я, это не представляет большого труда.
-	AI_Output(other,self,"DIA_Bosper_CanBuyGoblinWeapon_01_08");	//И как же ты это делаешь?
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_09");	//Если я буду рассказывать обо всех тонкостях моего ремесла всем подряд, то вскоре мне придется идти на улицу попрошайничать.
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_10");	//Но мы можем заключить с тобой выгодную сделку! Ты приносишь мне палки гоблинов, а я тебе даю за них готовые стрелы.
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_11");	//Разумеется, ты получишь меньше стрел, чем я сделаю из одной палки. Но, учитывая обработку и оперение для стрел, - это будет честный обмен!
-	AI_Output(other,self,"DIA_Bosper_CanBuyGoblinWeapon_01_12");	//И сколько стрел я получу за одну палку?
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_13");	//(задумчиво) Ну, скажем, я дам тебе две хороших стрелы моего производства. Ну как, согласен?
-	AI_Output(other,self,"DIA_Bosper_CanBuyGoblinWeapon_01_14");	//Хорошо, я буду иметь в виду.
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_00 " );	// Wait! I have one suggestion for you.
+	AI_Output(other,self, " DIA_Bosper_CanBuyGoblinWeapon_01_01 " );	// I'm listening to you.
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_02 " );	// If you get goblin sticks, I could trade them with you for arrows!
+	AI_Output(other,self, " DIA_Bosper_CanBuyGoblinWeapon_01_03 " );	// Why are you doing this?
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_04 " );	// You see, although goblins seem to be very primitive creatures, they really aren't.
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_05 " );	// They choose the straightest branches for their clubs and dry them thoroughly.
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_06 " );	// One such club can make several excellent arrows, and without prior drying.
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_07 " );	// The goblin's stick just needs to be split and crafted a bit. For a master like me, this is not a big deal.
+	AI_Output(other,self, " DIA_Bosper_CanBuyGoblinWeapon_01_08 " );	// And how do you do it?
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_09 " );	// If I talk about all the intricacies of my craft to everyone, then soon I will have to go to the street to beg.
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_10 " );	// But we can make a good deal with you! You bring me goblin sticks, and I give you ready-made arrows for them.
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_11 " );	// Of course, you'll get fewer arrows than I can make with a single stick. But, given the processing and fletching for arrows, this will be a fair exchange!
+	AI_Output(other,self, " DIA_Bosper_CanBuyGoblinWeapon_01_12 " );	// And how many arrows will I get for one stick?
+	AI_Output(self,other, " DIA_Bosper_CanBuyGoblinWeapon_01_13 " );	// (thoughtfully) Well, let's say I give you two good arrows I made. Well, do you agree?
+	AI_Output(other,self, " DIA_Bosper_CanBuyGoblinWeapon_01_14 " );	// Okay, I'll keep that in mind.
 	BosperBuyMace = TRUE;
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Боспер скупает деревянные палки гоблинов. За одну палку он даст две стрелы.");
+	B_LogEntry(TOPIC_CityTrader, " Bosper is buying goblin wooden sticks. For one stick, he will give you two arrows. " );
 };
 
-instance DIA_Bosper_BuyGoblinWeapon(C_Info)
+instance DIA_Bosper_BuyGoblinWeapon (C_Info)
 {
 	npc = VLK_413_Bosper;
 	nr = 3;
 	condition = DIA_Bosper_BuyGoblinWeapon_Condition;
 	information = DIA_Bosper_BuyGoblinWeapon_Info;
 	permanent = TRUE;
-	description = "У меня тут есть несколько палок гоблинов для тебя.";
+	description = " I've got some goblin sticks here for you. " ;
 };
 
 func int DIA_Bosper_BuyGoblinWeapon_Condition()
@@ -1902,9 +1903,9 @@ func void DIA_Bosper_BuyGoblinWeapon_Info()
 
 	allarrow = Npc_HasItems(hero,ItMw_1h_Bau_Mace);
 	Npc_RemoveInvItems(hero,ItMw_1h_Bau_Mace,allarrow);
-	AI_Output(other,self,"DIA_Bosper_BuyGoblinWeapon_01_00");	//У меня тут есть несколько гоблинских палок для тебя.
-	AI_Output(self,other,"DIA_Bosper_BuyGoblinWeapon_01_01");	//Так, давай посмотрим, сколько их у тебя...
-	AI_Output(self,other,"DIA_Bosper_BuyGoblinWeapon_01_02");	//(считает) Отлично! Я возьму их все.
-	AI_Output(self,other,"DIA_Bosper_BuyGoblinWeapon_01_03");	//А вот твои стрелы!
+	AI_Output(other,self, " DIA_Bosper_BuyGoblinWeapon_01_00 " );	// I've got some goblin sticks here for you.
+	AI_Output(self,other, " DIA_Bosper_BuyGoblinWeapon_01_01 " );	// So let's see how many you have...
+	AI_Output(self,other, " DIA_Bosper_BuyGoblinWeapon_01_02 " );	// (counts) Great! I'll take them all.
+	AI_Output(self,other, " DIA_Bosper_BuyGoblinWeapon_01_03 " );	// Here are your arrows!
 	B_GiveInvItems(self,other,ItRw_Arrow,allarrow * 2);
 };
