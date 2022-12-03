@@ -1,4 +1,5 @@
 
+
 instance DIA_BALOR_EXIT(C_Info)
 {
 	npc = sek_8038_balor;
@@ -70,26 +71,26 @@ func int dia_balor_hallo_condition()
 
 func void dia_balor_hallo_info()
 {
-	AI_Output(other,self,"DIA_Balor_Hallo_15_00");	//Привет! Я здесь новенький!
-	AI_Output(self,other,"DIA_Balor_Hallo_13_01");	//Я... я... я Балор, ученик Идола Тиона. Ты ведь слышал о нем, да?
+	AI_Output(other,self, " DIA_Balor_Hallo_15_00 " );	// Hello! I'm new here!
+	AI_Output(self,other, " DIA_Balor_Hallo_13_01 " );	// I... I... I am Balor, disciple of the Idol of Tion. You've heard of him, haven't you?
 	Info_ClearChoices(dia_balor_hallo);
 	Info_AddChoice(dia_balor_hallo,"Нет.",dia_balor_hallo_nein);
-	Info_AddChoice(dia_balor_hallo,"Да.",dia_balor_hallo_ja);
+	Info_AddChoice(dia_balor_hallo, " Да. " ,dia_balor_hallo_ja);
 };
 
 func void dia_balor_hallo_ja()
 {
 	AI_Output(other,self,"DIA_Balor_Hallo_Ja_15_00");	//А-га.
-	AI_Output(self,other,"DIA_Balor_Hallo_Ja_13_01");	//Тогда ты знаешь, что он второй человек в этом Лагере... п-после Идола Орана.
+	AI_Output(self,other, " DIA_Balor_Hallo_Ja_13_01 " );	// Then you know that he is the second person in this Camp... t-after the Idol of Oran.
 	Info_ClearChoices(dia_balor_hallo);
 };
 
-func void dia_balor_hallo_nein()
+func void dia_balor_hello_no()
 {
 	AI_Output(other,self,"DIA_Balor_Hallo_Nein_15_00");	//Нет.
-	AI_Output(self,other,"DIA_Balor_Hallo_Nein_13_01");	//Нет?! Ты здесь недавно, не так ли?
-	AI_Output(self,other,"DIA_Balor_Hallo_Nein_13_02");	//Идол Тион в этом Лагере - второй человек после Идола Орана.
-	AI_Output(self,other,"DIA_Balor_Hallo_Nein_13_03");	//Его голос многое решает, особенно в вопросах - кого принимать к нам, а кого нет.
+	AI_Output(self,other, " DIA_Balor_Hallo_Nein_13_01 " );	// No?! You're new here, right?
+	AI_Output(self,other, " DIA_Balor_Hallo_Nein_13_02 " );	// The Idol of Tion in this Camp is the second person after the Idol of Oran.
+	AI_Output(self,other, " DIA_Balor_Hallo_Nein_13_03 " );	// His voice decides a lot, especially in questions - who to accept to us and who not.
 	Info_ClearChoices(dia_balor_hallo);
 };
 
@@ -101,7 +102,7 @@ instance DIA_BALOR_JOB(C_Info)
 	condition = dia_balor_job_condition;
 	information = dia_balor_job_info;
 	permanent = FALSE;
-	description = "А ты чем занимаешься?";
+	description = " What do you do? " ;
 };
 
 
@@ -115,9 +116,9 @@ func int dia_balor_job_condition()
 
 func void dia_balor_job_info()
 {
-	AI_Output(other,self,"DIA_Balor_Job_15_00");	//А чем ты занимаешься?
-	AI_Output(self,other,"DIA_Balor_Job_13_01");	//Я... я... я помогаю ему готовить снадобья.
-	AI_Output(self,other,"DIA_Balor_Job_13_02");	//В основном б-болотник.
+	AI_Output(other,self, " DIA_Balor_Job_15_00 " );	// What are you doing?
+	AI_Output(self,other, " DIA_Balor_Job_13_01 " );	// I... I... I help him prepare the potions.
+	AI_Output(self,other, " DIA_Balor_Job_13_02 " );	// Basically b-swamp.
 };
 
 
@@ -128,7 +129,7 @@ instance DIA_BALOR_ADDINFOKALOM(C_Info)
 	condition = dia_balor_addinfokalom_condition;
 	information = dia_balor_addinfokalom_info;
 	permanent = TRUE;
-	description = "Что еще ты можешь рассказать о своем господине?";
+	description = " What else can you say about your master? " ;
 };
 
 
@@ -142,25 +143,25 @@ func int dia_balor_addinfokalom_condition()
 
 func void dia_balor_addinfokalom_info()
 {
-	AI_Output(other,self,"DIA_Balor_AddInfoKalom_15_00");	//Что еще ты можешь рассказать о своем господине?
-	AI_Output(self,other,"DIA_Balor_AddInfoKalom_13_01");	//Он... он не такой, как... как все Гуру. НИКОМУ не позволено попусту тратить его драгоценное время.
+	AI_Output(other,self, " DIA_Balor_AddInfoKalom_15_00 " );	// What else can you say about your master?
+	AI_Output(self,other, " DIA_Balor_AddInfoKalom_13_01 " );	// He... he is not like... like all Gurus. NO ONE is allowed to waste his precious time.
 };
 
 
-instance DIA_BALOR_SEKTEHEILEN(C_Info)
+DIA_BALOR_SEKTEHEILEN (C_Info) instances
 {
 	npc = sek_8038_balor;
 	nr = 1;
 	condition = dia_balor_sekteheilen_condition;
 	information = dia_balor_sekteheilen_info;
 	permanent = FALSE;
-	description = "Выпей напиток! Он помогает от головной боли.";
+	description = " Drink a drink! It helps with a headache. " ;
 };
 
 
 func int dia_balor_sekteheilen_condition()
 {
-	if((Npc_HasItems(other,ItPo_HealObsession_MIS) > 0) && (MIS_SEKTEHEILEN == LOG_Running) && Npc_KnowsInfo(hero,dia_baalorun_sekteheilengot))
+	if ((Npc_HasItems(other,ItPo_Heal_Obsession_MY) >  0 ) && ( MY_SECTS_HEALTH  == LOG_Running) && Npc_KnowsInfo(hero, dia_heal_sectarian_obsession));
 	{
 		return TRUE;
 	};
@@ -169,11 +170,11 @@ func int dia_balor_sekteheilen_condition()
 func void dia_balor_sekteheilen_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Balor_SekteHeilen_01_00");	//Выпей напиток! Он помогает от головной боли.
+	AI_Output(other,self, " DIA_Balor_SekteHeilen_01_00 " );	// Have a drink! It helps with headaches.
 	B_GiveInvItems(other,self,ItPo_HealObsession_MIS,1);
 	B_UseItem(self,ItPo_HealObsession_MIS);
-	SEKTEHEILENCOUNT = SEKTEHEILENCOUNT + 1;
-	AI_Output(self,other,"DIA_Balor_SekteHeilen_01_01");	//М-моя голова п-прошла!
-	AI_Output(self,other,"DIA_Balor_SekteHeilen_01_02");	//О, как я тебе б-благодарен!
+	SECTEHEILENCOUNT = SECTEHEILENCOUNT  +  1 ;
+	AI_Output(self,other, " DIA_Balor_SekteHeilen_01_01 " );	// M-my head n-passed!
+	AI_Output(self,other, " DIA_Balor_SekteHeilen_01_02 " );	// Oh, how I b-thank you!
 };
 
