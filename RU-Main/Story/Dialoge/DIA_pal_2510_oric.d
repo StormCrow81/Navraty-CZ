@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_2510_ORIC_EXIT(C_Info)
 {
 	npc = pal_2510_oric;
@@ -30,7 +31,7 @@ instance DIA_PAL_2510_ORIC_PERM(C_Info)
 	condition = dia_pal_2510_oric_perm_condition;
 	information = dia_pal_2510_oric_perm_info;
 	permanent = TRUE;
-	description = "Есть новости?";
+	description = " Any news? " ;
 };
 
 
@@ -43,11 +44,11 @@ func void dia_pal_2510_oric_perm_info()
 {
 	if(ORICNEWSNW == FALSE)
 	{
-		AI_Output(other,self,"DIA_PAL_2510_Oric_Perm_01_00");	//Есть новости?
-		AI_Output(self,other,"DIA_PAL_2510_Oric_Perm_01_01");	//Эх, парень...(улыбается) Пока единственная хорошая новость - это то, что мы все еще живы!
-		AI_Output(self,other,"DIA_PAL_2510_Oric_Perm_01_02");	//Честно говоря, я и не предполагал, что нам удастся выбраться из той долины.
-		AI_Output(other,self,"DIA_PAL_2510_Oric_Perm_01_03");	//Но как видишь, это случилось.
-		AI_Output(self,other,"DIA_PAL_2510_Oric_Perm_01_04");	//Ну да, пока нам везет! Будем надеяться, что удача не покинет нас и в дальнейшем.
+		AI_Output(other,self, " DIA_PAL_2510_Oric_Perm_01_00 " );	// Any news?
+		AI_Output(self,other, " DIA_PAL_2510_Oric_Perm_01_01 " );	// Eh, boy... (smiles) So far, the only good news is that we're still alive!
+		AI_Output(self,other, " DIA_PAL_2510_Oric_Perm_01_02 " );	// To be honest, I didn't think we'd be able to get out of that valley.
+		AI_Output(other,self, " DIA_PAL_2510_Oric_Perm_01_03 " );	// But as you can see, it happened.
+		AI_Output(self,other, " DIA_PAL_2510_Oric_Perm_01_04 " );	// Well, yes, so far we're lucky! Let's hope that luck will not leave us in the future.
 		AI_Output(other,self,"DIA_PAL_2510_Oric_Perm_01_05");	//Само собой.
 	}
 	else
