@@ -1,3 +1,4 @@
+
 var int LehmarLostBookDay;
 
 instance DIA_Lehmar_EXIT(C_Info)
@@ -22,28 +23,28 @@ func void DIA_Lehmar_EXIT_Info()
 };
 
 
-instance DIA_Lehmar_ENTSCHULDIGUNG(C_Info)
+instance DIA_Lehmar_SORRY (C_Info)
 {
 	npc = VLK_484_Lehmar;
 	nr = 2;
 	condition = DIA_Lehmar_ENTSCHULDIGUNG_Condition;
 	information = DIA_Lehmar_ENTSCHULDIGUNG_Info;
 	permanent = FALSE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
-func int DIA_Lehmar_ENTSCHULDIGUNG_Condition()
+func int DIA_Lehmar_SORRY_Condition()
 {
 	return TRUE;
 };
 
-func void DIA_Lehmar_ENTSCHULDIGUNG_Info()
+func void DIA_Lehmar_SORRY_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_ENTSCHULDIGUNG_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Lehmar_ENTSCHULDIGUNG_09_01");	//Сколько ты хочешь?
-	AI_Output(other,self,"DIA_Lehmar_ENTSCHULDIGUNG_15_02");	//Что значит 'сколько'?
-	AI_Output(self,other,"DIA_Lehmar_ENTSCHULDIGUNG_09_03");	//Я ростовщик и ты пришел ко мне! Что тебе еще может быть нужно от меня? Деньги, конечно.
+	AI_Output(other,self, " DIA_Lehmar_ENTSCHULDIGUNG_15_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Lehmar_ENTSCHULDIGUNG_09_01 " );	// How much do you want?
+	AI_Output(other,self, " DIA_Lehmar_ENTSCHULDIGUNG_15_02 " );	// What does 'how much' mean?
+	AI_Output(self,other, " DIA_Lehmar_ENTSCHULDIGUNG_09_03 " );	// I'm a moneylender and you came to me! What more could you need from me? Money, of course.
 };
 
 instance DIA_Lehmar_LemarTheft(C_Info)
@@ -53,12 +54,12 @@ instance DIA_Lehmar_LemarTheft(C_Info)
 	condition = DIA_Lehmar_LemarTheft_Condition;
 	information = DIA_Lehmar_LemarTheft_Info;
 	permanent = FALSE;
-	description = "Все-таки я сомневаюсь, что ты даешь деньги просто так.";
+	description = " Still, I doubt that you're giving money for nothing. " ;
 };
 
 func int DIA_Lehmar_LemarTheft_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Lehmar_ENTSCHULDIGUNG) == TRUE) && (MIS_LemarTheft == LOG_Running))
+	if ((Npc_KnowsInfo(other,DIA_Lehmar_Encountered) ==  TRUE ) && (MIS_LemarTheft == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -66,48 +67,48 @@ func int DIA_Lehmar_LemarTheft_Condition()
 
 func void DIA_Lehmar_LemarTheft_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_00");	//Все-таки я сомневаюсь, что ты всегда даешь деньги просто так.
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_01");	//Нет, не всегда...(ухмыляется) В большинстве случаев я беру еще в залог что-нибудь ценное!
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_02");	//На тот случай, если кто-то все-таки не сможет вернуть свой долг.
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_03");	//Не делая этого, я бы уже разорился. Но некоторые вещи вполне окупают мои расходы.
-	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_04");	//А что ты с ними потом делаешь? Продаешь?
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_05");	//Некоторые продаю, некоторые оставляю себе.
-	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_06");	//Может быть, тогда дашь мне взглянуть на то, что у тебя выставлено на продажу?
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_07");	//Уж не знаю. Ты не производишь впечатление богатого человека.
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_08");	//А все эти вещи довольно дорогие!
-	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_09");	//У меня есть деньги.
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_10");	//Докажи! Например, сколько у тебя сейчас с собой?
-	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_11");	//Вот, смотри.
+	AI_Output(other,self, " DIA_Lehmar_LemarTheft_01_00 " );	// Still, I doubt that you always give money for nothing.
+	AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_01 " );	// No, not always... (grins) Most of the time, I'll also pledge something of value!
+	AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_02 " );	// Just in case someone still can't repay their debt.
+	AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_03 " );	// If I didn't do this, I'd be broke already. But some things are well worth my expenses.
+	AI_Output(other,self, " DIA_Lehmar_LemarTheft_01_04 " );	// What do you do with them afterwards? Selling?
+	AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_05 " );	// I sell some, I keep some for myself.
+	AI_Output(other,self, " DIA_Lehmar_LemarTheft_01_06 " );	// Maybe then you'll let me take a look at what you have for sale?
+	AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_07 " );	// I don't know. You don't come across as a rich person.
+	AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_08 " );	// And all these things are quite expensive!
+	AI_Output(other,self, " DIA_Lehmar_LemarTheft_01_09 " );	// I have money.
+	AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_10 " );	// Prove! For example, how much do you have with you right now?
+	AI_Output(other,self, " DIA_Lehmar_LemarTheft_01_11 " );	// Here, look.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 1000)
 	{
 		B_GivePlayerXP(300);
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_12");	//Я впечатлен! У тебя тут больше тысячи золотых.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_13");	//Похоже, ты и вправду богат! Хотя по тебе этого не скажешь.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_14");	//Хорошо, я покажу тебе часть моих товаров.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_15");	//Уверен, что они тебя заинтересуют.
-		B_LogEntry(Topic_LemarTheft,"Я добился от Лемара того, что он согласился мне продать заложенные ему вещи.");
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_12 " );	// I'm impressed! You've got over a thousand gold pieces here.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_13 " );	// Looks like you really are rich! Although you can't say that.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_14 " );	// Okay, I'll show you some of my goods.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_15 " );	// I'm sure you'll be interested in them.
+		B_LogEntry(Topic_LemarTheft, " I got Lemar to agree to sell me the pawned items. " );
 		LehmarTrade = TRUE;
 	}
 	else if(Npc_HasItems(hero,ItMi_Gold) >= 500)
 	{
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_16");	//Хммм. (улыбаясь) Да, неплохо! На первый взгляд, у тебя тут больше пятиста монет.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_17");	//Да, деньги у тебя водятся! Но я не думаю, что их хватило бы для покупки моих вещей.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_18");	//Так что извини.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_16 " );	// Hmmm. (smiling) Yes, not bad! At first glance, you have more than five hundred coins here.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_17 " );	// Yes, you have money! But I do not think that they would be enough to buy my things.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_18 " );	// So sorry.
 		LehmarNoTrade = TRUE;
 		AI_StopProcessInfos(self);
 	}
 	else if(Npc_HasItems(hero,ItMi_Gold) >= 100)
 	{
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_19");	//(посмеиваясь) Ну и что? У тебя тут чуть больше ста монет.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_20");	//Мои вещи стоят в разы дороже. Так что нам пока больше нечего обсуждать.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_19 " );	// (chuckling) So what? You've got a little over a hundred coins here.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_20 " );	// My things cost many times more. So we have nothing more to discuss for now.
 		LehmarNoTrade = TRUE;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_21");	//Хммм. (пренебрежительно) Я и отсюда вижу, что ты беден.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_22");	//Лучше найди себе работу! А про мои вещи забудь. (зевая) Они не для таких, как ты.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_21 " );	// Hmmm. (disparagingly) I can see from here that you are poor.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_01_22 " );	// Better get yourself a job! And forget about my things. (yawning) They're not for the likes of you.
 		LehmarNoTrade = TRUE;
 		AI_StopProcessInfos(self);
 	};
@@ -120,7 +121,7 @@ instance DIA_Lehmar_Trade(C_Info)
 	condition = DIA_Lehmar_Trade_Condition;
 	information = DIA_Lehmar_Trade_Info;
 	permanent = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 	trade = TRUE;
 };
 
@@ -140,7 +141,7 @@ func void DIA_Lehmar_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Lutero_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Lutero_Trade_15_00 " );	// Show me your products.
 	B_GiveTradeInv(self);
 };
 
@@ -151,7 +152,7 @@ instance DIA_Lehmar_LemarTheft_Again(C_Info)
 	condition = DIA_Lehmar_LemarTheft_Again_Condition;
 	information = DIA_Lehmar_LemarTheft_Again_Info;
 	permanent = TRUE;
-	description = "Теперь мне хватит денег, чтобы купить твои вещи.";
+	description = " Now I have enough money to buy your things. " ;
 };
 
 func int DIA_Lehmar_LemarTheft_Again_Condition()
@@ -164,37 +165,37 @@ func int DIA_Lehmar_LemarTheft_Again_Condition()
 
 func void DIA_Lehmar_LemarTheft_Again_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_LemarTheft_Again_01_00");	//Теперь мне хватит денег, чтобы купить твои вещи.
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_01");	//Да? (с интересом) Ну, давай, похвастайся.
-	AI_Output(other,self,"DIA_Lehmar_LemarTheft_Again_01_02");	//Вот, смотри.
+	AI_Output(other,self, " DIA_Lehmar_LemarTheft_Again_01_00 " );	// Now I have enough money to buy your things.
+	AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_01 " );	// Yes? (with interest) Come on, show off.
+	AI_Output(other,self, " DIA_Lehmar_LemarTheft_Again_01_02 " );	// Here, look.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 1000)
 	{
 		B_GivePlayerXP(150);
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_03");	//(удивленно) Я впечатлен! У тебя тут больше тысячи золотых.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_04");	//Похоже, ты и вправду богат! Хотя по тебе этого не скажешь.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_05");	//(деловито) Хорошо, я покажу тебе часть моих товаров. 
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_06");	//Уверен, что они тебя очень заинтересуют!
-		B_LogEntry(Topic_LemarTheft,"Я добился от Лемара того, что он согласился мне продать заложенные ему вещи.");
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_03 " );	// (surprised) I'm impressed! You've got over a thousand gold pieces here.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_04 " );	// Looks like you really are rich! Although you can't say that.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_05 " );	// (businesslike) Okay, I'll show you some of my wares.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_06 " );	// I'm sure you'll be very interested in them!
+		B_LogEntry(Topic_LemarTheft, " I got Lemar to agree to sell me the pawned items. " );
 		LehmarTrade = TRUE;
 	}
 	else if(Npc_HasItems(hero,ItMi_Gold) >= 500)
 	{
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_07");	//Хммм. (улыбаясь) Да, неплохо! На первый взгляд, у тебя тут больше пятиста монет.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_08");	//Да, деньги у тебя водятся. Но не думаю, что их хватило бы для покупки моих вещей.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_09");	//Так что извини.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_07 " );	// Hmmm. (smiling) Yes, not bad! At first glance, you have more than five hundred coins here.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_08 " );	// Yes, you have money. But I do not think that they would be enough to buy my things.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_09 " );	// So sorry.
 		AI_StopProcessInfos(self);
 	}
 	else if(Npc_HasItems(hero,ItMi_Gold) >= 100)
 	{
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_10");	//(посмеиваясь) Ну, и что? У тебя тут чуть больше ста монет.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_11");	//Извини, но мои вещи стоят в разы дороже! Так что нам пока больше нечего обсуждать.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_10 " );	// (chuckling) So what? You've got a little over a hundred coins here.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_11 " );	// Sorry, but my things cost many times more! So we have nothing more to discuss for now.
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_12");	//Хммм. (пренебрежительно) Я и отсюда вижу, что ты все так же беден.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_13");	//Так что забудь про мои вещи. (зевая) Они не для тебя.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_12 " );	// Hmmm. (disparagingly) I can see from here that you are still poor.
+		AI_Output(self,other, " DIA_Lehmar_LemarTheft_Again_01_13 " );	// So forget about my things. (yawning) They're not for you.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -219,28 +220,28 @@ func int DIA_Lehmar_Relic_Condition()
 
 func void DIA_Lehmar_Relic_Info()
 {
-	AI_Output(self,other,"DIA_Lehmar_Relic_01_00");	//Я так и знал, что тебя заинтересует эта вещица!
-	AI_Output(self,other,"DIA_Lehmar_Relic_01_01");	//Мне ее заложил один из магов Огня.
-	AI_Output(self,other,"DIA_Lehmar_Relic_01_02");	//К сожалению, для меня она оказалась абсолютно бесполезной.
-	AI_Output(self,other,"DIA_Lehmar_Relic_01_03");	//Поэтому я рад, что наконец-то избавился от нее...(довольно) Выгодная сделка!
+	AI_Output(self,other, " DIA_Lehmar_Relic_01_00 " );	// I knew you'd be interested in this thing!
+	AI_Output(self,other, " DIA_Lehmar_Relic_01_01 " );	// One of the Firebenders pawned it for me.
+	AI_Output(self,other, " DIA_Lehmar_Relic_01_02 " );	// Unfortunately, for me it turned out to be absolutely useless.
+	AI_Output(self,other, " DIA_Lehmar_Relic_01_03 " );	// So I'm glad I finally got rid of her... (pretty) Good deal!
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Lehmar_GELDLEIHEN(C_Info)
+instance DIA_Lehmar_GELDLEIHEN (C_Info)
 {
 	npc = VLK_484_Lehmar;
 	nr = 3;
 	condition = DIA_Lehmar_GELDLEIHEN_Condition;
 	information = DIA_Lehmar_GELDLEIHEN_Info;
 	permanent = TRUE;
-	description = "Одолжи мне денег!";
+	description = " Lend me some money! " ;
 };
 
 var int DIA_Lehmar_GELDLEIHEN_noPerm;
 
 func int DIA_Lehmar_GELDLEIHEN_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Lehmar_ENTSCHULDIGUNG) && (DIA_Lehmar_GELDLEIHEN_noPerm == FALSE))
+	if (Npc_KnowsInfo(other,DIA_Lehmar_ENTSCHULDIGUNG) && (DIA_Lehmar_GELDLEIHEN_noPerm ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -248,100 +249,100 @@ func int DIA_Lehmar_GELDLEIHEN_Condition()
 
 func void DIA_Lehmar_GELDLEIHEN_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_15_00");	//Одолжи мне денег!
-	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_09_01");	//Конечно! Сколько ты хочешь? Я беру двадцать процентов!
+	AI_Output(other,self, " DIA_Lehmar_GELDLEIHEN_15_00 " );	// Lend me some money!
+	AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_09_01 " );	// Of course! How much do you want? I take twenty percent!
 	Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
-	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"Я подумаю над этим.",DIA_Lehmar_GELDLEIHEN_back);
-	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"Тысячу золотых.",DIA_Lehmar_GELDLEIHEN_1000);
-	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"Двести золотых.",DIA_Lehmar_GELDLEIHEN_200);
-	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"Пятьдесят золотых.",DIA_Lehmar_GELDLEIHEN_50);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN, " I'll think about it. " ,DIA_Lehmar_GELDLEIHEN_back);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN, " A thousand gold pieces. " ,DIA_Lehmar_GELDLEIHEN_1000);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN, " Two hundred gold. " ,DIA_Lehmar_GELDLEIHEN_200);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN, " Fifty gold. " ,DIA_Lehmar_GELDLEIHEN_50);
 };
 
 func void DIA_Lehmar_GELDLEIHEN_back()
 {
-	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_back_15_00");	//Я подумаю над этим.
-	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_back_09_01");	//Думай же быстрее! Не трать мое время попусту!
+	AI_Output(other,self, " DIA_Lehmar_GELDLEIHEN_back_15_00 " );	// I'll think about it.
+	AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_back_09_01 " );	// Think faster! Don't waste my time!
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Lehmar_GELDLEIHEN_50()
 {
-	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_50_15_00");	//Пятьдесят золотых.
-	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_50_09_01");	//Мелочь, да? Я хочу, чтобы ты вернул их завтра, понятно?
+	AI_Output(other,self, " DIA_Lehmar_GELDLEIHEN_50_15_00 " );	// Fifty gold.
+	AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_50_09_01 " );	// Small thing, huh? I want you to return them tomorrow, okay?
 	CreateInvItems(self,ItMi_Gold,50);
 	B_GiveInvItems(self,other,ItMi_Gold,50);
-	DIA_Lehmar_GELDLEIHEN_noPerm = TRUE;
-	Lehmar_GeldGeliehen_Day = Wld_GetDay();
-	Lehmar_GeldGeliehen = 50;
+	DIA_Lehmar_GELDLEIHEN_noPerm = TRUE ;
+	Lehmar_MoneyGeleihen_Day = Wld_GetDay();
+	Lehmar_MoneyBorrowed = 50 ;
 	Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
 };
 
 func void DIA_Lehmar_GELDLEIHEN_200()
 {
-	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_200_15_00");	//Двести золотых.
-	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_200_09_01");	//Это большая сумма денег. Я хочу видеть тебя завтра, и деньги тоже, понятно?
+	AI_Output(other,self, " DIA_Lehmar_GELDLEIHEN_200_15_00 " );	// Two hundred gold.
+	AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_200_09_01 " );	// This is a large amount of money. I want to see you tomorrow, and the money too, okay?
 	CreateInvItems(self,ItMi_Gold,200);
 	B_GiveInvItems(self,other,ItMi_Gold,200);
-	DIA_Lehmar_GELDLEIHEN_noPerm = TRUE;
-	Lehmar_GeldGeliehen_Day = Wld_GetDay();
-	Lehmar_GeldGeliehen = 200;
+	DIA_Lehmar_GELDLEIHEN_noPerm = TRUE ;
+	Lehmar_MoneyGeleihen_Day = Wld_GetDay();
+	Lehmar_MoneyBorrowed = 200 ;
 	Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
 };
 
 func void DIA_Lehmar_GELDLEIHEN_1000()
 {
-	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_1000_15_00");	//Тысячу золотых.
+	AI_Output(other,self, " DIA_Lehmar_GELDLEIHEN_1000_15_00 " );	// A thousand gold pieces.
 
 	if(RhetorikSkillValue[1] >= 10)
 	{
-		AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_03");	//(удивленно) Тысячу золотых?! Знаешь, это очень большая сумма.
-		AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_1000_09_04");	//У тебя, видимо, просто нет таких денег.
-		AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_05");	//Деньги-то есть, но я очень рискую, ссужая тебе столько золота.
-		AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_06");	//Ну ладно. (задумчиво) Я дам тебе тысячу монет.
-		AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_07");	//Но завтра же ты мне их вернешь! И с процентами. Все ясно?
-		AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_1000_09_08");	//Договорились.
-		AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_09");	//Смотри! Не обмани меня.
+		AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_1000_09_03 " );	// (surprised) A thousand gold?! You know, it's a very large amount.
+		AI_Output(other,self, " DIA_Lehmar_GELDLEIHEN_1000_09_04 " );	// You probably just don't have that kind of money.
+		AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_1000_09_05 " );	// I have the money, but I'm taking a big risk lending you so much gold.
+		AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_1000_09_06 " );	// Okay. (thoughtfully) I'll give you a thousand coins.
+		AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_1000_09_07 " );	// But tomorrow you will return them to me! And with interest. All clear?
+		AI_Output(other,self, " DIA_Lehmar_GELDLEIHEN_1000_09_08 " );	// Agreed.
+		AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_1000_09_09 " );	// Look! Don't fool me
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		CreateInvItems(self,ItMi_Gold,1000);
 		B_GiveInvItems(self,other,ItMi_Gold,1000);
-		DIA_Lehmar_GELDLEIHEN_noPerm = TRUE;
-		Lehmar_GeldGeliehen_Day = Wld_GetDay();
-		Lehmar_GeldGeliehen = 1000;
+		DIA_Lehmar_GELDLEIHEN_noPerm = TRUE ;
+		Lehmar_MoneyGeleihen_Day = Wld_GetDay();
+		Lehmar_MoneyBorrowed = 1000 ;
 		Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_01");	//У тебя с головой все в порядке?
-		AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_02");	//Я дам тебе сотню. И не забудь мне вернуть их завтра!
+		AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_1000_09_01 " );	// Are you all right in the head?
+		AI_Output(self,other, " DIA_Lehmar_GELDLEIHEN_1000_09_02 " );	// I'll give you a hundred. And don't forget to give them back to me tomorrow!
 		CreateInvItems(self,ItMi_Gold,100);
 		B_GiveInvItems(self,other,ItMi_Gold,100);
-		DIA_Lehmar_GELDLEIHEN_noPerm = TRUE;
-		Lehmar_GeldGeliehen_Day = Wld_GetDay();
-		Lehmar_GeldGeliehen = 100;
+		DIA_Lehmar_GELDLEIHEN_noPerm = TRUE ;
+		Lehmar_MoneyGeleihen_Day = Wld_GetDay();
+		Lehmar_MoneyBorrowed = 100 ;
 		Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
 	};
 };
 
 
-instance DIA_Lehmar_WARUMGELD(C_Info)
+instance DIA_Lehmar_WARUMGELD (C_Info)
 {
 	npc = VLK_484_Lehmar;
 	nr = 3;
 	condition = DIA_Lehmar_WARUMGELD_Condition;
 	information = DIA_Lehmar_WARUMGELD_Info;
 	permanent = FALSE;
-	description = "Ты всегда так легко раздаешь деньги?";
+	description = " Do you always give away money so easily? " ;
 };
 
 func int DIA_Lehmar_WARUMGELD_Condition()
 {
-	if(Lehmar_GeldGeliehen != 0)
+	if (Lehmar_MoneyLoaned !=  0 )
 	{
 		return TRUE;
 	};
@@ -349,85 +350,85 @@ func int DIA_Lehmar_WARUMGELD_Condition()
 
 func void DIA_Lehmar_WARUMGELD_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_WARUMGELD_15_00");	//Ты всегда так легко раздаешь деньги?
-	AI_Output(self,other,"DIA_Lehmar_WARUMGELD_09_01");	//Не волнуйся. Ты вернешься. Или я найду тебя и убью. Все просто.
-	AI_Output(self,other,"DIA_Lehmar_WARUMGELD_09_02");	//У тебя такая запоминающаяся внешность, что мне не составит труда найти тебя.
-	AI_Output(self,other,"DIA_Lehmar_WARUMGELD_09_03");	//Так что даже не думай обмануть меня.
+	AI_Output(other,self, " DIA_Lehmar_WARUMGELD_15_00 " );	// Do you always hand out money so easily?
+	AI_Output(self,other, " DIA_Lehmar_WARUMGELD_09_01 " );	// Don't worry. Will you come back. Or I will find you and kill you. Everything is simple.
+	AI_Output(self,other, " DIA_Lehmar_WARUMGELD_09_02 " );	// You have such a memorable appearance that it won't be hard for me to find you.
+	AI_Output(self,other, " DIA_Lehmar_WARUMGELD_09_03 " );	// So don't even think about fooling me.
 };
 
-var int Lehmar_vorbei;
+var int Lehmar_over;
 
-instance DIA_Lehmar_GELDEINTREIBEN(C_Info)
+instance DIA_Lehmar_GELDEINTREIBEN (C_Info)
 {
 	npc = VLK_484_Lehmar;
 	nr = 5;
 	condition = DIA_Lehmar_GELDEINTREIBEN_Condition;
-	information = DIA_Lehmar_GELDEINTREIBEN_Info;
+	information = DIA_Lehmar_GELDEINTRIIBEN_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int DIA_Lehmar_GELDEINTREIBEN_Condition()
+func int DIA_Lehmar_GELDEINTRIIBEN_Condition()
 {
-	if((Lehmar_GeldGeliehen_Day <= (Wld_GetDay() - 2)) && (Lehmar_GeldGeliehen != 0) && (RangerHelp_LehmarKohle == FALSE))
+	if ((Lehmar_MoneyGeleihen_Day <= (Wld_GetDay() -  2 )) && (Lehmar_MoneyGeleihen !=  0 ) && (RangerHelp_LehmarKohle ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Lehmar_GELDEINTREIBEN_Info()
+func void DIA_Lehmar_GELDEINTRIIBEN_Info()
 {
-	AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_09_00");	//Ты не вернул долг, ублюдок! Верни мне мои деньги! А так как мне пришлось напоминать тебе об этом, процент возрастает.
-	AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_09_01");	//Теперь это обойдется тебе в тридцать процентов вместо обычных двадцати.
+	AI_Output(self,other, " DIA_Lehmar_GELDEINTREIBEN_09_00 " );	// You didn't repay the debt, you bastard! Give me back my money! And since I had to remind you of this, the percentage goes up.
+	AI_Output(self,other, " DIA_Lehmar_GELDEINTREIBEN_09_01 " );	// Now it will cost you thirty percent instead of the usual twenty.
 	Info_ClearChoices(DIA_Lehmar_GELDEINTREIBEN);
-	Info_AddChoice(DIA_Lehmar_GELDEINTREIBEN,"Я верну свой долг.",DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen);
-	Info_AddChoice(DIA_Lehmar_GELDEINTREIBEN,"Я ничего тебе не дам!",DIA_Lehmar_GELDEINTREIBEN_kannstmich);
+	Info_AddChoice(DIA_Lehmar_GELDEINTREIBEN, " Я верну свой долг. " ,DIA_Lehmar_GELDEINTREIBEN_kreditenzahlen);
+	Info_AddChoice(DIA_Lehmar_GELDEINTREIBEN, " I won't give you anything! " ,DIA_Lehmar_GELDEINTREIBEN_kannstmich);
 };
 
-func void DIA_Lehmar_GELDEINTREIBEN_kannstmich()
+func void DIA_Lehmar_MONEY-INTRIBE_canstme()
 {
-	AI_Output(other,self,"DIA_Lehmar_GELDEINTREIBEN_kannstmich_15_00");	//Я ничего тебе не дам!
-	AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_kannstmich_09_01");	//Ох, нет, дашь!
-	Lehmar_vorbei = TRUE;
+	AI_Output(other,self, " DIA_Lehmar_GELDEINTREIBEN_kannstmich_15_00 " );	// I won't give you anything!
+	AI_Output(self,other, " DIA_Lehmar_GELDEINTREIBEN_kannstmich_09_01 " );	// Oh, no, give it!
+	Lehmar_over = TRUE ;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
 
-func void DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen()
+func void DIA_Lehmar_GELDEINTRIIBEN_kreditenzahlen()
 {
-	AI_Output(other,self,"DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_15_00");	//Я верну свой долг.
+	AI_Output(other,self, " DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_15_00 " );	// I will repay my debt.
 
-	if(Lehmar_GeldGeliehen == 50)
+	if (Lehmar_MoneyLoaned ==  50 )
 	{
-		Lehmar_GeldGeliehen_MitZinsen = 65;
+		Lehmar_MoneyGeleihen_WithInterest = 65 ;
 	};
-	if(Lehmar_GeldGeliehen == 200)
+	if (Lehmar_MoneyLoaned ==  200 )
 	{
-		Lehmar_GeldGeliehen_MitZinsen = 260;
+		Lehmar_MoneyGeleihen_WithInterest = 260 ;
 	};
-	if(Lehmar_GeldGeliehen == 100)
+	if (Lehmar_MoneyLoaned ==  100 )
 	{
-		Lehmar_GeldGeliehen_MitZinsen = 130;
+		Lehmar_MoneyGeleihen_WithInterest = 130 ;
 	};
-	if(Lehmar_GeldGeliehen == 1000)
+	if (Lehmar_MoneyLoaned ==  1000 )
 	{
-		Lehmar_GeldGeliehen_MitZinsen = 1300;
+		Lehmar_MoneyGeleihen_WithInterest = 1300 ;
 	};
-	IntToFloat(Lehmar_GeldGeliehen_MitZinsen);
+	IntToFloat(Lehmar_MoneyBorrowed_WithInterest);
 
-	if(Npc_HasItems(other,ItMi_Gold) >= Lehmar_GeldGeliehen_MitZinsen)
+	if (Npc_HasItems(other,ItMi_Gold) >= Lehmar_Geleihen_MitInterest)
 	{
-		B_GiveInvItems(other,self,ItMi_Gold,Lehmar_GeldGeliehen_MitZinsen);
-		AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_01");	//Тебе повезло! А теперь проваливай!
-		Lehmar_GeldGeliehen = 0;
+		B_GiveInvItems(other,self,ItMi_Gold,Lehmar_GeldGeleihen_MitZinsen);
+		AI_Output(self,other, " DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_01 " );	// You're in luck! Now get out!
+		Lehmar_MoneyBorrowed = 0 ;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_02");	//У тебя с собой нет столько денег! Ладно. Похоже, мне придется преподать тебе урок.
-		AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_03");	//Ничего личного - мне просто нужно поддерживать свою репутацию.
-		Lehmar_vorbei = TRUE;
+		AI_Output(self,other, " DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_02 " );	// You don't have that much money with you! OK. Looks like I'll have to teach you a lesson.
+		AI_Output(self,other, " DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_03 " );	// Nothing personal - I just need to maintain my reputation.
+		Lehmar_over = TRUE ;
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_NONE,1);
 	};
@@ -441,13 +442,13 @@ instance DIA_Lehmar_GELDZURUECK(C_Info)
 	condition = DIA_Lehmar_GELDZURUECK_Condition;
 	information = DIA_Lehmar_GELDZURUECK_Info;
 	permanent = TRUE;
-	description = "Вот твои деньги!";
+	description = " Here's your money! " ;
 };
 
 
 func int DIA_Lehmar_GELDZURUECK_Condition()
 {
-	if(!Npc_KnowsInfo(other,DIA_Lehmar_GELDEINTREIBEN) && (Lehmar_GeldGeliehen != 0))
+	if ( ! Npc_KnowsInfo(other,DIA_Lehmar_GELDEINTREIBEN) && (Lehmar_GeldGeleihen !=  0 ))
 	{
 		return TRUE;
 	};
@@ -455,64 +456,64 @@ func int DIA_Lehmar_GELDZURUECK_Condition()
 
 func void DIA_Lehmar_GELDZURUECK_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_GELDZURUECK_15_00");	//Вот твои деньги!
+	AI_Output(other,self, " DIA_Lehmar_GELDZURUECK_15_00 " );	// Here's your money!
 
-	if((RangerHelp_LehmarKohle == TRUE) && (Lehmar_GeldGeliehen_Day <= (Wld_GetDay() - 2)))
+	if ((RangerHelp_LehmarKohle ==  TRUE ) && (Lehmar_MoneyGeleihen_Day <= (Wld_GetDay() -  2 )))
 	{
-		AI_Output(self,other,"DIA_Addon_Lehmar_GELDZURUECK_09_00");	//Оставь их! Ларес уже обо всем позаботился.
-		AI_Output(self,other,"DIA_Addon_Lehmar_GELDZURUECK_09_01");	//Похоже, вы с этим мошенником приятели, а? Ладно, это не мое дело. Удачи!
-		Lehmar_GeldGeliehen = 0;
+		AI_Output(self,other, " DIA_Addon_Lehmar_GELDZURUECK_09_00 " );	// Leave them! Lares has already taken care of everything.
+		AI_Output(self,other, " DIA_Addon_Lehmar_GELDZURUECK_09_01 " );	// Sounds like you and this scammer are buddies, huh? Okay, it's none of my business. Good luck!
+		Lehmar_MoneyBorrowed = 0 ;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		if(Lehmar_GeldGeliehen == 50)
+		if (Lehmar_MoneyLoaned ==  50 )
 		{
-			Lehmar_GeldGeliehen_MitZinsen = 60;
+			Lehmar_MoneyGeleihen_WithInterest = 60 ;
 		};
-		if(Lehmar_GeldGeliehen == 200)
+		if (Lehmar_MoneyLoaned ==  200 )
 		{
-			Lehmar_GeldGeliehen_MitZinsen = 240;
+			Lehmar_MoneyGeleihen_WithInterest = 240 ;
 		};
-		if(Lehmar_GeldGeliehen == 100)
+		if (Lehmar_MoneyLoaned ==  100 )
 		{
-			Lehmar_GeldGeliehen_MitZinsen = 120;
+			Lehmar_MoneyGeleihen_WithInterest = 120 ;
 		};
-		if(Lehmar_GeldGeliehen == 1000)
+		if (Lehmar_MoneyLoaned ==  1000 )
 		{
-			Lehmar_GeldGeliehen_MitZinsen = 1200;
+			Lehmar_MoneyGeleihen_WithInterest = 1200 ;
 		};
-		IntToFloat(Lehmar_GeldGeliehen_MitZinsen);
+		IntToFloat(Lehmar_MoneyBorrowed_WithInterest);
 
-		if(Npc_HasItems(other,ItMi_Gold) >= Lehmar_GeldGeliehen_MitZinsen)
+		if (Npc_HasItems(other,ItMi_Gold) >= Lehmar_Geleihen_MitInterest)
 		{
-			B_GiveInvItems(other,self,ItMi_Gold,Lehmar_GeldGeliehen_MitZinsen);
-			AI_Output(self,other,"DIA_Lehmar_GELDZURUECK_09_01");	//Превосходно! Приятно иметь с тобой дело.
-			Lehmar_GeldGeliehen = 0;
+			B_GiveInvItems(other,self,ItMi_Gold,Lehmar_GeldGeleihen_MitZinsen);
+			AI_Output(self,other, " DIA_Lehmar_GELDZURUECK_09_01 " );	// Great! Nice to do business with you.
+			Lehmar_MoneyBorrowed = 0 ;
 			AI_StopProcessInfos(self);
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Lehmar_GELDZURUECK_09_02");	//Здесь недостаточно! Возвращайся, когда у тебя будет вся сумма. У тебя еще есть время. Помни, 20 процентов!
+			AI_Output(self,other, " DIA_Lehmar_GELDZURUECK_09_02 " );	// Not enough here! Come back when you have the full amount. You still have time. Remember, 20 percent!
 			AI_StopProcessInfos(self);
 		};
 	};
 };
 
 
-instance DIA_Lehmar_NOCHMALGELD(C_Info)
+instance DIA_Lehmar_NOCHMALGELD (C_Info)
 {
 	npc = VLK_484_Lehmar;
 	nr = 8;
 	condition = DIA_Lehmar_NOCHMALGELD_Condition;
 	information = DIA_Lehmar_NOCHMALGELD_Info;
 	permanent = TRUE;
-	description = "Могу я занять у тебя денег?";
+	description = " Can I borrow money from you? " ;
 };
 
 func int DIA_Lehmar_NOCHMALGELD_Condition()
 {
-	if((Lehmar_GeldGeliehen == 0) && (Lehmar_GeldGeliehen_MitZinsen != 0))
+	if ((Lehmar_MoneyLoaned ==  0 ) && (Lehmar_MoneyLoaned_WithInterest !=  0 ))
 	{
 		return TRUE;
 	};
@@ -520,16 +521,16 @@ func int DIA_Lehmar_NOCHMALGELD_Condition()
 
 func void DIA_Lehmar_NOCHMALGELD_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_NOCHMALGELD_15_00");	//Могу я занять у тебя денег?
+	AI_Output(other,self, " DIA_Lehmar_NOCHMALGELD_15_00 " );	// Can I borrow money from you?
 
-	if(Npc_KnowsInfo(other,DIA_Lehmar_GELDEINTREIBEN) || Npc_KnowsInfo(other,DIA_Lehmar_BuchWeg))
+	if (Npc_KnowsInfo(other,DIA_Lehmar_GELDEINTRIIBEN) || Npc_KnowsInfo(other,DIA_Lehmar_BuchWeg))
 	{
-		AI_Output(self,other,"DIA_Lehmar_NOCHMALGELD_09_01");	//Ты думаешь, я идиот? Проваливай!
+		AI_Output(self,other, " DIA_Lehmar_NOCHMALGELD_09_01 " );	// Do you think I'm an idiot? Get out!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Lehmar_NOCHMALGELD_09_02");	//Больше не можешь! Я понес большие издержки и теперь у меня на счету каждая монета.
-		AI_Output(self,other,"DIA_Lehmar_NOCHMALGELD_09_03");	//Заходи через несколько дней!
+		AI_Output(self,other, " DIA_Lehmar_NOCHMALGELD_09_02 " );	// You can't do it anymore! I incurred big expenses and now I have every coin in my account.
+		AI_Output(self,other, " DIA_Lehmar_NOCHMALGELD_09_03 " );	// Check back in a few days!
 	};
 };
 
@@ -540,7 +541,7 @@ instance DIA_Lehmar_PICKPOCKET(C_Info)
 	condition = DIA_Lehmar_PICKPOCKET_Condition;
 	information = DIA_Lehmar_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Попытаться украсть его долговую книгу)";
+	description = " (Try to steal his debt book) " ;
 };
 
 func int DIA_Lehmar_PICKPOCKET_Condition()
@@ -570,7 +571,7 @@ func void DIA_Lehmar_PICKPOCKET_DoIt()
 			INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 		};
 
-		B_GiveInvItems(self,other,ItWr_Schuldenbuch,1);
+		B_GiveInvItems(self,other,ItWr_debt book, 1 );
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
 		LehmarLostBookDay = Wld_GetDay();
 		B_GiveThiefXP();
@@ -596,7 +597,7 @@ func void DIA_Lehmar_PICKPOCKET_BACK()
 };
 
 
-instance DIA_Lehmar_BuchWeg(C_Info)
+instance DIA_Lehmar_BuchWeg (C_Info)
 {
 	npc = VLK_484_Lehmar;
 	nr = 1;
@@ -609,7 +610,7 @@ instance DIA_Lehmar_BuchWeg(C_Info)
 
 func int DIA_Lehmar_BuchWeg_Condition()
 {
-	if((self.aivar[AIV_DefeatedByPlayer] == FALSE) && (LehmarLostBookDay > 0) && (LehmarLostBookDay < Wld_GetDay()) && (self.aivar[AIV_PlayerHasPickedMyPocket] == TRUE))
+	if ((self.aivar[AIV_DefeatedByPlayer] ==  FALSE ) && (LehmarLostBookDay >  0 ) && (LehmarLostBookDay < Wld_GetDay()) && (self.aivar[AIV_PlayerHasPickedMyPocket] ==  ​​TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -617,15 +618,15 @@ func int DIA_Lehmar_BuchWeg_Condition()
 
 func void DIA_Lehmar_BuchWeg_Info()
 {
-	AI_Output(self,other,"DIA_Lehmar_Add_09_00");	//Какой-то гнусный вор украл мой гроссбух!
-	AI_Output(self,other,"DIA_Lehmar_Add_09_01");	//Ты случайно не имеешь к этому отношения, нет?
+	AI_Output(self,other, " DIA_Lehmar_Add_09_00 " );	// Some vile thief stole my ledger!
+	AI_Output(self,other, " DIA_Lehmar_Add_09_01 " );	// You don't happen to have anything to do with this, do you?
 	AI_Output(other,self,"DIA_Addon_Lehmar_Add_15_02");	//Я? Нет.
-	AI_Output(self,other,"DIA_Lehmar_Add_09_03");	//Да-да, хорошо. Уходи отсюда!
+	AI_Output(self,other, " DIA_Lehmar_Add_09_03 " );	// Yes, yes, okay. Get out of here!
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Lehmar_verhauen(C_Info)
+instance DIA_Lehmar_verhauen (C_Info)
 {
 	npc = VLK_484_Lehmar;
 	nr = 1;
@@ -640,7 +641,7 @@ func int DIA_Lehmar_verhauen_Condition()
 {
 	if(Npc_IsInState(self,ZS_Talk))
 	{
-		if((self.aivar[AIV_DefeatedByPlayer] == TRUE) || Npc_KnowsInfo(other,DIA_Lehmar_BuchWeg) || (Lehmar_vorbei == TRUE))
+		if ((self.aivar[AIV_DefeatedByPlayer] ==  TRUE ) || Npc_KnowsInfo(other,DIA_Lehmar_BuchWeg) || (Lehmar_over ==  TRUE ))
 		{
 			return TRUE;
 		};
@@ -660,7 +661,7 @@ instance DIA_LEHMAR_KILLNOW(C_Info)
 	nr = 3;
 	condition = dia_lehmar_killnow_condition;
 	information = dia_lehmar_killnow_info;
-	description = "Тебе привет от Асмала!";
+	description = " Hello from Asmal! " ;
 };
 
 func int dia_lehmar_killnow_condition()
@@ -676,27 +677,27 @@ func void dia_lehmar_killnow_info()
 	var C_Npc guardian;
 
 	guardian = Hlp_GetNpc(vlk_6120_lemarguard);
-	AI_Output(other,self,"DIA_Lehmar_KillNow_01_00");	//Тебе привет от Асмала!
-	AI_Output(self,other,"DIA_Lehmar_KillNow_01_03");	//Что? (растерянно) Так ты что, значит, работаешь на этого ублюдка?
-	AI_Output(self,other,"DIA_Lehmar_KillNow_01_05");	//Ха! Вот бы не подумал!
-	AI_Output(self,other,"DIA_Lehmar_KillNow_01_06");	//Выходит, он подослал ко мне тебя!
-	AI_Output(self,other,"DIA_Lehmar_KillNow_01_07");	//Но, боюсь, ему это мало чем поможет. Таких сопляков, как ты, мне бояться нечего.
+	AI_Output(other,self, " DIA_Lehmar_KillNow_01_00 " );	// Hello from Asmal!
+	AI_Output(self,other, " DIA_Lehmar_KillNow_01_03 " );	// What? (confused) So what do you mean, you work for that bastard?
+	AI_Output(self,other, " DIA_Lehmar_KillNow_01_05 " );	// Ha! That would not have thought!
+	AI_Output(self,other, " DIA_Lehmar_KillNow_01_06 " );	// It turns out that he sent you to me!
+	AI_Output(self,other, " DIA_Lehmar_KillNow_01_07 " );	// But I'm afraid it won't help him much. Snots like you, I have nothing to fear.
 
 	if((ShramIsDead == FALSE) && (Npc_GetDistToNpc(self,guardian) <= 600))
 	{
-		AI_Output(self,other,"DIA_Lehmar_KillNow_01_15");	//Мой телохранитель порубает тебя в мелкий фарш!
+		AI_Output(self,other, " DIA_Lehmar_KillNow_01_15 " );	// My bodyguard will chop you into mincemeat!
 		AI_Standup(self);
 		AI_GotoNpc(self,guardian);
 		AI_TurnToNPC(self,guardian);
-		AI_Output(self,other,"DIA_Lehmar_KillNow_01_16");	//Эй, ты! Не стой как истукан!
-		AI_Output(self,other,"DIA_Lehmar_KillNow_01_17");	//Ты знаешь, что надо делать! Разберись с ним, да поживей!
+		AI_Output(self,other, " DIA_Lehmar_KillNow_01_16 " );	// Hey you! Don't stand like an idol!
+		AI_Output(self,other, " DIA_Lehmar_KillNow_01_17 " );	// You know what to do! Deal with him, but live!
 		AI_TurnToNPC(self,other);
 		ShramCanFight = TRUE;
 	};
 
-	AI_Output(self,other,"DIA_Lehmar_KillNow_01_18");	//Зря ты согласился на это дело, парень! Оно тебе явно не по зубам...(ухмыляется)
+	AI_Output(self,other, " DIA_Lehmar_KillNow_01_18 " );	// You shouldn't have agreed to this case, boy! It's clearly too tough for you... (grins)
 	Info_ClearChoices(dia_lehmar_killnow);
-	Info_AddChoice(dia_lehmar_killnow,"...(это мы еще посмотрим!)",dia_lehmar_killnow_figth);
+	Info_AddChoice(dia_lehmar_killnow, " ...(we'll see about that!) " ,dia_lehmar_killnow_figth);
 };
 
 func void dia_lehmar_killnow_figth()
@@ -717,12 +718,12 @@ instance DIA_Lehmar_Job(C_Info)
 	condition = DIA_Lehmar_Job_Condition;
 	information = DIA_Lehmar_Job_Info;
 	permanent = FALSE;
-	description = "А у тебя не найдется для меня какой-нибудь работенки?";
+	description = " Do you have any job for me? " ;
 };
 
 func int DIA_Lehmar_Job_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Lehmar_ENTSCHULDIGUNG) == TRUE)
+	if (Npc_KnowsInfo(other,DIA_Lehmar_ENTAUSCHIGUNG) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -730,25 +731,25 @@ func int DIA_Lehmar_Job_Condition()
 
 func void DIA_Lehmar_Job_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_Job_01_00");	//А у тебя не найдется для меня какой-нибудь работенки?
-	AI_Output(self,other,"DIA_Lehmar_Job_01_01");	//Хочешь поработать на меня? (задумчиво) Хммм... Ну что же, хорошо.
-	AI_Output(self,other,"DIA_Lehmar_Job_01_02");	//У меня как раз возникла проблема с одним человеком.
-	AI_Output(other,self,"DIA_Lehmar_Job_01_03");	//Что он сделал?
-	AI_Output(self,other,"DIA_Lehmar_Job_01_04");	//Он занял у меня крупную сумму золота!
-	AI_Output(self,other,"DIA_Lehmar_Job_01_05");	//Как он мне сам сказал - у него появилась возможность быстро разбогатеть на продаже болотника в портовом квартале.
-	AI_Output(self,other,"DIA_Lehmar_Job_01_06");	//И пообещал вернуть вдвое больше золота, чем я ему одолжил. Но так и не заявился!
-	AI_Output(self,other,"DIA_Lehmar_Job_01_07");	//Так вот. (серьезно) Найди его и верни мне мои деньги! 
-	AI_Output(self,other,"DIA_Lehmar_Job_01_08");	//Если же денег при нем не окажется, тогда просто убей его.
-	AI_Output(self,other,"DIA_Lehmar_Job_01_09");	//Но только сделай это тихо! Я не хочу иметь ничего общего с тем, кто торгует болотной травой.
-	AI_Output(self,other,"DIA_Lehmar_Job_01_10");	//Ведь по законам города, за это могут посадить в тюрьму.
-	AI_Output(other,self,"DIA_Lehmar_Job_01_11");	//Ладно. Где я его смогу найти?
-	AI_Output(self,other,"DIA_Lehmar_Job_01_12");	//(ухмыляясь) Если бы я это знал, то проблема была бы уже давно решена.
-	AI_Output(self,other,"DIA_Lehmar_Job_01_13");	//Надеюсь, намек ясен?
+	AI_Output(other,self, " DIA_Lehmar_Job_01_00 " );	// Do you have any job for me?
+	AI_Output(self,other, " DIA_Lehmar_Job_01_01 " );	// Do you want to work for me? (thoughtfully) Hmmm... Well, okay.
+	AI_Output(self,other, " DIA_Lehmar_Job_01_02 " );	// I just had a problem with one person.
+	AI_Output(other,self, " DIA_Lehmar_Job_01_03 " );	// What did he do?
+	AI_Output(self,other, " DIA_Lehmar_Job_01_04 " );	// He borrowed a large amount of gold from me!
+	AI_Output(self,other, " DIA_Lehmar_Job_01_05 " );	// As he told me himself, he had the opportunity to get rich quickly by selling a swamp in the port district.
+	AI_Output(self,other, " DIA_Lehmar_Job_01_06 " );	// And he promised to return twice as much gold as I lent him. But he never showed up!
+	AI_Output(self,other, " DIA_Lehmar_Job_01_07 " );	// So. (seriously) Find him and give me my money back!
+	AI_Output(self,other, " DIA_Lehmar_Job_01_08 " );	// If he doesn't have any money, then just kill him.
+	AI_Output(self,other, " DIA_Lehmar_Job_01_09 " );	// But just do it quietly! I don't want to have anything to do with someone who sells swamp grass.
+	AI_Output(self,other, " DIA_Lehmar_Job_01_10 " );	// After all, according to the laws of the city, they can be put in jail for this.
+	AI_Output(other,self, " DIA_Lehmar_Job_01_11 " );	// Okay. Where can I find it?
+	AI_Output(self,other, " DIA_Lehmar_Job_01_12 " );	// (grinning) If I knew that, the problem would have been solved long ago.
+	AI_Output(self,other, " DIA_Lehmar_Job_01_13 " );	// I hope the hint is clear?
 	AI_Output(other,self,"DIA_Lehmar_Job_01_14");	//Вполне.
 	MIS_LehmarDebt = LOG_Running;
 	Log_CreateTopic(TOPIC_LehmarDebt,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LehmarDebt,LOG_Running);
-	B_LogEntry(TOPIC_LehmarDebt,"Один человек занял у Лемара приличную сумму денег, сославшись на то, что знает способ быстро разбогатеть на торговле болотника. Но так и не вернул долг. Лемар хочет, чтобы я нашел его и выбил из него деньги, либо просто убил в назидание другим.");
+	B_LogEntry(TOPIC_LehmarDebt, " A man borrowed a decent amount of money from Lehmar, claiming he knew a way to get rich quick by trading a swamp. But never repaid the debt. Lehmar wants me to find him and beat the money out of him, or just kill him as a warning to others. " );
 };
 
 instance DIA_Lehmar_Job_Done(C_Info)
@@ -758,7 +759,7 @@ instance DIA_Lehmar_Job_Done(C_Info)
 	condition = DIA_Lehmar_Job_Done_Condition;
 	information = DIA_Lehmar_Job_Done_Info;
 	permanent = TRUE;
-	description = "Кажется, я нашел твоего должника.";
+	description = " I think I found your debtor. " ;
 };
 
 func int DIA_Lehmar_Job_Done_Condition()
@@ -772,16 +773,16 @@ func int DIA_Lehmar_Job_Done_Condition()
 func void DIA_Lehmar_Job_Done_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Lehmar_Job_Done_01_00");	//Кажется, я нашел твоего должника.
-	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_01");	//Хорошо. (спокойно) И где мои деньги?
-	AI_Output(other,self,"DIA_Lehmar_Job_Done_01_02");	//Их у него с собой не оказалось. Зато при нем был огромный пакет болотника!
-	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_03");	//И что ты сделал?
-	AI_Output(other,self,"DIA_Lehmar_Job_Done_01_04");	//Я его убил. Как ты и просил!
-	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_05");	//Хорошо. (довольно) Считай, ты справился с моим поручением.
-	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_06");	//Траву можешь оставить себе - в качестве награды!
-	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_07");	//А теперь проваливай! У меня есть дела и поважней.
+	AI_Output(other,self, " DIA_Lehmar_Job_Done_01_00 " );	// I think I found your debtor.
+	AI_Output(self,other, " DIA_Lehmar_Job_Done_01_01 " );	// Good. (calmly) Where's my money?
+	AI_Output(other,self, " DIA_Lehmar_Job_Done_01_02 " );	// He didn't have them with him. But he had a huge bag of a swamp with him!
+	AI_Output(self,other, " DIA_Lehmar_Job_Done_01_03 " );	// And what did you do?
+	AI_Output(other,self, " DIA_Lehmar_Job_Done_01_04 " );	// I killed him. Just like you asked!
+	AI_Output(self,other, " DIA_Lehmar_Job_Done_01_05 " );	// Good. (satisfied) You've done my job.
+	AI_Output(self,other, " DIA_Lehmar_Job_Done_01_06 " );	// You can keep the grass as a reward!
+	AI_Output(self,other, " DIA_Lehmar_Job_Done_01_07 " );	// Now get out! I have more important things to do.
 	MIS_LehmarDebt = LOG_Success;
 	Log_SetTopicStatus(TOPIC_LehmarDebt,LOG_Success);
-	B_LogEntry(TOPIC_LehmarDebt,"Лемар был доволен тем, что я разделался с его должником.");
+	B_LogEntry(TOPIC_LehmarDebt, " Lehmar was pleased that I got rid of his debtor. " );
 	AI_StopProcessInfos(self);
 };
