@@ -1,3 +1,4 @@
+
 instance DIA_Cord_EXIT(C_Info)
 {
 	npc = Sld_805_Cord;
@@ -43,24 +44,24 @@ func void DIA_Addon_Cord_MeetingIsRunning_Info()
 {
 	if(DIA_Addon_Cord_MeetingIsRunning_OneTime == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Cord_MeetingIsRunning_14_00");	//Добро пожаловать в Кольцо Воды, брат.
+		AI_Output(self,other, " DIA_Addon_Cord_MeetingIsRunning_14_00 " );	// Welcome to the Ring of Water, brother.
 		DIA_Addon_Cord_MeetingIsRunning_OneTime = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Cord_MeetingIsRunning_14_01");	//Ты должен поговорить с Ватрасом...
+		AI_Output(self,other, " DIA_Addon_Cord_MeetingIsRunning_14_01 " );	// You should talk to Vatras...
 	};
 
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Cord_Hallo(C_Info)
+instance DIA_Cord_Hello (C_Info)
 {
 	npc = Sld_805_Cord;
 	nr = 2;
 	condition = DIA_Cord_Hallo_Condition;
-	information = DIA_Cord_Hallo_Info;
+	information = DIA_Cord_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -76,18 +77,18 @@ func int DIA_Cord_Hallo_Condition()
 
 func void DIA_Cord_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Cord_Hallo_14_00");	//Если у тебя проблемы с волками или полевыми хищниками, поговори с одним из наемников помоложе.
-	AI_Output(self,other,"DIA_Cord_Hallo_14_01");	//А ко мне ты можешь обратиться, когда появятся паладины.
+	AI_Output(self,other, " DIA_Cord_Hallo_14_00 " );	// If you're having trouble with wolves or field predators, talk to one of the younger mercenaries.
+	AI_Output(self,other, " DIA_Cord_Hallo_14_01 " );	// And you can contact me when the paladins appear.
 	if(SC_IsRanger == FALSE)
 	{
 		AI_Output(other,self,"DIA_Cord_Hallo_15_02");	//Что?
-		AI_Output(self,other,"DIA_Cord_Hallo_14_03");	//Когда вы, крестьяне, обращаетесь ко мне, вы всегда просите убить ни в чем не повинных зверей.
-		AI_Output(other,self,"DIA_Cord_Hallo_15_04");	//Я не крестьянин.
-		AI_Output(self,other,"DIA_Cord_Hallo_14_05");	//Ох...И чего же ты хочешь?
+		AI_Output(self,other, " DIA_Cord_Hallo_14_03 " );	// When you peasants address me, you always ask me to kill innocent animals.
+		AI_Output(other,self, " DIA_Cord_Hallo_15_04 " );	// I'm not a peasant.
+		AI_Output(self,other, " DIA_Cord_Hallo_14_05 " );	// Oh... And what do you want?
 	};
 };
 
-var int Cord_SchonmalGefragt;
+var int Cord_Already asked;
 var int CordAppFT;
 
 instance DIA_Cord_WannaJoin(C_Info)
@@ -97,7 +98,7 @@ instance DIA_Cord_WannaJoin(C_Info)
 	condition = DIA_Cord_WannaJoin_Condition;
 	information = DIA_Cord_WannaJoin_Info;
 	permanent = TRUE;
-	description = "Я хочу стать наемником!";
+	description = " I want to become a mercenary! " ;
 };
 
 
@@ -111,63 +112,63 @@ func int DIA_Cord_WannaJoin_Condition()
 
 func void B_Cord_BeBetter()
 {
-	AI_Output(self,other,"DIA_Cord_WannaJoin_14_14");	//Пока ты едва умеешь обращаться с оружием и тебе здесь не место!
+	AI_Output(self,other, " DIA_Cord_WannaJoin_14_14 " );	// As long as you barely know how to handle a weapon, you don't belong here!
 };
 
 func void DIA_Cord_WannaJoin_Info()
 {
-	AI_Output(other,self,"DIA_Cord_WannaJoin_15_00");	//Я хочу стать наемником!
-	if(Cord_SchonmalGefragt == FALSE)
+	AI_Output(other,self, " DIA_Cord_WannaJoin_15_00 " );	// I want to become a mercenary!
+	if (Cord_SchonmalGefraged ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Cord_WannaJoin_14_01");	//Ты больше похож на того, кто был рожден работать на поле, парень.
-		AI_Output(self,other,"DIA_Cord_WannaJoin_14_02");	//Ты умеешь обращаться с оружием?
-		Cord_SchonmalGefragt = TRUE;
+		AI_Output(self,other, " DIA_Cord_WannaJoin_14_01 " );	// You look more like someone who was born to work in the field, boy.
+		AI_Output(self,other, " DIA_Cord_WannaJoin_14_02 " );	// Are you good with weapons?
+		Cord_SchonmalGefraged = TRUE ;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cord_WannaJoin_14_03");	//Ты повысил свои навыки?
+		AI_Output(self,other, " DIA_Cord_WannaJoin_14_03 " );	// Have you upgraded your skills?
 	};
-	AI_Output(self,other,"DIA_Cord_WannaJoin_14_04");	//Итак, как насчет одноручного оружия?
+	AI_Output(self,other, " DIA_Cord_WannaJoin_14_04 " );	// So what about one-handed weapons?
 
 	if(hero.HitChance[NPC_TALENT_1H] >= 30)
 	{
-		AI_Output(other,self,"DIA_Cord_WannaJoin_15_05");	//Я не так уж плох в этом.
+		AI_Output(other,self, " DIA_Cord_WannaJoin_15_05 " );	// I'm not that bad at this.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Cord_WannaJoin_15_06");	//Что же...(задумчиво)
+		AI_Output(other,self, " DIA_Cord_WannaJoin_15_06 " );	// Well... (thoughtfully)
 	};
-	AI_Output(self,other,"DIA_Cord_WannaJoin_14_07");	//А что насчет двуручного оружия?
+	AI_Output(self,other, " DIA_Cord_WannaJoin_14_07 " );	// What about two-handed weapons?
 
 	if(hero.HitChance[NPC_TALENT_2H] >= 30)
 	{
-		AI_Output(other,self,"DIA_Cord_WannaJoin_15_08");	//Я умею обращаться с ним.
+		AI_Output(other,self, " DIA_Cord_WannaJoin_15_08 " );	// I know how to handle it.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Cord_WannaJoin_15_09");	//И скоро я стану еще лучше!
+		AI_Output(other,self, " DIA_Cord_WannaJoin_15_09 " );	// And soon I'll be even better!
 	};
 	if((hero.HitChance[NPC_TALENT_1H] >= 30) || (hero.HitChance[NPC_TALENT_2H] >= 30))
 	{
-		AI_Output(self,other,"DIA_Cord_WannaJoin_14_10");	//Ну, по крайней мере, ты не зеленый новичок. Хорошо. Я проголосую за тебя.
-		AI_Output(self,other,"DIA_Cord_WannaJoin_14_11");	//Если тебе еще что-то нужно знать, ты можешь спросить у меня.
+		AI_Output(self,other, " DIA_Cord_WannaJoin_14_10 " );	// Well, at least you're not a green newbie. Good. I will vote for you.
+		AI_Output(self,other, " DIA_Cord_WannaJoin_14_11 " );	// If there's anything else you need to know, you can ask me.
 		Cord_Approved = TRUE;
 		B_GivePlayerXP(XP_Cord_Approved);
-		B_LogEntry(TOPIC_SLDRespekt,"Голос Корда у меня в кармане.");
+		B_LogEntry(TOPIC_SLDRespekt, " Kord's voice is in my pocket. " );
 		Log_CreateTopic(Topic_SoldierTeacher,LOG_NOTE);
-		B_LogEntry_Quiet(Topic_SoldierTeacher,"Корд может обучить меня владению одноручным и двуручным оружием. А также сможет повысить мою выносливость.");
+		B_LogEntry_Quiet(Topic_SoldierTeacher, " Kord can teach me how to use one-handed and two-handed weapons. It can also increase my stamina. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cord_WannaJoin_14_12");	//Другими словами, ты зеленый новичок!
-		AI_Output(self,other,"DIA_Cord_WannaJoin_14_13");	//Мы наемники, должны быть уверены, что можем всецело положиться на наших товарищей. От этого зависит наша жизнь.
+		AI_Output(self,other, " DIA_Cord_WannaJoin_14_12 " );	// In other words, you're a green newbie!
+		AI_Output(self,other, " DIA_Cord_WannaJoin_14_13 " );	// We are mercenaries, we must be sure that we can fully rely on our comrades. Our lives depend on it.
 		B_Cord_BeBetter();
 
 		if(CordAppFT == FALSE)
 		{
 			Log_CreateTopic(TOPIC_CordProve,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_CordProve,LOG_Running);
-			B_LogEntry(TOPIC_CordProve,"Корд отдаст свой голос за меня, когда я научусь сражаться лучше. (Требование: навык владения одноручным или двуручным оружием 30 или более)");
+			B_LogEntry(TOPIC_CordProve, " Cord will vote for me when I get better at fighting. (Requirement: One-Handed or Two-Handed Weapon Skill 30 or more) " );
 			CordAppFT = TRUE;
 		};
 	};
@@ -179,12 +180,12 @@ instance DIA_Addon_Cord_YouAreRanger(C_Info)
 	nr = 2;
 	condition = DIA_Addon_Cord_YouAreRanger_Condition;
 	information = DIA_Addon_Cord_YouAreRanger_Info;
-	description = "Говорят, ты принадлежишь к Кольцу Воды?";
+	description = " They say you belong to the Ring of Water? " ;
 };
 
 func int DIA_Addon_Cord_YouAreRanger_Condition()
 {
-	if((RangerHelp_gildeSLD == TRUE) && (Cord_SchonmalGefragt == TRUE))
+	if ((RangerHelp_gildeSLD ==  TRUE ) && (Cord_SchonmalGefragt ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -192,50 +193,50 @@ func int DIA_Addon_Cord_YouAreRanger_Condition()
 
 func void DIA_Addon_Cord_YouAreRanger_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_15_00");	//Говорят, ты принадлежишь к Кольцу Воды?
+	AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_15_00 " );	// They say you belong to the Water Ring?
 	if(SC_IsRanger == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_14_01");	//Что за крыса не смогла удержать на замке свой болтливый рот?
+		AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_14_01 " );	// What kind of rat couldn't keep its chatty mouth shut?
 
 		if(SC_KnowsCordAsRangerFromLee == TRUE)
 		{
-			AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_15_02");	//Мне сказал Ли.
+			AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_15_02 " );	// Lee told me.
 		};
 		if(SC_KnowsCordAsRangerFromLares == TRUE)
 		{
-			AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_15_03");	//Ларес сказал, что ты поможешь мне, если я скажу, что он взял меня под свое крыло.
+			AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_15_03 " );	// Lares said you'd help me if I told him he took me under his wing.
 		};
 	};
 
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_14_04");	//Похоже, что теперь мне придется возиться с тобой, так?
-	AI_Output(self,other,"DIA_Addon_Cord_Add_14_01");	//Ну хорошо, что тебе нужно?
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_14_06");	//И хорошо подумай над тем, что ты мне скажешь. Потому что, если мне не понравится то, что я услышу, я с тебя кожу сдеру.
+	AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_14_04 " );	// Looks like I'll have to mess with you now, right?
+	AI_Output(self,other, " DIA_Addon_Cord_Add_14_01 " );	// Okay, what do you need?
+	AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_14_06 " );	// And think carefully about what you tell me. Because if I don't like what I hear, I'll skin you.
 	Info_ClearChoices(DIA_Addon_Cord_YouAreRanger);
-	Info_AddChoice(DIA_Addon_Cord_YouAreRanger,"На самом деле, мне ничего не нужно. Я и сам справлюсь.",DIA_Addon_Cord_YouAreRanger_nix);
-	Info_AddChoice(DIA_Addon_Cord_YouAreRanger,"Мне нужна твоя броня.",DIA_Addon_Cord_YouAreRanger_ruestung);
-	Info_AddChoice(DIA_Addon_Cord_YouAreRanger,"Мне нужно твое оружие!",DIA_Addon_Cord_YouAreRanger_waffe);
+	Info_AddChoice(DIA_Addon_Cord_YouAreRanger, " I don't really need anything. I can handle it myself. " ,DIA_Addon_Cord_YouAreRanger_nix);
+	Info_AddChoice(DIA_Addon_Cord_YouAreRanger, " I need your armor. " ,DIA_Addon_Cord_YouAreRanger_ruestung);
+	Info_AddChoice(DIA_Addon_Cord_YouAreRanger, " I need your weapon! " ,DIA_Addon_Cord_YouAreRanger_waffe);
 
 	if((Cord_Approved == FALSE) && (hero.guild != GIL_SLD) && (hero.guild != GIL_DJG) && (Cord_RangerHelp_Fight == FALSE))
 	{
-		Info_AddChoice(DIA_Addon_Cord_YouAreRanger,"Научи меня сражаться!",DIA_Addon_Cord_YouAreRanger_kampf);
+		Info_AddChoice(DIA_Addon_Cord_YouAreRanger, " Teach me how to fight! " ,DIA_Addon_Cord_YouAreRanger_kampf);
 	};
 	if(hero.guild == GIL_NONE)
 	{
-		Info_AddChoice(DIA_Addon_Cord_YouAreRanger,"Ты бы мог помочь мне стать наемником.",DIA_Addon_Cord_YouAreRanger_SLDAufnahme);
+		Info_AddChoice(DIA_Addon_Cord_YouAreRanger, " You could help me become a mercenary. " ,DIA_Addon_Cord_YouAreRanger_SLDAufnahme);
 	};
 };
 
 
-var int Cord_SC_Dreist;
+var int Cord_SC_Brazen;
 
 func void B_DIA_Addon_Cord_YouAreRanger_WARN()
 {
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_WARN_14_00");	//И горе тебе, если мне станет известно, что ты распускаешь язык. Предупреждаю первый и единственный раз, понятно?
+	AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_WARN_14_00 " );	// And woe to you if it becomes known to me that you are loosening your tongue. I'm warning you for the first and only time, okay?
 };
 
 func void B_DIA_Addon_Cord_YouAreRanger_FRESSE()
 {
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_FRESSE_14_00");	//Ну хватит! На этот раз ты зашел слишком далеко. Я выбью из тебя дурь.
+	AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_FRESSE_14_00 " );	// Enough! You've gone too far this time. I'll beat the hell out of you.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 	Cord_RangerHelp_GetSLD = FALSE;
@@ -245,11 +246,11 @@ func void B_DIA_Addon_Cord_YouAreRanger_FRESSE()
 
 func void DIA_Addon_Cord_YouAreRanger_ruestung()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_ruestung_15_00");	//Мне нужна твоя броня.
-	if(Cord_SC_Dreist == FALSE)
+	AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_ruestung_15_00 " );	// I need your armor.
+	if (Cord_SC_Dreist ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_ruestung_14_01");	//Повтори это еще раз - и тебе придется собирать свои зубы с земли.
-		Cord_SC_Dreist = TRUE;
+		AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_ruestung_14_01 " );	// Say that one more time and you'll have to pick your teeth off the ground.
+		Cord_SC_Dreist = TRUE ;
 	}
 	else
 	{
@@ -259,13 +260,13 @@ func void DIA_Addon_Cord_YouAreRanger_ruestung()
 
 func void DIA_Addon_Cord_YouAreRanger_waffe()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_Add_15_00");	//Мне нужно твое оружие!
+	AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_Add_15_00 " );	// I need your weapon!
 
-	if(Cord_SC_Dreist == FALSE)
+	if (Cord_SC_Dreist ==  FALSE )
 	{
 		AI_Output(self,other,"DIA_Addon_Cord_Add_14_03");	//Неужели?...(угрожающе)
-		AI_Output(self,other,"DIA_Addon_Cord_Add_14_02");	//Тогда попробуй его забрать!
-		Cord_SC_Dreist = TRUE;
+		AI_Output(self,other, " DIA_Addon_Cord_Add_14_02 " );	// Then try to pick it up!
+		Cord_SC_Dreist = TRUE ;
 	}
 	else
 	{
@@ -275,12 +276,12 @@ func void DIA_Addon_Cord_YouAreRanger_waffe()
 
 func void DIA_Addon_Cord_YouAreRanger_weg()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_weg_15_00");	//Уходи отсюда! Я хочу занять твое место на этой ферме.
+	AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_weg_15_00 " );	// Get out of here! I want to take your place on this farm.
 
-	if(Cord_SC_Dreist == FALSE)
+	if (Cord_SC_Dreist ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_weg_14_01");	//Не шути со мной, малыш, иначе я переломаю тебе все кости.
-		Cord_SC_Dreist = TRUE;
+		AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_weg_14_01 " );	// Don't mess with me, baby, or I'll break all your bones.
+		Cord_SC_Dreist = TRUE ;
 	}
 	else
 	{
@@ -293,8 +294,8 @@ var int DIA_Addon_Cord_YouAreRanger_SCGotOffer;
 
 func void DIA_Addon_Cord_YouAreRanger_kampf()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_kampf_15_00");	//Научи меня сражаться!
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_kampf_14_01");	//Хорошо. Что еще?
+	AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_kampf_15_00 " );	// Teach me how to fight!
+	AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_kampf_14_01 " );	// Good. What else?
 	Cord_RangerHelp_Fight = TRUE;
 
 	if(DIA_Addon_Cord_YouAreRanger_SCGotOffer == FALSE)
@@ -306,8 +307,8 @@ func void DIA_Addon_Cord_YouAreRanger_kampf()
 
 func void DIA_Addon_Cord_YouAreRanger_SLDAufnahme()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_SLDAufnahme_15_00");	//Ты бы мог помочь мне стать наемником.
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_SLDAufnahme_14_01");	//Ха-ха-ха...(смеется) Все понятно. Ладно, я попытаюсь. Что еще?
+	AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_SLDAufnahme_15_00 " );	// You could help me become a mercenary.
+	AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_SLDAufnahme_14_01 " );	// Ha-ha-ha... (laughs) Everything is clear. Okay, I'll try. What else?
 	Cord_RangerHelp_GetSLD = TRUE;
 
 	if(DIA_Addon_Cord_YouAreRanger_SCGotOffer == FALSE)
@@ -319,11 +320,11 @@ func void DIA_Addon_Cord_YouAreRanger_SLDAufnahme()
 
 func void DIA_Addon_Cord_YouAreRanger_Gold()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_Gold_15_00");	//Заплати мне за молчание.
-	if(Cord_SC_Dreist == FALSE)
+	AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_Gold_15_00 " );	// Pay me for my silence.
+	if (Cord_SC_Dreist ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_Gold_14_01");	//Вот как? Тебе не повезло. Я не тот, кого можно шантажировать, приятель.
-		Cord_SC_Dreist = TRUE;
+		AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_Gold_14_01 " );	// Like this? You were unlucky. I'm not someone to be blackmailed, mate.
+		Cord_SC_Dreist = TRUE ;
 	}
 	else
 	{
@@ -333,16 +334,16 @@ func void DIA_Addon_Cord_YouAreRanger_Gold()
 
 func void DIA_Addon_Cord_YouAreRanger_nix()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_nix_15_00");	//На самом деле, мне ничего не нужно. Я и сам справлюсь.
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_nix_14_01");	//Как скажешь.
+	AI_Output(other,self, " DIA_Addon_Cord_YouAreRanger_nix_15_00 " );	// Actually, I don't need anything. I can manage myself.
+	AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_nix_14_01 " );	// As you say.
 	B_DIA_Addon_Cord_YouAreRanger_WARN();
 	Info_ClearChoices(DIA_Addon_Cord_YouAreRanger);
 };
 
-func void DIA_Addon_Cord_YouAreRanger_reicht()
+func void DIA_Addon_Cord_YouAreRanger_rang()
 {
 	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_reicht_15_00");	//Это все.
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_reicht_14_01");	//Ну, это не сложно.
+	AI_Output(self,other, " DIA_Addon_Cord_YouAreRanger_reicht_14_01 " );	// Well, it's not hard.
 	B_DIA_Addon_Cord_YouAreRanger_WARN();
 	Info_ClearChoices(DIA_Addon_Cord_YouAreRanger);
 };
@@ -355,7 +356,7 @@ instance DIA_Addon_Cord_RangerHelp2GetSLD(C_Info)
 	condition = DIA_Addon_Cord_RangerHelp2GetSLD_Condition;
 	information = DIA_Addon_Cord_RangerHelp2GetSLD_Info;
 	permanent = TRUE;
-	description = "Помоги мне стать наемником.";
+	description = " Help me become a mercenary. " ;
 };
 
 var int DIA_Addon_Cord_RangerHelp2GetSLD_NoPerm;
@@ -370,68 +371,68 @@ func int DIA_Addon_Cord_RangerHelp2GetSLD_Condition()
 
 func void B_Cord_RangerHelpObsolete()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_RangerHelpObsolete_15_00");	//Я уже позаботился об этом.
-	AI_Output(self,other,"DIA_Addon_Cord_RangerHelpObsolete_14_01");	//В таком случае, я не смогу тебе помочь.
-	AI_Output(other,self,"DIA_Addon_Cord_RangerHelpObsolete_15_02");	//Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_Addon_Cord_RangerHelpObsolete_14_03");	//Я имею в виду, что не смогу тебе помочь.
-	AI_Output(self,other,"DIA_Addon_Cord_RangerHelpObsolete_14_04");	//Или ты хочешь, чтобы я лично убедил бы каждого наемника в том, что ты можешь к нам присоединиться?
-	AI_Output(self,other,"DIA_Addon_Cord_RangerHelpObsolete_14_05");	//Этим тебе придется заняться самому.
+	AI_Output(other,self, " DIA_Addon_Cord_RangerHelpObsolete_15_00 " );	// I've already taken care of this.
+	AI_Output(self,other, " DIA_Addon_Cord_RangerHelpObsolete_14_01 " );	// In that case, I can't help you.
+	AI_Output(other,self, " DIA_Addon_Cord_RangerHelpObsolete_15_02 " );	// What do you mean?
+	AI_Output(self,other, " DIA_Addon_Cord_RangerHelpObsolete_14_03 " );	// I mean, I can't help you.
+	AI_Output(self,other, " DIA_Addon_Cord_RangerHelpObsolete_14_04 " );	// Or do you want me to personally convince every mercenary that you can join us?
+	AI_Output(self,other, " DIA_Addon_Cord_RangerHelpObsolete_14_05 " );	// You'll have to do this yourself.
 	DIA_Addon_Cord_RangerHelp2GetSLD_NoPerm = TRUE;
 	TOPIC_End_RangerHelpSLD = TRUE;
 };
 
 func void B_Cord_ComeLaterWhenDone()
 {
-	AI_Output(self,other,"DIA_Addon_Cord_ComeLaterWhenDone_14_00");	//Так что вперед. Сделаешь это, и возвращайся ко мне.
+	AI_Output(self,other, " DIA_Addon_Cord_ComeLaterWhenDone_14_00 " );	// So go ahead. Do this and come back to me.
 	AI_StopProcessInfos(self);
 };
 
 func void B_Cord_IDoItForYou()
 {
-	AI_Output(self,other,"DIA_Addon_Cord_IDoItForYou_14_00");	//Понятно. Что ж, это просто. Возвращайся завтра, и все будет сделано.
-	AI_Output(self,other,"DIA_Addon_Cord_IDoItForYou_14_01");	//Но за это тебе придется кое-что для меня сделать.
-	AI_Output(other,self,"DIA_Addon_Cord_IDoItForYou_15_02");	//И что же именно?
-	AI_Output(self,other,"DIA_Addon_Cord_IDoItForYou_14_03");	//Недалеко отсюда, в холмах на юго-востоке, расположен небольшой бандитский лагерь.
-	AI_Output(self,other,"DIA_Addon_Cord_IDoItForYou_14_04");	//Если отсюда ты пойдешь на юго-восток, ты вскорости увидишь их башню.
-	AI_Output(self,other,"DIA_Addon_Cord_IDoItForYou_14_05");	//Один из моих людей, Патрик, несколько дней назад отправился туда, чтобы заключить сделку с этими подонками.
-	AI_Output(self,other,"DIA_Addon_Cord_IDoItForYou_14_06");	//Я говорил ему, что это плохая мысль, но этот идиот меня не послушал.
-	AI_Output(self,other,"DIA_Addon_Cord_IDoItForYou_14_07");	//Думаю, они расправились с ним. Но не уверен.
-	AI_Output(self,other,"DIA_Addon_Cord_IDoItForYou_14_08");	//Ты должен выяснить, что с ним случилось.
-	B_LogEntry(TOPIC_Addon_RangerHelpSLD,"Корд готов решить проблему с испытанием Торлофа. Приятель Корда Патрик пропал. Корд Хочет, чтобы я отправился в лагерь бандитов в горах на юго-востоке и выяснил, нет ли там Патрика.");
+	AI_Output(self,other, " DIA_Addon_Cord_IDoItForYou_14_00 " );	// Got it. Well, it's simple. Come back tomorrow and everything will be done.
+	AI_Output(self,other, " DIA_Addon_Cord_IDoItForYou_14_01 " );	// But for that, you'll have to do something for me.
+	AI_Output(other,self, " DIA_Addon_Cord_IDoItForYou_15_02 " );	// And what exactly?
+	AI_Output(self,other, " DIA_Addon_Cord_IDoItForYou_14_03 " );	// Not far from here, in the hills to the southeast, there is a small bandit camp.
+	AI_Output(self,other, " DIA_Addon_Cord_IDoItForYou_14_04 " );	// If you go southeast from here, you'll soon see their tower.
+	AI_Output(self,other, " DIA_Addon_Cord_IDoItForYou_14_05 " );	// One of my men, Patrick, went there a few days ago to make a deal with those scumbags.
+	AI_Output(self,other, " DIA_Addon_Cord_IDoItForYou_14_06 " );	// I told him it was a bad idea, but that idiot didn't listen to me.
+	AI_Output(self,other, " DIA_Addon_Cord_IDoItForYou_14_07 " );	// I think they killed him. But not sure.
+	AI_Output(self,other, " DIA_Addon_Cord_IDoItForYou_14_08 " );	// You must find out what happened to him.
+	) ; _ _ _
 	Info_ClearChoices(DIA_Addon_Cord_RangerHelp2GetSLD);
-	Info_AddChoice(DIA_Addon_Cord_RangerHelp2GetSLD,"Забудь об этом. Это гораздо сложнее, чем задание Торлофа.",B_Cord_IDoItForYou_mist);
-	Info_AddChoice(DIA_Addon_Cord_RangerHelp2GetSLD,"А почему ты думаешь, что со мной они не расправятся так же, как с Патриком?",B_Cord_IDoItForYou_Dexter);
+	Info_AddChoice(DIA_Addon_Cord_RangerHelp2GetSLD, " Forget it. This is much more difficult than Torlof's task. " ,B_Cord_IDoItForYou_mist);
+	Info_AddChoice(DIA_Addon_Cord_RangerHelp2GetSLD, " Why do you think they won't kill me like they did Patrick? " ,B_Cord_IDoItForYou_Dexter);
 	DIA_Addon_Cord_RangerHelp2GetSLD_NoPerm = TRUE;
 };
 
 func void B_Cord_IDoItForYou_mist()
 {
-	AI_Output(other,self,"Dia_Addon_Cord_IDoItForYou_mist_15_00");	//Забудь об этом. Это гораздо сложнее, чем задание Торлофа.
-	AI_Output(self,other,"Dia_Addon_Cord_IDoItForYou_mist_14_01");	//Да нет. Такой маленький и безобидный человек, как ты, не вызовет у них интереса.
-	AI_Output(self,other,"Dia_Addon_Cord_IDoItForYou_mist_14_02");	//А вот мне туда идти нельзя. Эти парни хватаются за оружие при одном виде наемника.
+	AI_Output(other,self, " Dia_Addon_Cord_IDoItForYou_mist_15_00 " );	// Forget it. This is much more difficult than Torlof's task.
+	AI_Output(self,other, " Dia_Addon_Cord_IDoItForYou_mist_14_01 " );	// No. Such a small and harmless person like you will not arouse their interest.
+	AI_Output(self,other, " Dia_Addon_Cord_IDoItForYou_mist_14_02 " );	// But I can't go there. These guys grab their weapons at the mere sight of a mercenary.
 };
 
 func void B_Cord_IDoItForYou_Dexter()
 {
-	AI_Output(other,self,"Dia_Addon_Cord_IDoItForYou_Dexter_15_00");	//А почему ты думаешь, что со мной они не расправятся так же, как с Патриком?
-	AI_Output(self,other,"Dia_Addon_Cord_IDoItForYou_Dexter_14_01");	//Дело в том, что я знаю имя предводителя бандитов. Его зовут Декстер. Просто скажи им, что ты знаешь этого парня.
-	AI_Output(self,other,"Dia_Addon_Cord_IDoItForYou_Dexter_14_02");	//Это должно лишить их желания свернуть тебе шею.
-	AI_Output(self,other,"Dia_Addon_Cord_IDoItForYou_Dexter_14_03");	//Конечно, это все довольно опасно.
-	AI_Output(self,other,"Dia_Addon_Cord_IDoItForYou_Dexter_14_04");	//Но ты справишься.
+	AI_Output(other,self, " Dia_Addon_Cord_IDoItForYou_Dexter_15_00 " );	// Why do you think they won't deal with me the same way as they did with Patrick?
+	AI_Output(self,other, " Dia_Addon_Cord_IDoItForYou_Dexter_14_01 " );	// The thing is, I know the bandit leader's name. His name is Dexter. Just tell them you know this guy.
+	AI_Output(self,other, " Dia_Addon_Cord_IDoItForYou_Dexter_14_02 " );	// This should make them less likely to wring your neck.
+	AI_Output(self,other, " Dia_Addon_Cord_IDoItForYou_Dexter_14_03 " );	// Of course, this is all pretty dangerous.
+	AI_Output(self,other, " Dia_Addon_Cord_IDoItForYou_Dexter_14_04 " );	// But you can do it.
 	Info_ClearChoices(DIA_Addon_Cord_RangerHelp2GetSLD);
-	B_LogEntry(TOPIC_Addon_RangerHelpSLD,"Главаря бандитов зовут Декстер.");
+	B_LogEntry(TOPIC_Addon_RangerHelpSLD, " The ringleader's name is Dexter. " );
 	Log_CreateTopic(TOPIC_Addon_MissingPeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_MissingPeople,LOG_Running);
-	B_LogEntry(TOPIC_Addon_MissingPeople,"Наемник Корд ищет своего приятеля Патрика.");
+	B_LogEntry(TOPIC_Addon_MissingPeople, " Mercenary Kord is looking for his buddy Patrick. " );
 	MIS_Addon_Cord_Look4Patrick = LOG_Running;
 	Ranger_SCKnowsDexter = TRUE;
 };
 
 func void DIA_Addon_Cord_RangerHelp2GetSLD_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_RangerHelp2GetSLD_15_00");	//Помоги мне стать наемником.
-	AI_Output(self,other,"DIA_Addon_Cord_RangerHelp2GetSLD_14_01");	//Надо подумать! Хммм...(задумчиво) Если ты хочешь чего-то здесь добиться, тебе нужно поговорить с Торлофом.
-	AI_Output(self,other,"DIA_Addon_Cord_RangerHelp2GetSLD_14_02");	//Ты уже встречался с ним?
+	AI_Output(other,self, " DIA_Addon_Cord_RangerHelp2GetSLD_15_00 " );	// Help me become a mercenary.
+	AI_Output(self,other, " DIA_Addon_Cord_RangerHelp2GetSLD_14_01 " );	// Need to think! Hmmm... (thoughtfully) If you want to achieve something here, you need to talk to Torlof.
+	AI_Output(self,other, " DIA_Addon_Cord_RangerHelp2GetSLD_14_02 " );	// Have you already met him?
 
 	if(Torlof_Go == FALSE)
 	{
@@ -440,8 +441,8 @@ func void DIA_Addon_Cord_RangerHelp2GetSLD_Info()
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Addon_Cord_RangerHelp2GetSLD_15_04");	//Да. Он рассказал мне об испытании и прочем...
-		AI_Output(self,other,"DIA_Addon_Cord_RangerHelp2GetSLD_14_05");	//Ага. И какое же задание тебе дали?
+		AI_Output(other,self, " DIA_Addon_Cord_RangerHelp2GetSLD_15_04 " );	// Yes. He told me about the test and stuff...
+		AI_Output(self,other, " DIA_Addon_Cord_RangerHelp2GetSLD_14_05 " );	// Yeah. And what was your assignment?
 
 		if((Torlof_ProbeBestanden == TRUE) || ((MIS_Torlof_BengarMilizKlatschen == LOG_Running) && Npc_IsDead(Rumbold) && Npc_IsDead(Rick)) || ((MIS_Torlof_HolPachtVonSekob == LOG_Running) && ((Sekob.aivar[AIV_DefeatedByPlayer] == TRUE) || Npc_IsDead(Sekob))))
 		{
@@ -449,17 +450,17 @@ func void DIA_Addon_Cord_RangerHelp2GetSLD_Info()
 		}
 		else if(Torlof_Probe == 0)
 		{
-			AI_Output(other,self,"DIA_Addon_Cord_RangerHelp2GetSLD_15_06");	//Я пока не получил задание.
+			AI_Output(other,self, " DIA_Addon_Cord_RangerHelp2GetSLD_15_06 " );	// I haven't received the task yet.
 			B_Cord_ComeLaterWhenDone();
 		}
 		else if(Torlof_Probe == Probe_Sekob)
 		{
-			AI_Output(other,self,"DIA_Addon_Cord_RangerHelp2GetSLD_15_07");	//Я должен собрать ренту на ферме Секоба.
+			AI_Output(other,self, " DIA_Addon_Cord_RangerHelp2GetSLD_15_07 " );	// I have to collect rent from the Sekob farm.
 			B_Cord_IDoItForYou();
 		}
 		else if(Torlof_Probe == Probe_Bengar)
 		{
-			AI_Output(other,self,"DIA_Addon_Cord_RangerHelp2GetSLD_15_08");	//Я должен избавить Бенгара от солдат ополчения.
+			AI_Output(other,self, " DIA_Addon_Cord_RangerHelp2GetSLD_15_08 " );	// I have to rid Bengar of the militia soldiers.
 			B_Cord_IDoItForYou();
 		}
 		else
@@ -476,7 +477,7 @@ instance DIA_Addon_Cord_TalkedToDexter(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Cord_TalkedToDexter_Condition;
 	information = DIA_Addon_Cord_TalkedToDexter_Info;
-	description = "Я встретился с Декстером.";
+	description = " I met Dexter. " ;
 };
 
 
@@ -490,26 +491,26 @@ func int DIA_Addon_Cord_TalkedToDexter_Condition()
 
 func void DIA_Addon_Cord_TalkedToDexter_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Cord_TalkedToDexter_15_00");	//Я встретился с Декстером.
+	AI_Output(other,self, " DIA_Addon_Cord_TalkedToDexter_15_00 " );	// I met with Dexter.
 	AI_Output(self,other,"DIA_Addon_Cord_TalkedToDexter_14_01");	//И?
 	if(Npc_IsDead(BDT_1060_Dexter))
 	{
 		AI_Output(other,self,"DIA_Addon_Cord_TalkedToDexter_15_02");	//Он мертв.
 	};
-	AI_Output(other,self,"DIA_Addon_Cord_TalkedToDexter_15_03");	//Я не нашел следов твоего друга Патрика.
+	AI_Output(other,self, " DIA_Addon_Cord_TalkedToDexter_15_03 " );	// I found no trace of your friend Patrick.
 	if(Dexter_KnowsPatrick == TRUE)
 	{
-		AI_Output(other,self,"DIA_Addon_Cord_TalkedToDexter_15_04");	//Декстер его вспомнил, но сказал, что последний раз его видел очень давно.
-		AI_Output(self,other,"DIA_Addon_Cord_TalkedToDexter_14_05");	//Ты уверен, что Декстер не лгал?
-		AI_Output(other,self,"DIA_Addon_Cord_TalkedToDexter_15_06");	//Не уверен. Но это все, что я могу тебе сказать.
+		AI_Output(other,self, " DIA_Addon_Cord_TalkedToDexter_15_04 " );	// Dexter remembered him, but said that he had last seen him a long time ago.
+		AI_Output(self,other, " DIA_Addon_Cord_TalkedToDexter_14_05 " );	// Are you sure Dexter wasn't lying?
+		AI_Output(other,self, " DIA_Addon_Cord_TalkedToDexter_15_06 " );	// Not sure. But that's all I can tell you.
 	};
-	AI_Output(self,other,"DIA_Addon_Cord_TalkedToDexter_14_07");	//Не понимаю... Не мог же Патрик просто так взять и исчезнуть.
-	AI_Output(self,other,"DIA_Addon_Cord_TalkedToDexter_14_08");	//Что ж, ты выполнил условия сделки...
+	AI_Output(self,other, " DIA_Addon_Cord_TalkedToDexter_14_07 " );	// I don't understand... Patrick couldn't just disappear like that.
+	AI_Output(self,other, " DIA_Addon_Cord_TalkedToDexter_14_08 " );	// Well, you fulfilled the terms of the deal...
 	MIS_Addon_Cord_Look4Patrick = LOG_SUCCESS;
 	TOPIC_End_RangerHelpSLD = TRUE;
 	B_GivePlayerXP(XP_Addon_Cord_Look4Patrick);
-	AI_Output(other,self,"DIA_Addon_Cord_TalkedToDexter_15_09");	//Что насчет задания Торлофа?
-	AI_Output(self,other,"DIA_Addon_Cord_TalkedToDexter_14_10");	//Не беспокойся, я обо всем позаботился. Твое задание выполнено, и ты прошел испытание. Можешь поговорить с Торлофом.
+	AI_Output(other,self, " DIA_Addon_Cord_TalkedToDexter_15_09 " );	// What about Torlof's mission?
+	AI_Output(self,other, " DIA_Addon_Cord_TalkedToDexter_14_10 " );	// Don't worry, I've taken care of everything. Your mission is complete and you have passed the test. You can talk to Torlof.
 	Cord_RangerHelp_TorlofsProbe = TRUE;
 	if(Torlof_Probe == Probe_Sekob)
 	{
@@ -528,7 +529,7 @@ instance DIA_Cord_ReturnPatrick(C_Info)
 	condition = DIA_Cord_ReturnPatrick_Condition;
 	information = DIA_Cord_ReturnPatrick_Info;
 	permanent = FALSE;
-	description = "Патрик вернулся.";
+	description = " Patrick is back. " ;
 };
 
 
@@ -543,15 +544,15 @@ func int DIA_Cord_ReturnPatrick_Condition()
 func void DIA_Cord_ReturnPatrick_Info()
 {
 	B_GivePlayerXP(XP_Ambient);
-	AI_Output(other,self,"DIA_Addon_Cord_ReturnPatrick_15_00");	//Патрик вернулся.
-	AI_Output(self,other,"DIA_Addon_Cord_ReturnPatrick_14_01");	//Отлично! Я уже почти потерял надежду. Ты...
-	AI_Output(other,self,"DIA_Addon_Cord_ReturnPatrick_15_02");	//У меня есть одна просьба.
+	AI_Output(other,self, " DIA_Addon_Cord_ReturnPatrick_15_00 " );	// Patrick is back.
+	AI_Output(self,other, " DIA_Addon_Cord_ReturnPatrick_14_01 " );	// Great! I've almost lost hope. You...
+	AI_Output(other,self, " DIA_Addon_Cord_ReturnPatrick_15_02 " );	// I have one request.
 	AI_Output(self,other,"DIA_Addon_Cord_ReturnPatrick_14_03");	//Да?
-	AI_Output(other,self,"DIA_Addon_Cord_ReturnPatrick_15_04");	//Давай обойдемся без благодарностей.
-	AI_Output(self,other,"DIA_Addon_Cord_ReturnPatrick_14_05");	//Но я и не собирался тебя благодарить.
+	AI_Output(other,self, " DIA_Addon_Cord_ReturnPatrick_15_04 " );	// Let's do without thanks.
+	AI_Output(self,other, " DIA_Addon_Cord_ReturnPatrick_14_05 " );	// But I didn't mean to thank you.
 	AI_Output(other,self,"DIA_Addon_Cord_ReturnPatrick_15_06");	//Что?..
-	AI_Output(self,other,"DIA_Addon_Cord_ReturnPatrick_14_07");	//(усмехается) Я собирался сказать тебе, что ты нахальный и скользкий малый.
-	AI_Output(self,other,"DIA_Addon_Cord_ReturnPatrick_14_09");	//Продолжай в том же духе!
+	AI_Output(self,other, " DIA_Addon_Cord_ReturnPatrick_14_07 " );	// (chuckles) I was going to tell you that you are a cheeky and slippery fellow.
+	AI_Output(self,other, " DIA_Addon_Cord_ReturnPatrick_14_09 " );	// Keep up the good work!
 	AI_StopProcessInfos(self);
 };
 
@@ -562,7 +563,7 @@ instance DIA_Cord_ExplainWeapons(C_Info)
 	condition = DIA_Cord_ExplainWeapons_Condition;
 	information = DIA_Cord_ExplainWeapons_Info;
 	permanent = FALSE;
-	description = "Ну, а каковы преимущества одноручного и двуручного оружия?";
+	description = " Well, what are the advantages of one-handed and two-handed weapons? " ;
 };
 
 
@@ -576,16 +577,16 @@ func int DIA_Cord_ExplainWeapons_Condition()
 
 func void DIA_Cord_ExplainWeapons_Info()
 {
-	AI_Output(other,self,"DIA_Cord_ExplainWeapons_15_00");	//Ну, а каковы преимущества одноручного и двуручного оружия?
-	AI_Output(self,other,"DIA_Cord_ExplainWeapons_14_01");	//Хороший вопрос. Я вижу, что ты размышлял над этим вопросом.
-	AI_Output(self,other,"DIA_Cord_ExplainWeapons_14_02");	//Одноручное оружие быстрее, но оно наносит меньший урон врагам.
-	AI_Output(self,other,"DIA_Cord_ExplainWeapons_14_03");	//Двуручное оружие наносит больший урон, но им не получится размахивать так же быстро, как одноручным.
-	AI_Output(self,other,"DIA_Cord_ExplainWeapons_14_04");	//Также, чтобы владеть двуручным мечом, тебе понадобится больше сил. Это означает необходимость дополнительных тренировок.
-	AI_Output(self,other,"DIA_Cord_ExplainWeapons_14_05");	//Чтобы стать настоящим профессионалом, придется затратить много усилий.
+	AI_Output(other,self, " DIA_Cord_ExplainWeapons_15_00 " );	// Well, what are the advantages of one-handed and two-handed weapons?
+	AI_Output(self,other, " DIA_Cord_ExplainWeapons_14_01 " );	// Good question. I see that you have thought about this question.
+	AI_Output(self,other, " DIA_Cord_ExplainWeapons_14_02 " );	// One-handed weapons are faster, but deal less damage to enemies.
+	AI_Output(self,other, " DIA_Cord_ExplainWeapons_14_03 " );	// Two-handed weapons do more damage, but won't swing as fast as one-handed ones.
+	AI_Output(self,other, " DIA_Cord_ExplainWeapons_14_04 " );	// Also, to wield a two-handed sword, you'll need more strength. This means more training is needed.
+	AI_Output(self,other, " DIA_Cord_ExplainWeapons_14_05 " );	// It takes a lot of effort to become a true professional.
 };
 
-var int Cord_Merke_1h;
-var int Cord_Merke_2h;
+var int Cord_Brand_1h;
+var int Cord_Brand_2h;
 
 instance DIA_Cord_Teach(C_Info)
 {
@@ -594,7 +595,7 @@ instance DIA_Cord_Teach(C_Info)
 	condition = DIA_Cord_Teach_Condition;
 	information = DIA_Cord_Teach_Info;
 	permanent = TRUE;
-	description = "Научи меня сражаться!";
+	description = " Teach me how to fight! " ;
 };
 
 func int DIA_Cord_Teach_Condition()
@@ -602,18 +603,18 @@ func int DIA_Cord_Teach_Condition()
 	return TRUE;
 };
 
-func void B_Cord_Zeitverschwendung()
+func void B_Cord_Waste of Time()
 {
-	AI_Output(self,other,"DIA_Cord_Teach_14_03");	//Я не хочу тратить свое время на новичков.
+	AI_Output(self,other, " DIA_Cord_Teach_14_03 " );	// I don't want to waste my time on newbies.
 };
 
 func void DIA_Cord_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Cord_Teach_15_00");	//Научи меня сражаться!
+	AI_Output(other,self, " DIA_Cord_Teach_15_00 " );	// Teach me how to fight!
 
 	if((Cord_Approved == TRUE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG) || (Cord_RangerHelp_Fight == TRUE))
 	{
-		AI_Output(self,other,"DIA_Cord_Teach_14_01");	//Я могу обучить тебя владению любым оружием - с чего начнем?
+		AI_Output(self,other, " DIA_Cord_Teach_14_01 " );	// I can teach you how to use any weapon - where do we start?
 		Cord_Merke_1h = hero.HitChance[NPC_TALENT_1H];
 		Cord_Merke_2h = hero.HitChance[NPC_TALENT_2H];
 		Info_ClearChoices(DIA_Cord_Teach);
@@ -627,13 +628,13 @@ func void DIA_Cord_Teach_Info()
 
 		if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && ((other.guild == GIL_SLD) || (other.guild == GIL_DJG))) 
 		{
-			Info_AddChoice(DIA_Cord_Teach,"Регенерация выносливости (Очки обучения: 5, Цена: 10000 монет)",DIA_Cord_Teach_RegenStam);
+			Info_AddChoice(DIA_Cord_Teach, " Stamina Regeneration (Training Points: 5, Cost: 10000 Coins) " ,DIA_Cord_Teach_RegenStam);
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cord_Teach_14_06");	//Я тренирую только наемников и достойных кандидатов!
-		B_Cord_Zeitverschwendung();
+		AI_Output(self,other, " DIA_Cord_Teach_14_06 " );	// I only train mercenaries and worthy candidates!
+		B_Cord_Waste of Time();
 		B_Cord_BeBetter();
 	};
 };
@@ -642,7 +643,7 @@ func void DIA_Cord_Teach_Back()
 {
 	if((Cord_Merke_1h < other.HitChance[NPC_TALENT_1H]) || (Cord_Merke_2h < other.HitChance[NPC_TALENT_2H]))
 	{
-		AI_Output(self,other,"DIA_Cord_Teach_BACK_14_00");	//Ты стал значительно лучше - так держать!
+		AI_Output(self,other, " DIA_Cord_Teach_BACK_14_00 " );	// You've gotten a lot better - keep it up!
 	};
 
 	Info_ClearChoices(DIA_Cord_Teach);
@@ -650,12 +651,12 @@ func void DIA_Cord_Teach_Back()
 
 func void DIA_Cord_Teach_RegenStam()
 {
-	var int kosten;
+	var int cost;
 	var int money;
 
-	AI_Output(other,self,"DIA_Vatras_Teach_regen_15_03");	//Научи меня ускоренному восстановлению выносливости.
+	AI_Output(other,self, " DIA_Vatras_Teach_regen_15_03 " );	// Teach me faster stamina recovery.
 
-	kosten = 5;
+	cost = 5 ;
 	money = 10000;
 
 	if(hero.lp < kosten)
@@ -671,10 +672,10 @@ func void DIA_Cord_Teach_RegenStam()
 	if((hero.lp >= kosten) && (Npc_HasItems(other,ItMi_Gold) >= money))
 	{
 		hero.lp = hero.lp - kosten;
-		RankPoints = RankPoints + kosten;
+		RankPoints = RankPoints + cost;
 		Npc_RemoveInvItems(other,ItMi_Gold,money);
-		AI_Print("Обучение: Ускоренная регенерация выносливости");
-		VATRAS_TEACHREGENSTAM = TRUE;
+		AI_Print( " Tutorial: Accelerated Stamina Regeneration " );
+		VATRAS_TEACHREGENSTAM = TRUE ;
 		Snd_Play("LevelUP");
 	};
 
@@ -706,7 +707,7 @@ func void DIA_Cord_Teach_2H_1()
 
 	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && ((other.guild == GIL_SLD) || (other.guild == GIL_DJG))) 
 	{
-		Info_AddChoice(DIA_Cord_Teach,"Регенерация выносливости (Очки обучения: 5, Цена: 10000 монет)",DIA_Cord_Teach_RegenStam);
+		Info_AddChoice(DIA_Cord_Teach, " Stamina Regeneration (Training Points: 5, Cost: 10000 Coins) " ,DIA_Cord_Teach_RegenStam);
 	};
 };
 
@@ -724,7 +725,7 @@ func void DIA_Cord_Teach_2H_5()
 
 		if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && ((other.guild == GIL_SLD) || (other.guild == GIL_DJG))) 
 		{
-			Info_AddChoice(DIA_Cord_Teach,"Регенерация выносливости (Очки обучения: 5, Цена: 10000 монет)",DIA_Cord_Teach_RegenStam);
+			Info_AddChoice(DIA_Cord_Teach, " Stamina Regeneration (Training Points: 5, Cost: 10000 Coins) " ,DIA_Cord_Teach_RegenStam);
 		};
 };
 
@@ -742,7 +743,7 @@ func void DIA_Cord_Teach_1H_1()
 
 	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && ((other.guild == GIL_SLD) || (other.guild == GIL_DJG))) 
 	{
-		Info_AddChoice(DIA_Cord_Teach,"Регенерация выносливости (Очки обучения: 5, Цена: 10000 монет)",DIA_Cord_Teach_RegenStam);
+		Info_AddChoice(DIA_Cord_Teach, " Stamina Regeneration (Training Points: 5, Cost: 10000 Coins) " ,DIA_Cord_Teach_RegenStam);
 	};
 };
 
@@ -760,7 +761,7 @@ func void DIA_Cord_Teach_1H_5()
 
 	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && ((other.guild == GIL_SLD) || (other.guild == GIL_DJG))) 
 	{
-		Info_AddChoice(DIA_Cord_Teach,"Регенерация выносливости (Очки обучения: 5, Цена: 10000 монет)",DIA_Cord_Teach_RegenStam);
+		Info_AddChoice(DIA_Cord_Teach, " Stamina Regeneration (Training Points: 5, Cost: 10000 Coins) " ,DIA_Cord_Teach_RegenStam);
 	};
 };
 
@@ -778,7 +779,7 @@ func void dia_cord_teach_stamina_1()
 
 	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && ((other.guild == GIL_SLD) || (other.guild == GIL_DJG))) 
 	{
-		Info_AddChoice(DIA_Cord_Teach,"Регенерация выносливости (Очки обучения: 5, Цена: 10000 монет)",DIA_Cord_Teach_RegenStam);
+		Info_AddChoice(DIA_Cord_Teach, " Stamina Regeneration (Training Points: 5, Cost: 10000 Coins) " ,DIA_Cord_Teach_RegenStam);
 	};
 };
 
@@ -796,7 +797,7 @@ func void dia_cord_teach_stamina_5()
 
 	if((Kapitel >= 2) && (VATRAS_TEACHREGENSTAM == FALSE) && ((other.guild == GIL_SLD) || (other.guild == GIL_DJG))) 
 	{
-		Info_AddChoice(DIA_Cord_Teach,"Регенерация выносливости (Очки обучения: 5, Цена: 10000 монет)",DIA_Cord_Teach_RegenStam);
+		Info_AddChoice(DIA_Cord_Teach, " Stamina Regeneration (Training Points: 5, Cost: 10000 Coins) " ,DIA_Cord_Teach_RegenStam);
 	};
 };
 
@@ -812,7 +813,7 @@ instance DIA_Cord_PICKPOCKET(C_Info)
 
 func int DIA_Cord_PICKPOCKET_Condition()
 {
-	return C_Beklauen(65,75);
+	return  C_Robbery ( 65 , 75 );
 };
 
 func void DIA_Cord_PICKPOCKET_Info()
@@ -824,7 +825,7 @@ func void DIA_Cord_PICKPOCKET_Info()
 
 func void DIA_Cord_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Cord_PICKPOCKET);
 };
 
@@ -834,7 +835,7 @@ func void DIA_Cord_PICKPOCKET_BACK()
 };
 
 
-//----------------------------------------------------Лоа-----------------------------------
+// ------------------------------------------------ ----Loa------------------------------------
 
 instance DIA_Loa_EXIT(C_Info)
 {
@@ -870,14 +871,14 @@ func void DIA_Loa_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Loa_Hello(C_Info)
+instance DIA_Loa_Hello (C_Info)
 {
 	npc = SLD_10920_Loa;
 	nr = 1;
 	condition = DIA_Loa_Hello_Condition;
 	information = DIA_Loa_Hello_Info;
 	permanent = FALSE;
-	description = "Твое лицо мне кажется знакомым.";
+	description = " Your face looks familiar to me. " ;
 };
 
 func int DIA_Loa_Hello_Condition()
@@ -887,33 +888,33 @@ func int DIA_Loa_Hello_Condition()
 
 func void DIA_Loa_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Loa_Hello_01_01");	//Твое лицо мне кажется знакомым.
-	AI_Output(self,other,"DIA_Loa_Hello_01_02");	//Хммм...(оценивающе) Да, вроде бы я тоже тебя припоминаю.
-	AI_Output(self,other,"DIA_Loa_Hello_01_03");	//Ах, ну да, теперь вспомнила.
+	AI_Output(other,self, " DIA_Loa_Hello_01_01 " );	// Your face looks familiar to me.
+	AI_Output(self,other, " DIA_Loa_Hello_01_02 " );	// Hmmm... (appreciatively) Yes, I seem to remember you too.
+	AI_Output(self,other, " DIA_Loa_Hello_01_03 " );	// Oh, yes, now I remember.
 	Info_ClearChoices(DIA_Loa_Hello);
-	Info_AddChoice(DIA_Loa_Hello,"Эмм... не напомнишь?",DIA_Loa_Hello_Later);
+	Info_AddChoice(DIA_Loa_Hello, " Um... can you remind me? " ,DIA_Loa_Hello_Later);
 };
 
 func void DIA_Loa_Hello_Later()
 {
 	PlayVideo("RET2_LoaMeet.bik");
-	AI_Output(self,other,"DIA_Loa_Hello_Later_01_01");	//Ну как? Припоминаешь?
-	AI_Output(other,self,"DIA_Loa_Hello_Later_01_02");	//Еще бы! Да уж, здорово ты мне тогда врезала.
-	AI_Output(other,self,"DIA_Loa_Hello_Later_01_03");	//Похоже, долго я тогда пробыл в отключке. А когда очнулся, тебя уже не было рядом.
-	AI_Output(self,other,"DIA_Loa_Hello_Later_01_04");	//Извини. Но тогда я не знала, можно ли тебе доверять.
-	AI_Output(other,self,"DIA_Loa_Hello_Later_01_05");	//А теперь знаешь?
-	AI_Output(self,other,"DIA_Loa_Hello_Later_01_06");	//Теперь тоже не знаю! Но, пожалуй, что в этот раз пожалею твою рожу. 
-	AI_Output(other,self,"DIA_Loa_Hello_Later_01_07");	//Очень на это надеюсь.
+	AI_Output(self,other, " DIA_Loa_Hello_Later_01_01 " );	// Well, how? Do you remember?
+	AI_Output(other,self, " DIA_Loa_Hello_Later_01_02 " );	// Still! Yeah, great you hit me then.
+	AI_Output(other,self, " DIA_Loa_Hello_Later_01_03 " );	// Looks like I was passed out for a long time. And when I woke up, you were no longer there.
+	AI_Output(self,other, " DIA_Loa_Hello_Later_01_04 " );	// Sorry. But then I didn't know if you could be trusted.
+	AI_Output(other,self, " DIA_Loa_Hello_Later_01_05 " );	// Do you know now?
+	AI_Output(self,other, " DIA_Loa_Hello_Later_01_06 " );	// Now I don't know either! But, perhaps, that this time I will regret your face.
+	AI_Output(other,self, " DIA_Loa_Hello_Later_01_07 " );	// I really hope so.
 };
 
-instance DIA_Loa_MineTale(C_Info)
+instance DIA_Loa_MineTale (C_Info)
 {
 	npc = SLD_10920_Loa;
 	nr = 2;
 	condition = DIA_Loa_MineTale_Condition;
 	information = DIA_Loa_MineTale_Info;
 	permanent = FALSE;
-	description = "Ты тоже была в Долине Рудников?";
+	description = " Have you been to Mining Valley too? " ;
 };
 
 func int DIA_Loa_MineTale_Condition()
@@ -926,9 +927,9 @@ func int DIA_Loa_MineTale_Condition()
 
 func void DIA_Loa_MineTale_Info()
 {
-	AI_Output(other,self,"DIA_Loa_MineTale_01_01");	//Ты тоже была в Долине Рудников?
-	AI_Output(self,other,"DIA_Loa_MineTale_01_02");	//Да...(печально) К несчастью, мне тоже пришлось там побывать. 
-	AI_Output(self,other,"DIA_Loa_MineTale_01_03");	//Но теперь все в прошлом! Так что не стоит об этом вспоминать.
+	AI_Output(other,self, " DIA_Loa_MineTale_01_01 " );	// Have you been to the Valley of Mines too?
+	AI_Output(self,other, " DIA_Loa_MineTale_01_02 " );	// Yes... (sadly) Unfortunately, I had to go there too.
+	AI_Output(self,other, " DIA_Loa_MineTale_01_03 " );	// But now everything is in the past! So don't be reminded of it.
 };
 
 instance DIA_Loa_WhatNew(C_Info)
@@ -938,12 +939,12 @@ instance DIA_Loa_WhatNew(C_Info)
 	condition = DIA_Loa_WhatNew_Condition;
 	information = DIA_Loa_WhatNew_Info;
 	permanent = TRUE;
-	description = "Что нового?";
+	description = " What's new? " ;
 };
 
 func int DIA_Loa_WhatNew_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Loa_Hello) && (LoveBonus == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Loa_Hello ) && ( LoveBonus ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -951,12 +952,12 @@ func int DIA_Loa_WhatNew_Condition()
 
 func void DIA_Loa_WhatNew_Info()
 {
-	AI_Output(other,self,"DIA_Loa_WhatNew_01_01");	//Что нового?
-	AI_Output(self,other,"DIA_Loa_WhatNew_01_02");	//Вместо того, чтобы мучать меня глупыми вопросами, лучше займись чем-нибудь полезным. 
-	AI_Output(other,self,"DIA_Loa_WhatNew_01_03");	//Ладно, извини.
+	AI_Output(other,self, " DIA_Loa_WhatNew_01_01 " );	// What's new?
+	AI_Output(self,other, " DIA_Loa_WhatNew_01_02 " );	// Instead of torturing me with stupid questions, do something useful instead.
+	AI_Output(other,self, " DIA_Loa_WhatNew_01_03 " );	// Okay, sorry.
 };
 
-//---------------романтик--------------------------------
+// ---------------romance--------------------------------
 
 instance DIA_Loa_Romantic(C_Info)
 {
@@ -965,7 +966,7 @@ instance DIA_Loa_Romantic(C_Info)
 	condition = DIA_Loa_Romantic_Condition;
 	information = DIA_Loa_Romantic_Info;
 	permanent = FALSE;
-	description = "Мне очень понравился твой танец!";
+	description = " I really enjoyed your dance! " ;
 };
 
 func int DIA_Loa_Romantic_Condition()
@@ -978,13 +979,13 @@ func int DIA_Loa_Romantic_Condition()
 
 func void DIA_Loa_Romantic_Info()
 {
-	AI_Output(other,self,"DIA_Loa_Romantic_01_01");	//Мне очень понравился твой танец!
-	AI_Output(self,other,"DIA_Loa_Romantic_01_02");	//Не подлизывайся! Если ты думаешь тем самым затащить меня в постель, то зря стараешься. Я не из таких!
-	AI_Output(self,other,"DIA_Loa_Romantic_01_03");	//Так что лучше тебе отправиться прямиком в бордель. 
-	AI_Output(other,self,"DIA_Loa_Romantic_01_04");	//Что ты! Я просто хотел выразить свое восхищение твоими талантами. 
-	AI_Output(self,other,"DIA_Loa_Romantic_01_05");	//Поначалу все так говорят, а потом пристают со всякими глупостями. Думаю, и ты не исключение!
-	AI_Output(self,other,"DIA_Loa_Romantic_01_06");	//Но я предупреждаю, если полезешь - схлопочешь по роже! Как и в тот раз, на пристани. Или забыл?
-	AI_Output(other,self,"DIA_Loa_Romantic_01_07");	//Такое вряд ли забудешь.
+	AI_Output(other,self, " DIA_Loa_Romantic_01_01 " );	// I really liked your dance!
+	AI_Output(self,other, " DIA_Loa_Romantic_01_02 " );	// Don't suck up! If you are thinking of dragging me into bed, then you are trying in vain. I'm not one of those!
+	AI_Output(self,other, " DIA_Loa_Romantic_01_03 " );	// So you'd better go straight to the brothel.
+	AI_Output(other,self, " DIA_Loa_Romantic_01_04 " );	// What are you! I just wanted to express my admiration for your talents.
+	AI_Output(self,other, " DIA_Loa_Romantic_01_05 " );	// At first everyone says that, and then they pester with all sorts of nonsense. I think you are no exception!
+	AI_Output(self,other, " DIA_Loa_Romantic_01_06 " );	// But I warn you, if you climb, you'll get smacked in the face! Just like that time, on the pier. Or forgot?
+	AI_Output(other,self, " DIA_Loa_Romantic_01_07 " );	// This is unlikely to be forgotten.
 };
 
 instance DIA_Loa_HowGetYou(C_Info)
@@ -994,7 +995,7 @@ instance DIA_Loa_HowGetYou(C_Info)
 	condition = DIA_Loa_HowGetYou_Condition;
 	information = DIA_Loa_HowGetYou_Info;
 	permanent = FALSE;
-	description = "Мне кажется, что ты слишком сурова с мужчинами.";
+	description = " I think you're too hard on men. " ;
 };
 
 func int DIA_Loa_HowGetYou_Condition()
@@ -1007,38 +1008,38 @@ func int DIA_Loa_HowGetYou_Condition()
 
 func void DIA_Loa_HowGetYou_Info()
 {
-	AI_Output(other,self,"DIA_Loa_HowGetYou_01_01");	//Мне кажется, что ты слишком сурова с мужчинами.
-	AI_Output(self,other,"DIA_Loa_HowGetYou_01_02");	//А как с вами еще? Что ты, что эти неотесанные чурбаны вокруг меня, - даже не знаете, как можно произвести впечатление на приличную девушку.
-	AI_Output(self,other,"DIA_Loa_HowGetYou_01_03");	//Кого ни возьми - у всех только одно на уме и ничего более.
-	AI_Output(other,self,"DIA_Loa_HowGetYou_01_04");	//Может, тогда поделишься секретом, как можно произвести на вас хорошее впечатление?
-	AI_Output(self,other,"DIA_Loa_HowGetYou_01_05");	//О Иннос! Да как угодно! Главное, чтобы девушке это понравилось, и чтобы после этого она почувствовала себя особенной! Понимаешь?
-	AI_Output(other,self,"DIA_Loa_HowGetYou_01_06");	//Пока не очень. А поконкретнее?
-	AI_Output(self,other,"DIA_Loa_HowGetYou_01_07");	//Ну... возможно, написать для нее стихи, преподнести ей какое-нибудь красивое украшение, ну или просто подарить цветы.
-	AI_Output(self,other,"DIA_Loa_HowGetYou_01_08");	//Только не те сорняки, что растут за амбаром Теклы. Они должны быть по-настоящему прекрасны!
+	AI_Output(other,self, " DIA_Loa_HowGetYou_01_01 " );	// I think you're too hard on men.
+	AI_Output(self,other, " DIA_Loa_HowGetYou_01_02 " );	// How about you? What are you, that these uncouth chumps around me - do not even know how you can impress a decent girl.
+	AI_Output(self,other, " DIA_Loa_HowGetYou_01_03 " );	// Whoever you take - everyone has only one thing on their minds and nothing more.
+	AI_Output(other,self, " DIA_Loa_HowGetYou_01_04 " );	// Maybe then you can share the secret of how to make a good impression on you?
+	AI_Output(self,other, " DIA_Loa_HowGetYou_01_05 " );	// O Innos! Yes, whatever! The main thing is that the girl likes it, and that after that she feels special! Understand?
+	AI_Output(other,self, " DIA_Loa_HowGetYou_01_06 " );	// Not much yet. And more specifically?
+	AI_Output(self,other, " DIA_Loa_HowGetYou_01_07 " );	// Well... perhaps write poetry for her, give her some beautiful jewelry, or just give her flowers.
+	AI_Output(self,other, " DIA_Loa_HowGetYou_01_08 " );	// Not the weeds that grow behind Thecla's barn. They must be truly amazing!
 	MIS_LoaRomance = LOG_Running;
 	Log_CreateTopic(TOPIC_LoaRomance,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LoaRomance,LOG_Running);
-	B_LogEntry(TOPIC_LoaRomance,"Если я хочу добиться расположения Лоа, я должен произвести на нее впечатление галантным способом.");
+	B_LogEntry(TOPIC_LoaRomance, " If I want to woo Loa, I must impress her in a gallant way. " );
 	Info_ClearChoices(DIA_Loa_Hello);
-	Info_AddChoice(DIA_Loa_HowGetYou,"А какие цветы нравятся тебе?",DIA_Loa_Hello_Flower);
-	Info_AddChoice(DIA_Loa_HowGetYou,"У тебя есть на примете такое особенное украшение?",DIA_Loa_Hello_Pearl);
-	Info_AddChoice(DIA_Loa_HowGetYou,"Сомневаюсь, что среди наемников найдутся поэты.",DIA_Loa_Hello_Stihi);
+	Info_AddChoice(DIA_Loa_HowGetYou, " What kind of flowers do you like? " ,DIA_Loa_Hello_Flower);
+	Info_AddChoice(DIA_Loa_HowGetYou, " Do you have such a special decoration in mind? " ,DIA_Loa_Hello_Pearl);
+	Info_AddChoice(DIA_Loa_HowGetYou, " I doubt there will be poets among the mercenaries. " ,DIA_Loa_Hello_Stihi);
 };
 
 func void DIA_Loa_Hello_Flower()
 {
-	AI_Output(other,self,"DIA_Loa_Hello_Flower_01_01");	//А какие цветы нравятся тебе?
-	AI_Output(self,other,"DIA_Loa_Hello_Flower_01_02");	//Трудно сказать. Все цветы по-своему прекрасны.
-	AI_Output(other,self,"DIA_Loa_Hello_Flower_01_03");	//Может, есть какие-нибудь особенные?
-	AI_Output(self,other,"DIA_Loa_Hello_Flower_01_04");	//Хммм... Возможно, среди прочих это... голубые мальвы.
-	AI_Output(self,other,"DIA_Loa_Hello_Flower_01_05");	//Они росли возле нашего дома в Сильдене и всегда напоминали мне о самых счастливых годах моей жизни.
-	AI_Output(other,self,"DIA_Loa_Hello_Flower_01_06");	//Хочешь я принесу тебе букетик этих цветов?
-	AI_Output(self,other,"DIA_Loa_Hello_Flower_01_07");	//Это было бы очень мило с твоей стороны. Но боюсь, в этой части архипелага ты их вряд ли встретишь.
-	AI_Output(self,other,"DIA_Loa_Hello_Flower_01_08");	//Отец говорил, что они растут только на материке, и то не везде. 
-	AI_Output(other,self,"DIA_Loa_Hello_Flower_01_09");	//Ну, я что-нибудь придумаю.
-	AI_Output(self,other,"DIA_Loa_Hello_Flower_01_10");	//Хорошо, я буду ждать.
+	AI_Output(other,self, " DIA_Loa_Hello_Flower_01_01 " );	// What kind of flowers do you like?
+	AI_Output(self,other, " DIA_Loa_Hello_Flower_01_02 " );	// Hard to say. All flowers are beautiful in their own way.
+	AI_Output(other,self, " DIA_Loa_Hello_Flower_01_03 " );	// Maybe there are some special ones?
+	AI_Output(self,other, " DIA_Loa_Hello_Flower_01_04 " );	// Hmmm... Maybe it's... blue mallows, among others.
+	AI_Output(self,other, " DIA_Loa_Hello_Flower_01_05 " );	// They grew up near our house in Silden and always reminded me of the happiest years of my life.
+	AI_Output(other,self, " DIA_Loa_Hello_Flower_01_06 " );	// Do you want me to bring you a bouquet of these flowers?
+	AI_Output(self,other, " DIA_Loa_Hello_Flower_01_07 " );	// That would be very nice of you. But I'm afraid you won't see them in this part of the archipelago.
+	AI_Output(self,other, " DIA_Loa_Hello_Flower_01_08 " );	// Father said that they grow only on the mainland, and even then not everywhere.
+	AI_Output(other,self, " DIA_Loa_Hello_Flower_01_09 " );	// Well, I'll think of something.
+	AI_Output(self,other, " DIA_Loa_Hello_Flower_01_10 " );	// Okay, I'll be waiting.
 	LoaCase_01 = TRUE;
-	B_LogEntry(TOPIC_LoaRomance,"Лоа будет счастлива, если я принесу ей букет голубых мальв.");
+	B_LogEntry(TOPIC_LoaRomance, " Loa will be happy if I bring her a bouquet of blue mallows. " );
 	Info_ClearChoices(DIA_Loa_Hello);
 
 	if((LoaCase_01 == TRUE) && (LoaCase_02 == TRUE) && (LoaCase_03 == TRUE))
@@ -1049,16 +1050,16 @@ func void DIA_Loa_Hello_Flower()
 
 func void DIA_Loa_Hello_Pearl()
 {
-	AI_Output(other,self,"DIA_Loa_Hello_Pearl_01_01");	//У тебя есть на примете такое особенное украшение?
-	AI_Output(self,other,"DIA_Loa_Hello_Pearl_01_02");	//Не знаю, как другим, а мне всегда хотелось иметь ожерелье из черного жемчуга!
-	AI_Output(self,other,"DIA_Loa_Hello_Pearl_01_03");	//Глубина его цвета порой настолько завораживает, что от него просто невозможно оторвать глаз.
-	AI_Output(self,other,"DIA_Loa_Hello_Pearl_01_04");	//Эх... Когда-то у меня была одна такая жемчужина. Я хранила ее долгие годы и всегда носила с собой как талисман, приносящий удачу.
-	AI_Output(self,other,"DIA_Loa_Hello_Pearl_01_05");	//Но, к сожалению, стражники короля забрали ее у меня, когда отправляли в Долину Рудников.
-	AI_Output(other,self,"DIA_Loa_Hello_Pearl_01_06");	//А что тебе мешает найти себе другую?
-	AI_Output(self,other,"DIA_Loa_Hello_Pearl_01_07");	//Это не так просто! Черный жемчуг очень редкий, и найти одну такую жемчужину уже считается огромной удачей.
-	AI_Output(self,other,"DIA_Loa_Hello_Pearl_01_08");	//А уж чтобы набрать их на целое ожерелье...
+	AI_Output(other,self, " DIA_Loa_Hello_Pearl_01_01 " );	// Do you have such a special decoration in mind?
+	AI_Output(self,other, " DIA_Loa_Hello_Pearl_01_02 " );	// I don't know about others, but I always wanted to have a black pearl necklace!
+	AI_Output(self,other, " DIA_Loa_Hello_Pearl_01_03 " );	// The depth of its color is sometimes so mesmerizing that it is simply impossible to take your eyes off it.
+	AI_Output(self,other, " DIA_Loa_Hello_Pearl_01_04 " );	// Eh... I once had one such pearl. I kept it for many years and always carried it with me as a talisman that brings good luck.
+	AI_Output(self,other, " DIA_Loa_Hello_Pearl_01_05 " );	// But, unfortunately, the king's guards took it from me when they sent it to the Valley of Mines.
+	AI_Output(other,self, " DIA_Loa_Hello_Pearl_01_06 " );	// What's stopping you from finding someone else?
+	AI_Output(self,other, " DIA_Loa_Hello_Pearl_01_07 " );	// It's not that easy! Black pearls are very rare, and finding one such pearl is already considered a huge success.
+	AI_Output(self,other, " DIA_Loa_Hello_Pearl_01_08 " );	// And to get them for a whole necklace...
 	LoaCase_02 = TRUE;
-	B_LogEntry(TOPIC_LoaRomance,"Лоа всегда мечтала об ожерелье из черного жемчуга. Думаю, мне стоит попробовать найти такое, если я хочу завоевать ее внимание.");
+	B_LogEntry(TOPIC_LoaRomance, " Loa has always wanted a black pearl necklace. I think I should try to find one if I want to win her attention. " );
 	Info_ClearChoices(DIA_Loa_Hello);
 
 	if((LoaCase_01 == TRUE) && (LoaCase_02 == TRUE) && (LoaCase_03 == TRUE))
@@ -1069,12 +1070,12 @@ func void DIA_Loa_Hello_Pearl()
 
 func void DIA_Loa_Hello_Stihi()
 {
-	AI_Output(other,self,"DIA_Loa_Hello_Stihi_01_01");	//Сомневаюсь, что среди наемников найдутся поэты.
-	AI_Output(self,other,"DIA_Loa_Hello_Stihi_01_02");	//Тут ты прав! Для этого нужно быть довольно утонченной натурой и обладать острым умом.
-	AI_Output(self,other,"DIA_Loa_Hello_Stihi_01_03");	//А эти бездари даже пары слов связать не могут, особенно после того, как переберут со шнапсом.
-	AI_Output(self,other,"DIA_Loa_Hello_Stihi_01_04");	//Хотя чего еще взять с бывших каторжников.
+	AI_Output(other,self, " DIA_Loa_Hello_Stihi_01_01 " );	// I doubt there will be poets among the mercenaries.
+	AI_Output(self,other, " DIA_Loa_Hello_Stihi_01_02 " );	// You're right here! To do this, you need to be quite refined in nature and have a sharp mind.
+	AI_Output(self,other, " DIA_Loa_Hello_Stihi_01_03 " );	// And these mediocrity can’t even connect a couple of words, especially after they sort it out with schnapps.
+	AI_Output(self,other, " DIA_Loa_Hello_Stihi_01_04 " );	// Although what else to take from the former convicts.
 	LoaCase_03 = TRUE;
-	B_LogEntry(TOPIC_LoaRomance,"Лоа любит красивые стихи. Мне стоит поискать нечто подобное, если я хочу произвести на нее впечатление.");
+	B_LogEntry(TOPIC_LoaRomance, " Loa loves beautiful poetry. I should look for something like this if I want to impress her. " );
 	Info_ClearChoices(DIA_Loa_Hello);
 
 	if((LoaCase_01 == TRUE) && (LoaCase_02 == TRUE) && (LoaCase_03 == TRUE))
@@ -1086,7 +1087,7 @@ func void DIA_Loa_Hello_Stihi()
 func void DIA_Loa_Hello_Buy()
 {
 	AI_Output(other,self,"DIA_Loa_Hello_Buy_01_01");	//Мне пора.
-	AI_Output(self,other,"DIA_Loa_Hello_Buy_01_02");	//До встречи.
+	AI_Output(self,other, " DIA_Loa_Hello_Buy_01_02 " );	// See you later.
 	AI_StopProcessInfos(self);
 };
 
@@ -1097,12 +1098,12 @@ instance DIA_Loa_Give_Flower(C_Info)
 	condition = DIA_Loa_Give_Flower_Condition;
 	information = DIA_Loa_Give_Flower_Info;
 	permanent = FALSE;
-	description = "Взгляни, что я тебе принес.";
+	description = " Look what I brought you. " ;
 };
 
 func int DIA_Loa_Give_Flower_Condition()
 {
-	if((MIS_LoaRomance == LOG_Running) && (LoaCase_01 == TRUE) && (LoaCase_01_Done == FALSE) && (Npc_HasItems(other,ItPl_ExBlueMalve) >= 1))
+	if (( MIS_LoaRomance == LOG_Running ) && ( LoaCase_01 ==  TRUE ) && ( LoaCase_01_Done ==  FALSE ) && ( Npc_HasItems ( other , ItPl_ExBlueMalve ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -1111,31 +1112,31 @@ func int DIA_Loa_Give_Flower_Condition()
 func void DIA_Loa_Give_Flower_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Loa_Give_Flower_01_01");	//Взгляни, что я тебе принес.
+	AI_Output(other,self, " DIA_Loa_Give_Flower_01_01 " );	// Look what I brought you.
 	B_GiveInvItems(other,self,ItPl_ExBlueMalve,1);
 	Npc_RemoveInvItems(self,ItPl_ExBlueMalve,1);
-	AI_Output(self,other,"DIA_Loa_Give_Flower_01_02");	//Невероятно! Где тебе удалось их найти?
-	AI_Output(other,self,"DIA_Loa_Give_Flower_01_03");	//Долго рассказывать. Надеюсь, что они тебя хоть как-то порадуют.
-	AI_Output(self,other,"DIA_Loa_Give_Flower_01_04");	//Не то слово! Ты просто не представляешь, насколько я счастлива вновь увидеть эти цветы и ощутить их аромат.
-	AI_Output(self,other,"DIA_Loa_Give_Flower_01_05");	//Хотя, по правде говоря, я не ожидала от тебя такого.
-	AI_Output(self,other,"DIA_Loa_Give_Flower_01_06");	//Вот - хочу, чтоб ты взял это золото. Здесь его все равно не на что потратить.
+	AI_Output(self,other, " DIA_Loa_Give_Flower_01_02 " );	// Incredible! Where did you manage to find them?
+	AI_Output(other,self, " DIA_Loa_Give_Flower_01_03 " );	// Long story. I hope they make you happy in some way.
+	AI_Output(self,other, " DIA_Loa_Give_Flower_01_04 " );	// Wrong word! You just can't imagine how happy I am to see these flowers again and feel their fragrance.
+	AI_Output(self,other, " DIA_Loa_Give_Flower_01_05 " );	// Although, to be honest, I didn't expect that from you.
+	AI_Output(self,other, " DIA_Loa_Give_Flower_01_06 " );	// Here - I want you to take this gold. There is nothing to spend here anyway.
 	LoaCase_01_Done = TRUE;
-	B_LogEntry(TOPIC_LoaRomance,"Я принес Лоа голубую мальву. Она была просто в неописуемом восторге!");
+	B_LogEntry(TOPIC_LoaRomance, " I brought a blue mallow to Loa. She was absolutely delighted! " );
 	Info_ClearChoices(DIA_Loa_Give_Flower);
 	Info_AddChoice(DIA_Loa_Give_Flower,"Не стоит!",DIA_Loa_Give_Flower_No);
-	Info_AddChoice(DIA_Loa_Give_Flower,"Благодарю!",DIA_Loa_Give_Flower_Yes);
+	Info_AddChoice(DIA_Loa_Give_Flower, " Thank you! " ,DIA_Loa_Give_Flower_Yes);
 };
 
 func void DIA_Loa_Give_Flower_No()
 {
-	AI_Output(other,self,"DIA_Loa_Give_Flower_No_01_01");	//Не стоит! Простых слов вполне достаточно.
+	AI_Output(other,self, " DIA_Loa_Give_Flower_No_01_01 " );	// Don't! Simple words are enough.
 	LoaBonus_01 = TRUE;
 	Info_ClearChoices(DIA_Loa_Give_Flower);
 };
 
 func void DIA_Loa_Give_Flower_Yes()
 {
-	AI_Output(other,self,"DIA_Loa_Give_Flower_Yes_01_01");	//Благодарю! Лишнее золото никогда не помешает.
+	AI_Output(other,self, " DIA_Loa_Give_Flower_Yes_01_01 " );	// Thank you! Extra gold never hurts.
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	LoaBonus_01 = TRUE;
 	LoaAntiBonus = TRUE;
@@ -1149,7 +1150,7 @@ instance DIA_Loa_Give_Pearl(C_Info)
 	condition = DIA_Loa_Give_Pearl_Condition;
 	information = DIA_Loa_Give_Pearl_Info;
 	permanent = FALSE;
-	description = "Вот, примерь это ожерелье.";
+	description = " Here, try on this necklace. " ;
 };
 
 func int DIA_Loa_Give_Pearl_Condition()
@@ -1163,37 +1164,37 @@ func int DIA_Loa_Give_Pearl_Condition()
 func void DIA_Loa_Give_Pearl_Info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Loa_Give_Pearl_01_01");	//Вот, примерь это ожерелье.
+	AI_Output(other,self, " DIA_Loa_Give_Pearl_01_01 " );	// Here, try on this necklace.
 	B_GiveInvItems(other,self,ItMi_BlackPearlNeckle,1);
 	Npc_RemoveInvItems(self,ItMi_BlackPearlNeckle,1);
-	AI_Output(self,other,"DIA_Loa_Give_Pearl_01_02");	//Но... но как тебе удалось собрать столько жемчуга?
-	AI_Output(other,self,"DIA_Loa_Give_Pearl_01_03");	//Признаюсь, это было нелегко. Пришлось побегать по всему Хоринису и не только.
-	AI_Output(self,other,"DIA_Loa_Give_Pearl_01_04");	//А сами жемчужины... неужели они действительно все настоящие?
-	AI_Output(other,self,"DIA_Loa_Give_Pearl_01_05");	//Конечно! Да сама взгляни. Смотри как они играют на свету.
-	AI_Output(self,other,"DIA_Loa_Give_Pearl_01_06");	//Невероятно! Ты и вправду меня удивил. Никогда бы не подумала, что ты воспримешь мои слова всерьез.
-	AI_Output(other,self,"DIA_Loa_Give_Pearl_01_07");	//Как видишь, именно так я и сделал.
-	AI_Output(self,other,"DIA_Loa_Give_Pearl_01_08");	//Ну, что же... Тогда прими мою искреннюю благодарность за этот подарок! Он воистину прекрасен.
-	AI_Output(self,other,"DIA_Loa_Give_Pearl_01_09");	//И вот это кольцо. В свое время оно мне досталось от отца, но теперь оно твое.
+	AI_Output(self,other, " DIA_Loa_Give_Pearl_01_02 " );	// But... but how did you manage to collect so many pearls?
+	AI_Output(other,self, " DIA_Loa_Give_Pearl_01_03 " );	// I confess it wasn't easy. I had to run around Khorinis and not only.
+	AI_Output(self,other, " DIA_Loa_Give_Pearl_01_04 " );	// And the pearls themselves... are they really all real?
+	AI_Output(other,self, " DIA_Loa_Give_Pearl_01_05 " );	// Of course! Take a look for yourself. See how they play in the light.
+	AI_Output(self,other, " DIA_Loa_Give_Pearl_01_06 " );	// Incredible! You really surprised me. I never thought that you would take my words seriously.
+	AI_Output(other,self, " DIA_Loa_Give_Pearl_01_07 " );	// As you can see, that's exactly what I did.
+	AI_Output(self,other, " DIA_Loa_Give_Pearl_01_08 " );	// Well, well... Then accept my sincere gratitude for this gift! He is truly wonderful.
+	AI_Output(self,other, " DIA_Loa_Give_Pearl_01_09 " );	// And here is the ring. At one time I got it from my father, but now it's yours.
 	LoaCase_02_Done = TRUE;
-	B_LogEntry(TOPIC_LoaRomance,"Я принес Лоа ожерелье из черного жемчуга. Оно ей очень понравилось.");
+	B_LogEntry(TOPIC_LoaRomance, " I brought a black pearl necklace to Loa. She liked it very much. " );
 	Info_ClearChoices(DIA_Loa_Give_Pearl);
-	Info_AddChoice(DIA_Loa_Give_Pearl,"Я не могу его принять!",DIA_Loa_Give_Pearl_No);
-	Info_AddChoice(DIA_Loa_Give_Pearl,"Это очень кстати.",DIA_Loa_Give_Pearl_Yes);
+	Info_AddChoice(DIA_Loa_Give_Pearl, " I can't accept it! " ,DIA_Loa_Give_Pearl_No);
+	Info_AddChoice(DIA_Loa_Give_Pearl, " This is very handy. " ,DIA_Loa_Give_Pearl_Yes);
 };
 
 func void DIA_Loa_Give_Pearl_No()
 {
-	AI_Output(other,self,"DIA_Loa_Give_Pearl_No_01_01");	//Я не могу его принять! Уверен, что тебе самой будет жалко с ним расстаться.
-	AI_Output(self,other,"DIA_Loa_Give_Pearl_No_01_02");	//Ты прав...(вздыхая) Оно мне дорого как память! Но мне просто больше нечем тебя отблагодарить.
-	AI_Output(other,self,"DIA_Loa_Give_Pearl_No_01_03");	//Это и не обязательно. Так что лучше оставь его у себя.
-	AI_Output(self,other,"DIA_Loa_Give_Pearl_No_01_04");	//Ну, хорошо. Будь по-твоему.
+	AI_Output(other,self, " DIA_Loa_Give_Pearl_No_01_01 " );	// I can't accept it! I am sure that you yourself will be sorry to part with him.
+	AI_Output(self,other, " DIA_Loa_Give_Pearl_No_01_02 " );	// You're right... (sighing) It's as dear to me as a memory! But I just have nothing else to thank you.
+	AI_Output(other,self, " DIA_Loa_Give_Pearl_No_01_03 " );	// This is not required. So you'd better keep it to yourself.
+	AI_Output(self,other, " DIA_Loa_Give_Pearl_No_01_04 " );	// Well, okay. As you wish.
 	LoaBonus_02 = TRUE;
 	Info_ClearChoices(DIA_Loa_Give_Pearl);
 };
 
 func void DIA_Loa_Give_Pearl_Yes()
 {
-	AI_Output(other,self,"DIA_Loa_Give_Pearl_Yes_01_01");	//Это очень кстати. Благодарю!
+	AI_Output(other,self, " DIA_Loa_Give_Pearl_Yes_01_01 " );	// This is very handy. Thank you
 	B_GiveInvItems(self,other,ItRi_Loa,1);
 	AI_Output(self,other,"DIA_Loa_Give_Pearl_Yes_01_02");	//Не за что.
 	LoaBonus_02 = TRUE;
@@ -1208,12 +1209,12 @@ instance DIA_Loa_Give_Stihi(C_Info)
 	condition = DIA_Loa_Give_Stihi_Condition;
 	information = DIA_Loa_Give_Stihi_Info;
 	permanent = FALSE;
-	description = "Я по поводу стихов.";
+	description = " I'm talking about poetry. " ;
 };
 
 func int DIA_Loa_Give_Stihi_Condition()
 {
-	if((MIS_LoaRomance == LOG_Running) && (LoaCase_03 == TRUE) && (LoaCase_03_Done == FALSE) && (Npc_HasItems(other,MYRTANAS_LYRIK) >= 1))
+	if ((MY_LoaRomance == LOG_Running) && (LoaCase_03 ==  TRUE ) && (LoaCase_03_Done ==  FALSE ) && (Npc_HasItems(other, MYRTANAS_LYRICS ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -1222,25 +1223,25 @@ func int DIA_Loa_Give_Stihi_Condition()
 func void DIA_Loa_Give_Stihi_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Loa_Give_Stihi_01_01");	//Я по поводу стихов.
-	AI_Output(self,other,"DIA_Loa_Give_Stihi_01_02");	//Что, решил удивить меня своими поэтическими познаниями?
-	AI_Output(other,self,"DIA_Loa_Give_Stihi_01_03");	//Нет, просто подумал, что тебе будет интересно взглянуть на это.
+	AI_Output(other,self, " DIA_Loa_Give_Stihi_01_01 " );	// I'm talking about poetry.
+	AI_Output(self,other, " DIA_Loa_Give_Stihi_01_02 " );	// What, he decided to surprise me with his poetic knowledge?
+	AI_Output(other,self, " DIA_Loa_Give_Stihi_01_03 " );	// No, just thought you might be interested in looking at this.
 	B_GiveInvItems(other,self,MYRTANAS_LYRIK,1);
 	Npc_RemoveInvItems(self,MYRTANAS_LYRIK,1);
-	AI_Output(self,other,"DIA_Loa_Give_Stihi_01_04");	//(читая) Довольно интересная книга! Не столь красиво написано, но это куда лучше, чем слушать невыносимый бред пьяных наемников.
-	AI_Output(other,self,"DIA_Loa_Give_Stihi_01_05");	//Можешь оставить ее себе.
-	AI_Output(self,other,"DIA_Loa_Give_Stihi_01_06");	//Правда? Тогда, пожалуй, я воспользуюсь твоим предложением.
-	AI_Output(self,other,"DIA_Loa_Give_Stihi_01_07");	//Она, безусловно, скрасит мои скучные вечера на этой ферме. Благодарю тебя!
+	AI_Output(self,other, " DIA_Loa_Give_Stihi_01_04 " );	// (reading) Quite an interesting book! Not so beautifully written, but it's much better than listening to the unbearable nonsense of drunken mercenaries.
+	AI_Output(other,self, " DIA_Loa_Give_Stihi_01_05 " );	// You can keep it for yourself.
+	AI_Output(self,other, " DIA_Loa_Give_Stihi_01_06 " );	// True? Then maybe I'll take your offer.
+	AI_Output(self,other, " DIA_Loa_Give_Stihi_01_07 " );	// She will certainly brighten up my boring evenings on this farm. Thank you!
 	LoaCase_03_Done = TRUE;
-	B_LogEntry(TOPIC_LoaRomance,"Я принес Лоа книгу со стихами. Кажется, ей она понравилась.");
+	B_LogEntry(TOPIC_LoaRomance, " I brought Loa a book of poetry. She seems to like it. " );
 	Info_ClearChoices(DIA_Loa_Give_Stihi);
-	Info_AddChoice(DIA_Loa_Give_Stihi,"Наслаждайся!",DIA_Loa_Give_Stihi_No);
-	Info_AddChoice(DIA_Loa_Give_Stihi,"А я думал, что мне причитается какая-нибудь награда.",DIA_Loa_Give_Stihi_Yes);
+	Info_AddChoice(DIA_Loa_Give_Stihi, " Enjoy! " ,DIA_Loa_Give_Stihi_No);
+	Info_AddChoice(DIA_Loa_Give_Stihi, " I thought I was due some kind of reward. " ,DIA_Loa_Give_Stihi_Yes);
 };
 
 func void DIA_Loa_Give_Stihi_No()
 {
-	AI_Output(other,self,"DIA_Loa_Give_Stihi_No_01_01");	//Наслаждайся!
+	AI_Output(other,self, " DIA_Loa_Give_Stihi_No_01_01 " );	// Enjoy!
 	AI_Output(self,other,"DIA_Loa_Give_Stihi_No_01_02");	//Спасибо.
 	LoaBonus_03 = TRUE;
 	Info_ClearChoices(DIA_Loa_Give_Stihi);
@@ -1248,11 +1249,11 @@ func void DIA_Loa_Give_Stihi_No()
 
 func void DIA_Loa_Give_Stihi_Yes()
 {
-	AI_Output(other,self,"DIA_Loa_Give_Stihi_Yes_01_01");	//А я думал, что мне причитается какая-нибудь награда.
+	AI_Output(other,self, " DIA_Loa_Give_Stihi_Yes_01_01 " );	// And I thought I was due some kind of reward.
 	B_GiveInvItems(self,other,ItFo_Wine_Loa,1);
-	AI_Output(self,other,"DIA_Loa_Give_Stihi_Yes_01_02");	//Конечно! Вот, возьми эту бутылку вина.
-	AI_Output(self,other,"DIA_Loa_Give_Stihi_Yes_01_03");	//Уверена, что вы с ней быстро найдете общий язык.
-	AI_Output(other,self,"DIA_Loa_Give_Stihi_Yes_01_04");	//Можешь не сомневаться.
+	AI_Output(self,other, " DIA_Loa_Give_Stihi_Yes_01_02 " );	// Of course! Here, take this bottle of wine.
+	AI_Output(self,other, " DIA_Loa_Give_Stihi_Yes_01_03 " );	// I'm sure that you will quickly find a common language with her.
+	AI_Output(other,self, " DIA_Loa_Give_Stihi_Yes_01_04 " );	// You can be sure.
 	LoaBonus_03 = TRUE;
 	LoaAntiBonus = TRUE;
 	Info_ClearChoices(DIA_Loa_Give_Stihi);
@@ -1279,19 +1280,19 @@ func int DIA_Loa_Give_Lover_Condition()
 func void DIA_Loa_Give_Lover_Info()
 {
 	AI_Output(self,other,"DIA_Loa_Give_Lover_01_01");	//Постой! 
-	AI_Output(other,self,"DIA_Loa_Give_Lover_01_02");	//Да, я слушаю.
-	AI_Output(self,other,"DIA_Loa_Give_Lover_01_03");	//Знаешь, ты для меня так много сделал, а я до сих пор тебя так ничем и не отблагодарила.
-	AI_Output(other,self,"DIA_Loa_Give_Lover_01_04");	//Это вовсе не обязательно.
-	AI_Output(self,other,"DIA_Loa_Give_Lover_01_05");	//И все же... Знаешь, приходи завтра к полуночи на маяк, что неподалеку от города.
+	AI_Output(other,self, " DIA_Loa_Give_Lover_01_02 " );	// Yes, I'm listening.
+	AI_Output(self,other, " DIA_Loa_Give_Lover_01_03 " );	// You know, you've done so much for me, and I still haven't thanked you with anything.
+	AI_Output(other,self, " DIA_Loa_Give_Lover_01_04 " );	// This is not required at all.
+	AI_Output(self,other, " DIA_Loa_Give_Lover_01_05 " );	// And yet... You know, come tomorrow at midnight to the lighthouse, which is not far from the city.
 	AI_Output(other,self,"DIA_Loa_Give_Lover_01_06");	//Зачем?
-	AI_Output(self,other,"DIA_Loa_Give_Lover_01_07");	//Скажем, я хочу тебе кое-что показать. Только не волнуйся! Тебе это наверняка понравится.
-	AI_Output(other,self,"DIA_Loa_Give_Lover_01_08");	//Ладно, я подумаю над твоим предложением.
-	AI_Output(self,other,"DIA_Loa_Give_Lover_01_09");	//Хорошо, только думай быстрее.
+	AI_Output(self,other, " DIA_Loa_Give_Lover_01_07 " );	// Let's say I want to show you something. Just don't worry! You will surely like it.
+	AI_Output(other,self, " DIA_Loa_Give_Lover_01_08 " );	// Okay, I'll think about your suggestion.
+	AI_Output(self,other, " DIA_Loa_Give_Lover_01_09 " );	// Okay, just think faster.
 	LoaLoverDay = Wld_GetDay();
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Loa_ComeLH(C_Info)
+instances of DIA_Loa_ComeLH (C_Info)
 {
 	npc = SLD_10920_Loa;
 	nr = 2;
@@ -1312,65 +1313,65 @@ func int DIA_Loa_ComeLH_Condition()
 func void DIA_Loa_ComeLH_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Loa_ComeLH_01_01");	//Я пришел, как ты и просила.
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_02");	//Вижу! И ты даже не опоздал...(улыбаясь)
-	AI_Output(other,self,"DIA_Loa_ComeLH_01_03");	//Когда об этом просит такая девушка, как ты, я всегда стараюсь быть пунктуальным.
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_04");	//Не сомневаюсь. Хотя у меня были кое-какие сомнения на этот счет.
-	AI_Output(other,self,"DIA_Loa_ComeLH_01_05");	//Приду я или нет?
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_06");	//Да. Но тогда ты бы многое потерял.
-	AI_Output(other,self,"DIA_Loa_ComeLH_01_07");	//Хммм... Например?
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_08");	//Например... возможностью полюбоваться здешними красотами, которые открываются с высоты этого маяка. 
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_09");	//Кстати, как тебе вид отсюда?
+	AI_Output(other,self, " DIA_Loa_ComeLH_01_01 " );	// I came as you asked.
+	AI_Output(self,other, " DIA_Loa_ComeLH_01_02 " );	// I see! And you weren't even late... (smiling)
+	AI_Output(other,self, " DIA_Loa_ComeLH_01_03 " );	// When a girl like you asks for it, I always try to be punctual.
+	AI_Output(self,other, " DIA_Loa_ComeLH_01_04 " );	// No doubt. Although I had some doubts about this.
+	AI_Output(other,self, " DIA_Loa_ComeLH_01_05 " );	// Will I come or not?
+	AI_Output(self,other, " DIA_Loa_ComeLH_01_06 " );	// Yes. But then you'd be missing out on a lot.
+	AI_Output(other,self, " DIA_Loa_ComeLH_01_07 " );	// Hmmm... For example?
+	AI_Output(self,other, " DIA_Loa_ComeLH_01_08 " );	// For example... an opportunity to admire the local beauties that open from the height of this lighthouse.
+	AI_Output(self,other, " DIA_Loa_ComeLH_01_09 " );	// By the way, how do you like the view from here?
 	LoaTellInLH = TRUE;
 	Info_ClearChoices(DIA_Loa_ComeLH);
-	Info_AddChoice(DIA_Loa_ComeLH,"Это производит впечатление!",DIA_Loa_ComeLH_S_03);
-	Info_AddChoice(DIA_Loa_ComeLH,"Уверен, тут есть виды и получше.",DIA_Loa_ComeLH_S_02);
-	Info_AddChoice(DIA_Loa_ComeLH,"Может, лучше сразу перейдем к делу?",DIA_Loa_ComeLH_S_01);
+	Info_AddChoice(DIA_Loa_ComeLH, " This is impressive! " ,DIA_Loa_ComeLH_S_03);
+	Info_AddChoice(DIA_Loa_ComeLH, " I'm sure there are better views here. " ,DIA_Loa_ComeLH_S_02);
+	Info_AddChoice(DIA_Loa_ComeLH, " Maybe we should get right down to business? " ,DIA_Loa_ComeLH_S_01);
 };
 
 func void DIA_Loa_ComeLH_S_03()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_03_01");	//Это производит впечатление!
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_02");	//Ты прав...(вздыхая) Тут очень красиво! Я часто прихожу сюда. Смотрю на звезды, на море...
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_03");	//В них что-то есть такое, что наполняет твой внутренний мир чем-то особенным.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_04");	//И в то же время успокаивает, помогая забыть о прошлых невзгодах.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_05");	//А о чем ты думаешь?
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_03_01 " );	// This makes an impression!
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_03_02 " );	// You're right... (sighing) It's very beautiful here! I often come here. I look at the stars, at the sea ...
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_03_03 " );	// They have something that fills your inner world with something special.
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_03_04 " );	// And at the same time soothes, helping to forget about past hardships.
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_03_05 " );	// What are you thinking about?
 	Info_ClearChoices(DIA_Loa_ComeLH);
-	Info_AddChoice(DIA_Loa_ComeLH,"Примерно о том же, что и ты.",DIA_Loa_ComeLH_M_01);
+	Info_AddChoice(DIA_Loa_ComeLH, " About the same as you. " ,DIA_Loa_ComeLH_M_01);
 	Info_AddChoice(DIA_Loa_ComeLH,"Ни о чем.",DIA_Loa_ComeLH_M_02);
-	Info_AddChoice(DIA_Loa_ComeLH,"Извини, но у меня нет на это времени.",DIA_Loa_ComeLH_M_03);
+	Info_AddChoice(DIA_Loa_ComeLH, " Sorry, I don't have time for this. " ,DIA_Loa_ComeLH_M_03);
 };
 
 func void DIA_Loa_ComeLH_S_02()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_02_01");	//Уверен, тут есть виды и получше.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_02");	//Ты это о чем?
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_02_03");	//О тебе! Твой вид на меня производит куда более приятное впечатление, чем все эти здешние красоты.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_04");	//Это что, комплимент?
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_02_05");	//Почему бы и нет? В конце концов, у каждого свои представления о прекрасном!
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_06");	//И ты верно полагаешь, что после этого я конечно же брошусь к тебе на шею. 
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_02_07");	//Это хорошая идея.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_08");	//О Иннос! Ты, как и все мужчины, всегда думаешь только об одном.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_09");	//Интересно, у тебя когда-нибудь бывают другие мысли в голове?
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_02_01 " );	// I'm sure there are better views here.
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_02_02 " );	// What are you talking about?
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_02_03 " );	// About you! Your view of me makes a much more pleasant impression than all these local beauties.
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_02_04 " );	// Is that a compliment?
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_02_05 " );	// Why not? After all, everyone has their own idea of ​​beauty!
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_02_06 " );	// And you rightly believe that after that I will, of course, throw myself on your neck.
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_02_07 " );	// This is a good idea.
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_02_08 " );	// O Innos! You, like all men, always think of only one thing.
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_02_09 " );	// I wonder if you ever have other thoughts in your head?
 	Info_ClearChoices(DIA_Loa_ComeLH);
-	Info_AddChoice(DIA_Loa_ComeLH,"Обычно, их куда больше.",DIA_Loa_ComeLH_H_03);
-	Info_AddChoice(DIA_Loa_ComeLH,"Само собой.",DIA_Loa_ComeLH_H_02);
-	Info_AddChoice(DIA_Loa_ComeLH,"Сейчас у меня только одна мысль.",DIA_Loa_ComeLH_H_01);
+	Info_AddChoice(DIA_Loa_ComeLH, " Usually there are many more. " ,DIA_Loa_ComeLH_H_03);
+	Info_AddChoice(DIA_Loa_ComeLH, " Of course. " ,DIA_Loa_ComeLH_H_02);
+	Info_AddChoice(DIA_Loa_ComeLH, " I have only one thought right now. " ,DIA_Loa_ComeLH_H_01);
 };
 
 func void DIA_Loa_ComeLH_S_01()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_01_01");	//Может, лучше сразу перейдем к делу?
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_02");	//Ты это о чем?!
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_01_03");	//Уверен, ты позвала меня сюда не для того, чтобы видом с маяка полюбоваться.
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_01_04");	//Так что давай уже, раздевайся.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_05");	//(возмущенно) Что?!
-	AI_Output(other,self,"DIA_Loa_ComeLH_S_01_06");	//Что слышала! Или я не ясно выражаюсь?
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_01_01 " );	// Maybe we'd better get straight to the point?
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_01_02 " );	// What are you talking about?!
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_01_03 " );	// I'm sure you didn't call me here to see the view from the lighthouse.
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_01_04 " );	// So come on already, get undressed.
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_01_05 " );	// (indignantly) What?!
+	AI_Output(other,self, " DIA_Loa_ComeLH_S_01_06 " );	// What did you hear! Or am I not expressing myself clearly?
 	AI_ReadyMeleeWeapon(self);
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_07");	//Только попробуй тронуть меня пальцем, ублюдок!
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_08");	//Я уж подумала, что ты не такой конченый подонок, как остальные.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_09");	//Но, видимо, я ошиблась!
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_10");	//Так что проваливай отсюда, пока твоя рожа еще цела!
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_01_07 " );	// Just try to touch me with your finger, you bastard!
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_01_08 " );	// I thought you weren't such a complete bastard as the others.
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_01_09 " );	// But, apparently, I was mistaken!
+	AI_Output(self,other, " DIA_Loa_ComeLH_S_01_10 " );	// So get out of here while your face is still intact!
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 	LoaPissOff[1] = TRUE;
@@ -1378,50 +1379,50 @@ func void DIA_Loa_ComeLH_S_01()
 
 func void DIA_Loa_ComeLH_M_01()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_01");	//Примерно о том же, что и ты.
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_01_01 " );	// About the same as you.
 	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_02");	//Правда?
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_03");	//Знаешь, иногда так от всего устаешь, что хочется просто побыть в тишине и посмотреть на закат уходящего солнца.
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_04");	//В такие моменты понимаешь, что жизнь состоит не только из постоянных сражений и борьбы за выживание.
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_05");	//В ней есть и много такого, что вселяет в тебя веру и позволяет увидеть куда больше, чем кажется на первый взгляд.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_06");	//Никогда бы не подумала, что способен на такие мысли!
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_07");	//Это почему?
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_08");	//Потому что с виду ты похож больше на...
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_09");	//...неотесанного чурбана. Знаю.
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_10");	//Но иногда приятно осознавать, что кто-то все-таки разглядел в тебе нечто большее.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_11");	//Как я тебя понимаю...
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_12");	//Знаешь, я редко встречала людей, вроде тебя.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_13");	//Большинство из них интересовало во мне только одно. И при этом им было абсолютно плевать, что я сама чувствую.
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_01_03 " );	// You know, sometimes you get so tired of everything that you just want to be in silence and watch the sunset.
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_01_04 " );	// At such moments you understand that life consists not only of constant battles and struggle for survival.
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_01_05 " );	// It also has a lot to instill confidence in you and allow you to see much more than meets the eye.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_01_06 " );	// I would never have thought that I was capable of such thoughts!
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_01_07 " );	// Why is this?
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_01_08 " );	// Because you look more like...
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_01_09 " );	// ...an uncouth chump. I know.
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_01_10 " );	// But sometimes it's nice to realize that someone still saw something more in you.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_01_11 " );	// As I understand you...
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_01_12 " );	// You know, I've rarely met people like you.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_01_13 " );	// Most of them were only interested in one thing about me. And at the same time they did not care at all what I myself feel.
 	Info_ClearChoices(DIA_Loa_ComeLH);
-	Info_AddChoice(DIA_Loa_ComeLH,"Я не из их числа.",DIA_Loa_ComeLH_F_02);
-	Info_AddChoice(DIA_Loa_ComeLH,"Я их понимаю.",DIA_Loa_ComeLH_F_01);
+	Info_AddChoice(DIA_Loa_ComeLH, " I'm not one of them. " ,DIA_Loa_ComeLH_F_02);
+	Info_AddChoice(DIA_Loa_ComeLH, " I understand them. " ,DIA_Loa_ComeLH_F_01);
 };
 
 func void DIA_Loa_ComeLH_M_02()
 {
 	AI_Output(other,self,"DIA_Loa_ComeLH_M_02_01");	//Ни о чем.
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_02_03");	//Когда я вижу тебя рядом с собой, то ни о чем другом думать не могу.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_04");	//О чем это ты?
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_02_05");	//О том, что пора заканчивать весь этот спектакль.
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_02_06");	//Уверен, ты позвала меня сюда не для того, чтобы видом с маяка полюбоваться.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_07");	//Ах, ну да... конечно! Что еще я могла ожидать от тебя в подобной ситуации?
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_08");	//Но боюсь, мне нечего тебе предложить.
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_02_09");	//Ты в этом уверена?
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_10");	//Можешь не сомневаться. Так что лучше ступай в бордель!
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_11");	//Там тебя ждут виды ненамного хуже, чем здесь.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_12");	//А мне уже пора возвращаться. Прощай!
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_02_03 " );	// When I see you next to me, I can't think of anything else.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_02_04 " );	// What are you talking about?
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_02_05 " );	// That it's time to end this whole performance.
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_02_06 " );	// I'm sure you didn't call me here to see the view from the lighthouse.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_02_07 " );	// Ah, yes... of course! What else could I expect from you in a situation like this?
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_02_08 " );	// But I'm afraid I have nothing to offer you.
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_02_09 " );	// Are you sure about this?
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_02_10 " );	// You can be sure. So you better go to the brothel!
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_02_11 " );	// The views are not much worse there than here.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_02_12 " );	// And it's time for me to go back. Goodbye!
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
 
 func void DIA_Loa_ComeLH_M_03()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_03_01");	//Извини, но у меня нет на это времени.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_03_02");	//О чем это ты?!
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_03_03");	//Уверен, ты позвала меня сюда не для того, чтобы видом с маяка полюбоваться.
-	AI_Output(other,self,"DIA_Loa_ComeLH_M_03_04");	//Так что давай наконец займемся делом.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_03_05");	//Никаким 'делом' я с тобой заниматься не буду!
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_03_06");	//А если попробуешь хоть пальцем меня тронуть, - схлопочешь по своей наглой роже.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_03_07");	//Все! Разговор окончен!
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_03_01 " );	// Sorry, but I don't have time for this.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_03_02 " );	// What are you talking about?!
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_03_03 " );	// I'm sure you didn't call me here to see the view from the lighthouse.
+	AI_Output(other,self, " DIA_Loa_ComeLH_M_03_04 " );	// So let's finally get down to business.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_03_05 " );	// I won't do any 'business' with you!
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_03_06 " );	// And if you try to even touch me with your finger, you will hit your impudent mug.
+	AI_Output(self,other, " DIA_Loa_ComeLH_M_03_07 " );	// Everyone! The conversation is over!
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 	LoaPissOff[1] = TRUE;
@@ -1429,77 +1430,77 @@ func void DIA_Loa_ComeLH_M_03()
 
 func void DIA_Loa_ComeLH_H_03()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_01");	//Обычно, их куда больше.
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_02");	//Но если говорить начистоту, то...
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_01 " );	// Usually, there are a lot more of them.
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_02 " );	// But to be honest...
 	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_03");	//Что?
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_04");	//Просто ты мне очень нравишься!
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_05");	//Правда, это не значит, что я на что-то рассчитываю. Ведь скорее всего, ты пошлешь меня куда подальше!
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_06");	//Но лучше я скажу это сейчас, чем буду потом жалеть об этом всю оставшуюся жизнь.
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_07");	//Безусловно, мне и самому порой бывает приятно побыть в тишине и поразмышлять, глядя на закат уходящего солнца.
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_08");	//В такие моменты понимаешь, что жизнь состоит не только из постоянных сражений и борьбы за выживание.
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_09");	//В нем есть и много такого, что вселяет в тебя веру и позволяет увидеть куда больше, чем кажется на первый взгляд.
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_10");	//Но в этот раз моя голова занята исключительно мыслями о тебе.
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_11");	//Так что извини, если не оправдал твоих надежд. Но лучше уж правда, чем сладкая ложь.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_12");	//Хммм...(вглядываясь) Звучит как признание в любви.
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_13");	//Что-то вроде того.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_14");	//Знаешь, ты мне тоже очень нравишься.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_15");	//Но думаю, это еще не повод доводить дело до крайности.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_16");	//Так что, пожалуй, лучше закончим этот разговор. Возможно, когда-нибудь у нас еще будет возможность вернуться к нему.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_17");	//Но не сейчас...
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_18");	//Уже светает... мне пора возвращаться. Удачи!
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_04 " );	// I just really like you!
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_05 " );	// True, this does not mean that I'm counting on something. After all, most likely, you will send me far away!
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_06 " );	// But I'd rather say it now than regret it for the rest of my life.
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_07 " );	// Of course, sometimes I myself like to be in silence and meditate, looking at the sunset of the departing sun.
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_08 " );	// At such moments you understand that life consists not only of constant battles and struggle for survival.
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_09 " );	// It also has a lot that gives you confidence and allows you to see much more than meets the eye.
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_10 " );	// But this time, my head is exclusively occupied with thoughts of you.
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_11 " );	// So sorry if I didn't live up to your expectations. But the truth is better than sweet lies.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_03_12 " );	// Hmmm... (staring) Sounds like a declaration of love.
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_03_13 " );	// Something like that.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_03_14 " );	// You know, I really like you too.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_03_15 " );	// But I don't think that's a reason to take things to the extreme.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_03_16 " );	// So maybe we'd better end this conversation. Perhaps someday we will have the opportunity to return to it.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_03_17 " );	// But not now...
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_03_18 " );	// It's getting light... I have to go back. Good luck!
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
 
 func void DIA_Loa_ComeLH_H_02()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_02_01");	//Само собой.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_02_02");	//Правда, сводятся они всегда к одному. Я угадала?
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_02_01 " );	// Of course.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_02_02 " );	// True, they always come down to one. I guess?
 	AI_Output(other,self,"DIA_Loa_ComeLH_H_02_03");	//Почти.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_02_04");	//Это и не удивительно... Ты только взгляни на себя!
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_02_05");	//Так напрягся, что сейчас сам из штанов выпрыгнешь.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_02_06");	//Знаешь что, ты мне нравишься. Но, думаю, это еще не повод доводить дело до крайности.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_02_07");	//Так что лучше успокойся и ступай. Думаю, когда-нибудь у нас еще будет возможность вернуться к этому разговору.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_02_08");	//А мне уже пора возвращаться... Прощай!
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_02_04 " );	// This is not surprising... Just look at yourself!
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_02_05 " );	// So tense that now you will jump out of your pants.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_02_06 " );	// You know what, I like you. But I don't think that's a reason to take things to the extreme.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_02_07 " );	// So you better calm down and go. I think someday we will have the opportunity to return to this conversation.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_02_08 " );	// And it's time for me to go back... Farewell!
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
 
 func void DIA_Loa_ComeLH_H_01()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_H_01_01");	//Сейчас у меня только одна мысль.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_01_02");	//Можешь даже не говорить, какая!
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_01_03");	//Вот только вряд ли ей суждено сбыться. По крайней мере, сегодня!
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_01_04");	//Так что лучше ступай откуда пришел.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_01_05");	//Да и мне уже пора возвращаться... Прощай!
+	AI_Output(other,self, " DIA_Loa_ComeLH_H_01_01 " );	// Now I have only one thought.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_01_02 " );	// You don't even have to say which one!
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_01_03 " );	// But it is unlikely that she is destined to come true. At least today!
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_01_04 " );	// So you'd better go where you came from.
+	AI_Output(self,other, " DIA_Loa_ComeLH_H_01_05 " );	// Yes, and it's time for me to return... Goodbye!
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
 
 func void DIA_Loa_ComeLH_F_01()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_01");	//Я их понимаю.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_02");	//Что ты хочешь этим сказать?
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_03");	//Мне ты тоже очень нравишься.
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_04");	//Правда, это не значит, что я на что-то рассчитываю. Ведь скорее всего, ты пошлешь меня куда подальше!
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_05");	//Но лучше я скажу это сейчас, чем буду потом жалеть об этом всю оставшуюся жизнь.
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_06");	//Безусловно, мне и самому порой бывает приятно побыть в тишине и поразмышлять, глядя на закат уходящего солнца.
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_07");	//В такие моменты понимаешь, что жизнь состоит не только из постоянных сражений и борьбы за выживание.
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_08");	//В нем есть и много такого, что вселяет в тебя веру и позволяет увидеть куда больше, чем кажется на первый взгляд.
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_09");	//Но в этот раз моя голова занята исключительно мыслями о тебе.
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_10");	//Так что извини, если не оправдал твоих надежд. Но лучше уж правда, чем сладкая ложь.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_11");	//Хммм...(вглядываясь) Звучит как признание в любви.
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_12");	//Похоже, это оно и есть.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_13");	//Знаешь, ты мне тоже очень нравишься.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_14");	//Но, думаю, это еще не повод доводить дело до крайности.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_15");	//Так что, пожалуй, лучше закончим этот разговор. Думаю, когда-нибудь у нас еще будет возможность вернуться к нему.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_16");	//Но не сейчас... Тем более уже светает.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_17");	//И мне пора возвращаться! Прощай.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_01 " );	// I understand them.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_01_02 " );	// What do you mean by that?
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_03 " );	// I really like you too.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_04 " );	// True, this does not mean that I'm counting on something. After all, most likely, you will send me far away!
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_05 " );	// But I'd rather say it now than regret it for the rest of my life.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_06 " );	// Of course, sometimes I myself like to be in silence and meditate, looking at the sunset of the departing sun.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_07 " );	// At such moments you understand that life consists not only of constant battles and struggle for survival.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_08 " );	// It also has a lot that gives you confidence and allows you to see much more than meets the eye.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_09 " );	// But this time, my head is exclusively occupied with thoughts of you.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_10 " );	// So sorry if I didn't live up to your expectations. But the truth is better than sweet lies.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_01_11 " );	// Hmmm... (staring) Sounds like a declaration of love.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_01_12 " );	// Looks like this is it.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_01_13 " );	// You know, I really like you too.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_01_14 " );	// But I don't think that's a reason to take things to the extreme.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_01_15 " );	// So maybe we'd better end this conversation. I think someday we will have the opportunity to return to it.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_01_16 " );	// But not now... Moreover, it's already getting light.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_01_17 " );	// And it's time for me to go back! Goodbye.
 
 	if(RhetorikSkillValue[1] < 100)
 	{
-		RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-		AI_Print("Риторика + 1");
+		RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+		AI_Print( " Rhetoric + 1 " );
 	};
 
 	CanSayLoaStay = TRUE;
@@ -1509,9 +1510,9 @@ func void DIA_Loa_ComeLH_F_01()
 
 func void DIA_Loa_ComeLH_F_02()
 {
-	AI_Output(other,self,"DIA_Loa_ComeLH_F_02_01");	//Я не из их числа.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_02_02");	//Я это уже поняла.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_02_03");	//Ладно, уже светает. Пора возвращаться! Удачи.
+	AI_Output(other,self, " DIA_Loa_ComeLH_F_02_01 " );	// I'm not one of them.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_02_02 " );	// I already figured it out.
+	AI_Output(self,other, " DIA_Loa_ComeLH_F_02_03 " );	// Okay, it's getting light. It's time to return! Good luck.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
@@ -1560,15 +1561,15 @@ func int DIA_Loa_LoveScene_Condition()
 
 func void DIA_Loa_LoveScene_Info()
 {
-	AI_Output(self,other,"DIA_Loa_LoveScene_Do_01_01");	//Теперь мне пора...
-	AI_Output(self,other,"DIA_Loa_LoveScene_Do_01_02");	//Я никогда не забуду, что ты для меня сделал и того, что у нас было.
+	AI_Output(self,other, " DIA_Loa_LoveScene_Do_01_01 " );	// Now I have to go...
+	AI_Output(self,other, " DIA_Loa_LoveScene_Do_01_02 " );	// I will never forget what you did for me and what we had.
 	Info_ClearChoices(DIA_Loa_LoveScene);
-	Info_AddChoice(DIA_Loa_LoveScene,"И я...",DIA_Loa_LoveScene_Done);
+	Info_AddChoice(DIA_Loa_LoveScene, " И я... " ,DIA_Loa_LoveScene_Done);
 };
 
 func void DIA_Loa_LoveScene_Done()
 {
-	AI_Output(other,self,"DIA_Loa_LoveScene_Done_01_01");	//И я...не забуду.
+	AI_Output(other,self, " DIA_Loa_LoveScene_Done_01_01 " );	// And I... won't forget.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 
@@ -1583,7 +1584,7 @@ func void DIA_Loa_LoveScene_Done()
 	};
 };
 
-//-------------------------------------------------Лоа эпик квест---------------------------------------------
+// ------------------------------------------------ -Loa epic quest-----------------------------------------------------
 
 instance DIA_Loa_EpicQuest(C_Info)
 {
@@ -1592,7 +1593,7 @@ instance DIA_Loa_EpicQuest(C_Info)
 	condition = DIA_Loa_EpicQuest_Condition;
 	information = DIA_Loa_EpicQuest_Info;
 	permanent = FALSE;
-	description = "Ты в порядке?";
+	description = " Are you okay? " ;
 };
 
 func int DIA_Loa_EpicQuest_Condition()
@@ -1610,23 +1611,23 @@ func int DIA_Loa_EpicQuest_Condition()
 func void DIA_Loa_EpicQuest_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Loa_EpicQuest_01_01");	//Ты в порядке?
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_02");	//Да. А почему ты спрашиваешь?
-	AI_Output(other,self,"DIA_Loa_EpicQuest_01_03");	//Я... я просто беспокоюсь за тебя.
-	AI_Output(other,self,"DIA_Loa_EpicQuest_01_04");	//Знаешь, после той встречи на маяке, я чувствую некоторую отвественность за твою судьбу.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_05");	//Это приятно слышать. Но мне сейчас ничто не угрожает, если ты об этом.
-	AI_Output(other,self,"DIA_Loa_EpicQuest_01_06");	//Надеюсь. Кстати, а как ты попала к наемникам?
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_07");	//Это долгая история. 
-	AI_Output(other,self,"DIA_Loa_EpicQuest_01_08");	//Ты бы могла мне ее рассказать. А то я так мало знаю о тебе самой.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_09");	//Я не слишком люблю это вспоминать. Но тебе... так уж и быть, расскажу.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_10");	//В общем, когда меня выбросило на берег Хориниса, в Долине Рудников, я была тяжело ранена.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_11");	//Арбалетный болт, выпущеный королевским приставом, пробил мой правый бок почти насквозь.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_12");	//Я сильно истекала кровью и думала, что это конец. 
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_13");	//Но к счатью для меня неподалеку проходил небольшой отряд наемников.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_14");	//Полагаю, они только что ограбили очередной караван людей Гомеза и возвращались в Новый лагерь.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_15");	//Они подобрали меня и увезли к себе. Собственно там я и жила, до тех пор, пока не рухнул барьер. 
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_16");	//А после, Ли и большинство его парней пришли сюда и стали работать на Онара. Ну и я вместе с ними.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_17");	//(улыбаясь) Вот такая вот история.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_01_01 " );	// Are you okay?
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_02 " );	// Yes. Why are you asking?
+	AI_Output(other,self, " DIA_Loa_EpicQuest_01_03 " );	// I... I'm just worried about you.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_01_04 " );	// You know, after that meeting at the lighthouse, I feel some responsibility for your fate.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_05 " );	// That's good to hear. But nothing threatens me now, if that's what you mean.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_01_06 " );	// I hope. By the way, how did you get to the mercenaries?
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_07 " );	// It's a long story.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_01_08 " );	// You could tell me. And I know so little about you.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_09 " );	// I don't like to remember it too much. But you ... so be it, I'll tell you.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_10 " );	// In general, when I was thrown onto the shore of Khorinis, in the Valley of Mines, I was seriously injured.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_11 " );	// The crossbow bolt fired by the king's bailiff pierced almost through my right side.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_12 " );	// I bled a lot and thought this was the end.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_13 " );	// But luckily for me, a small troop of mercenaries was passing nearby.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_14 " );	// I guess they just robbed another caravan of Gomez's men and were heading back to the New Camp.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_15 " );	// They picked me up and took me to their place. Actually, I lived there, until the barrier collapsed.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_16 " );	// And then, Lee and most of his guys came here and started working for Onar. Well, I'm with them.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_01_17 " );	// (smiling) Here is such a story.
 	LoaEpicStory = TRUE;
 };
 
@@ -1637,7 +1638,7 @@ instance DIA_Loa_EpicQuest_Next(C_Info)
 	condition = DIA_Loa_EpicQuest_Next_Condition;
 	information = DIA_Loa_EpicQuest_Next_Info;
 	permanent = FALSE;
-	description = "Надеюсь, никто из них тебя там не обижал?";
+	description = " I hope none of them offended you there? " ;
 };
 
 func int DIA_Loa_EpicQuest_Next_Condition()
@@ -1650,13 +1651,13 @@ func int DIA_Loa_EpicQuest_Next_Condition()
 
 func void DIA_Loa_EpicQuest_Next_Info()
 {
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Next_01_01");	//Надеюсь, никто из них тебя там не обижал?
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Next_01_02");	//Нет, ничего такого.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Next_01_03");	//К тому же, Корд с Торлофом сразу предупредили - что тот, кто хотя бы пальцем меня тронет, будет иметь дело с ними.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Next_01_04");	//Сам понимаешь, после таких слов желающих меня трогать особо не было.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Next_01_05");	//Да, я и сама, если что, могу за себя постоять. И ты об этом прекрасно знаешь.
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Next_01_06");	//Забудешь тут! Ты каждый раз мне об этом напоминаешь.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Next_01_07");	//Не сердись... Я не со зла.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Next_01_01 " );	// I hope none of them offended you there?
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Next_01_02 " );	// No, nothing like that.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Next_01_03 " );	// In addition, Kord and Torlof immediately warned - that anyone who even lays a finger on me will deal with them.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Next_01_04 " );	// You understand, after such words, there were no people who really wanted to touch me.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Next_01_05 " );	// Yes, I myself, if anything, I can stand up for myself. And you know this very well.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Next_01_06 " );	// Forget it here! You remind me of this every time.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Next_01_07 " );	// Don't be angry... I'm not out of malice.
 };
 
 instance DIA_Loa_EpicQuest_Judge(C_Info)
@@ -1666,7 +1667,7 @@ instance DIA_Loa_EpicQuest_Judge(C_Info)
 	condition = DIA_Loa_EpicQuest_Judge_Condition;
 	information = DIA_Loa_EpicQuest_Judge_Info;
 	permanent = FALSE;
-	description = "Так ты сбежала от королевских приставов?";
+	description = " So you ran away from the royal bailiffs? " ;
 };
 
 func int DIA_Loa_EpicQuest_Judge_Condition()
@@ -1679,21 +1680,21 @@ func int DIA_Loa_EpicQuest_Judge_Condition()
 
 func void DIA_Loa_EpicQuest_Judge_Info()
 {
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Judge_01_01");	//Так ты сбежала от королевских приставов?
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Judge_01_02");	//От них и от судьи, который зачитывал мне приговор.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Judge_01_03");	//Я знала, что это был мой последний шанс на спасение. Так что воспользовалась им без раздумия.
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Judge_01_04");	//И в чем заключалось твоя вина? Ты что-то украла или быть может убила кого-то?
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Judge_01_05");	//Ни то и ни другое. Хотя я бы с большим удовольствием поквиталась с одним типом.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Judge_01_06");	//Но к сожалению, он ускользнул от меня, а я очутилась в руках королевского правосудия.
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Judge_01_07");	//И что это был за тип?
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Judge_01_08");	//Мне кажется ты задаешь слишком много вопросов. Какое тебе вообще до этого дело?
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Judge_01_09");	//Возможно, я бы смог помочь тебе в этом деле.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Judge_01_10");	//Помочь? В чем? Слушай, это случилось так давно и я бы не хотела к этому возвращаться.
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Judge_01_11");	//Ладно, как скажешь.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Judge_01_01 " );	// So you ran away from the royal bailiffs?
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Judge_01_02 " );	// From them and from the judge who read the verdict to me.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Judge_01_03 " );	// I knew this was my last chance at salvation. So I used it without hesitation.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Judge_01_04 " );	// And what was your fault? Have you stolen something or maybe killed someone?
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Judge_01_05 " );	// Neither. Although I would love to get even with one type.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Judge_01_06 " );	// But unfortunately, he eluded me, and I ended up in the hands of royal justice.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Judge_01_07 " );	// And what was that type?
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Judge_01_08 " );	// I think you're asking too many questions. What do you have to do with this?
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Judge_01_09 " );	// Perhaps I could help you with this.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Judge_01_10 " );	// Help? In what? Look, this happened so long ago and I don't want to go back to it.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Judge_01_11 " );	// Okay, whatever you say.
 	MIS_LoaSecret = LOG_Running;
 	Log_CreateTopic(TOPIC_LoaSecret,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LoaSecret,LOG_Running);
-	B_LogEntry(TOPIC_LoaSecret,"Кажется, случайно, я наступил Лоа на больную мозоль, затронув эту тему с ее побегом от королевских приставов. По всей видимости, она не очень хочет об этом вспоминать. Но судя по ее лицу, ее постоянно что-то гложет. Просто так она не станет со мной говорить об этом. Думаю, мне стоит придумать что-то особенное, чтобы у нее у самой возникло желание все мне рассказать.");
+	B_LogEntry(TOPIC_LoaSecret, " It seems that by accident I stepped on Loa's sore spot, bringing up this topic with her escape from the royal bailiffs. Apparently, she does not really want to remember this. But judging by her face, something is constantly eating her "It's just that she won't talk to me about it. I think I should come up with something special so that she herself would have a desire to tell me everything. " );
 };
 
 instance DIA_Loa_EpicQuest_Party(C_Info)
@@ -1703,7 +1704,7 @@ instance DIA_Loa_EpicQuest_Party(C_Info)
 	condition = DIA_Loa_EpicQuest_Party_Condition;
 	information = DIA_Loa_EpicQuest_Party_Info;
 	permanent = FALSE;
-	description = "А почему бы нам не организовать что-нибудь вроде пикника?";
+	description = " Why don't we have something like a picnic? " ;
 };
 
 func int DIA_Loa_EpicQuest_Party_Condition()
@@ -1716,15 +1717,15 @@ func int DIA_Loa_EpicQuest_Party_Condition()
 
 func void DIA_Loa_EpicQuest_Party_Info()
 {
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Party_01_01");	//А почему бы нам не организовать что-нибудь вроде пикника?
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Party_01_02");	//Красивая природа, вкусная еда, отличное вино - что скажешь?
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Party_01_03");	//Хммм... Звучит заманчиво! А сюрпризы будут? 
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Party_01_04");	//Конечно!
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Party_01_05");	//(игриво) Тогда, я за.
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Party_01_06");	//Ну раз так, то тогда я пожалуй займусь этим.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Party_01_07");	//Буду ждать!
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Party_01_01 " );	// Why don't we have something like a picnic?
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Party_01_02 " );	// Beautiful nature, delicious food, excellent wine - what do you say?
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Party_01_03 " );	// Hmmm... Sounds tempting! Will there be surprises?
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Party_01_04 " );	// Of course!
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Party_01_05 " );	// (playfully) Then, I'm all for it.
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Party_01_06 " );	// Well, if so, then I'll probably do it.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Party_01_07 " );	// I'll be waiting!
 	MakeLoaParty = TRUE;
-	B_LogEntry(TOPIC_LoaSecret,"Я предложил Лоа организовать нечто вроде пикника и она согласилась. Теперь надо найти подходящее место для нашего отдыха, немного вкусной еды и пару бутылок дорогого вина. Возможно немного расслабившись, она будет более открытой в разговоре.");
+	B_LogEntry(TOPIC_LoaSecret, " I suggested to Loa that we organize some kind of picnic and she agreed. Now we need to find a suitable place for our rest, some delicious food and a couple of bottles of expensive wine. Perhaps relaxing a little, she will be more open in conversation. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -1735,7 +1736,7 @@ instance DIA_Loa_EpicQuest_Party_Go(C_Info)
 	condition = DIA_Loa_EpicQuest_Party_Go_Condition;
 	information = DIA_Loa_EpicQuest_Party_Go_Info;
 	permanent = FALSE;
-	description = "Все готово!";
+	description = " Everything is ready! " ;
 };
 
 func int DIA_Loa_EpicQuest_Party_Go_Condition()
@@ -1749,11 +1750,11 @@ func int DIA_Loa_EpicQuest_Party_Go_Condition()
 func void DIA_Loa_EpicQuest_Party_Go_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Loa_EpicQuest_Party_Go_01_01");	//Все готово! Вкусная еда, изысканое вино... Осталось только найти подходящее место. 
-	AI_Output(self,other,"DIA_Loa_EpicQuest_Party_Go_01_02");	//Кажется, я знаю такое. Оно как раз находится в лесу, за этой фермой. Ступай за мной!
+	AI_Output(other,self, " DIA_Loa_EpicQuest_Party_Go_01_01 " );	// Everything is ready! Delicious food, exquisite wine... It remains only to find a suitable place.
+	AI_Output(self,other, " DIA_Loa_EpicQuest_Party_Go_01_02 " );	// I think I know this. It is just in the forest, behind this farm. Follow me!
 	LoaGoParty = TRUE;
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
-	B_LogEntry(TOPIC_LoaSecret,"Я сообщил Лоа, что приготовил все для пикника. Нам осталось только найти подходящее место. На этот счет у Лоа появилась одна мысль и она предложила прогуляться в лес, за ферму.");
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
+	; _ _ _ _
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Guide");
 };
@@ -1778,14 +1779,14 @@ func int DIA_Loa_PartyInPlace_Condition()
 
 func void DIA_Loa_PartyInPlace_Info()
 {
-	AI_Output(self,other,"DIA_Loa_PartyInPlace_01_01");	//Вот мы и на месте. И как тебе тут?
-	AI_Output(other,self,"DIA_Loa_PartyInPlace_01_02");	//Довольно мило.
-	AI_Output(self,other,"DIA_Loa_PartyInPlace_01_03");	//Я знала, что тебе понравится. Тогда здесь и остановимся.
-	AI_Output(self,other,"DIA_Loa_PartyInPlace_01_04");	//Ну...(улыбаясь) Что там насчет изызсканого вина, про которое ты говорил?
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
-	B_LogEntry(TOPIC_LoaSecret,"Мы добрались до места, которое нашла Лоа. Думаю, теперь можно немного расслабится...");
+	AI_Output(self,other, " DIA_Loa_PartyInPlace_01_01 " );	// Here we are. And how are you here?
+	AI_Output(other,self, " DIA_Loa_PartyInPlace_01_02 " );	// Pretty nice.
+	AI_Output(self,other, " DIA_Loa_PartyInPlace_01_03 " );	// I knew you'd like it. Then we'll stop here.
+	AI_Output(self,other, " DIA_Loa_PartyInPlace_01_04 " );	// Well... (smiling) What about the fine wine you were talking about?
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
+	B_LogEntry(TOPIC_LoaSecret, " We've reached the place Loa found. I think we can relax a little now... " );
 	Info_ClearChoices(DIA_Loa_PartyInPlace);
-	Info_AddChoice(DIA_Loa_PartyInPlace,"Сейчас все будет...",DIA_Loa_PartyInPlace_Done);
+	Info_AddChoice(DIA_Loa_PartyInPlace, " Now everything will be... " ,DIA_Loa_PartyInPlace_Done);
 };
 
 func void DIA_Loa_PartyInPlace_Done()
@@ -1810,17 +1811,17 @@ func void DIA_Loa_PartyInPlace_Exit()
 	Wld_SendTrigger("EVT_PARTYPLACE_01");
 	PlayVideo("RET2_BlackScreen.bik");
 	LoaOnParty = TRUE;
-	AI_NoticePrint(500,7000,"Два часа спустя...");
-	AI_Output(self,other,"DIA_Loa_PartyTalk_01_00");	//Чего ты встал? Куда то уходишь?
-	AI_Output(other,self,"DIA_Loa_PartyTalk_01_01");	//Да нет, просто спина затекла. Так что там было дальше?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_01_02");	//Ну вот... а я ему говорю, найдешь лошадь, тогда и приходи!
-	AI_Output(self,other,"DIA_Loa_PartyTalk_01_03");	//Вот так он и ушел. Видимо так до сих пор ее и ищет...(заливаясь со смеху)
-	AI_Output(other,self,"DIA_Loa_PartyTalk_01_04");	//Да уж, забавная история.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_01_05");	//Знаешь...(задумчиво) Я очень рада, что тебе пришла в голову мысль устроить для нас этот небольшой отдых.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_01_06");	//Посреди серой и тоскливой обыдености здешней жизни, он оказался для меня как глоток свежего воздуха. Спасибо тебе за это!
-	AI_Output(other,self,"DIA_Loa_PartyTalk_01_07");	//Да, не за что. Хотя я заметил, что тебя все равно что-то тревожит.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_01_08");	//Я просто вспомнила, что когда-то любила проводить время в лесу, наслаждаясь его тишиной и спокойствием.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_01_09");	//Но это было очень давно, когда я была маленькой. Когда еще были живы мои родители...
+	AI_NoticePrint( 500 , 7000 , " Two hours later... " );
+	AI_Output(self,other, " DIA_Loa_PartyTalk_01_00 " );	// Why are you up? Where are you leaving?
+	AI_Output(other,self, " DIA_Loa_PartyTalk_01_01 " );	// No, just a stiff back. So what was next?
+	AI_Output(self,other, " DIA_Loa_PartyTalk_01_02 " );	// Well... and I tell him, if you find a horse, then come!
+	AI_Output(self,other, " DIA_Loa_PartyTalk_01_03 " );	// That's how he left. Apparently, she is still looking for her ... (bursting with laughter)
+	AI_Output(other,self, " DIA_Loa_PartyTalk_01_04 " );	// Yeah, funny story.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_01_05 " );	// You know... (thoughtfully) I'm really glad that you came up with the idea to arrange this little vacation for us.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_01_06 " );	// In the midst of the gray and dreary routine of life here, he turned out to be like a breath of fresh air for me. Thank you for this!
+	AI_Output(other,self, " DIA_Loa_PartyTalk_01_07 " );	// Yes, not at all. Although I noticed that something is still bothering you.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_01_08 " );	// I just remembered that I once loved to spend time in the forest, enjoying its peace and quiet.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_01_09 " );	// But that was a long time ago, when I was little. When my parents were still alive...
 };
 
 instance DIA_Loa_PartyTalk_Ext(C_Info)
@@ -1830,7 +1831,7 @@ instance DIA_Loa_PartyTalk_Ext(C_Info)
 	condition = DIA_Loa_PartyTalk_Ext_Condition;
 	information = DIA_Loa_PartyTalk_Ext_Info;
 	permanent = FALSE;
-	description = "Так, это за них ты хотела поквитаться с тем типом, которого преследовала?";
+	description = " So, it was for them that you wanted to get even with the guy you were chasing? " ;
 };
 
 func int DIA_Loa_PartyTalk_Ext_Condition()
@@ -1843,35 +1844,35 @@ func int DIA_Loa_PartyTalk_Ext_Condition()
 
 func void DIA_Loa_PartyTalk_Ext_Info()
 {
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_01");	//Так, это за них ты хотела поквитаться с тем типом, которого преследовала?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_02");	//...(замявшись) Я не хотела об этом говорить. Но... ты прав.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_03");	//Это именно из-за него погибли мои родные и я сама была на волосок от смерти.
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_04");	//Кем же был этот ублюдок?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_05");	//Эх...(вздыхая) Точно не знаю. Мне было не больше десяти лет, когда это все случилось. Но я на всю жизнь запомнила это имя. Ротгриф!
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_06");	//И каждый раз, когда я произношу это имя, мне постоянно становится не по себе от той мысли, что этот мерзавец до сих пор спокойно гуляет на свободе живой и непридимый.
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_07");	//Поверь, это легко поправить. Не думаю, что отыскать этого подонка составит большого труда. Где ты последний раз его видела?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_08");	//В Дракии. Поговаривали, он обосновался там на службе у местного барона. Но мне так и не удалось это проверить.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_09");	//По всей видимости, кто то шепнул Ротгрифу о том, что я в городе и пытаюсь разузнать о нем. 
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_10");	//После чего меня тут же арестовали. Ну, а продолжение истории ты уже и сам знаешь. Порт... помнишь?
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_11");	//Опять ты это вспомнила! Видимо, так всю жизнь и будешь мне напоминать об этом.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_12");	//Извини, но ты сам захотел это услышать.
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_13");	//Ладно, забудем об этом. Ты сказала - Дракия. Значит, именно там мы познакомились. 
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_14");	//Ты там бывал?
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_15");	//Выходит, что бывал. Хотя абсолютно не ничего не помню про это место. Придется это исправить.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_16");	//Постой! Ты что, сам собрался отомстить за меня?
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_17");	//Да. А ты что, против?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_18");	//Нет, не в этом дело. Послушай, не пойми меня неправильно... я не против твоей помощи. Но...
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_01 " );	// So, it was for them that you wanted to get even with the guy you were chasing?
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_02 " );	// ...(hesitating) I didn't want to talk about it. But... you're right.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_03 " );	// It was because of him that my relatives died and I myself was on the verge of death.
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_04 " );	// Who was this bastard?
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_05 " );	// Eh... (sighing) I don't know for sure. I was no more than ten years old when it all happened. But I have remembered this name for the rest of my life. Rothgriff!
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_06 " );	// And every time I pronounce this name, I constantly feel uneasy at the thought that this bastard is still calmly walking free, alive and unacceptable.
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_07 " );	// Believe me, this is easy to fix. I don't think it's going to be that hard to find this bastard. Where did you last see him?
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_08 " );	// In Drakia. It was rumored that he settled there in the service of a local baron. But I have not been able to verify this.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_09 " );	// Apparently, someone whispered to Rothgriff that I was in the city and trying to find out about him.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_10 " );	// After which I was immediately arrested. Well, you already know the rest of the story. Port... remember?
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_11 " );	// You remembered it again! Apparently, this is how you will remind me of this all your life.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_12 " );	// Sorry, but you wanted to hear it yourself.
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_13 " );	// Okay, let's forget about it. You said Drakia. So that's where we met.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_14 " );	// Have you been there?
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_15 " );	// It turns out that he has been. I don't remember anything about this place though. Will have to fix this.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_16 " );	// Wait! Are you going to avenge me yourself?
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_17 " );	// Yes. What are you against?
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_18 " );	// No, that's not the point. Look, don't get me wrong... I don't mind your help. But...
 	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_19");	//Что но?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_20");	//...это должна сделать только я сама! И никто другой. 
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_21");	//Я хочу заглянуть этой жирной свинье в глаза и увидеть, что он при этом чувствует. Раскаянье, презрение... или страх!
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_22");	//В ином случае этот кошмар никогда не оставит меня в покое. 
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_23");	//Хорошо, я тебя понимаю. Но все таки постараюсь тебе помочь.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_24");	//Ох...(закатывая глаза) Тебе еще никто не говорил, что ты ужасно упрямый? 
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_25");	//Нет. Но меня мало интересует то, что обо мне говорят.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_26");	//И почему то меня это не удивляет. Ладно, давай сменим тему. В конце концов, у нас все таки праздник.
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_27");	//Как скажешь.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_20 " );	// ...it's up to me to do this! And no one else.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_21 " );	// I want to look this fat pig in the eye and see how it feels. Repentance, contempt... or fear!
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_22 " );	// Otherwise, this nightmare will never leave me alone.
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_23 " );	// Okay, I understand you. But I'll try to help you anyway.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_24 " );	// Oh... (rolling his eyes) Has anyone ever told you that you're terribly stubborn?
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_25 " );	// No. But I don't really care what people say about me.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Ext_01_26 " );	// And for some reason this doesn't surprise me. Okay, let's change the subject. In the end, we still have a holiday.
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Ext_01_27 " );	// As you say.
 	KnowAboutRotgrif = TRUE;
-	B_LogEntry(TOPIC_LoaSecret,"Я выяснил, что так беспокоило Лоа. В попытке поквитаться за смерть своих родителей, она сама чуть не погибла. По ее словам, того человека, которого она искала звали Ротгриф. Он служил у местного барона, в Дракии. Хотя я и не слышал раньше об этом месте, но я все таки решил помочь Лоа в ее поисках. Думаю при первой же возможности надо выяснить более подробно об этом месте.");
+	B_LogEntry(TOPIC_LoaSecret, " I figured out what was bothering Loa so much. In an attempt to get even for the death of her parents, she almost died herself. According to her, the man she was looking for was called Rotgriff. He served with a local baron in Drachia. Although I had never heard of this place before, but I still decided to help Loa in her search. I think at the first opportunity I need to find out more about this place. " );
 };
 
 instance DIA_Loa_PartyTalk_Over(C_Info)
@@ -1881,7 +1882,7 @@ instance DIA_Loa_PartyTalk_Over(C_Info)
 	condition = DIA_Loa_PartyTalk_Over_Condition;
 	information = DIA_Loa_PartyTalk_Over_Info;
 	permanent = FALSE;
-	description = "Тебе налить еще вина?";
+	description = " Would you like some more wine? " ;
 };
 
 func int DIA_Loa_PartyTalk_Over_Condition()
@@ -1894,10 +1895,10 @@ func int DIA_Loa_PartyTalk_Over_Condition()
 
 func void DIA_Loa_PartyTalk_Over_Info()
 {
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Over_01_01");	//Тебе налить еще вина?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Over_01_02");	//Не откажусь. Лей до краев!
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Over_01_03");	//Постой, ты ничего не слышала?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Over_01_04");	//Эммм... Что ты имеешь ввиду?
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Over_01_01 " );	// Would you like some more wine?
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Over_01_02 " );	// I won't refuse. Lei to the brim!
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Over_01_03 " );	// Wait, you didn't hear anything?
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Over_01_04 " );	// Umm... What do you mean?
 	LoaOverParty = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -1922,16 +1923,16 @@ func int DIA_Loa_PartyTalk_Home_Condition()
 
 func void DIA_Loa_PartyTalk_Home_Info()
 {
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Home_01_01");	//А вот и обещаный сюрприз...
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Home_01_02");	//Черт, тут становится опасно! Нам пора возвращаться.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Home_01_03");	//Тогда проводи меня обратно на ферму.
-	AI_Output(other,self,"DIA_Loa_PartyTalk_Home_01_04");	//Хорошо, идем.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Home_01_01 " );	// And here is the promised surprise...
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Home_01_02 " );	// Damn, this is getting dangerous! It's time for us to return.
+	AI_Output(self,other, " DIA_Loa_PartyTalk_Home_01_03 " );	// Then take me back to the farm.
+	AI_Output(other,self, " DIA_Loa_PartyTalk_Home_01_04 " );	// Okay, let's go.
 	LoaBackToFarm = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Follow");
 };
 
-instance DIA_Loa_BackToFarm(C_Info)
+instance DIA_Loa_BackToFarm (C_Info)
 {
 	npc = SLD_10920_Loa;
 	nr = 2;
@@ -1952,22 +1953,22 @@ func int DIA_Loa_BackToFarm_Condition()
 func void DIA_Loa_BackToFarm_Info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(self,other,"DIA_Loa_BackToFarm_01_01");	//Спасибо, что проводил меня.
-	AI_Output(self,other,"DIA_Loa_BackToFarm_01_02");	//Но теперь мне надо заняться своими делами. Увидимся позже.
-	AI_Output(other,self,"DIA_Loa_BackToFarm_01_03");	//Конечно...
+	AI_Output(self,other, " DIA_Loa_BackToFarm_01_01 " );	// Thanks for walking me out.
+	AI_Output(self,other, " DIA_Loa_BackToFarm_01_02 " );	// But now I have to mind my own business. See you later.
+	AI_Output(other,self, " DIA_Loa_BackToFarm_01_03 " );	// Of course...
 	LoaBackToFarmDone = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
 
-instance DIA_Loa_GoDrakia(C_Info)
+instance DIA_Loa_GoDrakia (C_Info)
 {
 	npc = SLD_10920_Loa;
 	nr = 2;
 	condition = DIA_Loa_GoDrakia_Condition;
 	information = DIA_Loa_GoDrakia_Info;
 	permanent = FALSE;
-	description = "Я отправляюсь в Дракию. Ты поедешь со мной?";
+	description = " I'm going to Drachia. Will you come with me? " ;
 };
 
 func int DIA_Loa_GoDrakia_Condition()
@@ -1981,30 +1982,30 @@ func int DIA_Loa_GoDrakia_Condition()
 func void DIA_Loa_GoDrakia_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Loa_GoDrakia_01_01");	//Я отправляюсь в Дракию. Ты поедешь со мной?
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_02");	//В Дракию?! Ты шутишь? И каким же образом ты собираешься отправиться туда?
-	AI_Output(other,self,"DIA_Loa_GoDrakia_01_03");	//Мне в этом помогут пираты. Их корабль отплывает туда примерно через пару дней.
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_04");	//Пираты?! Хммм...(удивленно) Вот уж не думала, что ты имеешь с ними какие-то общие дела.
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_05");	//Тем более, насколько мне известно, у них сейчас нет корабля, поскольку его потопили паладины, недавно прибывшие в Хоринис.
-	AI_Output(other,self,"DIA_Loa_GoDrakia_01_06");	//А я смотрю, ты неплохо осведомлена о происходящем для обычной наемницы.
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_07");	//Поверь, это не так трудно, если ты умеешь слушать.
-	AI_Output(other,self,"DIA_Loa_GoDrakia_01_08");	//Вообщем, они починили свой старый. И теперь хотят отвезти все свое барахло на продажу в Дракию.
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_09");	//Вполне разумно с их стороны.
-	AI_Output(other,self,"DIA_Loa_GoDrakia_01_10");	//Так что, ты поедешь со мной?
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_11");	//Ну, если все в действительности обстоит также, как ты и говоришь... то, конечно поеду. Ведь это будет отличным шансом поквитаться с Ротгрифом.
-	AI_Output(other,self,"DIA_Loa_GoDrakia_01_12");	//Тогда, лучше не терять времени и отправиться туда прямо сейчас.
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_13");	//Эй, эй... Не так быстро! Я не могу просто так вот все взять тут и бросить.
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_14");	//К тому же, мне нужно некоторое время на сборы. Поэтому, давай встретимся уже на месте.
-	AI_Output(other,self,"DIA_Loa_GoDrakia_01_15");	//Но ты же не знаешь, где находится лагерь пиратов?!
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_16");	//Не волнуйся! Я как-нибудь разберусь с этим. А тебе мой совет - тоже хорошенько подготовиться к предстоящему путешествию.
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_17");	//Дракия место опасное и теплого приема там точно не жди. 
-	AI_Output(other,self,"DIA_Loa_GoDrakia_01_18");	//И почему меня все это не удивляет. Ладно, как скажешь.
+	AI_Output(other,self, " DIA_Loa_GoDrakia_01_01 " );	// I'm going to Drakia. Will you come with me?
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_02 " );	// To Drakia?! Are you kidding? And how are you going to go there?
+	AI_Output(other,self, " DIA_Loa_GoDrakia_01_03 " );	// The pirates will help me with this. Their ship sails there in about a couple of days.
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_04 " );	// Pirates?! Hmmm... (surprised) I didn't think you had anything in common with them.
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_05 " );	// Moreover, as far as I know, they do not have a ship now, since it was sunk by paladins who recently arrived in Khorinis.
+	AI_Output(other,self, " DIA_Loa_GoDrakia_01_06 " );	// And I see that you are quite aware of what is happening for an ordinary mercenary.
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_07 " );	// Trust me, it's not that hard if you can listen.
+	AI_Output(other,self, " DIA_Loa_GoDrakia_01_08 " );	// Actually, they fixed their old one. And now they want to take all their junk to sell in Drakia.
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_09 " );	// Quite reasonable of them.
+	AI_Output(other,self, " DIA_Loa_GoDrakia_01_10 " );	// So, are you coming with me?
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_11 " );	// Well, if everything is really the same as you say... then, of course, I'll go. After all, this will be a great chance to get even with Rothgriff.
+	AI_Output(other,self, " DIA_Loa_GoDrakia_01_12 " );	// Then, it's better not to waste time and go there right now.
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_13 " );	// Hey, hey... Not so fast! I can't just take everything here and leave it.
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_14 " );	// Also, I need some time to get ready. So let's meet right there.
+	AI_Output(other,self, " DIA_Loa_GoDrakia_01_15 " );	// But you don't know where the pirate camp is?!
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_16 " );	// Don't worry! I'll figure it out somehow. And my advice to you is to prepare well for the upcoming trip.
+	AI_Output(self,other, " DIA_Loa_GoDrakia_01_17 " );	// Drakia is a dangerous place and definitely don't expect a warm welcome there.
+	AI_Output(other,self, " DIA_Loa_GoDrakia_01_18 " );	// And why all this does not surprise me. Okay, whatever you say.
 	LoaGoDrakia = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"TOT");
 };
 
-//---------------------------Лоа в Ярике------------------------------------
+// -------------------Loa in Yarik------------ ------------------
 
 instance DIA_SLD_10921_Loa_ADW_EXIT(C_Info)
 {
@@ -2033,7 +2034,7 @@ instance DIA_SLD_10921_Loa_ADW_Hello(C_Info)
 	condition = DIA_SLD_10921_Loa_ADW_Hello_Condition;
 	information = DIA_SLD_10921_Loa_ADW_Hello_Info;
 	permanent = FALSE;
-	description = "Невероятно! Ты уже здесь.";
+	description = " Incredible! You're already here. " ;
 };
 
 func int DIA_SLD_10921_Loa_ADW_Hello_Condition()
@@ -2044,21 +2045,21 @@ func int DIA_SLD_10921_Loa_ADW_Hello_Condition()
 func void DIA_SLD_10921_Loa_ADW_Hello_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_Hello_01_01");	//Невероятно! Ты уже здесь.
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_Hello_01_02");	//Как видишь...(раздраженно) Только, похоже я напрасно так спешила.
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_Hello_01_03");	//Кажется, ты явно не в себе. Что случилось?
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_Hello_01_04");	//Что, что... Эта скотина Грэг не разрешает мне плыть вместе с вами.
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_Hello_01_01 " );	// Incredible! You're already here.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_Hello_01_02 " );	// As you can see...(annoyed) Only, it looks like I was in such a hurry in vain.
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_Hello_01_03 " );	// You seem to be out of your mind. What happened?
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_Hello_01_04 " );	// What, what... That bastard Greg won't let me sail with you.
 	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_Hello_01_05");	//Почему?
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_Hello_01_06");	//Говорит, что мол женщина на корабле - к беде. А для него очень важно, чтобы его корабль доплыл до Дракии без всяких неприятностей.
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_Hello_01_07");	//Я ему конечно попыталась объяснить, что все это старые глупые предрассудки.
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_Hello_01_08");	//Но он даже и слушать меня не стал. А просто выставил за дверь своей хибары!
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_Hello_01_09");	//Не переживай так! Я попробую сам с ним поговорить.
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_Hello_01_10");	//Сомневаюсь, что у тебя что-то получится. Этот болван упрямее осла!
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_Hello_01_11");	//Там будет видно.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_Hello_01_06 " );	// Says that a woman on a ship is in trouble. And for him it is very important that his ship sailed to Drakia without any trouble.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_Hello_01_07 " );	// Of course, I tried to explain to him that all these are old stupid prejudices.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_Hello_01_08 " );	// But he didn't even listen to me. And just put out the door of his hut!
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_Hello_01_09 " );	// Don't worry like that! I'll try to talk to him myself.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_Hello_01_10 " );	// I doubt you will succeed. This fool is more stubborn than a donkey!
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_Hello_01_11 " );	// It will be visible there.
 	MIS_OldRumors = LOG_Running;
 	Log_CreateTopic(TOPIC_OldRumors,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_OldRumors,LOG_Running);
-	B_LogEntry(TOPIC_OldRumors,"У Лоа возникла небольшая проблема с Грегом. Тот абсолютно против того, чтобы она поплыла на его корабле в Дракию. По его словам - женщины на корабле приносит одни неприятности. А для него очень важно, чтобы с кораблем ничего не случилось во время его плавания.");
+	B_LogEntry(TOPIC_OldRumors, " Loa has a little problem with Greg. He is absolutely against her taking his ship to Drachia. According to him, women on the ship bring nothing but trouble. And it is very important to him that nothing happens to the ship during his voyage. " );
 };
 
 instance DIA_SLD_10921_Loa_ADW_CanSail(C_Info)
@@ -2068,7 +2069,7 @@ instance DIA_SLD_10921_Loa_ADW_CanSail(C_Info)
 	condition = DIA_SLD_10921_Loa_ADW_CanSail_Condition;
 	information = DIA_SLD_10921_Loa_ADW_CanSail_Info;
 	permanent = FALSE;
-	description = "Ты можешь подняться на борт корабля.";
+	description = " You can board the ship. " ;
 };
 
 func int DIA_SLD_10921_Loa_ADW_CanSail_Condition()
@@ -2079,16 +2080,16 @@ func int DIA_SLD_10921_Loa_ADW_CanSail_Condition()
 func void DIA_SLD_10921_Loa_ADW_CanSail_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_CanSail_01_01");	//Ты можешь подняться на борт корабля.
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_CanSail_01_02");	//Что ты имеешь вввиду?
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_CanSail_01_03");	//Только то, что Грэг согласился взять тебя в Дракию.
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_CanSail_01_04");	//Хммм... Интересно, и что же заставило его передумать?
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_CanSail_01_05");	//Ну скажем, я просто знаю к нему определенный подход.
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_CanSail_01_06");	//Хотя было лучше, больше не допускать подобных ситуаций. Иначе, подходы могут очень...кммм...резко закончаться такими темпами.
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_CanSail_01_07");	//Благодарю тебя! Ты опять оказал мне неоценимую услугу. И чтобы я без тебя делала.
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_CanSail_01_08");	//Лучше пообщай мне, что больше не будешь злить Грэга. Хотя бы до того момента, пока мы не окажемся в Дракии.
-	AI_Output(self,other,"DIA_SLD_10921_Loa_ADW_CanSail_01_09");	//Хорошо, я буду тише воды.
-	AI_Output(other,self,"DIA_SLD_10921_Loa_ADW_CanSail_01_10");	//Вот и славно.
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_CanSail_01_01 " );	// You can board the ship.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_CanSail_01_02 " );	// What do you mean?
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_CanSail_01_03 " );	// Only that Greg agreed to take you to Drakia.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_CanSail_01_04 " );	// Hmmm... I wonder what made him change his mind?
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_CanSail_01_05 " );	// Well, let's say I just know a certain approach to it.
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_CanSail_01_06 " );	// Although it was better not to allow situations like this again. Otherwise, approaches can end very...mmm...abruptly at such a pace.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_CanSail_01_07 " );	// Thank you! Once again you have done me an invaluable service. And what would I do without you.
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_CanSail_01_08 " );	// Better tell me you won't piss Greg off again. At least until we get to Drakia.
+	AI_Output(self,other, " DIA_SLD_10921_Loa_ADW_CanSail_01_09 " );	// Okay, I'll be quieter than water.
+	AI_Output(other,self, " DIA_SLD_10921_Loa_ADW_CanSail_01_10 " );	// That's nice.
 	LoaInsDrakia = TRUE;
 	AI_StopProcessInfos(self);
 };
