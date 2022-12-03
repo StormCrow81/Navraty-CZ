@@ -1,4 +1,5 @@
 
+
 instance NONE_116_MUD_EXIT(C_Info)
 {
 	npc = none_116_mud;
@@ -38,44 +39,44 @@ func int none_116_mud_hallo_condition()
 
 func void none_116_mud_hallo_info()
 {
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_00");	//Эй, ты кто? И откуда?
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_01");	//Хотя постой... Я же тебя знаю! Ну конечно...
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_02");	//Ты же тот новичок, что прикончил самого Гомеза!
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_03");	//Ох, парень, как же я рад этой встрече!
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Info_01_00 " );	// Hey, who are you? And where?
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Info_01_01 " );	// But wait... I know you! Well, of course...
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Info_01_02 " );	// You're the newbie who killed Gomez himself!
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Info_01_03 " );	// Oh, man, how glad I am for this meeting!
 	Info_ClearChoices(none_116_mud_hallo);
-	Info_AddChoice(none_116_mud_hallo,"А, как я вижу, ты ничуть не изменился, Мад.",none_116_mud_hallo_mud);
-	Info_AddChoice(none_116_mud_hallo,"Извини, но у меня что-то с памятью стало.",none_116_mud_hallo_who);
+	Info_AddChoice(none_116_mud_hallo, " I see you haven't changed a bit, Mud. " ,none_116_mud_hallo_mud);
+	Info_AddChoice(none_116_mud_hallo, " Sorry, but my memory is messed up. " ,none_116_mud_hallo_who);
 };
 
 func void none_116_mud_hallo_mud()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"NONE_116_Mud_Hallo_Mud_01_01");	//А, как я вижу, ты ничуть не изменился, Мад. Все также болтаешь без умолку!
-	AI_Output(other,self,"NONE_116_Mud_Hallo_Mud_01_02");	//Правда, выглядеть стал... несколько иначе, чем раньше.
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_03");	//Ты меня вспомнил! Какое счастье! Мой старый друг!
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_04");	//А помнишь, как мы повстречались в Старом лагере?
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_06");	//Вот же было времечко, а! Кстати, а что ты тут делаешь?
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_07");	//А ладно, какая разница - теперь ты снова рядом со мной, и я уже даже перестал немного бояться...
-	AI_Output(other,self,"NONE_116_Mud_Hallo_Mud_01_08");	//Заткнись, Мад! Иначе я сейчас побью тебя - как в старые добрые времена.
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_09");	//Ладно, ладно... Как скажешь, уже молчу. Видишь, я молчу.
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_10");	//Хотя, если я буду молчать, - как я смогу говорить с тобой?
+	AI_Output(other,self, " NONE_116_Mud_Hallo_Mud_01_01 " );	// And, as I see it, you haven't changed a bit, Mad. You are also talking non-stop!
+	AI_Output(other,self, " NONE_116_Mud_Hallo_Mud_01_02 " );	// True, it began to look ... a little different than before.
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Mud_01_03 " );	// You remembered me! What happiness! My old friend!
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Mud_01_04 " );	// Do you remember how we met in the Old Camp?
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Mud_01_06 " );	// That was the time, eh! By the way, what are you doing here?
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Mud_01_07 " );	// Well, what's the difference - now you're next to me again, and I've even stopped being a little afraid...
+	AI_Output(other,self, " NONE_116_Mud_Hallo_Mud_01_08 " );	// Shut up, Mud! Otherwise, I'll beat you now - like in the good old days.
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Mud_01_09 " );	// Okay, okay... As you say, I'm already silent. You see, I am silent.
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Mud_01_10 " );	// Although, if I keep silent, how can I talk to you?
 	Info_ClearChoices(none_116_mud_hallo);
 };
 
 func void none_116_mud_hallo_who()
 {
-	AI_Output(other,self,"NONE_116_Mud_Hallo_Who_01_01");	//Извини, но я что-то не припоминаю тебя.
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_02");	//Как?! Ты не помнишь старого друга? Ты не помнишь Мада?
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_04");	//Мы же с тобой были друзьями!
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_05");	//Ты был единственным моим другом в Старом лагере, хотя все остальные считали меня придурком.
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_06");	//Но они ошибались. Особенно, когда узнали, что у меня есть такой друг, как ты!
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_07");	//Хорошо иметь друзей. А у тебя есть друзья?
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_08");	//Ну, один у тебя точно есть - это я.
-	AI_Output(other,self,"NONE_116_Mud_Hallo_Who_01_09");	//Мне кажется, ты слишком много болтаешь.
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_10");	//А что тут удивительного? Всегда приятно поболтать со старым другом.
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_11");	//Разве ты так не считаешь, а?
-	AI_Output(other,self,"NONE_116_Mud_Hallo_Who_01_12");	//Я думаю, тебе стоит для начала научиться хотя бы изредка держать свой язык за зубами.
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Who_01_14");	//Хорошо, как скажешь. Я могу и помолчать.
+	AI_Output(other,self, " NONE_116_Mud_Hallo_Who_01_01 " );	// Sorry, but I don't remember you.
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_02 " );	// How?! Do you remember an old friend? Do you remember Mad?
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_04 " );	// You and I were friends!
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_05 " );	// You were my only friend in the Old Camp, even though everyone else thought I was a jerk.
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_06 " );	// But they were wrong. Especially when they found out that I have a friend like you!
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_07 " );	// It's good to have friends. Do you have friends?
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_08 " );	// Well, you definitely have one - it's me.
+	AI_Output(other,self, " NONE_116_Mud_Hallo_Who_01_09 " );	// I think you talk too much.
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_10 " );	// What's surprising about that? It's always nice to chat with an old friend.
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_11 " );	// Don't you think so, huh?
+	AI_Output(other,self, " NONE_116_Mud_Hallo_Who_01_12 " );	// I think you should learn to keep your mouth shut at least once in a while.
+	AI_Output(self,other, " NONE_116_Mud_Hallo_Who_01_14 " );	// Okay, whatever you say. I can keep quiet.
 	Info_ClearChoices(none_116_mud_hallo);
 };
 
@@ -87,7 +88,7 @@ instance NONE_116_MUD_FACE(C_Info)
 	condition = none_116_mud_face_condition;
 	information = none_116_mud_face_info;
 	permanent = FALSE;
-	description = "Что произошло с тобой?";
+	description = " What happened to you? " ;
 };
 
 
@@ -101,24 +102,24 @@ func int none_116_mud_face_condition()
 
 func void none_116_mud_face_info()
 {
-	AI_Output(other,self,"NONE_116_Mud_Face_Info_01_01");	//Что произошло с тобой?
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_02");	//Ты имеешь в виду мое лицо?
-	AI_Output(other,self,"NONE_116_Mud_Face_Info_01_03");	//Да. Именно это я и имею в виду. Кто тебя так изуродовал?
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_04");	//Эх... Одна мерзкая тварь постаралась.
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_05");	//Хотя мне надо поблагодарить свою судьбу, что я вообще остался в живых!
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_09");	//Раньше здесь не встречал!
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_10");	//Чем-то немного напоминает снеппера, но только еще более ужаснее и свирепее.
-	AI_Output(other,self,"NONE_116_Mud_Face_Info_01_12");	//А как ты тут оказался?
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_14");	//После того, как рухнул барьер, я думал отправиться обратно в Хоринис.
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_15");	//Но по дороге к проходу я случайно наткнулся на отряд орков.
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_18");	//Видимо, эти зеленокожие твари решили, что я бы неплохо смотрелся у них в котелке. Ну и погнались за мной!
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_19");	//Как сейчас помню - бежал я тогда, что есть сил, не особо разбирая, куда именно.
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_21");	//А когда заметил, что орки подотстали, - оглядевшись, понял, что заблудился.
-	AI_Output(other,self,"NONE_116_Mud_Face_Info_01_25");	//Значит, ты больше не пробовал пройти через проход?
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_26");	//Нет. Я в долину больше ни ногой!
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_27");	//Туда только сунься - и тебя сразу же сожрут заживо. Так что лучше уж тут.
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_28");	//Кстати, скажу тебе по правде, местечко это - довольно неплохое.
-	AI_Output(self,other,"NONE_116_Mud_Face_Info_01_30");	//И орки тут не бродят - их лагерь там дальше, в горах.
+	AI_Output(other,self, " NONE_116_Mud_Face_Info_01_01 " );	// What happened to you?
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_02 " );	// Do you mean my face?
+	AI_Output(other,self, " NONE_116_Mud_Face_Info_01_03 " );	// Yes. That's exactly what I mean. Who spoiled you like that?
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_04 " );	// Eh... One vile creature tried.
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_05 " );	// Although I have to thank my fate that I survived at all!
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_09 " );	// Never met here before!
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_10 " );	// A bit like a snapper, but even more terrible and ferocious.
+	AI_Output(other,self, " NONE_116_Mud_Face_Info_01_12 " );	// How did you get here?
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_14 " );	// After the barrier collapsed, I thought about heading back to Khorinis.
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_15 " );	// But on the way to the passage, I accidentally stumbled upon a squad of orcs.
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_18 " );	// Apparently, these green-skinned creatures decided that I would look good in their bowler hat. Well, come after me!
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_19 " );	// As I remember now - I ran then, with all my strength, without really understanding where exactly.
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_21 " );	// And when I noticed that the orcs fell behind, - looking around, I realized that I was lost.
+	AI_Output(other,self, " NONE_116_Mud_Face_Info_01_25 " );	// So you haven't tried the passage again?
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_26 " );	// No. I'm in the valley more than a foot!
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_27 " );	// Just stick your head in there and you'll be eaten alive right away. So it's better here.
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_28 " );	// By the way, I'll tell you the truth, this place is pretty good.
+	AI_Output(self,other, " NONE_116_Mud_Face_Info_01_30 " );	// And the orcs don't roam here - their camp is up there in the mountains.
 };
 
 
@@ -129,13 +130,13 @@ instance NONE_116_MUD_CRATES(C_Info)
 	condition = none_116_mud_crates_condition;
 	information = none_116_mud_crates_info;
 	permanent = FALSE;
-	description = "Что это за ящики?";
+	description = " What are these boxes? " ;
 };
 
 
 func int none_116_mud_crates_condition()
 {
-	if(Npc_KnowsInfo(hero,none_116_mud_hallo) && (Kapitel < 5))
+	if ( Npc_KnowsInfo ( hero , none_116_mud_hallo ) && ( Capital <  5 )) .
 	{
 		return TRUE;
 	};
@@ -143,33 +144,33 @@ func int none_116_mud_crates_condition()
 
 func void none_116_mud_crates_info()
 {
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_00");	//Что это за ящики?
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_01");	//Это ящики с магической рудой.
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_02");	//С рудой? Откуда они взялись?
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_03");	//Они были здесь еще до того, как я тут обосновался.
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_06");	//Их не меньше двадцати!
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_07");	//Хммм... Тогда, думаю, об этом стоит сообщить паладинам. Гаронд будет очень удивлен.
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_08");	//Паладинам? Каким паладинам?
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_09");	//Да, похоже, ты очень сильно отстал от жизни.
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_10");	//Ха! А чему тут удивляться? Ты первый человек, которого я встретил за последние несколько недель.
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_11");	//А что ты там говорил про паладинов?
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_12");	//Недавно в долину пришел небольшой отряд паладинов короля, и обосновался в старом замке баронов.
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_16");	//В данный момент замок находится под осадой орков, так что попасть туда довольно трудно.
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_17");	//Да и выход из долины также перекрыт этими зеленокожими тварями. Так что выбраться из долины удалось лишь немногим.
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_18");	//Черт! Ох уж эти орки!
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_20");	//И что теперь?
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_21");	//Надо отправиться в замок и сообщить паладинам об этих запасах магической руды.
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_24");	//Послушай, а... а ты мог бы взять меня с собой, если пойдешь в этот замок?
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_26");	//Одному мне туда точно не пробраться, а с тобой у меня есть хоть какие-то шансы.
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_29");	//Извини, но это слишком опасно.
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_31");	//А, насколько мне помнится, ты никогда не был хорошим бойцом.
-	AI_Output(self,other,"NONE_116_Mud_Crates_Info_01_32");	//Ну да, я понимаю. Ладно, посижу пока тут.
-	AI_Output(other,self,"NONE_116_Mud_Crates_Info_01_34");	//Не волнуйся, я попытаюсь привести подкрепление.
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_00 " );	// What are these boxes?
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_01 " );	// These are crates of magical ore.
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_02 " );	// With ore? Where did they come from?
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_03 " );	// They were here before I even settled here.
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_06 " );	// There are at least twenty of them!
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_07 " );	// Hmmm... Then I think we should report this to the paladins. Garond will be very surprised.
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_08 " );	// Paladins? Which paladins?
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_09 " );	// Yeah, looks like you're way behind the times.
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_10 " );	// Ha! Why be surprised? You are the first person I have met in the last few weeks.
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_11 " );	// What did you say about paladins?
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_12 " );	// Recently, a small band of paladins of the king came to the valley, and settled in the old castle of the barons.
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_16 " );	// At the moment the castle is under siege by orcs, so getting there is quite difficult.
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_17 " );	// And the exit from the valley is also blocked by these green-skinned creatures. So only a few managed to get out of the valley.
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_18 " );	// Damn! Oh those orcs!
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_20 " );	// And now what?
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_21 " );	// We need to go to the castle and tell the paladins about these magical ore deposits.
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_24 " );	// Listen, uh... could you take me with you if you go to this castle?
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_26 " );	// I'm sure I can't get in there alone, but with you I have at least some chance.
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_29 " );	// Sorry, but this is too dangerous.
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_31 " );	// And as far as I remember, you were never a good fighter.
+	AI_Output(self,other, " NONE_116_Mud_Crates_Info_01_32 " );	// Well, yes, I understand. Okay, I'll sit here for now.
+	AI_Output(other,self, " NONE_116_Mud_Crates_Info_01_34 " );	// Don't worry, I'll try to get reinforcements.
 	MIS_MADERZ = LOG_Running;
 	Log_CreateTopic(TOPIC_MADERZ,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MADERZ,LOG_Running);
-	B_LogEntry(TOPIC_MADERZ,"На том месте, где обосновался Мад, я обнаружил большие запасы магической руды. Мне необходимо срочно попасть в замок и сообщить об этом Гаронду. Эта новость должна его обрадовать.");
-	Log_AddEntry(TOPIC_MADERZ,"Я решил не брать Мада с собой в замок, но пообещал ему, что постараюсь уговорить Гаронда прислать ему помощь.");
+	B_LogEntry( TOPIC_MADERZ , " At the place where Mud settled, I discovered a large amount of magic ore. I need to urgently get to the castle and report this to Garond. This news should please him. " );
+	Log_AddEntry( TOPIC_MADERZ , " I decided not to take Mad with me to the castle, but I promised him that I would try to persuade Garond to send him help. " );
 };
 
 
@@ -180,7 +181,7 @@ instance NONE_116_MUD_PERM(C_Info)
 	condition = none_116_mud_perm_condition;
 	information = none_116_mud_perm_info;
 	permanent = TRUE;
-	description = "Как дела, Мад?";
+	description = " How are you, Mud? " ;
 };
 
 
@@ -194,17 +195,17 @@ func int none_116_mud_perm_condition()
 
 func void none_116_mud_perm_info()
 {
-	AI_Output(other,self,"NONE_116_Mud_Perm_01_00");	//Как дела, Мад?
+	AI_Output(other,self, " NONE_116_Mud_Perm_01_00 " );	// How are you, Mad?
 	if(MIS_MADERZ == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"NONE_116_Mud_Perm_01_01");	//Могло быть и лучше. Не нравится мне все это.
-		AI_Output(self,other,"NONE_116_Mud_Perm_01_02");	//Единственное, что меня успокаивает, - эти ребята в доспехах.
+		AI_Output(self,other, " NONE_116_Mud_Perm_01_01 " );	// Could be better. I don't like all this.
+		AI_Output(self,other, " NONE_116_Mud_Perm_01_02 " );	// The only thing that calms me down is these guys in armor.
 	}
 	else
 	{
-		AI_Output(self,other,"NONE_116_Mud_Perm_01_06");	//Как-как... Никак!
-		AI_Output(self,other,"NONE_116_Mud_Perm_01_07");	//Оглянись вокруг, и все поймешь - кругом одна безнадега!
-		AI_Output(self,other,"NONE_116_Mud_Perm_01_08");	//Эх... И когда все это только закончится.
+		AI_Output(self,other, " NONE_116_Mud_Perm_01_06 " );	// How-how... No way!
+		AI_Output(self,other, " NONE_116_Mud_Perm_01_07 " );	// Look around, and you will understand everything - there is only hopelessness around!
+		AI_Output(self,other, " NONE_116_Mud_Perm_01_08 " );	// Eh... And when it all ends.
 	};
 };
 
@@ -216,7 +217,7 @@ instance NONE_116_MUD_NOTINCASTLE(C_Info)
 	condition = none_116_mud_notincastle_condition;
 	information = none_116_mud_notincastle_info;
 	permanent = FALSE;
-	description = "Теперь тебе не так страшно?";
+	description = " Aren't you so scared now? " ;
 };
 
 
@@ -231,8 +232,8 @@ func int none_116_mud_notincastle_condition()
 func void none_116_mud_notincastle_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"NONE_116_Mud_NotInCastle_01_00");	//Теперь тебе не так страшно?
-	AI_Output(self,other,"NONE_116_Mud_NotInCastle_01_02");	//С этими ребятами я чувствую себя в полной безопасности.
-	AI_Output(self,other,"NONE_116_Mud_NotInCastle_01_04");	//Спасибо тебе, друг!
+	AI_Output(other,self, " NONE_116_Mud_NotInCastle_01_00 " );	// Are you not so scared now?
+	AI_Output(self,other, " NONE_116_Mud_NotInCastle_01_02 " );	// These guys make me feel completely safe.
+	AI_Output(self,other, " NONE_116_Mud_NotInCastle_01_04 " );	// Thank you friend!
 };
 
