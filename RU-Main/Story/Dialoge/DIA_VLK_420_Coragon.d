@@ -1,4 +1,5 @@
 
+
 instance DIA_Coragon_EXIT(C_Info)
 {
 	npc = VLK_420_Coragon;
@@ -34,7 +35,7 @@ instance DIA_Coragon_PICKPOCKET(C_Info)
 
 func int DIA_Coragon_PICKPOCKET_Condition()
 {
-	return C_Beklauen(40,45);
+	return  C_Robbery ( 40 , 45 );
 };
 
 func void DIA_Coragon_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Coragon_PICKPOCKET_Info()
 
 func void DIA_Coragon_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Coragon_PICKPOCKET);
 };
 
@@ -63,7 +64,7 @@ instance DIA_Coragon_HALLO(C_Info)
 	condition = DIA_Coragon_HALLO_Condition;
 	information = DIA_Coragon_HALLO_Info;
 	permanent = FALSE;
-	description = "Могу я выпить здесь?";
+	description = " Can I have a drink here? " ;
 };
 
 func int DIA_Coragon_HALLO_Condition()
@@ -73,10 +74,10 @@ func int DIA_Coragon_HALLO_Condition()
 
 func void DIA_Coragon_HALLO_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_HALLO_15_00");	//Могу я выпить здесь?
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_00");	//Если у тебя есть деньги, ты здесь можешь даже поесть.
+	AI_Output(other,self, " DIA_Coragon_HALLO_15_00 " );	// Can I have a drink here?
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_00 " );	// If you have money, you can even eat here.
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Я могу покупать еду и питье у трактирщика Корагона.");
+	B_LogEntry(TOPIC_CityTrader, " I can buy food and drink from Koragon Innkeeper. " );
 };
 
 
@@ -87,7 +88,7 @@ instance DIA_Coragon_Trade(C_Info)
 	condition = DIA_Coragon_Trade_Condition;
 	information = DIA_Coragon_Trade_Info;
 	permanent = TRUE;
-	description = "Покажи мне свои товары.";
+	description = " Show me your products. " ;
 	trade = TRUE;
 };
 
@@ -108,7 +109,7 @@ func void DIA_Coragon_Trade_Info()
 		AI_TurnToNPC(self,other);
 	};
 
-	AI_Output(other,self,"DIA_Coragon_Trade_15_00");	//Покажи мне свои товары.
+	AI_Output(other,self, " DIA_Coragon_Trade_15_00 " );	// Show me your products.
 	B_GiveTradeInv(self);
 };
 
@@ -119,7 +120,7 @@ instance DIA_Coragon_WhatsUp(C_Info)
 	condition = DIA_Coragon_WhatsUp_Condition;
 	information = DIA_Coragon_WhatsUp_Info;
 	permanent = FALSE;
-	description = "Как идут дела?";
+	description = " How are things going? " ;
 };
 
 func int DIA_Coragon_WhatsUp_Condition()
@@ -132,14 +133,14 @@ func int DIA_Coragon_WhatsUp_Condition()
 
 func void DIA_Coragon_WhatsUp_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_Gelaber_15_00");	//Как идут дела?
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_01");	//А, не спрашивай...(с досадой) На главной площади по приказу лорда Андрэ раздают бесплатное пиво!
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_02");	//Ко мне практически никто не заходит. Ну, кроме этих богачей из верхнего квартала.
-	AI_Output(other,self,"DIA_Coragon_Add_15_03");	//А что с ними не так?
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_04");	//Некоторые из этих франтов ужасно действуют на нервы.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_05");	//Взять хотя бы Валентино. Я его просто не переношу.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_06");	//Но клиентов мне выбирать не приходится! Сейчас мне дорога каждая монетка.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_07");	//Все, что мне удалось скопить, у меня украли вместе с моим серебром.
+	AI_Output(other,self, " DIA_Coragon_Gelaber_15_00 " );	// How are things going?
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_01 " );	// Oh, don't ask...(annoyed) Lord Andre's order is handing out free beer in the main square!
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_02 " );	// Almost no one comes to see me. Well, except for these rich people from the upper quarter.
+	AI_Output(other,self, " DIA_Coragon_Add_15_03 " );	// What's wrong with them?
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_04 " );	// Some of these dandies get on my nerves terribly.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_05 " );	// Take Valentino, for example. I just can't stand it.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_06 " );	// But I don't have to choose clients! Now every coin is precious to me.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_07 " );	// Everything I managed to save was stolen from me along with my silver.
 };
 
 instance DIA_Coragon_FixBeer(C_Info)
@@ -149,7 +150,7 @@ instance DIA_Coragon_FixBeer(C_Info)
 	condition = DIA_Coragon_FixBeer_Condition;
 	information = DIA_Coragon_FixBeer_Info;
 	permanent = FALSE;
-	description = "Может, я смогу чем-то помочь с посетителями?";
+	description = " Maybe I can help with the visitors? " ;
 };
 
 func int DIA_Coragon_FixBeer_Condition()
@@ -162,19 +163,19 @@ func int DIA_Coragon_FixBeer_Condition()
 
 func void DIA_Coragon_FixBeer_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_FixBeer_01_00");	//Может, я смогу как-нибудь привлечь посетителей?
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_01");	//Каким образом? Силком, что ли, их сюда притащишь?
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_02");	//Вирт наливает пиво совершенно бесплатно. А здесь придется за него платить.
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_03");	//Они же, в конце концов, не полные идиоты, чтобы просто так отдавать деньги.
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_04");	//Но ты, конечно, можешь попробовать. Чем Белиар не шутит?
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_05");	//Если у тебя получится увеличить количество посетителей в моей таверне, я лично готов отвалить тебе три...
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_06");	//...(задумчиво) Нет! Две бочки с пивом.
-	AI_Output(other,self,"DIA_Coragon_FixBeer_01_07");	//Договорились! Тогда можешь уже начинать готовить мое пиво.
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_08");	//Ты...(махнув рукой) Аааа, сумасшедший...
+	AI_Output(other,self, " DIA_Coragon_FixBeer_01_00 " );	// Maybe I can somehow attract visitors?
+	AI_Output(self,other, " DIA_Coragon_FixBeer_01_01 " );	// How? By force, will you bring them here?
+	AI_Output(self,other, " DIA_Coragon_FixBeer_01_02 " );	// Wirt pours beer for free. And here you have to pay for it.
+	AI_Output(self,other, " DIA_Coragon_FixBeer_01_03 " );	// They are, after all, not complete idiots to just give money away.
+	AI_Output(self,other, " DIA_Coragon_FixBeer_01_04 " );	// But of course you can try. Why is Beliar not joking?
+	AI_Output(self,other, " DIA_Coragon_FixBeer_01_05 " );	// If you manage to increase the number of people in my tavern, I'll personally give you three...
+	AI_Output(self,other, " DIA_Coragon_FixBeer_01_06 " );	// ...(thoughtfully) No! Two barrels of beer.
+	AI_Output(other,self, " DIA_Coragon_FixBeer_01_07 " );	// Agreed! Then you can start making my beer.
+	AI_Output(self,other, " DIA_Coragon_FixBeer_01_08 " );	// You... (waving hand) Ahh, crazy...
 	MIS_CoragonFixBeer = LOG_Running;
 	Log_CreateTopic(TOPIC_CoragonFixBeer,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CoragonFixBeer,LOG_Running);
-	B_LogEntry(TOPIC_CoragonFixBeer,"Корагон жалуется на то, что в последнее время в его таверне мало посетителей. Это связано с тем, что на городской площади Вирт угощает всех пивом совершенно бесплатно. Я вызвался помочь трактирщику уладить эту проблему. За это он готов отвалить мне две бочки превосходнейшего пива!");
+	B_LogEntry(TOPIC_CoragonFixBeer, " Coragon complains that his tavern hasn't had many customers lately. This is because Wirth treats everyone to beer for free in the town square. I volunteered to help the innkeeper fix this problem. For this, he is ready to fuck me two casks of the most excellent beer! " );
 	AI_StopProcessInfos(self);
 };
 
@@ -185,7 +186,7 @@ instance DIA_Coragon_FixBeer_Done(C_Info)
 	condition = DIA_Coragon_FixBeer_Done_Condition;
 	information = DIA_Coragon_FixBeer_Done_Info;
 	permanent = FALSE;
-	description = "Как твои дела?";
+	description = " How are you? " ;
 };
 
 func int DIA_Coragon_FixBeer_Done_Condition()
@@ -199,20 +200,20 @@ func int DIA_Coragon_FixBeer_Done_Condition()
 func void DIA_Coragon_FixBeer_Done_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_00");	//Как твои дела?
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_01");	//(удивленно) И как тебе это удалось?
+	AI_Output(other,self, " DIA_Coragon_FixBeer_Done_01_00 " );	// How are you?
+	AI_Output(self,other, " DIA_Coragon_FixBeer_Done_01_01 " );	// (surprised) And how did you do it?
 	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_02");	//Что?
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_03");	//В моей таверне теперь не протолкнуться от посетителей!
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_04");	//Правда я это связываю с тем, что ополчение внезапно забрало Вирта на службу. Теперь просто некому разливать пиво!
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_05");	//И зачем он им только сдался, этот старый мешок с костями?
-	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_06");	//Неважно. Зато теперь ты не несешь убытки.
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_07");	//Ладно. (вздыхая) Признаю, я проиграл! И, как обещал, с меня причитается две бочки с пивом.
-	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_08");	//Мне они не нужны. Лучше отвези их ополченцу Мартину, в порт.
-	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_09");	//Думаю, он их уже заждался.
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_10");	//Хорошо, как скажешь. (ехидно) Ну ты хитрец!
+	AI_Output(self,other, " DIA_Coragon_FixBeer_Done_01_03 " );	// My tavern is now crowded with customers!
+	AI_Output(self,other, " DIA_Coragon_FixBeer_Done_01_04 " );	// True, I attribute this to the fact that the militia suddenly took Wirt to the service. Now there is simply no one to pour beer!
+	AI_Output(self,other, " DIA_Coragon_FixBeer_Done_01_05 " );	// And why did he just surrender to them, this old bag of bones?
+	AI_Output(other,self, " DIA_Coragon_FixBeer_Done_01_06 " );	// Doesn't matter. But now you do not incur losses.
+	AI_Output(self,other, " DIA_Coragon_FixBeer_Done_01_07 " );	// Okay. (sighing) I admit, I lost! And, as promised, I owe two barrels of beer.
+	AI_Output(other,self, " DIA_Coragon_FixBeer_Done_01_08 " );	// I don't need them. Better take them to militia Martin, to the port.
+	AI_Output(other,self, " DIA_Coragon_FixBeer_Done_01_09 " );	// I think he's been waiting for them.
+	AI_Output(self,other, " DIA_Coragon_FixBeer_Done_01_10 " );	// Okay, whatever you say. (maliciously) Well, you're a sly one!
 	MIS_CoragonFixBeer = LOG_Success;
 	Log_SetTopicStatus(TOPIC_CoragonFixBeer,LOG_Success);
-	B_LogEntry(TOPIC_CoragonFixBeer,"Корагон был удивлен, что в его таверне теперь полно посетителей. Пришлось ему выкатить мне две бочки с пивом, которые я попросил отослать Мартину на склад.");
+	B_LogEntry(TOPIC_CoragonFixBeer, " Coragon was surprised that his tavern was now full of customers. He had to roll out two barrels of beer for me, which I asked to send to Martin at the warehouse. " );
 };
 
 instance DIA_Addon_Coragon_MissingPeople(C_Info)
@@ -221,7 +222,7 @@ instance DIA_Addon_Coragon_MissingPeople(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Coragon_MissingPeople_Condition;
 	information = DIA_Addon_Coragon_MissingPeople_Info;
-	description = "Что ты знаешь о пропавших людях?.";
+	description = " What do you know about missing people?. " ;
 };
 
 func int DIA_Addon_Coragon_MissingPeople_Condition()
@@ -234,30 +235,30 @@ func int DIA_Addon_Coragon_MissingPeople_Condition()
 
 func void DIA_Addon_Coragon_MissingPeople_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Coragon_MissingPeople_15_00");	//Что ты знаешь о пропавших людях?.
-	AI_Output(self,other,"DIA_Addon_Coragon_MissingPeople_09_01");	//Я слышал, что многие из них пропали в районе порта. Неудивительно, если учитывать, что там творится.
-	AI_Output(self,other,"DIA_Addon_Coragon_MissingPeople_09_02");	//Пропал даже ученик плотника Торбена из нижней части города.
-	AI_Output(self,other,"DIA_Addon_Coragon_MissingPeople_09_03");	//Хакон, один из рыночных торговцев, рассказал мне очень странную историю.
-	AI_Output(self,other,"DIA_Addon_Coragon_MissingPeople_09_04");	//Он говорил, что каждый день этого он встречал одного парня, а потом тот словно исчез с лица земли. Хакон даже обратился в ополчение.
-	AI_Output(self,other,"DIA_Addon_Coragon_MissingPeople_09_05");	//Горожане начинают паниковать. Не понимаю, почему это происходит. Думаю, все это чепуха.
-	AI_Output(self,other,"DIA_Addon_Coragon_MissingPeople_09_06");	//Жизнь в Хоринисе непростая, но за воротами еще опаснее.
-	AI_Output(self,other,"DIA_Addon_Coragon_MissingPeople_09_07");	//Те, кто не остается в городе, рано или поздно попадет в руки к бандитам или в зубы к диким животным. Все просто.
+	AI_Output(other,self, " DIA_Addon_Coragon_MissingPeople_15_00 " );	// What do you know about missing people?.
+	AI_Output(self,other, " DIA_Addon_Coragon_MissingPeople_09_01 " );	// I heard that many of them disappeared in the port area. Not surprising considering what's going on there.
+	AI_Output(self,other, " DIA_Addon_Coragon_MissingPeople_09_02 " );	// Even the apprentice carpenter Torben from the lower part of the city is missing.
+	AI_Output(self,other, " DIA_Addon_Coragon_MissingPeople_09_03 " );	// Hakon, one of the market traders, told me a very strange story.
+	AI_Output(self,other, " DIA_Addon_Coragon_MissingPeople_09_04 " );	// He said that every day of this he met one guy, and then he seemed to disappear from the face of the earth. Hakon even turned to the militia.
+	AI_Output(self,other, " DIA_Addon_Coragon_MissingPeople_09_05 " );	// The townspeople start to panic. I don't understand why this is happening. I think it's all nonsense.
+	AI_Output(self,other, " DIA_Addon_Coragon_MissingPeople_09_06 " );	// Life in Khorinis is not easy, but it's even more dangerous outside the gates.
+	AI_Output(self,other, " DIA_Addon_Coragon_MissingPeople_09_07 " );	// Those who do not stay in the city will sooner or later fall into the hands of bandits or into the teeth of wild animals. Everything is simple.
 	Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_WhoStolePeople,LOG_Running);
-	B_LogEntry(TOPIC_Addon_WhoStolePeople,"Хакон, торговец на рыночной площади, и плотник Торбен знают что-то о пропавших людях.");
+	B_LogEntry(TOPIC_Addon_WhoStolePeople, " Hakon, the merchant in the marketplace, and the carpenter Torben know something about the missing people. " );
 };
 
-instance DIA_Coragon_Bestohlen(C_Info)
+instance DIA_Coragon_Bestolen (C_Info)
 {
 	npc = VLK_420_Coragon;
 	nr = 4;
-	condition = DIA_Coragon_Bestohlen_Condition;
-	information = DIA_Coragon_Bestohlen_Info;
+	condition = DIA_Coragon_Bestolen_Condition;
+	information = DIA_Coragon_Bestolen_Info;
 	permanent = FALSE;
-	description = "Тебя ограбили?";
+	description = " Have you been robbed? " ;
 };
 
-func int DIA_Coragon_Bestohlen_Condition()
+func int DIA_Coragon_Bestolen_Condition()
 {
 	if(Npc_KnowsInfo(other,DIA_Coragon_WhatsUp))
 	{
@@ -265,33 +266,33 @@ func int DIA_Coragon_Bestohlen_Condition()
 	};
 };
 
-func void DIA_Coragon_Bestohlen_Info()
+func void DIA_Coragon_Stolen_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_Add_15_08");	//Тебя ограбили?
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_09");	//Да, некоторое время назад. Тем вечером было довольно людно, и я только и делал, что разносил пиво.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_10");	//От стойки я надолго не отлучался, но этим подонкам хватило и небольшого времени.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_11");	//Я рассказал о краже ополчению, но они, конечно же, никого не нашли. Эти лентяи предпочитают накачиваться бесплатным пивом.
+	AI_Output(other,self, " DIA_Coragon_Add_15_08 " );	// Were you robbed?
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_09 " );	// Yes, some time ago. It was quite crowded that evening, and all I did was serve beer.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_10 " );	// I didn't leave the bar for long, but those bastards had enough time.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_11 " );	// I told the militia about the theft, but of course they didn't find anyone. These lazy people prefer to pump up on free beer.
 	MIS_Coragon_Silber = LOG_Running;
 	Log_CreateTopic(TOPIC_Coragon_Silber,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Coragon_Silber,LOG_Running);
-	B_LogEntry(TOPIC_Coragon_Silber,"У Корагона украли все столовое серебро. Думаю, он будет не против, вернуть его себе обратно.");
+	B_LogEntry(TOPIC_Coragon_Silber, " Coragon had all his silverware stolen. I think he'd be happy to have it back. " );
 };
 
-var int Coragon_Bier;
+var int Coragon_Bees;
 
 func void B_Coragon_Bier()
 {
 	Coragon_Bier = Coragon_Bier + 1;
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_14");	//Вот, возьми это в качестве награды.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_14 " );	// Here, take this as a reward.
 	B_GiveInvItems(self,other,ItFo_CoragonsBeer,1);
 
 	if(Coragon_Bier < 2)
 	{
-		AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_21");	//Мое особое пиво! Один бочонок остался.
+		AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_21 " );	// My special beer! One barrel remained.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_22");	//Буквально последние капли!
+		AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_22 " );	// Literally the last drops!
 	};
 };
 
@@ -303,7 +304,7 @@ instance DIA_Coragon_BringSilber(C_Info)
 	condition = DIA_Coragon_BringSilber_Condition;
 	information = DIA_Coragon_BringSilber_Info;
 	permanent = FALSE;
-	description = "Я принес твое серебро.";
+	description = " I brought your silver. " ;
 };
 
 
@@ -317,7 +318,7 @@ func int DIA_Coragon_BringSilber_Condition()
 
 func void DIA_Coragon_BringSilber_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_Add_15_12");	//Я принес твое серебро.
+	AI_Output(other,self, " DIA_Coragon_Add_15_12 " );	// I brought your silver.
 
 	if(B_GiveInvItems(other,self,ItMi_CoragonsSilber,8))
 	{
@@ -329,18 +330,18 @@ func void DIA_Coragon_BringSilber_Info()
 	B_Coragon_Bier();
 	MIS_Coragon_Silber = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Coragon_Silber,LOG_SUCCESS);
-	B_LogEntry(TOPIC_Coragon_Silber,"Я вернул Корагону его столовое серебро.");
+	B_LogEntry(TOPIC_Coragon_Silber, " I returned Coragon's silverware. " );
 };
 
 
-instance DIA_Coragon_Schuldenbuch(C_Info)
+instance DIA_Coragon_Schuldenbuch (C_Info)
 {
 	npc = VLK_420_Coragon;
 	nr = 6;
 	condition = DIA_Coragon_Schuldenbuch_Condition;
 	information = DIA_Coragon_Schuldenbuch_Info;
 	permanent = FALSE;
-	description = "Посмотри, что у меня есть.";
+	description = " Look what I have. " ;
 };
 
 
@@ -354,9 +355,9 @@ func int DIA_Coragon_Schuldenbuch_Condition()
 
 func void DIA_Coragon_Schuldenbuch_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_Add_15_15");	//Посмотри, что у меня есть.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_16");	//Хммм...(удивленно) Но это же гроссбух Лемара!
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_17");	//Что ты с ним собираешься делать?
+	AI_Output(other,self, " DIA_Coragon_Add_15_15 " );	// Look what I have.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_16 " );	// Hmmm... (surprised) But that's Lemar's ledger!
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_17 " );	// What are you going to do with it?
 };
 
 
@@ -367,13 +368,13 @@ instance DIA_Coragon_GiveBook(C_Info)
 	condition = DIA_Coragon_GiveBook_Condition;
 	information = DIA_Coragon_GiveBook_Info;
 	permanent = FALSE;
-	description = "Вот твоя книга.";
+	description = " Here's your book. " ;
 };
 
 
 func int DIA_Coragon_GiveBook_Condition()
 {
-	if((Npc_HasItems(other,ItWr_Schuldenbuch) > 0) && (Npc_KnowsInfo(hero,DIA_Coragon_Schuldenbuch) == TRUE))
+	if ((Npc_HasItems(other,ItWr_Shoulderbook) >  0 ) && (Npc_KnowsInfo(hero,DIA_Coragon_Shoulderbook) ==  TRUE ) );
 	{
 		return TRUE;
 	};
@@ -381,11 +382,11 @@ func int DIA_Coragon_GiveBook_Condition()
 
 func void DIA_Coragon_GiveBook_Info()
 {
-	B_GivePlayerXP(XP_Schuldenbuch);
-	AI_Output(other,self,"DIA_Coragon_Add_15_18");	//Вот твоя книга.
-	B_GiveInvItems(other,self,ItWr_Schuldenbuch,1);
-	Npc_RemoveInvItems(self,ItWr_Schuldenbuch,1);
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_19");	//Спасибо! Ты спас меня. Лемар может быть очень неприятным человеком.
+	B_GivePlayerXP(XP_Debt Book);
+	AI_Output(other,self, " DIA_Coragon_Add_15_18 " );	// Here is your book.
+	B_GiveInvItems(other,self,ItWr_debt book, 1 );
+	Npc_RemoveInvItems(self,ItWr_Debt Book, 1 );
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_19 " );	// Thank you! You saved me. Lemar can be a very unpleasant person.
 	B_Coragon_Bier();
 };
 
@@ -396,7 +397,7 @@ instance DIA_Coragon_ToOV(C_Info)
 	condition = DIA_Coragon_ToOV_Condition;
 	information = DIA_Coragon_ToOV_Info;
 	permanent = FALSE;
-	description = "Как мне попасть в верхний квартал?";
+	description = " How do I get to the upper quarter? " ;
 };
 
 func int DIA_Coragon_ToOV_Condition()
@@ -409,11 +410,11 @@ func int DIA_Coragon_ToOV_Condition()
 
 func void DIA_Coragon_ToOV_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_Add_15_23");	//Как мне попасть в верхний квартал?
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_24");	//Ты должен стать гражданином города. Найди себе работу!
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_25");	//Лучше всего наймись к одному из ремесленников из нижней части города. Тогда ты станешь гражданином.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_26");	//А если этого будет недостаточно, отправляйся в казармы и поговори с лордом Андрэ.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_27");	//Возможно, он примет тебя в ряды ополчения. Это откроет тебе путь в верхний квартал.
+	AI_Output(other,self, " DIA_Coragon_Add_15_23 " );	// How do I get to the top quarter?
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_24 " );	// You must become a citizen of the city. Find yourself a job!
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_25 " );	// It's best to work with one of the artisans from the lower part of the city. Then you become a citizen.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_26 " );	// And if that's not enough, go to the barracks and talk to Lord Andre.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_27 " );	// Perhaps he will accept you into the ranks of the militia. This will open the way for you to the upper quarter.
 };
 
 
@@ -424,7 +425,7 @@ instance DIA_Coragon_Valentino(C_Info)
 	condition = DIA_Coragon_Valentino_Condition;
 	information = DIA_Coragon_Valentino_Info;
 	permanent = FALSE;
-	description = "А что там насчет Валентино?";
+	description = " What about Valentino? " ;
 };
 
 
@@ -438,11 +439,11 @@ func int DIA_Coragon_Valentino_Condition()
 
 func void DIA_Coragon_Valentino_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_Add_15_28");	//А что там насчет Валентино?
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_29");	//Он богат до неприличия, и ему не приходится работать. И он рассказывает об этом всем подряд.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_30");	//Хочешь ты его слушать или нет.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_31");	//Он пьет как конь и всегда остается до самого утра. А потом, шатаясь, отправляется домой, в верхний квартал.
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_32");	//Так происходит каждый день.
+	AI_Output(other,self, " DIA_Coragon_Add_15_28 " );	// What about Valentino?
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_29 " );	// He's obscenely rich and doesn't have to work. And he tells everyone about it.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_30 " );	// Whether you want to listen to it or not.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_31 " );	// He drinks like a horse and always stays until morning. And then, staggering, goes home to the upper quarter.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_32 " );	// This happens every day.
 };
 
 
@@ -470,18 +471,18 @@ func int DIA_Coragon_News_Condition()
 
 func void DIA_Coragon_News_Info()
 {
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_33");	//Прошлой ночью он не смог расплатиться по счету.
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_33 " );	// He couldn't pay his bill last night.
 	if(Valentino.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
-		AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_34");	//Он болтал что-то о том, что его обокрали и что он заплатит мне потом. Как же!
+		AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_34 " );	// He was talking about how he was robbed and that he would pay me later. How!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_35");	//Только что он разорялся о том, как много у него денег.
-		AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_36");	//И тут он запускает руку в карман, делает глупое лицо и говорит, что его обокрали...
+		AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_35 " );	// He's just been pissed off about how much money he has.
+		AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_36 " );	// And then he puts his hand in his pocket, makes a stupid face and says that he was robbed...
 	};
-	AI_Output(other,self,"DIA_Coragon_Add_15_37");	//И? Что ты сделал?
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_38");	//Я?! Задал ему хорошую трепку, что же еще.
+	AI_Output(other,self, " DIA_Coragon_Add_15_37 " );	// And? What did you do?
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_38 " );	// Me?! I gave him a good beating, what else.
 	VALENTINOSHIT = TRUE;
 };
 
@@ -493,13 +494,13 @@ instance DIA_Coragon_Ring(C_Info)
 	condition = DIA_Coragon_Ring_Condition;
 	information = DIA_Coragon_Ring_Info;
 	permanent = FALSE;
-	description = "Вот - возьми это кольцо.";
+	description = " Here, take this ring. " ;
 };
 
 
 func int DIA_Coragon_Ring_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Coragon_News) && (Npc_HasItems(other,ItRi_ValentinosRing) > 0))
+	if ( Npc_KnowsInfo ( other , DIA_Coragon_News ) && ( Npc_HasItems ( other , ItRi_ValentinosRing ) >  0 ))
 	{
 		return TRUE;
 	};
@@ -507,12 +508,12 @@ func int DIA_Coragon_Ring_Condition()
 
 func void DIA_Coragon_Ring_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_Add_15_39");	//Вот - возьми это кольцо.
+	AI_Output(other,self, " DIA_Coragon_Add_15_39 " );	// Here, take this ring.
 	B_GiveInvItems(other,self,ItRi_ValentinosRing,1);
 	Npc_RemoveInvItems(self,ItRi_ValentinosRing,1);
-	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_40");	//Что? Не понимаю...
-	AI_Output(other,self,"DIA_Coragon_Add_15_41");	//Оно принадлежало Валентино.
-	AI_Output(other,self,"DIA_Coragon_Add_15_42");	//Ты можешь передать его следующему, кто отдубасит его...
+	AI_Output(self,other, " DIA_ADDON_NEW_Coragon_Add_09_40 " );	// What? I do not understand...
+	AI_Output(other,self, " DIA_Coragon_Add_15_41 " );	// It belonged to Valentino.
+	AI_Output(other,self, " DIA_Coragon_Add_15_42 " );	// You can pass it on to the next person to beat it...
 	B_GivePlayerXP(300);
 	AI_StopProcessInfos(self);
 };
@@ -525,7 +526,7 @@ instance DIA_CORAGON_TRADERING(C_Info)
 	condition = dia_coragon_tradering_condition;
 	information = dia_coragon_tradering_info;
 	permanent = FALSE;
-	description = "Есть что-нибудь интересное?";
+	description = " Anything interesting? " ;
 };
 
 
@@ -540,18 +541,18 @@ func int dia_coragon_tradering_condition()
 func void dia_coragon_tradering_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Coragon_TradeRing_01_01");	//Есть что-нибудь интересное?
-	AI_Output(self,other,"DIA_Coragon_TradeRing_01_02");	//(раздраженно) Конечно есть!
-	AI_Output(self,other,"DIA_Coragon_TradeRing_01_03");	//В последнее время все, кому не лень, только и делают, что расплачиваются за мою выпивку не золотом, а всяким барахлом!
-	AI_Output(other,self,"DIA_Coragon_TradeRing_01_04");	//Что ты имеешь в виду?
-	AI_Output(self,other,"DIA_Coragon_TradeRing_01_05");	//Да вот, недавно тут один парень пытался всучить мне вместо денег одно кольцо.
-	AI_Output(self,other,"DIA_Coragon_TradeRing_01_07");	//Сказал, что кроме этого кольца у него больше ничего нет.
-	AI_Output(self,other,"DIA_Coragon_TradeRing_01_09");	//Пришлось взять его кольцо - не отпускать же этого парня просто так!
-	AI_Output(self,other,"DIA_Coragon_TradeRing_01_10");	//Правда, колечко то, по-видимому, стоит приличных денег...(ехидно)
-	AI_Output(other,self,"DIA_Coragon_TradeRing_01_13");	//А что это был за парень?
-	AI_Output(self,other,"DIA_Coragon_TradeRing_01_14");	//Кажется, его имя Джо. Он вроде как из портового квартала.
+	AI_Output(other,self, " DIA_Coragon_TradeRing_01_01 " );	// Anything interesting?
+	AI_Output(self,other, " DIA_Coragon_TradeRing_01_02 " );	// (annoyed) Of course there is!
+	AI_Output(self,other, " DIA_Coragon_TradeRing_01_03 " );	// Lately, everyone who is not lazy is doing nothing but paying for my drinks not with gold, but with all sorts of junk!
+	AI_Output(other,self, " DIA_Coragon_TradeRing_01_04 " );	// What do you mean?
+	AI_Output(self,other, " DIA_Coragon_TradeRing_01_05 " );	// Well, not long ago, a guy here tried to give me one ring instead of money.
+	AI_Output(self,other, " DIA_Coragon_TradeRing_01_07 " );	// He said that apart from this ring he had nothing else.
+	AI_Output(self,other, " DIA_Coragon_TradeRing_01_09 " );	// I had to take his ring - don't let this guy go just like that!
+	AI_Output(self,other, " DIA_Coragon_TradeRing_01_10 " );	// True, the ring, apparently, costs decent money ... (sarcastically)
+	AI_Output(other,self, " DIA_Coragon_TradeRing_01_13 " );	// Who was that guy?
+	AI_Output(self,other, " DIA_Coragon_TradeRing_01_14 " );	// I think his name is Joe. He seems to be from the port district.
 	CORAGONTELLJO = TRUE;
-	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Парень по имени Джо пытался расплатиться с Корагоном дорогим кольцом. Возможно, это и есть то самое кольцо, которое украли у Хакона. Надо бы поговорить с Джо и узнать, откуда оно у него.");
+	B_LogEntry( TOPIC_ABIGEILHELPHANNA , " A guy named Joe tried to pay Coragon off with an expensive ring. Maybe this is the same ring that was stolen from Hakon. We should talk to Joe and find out where he got it from. " );
 };
 
 
@@ -562,7 +563,7 @@ instance DIA_CORAGON_TRADERINGME(C_Info)
 	condition = dia_coragon_traderingme_condition;
 	information = dia_coragon_traderingme_info;
 	permanent = FALSE;
-	description = "То кольцо, оно еще у тебя?";
+	description = " That ring, do you still have it? " ;
 };
 
 
@@ -576,12 +577,12 @@ func int dia_coragon_traderingme_condition()
 
 func void dia_coragon_traderingme_info()
 {
-	AI_Output(other,self,"DIA_Coragon_TradeRingMe_01_01");	//То кольцо, оно еще у тебя?
+	AI_Output(other,self, " DIA_Coragon_TradeRingMe_01_01 " );	// That ring, do you still have it?
 	AI_Output(self,other,"DIA_Coragon_TradeRingMe_01_02");	//Конечно.
-	AI_Output(other,self,"DIA_Coragon_TradeRingMe_01_03");	//Тогда, продай мне его!
-	AI_Output(self,other,"DIA_Coragon_TradeRingMe_01_04");	//Продать тебе кольцо? Хммм...(задумчиво) Да нет проблем!
-	AI_Output(other,self,"DIA_Coragon_TradeRingMe_01_06");	//Сколько ты хочешь за него?
-	AI_Output(self,other,"DIA_Coragon_TradeRingMe_01_09");	//Сто золотых монет.
+	AI_Output(other,self, " DIA_Coragon_TradeRingMe_01_03 " );	// Then, sell it to me!
+	AI_Output(self,other, " DIA_Coragon_TradeRingMe_01_04 " );	// Sell you a ring? Hmmm...(thoughtfully) No problem!
+	AI_Output(other,self, " DIA_Coragon_TradeRingMe_01_06 " );	// How much do you want for it?
+	AI_Output(self,other, " DIA_Coragon_TradeRingMe_01_09 " );	// One hundred gold coins.
 };
 
 
@@ -592,7 +593,7 @@ instance DIA_CORAGON_TRADERINGMEDONE(C_Info)
 	condition = dia_coragon_traderingmedone_condition;
 	information = dia_coragon_traderingmedone_info;
 	permanent = TRUE;
-	description = "Продай мне кольцо.";
+	description = " Sell me a ring. " ;
 };
 
 
@@ -606,22 +607,22 @@ func int dia_coragon_traderingmedone_condition()
 
 func void dia_coragon_traderingmedone_info()
 {
-	AI_Output(other,self,"DIA_Coragon_TradeRingMeDone_01_00");	//Продай мне кольцо.
-	AI_Output(self,other,"DIA_Coragon_TradeRingMeDone_01_01");	//(ехидно) А где деньги?
+	AI_Output(other,self, " DIA_Coragon_TradeRingMeDone_01_00 " );	// Sell me a ring.
+	AI_Output(self,other, " DIA_Coragon_TradeRingMeDone_01_01 " );	// (maliciously) Where's the money?
 	if(Npc_HasItems(other,ItMi_Gold) >= 100)
 	{
 		B_GivePlayerXP(100);
 		Npc_RemoveInvItems(other,ItMi_Gold,100);
 		AI_Output(other,self,"DIA_Coragon_TradeRingMeDone_01_02");	//Вот они.
-		AI_Output(self,other,"DIA_Coragon_TradeRingMeDone_01_03");	//Хорошо! Тогда держи кольцо.
+		AI_Output(self,other, " DIA_Coragon_TradeRingMeDone_01_03 " );	// Good! Then keep the ring.
 		B_GiveInvItems(self,other,itri_hakonmissring,1);
 		CORAGONSELLRINGDONE = TRUE;
-		B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Корагон продал мне кольцо. Кажется, оно действительно раньше принадлежало торговцу Хакону.");
+		B_LogEntry( TOPIC_ABIGEILHELPHANNA , " Koragon sold me the ring. It seems to have actually belonged to the merchant Hakon. " );
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Coragon_TradeRingMeDone_01_04");	//У меня их нет.
-		AI_Output(self,other,"DIA_Coragon_TradeRingMeDone_01_05");	//Тогда приходи, когда они у тебя будут.
+		AI_Output(other,self, " DIA_Coragon_TradeRingMeDone_01_04 " );	// I don't have them.
+		AI_Output(self,other, " DIA_Coragon_TradeRingMeDone_01_05 " );	// Then come back when you have them.
 	};
 };
 
@@ -633,7 +634,7 @@ instance DIA_CORAGON_ABOUTKILLIGNAZ(C_Info)
 	condition = dia_coragon_aboutkillignaz_condition;
 	information = dia_coragon_aboutkillignaz_info;
 	permanent = FALSE;
-	description = "Ты что-нибудь слышал об убийстве алхимика Игнаца?";
+	description = " Did you hear anything about the murder of the alchemist Ignaz? " ;
 };
 
 
@@ -648,10 +649,10 @@ func int dia_coragon_aboutkillignaz_condition()
 func void dia_coragon_aboutkillignaz_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Coragon_AboutKillIgnaz_01_00");	//Ты что-нибудь слышал об убийстве алхимика Игнаца?
-	AI_Output(self,other,"DIA_Coragon_AboutKillIgnaz_01_01");	//Не думаю. Я стараюсь держаться подальше от подобного рода тем.
-	AI_Output(self,other,"DIA_Coragon_AboutKillIgnaz_01_04");	//У меня нет времени на то, чтобы слушать, о чем болтают другие люди.
-	B_LogEntry(TOPIC_KILLIGNAZ,"Хозяин городской таверны Корагон сказал, что его вообще не интересуют подобные вещи. Не думаю, что он что-то знает об убийстве Игнаца.");
+	AI_Output(other,self, " DIA_Coragon_AboutKillIgnaz_01_00 " );	// Have you heard anything about the murder of the alchemist Ignaz?
+	AI_Output(self,other, " DIA_Coragon_AboutKillIgnaz_01_01 " );	// I don't think so. I try to stay away from these kinds of topics.
+	AI_Output(self,other, " DIA_Coragon_AboutKillIgnaz_01_04 " );	// I don't have time to listen to what other people are talking about.
+	B_LogEntry( TOPIC_KILLIGNAZ , " Koragon, the city's tavern keeper, said he wasn't interested in such things at all. I don't think he knew anything about killing Ignaz. " );
 	ASKKILLSECOND = TRUE;
 };
 
@@ -662,7 +663,7 @@ instance DIA_Coragon_LoaParty(C_Info)
 	condition = DIA_Coragon_LoaParty_Condition;
 	information = DIA_Coragon_LoaParty_Info;
 	permanent = FALSE;
-	description = "Мне нужна хорошая еда!";
+	description = " I need good food! " ;
 };
 
 func int DIA_Coragon_LoaParty_Condition()
@@ -675,12 +676,12 @@ func int DIA_Coragon_LoaParty_Condition()
 
 func void DIA_Coragon_LoaParty_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_LoaParty_01_01");	//Мне нужна хорошая еда!
-	AI_Output(other,self,"DIA_Coragon_LoaParty_01_02");	//Но только не та, какой ты кормишь своих обычных посетителей, а действительно хорошая - вкусная и свежая.
-	AI_Output(self,other,"DIA_Coragon_LoaParty_01_03");	//Ха, ишь ты какой! Еда моя ему не нравится. Знаешь, хорошая еда стоит приличных денег.
-	AI_Output(other,self,"DIA_Coragon_LoaParty_01_04");	//О деньгах можешь не беспокоиться. Лучше скажи, ты сможешь ее достать?
-	AI_Output(self,other,"DIA_Coragon_LoaParty_01_05");	//Хммм... смогу конечно. Но это будет стоить тебе не меньше тысячи золотых монет.
-	B_LogEntry(TOPIC_LoaSecret,"Корагон сможет достать для меня приличной еды. Но это будет стоить мне тысячу золотых монет.");
+	AI_Output(other,self, " DIA_Coragon_LoaParty_01_01 " );	// I need good food!
+	AI_Output(other,self, " DIA_Coragon_LoaParty_01_02 " );	// But not the one you feed your ordinary visitors, but really good - tasty and fresh.
+	AI_Output(self,other, " DIA_Coragon_LoaParty_01_03 " );	// Ha, look what you are! He doesn't like my food. You know, good food costs decent money.
+	AI_Output(other,self, " DIA_Coragon_LoaParty_01_04 " );	// Don't worry about money. Better tell me, can you get her?
+	AI_Output(self,other, " DIA_Coragon_LoaParty_01_05 " );	// Hmmm... of course I can. But it will cost you at least a thousand gold coins.
+	B_LogEntry(TOPIC_LoaSecret, " Koragon can get me a decent meal. But it will cost me a thousand gold pieces. " );
 };
 
 instance DIA_Coragon_LoaParty_Done(C_Info)
@@ -690,7 +691,7 @@ instance DIA_Coragon_LoaParty_Done(C_Info)
 	condition = DIA_Coragon_LoaParty_Done_Condition;
 	information = DIA_Coragon_LoaParty_Done_Info;
 	permanent = FALSE;
-	description = "Вот твоя тысяча!";
+	description = " Here's your thousand! " ;
 };
 
 func int DIA_Coragon_LoaParty_Done_Condition()
@@ -704,11 +705,11 @@ func int DIA_Coragon_LoaParty_Done_Condition()
 func void DIA_Coragon_LoaParty_Done_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Coragon_LoaParty_Done_01_01");	//Вот твоя тысяча!
+	AI_Output(other,self, " DIA_Coragon_LoaParty_Done_01_01 " );	// Here's your thousand!
 	B_GiveInvItems(other,self,ItMi_Gold,1000);
 	Npc_RemoveInvItems(self,ItMi_Gold,1000);
-	AI_Output(self,other,"DIA_Coragon_LoaParty_Done_01_02");	//Отлично! Загляни ко мне завтра. Думаю, у меня будет чем тебя порадовать.
-	B_LogEntry(TOPIC_LoaSecret,"Я отдал Корагону деньги. Теперь, надо будет заглянуть к нему завтра за едой.");
+	AI_Output(self,other, " DIA_Coragon_LoaParty_Done_01_02 " );	// Great! Come see me tomorrow. I think I will have something to please you.
+	B_LogEntry(TOPIC_LoaSecret, " I gave Coragon the money. Now, I'll have to stop by for food tomorrow. " );
 	CoragonDayParty = Wld_GetDay();
 	AI_StopProcessInfos(self);
 };
@@ -720,7 +721,7 @@ instance DIA_Coragon_LoaParty_GiveFood(C_Info)
 	condition = DIA_Coragon_LoaParty_GiveFood_Condition;
 	information = DIA_Coragon_LoaParty_GiveFood_Info;
 	permanent = FALSE;
-	description = "Как поживает мой заказ?";
+	description = " How is my order doing? " ;
 };
 
 func int DIA_Coragon_LoaParty_GiveFood_Condition()
@@ -737,18 +738,18 @@ func int DIA_Coragon_LoaParty_GiveFood_Condition()
 
 func void DIA_Coragon_LoaParty_GiveFood_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_LoaParty_GiveFood_01_01");	//Как поживает мой заказ?
-	AI_Output(self,other,"DIA_Coragon_LoaParty_GiveFood_01_02");	//Все готово. Можешь забирать!
-	AI_Output(other,self,"DIA_Coragon_LoaParty_GiveFood_01_03");	//Она точно свежая?!
-	AI_Output(self,other,"DIA_Coragon_LoaParty_GiveFood_01_04");	//Лучшей еды тебе не сыскать во всем Хоринисе. Уж поверь мне!
-	AI_Output(other,self,"DIA_Coragon_LoaParty_GiveFood_01_05");	//Ладно, убедил.
+	AI_Output(other,self, " DIA_Coragon_LoaParty_GiveFood_01_01 " );	// How is my order doing?
+	AI_Output(self,other, " DIA_Coragon_LoaParty_GiveFood_01_02 " );	// Everything is ready. You can pick up!
+	AI_Output(other,self, " DIA_Coragon_LoaParty_GiveFood_01_03 " );	// Is it really fresh?!
+	AI_Output(self,other, " DIA_Coragon_LoaParty_GiveFood_01_04 " );	// You won't find better food in all Khorinis. Believe me!
+	AI_Output(other,self, " DIA_Coragon_LoaParty_GiveFood_01_05 " );	// Okay, convinced.
 	B_GiveInvItems(self,other,ItMi_LoaPartyFood,1);
-	B_LogEntry(TOPIC_LoaSecret,"Я достал вкусной и свежей еды для нашего пикника.");
+	B_LogEntry(TOPIC_LoaSecret, " I got some tasty and fresh food for our picnic. " );
 	LoaPartyFood = TRUE;
 
 	if((LoaPartyWine == TRUE) && (LoaPartyFood == TRUE))
 	{
-		B_LogEntry(TOPIC_LoaSecret,"Теперь можно вернуться к Лоа и обсудить с ней остальные моменты предстоящего отдыха.");
+		B_LogEntry(TOPIC_LoaSecret, " Now you can return to Loa and discuss with her the rest of the upcoming vacation. " );
 	};
 
 	AI_StopProcessInfos(self);
