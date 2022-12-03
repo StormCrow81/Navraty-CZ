@@ -1,4 +1,5 @@
 
+
 instance DIA_GOMEZWORKERSOUL_7_EXIT(C_Info)
 {
 	npc = gomezworkersoul_7;
@@ -21,12 +22,12 @@ func void dia_gomezworkersoul_7_exit_info()
 };
 
 
-instance DIA_GOMEZWORKERSOUL_7_HALLO(C_Info)
+instance DIA_GOMEZWORKERSOUL_7_HELLO (C_Info)
 {
 	npc = gomezworkersoul_7;
 	nr = 1;
 	condition = dia_gomezworkersoul_7_hallo_condition;
-	information = dia_gomezworkersoul_7_hallo_info;
+	information = dia_gomezworkersoul_7_hello_info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -40,26 +41,26 @@ func int dia_gomezworkersoul_7_hallo_condition()
 	};
 };
 
-func void dia_gomezworkersoul_7_hallo_info()
+func void dia_gomezworkersoul_7_hello_info()
 {
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 	Snd_Play("MFX_FEAR_CAST");
 	B_GivePlayerXP(50);
-	AI_Output(self,other,"DIA_GomezWorkerSoul_7_HALLO_01_00");	//(мертвым голосом) ЧТО ПРИВЕЛО ТЕБЯ СЮДА, СМЕРТНЫЙ? ЗАЧЕМ ТЫ ТРЕВОЖИШЬ ПОКОЙ МЕРТВЫХ?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_7_HALLO_01_01");	//Меня прислал сюда Гомез.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_7_HALLO_01_02");	//Проклинатель?! Аргххх!.. Что он хочет от меня?
-	AI_Output(other,self,"DIA_GomezWorkerSoul_7_HALLO_01_03");	//Чтобы ты простил его. В обмен на это я сниму с тебя его проклятие.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_7_HALLO_01_00 " );	// (dead voice) WHAT BRING YOU HERE, MORTAL? WHY DO YOU TROUBLE THE REST OF THE DEAD?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_7_HALLO_01_01 " );	// Gomez sent me here.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_7_HALLO_01_02 " );	// Curse?! Arghhh!.. What does he want from me?
+	AI_Output(other,self, " DIA_GomezWorkerSoul_7_HALLO_01_03 " );	// For you to forgive him. In exchange, I will lift his curse from you.
 	Info_ClearChoices(dia_gomezworkersoul_7_hallo);
-	Info_AddChoice(dia_gomezworkersoul_7_hallo,"Ты дашь свое прощение Гомезу?",dia_gomezworkersoul_7_hallo_end);
+	Info_AddChoice(dia_gomezworkersoul_7_hallo, " Will you forgive Gomez? " ,dia_gomezworkersoul_7_hallo_end);
 };
 
-func void dia_gomezworkersoul_7_hallo_end()
+func void dia_gomezworkersoul_7_hello_end()
 {
 	Snd_Play("SFX_INNOSEYE");
-	AI_Output(other,self,"DIA_GomezWorkerSoul_7_HALLO_End_01_01");	//Ты дашь свое прощение Гомезу?
-	AI_Output(self,other,"DIA_GomezWorkerSoul_7_HALLO_End_01_02");	//Тот, кто проклял меня, получит мое прощение...
-	AI_Output(other,self,"DIA_GomezWorkerSoul_7_HALLO_End_01_03");	//Хорошо. Теперь твоя душа наконец-то обретет долгожданный покой.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_7_HALLO_End_01_04");	//Аргххх...
+	AI_Output(other,self, " DIA_GomezWorkerSoul_7_HALLO_End_01_01 " );	// Will you give your forgiveness to Gomez?
+	AI_Output(self,other, " DIA_GomezWorkerSoul_7_HALLO_End_01_02 " );	// Whoever cursed me will receive my forgiveness...
+	AI_Output(other,self, " DIA_GomezWorkerSoul_7_HALLO_End_01_03 " );	// Good. Now your soul will finally find the long-awaited peace.
+	AI_Output(self,other, " DIA_GomezWorkerSoul_7_HALLO_End_01_04 " );	// Arghhh...
 	GOMEZSOULTALK_7 = TRUE;
 	AI_StopProcessInfos(self);
 };
