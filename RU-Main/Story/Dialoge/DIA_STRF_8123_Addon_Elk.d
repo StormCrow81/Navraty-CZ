@@ -1,4 +1,5 @@
 
+
 instance DIA_STRF_8123_Addon_Elk_EXIT(C_Info)
 {
 	npc = STRF_8123_Addon_Elk;
@@ -27,7 +28,7 @@ instance DIA_STRF_8123_Addon_Elk_HELLO(C_Info)
 	condition = DIA_STRF_8123_Addon_Elk_hello_condition;
 	information = DIA_STRF_8123_Addon_Elk_hello_info;
 	permanent = FALSE;
-	description = "Как ты?";
+	description = " How are you? " ;
 };
 
 func int DIA_STRF_8123_Addon_Elk_hello_condition()
@@ -38,7 +39,7 @@ func int DIA_STRF_8123_Addon_Elk_hello_condition()
 func void DIA_STRF_8123_Addon_Elk_hello_info()
 {
 	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Hello_15_00");	//Как ты?
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Hello_08_00");	//Бывало и лучше.
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_Hello_08_00 " );	// Used to be better.
 };
 
 instance DIA_STRF_8123_Addon_Elk_Help(C_Info)
@@ -48,7 +49,7 @@ instance DIA_STRF_8123_Addon_Elk_Help(C_Info)
 	condition = DIA_STRF_8123_Addon_Elk_Help_condition;
 	information = DIA_STRF_8123_Addon_Elk_Help_info;
 	permanent = FALSE;
-	description = "Помощь не нужна?";
+	description = " Do you need help? " ;
 };
 
 func int DIA_STRF_8123_Addon_Elk_Help_condition()
@@ -61,21 +62,21 @@ func int DIA_STRF_8123_Addon_Elk_Help_condition()
 
 func void DIA_STRF_8123_Addon_Elk_Help_info()
 {
-	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Help_01_00");	//Помощь не нужна?
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_01");	//Хочешь вместо меня подолбить эту жилу? Давай, я не против!
-	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Help_01_02");	//Нет, я имел в виду нечто иное.
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_03");	//Если хочешь действительно помочь, лучше достань для меня нормальную кирку.
-	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Help_01_04");	//А с этой что не так?
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_05");	//Эта уже настолько стара, что вот-вот сломается! А орки требуют все больше и больше руды.
-	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Help_01_06");	//Почему бы тебе самому не попросить ее у них?
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_07");	//Как же...(печально) Тут чуть рот откроешь, сразу получишь от них втык в ребра.
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_08");	//Так что приходится самому хорошенько следить за своим инструментом.
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_09");	//Но всему же есть предел!
-	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Help_01_10");	//Ладно, поищу для тебя новую.
+	AI_Output(other,self, " DIA_STRF_8123_Addon_Elk_Help_01_00 " );	// Need help?
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_Help_01_01 " );	// Do you want to gouge this vein instead of me? Come on, I don't mind!
+	AI_Output(other,self, " DIA_STRF_8123_Addon_Elk_Help_01_02 " );	// No, I meant something else.
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_Help_01_03 " );	// If you really want to help, you'd better get me a decent pickaxe.
+	AI_Output(other,self, " DIA_STRF_8123_Addon_Elk_Help_01_04 " );	// What's wrong with this one?
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_Help_01_05 " );	// This one is already so old it's about to break! And the orcs are demanding more and more ore.
+	AI_Output(other,self, " DIA_STRF_8123_Addon_Elk_Help_01_06 " );	// Why don't you ask them yourself?
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_Help_01_07 " );	// How... (sadly) Then you open your mouth a little, you immediately get stuck in the ribs from them.
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_Help_01_08 " );	// So you have to take good care of your tool yourself.
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_Help_01_09 " );	// But there is a limit to everything!
+	AI_Output(other,self, " DIA_STRF_8123_Addon_Elk_Help_01_10 " );	// Okay, I'll look for a new one for you.
 	MIS_ElkKirka = LOG_Running;
 	Log_CreateTopic(TOPIC_ElkKirka,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ElkKirka,LOG_Running);
-	B_LogEntry(TOPIC_ElkKirka,"Элку нужна новая кирка. Его старая вот-вот сломается, а у орков новых инструментов не допросишься.");
+	B_LogEntry(TOPIC_ElkKirka, " Elk needs a new pickaxe. His old one is about to break, and you can't ask the orcs for new tools. " );
 };
 
 instance DIA_STRF_8123_Addon_Elk_FakeKirka(C_Info)
@@ -85,12 +86,12 @@ instance DIA_STRF_8123_Addon_Elk_FakeKirka(C_Info)
 	condition = DIA_STRF_8123_Addon_Elk_FakeKirka_condition;
 	information = DIA_STRF_8123_Addon_Elk_FakeKirka_info;
 	permanent = FALSE;
-	description = "У меня есть для тебя кирка.";
+	description = " I have a pickaxe for you. " ;
 };
 
 func int DIA_STRF_8123_Addon_Elk_FakeKirka_condition()
 {
-	if((MIS_ElkKirka == LOG_Running) && (Npc_HasItems(hero,ItMw_2H_Axe_L_01) >= 1))
+	if (( MIS_ElkKirka == LOG_Running ) && ( Npc_HasItems ( hero , ItMw_2H_Axe_L_01 ) >=  1 )) .
 	{
 		return TRUE;
 	};
@@ -98,21 +99,21 @@ func int DIA_STRF_8123_Addon_Elk_FakeKirka_condition()
 
 func void DIA_STRF_8123_Addon_Elk_FakeKirka_info()
 {
-	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_FakeKirka_01_00");	//У меня есть для тебя кирка.
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_FakeKirka_01_01");	//И что это? Такое же старье, как и у меня.
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_FakeKirka_01_02");	//Парень, достань мне нормальную кирку!
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_FakeKirka_01_03");	//Такую, чтобы она не разлетелась в щепки после первого же удара.
+	AI_Output(other,self, " DIA_STRF_8123_Addon_Elk_FakeKirka_01_00 " );	// I have a pickaxe for you.
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_FakeKirka_01_01 " );	// And what is this? Same old thing as mine.
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_FakeKirka_01_02 " );	// Boy, get me a real pickaxe!
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_FakeKirka_01_03 " );	// Such that it does not shatter into splinters after the first blow.
 	ElkNeedNewKirka = TRUE;
 };
 
-instance DIA_STRF_8123_Addon_Elk_NewKirka(C_Info)
+instance DIA_STRF_8123_Elk_Addon_NewChurch (C_Info);
 {
 	npc = STRF_8123_Addon_Elk;
 	nr = 2;
 	condition = DIA_STRF_8123_Addon_Elk_NewKirka_condition;
 	information = DIA_STRF_8123_Addon_Elk_NewKirka_info;
 	permanent = FALSE;
-	description = "А как тебе эта?";
+	description = " How do you like this one? " ;
 };
 
 func int DIA_STRF_8123_Addon_Elk_NewKirka_condition()
@@ -126,14 +127,14 @@ func int DIA_STRF_8123_Addon_Elk_NewKirka_condition()
 func void DIA_STRF_8123_Addon_Elk_NewKirka_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_NewKirka_01_00");	//А как тебе эта?
+	AI_Output(other,self, " DIA_STRF_8123_Addon_Elk_NewKirka_01_00 " );	// How about this one?
 	B_GiveInvItems(other,self,ItMw_Kirka_New,1);
 	Npc_RemoveInvItems(self,ItMw_Kirka_New,1);
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_NewKirka_01_01");	//Хммм. Вот это совсем другое дело!
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_NewKirka_01_02");	//С таким инструментом я наколочу дневную норму одним махом.
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_NewKirka_01_03");	//Спасибо тебе, приятель!
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_NewKirka_01_01 " );	// Hmmm. Here is a completely different matter!
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_NewKirka_01_02 " );	// With this tool, I'll hit my daily allowance in one fell swoop.
+	AI_Output(self,other, " DIA_STRF_8123_Addon_Elk_NewKirka_01_03 " );	// Thank you, mate!
 	RT_Respect = RT_Respect + 1;
 	MIS_ElkKirka = LOG_Success;
 	Log_SetTopicStatus(TOPIC_ElkKirka,LOG_Success);
-	B_LogEntry(TOPIC_ElkKirka,"Я достал для Элка новую кирку.");
+	B_LogEntry(TOPIC_ElkKirka, " I got Elk a new pickaxe. " );
 };
