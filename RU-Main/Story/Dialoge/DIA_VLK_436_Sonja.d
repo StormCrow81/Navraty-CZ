@@ -1,4 +1,5 @@
 
+
 instance DIA_Sonja_EXIT(C_Info)
 {
 	npc = VLK_436_Sonja;
@@ -34,7 +35,7 @@ instance DIA_Sonja_PICKPOCKET(C_Info)
 
 func int DIA_Sonja_PICKPOCKET_Condition()
 {
-	return C_Beklauen(58,70);
+	return  C_Robbery ( 58 , 70 );
 };
 
 func void DIA_Sonja_PICKPOCKET_Info()
@@ -46,7 +47,7 @@ func void DIA_Sonja_PICKPOCKET_Info()
 
 func void DIA_Sonja_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Sonja_PICKPOCKET);
 };
 
@@ -74,30 +75,30 @@ func int DIA_Sonja_STANDARD_Condition()
 
 func void DIA_Sonja_STANDARD_Info()
 {
-	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
+	if (self.aivar[AIV_TalkedToPlayer] ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Sonja_STANDARD_16_00");	//Если хочешь развлечься, поговори с Бромором.
+		AI_Output(self,other, " DIA_Sonja_STANDARD_16_00 " );	// If you want some fun, talk to Bromor.
 	}
 	else if((other.guild == GIL_DJG) && (Sonja_Says == FALSE))
 	{
-		AI_Output(self,other,"DIA_Sonja_STANDARD_16_01");	//У таких парней как ты одна проблема - вас больше интересуют орки, чем мы.
+		AI_Output(self,other, " DIA_Sonja_STANDARD_16_01 " );	// Guys like you have one problem - you're more interested in orcs than we are.
 		Sonja_Says = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Sonja_STANDARD_16_02");	//Если ты хочешь поговорить, иди, найди себе женщину, и женись на ней.
+		AI_Output(self,other, " DIA_Sonja_STANDARD_16_02 " );	// If you want to talk, go find yourself a woman and marry her.
 	};
 
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_Sonja_GoToSkip(C_Info)
+instances of DIA_Sonja_GoToSkip (C_Info)
 {
 	npc = VLK_436_Sonja;
 	condition = DIA_Sonja_GoToSkip_Condition;
 	information = DIA_Sonja_GoToSkip_Info;
 	permanent = FALSE;
-	description = "Пошли со мной.";
+	description = " Come with me. " ;
 };
 
 func int DIA_Sonja_GoToSkip_Condition()
@@ -110,9 +111,9 @@ func int DIA_Sonja_GoToSkip_Condition()
 
 func void DIA_Sonja_GoToSkip_Info()
 {
-	AI_Output(other,self,"DIA_Sonja_GoToSkip_01_01");	//Пошли со мной.
-	AI_Output(self,other,"DIA_Sonja_GoToSkip_01_02");	//Хорошо! Как скажешь...
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	AI_Output(other,self, " DIA_Sonja_GoToSkip_01_01 " );	// Come with me.
+	AI_Output(self,other, " DIA_Sonja_GoToSkip_01_02 " );	// Good! As you say...
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FollowPlayer");
 };
@@ -136,18 +137,18 @@ func int DIA_Sonja_ArriveSkip_Condition()
 
 func void DIA_Sonja_ArriveSkip_Info()
 {
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_01");	//Это что, и есть мой клиент?!
-	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_02");	//Ну да, как видишь.
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_03");	//Хммм...(удивленно) Но он же пират!
-	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_04");	//А ты что, никогда пиратов не обслуживала?
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_05");	//Ну, почему же...(улыбаясь) Приходилось, конечно.
-	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_06");	//Тогда лучше займись делом! А то вон у него рожа какая красная. Видишь, как его скрючило?
-	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_07");	//Надо подлечить человека! Помочь расслабиться, так сказать, спустить пар. 
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_08");	//Не волнуйся! Я все сделаю в лучшем виде.
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_09");	//Только не забудь потом забрать меня отсюда. Хорошо?
-	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_10");	//Само собой.
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_11");	//Ну, тогда я пошла. (Скипу)...эй, красавчик!
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(self,other, " DIA_Sonja_ArriveSkip_01_01 " );	// Is this my client?!
+	AI_Output(other,self, " DIA_Sonja_ArriveSkip_01_02 " );	// Well, yes, as you can see.
+	AI_Output(self,other, " DIA_Sonja_ArriveSkip_01_03 " );	// Hmmm...(surprised) But he's a pirate!
+	AI_Output(other,self, " DIA_Sonja_ArriveSkip_01_04 " );	// Have you never served pirates?
+	AI_Output(self,other, " DIA_Sonja_ArriveSkip_01_05 " );	// Well, why... (smiling) I had to, of course.
+	AI_Output(other,self, " DIA_Sonja_ArriveSkip_01_06 " );	// Better get busy then! And then he has a red face. See how he got screwed up?
+	AI_Output(other,self, " DIA_Sonja_ArriveSkip_01_07 " );	// We need to heal the person! Help to relax, so to speak, blow off steam.
+	AI_Output(self,other, " DIA_Sonja_ArriveSkip_01_08 " );	// Don't worry! I will do my best.
+	AI_Output(self,other, " DIA_Sonja_ArriveSkip_01_09 " );	// Just don't forget to pick me up later. Good?
+	AI_Output(other,self, " DIA_Sonja_ArriveSkip_01_10 " );	// Of course.
+	AI_Output(self,other, " DIA_Sonja_ArriveSkip_01_11 " );	// Well, then I went. (to Skip)...hey handsome!
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	SonyaJob = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"DanceSkip");
@@ -196,10 +197,10 @@ func int DIA_Sonja_DoBlowJobDone_Condition()
 
 func void DIA_Sonja_DoBlowJobDone_Info()
 {
-	AI_Output(self,other,"DIA_Sonja_DoBlowJobDone_01_01");	//Думаю, мне уже пора возвращаться к Бромору.
-	AI_Output(self,other,"DIA_Sonja_DoBlowJobDone_01_02");	//Ты отведешь меня к нему?
-	AI_Output(other,self,"DIA_Sonja_DoBlowJobDone_01_03");	//Хорошо! Пойдем.
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	AI_Output(self,other, " DIA_Sonja_DoBlowJobDone_01_01 " );	// I think it's time for me to head back to Bromor.
+	AI_Output(self,other, " DIA_Sonja_DoBlowJobDone_01_02 " );	// Will you take me to him?
+	AI_Output(other,self, " DIA_Sonja_DoBlowJobDone_01_03 " );	// Good! Let's go to.
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FollowPlayerBack");
 };
@@ -228,8 +229,8 @@ func void DIA_Sonja_ArriveBromor_Info()
 
 	DayNow = Wld_GetDay();
 
-	AI_Output(self,other,"DIA_Sonja_ArriveBromor_01_01");	//Хорошо! Мы на месте.
-	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_Output(self,other, " DIA_Sonja_ArriveBromor_01_01 " );	// Good! We are in place.
+	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 
 	if(SonyaGoWithMeDay >= (daynow - 3))
 	{
