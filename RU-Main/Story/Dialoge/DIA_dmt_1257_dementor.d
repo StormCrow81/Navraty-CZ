@@ -1,4 +1,5 @@
 
+
 instance DIA_DMT_1257_DEMENTOR_EXIT(C_Info)
 {
 	npc = dmt_1257_dementor;
@@ -70,35 +71,35 @@ func void dia_dmt_1257_dementor_hello_info()
 {
 	//Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_00");	//Хозяин услышал твой зов, презренный смертный...
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_Hello_01_01");	//ЧТО?! Кто ты?
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_02");	//Мое имя Зигос, и я тот, кого прислал мой господин, дабы помочь тебе. Или не ты просил о помощи, молясь перед его алтарем?
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_Hello_01_03");	//Так тебя прислал сам Белиар?
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_04");	//Ты догадлив, смертный.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_06");	//Хозяин знает о твоих намерениях завладеть амулетом, что так рьяно хранят паладины Инноса.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_07");	//И готов тебе подсказать путь, способный вернуть этот утраченный артефакт.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_09");	//Слушай меня внимательно, смертный...
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_10");	//Много веков назад мой господин избрал себе слугу среди смертных, даруя ему способность принимать облик любого человека, выбранного им по своему желанию. Его звали Феллангор!
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_11");	//Хозяин возжелал, чтобы его избранник запятнал доброе имя паладинов и магов Огня, творя ужасные злодеяния в их обличии.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_12");	//Но как и все смертные, тот не справился со столь чудесным даром! Его разум оказался слишком слаб, чтобы совладать с дарованной ему силой.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_13");	//Совсем обезумев, этот ничтожный червь забыл свое истинное предназначение и перестал служить Темному богу.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_14");	//С тех пор он блуждает по миру, принимая обличье разных людей...
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_Hello_01_15");	//А моя роль в этом какая?
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_16");	//А разве ты еще не понял? Будь ты на месте того безумца, то мог бы легко обмануть паладинов, охраняющих амулет Трирамар, затуманив их взор.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_17");	//Правда, для этого тебе бы пришлось найти человека, которому они доверяют. Но наверняка для тебя это не станет большой проблемой.
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_Hello_01_18");	//То есть ты хочешь сказать, что Белиар тоже может даровать мне способность менять свой облик?
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_20");	//Он позволит тебе один раз воспользоваться его даром!
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_01_21");	//И, естественно, только после того, как ты окажешь ему одну небольшую услугу. Ты согласен?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_00 " );	// The master has heard your call, despicable mortal...
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_Hello_01_01 " );	// WHAT?! Who are you?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_02 " );	// My name is Zygos, and I am the one sent by my lord to help you. Or didn't you ask for help, praying before his altar?
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_Hello_01_03 " );	// So Beliar himself sent you?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_04 " );	// You are perceptive, mortal.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_06 " );	// The master knows of your intentions to take possession of the amulet that the paladins of Innos so zealously guard.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_07 " );	// And I'm ready to tell you the way that can return this lost artifact.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_09 " );	// Listen to me carefully, mortal...
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_10 " );	// Many centuries ago, my master chose a servant among mortals, granting him the ability to take on the form of any person he chose at will. His name was Fellangor!
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_11 " );	// The master desired that his chosen one tarnish the good name of paladins and fire mages, doing terrible atrocities in their guise.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_12 " );	// But like all mortals, he did not cope with such a wonderful gift! His mind was too weak to cope with the power bestowed upon him.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_13 " );	// Completely mad, this insignificant worm forgot his true purpose and ceased to serve the Dark God.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_14 " );	// Since then, he has been wandering the world, taking on the guise of various people...
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_Hello_01_15 " );	// And what is my role in this?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_16 " );	// Don't you understand yet? If you were in the place of that madman, you could easily deceive the paladins guarding the Triramar amulet, clouding their eyes.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_17 " );	// True, for this you would have to find a person they trust. But for sure it won't be a big problem for you.
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_Hello_01_18 " );	// So you're saying that Beliar can also grant me the ability to shape-shift?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_20 " );	// He'll let you use his gift once!
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_01_21 " );	// And, of course, only after you do him one small favor. Do you agree?
 	DEMENTORMEET = TRUE;
 	Info_ClearChoices(dia_dmt_1257_dementor_hello);
-	Info_AddChoice(dia_dmt_1257_dementor_hello,"Нет, это все не для меня.",dia_dmt_1257_dementor_hello_no);
+	Info_AddChoice(dia_dmt_1257_dementor_hello, " No, this is not for me. " ,dia_dmt_1257_dementor_hello_no);
 	Info_AddChoice(dia_dmt_1257_dementor_hello,"Да, конечно.",dia_dmt_1257_dementor_hello_yes);
 };
 
 func void dia_dmt_1257_dementor_hello_no()
 {
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_Hello_No_01_01");	//Нет, это все не для меня.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_No_01_02");	//Тогда прощай, смертный! Мы не свидимся более...
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_Hello_No_01_01 " );	// No, this is not for me.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_No_01_02 " );	// Then farewell, mortal! We don't see each other anymore...
 	Info_ClearChoices(dia_dmt_1257_dementor_hello);
 	Info_AddChoice(dia_dmt_1257_dementor_hello,Dialog_Ende,dia_dmt_1257_dementor_hello_ext);
 };
@@ -113,24 +114,24 @@ func void dia_dmt_1257_dementor_hello_ext()
 func void dia_dmt_1257_dementor_hello_yes()
 {
 	AI_Output(other,self,"DIA_DMT_1257_Dementor_Hello_Yes_01_01");	//Да.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_Yes_01_02");	//Что же. Тогда, для начала, вот, - возьми эту вещь.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_Yes_01_02 " );	// Well. Then, for starters, here, take this thing.
 	CreateInvItems(self,itam_zigosmagic,1);
 	B_GiveInvItems(self,other,itam_zigosmagic,1);
 	MIS_BELIARHELPME = LOG_Running;
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_Hello_Yes_01_03");	//Это магический амулет?
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_Yes_01_04");	//Да, именно так. Правда, сейчас, как ты видишь, в нем нет и намека на его магические свойства.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_Yes_01_07");	//Тебе следует найти того безумца, который когда-то поклялся в верности моему хозяину. Найти и убить его!
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_Hello_Yes_01_10");	//Судя по тому, что ты рассказал, этот человек может быть кем угодно!
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_Yes_01_13");	//Просто произнеси слова - '...АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР...' и используй на нем магию полученного тобой амулета.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_Yes_01_14");	//Правда, я боюсь, что его мощь навряд ли сможет полностью лишить твоего будущего врага жизненной силы, ибо он довольно могущественен.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_Yes_01_17");	//Просто убить его у тебя не получится!
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_Hello_Yes_01_19");	//Теперь иди. А после ты получишь свою награду, как помощь, о кой просил моего господина.
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_Hello_Yes_01_03 " );	// Is this a magical amulet?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_Yes_01_04 " );	// Yes, that's right. True, now, as you can see, there is not even a hint of its magical properties in it.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_Yes_01_07 " );	// You should find the madman who once swore allegiance to my master. Find and kill him!
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_Hello_Yes_01_10 " );	// Based on what you said, this person could be anyone!
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_Yes_01_13 " );	// Just say the words - '...ARCH BELIAR NOMEN SAKT DAGAR KHAR...' and use the magic of the amulet you received on him.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_Yes_01_14 " );	// True, I'm afraid that its power is unlikely to completely deprive your future enemy of vitality, because it is quite powerful.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_Yes_01_17 " );	// You can't just kill him!
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_Hello_Yes_01_19 " );	// Now go. And then you will receive your reward, as the help that my master asked for.
 	Log_CreateTopic(TOPIC_BELIARHELPME,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BELIARHELPME,LOG_Running);
-	B_LogEntry(TOPIC_BELIARHELPME,"Белиар откликнулся на мой зов и прислал своего слугу - темного посланника Зигоса. Тот поведал мне историю о неком человеке - Феллангоре, которому Белиар даровал способность принимать облик других людей. Однако его избранник, не выдержав бремени такого могущества, в конце концов попросту обезумел и отрекся от Темного бога.");
-	Log_AddEntry(TOPIC_BELIARHELPME,"Как оказалось, Зигос рассказал мне историю об этом безумце не просто так. Воспользовавшись способностью принимать облик другого человека, я смогу обмануть и ввести в заблуждение любого, кого захочу, том числе и паладинов Инноса, охраняющих амулет на острове. Правда, этому человеку они должны доверять.");
-	Log_AddEntry(TOPIC_BELIARHELPME,"Однако чтобы заполучить в свои руки эту темную магию, Зигос сперва потребовал от меня найти и убить того безумца, что в свое время отверг его хозяина. Этот человек может быть кем угодно, и мне придется приложить немало усилий, чтобы отыскать его. На случай если я его встречу, Зигос дал мне магический амулет, сила которого поможет мне одолеть избранника Белиара.");
-	Log_AddEntry(TOPIC_BELIARHELPME,"Перед тем как я использую амулет на своей жертве, мне необходимо произнести слова заклинания - 'АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР'. Без них сила амулета не подействует. Также Зигос предупредил меня, что амулет не способен в одночасье убить того безумца, поэтому мне придется использовать его несколько раз.");
+	B_LogEntry( TOPIC_BELIARHELPME , " Beliar answered my call and sent his servant - the dark messenger Zygos. He told me a story about a certain person - Fellangor, to whom Beliar granted the ability to take on the appearance of other people. However, his chosen one, unable to withstand the burden of such power, at the end in the end, he simply went mad and renounced the Dark God. " );
+	Log_AddEntry( TOPIC_BELIARHELPME , " As it turns out, Zygos told me the story of this madman for a reason. Using the ability to take on the form of another person, I can deceive and mislead anyone I want, including the paladins of Innos guarding the amulet on the island. True , this is the person they should trust. " );
+	Log_AddEntry( TOPIC_BELIARHELPME , " However, in order to get my hands on this dark magic, Zygos first demanded that I find and kill the madman who had rejected his master in his time. This person can be anyone, and I will have to work hard to find him. In case I meet him, Zygos gave me a magical amulet, the power of which will help me defeat Beliar's chosen one. " );
+	Log_AddEntry( TOPIC_BELIARHELPME , " Before I use the amulet on my victim, I need to say the words of the spell - 'ARCH BELIAR NOMEN SAKT DAGAR HAR'. Without them, the power of the amulet will not work. Zygos also warned me that the amulet is not capable of killing him overnight crazy, so I'll have to use it multiple times. " );
 	if(CurrentLevel == NEWWORLD_ZEN)
 	{
 		B_StartOtherRoutine(Fellan,"Insane");
@@ -151,13 +152,13 @@ instance DIA_DMT_1257_DEMENTOR_WHATITMEANS(C_Info)
 	condition = dia_dmt_1257_dementor_whatitmeans_condition;
 	information = dia_dmt_1257_dementor_whatitmeans_info;
 	permanent = FALSE;
-	description = "Что означают слова 'АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР'?";
+	description = " What do the words 'ARCH BELIAR NOMEN SAKT DAGAR KHAR' mean? " ;
 };
 
 
 func int dia_dmt_1257_dementor_whatitmeans_condition()
 {
-	if((MIS_BELIARHELPME == LOG_Running) && (FELLANGORSAVE == FALSE) && (INSANEKILLDONE == FALSE))
+	if (( MY_BELIARHELPME  == LOG_Running) && ( FELLANGORSAVE  ==  FALSE ) && ( INSANEKILLDONE  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -165,8 +166,8 @@ func int dia_dmt_1257_dementor_whatitmeans_condition()
 
 func void dia_dmt_1257_dementor_whatitmeans_info()
 {
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_WhatItMeans_01_00");	//Что означают слова 'АРХ БЕЛИАР НОМЭН САКТ ДАГАР ХАР'?
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_WhatItMeans_01_01");	//На древнем языке Тьмы они означают: 'ВО ИМЯ БЕЛИАРА, ПОВЕЛИТЕЛЯ ТЬМЫ И ВЛАСТЕЛИНА СИЛ ЗЛА - ВЕРНИ СИЛУ БОГА СВОЕГО И УПЛАТИ НАЗНАЧЕННУЮ ЦЕНУ'.
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_WhatItMeans_01_00 " );	// What do the words 'ARCH BELIAR NOMEN SAKT DAGAR KHAR' mean?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_WhatItMeans_01_01 " );	// In the ancient language of Darkness, they mean: 'IN THE NAME OF BELIARS, LORD OF THE DARKNESS AND LORD OF THE FORCES OF EVIL - RETURN THE POWER OF YOUR GOD AND PAY THE PRICE SET FOR'.
 };
 
 
@@ -177,7 +178,7 @@ instance DIA_DMT_1257_DEMENTOR_DONEPRICE(C_Info)
 	condition = dia_dmt_1257_dementor_doneprice_condition;
 	information = dia_dmt_1257_dementor_doneprice_info;
 	permanent = FALSE;
-	description = "Я выполнил то, что ты просил.";
+	description = " I did what you asked. " ;
 };
 
 
@@ -192,30 +193,30 @@ func int dia_dmt_1257_dementor_doneprice_condition()
 func void dia_dmt_1257_dementor_doneprice_info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_DonePrice_01_00");	//Я выполнил то, о чем ты просил.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_01");	//(могущественно) Мне это уже известно! Мой господин будет доволен этой новостью.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_04");	//А тот амулет, что я тебе дал, - он еще при тебе?
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_DonePrice_01_00 " );	// I did what you asked for.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_01 " );	// (powerfully) I already know that! My master will be pleased with this news.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_04 " );	// And that amulet that I gave you, is it still with you?
 	if(Npc_HasItems(hero,itam_zigosmagic) >= 1)
 	{
-		AI_Output(other,self,"DIA_DMT_1257_Dementor_DonePrice_01_05");	//Да, вот он.
-		AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_06");	//Хорошо. Тогда оставь его у себя в качестве обещанной тебе награды.
-		AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_07");	//Хотя, по всей видимости, ты сейчас не понимаешь, как тебе его использовать в твоем предстоящем деле.
+		AI_Output(other,self, " DIA_DMT_1257_Dementor_DonePrice_01_05 " );	// Yes, here it is.
+		AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_06 " );	// Good. Then keep it with you as your promised reward.
+		AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_07 " );	// Although, apparently, you do not understand now how you will use it in your upcoming case.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_DMT_1257_Dementor_DonePrice_01_08");	//У меня его нет.
-		AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_09");	//(гневно) Глупец! Неужели ты его потерял?
-		AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_10");	//Именно он и был обещанной наградой за твои труды!
+		AI_Output(other,self, " DIA_DMT_1257_Dementor_DonePrice_01_08 " );	// I don't have one.
+		AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_09 " );	// (angrily) Stupid! Have you lost it?
+		AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_10 " );	// It was he who was the promised reward for your labors!
 	};
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_DonePrice_01_12");	//Может, тогда объяснишь, для чего он мне нужен?
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_13");	//Конечно. Лишив избранника Белиара жизненной силы, этот артефакт впитал в себя и частицу его божественного дара.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_14");	//Поэтому, воспользовавшись им, ты бы смог принять облик любого другого из ныне живущих смертных.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_15");	//Правда, всего один раз. После этого сила амулета иссякнет.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_19");	//Но использовав магию амулета и приняв облик другого человека, тебе нельзя будет сражаться или использовать любые другие магические заклинания.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePrice_01_20");	//Его чары - крайне хрупкая субстанция, и при любом на нее воздействии она мгновенно будет уничтожена.
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_DonePrice_01_12 " );	// Maybe then you can explain why I need it?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_13 " );	// Of course. Having deprived Beliar's chosen one of vitality, this artifact absorbed a particle of his divine gift.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_14 " );	// Therefore, using it, you could take the form of any other living mortal.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_15 " );	// True, only once. After that, the power of the amulet will run out.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_19 " );	// But after using the amulet's magic and taking on the form of another person, you won't be able to fight or use any other magic spells.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePrice_01_20 " );	// Its enchantment is an extremely fragile substance, and any impact on it will instantly destroy it.
 	MIS_BELIARHELPME = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_BELIARHELPME,LOG_SUCCESS);
-	B_LogEntry(TOPIC_BELIARHELPME,"Я сообщил Зигосу, что расправился с тем безумцем и спросил о своей награде. На это Зигос ответил мне, что моя награда - амулет, что я получил от него ранее. Лишив свою жертву жизненных сил, этот артефакт впитал в себя частицу божественного дара, коим Белиар наградил своего безумного слугу. И теперь я смогу использовать его, чтобы принять облик любого другого человека, но всего лишь один раз. Зигос также предупредил, что, использовав силу амулета, мне нельзя сражаться или использовать какое-либо магическое заклинание, иначе чары его магии моментально развеются.");
+	B_LogEntry(TOPIC_BELIARHELPME,"I informed Zygos that I had dealt with that madman and asked about my reward. To this, Zygos replied that my reward was an amulet that I received from him earlier. After depriving his victim of vitality, this artifact absorbed a piece of the divine gift that Beliar bestowed on his mad servant, and now I can use it to take on the form of any other person, but only once. spell, otherwise the spell of his magic will be instantly dispelled.");
 };
 
 
@@ -226,7 +227,7 @@ instance DIA_DMT_1257_DEMENTOR_HOWUSEAM(C_Info)
 	condition = dia_dmt_1257_dementor_howuseam_condition;
 	information = dia_dmt_1257_dementor_howuseam_info;
 	permanent = FALSE;
-	description = "Как мне использовать амулет?";
+	description = " How do I use the amulet? " ;
 };
 
 
@@ -240,11 +241,11 @@ func int dia_dmt_1257_dementor_howuseam_condition()
 
 func void dia_dmt_1257_dementor_howuseam_info()
 {
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_HowUseAm_01_00");	//Как мне использовать амулет?
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_HowUseAm_01_01");	//Все очень просто. Надень его и заговори с тем, в кого хочешь превратиться.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_HowUseAm_01_02");	//А после произнеси слова заклинания, которые разбудят магию амулета.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_HowUseAm_01_04");	//Слушай и запоминай - '...ГВАР САХ ЭСК ШАТАР...'! Без них сила амулета не пойдствует на твою жертву.
-	B_LogEntry(TOPIC_BELIARHELPME,"Зигос объяснил мне, как использовать силу амулета. Мне необходимо надеть его и заговорить с тем, в кого собираюсь превратиться. А после произнести слова заклинания - 'ГВАР САХ ЭСК ШАТАР'.");
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_HowUseAm_01_00 " );	// How do I use the amulet?
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_HowUseAm_01_01 " );	// It's very simple. Put it on and talk to whoever you want to become.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_HowUseAm_01_02 " );	// And then say the words of the spell that will awaken the magic of the amulet.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_HowUseAm_01_04 " );	// Listen and remember - '...GVAR SAKH ESK SHATAR...'! Without them, the power of the amulet will not affect your victim.
+	; _ _ _ _ _ _
 	CANUSEZIGOSMAGIC = TRUE;
 	Info_ClearChoices(dia_dmt_1257_dementor_howuseam);
 	Info_AddChoice(dia_dmt_1257_dementor_howuseam,Dialog_Ende,dia_dmt_1257_dementor_howuseam_ext);
@@ -265,13 +266,13 @@ instance DIA_DMT_1257_DEMENTOR_DONEPRICEFAILED(C_Info)
 	condition = dia_dmt_1257_dementor_donepricefailed_condition;
 	information = dia_dmt_1257_dementor_donepricefailed_info;
 	permanent = FALSE;
-	description = "Я не смог выполнить твое поручение.";
+	description = " I couldn't complete your task. " ;
 };
 
 
 func int dia_dmt_1257_dementor_donepricefailed_condition()
 {
-	if((MIS_BELIARHELPME == LOG_Running) && (FELLANGORSAVE == TRUE))
+	if (( MY_BELIARHELP  == LOG_Running) && ( FELLOWSAVE  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -279,10 +280,10 @@ func int dia_dmt_1257_dementor_donepricefailed_condition()
 
 func void dia_dmt_1257_dementor_donepricefailed_info()
 {
-	AI_Output(other,self,"DIA_DMT_1257_Dementor_DonePriceFailed_01_00");	//Я не смог выполнить твое поручение.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePriceFailed_01_01");	//(разочарованно) Можешь ничего не рассказывать! Я и так уже знаю об этом.
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePriceFailed_01_02");	//Теперь ты можешь не рассчитывать на помощь со стороны моего господина!
-	AI_Output(self,other,"DIA_DMT_1257_Dementor_DonePriceFailed_01_04");	//Прощай, смертный. Мы не свидимся более...
+	AI_Output(other,self, " DIA_DMT_1257_Dementor_DonePriceFailed_01_00 " );	// I failed to complete your task.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePriceFailed_01_01 " );	// (disappointed) You don't have to say anything! I already know about it.
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePriceFailed_01_02 " );	// Now you can not count on help from my master!
+	AI_Output(self,other, " DIA_DMT_1257_Dementor_DonePriceFailed_01_04 " );	// Farewell, mortal. We don't see each other anymore...
 	MIS_BELIARHELPME = LOG_OBSOLETE;
 	Log_SetTopicStatus(TOPIC_BELIARHELPME,LOG_OBSOLETE);
 	Info_ClearChoices(dia_dmt_1257_dementor_donepricefailed);
