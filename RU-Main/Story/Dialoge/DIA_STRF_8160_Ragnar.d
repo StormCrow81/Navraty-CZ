@@ -1,5 +1,6 @@
 
-var int RagnarPissOff;
+
+where int RagnarPissOff;
 
 instance DIA_STRF_8160_Ragnar_EXIT(C_Info)
 {
@@ -19,7 +20,7 @@ func void DIA_STRF_8160_Ragnar_exit_info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_STRF_8160_Ragnar_PreHello(C_Info)
+instance DIA_STRF_8160_Ragnar_PreHello (C_Info);
 {
 	npc = STRF_8160_Ragnar;
 	nr = 2;
@@ -39,9 +40,9 @@ func int DIA_STRF_8160_Ragnar_PreHello_condition()
 
 func void DIA_STRF_8160_Ragnar_PreHello_info()
 {
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_PreHello_01_00");	//Что, тоже пришел посмеяться надо мной? Давай, мне уже все равно.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_PreHello_01_01");	//О чем это ты говоришь?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_PreHello_01_02");	//Я говорю - оставь меня! Дай мне уже умереть спокойно.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_PreHello_01_00 " );	// What, come to laugh at me too? Come on, I don't care anymore.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_PreHello_01_01 " );	// What are you talking about?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_PreHello_01_02 " );	// I say - leave me! Let me die in peace already.
 	AI_StopProcessInfos(self);
 };
 
@@ -52,12 +53,12 @@ instance DIA_STRF_8160_Ragnar_Hello(C_Info)
 	condition = DIA_STRF_8160_Ragnar_Hello_condition;
 	information = DIA_STRF_8160_Ragnar_Hello_info;
 	permanent = FALSE;
-	description = "Похоже, что у тебя проблемы, приятель.";
+	description = " Looks like you're in trouble mate. " ;
 };
 
 func int DIA_STRF_8160_Ragnar_Hello_condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_STRF_8160_Ragnar_PreHello) == TRUE)
+	if ( Npc_KnowsInfo ( hero , DIA_STRF_8160_Ragnar_PreHello ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -65,109 +66,109 @@ func int DIA_STRF_8160_Ragnar_Hello_condition()
 
 func void DIA_STRF_8160_Ragnar_Hello_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_01_00");	//Похоже, что у тебя проблемы, приятель.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_01_01");	//Проблемы? (ворчливо) Да что ты! У меня их вообще нет.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_01_02");	//Только если не считать того, что я беглый каторжник и уже почти неделю ничего не ел.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_01_03");	//Ну, вот видишь? Тебе определенно нужна моя помощь!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_01_04");	//Хммм...(с подозрением) А ты вообще сам кто такой будешь?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_01_00 " );	// Looks like you're in trouble, mate.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_01_01 " );	// Problems? (grouchily) What are you doing! I don't have them at all.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_01_02 " );	// Except that I'm an escaped convict and haven't eaten anything in almost a week.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_01_03 " );	// Well, you see? You definitely need my help!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_01_04 " );	// Hmmm... (suspiciously) Who are you, anyway?
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_Hello);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Я тоже сидел за барьером, как и ты.",DIA_STRF_8160_Ragnar_Hello_W1);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Простой искатель приключений.",DIA_STRF_8160_Ragnar_Hello_W2);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Это я разрушил барьер над колонией!",DIA_STRF_8160_Ragnar_Hello_W3);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " I also sat behind the barrier, just like you. " ,DIA_STRF_8160_Ragnar_Hello_W1);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " Simple Adventurer. " ,DIA_STRF_8160_Ragnar_Hello_W2);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " I broke the barrier over the colony! " ,DIA_STRF_8160_Ragnar_Hello_W3);
 };
 
 func void DIA_STRF_8160_Ragnar_Hello_W1()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_W1_01_00");	//Я тоже сидел за барьером, как и ты.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_W1_01_00 " );	// I also sat behind the barrier, just like you.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_W1_01_01");	//Правда?!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_W1_01_02");	//Я слышал, что все беглые каторжане пошли либо в наемники, либо подались к бандитам.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_W1_01_02 " );	// I heard that all the fugitive convicts either became mercenaries or joined the bandits.
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_Hello);
 
 	if(hero.guild == GIL_SLD)
 	{
-		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Как видишь, я и есть наемник с фермы Онара.",DIA_STRF_8160_Ragnar_Hello_Q2);
+		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " As you can see, I am the mercenary from Onar's farm. " ,DIA_STRF_8160_Ragnar_Hello_Q2);
 	}
 	else
 	{
-		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Это все не для меня!",DIA_STRF_8160_Ragnar_Hello_Q1);
+		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " This is not for me! " ,DIA_STRF_8160_Ragnar_Hello_Q1);
 	};
 
-	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"А я как раз и есть бандит.",DIA_STRF_8160_Ragnar_Hello_Q3);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " And I'm just a bandit. " ,DIA_STRF_8160_Ragnar_Hello_Q3);
 };
 
 func void DIA_STRF_8160_Ragnar_Hello_W2()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_W2_01_00");	//Я простой искатель приключений.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_W2_01_01");	//Что же, тогда ты пришел не в то место, парень.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_W2_01_02");	//Как видишь, тут нет никаких приключений.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_W2_01_00 " );	// I'm a simple adventurer.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_W2_01_01 " );	// Well, then you've come to the wrong place, boy.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_W2_01_02 " );	// As you can see, there are no adventures here.
 };
 
 func void DIA_STRF_8160_Ragnar_Hello_W3()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_W3_01_00");	//Это я разрушил барьер над колонией!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_W3_01_01");	//Ну да, по тебе и видно.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_W3_01_00 " );	// I destroyed the barrier above the colony!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_W3_01_01 " );	// Well, yes, you can see it.
 };
 
 func void DIA_STRF_8160_Ragnar_Hello_Q1()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Q1_01_00");	//Это все не для меня! Я предпочитаю не связываться ни с теми, ни с другими.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Q1_01_01");	//А на твоем месте я бы лучше подался либо в город, либо в монастырь к магам Огня.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Q1_01_02");	//Ну, или в крайнем случае, можно всегда отправиться в лагерь Братства.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Q1_01_03");	//Им там всегда нужны новые послушники!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q1_01_04");	//О, нет. Только не к ним! Я этих придурков еще со времен Барьера на дух не переношу!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q1_01_05");	//Только и знают, что курить целыми днями свой болотник и трещать о каком-то Спящем.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q1_01_06");	//Насчет города я и сам уже подумывал. Да только их стража меня вряд ли пустит дальше городских ворот.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q1_01_07");	//А уж в монастыре мне и подавно ничего не светит. Куда мне в маги с таким прошлым?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Q1_01_00 " );	// This is not for me! I prefer not to mess with either one or the other.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Q1_01_01 " );	// And if I were you, I'd rather go either to the city or to the monastery with the Firebenders.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Q1_01_02 " );	// Well, or as a last resort, you can always go to the Brotherhood camp.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Q1_01_03 " );	// They always need new acolytes there!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q1_01_04 " );	// Oh no. Just not to them! I can't stand these idiots since the Barrier!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q1_01_05 " );	// All they know is to smoke their swamp all day long and talk about some Sleeper.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q1_01_06 " );	// I've already thought about the city myself. Yes, only their guards are unlikely to let me go beyond the city gates.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q1_01_07 " );	// And even more so, nothing shines for me in the monastery. Where do I go to magicians with such a past?
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_Hello);
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 100)
 	{
-		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Вот тебе сотня золотых.",DIA_STRF_8160_Ragnar_Hello_T1);
+		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " Here's a hundred gold coins for you. " ,DIA_STRF_8160_Ragnar_Hello_T1);
 	};
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 1000)
 	{
-		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Держи тысячу монет и перестань ворчать!",DIA_STRF_8160_Ragnar_Hello_T2);
+		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " Hold a thousand coins and stop grumbling! " ,DIA_STRF_8160_Ragnar_Hello_T2);
 	};
 
-	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Тогда твои дела действительно плохи.",DIA_STRF_8160_Ragnar_Hello_T3);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " Then you're in really bad shape. " ,DIA_STRF_8160_Ragnar_Hello_T3);
 };
 
 func void DIA_STRF_8160_Ragnar_Hello_Q2()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Q2_01_00");	//Как видишь, я и есть наемник с фермы Онара.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q2_01_01");	//Вижу, не слепой. Я тоже уже пытался прибиться к ним.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q2_01_02");	//Но эта скотина Сентенза попытался содрать с меня за вход полсотни золотых.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q2_01_03");	//Естественно, у меня не было с собой ни гроша, поэтому он просто послал меня к Белиару!
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Q2_01_04");	//Со мной он тоже пытался провернуть подобный фокус.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q2_01_05");	//И что ты сделал?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Q2_01_00 " );	// As you can see, I am the mercenary from Onar's farm.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q2_01_01 " );	// I see, not blind. I've also tried to get on them.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q2_01_02 " );	// But that bastard Sentenza tried to charge me fifty gold coins for my entry.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q2_01_03 " );	// Naturally, I didn't have a penny with me, so he just sent me to Beliar!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Q2_01_04 " );	// With me, he also tried to pull off a similar trick.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q2_01_05 " );	// And what did you do?
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_Hello);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Заплатил, конечно! По-другому никак.",DIA_STRF_8160_Ragnar_Hello_Y1);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Неважно, что я сделал.",DIA_STRF_8160_Ragnar_Hello_Y2);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " Paid, of course! No other way. " ,DIA_STRF_8160_Ragnar_Hello_Y1);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " It doesn't matter what I did. " ,DIA_STRF_8160_Ragnar_Hello_Y2);
 };
 
 func void DIA_STRF_8160_Ragnar_Hello_Y1()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Y1_01_06");	//Заплатил, конечно! По-другому никак.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y1_01_07");	//Хммм... Да, я бы поступил точно так же, если бы они у меня были.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y1_01_08");	//Может быть, одолжишь мне полсотни монет?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y1_01_09");	//А уж я в долгу не остался бы! Что скажешь?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Y1_01_06 " );	// Paid, of course! No other way.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Y1_01_07 " );	// Hmmm... Yes, I would do exactly the same if I had them.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Y1_01_08 " );	// Could you lend me fifty coins?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Y1_01_09 " );	// And I wouldn't be in debt! What do you say?
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_Hello);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Нет, ты что! Это же целая куча золота.",DIA_STRF_8160_Ragnar_Hello_R1);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " No, that's a whole bunch of gold. " ,DIA_STRF_8160_Ragnar_Hello_R1);
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 50)
 	{
-		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Конечно, приятель! Так уж и быть, выручу тебя.",DIA_STRF_8160_Ragnar_Hello_R2);
+		Info_AddChoice(DIA_STRF_8160_Ragnar_Hello, " Of course buddy! I'll help you out anyway. " ,DIA_STRF_8160_Ragnar_Hello_R2);
 	};
 };
 
 func void DIA_STRF_8160_Ragnar_Hello_Y2()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Y2_01_10");	//Неважно что я сделал. Главное, что этот ублюдок не получил от меня ни гроша.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y2_01_11");	//А ты смельчак, я погляжу...(уважительно) Может, и мне стоило надрать ему задницу?
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Y2_01_12");	//Конечно! Только так ты сможешь его заставить тебя уважать.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y2_01_13");	//Ну ладно...(почесывая затылок) Тогда отдохну немного, а потом пойду разберусь с этим парнем.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y2_01_14");	//Спасибо за совет, приятель.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Y2_01_10 " );	// Doesn't matter what I did. The main thing is that this bastard did not get a penny from me.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Y2_01_11 " );	// And you're a daredevil, I'll see... (respectfully) Maybe I should have kicked his ass too?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Y2_01_12 " );	// Of course! That's the only way you can make him respect you.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Y2_01_13 " );	// Okay...(scratching the back of his head) Then I'll rest for a while, and then I'll go and deal with this guy.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Y2_01_14 " );	// Thanks for the tip, mate.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Y2_01_15");	//Не за что.
 	AI_StopProcessInfos(self);
 	RagnarKill = TRUE;
@@ -175,9 +176,9 @@ func void DIA_STRF_8160_Ragnar_Hello_Y2()
 
 func void DIA_STRF_8160_Ragnar_Hello_Q3()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Q3_01_00");	//А я как раз и есть бандит! Так что давай сюда свое золото.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q3_01_01");	//У меня нет ни гроша...(обреченно) Так что, если хочешь, то можешь просто убить меня!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q3_01_02");	//Давай, мне уже все равно...
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_Q3_01_00 " );	// And I'm just a bandit! So bring your gold here.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q3_01_01 " );	// I don't have a penny...(doomed) So if you want, you can just kill me!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_Q3_01_02 " );	// Come on, I don't care anymore...
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
 };
@@ -185,9 +186,9 @@ func void DIA_STRF_8160_Ragnar_Hello_Q3()
 
 func void DIA_STRF_8160_Ragnar_Hello_R1()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_R1_01_00");	//Нет, ты что! Это же целая куча золота.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_R1_01_01");	//Ну вот...(угрюмо) Доверился человеку! А ему каких-то полсотни золотых жалко.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_R1_01_02");	//Проваливай! Мне с таким как ты больше нечего обсуждать.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_R1_01_00 " );	// No, what are you! It's a whole bunch of gold.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_R1_01_01 " );	// Well... (sullenly) I trusted the man! And he feels sorry for some fifty gold coins.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_R1_01_02 " );	// Get lost! I have nothing more to discuss with someone like you.
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
 };
@@ -195,13 +196,13 @@ func void DIA_STRF_8160_Ragnar_Hello_R1()
 func void DIA_STRF_8160_Ragnar_Hello_R2()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_R2_01_00");	//Конечно, приятель! Так уж и быть, выручу тебя.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_R2_01_00 " );	// Of course, mate! So be it, I will rescue you.
 	B_GiveInvItems(other,self,ItMi_Gold,50);
 	Npc_RemoveInvItems(self,ItMi_Gold,50);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_R2_01_01");	//Вот, это другое дело. Сразу видно, что передо мной человек, а не кусок дерьма.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_R2_01_02");	//Значит, теперь можно и к наемникам податься. Только сначала отдохну немного, а потом уже двину на ферму.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_R2_01_03");	//Там и увидимся!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_R2_01_04");	//Само собой.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_R2_01_01 " );	// Here, that's another matter. It is immediately clear that in front of me is a person, and not a piece of shit.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_R2_01_02 " );	// So, now you can go to the mercenaries. Only first I will rest a little, and then I will move to the farm.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_R2_01_03 " );	// See you there!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_R2_01_04 " );	// Of course.
 	AI_StopProcessInfos(self);
 	RagnarIsSLD = TRUE;
 };
@@ -209,15 +210,15 @@ func void DIA_STRF_8160_Ragnar_Hello_R2()
 func void DIA_STRF_8160_Ragnar_Hello_T1()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T1_01_00");	//Вот тебе сотня золотых. Только перестань ныть.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T1_01_00 " );	// Here's a hundred gold pieces for you. Just stop whining.
 	B_GiveInvItems(other,self,ItMi_Gold,100);
 	Npc_RemoveInvItems(self,ItMi_Gold,100);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T1_01_01");	//И зачем ты мне даешь это золото?
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T1_01_02");	//Отдашь его страже, что стоит у южных ворот города.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T1_01_03");	//За такую сумму они без лишних вопросов спокойно пропустят тебя.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T1_01_04");	//Ну, раз так... Тогда, пожалуй, отправлюсь в город и попытаю там свое счастье.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T1_01_05");	//Хорошо, тогда еще увидимся.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T1_01_06");	//Само собой.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T1_01_01 " );	// And why are you giving me this gold?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T1_01_02 " );	// You will give it to the guards at the southern gates of the city.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T1_01_03 " );	// For that amount, they'll let you pass without question.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T1_01_04 " );	// Well, if so... Then, perhaps, I'll go to the city and try my luck there.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T1_01_05 " );	// Okay, see you later.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T1_01_06 " );	// Of course.
 	AI_StopProcessInfos(self);
 	RagnarIsMIL = TRUE;
 };
@@ -226,25 +227,25 @@ func void DIA_STRF_8160_Ragnar_Hello_T1()
 func void DIA_STRF_8160_Ragnar_Hello_T2()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T2_01_00");	//Держи тысячу монет и перестань ворчать!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T2_01_00 " );	// Hold a thousand coins and stop grumbling!
 	B_GiveInvItems(other,self,ItMi_Gold,1000);
 	Npc_RemoveInvItems(self,ItMi_Gold,1000);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_01");	//Парень, ты что с ума сошел? (удивленно) Ты и вправду хочешь отдать мне столько золота?!
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T2_01_02");	//Маги Огня в монастыре требуют от каждого вновь прибывшего небольшую подать.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T2_01_03");	//А этой суммы вполне хватит, чтобы замолить все твои старые грехи.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_04");	//Не думал, что на свете бывают такие люди, как ты...(с уважением) Но все порой ошибаются.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_05");	//Ладно, тогда, пожалуй, отправлюсь в монастырь. К тому же я слышал, что они делают превосходное вино!
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T2_01_07");	//Там и увидимся.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_08");	//Само собой.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T2_01_01 " );	// Boy, are you out of your mind? (surprised) Do you really want to give me that much gold?!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T2_01_02 " );	// The Fire Mages at the monastery demand a small tribute from each newcomer.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T2_01_03 " );	// And this amount is enough to atone for all your old sins.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T2_01_04 " );	// I didn't think that there are people like you in the world... (respectfully) But everyone makes mistakes sometimes.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T2_01_05 " );	// Okay, then, perhaps, I'll go to the monastery. Plus, I heard they make excellent wine!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T2_01_07 " );	// I'll see you there.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T2_01_08 " );	// Of course.
 	AI_StopProcessInfos(self);
 	RagnarIsNOV = TRUE;
 };
 
 func void DIA_STRF_8160_Ragnar_Hello_T3()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T3_01_00");	//Тогда твои дела действительно плохи.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T3_01_01");	//Вот уж удивил! Все это я и без тебя знаю.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T3_01_02");	//Эх...(угрюмо) Лучше ступай куда шел и оставь меня в покое.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Hello_T3_01_00 " );	// Then you're really in trouble.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T3_01_01 " );	// I'm surprised! I know all this without you.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Hello_T3_01_02 " );	// Eh...(sullenly) You'd better go where you're going and leave me alone.
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
 };
@@ -269,11 +270,11 @@ func int DIA_STRF_8160_Ragnar_PissOff_condition()
 
 func void DIA_STRF_8160_Ragnar_PissOff_info()
 {
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_PissOff_01_00");	//Отстань! Не до тебя...
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_PissOff_01_00 " );	// Back off! Not up to you...
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_STRF_8160_Ragnar_Wait(C_Info)
+instance DIA_STRF_8160_Ragnar_Wait (C_Info) .
 {
 	npc = STRF_8160_Ragnar;
 	nr = 2;
@@ -298,17 +299,17 @@ func void DIA_STRF_8160_Ragnar_Wait_info()
 		AI_PlayAniBS(self,"T_STAND_2_SIT",BS_SIT);
 	};
 
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_00");	//Постой! Вот черт... даже встать не могу.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Wait_01_01");	//Что еще такое?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_02");	//Я столько дней уже не ел, что, похоже, окончательно выбился из сил.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_03");	//Может быть, ты принесешь мне что-нибудь перекусить?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_04");	//Скажем, обычный кусок жареного мяса и бутылку воды.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_05");	//Большего я не прошу...(печально) Но без этого я долго не протяну.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Wait_01_06");	//Ладно, жди здесь. Принесу тебе еды.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Wait_01_00 " );	// Wait! Damn... I can't even stand up.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Wait_01_01 " );	// What else is this?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Wait_01_02 " );	// I haven't eaten for so many days that I seem to be completely exhausted.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Wait_01_03 " );	// Maybe you could bring me something to eat?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Wait_01_04 " );	// Let's say a regular piece of grilled meat and a bottle of water.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_Wait_01_05 " );	// I don't ask for more... (sadly) But I won't last long without it.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_Wait_01_06 " );	// Okay, wait here. I'll bring you food.
 	MIS_RagnarFood = LOG_Running;
 	Log_CreateTopic(TOPIC_RagnarFood,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RagnarFood,LOG_Running);
-	B_LogEntry(TOPIC_RagnarFood,"Рагнар так долго не ел, что совсем обессилел. Придется помочь бедняге и принести ему немного еды, а именно кусок жареного мяса и бутылку воды.");
+	B_LogEntry(TOPIC_RagnarFood, " Ragnar hasn't eaten in such a long time that he's completely exhausted. We'll have to help the poor fellow and bring him some food, namely a piece of fried meat and a bottle of water. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -319,7 +320,7 @@ instance DIA_STRF_8160_Ragnar_WaitDone(C_Info)
 	condition = DIA_STRF_8160_Ragnar_WaitDone_condition;
 	information = DIA_STRF_8160_Ragnar_WaitDone_info;
 	permanent = FALSE;
-	description = "Вот твоя еда.";
+	description = " Here's your food. " ;
 };
 
 func int DIA_STRF_8160_Ragnar_WaitDone_condition()
@@ -333,20 +334,20 @@ func int DIA_STRF_8160_Ragnar_WaitDone_condition()
 func void DIA_STRF_8160_Ragnar_WaitDone_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_WaitDone_01_00");	//Вот твоя еда.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_WaitDone_01_00 " );	// Here's your food.
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(other,ItFoMutton,1);
 	Npc_RemoveInvItems(other,ItFo_Water,1);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_WaitDone_01_01");	//Ох, спасибо тебе, приятель. Не дал мне все-таки умереть с голоду.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_WaitDone_01_02");	//Наслаждайся.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_WaitDone_01_01 " );	// Oh, thank you, buddy. He didn't let me die of hunger.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_WaitDone_01_02 " );	// Enjoy.
 	MIS_RagnarFood = LOG_Success;
 	Log_SetTopicStatus(TOPIC_RagnarFood,LOG_Success);
-	B_LogEntry(TOPIC_RagnarFood,"Я не дал Рагнару умереть с голоду.");
+	B_LogEntry(TOPIC_RagnarFood, " I kept Ragnar from starving. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Pear");
 };
 
-//--------------------------------ветка монастыря------------------------------------------------
+// --------------------------------monastery branch-------------- ----------------------------------
 
 
 instance DIA_STRF_8160_Ragnar_NOV(C_Info)
@@ -356,12 +357,12 @@ instance DIA_STRF_8160_Ragnar_NOV(C_Info)
 	condition = DIA_STRF_8160_Ragnar_NOV_condition;
 	information = DIA_STRF_8160_Ragnar_NOV_info;
 	permanent = FALSE;
-	description = "Как все прошло?";
+	description = " How did it go? " ;
 };
 
 func int DIA_STRF_8160_Ragnar_NOV_condition()
 {
-	if((Kapitel >= 2) && (self.guild == GIL_NOV))
+	if ((Chapter >=  2 ) && (self.guild ==  GIL_NOV ))
 	{
 		return TRUE;
 	};
@@ -369,13 +370,13 @@ func int DIA_STRF_8160_Ragnar_NOV_condition()
 
 func void DIA_STRF_8160_Ragnar_NOV_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_01_00");	//Как все прошло?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_01_01");	//Благодаря твоей помощи, маги приняли меня в послушники монастыря. Но все-таки я немного разочарован.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_01_02");	//Что еще такое?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_01_03");	//Да все бы ничего, но я целыми днями только и делаю, что мету полы да гну спину на грядке.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_01_04");	//Все вокруг мне твердят, что мол прежде всего необходимо научиться терпению, и на это могут уйти целые годы! 
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_01_05");	//Но это все же лучше, чем умирать с голоду в лесу. Не так ли?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_01_06");	//Да уж, с тобой не поспоришь...(посмеиваясь)
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_01_00 " );	// How did it go?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_01_01 " );	// Thanks to your help, the magicians accepted me as a monk of the monastery. But still, I'm a little disappointed.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_01_02 " );	// What else is this?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_01_03 " );	// Yes, everything would be fine, but all day long I do nothing but sweep the floors and bend my back in the garden.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_01_04 " );	// Everyone around me keeps telling me that the first step is to learn patience, and this can take years!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_01_05 " );	// But it's still better than starving in the forest. Is not it?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_01_06 " );	// Yeah, you can't argue with you... (chuckling)
 };
 
 
@@ -386,12 +387,12 @@ instance DIA_STRF_8160_Ragnar_NOV_Q1(C_Info)
 	condition = DIA_STRF_8160_Ragnar_NOV_Q1_condition;
 	information = DIA_STRF_8160_Ragnar_NOV_Q1_info;
 	permanent = FALSE;
-	description = "Тебе просто надо произвести впечатление на магов.";
+	description = " You just need to impress mages. " ;
 };
 
 func int DIA_STRF_8160_Ragnar_NOV_Q1_condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_STRF_8160_Ragnar_NOV) == TRUE)
+	if ( Npc_KnowsInfo ( hero , DIA_STRF_8160_Ragnar_NOV ) ==  TRUE )
 	{
 		return TRUE;
 	};
@@ -399,42 +400,42 @@ func int DIA_STRF_8160_Ragnar_NOV_Q1_condition()
 
 func void DIA_STRF_8160_Ragnar_NOV_Q1_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1_01_01");	//Тебе просто надо произвести впечатление на магов.
- 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_02");	//Я уже думал над этим. И у меня даже созрела одна идейка!
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1_01_03");	//Что ты задумал?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_04");	//Я слышал, что мастеру Неорасу срочно понадобился помощник. Но он пока еще не выбрал никого из числа послушников.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_05");	//А еще мне стало известно, что он крайне заинтересован в редких травах для своих экспериментов.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1_01_06");	//И что конкретно его интересует?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_07");	//Некое растение, которое он называет вишней троллей. Белиар его знает, как оно выглядит и где его искать!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_08");	//Так вот, если я принесу ему эту траву, то он наверняка сделает выбор в мою пользу.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1_01_09");	//Тогда чего же ты ждешь? Ступай и найди ее!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_10");	//Не все так просто, друг мой...(печально) Парлан никогда не выпустит меня за пределы монастыря.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_11");	//Этот старый хрыч постоянно следит за тем, что я делаю. И, кажется, не особо мне доверяет.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_12");	//Вот я и подумал: может быть, ты сможешь достать для меня это растение?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1_01_01 " );	// You just need to impress the mages.
+ 	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_01_02 " );	// I already thought about it. And I even came up with an idea!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1_01_03 " );	// What are you thinking?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_01_04 " );	// I heard that Master Neoras needed an assistant urgently. But he has not yet chosen any of the novices.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_01_05 " );	// I also learned that he is extremely interested in rare herbs for his experiments.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1_01_06 " );	// And what exactly is he interested in?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_01_07 " );	// Some plant he calls troll cherry. Beliar knows what it looks like and where to look for it!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_01_08 " );	// So, if I bring him this herb, he will surely make a choice in my favor.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1_01_09 " );	// Then what are you waiting for? Go and find her!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_01_10 " );	// Not everything is so simple, my friend... (sadly) Parlan will never let me out of the monastery.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_01_11 " );	// This old bastard keeps an eye on what I'm doing. And he doesn't seem to trust me much.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_01_12 " );	// So I thought: maybe you can get this plant for me?
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_NOV_Q1);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_NOV_Q1,"Ладно. Постараюсь достать его для тебя.",DIA_STRF_8160_Ragnar_NOV_Q1_Yes);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_NOV_Q1,"Нет уж, делай все сам!",DIA_STRF_8160_Ragnar_NOV_Q1_No);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_NOV_Q1, " Okay. I'll try to get it for you. " ,DIA_STRF_8160_Ragnar_NOV_Q1_Yes);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_NOV_Q1, " No, do it yourself! " ,DIA_STRF_8160_Ragnar_NOV_Q1_No);
 };
 
 func void DIA_STRF_8160_Ragnar_NOV_Q1_Yes()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1_Yes_01_01");	//Ладно. Постараюсь достать его для тебя.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_Yes_01_02");	//Спасибо тебе, приятель. Ты просто не представляешь, как мне надоело мести эти кельи и возделывать землю под виноградник!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_Yes_01_03");	//В конце концов, я не для того выбрался из Долины Рудников, чтобы вновь вкалывать как проклятый!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1_Yes_01_01 " );	// Okay. I'll try to get it for you.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_Yes_01_02 " );	// Thank you, buddy. You just can't imagine how tired I am of sweeping these cells and cultivating the land for a vineyard!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_Yes_01_03 " );	// After all, I didn't make it out of the Valley of Mines to work like hell again!
 	MIS_RagnarNeoras = LOG_Running;
 	Log_CreateTopic(TOPIC_RagnarNeoras,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RagnarNeoras,LOG_Running);
-	B_LogEntry(TOPIC_RagnarNeoras,"Рагнар недоволен тем, что ему приходится целыми днями гнуть спину в монастыре. Но он слышал, что мастеру Неорасу понадобился помощник. Чтобы произвести на него впечатление, Рагнару нужно принести ему редкое растение - вишню троллей, и он попросил меня достать это растение, поскольку ему самому запрещено покидать монастырь.");
+	B_LogEntry(TOPIC_RagnarNeoras, " Ragnar is unhappy that he has to bend his back all day in the monastery. But he heard that Master Neoras needed an assistant. To impress him, Ragnar needs to bring him a rare plant - troll cherry, and he asked me to get this plant, since he himself is forbidden to leave the monastery. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertItem(ITPL_SUPER_HERB,"FP_ITEM_RAGNARFLOWER");
 };
 
 func void DIA_STRF_8160_Ragnar_NOV_Q1_No()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1_No_01_01");	//Нет уж, делай все сам!
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1_No_01_02");	//Я тебе и так уже помог поступить в монастырь. На остальное у меня просто нет времени.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_No_01_03");	//Эх, ладно... Похоже, мне до конца своих дней придется подметать эти кельи.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_No_01_04");	//А я очень рассчитывал на тебя, приятель...
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1_No_01_01 " );	// No, do it yourself!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1_No_01_02 " );	// I already helped you enter the monastery. I just don't have time for the rest.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_No_01_03 " );	// Oh, okay... Looks like I'll have to sweep these cells for the rest of my days.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1_No_01_04 " );	// And I really counted on you, buddy...
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
 };
@@ -446,7 +447,7 @@ instance DIA_STRF_8160_Ragnar_NOV_Q1Done(C_Info)
 	condition = DIA_STRF_8160_Ragnar_NOV_Q1Done_condition;
 	information = DIA_STRF_8160_Ragnar_NOV_Q1Done_info;
 	permanent = FALSE;
-	description = "Я принес нужное тебе растение.";
+	description = " I brought the plant you need. " ;
 };
 
 func int DIA_STRF_8160_Ragnar_NOV_Q1Done_condition()
@@ -460,15 +461,15 @@ func int DIA_STRF_8160_Ragnar_NOV_Q1Done_condition()
 func void DIA_STRF_8160_Ragnar_NOV_Q1Done_info()
 {
 	B_GivePlayerXP(350);
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1Done_01_00");	//Я принес нужное тебе растение.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1Done_01_00 " );	// I brought the plant you need.
 	B_GiveInvItems(other,self,ITPL_SUPER_HERB,1);
 	Npc_RemoveInvItems(self,ITPL_SUPER_HERB,1);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1Done_01_01");	//Ого! Никогда бы не подумал, что оно так выглядит.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1Done_01_02");	//Вместо того, чтобы чесать языком, лучше поскорей отнеси его мастеру Неорасу.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1Done_01_03");	//Да, приятель, ты прав! А то вдруг мое местечко займет кто-то другой.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1Done_01_01 " );	// Wow! Never thought it would look like this.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Q1Done_01_02 " );	// Instead of scratching your tongue, take it to Master Neoras as soon as possible.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Q1Done_01_03 " );	// Yes, buddy, you're right! And then suddenly someone else will take my place.
 	MIS_RagnarNeoras = LOG_Success;
 	Log_SetTopicStatus(TOPIC_RagnarNeoras,LOG_Success);
-	B_LogEntry(TOPIC_RagnarNeoras,"Я принес Рагнару нужное ему растение.");
+	B_LogEntry(TOPIC_RagnarNeoras, " I brought Ragnar the plant he wanted. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Neoras");
 };
@@ -482,7 +483,7 @@ instance DIA_STRF_8160_Ragnar_NOV_Neoras(C_Info)
 	condition = DIA_STRF_8160_Ragnar_NOV_Neoras_condition;
 	information = DIA_STRF_8160_Ragnar_NOV_Neoras_info;
 	permanent = FALSE;
-	description = "Все получилось?";
+	description = " Did everything work out? " ;
 };
 
 func int DIA_STRF_8160_Ragnar_NOV_Neoras_condition()
@@ -495,10 +496,10 @@ func int DIA_STRF_8160_Ragnar_NOV_Neoras_condition()
 
 func void DIA_STRF_8160_Ragnar_NOV_Neoras_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Neoras_01_00");	//Все получилось?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Neoras_01_01");	//(довольно) Как видишь. Теперь я помощник мастера Неораса! И все это благодаря тебе.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Neoras_01_02");	//Вот, возьми это зелье. Мне его дал сам Неорас за то, что я принес ему ту траву.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Neoras_01_03");	//Мне кажется, оно по праву твое.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_NOV_Neoras_01_00 " );	// Did everything work out?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Neoras_01_01 " );	// (pretty) As you can see. I am now Master Neoras' assistant! And it's all thanks to you.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Neoras_01_02 " );	// Here, take this potion. Neoras himself gave it to me because I brought him that herb.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_NOV_Neoras_01_03 " );	// I think it's rightfully yours.
 	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
 	RangarFireContestDay = Wld_GetDay();
 };
@@ -510,7 +511,7 @@ instance DIA_STRF_8160_Ragnar_BecameKDF(C_Info)
 	condition = DIA_STRF_8160_Ragnar_BecameKDF_condition;
 	information = DIA_STRF_8160_Ragnar_BecameKDF_info;
 	permanent = FALSE;
-	description = "Что нового?";
+	description = " What's new? " ;
 };
 
 func int DIA_STRF_8160_Ragnar_BecameKDF_condition()
@@ -519,7 +520,7 @@ func int DIA_STRF_8160_Ragnar_BecameKDF_condition()
 
 	DayNow = Wld_GetDay();
 
-	if((Npc_KnowsInfo(hero,DIA_STRF_8160_Ragnar_NOV_Neoras) == TRUE) && (Kapitel >= 4) && (RangarFireContestDay < DayNow))
+	if ((Npc_KnowsInfo(hero,DAY_STRF_8160_Ragnar_NOV_Night) ==  TRUE ) && (Chapter >=  4 ) && (FightFireContestDay < DayNow))
 	{
 		return TRUE;
 	};
@@ -527,14 +528,14 @@ func int DIA_STRF_8160_Ragnar_BecameKDF_condition()
 
 func void DIA_STRF_8160_Ragnar_BecameKDF_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_01_00");	//Что нового?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_01_01");	//Недавно началось испытание Огня...(нервозно) Для меня и еще нескольких послушников.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_01_02");	//По-моему, тебе это пришлось не слишком по душе.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_01_03");	//У меня не было выбора. Мастер Неорас лично предложил мою кандидатуру Пирокару!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_01_04");	//И теперь я ума не приложу, как мне со всем этим справиться.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_01_05");	//Если я провалю это испытание, то наверняка сильно подведу мастера Неораса.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_01_06");	//И тогда мне вновь придется вкалывать с мотыгой в руках на виноградниках.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_01_07");	//А как ты понимаешь, это занятие не из приятных!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_01_00 " );	// What's new?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_01_01 " );	// Trial of Fire just started... (nervously) For me and a few other novices.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_01_02 " );	// I don't think you liked it too much.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_01_03 " );	// I didn't have a choice. Master Neoras personally proposed my candidacy to Pirokar!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_01_04 " );	// And now I have no idea how I can deal with all this.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_01_05 " );	// If I fail this test, I'll surely let Master Neoras down badly.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_01_06 " );	// And then I'll have to work again with a hoe in my hands in the vineyards.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_01_07 " );	// And as you understand, this is not a pleasant occupation!
 };
 
 instance DIA_STRF_8160_Ragnar_BecameKDF_Q1(C_Info)
@@ -544,7 +545,7 @@ instance DIA_STRF_8160_Ragnar_BecameKDF_Q1(C_Info)
 	condition = DIA_STRF_8160_Ragnar_BecameKDF_Q1_condition;
 	information = DIA_STRF_8160_Ragnar_BecameKDF_Q1_info;
 	permanent = FALSE;
-	description = "Какое задание дали тебе Маги?";
+	description = " What task did the Magi give you? " ;
 };
 
 func int DIA_STRF_8160_Ragnar_BecameKDF_Q1_condition()
@@ -557,40 +558,40 @@ func int DIA_STRF_8160_Ragnar_BecameKDF_Q1_condition()
 
 func void DIA_STRF_8160_Ragnar_BecameKDF_Q1_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_00");	//Какое задание дали тебе маги?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_01");	//Сделать руну огненной стрелы. Но я даже не знаю, с чего мне стоит начать.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_02");	//Мне кажется, что для начала тебе понадобится рунный камень.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_03");	//Даже ты это знаешь...(обреченно) Вот и скажи - какой из бывшего рудокопа-каторжника маг Огня?
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_04");	//Тут уж ничего не поделаешь, приятель. Придется тебе хотя бы попробовать.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_05");	//Знаешь, а у меня тут появилась одна идея.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_06");	//Раз ты лучше меня разбираешься во всем этом - может, достанешь для меня эту руну?
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_07");	//Что?! С чего ты это вдруг взял?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_08");	//Ну, ты же меня знаешь, я в долгу не останусь.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_09");	//Тут, в подвале монастыря, есть много всяких ценных штуковин!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_10");	//И я бы мог поделиться с тобой всем этим добром. Так скажем, услуга за услугу.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_11");	//Как тебе такое предложение?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_00 " );	// What task did the magicians give you?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_01 " );	// Make a fire arrow rune. But I don't even know where to start.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_02 " );	// I think you'll need a runestone first.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_03 " );	// Even you know that...(doomedly) So tell me - which of the former miner-convict is a magician of Fire?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_04 " );	// There's nothing you can do about it, mate. You'll have to at least try.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_05 " );	// You know, I have an idea here.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_06 " );	// Since you're better than me at all this, maybe you can get this rune for me?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_07 " );	// What?! Why did you suddenly take it?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_08 " );	// Well, you know me, I will not remain in debt.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_09 " );	// Here, in the basement of the monastery, there are all sorts of valuable things!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_10 " );	// And I could share all this goodness with you. Let's say it's a quid pro quo.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_11 " );	// How do you like this offer?
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_BecameKDF_Q1);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_BecameKDF_Q1,"Хорошо, по рукам!",DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_BecameKDF_Q1,"Нет, я больше не хочу с этим связываться.",DIA_STRF_8160_Ragnar_BecameKDF_Q1_No);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_BecameKDF_Q1, " Daughter, yes! " ,DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_BecameKDF_Q1, " No, I don't want to deal with this anymore. " ,DIA_STRF_8160_Ragnar_BecameKDF_Q1_No);
 };
 
 func void DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_01");	//Хорошо, по рукам!
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_02");	//Только это должна быть действительно очень ценная штуковина.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_03");	//Я тебя понял, приятель...(посмеиваясь) Не волнуйся за это.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_01 " );	// Okay, deal with it!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_02 " );	// Only it has to be a really, really valuable thing.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_03 " );	// I got you, buddy... (chuckling) Don't worry about it.
 	MIS_RagnarRune = LOG_Running;
 	Log_CreateTopic(TOPIC_RagnarRune,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RagnarRune,LOG_Running);
-	B_LogEntry(TOPIC_RagnarRune,"Рагнара заставили участвовать в испытании Огня! Маги ему дали задание - изготовить руну огненной стрелы. Однако бедолага даже не знает, как подойти к этой задаче. Если он провалит испытание, то наверняка ему снова придется вкалывать по-черному. За мою помощь он обещал дать мне очень ценную вещь из сокровищницы монастыря.");
+	B_LogEntry(TOPIC_RagnarRune, " Ragnar was forced to participate in the Trial of Fire! The magicians gave him the task of making a fireball rune. However, the poor fellow does not even know how to approach this task. If he fails the test, then he will probably have to work hard again. For he promised to give me my help a very valuable thing from the treasury of the monastery. " );
 	AI_StopProcessInfos(self);
-	Wld_InsertItem(ItRu_FireBolt,"FP_ITEM_RAGNARRUNE");
+	Wld_InsertItem(ItRu_FireBolt, " FP_ITEM_RAGNARRUNE " );
 };
 
 func void DIA_STRF_8160_Ragnar_BecameKDF_Q1_No()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_No_01_01");	//Нет, я больше не хочу с этим связываться.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_No_01_02");	//Ладно, как знаешь. Придется как-то самому выкручиваться.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_No_01_01 " );	// No, I don't want to mess with this anymore.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1_No_01_02 " );	// Okay, as you know. You'll have to get out somehow.
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
 };
@@ -602,7 +603,7 @@ instance DIA_STRF_8160_Ragnar_BecameKDF_Q1Done(C_Info)
 	condition = DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_condition;
 	information = DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_info;
 	permanent = FALSE;
-	description = "Вот твоя руна.";
+	description = " Here's your rune. " ;
 };
 
 func int DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_condition()
@@ -616,36 +617,36 @@ func int DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_condition()
 func void DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_00");	//Вот твоя руна.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_00 " );	// Here's your rune.
 	B_GiveInvItems(other,self,ItRu_FireBolt,1);
-	Npc_RemoveInvItems(self,ItRu_FireBolt,1);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_01");	//(в восторге) Я так и знал, что у тебя все получится! Теперь мне больше нечего опасаться за свою судьбу!
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_02");	//А где моя награда?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_03");	//Конечно, я не забыл о нашем договоре. Вот, возьми эту старую книгу.
+	Npc_RemoveInvItems(self,ItRu_FireBolt, 1 );
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_01 " );	// (delighted) I knew you could do it! Now I have nothing more to fear for my fate!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_02 " );	// Where's my reward?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_03 " );	// Of course, I haven't forgotten about our contract. Here, take this old book.
 	B_GiveInvItems(self,other,ItWr_MonasterySecret,1);
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_04");	//Книга?! А поинтереснее ничего не было?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_05");	//Не спеши! Я думаю, что она представляет огромную ценность для магов.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_06");	//Ведь я ее забрал из закрытой секции библиотеки монастыря. 
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_07");	//Правда, пришлось немало потрудится, чтобы отвлечь внимание Таламона. Но мне это все-таки удалось!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_08");	//И пока он был занят чем-то другим, я стащил эту книгу с одной из книжных полок.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_09");	//Ладно, потом посмотрю, что за книга. А сейчас мне пора.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_10");	//Удачи, приятель! А я тогда пойду к Пирокару и покажу ему свою поделку.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_11");	//Порадую старика...(посмеиваясь)
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_04 " );	// Book?! Was there anything more interesting?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_05 " );	// Don't rush! I think it is of great value to sorcerers.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_06 " );	// After all, I took it from the closed section of the monastery library.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_07 " );	// True, it took a lot of work to divert Talamon's attention. But I still succeeded!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_08 " );	// And while he was busy doing something else, I stole this book from one of the bookshelves.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_09 " );	// Okay, I'll see what book it is later. And now it's time for me.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_10 " );	// Good luck mate! And then I'll go to Pirokar and show him my craft.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_11 " );	// I'll please the old man... (chuckling)
 	MIS_RagnarRune = LOG_Success;
 	Log_SetTopicStatus(TOPIC_RagnarRune,LOG_Success);
-	B_LogEntry(TOPIC_RagnarRune,"Я принес Рагнару магическую руну. За это он дал мне какую-то старую труху в виде книги.");
+	B_LogEntry(TOPIC_RagnarRune, " I brought Ragnar a magical rune. For that he gave me some old trash in the form of a book. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Pyrokar");
 };
 
-instance DIA_STRF_8160_Ragnar_KDF(C_Info)
+instance DIA_STRF_8160_Ragnar_KDF (C_Info) .
 {
 	npc = STRF_8160_Ragnar;
 	nr = 2;
 	condition = DIA_STRF_8160_Ragnar_KDF_condition;
 	information = DIA_STRF_8160_Ragnar_KDF_info;
 	permanent = FALSE;
-	description = "Значит, ты теперь маг Огня!";
+	description = " So you're a Firebender now! " ;
 };
 
 func int DIA_STRF_8160_Ragnar_KDF_condition()
@@ -658,16 +659,16 @@ func int DIA_STRF_8160_Ragnar_KDF_condition()
 
 func void DIA_STRF_8160_Ragnar_KDF_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_KDF_01_00");	//Значит, ты теперь маг Огня!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_KDF_01_01");	//(озадаченно) Я и сам не могу в это поверить...
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_KDF_01_02");	//Всего каких-то пару недель назад я умирал с голоду в лесу.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_KDF_01_03");	//А теперь я один из самых уважаемых людей монастыря. Бывает же такое!
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_KDF_01_04");	//Надеюсь, что теперь моя помощь тебе больше не нужна?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_KDF_01_05");	//Пока нет...(ехидно) А там, кто знает.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_KDF_01_06");	//Даже не думай.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_KDF_01_00 " );	// So you're a Firebender now!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_KDF_01_01 " );	// (puzzled) I can't believe it myself...
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_KDF_01_02 " );	// Just a couple of weeks ago, I was starving in the woods.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_KDF_01_03 " );	// And now I am one of the most respected people of the monastery. It happens!
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_KDF_01_04 " );	// Hope you don't need my help now?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_KDF_01_05 " );	// Not yet... (maliciously) And there, who knows.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_KDF_01_06 " );	// Don't even think about it.
 };
 
-//--------------------------------------------Рагнар милишник-------------------------------------------------
+// ---------------------------------------------Ragnar Militiaman-- ----------------------------------------------
 
 instance DIA_STRF_8160_Ragnar_MIL(C_Info)
 {
@@ -676,12 +677,12 @@ instance DIA_STRF_8160_Ragnar_MIL(C_Info)
 	condition = DIA_STRF_8160_Ragnar_MIL_condition;
 	information = DIA_STRF_8160_Ragnar_MIL_info;
 	permanent = FALSE;
-	description = "Ты вступил в ополчение?";
+	description = " Have you joined the militia? " ;
 };
 
 func int DIA_STRF_8160_Ragnar_MIL_condition()
 {
-	if((Kapitel >= 2) && (self.guild == GIL_MIL))
+	if ((Capital >=  2 ) && (self.guild ==  GIL_MIL ))
 	{
 		return TRUE;
 	};
@@ -689,16 +690,16 @@ func int DIA_STRF_8160_Ragnar_MIL_condition()
 
 func void DIA_STRF_8160_Ragnar_MIL_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_01_00");	//Ты вступил в ополчение?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_01_01");	//Не по своей прихоти. Я сделал все так, как ты и сказал.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_01_02");	//Отдал сотню монет стражникам, что стояли у входа, и вежливо попросил их пустить меня в город.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_01_03");	//Но не тут-то было! Они схватили меня и приволокли в свои казармы к какому-то лорду Андрэ!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_01_04");	//Тот долго меня допрашивал, и в итоге передо мной встал выбор.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_01_05");	//Либо пойти служить в ополчении, либо отправиться в тюрьму!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_01_06");	//Так что теперь я стою здесь на посту и охраняю вход в башню.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_01_07");	//Но по мне это лучше, чем болтаться на виселице с веревкой на шее.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_01_08");	//Да уж, приятель. Похоже, ты просто пошел не к тем воротам.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_01_09");	//Хотя это уже не так и важно.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_01_00 " );	// Have you joined the militia?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_01_01 " );	// Not on a whim. I did everything just like you said.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_01_02 " );	// I gave a hundred coins to the guards that stood at the entrance, and politely asked them to let me into the city.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_01_03 " );	// But it wasn't there! They grabbed me and dragged me to their barracks to some Lord Andre!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_01_04 " );	// He interrogated me for a long time, and in the end I was faced with a choice.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_01_05 " );	// Either join the militia or go to jail!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_01_06 " );	// So now I'm standing guard here and guarding the entrance to the tower.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_01_07 " );	// But for me it's better than hanging from the gallows with a rope around your neck.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_01_08 " );	// Yeah, mate. Looks like you just went to the wrong gate.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_01_09 " );	// Though it doesn't matter anymore.
 };
 
 instance DIA_STRF_8160_Ragnar_MIL_Q1(C_Info)
@@ -708,7 +709,7 @@ instance DIA_STRF_8160_Ragnar_MIL_Q1(C_Info)
 	condition = DIA_STRF_8160_Ragnar_MIL_Q1_condition;
 	information = DIA_STRF_8160_Ragnar_MIL_Q1_info;
 	permanent = FALSE;
-	description = "Помощь больше не нужна?";
+	description = " Need no more help? " ;
 };
 
 func int DIA_STRF_8160_Ragnar_MIL_Q1_condition()
@@ -721,33 +722,33 @@ func int DIA_STRF_8160_Ragnar_MIL_Q1_condition()
 
 func void DIA_STRF_8160_Ragnar_MIL_Q1_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1_01_00");	//Помощь больше не нужна?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_01_01");	//Да чем ты мне можешь помочь, приятель?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_01_02");	//Вот если бы я сам как-нибудь отличился перед лордом Андрэ...
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_01_03");	//Тогда, глядишь, и не пришлось бы торчать тут весь день как проклятому.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1_01_04");	//А у тебя есть мысли на этот счет?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_01_05");	//Я тут слышал, что недалеко от южных городских стен видели нескольких бандитов.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_01_06");	//Было бы неплохо разобраться с ними! И награда за их головы наверняка немаленькая.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1_01_07");	//И что тебя останавливает?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_01_08");	//Как что?! Я просто не могу покинуть свой пост! 
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_01_09");	//Если кто-то из ополчения об этом узнает, то мне придется ой как несладко.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1_01_00 " );	// No more help needed?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_01_01 " );	// How can you help me, mate?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_01_02 " );	// Now, if I myself somehow distinguished myself in front of Lord Andre ...
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_01_03 " );	// Then, you see, you wouldn't have to hang around here all day like a damned one.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1_01_04 " );	// Do you have any thoughts on this?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_01_05 " );	// I've heard that a few bandits have been seen near the southern city walls.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_01_06 " );	// It would be nice to deal with them! And the bounty on their heads is surely rather big.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1_01_07 " );	// And what's stopping you?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_01_08 " );	// Like what?! I just can't leave my post!
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_01_09 " );	// If someone from the militia finds out about this, then I will have a hard time.
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_MIL_Q1);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1,"Давай я разберусь с ними.",DIA_STRF_8160_Ragnar_MIL_Q1_Yes);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1,"Да, плохи у тебя дела.",DIA_STRF_8160_Ragnar_MIL_Q1_No);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1, " Let me deal with them. " ,DIA_STRF_8160_Ragnar_MIL_Q1_Yes);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1, " Yes, you're in trouble. " ,DIA_STRF_8160_Ragnar_MIL_Q1_No);
 };
 
 func void DIA_STRF_8160_Ragnar_MIL_Q1_Yes()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_00");	//Давай я разберусь с ними.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_01");	//(удивленно) Ты серьезно?
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_02");	//Не волнуйся! Я справлюсь с ними.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_03");	//Если поможешь мне, я в долгу не останусь.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_04");	//У меня тут на складе лежит много всякого барахла! Наверняка тебе что-нибудь пригодится.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_05");	//Хорошо, договорились.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_00 " );	// Let me deal with them.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_01 " );	// (surprised) Are you serious?
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_02 " );	// Don't worry! I can handle them.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_03 " );	// If you help me, I won't be indebted.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_04 " );	// I have a lot of junk in my warehouse! Surely you will need something.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1_Yes_01_05 " );	// Okay, agreed.
 	MIS_RagnarBandits = LOG_Running;
 	Log_CreateTopic(TOPIC_RagnarBandits,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RagnarBandits,LOG_Running);
-	B_LogEntry(TOPIC_RagnarBandits,"Я согласился помочь Рагнару разобраться с шайкой бандитов, которую видели недалеко от южных городских ворот.");
+	B_LogEntry(TOPIC_RagnarBandits, " I agreed to help Ragnar deal with a gang of bandits that was seen near the southern city gate. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(BDT_10046_Bandit_L,"NW_FARM1_CITYWALL_RIGHT_04");
 	Wld_InsertNpc(BDT_10047_Bandit_L,"NW_FARM1_CITYWALL_RIGHT_04");
@@ -756,10 +757,10 @@ func void DIA_STRF_8160_Ragnar_MIL_Q1_Yes()
 
 func void DIA_STRF_8160_Ragnar_MIL_Q1_No()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1_No_01_00");	//Да, плохи у тебя дела.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_No_01_01");	//(печально) Ладно, хватит уже болтать...
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_No_01_02");	//А то еще кто-нибудь удивит ненароком, что я с тобой тут на посту треплюсь.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1_No_01_03");	//Выгонят взашей! И опять придется с голоду помирать.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1_No_01_00 " );	// Yes, things are bad for you.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_No_01_01 " );	// (sadly) Okay, stop talking...
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_No_01_02 " );	// And then someone else will inadvertently surprise that I'm chatting with you here at the post.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1_No_01_03 " );	// They'll kick you out! And again you have to die of hunger.
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
 };
@@ -771,7 +772,7 @@ instance DIA_STRF_8160_Ragnar_MIL_Q1Done(C_Info)
 	condition = DIA_STRF_8160_Ragnar_MIL_Q1Done_condition;
 	information = DIA_STRF_8160_Ragnar_MIL_Q1Done_info;
 	permanent = FALSE;
-	description = "С твоими бандитами покончено.";
+	description = " Your bandits are finished. " ;
 };
 
 func int DIA_STRF_8160_Ragnar_MIL_Q1Done_condition()
@@ -785,54 +786,54 @@ func int DIA_STRF_8160_Ragnar_MIL_Q1Done_condition()
 func void DIA_STRF_8160_Ragnar_MIL_Q1Done_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_00");	//С твоими бандитами покончено.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_01");	//Я тебе конечно верю, приятель...
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_02");	//Но лорду Андрэ наверняка потребуются более веские доказательства.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_03");	//Тогда просто отдай ему вот это письмо. Оно было у одного из этих бродяг.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_01_00 " );	// Your bandits are finished.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_01_01 " );	// Of course I believe you, buddy...
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_01_02 " );	// But Lord Andre will surely need more solid evidence.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_01_03 " );	// Then just give him this letter. One of those vagrants had it.
 	B_GiveInvItems(other,self,ItWr_RagnarBand,1);
 	Npc_RemoveInvItems(self,ItWr_RagnarBand,1);
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_04");	//О чем оно?
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_05");	//Взгляни сам.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_01_05 " );	// See for yourself.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_06");	//Хммм...(задумчиво) Да, думаю что лорду Андрэ будет крайне интересно взглянуть на его содержимое.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_07");	//Ну, вот и славно. А что ты приготовил для меня?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_08");	//Вот, выбирай.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_01_06 " );	// Hmmm...(thoughtfully) Yes, I think Lord Andre would be extremely interested in looking at its contents.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_01_07 " );	// Well, that's nice. What have you prepared for me?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_01_08 " );	// Here, take your pick.
 	MIS_RagnarBandits = LOG_Success;
 	Log_SetTopicStatus(TOPIC_RagnarBandits,LOG_Success);
-	B_LogEntry(TOPIC_RagnarBandits,"В доказательство тому, что с бандитами покончено, я принес Рагнару письмо одного из них.");
+	B_LogEntry(TOPIC_RagnarBandits, " To prove that the bandits are finished, I brought Ragnar a letter from one of them. " );
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_MIL_Q1Done);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1Done,"Железный шлем",DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1Done,"Полсотни болтов",DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2);
-	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1Done,"Клинок рыцаря",DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1Done, " Box " ,DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1Done, " вЂ‚вЂ‹вЂ‹вЂ‹ " ,DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2);
+	Info_AddChoice(DIA_STRF_8160_Ragnar_MIL_Q1Done, " Material " ,DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3);
 };
 
 func void DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1_01_01");	//Я возьму шлем.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1_01_02");	//(деловито) Хорошо. Вот, теперь он твой.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1_01_01 " );	// I'll take the helmet.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1_01_02 " );	// (businesslike) Good. Here, now it's yours.
 	B_GiveInvItems(self,other,ItAr_Helm_01,1);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1_01_03");	//Как говорится, рука руку моет.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1_01_04");	//Благодарю.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1_01_03 " );	// As they say, the hand washes the hand.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item1_01_04 " );	// Thank you.
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_MIL_Q1Done);
 };
 
 func void DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2_01_01");	//Дай мне болты.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2_01_02");	//(деловито) Хорошо. Вот, держи их.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2_01_01 " );	// Give me the bolts.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2_01_02 " );	// (businesslike) Good. Here, hold them.
 	B_GiveInvItems(self,other,ItRw_Bolt,50);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2_01_03");	//Как говорится, рука руку моет.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2_01_04");	//Благодарю.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2_01_03 " );	// As they say, the hand washes the hand.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item2_01_04 " );	// Thank you.
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_MIL_Q1Done);
 };
 
 func void DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3_01_01");	//Мне приглянулся меч.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3_01_02");	//(деловито) Хорошо. Вот он.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3_01_01 " );	// I liked the sword.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3_01_02 " );	// (businesslike) Good. Here he is.
 	B_GiveInvItems(self,other,ItMw_1h_Pal_Sword,1);
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3_01_03");	//Как говорится, рука руку моет.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3_01_04");	//Благодарю.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3_01_03 " );	// As they say, the hand washes the hand.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Q1Done_Item3_01_04 " );	// Thank you.
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_MIL_Q1Done);
 };
 
@@ -843,7 +844,7 @@ instance DIA_STRF_8160_Ragnar_MIL_Up(C_Info)
 	condition = DIA_STRF_8160_Ragnar_MIL_Up_condition;
 	information = DIA_STRF_8160_Ragnar_MIL_Up_info;
 	permanent = TRUE;
-	description = "Как жизнь?";
+	description = " How are you? " ;
 };
 
 func int DIA_STRF_8160_Ragnar_MIL_Up_condition()
@@ -857,11 +858,11 @@ func int DIA_STRF_8160_Ragnar_MIL_Up_condition()
 func void DIA_STRF_8160_Ragnar_MIL_Up_info()
 {
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Up_01_00");	//Как жизнь?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Up_01_01");	//Как видишь, теперь я охраняю верхний квартал города.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Up_01_02");	//Ну, что же, рад за тебя.
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_MIL_Up_01_01 " );	// As you can see, now I guard the upper quarter of the city.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_MIL_Up_01_02 " );	// Well, well, I'm glad for you.
 };
 
-//--------------------------------------------Рагнар наемник-------------------------------------------------
+// ---------------------------------------------Ragnar the Mercenary-- ----------------------------------------------
 
 instance DIA_STRF_8160_Ragnar_SLD(C_Info)
 {
@@ -870,7 +871,7 @@ instance DIA_STRF_8160_Ragnar_SLD(C_Info)
 	condition = DIA_STRF_8160_Ragnar_SLD_condition;
 	information = DIA_STRF_8160_Ragnar_SLD_info;
 	permanent = FALSE;
-	description = "Вижу, все прошло гладко?";
+	description = " I see everything went smoothly? " ;
 };
 
 func int DIA_STRF_8160_Ragnar_SLD_condition()
@@ -883,7 +884,7 @@ func int DIA_STRF_8160_Ragnar_SLD_condition()
 
 func void DIA_STRF_8160_Ragnar_SLD_info()
 {
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_SLD_01_00");	//Вижу, все прошло гладко?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_SLD_01_01");	//(довольно) Да. Ли принял меня в наемники! Теперь я его человек.
-	AI_Output(other,self,"DIA_STRF_8160_Ragnar_SLD_01_02");	//Ну что же, рад за тебя.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_SLD_01_00 " );	// I see everything went smoothly?
+	AI_Output(self,other, " DIA_STRF_8160_Ragnar_SLD_01_01 " );	// (pretty) Yes. Li accepted me as a mercenary! Now I am his man.
+	AI_Output(other,self, " DIA_STRF_8160_Ragnar_SLD_01_02 " );	// Well, I'm glad for you.
 };
