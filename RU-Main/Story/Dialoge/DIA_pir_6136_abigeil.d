@@ -1,4 +1,5 @@
 
+
 instance DIA_PIR_6136_ABIGEIL_EXIT(C_Info)
 {
 	npc = pir_6136_abigeil;
@@ -34,7 +35,7 @@ instance DIA_PIR_6136_ABIGEIL_PICKPOCKET(C_Info)
 
 func int dia_pir_6136_abigeil_pickpocket_condition()
 {
-	return C_Beklauen(80,100);
+	return  C_Robbery ( 80 , 100 );
 };
 
 func void dia_pir_6136_abigeil_pickpocket_info()
@@ -46,7 +47,7 @@ func void dia_pir_6136_abigeil_pickpocket_info()
 
 func void dia_pir_6136_abigeil_pickpocket_doit()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(dia_pir_6136_abigeil_pickpocket);
 };
 
@@ -63,7 +64,7 @@ instance DIA_PIR_6136_ABIGEIL_HELLO(C_Info)
 	condition = dia_pir_6136_abigeil_hello_condition;
 	information = dia_pir_6136_abigeil_hello_info;
 	permanent = FALSE;
-	description = "Привет, малышка! Ты кто?!";
+	description = " Hello baby! Who are you?! " ;
 };
 
 
@@ -74,14 +75,14 @@ func int dia_pir_6136_abigeil_hello_condition()
 
 func void dia_pir_6136_abigeil_hello_info()
 {
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_Hello_01_00");	//Привет, малышка! Ты кто?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_Hello_01_01");	//Какая я тебе малышка, сопляк! И вообще, твое-то какое дело?!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_Hello_01_02");	//Просто хотел познакомиться.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_Hello_01_03");	//Хммм...(оценивающе) Ну, если просто так, то можешь называть меня Абигаль.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_Hello_01_04");	//Только не вздумай ко мне лезть, а то я тебе голову откушу!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_Hello_01_05");	//Ого, ну и манеры! Скажи, а ты тоже пират?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_Hello_01_06");	//(раздраженно) Нет, я - твоя бабушка.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_Hello_01_09");	//Что за глупый вопрос!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_Hello_01_00 " );	// Hello baby! Who are you?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_Hello_01_01 " );	// What a baby I am to you, brat! And anyway, what's your business?
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_Hello_01_02 " );	// I just wanted to get to know you.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_Hello_01_03 " );	// Hmmm...(assessing) Well, just for fun, you can call me Abigail.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_Hello_01_04 " );	// Just don't try to climb on me, otherwise I'll bite your head off!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_Hello_01_05 " );	// Wow, what manners! Tell me, are you a pirate too?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_Hello_01_06 " );	// (annoyed) No, I'm your grandmother.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_Hello_01_09 " );	// What a stupid question!
 };
 
 
@@ -92,7 +93,7 @@ instance DIA_PIR_6136_ABIGEIL_MISSWEAPON(C_Info)
 	condition = dia_pir_6136_abigeil_missweapon_condition;
 	information = dia_pir_6136_abigeil_missweapon_info;
 	permanent = FALSE;
-	description = "Так в чем же проблема?";
+	description = " So what's the problem? " ;
 };
 
 
@@ -106,59 +107,59 @@ func int dia_pir_6136_abigeil_missweapon_condition()
 
 func void dia_pir_6136_abigeil_missweapon_info()
 {
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_01_00");	//В чем твоя проблема?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_01");	//А разве не видно? (раздраженно) У меня нет с собой моей шпаги.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_03");	//Я...(замялась) Я ее потеряла.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_01_04");	//Так найди себе какое-нибудь другое оружие - разве это такая большая проблема?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_05");	//Мне нужна только моя шпага.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_08");	//Это наследство от моего отца.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_09");	//К тому же она не так проста, как кажется на первый взгляд.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_11");	//В моих руках ее клинок словно оживает, и проткнет любого, кто встанет у меня на пути.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_01_12");	//Ого! Неплохая вещица.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_13");	//(смеется) А то небось уже губы раскатал на мое добро.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_16");	//Вот только управляться ею могу только я. Если ей попытается воспользоваться кто-то другой - эта шпага просто убьет его!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_01_17");	//И где ты ее потеряла?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_18");	//Во время одной охоты на болотных крыс я немного увлеклась и слишком близко подошла к лагерю бандитов, что на востоке.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_21");	//Если бы не моя шпага, я была бы уже мертва.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_22");	//При первом же выпаде я умудрилась заколоть двух насмерть. Дело бы дошло и до остальных, если бы...
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_24");	//Если бы не этот поганый огненный мракорис...(гневно) До сих пор не пойму, откуда он там взялся!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_01_25");	//Огненный мракорис?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_26");	//Это огненное дерьмо болотной вонючки напало на меня сзади, и я, не удержав равновесие, упала на землю, выронив свою шпагу.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_29");	//Впервые в жизни мне пришлось спасаться бегством и, клянусь Белиаром - в последний!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_01_30");	//А что стало со шпагой?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_31");	//Естественно, пришлось ее бросить. У меня просто не было времени искать ее среди зарослей болотной травы.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_32");	//Вот теперь и торчу здесь в лагере целыми днями, выслушивая глупые вопросы таких умников, как ты.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_01_33");	//Почему же ты не вернешься и не заберешь свою шпагу?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_34");	//Да ты что? (нервно) Без нее я и шага отсюда не сделаю!
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_35");	//А с другим оружием я не слишком хорошо управляюсь.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_36");	//К тому же мне что-то больше не хочется снова встречаться с этим огненным мракорисом.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_01_00 " );	// What's your problem?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_01 " );	// Can't you see? (annoyed) I don't have my sword with me.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_03 " );	// I... (stammered) I lost her.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_01_04 " );	// So get yourself some other weapon - is that such a big deal?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_05 " );	// All I need is my sword.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_08 " );	// This is a legacy from my father.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_09 " );	// In addition, it is not as simple as it seems at first glance.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_11 " );	// In my hands, her blade seems to come to life, and will pierce anyone who gets in my way.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_01_12 " );	// Wow! Good thing.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_13 " );	// (laughs) And then I suppose he already rolled his lips on my good.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_16 " );	// But only I can manage it. If someone else tries to use it, this sword will simply kill him!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_01_17 " );	// And where did you lose it?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_18 " );	// During one swamp rat hunt, I got a little carried away and got too close to the bandit camp to the east.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_21 " );	// If it wasn't for my sword, I'd be dead by now.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_22 " );	// At the first lunge, I managed to stab two to death. The matter would have reached the others, too, if...
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_24 " );	// If not for this filthy fiery obscurantist... (angrily) I still don't understand where he came from!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_01_25 " );	// Fiery obscurantist?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_26 " );	// That fiery swamp stink shit attacked me from behind, and I lost my balance and fell to the ground, dropping my sword.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_29 " );	// For the first time in my life I had to flee and, by Beliar, the last!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_01_30 " );	// And what happened to the sword?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_31 " );	// Naturally, I had to leave her. I simply did not have time to look for her among the thickets of marsh grass.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_32 " );	// Now I'm stuck here in the camp all day, listening to stupid questions from smart people like you.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_01_33 " );	// Why don't you come back and take your sword?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_34 " );	// What are you doing? (nervously) I can't take a step out of here without her!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_35 " );	// I'm not very good with other weapons.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_01_36 " );	// Besides, I don't want to meet this fiery obscurantist again.
 	Info_ClearChoices(dia_pir_6136_abigeil_missweapon);
-	Info_AddChoice(dia_pir_6136_abigeil_missweapon,"Ну, тогда счастливо оставаться!",dia_pir_6136_abigeil_missweapon_no);
-	Info_AddChoice(dia_pir_6136_abigeil_missweapon,"А что я получу, если верну твою шпагу?",dia_pir_6136_abigeil_missweapon_yes);
+	Info_AddChoice(dia_pir_6136_abigeil_missweapon, " Well, happy staying then! " ,dia_pir_6136_abigeil_missweapon_no);
+	Info_AddChoice(dia_pir_6136_abigeil_missweapon, " What do I get if I return your sword? " ,dia_pir_6136_abigeil_missweapon_yes);
 };
 
 func void dia_pir_6136_abigeil_missweapon_no()
 {
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_No_01_01");	//Надеюсь, ты когда-нибудь отыщешь свою шпагу.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_No_01_03");	//(раздраженно) Хватит уже болтать - оставь меня!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_No_01_01 " );	// I hope you find your sword someday.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_No_01_03 " );	// (annoyed) Enough talk already - leave me!
 	ABIGEILPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_pir_6136_abigeil_missweapon_yes()
 {
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_00");	//А что я получу, если верну твою шпагу?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_01");	//Что? (удивленно) Ты хочешь помочь мне?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_03");	//Ну... (задумчиво) Боюсь, у меня нет ничего такого, что могло бы тебя заинтересовать.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_04");	//Если только вот эта небольшая каменная табличка с какими-то иероглифами.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_05");	//Я еще нашла в одной из пещер, недалеко от каньона.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_06");	//Говорят, что она волшебная! Правда, в чем заключается ее волшебство - я так и не поняла.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_08");	//Верни мне мою шпагу - и она твоя.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_00 " );	// And what will I get if I return your sword?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_01 " );	// What? (surprised) Do you want to help me?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_03 " );	// Well... (thoughtfully) I'm afraid I don't have anything that might interest you.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_04 " );	// If only this small stone tablet with some hieroglyphs.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_05 " );	// I also found it in one of the caves, not far from the canyon.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_06 " );	// They say she's magical! True, what is her magic - I did not understand.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeapon_Yes_01_08 " );	// Give me back my sword and it's yours.
 	Info_ClearChoices(dia_pir_6136_abigeil_missweapon);
 	MIS_ABIGEILMISSWEAPON = LOG_Running;
 	Log_CreateTopic(TOPIC_ABIGEILMISSWEAPON,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ABIGEILMISSWEAPON,LOG_Running);
-	B_LogEntry(TOPIC_ABIGEILMISSWEAPON,"В лагере пиратов я познакомился с очень милой девушкой по имени Абигаль. Она рассказала мне, что где-то на болотах потеряла свою шпагу. По словам Абигаль - это не простая шпага, а волшебная. Однако волшебство этой вещицы действует только в ее руках, для других же она смертельна! Я вызвался помочь Абигаль отыскать эту шпагу в обмен на волшебную каменную табличку, которая, по всей видимости, принадлежит зодчим. Абигаль также предупредила меня, что недалеко от того места, где эта шпага была потеряна, она наткнулась на огненного мракориса. Надо быть осторожнее.");
+	B_LogEntry(TOPIC_ABIGEILMISSWEAPON,"At the pirate camp, I met a very nice girl named Abigail. She told me that somewhere in the swamps she had lost her sword. According to Abigail, this is not an ordinary sword, but a magic one. However, the magic of this little thing only works in her hands, for others it is deadly! I volunteered to help Abigail find this sword in exchange for a magical stone tablet, which, apparently, belongs to the architects. Abigail also warned me that not far from the place where this sword was lost, she stumbled upon a fiery mrakoris. We must be more careful.");
 };
 
 
@@ -196,7 +197,7 @@ instance DIA_PIR_6136_ABIGEIL_LIFE(C_Info)
 	condition = dia_pir_6136_abigeil_life_condition;
 	information = dia_pir_6136_abigeil_life_info;
 	permanent = TRUE;
-	description = "Как жизнь?";
+	description = " How are you? " ;
 };
 
 
@@ -210,22 +211,22 @@ func int dia_pir_6136_abigeil_life_condition()
 
 func void dia_pir_6136_abigeil_life_info()
 {
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_Life_01_00");	//Как жизнь?
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_Life_01_00 " );	// How's life?
 	if((MIS_ABIGEILMISSWEAPON == LOG_SUCCESS) && (MIS_ABIGEILHELPHANNA != LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_PIR_6136_Abigeil_Life_01_01");	//Все просто отлично, приятель!
+		AI_Output(self,other, " DIA_PIR_6136_Abigeil_Life_01_01 " );	// Everything is just fine, mate!
 		AI_ReadyMeleeWeapon(self);
-		AI_Output(self,other,"DIA_PIR_6136_Abigeil_Life_01_07");	//Посмотри...
+		AI_Output(self,other, " DIA_PIR_6136_Abigeil_Life_01_07 " );	// Look...
 		AI_RemoveWeapon(self);
-		AI_Output(self,other,"DIA_PIR_6136_Abigeil_Life_01_09");	//...правда она хороша, да?
+		AI_Output(self,other, " DIA_PIR_6136_Abigeil_Life_01_09 " );	// ...it's really good, isn't it?
 	}
 	else if((MIS_ABIGEILMISSWEAPON == LOG_SUCCESS) && (MIS_ABIGEILHELPHANNA == LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_PIR_6136_Abigeil_Life_01_10");	//Лучше и быть не может.
+		AI_Output(self,other, " DIA_PIR_6136_Abigeil_Life_01_10 " );	// It couldn't be better.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PIR_6136_Abigeil_Life_01_16");	//Паршиво! Так что лучше не зли меня... Ясно?!
+		AI_Output(self,other, " DIA_PIR_6136_Abigeil_Life_01_16 " );	// Bad! So you better not piss me off... Okay?!
 	};
 };
 
@@ -237,7 +238,7 @@ instance DIA_PIR_6136_ABIGEIL_MISSWEAPONDONE(C_Info)
 	condition = dia_pir_6136_abigeil_missweapondone_condition;
 	information = dia_pir_6136_abigeil_missweapondone_info;
 	permanent = FALSE;
-	description = "Я нашел твою шпагу.";
+	description = " I found your sword. " ;
 };
 
 
@@ -252,28 +253,28 @@ func int dia_pir_6136_abigeil_missweapondone_condition()
 func void dia_pir_6136_abigeil_missweapondone_info()
 {
 	B_GivePlayerXP(350);
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeaponDone_01_00");	//Я нашел твою шпагу.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_01_01");	//Правда? Не может быть! Это точно она?
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeaponDone_01_04");	//Вот, сама посмотри.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeaponDone_01_00 " );	// I found your sword.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeaponDone_01_01 " );	// Really? Can't be! Is that really her?
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeaponDone_01_04 " );	// Here, take a look.
 	B_GiveInvItems(other,self,itmw_abigeilspage,1);
 	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_01_05");	//Хммм...(разглядывает)
 	Info_ClearChoices(dia_pir_6136_abigeil_missweapondone);
-	Info_AddChoice(dia_pir_6136_abigeil_missweapondone,"Узнаешь?",dia_pir_6136_abigeil_missweapondone_give);
+	Info_AddChoice(dia_pir_6136_abigeil_missweapondone, " Узнаешь? " ,dia_pir_6136_abigeil_missweapondone_give);
 };
 
 func void dia_pir_6136_abigeil_missweapondone_give()
 {
 	AI_EquipBestMeleeWeapon(self);
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_00");	//Узнаешь?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_01");	//Вау! И вправду она...
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_02");	//Наконец-то моя малышка снова со мной!
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_04");	//Ах да...(улыбается) Вот та каменная табличка, о которой я тебе говорила. Держи!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_00 " );	// Узнаешь?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_01 " );	// Wow! And indeed she...
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_02 " );	// Finally my baby is with me again!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_04 " );	// Oh yeah... (smiles) That's the stone tablet I told you about. Hold on!
 	B_GiveInvItems(self,other,ItWr_HitPointStonePlate2_Addon,1);
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_06");	//Ты молодец...(с уважением) Не думала, что тебе хватит храбрости побывать в тех местах!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_09");	//Да не за что. Если что - обращайся!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_06 " );	// Well done...(respectfully) I didn't think you'd have the courage to visit those places!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_MissWeaponDone_Give_01_09 " );	// No reason. If you need anything, get back to me!
 	MIS_ABIGEILMISSWEAPON = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_ABIGEILMISSWEAPON,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ABIGEILMISSWEAPON,"Я принес Абигаль ее шпагу.");
+	B_LogEntry( TOPIC_ABIGEILMISSWEAPON , " I brought Abigail her sword. " );
 };
 
 instance DIA_PIR_6136_ABIGEIL_ABIGEILHELPHANNA(C_Info)
@@ -296,45 +297,45 @@ func int dia_pir_6136_abigeil_abigeilhelphanna_condition()
 
 func void dia_pir_6136_abigeil_abigeilhelphanna_info()
 {
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_00");	//Эй, постой! Можно тебя попросить еще об одной услуге?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_02");	//Я пообещала своей любимой сестренке привезти золотое ожерелье.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_09");	//Вот только теперь у нас корабля не стало!
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_11");	//Моя сестренка живет в Хоринисе, а туда без корабля не попадешь.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_12");	//И ты, видимо, хочешь, чтобы это сделал я?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_13");	//Ну да! Ты, как я слышала, частенько бываешь там.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_15");	//Ну... ты сама понимаешь, что каждый труд имеет свою цену.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_17");	//Ладно, если ты поможешь мне - я дам тебе... ну, скажем, двести золотых монет.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_18");	//Идет?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_00 " );	// Hey, wait! Can I ask you for one more favor?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_02 " );	// I promised my beloved sister to bring a golden necklace.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_09 " );	// Only now we don't have a ship!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_11 " );	// My sister lives in Khorinis, and you can't get there without a ship.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_12 " );	// And you probably want me to do it?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_13 " );	// Well, yes! You, as I heard, are often there.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_15 " );	// Well... you yourself understand that every work has its price.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_17 " );	// Okay, if you help me, I'll give you... well, let's say two hundred gold coins.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_18 " );	// Идет?
 	Info_ClearChoices(dia_pir_6136_abigeil_abigeilhelphanna);
-	Info_AddChoice(dia_pir_6136_abigeil_abigeilhelphanna,"Это того не стоит.",dia_pir_6136_abigeil_abigeilhelphanna_no);
-	Info_AddChoice(dia_pir_6136_abigeil_abigeilhelphanna,"Хорошо, считай, мы договорились.",dia_pir_6136_abigeil_abigeilhelphanna_yes);
+	Info_AddChoice(dia_pir_6136_abigeil_abigeilhelphanna, " It's not worth it. " ,dia_pir_6136_abigeil_abigeilhelphanna_no);
+	Info_AddChoice(dia_pir_6136_abigeil_abigeilhelphanna, " Okay, we've got a deal. " ,dia_pir_6136_abigeil_abigeilhelphanna_yes);
 };
 
 func void dia_pir_6136_abigeil_abigeilhelphanna_no()
 {
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_No_01_00");	//Это того не стоит.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_No_01_01");	//Ну и жадная же ты скотина! (гневно) Только и думаешь, что о себе!
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_No_01_06");	//Пошел к черту, придурок!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_No_01_00 " );	// It's not worth it.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_No_01_01 " );	// Well, you're a greedy bastard! (angrily) All you think about is yourself!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_No_01_06 " );	// Go to hell, idiot!
 	ABIGEILPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 func void dia_pir_6136_abigeil_abigeilhelphanna_yes()
 {
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_00");	//Хорошо, считай, мы договорились.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_01");	//Тогда вот - возьми это золотое ожерелье и отнеси его моей сестре.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_00 " );	// Okay, consider, we agreed.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_01 " );	// Then here - take this golden necklace and take it to my sister.
 	B_GiveInvItems(self,other,ITMI_HANNAGOLDNECKLACE,1);
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_02");	//А как зовут твою сестру?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_03");	//Ее зовут Ханна, она хозяйка гостиницы в Хоринисе.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_04");	//Ханна - твоя сестра?!
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_05");	//Хммм. И почему все удивляются, когда узнают об этом? Что в этом такого удивительного?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_09");	//(раздраженно) И хватит этих глупых вопросов.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_10");	//Ладно, я все понял.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_11");	//Вот и замечательно. Так что лучше не теряй времени и отправляйся в Хоринис.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_02 " );	// What's your sister's name?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_03 " );	// Her name is Hanna, she is the owner of a hotel in Khorinis.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_04 " );	// Hannah is your sister?!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_05 " );	// Hmmm. And why is everyone surprised when they find out about this? What's so amazing about this?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_09 " );	// (annoyed) Enough of these stupid questions.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_10 " );	// Okay, I got it.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_AbigeilHelpHanna_Yes_01_11 " );	// That's great. So it's better not to waste time and go to Khorinis.
 	MIS_ABIGEILHELPHANNA = LOG_Running;
 	Log_CreateTopic(TOPIC_ABIGEILHELPHANNA,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ABIGEILHELPHANNA,LOG_Running);
-	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Абигаль попросила меня отнести золотое ожерелье Ханне - ее сестре в Хоринисе. За эту услугу Абигаль обещала заплатить мне двести золотых монет.");
+	B_LogEntry( TOPIC_ABIGEILHELPHANNA , " Abigal asked me to take a gold necklace to Hanna, her sister in Khorinis. For this service, Abigail promised to pay me two hundred gold coins. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -346,13 +347,13 @@ instance DIA_PIR_6136_ABIGEIL_INPRISION(C_Info)
 	condition = dia_pir_6136_abigeil_inprision_condition;
 	information = dia_pir_6136_abigeil_inprision_info;
 	permanent = FALSE;
-	description = "Боюсь, у меня для тебя плохие новости.";
+	description = " I'm afraid I have bad news for you. " ;
 };
 
 
 func int dia_pir_6136_abigeil_inprision_condition()
 {
-	if((MIS_ABIGEILHELPHANNA == LOG_Running) && (KNOWSHANNAINPRISIONABIGEIL == TRUE) && (Kapitel <= 5))
+	if (( MIS_ABIGELHELP  == LOG_Running) && ( KNOWSHANNAPRESSABIGEIL  ==  TRUE ) && (Chapter <=  5 ))
 	{
 		return TRUE;
 	};
@@ -363,32 +364,32 @@ func void dia_pir_6136_abigeil_inprision_info()
 	var C_Npc gregcap;
 	gregcap = Hlp_GetNpc(PIR_1320_Addon_Greg);
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_00");	//Боюсь, у меня для тебя плохие новости.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_01");	//Что случилось?
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_02");	//Твою сестру обвинили в воровстве и посадили в тюрьму.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_03");	//(в бешенстве) Что?! Проклятье! Но как же это произошло?
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_04");	//Сейчас я это и пытаюсь выяснить. Поэтому мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_05");	//(вне себя) Черт! Да как они посмели это сделать?!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_06");	//Абигаль, послушай, мне нужна твоя по...
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_07");	//...(не обращая внимания) Ну, они у меня получат! Я этого так не оставлю!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_00 " );	// I'm afraid I have bad news for you.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_01 " );	// What happened?
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_02 " );	// Your sister was accused of stealing and put in jail.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_03 " );	// (furious) What?! Damn! But how did it happen?
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_04 " );	// This is what I'm trying to figure out now. Therefore, I need your help.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_05 " );	// (besides himself) Damn! How dare they do this?!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_06 " );	// Abigail, listen, I need your...
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_07 " );	// ...(ignoring) Well, they'll get it from me! I won't leave it like this!
 	AI_TurnToNPC(self,gregcap);
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_08");	//Грэг! (срываясь на крик) Немедленно собирай людей - мы сейчас же атакуем Хоринис!
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_09");	//(Грэг - "Ты что Абигаль, совсем рехнулась?")
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_10");	//ДА ТЫ ЧТО, ОГЛОХЛА?! Я ГОВОРЮ - МНЕ НУЖНА ТВОЯ ПОМОЩЬ!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_08 " );	// Greg! (breaking into a scream) Immediately gather people - we will immediately attack Khorinis!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_09 " );	// (Greg - "Are you out of your mind Abigail?")
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_10 " );	// WHAT ARE YOU GOING DEAF?! I SAY - I NEED YOUR HELP!
 	AI_TurnToNPC(self,other);
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_11");	//А?! Что? (растерянно) Черт! Какая помощь, когда моя сестра за решеткой?!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_16");	//Расскажи мне, что ты знаешь о человеке по имени Гаспар?
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_17");	//Гаспар?! Хммм...(задумчиво) Кажется, это имя мне знакомо.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_22");	//Ханна мне как-то говорила, что один ублюдок по имени Гаспар предлагал ей продать ему свою гостиницу.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_24");	//Ага! Кажется теперь, мне все ясно.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_25");	//Что ясно?
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_26");	//Дело в том, что именно Гаспар сейчас всем и заправляет в гостинице твоей сестры.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_29");	//Думаю, это он все подстроил и подставил твою сестру.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_30");	//ЧТО?! Да я ему кишки выпущу!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrision_01_33");	//Успокойся! Я отправлюсь обратно в Хоринис и попробую найти улики против Гаспара.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrision_01_41");	//Ладно, но хорошенько врежешь этому ублюдку!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_11 " );	// Huh?! What? (bewildered) Damn! What help when my sister is behind bars?!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_16 " );	// Tell me what you know about a man named Gasper?
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_17 " );	// Gaspar?! Hmmm...(thoughtfully) I think the name is familiar to me.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_22 " );	// Hanna told me once that a bastard named Gaspard offered to sell her her hotel to him.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_24 " );	// Aha! It seems now everything is clear to me.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_25 " );	// What is clear?
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_26 " );	// The fact is that it is Gasper who now runs everything in your sister's hotel.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_29 " );	// I think he set it all up and framed your sister.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_30 " );	// WHAT?! Let me gut him!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrision_01_33 " );	// Calm down! I'll head back to Khorinis and try to find evidence against Gaspar.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrision_01_41 " );	// Okay, but hit that bastard hard!
 	KNOWSHANNAINPRISIONCARAGON = TRUE;
-	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"После разговора с Абигаль мне все стало ясно. Этот ублюдок Гаспар уже давно хотел заполучить гостиницу, которой управляла Ханна. Думаю, кража вещей у торговца Хакона - это его рук дело. Остается только найти улики, которые позволят уличить Гаспара и снять обвинения с Ханны. Может, попробовать поискать то кольцо, о котором говорил Хакон?");
+	B_LogEntry( TOPIC_ABIGEILHELPHANNA , " After talking to Abigail, it all became clear to me. That Gaspard bastard has long wanted to get the inn run by Hannah. drop the charges against Hannah. Maybe try looking for that ring Hakon was talking about? " );
 	AI_StopProcessInfos(self);
 };
 
@@ -400,7 +401,7 @@ instance DIA_PIR_6136_ABIGEIL_INPRISIONDONE(C_Info)
 	condition = dia_pir_6136_abigeil_inprisiondone_condition;
 	information = dia_pir_6136_abigeil_inprisiondone_info;
 	permanent = FALSE;
-	description = "У меня есть для тебя новость.";
+	description = " I have some news for you. " ;
 };
 
 
@@ -414,14 +415,14 @@ func int dia_pir_6136_abigeil_inprisiondone_condition()
 
 func void dia_pir_6136_abigeil_inprisiondone_info()
 {
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrisionDone_01_00");	//У меня есть для тебя новость.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrisionDone_01_01");	//Какие новости? Что с моей сестрой? Ну, не тяни!
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrisionDone_01_02");	//Не волнуйся, все в порядке.
-	AI_Output(other,self,"DIA_PIR_6136_Abigeil_InPrisionDone_01_03");	//Гаспар за решеткой, а твоя сестра свободна.
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrisionDone_01_04");	//(с обожанием) О! Спасибо тебе!
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_InPrisionDone_01_11");	//Вот, как и договаривались - двести золотых монет.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrisionDone_01_00 " );	// I have news for you.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrisionDone_01_01 " );	// What's the news? What about my sister? Well, don't pull!
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrisionDone_01_02 " );	// Don't worry, everything's fine.
+	AI_Output(other,self, " DIA_PIR_6136_Abigeil_InPrisionDone_01_03 " );	// Gaspar is behind bars, but your sister is free.
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrisionDone_01_04 " );	// (with adoration) Oh! Thank you!
+	AI_Output(self,other, " DIA_PIR_6136_Abigeil_InPrisionDone_01_11 " );	// Here, as agreed - two hundred gold coins.
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	MIS_ABIGEILHELPHANNA = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_ABIGEILHELPHANNA,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Абигаль поблагодарила меня за помощь ее сестре. И даже поцеловала!");
+	B_LogEntry( TOPIC_ABIGEILHELPHANNA , " Abigal thanked me for helping her sister. She even kissed me! " );
 };
