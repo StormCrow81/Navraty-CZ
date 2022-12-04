@@ -79,7 +79,7 @@ var int jewelerychestpearl;
 
 instance ItMi_Addon_GoldNugget(C_Item)
 {
-	name = "Zlatý nuget";
+	name = " Zlatý nuget ";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
@@ -93,7 +93,7 @@ instance ItMi_Addon_GoldNugget(C_Item)
 
 instance ItMi_Osair_GoldNugget(C_Item)
 {
-	name = "Hrudka zlaté rudy";
+	name = " Hrudka zlaté rudy ";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -105,7 +105,7 @@ instance ItMi_Osair_GoldNugget(C_Item)
 
 instance ItMi_Addon_WhitePearl(C_Item)
 {
-	name = "Perla";
+	name = " Perla ";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_WhitePearl;
