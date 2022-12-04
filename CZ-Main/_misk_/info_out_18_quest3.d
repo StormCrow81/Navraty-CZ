@@ -1,11 +1,12 @@
 
+
 instance INFO_OUT_18_QUEST3(C_Info)
 {
 	nr = 4;
 	condition = info_out_18_quest3_condition;
 	information = info_out_18_quest3_info;
 	permanent = TRUE;
-	description = "No, jak to jde?";
+	description = " Well, how's it going? " ;
 };
 
 
@@ -16,8 +17,8 @@ func int info_out_18_quest3_condition()
 
 func void info_out_18_quest3_info()
 {
-	AI_Output(other,self,"Info_Out_18_Quest3_01_00");	//No, jak to jde?
-	AI_Output(self,other,"Info_Out_18_Quest3_01_01");	//Co potřebuješ?
+	AI_Output(other,self,"Info_Out_18_Quest3_01_00");	//Well, how's it going?
+	AI_Output(self,other, " Info_Out_18_Quest3_01_01 " );	// What do you need?
 };
 
 func void b_assignambientinfos_out_18(var C_Npc slf)
