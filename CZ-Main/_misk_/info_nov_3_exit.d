@@ -1,4 +1,5 @@
 
+
 instance INFO_NOV_3_EXIT(C_Info)
 {
 	nr = 999;
@@ -24,9 +25,9 @@ instance INFO_NOV_3_EINERVONEUCHWERDEN(C_Info)
 {
 	nr = 4;
 	condition = info_nov_3_einervoneuchwerden_condition;
-	information = info_nov_3_einervoneuchwerden_info;
+	information = info_nov_3_oneofyouwillbe_info;
 	permanent = 1;
-	description = "Mohu se připojit k táboru?";
+	description = " Can I join the camp? " ;
 };
 
 
@@ -40,32 +41,32 @@ func int info_nov_3_einervoneuchwerden_condition()
 
 func void info_nov_3_einervoneuchwerden_info()
 {
-	AI_Output(other,self,"Info_Nov_3_EinerVonEuchWerden_15_00");	//Mohu se připojit k táboru?
-	AI_Output(self,other,"Info_Nov_3_EinerVonEuchWerden_03_01");	//Je to velmi jednoduché.
-	AI_Output(self,other,"Info_Nov_3_EinerVonEuchWerden_03_02");	//Promluv si s Guru.
+	AI_Output(other,self, " Info_Nov_3_EinerVonEuchWerden_15_00 " );	// Can I join the camp?
+	AI_Output(self,other, " Info_Nov_3_EinerVonEuchWerden_03_01 " );	// It's very simple.
+	AI_Output(self,other,"Info_Nov_3_EinerVonEuchWerden_03_02");	//Speak to one of the Gurus.
 };
 
 
-instance INFO_NOV_3_WICHTIGEPERSONEN(C_Info)
+instance INFO_NOV_3_IMPORTANT PEOPLE (C_Info)
 {
 	nr = 3;
-	condition = info_nov_3_wichtigepersonen_condition;
-	information = info_nov_3_wichtigepersonen_info;
+	condition = info_nov_3_important people_condition;
+	information = info_nov_3_important people_info;
 	permanent = 1;
-	description = "Kdo tu má hlavní slovo?";
+	description = " Who has the main say here? " ;
 };
 
 
-func int info_nov_3_wichtigepersonen_condition()
+func int info_nov_3_important_persons_condition()
 {
 	return TRUE;
 };
 
-func void info_nov_3_wichtigepersonen_info()
+func void info_nov_3_important_persons_info()
 {
-	AI_Output(other,self,"Info_Nov_3_WichtigePersonen_15_00");	//Kdo tu má hlavní slovo?
-	AI_Output(self,other,"Info_Nov_3_WichtigePersonen_03_01");	//Baal Orun, nejstarší Guru! On nás sem přivedl.
-	AI_Output(self,other,"Info_Nov_3_WichtigePersonen_03_02");	//Vše se řídí dle jeho vůle.
+	AI_Output(other,self, " Info_Nov_3_WichtigePersonen_15_00 " );	// Who has the upper hand here?
+	AI_Output(self,other, " Info_Nov_3_WichtigePersonen_03_01 " );	// Baal Orun, the oldest Guru! He brought us here.
+	AI_Output(self,other, " Info_Nov_3_WichtigePersonen_03_02 " );	// Everything is governed by his will.
 };
 
 
@@ -75,7 +76,7 @@ instance INFO_NOV_3_DASLAGER(C_Info)
 	condition = info_nov_3_daslager_condition;
 	information = info_nov_3_daslager_info;
 	permanent = 1;
-	description = "Je tu něco, co by mě mělo zajímat?";
+	description = " Is there anything I should be interested in? " ;
 };
 
 
@@ -86,9 +87,9 @@ func int info_nov_3_daslager_condition()
 
 func void info_nov_3_daslager_info()
 {
-	AI_Output(other,self,"Info_Nov_3_DasLager_15_00");	//Je tu něco, co by mě mělo zajímat?
-	AI_Output(self,other,"Info_Nov_3_DasLager_03_01");	//Jistě, Talas, každý den ti dá příděl trávy.
-	AI_Output(self,other,"Info_Nov_3_DasLager_03_02");	//Najdeš ho na dřevěné plošině.
+	AI_Output(other,self, " Info_Nov_3_DasLager_15_00 " );	// Is there anything I should be interested in?
+	AI_Output(self,other, " Info_Nov_3_DasLager_03_01 " );	// Sure, Talas, he gives you a ration of grass every day.
+	AI_Output(self,other, " Info_Nov_3_DasLager_03_02 " );	// You'll find him on a wooden platform.
 };
 
 
@@ -98,7 +99,7 @@ instance INFO_NOV_3_DIELAGE(C_Info)
 	condition = info_nov_3_dielage_condition;
 	information = info_nov_3_dielage_info;
 	permanent = 1;
-	description = "Co se děje?";
+	description = " What's going on? " ;
 };
 
 
@@ -109,8 +110,8 @@ func int info_nov_3_dielage_condition()
 
 func void info_nov_3_dielage_info()
 {
-	AI_Output(other,self,"Info_Nov_3_DieLage_15_00");	//Co se děje?
-	AI_Output(self,other,"Info_Nov_3_DieLage_03_01");	//Nic důležitého, příteli.
+	AI_Output(other,self, " Info_Nov_3_DieLage_15_00 " );	// What's going on?
+	AI_Output(self,other, " Info_Nov_3_DieLage_03_01 " );	// Nothing important, my friend.
 };
 
 
@@ -120,13 +121,13 @@ instance INFO_NOV_3_SEKTEHEILEN(C_Info)
 	condition = info_nov_3_sekteheilen_condition;
 	information = info_nov_3_sekteheilen_info;
 	permanent = TRUE;
-	description = "Vypij ten lektvar! Pomůže ti od bolesti hlavy.";
+	description = " Drink the potion! It will help your headache. " ;
 };
 
 
 func int info_nov_3_sekteheilen_condition()
 {
-	if((self.aivar[AIV_MM_SleepEnd] == FALSE) && (Npc_HasItems(other,ItPo_HealObsession_MIS) > 0) && (MIS_SEKTEHEILEN == LOG_Running) && Npc_KnowsInfo(hero,dia_baalorun_sekteheilengot))
+	if ((self.aivar[AIV_MM_SleepEnd] ==  FALSE ) && (Npc_HasItems(other,ItPo_HealObsession_MY) >  0 ) && ( MY_SECTION_HEALTH  == LOG_Running) && Npc_KnowsInfo(hero,his_health_heal_obsession));
 	{
 		return TRUE;
 	};
@@ -135,21 +136,21 @@ func int info_nov_3_sekteheilen_condition()
 func void info_nov_3_sekteheilen_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"Info_Nov_3_SekteHeilen_01_00");	//Vypij ten lektvar! Pomůže ti od bolesti hlavy.
+	AI_Output(other,self, " Info_Nov_3_SekteHeilen_01_00 " );	// Drink the potion! It will help your headache.
 	B_GiveInvItems(other,self,ItPo_HealObsession_MIS,1);
 	B_UseItem(self,ItPo_HealObsession_MIS);
-	self.aivar[AIV_MM_SleepEnd] = TRUE;
-	SEKTEHEILENCOUNT = SEKTEHEILENCOUNT + 1;
+	self.aivar[AIV_MM_SleepEnd] = TRUE ;
+	SECTEHEILENCOUNT = SECTEHEILENCOUNT  +  1 ;
 	AI_Wait(self,0);
-	AI_Output(self,other,"Info_Nov_3_SekteHeilen_01_01");	//Moje hlava! Už nebolí!
-	AI_Output(self,other,"Info_Nov_3_SekteHeilen_01_02");	//Moc ti děkuji.
+	AI_Output(self,other, " Info_Nov_3_SekteHeilen_01_01 " );	// My head! It doesn't hurt anymore!
+	AI_Output(self,other, " Info_Nov_3_SekteHeilen_01_02 " );	// Thank you very much.
 };
 
 func void b_assignambientinfos_sek_3(var C_Npc slf)
 {
 	info_nov_3_exit.npc = Hlp_GetInstanceID(slf);
-	info_nov_3_einervoneuchwerden.npc = Hlp_GetInstanceID(slf);
-	info_nov_3_wichtigepersonen.npc = Hlp_GetInstanceID(slf);
+	info_nov_3_oneofyouwillbe.npc = Hlp_GetInstanceID(slf);
+	info_nov_3_important persons.npc = Hlp_GetInstanceID(slf);
 	info_nov_3_daslager.npc = Hlp_GetInstanceID(slf);
 	info_nov_3_dielage.npc = Hlp_GetInstanceID(slf);
 	info_nov_3_sekteheilen.npc = Hlp_GetInstanceID(slf);
