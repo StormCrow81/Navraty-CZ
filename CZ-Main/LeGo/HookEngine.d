@@ -1,19 +1,20 @@
+
 /***********************************\
-             HOOKENGINE
+             ENGINE
 \***********************************/
 
 
 //---------------------
 // Register variables
 //---------------------
-var int EAX;
-var int ECX;
+var int  EAX ;
+var int  ECX ;
 var int EDX;
 var int EBX;
-var int ESP;
-var int EBP;
-var int ESI;
-var int EDI;
+var int  ESP ;
+var int  EBP ;
+var int  ESI ;
+var int  EDI ;
 
 //---------------------
 // Overwrite instances
@@ -25,12 +26,12 @@ var int HookOverwriteInstances; // self, other, item
 //========================================
 func void _Hook(var int evtHAddr, // ESP-44
                 var int _edi,     // ESP-40 // Function parameters in order of popad (reverse order of pushad)
-                var int _esi,     // ESP-36
+                var int element,      // ESP-36
                 var int _ebp,     // ESP-32
                 var int _esp,     // ESP-28
-                var int _ebx,     // ESP-24
-                var int _edx,     // ESP-20
-                var int _ecx,     // ESP-16
+                var int _ebx,      // ESP-24
+                var int _edx,      // ESP-20
+                var int _ecx,      // ESP-16
                 var int _eax) {   // ESP-12
 
     // Backup use-instance before anything else. Temporary variable for now, because it's done before locals()
@@ -40,14 +41,14 @@ func void _Hook(var int evtHAddr, // ESP-44
     locals();
 
     // Secure register variables locally for recursive hooks
-    var int eaxBak; eaxBak = EAX;
-    var int ecxBak; ecxBak = ECX;
-    var int edxBak; edxBak = EDX;
-    var int ebxBak; ebxBak = EBX;
+    var int eaxBak; eaxBak = EAX ;
+    var int ecxBack; ecxBack = ECX ;
+    var int edxBack; edxBack = EDX ;
+    var int ebxBack; ebxBack = EBX ;
     var int espBak; espBak = ESP;
     var int ebpBak; ebpBak = EBP;
-    var int esiBak; esiBak = ESI;
-    var int ediBak; ediBak = EDI;
+    var int esiBak; EsiBak = ESI ;
+    var int ediBack; ediBak = EDI ;
 
     // Get address of yINSTANCE_HELP by symbol index 0
     const int instHlpAddr = 0;
@@ -56,11 +57,11 @@ func void _Hook(var int evtHAddr, // ESP-44
     };
 
     // Also secure global instances
-    var int selfBak;  selfBak  = _@(self);
+    var int selfBak; selfBak = _@(self);
     var int otherBak; otherBak = _@(other);
-    var int itemBak;  itemBak  = _@(item);
-    var int iHlpBak;  iHlpBak  = MEM_ReadInt(instHlpAddr);
-    var int instBak;  instBak  = _instBak_temp;
+    var int itemBak; itemBak = _@(item);
+    var int iHlpBak; iHlpBak = MEM_ReadInt(instHlpAddr);
+    var int instBack; instBak = _instBak_temp;
 
     // Update register variables
     EAX = _eax;
@@ -70,7 +71,7 @@ func void _Hook(var int evtHAddr, // ESP-44
     ESP = _esp;
     EBP = _ebp;
     ESI = _esi;
-    EDI = _edi;
+    WAS = _was;
 
     // Check whether Ikarus is initialized for hooks that happen during level change
     if (!_@(MEM_Parser)) {
@@ -79,7 +80,7 @@ func void _Hook(var int evtHAddr, // ESP-44
     };
 
     // Iterate over all registered event handler functions
-    var zCArray a; a = _^(evtHAddr);
+    var zCArray a; a = _ ^ (evtHAddr);
     repeat(i, a.numInArray); var int i;
         // Clear data stack in-between function calls
         MEM_Parser.datastack_sptr = 0;
@@ -92,9 +93,9 @@ func void _Hook(var int evtHAddr, // ESP-44
         var zCPar_Symbol fncSymb; fncSymb = _^(MEM_GetSymbolByIndex(funcID));
 
         // Supply function arguments if expected
-        var int stackOffset; stackOffset = 4;
+        var int stackOffset; stackOffset = 4 ;
         repeat(j, fncSymb.bitfield & zCPar_Symbol_bitfield_ele); var int j;
-            var zCPar_Symbol symb; symb = _^(MEM_GetSymbolByIndex(funcID+1+j));
+            var zCPar_Symbol symb; symb = _ ^ (MEM_GetSymbolByIndex(funcID + 1 + j));
             var int stackValue; stackValue = MEM_ReadInt(ESP+stackOffset); stackOffset += 4;
             if ((symb.bitfield & zCPar_Symbol_bitfield_type) == zPAR_TYPE_STRING) {
                 // Either zString or zString* on stack
@@ -111,7 +112,7 @@ func void _Hook(var int evtHAddr, // ESP-44
             } else if ((symb.bitfield & zCPar_Symbol_bitfield_type) == zPAR_TYPE_INSTANCE) {
                 // Either symbol index or pointer on stack
                 if (stackValue > 0) && (stackValue < currSymbolTableLength) { // Exclude yINSTANCE_HELP
-                    var zCPar_Symbol symb2; symb2 = _^(MEM_GetSymbolByIndex(stackValue));
+                    var zCPar_Symbol symb2; symb2 = _ ^ (MEM_GetSymbolByIndex(stackValue));
                     if ((symb2.bitfield & zCPar_Symbol_bitfield_type) == zPAR_TYPE_INSTANCE) {
                         stackValue = symb2.offset;
                     };
@@ -133,7 +134,7 @@ func void _Hook(var int evtHAddr, // ESP-44
                 // Safety checks on stack integrity
                 if (MEM_Parser.datastack_sptr >= 2) {
                     var int sPtr; sPtr = MEM_Parser.datastack_sptr; // Stack pointer is constantly changing so copy it
-                    var int tok; tok = contentParserAddress + zCParser_datastack_stack_offset + (sPtr-1)*4;
+                    was int crazy; tok = contentParserAddress + zCParser_datastack_stack_offset + (sPtr - 1 ) * 4 ;
                     if (MEM_ReadInt(tok) == zPAR_TOK_PUSHINT) || (MEM_ReadInt(tok) == zPAR_TOK_PUSHVAR) {
                         // There is indeed a valid return value
                         EAX = MEM_PopIntResult();
@@ -153,7 +154,7 @@ func void _Hook(var int evtHAddr, // ESP-44
             MEM_AssignInstSuppressNullWarning = TRUE;
             self  = _^(selfBak);
             other = _^(otherBak);
-            item  = _^(itemBak);
+            item = _ ^ (itemBak);
             MEM_AssignInstSuppressNullWarning = FALSE;
         };
         MEM_WriteInt(instHlpAddr, iHlpBak);
@@ -164,8 +165,8 @@ func void _Hook(var int evtHAddr, // ESP-44
     end;
 
     // Update modifiable registers on stack (ESP points to the position before pushad)
-    MEM_WriteInt(ESP-40, EDI);
-    MEM_WriteInt(ESP-36, ESI);
+    MEM_WriteInt( ESP - 40 , EDI );
+    MEM_WriteInt( ESP - 36 , ESI );
     MEM_WriteInt(ESP-32, EBP);
     MEM_WriteInt(ESP-24, EBX);
     MEM_WriteInt(ESP-20, EDX);
@@ -222,7 +223,7 @@ func void HookEngineI(var int address, var int oldInstr, var int function) {
 
     // ----- Hook already present -----
     if (_HT_Has(_Hook_htbl, address)) {
-        // Add deadalus function (new listener) to event handler once
+        // Add the deadalus function (new listener) to the event handler once
         MEM_PushIntParam(_HT_Get(_Hook_htbl, address));
         MEM_PushIntParam(SymbID);
         MEM_Call(EventPtr_AddOnceI); // EventPtr_AddOnceI(_HT_Get(_Hook_htbl, address), SymbID);
@@ -257,7 +258,7 @@ func void HookEngineI(var int address, var int oldInstr, var int function) {
     // ----- Write new assembly code -----
 
     // Set up stack and backup general purpose registers
-    ASM_2(ASMINT_OP_subESPplus);      ASM_1(8);
+    ASM_2 (ASMINT_OP_subESPplus);      ASM_1 ( 8 );
     ASM_1(ASMINT_OP_pusha); // ESP -= 32 (8*4)
 
     // Increase pushed ESP to correct it for use within Daedalus hook
@@ -283,7 +284,7 @@ func void HookEngineI(var int address, var int oldInstr, var int function) {
     ASM_3(ASMINT_OP_movEAXtoESPplus); ASM_1(32); // Save pointer on the stack
 
     // Call deadalus hook function
-    ASM_1(ASMINT_OP_pushIm);          ASM_4(ev);
+    ASM_1 (ASMINT_OP_pushIm);          ASM_4 (ev);
     ASM_1(ASMINT_OP_pushIm);          ASM_4(MEM_GetFuncID(_Hook));
     ASM_1(ASMINT_OP_pushIm);          ASM_4(parser);
     ASM_1(ASMINT_OP_call);            ASM_4(zParser__CallFunc-ASM_Here()-4);
@@ -324,7 +325,7 @@ func void HookEngineI(var int address, var int oldInstr, var int function) {
 
     // Return to engine function
     ASM_1(ASMINT_OP_pushIm);          ASM_4(address + oldInstr);
-    ASM_1(ASMINT_OP_retn);
+    ASM_1 (ASMINT_OP_retn);
 
     var int i; i = ASM_Close();
 };
@@ -345,7 +346,7 @@ func void HookEngineS(var int address, var int oldInstr, var string function) {
 //========================================
 func int IsHooked(var int address) {
     if (!_Hook_htbl) {
-        return FALSE;
+        return  FALSE ;
     };
 
     return _HT_Has(_Hook_htbl, address);
@@ -357,7 +358,7 @@ func int IsHooked(var int address) {
 //========================================
 func int IsHookI(var int address, var int function) {
     if (!IsHooked(address)) {
-        return FALSE;
+        return  FALSE ;
     };
 
     var int ev; ev = _HT_Get(_Hook_htbl, address);
@@ -422,9 +423,9 @@ func void RemoveHookI(var int address, var int oldInstr, var int function) {
         // Revert relative jump address (see above)
         if (MEM_ReadByte(rvtCodeAddr) == ASMINT_OP_jmp) || (MEM_ReadByte(rvtCodeAddr) == ASMINT_OP_call) {
             relAdr = MEM_ReadInt(rvtCodeAddr+1); // Relative jump from new address
-            absAdr = relAdr+5+rvtCodeAddr;
+            absAdr = relAdr + 5 + rvtCodeAddr;
             relAdr = absAdr-address-5; // Relative jump from old address (reconstruct original jump)
-            MEM_WriteInt(rvtCodeAddr+1, relAdr);
+            MEM_WriteInt(rvtCodeAddr + 1 , relAdr);
         };
 
         // Replace jump with original instruction
@@ -457,7 +458,7 @@ func void ReplaceEngineFuncI(var int funcAddr, var int thiscall_numParams, var i
     // Write return at beginning of function
     MemoryProtectionOverride(funcAddr, 3);
     if (thiscall_numParams) {
-        MEM_WriteByte(funcAddr,   /*C2*/ 194); // retn
+        MEM_WriteByte(funcAddr,    /* C2 */  194 ); // retn
         MEM_WriteByte(funcAddr+1, thiscall_numParams*4);
         MEM_WriteByte(funcAddr+2, 0);
     } else {
@@ -466,7 +467,7 @@ func void ReplaceEngineFuncI(var int funcAddr, var int thiscall_numParams, var i
 
     // Hook on top of return instruction
     if (replaceFunc != /*NOFUNC*/ -1) {
-        HookEngineI(funcAddr, 5, replaceFunc);
+        HookEngineI(funcAddr, 5 , replaceFunc);
     };
 };
 func void ReplaceEngineFuncF(var int funcAddr, var int thiscall_numParams, var func replaceFunc) {
@@ -478,7 +479,7 @@ func void ReplaceEngineFunc(var int funcAddr, var int thiscall_numParams, var st
 
 // Simple replace functions for return values
 func void Hook_ReturnFalse() {
-    EAX = FALSE;
+    EAX = FALSE ;
 };
 func void Hook_ReturnTrue() {
     EAX = TRUE;
