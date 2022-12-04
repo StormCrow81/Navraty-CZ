@@ -1,11 +1,9 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-instance ItAr_Pal_Helm - opraven název (Helma rytíře -> Helma paladina)
-
+instance ItAr_Pal_Helm - fixed name (Knight's Helmet -> Paladin's Helmet)
 */
 
 
@@ -25,7 +23,7 @@ const int Value_Rake = 5;
 const int Value_Hammer = 5;
 const int Value_Scoop = 3;
 const int Value_Nugget = 30;
-const int VALUE_SNUGGET = 10;
+const  int  VALUE_SNUGGET = 10 ;
 const int VALUE_NUGGET_PAL = 5;
 const int Value_Joint = 20;
 const int VALUE_REDJOINT = 500;
@@ -41,10 +39,10 @@ const int Value_Aquamarine = 100;
 const int Value_HolyWater = 30;
 const int Value_Coal = 5;
 const int Value_DarkPearl = 500;
-const int VALUE_ItMi_ApfelTabak = 8;
-const int VALUE_ItMi_PilzTabak = 16;
-const int VALUE_ItMi_SumpfTabak = 12;
-const int VALUE_ItMi_DoppelTabak = 17;
+const  int VALUE_ItMi_ApfelTabak = 8 ;
+const  int VALUE_ItMi_PilzTabak = 16 ;
+const  int VALUE_ItMi_SumpfTabak = 12 ;
+const  int VALUE_ItMi_DoppelTabak = 17 ;
 const int VALUE_ItMi_HonigTabak = 15;
 const int Value_SilverRing = 30;
 const int Value_SilverNecklace = 60;
@@ -63,7 +61,7 @@ const int Value_GoldChest = 500;
 const int Value_JeweleryChest = 650;
 const int VALUE_GOLDCHEST_EMPTY = 300;
 const int VALUE_JEWELERYCHEST_EMPTY = 400;
-const int Value_InnosStatue = 100;
+const  int Value_InnosStatue = 100 ;
 const int Value_Sextant = 150;
 const int Ri_GrahShar = 20;
 const int Value_Goldnugget = 50;
@@ -87,13 +85,13 @@ instance ItMi_Addon_GoldNugget(C_Item)
 	material = MAT_STONE;
 	description = name;
 	text[4] = "";
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
-instance ItMi_Osair_GoldNugget(C_Item)
+instance ItMi_Osair_GoldNugget (C_Item)
 {
-	name = " Hrudka zlaté rudy ";
+	name = " Lump of gold ore " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -115,13 +113,13 @@ instance ItMi_Addon_WhitePearl(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_SPECIALJOINT(C_Item)
 {
-	name = "Přivolávač snu";
+	name = " Dream Summoner " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Addon_Joint_01 * 10;
@@ -130,11 +128,11 @@ instance ITMI_SPECIALJOINT(C_Item)
 	scemeName = "JOINT";
 	on_state[0] = usespecialjoint;
 	description = name;
-	text[3] = "Tohle stéblo trávy má mnohem silnější účinky než ty obyčejné...";
-	text[4] = "Dárek pro Baala Parveze...";
+	text[ 3 ] = " This blade of grass has much stronger effects than ordinary ones... " ;
+	text[ 4 ] = " Gift for Baal Parvez... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -146,76 +144,76 @@ func void usespecialjoint()
 
 instance ItMi_BaltramPaket(C_Item)
 {
-	name = "Baltramova zásilka";
+	name = " Baltram's Shipment " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 300;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[3] = "Těžký balík plný dobrých věcí";
-	text[4] = "od farmáře Akila...";
+	text[ 3 ] = " A heavy package full of good things " ;
+	text[ 4 ] = " from farmer Akila... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_LoaPartyFood(C_Item)
 {
-	name = "Balík jídla";
+	name = " Food Package " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 500;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Těžký balík plný svěžího a chutného jídla...";
+	text[ 4 ] = " A heavy package full of fresh and tasty food... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_SkipShipPack(C_Item)
 {
-	name = "Balík součástek";
+	name = " Parts Package " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Těžký balík se součástkami pro lodní kormidlo...";
+	text[ 4 ] = " Heavy package with parts for a ship's rudder... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_Packet_Baltram4Skip_Addon(C_Item)
 {
-	name = "Balík pro Skipa";
+	name = " Balík pro Skipa " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 200;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[3] = "Těžký balík plný dobrých věcí";
-	text[4] = "určen pirátu Skipovi...";
+	text[ 3 ] = " A heavy package full of good things " ;
+	text[ 4 ] = " intended for Skip the pirate... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_BromorsGeld_Addon(C_Item)
 {
-	name = "Bromorova zlatá mísa";
+	name = " Bromor's Golden Bowl " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Nugget;
 	visual = "ItMi_GoldChalice.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Na dně mísy je něčím ostrým vyryto jméno 'Bromor'...";
+	text[ 4 ] = " On the bottom of the bowl, the name 'Bromor' is engraved with something sharp... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ItSe_ADDON_CavalornsBeutel(C_Item)
+instance ItSe_ADDON_CavalornsBeutel (C_Item)
 {
-	name = "Cavalornův kožený měšec";
+	name = " Cavalorn's Leather Pouch " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -224,7 +222,7 @@ instance ItSe_ADDON_CavalornsBeutel(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_CavalornsBeutel;
 	description = name;
-	text[4] = "Na měšci je vyšito jméno 'Cavalorn'...";
+	text[ 4 ] = " The name 'Cavalorn' is embroidered on the pouch... " ;
 	inv_animate = 1;
 };
 
@@ -236,7 +234,7 @@ func void Use_CavalornsBeutel()
 	SC_OpenedCavalornsBeutel = TRUE;
 	Log_CreateTopic(TOPIC_Addon_CavalornTheHut,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_CavalornTheHut,LOG_Running);
-	B_LogEntry(TOPIC_Addon_CavalornTheHut,"Uvnitř Cavalornovy chatrče v Hornickém údolí jsem našel měšec s hrudkou rudy. Cavalorn, ten starý darebák, ho tady musel zapomenout.");
+	B_LogEntry(TOPIC_Addon_CavalornTheHut, " Inside Cavalorn's hut in Mining Valley I found a pouch with a lump of ore. Cavalorn, that old scoundrel, must have left it here. " );
 };
 
 
@@ -292,7 +290,7 @@ func void Use_Drum()
 };
 
 
-instance ItMi_IEDrumScheit(C_Item)
+instance ItMi_IEDrumScheit (C_Item)
 {
 	name = "Trumšajt";
 	mainflag = ITEM_KAT_NONE;
@@ -314,7 +312,7 @@ func void Use_Drumscheit()
 
 instance ItMi_IEDrumStick(C_Item)
 {
-	name = "Bubenická palička";
+	name = " Drumstick " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -344,9 +342,9 @@ func void Use_Dudel()
 };
 
 
-instance ItMi_IEDudelGelb(C_Item)
+instance ItMi_IEDudelYellow (C_Item)
 {
-	name = "Žluté dudy";
+	name = " Yellow Bagpipes " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -400,7 +398,7 @@ func void Use_Laute()
 
 instance ItMi_Addon_Lennar_Paket(C_Item)
 {
-	name = "Cinkající balík";
+	name = " Jingling Package " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -409,7 +407,7 @@ instance ItMi_Addon_Lennar_Paket(C_Item)
 	on_state[0] = Use_LennarPaket;
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Uvnitř balíku nečo cinká...";
+	text[ 4 ] = " Something rattles inside the package... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -422,23 +420,23 @@ func void Use_LennarPaket()
 	LennarPaket_Open = TRUE;
 };
 
-instance ItMi_Zeitspalt_Addon(C_Item)
+instance ItMi_Zeitspalt_Addon (C_Item)
 {
-	name = "Černá ruda";
+	name = " Black Ore " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "KOHLE_NUGGET.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Ruda s velice vzácnou strukturou...";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	text[ 4 ] = " Ore with a very rare structure... " ;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Silber(C_Item)
 {
-	name = "Stříbrný nuget";
+	name = " Silver Nugget " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -446,21 +444,21 @@ instance ItMi_Silber(C_Item)
 	material = MAT_STONE;
 	description = name;
 	text[4] = "";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_MoonStone(C_Item)
 {
-	name = "Měsíční kámen";
+	name = " Moonstone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "MOON_NUGGET.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Ruda s mimořádně vzácnou strukturou...";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	text[ 4 ] = " Ore with an extremely rare structure... " ;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -473,8 +471,8 @@ instance ItMi_Adamant(C_Item)
 	visual = "SILVER_NUGGET.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Ruda s mimořádně odolnou strukturou...";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	text[ 4 ] = " Ore with an extremely durable structure... " ;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -482,7 +480,7 @@ instance ItMi_Adamant(C_Item)
 
 instance ItMi_Addon_Joint_01(C_Item)
 {
-	name = "Zelený novic";
+	name = " Green Novice " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Addon_Joint_01;
@@ -491,19 +489,19 @@ instance ItMi_Addon_Joint_01(C_Item)
 	scemeName = "JOINT";
 	on_state[0] = Use_Addon_Joint_01;
 	description = name;
-	text[2] = "Mírně zahání únavu...";
-	text[3] = "Mimořádné účinky na Guru a templáře...";
+	text[ 2 ] = " Slightly banishes fatigue... " ;
+	text[ 3 ] = " Extraordinary effects on Guru and Templar... " ;
 	text[4] = NAME_Duration;
 	count[4] = 10;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_JOINT_02(C_Item)
 {
-	name = "Severní soumrak";
+	name = " Northern Twilight " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_ADDON_JOINT_02;
@@ -512,19 +510,19 @@ instance ITMI_JOINT_02(C_Item)
 	scemeName = "JOINT";
 	on_state[0] = use_itmi_joint_02;
 	description = name;
-	text[2] = "Mírně zahání únavu...";
-	text[3] = "Mimořádné účinky na Guru a templáře...";
+	text[ 2 ] = " Slightly banishes fatigue... " ;
+	text[ 3 ] = " Extraordinary effects on Guru and Templar... " ;
 	text[4] = NAME_Duration;
 	count[4] = 15;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_JOINT_03(C_Item)
 {
-	name = "Přivolávač snu";
+	name = " Dream Summoner " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_ADDON_JOINT_03;
@@ -533,13 +531,13 @@ instance ITMI_JOINT_03(C_Item)
 	scemeName = "JOINT";
 	on_state[0] = use_itmi_joint_03;
 	description = name;
-	text[2] = "Mírně zahání únavu...";
-	text[3] = "Mimořádné účinky na Guru a templáře...";
+	text[ 2 ] = " Slightly banishes fatigue... " ;
+	text[ 3 ] = " Extraordinary effects on Guru and Templar... " ;
 	text[4] = NAME_Duration;
 	count[4] = 20;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -574,21 +572,21 @@ func void Use_Addon_Joint_01()
 				hero.protection[PROT_FIRE] = hero.protection[PROT_FIRE] + JointBonus_01;
 				hero.protection[PROT_MAGIC] = hero.protection[PROT_MAGIC] + JointBonus_01;
 				hero.protection[PROT_FLY] = hero.protection[PROT_FLY] + JointBonus_01;
-				AI_Print("Pohroužíš se do stavu magické koncentrace...");
+				AI_Print( " You sink into a state of magical concentration... " );
 			}
 			else if(hero.guild == GIL_TPL)
 			{
 				hero.protection[PROT_EDGE] = hero.protection[PROT_EDGE] + JointBonus_01;
 				hero.protection[PROT_BLUNT] = hero.protection[PROT_BLUNT] + JointBonus_01;
 				hero.protection[PROT_POINT] = hero.protection[PROT_POINT] + JointBonus_01;
-				AI_Print("Pohroužíš se do stavu bojové koncentrace...");
+				AI_Print( " You sink into a state of combat concentration... " );
 			};
 
 			Wld_PlayEffect("SLOW_TIME",self,self,0,0,0,FALSE);
 		}
 		else
 		{
-			AI_Print("Prožíváš obvyklé pocity...");
+			AI_Print( " You are experiencing the usual feelings... " );
 		};
 	};
 };
@@ -633,7 +631,7 @@ func void use_itmi_joint_02()
 				hero.protection[PROT_MAGIC] = hero.protection[PROT_MAGIC] + JointBonus_02;
 				hero.protection[PROT_FLY] = hero.protection[PROT_FLY] + JointBonus_02;
 				MagicMeditation = TRUE;
-				AI_Print("Pohroužíš se do stavu magické meditace...");
+				AI_Print( " You will sink into a state of magical meditation... " );
 			}
 			else if(hero.guild == GIL_TPL)
 			{
@@ -641,14 +639,14 @@ func void use_itmi_joint_02()
 				hero.protection[PROT_BLUNT] = hero.protection[PROT_BLUNT] + JointBonus_02;
 				hero.protection[PROT_POINT] = hero.protection[PROT_POINT] + JointBonus_02;
 				FightMeditation = TRUE;
-				AI_Print("Pohroužíš se do stavu bojové meditace...");
+				AI_Print( " You sink into a state of martial meditation... " );
 			};
 
 			Wld_PlayEffect("SLOW_TIME",self,self,0,0,0,FALSE);
 		}
 		else
 		{
-			AI_Print("Prožíváš obvyklé pocity...");
+			AI_Print( " You are experiencing the usual feelings... " );
 		};
 	};
 };
@@ -695,7 +693,7 @@ func void use_itmi_joint_03()
 				MagicMeditation = TRUE;
 				ATR_INTELLECT += 50;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-				AI_Print("Pohroužíš se do stavu magického transu...");
+				AI_Print( " You will sink into a state of magical trance... " );
 			}
 			else if(hero.guild == GIL_TPL)
 			{
@@ -704,14 +702,14 @@ func void use_itmi_joint_03()
 				hero.protection[PROT_POINT] = hero.protection[PROT_POINT] + JointBonus_03;
 				FightMeditation = TRUE;
 				WarTranse = TRUE;
-				AI_Print("Pohroužíš se do stavu bojového transu...");
+				AI_Print( " You go into a battle trance state... " );
 			};
 
 			Wld_PlayEffect("SLOW_TIME",self,self,0,0,0,FALSE);
 		}
 		else
 		{
-			AI_Print("Prožíváš obvyklé pocity...");
+			AI_Print( " You are experiencing the usual feelings... " );
 		};
 	};
 };
@@ -731,9 +729,9 @@ instance ItMi_Stomper(C_Item)
 	inv_animate = 1;
 };
 
-instance ITMI_BROTSCHIEBER(C_Item)
+instance ITMI_BROTSCHIEBER (C_Item)
 {
-	name = "Sázecí lopata";
+	name = " Planting Spade " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Stomper;
@@ -748,7 +746,7 @@ instance ITMI_BROTSCHIEBER(C_Item)
 
 instance ItMi_RuneBlank(C_Item)
 {
-	name = "Runový kámen";
+	name = " Runestone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 50;
@@ -763,7 +761,7 @@ instance ItMi_RuneBlank(C_Item)
 
 instance ItMi_GoblinRune(C_Item)
 {
-	name = "Runa gobliního šamana";
+	name = " Rune of the Goblin Shaman " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -778,7 +776,7 @@ instance ItMi_GoblinRune(C_Item)
 
 instance ItMi_UpRuneBlank(C_Item)
 {
-	name = "Starší runový kámen";
+	name = " Elder Runestone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
@@ -793,7 +791,7 @@ instance ItMi_UpRuneBlank(C_Item)
 
 instance ItMi_HighRuneBlank(C_Item)
 {
-	name = "Vyšší runový kámen";
+	name = " Higher Runestone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 150;
@@ -808,7 +806,7 @@ instance ItMi_HighRuneBlank(C_Item)
 
 instance ItMi_PyroRune(C_Item)
 {
-	name = "Pyrokarův runový kámen";
+	name = " Pyrokar's Runestone " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_RuneBlank;
@@ -817,7 +815,7 @@ instance ItMi_PyroRune(C_Item)
 	description = name;
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_ItMi_PyroRune;
-	text[4] = "Tahle runa dokáže pohlcovat magickou energii...";
+	text[ 4 ] = " This rune can absorb magical energy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -838,7 +836,7 @@ func void Use_ItMi_PyroRune()
 			{
 				CreateInvItems(hero,ItRu_PyroRune,1);
 				AI_Print(PRINT_MagicRuneFull);
-				B_LogEntry(TOPIC_XRANFREG,"Myslím, že množství magické energie v runě už je dostatečné na to, abych s její pomocí toho kamenného golema zničil... Kde ho ale najít - to je otázka.");
+				B_LogEntry( TOPIC_XRANFREG , " I think that the amount of magical energy in the rune is already enough to use it to destroy the stone golem... But where to find it - that's the question. " );
 			}
 			else
 			{
@@ -857,7 +855,7 @@ func void Use_ItMi_PyroRune()
 			{
 				CreateInvItems(hero,ItRu_PyroRune,1);
 				AI_Print(PRINT_MagicRuneFull);
-				B_LogEntry(TOPIC_XRANFREG,"Myslím, že množství magické energie v runě je už dostatečné na to, abych s její pomocí toho kamenného golema zničil... Kde ho ale najít - to je otázka.");
+				B_LogEntry( TOPIC_XRANFREG , " I think that the amount of magical energy in the rune is already enough to use it to destroy the stone golem... But where to find it - that's the question. " );
 			}
 			else
 			{
@@ -876,7 +874,7 @@ func void Use_ItMi_PyroRune()
 			{
 				CreateInvItems(hero,ItRu_PyroRune,1);
 				AI_Print(PRINT_MagicRuneFull);
-				B_LogEntry(TOPIC_XRANFREG,"Myslím, že množství magické energie v runě je už dostatečné na to, abych s její pomocí toho kamenného golema zničil... Kde ho ale najít - to je otázka.");
+				B_LogEntry( TOPIC_XRANFREG , " I think that the amount of magical energy in the rune is already enough to use it to destroy the stone golem... But where to find it - that's the question. " );
 			}
 			else
 			{
@@ -895,7 +893,7 @@ func void Use_ItMi_PyroRune()
 			{
 				CreateInvItems(hero,ItRu_PyroRune,1);
 				AI_Print(PRINT_MagicRuneFull);
-				B_LogEntry(TOPIC_XRANFREG,"Myslím, že množství magické energie v runě je už dostatečné na to, abych s její pomocí toho kamenného golema zničil... Kde ho ale najít - to je otázka.");
+				B_LogEntry( TOPIC_XRANFREG , " I think that the amount of magical energy in the rune is already enough to use it to destroy the stone golem... But where to find it - that's the question. " );
 			}
 			else
 			{
@@ -914,7 +912,7 @@ func void Use_ItMi_PyroRune()
 			{
 				CreateInvItems(hero,ItRu_PyroRune,1);
 				AI_Print(PRINT_MagicRuneFull);
-				B_LogEntry(TOPIC_XRANFREG,"Myslím, že množství magické energie v runě je už dostatečné na to, abych s její pomocí toho kamenného golema zničil... Kde ho ale najít - to je otázka.");
+				B_LogEntry( TOPIC_XRANFREG , " I think that the amount of magical energy in the rune is already enough to use it to destroy the stone golem... But where to find it - that's the question. " );
 			}
 			else
 			{
@@ -939,16 +937,16 @@ func void Use_ItMi_PyroRune()
 
 instance ItMi_GalomRuneBack(C_Item)
 {
-	name = "Neobvyklý runový kámen";
+	name = " Unusual Runestone " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
-	visual = "ItRu_TeleportXardas.3DS";
+	visual = " ItRu_TeleportXardas.3DS " ;
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_ItMi_GalomRuneBack;
 	description = name;
-	text[4] = "Vyzařuje magickou energii...";
+	text[ 4 ] = " Emits magical energy... " ;
 	inv_animate = 1;
 };
 
@@ -964,14 +962,14 @@ func void Use_ItMi_GalomRuneBack()
 
 instance ItMi_Pliers(C_Item)
 {
-	name = "Kleště";
+	name = " Pliers " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
 	visual = "ItMi_Pliers.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kleště na tesání a práci se dřevem...";
+	text[ 4 ] = " Carving and woodworking pliers... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -979,14 +977,14 @@ instance ItMi_Pliers(C_Item)
 
 instance ItMi_AnvilPliers(C_Item)
 {
-	name = "Kovářské kleště";
+	name = " Blacksmith's pliers " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
 	visual = "ItMi_AnvilPliers.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kleště na kování a tavení kovů...";
+	text[ 4 ] = " Pliers for forging and melting metals... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -994,7 +992,7 @@ instance ItMi_AnvilPliers(C_Item)
 
 instance ItMi_Flask(C_Item)
 {
-	name = "Alchymistická lahvička";
+	name = " Alchemist's Vial " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Flask;
@@ -1024,7 +1022,7 @@ instance ItMi_Hammer(C_Item)
 
 instance ItMi_Scoop(C_Item)
 {
-	name = "Lžíce";
+	name = " Spoon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Scoop;
@@ -1039,7 +1037,7 @@ instance ItMi_Scoop(C_Item)
 
 instance ItMi_Pan(C_Item)
 {
-	name = "Pánev";
+	name = " Pan " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Pan;
@@ -1054,7 +1052,7 @@ instance ItMi_Pan(C_Item)
 
 instance ItMi_PanFull(C_Item)
 {
-	name = "Pánev";
+	name = " Pan " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Pan;
@@ -1084,7 +1082,7 @@ instance ItMi_Saw(C_Item)
 
 instance ItMiSwordraw(C_Item)
 {
-	name = "Surová ocel";
+	name = " Raw Steel " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SwordRaw;
@@ -1100,7 +1098,7 @@ instance ItMiSwordraw(C_Item)
 
 instance ITMISWORDRAWHOT_1(C_Item)
 {
-	name = "Rozžhavená ocel";
+	name = " Red-hot steel " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SwordRawHot;
@@ -1116,7 +1114,7 @@ instance ITMISWORDRAWHOT_1(C_Item)
 
 instance ItMiSwordbladehot(C_Item)
 {
-	name = "Rozžhavená čepel";
+	name = " Red-hot Blade " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SwordBladeHot;
@@ -1147,7 +1145,7 @@ instance ITMISWORDBLADE_1(C_Item)
 
 instance ItMi_Broom(C_Item)
 {
-	name = "Koště";
+	name = " Broom " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Broom;
@@ -1164,26 +1162,26 @@ instance ItMi_Broom(C_Item)
 
 func void Use_Broom()
 {
-	if(Npc_IsPlayer(self) && (BroomBONUS == FALSE))
+	if (Npc_IsPlayer(self) && (BroomBONUS ==  FALSE ))
 	{
 		Snd_Play("LevelUp");
 		hero.exp = hero.exp + 50;
 		AI_NoticePrint(3000,4098,NAME_Addon_BroomBonus);
-		BroomBONUS = TRUE;
+		BromineBONUS = TRUE ;
 	};
 	if(Npc_IsPlayer(self))
 	{
 		if((MIS_ParlanFegen == LOG_Running) && (Npc_GetDistToWP(hero,"NW_MONASTERY_MAGE03_01") < 300))
 		{
-			if(NOV_Helfer < 4)
+			if (NOV_Helper <  4 )
 			{
 				B_Say(self,self,"$NOSWEEPING");
 				AI_Print(PRINT_NoSweeping);
 			}
 			else
 			{
-				AI_Print("Teď už tady vypadá čistěji...");
-				NOV_Helfer = NOV_Helfer + 1;
+				AI_Print( " It looks cleaner here now... " );
+				NOV_Helpers = NOV_Helpers +  1 ;
 			};
 		};
 	};
@@ -1223,7 +1221,7 @@ func void Use_Lute()
 
 instance ItMi_Brush(C_Item)
 {
-	name = "Kartáč";
+	name = " Brush " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Brush;
@@ -1264,7 +1262,7 @@ instance ItMi_Smoke_Pipe(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -1278,7 +1276,7 @@ func void Use_ItMi_Smoke_Pipe()
 
 instance ItMi_Joint(C_Item)
 {
-	name = "Stéblo trávy z bažin";
+	name = " Stem of Swamp Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Joint;
@@ -1287,11 +1285,11 @@ instance ItMi_Joint(C_Item)
 	scemeName = "JOINT";
 	on_state[0] = Use_Joint;
 	description = name;
-	text[2] = "Mírně zahání únavu...";
+	text[ 2 ] = " Slightly banishes fatigue... " ;
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -1317,7 +1315,7 @@ func void Use_Joint()
 
 instance ITMI_REDJOINT(C_Item)
 {
-	name = "Stéblo červené trávy z bažin";
+	name = " Stem of Red Swamp Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_REDJOINT;
@@ -1326,11 +1324,11 @@ instance ITMI_REDJOINT(C_Item)
 	scemeName = "JOINT";
 	on_state[0] = use_itmi_redjoint;
 	description = name;
-	text[2] = "Účinky neznámé...";
-	text[4] = "Tohle stéblo je ubaleno z červené trávy z bažin...";
+	text[ 2 ] = " Effects unknown... " ;
+	text[ 4 ] = " This straw is wrapped in red marsh grass... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -1389,14 +1387,14 @@ func void UsePacket()
 
 instance ItMi_VatrasPacket(C_Item)
 {
-	name = "Lobartův balík";
+	name = " Lobart package " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 200;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Balík se zásobami jídla pro Vatrase...";
+	text[ 4 ] = " Package with food supplies for Vatras... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1404,7 +1402,7 @@ instance ItMi_VatrasPacket(C_Item)
 
 instance ItMi_Pocket(C_Item)
 {
-	name = "Kožený měšec";
+	name = " Leather pouch " ;
 	mainflag = ITEM_KAT_NONE | ITEM_MULTI;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1413,7 +1411,7 @@ instance ItMi_Pocket(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = UsePocket;
 	description = name;
-	text[4] = "Malý měšec, nepříliš těžký...";
+	text[ 4 ] = " Small pouch, not too heavy... " ;
 	inv_animate = 1;
 };
 
@@ -1426,7 +1424,7 @@ func void UsePocket()
 
 instance ItMi_Nugget(C_Item)
 {
-	name = "Magická ruda";
+	name = " Magic Ore " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -1434,13 +1432,13 @@ instance ItMi_Nugget(C_Item)
 	material = MAT_STONE;
 	description = name;
 	text[4] = "";
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_IronStuck(C_Item)
 {
-	name = "Železný ingot";
+	name = " Iron Ingot " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 50;
@@ -1480,9 +1478,9 @@ instance ItMi_OreStuck(C_Item)
 	inv_animate = 1;
 };
 
-instance ITMI_SNUGGET(C_Item)
+instance ITMI_SNUGGET (C_Item)
 {
-	name = "Železná ruda";
+	name = " Iron Ore " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -1490,7 +1488,7 @@ instance ITMI_SNUGGET(C_Item)
 	material = MAT_STONE;
 	description = name;
 	text[4] = "";
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -1503,16 +1501,16 @@ instance ITMI_TESTNUGGET(C_Item)
 	visual = "ItMi_Nugget.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Hrudka rudy z ryzí rudné žíly...";
+	text[ 4 ] = " Lump of ore from a pure ore vein... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Gold(C_Item)
 {
-	name = "Zlatá mince";
+	name = " Gold coin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Gold;
@@ -1522,7 +1520,7 @@ instance ItMi_Gold(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	//inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	// inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
 	inv_animate = 1;
 };
 
@@ -1538,13 +1536,13 @@ instance ItMi_OldCoin(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_BELIAR_GOLD(C_Item)
 {
-	name = "Prokleté zlato";
+	name = " Cursed Gold " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -1553,13 +1551,13 @@ instance ITMI_BELIAR_GOLD(C_Item)
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_HolderGoldCandle(C_Item)
 {
-	name = "Zlatý svícen";
+	name = " Golden Candlestick " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_GoldCandleHolder;
@@ -1574,7 +1572,7 @@ instance ItMi_HolderGoldCandle(C_Item)
 
 instance ItMi_NecklaceGold(C_Item)
 {
-	name = "Zlatý náhrdelník";
+	name = " Gold Necklace " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_AMULET;
 	value = Value_GoldNecklace;
@@ -1584,13 +1582,13 @@ instance ItMi_NecklaceGold(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_SilverRing(C_Item)
 {
-	name = "Stříbrný prsten";
+	name = " Silver Ring " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_RING;
 	value = Value_SilverRing;
@@ -1600,15 +1598,15 @@ instance ItMi_SilverRing(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_SilverCup(C_Item)
 {
-	name = "Stříbrný pohár";
+	name = " Silver Cup " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SilverCup;
@@ -1623,7 +1621,7 @@ instance ItMi_SilverCup(C_Item)
 
 instance ItMi_SilverPlate(C_Item)
 {
-	name = "Stříbrný talíř";
+	name = " Silver Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SilverPlate;
@@ -1638,7 +1636,7 @@ instance ItMi_SilverPlate(C_Item)
 
 instance ItMi_PlateGold(C_Item)
 {
-	name = "Zlatý talíř";
+	name = " Gold Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_GoldPlate;
@@ -1653,7 +1651,7 @@ instance ItMi_PlateGold(C_Item)
 
 instance ItMi_CupGold(C_Item)
 {
-	name = "Zlatý pohár";
+	name = " Gold Cup " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_GoldCup;
@@ -1668,15 +1666,15 @@ instance ItMi_CupGold(C_Item)
 
 instance ItMi_HarimCup(C_Item)
 {
-	name = "Kharimův zlatý pohár";
+	name = " Kharim's Golden Cup " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_GoldCup;
 	visual = "ItMi_GoldCup.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[3] = "Na okraji poháru jsou vyryta tyhle slova:";
-	text[4] = "'Nejlepšímu bojovníkovi arény Starého tábora od Gomeze...'";
+	text[ 3 ] = " These words are engraved on the edge of the cup: " ;
+	text[ 4 ] = " 'To the best fighter of the Old Camp arena by Gomez...' " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1684,7 +1682,7 @@ instance ItMi_HarimCup(C_Item)
 
 instance ITMI_GOMEZGOLDCUP(C_Item)
 {
-	name = "Číše rudobarona";
+	name = " Red Baron Chalice " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 700;
@@ -1699,13 +1697,13 @@ instance ITMI_GOMEZGOLDCUP(C_Item)
 
 instance ItMi_ZloodCup_MIS(C_Item)
 {
-	name = "Krvavý kalich";
+	name = " Blood Chalice " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_BloodCup;
 	visual = "ItMi_BloodCup_MIS_Sky.3DS";
 	material = MAT_METAL;
-	description = "Krvavý kalich";
+	description = " Blood Chalice " ;
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -1714,7 +1712,7 @@ instance ItMi_ZloodCup_MIS(C_Item)
 
 instance ItMi_RingGold(C_Item)
 {
-	name = "Zlatý prsten";
+	name = " Gold Ring " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_RING;
 	value = Value_GoldRing;
@@ -1724,33 +1722,33 @@ instance ItMi_RingGold(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ITMI_RAVENGOLDRING(C_Item)
 {
-	name = "Zlatý prsten";
+	name = " Gold Ring " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_RING;
 	value = Value_GoldRing;
 	visual = "ItMi_Ring_Gold_New_Raven.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Na prstenu je vyryto jméno 'Raven'...";
+	text[ 4 ] = " The name 'Raven' is engraved on the ring... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD * 3;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD  *  3 ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_SilverChalice(C_Item)
 {
-	name = "Stříbrný kalich";
+	name = " Silver Chalice " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SilverChalice;
@@ -1765,7 +1763,7 @@ instance ItMi_SilverChalice(C_Item)
 
 instance ItMi_ChaliceGold(C_Item)
 {
-	name = "Zlatý kalich";
+	name = " Golden Chalice " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_GoldChalice;
@@ -1780,7 +1778,7 @@ instance ItMi_ChaliceGold(C_Item)
 
 instance ItMi_ChestGold(C_Item)
 {
-	name = "Zlatá skříňka";
+	name = " Gold Box " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_GoldChest;
@@ -1789,7 +1787,7 @@ instance ItMi_ChestGold(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = use_itmi_goldchest;
 	description = name;
-	text[4] = "Zamčená zlatá skříňka...";
+	text[ 4 ] = " Locked Gold Box... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 0;
@@ -1804,14 +1802,14 @@ func void use_itmi_goldchest()
 	{
 		if(BELIARCURSEYOU == TRUE)
 		{
-			AI_Print("Uvnitř nic není...");
+			AI_Print( " There is nothing inside... " );
 		}
 		else
 		{
-			goldchestrandom = 100;
+			goldchestrandom = 100 ;
 			CreateInvItems(self,ItMi_Gold,goldchestrandom);
-			concatText = ConcatStrings("Našel jsi ",IntToString(goldchestrandom));
-			concatText = ConcatStrings(concatText," zlatých mincí...");
+			concatText = ConcatStrings( " You found " ,IntToString(goldchestrandom));
+			concatText = ConcatStrings(concatText, " gold coins... " );
 			AI_Print(concatText);
 		};
 
@@ -1821,16 +1819,16 @@ func void use_itmi_goldchest()
 
 instance ItMi_JeweleryChest(C_Item)
 {
-	name = "Šperkovnice";
+	name = " Jewelry Box " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_JeweleryChest;
 	visual = "ItMi_JeweleryChest_Sky.3DS";
 	material = MAT_METAL;
 	scemeName = "MAPSEALED";
-	on_state[0] = use_itmi_jewelerychest;
+	on_state[ 0 ] = use_itmi_jewelerychest;
 	description = name;
-	text[4] = "Zamčená šperkovnice...";
+	text[ 4 ] = " Locked jewelry box... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1854,7 +1852,7 @@ func void use_itmi_jewelerychest()
 			CreateInvItems(self,ItMi_Aquamarine,1);
 			CreateInvItems(self,ItMi_OldCoin,3);
 			JEWELERYCHESTPEARL += 1;
-			AI_Print("Našel jsi několik drahých kamenů!");
+			AI_Print( " You found some gems! " );
 		}
 		else if(jewelerychestrandom >= 50)
 		{
@@ -1862,17 +1860,17 @@ func void use_itmi_jewelerychest()
 			CreateInvItems(self,ItMi_RingGold,1);
 			CreateInvItems(self,ItMi_SilverNecklace,1);
 			JEWELERYCHESTPEARL += 1;
-			AI_Print("Našel jsi několik drahých šperků!");
+			AI_Print( " You found some expensive jewels! " );
 		}
 		else if(jewelerychestrandom >= 25)
 		{
 			CreateInvItems(self,ItMi_OldCoin,13);
 			JEWELERYCHESTPEARL += 1;
-			AI_Print("Našel jsi několik starých mincí!");
+			AI_Print( " You found some old coins! " );
 		}
 		else
 		{
-			AI_Print("Uvnitř nic není...");
+			AI_Print( " There is nothing inside... " );
 			JEWELERYCHESTPEARL += 1;
 		};
 		if(JEWELERYCHESTPEARL == 2)
@@ -1881,7 +1879,7 @@ func void use_itmi_jewelerychest()
 			JEWELERYCHESTPEARL = 0;
 			if(jewelerychestrandom < 25)
 			{
-				AI_Print("... tedy téměř nic");
+				AI_Print( " ... so almost nothing " );
 			};
 		};
 		CreateInvItems(self,itmi_jewelerychest_empty,1);
@@ -1891,14 +1889,14 @@ func void use_itmi_jewelerychest()
 
 instance ITMI_CHEST_EMPTYGOLD(C_Item)
 {
-	name = "Zlatá skříňka";
+	name = " Gold Box " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_GOLDCHEST_EMPTY;
 	visual = "ItMi_GoldChest.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Prázdná zlatá skříňka...";
+	text[ 4 ] = " Empty Gold Box... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 0;
@@ -1906,14 +1904,14 @@ instance ITMI_CHEST_EMPTYGOLD(C_Item)
 
 instance ITMI_JEWELERYCHEST_EMPTY(C_Item)
 {
-	name = "Šperkovnice";
+	name = " Jewelry Box " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_JEWELERYCHEST_EMPTY;
 	visual = "ItMi_JeweleryChest_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Prázdná šperkovnice...";
+	text[ 4 ] = " Empty jewelry box... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1921,7 +1919,7 @@ instance ITMI_JEWELERYCHEST_EMPTY(C_Item)
 
 instance ItMi_TGoblin(C_Item)
 {
-	name = "Zlatá soška";
+	name = " Golden Statuette " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
@@ -1929,7 +1927,7 @@ instance ItMi_TGoblin(C_Item)
 	material = MAT_METAL;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Vypadá jako soška nějakého božství...";
+	text[ 4 ] = " It looks like a statue of some deity... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1949,7 +1947,7 @@ instance ItMi_InnosStatue(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -1973,7 +1971,7 @@ func void Use_ItMi_InnosStatue()
 	};
 };
 
-//-------------------------Mol'ba-----------------------
+// -------------------------Mol'ba-------------------- ---
 
 instance PC_PRAYMOBILE_END(C_Info)
 {
@@ -1997,7 +1995,7 @@ func void PC_PRAYMOBILE_end_info()
 {
 	AI_StopProcessInfos(hero);
 	Wld_StopEffect("DIALOGSCOPE_FX");
-	hero.aivar[AIV_INVINCIBLE] = FALSE;
+	hero.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PrayMobileCheck = FALSE;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	AI_PlayAni(hero,"T_PRAY_2_STAND");
@@ -2059,7 +2057,7 @@ func void PC_PRAYMOBILE_DO_info()
 
 instance ItMi_Statue_Demon_01(C_Item)
 {
-	name = "Soška";
+	name = " Statue " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
@@ -2067,11 +2065,11 @@ instance ItMi_Statue_Demon_01(C_Item)
 	scemeName = "MAP";
 	material = MAT_STONE;
 	on_state[0] = Use_ItMi_Statue_Demon_01;
-	description = "Soška démona";
-	text[4] = "Vzácná mramorová soška démona...";
+	description = " Demon Statuette " ;
+	text[ 4 ] = " A rare marble statuette of a demon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -2117,7 +2115,7 @@ func void PC_IDOLMOBILE_end_info()
 {
 	AI_StopProcessInfos(hero);
 	Wld_StopEffect("DIALOGSCOPE_FX");
-	hero.aivar[AIV_INVINCIBLE] = FALSE;
+	hero.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	IdolMobileCheck = FALSE;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	AI_PlayAni(hero,"T_PRAY_2_STAND");
@@ -2145,7 +2143,7 @@ func void PC_IDOLMOBILE_DO_info()
 {
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
-		if(PrayIdolDay != Wld_GetDay())
+		if (PrayIdolDay != Wld_GetDay())
 		{
 			if(hero.guild == GIL_KDM)
 			{
@@ -2179,7 +2177,7 @@ func void PC_IDOLMOBILE_DO_info()
 
 instance ITMI_ANTIENTSTATUE(C_Item)
 {
-	name = "Soška Stavitelů";
+	name = " Statue of the Builders " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
@@ -2194,14 +2192,14 @@ instance ITMI_ANTIENTSTATUE(C_Item)
 
 instance ITMI_INNOSMRAMORSTATUE(C_Item)
 {
-	name = "Mramorová soška Innose";
+	name = " Marble Statue of Innose " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 3000;
 	visual = "ITMI_INNOSMRAMORSTATUE.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Vzácná soška Innose z černého nordmarského mramoru...";
+	text[ 4 ] = " Rare statuette of Innos in black Nordmar marble... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2224,7 +2222,7 @@ instance ItMi_Sextant(C_Item)
 
 instance ItMi_SilverCandleHolder(C_Item)
 {
-	name = "Stříbrný svícen";
+	name = " Silver Candlestick " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SilverCandleHolder;
@@ -2239,7 +2237,7 @@ instance ItMi_SilverCandleHolder(C_Item)
 
 instance ItMi_SilverNecklace(C_Item)
 {
-	name = "Stříbrný náhrdelník";
+	name = " Silver Necklace " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_AMULET;
 	value = Value_SilverNecklace;
@@ -2264,7 +2262,7 @@ instance ItMi_Sulfur(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -2280,13 +2278,13 @@ instance ItMi_Quartz(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Pitch(C_Item)
 {
-	name = "Pryskyřice";
+	name = " Resin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Pitch;
@@ -2301,7 +2299,7 @@ instance ItMi_Pitch(C_Item)
 
 instance ItMi_Rockcrystal(C_Item)
 {
-	name = "Kamenný krystal";
+	name = " Rock Crystal " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Rockcrystal;
@@ -2316,7 +2314,7 @@ instance ItMi_Rockcrystal(C_Item)
 
 instance ItMi_Aquamarine(C_Item)
 {
-	name = "Akvamarín";
+	name = " Aquamarine " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Aquamarine;
@@ -2326,7 +2324,7 @@ instance ItMi_Aquamarine(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -2342,13 +2340,13 @@ instance ItMi_Coal(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_DarkPearl(C_Item)
 {
-	name = "Černá perla";
+	name = " Black Pearl " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DarkPearl;
@@ -2358,20 +2356,20 @@ instance ItMi_DarkPearl(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
-instance ItMi_ApfelTabak(C_Item)
+instance ItMi_ApfelTabak (C_Item)
 {
-	name = "Jablečný tabák";
+	name = " Apple Tobacco " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_ItMi_ApfelTabak;
 	visual = "ItMi_Pocket_Spec.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Váček s jablečným tabákem...";
+	text[ 4 ] = " Apple tobacco pouch... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2379,29 +2377,29 @@ instance ItMi_ApfelTabak(C_Item)
 
 instance ItMi_PilzTabak(C_Item)
 {
-	name = "Houbový tabák";
+	name = " Mushroom Tobacco " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_ItMi_PilzTabak;
 	visual = "ItMi_Pocket_Spec.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Váček s tmavým jablečno-houbovým tabákem...";
+	text[ 4 ] = " Dark apple-mushroom tobacco pouch... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ItMi_DoppelTabak(C_Item)
+instance ItMi_DoubleTobacco (C_Item)
 {
-	name = "Dvojitý jablečný tabák";
+	name = " Double Apple Tobacco " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_ItMi_DoppelTabak;
 	visual = "ItMi_Pocket_Spec.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Váček se dvojitou porcí jablečného tabáku...";
+	text[ 4 ] = " A pouch with a double portion of apple tobacco... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2409,29 +2407,29 @@ instance ItMi_DoppelTabak(C_Item)
 
 instance ItMi_Honigtabak(C_Item)
 {
-	name = "Medový tabák";
+	name = " Honey Tobacco " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_ItMi_HonigTabak;
 	visual = "ItMi_Pocket_Spec.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Váček se sladkým jablečným tabákem...";
+	text[ 4 ] = " Sweet Apple Tobacco Pouch... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ItMi_SumpfTabak(C_Item)
+instance ItMi_SumpfTabak (C_Item)
 {
-	name = "Bylinný tabák";
+	name = " Herbal Tobacco " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_ItMi_SumpfTabak;
 	visual = "ItMi_Pocket_Spec.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Váček se směsí tabáku a trávy z bažin...";
+	text[ 4 ] = " A pouch with a mixture of tobacco and marsh grass... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2446,7 +2444,7 @@ instance ItMi_Hasish(C_Item)
 	visual = "ItMi_Pocket_Spec.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Podivně vypadající tmavý lisovaný prášek...";
+	text[ 4 ] = " Strange looking dark pressed powder... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2476,7 +2474,7 @@ instance ITMI_HORN(C_Item)
 	visual = "ItMi_Horn_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Rituální roh...";
+	text[ 4 ] = " Ritual Horn... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2484,7 +2482,7 @@ instance ITMI_HORN(C_Item)
 
 instance ITMI_ORCRING(C_Item)
 {
-	name = "Skřetí prsten";
+	name = " Goblin Ring " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MULTI | ITEM_MISSION | ITEM_RING;
 	value = 1;
@@ -2492,9 +2490,9 @@ instance ITMI_ORCRING(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Na prstenu jsou vyražena skřetí písmena tvořící znak X...";
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 4 ] = " Goblin letters forming an X sign are stamped on the ring... " ;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2508,7 +2506,7 @@ instance ITMI_ORCSTAFF(C_Item)
 	visual = "ItRw_Orcstaff_03.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Tahle palice vypadá jako hůl skřetího šamana...";
+	text[ 4 ] = " This staff looks like a goblin shaman's staff... " ;
 	inv_animate = 1;
 };
 
@@ -2521,11 +2519,11 @@ instance ITMI_ORCAMULET(C_Item)
 	visual = "ItMi_Amulet_Ulumulu_01.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Tenhle amulet patrně náležel skřetímu šamanovi...";
+	text[ 4 ] = " This amulet probably belonged to a goblin shaman... " ;
 	inv_animate = 1;
 };
 
-instance ITMI_ORCAMULET_VANHAN(C_Item)
+instance ITMI_ORCAMULET_VANHAN (C_Item)
 {
 	name = "Ur-Hanův skřetí talisman";
 	mainflag = ITEM_KAT_NONE;
@@ -2533,10 +2531,10 @@ instance ITMI_ORCAMULET_VANHAN(C_Item)
 	value = 1;
 	visual = "ItMi_Amulet_Ulumulu_01.3DS";
 	on_equip = equip_itmi_orcamulet_vanhan;
-	on_unequip = unequip_itmi_orcamulet_vanhan;
+	on_unequip = unequip_itmi_orcamulet_old;
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Tenhle amulet patrně náležel skřetímu šamanovi Ur-Hanovi...";
+	text[ 4 ] = " This amulet probably belonged to the goblin shaman Ur-Han... " ;
 	inv_animate = 1;
 };
 
@@ -2546,7 +2544,7 @@ func void equip_itmi_orcamulet_vanhan()
 	self.protection[PROT_FIRE] += 35;
 };
 
-func void unequip_itmi_orcamulet_vanhan()
+func void unequip_itmi_orcamulet_old()
 {
 	self.protection[PROT_FIRE] -= 35;
 };
@@ -2554,28 +2552,28 @@ func void unequip_itmi_orcamulet_vanhan()
 
 instance ITMI_IDOL_01(C_Item)
 {
-	name = "Skřetí duch";
+	name = " Ghost Goblin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Stuff_Idol_Ogront_01.3DS";
 	material = MAT_CLAY;
 	description = name;
-	text[4] = "Beztvará soška nějakého skřetího božství...";
+	text[ 4 ] = " A shapeless statuette of some goblin deity... " ;
 	inv_animate = 1;
 };
 
 instance ITMI_IDOL_02(C_Item)
 {
-	name = "Podobizna Temnoty";
+	name = " Temnot 's Effigy " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_Stuff_Idol_Sleeper_01.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[3] = "Kamenná soška Temného boha Beliara...";
-	text[4] = "Vyzařuje ohromnou magickou sílu...";
+	text[ 3 ] = " Stone statue of the Dark God Beliar... " ;
+	text[ 4 ] = " Emits tremendous magical power... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2583,27 +2581,27 @@ instance ITMI_IDOL_02(C_Item)
 
 instance ITMI_IDOL_03(C_Item)
 {
-	name = "Obětní kámen";
+	name = " Sacrificial Stone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Stuff_Idol_Ogront_02.3DS";
 	material = MAT_CLAY;
 	description = name;
-	text[4] = "Obětní kámen skřetích šamanů...";
+	text[ 4 ] = " Goblin Shaman Sacrificial Stone... " ;
 	inv_animate = 1;
 };
 
 instance ITMI_CRYSTALBLACK(C_Item)
 {
-	name = "Černý krystal";
+	name = " Black Crystal " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_BlackCrystal_Sky.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Veliký kus mimořádně vzácného černého krystalu...";
+	text[ 4 ] = " A large piece of extremely rare black crystal... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2611,7 +2609,7 @@ instance ITMI_CRYSTALBLACK(C_Item)
 
 instance ITMI_1_ORCPORTALSTONE(C_Item)
 {
-	name = "Magický krystal";
+	name = " Magic Crystal " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -2623,7 +2621,7 @@ instance ITMI_1_ORCPORTALSTONE(C_Item)
 
 instance ITMI_2_ORCPORTALSTONE(C_Item)
 {
-	name = "Magický krystal";
+	name = " Magic Crystal " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -2635,20 +2633,20 @@ instance ITMI_2_ORCPORTALSTONE(C_Item)
 
 instance ITMI_DRAGONGOLDFOCUS(C_Item)
 {
-	name = "Kamenný krystal";
+	name = " Rock Crystal " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
 	visual = "ItMi_Focus_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kámen ve tvaru ohniska s podivnými symboly...";
+	text[ 4 ] = " A hearth-shaped stone with strange symbols... " ;
 	inv_animate = 1;
 };
 
 instance ITMI_FISKPACKET(C_Item)
 {
-	name = "Fiskův balík";
+	name = " Fisk Package " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
@@ -2664,14 +2662,14 @@ instance ITMI_FISKPACKET(C_Item)
 
 instance ITMI_COALBAG(C_Item)
 {
-	name = "Balík uhlí";
+	name = " Bag of Coal " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Těžký balík s uhlím...";
+	text[ 4 ] = " Heavy package of coal... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2688,7 +2686,7 @@ instance ITMI_ALEFNUGGETSBAG(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_alefnuggetsbag;
 	description = name;
-	text[4] = "Těžký balík s magickou rudou...";
+	text[ 4 ] = " Heavy package with magic ore... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2697,12 +2695,12 @@ instance ITMI_ALEFNUGGETSBAG(C_Item)
 func void use_alefnuggetsbag()
 {
 	B_PlayerFindItem(ItMi_Nugget,600);
-	B_LogEntry(TOPIC_VIPERNUGGETS,"Viper nelhal - v balíku, který jsem našel, muselo být alespoň šest set hrudek rudy!");
+	B_LogEntry( TOPIC_VIPERNUGGETS , " Viper wasn't lying - there had to be at least six hundred ore lumps in the package I found! " );
 };
 
 instance ITMI_FIRESHPERE(C_Item)
 {
-	name = "Element Ohně";
+	name = " Fire Element " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10000;
@@ -2710,11 +2708,11 @@ instance ITMI_FIRESHPERE(C_Item)
 	material = MAT_GLAS;
 	effect = "SPELLFX_FIREBOW";
 	description = name;
-	text[3] = "Kulatý kámen pokrytý starodávnými runami...";
-	text[4] = "Obklopuje ho aura ohně...";
+	text[ 3 ] = " Round stone covered with ancient runes... " ;
+	text[ 4 ] = " An aura of fire surrounds him... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2729,8 +2727,8 @@ instance ITMI_WATERSHPERE(C_Item)
 	material = MAT_GLAS;
 	effect = "SPELLFX_WATERSPHERE";
 	description = name;
-	text[3] = "Kulatý kámen pokrytý starodávnými runami...";
-	text[4] = "Obklopuje ho aura vody...";
+	text[ 3 ] = " Round stone covered with ancient runes... " ;
+	text[ 4 ] = " An aura of water surrounds him... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2738,7 +2736,7 @@ instance ITMI_WATERSHPERE(C_Item)
 
 instance ITMI_STONESHPERE(C_Item)
 {
-	name = "Element Země";
+	name = " Earth Element " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10000;
@@ -2746,11 +2744,11 @@ instance ITMI_STONESHPERE(C_Item)
 	material = MAT_GLAS;
 	effect = "SPELLFX_STONESPHERE";
 	description = name;
-	text[3] = "Kulatý kámen pokrytý starodávnými runami...";
-	text[4] = "Obklopuje ho aura světla...";
+	text[ 3 ] = " Round stone covered with ancient runes... " ;
+	text[ 4 ] = " An aura of light surrounds him... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2765,11 +2763,11 @@ instance ITMI_DARKSHPERE(C_Item)
 	material = MAT_GLAS;
 	effect = "SPELLFX_FIRESWORDBLACK";
 	description = name;
-	text[3] = "Kulatý kámen pokrytý starodávnými runami...";
-	text[4] = "Obklopuje ho černý dým...";
+	text[ 3 ] = " Round stone covered with ancient runes... " ;
+	text[ 4 ] = " Black smoke surrounds him... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2787,8 +2785,8 @@ instance ITMI_TRIRAMAR(C_Item)
 	on_unequip = unequip_itmi_triramar;
 	effect = "SPELLFX_EVILLIGHT";
 	description = name;
-	text[3] = "Amulet je pokrytý starodávnými runami...";
-	text[4] = "Je v něm ukryta část moci Temného boha...";
+	text[ 3 ] = " The amulet is covered with ancient runes... " ;
+	text[ 4 ] = " Part of the Dark God's power is hidden in it... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2812,9 +2810,9 @@ func void unequip_itmi_triramar()
 };
 
 
-instance ITMI_PALADINCHEST(C_Item)
+instance ITMI_PALADINCHEST (C_Item)
 {
-	name = "Skříňka paladinů";
+	name = " Paladin's Closet " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_GoldChest;
@@ -2846,8 +2844,8 @@ instance ITMI_DRAGONGOLDGORN(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "HORN";
 	description = name;
-	text[3] = "Zvuk tohoto artefaktu dokáže přivolat arcidémona Senyaka...";
-	text[4] = "Může ale být použit jenom jednou!";
+	text[ 3 ] = " The sound of this artifact can summon the archdemon Senyak... " ;
+	text[ 4 ] = " But it can only be used once! " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[1] = use_itmi_golddragongorn;
@@ -2861,12 +2859,12 @@ func void use_itmi_golddragongorn()
 	if(USEGOLDGORN == FALSE)
 	{
 		randomget = Hlp_Random(100);
-		if((SENYAKSUMMON == FALSE) && (KNOWS_CRESTMAKE == TRUE))
+		if (( KNOWS_CRESTMAKE  ==  FALSE ) && ( KNOWS_CRESTMAKE  ==  TRUE ))
 		{
 			B_GivePlayerXP(500);
-			Wld_SpawnNpcRange(hero,senyak_demon,1,2000);
-			SENYAKSUMMON = TRUE;
-			B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"S pomocí Ashtarova rohu jsem přivolal Senyaka!");
+			Wld_SpawnNpcRange(hero, my_demon, 1 , 2000 );
+			SENYAKSUMMON = TRUE ;
+			B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " With the help of Ashtar's horn, I summoned Senyak! " );
 		}
 		else if(randomget >= 95)
 		{
@@ -2910,7 +2908,7 @@ func void use_itmi_golddragongorn()
 		}
 		else if(randomget >= 45)
 		{
-			Wld_SpawnNpcRange(self,Harpie,1,2000);
+			Wld_SpawnNpcRange(self,Harpy, 1 , 2000 );
 		}
 		else if(randomget >= 40)
 		{
@@ -2918,7 +2916,7 @@ func void use_itmi_golddragongorn()
 		}
 		else if(randomget >= 35)
 		{
-			Wld_SpawnNpcRange(self,Keiler,1,2000);
+			Wld_SpawnNpcRange(self,Boar, 1 , 2000 );
 		}
 		else if(randomget >= 30)
 		{
@@ -2952,18 +2950,18 @@ func void use_itmi_golddragongorn()
 	};
 };
 
-instance ItMi_StoneSoul_Senyak(C_Item)
+instance ItMi_StoneSoul_Senyak (C_Item)
 {
-	name = "Kámen s duší Senyaka";
+	name = " Senyak Soul Stone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10000;
 	visual = "ITMI_SENYAKSOUL.3ds";
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
-	on_state[0] = use_itmi_stonesoul_senyak;
+	on_state[ 0 ] = use_it_stonesoul_for_me;
 	description = name;
-	text[4] = "V tomhle kameni se nachází duše arcidémona Senyaka...";
+	text[ 4 ] = " In this stone is the soul of the archdemon Senyak... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2974,15 +2972,15 @@ func void use_itmi_stonesoul_senyak()
 	if(SoulSenyakFree == FALSE)
 	{
 		Snd_Play("OPENSOUL");
-		AI_Print("Osvobodil jsi Senyakovu duši!");
-		Wld_SpawnNpcRange(hero,ghost_senyak_demon,1,2000);
+		AI_Print( " You freed Senyak's soul! " );
+		Wld_SpawnNpcRange(hero,ghost_senyak_demon, 1 , 2000 );
 		SoulSenyakFree = TRUE;
 	};
 };
 
 instance ItMi_IlesilSoul(C_Item)
 {
-	name = "Kámen s duší";
+	name = " Soul Stone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10000;
@@ -2991,7 +2989,7 @@ instance ItMi_IlesilSoul(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_ItMi_IlesilSoul;
 	description = name;
-	text[4] = "V tomhle kameni se nachází duše Ile'Sila...";
+	text[ 4 ] = " In this stone is the soul of Ile'Sil... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -3016,7 +3014,7 @@ func void Use_ItMi_IlesilSoul()
 
 instance ItMi_StoneSoul(C_Item)
 {
-	name = "Kámen s duší";
+	name = " Soul Stone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
@@ -3025,7 +3023,7 @@ instance ItMi_StoneSoul(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = use_itmi_stonesoul;
 	description = name;
-	text[4] = "V tomhle kameni se nachází duše bytosti, kterou jsem zabil...";
+	text[ 4 ] = " This stone contains the soul of a being I killed... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -3034,7 +3032,7 @@ instance ItMi_StoneSoul(C_Item)
 func void use_itmi_stonesoul()
 {
 	Snd_Play("MYSTERY_06");
-	AI_Print("Osvobodil jsi duši!");
+	AI_Print( " You have freed the soul! " );
 };
 
 
@@ -3043,7 +3041,7 @@ func void use_itmi_stonesoul()
 
 instance ITMI_BENGARPACKET(C_Item)
 {
-	name = "Bengarův balík";
+	name = " Bengar's Package " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 800;
@@ -3052,7 +3050,7 @@ instance ITMI_BENGARPACKET(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	on_state[0] = use_bengarpacket;
-	text[4] = "Balík se zbožím od Bengara...";
+	text[ 4 ] = " Package with goods from Bengar... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -3073,7 +3071,7 @@ func void use_bengarpacket()
 
 instance ITMI_BLACKBRENDI(C_Item)
 {
-	name = "Černá brandy";
+	name = " Black Brandy " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -3089,17 +3087,17 @@ instance ITMI_BLACKBRENDI(C_Item)
 
 instance ITMI_HANNAGOLDNECKLACE(C_Item)
 {
-	name = "Zlatý náhrdelník";
+	name = " Gold Necklace " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_GoldNecklace;
 	visual = "ItMi_GoldNecklace.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Dárek Hanně od její sestry Abigail...";
+	text[ 4 ] = " A gift to Hannah from her sister Abigail... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -3118,7 +3116,7 @@ instance ItMi_Salt(C_Item)
 
 instance ITMI_SLEEPSACK(C_Item)
 {
-	name = "Spací pytel";
+	name = " Sleeping Bag " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_BELT | ITEM_MULTI;
 	value = 20;
@@ -3126,20 +3124,20 @@ instance ITMI_SLEEPSACK(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[3] = "Pytel z teplé ovčí kůže...";
-	text[4] = "Můžu se v něm pořádně prospat...";
+	text[ 3 ] = " Warm Sheepskin Bag... " ;
+	text[ 4 ] = " I can sleep well in it... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_sleepfur;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ITMI_SLEEPSACK_TEMP(C_Item)
 {
-	name = "Spací pytel";
+	name = " Sleeping Bag " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -3150,7 +3148,7 @@ instance ITMI_SLEEPSACK_TEMP(C_Item)
 
 instance ItAr_Hut(C_Item)
 {
-	name = "Plátěná čapka";
+	name = " Linen Cap " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -3170,13 +3168,13 @@ instance ItAr_Hut(C_Item)
 	description = name;
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
 instance ItAr_HoodHelm(C_Item)
 {
-	name = "Plátěná kápě";
+	name = " Linen Hood " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -3198,7 +3196,7 @@ instance ItAr_HoodHelm(C_Item)
 	count[1] = protection[PROT_EDGE];
 	text[2] = NAME_Prot_Fire;
 	count[2] = protection[PROT_FIRE];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3206,8 +3204,8 @@ func void Equip_ItAr_Hut()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3220,14 +3218,14 @@ func void UnEquip_ItAr_Hut()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
 	};
 };
 
 instance ItAr_ThiefHut(C_Item)
 {
-	name = "Čapka zloděje";
+	name = " Thief's Cap " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -3247,7 +3245,7 @@ instance ItAr_ThiefHut(C_Item)
 	count[1] = protection[PROT_EDGE];
 	text[2] = NAME_Prot_Blunt;
 	count[2] = protection[PROT_BLUNT];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3255,8 +3253,8 @@ func void Equip_ItAr_ThiefHut()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3269,14 +3267,14 @@ func void UnEquip_ItAr_ThiefHut()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
 	};
 };
 
 instance ItAr_PirateHat(C_Item)
 {
-	name = "Klobouk kapitána";
+	name = " Captain's Hat " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -3298,7 +3296,7 @@ instance ItAr_PirateHat(C_Item)
 	count[1] = protection[PROT_EDGE];
 	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3306,8 +3304,8 @@ func void Equip_ItAr_PirateHat()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3320,14 +3318,14 @@ func void UnEquip_ItAr_PirateHat()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
 	};
 };
 
 instance ItAr_Helm_01(C_Item)
 {
-	name = "Železná helma";
+	name = " Iron Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -3354,7 +3352,7 @@ instance ItAr_Helm_01(C_Item)
 	count[2] = protection[PROT_BLUNT];
 	text[3] = NAME_Prot_Point;
 	count[3] = protection[PROT_POINT];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3362,9 +3360,9 @@ func void Equip_ItAr_Helm_01()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUpTemp = FALSE;
-		HelmIsUp = TRUE;
-		HelmStam = 1;
+		HelmIsUpTemp = FALSE ;
+		HelmIsUp = TRUE ;
+		HelmStam = 1 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3377,15 +3375,15 @@ func void UnEquip_ItAr_Helm_01()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
 instance ItAr_Helm_New_01(C_Item)
 {
-	name = "Helma lukostřelce";
+	name = " Archer's Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -3414,7 +3412,7 @@ instance ItAr_Helm_New_01(C_Item)
 	count[2] = protection[PROT_BLUNT];
 	text[3] = NAME_Prot_Point;
 	count[3] = protection[PROT_POINT];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3422,9 +3420,9 @@ func void Equip_ItAr_Helm_New_01()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 1;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 1 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3437,9 +3435,9 @@ func void UnEquip_ItAr_Helm_New_01()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
@@ -3475,7 +3473,7 @@ instance ItAr_Helm_New_02(C_Item)
 	count[3] = protection[PROT_POINT];
 	text[4] = NAME_Prot_Fire;
 	count[4] = protection[PROT_FIRE];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3483,9 +3481,9 @@ func void Equip_ItAr_Helm_New_02()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 2;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 2 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3498,15 +3496,15 @@ func void UnEquip_ItAr_Helm_New_02()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
 instance ItAr_Helm_02(C_Item)
 {
-	name = "Nordmarská helma";
+	name = " Nordmar Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -3534,7 +3532,7 @@ instance ItAr_Helm_02(C_Item)
 	count[2] = protection[PROT_BLUNT];
 	text[3] = NAME_Prot_Point;
 	count[3] = protection[PROT_POINT];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3542,9 +3540,9 @@ func void Equip_ItAr_Helm_02()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 2;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 2 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3557,9 +3555,9 @@ func void UnEquip_ItAr_Helm_02()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
@@ -3597,7 +3595,7 @@ instance ItAr_Helm_Hunt(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3605,9 +3603,9 @@ func void Equip_ItAr_Helm_Hunt()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 3;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 3 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3620,15 +3618,15 @@ func void UnEquip_ItAr_Helm_Hunt()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
 instance ItAr_Helm_03(C_Item)
 {
-	name = "Helma rytíře";
+	name = " Knight's Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 25;
@@ -3655,7 +3653,7 @@ instance ItAr_Helm_03(C_Item)
 	count[2] = protection[PROT_BLUNT];
 	text[3] = NAME_Prot_Point;
 	count[3] = protection[PROT_POINT];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3663,9 +3661,9 @@ func void Equip_ItAr_Helm_03()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 2;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 2 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3678,9 +3676,9 @@ func void UnEquip_ItAr_Helm_03()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
@@ -3721,7 +3719,7 @@ instance ItAr_Pal_Helm(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3729,9 +3727,9 @@ func void Equip_ItAr_Pal_Helm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 3;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 3 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3744,9 +3742,9 @@ func void UnEquip_ItAr_Pal_Helm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
@@ -3809,7 +3807,7 @@ instance ItAr_Pal_Helm_Open(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3817,9 +3815,9 @@ func void Equip_ItAr_Pal_Helm_Open()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 3;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 3 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3832,15 +3830,15 @@ func void UnEquip_ItAr_Pal_Helm_Open()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
 instance ItAr_Pal_Elite_Helm_Npc(C_Item)
 {
-	name = "Helma generála paladinů";
+	name = " Paladin General Helm " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 30;
@@ -3859,13 +3857,13 @@ instance ItAr_Pal_Elite_Helm_Npc(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
 instance ItAr_Pal_Elite_Helm(C_Item)
 {
-	name = "Helma generála paladinů";
+	name = " Paladin General Helm " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 45;
@@ -3900,7 +3898,7 @@ instance ItAr_Pal_Elite_Helm(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3908,9 +3906,9 @@ func void Equip_ItAr_Pal_Elite_Helm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 4;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 4 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3923,9 +3921,9 @@ func void UnEquip_ItAr_Pal_Elite_Helm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
@@ -3963,7 +3961,7 @@ instance ItAr_DJG_Helm(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -3971,9 +3969,9 @@ func void Equip_ItAr_DJG_Helm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 3;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 3 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -3986,15 +3984,15 @@ func void UnEquip_ItAr_DJG_Helm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
 instance ItAr_Helm_Demon(C_Item)
 {
-	name = "Dračí helma";
+	name = " Dragon Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -4026,7 +4024,7 @@ instance ItAr_Helm_Demon(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -4034,9 +4032,9 @@ func void Equip_ItAr_Helm_Demon()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 4;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 4 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -4049,15 +4047,15 @@ func void UnEquip_ItAr_Helm_Demon()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
 instance G3_ARMOR_HELMET_CRONE(C_Item)
 {
-	name = "Koruna Ledu";
+	name = " Koruna Ledu " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 0;
@@ -4078,8 +4076,8 @@ instance G3_ARMOR_HELMET_CRONE(C_Item)
 	count[2] = protection[PROT_FIRE];
 	text[3] = NAME_Prot_Magic;
 	count[3] = protection[PROT_MAGIC];
-	text[4] = "Legendární artefakt vytvořený Adanem...";
-	inv_zbias = INVCAM_ENTF_HELM;
+	text[ 4 ] = " A legendary artifact created by Adan... " ;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -4098,7 +4096,7 @@ func void Equip_ItAr_Helm_Crown()
 			if(self.attribute[ATR_STRENGTH] >= self.attribute[ATR_MANA_MAX])
 			{
 				self.attribute[ATR_STRENGTH] = self.attribute[ATR_STRENGTH] + BONUS_CRONE;
-				AI_Print("Cítíš, jak tě prostupuje síla!");
+				AI_Print( " You feel the power flowing through you! " );
 				BONUS_CRONE_FLAG = 1;
 			}
 			else
@@ -4111,7 +4109,7 @@ func void Equip_ItAr_Helm_Crown()
 					self.attribute[ATR_MANA] = self.attribute[ATR_MANA_MAX];
 				};
 
-				AI_Print("Cítíš, jak tě prostupuje magická energie!");
+				AI_Print( " You can feel the magical energy flowing through you! " );
 				BONUS_CRONE_FLAG = 3;
 			};
 		}
@@ -4120,7 +4118,7 @@ func void Equip_ItAr_Helm_Crown()
 			if(self.attribute[ATR_DEXTERITY] >= self.attribute[ATR_MANA_MAX])
 			{
 				self.attribute[ATR_DEXTERITY] = self.attribute[ATR_DEXTERITY] + BONUS_CRONE;
-				AI_Print("Cítíš, jak tě prostupuje obratnost!");
+				AI_Print( " Feel the dexterity running through you! " );
 				BONUS_CRONE_FLAG = 2;
 			}
 			else
@@ -4133,7 +4131,7 @@ func void Equip_ItAr_Helm_Crown()
 					self.attribute[ATR_MANA] = self.attribute[ATR_MANA_MAX];
 				};
 
-				AI_Print("Cítíš, jak tě prostupuje magická energie!");
+				AI_Print( " You can feel the magical energy flowing through you! " );
 				BONUS_CRONE_FLAG = 3;
 			};
 		};
@@ -4144,7 +4142,7 @@ func void Equip_ItAr_Helm_Crown()
 			self.protection[PROT_MAGIC] += 25;
 		};
 
-		HelmStam = 1;
+		HelmStam = 1 ;
 	};
 };
 
@@ -4180,13 +4178,13 @@ func void UnEquip_ItAr_Helm_Crown()
 		};
 
 		BONUS_CRONE_FLAG = FALSE;
-		HelmStam = 0;
+		HelmStam = 0 ;
 	};
 };
 
 instance ItAr_God_Helm(C_Item)
 {
-	name = "Prastará helma";
+	name = " Ancient Helm " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 90;
@@ -4218,7 +4216,7 @@ instance ItAr_God_Helm(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -4226,9 +4224,9 @@ func void Equip_ItAr_God_Helm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 5;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 5 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -4241,9 +4239,9 @@ func void UnEquip_ItAr_God_Helm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
@@ -4259,7 +4257,7 @@ instance ITMI_SLEEPERHELM(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -4284,7 +4282,7 @@ func void equip_itmi_sleeperhelm()
 
 instance ITMI_HELMSLEEPER_MIS(C_Item)
 {
-	name = "Maska Spáče";
+	name = " Sleeper's Mask " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4292,15 +4290,15 @@ instance ITMI_HELMSLEEPER_MIS(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	text[2] = "V této masce je ukryta část moci Spáče,";
-	text[3] = "zlého démona, kterého jsem přemohl...";
-	text[4] = "Vyzařuje silnou temnou auru...";
+	text[ 2 ] = " In this mask is hidden some of the power of the Sleeper, " ;
+	text[ 3 ] = " the evil demon I overcame... " ;
+	text[ 4 ] = " Emits a strong dark aura... " ;
 	inv_animate = 1;
 };
 
 instance ITMI_HELMSLEEPER(C_Item)
 {
-	name = "Maska Spáče";
+	name = " Sleeper's Mask " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -4332,7 +4330,7 @@ instance ITMI_HELMSLEEPER(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -4340,11 +4338,11 @@ func void Equip_ITMI_HELMSLEEPER()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 2;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 2 ;
 		SleeperMaskIsOn = TRUE;
-		AI_Print("Získal jsi novou schopnost - 'Oko Spáče'!");
+		AI_Print( " You have gained a new ability - 'Sleeper's Eye'! " );
 		Wld_PlayEffect("SPELLFX_HEALSHRINE",self,self,0,0,0,FALSE);
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
@@ -4358,14 +4356,14 @@ func void UnEquip_ITMI_HELMSLEEPER()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 		SleeperMaskIsOn = FALSE;
 	};
 };
 
-instance ITMI_KOMPAS(C_Item)
+instance ITMI_COMPASS (C_Item);
 {
 	name = "Kompas";
 	mainflag = ITEM_KAT_NONE;
@@ -4380,7 +4378,7 @@ instance ITMI_KOMPAS(C_Item)
 
 instance ITMI_FALKGRANDFATHERITEM_01(C_Item)
 {
-	name = "Starý měšec";
+	name = " Old Purse " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -4388,8 +4386,8 @@ instance ITMI_FALKGRANDFATHERITEM_01(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = use_itmi_falkgrandfatheritem_01;
-	description = "Starý měšec";
-	text[4] = "Na měšci je vyšito písmeno 'B'...";
+	description = " Old Purse " ;
+	text[ 4 ] = " The letter 'B' is embroidered on the pouch... " ;
 	inv_animate = 1;
 };
 
@@ -4403,7 +4401,7 @@ func void use_itmi_falkgrandfatheritem_01()
 
 instance ITMI_FALKGRANDFATHERITEM_02(C_Item)
 {
-	name = "Prázdná láhev";
+	name = " Empty Bottle " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5;
@@ -4411,9 +4409,9 @@ instance ITMI_FALKGRANDFATHERITEM_02(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_GLAS;
 	on_state[0] = use_itmi_falkgrandfatheritem_02;
-	description = "Láhev";
-	text[3] = "Prázdná láhev od rumu...";
-	text[4] = "Z hrdla láhve kouká kus papíru...";
+	description = " Bottle " ;
+	text[ 3 ] = " Empty rum bottle... " ;
+	text[ 4 ] = " A piece of paper is peeking out of the neck of the bottle... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4437,7 +4435,7 @@ instance ITMI_FALKGRANDFATHERITEM_03(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = use_itmi_falkgrandfatheritem_03;
 	description = name;
-	text[4] = "V této rybě je něco zašito...";
+	text[ 4 ] = " Something is sewn into this fish... " ;
 	inv_animate = 1;
 };
 
@@ -4450,7 +4448,7 @@ func void use_itmi_falkgrandfatheritem_03()
 
 instance ITMI_FALKGRANDFATHERITEM_04(C_Item)
 {
-	name = "Prázdná láhev";
+	name = " Empty Bottle " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5;
@@ -4458,9 +4456,9 @@ instance ITMI_FALKGRANDFATHERITEM_04(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_GLAS;
 	on_state[0] = use_itmi_falkgrandfatheritem_04;
-	description = "Láhev";
-	text[3] = "Prázdná láhev od grogu...";
-	text[4] = "Z hrdla láhve kouká kus papíru...";
+	description = " Bottle " ;
+	text[ 3 ] = " Empty grog bottle... " ;
+	text[ 4 ] = " A piece of paper is peeking out of the neck of the bottle... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4475,33 +4473,33 @@ func void use_itmi_falkgrandfatheritem_04()
 
 instance ITMI_STUFF_GEARWHEEL_01(C_Item)
 {
-	name = "Ozubené kolo";
+	name = " Gear " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Stuff_Gearwheel_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kousek kovu opracovaný do tvaru ozubeného kola...";
+	text[ 4 ] = " A piece of metal machined into the shape of a gear... " ;
 	inv_animate = 1;
 };
 
 instance ITMI_STUFF_GEARWHEEL_02(C_Item)
 {
-	name = "Kamenná hvězda";
+	name = " Stone Star " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Stuff_Gearwheel_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kousek kamene opracovaný do tvaru hvězdy...";
+	text[ 4 ] = " A piece of stone worked into the shape of a star... " ;
 	inv_animate = 1;
 };
 
 instance ITMI_MISSTORLOFTHING(C_Item)
 {
-	name = "Starý kompas";
+	name = " Old compass " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -4523,7 +4521,7 @@ instance ITMI_NERGALCORPSE(C_Item)
 	visual = "Nergal_Corpse.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Tělesné pozůstatky nekromanta Nergala...";
+	text[ 4 ] = " The corporeal remains of the necromancer Nergal... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4531,7 +4529,7 @@ instance ITMI_NERGALCORPSE(C_Item)
 
 instance ItMi_ZombieCorpse(C_Item)
 {
-	name = "Maso z mrtvoly";
+	name = " Corpse Meat " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 20;
@@ -4544,7 +4542,7 @@ instance ItMi_ZombieCorpse(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMi_Plazma(C_Item)
+instance ItMi_Plasma (C_Item)
 {
 	name = "Ektoplazma";
 	mainflag = ITEM_KAT_NONE;
@@ -4561,14 +4559,14 @@ instance ItMi_Plazma(C_Item)
 
 instance ITMI_GADERSTONE(C_Item)
 {
-	name = "Duch předků";
+	name = " Spirit of the Ancestors " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_GaderStone.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Magický artefakt Strážce Gadera...";
+	text[ 4 ] = " Guardian Gader Magical Artifact... " ;
 	inv_animate = 1;
 };
 
@@ -4581,66 +4579,66 @@ instance ITMI_WATERCRYSTAL(C_Item)
 	visual = "ItMi_WATERSPHERE.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Získal jsem ji od Ducha Vody...";
+	text[ 4 ] = " I got her from the Spirit of Water... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_FIRESTONE(C_Item)
 {
-	name = "Ohnivý krystal";
+	name = " Fire Crystal " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1750;
 	visual = "ItMi_FireStone.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Pozůstatek ducha Ohně, kterého jsem porazil...";
+	text[ 4 ] = " A remnant of the Fire spirit I defeated... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_PIECEDARKGOLEM(C_Item)
 {
-	name = "Kus stínového golema";
+	name = " Shadow Golem Piece " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1500;
 	visual = "ItMi_PieceDarkGolem.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Pozůstatek stínového golema, kterého jsem zničil...";
+	text[ 4 ] = " The remnant of the shadow golem I destroyed... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_ORCMAINTOTEM(C_Item)
 {
-	name = "Totem síly";
+	name = " Totem of Power " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItMi_OrcMainTotem.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[3] = "Totem síly je symbolem moci vůdce skřetů...";
-	text[4] = "Jeho majitel se skřetů nemusí obávat...";
+	text[ 3 ] = " The power totem is a symbol of the power of the goblin leader... " ;
+	text[ 4 ] = " Its owner need not fear goblins... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 
 instance ItMi_GrahShar(C_Item)
 {
-	name = "Grakh Shakh";
+	name = " Grakh Shakh " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_BELT | ITEM_MISSION;
 	value = 100;
@@ -4651,10 +4649,10 @@ instance ItMi_GrahShar(C_Item)
 	description = name;
 	text[3] = NAME_Bonus_Str;
 	count[3] = Ri_GrahShar;
-	text[4] = "Symbol Mor Dara, nejlepšího válečníka skřetů...";
+	text[ 4 ] = " Symbol of Mor Dar, the best warrior of the goblins... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -4678,7 +4676,7 @@ func void UnEquip_ItMi_GrahShar()
 
 instance ITMI_POISONBOTTLE(C_Item)
 {
-	name = "Prázdná láhev";
+	name = " Empty Bottle " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -4686,13 +4684,13 @@ instance ITMI_POISONBOTTLE(C_Item)
 	material = MAT_GLAS;
 	scemeName = "POTION";
 	description = name;
-	text[4] = "V téhle láhvi se nalézal silný jed...";
+	text[ 4 ] = " There was a strong poison in this bottle... " ;
 	inv_animate = 1;
 };
 
 instance ITMI_ADANOSAMULET(C_Item)
 {
-	name = "Amulet starodávných rituálů";
+	name = " Amulet of Ancient Rituals " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 300;
@@ -4700,10 +4698,10 @@ instance ITMI_ADANOSAMULET(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Tenhle předmět používali Stavitelé při svých pradávných rituálech...";
+	text[ 4 ] = " This item was used by the Builders in their ancient rituals... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -4717,7 +4715,7 @@ instance ITMI_ORCWARHORN(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "HORN";
 	description = name;
-	text[4] = "Válečný roh skřetů...";
+	text[ 4 ] = " Goblin Warhorn... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4728,14 +4726,14 @@ instance ITMI_ORCWARHORN(C_Item)
 
 instance ItMi_MagicOrePliers(C_Item)
 {
-	name = "Magické kleště";
+	name = " Magic Tongs " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	visual = "ItMi_Pliers.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Tenhle nástroj je vyroben z magické rudy...";
+	text[ 4 ] = " This tool is made of magical ore... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4743,14 +4741,14 @@ instance ItMi_MagicOrePliers(C_Item)
 
 instance ItMi_MagicOreRaw_5(C_Item)
 {
-	name = "Ingot čisté magické rudy";
+	name = " Pure Magic Ore Ingot " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 2000;
 	visual = "ItMi_PureOreStuck_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Rudný ingot z té nejčistší slitiny magické rudy...";
+	text[ 4 ] = " Ore ingot of the purest alloy of magical ore... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4758,14 +4756,14 @@ instance ItMi_MagicOreRaw_5(C_Item)
 
 instance ItMi_MagicOreRaw_4(C_Item)
 {
-	name = "Ingot čisté magické rudy";
+	name = " Pure Magic Ore Ingot " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_OreStuck_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Čistý rudný ingot znamenité kvality...";
+	text[ 4 ] = " Pure ore ingot of excellent quality... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4773,14 +4771,14 @@ instance ItMi_MagicOreRaw_4(C_Item)
 
 instance ItMi_MagicOreRaw_3(C_Item)
 {
-	name = "Ingot čisté magické rudy";
+	name = " Pure Magic Ore Ingot " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 900;
 	visual = "ItMi_OreStuck_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Čistý rudný ingot dobré kvality...";
+	text[ 4 ] = " Pure ore ingot of good quality... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4788,14 +4786,14 @@ instance ItMi_MagicOreRaw_3(C_Item)
 
 instance ItMi_MagicOreRaw_2(C_Item)
 {
-	name = "Ingot čisté magické rudy";
+	name = " Pure Magic Ore Ingot " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 800;
 	visual = "ItMi_OreStuck_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Čistý rudný ingot obvyklé kvality...";
+	text[ 4 ] = " Pure ore ingot of usual quality... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4803,14 +4801,14 @@ instance ItMi_MagicOreRaw_2(C_Item)
 
 instance ItMi_MagicOreRaw_1(C_Item)
 {
-	name = "Ingot čisté magické rudy";
+	name = " Pure Magic Ore Ingot " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 700;
 	visual = "ItMi_OreStuck_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Čistý rudný ingot nevalné kvality...";
+	text[ 4 ] = " Pure ore ingot of poor quality... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4818,7 +4816,7 @@ instance ItMi_MagicOreRaw_1(C_Item)
 
 instance ItWr_DragNimrod(C_Item)
 {
-	name = "Skřetí lístek";
+	name = " Goblin Ticket " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4827,7 +4825,7 @@ instance ItWr_DragNimrod(C_Item)
 	on_state[0] = use_DragNimrod;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Kousek papíru se skřetími zápisky...";
+	text[ 4 ] = " A piece of paper with goblin notes... " ;
 	inv_animate = 1;
 };
 
@@ -4843,21 +4841,21 @@ func void use_DragNimrod()
 			B_Say(self,self,"$HOWINTEREST");
 			KNOW_NIMROD_MAKE = TRUE;
 			RankPoints = RankPoints + 10;
-			B_LogEntry(TOPIC_TagNorGrHunWeap,"Smysl skřetích zápisků je přibližně následující... - 'Skřeti ještě nikdy neměli větší zbraň! Myslím, že ani veliký vůdce všech skřetů si nezaslouží ji vlastnit. Její smrtící síla je strašlivá a jediným výstřelem může srazit i mocného nordmarského bizona. K její výrobě je potřeba - ČISTÝ ingot magické rudy, roh černého trola, tukem natřené šlachy nějakého dravce, dřevo tropického buku na výrobu těla a artefakt velikého lovce minulosti.'");
+			B_LogEntry(TOPIC_TagNorGrHunWeap, " The point of the goblin logs is roughly as follows... - 'The goblins have never had a greater weapon! I don't think even the great leader of all the goblins deserves to own it. It's deadly power is terrifying and can take down even a mighty Northmaran bison with a single shot . To make it you need - a PURE ingot of magical ore, a horn of a black troll, the greased sinews of some predator, tropical beech wood to make the body, and an artifact of a great hunter of the past.' " );
 
 			if((MIS_TagNorGrHunWeap == LOG_Running) && (PlayerRudoplav == TRUE))
 			{
-				B_LogEntry_Quiet(TOPIC_TagNorGrHunWeap,"Teď vím, jak vyrobit skvělou skřetí zbraň - 'Drag Nimrod'! Ve skutečnosti to ale nebude tak jednoduché. Zápisky, které mi dal Tag-Nor, se zmiňují o ČISTÉM ingotu magické rudy. Dovedu sice tavit magickou rudu, nicméně tohle bude zřejmě složitější problém. Myslím, že bych se měl raději jít zeptat Vipera...");
+				B_LogEntry_Quiet(TOPIC_TagNorGrHunWeap, " Now I know how to make a great goblin weapon - 'Drag Nimrod'! But in reality it won't be that easy. The notes Tag-Nor gave me mention a PURE ingot of magic ore. I can smelt magic ore though, however, this is probably going to be a trickier problem. I think I'd better go ask Viper... " );
 			}
 			else if((MIS_TagNorGrHunWeap == LOG_Running) && (PlayerRudoplav == FALSE))
 			{
-				B_LogEntry_Quiet(TOPIC_TagNorGrHunWeap,"Teď vím, jak vyrobit skvělou skřetí zbraň - 'Drag Nimrod'! Ve skutečnosti to ale nebude tak jednoduché. Zápisky, které mi dal Tag-Nor, se zmiňují o ČISTÉM ingotu magické rudy. Nemám ani zdání, jak bych ho mohl najít nebo vyrobit. Budu muset najít nějakého taviče rudy, který se v tom vyzná...");
+				B_LogEntry_Quiet(TOPIC_TagNorGrHunWeap, " Now I know how to make a great goblin weapon - the 'Drag Nimrod'! But in reality it won't be that easy. The notes Tag-Nor gave me mention a PURE ingot of magical ore. I have no idea how to he could find it or make it. I'll have to find some ore smelter who knows how to do it... " );
 			};
 		}
 		else
 		{
 			var int rnd;
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 
 			if(rnd <= 30)
 			{
@@ -4877,7 +4875,7 @@ func void use_DragNimrod()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_24 = TRUE;
+			BookBonus_24 = TRUE ;
 		};
 		nDocID = Doc_Create();
 		Doc_SetPages(nDocID,1);
@@ -4901,31 +4899,31 @@ func void use_DragNimrod()
 
 instance ITMI_SeekerSoul(C_Item)
 {
-	name = "Temný krystal s duší";
+	name = " Dark crystal with soul " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_DARKSPHERE.3ds";
 	material = MAT_GLAS;
 	description = name;
-	text[4] = "Podivně vypadající magická substance černé barvy...";
+	text[ 4 ] = " A strange looking black colored magical substance... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ITMI_NOVMATERIAL(C_Item)
 {
-	name = "Balík látky";
+	name = " Fabric package " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 500;
 	visual = "G3_Item_Packet_01.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Těžký balík se značným množstvím stlačené tkaniny...";
+	text[ 4 ] = " A heavy package with a significant amount of compressed fabric... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4933,41 +4931,41 @@ instance ITMI_NOVMATERIAL(C_Item)
 
 instance ItMi_AssGoldPocket(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
 	visual = "ItMi_Pocket_Small.3ds";
 	material = MAT_LEATHER;
-	description = "Měšec";
-	text[4] = "Měšec nacpaný zlatem...";
+	description = " Month " ;
+	text[ 4 ] = " A purse stuffed with gold... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_HasimAmuls(C_Item)
 {
-	name = "Vzácné modlitební korále";
+	name = " Rare Prayer Beads " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
 	visual = "G3_Artefact_Amulett_Violett_01.3DS";
 	material = MAT_LEATHER;
-	description = "Vzácné modlitební korále";
-	text[3] = "Na některých kamenech jsou vyryty znaky";
-	text[4] = "tvořící jméno 'Hasim'...";
+	description = " Rare Prayer Beads " ;
+	text[ 3 ] = " There are characters engraved on some stones " ;
+	text[ 4 ] = " forming the name 'Hasim'... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_PacketColesulfur(C_Item)
 {
-	name = "Špinavý balík";
+	name = " Dirty Package " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Těžký balík se značným množstvím síry a uhlí...";
+	text[ 4 ] = " A heavy package with a considerable amount of sulfur and coal... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -4975,7 +4973,7 @@ instance ItMi_PacketColesulfur(C_Item)
 
 instance ItMi_SulfurMuttonRaw(C_Item)
 {
-	name = "Sírové maso";
+	name = " Sulfur Meat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -4984,7 +4982,7 @@ instance ItMi_SulfurMuttonRaw(C_Item)
 	scemeName = "MAP";
 	on_state[0] = Use_SulfurMuttonRaw;
 	description = name;
-	text[4] = "Syrové maso, pořádně napuštěné sírou...";
+	text[ 4 ] = " Raw meat, heavily infused with sulphur... " ;
 	inv_animate = 1;
 };
 
@@ -5018,7 +5016,7 @@ instance ItMi_Feder(C_Item)
 
 instance ItMi_HarpyFeder(C_Item)
 {
-	name = "Pírka harpyje";
+	name = " Harpy Feather " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 50;
@@ -5046,7 +5044,7 @@ instance ItMi_Palette(C_Item)
 
 instance ItMi_Pinsel(C_Item)
 {
-	name = "Štětec";
+	name = " Brush " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -5072,33 +5070,33 @@ instance ItMi_Bottle_Empty(C_Item)
 	inv_animate = 1;
 };
 
-//------------------------------------------itemy dlya plato Drevnikh-----------------------------
+// ------------------------------------------item dlya plato Drevnikh-- ----------------------------
 
 instance ItMi_LP_StonePlate_01(C_Item)
 {
-	name = "Prastará kamenná tabulka";
+	name = " Ancient Stone Tablet " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 10;
 	visual = "ItMi_StonePlate_Read_06.3ds";
 	material = MAT_STONE;
-	description = "Prastará kamenná tabulka";
-	text[4] = "Celá tabulka je pokryta nápisy v prastarém jazyce...";
+	description = " Ancient stone tablet " ;
+	text[ 4 ] = " The entire table is covered with inscriptions in an ancient language... " ;
 	inv_animate = 1;
 };
 
 instance ItWr_CroneAdanos(C_Item)
 {
-	name = "Prastará tabulka";
+	name = " Ancient Table " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItMi_StonePlate_Read_06.3ds";
 	material = MAT_STONE;
 	scemeName = "MAP";
-	description = "Prastará tabulka";
-	text[3] = "Stará ošumělá tabulka...";
-	text[4] = "Celá tabulka je pokryta nápisy v prastarém jazyce...";
+	description = " Ancient Table " ;
+	text[ 3 ] = " Old Shabby Table... " ;
+	text[ 4 ] = " The entire table is covered with inscriptions in an ancient language... " ;
 	on_state[0] = Use_ItWr_AdanosCrone;
 	inv_animate = 1;
 };
@@ -5113,23 +5111,23 @@ func void Use_ItWr_AdanosCrone()
 		MIS_AdanosCrone = LOG_Running;
 		Log_CreateTopic(TOPIC_AdanosCrone,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_AdanosCrone,LOG_Running);
-		B_LogEntry(TOPIC_AdanosCrone,"V Adanově chrámu jsem našel kamennou tabulku, ale nedokázal jsem ji přečíst! Musím ji ukázat Saturasovi. Možná uspěje on. Nebo někdo jiný, kdo zná prastarý jazyk Stavitelů lépe než já.");
+		B_LogEntry(TOPIC_AdanosCrone, " I found a stone tablet in the temple of Adanos, but I couldn't read it! I have to show it to Saturas. Maybe he will succeed. Or someone else who knows the ancient language of the Builders better than I do. " );
 	};
 };
 
 instance ItWr_AdanosCrone_Ready(C_Item)
 {
-	name = "Magická prastará tabulka";
+	name = " Magical Ancient Table " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItMi_StonePlate_Read_06.3ds";
 	material = MAT_STONE;
 	scemeName = "MAP";
-	description = "Magická prastará tabulka";
-	text[3] = "Stará ošumělá tabulka...";
-	text[4] = "Celá tabulka je pokryta nápisy v prastarém jazyce...";
-	text[5] = "Vyzařuje magickou energii...";
+	description = " Magical Ancient Table " ;
+	text[ 3 ] = " Old Shabby Table... " ;
+	text[ 4 ] = " The entire table is covered with inscriptions in an ancient language... " ;
+	text[ 5 ] = " Emits magical energy... " ;
 	on_state[0] = Use_ItWr_AdanosCrone_Ready;
 	inv_animate = 1;
 };
@@ -5138,7 +5136,7 @@ func void Use_ItWr_AdanosCrone_Ready()
 {
 	if(Npc_IsPlayer(self) && (StoneTitanAwake == FALSE))
 	{
-		if(CurrentLevel == ADDONWORLD_ZEN)
+		if (CurrentLevel ==  ADDONWORLD_ZEN )
 		{
 			if(Npc_GetDistToWP(hero,"ADW_ADANOSTEMPEL_RAVEN_01") < 1000)
 			{
@@ -5162,9 +5160,9 @@ func void Use_ItWr_AdanosCrone_Ready()
 	};
 };
 
-instance ItMi_PortalRuneAdanos(C_Item)
+instance ItMi_PortalRuneAdanos (C_Item)
 {
-	name = "Runové srdce Strážce";
+	name = " Runeheart of the Guardian " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5176,7 +5174,7 @@ instance ItMi_PortalRuneAdanos(C_Item)
 
 instance ItWr_StoneAdanosPortal(C_Item)
 {
-	name = "Runová tabulka Strážce";
+	name = " Guardian Rune Table " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -5184,67 +5182,67 @@ instance ItWr_StoneAdanosPortal(C_Item)
 	material = MAT_STONE;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Všechny nápisy jsou ve velice prastarém jazyce...";
+	text[ 4 ] = " All inscriptions are in a very ancient language... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_XoD_01(C_Item)
 {
-	name = "Kamenný úlomek";
+	name = " Stone Shard " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Podivně vypadající kamenný úlomek s ornamentem...";
-	text[5] = "Vyzařuje magickou energii...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " A strange-looking stone fragment with an ornament... " ;
+	text[ 5 ] = " Emits magical energy... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_YoD_02(C_Item)
 {
-	name = "Kamenný úlomek";
+	name = " Stone Shard " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Podivně vypadající kamenný úlomek s ornamentem...";
-	text[5] = "Vyzařuje magickou energii...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " A strange-looking stone fragment with an ornament... " ;
+	text[ 5 ] = " Emits magical energy... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_ZoD_03(C_Item)
 {
-	name = "Kamenný úlomek";
+	name = " Stone Shard " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Podivně vypadající kamenný úlomek s ornamentem...";
-	text[5] = "Vyzařuje magickou energii...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " A strange-looking stone fragment with an ornament... " ;
+	text[ 5 ] = " Emits magical energy... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_UoD_04(C_Item)
 {
-	name = "Kamenný úlomek";
+	name = " Stone Shard " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Podivně vypadající kamenný úlomek s ornamentem...";
-	text[5] = "Vyzařuje magickou energii...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " A strange-looking stone fragment with an ornament... " ;
+	text[ 5 ] = " Emits magical energy... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -5258,13 +5256,13 @@ instance ItMi_AdanosTear(C_Item)
 	material = MAT_METAL;
 	effect = "SPELLFX_STONESPHERE";
 	description = name;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItRi_GoldSkipetr_NoMagic(C_Item)
 {
-	name = "Zlaté žezlo";
+	name = " Golden Scepter " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	material = MAT_METAL;
@@ -5274,7 +5272,7 @@ instance ItRi_GoldSkipetr_NoMagic(C_Item)
 	on_state[0] = Use_GoldSkipetr;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[4] = "Vespodu žezla se nalézá hluboký otvor ve tvaru kapky...";
+	text[ 4 ] = " Beneath the scepter is a deep hole in the shape of a drop... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -5284,7 +5282,7 @@ func void Use_GoldSkipetr()
 {
 	if(Npc_IsPlayer(self))
 	{
-		if((Npc_HasItems(hero,ItMi_AdanosTear) >= 1) && (CurrentLevel == ADANOSVALLEY_ZEN))
+		if ((Npc_HasItems(here,ItMi_AdanosTear) >=  1 ) && (CurrentLevel ==  ADANOSVALLEY_ZEN ))
 		{
 			Wld_PlayEffect("SPELLFX_THUNDERSTORM_RAIN_NOCOL",hero,hero,0,0,0,FALSE);
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
@@ -5292,7 +5290,7 @@ func void Use_GoldSkipetr()
 			Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 			Npc_RemoveInvItems(hero,ItMi_AdanosTear,1);
 			Npc_RemoveInvItems(hero,ItRi_GoldSkipetr_NoMagic,1);
-			CreateInvItems(hero,ItRi_AdanosGoldSkipetr,1);
+			CreateInvItems(hero,ItRi_AdanosGoldSkipetr, 1 );
 			B_Say(hero,hero,"$HOWINTEREST");
 			Wld_InsertNpc(Stoneguardian_AV_01,"FP_SHATTERED_STONEGUARD_01");
 			Wld_InsertNpc(Stoneguardian_AV_02,"FP_SHATTERED_STONEGUARD_02");
@@ -5304,7 +5302,7 @@ func void Use_GoldSkipetr()
 			Wld_SendTrigger("EVT_STONEGUARDAWAKE_03");
 			Wld_SendTrigger("EVT_STONEGUARDAWAKE_04");
 			Wld_SendTrigger("EVT_STONEGUARDAWAKE_05");
-			B_LogEntry(TOPIC_AdanosCrone,"Adanova slza padla do otvoru ve zlatém žezle jako ulitá! Celou plošinu ozářil jasný záblesk a z nebe se spustil ledový déšť... K čemu se tenhle předmět používal?");
+			B_LogEntry(TOPIC_AdanosCrone, " Adanos' tear fell into the hole in the golden scepter like a shell! A bright flash illuminated the entire platform and icy rain fell from the sky... What was this item used for? " );
 		}
 		else
 		{
@@ -5317,7 +5315,7 @@ func void Use_GoldSkipetr()
 
 instance ItRi_AdanosGoldSkipetr(C_Item)
 {
-	name = "Adanovo zlaté žezlo";
+	name = " Adan's Golden Scepter " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
 	material = MAT_METAL;
@@ -5329,7 +5327,7 @@ instance ItRi_AdanosGoldSkipetr(C_Item)
 	wear = WEAR_EFFECT;
 	effect = "SPELLFX_MOON_SMOKE";
 	description = name;
-	text[4] = "Žezlo vyzařuje magickou energii...";
+	text[ 4 ] = " The scepter emits magical energy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -5343,10 +5341,10 @@ func void equip_ItRi_AdanosGoldSkipetr()
 
 	ScipIsUp = TRUE;
 
-	if(HeroDragonLook == FALSE)
+	if (HeroDragonLook ==  FALSE )
 	{
 		Wld_PlayEffect("DRAGONLOOK_FX",hero,hero,0,0,0,FALSE);
-		HeroDragonLook = TRUE;
+		HeroDragonLook = TRUE ;
 	};
 
 	if(hero.attribute[ATR_MANA] > 1)
@@ -5393,13 +5391,13 @@ func void unequip_ItRi_AdanosGoldSkipetr()
 	if(HeroDragonLook == TRUE)
 	{
 		Wld_StopEffect("DRAGONLOOK_FX");	
-		HeroDragonLook = FALSE;
+		HeroDragonLook = FALSE ;
 	};
 };
 
 instance ItMi_XunePart_01(C_Item)
 {
-	name = "Část runové desky";
+	name = " Part of the Rune Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5408,8 +5406,8 @@ instance ItMi_XunePart_01(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_STONE;
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	description = name;
 	inv_animate = 1;
 };
@@ -5417,7 +5415,7 @@ instance ItMi_XunePart_01(C_Item)
 
 instance ItMi_ZunePart_02(C_Item)
 {
-	name = "Část runové desky";
+	name = " Part of the Rune Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5426,8 +5424,8 @@ instance ItMi_ZunePart_02(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_STONE;
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	description = name;
 	inv_animate = 1;
 };
@@ -5435,7 +5433,7 @@ instance ItMi_ZunePart_02(C_Item)
 
 instance ItMi_YunePart_03(C_Item)
 {
-	name = "Část runové desky";
+	name = " Part of the Rune Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5444,8 +5442,8 @@ instance ItMi_YunePart_03(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_STONE;
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	description = name;
 	inv_animate = 1;
 };
@@ -5453,7 +5451,7 @@ instance ItMi_YunePart_03(C_Item)
 
 instance ItMi_WunePart_04(C_Item)
 {
-	name = "Část runové desky";
+	name = " Part of the Rune Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5462,8 +5460,8 @@ instance ItMi_WunePart_04(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_STONE;
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	description = name;
 	inv_animate = 1;
 };
@@ -5471,7 +5469,7 @@ instance ItMi_WunePart_04(C_Item)
 
 instance ItMi_UunePart_05(C_Item)
 {
-	name = "Část runové desky";
+	name = " Part of the Rune Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5480,8 +5478,8 @@ instance ItMi_UunePart_05(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_STONE;
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	description = name;
 	inv_animate = 1;
 };
@@ -5490,7 +5488,7 @@ func void Use_RunePart_01()
 {
 	if(Npc_IsPlayer(self))
 	{
-		if((Npc_HasItems(hero,ItMi_ZunePart_02) >= 1) && (Npc_HasItems(hero,ItMi_YunePart_03) >= 1) && (Npc_HasItems(hero,ItMi_WunePart_04) >= 1) && (Npc_HasItems(hero,ItMi_UunePart_05) >= 1))
+		if ((Npc_HasItems(hero,ItMi_ZunePart_02) >=  1 ) && (Npc_HasItems(hero,ItMi_YunePart_03) >=  1 ) && (Npc_HasItems(hero,ItMi_WunePart_04) >=  1 ) && (Npc_HasItems(hero,ItMi_UunePart_05) >=  1 ))
 		{
 			Npc_RemoveInvItems(hero,ItMi_XunePart_01,1);
 			Npc_RemoveInvItems(hero,ItMi_ZunePart_02,1);
@@ -5512,7 +5510,7 @@ func void Use_RunePart_02()
 {
 	if(Npc_IsPlayer(self))
 	{
-		if((Npc_HasItems(hero,ItMi_XunePart_01) >= 1) && (Npc_HasItems(hero,ItMi_YunePart_03) >= 1) && (Npc_HasItems(hero,ItMi_WunePart_04) >= 1) && (Npc_HasItems(hero,ItMi_UunePart_05) >= 1))
+		if ((Npc_HasItems(hero,ItMi_XunePart_01) >=  1 ) && (Npc_HasItems(hero,ItMi_YunePart_03) >=  1 ) && (Npc_HasItems(hero,ItMi_WunePart_04) >=  1 ) && (Npc_HasItems(hero,ItMi_UunePart_05) >=  1 ))
 		{
 			Npc_RemoveInvItems(hero,ItMi_XunePart_01,1);
 			Npc_RemoveInvItems(hero,ItMi_ZunePart_02,1);
@@ -5521,7 +5519,7 @@ func void Use_RunePart_02()
 			Npc_RemoveInvItems(hero,ItMi_UunePart_05,1);
 			CreateInvItems(hero,ItMi_DuneAdanos,1);
 			B_Say(hero,hero,"$HOWINTEREST");
-			B_LogEntry(TOPIC_AdanosCrone,"Spojil jsem části kamene Strážců. Společně vytvořili ohromný kus kamenné desky... Myslím, že je to jeden z kusů oltářní desky.");
+			B_LogEntry(TOPIC_AdanosCrone, " I joined the parts of the Guardian stone. Together they made a huge piece of stone slab... I think it's one of the pieces of the altar slab. " );
 		}
 		else
 		{
@@ -5535,7 +5533,7 @@ func void Use_RunePart_03()
 {
 	if(Npc_IsPlayer(self))
 	{
-		if((Npc_HasItems(hero,ItMi_XunePart_01) >= 1) && (Npc_HasItems(hero,ItMi_ZunePart_02) >= 1) && (Npc_HasItems(hero,ItMi_WunePart_04) >= 1) && (Npc_HasItems(hero,ItMi_UunePart_05) >= 1))
+		if ((Npc_HasItems(hero,ItMi_XunePart_01) >=  1 ) && (Npc_HasItems(hero,ItMi_ZunePart_02) >=  1 ) && (Npc_HasItems(hero,ItMi_WunePart_04) >=  1 ) && (Npc_HasItems(hero,ItMi_UunePart_05) >=  1 ))
 		{
 			Npc_RemoveInvItems(hero,ItMi_XunePart_01,1);
 			Npc_RemoveInvItems(hero,ItMi_ZunePart_02,1);
@@ -5544,7 +5542,7 @@ func void Use_RunePart_03()
 			Npc_RemoveInvItems(hero,ItMi_UunePart_05,1);
 			CreateInvItems(hero,ItMi_DuneAdanos,1);
 			B_Say(hero,hero,"$HOWINTEREST");
-			B_LogEntry(TOPIC_AdanosCrone,"Spojil jsem části kamene Strážců. Společně vytvořili ohromný kus kamenné desky... Myslím, že je to jeden z kusů oltářní desky.");
+			B_LogEntry(TOPIC_AdanosCrone, " I joined the parts of the Guardian stone. Together they made a huge piece of stone slab... I think it's one of the pieces of the altar slab. " );
 		}
 		else
 		{
@@ -5558,7 +5556,7 @@ func void Use_RunePart_04()
 {
 	if(Npc_IsPlayer(self))
 	{
-		if((Npc_HasItems(hero,ItMi_XunePart_01) >= 1) && (Npc_HasItems(hero,ItMi_ZunePart_02) >= 1) && (Npc_HasItems(hero,ItMi_YunePart_03) >= 1) && (Npc_HasItems(hero,ItMi_UunePart_05) >= 1))
+		if ((Npc_HasItems(hero,ItMi_XunePart_01) >=  1 ) && (Npc_HasItems(hero,ItMi_ZunePart_02) >=  1 ) && (Npc_HasItems(hero,ItMi_YunePart_03) >=  1 ) && (Npc_HasItems(hero,ItMi_UunePart_05) >=  1 ))
 		{
 			Npc_RemoveInvItems(hero,ItMi_XunePart_01,1);
 			Npc_RemoveInvItems(hero,ItMi_ZunePart_02,1);
@@ -5567,7 +5565,7 @@ func void Use_RunePart_04()
 			Npc_RemoveInvItems(hero,ItMi_UunePart_05,1);
 			CreateInvItems(hero,ItMi_DuneAdanos,1);
 			B_Say(hero,hero,"$HOWINTEREST");
-			B_LogEntry(TOPIC_AdanosCrone,"Spojil jsem části kamene Strážců. Společně vytvořili ohromný kus kamenné desky... Myslím, že je to jeden z kusů oltářní desky.");
+			B_LogEntry(TOPIC_AdanosCrone, " I joined the parts of the Guardian stone. Together they made a huge piece of stone slab... I think it's one of the pieces of the altar slab. " );
 		}
 		else
 		{
@@ -5581,7 +5579,7 @@ func void Use_RunePart_05()
 {
 	if(Npc_IsPlayer(self))
 	{
-		if((Npc_HasItems(hero,ItMi_XunePart_01) >= 1) && (Npc_HasItems(hero,ItMi_ZunePart_02) >= 1) && (Npc_HasItems(hero,ItMi_YunePart_03) >= 1) && (Npc_HasItems(hero,ItMi_WunePart_04) >= 1))
+		if ((Npc_HasItems(hero,ItMi_XunePart_01) >=  1 ) && (Npc_HasItems(hero,ItMi_ZunePart_02) >=  1 ) && (Npc_HasItems(hero,ItMi_YunePart_03) >=  1 ) && (Npc_HasItems(hero,ItMi_WunePart_04) >=  1 ))
 		{
 			Npc_RemoveInvItems(hero,ItMi_XunePart_01,1);
 			Npc_RemoveInvItems(hero,ItMi_ZunePart_02,1);
@@ -5590,7 +5588,7 @@ func void Use_RunePart_05()
 			Npc_RemoveInvItems(hero,ItMi_UunePart_05,1);
 			CreateInvItems(hero,ItMi_DuneAdanos,1);
 			B_Say(hero,hero,"$HOWINTEREST");
-			B_LogEntry(TOPIC_AdanosCrone,"Spojil jsem části kamene Strážců. Společně vytvořili ohromný kus kamenné desky... Myslím, že je to jeden z kusů oltářní desky.");
+			B_LogEntry(TOPIC_AdanosCrone, " I joined the parts of the Guardian stone. Together they made a huge piece of stone slab... I think it's one of the pieces of the altar slab. " );
 		}
 		else
 		{
@@ -5600,18 +5598,18 @@ func void Use_RunePart_05()
 	};
 };
 
-instance ItMi_DuneAdanos(C_Item)
+instance ItMi_DuneAdanos (C_Item)
 {
-	name = "Runová tabulka";
+	name = " Rune Table " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_StonePlate_Read_06.3ds";
 	material = MAT_STONE;
 	scemeName = "MAP";
-	on_state[0] = Use_ItMi_DuneAdanos;
+	on_state[ 0 ] = Use_ItMi_DuneAdanos;
 	description = name;
-	text[4] = "Tahle tabulka vypadá jako část jedné veliké tabulky...";
+	text[ 4 ] = " This table looks like part of one big table... " ;
 	inv_animate = 1;
 };
 
@@ -5624,9 +5622,9 @@ func void Use_ItMi_DuneAdanos()
 	Doc_Show(nDocID);
 };
 
-instance ItMi_GuneAdanos_02(C_Item)
+instance ItMi_GuneAdanos_02 (C_Item)
 {
-	name = "Runová tabulka";
+	name = " Rune Table " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5635,7 +5633,7 @@ instance ItMi_GuneAdanos_02(C_Item)
 	scemeName = "MAP";
 	on_state[0] = Use_ItMi_GuneAdanos_02;
 	description = name;
-	text[4] = "Tahle tabulka vypadá jako část jedné veliké tabulky...";
+	text[ 4 ] = " This table looks like part of one big table... " ;
 	inv_animate = 1;
 };
 
@@ -5650,7 +5648,7 @@ func void Use_ItMi_GuneAdanos_02()
 
 instance ItMi_LuneAdanos_Full(C_Item)
 {
-	name = "Runová tabulka";
+	name = " Rune Table " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5658,12 +5656,12 @@ instance ItMi_LuneAdanos_Full(C_Item)
 	material = MAT_STONE;
 	scemeName = "MAP";
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	on_state[0] = Use_ItMi_LuneAdanos_Full;
 	description = name;
-	text[4] = "Kompletně sestavená magická tabulka...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " A fully assembled magic table... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -5675,7 +5673,7 @@ func void Use_ItMi_LuneAdanos_Full()
 	{
 		KnowPassBigPyramid = TRUE;
 		B_Say(hero,hero,"$HOWINTEREST");
-		B_LogEntry(TOPIC_AdanosCrone,"Kresba na sestavené tabulce znázorňuje řadu magických symbolů.");
+		B_LogEntry(TOPIC_AdanosCrone, " The drawing on the assembled table depicts a series of magical symbols. " );
 	};
 
 	nDocID = Doc_CreateMap();
@@ -5686,7 +5684,7 @@ func void Use_ItMi_LuneAdanos_Full()
 
 instance ItMi_TearsRune(C_Item)
 {
-	name = "Kamenné slzy";
+	name = " Stone Tears " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5694,72 +5692,72 @@ instance ItMi_TearsRune(C_Item)
 	effect = "SPELLFX_MOON_SMOKE";
 	material = MAT_STONE;
 	description = name;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_BlackOrcTalisman(C_Item)
 {
-	name = "Amulet skřetího válečníka";
+	name = " Orc Warrior Amulet " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Amulet_Ulumulu_01.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Symbol výjimečnosti elitních skřetů...";
+	text[ 4 ] = " Elite Goblin Specialness Symbol... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_HuntSign(C_Item)
 {
-	name = "Talisman velkého lovce";
+	name = " Talisman of the Great Hunter " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_HuntSign.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Symbol, který patřil jednomu z velikých lovců...";
+	text[ 4 ] = " A symbol that belonged to one of the great hunters... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_BukTree(C_Item)
 {
-	name = "Řezivo z tropického buku";
+	name = " Tropical beech lumber " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_BukTree.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Nevelký kus tropického buku...";
+	text[ 4 ] = " A small piece of tropical beech... " ;
 	inv_animate = 1;
 };
 
-instance ItMi_Buk_Arbalet(C_Item)
+instance ItMy_Book_Cross (C_Item);
 {
-	name = "Socha kuše";
+	name = " Crossbow Statue " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Buk_Arbalet.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Vyrobena ze dřeva tropického buku...";
+	text[ 4 ] = " Made of tropical beech wood... " ;
 	inv_animate = 1;
 };
 
 instance ItAt_BlackTrollHorn(C_Item)
 {
-	name = "Roh černého trola";
+	name = " Black Troll Horn " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	visual = "G3_Item_AnimalTrophy_Horn_ShadowBeast_01.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Roh mocného černého trola...";
+	text[ 4 ] = " Horn of the Mighty Black Troll... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -5767,14 +5765,14 @@ instance ItAt_BlackTrollHorn(C_Item)
 
 instance ItAt_PumaMuscle(C_Item)
 {
-	name = "Šlachy pumy";
+	name = " Cougar Tendons " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItAt_WaranFiretongue.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Odolné šlachy pumy...";
+	text[ 4 ] = " Durable cougar tendons... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -5782,15 +5780,15 @@ instance ItAt_PumaMuscle(C_Item)
 
 instance ItAt_PumaMuscle_Jir(C_Item)
 {
-	name = "Šlachy pumy";
+	name = " Cougar Tendons " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ITAT_VEINLIZARD.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[3] = "Velice odolné šlachy pumy...";
-	text[4] = "Ošetřeny tukem...";
+	text[ 3 ] = " Very durable cougar tendons... " ;
+	text[ 4 ] = " Treated with fat... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -5798,7 +5796,7 @@ instance ItAt_PumaMuscle_Jir(C_Item)
 
 instance ItWr_OldTextMine(C_Item)
 {
-	name = "Prastará tabulka";
+	name = " Ancient Table " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5811,7 +5809,7 @@ instance ItWr_OldTextMine(C_Item)
 
 instance ItMi_PortalCrystal(C_Item)
 {
-	name = "Krystalový kámen";
+	name = " Crystal Stone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5823,7 +5821,7 @@ instance ItMi_PortalCrystal(C_Item)
 
 instance ItAr_Helm_G3_01(C_Item)
 {
-	name = "Ocelová helma";
+	name = " Steel Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -5850,7 +5848,7 @@ instance ItAr_Helm_G3_01(C_Item)
 	count[2] = protection[PROT_BLUNT];
 	text[3] = NAME_Prot_Point;
 	count[3] = protection[PROT_POINT];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -5858,9 +5856,9 @@ func void Equip_ItAr_Helm_G3_01()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUpTemp = FALSE;
-		HelmIsUp = TRUE;
-		HelmStam = 2;
+		HelmIsUpTemp = FALSE ;
+		HelmIsUp = TRUE ;
+		HelmStam = 2 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -5873,15 +5871,15 @@ func void UnEquip_ItAr_Helm_G3_01()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
 instance ItAr_Helm_G3_02(C_Item)
 {
-	name = "Helma žoldáka";
+	name = " Mercenary Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 20;
@@ -5909,7 +5907,7 @@ instance ItAr_Helm_G3_02(C_Item)
 	count[2] = protection[PROT_BLUNT];
 	text[3] = NAME_Prot_Point;
 	count[3] = protection[PROT_POINT];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -5917,9 +5915,9 @@ func void Equip_ItAr_Helm_G3_02()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUpTemp = FALSE;
-		HelmIsUp = TRUE;
-		HelmStam = 2;
+		HelmIsUpTemp = FALSE ;
+		HelmIsUp = TRUE ;
+		HelmStam = 2 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -5932,9 +5930,9 @@ func void UnEquip_ItAr_Helm_G3_02()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
@@ -5974,7 +5972,7 @@ instance ItAr_Helm_G3_04(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -5982,9 +5980,9 @@ func void Equip_ItAr_Helm_G3_04()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUpTemp = FALSE;
-		HelmIsUp = TRUE;
-		HelmStam = 3;
+		HelmIsUpTemp = FALSE ;
+		HelmIsUp = TRUE ;
+		HelmStam = 3 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -5997,15 +5995,15 @@ func void UnEquip_ItAr_Helm_G3_04()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
 instance ItAr_Helm_G3_06(C_Item)
 {
-	name = "Věnec démonů";
+	name = " Wreath of Demons " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 100;
@@ -6025,9 +6023,9 @@ instance ItAr_Helm_G3_06(C_Item)
 	description = name;
 	text[1] = NAME_Prot_All;
 	count[1] = protection[PROT_EDGE];
-	text[3] = "Prastarý artefakt vládce démonů Eligora...";
-	text[4] = "Zcela chrání před psychickými útoky...";
-	inv_zbias = INVCAM_ENTF_HELM;
+	text[ 3 ] = " Demon Lord Eligor's Ancient Artifact... " ;
+	text[ 4 ] = " Completely protects against psychic attacks... " ;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -6036,10 +6034,10 @@ func void Equip_ItAr_Helm_G3_06()
 	if(Npc_IsPlayer(self))
 	{
 		Wld_PlayEffect("spellFX_INCOVATION_RED",self,self,0,0,0,FALSE);
-		HelmIsUpTemp = FALSE;
-		HelmIsUp = TRUE;
+		HelmIsUpTemp = FALSE ;
+		HelmIsUp = TRUE ;
 		SleeperStone = TRUE;
-		HelmStam = 6;
+		HelmStam = 6 ;
 	};
 };
 
@@ -6047,10 +6045,10 @@ func void UnEquip_ItAr_Helm_G3_06()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
 		SleeperStone = FALSE;
-		HelmStam = 0;
+		HelmStam = 0 ;
 	};
 };
 
@@ -6068,13 +6066,13 @@ instance ItAr_Helm_Skel_Low(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
 instance ItAr_Helm_Skel(C_Item)
 {
-	name = "Helma kostlivého válečníka";
+	name = " Skeletal Warrior Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6086,13 +6084,13 @@ instance ItAr_Helm_Skel(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
 instance ItAr_Helm_Skel_Elite(C_Item)
 {
-	name = "Helma kostlivého strážce";
+	name = " Skeletal Guardian Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6104,13 +6102,13 @@ instance ItAr_Helm_Skel_Elite(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
 instance ItAr_Helm_Skel_King(C_Item)
 {
-	name = "Helma kostlivého lorda";
+	name = " Skeletal Lord Helm " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6122,13 +6120,13 @@ instance ItAr_Helm_Skel_King(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
 instance ItAr_Helm_Arahar(C_Item)
 {
-	name = "Helma kostlivého lorda";
+	name = " Skeletal Lord Helm " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6140,7 +6138,7 @@ instance ItAr_Helm_Arahar(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
@@ -6159,7 +6157,7 @@ instance ItAr_Helm_Skel_IlArah(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
@@ -6177,7 +6175,7 @@ instance ItAr_Helm_Avabul(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
@@ -6195,13 +6193,13 @@ instance ItAr_Helm_Janus(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
 instance ItAr_Helm_Egezart(C_Item)
 {
-	name = "Helma věčnosti";
+	name = " Helmet of Eternity " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6213,7 +6211,7 @@ instance ItAr_Helm_Egezart(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 1;
 };
 
@@ -6232,8 +6230,8 @@ func void Equip_ItAr_Helm_Skel()
 		AI_StopFX(self,"VOB_MAGICBURN");
 		Npc_ChangeAttribute(self,ATR_HITPOINTS,-self.attribute[ATR_HITPOINTS_MAX]);
 		Npc_StopAni(self,"S_FIRE_VICTIM");
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
 	};
 };
 
@@ -6241,91 +6239,91 @@ func void UnEquip_ItAr_Helm_Skel()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
 	};
 };
 
 instance ItMi_DragonStaffPiece_01(C_Item)
 {
-	name = "Část hole";
+	name = " Part of the stick " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kovová část magické hole...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " The metal part of the magic staff... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_DragonStaffPiece_02(C_Item)
 {
-	name = "Část hole";
+	name = " Part of the stick " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kovová část magické hole...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " The metal part of the magic staff... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_DragonStaffPiece_03(C_Item)
 {
-	name = "Část hole";
+	name = " Part of the stick " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kovová část magické hole...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " The metal part of the magic staff... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_DragonStaffPiece_04(C_Item)
 {
-	name = "Část hole";
+	name = " Part of the stick " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kovová část magické hole...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " The metal part of the magic staff... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_DragonStaffPiece_Eye(C_Item)
 {
-	name = "Oko draka";
+	name = " Oko draka " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_FIRESPHERE.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Mrtvé oko mocného stvoření...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " Dead Eye of a Mighty Creature... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_SteelForm(C_Item)
 {
-	name = "Forma na výrobu šperků";
+	name = " Jewelry Mold " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItMi_SteelForm.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Používána k výrobě lůžek pro šperky...";
+	text[ 4 ] = " Used to make jewelry beds... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -6342,7 +6340,7 @@ instance ItMi_Diamod(C_Item)
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -6357,7 +6355,7 @@ instance ItMi_Emerald(C_Item)
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -6372,7 +6370,7 @@ instance ItMi_Ruby(C_Item)
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -6387,7 +6385,7 @@ instance ItMi_Sapphire(C_Item)
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -6402,11 +6400,11 @@ instance ItMi_Opal(C_Item)
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
-instance ItMi_Topaz(C_Item)
+instance ItMi_Topaz (C_Item)
 {
 	name = "Topaz";
 	mainflag = ITEM_KAT_NONE;
@@ -6417,7 +6415,7 @@ instance ItMi_Topaz(C_Item)
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -6434,7 +6432,7 @@ instance ItMi_GroshBottle(C_Item)
 
 instance ItMi_ZharpStone(C_Item)
 {
-	name = "Brusný kámen";
+	name = " Whetstone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 50;
@@ -6443,8 +6441,8 @@ instance ItMi_ZharpStone(C_Item)
 	on_state[0] = Use_ItMi_SharpStone;
 	scemeName = "MAP";
 	description = name;
-	text[3] = "Používán k ostření zbraní...";
-	text[4] = "Po naostření zbraně zvyšuje způsobené poškození o (%):";
+	text[ 3 ] = " Used to sharpen weapons... " ;
+	text[ 4 ] = " After sharpening the weapon, increases the damage dealt by (%): " ;
 	count[4] = 10;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -6498,14 +6496,14 @@ func void Use_ItMi_SharpStone()
 
 instance ItMi_AncientRuneStone(C_Item)
 {
-	name = "Runový kámen Stavitelů";
+	name = " Builders Runestone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItRu_Beliar06.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Runový kámen Stavitelů, zbavený magie...";
+	text[ 4 ] = " Runestone of the Builders, stripped of magic... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -6520,28 +6518,28 @@ instance ItMi_NecrUrn(C_Item)
 	visual = "ITMI_NECRURN.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Urna s popelem neznámého mága...";
+	text[ 4 ] = " Urn with the ashes of an unknown mage... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_Avatar_Water(C_Item)
 {
-	name = "Ledový krystal";
+	name = " Ice Crystal " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_WATERSPHERE.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Magická esence ledového atronacha...";
+	text[ 4 ] = " Magic Essence of Ice Atronach... " ;
 	effect = "SPELLFX_GEYSER_FOUNTAIN";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Avatar_Fire(C_Item)
 {
-	name = "Kousek ztuhlé lávy";
+	name = " Piece of solidified lava " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6549,14 +6547,14 @@ instance ItMi_Avatar_Fire(C_Item)
 	material = MAT_GLAS;
 	effect = "SPELLFX_FIREBOW";
 	description = name;
-	text[4] = "Magická esence ohnivého atronacha...";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	text[ 4 ] = " Fire Atronach Magical Essence... " ;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Avatar_Dark(C_Item)
 {
-	name = "Temný krystal s duší";
+	name = " Dark crystal with soul " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6564,12 +6562,12 @@ instance ItMi_Avatar_Dark(C_Item)
 	material = MAT_GLAS;
 	effect = "SPELLFX_FIRESWORDBLACK";
 	description = name;
-	text[4] = "Magická esence stvoření Temnoty...";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	text[ 4 ] = " Magical essence of the creation of Darkness... " ;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
-instance ItMi_HaosAvatarStone(C_Item)
+instance ItMi_HaosAvatarStone (C_Item)
 {
 	name = "Krystal Chaosu";
 	mainflag = ITEM_KAT_NONE;
@@ -6579,14 +6577,14 @@ instance ItMi_HaosAvatarStone(C_Item)
 	material = MAT_GLAS;
 	effect = "SPELLFX_FIRESWORDBLACK";
 	description = name;
-	text[4] = "Magická esence Chaosu...";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	text[ 4 ] = " Magic Essence of Chaos... " ;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Avatar_Stone(C_Item)
 {
-	name = "Kamenné oko";
+	name = " Stone Eye " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6594,39 +6592,39 @@ instance ItMi_Avatar_Stone(C_Item)
 	material = MAT_GLAS;
 	effect = "SPELLFX_STONESPHERE";
 	description = name;
-	text[4] = "Magická esence kamenného atronacha...";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	text[ 4 ] = " Stone Atronach Magical Essence... " ;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
-//-------------------------------novyye itemy--------------------------------------
+// -------------------------------novyye itemy--------------- ----------------------
 
 instance ItMi_BigRuby(C_Item)
 {
-	name = "Královský rubín";
+	name = " Royal Ruby " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItMi_BigRuby.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Drahý kámen nesmírných rozměrů...";
+	text[ 4 ] = " Precious stone of immense dimensions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_DiamondChoker(C_Item)
 {
-	name = "Briliantový náhrdelník";
+	name = " Diamond Necklace " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 5000;
 	visual = "ItMi_GoldNecklace.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Vzácný a velice drahý šperk...";
+	text[ 4 ] = " A rare and very expensive jewel... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -6634,14 +6632,14 @@ instance ItMi_DiamondChoker(C_Item)
 
 instance ItMi_HuntHornGold(C_Item)
 {
-	name = "Zlatý lovecký roh";
+	name = " Golden Hunting Horn " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 2000;
 	visual = "ItMi_Horn_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Bohatě zdobená pomůcka na lovení...";
+	text[ 4 ] = " A richly decorated hunting aid... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -6649,20 +6647,20 @@ instance ItMi_HuntHornGold(C_Item)
 
 instance ItMi_KnifeGold(C_Item)
 {
-	name = "Zlatá dýka";
+	name = " Golden Dagger " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 3000;
 	visual = "ItMi_GoldKnife.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Vzácná a velice drahá zbraň...";
+	text[ 4 ] = " A rare and very expensive weapon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ItMi_OreBaronCrown(C_Item)
+instance ItMy_OreBaronCrown ( C_Item );
 {
 	name = "Koruna";
 	mainflag = ITEM_KAT_NONE;
@@ -6671,7 +6669,7 @@ instance ItMi_OreBaronCrown(C_Item)
 	visual = "ItMi_OreBaronCrown.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Vykládaná drahými kameny...";
+	text[ 4 ] = " Inlaid with precious stones... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -6679,14 +6677,14 @@ instance ItMi_OreBaronCrown(C_Item)
 
 instance ItMi_Wax(C_Item)
 {
-	name = "Lahvička s inkoustem";
+	name = " Ink Bottle " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 200;
 	visual = "ItMi_Wax.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Používána ke psaní...";
+	text[ 4 ] = " Used to write... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -6702,8 +6700,8 @@ instance ItWr_Seamap_Mirtana(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	on_state[0] = Use_ItWr_Seamap_Mirtana;
-	description = "Námořní mapa";
-	text[4] = "Mapa ukazující přesný kurz na pevninu...";
+	description = " Nautical Map " ;
+	text[ 4 ] = " Map showing exact course to land... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -6720,7 +6718,7 @@ func void Use_ItWr_Seamap_Mirtana()
 
 instance ItAr_ShrecHelm(C_Item)
 {
-	name = "Helma kněze Stavitelů";
+	name = " Builder Priest Helmet " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -6751,7 +6749,7 @@ instance ItAr_ShrecHelm(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -6759,9 +6757,9 @@ func void Equip_ItAr_ShrecHelm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 1;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 1 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -6774,9 +6772,9 @@ func void UnEquip_ItAr_ShrecHelm()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
 
@@ -6784,7 +6782,7 @@ var int KrowBookRead;
 
 instance ItWr_KrowBook(C_Item)
 {
-	name = "Crowův deník";
+	name = " Crow's Diary " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6796,7 +6794,7 @@ instance ItWr_KrowBook(C_Item)
 
 instance ItMi_StoneGuardianPiece(C_Item)
 {
-	name = "Úlomek runového kamene";
+	name = " Runestone Shard " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 50;
@@ -6810,7 +6808,7 @@ instance ItMi_StoneGuardianPiece(C_Item)
 
 instance ItMi_BowRope_01(C_Item)
 {
-	name = "Tětiva z vlčí kůže";
+	name = " Wolfskin String " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 2;
@@ -6824,7 +6822,7 @@ instance ItMi_BowRope_01(C_Item)
 
 instance ItMi_BowRope_02(C_Item)
 {
-	name = "Tětiva z kůže divočáka";
+	name = " Boar skin string " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 4;
@@ -6838,7 +6836,7 @@ instance ItMi_BowRope_02(C_Item)
 
 instance ItMi_BowRope_03(C_Item)
 {
-	name = "Tětiva z kůže warga";
+	name = " Warga Leather String " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 12;
@@ -6852,7 +6850,7 @@ instance ItMi_BowRope_03(C_Item)
 
 instance ItMi_BowRope_04(C_Item)
 {
-	name = "Tětiva z kůže stínové šelmy";
+	name = " Shadow Beast Skin Tendon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 30;
@@ -6866,7 +6864,7 @@ instance ItMi_BowRope_04(C_Item)
 
 instance ItMi_BowRope_05(C_Item)
 {
-	name = "Tětiva z trolí kůže";
+	name = " Trollskin Tendon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 50;
@@ -6880,7 +6878,7 @@ instance ItMi_BowRope_05(C_Item)
 
 instance ItMi_JustTree(C_Item)
 {
-	name = "Řezivo z obyčejného dřeva";
+	name = " Common Wood Lumber " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItMi_JustTree.3ds";
@@ -6891,7 +6889,7 @@ instance ItMi_JustTree(C_Item)
 
 instance ItMi_EveTree(C_Item)
 {
-	name = "Řezivo z vrbového dřeva";
+	name = " Willow lumber " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5;
@@ -6905,7 +6903,7 @@ instance ItMi_EveTree(C_Item)
 
 instance ItMi_VyzTree(C_Item)
 {
-	name = "Řezivo z jilmového dřeva";
+	name = " Elm lumber " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
@@ -6919,7 +6917,7 @@ instance ItMi_VyzTree(C_Item)
 
 instance ItMi_YsuoTree(C_Item)
 {
-	name = "Řezivo z jasanového dřeva";
+	name = " Ash lumber " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 15;
@@ -6933,7 +6931,7 @@ instance ItMi_YsuoTree(C_Item)
 
 instance ItMi_BokTree(C_Item)
 {
-	name = "Řezivo z bukového dřeva";
+	name = " Beech lumber " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 20;
@@ -6947,7 +6945,7 @@ instance ItMi_BokTree(C_Item)
 
 instance ItMi_JustBowCorpse(C_Item)
 {
-	name = "Krátké lučiště";
+	name = " Short Archery " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -6961,7 +6959,7 @@ instance ItMi_JustBowCorpse(C_Item)
 
 instance ItMi_EveCorpse(C_Item)
 {
-	name = "Vrbové lučiště";
+	name = " Willow Archery " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5;
@@ -6975,7 +6973,7 @@ instance ItMi_EveCorpse(C_Item)
 
 instance ItMi_VyzCorpse(C_Item)
 {
-	name = "Jilmové lučiště";
+	name = " Elm Archery " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
@@ -6989,7 +6987,7 @@ instance ItMi_VyzCorpse(C_Item)
 
 instance ItMi_YsuoCorpse(C_Item)
 {
-	name = "Jasanové lučiště";
+	name = " Ash Bowery " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 15;
@@ -7003,7 +7001,7 @@ instance ItMi_YsuoCorpse(C_Item)
 
 instance ItMi_BokCorpse(C_Item)
 {
-	name = "Bukové lučiště";
+	name = " Beech Archery " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 20;
@@ -7017,22 +7015,22 @@ instance ItMi_BokCorpse(C_Item)
 
 instance ItMi_TeleportStone(C_Item)
 {
-	name = "Prastará runová tabulka";
+	name = " Ancient Runic Table " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItMi_TeleportStone.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Vyzařuje magickou energii...";
+	text[ 4 ] = " Emits magical energy... " ;
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	inv_animate = 1;
 };
 
-instance ItMi_Fitil(C_Item)
+instance ItMi_Fitil (C_Item)
 {
-	name = "Doutnák děla";
+	name = " Cannon Cigar " ;
 	mainflag = ITEM_KAT_NONE;
 	value = 5;
 	flags = ITEM_MULTI | ITEM_MISSION;
@@ -7046,7 +7044,7 @@ instance ItMi_Fitil(C_Item)
 
 instance ItMi_CanoneBall(C_Item)
 {
-	name = "Dělová koule";
+	name = " Cannonball " ;
 	mainflag = ITEM_KAT_NONE;
 	value = 15;
 	flags = ITEM_MULTI | ITEM_MISSION;
@@ -7072,14 +7070,14 @@ instance ItMi_CanoneBall_Fire(C_Item)
 
 instance ItMi_MagicPowder(C_Item)
 {
-	name = "Magický střelný prach";
+	name = " Magic Gunpowder " ;
 	mainflag = ITEM_KAT_NONE;
 	value = 500;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ITMI_MAGICPOWDER.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Používat opatrně...";
+	text[ 4 ] = " Use with care... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -7091,7 +7089,7 @@ instance ItMi_TeleportFarm(C_Item)
 	mainflag = ITEM_KAT_NONE;
 	value = 500;
 	flags = ITEM_MISSION;
-	visual = "ItRu_TeleportFarm.3ds";
+	visual = " ItRu_TeleportFarm.3ds " ;
 	material = MAT_STONE;
 	description = NAME_SPL_TeleportFarm;
 	text[5] = NAME_Value;
@@ -7129,7 +7127,7 @@ instance ItMi_TeleportPsicamp(C_Item)
 
 instance CA_ITMI_BRANCH(C_Item)
 {
-	name = "Dřevěná větev";
+	name = " Wooden branch " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -7143,20 +7141,20 @@ instance CA_ITMI_BRANCH(C_Item)
 
 instance ItMi_BeliarPowerStone(C_Item)
 {
-	name = "Temný kámen";
+	name = " Dark Stone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItMi_BeliarSign.3ds";
 	material = MAT_METAL;
 	effect = "SPELLFX_MAGIC_SMOKE";
 	description = name;
-	text[3] = "Symbol Beliarova Vyvoleného...";
-	text[4] = "Vyzařuje temnou magickou energii...";
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	text[ 3 ] = " Symbol of Beliar's Chosen... " ;
+	text[ 4 ] = " Emits dark magical energy... " ;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
-//--------------------------------sumki------------------------------
+// --------------------------------bags--------------- ---------------
 
 instance ItBg_Armor(C_Item)
 {
@@ -7168,12 +7166,12 @@ instance ItBg_Armor(C_Item)
 	scemeName = "MAP";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItBg_Armor;
-	description = "Brašna na vybavení";
-	text[4] = "Používána ke skladování zbrojí, opasků, helem a štítů...";
+	description = " Gear Bag " ;
+	text[ 4 ] = " Used to store armor, belts, helmets and shields... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_HELM;
-	inv_rotz = 45;
+	inv_zbias = INVCAM_ENTF_HELM ;
+	inv_snot = 45 ;
 	inv_rotx = -90;
 	inv_rotx = -45;
 	inv_animate = 1;
@@ -7194,12 +7192,12 @@ instance ItBg_Weapon(C_Item)
 	scemeName = "MAP";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItBg_Weapon;
-	description = "Brašna na zbraně";
-	text[4] = "Používána ke skladování různých zbraní a munice...";
+	description = " Weapons Bag " ;
+	text[ 4 ] = " Used to store various weapons and ammo... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_HELM;
-	inv_rotz = 45;
+	inv_zbias = INVCAM_ENTF_HELM ;
+	inv_snot = 45 ;
 	inv_rotx = -90;
 	inv_rotx = -45;
 	inv_animate = 1;
@@ -7207,7 +7205,7 @@ instance ItBg_Weapon(C_Item)
 
 func void Use_ItBg_Weapon()
 {
-	OpenPocket(item,ITEM_KAT_NF | ITEM_KAT_FF | ITEM_KAT_MUN);
+	OpenPocket(item, ITEM_CAT_NF | ITEM_CAT_FF | ITEM_CAT_MUN );
 };
 
 instance ItBg_Alchemy(C_Item)
@@ -7220,12 +7218,12 @@ instance ItBg_Alchemy(C_Item)
 	scemeName = "MAP";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItBg_Alchemy;
-	description = "Alchymistova brašna";
-	text[4] = "Používána ke skladování alchymistických nápojů...";
+	description = " Alchemist's Bag " ;
+	text[ 4 ] = " Used to store alchemical potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_HELM;
-	inv_rotz = 45;
+	inv_zbias = INVCAM_ENTF_HELM ;
+	inv_snot = 45 ;
 	inv_rotx = -90;
 	inv_rotx = -45;
 	inv_animate = 1;
@@ -7247,11 +7245,11 @@ instance ItBg_Mage(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItBg_Mage;
 	description = "Mágova brašna";
-	text[4] = "Používána ke skladování run, knih a svitků...";
+	text[ 4 ] = " Used to store runes, books and scrolls... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_HELM;
-	inv_rotz = 45;
+	inv_zbias = INVCAM_ENTF_HELM ;
+	inv_snot = 45 ;
 	inv_rotx = -90;
 	inv_rotx = -45;
 	inv_animate = 1;
@@ -7259,7 +7257,7 @@ instance ItBg_Mage(C_Item)
 
 func void Use_ItBg_Mage()
 {
-	OpenPocket(item,ITEM_KAT_RUNE | ITEM_KAT_DOCS);
+	OpenPocket(item, ITEM_KAT_RUNE | ITEM_KAT_DOCS );
 };
 
 instance ItBg_Jewerly(C_Item)
@@ -7272,12 +7270,12 @@ instance ItBg_Jewerly(C_Item)
 	scemeName = "MAP";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItBg_Jewerly;
-	description = "Brašna na šperky";
-	text[4] = "Používána ke skladování prstenů, amuletů a klíčů...";
+	description = " Jewelry bag " ;
+	text[ 4 ] = " Used to store rings, amulets and keys... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_HELM;
-	inv_rotz = 45;
+	inv_zbias = INVCAM_ENTF_HELM ;
+	inv_snot = 45 ;
 	inv_rotx = -90;
 	inv_rotx = -45;
 	inv_animate = 1;
@@ -7298,12 +7296,12 @@ instance ItBg_PlatsFood(C_Item)
 	scemeName = "MAP";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItBg_PlatsFood;
-	description = "Pytel s proviantem";
-	text[4] = "Používán ke skladování jídla a rostlin...";
+	description = " Pytel s providing " ;
+	text[ 4 ] = " Used to store food and plants... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_HELM;
-	inv_rotz = 45;
+	inv_zbias = INVCAM_ENTF_HELM ;
+	inv_snot = 45 ;
 	inv_rotx = -90;
 	inv_rotx = -45;
 	inv_animate = 1;
@@ -7325,11 +7323,11 @@ instance ItBg_Trash(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItBg_Trash;
 	description = "Pytel";
-	text[4] = "Používán ke skladování různých věcí...";
+	text[ 4 ] = " Used to store various things... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_HELM;
-	inv_rotz = 45;
+	inv_zbias = INVCAM_ENTF_HELM ;
+	inv_snot = 45 ;
 	inv_rotx = -90;
 	inv_rotx = -45;
 	inv_animate = 1;
@@ -7342,7 +7340,7 @@ func void Use_ItBg_Trash()
 
 instance ItPl_ExBlueMalve(C_Item)
 {
-	name = "Modrý sléz";
+	name = " Blue Mallow " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
@@ -7356,14 +7354,14 @@ instance ItPl_ExBlueMalve(C_Item)
 
 instance ItMi_BlackPearlNeckle(C_Item)
 {
-	name = "Náhrdelník z černých perel";
+	name = " Black Pearl Necklace " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_BlackPearlNeckle.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Vzácný a šíleně drahý šperk...";
+	text[ 4 ] = " A rare and insanely expensive jewel... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -7384,185 +7382,185 @@ instance ITMI_SONJAWIG(C_Item)
 
 instance ITMI_GERALTHAIR(C_Item)
 {
-	name = "Bílý vlk";
+	name = " White Wolf " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ITMI_GERALTHAIR.3DS";
 	material = MAT_LEATHER;
-	description = "Bílý vlk";
+	description = " White Wolf " ;
 };
 
 
-//--------------------------mutageny-------------------------------
+// --------------------------mutagens------ ----------
 
 instance ItMi_Mutagen_Str_Low(C_Item)
 {
-	name = "Malý mutagen síly";
+	name = " Small Power Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	visual = "ItMi_Mutagen_Str.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Slabé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Weak effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Str_Normal(C_Item)
 {
-	name = "Mutagen síly";
+	name = " Mutagen of Power " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_Mutagen_Str.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Obvyklé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Usual Effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Str_Strong(C_Item)
 {
-	name = "Velký mutagen síly";
+	name = " Great Power Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1500;
 	visual = "ItMi_Mutagen_Str.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Silné účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Strong effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Dex_Low(C_Item)
 {
-	name = "Malý mutagen obratnosti";
+	name = " Small Agility Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	visual = "ItMi_Mutagen_Dex.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Slabé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Weak effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Dex_Normal(C_Item)
 {
-	name = "Mutagen obratnosti";
+	name = " Mutagen obratnosti " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_Mutagen_Dex.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Obvyklé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Usual Effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Dex_Strong(C_Item)
 {
-	name = "Velký mutagen obratnosti";
+	name = " Great Agility Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1500;
 	visual = "ItMi_Mutagen_Dex.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Silné účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Strong effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_HP_Low(C_Item)
 {
-	name = "Malý mutagen zdraví";
+	name = " Small Health Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	visual = "ItMi_Mutagen_HP.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Slabé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Weak effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_HP_Normal(C_Item)
 {
-	name = "Mutagen zdraví";
+	name = " Health Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_Mutagen_HP.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Obvyklé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Usual Effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_HP_Strong(C_Item)
 {
-	name = "Velký mutagen zdraví";
+	name = " Great Health Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1500;
 	visual = "ItMi_Mutagen_HP.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Silné účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Strong effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -7576,17 +7574,17 @@ instance ItMi_Mutagen_Mana_Low(C_Item)
 	visual = "ItMi_Mutagen_Mana.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Slabé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Weak effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
-instance ItMi_Mutagen_Mana_Normal(C_Item)
+instance ItMi_Mutagen_Mana_Normal (C_Item)
 {
 	name = "Mutagen many";
 	mainflag = ITEM_KAT_NONE;
@@ -7595,88 +7593,88 @@ instance ItMi_Mutagen_Mana_Normal(C_Item)
 	visual = "ItMi_Mutagen_Mana.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Obvyklé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Usual Effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Mana_Strong(C_Item)
 {
-	name = "Velký mutagen many";
+	name = " Great Mana Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1500;
 	visual = "ItMi_Mutagen_Mana.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Silné účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Strong effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Stamina_Low(C_Item)
 {
-	name = "Malý mutagen výdrže";
+	name = " Small Stamina Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	visual = "ItMi_Mutagen_Stamina.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Slabé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Weak effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Stamina_Normal(C_Item)
 {
-	name = "Mutagen výdrže";
+	name = " Stamina Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_Mutagen_Stamina.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Obvyklé účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Usual Effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_Mutagen_Stamina_Strong(C_Item)
 {
-	name = "Velký mutagen výdrže";
+	name = " Great Stamina Mutagen " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1500;
 	visual = "ItMi_Mutagen_Stamina.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Silné účinky...";
-	text[3] = "Velice vzácná alchymistická přísada...";
-	text[4] = "Používán k posílení účinků lektvarů...";
+	text[ 1 ] = " Strong effects... " ;
+	text[ 3 ] = " A very rare alchemical ingredient... " ;
+	text[ 4 ] = " Used to enhance the effects of potions... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -7690,7 +7688,7 @@ instance ItMw_Kirka_New(C_Item)
 	value = 100;
 	visual = "ItMw_020_2h_Pickaxe_01_Sky.3DS";
 	description = name;
-	text[4] = "Používán k těžbě rudy...";
+	text[ 4 ] = " Used to mine ore... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -7705,7 +7703,7 @@ instance ItMw_2H_Axe_L_01(C_Item)
 	value = 10;
 	visual = "ITMW_KIRKA_NEW.3DS";
 	description = name;
-	text[4] = "Používán k těžbě rudy...";
+	text[ 4 ] = " Used to mine ore... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -7713,14 +7711,14 @@ instance ItMw_2H_Axe_L_01(C_Item)
 
 instance ItMi_Chopper(C_Item)
 {
-	name = "Dřevorubecká sekyra";
+	name = " Woodcutter's Axe " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	visual = "ITMW_2H_LUMBERAXE_01.3DS";
 	description = name;
-	text[4] = "Používána ke kácení stromů...";
+	text[ 4 ] = " Used to cut trees... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -7735,7 +7733,7 @@ instance ItMw_1H_Axe_WoodChoppin(C_Item)
 	value = 10;
 	visual = "WOODCHOPPIIN_AXE.3DS";
 	description = name;
-	text[4] = "Používán ke štípání polen...";
+	text[ 4 ] = " Used to split logs... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -7752,12 +7750,12 @@ instance ItMi_FlyCarpet(C_Item)
 	cond_value[2] = 350;
 	mag_circle = 4;
 	visual = "FLYING_CARPET_01.3DS";
-	description = "Er'Khazirův magický koberec";
+	description = " Er'Khazir's Magic Carpet " ;
 	text[2] = NAME_Mag_Circle;
 	count[2] = mag_circle;
 	text[3] = NAME_Mana_needed;
 	count[3] = 350;
-	text[4] = "Dokáže se pohybovat vzduchem...";
+	text[ 4 ] = " Can move through air... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -7776,64 +7774,64 @@ instance ItSe_FlyCarpet(C_Item)
 
 instance ItMi_SMD_Mutagen(C_Item)
 {
-	name = "Malá esence démona";
+	name = " Small Demon Essence " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Slabé účinky...";
-	text[4] = "Používána k posílení démonologické runy...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 1 ] = " Weak effects... " ;
+	text[ 4 ] = " Used to strengthen the demonological rune... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_MD_Mutagen(C_Item)
 {
-	name = "Esence démona";
+	name = " Demon Essence " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 150;
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Obvyklé účinky...";
-	text[4] = "Používána k posílení démonologické runy...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 1 ] = " Usual Effects... " ;
+	text[ 4 ] = " Used to strengthen the demonological rune... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_LMD_Mutagen(C_Item)
 {
-	name = "Silná esence démona";
+	name = " Strong Demon Essence " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 200;
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Silné účinky...";
-	text[4] = "Používána k posílení démonologické runy...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 1 ] = " Strong effects... " ;
+	text[ 4 ] = " Used to strengthen the demonological rune... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_SMAD_Mutagen(C_Item)
 {
-	name = "Malá esence arcidémona";
+	name = " Lesser Archdemon Essence " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 150;
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Slabé účinky...";
-	text[4] = "Používána k posílení démonologické runy...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 1 ] = " Weak effects... " ;
+	text[ 4 ] = " Used to strengthen the demonological rune... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -7847,32 +7845,32 @@ instance ItMi_MAD_Mutagen(C_Item)
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Obvyklé účinky...";
-	text[4] = "Používána k posílení démonologické runy...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 1 ] = " Usual Effects... " ;
+	text[ 4 ] = " Used to strengthen the demonological rune... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMi_LMAD_Mutagen(C_Item)
 {
-	name = "Silná esence arcidémona";
+	name = " Powerful Archdemon Essence " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 450;
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = "Silné účinky...";
-	text[4] = "Používána k posílení démonologické runy...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 1 ] = " Strong effects... " ;
+	text[ 4 ] = " Used to strengthen the demonological rune... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItTrollStone(C_Item)
 {
-	name = "Kámen";
+	name = " Stone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 0;
@@ -7897,7 +7895,7 @@ instance ItMi_Angel(C_Item)
 	inv_animate = 1;
 };
 
-instance ItSe_FAngel(C_Item)
+instance ItSe_FAngel (C_Item)
 {
 	name = "Udice";
 	mainflag = ITEM_KAT_NONE;
@@ -7916,7 +7914,7 @@ instance ItMi_MeetKnife(C_Item)
 	value = Value_Scoop;
 	visual = "ITMW_1H_ON_107.3DS";
 	material = MAT_WOOD;
-	description = "Nůž na porcování masa";
+	description = " Meat slicing knife " ;
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -7940,73 +7938,73 @@ instance ItMi_HildaKnife(C_Item)
 
 instance ItMi_LotarRing(C_Item)
 {
-	name = "Stříbrný prsten";
+	name = " Silver Ring " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 10;
 	visual = "ItMi_Ring_Silver_New_Named.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[3] = "Na prstenu je vyryto jméno 'Lothar'...";
-	text[4] = "Svítí podivnou magickou září...";
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 3 ] = " The name 'Lothar' is engraved on the ring... " ;
+	text[ 4 ] = " It shines a strange magical glow... " ;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
-instance ItMi_StafanRing(C_Item)
+instance ItMi_StafanRing (C_Item)
 {
-	name = "Stříbrný prsten";
+	name = " Silver Ring " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 10;
 	visual = "ItMi_Ring_Silver_New_Named.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Na prstenu je vyrytý nápis 'Stefanovi od Ha...'";
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 4 ] = " The ring is engraved with the inscription 'To Stefan from Ha...' " ;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 instance ItMw_KillPirateSaebel(C_Item)
 {
-	name = "Stará pirátská šavle";
+	name = " Old Pirate Saber " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 10;
 	visual = "ItMw_PirCutlas.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Na čepeli zůstali zaschlé kapky něčí krve...";
+	text[ 4 ] = " Dried drops of someone's blood remained on the blade... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_DarkScroll(C_Item)
 {
-	name = "Temný svitek";
+	name = " Dark Scroll " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "V tomhle svitku je ukryta neznámá temná magie...";
+	text[ 2 ] = " There is an unknown dark magic hidden in this scroll... " ;
 	inv_animate = 1;
 };
 
-instance ItMi_ShipShceme(C_Item)
+instance ItMi_ShipShceme (C_Item)
 {
-	name = "Schéma řízení";
+	name = " Control Scheme " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Obsahuje nákresy součástek řízení 'Elsy'...";
+	text[ 2 ] = " Contains drawings of the control components of 'Elsa'... " ;
 	inv_animate = 1;
 };
 
@@ -8022,9 +8020,9 @@ instance ItMi_Darktransfer(C_Item)
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_ItMi_Darktransfer;
-	description = "Runa přemístění";
-	text[3] = "Tuhle runu vyrobil Vatras...";
-	text[4] = "Zavede mě k Lotharovu vrahovi...";
+	description = " Rune of displacement " ;
+	text[ 3 ] = " This rune was made by Vatras... " ;
+	text[ 4 ] = " He leads me to Lothar's murderer... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -8038,25 +8036,25 @@ func void Use_ItMi_Darktransfer()
 	};
 };
 
-//-----------------epik---------------------------------------------
+// -----------------epic----------------------------- ---------------
 
 instance ItMi_IlisilAmulet(C_Item)
 {
-	name = "Ile'Silův medailon";
+	name = " Ile'Sil's Locket " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItAm_Mana_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[2] = "Tenhle medailon mi dal Ile'Sil...";
-	text[3] = "Ochraňuje před zhoubnými účinky ostrovního klimatu...";
-	text[4] = "Nemusím ho mít nasazený...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 2 ] = " Ile'Sil gave me this locket... " ;
+	text[ 3 ] = " Protects against the harmful effects of the island climate... " ;
+	text[ 4 ] = " I don't have to have it on... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
-instance ItMi_ArahArEye(C_Item)
+instance ItMi_ArahArEye (C_Item)
 {
 	name = "Arah'Arovo oko";
 	mainflag = ITEM_KAT_MAGIC;
@@ -8065,75 +8063,75 @@ instance ItMi_ArahArEye(C_Item)
 	visual = "ITMI_DARKEYE.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Mrtvé oko mocného licha...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " Dead Eye of a Mighty Lich... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
-instance ItMi_ArahArEye_Unknown(C_Item)
+instance ItMi_ArahArEye_Unknown (C_Item)
 {
-	name = "Kousek zkamenělého masa";
+	name = " A Piece of Petrified Meat " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ITMI_DARKEYE.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Kulatý kousek zkamenělého masa...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " A round piece of petrified flesh... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_FiarasHeart(C_Item)
 {
-	name = "Fiarasovo srdce";
+	name = " Fiaras' Heart " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItAt_FireGolemHeart.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Srdce ohnivého golema Fiarase...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " Heart of the Fire Golem Fiarase... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Seed_Agony(C_Item)
 {
-	name = "Sémě bolesti";
+	name = " Seed of Pain " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Seed_Agony.3DS";
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Seed_Despair(C_Item)
 {
-	name = "Sémě prokletí";
+	name = " Seed of Curse " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Seed_Despair.3DS";
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItMi_Seed_Doom(C_Item)
 {
-	name = "Sémě destrukce";
+	name = " Seed of Destruction " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Seed_Doom.3DS";
 	material = MAT_METAL;
 	description = name;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -8148,8 +8146,8 @@ instance ItMi_XardasMagicScroll(C_Item)
 	description = name;
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_ItMi_XardasMagicScroll;
-	description = "Xardasův magický svitek";
-	text[4] = "Dokáže přivolat ducha zemřelého...";
+	description = " Xardas's Magic Scroll " ;
+	text[ 4 ] = " Can summon the spirit of the deceased... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -8164,12 +8162,12 @@ func void Use_ItMi_XardasMagicScroll()
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",self,self,0,0,0,FALSE);
 			Wld_InsertNpc(Skeleton_Stefan,"NW_SOUL_LH_01");
 			StefanIns = TRUE;
-			B_LogEntry(TOPIC_HauntedLighthouse,"Použil jsem Xardasův svitek. Teď tady musím všechno prověřit...");
+			B_LogEntry(TOPIC_HauntedLighthouse, " I used Xardas's scroll. Now I have to check everything here... " );
 		}
 		else
 		{
 			B_Say(hero,hero,"$DONTWORK");
-			AI_Print("Tohle není správné místo...");
+			AI_Print( " This is not the right place... " );
 			CreateInvItems(self,ItMi_XardasMagicScroll,1);
 		};
 	};
@@ -8209,7 +8207,7 @@ instance ItAr_Helm_Blood(C_Item)
 	count[4] = protection[PROT_FIRE];
 	text[5] = NAME_Prot_Magic;
 	count[5] = protection[PROT_MAGIC];
-	inv_zbias = INVCAM_ENTF_HELM;
+	inv_zbias = INVCAM_ENTF_HELM ;
 	inv_animate = 0;
 };
 
@@ -8217,9 +8215,9 @@ func void Equip_ItAr_Helm_Blood()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = TRUE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 5;
+		HelmIsUp = TRUE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 5 ;
 
 		if((ArmorWithCapisUp == TRUE) || (MageArmorWithCapisUp == TRUE))
 		{
@@ -8232,8 +8230,8 @@ func void UnEquip_ItAr_Helm_Blood()
 {
 	if(Npc_IsPlayer(self))
 	{
-		HelmIsUp = FALSE;
-		HelmIsUpTemp = FALSE;
-		HelmStam = 0;
+		HelmIsUp = FALSE ;
+		HelmIsUpTemp = FALSE ;
+		HelmStam = 0 ;
 	};
 };
