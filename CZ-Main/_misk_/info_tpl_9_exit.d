@@ -1,4 +1,5 @@
 
+
 instance INFO_TPL_9_EXIT(C_Info)
 {
 	nr = 999;
@@ -47,7 +48,7 @@ instance INFO_TPL_9_HOW(C_Info)
 	condition = INFO_TPL_9_HOW_condition;
 	information = INFO_TPL_9_HOW_info;
 	permanent = TRUE;
-	description = "Jaká je situace?";
+	description = " What is the situation? " ;
 };
 
 func int INFO_TPL_9_HOW_condition()
@@ -64,26 +65,26 @@ func void INFO_TPL_9_HOW_info()
 
 	question = Hlp_Random(3);
 
-	AI_Output(other,self,"INFO_TPL_9_HOW_01_00");	//Jaká je situace?
+	AI_Output(other,self, " INFO_TPL_9_HOW_01_00 " );	// What's the situation?
 
 	if(question == 0)
 	{
-		AI_Output(self,other,"INFO_TPL_9_HOW_01_01");	//Zatím je vše v klidu, příteli.
+		AI_Output(self,other, " INFO_TPL_9_HOW_01_01 " );	// All is well for now, my friend.
 		AI_StopProcessInfos(self);
 	}
 	else if(question == 1)
 	{
-		AI_Output(self,other,"INFO_TPL_9_HOW_01_02");	//Vše je pod kontrolou! Nemohou se dostat do tábora.
+		AI_Output(self,other, " INFO_TPL_9_HOW_01_02 " );	// Everything is under control! They can't get into the camp.
 		AI_StopProcessInfos(self);
 	}
 	else if(question == 2)
 	{
-		AI_Output(self,other,"INFO_TPL_9_HOW_01_03");	//Zatímco jsme tady, je nepravděpodobné, že by tábor napadli.
+		AI_Output(self,other, " INFO_TPL_9_HOW_01_03 " );	// While we're here, it's unlikely they'll attack the camp.
 		AI_StopProcessInfos(self);
 	}
 	else if(question == 3)
 	{
-		AI_Output(self,other,"INFO_TPL_9_HOW_01_04");	//Nemusíš se bát, člověče. Máme vše pod kontrolou!
+		AI_Output(self,other, " INFO_TPL_9_HOW_01_04 " );	// You don't have to worry, man. We have everything under control!
 		AI_StopProcessInfos(self);
 	};
 };
