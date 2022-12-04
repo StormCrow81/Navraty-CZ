@@ -103,9 +103,9 @@ func int DIA_Malak_PASS_Condition()
 func void DIA_Malak_PASS_Info()
 {
 	AI_Output(other,self, " DIA_Malak_PASS_15_00 " );	// What do you know about the passage?
-	AI_Output(self,other, " DIA_Malak_PASS_08_01 " );	// Not much! Only that it leads to the old Valley of Mines, which was surrounded by the Barrier a few weeks ago.
-	AI_Output(self,other, " DIA_Malak_PASS_08_02 " );	// And then the only thing we farmers had to fear was the monthly caravan delivering various cargoes to the Valley of Mines.
-	AI_Output(self,other, " DIA_Malak_PASS_08_03 " );	// These thugs made our lives very difficult.
+	AI_Output(self,other, " DIA_Malak_PASS_08_01 " );	// Not much! Only that it leads to the old Valley of Mines, which was surrounded by the Barrier until a few weeks ago.
+	AI_Output(self,other, " DIA_Malak_PASS_08_02 " );	// Before then the only thing we farmers had to fear was the monthly caravan delivering various cargoes to the Valley of Mines.
+	AI_Output(self,other, " DIA_Malak_PASS_08_03 " );	// Those thugs made our lives very difficult.
 };
 
 
@@ -155,8 +155,8 @@ func int DIA_Malak_MINENTAL_Condition()
 func void DIA_Malak_MINENTAL_Info()
 {
 	AI_Output(other,self, " DIA_Malak_MINENTAL_15_00 " );	// What do they say about the Valley of Mines?
-	AI_Output(self,other, " DIA_Malak_MINENTAL_08_01 " );	// Miscellaneous. Some say they heard screams at night, others saw a strange light over the mountains.
-	AI_Output(self,other, " DIA_Malak_MINENTAL_08_02 " );	// But I think it's all empty gossip.
+	AI_Output(self,other, " DIA_Malak_MINENTAL_08_01 " );	// Many odd things. Some say they hear screams at night, others claim to see strange lights over the mountains.
+	AI_Output(self,other, " DIA_Malak_MINENTAL_08_02 " );	// But I think it's all superstitious bullshit.
 };
 
 
@@ -208,8 +208,8 @@ func int DIA_Malak_PALADINE_Condition()
 func void DIA_Malak_PALADINE_Info()
 {
 	AI_Output(other,self, " DIA_Malak_PALADINE_15_00 " );	// Tell me about these paladins. How long have they been here?
-	AI_Output(self,other, " DIA_Malak_PALADINE_08_01 " );	// A week or two, I think. I do not remember exactly.
-	AI_Output(self,other, " DIA_Malak_PALADINE_08_02 " );	// Not so long ago, there was even a whole squad of paladins here. They went through the aisle! Since then I have not seen them again.
+	AI_Output(self,other, " DIA_Malak_PALADINE_08_01 " );	// A week or two, I think. I don't remember exactly.
+	AI_Output(self,other, " DIA_Malak_PALADINE_08_02 " );	// Not so long ago, there was a whole squad of paladins here. Then they went through the passage, and haven't been seen since.
 };
 
 
@@ -233,8 +233,8 @@ func int DIA_Malak_KEINEFRAUEN_Condition()
 
 func void DIA_Malak_KEINEFRAUEN_Info()
 {
-	AI_Output(other,self, " DIA_Malak_KEINEFRAUEN_15_00 " );	// I don't see women here.
-	AI_Output(self,other, " DIA_Malak_KEINEFRAUEN_08_01 " );	// You're right. It's a men's farm, so to speak. And it's even better, I think.
+	AI_Output(other,self, " DIA_Malak_KEINEFRAUEN_15_00 " );	// I don't see any women here.
+	AI_Output(self,other, " DIA_Malak_KEINEFRAUEN_08_01 " );	// You're right. It's a men's farm, so to speak. It's better that way I think.
 };
 
 
@@ -317,9 +317,9 @@ func void DIA_Malak_FLEEFROMPASS_Info()
 	else
 	{
 		AI_Output(other,self, " DIA_Malak_FLEEFROMPASS_15_00 " );	// What are you doing here?
-		AI_Output(self,other, " DIA_Malak_FLEEFROMPASS_08_01 " );	// I escaped Bengar's farm. I don't want to be devoured by all these creatures that are pouring in droves from the Passage.
+		AI_Output(self,other, " DIA_Malak_FLEEFROMPASS_08_01 " );	// I escaped Bengar's farm. I don't want to be devoured by all the creatures that are pouring in droves from the Passage.
 		AI_Output(self,other, " DIA_Malak_FLEEFROMPASS_08_02 " );	// You can't imagine the horrors that have come out of there in the past few days.
-		AI_Output(other,self,"DIA_Malak_FLEEFROMPASS_15_03");	//Могу.
+		AI_Output(other,self,"DIA_Malak_FLEEFROMPASS_15_03");	//Believe me, I can.
 
 		if(MIS_BengarsHelpingSLD == LOG_Running)
 		{
@@ -358,7 +358,7 @@ func void DIA_Malak_Healing_Info()
 	AI_Output(other,self, " DIA_Malak_Heilung_15_00 " );	// You need help.
 	if (DIA_Malak_Heilung_oneTime ==  FALSE )
 	{
-		AI_Output(self,other, " DIA_Malak_Heilung_08_01 " );	// (tearfully) I just want to go home. I will return to Bengar. Hope he's still alive.
+		AI_Output(self,other, " DIA_Malak_Heilung_08_01 " );	// I just want to go home. I will return to Bengar. I Hope he's still alive.
 		B_NpcClearObsessionByDMT(self);
 		Npc_ExchangeRoutine(self,"Start");
 		B_StartOtherRoutine(BAU_962_Bauer,"Start");
@@ -372,7 +372,7 @@ func void DIA_Malak_Healing_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Malak_Heilung_08_02 " );	// Leave me alone, mage. I can handle.
+		AI_Output(self,other, " DIA_Malak_Heilung_08_02 " );	// Leave me alone, mage. I can handle this alone.
 		B_NpcClearObsessionByDMT(self);
 	};
 };
@@ -399,8 +399,8 @@ func int DIA_Malak_PERMCASTLE_Condition()
 
 func void DIA_Malak_PERMCASTLE_Info()
 {
-	AI_Output(other,self, " DIA_Malak_PERMCASTLE_15_00 " );	// How are you here?
-	AI_Output(self,other, " DIA_Malak_PERMCASTLE_08_01 " );	// I only have to deal with bandits here. It's still the lesser evil.
+	AI_Output(other,self, " DIA_Malak_PERMCASTLE_15_00 " );	// Why are you here?
+	AI_Output(self,other, " DIA_Malak_PERMCASTLE_08_01 " );	// I only have to deal with bandits here. It's the lesser evil.
 };
 
 var int MalakHelpFT;
@@ -425,7 +425,7 @@ func int DIA_Malak_BACKTOBENGAR_Condition()
 
 func void DIA_Malak_BACKTOBENGAR_Info()
 {
-	AI_Output(other,self, " DIA_Malak_BACKTOBENGAR_15_00 " );	// Bengar needs you! He wants you back to his farm.
+	AI_Output(other,self, " DIA_Malak_BACKTOBENGAR_15_00 " );	// Bengar needs you! He wants you back on his farm.
 	AI_Output(self,other, " DIA_Malak_BACKTOBENGAR_08_01 " );	// I'm not crazy. As long as the farm is defenseless, I will not leave this place!
 
 	if((MIS_BengarsHelpingSLD == LOG_Running) && (MalakHelpFT == FALSE))
@@ -437,16 +437,16 @@ func void DIA_Malak_BACKTOBENGAR_Info()
 	{
 		AI_Output(other,self, " DIA_Malak_BACKTOBENGAR_15_02 " );	// I hired a mercenary. He will look after your farm.
 		AI_Output(self,other, " DIA_Malak_BACKTOBENGAR_08_03 " );	// Well, that's another matter, of course. But wait a minute. Who will pay this guy?
-		AI_Output(other,self, " DIA_Malak_BACKTOBENGAR_15_04 " );	// This is my problem.
-		AI_Output(self,other, " DIA_Malak_BACKTOBENGAR_08_05 " );	// Can you tell me, huh?
-		Info_AddChoice(DIA_Early_BACKTOBENGAR, " Нет. " ,DIA_Early_BACKTOBENGAR_los);
+		AI_Output(other,self, " DIA_Malak_BACKTOBENGAR_15_04 " );	// That's my problem.
+		AI_Output(self,other, " DIA_Malak_BACKTOBENGAR_08_05 " );	// Can't tell me, huh?
+		Info_AddChoice(DIA_Early_BACKTOBENGAR, " No. " ,DIA_Early_BACKTOBENGAR_los);
 	};
 };
 
 func void DIA_Malak_BACKTOBENGAR_los()
 {
-	AI_Output(other,self,"DIA_Malak_BACKTOBENGAR_los_15_00");	//Нет.
-	AI_Output(self,other, " DIA_Malak_BACKTOBENGAR_los_08_01 " );	// Good! Then I return. I hope this guy knows his stuff.
+	AI_Output(other,self,"DIA_Malak_BACKTOBENGAR_los_15_00");	//No.
+	AI_Output(self,other, " DIA_Malak_BACKTOBENGAR_los_08_01 " );	// Good! Then I'll return. I hope this guy knows his stuff.
 	MIS_GetMalakBack = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Malak_BACKTOBENGAR);
 	B_NpcClearObsessionByDMT(self);
@@ -482,7 +482,7 @@ func int DIA_Malak_BACK_Condition()
 func void DIA_Malak_BACK_Info()
 {
 	AI_Output(other,self, " DIA_Malak_BACK_15_00 " );	// Will you stay at Bengar's farm now?
-	AI_Output(self,other, " DIA_Malak_BACK_08_01 " );	// Of course. I got hope. We'll manage somehow.
+	AI_Output(self,other, " DIA_Malak_BACK_08_01 " );	// Of course. There's hope now. We can actually make it work.
 	B_NpcClearObsessionByDMT(self);
 };
 
