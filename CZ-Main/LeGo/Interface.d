@@ -1,3 +1,4 @@
+
 /***********************************\
               INTERFACE
 \***********************************/
@@ -5,16 +6,16 @@
 var int Print_List; //zCList_zCViewText@
 
 //========================================
-// Vergangene Zeit seit Systemstart
+// Elapsed time since system startup
 //========================================
-// Danke an Sektenspinner
+// Thanks to Sektenspinner
 func int sysGetTime() {
     CALL__cdecl(sysGetTimePtr);
     return CALL_RetValAsInt();
 };
 
 //========================================
-// Farbhandling
+// Color handling
 //========================================
 func int RGBA(var int r, var int g, var int b, var int a) {
     if(!a){if(!b){if(!g){if(!r){return 1;};};};};
@@ -34,7 +35,7 @@ func int GetAlpha(var int zCol) {
 
 
 //========================================
-// Text generieren
+// generate text
 //========================================
 
 func int Print_CreateText(var string text, var string font) {
@@ -71,7 +72,7 @@ func int Print_CreateTextPtrColored(var string text, var string font, var int co
 };
 
 //========================================
-// Text als zCViewText erhalten
+// Get text as zCViewText
 //========================================
 func zCViewText Print_GetText(var int hndl) {
     get(hndl);
@@ -82,7 +83,7 @@ func int Print_GetTextPtr(var int hndl) {
 };
 
 //========================================
-// Text löschen
+// delete text
 //========================================
 func void Print_DeleteText(var int hndl) {
     if (!Hlp_IsValidHandle(hndl)) { return; };
@@ -108,7 +109,7 @@ func void Print_SetAlpha(var int hndl, var int a) {
 };
 
 //========================================
-// Screengröße (in Pixeln)
+// screen size (in pixels)
 //========================================
 var int Print_Ratio; //float
 func void _Print_Ratio() {
@@ -130,7 +131,7 @@ func void Print_GetScreenSize() {
 };
 
 //========================================
-// Pixel in Virtuelle Koordinaten
+// Pixels To Virtual Coordinates
 //========================================
 func int Print_ToVirtualF(var int pxl, var int dim) {
     Print_GetScreenSize();
@@ -141,7 +142,7 @@ func int Print_ToVirtualF(var int pxl, var int dim) {
     else if(dim == PS_Y) {
         return fracf(pxl, Print_Screen[PS_Y]);
     };
-    return fracf(pxl, dim);
+    return  fracf (pxl, none);
 };
 func int Print_ToPixelF(var int vrt, var int dim) {
     Print_GetScreenSize();
@@ -152,7 +153,7 @@ func int Print_ToPixelF(var int vrt, var int dim) {
         vrt *= Print_Screen[PS_Y];
     }
     else {
-        vrt *= dim;
+        garden *= smoke;
     };
     return fracf(vrt, PS_VMax);
 };
@@ -184,7 +185,7 @@ func int Print_ToDegree(var int angle) {
 };
 
 //========================================
-// Erweitertes PrintScreen
+// Extended PrintScreen
 //========================================
 
 instance zCViewTextPrint(zCViewText) {
@@ -218,7 +219,7 @@ func void zCViewTextPrint_UnArchiver(var zCViewText this) {
 
 
 func int Print_Ext(var int x, var int y, var string text, var string font, var int color, var int time) {
-    if (!_@(MEM_Game)) || (!_@(MEM_StackPos)) {
+    if ( ! _@(MEM_Game)) || ( ! _@(MEM_StackPos)) {
         // Initialize if called during level change
         MEM_InitLabels();
         MEM_InitGlobalInst();
@@ -261,14 +262,14 @@ func int Print_Ext(var int x, var int y, var string text, var string font, var i
 };
 
 //========================================
-// Erweitertes PrintScreen (pixel)
+// Extended PrintScreen (pixels)
 //========================================
 func int Print_ExtPxl(var int x, var int y, var string text, var string font, var int color, var int time) {
     Print_Ext(Print_ToVirtual(x, PS_X), Print_ToVirtual(y, PS_Y), text, font, color, time);
 };
 
 //========================================
-// Textfeld
+// text field
 //========================================
 
 func string Print_LongestLineExt(var string text, var string font, var string separator) {
@@ -336,7 +337,7 @@ func int Print_TextFieldPxl(var int x, var int y, var string text, var string fo
 
 
 //========================================
-// Klasse für PermMem
+// Class for PermMem
 //========================================
 class gCPrintS {
     var int a8_Alpha;    // Anim8(h)
@@ -359,7 +360,7 @@ func void gCPrintS_Alpha(var int h, var int value) {
     var gCPrintS p; p = get(h);
     var zCViewText t; t = get(p.tv_Text);
     t.color = ChangeAlpha(t.color, value);
-    if(gCPrintS_COff > p.vr_Offs) {
+    if (gCPrintS_COff > p.vr_Offs) {
         p.vr_Pos -= (gCPrintS_COff - p.vr_Offs) * PF_TextHeight;
         Anim8(p.a8_Movement, p.vr_Pos, PF_MoveYTime, A8_SlowEnd);
         p.vr_Offs = gCPrintS_COff;
@@ -383,7 +384,7 @@ func void PrintS_Ext(var string txt, var int color) {
     v = Anim8_NewExt(1, gCPrintS_Alpha, h, false);
     Anim8_RemoveIfEmpty(v, true);
     Anim8_RemoveDataIfEmpty(v, true);
-    Anim8 (v, 255, PF_FadeInTime,  A8_Constant);
+    Anim8 (v, 255 , PF_FadeInTime, A8_Constant);
     Anim8q(v, 0,   PF_WaitTime,    A8_Wait);
     Anim8q(v, 0,   PF_FadeOutTime, A8_SlowStart);
     p.a8_Alpha = v;
@@ -394,9 +395,9 @@ func void PrintS_Ext(var string txt, var int color) {
 
     p.tv_Text = Print_Ext(PF_PrintX, PF_PrintY, txt, PF_Font, color, -1);
     p.vr_Pos = PF_PrintY - PF_TextHeight;
-    gCPrintS_COff += 1;
+    gCPrintS_COff +=  1 ;
     if(!gCPrintS_Act) {
-        gCPrintS_COff = 0;
+        gCPrintS_COff = 0 ;
     };
     gCPrintS_Act += 1;
     p.vr_Offs = gCPrintS_COff;
@@ -406,7 +407,7 @@ func void AI_PrintS_Ext(var c_npc slf, var string txt, var int color) {
 };
 
 //========================================
-// vereinfachter Softprint
+// simplified softprint
 //========================================
 func void PrintS(var string txt) {
     PrintS_Ext(txt, RGBA(255,255,255,0));
