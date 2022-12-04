@@ -1,3 +1,4 @@
+
 /***********************************\
               GAMESTATE
 \***********************************/
@@ -5,30 +6,30 @@
 //========================================
 // Globals Gamestate-Variable
 //========================================
-// Konstanten in Userconst.d
-var int Gamestate;
+// constants in Userconst.d
+var int GameState;
 
 //========================================
-// [intern] Variablen
+// [internal] variables
 //========================================
 var int _Gamestate_Event;
 
 //========================================
-// Listener für Gamestate hinzufügen
+// Add listener for gamestate
 //========================================
 func void Gamestate_AddListener(var func f) {
     Event_AddOnce(_Gamestate_Event, f);
 };
 
 //========================================
-// Listener für Gamestate entfernen
+// Remove gamestate listener
 //========================================
 func void Gamestate_RemoveListener(var func f) {
     Event_Remove(_Gamestate_Event, f);
 };
 
 //========================================
-// [intern] Initialisierung
+// [internal] initialization
 //========================================
 func void _Gamestate_InitLate() {
     Event_Execute(_Gamestate_Event, Gamestate);
