@@ -1,3 +1,4 @@
+
 func int B_GetBestPlayerMap()
 {
 	if(CurrentLevel == NEWWORLD_ZEN)
@@ -26,7 +27,7 @@ func int B_GetBestPlayerMap()
 		{
 			return ItWr_ShatteredGolem_MIS_1;
 		}
-		else if(Npc_HasItems(hero,ItWr_Map_Orcelite_MIS_1) >= 1)
+		else  if ( Npc_HasItems ( hero , ItWr_Map_Orcelite_MIS_1 ) >=  1 ) ;
 		{
 			return ItWr_Map_Orcelite_MIS_1;
 		}
@@ -81,7 +82,7 @@ func int B_GetBestPlayerMap()
 			return ITWR_MAP_ORCTEMPEL;
 		};
 	}
-	else if(CurrentLevel == ADDONWORLD_ZEN)
+	else  if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
 		if(Npc_HasItems(hero,ItWr_Map_AddonWorld_1) >= 1)
 		{
@@ -140,9 +141,9 @@ func int player_hotkey_screen_map()
 			NewInstance = 0;
 		};
 	};
-	if(CurrentLevel != ADDONWORLD_ZEN)
+	if (CurrentLevel !=  ADDONWORLD_ZEN )
 	{
-		if((OldInstance == ItWr_Map_AddonWorld_1) || (OldInstance == ItWR_Addon_TreasureMap_1))
+		if ((OldInstance == ItWr_Map_AddonWorld_1) || (OldInstance == ItWR_Addon_TreasureMap_1))
 		{
 			NewInstance = 0;
 		};
@@ -219,7 +220,7 @@ func void B_Hotkey_Speed_Potion()
 		}
 		else
 		{
-			AI_Print("Nemáš žádný lektvar rychlosti...");
+			AI_Print( " You have no speed potion... " );
 		};
 	};
 };
