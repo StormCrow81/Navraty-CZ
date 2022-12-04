@@ -1,4 +1,5 @@
 
+
 const int Value_Lockpick = 15;
 const int Value_Key_01 = 0;
 const int Value_Key_02 = 0;
@@ -19,7 +20,7 @@ instance ItKE_lockpick(C_Item)
 	inv_animate = 1;
 };
 
-//-----------------------------------------------Klyuchi--------------------------------
+// -----------------------------------------------Klyuchi --------------------------------
 
 instance ItKe_City_Tower_01(C_Item)
 {
@@ -30,7 +31,7 @@ instance ItKe_City_Tower_01(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od městské věže...";
+	text[ 4 ] = " City Tower Key... " ;
 	inv_animate = 1;
 };
 
@@ -43,7 +44,7 @@ instance ItKe_HanibalKey(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč vůdce banditů Nestora...";
+	text[ 4 ] = " Bandit Leader Nestor's Key... " ;
 	inv_animate = 1;
 };
 
@@ -56,7 +57,7 @@ instance ItKe_City_Tower_02(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od městské věže...";
+	text[ 4 ] = " City Tower Key... " ;
 	inv_animate = 1;
 };
 
@@ -69,7 +70,7 @@ instance ItKe_City_Tower_03(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od městské věže...";
+	text[ 4 ] = " City Tower Key... " ;
 	inv_animate = 1;
 };
 
@@ -82,7 +83,7 @@ instance ItKe_City_Tower_04(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od městské věže...";
+	text[ 4 ] = " City Tower Key... " ;
 	inv_animate = 1;
 };
 
@@ -95,7 +96,7 @@ instance ItKe_City_Tower_05(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od městské věže...";
+	text[ 4 ] = " City Tower Key... " ;
 	inv_animate = 1;
 };
 
@@ -108,7 +109,7 @@ instance ItKe_City_Tower_06(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od městské věže...";
+	text[ 4 ] = " City Tower Key... " ;
 	inv_animate = 1;
 };
 
@@ -121,26 +122,26 @@ instance ItKe_Valentino(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od Valentinovy truhly...";
+	text[ 4 ] = " Valentine's Chest Key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_Constantino(C_Item)
 {
-	name = "Constantinův klíč";
+	name = " Constantine's Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly alchymisty Constantina...";
+	text[ 4 ] = " Alchemist Constantine's Chest Key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_WaterBringer(C_Item)
 {
-	name = "Klíč Vodonoše";
+	name = " Water Bearer's Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 10;
@@ -159,7 +160,7 @@ instance ItKe_Storage(C_Item)
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od přístavního skladiště...";
+	text[ 4 ] = " Harbor Warehouse Key... " ;
 	inv_animate = 1;
 };
 
@@ -172,20 +173,20 @@ instance ItKe_ThiefTreasure(C_Item)
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od pokladu zlodějů...";
+	text[ 4 ] = " Thieves' Treasure Key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_ZhiefGuildKey_MIS(C_Item)
 {
-	name = "Rezavý klíč";
+	name = " Rusty Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Tenhle klíč poznamenala slaná mořská voda...";
+	text[ 4 ] = " This key has been marked by salt sea water... " ;
 	inv_animate = 1;
 };
 
@@ -198,7 +199,7 @@ instance ItKe_XhiefGuildKey_Hotel_MIS(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od hotelového sklepa...";
+	text[ 4 ] = " Hotel cellar key... " ;
 	inv_animate = 1;
 };
 
@@ -211,7 +212,7 @@ instance ItKe_Richter(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od soudcovy truhly...";
+	text[ 4 ] = " Judge's Chest Key... " ;
 	inv_animate = 1;
 };
 
@@ -224,7 +225,7 @@ instance ItKe_Salandril(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly alchymisty Salandrila...";
+	text[ 4 ] = " Alchemist Salandril's Chest Key... " ;
 	inv_animate = 1;
 };
 
@@ -237,7 +238,7 @@ instance ItKe_Fingers(C_Item)
 	visual = "ItKe_Key_04_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Rezavý klíč od Fingersova pokoje...";
+	text[ 4 ] = " Rusty key to Fingers room... " ;
 	inv_animate = 1;
 };
 
@@ -249,8 +250,8 @@ instance ItKe_Bromor(C_Item)
 	value = 1;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
-	description = "Klíč";
-	text[4] = "Klíč od pokoje v nevěstinci...";
+	description = " Key " ;
+	text[ 4 ] = " Brothel room key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -265,7 +266,7 @@ instance ItKe_Ship_Levelchange_MIS(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od kapitánské kajuty na paladinské lodi 'Esmeralda'...";
+	text[ 4 ] = " Key to the captain's cabin on the paladin ship 'Esmeralda'... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -280,7 +281,7 @@ instance ItKe_Xardas(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly v Xardasově věži...";
+	text[ 4 ] = " Chest Key in Xardas Tower... " ;
 	inv_animate = 1;
 };
 
@@ -294,7 +295,7 @@ instance ItKe_Innos_MIS(C_Item)
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od vstupu do kláštera mágů Ohně...";
+	text[ 4 ] = " The key to enter the monastery of Fire mages... " ;
 	inv_animate = 1;
 };
 
@@ -307,7 +308,7 @@ instance ItKe_IgarazChest_Mis(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od Igarazovy osobní truhly...";
+	text[ 4 ] = " The key to Igaraz's personal chest... " ;
 	inv_animate = 1;
 };
 
@@ -321,7 +322,7 @@ instance ItKe_KlosterBibliothek(C_Item)
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od klášterní knihovny...";
+	text[ 4 ] = " Key to the monastery library... " ;
 	inv_animate = 1;
 };
 
@@ -334,11 +335,11 @@ instance ItKe_KDFPlayer(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od klášterní cely...";
+	text[ 4 ] = " Key to the monastery cell... " ;
 	inv_animate = 1;
 };
 
-instance ItKe_KlosterSchatz(C_Item)
+instance ItKe_KlosterSchatz (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -347,7 +348,7 @@ instance ItKe_KlosterSchatz(C_Item)
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od klášterní pokladnice...";
+	text[ 4 ] = " Key to the monastery treasury... " ;
 	inv_animate = 1;
 };
 
@@ -361,7 +362,7 @@ instance ItKe_KlosterStore(C_Item)
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od klášterní spižírny...";
+	text[ 4 ] = " Key to the monastery pantry... " ;
 	inv_animate = 1;
 };
 
@@ -374,7 +375,7 @@ instance ItKe_MonastarySecretLibrary_Mis(C_Item) //EVT_OPEN_DOOR_LIBRARY
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč z knihy 'Irdorathské síně'...";
+	text[ 4 ] = " Key from the 'Halls of Irdorath' book... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -382,14 +383,14 @@ instance ItKe_MonastarySecretLibrary_Mis(C_Item) //EVT_OPEN_DOOR_LIBRARY
 
 instance ItKe_Hagen_DarkOrder_Ginnok(C_Item)
 {
-	name = "Starý klíč";
+	name = " Old Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od hrobky lorda Ginnoka...";
+	text[ 4 ] = " Lord Ginnok's Tomb Key... " ;
 	inv_animate = 1;
 };
 
@@ -401,23 +402,23 @@ instance ITKE_RUNE_MIS(C_Item)
 	value = 1;
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
-	description = "Klíč";
-	text[4] = "Klíč od truhly pod mostem...";
+	description = " Key " ;
+	text[ 4 ] = " Key to the chest under the bridge... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITKE_ORLAN_HOTELZIMMER(C_Item)
+instance ITKE_ORLAN_HOTELROOM (C_Item)
 {
-	name = "Klíč";
+	name = " Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od pokoje v hostinci 'U Mrtvé harpyje'...";
+	text[ 4 ] = " Room key at the inn 'At the Dead Harpy'... " ;
 	inv_animate = 1;
 };
 
@@ -429,8 +430,8 @@ instance ITKE_ORLAN_TELEPORTSTATION(C_Item)
 	value = Value_Key_01;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
-	description = "Orlanův klíč";
-	text[4] = "Otevírá dveře jeskyně jižně od jeho hostince...";
+	description = " Orlan's Key " ;
+	text[ 4 ] = " Opens the cave door south of his inn... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -438,14 +439,14 @@ instance ITKE_ORLAN_TELEPORTSTATION(C_Item)
 
 instance ItKe_Hagen_DarkOrder_01(C_Item)
 {
-	name = "Starý klíč";
+	name = " Old Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od hrobky lorda Sengaha...";
+	text[ 4 ] = " Lord Sengah's Tomb Key... " ;
 	inv_animate = 1;
 };
 
@@ -457,8 +458,8 @@ instance ItKe_Pass_MIS(C_Item)
 	value = 1;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
-	description = "Klíč lorda Hagena";
-	text[4] = "Klíč od navijáku brány do Hornického údolí...";
+	description = " Lord Hagen's Key " ;
+	text[ 4 ] = " Key from the winch of the gate to Mining Valley... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -473,7 +474,7 @@ instance ItKe_Dexter(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od Dexterovy truhly...";
+	text[ 4 ] = " Dexter's Chest Key... " ;
 	inv_animate = 1;
 };
 
@@ -486,7 +487,7 @@ instance ITKE_DARKTOWER_01(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od Nergalovy věže...";
+	text[ 4 ] = " Key to Nergal's Tower... " ;
 	inv_animate = 1;
 };
 
@@ -499,59 +500,59 @@ instance ITKE_FORT(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od navijáku průchodu do pevnosti Azgan...";
+	text[ 4 ] = " Passage winch key to Azgan Fortress... " ;
 	inv_animate = 1;
 };
 
-instance ItKe_Hagen_Innubis(C_Item) //dvoynoy!!!
+instance ItKe_Hagen_Innubis (C_Item) // dvoynoy!!!
 {
-	name = "Starý klíč";
+	name = " Old Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_04_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od hrobky lorda Inubise...";
+	text[ 4 ] = " Lord Inubis Tomb Key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_EVT_CRYPT_01(C_Item) //mob_func_necrom
 {
-	name = "Starý ocelový klíč";
+	name = " Old Steel Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly v hrobce lorda Inubise...";
+	text[ 4 ] = " The key to the chest in the tomb of Lord Inubis... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_EVT_CRYPT_02(C_Item)
 {
-	name = "Starý mosazný klíč";
+	name = " Old Brass Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly v hrobce lorda Inubise...";
+	text[ 4 ] = " The key to the chest in the tomb of Lord Inubis... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_EVT_CRYPT_03(C_Item)
 {
-	name = "Starý měděný klíč";
+	name = " Old Copper Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly v hrobce lorda Inubise...";
+	text[ 4 ] = " The key to the chest in the tomb of Lord Inubis... " ;
 	inv_animate = 1;
 };
 
@@ -564,7 +565,7 @@ instance ItKe_CHEST_SEKOB_XARDASBOOK_MIS(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly na Sekobově farmě...";
+	text[ 4 ] = " Chest Key at Sekob's Farm... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -579,33 +580,33 @@ instance ITKE_HAGEN_SECRETKEY(C_Item)
 	visual = "ItKe_Key_04_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od průchodu k portálu na ostrov Etlu...";
+	text[ 4 ] = " Key from the passage to the portal to the island of Etlu... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_MagicChest(C_Item)
 {
-	name = "Starý klíč";
+	name = " Old Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
 	visual = "ItKe_Key_04_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Velice starý železný klíč...";
+	text[ 4 ] = " A very old iron key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_Hagen_DarkOrder_02(C_Item)
 {
-	name = "Starý klíč";
+	name = " Old Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od hrobky lorda Ulzara...";
+	text[ 4 ] = " Lord Ulzar's Tomb Key... " ;
 	inv_animate = 1;
 };
 
@@ -618,13 +619,13 @@ instance ItKe_PrisonKey_MIS(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od hradního vězení...";
+	text[ 4 ] = " Key to the castle prison... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITKE_OC_MAINGATE_MIS(C_Item)
+instance ITKE_OC_MAINGATE_MIS (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -633,7 +634,7 @@ instance ITKE_OC_MAINGATE_MIS(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od strážnice hradní brány v Hornickém údolí...";
+	text[ 4 ] = " Key from the guardhouse of the castle gate in Mining Valley... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -641,14 +642,14 @@ instance ITKE_OC_MAINGATE_MIS(C_Item)
 
 instance ItKe_FingersKey(C_Item)
 {
-	name = "Starý klíč";
+	name = " Old Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Je na něm vyraženo 'Fingers'...";
+	text[ 4 ] = " It has 'Fingers' stamped on it... " ;
 	inv_animate = 1;
 };
 
@@ -661,7 +662,7 @@ instance ItKe_OC_Store(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od hradního skladiště...";
+	text[ 4 ] = " Key to the castle warehouse... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -676,7 +677,7 @@ instance ITKE_TWOSTORE(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od vnitřní místnosti hradního skladiště...";
+	text[ 4 ] = " Key to the inner room of the castle warehouse... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -690,8 +691,8 @@ instance ITKE_ERZBARONTREASURE(C_Item)
 	value = 1;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
-	description = "Klíč";
-	text[4] = "Na klíči je vyryto jméno 'Gomez'...";
+	description = " Key " ;
+	text[ 4 ] = " The name 'Gomez' is engraved on the key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -706,11 +707,11 @@ instance ITKE_MILTENKEY_NW(C_Item)
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly v kapli mágů na hradě...";
+	text[ 4 ] = " The key to the chest in the chapel of the mages in the castle... " ;
 	inv_animate = 1;
 };
 
-instance ITKE_OC_TOWERCHEST(C_Item)
+instance ITKE_OC_TOWERCHEST (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -719,7 +720,7 @@ instance ITKE_OC_TOWERCHEST(C_Item)
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly v hradní věži v Hornickém údolí...";
+	text[ 4 ] = " Key to the chest in the castle tower in Mining Valley... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -733,8 +734,8 @@ instance ITKE_ErzBaronFlur(C_Item)
 	value = 1;
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
-	description = "Klíč";
-	text[4] = "Na klíči je vyryto jméno 'Gomez'...";
+	description = " Key " ;
+	text[ 4 ] = " The name 'Gomez' is engraved on the key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -748,8 +749,8 @@ instance ITKE_ErzBaronRaum(C_Item)
 	value = 1;
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
-	description = "Klíč";
-	text[4] = "Na klíči je vyryto jméno 'Gomez'...";
+	description = " Key " ;
+	text[ 4 ] = " The name 'Gomez' is engraved on the key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -764,7 +765,7 @@ instance ITKEY_GOMEZTREASURE(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od Gomezovy truhly...";
+	text[ 4 ] = " Gomez's chest key... " ;
 	inv_animate = 1;
 };
 
@@ -777,7 +778,7 @@ instance ITKE_NC_COOKCHEST(C_Item)
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč, který mi dal hradní kuchař...";
+	text[ 4 ] = " The key given to me by the castle cook... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -792,11 +793,11 @@ instance ItKe_WaterMageDocuments(C_Item)
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly mágů Vody v Novém táboře...";
+	text[ 4 ] = " Key to the Water Mage Chest in New Camp... " ;
 	inv_animate = 1;
 };
 
-instance ITKE_WOLFARMOR(C_Item)
+instance ITKE_WOLFARMOR (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -805,7 +806,7 @@ instance ITKE_WOLFARMOR(C_Item)
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly žoldáka Wolfa v Hornickém údolí...";
+	text[ 4 ] = " Mercenary Wolf's Chest Key in Mining Valley... " ;
 	inv_animate = 1;
 };
 
@@ -818,7 +819,7 @@ instance ItKe_StoneDragon(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od pokladu kamenného draka...";
+	text[ 4 ] = " Stone Dragon Treasure Key... " ;
 	inv_animate = 1;
 };
 
@@ -831,7 +832,7 @@ instance ItKe_FireDragon(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od pokladu ohnivého draka...";
+	text[ 4 ] = " Fire Dragon Treasure Key... " ;
 	inv_animate = 1;
 };
 
@@ -844,7 +845,7 @@ instance ItKe_SwampDragon(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od pokladu bažinného draka...";
+	text[ 4 ] = " Swamp Dragon Treasure Key... " ;
 	inv_animate = 1;
 };
 
@@ -857,24 +858,24 @@ instance ItKe_IceDragon(C_Item)
 	visual = "ItKe_Key_04_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od pokladu ledového draka...";
+	text[ 4 ] = " Ice Dragon Treasure Key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_Malbar(C_Item) //Scr_OpenChest_Malbar
 {
-	name = "Rezavý klíč";
+	name = " Rusty Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč rudobarona Malbara...";
+	text[ 4 ] = " Red Baron Malbara Key... " ;
 	inv_animate = 1;
 };
 
-instance ITKE_XARDASGOBLINKEY(C_Item)
+instance ITKE_XARDASGOBLINKEY (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -883,11 +884,11 @@ instance ITKE_XARDASGOBLINKEY(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly přízračného goblina...";
+	text[ 4 ] = " Ghost Goblin Chest Key... " ;
 	inv_animate = 1;
 };
 
-instance ITKE_DRAKAR_KEY_CAPITAN(C_Item)
+instance ITKE_DRAKAR_KEY_CAPITAN (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -896,11 +897,11 @@ instance ITKE_DRAKAR_KEY_CAPITAN(C_Item)
 	visual = "ItKe_OrcKey_02.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od kapitánské kajuty na skřetím drakaru...";
+	text[ 4 ] = " Key to the captain's cabin on the goblin drake... " ;
 	inv_animate = 1;
 };
 
-instance ITKE_DRAKAR_KEY_01(C_Item)
+instance ITKE_DRAKAR_KEY_01 (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -909,7 +910,7 @@ instance ITKE_DRAKAR_KEY_01(C_Item)
 	visual = "ItKe_OrcKey.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[2] = "Klíč od zbrojnice na skřetím drakaru...";
+	text[ 2 ] = " Key to the armory on the goblin dragon... " ;
 	inv_animate = 1;
 };
 
@@ -922,7 +923,7 @@ instance ITKE_DRAGONSNAPPER(C_Item)
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč ze žaludku dračího chňapavce...";
+	text[ 4 ] = " Dragon Snapper Stomach Key... " ;
 	inv_animate = 1;
 };
 
@@ -934,8 +935,8 @@ instance ITKE_Addon_Tavern_01(C_Item)
 	value = Value_Key_01;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
-	description = "Louův klíč";
-	text[4] = "Klíč od spižírny v táboře banditů...";
+	description = " Lou's Key " ;
+	text[ 4 ] = " Key to the larder in the bandit camp... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -949,8 +950,8 @@ instance ITKE_ADDON_BUDDLER_01(C_Item)
 	value = 1;
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
-	description = "Klíč";
-	text[4] = "Klíč od truhly z tábora banditů...";
+	description = " Key " ;
+	text[ 4 ] = " Chest key from bandit camp... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -964,8 +965,8 @@ instance ITKE_Addon_Esteban_01(C_Item)
 	value = Value_Key_01;
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
-	description = "Estebanův klíč";
-	text[4] = "Klíč od Estebanovy truhly...";
+	description = " Esteban's Key " ;
+	text[ 4 ] = " Esteban's chest key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -979,8 +980,8 @@ instance ITKE_Addon_Thorus(C_Item)
 	value = 1;
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
-	description = "Thorusův klíč";
-	text[4] = "Klíč od Thorusovy truhly...";
+	description = " Thorus Key " ;
+	text[ 4 ] = " Thorus Chest Key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -994,8 +995,8 @@ instance ITKE_ADDON_SKINNER(C_Item)
 	value = 1;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
-	description = "Skinnerův klíč";
-	text[4] = "Klíč od Skinnerovy truhly...";
+	description = " Skinner key " ;
+	text[ 4 ] = " Key to Skinner's Chest... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1009,8 +1010,8 @@ instance ITKE_SCATTYCHEST(C_Item)
 	value = 1;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
-	description = "Scattyho klíč";
-	text[4] = "Klíč od Scattyho truhly...";
+	description = " Scatty's Key " ;
+	text[ 4 ] = " Scatty's Chest Key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1024,14 +1025,14 @@ instance ITKE_Addon_Bloodwyn_01(C_Item)
 	value = Value_Key_01;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
-	description = "Bloodwynův klíč";
-	text[4] = "Klíč od Bloodwynovy truhly...";
+	description = " Bloodwyn's Key " ;
+	text[ 4 ] = " Bloodwyn's Chest Key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITKE_Addon_Heiler(C_Item)	//Scr_OpenChest_Garantula
+instance ITKE_Addon_Heiler (C_Item)	 // Scr_OpenChest_Garantula
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -1040,7 +1041,7 @@ instance ITKE_Addon_Heiler(C_Item)	//Scr_OpenChest_Garantula
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[2] = "Klíč kamenného strážce z bažin...";
+	text[ 2 ] = " Swampstone Guardian Key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1055,7 +1056,7 @@ instance ITKE_CANYONLIBRARY_HIERARCHY_BOOKS_ADDON(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Podivně vypadající klíč skřetího šamana...";
+	text[ 4 ] = " Strange looking goblin shaman key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1069,16 +1070,16 @@ instance ITKE_Greg_ADDON_MIS(C_Item)
 	value = Value_Key_01;
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
-	description = "Gregův klíč";
-	text[4] = "Klíč od chatrče kapitána Grega...";
+	description = " Greg's Key " ;
+	text[ 4 ] = " Captain Greg's Shack Key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITKE_TARAKOT(C_Item)
+instance ITKE_TARAKOT (C_Item)
 {
-	name = "Měděný klíč";
+	name = " Copper Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
@@ -1093,14 +1094,14 @@ instance ITKE_TARAKOT(C_Item)
 
 instance ItKey_GoblinChest(C_Item)
 {
-	name = "Gobliní klíč";
+	name = " Goblin Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Tenhle klíč měl vůdce goblinů Shakzi...";
+	text[ 4 ] = " The goblin leader Shakzi had this key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1115,7 +1116,7 @@ instance ItKe_PaladinTruhe(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly paladinů...";
+	text[ 4 ] = " Paladin Chest Key... " ;
 	inv_animate = 1;
 };
 
@@ -1128,24 +1129,24 @@ instance ItKe_Buerger(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Tenhle klíč ležel na krbu...";
+	text[ 4 ] = " This key was lying on the fireplace... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_Ginnok(C_Item)
 {
-	name = "Rezavý klíč";
+	name = " Rusty Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItKe_Key_04_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč lorda Ginnoka...";
+	text[ 4 ] = " Lord Ginnok's Key... " ;
 	inv_animate = 1;
 };
 
-instance ITKE_ORCSHAMAN_SHV(C_Item)
+instance ITKE_ORCSHAMAN_SHV (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -1154,7 +1155,7 @@ instance ITKE_ORCSHAMAN_SHV(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly ducha skřetího šamana v Údolí stínů...";
+	text[ 4 ] = " Goblin Shaman Ghost Chest Key in Shadow Valley... " ;
 	inv_animate = 1;
 };
 
@@ -1166,8 +1167,8 @@ instance ITKE_KOD_SHV(C_Item)	//Scr_OpenChest_225 226
 	value = Value_Key_01;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
-	description = "Dakatův klíč";
-	text[4] = "Klíč od truhly v Dakatově hrobce...";
+	description = " Dakat's Key " ;
+	text[ 4 ] = " Chest Key in Dakat's Tomb... " ;
 	inv_animate = 1;
 };
 
@@ -1179,8 +1180,8 @@ instance ItKe_AhironKey(C_Item)	//
 	value = Value_Key_01;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
-	description = "Achironův klíč";
-	text[4] = "Klíč od Achironovy truhly...";
+	description = " Achiron's Key " ;
+	text[ 4 ] = " Achiron's Chest Key... " ;
 	inv_animate = 1;
 };
 
@@ -1193,13 +1194,13 @@ instance ITKE_MAGE_SHV(C_Item)
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly kněze v Údolí stínů...";
+	text[ 4 ] = " Priest's Chest Key in the Valley of Shadows... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_Oazis_01(C_Item)	//Scr_OpenChest_AV_01
 {
-	name = "Rezavý klíč";
+	name = " Rusty Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1211,7 +1212,7 @@ instance ItKe_Oazis_01(C_Item)	//Scr_OpenChest_AV_01
 
 instance ItKe_Oazis_02(C_Item)	//Scr_OpenChest_AV_02
 {
-	name = "Rezavý klíč";
+	name = " Rusty Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1223,7 +1224,7 @@ instance ItKe_Oazis_02(C_Item)	//Scr_OpenChest_AV_02
 
 instance ItKe_Oazis_03(C_Item)	//Scr_OpenChest_AV_03
 {
-	name = "Rezavý klíč";
+	name = " Rusty Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1235,7 +1236,7 @@ instance ItKe_Oazis_03(C_Item)	//Scr_OpenChest_AV_03
 
 instance ItKe_Oazis_04(C_Item)	//Scr_OpenChest_AV_04
 {
-	name = "Rezavý klíč";
+	name = " Rusty Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1248,7 +1249,7 @@ instance ItKe_Oazis_04(C_Item)	//Scr_OpenChest_AV_04
 
 instance ItKe_Caracust(C_Item)
 {
-	name = "Rezavý klíč";
+	name = " Rusty Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1267,7 +1268,7 @@ instance ItKe_Masiaf_Prision(C_Item)
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od navijáku v Osairově jeskyni...";
+	text[ 4 ] = " Winch Key in Osair's Cave... " ;
 	inv_animate = 1;
 };
 
@@ -1280,7 +1281,7 @@ instance ItKe_CorGalom(C_Item)
 	visual = "ItKe_Key_04_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč Cor Kaloma, démona Masyafu...";
+	text[ 4 ] = " Key of Cor Kalom, Demon Masyaf... " ;
 	inv_animate = 1;
 };
 
@@ -1293,11 +1294,11 @@ instance ItKe_PW_Sklad(C_Item)
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od spižírny v Masyafském chrámu...";
+	text[ 4 ] = " Masyaf Temple Pantry Key... " ;
 	inv_animate = 1;
 };
 
-instance ItKe_OrkKnastDI_MIS(C_Item)
+instance ItKe_OrkKnastDI_MIS (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -1306,7 +1307,7 @@ instance ItKe_OrkKnastDI_MIS(C_Item)
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč Ur-Vataha, skřetího velitele...";
+	text[ 4 ] = " Key of Ur-Vatah, Goblin Commander... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1321,7 +1322,7 @@ instance ItKe_EVT_UNDEAD_01(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč lorda Archola...";
+	text[ 4 ] = " Lord Archol's Key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1336,7 +1337,7 @@ instance ItKe_EVT_UNDEAD_02(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč Mialekse, stavitele Irdorathského chrámu...";
+	text[ 4 ] = " Key of Mialeks, Builder of the Temple of Irdorath... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1351,7 +1352,7 @@ instance ItKe_ChestMasterDementor_MIS(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly strážce Irdorathských síní, Dementora...";
+	text[ 4 ] = " Key to the chest of the guardian of the Irdorath Halls, the Dementor... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1366,7 +1367,7 @@ instance ItKe_LastDoorToUndeadDrgDI_MIS(C_Item)
 	visual = "ItKe_Key_03_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Starý dveřní klíč...";
+	text[ 4 ] = " Old door key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1374,14 +1375,14 @@ instance ItKe_LastDoorToUndeadDrgDI_MIS(C_Item)
 
 instance ITKE_FREEMINE(C_Item)
 {
-	name = "Klíč";
+	name = " Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od strážnice Svobodného dolu...";
+	text[ 4 ] = " Key from the guardhouse of the Free Mine... " ;
 	inv_animate = 1;
 };
 
@@ -1394,13 +1395,13 @@ instance ITKE_FREMINEKDW(C_Item)
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly ve Svobodném dole...";
+	text[ 4 ] = " The key to the chest in the Free Mine... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITKE_VARUSKEY(C_Item)
+instance ITKE_VARUSKEY (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -1409,7 +1410,7 @@ instance ITKE_VARUSKEY(C_Item)
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od skladiště v pevnosti Azgan...";
+	text[ 4 ] = " Azgan Fortress Warehouse Key... " ;
 	inv_animate = 1;
 };
 
@@ -1422,7 +1423,7 @@ instance ITKE_GRIMKEY(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly stráží v opuštěném dole...";
+	text[ 4 ] = " The key to the guard's chest in the abandoned mine... " ;
 	inv_animate = 1;
 };
 
@@ -1435,7 +1436,7 @@ instance ITKE_XARDASOWT(C_Item)
 	visual = "ItKe_Key_02_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od truhly v zatopené věži...";
+	text[ 4 ] = " Key to the chest in the flooded tower... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1443,15 +1444,15 @@ instance ITKE_XARDASOWT(C_Item)
 
 instance ITKE_SI_SIGN(C_Item)
 {
-	name = "Pečetní klíč";
+	name = " Seal Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
 	visual = "ITKE_SEAL_SKY.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[3] = "Pečetní klíč od vchodu do kaple paladinů...";
-	text[4] = "Na klíči je paladinský monogram...";
+	text[ 3 ] = " Paladin Chapel Entrance Seal Key... " ;
+	text[ 4 ] = " There is a paladin monogram on the key... " ;
 	inv_animate = 1;
 };
 
@@ -1469,67 +1470,67 @@ instance ItKe_Sleeper(C_Item)
 
 instance ItKe_OrcMine_Elevator(C_Item)
 {
-	name = "Skřetí klíč";
+	name = " Goblin Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItKe_OrcKey.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od navijáku ve skřetím dole...";
+	text[ 4 ] = " Winch key in goblin mine... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_ShipOrcCap(C_Item)
 {
-	name = "Skřetí klíč";
+	name = " Goblin Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItKe_OrcKey.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč kapitána skřetího drakaru...";
+	text[ 4 ] = " Goblin Dragon Captain's Key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_ArDagar(C_Item)
 {
-	name = "Skřetí klíč";
+	name = " Goblin Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItKe_OrcKey_02.3DS";
 	material = MAT_METAL;
-	description = "Klíč Ar Dagara";
-	text[4] = "Klíč od skřetího skladiště...";
+	description = " Key of Ar Dagar " ;
+	text[ 4 ] = " Goblin Warehouse Key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_OrcOreMine(C_Item)
 {
-	name = "Skřetí klíč";
+	name = " Goblin Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItKe_OrcKey.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od skřetího dolu...";
+	text[ 4 ] = " Goblin Mine Key... " ;
 	inv_animate = 1;
 };
 
 instance ItKe_OldOrcKey(C_Item)
 {
-	name = "Skřetí klíč";
+	name = " Goblin Key " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = Value_Key_01;
 	visual = "ItKe_OrcKey.3DS";
 	material = MAT_METAL;
-	description = "Starý skřetí klíč";
-	text[3] = "Půlkruhovitý klíč s výřezy pod rozličnými úhly...";
-	text[4] = "Na spodní části je nápis ve skřetím jazyce...";
+	description = " Old Goblin Key " ;
+	text[ 3 ] = " Semicircular key with cutouts at different angles... " ;
+	text[ 4 ] = " On the lower part there is an inscription in goblin language... " ;
 	inv_animate = 1;
 };
 
@@ -1542,7 +1543,7 @@ instance ITKE_PORTALTEMPELWALKTHROUGH_ADDON(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Ode dveří v zničeném chrámu Stavitelů...";
+	text[ 4 ] = " From the door in the ruined Temple of the Builders... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1557,7 +1558,7 @@ instance ItKe_Bandit(C_Item)
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od Bragovy truhly...";
+	text[ 4 ] = " Braga's Chest Key... " ;
 	inv_animate = 1;
 };
 
@@ -1570,7 +1571,7 @@ instance ItKe_SagittaChest(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč od Sagittiných truhel...";
+	text[ 4 ] = " Key to Sagitta's Chests... " ;
 	inv_animate = 1;
 };
 
@@ -1583,7 +1584,7 @@ instance ItKe_DarkZhnez(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč Temného žence...";
+	text[ 4 ] = " Dark Reaper's Key... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1598,13 +1599,13 @@ instance ItKe_Garond(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Garondův klíč...";
+	text[ 4 ] = " Garond's Key... " ;
 	inv_animate = 1;
 };
 
-//------------------epik danzh------------------------
+// --------------epic danzh------------------------
 
-instance ItKe_Arahar(C_Item)
+instance ItKe_Arahar (C_Item)
 {
 	name = NAME_Key;
 	mainflag = ITEM_KAT_NONE;
@@ -1613,7 +1614,7 @@ instance ItKe_Arahar(C_Item)
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Araharův klíč...";
+	text[ 4 ] = " Arahara's Key... " ;
 	inv_animate = 1;
 };
 
@@ -1626,6 +1627,6 @@ instance ItKe_LichKing(C_Item)
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč strážce chrámu...";
+	text[ 4 ] = " Temple Guardian Key... " ;
 	inv_animate = 1;
 };
