@@ -1,4 +1,5 @@
 
+
 var int mana_rationday;
 var int mana_rationday_m;
 var int mana_rationday_m1;
@@ -58,7 +59,7 @@ instance PC_SMOKEWATERPIPE_ADDON_HOUR(C_Info)
 	condition = pc_smokewaterpipe_addon_hour_condition;
 	information = pc_smokewaterpipe_addon_hour_info;
 	permanent = TRUE;
-	description = "Potáhnout";
+	description = " Drag " ;
 };
 
 func int pc_smokewaterpipe_addon_hour_condition()
@@ -72,7 +73,7 @@ func int pc_smokewaterpipe_addon_hour_condition()
 func void pc_smokewaterpipe_addon_hour_info()
 {
 	var int level;
-	var int random;
+	be int random;
 
 	if((SBMODE == TRUE) && (JointRest == FALSE))
 	{
@@ -87,31 +88,31 @@ func void pc_smokewaterpipe_addon_hour_info()
 	};
 	if(hero.guild == GIL_GUR)
 	{
-		if(MANA_RATIONDAY != Wld_GetDay())
+		if ( NO_RATIONDAY  != Wld_GetDay())
 		{
 			level = hero.level;
-			random = Hlp_Random(100);
+			random = Hlp_Random( 100 );
 
 			if(level > random)
 			{
 				B_GivePlayerXP(25);				
 				RankPoints = RankPoints + 1;
-				Print("Tvou mysl naplňují zvláštní pocity!");
+				Print ( " Strange feelings fill your mind! " );
 				B_RaiseAttribute_Bonus(self,ATR_MANA_MAX,1);
 				Npc_ChangeAttribute(self,ATR_MANA,1);
 				BONUSCOUNT += 1;
-				Npc_SetStateTime(self,0);
-				MANA_RATIONDAY = Wld_GetDay();
+				Npc_SetStateTime(self, 0 );
+				NO_RATIONDAY = Wld_GetDay();
 			}
 			else
 			{
-				Print("Tvou mysl naplňuje neobvyklý klid a lehkost...");
+				Print ( " An unusual peace and lightness fills your mind... " );
 			};
 		}
 		else
 		{
-			MANA_RATIONDAY = Wld_GetDay();
-			Print("Cítíš se normálně.");
+			NO_RATIONDAY = Wld_GetDay();
+			Print ( " You feel normal. " );
 		};
 	};
 };
@@ -123,7 +124,7 @@ instance PC_SMOKEWATERPIPE_ADDON_HASHISH(C_Info)
 	condition = PC_SMOKEWATERPIPE_ADDON_HASHISH_condition;
 	information = PC_SMOKEWATERPIPE_ADDON_HASHISH_info;
 	permanent = TRUE;
-	description = "Potáhnout";
+	description = " Drag " ;
 };
 
 func int PC_SMOKEWATERPIPE_ADDON_HASHISH_condition()
@@ -136,11 +137,11 @@ func int PC_SMOKEWATERPIPE_ADDON_HASHISH_condition()
 
 func void PC_SMOKEWATERPIPE_ADDON_HASHISH_info()
 {
-	var int daynow;
-	var int ranskill;
+	where int daynow;
+	was int rank difference;
 
 	daynow = Wld_GetDay();
-	ranskill = Hlp_Random(100);
+	ranskill = Hlp_Random( 100 );
 
 	if(HashishWFT == FALSE)
 	{
@@ -174,7 +175,7 @@ func void PC_SMOKEWATERPIPE_ADDON_HASHISH_info()
 	{
 		if(HasishBonusDay < (daynow - 5))
 		{
-			Print("Naplňuje tě ohromný příliv energie!");
+			Print ( " A tremendous surge of energy fills you! " );
 
 			if(ranskill >= 75)
 			{
@@ -198,12 +199,12 @@ func void PC_SMOKEWATERPIPE_ADDON_HASHISH_info()
 			};
 
 			RankPoints = RankPoints + 1;
-			Npc_SetStateTime(self,0);
+			Npc_SetStateTime(self, 0 );
 			HasishBonusDay = Wld_GetDay();
 		}
 		else
 		{
-			Print("Cítíš se normálně.");
+			Print ( " You feel normal. " );
 		};
 	};
 };
