@@ -1,3 +1,4 @@
+
 /***********************************\
              EVENTHANDLER
 \***********************************/
@@ -39,7 +40,7 @@ func int Event_Create() {
 };
 
 //========================================
-// Event löschen
+// delete event
 //========================================
 func void EventPtr_Delete(var int ptr) {
     free(ptr, lCEvent);
@@ -49,7 +50,7 @@ func void Event_Delete(var int h) {
 };
 
 //========================================
-// Hat das Event Listener?
+// Does this have event listeners?
 //========================================
 func int EventPtr_Empty(var int ptr) {
     return (MEM_ArraySize(ptr) <= 0);
@@ -59,7 +60,7 @@ func int Event_Empty(var int h) {
 };
 
 //========================================
-// Event auf Listener prüfen
+// Check event for listeners
 //========================================
 func int EventPtr_HasI(var int ptr, var int id) {
     return (MEM_ArrayIndexOf(ptr, id) >= 0);
@@ -72,7 +73,7 @@ func int Event_Has(var int h, var func handler) {
 };
 
 //========================================
-// Listener hinzufügen
+// Add listeners
 //========================================
 func void EventPtr_AddI(var int ptr, var int id) {
     MEM_ArrayInsert(ptr, id);
@@ -85,7 +86,7 @@ func void Event_Add(var int h, var func handler) {
 };
 
 //========================================
-// Listener einmalig hinzufügen
+// Add listener once
 //========================================
 func void EventPtr_AddOnceI(var int ptr, var int id) {
     if (!EventPtr_HasI(ptr, id)) {
@@ -100,7 +101,7 @@ func void Event_AddOnce(var int h, var func handler) {
 };
 
 //========================================
-// Listener entfernen
+// Remove listeners
 //========================================
 func void EventPtr_RemoveI(var int ptr, var int id) {
     MEM_ArrayRemoveValueOnce(ptr, id);
@@ -113,7 +114,7 @@ func void Event_Remove(var int h, var func handler) {
 };
 
 //========================================
-// Event feuern
+// fire event
 //========================================
 func void EventPtr_Execute(var int ptr, var int d) {
     var zCArray a; a = _^(ptr);
