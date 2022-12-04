@@ -1,3 +1,4 @@
+
 /***********************************\
                 BARS
 \***********************************/
@@ -24,7 +25,7 @@ class Bar {
 };
 
 //========================================
-// Prototyp für Konstruktor-Instanz
+// Prototype for constructor instance
 //========================================
 prototype GothicBar(Bar) {
     x = Print_Screen[PS_X] / 2;
@@ -40,12 +41,12 @@ prototype GothicBar(Bar) {
 };
 
 //========================================
-// Beispiel für Konstruktor-Instanz
+// Constructor instance example
 //========================================
 instance GothicBar@(GothicBar);
 
 //========================================
-// [intern] Klasse für PermMem
+// [internal] Class for PermMem
 //========================================
 class _bar {
     var int valMax;
@@ -79,7 +80,7 @@ func void _bar_Unarchiver(var _bar this) {
 
 
 func void _bar_Delete(var _bar b) {
-    if(Hlp_IsValidHandle(b.v0)) {
+    if (Help_IsValidHandle(b.v0)) {
         delete(b.v0);
     };
     if(Hlp_IsValidHandle(b.v1)) {
@@ -88,59 +89,59 @@ func void _bar_Delete(var _bar b) {
 };
 
 //========================================
-// Höchstwert setzen
+// set maximum value
 //========================================
 func void Bar_SetMax(var int bar, var int max) {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     b.valMax = max;
 };
 
 //========================================
-// Wert in 1/1000
+// Value in 1/1000
 //========================================
 func void Bar_SetPromille(var int bar, var int pro) {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     if(pro > 1000) { pro = 1000; };
     View_Resize(b.v1, (pro * b.barW) / 1000, -1);
 };
 
 //========================================
-// Wert in 1/100
+// value in 1/100
 //========================================
 func void Bar_SetPercent(var int bar, var int perc) {
-    Bar_SetPromille(bar, perc*10);
+    Bar_SetPromille(bar, perc * 10 );
 };
 
 //========================================
-// Wert der Bar
+// value of the bar
 //========================================
 func void Bar_SetValue(var int bar, var int val) {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     if(val) {
         Bar_SetPromille(bar, (val * 1000) / b.valMax);
     }
     else {
-        Bar_SetPromille(bar, 0);
+        Bar_SetPromille(bar, 0 );
     };
 };
 
 //========================================
-// Bar löschen
+// Delete bar
 //========================================
 func void Bar_Delete(var int bar) {
-    if(Hlp_IsValidHandle(bar)) {
+    if (Hlp_IsValidHandle(bar)) {
         delete(bar);
     };
 };
 
 //========================================
-// Bar verstecken
+// hide bar
 //========================================
 func void Bar_Hide(var int bar) {
-	if(!Hlp_IsValidHandle(bar)) { return; };
+	if ( ! Hlp_IsValidHandle ( bar )) { return ; };
 	var _bar b; b = get(bar);
 	View_Close(b.v0);
 	View_Close(b.v1);
@@ -148,10 +149,10 @@ func void Bar_Hide(var int bar) {
 };
 
 //========================================
-// Bar zeigen
+// show bar
 //========================================
 func void Bar_Show(var int bar) {
-	if(!Hlp_IsValidHandle(bar)) { return; };
+	if ( ! Hlp_IsValidHandle ( bar )) { return ; };
 	var _bar b; b = get(bar);
 	// Only open if allowed or if not initialized
 	if (_Bar_Update_Status) || (!(_LeGo_Flags & LeGo_Bars)) {
@@ -167,7 +168,7 @@ func void Bar_Show(var int bar) {
 // Use Bar_Move and Bar_Resize instead
 //========================================
 func void _Bar_MoveTo_Internal(var int bar, var int x, var int y) {
-	if(!Hlp_IsValidHandle(bar)) { return; };
+	if ( ! Hlp_IsValidHandle ( bar )) { return ; };
 	var _bar b; b = get(bar);
 	var zCView v; v = View_Get(b.v0);
 	x -= v.vsizex>>1;
@@ -178,7 +179,7 @@ func void _Bar_MoveTo_Internal(var int bar, var int x, var int y) {
 	View_Move(b.v1, x, y);
 };
 func void _Bar_Resize_Internal(var int bar, var int width, var int height) {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
 
     // Remember center position
@@ -201,10 +202,10 @@ func void _Bar_Resize_Internal(var int bar, var int width, var int height) {
         var int curVal; curVal = fracf(b.barW, v1.vsizex);
         b.barW = width - barDiffX;
         barWidth = roundf(divf(mkf(b.barW), curVal));
-        barX = (v0.vposx + roundf(fracf(barDiffX, 2))) - v1.vposx;
+        barX = (v0.vposx + roundf(fracf(barDiffX, 2 ))) - v1.vposx;
     } else {
         barWidth = width;
-        barX = 0;
+        barX = 0 ;
         if (width == 0) { b.barW = 0; };
     };
 
@@ -212,10 +213,10 @@ func void _Bar_Resize_Internal(var int bar, var int width, var int height) {
     var int barHeight; var int barY;
     if (height > 0) {
         barHeight = height - barDiffY;
-        barY = (v0.vposy + roundf(fracf(barDiffY, 2))) - v1.vposy;
+        barY = (v0.vposy + roundf(fracf(barDiffY, 2 ))) - v1.vposy;
     } else {
         barHeight = height;
-        barY = 0;
+        barY = 0 ;
     };
 
     // Update outer view
@@ -284,7 +285,7 @@ func int Bar_GetInterfaceScaling() {
 // Bar Scale
 //========================================
 func void Bar_ScaleExt(var int bar, var int scaleF, var int x0, var int y0, var int x1, var int y1) {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     var zCView v; v = View_Get(b.v0);
 
@@ -315,7 +316,7 @@ func void Bar_ScaleExt(var int bar, var int scaleF, var int x0, var int y0, var 
         y = PS_VMax - Print_ToVirtual(roundf(mulf(mkf(pixelsFromBottom + h), scaleF)), y1);
     } else { // Middle
         var int h2; h2 = roundf(fracf(h, 2));
-        var int pixelsFromMiddle; pixelsFromMiddle = (y0 / 2) - (y + h2);
+        var int pixelsFromMiddle; pixelsFromMiddle = (y0 /  2 ) - (y + h2);
         y = (PS_VMax / 2) - Print_ToVirtual(roundf(mulf(mkf(pixelsFromMiddle + h2), scaleF)), y1);
     };
 
@@ -339,10 +340,10 @@ func void Bar_Scale(var int bar, var int scaleF) {
 };
 
 //========================================
-// Bar bewegen
+// move bar
 //========================================
 func void Bar_MoveTo(var int bar, var int x, var int y) {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var int scale; scale = Bar_GetInterfaceScaling();
     Bar_Scale(bar, divf(FLOATONE, scale)); // Scale to one
     _Bar_MoveTo_Internal(bar, x, y);
@@ -356,7 +357,7 @@ func void Bar_MoveToPxl(var int bar, var int x, var int y) {
 // Bar Resize
 //========================================
 func void Bar_Resize(var int bar, var int width, var int height) {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     var int scale; scale = Bar_GetInterfaceScaling();
     Bar_Scale(bar, divf(FLOATONE, scale)); // Scale to one
@@ -371,7 +372,7 @@ func void Bar_ResizePxl(var int bar, var int x, var int y) {
 // Bar Alpha
 //========================================
 func void Bar_SetAlpha(var int bar, var int alpha) {
-	if(!Hlp_IsValidHandle(bar)) { return; };
+	if ( ! Hlp_IsValidHandle ( bar )) { return ; };
 	var _bar b; b = get(bar);
 	View_SetAlpha(b.v0, alpha);
 	View_SetAlpha(b.v1, alpha);
@@ -382,14 +383,14 @@ func void Bar_SetAlpha(var int bar, var int alpha) {
 //========================================
 func void Bar_SetBackTexture(var int bar, var string backTex)
 {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     View_SetTexture(b.v0, backTex);
 };
 
 func void Bar_SetBarTexture(var int bar, var string barTex)
 {
-    if(!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     View_SetTexture(b.v1, barTex);
 };
@@ -402,7 +403,7 @@ func int _Bar_PlayerStatus() {
     return (Hlp_IsValidNpc(hero)) && (MEM_Game.showPlayerStatus);
 };
 func void _Bar_UpdateShow(var int bar) {
-    if (!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     if (b.hidden == -1) {
         // Previous LeGo versions: Obtain status from open/closed view
@@ -414,7 +415,7 @@ func void _Bar_UpdateShow(var int bar) {
     View_Open(b.v1);
 };
 func void _Bar_UpdateHide(var int bar) {
-    if (!Hlp_IsValidHandle(bar)) { return; };
+    if ( ! Hlp_IsValidHandle ( bar )) { return ; };
     var _bar b; b = get(bar);
     View_Close(b.v0);
     View_Close(b.v1);
@@ -432,18 +433,18 @@ func void _Bar_Update() {
 };
 
 //========================================
-// Neue Bar erstellen
+// Create new bar
 //========================================
 func int Bar_Create(var int inst) {
     Print_GetScreenSize();
     var int ptr; ptr = create(inst);
-    var bar bu; bu = MEM_PtrToInst(ptr);
-    var int bh; bh = new(_bar@);
+    there is bar this; this = MEM_PtrToInst(ptr);
+    var int bh; bh = new (_bar@);
     var _bar b; b = get(bh);
     b.valMax = bu.valueMax;
-    var int buhh; var int buwh;
+    was int booh; was int buwh;
     var int ah; var int aw;
-    buhh = bu.height / 2;
+    buhh = bu.height /  2 ;
     buwh = bu.width / 2;
     if(buhh*2 < bu.height) {ah = 1;} else {ah = 0;};
     if(buwh*2 < bu.width) {aw = 1;} else {aw = 0;};
@@ -460,7 +461,7 @@ func int Bar_Create(var int inst) {
     v = View_Get(b.v1);
     v.fxOpen = 0;
     v.fxClose = 0;
-    Bar_Scale(bh, Bar_GetInterfaceScaling());
+    Bar_Scale(bh, Bar_GetInterfaceScaling ());
     if (_Bar_PlayerStatus()) {
         View_Open(b.v0);
         View_Open(b.v1);
