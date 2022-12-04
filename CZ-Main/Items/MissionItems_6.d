@@ -1,13 +1,11 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-func void Use_XardasNotfallBeutel - upraveny výpisy
-func void Use_RezeptFuerMegaTrank - opraven bonus po přečtení
-func void Use_Diary_BlackNovice - opraven bonus po přečtení
-
+func void Use_XardasNotfallBeutel - edited listings
+func void Use_RezeptFuerMegaTrank - fixed bonus after reading
+func void Use_Diary_BlackNovice - fixed reading bonus
 */
 
 
@@ -15,7 +13,7 @@ func void Use_Diary_BlackNovice - opraven bonus po přečtení
 
 instance ItSe_XardasNotfallBeutel_MIS(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -24,7 +22,7 @@ instance ItSe_XardasNotfallBeutel_MIS(C_Item)
 	material = MAT_METAL;
 	on_state[0] = Use_XardasNotfallBeutel;
 	description = name;
-	text[4] = "Tenhle měšec obsahuje nějaký tvrdý předmět a jakýsi dokument...";
+	text[ 4 ] = " This pouch contains some hard object and some document... " ;
 	inv_animate = 1;
 };
 
@@ -37,8 +35,8 @@ func void Use_XardasNotfallBeutel()
 	// concatText = ConcatStrings(PRINT__ERHALTEN,"dva");
 	// concatText = ConcatStrings(concatText,PRINT__ITEMS);
 	// concatText = ConcatStrings(concatText,"a");
-	concatText = ConcatStrings("Získány ","2");
-	concatText = ConcatStrings(concatText," předměty");
+	concatText = ConcatStrings( " Obtained " , " 2 " );
+	concatText = ConcatStrings(concatText, " subjects " );
 	AI_Print(concatText);
 };
 
@@ -53,7 +51,7 @@ instance ItWr_XardasErmahnungFuerIdioten_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_XardasErmahnungFuerIdioten;
 	scemeName = "MAP";
-	description = "Varovný dopis od Xardase";
+	description = " Warning letter from Xardas " ;
 	inv_animate = 1;
 };
 
@@ -67,7 +65,7 @@ func void Use_XardasErmahnungFuerIdioten()
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Můj mladý chráněnče, hluboce jsi mě zklamal. Jak to, že jsi odplul a přitom sis nevzal Innosovo oko? Mohu jen doufat, že tvoje nedbalost má své hranice. Jinak svět nikdy nezbavíš zla a já tě budu muset za tvou hloupost náležitě potrestat.");
+	Doc_PrintLines(nDocID, 0 , " My young protégé, you have disappointed me deeply. How come you sailed away without taking the Eye of Innos? I can only hope that your carelessness has its limits. Otherwise, you will never rid the world of evil, and I will have to properly punish your stupidity. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"		Xardas");
@@ -75,7 +73,7 @@ func void Use_XardasErmahnungFuerIdioten()
 };
 
 
-instance ItWr_Krypta_Garon(C_Item)
+instance ItWr_Krypta_Garon (C_Item)
 {
 	name = NAME_Letter;
 	mainflag = ITEM_KAT_DOCS;
@@ -85,8 +83,8 @@ instance ItWr_Krypta_Garon(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_Krypta_Garon;
 	scemeName = "MAP";
-	description = "Starý dopis";
-	text[4] = "Starý dopis, psaný roztřesenou rukou...";
+	description = " Old letter " ;
+	text[ 4 ] = " An old letter, written by a shaky hand... " ;
 	inv_animate = 1;
 };
 
@@ -100,9 +98,9 @@ func void Use_Krypta_Garon()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Selhal jsem! Nadarmo jsem se snažil přivést Inubise zpět na cestu dobra. Inubis opět vstal z mrtvých! Nyní se chce pomstít za své prokletí prastarému řádu paladinů, kteří ho vyhnali.");
+	Doc_PrintLines(nDocID, 0 , " I failed! I tried in vain to bring Inubis back to the path of good. Inubis has risen from the dead again! Now he wants to avenge his curse on the ancient paladin order who banished him. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Nechť Innos spasí naše duše!");
+	Doc_PrintLines(nDocID, 0 , " May Innos save our souls! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Ivan");
@@ -122,9 +120,9 @@ instance ItWr_LastDoorToUndeadDrgDI_MIS(C_Item)
 	value = 1;
 	visual = "ItWr_Scrl_RezO.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = Use_ItWr_LastDoorToUndeadDrgDI_MIS;
+	on_state[ 0 ] = Use_ItWr_LastDoorToUndeadDrgDI_MIS;
 	scemeName = "MAP";
-	description = "Poznámky temného mága";
+	description = " Notes of a Dark Mage " ;
 	inv_animate = 1;
 };
 
@@ -144,7 +142,7 @@ func void Use_ItWr_LastDoorToUndeadDrgDI_MIS()
 	Doc_PrintLine(nDocID,0,"EMEM KADAR");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Oko moci nechť osvítí tvou cestu!");
+	Doc_PrintLines(nDocID, 0 , " May the Eye of Power light your way! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
@@ -152,12 +150,12 @@ func void Use_ItWr_LastDoorToUndeadDrgDI_MIS()
 
 	if(LastDoorToUndeadFT == FALSE)
 	{
-		B_LogEntry(TOPIC_HallenVonIrdorath,"V poznámkách temného mága jsou uvedena slova KHADOSH EMEM KADAR. Zní to jako nějaké zaklínadlo, ale já nemám ani ponětí, k čemu by mohlo sloužit. A co je vůbec to Oko moci?");
+		B_LogEntry(TOPIC_HallenVonIrdorath, " In the dark mage's notes are the words KHADOSH EMEM KADAR. It sounds like some kind of incantation, but I have no idea what it could be for. And what is the Eye of Power anyway? " );
 		LastDoorToUndeadFT = TRUE;
 	};
 };
 
-instance ItWr_Rezept_MegaDrink_MIS(C_Item)
+instance ItWr_Rezept_MegaDrink_MIS (C_Item)
 {
 	name = "Recept";
 	mainflag = ITEM_KAT_DOCS;
@@ -172,7 +170,7 @@ instance ItWr_Rezept_MegaDrink_MIS(C_Item)
 };
 
 
-func void Use_RezeptFuerMegaTrank()
+func void Use_RecipeForMegaPotion()
 {
 	var int nDocID;
 	nDocID = Doc_Create();
@@ -185,15 +183,15 @@ func void Use_RezeptFuerMegaTrank()
 			PLAYER_TALENT_ALCHEMY_11 = TRUE;
 			RankPoints = RankPoints + 1;
 			Snd_Play("LevelUP");
-			AI_Print("Naučeno: Alchymie - 'Embarla Firgasto'");
-			B_LogEntry(TOPIC_TalentAlchemy,"Ingredience pro EMBARLA FIRGASTO: čistý alkohol, 9x dračí vejce, černá perla a síra.");
+			AI_Print( " Learned: Alchemy - 'Embarla Firgasto' " );
+			B_LogEntry(TOPIC_TalentAlchemy, " Ingredients for EMBARLA FIRGASTO: pure alcohol, 9x dragon eggs, black pearl and sulfur. " );
 		};
 		if((BookBonus_162 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_162 = TRUE;
+			BookBonus_162 = TRUE ;
 		};
 	};
 
@@ -204,9 +202,9 @@ func void Use_RezeptFuerMegaTrank()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"Embarla Firgasto");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"devět dračích vajec, černá perla a špetka síry. Tekutinu přivést do varu a za stálého míchání prohnat destilačním aparátem.");
+	Doc_PrintLines(nDocID, 0 , " nine dragon's eggs, a black pearl and a pinch of sulphur. Bring the liquid to a boil and pass it through a still while stirring constantly. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"P.S. Elixír užívat opatrně, neb má silné vedlejší účinky a může narušit vnitřní strukturu many uživatele.");
+	Doc_PrintLines(nDocID, 0 , " PS Use the elixir carefully, because it has strong side effects and can disrupt the internal structure of the user's mana. " );
 	Doc_Show(nDocID);
 };
 
@@ -221,7 +219,7 @@ instance ItWr_Diary_BlackNovice_MIS(C_Item)
 	visual = "ItWr_Book_Poor_05.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Deník temného novice";
+	description = " Diary of the Dark Novice " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_Diary_BlackNovice;
@@ -240,20 +238,20 @@ func void Use_Diary_BlackNovice()
 	Doc_SetFont(nDocID,0,Font_Book_New);
 	Doc_SetFont(nDocID,0,Font_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Už tu čekám na předvolání víc jak měsíc. Začínám pochybovat, že mě vůbec kdy vezmou. Přesto jsem vždycky udělal všechno, co po mě chtěli, i když jim většinou akorát dělám poslíčka jako nějaká stará služka.");
-	Doc_PrintLines(nDocID,0,"Klíčník mi nařídil, abych zavřel všechny závory, ale ještě jsem se k tomu vůbec nedostal. Když to takhle půjde dál, bude moci branou procházet každý otrapa.");
-	Doc_PrintLines(nDocID,0,"Je to ostuda, že si nemohu zapamatovat správné kombinace.");
+	Doc_PrintLines(nDocID, 0 , " I've been waiting here for more than a month for a summons. I'm beginning to doubt that they'll ever take me. Still, I've always done everything they've asked me to do, even though I'm mostly just running errands for them like some old maid. " ) ;
+	Doc_PrintLines(nDocID, 0 , " The Keymaster ordered me to close all the bars, but I haven't even gotten around to it yet. If this goes on, any scumbag will be able to walk through the gate. " );
+	Doc_PrintLines(nDocID, 0 , " It's a shame I can't remember the right combinations. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_SetFont(nDocID,1,Font_Book_New_Small);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Už dávno bych se vplížil do velké síně. Nemohu se dočkat, až uvidím Pána. Zajímalo by mě, jestli mě k němu pustí, až se stanu jedním z nich.");
+	Doc_PrintLines(nDocID, 1 , " I'd sneak into the great hall long ago. I can't wait to see the Lord. I wonder if they'll let me join him when I become one of them. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Včera jsem zkusil štěstí, ale opustilo mě v komnatách se dvěma pákami, ještě než jsem mohl ve správném pořadí stisknout tři spínače v západním křídle. Ten pes ty komnaty zamkl! Zítra se pokusím nějak zmocnit jeho klíče...");
+	Doc_PrintLines(nDocID, 1 , " I tried my luck yesterday, but it left me in the rooms with two levers before I could hit the three switches in the west wing in the right order. That dog locked those rooms! Tomorrow I'll try to somehow get hold of his keys.. . " );
 	Doc_Show(nDocID);
 
 	if(Diary_BlackNovice == FALSE)
 	{
-		B_LogEntry(TOPIC_HallenVonIrdorath,"Deník temného novice se zmiňuje o komnatách s pákami, klíčníkovi, kombinacích spínačů a dalších věcech. Měl bych si to zapamatovat - mohlo by se mi to později hodit.");
+		B_LogEntry(TOPIC_HallenVonIrdorath, " The Dark Novice's diary mentions lever chambers, a key fob, switch combos, and more. I should remember that - it might come in handy later. " );
 		Diary_BlackNovice = TRUE;
 
 		if((BookBonus_163 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
@@ -261,13 +259,13 @@ func void Use_Diary_BlackNovice()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_163 = TRUE;
+			BookBonus_163 = TRUE ;
 		};
 	};
 };
 
 
-instance ItWr_ZugBruecke_MIS(C_Item)
+instance ItWr_ZugBruecke_MIS (C_Item);
 {
 	name = NAME_Letter;
 	mainflag = ITEM_KAT_DOCS;
@@ -277,7 +275,7 @@ instance ItWr_ZugBruecke_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_ZugBruecke;
 	scemeName = "MAP";
-	description = "Starý dopis";
+	description = " Old letter " ;
 	inv_animate = 1;
 };
 
@@ -292,9 +290,9 @@ func void Use_ZugBruecke()
 	Doc_SetMargins(nDocID,-1,50,50,70,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Je mi fuk, jestli ten most dokážete přejít z druhé strany, nebo ne. Pro mne za mne si všichni klidně shnijte v pekle! Dokud jsem na svém panství, ten most zůstane zatažen. A jestli ještě někoho přistihnu, jak se snaží lukem strefit do těch spínačů, vlastnoručně ho pověsím na nejbližším sloupu!");
+	Doc_PrintLines(nDocID, 0 , " I don't care if you can cross that bridge from the other side or not. For me, everyone rot in hell for me! As long as I'm on my estate, that bridge will remain closed. And if I catch anyone else , as he tries to hit those switches with his bow, I'll hang him on the nearest post with my own hands! " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"		Archol");
+	Doc_PrintLine(nDocID, 0 , " 		Archol " );
 	Doc_Show(nDocID);
 };
 
@@ -309,33 +307,33 @@ instance ItMi_PowerEye(C_Item)
 	wear = WEAR_EFFECT;
 	effect = "SPELLFX_ITEMGLIMMER";
 	description = name;
-	text[4] = "Kus nefritu neobyčejného tvaru připomínající dračí oko...";
+	text[ 4 ] = " A piece of jade of unusual shape resembling a dragon's eye... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_PRISONSOUL(C_Item)
 {
-	name = "Kus kamene";
+	name = " Kus kamene " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItMi_DarkPearl.3ds";
 	material = MAT_METAL;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[3] = "Matný kámen neznámé odrody...";
-	text[4] = "Tvarem připomíná zavřené oko...";
+	text[ 3 ] = " Dull stone of unknown variety... " ;
+	text[ 4 ] = " Its shape resembles a closed eye... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_PRISONSOUL_AWAKE(C_Item)
 {
-	name = "Oko hněvu";
+	name = " Eye of Wrath " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItMi_DarkPearl.3ds";
@@ -343,42 +341,42 @@ instance ITMI_PRISONSOUL_AWAKE(C_Item)
 	wear = WEAR_EFFECT;
 	effect = "SPELLFX_ITEMGLIMMER";
 	description = name;
-	text[3] = "Kámen vyzařuje energii neznámého původu...";
-	text[4] = "Tvarem připomíná zavřené oko...";
+	text[ 3 ] = " The stone emits energy of unknown origin... " ;
+	text[ 4 ] = " Its shape resembles a closed eye... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_ORCBLOOD(C_Item)
 {
-	name = "Skřetí krev";
+	name = " Goblin Blood " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_METAL;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[4] = "Hustá kapalina černého zabarvení...";
+	text[ 4 ] = " Thick liquid of black color... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ITMI_BARLOKHEART(C_Item)
 {
-	name = "Krev démona";
+	name = " Demon's Blood " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_LEATHER;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[4] = "Krev démona ohně karmínového zabarvení a ostrého sírového zápachu...";
+	text[ 4 ] = " Fire demon blood of a crimson hue and a pungent sulfur smell... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
