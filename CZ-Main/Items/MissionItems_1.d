@@ -1,16 +1,14 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-instance ItMw_AlriksSword_Mis - opraven název (Meč -> Alrikův meč)
-
+instance ItMw_AlriksSword_Mis - fixed name (Sword -> Alrik's Sword)
 */
 
 
 
-instance ItWr_Canthars_KomproBrief_MIS(C_Item)
+instance ItWr_Canthars_ComproBrief_MIS (C_Item);
 {
 	name = "Dopis";
 	mainflag = ITEM_KAT_DOCS;
@@ -21,7 +19,7 @@ instance ItWr_Canthars_KomproBrief_MIS(C_Item)
 	on_state[0] = Use_Canthars_KomproBrief;
 	scemeName = "MAP";
 	description = "Cantharův dopis";
-	text[4] = "Cantharův dopis obchodnici Sarah...";
+	text[ 4 ] = " Canthar's Letter to Merchant Sarah... " ;
 	inv_animate = 1;
 };
 
@@ -35,7 +33,7 @@ func void Use_Canthars_KomproBrief()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Tohle je poslední upozornění, že už čekám pořádně dlouho! Naposled vám připomínám, že pokud nedostanu ty zbraně, které jsem si u vás před týdnem objednal, Sarah, tak okamžitě zruším veškeré obchodní smlouvy, které jsme spolu podepsali. Buďte rozumná!");
+	Doc_PrintLines(nDocID, 0 , " This is the last warning that I've been waiting a long time! I'm reminding you lastly that if I don't receive the weapons I ordered from you a week ago, Sarah, I will immediately cancel all the business contracts we signed together . Be reasonable! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Onar");
 	Doc_PrintLine(nDocID,0,"");
@@ -93,7 +91,7 @@ instance ItMw_2h_Rod_Fake(C_Item)
 
 instance ItMi_CoragonsSilber(C_Item)
 {
-	name = "Coragonovo stříbro";
+	name = " Coragon's Silver " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = Value_SilverCup;
@@ -106,7 +104,7 @@ instance ItMi_CoragonsSilber(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMi_TheklasPaket(C_Item)
+instance ItMi_TheklasPackage (C_Item)
 {
 	name = "Theklin balík";
 	mainflag = ITEM_KAT_NONE;
@@ -136,14 +134,14 @@ func void Use_TheklasPacket()
 
 instance ItMi_MariasGoldPlate(C_Item)
 {
-	name = "Svatební zlatý talíř";
+	name = " Wedding Gold Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = Value_GoldPlate;
 	visual = "ItMi_MariasGoldPlate_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Na talíři jsou vyvedena jména Onar a Maria...";
+	text[ 4 ] = " The names Onar and Maria are displayed on the plate... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -167,8 +165,8 @@ instance ItRi_ValentinosRing(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -197,7 +195,7 @@ instance ItWr_Kraeuterliste(C_Item)
 	on_state[0] = Use_Kraeuterliste;
 	scemeName = "MAP";
 	description = "Seznam";
-	text[4] = "Seznam bylin, který mi dal alchymista Constantino...";
+	text[ 4 ] = " List of herbs given to me by Alchemist Constantino... " ;
 	inv_animate = 1;
 };
 
@@ -211,17 +209,17 @@ func void Use_Kraeuterliste()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Léčivá rostlina");
-	Doc_PrintLine(nDocID,0,"Léčivá bylina");
-	Doc_PrintLine(nDocID,0,"Léčivý kořen");
-	Doc_PrintLine(nDocID,0,"Ohnivá kopřiva");
-	Doc_PrintLine(nDocID,0,"Ohnivé býlí");
-	Doc_PrintLine(nDocID,0,"Ohnivý kořen");
+	Doc_PrintLine(nDocID, 0 , " Medicinal plant " );
+	Doc_PrintLine(nDocID, 0 , " Medicinal Herb " );
+	Doc_PrintLine(nDocID, 0 , " Medicinal Root " );
+	Doc_PrintLine(nDocID, 0 , " Fire Nettle " );
+	Doc_PrintLine(nDocID, 0 , " Fireweed " );
+	Doc_PrintLine(nDocID, 0 , " Fire Root " );
 	Doc_PrintLine(nDocID,0,"Gobliní bobule");
-	Doc_PrintLine(nDocID,0,"Dračí kořen");
+	Doc_PrintLine(nDocID, 0 , " Dragon Root " );
 	Doc_PrintLine(nDocID,0,"Chňapavčí býlí");
-	Doc_PrintLine(nDocID,0,"Luční pohanka");
-	Doc_PrintLine(nDocID,0,"Královský šťovík");
+	Doc_PrintLine(nDocID, 0 , " Meadow Buckwheat " );
+	Doc_PrintLine(nDocID, 0 , " Royal sorrel " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
@@ -239,8 +237,8 @@ instance ItWr_ManaRezept(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_ManaRezept;
 	scemeName = "MAP";
-	description = "Recept na lektvary many";
-	text[4] = "Opisuje způsob přípravy magických lektvarů...";
+	description = " Mana Potion Recipe " ;
+	text[ 4 ] = " Describes how to prepare magical potions... " ;
 	inv_animate = 1;
 };
 
@@ -254,14 +252,14 @@ func void Use_ManaRezept()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Magické lektvary");
+	Doc_PrintLine(nDocID, 0 , " Magic potions " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Připravit lektvary magické síly dokáže jenom zkušený alchymista, přičemž potřebuje:");
+	Doc_PrintLines(nDocID, 0 , " Only an experienced alchemist can prepare potions of magical power, requiring: " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Ohnivou kopřivu");
-	Doc_PrintLine(nDocID,0,"Ohnivé býlí");
-	Doc_PrintLine(nDocID,0,"Ohnivý kořen");
-	Doc_PrintLine(nDocID,0,"Luční pohanku");
+	Doc_PrintLine(nDocID, 0 , " Fire Nettle " );
+	Doc_PrintLine(nDocID, 0 , " Fireweed " );
+	Doc_PrintLine(nDocID, 0 , " Fire Root " );
+	Doc_PrintLine(nDocID, 0 , " Meadow Buckwheat " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Mistr Neoras");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
@@ -269,7 +267,7 @@ func void Use_ManaRezept()
 };
 
 
-instance ItWr_Passierschein(C_Item)
+instance ItWr_Passierschein (C_Item)
 {
 	name = "Propustka";
 	mainflag = ITEM_KAT_DOCS;
@@ -280,7 +278,7 @@ instance ItWr_Passierschein(C_Item)
 	on_state[0] = UsePassierschein;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "S těmito dokumenty mě stráže pustí do města...";
+	text[ 4 ] = " The guards will let me into the city with these documents... " ;
 	inv_animate = 1;
 };
 
@@ -297,10 +295,10 @@ func void UsePassierschein()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			Propustka");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Nositel tohoto dokumentu se může po neomezenou dobu volně pohybovat v dolní čtvrti.");
+	Doc_PrintLines(nDocID, 0 , " The bearer of this document may move freely in the lower quarter for an unlimited period of time. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"	Larius, místodržící města Khorinis");
+	Doc_PrintLine(nDocID, 0 , " 	Larius, viceroy of the city of Khorinis " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -311,33 +309,33 @@ func void UsePassierschein()
 
 instance ItMi_HerbPaket(C_Item)
 {
-	name = "Balík trávy";
+	name = " Grass Bundle " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Těžký a měkký balík, který je cítit trávou z bažin...";
+	text[ 4 ] = " A heavy and soft package that smells like marsh grass... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_JointPacket_OW(C_Item)
 {
-	name = "Balík trávy z bažin";
+	name = " Swamp Grass Bundle " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Balík vrchovatě nacpaný zpracovanou trávou z bažin...";
+	text[ 4 ] = " A bundle piled high with processed marsh grass... " ;
 	inv_animate = 1;
 };
 
 instance ITMI_DROGENPOCKET(C_Item)
 {
-	name = "Balík Baala Oruna";
+	name = " Balík Baala Oruna " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -346,26 +344,26 @@ instance ITMI_DROGENPOCKET(C_Item)
 	on_state[0] = use_drogenpocket;
 	material = MAT_LEATHER;
 	description = name;
-	text[3] = "Zásilka pro místodržícího města Khorinis - Lariuse...";
-	text[4] = "Není jasné, co je uvnitř...";
+	text[ 3 ] = " Shipment for the governor of the city of Khorinis - Larius... " ;
+	text[ 4 ] = " It is not clear what is inside... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITMI_LARIUSGOLDPOCKET(C_Item)
+instance ITMI_LARIUSGOLDPOCKET (C_Item)
 {
-	name = "Kožená brašna";
+	name = " Leather bag " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItMi_Suma.3ds";
 	scemeName = "MAPSEALED";
-	on_state[0] = use_lariusgoldpocket;
+	on_state[ 0 ] = use_lariusgoldpocket;
 	material = MAT_LEATHER;
 	description = name;
-	text[3] = "Brašna od místodržícího pro Baala Oruna...";
-	text[4] = "Není jasné, co je uvnitř...";
+	text[ 3 ] = " Satchel from the Vicar for Baal Orun... " ;
+	text[ 4 ] = " It is not clear what is inside... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -439,7 +437,7 @@ instance ItFo_HalvorFish_MIS(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_HalvorFish;
 	description = name;
-	text[4] = "Vypadá, jako by ji někdo rozřízl a pak zašil...";
+	text[ 4 ] = " She looks like someone cut her open and then sewed her up... " ;
 	inv_animate = 1;
 };
 
@@ -453,7 +451,7 @@ func void Use_HalvorFish()
 
 instance ItWr_HalvorMessage(C_Item)
 {
-	name = "Páchnoucí zpráva";
+	name = " Smelly Message " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -462,14 +460,14 @@ instance ItWr_HalvorMessage(C_Item)
 	on_state[0] = UseHalvorMessage;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Tato zpráva byla zašita v rybě...";
+	text[ 4 ] = " This message was sewn in a fish... " ;
 	inv_animate = 1;
 };
 
 func void UseHalvorMessage()
 {
 	var int nDocID;
-	Knows_Halvor = TRUE;
+	Knows_Half = TRUE ;
 	nDocID = Doc_Create();
 	Doc_SetPages(nDocID,1);
 	Doc_SetPage(nDocID,0,"LETTER_OLD_NOTE.TGA",0);
@@ -477,7 +475,7 @@ func void UseHalvorMessage()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Zdraví vás starý obchodník! Domobrana začíná mít podezření a hledá vás. Nepokračujte s těmi útoky, dokud se věci trochu nezklidní!");
+	Doc_PrintLines(nDocID, 0 , " Greetings old merchant! The militia is getting suspicious and looking for you. Don't continue those attacks until things calm down a bit! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			Halvor");
@@ -495,7 +493,7 @@ instance ItWr_DexterOrder(C_Item)
 	on_state[0] = Use_ItWr_DexterOrder;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Tenhle dopis jsem našel u jednoho z vůdců banditů...";
+	text[ 4 ] = " I found this letter with one of the bandit leaders... " ;
 	inv_animate = 1;
 };
 
@@ -509,7 +507,7 @@ func void Use_ItWr_DexterOrder()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Zůstaňte na místě a kroťte se, dokud nám naše spojka v domobraně nedá vědět, jaká je teď situace ve městě.");
+	Doc_PrintLines(nDocID, 0 , " Stay put and tame until our militia liaison lets us know what the situation is in town now. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			D.");
@@ -527,7 +525,7 @@ instance ItWr_DexTrait(C_Item)
 	on_state[0] = Use_ItWr_DexTrait;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Tenhle dopis jsem našel u Dextera...";
+	text[ 4 ] = " I found this letter at Dexter's... " ;
 	inv_animate = 1;
 };
 
@@ -541,7 +539,7 @@ func void Use_ItWr_DexTrait()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Dextere, ať tvoji lidi přestanou s těmi útoky! Wulfgar něco začíná tušit. Bude lepší, když si na chvíli dáme pohov.");
+	Doc_PrintLines(nDocID, 0 , " Dexter, get your men to stop these attacks! Wulfgar is starting to suspect something. We'd better rest for a while. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			Peck");
@@ -550,7 +548,7 @@ func void Use_ItWr_DexTrait()
 
 instance ItMw_AlriksSword_Mis(C_Item)
 {
-	name = "Alrikův meč";
+	name = " Alrik's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_MISSION | ITEM_SWD;
 	material = MAT_METAL;
@@ -568,7 +566,7 @@ instance ItMw_AlriksSword_Mis(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[4] = "Tenhle meč patří Alrikovi...";
+	text[ 4 ] = " This sword belongs to Alrik... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -581,7 +579,7 @@ func void Equip_AlriksSword()
 	{
 		B_AddFightSkill(self,NPC_TALENT_1H,10);
 		MELEEWEAPONINDEX = 4;
-		BONUSHW = 2;
+		BONUSHW = 2 ;
 	};
 };
 
@@ -591,14 +589,14 @@ func void UnEquip_AlriksSword()
 	{
 		B_AddFightSkill(self,NPC_TALENT_1H,-10);
 		MELEEWEAPONINDEX = 0;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 	};
 };
 
 
 instance ItWr_VatrasMessage(C_Item)
 {
-	name = "Zapečetěná zpráva";
+	name = " Sealed Message " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -607,7 +605,7 @@ instance ItWr_VatrasMessage(C_Item)
 	on_state[0] = UseVatrasMessage;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[4] = "Zapečetěná zpráva od Vatrase pro mágy Ohně...";
+	text[ 4 ] = " A sealed message from Vatras to the Fire Mages... " ;
 	inv_animate = 1;
 };
 
@@ -624,7 +622,7 @@ func void UseVatrasMessage()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"Milý Isgarothe,");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Cítím, že tu s námi dlí ještě nějaká jiná síla, která je čím dál silnější. Je to něco naprosto neznámého. Že by se k nám blížili Beliarovi vazalové? Možná se pletu, ale věřím, že by bylo moudré tuhle věc svěřit mistru Pyrokarovi.");
+	Doc_PrintLines(nDocID, 0 , " I sense that there is some other force with us that is growing stronger. It is something completely unknown. That Beliar's vassals are approaching us? I may be wrong, but I believe it would be wise to entrust this matter to Master Pyrokar. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			Vatras");
 	Doc_PrintLine(nDocID,0,"");
@@ -634,7 +632,7 @@ func void UseVatrasMessage()
 
 instance ItWr_VatrasMessage_Open(C_Item)
 {
-	name = "Zpráva";
+	name = " Message " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -643,7 +641,7 @@ instance ItWr_VatrasMessage_Open(C_Item)
 	on_state[0] = UseVatrasMessageOpen;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Otevřená zpráva od Vatrase pro mágy Ohně...";
+	text[ 4 ] = " An open message from Vatras to the Fire Mages... " ;
 	inv_animate = 1;
 };
 
@@ -659,7 +657,7 @@ func void UseVatrasMessageOpen()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"Milý Isgarothe,");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Cítím, že tu s námi dlí ještě nějaká jiná síla, která je čím dál silnější. Je to něco naprosto neznámého. Že by se k nám blížili Beliarovi vazalové? Možná se pletu, ale věřím, že by bylo moudré tuhle věc svěřit mistru Pyrokarovi.");
+	Doc_PrintLines(nDocID, 0 , " I sense that there is some other force with us that is growing stronger. It is something completely unknown. That Beliar's vassals are approaching us? I may be wrong, but I believe it would be wise to entrust this matter to Master Pyrokar. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			Vatras");
 	Doc_PrintLine(nDocID,0,"");
@@ -667,16 +665,16 @@ func void UseVatrasMessageOpen()
 	Doc_Show(nDocID);
 };
 
-instance ItFo_Schafswurst(C_Item)
+instance ItFo_Schafswurst (C_Item)
 {
-	name = "Skopová klobása";
+	name = " Mutton Sausage " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
 	value = Value_Sausage;
 	visual = "ItFo_Sausage.3DS";
 	material = MAT_LEATHER;
 	scemeName = "FOOD";
-	on_state[0] = Use_Schafswurst;
+	on_state[ 0 ] = Use_Schafswurst;
 	description = name;
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_Sausage;
@@ -705,7 +703,7 @@ func void Use_Schafswurst()
 
 instance ItPo_Perm_LittleMana(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
 	value = 150;
@@ -731,7 +729,7 @@ func void UseItPo_LittleMana()
 
 instance ItWr_Passage_MIS(C_Item)
 {
-	name = "Návrh mírové smlouvy s paladiny";
+	name = " Draft Paladin Peace Treaty " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -740,7 +738,7 @@ instance ItWr_Passage_MIS(C_Item)
 	on_state[0] = UsePassage;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "S touto zprávou budu moci navštívit lorda Hagena...";
+	text[ 4 ] = " With this message I will be able to visit Lord Hagen... " ;
 	inv_animate = 1;
 };
 
@@ -753,9 +751,9 @@ func void UsePassage()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Velevážený lorde Hagene,");
+	Doc_PrintLine(nDocID, 0 , " Honorable Lord Hagene, " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Oba víme, jaká je Vaše situace, a proto navrhuji následující ujednání: ... (dlouhý text) ... Naléhavě Vás žádám, rozhodněte se moudře.");
+	Doc_PrintLines(nDocID, 0 , " We both know what your situation is, so I propose the following arrangement: ... (long text) ... I urge you to make a wise decision. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			Generál Lee");
@@ -768,16 +766,16 @@ func void UsePassage()
 
 instance ItWr_BanditLetter_MIS(C_Item)
 {
-	name = "Zpráva";
+	name = " Message " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scrl_RezN.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = UseBanditLetter;
+	on_state[ 0 ] = UseBanditLetter;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Příkaz k pátrání...";
+	text[ 4 ] = " Command to search... " ;
 	inv_animate = 1;
 };
 
@@ -792,7 +790,7 @@ func void UseBanditLetter()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Zastavte každého muže, který přichází z hor. Pokud někdo nebude mít papíry, je to náš chlap. Přineste mi jeho hlavu!");
+	Doc_PrintLines(nDocID, 0 , " Stop every man who comes from the mountains. If someone doesn't have papers, he's our guy. Bring me his head! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"..... D.");
@@ -804,7 +802,7 @@ func void UseBanditLetter()
 
 instance ItWr_Poster_MIS(C_Item)
 {
-	name = "Podobizna hledaného";
+	name = " Effigy of the wanted " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -813,7 +811,7 @@ instance ItWr_Poster_MIS(C_Item)
 	on_state[0] = UsePoster;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Tenhle obrázek je mi velmi podobný...";
+	text[ 4 ] = " This picture is very similar to me... " ;
 	inv_animate = 1;
 };
 
@@ -823,13 +821,13 @@ func void UsePoster()
 	var int nDocID;
 	nDocID = Doc_Create();
 	Doc_SetPages(nDocID,1);
-	Doc_SetPage(nDocID,0,"Gesucht.TGA",0);
+	Doc_SetPage(nDocID, 0 , " Wanted.TGA " , 0 );
 	Doc_Show(nDocID);
 };
 
 instance ItRw_Bow_L_03_MIS(C_Item)
 {
-	name = "Lovecký luk";
+	name = " Hunting Bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -848,7 +846,7 @@ instance ItRw_Bow_L_03_MIS(C_Item)
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[4] = "Bosperův starý lovecký luk...";
+	text[ 4 ] = " Bosper's Old Hunting Bow... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -866,14 +864,14 @@ instance ItRi_Prot_Point_01_MIS(C_Item)
 	on_equip = Equip_ItRi_Prot_Point_01_MIS;
 	on_unequip = UnEquip_ItRi_Prot_Point_01_MIS;
 	wear = WEAR_EFFECT;
-	description = "Prsten alchymisty Constantina";
+	description = " Alchemist Constantine's Ring " ;
 	text[2] = NAME_Prot_Point;
 	count[2] = Ri_ProtPoint;
-	text[4] = "Tenhle vzácný prsten patří městskému alchymistovi Constantinovi...";
+	text[ 4 ] = " This rare ring belongs to the city alchemist Constantine... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -899,13 +897,13 @@ instance ItMi_EddasStatue(C_Item)
 	visual = "ItMi_InnosStatue_Sky.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "'Innosi, požehnej mi, veď mě a chraň ode všeho zlého...'";
+	text[ 4 ] = " 'Innos, bless me, guide me and protect me from all evil...' " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ItWr_Schuldenbuch(C_Item)
+instance ItWr_Debt Book (C_Item)
 {
 	name = "Kniha";
 	mainflag = ITEM_KAT_DOCS;
@@ -914,8 +912,8 @@ instance ItWr_Schuldenbuch(C_Item)
 	visual = "ItWr_Book_Poor_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Lehmarova účetní kniha";
-	text[4] = "V této knize jsou zapsána jména dlužníků lichváře Lehmara a výšky jejich dluhů...";
+	description = " Lehmar's ledger " ;
+	text[ 4 ] = " In this book are written the names of the debtors of the usurer Lehmar and the amount of their debts... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = UseSchuldBuch;
@@ -941,15 +939,15 @@ func void UseSchuldBuch()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,0,Font_Book_New);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Pohledávky a závazky");
+	Doc_PrintLines(nDocID, 0 , " Receivables and Payables " );
 	Doc_SetFont(nDocID,0,Font_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Já, mistr Thorben, khoriniský tesař, dlužím ctihodnému pánu Lehmarovi 200 zlatých.");
+	Doc_PrintLines(nDocID, 0 , " I, Master Thorben, Khorin Carpenter, owe the Honorable Lord Lehmar 200 guilders. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Thorben");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Já, Coragon, khoriniský hospodský, dlužím ctihodnému pánu Lehmarovi 150 zlatých.");
+	Doc_PrintLines(nDocID, 0 , " I, Coragon, innkeeper of Khorin, owe the honorable lord Lehmar 150 guilders. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Coragon");
 	Doc_PrintLine(nDocID,0,"");
@@ -958,7 +956,7 @@ func void UseSchuldBuch()
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Já, Hanna, khoriniská hostinská, dlužím ctihodnému pánu Lehmarovi 250 zlatých.");
+	Doc_PrintLines(nDocID, 1 , " I, Hanna, innkeeper of Khorin, owe the honorable Mr. Lehmar 250 guilders. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"Hanna");
 	Doc_PrintLines(nDocID,1,"");
@@ -968,7 +966,7 @@ func void UseSchuldBuch()
 
 instance ItPl_Xagitta_Herb_MIS(C_Item)
 {
-	name = "Sluneční aloe";
+	name = " Sun Aloe " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
 	value = Value_Strength_Herb_01;
@@ -988,7 +986,7 @@ instance ItRw_DragomirsArmbrust_MIS(C_Item)
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = Value_LeichteArmbrust;
+	value = Value_LightCrossbow;
 	damagetype = DAM_BLUNT | DAM_POINT;
 	damage[DAM_INDEX_BLUNT] = 50;
 	damage[DAM_INDEX_POINT] = 15;
@@ -1007,16 +1005,16 @@ instance ItRw_DragomirsArmbrust_MIS(C_Item)
 	count[2] = cond_value[2];
 	text[3] = NAME_Crb_needed;
 	count[3] = cond_value[0];
-	text[4] = "Na soše je vyvedeno jméno 'Dragomir'...";
+	text[ 4 ] = " The name 'Dragomir' is displayed on the statue... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-///////Novoye///////////
+// /////Novoye///////////
 
-instance ITMI_TALIASAN_ROBA(C_Item)
+instance ITMI_LOOK_ROBA (C_Item) .
 {
-	name = "Roucho mága";
+	name = " Mage Robe " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1500;
@@ -1025,8 +1023,8 @@ instance ITMI_TALIASAN_ROBA(C_Item)
 	on_state[0] = use_taliasan_roba;
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Opatrně složené";
-	text[3] = "a dokonce i vyhlazené...";
+	text[ 2 ] = " Carefully composed " ;
+	text[ 3 ] = " and even smoothed... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1040,7 +1038,7 @@ func void use_taliasan_roba()
 
 instance Holy_Hammer_MIS(C_Item)
 {
-	name = "Posvátné kladivo Innose";
+	name = " Sacred Hammer of Innose " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_MISSION | ITEM_2HD_AXE;
 	material = MAT_METAL;
@@ -1080,7 +1078,7 @@ instance HOLY_HAMMER_MIS_NEW(C_Item)
 
 instance ITRI_QUEST_PAL_RING(C_Item)
 {
-	name = "Odznak odvahy a udatnosti";
+	name = " Badge of Courage and Valor " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MISSION | ITEM_RING | ITEM_MULTI;
 	value = 1;
@@ -1088,7 +1086,7 @@ instance ITRI_QUEST_PAL_RING(C_Item)
 	visual_skin = 0;
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Udělován za výjimečné zásluhy před Řádem...";
+	text[ 4 ] = " Awarded for exceptional merit before the Order... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1096,7 +1094,7 @@ instance ITRI_QUEST_PAL_RING(C_Item)
 
 instance ITWR_HOLGER_LETTER(C_Item)
 {
-	name = "Holgerův dopis";
+	name = " Holger's Letter " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1104,7 +1102,7 @@ instance ITWR_HOLGER_LETTER(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_holger_letter;
 	scemeName = "MAP";
-	description = "Holgerův dopis";
+	description = " Holger's letter " ;
 	inv_animate = 1;
 };
 
@@ -1121,10 +1119,10 @@ func void use_holger_letter()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book);
-	Doc_PrintLine(nDocID,0,"Odpusťte mně ničemnému!");
-	Doc_PrintLine(nDocID,0,"Děkuji, že jste mě zachránili, ale");
-	Doc_PrintLine(nDocID,0,"já už tu nevydržím,");
-	Doc_PrintLine(nDocID,0,"jsou tady jen samí suchaři!");
+	Doc_PrintLine(nDocID, 0 , " Forgive me the villain! " );
+	Doc_PrintLine(nDocID, 0 , " Thank you for saving me, but " );
+	Doc_PrintLine(nDocID, 0 , " I can't stay here anymore, " );
+	Doc_PrintLine(nDocID, 0 , " there are only crackers here! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
 	Doc_Show(nDocID);
@@ -1132,7 +1130,7 @@ func void use_holger_letter()
 
 instance ITMI_DARON_SUMA(C_Item)
 {
-	name = "Kožená brašna";
+	name = " Leather bag " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1141,7 +1139,7 @@ instance ITMI_DARON_SUMA(C_Item)
 	on_state[0] = use_itmi_daron_suma;
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Brašna s dary pro Innosův klášter...";
+	text[ 4 ] = " Bag with gifts for Innos Monastery... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1153,7 +1151,7 @@ func void use_itmi_daron_suma()
 	AI_Print(PRINT_FOUNDGOLD1000);
 	INNOSCRIMECOUNT = INNOSCRIMECOUNT + 100;
 	GLOBAL_MAKE_BANDIT_FORMON = 1;
-	AI_PrintClr("Mágové Ohně tě označili za psance... Innos vidí všechno!",177,58,17);
+	AI_PrintClr( " The Fire Mages have branded you an outlaw... Innos sees everything! " , 177 , 58 , 17 );
 	Snd_Play("Geldbeutel");
 	MIS_DARON_GIVEGOLD = LOG_FAILED;
 	B_LogEntry_Failed(TOPIC_DARON_GIVEGOLD);
@@ -1161,7 +1159,7 @@ func void use_itmi_daron_suma()
 
 instance ITAM_HOLGER_AMULET(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
 	value = 300;
@@ -1172,6 +1170,6 @@ instance ITAM_HOLGER_AMULET(C_Item)
 	description = "Holgerův amulet";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
