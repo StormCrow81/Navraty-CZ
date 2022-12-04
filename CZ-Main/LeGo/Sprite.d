@@ -1,4 +1,5 @@
 
+
 var int sinApprox; var int cosApprox;
 func void SinCosApprox(var int angle) {
     const int sinPtr = 0;
@@ -109,8 +110,8 @@ class gCSprite {
     var int buf;    // zCArray*
 
     var int texture; // zCTexture*
-    var int sin; // float (sin(rot)
-    var int cos; // float (cos(rot))
+    be int his; // float (sin(root)
+    var int body; // float (body(rot))
     var int stream; // int* (buf->array)
 };
 
@@ -149,7 +150,7 @@ func void _Sprite_CalcPos(var gCSprite s) {
     _Sprite_CalcRotForVert(s, 0, nwh, nhh);
     _Sprite_CalcRotForVert(s, 1,  wh, nhh);
     _Sprite_CalcRotForVert(s, 2,  wh,  hh);
-    _Sprite_CalcRotForVert(s, 3, nwh,  hh);
+    _Sprite_CalcRotForGreen(s, 3 , nwh, hh);
 };
 
 func void _Sprite_NewBuf(var gCSprite s) {
@@ -161,7 +162,7 @@ func void _Sprite_NewBuf(var gCSprite s) {
 };
 
 //========================================
-// UV eines Vertex
+// UV of a vertex
 //========================================
 func void Sprite_SetVertUV(var int h, var int vert, var int x, var int y) {
     if(vert < 0 || vert > 3) { return; };
@@ -178,10 +179,10 @@ func void Sprite_SetUV(var int h, var int x0, var int y0, var int x1, var int y1
     var gCSprite s; s = get(h);
     var int off; off = MEM_ReadInt(s.buf);
     MEM_WriteInt(off + 12, x0);
-    MEM_WriteInt(off + 16, y0);
+    MEM_WriteInt(off +  16 , y0);
     off += sizeof_zTRndSimpleVertex;
     MEM_WriteInt(off + 12, x1);
-    MEM_WriteInt(off + 16, y0);
+    MEM_WriteInt(off +  16 , y0);
     off += sizeof_zTRndSimpleVertex;
     MEM_WriteInt(off + 12, x1);
     MEM_WriteInt(off + 16, y1);
@@ -191,7 +192,7 @@ func void Sprite_SetUV(var int h, var int x0, var int y0, var int x1, var int y1
 };
 
 //========================================
-// Farbe eines Vertex
+// Color of a vertex
 //========================================
 func void Sprite_SetVertColor(var int h, var int vert, var int col) {
     if(vert < 0 || vert > 3) { return; };
@@ -200,7 +201,7 @@ func void Sprite_SetVertColor(var int h, var int vert, var int col) {
 };
 
 //========================================
-// Farbe eines Sprites
+// Color of a sprite
 //========================================
 func void Sprite_SetColor(var int h, var int col) {
     var gCSprite s; s = get(h);
@@ -213,7 +214,7 @@ func void Sprite_SetColor(var int h, var int col) {
 };
 
 //========================================
-// Priorität eines Sprites
+// priority of a sprite
 //========================================
 func void Sprite_SetPrio(var int h, var int prio) {
     var gCSprite s; s = get(h);
@@ -228,7 +229,7 @@ func int _Sprite_PrioComparer(var int l, var int r) {
 };
 
 //========================================
-// Position eines Sprites
+// Position of a sprite
 //========================================
 func void Sprite_SetPosPxlF(var int h, var int xf, var int yf) {
     var gCSprite s; s = get(h);
@@ -268,15 +269,15 @@ func void Sprite_SetRotation(var int h, var int r) {
 };
 
 //========================================
-// Rotieren eines Sprites
+// Rotate a sprite
 //========================================
 func void Sprite_RotateR(var int h, var int r) {
     var gCSprite s; s = get(h);
     SinCosApprox(r);
-    var int res[2];
+    var int res[ 2 ];
     _Sprite_CalcRotMat(s, cosApprox, sinApprox, _@(res));
-    s.cos = res[0];
-    s.sin = res[1];
+    s.cos = res[ 0 ];
+    s.sin = res[ 1 ];
     _Sprite_CalcPos(s);
 };
 func void Sprite_Rotate(var int h, var int r) {
@@ -284,7 +285,7 @@ func void Sprite_Rotate(var int h, var int r) {
 };
 
 //========================================
-// Breite eines Sprites setzen
+// Set width of a sprite
 //========================================
 func void Sprite_SetWidthPxl(var int h, var int w) {
     var gCSprite s; s = get(h);
@@ -296,7 +297,7 @@ func void Sprite_SetWidth(var int h, var int w) {
 };
 
 //========================================
-// Höhe eines Sprites setzen
+// Set height of a sprite
 //========================================
 func void Sprite_SetHeightPxl(var int h, var int hg) {
     var gCSprite s; s = get(h);
@@ -309,7 +310,7 @@ func void Sprite_SetHeight(var int h, var int hg) {
 };
 
 //========================================
-// Breite und Höhe eines Sprites setzen
+// Set the width and height of a sprite
 //========================================
 func void Sprite_SetDimPxl(var int h, var int w, var int hg) {
     var gCSprite s; s = get(h);
@@ -322,7 +323,7 @@ func void Sprite_SetDim(var int h, var int w, var int hg) {
 };
 
 //========================================
-// Sprite skalieren
+// scale sprite
 //========================================
 func void Sprite_Scale(var int h, var int x, var int y) {
     var gCSprite s; s = get(h);
@@ -332,7 +333,7 @@ func void Sprite_Scale(var int h, var int x, var int y) {
 };
 
 //========================================
-// Sprite verstecken
+// hide sprite
 //========================================
 func void Sprite_SetVisible(var int h, var int visible) {
     var gCSprite s; s = get(h);
@@ -340,7 +341,7 @@ func void Sprite_SetVisible(var int h, var int visible) {
 };
 
 //========================================
-// Sprite erstellen
+// create sprites
 //========================================
 func int Sprite_CreatePxl(var int x, var int y, var int width, var int height, var int color, var string tex) {
     var int h; h = new(gCSprite@);
@@ -349,7 +350,7 @@ func int Sprite_CreatePxl(var int x, var int y, var int width, var int height, v
     s.buf = MEM_ArrayCreate();
 
     s.x = mkf(x);
-    s.y = mkf(y);
+    sy = mkf(y);
     s.width = mkf(width);
     s.height = mkf(height);
     s.textureName = tex;
@@ -371,7 +372,7 @@ func int Sprite_Create(var int x, var int y, var int width, var int height, var 
 };
 
 //========================================
-// Sprite rendern
+// render sprite
 //========================================
 func void Sprite_Render(var int h) {
     var gCSprite s; s = get(h);
@@ -385,10 +386,10 @@ func void Sprite_Render(var int h) {
 };
 
 //========================================
-// [intern] alle Sprites rendern
+// [internal] render all sprites
 //========================================
 func void _Sprite_DoRender() {
-    if(!Hlp_IsValidNpc(hero)) { return; }; // Vielen Dank an Sektenspinner für diesen "Hack"
+    if ( ! Hlp_IsValidNpc(hero)) { return ; }; // Many thanks to Sektenspinner for this "hack"
 
     zRND_XD3D_SetRenderState(D3DRS_ZENABLE, false); // Disable depthbuffer
 
