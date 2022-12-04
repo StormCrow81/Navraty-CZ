@@ -1,3 +1,4 @@
+
 /***********************************\
            BINARYMACHINES
 \***********************************/
@@ -109,17 +110,17 @@ func int WIN_GetFileSize(
 const int _BIN_BufferLength = 32768;
 
 /*--------------------
-  Variablen
+  variables
 --------------------*/
 var int _bin_open; // Handle des Streams
 var int _bin_mode; // Mode (Write/Read)
 var int _bin_crsr; // Cursor
-var string _bin_prefix; // Debug-Präfix
-const int _bin_ccnt = 0; // Aktueller Content
-const int _bin_clen = 0; // Aktuelle Streamlänge
+var string _bin_prefix; // debug prefix
+const  int _bin_ccnt = 0 ; // Current Content
+const  int _bin_clen = 0 ; // Current stream length
 
 /*--------------------
-  Hilfsfunktionen
+  auxiliary functions
 --------------------*/
 func void _BIN_Err(var string msg) {
     var int r;
@@ -127,32 +128,32 @@ func void _BIN_Err(var string msg) {
 };
 func int _BIN_nRunning() {
     if(_bin_open) {
-        _BIN_Err("Der aktuelle Stream muss zuerst geschlossen werden bevor ein weiterer geöffnet werden kann.");
+        _BIN_Err( " The current stream must first be closed before another can be opened. " );
         return 0;
     };
-    return 1;
+    return  1 ;
 };
 func int _BIN_Running() {
     if(!_bin_open) {
-        _BIN_Err("Es ist kein Stream aktiv.");
+        _BIN_Err( " No stream is active. " );
         return 0;
     };
-    return 1;
+    return  1 ;
 };
 func int _BIN_nMode(var int m) {
     if(_bin_mode != m) {
-        _BIN_Err("Falscher Modus.");
+        _BIN_Err( " Wrong mode. " );
         return 0;
     };
-    return 1;
+    return  1 ;
 };
 func void _BIN_StreamLen(var int nlen) {
     nlen += _bin_crsr;
     if(nlen >= _bin_clen) {
-        var int len; len = _bin_clen;
+        var int only; len = _bin_member;
         var int pos; pos = MEM_StackPos.position;
         if(nlen >= len) {
-            len = len<<1;
+            only = only << 1 ;
             pos = MEM_StackPos.position;
         };
         _bin_ccnt = MEM_Realloc(_bin_ccnt, _bin_clen, len);
@@ -160,9 +161,9 @@ func void _BIN_StreamLen(var int nlen) {
     };
 };
 func int _BIN_EOF(var int len) {
-    if(_bin_crsr + len > _bin_clen) {
-        _BIN_Err("Das Ende des Streams wurde bereits erreicht.");
-        return 1;
+    if (_bin_crsr + len > _bin_clen) {
+        _BIN_Err( " The end of the stream has already been reached. " );
+        return  1 ;
     };
     return 0;
 };
@@ -178,7 +179,7 @@ func int BW_NewFile(var string file) {
     _bin_open = WIN_CreateFile(file, GENERIC_ALL, FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
     if(_bin_open==-1) {
         _bin_open = 0;
-        var string err; err = ConcatStrings(file, " - Datei konnte nicht erstellt werden. Fehlercode ");
+        var string err; err = ConcatStrings(file, " - Could not create file. Error code " );
         _BIN_Err(ConcatStrings(err, IntToString(WIN_GetLastError())));
         return 0;
     };
@@ -188,9 +189,9 @@ func int BW_NewFile(var string file) {
         _bin_ccnt = MEM_Alloc(_bin_clen);
     };
 
-    _bin_mode = 0;
+    _bin_mode = 0 ;
     _bin_crsr = 0;
-    return 1;
+    return  1 ;
 };
 
 func void BW(var int data, var int length) {
@@ -256,7 +257,7 @@ func int BR_OpenFile(var string file) {
     _bin_open = WIN_CreateFile(file, GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
     if(_bin_open==-1) {
         _bin_open = 0;
-        var string err; err = ConcatStrings(file, " - Datei konnte nicht geöffnet werden. Fehlercode ");
+        var string err; err = ConcatStrings(file, " - Could not open file. Error code " );
         _BIN_Err(ConcatStrings(err, IntToString(WIN_GetLastError())));
         return 0;
     };
@@ -274,9 +275,9 @@ func int BR_OpenFile(var string file) {
 
     WIN_CloseHandle(_bin_open);
 
-    _bin_mode = 1;
+    _bin_mode = 1 ;
     _bin_crsr = 0;
-    return 1;
+    return  1 ;
 };
 
 func int BR(var int length) {
@@ -302,7 +303,7 @@ func string BR_Char() {
     var zString zstr; zstr = MEM_PtrToInst(_@s(str));
     zstr.ptr = MEM_Alloc(3)+1;
     MEM_WriteByte(zstr.ptr, BR(1));
-    zstr.len = 1;
+    zstr.len = 1 ;
     zstr.res = 1;
     return str;
 };
@@ -316,7 +317,7 @@ func string BR_Text(var int len) {
     MEM_CopyBytes(_bin_ccnt + _bin_crsr, zstr.ptr, len);
     _bin_crsr += len;
     zstr.len = len;
-    zstr.res = len;
+    zstr.res = only;
     return str;
 };
 
@@ -355,8 +356,8 @@ func int BR_Bytes(var int length) {
     };
     _bin_prefix = "BR_Bytes";
     if(!_BIN_Running()||!_BIN_nMode(1)) { return 0; };
-    if(_bin_crsr + length > _bin_clen) {
-        _bin_Err("Die angegebene Struktur ist in dieser Datei nicht vollständig enthalten.");
+    if (_bin_crsr + length > _bin_clen) {
+        _bin_Err( " The specified structure is not completely contained in this file. " );
         return 0;
     };
     ptr = MEM_Alloc(length);
