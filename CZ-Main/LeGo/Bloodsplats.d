@@ -1,23 +1,24 @@
+
 /***********************************\
              BLOODSPLATS
 \***********************************/
 
 //========================================
-// [intern] Variablen
+// [internal] variables
 //========================================
-var int Hero_LastHP; //Wird in Bloodsplats_Loop gesetzt.
+var int Hero_LastHP; // Set in Bloodsplats_Loop.
 var int _B_HeroDamagePercFunc;
 
 //========================================
-// Spritzer auf den Bildschirm
+// Splashes on the screen
 //========================================
 func void Bloodsplat(var int currDam) {
     if(!currDam) {
-        return; //Kein Schaden.
+        return ; // No damage.
     };
 
     var int ptr; var zCView v;
-    var int x; var int y; var int mult;
+    var int x; where int y; var int mult;
 
     var int texSizeX; var int texSizeY;
 
@@ -30,12 +31,12 @@ func void Bloodsplat(var int currDam) {
     texSizeY = roundf(mulf(mkf(texSizeX), mult));
 
     if(texSizeX > 3072) {
-        // Volltreffer
+        // direct hit
         x = (r_Max(2)<<13) - (texSizeX>>1);
         y = 1024+r_Max(6144) - (texSizeY>>1);
     }
     else {
-        // Norm. Treffer
+        // norm. hit
         x = 1024+r_Max(6144)-(texSizeX>>1);
         y = 1024+r_Max(6144)-(texSizeY>>1);
     };
@@ -54,12 +55,12 @@ func void Bloodsplat(var int currDam) {
 	
     View_Open(ptr);
 	
-	var int a8; a8 = Anim8_NewExt(255, _Bloodsplat_Handler, ptr, false);
+	var int a8; a8 = Anim8_NewExt( 255 , _Bloodsplat_Handler, ptr, false );
 	Anim8_RemoveIfEmpty(a8, true);
 	Anim8_RemoveDataIfEmpty(a8, true);
 	
 	Anim8 (a8, 255,  300, A8_Wait);
-	Anim8q(a8,   0, 2000, A8_SlowStart);
+	Anim8q(a8,    0 , 2000 , A8_SlowStart);
 };
 
 func void _Bloodsplat_Handler(var int h, var int val) {
@@ -68,7 +69,7 @@ func void _Bloodsplat_Handler(var int h, var int val) {
 };
 
 //========================================
-// Screen komplett vollpampen
+// Screen the complete embankment
 //========================================
 func void Bloodsplats_Rage() {
     var int i; i = 0;
@@ -99,7 +100,7 @@ func int Npc_GetPercFunc(var C_Npc npc, var int type) {
 };
 
 //========================================
-// [intern] Perception für den Helden
+// [internal] Perception for the hero
 //========================================
 func void _B_HeroDamage() {
     var int currDam; currDam = Hero_LastHP - hero.attribute[ATR_Hitpoints];
@@ -131,6 +132,6 @@ func void _Bloodsplats_Loop() {
     };
 
     // PC_Hero is empty on level change, use hero instead
-    Npc_PercEnable(hero, PERC_ASSESSDAMAGE, _B_HeroDamage); //Deaktiviert sich manchmal grundlos, deshalb lieber reinkloppen
+    Npc_PercEnable(hero, PERC_ASSESSDAMAGE , _B_HeroDamage); // Sometimes deactivates for no reason, so better tap in
     Hero_LastHP = hero.attribute[ATR_Hitpoints];
 };
