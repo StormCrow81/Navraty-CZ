@@ -1,76 +1,77 @@
 
+
 const int MAGICBOWBONUS = 5;
 const int MAGICCROSSBOWBONUS = 5;
 
 instance ItMi_ArrowTip(C_Item)
 {
-	name = "Hrot šípu";
+	name = " Arrowhead " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 0;
 	visual = "ItMi_ArrowTip.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Používán k výrobě šípů...";
+	text[ 4 ] = " Used to make arrows... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_KerArrowTip(C_Item)
 {
-	name = "Rudný hrot šípu";
+	name = " Ore Arrowhead " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 0;
 	visual = "ItMi_ArrowTip.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Používán k výrobě kerenických šípů...";
+	text[ 4 ] = " Used to make Kerenic arrows... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_BoltTip(C_Item)
 {
-	name = "Hrot šipky";
+	name = " Arrowhead " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 0;
 	visual = "ItMi_BoltTip.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Používán k výrobě šipek...";
+	text[ 4 ] = " Used to make arrows... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_ArrowShaft(C_Item)
 {
-	name = "Dřík šípu";
+	name = " Arrow shaft " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 0;
 	visual = "ItMi_ArrowShaft.3ds";
 	material = MAT_WOOD;
 	description = name;
-	text[4] = "Používán k výrobě šípů...";
+	text[ 4 ] = " Used to make arrows... " ;
 	inv_animate = 1;
 };
 
 instance ItMi_BoltShaft(C_Item)
 {
-	name = "Dřík šipky";
+	name = " Arrow Shaft " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 0;
 	visual = "ItMi_BoltShaft.3ds";
 	material = MAT_WOOD;
 	description = name;
-	text[4] = "Používán k výrobě šipek...";
+	text[ 4 ] = " Used to make arrows... " ;
 	inv_animate = 1;
 };
 
 instance ItRw_Arrow(C_Item)
 {
 	name = "Šíp";
-	mainflag = ITEM_KAT_MUN;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_BOW | ITEM_MULTI | ITEM_MISSION;
 	value = Value_Pfeil;
 	visual = "ItRw_Arrow_Sky_Iron.3ds";
@@ -99,7 +100,7 @@ func void UseItRw_Arrow()
 			{
 				weapon.munition = ItRw_Arrow;
 				Use_Arrow = TRUE;
-				AI_Print("Vybrány obyčejné šípy...");
+				AI_Print( " Plain arrows selected... " );
 			};
 			if(Use_PoisonArrow == TRUE)
 			{
@@ -120,29 +121,29 @@ func void UseItRw_Arrow()
 		}
 		else
 		{
-			//Print("Ne ekipirovan podkhodyashchiy luk!");
-			AI_PrintClr("Nemáš nasazený vhodný luk!",177,58,17);		
+			// Print("Ne ekipirovan podkhodyashchiy luk!");
+			AI_PrintClr( " You don't have a suitable bow! " , 177 , 58 , 17 );		
 		};
 	}
 	else
 	{
 		if(Npc_HasEquippedRangedWeapon(hero) == FALSE)
 		{
-			//Print("Ne ekipirovan ni odin luk!");	
-			AI_PrintClr("Nemáš nasazený žádný luk!",177,58,17);	
+			// Print("Ne ekipirovan ni odin luk!");	
+			AI_PrintClr( " You have no bow on! " , 177 , 58 , 17 );	
 		}
 		else
 		{
-			//Print("Vy uzhe ispol'zuyete etot tip strel!");
-			AI_PrintClr("Už používáš tenhle typ šípů!",177,58,17);		
+			// Print("Vy uzhe ispol'zuyete etot tip strel!");
+			AI_PrintClr( " You already use this type of arrows! " , 177 , 58 , 17 );		
 		};
 	};
 };
 
 instance ItRw_PoisonArrow(C_Item)
 {
-	name = "Otrávený šíp";
-	mainflag = ITEM_KAT_MUN;
+	name = " Poisoned Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_BOW | ITEM_MULTI | ITEM_MISSION;
 	value = 7;
 	effect = "SPELLFX_POISONARROW";
@@ -151,7 +152,7 @@ instance ItRw_PoisonArrow(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = UseItRw_Arrow_Poison;
 	description = name;
-	text[4] = "Způsobuje dodatečné poškození jedem...";
+	text[ 4 ] = " Deals additional poison damage... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -173,7 +174,7 @@ func void UseItRw_Arrow_Poison()
 			{
 				weapon.munition = ItRw_PoisonArrow;
 				Use_PoisonArrow = TRUE;
-				Print("Vybrány otrávené šípy...");
+				Print ( " Poisoned arrows selected... " );
 			};
 			if(Use_Arrow == TRUE)
 			{
@@ -194,29 +195,29 @@ func void UseItRw_Arrow_Poison()
 		}
 		else
 		{
-			//Print("Ne ekipirovan podkhodyashchiy luk!");	
-			AI_PrintClr("Nemáš nasazený vhodný luk!",177,58,17);			
+			// Print("Ne ekipirovan podkhodyashchiy luk!");	
+			AI_PrintClr( " You don't have a suitable bow! " , 177 , 58 , 17 );			
 		};
 	}
 	else
 	{
 		if(Npc_HasEquippedRangedWeapon(hero) == FALSE)
 		{
-			//Print("Ne ekipirovan ni odin luk!");		
-			AI_PrintClr("Nemáš nasazený žádný luk!",177,58,17);	
+			// Print("Ne ekipirovan ni odin luk!");		
+			AI_PrintClr( " You have no bow on! " , 177 , 58 , 17 );	
 		}
 		else
 		{
-			//Print("Vy uzhe ispol'zuyete etot tip strel!");	
-			AI_PrintClr("Už používáš tenhle typ šípů!",177,58,17);
+			// Print("Vy uzhe ispol'zuyete etot tip strel!");	
+			AI_PrintClr( " You already use this type of arrows! " , 177 , 58 , 17 );
 		};	
 	};
 };
 
 instance ItRw_HolyArrow(C_Item)
 {
-	name = "Posvěcený šíp";
-	mainflag = ITEM_KAT_MUN;
+	name = " Sacred Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_BOW | ITEM_MULTI | ITEM_MISSION;
 	wear = WEAR_EFFECT;
 	effect = "SPELLFX_HOLYARROW";
@@ -226,7 +227,7 @@ instance ItRw_HolyArrow(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = UseItRw_Arrow_Holy;
 	description = name;
-	text[4] = "Způsobuje dodatečné poškození nemrtvým...";
+	text[ 4 ] = " Deals additional damage to undead... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = TRUE;
@@ -250,7 +251,7 @@ func void UseItRw_Arrow_Holy()
 			{
 				weapon.munition = ItRw_HolyArrow;
 				Use_HolyArrow = TRUE;
-				Print("Vybrány posvěcené šípy...");
+				Print ( " Chosen consecrated arrows... " );
 			};
 			if(Use_Arrow == TRUE)
 			{
@@ -271,29 +272,29 @@ func void UseItRw_Arrow_Holy()
 		}
 		else
 		{
-			//Print("Ne ekipirovan podkhodyashchiy luk!");	
-			AI_PrintClr("Nemáš nasazený vhodný luk!",177,58,17);			
+			// Print("Ne ekipirovan podkhodyashchiy luk!");	
+			AI_PrintClr( " You don't have a suitable bow! " , 177 , 58 , 17 );			
 		};
 	}
 	else
 	{
 		if(Npc_HasEquippedRangedWeapon(hero) == FALSE)
 		{
-			//Print("Ne ekipirovan ni odin luk!");		
-			AI_PrintClr("Nemáš nasazený žádný luk!",177,58,17);	
+			// Print("Ne ekipirovan ni odin luk!");		
+			AI_PrintClr( " You have no bow on! " , 177 , 58 , 17 );	
 		}
 		else
 		{
-			//Print("Vy uzhe ispol'zuyete etot tip strel!");	
-			AI_PrintClr("Už používáš tenhle typ šípů!",177,58,17);
+			// Print("Vy uzhe ispol'zuyete etot tip strel!");	
+			AI_PrintClr( " You already use this type of arrows! " , 177 , 58 , 17 );
 		};	
 	};
 };
 
 instance ItRw_Addon_MagicArrow(C_Item)
 {
-	name = "Magický šíp";
-	mainflag = ITEM_KAT_MUN;
+	name = " Magic Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_BOW | ITEM_MULTI | ITEM_MISSION;
 	wear = WEAR_EFFECT;
 	effect = "SPELLFX_MAGICARROW";
@@ -303,7 +304,7 @@ instance ItRw_Addon_MagicArrow(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = UseItRw_Arrow_Magic;
 	description = name;
-	text[4] = "Způsobuje dodatečné poškození magií...";
+	text[ 4 ] = " Deals additional magic damage... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = TRUE;
@@ -327,7 +328,7 @@ func void UseItRw_Arrow_Magic()
 			{
 				weapon.munition = ItRw_Addon_MagicArrow;
 				Use_MagicArrow = TRUE;
-				Print("Vybrány magické šípy...");
+				Print ( " Magic arrows selected... " );
 			};
 			if(Use_Arrow == TRUE)
 			{
@@ -348,29 +349,29 @@ func void UseItRw_Arrow_Magic()
 		}
 		else
 		{
-			//Print("Ne ekipirovan podkhodyashchiy luk!");	
-			AI_PrintClr("Nemáš nasazený vhodný luk!",177,58,17);			
+			// Print("Ne ekipirovan podkhodyashchiy luk!");	
+			AI_PrintClr( " You don't have a suitable bow! " , 177 , 58 , 17 );			
 		};
 	}
 	else
 	{
 		if(Npc_HasEquippedRangedWeapon(hero) == FALSE)
 		{
-			//Print("Ne ekipirovan ni odin luk!");		
-			AI_PrintClr("Nemáš nasazený žádný luk!",177,58,17);	
+			// Print("Ne ekipirovan ni odin luk!");		
+			AI_PrintClr( " You have no bow on! " , 177 , 58 , 17 );	
 		}
 		else
 		{
-			//Print("Vy uzhe ispol'zuyete etot tip strel!");	
-			AI_PrintClr("Už používáš tenhle typ šípů!",177,58,17);
+			// Print("Vy uzhe ispol'zuyete etot tip strel!");	
+			AI_PrintClr( " You already use this type of arrows! " , 177 , 58 , 17 );
 		};	
 	};
 };
 
 instance ItRw_Addon_FireArrow(C_Item)
 {
-	name = "Ohnivý šíp";
-	mainflag = ITEM_KAT_MUN;
+	name = " Fire Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_BOW | ITEM_MULTI | ITEM_MISSION;
 	wear = WEAR_EFFECT;
 	value = 7;
@@ -380,7 +381,7 @@ instance ItRw_Addon_FireArrow(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = UseItRw_Arrow_Fire;
 	description = name;
-	text[4] = "Způsobuje dodatečné poškození ohněm...";
+	text[ 4 ] = " Deals additional fire damage... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = TRUE;
@@ -404,7 +405,7 @@ func void UseItRw_Arrow_Fire()
 			{
 				weapon.munition = ItRw_Addon_FireArrow;
 				Use_FireArrow = TRUE;
-				Print("Vybrány ohnivé šípy...");
+				Print ( " Fire arrows selected... " );
 			};
 			if(Use_Arrow == TRUE)
 			{
@@ -425,21 +426,21 @@ func void UseItRw_Arrow_Fire()
 		}
 		else
 		{
-			//Print("Ne ekipirovan podkhodyashchiy luk!");
-			AI_PrintClr("Nemáš nasazený vhodný luk!",177,58,17);				
+			// Print("Ne ekipirovan podkhodyashchiy luk!");
+			AI_PrintClr( " You don't have a suitable bow! " , 177 , 58 , 17 );				
 		};
 	}
 	else
 	{
 		if(Npc_HasEquippedRangedWeapon(hero) == FALSE)
 		{
-			//Print("Ne ekipirovan ni odin luk!");		
-			AI_PrintClr("Nemáš nasazený žádný luk!",177,58,17);	
+			// Print("Ne ekipirovan ni odin luk!");		
+			AI_PrintClr( " You have no bow on! " , 177 , 58 , 17 );	
 		}
 		else
 		{
-			//Print("Vy uzhe ispol'zuyete etot tip strel!");	
-			AI_PrintClr("Už používáš tenhle typ šípů!",177,58,17);
+			// Print("Vy uzhe ispol'zuyete etot tip strel!");	
+			AI_PrintClr( " You already use this type of arrows! " , 177 , 58 , 17 );
 		};	
 	};
 };
@@ -447,7 +448,7 @@ func void UseItRw_Arrow_Fire()
 instance ItRw_Bolt(C_Item)
 {
 	name = "Šipka";
-	mainflag = ITEM_KAT_MUN;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_CROSSBOW | ITEM_MULTI | ITEM_MISSION;
 	value = Value_Bolzen;
 	visual = "ItRw_Bolt_Sky.3ds";
@@ -476,11 +477,11 @@ func void UseItRw_Bolt()
 			{
 				weapon.munition = ItRw_Bolt;
 				Use_Bolt = TRUE;
-				AI_Print("Vybrány obyčejné šipky...");
+				AI_Print( " Plain arrows selected... " );
 			};
 			if(Use_MagicBolt == TRUE)
 			{
-				Use_MagicBolt = FALSE;
+				Use_MagicBolt = FALSE ;
 			};
 			if(Use_HolyBolt == TRUE)
 			{
@@ -489,29 +490,29 @@ func void UseItRw_Bolt()
 		}
 		else
 		{
-			//Print("Ne ekipirovan podkhodyashchiy arbalet!");
-			AI_PrintClr("Nemáš nasazenou vhodnou kuši!",177,58,17);		
+			// Print("Ne ekipirovan podkhodyashchiy arbalet!");
+			AI_PrintClr( " You don't have a suitable crossbow! " , 177 , 58 , 17 );		
 		};
 	}
 	else
 	{
 		if(Npc_HasEquippedRangedWeapon(hero) == FALSE)
 		{
-			//Print("Ne ekipirovan ni odin arbalet!");	
-			AI_PrintClr("Nemáš nasazenou žádnou kuši!",177,58,17);	
+			// Print("Ne ekipirovan ni odin arbalet!");	
+			AI_PrintClr( " You have no crossbow attached! " , 177 , 58 , 17 );	
 		}
 		else
 		{
-			//Print("Vy uzhe ispol'zuyete etot tip boltov!");	
-			AI_PrintClr("Už používáš tenhle typ šipek!",177,58,17);	
+			// Print("Vy uzhe ispol'zuyete etot tip boltov!");	
+			AI_PrintClr( " You already use this type of arrows! " , 177 , 58 , 17 );	
 		};
 	};
 };
 
 instance ItRw_Addon_MagicBolt(C_Item)
 {
-	name = "Magická šipka";
-	mainflag = ITEM_KAT_MUN;
+	name = " Magic Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_CROSSBOW | ITEM_MULTI | ITEM_MISSION;
 	value = 15;
 	wear = WEAR_EFFECT;
@@ -521,7 +522,7 @@ instance ItRw_Addon_MagicBolt(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = UseItRw_Bolt_Magic;
 	description = name;
-	text[4] = "Způsobuje dodatečné poškození magií...";
+	text[ 4 ] = " Deals additional magic damage... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = TRUE;
@@ -545,7 +546,7 @@ func void UseItRw_Bolt_Magic()
 			{
 				weapon.munition = ItRw_Addon_MagicBolt;
 				Use_MagicBolt = TRUE;
-				AI_Print("Vybrány magické šipky...");
+				AI_Print( " Magic arrows selected... " );
 			};
 			if(Use_Bolt == TRUE)
 			{
@@ -558,29 +559,29 @@ func void UseItRw_Bolt_Magic()
 		}
 		else
 		{
-			//Print("Ne ekipirovan podkhodyashchiy arbalet!");		
-			AI_PrintClr("Nemáš nasazenou vhodnou kuši!",177,58,17);
+			// Print("Ne ekipirovan podkhodyashchiy arbalet!");		
+			AI_PrintClr( " You don't have a suitable crossbow! " , 177 , 58 , 17 );
 		};
 	}
 	else
 	{
 		if(Npc_HasEquippedRangedWeapon(hero) == FALSE)
 		{
-			//Print("Ne ekipirovan ni odin arbalet!");	
-			AI_PrintClr("Nemáš nasazenou žádnou kuši!",177,58,17);		
+			// Print("Ne ekipirovan ni odin arbalet!");	
+			AI_PrintClr( " You have no crossbow attached! " , 177 , 58 , 17 );		
 		}
 		else
 		{
-			//Print("Vy uzhe ispol'zuyete etot tip boltov!");	
-			AI_PrintClr("Už používáš tenhle typ šipek!",177,58,17);	
+			// Print("Vy uzhe ispol'zuyete etot tip boltov!");	
+			AI_PrintClr( " You already use this type of arrows! " , 177 , 58 , 17 );	
 		};
 	};
 };
 
 instance ItRw_HolyBolt(C_Item)
 {
-	name = "Posvěcená šipka";
-	mainflag = ITEM_KAT_MUN;
+	name = " Sacred Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_CROSSBOW | ITEM_MULTI | ITEM_MISSION;
 	value = 15;
 	wear = WEAR_EFFECT;
@@ -590,7 +591,7 @@ instance ItRw_HolyBolt(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = UseItRw_Bolt_Holy;
 	description = name;
-	text[4] = "Způsobuje dodatečné poškození nemrtvým...";
+	text[ 4 ] = " Deals additional damage to undead... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = TRUE;
@@ -614,7 +615,7 @@ func void UseItRw_Bolt_Holy()
 			{
 				weapon.munition = ItRw_HolyBolt;
 				Use_HolyBolt = TRUE;
-				AI_Print("Vybrány posvěcené šipky...");
+				AI_Print( " Sacred arrows selected... " );
 			};
 			if(Use_Bolt == TRUE)
 			{
@@ -622,42 +623,42 @@ func void UseItRw_Bolt_Holy()
 			};
 			if(Use_MagicBolt == TRUE)
 			{
-				Use_MagicBolt = FALSE;
+				Use_MagicBolt = FALSE ;
 			};
 		}
 		else
 		{
-			//Print("Ne ekipirovan podkhodyashchiy arbalet!");
-			AI_PrintClr("Nemáš nasazenou vhodnou kuši!",177,58,17);
+			// Print("Ne ekipirovan podkhodyashchiy arbalet!");
+			AI_PrintClr( " You don't have a suitable crossbow! " , 177 , 58 , 17 );
 		};
 	}
 	else
 	{
 		if(Npc_HasEquippedRangedWeapon(hero) == FALSE)
 		{
-			//Print("Ne ekipirovan ni odin arbalet!");	
-			AI_PrintClr("Nemáš nasazenou žádnou kuši!",177,58,17);	
+			// Print("Ne ekipirovan ni odin arbalet!");	
+			AI_PrintClr( " You have no crossbow attached! " , 177 , 58 , 17 );	
 		}
 		else
 		{
-			//Print("Vy uzhe ispol'zuyete etot tip boltov!");	
-			AI_PrintClr("Už používáš tenhle typ šipek!",177,58,17);		
+			// Print("Vy uzhe ispol'zuyete etot tip boltov!");	
+			AI_PrintClr( " You already use this type of arrows! " , 177 , 58 , 17 );		
 		};
 	};
 };
 
-//--------------------spetsificheskiye boyepripasy------------------------------------
+// --------------------spetsificheskiye boyepripasy-------------------- ----------
 
 instance ITRW_ZUNTARROW(C_Item)
 {
-	name = "Označený šíp";
-	mainflag = ITEM_KAT_MUN;
+	name = " Marked Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_BOW | ITEM_MULTI | ITEM_MISSION;
 	value = Value_Pfeil;
 	visual = "ItRw_Arrow_Sky_Iron.3ds";
 	material = MAT_WOOD;
 	description = name;
-	text[2] = "Na hrotu šípu je vyryto písmeno 'F'...";
+	text[ 2 ] = " The letter 'F' is engraved on the arrowhead... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -665,15 +666,15 @@ instance ITRW_ZUNTARROW(C_Item)
 
 instance ITRW_MYHUNTARROW(C_Item)
 {
-	name = "Kerenický šíp";
-	mainflag = ITEM_KAT_MUN;
+	name = " Kerenic Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_BOW | ITEM_MULTI | ITEM_MISSION;
 	value = Value_Pfeil;
 	visual = "ItRw_Arrow_Sky_Keren.3ds";
 	material = MAT_WOOD;
 	description = name;
 	text[2] = "";
-	text[4] = "Dokáže prorazit téměř jakoukoli zbroj...";
+	text[ 4 ] = " Can penetrate almost any armor... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -682,7 +683,7 @@ instance ITRW_MYHUNTARROW(C_Item)
 instance ItRw_Ass_2x2(C_Item)
 {
 	name = "";
-	mainflag = ITEM_KAT_MUN;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_CROSSBOW | ITEM_MULTI;
 	value = 0;
 	wear = WEAR_EFFECT;
@@ -698,8 +699,8 @@ instance ItRw_Ass_2x2(C_Item)
 
 instance ITRW_ADDON_MAGICBOLT_SHV(C_Item)
 {
-	name = "Šipka Exekutora";
-	mainflag = ITEM_KAT_MUN;
+	name = " Executor's Arrow " ;
+	mainflag = ITEM_KAT_MUN ;
 	flags = ITEM_CROSSBOW | ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	wear = WEAR_EFFECT;
@@ -707,7 +708,7 @@ instance ITRW_ADDON_MAGICBOLT_SHV(C_Item)
 	visual = "ItRw_Bolt_Sky_Shv.3ds";
 	material = MAT_WOOD;
 	description = name;
-	text[4] = "Vyzařuje silnou magickou energii...";
+	text[ 4 ] = " Emits powerful magical energy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = TRUE;
@@ -715,11 +716,11 @@ instance ITRW_ADDON_MAGICBOLT_SHV(C_Item)
 	inv_animate = 1;
 };
 
-//---------------------------------Luki------------------------------
+// ---------------------------------Read-------------- ----------------
 
 instance ItRw_Bow_L_01(C_Item)
 {
-	name = "Krátký luk";
+	name = " Short Bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -779,7 +780,7 @@ instance ItRw_Bow_L_02(C_Item)
 
 instance ItRw_Bow_L_03(C_Item)
 {
-	name = "Lovecký luk";
+	name = " Hunting Bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -832,7 +833,7 @@ instance ITRW_BOSPBOW_L_03(C_Item)
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[4] = "Tenhle luk mi dal Bosper...";
+	text[ 4 ] = " Bosper gave me this bow... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -870,11 +871,11 @@ instance ItRw_Bow_L_04(C_Item)
 
 instance ItRw_Bow_M_01(C_Item)
 {
-	name = "Skládaný luk";
+	name = " Folding Bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Kompositbogen;
+	value = Value_Composite book;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 50;
 	damageTotal = 50;
@@ -930,11 +931,11 @@ instance ItRw_Bow_M_02(C_Item)
 
 instance ItRw_Bow_M_03(C_Item)
 {
-	name = "Dlouhý luk";
+	name = " Longbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Langbogen;
+	value = Value_Longbook;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 80;
 	damageTotal = 80;
@@ -960,7 +961,7 @@ instance ItRw_Bow_M_03(C_Item)
 
 instance ItRw_Bow_M_04(C_Item)
 {
-	name = "Bukový luk";
+	name = " Beech bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -989,11 +990,11 @@ instance ItRw_Bow_M_04(C_Item)
 };
 
 
-//--------------------------Kraft lukov----------------------------------
+// --------------------------Bow crafting-------------------- --------------
 
 instance ItRw_BowCraft_01(C_Item)
 {
-	name = "Krátký luk";
+	name = " Short Bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1121,7 +1122,7 @@ instance ItRw_BowCraft_04(C_Item)
 
 instance ItRw_BowCraft_05(C_Item)
 {
-	name = "Bukový luk";
+	name = " Beech bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1151,15 +1152,15 @@ instance ItRw_BowCraft_05(C_Item)
 	inv_animate = 1;
 };
 
-//---------------Luki s siloy----------------------------------------------------
+// ---------------Luki's strength------------------------------ ----------------------
 
 instance ItRw_Bow_H_01(C_Item)
 {
-	name = "Kostěný luk";
+	name = " Bone Bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Knochenbogen;
+	value = value_bone arch;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 110;
 	damageTotal = 110;
@@ -1181,11 +1182,11 @@ instance ItRw_Bow_H_01(C_Item)
 
 instance ItRw_Bow_H_02(C_Item)
 {
-	name = "Dubový luk";
+	name = " Oakbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Eichenbogen;
+	value = Value_oak arch;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 120;
 	damageTotal = 120;
@@ -1207,11 +1208,11 @@ instance ItRw_Bow_H_02(C_Item)
 
 instance ItRw_Bow_H_03(C_Item)
 {
-	name = "Válečný luk";
+	name = " Warbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Kriegsbogen;
+	value = value_bow of war;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 130;
 	damageTotal = 130;
@@ -1233,7 +1234,7 @@ instance ItRw_Bow_H_03(C_Item)
 
 instance ItRw_Bow_H_04(C_Item)
 {
-	name = "Dračí luk";
+	name = " Dragon Bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1257,12 +1258,12 @@ instance ItRw_Bow_H_04(C_Item)
 	inv_animate = 1;
 };
 
-//-----------------unikal'nyye----------------------------------///
+// ------------------unikal'nyye---------------------- ------///
 
 
 instance ITRW_WHITEBOW(C_Item)
 {
-	name = "Nordmarský luk";
+	name = " Nordmar Bow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1314,7 +1315,7 @@ instance ItRw_Sld_Bow(C_Item)
 
 instance ITRW_DIEGO_BOW(C_Item)
 {
-	name = "Diegův pohled";
+	name = " Diego's View " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1344,7 +1345,7 @@ instance ITRW_DIEGO_BOW(C_Item)
 
 instance ItRw_Arabic_Bow(C_Item)
 {
-	name = "Luk stína";
+	name = " Luk stína " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1368,11 +1369,11 @@ instance ItRw_Arabic_Bow(C_Item)
 	inv_animate = 1;
 };
 
-//----------------------Arbalety---------------------------------------------
+// ----------------------Arbalety--------------------------------- --------------------
 
 instance ItRw_Crossbow_Light(C_Item)
 {
-	name = "Lehká kuše";
+	name = " Light Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1400,7 +1401,7 @@ instance ItRw_Crossbow_Light(C_Item)
 
 instance ItRw_Mil_Crossbow(C_Item)
 {
-	name = "Kuše domobránce";
+	name = " Military Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1456,7 +1457,7 @@ instance ItRw_BDT_Crossbow(C_Item)
 
 instance ItRw_Crossbow_L_01(C_Item)
 {
-	name = "Lovecká kuše";
+	name = " Hunting Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1488,7 +1489,7 @@ instance ItRw_Crossbow_L_02(C_Item)
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_LeichteArmbrust;
+	value = Value_LightCrossbow;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 120;
 	munition = ItRw_Bolt;
@@ -1512,7 +1513,7 @@ instance ItRw_Crossbow_L_02(C_Item)
 
 instance ItRw_PAL_Crossbow_NPC(C_Item)
 {
-	name = "Lehká kuše rytíře";
+	name = " Knight's Light Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1540,7 +1541,7 @@ instance ItRw_PAL_Crossbow_NPC(C_Item)
 
 instance ItRw_Crossbow_M_01(C_Item)
 {
-	name = "Bojová kuše";
+	name = " Battle Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1568,11 +1569,11 @@ instance ItRw_Crossbow_M_01(C_Item)
 
 instance ItRw_Crossbow_M_02(C_Item)
 {
-	name = "Kuše rytíře";
+	name = " Knight's Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Kriegsarmbrust;
+	value = value_war crossbow;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 200;
 	munition = ItRw_Bolt;
@@ -1596,11 +1597,11 @@ instance ItRw_Crossbow_M_02(C_Item)
 
 instance ItRw_PAL_Crossbow(C_Item)
 {
-	name = "Kuše paladina";
+	name = " Paladin's Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Kriegsarmbrust;
+	value = value_war crossbow;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 240;
 	munition = ItRw_Bolt;
@@ -1624,11 +1625,11 @@ instance ItRw_PAL_Crossbow(C_Item)
 
 instance ItRw_Crossbow_H_01(C_Item)
 {
-	name = "Těžká kuše";
+	name = " Heavy Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_SchwereArmbrust;
+	value = Value_HeavyCrossbow;
 	damagetype = DAM_POINT;
 	damage[DAM_INDEX_POINT] = 265;
 	munition = ItRw_Bolt;
@@ -1652,7 +1653,7 @@ instance ItRw_Crossbow_H_01(C_Item)
 
 instance ItRw_Crossbow_H_02(C_Item)
 {
-	name = "Kuše drakobijce";
+	name = " Dragon Slayer Crossbow " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1752,7 +1753,7 @@ instance ITRW_ADDON_MAGICCROSSBOW_SHV(C_Item)
 	description = name;
 	text[1] = NAME_Damage;
 	count[1] = damageTotal;
-	text[4] = "Ke střelbě jsou potřeba speciální šipky...";
+	text[ 4 ] = " Special arrows are needed to shoot... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -1781,7 +1782,7 @@ instance ITRW_GREATARBALET_ORC_01(C_Item)
 	count[1] = cond_value[2];
 	text[2] = NAME_Crb_needed;
 	count[2] = cond_value[0];
-	text[4] = "Legendární skřetí zbraň...";
+	text[ 4 ] = " Legendary Goblin Weapon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -1810,7 +1811,7 @@ instance ITRW_GREATARBALET_ORC_02(C_Item)
 	count[1] = cond_value[2];
 	text[2] = NAME_Crb_needed;
 	count[2] = cond_value[0];
-	text[4] = "Legendární skřetí zbraň...";
+	text[ 4 ] = " Legendary Goblin Weapon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -1839,7 +1840,7 @@ instance ITRW_GREATARBALET_ORC_03(C_Item)
 	count[1] = cond_value[2];
 	text[2] = NAME_Crb_needed;
 	count[2] = cond_value[0];
-	text[4] = "Legendární skřetí zbraň...";
+	text[ 4 ] = " Legendary Goblin Weapon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -1868,7 +1869,7 @@ instance ITRW_GREATARBALET_ORC_04(C_Item)
 	count[1] = cond_value[2];
 	text[2] = NAME_Crb_needed;
 	count[2] = cond_value[0];
-	text[4] = "Legendární skřetí zbraň...";
+	text[ 4 ] = " Legendary Goblin Weapon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -1897,16 +1898,16 @@ instance ITRW_GREATARBALET_ORC_05(C_Item)
 	count[1] = cond_value[2];
 	text[2] = NAME_Crb_needed;
 	count[2] = cond_value[0];
-	text[4] = "Legendární skřetí zbraň...";
+	text[ 4 ] = " Legendary Goblin Weapon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-//-----------------------------unikal'nyye luki-----------------
+// -----------------------unikal'nyye luki--------------- --
 
 instance ITRW_BOW_DOUBLE_01(C_Item)		//Khorinis
 {
-	name = "Noční poutník";
+	name = " Night Wanderer " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -1940,7 +1941,7 @@ instance ITRW_BOW_DOUBLE_01(C_Item)		//Khorinis
 	inv_animate = 1;
 };
 
-instance ITRW_G3_LONG_BOW_02(C_Item)		//Yarkendar Zolotoy Drakon
+instance ITRW_G3_LONG_BOW_02 (C_Item)		 // Yarkendar Zolotoy Drakon
 {
 	name = "Yakulus";
 	mainflag = ITEM_KAT_FF;
@@ -1974,7 +1975,7 @@ instance ITRW_G3_LONG_BOW_02(C_Item)		//Yarkendar Zolotoy Drakon
 	inv_animate = 1;
 };
 
-instance ITRW_KMR_KADAT_BOW_01(C_Item)	//Dolina Rudnikov - Netbek
+instance ITRW_KMR_KADAT_BOW_01 (C_Item)	 // Dolina Rudnikov - Netbek
 {
 	name = "Kudzu";
 	mainflag = ITEM_KAT_FF;
@@ -2003,7 +2004,7 @@ instance ITRW_KMR_KADAT_BOW_01(C_Item)	//Dolina Rudnikov - Netbek
 	count[2] = cond_value[2];
 	text[3] = NAME_Bonus_HpMax;
 	count[3] = change_value[2];
-	text[4] = "Lučiště je zdobeno živými stonky rostlin...";
+	text[ 4 ] = " The meadow is decorated with living stems of plants... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2011,7 +2012,7 @@ instance ITRW_KMR_KADAT_BOW_01(C_Item)	//Dolina Rudnikov - Netbek
 
 instance ITRW_KMR_DARKLONG_BOW_01(C_Item)	//Ctaraya shakhta
 {
-	name = "Snovač bolesti";
+	name = " The Sorcerer of Pain " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -2044,7 +2045,7 @@ instance ITRW_KMR_DARKLONG_BOW_01(C_Item)	//Ctaraya shakhta
 
 instance ITRW_SHADOWBOW(C_Item)
 {
-	name = "Luk stínů";
+	name = " Bow of Shadows " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -2070,7 +2071,7 @@ instance ITRW_SHADOWBOW(C_Item)
 	count[2] = cond_value[2];
 	text[3] = NAME_Bonus_Fly;
 	count[3] = 3;
-	text[4] = "Tenhle luk je vyroben ze dřeva kerenického dubu...";
+	text[ 4 ] = " This bow is made from the wood of Kerenic oak... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2104,7 +2105,7 @@ instance ITRW_KMR_SHADOWS_BOW_01(C_Item) //Priorat
 	count[2] = cond_value[2];
 	text[3] = NAME_Prot_Magic;
 	count[3] = protection[PROT_MAGIC];
-	text[4] = "Legendární zbraň válečníků Masyafu...";
+	text[ 4 ] = " Legendary weapon of Masyaf warriors... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2112,7 +2113,7 @@ instance ITRW_KMR_SHADOWS_BOW_01(C_Item) //Priorat
 
 instance ITRW_G3_SILENTDEATH_BOW_01_NPC(C_Item) //Gonsales 
 {
-	name = "Tichá smrt";
+	name = " Silent Death " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -2142,7 +2143,7 @@ instance ITRW_G3_SILENTDEATH_BOW_01_NPC(C_Item) //Gonsales
 
 instance ITRW_G3_SILENTDEATH_BOW_01(C_Item) //Gonsales 
 {
-	name = "Tichá smrt";
+	name = " Silent Death " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -2168,13 +2169,13 @@ instance ITRW_G3_SILENTDEATH_BOW_01(C_Item) //Gonsales
 	count[2] = cond_value[2];
 	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = "Tenhle luk mi dal Gonzales...";
+	text[ 4 ] = " Gonzales gave me this bow... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITRW_BOW_BONES(C_Item)		//Gorod mertvykh
+instance ITRW_BOW_BONES (C_Item)		 // Gorod deadvykh
 {
 	name = "Sher Gar Mal";
 	mainflag = ITEM_KAT_FF;
@@ -2203,7 +2204,7 @@ instance ITRW_BOW_BONES(C_Item)		//Gorod mertvykh
 	count[2] = cond_value[2];
 	text[3] = NAME_Prot_Phis;
 	count[3] = protection[PROT_EDGE];
-	text[4] = "Tenhle luk je vyroben z lidských kostí...";
+	text[ 4 ] = " This bow is made of human bones... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2247,9 +2248,9 @@ instance ITRW_G4_OAK_BOW_01(C_Item)	//Khram Slez
 	inv_animate = 1;
 };
 
-instance ITRW_HOLYBOW(C_Item) //Shakhta orkov
+instance ITRW_HOLYBOW (C_Item) // Shakhta orkov
 {
-	name = "Svatý posel";
+	name = " Holy Messenger " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -2273,7 +2274,7 @@ instance ITRW_HOLYBOW(C_Item) //Shakhta orkov
 	count[1] = damageTotal;
 	text[2] = NAME_Dex_needed;
 	count[2] = cond_value[2];
-	text[4] = "Účinný proti nemrtvým...";
+	text[ 4 ] = " Effective against undead... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2307,13 +2308,13 @@ instance ITRW_G3_DEMON_BOW_01(C_Item) //Irdorat
 	count[2] = cond_value[2];
 	text[3] = NAME_Prot_Magic;
 	count[3] = protection[PROT_MAGIC];
-	text[4] = "Tenhle luk vypadá, jako kdyby se ho dotkla samotná Smrt...";
+	text[ 4 ] = " This bow looks as if it has been touched by Death itself... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITRW_HAOS_BOW_01(C_Item) //Demon rituala magov Vody
+instance ITRW_HAOS_BOW_01 (C_Item) // Demon rituala magov Vody
 {
 	name = "Ruka Chaosu";
 	mainflag = ITEM_KAT_FF;
@@ -2342,24 +2343,24 @@ instance ITRW_HAOS_BOW_01(C_Item) //Demon rituala magov Vody
 	count[2] = cond_value[2];
 	text[3] = NAME_Prot_Magic;
 	count[3] = protection[PROT_MAGIC];
-	text[4] = "Už při prvním pohledu na tenhle luk se tě zmocňuje záchvat šílenství...";
+	text[ 4 ] = " Just looking at this bow for the first time makes you go crazy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-//---------------------------proklyatoye oruzhiye---------------------------
+// ---------------------------------proklyatoye oruzhiye------------ --------
 
 instance ItRw_Undead(C_Item)
 {
-	name = "Luk prokletých";
+	name = " Bow of the Cursed " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Knochenbogen;
+	value = value_bone arch;
 	damagetype = DAM_POINT;
-	damage[DAM_INDEX_POINT] = Damage_Knochenbogen;
-	damageTotal = Damage_Knochenbogen;
+	damage[ DAM_INDEX_POINT ] = Damage_Bonebow;
+	damageTotal = Damage_Bonebow;
 	cond_atr[1] = ATR_MANA_MAX;
 	cond_value[1] = 6666;
 	munition = ItRw_Arrow;
@@ -2372,7 +2373,7 @@ instance ItRw_Undead(C_Item)
 
 instance ItRw_Crossbow_Undead(C_Item)
 {
-	name = "Kuše prokletých";
+	name = " Crossbows of the Damned " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -2391,7 +2392,7 @@ instance ItRw_Crossbow_Undead(C_Item)
 };
 
 
-//---------------------Kolchany--------------------------------
+// ---------------------Kolchany-------------------- ------
 
 instance ItSl_BackArrowSack_01(C_Item) 
 {	
@@ -2503,7 +2504,7 @@ instance ItSl_BackArrowSack_10(C_Item)
 
 instance ItSl_BackBoltSack_01(C_Item)
 {	
-	name	= "Toulec na šipky";
+	name = " Dart Quiver " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
