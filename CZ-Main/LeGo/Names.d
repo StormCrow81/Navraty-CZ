@@ -1,9 +1,10 @@
+
 /***********************************\
                 NAMES
 \***********************************/
 var int Talent_Names;
 //========================================
-// Namen setzen
+// set name
 //========================================
 func void SetName(var int npc, var string nname) {
     var C_NPC slf; slf = Hlp_GetNpc(npc);
@@ -24,7 +25,7 @@ func void SetName(var int npc, var string nname) {
 };
 
 //========================================
-// Namen anzeigen
+// Show names
 //========================================
 func void ShowName(var int npc) {
     var C_NPC slf; slf = Hlp_GetNpc(npc);
@@ -35,7 +36,7 @@ func void ShowName(var int npc) {
         return;
     };
 
-    TAL_SetValue(slf, Talent_Names, 1);
+    TAL_SetValue(slf, Talent_Names, 1 );
 
     // Gothic 1 compatibility. Deviation in class variable name: oCNpc.name_1 (G2), oCNpc.name1 (G1)
 	var oCNpc slf_int; slf_int = Hlp_GetNpc(npc);
