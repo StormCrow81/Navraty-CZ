@@ -1,3 +1,4 @@
+
 const int BUFF_GOOD = 1;
 const int BUFF_NEUTRAL = 0;
 const int BUFF_BAD = -1;
@@ -107,7 +108,7 @@ func void lCBuff_Unarchiver(var lCBuff this) {
 var int bufflist_hero; // @zCArray<@lCBuff> 
 var int bufflist_views[BUFFLIST_SIZE]; // @zCView
 
-const int BUFF_Y = 7000;
+const  int  BUFF_Y = 7000 ;
 const int BUFF_HEIGHT = 500;
 
 func void Bufflist_Init() {
@@ -193,7 +194,7 @@ func void _Bufflist_UpdateDurationFade() {
  		var zCView view; view = get(bl_view);
 
 
- 		var int timediff; timediff = buff._endTime-now;
+ 		var int timediff; timediff = buff._endTime - now;
 
  		if timediff < 0 {
  			timediff = 0;
@@ -225,7 +226,7 @@ func void _Bufflist_UpdateDurationFade() {
 /* BUFF DISPLAY FOR HERO ENDS HERE */
 
 
-/* Daedalus braucht mal wieder eine Sonderbehandlung */ 
+/* Daedalus needs special treatment again */ 
 func int SAVE_GetFuncID(var func f) {
 		var int i; i = MEM_GetUseInstance();
 		var int res; res = MEM_GetFuncID(f);
@@ -246,7 +247,7 @@ func int _Buff_Check(var int buffh) {
 	return rContinue;
 };
 func int Buff_Has(var c_npc npc, var int buff) {
-	if (npc.aivar[AIV_TALENT]) {
+	if (npc.aivar[ AIV_TALENT ]) {
 		Buff_NpcID = Npc_GetID(npc);
 		Buff_BuffHndl = 0;
 		ForeachHndl(buff, _Buff_Check);
@@ -258,7 +259,7 @@ func int Buff_Has(var c_npc npc, var int buff) {
 };	
 
 func void _Buff_Dispatcher(var int bh) { // This is called every tick and is responsible for deleting the object 
-		if (!Hlp_IsValidHandle(bh)) {
+		if ( ! Hlp_IsValidHandle(bh)) {
 				return;
 		};
 
@@ -275,7 +276,7 @@ func void _Buff_Dispatcher(var int bh) { // This is called every tick and is res
 			bh;
 			MEM_CallByID(b.onTick);
 			// Might have been deleted just now
-			if (!Hlp_IsValidHandle(bh)) {
+			if ( ! Hlp_IsValidHandle(bh)) {
 				return;
 			};
 		};
@@ -284,7 +285,7 @@ func void _Buff_Dispatcher(var int bh) { // This is called every tick and is res
 };
 
 func int Buff_Apply(var c_npc npc, var int buff) {
-		var int bh; bh = new(buff);
+		var int bh; bh = new (buff);
 		var lCBuff b; b = get(bh);
 
 		b.targetID = Npc_GetID(npc);
@@ -296,7 +297,7 @@ func int Buff_Apply(var c_npc npc, var int buff) {
 				bh;
 				MEM_CallByID(b.OnApply);
 				// Might have been deleted just now (would make little sense)
-				if (!Hlp_IsValidHandle(bh)) {
+				if ( ! Hlp_IsValidHandle(bh)) {
 					return -1;
 				};
 		};
@@ -354,7 +355,7 @@ func void Buff_Remove(var int bh) {
 	};
 
 	if (Hlp_IsValidHandle(bh)) {
-		delete(bh);
+		delete (bh);
 	};
 };
 
