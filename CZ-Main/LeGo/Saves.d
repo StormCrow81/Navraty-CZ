@@ -1,3 +1,4 @@
+
 /***********************************\
                 SAVES
 \***********************************/
@@ -38,7 +39,7 @@ func string GetParmValue(var string str) {
 };
 
 //========================================
-// [intern] Gibt Pfad zur Speicherdatei zurück
+// [internal] Returns path to save file
 //========================================
 func string _BIN_GetSavefilePath(var int slot) {
     // Game save path. The class zCOption is defined incorrectly in Ikarus for Gothic1, hence the use of an offset here
@@ -62,10 +63,10 @@ func string _BIN_GetSavefilePath(var int slot) {
 };
 
 //========================================
-// [intern] Speicherslot herausfinden
+// [internal] Find out memory slot
 //========================================
 func int _BR_GetSelectedSlot() {
-    var CGameManager man; man = _^(MEM_ReadInt(MEMINT_gameMan_Pointer_address));
+    var CGameManager man; man = _ ^ (MEM_ReadInt(MEMINT_gameMan_Pointer_address));
     var int slot; slot = MEM_ReadInt(man.menu_load_savegame + menu_savegame_slot_offset);
     return slot;
 };
@@ -75,12 +76,12 @@ func int _BR_GetSelectedSlot() {
 //========================================
 func void _BR_SetSelectedSlot() {
     var int slot; slot = MEM_ReadInt(ESP+4);
-    var CGameManager man; man = _^(MEM_ReadInt(MEMINT_gameMan_Pointer_address));
+    var CGameManager man; man = _ ^ (MEM_ReadInt(MEMINT_gameMan_Pointer_address));
     MEM_WriteInt(man.menu_load_savegame + menu_savegame_slot_offset, slot);
 };
 
 //========================================
-// [intern] Ruft BW_Savegame auf
+// [internal] Calls BW_Savegame
 //========================================
 func void _BW_SaveGame() {
     var int ext; ext = MEM_ReadInt(EBP+oCSavegameManager__SetAndWriteSavegame_bp_offset);
@@ -97,7 +98,7 @@ func void _BW_SaveGame() {
 };
 
 //========================================
-// [intern] Ruft BR_Savegame auf
+// [internal] Calls BR_Savegame
 //========================================
 func void _BR_LoadGame() {
     var int slot; slot = _BR_GetSelectedSlot();
