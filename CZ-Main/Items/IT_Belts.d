@@ -1,4 +1,5 @@
 
+
 const int Value_ItBE_Addon_Leather_01 = 150;
 const int Value_ItBE_Addon_SLD_01 = 250;
 const int Value_ItBE_Addon_SLD_02 = 500;
@@ -54,7 +55,7 @@ const int BeltBonus_ProtPoint = 10;
 const int BeltBonus_ProtMagic = 10;
 const int BeltBonus_ProtFire = 10;
 const int BeltBonus_ProtEdgPoi = 10;
-const int BeltBonus_ProtTotal = 10;
+const  int BeltBonus_ProtTotal = 10 ;
 
 const int Belt_Nordmar_00 = 40;
 const int Belt_Nordmar_01 = 25;
@@ -71,10 +72,10 @@ const int BA_Hunt02 = 20;
 const int BA_Hunt03 = 25;
 const int BA_Hunt04 = 30;
 
-const int DrgBonus_01 = 15;
-const int DrgBonus_02 = 50;
-const int DrgBonus_03 = 40;
-const int DrgBonus_04 = 25;
+const  int DrgBonus_01 = 15 ;
+const  int DrgBonus_02 = 50 ;
+const  int DrgBonus_03 = 40 ;
+const  int DrgBonus_04 = 25 ;
 
 const int BA_Bonus_Int_01 = 5;
 const int BA_Bonus_Int_02 = 10;
@@ -98,7 +99,7 @@ instance ItBE_Addon_Leather_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBE_Addon_Leather_01;
 	on_unequip = UnEquip_ItBE_Addon_Leather_01;
-	description = "Kožený opasek";
+	description = " Leather belt " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = Belt_Prot_01;
 	text[2] = NAME_Prot_Point;
@@ -107,8 +108,8 @@ instance ItBE_Addon_Leather_01(C_Item)
 	count[3] = BA_Bonus01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -164,7 +165,7 @@ instance ItBE_Addon_MIL_01(C_Item)
 	cond_value[2] = 30;
 	on_equip = Equip_ItBE_Addon_MIL_01;
 	on_unequip = UnEquip_ItBE_Addon_MIL_01;
-	description = "Opasek domobránce";
+	description = " Military Belt " ;
 	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Phis;
@@ -175,8 +176,8 @@ instance ItBE_Addon_MIL_01(C_Item)
 	count[3] = BA_Bonus01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -223,7 +224,7 @@ instance ItBE_Addon_MIL_02(C_Item)
 	cond_value[2] = 50;
 	on_equip = Equip_ItBE_Addon_MIL_02;
 	on_unequip = UnEquip_ItBE_Addon_MIL_02;
-	description = "Těžký opasek domobránce";
+	description = " Military Heavy Belt " ;
 	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Phis;
@@ -234,8 +235,8 @@ instance ItBE_Addon_MIL_02(C_Item)
 	count[3] = BA_Bonus02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -282,7 +283,7 @@ instance ItBE_Addon_SLD_01(C_Item)
 	cond_value[2] = 30;
 	on_equip = Equip_ItBE_Addon_SLD_01;
 	on_unequip = UnEquip_ItBE_Addon_SLD_01;
-	description = "Lehký opasek žoldáka";
+	description = " Light mercenary belt " ;
 	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Phis;
@@ -293,8 +294,8 @@ instance ItBE_Addon_SLD_01(C_Item)
 	count[3] = BA_Bonus01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -341,7 +342,7 @@ instance ItBE_Addon_SLD_02(C_Item)
 	cond_value[2] = 60;
 	on_equip = Equip_ItBE_Addon_SLD_02;
 	on_unequip = UnEquip_ItBE_Addon_SLD_02;
-	description = "Opasek žoldáka";
+	description = " Mercenary Belt " ;
 	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Phis;
@@ -352,8 +353,8 @@ instance ItBE_Addon_SLD_02(C_Item)
 	count[3] = BA_Bonus02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -400,7 +401,7 @@ instance ItBE_Addon_SLD_03(C_Item)
 	cond_value[2] = 90;
 	on_equip = Equip_ItBE_Addon_SLD_03;
 	on_unequip = UnEquip_ItBE_Addon_SLD_03;
-	description = "Těžký opasek žoldáka";
+	description = " Heavy Mercenary Belt " ;
 	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Phis;
@@ -411,8 +412,8 @@ instance ItBE_Addon_SLD_03(C_Item)
 	count[3] = BA_Bonus03;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -457,7 +458,7 @@ instance ItBE_Addon_MC(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBE_Addon_MC;
 	on_unequip = UnEquip_ItBE_Addon_MC;
-	description = "Opasek z krunýřů důlního červa";
+	description = " Mining Worm Carapace Belt " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = Belt_Prot_02;
 	text[2] = NAME_Prot_Point;
@@ -466,8 +467,8 @@ instance ItBE_Addon_MC(C_Item)
 	count[3] = BA_Bonus02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -527,8 +528,8 @@ instance ItBE_Addon_NOV_01(C_Item)
 	count[4] = BA_Bonus_Int_01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -583,7 +584,7 @@ instance ItBE_Addon_KDF_01(C_Item)
 	cond_value[2] = 250;
 	on_equip = Equip_ItBE_Addon_KDF_01;
 	on_unequip = UnEquip_ItBE_Addon_KDF_01;
-	description = "Šerpa mága";
+	description = " Sherpa Mage " ;
 	text[0] = NAME_Mana_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Fire;
@@ -596,8 +597,8 @@ instance ItBE_Addon_KDF_01(C_Item)
 	count[4] = BA_Bonus_Int_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -652,7 +653,7 @@ instance ItBE_Addon_KDF_02(C_Item)
 	cond_value[2] = 500;
 	on_equip = Equip_ItBE_Addon_KDF_02;
 	on_unequip = UnEquip_ItBE_Addon_KDF_02;
-	description = "Šerpa vysokého mága";
+	description = " High Mage 's Sash " ;
 	text[0] = NAME_Mana_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Fire;
@@ -665,8 +666,8 @@ instance ItBE_Addon_KDF_02(C_Item)
 	count[4] = BA_Bonus_Int_03;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -721,7 +722,7 @@ instance ItBE_Addon_KDF_03(C_Item)
 	cond_value[2] = 750;
 	on_equip = Equip_ItBE_Addon_KDF_03;
 	on_unequip = UnEquip_ItBE_Addon_KDF_03;
-	description = "Šerpa arcimága";
+	description = " Šerpa archimága " ;
 	text[0] = NAME_Mana_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Fire;
@@ -734,8 +735,8 @@ instance ItBE_Addon_KDF_03(C_Item)
 	count[4] = BA_Bonus_Int_04;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -801,8 +802,8 @@ instance ItBE_Addon_DJG_01(C_Item)
 	count[3] = BA_Bonus04;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -849,7 +850,7 @@ instance ItBE_Addon_SEK_01(C_Item)
 	cond_value[2] = 30;
 	on_equip = Equip_ItBE_Addon_SEK_01;
 	on_unequip = UnEquip_ItBE_Addon_SEK_01;
-	description = "Šerpa novice Bratrstva";
+	description = " Brotherhood Novice Sherpa " ;
 	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Phis;
@@ -860,8 +861,8 @@ instance ItBE_Addon_SEK_01(C_Item)
 	count[3] = BA_Bonus01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -909,7 +910,7 @@ instance ItBE_Addon_TPL_01(C_Item)
 	cond_value[2] = 100;
 	on_equip = Equip_ItBE_Addon_TPL_01;
 	on_unequip = UnEquip_ItBE_Addon_TPL_01;
-	description = "Opasek templáře";
+	description = " Templar Belt " ;
 	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Phis;
@@ -920,8 +921,8 @@ instance ItBE_Addon_TPL_01(C_Item)
 	count[3] = BA_Bonus02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -969,7 +970,7 @@ instance ItBE_Addon_GUR_01(C_Item)
 	cond_value[2] = 200;
 	on_equip = Equip_ItBE_Addon_GUR_01;
 	on_unequip = UnEquip_ItBE_Addon_GUR_01;
-	description = "Šerpa Guru Bratrstva";
+	description = " Sherpa Guru Brotherhood " ;
 	text[0] = NAME_Mana_needed;
 	count[0] = cond_value[2];
 	text[1] = NAME_Prot_Phis;
@@ -982,8 +983,8 @@ instance ItBE_Addon_GUR_01(C_Item)
 	count[4] = BA_Bonus_Int_04;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1030,7 +1031,7 @@ func void UnEquip_ItBE_Addon_GUR_01()
 };
 
 
-//------------------------------Vory----------------------------------
+// ------------------------------- Gather--------------- -----------------
 
 instance ItBe_Addon_Thief_01(C_Item)
 {
@@ -1043,15 +1044,15 @@ instance ItBe_Addon_Thief_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Thief_01;
 	on_unequip = UnEquip_ItBe_Addon_Thief_01;
-	description = "Opasek šejdíře";
+	description = " Shadder's Belt " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = BeltBonus_DEX01;
 	text[2] = NAME_Addon_BeArTHF;
 	count[2] = BeltBonus_DEX_THF_01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1097,15 +1098,15 @@ instance ItBe_Addon_Thief_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Thief_02;
 	on_unequip = UnEquip_ItBe_Addon_Thief_02;
-	description = "Opasek stínu";
+	description = " Shadow Belt " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = BeltBonus_DEX02;
 	text[2] = NAME_Addon_BeArTHF;
 	count[2] = BeltBonus_DEX_THF_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1151,15 +1152,15 @@ instance ItBe_Addon_Thief_03(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Thief_03;
 	on_unequip = UnEquip_ItBe_Addon_Thief_03;
-	description = "Opasek mistra zloděje";
+	description = " Master Thief's Belt " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = BeltBonus_DEX03;
 	text[2] = NAME_Addon_BeArTHF;
 	count[2] = BeltBonus_DEX_THF_03;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1194,7 +1195,7 @@ func void UnEquip_ItBe_Addon_Thief_03()
 	};
 };
 
-//------------------------------Vory----------------------------------
+// ------------------------------- Gather--------------- -----------------
 
 instance ItBe_Addon_STR_5(C_Item)
 {
@@ -1207,13 +1208,13 @@ instance ItBe_Addon_STR_5(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_STR_5;
 	on_unequip = UnEquip_ItBe_Addon_STR_5;
-	description = "Opasek hrubé síly";
+	description = " Belt of Brute Force " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = BeltBonus_STR01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1245,13 +1246,13 @@ instance ItBe_Addon_STR_10(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_STR_10;
 	on_unequip = UnEquip_ItBe_Addon_STR_10;
-	description = "Opasek síly";
+	description = " Belt of Power " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = BeltBonus_STR02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1284,13 +1285,13 @@ instance ItBe_Addon_DEX_5(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_DEX_5;
 	on_unequip = UnEquip_ItBe_Addon_DEX_5;
-	description = "Opasek zručnosti";
+	description = " Skill Belt " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = BeltBonus_DEX01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1323,13 +1324,13 @@ instance ItBe_Addon_DEX_10(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_DEX_10;
 	on_unequip = UnEquip_ItBe_Addon_DEX_10;
-	description = "Opasek obratnosti";
+	description = " Belt of Dexterity " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = BeltBonus_DEX02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1361,13 +1362,13 @@ instance ItBe_Addon_Prot_EDGE(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Prot_EDGE;
 	on_unequip = UnEquip_ItBe_Addon_Prot_EDGE;
-	description = "Opasek gladiátora";
+	description = " Gladiator's Belt " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = BeltBonus_ProtEdge;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1394,13 +1395,13 @@ instance ItBe_Addon_Prot_Point(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Prot_Point;
 	on_unequip = UnEquip_ItBe_Addon_Prot_Point;
-	description = "Opasek dubové kůže";
+	description = " Oak Leather Belt " ;
 	text[1] = NAME_Prot_Point;
 	count[1] = BeltBonus_ProtPoint;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1427,13 +1428,13 @@ instance ItBe_Addon_Prot_MAGIC(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Prot_MAGIC;
 	on_unequip = UnEquip_ItBe_Addon_Prot_MAGIC;
-	description = "Šerpa magické ochrany";
+	description = " Magic Protection Sling " ;
 	text[1] = NAME_Prot_Magic;
 	count[1] = BeltBonus_ProtMagic;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1460,13 +1461,13 @@ instance ItBe_Addon_Prot_FIRE(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Prot_FIRE;
 	on_unequip = UnEquip_ItBe_Addon_Prot_FIRE;
-	description = "Opasek žhavé lávy";
+	description = " Belt of Hot Lava " ;
 	text[1] = NAME_Prot_Fire;
 	count[1] = BeltBonus_ProtFire;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1499,8 +1500,8 @@ instance ItBe_Addon_Prot_EdgPoi(C_Item)
 	count[3] = 10;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1531,39 +1532,39 @@ instance ItBe_Addon_Prot_TOTAL(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Prot_TOTAL;
 	on_unequip = UnEquip_ItBe_Addon_Prot_TOTAL;
-	description = "Opasek nezranitelnosti";
+	description = " Belt of Invulnerability " ;
 	text[1] = NAME_Prot_Phis;
-	count[1] = BeltBonus_ProtTotal;
+	count[ 1 ] = BeltBonus_ProtTotal;
 	text[2] = NAME_Prot_Point;
-	count[2] = BeltBonus_ProtTotal;
+	count[ 2 ] = BeltBonus_ProtTotal;
 	text[3] = NAME_Prot_Magic;
-	count[3] = BeltBonus_ProtTotal;
+	count[ 3 ] = BeltBonus_ProtTotal;
 	text[4] = NAME_Prot_Fire;
-	count[4] = BeltBonus_ProtTotal;
+	count[ 4 ] = BeltBonus_ProtTotal;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
 
 func void Equip_ItBe_Addon_Prot_TOTAL()
 {
-	self.protection[PROT_EDGE] += BeltBonus_ProtTotal;
-	self.protection[PROT_BLUNT] += BeltBonus_ProtTotal;
-	self.protection[PROT_POINT] += BeltBonus_ProtTotal;
+	self.protection[ PROT_EDGE ] += BeltBonus_ProtTotal;
+	self.protection[ PROT_BLUNT ] += BeltBonus_ProtTotal;
+	self.protection[ PROT_POINT ] += BeltBonus_ProtTotal;
 	self.protection[PROT_MAGIC] += BeltBonus_ProtTotal;
-	self.protection[PROT_FIRE] += BeltBonus_ProtTotal;
+	self.protection[ PROT_FIRE ] += BeltBonus_ProtTotal;
 };
 
 func void UnEquip_ItBe_Addon_Prot_TOTAL()
 {
-	self.protection[PROT_EDGE] -= BeltBonus_ProtTotal;
-	self.protection[PROT_BLUNT] -= BeltBonus_ProtTotal;
-	self.protection[PROT_POINT] -= BeltBonus_ProtTotal;
+	self.protection[ PROT_EDGE ] -= BeltBonus_ProtTotal;
+	self.protection[ PROT_BLUNT ] -= BeltBonus_ProtTotal;
+	self.protection[ PROT_POINT ] -= BeltBonus_ProtTotal;
 	self.protection[PROT_MAGIC] -= BeltBonus_ProtTotal;
-	self.protection[PROT_FIRE] -= BeltBonus_ProtTotal;
+	self.protection[ PROT_FIRE ] -= BeltBonus_ProtTotal;
 };
 
 
@@ -1580,15 +1581,15 @@ instance ItBe_Addon_Custom_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Custom_01;
 	on_unequip = UnEquip_ItBe_Addon_Custom_01;
-	description = "Opasek z plazí kůže";
+	description = " Reptile Leather Belt " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = BA_Hunt01;
 	text[2] = NAME_Prot_Point;
 	count[2] = BA_Hunt01;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1617,15 +1618,15 @@ instance ItBe_Addon_Custom_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Custom_02;
 	on_unequip = UnEquip_ItBe_Addon_Custom_02;
-	description = "Opasek z vlčí kůže";
+	description = " Wolfskin Belt " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = BA_Hunt02;
 	text[2] = NAME_Prot_Point;
 	count[2] = BA_Hunt02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1654,15 +1655,15 @@ instance ItBe_Addon_Custom_03(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Custom_03;
 	on_unequip = UnEquip_ItBe_Addon_Custom_03;
-	description = "Opasek z kůže warga";
+	description = " Warga leather belt " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = BA_Hunt03;
 	text[2] = NAME_Prot_Point;
 	count[2] = BA_Hunt03;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1691,7 +1692,7 @@ instance ItBe_Addon_Custom_04(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_Custom_04;
 	on_unequip = UnEquip_ItBe_Addon_Custom_04;
-	description = "Opasek z trolí kůže";
+	description = " Trollskin Belt " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = BA_Hunt04;
 	text[2] = NAME_Prot_Point;
@@ -1700,8 +1701,8 @@ instance ItBe_Addon_Custom_04(C_Item)
 	count[3] = BA_Bonus_Fly_Clr;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1732,7 +1733,7 @@ instance ItBe_Addon_BT_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_Addon_BT_01;
 	on_unequip = UnEquip_ItBe_Addon_BT_01;
-	description = "Opasek z kůže černého trola";
+	description = " Black Troll Leather Belt " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = Belt_BT_01;
 	text[2] = NAME_Prot_Point;
@@ -1741,8 +1742,8 @@ instance ItBe_Addon_BT_01(C_Item)
 	count[3] = BT_Bonus_Fly_Clr;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1762,7 +1763,7 @@ func void UnEquip_ItBe_Addon_BT_01()
 	self.protection[PROT_FLY] -= BT_Bonus_Fly;
 };
 
-instance ItBe_NordmarBelt(C_Item)
+instance ItBe_NordmarBelt (C_Item)
 {
 	name = NAME_Addon_Belt;
 	mainflag = ITEM_KAT_MAGIC;
@@ -1788,8 +1789,8 @@ instance ItBe_NordmarBelt(C_Item)
 	count[4] = Belt_Nordmar_04;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
@@ -1835,7 +1836,7 @@ instance ItBe_DragonBelt(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItBe_DragonBelt;
 	on_unequip = UnEquip_ItBe_DragonBelt;
-	description = "Opasek z dračích šupin";
+	description = " Dragon Scale Belt " ;
 	text[0] = NAME_Bonus_Str;
 	count[0] = DrgBonus_01;
 	text[1] = NAME_Bonus_Dex;
@@ -1848,8 +1849,8 @@ instance ItBe_DragonBelt(C_Item)
 	count[4] = DrgBonus_04;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
-	inv_rotx = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
+	inv_rotx = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 0;
 };
 
