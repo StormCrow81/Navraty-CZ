@@ -50,7 +50,7 @@ func void DIA_Lobart_Hallo_Info()
 		AI_Output(self,other, " DIA_Lobart_Hallo_05_01 " );	// Whose side are you on? On the side of the rebel farmers or on the side of the king?
 		Info_ClearChoices(DIA_Lobart_Hello);
 		Info_AddChoice(DIA_Lobart_Hallo, " I don't understand... " ,DIA_Lobart_Hallo_What);
-		Info_AddChoice(DIA_Lobart_Hallo, " Я за корява! " ,DIA_Lobart_Hallo_ForTheKing);
+		Info_AddChoice(DIA_Lobart_Hallo, " I stand with the King! " ,DIA_Lobart_Hallo_ForTheKing);
 		Info_AddChoice(DIA_Lobart_Hallo, " I'm with the Peasants! " ,DIA_Lobart_Hallo_ForThePeasants);
 	}
 	else
@@ -62,9 +62,9 @@ func void DIA_Lobart_Hallo_Info()
 func void DIA_Lobart_Hallo_ForThePeasants()
 {
 	AI_Output(other,self, " DIA_Lobart_Hallo_ForThePeasants_15_00 " );	// I'm with the peasants!
-	AI_Output(self,other, " DIA_Lobart_Hallo_ForThePeasants_05_01 " );	// Ha! That damn troublemaker Onar will drive us all to the grave!
+	AI_Output(self,other, " DIA_Lobart_Hallo_ForThePeasants_05_01 " );	// Good! That damn troublemaker Onar will drive us all to the grave!
 	AI_Output(self,other, " DIA_Lobart_Hallo_ForThePeasants_05_02 " );	// How long do you think the paladins will be here?
-	AI_Output(self,other, " DIA_Lobart_Hallo_ForThePeasants_05_03 " );	// After what Onar did, the whole city is buzzing like a beehive.
+	AI_Output(self,other, " DIA_Lobart_Hallo_ForThePeasants_05_03 " );	// After what Onar did, the whole city is buzzing.
 	Lobart_AgainstKing = TRUE;
 	Info_ClearChoices(DIA_Lobart_Hello);
 };
@@ -72,10 +72,10 @@ func void DIA_Lobart_Hallo_ForThePeasants()
 func void DIA_Lobart_Hallo_ForTheKing()
 {
 	AI_Output(other,self, " DIA_Lobart_Hallo_ForTheKing_15_00 " );	// I'm for the king!
-	AI_Output(self,other, " DIA_Lobart_Hallo_ForTheKing_05_01 " );	// (contemptuously) 'For the king!' So did the city guards when they took half of my sheep.
-	AI_Output(self,other, " DIA_Lobart_Hallo_ForTheKing_05_02 " );	// But where, one wonders, are these bastards when you need to protect us from bandits? Where will they hide when the orcs invade?
-	AI_Output(self,other, " DIA_Lobart_Hallo_ForTheKing_05_03 " );	// I'll tell you: in the city, behind the thick city walls.
-	AI_Output(self,other, " DIA_Lobart_Hallo_ForTheKing_05_04 " );	// So leave me alone, along with your king.
+	AI_Output(self,other, " DIA_Lobart_Hallo_ForTheKing_05_01 " );	// 'For the king!' As were the city guards when they took half of my sheep.
+	AI_Output(self,other, " DIA_Lobart_Hallo_ForTheKing_05_02 " );	// But where, one wonders, are these bastards when you need protection from bandits? What will they do when the orcs invade?
+	AI_Output(self,other, " DIA_Lobart_Hallo_ForTheKing_05_03 " );	// I'll tell you: they will hide behind the thick city walls.
+	AI_Output(self,other, " DIA_Lobart_Hallo_ForTheKing_05_04 " );	// So leave me alone, and take your "King" with you.
 	Lobart_AgainstKing = FALSE ;
 	Info_ClearChoices(DIA_Lobart_Hello);
 };
@@ -83,7 +83,7 @@ func void DIA_Lobart_Hallo_ForTheKing()
 func void DIA_Lobart_Hallo_What()
 {
 	AI_Output(other,self, " DIA_Lobart_Hallo_What_15_00 " );	// I don't understand...
-	AI_Output(self,other, " DIA_Lobart_Hallo_What_05_01 " );	// What?! Don't try to trick me, boy! I want to know which side you're on! So which one?
+	AI_Output(self,other, " DIA_Lobart_Hallo_What_05_01 " );	// What?! Don't try to fool me, boy! I want to know which side you're on! Its an easy question.
 };
 
 
@@ -117,8 +117,8 @@ func void DIA_Lobart_CLOTHING_Info()
 
 	if(!Npc_KnowsInfo(other,DIA_Lobart_WorkNOW))
 	{
-		AI_Output(self,other, " DIA_Lobart_KLEIDUNG_05_03 " );	// You could earn some of her value... if you're one of those LOOKING for a job.
-		B_LogEntry(TOPIC_Kleidung, " Lobart can lower the price of clothes if I work on his farm. The more I do, the cheaper the clothes will cost me. " );
+		AI_Output(self,other, " DIA_Lobart_KLEIDUNG_05_03 " );	// I could lower the price... if you're willing to work.
+		B_LogEntry(TOPIC_Kleidung, " Lobart can lower the price of clothes if I work on his farm. The more jobs I do, the cheaper the clothes will cost me. " );
 	};
 };
 
@@ -145,7 +145,7 @@ func void DIA_Lobart_BuyClothes_Info()
 {
 	value_LobartsArmor = 80 ;
 	AI_Output(other,self, " DIA_Lobart_BuyClothes_15_00 " );	// How much do these work clothes cost?
-	AI_Output(self,other, " DIA_Lobart_BuyClothes_05_01 " );	// Yes. Let's see...
+	AI_Output(self,other, " DIA_Lobart_BuyClothes_05_01 " );	// Well, Let's see...
 
 	if(Lobart_AgainstKing == TRUE)
 	{
@@ -168,7 +168,7 @@ func void DIA_Lobart_BuyClothes_Info()
 	};
 	if(MIS_Maleth_Bandits == LOG_SUCCESS)
 	{
-		AI_Output(self,other, " DIA_Lobart_BuyClothes_05_05 " );	// Maleth says you drove the bandits away. These bastards gave us a lot of problems. Thanks for getting us out of them!
+		AI_Output(self,other, " DIA_Lobart_BuyClothes_05_05 " );	// Maleth says you drove the bandits away. Those bastards gave us a lot of problems. Thank you for that!
 		value_LobartsArmor = value_LobartsArmor -  10 ;
 	};
 
@@ -176,28 +176,28 @@ func void DIA_Lobart_BuyClothes_Info()
 
 	if (Value_LobartsArmor ==  30 )
 	{
-		AI_Output(self,other, " DIA_Lobart_GOLD_05_06 " );	// And I won't give it away cheaper.
+		AI_Output(self,other, " DIA_Lobart_GOLD_05_06 " );	// And I won't sell it for cheaper.
 		B_LogEntry(TOPIC_Kleidung, " But he won't sell me less than thirty gold coins. " );
 	};
 	Info_ClearChoices(DIA_Lobart_BuyClothes);
 	Info_AddChoice(DIA_Lobart_BuyClothes, " It's still too expensive for me. " ,DIA_Lobart_BuyClothes_NotYet);
-	Info_AddChoice(DIA_Lobart_BuyClothes, " Get those work clothes over here then. " ,DIA_Lobart_BuyClothes_BUY);
+	Info_AddChoice(DIA_Lobart_BuyClothes, " Give them to me then. " ,DIA_Lobart_BuyClothes_BUY);
 };
 
 func void DIA_Lobart_BuyClothes_BUY()
 {
-	AI_Output(other,self, " DIA_Lobart_BuyClothes_BUY_15_00 " );	// Let's get these work clothes over here then.
+	AI_Output(other,self, " DIA_Lobart_BuyClothes_BUY_15_00 " );	// Let's get those work clothes over here then.
 
 	if (B_GiveInvItems(other,self,ItMi_Gold,Wert_Lobart's armor))
 	{
 		if(Npc_HasItems(self,ITAR_Bau_L) > 0)
 		{
-			AI_Output(self,other, " DIA_Lobart_BuyClothes_BUY_05_01 " );	// Okay, my boy. Above all, I value honesty. Here you are!
+			AI_Output(self,other, " DIA_Lobart_BuyClothes_BUY_05_01 " );	// Okay, my boy. Above all, I value decency. Here you are!
 			B_GiveInvItems(self,other,ITAR_Bau_L,1);
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_Lobart_BuyClothes_BUY_05_01 " );	// Okay, my boy. Above all, I value honesty. Here you are!
+			AI_Output(self,other, " DIA_Lobart_BuyClothes_BUY_05_01 " );	// Okay, my boy. Above all, I value decency. Here you are!
 			CreateInvItems(self,ITAR_Bau_L,1);
 			B_GiveInvItems(self,other,ITAR_Bau_L,1);
 		};
@@ -216,7 +216,7 @@ func void DIA_Lobart_BuyClothes_BUY()
 func void DIA_Lobart_BuyClothes_NotYet()
 {
 	AI_Output(other,self, " DIA_Lobart_BuyClothes_NotYet_15_00 " );	// This is still too expensive for me.
-	AI_Output(self,other, " DIA_Lobart_BuyClothes_NotYet_05_01 " );	// How do you know...
+	AI_Output(self,other, " DIA_Lobart_BuyClothes_NotYet_05_01 " );	// If you say so...
 	Info_ClearChoices(DIA_Lobart_BuyClothes);
 };
 
@@ -243,14 +243,14 @@ func int DIA_Lobart_AufstandInfo_Condition()
 func void DIA_Lobart_AufstandInfo_Info()
 {
 	AI_Output(other,self, " DIA_Lobart_AufstandInfo_15_00 " );	// How are things going here?
-	AI_Output(self,other, " DIA_Lobart_AufstandInfo_05_01 " );	// Do you know how things are here? Boy, where did you fall from? We are on the verge of a civil war!
+	AI_Output(self,other, " DIA_Lobart_AufstandInfo_05_01 " );	// What a stupid question! We are on the verge of a civil war!
 	if(hero.guild == GIL_NONE)
 	{
 		AI_Output(self,other, " DIA_Lobart_AufstandInfo_05_02 " );	// Until recently, farmers considered the share given to the city to be quite fair.
-		AI_Output(self,other, " DIA_Lobart_AufstandInfo_05_03 " );	// But ever since the paladins came to Khorinis, the city guards have been visiting us more and more often - they will take everything we have so soon.
+		AI_Output(self,other, " DIA_Lobart_AufstandInfo_05_03 " );	// But ever since the paladins came to Khorinis, the city guards have been visiting us more and more often - they will take everything we have soon.
 		AI_Output(self,other, " DIA_Lobart_AufstandInfo_05_04 " );	// If this continues, we'll have nothing left for ourselves.
 	};
-	AI_Output(self,other, " DIA_Lobart_AufstandInfo_05_05 " );	// Some farmers are rioting! Onar was the first of them!
+	AI_Output(self,other, " DIA_Lobart_AufstandInfo_05_05 " );	// Some farmers are rebelling! Onar was the first of them!
 };
 
 
@@ -283,9 +283,9 @@ func void DIA_Lobart_OnarStory_Info()
 	else
 	{
 		AI_Output(self,other, " DIA_Lobart_OnarStory_05_02 " );	// Onar is the biggest farmer in this area. He broke off relations with the city.
-		AI_Output(self,other, " DIA_Lobart_OnarStory_05_03 " );	// They say he hired mercenaries to keep the city guards out of his lands!
-		AI_Output(self,other, " DIA_Lobart_OnarStory_05_04 " );	// Can't blame him for that.
-		AI_Output(self,other, " DIA_Lobart_OnarStory_05_05 " );	// Be that as it may, no other royal soldiers dare to set foot on his land.
+		AI_Output(self,other, " DIA_Lobart_OnarStory_05_03 " );	// Then he hired mercenaries to keep the city guards off of his land!
+		AI_Output(self,other, " DIA_Lobart_OnarStory_05_04 " );	// I suppose I can't blame him for that.
+		AI_Output(self,other, " DIA_Lobart_OnarStory_05_05 " );	// Be that as it may, no royal loyallist can set foot on his land.
 	};
 };
 
@@ -312,8 +312,8 @@ func int DIA_Lobart_SldInfo_Condition()
 func void DIA_Lobart_SldInfo_Info()
 {
 	AI_Output(other,self, " DIA_Lobart_SldInfo_15_00 " );	// And who are these mercenaries hired by Onar?
-	AI_Output(self,other, " DIA_Lobart_SldInfo_05_01 " );	// I don't know much about these guys. Presumably, most of them are former convicts from the colony.
-	AI_Output(self,other, " DIA_Lobart_SldInfo_05_02 " );	// (contemptuously) And what, one wonders, can be expected from them ...
+	AI_Output(self,other, " DIA_Lobart_SldInfo_05_01 " );	// I don't know much about them. Presumably, most of them are former convicts from the colony.
+	AI_Output(self,other, " DIA_Lobart_SldInfo_05_02 " );	// And what, one wonders, can be expected from men like that ...
 };
 
 
@@ -338,13 +338,13 @@ func int DIA_Lobart_WhichSide_Condition()
 
 func void DIA_Lobart_WhichSide_Info()
 {
-	AI_Output(other,self, " DIA_Lobart_WhichSide_15_00 " );	// What about you? Whose side are you on? Peasants or king?
+	AI_Output(other,self, " DIA_Lobart_WhichSide_15_00 " );	// What about you? Whose side are you on? The peasants or the king?
 	AI_Output(self,other, " DIA_Lobart_WhichSide_05_01 " );	// I'm too close to the city to have a choice.
-	AI_Output(self,other, " DIA_Lobart_WhichSide_05_02 " );	// But I'm even glad about it. I wouldn't know what to decide anyway.
+	AI_Output(self,other, " DIA_Lobart_WhichSide_05_02 " );	// That is for the best. I wouldn't know what to decide anyway.
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other, " DIA_Lobart_WhichSide_05_03 " );	// The king drinks our blood, and Onar sends his mercenaries against anyone who does not want to join him.
-		AI_Output(self,other, " DIA_Lobart_WhichSide_05_04 " );	// This is why most farmers are still undecided, but sooner or later they WILL have to choose one side or the other.
+		AI_Output(self,other, " DIA_Lobart_WhichSide_05_03 " );	// The king drains us dry, but Onar sends his mercenaries against anyone who does not want to join him.
+		AI_Output(self,other, " DIA_Lobart_WhichSide_05_04 " );	// This is why most farmers are still undecided, but sooner or later they will have to choose one side or the other.
 	};
 };
 
@@ -374,8 +374,8 @@ func int DIA_Lobart_WorkNOW_Condition()
 func void DIA_Lobart_WorkNOW_Info()
 {
 	AI_Output(other,self, " DIA_Lobart_WorkNOW_15_00 " );	// I'm looking for a job.
-	AI_Output(self,other, " DIA_Lobart_WorkNOW_05_01 " );	// I don't need another permanent worker. But I can offer you a day job.
-	AI_Output(self,other, " DIA_Lobart_WorkNOW_05_02 " );	// I mean, you can help on the field. Also, there is sure to be some work for you here.
+	AI_Output(self,other, " DIA_Lobart_WorkNOW_05_01 " );	// I don't need another permanent worker, but I can offer you a day job.
+	AI_Output(self,other, " DIA_Lobart_WorkNOW_05_02 " );	// You can help on the field. Also, there is sure to be some work for you around here.
 	if(hero.guild == GIL_NONE)
 	{
 		AI_Output(self,other, " DIA_Lobart_WorkNOW_05_03 " );	// I can pay you in gold. Or give you decent clothes.
@@ -394,13 +394,13 @@ func void DIA_Lobart_WorkNOW_Info()
 	};
 	AI_Output(self,other, " DIA_Lobart_WorkNOW_05_07 " );	// The next job is to collect turnips in a small field behind the barn.
 	Info_ClearChoices(DIA_Lobart_WorkNOW);
-	Info_AddChoice(DIA_Lobart_WorkNOW, " Should I turnip? You must be joking! " ,DIA_Lobart_WorkNOW_WannaFoolMe);
-	Info_AddChoice(DIA_Lobart_WorkNOW, " Subject... " ,DIA_Lobart_WorkNOW_Ok);
+	Info_AddChoice(DIA_Lobart_WorkNOW, " Picking turnips? You must be joking! " ,DIA_Lobart_WorkNOW_WannaFoolMe);
+	Info_AddChoice(DIA_Lobart_WorkNOW, " Alright... " ,DIA_Lobart_WorkNOW_Ok);
 };
 
 func void DIA_Lobart_WorkNOW_Ok()
 {
-	AI_Output(other,self,"DIA_Lobart_WorkNOW_Ok_15_00");	//Хорошо...
+	AI_Output(other,self,"DIA_Lobart_WorkNOW_Ok_15_00");	//Good...
 	if(hero.guild == GIL_NONE)
 	{
 		AI_Output(self,other, " DIA_Lobart_WorkNOW_Ok_05_01 " );	// Then hurry up before I change my mind.
@@ -414,11 +414,11 @@ func void DIA_Lobart_WorkNOW_Ok()
 
 func void DIA_Lobart_WorkNOW_WannaFoolMe()
 {
-	AI_Output(other,self, " DIA_Lobart_WorkNOW_WannaFoolMe_15_00 " );	// Should I pull a turnip? You must be joking!
-	AI_Output(self,other, " DIA_Lobart_WorkNOW_WannaFoolMe_05_01 " );	// A real man's job is not for the 'refined gentleman', is it?
+	AI_Output(other,self, " DIA_Lobart_WorkNOW_WannaFoolMe_15_00 " );	// Picking turnips? You must be joking!
+	AI_Output(self,other, " DIA_Lobart_WorkNOW_WannaFoolMe_05_01 " );	// A real man's job is not for the 'refined gentleman', is that it?
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other, " DIA_Lobart_WorkNOW_WannaFoolMe_05_02 " );	// Stomp into the field or get off my farm!
+		AI_Output(self,other, " DIA_Lobart_WorkNOW_WannaFoolMe_05_02 " );	// Get your ass into the field or get off my farm!
 	}
 	else
 	{
@@ -439,7 +439,7 @@ instance DIA_Lobart_RuebenRunning(C_Info)
 	condition = DIA_Lobart_RuebenRunning_Condition;
 	information = DIA_Lobart_RuebenRunning_Info;
 	permanent = TRUE;
-	description = " Here's your turnip! " ;
+	description = " Here are your turnips! " ;
 };
 
 
@@ -453,17 +453,17 @@ func int DIA_Lobart_RuebenRunning_Condition()
 
 func void DIA_Lobart_RuebenRunning_Info()
 {
-	AI_Output(other,self, " DIA_Lobart_RuebenRunning_15_00 " );	// Here's your turnip!
+	AI_Output(other,self, " DIA_Lobart_RuebenRunning_15_00 " );	// Here are your turnips!
 
 	if(Npc_HasItems(other,ItPl_Beet) >= 20)
 	{
 		if(hero.guild == GIL_NONE)
 		{
-			AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_01 " );	// Yeah, looks like you're not as much of a slacker as you look.
+			AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_01 " );	// Yeah, looks like you're not as much of a slacker as I thought.
 		};
 		if (Npc_IsDead(Hilda) ==  FALSE )
 		{
-			AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_02 " );	// Take it to my wife at home and tell her to cook it.
+			AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_02 " );	// Take it to my wife in the main house and tell her to cook it.
 			MIS_Lobart_RuebenToHilda = LOG_Running;
 			Log_CreateTopic(TOPIC_Ruebenbringen,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_Ruebenbringen,LOG_Running);
@@ -472,7 +472,7 @@ func void DIA_Lobart_RuebenRunning_Info()
 
 		MIS_Lobart_Rueben = LOG_SUCCESS;
 		B_GivePlayerXP(XP_LobartHolRueben);
-		AI_Output(other,self, " DIA_Lobart_RuebenRunning_15_03 " );	// What about my board?
+		AI_Output(other,self, " DIA_Lobart_RuebenRunning_15_03 " );	// What about my reward?
 		AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_04 " );	// I can give you five gold coins.
 
 		if(hero.guild == GIL_NONE)
@@ -482,17 +482,17 @@ func void DIA_Lobart_RuebenRunning_Info()
 		Info_ClearChoices(DIA_Lobart_RuebenRunning);
 		if(hero.guild == GIL_NONE)
 		{
-			Info_AddChoice(DIA_Lobart_RuebenRunning, " Better sell your clothes cheaper! " ,DIA_Lobart_RuebenRunning_Billiger);
+			Info_AddChoice(DIA_Lobart_RuebenRunning, " I'll take the discounted clothes! " ,DIA_Lobart_RuebenRunning_Billiger);
 		};
-		Info_AddChoice(DIA_Lobart_RuebenRunning, " Give me five gold coins! " ,DIA_Lobart_RuebenRunning_Gold);
+		Info_AddChoice(DIA_Lobart_RuebenRunning, " Give me the five gold coins! " ,DIA_Lobart_RuebenRunning_Gold);
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_06 " );	// But you haven't collected even twenty!
+		AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_06 " );	// I want a minimum of twenty turnips!
 		if(hero.guild == GIL_NONE)
 		{
-			AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_07 " );	// Did you eat the rest?! I hope not, my boy, or else you'll have to forget your pay!
-			AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_08 " );	// Get back to the field and bring more! Work or I'll show you where the crayfish hibernate!
+			AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_07 " );	// Did you eat the rest?! I hope not, my boy, or else you can forget your wage!
+			AI_Output(self,other, " DIA_Lobart_RuebenRunning_05_08 " );	// Get back to the field and bring me more! Work or I'll show you where the Field Raiders nest!
 		};
 		AI_StopProcessInfos(self);
 	};
@@ -501,18 +501,18 @@ func void DIA_Lobart_RuebenRunning_Info()
 func void DIA_Lobart_RuebenRunning_Gold()
 {
 	AI_Output(other,self, " DIA_Lobart_RuebenRunning_Gold_15_00 " );	// Give me five gold coins!
-	AI_Output(self,other,"DIA_Lobart_RuebenRunning_Gold_05_01");	//Держи.
+	AI_Output(self,other,"DIA_Lobart_RuebenRunning_Gold_05_01");	//Here.
 	B_GiveInvItems(self,other,ItMi_Gold,5);
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other, " DIA_Lobart_RuebenRunning_Gold_05_02 " );	// Just don't drink them all at once.
+		AI_Output(self,other, " DIA_Lobart_RuebenRunning_Gold_05_02 " );	// Don't spend it all in one place.
 	};
 	Info_ClearChoices(DIA_Lobart_RuebenRunning);
 };
 
 func void DIA_Lobart_RuebenRunning_Billiger()
 {
-	AI_Output(other,self, " DIA_Lobart_RuebenRunning_Billiger_15_00 " );	// Better sell clothes cheaper!
+	AI_Output(other,self, " DIA_Lobart_RuebenRunning_Billiger_15_00 " );	// Better sell me those clothes cheaper!
 	AI_Output(self,other, " DIA_Lobart_RuebenRunning_Billiger_05_01 " );	// Good! I'll give it to you for ten gold pieces less.
 	Info_ClearChoices(DIA_Lobart_RuebenRunning);
 };
@@ -544,14 +544,14 @@ func void DIA_Lobart_MoreWork_Info()
 
 	if(MIS_Lobart_Rueben == LOG_Running)
 	{
-		AI_Output(self,other, " DIA_Lobart_MoreWork_05_01 " );	// Collect turnips from the field first! And there, let's see.
+		AI_Output(self,other, " DIA_Lobart_MoreWork_05_01 " );	// Collect twenty turnips from the field, and we'll take it from there.
 	}
 	else  if (MIS_Lobart_Psicamp ==  FALSE )
 	{
-		AI_Output(self,other, " DIA_Lobart_MoreWork_05_03 " );	// Yes, there is something. True, this is more of a request than a job.
-		AI_Output(other,self,"DIA_Lobart_MoreWork_05_04");	//Какая?
+		AI_Output(self,other, " DIA_Lobart_MoreWork_05_03 " );	// Yes, there is something. This is more of a request than a job tho...
+		AI_Output(other,self,"DIA_Lobart_MoreWork_05_04");	//Yes?
 		AI_Output(self,other, " DIA_Lobart_MoreWork_05_05 " );	// You see, some strange people recently settled near my farm.
-		AI_Output(self,other, " DIA_Lobart_MoreWork_05_06 " );	// (uncertainly) They don't look like bandits, but I still somehow feel uncomfortable.
+		AI_Output(self,other, " DIA_Lobart_MoreWork_05_06 " );	// They don't look like bandits, but they make me uncomfortable.
 		AI_Output(self,other, " DIA_Lobart_MoreWork_05_07 " );	// Try to find out who they are and why they came here.
 		AI_Output(other,self, " DIA_Lobart_MoreWork_05_08 " );	// Where did you see them?
 		AI_Output(self,other, " DIA_Lobart_MoreWork_05_09 " );	// Over there, behind the hill, not far from the stone circle.
@@ -564,7 +564,7 @@ func void DIA_Lobart_MoreWork_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Lobart_MoreWork_05_02 " );	// No, but you can ask my wife or the guys on the field. Perhaps they need help.
+		AI_Output(self,other, " DIA_Lobart_MoreWork_05_02 " );	// No, but you can ask my wife or the guys in the field. Perhaps they need help.
 		LobartOut = TRUE;
 	};
 };
@@ -574,7 +574,7 @@ instance DIA_Lobart_Psicamp(C_Info)
 	npc = BAU_950_Lobart;
 	condition = DIA_Lobart_Psicamp_Condition;
 	information = DIA_Lobart_Psicamp_Info;
-	description = " I found out who these people are. " ;
+	description = " I found out who those people are. " ;
 };
 
 func int DIA_Lobart_Psicamp_Condition()
@@ -588,11 +588,11 @@ func int DIA_Lobart_Psicamp_Condition()
 func void DIA_Lobart_Psicamp_Info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self, " DIA_Lobart_Psicamp_01_00 " );	// I found out who these people are.
+	AI_Output(other,self, " DIA_Lobart_Psicamp_01_00 " );	// I found out who those people are.
 	AI_Output(self,other, " DIA_Lobart_Psicamp_01_01 " );	// Yes? Who are they?
-	AI_Output(other,self, " DIA_Lobart_Psicamp_01_02 " );	// Don't worry. Ordinary bog collectors.
+	AI_Output(other,self, " DIA_Lobart_Psicamp_01_02 " );	// Don't worry. They're ordinary bog collectors.
 	AI_Output(other,self, " DIA_Lobart_Psicamp_01_03 " );	// I don't think they'll give you any trouble.
-	AI_Output(self,other, " DIA_Lobart_Psicamp_01_04 " );	// Well, if that's the case, then there's no reason to worry. Thanks for helping me figure this out.
+	AI_Output(self,other, " DIA_Lobart_Psicamp_01_04 " );	// Well, if that's the case, then there's no reason to worry. Thanks for helping me.
 	MIS_Lobart_Psicamp = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Lobart_Psicamp,LOG_SUCCESS);
 	B_LogEntry(TOPIC_Lobart_Psicamp, " I told Lobart about the Fellowship acolytes. " );
@@ -618,7 +618,7 @@ func void DIA_Lobart_ANDREHELPLOBART_Info()
 {
 	AI_Output(other,self, " DIA_Lobart_ANDREHELPLOBART_15_00 " );	// Lord Andre sent me to you. Is there anything I can help you with?
 	AI_Output(self,other, " DIA_Lobart_ANDREHELPLOBART_05_01 " );	// Yes, of course. I'm getting sick of these damned field predators.
-	AI_Output(self,other, " DIA_Lobart_ANDREHELPLOBART_05_02 " );	// Finish them all. I don't care how!
+	AI_Output(self,other, " DIA_Lobart_ANDREHELPLOBART_05_02 " );	// Get rid of them. I don't care how!
 	Log_AddEntry(TOPIC_BecomeMIL, " Lobart's fields are infested with field predators. He wants me to drive them out. " );
 	MIS_LobartKillBugs = LOG_Running;
 	AI_StopProcessInfos(self);
@@ -649,8 +649,8 @@ func void DIA_Lobart_BUGDEAD_Info()
 {
 	if (Npc_IsDead(Lobarts_Giant_Bug1) && Npc_IsDead(Lobarts_Giant_Bug2) && Npc_IsDead(Lobarts_Giant_Bug3) && Npc_IsDead(Lobarts_Giant_Bug4) && Npc_IsDead(Lobarts_Giant_Bug5) && Npc_IsDead(Lobarts_Giant_Bug6) && Npc_IsDead(Lobarts_Giant_Bug7)
 	{
-		AI_Output(other,self, " DIA_Lobart_BUGDEAD_15_00 " );	// I've dealt with these creatures!
-		AI_Output(self,other, " DIA_Lobart_BUGDEAD_05_01 " );	// Great. You're not such a bad liquidator. I will recommend you to my neighbors. Here, keep your earnings.
+		AI_Output(other,self, " DIA_Lobart_BUGDEAD_15_00 " );	// I've dealt with those creatures!
+		AI_Output(self,other, " DIA_Lobart_BUGDEAD_05_01 " );	// Great. You're quite the exterminator. I will recommend you to my neighbors. Here, keep your earnings.
 		B_StartOtherRoutine(Vino,"Start");
 		B_StartOtherRoutine(LobartsBauer1,"Start");
 		B_StartOtherRoutine(LobartsBauer2,"Start");
@@ -662,13 +662,13 @@ func void DIA_Lobart_BUGDEAD_Info()
 		B_GiveInvItems(self,other,ItMi_Gold,20);
 		MIS_LobartKillBugs = LOG_SUCCESS;
 		MIS_AndreHelpLobart = LOG_SUCCESS ;
-		Log_AddEntry(TOPIC_BecomeMIL, " Lobart Fields have been cleared of field predators. I've destroyed them all. " );
+		Log_AddEntry(TOPIC_BecomeMIL, " Lobart's Fields have been cleared of field predators. I've destroyed them all. " );
 		DIA_Lobart_BUGDEAD_noPerm = TRUE;
 	}
 	else
 	{
 		AI_Output(other,self, " DIA_Lobart_BUGDEAD_15_02 " );	// I think I've dealt with all the creatures!
-		AI_Output(self,other, " DIA_Lobart_BUGDEAD_05_03 " );	// Don't try to fool me. I still see them. Either you kill these creatures, or you can forget about the money.
+		AI_Output(self,other, " DIA_Lobart_BUGDEAD_05_03 " );	// Don't try to fool me. I still see them. Either you kill them all, or you can forget about the money.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -720,8 +720,8 @@ func int DIA_Lobart_DMT_Condition()
 func void DIA_Lobart_DMT_Info()
 {
 	AI_Output(other,self, " DIA_Lobart_DMT_15_00 " );	// How is your farm?
-	AI_Output(self,other, " DIA_Lobart_DMT_05_01 " );	// This is all unbearable.
-	AI_Output(self,other, " DIA_Lobart_DMT_05_02 " );	// All of a sudden, these guys in black cassocks appeared and settled on the road and on my farm.
+	AI_Output(self,other, " DIA_Lobart_DMT_05_01 " );	// This is unbearable.
+	AI_Output(self,other, " DIA_Lobart_DMT_05_02 " );	// All of a sudden, some guys in black appeared and settled on the road and on my farm.
 	Info_ClearChoices(DIA_Lobart_DMT);
 	Info_AddChoice(DIA_Lobart_DMT,Dialog_Ende,DIA_Lobart_DMT_BACK);
 
@@ -730,9 +730,9 @@ func void DIA_Lobart_DMT_Info()
 		AI_Output(self,other, " DIA_Lobart_DMT_05_03 " );	// They had a long conversation about something with Vino, and then disappeared with him.
 		if(NpcObsessedByDMT_Vino == FALSE)
 		{
-			Info_AddChoice(DIA_Lobart_DMT, " Where did they take the Wine? " ,DIA_Lobart_DMT_VinoWohin);
+			Info_AddChoice(DIA_Lobart_DMT, " Where did they take Vino? " ,DIA_Lobart_DMT_VinoWohin);
 		};
-		Info_AddChoice(DIA_Lobart_DMT, " What do they do with Vino? " ,DIA_Lobart_DMT_VinoWas);
+		Info_AddChoice(DIA_Lobart_DMT, " What did they do with Vino? " ,DIA_Lobart_DMT_VinoWas);
 	};
 	if (Npc_IsDead(Hilda) ==  FALSE )
 	{
@@ -752,10 +752,10 @@ func void DIA_Lobart_DMT_Info()
 func void DIA_Lobart_DMT_FrauHeilen()
 {
 	AI_Output(other,self, " DIA_Lobart_DMT_FrauHeilen_15_00 " );	// Why don't you take your wife to the doctor?
-	AI_Output(self,other, " DIA_Lobart_DMT_FrauHeilen_05_01 " );	// We should go into town to see Watras, but I won't move while my farm is in such chaos.
+	AI_Output(self,other, " DIA_Lobart_DMT_FrauHeilen_05_01 " );	// We should go into town to see Vatras, but I can't leave while my farm is in such chaos.
 	Log_CreateTopic(TOPIC_HealHilda,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HealHilda,LOG_Running);
-	B_LogEntry(TOPIC_HealHilda, " Lobart's wife Hilda is sick, but Vatras has a medicine that can cure her. " );
+	B_LogEntry(TOPIC_HealHilda, " Lobart's wife Hilda is sick, but Vatras may have medicine that can cure her. " );
 	MIS_HealHilda = LOG_Running;
 };
 
@@ -768,14 +768,14 @@ func void DIA_Lobart_DMT_BACK()
 func void DIA_Lobart_DMT_spokeToThem()
 {
 	AI_Output(other,self, " DIA_Lobart_DMT_spokeToThem_15_00 " );	// Have you spoken to the men in black?
-	AI_Output(self,other, " DIA_Lobart_DMT_spokeToThem_05_01 " );	// Of course. But they don't want to hear anything.
+	AI_Output(self,other, " DIA_Lobart_DMT_spokeToThem_05_01 " );	// Of course. But they don't listen.
 	AI_Output(self,other, " DIA_Lobart_DMT_spokeToThem_05_02 " );	// I think they're looking for someone.
 };
 
 func void DIA_Lobart_DMT_hof()
 {
 	AI_Output(other,self, " DIA_Lobart_DMT_hof_15_00 " );	// Why don't you do something about these men in black?
-	AI_Output(self,other, " DIA_Lobart_DMT_hof_05_01 " );	// I'd love to. But I saw them burn one citizen alive. No thanks.
+	AI_Output(self,other, " DIA_Lobart_DMT_hof_05_01 " );	// I'd love to. But I saw them burn someone alive. No thanks.
 	AI_Output(self,other, " DIA_Lobart_DMT_hof_05_02 " );	// I don't want to risk my life!
 };
 
@@ -787,8 +787,8 @@ func void DIA_Lobart_DMT_WineWas()
 
 func void DIA_Lobart_DMT_VinoWohin()
 {
-	AI_Output(other,self, " DIA_Lobart_DMT_VinoWohin_15_00 " );	// Where did they take Wine?
-	AI_Output(self,other, " DIA_Lobart_DMT_VinoWohin_05_01 " );	// They went up this hill.
+	AI_Output(other,self, " DIA_Lobart_DMT_VinoWohin_15_00 " );	// Where did they take Vino?
+	AI_Output(self,other, " DIA_Lobart_DMT_VinoWohin_05_01 " );	// They went up the hill.
 };
 
 
@@ -798,7 +798,7 @@ instance DIA_Lobart_VINOTOT (C_Info)
 	nr = 32;
 	condition = DIA_Lobart_VINOTOT_Condition;
 	information = DIA_Lobart_VINOTOT_Info;
-	description = " Wine will not return. " ;
+	description = " Vino will not return. " ;
 };
 
 
@@ -812,14 +812,14 @@ func int DIA_Lobart_VINOTOT_Condition()
 
 func void DIA_Lobart_VINOTOT_Info()
 {
-	AI_Output(other,self, " DIA_Lobart_VINOTOT_15_00 " );	// The wine won't come back.
+	AI_Output(other,self, " DIA_Lobart_VINOTOT_15_00 " );	// Vino won't come back.
 	if (Npc_IsDead(Vino))
 	{
 		AI_Output(other,self, " DIA_Lobart_VINOTOT_15_01 " );	// He's dead.
 	}
 	else
 	{
-		AI_Output(other, self, " DIA_Lobart_VINOTOT_15_02 " );	// They drove him crazy.
+		AI_Output(other, self, " DIA_Lobart_VINOTOT_15_02 " );	// They drove him mad.
 	};
 	AI_Output(self,other, " DIA_Lobart_VINOTOT_05_03 " );	// Oh, Innos. I hope this whole nightmare ends soon.
 	B_GivePlayerXP(XP_Ambient);
@@ -898,8 +898,8 @@ func int DIA_Lobart_ORKPROBLEM_Condition()
 func void DIA_Lobart_ORKPROBLEM_Info()
 {
 	AI_Output(other,self, " DIA_Lobart_ORKPROBLEM_15_00 " );	// You're in trouble with the orcs.
-	AI_Output(self,other, " DIA_Lobart_ORKPROBLEM_05_01 " );	// (evil) Damn. So when will this all end?
-	AI_Output(self,other, " DIA_Lobart_ORKPROBLEM_05_02 " );	// If this continues, my farm won't be worth a couple of gold coins.
+	AI_Output(self,other, " DIA_Lobart_ORKPROBLEM_05_01 " );	// Damn, when will this all end?
+	AI_Output(self,other, " DIA_Lobart_ORKPROBLEM_05_02 " );	// If this continues, my farm won't be worth a couple of gold coins. Can you help us?
 	Log_CreateTopic(TOPIC_LobartsOrKProblem,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LobartsOrKProblem,LOG_Running);
 	B_LogEntry(TOPIC_LobartsOrKProblem, " Orcs have taken over Lobart's farm. He wants me to rid him of them. " );
@@ -930,9 +930,9 @@ func void DIA_Lobart_ORKSWEG_Info()
 	AI_Output(other,self, " DIA_Lobart_ORKSWEG_15_00 " );	// I delivered your lands from the orcs.
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other, " DIA_Lobart_ORKSWEG_05_01 " );	// I won't let anyone tell you that paladins don't do anything for us mere farmers.
+		AI_Output(self,other, " DIA_Lobart_ORKSWEG_05_01 " );	// I won't let anyone say that paladins don't do anything for us mere farmers.
 	};
-	AI_Output(self,other, " DIA_Lobart_ORKSWEG_05_02 " );	// Glory to Innos. I can't give you much for this, but I hope you appreciate my gesture of gratitude.
+	AI_Output(self,other, " DIA_Lobart_ORKSWEG_05_02 " );	// Glory to Innos. I can't give you much for this, but I hope you accept this small gesture of my gratitude.
 	B_StartOtherRoutine(Vino,"Start");
 	B_StartOtherRoutine(LobartsBauer1,"Start");
 	B_StartOtherRoutine(LobartsBauer2,"Start");
@@ -1057,7 +1057,7 @@ func void DIA_Lobart_LobartMeal_Info()
 	AI_Output(other,self, " DIA_Lobart_LobartMeal_01_02 " );	// He gave you these three hundred coins.
 	B_GiveInvItems(other,self,ItMi_VatrasPurse,1);
 	Npc_RemoveInvItems(self,ItMi_VatrasPurse,1);
-	AI_Output(self,other, " DIA_Lobart_LobartMeal_01_03 " );	// Very generous of him. It's always a pleasure to deal with such a person!
+	AI_Output(self,other, " DIA_Lobart_LobartMeal_01_03 " );	// Very generous of him. It's always a pleasure to deal with such a generous person!
 	AI_Output(self,other, " DIA_Lobart_LobartMeal_01_04 " );	// So give the Honorable Vatras my thanks and this package.
 	B_GiveInvItems(self,other,ItMi_VatrasPacket,1);
 	B_LogEntry(TOPIC_LobartMeal, " Lobart gave me a food package for Vatras. " );
