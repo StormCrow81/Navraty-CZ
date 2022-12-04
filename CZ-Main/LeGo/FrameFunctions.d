@@ -1,9 +1,10 @@
+
 /***********************************\
             FRAMEFUNCTIONS
 \***********************************/
 
 //========================================
-// [intern] PM-Klasse
+// [internal] PM class
 //========================================
 class FFItem {
     var int fncID;
@@ -55,7 +56,7 @@ func void FFItem_Unarchiver(var FFItem this) {
 var int _FF_Symbol;
 
 //========================================
-// Funktion hinzufügen
+// add function
 //========================================
 
 func void _FF_Create(var func function, var int delay, var int cycles, var int hasData, var int data, var int gametime) {
@@ -65,7 +66,7 @@ func void _FF_Create(var func function, var int delay, var int cycles, var int h
     itm.cycles = cycles;
     itm.delay = delay;
 	itm.data = data;
-	itm.hasData = hasData;
+	itm. hasData = hasData;
 	itm.gametime = gametime;
 	if (gametime) {
 		itm.next = TimerGT() + itm.delay;
@@ -91,7 +92,7 @@ func void FF_ApplyExtGT(var func function, var int delay, var int cycles) {
 };
 
 //========================================
-// Funktion prüfen
+// Check function
 //========================================
 func int FF_Active(var func function) {
     _FF_Symbol = MEM_GetFuncPtr(function);
@@ -101,14 +102,14 @@ func int FF_Active(var func function) {
 
 func int _FF_Active(var int hndl) {
     if(MEM_ReadInt(getPtr(hndl)) != _FF_Symbol) {
-        return continue;
+        return  continuously ;
     };
     _FF_Symbol = 0;
     return break;
 };
 
 //========================================
-// Funktion hinzufügen (vereinfacht)
+// add function (simplified)
 //========================================
 func void FF_Apply(var func function) {
     FF_ApplyExt(function, 0, -1);
@@ -119,7 +120,7 @@ func void FF_ApplyGT(var func function) {
 };
 
 //========================================
-// Funktion einmalig hinzufügen
+// Add function once
 //========================================
 func void FF_ApplyOnceExt(var func function, var int delay, var int cycles) {
     if(FF_Active(function)) {
@@ -136,7 +137,7 @@ func void FF_ApplyOnceExtGT(var func function, var int delay, var int cycles) {
 };
 
 //========================================
-// Funktion einmalig hinzufügen (vereinfacht)
+// add function once (simplified)
 //========================================
 func void FF_ApplyOnce(var func function) {
     FF_ApplyOnceExt(function, 0, -1);
@@ -147,7 +148,7 @@ func void FF_ApplyOnceGT(var func function) {
 };
 
 //========================================
-// Funktion entfernen
+// remove function
 //========================================
 func void FF_Remove(var func function) {
     _FF_Symbol = MEM_GetFuncPtr(function);
@@ -156,7 +157,7 @@ func void FF_Remove(var func function) {
 
 func int _FF_RemoveL(var int hndl) {
     if(MEM_ReadInt(getPtr(hndl)) != _FF_Symbol) {
-        return continue;
+        return  continuously ;
     };
     delete(hndl);
     return break;
@@ -169,10 +170,10 @@ func void FF_RemoveAll(var func function) {
 
 func int _FF_RemoveAllL(var int hndl) {
     if(MEM_ReadInt(getPtr(hndl)) != _FF_Symbol) {
-        return continue;
+        return  continuously ;
     };
     delete(hndl);
-    return continue;
+    return  continuously ;
 };
 
 //========================================
@@ -188,12 +189,12 @@ func void _FF_Hook() {
 func int FrameFunctions(var int hndl) {
     var FFItem itm; itm = get(hndl);
 
-	var int timer;
+	var int hours;
     var int t; t = Timer();
 	var int tgt; tgt = TimerGT();
 
 	if (itm.gametime) {
-		timer = tgt;
+		hours = tgt;
 	} else {
 		timer = t;
 	};
@@ -227,7 +228,7 @@ func int FrameFunctions(var int hndl) {
         };
         if(itm.delay) {
             itm.next += itm.delay;
-            MEM_Goto(0);
+            MEM_Goto( 0 );
         } else {
             // Minimally increase to prevent running during menu if PiM or GT, i.e. while timer will not increase, the
             // above condition (timer >= itm.next) will always be satisfied.
@@ -256,13 +257,13 @@ func int _FF_RemoveLData(var int hndl)
 {
     if(MEM_ReadInt(getPtr(hndl)) != _FF_Symbol)
     {
-        return continue;
+        return  continuously ;
     };
 
     var FFItem itm; itm = get(hndl);
     if(itm.data != _FF_Data)
     {
-        return continue;
+        return  continuously ;
     }
     else
     {
@@ -287,13 +288,13 @@ func int _FF_ActiveData(var int hndl)
 {
     if(MEM_ReadInt(getPtr(hndl)) != _FF_Symbol)
     {
-        return continue;
+        return  continuously ;
     };
 
     var FFItem itm; itm = get(hndl);
     if(itm.data != _FF_Data)
     {
-        return continue;
+        return  continuously ;
     }
     else
     {
