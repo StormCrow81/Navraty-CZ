@@ -1,17 +1,15 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-instance ItMw_Addon_Betty - opraven typ zbraně (ITEM_AXE -> ITEM_SWD)
+instance ItMw_Addon_Betty - fixed weapon type (ITEM_AXE -> ITEM_SWD)
 instance ITMW_1H_CREST - ITMW_1H_CREST (cyrilice -> latinka)
-
 */
 
 
 
-//------------------epicheskiy shmot dlya danzha-------------------
+// ------------------epicheskiy shmot dlya danzha-------------------
 
 instance ItMw_Axe_Blood(C_Item)
 {
@@ -176,7 +174,7 @@ instance ItRw_Bow_Blood(C_Item)
 	inv_animate = 1;
 };
 
-//--------------kvestovoye oruzhiye-------------------------------
+// --------------kvestovoye oruzhiye-------------------------------
 
 instance ITMW_2H_ORCPRESTIGE(C_Item)
 {
@@ -200,14 +198,14 @@ instance ITMW_2H_ORCPRESTIGE(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Symbol síly a úcty mezi skřety...";
+	text[ 3 ] = " A symbol of strength and respect among goblins... " ;
 	text[4] = NAME_TWOHANDED_CRUSH_ORC;
 	inv_animate = 1;
 };
 
 instance ITMW_ADANOSMOLOT(C_Item)
 {
-	name = "Bič strážců";
+	name = " Whip of the Guardians " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_MISSION | ITEM_2HD_AXE;
 	material = MAT_METAL;
@@ -225,14 +223,14 @@ instance ITMW_ADANOSMOLOT(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Účinný proti kamenným strážcům...";
+	text[ 3 ] = " Effective against stone guardians... " ;
 	text[4] = NAME_TWOHANDED_CRUSH_LEGEND;
 	inv_animate = 1;
 };
 
-instance ITMI_TARACOTHAMMER(C_Item)
+instance ITMI_TARACOTHAMMER (C_Item)
 {
-	name = "Tarakotovo kladivo";
+	name = " Tarakot's Hammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_MISSION | ITEM_AXE;
 	material = MAT_METAL;
@@ -257,7 +255,7 @@ instance ITMI_TARACOTHAMMER(C_Item)
 
 instance ItMw_1h_TributeDagger(C_Item)
 {
-	name = "Sothova dýka";
+	name = " Soth's Dagger " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -270,16 +268,16 @@ instance ItMw_1h_TributeDagger(C_Item)
 	on_equip = equip_1h_light;
 	on_unequip = unequip_1h_light;
 	visual = "ITMW_1H_TRIBUTES_DAGGER_01.3DS";
-	description = "Sothova obětní dýka";
+	description = " Soth's Sacrificial Dagger " ;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Tuhle dýku používali skřeti k rituálním obětem...";
-	text[4] = "Na ostří je vidět kapky zaschlé krve...";
+	text[ 3 ] = " This dagger was used by goblins for ritual sacrifices... " ;
+	text[ 4 ] = " Drops of dried blood can be seen on the blade... " ;
 	inv_animate = 1;
 };
 
 
-//------------------------------parnoye------------------------------
+// ------------------------------parnoye----------------- -------------
 
 instance ItMw_1H_IlArahBlade_Left(C_Item)
 {
@@ -317,7 +315,7 @@ instance ItMw_1H_IlArahBlade_Right(C_Item)
 {
 	name = "Ruka Chaosu";
 	mainflag = ITEM_KAT_NF;
-	flags = ITEM_DAG;
+	flags = ITEM_DAY ;
 	material = MAT_METAL;
 	damagetype = DAM_EDGE | DAM_MAGIC;
 	damage[DAM_INDEX_EDGE] = 750;
@@ -348,7 +346,7 @@ instance ItMw_1H_IlArahBlade_Right(C_Item)
 
 instance ItMw_1H_ChelDrak_Left_Hero(C_Item)
 {
-	name = "Sekera prastarého strážce";
+	name = " Ax of the Ancient Guardian " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_THROW;
 	material = MAT_METAL;
@@ -380,9 +378,9 @@ instance ItMw_1H_ChelDrak_Left_Hero(C_Item)
 
 instance ItMw_1H_ChelDrak_Right_Hero(C_Item)
 {
-	name = "Sekera prastarého strážce";
+	name = " Ax of the Ancient Guardian " ;
 	mainflag = ITEM_KAT_NF;
-	flags = ITEM_DAG;
+	flags = ITEM_DAY ;
 	material = MAT_METAL;
 	damagetype = DAM_EDGE | DAM_MAGIC;
 	damage[DAM_INDEX_EDGE] = 600;
@@ -413,7 +411,7 @@ instance ItMw_1H_ChelDrak_Right_Hero(C_Item)
 
 instance ITMW_1H_MOONBLADE_LEFT(C_Item)
 {
-	name = "Měsíční čepel";
+	name = " Moonblade " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_THROW;
 	material = MAT_METAL;
@@ -444,9 +442,9 @@ instance ITMW_1H_MOONBLADE_LEFT(C_Item)
 
 instance ITMW_1H_MOONBLADE_RIGHT(C_Item)
 {
-	name = "Měsíční čepel";
+	name = " Moonblade " ;
 	mainflag = ITEM_KAT_NF;
-	flags = ITEM_DAG;
+	flags = ITEM_DAY ;
 	material = MAT_METAL;
 	value = 2555;
 	damageTotal = 450;
@@ -508,7 +506,7 @@ instance ItMw_1H_Ancient_Right(C_Item)
 {
 	name = "Amul Raf";
 	mainflag = ITEM_KAT_NF;
-	flags = ITEM_DAG;
+	flags = ITEM_DAY ;
 	material = MAT_METAL;
 	value = 1355;
 	damageTotal = 350;
@@ -572,7 +570,7 @@ instance ItMw_1H_AssBlade_Right(C_Item)
 {
 	name = "Ruka Masyafu";
 	mainflag = ITEM_KAT_NF;
-	flags = ITEM_DAG;
+	flags = ITEM_DAY ;
 	material = MAT_METAL;
 	value = 555;
 	damageTotal = 250;
@@ -601,7 +599,7 @@ instance ItMw_1H_AssBlade_Right(C_Item)
 	inv_animate = 1;
 };
 
-//---------------dlya NPC-------------------------
+// ---------------dlya NPC-------------------------
 
 instance ItMw_1H_IlArahBlade_Left_Npc(C_Item)
 {
@@ -620,7 +618,7 @@ instance ItMw_1H_IlArahBlade_Left_Npc(C_Item)
 	on_equip = Equip_ItMw_CHAOSDUAL_Left;
 	on_unequip = UnEquip_ItMw_CHAOSDUAL_Left;
 	description = name;
-	text[4] = "Tuhle hůl obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this staff... " ;
 	inv_animate = 1;
 };
 
@@ -628,7 +626,7 @@ instance ItMw_1H_IlArahBlade_Right_Npc(C_Item)
 {
 	name = "Ruka Chaosu";
 	mainflag = ITEM_KAT_NF;
-	flags = ITEM_DAG;
+	flags = ITEM_DAY ;
 	material = MAT_METAL;
 	damageTotal = 12000;
 	damagetype = DAM_EDGE;
@@ -641,13 +639,13 @@ instance ItMw_1H_IlArahBlade_Right_Npc(C_Item)
 	on_equip = Equip_ItMw_CHAOSDUAL_RIGHT;
 	on_unequip = UnEquip_ItMw_CHAOSDUAL_RIGHT;
 	description = name;
-	text[4] = "Tuhle hůl obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this staff... " ;
 	inv_animate = 1;
 };
 
 instance ItMw_1H_ChelDrak_Left(C_Item)
 {
-	name = "Prokletá sekera Chel'Draka";
+	name = " Cursed Ax of Chel'Dragon " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_THROW;
 	material = MAT_METAL;
@@ -662,15 +660,15 @@ instance ItMw_1H_ChelDrak_Left(C_Item)
 	on_equip = equip_2h_ChelDrak_Left;
 	on_unequip = unequip_2h_ChelDrak_Left;
 	description = name;
-	text[4] = "Tuhle hůl obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this staff... " ;
 	inv_animate = 1;
 };
 
 instance ItMw_1H_ChelDrak_Right(C_Item)
 {
-	name = "Prokletá sekera Chel'Draka";
+	name = " Cursed Ax of Chel'Dragon " ;
 	mainflag = ITEM_KAT_NF;
-	flags = ITEM_DAG;
+	flags = ITEM_DAY ;
 	material = MAT_METAL;
 	damageTotal = 10000;
 	damagetype = DAM_EDGE;
@@ -683,7 +681,7 @@ instance ItMw_1H_ChelDrak_Right(C_Item)
 	on_equip = equip_2h_ChelDrak_Right;
 	on_unequip = unequip_2h_ChelDrak_Right;
 	description = name;
-	text[4] = "Tuhle hůl obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this staff... " ;
 	inv_animate = 1;
 };
 
@@ -712,7 +710,7 @@ instance ItMw_1H_AssBlade_Npc_Right(C_Item)
 {
 	name = "Čepel Masyafu";
 	mainflag = ITEM_KAT_NF;
-	flags = ITEM_DAG;
+	flags = ITEM_DAY ;
 	material = MAT_METAL;
 	value = 150;
 	damageTotal = 3500;
@@ -739,7 +737,7 @@ func void Equip_ITMW_CHAOSDUAL_LEFT()
 			LH_Ready_2X2 = TRUE;
 			MELEEWEAPONINDEX = 6;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			if(hero.HitChance[NPC_TALENT_2H] >= 90)
 			{
@@ -788,7 +786,7 @@ func void Equip_ITMW_CHAOSDUAL_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 		 	if(AIV_TwoHands == TRUE)
 			{
@@ -819,7 +817,7 @@ func void UnEquip_ITMW_CHAOSDUAL_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = TRUE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -844,7 +842,7 @@ func void UnEquip_ITMW_CHAOSDUAL_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -891,7 +889,7 @@ func void Equip_ITMW_CHAOSDUAL_RIGHT()
 		RH_Ready_2X2 = TRUE;
 		MELEEWEAPONINDEX = 6;
 		EquipedIndex_1H = TRUE;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
 		{
@@ -942,7 +940,7 @@ func void UnEquip_ITMW_CHAOSDUAL_RIGHT()
 		RH_Ready_2X2 = FALSE;
 		EquipedIndex_1H = FALSE;
 		MELEEWEAPONINDEX = 0;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if(LH_Ready_2X2 == TRUE)
 		{
@@ -967,7 +965,7 @@ func void Equip_ITMW_CHELDRAK_LEFT()
 			LH_Ready_2X2 = TRUE;
 			MELEEWEAPONINDEX = 5;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			if(hero.HitChance[NPC_TALENT_2H] >= 90)
 			{
@@ -1016,7 +1014,7 @@ func void Equip_ITMW_CHELDRAK_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 		 	if(AIV_TwoHands == TRUE)
 			{
@@ -1047,7 +1045,7 @@ func void UnEquip_ITMW_CHELDRAK_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = TRUE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -1072,7 +1070,7 @@ func void UnEquip_ITMW_CHELDRAK_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -1119,7 +1117,7 @@ func void Equip_ITMW_CHELDRAK_RIGHT()
 		RH_Ready_2X2 = TRUE;
 		MELEEWEAPONINDEX = 5;
 		EquipedIndex_1H = TRUE;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
 		{
@@ -1170,7 +1168,7 @@ func void UnEquip_ITMW_CHELDRAK_RIGHT()
 		RH_Ready_2X2 = FALSE;
 		EquipedIndex_1H = FALSE;
 		MELEEWEAPONINDEX = 0;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if(LH_Ready_2X2 == TRUE)
 		{
@@ -1195,7 +1193,7 @@ func void Equip_ITMW_1H_MOONBLADE_LEFT()
 			LH_Ready_2X2 = TRUE;
 			MELEEWEAPONINDEX = 4;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			if(hero.HitChance[NPC_TALENT_2H] >= 90)
 			{
@@ -1244,7 +1242,7 @@ func void Equip_ITMW_1H_MOONBLADE_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 		 	if(AIV_TwoHands == TRUE)
 			{
@@ -1275,7 +1273,7 @@ func void UnEquip_ITMW_1H_MOONBLADE_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = TRUE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -1300,7 +1298,7 @@ func void UnEquip_ITMW_1H_MOONBLADE_LEFT()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = FALSE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -1347,7 +1345,7 @@ func void Equip_ITMW_1H_MOONBLADE_RIGHT()
 		RH_Ready_2X2 = TRUE;
 		MELEEWEAPONINDEX = 4;
 		EquipedIndex_1H = TRUE;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
 		{
@@ -1398,7 +1396,7 @@ func void UnEquip_ITMW_1H_MOONBLADE_RIGHT()
 		RH_Ready_2X2 = FALSE;
 		EquipedIndex_1H = FALSE;
 		MELEEWEAPONINDEX = 0;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if(LH_Ready_2X2 == TRUE)
 		{
@@ -1478,7 +1476,7 @@ func void Equip_ItMw_1H_AssBlade_Left()
 			LH_Ready_2X2 = TRUE;
 			EquipedIndex_1H = FALSE;
 			MELEEWEAPONINDEX = 3;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			if(hero.HitChance[NPC_TALENT_2H] >= 90)
 			{
@@ -1527,7 +1525,7 @@ func void Equip_ItMw_1H_AssBlade_Left()
 			LH_Ready_2X2 = FALSE;
 			EquipedIndex_1H = FALSE;
 			MELEEWEAPONINDEX = 0;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 		 	if(AIV_TwoHands == TRUE)
 			{
@@ -1558,7 +1556,7 @@ func void UnEquip_ItMw_1H_AssBlade_Left()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = TRUE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -1583,7 +1581,7 @@ func void UnEquip_ItMw_1H_AssBlade_Left()
 			LH_Ready_2X2 = FALSE;
 			EquipedIndex_1H = FALSE;
 			MELEEWEAPONINDEX = 0;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -1630,7 +1628,7 @@ func void Equip_ItMw_1H_AssBlade_RIGHT()
 		RH_Ready_2X2 = TRUE;
 		MELEEWEAPONINDEX = 3;
 		EquipedIndex_1H = TRUE;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
 		{
@@ -1681,7 +1679,7 @@ func void UnEquip_ItMw_1H_AssBlade_RIGHT()
 		RH_Ready_2X2 = FALSE;
 		MELEEWEAPONINDEX = 0;
 		EquipedIndex_1H = FALSE;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if(LH_Ready_2X2 == TRUE)
 		{
@@ -1705,7 +1703,7 @@ func void Equip_ItMw_1H_Ancient_Left()
 			LH_Ready_2X2 = TRUE;
 			EquipedIndex_1H = FALSE;
 			MELEEWEAPONINDEX = 3;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			if(hero.HitChance[NPC_TALENT_2H] >= 90)
 			{
@@ -1754,7 +1752,7 @@ func void Equip_ItMw_1H_Ancient_Left()
 			LH_Ready_2X2 = FALSE;
 			EquipedIndex_1H = FALSE;
 			MELEEWEAPONINDEX = 0;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 		 	if(AIV_TwoHands == TRUE)
 			{
@@ -1785,7 +1783,7 @@ func void UnEquip_ItMw_1H_Ancient_Left()
 			LH_Ready_2X2 = FALSE;
 			MELEEWEAPONINDEX = 0;
 			EquipedIndex_1H = TRUE;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -1810,7 +1808,7 @@ func void UnEquip_ItMw_1H_Ancient_Left()
 			LH_Ready_2X2 = FALSE;
 			EquipedIndex_1H = FALSE;
 			MELEEWEAPONINDEX = 0;
-			BONUSHW = 0;
+			BONUSHW = 0 ;
 
 			Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 			Mdl_RemoveOverlayMds(hero,"PRE_START_2X2.MDS");
@@ -1857,7 +1855,7 @@ func void Equip_ItMw_1H_Ancient_RIGHT()
 		RH_Ready_2X2 = TRUE;
 		MELEEWEAPONINDEX = 3;
 		EquipedIndex_1H = TRUE;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if((AIV_Shield_01 == TRUE) || (AIV_Shield_02 == TRUE) || (AIV_Shield_03 == TRUE) || (AIV_Shield_04 == TRUE) || (AIV_Shield_05 == TRUE) || (AIV_Shield_06 == TRUE) || (AIV_Shield_07 == TRUE) || (AIV_Shield_Caracust == TRUE))
 		{
@@ -1908,7 +1906,7 @@ func void UnEquip_ItMw_1H_Ancient_RIGHT()
 		RH_Ready_2X2 = FALSE;
 		MELEEWEAPONINDEX = 0;
 		EquipedIndex_1H = FALSE;
-		BONUSHW = 0;
+		BONUSHW = 0 ;
 
 		if(LH_Ready_2X2 == TRUE)
 		{
@@ -1923,20 +1921,20 @@ func void UnEquip_ItMw_1H_Ancient_RIGHT()
 	};
 };
 
-//--------------------------imenooye oruzhiye--------------------------------------
+// --------------------imenooye oruzhiye-------------------- ------------------
 
-instance ItMw_Schwert5(C_Item) //Skatti
+instance ItMw_Schwert5 (C_Item) // Skatti
 {
-	name = "Tesák baziliška";
+	name = " Basilisk Fang " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	damageTotal = 50;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert5;
+	range = range_sword5;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = Condition_Schwert5;
+	cond_value[ 2 ] = Condition_Sword5;
 	//visual = "ItMw_058_1h_Sword_Bastard_02.3DS";
 	visual = "ItMw_ShortSword3_New.3DS";
 	on_equip = equip_1h_heavy;
@@ -1953,14 +1951,14 @@ instance ItMw_Schwert5(C_Item) //Skatti
 
 instance ItMw_HartSword(C_Item)
 {
-	name = "Hartův meč";
+	name = " Hart's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	damageTotal = 80;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert3;
+	range = range_sword3;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 80;
 	visual = "VBE_EDLESSCHWERT01.3DS";
@@ -1978,7 +1976,7 @@ instance ItMw_HartSword(C_Item)
 
 instance ItMw_Zweihaender3(C_Item) //Torus
 {
-	name = "Výkřik zuřivosti";
+	name = " Scream of Fury " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2002,16 +2000,16 @@ instance ItMw_Zweihaender3(C_Item) //Torus
 	inv_animate = 1;
 };
 
-instance ItMw_Meisterdegen(C_Item) //Kassiya
+instance ItMw_Meisterdegen (C_Item) // Kassiya
 {
-	name = "Kord mistra zloděje";
+	name = " Master Thief Kord " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 15;
 	damageTotal = 60;
 	damagetype = DAM_EDGE;
-	range = Range_Meisterdegen;
+	range = range_master sword;
 	on_equip = Equip_Meisterdegen;
 	on_unequip = UnEquip_Meisterdegen;
 	cond_atr[1] = ATR_STRENGTH;
@@ -2031,7 +2029,7 @@ instance ItMw_Meisterdegen(C_Item) //Kassiya
 	inv_animate = 1;
 };
 
-instance ItMw_Krummschwert(C_Item)  //Telokhranitel' Lemara
+instance ItMw_Krummschwert (C_Item)   // Telokhranitel' Lemara
 {
 	name = "Jizva";
 	mainflag = ITEM_KAT_NF;
@@ -2058,14 +2056,14 @@ instance ItMw_Krummschwert(C_Item)  //Telokhranitel' Lemara
 
 instance ITMW_DIEGO_DEGEN(C_Item)
 {
-	name = "Diegova obratnost";
+	name = " Diego's Dexterity " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 15;
 	damageTotal = 70;
 	damagetype = DAM_EDGE;
-	range = Range_Meisterdegen;
+	range = range_master sword;
 	on_equip = equip_itmw_diego_degen;
 	on_unequip = unequip_itmw_diego_degen;
 	cond_atr[1] = ATR_STRENGTH;
@@ -2086,15 +2084,15 @@ instance ITMW_DIEGO_DEGEN(C_Item)
 
 instance ItMw_1H_GoldBrand_Greg(C_Item)
 {
-	name = "Ingreyn";
+	name = " Ingreyn " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	damageTotal = 80;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschlaechter;
-	on_equip = equip_itmw_sentenca_sword;
+	range = range_orcslayer;
+	on_equipment = equip_itmw_sentenca_sword;
 	on_unequip = unequip_itmw_sentenca_sword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = cond_value_itmw_sentenca_sword;
@@ -2111,14 +2109,14 @@ instance ItMw_1H_GoldBrand_Greg(C_Item)
 
 instance ITMW_GORN_AXT(C_Item)
 {
-	name = "Gornova pomsta";
+	name = " Gornova pomsta " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	damageTotal = 80;
 	damagetype = DAM_EDGE;
-	range = Range_Schlachtaxt;
+	range = range_axe;
 	on_equip = equip_itmw_gorn_axt;
 	on_unequip = unequip_itmw_gorn_axt;
 	cond_atr[2] = ATR_STRENGTH;
@@ -2161,7 +2159,7 @@ instance ITMW_LEE_AXT(C_Item)
 
 instance ITMW_KORD_AXT(C_Item)
 {
-	name = "Cordova síla";
+	name = " Cord's Power " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2187,7 +2185,7 @@ instance ITMW_KORD_AXT(C_Item)
 
 instance ITMW_LARES_AXT(C_Item)
 {
-	name = "Laresův přítel";
+	name = " Lares' Friend " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2245,8 +2243,8 @@ instance ITMW_SENTENCA_SWORD(C_Item)
 	value = 10;
 	damageTotal = 50;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschlaechter;
-	on_equip = equip_itmw_sentenca_sword;
+	range = range_orcslayer;
+	on_equipment = equip_itmw_sentenca_sword;
 	on_unequip = unequip_itmw_sentenca_sword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = cond_value_itmw_sentenca_sword;
@@ -2271,7 +2269,7 @@ instance ITMW_JARVIS_WAFFER(C_Item)
 	value = 10;
 	damageTotal = 60;
 	damagetype = DAM_BLUNT;
-	range = Range_Streitkolben;
+	range = range_mace;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = cond_value_itmw_jarvis_waffer;
 	//visual = "ItMw_050_1h_mace_war_03.3DS";
@@ -2289,7 +2287,7 @@ instance ITMW_JARVIS_WAFFER(C_Item)
 
 instance ItMw_1H_Blessed_Venzel(C_Item)
 {
-	name = "Wenzelův meč";
+	name = " Wenzel's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2310,7 +2308,7 @@ instance ItMw_1H_Blessed_Venzel(C_Item)
 
 instance ITMW_ZWEIHAENDER_GORNAKOSH(C_Item)
 {
-	name = "Gor Na Koshův obouruční meč";
+	name = " Gor Na Kosh's Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2334,7 +2332,7 @@ instance ITMW_ZWEIHAENDER_GORNAKOSH(C_Item)
 	inv_animate = 1;
 };
 
-instance ITMW_WOLF_WAFFER(C_Item)
+instance ITMW_WOLF_WAFFER (C_Item)
 {
 	name = "Wolfova prohnanost";
 	mainflag = ITEM_KAT_NF;
@@ -2343,11 +2341,11 @@ instance ITMW_WOLF_WAFFER(C_Item)
 	value = 10;
 	damageTotal = 60;
 	damagetype = DAM_BLUNT;
-	range = Range_Streitkolben;
+	range = range_mace;
 	on_equip = equip_itmw_wolf_waffer;
 	on_unequip = unequip_itmw_wolf_waffer;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = cond_value_itmw_wolf_waffer;
+	cond_value[ 2 ] = cond_value_itmw_wolf_waffer;
 	//visual = "ItMw_050_1h_mace_war_03.3DS";
 	visual = "ItMw_Morgenstern_New.3DS";
 	description = name;
@@ -2361,14 +2359,14 @@ instance ITMW_WOLF_WAFFER(C_Item)
 
 instance ITMW_LESTER_SWORD(C_Item)
 {
-	name = "Lesterův uklidňovač";
+	name = " Lester's Tranquilizer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	damageTotal = 60;
 	damagetype = DAM_BLUNT;
-	range = Range_Streitkolben;
+	range = range_mace;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = COND_VALUE_ITMW_JARVIS_WAFFER;
 	//visual = "ItMw_050_1h_mace_war_03.3DS";
@@ -2386,7 +2384,7 @@ instance ITMW_LESTER_SWORD(C_Item)
 
 instance ITMW_KURGANSWORD(C_Item)
 {
-	name = "Kurganův meč";
+	name = " Kurgan's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2436,14 +2434,14 @@ instance ITMW_2H_MASTER_01(C_Item)
 
 instance ITMW_SCORPIONSPEC(C_Item)  //master ubiytsa
 {
-	name = "Žihadlo škorpiona";
+	name = " Scorpion Sting " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 15;
 	damageTotal = 90;
 	damagetype = DAM_EDGE;
-	range = Range_Meisterdegen;
+	range = range_master sword;
 	cond_atr[1] = ATR_STRENGTH;
 	cond_value[1] = 10;
 	cond_atr[2] = ATR_DEXTERITY;
@@ -2518,7 +2516,7 @@ instance ItMw_ChiefRapier_Loa(C_Item)
 
 instance ITMW_ABIGEILSPAGE(C_Item)	//Abigal'
 {
-	name = "Zraňující jehla";
+	name = " Wounding Needle " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2538,7 +2536,7 @@ instance ITMW_ABIGEILSPAGE(C_Item)	//Abigal'
 	count[1] = damageTotal;
 	text[2] = NAME_Dex_needed;
 	count[2] = cond_value[2];
-	text[3] = "Na jílci je vyryto jméno 'Abigail'...";
+	text[ 3 ] = " The name 'Abigail' is engraved on the hilt... " ;
 	text[4] = NAME_ONEHANDED_PIERCE_UNIQ;
 	visual_change = NAME_ONEHANDED_PIERCE_UNIQ;
 	ownerGuild = 123;
@@ -2570,9 +2568,9 @@ instance ITMW_2H_AXE_GESTATH(C_Item)
 	inv_animate = 1;
 };
 
-instance ANGAR_SCHWERT(C_ITEM)		//Angar
+instance ANGAR_SWORD ( C_ITEM )		 // Angar
 {
-	name = "Rudý vítr";
+	name = " Red Wind " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2582,7 +2580,7 @@ instance ANGAR_SCHWERT(C_ITEM)		//Angar
 	range = 140;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 90;
-	//visual = "ITMW_EINFACHES_2H_SCHWERT.3DS";
+	// visual = "ITMW_SIMPLE_2H_SWORD.3DS";
 	visual = "ItMw_Zweihaender4_New.3DS";
 	on_equip = equip_2h_heavy;
 	on_unequip = unequip_2h_heavy;
@@ -2623,7 +2621,7 @@ instance ITMW_2H_MASIAF_TIAMANT(C_Item)
 
 instance ITMW_2H_MASIAF_HANIAR(C_Item)
 {
-	name = "Haniarův meč";
+	name = " Haniar's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2648,7 +2646,7 @@ instance ITMW_2H_MASIAF_HANIAR(C_Item)
 
 instance ITMW_2H_MASIAF_HANIAR_Demon(C_Item)
 {
-	name = "Prokletí Masyafu";
+	name = " Curse of Masyaf " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2677,7 +2675,7 @@ instance ITMW_2H_MASIAF_HANIAR_Demon(C_Item)
 
 instance ITMW_2H_MASIAF_OSAIR(C_Item)
 {
-	name = "Osairův meč";
+	name = " Sword of Osair " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2702,7 +2700,7 @@ instance ITMW_2H_MASIAF_OSAIR(C_Item)
 
 instance ITMW_2H_MASIAF_NROZAS(C_Item)
 {
-	name = "Nrozasův meč";
+	name = " Sword of Nrozas " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -2726,7 +2724,7 @@ instance ITMW_2H_MASIAF_NROZAS(C_Item)
 };
 
 
-//--------------------------oruzhiye orkov -----------------------------
+// --------------------------oruzhiye orkov-------------------- ---------
 
 instance ItMw_2H_OrcAxe_01(C_Item)
 {
@@ -2825,7 +2823,7 @@ instance ItMw_2H_OrcSword_01(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 240;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = Condition_Orkschwert;
 	visual = "ITMW_GREATORCAXE_01.3DS";
@@ -2847,7 +2845,7 @@ instance ItMw_2H_OrcSword_02(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 260;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = Condition_Orkschwert_01;
 	visual = "ItMw_2H_OrcSword_02_1.3DS";
@@ -2869,7 +2867,7 @@ instance ITMW_2H_ORCSWORD_03(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 280;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = Condition_Drachenschneide;
 	visual = "ItMw_2H_OrcSword_02_2.3DS";
@@ -2891,7 +2889,7 @@ instance ITMW_2H_ORCSWORD_04(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 300;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 300;
 	visual = "ItMw_2H_OrcSword_03.3DS";
@@ -2920,7 +2918,7 @@ instance ITMW_2H_ORCSWORD_05(C_Item)
 	on_equip = equip_2h_veryheavy_orc;
 	on_unequip = unequip_2h_veryheavy_orc;
 	description = name;
-	text[4] = "Zbraň vůdce skřetů Ur-Thralla...";
+	text[ 4 ] = " Goblin leader Ur-Thrall's weapon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2935,7 +2933,7 @@ instance ITMW_2H_ORCMACE_01(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 180;
 	damagetype = DAM_BLUNT;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 150;
 	visual = "ITMW_GREATORCAXE_02.3DS";
@@ -2957,7 +2955,7 @@ instance ITMW_2H_ORCMACE_02(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 240;
 	damagetype = DAM_BLUNT;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 150;
 	visual = "ItMw_2H_OrcMace_03.3DS";
@@ -2979,7 +2977,7 @@ instance ITMW_2H_DRACONSWORD_01(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 350;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 245;
 	visual = "ItMw_DraconianSword_New_01.3DS";
@@ -3001,7 +2999,7 @@ instance ITMW_2H_DRACONSWORD_02(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 450;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 400;
 	visual = "ItMw_DraconianSword_New_01.3DS";
@@ -3023,7 +3021,7 @@ instance ITMW_ORCSTAFF(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 30;
 	damagetype = DAM_BLUNT;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 30;
 	visual = "ItMw_2h_OrcStab_L.3DS";
@@ -3045,7 +3043,7 @@ instance ITMW_ORCSTAFF_ELITE(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 50;
 	damagetype = DAM_BLUNT;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 50;
 	visual = "ItMw_2h_OrcStab_H.3DS";
@@ -3060,14 +3058,14 @@ instance ITMW_ORCSTAFF_ELITE(C_Item)
 
 instance ITMW_ORCSTAFF_UNDEAD(C_Item)
 {
-	name = "Utar Rat Shakhar";
+	name = " Utar Rat Shakhar " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_STONE;
 	value = Value_Orkschwert;
 	damageTotal = 100;
 	damagetype = DAM_BLUNT;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 100;
 	visual = "ITMW_ORCSTAFF_03.3DS";
@@ -3089,7 +3087,7 @@ instance ITMW_ADDON_KEULE_1H_03(C_Item)
 	value = Value_Belegnagel;
 	damageTotal = Damage_Sturmknecht;
 	damagetype = DAM_BLUNT;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = Condition_Sturmknecht;
 	visual = "ItMW_Club_2H_01.3DS";
@@ -3111,7 +3109,7 @@ instance ItMw_2h_OrcStab(C_Item)
 	value = Value_Orkschwert;
 	damageTotal = 120;
 	damagetype = DAM_BLUNT;
-	range = Range_Orkschwert_01;
+	range = range_orc sword_01;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = 100;
 	visual = "ItMw_2h_OrcStab_H.3DS";
@@ -3158,11 +3156,11 @@ instance ITMW_2H_ORCSTAFF_01(C_Item)
 	inv_animate = 1;
 };
 
-//-----------------------------shchity-----------------------------------------
+// -----------------------shchity------------ ----------------------
 
 instance ItAr_Shield_01(C_Item)
 {
-	name = "Dřevěný štít";
+	name = " Wooden Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 20;
@@ -3202,7 +3200,7 @@ func void Equip_ItAr_Shield_01()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_Shield = TRUE;
 
@@ -3210,7 +3208,7 @@ func void Equip_ItAr_Shield_01()
 		Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
 		Mdl_RemoveOverlayMds(hero,"humans_1hST1.mds");
 
-		if((EquipedIndex_1H == TRUE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE))
+		if ((EquipedIndex_1H ==  TRUE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && ( AIV_Staff_05  ) = FALSE && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ))
 		{
 			if(LowHealth == TRUE)
 			{
@@ -3269,7 +3267,7 @@ func void UnEquip_ItAr_Shield_01()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 		AIV_GiveShieldRes = FALSE;
 		AIV_Shield = FALSE;
 
@@ -3328,7 +3326,7 @@ func void UnEquip_ItAr_Shield_01()
 
 instance ItAr_Shield_01_Alrik(C_Item)
 {
-	name = "Alrikův štít";
+	name = " Alrik's Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 10;
@@ -3381,7 +3379,7 @@ func void UnEquip_ItAr_Shield_01_Alrik()
 
 instance ItAr_Shield_02(C_Item)
 {
-	name = "Štít žoldáka";
+	name = " Mercenary Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 30;
@@ -3421,7 +3419,7 @@ func void Equip_ItAr_Shield_02()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_Shield = TRUE;
 
@@ -3429,7 +3427,7 @@ func void Equip_ItAr_Shield_02()
 		Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
 		Mdl_RemoveOverlayMds(hero,"humans_1hST1.mds");
 
-		if((EquipedIndex_1H == TRUE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE))
+		if ((EquipedIndex_1H ==  TRUE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && ( AIV_Staff_05  ) = FALSE && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ))
 		{
 			if(LowHealth == TRUE)
 			{
@@ -3487,7 +3485,7 @@ func void UnEquip_ItAr_Shield_02()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_GiveShieldRes = FALSE;
 		AIV_Shield = FALSE;
@@ -3539,7 +3537,7 @@ func void UnEquip_ItAr_Shield_02()
 
 instance ItAr_Shield_03(C_Item)
 {
-	name = "Nordmarský štít";
+	name = " Nordmar Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 40;
@@ -3581,7 +3579,7 @@ func void Equip_ItAr_Shield_03()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_Shield = TRUE;
 
@@ -3589,7 +3587,7 @@ func void Equip_ItAr_Shield_03()
 		Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
 		Mdl_RemoveOverlayMds(hero,"humans_1hST1.mds");
 
-		if((EquipedIndex_1H == TRUE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE))
+		if ((EquipedIndex_1H ==  TRUE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && ( AIV_Staff_05  ) = FALSE && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ))
 		{
 			if(LowHealth == TRUE)
 			{
@@ -3641,7 +3639,7 @@ func void UnEquip_ItAr_Shield_03()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 		AIV_GiveShieldRes = FALSE;
 		AIV_Shield = FALSE;
 
@@ -3686,7 +3684,7 @@ func void UnEquip_ItAr_Shield_03()
 
 instance ItAr_Shield_04(C_Item)
 {
-	name = "Štít berserkera";
+	name = " Berserker Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 50;
@@ -3729,7 +3727,7 @@ func void Equip_ItAr_Shield_04()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_Shield = TRUE;
 
@@ -3737,7 +3735,7 @@ func void Equip_ItAr_Shield_04()
 		Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
 		Mdl_RemoveOverlayMds(hero,"humans_1hST1.mds");
 
-		if((EquipedIndex_1H == TRUE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE))
+		if ((EquipedIndex_1H ==  TRUE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && ( AIV_Staff_05  ) = FALSE && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ))
 		{
 			if(LowHealth == TRUE)
 			{
@@ -3789,7 +3787,7 @@ func void UnEquip_ItAr_Shield_04()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_GiveShieldRes = FALSE;
 		AIV_Shield = FALSE;
@@ -3835,7 +3833,7 @@ func void UnEquip_ItAr_Shield_04()
 
 instance ItAr_Shield_05(C_Item)
 {
-	name = "Prastarý štít";
+	name = " Ancient Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 90;
@@ -3878,7 +3876,7 @@ func void Equip_ItAr_Shield_05()
 		AIV_Shield_04 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_Shield = TRUE;
 
@@ -3886,7 +3884,7 @@ func void Equip_ItAr_Shield_05()
 		Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
 		Mdl_RemoveOverlayMds(hero,"humans_1hST1.mds");
 
-		if((EquipedIndex_1H == TRUE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE))
+		if ((EquipedIndex_1H ==  TRUE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && ( AIV_Staff_05  ) = FALSE && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ))
 		{
 			if(LowHealth == TRUE)
 			{
@@ -3938,7 +3936,7 @@ func void UnEquip_ItAr_Shield_05()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_GiveShieldRes = FALSE;
 		AIV_Shield = FALSE;
@@ -3984,7 +3982,7 @@ func void UnEquip_ItAr_Shield_05()
 
 instance ItAr_Shield_06(C_Item)
 {
-	name = "Štít drakobijce";
+	name = " Shield of the Dragon Slayer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 70;
@@ -4028,7 +4026,7 @@ func void Equip_ItAr_Shield_06()
 		AIV_Shield_04 = FALSE;
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_Shield = TRUE;
 
@@ -4036,7 +4034,7 @@ func void Equip_ItAr_Shield_06()
 		Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
 		Mdl_RemoveOverlayMds(hero,"humans_1hST1.mds");
 
-		if((EquipedIndex_1H == TRUE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE))
+		if ((EquipedIndex_1H ==  TRUE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && ( AIV_Staff_05  ) = FALSE && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ))
 		{
 			if(LowHealth == TRUE)
 			{
@@ -4088,7 +4086,7 @@ func void UnEquip_ItAr_Shield_06()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_GiveShieldRes = FALSE;
 		AIV_Shield = FALSE;
@@ -4133,7 +4131,7 @@ func void UnEquip_ItAr_Shield_06()
 
 instance ItAr_Shield_Caracust(C_Item)
 {
-	name = "Štít z krunýře Karakusta";
+	name = " Karakusta Carapace Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 60;
@@ -4185,7 +4183,7 @@ func void Equip_ItAr_Shield_Caracust()
 		Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
 		Mdl_RemoveOverlayMds(hero,"humans_1hST1.mds");
 
-		if((EquipedIndex_1H == TRUE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE))
+		if ((EquipedIndex_1H ==  TRUE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && ( AIV_Staff_05  ) = FALSE && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ))
 		{
 			if(LowHealth == TRUE)
 			{
@@ -4217,7 +4215,7 @@ func void Equip_ItAr_Shield_Caracust()
 
 		if(EquipedIndex_Chief == TRUE)
 		{
-			AIV_Shield_Caracust = FALSE;
+			AIV_Shield_Caracust = FALSE ;
 			AIV_GiveShieldRes = FALSE;
 			CurShieldRes = FALSE;
 			B_Say(self,self,"$DONTWORK");
@@ -4237,7 +4235,7 @@ func void UnEquip_ItAr_Shield_Caracust()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_GiveShieldRes = FALSE;
 		AIV_Shield = FALSE;
@@ -4282,7 +4280,7 @@ func void UnEquip_ItAr_Shield_Caracust()
 
 instance ItAr_Shield_07(C_Item)
 {
-	name = "Štít paladina";
+	name = " Paladin Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 70;
@@ -4325,7 +4323,7 @@ func void Equip_ItAr_Shield_07()
 		AIV_Shield_04 = FALSE;
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_Shield = TRUE;
 
@@ -4333,7 +4331,7 @@ func void Equip_ItAr_Shield_07()
 		Mdl_RemoveOverlayMds(hero,"humans_1hST2.mds");
 		Mdl_RemoveOverlayMds(hero,"humans_1hST1.mds");
 
-		if((EquipedIndex_1H == TRUE) && (AIV_Staff_Blood == FALSE) && (AIV_Staff_01 == FALSE) && (AIV_Staff_02 == FALSE) && (AIV_Staff_03 == FALSE) && (AIV_Staff_04 == FALSE) && (AIV_Staff_05 == FALSE) && (AIV_Staff_06 == FALSE) && (AIV_Staff_07 == FALSE) && (AIV_Staff_08 == FALSE) && (AIV_Staff_09 == FALSE))
+		if ((EquipedIndex_1H ==  TRUE ) && (AIV_Staff_04 ==  FALSE ) && (AIV_Staff_01 ==  FALSE ) && (AIV_Staff_02 ==  FALSE ) && (AIV_Staff_03 ==  FALSE ) && (AIV_Staff_04 ==  FALSE ) && ( AIV_Staff_05  ) = FALSE && (AIV_Staff_06 ==  FALSE ) && (AIV_Staff_07 ==  FALSE ) &&(AIV_Staff_08 ==  FALSE ) && (AIV_Staff_09 ==  FALSE ))
 		{
 			if(LowHealth == TRUE)
 			{
@@ -4385,7 +4383,7 @@ func void UnEquip_ItAr_Shield_07()
 		AIV_Shield_05 = FALSE;
 		AIV_Shield_06 = FALSE;
 		AIV_Shield_07 = FALSE;
-		AIV_Shield_Caracust = FALSE;
+		AIV_Shield_Caracust = FALSE ;
 
 		AIV_GiveShieldRes = FALSE;
 		AIV_Shield = FALSE;
@@ -4428,7 +4426,7 @@ func void UnEquip_ItAr_Shield_07()
 
 instance ItAr_Shield_07_Cedrik(C_Item)
 {
-	name = "Cedrikův štít";
+	name = " Cedric's Shield " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 10;
@@ -4481,7 +4479,7 @@ func void UnEquip_ItAr_Shield_07_Cedrik()
 
 instance ItAr_Shield_01_Damn(C_Item)
 {
-	name = "Štít prokletých";
+	name = " Shield of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 10;
@@ -4540,7 +4538,7 @@ func void UnEquip_ItAr_Shield_01_Damn()
 
 instance ItAr_Shield_02_Damn(C_Item)
 {
-	name = "Štít prokletých";
+	name = " Shield of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 10;
@@ -4606,7 +4604,7 @@ func void UnEquip_ItAr_Shield_02_Damn()
 
 instance ItAr_Shield_03_Damn(C_Item)
 {
-	name = "Štít prokletých";
+	name = " Shield of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SHIELD;
 	value = 10;
@@ -4670,11 +4668,11 @@ func void UnEquip_ItAr_Shield_03_Damn()
 	};
 };
 
-//--------------------------Oruzhiye inventar'-----------------------------
+// --------------------------Oruzhiye inventory'------------- ----------
 
 instance ITMW_MEATKNIFE(C_Item)
 {
-	name = "Řeznický nůž";
+	name = " Butcher Knife " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -4702,7 +4700,7 @@ instance ITMW_MEATKNIFE(C_Item)
 
 instance ItMi_CutKnife(C_Item)
 {
-	name = "Porcovací nůž";
+	name = " Slicing knife " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -4713,7 +4711,7 @@ instance ItMi_CutKnife(C_Item)
 	damagetype = DAM_EDGE;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 10;
-	range = Range_Wolfsklinge;
+	range = range_wolfblade;
 	visual = "ITMW_1H_ON_107.3DS";
 	on_equip = equip_1h_light;
 	on_unequip = unequip_1h_light;
@@ -4759,7 +4757,7 @@ instance ITMW_2H_SCYTHE(C_Item)
 
 instance ItMw_1H_Mace_L_01(C_Item)
 {
-	name = "Pohrabáč";
+	name = " Scavenger " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -4814,7 +4812,7 @@ instance ItMw_1h_Bau_Axe(C_Item)
 
 instance ItMw_1h_Vlk_Mace(C_Item)
 {
-	name = "Vycházková hůl";
+	name = " Walking stick " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -4840,7 +4838,7 @@ instance ItMw_1h_Vlk_Mace(C_Item)
 
 instance ItMw_StoneHammer(C_Item)
 {
-	name = "Kamenické kladivo";
+	name = " Mason's Hammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -4866,7 +4864,7 @@ instance ItMw_StoneHammer(C_Item)
 
 instance ItMw_1H_Mace_L_04(C_Item)
 {
-	name = "Kovářské kladivo";
+	name = " Blacksmith's Hammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -4892,7 +4890,7 @@ instance ItMw_1H_Mace_L_04(C_Item)
 
 instance ITMW_1H_G3_SMITHHAMMER_01(C_Item)
 {
-	name = "Těžké kovářské kladivo";
+	name = " Heavy Blacksmith's Hammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -4918,7 +4916,7 @@ instance ITMW_1H_G3_SMITHHAMMER_01(C_Item)
 
 instance ITMW_1H_G4_AXESMALL_01(C_Item)
 {
-	name = "Tesařská sekera";
+	name = " Carpenter's Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -4944,7 +4942,7 @@ instance ITMW_1H_G4_AXESMALL_01(C_Item)
 
 instance ItMw_2h_Bau_Axe(C_Item)
 {
-	name = "Dřevorubecká sekyra";
+	name = " Woodcutter's Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -4970,12 +4968,12 @@ instance ItMw_2h_Bau_Axe(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------------Palki-----------------------------
+// --------------------------Logs-------------------- --------
 
 
 instance ItMw_1h_Bau_Mace(C_Item)
 {
-	name = "Velký klacek";
+	name = " Big Stick " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5001,7 +4999,7 @@ instance ItMw_1h_Bau_Mace(C_Item)
 
 instance ItMw_Simple_Spear(C_Item)
 {
-	name = "Ostrá větev";
+	name = " Sharp Branch " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5053,14 +5051,14 @@ instance ItMw_1H_Mace_L_03(C_Item)
 
 instance ItMw_Nagelknueppel(C_Item)
 {
-	name = "Hřeby pobitá palice";
+	name = " Stick driven with nails " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
 	value = Value_Nagelknueppel;
 	damageTotal = 20;
 	damagetype = DAM_BLUNT;
-	range = Range_Nagelknueppel;
+	range = Range_Nagelkneppel;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 15;
 	visual = "ItMw_Kriegskeule_New.3DS";
@@ -5079,7 +5077,7 @@ instance ItMw_Nagelknueppel(C_Item)
 
 instance ItMw_1h_Gobbo_Hammer(C_Item)	
 {
-	name = "Kamenný kyj";
+	name = " Stone Club " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5105,7 +5103,7 @@ instance ItMw_1h_Gobbo_Hammer(C_Item)
 
 instance ItMw_OgreHummer(C_Item)	
 {
-	name = "Zlobří kyj";
+	name = " Ogre Club " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5129,16 +5127,16 @@ instance ItMw_OgreHummer(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Kriegskeule(C_Item)
+instance ItMw_Warclub (C_Item)
 {
-	name = "Ostnatý kyj";
+	name = " Barbed Club " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = Value_Kriegskeule;
+	value = value_warclub;
 	damageTotal = 35;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegskeule;
+	range = range_warclub;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 30;
 	//visual = "ItMw_022_1h_mace_war_01.3DS";
@@ -5202,7 +5200,7 @@ instance ItMw_1H_GoblinTotem_Epic(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Gobliní totem moci...";
+	text[ 3 ] = " Goblin Totem of Power... " ;
 	text[4] = NAME_TWOHANDED_CRUSH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -5211,7 +5209,7 @@ instance ItMw_1H_GoblinTotem_Epic(C_Item)
 
 instance ItMw_1h_Nov_Mace(C_Item)
 {
-	name = "Bojová hůl novice";
+	name = " Novice Battle Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5238,14 +5236,14 @@ instance ItMw_1h_Nov_Mace(C_Item)
 
 instance ItMw_Richtstab(C_Item)
 {
-	name = "Hůl soudce";
+	name = " Judge's Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
 	value = Value_Richtstab;
 	damageTotal = 35;
 	damagetype = DAM_BLUNT;
-	range = Range_Richtstab;
+	range = range_guideline;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 40;
 	visual = "ItMw_025_2h_Staff_02.3DS";
@@ -5264,7 +5262,7 @@ instance ItMw_Richtstab(C_Item)
 
 instance ItMw_Stabkeule(C_Item)
 {
-	name = "Hůl poutníka";
+	name = " Pilgrim's Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5290,7 +5288,7 @@ instance ItMw_Stabkeule(C_Item)
 
 instance ITMW_BATTLEMAGE_STAB_02(C_Item)
 {
-	name = "Bojová hůl mága";
+	name = " Mage's War Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5316,7 +5314,7 @@ instance ITMW_BATTLEMAGE_STAB_02(C_Item)
 
 instance ItMW_Addon_Keule_1h_01(C_Item)
 {
-	name = "Válečný kyj";
+	name = " War Club " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5342,7 +5340,7 @@ instance ItMW_Addon_Keule_1h_01(C_Item)
 
 instance ItMw_RangerStaff_Addon(C_Item) 
 {
-	name = "Bojová hůl 'Kruhu Vody'";
+	name = " 'Circle of Water' War Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5362,7 +5360,7 @@ instance ItMw_RangerStaff_Addon(C_Item)
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_TWOHANDED_CRUSH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -5371,7 +5369,7 @@ instance ItMw_RangerStaff_Addon(C_Item)
 
 instance ITMW_2H_G3_STAFFDRUID_01(C_Item)
 {
-	name = "Hůl tuláka";
+	name = " Wanderer's Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5399,7 +5397,7 @@ instance ITMW_2H_G3_STAFFDRUID_01(C_Item)
 
 instance ITMW_2H_G3_STAFFFIRE_01(C_Item)
 {
-	name = "Hůl Ohně";
+	name = " Staff of Fire " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5427,7 +5425,7 @@ instance ITMW_2H_G3_STAFFFIRE_01(C_Item)
 
 instance ITMW_2H_G3_STAFFWATER_01(C_Item)
 {
-	name = "Hůl Vody";
+	name = " Staff of Water " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5455,7 +5453,7 @@ instance ITMW_2H_G3_STAFFWATER_01(C_Item)
 
 instance ITMW_2H_KMR_BLACKSTAFF_01(C_Item)
 {
-	name = "Hůl mága Temnoty";
+	name = " Dark Mage Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5483,7 +5481,7 @@ instance ITMW_2H_KMR_BLACKSTAFF_01(C_Item)
 
 instance ItMW_Addon_Stab01(C_Item)
 {
-	name = "Hůl vysokého mága Ohně";
+	name = " Staff of the High Fire Mage " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5512,7 +5510,7 @@ instance ItMW_Addon_Stab01(C_Item)
 
 instance ItMW_Addon_Stab02(C_Item)
 {
-	name = "Hůl vysokého mága Vody";
+	name = " Staff of the High Mage of Water " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5521,8 +5519,8 @@ instance ItMW_Addon_Stab02(C_Item)
 	damageTotal = DAMAGE_STAB02MAGIC;
 	damage[DAM_INDEX_MAGIC] = DAMAGE_STAB02MAGIC;
 	range = Range_Stab02;
-	on_equip = equip_zauberstab_kdw;
-	on_unequip = unequip_zauberstab_kdw;
+	on_equip = equip_wand_kdw;
+	on_unequip = unequip_wand_kdw;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = Condition_Stab02;
 	//visual = "ITMW_MAGESTAFF_WATER_01.3ds";
@@ -5533,7 +5531,7 @@ instance ItMW_Addon_Stab02(C_Item)
 	text[2] = NAME_Dam_Magic;
 	count[2] = damage[DAM_INDEX_MAGIC];
 	text[3] = NAME_Bonus_IntStaff;
-	count[3] = BONUSMANA_STABS_KDW;
+	count[ 3 ] = BONUSMANA_STABS_KDW ;
 	text[4] = NAME_TWOHANDED_MAGIC;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -5542,7 +5540,7 @@ instance ItMW_Addon_Stab02(C_Item)
 
 instance ItMW_Addon_Stab03(C_Item)
 {
-	name = "Hůl nekromanta";
+	name = " Necromancer's Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5552,7 +5550,7 @@ instance ItMW_Addon_Stab03(C_Item)
 	damage[DAM_INDEX_MAGIC] = DAMAGE_STAB03MAGIC;
 	range = Range_Stab03;
 	on_equip = equip_zauberstab_kdm;
-	on_unequip = unequip_zauberstab_kdm;
+	on_unequip = unequip_wand_kdm;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = Condition_Stab03;
 	visual = "ItMW_Addon_Stab03_New.3ds";
@@ -5562,7 +5560,7 @@ instance ItMW_Addon_Stab03(C_Item)
 	text[2] = NAME_Dam_Magic;
 	count[2] = damage[DAM_INDEX_MAGIC];
 	text[3] = NAME_Bonus_IntStaff;
-	count[3] = BONUSMANA_STABS_KDM;
+	count[ 3 ] = BONUSMANA_STABS_KDM ;
 	text[4] = NAME_TWOHANDED_MAGIC;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -5571,7 +5569,7 @@ instance ItMW_Addon_Stab03(C_Item)
 
 instance ItMW_Addon_Stab04(C_Item)
 {
-	name = "Hůl Guru";
+	name = " Staff of the Guru " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5581,7 +5579,7 @@ instance ItMW_Addon_Stab04(C_Item)
 	damage[DAM_INDEX_MAGIC] = DAMAGE_STAB04MAGIC;
 	range = Range_Stab04;
 	on_equip = equip_zauberstab_gur;
-	on_unequip = unequip_zauberstab_gur;
+	on_unequip = unequip_wand_gur;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = Condition_Stab04;
 	visual = "ItMW_Addon_Stab_Guru.3ds";
@@ -5600,7 +5598,7 @@ instance ItMW_Addon_Stab04(C_Item)
 
 instance ITMW_2H_DRAGONSTAFF_01(C_Item)
 {
-	name = "Dračí hůl";
+	name = " Dragon Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5610,7 +5608,7 @@ instance ITMW_2H_DRAGONSTAFF_01(C_Item)
 	damage[DAM_INDEX_FIRE] = DAMAGE_STABDRAGON;
 	range = Range_Stab03;
 	on_equip = equip_zauberstab_dragon;
-	on_unequip = unequip_zauberstab_dragon;
+	on_unequip = unequip_wand_dragon;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = Condition_StabDragon;
 	visual = "ITMW_2H_DRAGONSTAFF_01.3DS";
@@ -5629,7 +5627,7 @@ instance ITMW_2H_DRAGONSTAFF_01(C_Item)
 
 instance ITMW_2H_KMR_DAEMONSTAFF_01(C_Item)
 {
-	name = "Soumrak duší";
+	name = " Twilight of Souls " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5638,8 +5636,8 @@ instance ITMW_2H_KMR_DAEMONSTAFF_01(C_Item)
 	damageTotal = DAMAGE_STABDEMON;
 	damage[DAM_INDEX_MAGIC] = DAMAGE_STABDEMON;
 	range = Range_Stab03;
-	on_equip = equip_zauberstab_demon;
-	on_unequip = unequip_zauberstab_demon;
+	on_equip = equip_magic_stab_demon;
+	on_unequip = unequip_wand_demon;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = Condition_StabDemon;
 	visual = "ITMW_2H_KMR_DAEMONSTAFF_01.3DS";
@@ -5658,7 +5656,7 @@ instance ITMW_2H_KMR_DAEMONSTAFF_01(C_Item)
 
 instance ITMW_STAFFDRUID(C_Item)
 {
-	name = "Hůl druida";
+	name = " Druid Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5677,7 +5675,7 @@ instance ITMW_STAFFDRUID(C_Item)
 
 instance ItMW_Addon_Stab01_NPC(C_Item)
 {
-	name = "Hůl vysokého mága Ohně";
+	name = " Staff of the High Fire Mage " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5698,7 +5696,7 @@ instance ItMW_Addon_Stab01_NPC(C_Item)
 
 instance ItMW_Addon_Stab02_NPC(C_Item)
 {
-	name = "Hůl vysokého mága Vody";
+	name = " Staff of the High Mage of Water " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5719,7 +5717,7 @@ instance ItMW_Addon_Stab02_NPC(C_Item)
 
 instance ItMW_Addon_Stab03_NPC(C_Item)
 {
-	name = "Hůl nekromanta";
+	name = " Necromancer's Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5740,7 +5738,7 @@ instance ItMW_Addon_Stab03_NPC(C_Item)
 
 instance ItMW_Addon_Stab04_NPC(C_Item)
 {
-	name = "Hůl Guru";
+	name = " Staff of the Guru " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5761,7 +5759,7 @@ instance ItMW_Addon_Stab04_NPC(C_Item)
 
 instance ItMW_Xardas_Stab(C_Item)
 {
-	name = "Xardasova hůl";
+	name = " Staff of Xardas " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -5779,11 +5777,11 @@ instance ItMW_Xardas_Stab(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------------Rzhavoye oruzhiye-----------------------------
+// --------------------Rzhavoye oruzhiye-------------------- ---------
 
 instance ItMw_1h_MISC_Sword(C_Item)
 {
-	name = "Rezavý meč";
+	name = " Rusty Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -5807,7 +5805,7 @@ instance ItMw_1h_MISC_Sword(C_Item)
 
 instance ItMw_1h_MISC_Sword_Sum(C_Item)
 {
-	name = "Runový meč";
+	name = " Rune Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -5826,14 +5824,14 @@ instance ItMw_1h_MISC_Sword_Sum(C_Item)
 
 instance ITMW_2H_DRACONSWORD_DEAD_SUM(C_Item)
 {
-	name = "Runová sekyra";
+	name = " Runic Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	damageTotal = 350;
 	damagetype = DAM_BLUNT;
-	range = Range_Drachenschneide;
+	range = range_dragon's edge;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 100;
 	visual = "ItMw_2H_OrcAxe_01.3DS";
@@ -5845,7 +5843,7 @@ instance ITMW_2H_DRACONSWORD_DEAD_SUM(C_Item)
 
 instance ItMw_1h_MISC_Sword_Str(C_Item)
 {
-	name = "Runový meč";
+	name = " Rune Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -5864,7 +5862,7 @@ instance ItMw_1h_MISC_Sword_Str(C_Item)
 
 instance ItMw_1h_MISC_Sword_Mst(C_Item)
 {
-	name = "Runový meč";
+	name = " Rune Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -5883,7 +5881,7 @@ instance ItMw_1h_MISC_Sword_Mst(C_Item)
 
 instance ITMW_1H_MISC_GSWORD(C_Item)
 {
-	name = "Rezavý meč";
+	name = " Rusty Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -5907,7 +5905,7 @@ instance ITMW_1H_MISC_GSWORD(C_Item)
 
 instance ItMw_1h_Misc_Axe(C_Item)
 {
-	name = "Rezavá sekyra";
+	name = " Rusty Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -5931,7 +5929,7 @@ instance ItMw_1h_Misc_Axe(C_Item)
 
 instance ItMw_2H_OldSword(C_Item)
 {
-	name = "Starý obouruční meč";
+	name = " Old Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -5960,7 +5958,7 @@ instance ItMw_2H_OldSword(C_Item)
 
 instance ItMw_2H_Sword_M_01(C_Item)
 {
-	name = "Rezavý obouruční meč";
+	name = " Rusty Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -5982,11 +5980,11 @@ instance ItMw_2H_Sword_M_01(C_Item)
 	inv_animate = 1;
 };
 
-//------------------------------proklyatoye ouzhiye----------------
+// ------------------------------proklyatoye ouzhiye----------------
 
-instance ITMW_2H_WELTENSPALTER(C_Item)
+instance ITMW_2H_WELTENSPALTER (C_Item)
 {
-	name = "Azgalorovo prokletí";
+	name = " Curse of Azgalor " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6002,13 +6000,13 @@ instance ITMW_2H_WELTENSPALTER(C_Item)
 	on_equip = equip_1h_heavydam;
 	on_unequip = unequip_1h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ItMw_2H_ShadowBlade_Xert(C_Item)
 {
-	name = "Prokleté Slunce";
+	name = " Cursed Sun " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6024,13 +6022,13 @@ instance ItMw_2H_ShadowBlade_Xert(C_Item)
 	on_equip = equip_1h_heavydam;
 	on_unequip = unequip_1h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_SHADOWPRIEST_Elair(C_Item)
 {
-	name = "Prokletý Měsíc";
+	name = " Cursed Moon " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -6047,13 +6045,13 @@ instance ITMW_SHADOWPRIEST_Elair(C_Item)
 	on_equip = equip_2h_lightdam_elitestaff;
 	on_unequip = unequip_2h_lightdam_elitestaff;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_SHADOWPRIEST(C_Item)
 {
-	name = "Prokletá hůl";
+	name = " Cursed Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -6070,13 +6068,13 @@ instance ITMW_SHADOWPRIEST(C_Item)
 	on_equip = equip_2h_lightdam_staff;
 	on_unequip = unequip_2h_lightdam_staff;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_SHADOWPRIEST_Elite(C_Item)
 {
-	name = "Prokletá hůl";
+	name = " Cursed Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -6094,13 +6092,13 @@ instance ITMW_SHADOWPRIEST_Elite(C_Item)
 	on_equip = equip_2h_lightdam_elitestaff;
 	on_unequip = unequip_2h_lightdam_elitestaff;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_SHADOWPRIEST_Ober(C_Item)
 {
-	name = "Prokletá hůl";
+	name = " Cursed Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -6118,13 +6116,13 @@ instance ITMW_SHADOWPRIEST_Ober(C_Item)
 	on_equip = equip_2h_lightdam_oberstaff;
 	on_unequip = unequip_2h_lightdam_oberstaff;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ItMw_PlagueStaff(C_Item)
 {
-	name = "Hůl moru";
+	name = " Pestilence Staff " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -6140,13 +6138,13 @@ instance ItMw_PlagueStaff(C_Item)
 	on_equip = equip_1h_heavydam;
 	on_unequip = unequip_1h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
-instance ItMw_2H_IzgulScy(C_Item)
+instance ItMw_2H_IzgulScy (C_Item)
 {
-	name = "Krvavá sklizeň";
+	name = " Bloody Harvest " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6167,7 +6165,7 @@ instance ItMw_2H_IzgulScy(C_Item)
 
 instance ItMw_SoulKeeperStaff(C_Item)
 {
-	name = "Hůl duší";
+	name = " Staff of Souls " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -6185,13 +6183,13 @@ instance ItMw_SoulKeeperStaff(C_Item)
 	on_equip = equip_1h_ghost;
 	on_unequip = unequip_1h_ghost;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ItMw_Doom_OldPiratensaebel(C_Item)
 {
-	name = "Prokletá pirátská šavle";
+	name = " Cursed Pirate Saber " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6202,18 +6200,18 @@ instance ItMw_Doom_OldPiratensaebel(C_Item)
 	cond_value[2] = 100;
 	cond_atr[1] = ATR_MANA_MAX;
 	cond_value[1] = 6666;
-	range = Range_Schwert;
+	range = range_sword;
 	visual = "ItMw_PirCutlas.3DS";
 	on_equip = equip_1h_heavydam;
 	on_unequip = unequip_1h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_1H_DOOMSWORD(C_Item)
 {
-	name = "Meč prokletých";
+	name = " Sword of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6224,26 +6222,26 @@ instance ITMW_1H_DOOMSWORD(C_Item)
 	cond_value[2] = 100;
 	cond_atr[1] = ATR_MANA_MAX;
 	cond_value[1] = 6666;
-	range = Range_Schwert;
+	range = range_sword;
 	//visual = "ItMw_020_1h_sword_old_01.3DS";
 	visual = "ItMw_1H_DAMNSWORD.3DS";
 	on_equip = equip_1h_heavydam;
 	on_unequip = unequip_1h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_1H_GHOSTSWORD(C_Item)
 {
-	name = "Přízračný meč";
+	name = " Ghost Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	damageTotal = 400;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert;
+	range = range_sword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 100;
 	cond_atr[1] = ATR_MANA_MAX;
@@ -6252,13 +6250,13 @@ instance ITMW_1H_GHOSTSWORD(C_Item)
 	on_equip = equip_1h_ghost;
 	on_unequip = unequip_1h_ghost;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_1H_DoomSpeer(C_Item)
 {
-	name = "Prokleté kopí";
+	name = " Cursed Spear " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6274,13 +6272,13 @@ instance ITMW_1H_DoomSpeer(C_Item)
 	on_equip = equip_2h_lightdam_speer;
 	on_unequip = unequip_2h_lightdam_speer;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_1H_DoomSpeer_Elite(C_Item)
 {
-	name = "Prokleté kopí";
+	name = " Cursed Spear " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6296,13 +6294,13 @@ instance ITMW_1H_DoomSpeer_Elite(C_Item)
 	on_equip = equip_2h_lightdam_elitespeer;
 	on_unequip = unequip_2h_lightdam_elitespeer;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_2H_DRACONSWORD_DEAD(C_Item)
 {
-	name = "Prokletá sekyra";
+	name = " Cursed Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6318,20 +6316,20 @@ instance ITMW_2H_DRACONSWORD_DEAD(C_Item)
 	on_equip = equip_2h_heavydam;
 	on_unequip = unequip_2h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_1H_DOOMSWORD_Elite(C_Item)
 {
-	name = "Meč prokletých";
+	name = " Sword of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 10;
 	damageTotal = 600;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert;
+	range = range_sword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 100;
 	cond_atr[1] = ATR_MANA_MAX;
@@ -6340,13 +6338,13 @@ instance ITMW_1H_DOOMSWORD_Elite(C_Item)
 	on_equip = equip_1h_heavydam_elite;
 	on_unequip = unequip_1h_heavydam_elite;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_2H_DOOMSWORD(C_Item)
 {
-	name = "Obouruční meč prokletých";
+	name = " Two-Handed Sword of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6363,13 +6361,13 @@ instance ITMW_2H_DOOMSWORD(C_Item)
 	on_equip = equip_2h_heavydam;
 	on_unequip = unequip_2h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_2H_DOOMSWORD_PreElite(C_Item)
 {
-	name = "Těžký obouruční meč prokletých";
+	name = " Heavy Two-Handed Sword of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6386,13 +6384,13 @@ instance ITMW_2H_DOOMSWORD_PreElite(C_Item)
 	on_equip = equip_2h_heavydam;
 	on_unequip = unequip_2h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_2H_DOOMSWORD_Elite(C_Item)
 {
-	name = "Dvousečný meč prokletých";
+	name = " Double-Edged Sword of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6408,13 +6406,13 @@ instance ITMW_2H_DOOMSWORD_Elite(C_Item)
 	on_equip = equip_2h_heavydam;
 	on_unequip = unequip_2h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_2H_DOOMAXE(C_Item)
 {
-	name = "Sekyra prokletých";
+	name = " Ax of the Damned " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6430,7 +6428,7 @@ instance ITMW_2H_DOOMAXE(C_Item)
 	on_equip = equip_2h_heavydam_axe;
 	on_unequip = unequip_2h_heavydam_axe;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
@@ -6452,13 +6450,13 @@ instance ITMW_2H_HAOSHAND(C_Item)
 	on_equip = equip_2h_heavydam;
 	on_unequip = unequip_2h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_2H_RAVENELITE(C_Item)
 {
-	name = "Prokletý obouruční meč";
+	name = " Cursed Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6474,13 +6472,13 @@ instance ITMW_2H_RAVENELITE(C_Item)
 	on_equip = equip_2h_heavydam;
 	on_unequip = unequip_2h_heavydam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
 instance ITMW_2H_MASIAF_DAMN(C_Item)
 {
-	name = "Prokletý meč převora";
+	name = " Prior's Cursed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6496,11 +6494,11 @@ instance ITMW_2H_MASIAF_DAMN(C_Item)
 	on_equip = equip_2h_lightdam;
 	on_unequip = unequip_2h_lightdam;
 	description = name;
-	text[4] = "Tuhle zbraň obklopuje aura prokletí...";
+	text[ 4 ] = " An aura of curse surrounds this weapon... " ;
 	inv_animate = 1;
 };
 
-//--------------------sistemnyye!!!--------------------------------------
+// -----------systemsistemnyye!!!--------------------------------- -------------
 
 instance ItMw_DS_MonWeapon(C_Item)
 {
@@ -6575,7 +6573,7 @@ instance ItMw_DS_MonWeapon_SpElite(C_Item)
 
 instance ItMi_GongDrum(C_Item)
 {
-	name = "Stará palice na gong";
+	name = " Stará palice na gong " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
@@ -6594,7 +6592,7 @@ instance ItMi_GongDrum(C_Item)
 
 instance ItMw_1h_Sld_Sword(C_Item)
 {
-	name = "Dřevěný kyj";
+	name = " Wooden Club " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_WOOD;
@@ -6633,11 +6631,11 @@ instance Bdmn_vob(C_Item)
 	description = "";
 };
 
-//---------------------------Nozhi i kinzhaly--------------------------
+// ---------------------------Nozhi i kinzhaly------------ --------
 
 instance ItMw_1h_Vlk_Dagger(C_Item)
 {
-	name = "Ocelová dýka";
+	name = " Steel Dagger " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6667,7 +6665,7 @@ instance ItMw_1h_Vlk_Dagger(C_Item)
 
 instance ItMw_1H_Sword_L_03(C_Item)
 {
-	name = "Lovecký nůž";
+	name = " Hunting Knife " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6696,7 +6694,7 @@ instance ItMw_1H_Sword_L_03(C_Item)
 
 instance ItMW_Addon_Knife01(C_Item)
 {
-	name = "Vlčí nůž";
+	name = " Wolf Knife " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6725,7 +6723,7 @@ instance ItMW_Addon_Knife01(C_Item)
 
 instance ItMW_Rich_Sword(C_Item)
 {
-	name = "Zdobená dýka";
+	name = " Decorated Dagger " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6754,7 +6752,7 @@ instance ItMW_Rich_Sword(C_Item)
 
 instance ItMw_FrancisDagger_Mis(C_Item)
 {
-	name = "Železná dýka";
+	name = " Iron Dagger " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6782,11 +6780,11 @@ instance ItMw_FrancisDagger_Mis(C_Item)
 	inv_animate = 1;
 };
 
-//-----------------------piratskoye oruzhiye-----------------------------
+// -----------------------piratskoye oruzhiye----------------------- ------
 
 instance ItMw_OldPiratensaebel(C_Item)
 {
-	name = "Stará pirátská šavle";
+	name = " Old Pirate Saber " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6815,7 +6813,7 @@ instance ItMw_OldPiratensaebel(C_Item)
 
 instance ItMw_Piratensaebel(C_Item)
 {
-	name = "Pirátská šavle";
+	name = " Pirate Saber " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6844,7 +6842,7 @@ instance ItMw_Piratensaebel(C_Item)
 
 instance ItMw_Sense(C_Item)
 {
-	name = "Malá kosa";
+	name = " Malá kosa " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6872,7 +6870,7 @@ instance ItMw_Sense(C_Item)
 
 instance ItMw_BartokSword(C_Item)
 {
-	name = "Bartokův meč";
+	name = " Bartok's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6901,7 +6899,7 @@ instance ItMw_BartokSword(C_Item)
 
 instance ItMW_Addon_Hacker_1h_02(C_Item)
 {
-	name = "Stará mačeta";
+	name = " Old Machete " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6959,7 +6957,7 @@ instance ItMW_Addon_Hacker_1h_01(C_Item)
 
 instance ItMW_Addon_Hacker_2h_02(C_Item)
 {
-	name = "Stará obří mačeta";
+	name = " Old Giant Machete " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -6988,7 +6986,7 @@ instance ItMW_Addon_Hacker_2h_02(C_Item)
 
 instance ItMW_Addon_Hacker_2h_01(C_Item)
 {
-	name = "Obří mačeta";
+	name = " Giant Machete " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7017,7 +7015,7 @@ instance ItMW_Addon_Hacker_2h_01(C_Item)
 
 instance ItMw_Addon_PIR1hAxe(C_Item)
 {
-	name = "Pirátská sekera";
+	name = " Pirate Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7045,7 +7043,7 @@ instance ItMw_Addon_PIR1hAxe(C_Item)
 
 instance ItMw_Addon_PIR1hSword(C_Item)
 {
-	name = "Pirátský meč";
+	name = " Pirate Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7074,7 +7072,7 @@ instance ItMw_Addon_PIR1hSword(C_Item)
 
 instance ItMw_Addon_PIR2hAxe(C_Item)
 {
-	name = "Pirátská sekyra";
+	name = " Pirate's Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7131,7 +7129,7 @@ instance ItMw_Addon_PIR2hSword(C_Item)
 
 instance ItMw_Schiffsaxt(C_Item)
 {
-	name = "Pirátská loďařská sekyra";
+	name = " Pirate Shipwright's Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7157,11 +7155,11 @@ instance ItMw_Schiffsaxt(C_Item)
 	inv_animate = 1;
 };
 
-//-------------shpagi i rapiry-------------------------------------------
+// -------------shpagi i rapiry-------------------------------- -----------
 
 instance ItMw_OldSpage(C_Item)
 {
-	name = "Rezavý kord";
+	name = " Rusty Cord " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7250,7 +7248,7 @@ instance ItMw_Addon_BanditTrader(C_Item)
 	count[1] = 30;
 	text[2] = NAME_Dex_needed;
 	count[2] = cond_value[2];
-	text[3] = "Na jílci je vyryto písmeno 'F.'...";
+	text[ 3 ] = " The hilt is engraved with the letter 'F.'... " ;
 	text[4] = NAME_ONEHANDED_PIERCE;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -7296,7 +7294,7 @@ instance ItMw_Rapier(C_Item)
 
 instance ItMw_ChiefRapier_01(C_Item)
 {
-	name = "Kord zloděje";
+	name = " Thief's Kord " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7320,7 +7318,7 @@ instance ItMw_ChiefRapier_01(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 50;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_02;
+	count[ 2 ] = weapon bonus_02;
 	text[3] = NAME_PierceArmor;
 	count[3] = 5;
 	text[4] = NAME_ONEHANDED_PIERCE_SMITH;
@@ -7333,7 +7331,7 @@ instance ItMw_ChiefRapier_01(C_Item)
 
 instance ItMw_ChiefRapier_02(C_Item)
 {
-	name = "Rapír zloděje";
+	name = " Thief's Rapier " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7357,7 +7355,7 @@ instance ItMw_ChiefRapier_02(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 80;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_02;
+	count[ 2 ] = weapon bonus_02;
 	text[3] = NAME_PierceArmor;
 	count[3] = 10;
 	text[4] = NAME_ONEHANDED_PIERCE_SMITH;
@@ -7370,7 +7368,7 @@ instance ItMw_ChiefRapier_02(C_Item)
 
 instance ItMw_ChiefRapier_03(C_Item)
 {
-	name = "Kord mistra zloděje";
+	name = " Master Thief Kord " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7394,7 +7392,7 @@ instance ItMw_ChiefRapier_03(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 110;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_03;
+	count[ 2 ] = weapon bonus_03;
 	text[3] = NAME_PierceArmor;
 	count[3] = 15;
 	text[4] = NAME_ONEHANDED_PIERCE_SMITH;
@@ -7407,7 +7405,7 @@ instance ItMw_ChiefRapier_03(C_Item)
 
 instance ItMw_ChiefRapier_04(C_Item)
 {
-	name = "Tichá smrt";
+	name = " Silent Death " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7431,7 +7429,7 @@ instance ItMw_ChiefRapier_04(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 140;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_03;
+	count[ 2 ] = weapon bonus_03;
 	text[3] = NAME_PierceArmor;
 	count[3] = 20;
 	text[4] = NAME_ONEHANDED_PIERCE_SMITH;
@@ -7444,7 +7442,7 @@ instance ItMw_ChiefRapier_04(C_Item)
 
 instance ItMw_ChiefRapier_05(C_Item)
 {
-	name = "Pronikavá ocel";
+	name = " Piercing Steel " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7467,7 +7465,7 @@ instance ItMw_ChiefRapier_05(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 170;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_04;
+	count[ 2 ] = weapon bonus_04;
 	text[3] = NAME_PierceArmor;
 	count[3] = 25;
 	text[4] = NAME_ONEHANDED_PIERCE_SMITH;
@@ -7480,7 +7478,7 @@ instance ItMw_ChiefRapier_05(C_Item)
 
 instance ItMw_ChiefRapier_06(C_Item)
 {
-	name = "Žihadlo škorpiona";
+	name = " Scorpion Sting " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7504,7 +7502,7 @@ instance ItMw_ChiefRapier_06(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 200;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_04;
+	count[ 2 ] = weapon bonus_04;
 	text[3] = NAME_PierceArmor;
 	count[3] = 30;
 	text[4] = NAME_ONEHANDED_PIERCE_SMITH;
@@ -7517,7 +7515,7 @@ instance ItMw_ChiefRapier_06(C_Item)
 
 instance ItMw_SilverRapier(C_Item)
 {
-	name = "Stříbrný kord";
+	name = " Silver Cord " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7539,7 +7537,7 @@ instance ItMw_SilverRapier(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 190;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_04;
+	count[ 2 ] = weapon bonus_04;
 	text[3] = NAME_PierceArmor;
 	count[3] = 30;
 	text[4] = NAME_ONEHANDED_PIERCE_SMITH;
@@ -7552,7 +7550,7 @@ instance ItMw_SilverRapier(C_Item)
 
 instance ItMw_ChiefRapier_07(C_Item)
 {
-	name = "Noční výkřik";
+	name = " Night Scream " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7575,7 +7573,7 @@ instance ItMw_ChiefRapier_07(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 230;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_04;
+	count[ 2 ] = weapon bonus_04;
 	text[3] = NAME_PierceArmor;
 	count[3] = 35;
 	text[4] = NAME_ONEHANDED_PIERCE_SMITH;
@@ -7588,7 +7586,7 @@ instance ItMw_ChiefRapier_07(C_Item)
 
 instance ItMw_ChiefRapier_08(C_Item)
 {
-	name = "Zlatá jehla";
+	name = " Golden Needle " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7610,7 +7608,7 @@ instance ItMw_ChiefRapier_08(C_Item)
 	text[1] = NAME_Damage;
 	count[1] = 260;
 	text[2] = NAME_WieldBonus;
-	count[2] = Waffenbonus_05;
+	count[ 2 ] = weapon bonus_05;
 	text[3] = NAME_PierceArmor;
 	count[3] = 40;
 	text[4] = NAME_ONEHANDED_PIERCE_LEGEND;
@@ -7621,7 +7619,7 @@ instance ItMw_ChiefRapier_08(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_1H_GoldBrand(C_Item)
+instance ItMw_1H_GoldBrand (C_Item)
 {
 	name = "Upír";
 	mainflag = ITEM_KAT_NF;
@@ -7659,7 +7657,7 @@ instance ItMw_1H_GoldBrand(C_Item)
 
 instance ItMw_Avabul_Dagger(C_Item)
 {
-	name = "Dýka Beliarovy kněžky";
+	name = " Dagger of Beliar's Priestess " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7690,7 +7688,7 @@ instance ItMw_Avabul_Dagger(C_Item)
 	inv_animate = 1;
 };
 
-//---------------------mechi na lovkost'--------------------
+// ---------------------mechi na lovkost'--------------------
 
 instance ItMw_Addon_Betty(C_Item)
 {
@@ -7722,7 +7720,7 @@ instance ItMw_Addon_Betty(C_Item)
 
 instance ItMw_Drakesaebel(C_Item)
 {
-	name = "Šavle kapitána Drakea";
+	name = " Captain Drake's Saber " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7758,7 +7756,7 @@ instance ItMw_Drakesaebel(C_Item)
 
 instance ItMw_1H_AssBlade_Hero(C_Item)
 {
-	name = "Qama, meč stínů Masyafu";
+	name = " Qama, Sword of the Shadows of Masyafu " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7792,7 +7790,7 @@ instance ItMw_1H_AssBlade_Hero(C_Item)
 
 instance ITMW_1H_BLACKSWORD(C_Item)
 {
-	name = "Černé srdce";
+	name = " Black Heart " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7827,11 +7825,11 @@ instance ITMW_1H_BLACKSWORD(C_Item)
 	inv_animate = 1;
 };
 
-//----------------oruzhiye assasinov---------------------------
+// ----------------oruzhiye assassinov---------------------
 
 instance ITMW_2H_KATANA(C_Item)
 {
-	name = "Meč asasína";
+	name = " Assassin's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7860,7 +7858,7 @@ instance ITMW_2H_KATANA(C_Item)
 
 instance ITMW_2H_KATANA_GIFT(C_Item)
 {
-	name = "Meč asasína";
+	name = " Assassin's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7889,7 +7887,7 @@ instance ITMW_2H_KATANA_GIFT(C_Item)
 
 instance ITMW_2H_KATANA_Gonsales(C_Item)
 {
-	name = "Meč asasína";
+	name = " Assassin's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7909,7 +7907,7 @@ instance ITMW_2H_KATANA_Gonsales(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Na jílci je vyryto jmeno 'Gonzales'...";
+	text[ 3 ] = " The name 'Gonzales' is engraved on the hilt... " ;
 	text[4] = NAME_TWOHANDED_SLASH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -7919,7 +7917,7 @@ instance ITMW_2H_KATANA_Gonsales(C_Item)
 
 instance ItMw_1H_AssBlade(C_Item)
 {
-	name = "Čepel asasína";
+	name = " Assassin's Blade " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -7935,14 +7933,14 @@ instance ItMw_1H_AssBlade(C_Item)
 	on_equip = equip_1h_light_AssBlade;
 	on_unequip = unequip_1h_light_AssBlade;
 	description = name;
-	text[3] = "Tuhle zbraň jsem sebral z těla jednoho z asasínů,";
-	text[4] = "kteří zaútočili na tábor sběračů trávy z bažin...";
+	text[ 3 ] = " I took this weapon from the body of one of the assassins, " ;
+	text[ 4 ] = " who attacked the camp of marsh grass pickers... " ;
 	inv_animate = 1;
 };
 
 instance ItMw_1H_AssBlade_View(C_Item)
 {
-	name = "Čepel asasína";
+	name = " Assassin's Blade " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8004,15 +8002,15 @@ instance ITMW_FAKESWORD_01(C_Item)
 	range = 125;
 	visual = "ItMw_2H_Masiaf.3DS";
 	description = name;
-	text[4] = "Rituální meč stínů Masyafu...";
+	text[ 4 ] = " Ritual Shadow Sword of Masyafu... " ;
 	inv_animate = 1;
 };
 
-//----------------obychnyye mechi------------------------
+// ----------------obychnyye mechi---------------------------------
 
 instance ItMw_1h_Vlk_Axe(C_Item)
 {
-	name = "Sekera";
+	name = " Sekera " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8040,7 +8038,7 @@ instance ItMw_1h_Vlk_Axe(C_Item)
 
 instance ItMw_ShortSword1(C_Item)
 {
-	name = "Krátký meč domobránce";
+	name = " Militiamen's Short Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8070,7 +8068,7 @@ instance ItMw_ShortSword1(C_Item)
 
 instance ItMw_ShortSword2(C_Item)
 {
-	name = "Prostý krátký meč";
+	name = " Simple Short Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8100,7 +8098,7 @@ instance ItMw_ShortSword2(C_Item)
 
 instance ItMw_ShortSword3(C_Item)
 {
-	name = "Krátký meč";
+	name = " Short Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8130,7 +8128,7 @@ instance ItMw_ShortSword3(C_Item)
 
 instance ItMw_ShortSword4(C_Item)
 {
-	name = "Vlčí zub";
+	name = " Wolf Tooth " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8160,7 +8158,7 @@ instance ItMw_ShortSword4(C_Item)
 
 instance ItMw_ShortSword5(C_Item)
 {
-	name = "Kvalitní krátký meč";
+	name = " Quality Short Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8188,18 +8186,18 @@ instance ItMw_ShortSword5(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Schwert(C_Item)
+instance ItMw_Sword (C_Item)
 {
 	name = "Meč";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
-	value = Value_Schwert;
+	value = value_sword;
 	damage[DAM_INDEX_MAGIC] = 1;
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 40;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert;
+	range = range_sword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 30;
 	//visual = "ItMw_030_1h_sword_long_01.3DS";
@@ -8221,7 +8219,7 @@ instance ItMw_Schwert(C_Item)
 
 instance ItMw_1h_Mil_Sword(C_Item)
 {
-	name = "Meč domobránce";
+	name = " Militia Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8230,7 +8228,7 @@ instance ItMw_1h_Mil_Sword(C_Item)
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 50;
 	damagetype = DAM_EDGE;
-	range = Range_MilSchwert;
+	range = Range_MilSword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 40;
 	//visual = "Itmw_025_1h_Mil_Sword_broad_01.3DS";
@@ -8252,7 +8250,7 @@ instance ItMw_1h_Mil_Sword(C_Item)
 
 instance ItMw_1h_Sld_Sword_New(C_Item)
 {
-	name = "Prostý meč";
+	name = " Simple Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -8279,7 +8277,7 @@ instance ItMw_1h_Sld_Sword_New(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Schwert3(C_Item)
+instance ItMw_Schwert3 (C_Item)
 {
 	name = "Palaš";
 	mainflag = ITEM_KAT_NF;
@@ -8287,10 +8285,10 @@ instance ItMw_Schwert3(C_Item)
 	material = MAT_METAL;
 	damage[DAM_INDEX_MAGIC] = 1;
 	damage[DAM_INDEX_FIRE] = 1;
-	value = Value_Schwert3;
+	value = value_sword3;
 	damageTotal = 55;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert3;
+	range = range_sword3;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 40;
 	//visual = "ITMW_1HFINESWORD_01.3DS";
@@ -8309,18 +8307,18 @@ instance ItMw_Schwert3(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Schwert2(C_Item)
+instance ItMw_Schwert2 (C_Item)
 {
-	name = "Dlouhý meč";
+	name = " Longsword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
-	value = Value_Schwert2;
+	value = value_sword2;
 	damage[DAM_INDEX_MAGIC] = 1;
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 60;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert2;
+	range = range_sword2;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 50;
 	//visual = "ItMw_037_1h_sword_long_02.3DS";
@@ -8341,7 +8339,7 @@ instance ItMw_Schwert2(C_Item)
 
 instance ItMw_1h_Pal_Sword(C_Item)
 {
-	name = "Paladinský meč";
+	name = " Paladin's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8350,7 +8348,7 @@ instance ItMw_1h_Pal_Sword(C_Item)
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 65;
 	damagetype = DAM_EDGE;
-	range = Range_PalSchwert;
+	range = Range_PalSword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 50;
 	//visual = "ItMw_030_1h_PAL_Sword_02.3DS";
@@ -8371,7 +8369,7 @@ instance ItMw_1h_Pal_Sword(C_Item)
 
 instance ItMw_Zweihaender1(C_Item)
 {
-	name = "Lehký obouruční meč";
+	name = " Light two-handed sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8401,7 +8399,7 @@ instance ItMw_Zweihaender1(C_Item)
 
 instance ItMw_2h_Sld_Sword(C_Item) 
 {
-	name = "Prostý obouruční meč";
+	name = " Simple two-handed sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8431,7 +8429,7 @@ instance ItMw_2h_Sld_Sword(C_Item)
 
 instance ItMw_Zweihaender2(C_Item)
 {
-	name = "Obouruční meč";
+	name = " Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8461,7 +8459,7 @@ instance ItMw_Zweihaender2(C_Item)
 
 instance ItMw_2h_Pal_Sword(C_Item)
 {
-	name = "Paladinský obouruční meč";
+	name = " Paladin's Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8491,7 +8489,7 @@ instance ItMw_2h_Pal_Sword(C_Item)
 
 instance ItMw_Zweihaender4(C_Item)
 {
-	name = "Těžký obouruční meč";
+	name = " Heavy Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8521,7 +8519,7 @@ instance ItMw_Zweihaender4(C_Item)
 
 instance ItMw_2H_Claymore(C_Item)
 {
-	name = "Dvousečný meč";
+	name = " Two-Edged Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8550,14 +8548,14 @@ instance ItMw_2H_Claymore(C_Item)
 
 instance ItMw_1h_Pal_Sword_Etlu(C_Item)
 {
-	name = "Posvěcený paladinský meč";
+	name = " Sacred Paladin Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 100;
 	damage[DAM_INDEX_FIRE] = 200;
 	damagetype = DAM_FIRE;
-	range = Range_PalSchwert;
+	range = Range_PalSword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = Condition_PalSchwert;
 	visual = "ItMw_030_1h_PAL_Sword_02.3DS";
@@ -8576,7 +8574,7 @@ instance ItMw_1h_Pal_Sword_Etlu(C_Item)
 
 instance ItMw_2h_Pal_Sword_Etlu(C_Item)
 {
-	name = "Posvěcený paladinský obouruční meč";
+	name = " Sanctified Paladin's Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8600,7 +8598,7 @@ instance ItMw_2h_Pal_Sword_Etlu(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------------drobyashcheye-----------------------------
+// --------------------------drobyashcheye-------------------- --------
 
 instance ItMw_Nagelkeule(C_Item)
 {
@@ -8629,9 +8627,9 @@ instance ItMw_Nagelkeule(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Nagelkeule2(C_Item)
+instance ItMw_Nagelkeule2 (C_Item)
 {
-	name = "Těžký palcát";
+	name = " Heavy Mace " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -8656,16 +8654,16 @@ instance ItMw_Nagelkeule2(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Streitkolben(C_Item)
+instance ItMw_Mace (C_Item)
 {
-	name = "Válečný palcát";
+	name = " War Mace " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
-	value = Value_Streitkolben;
+	value = value_mace;
 	damageTotal = 60;
 	damagetype = DAM_BLUNT;
-	range = Range_Streitkolben;
+	range = range_mace;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 50;
 	//visual = "ItMw_050_1h_mace_war_03.3DS";
@@ -8683,7 +8681,7 @@ instance ItMw_Streitkolben(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Steinbrecher(C_Item)
+instance ItMw_Steinbrecher (C_Item)
 {
 	name = "Kostilam";
 	mainflag = ITEM_KAT_NF;
@@ -8692,7 +8690,7 @@ instance ItMw_Steinbrecher(C_Item)
 	value = Value_Steinbrecher;
 	damageTotal = 65;
 	damagetype = DAM_BLUNT;
-	range = Range_Steinbrecher;
+	range = range_stonebreaker;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 55;
 	//visual = "ItMw_035_1h_mace_war_02.3DS";
@@ -8737,16 +8735,16 @@ instance ItMw_Spicker(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Kriegshammer1(C_Item)
+instance ItMw_Kriegshammer1 (C_Item)
 {
-	name = "Válečný mlat";
+	name = " Warhammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
 	value = Value_Kriegshammer1;
 	damageTotal = 80;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegshammer1;
+	range = range_warhammer1;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 70;
 	//visual = "ItMw_028_1h_warhammer_01.3DS";
@@ -8764,16 +8762,16 @@ instance ItMw_Kriegshammer1(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Kriegshammer2(C_Item)
+instance ItMw_Kriegshammer2 (C_Item)
 {
-	name = "Válečné kladivo";
+	name = " War Hammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
 	value = Value_Kriegshammer2;
 	damageTotal = 90;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegshammer2;
+	range = range_warhammer2;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 80;
 	//visual = "ItMw_065_1h_warhammer_03.3DS";
@@ -8800,7 +8798,7 @@ instance ItMw_Morgenstern(C_Item)
 	value = Value_Morgenstern;
 	damageTotal = 100;
 	damagetype = DAM_BLUNT;
-	range = Range_Morgenstern;
+	range = range_morning star;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 80;
 	//visual = "ItMW_045_1h_mace_04.3DS";
@@ -8820,7 +8818,7 @@ instance ItMw_Morgenstern(C_Item)
 
 instance ITMW_1H_MACE_107(C_Item)
 {
-	name = "Ostnatý palcát";
+	name = " Barbed Mace " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -8831,7 +8829,7 @@ instance ITMW_1H_MACE_107(C_Item)
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 90;
 	//visual = "ITMW_1H_MACE_107.3DS";
-	visual = "ITMW_1H_MOLAGBAR.3DS";
+	visual = " ITMW_1H_MOLAGBAR.3DS " ;
 	on_equip = equip_1h_heavy;
 	on_unequip = unequip_1h_heavy;
 	description = name;
@@ -8872,7 +8870,7 @@ instance ItMw_Inquisitor(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Rabenschnabel(C_Item)
+instance ItMw_Rabenschnabel (C_Item)
 {
 	name = "Noc havrana";
 	mainflag = ITEM_KAT_NF;
@@ -8881,7 +8879,7 @@ instance ItMw_Rabenschnabel(C_Item)
 	value = Value_Rabenschnabel;
 	damageTotal = 120;
 	damagetype = DAM_BLUNT;
-	range = Range_Rabenschnabel;
+	range = range_ravenbeak;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 95;
 	//visual = "ItMw_058_1h_warhammer_02.3DS";
@@ -8901,14 +8899,14 @@ instance ItMw_Rabenschnabel(C_Item)
 
 instance ITMW_1H_MACE_BANDOS_107(C_Item)
 {
-	name = "Obouruční ostnatý kyj";
+	name = " Two-Handed Spiked Club " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
 	value = 300;
 	damageTotal = 100;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegskeule;
+	range = range_warclub;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 80;
 	visual = "ItMw_Iron_Club.3DS";
@@ -8927,7 +8925,7 @@ instance ITMW_1H_MACE_BANDOS_107(C_Item)
 
 instance ItMw_2H_Warhammer_Iron(C_Item)
 {
-	name = "Obouruční kladivo";
+	name = " Two-Handed Hammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -8953,7 +8951,7 @@ instance ItMw_2H_Warhammer_Iron(C_Item)
 
 instance ItMw_2H_Warhammer(C_Item)
 {
-	name = "Obouruční válečné kladivo";
+	name = " Two-Handed War Hammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -9005,7 +9003,7 @@ instance ITMW_2H_MACE_107(C_Item)
 
 instance ItMw_2H_Warhammer_Steel(C_Item)
 {
-	name = "Runové kladivo";
+	name = " Runic Hammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_WOOD;
@@ -9031,14 +9029,14 @@ instance ItMw_2H_Warhammer_Steel(C_Item)
 
 instance ItMw_2H_Volebir(C_Item)
 {
-	name = "Drtič kostí";
+	name = " Bone Crusher " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 3000;
 	damageTotal = 240;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegskeule;
+	range = range_warclub;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 200;
 	visual = "ItMw_2H_NewHammer_03.3DS";
@@ -9057,14 +9055,14 @@ instance ItMw_2H_Volebir(C_Item)
 
 instance ItMw_2H_IceHammer(C_Item)
 {
-	name = "Kladivo ledu";
+	name = " Kladivo ledu " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 4500;
 	damageTotal = 320;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegskeule;
+	range = range_warclub;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 320;
 	visual = "ItMw_2H_NewHammer_04.3DS";
@@ -9083,14 +9081,14 @@ instance ItMw_2H_IceHammer(C_Item)
 
 instance ItMw_2H_NordmarWarHammer(C_Item)
 {
-	name = "Nordmarské válečné kladivo";
+	name = " Nordmar Warhammer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 1000;
 	damageTotal = 150;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegskeule;
+	range = range_warclub;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 140;
 	visual = "ItMw_2H_NewHammer_01.3DS";
@@ -9142,7 +9140,7 @@ instance ItMw_2H_SharpTeeth(C_Item)
 	value = 3500;
 	damageTotal = 220;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegskeule;
+	range = range_warclub;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 200;
 	visual = "ItMw_2H_SharpTeeth_New.3DS";
@@ -9161,14 +9159,14 @@ instance ItMw_2H_SharpTeeth(C_Item)
 
 instance ItMw_1H_AncientHammer(C_Item)	
 {
-	name = "Kladivo bouří";
+	name = " Hammer of Storms " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
 	value = 3500;
 	damageTotal = 275;
 	damagetype = DAM_BLUNT;
-	range = Range_Kriegskeule;
+	range = range_warclub;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 240;
 	visual = "ITMW_1H_MAKEDHAMMER2_SM_NORDIC.3DS";
@@ -9185,11 +9183,11 @@ instance ItMw_1H_AncientHammer(C_Item)
 	inv_animate = 1;
 };
 
-//----------------------topory----------------------------
+// ----------------------topory------------------------- ---
 
 instance ItMw_1h_Sld_Axe(C_Item)
 {
-	name = "Prostá sekera";
+	name = " Simple Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9218,7 +9216,7 @@ instance ItMw_1h_Sld_Axe(C_Item)
 
 instance ItMw_Bartaxt(C_Item)
 {
-	name = "Sekera žoldáka";
+	name = " Mercenary's Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9247,7 +9245,7 @@ instance ItMw_Bartaxt(C_Item)
 
 instance ItMw_Doppelaxt(C_Item)
 {
-	name = "Dvoubřitá sekera";
+	name = " Double-Edged Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9276,7 +9274,7 @@ instance ItMw_Doppelaxt(C_Item)
 
 instance ItMw_2h_Sld_Axe(C_Item)
 {
-	name = "Prostá obouruční sekyra";
+	name = " Simple Two-Handed Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9305,7 +9303,7 @@ instance ItMw_2h_Sld_Axe(C_Item)
 
 instance ItMw_Streitaxt1(C_Item)
 {
-	name = "Lehká válečná sekyra";
+	name = " Light Waraxe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9334,7 +9332,7 @@ instance ItMw_Streitaxt1(C_Item)
 
 instance ItMw_Folteraxt(C_Item)		
 {
-	name = "Dlouhá sekyra";
+	name = " Long Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9363,7 +9361,7 @@ instance ItMw_Folteraxt(C_Item)
 
 instance ITMW_2H_AXE_BERSERK_107(C_Item)
 {
-	name = "Stará válečná sekyra";
+	name = " Old War Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9391,7 +9389,7 @@ instance ITMW_2H_AXE_BERSERK_107(C_Item)
 
 instance ITMW_2H_G3A_ORCAXE_02(C_Item)
 {
-	name = "Válečný sekáč";
+	name = " War Cleaver " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9399,7 +9397,7 @@ instance ITMW_2H_G3A_ORCAXE_02(C_Item)
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 140;
 	damagetype = DAM_EDGE;
-	range = Range_Schlachtaxt;
+	range = range_axe;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 120;
 	visual = "ITMW_2H_G3A_ORCAXE_02.3DS";
@@ -9419,7 +9417,7 @@ instance ITMW_2H_G3A_ORCAXE_02(C_Item)
 
 instance ItMw_Streitaxt2(C_Item)
 {
-	name = "Válečná sekyra";
+	name = " Waraxe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9448,7 +9446,7 @@ instance ItMw_Streitaxt2(C_Item)
 
 instance ItMw_Streitaxt3(C_Item)
 {
-	name = "Těžká válečná sekyra";
+	name = " Heavy Waraxe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9456,7 +9454,7 @@ instance ItMw_Streitaxt3(C_Item)
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 170;
 	damagetype = DAM_EDGE;
-	range = Range_Schlachtaxt;
+	range = range_axe;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 140;
 	visual = "ItMw_Streitaxt3_New.3DS";
@@ -9474,7 +9472,7 @@ instance ItMw_Streitaxt3(C_Item)
 	inv_animate = 1;
 };
 
-//----------------------------Kovanoye oruzhiye----------------------------------------------
+// ----------------------------------Kovanoye oruzhiye------------ ----------------------------
 
 instance ItMw_1H_Common_01(C_Item)
 {
@@ -9500,7 +9498,7 @@ instance ItMw_1H_Common_01(C_Item)
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_02;
+	count[ 3 ] = weapon bonus_02;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9537,18 +9535,18 @@ instance ItMw_1H_Common_01_Blade(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Schwert1(C_Item)
+instance ItMw_Schwert1 (C_Item)
 {
-	name = "Kvalitní meč";
+	name = " Quality Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
-	value = Value_Schwert1;
+	value = value_sword1;
 	damage[DAM_INDEX_MAGIC] = 1;
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 65;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert1;
+	range = range_sword1;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 50;
 	//visual = "ItMw_035_1h_Sword_04.3DS";
@@ -9561,7 +9559,7 @@ instance ItMw_Schwert1(C_Item)
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_02;
+	count[ 3 ] = weapon bonus_02;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9569,18 +9567,18 @@ instance ItMw_Schwert1(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Schwert4(C_Item)
+instance ItMw_Schwert4 (C_Item)
 {
-	name = "Kvalitní dlouhý meč";
+	name = " Quality Longsword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
-	value = Value_Schwert4;
+	value = value_sword4;
 	damage[DAM_INDEX_MAGIC] = 1;
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 75;
 	damagetype = DAM_EDGE;
-	range = Range_Schwert4;
+	range = range_sword4;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 55;
 	//visual = "ItMw_045_1h_Sword_long_04.3DS";
@@ -9593,7 +9591,7 @@ instance ItMw_Schwert4(C_Item)
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_02;
+	count[ 3 ] = weapon bonus_02;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9603,7 +9601,7 @@ instance ItMw_Schwert4(C_Item)
 
 instance ItMw_Rubinklinge(C_Item)
 {
-	name = "Rubínová čepel";
+	name = " Ruby Blade " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9625,7 +9623,7 @@ instance ItMw_Rubinklinge(C_Item)
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_02;
+	count[ 3 ] = weapon bonus_02;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9657,7 +9655,7 @@ instance ItMw_ElBastardo(C_Item)
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_02;
+	count[ 3 ] = weapon bonus_02;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9692,7 +9690,7 @@ instance ItMw_1H_Special_01(C_Item)
 	text[2] = NAME_Prot_Magic;
 	count[2] = protection[PROT_MAGIC];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9727,7 +9725,7 @@ instance ItMw_1H_Special_02(C_Item)
 	text[2] = NAME_Prot_Magic;
 	count[2] = protection[PROT_MAGIC];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9762,7 +9760,7 @@ instance ItMw_1H_Special_03(C_Item)
 	text[2] = NAME_Prot_Magic;
 	count[2] = protection[PROT_MAGIC];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9772,7 +9770,7 @@ instance ItMw_1H_Special_03(C_Item)
 
 instance ItMw_1H_Special_04(C_Item)
 {
-	name = "Rudný zabiják draků";
+	name = " Ore Dragon Slayer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9797,7 +9795,7 @@ instance ItMw_1H_Special_04(C_Item)
 	text[2] = NAME_Prot_Magic;
 	count[2] = protection[PROT_MAGIC];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_ONEHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9832,7 +9830,7 @@ instance ItMw_2H_Special_01(C_Item)
 	text[2] = NAME_Prot_Magic;
 	count[2] = protection[PROT_MAGIC];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_TWOHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9867,7 +9865,7 @@ instance ItMw_2H_Special_02(C_Item)
 	text[2] = NAME_Prot_Magic;
 	count[2] = protection[PROT_MAGIC];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_TWOHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9904,7 +9902,7 @@ instance ItMw_2H_Special_03(C_Item)
 	text[2] = NAME_Prot_Magic;
 	count[2] = protection[PROT_MAGIC];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_TWOHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9914,7 +9912,7 @@ instance ItMw_2H_Special_03(C_Item)
 
 instance ItMw_2H_Special_04(C_Item)
 {
-	name = "Velký rudný zabiják draků";
+	name = " Great Ore Dragon Slayer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9939,7 +9937,7 @@ instance ItMw_2H_Special_04(C_Item)
 	text[2] = NAME_Prot_Magic;
 	count[2] = protection[PROT_MAGIC];
 	text[3] = NAME_WieldBonus;
-	count[3] = Waffenbonus_04;
+	count[ 3 ] = weapon bonus_04;
 	text[4] = NAME_TWOHANDED_SLASH_SMITH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -9949,7 +9947,7 @@ instance ItMw_2H_Special_04(C_Item)
 
 instance ItMw_1H_Blessed_01(C_Item)
 {
-	name = "Prostý rudný meč";
+	name = " Plain Ore Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -9982,7 +9980,7 @@ instance ItMw_1H_Blessed_01(C_Item)
 
 instance ItMw_1H_Blessed_02(C_Item)
 {
-	name = "Posvěcený rudný meč";
+	name = " Sacred Ore Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10015,7 +10013,7 @@ instance ItMw_1H_Blessed_02(C_Item)
 
 instance ItMw_1H_Blessed_03(C_Item)
 {
-	name = "Innosův hněv";
+	name = " Wrath of Innos " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10048,7 +10046,7 @@ instance ItMw_1H_Blessed_03(C_Item)
 
 instance ItMw_2H_Blessed_01(C_Item)
 {
-	name = "Prostý rudný obouruční meč";
+	name = " Plain Ore Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10081,7 +10079,7 @@ instance ItMw_2H_Blessed_01(C_Item)
 
 instance ItMw_2H_Blessed_02(C_Item)
 {
-	name = "Posvěcený rudný obouruční meč";
+	name = " Sanctified Ore Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10114,7 +10112,7 @@ instance ItMw_2H_Blessed_02(C_Item)
 
 instance ItMw_2H_Blessed_03(C_Item)
 {
-	name = "Svatý kat";
+	name = " Holy Executioner " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10147,7 +10145,7 @@ instance ItMw_2H_Blessed_03(C_Item)
 
 instance ItMw_2H_Blessed_03_Hagen(C_Item)
 {
-	name = "Svatý kat";
+	name = " Holy Executioner " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10167,7 +10165,7 @@ instance ItMw_2H_Blessed_03_Hagen(C_Item)
 
 instance ITMW_1H_SIMPLEBLACK(C_Item)
 {
-	name = "Meč z černé rudy";
+	name = " Black Ore Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10202,7 +10200,7 @@ instance ITMW_1H_SIMPLEBLACK(C_Item)
 
 instance ITMW_1H_SIMPLEBLACK_DEX(C_Item)
 {
-	name = "Meč z černé rudy";
+	name = " Black Ore Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10240,7 +10238,7 @@ instance ITMW_1H_SIMPLEBLACK_DEX(C_Item)
 
 instance ITMW_2H_SIMPLEBLACK(C_Item)
 {
-	name = "Obouruční meč z černé rudy";
+	name = " Black Ore Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10273,11 +10271,11 @@ instance ITMW_2H_SIMPLEBLACK(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------------unikal'noye oruzhiye 1H-----------------------------
+// --------------------------------unikal'noye oruzhiye 1H----------------- ------------
 
 instance ITMW_1H_KMR_GREATLONG_01(C_Item)
 {
-	name = "Rytířský palaš";
+	name = " Knight's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10306,7 +10304,7 @@ instance ITMW_1H_KMR_GREATLONG_01(C_Item)
 
 instance ItMw_Runenschwert(C_Item)
 {
-	name = "Runový meč";
+	name = " Rune Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10315,7 +10313,7 @@ instance ItMw_Runenschwert(C_Item)
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 120;
 	damagetype = DAM_EDGE;
-	range = Range_Runenschwert;
+	range = range_rune sword;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 120;
 	visual = "ItMw_Rune_01.3DS";
@@ -10355,7 +10353,7 @@ instance ITMW_1H_SWORD_ORCSLAYER_01(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Účinný proti skřetům...";
+	text[ 3 ] = " Effective against goblins... " ;
 	text[4] = NAME_ONEHANDED_SLASH_LEGEND;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -10365,7 +10363,7 @@ instance ITMW_1H_SWORD_ORCSLAYER_01(C_Item)
 
 instance ITMW_1H_CREST(C_Item)
 {
-	name = "Kříž osudu";
+	name = " Cross of Fate " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10404,7 +10402,7 @@ instance ItMw_Orkschlaechter(C_Item)
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 150;
 	damagetype = DAM_EDGE;
-	range = Range_Orkschlaechter;
+	range = range_orcslayer;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 130;
 	//visual = "ItMw_065_1h_sword_bastard_04.3DS";
@@ -10426,7 +10424,7 @@ instance ItMw_Orkschlaechter(C_Item)
 
 instance ITMW_FEARUND(C_Item)
 {
-	name = "Krotitel nemrtvých";
+	name = " Tamer of the Undead " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10454,9 +10452,9 @@ instance ITMW_FEARUND(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Sturmbringer(C_Item)
+instance ItMw_Stormbringer (C_Item)
 {
-	name = "Osudová ocel";
+	name = " Destiny Steel " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10465,7 +10463,7 @@ instance ItMw_Sturmbringer(C_Item)
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 170;
 	damagetype = DAM_EDGE;
-	range = Range_Sturmbringer;
+	range = Range_Stormbringer;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 160;
 	visual = "ItMw_Sturmbringer_New.3DS";
@@ -10483,9 +10481,9 @@ instance ItMw_Sturmbringer(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Drachen_Sword_02(C_ITEM)
+instance ItMw_Drachen_Sword_02 ( C_ITEM )
 {
-	name = "Bennetův meč";
+	name = " Bennet's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10544,7 +10542,7 @@ instance ITMW_1H_KMR_SNAKESWORD_01(C_Item)
 
 instance ITMW_NORMARDSWORD(C_Item)
 {
-	name = "Stříbrný nordmarský meč";
+	name = " Silver Nordmar Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10564,7 +10562,7 @@ instance ITMW_NORMARDSWORD(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Účinný proti přízrakům...";
+	text[ 3 ] = " Effective against ghosts... " ;
 	text[4] = NAME_ONEHANDED_SLASH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -10574,7 +10572,7 @@ instance ITMW_NORMARDSWORD(C_Item)
 
 instance ITMW_1H_G3A_DAEMONBLADE_01(C_Item)
 {
-	name = "Přeborník duší";
+	name = " Champion of Souls " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10607,7 +10605,7 @@ instance ITMW_1H_G3A_DAEMONBLADE_01(C_Item)
 
 instance ITMW_1H_SWORD_LONG_05(C_Item)
 {
-	name = "Pokraj smrti";
+	name = " Death's Edge " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10637,7 +10635,7 @@ instance ITMW_1H_SWORD_LONG_05(C_Item)
 
 instance ItMw_1H_GinnokSword(C_Item)
 {
-	name = "Meč Šíleného Křižáka";
+	name = " Sword of the Mad Crusader " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10646,7 +10644,7 @@ instance ItMw_1H_GinnokSword(C_Item)
 	damagetype = DAM_EDGE;
 	damage[DAM_INDEX_FIRE] = 1;
 	damage[DAM_INDEX_MAGIC] = 1;
-	range = Range_Schwert3;
+	range = range_sword3;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 260;
 	visual = "ItMw_RuneSword.3DS";
@@ -10665,9 +10663,9 @@ instance ItMw_1H_GinnokSword(C_Item)
 	inv_animate = 1;
 };
 
-instance ITMW_1H_XARADRIM(C_Item)
+instance ITMW_1H_XARADRIM (C_Item)
 {
-	name = "Vládce elementů";
+	name = " Element Ruler " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10698,7 +10696,7 @@ instance ITMW_1H_XARADRIM(C_Item)
 
 instance ITMW_1H_LostSoul(C_Item)
 {
-	name = "Meč ztracených duší";
+	name = " Sword of Lost Souls " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10706,7 +10704,7 @@ instance ITMW_1H_LostSoul(C_Item)
 	damagetype = DAM_EDGE | DAM_MAGIC;
 	damage[DAM_INDEX_EDGE] = 300;
 	damage[DAM_INDEX_MAGIC] = 50;
-	range = Range_Schwert3;
+	range = range_sword3;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 290;
 	visual = "ITMW_1H_LostSoul.3DS";
@@ -10737,7 +10735,7 @@ instance ITMW_1H_DEATHBRINGER(C_Item)
 	damage[DAM_INDEX_EDGE] = 340;
 	damage[DAM_INDEX_FIRE] = 50;
 	protection[PROT_FIRE] = 30;
-	range = Range_Schwert3;
+	range = range_sword3;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 315;
 	visual = "ItMw_1H_DeathJustice.3DS";
@@ -10760,7 +10758,7 @@ instance ITMW_1H_DEATHBRINGER(C_Item)
 
 instance ITMW_1H_BLESSEDBLACK_MAGIC(C_Item)
 {
-	name = "Hněv bohů";
+	name = " Wrath of the Gods " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10779,7 +10777,7 @@ instance ITMW_1H_BLESSEDBLACK_MAGIC(C_Item)
 	on_unequip = unequip_blessedblack_magic;
 	effect = "SPELLFX_STONESPHERE";
 	description = name;
-	text[0] = "Způsobuje nadpřirozené poškození...";
+	text[ 0 ] = " Deals supernatural damage... " ;
 	text[1] = NAME_Prot_Fire;
 	count[1] = protection[PROT_FIRE];
 	text[2] = NAME_Prot_Magic;
@@ -10792,7 +10790,7 @@ instance ITMW_1H_BLESSEDBLACK_MAGIC(C_Item)
 
 instance ITMW_1H_BLESSEDBLACK_MAGIC_DEX(C_Item)
 {
-	name = "Hněv bohů";
+	name = " Wrath of the Gods " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10811,7 +10809,7 @@ instance ITMW_1H_BLESSEDBLACK_MAGIC_DEX(C_Item)
 	on_unequip = unequip_blessedblack_magic;
 	effect = "SPELLFX_STONESPHERE";
 	description = name;
-	text[0] = "Způsobuje nadpřirozené poškození...";
+	text[ 0 ] = " Deals supernatural damage... " ;
 	text[1] = NAME_Prot_Fire;
 	count[1] = protection[PROT_FIRE];
 	text[2] = NAME_Prot_Magic;
@@ -10823,11 +10821,11 @@ instance ITMW_1H_BLESSEDBLACK_MAGIC_DEX(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------------unikal'noye oruzhiye 2H-----------------------------
+// --------------------------unikal'noye oruzhiye 2H----------------- ------------
 
 instance ITMW_2H_AXE_KOLUN_107(C_Item)
 {
-	name = "Válečný kalač";
+	name = " War-killer " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10853,9 +10851,9 @@ instance ITMW_2H_AXE_KOLUN_107(C_Item)
 	inv_animate = 1;
 };
 
-instance ITMW_2H_G3A_ORCAXE_03(C_Item) //Khram voinov v Yarkendare
+instance ITMW_2H_G3A_ORCAXE_03 (C_Item) // Khram voinov v Yarkendare
 {
-	name = "Prastará sekyra";
+	name = " Ancient Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10863,7 +10861,7 @@ instance ITMW_2H_G3A_ORCAXE_03(C_Item) //Khram voinov v Yarkendare
 	damageTotal = 180;
 	damagetype = DAM_EDGE;
 	damage[DAM_INDEX_FIRE] = 1;
-	range = Range_Schlachtaxt;
+	range = range_axe;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 140;
 	visual = "ITMW_2H_G3A_ORCAXE_03.3DS";
@@ -10881,9 +10879,9 @@ instance ITMW_2H_G3A_ORCAXE_03(C_Item) //Khram voinov v Yarkendare
 	inv_animate = 1;
 };
 
-instance ItMw_Drachenschneide(C_Item)			
+instance ItMw_Dragon's Edge (C_Item)			
 {
-	name = "Vykonavatel spravedlnosti";
+	name = " Executor of Justice " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10892,7 +10890,7 @@ instance ItMw_Drachenschneide(C_Item)
 	damagetype = DAM_EDGE;
 	damage[DAM_INDEX_MAGIC] = 1;
 	damage[DAM_INDEX_FIRE] = 1;
-	range = Range_Drachenschneide;
+	range = range_dragon's edge;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 200;
 	visual = "ARC_SWORD2H.3DS";
@@ -10910,9 +10908,9 @@ instance ItMw_Drachenschneide(C_Item)
 	inv_animate = 1;
 };
 
-instance ItMw_Schlachtaxt(C_Item)
+instance ItMw_Battleaxe (C_Item)
 {
-	name = "Pěst barbara";
+	name = " Fist of the Barbarian " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10920,7 +10918,7 @@ instance ItMw_Schlachtaxt(C_Item)
 	damageTotal = 220;
 	damagetype = DAM_EDGE;
 	damage[DAM_INDEX_FIRE] = 1;
-	range = Range_Schlachtaxt;
+	range = range_axe;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 180;
 	//visual = "ItMw_070_2h_axe_heavy_03.3DS";
@@ -10941,7 +10939,7 @@ instance ItMw_Schlachtaxt(C_Item)
 
 instance ITMW_2H_KMR_AXE_H_02(C_Item)
 {
-	name = "Rudná sekyra";
+	name = " Ore Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10949,7 +10947,7 @@ instance ITMW_2H_KMR_AXE_H_02(C_Item)
 	damageTotal = 230;
 	damagetype = DAM_EDGE;
 	damage[DAM_INDEX_FIRE] = 1;
-	range = Range_Schlachtaxt;
+	range = range_axe;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 200;
 	visual = "ITMW_2H_KMR_AXE_H_02.3DS";
@@ -10969,7 +10967,7 @@ instance ITMW_2H_KMR_AXE_H_02(C_Item)
 
 instance ITMW_2H_KMR_WITCHCLAYMORE_01(C_Item)
 {
-	name = "Malbarův rudný dvousečný meč";
+	name = " Malbar's Ore Double-Edged Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -10999,7 +10997,7 @@ instance ITMW_2H_KMR_WITCHCLAYMORE_01(C_Item)
 
 instance ITMW_ASGARDSWORD(C_Item)
 {
-	name = "Meč pravdy";
+	name = " Sword of Truth " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11054,7 +11052,7 @@ instance Orc_Blade(C_ITEM)
 
 instance ITMW_2H_KMR_SOULSWORD_01(C_Item)
 {
-	name = "Temná přísaha";
+	name = " Dark Oath " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11083,7 +11081,7 @@ instance ITMW_2H_KMR_SOULSWORD_01(C_Item)
 
 instance ItMw_RuneAxeAncient(C_Item)
 {
-	name = "Sekyra Prastarých";
+	name = " Ax of the Ancients " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11115,7 +11113,7 @@ instance ItMw_RuneAxeAncient(C_Item)
 
 instance ITMW_2H_KMR_RHOBAR_01(C_Item)
 {
-	name = "Rhobarova vůle";
+	name = " Rhobar's Will " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11147,7 +11145,7 @@ instance ITMW_2H_KMR_RHOBAR_01(C_Item)
 
 instance ItMw_DemonHand(C_Item)			
 {
-	name = "Ruka démonů";
+	name = " Hand of Demons " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11155,7 +11153,7 @@ instance ItMw_DemonHand(C_Item)
 	damageTotal = 320;
 	damagetype = DAM_EDGE;
 	damage[DAM_INDEX_FIRE] = 1;
-	range = Range_Schlachtaxt;
+	range = range_axe;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 270;
 	visual = "ITMW_2H_KMR_RUNEAXE_01.3DS";
@@ -11201,7 +11199,7 @@ instance ITMW_2H_KMR_GREATORCAXE_01(C_Item)
 
 instance ItMw_DragonBone(C_Item)
 {
-	name = "Dračí sekyra";
+	name = " Dragon Ax " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11387,7 +11385,7 @@ instance ITMW_2H_DRAGONMASTER(C_Item)
 
 instance ItMw_2H_DarkSoul(C_Item)
 {
-	name = "Prokletá duše";
+	name = " Cursed Soul " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11419,7 +11417,7 @@ instance ItMw_2H_DarkSoul(C_Item)
 
 instance ITMW_2H_BLESSEDBLACK_MAGIC(C_Item)
 {
-	name = "Hněv Tvůrců";
+	name = " Wrath of the Makers " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11438,7 +11436,7 @@ instance ITMW_2H_BLESSEDBLACK_MAGIC(C_Item)
 	on_unequip = unequip_blessedblack_magic_2h;
 	effect = "SPELLFX_STONESPHERE";
 	description = name;
-	text[0] = "Způsobuje nadpřirozené poškození...";
+	text[ 0 ] = " Deals supernatural damage... " ;
 	text[1] = NAME_Prot_Fire;
 	count[1] = protection[PROT_FIRE];
 	text[2] = NAME_Prot_Magic;
@@ -11449,11 +11447,11 @@ instance ITMW_2H_BLESSEDBLACK_MAGIC(C_Item)
 	inv_animate = 1;
 };
 
-//----------------------lineyka oruzhiya orkov------------------------
+// ----------------------lineyka oruzhiya orkov---------------------- -
 
 instance ItMw_2H_OrcHumanAxe_01(C_Item)
 {
-	name = "Rudná skřetí sekyra";
+	name = " Ore Goblin Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11479,7 +11477,7 @@ instance ItMw_2H_OrcHumanAxe_01(C_Item)
 
 instance ItMw_2H_OrcHumanSword_01(C_Item)
 {
-	name = "Rudný meč válečníka";
+	name = " Warrior's Ore Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11505,7 +11503,7 @@ instance ItMw_2H_OrcHumanSword_01(C_Item)
 
 instance ItMw_2H_OrcHumanGreatAxe(C_Item)
 {
-	name = "Rudná válečná sekyra";
+	name = " Ore Waraxe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11531,7 +11529,7 @@ instance ItMw_2H_OrcHumanGreatAxe(C_Item)
 
 instance ItMw_2H_OrcHumanAxe_02(C_Item)
 {
-	name = "Rudný skřetí kalač";
+	name = " Ore Goblin Slug " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11561,7 +11559,7 @@ instance ItMw_2H_OrcHumanAxe_02(C_Item)
 
 instance ItMw_2H_OrcHumanSword_02(C_Item)
 {
-	name = "Rudný meč stařešiny";
+	name = " Elder's Ore Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11591,7 +11589,7 @@ instance ItMw_2H_OrcHumanSword_02(C_Item)
 
 instance ItMw_2H_OrcHumanDoppelAxe(C_Item)
 {
-	name = "Rudná útočná sekyra";
+	name = " Ore Attack Axe " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11621,7 +11619,7 @@ instance ItMw_2H_OrcHumanDoppelAxe(C_Item)
 
 instance ITMW_2H_OrcHumanClaymore(C_Item)
 {
-	name = "Rudný dvousečný meč náčelníka";
+	name = " Ore Double-Edged Chieftain's Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11649,11 +11647,11 @@ instance ITMW_2H_OrcHumanClaymore(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------------oruzhiye strazha-------------------------------
+// --------------------------------oruzhiye strazha-------------------- -----------
 
 instance ITMW_ZWEIHAENDER5(C_Item)
 {
-	name = "Obouruční meč stráže";
+	name = " Two-Handed Guard Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11683,7 +11681,7 @@ instance ITMW_ZWEIHAENDER5(C_Item)
 
 instance ITMW_ZWEIHAENDER6(C_Item)
 {
-	name = "Obouruční meč stráže";
+	name = " Two-Handed Guard Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11713,7 +11711,7 @@ instance ITMW_ZWEIHAENDER6(C_Item)
 
 instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_1(C_Item)
 {
-	name = "Ruka templáře";
+	name = " Hand of the Templar " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11746,7 +11744,7 @@ instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_1(C_Item)
 
 instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_2(C_Item)
 {
-	name = "Čepel rovnováhy";
+	name = " Blade of Balance " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11779,7 +11777,7 @@ instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_2(C_Item)
 
 instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_3(C_Item)
 {
-	name = "Strážce víry";
+	name = " Guardian of the Faith " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11845,7 +11843,7 @@ instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_4(C_Item)
 
 instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_5(C_Item)
 {
-	name = "Tesák Spáče";
+	name = " Sleeper's Fang " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11869,7 +11867,7 @@ instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_5(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = change_value[2];
-	text[3] = "Legendární čepel prvního templáře Bratrstva Spáče...";
+	text[ 3 ] = " Legendary Blade of the First Templar of the Brotherhood of the Sleeper... " ;
 	text[4] = NAME_TWOHANDED_SLASH_LEGEND;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -11877,11 +11875,11 @@ instance ITMW_TAMPLIER_SPECIAL_2H_SWORD_5(C_Item)
 	inv_animate = 1;
 };
 
-//---------------------------novyy tresh v prodazhu--------------------------
+// ---------------------------novyy tresh v prodazhu----------------- ---------
 
 instance ItMw_Iron_Dagger(C_Item)
 {
-	name = "Železná dýka";
+	name = " Iron Dagger " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11907,7 +11905,7 @@ instance ItMw_Iron_Dagger(C_Item)
 
 instance ItMw_Steel_Dagger(C_Item)
 {
-	name = "Ocelová dýka";
+	name = " Steel Dagger " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -11931,7 +11929,7 @@ instance ItMw_Steel_Dagger(C_Item)
 	inv_animate = 1;
 };
 
-//----------------kop'ya---------------------------------------
+// ----------------copy'ya----------------------------- ----------
 
 
 instance HEERSCHERSTAB(C_Item)
@@ -11966,7 +11964,7 @@ instance HEERSCHERSTAB(C_Item)
 
 instance ItMw_Speer(C_Item)
 {
-	name = "Železné kopí";
+	name = " Iron Spear " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12000,7 +11998,7 @@ instance ItMw_Speer(C_Item)
 
 instance ItMw_SwordSpear(C_Item)
 {
-	name = "Kopí žoldáka";
+	name = " Mercenary Spear " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12036,7 +12034,7 @@ instance ItMw_SwordSpear(C_Item)
 
 instance ItMw_Speer_01(C_Item)
 {
-	name = "Ocelové kopí";
+	name = " Steel Spear " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12072,7 +12070,7 @@ instance ItMw_Speer_01(C_Item)
 
 instance ItMw_Speer_02(C_Item)
 {
-	name = "Rhademesovo kopí";
+	name = " Spear of Rhademes " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12108,7 +12106,7 @@ instance ItMw_Speer_02(C_Item)
 
 instance ItMw_Speer_Silver(C_Item)
 {
-	name = "Stříbrný měsíc";
+	name = " Silver Moon " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12144,7 +12142,7 @@ instance ItMw_Speer_Silver(C_Item)
 
 instance ItMw_HeavySwordSpear(C_Item)
 {
-	name = "Runový tesák";
+	name = " Rune Fang " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12180,7 +12178,7 @@ instance ItMw_HeavySwordSpear(C_Item)
 
 instance ItMw_Speer_03(C_Item)
 {
-	name = "Prastaré kopí Stavitelů";
+	name = " Ancient Spear of the Builders " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12216,7 +12214,7 @@ instance ItMw_Speer_03(C_Item)
 
 instance ItMw_Speer_GoblinDemon(C_Item)
 {
-	name = "Gazkulovo kopí";
+	name = " Gazkul's Spear " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12252,7 +12250,7 @@ instance ItMw_Speer_GoblinDemon(C_Item)
 
 instance ItMw_ButcherSpeer(C_Item)
 {
-	name = "Itu'Sedova ruka";
+	name = " Itu'Sed's Hand " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12288,7 +12286,7 @@ instance ItMw_ButcherSpeer(C_Item)
 
 instance ItMw_Speer_04(C_Item)
 {
-	name = "Kopí templáře";
+	name = " Spear of the Templar " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12324,7 +12322,7 @@ instance ItMw_Speer_04(C_Item)
 
 instance ItMw_DemonSpear(C_Item)
 {
-	name = "Dráp démona";
+	name = " Demon 's Claw " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12392,11 +12390,11 @@ instance ItMw_Speer_05(C_Item)
 	inv_animate = 1;
 };
 
-//----------------------kop'ya----------------------------------------
+// ----------------------head'ya----------------------- -----------------
 
 instance ITMW_1H_WOLF(C_Item)
 {
-	name = "Stříbrný meč";
+	name = " Silver Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12416,7 +12414,7 @@ instance ITMW_1H_WOLF(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Účinný proti přízrakům...";
+	text[ 3 ] = " Effective against ghosts... " ;
 	text[4] = NAME_ONEHANDED_SLASH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -12426,7 +12424,7 @@ instance ITMW_1H_WOLF(C_Item)
 
 instance ITMW_2H_WOLF(C_Item)
 {
-	name = "Stříbrný obouruční meč";
+	name = " Silver Two-Handed Sword " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12446,7 +12444,7 @@ instance ITMW_2H_WOLF(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Účinný proti přízrakům...";
+	text[ 3 ] = " Effective against ghosts... " ;
 	text[4] = NAME_TWOHANDED_SLASH;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -12456,7 +12454,7 @@ instance ITMW_2H_WOLF(C_Item)
 
 instance ITMW_1H_SIGIL(C_Item)
 {
-	name = "Stříbrný runový sihill";
+	name = " Silver Runic Sihill " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12476,7 +12474,7 @@ instance ITMW_1H_SIGIL(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Účinný proti přízrakům a nehmotným bytostem...";
+	text[ 3 ] = " Effective against ghosts and intangible beings... " ;
 	text[4] = NAME_ONEHANDED_SLASH_LEGEND;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -12486,7 +12484,7 @@ instance ITMW_1H_SIGIL(C_Item)
 
 instance ITMW_2H_SIGIL(C_Item)
 {
-	name = "Stříbrný runový sihill";
+	name = " Silver Runic Sihill " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12506,7 +12504,7 @@ instance ITMW_2H_SIGIL(C_Item)
 	count[1] = damageTotal;
 	text[2] = NAME_Str_needed;
 	count[2] = cond_value[2];
-	text[3] = "Účinný proti přízrakům a nehmotným bytostem...";
+	text[ 3 ] = " Effective against ghosts and intangible beings... " ;
 	text[4] = NAME_TWOHANDED_SLASH_LEGEND;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -12528,7 +12526,7 @@ instance ItSc_Scarband_01(C_Item)
 
 instance ITMW_CHAOSSTAFF_01(C_Item)
 {
-	name = "Prokletá hůl Chaosu";
+	name = " Cursed Staff of Chaos " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12549,7 +12547,7 @@ instance ITMW_CHAOSSTAFF_01(C_Item)
 
 instance ItMw_Halleberde_Old(C_Item)
 {
-	name = "Lehká halapartna";
+	name = " Light Halberd " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12565,7 +12563,7 @@ instance ItMw_Halleberde_Old(C_Item)
 	cond_value[0] = 15;
 	visual = "ITAR_HALLEBERD_NOW.3DS";
 	on_equip = equip_2h_medium_halleberde;
-	on_unequip = unequip_2h_medium_halleberde;
+	on_unequip = unequip_2h_medium_halberde;
 	description = name;
 	text[1] = NAME_Damage;
 	count[1] = 50;
@@ -12582,15 +12580,15 @@ instance ItMw_Halleberde_Old(C_Item)
 
 instance ItMw_Hellebarde(C_Item)
 {
-	name = "Železná halapartna";
+	name = " Iron Halberd " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_MISSION;
 	material = MAT_METAL;
-	value = Value_Hellebarde;
+	value = Value_Hellbars;
 	damage[DAM_INDEX_FIRE] = 1;
 	damageTotal = 90;
 	damagetype = DAM_EDGE;
-	range = Range_Hellebarde;
+	range = Range_Hellbard;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 90;
 	//visual = "itmw_028_2h_halberd_01.3DS";
@@ -12611,7 +12609,7 @@ instance ItMw_Hellebarde(C_Item)
 
 instance ItMw_Halleberde_01(C_Item)
 {
-	name = "Ocelová halapartna";
+	name = " Steel Halberd " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12627,7 +12625,7 @@ instance ItMw_Halleberde_01(C_Item)
 	cond_value[0] = 20;
 	visual = "ITMW_2H_HALLEBERDE_02.3DS";
 	on_equip = equip_2h_medium_halleberde;
-	on_unequip = unequip_2h_medium_halleberde;
+	on_unequip = unequip_2h_medium_halberde;
 	description = name;
 	text[1] = NAME_Damage;
 	count[1] = 120;
@@ -12644,7 +12642,7 @@ instance ItMw_Halleberde_01(C_Item)
 
 instance ItMw_Halleberde_02(C_Item)
 {
-	name = "Halapartna žoldáka";
+	name = " Halberd Mercenary " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12660,7 +12658,7 @@ instance ItMw_Halleberde_02(C_Item)
 	cond_value[0] = 40;
 	visual = "ITMW_2H_HALLEBERDE_01.3DS";
 	on_equip = equip_2h_medium_halleberde;
-	on_unequip = unequip_2h_medium_halleberde;
+	on_unequip = unequip_2h_medium_halberde;
 	description = name;
 	text[1] = NAME_Damage;
 	count[1] = 180;
@@ -12677,7 +12675,7 @@ instance ItMw_Halleberde_02(C_Item)
 
 instance ItMw_Halleberde_Orc(C_Item)
 {
-	name = "Halapartna skřetího žoldáka";
+	name = " Goblin Mercenary's Halberd " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
@@ -12693,7 +12691,7 @@ instance ItMw_Halleberde_Orc(C_Item)
 	cond_value[0] = 50;
 	visual = "ITMW_2H_HALLEBERDE_ORC.3DS";
 	on_equip = equip_2h_medium_halleberde;
-	on_unequip = unequip_2h_medium_halleberde;
+	on_unequip = unequip_2h_medium_halberde;
 	description = name;
 	text[1] = NAME_Damage;
 	count[1] = 230;
@@ -12710,7 +12708,7 @@ instance ItMw_Halleberde_Orc(C_Item)
 
 instance ItMw_Halleberde_03(C_Item)
 {
-	name = "Trhající dráp";
+	name = " Tearing Claw " ;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD | ITEM_MISSION;
 	material = MAT_METAL;
