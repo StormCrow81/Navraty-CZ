@@ -1,3 +1,4 @@
+
 var int HerdFish;
 var int HerdMeat;
 var int HerdBug;
@@ -8,7 +9,7 @@ var int HerdCake;
 var int NeedPan;
 var int CampfireRest;
 
-//----------------------------------------Zharka---------------------------------------
+// ----------------------------------------Zharka------- --------------------------------
 
 func void herdpan_s1()
 {
@@ -21,7 +22,7 @@ func void herdpan_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_HERD;
 		NeedPan = FALSE;
 		AI_ProcessInfos(her);
@@ -39,7 +40,7 @@ func void herd_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_HERD;
 		NeedPan = TRUE;
 		AI_ProcessInfos(her);
@@ -83,7 +84,7 @@ func void pc_herd_exit_info()
 	};
 	if(Npc_GetDistToWP(hero,"NW_BIGFARM_KITCHEN_04") < 500)
 	{
-		CreateInvItems(hero,ITMI_BROTSCHIEBER,1);
+		CreateInvItems(hero, ITMI_BREADPUSHER , 1 );
 	};
 
 	b_endproductiondialog();
@@ -120,7 +121,7 @@ instance PC_Herd_Fish(C_Info)
 	condition = PC_Herd_Fish_Condition;
 	information = PC_Herd_Fish_Info;
 	permanent = TRUE;
-	description = "Opéct ryby...";
+	description = " Fry fish... " ;
 };
 
 func int PC_Herd_Fish_Condition()
@@ -142,7 +143,7 @@ instance PC_Herd_Bug(C_Info)
 	condition = PC_Herd_Bug_Condition;
 	information = PC_Herd_Bug_Info;
 	permanent = TRUE;
-	description = "Opéct maso ze žravé štěnice...";
+	description = " Roast meat from a gluttonous bug... " ;
 };
 
 func int PC_Herd_Bug_Condition()
@@ -164,7 +165,7 @@ instance PC_Herd_Cake(C_Info)
 	condition = PC_Herd_Cake_Condition;
 	information = PC_Herd_Cake_Info;
 	permanent = TRUE;
-	description = "Upéct koláč...";
+	description = " Bake a cake... " ;
 };
 
 func int PC_Herd_Cake_Condition()
@@ -280,7 +281,7 @@ instance PC_HERD_Cake_Apple(C_Info)
 	information = PC_HERD_Cake_Apple_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct jablečný koláč";
+	description = " ... bake an apple pie " ;
 };
 
 func int PC_HERD_Cake_Apple_condition()
@@ -309,8 +310,8 @@ func void PC_HERD_Cake_Apple_info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -323,7 +324,7 @@ instance PC_HERD_Cake_Meat(C_Info)
 	information = PC_HERD_Cake_Meat_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct masový koláč";
+	description = " ... bake a meat pie " ;
 };
 
 func int PC_HERD_Cake_Meat_condition()
@@ -352,8 +353,8 @@ func void PC_HERD_Cake_Meat_info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -366,7 +367,7 @@ instance PC_HERD_Cake_Mushroom(C_Info)
 	information = PC_HERD_Cake_Mushroom_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct houbový koláč";
+	description = " ... bake a sponge cake " ;
 };
 
 func int PC_HERD_Cake_Mushroom_condition()
@@ -394,8 +395,8 @@ func void PC_HERD_Cake_Mushroom_info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -408,7 +409,7 @@ instance PC_HERD_Cake_Fish(C_Info)
 	information = PC_HERD_Cake_Fish_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct rybí koláč";
+	description = " ... bake a fish cake " ;
 };
 
 func int PC_HERD_Cake_Fish_condition()
@@ -436,8 +437,8 @@ func void PC_HERD_Cake_Fish_info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -523,7 +524,7 @@ instance PC_HERD_FISCHBRATEN_10X(C_Info)
 	information = pc_herd_fischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct rybu x10";
+	description = " ... fry fish x10 " ;
 };
 
 func int pc_herd_fischbraten10x_condition()
@@ -552,7 +553,7 @@ instance PC_HERD_FISCHBRATEN_ALL(C_Info)
 	information = PC_HERD_FISCHBRATEN_ALL_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct všechny ryby";
+	description = " ... fry all the fish " ;
 };
 
 func int PC_HERD_FISCHBRATEN_ALL_condition()
@@ -584,7 +585,7 @@ instance PC_HERD_FLEISCHBRATEN(C_Info)
 	information = pc_herd_fleischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct maso x1";
+	description = " ... for the maso x1 " ;
 };
 
 func int pc_herd_fleischbraten_condition()
@@ -614,7 +615,7 @@ instance PC_HERD_FLEISCHBRATEN_10X(C_Info)
 	information = pc_herd_fleischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct maso x10";
+	description = " ... opect maso x10 " ;
 };
 
 func int pc_herd_fleischbraten10x_condition()
@@ -643,7 +644,7 @@ instance PC_HERD_FLEISCHBRATEN_ALL(C_Info)
 	information = PC_HERD_FLEISCHBRATEN_ALL_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct všechno maso";
+	description = " ... roast all the meat " ;
 };
 
 func int PC_HERD_FLEISCHBRATEN_ALL_condition()
@@ -656,7 +657,7 @@ func int PC_HERD_FLEISCHBRATEN_ALL_condition()
 
 func void PC_HERD_FLEISCHBRATEN_ALL_info()
 {
-	var int allmeat;
+	be int allmeat;
 
 	AI_Wait(hero,1);
 	allmeat = Npc_HasItems(hero,ItFoMuttonRaw);
@@ -668,7 +669,7 @@ func void PC_HERD_FLEISCHBRATEN_ALL_info()
 };
 
 
-instance PC_HERD_WANZENFLEISCHBRATEN(C_Info)
+instance PC_HERD_BUG MEAT ROAST (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -676,11 +677,11 @@ instance PC_HERD_WANZENFLEISCHBRATEN(C_Info)
 	information = pc_herd_wanzenfleischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct maso ze žravé štěnice x1";
+	description = " ... fry meat from a gluttonous bug x1 " ;
 };
 
 
-func int pc_herd_wanzenfleischbraten_condition()
+func int pc_herd_bug meat roast_condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
@@ -688,18 +689,18 @@ func int pc_herd_wanzenfleischbraten_condition()
 	};
 };
 
-func void pc_herd_wanzenfleischbraten_info()
+func void pc_herd_bug meat roast_info()
 {
 	AI_Wait(hero,1);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,1);
+	CreateInvItems(hero,itat_meatbugflesh_fried, 1 );
 	RankPoints = RankPoints + 1;
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 };
 
 
-instance PC_HERD_WANZENFLEISCHBRATEN_10X(C_Info)
+instance PC_HERD_BUG MEAT ROAST_10X (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -707,11 +708,11 @@ instance PC_HERD_WANZENFLEISCHBRATEN_10X(C_Info)
 	information = pc_herd_wanzenfleischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct maso ze žravé štěnice x10";
+	description = " ... fry meat from a gluttonous bug x10 " ;
 };
 
 
-func int pc_herd_wanzenfleischbraten10x_condition()
+func int pc_herd_bug meat roast10x_condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 10))
 	{
@@ -719,28 +720,28 @@ func int pc_herd_wanzenfleischbraten10x_condition()
 	};
 };
 
-func void pc_herd_wanzenfleischbraten10x_info()
+func void pc_herd_bug meat roast10x_info()
 {
 	AI_Wait(hero,1);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,10);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,10);
+	CreateInvItems(hero,itat_meatbugflesh_fried, 10 );
 	RankPoints = RankPoints + 1;
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERD_WANZENFLEISCHBRATEN_ALL(C_Info)
+instance PC_HERD_BUZZEFLEISCHBRATEN_ALL (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
-	condition = PC_HERD_WANZENFLEISCHBRATEN_ALL_condition;
-	information = PC_HERD_WANZENFLEISCHBRATEN_ALL_info;
+	condition = PC_HERD_BUG MEAT ROAST_ALL_condition;
+	information = PC_HERD_BUG MEAT ROAST_ALL_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct všechno maso ze žravé štěnice";
+	description = " ... fry all the meat from the gluttonous bug " ;
 };
 
-func int PC_HERD_WANZENFLEISCHBRATEN_ALL_condition()
+func int PC_STOCK_BUGS MEATROAST_ALL_condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
@@ -748,20 +749,20 @@ func int PC_HERD_WANZENFLEISCHBRATEN_ALL_condition()
 	};
 };
 
-func void PC_HERD_WANZENFLEISCHBRATEN_ALL_info()
+func void PC_STOCK_BUGS MEATROAST_ALL_info()
 {
 	var int allbug;
 
 	AI_Wait(hero,1);
 	allbug = Npc_HasItems(hero,ItAt_Meatbugflesh);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,allbug);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,allbug);
+	CreateInvItems(hero,itat_meatbugflesh_fried,allbug);
 	RankPoints = RankPoints + 1;
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-//----------------------------------------Kompoty---------------------------------------
+// -----------------------------------------Compotes------- --------------------------------
 
 func void kessel_s1()
 {
@@ -774,7 +775,7 @@ func void kessel_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_KESSEL;
 		AI_ProcessInfos(her);
 	};
@@ -793,7 +794,7 @@ instance PC_KESSEL_PEACH(C_Info)
 	information = PC_KESSEL_PEACH_info;
 	permanent = 1;
 	important = 0;
-	description = "Uvařit kompot...";
+	description = " Cook compote... " ;
 };
 
 func int PC_KESSEL_PEACH_condition()
@@ -811,19 +812,19 @@ func void B_Kessel_Peach()
 
 	if((Rezept_Compote_01 == TRUE) && (Npc_HasItems(hero,ItPl_Planeberry) >= 100) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"... uvařit kompot z lučních bobulí x5 (100x luční bobule, 5x léčivá rostlina)",PC_KESSEL_PEACH_compote_01_X5);
+		Info_AddChoice( PC_KESSEL_PEACH , " ... cook meadow berry compote x5 (100x meadow berry, 5x medicinal plant) " ,PC_KESSEL_PEACH_compote_01_X5);
 	};
 	if((Rezept_Compote_01 == TRUE) && (Npc_HasItems(hero,ItPl_Planeberry) >= 20) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"... uvařit kompot z lučních bobulí x1 (20x luční bobule, 1x léčivá rostlina)",PC_KESSEL_PEACH_compote_01);
+		Info_AddChoice( PC_KESSEL_PEACH , " ... cook meadow berry compote x1 (20x meadow berry, 1x medicinal plant) " ,PC_KESSEL_PEACH_compote_01);
 	};
 	if((Rezept_Compote_02 == TRUE) && (Npc_HasItems(hero,ItPl_Forestberry) >= 150) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"... uvařit kompot z lesních bobulí x5 (150x lesní bobule, 5x léčivá bylina)",PC_KESSEL_PEACH_compote_00_X5);
+		Info_AddChoice( PC_KESSEL_PEACH , " ... cook wild berry compote x5 (150x wild berries, 5x healing herb) " ,PC_KESSEL_PEACH_compote_00_X5);
 	};
 	if((Rezept_Compote_02 == TRUE) && (Npc_HasItems(hero,ItPl_Forestberry) >= 30) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"... uvařit kompot z lesních bobulí x1 (30x lesní bobule, 1x léčivá bylina)",PC_KESSEL_PEACH_compote_00);
+		Info_AddChoice( PC_KESSEL_PEACH , " ... cook wild berry compote x1 (30x wild berries, 1x healing herb) " ,PC_KESSEL_PEACH_compote_00);
 	};
 };
 
@@ -880,23 +881,23 @@ func void PC_KESSEL_PEACH_compote_01_X5()
 	B_Kessel_Peach();
 };
 
-func void pc_kessel_fischsuppe_back()
+func void pc_kettle_fishsoup_back()
 {
-	Info_ClearChoices(pc_kessel_fischsuppe);
+	Info_ClearChoices(pc_kettle_fishsoup);
 };
 
-instance PC_KESSEL_FISCHSUPPE(C_Info)
+instance PC_KESSEL_FISH SOUP (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
-	condition = pc_kessel_fischsuppe_condition;
-	information = pc_kessel_fischsuppe_info;
+	condition = pc_kettle_fishsoup_condition;
+	information = pc_kettle_fishsoup_info;
 	permanent = 1;
 	important = 0;
-	description = "Uvařit polévku...";
+	description = " Cook soup... " ;
 };
 
-func int pc_kessel_fischsuppe_condition()
+func int pc_kettle_fishsoup_condition()
 {
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_KESSEL)
 	{
@@ -906,68 +907,68 @@ func int pc_kessel_fischsuppe_condition()
 
 func void B_Kessel_Supp()
 {
-	Info_ClearChoices(pc_kessel_fischsuppe);
-	Info_AddChoice(pc_kessel_fischsuppe,Dialog_Back,pc_kessel_fischsuppe_back);
+	Info_ClearChoices(pc_kettle_fishsoup);
+	Info_AddChoice(pc_kettle_fishsoup,Dialog_Back,pc_kettle_fishsoup_back);
 
 
 	if((Edda_Soup_00 == TRUE) && (Npc_HasItems(hero,ItPl_Beet) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit tuřínovou polévku (všechny tuříny)",pc_kessel_fischsuppe_Beet_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook turnip soup (all turnips) " ,pc_kessel_fischsuppe_Beet_all);
 	};
 	if((Edda_Soup_00 == TRUE) && (Npc_HasItems(hero,ItPl_Beet) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit tuřínovou polévku x1 (1x tuřín)",pc_kessel_fischsuppe_Beet);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook turnip soup x1 (1x turnip) " ,pc_kessel_fischsuppe_Beet);
 	};
 	if((Edda_Soup_01 == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit rybí polévku (všechny ryby)",pc_kessel_fischsuppe_fish_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook fish soup (all fish) " ,pc_kessel_fischsuppe_fish_all);
 	};
 	if((Edda_Soup_01 == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit rybí polévku x1 (1x ryba)",pc_kessel_fischsuppe_fish);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook fish soup x1 (1x fish) " ,pc_kessel_fischsuppe_fish);
 	};
 	if((Edda_Soup_02 == TRUE) && (Npc_HasItems(hero,itfoschildkroeteraw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit želví polévku (všechno želví maso)",pc_kessel_shildkroetesoup_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook turtle soup (all turtle meat) " ,pc_kessel_shildkroetesoup_all);
 	};
 	if((Edda_Soup_02 == TRUE) && (Npc_HasItems(hero,itfoschildkroeteraw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit želví polévku x1 (1x želví maso)",pc_kessel_shildkroetesoup);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook turtle soup x1 (1x turtle meat) " ,pc_kessel_shildkroetesoup);
 	};
 	if((Edda_Soup_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit houbovou polévku (všechny otrokovy chleby)",pc_kessel_pilzsuppe_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook mushroom soup (all slave breads) " ,pc_kessel_pilzsuppe_all);
 	};
 	if((Edda_Soup_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit houbovou polévku x1 (1x otrokův chléb)",pc_kessel_pilzsuppe);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook mushroom soup x1 (1x slave bread) " ,pc_kessel_pilzsuppe);
 	};
 	if((Edda_Soup_04 == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit masovou polévku (všechno syrové maso)",pc_kessel_meet_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook meat soup (all raw meat) " ,pc_kessel_meet_all);
 	};
 	if((Edda_Soup_04 == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit masovou polévku x1 (1x syrové maso)",pc_kessel_meet);
+		Info_AddChoice(pc_kessel_fischsuppe, " ... cook meat soup x1 (1x raw meat) " ,pc_kessel_meet);
 	};
 };
 
-func void pc_kessel_fischsuppe_info()
+func void pc_kettle_fishsoup_info()
 {
 	B_Kessel_Supp();
 };
 
-func void pc_kessel_fischsuppe_Beet()
+func void pc_kettle_fishsoup_beet()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,ItPl_Beet,1);
-	CreateInvItems(hero,ItFo_BeetSoup,1);
+	CreateInvItems(hero, ItFo_BeetSoup, 1 );
 	AI_PrintClr("Hotovo!",83,152,48);
 	B_Kessel_Supp();
 };
 
-func void pc_kessel_fischsuppe_fish()
+func void pc_kettle_fishsoup_fish()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
@@ -983,7 +984,7 @@ func void pc_kessel_meet()
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
-	CreateInvItems(hero,ItFo_MeetSoup,1);
+	CreateInvItems(hero, ItFo_MeetSoup, 1 );
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Supp();
@@ -994,7 +995,7 @@ func void pc_kessel_shildkroetesoup()
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,itfoschildkroeteraw,1);
-	CreateInvItems(hero,itfo_schildkroetesoup,1);
+	CreateInvItems(hero,itfo_schildkroetesoup, 1 );
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Supp();
@@ -1024,27 +1025,27 @@ func void pc_kessel_meet_all()
 
 	if(CountMeet == 1)
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountMeet));
-		concatText = ConcatStrings(concatText,"x Masová polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountMeet));
+		concatText = ConcatStrings(concatText, " x Meat Soup! " );
 	}
 	else if((CountMeet > 1) && (CountMeet < 5))
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountMeet));
-		concatText = ConcatStrings(concatText,"x Masová polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountMeet));
+		concatText = ConcatStrings(concatText, " x Meat Soup! " );
 	}
 	else if(CountMeet >= 5)
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountMeet));
-		concatText = ConcatStrings(concatText,"x Masová polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountMeet));
+		concatText = ConcatStrings(concatText, " x Meat Soup! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
 	B_Kessel_Supp();
 };
 
-func void pc_kessel_fischsuppe_Beet_all()
+func void pc_kettle_fishsoup_beet_all()
 {
-	var int CountBeet;
+	var int countBeet;
 	var string concatText;
 
 	AI_Wait(hero,1);
@@ -1056,17 +1057,17 @@ func void pc_kessel_fischsuppe_Beet_all()
 	if(CountBeet == 1)
 	{
 		concatText = ConcatStrings("Uvařeno ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText,"x Tuřínová polévka!");
+		concatText = ConcatStrings(concatText, " x Turnip Soup! " );
 	}
 	else if((CountBeet > 1) && (CountBeet < 5))
 	{
 		concatText = ConcatStrings("Uvařeno ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText,"x Tuřínová polévka!");
+		concatText = ConcatStrings(concatText, " x Turnip Soup! " );
 	}
 	else if(CountBeet >= 5)
 	{
 		concatText = ConcatStrings("Uvařeno ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText,"x Tuřínová polévka!");
+		concatText = ConcatStrings(concatText, " x Turnip Soup! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
@@ -1086,18 +1087,18 @@ func void pc_kessel_fischsuppe_fish_all()
 
 	if(CountFish == 1)
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountFish));
-		concatText = ConcatStrings(concatText,"x Rybí polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountFish));
+		concatText = ConcatStrings(concatText, " x Fish Soup! " );
 	}
 	else if((CountFish > 1) && (CountFish < 5))
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountFish));
-		concatText = ConcatStrings(concatText,"x Rybí polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountFish));
+		concatText = ConcatStrings(concatText, " x Fish Soup! " );
 	}
 	else if(CountFish >= 5)
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountFish));
-		concatText = ConcatStrings(concatText,"x Rybí polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountFish));
+		concatText = ConcatStrings(concatText, " x Fish Soup! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
@@ -1119,17 +1120,17 @@ func void pc_kessel_shildkroetesoup_all()
 	if(CountSchildMeat == 1)
 	{
 		concatText = ConcatStrings("Uvařeno ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText,"x Želví polévka!");
+		concatText = ConcatStrings(concatText, " x Turtle Soup! " );
 	}
 	else if((CountSchildMeat > 1) && (CountSchildMeat < 5))
 	{
 		concatText = ConcatStrings("Uvařeno ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText,"x Želví polévka!");
+		concatText = ConcatStrings(concatText, " x Turtle Soup! " );
 	}
 	else if(CountSchildMeat >= 5)
 	{
 		concatText = ConcatStrings("Uvařeno ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText,"x Želví polévka!");
+		concatText = ConcatStrings(concatText, " x Turtle Soup! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
@@ -1150,18 +1151,18 @@ func void pc_kessel_pilzsuppe_all()
 
 	if(CountPilz == 1)
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountPilz));
-		concatText = ConcatStrings(concatText,"x Houbová polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountPilz));
+		concatText = ConcatStrings(concatText, " x Mushroom Soup! " );
 	}
 	else if((CountPilz > 1) && (CountPilz < 5))
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountPilz));
-		concatText = ConcatStrings(concatText,"x Houbová polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountPilz));
+		concatText = ConcatStrings(concatText, " x Mushroom Soup! " );
 	}
 	else if(CountPilz >= 5)
 	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountPilz));
-		concatText = ConcatStrings(concatText,"x Houbová polévka!");
+		concatText = ConcatStrings( " Cooked " ,IntToString(CountPilz));
+		concatText = ConcatStrings(concatText, " x Mushroom Soup! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
@@ -1182,7 +1183,7 @@ instance PC_KESSEL_SOUP(C_Info)
 	information = PC_KESSEL_SOUP_info;
 	permanent = 1;
 	important = 0;
-	description = "Uvařit vývar...";
+	description = " Cook broth... " ;
 };
 
 func int PC_KESSEL_SOUP_condition()
@@ -1200,27 +1201,27 @@ func void B_Kessel_Soup()
 
 	if((Snaf_Meal_02 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 250) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit vývar z otrokových chlebů x5 (250x otrokův chléb, 5x ohnivý kořen)",PC_KESSEL_SOUP_mana_x5);
+		Info_AddChoice( PC_KESSEL_SOUP , " ... cook slave bread broth x5 (250x slave bread, 5x fire root) " ,PC_KESSEL_SOUP_mana_x5);
 	};
 	if((Snaf_Meal_02 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 50) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit vývar z otrokových chlebů x1 (50x otrokův chléb, 1x ohnivý kořen)",PC_KESSEL_SOUP_mana);
+		Info_AddChoice( PC_KESSEL_SOUP , " ... cook slave bread broth x1 (50x slave bread, 1x fire root) " ,PC_KESSEL_SOUP_mana);
 	};
 	if((Snaf_Meal_01 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 250) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit vývar z tmavých hub x5 (250x tmavá houba, 5x ohnivé býlí)",PC_KESSEL_SOUP_magic_x5);
+		Info_AddChoice( PC_KESSEL_SOUP , " ... brew Dark Mushroom Soup x5 (250x Dark Mushroom, 5x Fire Herb) " ,PC_KESSEL_SOUP_magic_x5);
 	};
 	if((Snaf_Meal_01 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 50) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit vývar z tmavých hub x1 (50x tmavá houba, 1x ohnivé býlí)",PC_KESSEL_SOUP_magic);
+		Info_AddChoice( PC_KESSEL_SOUP , " ... brew dark mushroom broth x1 (50x dark mushroom, 1x fire herb) " ,PC_KESSEL_SOUP_magic);
 	};
 	if((Snaf_Meal_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 10) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit masové ragú x5 (10x tmavá houba, 5x maso ze žravé štěnice)",PC_KESSEL_SOUP_fleischwanzenragout_x5);
+		Info_AddChoice( PC_KESSEL_SOUP , " ... cook meat ragout x5 (10x dark mushroom, 5x glutinous bug meat) " ,PC_KESSEL_SOUP_fleischwanzenragout_x5);
 	};
 	if((Snaf_Meal_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 2) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit masové ragú x1 (2x tmavá houba, 1x maso ze žravé štěnice)",PC_KESSEL_SOUP_fleischwanzenragout);
+		Info_AddChoice( PC_KESSEL_SOUP , " ... cook meat ragout x1 (2x dark mushroom, 1x glutinous bug meat) " ,PC_KESSEL_SOUP_fleischwanzenragout);
 	};
 };
 
@@ -1342,7 +1343,7 @@ func void herw_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_HERD;
 		CampfirePan = TRUE;
 		AI_ProcessInfos(her);
@@ -1406,7 +1407,7 @@ instance PC_Herw_Fish(C_Info)
 	condition = PC_Herw_Fish_Condition;
 	information = PC_Herw_Fish_Info;
 	permanent = TRUE;
-	description = "Opéct ryby...";
+	description = " Fry fish... " ;
 };
 
 func int PC_Herw_Fish_Condition()
@@ -1428,7 +1429,7 @@ instance PC_Herw_Bug(C_Info)
 	condition = PC_Herw_Bug_Condition;
 	information = PC_Herw_Bug_Info;
 	permanent = TRUE;
-	description = "Opéct maso ze žravé štěnice...";
+	description = " Roast meat from a gluttonous bug... " ;
 };
 
 func int PC_Herw_Bug_Condition()
@@ -1513,7 +1514,7 @@ func void PC_Herw_Bug_BACK_Info()
 	HerwBug = FALSE;
 };
 
-instance PC_HERW_FISCHBRATEN(C_Info)
+instance PC_HERW_FISCHBRATEN (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1521,7 +1522,7 @@ instance PC_HERW_FISCHBRATEN(C_Info)
 	information = pc_herw_fischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct rybu x1";
+	description = " ... fry fish x1 " ;
 };
 
 func int pc_herw_fischbraten_condition()
@@ -1542,7 +1543,7 @@ func void pc_herw_fischbraten_info()
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_FISCHBRATEN_10X(C_Info)
+instance PC_HERW_FISCHBRATEN_10X (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1550,7 +1551,7 @@ instance PC_HERW_FISCHBRATEN_10X(C_Info)
 	information = pc_herw_fischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct rybu x5";
+	description = " ... opect rybu x5 " ;
 };
 
 func int pc_herw_fischbraten10x_condition()
@@ -1571,7 +1572,7 @@ func void pc_herw_fischbraten10x_info()
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_FLEISCHBRATEN(C_Info)
+instance PC_HERW_FLEISCHROTEN (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1579,7 +1580,7 @@ instance PC_HERW_FLEISCHBRATEN(C_Info)
 	information = pc_herw_fleischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct maso x1";
+	description = " ... for the maso x1 " ;
 };
 
 func int pc_herw_fleischbraten_condition()
@@ -1600,7 +1601,7 @@ func void pc_herw_fleischbraten_info()
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_FLEISCHBRATEN_10X(C_Info)
+instance PC_HERW_FLEISCHBRATEN_10X (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1629,7 +1630,7 @@ func void pc_herw_fleischbraten10x_info()
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_WANZENFLEISCHBRATEN(C_Info)
+instance PC_HERW_BUG MEAT ROAST (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1637,10 +1638,10 @@ instance PC_HERW_WANZENFLEISCHBRATEN(C_Info)
 	information = pc_herw_wanzenfleischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct maso ze žravé štěnice x1";
+	description = " ... fry meat from a gluttonous bug x1 " ;
 };
 
-func int pc_herw_wanzenfleischbraten_condition()
+func int pc_herw_bug meat roast_condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (HerwBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
@@ -1648,17 +1649,17 @@ func int pc_herw_wanzenfleischbraten_condition()
 	};
 };
 
-func void pc_herw_wanzenfleischbraten_info()
+func void pc_herw_bug meat roast_info()
 {
 	AI_Wait(hero,1);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,1);
+	CreateInvItems(hero,itat_meatbugflesh_fried, 1 );
 	RankPoints = RankPoints + 1;
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_WANZENFLEISCHBRATEN_10X(C_Info)
+instance PC_HERW_BUG MEAT ROAST_10X (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1666,7 +1667,7 @@ instance PC_HERW_WANZENFLEISCHBRATEN_10X(C_Info)
 	information = pc_herw_wanzenfleischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "... opéct maso ze žravé štěnice x5";
+	description = " ... fry meat from a gluttonous bug x5 " ;
 };
 
 func int pc_herw_wanzenfleischbraten10x_condition()
@@ -1681,7 +1682,7 @@ func void pc_herw_wanzenfleischbraten10x_info()
 {
 	AI_Wait(hero,1);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,5);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,5);
+	CreateInvItems(hero,itat_meatbugflesh_fried, 5 );
 	RankPoints = RankPoints + 1;
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
@@ -1694,7 +1695,7 @@ instance PC_Herw_CampfireRest(C_Info)
 	condition = PC_Herw_CampfireRest_Condition;
 	information = PC_Herw_CampfireRest_Info;
 	permanent = TRUE;
-	description = "Odpočinout si...";
+	description = " Rest... " ;
 };
 
 func int PC_Herw_CampfireRest_Condition()
@@ -1776,10 +1777,10 @@ func void pc_herw_CampfireRest_1H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 1;
+	RestPool = RestPool -  1 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 1;
+	bHour +=  1 ;
 	Wld_SetTime(bHour,bMinute);
 	CampfireRest = FALSE;
 };
@@ -1822,7 +1823,7 @@ func void pc_herw_CampfireRest_2H_info()
 		}		
 		else
 		{
-			Hero_Hunger = FALSE;
+			Hero_Hunger = FALSE ;
 		};	
 		if(Hero_Thirst > 1)
 		{
@@ -1843,10 +1844,10 @@ func void pc_herw_CampfireRest_2H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 2;
+	RestPool = RestPool -  2 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 2;
+	bHour +=  2 ;
 	Wld_SetTime(bHour,bMinute);
 	CampfireRest = FALSE;
 };
@@ -1889,7 +1890,7 @@ func void pc_herw_CampfireRest_3H_info()
 		}		
 		else
 		{
-			Hero_Hunger = FALSE;
+			Hero_Hunger = FALSE ;
 		};	
 		if(Hero_Thirst > 2)
 		{
@@ -1910,10 +1911,10 @@ func void pc_herw_CampfireRest_3H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 3;
+	RestPool = RestPool -  3 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 3;
+	bHour +=  3 ;
 	Wld_SetTime(bHour,bMinute);
 	CampfireRest = FALSE;
 };
