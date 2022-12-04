@@ -1,9 +1,10 @@
+
 /*******************
  * Queue
  *******************/
 
 
-class Queue {
+class  Queue {
 	var int listHandle;
 	var int empty; 
 };
@@ -30,7 +31,7 @@ func void Q_Enqueue(var int queue, var int data) {
 };
 
 func int Q_IsEmpty(var int queue) {
-	if (!Hlp_IsValidHandle(queue)) {
+	if ( ! Hlp_IsValidHandle(queue)) {
 		MEM_Info("Q_IsEmpty: invalid queue handle");
 		return -1;
 	};
@@ -40,7 +41,7 @@ func int Q_IsEmpty(var int queue) {
 
 func int Q_Advance(var int queue) {
 	
-	if (!Hlp_IsValidHandle(queue)) {
+	if ( ! Hlp_IsValidHandle(queue)) {
 		MEM_Info("Q_Advance: invalid queue handle");
 		return 0;
 	};
@@ -52,7 +53,7 @@ func int Q_Advance(var int queue) {
 		return 0;
 	};
 	
-	if (!Hlp_IsValidHandle(Q.listHandle)) {
+	if ( ! Hlp_IsValidHandle(Q.listHandle)) {
 		MEM_Info("Q_Advance: invalid list handle");
 		return 0; 
 	};
@@ -75,14 +76,14 @@ func int Q_Advance(var int queue) {
 };
 
 func int Q_Peek(var int queue) {
-	if (!Hlp_IsValidHandle(queue)) {
+	if ( ! Hlp_IsValidHandle(queue)) {
 		MEM_Info("Q_Peek: invalid queue handle");
 		return 0;
 	};
 	
 	var Queue Q; Q = get(queue);
 
-	if (!Hlp_IsValidHandle(Q.listHandle)) {
+	if ( ! Hlp_IsValidHandle(Q.listHandle)) {
 		MEM_Info("Q_Peek: invalid list handle");
 		return 0; 
 	};
@@ -98,7 +99,7 @@ func int Q_Peek(var int queue) {
 };
 
 func void Q_For(var int queue, var int funcID) {
-	if (!Hlp_IsValidHandle(queue)) {
+	if ( ! Hlp_IsValidHandle(queue)) {
 		MEM_Info("Q_For: invalid queue handle");
 		return;
 	};
@@ -145,7 +146,7 @@ func void callbackData_Unarchiver(var callbackData this) {
 	};
 };
 
-func int _CQ_CBData(var int ID, var int uData, var int hData) {
+func int _CQ_CBData(var int  ID , var int uData, var int hData) {
 	var int h; h = new(callbackData@);
 	var callbackData cbd; cbd = get(h);
 	
@@ -194,7 +195,7 @@ func void CQ_Advance(var int CQhandle) {
 	
 	var int cbdh; cbdh = Q_Advance(CQhandle);
 	
-	if (!Hlp_IsValidHandle(cbdh)) {
+	if ( ! Hlp_IsValidHandle(cbdh)) {
 		/* This could have serious effects, so a
 		 * warning seems appropriate 
 		 */
@@ -205,8 +206,8 @@ func void CQ_Advance(var int CQhandle) {
 	var callbackData CBD; CBD = get(cbdh);
 	
 	var int ID;		ID 		= CBD.funcID;
-	var int hData; 	hData 	= CBD.hasData;
-	var int uData; 	uData 	= CBD.userData;
+	var int hData; hData = CBD .hasData;
+	var int uData; uData = CBD .userData;
 	
 	delete(cbdh);
 		
