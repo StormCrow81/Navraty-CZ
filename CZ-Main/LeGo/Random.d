@@ -1,14 +1,15 @@
+
 /***********************************\
                RANDOM
 \***********************************/
 
 //========================================
-// Zufallsvariablen
+// random variables
 //========================================
 const int r_val = 0;
 
 //========================================
-// Zufallszahl holen
+// Get random number
 //========================================
 func int r_Next() {
     r_val = (1103515245 * r_val) + 12345;
@@ -27,7 +28,7 @@ func int r_MinMax(var int min, var int max) {
 };
 
 //========================================
-// Zufall initialisieren
+// initialize randomness
 //========================================
 func void r_Init(var int seed) {
     r_val = seed;
