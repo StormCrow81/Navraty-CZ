@@ -1,9 +1,10 @@
+
 /***********************************\
                LOCALS
 \***********************************/
 
 //========================================
-// Arrayfunktionen
+// The array function
 //========================================
 
 func int MEM_ArrayLast(var int arr) {
@@ -46,7 +47,7 @@ func int MEM_ArrayOverwriteFirst(var int arr, var int val, var int newVal) {
 // Locals
 //========================================
 func void Locals() {
-    // Okay. Auf gehts.
+    // OK. Here we go.
 
     var zCPar_Symbol s;
     const string locals_bufferStr = "";
@@ -56,13 +57,13 @@ func void Locals() {
     var int arr, var int type;
     var int sPtr;
 
-    // Array vorbereiten
+    // Prepare array
     const int locals_Arr = 0;
     if(!locals_Arr) {
         locals_Arr = MEM_ArrayCreate();
     };
 
-    // Zuerst alle Symbole die ich für die Tokens brauche initialisieren. //{
+    // First initialize all the symbols I need for the tokens. //{
     const int arrayinsert   = -1;
     const int arraypop      = -1;
     const int copybytes     = -1;
@@ -75,7 +76,7 @@ func void Locals() {
     const int bufferstr     = -1;
     const int bufferstrPtr  = -1;
     const int bufferint     = -1;
-    const int retstr        = -1;
+    const  int rightstr = - 1 ;
     if(arrayinsert == -1) {
         arrayinsert  = MEM_GetFuncOffset(MEM_ArrayInsert);
         arraypop     = MEM_GetFuncOffset(MEM_ArrayPop);
@@ -89,24 +90,24 @@ func void Locals() {
         bufferstr    = s + 1;
         bufferstrPtr = _@s(locals_bufferStr) + 8;
         bufferint    = s + 2;
-        retstr       = s + 3;
+        retstr = s +  3 ;
     };
     //}
 
-    // Ein neuer StringBuilder. In ihm werden alle neuen Tokens gespeichert.
+    // A new StringBuilder. All new tokens are stored in it.
     var int stream; stream = SB_New();
 
-    // Funktion bestimmen
+    // Determine function
     var int p;   p   = MEM_GetCallerStackPos();
-    var int fid; fid = MEM_GetFuncIDByOffset(p);
-    var int cid; cid = fid;
-    var int mid;
+    var you trust ; fid = MEM_GetFuncIDByOffset(p);
+    was int cid; cid = fid;
+    var int middle;
     if(cid == -1) {
         MEM_Error("Locals: CallStackPos invalid");
         return;
     };
 
-    // Tokenarray zusammenschrauben
+    // Bolt token array together
     s = _^(MEM_ReadIntArray(currSymbolTableAddress, cid));
     var string fname; fname = ConcatStrings(s.name, ".");
     var int    fret;  fret  = s.offset;
@@ -115,7 +116,7 @@ func void Locals() {
     MEM_Info(ConcatStrings("Locals: Install at ", s.name));
     MEM_Info(ConcatStrings("        Offset is ", IntToString(p - foff)));
 
-    // Größe bestimmen
+    // Determine size
     var int size; size = 0;
 
     while(1); //{
@@ -147,7 +148,7 @@ func void Locals() {
         };
     end; //}
 
-    mid = cid;
+    one = one;
     cid = fid;
 
     size += s_header + s_assignblock * 2 + s_skipblock + s_misc + 10;
@@ -168,14 +169,14 @@ func void Locals() {
 
     stream = SB_GetStream();
 
-    // Optmimierungshook
+    // optimization hook
     SBc(zPAR_TOK_PUSHINT);  SBw(stream);
     SBc(zPAR_TOK_CALL);     SBw(readint);
-    SBc(zPAR_TOK_JUMPF);    SBw(false);
+    SBc(zPAR_TOK_JUMPF);    SBw ( false );
 
     const int s_header = 3 * 5;
 
-    // Zuerst alle Symbole pushen
+    // Push all symbols first
     while(1); //{
         cid += 1;
         if(cid == mid) {
@@ -189,53 +190,53 @@ func void Locals() {
         type = s.bitfield & zCPar_Symbol_bitfield_type;
         if(arr > 1) {
             arr *= 4;
-            SBc(zPAR_TOK_PUSHINT); SBw(arr);
-            SBc(zPAR_TOK_CALL);    SBw(alloc);
-            SBc(zPAR_TOK_PUSHVAR); SBw(bufferint);
+            SBc(zPAR_TOK_PUSHINT); SBw (arr);
+            SBc(zPAR_TOK_CALL);    SBw (alloc);
+            SBc(zPAR_TOK_PUSHVAR); SBw (bufferint);
             SBc(zPAR_OP_IS);
             SBc(zPAR_TOK_PUSHINT); SBw(s.content);
-            SBc(zPAR_TOK_PUSHVAR); SBw(bufferint);
-            SBc(zPAR_TOK_PUSHINT); SBw(arr);
-            SBc(ZPAR_TOK_CALL);    SBw(copybytes);
-            SBc(zPAR_TOK_PUSHINT); SBw(locals_Arr);
-            SBc(zPAR_TOK_PUSHVAR); SBw(bufferint);
-            SBc(zPAR_TOK_CALL);    SBw(arrayinsert);
+            SBc(zPAR_TOK_PUSHVAR); SBw (bufferint);
+            SBc(zPAR_TOK_PUSHINT); SBw (arr);
+            SBc( ZPAR_TOK_CALL );    SBw (copybytes);
+            SBc(zPAR_TOK_PUSHINT); SBw (locals_Arr);
+            SBc(zPAR_TOK_PUSHVAR); SBw (bufferint);
+            SBc(zPAR_TOK_CALL);    SBw (array insert);
 
             const int s_array = 10 * 5 + 1;
         }
         else if(type == zPAR_TYPE_STRING) {
-            SBc(zPAR_TOK_PUSHVAR);   SBw(cid);
-            SBc(zPAR_TOK_PUSHVAR);   SBw(bufferstr);
+            SBc(zPAR_TOK_PUSHVAR);   Sbw (cid);
+            SBc(zPAR_TOK_PUSHVAR);   SBw (bufferstr);
             SBc(zPAR_TOK_ASSIGNSTR);
-            SBc(zPAR_TOK_PUSHINT);   SBw(12);
-            SBc(zPAR_TOK_CALL);      SBw(alloc);
-            SBc(zPAR_TOK_PUSHVAR);   SBw(bufferint);
+            SBc(zPAR_TOK_PUSHINT);   SBW ( 12 );
+            SBc(zPAR_TOK_CALL);      SBw (alloc);
+            SBc(zPAR_TOK_PUSHVAR);   SBw (bufferint);
             SBc(zPAR_OP_IS);
-            SBc(zPAR_TOK_PUSHINT);   SBw(bufferstrPtr);
-            SBc(zPAR_TOK_PUSHVAR);   SBw(bufferint);
-            SBc(zPAR_TOK_PUSHINT);   SBw(12);
-            SBc(zPAR_TOK_CALL);      SBw(copybytes);
-            SBc(zPAR_TOK_PUSHINT);   SBw(bufferstrPtr);
-            SBc(zPAR_TOK_PUSHINT);   SBw(12);
-            SBc(zPAR_TOK_CALL);      SBw(clear);
-            SBc(zPAR_TOK_PUSHINT);   SBw(locals_Arr);
-            SBc(zPAR_TOK_PUSHVAR);   SBw(bufferint);
-            SBc(zPAR_TOK_CALL);      SBw(arrayinsert);
+            SBc(zPAR_TOK_PUSHINT);   SBw (bufferstrPtr);
+            SBc(zPAR_TOK_PUSHVAR);   SBw (bufferint);
+            SBc(zPAR_TOK_PUSHINT);   SBW ( 12 );
+            SBc(zPAR_TOK_CALL);      SBw (copybytes);
+            SBc(zPAR_TOK_PUSHINT);   SBw (bufferstrPtr);
+            SBc(zPAR_TOK_PUSHINT);   SBW ( 12 );
+            SBc(zPAR_TOK_CALL);      SBw (clear);
+            SBc(zPAR_TOK_PUSHINT);   SBw (locals_Arr);
+            SBc(zPAR_TOK_PUSHVAR);   SBw (bufferint);
+            SBc(zPAR_TOK_CALL);      SBw (array insert);
 
             const int s_string = 15 * 5 + 2;
         }
         else if(type == zPAR_TYPE_INSTANCE) {
-            SBc(zPAR_TOK_PUSHINT);  SBw(locals_Arr);
+            SBc(zPAR_TOK_PUSHINT);  SBw (locals_Arr);
             SBc(zPAR_TOK_PUSHINT);  SBw(_@(s.offset));
             SBc(zPAR_TOK_CALL);     SBw(readint);
-            SBc(zPAR_TOK_CALL);     SBw(arrayinsert);
+            SBc(zPAR_TOK_CALL);     SBw (array insert);
 
             const int s_inst = 4 * 5;
         }
         else {
-            SBc(zPAR_TOK_PUSHINT); SBw(locals_Arr);
-            SBc(zPAR_TOK_PUSHVAR); SBw(cid);
-            SBc(zPAR_TOK_CALL);    SBw(arrayinsert);
+            SBc(zPAR_TOK_PUSHINT); SBw (locals_Arr);
+            SBc(zPAR_TOK_PUSHVAR); Sbw (cid);
+            SBc(zPAR_TOK_CALL);    SBw (array insert);
 
             const int s_int = 3 * 5;
         };
@@ -246,17 +247,17 @@ func void Locals() {
     SBc(zPAR_TOK_PUSHINT); SBw(stream);
     SBc(zPAR_TOK_PUSHINT); SBw(stream);
     SBc(zPAR_TOK_CALL);    SBw(readint);
-    SBc(zPAR_TOK_PUSHINT); SBw(1);
+    SBc(zPAR_TOK_PUSHINT); SBW ( 1 ) ;
     SBc(zPAR_OP_PLUS);
     SBc(zPAR_TOK_CALL);    SBw(writeint);
 
     const int s_assignblock = 5 * 5 + 1;
 
-    // Dann die Funktion callen
-    SBc(zPAR_TOK_CALL);    SBw(foff+5);
+    // Then call the function
+    SBc(zPAR_TOK_CALL);    SBw (foff + 5 );
 
     SBc(zPAR_TOK_PUSHINT); SBw(stream);
-    SBc(zPAR_TOK_PUSHINT); SBw(1);
+    SBc(zPAR_TOK_PUSHINT); SBW ( 1 ) ;
     SBc(zPAR_TOK_PUSHINT); SBw(stream);
     SBc(zPAR_TOK_CALL);    SBw(readint);
     SBc(zPAR_OP_MINUS);
@@ -264,18 +265,18 @@ func void Locals() {
 
     SBc(zPAR_TOK_PUSHINT); SBw(stream);
     SBc(zPAR_TOK_CALL);    SBw(readint);
-    SBc(zPAR_OP_UN_NOT);
+    SBc(zPAR_OP_AN_NOT);
     SBc(zPAR_TOK_JUMPF);   SBw(stream + SB_Length() + 4 + 1 - currParserStackAddress);
     SBc(zPAR_TOK_RET);
 
     const int s_skipblock = 3 * 5 + 2;
 
-    // Den Rückgabewert behandeln:
+    // handle the return value:
     if(fret == 0) {}
     else if(fret == (zPAR_TYPE_STRING>>12)) {
-        SBc(zPAR_TOK_PUSHVAR);    SBc(retstr);
+        SBc(zPAR_TOK_PUSHVAR);    SBc (retstr);
         SBc(zPAR_TOK_ASSIGNSTR);
-        SBc(zPAR_TOK_PUSHVAR);    SBc(retstr);
+        SBc(zPAR_TOK_PUSHVAR);    SBc (retstr);
 
         const int s_ret_string = 2 * 5 + 1;
     }
@@ -292,7 +293,7 @@ func void Locals() {
         const int s_ret_int = 1;
     };
 
-    // Und wieder alles popen
+    // And pop everything again
     while(1); //{
         cid -= 1;
         if(cid == fid) {
@@ -306,48 +307,48 @@ func void Locals() {
         type = s.bitfield & zCPar_Symbol_bitfield_type;
         if(arr > 1) {
             arr *= 4;
-            SBc(zPAR_TOK_PUSHINT); SBw(locals_Arr);
-            SBc(zPAR_TOK_CALL);    SBw(arraypop);
-            SBc(zPAR_TOK_PUSHVAR); SBw(bufferint);
+            SBc(zPAR_TOK_PUSHINT); SBw (locals_Arr);
+            SBc(zPAR_TOK_CALL);    SBw (arraypop);
+            SBc(zPAR_TOK_PUSHVAR); SBw (bufferint);
             SBc(zPAR_OP_IS);
-            SBc(zPAR_TOK_PUSHVAR); SBw(bufferint);
+            SBc(zPAR_TOK_PUSHVAR); SBw (bufferint);
             SBc(zPAR_TOK_PUSHINT); SBw(s.content);
-            SBc(zPAR_TOK_PUSHINT); SBw(arr);
-            SBc(zPAR_TOK_CALL);    SBw(copybytes);
-            SBc(zPAR_TOK_PUSHVAR); SBw(bufferint);
+            SBc(zPAR_TOK_PUSHINT); SBw (arr);
+            SBc(zPAR_TOK_CALL);    SBw (copybytes);
+            SBc(zPAR_TOK_PUSHVAR); SBw (bufferint);
             SBc(zPAR_TOK_CALL);    SBw(free);
 
             const int s_p_array = 9 * 5 + 1;
         }
         else if(type == zPAR_TYPE_STRING) {
-            SBc(zPAR_TOK_PUSHINT);     SBw(locals_Arr);
-            SBc(zPAR_TOK_CALL);        SBw(arraypop);
-            SBc(zPAR_TOK_PUSHVAR);     SBw(bufferint);
+            SBc(zPAR_TOK_PUSHINT);     SBw (locals_Arr);
+            SBc(zPAR_TOK_CALL);        SBw (arraypop);
+            SBc(zPAR_TOK_PUSHVAR);     SBw (bufferint);
             SBc(zPAR_OP_IS);
-            SBc(zPAR_TOK_PUSHVAR);     SBw(bufferint);
-            SBc(zPAR_TOK_PUSHINT);     SBw(bufferstrPtr);
-            SBc(zPAR_TOK_PUSHINT);     SBw(12);
-            SBc(zPAR_TOK_CALL);        SBw(copybytes);
-            SBc(zPAR_TOK_PUSHVAR);     SBw(bufferint);
+            SBc(zPAR_TOK_PUSHVAR);     SBw (bufferint);
+            SBc(zPAR_TOK_PUSHINT);     SBw (bufferstrPtr);
+            SBc(zPAR_TOK_PUSHINT);     SBW ( 12 );
+            SBc(zPAR_TOK_CALL);        SBw (copybytes);
+            SBc(zPAR_TOK_PUSHVAR);     SBw (bufferint);
             SBc(zPAR_TOK_CALL);        SBw(free);
-            SBc(zPAR_TOK_PUSHVAR);     SBw(bufferstr);
-            SBc(zPAR_TOK_PUSHVAR);     SBw(cid);
+            SBc(zPAR_TOK_PUSHVAR);     SBw (bufferstr);
+            SBc(zPAR_TOK_PUSHVAR);     Sbw (cid);
             SBc(zPAR_TOK_ASSIGNSTR);
 
             const int s_p_string = 11 * 5 + 2;
         }
         else if(type == zPAR_TYPE_INSTANCE) {
             SBc(zPAR_TOK_PUSHINT);     SBw(_@(s.offset));
-            SBc(zPAR_TOK_PUSHINT);     SBw(locals_Arr);
-            SBc(zPAR_TOK_CALL);        SBw(arraypop);
+            SBc(zPAR_TOK_PUSHINT);     SBw (locals_Arr);
+            SBc(zPAR_TOK_CALL);        SBw (arraypop);
             SBc(zPAR_TOK_CALL);        SBw(writeint);
 
             const int s_p_inst = 4 * 5;
         }
         else {
-            SBc(zPAR_TOK_PUSHINT);     SBw(locals_Arr);
-            SBc(zPAR_TOK_CALL);        SBw(arraypop);
-            SBc(zPAR_TOK_PUSHVAR);     SBw(cid);
+            SBc(zPAR_TOK_PUSHINT);     SBw (locals_Arr);
+            SBc(zPAR_TOK_CALL);        SBw (arraypop);
+            SBc(zPAR_TOK_PUSHVAR);     Sbw (cid);
             SBc(zPAR_OP_IS);
 
             const int s_p_int = 3 * 5 + 1;
@@ -358,14 +359,14 @@ func void Locals() {
 
     const int s_misc = 5 + 1 + 4; // call + ret + remember-int
 
-    // Jetzt muss die Funktion aber noch neu sortiert werden, damit alles glatt geht:
+    // Now the function still needs to be reordered to make everything run smoothly:
 
-    var int len; len = (p - 5) - foff;
+    var int only; len = (p -  5 ) - foff;
     foff += currParserStackAddress;
     if(len) {
-        var int pre; pre = MEM_Alloc(len);
-        MEM_CopyBytes(foff, pre, len);
-        MEM_CopyBytes(pre, foff+5, len);
+        var int for; for = MEM_Alloc(len);
+        MEM_CopyBytes(foff, for, only);
+        MEM_CopyBytes(for, foff + 5 , len);
         MEM_Free(pre);
     };
 
@@ -389,15 +390,15 @@ func void Locals() {
 };
 
 //========================================
-// Hilfsfunktionen
+// helper functions
 //========================================
 func int Token_GetSize(var int tok) {
-    if((tok >= zPAR_TOK_CALL && tok <= zPAR_TOK_PUSHINDEX)||(tok >= zPAR_TOK_JUMP && tok <= zPAR_TOK_SETINSTANCE)) {
+    if ((tok >= zPAR_TOK_CALL && tok <= zPAR_TOK_PUSHINDEX) || (tok >= zPAR_TOK_JUMP && tok <= zPAR_TOK_SETINSTANCE)) {
         return 5;
-    } else if (tok == zPAR_TOK_PUSH_ARRAYVAR) {
+    } else  if (tok == zPAR_TOK_PUSH_ARRAYVAR) {
         return 6;
     };
-    return 1;
+    return  1 ;
 };
 
 func int Tokens_Copy(var int src, var int dest, var int len) {
@@ -406,15 +407,15 @@ func int Tokens_Copy(var int src, var int dest, var int len) {
     MEM_CopyBytes(p, dest, len);
     MEM_Free(p);
     var int dstC; dstC = dest;
-    var int dstF; dstF = dest+len;
-    var int srcF; srcF = src+len;
+    var int dstF; dstF = dest + len;
+    var int srcF; srcF = src + len;
     var int diff; diff = dest-src;
     while(dstC < dstF);
-        var int tok; tok = MEM_ReadByte(dstC);
-        if(tok == zPAR_TOK_JUMPF || tok == zPAR_TOK_JUMP) {
+        var int took; took = MEM_ReadByte(dstC);
+        if (tok == zPAR_TOK_JUMPF || tok == zPAR_TOK_JUMP) {
             MEM_Info("Move if for Bytes.");
             MEM_Info(inttostring(diff));
-            var int trg; trg = MEM_ReadInt(dstC+1);
+            var int trg; trg = MEM_ReadInt(dstC + 1 );
             if(trg <= srcF && trg >= src) {
                 MEM_WriteInt(dstC+1, trg+diff);
             };
@@ -427,7 +428,7 @@ func int Tokens_Copy(var int src, var int dest, var int len) {
 // Final
 //========================================
 func int Final() {
-    // Alle benötigten Funktionsoffsets
+    // Any function offsets needed
     const int setcallerpos = -1;
     if(setcallerpos == -1) {
         setcallerpos = MEM_GetFuncOffset(MEM_SetCallerStackPos);
@@ -437,8 +438,8 @@ func int Final() {
     var int pa;  pa  = p + currParserStackAddress;
 
     if(MEM_ReadByte(pa) != zPAR_TOK_JUMPF) {
-        MEM_Error("final() darf nur hinter einem if verwendet werden!");
-        return false;
+        MEM_Error( " final() may only be used after an if! " );
+        return  false ;
     };
 
     var int ifp; ifp = MEM_ReadInt(pa + 1);
@@ -446,18 +447,18 @@ func int Final() {
 
     var int s; s = SB_New();
 
-    SBc(zPAR_TOK_PUSHINT); SBw(p);
-    SBc(zPAR_TOK_CALL);    SBw(setcallerpos);
-    SBc(zPAR_TOK_JUMP);    SBw(ifp);
+    SBc(zPAR_TOK_PUSHINT); SBw (p);
+    SBc(zPAR_TOK_CALL);    SBw (setcallerpos);
+    SBc(zPAR_TOK_JUMP);    Sw( ifp );
 
     var int ptr; ptr = SB_GetStream();
     SB_Release();
 
-    MEM_WriteInt(pa-5, zPAR_TOK_CALL);
+    MEM_WriteInt(pa - 5 , zPAR_TOK_CALL);
     MEM_WriteInt(pa-4, ptr - currParserStackAddress);
 
-    Tokens_Copy(pa+5, pa, ifl);
-    MEM_WriteInt(pa+ifl, zPAR_TOK_RET | (zPAR_TOK_RET<<8) | (zPAR_TOK_RET<<16) | (zPAR_TOK_RET<<24));
+    Tokens_Copy(pa + 5 , pa, ifl);
+    MEM_WriteInt(pa + ifl, zPAR_TOK_RET | (zPAR_TOK_RET << 8 ) | (zPAR_TOK_RET << 16 ) | (zPAR_TOK_RET << 24 ));
 
     MEM_SetCallerStackPos(p - 5);
 };
