@@ -1,12 +1,10 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
 func void print_campinfo - upraveny výpisy (DT_TOTAL_DAILY_PAYMENTS -> DT_TOTAL_DAILY_INCOME)
-func void print_campinfo - přidán Bilgot jako lovec (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
-
+func void print_campinfo - added Bilgot as a hunter (due to adjustments to the quests New Hunters (TOPIC_NewHunters) and People for Camp (TOPIC_PPL_FOR_TOWER))
 */
 
 
@@ -162,24 +160,24 @@ func void print_threat_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -189,7 +187,7 @@ func void print_canint_status(var int x_pos,var int y_pos)
 {
 	if(MageRobeIsUp == TRUE)
 	{
-		if(canintST == FALSE)
+		if (speakST ==  FALSE )
 		{
 			canintST = TRUE;
 			canintPosX = threatST + canintST + acrobatST + sprintST + iceshieldST + fireshieldST + healthST + manaST + regenmobsST + ogonekST;
@@ -203,24 +201,24 @@ func void print_canint_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -244,24 +242,24 @@ func void print_acrobat_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -285,24 +283,24 @@ func void print_sprint_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -326,24 +324,24 @@ func void print_iceshield_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -367,24 +365,24 @@ func void print_fireshield_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -408,24 +406,24 @@ func void print_health_res(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -435,7 +433,7 @@ func void print_mana_res(var int x_pos,var int y_pos)
 {
 	if(RestoreMana == TRUE)
 	{
-		if(manaST == FALSE)
+		if (manaST ==  FALSE )
 		{
 			manaST = TRUE;
 			manaPosX = threatST + canintST + acrobatST + sprintST + iceshieldST + fireshieldST + healthST + manaST + regenmobsST + ogonekST;
@@ -449,24 +447,24 @@ func void print_mana_res(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -476,9 +474,9 @@ func void print_regenmobs_status(var int x_pos,var int y_pos)
 {
 	if(RegenSummoned == TRUE)
 	{
-		if(regenmobsST == FALSE)
+		if (rainmobsST ==  FALSE )
 		{
-			regenmobsST = TRUE;
+			rain mobsST = TRUE ;
 			regenmobsPosX = threatST + canintST + acrobatST + sprintST + iceshieldST + fireshieldST + healthST + manaST + regenmobsST + ogonekST;
 		};
 
@@ -486,28 +484,28 @@ func void print_regenmobs_status(var int x_pos,var int y_pos)
 	}
 	else
 	{
-		if(regenmobsST == TRUE)
+		if (regenmobsST ==  TRUE )
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -515,11 +513,11 @@ func void print_regenmobs_status(var int x_pos,var int y_pos)
 
 func void print_ogonek_status(var int x_pos,var int y_pos)
 {
-	if(OgonekIsUp == TRUE)
+	if (OgonekIsUp ==  TRUE )
 	{
-		if(ogonekST == FALSE)
+		if (ogonekST ==  FALSE )
 		{
-			ogonekST = TRUE;
+			ogonekST = TRUE ;
 			ogonekPosX = threatST + canintST + acrobatST + sprintST + iceshieldST + fireshieldST + healthST + manaST + regenmobsST + ogonekST;
 		};
 
@@ -527,28 +525,28 @@ func void print_ogonek_status(var int x_pos,var int y_pos)
 	}
 	else
 	{
-		if(ogonekST == TRUE)
+		if (ogonekST ==  TRUE )
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -628,35 +626,35 @@ func void print_arrow_count(var int x_pos,var int y_pos)
 				if(Use_Arrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Arrow);
-					Context = ConcatStrings(" Obyčejné šípy: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Common Arrows: " ,IntToString(SummMunition));
 					PrintScreen("{",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_FireArrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Addon_FireArrow);
-					Context = ConcatStrings(" Ohnivé šípy: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Fire Arrows: " ,IntToString(SummMunition));
 					PrintScreen("|",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_PoisonArrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_PoisonArrow);
-					Context = ConcatStrings(" Otrávené šípy: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Poisoned arrows: " ,IntToString(SummMunition));
 					PrintScreen("/",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_HolyArrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_HolyArrow);
-					Context = ConcatStrings(" Posvěcené šípy: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Consecrated Arrows: " ,IntToString(SummMunition));
 					PrintScreen(";",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_MagicArrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Addon_MagicArrow);
-					Context = ConcatStrings(" Magické šípy: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Magic Arrows: " ,IntToString(SummMunition));
 					PrintScreen(".",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				};
@@ -676,21 +674,21 @@ func void print_arrow_count(var int x_pos,var int y_pos)
 				if(Use_Bolt == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Bolt);
-					Context = ConcatStrings(" Obyčejné šipky: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Common Arrows: " ,IntToString(SummMunition));
 					PrintScreen("}",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_HolyBolt == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_HolyBolt);
-					Context = ConcatStrings(" Posvěcené šipky: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Consecrated Arrows: " ,IntToString(SummMunition));
 					PrintScreen(",",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_MagicBolt == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Addon_MagicBolt);
-					Context = ConcatStrings(" Magické šipky: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Magic Arrows: " ,IntToString(SummMunition));
 					PrintScreen("+",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				};
@@ -698,7 +696,7 @@ func void print_arrow_count(var int x_pos,var int y_pos)
 			else
 			{
 				SummMunition = Npc_HasItems(hero,ITRW_ADDON_MAGICBOLT_SHV);
-				Context = ConcatStrings(" Šipky 'Exekutora': ",IntToString(SummMunition));
+				Context = ConcatStrings( " 'Executor' Arrows: " ,IntToString(SummMunition));
 				PrintScreen("~",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 				PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 			};
@@ -734,17 +732,17 @@ func void print_campinfo()
 	DT_TOTAL_DAILY_INCOME = FALSE;
 
 
-	PrintScreen("--- Základní informace o táboře ----",5,32,"FONT_OLD_10_WHITE.tga",1);	
+	PrintScreen( " --- Basic Camp Information ---- " , 5 , 32 , " FONT_OLD_10_WHITE.tga " , 1 );	
 
-	concatText1 = ConcatStrings("Pokladnice tábora (zlatých): ",IntToString(DT_BUDGET));
+	concatText1 = ConcatStrings( " Camp Treasuries (Gold): " ,IntToString( DT_BUDGET ));
 	PrintScreen(concatText1,5,36,"FONT_OLD_10_WHITE.tga",1);
 
-	concatText1 = ConcatStrings("Zásoby magické rudy (kusů): ",IntToString(DT_BUDGET_ORE));
+	concatText1 = ConcatStrings( " Magic Ore Stock (pieces): " ,IntToString( DT_BUDGET_ORE ));
 	PrintScreen(concatText1,5,38,"FONT_OLD_10_WHITE.tga",1);
-	concatText1 = ConcatStrings("Zásoby železné rudy (kusů): ",IntToString(DT_BUDGET_IRON));
+	concatText1 = ConcatStrings( " Iron Ore Stock (Pieces): " ,IntToString( DT_BUDGET_IRON ));
 	PrintScreen(concatText1,5,40,"FONT_OLD_10_WHITE.tga",1);
 
-	concatText1 = ConcatStrings("Zásoby proviantu (jednotek): ",IntToString(DT_FOODSTOCK));
+	concatText1 = ConcatStrings( " Stock of provisions (units): " ,IntToString( DT_FOODSTOCK ));
 	PrintScreen(concatText1,5,42,"FONT_OLD_10_WHITE.tga",1);
 
 	if(DT_BUDGETACTIVE == TRUE)
@@ -764,11 +762,11 @@ func void print_campinfo()
 		{
 			DT_TOTAL_DAILY_PAYMENTS += EROLWAGE;
 		};
-		if((niclasrecruiteddt == TRUE) && (NiclasIsDead == FALSE))
+		if ((NicholasRecruited ==  TRUE ) && (NicholasIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_PAYMENTS += NICLASWAGE;
 		};
-		if((farimrecruiteddt == TRUE) && (FarimIsDead == FALSE))
+		if ((farimrecruiteddt ==  TRUE ) && (FarimIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_PAYMENTS += FARIMWAGE;
 		};
@@ -806,30 +804,30 @@ func void print_campinfo()
 
 		if(DT_TOTAL_DAILY_INCOME > 0)
 		{
-			concatText1 = ConcatStrings("Příjem tábora (zlatých za den): ",IntToString(DT_TOTAL_DAILY_INCOME));
+			concatText1 = ConcatStrings( " Camp Income (gold per day): " ,IntToString( DT_TOTAL_DAILY_INCOME ));
 			PrintScreen(concatText1,5,46,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Příjem tábora (zlatých za den): - ",5,46,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Camp income (gold per day): - " , 5 , 46 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 		if(DT_TOTAL_DAILY_PAYMENTS > 0)
 		{
-			concatText1 = ConcatStrings("Náklady tábora (zlatých za den): ",IntToString(DT_TOTAL_DAILY_PAYMENTS));
+			concatText1 = ConcatStrings( " Camp costs (gold per day): " ,IntToString( DT_TOTAL_DAILY_PAYMENTS ));
 			PrintScreen(concatText1,5,48,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Náklady tábora (zlatých za den): - ",5,48,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Camp cost (gold per day): - " , 5 , 48 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 	}
 	else
 	{
-		PrintScreen("Náklady tábora (zlatých za den): - ",5,48,"FONT_OLD_10_WHITE.tga",1);
+		PrintScreen( " Camp cost (gold per day): - " , 5 , 48 , " FONT_OLD_10_WHITE.tga " , 1 );
 	};
 	if(DT_OREGATHER_START == TRUE)
 	{
-		if((ViperIsDead == FALSE) && (VIPERRECRUITEDDT == TRUE))
+		if ((ViperIsDead ==  FALSE ) && ( VIPERRECRUITEDDT  ==  TRUE ))
 		{
 			DT_TOTAL_DAILY_ORECOME = DT_TOTAL_DAILY_ORECOME + 75 + DELTA_VIPER;
 		};
@@ -842,23 +840,23 @@ func void print_campinfo()
 		};
 		if(DT_TOTAL_DAILY_ORECOME > 0)
 		{
-			concatText1 = ConcatStrings("Těžba magické rudy (kusů za den): ",IntToString(DT_TOTAL_DAILY_ORECOME));
+			concatText1 = ConcatStrings( " Magic Ore Mining (pieces per day): " ,IntToString( DT_TOTAL_DAILY_ORECOME ));
 			PrintScreen(concatText1,5,50,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Těžba magické rudy (kusů za den): - ",5,50,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Magic Ore Mining (pieces per day): - " , 5 , 50 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 	}
 	else
 	{
-		PrintScreen("Těžba magické rudy (kusů za den): - ",5,50,"FONT_OLD_10_WHITE.tga",1);
+		PrintScreen( " Magic Ore Mining (pieces per day): - " , 5 , 50 , " FONT_OLD_10_WHITE.tga " , 1 );
 	};
 	if(DT_IRONGATHER_START == TRUE)
 	{
 		if(HUNTYGRIMESRECRUITEDDT == TRUE)
 		{
-			if(HuntyNWIsDead == FALSE)
+			if (HuntyNWIsDead ==  FALSE )
 			{
 				DT_TOTAL_DAILY_IRONCOME = DT_TOTAL_DAILY_IRONCOME + 75 + DELTA_HUNTY;
 			};
@@ -869,17 +867,17 @@ func void print_campinfo()
 		};
 		if(DT_TOTAL_DAILY_IRONCOME > 0)
 		{
-			concatText1 = ConcatStrings("Těžba železné rudy (kusů za den): ",IntToString(DT_TOTAL_DAILY_IRONCOME));
+			concatText1 = ConcatStrings( " Iron ore mining (pieces per day): " ,IntToString( DT_TOTAL_DAILY_IRONCOME ));
 			PrintScreen(concatText1,5,52,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Těžba železné rudy (kusů za den): - ",5,52,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Iron ore mining (pieces per day): - " , 5 , 52 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 	}
 	else
 	{
-		PrintScreen("Těžba železné rudy (kusů za den): - ",5,52,"FONT_OLD_10_WHITE.tga",1);
+		PrintScreen( " Iron ore mining (pieces per day): - " , 5 , 52 , " FONT_OLD_10_WHITE.tga " , 1 );
 	};
 	if(DT_FOODSTOCKACTIVE == TRUE)
 	{
@@ -891,7 +889,7 @@ func void print_campinfo()
 		{
 			DT_TOTAL_DAILY_FOODLOSS += EROLFOODCONS;
 		};
-		if((MIS_MYNEWMANSION == LOG_SUCCESS) && (GuardOneIsDead == FALSE))
+		if (( MIS_MYNEWMANSION  ==  LOG_SUCCESS ) && (GuardOneIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_FOODLOSS += GUARD1FOODCONS;
 		};
@@ -899,7 +897,7 @@ func void print_campinfo()
 		{
 			DT_TOTAL_DAILY_FOODLOSS += GUARD2FOODCONS;
 		};
-		if((niclasrecruiteddt == TRUE) && (NiclasIsDead == FALSE))
+		if ((NicholasRecruited ==  TRUE ) && (NicholasIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_FOODLOSS += NICLASFOODCONS;
 			DT_TOTAL_DAILY_FOODGATHER += NICLASHUNTFOOD;
@@ -909,7 +907,7 @@ func void print_campinfo()
 			DT_TOTAL_DAILY_FOODLOSS += TALBINFOODCONS;
 			DT_TOTAL_DAILY_FOODGATHER += TALBINHUNTFOOD;
 		};
-		if((farimrecruiteddt == TRUE) && (FarimIsDead == FALSE))
+		if ((farimrecruiteddt ==  TRUE ) && (FarimIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_FOODLOSS += FARIMFOODCONS;
 			DT_TOTAL_DAILY_FOODGATHER += FARIMSUPPLIESFOOD;
@@ -922,7 +920,7 @@ func void print_campinfo()
 		{
 			DT_TOTAL_DAILY_FOODLOSS += GRIMESFOODCONS;
 		};
-		if((viperrecruiteddt == TRUE) && (ViperIsDead == FALSE))
+		if ((viperrecruiteddt ==  TRUE ) && (ViperIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_FOODLOSS += VIPERFOODCONS;
 		};
@@ -970,27 +968,27 @@ func void print_campinfo()
 
 		if(DT_TOTAL_DAILY_FOODGATHER > 0)
 		{
-			concatText1 = ConcatStrings("Dodávky proviantu (jednotek za den): ",IntToString(DT_TOTAL_DAILY_FOODGATHER));
+			concatText1 = ConcatStrings( " Provisions deliveries (units per day): " ,IntToString( DT_TOTAL_DAILY_FOODGATHER ));
 			PrintScreen(concatText1,5,54,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Dodávky proviantu (jednotek za den): - ",5,54,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Supplies of provisions (units per day): - " , 5 , 54 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 
 		if(DT_TOTAL_DAILY_FOODLOSS > 0)
 		{
-			concatText1 = ConcatStrings("Spotřeba proviantu (jednotek za den): ",IntToString(DT_TOTAL_DAILY_FOODLOSS));
+			concatText1 = ConcatStrings( " Provision consumption (units per day): " ,IntToString( DT_TOTAL_DAILY_FOODLOSS ));
 			PrintScreen(concatText1,5,56,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Spotřeba proviantu (jednotek za den): - ",5,56,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Provision consumption (units per day): - " , 5 , 56 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 	}
 	else
 	{
-		PrintScreen("Dodávky proviantu (jednotek za den): - ",5,54,"FONT_OLD_10_WHITE.tga",1);
-		PrintScreen("Spotřeba proviantu (jednotek za den): - ",5,56,"FONT_OLD_10_WHITE.tga",1);
+		PrintScreen( " Supplies of provisions (units per day): - " , 5 , 54 , " FONT_OLD_10_WHITE.tga " , 1 );
+		PrintScreen( " Provision consumption (units per day): - " , 5 , 56 , " FONT_OLD_10_WHITE.tga " , 1 );
 	};
 };
