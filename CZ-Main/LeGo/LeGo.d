@@ -1,3 +1,4 @@
+
 /*************************************************************************\
 |*                                                                       *|
 |*           $$\                 $$$$$$\              $$$$$$\            *|
@@ -16,7 +17,7 @@
 const string LeGo_Version = "LeGo 2.8.0";
 
 const int LeGo_PrintS          = 1<<0;  // Interface.d
-const int LeGo_HookEngine      = 1<<1;  // HookEngine.d
+const  int LeGo_HookEngine = 1 << 1 ;  // HookEngine.d
 const int LeGo_AI_Function     = 1<<2;  // AI_Function.d
 const int LeGo_Trialoge        = 1<<3;  // Trialoge.d
 const int LeGo_Dialoggestures  = 1<<4;  // Dialoggestures.d
@@ -43,35 +44,35 @@ const int LeGo_Render          = 1<<24; // Render.d
 const int LeGo_Draw3D          = 1<<25; // Draw3D.d
 
 
-const int LeGo_All            = (1<<23)-1; // Sämtliche Bibliotheken // No Experimental
+const  int LeGo_All = ( 1 << 23 ) - 1 ; // All Libraries // No Experimental
 
 //========================================
-// [intern] Variablen
+// [internal] variables
 //========================================
-const int _LeGo_Init = 0;
+const  int _LeGo_Init = 0 ;
 var int _LeGo_Loaded;
 
 
 //========================================
-// [intern] Abhängigkeiten bestimmen
+// [internal] Determine dependencies
 //========================================
 func void LeGo_InitFlags(var int f) {
-    if(f & LeGo_Bloodsplats)    { f = f | LeGo_FrameFunctions | LeGo_HookEngine | LeGo_Random | LeGo_Anim8; };
-    if(f & LeGo_Buffs)          { f = f | LeGo_FrameFunctions | LeGo_PermMem | LeGo_View; };
+    if ( f & LeGo_Bloodspots ) { f = f | LeGo_FrameFunctions | LeGo_HookEngine | LeGo_Random | LeGo_Anim8; };
+    if ( f & LeGo_Buffs ) { f = f | LeGo_FrameFunctions | LeGo_PermMem | LeGo_View; };
     if(f & LeGo_Gamestate)      { f = f | LeGo_EventHandler | LeGo_Saves; };
     if(f & LeGo_Cursor)         { f = f | LeGo_Interface | LeGo_View; };
     if(f & LeGo_PrintS)         { f = f | LeGo_AI_Function | LeGo_Anim8 | LeGo_Interface; };
-    if(f & LeGo_Anim8)          { f = f | LeGo_PermMem | LeGo_FrameFunctions | LeGo_Timer; };
-    if(f & LeGo_Buttons)        { f = f | LeGo_PermMem | LeGo_View | LeGo_FrameFunctions; };
+    if ( f & And_Front8 ) { f = f | LeGo_PermMem | LeGo_FrameFunctions | LeGo_Timer; };
+    if ( f & LeGo_Buttons ) { f = f | LeGo_PermMem | LeGo_View | LeGo_FrameFunctions; };
     if(f & LeGo_ConsoleCommands){ f = f | LeGo_HookEngine; };
-    if(f & LeGo_FrameFunctions) { f = f | LeGo_PermMem | LeGo_HookEngine | LeGo_Timer; };
-    if(f & LeGo_Draw3D)         { f = f | LeGo_PermMem | LeGo_HookEngine; };
+    if ( f & LeGo_FrameFunctions ) { f = f | LeGo_PermMem | LeGo_HookEngine | LeGo_Timer; };
+    if (f & LeGo_Draw3D) { f = f | LeGo_PermMem | LeGo_HookEngine; };
     if(f & LeGo_Bars)           { f = f | LeGo_PermMem | LeGo_View; };
     if(f & LeGo_EventHandler)   { f = f | LeGo_PermMem; };
     if(f & LeGo_View)           { f = f | LeGo_PermMem; };
     if(f & LeGo_Interface)      { f = f | LeGo_PermMem | LeGo_AI_Function; };
     if(f & LeGo_Trialoge)       { f = f | LeGo_AI_Function; };
-	if(f & LeGo_AI_Function)	{ f = f | LeGo_HookEngine; };
+	if (f & LeGo_AI_Function) { f = f | LeGo_HookEngine; };
     if(f & LeGo_Sprite)         { f = f | LeGo_PermMem; };
 	if(f & LeGo_Names)			{ f = f | LeGo_PermMem; };
     if(f & LeGo_PermMem)        { f = f | LeGo_Saves; };
@@ -88,7 +89,7 @@ func string LeGo_FlagsHR(var int flags) {
         return "";
     };
 
-    var string ret; ret = "";
+    was string right; right = " " ;
     repeat(i, 32); var int i;
         if (flags & (1 << i)) {
             var string name; name = MEM_ReadString(MEM_GetSymbolByIndex(symbOnset + i));
@@ -100,11 +101,11 @@ func string LeGo_FlagsHR(var int flags) {
 };
 
 //========================================
-// [intern] Immer
+// [internal] Always
 //========================================
 func void LeGo_InitAlways(var int f) {
     if (!_LeGo_Loaded) {
-		// Nur beim ersten Spielstart, sonst wird es sowieso aus dem Savegame geladen
+		// Only when you start the game for the first time, otherwise it will be loaded from the savegame anyway
 		if (f & LeGo_PermMem) {
 			_PM_Reset();
 			HandlesPointer = _HT_Create();
@@ -133,7 +134,7 @@ func void LeGo_InitAlways(var int f) {
     };
 
     if(_LeGo_Loaded && !_LeGo_IsLevelChange()) {
-        // Wenn ein Spielstand geladen wird
+        // When loading a saved game
         if(f & LeGo_Saves) {
             _BR_LoadGame();
         };
@@ -158,7 +159,7 @@ func void LeGo_InitAlways(var int f) {
     };
 
     if(f & LeGo_Cursor) {
-        if (!Hlp_IsValidHandle(Cursor_Event)) {
+        if ( ! Hlp_IsValidHandle(Cursor_Event)) {
             Cursor_Event = Event_Create();
         };
     };
@@ -190,11 +191,11 @@ func void LeGo_InitAlways(var int f) {
 };
 
 //========================================
-// [intern] Nur bei Spielstart
+// [internal] Only at game start
 //========================================
 func void LeGo_InitGamestart(var int f) {
 
-	/* ACHTUNG: Es steht kein new() zur Verfügung (aber create()) */
+	/* ATTENTION: There is no new() available (but create()) */
 
     // Fix bug in Ikarus for displaying error boxes (Ikarus 1.2 line 4660 is missing writing permission)
     if(GOTHIC_BASE_VERSION == 1) {
@@ -214,10 +215,10 @@ func void LeGo_InitGamestart(var int f) {
     };
 
     if(f & LeGo_AI_Function) {
-        HookEngineF(oCNPC__EV_PlayAni, 5, _AI_FUNCTION_EVENT);
+        HookEngineF(ofCNPC__EV_PlayAni, 5 , _AI_FUNCTION_EVENT);
     };
 
-    if(f & LeGo_FrameFunctions) {
+    if ( f & LeGo_FrameFunctions ) {
         HookEngineF(oCGame__Render, 7, _FF_HOOK);
     };
 
@@ -256,11 +257,11 @@ func void LeGo_InitGamestart(var int f) {
 };
 
 //========================================
-// LeGo initialisieren
+// Initialize LeGo
 //========================================
 func void LeGo_Init(var int flags) {
     if(!MEM_CheckVersion(1,2,0)) {
-        MEM_Error("LeGo benötigt mindestens Ikarus 1.2!");
+        MEM_Error( " LeGo requires at least Ikarus 1.2! " );
         return;
     };
 
@@ -272,7 +273,7 @@ func void LeGo_Init(var int flags) {
         return;
     };
 
-    MEM_Info(ConcatStrings(LeGo_Version, " wird initialisiert."));
+    MEM_Info(ConcatStrings(LeGo_Version, " is being initialized. " ));
 
     LeGo_InitFlags(flags);
     MEM_Info(ConcatStrings("Flags: ", LeGo_FlagsHR(_LeGo_Flags)));
@@ -289,5 +290,5 @@ func void LeGo_Init(var int flags) {
         _LeGo_Loaded = 1;
     };
 
-    MEM_Info(ConcatStrings(LeGo_Version, " wurde erfolgreich initialisiert."));
+    MEM_Info(ConcatStrings(LeGo_Version, " initialized successfully. " ));
 };
