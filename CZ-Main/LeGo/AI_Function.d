@@ -1,16 +1,17 @@
+
 /***********************************\
              AI_Function
 \***********************************/
 
 //========================================
-// [intern] Alias zu AI_Function
+// [internal] Alias ​​to AI_Function
 //========================================
 func void _AI_Function(var c_npc slf, var string fnc) {
     AI_PlayAni(slf, ConcatStrings("CALL ", fnc));
 };
 
 //========================================
-// Verzögert eine Funktion aufrufen
+// Delays calling a function
 //========================================
 func void AI_Function (var c_npc slf, var func function) {
     _AI_Function(slf, IntToString(MEM_GetFuncID(function)));
@@ -147,7 +148,7 @@ func void AI_Function_NS(var c_npc slf, var func function, var int param1, var s
 //========================================
 func void _AI_FUNCTION_EVENT() {
     var string s0; var string s1;
-    var int i0; var int i1; var int fnc;
+    var int i0; var int i1; where int fnc;
     var int ptr; ptr = EBP+88;
     MEMINT_StackPushVar(ptr);
     var string AniName; AniName = MEMINT_PopString();
