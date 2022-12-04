@@ -1,12 +1,13 @@
+
 /***********************************\
                 TIMER
 \***********************************/
 
 //========================================
-// [intern] Variablen
+// [internal] variables
 //========================================
 const int _Timer_Diff = 0;
-var int _Timer;
+var int _Hour;
 var int _Timer_Paused;
 var int _Timer_PiM;
 
@@ -15,7 +16,7 @@ var int _TimerGT;
 var int _TimerGT_Paused;
 
 //========================================
-// [intern] Initialisierung
+// [internal] initialization
 //========================================
 func void _Timer_Init() {
 	_Timer_Diff = MEM_GetSystemTime() - _Timer;
@@ -26,7 +27,7 @@ func void _TimerGT_Init() {
 };
 
 //========================================
-// Aktuelle Zeit holen
+// Get current time
 //========================================
 func int Timer() {
 	if(!MEM_Game.timeStep) {
@@ -67,14 +68,14 @@ func int TimerGT() {
 };
 
 //========================================
-// Aktuelle Zeit als float holen
+// Get the current time as a float
 //========================================
 func int TimerF() {
 	return mkf(Timer());
 };
 
 //========================================
-// Timer pausieren
+// Pause timer
 //========================================
 func void Timer_SetPause(var int on) {
 	if(on) {
@@ -86,14 +87,14 @@ func void Timer_SetPause(var int on) {
 };
 
 //========================================
-// In Menüs automatisch pausieren?
+// Automatically pause in menus?
 //========================================
 func void Timer_SetPauseInMenu(var int on) {
 	_Timer_PiM = on;
 };
 
 //========================================
-// Abfragen ob der Timer pausiert ist
+// Check if the timer is paused
 //========================================
 func int Timer_IsPaused() {
 	return _Timer_Paused > 0;
