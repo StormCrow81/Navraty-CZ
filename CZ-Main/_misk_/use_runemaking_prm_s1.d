@@ -1,4 +1,5 @@
 
+
 func void use_runemaking_prm_s1()
 {
 	var C_Npc her;
@@ -13,47 +14,47 @@ func void use_runemaking_prm_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,Font_Book_New);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"Pravá magie");
+		Doc_PrintLine(nDocID, 0 , " True Magic " );
 		Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Runy pravé magie a ingredience potřebné k jejich vytvoření:");
+		Doc_PrintLines(nDocID, 0 , " Runes of true magic and ingredients needed to create them: " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"Kruh I");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"- Svetlo -");
-		Doc_PrintLine(nDocID,0,"Zlatá mince");
+		Doc_PrintLine(nDocID, 0 , " Gold Coin " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Požírač zámků -");
+		Doc_PrintLine(nDocID, 0 , " - Lock Eater - " );
 		Doc_PrintLine(nDocID,0,"Paklíč");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Léeba lehkých zranení -");
-		Doc_PrintLine(nDocID,0,"Léeivá rostlina");
+		Doc_PrintLine(nDocID, 0 , " - Léeba minor injuries - " );
+		Doc_PrintLine(nDocID, 0 , " Liquid plant " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"Kruh II");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Vyvolání vlka -");
-		Doc_PrintLine(nDocID,0,"Kuže vlka");
+		Doc_PrintLine(nDocID, 0 , " - Wolf Call - " );
+		Doc_PrintLine(nDocID, 0 , " Wolf skin " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Očisťující světlo -");
+		Doc_PrintLine(nDocID, 0 , " - Purifying Light - " );
 		Doc_PrintLine(nDocID,0,"Protijed");
-		Doc_PrintLine(nDocID,0,"Svěcená voda");
+		Doc_PrintLine(nDocID, 0 , " Holy water " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLine(nDocID,1,"- Znieení nemrtvého -");
-		Doc_PrintLine(nDocID,1,"Svecená voda");
+		Doc_PrintLine(nDocID, 1 , " - Destruction of the undead - " );
+		Doc_PrintLine(nDocID, 1 , " Holy water " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"Kruh III");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLine(nDocID,1,"- Příliv čilosti -");
-		Doc_PrintLine(nDocID,1,"Modrý bez");
-		Doc_PrintLine(nDocID,1,"Ledový křemen");
-		Doc_PrintLine(nDocID,1,"Tráva z bažin");
+		Doc_PrintLine(nDocID, 1 , " - Tide of Vigor - " );
+		Doc_PrintLine(nDocID, 1 , " Blue without " );
+		Doc_PrintLine(nDocID, 1 , " Iced Quartz " );
+		Doc_PrintLine(nDocID, 1 , " Swamp Grass " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLine(nDocID,1,"- Vyvolání kamenného golema -");
-		Doc_PrintLine(nDocID,1,"Srdce kamenného golema");
+		Doc_PrintLine(nDocID, 1 , " - Summon Stone Golem - " );
+		Doc_PrintLine(nDocID, 1 , " Stone Golem Heart " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Pro vytvoření runy je nutno mít všechny ingredience.");
+		Doc_PrintLines(nDocID, 1 , " To create a rune, it is necessary to have all the ingredients. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -68,7 +69,7 @@ func void use_runemaking_prm_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -87,7 +88,7 @@ func void use_runemaking_prm_s1()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_143 = TRUE;
+			BookBonus_143 = TRUE ;
 		};
 	};
 };
