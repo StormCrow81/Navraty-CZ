@@ -1,14 +1,12 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-instance ITRI_GUARDIANS_01 - upraveny výpisy
-instance ITRI_GUARDIANS_02 - upraveny výpisy
-instance ITRI_NARUS - upraveny výpisy
-instance ITRI_UDARGIFT - upraveny výpisy
-
+instance ITRI_GUARDIANS_01 - edited listings
+instance ITRI_GUARDIANS_02 - edited listings
+ITRI_NARUS instance - edited listings
+ITRI_UDARGIFT instance - edited listings
 */
 
 
@@ -32,12 +30,12 @@ const int Value_Ri_ProtMage02 = 500;
 const int Ri_ProtMage02 = 10;
 const int Value_Ri_ProtPoint02 = 500;
 const int Ri_ProtPoint02 = 10;
-const int Value_Ri_ProtTotal = 600;
+const  int Value_Ri_ProtTotal = 600 ;
 const int Ri_TProtFire = 5;
 const int Ri_TProtEdge = 5;
 const int Ri_TProtMage = 5;
 const int Ri_TProtPoint = 5;
-const int Value_Ri_ProtTotal02 = 1000;
+const  int Value_Ri_ProtTotal02 = 1000 ;
 const int Ri_TProtFire02 = 10;
 const int Ri_TProtEdge02 = 10;
 const int Ri_TProtMage02 = 10;
@@ -47,17 +45,17 @@ const int Ri_Dex = 2;
 const int Value_Ri_Dex02 = 500;
 const int Ri_Dex02 = 4;
 const int VALUE_RI_DEX03 = 1000;
-const int RI_DEX03 = 6;
+const  int  RI_DEX03 = 6 ;
 const int VALUE_RI_DEX04 = 2000;
 const int RI_DEX04 = 8;
 const int VALUE_RI_STR04 = 1500;
-const int RI_STR04 = 8;
+const  int  RI_STR04 = 8 ;
 const int Value_Ri_Mana = 500;
 const int Ri_Mana = 5;
 const int Value_Ri_Mana02 = 1000;
 const int Ri_Mana02 = 10;
-const int Value_Ri_Strg = 300;
-const int Ri_Strg = 2;
+const  int Value_Ri_Strg = 300 ;
+const  int Ri_Strg = 2 ;
 const int Value_Ri_Strg02 = 500;
 const int Ri_Strg02 = 4;
 const int Value_Ri_Hp = 200;
@@ -69,16 +67,16 @@ const int Ri_HpMana_Hp = 20;
 const int Ri_HpMana_Mana = 10;
 const int Value_Ri_DexStrg = 800;
 const int Ri_DexStrg_Dex = 3;
-const int Ri_DexStrg_Strg = 3;
+const  int Ri_DexStrg_Strg = 3 ;
 const int RI_TPROTVEPR = 10;
 const int RI_TPROTINNOSJUDGE = 10;
 const int RI_TPROTINNOSJUDGETWO = 15;
 const int RI_PROTMAGE_GUARD_01 = 15;
 const int RI_PROTMAGE_GUARD_02 = 30;
-const int RI_MANA_NARUS = 30;
-const int RI_DEXSTRG_STRG_UDAR = 20;
-const int RI_FELLANGOR = 15;
-const int RI_FELLANGOR_MAGIC = 30;
+const  int  RI_MANA_NARUS = 30 ;
+const  int  RI_DEXSTRG_STRG_UDAR = 20 ;
+const  int  RI_FELLANGOR = 15 ;
+const  int  RI_FELLANGOR_MAGIC = 30 ;
 const int Ri_OreBarons = 3;
 
 const int Ri_Dex_Steel = 10;
@@ -117,11 +115,11 @@ const int Am_Stamina_Ore = 20;
 const int Am_Prot_Ore = 20;
 const int Am_ProtAll_Ore = 40;
 
-const int Am_Str_Imarah = 10;
-const int Am_Prot_Imarah_Mag = 5;
+const  int Am_Str_Imarah = 10 ;
+const  int Am_Prot_Imarah_Mag = 5 ;
 const int Am_Prot_Imarah_Edge = 10;
 const int Am_Int_Imarah = 5;
-const int Am_HP_Imarah = 50;
+const  int Am_HP_Imarah = 50 ;
 
 const int Ri_Fly_Steel = 20;
 const int Ri_Fly_Steel_Clr = 2;
@@ -139,7 +137,7 @@ var string wp;
 const int Value_ItAm_Addon_Franco = 300;
 const int Value_ItRi_Addon_Health_01 = 250;
 const int Value_ItAm_Addon_Health = 250;
-const int Value_ItRi_Addon_Mana_01 = 600;
+const  int Value_ItRi_Addon_Mana_01 = 600 ;
 const int Value_ItAm_Addon_Mana = 600;
 const int Value_ItRi_Addon_STR_01 = 200;
 const int Value_ItAm_Addon_STR = 200;
@@ -150,19 +148,19 @@ const int DEX_Franco = 3;
 
 const int HP_Ring_Solo_Bonus = 5;
 const int HP_Ring_Double_Bonus = 15;
-const int HP_Amulett_Solo_Bonus = 10;
+const  int HP_Amulett_Solo_Bonus = 10 ;
 const int HP_Amulett_EinRing_Bonus = 20;
-const int HP_Amulett_Artefakt_Bonus = 40;
+const  int HP_Amulett_Artifact_Bonus = 40 ;
 const int MA_Ring_Solo_Bonus = 5;
 const int MA_Ring_Double_Bonus = 15;
-const int MA_Amulett_Solo_Bonus = 10;
+const  int MA_Amulett_Solo_Bonus = 10 ;
 const int MA_Amulett_EinRing_Bonus = 20;
-const int MA_Amulett_Artefakt_Bonus = 40;
+const  int MA_Amulett_Artifakt_Bonus = 40 ;
 const int STR_Ring_Solo_Bonus = 5;
 const int STR_Ring_Double_Bonus = 15;
-const int STR_Amulett_Solo_Bonus = 10;
+const  int STR_Amulett_Solo_Bonus = 10 ;
 const int STR_Amulett_EinRing_Bonus = 20;
-const int STR_Amulett_Artefakt_Bonus = 40;
+const  int STR_Amulett_Artifakt_Bonus = 40 ;
 const int Value_Am_ProtFire = 600;
 const int Am_ProtFire = 5;
 const int AMORC_PROTFIRE = 10;
@@ -172,7 +170,7 @@ const int Value_Am_ProtMage = 700;
 const int Am_ProtMage = 5;
 const int Value_Am_ProtPoint = 500;
 const int Am_ProtPoint = 5;
-const int Value_Am_ProtTotal = 1000;
+const  int Value_Am_ProtTotal = 1000 ;
 const int Am_TProtFire = 5;
 const int AM_TProtEdge = 5;
 const int Am_TProtMage = 5;
@@ -182,7 +180,7 @@ const int Am_Dex = 3;
 const int Value_Am_Mana = 1000;
 const int Am_Mana = 5;
 const int Value_Am_Strg = 1000;
-const int Am_Strg = 3;
+const  int Am_Ctrl = 3 ;
 const int Value_Am_Hp = 400;
 const int Am_Hp = 10;
 const int Value_Am_HpMana = 1300;
@@ -190,14 +188,14 @@ const int Am_HpMana_Hp = 10;
 const int Am_HpMana_Mana = 15;
 const int Value_Am_DexStrg = 1600;
 const int Am_DexStrg_Dex = 5;
-const int Am_DexStrg_Strg = 5;
-const int AM_BENKENOB_01 = 10;
-const int AM_BENKENOB_02 = 10;
-const int AM_IRDORAT = 75;
+const  int Am_DexStrg_Strg = 5 ;
+const  int  AM_BENKENOB_01 = 10 ;
+const  int  AM_BENKENOB_02 = 10 ;
+const  int  AM_IRDORATE = 75 ;
 
-//-----------------Kol'tsa brat'yev----------------------
+// -----------------Kol'tsa brat'yev---------------------
 
-const int Ri_Mana_Ihiyal = 30;
+const  int Ri_Mana_Ihiyal = 30 ;
 const int Ri_HP_Ihiyal = 15;
 const int Ri_Mana_Izulg= 15;
 const int Ri_HP_Izulg = 30;
@@ -217,10 +215,10 @@ instance ITAM_ORCAMULET(C_Item)
 	wear = WEAR_EFFECT;
 	description = "Skřetí talisman";
 	text[2] = NAME_Prot_Fire;
-	count[2] = AMORC_PROTFIRE;
+	count[ 2 ] = AMORC_PROTFIRE ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -236,7 +234,7 @@ func void unequip_itam_orcamulet()
 
 instance ItAm_Prot_Fire_01(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_ProtFire;
@@ -246,12 +244,12 @@ instance ItAm_Prot_Fire_01(C_Item)
 	on_equip = Equip_ItAm_Prot_Fire_01;
 	on_unequip = UnEquip_ItAm_Prot_Fire_01;
 	wear = WEAR_EFFECT;
-	description = "Amulet ohně";
+	description = " Amulet of Fire " ;
 	text[2] = NAME_Prot_Fire;
 	count[2] = Am_ProtFire;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -267,7 +265,7 @@ func void UnEquip_ItAm_Prot_Fire_01()
 
 instance ItAm_Prot_Edge_01(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_ProtEdge;
@@ -282,7 +280,7 @@ instance ItAm_Prot_Edge_01(C_Item)
 	count[2] = Am_ProtEdge;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -298,7 +296,7 @@ func void UnEquip_ItAm_Prot_Edge_01()
 
 instance ItAm_Prot_Point_01(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_ProtPoint;
@@ -308,12 +306,12 @@ instance ItAm_Prot_Point_01(C_Item)
 	on_equip = Equip_ItAm_Prot_Point_01;
 	on_unequip = UnEquip_ItAm_Prot_Point_01;
 	wear = WEAR_EFFECT;
-	description = "Amulet dřevěné kůže";
+	description = " Wooden Skin Amulet " ;
 	text[2] = NAME_Prot_Blunt;
 	count[2] = Am_ProtEdge;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -329,7 +327,7 @@ func void UnEquip_ItAm_Prot_Point_01()
 
 instance ItAm_Prot_Mage_01(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_ProtMage;
@@ -339,12 +337,12 @@ instance ItAm_Prot_Mage_01(C_Item)
 	on_equip = Equip_ItAm_Prot_Mage_01;
 	on_unequip = UnEquip_ItAm_Prot_Mage_01;
 	wear = WEAR_EFFECT;
-	description = "Amulet duchovní síly";
+	description = " Amulet of Spiritual Power " ;
 	text[2] = NAME_Prot_Magic;
 	count[2] = Am_ProtMage;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -360,7 +358,7 @@ func void UnEquip_ItAm_Prot_Mage_01()
 
 instance ItAm_Prot_Total_01(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_ProtTotal;
@@ -370,7 +368,7 @@ instance ItAm_Prot_Total_01(C_Item)
 	on_equip = Equip_Value_Am_ProtTotal;
 	on_unequip = UnEquip_Value_Am_ProtTotal;
 	wear = WEAR_EFFECT;
-	description = "Amulet rudné kůže";
+	description = " Ore Skin Amulet " ;
 	text[1] = NAME_Prot_Edge;
 	count[1] = AM_TProtEdge;
 	text[2] = NAME_Prot_Blunt;
@@ -379,7 +377,7 @@ instance ItAm_Prot_Total_01(C_Item)
 	count[3] = Am_TProtPoint;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -399,7 +397,7 @@ func void UnEquip_Value_Am_ProtTotal()
 
 instance ItAm_Dex_01(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_Dex;
@@ -414,7 +412,7 @@ instance ItAm_Dex_01(C_Item)
 	count[2] = Am_Dex;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -437,9 +435,9 @@ func void UnEquip_ItAm_Dex_01()
 };
 
 
-instance ItAm_Strg_01(C_Item)
+instance ItAm_Strg_01 (C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_Strg;
@@ -449,12 +447,12 @@ instance ItAm_Strg_01(C_Item)
 	on_equip = Equip_ItAm_Strg_01;
 	on_unequip = UnEquip_ItAm_Strg_01;
 	wear = WEAR_EFFECT;
-	description = "Amulet síly";
+	description = " Amulet of Power " ;
 	text[2] = NAME_Bonus_Str;
-	count[2] = Am_Strg;
+	count[ 2 ] = On_Ctrl;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -479,7 +477,7 @@ func void UnEquip_ItAm_Strg_01()
 
 instance ItAm_Hp_01(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_Hp;
@@ -494,7 +492,7 @@ instance ItAm_Hp_01(C_Item)
 	count[2] = Am_Hp;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -516,7 +514,7 @@ func void UnEquip_ItAm_Hp_01()
 
 instance ItAm_Mana_01(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_Am_Mana;
@@ -531,7 +529,7 @@ instance ItAm_Mana_01(C_Item)
 	count[2] = Am_Mana;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -551,7 +549,7 @@ func void UnEquip_ItAm_Mana_01()
 };
 
 
-instance ItAm_Dex_Strg_01(C_Item)
+instance ItAm_Dex_Strg_01 (C_Item)
 {
 	name = "Amulet moci";
 	mainflag = ITEM_KAT_MAGIC;
@@ -567,10 +565,10 @@ instance ItAm_Dex_Strg_01(C_Item)
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Am_DexStrg_Dex;
 	text[3] = NAME_Bonus_Str;
-	count[3] = Am_DexStrg_Strg;
+	count[ 3 ] = Am_DexStrg_Strg;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -602,7 +600,7 @@ func void UnEquip_ItAm_Dex_Strg_01()
 
 instance ItAm_Hp_Mana_01(C_Item)
 {
-	name = "Amulet osvícení";
+	name = " Amulet of Enlightenment " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 2000;
@@ -612,14 +610,14 @@ instance ItAm_Hp_Mana_01(C_Item)
 	on_equip = Equip_ItAm_Hp_Mana_01;
 	on_unequip = UnEquip_ItAm_Hp_Mana_01;
 	wear = WEAR_EFFECT;
-	description = "Amulet osvícení";
+	description = " Amulet of Enlightenment " ;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = Am_HpMana_Hp;
 	text[3] = NAME_Bonus_ManaMax;
 	count[3] = Am_HpMana_Mana;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -658,8 +656,8 @@ instance ITAM_IRDORAT(C_Item)
 	description = name;
 	text[1] = NAME_Prot_Magic;
 	count[1] = AM_IRDORAT;
-	text[4] = "Na amuletu jsou vyryté prastaré runy...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " Ancient runes are engraved on the amulet... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -676,7 +674,7 @@ func void unequip_itam_irdorat()
 	hero.protection[PROT_MAGIC] -= AM_IRDORAT;
 };
 
-instance ITAM_BENKENOB(C_Item)
+instance ITAM_BENKENOB (C_Item)
 {
 	name = "Amulet lovce";
 	mainflag = ITEM_KAT_MAGIC;
@@ -690,11 +688,11 @@ instance ITAM_BENKENOB(C_Item)
 	wear = WEAR_EFFECT;
 	description = "Amulet lovce";
 	text[2] = NAME_ADDON_BONUS_BOW;
-	count[2] = AM_BENKENOB_02;
-	text[4] = "Na rubu jsou napsaná slova 'BEN KENOB'...";
+	count[ 2 ] = AM_BENKENOB_02 ;
+	text[ 4 ] = " The words 'BEN KENOB' are written on the reverse... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -717,7 +715,7 @@ func void unequip_itam_benkenob()
 
 instance ITAM_ZIGOSMAGIC(C_Item)
 {
-	name = "Magický amulet";
+	name = " Magický amulet " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 10;
@@ -728,8 +726,8 @@ instance ITAM_ZIGOSMAGIC(C_Item)
 	on_unequip = unequip_itam_zigosmagic;
 	wear = WEAR_EFFECT;
 	description = "Zigosův amulet";
-	text[4] = "Prastarý artefakt Beliarova vyslance...";
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	text[ 4 ] = " Beliar's Emissary's Ancient Artifact... " ;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -746,7 +744,7 @@ func void unequip_itam_zigosmagic()
 
 instance ItAm_Addon_Franco(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_ItAm_Addon_Franco;
@@ -765,7 +763,7 @@ instance ItAm_Addon_Franco(C_Item)
 	count[4] = HP_ItAm_Addon_Franco;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -805,7 +803,7 @@ func void UnEquip_ItAm_Addon_Franco()
 
 instance ItAm_Addon_Health(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_ItAm_Addon_Health;
@@ -815,14 +813,14 @@ instance ItAm_Addon_Health(C_Item)
 	on_equip = Equip_ItAm_Addon_Health;
 	on_unequip = UnEquip_ItAm_Addon_Health;
 	wear = WEAR_EFFECT;
-	description = "Prastarý amulet léčitelů";
+	description = " Ancient Amulet of Healers " ;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = HP_Amulett_Solo_Bonus;
 	text[3] = PRINT_Addon_KUMU_01;
 	text[4] = PRINT_Addon_KUMU_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -872,15 +870,15 @@ instance ItRi_Addon_Health_01(C_Item)
 	on_equip = Equip_ItRi_Addon_Health_01;
 	on_unequip = UnEquip_ItRi_Addon_Health_01;
 	wear = WEAR_EFFECT;
-	description = "Prastarý prsten léčitelů";
+	description = " Ancient Ring of Healers " ;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = HP_Ring_Solo_Bonus;
 	text[3] = PRINT_Addon_KUMU_01;
 	text[4] = PRINT_Addon_KUMU_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -974,7 +972,7 @@ func void UnEquip_ItRi_Addon_Health_02()
 
 instance ItAm_Addon_MANA(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_ItAm_Addon_Mana;
@@ -984,14 +982,14 @@ instance ItAm_Addon_MANA(C_Item)
 	on_equip = Equip_ItAm_Addon_MANA;
 	on_unequip = UnEquip_ItAm_Addon_MANA;
 	wear = WEAR_EFFECT;
-	description = "Prastarý amulet kněží";
+	description = " Ancient Amulet of Priests " ;
 	text[2] = NAME_Bonus_ManaMax;
 	count[2] = MA_Amulett_Solo_Bonus;
 	text[3] = PRINT_Addon_KUMU_01;
 	text[4] = PRINT_Addon_KUMU_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -1036,18 +1034,18 @@ instance ItRi_Addon_MANA_01(C_Item)
 	visual = "ItRi_Prot_Total_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Addon_MANA_01;
+	on_equipment = Equip_ItRi_Addon_MANA_01;
 	on_unequip = UnEquip_ItRi_Addon_MANA_01;
 	wear = WEAR_EFFECT;
-	description = "Prastarý prsten kněží";
+	description = " Ancient Ring of Priests " ;
 	text[2] = NAME_Bonus_ManaMax;
 	count[2] = MA_Ring_Solo_Bonus;
 	text[3] = PRINT_Addon_KUMU_01;
 	text[4] = PRINT_Addon_KUMU_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1093,18 +1091,18 @@ instance ItRi_Addon_MANA_02(C_Item)
 	visual = "ItRi_Prot_Total_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Addon_MANA_02;
+	on_equipment = Equip_ItRi_Addon_MANA_02;
 	on_unequip = UnEquip_ItRi_Addon_MANA_02;
 	wear = WEAR_EFFECT;
-	description = "Prastarý prsten kněží";
+	description = " Ancient Ring of Priests " ;
 	text[2] = NAME_Bonus_ManaMax;
 	count[2] = MA_Ring_Solo_Bonus;
 	text[3] = PRINT_Addon_KUMU_01;
 	text[4] = PRINT_Addon_KUMU_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1143,7 +1141,7 @@ func void UnEquip_ItRi_Addon_MANA_02()
 
 instance ItAm_Addon_STR(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = Value_ItAm_Addon_STR;
@@ -1153,14 +1151,14 @@ instance ItAm_Addon_STR(C_Item)
 	on_equip = Equip_ItAm_Addon_STR;
 	on_unequip = UnEquip_ItAm_Addon_STR;
 	wear = WEAR_EFFECT;
-	description = "Prastarý amulet válečníků";
+	description = " Ancient Amulet of Warriors " ;
 	text[2] = NAME_Prot_Phis;
 	count[2] = STR_Amulett_Solo_Bonus;
 	text[3] = PRINT_Addon_KUMU_01;
 	text[4] = PRINT_Addon_KUMU_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -1200,15 +1198,15 @@ instance ItRi_Addon_STR_01(C_Item)
 	on_equip = Equip_ItRi_Addon_STR_01;
 	on_unequip = UnEquip_ItRi_Addon_STR_01;
 	wear = WEAR_EFFECT;
-	description = "Prastarý prsten válečníků";
+	description = " Ancient Ring of Warriors " ;
 	text[2] = NAME_Prot_Phis;
 	count[2] = STR_Ring_Solo_Bonus;
 	text[3] = PRINT_Addon_KUMU_01;
 	text[4] = PRINT_Addon_KUMU_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1249,15 +1247,15 @@ instance ItRi_Addon_STR_02(C_Item)
 	on_equip = Equip_ItRi_Addon_STR_02;
 	on_unequip = UnEquip_ItRi_Addon_STR_02;
 	wear = WEAR_EFFECT;
-	description = "Prastarý prsten válečníků";
+	description = " Ancient Ring of Warriors " ;
 	text[2] = NAME_Prot_Phis;
 	count[2] = STR_Ring_Solo_Bonus;
 	text[3] = PRINT_Addon_KUMU_01;
 	text[4] = PRINT_Addon_KUMU_02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1287,7 +1285,7 @@ func void UnEquip_ItRi_Addon_STR_02()
 
 instance ItAm_MasiafKey(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 1000;
@@ -1298,8 +1296,8 @@ instance ItAm_MasiafKey(C_Item)
 	on_unequip = UnEquip_MasiafKey;
 	wear = WEAR_EFFECT;
 	description = "Amulet stína";
-	text[3] = "Tenhle podivný amulet jsem našel u jednoho z vrahů,";
-	text[4] = "kteří zaútočili na tábor sběračů trávy z bažin...";
+	text[ 3 ] = " I found this strange amulet with one of the killers, " ;
+	text[ 4 ] = " who attacked the camp of marsh grass pickers... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
@@ -1392,7 +1390,7 @@ instance ItAm_Diamond(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1417,7 +1415,7 @@ func void UnEquip_ItAm_Diamond()
 
 instance ItAm_Ruby(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 1000;
@@ -1435,7 +1433,7 @@ instance ItAm_Ruby(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1443,7 +1441,7 @@ instance ItAm_Ruby(C_Item)
 func void Equip_ItAm_Ruby()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,Am_Str_Ore);
-	Delta_Bonus_Str = Delta_Bonus_Str + Am_Str_Ore;
+	Delta_Bonus_Str = Delta_Bonus_Str + Am_Str_Hours;
 
 	self.protection[PROT_EDGE] += Am_Prot_Ore;
 	self.protection[PROT_BLUNT] += Am_Prot_Ore;
@@ -1452,7 +1450,7 @@ func void Equip_ItAm_Ruby()
 func void UnEquip_ItAm_Ruby()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,-Am_Str_Ore);
-	Delta_Bonus_Str = Delta_Bonus_Str - Am_Str_Ore;
+	Delta_Bonus_Str = Delta_Bonus_Str - Am_Str_Hours;
 
 	self.protection[PROT_EDGE] -= Am_Prot_Ore;
 	self.protection[PROT_BLUNT] -= Am_Prot_Ore;
@@ -1465,7 +1463,7 @@ func void UnEquip_ItAm_Ruby()
 
 instance ItAm_Emerald(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 1000;
@@ -1483,7 +1481,7 @@ instance ItAm_Emerald(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1511,7 +1509,7 @@ func void UnEquip_ItAm_Emerald()
 
 instance ItAm_Sapphire(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 1000;
@@ -1531,7 +1529,7 @@ instance ItAm_Sapphire(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1576,7 +1574,7 @@ func void UnEquip_ItAm_Sapphire()
 
 instance ItAm_Opal(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 1000;
@@ -1594,7 +1592,7 @@ instance ItAm_Opal(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1628,7 +1626,7 @@ func void UnEquip_ItAm_Opal()
 
 instance ItAm_Topaz(C_Item)
 {
-	name = NAME_Amulett;
+	name = NAME_amulet;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 1000;
@@ -1646,14 +1644,14 @@ instance ItAm_Topaz(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 func void Equip_ItAm_Topaz()
 {
-	var int tmpStam;
+	var int tmpStem;
 	var int tmpStamOPBonus;
 
 	self.protection[PROT_FLY] += Am_Fly_Ore;
@@ -1695,7 +1693,7 @@ func void UnEquip_ItAm_Topaz()
 
 instance ITMI_DEADORCITEM(C_Item)
 {
-	name = "Prastarý skřetí totem";
+	name = " Ancient Goblin Totem " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
 	value = 100;
@@ -1705,12 +1703,12 @@ instance ITMI_DEADORCITEM(C_Item)
 	on_equip = equip_ITMI_DEADORCITEM;
 	on_unequip = unequip_ITMI_DEADORCITEM;
 	wear = WEAR_EFFECT;
-	description = "Prastarý skřetí totem";
-	text[4] = "Totem mrtvého skřeta z chrámu...";
+	description = " Ancient Goblin Totem " ;
+	text[ 4 ] = " Totem of a dead goblin from the temple... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1737,7 +1735,7 @@ instance ItAm_HashGor(C_Item)
 	on_equip = equip_ItAm_HashGor;
 	on_unequip = unequip_ItAm_HashGor;
 	wear = WEAR_EFFECT;
-	description = "Prastarý skřetí totem";
+	description = " Ancient Goblin Totem " ;
 	text[0] = NAME_Bonus_HpMax;
 	count[0] = 50;
 	text[1] = NAME_Bonus_ManaMax;
@@ -1746,11 +1744,11 @@ instance ItAm_HashGor(C_Item)
 	count[2] = 15;
 	text[3] = NAME_Prot_Magic;
 	count[3] = 10;
-	text[4] = "Tenhle amulet patřil skřetímu šamanovi Hash-Gorovi...";
+	text[ 4 ] = " This amulet belonged to the goblin shaman Hash-Gor... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1807,16 +1805,16 @@ instance ItRi_Prot_Fire_01(C_Item)
 	visual = "ItRi_Prot_Fire_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Prot_Fire_01;
+	on_equipment = Equip_ItRi_Prot_Fire_01;
 	on_unequip = UnEquip_ItRi_Prot_Fire_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten ochrany před ohněm";
+	description = " Ring of Fire Protection " ;
 	text[2] = NAME_Prot_Fire;
 	count[2] = Ri_ProtFire;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1846,8 +1844,8 @@ instance ITRI_LANZRING(C_Item)
 	description = "Glantzův prsten";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1865,8 +1863,8 @@ instance ITRI_TROKARRING(C_Item)
 	description = "Trokarův prsten";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1880,16 +1878,16 @@ instance ItRi_Prot_Fire_02(C_Item)
 	visual = "ItRi_Prot_Fire_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Prot_Fire_02;
+	on_equipment = Equip_ItRi_Prot_Fire_02;
 	on_unequip = UnEquip_ItRi_Prot_Fire_02;
 	wear = WEAR_EFFECT;
-	description = "Prsten ohně";
+	description = " Ring of Fire " ;
 	text[2] = NAME_Prot_Fire;
 	count[2] = Ri_ProtFire02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1914,7 +1912,7 @@ instance ItRi_Prot_Fire_03(C_Item)
 	visual = "ItRi_Prot_Fire_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Prot_Fire_03;
+	on_equipment = Equip_ItRi_Prot_Fire_03;
 	on_unequip = UnEquip_ItRi_Prot_Fire_03;
 	wear = WEAR_EFFECT;
 	description = "Feomatharův prsten";
@@ -1922,8 +1920,8 @@ instance ItRi_Prot_Fire_03(C_Item)
 	count[2] = Ri_ProtFire03;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1950,13 +1948,13 @@ instance ItRi_Prot_Point_01(C_Item)
 	on_equip = Equip_ItRi_Prot_Point_01;
 	on_unequip = UnEquip_ItRi_Prot_Point_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten dřevěné kůže";
+	description = " Wood Leather Ring " ;
 	text[2] = NAME_Prot_Point;
 	count[2] = Ri_ProtPoint;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -1985,13 +1983,13 @@ instance ItRi_Prot_Point_02(C_Item)
 	on_equip = Equip_ItRi_Prot_Point_02;
 	on_unequip = UnEquip_ItRi_Prot_Point_02;
 	wear = WEAR_EFFECT;
-	description = "Prsten kamenné kůže";
+	description = " Stoneskin Ring " ;
 	text[2] = NAME_Prot_Blunt;
 	count[2] = Ri_ProtPoint02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2016,7 +2014,7 @@ instance ItRi_Rod(C_Item)
 	visual = "ItRi_Prot_Edge_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Rod;
+	on_equipment = Equip_ItRi_Rod;
 	on_unequip = UnEquip_ItRi_Rod;
 	wear = WEAR_EFFECT;
 	description = "Rodův prsten";
@@ -2052,13 +2050,13 @@ instance ItRi_Prot_Edge_01(C_Item)
 	on_equip = Equip_ItRi_Prot_Edge_01;
 	on_unequip = UnEquip_ItRi_Prot_Edge_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten železné kůže";
+	description = " Ring of Ironhide " ;
 	text[2] = NAME_Prot_Edge;
 	count[2] = Ri_ProtEdge;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2087,7 +2085,7 @@ instance ItRi_Prot_Edge_02(C_Item)
 	on_equip = Equip_ItRi_Prot_Edge_02;
 	on_unequip = UnEquip_ItRi_Prot_Edge_02;
 	wear = WEAR_EFFECT;
-	description = "Prsten rudné kůže";
+	description = " Ring of Oreskin " ;
 	text[1] = NAME_Prot_Edge;
 	count[1] = Ri_ProtEdge02;
 	text[2] = NAME_Prot_Blunt;
@@ -2096,8 +2094,8 @@ instance ItRi_Prot_Edge_02(C_Item)
 	count[3] = Ri_ProtPoint;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2127,16 +2125,16 @@ instance ItRi_Prot_Mage_01(C_Item)
 	visual = "ItRi_Prot_Mage_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Prot_Mage_01;
+	on_equipment = Equip_ItRi_Prot_Mage_01;
 	on_unequip = UnEquip_ItRi_Prot_Mage_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten duchovní síly";
+	description = " Ring of Spiritual Power " ;
 	text[2] = NAME_Prot_Magic;
 	count[2] = Ri_ProtMage;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2162,7 +2160,7 @@ instance ItRi_Prot_Mage_02(C_Item)
 	visual = "ItRi_Prot_Mage_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Prot_Mage_02;
+	on_equipment = Equip_ItRi_Prot_Mage_02;
 	on_unequip = UnEquip_ItRi_Prot_Mage_02;
 	wear = WEAR_EFFECT;
 	description = "Prsten obrany";
@@ -2170,8 +2168,8 @@ instance ItRi_Prot_Mage_02(C_Item)
 	count[2] = Ri_ProtMage02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2197,10 +2195,10 @@ instance ItRi_Prot_Total_01(C_Item)
 	visual = "ItRi_Prot_Total_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Prot_Total_01;
+	where_equip = Equip_ItRi_Prot_Total_01;
 	on_unequip = UnEquip_ItRi_Prot_Total_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten neporazitelnosti";
+	description = " Ring of Invincibility " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = Ri_TProtEdge;
 	text[2] = NAME_Prot_Point;
@@ -2211,8 +2209,8 @@ instance ItRi_Prot_Total_01(C_Item)
 	count[4] = Ri_TProtMage;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2246,10 +2244,10 @@ instance ItRi_Prot_Total_02(C_Item)
 	visual = "ItRi_Prot_Total_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Prot_Total_02;
+	where_equip = Equip_ItRi_Prot_Total_02;
 	on_unequip = UnEquip_ItRi_Prot_Total_02;
 	wear = WEAR_EFFECT;
-	description = "Prsten nepřemožitelnosti";
+	description = " Ring of Invincibility " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = RI_DEX04;
 	text[2] = NAME_Prot_Point;
@@ -2260,8 +2258,8 @@ instance ItRi_Prot_Total_02(C_Item)
 	count[4] = RI_DEX04;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2294,16 +2292,16 @@ instance ItRi_Dex_01(C_Item)
 	visual = "ItRi_Dex_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Dex_01;
+	on_equipment = Equip_ItRi_Dex_01;
 	on_unequip = UnEquip_ItRi_Dex_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten dovednosti";
+	description = " Skill Ring " ;
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Ri_Dex;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2335,7 +2333,7 @@ instance ItRi_Dex_02(C_Item)
 	visual = "ItRi_Dex_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Dex_02;
+	on_equipment = Equip_ItRi_Dex_02;
 	on_unequip = UnEquip_ItRi_Dex_02;
 	wear = WEAR_EFFECT;
 	description = "Prsten obratnosti";
@@ -2343,8 +2341,8 @@ instance ItRi_Dex_02(C_Item)
 	count[2] = Ri_Dex02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2383,8 +2381,8 @@ instance ItRi_HP_01(C_Item)
 	count[2] = Ri_Hp;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2422,8 +2420,8 @@ instance ItRi_Hp_02(C_Item)
 	count[2] = Ri_Hp02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2453,16 +2451,16 @@ instance ItRi_Str_01(C_Item)
 	visual = "ItRi_Str_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Str_01;
+	on_equipment = Equip_ItRi_Str_01;
 	on_unequip = UnEquip_ItRi_Str_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten hrubé síly";
+	description = " Ring of Brute Force " ;
 	text[2] = NAME_Bonus_Str;
-	count[2] = Ri_Strg;
+	count[ 2 ] = Ri_Ctrl;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2495,16 +2493,16 @@ instance ItRi_Str_02(C_Item)
 	visual = "ItRi_Str_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Str_02;
+	on_equipment = Equip_ItRi_Str_02;
 	on_unequip = UnEquip_ItRi_Str_02;
 	wear = WEAR_EFFECT;
-	description = "Prsten síly";
+	description = " Ring of Power " ;
 	text[2] = NAME_Bonus_Str;
 	count[2] = Ri_Strg02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2545,8 +2543,8 @@ instance ItRi_Mana_01(C_Item)
 	count[2] = Ri_Mana;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2580,13 +2578,13 @@ instance ItRi_Mana_02(C_Item)
 	on_equip = Equip_ItRi_Mana_02;
 	on_unequip = UnEquip_ItRi_Mana_02;
 	wear = WEAR_EFFECT;
-	description = "Prsten astrální moci";
+	description = " Ring of Astral Power " ;
 	text[2] = NAME_Bonus_ManaMax;
 	count[2] = Ri_Mana02;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2608,7 +2606,7 @@ func void UnEquip_ItRi_Mana_02()
 };
 
 
-instance ItRi_Hp_Mana_01(C_Item)
+instance ItRi_Hp_Mana_01 (C_Item)
 {
 	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
@@ -2620,15 +2618,15 @@ instance ItRi_Hp_Mana_01(C_Item)
 	on_equip = Equip_ItRi_Hp_Mana_01;
 	on_unequip = UnEquip_ItRi_Hp_Mana_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten osvícení";
+	description = " Ring of Enlightenment " ;
 	text[2] = NAME_Bonus_ManaMax;
 	count[2] = Ri_HpMana_Mana;
 	text[3] = NAME_Bonus_HpMax;
 	count[3] = Ri_HpMana_Hp;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2656,7 +2654,7 @@ func void UnEquip_ItRi_Hp_Mana_01()
 };
 
 
-instance ItRi_Dex_Strg_01(C_Item)
+instance ItRi_Dex_Strg_01 (C_Item)
 {
 	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
@@ -2670,13 +2668,13 @@ instance ItRi_Dex_Strg_01(C_Item)
 	wear = WEAR_EFFECT;
 	description = "Prsten moci";
 	text[2] = NAME_Bonus_Str;
-	count[2] = Ri_DexStrg_Strg;
+	count[ 2 ] = Ri_DexStrg_Strg;
 	text[3] = NAME_Bonus_Dex;
 	count[3] = Ri_DexStrg_Dex;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2721,12 +2719,12 @@ instance ITRI_RITUALPLACE(C_Item)
 	material = MAT_METAL;
 	on_equip = equip_itri_ritualplace;
 	wear = WEAR_EFFECT;
-	description = "Prsten kruhu Slunce";
-	text[4] = "Prsten teleportace k rituálnímu místu mágů Ohně...";
+	description = " Ring of the Circle of the Sun " ;
+	text[ 4 ] = " Ring of teleportation to the ritual place of the Fire mages... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2753,12 +2751,12 @@ instance ITRI_XARDASPLACE(C_Item)
 	visual = "ItMi_Ring_Silver_New_Runed.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_ITRI_XARDASPLACE;
+	where_team = team_ITRI_XARDASPLACE;
 	wear = WEAR_EFFECT;
 	description = "Xardasův prsten";
-	text[4] = "Prsten teleportace ke Xardasově věži...";
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 4 ] = " Ring of teleportation to Xardas Tower... " ;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2788,9 +2786,9 @@ instance ITRI_KREOLPLACE(C_Item)
 	on_equip = equip_ITRI_KREOLPLACE;
 	wear = WEAR_EFFECT;
 	description = "Creolův prsten";
-	text[4] = "Prsten teleportace k Zamlžené věži...";
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 4 ] = " Ring of teleportation to the Misty Tower... " ;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2817,16 +2815,16 @@ instance ITRI_GUARDIANS_01(C_Item)
 	visual = "ItMi_Ring_Silver_New_Runed.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_guardians_01;
+	where_team = team_itri_guardians_01;
 	on_unequip = unequip_itri_guardians_01;
 	wear = WEAR_EFFECT;
 	description = "Prsten Temnoty";
 	text[2] = NAME_Prot_Magic;
 	count[2] = RI_PROTMAGE_GUARD_01;
-	text[3] = "Tenhle prsten mi dal Strážce Dagoth...";
-	text[4] = "Na prstenu jsou vyryté prastaré runy...";
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 3 ] = " Warden Dagoth gave me this ring... " ;
+	text[ 4 ] = " The ring is engraved with ancient runes... " ;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2857,16 +2855,16 @@ instance ITRI_GUARDIANS_02(C_Item)
 	visual = "ItMi_Ring_Silver_New_Runed.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_guardians_01;
+	where_team = team_itri_guardians_01;
 	on_unequip = unequip_itri_guardians_01;
 	wear = WEAR_EFFECT;
-	description = "Prsten elementů";
+	description = " Ring of Elements " ;
 	text[2] = NAME_Prot_Magic;
 	count[2] = RI_PROTMAGE_GUARD_02;
-	text[3] = "Prsten učedníka posvátného kruhu Strážců...";
-	text[4] = "Na prstenu jsou vyryté prastaré runy...";
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 3 ] = " Ring of the Disciple of the Sacred Circle of the Guardians... " ;
+	text[ 4 ] = " The ring is engraved with ancient runes... " ;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2899,11 +2897,11 @@ instance ITRI_SARAFAMILYRING(C_Item)
 	material = MAT_METAL;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[4] = "Rodinný prsten obchodnice Sarah...";
+	text[ 4 ] = " Merchant Sarah's Family Ring... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2919,11 +2917,11 @@ instance ITRI_HAKONMISSRING(C_Item)
 	material = MAT_METAL;
 	wear = WEAR_EFFECT;
 	description = "Prsten";
-	text[4] = "Na vnitřní straně prstenu je vyryto jméno Hakon...";
+	text[ 4 ] = " The name Hakon is engraved on the inside of the ring... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2940,12 +2938,12 @@ instance ITRI_PILLIGRIMRING(C_Item)
 	on_equip = equip_itri_pilligrimring;
 	on_unequip = unequip_itri_pilligrimring;
 	wear = WEAR_EFFECT;
-	description = "Prsten poutníka";
+	description = " Ring of the Pilgrim " ;
 	text[3] = NAME_TRADEMASTERRING;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2970,7 +2968,7 @@ func void unequip_itri_pilligrimring()
 
 instance ITRI_GRITTASRING(C_Item)
 {
-	name = "Grittin zásnubní prsten";
+	name = " Gritta's Engagement Ring " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_RING | ITEM_MISSION;
 	value = Value_GoldRing;
@@ -2979,8 +2977,8 @@ instance ITRI_GRITTASRING(C_Item)
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -2997,16 +2995,16 @@ instance ITRI_VEPR(C_Item)
 	on_equip = equip_itri_vepr;
 	on_unequip = unequip_itri_vepr;
 	wear = WEAR_EFFECT;
-	description = "Kančí prsten";
+	description = " Boar Ring " ;
 	text[2] = NAME_Prot_Phis;
 	count[2] = RI_TPROTVEPR;
 	text[3] = NAME_Prot_Point;
 	count[3] = RI_TPROTVEPR;
-	text[4] = "Tenhle prsten mi dal lovec Barem...";
+	text[ 4 ] = " This ring was given to me by the hunter Barem... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3050,8 +3048,8 @@ instance ITRI_INNOSJUDGE(C_Item)
 	count[4] = RI_TPROTINNOSJUDGETWO;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3076,7 +3074,7 @@ func void unequip_itri_innosjudge()
 };
 
 
-instance ITRI_NARUS(C_Item)
+instance ITRI_NARUS (C_Item)
 {
 	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
@@ -3090,13 +3088,13 @@ instance ITRI_NARUS(C_Item)
 	wear = WEAR_EFFECT;
 	description = "Prsten Vody";
 	text[2] = NAME_Bonus_ManaMax;
-	count[2] = RI_MANA_NARUS;
-	text[3] = "Tenhle prsten patří Strážci Narusovi...";
-	text[4] = "Na prstenu jsou vyryté prastaré runy...";
+	count[ 2 ] = GO_NOT_NARUS ;
+	text[ 3 ] = " This ring belongs to Guardian Narus... " ;
+	text[ 4 ] = " The ring is engraved with ancient runes... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3104,18 +3102,18 @@ instance ITRI_NARUS(C_Item)
 
 func void equip_itri_narus()
 {
-	self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] + RI_MANA_NARUS;
+	self.attribute[ ATR_MANA_MAX ] = self.attribute[ ATR_MANA_MAX ] +  RI_MANA_NARUS ;
 	GUARDIAN_RING_NARUS = TRUE;
 };
 
 func void unequip_itri_narus()
 {
-	self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] - RI_MANA_NARUS;
+	self.attribute[ ATR_MANA_MAX ] = self.attribute[ ATR_MANA_MAX ] -  RI_MANA_NARUS ;
 	if(self.attribute[ATR_MANA] > self.attribute[ATR_MANA_MAX])
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA_MAX];
 	};
-	GUARDIAN_RING_NARUS = FALSE;
+	GUARDIAN_RING_NARUS = FALSE ;
 };
 
 
@@ -3128,17 +3126,17 @@ instance ITRI_UDARGIFT(C_Item)
 	visual = "ItMi_Ring_Silver_New_Named.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_udargift;
+	where_team = team_itri_udargift;
 	on_unequip = unequip_itri_udargift;
 	wear = WEAR_EFFECT;
-	description = "Slovo síly";
+	description = " Word of Power " ;
 	text[2] = NAME_Bonus_Str;
-	count[2] = RI_DEXSTRG_STRG_UDAR;
-	text[4] = "Na prstenu je vyrytý symbol meče...";
+	count[ 2 ] = RI_DEXSTRG_STRG_UDAR ;
+	text[ 4 ] = " The ring is engraved with a sword symbol... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3147,13 +3145,13 @@ instance ITRI_UDARGIFT(C_Item)
 func void equip_itri_udargift()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,RI_DEXSTRG_STRG_UDAR);
-	Delta_Bonus_Str = Delta_Bonus_Str + RI_DEXSTRG_STRG_UDAR;
+	Delta_Bonus_Str = Delta_Bonus_Str +  RI_DEXSTRG_STRG_UDAR ;
 };
 
 func void unequip_itri_udargift()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,-RI_DEXSTRG_STRG_UDAR);
-	Delta_Bonus_Str = Delta_Bonus_Str - RI_DEXSTRG_STRG_UDAR;
+	Delta_Bonus_Str = Delta_Bonus_Str -  RI_DEXSTRG_STRG_UDAR ;
 
 	if(Delta_Bonus_Str < 0)
 	{
@@ -3170,16 +3168,16 @@ instance ITRI_DEX_03(C_Item)
 	visual = "ItRi_Dex_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_dex_03;
+	on_equipment = equip_itri_dex_03;
 	on_unequip = unequip_itri_dex_03;
 	wear = WEAR_EFFECT;
-	description = "Prsten šejdíře";
+	description = " Ring of the Shayder " ;
 	text[2] = NAME_Bonus_Dex;
 	count[2] = RI_DEX03;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3202,7 +3200,7 @@ func void unequip_itri_dex_03()
 	};
 };
 
-instance ITRI_FELLANGOR(C_Item)
+instance ITRI_FELLANGOR (C_Item)
 {
 	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
@@ -3211,7 +3209,7 @@ instance ITRI_FELLANGOR(C_Item)
 	visual = "ItMi_Ring_Silver_New_Runed.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_fellangor;
+	on_equipment = equipment_itri_fellangor;
 	on_unequip = unequip_itri_fellangor;
 	wear = WEAR_EFFECT;
 	description = "Fellangorův prsten";
@@ -3221,8 +3219,8 @@ instance ITRI_FELLANGOR(C_Item)
 	count[3] = RI_FELLANGOR;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3231,16 +3229,16 @@ func void equip_itri_fellangor()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,RI_FELLANGOR);
 	Npc_ChangeAttribute(self,ATR_DEXTERITY,RI_FELLANGOR);
-	Delta_Bonus_Str = Delta_Bonus_Str + RI_FELLANGOR;
-	Delta_Bonus_Dex = Delta_Bonus_Dex + RI_FELLANGOR;
+	Delta_Bonus_Str = Delta_Bonus_Str +  RI_FELLANGOR ;
+	Delta_Bonus_Dex = Delta_Bonus_Dex +  RI_FELLANGOR ;
 };
 
 func void unequip_itri_fellangor()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,-RI_FELLANGOR);
 	Npc_ChangeAttribute(self,ATR_DEXTERITY,-RI_FELLANGOR);
-	Delta_Bonus_Str = Delta_Bonus_Str - RI_FELLANGOR;
-	Delta_Bonus_Dex = Delta_Bonus_Dex - RI_FELLANGOR;
+	Delta_Bonus_Str = Delta_Bonus_Str -  RI_FELLANGOR ;
+	Delta_Bonus_Dex = Delta_Bonus_Dex -  RI_FELLANGOR ;
 
 	if(Delta_Bonus_Str < 0)
 	{
@@ -3252,7 +3250,7 @@ func void unequip_itri_fellangor()
 	};
 };
 
-instance ITRI_FELLANGOR_MAGIC(C_Item)
+instance ITRI_FELLANGOR_MAGIC (C_Item)
 {
 	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
@@ -3271,8 +3269,8 @@ instance ITRI_FELLANGOR_MAGIC(C_Item)
 	count[3] = RI_FELLANGOR_MAGIC;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3310,11 +3308,11 @@ instance ItRi_UnknownRing(C_Item)
 	on_equip = Equip_ItRi_UnknownRing;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[4] = "Podivný prsten, po stranách zdobený magickými runami...";
+	text[ 4 ] = " A strange ring, decorated with magical runes on the sides... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3327,7 +3325,7 @@ func void Equip_ItRi_UnknownRing()
 		{
 			B_GivePlayerXP(500);
 			DaronRingTest = TRUE;
-			B_LogEntry(TOPIC_DARON_RING_TEST,"Prsten mě přenesl ke kruhu Slunce. Zcela očividně se jedná o prsten teleportace...");
+			B_LogEntry( TOPIC_DARON_RING_TEST , " The ring transported me to the ring of the Sun. It is clearly a ring of teleportation... " );
 		};
 
 		AI_Teleport(hero,"NW_TROLLAREA_RITUAL_02");
@@ -3351,10 +3349,10 @@ instance ItRi_Teleport_Ring(C_Item)
 	on_equip = Equip_ItRi_Teleport_Ring;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[4] = "Prsten teleportace ke kruhu Slunce...";
+	text[ 4 ] = " Ring of Teleportation to the Circle of the Sun... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
@@ -3385,18 +3383,18 @@ instance ITRI_TELEPORT_RING_ADANOS(C_Item)
 	on_equip = equip_ITRI_TELEPORT_RING_ADANOS;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[4] = "Prsten teleportace do Adanova chrámu...";
+	text[ 4 ] = " Ring of Teleportation to Adan's Temple... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 func void equip_ITRI_TELEPORT_RING_ADANOS()
 {
-	if(CurrentLevel == ADDONWORLD_ZEN)
+	if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
 		AI_Teleport(hero,"RAVENPRAY");
 	}
@@ -3419,11 +3417,11 @@ instance ITRI_TELEPORT_NW_RUINS(C_Item)
 	on_equip = equip_ITRI_TELEPORT_NW_RUINS;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[4] = "Prsten teleportace k pyramidě Stavitelů...";
+	text[ 4 ] = " Ring of Teleportation to the Builders Pyramid... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3452,12 +3450,12 @@ instance ITRI_RING_SLOW(C_Item)
 	material = MAT_METAL;
 	on_equip = equip_itri_ring_slow;
 	wear = WEAR_EFFECT;
-	description = "Prsten Strážce";
-	text[4] = "Tenhle prsten ohýbá prostor a zpomaluje čas...";
+	description = " Ring of the Guardian " ;
+	text[ 4 ] = " This ring bends space and slows time... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3471,7 +3469,7 @@ func void equip_itri_ring_slow()
 
 instance ItRi_DragonStaff(C_Item)
 {
-	name = "Žezlo vládce draků";
+	name = " Scepter of the Dragonlord " ;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING | ITEM_MISSION;
 	material = MAT_METAL;
@@ -3486,7 +3484,7 @@ instance ItRi_DragonStaff(C_Item)
 	description = name;
 	text[2] = NAME_Mana_needed;
 	count[2] = 350;
-	text[4] = "Legendární artefakt umožňující vyvolat draka...";
+	text[ 4 ] = " Legendary artifact to summon a dragon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -3499,13 +3497,13 @@ func void equip_ItRi_DragonStaff()
 	Wld_PlayEffect("spellFX_INCOVATION_RED",hero,hero,0,0,0,FALSE);
 	Snd_Play("DRG_AMBIENT");
 
-	if(HeroDragonLook == FALSE)
+	if (HeroDragonLook ==  FALSE )
 	{
 		//Wld_PlayEffect("DRAGONLOOK_FX",hero,hero,0,0,0,FALSE);
-		HeroDragonLook = TRUE;
+		HeroDragonLook = TRUE ;
 	};
 
-	HeroDragonLook = TRUE;
+	HeroDragonLook = TRUE ;
 
 	if(hero.attribute[ATR_MANA] > 350)
 	{
@@ -3524,7 +3522,7 @@ func void unequip_ItRi_DragonStaff()
 	if(HeroDragonLook == TRUE)
 	{
 		Wld_StopEffect("DRAGONLOOK_FX");	
-		HeroDragonLook = FALSE;
+		HeroDragonLook = FALSE ;
 	};
 };
 
@@ -3537,7 +3535,7 @@ instance ItRi_OreBarons(C_Item)
 	visual = "ItMi_Ring_Gold_New_Raven.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Prot_All;
+	on_equipment = Equip_ItRi_Prot_All;
 	on_unequip = UnEquip_ItRi_Prot_All;
 	wear = WEAR_EFFECT;
 	description = "Prsten rudobaronů";
@@ -3551,8 +3549,8 @@ instance ItRi_OreBarons(C_Item)
 	count[4] = Ri_OreBarons;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3592,8 +3590,8 @@ instance ItRi_HuntRing(C_Item)
 	count[2] = RI_DEX04;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3624,16 +3622,16 @@ instance ItRi_FerrosRing(C_Item)
 	visual = "ItMi_Ring_Silver_New_Named.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_ItRi_FerrosRing;
+	on_equipment = equipment_ItRi_FerrosRing;
 	on_unequip = unequip_ItRi_FerrosRing;
 	wear = WEAR_EFFECT;
-	description = "Ferrosův rodinný prsten";
+	description = " Ferros's Family Ring " ;
 	text[2] = NAME_Bonus_Str;
 	count[2] = RI_STR04;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3641,13 +3639,13 @@ instance ItRi_FerrosRing(C_Item)
 func void equip_ItRi_FerrosRing()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,RI_STR04);
-	Delta_Bonus_Str = Delta_Bonus_Str + RI_STR04;
+	Delta_Bonus_Str = Delta_Bonus_Str +  RI_STR04 ;
 };
 
 func void unequip_ItRi_FerrosRing()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,-RI_STR04);
-	Delta_Bonus_Str = Delta_Bonus_Str - RI_STR04;
+	Delta_Bonus_Str = Delta_Bonus_Str -  RI_STR04 ;
 
 	if(Delta_Bonus_Str < 0)
 	{
@@ -3664,15 +3662,15 @@ instance ItRi_DarkCurse(C_Item)
 	visual = "ItMi_Ring_Silver_New_Runed.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_ItRi_DarkCurse;
+	on_equipment = equip_ItRi_DarkCurse;
 	on_unequip = unequip_ItRi_DarkCurse;
 	wear = WEAR_EFFECT;
-	description = "Prsten temných rituálů";
-	text[4] = "Ukrývá v sobě prokletí ohromné síly...";
+	description = " Ring of Dark Rituals " ;
+	text[ 4 ] = " It harbors a curse of immense power... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3697,17 +3695,17 @@ instance ItRi_Ferd(C_Item)
 	value = Value_SilverRing;
 	visual = "ItMi_Ring_Silver_New_Named.3DS";
 	material = MAT_METAL;
-	description = "Ferdův stříbrný prsten";
+	description = " Ferd's Silver Ring " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 
-//-----------------------novyye kol'tsa stal'----------------------------
+// -----------------------novyye kol'tsa stal'------------------- ---------
 
 instance ItRi_Steel_Diam(C_Item)
 {
@@ -3721,7 +3719,7 @@ instance ItRi_Steel_Diam(C_Item)
 	on_equip = equip_ItRi_Steel_Diam;
 	on_unequip = unequip_ItRi_Steel_Diam;
 	wear = WEAR_EFFECT;
-	description = "Ocelový prsten s diamantem";
+	description = " Steel ring with diamond " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = Ri_ProtAll_Steel;
 	text[2] = NAME_Prot_Point;
@@ -3733,7 +3731,7 @@ instance ItRi_Steel_Diam(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3768,7 +3766,7 @@ instance ItRi_Steel_Ruby(C_Item)
 	on_equip = equip_ItRi_Steel_Ruby;
 	on_unequip = unequip_ItRi_Steel_Ruby;
 	wear = WEAR_EFFECT;
-	description = "Ocelový prsten s rubínem";
+	description = " Steel ring with ruby " ;
 	text[2] = NAME_Bonus_Str;
 	count[2] = Ri_Str_Steel;
 	text[3] = NAME_Prot_Phis;
@@ -3776,7 +3774,7 @@ instance ItRi_Steel_Ruby(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3816,7 +3814,7 @@ instance ItRi_Steel_Emer(C_Item)
 	on_equip = equip_ItRi_Steel_Emer;
 	on_unequip = unequip_ItRi_Steel_Emer;
 	wear = WEAR_EFFECT;
-	description = "Ocelový prsten se smaragdem";
+	description = " Steel Ring with Emerald " ;
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Ri_Dex_Steel;
 	text[3] = NAME_Prot_Point;
@@ -3824,7 +3822,7 @@ instance ItRi_Steel_Emer(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3862,7 +3860,7 @@ instance ItRi_Steel_Sapp(C_Item)
 	on_equip = equip_ItRi_Steel_Sapp;
 	on_unequip = unequip_ItRi_Steel_Sapp;
 	wear = WEAR_EFFECT;
-	description = "Ocelový prsten se safírem";
+	description = " Steel ring with sapphire " ;
 	text[2] = NAME_Bonus_ManaMax;
 	count[2] = Ri_Mana_Steel;
 	text[3] = NAME_Bonus_IntStaff;
@@ -3872,7 +3870,7 @@ instance ItRi_Steel_Sapp(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3927,7 +3925,7 @@ instance ItRi_Steel_Opal(C_Item)
 	on_equip = equip_ItRi_Steel_Opal;
 	on_unequip = unequip_ItRi_Steel_Opal;
 	wear = WEAR_EFFECT;
-	description = "Ocelový prsten s opálem";
+	description = " Steel ring with opal " ;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = Ri_HP_Steel;
 	text[3] = NAME_Prot_Fire;
@@ -3935,7 +3933,7 @@ instance ItRi_Steel_Opal(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -3979,7 +3977,7 @@ instance ItRi_Steel_Topa(C_Item)
 	on_equip = equip_ItRi_Steel_Topa;
 	on_unequip = unequip_ItRi_Steel_Topa;
 	wear = WEAR_EFFECT;
-	description = "Ocelový prsten s topazem";
+	description = " Steel ring with topaz " ;
 	text[2] = NAME_Bonus_Stam;
 	count[2] = Ri_Stamina_Steel;
 	text[3] = NAME_Bonus_Fly;
@@ -3987,14 +3985,14 @@ instance ItRi_Steel_Topa(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 func void Equip_ItRi_Steel_Topa()
 {
-	var int tmpStam;
+	var int tmpStem;
 	var int tmpStamOPBonus;
 
 	self.protection[PROT_FLY] += Ri_Fly_Steel;
@@ -4036,7 +4034,7 @@ func void UnEquip_ItRi_Steel_Topa()
 	Npc_SetTalentSkill(hero,NPC_TALENT_STAMINA,ATR_STAMINA_MAX[0]);
 };
 
-//-----------------------novyye kol'tsa zoloto----------------------------
+// -----------------------novyye kol'tsa zoloto-------------------- --------
 
 
 instance ItRi_Gold_Diam(C_Item)
@@ -4051,7 +4049,7 @@ instance ItRi_Gold_Diam(C_Item)
 	on_equip = equip_ItRi_Gold_Diam;
 	on_unequip = unequip_ItRi_Gold_Diam;
 	wear = WEAR_EFFECT;
-	description = "Zlatý prsten s diamantem";
+	description = " Gold ring with diamond " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = Ri_ProtAll_Gold;
 	text[2] = NAME_Prot_Point;
@@ -4063,7 +4061,7 @@ instance ItRi_Gold_Diam(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4098,7 +4096,7 @@ instance ItRi_Gold_Ruby(C_Item)
 	on_equip = equip_ItRi_Gold_Ruby;
 	on_unequip = unequip_ItRi_Gold_Ruby;
 	wear = WEAR_EFFECT;
-	description = "Zlatý prsten s rubínem";
+	description = " Gold ring with ruby " ;
 	text[2] = NAME_Bonus_Str;
 	count[2] = Ri_Str_Gold;
 	text[3] = NAME_Prot_Phis;
@@ -4106,7 +4104,7 @@ instance ItRi_Gold_Ruby(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4146,7 +4144,7 @@ instance ItRi_Gold_Emer(C_Item)
 	on_equip = equip_ItRi_Gold_Emer;
 	on_unequip = unequip_ItRi_Gold_Emer;
 	wear = WEAR_EFFECT;
-	description = "Zlatý prsten se smaragdem";
+	description = " Gold ring with emerald " ;
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Ri_Dex_Gold;
 	text[3] = NAME_Prot_Point;
@@ -4154,7 +4152,7 @@ instance ItRi_Gold_Emer(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4192,7 +4190,7 @@ instance ItRi_Gold_Sapp(C_Item)
 	on_equip = equip_ItRi_Gold_Sapp;
 	on_unequip = unequip_ItRi_Gold_Sapp;
 	wear = WEAR_EFFECT;
-	description = "Zlatý prsten se safírem";
+	description = " Gold ring with sapphire " ;
 	text[2] = NAME_Bonus_ManaMax;
 	count[2] = Ri_Mana_Gold;
 	text[3] = NAME_Bonus_IntStaff;
@@ -4202,7 +4200,7 @@ instance ItRi_Gold_Sapp(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4257,7 +4255,7 @@ instance ItRi_Gold_Opal(C_Item)
 	on_equip = equip_ItRi_Gold_Opal;
 	on_unequip = unequip_ItRi_Gold_Opal;
 	wear = WEAR_EFFECT;
-	description = "Zlatý prsten s opálem";
+	description = " Gold ring with opal " ;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = Ri_HP_Gold;
 	text[3] = NAME_Prot_Fire;
@@ -4265,7 +4263,7 @@ instance ItRi_Gold_Opal(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4309,7 +4307,7 @@ instance ItRi_Gold_Topa(C_Item)
 	on_equip = equip_ItRi_Gold_Topa;
 	on_unequip = unequip_ItRi_Gold_Topa;
 	wear = WEAR_EFFECT;
-	description = "Zlatý prsten s topazem";
+	description = " Gold ring with topaz " ;
 	text[2] = NAME_Bonus_Stam;
 	count[2] = Ri_Stamina_Gold;
 	text[3] = NAME_Bonus_Fly;
@@ -4317,14 +4315,14 @@ instance ItRi_Gold_Topa(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 func void Equip_ItRi_Gold_Topa()
 {
-	var int tmpStam;
+	var int tmpStem;
 	var int tmpStamOPBonus;
 
 	self.protection[PROT_FLY] += Ri_Fly_Gold;
@@ -4365,22 +4363,22 @@ func void UnEquip_ItRi_Gold_Topa()
 	Npc_SetTalentSkill(hero,NPC_TALENT_STAMINA,ATR_STAMINA_MAX[0]);
 };
 
-//-----------------------novyye kol'tsa ruda----------------------------
+// -----------------------novyye kol'tsa ruda-------------------- --------
 
 
-instance ItRi_Ore_Diam(C_Item)
+instance ItRi_Ore_Diam (C_Item)
 {
 	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING | ITEM_MISSION;
 	value = 1000;
-	visual = "ItRi_Ore_Diam.3ds";
+	visual = " ItRi_Ore_Diam.3ds " ;
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_ItRi_Ore_Diam;
+	where_team = team_ItRi_Ore_Diam;
 	on_unequip = unequip_ItRi_Ore_Diam;
 	wear = WEAR_EFFECT;
-	description = "Rudný prsten s diamantem";
+	description = " Ore ring with diamond " ;
 	text[1] = NAME_Prot_Phis;
 	count[1] = Ri_ProtAll_Ore;
 	text[2] = NAME_Prot_Point;
@@ -4392,7 +4390,7 @@ instance ItRi_Ore_Diam(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4424,10 +4422,10 @@ instance ItRi_Ore_Ruby(C_Item)
 	visual = "ItRi_Ore_Ruby.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_ItRi_Ore_Ruby;
+	on_equipment = ItRi_Ore_Ruby_equipment;
 	on_unequip = unequip_ItRi_Ore_Ruby;
 	wear = WEAR_EFFECT;
-	description = "Rudný prsten s rubínem";
+	description = " Ruby Ore Ring " ;
 	text[2] = NAME_Bonus_Str;
 	count[2] = Ri_Str_Ore;
 	text[3] = NAME_Prot_Phis;
@@ -4435,7 +4433,7 @@ instance ItRi_Ore_Ruby(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4443,7 +4441,7 @@ instance ItRi_Ore_Ruby(C_Item)
 func void Equip_ItRi_Ore_Ruby()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,Ri_Str_Ore);
-	Delta_Bonus_Str = Delta_Bonus_Str + Ri_Str_Ore;
+	Delta_Bonus_Str = Delta_Bonus_Str + Ri_Str_Hours;
 
 	self.protection[PROT_EDGE] += Ri_Prot_Ore;
 	self.protection[PROT_BLUNT] += Ri_Prot_Ore;
@@ -4452,7 +4450,7 @@ func void Equip_ItRi_Ore_Ruby()
 func void UnEquip_ItRi_Ore_Ruby()
 {
 	Npc_ChangeAttribute(self,ATR_STRENGTH,-Ri_Str_Ore);
-	Delta_Bonus_Str = Delta_Bonus_Str - Ri_Str_Ore;
+	Delta_Bonus_Str = Delta_Bonus_Str - Ri_Str_Hours;
 
 	self.protection[PROT_EDGE] -= Ri_Prot_Ore;
 	self.protection[PROT_BLUNT] -= Ri_Prot_Ore;
@@ -4472,10 +4470,10 @@ instance ItRi_Ore_Emer(C_Item)
 	visual = "ItRi_Ore_Emer.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_ItRi_Ore_Emer;
+	on_equipment = equip_ItRi_Ore_Emer;
 	on_unequip = unequip_ItRi_Ore_Emer;
 	wear = WEAR_EFFECT;
-	description = "Rudný prsten se smaragdem";
+	description = " Ore ring with emerald " ;
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Ri_Dex_Ore;
 	text[3] = NAME_Prot_Point;
@@ -4483,7 +4481,7 @@ instance ItRi_Ore_Emer(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4518,10 +4516,10 @@ instance ItRi_Ore_Sapp(C_Item)
 	visual = "ItRi_Ore_Sapp.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_ItRi_Ore_Sapp;
+	where_team = team_ItRi_Ore_Sapp;
 	on_unequip = unequip_ItRi_Ore_Sapp;
 	wear = WEAR_EFFECT;
-	description = "Rudný prsten se safírem";
+	description = " Ore ring with sapphire " ;
 	text[2] = NAME_Bonus_ManaMax;
 	count[2] = Ri_Mana_Ore;
 	text[3] = NAME_Bonus_IntStaff;
@@ -4531,7 +4529,7 @@ instance ItRi_Ore_Sapp(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4583,10 +4581,10 @@ instance ItRi_Ore_Opal(C_Item)
 	visual = "ItRi_Ore_Opal.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_ItRi_Ore_Opal;
+	where_team = team_ItRi_Ore_Opal;
 	on_unequip = unequip_ItRi_Ore_Opal;
 	wear = WEAR_EFFECT;
-	description = "Rudný prsten s opálem";
+	description = " Ore Ring with Opal " ;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = Ri_HP_Ore;
 	text[3] = NAME_Prot_Fire;
@@ -4594,7 +4592,7 @@ instance ItRi_Ore_Opal(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4646,14 +4644,14 @@ instance ItRi_Ore_Topa(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_ADVANCE;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
 
 func void Equip_ItRi_Ore_Topa()
 {
-	var int tmpStam;
+	var int tmpStem;
 	var int tmpStamOPBonus;
 
 	self.protection[PROT_FLY] += Ri_Fly_Ore;
@@ -4703,17 +4701,17 @@ instance ItRi_Loa(C_Item)
 	visual = "ItRi_Hp_Mana_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Loa;
+	on_equipment = Equip_ItRi_Loa;
 	on_unequip = UnEquip_ItRi_Loa;
 	wear = WEAR_EFFECT;
 	description = "Loin prsten";
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = 100;
-	text[4] = "Tenhle prsten mi dala Loa...";
+	text[ 4 ] = " Loa gave me this ring... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4742,20 +4740,20 @@ instance ItRi_Ihiyal(C_Item)
 	visual = "ItMi_Ring_Silver_New_Runed.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = Equip_ItRi_Ihiyal;
+	on_equipment = Equip_ItRi_Ihiyal;
 	on_unequip = UnEquip_ItRi_Ihiyal;
 	wear = WEAR_EFFECT;
 	description = "Ihiyalův prsten";
 	text[1] = NAME_Bonus_ManaMax;
-	count[1] = Ri_Mana_Ihiyal;
+	count[ 1 ] = Ri_Mana_Ihiyal;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = Ri_HP_Ihiyal;
-	text[3] = "Podivný prsten, po stranách zdobený magickými runami...";
-	text[4] = "'... tvoje bolest je mojí bolestí, bratře...' - Izulg";
+	text[ 3 ] = " A strange ring, decorated with magical runes on the sides... " ;
+	text[ 4 ] = " '... your pain is my pain, brother...' - Izulg " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -4838,12 +4836,12 @@ instance ItRi_Izulg(C_Item)
 	count[1] = Ri_Mana_Izulg;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = Ri_HP_Izulg;
-	text[3] = "Podivný prsten, po stranách zdobený magickými runami...";
-	text[4] = "'... tvoje bolest je mojí bolestí, bratře...' - Ihiyal";
+	text[ 3 ] = " A strange ring, decorated with magical runes on the sides... " ;
+	text[ 4 ] = " '... your pain is my pain brother...' - Ihiyal " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -5001,14 +4999,14 @@ instance ItRi_GoblinRing(C_Item)
 	on_equip = Equip_ItRi_GoblinRing;
 	on_unequip = UnEquip_ItRi_GoblinRing;
 	wear = WEAR_EFFECT;
-	description = "Prsten Adanova kněze";
+	description = " Adan's Priest's Ring " ;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = 300;
-	text[4] = "Na prstenu jsou nastíněné prastaré runy...";
+	text[ 4 ] = " Ancient runes are outlined on the ring... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
