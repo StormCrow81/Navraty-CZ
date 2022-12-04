@@ -47,7 +47,7 @@ func void DIA_Hilda_Hallo_Info()
 {
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other, " DIA_Hilda_Hallo_17_00 " );	// Hey, were you called here? Get out of my house immediately. Charity is not given here.
+		AI_Output(self,other, " DIA_Hilda_Hallo_17_00 " );	// Hey, were you summoned here? Get out of my house immediately. I don't do charity.
 	}
 	else
 	{
@@ -64,7 +64,7 @@ instance DIA_Hilda_WasZuEssen (C_Info)
 	condition = DIA_Hilda_WasZuEssen_Condition;
 	information = DIA_Hilda_WasZuEssen_Info;
 	permanent = TRUE;
-	description = " Will you get me something to eat? " ;
+	description = " Can you give me something to eat? " ;
 };
 
 
@@ -81,7 +81,7 @@ func void DIA_Hilda_WasZuEssen_Info()
 	var int Rueben_TagNull;
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(other,self, " DIA_Hilda_WasZuEssen_15_00 " );	// Will you give me something to eat?
+		AI_Output(other,self, " DIA_Hilda_WasZuEssen_15_00 " );	// Can you give me something to eat?
 		if(MIS_Lobart_Rueben == LOG_SUCCESS)
 		{
 			if(!Npc_KnowsInfo(other,DIA_Hilda_PfanneTooLate))
@@ -103,12 +103,12 @@ func void DIA_Hilda_WasZuEssen_Info()
 				}
 				else
 				{
-					AI_Output(self,other, " DIA_Hilda_WasZuEssen_17_03 " );	// You already got your portion today! Come in later.
+					AI_Output(self,other, " DIA_Hilda_WasZuEssen_17_03 " );	// You already got your portion for today! Come in later.
 				};
 			}
 			else
 			{
-				AI_Output(self,other, " DIA_Hilda_WasZuEssen_17_04 " );	// We're not going to feed any slackers here. Get out!
+				AI_Output(self,other, " DIA_Hilda_WasZuEssen_17_04 " );	// We don't feed slackers here. Get out!
 				AI_StopProcessInfos(self);
 			};
 		}
@@ -150,9 +150,9 @@ func void DIA_Hilda_BringBeet_Info()
 	if(Npc_HasItems(other,ItPl_Beet) >= 20)
 	{
 		B_GiveInvItems(other,self,ItPl_Beet,Npc_HasItems(other,ItPl_Beet));
-		AI_Output(self,other, " DIA_Hilda_BringBeet_17_01 " );	// Great!...(laughs) That should be enough to feed our workers to the bone!
-		AI_Output(self,other, " DIA_Hilda_BringBeet_17_02 " );	// Since you're here anyway... I saw a traveling merchant pass by. It was a few minutes ago.
-		AI_Output(self,other, " DIA_Hilda_BringBeet_17_03 " );	// I think he stopped somewhere on his way to town. Go to him. Maybe he'll have a frying pan for me.
+		AI_Output(self,other, " DIA_Hilda_BringBeet_17_01 " );	// Great!...(laughs) Now I can feed everyone!
+		AI_Output(self,other, " DIA_Hilda_BringBeet_17_02 " );	// Since you're here anyway... I saw a traveling merchant pass by a few minutes ago.
+		AI_Output(self,other, " DIA_Hilda_BringBeet_17_03 " );	// He may have stopped somewhere on his way to town. Go to him. Maybe he'll have a frying pan for me.
 		MIS_Lobart_RuebenToHilda = LOG_SUCCESS;
 		B_GivePlayerXP(XP_Ambient);
 	}
@@ -160,7 +160,7 @@ func void DIA_Hilda_BringBeet_Info()
 	{
 		if(hero.guild == GIL_NONE)
 		{
-			AI_Output(self,other, " DIA_Hilda_BringBeet_17_04 " );	// What?! It's all?
+			AI_Output(self,other, " DIA_Hilda_BringBeet_17_04 " );	// What?! That's all?
 		}
 		else
 		{
@@ -197,7 +197,7 @@ func void DIA_Hilda_Shopping_Info()
 
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other, " DIA_Hilda_Einkaufen_17_01 " );	// Can you be trusted? Just try spending that money on booze, do you hear?!
+		AI_Output(self,other, " DIA_Hilda_Einkaufen_17_01 " );	// Can you be trusted? Just try spending that money on booze and see what happens!
 	};
 
 	B_GiveInvItems(self,other,ItMi_Gold,5);
@@ -232,7 +232,7 @@ func void DIA_Hilda_PfanneGeholt_Info()
 {
 	AI_Output(other,self, " DIA_Hilda_PfanneGeholt_15_00 " );	// Here's your frying pan.
 	B_GiveInvItems(other,self,ItMi_Pan,1);
-	AI_Output(self,other, " DIA_Hilda_PfanneGeholt_17_01 " );	// Great. Let's see if she's good...
+	AI_Output(self,other, " DIA_Hilda_PfanneGeholt_17_01 " );	// Great. Let's see if its a good one...
 	MIS_Hilda_PafanneKaufen = LOG_SUCCESS ;
 	B_GivePlayerXP(XP_HildaHolPfanne);
 };
@@ -261,7 +261,7 @@ func void DIA_Hilda_PfanneTooLate_Info()
 {
 	if(hero.guild == GIL_NONE)
 	{
-		AI_Output(self,other, " DIA_Hilda_PfanneTooLate_17_00 " );	// Do you still have the nerve to show up here? What have you done with my money, you bum?!
+		AI_Output(self,other, " DIA_Hilda_PfanneTooLate_17_00 " );	// You have the nerve to show up here? What have you done with my money, you bum?!
 	}
 	else
 	{
@@ -271,7 +271,7 @@ func void DIA_Hilda_PfanneTooLate_Info()
 	{
 		AI_Output(other,self, " DIA_Hilda_PfanneTooLate_15_02 " );	// Sorry, I'm a little late. Here's your frying pan!
 		B_GiveInvItems(other,self,ItMi_Pan,1);
-		AI_Output(self,other, " DIA_Hilda_PfanneTooLate_17_03 " );	// Ah-h, give it here! Well, you are impudent - just incredible!
+		AI_Output(self,other, " DIA_Hilda_PfanneTooLate_17_03 " );	// Ah-h, give it here! Well, aren't you impudent - just incredible!
 		MIS_Hilda_PafanneKaufen = LOG_SUCCESS ;
 		B_GivePlayerXP(XP_HildaHolPfanne / 2);
 		AI_StopProcessInfos(self);
@@ -280,7 +280,7 @@ func void DIA_Hilda_PfanneTooLate_Info()
 	{
 		if(Npc_HasItems(other,ItMi_Gold) >= 20)
 		{
-			AI_Output(self,other, " DIA_Hilda_PfanneTooLate_17_04 " );	// Ah! You still have them! Give them back. Live!
+			AI_Output(self,other, " DIA_Hilda_PfanneTooLate_17_04 " );	// Ah! You still have them! Give them back, now.
 			B_GiveInvItems(other,self,ItMi_Gold,20);
 			AI_Output(self,other, " DIA_Hilda_PfanneTooLate_17_05 " );	// Well, you're impudent - just incredible!
 		}
@@ -346,8 +346,8 @@ var int DIA_Hilda_KRANK_OnTime;
 func void DIA_Hilda_KRANK_Info()
 {
 	AI_Output(other,self, " DIA_Hilda_KRANK_15_00 " );	// How do you feel?
-	AI_Output(self,other, " DIA_Hilda_KRANK_17_01 " );	// Disgusting. I have that terrible fever again.
-	AI_Output(self,other, " DIA_Hilda_KRANK_17_02 " );	// I should go to the town healer, but I'm too weak for that.
+	AI_Output(self,other, " DIA_Hilda_KRANK_17_01 " );	// Horrible. I have that terrible fever again.
+	AI_Output(self,other, " DIA_Hilda_KRANK_17_02 " );	// I should go to the town healer, but I'm too weak.
 	if (DIA_Hilda_KRANK_OnTime ==  FALSE )
 	{
 		Info_ClearChoices(DIA_Hilda_KRANK);
@@ -360,7 +360,7 @@ func void DIA_Hilda_KRANK_Info()
 
 func void DIA_Hilda_SICK_improvement()
 {
-	AI_Output(other,self, " DIA_Hilda_KRANK_besserung_15_00 " );	// Get well soon. And I need to go.
+	AI_Output(other,self, " DIA_Hilda_KRANK_besserung_15_00 " );	// Get well soon. I need to go.
 	AI_Output(self,other, " DIA_Hilda_KRANK_besserung_17_01 " );	// I just hope I get better soon.
 	AI_StopProcessInfos(self);
 };
@@ -368,11 +368,11 @@ func void DIA_Hilda_SICK_improvement()
 func void DIA_Hilda_KRANK_helfen()
 {
 	AI_Output(other,self, " DIA_Hilda_KRANK_helfen_15_00 " );	// Is there anything I can do to help?
-	AI_Output(self,other, " DIA_Hilda_KRANK_helfen_17_01 " );	// It would be great if you could go to Vatras and bring me a cure for him.
+	AI_Output(self,other, " DIA_Hilda_KRANK_helfen_17_01 " );	// It would be great if you could go to Vatras and bring me some medicine.
 	AI_Output(self,other, " DIA_Hilda_KRANK_helfen_17_02 " );	// He knows what I need! I can't get there on my own.
 	Log_CreateTopic(TOPIC_HealHilda,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HealHilda,LOG_Running);
-	B_LogEntry(TOPIC_HealHilda, " Lobart's wife Hilda is sick, but Vatras has a medicine that can cure her. " );
+	B_LogEntry(TOPIC_HealHilda, " Lobart's wife Hilda is sick, but Vatras has a medicine that may cure her. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -438,7 +438,7 @@ func void DIA_Hilda_DISTURB_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Hilda_DISTURB_17_02 " );	// Still bad.
+		AI_Output(self,other, " DIA_Hilda_DISTURB_17_02 " );	// Not much better...
 	};
 };
 
@@ -571,14 +571,14 @@ func int DIA_Hilda_SharpKnife_Condition()
 
 func void DIA_Hilda_SharpKnife_Info()
 {
-	AI_Output(other,self, " DIA_Hilda_SharpKnife_15_00 " );	// Do you still have a job for me?
-	AI_Output(self,other, " DIA_Hilda_SharpKnife_17_01 " );	// Yes, I think there's something... Look, my kitchen knife is quite dull.
-	AI_Output(self,other, " DIA_Hilda_SharpKnife_17_02 " );	// I need someone to go to the town blacksmith and sharpen him.
-	AI_Output(other,self, " DIA_Hilda_SharpKnife_17_03 " );	// I could help you. Moreover, I myself need to go to the city.
-	AI_Output(self,other, " DIA_Hilda_SharpKnife_17_04 " );	// Good. Here, take him and the money for the job. But don't you dare drink them! Understood?
+	AI_Output(other,self, " DIA_Hilda_SharpKnife_15_00 " );	// Do you have another job for me?
+	AI_Output(self,other, " DIA_Hilda_SharpKnife_17_01 " );	// Yes, I think there's something... My kitchen knife is quite dull.
+	AI_Output(self,other, " DIA_Hilda_SharpKnife_17_02 " );	// I need someone to go to the town blacksmith and sharpen it.
+	AI_Output(other,self, " DIA_Hilda_SharpKnife_17_03 " );	// I could help you. I'm heading to the city soon anyway.
+	AI_Output(self,other, " DIA_Hilda_SharpKnife_17_04 " );	// Good. Here, take it and the money for the job. But don't you dare spend the gold! Understood?
 	B_GiveInvItems(self,other,ItMi_Gold,10);
 	B_GiveInvItems(self,other,ItMi_HildaKnife,1);
-	AI_Output(other,self,"DIA_Hilda_SharpKnife_17_05");	//Конечно.
+	AI_Output(other,self,"DIA_Hilda_SharpKnife_17_05");	//Of course.
 	MIS_Hilda_SharpKnife = LOG_Running;
 	Log_CreateTopic(TOPIC_Hilda_SharpKnife,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Hilda_SharpKnife,LOG_Running);
@@ -606,12 +606,12 @@ func void DIA_Hilda_SharpKnife_Done_Info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_Hilda_SharpKnife_Done_15_00 " );	// Here's your knife.
-	AI_Output(self,other, " DIA_Hilda_SharpKnife_Done_17_01 " );	// Finally! And then I without him, as without hands. Give it here.
+	AI_Output(self,other, " DIA_Hilda_SharpKnife_Done_17_01 " );	// Finally! Give it here.
 	B_GiveInvItems(other,self,ItMi_HildaKnife,1);
 	AI_Output(self,other, " DIA_Hilda_SharpKnife_Done_17_02 " );	// Hmmm... Perfectly sharpened! Thank you.
-	AI_Output(self,other, " DIA_Hilda_SharpKnife_Done_17_03 " );	// Here, take this soup for your labors. I just made it!
+	AI_Output(self,other, " DIA_Hilda_SharpKnife_Done_17_03 " );	// Here, take this soup for your efforts. I just made it!
 	B_GiveInvItems(self,other,ItFo_HildaStew,1);
-	AI_Output(other,self,"DIA_Hilda_SharpKnife_17_05");	//Спасибо.
+	AI_Output(other,self,"DIA_Hilda_SharpKnife_17_05");	//Thank you.
 	MIS_Hilda_SharpKnife = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Hilda_SharpKnife,LOG_SUCCESS);
 	B_LogEntry(TOPIC_Hilda_SharpKnife, " I brought Hilda her knife. She was happy. " );
