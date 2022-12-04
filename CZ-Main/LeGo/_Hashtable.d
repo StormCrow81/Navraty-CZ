@@ -1,10 +1,11 @@
-// Eine Hashtable ist eigentlich bloß zCArray<zCArray<_HT_Obj>*>, also ein zweidimensionales Array.
+
+// A hashtable is actually just zCArray<zCArray<_HT_Obj>*>, i.e. a two-dimensional array.
 
 class _HT_Obj {
 	var int key;
-	var int val;
+	be int choice;
 };
-const int HT_SIZE = 71; // Primzahl
+const  int  HT_SIZE = 71 ; // prime number
 
 
 
@@ -91,7 +92,7 @@ func int _HT_Get(var int ptr, var int key) {
 			return (MEM_ArrayRead(bucket, i*2+1));
 		};
 	end;
-	return false;
+	return  false ;
 };
 
 func int _HT_Has(var int ptr, var int key) {
@@ -106,7 +107,7 @@ func int _HT_Has(var int ptr, var int key) {
 			return true;
 		};
 	end;
-	return false;
+	return  false ;
 };
 
 func void _HT_Remove(var int ptr, var int key) {
