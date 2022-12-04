@@ -1,26 +1,21 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.01:
-
-func void ReuseFlask_CZ, (13x) ReuseFlask_CZ - přidána "recyklace" alchymistických lahviček (na žádost hráčů)
-func void ReuseBottle_CZ, (2x) ReuseBottle_CZ - přidána "recyklace" láhví (na žádost hráčů)
-
-
+func void ReuseFlask_CZ, (13x) ReuseFlask_CZ - added "recycling" of alchemical flasks (at the request of players)
+func void ReuseBottle_CZ, (2x) ReuseBottle_CZ - added "recycling" of bottles (at the request of players)
 v1.00:
-
 instance ItMi_HolyWater - opravena textura (ItFo_Water.3ds -> ItMi_HolyWater.3ds)
-
 */
 
 
 
 func void ReuseFlask_CZ(var int chance)
 {
-	var int random;
+	be int random;
 
-	random = Hlp_Random(100);
+	random = Hlp_Random( 100 );
 
 	if(random < chance)
 	{
@@ -31,9 +26,9 @@ func void ReuseFlask_CZ(var int chance)
 
 func void ReuseBottle_CZ(var int chance)
 {
-	var int random;
+	be int random;
 
-	random = Hlp_Random(100);
+	random = Hlp_Random( 100 );
 
 	if(random < chance)
 	{
@@ -45,32 +40,32 @@ func void ReuseBottle_CZ(var int chance)
 
 
 const int Value_HpEssenz = 50;
-const int HP_Essenz = 50;
+const  int HP_essence = 50 ;
 const int Value_HpExtrakt = 75;
-const int HP_Extrakt = 70;
+const  int HP_Extrakt = 70 ;
 const int Value_HpElixier = 100;
-const int HP_Elixier = 100;
-const int Value_ManaEssenz = 50;
-const int Mana_Essenz = 50;
+const  int HP_Elixir = 100 ;
+const  int Value_ManaEssenz = 50 ;
+const  int Mana_essence = 50 ;
 const int Value_ManaExtrakt = 75;
 const int Mana_Extrakt = 75;
 const int Value_ManaElixier = 100;
-const int Mana_Elixier = 100;
+const  int Mana_Elixier = 100 ;
 const int Value_StrElixier = 1500;
-const int STR_Elixier = 1;
-const int STR_Elixier_Prof = 2;
+const  int STR_Elixir = 1 ;
+const  int STR_Elixier_Prof = 2 ;
 const int Value_DexElixier = 1500;
-const int DEX_Elixier = 1;
-const int DEX_Elixier_Prof = 2;
-const int DEX_Elixier_Test = 50;
+const  int DEX_Elixir = 1 ;
+const  int DEX_Elixier_Prof = 2 ;
+const  int DEX_Elixier_Test = 50 ;
 const int Value_HpMaxElixier = 2000;
-const int HPMax_Elixier = 20;
+const  int HPMax_Elixir = 20 ;
 const int Value_ManaMaxElixier = 2000;
-const int ManaMax_Elixier = 2;
-const int ManaMax_Elixier_Prof = 4;
+const  int ManaMax_Elixir = 2 ;
+const  int ManaMax_Elixier_Prof = 4 ;
 const int VALUE_MANAMAXELIXIER_HI = 3000;
 const int MANAMAX_ELIXIER_HI = 4;
-const int MANAMAX_ELIXIER_HI_Prof = 6;
+const  int MANAMAX_ELIXIER_HI_Prof = 6 ;
 const int VALUE_TYONPOTION = 10000;
 const int MANAMAX_TYONPOTION = 10;
 const int Value_MegaDrink = 2500;
@@ -83,8 +78,8 @@ const int TIME_SPEED_02 = 420000;
 const int TIME_SPEED_03 = 600000;
 const int Value_ManaTrunk = 250;
 const int Value_HpTrunk = 200;
-const int STAMINAMAX_ELIXIER = 1;
-const int UrTrall_Elixier = 2;
+const  int  STAMINAMAX_ELIXIR = 1 ;
+const  int UrTrall_Elixir = 2 ;
 const int STR_DEX_M_1 = 2;
 const int STR_DEX_M_2 = 3;
 const int STR_DEX_M_3 = 4;
@@ -107,7 +102,7 @@ const int Stamina_M_3 = 4;
 
 instance ItPo_Mana_01(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ManaEssenz;
@@ -133,7 +128,7 @@ func void UseItPo_Mana_01()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(SBMode == TRUE)
 		{
@@ -190,7 +185,7 @@ func void UseItPo_Mana_01_Fast()
 
 instance ItPo_Mana_02(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ManaExtrakt;
@@ -215,7 +210,7 @@ func void UseItPo_Mana_02()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(SBMode == TRUE)
 		{
@@ -272,7 +267,7 @@ func void UseItPo_Mana_02_Fast()
 
 instance ItPo_Mana_03(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ManaElixier;
@@ -297,7 +292,7 @@ func void UseItPo_Mana_03()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(SBMode == TRUE)
 		{
@@ -354,7 +349,7 @@ func void UseItPo_Mana_03_Fast()
 
 instance ItPo_Health_01(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpEssenz;
@@ -363,7 +358,7 @@ instance ItPo_Health_01(C_Item)
 	on_state[0] = UseItPo_Health_01;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Esence hojivé síly";
+	description = " Essence of Healing Power " ;
 	text[1] = NAME_BONUS_HP_PROC;
 	count[1] = 25;
 	text[4] = "";
@@ -379,7 +374,7 @@ func void UseItPo_Health_01()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(SBMode == TRUE)
 		{
@@ -436,7 +431,7 @@ func void UseItPo_Health_01_Fast()
 
 instance ItPo_Health_02(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpExtrakt;
@@ -445,7 +440,7 @@ instance ItPo_Health_02(C_Item)
 	on_state[0] = UseItPo_Health_02;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Extrakt hojivé síly";
+	description = " Extract of Healing Power " ;
 	text[1] = NAME_BONUS_HP_PROC;
 	count[1] = 50;
 	text[4] = "";
@@ -461,7 +456,7 @@ func void UseItPo_Health_02()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(SBMode == TRUE)
 		{
@@ -518,7 +513,7 @@ func void UseItPo_Health_02_Fast()
 
 instance ItPo_Health_03(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpElixier;
@@ -527,7 +522,7 @@ instance ItPo_Health_03(C_Item)
 	on_state[0] = UseItPo_Health_03;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Elixír hojivé síly";
+	description = " Elixir of Healing Power " ;
 	text[1] = NAME_BONUS_HP_PROC;
 	count[1] = 75;
 	text[4] = "";
@@ -538,7 +533,7 @@ instance ItPo_Health_03(C_Item)
 
 instance ItPo_Perm_STR(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_StrElixier;
@@ -547,10 +542,10 @@ instance ItPo_Perm_STR(C_Item)
 	on_state[0] = UseItPo_Perm_STR;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír síly";
+	description = " Potion of Power " ;
 	text[1] = NAME_Bonus_Str;
-	count[1] = STR_Elixier;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	count[ 1 ] = STR_Elixir;
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_StrElixier;
 	inv_animate = 1;
@@ -577,7 +572,7 @@ func void UseItPo_Perm_STR()
 
 instance ItPo_Perm_STR_M_Low(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_StrElixier;
@@ -586,10 +581,10 @@ instance ItPo_Perm_STR_M_Low(C_Item)
 	on_state[0] = Use_ItPo_Perm_STR_M_Low;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír síly";
+	description = " Mutagenic Potion of Power " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = STR_DEX_M_1;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_StrElixier;
 	inv_animate = 1;
@@ -616,7 +611,7 @@ func void Use_ItPo_Perm_STR_M_Low()
 
 instance ItPo_Perm_STR_M_Normal(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_StrElixier;
@@ -625,10 +620,10 @@ instance ItPo_Perm_STR_M_Normal(C_Item)
 	on_state[0] = Use_ItPo_Perm_STR_M_Normal;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír síly";
+	description = " Mutagenic Potion of Power " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = STR_DEX_M_2;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_StrElixier;
 	inv_animate = 1;
@@ -655,7 +650,7 @@ func void Use_ItPo_Perm_STR_M_Normal()
 
 instance ItPo_Perm_STR_M_Strong(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_StrElixier;
@@ -664,10 +659,10 @@ instance ItPo_Perm_STR_M_Strong(C_Item)
 	on_state[0] = Use_ItPo_Perm_STR_M_Strong;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír síly";
+	description = " Mutagenic Potion of Power " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = STR_DEX_M_3;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_StrElixier;
 	inv_animate = 1;
@@ -694,7 +689,7 @@ func void Use_ItPo_Perm_STR_M_Strong()
 
 instance ItPo_Perm_STR_Fake(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -703,7 +698,7 @@ instance ItPo_Perm_STR_Fake(C_Item)
 	on_state[0] = UseItPo_Perm_STR_Fake;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Elixír síly";
+	description = " Potion of Power " ;
 	text[5] = NAME_Value;
 	count[5] = 1;
 	inv_animate = 1;
@@ -716,7 +711,7 @@ func void UseItPo_Perm_STR_Fake()
 
 instance ItPo_Perm_DEX(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DexElixier;
@@ -725,10 +720,10 @@ instance ItPo_Perm_DEX(C_Item)
 	on_state[0] = UseItPo_Perm_DEX;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír obratnosti";
+	description = " Elixir of Dexterity " ;
 	text[1] = NAME_Bonus_Dex;
-	count[1] = DEX_Elixier;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	count[ 1 ] = DEX_Elixir;
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_DexElixier;
 	inv_animate = 1;
@@ -755,7 +750,7 @@ func void UseItPo_Perm_DEX()
 
 instance ItPo_Perm_Dex_M_Low(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DexElixier;
@@ -764,10 +759,10 @@ instance ItPo_Perm_Dex_M_Low(C_Item)
 	on_state[0] = Use_ItPo_Perm_Dex_M_Low;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír obratnosti";
+	description = " Mutagenic Elixir of Dexterity " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = STR_DEX_M_1;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_DexElixier;
 	inv_animate = 1;
@@ -794,7 +789,7 @@ func void Use_ItPo_Perm_Dex_M_Low()
 
 instance ItPo_Perm_Dex_M_Normal(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DexElixier;
@@ -803,10 +798,10 @@ instance ItPo_Perm_Dex_M_Normal(C_Item)
 	on_state[0] = Use_ItPo_Perm_Dex_M_Normal;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír obratnosti";
+	description = " Mutagenic Elixir of Dexterity " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = STR_DEX_M_2;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_DexElixier;
 	inv_animate = 1;
@@ -833,7 +828,7 @@ func void Use_ItPo_Perm_Dex_M_Normal()
 
 instance ItPo_Perm_Dex_M_Strong(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DexElixier;
@@ -842,10 +837,10 @@ instance ItPo_Perm_Dex_M_Strong(C_Item)
 	on_state[0] = Use_ItPo_Perm_Dex_M_Strong;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír obratnosti";
+	description = " Mutagenic Elixir of Dexterity " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = STR_DEX_M_3;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_DexElixier;
 	inv_animate = 1;
@@ -872,7 +867,7 @@ func void Use_ItPo_Perm_Dex_M_Strong()
 
 instance ItPo_Perm_Health(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpMaxElixier;
@@ -881,9 +876,9 @@ instance ItPo_Perm_Health(C_Item)
 	on_state[0] = UseItPo_Perm_Health;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír života";
+	description = " Elixir of Life " ;
 	text[1] = NAME_Bonus_HpMax;
-	count[1] = HPMax_Elixier;
+	count[ 1 ] = HPMax_Elixir;
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = Value_HpMaxElixier;
@@ -905,7 +900,7 @@ func void UseItPo_Perm_Health()
 
 instance ItPo_Perm_Health_M_Low(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpMaxElixier;
@@ -914,7 +909,7 @@ instance ItPo_Perm_Health_M_Low(C_Item)
 	on_state[0] = Use_ItPo_Perm_Health_M_Low;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír života";
+	description = " Mutagenic Elixir of Life " ;
 	text[1] = NAME_Bonus_HpMax;
 	count[1] = HP_M_1;
 	text[4] = "";
@@ -937,7 +932,7 @@ func void Use_ItPo_Perm_Health_M_Low()
 
 instance ItPo_Perm_Health_M_Normal(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpMaxElixier;
@@ -946,7 +941,7 @@ instance ItPo_Perm_Health_M_Normal(C_Item)
 	on_state[0] = Use_ItPo_Perm_Health_M_Normal;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír života";
+	description = " Mutagenic Elixir of Life " ;
 	text[1] = NAME_Bonus_HpMax;
 	count[1] = HP_M_2;
 	text[4] = "";
@@ -969,7 +964,7 @@ func void Use_ItPo_Perm_Health_M_Normal()
 
 instance ItPo_Perm_Health_M_Strong(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpMaxElixier;
@@ -978,7 +973,7 @@ instance ItPo_Perm_Health_M_Strong(C_Item)
 	on_state[0] = Use_ItPo_Perm_Health_M_Strong;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír života";
+	description = " Mutagenic Elixir of Life " ;
 	text[1] = NAME_Bonus_HpMax;
 	count[1] = HP_M_3;
 	text[4] = "";
@@ -1001,7 +996,7 @@ func void Use_ItPo_Perm_Health_M_Strong()
 
 instance ItPo_Perm_Mana(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ManaMaxElixier;
@@ -1013,7 +1008,7 @@ instance ItPo_Perm_Mana(C_Item)
 	description = "Elixír ducha";
 	text[1] = NAME_Bonus_ManaMax;
 	count[1] = ManaMax_Elixier;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_ManaMaxElixier;
 	inv_animate = 1;
@@ -1027,7 +1022,7 @@ func void UseItPo_Perm_Mana()
 		Snd_Play3d(hero,"BOTTLE_OPEN");
 	};
 
-	if((self.aivar[REAL_MANA_MAX] > 50) && (self.aivar[REAL_MANA_MAX] > self.aivar[REAL_DEXTERITY]) && (self.aivar[REAL_MANA_MAX] > self.aivar[REAL_STRENGTH]))
+	if ((self.aivar[ REAL_MANA_MAX ] >  50 ) && (self.aivar[ REAL_MANA_MAX ] > self.aivar[ REAL_DEXTERITY ]) && (self.aivar[ REAL_MANA_MAX ] > self.aivar[ REAL_STRENGTH ]))
 	{
 		B_RaiseAttribute_Bonus(self,ATR_MANA_MAX,ManaMax_Elixier_Prof);
 		Npc_ChangeAttribute(self,ATR_MANA,ManaMax_Elixier_Prof);
@@ -1043,7 +1038,7 @@ func void UseItPo_Perm_Mana()
 
 instance ItPo_Perm_Mana_M_Low(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ManaMaxElixier;
@@ -1052,10 +1047,10 @@ instance ItPo_Perm_Mana_M_Low(C_Item)
 	on_state[0] = Use_ItPo_Perm_Mana_M_Low;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír ducha";
+	description = " Mutagenic Spirit Elixir " ;
 	text[1] = NAME_Bonus_ManaMax;
 	count[1] = Mana_M_1;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_ManaMaxElixier;
 	inv_animate = 1;
@@ -1068,7 +1063,7 @@ func void Use_ItPo_Perm_Mana_M_Low()
 		Snd_Play3d(hero,"BOTTLE_OPEN");
 	};
 
-	if((self.aivar[REAL_MANA_MAX] > 50) && (self.aivar[REAL_MANA_MAX] > self.aivar[REAL_DEXTERITY]) && (self.aivar[REAL_MANA_MAX] > self.aivar[REAL_STRENGTH]))
+	if ((self.aivar[ REAL_MANA_MAX ] >  50 ) && (self.aivar[ REAL_MANA_MAX ] > self.aivar[ REAL_DEXTERITY ]) && (self.aivar[ REAL_MANA_MAX ] > self.aivar[ REAL_STRENGTH ]))
 	{
 		B_RaiseAttribute_Bonus(self,ATR_MANA_MAX,Mana_M_1_Prof);
 		Npc_ChangeAttribute(self,ATR_MANA,Mana_M_1_Prof);
@@ -1084,7 +1079,7 @@ func void Use_ItPo_Perm_Mana_M_Low()
 
 instance ItPo_Perm_Mana_M_Normal(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ManaMaxElixier;
@@ -1093,10 +1088,10 @@ instance ItPo_Perm_Mana_M_Normal(C_Item)
 	on_state[0] = Use_ItPo_Perm_Mana_M_Normal;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír ducha";
+	description = " Mutagenic Spirit Elixir " ;
 	text[1] = NAME_Bonus_ManaMax;
 	count[1] = Mana_M_2;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_ManaMaxElixier;
 	inv_animate = 1;
@@ -1109,7 +1104,7 @@ func void Use_ItPo_Perm_Mana_M_Normal()
 		Snd_Play3d(hero,"BOTTLE_OPEN");
 	};
 
-	if((self.aivar[REAL_MANA_MAX] > 50) && (self.aivar[REAL_MANA_MAX] > self.aivar[REAL_DEXTERITY]) && (self.aivar[REAL_MANA_MAX] > self.aivar[REAL_STRENGTH]))
+	if ((self.aivar[ REAL_MANA_MAX ] >  50 ) && (self.aivar[ REAL_MANA_MAX ] > self.aivar[ REAL_DEXTERITY ]) && (self.aivar[ REAL_MANA_MAX ] > self.aivar[ REAL_STRENGTH ]))
 	{
 		B_RaiseAttribute_Bonus(self,ATR_MANA_MAX,Mana_M_2_Prof);
 		Npc_ChangeAttribute(self,ATR_MANA,Mana_M_2_Prof);
@@ -1125,7 +1120,7 @@ func void Use_ItPo_Perm_Mana_M_Normal()
 
 instance ItPo_Perm_Mana_M_Strong(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ManaMaxElixier;
@@ -1134,10 +1129,10 @@ instance ItPo_Perm_Mana_M_Strong(C_Item)
 	on_state[0] = Use_ItPo_Perm_Mana_M_Strong;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír ducha";
+	description = " Mutagenic Spirit Elixir " ;
 	text[1] = NAME_Bonus_ManaMax;
 	count[1] = Mana_M_3;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_ManaMaxElixier;
 	inv_animate = 1;
@@ -1150,7 +1145,7 @@ func void Use_ItPo_Perm_Mana_M_Strong()
 		Snd_Play3d(hero,"BOTTLE_OPEN");
 	};
 
-	if((self.aivar[REAL_MANA_MAX] > 50) && (self.aivar[REAL_MANA_MAX] > self.aivar[REAL_DEXTERITY]) && (self.aivar[REAL_MANA_MAX] > self.aivar[REAL_STRENGTH]))
+	if ((self.aivar[ REAL_MANA_MAX ] >  50 ) && (self.aivar[ REAL_MANA_MAX ] > self.aivar[ REAL_DEXTERITY ]) && (self.aivar[ REAL_MANA_MAX ] > self.aivar[ REAL_STRENGTH ]))
 	{
 		B_RaiseAttribute_Bonus(self,ATR_MANA_MAX,Mana_M_3_Prof);
 		Npc_ChangeAttribute(self,ATR_MANA,Mana_M_3_Prof);
@@ -1166,7 +1161,7 @@ func void Use_ItPo_Perm_Mana_M_Strong()
 
 instance ITPO_TYONPOTION(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_MANAMAXELIXIER_HI;
@@ -1175,7 +1170,7 @@ instance ITPO_TYONPOTION(C_Item)
 	on_state[0] = useitpo_tyonpotion;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír Baala Tyona";
+	description = " Elixir Baala Tyona " ;
 	text[1] = NAME_Bonus_ManaMax;
 	count[1] = MANAMAX_TYONPOTION;
 	text[4] = "";
@@ -1232,7 +1227,7 @@ func void useitpo_tyonpotion()
 
 instance ItPo_Speed(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Speed;
@@ -1241,8 +1236,8 @@ instance ItPo_Speed(C_Item)
 	on_state[0] = UseItPo_Speed;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Lektvar rychlosti";
-	text[3] = "Dočasně zvyšuje rychlost pohybu...";
+	description = " Potion of Speed ​​" ;
+	text[ 3 ] = " Temporarily increases movement speed... " ;
 	text[4] = NAME_Duration;
 	count[4] = 2;
 	text[5] = NAME_Value;
@@ -1255,7 +1250,7 @@ func void UseItPo_Speed()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 	};
 
 	Mdl_ApplyOverlayMdsTimed(self,"Humans_MageSprint.MDS",120000);
@@ -1268,7 +1263,7 @@ func void UseItPo_Speed()
 
 instance ITPO_SPEED_02(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SPEED_02;
@@ -1277,8 +1272,8 @@ instance ITPO_SPEED_02(C_Item)
 	on_state[0] = useitpo_speed_02;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Dvojitý lektvar rychlosti";
-	text[3] = "Dočasně zvyšuje rychlost pohybu...";
+	description = " Double Potion of Speed " ;
+	text[ 3 ] = " Temporarily increases movement speed... " ;
 	text[4] = NAME_Duration;
 	count[4] = 4;
 	text[5] = NAME_Value;
@@ -1291,7 +1286,7 @@ func void useitpo_speed_02()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 	};
 
 	Mdl_ApplyOverlayMdsTimed(self,"Humans_MageSprint.MDS",240000);
@@ -1305,7 +1300,7 @@ func void useitpo_speed_02()
 
 instance ITPO_SPEED_03(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SPEED_02;
@@ -1314,8 +1309,8 @@ instance ITPO_SPEED_03(C_Item)
 	on_state[0] = useitpo_speed_03;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Černý chňapavec";
-	text[3] = "Dočasně zvyšuje rychlost pohybu...";
+	description = " Black snapper " ;
+	text[ 3 ] = " Temporarily increases movement speed... " ;
 	text[4] = NAME_Duration;
 	count[4] = 12;
 	text[5] = NAME_Value;
@@ -1328,7 +1323,7 @@ func void useitpo_speed_03()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 	};
 
 	Mdl_ApplyOverlayMdsTimed(self,"Humans_MageSprint.MDS",720000);
@@ -1341,7 +1336,7 @@ func void useitpo_speed_03()
 
 instance ItPo_Stamina(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
@@ -1350,7 +1345,7 @@ instance ItPo_Stamina(C_Item)
 	on_state[0] = use_itpo_stamina;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Lektvar výdrže";
+	description = " Stamina Potion " ;
 	text[1] = NAME_BONUS_STAPROC ;
 	count[1] = 50;
 	text[5] = NAME_Value;
@@ -1363,7 +1358,7 @@ func void Use_ItPo_Stamina()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(ATR_STAMINA[0] < (ATR_STAMINA_MAX[0] * 10))
 		{
@@ -1395,7 +1390,7 @@ func void Use_ItPo_Stamina_Fast()
 
 instance ItPo_Perm_Stamina(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -1404,7 +1399,7 @@ instance ItPo_Perm_Stamina(C_Item)
 	on_state[0] = use_itpo_perm_stamina;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír výdrže";
+	description = " Elixir of Stamina " ;
 	text[1] = NAME_BONUS_STAMINAMAX;
 	count[1] = STAMINAMAX_ELIXIER;
 	text[4] = "";
@@ -1416,8 +1411,8 @@ instance ItPo_Perm_Stamina(C_Item)
 func void use_itpo_perm_stamina()
 {
 	var string concatText;
-	var int staminabonus;
-	var int startstamina;
+	var int threadbonus;
+	be int starting stamina;
 
 	if(self.id == 0)
 	{
@@ -1443,7 +1438,7 @@ func void use_itpo_perm_stamina()
 			}
 			else
 			{
-				staminabonus = 1;
+				staminabonus = 1 ;
 				ATR_STAMINA[0] = ATR_STAMINA[0] + 10;
 				Npc_SetTalentSkill(hero,NPC_TALENT_STAMINA,ATR_STAMINA_MAX[0]);
 				concatText = ConcatStrings(PRINT_LEARNSTAMINA_MAX,IntToString(staminabonus));
@@ -1456,14 +1451,14 @@ func void use_itpo_perm_stamina()
 		}
 		else
 		{
-			AI_Print(PRINT_NOMORESTAMINA);
+			AI_Print( PRINT_NOMORESTAMINA );
 		};
 	};
 };
 
 instance ItPo_Perm_Stamina_M_Low(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
@@ -1472,7 +1467,7 @@ instance ItPo_Perm_Stamina_M_Low(C_Item)
 	on_state[0] = Use_ItPo_Perm_Stamina_M_Low;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír výdrže";
+	description = " Mutagenic Potion of Stamina " ;
 	text[1] = NAME_BONUS_STAMINAMAX;
 	count[1] = Stamina_M_1;
 	text[4] = "";
@@ -1484,8 +1479,8 @@ instance ItPo_Perm_Stamina_M_Low(C_Item)
 func void Use_ItPo_Perm_Stamina_M_Low()
 {
 	var string concatText;
-	var int staminabonus;
-	var int startstamina;
+	var int threadbonus;
+	be int starting stamina;
 
 	if(self.id == 0)
 	{
@@ -1524,14 +1519,14 @@ func void Use_ItPo_Perm_Stamina_M_Low()
 		}
 		else
 		{
-			AI_Print(PRINT_NOMORESTAMINA);
+			AI_Print( PRINT_NOMORESTAMINA );
 		};
 	};
 };
 
 instance ItPo_Perm_Stamina_M_Normal(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
@@ -1540,7 +1535,7 @@ instance ItPo_Perm_Stamina_M_Normal(C_Item)
 	on_state[0] = Use_ItPo_Perm_Stamina_M_Normal;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír výdrže";
+	description = " Mutagenic Potion of Stamina " ;
 	text[1] = NAME_BONUS_STAMINAMAX;
 	count[1] = Stamina_M_2;
 	text[4] = "";
@@ -1552,8 +1547,8 @@ instance ItPo_Perm_Stamina_M_Normal(C_Item)
 func void Use_ItPo_Perm_Stamina_M_Normal()
 {
 	var string concatText;
-	var int staminabonus;
-	var int startstamina;
+	var int threadbonus;
+	be int starting stamina;
 
 	if(self.id == 0)
 	{
@@ -1592,14 +1587,14 @@ func void Use_ItPo_Perm_Stamina_M_Normal()
 		}
 		else
 		{
-			AI_Print(PRINT_NOMORESTAMINA);
+			AI_Print( PRINT_NOMORESTAMINA );
 		};
 	};
 };
 
 instance ItPo_Perm_Stamina_M_Strong(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
@@ -1608,7 +1603,7 @@ instance ItPo_Perm_Stamina_M_Strong(C_Item)
 	on_state[0] = Use_ItPo_Perm_Stamina_M_Strong;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Mutagenní elixír výdrže";
+	description = " Mutagenic Potion of Stamina " ;
 	text[1] = NAME_BONUS_STAMINAMAX;
 	count[1] = Stamina_M_3;
 	text[4] = "";
@@ -1620,8 +1615,8 @@ instance ItPo_Perm_Stamina_M_Strong(C_Item)
 func void Use_ItPo_Perm_Stamina_M_Strong()
 {
 	var string concatText;
-	var int staminabonus;
-	var int startstamina;
+	var int threadbonus;
+	be int starting stamina;
 
 	if(self.id == 0)
 	{
@@ -1660,14 +1655,14 @@ func void Use_ItPo_Perm_Stamina_M_Strong()
 		}
 		else
 		{
-			AI_Print(PRINT_NOMORESTAMINA);
+			AI_Print( PRINT_NOMORESTAMINA );
 		};
 	};
 };
 
 instance ITPO_XMAGICDEF(C_Item)
 {
-	name = "Lektvar nesmrtelnosti";
+	name = " Potion of Immortality " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5000;
@@ -1676,9 +1671,9 @@ instance ITPO_XMAGICDEF(C_Item)
 	on_state[0] = use_itpo_xmagicdef;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Lektvar nesmrtelnosti";
-	text[3] = "Tenhle lektvar propůjčuje nesmrtelnost...";
-	text[4] = "Ovšem pouze na chvíli a jenom jednou...";
+	description = " Potion of Immortality " ;
+	text[ 3 ] = " This potion grants immortality... " ;
+	text[ 4 ] = " But only for a while and only once... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1702,7 +1697,7 @@ const int ITPO_TROLLPOINTDEFSTR = 2;
 
 instance ITPO_PERM_DEF(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_POACROBAT;
@@ -1711,12 +1706,12 @@ instance ITPO_PERM_DEF(C_Item)
 	on_state[0] = use_itpo_perm_def;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír trola";
+	description = " Troll Elixir " ;
 	text[1] = NAME_BONUS_DEFMAX;
 	count[1] = ITPO_TROLLDEFSTR;
 	text[2] = NAME_BONUS_DEFPOINTMAX;
 	count[2] = ITPO_TROLLPOINTDEFSTR;
-	text[4] = "Ztvrzuje kůži, až je tvrdá jako kůže trola...";
+	text[ 4 ] = " Hardens the skin until it is as hard as troll skin... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1740,7 +1735,7 @@ func void use_itpo_perm_def()
 
 instance ITPO_XORCPOTION(C_Item)
 {
-	name = "Skřetí elixír";
+	name = " Goblin Elixir " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
@@ -1750,7 +1745,7 @@ instance ITPO_XORCPOTION(C_Item)
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
 	description = name;
-	text[4] = "Účinky neznámé...";
+	text[ 4 ] = " Effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1768,7 +1763,7 @@ func void useitpo_orcpotion()
 
 instance ITPO_XORCPOTION02(C_Item)
 {
-	name = "Skřetí elixír";
+	name = " Goblin Elixir " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -1778,8 +1773,8 @@ instance ITPO_XORCPOTION02(C_Item)
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
 	description = name;
-	text[3] = "Užití by němelo být nebezpečné...";
-	text[4] = "Účinky neznámé...";
+	text[ 3 ] = " It should not be dangerous to use... " ;
+	text[ 4 ] = " Effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1803,7 +1798,7 @@ func void useitpo_orcpotion02()
 			self.attribute[ATR_MANA] = self.attribute[ATR_MANA_MAX];
 		};
 
-		concatText = "Síla + 1, mana - 4";
+		concatText = " Strength + 1, mana - 4 " ;
 		AI_Print(concatText);
 	}
 	else
@@ -1816,14 +1811,14 @@ func void useitpo_orcpotion02()
 			self.attribute[ATR_MANA] = self.attribute[ATR_MANA_MAX];
 		};
 
-		concatText = "Obratnost + 1, mana - 4";
+		concatText = " Dexterity + 1, mana - 4 " ;
 		AI_Print(concatText);
 	};
 };
 
 instance ItPo_MegaDrink(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_MegaDrink;
@@ -1833,7 +1828,7 @@ instance ItPo_MegaDrink(C_Item)
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
 	description = "Embarla Firgasto";
-	text[4] = "Účinky neznámé...";
+	text[ 4 ] = " Effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1867,14 +1862,14 @@ func void UseItPo_MegaDrink()
 
 instance ITPO_SOULRIVER(C_Item)
 {
-	name = "Extrakt duší";
+	name = " Soul Extract " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5000;
 	visual = "ITPO_PERM_DEX_EX.3DS";
 	material = MAT_GLAS;
 	description = name;
-	text[4] = "Extrakt duší z Lucianova srdce...";
+	text[ 4 ] = " Soul Extract from Lucian's Heart... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1882,7 +1877,7 @@ instance ITPO_SOULRIVER(C_Item)
 
 instance ITPO_POISON(C_Item)
 {
-	name = "Lahvička s jedem";
+	name = " Vial of Poison " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 50;
@@ -1891,7 +1886,7 @@ instance ITPO_POISON(C_Item)
 	on_state[0] = Use_ITPO_POISON;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[4] = "Používán k otrávení zbraní...";
+	text[ 4 ] = " Used to poison weapons... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1917,7 +1912,7 @@ func void Use_ITPO_POISON()
 			{
 				PotionBlade.weight = TRUE;
 				concatText = PotionBlade.visual_change;
-				concatText = ConcatStrings(concatText," | Otrávená");
+				concatText = ConcatStrings(concatText, " | Poisoned " );
 				PotionBlade.visual_change = concatText;
 				PotionBlade.text[4] = concatText;
 				PotionBladeID = Hlp_GetInstanceID(PotionBlade);
@@ -1956,7 +1951,7 @@ func void Use_ITPO_POISON()
 
 instance ITPO_BLOODFLYPOISON(C_Item)
 {
-	name = "Lahvička s jedem";
+	name = " Vial of Poison " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -1965,8 +1960,8 @@ instance ITPO_BLOODFLYPOISON(C_Item)
 	on_state[0] = usebloodflypoison;
 	scemeName = "POTION";
 	description = name;
-	text[3] = "Tenhle jed byl připraven ze žihadel krvavých much...";
-	text[4] = "Zacházet velice opatrně!";
+	text[ 3 ] = " This poison was prepared from the stings of blood flies... " ;
+	text[ 4 ] = " Handle very carefully! " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2023,8 +2018,8 @@ instance ItMi_NrozasPoisonOsair(C_Item)
 	on_state[0] = Use_ItMi_NrozasPoisonOsair;
 	scemeName = "POTION";
 	description = name;
-	text[3] = "Tenhle jed připravil mistr Nrozas pro Osaira...";
-	text[4] = "Smrtící! Vydává velice silný zápach...";
+	text[ 3 ] = " Master Nrozas prepared this poison for Osair... " ;
+	text[ 4 ] = " Deadly! Gives off a very strong smell... " ;
 	inv_animate = 1;
 };
 
@@ -2051,9 +2046,9 @@ instance ItMi_NrozasPoisonHalf(C_Item)
 	on_state[0] = Use_ItMi_NrozasPoisonHalf;
 	scemeName = "POTION";
 	description = name;
-	text[3] = "Tenhle jed připravil mistr Nrozas...";
-	text[4] = "Smrtící! Vydává velice silný zápach...";
-	text[5] = "Lahvička je zpola prázdná...";
+	text[ 3 ] = " Master Nrozas prepared this poison... " ;
+	text[ 4 ] = " Deadly! Gives off a very strong smell... " ;
+	text[ 5 ] = " The bottle is half empty... " ;
 	inv_animate = 1;
 };
 
@@ -2071,7 +2066,7 @@ func void Use_ItMi_NrozasPoisonHalf()
 
 instance ITPO_ELIGORFIRE(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 7000;
@@ -2083,7 +2078,7 @@ instance ITPO_ELIGORFIRE(C_Item)
 	description = "Eligorův plamen";
 	text[1] = NAME_Prot_Fire;
 	count[1] = 15;
-	text[4] = "Magická esence ze žlázy rudého draka...";
+	text[ 4 ] = " Red Dragon Gland Magical Essence... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2106,7 +2101,7 @@ func void use_itpo_eligorfire()
 
 instance ITPO_WATERFIRE(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1000;
@@ -2115,10 +2110,10 @@ instance ITPO_WATERFIRE(C_Item)
 	on_state[0] = use_itpo_waterfire;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Ledový plášť";
+	description = " Ice Mantle " ;
 	text[1] = NAME_Prot_Magic;
 	count[1] = 15;
-	text[4] = "Magický elixír z křištálově čistého ledu...";
+	text[ 4 ] = " Magic Elixir of Crystal Clear Ice... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2136,12 +2131,12 @@ func void use_itpo_waterfire()
 
 	self.protection[PROT_MAGIC] += 15;
 	REALPROTMAGIC += 15;
-	AI_Print("Ochrana proti magii + 15");
+	AI_Print( " Protection against magic + 15 " );
 };
 
 instance ITPO_MEGAPOTIONSKILL(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5000;
@@ -2176,13 +2171,13 @@ func void useitpo_megapotionskill()
 	B_RaiseAttribute_Bonus_Many(self,ATR_DEXTERITY,1);
 	B_RaiseAttribute_Bonus_Many(self,ATR_STRENGTH,1);
 	Npc_ChangeAttribute(self,ATR_MANA,5);
-	concatText = "Síla + 1, obratnost + 1, mana + 5";
+	concatText = " Strength + 1, Dexterity + 1, Mana + 5 " ;
 	AI_Print(concatText);
 };
 
 instance ITPO_SAGITTACLAWPOTION(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 350;
@@ -2192,7 +2187,7 @@ instance ITPO_SAGITTACLAWPOTION(C_Item)
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
 	description = "Sagittin lék";
-	text[4] = "Tenhle lék připravila Sagitta pro Tlamu...";
+	text[ 4 ] = " This medicine was prepared by Sagitta for Tlama... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2210,7 +2205,7 @@ func void use_itpo_sagittaclawpotion()
 
 instance ITPO_MAGDEFENCE(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpMaxElixier;
@@ -2219,7 +2214,7 @@ instance ITPO_MAGDEFENCE(C_Item)
 	on_state[0] = use_itpo_magdefence;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír ochrany proti magii";
+	description = " Elixir of protection against magic " ;
 	text[1] = NAME_Prot_Magic;
 	count[1] = 1;
 	text[4] = "";
@@ -2237,12 +2232,12 @@ func void use_itpo_magdefence()
 
 	self.protection[PROT_MAGIC] += 1;
 	REALPROTMAGIC += 1;
-	AI_Print("Ochrana proti magii + 1");
+	AI_Print( " Protection against magic + 1 " );
 };
 
 instance ITPO_INTELLECT(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpMaxElixier;
@@ -2274,7 +2269,7 @@ func void use_itpo_intellect()
 
 instance ItPo_Troll_Stamina(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -2283,7 +2278,7 @@ instance ItPo_Troll_Stamina(C_Item)
 	on_state[0] = Use_ItPo_Troll_Stamina;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír výdrže z trolích srdcí";
+	description = " Elixir of Stamina from Troll Hearts " ;
 	text[1] = NAME_BONUS_STM;
 	count[1] = 1;
 	text[4] = "";
@@ -2295,8 +2290,8 @@ instance ItPo_Troll_Stamina(C_Item)
 func void Use_ItPo_Troll_Stamina()
 {
 	var string concatText;
-	var int staminabonus;
-	var int startstamina;
+	var int threadbonus;
+	be int starting stamina;
 
 	if(self.id == 0)
 	{
@@ -2319,7 +2314,7 @@ func void Use_ItPo_Troll_Stamina()
 			}
 			else
 			{
-				staminabonus = 1;
+				staminabonus = 1 ;
 				ATR_STAMINA[0] = ATR_STAMINA[0] + 10;
 				Npc_SetTalentSkill(hero,NPC_TALENT_STAMINA,ATR_STAMINA_MAX[0]);
 				concatText = ConcatStrings(PRINT_LEARNSTAMINA_MAX,IntToString(staminabonus));
@@ -2329,14 +2324,14 @@ func void Use_ItPo_Troll_Stamina()
 		}
 		else
 		{
-			AI_Print(PRINT_NOMORESTAMINA);
+			AI_Print( PRINT_NOMORESTAMINA );
 		};
 	};
 };
 
 instance ITPO_FIREDEFENCE(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 3000;
@@ -2345,7 +2340,7 @@ instance ITPO_FIREDEFENCE(C_Item)
 	on_state[0] = use_itpo_firedefence;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír ochrany proti ohni";
+	description = " Elixir of Fire Protection " ;
 	text[1] = NAME_Prot_Fire;
 	count[1] = 1;
 	text[4] = "";
@@ -2364,12 +2359,12 @@ func void use_itpo_firedefence()
 	Wld_PlayEffect("VOB_MAGICBURN",hero,hero,0,0,0,FALSE);
 	self.protection[PROT_FIRE] += 1;
 	REALPROTFIRE += 1;
-	AI_Print("Ochrana proti ohni + 1");
+	AI_Print( " Fire Protection + 1 " );
 };
 
 instance ITPO_PERM_DEX_DRACONIAN(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DexElixier;
@@ -2378,10 +2373,10 @@ instance ITPO_PERM_DEX_DRACONIAN(C_Item)
 	on_state[0] = useitpo_perm_dex_draconian;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír obratnosti z ještěranských srdcí";
+	description = " Elixir of Dexterity from Lizard Hearts " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = 1;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_DexElixier;
 	inv_animate = 1;
@@ -2409,7 +2404,7 @@ func void useitpo_perm_dex_draconian()
 
 instance ITPO_PERM_STR_ORC(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_StrElixier;
@@ -2418,10 +2413,10 @@ instance ITPO_PERM_STR_ORC(C_Item)
 	on_state[0] = useitpo_perm_str_orc;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír síly ze skřetích srdcí";
+	description = " Elixir of Power from Goblin Hearts " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = 1;
-	text[4] = "Při užití se mohou projevit výjimečně silné účinky...";
+	text[ 4 ] = " Exceptionally strong effects may occur when used... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_StrElixier;
 	inv_animate = 1;
@@ -2450,7 +2445,7 @@ func void useitpo_perm_str_orc()
 
 instance ITPO_FALLDEFENCE(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 300;
@@ -2459,10 +2454,10 @@ instance ITPO_FALLDEFENCE(C_Item)
 	on_state[0] = use_itpo_falldefence;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Elixír ochrany proti pádu";
+	description = " Fall Protection Elixir " ;
 	text[1] = NAME_Sec_Duration;
 	count[1] = 15;
-	text[4] = "Účinky se při častém užívání akumulují...";
+	text[ 4 ] = " Effects accumulate with frequent use... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2481,7 +2476,7 @@ func void use_itpo_falldefence()
 
 instance ITPO_ANPOIS(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 25;
@@ -2491,7 +2486,7 @@ instance ITPO_ANPOIS(C_Item)
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
 	description = "Protijed";
-	text[4] = "Odstraňuje účinky otravy a neutralizuje jed...";
+	text[ 4 ] = " Removes the effects of poisoning and neutralizes poison... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2502,7 +2497,7 @@ func void useitpo_anpois()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 	};
 
 	POISONED = FALSE;
@@ -2512,7 +2507,7 @@ func void useitpo_anpois()
 	MM_Poison_02_Up = FALSE;
 	MM_Poison_03_Up = FALSE;
 	TimerPoisonUpTic = FALSE;
-	TimerPoisonUp = FALSE;
+	TimerPoisonUp = FALSE ;
 };
 
 func void useitpo_anpois_fast()
@@ -2525,12 +2520,12 @@ func void useitpo_anpois_fast()
 	MM_Poison_02_Up = FALSE;
 	MM_Poison_03_Up = FALSE;
 	TimerPoisonUpTic = FALSE;
-	TimerPoisonUp = FALSE;
+	TimerPoisonUp = FALSE ;
 };
 
 instance ItPo_UrTrallPotion(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -2539,9 +2534,9 @@ instance ItPo_UrTrallPotion(C_Item)
 	on_state[0] = Use_UrTrallPotion;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Prastarý skřetí elixír";
+	description = " Ancient Goblin Elixir " ;
 	text[1] = NAME_Bonus_Str;
-	count[1] = UrTrall_Elixier;
+	count[ 1 ] = UrTrall_Elixir;
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -2560,7 +2555,7 @@ func void Use_UrTrallPotion()
 
 instance ItPo_Memories(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -2569,9 +2564,9 @@ instance ItPo_Memories(C_Item)
 	on_state[0] = Use_ItPo_Memories;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Lektvar vzpomínek";
-	text[3] = "Zvláštním způsobem ovlivňuje mysl";
-	text[4] = "a oživuje zapomenuté vzpomínky...";
+	description = " Potion of Memories " ;
+	text[ 3 ] = " Affects the mind in a strange way " ;
+	text[ 4 ] = " and revives forgotten memories... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2591,7 +2586,7 @@ func void Use_ItPo_Memories()
 
 instance ITPO_BREATH_OF_DEATH(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 30000;
@@ -2601,7 +2596,7 @@ instance ITPO_BREATH_OF_DEATH(C_Item)
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
 	description = "Dech smrti";
-	text[4] = "Používán při rituálu temného posvěcení...";
+	text[ 4 ] = " Used in the Dark Sanctification Ritual... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2628,7 +2623,7 @@ func void use_itpo_breath_of_death()
 
 instance ITPO_NECROM_POTION_01(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1000;
@@ -2638,7 +2633,7 @@ instance ITPO_NECROM_POTION_01(C_Item)
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
 	description = "Nekromantova radost";
-	text[4] = "Jestli nevíš, nač tenhle elixír slouží, raději ho vylej a zapomeň na něj...";
+	text[ 4 ] = " If you don't know what this elixir is for, you'd better pour it out and forget about it... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2666,7 +2661,7 @@ func void use_itpo_necrom_potion_01()
 
 instance ITPO_DEMON_POTION(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 5000;
@@ -2675,7 +2670,7 @@ instance ITPO_DEMON_POTION(C_Item)
 	on_state[0] = use_itpo_demon_potion;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Temná moudrost";
+	description = " Dark Wisdom " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2702,7 +2697,7 @@ func void use_itpo_demon_potion()
 
 instance ITPO_DEMON_POTION_BAD(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 10000;
@@ -2711,7 +2706,7 @@ instance ITPO_DEMON_POTION_BAD(C_Item)
 	on_state[0] = use_itpo_demon_potion_bad;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Zlověstný koktejl";
+	description = " Sinister Cocktail " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2738,7 +2733,7 @@ func void use_itpo_demon_potion_bad()
 
 instance ITPO_PERM_DEX_SUPER(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DexElixier;
@@ -2747,7 +2742,7 @@ instance ITPO_PERM_DEX_SUPER(C_Item)
 	on_state[0] = useitpo_perm_dex_super;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír božské obratnosti";
+	description = " Elixir of Divine Dexterity " ;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = 15;
 	text[5] = NAME_Value;
@@ -2769,7 +2764,7 @@ func void useitpo_perm_dex_super()
 
 instance ItPo_DemonBlood(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1000;
@@ -2778,7 +2773,7 @@ instance ItPo_DemonBlood(C_Item)
 	on_state[0] = Use_ItPo_DemonBlood;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Démonická krev";
+	description = " Demonic Blood " ;
 	text[1] = NAME_Bonus_ManaMax;
 	count[1] = 25;
 	text[5] = NAME_Value;
@@ -2799,7 +2794,7 @@ func void Use_ItPo_DemonBlood()
 
 instance ITPO_SOULPOTION(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 5000;
@@ -2808,8 +2803,8 @@ instance ITPO_SOULPOTION(C_Item)
 	on_state[0] = use_itpo_soulpotion;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Temná duše";
-	text[4] = "Připravená z magické substance kamenů s dušemi...";
+	description = " Dark Soul " ;
+	text[ 4 ] = " Prepared from the magical substance of stones with souls... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2848,7 +2843,7 @@ func void use_itpo_soulpotion()
 
 instance ItPo_DragonMind_Epic(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 2000;
@@ -2857,7 +2852,7 @@ instance ItPo_DragonMind_Epic(C_Item)
 	on_state[0] = Use_ItPo_DragonMind_Epic;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Dračí moudrost";
+	description = " Dragon Wisdom " ;
 	text[1] = NAME_Bonus_ManaMax;
 	count[1] = 50;
 	text[5] = NAME_Value;
@@ -2878,7 +2873,7 @@ func void Use_ItPo_DragonMind_Epic()
 
 instance ItPo_AncientPotion(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 2500;
@@ -2887,7 +2882,7 @@ instance ItPo_AncientPotion(C_Item)
 	on_state[0] = Use_ItPo_AncientPotion;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír božského rozumu";
+	description = " Elixir of Divine Reason " ;
 	text[1] = NAME_Bonus_Int;
 	count[1] = 10;
 	text[4] = "";
@@ -2910,7 +2905,7 @@ func void Use_ItPo_AncientPotion()
 
 instance ItPo_Sleeper(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5000;
@@ -2919,7 +2914,7 @@ instance ItPo_Sleeper(C_Item)
 	on_state[0] = Use_ItPo_Sleeper;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír Spáče";
+	description = " Elixir of the Sleeper " ;
 	text[1] = NAME_Bonus_ManaMax;
 	count[1] = 100;
 	text[2] = NAME_Bonus_Int;
@@ -2946,7 +2941,7 @@ func void Use_ItPo_Sleeper()
 
 instance ItPo_ElixirSHadow(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 2000;
@@ -2955,9 +2950,9 @@ instance ItPo_ElixirSHadow(C_Item)
 	on_state[0] = Use_ItPo_ElixirSHadow;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Černá mlha";
-	text[3] = "Obklopí člověka závojem a učiní ho neviditelným...";
-	text[4] = "Doba trvání účinků neznámá...";
+	description = " Black Mist " ;
+	text[ 3 ] = " It surrounds a person with a veil and makes them invisible... " ;
+	text[ 4 ] = " Duration of effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2970,10 +2965,10 @@ func void Use_ItPo_ElixirSHadow()
 		Snd_Play3d(hero,"BOTTLE_OPEN");
 	};
 
-	if(HeroDragonLook == FALSE)
+	if (HeroDragonLook ==  FALSE )
 	{
 		//Wld_PlayEffect("DRAGONLOOK_FX",hero,hero,0,0,0,FALSE);
-		HeroDragonLook = TRUE;
+		HeroDragonLook = TRUE ;
 	};
 
 	HeroInvisibleTimerNow = 120 + Hlp_Random(60);
@@ -2984,7 +2979,7 @@ func void Use_ItPo_ElixirSHadow()
 
 instance ItPo_UndeadShield(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1000;
@@ -2993,9 +2988,9 @@ instance ItPo_UndeadShield(C_Item)
 	on_state[0] = Use_ItPo_UndeadShield;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Závoj smrti";
-	text[3] = "Promění člověka v nemrtvého...";
-	text[4] = "Doba trvání účinků neznámá...";
+	description = " Veil of Death " ;
+	text[ 3 ] = " Turns a human into an undead... " ;
+	text[ 4 ] = " Duration of effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -3013,7 +3008,7 @@ func void Use_ItPo_UndeadShield()
 
 instance ItPo_Addon_Geist_01(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 300;
@@ -3022,9 +3017,9 @@ instance ItPo_Addon_Geist_01(C_Item)
 	on_state[0] = UseItPo_Geist_01;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Lektvar proměny mysli";
-	text[3] = "Lektvar se silnými účinky na mysl toho, kdo ho vypije...";
-	text[4] = "Používat opatrně!";
+	description = " Mind Alteration Potion " ;
+	text[ 3 ] = " A potion with powerful effects on the mind of whoever drinks it... " ;
+	text[ 4 ] = " Use with care! " ;
 	text[5] = NAME_Value;
 	count[5] = Value_ManaEssenz;
 	inv_animate = 1;
@@ -3038,7 +3033,7 @@ func void UseItPo_Geist_01()
 
 instance ItPo_Addon_Geist_02(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 300;
@@ -3047,9 +3042,9 @@ instance ItPo_Addon_Geist_02(C_Item)
 	on_state[0] = UseItPo_Geist_02;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Lektvar proměny mysli";
-	text[3] = "Lektvar se silnými účinky na mysl toho, kdo ho vypije...";
-	text[4] = "Používat opatrně!";
+	description = " Mind Alteration Potion " ;
+	text[ 3 ] = " A potion with powerful effects on the mind of whoever drinks it... " ;
+	text[ 4 ] = " Use with care! " ;
 	text[5] = NAME_Value;
 	count[5] = Value_ManaEssenz;
 	inv_animate = 1;
@@ -3066,7 +3061,7 @@ func void UseItPo_Geist_02()
 
 instance ItPo_Health_Addon_04_New(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpElixier;
@@ -3075,7 +3070,7 @@ instance ItPo_Health_Addon_04_New(C_Item)
 	on_state[0] = UseItPo_Health_03;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Elixír hojivé síly ze žihadel";
+	description = " Elixir of Healing Power from Stings " ;
 	text[1] = NAME_BONUS_HP_PROC;
 	count[1] = 100;
 	text[4] = "";
@@ -3091,7 +3086,7 @@ func void UseItPo_Health_03()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(SBMode == TRUE)
 		{
@@ -3148,7 +3143,7 @@ func void UseItPo_Health_03_Fast()
 
 instance ItPo_Health_Addon_04(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HpTrunk;
@@ -3157,7 +3152,7 @@ instance ItPo_Health_Addon_04(C_Item)
 	on_state[0] = UseItPo_Health_04;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Elixír čisté hojivé síly";
+	description = " Elixir of Pure Healing Power " ;
 	text[1] = NAME_BONUS_HP_PROC_ELITE;
 	count[1] = 50;
 	text[5] = NAME_Value;
@@ -3169,7 +3164,7 @@ func void UseItPo_Health_04()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(SBMode == TRUE)
 		{
@@ -3215,7 +3210,7 @@ func void UseItPo_Health_04_Fast()
 
 instance ItPo_Mana_Addon_04(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ManaTrunk;
@@ -3224,7 +3219,7 @@ instance ItPo_Mana_Addon_04(C_Item)
 	on_state[0] = UseItPo_Mana_04;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Elixír čisté many";
+	description = " Pure Mana Elixir " ;
 	text[1] = NAME_BONUS_MANA_PROC_ELITE;
 	count[1] = 50;
 	text[5] = NAME_Value;
@@ -3236,7 +3231,7 @@ func void UseItPo_Mana_04()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
-		ReuseFlask_CZ(20);
+		ReuseFlask_CZ( 20 );
 
 		if(SBMode == TRUE)
 		{
@@ -3281,7 +3276,7 @@ func void UseItPo_Mana_04_Fast()
 
 instance ItPo_GuardiansElixir(C_Item)
 {
-	name = NAME_Trank;
+	name = NAME_potion;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -3290,7 +3285,7 @@ instance ItPo_GuardiansElixir(C_Item)
 	on_state[0] = Use_ItPo_GuardiansElixir;
 	scemeName = "POTION";
 	wear = WEAR_EFFECT;
-	description = "Elixír Strážce";
+	description = " Guardian Elixir " ;
 	text[1] = NAME_Prot_Magic;
 	count[1] = 5;
 	text[2] = NAME_Prot_Fire;
@@ -3312,7 +3307,7 @@ func void Use_ItPo_GuardiansElixir()
 	self.protection[PROT_FIRE] += 5;
 	REALPROTMAGIC += 5;
 	REALPROTFIRE += 5;
-	AI_Print("Ochrana proti ohni a magii + 5");
+	AI_Print( " Fire and Magic Protection + 5 " );
 };
 
 instance ItFo_AdanosWater(C_Item)
@@ -3326,7 +3321,7 @@ instance ItFo_AdanosWater(C_Item)
 	scemeName = "POTIONFAST";
 	on_state[0] = Use_ItFo_AdanosWater;
 	description = name;
-	text[4] = "Adanova svěcená voda...";
+	text[ 4 ] = " Adan's holy water... " ;
 	inv_animate = 1;
 };
 
@@ -3400,7 +3395,7 @@ func void Use_ItFo_AdanosWater_Fast()
 
 instance ItFo_Alcohol(C_Item)
 {
-	name = "Čistý alkohol";
+	name = " Pure alcohol " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 25;
@@ -3409,8 +3404,8 @@ instance ItFo_Alcohol(C_Item)
 	scemeName = "POTIONFAST";
 	on_state[0] = Use_ItFo_Alcohol;
 	description = name;
-	text[3] = "Odstraňuje účinky nemoci...";
-	text[4] = "Používán k přípravě lektvarů a elixírů...";
+	text[ 3 ] = " Removes the effects of the disease... " ;
+	text[ 4 ] = " Used to prepare potions and elixirs... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Booze;
 	inv_animate = 1;
@@ -3418,7 +3413,7 @@ instance ItFo_Alcohol(C_Item)
 
 func void Use_ItFo_Alcohol()
 {
-	var int rand;
+	be int rand;
 
 	if(Npc_IsPlayer(self))
 	{
@@ -3437,7 +3432,7 @@ func void Use_ItFo_Alcohol()
 	{
 		if(Npc_IsPlayer(self))
 		{
-			rand = Hlp_Random(2);
+			rand = Hlp_Random( 2 );
 
 			if(rand == FALSE)
 			{
@@ -3450,7 +3445,7 @@ func void Use_ItFo_Alcohol()
 		}
 		else
 		{
-			rand = Hlp_Random(2);
+			rand = Hlp_Random( 2 );
 
 			if(rand == FALSE)
 			{
@@ -3480,7 +3475,7 @@ func void Use_ItFo_Alcohol()
 
 func void Use_ItFo_Alcohol_Fast()
 {
-	var int rand;
+	be int rand;
 
 	Snd_Play3d(hero,"BOTTLE_OPEN");
 	Npc_ChangeAttribute(hero,ATR_HITPOINTS,-10);
@@ -3495,7 +3490,7 @@ func void Use_ItFo_Alcohol_Fast()
 
 instance ItMi_HolyWater(C_Item)
 {
-	name = "Svěcená voda";
+	name = " Holy Water " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_HolyWater;
@@ -3504,8 +3499,8 @@ instance ItMi_HolyWater(C_Item)
 	scemeName = "POTIONFAST";
 	material = MAT_GLAS;
 	description = name;
-	text[3] = "Mírně zahání únavu...";
-	text[4] = "Odstraňuje účinky prokletí...";
+	text[ 3 ] = " Slightly banishes fatigue... " ;
+	text[ 4 ] = " Removes the effects of the curse... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -3606,15 +3601,15 @@ func void B_Hotkey_Health_Potion()
 		}
 		else if(RestoreHealth == TRUE)
 		{
-			AI_Print("Už jsi vypil lektvar hojivé síly...");
+			AI_Print( " You have already drunk the healing power potion... " );
 		}
 		else if(hero.attribute[ATR_HITPOINTS_MAX] == hero.attribute[ATR_HITPOINTS])
 		{
-			AI_Print("Máš plné zdraví!");
+			AI_Print( " You have full health! " );
 		}
 		else
 		{
-			AI_Print("Nemáš žádný lektvar hojivé síly...");
+			AI_Print( " You have no potion of healing power... " );
 		};
 	};
 };
@@ -3655,15 +3650,15 @@ func void B_Hotkey_Mana_Potion()
 		}
 		else if(RestoreMana == TRUE)
 		{
-			AI_Print("Už jsi vypil lektvar many...");
+			AI_Print( " You already drank the mana potion... " );
 		}
 		else if(hero.attribute[ATR_MANA_MAX] == hero.attribute[ATR_MANA])
 		{
-			AI_Print("Máš plnou zásobu many!");
+			AI_Print( " You have full mana! " );
 		}
 		else
 		{
-			AI_Print("Nemáš žádný lektvar many...");
+			AI_Print( " You have no mana potion... " );
 		};
 	};
 };
@@ -3680,11 +3675,11 @@ func void B_Hotkey_Stamina_Potion()
 		}
 		else if(ATR_STAMINA[0] >= ATR_STAMINA_MAX[0] * 10)
 		{
-			AI_Print("Máš plnou výdrž!");
+			AI_Print( " You have full stamina! " );
 		}
 		else
 		{
-			AI_Print("Nemáš žádný lektvar výdrže...");
+			AI_Print( " You have no stamina potion... " );
 		};
 	};
 };
@@ -3711,7 +3706,7 @@ func void B_Hotkey_UnPoison_Potion()
 			}
 			else
 			{
-				AI_Print("Nemáš žádný protijed...");
+				AI_Print( " You have no antidote... " );
 			};
 		}
 		else if(PlayerIsSick == TRUE)
@@ -3732,7 +3727,7 @@ func void B_Hotkey_UnPoison_Potion()
 			}
 			else
 			{
-				AI_Print("Nemáš žádný čistý alkohol...");
+				AI_Print( " You have no pure alcohol... " );
 			};
 		}
 		else if(PlayerIsCurse == TRUE)
@@ -3753,12 +3748,12 @@ func void B_Hotkey_UnPoison_Potion()
 			}
 			else
 			{
-				AI_Print("Nemáš žádnou svěcenou vodu...");
+				AI_Print( " You have no holy water... " );
 			};
 		}
 		else
 		{
-			AI_Print("Netrpíš žádnými oslabujícími účinky...");
+			AI_Print( " You don't suffer from any debilitating effects... " );
 		};		
 	};
 };
