@@ -1,11 +1,12 @@
+
 /***********************************\
-              TRIALOGE
+              TRIALOGUE
 \***********************************/
 
 //========================================
-// EquipWeapon von Sektenspinner
-//  Wer diese Funktion schon besitzt kann
-//  sie hier einfach auskommentieren
+// EquipWeapon by Sect Spinner
+//   Who already owns this function can
+//   just comment them out here
 //========================================
 /* EquipWeapon_TogglesEquip configure the behaviour
    when trying to equip an already equipped weapon:
@@ -43,7 +44,7 @@ func void EquipWeapon (var C_NPC slf, var int ItemInst) {
 };
 
 //========================================
-// Hilfsfunktionen
+// helper functions
 //========================================
 func int Npc_GetArmor(var c_npc slf) {
     if(!Npc_HasEquippedArmor(slf)) { return -1; };
@@ -62,16 +63,16 @@ func int Npc_GetRangedWeapon(var c_npc slf) {
 };
 
 //========================================
-// Userkonstanten
+// User constants
 //========================================
 
-const int TRIA_MaxNPC = 256; // Wie viele Npcs nehmen maximal an einem Trialog teil?
+const  int TRIA_MaxNPC = 256 ; // What is the maximum number of Npcs that take part in a trialogue?
 
 //========================================
-// Dialogkamera neu einstellen
+// Readjust dialog camera
 //========================================
 func void DiaCAM_Update() {
-    // Diese Funktion wurde von Sektenspinner niedergeschrieben.
+    // This function was written by Sect Spinner.
     if(InfoManager_HasFinished()) { return; };
     var int aiCam; aiCam = MEM_ReadInt(zCAICamera__current);
     CALL_IntParam(1);
@@ -79,15 +80,15 @@ func void DiaCAM_Update() {
 };
 
 //========================================
-// Dialogkamera abschalten
+// Turn off dialogue camera
 //========================================
 func void DiaCAM_Disable() {
     MemoryProtectionOverride(zCAICamera__StartDialogCam, 4);
-    MEM_WriteInt(zCAICamera__StartDialogCam, 268436674); // retn 4
+    MEM_WriteInt(zCAICamera__StartDialogCam, 268436674 ); // return 4
 };
 
 //========================================
-// Dialogkamera einschalten
+// Turn on dialog camera
 //========================================
 func void DiaCAM_Enable() {
     MemoryProtectionOverride(zCAICamera__StartDialogCam, 4);
@@ -96,18 +97,18 @@ func void DiaCAM_Enable() {
 
 
 //========================================
-// [intern] Variablen
+// [internal] variables
 //========================================
-var int TRIA_NpcPtr[TRIA_MaxNPC]; // Sammlung aller Teilnehmer
-var int TRIA_Running;             // Läuft ein Trialog?
-var int TRIA_CPtr;                // Zähler für die Sammlung
-var int TRIA_Last;                // Der Npc der zuletzt gesprochen hat
-var int TRIA_Self;                // Pointer auf self
-var string TRIA_Camera;           // Läuft eine Kamerafahrt?
+var int TRIA_NpcPtr[TRIA_MaxNPC]; // Collection of all participants
+var int TRIA_Running;             // Is a trialogue running?
+var int TRIA_CPtr;                // Counter for the collection
+var int TRIA_Last;                // The Npc who spoke last
+var int TRIA_Self;                // Pointer to self
+var string TRIA_Camera;           // Is a tracking shot running?
 
 func void ZS_TRIA() {};
 func int ZS_TRIA_Loop() {
-    if (InfoManager_hasFinished()) { // Im Zustand bleiben bis Dialog fertig
+    if (InfoManager_hasFinished()) { // Stay in state until dialog is finished
         return LOOP_END;
     } else {
         return LOOP_CONTINUE;
@@ -115,7 +116,7 @@ func int ZS_TRIA_Loop() {
 };
 
 //========================================
-// Npcs aufeinander warten lassen
+// Make npcs wait for each other
 //========================================
 func void TRIA_Wait() {
     AI_WaitTillEnd(hero, self);
@@ -124,7 +125,7 @@ func void TRIA_Wait() {
 };
 
 //========================================
-// [intern] Visuals aktualisieren
+// [internal] update visuals
 //========================================
 func void _TRIA_UpdateVisual(var c_npc slf, var int armor) {
     var oCNpc npc; npc = Hlp_GetNpc(slf);
@@ -141,7 +142,7 @@ func void _TRIA_UpdateVisual(var c_npc slf, var int armor) {
 };
 
 //========================================
-// Angelegte Waffe tauschen
+// Swap equipped weapon
 //========================================
 func void Npc_TradeItem(var c_npc slf, var int itm0, var int itm1) {
     if(itm0) {
@@ -155,7 +156,7 @@ func void Npc_TradeItem(var c_npc slf, var int itm0, var int itm1) {
 };
 
 //========================================
-// [intern] Npcs kopieren
+// [internal] copy npcs
 //========================================
 class _TRIA_fltWrapper {
     var float f0;
@@ -177,11 +178,11 @@ func void _TRIA_Copy(var int n0, var int n1) {
     var int a1; a1 = Npc_GetArmor(np1);
     var _TRIA_fltWrapper fn0; fn0 = MEM_PtrToInst(_@(onp0.model_scale));
     var _TRIA_fltWrapper fn1; fn1 = MEM_PtrToInst(_@(onp1.model_scale));
-    MEM_SwapBytes(n0+60,                       n1+60,                      64);                          // trafo
+    MEM_SwapBytes(n0 + 60 , n1 + 60 ,                       64 );                          // traffic
     MEM_SwapBytes(n0+MEM_NpcName_Offset,       n1+MEM_NpcName_Offset,      MEMINT_SwitchG1G2(272, 312)); // name, voice
     MEM_SwapBytes(_@(onp0.bitfield),           _@(onp1.bitfield),          20);                          // bitfield
     MEM_SwapBytes(_@s(onp0.mds_name),          _@s(onp1.mds_name),         76);                          // visuals
-	MEM_SwapBytes(_@(onp0._zCVob_bitfield),    _@(onp1._zCVob_bitfield),   20);                          // vob bitfield
+	MEM_SwapBytes(_@(onp0._zCVob_bitfield), _@(onp1._zCVob_bitfield),    20 );                          // vob bitfield
 	MEM_SwapBytes(_@(onp0._zCVob_visualAlpha), _@(onp1._zCVob_visualAlpha), 4);
     MEM_SwapBytes(_@(onp0.protection),         _@(onp1.protection),        32);                          // protection
     Mdl_SetModelScale(np0, fn0.f0, fn0.f1, fn0.f2);
@@ -203,7 +204,7 @@ func void _TRIA_Copy(var int n0, var int n1) {
 };
 
 //========================================
-// [intern] Kopieren.
+// [internal] Copy.
 //========================================
 func void _TRIA_CopyNpc(var int slf) {
     if(slf == TRIA_Last) {
@@ -223,7 +224,7 @@ func void _TRIA_CopyNpc(var int slf) {
 };
 
 //========================================
-// [intern] Npcs einstellen
+// [internal] set npcs
 //========================================
 func void _TRIA_InitNPC(var c_npc slf) {
     Npc_ClearAIQueue(slf);
@@ -236,26 +237,26 @@ func void _TRIA_InitNPC(var c_npc slf) {
 };
 
 //========================================
-// Npc in das Gespräch einladen
+// Invite Npc into the conversation
 //========================================
 func void TRIA_Invite(var c_npc slf) {
     if(TRIA_Running) {
-        MEM_Warn("TRIA_Invite: Der Trialog läuft bereits.");
+        MEM_Warn( " TRIA_Invite: The trialogue is already running. " );
         return;
     };
     if(TRIA_CPtr == TRIA_MaxNPC) {
-        MEM_Error("TRIA_Invite: Zu viele Npcs. Erhöhe bitte TRIA_MaxNPC.");
+        MEM_Error( " TRIA_Invite: Too many Npcs. Please increase TRIA_MaxNPC. " );
         return;
     };
     if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(hero)
     || Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(self)) {
-        MEM_Warn("TRIA_Invite: Der Held und/oder Self können nicht eingeladen werden. Sie sind bereits anwesend.");
+        MEM_Warn( " TRIA_Invite: The hero and/or self cannot be invited. They are already present. " );
         return;
     };
     if((Npc_GetDistToNpc(slf, hero) > truncf(MEM_ReadInt(SPAWN_INSERTRANGE_Address)))
     || (Npc_IsDead(slf))
-    || (!Hlp_IsValidNpc(slf))) {
-        MEM_Error(ConcatStrings("TRIA_Invite: Der Npc ist nicht in der KI-Glocke und/oder tot: ", slf.name));
+    || ( ! Hlp_IsValidNpc(slf))) {
+        MEM_Error(ConcatStrings( " TRIA_Invite: The npc is not in the AI ​​bell and/or dead: " , slf.name));
         return;
     };
     MEM_WriteStatArr(TRIA_NpcPtr, TRIA_CPtr, MEM_InstToPtr(slf));
@@ -263,11 +264,11 @@ func void TRIA_Invite(var c_npc slf) {
 };
 
 //========================================
-// Trialog starten
+// Start trialogue
 //========================================
 func void TRIA_Start() {
     if(TRIA_Running) {
-        MEM_Warn("TRIA_Start: Es läuft bereits ein Trialog.");
+        MEM_Warn( " TRIA_Start: A trialogue is already running. " );
         return;
     };
     var int i; i = 0;
@@ -279,7 +280,7 @@ func void TRIA_Start() {
         MEM_StackPos.position = p;
     };
 
-    // Npc_ClearAIQueue(self); //Mit diesem Befehl beendet sich der Dialog nicht richtig, daher auskommentiert. Ich habe Angst, dass ich irgendwas anderes kaputt gemacht habe, aber bisher konnte ich keine Probleme feststellen.
+    // Npc_ClearAIQueue(self); //This command doesn't end the dialog properly, so commented out. I'm afraid I've broken something else, but so far I haven't encountered any problems.
     Npc_ClearAIQueue(hero);
     Ai_Output(hero,self,"");
 
@@ -294,17 +295,17 @@ func void TRIA_Start() {
 };
 
 //========================================
-// Alle Npcs aufeinander warten lassen
+// Make all npcs wait for each other
 //========================================
 func void TRIA_Barrier() {
     if(!TRIA_Running) {
-        MEM_Warn("TRIA_Next: Kein Trialog gestartet.");
+        MEM_Warn( " TRIA_Next: No trialogue started. " );
         return;
     };
     TRIA_Wait();
     var int i; i = !1;
-    var int j; j = 0;
-    var c_npc last; last = MEM_PtrToInst(MEM_ReadStatArr(TRIA_NpcPtr, TRIA_CPtr)); // Ist immer self, aber so ist es verständlicher
+    var int j; j = 0 ;
+    var c_npc last; last = MEM_PtrToInst(MEM_ReadStatArr(TRIA_NpcPtr, TRIA_CPtr)); // Is always self, but it's easier to understand this way
     var int p; p = MEM_StackPos.position;
     if(i < TRIA_CPtr) {
         var c_npc curr; curr = MEM_PtrToInst(MEM_ReadStatArr(TRIA_NpcPtr, i));
@@ -320,15 +321,15 @@ func void TRIA_Barrier() {
 };
 
 //========================================
-// Den nächsten Npc als "self" setzen
+// Set the next npc as "self".
 //========================================
 func void TRIA_Next(var c_npc n0) {
     if(!TRIA_Running) {
-        MEM_Warn("TRIA_Next: Kein Trialog gestartet.");
+        MEM_Warn( " TRIA_Next: No trialogue started. " );
         return;
     };
     if(Hlp_GetInstanceID(n0) == Hlp_GetInstanceID(hero)) {
-        MEM_Warn("TRIA_Next: 'hero' ist kein erlaubter Parameter für diese Funktion.");
+        MEM_Warn( " TRIA_Next: 'hero' is not a valid parameter for this function. " );
         return;
     };
 
@@ -342,7 +343,7 @@ func void TRIA_Next(var c_npc n0) {
         };
     };
     if(i == TRIA_CPtr) {
-        MEM_Error(ConcatStrings("TRIA_Next: Der Npc ist nicht eingeladen worden: ", n0.name));
+        MEM_Error(ConcatStrings( " TRIA_Next: The npc has not been invited: " , n0.name));
         return;
     };
 
@@ -354,7 +355,7 @@ func void _TRIA_Next(var int n0) {
 };
 
 //========================================
-// Kamerafahrt starten
+// Start tracking shot
 //========================================
 func void TRIA_Cam(var string evt) {
     TRIA_Wait();
@@ -372,20 +373,20 @@ func void TRIA_Cam(var string evt) {
 };
 func void _TRIA_Cam(var string evt) {
     DiaCAM_Disable();
-    Wld_SendTrigger(evt);
+    Wld_SendTrigger(event);
 };
 func void _TRIA_Uncam(var string evt) {
     DiaCAM_Enable();
     DiaCAM_Update();
-    Wld_SendUntrigger(evt);
+    Wld_SendUntrigger(possibly);
 };
 
 //========================================
-// Trialog abschließen
+// Complete the trialogue
 //========================================
 func void TRIA_Finish() {
     if(!TRIA_Running) {
-        MEM_Warn("TRIA_Finish: Kein Trialog gestartet.");
+        MEM_Warn( " TRIA_Finish: No trialogue started. " );
         return;
     };
     TRIA_Wait();
