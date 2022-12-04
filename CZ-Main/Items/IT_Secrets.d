@@ -1,12 +1,10 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-func void Use_ItMi_VatrasPurse - zamezeno nesplnitelnosti úkolu
-func void GoldPocket100 - upraven nalezený objem zlata (75 -> 100)
-
+func void Use_ItMi_VatrasPurse - prevented from not completing the task
+func void GoldPocket100 - adjusted amount of gold found (75 -> 100)
 */
 
 
@@ -47,7 +45,7 @@ instance ItMi_Addon_Shell_01(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -58,7 +56,7 @@ func void Use_Shell_01()
 
 instance ItMi_Addon_Shell_02(C_Item)
 {
-	name = "Mušle ve tvaru rohu";
+	name = " Horn Shaped Shell " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Shell_02;
@@ -70,7 +68,7 @@ instance ItMi_Addon_Shell_02(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD ;
 	inv_animate = 1;
 };
 
@@ -81,7 +79,7 @@ func void Use_Shell_02()
 
 instance ItSe_ErzFisch(C_Item)
 {
-	name = "Kulatá ryba";
+	name = " Round Fish " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -90,7 +88,7 @@ instance ItSe_ErzFisch(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_ErzFisch;
 	description = name;
-	text[4] = "V této rybě je cosi ukryto...";
+	text[ 4 ] = " There is something hidden in this fish... " ;
 	inv_animate = 1;
 };
 
@@ -103,13 +101,13 @@ func void Use_ErzFisch()
 	else
 	{
 		B_Say(self,self,"$NOTHINGTOGET02");
-		AI_Print("Uvnitř nic není...");
+		AI_Print( " There is nothing inside... " );
 	};
 };
 
-instance ItSe_GoldFisch(C_Item)
+instance ItSe_GoldFisch (C_Item)
 {
-	name = "Těžká ryba";
+	name = " Heavy Fish " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -118,12 +116,12 @@ instance ItSe_GoldFisch(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_GoldFisch;
 	description = name;
-	text[4] = "V této rybě je cosi ukryto...";
+	text[ 4 ] = " There is something hidden in this fish... " ;
 	inv_animate = 1;
 };
 
 
-func void Use_GoldFisch()
+func void Use_GoldFish()
 {
 	if(BELIARCURSEYOU == FALSE)
 	{
@@ -132,14 +130,14 @@ func void Use_GoldFisch()
 	else
 	{
 		B_Say(self,self,"$NOTHINGTOGET02");
-		AI_Print("Uvnitř nic není...");
+		AI_Print( " There is nothing inside... " );
 	};
 };
 
 
-instance ItSe_Ringfisch(C_Item)
+instance ItSe_Ringfisch (C_Item)
 {
-	name = "Malá ryba";
+	name = " Small fish " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -148,7 +146,7 @@ instance ItSe_Ringfisch(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_Ringfisch;
 	description = name;
-	text[4] = "V této rybě je cosi ukryto...";
+	text[ 4 ] = " There is something hidden in this fish... " ;
 	inv_animate = 1;
 };
 
@@ -162,14 +160,14 @@ func void Use_Ringfisch()
 	else
 	{
 		B_Say(self,self,"$NOTHINGTOGET02");
-		AI_Print("Uvnitř nic není...");
+		AI_Print( " There is nothing inside... " );
 	};
 };
 
 
-instance ItSe_LockpickFisch(C_Item)
+instance ItSe_LockpickFisch (C_Item)
 {
-	name = "Lehká ryba";
+	name = " Light Fish " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -178,7 +176,7 @@ instance ItSe_LockpickFisch(C_Item)
 	scemeName = "MAPSEALED";
 	on_state[0] = Use_LockpickFisch;
 	description = name;
-	text[4] = "V této rybě je cosi ukryto...";
+	text[ 4 ] = " There is something hidden in this fish... " ;
 	inv_animate = 1;
 };
 
@@ -192,13 +190,13 @@ func void Use_LockpickFisch()
 	else
 	{
 		B_Say(self,self,"$NOTHINGTOGET02");
-		AI_Print("Uvnitř nic není...");
+		AI_Print( " There is nothing inside... " );
 	};
 };
 
 instance ItMi_PocketFingers(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -206,8 +204,8 @@ instance ItMi_PocketFingers(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItMi_PocketFingers;
-	description = "Fingersův měšec";
-	text[4] = "Měšec přesmíru nacpaný zlatem...";
+	description = " Fingers' Scrotum " ;
+	text[ 4 ] = " Overworld bag stuffed with gold... " ;
 	inv_animate = 1;
 };
 
@@ -218,7 +216,7 @@ func void Use_ItMi_PocketFingers()
 
 instance ItMi_VatrasPurse(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -226,8 +224,8 @@ instance ItMi_VatrasPurse(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItMi_VatrasPurse;
-	description = "Vatrasův měšec";
-	text[4] = "Měšec přesmíru nacpaný zlatem...";
+	description = " Vatras's pouch " ;
+	text[ 4 ] = " Overworld bag stuffed with gold... " ;
 	inv_animate = 1;
 };
 
@@ -244,7 +242,7 @@ func void Use_ItMi_VatrasPurse()
 
 instance ItMi_HaniarPurse(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -252,9 +250,9 @@ instance ItMi_HaniarPurse(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItMi_HaniarPurse;
-	description = "Haniarův měšec";
-	text[3] = "Měšec přesmíru nacpaný zlatem...";
-	text[4] = "Na měšci je vyšitý symbol vidoucího oka...";
+	description = " Haniar's pouch " ;
+	text[ 3 ] = " Overworld bag stuffed with gold... " ;
+	text[ 4 ] = " On the pouch is embroidered the symbol of the seeing eye... " ;
 	inv_animate = 1;
 };
 
@@ -266,7 +264,7 @@ func void Use_ItMi_HaniarPurse()
 
 instance ItMi_PurseOsair(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -274,9 +272,9 @@ instance ItMi_PurseOsair(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItMi_OsairPurse;
-	description = "Osairův měšec";
-	text[3] = "Měšec přesmíru nacpaný zlatem...";
-	text[4] = "Na měšci je vyšitý symbol okovů pro otroky...";
+	description = " Osair's pouch " ;
+	text[ 3 ] = " Overworld bag stuffed with gold... " ;
+	text[ 4 ] = " On the pouch is embroidered a symbol of shackles for slaves... " ;
 	inv_animate = 1;
 };
 
@@ -288,7 +286,7 @@ func void Use_ItMi_OsairPurse()
 
 instance ItSe_GoldPocket25(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -296,8 +294,8 @@ instance ItSe_GoldPocket25(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = GoldPocket25;
-	description = "Měšec";
-	text[4] = "V měšci cinká několik mincí...";
+	description = " Month " ;
+	text[ 4 ] = " Several coins jingle in the purse... " ;
 	inv_animate = 1;
 };
 
@@ -313,21 +311,21 @@ func void GoldPocket25()
 	else
 	{
 		B_Say(self,self,"$NOTHINGTOGET02");
-		AI_Print("Uvnitř nic není...");
+		AI_Print( " There is nothing inside... " );
 	};
 };
 
 instance ITSE_LANZPOCKET(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ITMI_POCKET_SMALL.3ds";
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = use_itse_lanzpocket;
-	description = "Glantzův měšec";
+	on_state[ 0 ] = use_itself_lanzpocket;
+	description = " Glantz's Scrotum " ;
 	text[4] = "";
 	inv_animate = 1;
 };
@@ -340,7 +338,7 @@ func void use_itse_lanzpocket()
 
 instance ItSe_GoldPocket50(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -348,8 +346,8 @@ instance ItSe_GoldPocket50(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = GoldPocket50;
-	description = "Měšec";
-	text[4] = "Těžký měšec plný zlatých mincí...";
+	description = " Month " ;
+	text[ 4 ] = " A heavy purse full of gold coins... " ;
 	inv_animate = 1;
 };
 
@@ -365,14 +363,14 @@ func void GoldPocket50()
 	else
 	{
 		B_Say(self,self,"$NOTHINGTOGET02");
-		AI_Print("Uvnitř nic není...");
+		AI_Print( " There is nothing inside... " );
 	};
 };
 
 
 instance ItSe_GoldPocket100(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -380,8 +378,8 @@ instance ItSe_GoldPocket100(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = GoldPocket100;
-	description = "Měšec";
-	text[4] = "Pořádně těžký měšec, naditý mincemi...";
+	description = " Month " ;
+	text[ 4 ] = " Quite a heavy purse, stuffed with coins... " ;
 	inv_animate = 1;
 };
 
@@ -398,13 +396,13 @@ func void GoldPocket100()
 	else
 	{
 		B_Say(self,self,"$NOTHINGTOGET02");
-		AI_Print("Uvnitř nic není...");
+		AI_Print( " There is nothing inside... " );
 	};
 };
 
 instance ItSe_GoldPocket100_Ignaz(C_Item)
 {
-	name = "Ignazův měšec";
+	name = " Ignaz's scrotum " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -412,8 +410,8 @@ instance ItSe_GoldPocket100_Ignaz(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = GoldPocket100_Ignaz;
-	description = "Měšec";
-	text[4] = "Pořádně těžký měšec, naditý mincemi...";
+	description = " Month " ;
+	text[ 4 ] = " Quite a heavy purse, stuffed with coins... " ;
 	inv_animate = 1;
 };
 
@@ -424,7 +422,7 @@ func void GoldPocket100_Ignaz()
 
 instance ITSE_GERBRANDPOCKET(C_Item)
 {
-	name = "Gerbrandtův měšec";
+	name = " Gerbrandt's Scrotum " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -433,7 +431,7 @@ instance ITSE_GERBRANDPOCKET(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_itse_gerbrandpocket;
 	description = name;
-	text[4] = "Pořádně těžký měšec, naditý mincemi...";
+	text[ 4 ] = " Quite a heavy purse, stuffed with coins... " ;
 	inv_animate = 1;
 };
 
@@ -446,7 +444,7 @@ func void use_itse_gerbrandpocket()
 
 instance ITSE_NIGELPOCKET(C_Item)
 {
-	name = "Nigelův měšec";
+	name = " Nigel's Scrotum " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 2000;
@@ -455,7 +453,7 @@ instance ITSE_NIGELPOCKET(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_itse_nigelpocket;
 	description = name;
-	text[4] = "Výjimečně těžký měšec, naditý mincemi...";
+	text[ 4 ] = " An exceptionally heavy pouch, stuffed with coins... " ;
 	inv_animate = 1;
 };
 
@@ -474,16 +472,16 @@ func void use_itse_nigelpocket()
 
 instance ITSE_TALIASANPOCKET(C_Item)
 {
-	name = "Gallahadův měšec";
+	name = " Gallahad's Pouch " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ITMI_POCKET_BIG.3ds";
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = use_itse_taliasanpocket;
+	on_state[ 0 ] = use_itself_taliasanpocket;
 	description = name;
-	text[4] = "Pořádně těžký měšec, naditý mincemi...";
+	text[ 4 ] = " Quite a heavy purse, stuffed with coins... " ;
 	inv_animate = 1;
 };
 
@@ -496,16 +494,16 @@ func void use_itse_taliasanpocket()
 
 instance ItSe_HannasBeutel(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ITMI_POCKET_SMALL.3ds";
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = HannasBeutel;
-	description = "Měšec";
-	text[4] = "Tenhle měšec mi dala Hanna, majitelka hotelu...";
+	on_state[ 0 ] = HannasBeutel;
+	description = " Month " ;
+	text[ 4 ] = " This purse was given to me by Hanna, the owner of the hotel... " ;
 	inv_animate = 1;
 };
 
@@ -520,7 +518,7 @@ func void HannasBeutel()
 
 instance ITSE_LUTTEROBIGPOCKET(C_Item)
 {
-	name = "Luterův měšec";
+	name = " Luter's Pouch " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -528,9 +526,9 @@ instance ITSE_LUTTEROBIGPOCKET(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = goldpocket2500;
-	description = "Luterův měšec";
-	text[3] = "Měšec vrchovatě naplněný zlatými mincemi...";
-	text[4] = "Lutero mi ho dal jako příspěvek cechu na obchod se Zurisem...";
+	description = " Luter's pouch " ;
+	text[ 3 ] = " A purse overflowing with gold coins... " ;
+	text[ 4 ] = " Lutero gave it to me as a guild contribution for trading with Zuris... " ;
 	inv_animate = 1;
 };
 
@@ -542,7 +540,7 @@ func void goldpocket2500()
 
 instance ItSe_Weapon_Sack(C_Item)
 {	
-	name	= "Balík zbraní";
+	name = " Weapon Pack " ;
 	mainflag =	ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -551,24 +549,24 @@ instance ItSe_Weapon_Sack(C_Item)
 	scemeName	= "MAPSEALED";
 	on_state[0] = Use_Weapon_Sack;
 	description = name;
-	text[4] = "Velký kožený pytel plný zbraní...";	
+	text[ 4 ] = " A large leather bag full of weapons... " ;	
 	inv_animate = 1;	
 };
 
 func void Use_Weapon_Sack()
 {
-	AI_Print("Našel jsi mnoho různých zbraní..."); 
+	AI_Print( " You found many different weapons... " );
 	CreateInvItems (self,ItMw_1H_Mace_L_03,1);
 	CreateInvItems (self,ItMw_1H_Vlk_Sword,2);
 	CreateInvItems (self,ItMw_1H_Vlk_Dagger,3);
-	CreateInvItems (self,ItMw_Schwert4,1);
+	CreateInvItems (self,ItMw_Schwert4, 1 );
 	CreateInvItems (self,ItMw_2H_Sld_Sword,1);
 	CreateInvItems (self,ItMw_Shortsword3,2);
 };
 
 instance ItSe_Arrow_Sack(C_Item)
 {	
-	name	= "Toulec se šípy";
+	name = " Quiver with arrows " ;
 	mainflag =	ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -577,7 +575,7 @@ instance ItSe_Arrow_Sack(C_Item)
 	scemeName	= "MAPSEALED";
 	on_state[0] = Use_Arrow_Sack;
 	description = name;
-	text[4] = "Velký kožený toulec plný šípů...";		
+	text[ 4 ] = " A large leather quiver full of arrows... " ;		
 	inv_animate = 1;
 };
 
@@ -585,65 +583,65 @@ func void Use_Arrow_Sack()
 {
 	var int Rnd_Arrow;
 
-	AI_Print("Našel jsi několik šípů..."); 
+	AI_Print( " You found some arrows... " );
 	Rnd_Arrow = 20;
 	CreateInvItems(self,ItRw_Arrow,Rnd_Arrow);
 };
 
 instance ItSe_GOLDSTACK(C_Item)
 {
-	name = "Zlaté mince";
+	name = " Gold Coins " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 50;
 	visual = "ITMI_KARIBIK_GOLDHAUFEN.3ds";
 	scemeName = "MAPSEALED";
 	material = MAT_METAL;
-	on_state[0] = Use_ITMI_KARIBIK_GOLDHAUFEN;
+	on_state[ 0 ] = Use_ITMI_CARIBBEAN_GOLD PILE;
 	description = name;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-func void Use_ITMI_KARIBIK_GOLDHAUFEN()
+func void Use_ITMI_CARIBBEAN_GOLDPIECE()
 {
 	B_PlayerFindItem(ItMi_Gold,50);
 };
 
 instance ItSl_GoldPocket(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ItSl_GoldPocket.3ds";
 	material = MAT_LEATHER;
-	description = "Měšec";
+	description = " Month " ;
 	inv_animate = 1;
 };
 
 instance ItSl_GoldPocket_Woman(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ItSl_GoldPocket_Woman.3ds";
 	material = MAT_LEATHER;
-	description = "Měšec";
+	description = " Month " ;
 	inv_animate = 1;
 };
 
 instance ItSl_GoldPocket_Woman_New(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ItSl_GoldPocket_Woman_New.3ds";
 	material = MAT_LEATHER;
-	description = "Měšec";
+	description = " Month " ;
 	inv_animate = 1;
 };
 
@@ -661,7 +659,7 @@ instance ItSl_HeroBags(C_Item)
 
 instance ItSl_CraitBag(C_Item)
 {
-	name = "Sedlová brašna";
+	name = " Saddlebag " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -673,19 +671,19 @@ instance ItSl_CraitBag(C_Item)
 
 instance ItSl_HeroPocket(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ItSl_GoldPocket.3ds";
 	material = MAT_LEATHER;
-	description = "Měšec";
+	description = " Month " ;
 	inv_animate = 1;
 };
 
 instance ItSl_GoldPocket_None(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -693,8 +691,8 @@ instance ItSl_GoldPocket_None(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItSl_GoldPocket_None;
-	description = "Měšec";
-	text[4] = "V měšci cinká několik mincí...";
+	description = " Month " ;
+	text[ 4 ] = " Several coins jingle in the purse... " ;
 	inv_animate = 1;
 };
 
@@ -708,7 +706,7 @@ func void Use_ItSl_GoldPocket_None()
 
 instance ItSl_GoldPocket_Low(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -716,8 +714,8 @@ instance ItSl_GoldPocket_Low(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItSl_GoldPocket_Low;
-	description = "Měšec";
-	text[4] = "V měšci cinká několik mincí...";
+	description = " Month " ;
+	text[ 4 ] = " Several coins jingle in the purse... " ;
 	inv_animate = 1;
 };
 
@@ -731,7 +729,7 @@ func void Use_ItSl_GoldPocket_Low()
 
 instance ItSl_GoldPocket_Medium(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -739,8 +737,8 @@ instance ItSl_GoldPocket_Medium(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItSl_GoldPocket_Medium;
-	description = "Měšec";
-	text[4] = "Těžký měšec plný zlatých mincí...";
+	description = " Month " ;
+	text[ 4 ] = " A heavy purse full of gold coins... " ;
 	inv_animate = 1;
 };
 
@@ -754,7 +752,7 @@ func void Use_ItSl_GoldPocket_Medium()
 
 instance ItSl_GoldPocket_Full(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -762,8 +760,8 @@ instance ItSl_GoldPocket_Full(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItSl_GoldPocket_Full;
-	description = "Měšec";
-	text[4] = "Pořádně těžký měšec, naditý mincemi...";
+	description = " Month " ;
+	text[ 4 ] = " Quite a heavy purse, stuffed with coins... " ;
 	inv_animate = 1;
 };
 
@@ -777,38 +775,38 @@ func void Use_ItSl_GoldPocket_Full()
 
 instance Itar_Avabul_Wings(C_Item)
 {
-	name = "Avabulina křídla";
+	name = " Avabula's Wings " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "Itar_Avabul_Wings.3DS";
 	material = MAT_LEATHER;
-	description = "Avabulina křídla";
+	description = " Avabula's Wings " ;
 	inv_animate = 1;
 };
 
 instance Itar_Ghost_Candle(C_Item)
 {
-	name = "Přízračná lucerna";
+	name = " Ghost Lantern " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ITMI_GHOST_CANDLE_01.3DS";
 	effect = "SPELLFX_GHOST_CANDLE";
 	material = MAT_LEATHER;
-	description = "Přízračná lucerna";
+	description = " Ghost Lantern " ;
 	inv_animate = 1;
 };
 
 instance ITMI_GHOST_TORCH_01(C_Item)
 {
-	name = "Přízračná pochodeň";
+	name = " Ghost Torch " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ITMI_GHOST_TORCH_01.3DS";
 	effect = "SPELLFX_GHOST_TORCH";
 	material = MAT_LEATHER;
-	description = "Přízračná pochodeň";
+	description = " Ghost Torch " ;
 	inv_animate = 1;
 };
