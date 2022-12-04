@@ -1,11 +1,12 @@
 
+
 instance INFO_OUT_17_QUEST3(C_Info)
 {
 	nr = 4;
 	condition = info_out_17_quest3_condition;
 	information = info_out_17_quest3_info;
 	permanent = TRUE;
-	description = "Je všechno v pořádku?";
+	description = " Is everything okay? " ;
 };
 
 
@@ -16,8 +17,8 @@ func int info_out_17_quest3_condition()
 
 func void info_out_17_quest3_info()
 {
-	AI_Output(other,self,"Info_Out_17_Quest3_01_00");	//Je všechno v pořádku?
-	AI_Output(self,other,"Info_Out_17_Quest3_01_01");	//Jo, naprosto. Stejně jako před 20 lety. Od té doby se toho moc nezměnilo.
+	AI_Output(other,self, " Info_Out_17_Quest3_01_00 " );	// Is everything ok?
+	AI_Output(self,other, " Info_Out_17_Quest3_01_01 " );	// Yeah, absolutely. Just like 20 years ago. Not much has changed since then.
 };
 
 func void b_assignambientinfos_out_17(var C_Npc slf)
