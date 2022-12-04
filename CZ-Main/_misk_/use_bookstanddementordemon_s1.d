@@ -1,11 +1,9 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
 (12x) RhetorikSkillValue - opraveno navýšení rétoriky nad maximum
-
 */
 
 
@@ -52,7 +50,7 @@ func void Use_BookstandDementor_S1()
 		}
 		else
 		{
-			randomtext = Hlp_Random(5);
+			randomtext = Hlp_Random( 5 );
 
 			if(randomtext == 0)
 			{
@@ -63,14 +61,14 @@ func void Use_BookstandDementor_S1()
 				Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 				Doc_SetMargins(nDocID,0,275,20,30,20,1);
 				Doc_PrintLine(nDocID,0,"");
-				Doc_PrintLines(nDocID,0,"Tvé střechy jsou postavené z mrtvého dřeva. Tvé stěny jsou postavené z mrtvého kamene. Tvé sny jsou zložené z mrtvých myšlenek.");
-				Doc_PrintLines(nDocID,0,"No oni vrátí se křičíce, smějíce, pějíce, vrátí se k životu, vezmou, cos ukradl, s vřískotem stáhnou kůži z tvých mrtvých kostí.");
+				Doc_PrintLines(nDocID, 0 , " Your roofs are built of dead wood. Your walls are built of dead stone. Your dreams are made of dead thoughts. " );
+				Doc_PrintLines(nDocID, 0 , " Well they'll come back screaming, laughing, singing, come back to life, take what he stole, scream and peel the skin off your bones. " );
 				Doc_PrintLine(nDocID,0,"");
 				Doc_PrintLine(nDocID,0,"");
 				Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 				Doc_PrintLine(nDocID,1,"");
-				Doc_PrintLines(nDocID,1,"Lidé jsou slepí hlupáci, sbírají poklady, lačnějí po zlatých špercích a řetězech.");
-				Doc_PrintLines(nDocID,1,"Temný bůh temnotou a bolestí je osvobodí, jejich kosti a duše jak pokrm svůj posbírá.");
+				Doc_PrintLines(nDocID, 1 , " People are blind fools, hoarding treasures, hungry for gold jewelry and chains. " );
+				Doc_PrintLines(nDocID, 1 , " The dark god will free them with darkness and pain, their bones his servants, their souls his food. " );
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
@@ -86,13 +84,13 @@ func void Use_BookstandDementor_S1()
 
 					if(RhetorikSkillValue[1] < 100)
 					{
-						RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-						AI_Print("Rétorika + 1");
+						RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+						AI_Print( " Rétorika + 1 " );
 					};
 				}
 				else
 				{
-					rnd = Hlp_Random(100);
+					rnd = Hlp_Random( 100 );
 					if(rnd <= 30)
 					{
 						B_Say(self,self,"$NOTHINGNEW");
@@ -111,7 +109,7 @@ func void Use_BookstandDementor_S1()
 					ATR_INTELLECT += 1;
 					Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 					AI_Print("Inteligence + 1");
-					BookBonus_119 = TRUE;
+					BookBonus_119 = TRUE ;
 				};
 			}
 			else if(randomtext == 1)
@@ -123,14 +121,14 @@ func void Use_BookstandDementor_S1()
 				Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 				Doc_SetMargins(nDocID,0,275,20,30,20,1);
 				Doc_PrintLine(nDocID,0,"");
-				Doc_PrintLines(nDocID,0,"To náš Pán potrestal je. On dal jim moc svůj ráj naplnit.");
-				Doc_PrintLines(nDocID,0,"Leč oni odmítli, či schopnosti neměli. Proč tohle stalo se navždy záhadou zůstane.");
+				Doc_PrintLines(nDocID, 0 , " Our Lord punished them. He gave them the power to fulfill his desires. " );
+				Doc_PrintLines(nDocID, 0 , " But they refused, or they didn't have the skills. Why this happened will forever remain a mystery. " );
 				Doc_PrintLine(nDocID,0,"");
 				Doc_PrintLine(nDocID,0,"");
 				Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 				Doc_PrintLine(nDocID,1,"");
-				Doc_PrintLines(nDocID,1,"No zřejmé je, že za chyby své trest si odnesli. Jejich civilizace zmizela, aby ta naše vzejít mohla.");
-				Doc_PrintLines(nDocID,1,"A teď cestu musí uvolnit Pánovi našemu - bohu Temnoty, jenž touží teď své plány vykonat.");
+				Doc_PrintLines(nDocID, 1 , " Well, it is obvious that they took the punishment for their mistakes. Their civilization disappeared so that ours could emerge. " );
+				Doc_PrintLines(nDocID, 1 , " And now the way must be cleared for our Lord - the god of Darkness, who wants to carry out his plans now. " );
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
@@ -146,13 +144,13 @@ func void Use_BookstandDementor_S1()
 
 					if(RhetorikSkillValue[1] < 100)
 					{
-						RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-						AI_Print("Rétorika + 1");
+						RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+						AI_Print( " Rétorika + 1 " );
 					};
 				}
 				else
 				{
-					rnd = Hlp_Random(100);
+					rnd = Hlp_Random( 100 );
 					if(rnd <= 30)
 					{
 						B_Say(self,self,"$NOTHINGNEW");
@@ -171,7 +169,7 @@ func void Use_BookstandDementor_S1()
 					ATR_INTELLECT += 1;
 					Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 					AI_Print("Inteligence + 1");
-					BookBonus_120 = TRUE;
+					BookBonus_120 = TRUE ;
 				};
 			}
 			else if(randomtext == 2)
@@ -183,14 +181,14 @@ func void Use_BookstandDementor_S1()
 				Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 				Doc_SetMargins(nDocID,0,275,20,30,20,1);
 				Doc_PrintLine(nDocID,0,"");
-				Doc_PrintLines(nDocID,0,"Brzy bude vše posvěcené dechem Pána. A všichni ti, kteří ho odmítli, to pocití na sobě.");
-				Doc_PrintLines(nDocID,0,"Každý bude posvěcen a vyčištěn. I nepomůže jim jejich falešný bůh, protože on není nic před silou Pána.");
+				Doc_PrintLines(nDocID, 0 , " Soon everything will be sanctified by the breath of the Lord. And all those who rejected him will feel it. " );
+				Doc_PrintLines(nDocID, 0 , " Everyone will be sanctified and cleansed. And their false god will not help them, because he is nothing before the power of the Lord. " );
 				Doc_PrintLine(nDocID,0,"");
 				Doc_PrintLine(nDocID,0,"");
 				Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 				Doc_PrintLine(nDocID,1,"");
-				Doc_PrintLines(nDocID,1,"Démoni roztrhaj jejich maso na kousky a řeky zčervenaj od jejich krve. Slunce již nikdy nevyjde pro žádného z nich.");
-				Doc_PrintLines(nDocID,1,"Všichni budou vstřebáni posvátnou Temnotou a červeným závojem Zabudnutí!");
+				Doc_PrintLines(nDocID, 1 , " Demons tear their flesh to pieces and rivers run red with their blood. The sun will never rise again for any of them. " );
+				Doc_PrintLines(nDocID, 1 , " All will be absorbed by the sacred Darkness and the red veil of Oblivion! " );
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
@@ -206,13 +204,13 @@ func void Use_BookstandDementor_S1()
 
 					if(RhetorikSkillValue[1] < 100)
 					{
-						RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-						AI_Print("Rétorika + 1");
+						RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+						AI_Print( " Rétorika + 1 " );
 					};
 				}
 				else
 				{
-					rnd = Hlp_Random(100);
+					rnd = Hlp_Random( 100 );
 					if(rnd <= 30)
 					{
 						B_Say(self,self,"$NOTHINGNEW");
@@ -231,7 +229,7 @@ func void Use_BookstandDementor_S1()
 					ATR_INTELLECT += 1;
 					Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 					AI_Print("Inteligence + 1");
-					BookBonus_121 = TRUE;
+					BookBonus_121 = TRUE ;
 				};
 			}
 			else if(randomtext == 3)
@@ -243,15 +241,15 @@ func void Use_BookstandDementor_S1()
 				Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 				Doc_SetMargins(nDocID,0,275,20,30,20,1);
 				Doc_PrintLine(nDocID,0,"");
-				Doc_PrintLines(nDocID,0,"V jednom pohybu, Mistr ukončí všechny lidské útrapy a vyčistí cestu, aby mohl Pán znova zostoupit na svět.");
-				Doc_PrintLines(nDocID,0,"Nikdo neunikne jeho pohledu a trestu. V jeho jméně vybudujeme nový svět, kterého podstata je mimo chápání těch ubohých zvěřů.");
-				Doc_PrintLines(nDocID,0,"Nastane čas tmy a temnoty na věky věků!");
+				Doc_PrintLines(nDocID, 0 , " In one move, the Master ends all human suffering and clears the way for the Lord to descend upon the world again. " );
+				Doc_PrintLines(nDocID, 0 , " No one escapes his gaze and punishment. In his name we will build a new world, the essence of which is beyond the understanding of those poor beasts. " );
+				Doc_PrintLines(nDocID, 0 , " There will be a time of darkness and darkness forever and ever! " );
 				Doc_PrintLine(nDocID,0,"");
 				Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 				Doc_PrintLine(nDocID,1,"");
-				Doc_PrintLines(nDocID,1,"Požehnané buď jméno jeho - v modlitbách k němu najdeme sílu rozdrvit nepřátele.");
-				Doc_PrintLines(nDocID,1,"Uvolníme všechnu zuřivost na bezverné blázny - aby nikdo nepochyboval o síle našeho Pána.");
-				Doc_PrintLines(nDocID,1,"A živí budou závidět mrtvým!");
+				Doc_PrintLines(nDocID, 1 , " Blessed be his name - in prayers to him we find strength to crush enemies. " );
+				Doc_PrintLines(nDocID, 1 , " We will unleash all fury on faithless fools - so that no one doubts the power of our Lord. " );
+				Doc_PrintLines(nDocID, 1 , " And the living will envy the dead! " );
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
@@ -266,13 +264,13 @@ func void Use_BookstandDementor_S1()
 
 					if(RhetorikSkillValue[1] < 100)
 					{
-						RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-						AI_Print("Rétorika + 1");
+						RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+						AI_Print( " Rétorika + 1 " );
 					};
 				}
 				else
 				{
-					rnd = Hlp_Random(100);
+					rnd = Hlp_Random( 100 );
 					if(rnd <= 30)
 					{
 						B_Say(self,self,"$NOTHINGNEW");
@@ -291,7 +289,7 @@ func void Use_BookstandDementor_S1()
 					ATR_INTELLECT += 1;
 					Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 					AI_Print("Inteligence + 1");
-					BookBonus_122 = TRUE;
+					BookBonus_122 = TRUE ;
 				};
 			}
 			else if(randomtext == 4)
@@ -303,16 +301,16 @@ func void Use_BookstandDementor_S1()
 				Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 				Doc_SetMargins(nDocID,0,275,20,30,20,1);
 				Doc_PrintLine(nDocID,0,"");
-				Doc_PrintLine(nDocID,0,"Já jsem ten s příbytkem ve tmě...");
-				Doc_PrintLine(nDocID,0,"Smrt je mým dechem...");
-				Doc_PrintLine(nDocID,0,"Mé nohy pevně stojí na hrobech,");
-				Doc_PrintLine(nDocID,0,"A vzkřísení mrtvých je mým pokrmem!");
+				Doc_PrintLine(nDocID, 0 , " I am the one with the abode in the dark... " );
+				Doc_PrintLine(nDocID, 0 , " Death is my breath... " );
+				Doc_PrintLine(nDocID, 0 , " My feet stand firm on the graves of the living, " );
+				Doc_PrintLine(nDocID, 0 , " And raising the dead is my food! " );
 				Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 				Doc_PrintLine(nDocID,1,"");
-				Doc_PrintLine(nDocID,1,"Boj se jména mého, člověk.");
-				Doc_PrintLine(nDocID,1,"Já, kníže všeho pokrytého stínem.");
-				Doc_PrintLine(nDocID,1,"ve vší majestátnosti noci,");
-				Doc_PrintLine(nDocID,1,"Stavím temné stěny času.");
+				Doc_PrintLine(nDocID, 1 , " Fear my name, mortal. " );
+				Doc_PrintLine(nDocID, 1 , " I, the prince of all covered with shadow. " );
+				Doc_PrintLine(nDocID, 1 , " in all the majesty of the night, " );
+				Doc_PrintLine(nDocID, 1 , " I build dark walls of time. " );
 				Doc_PrintLine(nDocID,1,"");
 				Doc_PrintLine(nDocID,1,"");
 				Doc_Show(nDocID);
@@ -326,13 +324,13 @@ func void Use_BookstandDementor_S1()
 
 					if(RhetorikSkillValue[1] < 100)
 					{
-						RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-						AI_Print("Rétorika + 1");
+						RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+						AI_Print( " Rétorika + 1 " );
 					};
 				}
 				else
 				{
-					rnd = Hlp_Random(100);
+					rnd = Hlp_Random( 100 );
 					if(rnd <= 30)
 					{
 						B_Say(self,self,"$NOTHINGNEW");
@@ -351,7 +349,7 @@ func void Use_BookstandDementor_S1()
 					ATR_INTELLECT += 1;
 					Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 					AI_Print("Inteligence + 1");
-					BookBonus_123 = TRUE;
+					BookBonus_123 = TRUE ;
 				};
 			};
 		};
@@ -383,19 +381,19 @@ func void use_bookstanddementor1_s1()
 			Doc_SetPage(nDocID,1,"Book_WOOD_R.tga",0);
 			Doc_SetFont(nDocID,-1,Font_Book_New);
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
-			Doc_PrintLine(nDocID,0,"Původ světa");
+			Doc_PrintLine(nDocID, 0 , " World Origin " );
 			Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Kdysi nebylo nic, posvatné nic, jehož jménem byl Chaos a jemuž vládl pán temnoty a prázdnoty Mordragu.");
-			Doc_PrintLines(nDocID,0,"Taktéž božské elementy - Země, Voda, Kámen a Oheň, byly zrozeny v prázdnotě, odrážející její podstatu.");
-			Doc_PrintLines(nDocID,0,"Ale tam, kde vládne Chaos - tam není místo pro boží moudrost. A elementy byly zaslepené touhou si přivlastnit vše okolo sebe.");
-			Doc_PrintLines(nDocID,0,"A tak plynuli století a tisícletí a boje mezi nimi nebylo konce...");
+			Doc_PrintLines(nDocID, 0 , " Once upon a time there was nothing, a sacred nothing, whose name was Chaos, ruled by the lord of darkness and entropy, Mordrag. " );
+			Doc_PrintLines(nDocID, 0 , " Also the divine elements - Earth, Water, Stone and Fire, were born in the void, reflecting its essence. " );
+			Doc_PrintLines(nDocID, 0 , " But where Chaos rules - there is no place for divine wisdom. And the elements were blinded by the desire to appropriate everything around them. " );
+			Doc_PrintLines(nDocID, 0 , " And so centuries and millennia passed, and there was no end to the battles between them... " );
 			Doc_PrintLine(nDocID,0," ");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
-			Doc_PrintLines(nDocID,1,"Jen když si uvědomili, že tam, kde vládne Chaos není pro nich místa, elementy vymyslely jediný způsob existence míru.");
-			Doc_PrintLines(nDocID,1,"Když získaly souhlas všech, elementy mohly vyhnat veliký Chaos a tam, kde ho porazili, změnit k lepšímu pána prázdnoty.");
-			Doc_PrintLines(nDocID,1,"A v halách původní moci ho navždy skryly za tajemné dvěře a zapečatily na věčnost.");
-			Doc_PrintLines(nDocID,1,"A tak vznikl svět.");
+			Doc_PrintLines(nDocID, 1 , " Only when they realized that there was no place for them where Chaos ruled, the elements devised the only way for peace to exist. " );
+			Doc_PrintLines(nDocID, 1 , " Having gained the consent of all, the elements could drive out the great Chaos and, where they defeated him, change the lord of the void for the better. " );
+			Doc_PrintLines(nDocID, 1 , " And in the halls of original power they hid him forever behind mysterious doors and sealed him for eternity. " );
+			Doc_PrintLines(nDocID, 1 , " And so the world was born. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
@@ -412,13 +410,13 @@ func void use_bookstanddementor1_s1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Rétorika + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rétorika + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 				if(rnd <= 30)
 				{
 					B_Say(self,self,"$NOTHINGNEW");
@@ -437,7 +435,7 @@ func void use_bookstanddementor1_s1()
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 				AI_Print("Inteligence + 1");
-				BookBonus_124 = TRUE;
+				BookBonus_124 = TRUE ;
 			};
 		};
 	};
@@ -468,19 +466,19 @@ func void use_bookstanddementor2_s1()
 			Doc_SetPage(nDocID,1,"Book_WOOD_R.tga",0);
 			Doc_SetFont(nDocID,-1,Font_Book_New);
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
-			Doc_PrintLine(nDocID,0,"Božští strážci");
+			Doc_PrintLine(nDocID, 0 , " Divine Guardians " );
 			Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Části nejednoty daly světu novou tvár, a skoro nikdo neví pravou příčinu.");
-			Doc_PrintLines(nDocID,0,"Jejich cíl je prostý a bere svůj začátek v příčině vytvoření míru a jeho podstatě v různých podobách.");
-			Doc_PrintLines(nDocID,0,"Bylo tam i slovo, i znamení, které dalo bratrem sílu a moudrost, aby odolali tomu, kdo rozdrvil srdce světa Tvůrců.");
-			Doc_PrintLines(nDocID,0,"A aby vyplnili vůli Tvůrců až do konce času.");
+			Doc_PrintLines(nDocID, 0 , " Parts of the disunity have given the world a new face, and almost no one knows the true cause. " );
+			Doc_PrintLines(nDocID, 0 , " Their goal is simple and takes its beginning in the cause of the creation of peace and its essence in various forms. " );
+			Doc_PrintLines(nDocID, 0 , " There was both a word and a sign that gave the brothers strength and wisdom to resist the one who crushed the heart of the World Makers. " );
+			Doc_PrintLines(nDocID, 0 , " And to fulfill the will of the Creators until the end of time. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
-			Doc_PrintLines(nDocID,1,"Každý vdýchl život jeho výtvoru a dal sílu, aby mohl pomoct bratrem s ich cílem.");
-			Doc_PrintLines(nDocID,1,"Byli si rovni a nikdo se nepovyšoval, ale jejich podstata byla odrazem tajných přání Tvůrců.");
-			Doc_PrintLines(nDocID,1,"Ve vášnivém hledání moci zapomněli, z čeho byli vytvoreni. A jeden z bratrů pustil ruku svého bratra.");
-			Doc_PrintLines(nDocID,1,"A to byl konec i začátek - moudrosti a hlouposti, která trvá až dodnes.");
+			Doc_PrintLines(nDocID, 1 , " Each breathed life into his creation and gave it strength to help the brothers with their goal. " );
+			Doc_PrintLines(nDocID, 1 , " They were equal and no one promoted themselves, but their essence was a reflection of the secret wishes of the Creators. " );
+			Doc_PrintLines(nDocID, 1 , " In their passionate pursuit of power, they forgot what they were made of. And one of the brothers let go of his brother's hand. " );
+			Doc_PrintLines(nDocID, 1 , " And that was the end and the beginning - of wisdom and foolishness that continues to this day. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
@@ -497,13 +495,13 @@ func void use_bookstanddementor2_s1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Rétorika + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rétorika + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 				if(rnd <= 30)
 				{
 					B_Say(self,self,"$NOTHINGNEW");
@@ -522,7 +520,7 @@ func void use_bookstanddementor2_s1()
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 				AI_Print("Inteligence + 1");
-				BookBonus_125 = TRUE;
+				BookBonus_125 = TRUE ;
 			};
 		};
 	};
@@ -553,19 +551,19 @@ func void use_bookstanddementor3_s1()
 			Doc_SetPage(nDocID,1,"Book_WOOD_R.tga",0);
 			Doc_SetFont(nDocID,-1,Font_Book_New);
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
-			Doc_PrintLine(nDocID,0,"Cesta Strážce");
+			Doc_PrintLine(nDocID, 0 , " Path of the Guardian " );
 			Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Je nemožné nájít nepřítomné a změrat nekonečné. Podstata cesty není v hledání, nýbrž v realizaci cílů.");
-			Doc_PrintLines(nDocID,0,"Ten, jež vstoupí na cestu neukazuje moudrosť Soudce ani mile, ani nahněvaně - smysl existence je v obou.");
-			Doc_PrintLines(nDocID,0,"Tato moudrost v sebe skrývá cíl, jež nemůže následovat cestu zachování pravé rovnováhy - s charakterem chaosu.");
-			Doc_PrintLines(nDocID,0,"Uzřít jí není dáno každému. A jenom vybráni můžou rozhodovat o tom, komu to bude dovolené.");
+			Doc_PrintLines(nDocID, 0 , " It is impossible to find the absent and measure the infinite. The essence of the journey is not in the search, but in the realization of goals. " );
+			Doc_PrintLines(nDocID, 0 , " He who enters the path shows the wisdom of the Judge neither kindly nor angrily - the meaning of existence is in both. " );
+			Doc_PrintLines(nDocID, 0 , " This wisdom hides a goal that cannot follow the path of maintaining true balance - with the character of chaos. " );
+			Doc_PrintLines(nDocID, 0 , " Seeing her is not given to everyone. And only the chosen ones can decide who will be allowed to see it. " );
 			Doc_PrintLines(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
-			Doc_PrintLines(nDocID,1,"Smysl téhle cesty je nemožné pochopit anebo definovat slovami. To je podstata porozumení, míru a osudu.");
-			Doc_PrintLines(nDocID,1,"Když se pohneme kupředu, skrytou cestu osvítí boží moudrost a Jeho cíl se stane jasným.");
-			Doc_PrintLines(nDocID,1,"Také životy budou uspořádané do jednoho kruhu a osud se bude opakovat - jenom jedna sféra může být idealní pro Rovnováhu.");
-			Doc_PrintLines(nDocID,1,"Aby dala hodnotu tomu, co ve světě skutečně zaváží.");
+			Doc_PrintLines(nDocID, 1 , " The meaning of this path is impossible to understand or define in words. This is the essence of understanding, peace and destiny. " );
+			Doc_PrintLines(nDocID, 1 , " As we move forward, God's wisdom illuminates the hidden path and His goal becomes clear. " );
+			Doc_PrintLines(nDocID, 1 , " Also lives will be arranged in one circle and fate will repeat itself - only one sphere can be ideal for Balance. " );
+			Doc_PrintLines(nDocID, 1 , " To give value to what really matters in the world. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
@@ -582,13 +580,13 @@ func void use_bookstanddementor3_s1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Rétorika + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rétorika + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 				if(rnd <= 30)
 				{
 					B_Say(self,self,"$NOTHINGNEW");
@@ -607,7 +605,7 @@ func void use_bookstanddementor3_s1()
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 				AI_Print("Inteligence + 1");
-				BookBonus_126 = TRUE;
+				BookBonus_126 = TRUE ;
 			};
 		};
 	};
@@ -638,19 +636,19 @@ func void use_bookstanddementor4_s1()
 			Doc_SetPage(nDocID,1,"Book_WOOD_R.tga",0);
 			Doc_SetFont(nDocID,-1,Font_Book_New);
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
-			Doc_PrintLine(nDocID,0,"Kroniky Strážců, část I.");
-			Doc_PrintLine(nDocID,0,"Část I");
+			Doc_PrintLine(nDocID, 0 , " Chronicles of the Guardians, Part I. " );
+			Doc_PrintLine(nDocID, 0 , " Part I " );
 			Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Podstatou Rovnováhy je nestrannost. Akceptovat něčí stranu, milovat anebo se hněvat znamená ztratit Rovnováhu.");
-			Doc_PrintLines(nDocID,0,"Poté se na nikoho není možné spoléhat. Naše bremeno není závislé od našeho současného stavu.");
+			Doc_PrintLines(nDocID, 0 , " The essence of Balance is impartiality. To take someone's side, to love or to be angry is to lose Balance. " );
+			Doc_PrintLines(nDocID, 0 , " After that, there is no one to rely on. Our burden is not dependent on our current state. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Spoléhat se na druhých je slabostí pro silné, ale sílou pro slabé.");
-			Doc_PrintLines(nDocID,1,"Moudrost a Rovnováha leží v poznání své povahy v průběhu času.");
+			Doc_PrintLines(nDocID, 1 , " Relying on others is weakness to the strong, but strength to the weak. " );
+			Doc_PrintLines(nDocID, 1 , " Wisdom and Balance lies in knowing your nature over time. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
@@ -668,13 +666,13 @@ func void use_bookstanddementor4_s1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Rétorika + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rétorika + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 				if(rnd <= 30)
 				{
 					B_Say(self,self,"$NOTHINGNEW");
@@ -693,7 +691,7 @@ func void use_bookstanddementor4_s1()
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 				AI_Print("Inteligence + 1");
-				BookBonus_127 = TRUE;
+				BookBonus_127 = TRUE ;
 			};
 		};
 	};
@@ -725,20 +723,20 @@ func void use_bookstanddementor5_s1()
 			Doc_SetPage(nDocID,1,"Book_WOOD_R.tga",0);
 			Doc_SetFont(nDocID,-1,Font_Book_New);
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
-			Doc_PrintLine(nDocID,0,"Kroniky Strážců, část II.");
-			Doc_PrintLine(nDocID,0,"Část II");
+			Doc_PrintLine(nDocID, 0 , " Chronicles of the Guardians, Part II. " );
+			Doc_PrintLine(nDocID, 0 , " Part II " );
 			Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Jsou tací, pro kterých jsou vedomosti štítem a tací, pro kterých jsou zbraní. Ani jeden z těchto pohledů není vyvážený, ale jeden je méně nesmyslný.");
-			Doc_PrintLines(nDocID,0,"Ten, kterého vědomosti jsou obmědzené jenom na to, co už ostatní vědí, je rovnaký blázen jako ten, jež se neobtěžuje studiem.");
-			Doc_PrintLines(nDocID,0,"Poklad poznání je nejcennější na světě, a tak je přimeraně chráněný.");
+			Doc_PrintLines(nDocID, 0 , " There are those for whom knowledge is a shield and those for whom it is a weapon. Neither view is balanced, but one is less pointless. " );
+			Doc_PrintLines(nDocID, 0 , " One whose knowledge is limited to what others already know is as foolish as one who does not bother to study. " );
+			Doc_PrintLines(nDocID, 0 , " The treasure of knowledge is the most valuable in the world, so it is adequately protected. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Kámen nemůže vědět, jaké dláto ho rozotne; ocel nemůže vědět, v jakém ohni shoří.");
-			Doc_PrintLines(nDocID,1,"Když tě dochytí smrt a zoufalstvo, nebi se do prsou a nepřeklínej zlomyslný osud.");
-			Doc_PrintLines(nDocID,1,"Ale chval Tvůrce za skoušku, která tě ovplyvnila.");
+			Doc_PrintLines(nDocID, 1 , " Stone cannot know what chisel will split it; steel cannot know what fire it will burn in. " );
+			Doc_PrintLines(nDocID, 1 , " When death and despair overtake you, don't beat your chest and curse a malevolent fate. " );
+			Doc_PrintLines(nDocID, 1 , " But praise the Creator for the test that affected you. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
@@ -755,13 +753,13 @@ func void use_bookstanddementor5_s1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Rétorika + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rétorika + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 				if(rnd <= 30)
 				{
 					B_Say(self,self,"$NOTHINGNEW");
@@ -780,7 +778,7 @@ func void use_bookstanddementor5_s1()
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 				AI_Print("Inteligence + 1");
-				BookBonus_128 = TRUE;
+				BookBonus_128 = TRUE ;
 			};
 		};
 	};
@@ -811,19 +809,19 @@ func void use_bookstanddementor6_s1()
 			Doc_SetPage(nDocID,1,"Book_WOOD_R.tga",0);
 			Doc_SetFont(nDocID,-1,Font_Book_New);
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
-			Doc_PrintLine(nDocID,0,"Kroniky Strážců, část III.");
-			Doc_PrintLine(nDocID,0,"Část III");
+			Doc_PrintLine(nDocID, 0 , " Chronicles of the Guardians, Part III. " );
+			Doc_PrintLine(nDocID, 0 , " Part III " );
 			Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Starověký úpadek se znovu objevil. Mohlo to narušit Rovnováhu, ale my věděli, že bychom měli ostat ostražiti v případě, že by to přišlo.");
-			Doc_PrintLines(nDocID,0,"Nikomu nemohlo být dovoleno zasáhnout. A někteří lidi pochybovali o pravdě Tvůrců.");
-			Doc_PrintLines(nDocID,0,"Ale tlak trval, někteří zvítězili, a ti, kteří pochybovali, položili základný kámen nového chrámu.");
+			Doc_PrintLines(nDocID, 0 , " The Ancient Decay has reappeared. It could have upset the Balance, and we knew we should stay alert in case it did. " );
+			Doc_PrintLines(nDocID, 0 , " No one could be allowed to interfere. And some people doubted the truth of the Makers. " );
+			Doc_PrintLines(nDocID, 0 , " But the pressure continued, some prevailed, and those who doubted laid the foundation stone of the new temple. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Používaje naši čest jako štít mezi nebem a zemí, nemali bychom ztrácet moudrosť.");
-			Doc_PrintLines(nDocID,1,"Ať jsou v bezpečí pod zámkem, ale vždy k dispozici a oddani. Budoucí generace závisí od našich činů.");
+			Doc_PrintLines(nDocID, 1 , " Using our honor as a shield between heaven and earth, we should not lose wisdom. " );
+			Doc_PrintLines(nDocID, 1 , " May they be safe under lock and key, but always available and devoted. Future generations depend on our actions. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
@@ -841,13 +839,13 @@ func void use_bookstanddementor6_s1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Rétorika + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rétorika + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 				if(rnd <= 30)
 				{
 					B_Say(self,self,"$NOTHINGNEW");
@@ -866,7 +864,7 @@ func void use_bookstanddementor6_s1()
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 				AI_Print("Inteligence + 1");
-				BookBonus_129 = TRUE;
+				BookBonus_129 = TRUE ;
 			};
 		};
 	};
@@ -897,19 +895,19 @@ func void use_bookstanddementor7_s1()
 			Doc_SetPage(nDocID,1,"Book_WOOD_R.tga",0);
 			Doc_SetFont(nDocID,-1,Font_Book_New);
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
-			Doc_PrintLine(nDocID,0,"Kroniky Strážců, část IV.");
-			Doc_PrintLine(nDocID,0,"Část IV");
+			Doc_PrintLine(nDocID, 0 , " Chronicles of the Guardians, Part IV. " );
+			Doc_PrintLine(nDocID, 0 , " Part IV " );
 			Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"I když naše vědomosti o světě jsou veliké, některé fenomény se ukázali být složitějšími, než jsme předpokládali.");
-			Doc_PrintLines(nDocID,0,"Nejneočakávanejší spojení se zároveň ukázali být nejúčinnějšími.");
+			Doc_PrintLines(nDocID, 0 , " Even though our knowledge of the world is great, some phenomena have turned out to be more complex than we expected. " );
+			Doc_PrintLines(nDocID, 0 , " The most unexpected connections also turned out to be the most effective. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Pozeraje se na relikvie najdené objavitelmi jsme zjistili, jakou úroveň může civilizace dosáhnout.");
-			Doc_PrintLines(nDocID,1,"A při pohledě na starobylé ruiny jsme si uvědomili, jaké to může být nebězpečné.");
+			Doc_PrintLines(nDocID, 1 , " Looking at the relics found by the explorers, we found out what level a civilization can reach. " );
+			Doc_PrintLines(nDocID, 1 , " And looking at the ancient ruins, we realized how dangerous it could be. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
@@ -927,13 +925,13 @@ func void use_bookstanddementor7_s1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Rétorika + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rétorika + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 				if(rnd <= 30)
 				{
 					B_Say(self,self,"$NOTHINGNEW");
@@ -952,7 +950,7 @@ func void use_bookstanddementor7_s1()
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 				AI_Print("Inteligence + 1");
-				BookBonus_130 = TRUE;
+				BookBonus_130 = TRUE ;
 			};
 		};
 	};
