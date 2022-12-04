@@ -1,4 +1,5 @@
 
+
 var int jointmisc2count;
 var int jointmisc3count;
 
@@ -15,7 +16,7 @@ func void potionjoint_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_POTIONJOINT;
 		AI_ProcessInfos(her);
 	};
@@ -50,7 +51,7 @@ instance PC_JOINTMISC1(C_Info)
 	condition = pc_jointmisc1_condition;
 	information = pc_jointmisc1_info;
 	permanent = TRUE;
-	description = "Ubalit trávu z bažin";
+	description = " Bag grass from swamps " ;
 };
 
 func int pc_jointmisc1_condition()
@@ -74,8 +75,8 @@ func void pc_jointmisc1_info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 	b_endproductiondialog();
@@ -87,7 +88,7 @@ instance PC_JOINTMISC2(C_Info)
 	condition = pc_jointmisc2_condition;
 	information = pc_jointmisc2_info;
 	permanent = TRUE;
-	description = "Ubalit speciální trávu z bažin...";
+	description = " Pack special marsh grass... " ;
 };
 
 func int pc_jointmisc2_condition()
@@ -104,11 +105,11 @@ func void pc_jointmisc2_info()
 
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 8) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"... ubalit 'Přivolávač snu'",pc_jointmisc2_Joint_03);
+		Info_AddChoice(pc_jointmisc2, " ... wrap 'Dream Summoner' " ,pc_jointmisc2_Joint_03);
 	};
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 4) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"... ubalit 'Severní soumrak'",pc_jointmisc2_Joint_02);
+		Info_AddChoice(pc_jointmisc2, " ... wrap 'Northern Twilight' " ,pc_jointmisc2_Joint_02);
 	};
 	if((Green_Extrem == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 2) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
@@ -129,18 +130,18 @@ func void pc_jointmisc2_Joint_03()
 	Npc_RemoveInvItems(hero,ItPl_SwampHerb,8);
 	Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 	CreateInvItems(hero,itmi_joint_03,1);
-	//Print("Izgotovlen 'Zov Mechty'!");
-	AI_PrintClr("Ubaleno 1x Přivolávač snu!",83,152,48);
+	// Print("Izgotovlen 'Zov Mechty'!");
+	AI_PrintClr( " Packed 1x Dream Summoner! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	Info_ClearChoices(pc_jointmisc2);
 
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 8) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"... ubalit 'Přivolávač snu'",pc_jointmisc2_Joint_03);
+		Info_AddChoice(pc_jointmisc2, " ... wrap 'Dream Summoner' " ,pc_jointmisc2_Joint_03);
 	};
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 4) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"... ubalit 'Severní soumrak'",pc_jointmisc2_Joint_02);
+		Info_AddChoice(pc_jointmisc2, " ... wrap 'Northern Twilight' " ,pc_jointmisc2_Joint_02);
 	};
 	if((Green_Extrem == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 2) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
@@ -156,18 +157,18 @@ func void pc_jointmisc2_Joint_02()
 	Npc_RemoveInvItems(hero,ItPl_SwampHerb,4);
 	Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 	CreateInvItems(hero,itmi_joint_02,1);
-	//Print("Izgotovlen 'Severnyy Temnyy'!");
-	AI_PrintClr("Ubaleno 1x Severní soumrak!",83,152,48);
+	// Print("Izgotovlen 'Severnyy Temnyy'!");
+	AI_PrintClr( " Packed 1x Northern Twilight! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	Info_ClearChoices(pc_jointmisc2);
 
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 8) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"... ubalit 'Přivolávač snu'",pc_jointmisc2_Joint_03);
+		Info_AddChoice(pc_jointmisc2, " ... wrap 'Dream Summoner' " ,pc_jointmisc2_Joint_03);
 	};
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 4) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"... ubalit 'Severní soumrak'",pc_jointmisc2_Joint_02);
+		Info_AddChoice(pc_jointmisc2, " ... wrap 'Northern Twilight' " ,pc_jointmisc2_Joint_02);
 	};
 	if((Green_Extrem == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 2) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
@@ -183,18 +184,18 @@ func void pc_jointmisc2_Joint_01()
 	Npc_RemoveInvItems(hero,ItPl_SwampHerb,2);
 	Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 	CreateInvItems(hero,ItMi_Addon_Joint_01,1);
-	//Print("Izgotovlen 'Zelenyy poslushnik'!");
-	AI_PrintClr("Ubaleno 1x Zelený novic!",83,152,48);
+	// Print("Izgotovlen 'Zelenyy poslushnik'!");
+	AI_PrintClr( " Packed 1x Green rookie! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	Info_ClearChoices(pc_jointmisc2);
 
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 8) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"... ubalit 'Přivolávač snu'",pc_jointmisc2_Joint_03);
+		Info_AddChoice(pc_jointmisc2, " ... wrap 'Dream Summoner' " ,pc_jointmisc2_Joint_03);
 	};
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 4) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"... ubalit 'Severní soumrak'",pc_jointmisc2_Joint_02);
+		Info_AddChoice(pc_jointmisc2, " ... wrap 'Northern Twilight' " ,pc_jointmisc2_Joint_02);
 	};
 	if((Green_Extrem == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 2) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
