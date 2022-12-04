@@ -1,8 +1,9 @@
+
 /***********************************\
-        KLASSEN FÜR PERMMEM
+        CLASSES FOR PERMMEM
 \***********************************/
 
-/* Inhalt:
+/* content:
     int
     func
     float
@@ -81,10 +82,10 @@ func void _int_Unarchiver(var _int this) {
  * Saved and restored automatically by PermMem without any manual work, the string will remain untouched in its
  * usual behavior and handling.
  *
- * var string myString;
+* var string myString;
  * PM_BindString(myString);   // Only necessary once
  * myString = "Hello World";  // The string will now maintain its contents over saving and loading
- *
+*
  */
 func void PM_BindString(var string var) {
     // On first call: Replace myself and jump back to before I was called (+ parameter)
@@ -105,8 +106,8 @@ func void PM_BindFloat(var float var) {
 };
 
 const int PM_Bind_addr = 0;
-func void PM_Bind(/* var string VAR */ var int inst) {
-    var int tok; tok = MEMINT_StackPopInstAsInt();
+func void PM_Bind( /* var string VAR */ var int inst) {
+    var int took; took = MEMINT_StackPopInstAsInt();
     PM_Bind_addr = MEMINT_StackPopInstAsInt();
     if (tok != zPAR_TOK_PUSHVAR) {
         _PM_Error("First parameter given is not an lValue");
@@ -142,8 +143,8 @@ instance zCList@(zCList);
 const string zCListSort_Struct = "auto|2 zCListSort*";
 instance zCListSort@(zCListSort);
 
-// zCArray ist zu komplex um als struct dargestellt zu werden.
-// Deshalb ein eigener Archiver:
+// zCArray is too complex to be represented as a struct.
+// Therefore a separate archiver:
 func void zCArray_Archiver(var zCArray this) {
     PM_SaveInt("length", this.numInArray);
     PM_SaveIntArray("array", this.array, this.numInArray);
@@ -163,7 +164,7 @@ func void zCArray_Delete(var zCArray this) {
 
 instance zCArray@(zCArray);
 
-// zCViewText - der Font-Pointer muss erneuert werden, dazu speichere ich mir den Namen des Fonts
+// zCViewText - the font pointer needs to be updated, so I save the font name
 
 instance zCViewText@(zCViewText){
 	_vtbl = zCViewText_vtbl;
