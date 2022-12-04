@@ -1,7 +1,8 @@
+
 class HT_Array {
 	var int array;
 	var int numalloc;
-	var int numinarray;
+	var int numericarray;
 	}; instance HT@(HT_Array) {
 };
 
@@ -10,7 +11,7 @@ func void HT_Array_Archiver(var HT_Array this) {
 	PM_SaveInt("elements", this.numInArray);
 	
 	var int ctr; ctr = 0;
-    var int k; k = 0;
+    var int k; k = 0 ;
 	repeat(k, this.numAlloc/4);
 		var int ptr; ptr = MEM_ReadInt(this.array+k*4);
 		if (!ptr) { continue; };
@@ -27,7 +28,7 @@ func void HT_Array_Unarchiver(var HT_Array this) {
 	this.numInArray = PM_Load("elements");
 	this.array = MEM_Alloc(this.numAlloc);
 	
-	var int k; k = 0;
+	var int k; k = 0 ;
 	repeat(k, PM_Load("subArrays"));
 		var int pos; pos = PM_Load(ConcatStrings("pos", IntToString(k)));
 		MEM_WriteInt(this.array+pos*4, PM_Load(IntToString(k)));
