@@ -1,4 +1,5 @@
 
+
 const int BookLp2 = 2;
 const int BookLp3 = 3;
 const int BookLp5 = 5;
@@ -11,7 +12,7 @@ const int XPMultiplier = 5;
 
 instance ITWR_ADDON_RUNEMAKING_PRM(C_Item)
 {
-	name = "Runy pravé magie";
+	name = " Runes of True Magic " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -27,14 +28,14 @@ instance ITWR_ADDON_RUNEMAKING_PRM(C_Item)
 
 instance ITWR_Addon_Runemaking_KDW_CIRC1(C_Item)
 {
-	name = "Runy mágů Vody I";
+	name = " Runes of the Water Mages I " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Vody (1. kruh)";
+	description = " Book of Water Mage Runes (1st Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_Runemaking_KDW_CIRC1_S1;
@@ -43,14 +44,14 @@ instance ITWR_Addon_Runemaking_KDW_CIRC1(C_Item)
 
 instance ITWR_Addon_Runemaking_KDW_CIRC2(C_Item)
 {
-	name = "Runy mágů Vody II";
+	name = " Runes of the Water Mages II " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Vody (2. kruh)";
+	description = " Book of Water Mage Runes (2nd Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_Runemaking_KDW_CIRC2_S1;
@@ -59,14 +60,14 @@ instance ITWR_Addon_Runemaking_KDW_CIRC2(C_Item)
 
 instance ITWR_Addon_Runemaking_KDW_CIRC3(C_Item)
 {
-	name = "Runy mágů Vody III";
+	name = " Runes of the Water Mages III " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Vody (3. kruh)";
+	description = " Book of Water Mage Runes (3rd Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_Runemaking_KDW_CIRC3_S1;
@@ -75,14 +76,14 @@ instance ITWR_Addon_Runemaking_KDW_CIRC3(C_Item)
 
 instance ITWR_Addon_Runemaking_KDW_CIRC4(C_Item)
 {
-	name = "Runy mágů Vody IV";
+	name = " Runes of the Water Mages IV " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Vody (4. kruh)";
+	description = " Book of Water Mage Runes (4th Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_Runemaking_KDW_CIRC4_S1;
@@ -91,14 +92,14 @@ instance ITWR_Addon_Runemaking_KDW_CIRC4(C_Item)
 
 instance ITWR_Addon_Runemaking_KDW_CIRC5(C_Item)
 {
-	name = "Runy mágů Vody V";
+	name = " Runes of the Water Mages V " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Vody (5. kruh)";
+	description = " Book of Water Mage Runes (5th Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_Runemaking_KDW_CIRC5_S1;
@@ -107,14 +108,14 @@ instance ITWR_Addon_Runemaking_KDW_CIRC5(C_Item)
 
 instance ITWR_Addon_Runemaking_KDW_CIRC6(C_Item)
 {
-	name = "Runy mágů Vody VI";
+	name = " Runes of the Water Mages VI " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Vody (6. kruh)";
+	description = " Book of Water Mage Runes (6th Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_Runemaking_KDW_CIRC6_S1;
@@ -123,65 +124,65 @@ instance ITWR_Addon_Runemaking_KDW_CIRC6(C_Item)
 
 instance ITWR_Addon_Runemaking_KDF_CIRC1(C_Item)
 {
-	name = "Runy mágů Ohně I";
+	name = " Runes of Fire Mages I " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Ohně (1. kruh)";
+	description = " Book of Fire Mage Runes (1st Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = Use_Bookstand_Kreise_01_S1;
+	on_state[ 0 ] = Use_Bookstand_Kreise_01_S1;
 	inv_animate = 1;
 };
 
 instance ITWR_Addon_Runemaking_KDF_CIRC2(C_Item)
 {
-	name = "Runy mágů Ohně II";
+	name = " Runes of Fire Mages II " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Ohně (2. kruh)";
+	description = " Book of Fire Mage Runes (2nd Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = Use_Bookstand_Kreise_02_S1;
+	on_state[ 0 ] = Use_Bookstand_Kreise_02_S1;
 	inv_animate = 1;
 };
 
 instance ITWR_Addon_Runemaking_KDF_CIRC3(C_Item)
 {
-	name = "Runy mágů Ohně III";
+	name = " Runes of Fire Mages III " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Ohně (3. kruh)";
+	description = " Book of Fire Mage Runes (3rd Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = Use_Bookstand_Kreise_03_S1;
+	on_state[ 0 ] = Use_Bookstand_Kreise_03_S1;
 	inv_animate = 1;
 };
 
 instance ITWR_Addon_Runemaking_KDF_CIRC4(C_Item)
 {
-	name = "Runy mágů Ohně IV";
+	name = " Runes of Fire Mages IV " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Ohně (4. kruh)";
+	description = " Book of Fire Mage Runes (4th Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = Use_Bookstand_Kreise_04_S1;
+	on_state[ 0 ] = Use_Bookstand_Kreise_04_S1;
 	inv_animate = 1;
 };
 
@@ -242,7 +243,7 @@ instance ITWR_ADDON_RUNEMAKING_DMT_CIRC2(C_Item)
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Temnoty (2. kruh)";
+	description = " Book of Darkness Mage Runes (2nd Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_bookstand_dmt_circ2_s1;
@@ -251,14 +252,14 @@ instance ITWR_ADDON_RUNEMAKING_DMT_CIRC2(C_Item)
 
 instance ITWR_ADDON_RUNEMAKING_DMT_CIRC3(C_Item)
 {
-	name = "Runy mágů Temnoty III";
+	name = " Darkness III Mage Runes " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Temnoty (3. kruh)";
+	description = " Book of Darkness Mage Runes (3rd Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_bookstand_dmt_circ3_s1;
@@ -267,14 +268,14 @@ instance ITWR_ADDON_RUNEMAKING_DMT_CIRC3(C_Item)
 
 instance ITWR_ADDON_RUNEMAKING_DMT_CIRC4(C_Item)
 {
-	name = "Runy mágů Temnoty IV";
+	name = " Runes of Darkness IV Mage " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Temnoty (4. kruh)";
+	description = " Book of Darkness Mage Runes (4th Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_bookstand_dmt_circ4_s1;
@@ -283,14 +284,14 @@ instance ITWR_ADDON_RUNEMAKING_DMT_CIRC4(C_Item)
 
 instance ITWR_ADDON_RUNEMAKING_DMT_CIRC5(C_Item)
 {
-	name = "Runy mágů Temnoty V";
+	name = " Darkness V Mage Runes " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Temnoty (5. kruh)";
+	description = " Book of Darkness Mage Runes (5th Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_bookstand_dmt_circ5_s1;
@@ -299,14 +300,14 @@ instance ITWR_ADDON_RUNEMAKING_DMT_CIRC5(C_Item)
 
 instance ITWR_ADDON_RUNEMAKING_DMT_CIRC6(C_Item)
 {
-	name = "Runy mágů Temnoty VI";
+	name = " Darkness VI Mage Runes " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Kniha run mágů Temnoty (6. kruh)";
+	description = " Book of Darkness Mage Runes (6th Circle) " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_bookstand_dmt_circ6_s1;
@@ -1211,18 +1212,18 @@ instance ITWR_MAP_ADDONWORLD_1(C_Item)
 
 func void Use_Map_AddonWorld()
 {
-	var int Document;
+	var int  Document ;
 	Document = Doc_CreateMap();
 	Doc_SetPages(Document,1);
 	Doc_SetPage(Document,0,"Map_AddonWorld.tga",TRUE);
-	Doc_SetLevel(Document,"Addon\AddonWorld.zen");
+	Doc_SetLevel( Document , " Addon \A ddonWorld.zen " );
 	Doc_SetLevelCoords(Document,-47783,36300,43949,-32300);
 	Doc_Show(Document);
 };
 
 instance ITWR_MAGICDEFENCE_02(C_Item)
 {
-	name = "Elixír ochrany proti magii";
+	name = " Elixir of Magic Protection " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
@@ -1230,8 +1231,8 @@ instance ITWR_MAGICDEFENCE_02(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_magdef;
 	scemeName = "MAP";
-	description = "Elixír ochrany proti magii";
-	text[4] = "Způsob přípravy elixíru ochrany proti magii...";
+	description = " Elixir of protection against magic " ;
+	text[ 4 ] = " How to prepare an anti-magic potion... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1242,20 +1243,20 @@ func void use_magdef()
 	var int nDocID;
 	if(Npc_IsPlayer(self))
 	{
-		if(KNOWMAGDEF == FALSE)
+		if ( KNOWMAGDEF  ==  FALSE )
 		{
 			KNOWMAGDEF = TRUE;
 			Snd_Play("LevelUP");
 			RankPoints = RankPoints + 1;
-			AI_Print("Naučeno: Alchymie - 'Elixír ochrany proti magii'");
-			B_LogEntry(TOPIC_TalentAlchemy,"Ingredience pro ELIXÍR OCHRANY PROTI MAGII: čistý alkohol, 25x otrokův chléb, kořalka a luční pohanka.");
+			AI_Print( " Learned: Alchemy - 'Elixir of Magic Protection' " );
+			B_LogEntry(TOPIC_TalentAlchemy, " Ingredients for ELIXIR OF PROTECTION AGAINST MAGIC: pure alcohol, 25x slave bread, liquor and buckwheat. " );
 		};
 		if((BookBonus_08 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_08 = TRUE;
+			BookBonus_08 = TRUE ;
 		};
 	};
 
@@ -1266,9 +1267,9 @@ func void use_magdef()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Příprava lektvaru:");
+	Doc_PrintLines(nDocID, 0 , " Potion preparation: " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Vezmi čistý alkohol, luční pohanku, kořalku a otrokovy chleby. Otrokovy chleby rozdrť najemno, zalej kořalkou a přidej luční pohanku. Zahřívej na mírném ohni po dobu deseti minut, potom nech ochládnout.");
+	Doc_PrintLines(nDocID, 0 , " Take pure alcohol, buckwheat, brandy and slave breads. Crush the slave breads finely, cover with brandy and add buckwheat. Heat on low heat for ten minutes, then let cool. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -1281,7 +1282,7 @@ func void use_magdef()
 
 instance ITWR_PERMINTELLECT(C_Item)
 {
-	name = "Recept na elixír rozumu";
+	name = " Recipe for Elixir of Reason " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 3000;
@@ -1289,8 +1290,8 @@ instance ITWR_PERMINTELLECT(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_permint;
 	scemeName = "MAP";
-	description = "Recept na elixír rozumu";
-	text[4] = "Způsob přípravy elixíru rozumu z hlav kudlanek...";
+	description = " Recipe for Elixir of Reason " ;
+	text[ 4 ] = " The method of preparing the elixir of reason from the heads of mantises... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1307,8 +1308,8 @@ func void use_permint()
 			KNOWPERMINT = TRUE;
 			Snd_Play("LevelUP");
 			RankPoints = RankPoints + 1;
-			AI_Print("Naučeno: Alchymie - 'Elixír rozumu'");
-			B_LogEntry(TOPIC_TalentAlchemy,"Ingredience pro ELIXÍR ROZUMU: čistý alkohol, 10x hlava kudlanky, tráva z bažin a luční pohanka.");
+			AI_Print( " Learned: Alchemy - 'Elixir of Reason' " );
+			B_LogEntry(TOPIC_TalentAlchemy, " Elixir of SENSE : pure alcohol, 10x mantis head, swamp grass, and meadow buckwheat. " );
 		};
 		if((BookBonus_12 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 		{
@@ -1879,7 +1880,7 @@ instance ItWr_OsaitToTiamant(C_Item)
 	on_state[0] = Use_ItWr_OsaitToTiamant;
 	scemeName = "MAP";
 	description = "Osairův dopis";
-	text[4] = "Tento dopis napsal převor Osair Tiamantovi...";
+	text[ 4 ] = " Prior Osair wrote this letter to Tiamant... " ;
 	inv_animate = 1;
 };
 
@@ -1889,9 +1890,9 @@ func void Use_ItWr_OsaitToTiamant()
 
 	if(Npc_IsPlayer(self))
 	{
-		if((MIS_Intriges == LOG_Running) && (KnowOsairToTiamant == FALSE))
+		if ((MY_Intrigues == LOG_Running) && (KnowOsairToTiamant ==  FALSE ))
 		{
-			B_LogEntry(TOPIC_Intriges,"Soudě dle dopisu, Osair je s Tiamantem velice nespokojen! Jsem si jistý, že Haniara to bude velice zajímat.");
+			B_LogEntry(TOPIC_Intriges, " Judging by the letter, Osair is very unhappy with Tiamant! I'm sure Haniar will be very interested. " );
 			KnowOsairToTiamant = TRUE;
 			TiamantNeedsSlaves = TRUE;
 		};
@@ -1906,7 +1907,7 @@ func void Use_ItWr_OsaitToTiamant()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Tiamante! Neschopnost tvojich lidí mě stojí více a více peněz. Jestli chceš aby vůbec do dolu dorazila další várka otroku - musíš jim nejprve zajistit bezpečí!");
+	Doc_PrintLines(nDocID, 0 , " Tiamante! The incompetence of your people is costing me more and more money. If you ever want another batch of slaves to arrive at the mine - you must first ensure their safety! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			- Osair");
@@ -1925,7 +1926,7 @@ instance ItWr_HaniarToOsair(C_Item)
 	on_state[0] = Use_ItWr_HaniarToOsair;
 	scemeName = "MAP";
 	description = "Haniarův dopis";
-	text[4] = "Tento dopis napsal převor Haniar Osairovi...";
+	text[ 4 ] = " This letter was written by Prior Haniar to Osair... " ;
 	inv_animate = 1;
 };
 
@@ -1941,7 +1942,7 @@ func void Use_ItWr_HaniarToOsair()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Osaire! Náš bratr Nrozas zemřel za poměrně zvláštních okolností. Musíme se setkat, dál od zvědavých očí, abychom spolu prodiskutovali poslední momenty jeho smrti...");
+	Doc_PrintLines(nDocID, 0 , " Osaire! Our brother Nrozas died under rather strange circumstances. We must meet, away from prying eyes, to discuss the final moments of his death... " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			- Haniar");
@@ -2596,7 +2597,7 @@ func void Use_ItWr_CassiaLetter()
 	Doc_PrintLine(nDocID,0,"Moe");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Musím z nich vyrazit informaci o cechu zlodějů...");
+	Doc_PrintLine(nDocID, 0 , " I have to punch information about the thieves' guild out of them... " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
@@ -2605,7 +2606,7 @@ func void Use_ItWr_CassiaLetter()
 
 instance ItWr_Fregarah(C_Item)
 {
-	name = "Xardasovy zápisky";
+	name = " Xardas' Notes " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -2622,24 +2623,24 @@ func void Use_ItWr_Fregarah()
 	var int nDocID;
 	var int rnd;
 
-	if(FregarahSekret == FALSE)
+	if (FregarahSecret ==  FALSE )
 	{
 		B_GivePlayerXP(500);
-		FregarahSekret = TRUE;
+		FregarahSecret = TRUE ;
 		Snd_Play("Levelup");
-		B_LogEntry(TOPIC_XRANFREG,"Z Xardasova deníku se dozvídám, že ten kamenný strážce u vstupu do chrámu by mohl mít co dělat s událostmi, jež se odehrály několik tisíc let zpět, kdy Beliar zavraždil jeho bratra Stonnose, čtvrtého z bohů na této zemi... Teď jen potřebuju najít nějaké důkazy, které popisujou všechny tyto události. Kde je však hledat?");
+		B_LogEntry( TOPIC_XRANFREG , " From Xardas' journal I learn that the stone guard at the entrance to the temple may have something to do with the events that took place several thousand years ago, when Beliar murdered his brother Stonnos, the fourth of the gods on this earth.. . Now I just need to find some evidence that describes all these events. But where to look for it? " );
 		B_Say(self,self,"$HOWINTEREST");
 		RankPoints = RankPoints + 1;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2658,7 +2659,7 @@ func void Use_ItWr_Fregarah()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_145 = TRUE;
+		BookBonus_145 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -2668,23 +2669,23 @@ func void Use_ItWr_Fregarah()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Po dlouhé roky jsem si pokládal tu samou otázku - odkud se to stvoření vzalo? Až Strážci mi poodhalili pohled na události, kdy Stonnos, čtvrtý z bohů tohoto světa, byl zabit jeho bratrem - Beliarem! Jsem si zcela jistý, že nenadálé zjevení tohoto stvoření v našem světě je s těmito událostmi nějak přepojeno.");
+	Doc_PrintLines(nDocID, 0 , " For many years I asked myself the same question - where did this creature come from? Until the Guardians revealed to me a glimpse of the events when Stonnos, the fourth of the gods of this world, was killed by his brother - Beliar! I am completely sure that the sudden appearance of this creature in our world is somehow connected with these events. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Taková bytost se na našem světě objeví jen ojediněle, často v dobách velkých převratů. Neskutečná síla, která se v nich nachází dokáže přeměnit běžný předmět na arktefakt, jež disponuje opravdu úžasnými vlastnostmi.");
+	Doc_PrintLines(nDocID, 1 , " Such a being appears in our world only rarely, often in times of great upheaval. The incredible power that is found in them can transform an ordinary object into an artifact that possesses truly amazing properties. " );
 	Doc_Show(nDocID);
 };
 
-instance ItWr_Stonnos_01(C_Item)
+instance ItWr_Stonnos_01 (C_Item);
 {
-	name = "Kroniky Stonnosovy";
+	name = " Chronicles of Stonnos " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Kronika Stonnosova - svazek I";
+	description = " Chronicle of Stonnos - Volume I " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_Stonnos_01;
@@ -2696,10 +2697,10 @@ func void Use_ItWr_Stonnos_01()
 	var int nDocID;
 	var int rnd;
 
-	if(StonnosHr01 == FALSE)
+	if (StonnosHr01 ==  FALSE )
 	{
 		B_GivePlayerXP(500);
-		StonnosHr01 = TRUE;
+		StonnosHr01 = TRUE ;
 		Snd_Play("Levelup");
 		B_Say(self,self,"$HOWINTEREST");
 		AI_Print(PRINT_READGODSAWAY);
@@ -2707,21 +2708,21 @@ func void Use_ItWr_Stonnos_01()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 
-		if((MIS_XRANFREG == LOG_Running) && (StonnosHr01 == TRUE) && (StonnosHr02 == TRUE) && (StonnosHr03 == TRUE) && (StonnosHr04 == TRUE) && (StonnosHr05 == TRUE) && (StonnosHr06 == TRUE) && (StonnosHrAll == FALSE))
+		if (( MIS_XRANFREG  == LOG_Running) && (StonnosHr01 ==  TRUE ) && (StonnosHr02 ==  TRUE ) && (StonnosHr03 ==  TRUE ) && (StonnosHr04 ==  TRUE ) && (StonnosHr05 ==  TRUE ) && (StonnosHr06 ==  TRUE ) && (StonnosHrAll ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,100);
 			Snd_Play("Levelup");
 			StonnosHrAll = TRUE;
-			B_LogEntry(TOPIC_XRANFREG,"Teď už vím vše, co jsem potřeboval! To stvoření s kterým se Pyrokar a Xardas setkali, nebyl nikdo jiný než Stonnos sám. Je nesmrtelný a pouze a jen krev boha, který ho splodil, může zničit toto stvoření. Podle všeho, obyčejná magická ruda - je stejná jako krev Stonnose! Vzpomínám si na příběh o Urizielovi. Možná to bude fungovat znova. Jenže kde já najdu tolik rudy?! A co je nejdůležitější, jaký předmět použít pro tyto účely. Otázky, otázky, samé otázky...");
+			B_LogEntry( TOPIC_XRANFREG , " Now I know all I needed! The creature Pyrokar and Xardas encountered was none other than Stonnos himself. He is immortal and only and only the blood of the god who spawned him can destroy this creature. According of all, ordinary magical ore - it is the same as the blood of Stonnos! I remember the story of Uriziel. Maybe it will work again. But where will I find so much ore?! And most importantly, what item to use for these purposes. Questions, questions, only questions... " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2740,7 +2741,7 @@ func void Use_ItWr_Stonnos_01()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_146 = TRUE;
+		BookBonus_146 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -2750,23 +2751,23 @@ func void Use_ItWr_Stonnos_01()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Čtyři božští bratři byli velice silní i přes své rozepře, které vyvstávaly z jejich vlastní podstaty. Vznešený Innos, ctižádostivý Beliar, soustředěný Adanos a nadšený Stonnos. Dokud hrají svou roli v tomto světě, naše možnosti jsou vymezeny jejich úmluvou.");
+	Doc_PrintLines(nDocID, 0 , " The four divine brothers were very strong despite their contradictions that arose from their own nature. The noble Innos, the ambitious Beliar, the focused Adanos, and the enthusiastic Stonnos. As long as they play their part in this world, our options are limited by their by convention. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Tři jsou lepší než čtyři. A každá ctnost má i své nedostatky: samolibost Innose, závistivost Beliara, lhostejnost Adana i přílišná obětavost Stonnose. Ten, kdo proniká do temnoty Skály, vstupuje i do Temnoty Beliara. Jak jednoduše zasýt sémě pochybnosti a pěstovat zárodky nenávisti zamíchané se závistí. Hlavní věc je – ostražitost!");
+	Doc_PrintLines(nDocID, 1 , " Three is better than four. And every virtue has its flaws: the smugness of Innos, the envy of Beliar, the indifference of Adano, and the over-sacrifice of Stonnos. He who penetrates the darkness of the Rock also enters the Darkness of Beliar. How simply to sow the seeds of doubt and grow the seeds of hatred mixed with envy. The main thing is – vigilance! " );
 	Doc_Show(nDocID);
 };
 
-instance ItWr_Stonnos_02(C_Item)
+instance ItWr_Stonnos_02 (C_Item);
 {
-	name = "Kroniky Stonnosovy";
+	name = " Chronicles of Stonnos " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Kroniky Stonnosovy - svazek II";
+	description = " Chronicles of Stonnos - Volume II " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_Stonnos_02;
@@ -2778,10 +2779,10 @@ func void Use_ItWr_Stonnos_02()
 	var int nDocID;
 	var int rnd;
 
-	if(StonnosHr02 == FALSE)
+	if (StonnosHr02 ==  FALSE )
 	{
 		B_GivePlayerXP(500);
-		StonnosHr02 = TRUE;
+		StonnosHr02 = TRUE ;
 		Snd_Play("Levelup");
 		B_Say(self,self,"$HOWINTEREST");
 		AI_Print(PRINT_READGODSAWAY);
@@ -2789,21 +2790,21 @@ func void Use_ItWr_Stonnos_02()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 
-		if((MIS_XRANFREG == LOG_Running) && (StonnosHr01 == TRUE) && (StonnosHr02 == TRUE) && (StonnosHr03 == TRUE) && (StonnosHr04 == TRUE) && (StonnosHr05 == TRUE) && (StonnosHr06 == TRUE) && (StonnosHrAll == FALSE))
+		if (( MIS_XRANFREG  == LOG_Running) && (StonnosHr01 ==  TRUE ) && (StonnosHr02 ==  TRUE ) && (StonnosHr03 ==  TRUE ) && (StonnosHr04 ==  TRUE ) && (StonnosHr05 ==  TRUE ) && (StonnosHr06 ==  TRUE ) && (StonnosHrAll ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,100);
 			Snd_Play("Levelup");
 			StonnosHrAll = TRUE;
-			B_LogEntry(TOPIC_XRANFREG,"Teď už vím vše, co jsem potřeboval! To stvoření s kterým se Pyrokar a Xardas setkali, nebyl nikdo jiný než Stonnos sám. Je nesmrtelný a pouze a jen krev boha, který ho splodil, může zničit toto stvoření. Podle všeho, obyčejná magická ruda - je stejná jako krev Stonnose! Vzpomínám si na příběh o Urizielovi. Možná to bude fungovat znova. Jenže kde já najdu tolik rudy?! A co je nejdůležitější, jaký předmět použít pro tyto účely. Otázky, otázky, samé otázky...");
+			B_LogEntry( TOPIC_XRANFREG , " Now I know all I needed! The creature Pyrokar and Xardas encountered was none other than Stonnos himself. He is immortal and only and only the blood of the god who spawned him can destroy this creature. According of all, ordinary magical ore - it is the same as the blood of Stonnos! I remember the story of Uriziel. Maybe it will work again. But where will I find so much ore?! And most importantly, what item to use for these purposes. Questions, questions, only questions... " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2822,7 +2823,7 @@ func void Use_ItWr_Stonnos_02()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_147 = TRUE;
+		BookBonus_147 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -2832,23 +2833,23 @@ func void Use_ItWr_Stonnos_02()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Plán vrcholí. Avšak závist - ta je špatný spojenec a ještě horší rádce. Zatímco Innosova a Adanova pozornost byla odvedena pryč, Beliar vykonal svůj tajný plán k získání moci nad zemskou temnotou a zahubil svého bratra a ukončil jeho konání na zemi.");
+	Doc_PrintLines(nDocID, 0 , " The plan culminates. But envy is a bad ally and an even worse adviser. While Innos and Adan's attention was diverted, Beliar carried out his secret plan to gain power over the earth's darkness and killed his brother and put an end to his actions on the ground. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Teprve když tato mocná bytost padla, poslední, co bylo třeba udělat, bylo izolovat Stonnosovu oslabenou duševní podstatu. Ale kde najít vhodnou schránku, která by byla schopná udržet takovou sílu?...");
+	Doc_PrintLines(nDocID, 1 , " Only when this powerful being fell, the last thing to do was to isolate Stonnos' weakened soul essence. But where to find a suitable container capable of holding such power?... " );
 	Doc_Show(nDocID);
 };
 
-instance ItWr_Stonnos_03(C_Item)
+instance ItWr_Stonnos_03 (C_Item);
 {
-	name = "Kroniky Stonnosovy";
+	name = " Chronicles of Stonnos " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Kroniky Stonnosovy - Svazek III";
+	description = " Chronicles of Stonnos - Volume III " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_Stonnos_03;
@@ -2860,7 +2861,7 @@ func void Use_ItWr_Stonnos_03()
 	var int nDocID;
 	var int rnd;
 
-	if(StonnosHr03 == FALSE)
+	if (StonnosHr03 ==  FALSE )
 	{
 		B_GivePlayerXP(500);
 		StonnosHr03 = TRUE;
@@ -2871,21 +2872,21 @@ func void Use_ItWr_Stonnos_03()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 
-		if((MIS_XRANFREG == LOG_Running) && (StonnosHr01 == TRUE) && (StonnosHr02 == TRUE) && (StonnosHr03 == TRUE) && (StonnosHr04 == TRUE) && (StonnosHr05 == TRUE) && (StonnosHr06 == TRUE) && (StonnosHrAll == FALSE))
+		if (( MIS_XRANFREG  == LOG_Running) && (StonnosHr01 ==  TRUE ) && (StonnosHr02 ==  TRUE ) && (StonnosHr03 ==  TRUE ) && (StonnosHr04 ==  TRUE ) && (StonnosHr05 ==  TRUE ) && (StonnosHr06 ==  TRUE ) && (StonnosHrAll ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,100);
 			Snd_Play("Levelup");
 			StonnosHrAll = TRUE;
-			B_LogEntry(TOPIC_XRANFREG,"Teď už vím vše, co jsem potřeboval! To stvoření s kterým se Pyrokar a Xardas setkali, nebyl nikdo jiný než Stonnos sám. Je nesmrtelný a pouze a jen krev boha, který ho splodil, může zničit toto stvoření. Podle všeho, obyčejná magická ruda - je stejná jako krev Stonnose! Vzpomínám si na příběh o Urizielovi. Možná to bude fungovat znova. Jenže kde já najdu tolik rudy?! A co je nejdůležitější, jaký předmět použít pro tyto účely. Otázky, otázky, samé otázky...");
+			B_LogEntry( TOPIC_XRANFREG , " Now I know all I needed! The creature Pyrokar and Xardas encountered was none other than Stonnos himself. He is immortal and only and only the blood of the god who spawned him can destroy this creature. According of all, ordinary magical ore - it is the same as the blood of Stonnos! I remember the story of Uriziel. Maybe it will work again. But where will I find so much ore?! And most importantly, what item to use for these purposes. Questions, questions, only questions... " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2904,7 +2905,7 @@ func void Use_ItWr_Stonnos_03()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_148 = TRUE;
+		BookBonus_148 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -2914,23 +2915,23 @@ func void Use_ItWr_Stonnos_03()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Vědomi si úmluvy, podařilo se nám pokračovat v našem plánu. Abychom zabránili rozpadu zbytku duševní podstaty Stonnosovy síly, uvěznili jsme jeho oslabenou moc do těla mocné bytosti.");
+	Doc_PrintLines(nDocID, 0 , " Aware of the convention, we managed to proceed with our plan. To prevent the rest of the mental essence of Stonnos' power from disintegrating, we trapped his weakened power in the body of a powerful being. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Božští bratři až teprve teď věří jeden druhému, kdy bude tato neutrální schránka pod dohledem každého z nich.");
+	Doc_PrintLines(nDocID, 1 , " The divine brothers trust each other only now, when this neutral box will be under the supervision of each of them. " );
 	Doc_Show(nDocID);
 };
 
-instance ItWr_Stonnos_04(C_Item)
+instance ItWr_Stonnos_04 (C_Item);
 {
-	name = "Kroniky Stonnosovy";
+	name = " Chronicles of Stonnos " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Kroniky Stonnosovy - svazek IV";
+	description = " Chronicles of Stonnos - Volume IV " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_Stonnos_04;
@@ -2942,10 +2943,10 @@ func void Use_ItWr_Stonnos_04()
 	var int nDocID;
 	var int rnd;
 
-	if(StonnosHr04 == FALSE)
+	if (StonnosHr04 ==  FALSE )
 	{
 		B_GivePlayerXP(500);
-		StonnosHr04 = TRUE;
+		StonnosHr04 = TRUE ;
 		Snd_Play("Levelup");
 		B_Say(self,self,"$HOWINTEREST");
 		AI_Print(PRINT_READGODSAWAY);
@@ -2953,21 +2954,21 @@ func void Use_ItWr_Stonnos_04()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 
-		if((MIS_XRANFREG == LOG_Running) && (StonnosHr01 == TRUE) && (StonnosHr02 == TRUE) && (StonnosHr03 == TRUE) && (StonnosHr04 == TRUE) && (StonnosHr05 == TRUE) && (StonnosHr06 == TRUE) && (StonnosHrAll == FALSE))
+		if (( MIS_XRANFREG  == LOG_Running) && (StonnosHr01 ==  TRUE ) && (StonnosHr02 ==  TRUE ) && (StonnosHr03 ==  TRUE ) && (StonnosHr04 ==  TRUE ) && (StonnosHr05 ==  TRUE ) && (StonnosHr06 ==  TRUE ) && (StonnosHrAll ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,100);
 			Snd_Play("Levelup");
 			StonnosHrAll = TRUE;
-			B_LogEntry(TOPIC_XRANFREG,"Teď už vím vše, co jsem potřeboval! To stvoření s kterým se Pyrokar a Xardas setkali, nebyl nikdo jiný než Stonnos sám. Je nesmrtelný a pouze a jen krev boha, který ho splodil, může zničit toto stvoření. Podle všeho, obyčejná magická ruda - je stejná jako krev Stonnose! Vzpomínám si na příběh o Urizielovi. Možná to bude fungovat znova. Jenže kde já najdu tolik rudy?! A co je nejdůležitější, jaký předmět použít pro tyto účely. Otázky, otázky, samé otázky...");
+			B_LogEntry( TOPIC_XRANFREG , " Now I know all I needed! The creature Pyrokar and Xardas encountered was none other than Stonnos himself. He is immortal and only and only the blood of the god who spawned him can destroy this creature. According of all, ordinary magical ore - it is the same as the blood of Stonnos! I remember the story of Uriziel. Maybe it will work again. But where will I find so much ore?! And most importantly, what item to use for these purposes. Questions, questions, only questions... " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2986,7 +2987,7 @@ func void Use_ItWr_Stonnos_04()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_149 = TRUE;
+		BookBonus_149 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -2996,23 +2997,23 @@ func void Use_ItWr_Stonnos_04()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Něco se pokazilo a magická exploze neuvěřitelné síly poškodila schránku. Co jsme to za hlupáky! Teď je důležité se rozhodnout - probudit oslabenou duševní podstatu Stonnose nebo ho nadobro zničit.");
+	Doc_PrintLines(nDocID, 0 , " Something went wrong and a magical explosion of incredible power damaged the box. What fools we are! Now the important decision is to wake up the weakened mental essence of Stonnos or destroy him for good. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Jakmile na moment zase přišel Stonnos k sobě a jeho duševní podstata unikala za hranice schránky, současně pohlcujíc energii svého elementu, získal svou bývalou sílu zpět. Mám to i dnes celé před očima, tak jak to bylo tehdy.");
+	Doc_PrintLines(nDocID, 1 , " Once Stonnos regained his senses for a moment and his mental essence escaped beyond the confines of the box, simultaneously absorbing the energy of his element, he regained his former power. I can see it all before my eyes today, just as it did then. " );
 	Doc_Show(nDocID);
 };
 
-instance ItWr_Stonnos_05(C_Item)
+instance ItWr_Stonnos_05 (C_Item);
 {
-	name = "Kroniky Stonnosovy";
+	name = " Chronicles of Stonnos " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Kroniky Stonnosovy - svazek V";
+	description = " Chronicles of Stonnos - Volume V " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_Stonnos_05;
@@ -3024,10 +3025,10 @@ func void Use_ItWr_Stonnos_05()
 	var int nDocID;
 	var int rnd;
 
-	if(StonnosHr05 == FALSE)
+	if (StonnosHr05 ==  FALSE )
 	{
 		B_GivePlayerXP(500);
-		StonnosHr05 = TRUE;
+		StonnosHr05 = TRUE ;
 		Snd_Play("Levelup");
 		B_Say(self,self,"$HOWINTEREST");
 		AI_Print(PRINT_READGODSAWAY);
@@ -3035,21 +3036,21 @@ func void Use_ItWr_Stonnos_05()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 
-		if((MIS_XRANFREG == LOG_Running) && (StonnosHr01 == TRUE) && (StonnosHr02 == TRUE) && (StonnosHr03 == TRUE) && (StonnosHr04 == TRUE) && (StonnosHr05 == TRUE) && (StonnosHr06 == TRUE) && (StonnosHrAll == FALSE))
+		if (( MIS_XRANFREG  == LOG_Running) && (StonnosHr01 ==  TRUE ) && (StonnosHr02 ==  TRUE ) && (StonnosHr03 ==  TRUE ) && (StonnosHr04 ==  TRUE ) && (StonnosHr05 ==  TRUE ) && (StonnosHr06 ==  TRUE ) && (StonnosHrAll ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,100);
 			Snd_Play("Levelup");
 			StonnosHrAll = TRUE;
-			B_LogEntry(TOPIC_XRANFREG,"Teď už vím vše, co jsem potřeboval! To stvoření s kterým se Pyrokar a Xardas setkali, nebyl nikdo jiný než Stonnos sám. Je nesmrtelný a pouze a jen krev boha, který ho splodil, může zničit toto stvoření. Podle všeho, obyčejná magická ruda - je stejná jako krev Stonnose! Vzpomínám si na příběh o Urizielovi. Možná to bude fungovat znova. Jenže kde já najdu tolik rudy?! A co je nejdůležitější, jaký předmět použít pro tyto účely. Otázky, otázky, samé otázky...");
+			B_LogEntry( TOPIC_XRANFREG , " Now I know all I needed! The creature Pyrokar and Xardas encountered was none other than Stonnos himself. He is immortal and only and only the blood of the god who spawned him can destroy this creature. According of all, ordinary magical ore - it is the same as the blood of Stonnos! I remember the story of Uriziel. Maybe it will work again. But where will I find so much ore?! And most importantly, what item to use for these purposes. Questions, questions, only questions... " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3068,7 +3069,7 @@ func void Use_ItWr_Stonnos_05()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_150 = TRUE;
+		BookBonus_150 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3078,23 +3079,23 @@ func void Use_ItWr_Stonnos_05()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Magická ruda - není nic jiného než zkaměnělá krev Stonnose. Ale rozžhavené zemské hlubiny - to je ta pravá síla boha kamene! Teď už s tím nemůžeme dělat vůbec nic.");
+	Doc_PrintLines(nDocID, 0 , " Magical ore - it's nothing more than the petrified blood of Stonnos. But the red-hot earth's depths - that's the true power of the stone god! There's nothing we can do about it now. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Nově stvořená bytost není však Stonnos sám, nýbrž jen část jeho samotnéno. Podařilo se nám ho přesvědčit, aby nám sloužil a je to tak, že nyní ho žádný z božských bratří nemůže použít ve svůj vlastní prospěch.");
+	Doc_PrintLines(nDocID, 1 , " However, the newly created being is not Stonnos himself, but only a part of himself. We managed to convince him to serve us and it is so that now none of the divine brothers can use him for their own benefit. " );
 	Doc_Show(nDocID);
 };
 
-instance ItWr_Stonnos_06(C_Item)
+instance ItWr_Stonnos_06 (C_Item);
 {
-	name = "Kroniky Stonnosovy";
+	name = " Chronicles of Stonnos " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Kroniky Stonnosovy - svazek VI";
+	description = " Chronicles of Stonnos - Volume VI " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_Stonnos_06;
@@ -3106,7 +3107,7 @@ func void Use_ItWr_Stonnos_06()
 	var int nDocID;
 	var int rnd;
 
-	if(StonnosHr06 == FALSE)
+	if (StonnosHr06 ==  FALSE )
 	{
 		B_GivePlayerXP(500);
 		StonnosHr06 = TRUE;
@@ -3117,21 +3118,21 @@ func void Use_ItWr_Stonnos_06()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 
-		if((MIS_XRANFREG == LOG_Running) && (StonnosHr01 == TRUE) && (StonnosHr02 == TRUE) && (StonnosHr03 == TRUE) && (StonnosHr04 == TRUE) && (StonnosHr05 == TRUE) && (StonnosHr06 == TRUE) && (StonnosHrAll == FALSE))
+		if (( MIS_XRANFREG  == LOG_Running) && (StonnosHr01 ==  TRUE ) && (StonnosHr02 ==  TRUE ) && (StonnosHr03 ==  TRUE ) && (StonnosHr04 ==  TRUE ) && (StonnosHr05 ==  TRUE ) && (StonnosHr06 ==  TRUE ) && (StonnosHrAll ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,100);
 			Snd_Play("Levelup");
 			StonnosHrAll = TRUE;
-			B_LogEntry(TOPIC_XRANFREG,"Teď už vím vše, co jsem potřeboval! To stvoření s kterým se Pyrokar a Xardas setkali, nebyl nikdo jiný než Stonnos sám. Je nesmrtelný a pouze a jen krev boha, který ho splodil, může zničit toto stvoření. Podle všeho, obyčejná magická ruda - je stejná jako krev Stonnose! Vzpomínám si na příběh o Urizielovi. Možná to bude fungovat znova. Jenže kde já najdu tolik rudy?! A co je nejdůležitější, jaký předmět použít pro tyto účely. Otázky, otázky, samé otázky...");
+			B_LogEntry( TOPIC_XRANFREG , " Now I know all I needed! The creature Pyrokar and Xardas encountered was none other than Stonnos himself. He is immortal and only and only the blood of the god who spawned him can destroy this creature. According of all, ordinary magical ore - it is the same as the blood of Stonnos! I remember the story of Uriziel. Maybe it will work again. But where will I find so much ore?! And most importantly, what item to use for these purposes. Questions, questions, only questions... " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3150,7 +3151,7 @@ func void Use_ItWr_Stonnos_06()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_151 = TRUE;
+		BookBonus_151 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3160,23 +3161,23 @@ func void Use_ItWr_Stonnos_06()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Jeho síla a schopnosti jsou pozoruhodné! Musíme však najít způsob jak ho zničit, pokud by to bylo potřeba. Nicméně jen síla jeho podstaty je schopná ho zničit!");
+	Doc_PrintLines(nDocID, 0 , " His power and abilities are remarkable! However, we must find a way to destroy him if necessary. However, only the power of his essence is capable of destroying him! " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Krev jeho mrtvého boha - to je to co my potřebujeme! Magická síla s ní spojená je to, co udělá svou práci, až nastane správný čas. A to bude dříve než si myslíme...");
+	Doc_PrintLines(nDocID, 1 , " The blood of his dead god - that's what we need! The magical power associated with it is what will do its job when the time is right. And it will be sooner than we think... " );
 	Doc_Show(nDocID);
 };
 
-instance ItWr_Stonnos_07(C_Item)
+instance ItWr_Stonnos_07 (C_Item);
 {
-	name = "Poslední vydechnutí";
+	name = " Last Breath " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Poslední vydechnutí";
+	description = " Last Breath " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_Stonnos_07;
@@ -3188,10 +3189,10 @@ func void Use_ItWr_Stonnos_07()
 	var int nDocID;
 	var int rnd;
 
-	if(StonnosHr07 == FALSE)
+	if (StonnosHr07 ==  FALSE )
 	{
 		B_GivePlayerXP(500);
-		StonnosHr07 = TRUE;
+		StonnosHr07 = TRUE ;
 		Snd_Play("Levelup");
 		B_Say(self,self,"$HOWINTEREST");
 		AI_Print(PRINT_READGODSAWAY);
@@ -3199,13 +3200,13 @@ func void Use_ItWr_Stonnos_07()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3224,7 +3225,7 @@ func void Use_ItWr_Stonnos_07()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_152 = TRUE;
+		BookBonus_152 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3234,23 +3235,23 @@ func void Use_ItWr_Stonnos_07()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Osud tohoto světa je zpečetěn! Bude zničen větry chaosu a na jeho místě, vybudujeme nový chrám. Bude nádherný tak jako i tento svět byl nádherný.");
+	Doc_PrintLines(nDocID, 0 , " The fate of this world is sealed! It will be destroyed by the winds of chaos and in its place, we will build a new temple. It will be beautiful as this world was beautiful. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Jejich jediná naděje na záchranu leží v rukou toho, jež bohové jmenovali svým vyvoleným! Jen pouze on nám může dokázat, že jsme se mýlili, když jsme se tak rozhodli a že tento svět si zaslouží, aby mu bylo prominuto.");
+	Doc_PrintLines(nDocID, 1 , " Their only hope of salvation lies in the hands of the one whom the gods have named their chosen one! Only he can prove us wrong in our choices and that this world deserves to be waived. " );
 	Doc_Show(nDocID);
 };
 
 instance ItWr_Alchemy_01(C_Item)
 {
-	name = "Původ alchymie";
+	name = " Origin of Alchemy " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Rich_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Původ alchymie";
+	description = " The Origin of Alchemy " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_Alchemy_01;
@@ -3272,13 +3273,13 @@ func void Use_ItWr_Alchemy_01()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3297,7 +3298,7 @@ func void Use_ItWr_Alchemy_01()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_153 = TRUE;
+		BookBonus_153 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3307,10 +3308,10 @@ func void Use_ItWr_Alchemy_01()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Moudří lidé se naučili získávat magickou moc z bylin a z částí různých stvoření. Od té doby, alchymisti hledají využití pro nové léčebné prostředky a způsoby jak vylepšit ty staré. Ty, jejichž podstatu napadl sám Beliar, nazýváme temnými alchymisty. Ve svých lektvarech užívají kosti, lebky a ektoplazmu mocných magických stvoření.");
+	Doc_PrintLines(nDocID, 0 , " Wise men learned to extract magical power from herbs and parts of various creatures. Since then, alchemists have sought uses for new remedies and ways to improve old ones. Those whose essence was attacked by Beliar himself are called dark alchemists . They use the bones, skulls, and ectoplasm of powerful magical creatures in their potions. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Elixíry mají rozličné účinky na válečníky a na mágy. Výsledkem tréninku se organizmus stává citlivým na určité alchymistické směsi a vůči dalším si buduje imunitu. Pro dosažení co nejlepších účinků užívejte elixíry přirozené vášmu osobnímu tréninku.");
+	Doc_PrintLines(nDocID, 1 , " Elixirs have different effects on warriors and mages. As a result of training, the body becomes sensitive to certain alchemical mixtures and builds immunity to others. For the best effects, use elixirs naturally to your personal training. " );
 	Doc_Show(nDocID);
 };
 
@@ -3345,13 +3346,13 @@ func void Use_ItWr_Druid_01()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Rétorika + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rétorika + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3370,7 +3371,7 @@ func void Use_ItWr_Druid_01()
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 		AI_Print("Inteligence + 1");
-		BookBonus_154 = TRUE;
+		BookBonus_154 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3380,16 +3381,16 @@ func void Use_ItWr_Druid_01()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,"font_10_book.tga");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Když rostliny a zvířata změnili svou původní podstatu, druidi se jich začali bát. Avšak Adanos se obrátil k moudrým a pravil, že zlo je možné přeměnit na dobro, a jed na medicínu. Varoval je i vylekal hněvem tří bohů, že moudrost nesmí být obrácena ve zlo a medicína v jed. Bohužel ne všichni vydrželi odolávat tomu pokušení.");
+	Doc_PrintLines(nDocID, 0 , " When plants and animals changed their original nature, the druids began to fear them. But Adanos turned to the wise and said that evil could be turned into good, and poison into medicine. He warned them and frightened them with the wrath of the three of the gods that wisdom must not be turned into evil and medicine into poison. Unfortunately, not everyone could resist the temptation. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Druidi pronikli do tajů bylin. Jejich znalosti pomáhají alchymistům měnit jed na elixíry. Z vůle druidů, kde keře byly, lesy rostly, kde pouště byly, keře rostly. Bohužel takovéto dílo se druidům podaří jednou, dvakrát za život. Pomocníci jež slouží v lesích druidům jsou enti - na půl živé stromy, které jsou schopné pohybu, jako golemové.");
+	Doc_PrintLines(nDocID, 1 , " Druids have penetrated the secrets of herbs. Their knowledge helps alchemists to change poison into elixirs. By the will of the druids, where there were bushes, forests grew, where there were deserts, bushes grew. Unfortunately, such a work is done by druids once, twice in life. Helpers who serve the druids in the forest are ents - half-living trees that are able to move, like golems. " );
 	Doc_Show(nDocID);
 };
 
 instance ItWr_Sigil(C_Item)
 {
-	name = "Starý svitek";
+	name = " Old Scroll " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -3398,7 +3399,7 @@ instance ItWr_Sigil(C_Item)
 	on_state[0] = Use_ItWr_Sigil;
 	scemeName = "MAP";
 	description = "Runový sihill";
-	text[4] = "Způsob výroby 'Stříbrného runového sihillu'...";
+	text[ 4 ] = " How to make 'Silver Runic Sihill'... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -3416,12 +3417,12 @@ func void Use_ItWr_Sigil()
 			SigilKnow = TRUE;
 			RankPoints = RankPoints + 1;
 			Snd_Play("LevelUP");
-			AI_Print("Naučeno: Kovářství - 'Stříbrný runový sihill'");
-			B_LogEntry(TOPIC_TalentSmith,"Materiály pro vykování STŘÍBRNÉHO RUNOVÉHO SIHILLU: 2x rtuť, 3x železný ingot, 2x černá ruda, měsíční kámen, 2x černá perla, pryskyřice, 4x síra, 10x úlomek runového kamene, svitek kouzla 'Zničení nemrtvého' a 4x křemen.");
+			AI_Print( " Learned: Blacksmithing - 'Silver Runic Sihill' " );
+			B_LogEntry(TOPIC_TalentSmith, " Materials for forging SILVER RUNE SIHILL: 2x Mercury, 3x Iron Ingot, 2x Black Ore, Moonstone, 2x Black Pearl, Resin, 4x Brimstone, 10x Runestone Shard, 'Destroy the Undead' spell scroll, and 4x Quartz. " );
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -3446,10 +3447,10 @@ func void Use_ItWr_Sigil()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"- Runový sihill -");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Tento meč je pravděpodobně ta nejlepší zbraň, kterou kdy člověk vyrobil! Nejen, že může v tichosti nasekat napřátelé na malé kousky, může také způsobit zranění nehmotným bytostem, například přízrakům.");
+	Doc_PrintLines(nDocID, 0 , " This sword is probably the best weapon ever made by man! Not only can it silently chop enemies into small pieces, it can also inflict injury on intangible beings such as ghosts. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Bohužel jen pravý mistr kovařiny je schopen ukovat zbraň takovéhoto rázu, protože recept na výrobu je nesmírně složitý.");
+	Doc_PrintLines(nDocID, 0 , " Unfortunately, only a true blacksmith master is able to forge a weapon of this kind, because the recipe for production is extremely complex. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -3458,7 +3459,7 @@ func void Use_ItWr_Sigil()
 
 instance ItWr_Unpoison(C_Item)
 {
-	name = "Starý svitek";
+	name = " Old Scroll " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -3466,8 +3467,8 @@ instance ItWr_Unpoison(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItWr_Unpoison;
 	scemeName = "MAP";
-	description = "Odolnost proti jedům";
-	text[4] = "Způsob obrany proti jedům...";
+	description = " Poison Resistance " ;
+	text[ 4 ] = " Method of defense against poisons... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -3485,11 +3486,11 @@ func void Use_ItWr_Unpoison()
 			ResistPoisonKnow = TRUE;
 			RankPoints = RankPoints + 1;
 			Snd_Play("LevelUP");
-			AI_Print("Naučeno: Odolnost proti jedu");
+			AI_Print( " Learned: Poison Resistance " );
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -3514,10 +3515,10 @@ func void Use_ItWr_Unpoison()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"- Jedy -");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Jed - je zlo! Obvzlášť když se dostane do organizmu. Musíme se postarat o to, aby tělo začalo jed rozkládat co nejdříve.");
+	Doc_PrintLines(nDocID, 0 , " Poison - it's evil! Especially when it gets into the body. We have to make sure that the body starts breaking down the poison as soon as possible. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Je velice důležité se neustále pohybovat a hodně potit! Potom otrava jedem nebude působit tolik újmy.");
+	Doc_PrintLines(nDocID, 0 , " It is very important to keep moving and sweat a lot! Then poison poisoning will not cause so much harm. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -3526,19 +3527,19 @@ func void Use_ItWr_Unpoison()
 
 instance Itar_Pal_Cloack(C_Item)
 {
-	name = "Avabulina křídla";
+	name = " Avabula's Wings " ;
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	value = 1;
 	visual = "Pal_Flaga.MMS";
 	material = MAT_LEATHER;
-	description = "Avabulina křídla";
+	description = " Avabula's Wings " ;
 	inv_animate = 1;
 };
 
 instance ItWr_ArmorDocs(C_Item)
 {
-	name = "Staré kresby";
+	name = " Old Drawings " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -3547,7 +3548,7 @@ instance ItWr_ArmorDocs(C_Item)
 	on_state[0] = Use_ItWr_ArmorDocs;
 	scemeName = "MAP";
 	description = "Staré kresby";
-	text[4] = "Podobné nákresům na výrobu nějaké zbroje...";
+	text[ 4 ] = " Similar to blueprints for making some armor... " ;
 	inv_animate = 1;
 };
 
@@ -3566,7 +3567,7 @@ func void Use_ItWr_ArmorDocs()
 
 instance ItWr_MiltenSummon(C_Item)
 {
-	name = "Miltenův svitek";
+	name = " Milten's Scroll " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
