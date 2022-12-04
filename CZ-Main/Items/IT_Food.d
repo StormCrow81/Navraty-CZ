@@ -1,3 +1,4 @@
+
 const int HP_Apple = 1;
 const int HP_Honey = 2;
 const int HP_Cheese = 3;
@@ -23,7 +24,7 @@ const int Value_Bread = 20;
 const int Value_Fish = 15;
 const int Value_Rawmeat = 3;
 const int VALUE_RAWMEATSCHILDKROETE = 5;
-const int VALUE_SCHILDKROETESOUP = 25;
+const  int  VALUE_SCHILDKROETESOUP = 25 ;
 const int Value_Meat = 6;
 const int Value_Stew = 40;
 const int Value_FishSoup = 20;
@@ -49,21 +50,21 @@ var int sa_bonus;
 var int be_bonus;
 var int bo_bonus;
 var int mi_bonus;
-var int wi_bonus;
+var int our_bonus;
 var int MeetBonus;
 var int FishBonus;
 
 const int HP_Grog = 1;
 const int HP_Shellflesh = 2;
 
-const int Mana_Rum = 5;
+const  int Mana_Rum = 5 ;
 const int Mana_LousHammer = 1;
 
-const int Value_Rum = 15;
+const  int Value_Rum = 15 ;
 const int Value_Grog = 10;
-const int Value_SchnellerHering = 30;
+const  int Value_SchnellerHering = 30 ;
 const int Value_LousHammer = 15;
-const int Value_SchlafHammer = 50;
+const  int Value_SleepHammer = 50 ;
 const int Value_FireStew = 80;
 const int Value_Shellflesh = 30;
 
@@ -72,7 +73,7 @@ const int STR_MeatSoup = 1;
 
 instance ItFo_Addon_Shellflesh(C_Item)
 {
-	name = "Ústřice";
+	name = " Oyster " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Shellflesh;
@@ -83,7 +84,7 @@ instance ItFo_Addon_Shellflesh(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_Shellflesh;
-	text[4] = "Uvnitř je jemné a šťavnaté maso...";
+	text[ 4 ] = " There is tender and juicy meat inside... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -133,10 +134,10 @@ instance ItFo_Addon_Rum(C_Item)
 	material = MAT_GLAS;
 	on_state[0] = UseRum;
 	scemeName = "POTIONFAST";
-	description = "Bílý rum";
+	description = " White rum " ;
 	text[1] = NAME_Bonus_Mana;
 	count[1] = Mana_Rum;
-	text[4] = "Bílý aromatický rum, sen každého námořníka...";
+	text[ 4 ] = " White aromatic rum, every sailor's dream... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Rum;
 	inv_animate = 1;
@@ -178,7 +179,7 @@ instance ItFo_Addon_Rum_Skip(C_Item)
 	count[2] = 1;
 	text[3] = NAME_Bonus_Dex;
 	count[3] = 1;
-	text[4] = "Bílý aromatický rum, sen každého námořníka...";
+	text[ 4 ] = " White aromatic rum, every sailor's dream... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Rum;
 	inv_animate = 1;
@@ -200,7 +201,7 @@ func void UseRum_Skip()
 			self.attribute[ATR_MANA] = self.attribute[ATR_MANA_MAX];
 		};
 
-		concatText = "Síla + 1, obratnost + 1";
+		concatText = " Strength + 1, Dexterity + 1 " ;
 		AI_Print(concatText);
 
 		Hero_Thirst = Hero_Thirst + 2;
@@ -214,7 +215,7 @@ func void UseRum_Skip()
 
 instance ITFO_ADDON_ORCRUM(C_Item)
 {
-	name = "Skřetí pití";
+	name = " Drinking Goblin " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
@@ -222,9 +223,9 @@ instance ITFO_ADDON_ORCRUM(C_Item)
 	material = MAT_GLAS;
 	on_state[0] = useorcrum;
 	scemeName = "POTIONFAST";
-	description = "Skřetí pití";
-	text[3] = "Podivně vypadající skřetí pití...";
-	text[4] = "Účinky neznámé...";
+	description = " Drinking Goblin " ;
+	text[ 3 ] = " Strange-looking goblin drinking... " ;
+	text[ 4 ] = " Effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = Value;
 	inv_animate = 1;
@@ -241,7 +242,7 @@ func void useorcrum()
 
 instance ITFO_ADDON_ORCRUMSAL(C_Item)
 {
-	name = "Lektvar ze skřetího pití";
+	name = " Goblin Drink Potion " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 300;
@@ -251,9 +252,9 @@ instance ITFO_ADDON_ORCRUMSAL(C_Item)
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
 	inv_animate = TRUE;
-	description = "Lektvar ze skřetího pití";
-	text[3] = "Magický lektvar uvařený ze skřetího pití...";
-	text[4] = "Účinky neznámé...";
+	description = " Goblin Drink Potion " ;
+	text[ 3 ] = " A magical potion brewed from goblin potion... " ;
+	text[ 4 ] = " Effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -270,7 +271,7 @@ func void useorcrumsal()
 	if(self.attribute[ATR_STRENGTH] < self.attribute[ATR_DEXTERITY])
 	{
 		B_RaiseAttribute_Bonus_Many(self,ATR_DEXTERITY,2);
-		concatText = "Obratnost + 2, mana - 5";
+		concatText = " Dexterity + 2, mana - 5 " ;
 		AI_Print(concatText);
 
 		if(self.attribute[ATR_MANA_MAX] >= 5)
@@ -285,7 +286,7 @@ func void useorcrumsal()
 	else
 	{
 		B_RaiseAttribute_Bonus_Many(self,ATR_STRENGTH,2);
-		concatText = "Síla + 2, mana - 10";
+		concatText = " Strength + 2, Mana - 10 " ;
 		AI_Print(concatText);
 
 		if(self.attribute[ATR_MANA_MAX] >= 10)
@@ -307,7 +308,7 @@ func void useorcrumsal()
 
 instance ITFO_ADDON_ORCRUMSALBETA(C_Item)
 {
-	name = "Elixír ze skřetího pití";
+	name = " Goblin Drink Elixir " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 600;
@@ -316,9 +317,9 @@ instance ITFO_ADDON_ORCRUMSALBETA(C_Item)
 	on_state[0] = useorcrumsalbeta;
 	scemeName = "POTIONFAST";
 	wear = WEAR_EFFECT;
-	description = "Elixír ze skřetího pití";
-	text[3] = "Magický elixír uvařený ze skřetího pití...";
-	text[4] = "Účinky neznámé...";
+	description = " Elixir of Goblin Drink " ;
+	text[ 3 ] = " A magical potion brewed from goblin potion... " ;
+	text[ 4 ] = " Effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -335,13 +336,13 @@ func void useorcrumsalbeta()
 	if(self.attribute[ATR_STRENGTH] < self.attribute[ATR_DEXTERITY])
 	{
 		B_RaiseAttribute_Bonus_Many(self,ATR_DEXTERITY,3);
-		concatText = "Obratnost + 3";
+		concatText = " Dexterity + 3 " ;
 		AI_Print(concatText);
 	}
 	else
 	{
 		B_RaiseAttribute_Bonus_Many(self,ATR_STRENGTH,3);
-		concatText = "Síla + 3";
+		concatText = " Strength + 3 " ;
 		AI_Print(concatText);
 	};
 };
@@ -361,7 +362,7 @@ instance ItFo_Addon_Grog(C_Item)
 	count[1] = HP_Grog;
 	text[2] = NAME_Bonus_Mana;
 	count[2] = HP_Grog;
-	text[4] = "Horký nápoj připravený z rumu...";
+	text[ 4 ] = " A hot drink made from rum... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Grog;
 	inv_animate = 1;
@@ -399,8 +400,8 @@ instance ItFo_Addon_LousHammer(C_Item)
 	on_state[0] = UseLouHammer;
 	scemeName = "POTIONFAST";
 	description = "Louovo kladivo";
-	text[3] = "Velice silný alkoholický nápoj, uvařený podle speciálního receptu...";
-	text[4] = "Účinky neznámé...";
+	text[ 3 ] = " A very strong alcoholic drink, brewed according to a special recipe... " ;
+	text[ 4 ] = " Effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_LousHammer;
 	inv_animate = 1;
@@ -430,11 +431,11 @@ func void UseLouHammer()
 };
 
 
-var int schlafhammer_once;
+var int sleephammer_once;
 
-instance ItFo_Addon_SchlafHammer(C_Item)
+instance ItFo_Addon_SchlafHammer (C_Item)
 {
-	name = "Dvojité Louovo kladivo";
+	name = " Double Lou's Hammer " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SchlafHammer;
@@ -442,9 +443,9 @@ instance ItFo_Addon_SchlafHammer(C_Item)
 	material = MAT_GLAS;
 	on_state[0] = UseSchlafHammer;
 	scemeName = "POTIONFAST";
-	description = "Dvojité Louovo kladivo";
-	text[3] = "Velice silný alkoholický nápoj, který dokáže složit kohokoli...";
-	text[4] = "Účinky neznámé...";
+	description = " Double Lou's Hammer " ;
+	text[ 3 ] = " A very strong alcoholic drink that can kill anyone... " ;
+	text[ 4 ] = " Effects unknown... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_SchlafHammer;
 	inv_animate = 1;
@@ -460,10 +461,10 @@ func void UseSchlafHammer()
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
 
-		if(SCHLAFHAMMER_ONCE == FALSE)
+		if ( SLEEPING HAMMER_ONCE  ==  FALSE )
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,5);
-			SCHLAFHAMMER_ONCE = TRUE;
+			SLEEPAMMER_ONCE = TRUE ;
 		};
 
 		Hero_Thirst = Hero_Thirst + 1;
@@ -477,9 +478,9 @@ func void UseSchlafHammer()
 	};
 };
 
-instance ItFo_Addon_SchnellerHering(C_Item)
+instance ItFo_Addon_SchnellerHering (C_Item)
 {
-	name = "Rychlý sleď";
+	name = " Fast herring " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SchnellerHering;
@@ -488,12 +489,12 @@ instance ItFo_Addon_SchnellerHering(C_Item)
 	on_state[0] = UseSchnellerHering;
 	scemeName = "POTIONFAST";
 	description = name;
-	text[2] = "Velice silná kořalka připravovaná piráty...";
-	text[3] = "Dočasně zvyšuje rychlost pohybu...";
+	text[ 2 ] = " A very strong liquor prepared by pirates... " ;
+	text[ 3 ] = " Temporarily increases movement speed... " ;
 	text[4] = NAME_Sec_Duration;
 	count[4] = 60;
 	text[5] = NAME_Value;
-	count[5] = Value_SchnellerHering;
+	count[ 5 ] = Value_SchnellerHering;
 	inv_animate = 1;
 };
 
@@ -523,7 +524,7 @@ func void UseSchnellerHering()
 
 instance ItFo_Addon_SchnellerHering_Ext(C_Item)
 {
-	name = "Skipův Rychlý sleď";
+	name = " Skip's Fast Herring " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SchnellerHering;
@@ -532,12 +533,12 @@ instance ItFo_Addon_SchnellerHering_Ext(C_Item)
 	on_state[0] = UseSchnellerHering_Ext;
 	scemeName = "POTIONFAST";
 	description = name;
-	text[2] = "Velice silná kořalka připravovaná piráty...";
-	text[3] = "Dočasně zvyšuje rychlost pohybu...";
+	text[ 2 ] = " A very strong liquor prepared by pirates... " ;
+	text[ 3 ] = " Temporarily increases movement speed... " ;
 	text[4] = NAME_Sec_Duration;
 	count[4] = 60;
 	text[5] = NAME_Value;
-	count[5] = Value_SchnellerHering;
+	count[ 5 ] = Value_SchnellerHering;
 	inv_animate = 1;
 };
 
@@ -567,15 +568,15 @@ func void UseSchnellerHering_Ext()
 
 instance ItFo_Addon_Pfeffer_01(C_Item)
 {
-	name = "Červený pepř";
+	name = " Red Pepper " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
 	visual = "ItMi_Pocket_Small.3ds";
 	material = MAT_LEATHER;
-	description = "Červený pepř";
-	text[3] = "Červený pepř pěstovaný na Jižních ostrovech...";
-	text[4] = "Pozor! Velice ostré...";
+	description = " Red Pepper " ;
+	text[ 3 ] = " Red pepper grown in the Southern Islands... " ;
+	text[ 4 ] = " Attention! Very sharp... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -583,7 +584,7 @@ instance ItFo_Addon_Pfeffer_01(C_Item)
 
 instance ItFo_Addon_FireStew(C_Item)
 {
-	name = "Pálivé nudličky";
+	name = " Hot Noodles " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FireStew;
@@ -591,11 +592,11 @@ instance ItFo_Addon_FireStew(C_Item)
 	material = MAT_WOOD;
 	scemeName = "RICE";
 	on_state[0] = Use_FireStew;
-	description = "Pálivé nudličky s Louovým kladivem";
+	description = " Hot Noodles with Lou's Hammer " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = STR_FireStew;
-	text[3] = "Pálivé nudličky dochucené Louovým kladivem...";
-	text[4] = "Pozor! Velice ostré...";
+	text[ 3 ] = " Hot noodles seasoned with Lou's hammer... " ;
+	text[ 4 ] = " Attention! Very sharp... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_FireStew;
 };
@@ -617,7 +618,7 @@ func void Use_FireStew()
 
 instance ItFo_BeetSoup(C_Item)
 {
-	name = "Tuřínová polévka";
+	name = " Turnip Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
@@ -625,12 +626,12 @@ instance ItFo_BeetSoup(C_Item)
 	material = MAT_WOOD;
 	scemeName = "RICE";
 	on_state[0] = Use_BeetSoup;
-	description = "Tuřínová polévka";
+	description = " Turnip soup " ;
 	text[1] = NAME_Bonus_HP;
-	count[1] = HP_BeetSoup;
+	count[ 1 ] = HP_BeetSoup;
 	text[2] = NAME_BONUS_STAPROC;
 	count[2] = 5;
-	text[4] = "Lahodná horká polévka, uvařená z tuřínů...";
+	text[ 4 ] = " Delicious hot soup, cooked from turnips... " ;
 	text[5] = NAME_Value;
 	count[5] = 10;
 };
@@ -661,7 +662,7 @@ func void Use_BeetSoup()
 
 instance ItFo_Addon_Meatsoup(C_Item)
 {
-	name = "Masová polévka";
+	name = " Meat Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FishSoup;
@@ -669,10 +670,10 @@ instance ItFo_Addon_Meatsoup(C_Item)
 	material = MAT_WOOD;
 	scemeName = "RICE";
 	on_state[0] = Use_MeatSoup;
-	description = "Masová polévka";
+	description = " Meat soup " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = STR_MeatSoup;
-	text[4] = "Lahodná horká polévka, uvařená z masa...";
+	text[ 4 ] = " Delicious hot soup, cooked from meat... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_FishSoup;
 };
@@ -694,7 +695,7 @@ func void Use_MeatSoup()
 
 instance ITFO_ADDON_SHNAPS_ORKS(C_Item)
 {
-	name = "Skřetí kořalka";
+	name = " Goblin Liquor " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 200;
@@ -801,7 +802,7 @@ func void Use_Apple()
 
 instance ItFo_GoatCheese(C_Item)
 {
-	name = "Kozí sýr";
+	name = " Goat Cheese " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
@@ -879,7 +880,7 @@ func void Use_Cheese()
 	{
 		CH_BONUS += 1;
 
-		if((CH_BONUS == 50) && (RealMode[2] == FALSE))
+		if (( CH_BONUS  ==  50 ) && ( RealMode[ 2 ] ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,2);
 			Npc_ChangeAttribute(self,ATR_HITPOINTS,2);
@@ -934,7 +935,7 @@ func void Use_Bacon()
 	{
 		BA_BONUS += 1;
 
-		if((BA_BONUS == 25) && (RealMode[2] == FALSE))
+		if (( BA_BONUS  ==  25 ) && ( RealMode[ 2 ] ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,3);
 			Npc_ChangeAttribute(self,ATR_HITPOINTS,3);
@@ -1041,7 +1042,7 @@ func void Use_Fish()
 
 instance ITFOSCHILDKROETERAW(C_Item)
 {
-	name = "Želví maso";
+	name = " Turtle Meat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_RAWMEATSCHILDKROETE;
@@ -1069,22 +1070,22 @@ func void use_rawmeatschildkroete()
 
 instance ITFO_SCHILDKROETESOUP(C_Item)
 {
-	name = "Želví polévka";
+	name = " Turtle Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_SCHILDKROETESOUP;
+	value = VALUE_SCHILDKROETESOUP ;
 	visual = "ItFo_Soup_New_01.3ds";
 	material = MAT_WOOD;
 	scemeName = "RICE";
 	on_state[0] = use_schildkroetesoup;
 	description = name;
 	text[1] = NAME_Bonus_HP;
-	count[1] = HP_SCHILDKROETESOUP;
+	count[ 1 ] = HP_SCHILDKROETESOUP ;
 	text[2] = NAME_BONUS_STAPROC;
 	count[2] = 20;
 	text[4] = "";
 	text[5] = NAME_Value;
-	count[5] = VALUE_SCHILDKROETESOUP;
+	count[ 5 ] = VALUE_SCHILDKROETESOUP ;
 };
 
 
@@ -1102,7 +1103,7 @@ func void use_schildkroetesoup()
 		{
 			ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 		};
-		SCHILDKROETE_BONUS = SCHILDKROETE_BONUS + 1;
+		SCHILDKROETE_BONUS = SCHILDKROETE_BONUS  +  1 ;
 
 		if((SCHILDKROETE_BONUS == 5) && (RealMode[2] == FALSE))
 		{
@@ -1121,10 +1122,10 @@ func void use_schildkroetesoup()
 
 instance ItFo_MeetSoup(C_Item)
 {
-	name = "Masová polévka";
+	name = " Meat Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_SCHILDKROETESOUP;
+	value = VALUE_SCHILDKROETESOUP ;
 	visual = "ITFO_TURTLESOUP.3ds";
 	material = MAT_WOOD;
 	scemeName = "RICE";
@@ -1154,9 +1155,9 @@ func void Use_ItFo_MeetSoup()
 			ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 		};
 
-		MeetSoup_BONUS = MeetSoup_BONUS + 1;
+		MeetSoup_BONUS = MeetSoup_BONUS +  1 ;
 
-		if((MeetSoup_BONUS == 25) && (RealMode[2] == FALSE))
+		if (( MeetSoup_BONUS ==  25 ) && ( RealMode [ 2 ] ==  FALSE ))
 		{
 			B_RaiseAttribute_Bonus(self,ATR_STRENGTH,1);
 			Snd_Play("LevelUp");
@@ -1199,7 +1200,7 @@ func void Use_RawMeat()
 
 instance ItFoMutton(C_Item)
 {
-	name = "Opečené maso";
+	name = " Roasted meat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Meat;
@@ -1228,7 +1229,7 @@ func void Use_Meat()
 	{
 		AllMeet_Bonus = AllMeet_Bonus + 1;
 
-		if((AllMeet_Bonus == 50) && (MeetBonus == FALSE) && (RealMode[2] == FALSE))
+		if (( AllMeet_Bonus ==  50 ) && ( MeetBonus ==  FALSE ) && ( RealMode [ 2 ] ==  FALSE ))
 		{
 			MeetBonus = TRUE;
 			B_RaiseAttribute_Bonus(self,ATR_STRENGTH,1);
@@ -1252,9 +1253,9 @@ func void Use_Meat()
 	};
 };
 
-instance ItMi_BretMeet(C_Item)
+instance ItMi_BretMeet (C_Item)
 {
-	name = "Opečené maso";
+	name = " Roasted meat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Meat;
@@ -1299,7 +1300,7 @@ func void Use_ItMi_BretMeet()
 
 instance ITFOMUTTON_NICLAS(C_Item)
 {
-	name = "Opečené maso";
+	name = " Roasted meat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Meat;
@@ -1314,7 +1315,7 @@ instance ITFOMUTTON_NICLAS(C_Item)
 	count[2] = HP_Meat;
 	text[3] = NAME_BONUS_STAPROC;
 	count[3] = 15;
-	text[4] = "Tohle maso bylo připraveno podle speciálního receptu...";
+	text[ 4 ] = " This meat was prepared according to a special recipe... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Meat;
 	inv_animate = 1;
@@ -1350,7 +1351,7 @@ func void use_itfomutton_niclas()
 
 instance ItFo_Stew(C_Item)
 {
-	name = "Vývar";
+	name = " Broth " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Stew;
@@ -1396,7 +1397,7 @@ func void Use_Stew()
 
 instance ItFo_XPStew(C_Item)
 {
-	name = "Theklin vývar";
+	name = " Theklin broth " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Stew;
@@ -1446,7 +1447,7 @@ func void Use_XPStew()
 
 instance ITFO_NASHSOUP(C_Item)
 {
-	name = "Nashova polévka";
+	name = " Nash's Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Stew;
@@ -1469,7 +1470,7 @@ func void use_nashsoupstew()
 	{
 		NASHSOUP_BONUS = NASHSOUP_BONUS + 1;
 
-		if((NASHSOUP_BONUS == 5) && (RealMode[2] == FALSE))
+		if (( NASHSOUP_BONUS  ==  5 ) && ( RealMode[ 2 ] ==  FALSE ))
 		{
 			B_RaiseAttribute_Bonus(self,ATR_STRENGTH,1);
 			Snd_Play("LevelUp");
@@ -1502,7 +1503,7 @@ instance ItFo_CoragonsBeer(C_Item)
 	count[2] = Mana_Beer;
 	text[3] = NAME_BONUS_STAPROC;
 	count[3] = 5;
-	text[4] = "Coragonovo speciální pivo...";
+	text[ 4 ] = " Coragon's Special Beer... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Beer;
 	inv_animate = 1;
@@ -1545,7 +1546,7 @@ func void Use_CoragonsBeerBeer()
 
 instance ItFo_FishSoup(C_Item)
 {
-	name = "Rybí polévka";
+	name = " Fish Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FishSoup;
@@ -1573,7 +1574,7 @@ func void Use_FishSoup()
 	{
 		FishSoup_BONUS = FishSoup_BONUS + 1;
 
-		if((FishSoup_BONUS == 40) && (FishBonus == FALSE) && (RealMode[2] == FALSE))
+		if (( FishSoup_BONUS ==  40 ) && ( FishBonus ==  FALSE ) && ( RealMode [ 2 ] ==  FALSE ))
 		{
 			FishBonus = TRUE;
 			B_RaiseAttribute_Bonus(self,ATR_DEXTERITY,1);
@@ -1600,7 +1601,7 @@ func void Use_FishSoup()
 
 instance ItFo_Sausage(C_Item)
 {
-	name = "Klobása";
+	name = " Sausage " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sausage;
@@ -1626,9 +1627,9 @@ func void Use_Sausage()
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Sausage);
 	if(Npc_IsPlayer(self))
 	{
-		SA_BONUS += 1;
+		SA_BONUS  +=  1 ;
 
-		if((SA_BONUS == 25) && (RealMode[2] == FALSE))
+		if (( SA_BONUS  ==  25 ) && ( RealMode[ 2 ] ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,2);
 			Npc_ChangeAttribute(self,ATR_HITPOINTS,2);
@@ -1769,7 +1770,7 @@ instance ItFo_Beer(C_Item)
 	count[2] = Mana_Beer;
 	text[3] = NAME_BONUS_STAPROC;
 	count[3] = 5;
-	text[4] = "Pivo 'Temný paladin', uvařeno podle speciálního receptu...";
+	text[ 4 ] = " 'Dark Paladin' beer, brewed according to a special recipe... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Beer;
 	inv_animate = 1;
@@ -1815,7 +1816,7 @@ func void Use_Beer()
 
 instance ItFo_Booze(C_Item)
 {
-	name = "Kořalka";
+	name = " Liquor " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Booze;
@@ -1840,7 +1841,7 @@ instance ItFo_Booze(C_Item)
 func void Use_Booze()
 {
 	var int staminamax;
-	var int rand;
+	be int rand;
 
 	if(Npc_IsPlayer(self))
 	{
@@ -1871,7 +1872,7 @@ func void Use_Booze()
 	}
 	else
 	{
-		rand = Hlp_Random(2);
+		rand = Hlp_Random( 2 );
 
 		if(rand == FALSE)
 		{
@@ -2047,7 +2048,7 @@ func void Use_Wine()
 	{
 		WI_BONUS += 1;
 
-		if((WI_BONUS == 50) && (RealMode[2] == FALSE))
+		if (( WI_BONUS  ==  50 ) && ( RealMode[ 2 ] ==  FALSE ))
 		{
 			B_RaiseAttribute_Bonus(self,ATR_MANA_MAX,1);
 			Npc_ChangeAttribute(self,ATR_MANA,1);
@@ -2082,7 +2083,7 @@ instance ItMi_LoaWine(C_Item)
 	visual = "ItFo_Wine.3DS";
 	material = MAT_GLAS;
 	description = name;
-	text[4] = "Velice drahý druh vína...";
+	text[ 4 ] = " A very expensive type of wine... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Wine;
 	inv_animate = 1;
@@ -2105,7 +2106,7 @@ instance ItFo_Wine_Loa(C_Item)
 	count[2] = Mana_Wine;
 	text[3] = NAME_BONUS_STAPROC;
 	count[3] = 10;
-	text[4] = "Tohle víno mi dala Loa...";
+	text[ 4 ] = " Loa gave me this wine... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Wine;
 	inv_animate = 1;
@@ -2170,21 +2171,21 @@ func void Use_Milk()
 {
 	var int staminamax;
 	var string concatText;
-	var int staminabonus;
+	var int threadbonus;
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Milk);
 	Npc_ChangeAttribute(self,ATR_MANA,Mana_Milk);
 	if(Npc_IsPlayer(self))
 	{
 		MI_BONUS += 1;
 
-		if((MI_BONUS == 50) && (RealMode[2] == FALSE))
+		if (( MY_BONUS  ==  50 ) && ( RealMode[ 2 ] ==  FALSE ))
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,1);
 			Npc_ChangeAttribute(self,ATR_HITPOINTS,1);
 
 			if(ATR_STAMINA_MAX[0] < 100)
 			{
-				staminabonus = 1;
+				staminabonus = 1 ;
 				ATR_STAMINA_MAX[0] = ATR_STAMINA_MAX[0] + staminabonus;
 				ATR_STAMINA[0] = ATR_STAMINA[0] + 10;
 				Npc_SetTalentSkill(hero,NPC_TALENT_STAMINA,ATR_STAMINA_MAX[0]);
@@ -2197,7 +2198,7 @@ func void Use_Milk()
 			}
 			else
 			{
-				AI_Print(PRINT_NOMORESTAMINA);
+				AI_Print( PRINT_NOMORESTAMINA );
 			};
 		};
 
@@ -2227,14 +2228,14 @@ func void Use_Milk()
 
 instance ItPo_AssasinsRareWine(C_Item)
 {
-	name = "Víno 'Zlatá réva'";
+	name = " Wine 'Golden Vine' " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 2000;
 	visual = "ItFo_Wine_New_03.3DS";
 	material = MAT_GLAS;
 	description = name;
-	text[4] = "Mimořádně vzácné a velice drahé víno...";
+	text[ 4 ] = " Extremely rare and very expensive wine... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Wine;
 	inv_animate = 1;
@@ -2242,7 +2243,7 @@ instance ItPo_AssasinsRareWine(C_Item)
 
 instance ItPo_AssasinsRareWine_Use(C_Item)
 {
-	name = "Víno 'Zlatá réva'";
+	name = " Wine 'Golden Vine' " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 2000;
@@ -2255,7 +2256,7 @@ instance ItPo_AssasinsRareWine_Use(C_Item)
 	count[1] = 10;
 	text[2] = NAME_BONUS_STAPROC;
 	count[2] = 30;
-	text[4] = "Mimořádně vzácné a velice drahé víno...";
+	text[ 4 ] = " Extremely rare and very expensive wine... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Wine;
 	inv_animate = 1;
@@ -2291,7 +2292,7 @@ func void Use_AssasinsRareWine()
 
 instance ITFO_SPECWINE(C_Item)
 {
-	name = "Víno 'Slzy štěstí'";
+	name = " 'Tears of Happiness' wine " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
@@ -2345,7 +2346,7 @@ func void use_specwine()
 
 instance ITFO_SPECWINE_HP(C_Item)
 {
-	name = "Víno 'Slzy štěstí'";
+	name = " 'Tears of Happiness' wine " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
@@ -2396,7 +2397,7 @@ func void use_specwine_HP()
 
 instance ITFO_EALBALZAM(C_Item)
 {
-	name = "Víno 'Balzám prozřetelnosti'";
+	name = " 'Balsam of Providence' wine " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 2000;
@@ -2446,7 +2447,7 @@ func void use_itfo_ealbalzam()
 
 instance ITFO_EALBALZAMTWO(C_Item)
 {
-	name = "Víno 'Zapomnění'";
+	name = " Wine 'Oblivion' " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 3000;
@@ -2497,7 +2498,7 @@ func void use_itfo_ealbalzamtwo()
 
 instance ITFO_POTTAGE_MUSHROOM(C_Item)
 {
-	name = "Vývar z otrokových chlebů";
+	name = " Slave Bread Broth " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 125;
@@ -2526,7 +2527,7 @@ func void use_pottage_mushroom()
 		Npc_ChangeAttribute(self,ATR_MANA,20);
 		self.protection[PROT_MAGIC] += 1;
 		REALPROTMAGIC += 1;
-		AI_Print("Ochrana proti magii + 1");
+		AI_Print( " Protection against magic + 1 " );
 		Snd_Play("LevelUp");
 
 		Hero_Hunger = Hero_Hunger + 7;
@@ -2540,7 +2541,7 @@ func void use_pottage_mushroom()
 
 instance ITFO_POTTAGE_MUSHROOM_BLACK(C_Item)
 {
-	name = "Vývar z tmavých hub";
+	name = " Dark Mushroom Broth " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 180;
@@ -2581,11 +2582,11 @@ func void use_pottage_mushroom_black()
 
 instance ITFO_COMPOTE_00(C_Item)
 {
-	name = "Kompot z lesních bobulí";
+	name = " Forest berry compote " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 80;
-	visual = "ItMi_Rum_Compote.3DS";
+	visual = " ItMi_Rum_Compote.3DS " ;
 	material = MAT_GLAS;
 	scemeName = "POTIONFAST";
 	on_state[0] = use_compote_00;
@@ -2626,11 +2627,11 @@ func void use_compote_00()
 
 instance ITFO_COMPOTE_01(C_Item)
 {
-	name = "Kompot z lučních bobulí";
+	name = " Meadow berry compote " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
-	visual = "ItMi_Rum_Compote.3DS";
+	visual = " ItMi_Rum_Compote.3DS " ;
 	material = MAT_GLAS;
 	scemeName = "POTIONFAST";
 	on_state[0] = use_compote_01;
@@ -2672,7 +2673,7 @@ func void use_compote_01()
 
 instance ItFo_RiceStew(C_Item)
 {
-	name = "Dušená rýže";
+	name = " Steamed Rice " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Stew;
@@ -2718,7 +2719,7 @@ func void Use_RiceStew()
 
 instance ItFo_Meatbugragout(C_Item)
 {
-	name = "Ragú ze žravých štěnic";
+	name = " Ragu of gluttonous bugs " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Stew;
@@ -2731,7 +2732,7 @@ instance ItFo_Meatbugragout(C_Item)
 	count[1] = HP_Stew;
 	text[2] = NAME_Bonus_STAProc;
 	count[2] = 10;
-	text[4] = "Ragú ze žravých štěnic a la Snaf s houbami a rýží...";
+	text[ 4 ] = " Ragout of voracious bugs a la Snaf with mushrooms and rice... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Stew;
 };
@@ -2771,19 +2772,19 @@ func void Use_Meatbugragout()
 
 instance ITFO_SCHILDKROETESOUP_SBORKA(C_Item)
 {
-	name = "Speciální rybí polévka";
+	name = " Special Fish Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MISSION | ITEM_MULTI;
-	value = VALUE_SCHILDKROETESOUP;
+	value = VALUE_SCHILDKROETESOUP ;
 	visual = "ItFo_FishSoup_Sky.3ds";
 	material = MAT_WOOD;
 	scemeName = "RICE";
-	on_state[0] = use_schildkroetesoup_sborka;
+	on_state[ 0 ] = use_schildkroetesoup_sborka;
 	description = name;
 	text[1] = NAME_Bonus_HpMax;
 	count[1] = 1;
 	text[5] = NAME_Value;
-	count[5] = VALUE_SCHILDKROETESOUP;
+	count[ 5 ] = VALUE_SCHILDKROETESOUP ;
 };
 
 func void use_schildkroetesoup_sborka()
@@ -2810,7 +2811,7 @@ func void use_schildkroetesoup_sborka()
 
 instance ItFoMuttonRaw_Mount(C_Item)
 {
-	name = "Maso z horského mrchožrouta";
+	name = " Mountain Scavenger Meat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = Value_Rawmeat;
@@ -2836,14 +2837,14 @@ func void Use_RawMeat_Mount()
 
 instance ItFo_BeliarTear(C_Item)
 {
-	name = "Víno 'Beliarova slza'";
+	name = " Wine 'Beliar's Tear' " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 3000;
 	visual = "ItFo_Wine_New_03.3DS";
 	material = MAT_GLAS;
 	description = name;
-	text[4] = "Velice vzácné a drahé varantské víno...";
+	text[ 4 ] = " Very rare and expensive Varant wine... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Wine;
 	inv_animate = 1;
@@ -2851,14 +2852,14 @@ instance ItFo_BeliarTear(C_Item)
 
 instance ItFo_BeliarTear_Haniar(C_Item)
 {
-	name = "Víno 'Beliarova slza'";
+	name = " Wine 'Beliar's Tear' " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 3000;
 	visual = "ItFo_Wine_New_03.3DS";
 	material = MAT_GLAS;
 	description = name;
-	text[4] = "Velice vzácné a drahé varantské víno...";
+	text[ 4 ] = " Very rare and expensive Varant wine... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Wine;
 	inv_animate = 1;
@@ -2866,7 +2867,7 @@ instance ItFo_BeliarTear_Haniar(C_Item)
 
 instance ItFo_Cake_Apple(C_Item)
 {
-	name = "Jablečný koláč";
+	name = " Apple Pie " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 30;
@@ -2915,7 +2916,7 @@ func void Use_ItFo_Cake_Apple()
 
 instance ItFo_Cake_Meat(C_Item)
 {
-	name = "Masový koláč";
+	name = " Meat Pie " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 40;
@@ -2963,7 +2964,7 @@ func void Use_ItFo_Cake_Meat()
 
 instance ItFo_Cake_Mushroom(C_Item)
 {
-	name = "Houbový koláč";
+	name = " Mushroom Pie " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 60;
@@ -3012,7 +3013,7 @@ func void Use_ItFo_Cake_Mushroom()
 
 instance ItFo_Cake_Fish(C_Item)
 {
-	name = "Rybí koláč";
+	name = " Fish Pie " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 80;
@@ -3060,7 +3061,7 @@ func void Use_ItFo_Cake_Fish()
 
 instance ItFo_Cake_Honey(C_Item)
 {
-	name = "Medový koláč";
+	name = " Honey Cake " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 80;
@@ -3110,7 +3111,7 @@ func void Use_ItFo_Cake_Honey()
 
 instance ItFo_HildaStew(C_Item)
 {
-	name = "Hildina masová polévka";
+	name = " Hilda's Meat Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FireStew;
@@ -3118,10 +3119,10 @@ instance ItFo_HildaStew(C_Item)
 	material = MAT_WOOD;
 	scemeName = "RICE";
 	on_state[0] = Use_ItFo_HildaStew;
-	description = "Masová polévka";
+	description = " Meat soup " ;
 	text[1] = NAME_Bonus_Str;
 	count[1] = STR_FireStew;
-	text[4] = "Tuhle polévku pro mne připravila Hilda...";
+	text[ 4 ] = " Hilda prepared this soup for me... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_FireStew;
 };
@@ -3182,7 +3183,7 @@ func void Use_ItFo_Wine_Gritta()
 	{
 		WI_BONUS += 1;
 
-		if((WI_BONUS == 50) && (RealMode[2] == FALSE))
+		if (( WI_BONUS  ==  50 ) && ( RealMode[ 2 ] ==  FALSE ))
 		{
 			B_RaiseAttribute_Bonus(self,ATR_MANA_MAX,1);
 			Npc_ChangeAttribute(self,ATR_MANA,1);
