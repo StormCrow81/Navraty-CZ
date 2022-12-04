@@ -1,19 +1,20 @@
+
 /***********************************\
                 ANIM8
 \***********************************/
 
 //========================================
-// [intern] Variablen und Klassen
+// [internal] variables and classes
 //========================================
 
 class A8Head {
     var int value;
     var int fnc;
     var int dfnc;
-    var int flt;
+    was int flt;
     var int data;
     var int dif;
-    var int ddif;
+    var int dif;
     var int queue; //zCList<A8Command(h)>*
 };
 
@@ -26,7 +27,7 @@ func void A8Head_Archiver(var A8Head this) {
     if(this.flt) { PM_SaveFloat  ("float", this.flt);  };
     if(this.data){ PM_SaveInt    ("data",  this.data); };
     if(this.dif) { PM_SaveInt    ("dif",   this.dif);  };
-    if(this.ddif){ PM_SaveInt    ("ddif",  this.ddif); };
+    if ( this .ddif){ PM_SaveInt( " dif " ,   this .ddif); };
     PM_SaveClassPtr("queue", this.queue, "zCList");
 };
 
@@ -73,12 +74,12 @@ func void A8Head_Delete(var A8Head this) {
 
 instance A8Head@(A8Head);
 
-class A8Command {
+class  A8Command {
     var int target;
     var int timeSpan;
     var int startVal;
     var int startTime;
-    var int velo;
+    var int velocity;
     var int startV;
     var int interpol;
 };
@@ -86,7 +87,7 @@ class A8Command {
 instance A8Command@(A8Command);
 
 //========================================
-// Neues Objekt erstellen
+// Create new object
 //========================================
 func int Anim8_New(var int value, var int IsFloat) {
     var int hndl; hndl = new(A8Head@);
@@ -102,7 +103,7 @@ func int Anim8_New(var int value, var int IsFloat) {
 };
 
 //========================================
-// Neues Objekt mit Handler erstellen
+// Create new object with handler
 //========================================
 func int Anim8_NewExt(var int value, var func handler, var int data, var int IsFloat) {
     var int hndl; hndl = Anim8_New(value, IsFloat);
@@ -113,7 +114,7 @@ func int Anim8_NewExt(var int value, var func handler, var int data, var int IsF
 };
 
 //========================================
-// Objekt komplett löschen
+// Delete object completely
 //========================================
 func void Anim8_Delete(var int hndl) {
     if(!Hlp_IsValidHandle(hndl)) {
@@ -124,7 +125,7 @@ func void Anim8_Delete(var int hndl) {
 };
 
 //========================================
-// [intern] Beschleunigung berechnen
+// [internal] Calculate acceleration
 //========================================
 func void _Anim8_SetVelo(var A8Head h, var A8Command c) {
     if(c.interpol == A8_Wait) { return; };
@@ -135,7 +136,7 @@ func void _Anim8_SetVelo(var A8Head h, var A8Command c) {
     else {
         //a = 2*s/t^2
         c.velo = divf(mulf(mkf(2), subf(c.target, h.value)), mulf(c.timeSpan, c.timeSpan));
-        if(c.interpol == A8_SlowEnd) {
+        if (c.interpol == A8_SlowEnd) {
             c.startV = mulf(c.velo, c.timeSpan);
             c.velo = negf(c.velo);
         };
@@ -143,7 +144,7 @@ func void _Anim8_SetVelo(var A8Head h, var A8Command c) {
 };
 
 //========================================
-// [intern] Neuer Befehl
+// [internal] New command
 //========================================
 func void _Anim8_Ext(var int hndl, var int targetVal, var int timeSpan, var int interpol, var int UseQueue) {
     var A8Head h; h = get(hndl);
@@ -191,7 +192,7 @@ func int _Anim8_Loop(var int hndl) {
 
     var A8Command c; c = get(ldata);
 
-    // Eigentliche Interpolierung
+    // Actual interpolation
     var int t; t = mkf(TimerGT() - c.startTime);
 
     if(c.interpol&&c.interpol < A8_Wait) {
@@ -199,7 +200,7 @@ func int _Anim8_Loop(var int hndl) {
             // s = v*t;
             h.value = mulf(c.velo, t);
         }
-        else if(c.interpol == A8_SlowEnd) {
+        else  if (c.interpol == A8_SlowEnd) {
             // s = a/2*t^2 + v0*t
             h.value = addf(mulf(mulf(c.velo, floatHalb), mulf(t, t)), mulf(c.startV, t));
         }
@@ -234,9 +235,9 @@ func int _Anim8_Loop(var int hndl) {
     };
 
     if(gef(t, c.timeSpan)) {
-        delete(ldata);
+        delete (ldata);
         List_Delete(h.queue, 2);
-        // ggf. Liste aktualisieren
+        // update list if necessary
         if(List_HasLength(h.queue, 2)) {
             ldata = List_Get(h.queue, 2);
             if(!ldata) {
@@ -249,7 +250,7 @@ func int _Anim8_Loop(var int hndl) {
             _Anim8_SetVelo(h, c);
         }
         else if(h.dif) {
-            if(h.ddif) {
+            if (h.dif) {
                 if(h.data) {
                     delete(h.data);
                 };
@@ -261,7 +262,7 @@ func int _Anim8_Loop(var int hndl) {
 };
 
 //========================================
-// Wert eines Objektes holen
+// Get the value of an object
 //========================================
 func int Anim8_Get(var int hndl) {
     if(!Hlp_IsValidHandle(hndl)) {
@@ -275,7 +276,7 @@ func int Anim8_Get(var int hndl) {
 };
 
 //========================================
-// Wert eines Objektes setzen
+// set the value of an object
 //========================================
 func void Anim8_Set(var int hndl, var int v) {
     if(!Hlp_IsValidHandle(hndl)) {
@@ -286,7 +287,7 @@ func void Anim8_Set(var int hndl, var int v) {
 };
 
 //========================================
-// Objekt zerstören wenn es leer ist?
+// Destroy object when empty?
 //========================================
 func void Anim8_RemoveIfEmpty(var int hndl, var int on) {
     if(!Hlp_IsValidHandle(hndl)) {
@@ -297,18 +298,18 @@ func void Anim8_RemoveIfEmpty(var int hndl, var int on) {
 };
 
 //========================================
-// Objektdata zerstören wenn es leer ist?
+// Destroy object data if empty?
 //========================================
 func void Anim8_RemoveDataIfEmpty(var int hndl, var int on) {
     if(!Hlp_IsValidHandle(hndl)) {
         return;
     };
     var A8Head h; h = get(hndl);
-    h.ddif = !!on;
+    h.dif = !! on;
 };
 
 //========================================
-// Registriere eine on-remove Funktion
+// Register an on-remove function
 //========================================
 func void Anim8_CallOnRemove(var int hndl, var func dfnc) {
     if (!Hlp_IsValidHandle(hndl)) {
@@ -320,11 +321,11 @@ func void Anim8_CallOnRemove(var int hndl, var func dfnc) {
 
 
 //========================================
-// Ist das Objekt leer?
+// Is the object empty?
 //========================================
 func int Anim8_Empty(var int hndl) {
     if(!Hlp_IsValidHandle(hndl)) {
-        return 1;
+        return  1 ;
     };
     var A8Head h; h = get(hndl);
     if(!h.queue) { return 1; };
@@ -332,14 +333,14 @@ func int Anim8_Empty(var int hndl) {
 };
 
 //========================================
-// Neuer Befehl
+// New command
 //========================================
 func void Anim8(var int hndl, var int target, var int span, var int interpol) {
     _Anim8_Ext(hndl, target, span + (!span), interpol, 0);
 };
 
 //========================================
-// Neuen Befehl anhängen
+// Append new command
 //========================================
 func void Anim8q(var int hndl, var int target, var int span, var int interpol) {
     _Anim8_Ext(hndl, target, span + (!span), interpol, 1);
