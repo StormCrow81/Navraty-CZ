@@ -1,15 +1,16 @@
+
 /***********************************\
               READ-ONLY
 \***********************************/
-// Folgende Konstanten dürfen NICHT verändert, nur verwendet werden.
+// The following constants may NOT be changed, only used.
 
 //========================================
 // Anim8
 //========================================
-// Bewegungsformen
+// Forms of movement
 const int A8_Constant  = 1;
-const int A8_SlowEnd   = 2;
-const int A8_SlowStart = 3;
+const  int A8_SlowEnd = 2 ;
+const  int A8_SlowStart = 3 ;
 const int A8_Wait      = 4;
 
 //========================================
@@ -19,7 +20,7 @@ const int BUTTON_ACTIVE = 1;
 const int BUTTON_ENTERED = 2;
 
 //========================================
-// Aligns (benutzt in View)
+// Aligns (used in View)
 //========================================
 const int ALIGN_CENTER = 0;
 const int ALIGN_LEFT   = 1;
@@ -75,20 +76,20 @@ const int CUR_WheelDown  = 4;
 /***********************************\
                MODIFY
 \***********************************/
-// Folgende Konstanten dienen nicht als Parameter sondern als Vorgaben.
-// Sie dürfen frei verändert werden.
+// The following constants are not used as parameters but as specifications.
+// They may be changed freely.
 
 //========================================
 // Bloodsplats
 //========================================
-const int BLOODSPLAT_NUM = 15; // Maximale Anzahl auf dem Screen
+const  int  BLOODSPLAT_NUM = 15 ; // Maximum number on the screen
 const int BLOODSPLAT_TEX = 6;  // Maximale Anzahl an Texturen ( "BLOODSPLAT" + texID + ".TGA" )
-const int BLOODSPLAT_DAM = 7;  // Schadensmultiplikator bzgl. der Texturgröße ( damage * 2^BLOODSPLAT_DAM )
+const  int  BLOODSPLAT_DAM = 7 ;  // Damage multiplier related to texture size ( damage * 2^BLOODSPLAT_DAM )
 
 //========================================
 // Cursor
 //========================================
-const string Cursor_Texture   = "CURSOR.TGA"; // Genutzte Textur, LeGo stellt eine "CURSOR.TGA" bereit
+const  string Cursor_Texture = " CURSOR.TGA " ; // Texture used, LeGo provides a "CURSOR.TGA".
 
 //========================================
 // Buffs
@@ -98,31 +99,31 @@ const int Buffs_DisplayForHero = 1;
 //========================================
 // Interface
 //========================================
-const string Print_LineSeperator = "~"; // Sollte man lieber nicht ändern
+const  string Print_LineSeperator = " ~ " ; // Better not to change
 
 /* ==== PrintS ==== */
-// <<Virtuelle Positionen>>
+// <<Virtual Positions>>
 const int    PF_PrintX      = 200;     // Startposition X
 const int    PF_PrintY      = 5000;    // Startposition Y
-const int    PF_TextHeight  = 170;     // Abstand zwischen einzelnen Zeilen
+const  int     PF_TextHeight = 170 ;     // Spacing between individual lines
 
 // <<Milisekunden>>
-const int    PF_FadeInTime  = 300;     // Zeit zum einblenden der Textzeilen
-const int    PF_FadeOutTime = 1000;    // Zeit zum ausblenden der Textzeilen
-const int    PF_MoveYTime   = 300;     // Zeit zum verschieben einer Zeile
-const int    PF_WaitTime    = 3000;    // Zeit die gewartet wird, bis wieder ausgeblendet wird
+const  int     PF_FadeInTime = 300 ;     // Time to show the text lines
+const  int     PF_FadeOutTime = 1000 ;    // Time to hide the text lines
+const  int     PF_MoveYTime = 300 ;     // Time to move a row
+const  int     PF_WaitTime = 3000 ;    // Time to wait before hiding again
 
-const string PF_Font        = "FONT_OLD_10_WHITE.TGA"; //Verwendete Schriftart
+const  string PF_Font = " FONT_OLD_10_WHITE.TGA " ; // Font used
 
 //========================================
 // Talents
 //========================================
-const int AIV_TALENT = AIV_TALENT_INDEX; // Genutzte AI-Var
+const  int  AIV_TALENT = AIV_TALENT_INDEX ; // AI var used
 
 //========================================
 // Dialoggestures
 //========================================
-// Die abgespielte Animation kann so beschrieben werden:
+// The animation being played can be described like this:
 //   DIAG_Prefix + AniName + DIAG_Suffix + ((rand() % (Max - (Min - 1))) + Min).ToString("00");
 const string DIAG_Prefix = "DG_";
 const string DIAG_Suffix = "_";
