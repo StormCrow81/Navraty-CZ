@@ -1,23 +1,15 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.02:
-
-ShowSkillChecks - deklarace nového .ini nastavení
-(20x) const int CZ_SKILL - deklarace nových konstant (kvůli skill checkům)
-CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
-
-
+ShowSkillChecks - declaration of a new .ini setting
+(20x) const int CZ_SKILL - declaration of new constants (due to skill checks)
+CZ_SkillCheckPrefix, CZ_SkillCheckCondition - new functions
 v1.01a:
-
-(4x) CZ_Settings_Diff_Save, DiffInitialized - volání a inicializace integrovány do CZ_Settings_Diff_Init
-
-
+(4x) CZ_Settings_Diff_Save, DiffInitialized - call and initialization integrated into CZ_Settings_Diff_Init
 v1.01:
-
-nový soubor
-
+new file
 */
 
 
@@ -25,7 +17,7 @@ nový soubor
 func void CZ_Settings_Diff_Save()
 {
 	
-	// AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
+	// AI_Print("Writing difficulty settings to Gothic.ini...");
 	
 	Menu_WriteInt("CZ_SETTINGS_DIFF", "ApplyNewSettings", FALSE);
 	
@@ -48,14 +40,14 @@ func void CZ_Settings_Diff_Save()
 	Menu_WriteInt("CZ_SETTINGS_DIFF", "EnableSleepCap", CZ_Settings_Diff_EnableSleepCap);
 	Menu_WriteInt("CZ_SETTINGS_DIFF", "EnableTraps", CZ_Settings_Diff_EnableTraps);
 	
-	// AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
+	// AI_Print("Difficulty settings written to Gothic.ini!");
 	
 };
 
 func void CZ_Settings_Diff_Load()
 {
 	
-	AI_Print("Načítám nastavení obtížnosti z Gothic.ini...");
+	AI_Print( " Loading difficulty settings from Gothic.ini... " );
 	
 	Menu_WriteInt("CZ_SETTINGS_DIFF", "ApplyNewSettings", FALSE);
 	
@@ -80,7 +72,7 @@ func void CZ_Settings_Diff_Load()
 	
 	CZ_Settings_Diff_Changed = TRUE;
 	
-	AI_Print("Nastavení obtížnosti načtena z Gothic.ini!");
+	AI_Print( " Difficulty settings loaded from Gothic.ini! " );
 	
 };
 
@@ -116,11 +108,11 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
-		AI_Print("Nastavena obtížnost: Legendární!");
+		AI_Print( " Difficulty set: Legendary! " );
 		
-		AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
+		AI_Print( " Writing difficulty settings to Gothic.ini... " );
 		CZ_Settings_Diff_Save();
-		AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
+		AI_Print( " Difficulty setting written to Gothic.ini! " );
 		
 		Menu_WriteInt("CZ_SETTINGS_DIFF", "DiffInitialized", TRUE);
 		
@@ -149,11 +141,11 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
-		AI_Print("Nastavena obtížnost: Těžká!");
+		AI_Print( " Difficulty set: Hard! " );
 		
-		AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
+		AI_Print( " Writing difficulty settings to Gothic.ini... " );
 		CZ_Settings_Diff_Save();
-		AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
+		AI_Print( " Difficulty setting written to Gothic.ini! " );
 		
 		Menu_WriteInt("CZ_SETTINGS_DIFF", "DiffInitialized", TRUE);
 
@@ -182,11 +174,11 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
-		AI_Print("Nastavena obtížnost: Střední!");
+		AI_Print( " Difficulty set: Medium! " );
 		
-		AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
+		AI_Print( " Writing difficulty settings to Gothic.ini... " );
 		CZ_Settings_Diff_Save();
-		AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
+		AI_Print( " Difficulty setting written to Gothic.ini! " );
 		
 		Menu_WriteInt("CZ_SETTINGS_DIFF", "DiffInitialized", TRUE);
 
@@ -215,19 +207,19 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
-		AI_Print("Nastavena obtížnost: Lehká!");
+		AI_Print( " Difficulty set: Easy! " );
 		
-		AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
+		AI_Print( " Writing difficulty settings to Gothic.ini... " );
 		CZ_Settings_Diff_Save();
-		AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
+		AI_Print( " Difficulty setting written to Gothic.ini! " );
 		
 		Menu_WriteInt("CZ_SETTINGS_DIFF", "DiffInitialized", TRUE);
 		
 	}
 	else
 	{
-		AI_Print("Neznámá obtížnost!");
-		AI_Print("Nastavení obtížnosti NEBYLA zapsána do Gothic.ini!");
+		AI_Print( " Unknown difficulty! " );
+		AI_Print( " Difficulty settings were NOT written to Gothic.ini! " );
 		
 	};
 	
@@ -259,7 +251,7 @@ func void CZ_Settings_Other_Init()
 	if (Menu_ReadInt("CZ_SETTINGS_OTHER", "OtherInitialized") == FALSE)
 	{
 		
-		AI_Print("Inicializuji ostatní nastavení v Gothic.ini...");
+		AI_Print( " Initializing other settings in Gothic.ini... " );
 		
 		Menu_WriteInt("CZ_SETTINGS_OTHER", "OtherInitialized", TRUE);
 		Menu_WriteInt("CZ_SETTINGS_OTHER", "OutputGDRPC", TRUE);
@@ -281,31 +273,31 @@ func string CZ_GetWorldName()
 	}
 	else if(CurrentLevel == OLDWORLD_ZEN)
 	{
-        return "Hornické údolí";
+        return  " Miner's Valley " ;
 	}
-	else if(CurrentLevel == ADDONWORLD_ZEN)
+	else  if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
         return "Jharkendar";
 	}
 	else if(CurrentLevel == ORCMOUNTAIN_ZEN)
 	{
-        return "Zasněžené hory";
+        return  " Snowy Mountains " ;
 	}
 	else if(CurrentLevel == ADANOSVALLEY_ZEN)
 	{
-        return "Starověká plošina";
+        return  " Ancient Platform " ;
 	}
 	else if(CurrentLevel == PRIORATWORLD_ZEN)
 	{
-        return "Doupě bratrstva Masyaf";
+        return  " Lair of the Masyaf Brotherhood " ;
 	}
 	else if(CurrentLevel == ORCCITY_ZEN)
 	{
-        return "Skřetí město";
+        return  " Goblin City " ;
 	}
 	else if(CurrentLevel == SHVALLEY_ZEN)
 	{
-        return "Údolí stínů";
+        return  " Valley of Shadows " ;
 	}
 	else if(CurrentLevel == DRAGONISLAND_ZEN)
 	{
@@ -313,59 +305,59 @@ func string CZ_GetWorldName()
 	}
 	else if(CurrentLevel == PSICAMP_ZEN)
 	{
-        return "Tábor Bratrstva Spáče";
+        return  " Sleeping Brotherhood camp " ;
 	}
 	else if(CurrentLevel == PALADINFORT_ZEN)
 	{
-        return "Pevnost Azgan";
+        return  " Fortress Azgan " ;
 	}
 	else if(CurrentLevel == TEARSTEMPLE_ZEN)
 	{
-        return "Chrám slz";
+        return  " Temple of Tears " ;
 	}
 	else if(CurrentLevel == ORCOREMINE_ZEN)
 	{
-        return "Skřetí důl";
+        return  " Goblin Mine " ;
 	}
 	else if(CurrentLevel == ORCTEMPEL_ZEN)
 	{
-        return "Spáčův chrám";
+        return  " Sleeper's Temple " ;
 	}
 	else if(CurrentLevel == ABANDONEDMINE_ZEN)
 	{
-        return "Opuštěný důl";
+        return  " Abandoned mine " ;
 	}
 	else if(CurrentLevel == GOLDMINE_ZEN)
 	{
-        return "Horský průchod (Hornické údolí)";
+        return  " Mountain passage (Miner's Valley) " ;
 	}
 	else if(CurrentLevel == OLDMINE_ZEN)
 	{
-        return "Starý důl";
+        return  " Old mine " ;
 	}
 	else if(CurrentLevel == FREEMINE_ZEN)
 	{
-        return "Nový důl";
+        return  " New mine " ;
 	}
 	else if(CurrentLevel == GUARDIANCHAMBERS_ZEN)
 	{
-        return "Příbytek Strážců";
+        return  " Abode of the Guardians " ;
 	}
 	else if(CurrentLevel == FREEMINELAGER_ZEN)
 	{
-        return "Horský průchod (Zasněžené hory)";
+        return  " Mountain Pass (Snowy Mountains) " ;
 	}
 	else if(CurrentLevel == DEMONSTOWER_ZEN)
 	{
-        return "Zatopená věž";
+        return  " Flooded Tower " ;
 	}
 	else if(CurrentLevel == ORCGRAVEYARD_ZEN)
 	{
-        return "Skřetí hřbitov";
+        return  " Graveyard Goblin " ;
 	}
 	else if(CurrentLevel == DEADGROT_ZEN)
 	{
-        return "Zamlžená věž";
+        return  " Misty Tower " ;
 	}
 	else if(CurrentLevel == SECRETISLAND_ZEN)
 	{
@@ -373,19 +365,19 @@ func string CZ_GetWorldName()
 	}
 	else if(CurrentLevel == UNDEADZONE_ZEN)
 	{
-        return "Město mrtvých";
+        return  " City of the Dead " ;
 	}
 	else if(CurrentLevel == DEMONCAVE_ZEN)
 	{
-        return "Jeskyně bolesti";
+        return  " Cave of Pain " ;
 	}
 	else if(CurrentLevel == FIRECAVE_ZEN)
 	{
-        return "Jeskyně Ohně";
+        return  " Cave of Fire " ;
 	}
 	else if(CurrentLevel == HARADRIMARENA_ZEN)
 	{
-        return "Aréna Asgardů";
+        return  " Asgard Arena " ;
 	}
 	else if(CurrentLevel == GINNOKWORLD_ZEN)
 	{
@@ -393,35 +385,35 @@ func string CZ_GetWorldName()
 	}
 	else if(CurrentLevel == HAOSWORLD_ZEN)
 	{
-        return "Vakhanské síně";
+        return  " Vakhan Hall " ;
 	}
 	else if(CurrentLevel == DRAGONTEMPLE_ZEN)
 	{
-        return "Svatyně Bestie";
+        return  " Sanctuary of the Beast " ;
 	}
 	else if(CurrentLevel == ASHTARTEMPLE_ZEN)
 	{
-        return "Svatyně Ashtara";
+        return  " Ashtara Shrine " ;
 	}
 	else if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-        return "Příbytek ztracených duší";
+        return  " Abode of Lost Souls " ;
 	}
 	else if(CurrentLevel == LOSTISLAND_ZEN)
 	{
-        return "Ztracený ostrov";
+        return  " Lost Island " ;
 	}
 	else if(CurrentLevel == PASHALWORLD_ZEN)
 	{
-        return "Egezartův svět";
+        return  " Egezart's World " ;
 	}
 	else if(CurrentLevel == ITUSELDTOWER_ZEN)
 	{
-        return "Itu'Seldova věž";
+        return  " Itu'Seld's Tower " ;
 	}
 	else
 	{
-		return "Neznámá lokace";
+		return  " Unknown location " ;
 	};
 	
 };
@@ -530,7 +522,7 @@ else if(hero.guild == 96) { return TXT_GUILDS[96]; }
 else if(hero.guild == 97) { return TXT_GUILDS[97]; }
 else if(hero.guild == 98) { return TXT_GUILDS[98]; }
 else if(hero.guild == 99) { return TXT_GUILDS[99]; } */
-else { return "Neznámá gilda"; };
+else { return  " Unknown guild " ; };
 	
 };
 
