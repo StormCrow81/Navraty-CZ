@@ -1,17 +1,15 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-instance ItSc_Windfist - opravena maximální spotřeba many (SPL_Cost_WindFist -> STEP_WindFist * 4)
-
+ItSc_Windfist instance - fixed max mana consumption (SPL_Cost_WindFist -> STEP_WindFist * 4)
 */
 
 
 
 
-const string Name_PaladinScroll = "Paladinské kouzlo";
+const  string Name_PaladinScroll = " Paladin Scroll " ;
 
 const int Value_Sc_PalLight = 100;
 const int Value_Sc_PalLightHeal = 250;
@@ -97,7 +95,7 @@ const int Value_Sc_Acid = 500;
 
 instance ItSc_PalLight(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_PalLight;
@@ -113,7 +111,7 @@ instance ItSc_PalLight(C_Item)
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_Duration;
 	count[2] = SPL_Duration_PalLIGHT;
-	text[4] = "Obklopí sesílatele posvátnou ochrannou aurou...";
+	text[ 4 ] = " Surrounds the caster with a sacred protective aura... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -121,7 +119,7 @@ instance ItSc_PalLight(C_Item)
 
 instance ItSc_Light(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Light;
@@ -132,7 +130,7 @@ instance ItSc_Light(C_Item)
 	cond_value[2] = SPL_Cost_Scroll;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_LIGHT;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_Duration;
@@ -144,7 +142,7 @@ instance ItSc_Light(C_Item)
 
 instance ItSc_PalLightHeal(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_PalLightHeal;
@@ -167,7 +165,7 @@ instance ItSc_PalLightHeal(C_Item)
 
 instance ItSc_PalHolyBolt(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_PalHolyBolt;
@@ -190,7 +188,7 @@ instance ItSc_PalHolyBolt(C_Item)
 
 instance ItSc_PalMediumHeal(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_PalMediumHeal;
@@ -206,7 +204,7 @@ instance ItSc_PalMediumHeal(C_Item)
 	count[1] = SPL_Cost_Scroll2;
 	text[2] = NAME_BONUS_HP_PROC;
 	count[2] = 100;
-	text[4] = "Odstraní veškeré oslabující účinky...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -214,7 +212,7 @@ instance ItSc_PalMediumHeal(C_Item)
 
 instance ItSc_PalRepelEvil(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_PalRepelEvil;
@@ -237,7 +235,7 @@ instance ItSc_PalRepelEvil(C_Item)
 
 instance ItSc_PalFullHeal(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_PalFullHeal;
@@ -255,7 +253,7 @@ instance ItSc_PalFullHeal(C_Item)
 	count[2] = 100;
 	text[3] = NAME_BONUS_STAPROC;
 	count[3] = 100;
-	text[4] = "Odstraní veškeré oslabující účinky...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -263,7 +261,7 @@ instance ItSc_PalFullHeal(C_Item)
 
 instance ItSc_PalDestroyEvil(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_PalDestroyEvil;
@@ -286,7 +284,7 @@ instance ItSc_PalDestroyEvil(C_Item)
 
 instance ItSc_LightHeal(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_LightHeal;
@@ -297,7 +295,7 @@ instance ItSc_LightHeal(C_Item)
 	cond_value[2] = SPL_Cost_Scroll;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_LightHeal;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_BONUS_HP_PROC;
@@ -309,7 +307,7 @@ instance ItSc_LightHeal(C_Item)
 
 instance ItSc_SumWolf(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_SumWolf;
@@ -320,7 +318,7 @@ instance ItSc_SumWolf(C_Item)
 	cond_value[2] = SPL_Cost_Scroll2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SummonWolf;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll2;
 	text[5] = NAME_Value;
@@ -330,7 +328,7 @@ instance ItSc_SumWolf(C_Item)
 
 instance ItSc_MediumHeal(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_MediumHeal;
@@ -341,10 +339,10 @@ instance ItSc_MediumHeal(C_Item)
 	cond_value[2] = SPL_Cost_Scroll2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_MediumHeal;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL2;
-	text[4] = "Odstraní veškeré oslabující účinky...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -352,7 +350,7 @@ instance ItSc_MediumHeal(C_Item)
 
 instance ItSc_HarmUndead(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_HarmUndead;
@@ -363,7 +361,7 @@ instance ItSc_HarmUndead(C_Item)
 	cond_value[2] = SPL_COST_SCROLL4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_DestroyUndead;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[2] = NAME_Dam_Spell_True;
@@ -375,7 +373,7 @@ instance ItSc_HarmUndead(C_Item)
 
 instance ItSc_FullHeal(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_FullHeal;
@@ -386,7 +384,7 @@ instance ItSc_FullHeal(C_Item)
 	cond_value[2] = SPL_Cost_Scroll3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_FullHeal;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL3;
 	text[2] = NAME_BONUS_STAPROC;
@@ -398,7 +396,7 @@ instance ItSc_FullHeal(C_Item)
 
 instance ItSc_Shrink(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Shrink;
@@ -409,7 +407,7 @@ instance ItSc_Shrink(C_Item)
 	cond_value[2] = SPL_COST_SCROLL4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Shrink;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[5] = NAME_Value;
@@ -419,7 +417,7 @@ instance ItSc_Shrink(C_Item)
 
 instance ItSc_Firebolt(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Firebolt;
@@ -430,7 +428,7 @@ instance ItSc_Firebolt(C_Item)
 	cond_value[2] = SPL_Cost_Scroll;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Firebolt;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_Dam_Spell_Fire;
@@ -442,7 +440,7 @@ instance ItSc_Firebolt(C_Item)
 
 instance ItSc_InstantFireball(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_InstantFireball;
@@ -453,7 +451,7 @@ instance ItSc_InstantFireball(C_Item)
 	cond_value[2] = SPL_Cost_Scroll2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_InstantFireball;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll2;
 	text[2] = NAME_Dam_Spell_Fire;
@@ -465,7 +463,7 @@ instance ItSc_InstantFireball(C_Item)
 
 instance ItSc_Firestorm(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Firestorm;
@@ -476,7 +474,7 @@ instance ItSc_Firestorm(C_Item)
 	cond_value[2] = SPL_Cost_Scroll3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Firestorm;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL3;
 	text[2] = NAME_Dam_Spell_Fire;
@@ -488,7 +486,7 @@ instance ItSc_Firestorm(C_Item)
 
 instance ItSc_ChargeFireBall(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_ChargeFireball;
@@ -499,7 +497,7 @@ instance ItSc_ChargeFireBall(C_Item)
 	cond_value[2] = STEP_ChargeFireball;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_ChargeFireball;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_MinManakosten;
 	count[1] = STEP_ChargeFireball;
 	text[2] = NAME_ManakostenMax;
@@ -515,7 +513,7 @@ instance ItSc_ChargeFireBall(C_Item)
 
 instance ItSc_Pyrokinesis(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Pyrokinesis;
@@ -526,7 +524,7 @@ instance ItSc_Pyrokinesis(C_Item)
 	cond_value[2] = STEP_Firestorm;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Pyrokinesis;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_MinManakosten;
 	count[1] = STEP_Firestorm;
 	text[2] = NAME_ManakostenMax;
@@ -542,7 +540,7 @@ instance ItSc_Pyrokinesis(C_Item)
 
 instance ItSc_Firerain(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Firerain;
@@ -553,7 +551,7 @@ instance ItSc_Firerain(C_Item)
 	cond_value[2] = SPL_Cost_Scroll6;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Firerain;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL6;
 	text[2] = NAME_Dam_Spell_Fire;
@@ -565,7 +563,7 @@ instance ItSc_Firerain(C_Item)
 
 instance ItSc_Zap(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Zap;
@@ -576,7 +574,7 @@ instance ItSc_Zap(C_Item)
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = SPL_Cost_Scroll;
 	description = NAME_SPL_Zap;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_Dam_Spell_Water;
@@ -588,7 +586,7 @@ instance ItSc_Zap(C_Item)
 
 instance ItSc_Icelance(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_IceLance;
@@ -599,7 +597,7 @@ instance ItSc_Icelance(C_Item)
 	cond_value[2] = SPL_Cost_Scroll2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_IceLance;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll2;
 	text[2] = NAME_Dam_Spell_Water;
@@ -611,7 +609,7 @@ instance ItSc_Icelance(C_Item)
 
 instance ItSc_Icebolt(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Icebolt;
@@ -622,7 +620,7 @@ instance ItSc_Icebolt(C_Item)
 	cond_value[2] = SPL_Cost_Scroll;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Icebolt;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_Dam_Spell_Water;
@@ -634,7 +632,7 @@ instance ItSc_Icebolt(C_Item)
 
 instance ItSc_IceCube(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_IceCube;
@@ -645,7 +643,7 @@ instance ItSc_IceCube(C_Item)
 	cond_value[2] = SPL_Cost_Scroll3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_IceCube;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Scroll3;
 	text[2] = NAME_Damage;
@@ -659,7 +657,7 @@ instance ItSc_IceCube(C_Item)
 
 instance ItSc_ThunderBall(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_ThunderBall;
@@ -670,7 +668,7 @@ instance ItSc_ThunderBall(C_Item)
 	cond_value[2] = STEP_ChargeZap;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_ChargeZap;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_MinManakosten;
 	count[1] = STEP_ChargeZap;
 	text[2] = NAME_ManakostenMax;
@@ -686,7 +684,7 @@ instance ItSc_ThunderBall(C_Item)
 
 instance ITSC_SUMSHOAL(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_SUMSHOAL;
@@ -697,7 +695,7 @@ instance ITSC_SUMSHOAL(C_Item)
 	cond_value[2] = SPL_Cost_Scroll3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SUMMONSHOAL;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL3;
 	text[5] = NAME_Value;
@@ -707,7 +705,7 @@ instance ITSC_SUMSHOAL(C_Item)
 
 instance ItSc_Waterfist(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Waterfist;
@@ -718,7 +716,7 @@ instance ItSc_Waterfist(C_Item)
 	cond_value[2] = SPL_Cost_Scroll5;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_WaterFist;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL5;
 	text[2] = NAME_Dam_Spell_Water;
@@ -730,7 +728,7 @@ instance ItSc_Waterfist(C_Item)
 
 instance ItSc_LightningFlash(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_LightningFlash;
@@ -741,7 +739,7 @@ instance ItSc_LightningFlash(C_Item)
 	cond_value[2] = SPL_Cost_Scroll4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_LightningFlash;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[2] = NAME_Dam_Spell_Water;
@@ -753,7 +751,7 @@ instance ItSc_LightningFlash(C_Item)
 
 instance ItSc_IceWave(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_IceWave;
@@ -764,7 +762,7 @@ instance ItSc_IceWave(C_Item)
 	cond_value[2] = SPL_Cost_Scroll5;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_IceWave;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL5;
 	text[2] = NAME_Damage;
@@ -780,7 +778,7 @@ instance ItSc_IceWave(C_Item)
 
 instance ItSc_Geyser(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Geyser;
@@ -791,7 +789,7 @@ instance ItSc_Geyser(C_Item)
 	cond_value[2] = SPL_Cost_Scroll6;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Geyser;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL6;
 	text[2] = NAME_Dam_Spell_Water;
@@ -803,7 +801,7 @@ instance ItSc_Geyser(C_Item)
 
 instance ItSc_Thunderstorm(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Thunderstorm;
@@ -814,7 +812,7 @@ instance ItSc_Thunderstorm(C_Item)
 	cond_value[2] = SPL_Cost_Scroll6;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Thunderstorm;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL6;
 	text[2] = NAME_Dam_Spell_Water;
@@ -826,7 +824,7 @@ instance ItSc_Thunderstorm(C_Item)
 
 instance ItSc_Sleep(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Sleep;
@@ -837,7 +835,7 @@ instance ItSc_Sleep(C_Item)
 	cond_value[2] = SPL_Cost_Scroll;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Sleep;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_Sec_Duration;
@@ -849,7 +847,7 @@ instance ItSc_Sleep(C_Item)
 
 instance ITSC_BERZERK(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Firebolt;
@@ -860,7 +858,7 @@ instance ITSC_BERZERK(C_Item)
 	cond_value[2] = SPL_Cost_Scroll;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_BERZERK;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_Dam_Spell_Sleeper;
@@ -872,7 +870,7 @@ instance ITSC_BERZERK(C_Item)
 
 instance ItSc_Windfist(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Windfist;
@@ -883,7 +881,7 @@ instance ItSc_Windfist(C_Item)
 	cond_value[2] = STEP_WindFist;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_WINDFIST;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_MinManakosten;
 	count[1] = STEP_WindFist;
 	text[2] = NAME_ManakostenMax;
@@ -899,7 +897,7 @@ instance ItSc_Windfist(C_Item)
 
 instance ItSc_Charm(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Charm;
@@ -910,7 +908,7 @@ instance ItSc_Charm(C_Item)
 	cond_value[2] = SPL_Cost_Scroll2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Charm;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL2;
 	text[5] = NAME_Value;
@@ -920,7 +918,7 @@ instance ItSc_Charm(C_Item)
 
 instance ItSc_Fear(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Fear;
@@ -931,7 +929,7 @@ instance ItSc_Fear(C_Item)
 	cond_value[2] = SPL_Cost_Scroll3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Fear;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL3;
 	text[2] = NAME_Sec_Duration;
@@ -943,7 +941,7 @@ instance ItSc_Fear(C_Item)
 
 instance ITSC_GREENTENTACLE(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_GREENTENTACLE;
@@ -954,7 +952,7 @@ instance ITSC_GREENTENTACLE(C_Item)
 	cond_value[2] = SPL_COST_SCROLL2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_GreenTentacle;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL2;
 	text[2] = NAME_Sec_Duration;
@@ -966,7 +964,7 @@ instance ITSC_GREENTENTACLE(C_Item)
 
 instance ITSC_SEVEREFETIDITY(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_DEATHBALL;
@@ -977,7 +975,7 @@ instance ITSC_SEVEREFETIDITY(C_Item)
 	cond_value[2] = SPL_COST_SCROLL5;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SEVEREFETIDITY;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL5;
 	text[2] = NAME_AcidPerHit;
@@ -991,7 +989,7 @@ instance ITSC_SEVEREFETIDITY(C_Item)
 
 instance ItSc_Whirlwind(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Whirlwind;
@@ -1002,7 +1000,7 @@ instance ItSc_Whirlwind(C_Item)
 	cond_value[2] = SPL_Cost_Scroll6;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Whirlwind;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll6;
 	text[2] = NAME_Dam_Spell_Sleeper;
@@ -1014,7 +1012,7 @@ instance ItSc_Whirlwind(C_Item)
 
 instance ItSc_SumGobSkel(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_SumGobSkel;
@@ -1025,7 +1023,7 @@ instance ItSc_SumGobSkel(C_Item)
 	cond_value[2] = SPL_Cost_Scroll;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SummonGoblinSkeleton;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[5] = NAME_Value;
@@ -1035,7 +1033,7 @@ instance ItSc_SumGobSkel(C_Item)
 
 instance ItSc_SumSkel(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_SumSkel;
@@ -1046,7 +1044,7 @@ instance ItSc_SumSkel(C_Item)
 	cond_value[2] = SPL_Cost_Scroll2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SummonSkeleton;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL2;
 	text[5] = NAME_Value;
@@ -1056,7 +1054,7 @@ instance ItSc_SumSkel(C_Item)
 
 instance ItSc_SumDemon(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_SumDemon;
@@ -1067,7 +1065,7 @@ instance ItSc_SumDemon(C_Item)
 	cond_value[2] = SPL_Cost_Scroll4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SummonDemonScr;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[5] = NAME_Value;
@@ -1077,7 +1075,7 @@ instance ItSc_SumDemon(C_Item)
 
 instance ItSc_ArmyOfDarkness(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_ArmyOfDarkness;
@@ -1088,7 +1086,7 @@ instance ItSc_ArmyOfDarkness(C_Item)
 	cond_value[2] = SPL_Cost_Scroll5;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_ArmyOfDarkness;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL5;
 	text[5] = NAME_Value;
@@ -1098,7 +1096,7 @@ instance ItSc_ArmyOfDarkness(C_Item)
 
 instance ItSc_Deathbolt(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_DEATHBOLT;
@@ -1109,7 +1107,7 @@ instance ItSc_Deathbolt(C_Item)
 	cond_value[2] = SPL_Cost_Scroll;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Deathbolt;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll;
 	text[2] = NAME_Dam_Spell_Dark;
@@ -1121,7 +1119,7 @@ instance ItSc_Deathbolt(C_Item)
 
 instance ItSc_ManaForLife(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_ManaForLife;
@@ -1132,7 +1130,7 @@ instance ItSc_ManaForLife(C_Item)
 	cond_value[2] = SPL_COST_SCROLL2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_ManaForLife;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[2] = NAME_LossHealth;
 	count[2] = 5;
 	text[3] = NAME_CreateMana;
@@ -1144,7 +1142,7 @@ instance ItSc_ManaForLife(C_Item)
 
 instance ITSC_SUMZOMBIE(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_SUMZOMBIE;
@@ -1155,7 +1153,7 @@ instance ITSC_SUMZOMBIE(C_Item)
 	cond_value[2] = SPL_COST_SCROLL3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SummonZombie;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL3;
 	text[5] = NAME_Value;
@@ -1165,7 +1163,7 @@ instance ITSC_SUMZOMBIE(C_Item)
 
 instance ITSC_SWARM(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_SWARM;
@@ -1176,7 +1174,7 @@ instance ITSC_SWARM(C_Item)
 	cond_value[2] = SPL_COST_SCROLL3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Swarm;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL3;
 	text[2] = NAME_Dam_Spell_Dark;
@@ -1190,7 +1188,7 @@ instance ITSC_SWARM(C_Item)
 
 instance ITSC_ENERGYBALL(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_ENERGYBALL;
@@ -1201,7 +1199,7 @@ instance ITSC_ENERGYBALL(C_Item)
 	cond_value[2] = SPL_COST_SCROLL3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_BeliarsRage;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL3;
 	text[2] = NAME_Dam_Spell_Dark;
@@ -1213,7 +1211,7 @@ instance ITSC_ENERGYBALL(C_Item)
 
 instance ITSC_DEATHBALL(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_DEATHBALL;
@@ -1224,7 +1222,7 @@ instance ITSC_DEATHBALL(C_Item)
 	cond_value[2] = SPL_COST_SCROLL4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Deathball;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[2] = NAME_Dam_Spell_Dark;
@@ -1236,7 +1234,7 @@ instance ITSC_DEATHBALL(C_Item)
 
 instance ItSc_MassDeath(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_MassDeath;
@@ -1247,7 +1245,7 @@ instance ItSc_MassDeath(C_Item)
 	spell = SPL_MassDeath;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_MassDeath;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[2] = NAME_Dam_Spell_Dark;
@@ -1259,7 +1257,7 @@ instance ItSc_MassDeath(C_Item)
 
 instance ITSC_SKULL(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_SKULL;
@@ -1270,7 +1268,7 @@ instance ITSC_SKULL(C_Item)
 	cond_value[2] = SPL_COST_SCROLL6;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Skull;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL6;
 	text[2] = NAME_Dam_Spell_Dark;
@@ -1280,11 +1278,11 @@ instance ITSC_SKULL(C_Item)
 	inv_animate = 1;
 };
 
-//------------transformatsiya---------------------
+// ------------transformation---------------------
 
 instance ItSc_TrfSheep(C_Item)		//Zombi
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfSheep;
@@ -1295,7 +1293,7 @@ instance ItSc_TrfSheep(C_Item)		//Zombi
 	cond_value[2] = SPL_Cost_TrfSheep;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfSheep;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfSheep;
 	text[5] = NAME_Value;
@@ -1305,7 +1303,7 @@ instance ItSc_TrfSheep(C_Item)		//Zombi
 
 instance ItSc_TrfScavenger(C_Item)		//Shershen'
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfScavenger;
@@ -1316,7 +1314,7 @@ instance ItSc_TrfScavenger(C_Item)		//Shershen'
 	cond_value[2] = SPL_Cost_TrfScavenger;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfScavenger;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfScavenger;
 	text[5] = NAME_Value;
@@ -1326,7 +1324,7 @@ instance ItSc_TrfScavenger(C_Item)		//Shershen'
 
 instance ItSc_TrfGiantBug(C_Item)		//Golem
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfGiantBug;
@@ -1337,7 +1335,7 @@ instance ItSc_TrfGiantBug(C_Item)		//Golem
 	cond_value[2] = SPL_Cost_TrfGiantBug;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfGiantBug;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfGiantBug;
 	text[5] = NAME_Value;
@@ -1347,7 +1345,7 @@ instance ItSc_TrfGiantBug(C_Item)		//Golem
 
 instance ItSc_TrfWolf(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfWolf;
@@ -1358,7 +1356,7 @@ instance ItSc_TrfWolf(C_Item)
 	cond_value[2] = SPL_Cost_TrfWolf;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfWolf;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfWolf;
 	text[5] = NAME_Value;
@@ -1368,7 +1366,7 @@ instance ItSc_TrfWolf(C_Item)
 
 instance ItSc_TrfWaran(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfWaran;
@@ -1379,7 +1377,7 @@ instance ItSc_TrfWaran(C_Item)
 	cond_value[2] = SPL_Cost_TrfWaran;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfWaran;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfWaran;
 	text[5] = NAME_Value;
@@ -1389,7 +1387,7 @@ instance ItSc_TrfWaran(C_Item)
 
 instance ItSc_TrfSnapper(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfSnapper;
@@ -1400,7 +1398,7 @@ instance ItSc_TrfSnapper(C_Item)
 	cond_value[2] = SPL_Cost_TrfSnapper;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfSnapper;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfSnapper;
 	text[5] = NAME_Value;
@@ -1410,7 +1408,7 @@ instance ItSc_TrfSnapper(C_Item)
 
 instance ItSc_TrfWarg(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfWarg;
@@ -1421,7 +1419,7 @@ instance ItSc_TrfWarg(C_Item)
 	cond_value[2] = SPL_Cost_TrfWarg;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfWarg;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfWarg;
 	text[5] = NAME_Value;
@@ -1431,7 +1429,7 @@ instance ItSc_TrfWarg(C_Item)
 
 instance ItSc_TrfFireWaran(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfFireWaran;
@@ -1442,7 +1440,7 @@ instance ItSc_TrfFireWaran(C_Item)
 	cond_value[2] = SPL_Cost_TrfFireWaran;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfFireWaran;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfFireWaran;
 	text[5] = NAME_Value;
@@ -1452,7 +1450,7 @@ instance ItSc_TrfFireWaran(C_Item)
 
 instance ItSc_TrfLurker(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfLurker;
@@ -1463,7 +1461,7 @@ instance ItSc_TrfLurker(C_Item)
 	cond_value[2] = SPL_Cost_TrfLurker;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfLurker;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfLurker;
 	text[5] = NAME_Value;
@@ -1473,7 +1471,7 @@ instance ItSc_TrfLurker(C_Item)
 
 instance ItSc_TrfShadowbeast(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfShadowbeast;
@@ -1484,7 +1482,7 @@ instance ItSc_TrfShadowbeast(C_Item)
 	cond_value[2] = SPL_Cost_TrfShadowbeast;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfShadowbeast;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfShadowbeast;
 	text[5] = NAME_Value;
@@ -1494,7 +1492,7 @@ instance ItSc_TrfShadowbeast(C_Item)
 
 instance ItSc_TrfDragonSnapper(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_TrfDragonSnapper;
@@ -1505,7 +1503,7 @@ instance ItSc_TrfDragonSnapper(C_Item)
 	cond_value[2] = SPL_Cost_TrfDragonSnapper;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TrfDragonSnapper;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_TrfDragonSnapper;
 	text[5] = NAME_Value;
@@ -1515,7 +1513,7 @@ instance ItSc_TrfDragonSnapper(C_Item)
 
 instance ItSc_TrfMeatBug(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SC_TRFMEATBUG;
@@ -1526,7 +1524,7 @@ instance ItSc_TrfMeatBug(C_Item)
 	cond_value[2] = SPL_COST_TRFMEATBUG;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_TRFMEATBUG;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_TRFMEATBUG;
 	text[5] = NAME_Value;
@@ -1536,7 +1534,7 @@ instance ItSc_TrfMeatBug(C_Item)
 
 instance ItSc_BreathOfDeath(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_BreathOfDeath;
@@ -1545,7 +1543,7 @@ instance ItSc_BreathOfDeath(C_Item)
 	spell = SPL_BreathOfDeath;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_BreathOfDeath;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[2] = NAME_Dam_Spell_Dark;
@@ -1557,7 +1555,7 @@ instance ItSc_BreathOfDeath(C_Item)
 
 instance ItSc_SumGol(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_SumGol;
@@ -1568,7 +1566,7 @@ instance ItSc_SumGol(C_Item)
 	cond_value[2] = SPL_Cost_Scroll4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SummonGolem;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[5] = NAME_Value;
@@ -1578,7 +1576,7 @@ instance ItSc_SumGol(C_Item)
 
 instance ITSC_SUMFIREGOL(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_SumGol;
@@ -1589,7 +1587,7 @@ instance ITSC_SUMFIREGOL(C_Item)
 	cond_value[2] = SPL_Cost_Scroll5;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SUMMONFIREGOLEM;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL5;
 	text[5] = NAME_Value;
@@ -1599,7 +1597,7 @@ instance ITSC_SUMFIREGOL(C_Item)
 
 instance ITSC_SUMICEGOL(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_SumGol;
@@ -1610,7 +1608,7 @@ instance ITSC_SUMICEGOL(C_Item)
 	cond_value[2] = SPL_Cost_Scroll5;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SUMMONICEGOLEM;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL5;
 	text[5] = NAME_Value;
@@ -1620,7 +1618,7 @@ instance ITSC_SUMICEGOL(C_Item)
 
 instance ITSC_SUMSWPGOL(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_SumGol;
@@ -1631,7 +1629,7 @@ instance ITSC_SUMSWPGOL(C_Item)
 	cond_value[2] = SPL_Cost_Scroll4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_SUMMONSWAMPGOLEM;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[5] = NAME_Value;
@@ -1641,7 +1639,7 @@ instance ITSC_SUMSWPGOL(C_Item)
 
 instance ItSc_Unlock(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Unlock;
@@ -1652,10 +1650,10 @@ instance ItSc_Unlock(C_Item)
 	cond_value[2] = SPL_COST_SCROLL3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_UnlockChest;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL3;
-	text[4] = "Odemkne pouze zamčené truhly...";
+	text[ 4 ] = " Only unlocks locked chests... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1663,7 +1661,7 @@ instance ItSc_Unlock(C_Item)
 
 instance ItSc_Ressurect(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 250;
@@ -1672,7 +1670,7 @@ instance ItSc_Ressurect(C_Item)
 	description = "Dech smrti";
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
-	text[4] = "Dokáže navrátit život mrtvým bytostem...";
+	text[ 4 ] = " He can restore life to dead beings... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1680,7 +1678,7 @@ instance ItSc_Ressurect(C_Item)
 
 instance ItSc_RapidFirebolt(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_RapidFirebolt;
@@ -1691,7 +1689,7 @@ instance ItSc_RapidFirebolt(C_Item)
 	cond_value[2] = SPL_COST_SCROLL2;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_RapidFirebolt;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL2;
 	text[2] = NAME_Dam_Spell_Fire;
@@ -1702,7 +1700,7 @@ instance ItSc_RapidFirebolt(C_Item)
 
 instance ItSc_RapidIcebolt(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_RapidIcebolt;
@@ -1713,7 +1711,7 @@ instance ItSc_RapidIcebolt(C_Item)
 	cond_value[2] = SPL_COST_SCROLL4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_RapidIcebolt;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL4;
 	text[2] = NAME_Dam_Spell_Water;
@@ -1724,7 +1722,7 @@ instance ItSc_RapidIcebolt(C_Item)
 
 instance ItSc_Rage(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Rage;
@@ -1735,7 +1733,7 @@ instance ItSc_Rage(C_Item)
 	cond_value[2] = SPL_COST_SCROLL6;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Rage;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL6;
 	text[5] = NAME_Value;
@@ -1745,7 +1743,7 @@ instance ItSc_Rage(C_Item)
 
 instance ItSc_Quake(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Quake;
@@ -1756,7 +1754,7 @@ instance ItSc_Quake(C_Item)
 	cond_value[2] = SPL_Cost_Scroll6;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Quake;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL6;
 	text[2] = NAME_Dam_Spell_Sleeper;
@@ -1768,7 +1766,7 @@ instance ItSc_Quake(C_Item)
 
 instance ItSc_MagicCage(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_MagicCage;
@@ -1779,7 +1777,7 @@ instance ItSc_MagicCage(C_Item)
 	cond_value[2] = SPL_Cost_Scroll3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_MagicCage;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_COST_SCROLL3;
 	text[2] = NAME_Damage;
@@ -1793,7 +1791,7 @@ instance ItSc_MagicCage(C_Item)
 
 instance ItSc_Lacerate(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Lacerate;
@@ -1804,7 +1802,7 @@ instance ItSc_Lacerate(C_Item)
 	cond_value[2] = SPL_Cost_Scroll3;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Lacerate;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll3;
 	text[2] = NAME_Dam_Spell_Dark;
@@ -1816,7 +1814,7 @@ instance ItSc_Lacerate(C_Item)
 
 instance ItSc_Extricate(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Extricate;
@@ -1827,7 +1825,7 @@ instance ItSc_Extricate(C_Item)
 	cond_value[2] = SPL_Cost_Scroll5;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Extricate;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL5;
 	text[2] = NAME_Dam_Spell_Sleeper;
@@ -1839,7 +1837,7 @@ instance ItSc_Extricate(C_Item)
 
 instance ItSc_Explosion(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Explosion;
@@ -1850,12 +1848,12 @@ instance ItSc_Explosion(C_Item)
 	cond_value[2] = SPL_Cost_Scroll6;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Explosion;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_SCROLL6;
 	text[2] = NAME_Dam_Spell_Fire;
 	count[2] = SPL_Damage_Explosion;
-	text[3] = "Výbuch způsobí dodatečné poškození...";
+	text[ 3 ] = " The explosion deals additional damage... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1863,7 +1861,7 @@ instance ItSc_Explosion(C_Item)
 
 instance ItSc_Elevate(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Elevate;
@@ -1874,7 +1872,7 @@ instance ItSc_Elevate(C_Item)
 	cond_value[2] = SPL_TOTALCOST_Elevate;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Elevate;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_TOTALCOST_Elevate;
 	text[4] = NAME_Spell_Invest;
@@ -1884,7 +1882,7 @@ instance ItSc_Elevate(C_Item)
 
 instance ItSc_AdanosBall(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_AdanosBall;
@@ -1895,7 +1893,7 @@ instance ItSc_AdanosBall(C_Item)
 	cond_value[2] = SPL_Cost_Scroll4;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_AdanosBall;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll4;
 	text[2] = NAME_Dam_Spell_Water;
@@ -1907,7 +1905,7 @@ instance ItSc_AdanosBall(C_Item)
 
 instance ItSc_Acid(C_Item)
 {
-	name = NAME_Spruchrolle;
+	name = NAME_scroll;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Sc_Acid;
@@ -1918,7 +1916,7 @@ instance ItSc_Acid(C_Item)
 	cond_value[2] = SPL_Cost_Scroll5;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_Acid;
-	text[0] = NAME_MageScroll;
+	text[ 0 ] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Scroll5;
 	text[2] = NAME_Dam_Spell_Sleeper;
