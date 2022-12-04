@@ -1,9 +1,10 @@
+
 /***********************************\
             STRINGBUILDER
 \***********************************/
 
 //========================================
-// [intern] Klasse / Variablen
+// [internal] class/variables
 //========================================
 class StringBuilder {
     var int ptr;
@@ -14,21 +15,21 @@ class StringBuilder {
 const int _SB_Current = 0;
 
 //========================================
-// Aktiven StringBuilder setzen
+// Set active StringBuilder
 //========================================
 func void SB_Use(var int sb) {
     _SB_Current = sb;
 };
 
 //========================================
-// Aktiven StringBuilder holen
+// Get active StringBuilder
 //========================================
 func int SB_Get() {
     return _SB_Current;
 };
 
 //========================================
-// Neuen StringBuilder erstellen
+// Create a new StringBuilder
 //========================================
 func int SB_New() {
     SB_Use(MEM_Alloc(12));
@@ -36,12 +37,12 @@ func int SB_New() {
 };
 
 //========================================
-// Buffer initialisieren (def: auto)
+// Initialize buffer (def: auto)
 //========================================
 func void SB_InitBuffer(var int size) {
     var StringBuilder c; c = _^(_SB_Current);
     if(c.ptr) {
-        MEM_Error("SB_InitBuffer: Der StringBuilder hat bereits einen Buffer.");
+        MEM_Error( " SB_InitBuffer: The StringBuilder already has a buffer. " );
         return;
     };
     if(size < 8) {
@@ -53,7 +54,7 @@ func void SB_InitBuffer(var int size) {
 };
 
 //========================================
-// Leeren (wird nicht zerstört!)
+// Empty (will not be destroyed!)
 //========================================
 func void SB_Clear() {
     var StringBuilder c; c = _^(_SB_Current);
@@ -66,7 +67,7 @@ func void SB_Clear() {
 };
 
 //========================================
-// Stream entkoppeln
+// Decouple stream
 //========================================
 func void SB_Release() {
     MEM_Free(_SB_Current);
@@ -74,7 +75,7 @@ func void SB_Release() {
 };
 
 //========================================
-// StringBuilder komplett zerstören
+// Destroy StringBuilder completely
 //========================================
 func void SB_Destroy() {
     SB_Clear();
@@ -82,13 +83,13 @@ func void SB_Destroy() {
 };
 
 //========================================
-// Stream als String zurückgeben
+// Return stream as a string
 //========================================
 func string SB_ToString() {
     var StringBuilder c; c = _^(_SB_Current);
     if(!c.ptr) { return ""; };
-    var string ret; ret = "";
-    var zString z; z = _^(_@s(ret));
+    was string right; right = " " ;
+    var zString z; z = _ ^ (_@s(right));
     z.ptr = MEM_Alloc(c.cln+2)+1;
     MEM_CopyBytes(c.ptr, z.ptr, c.cln);
     z.len = c.cln;
@@ -97,7 +98,7 @@ func string SB_ToString() {
 };
 
 //========================================
-// Stream als Pointer zurückgeben
+// Return stream as a pointer
 //========================================
 func int SB_GetStream() {
     if(!_SB_Current) {
@@ -107,7 +108,7 @@ func int SB_GetStream() {
 };
 
 //========================================
-// Kopie des Streams zurückgeben
+// Return a copy of the stream
 //========================================
 func int SB_ToStream() {
     if(!_SB_Current) {
@@ -120,7 +121,7 @@ func int SB_ToStream() {
 };
 
 //========================================
-// Aktuelle Länge
+// Current length
 //========================================
 func int SB_Length() {
     if(!_SB_Current) {
@@ -130,7 +131,7 @@ func int SB_Length() {
 };
 
 //========================================
-// Rohbytes anhängen
+// Append raw bytes
 //========================================
 func void SBraw(var int ptr, var int len) {
     var StringBuilder c; c = _^(_SB_Current);
@@ -150,22 +151,22 @@ func void SBraw(var int ptr, var int len) {
 };
 
 //========================================
-// String anhängen
+// append string
 //========================================
 func void SB(var string s) {
-    var zString z; z = _^(_@s(s));
+    var zString z; z = _ ^ (_@s(s));
     SBraw(z.ptr, z.len);
 };
 
 //========================================
-// Int als ASCII anhängen
+// Append int as ASCII
 //========================================
 func void SBi(var int i) {
     SB(IntToString(i));
 };
 
 //========================================
-// Buchstaben anhängen (ASCII)
+// append letters (ASCII)
 //========================================
 func void SBc(var int b) {
     var StringBuilder c; c = _^(_SB_Current);
@@ -181,7 +182,7 @@ func void SBc(var int b) {
 };
 
 //========================================
-// Int als 4 Byte roh anhängen
+// Append int as 4 bytes raw
 //========================================
 func void SBw(var int b) {
     var StringBuilder c; c = _^(_SB_Current);
@@ -197,25 +198,25 @@ func void SBw(var int b) {
 };
 
 //========================================
-// Float anhängen (ASCII)
+// append float (ASCII)
 //========================================
 func void SBflt(var float f) {
     SB(FloatToString(f));
 };
 
 //========================================
-// Int als Float anhängen (ASCII)
+// append int as float (ASCII)
 //========================================
 func void SBf(var int f) {
     f; MEM_Call(SBflt);
 };
 
 //========================================
-// Länge setzen
+// set length
 //========================================
 func void SB_SetLength(var int l) {
     while(l > SB_Length());
-		SBw(0);
+		SBw( 0 );
 	end;
     MEM_WriteInt(_SB_Current+4, l);
 };
@@ -233,7 +234,7 @@ const int STR_Sequences[33] = {
 func string STR_Escape(var string s0) {
     var int osb; osb = SB_Get();
 
-    var zString z; z = _^(_@s(s0));
+    var zString z; z = _ ^ (_@s(s0));
     const int sb = 0;
     if(!sb) {
         sb = SB_New();
@@ -286,7 +287,7 @@ func string STR_Escape(var string s0) {
 func string STR_Unescape(var string s0) {
     var int osb; osb = SB_Get();
 
-    var zString z; z = _^(_@s(s0));
+    var zString z; z = _ ^ (_@s(s0));
     const int sb = 0;
     if(!sb) {
         sb = SB_New();
@@ -312,7 +313,7 @@ func string STR_Unescape(var string s0) {
                 };
             }
             else {
-                var int j; j = 0;
+                var int j; j = 0 ;
                 while(j < 33);
                     var int n; n = MEM_ReadStatArr(STR_Sequences, j);
                     if(c == n) {
@@ -340,9 +341,9 @@ func string STR_Unescape(var string s0) {
 // Hilfsfunktion STR_StartsWith
 //========================================
 func int STR_StartsWith(var string str, var string start) {
-    var zString z0; z0 = _^(_@s(str));
-    var zString z1; z1 = _^(_@s(start));
-    if(z1.len > z0.len) { return 0; };
+    var zString z0; z0 = _ ^ (_@s(str));
+    var zString z1; z1 = _ ^ (_@s(start));
+    if (z1.len > z0.len) { return  0 ; };
     MEM_CompareBytes(z0.ptr, z1.ptr, z1.len);
 };
 
