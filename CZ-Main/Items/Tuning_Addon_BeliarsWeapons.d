@@ -1,12 +1,10 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-const int DAMAGE_BELIARSUPERWEAPON_1H_EDGE - upraveno poškození BD s duší Senyaka
-const int DAMAGE_BELIARSUPERWEAPON_2H_EDGE - upraveno poškození BD s duší Senyaka
-
+const int DAMAGE_BELIARSUPERWEAPON_1H_EDGE - adjusted BD damage with Senyak soul
+const int DAMAGE_BELIARSUPERWEAPON_2H_EDGE - adjusted BD damage with Senyak soul
 */
 
 
