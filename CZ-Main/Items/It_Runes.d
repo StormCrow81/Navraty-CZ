@@ -1,6 +1,7 @@
 
-const string Name_PaladinSpell = "Paladinské kouzlo";
-const string NAME_TPLSPELL = "Templářské kouzlo";
+
+const  string Name_PaladinSpell = " Paladin Spell " ;
+const  string  NAME_TPLSPELL = " Templar Spell " ;
 
 const int Value_Ru_PalLight = 50;
 const int Value_Ru_PalLightHeal = 5;
@@ -34,7 +35,7 @@ const int Value_Ru_LightningFlash = 20;
 const int Value_Ru_ChargeFireball = 20;
 const int Value_Ru_IceWave = 25;
 const int Value_Ru_SumDemon = 25;
-const int Value_Ru_FullHeal = 25;
+const  int Value_Ru_FullHeal = 25 ;
 const int Value_Ru_Pyrokinesis = 25;
 const int Value_Ru_Firerain = 50;
 const int Value_Ru_BreathOfDeath = 30;
@@ -69,7 +70,7 @@ const int VALUE_RU_TELEKINESIS = 30;
 const int Value_Ru_Skull = 50;
 const int Value_Ru_SummonGuardian = 200;
 const int Value_Ru_SummonZombie = 20;
-const int Value_Ru_Beliar = 10;
+const  int Value_Ru_Beliar = 10 ;
 const int Value_Ru_Water = 20;
 const int VALUE_RU_FIRELIGHT = 20;
 const int VALUE_RU_CHAINLIGHTNING = 10;
@@ -106,11 +107,11 @@ const int TimeStab_02 = 5;
 const int RestoreHP_01 = 5;
 const int RestoreHP_02 = 10;
 const int RestoreHP_03 = 15;
-const int RestoreMP_01 = 5;
-const int RestoreMP_02 = 10;
-const int RestoreMP_03 = 15;
+const  int RestoreMP_01 = 5 ;
+const  int RestoreMP_02 = 10 ;
+const  int RestoreMP_03 = 15 ;
 
-instance ITRU_TELEPORTDAGOT(C_Item)
+instance ITRU_TELEPORTDAGOT (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -127,7 +128,7 @@ instance ITRU_TELEPORTDAGOT(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_ORCTELEPORT(C_Item)
+instance ITRU_ORCTELEPORT (C_Item)
 {
 	name = NAME_Rune_Orc;
 	mainflag = ITEM_KAT_RUNE;
@@ -138,20 +139,20 @@ instance ITRU_ORCTELEPORT(C_Item)
 	material = MAT_STONE;
 	wear = WEAR_EFFECT;
 	description = NAME_SPL_ORCTELEPORT;
-	text[0] = "Skřetí teleportační runa...";
+	text[ 0 ] = " Goblin teleportation rune... " ;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
-	text[4] = "Teleportuje v závislosti na současné poloze...";
+	text[ 4 ] = " Teleports depending on current position... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_PalTeleportSecret(C_Item)
+instance ItRu_PalTeleportSecret (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_PalTeleportSecret.3DS";
+	visual = " ItRu_PalTeleportSecret.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_PalTeleportSecret;
 	wear = WEAR_EFFECT;
@@ -163,7 +164,7 @@ instance ItRu_PalTeleportSecret(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_PalLight(C_Item)
+instance ItRu_PalLight (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -180,11 +181,11 @@ instance ItRu_PalLight(C_Item)
 	count[1] = SPL_Cost_PalLight;
 	text[2] = NAME_Duration;
 	count[2] = SPL_Duration_PalLIGHT;
-	text[4] = "Obklopí sesílatele posvátnou ochrannou aurou...";
+	text[ 4 ] = " Surrounds the caster with a sacred protective aura... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_PalLightHeal(C_Item)
+instance ItRu_PalLightHeal (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -204,7 +205,7 @@ instance ItRu_PalLightHeal(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_PalMediumHeal(C_Item)
+instance ItRu_PalMediumHeal (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -221,11 +222,11 @@ instance ItRu_PalMediumHeal(C_Item)
 	count[1] = SPL_Cost_PalMediumHeal;
 	text[2] = NAME_BONUS_HP_PROC;
 	count[2] = 100;
-	text[4] = "Odstraní veškeré oslabující účinky...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_PalFullHeal(C_Item)
+instance ItRu_PalFullHeal (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -244,17 +245,17 @@ instance ItRu_PalFullHeal(C_Item)
 	count[2] = 100;
 	text[3] = NAME_BONUS_STAPROC;
 	count[3] = 100;
-	text[4] = "Odstraní veškeré oslabující účinky...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_PalHolyBolt(C_Item)
+instance ItRu_PalHolyBolt (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_PalHolyBolt.3DS";
+	visual = " ItRu_PalHolyBolt.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_PalHolyBolt;
 	wear = WEAR_EFFECT;
@@ -268,13 +269,13 @@ instance ItRu_PalHolyBolt(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_PalRepelEvil(C_Item)
+instance ItRu_PalRepelEvil (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_PalRepelEvil.3DS";
+	visual = " ItRu_PalRepelEvil.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_PalRepelEvil;
 	wear = WEAR_EFFECT;
@@ -288,7 +289,7 @@ instance ItRu_PalRepelEvil(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_PalDestroyEvil(C_Item)
+instance ItRu_PalDestroyEvil (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -308,10 +309,10 @@ instance ItRu_PalDestroyEvil(C_Item)
 	inv_animate = 1;
 };
 
-//Runy 1 kruga-------------------------------------------------------------
+// Runy 1 kruga--------------------------------------------- ----------------
 
 
-instance ItRu_Light(C_Item)
+instance ItRu_Light (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -352,7 +353,7 @@ instance ItRu_Light_Pyr(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_LightHeal(C_Item)
+instance ItRu_LightHeal (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -374,13 +375,13 @@ instance ItRu_LightHeal(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_FireBolt(C_Item)
+instance ItRu_FireBolt (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_FireBolt.3DS";
+	visual = " ItRu_FireBolt.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_Firebolt;
 	mag_circle = 1;
@@ -399,7 +400,7 @@ instance ItRu_FireBolt(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Zap(C_Item)
+instance ItRu_Zap (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -424,13 +425,13 @@ instance ItRu_Zap(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Icebolt(C_Item)
+instance ItRu_Icebolt (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Icebolt.3ds";
+	visual = " ItRu_Icebolt.3ds " ;
 	material = MAT_STONE;
 	spell = SPL_Icebolt;
 	mag_circle = 1;
@@ -448,7 +449,7 @@ instance ItRu_Icebolt(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Sleep(C_Item)
+instance ItRu_Sleep (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -470,7 +471,7 @@ instance ItRu_Sleep(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_BERZERK(C_Item)
+instance ITRU_BERZERK (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -494,7 +495,7 @@ instance ITRU_BERZERK(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Deathbolt(C_Item)
+instance ItRu_Deathbolt (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -519,7 +520,7 @@ instance ItRu_Deathbolt(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_SumGobSkel(C_Item)
+instance ItRu_SumGobSkel (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -539,15 +540,15 @@ instance ItRu_SumGobSkel(C_Item)
 	inv_animate = 1;
 };
 
-//Runy 2 kruga-------------------------------------------------------------
+// Runy 2 kruga--------------------------------- ----------------
 
-instance ItRu_SumWolf(C_Item)
+instance ItRu_SumWolf (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumWolf.3DS";
+	visual = " ItRu_SumWolf.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonWolf;
 	mag_circle = 2;
@@ -561,7 +562,7 @@ instance ItRu_SumWolf(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_MediumHeal(C_Item)
+instance ItRu_MediumHeal (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -578,11 +579,11 @@ instance ItRu_MediumHeal(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_MediumHeal;
-	text[4] = "Odstraní veškeré oslabující účinky...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_HarmUndead(C_Item)
+instance ItRu_HarmUndead (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -604,13 +605,13 @@ instance ItRu_HarmUndead(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_InstantFireball(C_Item)
+instance ItRu_InstantFireball (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_InstantFireball.3DS";
+	visual = " ItRu_InstantFireball.3DS " ;
 	material = MAT_STONE;
 	mag_circle = 2;
 	spell = SPL_InstantFireball;
@@ -629,7 +630,7 @@ instance ItRu_InstantFireball(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Icelance(C_Item)
+instance ItRu_Icelance (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -654,7 +655,7 @@ instance ItRu_Icelance(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_SUMSHOAL(C_Item)
+instance ITRU_SUMSHOAL (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -674,7 +675,7 @@ instance ITRU_SUMSHOAL(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Windfist(C_Item)
+instance ItRu_Windfist (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -700,7 +701,7 @@ instance ItRu_Windfist(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_TELEKINESIS(C_Item)
+instance ITRU_TELEKINESIS (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -722,13 +723,13 @@ instance ITRU_TELEKINESIS(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_GreenTentacle(C_Item)
+instance ItRu_GreenTentacle (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water13.3DS";
+	visual = " ItRu_Water13.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_GreenTentacle;
 	mag_circle = 2;
@@ -744,13 +745,13 @@ instance ItRu_GreenTentacle(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_ManaForLife(C_Item)
+instance ItRu_ManaForLife (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_ManaForLife.3DS";
+	visual = " ItRu_ManaForLife.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_ManaForLife;
 	mag_circle = 2;
@@ -766,7 +767,7 @@ instance ItRu_ManaForLife(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_SummonZombie(C_Item)
+instance ItRu_SummonZombie (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -787,9 +788,9 @@ instance ItRu_SummonZombie(C_Item)
 };
 
 
-//Runy 3 kruga-------------------------------------------------------------
+// Runy 3 kruga--------------------------------------- ----------------
 
-instance ItRu_FullHeal(C_Item)
+instance ItRu_FullHeal (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -811,7 +812,7 @@ instance ItRu_FullHeal(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Firestorm(C_Item)
+instance ItRu_Firestorm (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -836,7 +837,7 @@ instance ItRu_Firestorm(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_IceCube(C_Item)
+instance ItRu_IceCube (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -860,13 +861,13 @@ instance ItRu_IceCube(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_ThunderBall(C_Item)
+instance ItRu_ThunderBall (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_ThunderBall.3ds";
+	visual = " ItRu_ThunderBall.3ds " ;
 	material = MAT_STONE;
 	spell = SPL_ChargeZap;
 	mag_circle = 3;
@@ -886,7 +887,7 @@ instance ItRu_ThunderBall(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Fear(C_Item)
+instance ItRu_Fear (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -908,13 +909,13 @@ instance ItRu_Fear(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_CHARM(C_Item)
+instance ITRU_CHARM (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water15.3DS";
+	visual = " ItRu_Water15.3DS " ;
 	material = MAT_STONE;
 	mag_circle = 3;
 	spell = SPL_Charm;
@@ -928,7 +929,7 @@ instance ITRU_CHARM(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Swarm(C_Item)
+instance ItRu_Swarm (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -954,13 +955,13 @@ instance ItRu_Swarm(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_SumSkel(C_Item)
+instance ItRu_SumSkel (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumSkel.3DS";
+	visual = " ItRu_SumSkel.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonSkeleton;
 	mag_circle = 3;
@@ -974,7 +975,7 @@ instance ItRu_SumSkel(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_BeliarsRage(C_Item)
+instance ItRu_BeliarsRage (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -996,7 +997,7 @@ instance ItRu_BeliarsRage(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_SummonGuardian(C_Item)
+instance ItRu_SummonGuardian (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1016,7 +1017,7 @@ instance ItRu_SummonGuardian(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_SumGol(C_Item)
+instance ItRu_SumGol (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1036,7 +1037,7 @@ instance ItRu_SumGol(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_SUMFIREGOL(C_Item)
+instance ITRU_SUMFIREGOL (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1056,10 +1057,10 @@ instance ITRU_SUMFIREGOL(C_Item)
 	inv_animate = 1;
 };
 
-//Runy 4 kruga-------------------------------------------------------------
+// Runy 4 kruga--------------------------------------- ----------------
 
 
-instance ItRu_Acid(C_Item)
+instance ItRu_Acid (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1082,7 +1083,7 @@ instance ItRu_Acid(C_Item)
 };
 
 
-instance ITRU_SUMSWPGOL(C_Item)
+instance ITRU_SUMSWPGOL (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1102,7 +1103,7 @@ instance ITRU_SUMSWPGOL(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_ChargeFireball(C_Item)
+instance ItRu_ChargeFireball (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1128,7 +1129,7 @@ instance ItRu_ChargeFireball(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_FIRELIGHT(C_Item)
+instance ITRU_FIRELIGHT (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1154,7 +1155,7 @@ instance ITRU_FIRELIGHT(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_LightningFlash(C_Item)
+instance ItRu_LightningFlash (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1179,7 +1180,7 @@ instance ItRu_LightningFlash(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_SUMICEGOL(C_Item)
+instance ITRU_SUMICEGOL (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1199,13 +1200,13 @@ instance ITRU_SUMICEGOL(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_SumDemon(C_Item)
+instance ItRu_SumDemon (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumDemon.3DS";
+	visual = " ItRu_SumDemon.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonDemon;
 	mag_circle = 4;
@@ -1216,17 +1217,17 @@ instance ItRu_SumDemon(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_SummonDemon;
-	text[4] = "Umožňuje vyvolat nižší démony...";
+	text[ 4 ] = " Allows to summon lower demons... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_SumDemon_01(C_Item)
+instance ItRu_SumDemon_01 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumDemon.3DS";
+	visual = " ItRu_SumDemon.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonDemon;
 	mag_circle = 4;
@@ -1239,17 +1240,17 @@ instance ItRu_SumDemon_01(C_Item)
 	count[1] = SPL_Cost_SummonDemon;
 	text[3] = NAME_Mag_Circle_Dem;
 	count[3] = 1;
-	text[4] = "Umožňuje vyvolat mladší démony...";
+	text[ 4 ] = " Allows to summon younger demons... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_SumDemon_02(C_Item)
+instance ItRu_SumDemon_02 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumDemon.3DS";
+	visual = " ItRu_SumDemon.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonDemon;
 	mag_circle = 4;
@@ -1262,17 +1263,17 @@ instance ItRu_SumDemon_02(C_Item)
 	count[1] = SPL_Cost_SummonDemon;
 	text[3] = NAME_Mag_Circle_Dem;
 	count[3] = 2;
-	text[4] = "Umožňuje vyvolat starší démony...";
+	text[ 4 ] = " Allows to summon older demons... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_SumDemon_03(C_Item)
+instance ItRu_SumDemon_03 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumDemon.3DS";
+	visual = " ItRu_SumDemon.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonDemon;
 	mag_circle = 4;
@@ -1285,17 +1286,17 @@ instance ItRu_SumDemon_03(C_Item)
 	count[1] = SPL_Cost_SummonDemon;
 	text[3] = NAME_Mag_Circle_Dem;
 	count[3] = 3;
-	text[4] = "Umožňuje vyvolat vyšší démony...";
+	text[ 4 ] = " Allows to summon higher demons... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_SumDemon_04(C_Item)
+instance ItRu_SumDemon_04 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumDemon.3DS";
+	visual = " ItRu_SumDemon.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonDemon;
 	mag_circle = 4;
@@ -1308,17 +1309,17 @@ instance ItRu_SumDemon_04(C_Item)
 	count[1] = SPL_Cost_SummonDemon;
 	text[3] = NAME_Mag_Circle_Dem;
 	count[3] = 4;
-	text[4] = "Umožňuje vyvolat mladší arcidémony...";
+	text[ 4 ] = " Allows to summon younger archdemons... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_SumDemon_05(C_Item)
+instance ItRu_SumDemon_05 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumDemon.3DS";
+	visual = " ItRu_SumDemon.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonDemon;
 	mag_circle = 4;
@@ -1331,17 +1332,17 @@ instance ItRu_SumDemon_05(C_Item)
 	count[1] = SPL_Cost_SummonDemon;
 	text[3] = NAME_Mag_Circle_Dem;
 	count[3] = 5;
-	text[4] = "Umožňuje vyvolat starší arcidémony...";
+	text[ 4 ] = " Allows you to summon older archdemons... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_SumDemon_06(C_Item)
+instance ItRu_SumDemon_06 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumDemon.3DS";
+	visual = " ItRu_SumDemon.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SummonDemon;
 	mag_circle = 4;
@@ -1354,11 +1355,11 @@ instance ItRu_SumDemon_06(C_Item)
 	count[1] = SPL_Cost_SummonDemon;
 	text[3] = NAME_Mag_Circle_Dem;
 	count[3] = 6;
-	text[4] = "Umožňuje vyvolat vyšší arcidémony...";
+	text[ 4 ] = " Allows to summon higher archdemons... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_Deathball(C_Item)
+instance ItRu_Deathball (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1383,9 +1384,9 @@ instance ItRu_Deathball(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_BreathOfDeath(C_Item)
+instance ItRu_BreathOfDeath (C_Item)
 {
-	name = "Vlna smrti Urizielu";
+	name = " Uriziel's Death Wave " ;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
@@ -1396,8 +1397,8 @@ instance ItRu_BreathOfDeath(C_Item)
 	wear = WEAR_EFFECT;
 	//effect = "SPELLFX_EVILLIGHT";
 	description = NAME_SPL_BreathOfDeath;
-	text[0] = "Tahle mocná magická runa v sobě ukrývá";
-	text[1] = "sílu prastaré čepele nazývané Uriziel...";
+	text[ 0 ] = " This powerful magical rune hides " ;
+	text[ 1 ] = " the power of an ancient blade called Uriziel... " ;
 	text[2] = NAME_Mag_Circle;
 	count[2] = mag_circle;
 	text[3] = NAME_Manakosten;
@@ -1407,7 +1408,7 @@ instance ItRu_BreathOfDeath(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_EligorDemons(C_Item)
+instance ItRu_EligorDemons (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1427,7 +1428,7 @@ instance ItRu_EligorDemons(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_BeliarSuperRune(C_Item)
+instance ItRu_BeliarSuperRune (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1446,12 +1447,12 @@ instance ItRu_BeliarSuperRune(C_Item)
 	count[1] = SPL_COST_BELIARSRUNE_SUPER;
 	text[2] = NAME_Dam_Spell_Dark;
 	count[2] = SPL_DAMAGE_SUPERBELIARSRUNE;
-	text[3] = "Tahle runa v sobě ukrývá duši arcidémona Senyaka...";
-	text[4] = "Symbol uprostřed runy svítí temnou září...";
+	text[ 3 ] = " This rune hides the soul of the archdemon Senyak... " ;
+	text[ 4 ] = " The symbol in the middle of the rune glows with a dark glow... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_OrcFireball(C_Item)
+instance ItRu_OrcFireball (C_Item)
 {
 	name = NAME_Rune_Orc;
 	mainflag = ITEM_KAT_RUNE;
@@ -1470,14 +1471,14 @@ instance ItRu_OrcFireball(C_Item)
 	count[1] = SPL_COST_OrcFireball;
 	text[2] = NAME_Dam_Spell_Fire;
 	count[2] = SPL_DAMAGE_OrcFireball;
-	text[4] = "Skřetí kouzlo...";
+	text[ 4 ] = " Goblin Charm... " ;
 	inv_animate = 1;
 };
 
 
-//Runy 5 kruga-------------------------------------------------------------
+// Runy 5 kruga--------------------------------------------- ----------------
 
-instance ItRu_Pyrokinesis(C_Item)
+instance ItRu_Pyrokinesis (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1503,7 +1504,7 @@ instance ItRu_Pyrokinesis(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Waterfist(C_Item)
+instance ItRu_Waterfist (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1528,7 +1529,7 @@ instance ItRu_Waterfist(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_IceWave(C_Item)
+instance ItRu_IceWave (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1552,7 +1553,7 @@ instance ItRu_IceWave(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_CONTROL(C_Item)
+instance ITRU_CONTROL (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1574,13 +1575,13 @@ instance ITRU_CONTROL(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_ArmyOfDarkness(C_Item)
+instance ItRu_ArmyOfDarkness (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_ArmyOfDarkness.3DS";
+	visual = " ItRu_ArmyOfDarkness.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_ArmyOfDarkness;
 	mag_circle = 5;
@@ -1600,7 +1601,7 @@ instance ITRU_SEVEREFETIDITY(C_Item)
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water11.3DS";
+	visual = " ItRu_Water11.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_SEVEREFETIDITY;
 	mag_circle = 5;
@@ -1618,13 +1619,13 @@ instance ITRU_SEVEREFETIDITY(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Whirlwind(C_Item)
+instance ItRu_Whirlwind (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water02.3DS";
+	visual = " ItRu_Water02.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_Whirlwind;
 	mag_circle = 5;
@@ -1644,9 +1645,9 @@ instance ItRu_Whirlwind(C_Item)
 };
 
 
-//Runy 6 kruga-------------------------------------------------------------
+// Runy 6 kruga--------------------------------------- ----------------
 
-instance ItRu_Firerain(C_Item)
+instance ItRu_Firerain (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1671,7 +1672,7 @@ instance ItRu_Firerain(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_FireMeteor(C_Item)
+instance ItRu_FireMeteor (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1695,13 +1696,13 @@ instance ItRu_FireMeteor(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Geyser(C_Item)
+instance ItRu_Geyser (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water01.3DS";
+	visual = " ItRu_Water01.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_Geyser;
 	mag_circle = 6;
@@ -1720,7 +1721,7 @@ instance ItRu_Geyser(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Thunderstorm(C_Item)
+instance ItRu_Thunderstorm (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1744,7 +1745,7 @@ instance ItRu_Thunderstorm(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_MassDeath(C_Item)
+instance ItRu_MassDeath (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1769,7 +1770,7 @@ instance ItRu_MassDeath(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Skull(C_Item)
+instance ItRu_Skull (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1794,7 +1795,7 @@ instance ItRu_Skull(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_GuruWrath(C_Item)
+instance ItRu_GuruWrath (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1816,7 +1817,7 @@ instance ItRu_GuruWrath(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_MasterOfDisaster(C_Item)
+instance ItRu_MasterOfDisaster (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1838,7 +1839,7 @@ instance ItRu_MasterOfDisaster(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Concussionbolt(C_Item)
+instance ItRu_Concussionbolt (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1860,9 +1861,9 @@ instance ItRu_Concussionbolt(C_Item)
 	inv_animate = 1;
 };
 
-//Runy strazhey-------------------------------------------------------------
+// Runy strazhey---------------------------------------- ---------------
 
-instance ItRu_TplHeal_00(C_Item)
+instance ItRu_TplHeal_00 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1882,7 +1883,7 @@ instance ItRu_TplHeal_00(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TplHeal_01(C_Item)
+instance ItRu_TplHeal_01 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1899,11 +1900,11 @@ instance ItRu_TplHeal_01(C_Item)
 	count[1] = SPL_COST_TPLMEDIUMHEAL;
 	text[2] = NAME_BONUS_HP_PROC;
 	count[2] = 50;
-	text[4] = "Odstraní veškeré oslabující účinky...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_TplHeal_02(C_Item)
+instance ItRu_TplHeal_02 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1922,11 +1923,11 @@ instance ItRu_TplHeal_02(C_Item)
 	count[2] = 75;
 	text[3] = NAME_BONUS_STAPROC;
 	count[3] = 100;
-	text[4] = "Odstraní veškeré oslabující účinky...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_TplHeal_03(C_Item)
+instance ItRu_TplHeal_03 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1945,12 +1946,12 @@ instance ItRu_TplHeal_03(C_Item)
 	count[2] = 100;
 	text[3] = NAME_BONUS_STAPROC;
 	count[3] = 100;
-	text[4] = "Odstraní veškeré oslabující účinky...";
-	text[5] = "Poskytuje dočasnou ochranu vůči účinkům ovládnutí...";
+	text[ 4 ] = " Removes all debilitating effects... " ;
+	text[ 5 ] = " Provides temporary protection against the effects of mastery... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_TplStrike_00(C_Item)
+instance ItRu_TplStrike_00 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1970,7 +1971,7 @@ instance ItRu_TplStrike_00(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TplStrike_01(C_Item)
+instance ItRu_TplStrike_01 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -1990,7 +1991,7 @@ instance ItRu_TplStrike_01(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TplStrike_02(C_Item)
+instance ItRu_TplStrike_02 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2010,7 +2011,7 @@ instance ItRu_TplStrike_02(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TplStrike_03(C_Item)
+instance ItRu_TplStrike_03 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2030,15 +2031,15 @@ instance ItRu_TplStrike_03(C_Item)
 	inv_animate = 1;
 };
 
-//Runa Kogtya-------------------------------------------------------------
+// Runa Kogtya---------------------------------------- ---------------
 
-instance ItRu_BeliarsRune01(C_Item)
+instance ItRu_BeliarsRune01 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water10.3DS";
+	visual = " ItRu_Water10.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_BELIARRUNE;
 	mag_circle = 1;
@@ -2054,13 +2055,13 @@ instance ItRu_BeliarsRune01(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_BeliarsRune02(C_Item)
+instance ItRu_BeliarsRune02 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water10.3DS";
+	visual = " ItRu_Water10.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_BELIARRUNE;
 	mag_circle = 2;
@@ -2076,13 +2077,13 @@ instance ItRu_BeliarsRune02(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_BeliarsRune03(C_Item)
+instance ItRu_BeliarsRune03 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water10.3DS";
+	visual = " ItRu_Water10.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_BELIARRUNE;
 	mag_circle = 3;
@@ -2098,13 +2099,13 @@ instance ItRu_BeliarsRune03(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_BeliarsRune04(C_Item)
+instance ItRu_BeliarsRune04 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water10.3DS";
+	visual = " ItRu_Water10.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_BELIARRUNE;
 	mag_circle = 4;
@@ -2120,13 +2121,13 @@ instance ItRu_BeliarsRune04(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_BeliarsRune05(C_Item)
+instance ItRu_BeliarsRune05 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water10.3DS";
+	visual = " ItRu_Water10.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_BELIARRUNE;
 	mag_circle = 5;
@@ -2142,13 +2143,13 @@ instance ItRu_BeliarsRune05(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_BeliarsRune06(C_Item)
+instance ItRu_BeliarsRune06 (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Water10.3DS";
+	visual = " ItRu_Water10.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_BELIARRUNE;
 	mag_circle = 6;
@@ -2164,9 +2165,9 @@ instance ItRu_BeliarsRune06(C_Item)
 	inv_animate = 1;
 };
 
-//Runy prochiye-------------------------------------------------------------
+// Runy prochiye---------------------------------------- ---------------
 
-instance ItRu_MoraUlartu(C_Item)
+instance ItRu_MoraUlartu (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2178,13 +2179,13 @@ instance ItRu_MoraUlartu(C_Item)
 	wear = WEAR_EFFECT;
 	//effect = "SPELLFX_EVILLIGHT";
 	description = NAME_SPL_MORAULARTU;
-	text[3] = "Propůjčuje schopnost zotročit duše mrtvých nepřátel...";
+	text[ 3 ] = " Grants the ability to enslave the souls of dead enemies... " ;
 	text[4] = NAME_Manakosten;
 	count[4] = 50;
 	inv_animate = 1;
 };
 
-instance ItRu_CrestElements(C_Item)
+instance ItRu_CrestElements (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2196,14 +2197,14 @@ instance ItRu_CrestElements(C_Item)
 	wear = WEAR_EFFECT;
 	//effect = "SPELLFX_STONESPHERE";
 	description = NAME_SPL_CRESTELEMENTS;
-	text[1] = "Prastaré kouzlo, které vstřebalo sílu všech elementů...";
-	text[2] = "Dokáže zničit jakékoli stvoření, včetně těch nesmrtelných...";
+	text[ 1 ] = " An ancient spell that absorbed the power of all elements... " ;
+	text[ 2 ] = " Can destroy any creature, including immortal ones... " ;
 	text[4] = NAME_Dam_Spell_True;
 	count[4] = SPL_DAMAGE_CRESTELEMENTS;
 	inv_animate = 1;
 };
 
-instance ItRu_PyroRune(C_Item)
+instance ItRu_PyroRune (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2214,12 +2215,12 @@ instance ItRu_PyroRune(C_Item)
 	spell = SPL_Inflate;
 	wear = WEAR_EFFECT;
 	//effect = "SPELLFX_STONESPHERE";
-	description = "Pyrokarův runový kámen";
-	text[4] = "Runový kámen překypuje magickou energií...";
+	description = " Pyrokar's Runestone " ;
+	text[ 4 ] = " The runestone brims with magical energy... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_DestroyGuardians(C_Item)
+instance ItRu_DestroyGuardians (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2231,14 +2232,14 @@ instance ItRu_DestroyGuardians(C_Item)
 	wear = WEAR_EFFECT;
 	//effect = "SPELLFX_STONESPHERE";
 	description = NAME_SPL_DESTROYGUARDIANS;
-	text[1] = "Jenom ti, kteří jsou obdařeni mocí bohů";
-	text[2] = "dokážou použít tuhle runu...";
+	text[ 1 ] = " Only those gifted with the power of the gods " ;
+	text[ 2 ] = " they can use this rune... " ;
 	text[4] = NAME_Manakosten;
 	count[4] = SPL_COST_DESTROYGUARDIANS;
 	inv_animate = 1;
 };
 
-instance ItRu_SumTreant(C_Item)
+instance ItRu_SumTreant (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2249,28 +2250,28 @@ instance ItRu_SumTreant(C_Item)
 	spell = SPL_SUMMONTREANT;
 	wear = WEAR_EFFECT;
 	//effect = "SPELLFX_GURUSTAFF";
-	description = "Druidský magický kámen";
-	text[4] = "S jeho pomocí možno vyvolat strážce lesa...";
+	description = " Druid Magic Stone " ;
+	text[ 4 ] = " With its help, you can summon the guardian of the forest... " ;
 	inv_animate = 1;
 };
 
-instance ItRu_EligorSummon(C_Item)
+instance ItRu_EligorSummon (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_SumDemon.3DS";
+	visual = " ItRu_SumDemon.3DS " ;
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
 	//effect = "SPELLFX_DARKLLIGHT";
-	description = "Runa přivolání";
-	text[4] = "S její pomocí možno přivolat vládce démonů Eligora...";
-	on_state[0] = Use_ItRu_EligorSummon;
+	description = " Summoning Rune " ;
+	text[ 4 ] = " With its help, the demon lord Eligor can be summoned... " ;
+	on_state[ 0 ] = Use_ItRu_EligorSummon;
 	inv_animate = 1;
 };
 
-func void Use_ItRu_EligorSummon()
+func void Use_ItRu_EligorSummon ()
 {
 	if(EligorSpawn == FALSE)
 	{
@@ -2285,7 +2286,7 @@ func void Use_ItRu_EligorSummon()
 		else
 		{
 			AI_Print("Nic se nestalo...");
-			CreateInvItems(hero,ItRu_EligorSummon,1);
+			CreateInvItems(hero,ItRu_EligorSummon, 1 );
 			Snd_Play("MFX_MASSDEATH_CAST");
 		};
 	}
@@ -2297,9 +2298,9 @@ func void Use_ItRu_EligorSummon()
 };
 
 
-//Kamni prevrashcheniya----------------------
+// Kamni prevrashcheniya----------------------
 
-instance ItRu_TrfBloodFly(C_Item)
+instance ItRu_TrfBloodFly (C_Item)
 {
 	name = NAME_Rune_Druid;
 	mainflag = ITEM_KAT_RUNE;
@@ -2319,7 +2320,7 @@ instance ItRu_TrfBloodFly(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TrfFireWaran(C_Item)
+instance ItRu_TrfFireWaran (C_Item)
 {
 	name = NAME_Rune_Druid;
 	mainflag = ITEM_KAT_RUNE;
@@ -2339,7 +2340,7 @@ instance ItRu_TrfFireWaran(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TrfWarg(C_Item)
+instance ItRu_TrfWarg (C_Item)
 {
 	name = NAME_Rune_Druid;
 	mainflag = ITEM_KAT_RUNE;
@@ -2359,7 +2360,7 @@ instance ItRu_TrfWarg(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TrfShadowbeast(C_Item)
+instance ItRu_TrfShadowbeast (C_Item)
 {
 	name = NAME_Rune_Druid;
 	mainflag = ITEM_KAT_RUNE;
@@ -2379,7 +2380,7 @@ instance ItRu_TrfShadowbeast(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TrfDragonSnapper(C_Item)
+instance ItRu_TrfDragonSnapper (C_Item)
 {
 	name = NAME_Rune_Druid;
 	mainflag = ITEM_KAT_RUNE;
@@ -2399,7 +2400,7 @@ instance ItRu_TrfDragonSnapper(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TrfTroll(C_Item)
+instance ItRu_TrfTroll (C_Item)
 {
 	name = NAME_Rune_Druid;
 	mainflag = ITEM_KAT_RUNE;
@@ -2419,7 +2420,7 @@ instance ItRu_TrfTroll(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_ShadowMount(C_Item)
+instance ItRu_ShadowMount (C_Item)
 {
 	name = NAME_Rune_Orc;
 	mainflag = ITEM_KAT_RUNE;
@@ -2433,19 +2434,19 @@ instance ItRu_ShadowMount(C_Item)
 	description = NAME_SPL_SummonCrait;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_TrfRune;
-	text[4] = "Vyvolání bojové krajty";
+	text[ 4 ] = " Summon Battle Python " ;
 	inv_animate = 1;
 };
 
-//----------------runy teleportatsii--------------------------
+// ----------------runy teleportatsii--------------------
 
-instance ItRu_GlobalTeleport(C_Item)
+instance ItRu_GlobalTeleport (C_Item)
 {
-	name = "Runový kámen teleportace";
+	name = " Teleportation Runestone " ;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_TeleportPassNW.3ds";
+	visual = " ItRu_TeleportPassNW.3ds " ;
 	material = MAT_STONE;
 	spell = SPL_TeleportXardas;
 	wear = WEAR_EFFECT;
@@ -2453,13 +2454,13 @@ instance ItRu_GlobalTeleport(C_Item)
 	description = name;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
-	text[4] = "Používán k teleportaci...";
+	text[ 4 ] = " Used to teleport... " ;
 	inv_animate = 1;
 };
 
-//-------staryye runy------------------------------------
+// -------staryye runy------------------------------
 
-instance ItRu_TeleportMonastery(C_Item)
+instance ItRu_TeleportMonastery (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2476,13 +2477,13 @@ instance ItRu_TeleportMonastery(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TeleportFarm(C_Item)	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+instance ItRu_TeleportFarm (C_Item)	 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !!!
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_TeleportFarm.3ds";
+	visual = " ItRu_TeleportFarm.3ds " ;
 	material = MAT_STONE;
 	spell = SPL_TeleportFarm;
 	wear = WEAR_EFFECT;
@@ -2493,13 +2494,13 @@ instance ItRu_TeleportFarm(C_Item)	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	inv_animate = 1;
 };
 
-instance ItRu_TeleportXardas(C_Item)
+instance ItRu_TeleportXardas (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_TeleportXardas.3ds";
+	visual = " ItRu_TeleportXardas.3ds " ;
 	material = MAT_STONE;
 	spell = SPL_TeleportXardas;
 	wear = WEAR_EFFECT;
@@ -2510,13 +2511,13 @@ instance ItRu_TeleportXardas(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TeleportPassNW(C_Item)
+instance ItRu_TeleportPassNW (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_TeleportPassNW.3ds";
+	visual = " ItRu_TeleportPassNW.3ds " ;
 	material = MAT_STONE;
 	spell = SPL_TeleportPassNW;
 	wear = WEAR_EFFECT;
@@ -2527,7 +2528,7 @@ instance ItRu_TeleportPassNW(C_Item)
 	inv_animate = 1;
 };
 
-instance ITRU_TELEPORTHIDDENPASSNW(C_Item)
+instance ITRU_TELEPORTHIDDENPASSNW (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2544,7 +2545,7 @@ instance ITRU_TELEPORTHIDDENPASSNW(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TeleportTaverne(C_Item)		//!!!!!!!!!!!!!!!!!!!!
+instance ItRu_TeleportTaverne (C_Item)		 // !!!!!!!!!!!!!!!!!!!!
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2561,7 +2562,7 @@ instance ItRu_TeleportTaverne(C_Item)		//!!!!!!!!!!!!!!!!!!!!
 	inv_animate = 1;
 };
 
-instance ITRU_TELEPORTPSICAMP(C_Item)		//!!!!!!!!!!!!!!!!!!!!!
+instance ITRU_TELEPORTPSICAMP (C_Item)		 // !!!!!!!!!!!!!!!!!!!!
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2578,13 +2579,13 @@ instance ITRU_TELEPORTPSICAMP(C_Item)		//!!!!!!!!!!!!!!!!!!!!!
 	inv_animate = 1;
 };
 
-instance ItRu_TeleportPassOW(C_Item)
+instance ItRu_TeleportPassOW (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_TeleportPassOW.3ds";
+	visual = " ItRu_TeleportPassOW.3ds " ;
 	material = MAT_STONE;
 	spell = SPL_TeleportPassOW;
 	wear = WEAR_EFFECT;
@@ -2595,7 +2596,7 @@ instance ItRu_TeleportPassOW(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TeleportOC(C_Item)
+instance ItRu_TeleportOC (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2612,7 +2613,7 @@ instance ItRu_TeleportOC(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_TeleportOWDemonTower(C_Item)
+instance ItRu_TeleportOWDemonTower (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2629,9 +2630,9 @@ instance ItRu_TeleportOWDemonTower(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------------novyye runy------------------------
+// --------------------------novyye runy-------------------- ----
 
-instance ItRu_Unlock(C_Item)
+instance ItRu_Unlock (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2647,19 +2648,19 @@ instance ItRu_Unlock(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Unlock;
-	text[4] = "Odemkne pouze zamčené truhly...";
+	text[ 4 ] = " Only unlocks locked chests... " ;
 	inv_animate = 1;
 };
 
-//------------------ogon'----------------------------
+// ------------------tail'-------------
 
-instance ItRu_RapidFirebolt(C_Item)
+instance ItRu_RapidFirebolt (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_RapidFirebolt.3DS";
+	visual = " ItRu_RapidFirebolt.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_RapidFirebolt;
 	mag_circle = 2;
@@ -2677,7 +2678,7 @@ instance ItRu_RapidFirebolt(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_MagicCage(C_Item)
+instance ItRu_MagicCage (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2701,7 +2702,7 @@ instance ItRu_MagicCage(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Explosion(C_Item)
+instance ItRu_Explosion (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2720,7 +2721,7 @@ instance ItRu_Explosion(C_Item)
 	count[1] = SPL_Cost_Explosion;
 	text[2] = NAME_Dam_Spell_Fire;
 	count[2] = SPL_Damage_Explosion;
-	text[3] = "Výbuch způsobí dodatečné poškození...";
+	text[ 3 ] = " The explosion deals additional damage... " ;
 	count[2] = SPL_Damage_Explosion;
 	text[4] = NAME_ReduceFireRes;
 	count[4] = ReduceFire_High;
@@ -2728,15 +2729,15 @@ instance ItRu_Explosion(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------voda----------------------------
+// --------------------water--------------------------- -
 
-instance ItRu_RapidIcebolt(C_Item)
+instance ItRu_RapidIcebolt (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_RapidIcebolt.3DS";
+	visual = " ItRu_RapidIcebolt.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_RapidIcebolt;
 	mag_circle = 2;
@@ -2753,9 +2754,9 @@ instance ItRu_RapidIcebolt(C_Item)
 	inv_animate = 1;
 };
 
-//--------------------t'ma----------------------------
+// --------------------t'ma---------- ---
 
-instance ItRu_Rage(C_Item)
+instance ItRu_Rage (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2774,7 +2775,7 @@ instance ItRu_Rage(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Lacerate(C_Item)
+instance ItRu_Lacerate (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2822,13 +2823,13 @@ instance ItRu_Extricate(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Elevate(C_Item)
+instance ItRu_Elevate (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
 	value = 10;
-	visual = "ItRu_Elevate.3DS";
+	visual = " ItRu_Elevate.3DS " ;
 	material = MAT_STONE;
 	spell = SPL_Elevate;
 	mag_circle = 4;
@@ -2843,7 +2844,7 @@ instance ItRu_Elevate(C_Item)
 	inv_animate = 1;
 };
 
-instance ItRu_Quake(C_Item)
+instance ItRu_Quake (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
@@ -2865,9 +2866,9 @@ instance ItRu_Quake(C_Item)
 	inv_animate = 1;
 };
 
-//----------------runa nagrada-------------------------
+// ----------------rune reward------------------------
 
-instance ItRu_AdanosBall(C_Item)
+instance ItRu_AdanosBall (C_Item)
 {
 	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
