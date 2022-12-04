@@ -1,4 +1,5 @@
 
+
 func void bookshelf_rnd_s1()
 {
 	var C_Npc her;
@@ -10,7 +11,7 @@ func void bookshelf_rnd_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_BOOKSHELF;
 		AI_ProcessInfos(her);
 	};
@@ -51,7 +52,7 @@ instance PC_BOOKSHELF_RND(C_Info)
 	condition = pc_bookshelf_rnd_condition;
 	information = pc_bookshelf_rnd_info;
 	permanent = TRUE;
-	description = "Prozkoumat polici s knihami";
+	description = " Explore bookshelf " ;
 };
 
 func int pc_bookshelf_rnd_condition()
@@ -72,18 +73,18 @@ func void pc_bookshelf_rnd_info()
 		if((Hlp_StrCmp(Npc_GetNearestWP(hero),"DT_E2_03")) && (Found_OneHandBook == FALSE))
 		{
 			Found_OneHandBook = TRUE;
-			CreateInvItems(hero,ItWr_EinhandBuch,1);
-			AI_Print("Našel jsi knihu 'Obrana jižních zemí'!");
+			CreateInvItems(hero,ItWr_EinhandBuch, 1 );
+			AI_Print( " You found the book 'Defense of the Southern Lands'! " );
 		}
 		else	if((Hlp_StrCmp(Npc_GetNearestWP(hero),"OW_HIDE_BOOK")) && (Found_TwoHandBook == FALSE))
 		{
 			Found_TwoHandBook = TRUE;
 			CreateInvItems(hero,ItWr_ZweihandBuch,1);
-			AI_Print("Našel jsi knihu 'Dvojitý blok'!");
+			AI_Print( " You found the 'Double Block' book! " );
 		}
 		else
 		{
-			AI_Print("Nic jsi nenašel...");
+			AI_Print( " You found nothing... " );
 		};
 	}
 	else
@@ -99,47 +100,47 @@ func void pc_bookshelf_rnd_info()
 				if(rnd_shelf2 == 0)
 				{
 					CreateInvItems(hero,ItSc_FireBolt,1);
-					AI_Print("Našel jsi svitek 'Ohnivý šíp'!");
+					AI_Print( " You found the 'Fire Arrow' scroll! " );
 				}
 				else if(rnd_shelf2 == 1)
 				{
 					CreateInvItems(hero,ItSc_Zap,1);
-					AI_Print("Našel jsi svitek 'Blesk'!");
+					AI_Print( " You found the 'Lightning' scroll! " );
 				}
 				else if(rnd_shelf2 == 2)
 				{
 					CreateInvItems(hero,ItSc_Icebolt,1);
-					AI_Print("Našel jsi svitek 'Ledový šíp'!");
+					AI_Print( " You found the 'Ice Arrow' scroll! " );
 				}
 				else if(rnd_shelf2 == 3)
 				{
 					CreateInvItems(hero,ItSc_Sleep,1);
-					AI_Print("Našel jsi svitek 'Spánek'!");
+					AI_Print( " You found the 'Sleep' scroll! " );
 				}
 				else if(rnd_shelf2 == 4)
 				{
 					CreateInvItems(hero,ItSc_Deathbolt,1);
-					AI_Print("Našel jsi svitek 'Temný šíp'!");
+					AI_Print( " You found the 'Dark Arrow' scroll! " );
 				}
 				else if(rnd_shelf2 == 5)
 				{
 					CreateInvItems(hero,ItSc_SumGobSkel,1);
-					AI_Print("Našel jsi svitek 'Vyvolání gobliního kostlivce'!");
+					AI_Print( " You found the scroll 'Summon Goblin Skeleton'! " );
 				}
 				else if(rnd_shelf2 == 6)
 				{
 					CreateInvItems(hero,ItSc_Light,1);
-					AI_Print("Našel jsi svitek 'Světlo'!");
+					AI_Print( " You found the 'Light' scroll! " );
 				}
 				else if(rnd_shelf2 == 7)
 				{
 					CreateInvItems(hero,ItSc_LightHeal,1);
-					AI_Print("Našel jsi svitek 'Léčení'!");
+					AI_Print( " You found the 'Healing' scroll! " );
 				}
 				else
 				{
 					CreateInvItems(hero,ItSc_TrfScavenger,1);
-					AI_Print("Našel jsi svitek 'Přeměna v krvavou mouchu'!");
+					AI_Print( " You have found the 'Bloodfly Transformation' scroll! " );
 				};
 			}
 			else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1)
@@ -149,57 +150,57 @@ func void pc_bookshelf_rnd_info()
 				if(rnd_shelf2 == 0)
 				{
 					CreateInvItems(hero,ItSc_SumWolf,1);
-					AI_Print("Našel jsi svitek 'Vyvolání vlka'!");
+					AI_Print( " You found the 'Wolf Summon' scroll! " );
 				}
 				else if(rnd_shelf2 == 1)
 				{
 					CreateInvItems(hero,ItSc_MediumHeal,1);
-					AI_Print("Našel jsi svitek 'Očisťující světlo'!");
+					AI_Print( " You have found the 'Purifying Light' scroll! " );
 				}
 				else if(rnd_shelf2 == 2)
 				{
 					CreateInvItems(hero,ItSc_HarmUndead,1);
-					AI_Print("Našel jsi svitek 'Zničení nemrtvého'!");
+					AI_Print( " You have found the 'Destruction of the Undead' scroll! " );
 				}
 				else if(rnd_shelf2 == 3)
 				{
 					CreateInvItems(hero,ItSc_InstantFireball,1);
-					AI_Print("Našel jsi svitek 'Ohnivá koule'!");
+					AI_Print( " You found the 'Fireball' scroll! " );
 				}
 				else if(rnd_shelf2 == 4)
 				{
 					CreateInvItems(hero,ItSc_Icelance,1);
-					AI_Print("Našel jsi svitek 'Ledové kopí'!");
+					AI_Print( " You found the 'Ice Spear' scroll! " );
 				}
 				else if(rnd_shelf2 == 5)
 				{
 					CreateInvItems(hero,ItSc_SUMSHOAL,1);
-					AI_Print("Našel jsi svitek 'Vyvolání smečky ledových vlků'!");
+					AI_Print( " You found the scroll 'Summoning the Ice Wolf Pack'! " );
 				}
 				else if(rnd_shelf2 == 6)
 				{
 					CreateInvItems(hero,ItSc_Windfist,1);
-					AI_Print("Našel jsi svitek 'Větrná pěst'!");
+					AI_Print( " You found the 'Wind Fist' scroll! " );
 				}
 				else if(rnd_shelf2 == 7)
 				{
 					CreateInvItems(hero,ItSc_GreenTentacle,1);
-					AI_Print("Našel jsi svitek 'Spletité kořeny'!");
+					AI_Print( " You found the 'Tangled Roots' scroll! " );
 				}
 				else if(rnd_shelf2 == 8)
 				{
 					CreateInvItems(hero,ItSc_ManaForLife,1);
-					AI_Print("Našel jsi svitek 'Rozervání duše'!");
+					AI_Print( " You found the 'Soul Tearing' scroll! " );
 				}
 				else if(rnd_shelf2 == 9)
 				{
 					CreateInvItems(hero,ItSc_SumZombie,1);
-					AI_Print("Našel jsi svitek 'Vyvolání zombie'!");
+					AI_Print( " You found the 'Zombie Summons' scroll! " );
 				}
 				else
 				{
 					CreateInvItems(hero,ItSc_TrfSnapper,1);
-					AI_Print("Našel jsi svitek 'Přeměna v chňapavce'!");
+					AI_Print( " You have found the scroll 'Transformation in the Snapper'! " );
 				};
 			}
 			else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2)
@@ -209,92 +210,92 @@ func void pc_bookshelf_rnd_info()
 				if(rnd_shelf2 == 0)
 				{
 					CreateInvItems(hero,ItSc_FullHeal,1);
-					AI_Print("Našel jsi svitek 'Innosovo světlo'!");
+					AI_Print( " You found the 'Light of Innos' scroll! " );
 				}
 				else if(rnd_shelf2 == 1)
 				{
 					CreateInvItems(hero,ItSc_Firestorm,1);
-					AI_Print("Našel jsi svitek 'Malá ohnivá bouře'!");
+					AI_Print( " You found the 'Little Firestorm' scroll! " );
 				}
 				else if(rnd_shelf2 == 2)
 				{
 					CreateInvItems(hero,ItSc_IceCube,1);
-					AI_Print("Našel jsi svitek 'Ledový blok'!");
+					AI_Print( " You found the 'Ice Block' scroll! " );
 				}
 				else if(rnd_shelf2 == 3)
 				{
 					CreateInvItems(hero,ItSc_ThunderBall,1);
-					AI_Print("Našel jsi svitek 'Kulový blesk'!");
+					AI_Print( " You found the 'Ball Lightning' scroll! " );
 				}
 				else if(rnd_shelf2 == 4)
 				{
 					CreateInvItems(hero,ItSc_Fear,1);
-					AI_Print("Našel jsi svitek 'Strach'!");
+					AI_Print( " You found the 'Fear' scroll! " );
 				}
 				else if(rnd_shelf2 == 5)
 				{
 					CreateInvItems(hero,ItSc_CHARM,1);
-					AI_Print("Našel jsi svitek 'Zapomnění'!");
+					AI_Print( " You found the 'Oblivion' scroll! " );
 				}
 				else if(rnd_shelf2 == 6)
 				{
 					CreateInvItems(hero,ItSc_Swarm,1);
-					AI_Print("Našel jsi svitek 'Roj hmyzu'!");
+					AI_Print( " You found the scroll 'Insect Swarm'! " );
 				}
 				else if(rnd_shelf2 == 7)
 				{
 					CreateInvItems(hero,ItSc_SumSkel,1);
-					AI_Print("Našel jsi svitek 'Vyvolání kostlivého válečníka'!");
+					AI_Print( " You have found the 'Skeleton Warrior Summons' scroll! " );
 				}
 				else if(rnd_shelf2 == 8)
 				{
 					CreateInvItems(hero,ItSc_SumGol,1);
-					AI_Print("Našel jsi svitek 'Vyvolání kamenného strážce'!");
+					AI_Print( " You found the scroll 'Summon the Stone Guardian'! " );
 				}
 				else if(rnd_shelf2 == 9)
 				{
 					CreateInvItems(hero,ItSc_SUMFIREGOL,1);
-					AI_Print("Našel jsi svitek 'Vyvolání ohnivého golema'!");
+					AI_Print( " You found the scroll 'Summon Fire Golem'! " );
 				}
 				else if(rnd_shelf2 == 10)
 				{
 					CreateInvItems(hero,ItSc_TrfFireWaran,1);
-					AI_Print("Našel jsi svitek 'Přeměna v ještěra'!");
+					AI_Print( " You have found the 'Transform into a Lizard' scroll! " );
 				}
 				else if(rnd_shelf2 == 11)
 				{
 					CreateInvItems(hero,ItSc_ChargeFireball,1);
-					AI_Print("Našel jsi svitek 'Velká ohnivá koule'!");
+					AI_Print( " You found the 'Great Fireball' scroll! " );
 				}
 				else if(rnd_shelf2 == 12)
 				{
 					CreateInvItems(hero,ItSc_LightningFlash,1);
-					AI_Print("Našel jsi svitek 'Úder blesku'!");
+					AI_Print( " You found the 'Lightning Strike' scroll! " );
 				}
 				else if(rnd_shelf2 == 13)
 				{
 					CreateInvItems(hero,ItSc_SUMICEGOL,1);
-					AI_Print("Našel jsi svitek 'Vyvolání ledového golema'!");
+					AI_Print( " You found the 'Ice Golem Summons' scroll! " );
 				}
 				else if(rnd_shelf2 == 14)
 				{
 					CreateInvItems(hero,ItSc_Whirlwind,1);
-					AI_Print("Našel jsi svitek 'Tornádo'!");
+					AI_Print( " You found the 'Tornado' scroll! " );
 				}
 				else if(rnd_shelf2 == 15)
 				{
 					CreateInvItems(hero,ItSc_SumDemon,1);
-					AI_Print("Našel jsi svitek 'Vyvolej démona'!");
+					AI_Print( " You found the 'Summon Demon' scroll! " );
 				}
 				else if(rnd_shelf2 == 16)
 				{
 					CreateInvItems(hero,ItSc_Deathball,1);
-					AI_Print("Našel jsi svitek 'Koule smrti'!");
+					AI_Print( " You found the 'Orb of Death' scroll! " );
 				}
 				else
 				{
 					CreateInvItems(hero,ItSc_TrfWarg,1);
-					AI_Print("Našel jsi svitek 'Přeměna ve warga'!");
+					AI_Print( " You have found the scroll 'Transform into Warga'! " );
 				};
 			}
 			else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) >= 3)
@@ -304,57 +305,57 @@ func void pc_bookshelf_rnd_info()
 				if(rnd_shelf2 == 0)
 				{
 					CreateInvItems(hero,ItSc_Waterfist,1);
-					AI_Print("Našel jsi svitek 'Vodní pěst'!");
+					AI_Print( " You found the 'Water Fist' scroll! " );
 				}
 				else if(rnd_shelf2 == 1)
 				{
 					CreateInvItems(hero,ItSc_IceWave,1);
-					AI_Print("Našel jsi svitek 'Ledová vlna'!");
+					AI_Print( " You found the 'Ice Wave' scroll! " );
 				}
 				else if(rnd_shelf2 == 2)
 				{
 					CreateInvItems(hero,ItSc_ArmyOfDarkness,1);
-					AI_Print("Našel jsi svitek 'Armáda temnot'!");
+					AI_Print( " You found the 'Army of Darkness' scroll! " );
 				}
 				else if(rnd_shelf2 == 3)
 				{
 					CreateInvItems(hero,ItSc_Whirlwind,1);
-					AI_Print("Našel jsi svitek 'Tornádo'!");
+					AI_Print( " You found the 'Tornado' scroll! " );
 				}
 				else if(rnd_shelf2 == 4)
 				{
 					CreateInvItems(hero,ItSc_SUMSWPGOL,1);
-					AI_Print("Našel jsi svitek 'Vyvolání bažinného golema'!");
+					AI_Print( " You found the 'Swamp Golem Summons' scroll! " );
 				}
 				else if(rnd_shelf2 == 5)
 				{
 					CreateInvItems(hero,ItSc_TrfShadowbeast,1);
-					AI_Print("Našel jsi svitek 'Přeměna ve stínovou šelmu'!");
+					AI_Print( " You found the 'Shadow Beast Transformation' scroll! " );
 				}
 				else if(rnd_shelf2 == 6)
 				{
 					CreateInvItems(hero,ItSc_Firerain,1);
-					AI_Print("Našel jsi svitek 'Ohnivý déšť'!");
+					AI_Print( " You found the 'Rain of Fire' scroll! " );
 				}
 				else if(rnd_shelf2 == 7)
 				{
 					CreateInvItems(hero,ItSc_Geyser,1);
-					AI_Print("Našel jsi svitek 'Gejzír'!");
+					AI_Print( " You found the 'Geyser' scroll! " );
 				}
 				else if(rnd_shelf2 == 8)
 				{
 					CreateInvItems(hero,ItSc_Thunderstorm,1);
-					AI_Print("Našel jsi svitek 'Bouře'!");
+					AI_Print( " You found the 'Storm' scroll! " );
 				}
 				else if(rnd_shelf2 == 9)
 				{
 					CreateInvItems(hero,ItSc_MassDeath,1);
-					AI_Print("Našel jsi svitek 'Černá mlha'!");
+					AI_Print( " You found the 'Black Mist' scroll! " );
 				}
 				else
 				{
 					CreateInvItems(hero,ItSc_Skull,1);
-					AI_Print("Našel jsi svitek 'Řev mrtvých'!");
+					AI_Print( " You found the 'Roar of the Dead' scroll! " );
 				};
 			};
 
@@ -362,7 +363,7 @@ func void pc_bookshelf_rnd_info()
 		}
 		else
 		{
-			AI_Print("Nic jsi nenašel...");
+			AI_Print( " You found nothing... " );
 		};
 	};
 
