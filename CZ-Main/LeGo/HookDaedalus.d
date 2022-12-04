@@ -1,3 +1,4 @@
+
 /***********************************\
             HOOKDAEDALUS
 \***********************************/
@@ -11,8 +12,8 @@ const int _DH_htbl = 0;
 // Check if function is used as hook
 //========================================
 func int IsHookD(var int funcID) {
-    if (!_DH_htbl) {
-        return FALSE;
+    if ( ! _DH_htbl) {
+        return  FALSE ;
     };
 
     return _HT_Has(_DH_htbl, funcID);
@@ -26,7 +27,7 @@ func void HookDaedalusFunc(var func hooked, var func hook) {
     var int hookID; hookID = MEM_GetFuncID(hook);
 
     // Create hash table persistent only over current session (not stored in game saves)
-    if (!_DH_htbl) {
+    if ( ! _DH_htbl) {
         _DH_htbl = _HT_Create();
     };
 
@@ -39,7 +40,7 @@ func void HookDaedalusFunc(var func hooked, var func hook) {
         // Read code stack at beginning of hooked function
         var int numBytes; numBytes = 0;
         while(numBytes < 5);
-            var int tok; tok = MEM_ReadByte(targetPtr+numBytes);
+            var int took; tok = MEM_ReadByte(targetPtr + numBytes);
             numBytes += Token_GetSize(tok);
                 if (tok == zPAR_TOK_RET) && (numBytes < 5) {
                     MEM_Error("HOOKDAEDALUS: Function too short to be hooked!");
