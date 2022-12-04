@@ -39,12 +39,12 @@ func int DIA_Egill_HALLO_Condition()
 func void DIA_Egill_HALLO_Info()
 {
 	AI_Output(other,self, " DIA_Egill_HALLO_15_00 " );	// What's wrong?
-	AI_Output(self,other, " DIA_Egill_HALLO_08_01 " );	// For a long time I have not seen a stranger on our land who would not want to peel us like sticky.
+	AI_Output(self,other, " DIA_Egill_HALLO_08_01 " );	// For the longest time I have not seen a stranger on our land who didn't want to harm us in some way.
 	AI_Output(self,other, " DIA_Egill_HALLO_08_02 " );	// I hope I'm not mistaken about you.
 	AI_Output(self,other, " DIA_Egill_HALLO_08_03 " );	// I'm Egill.
 	if(Hlp_IsValidNpc(Ehnim) && !C_NpcIsDown(Ehnim))
 	{
-		AI_Output(self,other, " DIA_Egill_HALLO_08_04 " );	// And that weirdo over there is my brother Enim.
+		AI_Output(self,other, " DIA_Egill_HALLO_08_04 " );	// And that layabout over there is my brother Enim.
 	};
 };
 
@@ -96,7 +96,7 @@ func void DIA_Egill_FELDRAEUBER_Info()
 {
 	AI_Output(other,self, " DIA_Egill_FELDRAEUBER_15_00 " );	// Why aren't you doing anything to these field predators?
 	AI_Output(self,other, " DIA_Egill_FELDRAEUBER_08_01 " );	// Are you kidding? Since I've been working on this farm, I've killed so many that I've lost count.
-	AI_Output(self,other, " DIA_Egill_FELDRAEUBER_08_02 " );	// But new ones take the place of the dead.
+	AI_Output(self,other, " DIA_Egill_FELDRAEUBER_08_02 " );	// But new ones keep taking their place.
 };
 
 
@@ -106,7 +106,7 @@ instance DIA_Egill_STREIT2 (C_Info)
 	nr = 6;
 	condition = DIA_Egill_STREIT2_Condition;
 	information = DIA_Egill_STREIT2_Info;
-	description = " Your brother says the same thing. " ;
+	description = " Your brother said the same thing. " ;
 };
 
 
@@ -120,11 +120,11 @@ func int DIA_Egill_STREIT2_Condition()
 
 func void DIA_Egill_STREIT2_Info()
 {
-	AI_Output(other,self, " DIA_Egill_STREIT2_15_00 " );	// Your brother says the same thing.
-	AI_Output(self,other, " DIA_Egill_STREIT2_08_01 " );	// (mockingly) Yeah. What else does he say?
+	AI_Output(other,self, " DIA_Egill_STREIT2_15_00 " );	// Your brother said the same thing.
+	AI_Output(self,other, " DIA_Egill_STREIT2_08_01 " );	// Yeah? What else did he say?
 	AI_Output(other,self, " DIA_Egill_STREIT2_15_02 " );	// That he also killed a lot of field predators.
-	AI_Output(self,other, " DIA_Egill_STREIT2_08_03 " );	// What? Yes, this brake can't even find its way home on its own.
-	AI_Output(self,other, " DIA_Egill_STREIT2_08_04 " );	// Tell him not to brag anymore.
+	AI_Output(self,other, " DIA_Egill_STREIT2_08_03 " );	// What? That coward doesn't know his ass from from his sword hilt.
+	AI_Output(self,other, " DIA_Egill_STREIT2_08_04 " );	// Tell him to stop bragging.
 	AI_StopProcessInfos(self);
 };
 
@@ -150,7 +150,7 @@ func int DIA_Egill_STREIT4_Condition()
 func void DIA_Egill_STREIT4_Info()
 {
 	AI_Output(other,self, " DIA_Egill_STREIT4_15_00 " );	// Enim is a little annoyed by your words.
-	AI_Output(self,other, " DIA_Egill_STREIT4_08_01 " );	// Let him not walk around like a peacock with his tail spread, otherwise I will tear off his head. Tell him that.
+	AI_Output(self,other, " DIA_Egill_STREIT4_08_01 " );	// He should stop walking around like some kind of tough guy, It doesn't suit him. Tell him that.
 	AI_StopProcessInfos(self);
 };
 
@@ -175,7 +175,7 @@ func int DIA_Egill_PERMKAP1_Condition()
 
 func void DIA_Egill_PERMKAP1_Info()
 {
-	AI_Output(self,other, " DIA_Egill_PERMKAP1_08_00 " );	// It's not enough for you what you've done? I think you'd better leave.
+	AI_Output(self,other, " DIA_Egill_PERMKAP1_08_00 " );	// Haven't you done enough? I think you'd better leave.
 	AI_StopProcessInfos(self);
 };
 
