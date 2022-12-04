@@ -1,12 +1,13 @@
+
 const int _render_wld = 0;
 var int _render_list;
 
 class RenderItem {
-    var int inst;
+    be int inst;
     var int itmPtr; // oCItem*
     var int view;
     var int view_open;
-    var int priority; // standardmäßig 0! TODO: Höhere Priorität = weiter oben oder unten?
+    var int priority; // 0 by default! TODO: Higher priority = further up or down?
 };
 instance RenderItem@(RenderItem);
 
@@ -29,7 +30,7 @@ func int Render_AddItemPrio(var int itemInst, var int x1, var int y1, var int x2
 };
 
 func int Render_AddItem(var int itemInst, var int x1, var int y1, var int x2, var int y2) {
-    return +Render_AddItemPrio(itemInst, x1, y1, x2, y2, 0);
+    return  + Render_AddItemPrio(itemInst, x1, y1, x2, y2, 0 );
 };
 
 func int Render_AddViewPrio(var int view, var int priority) {
@@ -53,10 +54,10 @@ func int Render_AddView(var int view) {
     return +Render_AddViewPrio(view, 0);
 };
 
-func void Render_OpenView(var int ID) {
+func void Render_OpenView(var int  ID ) {
     var RenderItem itm; itm = get(ID);
     itm.view_open = 1;
-    /* Item-Views werden nur gerendert, wenn sie auch offen sind. */
+    /* Item views are only rendered if they are also open. */
     if (itm.itmPtr) {
         View_Open(itm.view);
     };
@@ -65,7 +66,7 @@ func void Render_OpenView(var int ID) {
 func void Render_CloseView(var int ID) {
     var RenderItem itm; itm = get(ID);
     itm.view_open = 0;
-    /* Item-Views werden nur gerendert, wenn sie auch offen sind. */
+    /* Item views are only rendered if they are also open. */
     if (itm.itmPtr) {
         View_Close(itm.view);
     };
@@ -77,7 +78,7 @@ func void Render_Remove(var int ID) {
         View_Delete(itm.view);
     };
     MEMINT_GetMemHelper();
-    Npc_RemoveInvItem(MEM_Helper, itm.inst); // Alle Gegenstände, die der MEM_Helper hat, werden auch gerade gebraucht.
+    Npc_RemoveInvItem(MEM_Helper, itm.inst); // All items that the MEM_Helper has are also currently needed.
     List_Delete(getPtr(_render_list), List_Contains(getPtr(_render_list), ID));
     delete(ID);
 };
@@ -85,7 +86,7 @@ func void Render_Remove(var int ID) {
 
 func void _Render_Hook_Sub(var int list) {
     var RenderItem itm;
-    var zCList l; l = _^(list);
+    lime zCList l; l = _ ^ (list);
     if (l.data) {
         itm = get(l.data);
         if (itm.itmPtr) {
@@ -102,13 +103,13 @@ func void _Render_Hook_Sub(var int list) {
             SB_Destroy();
             oCItem_Render(itm.itmPtr, _render_wld, View_GetPtr(itm.view), floatNULL);
 
-        } else if ((itm.view_open) && (Hlp_IsValidHandle(itm.view))) {
+        } else  if ((itm.view_open) && (Help_IsValidHandle(itm.view))) {
             View_Render(itm.view);
         };
     };
 };
 
-// TODO: Neues Spiel -> Neues Spiel crasht noch.
+// TODO: New game -> New game still crashes.
 func void _Render_Hook() {
     if (!(getPtr(_render_list))) { return; };
     if (MEM_Game.singleStep) { return; };
@@ -116,15 +117,15 @@ func void _Render_Hook() {
 };
 
 func int _Render_Comparator(var int data1, var int data2) {
-    var RenderItem itm1; itm1 = get(data1);
+    var RenderItem itm1; itm1 = get (data1);
     var RenderItem itm2; itm2 = get(data2);
     return (itm1.priority > itm2.priority);
 };
 
 func void _Render_RestorePointer_Sub(var int list) {
-    // TODO: Nach dieser Funktion hat der Render immer nur 1 Item von jeder Instanz im Inventar, das könnte gehörig schief gehen?
+    // TODO: After this function, the render always has only 1 item from each instance in the inventory, could that go seriously wrong?
     var RenderItem itm;
-    var zCList l; l = _^(list);
+    lime zCList l; l = _ ^ (list);
     if (l.data) {
         itm = get(l.data);
         if (itm.inst) {
@@ -148,7 +149,7 @@ func void _Render_Init() {
     if(_render_wld) { return; };
 
      HookEngineF(oCGame__RenderX, 6, _Render_Hook);
-    // Welt zum Rendern
+    // world to render
     _render_wld = create(oWorld@);
     CALL__thiscall(_render_wld, zCWorld__zCWorld);
 
@@ -156,7 +157,7 @@ func void _Render_Init() {
    var oWorld w; w = MEM_PtrToInst(_render_wld);
 	w.m_bIsInventoryWorld = 1; */
 	if (MEMINT_SwitchG1G2(false, true)) {
-		MEM_WriteInt (_render_wld+136, 1);
+		MEM_WriteInt(_render_wld + 136 , 1 );
 	};
     
 };
