@@ -1,4 +1,5 @@
 
+
 const int Value_Weed = 0;
 const int Value_Beet = 3;
 const int HP_Beet = 5;
@@ -41,7 +42,7 @@ const int HP_PERM_STN_HERB = 5;
 
 instance ItPl_Weed(C_Item)
 {
-	name = "Tráva";
+	name = " Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Weed;
@@ -57,7 +58,7 @@ instance ItPl_Weed(C_Item)
 
 instance ItPl_UnWeed(C_Item)
 {
-	name = "Shnilá tráva";
+	name = " Rotten Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -101,7 +102,7 @@ func void Use_Beet()
 
 instance ItPl_SwampHerb(C_Item)
 {
-	name = "Tráva z bažin";
+	name = " Swamp Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SwampHerb;
@@ -116,14 +117,14 @@ instance ItPl_SwampHerb(C_Item)
 
 instance ItPl_SwampHerb_Balam_01(C_Item)
 {
-	name = "Tráva z bažin";
+	name = " Swamp Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SwampHerb;
 	visual = "ItPl_SwampHerb_New.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Veliká rostlina trávy z bažin...";
+	text[ 4 ] = " Large Swamp Grass Plant... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_SwampHerb;
 	inv_animate = 0;
@@ -131,14 +132,14 @@ instance ItPl_SwampHerb_Balam_01(C_Item)
 
 instance ItPl_SwampHerb_Balam_02(C_Item)
 {
-	name = "Tráva z bažin";
+	name = " Swamp Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SwampHerb;
 	visual = "ItPl_SwampHerb_New.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Veliká rostlina trávy z bažin...";
+	text[ 4 ] = " Large Swamp Grass Plant... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_SwampHerb;
 	inv_animate = 0;
@@ -146,14 +147,14 @@ instance ItPl_SwampHerb_Balam_02(C_Item)
 
 instance ItPl_SwampHerb_Balam_03(C_Item)
 {
-	name = "Tráva z bažin";
+	name = " Swamp Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SwampHerb;
 	visual = "ItPl_SwampHerb_New.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Veliká rostlina trávy z bažin...";
+	text[ 4 ] = " Large Swamp Grass Plant... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_SwampHerb;
 	inv_animate = 0;
@@ -161,7 +162,7 @@ instance ItPl_SwampHerb_Balam_03(C_Item)
 
 instance ITPL_SWAMPHERB_02(C_Item)
 {
-	name = "Červená tráva z bažin";
+	name = " Red Swamp Grass " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SWAMPHERB_02;
@@ -176,7 +177,7 @@ instance ITPL_SWAMPHERB_02(C_Item)
 
 instance ItPl_Mana_Herb_01(C_Item)
 {
-	name = "Ohnivá kopřiva";
+	name = " Fire Nettle " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Mana_Herb_01;
@@ -202,7 +203,7 @@ func void Use_Mana_Herb_01()
 
 instance ItPl_Mana_Herb_02(C_Item)
 {
-	name = "Ohnivé býlí";
+	name = " Fire Herb " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Mana_Herb_02;
@@ -228,7 +229,7 @@ func void Use_Mana_Herb_02()
 
 instance ItPl_Mana_Herb_03(C_Item)
 {
-	name = "Ohnivý kořen";
+	name = " Fire Root " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Mana_Herb_03;
@@ -252,7 +253,7 @@ func void Use_Mana_Herb_03()
 
 instance ItPl_NetbekPlant(C_Item)
 {
-	name = "Léčivá rostlina";
+	name = " Medicinal plant " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Health_Herb_01;
@@ -261,8 +262,8 @@ instance ItPl_NetbekPlant(C_Item)
 	on_state[0] = Use_ItPl_NetbekPlant;
 	scemeName = "FOOD";
 	description = name;
-	text[3] = "Tuhle léčivou rostlinu mi dal Netbek...";
-	text[4] = "Úplně vyléčí jakékoli zranění...";
+	text[ 3 ] = " Netbek gave me this healing plant... " ;
+	text[ 4 ] = " Completely heals any injury... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Health_Herb_01;
 	inv_animate = 0;
@@ -275,7 +276,7 @@ func void Use_ItPl_NetbekPlant()
 
 instance ItPl_NetbekPlant_Magic(C_Item)
 {
-	name = "Magická rostlina";
+	name = " Magic Plant " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Mana_Herb_01;
@@ -284,8 +285,8 @@ instance ItPl_NetbekPlant_Magic(C_Item)
 	on_state[0] = Use_ItPl_NetbekPlant_Magic;
 	scemeName = "FOOD";
 	description = name;
-	text[3] = "Tuhle magickou rostlinu mi dal Netbek...";
-	text[4] = "Úplně obnoví manu...";
+	text[ 3 ] = " Netbek gave me this magical plant... " ;
+	text[ 4 ] = " Fully restores mana... " ;
 	text[5] = NAME_Value;
 	count[5] = Value_Mana_Herb_01;
 	inv_animate = 0;
@@ -298,7 +299,7 @@ func void Use_ItPl_NetbekPlant_Magic()
 
 instance ItPl_Health_Herb_01(C_Item)
 {
-	name = "Léčivá rostlina";
+	name = " Medicinal plant " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Health_Herb_01;
@@ -324,7 +325,7 @@ func void Use_Health_Herb_01()
 
 instance ItPl_Health_Herb_02(C_Item)
 {
-	name = "Léčivá bylina";
+	name = " Medicinal Herb " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Health_Herb_02;
@@ -350,7 +351,7 @@ func void Use_Health_Herb_02()
 
 instance ItPl_Health_Herb_03(C_Item)
 {
-	name = "Léčivý kořen";
+	name = " Medicinal Root " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Health_Herb_03;
@@ -390,7 +391,7 @@ instance ItPl_Dex_Herb_01(C_Item)
 
 instance ItPl_Strength_Herb_01(C_Item)
 {
-	name = "Dračí kořen";
+	name = " Dragon Root " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Strength_Herb_01;
@@ -419,7 +420,7 @@ instance ItPl_Speed_Herb_01(C_Item)
 
 instance ItPl_Mushroom_01(C_Item)
 {
-	name = "Tmavá houba";
+	name = " Dark Mushroom " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Mushroom_01;
@@ -434,7 +435,7 @@ instance ItPl_Mushroom_01(C_Item)
 
 instance ItPl_Mushroom_02(C_Item)
 {
-	name = "Otrokův chléb";
+	name = " Slave Bread " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Mushroom_02;
@@ -450,7 +451,7 @@ instance ItPl_Mushroom_02(C_Item)
 
 instance ItPl_Blueplant(C_Item)
 {
-	name = "Modrý bez";
+	name = " Blue without " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Blueplant;
@@ -485,7 +486,7 @@ func void Use_Blueplant()
 
 instance ItPl_Forestberry(C_Item)
 {
-	name = "Lesní bobule";
+	name = " Forest berries " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Forestberry;
@@ -519,7 +520,7 @@ func void Use_Forestberry()
 
 instance ItPl_Planeberry(C_Item)
 {
-	name = "Luční bobule";
+	name = " Meadow Berry " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Planeberry;
@@ -552,7 +553,7 @@ func void Use_Planeberry()
 
 instance ItPl_Temp_Herb(C_Item)
 {
-	name = "Luční pohanka";
+	name = " Meadow Buckwheat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Temp_Herb;
@@ -567,7 +568,7 @@ instance ItPl_Temp_Herb(C_Item)
 
 instance ItPl_Perm_Herb(C_Item)
 {
-	name = "Královský šťovík";
+	name = " Royal sorrel " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
 	value = Value_Perm_Herb;
@@ -582,7 +583,7 @@ instance ItPl_Perm_Herb(C_Item)
 
 instance ITPL_SUPER_HERB(C_Item)
 {
-	name = "Trolí bobule";
+	name = " Troll Berries " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
@@ -597,7 +598,7 @@ instance ITPL_SUPER_HERB(C_Item)
 
 instance ItPl_CactusFlower(C_Item)
 {
-	name = "Kaktusový list";
+	name = " Cactus leaf " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
@@ -611,7 +612,7 @@ instance ItPl_CactusFlower(C_Item)
 
 instance ITPL_DesertIll(C_Item)
 {
-	name = "Pouštní trn";
+	name = " Desert Thorn " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 10;
@@ -625,14 +626,14 @@ instance ITPL_DesertIll(C_Item)
 
 instance ItPl_MagicRoot(C_Item)
 {
-	name = "Kořen života";
+	name = " Root of Life " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItPl_Mana_Herb_03_N.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Nesmírně vzácná rostlina, která vznikla díky magii druidů...";
+	text[ 4 ] = " An extremely rare plant that was created thanks to the magic of the druids... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 0;
@@ -640,14 +641,14 @@ instance ItPl_MagicRoot(C_Item)
 
 instance ItPl_DarkClover(C_Item)
 {
-	name = "Černý jetel";
+	name = " Black Clover " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItPl_DarkClover_New.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Květ jetele, který vstřebal část magie Temnoty...";
+	text[ 4 ] = " A clover flower that absorbed some of the magic of Darkness... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 0;
