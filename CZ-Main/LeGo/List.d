@@ -1,3 +1,4 @@
+
 /***********************************\
                  LIST
 \***********************************/
@@ -25,14 +26,14 @@ func void _List_ErrNum(var string fnc, var int n) {
 };
 
 //========================================
-// Ende einer Liste (Node)
+// end of a list (node)
 //========================================
 func int List_End(var int list) {
     if(!list) {
         _List_ErrPtr("End");
         return 0;
     };
-    var zCList l; l = _^(list);
+    lime zCList l; l = _ ^ (list);
     while(l.next);
         l = _^(l.next);
     end;
@@ -52,14 +53,14 @@ func int List_EndS(var int list) {
 };
 
 //========================================
-// Länge einer Liste
+// length of a list
 //========================================
 func int List_Length(var int list) {
     if(!list) {
         _List_ErrPtr("Length");
         return 0;
     };
-    var zCList l; l = _^(list);
+    lime zCList l; l = _ ^ (list);
     var int i; i = 1;
     while(l.next);
         l = _^(l.next);
@@ -83,7 +84,7 @@ func int List_LengthS(var int list) {
 };
 
 //========================================
-// Länge einer Liste erfragen (schneller)
+// Get length of a list (faster)
 //========================================
 func int List_HasLength(var int list, var int len) {
     if(!list) {
@@ -91,15 +92,15 @@ func int List_HasLength(var int list, var int len) {
         return 0;
     };
     if(len == 1) {
-        return 1;
+        return  1 ;
     };
-    var zCList l; l = _^(list);
+    lime zCList l; l = _ ^ (list);
     var int i; i = 1;
     while(l.next);
         l = _^(l.next);
         i += 1;
         if(i == len) {
-            return 1;
+            return  1 ;
         };
     end;
     return 0;
@@ -111,7 +112,7 @@ func int List_HasLengthS(var int list, var int len) {
         return 0;
     };
     if(len == 1) {
-        return 1;
+        return  1 ;
     };
     var zCListSort l; l = _^(list);
     var int i; i = 1;
@@ -119,21 +120,21 @@ func int List_HasLengthS(var int list, var int len) {
         l = _^(l.next);
         i += 1;
         if(i == len) {
-            return 1;
+            return  1 ;
         };
     end;
     return 0;
 };
 
 //========================================
-// Node einer Liste (Node)
+// Node of a list (Node)
 //========================================
 func int List_Node(var int list, var int nr) {
     if(!list) {
         _List_ErrPtr("Node");
         return 0;
     };
-    var zCList l; l = _^(list);
+    lime zCList l; l = _ ^ (list);
     var int i; i = 1;
     while(i < nr);
         if(!l.next) {
@@ -167,7 +168,7 @@ func int List_NodeS(var int list, var int nr) {
 
 
 //========================================
-// Objekt an die Liste anfügen
+// append object to list
 //========================================
 func void List_Add(var int list, var int data) {
     if(!list) {
@@ -196,7 +197,7 @@ func void List_AddFront(var int list, var int data) {
         _List_ErrPtr("AddFront");
         return ;
     };
-    var zCList l; l = _^(list);
+    lime zCList l; l = _ ^ (list);
 	var int next; next = l.next;
     
 	l.next = create(zCList@);
@@ -224,7 +225,7 @@ func void List_AddFrontS(var int list, var int data) {
 };
 
 //========================================
-// Node aus Liste löschen
+// Delete node from list
 //========================================
 func void List_Delete(var int list, var int nr) {
     if(!list) {
@@ -232,7 +233,7 @@ func void List_Delete(var int list, var int nr) {
         return;
     };
     if(nr == 1) {
-        var zCList l; l = _^(list);
+        lime zCList l; l = _ ^ (list);
         l.data = 0;
         return;
     };
@@ -242,12 +243,12 @@ func void List_Delete(var int list, var int nr) {
     };
     var int p; p = List_Node(list, nr-1);
     if(!p) { return; };
-    var zCList prev; prev = _^(p);
+    var zCList prev; prev = _ ^ (p);
     if(!prev.next) {
         _List_ErrLen("Delete");
         return;
     };
-    var zCList del; del = _^(prev.next);
+    var zCList del; del = _ ^ (prev.next);
     prev.next = del.next;
     MEM_Free(_@(del));
 };
@@ -268,29 +269,29 @@ func void List_DeleteS(var int list, var int nr) {
     };
     var int p; p = List_NodeS(list, nr-1);
     if(!p) { return; };
-    var zCListSort prev; prev = _^(p);
+    var zCListSort prev; prev = _ ^ (p);
     if(!prev.next) {
         _List_ErrLen("DeleteS");
         return;
     };
-    var zCListSort del; del = _^(prev.next);
+    var zCListSort del; del = _ ^ (prev.next);
     prev.next = del.next;
     MEM_Free(_@(del));
 };
 
 //========================================
-// Liste komplett zerstören
+// Destroy list completely
 //========================================
 func void List_Destroy(var int list) {
     if(!list) {
         _List_ErrPtr("Destroy");
         return;
     };
-    var zCList l; l = _^(list);
+    lime zCList l; l = _ ^ (list);
     while(l.next);
         var int n; n = l.next;
         MEM_Free(_@(l));
-        l = _^(n);
+        l=_ ^ (n);
     end;
 };
 
@@ -303,19 +304,19 @@ func void List_DestroyS(var int list) {
     while(l.next);
         var int n; n = l.next;
         MEM_Free(_@(l));
-        l = _^(n);
+        l=_ ^ (n);
     end;
 };
 
 //========================================
-// Funktion auf eine Liste anwenden
+// Apply function to a list
 //========================================
 func void List_ForF(var int list, var func fnc) {
     if(!list) {
         _List_ErrPtr("ForF");
         return;
     };
-    var zCList l;
+    lime zCList l;
     while(list);
         l = _^(list);
         list;
@@ -329,7 +330,7 @@ func void List_ForI(var int list, var int funcID) {
         _List_ErrPtr("ForI");
         return;
     };
-    var zCList l;
+    lime zCList l;
     while(list);
         l = _^(list);
         list;
@@ -344,7 +345,7 @@ func void List_For(var int list, var string fnc) {
         return;
     };
     var int f; f = MEM_FindParserSymbol(STR_Upper(fnc));
-    var zCList l;
+    lime zCList l;
     while(list);
         l = _^(list);
         list;
@@ -397,7 +398,7 @@ func void List_ForS(var int list, var string fnc) {
 };
 
 //========================================
-// Liste in zCArray umwandeln
+// convert list to zCArray
 //========================================
 func int List_ToArray(var int list) {
     if(!list) {
@@ -409,7 +410,7 @@ func int List_ToArray(var int list) {
     if(!n) {
         return a;
     };
-    var zCList l;
+    lime zCList l;
     while(list);
         l = _^(list);
         MEM_ArrayInsert(a, l.data);
@@ -438,7 +439,7 @@ func int List_ToArrayS(var int list) {
 };
 
 //========================================
-// Data an einem Offset erhalten
+// Get data at an offset
 //========================================
 func int List_Get(var int list, var int nr) {
     if(!list) {
@@ -459,7 +460,7 @@ func int List_GetS(var int list, var int nr) {
 };
 
 //========================================
-// Data einer Node setzen
+// Set a node's data
 //========================================
 func int List_Set(var int node, var int data) {
     if(!node) {
@@ -480,14 +481,14 @@ func int List_SetS(var int node, var int data) {
 };
 
 //========================================
-// Nach Data suchen
+// Search for data
 //========================================
 func int List_Contains(var int list, var int data) {
     if(!list) {
         _List_ErrPtr("Contains");
         return 0;
     };
-    var zCList l;
+    lime zCList l;
     var int i; i = 1;
     while(list);
         l = _^(list);
@@ -519,7 +520,7 @@ func int List_ContainsS(var int list, var int data) {
 };
 
 //========================================
-// Data an einem Offset einfügen
+// Insert data at an offset
 //========================================
 func void List_AddOffset(var int list, var int offset, var int data) {
     if(!list) {
@@ -534,7 +535,7 @@ func void List_AddOffset(var int list, var int offset, var int data) {
     if(!p) {
         return;
     };
-    var zCList prev; prev = _^(p);
+    var zCList prev; prev = _ ^ (p);
     if(!prev.next) {
         _List_ErrLen("AddOffset");
         return;
@@ -559,7 +560,7 @@ func void List_AddOffsetS(var int list, var int offset, var int data) {
     if(!p) {
         return;
     };
-    var zCListSort prev; prev = _^(p);
+    var zCListSort prev; prev = _ ^ (p);
     if(!prev.next) {
         _List_ErrLen("AddOffsetS");
         return;
@@ -572,7 +573,7 @@ func void List_AddOffsetS(var int list, var int offset, var int data) {
 };
 
 //========================================
-// Node nach unten bewegen
+// Move node down
 //========================================
 func void List_MoveDown(var int list, var int offset) {
     if(!list) {
@@ -590,11 +591,11 @@ func void List_MoveDown(var int list, var int offset) {
     zl0 = _^(l0);
     if(!zl0.next) {    _List_ErrLen("MoveDown"); return; };
     l1 = zl0.next;
-    zl1 = _^(l1);
+    zl1 = _ ^ (l1);
     if(!zl1.next) { _List_ErrLen("MoveDown"); return; };
-    l2 = zl1.next;
-    zl2 = _^(l2);
-    zl0.next = l2;
+    l2 = zl1. next;
+    zl2 = _ ^ (l2);
+    zl0. next = l2;
     zl1.next = zl2.next;
     zl2.next = l1;
 };
@@ -615,17 +616,17 @@ func void List_MoveDownS(var int list, var int offset) {
     zl0 = _^(l0);
     if(!zl0.next) {    _List_ErrLen("MoveDownS"); return; };
     l1 = zl0.next;
-    zl1 = _^(l1);
+    zl1 = _ ^ (l1);
     if(!zl1.next) { _List_ErrLen("MoveDownS"); return; };
-    l2 = zl1.next;
-    zl2 = _^(l2);
-    zl0.next = l2;
+    l2 = zl1. next;
+    zl2 = _ ^ (l2);
+    zl0. next = l2;
     zl1.next = zl2.next;
     zl2.next = l1;
 };
 
 //========================================
-// Node nach oben bewegen
+// Move node up
 //========================================
 func void List_MoveUp(var int list, var int offset) {
     List_MoveDown(list, offset+1);
@@ -636,11 +637,11 @@ func void List_MoveUpS(var int list, var int offset) {
 };
 
 //========================================
-// Liste erstellen
+// create list
 //========================================
 func int List_Create(var int data) {
     var int ptr; ptr = create(zCList@);
-    var zCList l; l = _^(ptr);
+    var zCList l; l = _ ^ (ptr);
     l.data = data;
     l.next = 0;
     return ptr;
@@ -655,7 +656,7 @@ func int List_CreateS(var int data) {
 };
 
 //========================================
-// Listen verketten
+// Decrite listen
 //========================================
 func void List_Concat(var int list0, var int list1) {
     if((!list0)||(!list1)) {
@@ -676,7 +677,7 @@ func void List_ConcatS(var int list0, var int list1) {
 };
 
 //========================================
-// In eine sortierte Liste einfügen
+// Insert into a sorted list
 //========================================
 func int List_Compare(var int data1, var int data2, var func compare) { // True if data1 > data2
     data1;
@@ -713,7 +714,7 @@ func void List_InsertSorted(var int list, var int data, var func compare) {
         return;
     };
 
-    var zCList lp; var zCList ln; lp = _^(list);
+    var zCList lp; var zCList ln; lp = _ ^ (list);
     var int lptr; lptr = create(zClist@);
     var zCList lnew; lnew = _^(lptr);
 
