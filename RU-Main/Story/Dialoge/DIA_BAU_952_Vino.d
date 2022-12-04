@@ -46,7 +46,7 @@ func int DIA_Vino_HALLO_Condition()
 func void DIA_Wine_HALLO_Info()
 {
 	AI_Output(other,self, " DIA_Vino_HALLO_15_00 " );	// How is work going?
-	AI_Output(self,other, " DIA_Vino_HALLO_05_01 " );	// Same as always. There is a lot of work, little money, and if we are not at all lucky, then tomorrow the orcs will come and burn our farm to the ground.
+	AI_Output(self,other, " DIA_Vino_HALLO_05_01 " );	// Same as always. There is a lot of work, little money, and if we're REALLY lucky, the orcs will come and burn our farm to the ground.
 
 	if(hero.guild == GIL_NONE)
 	{
@@ -88,13 +88,13 @@ func void DIA_Vino_SeekWork_Info()
 
 			if ((Lobart_clothing_sold ==  FALSE ) && (Npc_KnowsInfo(other,DIA_Lobart_CLOTHING) || Npc_KnowsInfo(other,DIA_Lobart_WorkNOW)))
 			{
-				AI_Output(other,self, " DIA_Vino_SeekWork_15_05 " );	// He offered to buy clean clothes from him cheaper if I helped on the farm.
-				AI_Output(self,other, " DIA_Vino_SeekWork_05_06 " );	// Hmmm... (thoughtfully) I don't have any work for you, but you can bring me and the guys something to drink.
-				AI_Output(self,other, " DIA_Vino_SeekWork_05_07 " );	// Bring me a bottle of wine and I'll tell Lobart that you helped us a lot (laughs mockingly).
+				AI_Output(other,self, " DIA_Vino_SeekWork_15_05 " );	// He offered to sell me some clothes for cheaper if I helped on the farm.
+				AI_Output(self,other, " DIA_Vino_SeekWork_05_06 " );	// Hmmm... I don't have any work for you, but you can bring me and the guys something to drink.
+				AI_Output(self,other, " DIA_Vino_SeekWork_05_07 " );	// Bring me a bottle of wine and I'll tell Lobart that you helped us a lot (laughs).
 				MIS_Vino_Wein = LOG_Running;
 				Log_CreateTopic(TOPIC_Vino,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Vino,LOG_Running);
-				B_LogEntry(TOPIC_Vino, " If I bring Vino a bottle of wine, he will tell Lobart that I helped him. " );
+				B_LogEntry(TOPIC_Vino, " If I bring Vino a bottle of... well... VINO, he will tell Lobart that I helped him. " );
 			}
 			else
 			{
@@ -104,7 +104,7 @@ func void DIA_Vino_SeekWork_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Vino_SeekWork_05_09 " );	// I don't think you'll like it. A man in your position is unlikely to want to do such a dirty job that I can offer.
+		AI_Output(self,other, " DIA_Vino_SeekWork_05_09 " );	// I don't think you'll like it. A man in your position is unlikely to want to do such a menial task.
 	};
 };
 
@@ -138,7 +138,7 @@ func void DIA_Vino_BringWine_Info()
 		AI_Output(self,other, " DIA_Vino_BringWine_05_02 " );	// Thanks anyway.
 		if(hero.guild == GIL_NONE)
 		{
-			AI_Output(self,other, " DIA_Vino_BringWine_05_03 " );	// Lobart will only hear good things about you.
+			AI_Output(self,other, " DIA_Vino_BringWine_05_03 " );	// Lobart will only hear good things about you from me.
 		};
 	};
 	MIS_Vino_Wein = LOG_SUCCESS;
@@ -168,7 +168,7 @@ func int DIA_Vino_ToTheCity_Condition()
 func void DIA_Vino_ToTheCity_Info()
 {
 	AI_Output(other,self, " DIA_Vino_ToTheCity_15_00 " );	// I'm heading for the city.
-	AI_Output(self,other,"DIA_Vino_ToTheCity_05_01");	//И?
+	AI_Output(self,other,"DIA_Vino_ToTheCity_05_01");	//So?
 	AI_Output(other,self, " DIA_Vino_ToTheCity_15_02 " );	// Can you tell me something interesting about the city?
 	AI_Output(self,other, " DIA_Vino_ToTheCity_05_03 " );	// No. But Malet often goes to the city. Maybe he knows something... well, something that might interest you.
 };
@@ -208,18 +208,18 @@ func void DIA_Vino_PERM_Info()
 		MIS_KILL_VINO_ORK = LOG_Running;
 		Log_CreateTopic(TOPIC_VINO_KILL_ORK,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_VINO_KILL_ORK,LOG_Running);
-		B_LogEntry( TOPIC_VINO_KILL_ORK , " Peasant Wine is very afraid that an orc will come to the farm at night and kill him, so he can't sleep. " );
+		B_LogEntry( TOPIC_VINO_KILL_ORK , " Vino is very afraid that an orc will come to the farm at night and kill him, so he can't sleep. " );
 	}
 	else if((Vino_Gossip_Bugs == FALSE) && (MIS_AndreHelpLobart == LOG_Running))
 	{
-		AI_Output(self,other, " DIA_Vino_PERM_05_03 " );	// These huge, disgusting insects have already got everyone. They are everywhere. They'll eat everything we've grown if we don't do something.
-		AI_Output(self,other, " DIA_Vino_PERM_05_04 " );	// A few days ago, I was lying in the grass, thinking about my own thoughts, and was about to take a nap, when one of these creatures ate my shoe!
-		AI_Output(self,other, " DIA_Vino_PERM_05_05 " );	// You should have seen how I fled. Since then, I have not been able to sleep peacefully.
+		AI_Output(self,other, " DIA_Vino_PERM_05_03 " );	// These huge, disgusting insects are a constant menace. They are everywhere. They'll eat everything we've grown if we don't do something.
+		AI_Output(self,other, " DIA_Vino_PERM_05_04 " );	// A few days ago, I was lying in the grass, looking at the clouds, drifting off to sleep, when one of these creatures ate my shoe!
+		AI_Output(self,other, " DIA_Vino_PERM_05_05 " );	// You should have seen how I ran. Since then, I've been a nervous wreck.
 		Vino_Gossip_Bugs = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Vino_PERM_05_06 " );	// Besides, did I already tell you? No.
+		AI_Output(self,other, " DIA_Vino_PERM_05_06 " );	// Did I already tell you? No.
 	};
 };
 
@@ -271,7 +271,7 @@ var int DIA_Vino_DMTAMSTART_OneTime;
 func void DIA_Vino_DMTAMSTART_Info()
 {
 	AI_Output(other,self, " DIA_Vino_DMTAMSTART_15_00 " );	// How are you doing?
-	AI_Output(self,other, " DIA_Vino_DMTAMSTART_05_03 " );	// Those black-robed bastards are everywhere. Someone should stick their hoods down their throats.
+	AI_Output(self,other, " DIA_Vino_DMTAMSTART_05_03 " );	// Those black-robed bastards are everywhere. Someone should stick a blade in their guts.
 };
 
 instance DIA_Vino_Obesessed (C_Info)
@@ -302,7 +302,7 @@ func void DAY_Wine_Obesessed_Info()
 	else
 	{
 		AI_Output(other,self, " DIA_Vino_Obesessed_15_00 " );	// What's wrong with you?!
-		AI_Output(self,other, " DIA_Vino_Obesessed_05_01 " );	// Damn, kill them...(growls) Or they'll kill me!
+		AI_Output(self,other, " DIA_Vino_Obesessed_05_01 " );	// Kill them or they'll kill me!
 		AI_StopProcessInfos(self);
 		DMT_Vino1.aivar[AIV_EnemyOverride] = FALSE ;
 		DMT_Vino2.aivar[AIV_EnemyOverride] = FALSE ;
@@ -336,15 +336,15 @@ var int DIA_Vino_Healing_oneTime;
 
 func void DIA_Vino_Healing_Info()
 {
-	AI_Output(other,self, " DIA_Vino_Heilung_15_00 " );	// You're not yourself.
+	AI_Output(other,self, " DIA_Vino_Heilung_15_00 " );	// You seem off?
 	AI_Output(self,other, " DIA_Vino_Heilung_05_01 " );	// My head... I can't take it anymore.
 	if (DIA_Vino_Heilung_oneTime ==  FALSE )
 	{
-		AI_Output(other,self, " DIA_Vino_Heilung_15_02 " );	// You must go to the monastery. Pyrokar, the supreme firebender, can help you.
-		AI_Output(self,other, " DIA_Vino_Heilung_05_03 " );	// Do you think? Good. I'll try.
+		AI_Output(other,self, " DIA_Vino_Heilung_15_02 " );	// You must go to the monastery. Pyrokar, the Fire Archmage, can help you.
+		AI_Output(self,other, " DIA_Vino_Heilung_05_03 " );	// Do you think so? I'll try.
 		B_NpcClearObsessionByDMT(self);
 		B_StartOtherRoutine(Vino,"Kloster");
-		B_LogEntry( TOPIC_DEMENTOREN , " Wine is obsessed! I sent him to the monastery for treatment. I hope he can get there alive. " );
+		B_LogEntry( TOPIC_DEMENTOREN , " Vino is extremely unwell! I sent him to the monastery for treatment. I hope he can get there in one piece. " );
 		B_GivePlayerXP(XP_VinoFreeFromDMT);
 		DIA_Vino_Healing_oneTime = TRUE ;
 	};
@@ -400,8 +400,8 @@ var int DIA_Vino_PERM4OBSESSED_XP_oneTime;
 
 func void DIA_Vino_PERM4OBSESSED_Info()
 {
-	AI_Output(other,self,"DIA_Vino_PERM4OBSESSED_15_00");	//Как ты?
-	AI_Output(self,other, " DIA_Vino_PERM4OBSESSED_05_01 " );	// Yes, yes, everything is fine. I think the guys can help me. But I still feel pretty lousy.
+	AI_Output(other,self,"DIA_Vino_PERM4OBSESSED_15_00");	//How are you?
+	AI_Output(self,other, " DIA_Vino_PERM4OBSESSED_05_01 " );	// Yes, yes, everything is fine. I think the mages can help me. But I still feel pretty lousy.
 	if(DIA_Vino_PERM4OBSESSED_XP_oneTime == FALSE)
 	{
 		AI_Output(self,other, " DIA_Vino_PERM4OBSESSED_05_02 " );	// But I have to admit, their wine is the best I've ever tasted.
@@ -575,19 +575,19 @@ func int dia_vino_killork_condition()
 func void wine_day_killork_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self, " DIA_Vino_KillOrk_01_01 " );	// I killed your orc.
-	AI_Output(self,other, " DIA_Vino_KillOrk_01_02 " );	// (incredulously) Are you sure about that?
-	AI_Output(other,self, " DIA_Vino_KillOrk_01_03 " );	// I have orc schnapps. You won't get this anywhere else, except from the orcs.
+	AI_Output(other,self, " DIA_Vino_KillOrk_01_01 " );	// I killed your orcish visitor.
+	AI_Output(self,other, " DIA_Vino_KillOrk_01_02 " );	// What? Are you sure about that?
+	AI_Output(other,self, " DIA_Vino_KillOrk_01_03 " );	// I have orc schnapps. You won't get it anywhere else, except from the orcs.
 	B_GiveInvItems(other,self,itfo_addon_shnaps_orks,1);
-	AI_Output(self,other, " DIA_Vino_KillOrk_01_04 " );	// Well, if that's the case, now I'll finally get a good night's sleep.
+	AI_Output(self,other, " DIA_Vino_KillOrk_01_04 " );	// Well, if that's the case, I'll finally get a good night's sleep again.
 	AI_UseItem(self,itfo_addon_shnaps_orks);
-	AI_Output(self,other, " DIA_Vino_KillOrk_01_05 " );	// Oh, how delicious! Thanks boy.
+	AI_Output(self,other, " DIA_Vino_KillOrk_01_05 " );	// Oh, how delicious! Thank you my friend.
 	AI_Output(other,self, " DIA_Vino_KillOrk_01_06 " );	// How about a little reward?
-	AI_Output(self,other, " DIA_Vino_KillOrk_01_07 " );	// Well, you can pay for such a job. I, unfortunately, do not have gold, but there is one very rare plant.
-	AI_Output(self,other,"DIA_Vino_KillOrk_01_08");	//Держи.
+	AI_Output(self,other, " DIA_Vino_KillOrk_01_07 " );	// I do not have gold, but I do have a very rare plant in my possession?
+	AI_Output(self,other,"DIA_Vino_KillOrk_01_08");	//Agreed?
 	B_GiveInvItems(self,other,ItPl_Temp_Herb,1);
 	AI_Output(other,self, " DIA_Vino_KillOrk_01_09 " );	// Thank you.
 	MIS_KILL_VINO_ORK = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_VINO_KILL_ORK,LOG_SUCCESS);
-	B_LogEntry( TOPIC_VINO_KILL_ORK , " Vino can now sleep peacefully. I killed his nightmare! " );
+	B_LogEntry( TOPIC_VINO_KILL_ORK , " Vino can now sleep peacefully. I ended his nightmare! " );
 };
