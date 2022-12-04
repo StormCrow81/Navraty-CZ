@@ -1,12 +1,10 @@
+
 /* -------------------- CZ CHANGELOG -------------------- */
 
 /*
-
 v1.00:
-
-func void UseBloodMIS - upraveny výpisy
-func void UseDiofant_Paper - opravena hádanka
-
+func void UseBloodMIS - edited listings
+func void UseDiofant_Paper - fixed puzzle
 */
 
 
@@ -14,7 +12,7 @@ func void UseDiofant_Paper - opravena hádanka
 
 instance ItMi_StoneOfKnowlegde_MIS(C_Item)
 {
-	name = "Kámen vědění";
+	name = " Stone of Knowledge " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 1;
@@ -26,14 +24,14 @@ instance ItMi_StoneOfKnowlegde_MIS(C_Item)
 
 instance ItMi_ParlanRelic_MIS(C_Item)
 {
-	name = "Prastará relikvie";
+	name = " Ancient Relic " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItMi_StoneOfKnowlegde_MIS.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[4] = "Tahle relikvie zřejmě patřila mágovi Ohně...";
+	text[ 4 ] = " This relic apparently belonged to a Fire mage... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -49,8 +47,8 @@ instance ItWr_PaladinLetter_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = UsePaladinLetter;
 	scemeName = "MAP";
-	description = "Dopis lordu Hagenovi";
-	text[4] = "Tenhle dopis napsal Garond, velitel paladinského oddílu...";
+	description = " Dopis lord Hagenov " ;
+	text[ 4 ] = " This letter was written by Garond, the commander of the paladin squad... " ;
 	inv_animate = 1;
 };
 
@@ -66,7 +64,7 @@ func void UsePaladinLetter()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Lorde Hagene!");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Expedice do Hornického údolí selhala. Utrpěli jsme těžké ztráty a ti, kteří přežili, jsou nyní uvězněni na hradě a obklíčeni skřety. Také na nás mnohokrát zaútočili draci. Zničili a spálili veškeré území v okolí hradu. S Innosovou pomocí snad vytrváme, dokud nedorazí posily. Stejně nám nic jiného nezbývá, neboť žádný výpad podniknout nemůžeme.");
+	Doc_PrintLines(nDocID, 0 , " The expedition to Mining Valley failed. We suffered heavy losses and those who survived are now trapped in the castle and surrounded by goblins. We were also attacked many times by dragons. They destroyed and burned all the land around the castle. With Innos with help, we can perhaps hold out until reinforcements arrive. We have nothing else to do anyway, as we cannot make any kind of attack. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			Garond");
@@ -101,7 +99,7 @@ func void UseLetterForGorn()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Gorne!");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Garond souhlasil, že tě propustí - za 1000 zlatých. Takže jestli máš někde ulitý nějaký zlato, bylo by načase se s ním vytasit.");
+	Doc_PrintLines(nDocID, 0 , " Garond has agreed to release you - for 1000 gold. So if you've got any gold lying around, it's time to get rid of it. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"			Milten");
 	Doc_Show(nDocID);
@@ -109,7 +107,7 @@ func void UseLetterForGorn()
 
 instance ItMi_GornsTreasure_MIS(C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = 0;
 	value = 1;
@@ -117,8 +115,8 @@ instance ItMi_GornsTreasure_MIS(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_METAL;
 	on_state[0] = UseGornsTreasure;
-	description = "Gornův měšec";
-	text[4] = "Tenhle měšec očividně patřil žoldáku Gornovi...";
+	description = " Gorn's Pouch " ;
+	text[ 4 ] = " This pouch apparently belonged to the mercenary Gorn... " ;
 	inv_animate = 1;
 };
 
@@ -126,7 +124,7 @@ instance ItMi_GornsTreasure_MIS(C_Item)
 func void UseGornsTreasure()
 {
 	B_PlayerFindItem(ItMi_Gold,250);
-	Gorns_Beutel = TRUE;
+	gorns_bag = TRUE ;
 };
 
 
@@ -140,7 +138,7 @@ instance ItWr_Silvestro_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = UseItwr_Silvestro;
 	scemeName = "MAP";
-	description = "Zpráva od Silvestra";
+	description = " Message from New Year's Eve " ;
 	inv_animate = 1;
 };
 
@@ -154,7 +152,7 @@ func void UseItwr_Silvestro()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Trápí mě jakési neblahé tušení, takže radši všechnu rudu někam schovám. Diego to tady jako jediný z nás zná. Určitě ty bedny ukryje někam do bezpečí. Rudu musíme ochránit za každou cenu, a tak s ním posílám ještě dva rytíře.");
+	Doc_PrintLines(nDocID, 0 , " I have a bad feeling, so I'd better hide all the ore somewhere. Diego is the only one of us here who knows. He'll surely hide the crates somewhere safe. We have to protect the ore at all costs, so I'm sending more two knights. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"		Silvestro");
@@ -165,14 +163,14 @@ func void UseItwr_Silvestro()
 
 instance ItAt_ClawLeader(C_Item)
 {
-	name = "Chňapavčí drápy";
+	name = " Snapper's Claws " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 150;
 	visual = "ItAt_Claw_Sky.3DS";
 	material = MAT_LEATHER;
-	description = "Chňapavčí drápy";
-	text[4] = "Tyhle hrůzostrašné drápy patřily vůdci smečky chňapavců...";
+	description = " Snapper's Claws " ;
+	text[ 4 ] = " These fearsome claws belonged to the leader of the snapper pack... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -180,14 +178,14 @@ instance ItAt_ClawLeader(C_Item)
 
 instance ITAT_CLAWBLACKSNAPPER(C_Item)
 {
-	name = "Chňapavčí drápy";
+	name = " Snapper's Claws " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 200;
 	visual = "ItAt_Claw.3DS";
 	material = MAT_LEATHER;
-	description = "Drápy černého chňapavce";
-	text[4] = "Tyhle hrůzostrašné drápy patřily černému chňapavci...";
+	description = " Black Snapper's Claws " ;
+	text[ 4 ] = " These fearsome claws belonged to a black snapper... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -195,14 +193,14 @@ instance ITAT_CLAWBLACKSNAPPER(C_Item)
 
 instance ITAT_VEPRFUR(C_Item)
 {
-	name = "Kůže divočáka";
+	name = " Boar Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 300;
 	visual = "ItAt_VeprFur.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Tuhle kůži jsem stáhl divočákovi, kterého jsem skolil...";
+	text[ 4 ] = " I took this skin off a wild boar I brought down... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -210,14 +208,14 @@ instance ITAT_VEPRFUR(C_Item)
 
 instance ITAT_NIGHTHUNTERFUR(C_Item)
 {
-	name = "Kůže přízračné stínové šelmy";
+	name = " Ghostly Shadow Beast Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	visual = "ItAt_TrollBlackFur_New.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Tuhle kůži jsem stáhl přízračné stínové šelmě, kterou jsem skolil...";
+	text[ 4 ] = " I skinned this ghostly shadowbeast that I brought down... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -225,7 +223,7 @@ instance ITAT_NIGHTHUNTERFUR(C_Item)
 
 instance ITAT_LUKEREGG(C_Item)
 {
-	name = "Vejce číhavce";
+	name = " Ambush Eggs " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 150;
@@ -238,9 +236,9 @@ instance ITAT_LUKEREGG(C_Item)
 	inv_animate = 1;
 };
 
-instance ItSe_Olav(C_Item)
+instance ItSe_Olav (C_Item)
 {
-	name = "Měšec";
+	name = " Month " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 1;
@@ -248,8 +246,8 @@ instance ItSe_Olav(C_Item)
 	scemeName = "MAPSEALED";
 	material = MAT_METAL;
 	on_state[0] = UseOlav;
-	description = "Olavův měšec";
-	text[4] = "V měšci cinká několik mincí...";
+	description = " Olav's pouch " ;
+	text[ 4 ] = " Several coins jingle in the purse... " ;
 	inv_animate = 1;
 };
 
@@ -261,7 +259,7 @@ func void UseOlav()
 
 instance ItMi_Plate_MISGold(C_Item)
 {
-	name = "Zlatý talíř";
+	name = " Gold Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = Value_GoldPlate;
@@ -277,7 +275,7 @@ instance ItMi_Plate_MISGold(C_Item)
 
 instance ItWr_Bloody_MIS(C_Item)
 {
-	name = "Poznámka";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -285,7 +283,7 @@ instance ItWr_Bloody_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = UseBloodMIS;
 	scemeName = "MAP";
-	description = "Jed krvavé mouchy";
+	description = " Bloodfly Poison " ;
 	inv_animate = 1;
 };
 
@@ -299,16 +297,16 @@ func void UseBloodMIS()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Žihadlo krvavé mouchy obsahuje prudký jed, a proto se ho nikdo, kdo má všech pět pohromadě, nedotýká. Pokud tedy nezná tajemství, jak je spolehlivě vyjmout. Žihadlo lze čistě otevřít, pokud je ostrým nožem po délce opatrně naříznete a sloupnete svrchní kůži. Pak už jen stačí odstranit tkáň kolem jedových žláz.");
+	Doc_PrintLines(nDocID, 0 , " The sting of a blood fly contains a violent poison, and therefore no one who has all five together will touch it. That is, unless they know the secret of how to reliably remove them. The sting can be opened cleanly if a sharp knife is carefully you cut and peel off the outer skin. Then all you have to do is remove the tissue around the poison glands. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Damarok");
 	Doc_Show(nDocID);
 	if(Knows_Bloodfly == FALSE)
 	{
 		Knows_Bloodfly = TRUE;
-		AI_Print("Naučeno: Extrakce sekretu ze žihadel");
+		AI_Print( " Learned: Extracting secretions from stingers " );
 		Log_CreateTopic(Topic_Bonus,LOG_NOTE);
-		B_LogEntry(Topic_Bonus,"Nyní vím, jak ze žihadel krvavých much získat léčivý sekret.");
+		B_LogEntry(Topic_Bonus, " Now I know how to get healing secretions from blood fly stings. " );
 		B_GivePlayerXP(XP_Ambient);
 	};
 };
@@ -316,7 +314,7 @@ func void UseBloodMIS()
 
 instance ItWr_Pfandbrief_MIS(C_Item)
 {
-	name = "Zástavní smlouva";
+	name = " Pledge Agreement " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -325,7 +323,7 @@ instance ItWr_Pfandbrief_MIS(C_Item)
 	on_state[0] = UsePfandbrief;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Zástavní smlouva kupce Lutera...";
+	text[ 4 ] = " Buyer Luter's Pledge Agreement... " ;
 	inv_animate = 1;
 };
 
@@ -339,11 +337,11 @@ func void UsePfandbrief()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Za účelem splacení nevyrovnaných pohledávek budiž přijat do zástavy předmět, jehož hodnota zmíněné pohledávky vyrovnává.");
+	Doc_PrintLines(nDocID, 0 , " For the purpose of repaying outstanding claims, an object whose value settles said claims should be accepted as a pledge. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"V zástavě:");
+	Doc_PrintLine(nDocID, 0 , " Pledged : " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"- zdobený zlatý kalich ze sbírky Krvavých kalichů");
+	Doc_PrintLines(nDocID, 0 , " - decorated gold chalice from the collection of Blood Chalices " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"Lutero, kupec");
@@ -353,7 +351,7 @@ func void UsePfandbrief()
 };
 
 
-instance ITWR_LUTEROLOAN(C_Item)
+instance ITWR_LUTEROLOGY (C_Item);
 {
 	name = "Dluhopis";
 	mainflag = ITEM_KAT_DOCS;
@@ -364,7 +362,7 @@ instance ITWR_LUTEROLOAN(C_Item)
 	on_state[0] = use_luteroloan;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Dluhopis kupce Lutera lichváři Lehmarovi...";
+	text[ 4 ] = " Bond of buyer Luter to usurer Lehmar... " ;
 	inv_animate = 1;
 };
 
@@ -378,19 +376,19 @@ func void use_luteroloan()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Já, Lutero, si půjčuji u lichváře Lehmara obnos pět tisíc zlatých a zavazuji se tenhle dluh včetně patřičných úroků v dohodnuté lhůtě splatit.");
+	Doc_PrintLines(nDocID, 0 , " I, Luther, borrow five thousand guilders from the usurer Lehmar and undertake to repay this debt, including the appropriate interest, within the agreed period. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"Lutero, kupec");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Lehmar, věřitel");
+	Doc_PrintLines(nDocID, 0 , " Lehmar, creditor " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_MAP_OLDWORLD_OREMINES_MIS_1(C_Item)
 {
-	name = "Garondova mapa Hornického údolí";
+	name = " Garonda's Map of Mining Valley " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 50;
@@ -407,7 +405,7 @@ instance ITWR_MAP_OLDWORLD_OREMINES_MIS_1(C_Item)
 
 func void Use_Map_OldWorld_Oremines()
 {
-	var int Document;
+	var int  Document ;
 	Document = Doc_CreateMap();
 	Doc_SetPages(Document,1);
 	Doc_SetPage(Document,0,"Map_OldWorld_Oremines.tga",TRUE);
@@ -427,7 +425,7 @@ instance ItWr_Manowar(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = UseManowar;
 	scemeName = "MAP";
-	description = "Texty písní";
+	description = " Song Lyrics " ;
 	inv_animate = 1;
 };
 
@@ -441,22 +439,22 @@ func void UseManowar()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Dominiquovo volání");
+	Doc_PrintLines(nDocID, 0 , " Dominic's call " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Budeme opěvovat Jeho slávu");
-	Doc_PrintLines(nDocID,0,"Innos stojí při mně a mých bratrech");
-	Doc_PrintLines(nDocID,0,"Můj meč slouží jen Jemu samotnému");
-	Doc_PrintLines(nDocID,0,"A dnes se bude Jeho jméno všude rozléhat");
-	Doc_PrintLines(nDocID,0,"Každého, kdo se mi postaví");
-	Doc_PrintLines(nDocID,0,"Vlastní rukou skolím");
-	Doc_PrintLines(nDocID,0,"Neboť já jsem Innosovým válečníkem!");
+	Doc_PrintLines(nDocID, 0 , " We will sing His glory " );
+	Doc_PrintLines(nDocID, 0 , " Innos stands by me and my brothers " );
+	Doc_PrintLines(nDocID, 0 , " My sword serves only Him alone " );
+	Doc_PrintLines(nDocID, 0 , " And today His name will be heard everywhere " );
+	Doc_PrintLines(nDocID, 0 , " Anyone who confronts me " );
+	Doc_PrintLines(nDocID, 0 , " I write with my own hand " );
+	Doc_PrintLines(nDocID, 0 , " For I am a warrior of Innos! " );
 	Doc_Show(nDocID);
 };
 
 
 instance ItWr_KDWLetter(C_Item)
 {
-	name = "Zpráva";
+	name = " Message " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -464,7 +462,7 @@ instance ItWr_KDWLetter(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = UseKDWLetter;
 	scemeName = "MAP";
-	description = "Zpráva";
+	description = " Message " ;
 	inv_animate = 1;
 };
 
@@ -478,10 +476,10 @@ func void UseKDWLetter()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Opustili jsme tábor. Teď, když bariéra padla, vyhledáme místo, kde celá ta zkáza začala. Možná tam najdeme odpovědi, po kterých se pídíme už po dlouhá léta. Jen Adanos ví, kam nás cesta zavede.");
+	Doc_PrintLines(nDocID, 0 , " We've left the camp. Now that the barrier has fallen, we'll seek out the place where all this destruction began. Maybe there we'll find the answers we've been searching for for years. Only Adanos knows where the road will lead us. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Adanos nás provázej!");
-	Doc_PrintLine(nDocID,0,"Saturas");
+	Doc_PrintLines(nDocID, 0 , " Adanos accompany us! " );
+	Doc_PrintLine(nDocID, 0 , " Saturation " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_Show(nDocID);
@@ -490,7 +488,7 @@ func void UseKDWLetter()
 
 instance ItWr_GilbertLetter(C_Item)
 {
-	name = "Poznámka";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -512,7 +510,7 @@ func void UseGilbertLetter()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Začíná mě to pěkně štvát. Už jsem se tu schovával dost dlouho a jestli jsem dobře slyšel, bariéra konečně padla. Teď už mě nikdo nebude hledat. Mám plný zuby týhle hnusný jeskyně i toho zatracenýho údolí. Je načase vrátit se domů.");
+	Doc_PrintLines(nDocID, 0 , " I'm starting to get really pissed off. I've been hiding here long enough and if I heard correctly, the barrier has finally fallen. Now no one will be looking for me. I'm sick of this hideous cave and damned valley. It's time return home. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Gilbert");
 	Doc_PrintLine(nDocID,0,"");
@@ -536,11 +534,11 @@ instance ItRi_Tengron(C_Item)
 	description = NAME_ADDON_TengronsRing;
 	text[2] = NAME_Bonus_HpMax;
 	count[2] = Ri_Hp;
-	text[4] = "Tenhle prsten patřil paladinovi jménem Tengron...";
+	text[ 4 ] = " This ring belonged to a paladin named Tengron... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 	inv_animate = 1;
 };
@@ -575,7 +573,7 @@ instance ItWr_Diofant_Paper(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = UseDiofant_Paper;
 	scemeName = "MAP";
-	description = "Svitek se zápisky";
+	description = " Scroll with notes " ;
 	inv_animate = 1;
 };
 
@@ -589,41 +587,41 @@ func void UseDiofant_Paper()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Chceš ty o někom zjistit-li,");
-	Doc_PrintLine(nDocID,0,"zdali um jeho bystrý jest,");
-	Doc_PrintLine(nDocID,0,"hádanku nech ho rozluštit.");
+	Doc_PrintLine(nDocID, 0 , " Do you want to find out about someone, " );
+	Doc_PrintLine(nDocID, 0 , " is his mind sharp, " );
+	Doc_PrintLine(nDocID, 0 , " let him solve the puzzle. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"Prach Diofantův");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Diofantos tu spočívá;");
-	Doc_PrintLines(nDocID,0,"zhlédni ty kámen náhrobní");
-	Doc_PrintLines(nDocID,0,"a ten svým moudrým uměním");
-	Doc_PrintLines(nDocID,0,"zesnulého věk odhalí.");
-	Doc_PrintLines(nDocID,0,"Dík vůli bohů šestinu");
-	Doc_PrintLines(nDocID,0,"bytí svého jak dítě žil,");
-	Doc_PrintLines(nDocID,0,"půl šestiny pak prožíval");
-	Doc_PrintLines(nDocID,0,"s chomáčem stáří na tvářích.");
-	Doc_PrintLines(nDocID,0,"Sedmina další ubyla,");
-	Doc_PrintLines(nDocID,0,"než s milou on se oženil;");
-	Doc_PrintLines(nDocID,0,"ta po letech svadby pěti");
-	Doc_PrintLines(nDocID,0,"syna krásného povila.");
-	Doc_PrintLines(nDocID,0,"Jen půli let otce svého");
-	Doc_PrintLines(nDocID,0,"chlapeček na světě zůstal,");
-	Doc_PrintLines(nDocID,0,"než od svých drahých rodičů");
-	Doc_PrintLines(nDocID,0,"odloučen až na věčnost byl.");
-	Doc_PrintLines(nDocID,0,"Dva kráte léta dvě ještě");
+	Doc_PrintLines(nDocID, 0 , " Diophantus rests here; " );
+	Doc_PrintLines(nDocID, 0 , " look at the tombstone " );
+	Doc_PrintLines(nDocID, 0 , " and he by his wise art " );
+	Doc_PrintLines(nDocID, 0 , " the age of the deceased will reveal. " );
+	Doc_PrintLines(nDocID, 0 , " Thanks to the will of the gods a sixth " );
+	Doc_PrintLines(nDocID, 0 , " his being as a child lived, " );
+	Doc_PrintLines(nDocID, 0 , " half a sixth then experienced " );
+	Doc_PrintLines(nDocID, 0 , " with a tuft of old age on the cheeks. " );
+	Doc_PrintLines(nDocID, 0 , " Seventh more down, " );
+	Doc_PrintLines(nDocID, 0 , " than he married mila; " );
+	Doc_PrintLines(nDocID, 0 , " the one after five years of marriage " );
+	Doc_PrintLines(nDocID, 0 , " the son of the beautiful povila. " );
+	Doc_PrintLines(nDocID, 0 , " Only half the years of his father " );
+	Doc_PrintLines(nDocID, 0 , " a little boy remained in the world, " );
+	Doc_PrintLines(nDocID, 0 , " than from his dear parents " );
+	Doc_PrintLines(nDocID, 0 , " separated until eternity was. " );
+	Doc_PrintLines(nDocID, 0 , " Two short summers two more " );
 	Doc_PrintLines(nDocID,0,"Diofantos ho oplakal,");
-	Doc_PrintLines(nDocID,0,"než i sám velký učenec");
-	Doc_PrintLines(nDocID,0,"za bohy svými se pobral.");
+	Doc_PrintLines(nDocID, 0 , " than even the great scholar himself " );
+	Doc_PrintLines(nDocID, 0 , " he took to his gods. " );
 	Doc_PrintLines(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"(Správná odpověď - 84 let.)");
+	Doc_PrintLines(nDocID, 0 , " (Correct answer - 84 years old.) " );
 	Doc_PrintLines(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"(* I když původně tady stálo 64. - pozn. překl. *)");
+	Doc_PrintLines(nDocID, 0 , " (* Even though it originally read 64. - translation note *) " );
 	Doc_PrintLines(nDocID,0,"");
 	Doc_Show(nDocID);
 };
@@ -638,8 +636,8 @@ instance ItWr_LukasLetter(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = UseLukasLetter;
 	scemeName = "MAP";
-	description = "Velikému převorovi";
-	text[4] = "Tenhle dopis napsal Luka, Haniarův přisluhovač...";
+	description = " To the Great Prior " ;
+	text[ 4 ] = " This letter was written by Luka, Haniar's minion... " ;
 	inv_animate = 1;
 };
 
@@ -652,20 +650,20 @@ func void UseLukasLetter()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Mistře Haniare!");
+	Doc_PrintLine(nDocID, 0 , " Master Haniar! " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Už jistou dobu na váš rozkaz sleduji toho nového murida.");
+	Doc_PrintLines(nDocID, 0 , " I have been following the new murid for some time now at your order. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Chodí kolem, do všeho se plete a zřejmě si hledá spojence.");
-	Doc_PrintLine(nDocID,0,"Tedy na nováčka nedělá nic nezvyklého...");
-	Doc_PrintLine(nDocID,0,"Ale přesto se na nás usmálo štěstí. S poslední dodávkou jídla jsme získali také hromadu zbytečností,");
-	Doc_PrintLine(nDocID,0,"mezi kterými se nachází kromě jiného i portrét toho murida.");
-	Doc_PrintLine(nDocID,0,"Vypadá to, že na něj mají spadeno banditi.");
-	Doc_PrintLine(nDocID,0,"Sám velice dobře víte, že v poslední době jsme z venkovního světa nedostali žádné nové posily.");
-	Doc_PrintLine(nDocID,0,"To znamená, že ten člověk není asasín, to je prostě vyloučené!");
+	Doc_PrintLine(nDocID, 0 , " He walks around, getting involved in everything and apparently looking for allies. " );
+	Doc_PrintLine(nDocID, 0 , " So he doesn't do anything unusual for a newbie... " );
+	Doc_PrintLine(nDocID, 0 , " But luck smiled on us anyway. With the last delivery of food, we also got a bunch of junk, " );
+	Doc_PrintLine(nDocID, 0 , " among which there is, among other things, a portrait of that murid. " );
+	Doc_PrintLine(nDocID, 0 , " Looks like bandits have dropped on him. " );
+	Doc_PrintLine(nDocID, 0 , " You yourself know very well that we have not received any new reinforcements from the outside world recently. " );
+	Doc_PrintLine(nDocID, 0 , " This means that the person is not an assassin, that is simply out of the question! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"			Váš navždy oddaný sluha");
+	Doc_PrintLine(nDocID, 0 , " 			Your forever devoted servant " );
 	Doc_PrintLine(nDocID,0,"            Luka");
 	Doc_Show(nDocID);
 };
