@@ -1,9 +1,10 @@
+
 ----------------------------------------------------------------------------------------------------
 
 
 LeGo-Custom (v2.8.0):
 
-- aktualizováno (v2.7.1 -> v2.8.0)
+- updated (v2.7.1 -> v2.8.0)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -11,7 +12,7 @@ LeGo-Custom (v2.8.0):
 
 LeGo-Custom (v2.7.1):
 
-- upraveno po vzoru původní (RU) upravené verze LeGo 2.4.0:
+- adapted from the original (RU) adapted version of LeGo 2.4.0:
 
 --- (...)\PermMem.d
 
