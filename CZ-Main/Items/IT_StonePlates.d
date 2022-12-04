@@ -1,16 +1,17 @@
+
 func int C_ScHasMagicStonePlate()
 {
-	if(Npc_HasItems(hero,ITWR_STAMINAPOINTSTONEPLATE) || Npc_HasItems(hero,ItWr_StrStonePlate1_Addon) || Npc_HasItems(hero,ItWr_StrStonePlate2_Addon) || Npc_HasItems(hero,ItWr_StrStonePlate3_Addon) || Npc_HasItems(hero,ItWr_DexStonePlate1_Addon) || Npc_HasItems(hero,ItWr_DexStonePlate2_Addon) || Npc_HasItems(hero,ItWr_DexStonePlate3_Addon) || Npc_HasItems(hero,ItWr_HitPointStonePlate1_Addon) || Npc_HasItems(hero,ItWr_HitPointStonePlate2_Addon) || Npc_HasItems(hero,ItWr_HitPointStonePlate3_Addon) || Npc_HasItems(hero,ItWr_ManaStonePlate1_Addon) || Npc_HasItems(hero,ItWr_ManaStonePlate2_Addon) || Npc_HasItems(hero,ItWr_ManaStonePlate3_Addon) || Npc_HasItems(hero,ItWr_OneHStonePlate1_Addon) || Npc_HasItems(hero,ItWr_OneHStonePlate2_Addon) || Npc_HasItems(hero,ItWr_OneHStonePlate3_Addon) || Npc_HasItems(hero,ItWr_TwoHStonePlate1_Addon) || Npc_HasItems(hero,ItWr_TwoHStonePlate2_Addon) || Npc_HasItems(hero,ItWr_TwoHStonePlate3_Addon) || Npc_HasItems(hero,ItWr_BowStonePlate1_Addon) || Npc_HasItems(hero,ItWr_BowStonePlate2_Addon) || Npc_HasItems(hero,ItWr_BowStonePlate3_Addon) || Npc_HasItems(hero,ItWr_CrsBowStonePlate1_Addon) || Npc_HasItems(hero,ItWr_CrsBowStonePlate2_Addon) || Npc_HasItems(hero,ItWr_CrsBowStonePlate3_Addon))
+	ItWr_TwoHStonePlate1_Addon) || Npc_HasItems(hero,ItWr_TwoHStonePlate2_Addon) || Npc_HasItems(hero,ItWr_TwoHStonePlate3_Addon) || Npc_HasItems(hero,ItWr_BowStonePlate1_Addon) || Npc_HasItems(hero,ItWr_BowStonePlate2_Addon) || Npc_HasItems(hero,ItWr_BowStonePlate3_Addon) || Npc_HasItems(hero,ItWr_CrsBowStonePlate1_Addon) || Npc_HasItems(hero,ItWr_CrsBowStonePlate2_Addon) || Npc_HasItems(hero,ItWr_CrsBowStonePlate3_Addon))
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 prototype Prototype_StonePlate(C_Item)
 {
-	name = "Kamenná tabulka";
+	name = " Stone Table " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 10;
@@ -19,19 +20,19 @@ prototype Prototype_StonePlate(C_Item)
 	scemeName = "MAPSEALED";
 	wear = WEAR_EFFECT;
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	text[4] = StPl_MagicAuraText;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-//------------------------------skrizhali obychnogo yazyka Zodchikh---------------------------------------------
+// ------------------------------skrizhali obychnogo yazyka Zodchikh-------------- -------------------------------
 
 instance ITWR_STAMINAPOINTSTONEPLATE(Prototype_StonePlate)
 {
-	name = "Kamenná tabulka";
+	name = " Stone Table " ;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 10;
@@ -39,10 +40,10 @@ instance ITWR_STAMINAPOINTSTONEPLATE(Prototype_StonePlate)
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
 	wear = WEAR_EFFECT;
-	description = "Kamenná tabulka posla";
+	description = " Messenger Stone Tablet " ;
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_staminastoneplate;
@@ -52,7 +53,7 @@ func void use_staminastoneplate()
 {
 	var c_item StItem;
 	var int staminaplusstone;
-	var int startstamina;
+	be int starting stamina;
 	var string concatText;
 
 	if(PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE)
@@ -92,7 +93,7 @@ func void use_staminastoneplate()
 		}
 		else
 		{
-			AI_Print(PRINT_NOMORESTAMINA);
+			AI_Print( PRINT_NOMORESTAMINA );
 		};
 	}
 	else
@@ -104,21 +105,21 @@ func void use_staminastoneplate()
 
 instance ItWr_HitPointStonePlate1_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka léčitele";
+	description = " Healer's Stone Tablet " ;
 	on_state[0] = Use_HitPointStonePlate1;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
 
 instance ItWr_HitPointStonePlate2_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka léčitele";
+	description = " Healer's Stone Tablet " ;
 	on_state[0] = Use_HitPointStonePlate2;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
 
 instance ItWr_HitPointStonePlate3_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka léčitele";
+	description = " Healer's Stone Tablet " ;
 	on_state[0] = Use_HitPointStonePlate3;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
@@ -178,25 +179,25 @@ func void Use_HitPointStonePlate3()
 };
 
 
-//------------------------------skrizhali yazyka voinov Zodchikh---------------------------------------------
+// ------------------------------skrizhali yazyka voinov Zodchikh-------------- -------------------------------
 
 instance ItWr_StrStonePlate1_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka válečníka";
+	description = " Warrior's Stone Tablet " ;
 	on_state[0] = Use_StrStonePlate1;
 	visual = "ItMi_StonePlate_PowerUp_01.3DS";
 };
 
 instance ItWr_StrStonePlate2_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka válečníka";
+	description = " Warrior's Stone Tablet " ;
 	on_state[0] = Use_StrStonePlate2;
 	visual = "ItMi_StonePlate_PowerUp_01.3DS";
 };
 
 instance ItWr_StrStonePlate3_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka válečníka";
+	description = " Warrior's Stone Tablet " ;
 	on_state[0] = Use_StrStonePlate3;
 	visual = "ItMi_StonePlate_PowerUp_01.3DS";
 };
@@ -254,21 +255,21 @@ func void Use_StrStonePlate3()
 
 instance ItWr_DexStonePlate1_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka lovce";
+	description = " Hunter's Stone Tablet " ;
 	on_state[0] = Use_DexStonePlate1;
 	visual = "ItMi_StonePlate_PowerUp_02.3DS";
 };
 
 instance ItWr_DexStonePlate2_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka lovce";
+	description = " Hunter's Stone Tablet " ;
 	on_state[0] = Use_DexStonePlate2;
 	visual = "ItMi_StonePlate_PowerUp_02.3DS";
 };
 
 instance ItWr_DexStonePlate3_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka lovce";
+	description = " Hunter's Stone Tablet " ;
 	on_state[0] = Use_DexStonePlate3;
 	visual = "ItMi_StonePlate_PowerUp_02.3DS";
 };
@@ -326,14 +327,14 @@ func void Use_DexStonePlate3()
 
 instance ItWr_OneHStonePlate1_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka šermíře";
+	description = " Stone Swordsman's Tablet " ;
 	on_state[0] = Use_OneHStonePlate1;
 	visual = "ItMi_StonePlate_PowerUp_04.3DS";
 };
 
 instance ItWr_OneHStonePlate2_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka šermíře";
+	description = " Stone Swordsman's Tablet " ;
 	on_state[0] = Use_OneHStonePlate2;
 	visual = "ItMi_StonePlate_PowerUp_04.3DS";
 };
@@ -388,14 +389,14 @@ func void Use_OneHStonePlate2()
 
 instance ItWr_TwoHStonePlate1_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka kopiníka";
+	description = " Stone Tablet of the Spearman " ;
 	on_state[0] = Use_TwoHStonePlate1;
 	visual = "ItMi_StonePlate_PowerUp_05.3DS";
 };
 
 instance ItWr_TwoHStonePlate2_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka kopiníka";
+	description = " Stone Tablet of the Spearman " ;
 	on_state[0] = Use_TwoHStonePlate2;
 	visual = "ItMi_StonePlate_PowerUp_05.3DS";
 };
@@ -450,14 +451,14 @@ func void Use_TwoHStonePlate2()
 
 instance ItWr_BowStonePlate1_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka lukostřelce";
+	description = " Archer's Stone Tablet " ;
 	on_state[0] = Use_BowStonePlate1;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
 
 instance ItWr_BowStonePlate2_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka lukostřelce";
+	description = " Archer's Stone Tablet " ;
 	on_state[0] = Use_BowStonePlate2;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
@@ -512,14 +513,14 @@ func void Use_BowStonePlate2()
 
 instance ItWr_CrsBowStonePlate1_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka kušiníka";
+	description = " Stone crossbowman's tablet " ;
 	on_state[0] = Use_CrsBowStonePlate1;
 	visual = "ItMi_StonePlate_PowerUp_04.3DS";
 };
 
 instance ItWr_CrsBowStonePlate2_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka kušiníka";
+	description = " Stone crossbowman's tablet " ;
 	on_state[0] = Use_CrsBowStonePlate2;
 	visual = "ItMi_StonePlate_PowerUp_04.3DS";
 };
@@ -572,25 +573,25 @@ func void Use_CrsBowStonePlate2()
 	};
 };
 
-//------------------------------skrizhali yazyka zhretsov Zodchikh---------------------------------------------
+// ------------------------------skrizhali yazyka zhretsov Zodchikh-------------- -------------------------------
 
 instance ItWr_ManaStonePlate1_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka kněze";
+	description = " Priest's Stone Tablet " ;
 	on_state[0] = Use_ManaStonePlate1;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
 
 instance ItWr_ManaStonePlate2_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka kněze";
+	description = " Priest's Stone Tablet " ;
 	on_state[0] = Use_ManaStonePlate2;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
 
 instance ItWr_ManaStonePlate3_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka kněze";
+	description = " Priest's Stone Tablet " ;
 	on_state[0] = Use_ManaStonePlate3;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
@@ -651,26 +652,26 @@ func void Use_ManaStonePlate3()
 
 instance ItWr_OneHStonePlate3_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka mudrce";
+	description = " Sage's Stone Tablet " ;
 	on_state[0] = Use_OneHStonePlate3;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
 
 instance ItWr_TwoHStonePlate3_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka mudrce";
+	description = " Sage's Stone Tablet " ;
 	on_state[0] = Use_TwoHStonePlate3;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
 instance ItWr_BowStonePlate3_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka mudrce";
+	description = " Sage's Stone Tablet " ;
 	on_state[0] = Use_BowStonePlate3;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
 instance ItWr_CrsBowStonePlate3_Addon(Prototype_StonePlate)
 {
-	description = "Kamenná tabulka mudrce";
+	description = " Sage's Stone Tablet " ;
 	on_state[0] = Use_CrsBowStonePlate3;
 	visual = "ItMi_StonePlate_PowerUp_03.3DS";
 };
