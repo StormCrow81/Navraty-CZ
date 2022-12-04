@@ -1,6 +1,7 @@
+
 instance ItAr_BloodArmor(C_Item)
 {
-	name = "Zbroj krve";
+	name = " Armor of Blood " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 270;
@@ -24,7 +25,7 @@ instance ItAr_BloodArmor(C_Item)
 	material = MAT_WOOD;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 500 | Požadovaná výdrž: 900";
+	text[ 0 ] = " Required Strength: 500 | Required Stamina: 900 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -62,7 +63,7 @@ instance ItAr_Ilesil(C_Item)
 
 instance ItAr_BloodRobe(C_Item)
 {
-	name = "Roucho krve";
+	name = " Robe of Blood " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 160;
@@ -99,7 +100,7 @@ instance ItAr_BloodRobe(C_Item)
 
 instance ITAR_BauBabe_L_New(C_Item)
 {
-	name = "Lehký oděv farmářky";
+	name = " Farmer's Light Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -123,7 +124,7 @@ instance ITAR_BauBabe_L_New(C_Item)
 
 instance ITAR_VlkBabe_L_New(C_Item)
 {
-	name = "Lehký oděv měšťanky";
+	name = " Light Garment of a Townswoman " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -147,7 +148,7 @@ instance ITAR_VlkBabe_L_New(C_Item)
 
 instance ITAR_BauBabe_M_New(C_Item)
 {
-	name = "Oděv farmářky";
+	name = " Farmer's Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -171,7 +172,7 @@ instance ITAR_BauBabe_M_New(C_Item)
 
 instance ITAR_VlkBabe_M_New(C_Item)
 {
-	name = "Oděv měšťanky";
+	name = " Townswoman Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -195,7 +196,7 @@ instance ITAR_VlkBabe_M_New(C_Item)
 
 instance ITAR_VlkBabe_H_New(C_Item)
 {
-	name = "Honosný oděv měšťanky";
+	name = " Gorgeous Garment of a Townswoman " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -219,7 +220,7 @@ instance ITAR_VlkBabe_H_New(C_Item)
 
 instance ITAR_CASSIA_ARMOR(C_Item)
 {
-	name = "Cassiina zbroj";
+	name = " Cassiina zbroj " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 30;
@@ -245,7 +246,7 @@ instance ITAR_CASSIA_ARMOR(C_Item)
 
 instance ITAR_AVABUL_ARMOR(C_Item)
 {
-	name = "Avabulina zbroj";
+	name = " Avabulina's armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 30;
@@ -267,7 +268,7 @@ instance ITAR_AVABUL_ARMOR(C_Item)
 
 instance ITAR_BauBabe_L(C_Item)
 {
-	name = "Lehký oděv farmářky";
+	name = " Farmer's Light Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -291,7 +292,7 @@ instance ITAR_BauBabe_L(C_Item)
 
 instance ITAR_VlkBabe_L(C_Item)
 {
-	name = "Lehký oděv měšťanky";
+	name = " Light Garment of a Townswoman " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -315,7 +316,7 @@ instance ITAR_VlkBabe_L(C_Item)
 
 instance ITAR_BauBabe_M(C_Item)
 {
-	name = "Oděv farmářky";
+	name = " Farmer's Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -339,7 +340,7 @@ instance ITAR_BauBabe_M(C_Item)
 
 instance ITAR_VlkBabe_M(C_Item)
 {
-	name = "Oděv měšťanky";
+	name = " Townswoman Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -363,7 +364,7 @@ instance ITAR_VlkBabe_M(C_Item)
 
 instance ITAR_VlkBabe_H(C_Item)
 {
-	name = "Honosný oděv měšťanky";
+	name = " Gorgeous Garment of a Townswoman " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -387,7 +388,7 @@ instance ITAR_VlkBabe_H(C_Item)
 
 instance ITAR_Fake_RANGER(C_Item)
 {
-	name = "Zbroj 'Kruhu Vody'";
+	name = " 'Circle of Water' Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -410,7 +411,7 @@ instance ITAR_Fake_RANGER(C_Item)
 
 instance ITAR_PRISONEL(C_Item)
 {
-	name = "Lehké kalhoty kopáče";
+	name = " Lightweight football pants " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 1;
@@ -436,7 +437,7 @@ instance ITAR_PRISONEL(C_Item)
 
 instance ITAR_Prisoner(C_Item)
 {
-	name = "Kalhoty kopáče";
+	name = " Kicker Pants " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 3;
@@ -462,7 +463,7 @@ instance ITAR_Prisoner(C_Item)
 
 instance ITAR_Bau_L(C_Item)
 {
-	name = "Lehký oděv farmáře";
+	name = " Farmer's Light Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -486,7 +487,7 @@ instance ITAR_Bau_L(C_Item)
 
 instance ITAR_Bau_L_01(C_Item)
 {
-	name = "Lehký oděv farmáře";
+	name = " Farmer's Light Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -510,7 +511,7 @@ instance ITAR_Bau_L_01(C_Item)
 
 instance ITAR_Bau_L_02(C_Item)
 {
-	name = "Lehký oděv farmáře";
+	name = " Farmer's Light Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -534,7 +535,7 @@ instance ITAR_Bau_L_02(C_Item)
 
 instance ITAR_BAU_L_TRANS(C_Item)
 {
-	name = "Lehký oděv farmáře";
+	name = " Farmer's Light Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 0;
@@ -557,7 +558,7 @@ instance ITAR_BAU_L_TRANS(C_Item)
 
 instance ITAR_Vlk_L(C_Item)
 {
-	name = "Lehký oděv měšťana";
+	name = " Town's Light Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -582,7 +583,7 @@ instance ITAR_Vlk_L(C_Item)
 
 instance ITAR_Bau_M(C_Item)
 {
-	name = "Oděv farmáře";
+	name = " Farmer Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -606,7 +607,7 @@ instance ITAR_Bau_M(C_Item)
 
 instance ITAR_Bau_M_Ext(C_Item)
 {
-	name = "Oděv farmáře";
+	name = " Farmer Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -656,7 +657,7 @@ instance ItAr_ShValley_Armor(C_Item)
 
 instance ITAR_Vlk_M(C_Item)
 {
-	name = "Oděv měšťana";
+	name = " Town's Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -680,7 +681,7 @@ instance ITAR_Vlk_M(C_Item)
 
 instance ITAR_Vlk_Matteo(C_Item)
 {
-	name = "Oděv měšťana";
+	name = " Town's Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -704,7 +705,7 @@ instance ITAR_Vlk_Matteo(C_Item)
 
 instance ITAR_Vlk_H(C_Item)
 {
-	name = "Honosný oděv měšťana";
+	name = " Gorgeous Garment of the Townsman " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 20;
@@ -733,7 +734,7 @@ instance ITAR_Vlk_H(C_Item)
 
 instance ITAR_Vlk_SH(C_Item)
 {
-	name = "Honosný oděv měšťana";
+	name = " Gorgeous Garment of the Townsman " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 20;
@@ -761,7 +762,7 @@ instance ITAR_Vlk_SH(C_Item)
 
 instance ITAR_Vlk_H_01(C_Item)
 {
-	name = "Oděv zámožného kupce";
+	name = " Affluent Buyer's Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -790,7 +791,7 @@ instance ITAR_Vlk_H_01(C_Item)
 
 instance ITAR_Vlk_H_02(C_Item)
 {
-	name = "Oděv zámožného kupce";
+	name = " Affluent Buyer's Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -819,7 +820,7 @@ instance ITAR_Vlk_H_02(C_Item)
 
 instance ITAR_Barkeeper(C_Item)
 {
-	name = "Oděv hostinského";
+	name = " Innkeeper's Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -845,7 +846,7 @@ instance ITAR_Barkeeper(C_Item)
 
 instance ITAR_Smith(C_Item)
 {
-	name = "Oděv se zástěrou";
+	name = " Garment with apron " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 20;
@@ -875,7 +876,7 @@ instance ITAR_Smith(C_Item)
 
 instance ITAR_HeavySmith(C_Item)
 {
-	name = "Oděv kováře";
+	name = " Blacksmith's Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 20;
@@ -905,7 +906,7 @@ instance ITAR_HeavySmith(C_Item)
 
 instance ITAR_ALCHEMY(C_Item)
 {
-	name = "Oděv alchymisty";
+	name = " Alchemist's Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -935,7 +936,7 @@ instance ITAR_ALCHEMY(C_Item)
 
 instance ITAR_Judge(C_Item)
 {
-	name = "Roucho soudce";
+	name = " Judge 's Robe " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 25;
@@ -963,7 +964,7 @@ instance ITAR_Judge(C_Item)
 
 instance ITAR_MAGE(C_Item)
 {
-	name = "Roucho mága";
+	name = " Mage Robe " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 30;
@@ -996,7 +997,7 @@ instance ITAR_MAGE(C_Item)
 
 instance ITAR_Governor(C_Item)
 {
-	name = "Oděv městského radního";
+	name = " Town Councilman's Clothing " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 30;
@@ -1024,7 +1025,7 @@ instance ITAR_Governor(C_Item)
 
 instance ITAR_SEKBED(C_Item)
 {
-	name = "Bederní rouška Bratrstva";
+	name = " Brotherhood Loincloth " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	protection[PROT_EDGE] = 5;
@@ -1052,7 +1053,7 @@ instance ITAR_SEKBED(C_Item)
 
 instance ITAR_SEKBED_V1(C_Item)
 {
-	name = "Vyztužená bederní rouška Bratrstva";
+	name = " Reinforced Brotherhood Loincloth " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -1080,7 +1081,7 @@ instance ITAR_SEKBED_V1(C_Item)
 
 prototype ITAR_SMITH_NOV_A(C_Item)
 {
-	name = "Oděv kovářského učně";
+	name = " Blacksmith's Apprentice Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	wear = WEAR_TORSO;
@@ -1100,7 +1101,7 @@ prototype ITAR_SMITH_NOV_A(C_Item)
 
 instance ITAR_SMITH_NOV(ITAR_SMITH_NOV_A)
 {
-	name = "Oděv kovářského učně";
+	name = " Blacksmith's Apprentice Garment " ;
 	protection[PROT_EDGE] = 15;
 	protection[PROT_BLUNT] = 10;
 	protection[PROT_POINT] = 5;
@@ -1125,7 +1126,7 @@ instance ITAR_SMITH_NOV(ITAR_SMITH_NOV_A)
 
 instance ITAR_SMITH_NOV_01(ITAR_SMITH_NOV_A)
 {
-	name = "Oděv kovářského učně";
+	name = " Blacksmith's Apprentice Garment " ;
 	protection[PROT_EDGE] = 20;
 	protection[PROT_BLUNT] = 10;
 	protection[PROT_POINT] = 5;
@@ -1150,7 +1151,7 @@ instance ITAR_SMITH_NOV_01(ITAR_SMITH_NOV_A)
 
 instance ITAR_SMITH_NOV_02(ITAR_SMITH_NOV_A)
 {
-	name = "Oděv kovářského učně";
+	name = " Blacksmith's Apprentice Garment " ;
 	protection[PROT_EDGE] = 25;
 	protection[PROT_BLUNT] = 15;
 	protection[PROT_POINT] = 5;
@@ -1175,7 +1176,7 @@ instance ITAR_SMITH_NOV_02(ITAR_SMITH_NOV_A)
 
 instance ITAR_SMITH_NOV_03(ITAR_SMITH_NOV_A)
 {
-	name = "Oděv kovářského učně";
+	name = " Blacksmith's Apprentice Garment " ;
 	protection[PROT_EDGE] = 30;
 	protection[PROT_BLUNT] = 15;
 	protection[PROT_POINT] = 10;
@@ -1200,7 +1201,7 @@ instance ITAR_SMITH_NOV_03(ITAR_SMITH_NOV_A)
 
 instance ITAR_SMITH_NOV_04(ITAR_SMITH_NOV_A)
 {
-	name = "Oděv kovářského učně";
+	name = " Blacksmith's Apprentice Garment " ;
 	protection[PROT_EDGE] = 35;
 	protection[PROT_BLUNT] = 20;
 	protection[PROT_POINT] = 10;
@@ -1225,7 +1226,7 @@ instance ITAR_SMITH_NOV_04(ITAR_SMITH_NOV_A)
 
 instance ITAR_SMITH_NOV_05(ITAR_SMITH_NOV_A)
 {
-	name = "Oděv kovářského učně";
+	name = " Blacksmith's Apprentice Garment " ;
 	protection[PROT_EDGE] = 40;
 	protection[PROT_BLUNT] = 20;
 	protection[PROT_POINT] = 10;
@@ -1250,7 +1251,7 @@ instance ITAR_SMITH_NOV_05(ITAR_SMITH_NOV_A)
 
 instance ITAR_Leather_L(C_Item)
 {
-	name = "Kožená zbroj";
+	name = " Leather armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 25;
@@ -1283,7 +1284,7 @@ instance ITAR_Leather_L(C_Item)
 
 instance ITAR_Leather_NPC(C_Item)
 {
-	name = "Kožená zbroj";
+	name = " Leather armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 25;
@@ -1308,7 +1309,7 @@ instance ITAR_Leather_NPC(C_Item)
 
 instance ITAR_Leather_M(C_Item)
 {
-	name = "Těžká kožená zbroj";
+	name = " Heavy Leather Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 30;
@@ -1341,7 +1342,7 @@ instance ITAR_Leather_M(C_Item)
 
 instance ITAR_LEATHER_UNICK(C_Item)
 {
-	name = "Kožená zbroj";
+	name = " Leather armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 25;
@@ -1374,7 +1375,7 @@ instance ITAR_LEATHER_UNICK(C_Item)
 
 instance ITAR_ALCHEMY_NOV(C_Item)
 {
-	name = "Oděv učně alchymisty";
+	name = " Apprentice Alchemist's Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -1436,7 +1437,7 @@ instance ITAR_KIL_L(C_Item)
 
 instance ITAR_KIL_SL(C_Item)
 {
-	name = "Zbroj vraha";
+	name = " Assassin's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 50;
@@ -1473,7 +1474,7 @@ instance ITAR_KIL_SL(C_Item)
 
 instance ITAR_KIL_SLS(C_Item)
 {
-	name = "Zbroj mistra vraha";
+	name = " Master Assassin's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -1538,7 +1539,7 @@ prototype ITAR_MIL_L_A(C_Item)
 	wear = WEAR_TORSO;
 	visual_skin = 0;
 	material = MAT_LEATHER;
-	on_equip = Equip_ITAR_MIL_L;
+	on_equipment = Equip_ITAR_MIL_L;
 	on_unequip = UnEquip_ITAR_MIL_L;
 	//text[0] = NAME_Str_needed;
 	//count[0] = cond_value[2];
@@ -1547,7 +1548,7 @@ prototype ITAR_MIL_L_A(C_Item)
 
 instance ITAR_TOWNGUARD(ITAR_MIL_L_A)
 {
-	name = "Lehká zbroj domobránce";
+	name = " Light Militia Armor " ;
 	protection[PROT_EDGE] = 30;
 	protection[PROT_BLUNT] = 20;
 	protection[PROT_POINT] = 10;
@@ -1573,7 +1574,7 @@ instance ITAR_TOWNGUARD(ITAR_MIL_L_A)
 
 instance ITAR_Mil_L(ITAR_MIL_L_A)
 {
-	name = "Zbroj domobránce";
+	name = " Militia Armor " ;
 	protection[PROT_EDGE] = 40;
 	protection[PROT_BLUNT] = 25;
 	protection[PROT_POINT] = 15;
@@ -1600,7 +1601,7 @@ instance ITAR_Mil_L(ITAR_MIL_L_A)
 
 instance ITAR_MIL_L_V1(ITAR_MIL_L_A)
 {
-	name = "Kovaná zbroj domobránce";
+	name = " Militia Forged Armor " ;
 	protection[PROT_EDGE] = 45;
 	protection[PROT_BLUNT] = 30;
 	protection[PROT_POINT] = 20;
@@ -1629,7 +1630,7 @@ instance ITAR_MIL_L_V1(ITAR_MIL_L_A)
 
 instance ITAR_MIL_L_V12(ITAR_MIL_L_A)
 {
-	name = "Kovaná zbroj domobránce";
+	name = " Militia Forged Armor " ;
 	protection[PROT_EDGE] = 50;
 	protection[PROT_BLUNT] = 35;
 	protection[PROT_POINT] = 20;
@@ -1644,7 +1645,7 @@ instance ITAR_MIL_L_V12(ITAR_MIL_L_A)
 	visual_change = "Armor_Mil_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 60 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 60 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1657,7 +1658,7 @@ instance ITAR_MIL_L_V12(ITAR_MIL_L_A)
 
 instance ITAR_MIL_L_V13(ITAR_MIL_L_A)
 {
-	name = "Kovaná zbroj domobránce";
+	name = " Militia Forged Armor " ;
 	protection[PROT_EDGE] = 55;
 	protection[PROT_BLUNT] = 40;
 	protection[PROT_POINT] = 25;
@@ -1672,7 +1673,7 @@ instance ITAR_MIL_L_V13(ITAR_MIL_L_A)
 	visual_change = "Armor_Mil_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 65 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 65 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1685,7 +1686,7 @@ instance ITAR_MIL_L_V13(ITAR_MIL_L_A)
 
 instance ITAR_MIL_L_V14(ITAR_MIL_L_A)
 {
-	name = "Kovaná zbroj domobránce";
+	name = " Militia Forged Armor " ;
 	protection[PROT_EDGE] = 60;
 	protection[PROT_BLUNT] = 45;
 	protection[PROT_POINT] = 30;
@@ -1700,7 +1701,7 @@ instance ITAR_MIL_L_V14(ITAR_MIL_L_A)
 	visual_change = "Armor_Mil_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 70 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 70 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1713,7 +1714,7 @@ instance ITAR_MIL_L_V14(ITAR_MIL_L_A)
 
 instance ITAR_MIL_L_V15(ITAR_MIL_L_A)
 {
-	name = "Kovaná zbroj domobránce";
+	name = " Militia Forged Armor " ;
 	protection[PROT_EDGE] = 65;
 	protection[PROT_BLUNT] = 50;
 	protection[PROT_POINT] = 35;
@@ -1728,7 +1729,7 @@ instance ITAR_MIL_L_V15(ITAR_MIL_L_A)
 	visual_change = "Armor_Mil_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 75 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 75 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1758,7 +1759,7 @@ prototype ITAR_SLD_L_A(C_Item)
 
 instance ItAr_Sld_L(ITAR_SLD_L_A)
 {
-	name = "Lehká zbroj žoldáka";
+	name = " Light Mercenary Armor " ;
 	protection[PROT_EDGE] = 35;
 	protection[PROT_BLUNT] = 25;
 	protection[PROT_POINT] = 15;
@@ -1785,7 +1786,7 @@ instance ItAr_Sld_L(ITAR_SLD_L_A)
 
 instance ITAR_SLD_L_V1(ITAR_SLD_L_A)
 {
-	name = "Lehká kovaná zbroj žoldáka";
+	name = " Light Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 40;
 	protection[PROT_BLUNT] = 30;
 	protection[PROT_POINT] = 15;
@@ -1813,7 +1814,7 @@ instance ITAR_SLD_L_V1(ITAR_SLD_L_A)
 
 instance ITAR_SLD_L_V2(ITAR_SLD_L_A)
 {
-	name = "Lehká kovaná zbroj žoldáka";
+	name = " Light Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 45;
 	protection[PROT_BLUNT] = 30;
 	protection[PROT_POINT] = 20;
@@ -1829,7 +1830,7 @@ instance ITAR_SLD_L_V2(ITAR_SLD_L_A)
 	visual_skin = 1;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 55 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 55 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1842,7 +1843,7 @@ instance ITAR_SLD_L_V2(ITAR_SLD_L_A)
 
 instance ITAR_SLD_L_V3(ITAR_SLD_L_A)
 {
-	name = "Lehká kovaná zbroj žoldáka";
+	name = " Light Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 50;
 	protection[PROT_BLUNT] = 35;
 	protection[PROT_POINT] = 25;
@@ -1858,7 +1859,7 @@ instance ITAR_SLD_L_V3(ITAR_SLD_L_A)
 	visual_skin = 1;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 60 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 60 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1869,9 +1870,9 @@ instance ITAR_SLD_L_V3(ITAR_SLD_L_A)
 	inv_animate = 0;
 };
 
-instance ITAR_SLD_L_V4(ITAR_SLD_L_A)
+instance ITAR_SLD_L_V4 ( ITAR_SLD_L_A )
 {
-	name = "Lehká kovaná zbroj žoldáka";
+	name = " Light Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 55;
 	protection[PROT_BLUNT] = 40;
 	protection[PROT_POINT] = 30;
@@ -1887,7 +1888,7 @@ instance ITAR_SLD_L_V4(ITAR_SLD_L_A)
 	visual_skin = 1;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 65 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 65 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1900,7 +1901,7 @@ instance ITAR_SLD_L_V4(ITAR_SLD_L_A)
 
 instance ITAR_SLD_L_V5(ITAR_SLD_L_A)
 {
-	name = "Lehká kovaná zbroj žoldáka";
+	name = " Light Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 60;
 	protection[PROT_BLUNT] = 50;
 	protection[PROT_POINT] = 35;
@@ -1916,7 +1917,7 @@ instance ITAR_SLD_L_V5(ITAR_SLD_L_A)
 	visual_skin = 1;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 70 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 70 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1947,7 +1948,7 @@ prototype ITAR_SLD_M_A(C_Item)
 
 instance ITAR_SLD_M(ITAR_SLD_M_A)
 {
-	name = "Zbroj žoldáka";
+	name = " Mercenary Armor " ;
 	protection[PROT_EDGE] = 50;
 	protection[PROT_BLUNT] = 40;
 	protection[PROT_POINT] = 35;
@@ -1961,7 +1962,7 @@ instance ITAR_SLD_M(ITAR_SLD_M_A)
 	visual_change = "Armor_Sld_M.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 60 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 60 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -1974,7 +1975,7 @@ instance ITAR_SLD_M(ITAR_SLD_M_A)
 
 instance ITAR_SLD_M_Rod(ITAR_SLD_M_A)
 {
-	name = "Zbroj žoldáka";
+	name = " Mercenary Armor " ;
 	protection[PROT_EDGE] = 30;
 	protection[PROT_BLUNT] = 30;
 	protection[PROT_POINT] = 20;
@@ -1990,7 +1991,7 @@ instance ITAR_SLD_M_Rod(ITAR_SLD_M_A)
 
 instance ITAR_SLD_M_V1(ITAR_SLD_M_A)
 {
-	name = "Kovaná zbroj žoldáka";
+	name = " Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 60;
 	protection[PROT_BLUNT] = 45;
 	protection[PROT_POINT] = 40;
@@ -2005,7 +2006,7 @@ instance ITAR_SLD_M_V1(ITAR_SLD_M_A)
 	visual_change = "Armor_Sld_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 65 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 65 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2018,7 +2019,7 @@ instance ITAR_SLD_M_V1(ITAR_SLD_M_A)
 
 instance ITAR_SLD_M_V2(ITAR_SLD_M_A)
 {
-	name = "Kovaná zbroj žoldáka";
+	name = " Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 70;
 	protection[PROT_BLUNT] = 50;
 	protection[PROT_POINT] = 45;
@@ -2033,7 +2034,7 @@ instance ITAR_SLD_M_V2(ITAR_SLD_M_A)
 	visual_change = "Armor_Sld_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 70 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 70 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2046,7 +2047,7 @@ instance ITAR_SLD_M_V2(ITAR_SLD_M_A)
 
 instance ITAR_SLD_M_V3(ITAR_SLD_M_A)
 {
-	name = "Kovaná zbroj žoldáka";
+	name = " Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 80;
 	protection[PROT_BLUNT] = 60;
 	protection[PROT_POINT] = 50;
@@ -2061,7 +2062,7 @@ instance ITAR_SLD_M_V3(ITAR_SLD_M_A)
 	visual_change = "Armor_Sld_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 80 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 80 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2076,7 +2077,7 @@ instance ITAR_SLD_M_V3(ITAR_SLD_M_A)
 
 instance ITAR_SLD_M_V4(ITAR_SLD_M_A)
 {
-	name = "Kovaná zbroj žoldáka";
+	name = " Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 90;
 	protection[PROT_BLUNT] = 65;
 	protection[PROT_POINT] = 55;
@@ -2091,7 +2092,7 @@ instance ITAR_SLD_M_V4(ITAR_SLD_M_A)
 	visual_change = "Armor_Sld_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 90 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 90 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2108,7 +2109,7 @@ instance ITAR_SLD_M_V4(ITAR_SLD_M_A)
 
 instance ITAR_SLD_M_V5(ITAR_SLD_M_A)
 {
-	name = "Kovaná zbroj žoldáka";
+	name = " Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 95;
 	protection[PROT_BLUNT] = 70;
 	protection[PROT_POINT] = 60;
@@ -2123,7 +2124,7 @@ instance ITAR_SLD_M_V5(ITAR_SLD_M_A)
 	visual_change = "Armor_Sld_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 100 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Strength: 100 | Required Stamina: 250 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2140,7 +2141,7 @@ instance ITAR_SLD_M_V5(ITAR_SLD_M_A)
 
 instance ITAR_SLP_UL(C_Item)
 {
-	name = "Zbroj novice Bratrstva";
+	name = " Brotherhood Novice Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 30;
@@ -2177,7 +2178,7 @@ instance ITAR_SLP_UL(C_Item)
 
 instance ITAR_SLP_L(C_Item)
 {
-	name = "Těžká zbroj novice Bratrstva";
+	name = " Brotherhood Novice Heavy Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 40;
@@ -2216,7 +2217,7 @@ instance ITAR_SLP_L(C_Item)
 
 instance ItAr_NOV_L(C_Item)
 {
-	name = "Roucho novice Ohně";
+	name = " Robe of the Fire Novice " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 25;
@@ -2247,9 +2248,9 @@ instance ItAr_NOV_L(C_Item)
 	inv_animate = 0;
 };
 
-instance ITAR_NDW_L(C_Item)
+instance ITAR_NDW_L (C_Item);
 {
-	name = "Roucho novice Vody";
+	name = " Robe of the novice of the Waters " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 25;
@@ -2282,7 +2283,7 @@ instance ITAR_NDW_L(C_Item)
 
 instance ITAR_NDM_L(C_Item)
 {
-	name = "Roucho novice Temnoty";
+	name = " Novice Robe of Darkness " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 35;
@@ -2315,7 +2316,7 @@ instance ITAR_NDM_L(C_Item)
 
 instance ItAr_KDF_L(C_Item)
 {
-	name = "Roucho mladšího mága Ohně";
+	name = " Junior Fire Mage Robe " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 40;
@@ -2352,7 +2353,7 @@ instance ItAr_KDF_L(C_Item)
 
 instance ITAR_KDF_M(C_Item)
 {
-	name = "Roucho mága Ohně";
+	name = " Robe of the Fire Mage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 60;
@@ -2390,7 +2391,7 @@ instance ITAR_KDF_M(C_Item)
 
 instance ITAR_KDF_M_NPC(C_Item)
 {
-	name = "Roucho mága Ohně";
+	name = " Robe of the Fire Mage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 60;
@@ -2416,7 +2417,7 @@ instance ITAR_KDF_M_NPC(C_Item)
 
 instance ITAR_KDF_M_NEW(C_Item)
 {
-	name = "Roucho mága Ohně";
+	name = " Robe of the Fire Mage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 50;
@@ -2453,7 +2454,7 @@ instance ITAR_KDF_M_NEW(C_Item)
 
 instance ITAR_KDW_L_Addon(C_Item)
 {
-	name = "Roucho mága Vody";
+	name = " Robe of the Water Mage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 55;
@@ -2490,7 +2491,7 @@ instance ITAR_KDW_L_Addon(C_Item)
 
 instance ITAR_DMT_L(C_Item)
 {
-	name = "Roucho mága Temnoty";
+	name = " Robe of the Dark Mage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 65;
@@ -2527,7 +2528,7 @@ instance ITAR_DMT_L(C_Item)
 
 instance ITAR_GUR_L(C_Item)
 {
-	name = "Roucho Guru Bratrstva";
+	name = " Robe of the Guru Brotherhood " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 50;
@@ -2564,7 +2565,7 @@ instance ITAR_GUR_L(C_Item)
 
 instance ITAR_MAYA_PRIEST(C_Item)
 {
-	name = "Roucho kněží Prastarých";
+	name = " Robe of the Priests of the Ancients " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 75;
@@ -2620,7 +2621,7 @@ prototype ITAR_RANGER_ADDON_A(C_Item)
 
 instance ITAR_RANGER_Addon(ITAR_RANGER_ADDON_A)
 {
-	name = "Zbroj 'Kruhu Vody'";
+	name = " 'Circle of Water' Armor " ;
 	protection[PROT_EDGE] = 40;
 	protection[PROT_BLUNT] = 20;
 	protection[PROT_POINT] = 15;
@@ -2650,7 +2651,7 @@ instance ITAR_RANGER_Addon(ITAR_RANGER_ADDON_A)
 
 instance ITAR_RANGER_ADDON_V1(ITAR_RANGER_ADDON_A)
 {
-	name = "Kovaná zbroj 'Kruhu Vody'";
+	name = " 'Circle of Water' Forged Armor " ;
 	protection[PROT_EDGE] = 45;
 	protection[PROT_BLUNT] = 25;
 	protection[PROT_POINT] = 20;
@@ -2680,7 +2681,7 @@ instance ITAR_RANGER_ADDON_V1(ITAR_RANGER_ADDON_A)
 
 instance ITAR_RANGER_ADDON_V2(ITAR_RANGER_ADDON_A)
 {
-	name = "Kovaná zbroj 'Kruhu Vody'";
+	name = " 'Circle of Water' Forged Armor " ;
 	protection[PROT_EDGE] = 50;
 	protection[PROT_BLUNT] = 30;
 	protection[PROT_POINT] = 25;
@@ -2694,7 +2695,7 @@ instance ITAR_RANGER_ADDON_V2(ITAR_RANGER_ADDON_A)
 	visual_change = "HUM_HUNH_V1_ARMOR.ASC";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 35 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 35 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2711,7 +2712,7 @@ instance ITAR_RANGER_ADDON_V2(ITAR_RANGER_ADDON_A)
 
 instance ITAR_RANGER_ADDON_V3(ITAR_RANGER_ADDON_A)
 {
-	name = "Kovaná zbroj 'Kruhu Vody'";
+	name = " 'Circle of Water' Forged Armor " ;
 	protection[PROT_EDGE] = 55;
 	protection[PROT_BLUNT] = 35;
 	protection[PROT_POINT] = 30;
@@ -2725,7 +2726,7 @@ instance ITAR_RANGER_ADDON_V3(ITAR_RANGER_ADDON_A)
 	visual_change = "HUM_HUNH_V2_ARMOR.ASC";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 45 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 45 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2742,7 +2743,7 @@ instance ITAR_RANGER_ADDON_V3(ITAR_RANGER_ADDON_A)
 
 instance ITAR_RANGER_ADDON_V4(ITAR_RANGER_ADDON_A)
 {
-	name = "Kovaná zbroj 'Kruhu Vody'";
+	name = " 'Circle of Water' Forged Armor " ;
 	protection[PROT_EDGE] = 60;
 	protection[PROT_BLUNT] = 40;
 	protection[PROT_POINT] = 35;
@@ -2756,7 +2757,7 @@ instance ITAR_RANGER_ADDON_V4(ITAR_RANGER_ADDON_A)
 	visual_change = "HUM_HUNH_V2_ARMOR.ASC";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 55 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 55 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2773,7 +2774,7 @@ instance ITAR_RANGER_ADDON_V4(ITAR_RANGER_ADDON_A)
 
 instance ITAR_RANGER_ADDON_V5(ITAR_RANGER_ADDON_A)
 {
-	name = "Kovaná zbroj 'Kruhu Vody'";
+	name = " 'Circle of Water' Forged Armor " ;
 	protection[PROT_EDGE] = 65;
 	protection[PROT_BLUNT] = 45;
 	protection[PROT_POINT] = 40;
@@ -2787,7 +2788,7 @@ instance ITAR_RANGER_ADDON_V5(ITAR_RANGER_ADDON_A)
 	visual_change = "HUM_HUNH_V3_ARMOR.ASC";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 70 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 70 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2804,7 +2805,7 @@ instance ITAR_RANGER_ADDON_V5(ITAR_RANGER_ADDON_A)
 
 instance ITAR_PIR_L_Addon(C_Item)
 {
-	name = "Lehká zbroj piráta";
+	name = " Light Pirate Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 60;
@@ -2838,7 +2839,7 @@ instance ITAR_PIR_L_Addon(C_Item)
 
 instance ITAR_PIR_M_Addon(C_Item)
 {
-	name = "Zbroj piráta";
+	name = " Pirate Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -2860,7 +2861,7 @@ instance ITAR_PIR_M_Addon(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 60 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 60 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2873,7 +2874,7 @@ instance ITAR_PIR_M_Addon(C_Item)
 
 instance ITAR_PIR_H_Addon(C_Item)
 {
-	name = "Těžká zbroj piráta";
+	name = " Pirate Heavy Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 85;
@@ -2895,7 +2896,7 @@ instance ITAR_PIR_H_Addon(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 100 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 100 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2908,7 +2909,7 @@ instance ITAR_PIR_H_Addon(C_Item)
 
 instance ITAR_PIR_N_Addon(C_Item)
 {
-	name = "Těžká zbroj piráta";
+	name = " Pirate Heavy Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 85;
@@ -2930,7 +2931,7 @@ instance ITAR_PIR_N_Addon(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 100 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 100 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -2943,7 +2944,7 @@ instance ITAR_PIR_N_Addon(C_Item)
 
 instance ItAr_BDT_M(C_Item)
 {
-	name = "Lehká zbroj bandity";
+	name = " Light Bandit Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 45;
@@ -2997,7 +2998,7 @@ instance ItAr_BDT_H(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 80 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 80 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3010,7 +3011,7 @@ instance ItAr_BDT_H(C_Item)
 
 instance ITAR_BDT_F(C_Item)
 {
-	name = "Těžká zbroj bandity";
+	name = " Bandit Heavy Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -3033,7 +3034,7 @@ instance ITAR_BDT_F(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 90 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 90 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3046,7 +3047,7 @@ instance ITAR_BDT_F(C_Item)
 
 instance ITAR_BDT_FS(C_Item)
 {
-	name = "Těžká zbroj bandity";
+	name = " Bandit Heavy Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -3068,7 +3069,7 @@ instance ITAR_BDT_FS(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 30 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 30 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3081,7 +3082,7 @@ instance ITAR_BDT_FS(C_Item)
 
 instance ITAR_BDT_W(C_Item)
 {
-	name = "Zbroj vůdce banditů";
+	name = " Bandit Leader Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 80;
@@ -3103,7 +3104,7 @@ instance ITAR_BDT_W(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 100 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Strength: 100 | Required Stamina: 250 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3120,7 +3121,7 @@ instance ITAR_BDT_W(C_Item)
 
 instance ITAR_BDT_V(C_Item)
 {
-	name = "Těžká zbroj vůdce banditů";
+	name = " Bandit Leader Heavy Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 90;
@@ -3142,7 +3143,7 @@ instance ITAR_BDT_V(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 120 | Požadovaná výdrž: 300";
+	text[ 0 ] = " Required Strength: 120 | Required Stamina: 300 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3182,7 +3183,7 @@ instance ITAR_BDT_V_DEX(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 90 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Required Strength: 90 | Required Stamina: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3199,7 +3200,7 @@ instance ITAR_BDT_V_DEX(C_Item)
 
 instance ITAR_GRD_L(C_Item)
 {
-	name = "Lehká zbroj stráže";
+	name = " Light Guard Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 60;
@@ -3221,7 +3222,7 @@ instance ITAR_GRD_L(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 70 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 70 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3234,7 +3235,7 @@ instance ITAR_GRD_L(C_Item)
 
 instance ITAR_GRD_L_V1(C_Item)
 {
-	name = "Lehká kovaná zbroj stráže";
+	name = " Light Wrought Armor of the Guard " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 65;
@@ -3256,7 +3257,7 @@ instance ITAR_GRD_L_V1(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 75 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 75 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3269,7 +3270,7 @@ instance ITAR_GRD_L_V1(C_Item)
 
 instance ITAR_Bloodwyn_Addon(C_Item)
 {
-	name = "Zbroj stráže";
+	name = " Guard Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -3291,7 +3292,7 @@ instance ITAR_Bloodwyn_Addon(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 80 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 80 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3304,7 +3305,7 @@ instance ITAR_Bloodwyn_Addon(C_Item)
 
 instance ITAR_BLOODWYN_ADDON_V1(C_Item)
 {
-	name = "Kovaná zbroj stráže";
+	name = " Forged Armor of the Guard " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 75;
@@ -3326,7 +3327,7 @@ instance ITAR_BLOODWYN_ADDON_V1(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 85 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Strength: 85 | Required Stamina: 250 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3339,7 +3340,7 @@ instance ITAR_BLOODWYN_ADDON_V1(C_Item)
 
 instance ITAR_Thorus_Addon(C_Item)
 {
-	name = "Těžká zbroj stráže";
+	name = " Heavy Guard Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 90;
@@ -3362,7 +3363,7 @@ instance ITAR_Thorus_Addon(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 105 | Požadovaná výdrž: 300";
+	text[ 0 ] = " Required Strength: 105 | Required Stamina: 300 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3397,7 +3398,7 @@ instance ITAR_Bloodwyn_Armor(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 75 | Požadovaná výdrž: 300";
+	text[ 0 ] = " Required Strength: 75 | Required Stamina: 300 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3414,7 +3415,7 @@ instance ITAR_Bloodwyn_Armor(C_Item)
 
 instance ITAR_THORUS_ADDON_V1(C_Item)
 {
-	name = "Těžká kovaná zbroj stráže";
+	name = " Heavy Wrought Armor of the Guard " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 95;
@@ -3437,7 +3438,7 @@ instance ITAR_THORUS_ADDON_V1(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 110 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Required Strength: 110 | Required Stamina: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3450,7 +3451,7 @@ instance ITAR_THORUS_ADDON_V1(C_Item)
 
 instance ITAR_OreBaron_Addon(C_Item)
 {
-	name = "Zbroj rudobarona";
+	name = " Rode Baron Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 105;
@@ -3473,7 +3474,7 @@ instance ITAR_OreBaron_Addon(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 130 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 130 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3490,7 +3491,7 @@ instance ITAR_OreBaron_Addon(C_Item)
 
 instance ITAR_GOMEZ_ADDON(C_Item)
 {
-	name = "Gomezova zbroj";
+	name = " Gomez's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 110;
@@ -3512,7 +3513,7 @@ instance ITAR_GOMEZ_ADDON(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 110 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 110 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3529,7 +3530,7 @@ instance ITAR_GOMEZ_ADDON(C_Item)
 
 instance ITAR_GOMEZ_ADDOZ(C_Item)
 {
-	name = "Zbroj rudobarona";
+	name = " Rode Baron Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 100;
@@ -3551,7 +3552,7 @@ instance ITAR_GOMEZ_ADDOZ(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 110 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 110 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3568,7 +3569,7 @@ instance ITAR_GOMEZ_ADDOZ(C_Item)
 
 instance ITAR_MALBAR(C_Item)
 {
-	name = "Zbroj rudobarona";
+	name = " Rode Baron Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 100;
@@ -3592,7 +3593,7 @@ instance ITAR_MALBAR(C_Item)
 
 instance ITAR_DJG_Crawler(C_Item)
 {
-	name = "Zbroj z krunýřů důlního červa";
+	name = " Mineworm Carapace Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 50;
@@ -3615,7 +3616,7 @@ instance ITAR_DJG_Crawler(C_Item)
 	on_unequip = UnEquip_ITAR_DJG_Crawler;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 75 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 75 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3650,7 +3651,7 @@ prototype ITAR_MIL_M_A(C_Item)
 
 instance ItAr_MIL_M(ITAR_MIL_M_A)
 {
-	name = "Těžká zbroj domobránce";
+	name = " Militia Heavy Armor " ;
 	protection[PROT_EDGE] = 70;
 	protection[PROT_BLUNT] = 80;
 	protection[PROT_POINT] = 60;
@@ -3665,7 +3666,7 @@ instance ItAr_MIL_M(ITAR_MIL_M_A)
 	visual_change = "Armor_W2_TKnight_Grd1.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 80 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 80 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3682,7 +3683,7 @@ instance ItAr_MIL_M(ITAR_MIL_M_A)
 
 instance ITAR_MIL_M_V1(ITAR_MIL_M_A)
 {
-	name = "Těžká kovaná zbroj domobránce";
+	name = " Militia Heavy Forged Armor " ;
 	protection[PROT_EDGE] = 75;
 	protection[PROT_BLUNT] = 90;
 	protection[PROT_POINT] = 60;
@@ -3698,7 +3699,7 @@ instance ITAR_MIL_M_V1(ITAR_MIL_M_A)
 	visual_change = "Armor_W2_TKnight_Grd2.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 90 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 90 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3715,7 +3716,7 @@ instance ITAR_MIL_M_V1(ITAR_MIL_M_A)
 
 instance ITAR_MIL_M_V12(ITAR_MIL_M_A)
 {
-	name = "Těžká kovaná zbroj domobránce";
+	name = " Militia Heavy Forged Armor " ;
 	protection[PROT_EDGE] = 80;
 	protection[PROT_BLUNT] = 95;
 	protection[PROT_POINT] = 65;
@@ -3731,7 +3732,7 @@ instance ITAR_MIL_M_V12(ITAR_MIL_M_A)
 	visual_change = "Armor_W2_TKnight_Grd3.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 100 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Strength: 100 | Required Stamina: 250 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3748,7 +3749,7 @@ instance ITAR_MIL_M_V12(ITAR_MIL_M_A)
 
 instance ITAR_MIL_M_V13(ITAR_MIL_M_A)
 {
-	name = "Těžká kovaná zbroj domobránce";
+	name = " Militia Heavy Forged Armor " ;
 	protection[PROT_EDGE] = 85;
 	protection[PROT_BLUNT] = 100;
 	protection[PROT_POINT] = 70;
@@ -3764,7 +3765,7 @@ instance ITAR_MIL_M_V13(ITAR_MIL_M_A)
 	visual_change = "Armor_W2_TKnight_Grd4.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 110 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Strength: 110 | Required Stamina: 250 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3781,7 +3782,7 @@ instance ITAR_MIL_M_V13(ITAR_MIL_M_A)
 
 instance ITAR_MIL_M_V14(ITAR_MIL_M_A)
 {
-	name = "Těžká kovaná zbroj domobránce";
+	name = " Militia Heavy Forged Armor " ;
 	protection[PROT_EDGE] = 90;
 	protection[PROT_BLUNT] = 110;
 	protection[PROT_POINT] = 75;
@@ -3797,7 +3798,7 @@ instance ITAR_MIL_M_V14(ITAR_MIL_M_A)
 	visual_change = "Armor_W2_TKnight_Grd5.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 120 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Strength: 120 | Required Stamina: 250 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3814,7 +3815,7 @@ instance ITAR_MIL_M_V14(ITAR_MIL_M_A)
 
 instance ITAR_MIL_M_V15(ITAR_MIL_M_A)
 {
-	name = "Těžká kovaná zbroj domobránce";
+	name = " Militia Heavy Forged Armor " ;
 	protection[PROT_EDGE] = 95;
 	protection[PROT_BLUNT] = 115;
 	protection[PROT_POINT] = 80;
@@ -3830,7 +3831,7 @@ instance ITAR_MIL_M_V15(ITAR_MIL_M_A)
 	visual_change = "Armor_W2_TKnight_Grd6.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 130 | Požadovaná výdrž: 300";
+	text[ 0 ] = " Required Strength: 130 | Required Stamina: 300 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3847,7 +3848,7 @@ instance ITAR_MIL_M_V15(ITAR_MIL_M_A)
 
 instance ITAR_MIL_WULFGAR(ITAR_MIL_M_A)
 {
-	name = "Zbroj kapitána domobrany";
+	name = " Militia Captain Armor " ;
 	protection[PROT_EDGE] = 100;
 	protection[PROT_BLUNT] = 120;
 	protection[PROT_POINT] = 90;
@@ -3863,7 +3864,7 @@ instance ITAR_MIL_WULFGAR(ITAR_MIL_M_A)
 	visual_change = "Armor_W2_TKnight_Grd7.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 130 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 130 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3880,7 +3881,7 @@ instance ITAR_MIL_WULFGAR(ITAR_MIL_M_A)
 
 instance ITAR_PAL_L_NPC(C_Item)
 {
-	name = "Zbroj zbrojnoše";
+	name = " Armourer's Armour " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 110;
@@ -3902,7 +3903,7 @@ instance ITAR_PAL_L_NPC(C_Item)
 	material = MAT_METAL;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 110 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 110 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3919,7 +3920,7 @@ instance ITAR_PAL_L_NPC(C_Item)
 
 instance ITAR_PAL_L(C_Item)
 {
-	name = "Zbroj zbrojnoše";
+	name = " Armourer's Armour " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 110;
@@ -3942,7 +3943,7 @@ instance ITAR_PAL_L(C_Item)
 	material = MAT_METAL;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 130 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 130 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -3977,7 +3978,7 @@ prototype ITAR_SLD_H_A(C_Item)
 
 instance ItAr_Sld_H(ITAR_SLD_H_A)
 {
-	name = "Těžká zbroj žoldáka";
+	name = " Heavy Mercenary Armor " ;
 	protection[PROT_EDGE] = 80;
 	protection[PROT_BLUNT] = 90;
 	protection[PROT_POINT] = 70;
@@ -3992,7 +3993,7 @@ instance ItAr_Sld_H(ITAR_SLD_H_A)
 	visual_change = "Armor_Sld_H.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 100 | Požadovaná výdrž: 300";
+	text[ 0 ] = " Required Strength: 100 | Required Stamina: 300 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4009,7 +4010,7 @@ instance ItAr_Sld_H(ITAR_SLD_H_A)
 
 instance ITAR_SLD_H_V1(ITAR_SLD_H_A)
 {
-	name = "Těžká kovaná zbroj žoldáka";
+	name = " Heavy Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 85;
 	protection[PROT_BLUNT] = 95;
 	protection[PROT_POINT] = 70;
@@ -4025,7 +4026,7 @@ instance ITAR_SLD_H_V1(ITAR_SLD_H_A)
 	visual_change = "Armor_Sld_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 105 | Požadovaná výdrž: 300";
+	text[ 0 ] = " Required Strength: 105 | Required Stamina: 300 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4042,7 +4043,7 @@ instance ITAR_SLD_H_V1(ITAR_SLD_H_A)
 
 instance ITAR_SLD_H_V2(ITAR_SLD_H_A)
 {
-	name = "Těžká kovaná zbroj žoldáka";
+	name = " Heavy Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 90;
 	protection[PROT_BLUNT] = 105;
 	protection[PROT_POINT] = 75;
@@ -4058,7 +4059,7 @@ instance ITAR_SLD_H_V2(ITAR_SLD_H_A)
 	visual_change = "Armor_Sld_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 115 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Required Strength: 115 | Required Stamina: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4075,7 +4076,7 @@ instance ITAR_SLD_H_V2(ITAR_SLD_H_A)
 
 instance ITAR_SLD_H_V3(ITAR_SLD_H_A)
 {
-	name = "Těžká kovaná zbroj žoldáka";
+	name = " Heavy Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 95;
 	protection[PROT_BLUNT] = 110;
 	protection[PROT_POINT] = 80;
@@ -4091,7 +4092,7 @@ instance ITAR_SLD_H_V3(ITAR_SLD_H_A)
 	visual_change = "Armor_Sld_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 120 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Required Strength: 120 | Required Stamina: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4108,7 +4109,7 @@ instance ITAR_SLD_H_V3(ITAR_SLD_H_A)
 
 instance ITAR_SLD_H_V4(ITAR_SLD_H_A)
 {
-	name = "Těžká kovaná zbroj žoldáka";
+	name = " Heavy Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 100;
 	protection[PROT_BLUNT] = 120;
 	protection[PROT_POINT] = 85;
@@ -4124,7 +4125,7 @@ instance ITAR_SLD_H_V4(ITAR_SLD_H_A)
 	visual_change = "Armor_Sld_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 130 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Required Strength: 130 | Required Stamina: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4141,7 +4142,7 @@ instance ITAR_SLD_H_V4(ITAR_SLD_H_A)
 
 instance ITAR_SLD_H_V5(ITAR_SLD_H_A)
 {
-	name = "Těžká kovaná zbroj žoldáka";
+	name = " Heavy Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 110;
 	protection[PROT_BLUNT] = 125;
 	protection[PROT_POINT] = 90;
@@ -4157,7 +4158,7 @@ instance ITAR_SLD_H_V5(ITAR_SLD_H_A)
 	visual_change = "ARMOR_LHBO_ADDON.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 140 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 140 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4174,7 +4175,7 @@ instance ITAR_SLD_H_V5(ITAR_SLD_H_A)
 
 instance ITAR_SLD_H_LEE(ITAR_SLD_H_A)
 {
-	name = "Těžká kovaná zbroj žoldáka";
+	name = " Heavy Forged Mercenary Armor " ;
 	protection[PROT_EDGE] = 120;
 	protection[PROT_BLUNT] = 130;
 	protection[PROT_POINT] = 90;
@@ -4189,7 +4190,7 @@ instance ITAR_SLD_H_LEE(ITAR_SLD_H_A)
 	visual_change = "ARMOR_LHBO_ADDON.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 135 | Požadovaná výdrž: 450";
+	text[ 0 ] = " Required Strength: 135 | Required Stamina: 450 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4224,7 +4225,7 @@ prototype ITAR_PAL_M_A(C_Item)
 
 instance ItAr_PAL_M(ITAR_PAL_M_A)
 {
-	name = "Zbroj rytíře";
+	name = " Knight's Armor " ;
 	protection[PROT_EDGE] = 120;
 	protection[PROT_BLUNT] = 130;
 	protection[PROT_POINT] = 125;
@@ -4239,7 +4240,7 @@ instance ItAr_PAL_M(ITAR_PAL_M_A)
 	visual_change = "Armor_Pal_V.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 150 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Strength: 150 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4256,7 +4257,7 @@ instance ItAr_PAL_M(ITAR_PAL_M_A)
 
 instance ItAr_PAL_M_NPC(ITAR_PAL_M_A)
 {
-	name = "Zbroj rytíře";
+	name = " Knight's Armor " ;
 	protection[PROT_EDGE] = 120;
 	protection[PROT_BLUNT] = 130;
 	protection[PROT_POINT] = 125;
@@ -4275,7 +4276,7 @@ instance ItAr_PAL_M_NPC(ITAR_PAL_M_A)
 
 instance ITAR_PAL_M_V1(ITAR_PAL_M_A)
 {
-	name = "Kovaná zbroj rytíře";
+	name = " Knight's Forged Armor " ;
 	protection[PROT_EDGE] = 125;
 	protection[PROT_BLUNT] = 135;
 	protection[PROT_POINT] = 130;
@@ -4291,7 +4292,7 @@ instance ITAR_PAL_M_V1(ITAR_PAL_M_A)
 	visual_change = "Armor_Pal_1.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 155 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Strength: 155 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4308,7 +4309,7 @@ instance ITAR_PAL_M_V1(ITAR_PAL_M_A)
 
 instance ITAR_PAL_M_V1_NPC(ITAR_PAL_M_A)
 {
-	name = "Kovaná zbroj rytíře";
+	name = " Knight's Forged Armor " ;
 	protection[PROT_EDGE] = 125;
 	protection[PROT_BLUNT] = 135;
 	protection[PROT_POINT] = 130;
@@ -4324,7 +4325,7 @@ instance ITAR_PAL_M_V1_NPC(ITAR_PAL_M_A)
 	visual_change = "Armor_Pal_A.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 160 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Strength: 160 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4341,7 +4342,7 @@ instance ITAR_PAL_M_V1_NPC(ITAR_PAL_M_A)
 
 instance ITAR_PAL_M_V12(ITAR_PAL_M_A)
 {
-	name = "Kovaná zbroj rytíře";
+	name = " Knight's Forged Armor " ;
 	protection[PROT_EDGE] = 130;
 	protection[PROT_BLUNT] = 140;
 	protection[PROT_POINT] = 135;
@@ -4357,7 +4358,7 @@ instance ITAR_PAL_M_V12(ITAR_PAL_M_A)
 	visual_change = "Armor_Pal_1.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 170 | Požadovaná výdrž: 550";
+	text[ 0 ] = " Required Strength: 170 | Required Stamina: 550 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4374,7 +4375,7 @@ instance ITAR_PAL_M_V12(ITAR_PAL_M_A)
 
 instance ITAR_PAL_M_V13(ITAR_PAL_M_A)
 {
-	name = "Kovaná zbroj rytíře";
+	name = " Knight's Forged Armor " ;
 	protection[PROT_EDGE] = 135;
 	protection[PROT_BLUNT] = 150;
 	protection[PROT_POINT] = 140;
@@ -4390,7 +4391,7 @@ instance ITAR_PAL_M_V13(ITAR_PAL_M_A)
 	visual_change = "Armor_Pal_1.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 180 | Požadovaná výdrž: 550";
+	text[ 0 ] = " Required Strength: 180 | Required Stamina: 550 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4407,7 +4408,7 @@ instance ITAR_PAL_M_V13(ITAR_PAL_M_A)
 
 instance ITAR_PAL_M_V14(ITAR_PAL_M_A)
 {
-	name = "Kovaná zbroj rytíře";
+	name = " Knight's Forged Armor " ;
 	protection[PROT_EDGE] = 140;
 	protection[PROT_BLUNT] = 155;
 	protection[PROT_POINT] = 145;
@@ -4423,7 +4424,7 @@ instance ITAR_PAL_M_V14(ITAR_PAL_M_A)
 	visual_change = "Armor_Pal_1.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 190 | Požadovaná výdrž: 550";
+	text[ 0 ] = " Required Strength: 190 | Required Stamina: 550 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4440,7 +4441,7 @@ instance ITAR_PAL_M_V14(ITAR_PAL_M_A)
 
 instance ITAR_PAL_M_V15(ITAR_PAL_M_A)
 {
-	name = "Rudná zbroj rytíře";
+	name = " Knight's Ore Armor " ;
 	protection[PROT_EDGE] = 145;
 	protection[PROT_BLUNT] = 160;
 	protection[PROT_POINT] = 150;
@@ -4456,7 +4457,7 @@ instance ITAR_PAL_M_V15(ITAR_PAL_M_A)
 	visual_change = "Armor_Pal_1.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 200 | Požadovaná výdrž: 600";
+	text[ 0 ] = " Required Strength: 200 | Required Stamina: 600 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4473,7 +4474,7 @@ instance ITAR_PAL_M_V15(ITAR_PAL_M_A)
 
 instance ITAR_PAL_M_V2(C_Item)
 {
-	name = "Posvěcená rudná zbroj rytíře";
+	name = " Consecrated Ore Knight's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 150;
@@ -4497,7 +4498,7 @@ instance ITAR_PAL_M_V2(C_Item)
 	material = MAT_METAL;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 200 | Požadovaná výdrž: 600";
+	text[ 0 ] = " Required Strength: 200 | Required Stamina: 600 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4602,7 +4603,7 @@ instance ITAR_PAL_H_V1(ITAR_PAL_H_A)
 	visual_change = "Armor_Pal_T.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 220 | Požadovaná výdrž: 650";
+	text[ 0 ] = " Required Strength: 220 | Required Stamina: 650 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4636,7 +4637,7 @@ instance ITAR_PAL_H_V1_NPC(ITAR_PAL_H_A)
 	visual_change = "Armor_Pal_T.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 170 | Požadovaná výdrž: 650";
+	text[ 0 ] = " Required Strength: 170 | Required Stamina: 650 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4653,7 +4654,7 @@ instance ITAR_PAL_H_V1_NPC(ITAR_PAL_H_A)
 
 instance ITAR_PAL_H_V12(ITAR_PAL_H_A)
 {
-	name = "Kovaná zbroj paladina";
+	name = " Paladin Forged Armor " ;
 	protection[PROT_EDGE] = 170;
 	protection[PROT_BLUNT] = 195;
 	protection[PROT_POINT] = 185;
@@ -4669,7 +4670,7 @@ instance ITAR_PAL_H_V12(ITAR_PAL_H_A)
 	visual_change = "Armor_Pal_T.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 230 | Požadovaná výdrž: 700";
+	text[ 0 ] = " Required Strength: 230 | Required Stamina: 700 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4809,7 +4810,7 @@ instance ITAR_PAL_H_V2(C_Item)
 	material = MAT_METAL;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 280 | Požadovaná výdrž: 750";
+	text[ 0 ] = " Required Strength: 280 | Required Stamina: 750 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4826,7 +4827,7 @@ instance ITAR_PAL_H_V2(C_Item)
 
 instance ITAR_PAL_H_V2_NPC(C_Item)
 {
-	name = "Posvěcená rudná zbroj paladina";
+	name = " Paladin's Sanctified Ore Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 210;
@@ -4855,7 +4856,7 @@ instance ITAR_PAL_H_V2_NPC(C_Item)
 
 instance ITAR_PAL_H_V2_VENZEL(C_Item)
 {
-	name = "Zbroj paladina Wenzela";
+	name = " Paladin Wenzel Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 200;
@@ -4899,7 +4900,7 @@ prototype ITAR_DJG_L_A(C_Item)
 
 instance ITAR_DJG_L(ITAR_DJG_L_A)
 {
-	name = "Lehká zbroj drakobijce";
+	name = " Dragon Slayer Light Armor " ;
 	protection[PROT_EDGE] = 110;
 	protection[PROT_BLUNT] = 130;
 	protection[PROT_POINT] = 80;
@@ -4914,7 +4915,7 @@ instance ITAR_DJG_L(ITAR_DJG_L_A)
 	visual_change = "Armor_Djg_S.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 130 | Požadovaná výdrž: 450";
+	text[ 0 ] = " Required Strength: 130 | Required Stamina: 450 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4931,7 +4932,7 @@ instance ITAR_DJG_L(ITAR_DJG_L_A)
 
 instance ITAR_DJG_L_V1(ITAR_DJG_L_A)
 {
-	name = "Lehká kovaná zbroj drakobijce";
+	name = " Light Forged Dragon Slayer Armor " ;
 	protection[PROT_EDGE] = 120;
 	protection[PROT_BLUNT] = 135;
 	protection[PROT_POINT] = 80;
@@ -4947,7 +4948,7 @@ instance ITAR_DJG_L_V1(ITAR_DJG_L_A)
 	visual_change = "Armor_Djg_L.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 140 | Požadovaná výdrž: 450";
+	text[ 0 ] = " Required Strength: 140 | Required Stamina: 450 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4962,9 +4963,9 @@ instance ITAR_DJG_L_V1(ITAR_DJG_L_A)
 	inv_animate = 0;
 };
 
-instance ITAR_DJG_L_V2(ITAR_DJG_L_A)
+instance ITAR_DJG_L_V2 ( ITAR_DJG_L_A )
 {
-	name = "Lehká kovaná zbroj drakobijce";
+	name = " Light Forged Dragon Slayer Armor " ;
 	protection[PROT_EDGE] = 125;
 	protection[PROT_BLUNT] = 140;
 	protection[PROT_POINT] = 85;
@@ -4980,7 +4981,7 @@ instance ITAR_DJG_L_V2(ITAR_DJG_L_A)
 	visual_change = "Armor_Djg_L.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 150 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Strength: 150 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -4997,7 +4998,7 @@ instance ITAR_DJG_L_V2(ITAR_DJG_L_A)
 
 instance ITAR_DJG_L_V3(ITAR_DJG_L_A)
 {
-	name = "Lehká kovaná zbroj drakobijce";
+	name = " Light Forged Dragon Slayer Armor " ;
 	protection[PROT_EDGE] = 130;
 	protection[PROT_BLUNT] = 150;
 	protection[PROT_POINT] = 90;
@@ -5013,7 +5014,7 @@ instance ITAR_DJG_L_V3(ITAR_DJG_L_A)
 	visual_change = "Armor_Djg_L.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 160 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Strength: 160 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5028,9 +5029,9 @@ instance ITAR_DJG_L_V3(ITAR_DJG_L_A)
 	inv_animate = 0;
 };
 
-instance ITAR_DJG_L_V4(ITAR_DJG_L_A)
+instance ITAR_DJG_L_V4 ( ITAR_DJG_L_A )
 {
-	name = "Lehká kovaná zbroj drakobijce";
+	name = " Light Forged Dragon Slayer Armor " ;
 	protection[PROT_EDGE] = 135;
 	protection[PROT_BLUNT] = 155;
 	protection[PROT_POINT] = 95;
@@ -5046,7 +5047,7 @@ instance ITAR_DJG_L_V4(ITAR_DJG_L_A)
 	visual_change = "Armor_Djg_L.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 170 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Strength: 170 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5063,7 +5064,7 @@ instance ITAR_DJG_L_V4(ITAR_DJG_L_A)
 
 instance ITAR_DJG_L_V5(ITAR_DJG_L_A)
 {
-	name = "Lehká kovaná zbroj drakobijce";
+	name = " Light Forged Dragon Slayer Armor " ;
 	protection[PROT_EDGE] = 140;
 	protection[PROT_BLUNT] = 160;
 	protection[PROT_POINT] = 100;
@@ -5079,7 +5080,7 @@ instance ITAR_DJG_L_V5(ITAR_DJG_L_A)
 	visual_change = "Armor_Djg_L.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 180 | Požadovaná výdrž: 550";
+	text[ 0 ] = " Required Strength: 180 | Required Stamina: 550 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5116,7 +5117,7 @@ prototype ITAR_DJG_M_A(C_Item)
 
 instance ITAR_DJG_M(ITAR_DJG_M_A)
 {
-	name = "Zbroj drakobijce";
+	name = " Dragon Slayer Armor " ;
 	protection[PROT_EDGE] = 145;
 	protection[PROT_BLUNT] = 165;
 	protection[PROT_POINT] = 110;
@@ -5130,7 +5131,7 @@ instance ITAR_DJG_M(ITAR_DJG_M_A)
 	visual_change = "Armor_Djg_M.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 170 | Požadovaná výdrž: 600";
+	text[ 0 ] = " Required Strength: 170 | Required Stamina: 600 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5147,7 +5148,7 @@ instance ITAR_DJG_M(ITAR_DJG_M_A)
 
 instance ITAR_DJG_M_NPC(ITAR_DJG_M_A)
 {
-	name = "Zbroj drakobijce";
+	name = " Dragon Slayer Armor " ;
 	protection[PROT_EDGE] = 145;
 	protection[PROT_BLUNT] = 165;
 	protection[PROT_POINT] = 110;
@@ -5166,7 +5167,7 @@ instance ITAR_DJG_M_NPC(ITAR_DJG_M_A)
 
 instance ITAR_DJG_M_V1(ITAR_DJG_M_A)
 {
-	name = "Kovaná zbroj drakobijce";
+	name = " Dragon Slayer Forged Armor " ;
 	protection[PROT_EDGE] = 150;
 	protection[PROT_BLUNT] = 170;
 	protection[PROT_POINT] = 120;
@@ -5181,7 +5182,7 @@ instance ITAR_DJG_M_V1(ITAR_DJG_M_A)
 	visual_change = "Armor_Djg_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 190 | Požadovaná výdrž: 600";
+	text[ 0 ] = " Required Strength: 190 | Required Stamina: 600 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5198,7 +5199,7 @@ instance ITAR_DJG_M_V1(ITAR_DJG_M_A)
 
 instance ITAR_DJG_M_V2(ITAR_DJG_M_A)
 {
-	name = "Kovaná zbroj drakobijce";
+	name = " Dragon Slayer Forged Armor " ;
 	protection[PROT_EDGE] = 155;
 	protection[PROT_BLUNT] = 175;
 	protection[PROT_POINT] = 120;
@@ -5213,7 +5214,7 @@ instance ITAR_DJG_M_V2(ITAR_DJG_M_A)
 	visual_change = "Armor_Djg_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 200 | Požadovaná výdrž: 650";
+	text[ 0 ] = " Required Strength: 200 | Required Stamina: 650 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5230,7 +5231,7 @@ instance ITAR_DJG_M_V2(ITAR_DJG_M_A)
 
 instance ITAR_DJG_M_V3(ITAR_DJG_M_A)
 {
-	name = "Kovaná zbroj drakobijce";
+	name = " Dragon Slayer Forged Armor " ;
 	protection[PROT_EDGE] = 160;
 	protection[PROT_BLUNT] = 180;
 	protection[PROT_POINT] = 125;
@@ -5245,7 +5246,7 @@ instance ITAR_DJG_M_V3(ITAR_DJG_M_A)
 	visual_change = "Armor_Djg_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 210 | Požadovaná výdrž: 650";
+	text[ 0 ] = " Required Strength: 210 | Required Stamina: 650 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5262,7 +5263,7 @@ instance ITAR_DJG_M_V3(ITAR_DJG_M_A)
 
 instance ITAR_DJG_M_V4(ITAR_DJG_M_A)
 {
-	name = "Kovaná zbroj drakobijce";
+	name = " Dragon Slayer Forged Armor " ;
 	protection[PROT_EDGE] = 165;
 	protection[PROT_BLUNT] = 185;
 	protection[PROT_POINT] = 125;
@@ -5277,7 +5278,7 @@ instance ITAR_DJG_M_V4(ITAR_DJG_M_A)
 	visual_change = "Armor_Djg_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 215 | Požadovaná výdrž: 650";
+	text[ 0 ] = " Required Strength: 215 | Required Stamina: 650 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5294,7 +5295,7 @@ instance ITAR_DJG_M_V4(ITAR_DJG_M_A)
 
 instance ITAR_DJG_M_V5(ITAR_DJG_M_A)
 {
-	name = "Kovaná zbroj drakobijce";
+	name = " Dragon Slayer Forged Armor " ;
 	protection[PROT_EDGE] = 170;
 	protection[PROT_BLUNT] = 190;
 	protection[PROT_POINT] = 130;
@@ -5309,7 +5310,7 @@ instance ITAR_DJG_M_V5(ITAR_DJG_M_A)
 	visual_change = "Armor_Djg_D.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 225 | Požadovaná výdrž: 700";
+	text[ 0 ] = " Required Strength: 225 | Required Stamina: 700 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5326,7 +5327,7 @@ instance ITAR_DJG_M_V5(ITAR_DJG_M_A)
 
 instance ITAR_Dargonscale(C_Item)
 {
-	name = "Zbroj z dračích šupin";
+	name = " Dragon Scale Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 180;
@@ -5350,7 +5351,7 @@ instance ITAR_Dargonscale(C_Item)
 	on_unequip = UnEquip_ITAR_DJG_L;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 250 | Požadovaná výdrž: 750";
+	text[ 0 ] = " Required Strength: 250 | Required Stamina: 750 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5386,7 +5387,7 @@ prototype ITAR_DJG_H_A(C_Item)
 
 instance ITAR_DJG_H(ITAR_DJG_H_A)
 {
-	name = "Těžká zbroj drakobijce";
+	name = " Dragon Slayer Heavy Armor " ;
 	protection[PROT_EDGE] = 190;
 	protection[PROT_BLUNT] = 210;
 	protection[PROT_POINT] = 140;
@@ -5400,7 +5401,7 @@ instance ITAR_DJG_H(ITAR_DJG_H_A)
 	visual_change = "Armor_Djg_H.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 240 | Požadovaná výdrž: 800";
+	text[ 0 ] = " Required Strength: 240 | Required Stamina: 800 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5417,7 +5418,7 @@ instance ITAR_DJG_H(ITAR_DJG_H_A)
 
 instance ITAR_DJG_H_NPC(ITAR_DJG_H_A)
 {
-	name = "Těžká zbroj drakobijce";
+	name = " Dragon Slayer Heavy Armor " ;
 	protection[PROT_EDGE] = 190;
 	protection[PROT_BLUNT] = 210;
 	protection[PROT_POINT] = 140;
@@ -5579,7 +5580,7 @@ instance ITAR_DJG_H_V5(ITAR_DJG_H_A)
 	visual_change = "Armor_Djg_F.asc";
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 300 | Požadovaná výdrž: 900";
+	text[ 0 ] = " Required Strength: 300 | Required Stamina: 900 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5596,7 +5597,7 @@ instance ITAR_DJG_H_V5(ITAR_DJG_H_A)
 
 instance ItAr_SHVWarrior(C_Item)
 {
-	name = "Zbroj Exekutora";
+	name = " Executor's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 210;
@@ -5619,7 +5620,7 @@ instance ItAr_SHVWarrior(C_Item)
 	on_equip = equip_otherarmor;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 400 | Požadovaná výdrž: 800";
+	text[ 0 ] = " Required Strength: 400 | Required Stamina: 800 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5636,7 +5637,7 @@ instance ItAr_SHVWarrior(C_Item)
 
 instance ItAr_DragonKiller(C_Item)
 {
-	name = "Zbroj přemožitele draků";
+	name = " Dragon Slayer Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 250;
@@ -5659,7 +5660,7 @@ instance ItAr_DragonKiller(C_Item)
 	on_equip = equip_otherarmor;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 500 | Požadovaná výdrž: 950";
+	text[ 0 ] = " Required Strength: 500 | Required Stamina: 950 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5746,7 +5747,7 @@ instance ITAR_TPL_L(ITAR_TPL_L_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 45 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 45 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5763,7 +5764,7 @@ instance ITAR_TPL_L(ITAR_TPL_L_A)
 
 instance ITAR_TPL_L_V1(ITAR_TPL_L_A)
 {
-	name = "Lehká kovaná zbroj templáře";
+	name = " Templar Light Wrought Armor " ;
 	protection[PROT_EDGE] = 80;
 	protection[PROT_BLUNT] = 60;
 	protection[PROT_POINT] = 30;
@@ -5777,7 +5778,7 @@ instance ITAR_TPL_L_V1(ITAR_TPL_L_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 50 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 50 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5794,7 +5795,7 @@ instance ITAR_TPL_L_V1(ITAR_TPL_L_A)
 
 instance ITAR_TPL_L_V2(ITAR_TPL_L_A)
 {
-	name = "Lehká kovaná zbroj templáře";
+	name = " Templar Light Wrought Armor " ;
 	protection[PROT_EDGE] = 85;
 	protection[PROT_BLUNT] = 65;
 	protection[PROT_POINT] = 40;
@@ -5808,7 +5809,7 @@ instance ITAR_TPL_L_V2(ITAR_TPL_L_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 55 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 55 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5825,7 +5826,7 @@ instance ITAR_TPL_L_V2(ITAR_TPL_L_A)
 
 instance ITAR_TPL_L_V3(ITAR_TPL_L_A)
 {
-	name = "Lehká kovaná zbroj templáře";
+	name = " Templar Light Wrought Armor " ;
 	protection[PROT_EDGE] = 90;
 	protection[PROT_BLUNT] = 70;
 	protection[PROT_POINT] = 45;
@@ -5839,7 +5840,7 @@ instance ITAR_TPL_L_V3(ITAR_TPL_L_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 60 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 60 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5856,7 +5857,7 @@ instance ITAR_TPL_L_V3(ITAR_TPL_L_A)
 
 instance ITAR_TPL_L_V4(ITAR_TPL_L_A)
 {
-	name = "Lehká kovaná zbroj templáře";
+	name = " Templar Light Wrought Armor " ;
 	protection[PROT_EDGE] = 95;
 	protection[PROT_BLUNT] = 75;
 	protection[PROT_POINT] = 50;
@@ -5901,7 +5902,7 @@ instance ITAR_TPL_L_V5(ITAR_TPL_L_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 75 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Strength: 75 | Required Stamina: 250 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5939,7 +5940,7 @@ prototype ITAR_TPL_M_A(C_Item)
 
 instance ITAR_TPL_M(ITAR_TPL_M_A)
 {
-	name = "Zbroj templáře";
+	name = " Templar Armor " ;
 	protection[PROT_EDGE] = 110;
 	protection[PROT_BLUNT] = 90;
 	protection[PROT_POINT] = 70;
@@ -5953,7 +5954,7 @@ instance ITAR_TPL_M(ITAR_TPL_M_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 120 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Required Strength: 120 | Required Stamina: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -5970,7 +5971,7 @@ instance ITAR_TPL_M(ITAR_TPL_M_A)
 
 instance ITAR_TPL_M_V1(ITAR_TPL_M_A)
 {
-	name = "Kovaná zbroj templáře";
+	name = " Forged Templar Armor " ;
 	protection[PROT_EDGE] = 115;
 	protection[PROT_BLUNT] = 95;
 	protection[PROT_POINT] = 80;
@@ -5984,7 +5985,7 @@ instance ITAR_TPL_M_V1(ITAR_TPL_M_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 130 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Required Strength: 130 | Required Stamina: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6001,7 +6002,7 @@ instance ITAR_TPL_M_V1(ITAR_TPL_M_A)
 
 instance ITAR_TPL_M_V2(ITAR_TPL_M_A)
 {
-	name = "Kovaná zbroj templáře";
+	name = " Forged Templar Armor " ;
 	protection[PROT_EDGE] = 120;
 	protection[PROT_BLUNT] = 100;
 	protection[PROT_POINT] = 85;
@@ -6015,7 +6016,7 @@ instance ITAR_TPL_M_V2(ITAR_TPL_M_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 140 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 140 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6032,7 +6033,7 @@ instance ITAR_TPL_M_V2(ITAR_TPL_M_A)
 
 instance ITAR_TPL_M_V3(ITAR_TPL_M_A)
 {
-	name = "Kovaná zbroj templáře";
+	name = " Forged Templar Armor " ;
 	protection[PROT_EDGE] = 125;
 	protection[PROT_BLUNT] = 105;
 	protection[PROT_POINT] = 90;
@@ -6046,7 +6047,7 @@ instance ITAR_TPL_M_V3(ITAR_TPL_M_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 150 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 150 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6063,7 +6064,7 @@ instance ITAR_TPL_M_V3(ITAR_TPL_M_A)
 
 instance ITAR_TPL_M_V4(ITAR_TPL_M_A)
 {
-	name = "Kovaná zbroj templáře";
+	name = " Forged Templar Armor " ;
 	protection[PROT_EDGE] = 130;
 	protection[PROT_BLUNT] = 110;
 	protection[PROT_POINT] = 100;
@@ -6077,7 +6078,7 @@ instance ITAR_TPL_M_V4(ITAR_TPL_M_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 160 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 160 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6094,7 +6095,7 @@ instance ITAR_TPL_M_V4(ITAR_TPL_M_A)
 
 instance ITAR_TPL_M_V5(ITAR_TPL_M_A)
 {
-	name = "Kovaná zbroj templáře";
+	name = " Forged Templar Armor " ;
 	protection[PROT_EDGE] = 140;
 	protection[PROT_BLUNT] = 115;
 	protection[PROT_POINT] = 110;
@@ -6108,7 +6109,7 @@ instance ITAR_TPL_M_V5(ITAR_TPL_M_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 180 | Požadovaná výdrž: 450";
+	text[ 0 ] = " Required Strength: 180 | Required Stamina: 450 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6145,7 +6146,7 @@ prototype ITAR_TPL_S_A(C_Item)
 
 instance ITAR_TPL_S(ITAR_TPL_S_A)
 {
-	name = "Těžká zbroj templáře";
+	name = " Heavy Templar Armor " ;
 	protection[PROT_EDGE] = 150;
 	protection[PROT_BLUNT] = 140;
 	protection[PROT_POINT] = 120;
@@ -6158,7 +6159,7 @@ instance ITAR_TPL_S(ITAR_TPL_S_A)
 	weight = 5;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 160 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Strength: 160 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6220,7 +6221,7 @@ instance ITAR_TPL_S_V2(ITAR_TPL_S_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 180 | Požadovaná výdrž: 550";
+	text[ 0 ] = " Required Strength: 180 | Required Stamina: 550 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6237,7 +6238,7 @@ instance ITAR_TPL_S_V2(ITAR_TPL_S_A)
 
 instance ITAR_TPL_S_V3(ITAR_TPL_S_A)
 {
-	name = "Těžká kovaná zbroj templáře";
+	name = " Heavy Forged Templar Armor " ;
 	protection[PROT_EDGE] = 180;
 	protection[PROT_BLUNT] = 170;
 	protection[PROT_POINT] = 150;
@@ -6251,7 +6252,7 @@ instance ITAR_TPL_S_V3(ITAR_TPL_S_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 190 | Požadovaná výdrž: 550";
+	text[ 0 ] = " Required Strength: 190 | Required Stamina: 550 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6268,7 +6269,7 @@ instance ITAR_TPL_S_V3(ITAR_TPL_S_A)
 
 instance ITAR_TPL_S_V4(ITAR_TPL_S_A)
 {
-	name = "Těžká kovaná zbroj templáře";
+	name = " Heavy Forged Templar Armor " ;
 	protection[PROT_EDGE] = 190;
 	protection[PROT_BLUNT] = 180;
 	protection[PROT_POINT] = 160;
@@ -6282,7 +6283,7 @@ instance ITAR_TPL_S_V4(ITAR_TPL_S_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 200 | Požadovaná výdrž: 550";
+	text[ 0 ] = " Required Strength: 200 | Required Stamina: 550 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6299,7 +6300,7 @@ instance ITAR_TPL_S_V4(ITAR_TPL_S_A)
 
 instance ITAR_TPL_S_V5(ITAR_TPL_S_A)
 {
-	name = "Těžká kovaná zbroj templáře";
+	name = " Heavy Forged Templar Armor " ;
 	protection[PROT_EDGE] = 200;
 	protection[PROT_BLUNT] = 190;
 	protection[PROT_POINT] = 170;
@@ -6313,7 +6314,7 @@ instance ITAR_TPL_S_V5(ITAR_TPL_S_A)
 	value = protection[PROT_MAGIC];
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 210 | Požadovaná výdrž: 600";
+	text[ 0 ] = " Required Strength: 210 | Required Stamina: 600 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -6330,7 +6331,7 @@ instance ITAR_TPL_S_V5(ITAR_TPL_S_A)
 
 instance ItAr_TPL_MASTER(C_Item)
 {
-	name = "Těžká zbroj templáře";
+	name = " Heavy Templar Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 200;
@@ -6353,7 +6354,7 @@ instance ItAr_TPL_MASTER(C_Item)
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[0] = "Požadovaná síla: 225 | Požadovaná výdrž: 750";
+	text[ 0 ] = " Required Strength: 225 | Required Stamina: 750 " ;
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
 	text[2] = NAME_Prot_Blunt;
@@ -6369,7 +6370,7 @@ instance ItAr_TPL_MASTER(C_Item)
 
 instance ItAr_KDF_H(C_Item)
 {
-	name = "Roucho vysokého mága Ohně";
+	name = " Robe of the High Fire Mage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 80;
@@ -6406,7 +6407,7 @@ instance ItAr_KDF_H(C_Item)
 
 instance ItAr_KDF_H_NPC(C_Item)
 {
-	name = "Roucho arcimága Ohně";
+	name = " Robe of the Fire Archmage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 190;
@@ -6431,7 +6432,7 @@ instance ItAr_KDF_H_NPC(C_Item)
 
 instance ITAR_KDF_H_BLESSED(C_Item)
 {
-	name = "Posvěcené roucho vysokého mága Ohně";
+	name = " Sanctified Robe of the High Fire Mage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 90;
@@ -6468,7 +6469,7 @@ instance ITAR_KDF_H_BLESSED(C_Item)
 
 instance ItAr_KDF_SH(C_Item)
 {
-	name = "Roucho arcimága Ohně";
+	name = " Robe of the Fire Archmage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 110;
@@ -6505,7 +6506,7 @@ instance ItAr_KDF_SH(C_Item)
 
 instance ITAR_KDW_H(C_Item)
 {
-	name = "Roucho vysokého mága Vody";
+	name = " Robe of the High Mage of Water " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 85;
@@ -6542,7 +6543,7 @@ instance ITAR_KDW_H(C_Item)
 
 instance ItAr_KDW_H_NPC(C_Item)
 {
-	name = "Roucho arcimága Vody";
+	name = " Robe of the Water Archmage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 180;
@@ -6716,7 +6717,7 @@ instance ITAR_DMT_H_BELIAR_1(C_Item)
 
 instance ITAR_DMT_H_NPC(C_Item)
 {
-	name = "Roucho vyslance Temnoty";
+	name = " Robe of the Envoy of Darkness " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 190;
@@ -6739,7 +6740,7 @@ instance ITAR_DMT_H_NPC(C_Item)
 
 instance ITAR_DMT_H_BELIAR_3(C_Item)
 {
-	name = "Roucho vyslance Temnoty";
+	name = " Robe of the Envoy of Darkness " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 110;
@@ -6752,7 +6753,7 @@ instance ITAR_DMT_H_BELIAR_3(C_Item)
 	weight = 2;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = 750;
-	on_equip = Equip_BeliarChosen;
+	where_team = Team_BeliarChosen;
 	on_unequip = UnEquip_BeliarChosen;
 	visual = "ItAr_Xardas.3ds";
 	visual_change = "ARMOR_DS_DARKMAG_02.asc";
@@ -6776,7 +6777,7 @@ instance ITAR_DMT_H_BELIAR_3(C_Item)
 
 instance ItAr_KDM_H_NPC(C_Item)
 {
-	name = "Roucho arcimága Temnoty";
+	name = " Robe of the Archmage of Darkness " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 200;
@@ -6822,7 +6823,7 @@ instance ItAr_Arahar(C_Item)
 
 instance ItAr_KDM_SH(C_Item)
 {
-	name = "Roucho arcimága Temnoty";
+	name = " Robe of the Archmage of Darkness " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -6859,7 +6860,7 @@ instance ItAr_KDM_SH(C_Item)
 
 instance ITAR_GUR_H(C_Item)
 {
-	name = "Roucho vysokého Guru Bratrstva";
+	name = " Robe of the High Guru Brotherhood " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 80;
@@ -6934,7 +6935,7 @@ instance ITAR_ASSASINS_DEMONMAGE(C_Item)
 
 instance ITAR_GUR_TOP(C_Item)
 {
-	name = "Roucho nejvyššího Guru Bratrstva";
+	name = " Robe of the Supreme Guru Brotherhood " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 110;
@@ -6971,7 +6972,7 @@ instance ITAR_GUR_TOP(C_Item)
 
 instance ITAR_GUR_ORAN(C_Item)
 {
-	name = "Roucho nejvyššího Guru Bratrstva";
+	name = " Robe of the Supreme Guru Brotherhood " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 110;
@@ -6994,7 +6995,7 @@ instance ITAR_GUR_ORAN(C_Item)
 
 instance ITAR_GRD_I(C_Item)
 {
-	name = "Zbroj královského zřízence";
+	name = " Royal Attendant Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 60;
@@ -7016,7 +7017,7 @@ instance ITAR_GRD_I(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 70 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Strength: 70 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -7033,7 +7034,7 @@ instance ITAR_GRD_I(C_Item)
 
 instance ITAR_Ancient(C_Item)
 {
-	name = "Zbroj Prastarých";
+	name = " Armor of the Ancients " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -7055,7 +7056,7 @@ instance ITAR_Ancient(C_Item)
 
 instance ITAR_DHT_M(C_Item)
 {
-	name = "Zbroj Temného Strážce";
+	name = " Dark Warden Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 90;
@@ -7077,7 +7078,7 @@ instance ITAR_DHT_M(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 90 | Požadovaná výdrž: 200";
+	text[ 0 ] = " Required Strength: 90 | Required Stamina: 200 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -7094,7 +7095,7 @@ instance ITAR_DHT_M(C_Item)
 
 instance ITAR_PAL_SKEL_D(C_Item)
 {
-	name = "Zbroj rytíře Smrti";
+	name = " Death Knight Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 180;
@@ -7116,7 +7117,7 @@ instance ITAR_PAL_SKEL_D(C_Item)
 
 instance ITAR_PAL_SKEL_U(C_Item)
 {
-	name = "Zbroj pána Smrti";
+	name = " Armor of Lord Death " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 250;
@@ -7138,7 +7139,7 @@ instance ITAR_PAL_SKEL_U(C_Item)
 
 instance ITAR_PAL_SKEL_VH(C_Item)
 {
-	name = "Zbroj pána Stínů";
+	name = " Armor of the Shadow Lord " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 250;
@@ -7184,7 +7185,7 @@ instance ITAR_Raven_Demon(C_Item)
 
 instance ITAR_Dementor(C_Item)
 {
-	name = "Roucho Pátrače";
+	name = " Seeker's Robe " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 150;
@@ -7265,7 +7266,7 @@ instance ITAR_HARADRIMMAGE(C_Item)
 
 instance ITAR_Xardas(C_Item)
 {
-	name = "Roucho arcimága";
+	name = " Robe of the Archmage " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 180;
@@ -7288,7 +7289,7 @@ instance ITAR_Xardas(C_Item)
 
 instance ITAR_NOV_PEDRO(C_Item)
 {
-	name = "Roucho novice Ohně";
+	name = " Robe of the Fire Novice " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 25;
@@ -7402,7 +7403,7 @@ instance ITAR_RAVENARMOR_ADDON(C_Item)
 
 instance ITAR_GREG(C_Item)
 {
-	name = "Gregova zbroj";
+	name = " Greg's Sum " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -7427,7 +7428,7 @@ instance ITAR_GREG(C_Item)
 
 instance ITAR_GUARDIAN(C_Item)
 {
-	name = "Roucho Strážce Temnoty";
+	name = " Robe of the Dark Guardian " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 250;
@@ -7450,7 +7451,7 @@ instance ITAR_GUARDIAN(C_Item)
 
 instance ITAR_FIREGUARDIAN(C_Item)
 {
-	name = "Roucho Strážce Ohně";
+	name = " Robe of the Fire Keeper " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 250;
@@ -7473,7 +7474,7 @@ instance ITAR_FIREGUARDIAN(C_Item)
 
 instance ITAR_WATERGUARDIAN(C_Item)
 {
-	name = "Roucho Strážce Vody";
+	name = " Water Guardian Robe " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 250;
@@ -7519,7 +7520,7 @@ instance ITAR_STONEGUARDIAN(C_Item)
 
 instance ItAr_OldOreArmor(C_Item)
 {
-	name = "Rudná zbroj";
+	name = " Ore Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	//value = 100;
@@ -7535,7 +7536,7 @@ instance ItAr_OldOreArmor(C_Item)
 
 instance ITAR_OREARMOR(C_Item)
 {
-	name = "Rudná zbroj Světla";
+	name = " Ore Armor of Light " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 250;
@@ -7558,7 +7559,7 @@ instance ITAR_OREARMOR(C_Item)
 	material = MAT_WOOD;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 500 | Požadovaná výdrž: 850";
+	text[ 0 ] = " Required Strength: 500 | Required Stamina: 850 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -7575,7 +7576,7 @@ instance ITAR_OREARMOR(C_Item)
 
 instance ITAR_ILARAH(C_Item)
 {
-	name = "Zbroj Chaosu";
+	name = " Chaos Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 450;
@@ -7608,7 +7609,7 @@ instance ITAR_ILARAH(C_Item)
 
 instance ITAR_Raven_Addon(C_Item)
 {
-	name = "Rudná zbroj Temnoty";
+	name = " Ore Armor of Darkness " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 190;
@@ -7830,7 +7831,7 @@ instance ITAR_MayaZombie_Addon(C_Item)
 
 instance ITAR_PAL_SKEL_P(C_Item)
 {
-	name = "Zbroj padlého paladina";
+	name = " Fallen Paladin Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 200;
@@ -7873,9 +7874,9 @@ instance ITAR_SKEL_WAR(C_Item)
 	inv_animate = 0;
 };
 
-instance ITAR_SKEL_DAR(C_Item)
+instance ITAR_SCHEDULE_DAR (C_Item);
 {
-	name = "Démonická zbroj";
+	name = " Demon Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	//value = VALUE_ITAR_NONE;
@@ -7919,7 +7920,7 @@ instance ITAR_WEMON_ADDON(C_Item)
 
 instance ITAR_DEMON_ADDON(C_Item)
 {
-	name = "Démonická zbroj";
+	name = " Demon Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 250;
@@ -7965,7 +7966,7 @@ instance ITAR_ASSASINS_01(C_Item)
 	material = MAT_METAL;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 150 | Požadovaná výdrž: 400";
+	text[ 0 ] = " Required Strength: 150 | Required Stamina: 400 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -7982,7 +7983,7 @@ instance ITAR_ASSASINS_01(C_Item)
 
 instance ITAR_ASSASINS_02(C_Item)
 {
-	name = "Zbroj převora Masyafu";
+	name = " Armor of Prior Masyafu " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 165;
@@ -8006,7 +8007,7 @@ instance ITAR_ASSASINS_02(C_Item)
 	material = MAT_METAL;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 170 | Požadovaná výdrž: 450";
+	text[ 0 ] = " Required Strength: 170 | Required Stamina: 450 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -8023,7 +8024,7 @@ instance ITAR_ASSASINS_02(C_Item)
 
 instance ITAR_ASSASINS_02_NPC(C_Item)
 {
-	name = "Zbroj převora Masyafu";
+	name = " Armor of Prior Masyafu " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 180;
@@ -8046,7 +8047,7 @@ instance ITAR_ASSASINS_02_NPC(C_Item)
 
 instance ITAR_ASSASINS_DEAD(C_Item)
 {
-	name = "Zbroj převora Masyafu";
+	name = " Armor of Prior Masyafu " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 170;
@@ -8099,7 +8100,7 @@ instance ITAR_ASSASINS_03(C_Item)
 
 instance ITAR_ASSASINS_04(C_Item)
 {
-	name = "Zbroj stína Masyafu";
+	name = " Masyafu's Shadow Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 110;
@@ -8133,7 +8134,7 @@ instance ITAR_ASSASINS_04(C_Item)
 
 instance ITAR_GONSALES(C_Item)
 {
-	name = "Gonzalesova zbroj";
+	name = " Gonzales Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 140;
@@ -8244,7 +8245,7 @@ instance ITAR_DHT_END(C_Item)
 
 instance ItAr_SklavenFessel(C_Item)
 {
-	name = "Obojek otroka";
+	name = " Slave Collar " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 0;
@@ -8263,7 +8264,7 @@ instance ItAr_SklavenFessel(C_Item)
 
 instance ItAr_OrcMine_Slave(C_Item)
 {
-	name = "Oděv otroka skřetů";
+	name = " Goblin Slave Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 1;
@@ -8284,7 +8285,7 @@ instance ItAr_OrcMine_Slave(C_Item)
 
 instance ItAr_Sekbed_Slave(C_Item)
 {
-	name = "Bederní rouška otroka";
+	name = " Slave Loincloth " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 0;
@@ -8304,11 +8305,11 @@ instance ItAr_Sekbed_Slave(C_Item)
 };
 
 
-//-------------dospekhi zombi-----------------------------------
+// -------------dospekhi zombi-------------------------------- --
 
 instance ITAR_STT_Z(C_Item)
 {
-	name = "Zbroj nemrtvého Stína";
+	name = " Armor of the Undead Shadow " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 60;
@@ -8497,7 +8498,7 @@ instance ItAr_HuntArmor_01(C_Item)
 	on_unequip = UnEquip_otherarmor_hunt;
 	description = name;
 	//text[0] = NAME_NoHelmEquip;
-	text[0] = "Požadovaná výdrž:";
+	text[ 0 ] = " Desired endurance: " ;
 	count[0] = 150;
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -8514,7 +8515,7 @@ instance ItAr_HuntArmor_01(C_Item)
 
 instance ItAr_HuntArmor_NPC(C_Item)
 {
-	name = "Zbroj lovce";
+	name = " Hunter's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 55;
@@ -8537,7 +8538,7 @@ instance ItAr_HuntArmor_NPC(C_Item)
 
 instance ItAr_HuntArmor_02(C_Item)
 {
-	name = "Zbroj lovce-zvěrobijce";
+	name = " Beast Hunter Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 90;
@@ -8559,7 +8560,7 @@ instance ItAr_HuntArmor_02(C_Item)
 	on_unequip = UnEquip_otherarmor_hunt;
 	description = name;
 	//text[0] = NAME_NoHelmEquip;
-	text[0] = "Požadovaná výdrž:";
+	text[ 0 ] = " Desired endurance: " ;
 	count[0] = 250;
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -8577,7 +8578,7 @@ instance ItAr_HuntArmor_02(C_Item)
 
 instance ItAr_HuntArmor_M_NPC(C_Item)
 {
-	name = "Zbroj lovce-zvěrobijce";
+	name = " Beast Hunter Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -8600,7 +8601,7 @@ instance ItAr_HuntArmor_M_NPC(C_Item)
 
 instance ItAr_HuntArmor_03(C_Item)
 {
-	name = "Zbroj lovce-trolobijce";
+	name = " Trollhunter Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -8661,7 +8662,7 @@ instance ItAr_HuntArmor_H_NPC(C_Item)
 
 instance ItAr_HuntArmor_04(C_Item)
 {
-	name = "Zbroj mistra lovce";
+	name = " Master Hunter's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 150;
@@ -8683,7 +8684,7 @@ instance ItAr_HuntArmor_04(C_Item)
 	on_unequip = UnEquip_otherarmor_hunt;
 	description = name;
 	//text[0] = NAME_NoHelmEquip;
-	text[0] = "Požadovaná výdrž:";
+	text[ 0 ] = " Desired endurance: " ;
 	count[0] = 550;
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -8700,7 +8701,7 @@ instance ItAr_HuntArmor_04(C_Item)
 
 instance ITAR_ORC_L(C_Item)
 {
-	name = "Zbroj farmáře";
+	name = " Farmer's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -8724,7 +8725,7 @@ instance ITAR_ORC_L(C_Item)
 
 instance ITAR_ORC_L_HART(C_Item)
 {
-	name = "Skřetí zbroj";
+	name = " Goblin Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 190;
@@ -8746,7 +8747,7 @@ instance ITAR_ORC_L_HART(C_Item)
 
 instance ITAR_SLD_U(C_Item)
 {
-	name = "Těžká zbroj žoldáka";
+	name = " Heavy Mercenary Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 160;
@@ -8770,7 +8771,7 @@ instance ITAR_SLD_U(C_Item)
 
 instance ITAR_ORCARMOR(C_Item)
 {
-	name = "Zbroj skřetího válečníka";
+	name = " Goblin Warrior Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 180;
@@ -8852,7 +8853,7 @@ instance ITAR_ORCARMOR_DEX(C_Item)
 
 instance ITAR_SHAMANROBE(C_Item)
 {
-	name = "Roucho skřetího šamana";
+	name = " Orc Shaman 's Robe " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -8889,7 +8890,7 @@ instance ITAR_SHAMANROBE(C_Item)
 
 instance ITAR_SANCUARY_GUARD(C_Item)
 {
-	name = "Zbroj strážce svatyně";
+	name = " Shrine Guardian Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 180;
@@ -8912,7 +8913,7 @@ instance ITAR_SANCUARY_GUARD(C_Item)
 
 instance ITAR_SANCUARY_KEEPER(C_Item)
 {
-	name = "Zbroj správce svatyně";
+	name = " Shrine Warden's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 260;
@@ -8935,7 +8936,7 @@ instance ITAR_SANCUARY_KEEPER(C_Item)
 
 instance ITAR_Her_M(C_Item)
 {
-	name = "Roztrhaný obnošený oděv";
+	name = " Torn Worn Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 1;
@@ -8957,7 +8958,7 @@ instance ITAR_Her_M(C_Item)
 
 instance ITAR_POOR(C_Item)
 {
-	name = "Roztrhaný obnošený oděv";
+	name = " Torn Worn Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 1;
@@ -8979,7 +8980,7 @@ instance ITAR_POOR(C_Item)
 
 instance ITAR_Her_N(C_Item)
 {
-	name = "Oděv zloděje";
+	name = " Thief's Garment " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -9000,12 +9001,12 @@ instance ITAR_Her_N(C_Item)
 	inv_animate = 0;
 };
 
-//-----------------------vorovskaya lineyka----------------------------------------------
+// -----------------------vorovskaya lineyka---------------------- ----------------------
 
  
 instance ITAR_DHT_END_1(C_Item)
 {
-	name = "Zbroj zloděje";
+	name = " Thief's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 40;
@@ -9042,7 +9043,7 @@ instance ITAR_DHT_END_1(C_Item)
 
 instance ITAR_DHT_END_2(C_Item)
 {
-	name = "Zbroj ducha";
+	name = " Spirit Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 70;
@@ -9101,7 +9102,7 @@ instance ITAR_Atilla(C_Item)
 
 instance ITAR_DHT_END_3(C_Item)
 {
-	name = "Zbroj nočního stínu";
+	name = " Nightshade Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 90;
@@ -9124,7 +9125,7 @@ instance ITAR_DHT_END_3(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Dex_needed;
-	text[0] = "Požadovaná obratnost: 150 | Požadovaná výdrž: 150";
+	text[ 0 ] = " Required Dexterity: 150 | Required Stamina: 150 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -9141,7 +9142,7 @@ instance ITAR_DHT_END_3(C_Item)
 
 instance ITAR_Jesper(C_Item)
 {
-	name = "Jesperova zbroj";
+	name = " Jesper's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 90;
@@ -9161,7 +9162,7 @@ instance ITAR_Jesper(C_Item)
 
 instance ITAR_DHT_END_4(C_Item)
 {
-	name = "Zbroj mistra zloděje";
+	name = " Master Thief's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -9185,7 +9186,7 @@ instance ITAR_DHT_END_4(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Dex_needed;
-	text[0] = "Požadovaná obratnost: 180 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Dexterity: 180 | Required Stamina: 250 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -9202,7 +9203,7 @@ instance ITAR_DHT_END_4(C_Item)
 
 instance ITAR_RAMIREZ(C_Item)
 {
-	name = "Ramirezova zbroj";
+	name = " Ramirez's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -9222,7 +9223,7 @@ instance ITAR_RAMIREZ(C_Item)
 
 instance ITAR_DHT_END_5(C_Item)
 {
-	name = "Zbroj vůdce zlodějů";
+	name = " Thief Leader Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 140;
@@ -9246,7 +9247,7 @@ instance ITAR_DHT_END_5(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Dex_needed;
-	text[0] = "Požadovaná obratnost: 230 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Required Dexterity: 230 | Required Stamina: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -9263,7 +9264,7 @@ instance ITAR_DHT_END_5(C_Item)
 
 instance ITAR_DHT_END_6(C_Item)
 {
-	name = "Zbroj krále zlodějů";
+	name = " Armor of the King of Thieves " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 170;
@@ -9287,7 +9288,7 @@ instance ITAR_DHT_END_6(C_Item)
 	on_unequip = unequip_chiefarmor;
 	description = name;
 	//text[0] = NAME_Dex_needed;
-	text[0] = "Požadovaná obratnost: 350 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Dexterity: 350 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -9304,7 +9305,7 @@ instance ITAR_DHT_END_6(C_Item)
 
 instance ITAR_ASS(C_Item)
 {
-	name = "Zbroj asasína";
+	name = " Assassin's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 150;
@@ -9328,7 +9329,7 @@ instance ITAR_ASS(C_Item)
 	on_unequip = unequip_chiefarmor;
 	description = name;
 	//text[0] = NAME_Dex_needed;
-	text[0] = "Požadovaná obratnost: 300 | Požadovaná výdrž: 350";
+	text[ 0 ] = " Dexterity Required: 300 | Stamina Required: 350 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -9369,7 +9370,7 @@ instance ITAR_TOPTHIEF(C_Item)
 	on_unequip = unequip_chiefarmor;
 	description = name;
 	//text[0] = NAME_Dex_needed;
-	text[0] = "Požadovaná obratnost: 300 | Požadovaná výdrž: 450";
+	text[ 0 ] = " Required Dexterity: 300 | Required Stamina: 450 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -9386,7 +9387,7 @@ instance ITAR_TOPTHIEF(C_Item)
 
 instance ITAR_ASGARD(C_Item)
 {
-	name = "Zbroj přízračného stínu";
+	name = " Ghost Shadow Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 210;
@@ -9412,7 +9413,7 @@ instance ITAR_ASGARD(C_Item)
 	on_unequip = unequip_chiefarmor_elite;
 	description = name;
 	//text[0] = NAME_Dex_needed;
-	text[0] = "Požadovaná obratnost: 500 | Požadovaná výdrž: 650";
+	text[ 0 ] = " Required Dexterity: 500 | Required Stamina: 650 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -9429,7 +9430,7 @@ instance ITAR_ASGARD(C_Item)
 
 instance ITAR_ADVENTURE(C_Item)
 {
-	name = "Zbroj dobrodruha";
+	name = " Adventurer's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 50;
@@ -9453,7 +9454,7 @@ instance ITAR_ADVENTURE(C_Item)
 
 instance ITAR_ADVENTURE_HERO(C_Item)
 {
-	name = "Zbroj dobrodruha";
+	name = " Adventurer's Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 30;
@@ -9480,9 +9481,9 @@ instance ITAR_ADVENTURE_HERO(C_Item)
 	inv_animate = 0;
 };
 
-instance ItAr_Mage_AV(C_Item)
+instance ItAr_Mage_AV (C_Item)
 {
-	name = "Roucho Adanova kněze";
+	name = " Robe of the Priest of Adam " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 120;
@@ -9505,7 +9506,7 @@ instance ItAr_Mage_AV(C_Item)
 
 instance ItAr_GodArmor(C_Item)
 {
-	name = "Zbroj Vyvoleného";
+	name = " Armor of the Chosen " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 350;
@@ -9524,7 +9525,7 @@ instance ItAr_GodArmor(C_Item)
 	on_unequip = unequip_otherarmor_god;
 	material = MAT_LEATHER;
 	description = name;
-	text[0] = "Tuhle zbroj vykovali samotní bohové...";
+	text[ 0 ] = " This armor was forged by the gods themselves... " ;
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
 	text[2] = NAME_Prot_Blunt;
@@ -9557,7 +9558,7 @@ func void UnEquip_Otherarmor_God()
 {
 	if(Npc_IsPlayer(self))
 	{
-		MageRobeIsUp = FALSE;
+		MageRobeIsUp = FALSE ;
 	};
 };
 
@@ -9608,7 +9609,7 @@ instance ITAR_ABORIGEN_ARMOR(C_Item)
 
 instance ItAr_OldSteelArmor_NPC(C_Item)
 {
-	name = "Ocelová zbroj vlastní výroby";
+	name = " Steel armor of own production " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 150;
@@ -9630,7 +9631,7 @@ instance ItAr_OldSteelArmor_NPC(C_Item)
 
 instance ItAr_OldSteelArmor(C_Item)
 {
-	name = "Ocelová zbroj vlastní výroby";
+	name = " Steel armor of own production " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 150;
@@ -9653,7 +9654,7 @@ instance ItAr_OldSteelArmor(C_Item)
 	material = MAT_LEATHER;
 	description = name;
 	//text[0] = NAME_Str_needed;
-	text[0] = "Požadovaná síla: 250 | Požadovaná výdrž: 500";
+	text[ 0 ] = " Required Strength: 250 | Required Stamina: 500 " ;
 	//count[0] = cond_value[2];
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
@@ -9670,7 +9671,7 @@ instance ItAr_OldSteelArmor(C_Item)
 
 instance ItAr_Wizard_NPC(C_Item)
 {
-	name = "Roucho mága";
+	name = " Mage Robe " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 190;
@@ -9693,7 +9694,7 @@ instance ItAr_Wizard_NPC(C_Item)
 	inv_animate = 0;
 };
 
-//---------------------------poyasa----------------------------------------
+// ---------------------------poyasa-------------------- --------------------
 
 func void Equip_ITAR_Leather_L()
 {
@@ -9955,7 +9956,7 @@ func void UnEquip_ITAR_NOV_L()
 			self.protection[PROT_FIRE] -= BA_Bonus01;
 		};
 
-		MageRobeIsUp = FALSE;
+		MageRobeIsUp = FALSE ;
 	};
 };
 
@@ -9989,7 +9990,7 @@ func void UnEquip_ITAR_KDF_L()
 			self.protection[PROT_FIRE] -= BA_Bonus02;
 		};
 
-		MageRobeIsUp = FALSE;
+		MageRobeIsUp = FALSE ;
 	};
 };
 
@@ -10023,7 +10024,7 @@ func void UnEquip_ITAR_KDF_H()
 			self.protection[PROT_FIRE] -= BA_Bonus03;
 		};
 
-		MageRobeIsUp = FALSE;
+		MageRobeIsUp = FALSE ;
 	};
 };
 
@@ -10084,7 +10085,7 @@ func void Equip_ITAR_KDF_SH()
 
 		CurItem = Hlp_GetSlotItem(self,"ZS_HELMET");
 
-		if((Hlp_IsValidItem(CurItem) == TRUE) && (Hlp_IsItem(CurItem,G3_ARMOR_HELMET_CRONE) == FALSE) && (Hlp_IsItem(CurItem,ItAr_ShrecHelm) == FALSE) && (Hlp_IsItem(CurItem,ItAr_Helm_G3_06) == FALSE))
+		if ((Hlp_IsValidItem(CurItem) ==  TRUE ) && (Hlp_IsItem(CurItem, G3_ARMOR_HELMET_CRONE ) ==  FALSE ) && (Hlp_IsItem(CurItem,ItAr_ShrecHelm) ==  FALSE ) && (Hlp_IsItem(CurItem,ItAr_ShrecHelm) ==  FALSE )
 		{
 			Npc_UnEquipItem(self,CurItem);
 		};
@@ -10145,7 +10146,7 @@ func void UnEquip_ITAR_KDF_SH()
 		};
 
 		MageArmorWithCapisUp = FALSE;
-		MageRobeIsUp = FALSE;
+		MageRobeIsUp = FALSE ;
 	};
 };
 
@@ -10280,7 +10281,7 @@ func void UnEquip_ITAR_GUR_L()
 			self.protection[PROT_MAGIC] -= BA_Bonus03;
 		};
 
-		MageRobeIsUp = FALSE;
+		MageRobeIsUp = FALSE ;
 	};
 };
 
@@ -10575,7 +10576,7 @@ func void equip_chiefarmor_elite()
 
 		CurItem = Hlp_GetSlotItem(self,"ZS_HELMET");
 
-		if((Hlp_IsValidItem(CurItem) == TRUE) && (Hlp_IsItem(CurItem,G3_ARMOR_HELMET_CRONE) == FALSE) && (Hlp_IsItem(CurItem,ItAr_Helm_G3_06) == FALSE))
+		if ((Hlp_IsValidItem(CurItem) ==  TRUE ) && (Hlp_IsItem(CurItem, G3_ARMOR_HELMET_CRONE ) ==  FALSE ) && (Hlp_IsItem(CurItem,ItAr_Helm_G3_06) ==  FALSE ))
 		{
 			Npc_UnEquipItem(self,CurItem);
 		};
@@ -10782,7 +10783,7 @@ func void equip_chiefarmor_with_cap()
 
 		CurItem = Hlp_GetSlotItem(self,"ZS_HELMET");
 
-		if((Hlp_IsValidItem(CurItem) == TRUE) && (Hlp_IsItem(CurItem,G3_ARMOR_HELMET_CRONE) == FALSE) && (Hlp_IsItem(CurItem,ItAr_Helm_G3_06) == FALSE))
+		if ((Hlp_IsValidItem(CurItem) ==  TRUE ) && (Hlp_IsItem(CurItem, G3_ARMOR_HELMET_CRONE ) ==  FALSE ) && (Hlp_IsItem(CurItem,ItAr_Helm_G3_06) ==  FALSE ))
 		{
 			Npc_UnEquipItem(self,CurItem);
 		};
@@ -10889,9 +10890,9 @@ func void unequip_itar_adept()
 {
 	if(Npc_IsPlayer(self))
 	{
-		EQITAR_ADEPT = 0;
+		EQITAR_ADEPT = 0 ;
 		MageArmorWithCapisUp = FALSE;
-		MageRobeIsUp = FALSE;
+		MageRobeIsUp = FALSE ;
 	};
 };
 
@@ -11070,7 +11071,7 @@ func void Equip_otherarmor_ass()
 		ChechWeightArmor = TRUE;
 		CurItem = Hlp_GetSlotItem(self,"ZS_HELMET");
 
-		if((Hlp_IsValidItem(CurItem) == TRUE) && (Hlp_IsItem(CurItem,G3_ARMOR_HELMET_CRONE) == FALSE) && (Hlp_IsItem(CurItem,ItAr_Helm_G3_06) == FALSE))
+		if ((Hlp_IsValidItem(CurItem) ==  TRUE ) && (Hlp_IsItem(CurItem, G3_ARMOR_HELMET_CRONE ) ==  FALSE ) && (Hlp_IsItem(CurItem,ItAr_Helm_G3_06) ==  FALSE ))
 		{
 			Npc_UnEquipItem(self,CurItem);
 		};
@@ -11189,7 +11190,7 @@ func void unequip_otherarmor_pablo()
 {
 	if(Npc_IsPlayer(self))
 	{
-		VlkL_ArmorUp = FALSE;
+		VlkL_ArmorUp = FALSE ;
 	};
 };
 
@@ -11202,7 +11203,7 @@ func void Equip_DarkMessian()
 		Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 		ChechWeightArmor = TRUE;
 		MageRobeIsUp = TRUE;
-		AI_Print("Získal jsi novou schopnost - 'Požírač masa'!");
+		AI_Print( " You have gained a new ability - 'Flesh Eater'! " );
 	};
 };
 
@@ -11211,7 +11212,7 @@ func void UnEquip_DarkMessian()
    if(Npc_IsPlayer(self))
    {
       DarkMessianArmorEquipped = FALSE;
-      MageRobeIsUp = FALSE;
+      MageRobeIsUp = FALSE ;
    };
 };
 
@@ -11223,7 +11224,7 @@ func void Equip_BeliarChosen()
 		{
 			BeliarChosenEquipped = TRUE;
 			Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
-			AI_Print("Získal jsi novou schopnost - 'Volání Temnoty'!");
+			AI_Print( " You have gained a new ability - 'Call of Darkness'! " );
 		};
 
 		Snd_Play3d(hero,"EQUIP_ARMOR_01");
@@ -11238,7 +11239,7 @@ func void UnEquip_BeliarChosen()
 	if(Npc_IsPlayer(self))
 	{
 		BeliarChosenEquipped = FALSE;
-		MageRobeIsUp = FALSE;
+		MageRobeIsUp = FALSE ;
 		CountBelChos = FALSE;
 	};
 };
@@ -11425,7 +11426,7 @@ instance ITAR_NADJA_ADDON(C_Item)
 
 instance ITAR_BARON_BABE_ADDON(C_Item)
 {
-	name = "Ženské prádlo";
+	name = " Women's Underwear " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 10;
@@ -11482,7 +11483,7 @@ instance ITAR_W2_VES(C_Item)
 
 instance ItAr_Jax(C_Item)
 {
-	name = "Tělo válečníka";
+	name = " Warrior's Body " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 15;
@@ -11508,7 +11509,7 @@ func void Equip_BloodArmor()
 		Snd_Play3d(hero,"EQUIP_ARMOR_01");
 		ChechWeightArmor = TRUE;
 		BloodArmorBonus = TRUE;
-		AI_Print("Získal jsi novou schopnost - 'Vysátí síly'!");
+		AI_Print( " You have gained a new ability - 'Power Drain'! " );
 		Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	};
 };
@@ -11528,7 +11529,7 @@ func void Equip_WaterRobe()
 		if(self.guild == GIL_KDW)
 		{
 			WaterRobeBonus = TRUE;
-			AI_Print("Získal jsi novou schopnost - 'Obnova ducha'!");
+			AI_Print( " You have gained a new ability - 'Spirit Restoration'! " );
 			Wld_PlayEffect("SPELLFX_HEALSHRINE",self,self,0,0,0,FALSE);
 		};
 
@@ -11542,14 +11543,14 @@ func void UnEquip_WaterRobe()
 {
 	if(Npc_IsPlayer(self))
 	{
-		WaterRobeBonus = FALSE;
-		MageRobeIsUp = FALSE;
+		WaterRobeBonus = FALSE ;
+		MageRobeIsUp = FALSE ;
 	};
 };
 
 instance ITAR_STTP_01(C_Item)
 {
-	name = "Těžká kroužková zbroj Stína";
+	name = " Shadow Heavy Ring Armor " ;
 	mainflag = ITEM_KAT_ARMOR;
 	flags = ITEM_MISSION;
 	protection[PROT_EDGE] = 115;
@@ -11561,7 +11562,7 @@ instance ITAR_STTP_01(C_Item)
 	cond_atr[2] = ATR_DEXTERITY;
 	cond_value[2] = 175;
 	weight = 2;
-	value = Waffenbonus_10;
+	value = weapon bonus_10;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Diego.3ds";
 	on_equip = equip_chiefarmor_g1;
@@ -11570,7 +11571,7 @@ instance ITAR_STTP_01(C_Item)
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[0] = "Požadovaná obratnost: 175 | Požadovaná výdrž: 250";
+	text[ 0 ] = " Required Dexterity: 175 | Required Stamina: 250 " ;
 	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
 	text[2] = NAME_Prot_Blunt;
@@ -11578,9 +11579,9 @@ instance ITAR_STTP_01(C_Item)
 	text[3] = NAME_Prot_Point;
 	count[3] = protection[PROT_POINT];
 	text[4] = NAME_WieldBonus1H;
-	count[4] = Waffenbonus_10;
+	count[ 4 ] = weapon bonus_10;
 	text[5] = NAME_WieldBowBonus;
-	count[5] = Waffenbonus_10;
+	count[ 5 ] = weapon bonus_10;
 	inv_animate = 0;
 };
 
