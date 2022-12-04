@@ -1,7 +1,8 @@
 
+
 const int Value_SheepFur = 10;
 const int Value_WolfFur = 15;
-const int Value_Keilerfur = 15;
+const  int Value_Keilerfur = 15 ;
 const int Value_IceWolfFur = 20;
 const int Value_ReptileSkin = 20;
 const int Value_WargFur = 60;
@@ -67,7 +68,7 @@ instance ItAt_Addon_BCKopf(C_Item)
 
 instance ItAt_Meatbugflesh(C_Item)
 {
-	name = "Maso ze žravé štěnice";
+	name = " Gluttonous Bug Meat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Meatbugflesh;
@@ -93,7 +94,7 @@ func void Use_Meatbugflesh()
 
 instance ItAt_SheepFur(C_Item)
 {
-	name = "Ovčí kůže";
+	name = " Sheepskin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SheepFur;
@@ -108,7 +109,7 @@ instance ItAt_SheepFur(C_Item)
 
 instance ItAt_RabbitFur(C_Item)
 {
-	name = "Králičí kůže";
+	name = " Rabbit Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 5;
@@ -123,7 +124,7 @@ instance ItAt_RabbitFur(C_Item)
 
 instance ItAt_WolfFur(C_Item)
 {
-	name = "Vlčí kůže";
+	name = " Wolfskin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_WolfFur;
@@ -138,7 +139,7 @@ instance ItAt_WolfFur(C_Item)
 
 instance ItAt_IceWolfFur(C_Item)
 {
-	name = "Kůže ledového vlka";
+	name = " Ice Wolf Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_IceWolfFur;
@@ -153,7 +154,7 @@ instance ItAt_IceWolfFur(C_Item)
 
 instance ItAt_WhitePuma(C_Item)
 {
-	name = "Kůže bílé pumy";
+	name = " White Puma Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_IcePumaFur;
@@ -168,7 +169,7 @@ instance ItAt_WhitePuma(C_Item)
 
 instance ItAt_WhiteTroll(C_Item)
 {
-	name = "Kůže bílého trola";
+	name = " White Troll Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_TrollIceFur;
@@ -183,7 +184,7 @@ instance ItAt_WhiteTroll(C_Item)
 
 instance ItAt_BugMandibles(C_Item)
 {
-	name = "Kusadla polního škůdce";
+	name = " Field Pest Mandibles " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_BugMandibles;
@@ -198,7 +199,7 @@ instance ItAt_BugMandibles(C_Item)
 
 instance ItAt_Claw(C_Item)
 {
-	name = "Drápy";
+	name = " Claws " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Claw;
@@ -213,7 +214,7 @@ instance ItAt_Claw(C_Item)
 
 instance ItAt_OreBugClaw(C_Item)
 {
-	name = "Drápy rudného důlního červa";
+	name = " Claws of the Ore Mining Worm " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_LurkerClaw;
@@ -228,7 +229,7 @@ instance ItAt_OreBugClaw(C_Item)
 
 instance ItAt_LurkerClaw(C_Item)
 {
-	name = "Drápy číhavce";
+	name = " Ambush Claws " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_LurkerClaw;
@@ -258,7 +259,7 @@ instance ItAt_Teeth(C_Item)
 
 instance ItAt_CrawlerMandibles(C_Item)
 {
-	name = "Kusadla důlního červa";
+	name = " Mine Worm 's Jaws " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_CrawlerMandibles;
@@ -271,14 +272,14 @@ instance ItAt_CrawlerMandibles(C_Item)
 
 instance ItAt_SpiderMandibles(C_Item)
 {
-	name = "Kusadla pavouka";
+	name = " Spider Mandibles " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SpiderMandibles;
 	visual = "G3_Item_AnimalTrophy_Teeth_MineCrawler_01.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Obsahují jed...";
+	text[ 4 ] = " They contain poison... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -286,7 +287,7 @@ instance ItAt_SpiderMandibles(C_Item)
 
 instance ItAt_Wing(C_Item)
 {
-	name = "Křídla";
+	name = " Wings " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Wing;
@@ -310,7 +311,7 @@ instance ItAt_Sting(C_Item)
 	visual = "ItAt_Sting.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Žihadlo krvavé mouchy, obsahuje jed...";
+	text[ 4 ] = " Bloodfly sting, contains poison... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -343,13 +344,13 @@ func void Use_Sting()
 
 instance itat_LurkerSkin(C_Item)
 {
-	name = "Kůže plaza";
+	name = " Reptile Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ReptileSkin;
 	visual = "ItAt_LurkerSkin.3DS";
 	material = MAT_LEATHER;
-	description = "Kůže plaza";
+	description = " Reptile Skin " ;
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -358,7 +359,7 @@ instance itat_LurkerSkin(C_Item)
 
 instance ItAt_WargFur(C_Item)
 {
-	name = "Kůže warga";
+	name = " Warga Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_WargFur;
@@ -373,7 +374,7 @@ instance ItAt_WargFur(C_Item)
 
 instance ItAt_OrcDogFur(C_Item)
 {
-	name = "Kůže skřetího psa";
+	name = " Goblin Dog Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_WargFur;
@@ -386,9 +387,9 @@ instance ItAt_OrcDogFur(C_Item)
 	inv_animate = 1;
 };
 
-instance ItAt_Addon_KeilerFur(C_Item)
+instance ItAt_Addon_KeilerFur (C_Item)
 {
-	name = "Kůže divočáka";
+	name = " Boar Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Keilerfur;
@@ -403,7 +404,7 @@ instance ItAt_Addon_KeilerFur(C_Item)
 
 instance ItAt_DrgSnapperHorn(C_Item)
 {
-	name = "Roh dračího chňapavce";
+	name = " Horn of the Dragon Snapper " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DrgSnapperHorn;
@@ -418,7 +419,7 @@ instance ItAt_DrgSnapperHorn(C_Item)
 
 instance ItAt_CrawlerPlate(C_Item)
 {
-	name = "Krunýř důlního červa";
+	name = " Mine Worm Carapace " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_CrawlerPlate;
@@ -433,7 +434,7 @@ instance ItAt_CrawlerPlate(C_Item)
 
 instance ItAt_ShadowFur(C_Item)
 {
-	name = "Kůže stínové šelmy";
+	name = " Shadow Beast Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ShadowFur;
@@ -448,7 +449,7 @@ instance ItAt_ShadowFur(C_Item)
 
 instance ItAt_SharkSkin(C_Item)
 {
-	name = "Kůže močálového žraloka";
+	name = " Swamp Shark Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SharkSkin;
@@ -463,7 +464,7 @@ instance ItAt_SharkSkin(C_Item)
 
 instance ItAt_TrollFur(C_Item)
 {
-	name = "Trolí kůže";
+	name = " Trollskin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_TrollFur;
@@ -478,7 +479,7 @@ instance ItAt_TrollFur(C_Item)
 
 instance ItAt_TrollBlackFur(C_Item)
 {
-	name = "Kůže černého trola";
+	name = " Black Troll Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_TrollBlackFur;
@@ -493,14 +494,14 @@ instance ItAt_TrollBlackFur(C_Item)
 
 instance ItAt_CaveBlackFurTroll(C_Item)
 {
-	name = "Kůže jeskynního černého trola";
+	name = " Black Cave Troll Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1000;
 	visual = "ItAt_TrollCaveBlackFur_New.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -508,7 +509,7 @@ instance ItAt_CaveBlackFurTroll(C_Item)
 
 instance ItAt_WaranFiretongue(C_Item)
 {
-	name = "Ohnivý jazyk";
+	name = " Tongue of Fire " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_WaranFiretongue;
@@ -529,13 +530,13 @@ instance ItAt_TrollPoisonTongue(C_Item)
 	visual = "ItAt_WaranFiretongue.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Celý jazyk je nasáklý jedovatými sekrety...";
+	text[ 4 ] = " The whole tongue is soaked in poisonous secretions... " ;
 	inv_animate = 1;
 };
 
 instance ItAt_ShadowHorn(C_Item)
 {
-	name = "Roh stínové šelmy";
+	name = " Shadow Beast Horn " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_ShadowHorn;
@@ -550,7 +551,7 @@ instance ItAt_ShadowHorn(C_Item)
 
 instance ItAt_SharkTeeth(C_Item)
 {
-	name = "Zub močálového žraloka";
+	name = " Swamp Shark's Tooth " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SharkTeeth;
@@ -565,7 +566,7 @@ instance ItAt_SharkTeeth(C_Item)
 
 instance ItAt_DesertSharkTeeth(C_Item)
 {
-	name = "Zub písečného červa";
+	name = " Sandworm Tooth " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DesertSharkTeeth;
@@ -580,7 +581,7 @@ instance ItAt_DesertSharkTeeth(C_Item)
 
 instance ItAt_TrollTooth(C_Item)
 {
-	name = "Trolí tesák";
+	name = " Troll Fang " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_TrollTooth;
@@ -590,13 +591,13 @@ instance ItAt_TrollTooth(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItAt_StoneGolemHeart(C_Item)
 {
-	name = "Srdce kamenného golema";
+	name = " Stone Golem Heart " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_StoneGolemHeart;
@@ -604,7 +605,7 @@ instance ItAt_StoneGolemHeart(C_Item)
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[3] = "Zvyšuje ochranu proti fyzickému poškození o:";
+	text[ 3 ] = " Increases protection against physical damage by: " ;
 	count[3] = 50;
 	text[4] = NAME_Time_Done;
 	count[4] = 5;
@@ -631,7 +632,7 @@ func void Use_ItAt_StoneGolemHeart()
 
 instance ItAt_FireGolemHeart(C_Item)
 {
-	name = "Srdce ohnivého golema";
+	name = " Heart of the Fire Golem " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FireGolemHeart;
@@ -639,7 +640,7 @@ instance ItAt_FireGolemHeart(C_Item)
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[3] = "Zvyšuje ochranu proti ohni o:";
+	text[ 3 ] = " Increases fire protection by: " ;
 	count[3] = 25;
 	text[4] = NAME_Time_Done;
 	count[4] = 5;
@@ -666,7 +667,7 @@ func void Use_ItAt_FireGolemHeart()
 
 instance ItAt_IceGolemHeart(C_Item)
 {
-	name = "Srdce ledového golema";
+	name = " Ice Golem Heart " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_IceGolemHeart;
@@ -674,7 +675,7 @@ instance ItAt_IceGolemHeart(C_Item)
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[3] = "Zvyšuje ochranu proti magii o:";
+	text[ 3 ] = " Increases protection against magic by: " ;
 	count[3] = 15;
 	text[4] = NAME_Time_Done;
 	count[4] = 5;
@@ -701,7 +702,7 @@ func void Use_ItAt_IceGolemHeart()
 
 instance ItAt_SwampGolemHeart(C_Item)
 {
-	name = "Srdce bažinného golema";
+	name = " Heart of the Swamp Golem " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_SWAMPGOLEMHEART;
@@ -709,7 +710,7 @@ instance ItAt_SwampGolemHeart(C_Item)
 	material = MAT_STONE;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[3] = "Zvyšuje odolnost o:";
+	text[ 3 ] = " Increases resistance by: " ;
 	count[3] = 10;
 	text[4] = NAME_Time_Done;
 	count[4] = 5;
@@ -751,7 +752,7 @@ instance ItAt_GoblinBone(C_Item)
 
 instance ItAt_SkeletonBone(C_Item)
 {
-	name = "Kost z kostlivce";
+	name = " Skeleton Bone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SkeletonBone;
@@ -781,7 +782,7 @@ instance ITAT_SKELETONBONEALEF(C_Item)
 
 instance ItAt_DemonHeart(C_Item)
 {
-	name = "Srdce démona";
+	name = " Demon Heart " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DemonHeart;
@@ -796,19 +797,19 @@ instance ItAt_DemonHeart(C_Item)
 
 instance ItAt_KratukHeart(C_Item)
 {
-	name = "Srdce strážce Vakhanských síní";
+	name = " Heart of the Guardian of the Vakhan Halls " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
 	visual = "ITAT_DEMONHEART_SKY.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Vyzařuje magickou energii neuvěřitelné síly...";
-	text[4] = "Srdce prastarého strážce Vakhanských síní...";
+	text[ 4 ] = " Emits magical energy of incredible power... " ;
+	text[ 4 ] = " Heart of the Ancient Guardian of the Vakhan Halls... " ;
 	inv_animate = 1;
 };
 
-instance ITAT_LUZIANHEART(C_Item)
+instance ITAT_LUZIANHEART (C_Item);
 {
 	name = "Lucianovo srdce";
 	mainflag = ITEM_KAT_NONE;
@@ -817,7 +818,7 @@ instance ITAT_LUZIANHEART(C_Item)
 	visual = "ITAT_DEMONHEART_SKY.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce prastarého démona Luciana...";
+	text[ 4 ] = " Heart of the Ancient Demon Lucian... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -825,30 +826,30 @@ instance ITAT_LUZIANHEART(C_Item)
 
 instance ItAt_UndeadDragonSoulStone(C_Item)
 {
-	name = "Kámen s duší nemrtvého draka";
+	name = " Undead Dragon Soul Stone " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_UndeadDragonSoulStone;
 	visual = "ItAt_UndeadDragonSoulStone.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Kámen s duší mocného Beliarova vtělení...";
+	text[ 4 ] = " A stone with the soul of the mighty Beliar's incarnation... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItAt_IcedragonHeart(C_Item)
 {
-	name = "Srdce ledového draka";
+	name = " Heart of the Ice Dragon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_IcedragonHeart;
 	visual = "ItAt_IcedragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného ledového draka Finkregha...";
+	text[ 4 ] = " The Heart of the Mighty Ice Dragon Finkregh... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -856,14 +857,14 @@ instance ItAt_IcedragonHeart(C_Item)
 
 instance ItAt_RockdragonHeart(C_Item)
 {
-	name = "Srdce kamenného draka";
+	name = " Heart of the Stone Dragon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_RockdragonHeart;
 	visual = "ItAt_RockdragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného kamenného draka Pedrakhana...";
+	text[ 4 ] = " The Heart of the Mighty Stone Dragon Pedrakhan... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -871,14 +872,14 @@ instance ItAt_RockdragonHeart(C_Item)
 
 instance ItAt_SwampdragonHeart(C_Item)
 {
-	name = "Srdce bažinného draka";
+	name = " Heart of the Swamp Dragon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_SwampdragonHeart;
 	visual = "ItAt_SwampdragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného bažinného draka Pandrodora...";
+	text[ 4 ] = " Heart of the mighty swamp dragon Pandrodor... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -886,14 +887,14 @@ instance ItAt_SwampdragonHeart(C_Item)
 
 instance ItAt_FiredragonHeart(C_Item)
 {
-	name = "Srdce ohnivého draka";
+	name = " Heart of the Fire Dragon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FiredragonHeart;
 	visual = "ItAt_FiredragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného ohnivého draka Feomathara...";
+	text[ 4 ] = " The Heart of the Mighty Fire Dragon Feomathar... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -901,14 +902,14 @@ instance ItAt_FiredragonHeart(C_Item)
 
 instance ItAt_DragonHeart(C_Item)
 {
-	name = "Dračí srdce";
+	name = " Dragon Heart " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
 	visual = "ItAt_Heart_03.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného draka...";
+	text[ 4 ] = " Heart of the Mighty Dragon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -916,14 +917,14 @@ instance ItAt_DragonHeart(C_Item)
 
 instance ITAT_REDDRAGONHEART(C_Item)
 {
-	name = "Srdce rudého draka";
+	name = " Heart of the Red Dragon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FiredragonHeart;
 	visual = "ItAt_ReddragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného rudého draka...";
+	text[ 4 ] = " Heart of the Mighty Red Dragon... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -931,14 +932,14 @@ instance ITAT_REDDRAGONHEART(C_Item)
 
 instance ITAT_BLACKDRAGONHEART(C_Item)
 {
-	name = "Srdce temného draka";
+	name = " Heart of the Dark Dragon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FiredragonHeart;
 	visual = "ItAt_DemonDragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného černého draka Azgalora...";
+	text[ 4 ] = " Heart of the mighty black dragon Azgalor... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -946,29 +947,29 @@ instance ITAT_BLACKDRAGONHEART(C_Item)
 
 instance ItAt_UzdragonHeart(C_Item)
 {
-	name = "Srdce černého dračího strážce";
+	name = " Heart of the Black Dragon Guardian " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FiredragonHeart;
 	visual = "ItAt_BlackDragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného dračího strážce...";
+	text[ 4 ] = " Heart of a Mighty Dragon Guardian... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITAT_GOLDDRAGONHEART(C_Item)
+instance ITAT_GOLDDRAGONHEART (C_Item)
 {
-	name = "Srdce zlatého draka";
+	name = " Heart of the Golden Dragon " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FiredragonHeart;
 	visual = "ItAt_GoldDragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Srdce mocného zlatého draka Ashtara...";
+	text[ 4 ] = " The Heart of the Mighty Golden Dragon Ashtar... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -976,7 +977,7 @@ instance ITAT_GOLDDRAGONHEART(C_Item)
 
 instance ItAt_DragonBlood(C_Item)
 {
-	name = "Dračí krev";
+	name = " Dragon's Blood " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DragonBlood;
@@ -986,13 +987,13 @@ instance ItAt_DragonBlood(C_Item)
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItAt_DragonScale(C_Item)
 {
-	name = "Dračí šupiny";
+	name = " Dragon Scales " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_DragonScale;
@@ -1007,7 +1008,7 @@ instance ItAt_DragonScale(C_Item)
 
 instance ITAT_PUMAFUR(C_Item)
 {
-	name = "Kůže černé pumy";
+	name = " Black Puma Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_PumaFur;
@@ -1022,7 +1023,7 @@ instance ITAT_PUMAFUR(C_Item)
 
 instance ITAT_SLOKERSFUR(C_Item)
 {
-	name = "Kůže slokerse";
+	name = " Slokers Skin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 700;
@@ -1037,7 +1038,7 @@ instance ITAT_SLOKERSFUR(C_Item)
 
 instance ITAT_CRAWLERQUEEN(C_Item)
 {
-	name = "Vejce důlního červa";
+	name = " Mining Worm Egg " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 100;
@@ -1052,7 +1053,7 @@ instance ITAT_CRAWLERQUEEN(C_Item)
 
 instance ItAt_BlackSnapperLiver(C_Item)
 {
-	name = "Játra černého chňapavce";
+	name = " Black Snapper Liver " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 20;
@@ -1076,9 +1077,9 @@ func void Use_ItAt_BlackSnapperLiver()
 	};
 };
 
-instance ITAT_MEATBUGFLESH_GEBRATEN(C_Item)
+instance ITAT_MEATBUGFLESH_ROILED (C_Item)
 {
-	name = "Smažené maso ze žravé štěnice";
+	name = " Gluttony Bug Fried Meat " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_Meatbugflesh * 2;
@@ -1113,7 +1114,7 @@ func void use_meatbugflesh_gebraten()
 
 instance ITFO_FISH_GEBRATEN(C_Item)
 {
-	name = "Smažená ryba";
+	name = " Fried Fish " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_FishSoup;
@@ -1148,7 +1149,7 @@ func void use_fish_gebraten()
 
 instance ITFO_PILZSUPPE(C_Item)
 {
-	name = "Houbová polévka";
+	name = " Mushroom Soup " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 30;
@@ -1171,7 +1172,7 @@ func void use_pilzsuppe()
 	if(Npc_IsPlayer(self))
 	{
 		Npc_ChangeAttribute(self,ATR_HITPOINTS,60);
-		PI_BONUS += 1;
+		PI_BONUS  +=  1 ;
 
 		if(PI_BONUS == 20)
 		{
@@ -1192,7 +1193,7 @@ func void use_pilzsuppe()
 
 instance ITFO_FLEISCHWANZENRAGOUT(C_Item)
 {
-	name = "Masové ragú";
+	name = " Meat ragout " ;
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 40;
@@ -1235,14 +1236,14 @@ func void use_fwragout()
 
 instance ITAT_SHEEPGRIMGASH(C_Item)
 {
-	name = "Ovčí kůže";
+	name = " Sheepskin " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
 	visual = "ItAt_SheepFur.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Kůže ovce, kterou někdo ukradl Pepemu...";
+	text[ 4 ] = " Sheepskin that someone stole from Pepe... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1250,21 +1251,21 @@ instance ITAT_SHEEPGRIMGASH(C_Item)
 
 instance ItAt_OlderHead(C_Item)
 {
-	name = "Hlava stařešiny";
+	name = " Head of the Elder " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "Orc_HeadWarrior.MMS";
 	material = MAT_LEATHER;
 	description = name;
-	text[4] = "Hlava skřetího stařešiny...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 4 ] = " Goblin Elder's Head... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
-	inv_roty = 180;
+	inv_roty = 180 ;
 };
 
 instance ItAt_SpiderEgg(C_Item)
 {
-	name = "Pavoučí vejce";
+	name = " Spider Egg " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 150;
@@ -1279,29 +1280,29 @@ instance ItAt_SpiderEgg(C_Item)
 
 instance ItAt_DemonSkull(C_Item)
 {
-	name = "Lebka démona";
+	name = " Demon Skull " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 100;
 	visual = "ITAT_DEMONSKULL.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[3] = "Lebka mocného démona...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 3 ] = " Skull of a powerful demon... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
-	inv_roty = 180;
+	inv_roty = 180 ;
 	inv_animate = 1;
 };
 
-//--------------------------redkiye trofei----------------------------
+// --------------------redkiye trophies-------------------- --------
 
 func void B_ClearUseTrophy()
 {
 	Trophy_STONEPUMAPIECE = FALSE;
 	Trophy_WhiteTrollSkull = FALSE;
-	Trophy_Skalozub = FALSE;
+	Trophy_Skalozub = FALSE ;
 	Trophy_DragonSkull = FALSE;
-	Trophy_SERDCEGARPII = FALSE;
+	Trophy_SERDCEGARPII = FALSE ;
 	Trophy_LURKERLEADER = FALSE;
 	Trophy_MuritanTooth = FALSE;
 	Trophy_CaracustPlate = FALSE;
@@ -1314,7 +1315,7 @@ func void B_ClearUseTrophy()
 
 instance ItAt_XtoneClaw(C_Item)
 {
-	name = "Kamenný dráp";
+	name = " Stone Claw " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION |ITEM_MULTI;
 	value = 150;
@@ -1325,15 +1326,15 @@ instance ItAt_XtoneClaw(C_Item)
 	description = name;
 	text[1] = NAME_Prot_Point;
 	count[1] = 5;
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ItUt_StoneClaw(C_Item)
+instance ItUt_StoneClaw (C_Item);
 {
-	name = "Kamenný dráp";
+	name = " Stone Claw " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	visual = "ItTr_StoneClaw.3DS";
@@ -1364,7 +1365,7 @@ func void Use_ItAt_StoneClaw()
 
 instance ItAt_DlackTeeth(C_Item)
 {
-	name = "Černý zub";
+	name = " Black Tooth " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION |ITEM_MULTI;
 	value = 250;
@@ -1375,7 +1376,7 @@ instance ItAt_DlackTeeth(C_Item)
 	description = name;
 	text[1] = NAME_Prot_Phis;
 	count[1] = 5;
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1383,7 +1384,7 @@ instance ItAt_DlackTeeth(C_Item)
 
 instance ItUt_BlackTeeth(C_Item)
 {
-	name = "Černý zub";
+	name = " Black Tooth " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_BlackTeeth.3DS";
@@ -1412,9 +1413,9 @@ func void Use_ItAt_BlackTeeth()
 	};
 };
 
-instance ItAt_CurratIshi(C_Item)
+instance ItAt_CurratIshi (C_Item)
 {
-	name = "Zkamenělý páteřní osten";
+	name = " Fossilized Spinal Spine " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
@@ -1425,15 +1426,15 @@ instance ItAt_CurratIshi(C_Item)
 	description = name;
 	text[1] = NAME_Prot_Fire;
 	count[1] = 5;
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ItUt_IshiCurrat(C_Item)
+instance ItUt_IshiCurrat (C_Item) .
 {
-	name = "Zkamenělý páteřní osten";
+	name = " Fossilized Spinal Spine " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_IshiCurrat.3DS";
@@ -1475,7 +1476,7 @@ instance ItAt_GturTrollHorn(C_Item)
 	description = name;
 	text[1] = NAME_WieldBonus2H;
 	count[1] = 5;
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1514,7 +1515,7 @@ func void Use_ItAt_UturTrollHorn()
 
 instance ItAt_ZaracustPlate(C_Item)
 {
-	name = "Plát z krunýře Karakusta";
+	name = " Karakusta Carapace Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
@@ -1527,8 +1528,8 @@ instance ItAt_ZaracustPlate(C_Item)
 	count[1] = 15;
 	text[2] = NAME_Prot_Point;
 	count[2] = 15;
-	text[3] = "Obrovský plát z krunýře krále důlních červů...";
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 3 ] = " A huge plate from the mineworm king's carapace... " ;
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1536,7 +1537,7 @@ instance ItAt_ZaracustPlate(C_Item)
 
 instance ItUt_CaracustPlate(C_Item)
 {
-	name = "Plát z krunýře Karakusta";
+	name = " Karakusta Carapace Plate " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_CaracustPlate.3DS";
@@ -1567,7 +1568,7 @@ func void Use_ItAt_CaracustPlate()
 
 instance ItAt_BuritanTooth(C_Item)
 {
-	name = "Jedovatý tesák Muritana";
+	name = " Poisonous Fang of Muritan " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 750;
@@ -1578,17 +1579,17 @@ instance ItAt_BuritanTooth(C_Item)
 	description = name;
 	text[1] = NAME_Damage_Poison;
 	count[1] = 50;
-	text[3] = "V tesáku se nashromáždil jed...";
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 3 ] = " Poison has accumulated in the fang... " ;
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItLs_BeltCandle(C_Item)
 {
-	name = "Svítící lucerna";
+	name = " Shining Lantern " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 200;
@@ -1597,16 +1598,16 @@ instance ItLs_BeltCandle(C_Item)
 	scemeName = "MAP";
 	on_state[0] = Use_ItLs_BeltCandle;
 	description = name;
-	text[4] = "Můžu si ji nasadit...";
+	text[ 4 ] = " I can put it on... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItUt_FireBeltCandle(C_Item)
 {
-	name = "Svítící lucerna";
+	name = " Shining Lantern " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItMi_WarCandle_01.3DS";
@@ -1637,7 +1638,7 @@ func void Use_ItLs_BeltCandle()
 
 instance ItAt_PW_MuritanTooth(C_Item)
 {
-	name = "Jedovatý tesák Muritana";
+	name = " Poisonous Fang of Muritan " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 750;
@@ -1648,23 +1649,23 @@ instance ItAt_PW_MuritanTooth(C_Item)
 	description = name;
 	text[1] = NAME_Damage_Poison;
 	count[1] = 50;
-	text[3] = "V tesáku se nashromáždil jed...";
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 3 ] = " Poison has accumulated in the fang... " ;
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
-instance ItUt_MuritanTooth(C_Item)
+instance It_Item_Tooth ( C_Item );
 {
-	name = "Jedovatý tesák Muritana";
+	name = " Poisonous Fang of Muritan " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_MuritanTooth.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 };
 
 func void Use_ItAt_MuritanTooth()
@@ -1690,7 +1691,7 @@ func void Use_ItAt_MuritanTooth()
 
 instance ITAT_LEADERLURKER(C_Item)
 {
-	name = "Drápy Raboglava";
+	name = " Claws of Raboglava " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 200;
@@ -1701,15 +1702,15 @@ instance ITAT_LEADERLURKER(C_Item)
 	description = name;
 	text[1] = NAME_WieldBonus1H;
 	count[1] = 5;
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITUT_LURKERLEADER(C_Item)
+instance ITUT_LURKERLEADER (C_Item);
 {
-	name = "Drápy Raboglava";
+	name = " Claws of Raboglava " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_LURKERLEADER.3DS";
@@ -1738,7 +1739,7 @@ func void Use_ItAt_LURKERLEADER()
 	};
 };
 
-instance ITAT_GARPIISERDCE(C_Item)
+instance ITAT_GARPIISERDCE (C_Item)
 {
 	name = "Rukvayino srdce";
 	mainflag = ITEM_MISSION;
@@ -1747,18 +1748,18 @@ instance ITAT_GARPIISERDCE(C_Item)
 	visual = "ItAt_Heart_01.3DS";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	on_state[0] = Use_ITAT_SERDCEGARPII;
+	on_state[ 0 ] = Use_ITAT_SERDCEGARPII;
 	description = name;
 	text[1] = NAME_Prot_Magic;
 	count[1] = 5;
-	text[3] = "Srdce královny harpyjí...";
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 3 ] = " Heart of the Harpy Queen... " ;
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
 };
 
-instance ITUT_SERDCEGARPII(C_Item)
+instance ITUT_SERDCEGARPII (C_Item)
 {
 	name = "Rukvayino srdce";
 	mainflag = ITEM_MISSION;
@@ -1772,26 +1773,26 @@ func void Use_ItAt_SERDCEGARPII()
 {
 	if(Npc_IsPlayer(self))
 	{
-		if(Trophy_SERDCEGARPII == FALSE)
+		if (Trophy_SERDCEGARPII ==  FALSE )
 		{
 			B_ClearUseTrophy();
 			ActivateZSSlot(self,"BIP01 PELVIS");
 			Ext_RemoveFromSlot(self,"BIP01 PELVIS");	
-			Ext_PutInSlot(self,"BIP01 PELVIS",ItUt_SERDCEGARPII);
-			Npc_RemoveInvItems(self,ItUt_SERDCEGARPII,Npc_HasItems(self,ItUt_SERDCEGARPII));
+			Ext_PutInSlot(self, " BIP01 PELVIS " , ItUt_SERDCEGARPII);
+			Npc_RemoveInvItems(self,ItUt_SERVICEGUARD,Npc_HasItems(self,ItUt_SERVICEGUARD));
 			Trophy_SERDCEGARPII = TRUE;
 		}
 		else
 		{
 			Ext_RemoveFromSlot(self,"BIP01 PELVIS");
-			Trophy_SERDCEGARPII = FALSE;
+			Trophy_SERDCEGARPII = FALSE ;
 		};
 	};
 };
 
 instance ItAt_ZubSkalo(C_Item)
 {
-	name = "Tesák Skalozuba";
+	name = " Fang of Rocktooth " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 400;
@@ -1802,22 +1803,22 @@ instance ItAt_ZubSkalo(C_Item)
 	description = name;
 	text[1] = NAME_TROPHY_STAMINA;
 	count[1] = 2;
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 	inv_animate = 1;
 };
 
-instance ItUt_Skalozub(C_Item)
+instance ItUt_ScaleZub (C_Item);
 {
-	name = "Tesák Skalozuba";
+	name = " Fang of Rocktooth " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_Skalozub.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD ;
 };
 
 func void Use_ItAt_Skalozub()
@@ -1836,14 +1837,14 @@ func void Use_ItAt_Skalozub()
 		else
 		{
 			Ext_RemoveFromSlot(self,"BIP01 PELVIS");
-			Trophy_Skalozub = FALSE;
+			Trophy_Skalozub = FALSE ;
 		};
 	};
 };
 
 instance ITMI_UTONEPUMAPIECE(C_Item)
 {
-	name = "Kamenné oko";
+	name = " Stone Eye " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
@@ -1854,23 +1855,23 @@ instance ITMI_UTONEPUMAPIECE(C_Item)
 	description = name;
 	text[1] = NAME_WieldBowBonus;
 	count[1] = 5;
-	text[3] = "Oko kamenné pumy, kterou jsem skolil...";
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 3 ] = " The eye of the stone puma I felled... " ;
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 	inv_animate = 1;
 };
 
 instance ItUt_STONEPUMAPIECE(C_Item)
 {
-	name = "Kamenné oko";
+	name = " Stone Eye " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_STONEPUMAPIECE.3ds";
 	material = MAT_STONE;
 	description = name;
-	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD ;
 };
 
 func void Use_ItAt_STONEPUMAPIECE()
@@ -1896,7 +1897,7 @@ func void Use_ItAt_STONEPUMAPIECE()
 
 instance ItAt_XragonSkull(C_Item)
 {
-	name = "Dračí lebka";
+	name = " Dragon Skull " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 2500;
@@ -1905,33 +1906,33 @@ instance ItAt_XragonSkull(C_Item)
 	scemeName = "MAP";
 	on_state[0] = Use_ItAt_DragonSkull;
 	description = name;
-	text[0] = NAME_RegenHealthSecLong;
+	text[ 0 ] = NAME_RegenHealthSecLong;
 	count[0] = 1;
-	text[1] = NAME_RegenManaSecLong;
+	text[ 1 ] = NAME_RegenManaSecLong;
 	count[1] = 1;
 	text[2] = NAME_RegenStaminaSecLong;
 	count[2] = 1;
-	text[3] = "Lebka mocného draka...";
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
+	text[ 3 ] = " Mighty Dragon Skull... " ;
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
-	inv_roty = 180;
+	inv_roty = 180 ;
 	inv_animate = 1;
 };
 
-instance ItUt_DragonSkull(C_Item)
+instance ItUt_DragonSkull (C_Item);
 {
-	name = "Dračí lebka";
+	name = " Dragon Skull " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_DragonSkull.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
-	inv_roty = 180;
+	inv_roty = 180 ;
 };
 
 func void Use_ItAt_DragonSkull()
@@ -1966,15 +1967,15 @@ instance ItAt_HeadUrTrall(C_Item)
 	on_state[0] = Use_ItAt_UrTrallHead;
 	description = name;
 	text[1] = NAME_DamageOrcBonus;
-	text[3] = "Hlava mocného vůdce skřetů...";
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 3 ] = " Head of a mighty goblin leader... " ;
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
-	inv_roty = 180;
+	inv_roty = 180 ;
 	inv_animate = 1;
 };
 
-instance ItUt_UrTrallHead(C_Item)
+instance ItUt_UrTrallHead (C_Item);
 {
 	name = "Hlava Ur-Thralla";
 	mainflag = ITEM_KAT_NONE;
@@ -2007,7 +2008,7 @@ func void Use_ItAt_UrTrallHead()
 
 instance ItAt_SkullWhiteTroll(C_Item)
 {
-	name = "Lebka bílého trola";
+	name = " White Troll Skull " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1500;
@@ -2018,17 +2019,17 @@ instance ItAt_SkullWhiteTroll(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_HpMax;
 	count[1] = 200;
-	text[3] = "Lebka mocného bílého trola...";
-	text[4] = "Velice hodnotná a mimořádně vzácná lovecká trofej...";
-	inv_rotz = INVCAM_Z_RING_STANDARD;
+	text[ 3 ] = " Skull of a mighty white troll... " ;
+	text[ 4 ] = " A very valuable and extremely rare hunting trophy... " ;
+	inv_snot = INVCAM_Z_RING_STANDARD ;
 	inv_rotx = INVCAM_X_RING_STANDARD;
-	inv_roty = 180;
+	inv_roty = 180 ;
 	inv_animate = 1;
 };
 
 instance ItUt_WhiteTrollSkull(C_Item)
 {
-	name = "Lebka bílého trola";
+	name = " White Troll Skull " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	visual = "ItTr_WhiteTrollSkull.3DS";
