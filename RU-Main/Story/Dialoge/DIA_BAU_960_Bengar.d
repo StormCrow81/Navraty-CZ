@@ -125,7 +125,7 @@ func void DIA_Addon_Bengar_MissingPeople_Info()
 	AI_Output(other,self, " DIA_Addon_Bengar_MissingPeople_15_00 " );	// Has anything unusual happened here lately?
 	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_10_01 " );	// Many unusual things have been happening in recent days.
 	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_10_02 " );	// But the most unusual thing was the disappearance of Pardos.
-	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_10_03 " );	// This is one of my workers. You see, he is not one of those who are able at one fine moment to drop everything and run away in an unknown direction.
+	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_10_03 " );	// Pardos is one of my best workers. He's not the type to go missing for no reason.
 	Log_CreateTopic(TOPIC_Addon_MissingPeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_MissingPeople,LOG_Running);
 	B_LogEntry(TOPIC_Addon_MissingPeople, " Farmer Bengar has lost his worker, Pardos. " );
@@ -142,10 +142,10 @@ func void DIA_Addon_Bengar_MissingPeople_was()
 {
 	AI_Output(other,self, " DIA_Addon_Bengar_MissingPeople_was_15_00 " );	// What exactly about his disappearance seemed strange to you?
 	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_was_10_01 " );	// Pardos is rather cowardly. The farthest distance he went from the farm was the edge of the outfield.
-	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_was_10_02 " );	// He's shaking in fear even at the sight of a meat bug.
-	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_was_10_03 " );	// I know they look pretty nasty, but consider them dangerous...
-	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_was_10_04 " );	// (disgusted) They also say someone eats them. Abomination.
-	AI_Output(other,self, " DIA_Addon_Bengar_MissingPeople_was_15_05 " );	// A person gets used to everything.
+	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_was_10_02 " );	// He pisses himself at the sight of a meat bug.
+	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_was_10_03 " );	// I know they look pretty nasty, but to consider them dangerous...
+	AI_Output(self,other, " DIA_Addon_Bengar_MissingPeople_was_10_04 " );	// They say you can eat them... Disgusting!
+	AI_Output(other,self, " DIA_Addon_Bengar_MissingPeople_was_15_05 " );	// A person can get used to anything.
 };
 
 func void DIA_Addon_Bengar_MissingPeople_voll()
@@ -192,7 +192,7 @@ func void DIA_Addon_Bengar_ReturnPardos_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Bengar_ReturnPardos_15_00 " );	// Pardos is back?
 	AI_Output(self,other, " DIA_Addon_Bengar_ReturnPardos_10_01 " );	// Yes, he is in the house, resting. Thanks for all...
-	AI_Output(other,self,"DIA_Addon_Bengar_ReturnPardos_15_02");	//Не стоит.
+	AI_Output(other,self,"DIA_Addon_Bengar_ReturnPardos_15_02");	//Don't mention it.
 	AI_Output(self,other, " DIA_Addon_Bengar_ReturnPardos_10_03 " );	// I'd like to reward you, but I don't have anything...
 	AI_Output(other,self, " DIA_Addon_Bengar_ReturnPardos_15_04 " );	// Forget it.
 	B_GivePlayerXP(XP_Ambient);
@@ -220,9 +220,9 @@ func int DIA_Addon_Bengar_FernandosWeapons_Condition()
 func void DIA_Addon_Bengar_FernandosWeapons_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Bengar_FernandosWeapons_15_00 " );	// When the bandits passed through here, did they have weapons?
-	AI_Output(self,other, " DIA_Addon_Bengar_FernandosWeapons_10_01 " );	// What a stupid question? When did the bandits go without weapons?
-	AI_Output(other,self, " DIA_Addon_Bengar_FernandosWeapons_15_02 " );	// I mean, A LOT of weapons. Big cargo.
-	AI_Output(self,other, " DIA_Addon_Bengar_FernandosWeapons_10_03 " );	// Ah, I understand. Yes, after you said this, I remember that there were indeed a lot of weapons.
+	AI_Output(self,other, " DIA_Addon_Bengar_FernandosWeapons_10_01 " );	// What a stupid question. since when do bandits go without weapons?
+	AI_Output(other,self, " DIA_Addon_Bengar_FernandosWeapons_15_02 " );	// I mean, A LOT of weapons. An unusual amount.
+	AI_Output(self,other, " DIA_Addon_Bengar_FernandosWeapons_10_03 " );	// Ah, I understand. Yes, now that you mention it, they were packing a lot of hardware.
 	AI_Output(self,other, " DIA_Addon_Bengar_FernandosWeapons_10_04 " );	// Some were in barrels, some were in sacks, and some they carried on a cart.
 	B_GivePlayerXP(XP_Ambient);
 };
@@ -249,11 +249,11 @@ func int DIA_Bengar_REBEL_Condition()
 func void DIA_Bengar_REBEL_Info()
 {
 	AI_Output(other,self, " DIA_Bengar_REBELLIEREN_15_00 " );	// What do you think of Onar?
-	AI_Output(self,other, " DIA_Bengar_REBELLIEREN_10_01 " );	// It's a greedy bastard. We'll all be hanged because of him.
+	AI_Output(self,other, " DIA_Bengar_REBELLIEREN_10_01 " );	// He's a greedy bastard. We'll all be hanged because of him.
 	AI_Output(self,other, " DIA_Bengar_REBELLIEREN_10_02 " );	// One day paladins from the city will come and make us small farmers pay for everything he's done.
 	AI_Output(self,other, " DIA_Bengar_REBELLIEREN_10_03 " );	// But I don't have a choice. The militia only come here to collect taxes, not to protect my farm.
 	AI_Output(self,other, " DIA_Bengar_REBELLIEREN_10_04 " );	// If I show loyalty to the city, I'll be all alone.
-	AI_Output(self,other, " DIA_Bengar_REBELLIEREN_10_05 " );	// And so, Onar at least sometimes sends mercenaries to see how we live here.
+	AI_Output(self,other, " DIA_Bengar_REBELLIEREN_10_05 " );	// At least Onar occasionally sends mercenaries to see how we're getting along. 
 };
 
 
@@ -278,7 +278,7 @@ func int DIA_Bengar_PALADINE_Condition()
 func void DIA_Bengar_PALADINE_Info()
 {
 	AI_Output(other,self, " DIA_Bengar_PALADINE_15_00 " );	// What do you have against the royal troops?
-	AI_Output(self,other, " DIA_Bengar_PALADINE_10_01 " );	// This is obvious. Since the paladins arrived in the city, no improvement has been seen. Rather the opposite.
+	AI_Output(self,other, " DIA_Bengar_PALADINE_10_01 " );	// Isn't it obvious. Since the paladins arrived in the city, no improvement has been seen. Rather the opposite.
 	AI_Output(self,other, " DIA_Bengar_PALADINE_10_02 " );	// Now that damn militia is showing up even more often. They steal everything they can and the paladins do nothing about it.
 	AI_Output(self,other, " DIA_Bengar_PALADINE_10_03 " );	// The only paladins I've ever seen are those two guards at the Pass.
 	AI_Output(self,other, " DIA_Bengar_PALADINE_10_04 " );	// They won't move even if the militia massacres us all.
@@ -291,7 +291,7 @@ instance DIA_Bengar_PASS(C_Info)
 	nr = 10;
 	condition = DIA_Bengar_PASS_Condition;
 	information = DIA_Bengar_PASS_Info;
-	description = " At the Aisle? " ;
+	description = " At the Passage? " ;
 };
 
 
@@ -307,7 +307,7 @@ func void DIA_Bengar_PASS_Info()
 {
 	AI_Output(other, self, " DIA_Bengar_PASS_15_00 " );	// At the Passage?
 	AI_Output(self,other, " DIA_Bengar_PASS_10_01 " );	// Yes. The passage to the old Valley of Mines is at the waterfall at the other end of this plateau.
-	AI_Output(self,other, " DIA_Bengar_PASS_10_02 " );	// Ask Malak about him. He goes there a couple of times a week.
+	AI_Output(self,other, " DIA_Bengar_PASS_10_02 " );	// Ask Malak about it. He goes there a couple of times a week.
 };
 
 
@@ -335,14 +335,14 @@ func void DIA_Bengar_MILIZ_Info()
 	AI_Output(other,self, " DIA_Bengar_MILIZ_15_00 " );	// I have to solve your militia problem.
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other, " DIA_Bengar_MILIZ_10_01 " );	// What?! I told Onar to send his MERCENES.
+		AI_Output(self,other, " DIA_Bengar_MILIZ_10_01 " );	// What?! I told Onar to send his mercenaries!
 		AI_Output(other,self, " DIA_Bengar_MILIZ_15_02 " );	// This is my chance to prove myself.
-		AI_Output(self,other, " DIA_Bengar_MILIZ_10_03 " );	// Horror! Do you know what the militia will do to me if you fail?
+		AI_Output(self,other, " DIA_Bengar_MILIZ_10_03 " );	// Are you mad? Do you know what the militia will do to me if you fail?
 	}
 	else
 	{
 		AI_Output(self,other, " DIA_Bengar_MILIZ_10_04 " );	// I thought no one would come.
-		AI_Output(self,other, " DIA_Bengar_MILIZ_10_05 " );	// I told Onar about this a couple of days ago. And what am I paying my rent for?!
+		AI_Output(self,other, " DIA_Bengar_MILIZ_10_05 " );	// I told Onar about this a couple of days ago. What am I paying my rent for?!
 	};
 	AI_Output(self,other, " DIA_Bengar_MILIZ_10_06 " );	// Those bastards come here every week and collect taxes for the city.
 	AI_Output(self,other, " DIA_Bengar_MILIZ_10_07 " );	// You came just in time.
@@ -397,15 +397,15 @@ func int DIA_Bengar_MILIZKLATSCHEN_Condition()
 
 func void DIA_Bengar_MILIZKLATSCHEN_Info()
 {
-	AI_Output(other,self, " DIA_Bengar_MILIZKLATSCHEN_15_00 " );	// Well, where are your militia, I'm ready to deal with them!
-	AI_Output(self,other, " DIA_Bengar_MILIZKLATSCHEN_10_01 " );	// There, they're on their way. See, I told you.
+	AI_Output(other,self, " DIA_Bengar_MILIZKLATSCHEN_15_00 " );	// Well, where are your militia? I'm ready to deal with them!
+	AI_Output(self,other, " DIA_Bengar_MILIZKLATSCHEN_10_01 " );	// Look, they're coming! I told you they would!
 	if(other.guild == GIL_NONE)
 	{
 		AI_Output(self,other, " DIA_Bengar_MILIZKLATSCHEN_10_02 " );	// Don't let me down!
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Bengar_MILIZKLATSCHEN_10_03 " );	// Good luck to you! Show them where the crayfish hibernate.
+		AI_Output(self,other, " DIA_Bengar_MILIZKLATSCHEN_10_03 " );	// Good luck to you! Send them to the Void!
 	};
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"MilComing");
@@ -445,22 +445,22 @@ func int DIA_Bengar_MILIZWEG_Condition()
 
 func void DIA_Bengar_MILIZWEG_Info()
 {
-	AI_Output(other,self, " DIA_Bengar_MILIZWEG_15_00 " );	// Your problems with the militia are in the past.
+	AI_Output(other,self, " DIA_Bengar_MILIZWEG_15_00 " );	// Your problems with the militia are over.
 
 	if((Rumbold_Bezahlt == TRUE) && (Npc_IsDead(Rumbold) == FALSE))
 	{
 		AI_Output(self,other, " DIA_Bengar_MILIZWEG_10_01 " );	// Are you crazy? Do you know what they'll do to me when you leave?
-		AI_Output(self,other, " DIA_Bengar_MILIZWEG_10_02 " );	// They're still standing over there. Tell them to disappear AT ALL!
+		AI_Output(self,other, " DIA_Bengar_MILIZWEG_10_02 " );	// They're still standing over there! Finish this!
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Bengar_MILIZWEG_10_03 " );	// Not bad! Maybe at least this month I will not be at a loss. Thank you!
+		AI_Output(self,other, " DIA_Bengar_MILIZWEG_10_03 " );	// Not bad! Maybe I will eat a bit better this month. Thank you!
 
 		if (Rumbold_Paid ==  TRUE )
 		{
 			B_GivePlayerXP(200);
-			AI_Output(self,other, " DIA_Bengar_MILIZWEG_10_04 " );	// You were even willing to pay for me?! This is very noble of you.
-			AI_Output(self,other, " DIA_Bengar_MILIZWEG_77_01 " );	// Here, take this gold! You were very generous.
+			AI_Output(self,other, " DIA_Bengar_MILIZWEG_10_04 " );	// You were even willing to pay for me? That is very noble of you.
+			AI_Output(self,other, " DIA_Bengar_MILIZWEG_77_01 " );	// Here, take this gold! You deserve it.
 			B_GiveInvItems(self,other,ItMi_Gold,100);
 		}
 		else
@@ -494,8 +494,8 @@ func int DIA_Bengar_BALTHASAR_Condition()
 func void DIA_Bengar_BALTHASAR_Info()
 {
 	AI_Output(other,self, " DIA_Bengar_BALTHASAR_15_00 " );	// Shepherd Balthazar is not allowed to visit your pastures?
-	AI_Output(self,other, " DIA_Bengar_BALTHASAR_10_01 " );	// Oh, yes. It's a long story. I told him that Sekob had to pay money if he wanted to feed his sheep in my pastures.
-	AI_Output(self,other, " DIA_Bengar_BALTHASAR_10_02 " );	// Truth be told, this is just an excuse. I just can't stand Balthazar.
+	AI_Output(self,other, " DIA_Bengar_BALTHASAR_10_01 " );	// Yes. It's a long story. I told him that Sekob had to pay money if he wanted to feed his sheep in my pastures.
+	AI_Output(self,other, " DIA_Bengar_BALTHASAR_10_02 " );	// Truth be told, this is just an excuse. I simply can't stand Balthazar.
 	B_LogEntry(TOPIC_BalthasarsSchafe, " To convince Bengar to let Balthazar return to his pastures, I must do him a favor. I'm sure the opportunity will come up. " );
 	B_GivePlayerXP(XP_Ambient);
 };
@@ -522,9 +522,9 @@ func int DIA_Bengar_BALTHASARDARFAUFWEIDE_Condition()
 func void DIA_Bengar_BALTHASARDARFAUFWEIDE_Info()
 {
 	AI_Output(other,self, " DIA_Bengar_BALTHASARDARFAUFWEIDE_15_00 " );	// The militia is gone, and Balthazar can use your pastures again.
-	AI_Output(self,other,"DIA_Bengar_BALTHASARDARFAUFWEIDE_10_01");	//Почему?
-	AI_Output(other,self, " DIA_Bengar_BALTHASARDARFAUFWEIDE_15_02 " );	// (threateningly) Because I said so.
-	AI_Output(self,other, " DIA_Bengar_BALTHASARDARFAUFWEIDE_10_03 " );	// Mmm. Good let it be your way.
+	AI_Output(self,other,"DIA_Bengar_BALTHASARDARFAUFWEIDE_10_01");	//Why should I let him?
+	AI_Output(other,self, " DIA_Bengar_BALTHASARDARFAUFWEIDE_15_02 " );	// Because I said so.
+	AI_Output(self,other, " DIA_Bengar_BALTHASARDARFAUFWEIDE_10_03 " );	// Mmm. Fine, understood.
 	AI_Output(self,other, " DIA_Bengar_BALTHASARDARFAUFWEIDE_10_04 " );	// Just let him graze his sheep somewhere outside the field.
 
 	if(RhetorikSkillValue[1] < 100)
@@ -562,7 +562,7 @@ func int DIA_Bengar_PERMKAP1_Condition()
 func void DIA_Bengar_PERMKAP1_Info()
 {
 	AI_Output(other,self, " DIA_Bengar_PERMKAP1_15_00 " );	// Take care of yourself.
-	AI_Output(self,other,"DIA_Bengar_PERMKAP1_10_01");	//Ты тоже.
+	AI_Output(self,other,"DIA_Bengar_PERMKAP1_10_01");	//You too.
 	AI_StopProcessInfos(self);
 };
 
@@ -617,21 +617,21 @@ func void DIA_Bengar_ALLONE_Info()
 	if((Malak_isAlive_Kap3 == TRUE) && ((Npc_GetDistToWP(Malak,"FARM3") < 3000) == FALSE))
 	{
 		AI_Output(self,other, " DIA_Bengar_ALLEIN_10_01 " );	// Malak left me and took everyone who worked for me with him. He said he was heading for the mountains.
-		AI_Output(self,other, " DIA_Bengar_ALLEIN_10_02 " );	// He couldn't be here anymore.
+		AI_Output(self,other, " DIA_Bengar_ALLEIN_10_02 " );	// He isn't here anymore.
 		MIS_GetMalakBack = LOG_Running;
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Bengar_ALLEIN_10_03 " );	// Times are tough. I don't even know how long I can hold out like this.
+		AI_Output(self,other, " DIA_Bengar_ALLEIN_10_03 " );	// Times are tough. I don't know how long I can hold out like this.
 	};
-	AI_Output(self,other, " DIA_Bengar_ALLEIN_10_04 " );	// New hordes of monsters come through the Pass every day. Soon they will eat us all.
+	AI_Output(self,other, " DIA_Bengar_ALLEIN_10_04 " );	// New hordes of monsters come through the Pass every day. Soon they will overrun us.
 	AI_Output(self,other, " DIA_Bengar_ALLEIN_10_05 " );	// If only I had a few mercenaries to protect me...
-	AI_Output(self,other, " DIA_Bengar_ALLEIN_10_06 " );	// One of them was even willing to work for me. But he changed his mind, however. I think his name was Wolf.
+	AI_Output(self,other, " DIA_Bengar_ALLEIN_10_06 " );	// One of them was willing to work for me. But he changed his mind, however. I think his name was Wolf.
 	MIS_BengarsHelpingSLD = LOG_Running;
 	Log_CreateTopic(TOPIC_BengarALLEIN,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BengarALLEIN,LOG_Running);
 	B_LogEntry(TOPIC_BengarALLEIN, " Bengar was left alone on his farm. Malak left and took everyone else with him. Bengar thinks they're headed for the mountains. " );
-	B_LogEntry_Quiet(TOPIC_BengarALLEIN, " Now his farm is completely defenseless. He needs help. He says something about a mercenary named Wolf. Maybe I know this guy? " );
+	B_LogEntry_Quiet(TOPIC_BengarALLEIN, " Now his farm is completely defenseless. He needs help. He said something about a mercenary named Wolf. Maybe I know him? " );
 };
 
 instance DIA_Bengar_MALAKTOT (C_Info)
@@ -654,7 +654,7 @@ func int DIA_Bengar_MALAKTOT_Condition()
 func void DIA_Bengar_MALAKTOT_Info()
 {
 	AI_Output(other,self, " DIA_Bengar_MALAKTOT_15_00 " );	// Malak is dead.
-	AI_Output(self,other, " DIA_Bengar_MALAKTOT_10_01 " );	// Now things get even worse.
+	AI_Output(self,other, " DIA_Bengar_MALAKTOT_10_01 " );	// By the gods, could things get any worse?
 };
 
 
@@ -679,8 +679,8 @@ func int DIA_Bengar_SLDDA_Condition()
 func void DIA_Bengar_SLDDA_Info()
 {
 	AI_Output(other,self, " DIA_Bengar_SLDDA_15_00 " );	// I found you a mercenary just like you wanted.
-	AI_Output(self,other, " DIA_Bengar_SLDDA_10_01 " );	// My farm has never had defenders like this before. Hope he can help us.
-	AI_Output(self,other, " DIA_Bengar_SLDDA_10_02 " );	// Here, take this. I think you will need this.
+	AI_Output(self,other, " DIA_Bengar_SLDDA_10_01 " );	// My farm has never had defenders like this before. I pray he can help us.
+	AI_Output(self,other, " DIA_Bengar_SLDDA_10_02 " );	// Here, take this. I think you will need it.
 	CreateInvItems(self,ItMi_Gold,400);
 	B_GiveInvItems(self,other,ItMi_Gold,400);
 	B_GivePlayerXP(XP_BengarsHelpingSLDArrived);
@@ -708,7 +708,7 @@ func int DIA_Bengar_CONDITION_CONDITION()
 func void DIA_Bengar_INFO()
 {
 	AI_Output(other,self, " DIA_Bengar_MALAKWIEDERDA_15_00 " );	// Malak has returned.
-	AI_Output(self,other, " DIA_Bengar_MALAKWIEDERDA_10_01 " );	// Very good! And I was afraid that I would never see him again.
+	AI_Output(self,other, " DIA_Bengar_MALAKWIEDERDA_10_01 " );	// Wonderful! I was afraid that I would never see him again.
 	B_GivePlayerXP(XP_GetMalakBack);
 
 	if(RhetorikSkillValue[1] >= 30)
@@ -746,15 +746,15 @@ func void DIA_Bengar_PERM_Info()
 	if((Npc_GetDistToWP(Malak,"FARM3") < 3000) && (Npc_IsDead(Malak) == FALSE))
 	{
 		AI_Output(self,other, " DIA_Bengar_PERM_10_01 " );	// Malak is here again, but the situation hasn't changed much.
-		AI_Output(self,other, " DIA_Bengar_PERM_10_02 " );	// Unless a miracle happens, we'll all be finished soon.
+		AI_Output(self,other, " DIA_Bengar_PERM_10_02 " );	// Unless a miracle happens, we'll all be dead soon.
 	}
 	else if(Npc_KnowsInfo(other,DIA_Bengar_SLDDA) && (Npc_IsDead(SLD_Wolf) == FALSE) && (Npc_GetDistToWP(SLD_Wolf,"FARM3") < 3000))
 	{
-		AI_Output(self,other, " DIA_Bengar_PERM_10_03 " );	// Wolf is a strange guy, but I hope he can still help us.
+		AI_Output(self,other, " DIA_Bengar_PERM_10_03 " );	// Wolf is a strange guy, but I hope he can help us.
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Bengar_PERM_10_04 " );	// Without Malak, this farm will soon come to an end. If nothing changes soon, I'm afraid I'll have to leave her.
+		AI_Output(self,other, " DIA_Bengar_PERM_10_04 " );	// Without Malak, this farm will soon come to an end. If nothing changes soon, I'm afraid I'll have to leave here.
 		if((Malak_isAlive_Kap3 == TRUE) && (Npc_IsDead(Malak) == FALSE))
 		{
 			AI_Output(self,other, " DIA_Bengar_PERM_10_05 " );	// I hope he comes back soon.
@@ -902,12 +902,12 @@ func void dia_bengar_luteroletter_info()
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_Bengar_LuteroLetter_01_00 " );	// I brought a letter from Luthero for a new order.
 	AI_Output(self,other, " DIA_Bengar_LuteroLetter_01_01 " );	// It's about time.
-	AI_Output(other,self,"DIA_Bengar_LuteroLetter_01_02");	//Вот.
+	AI_Output(other,self,"DIA_Bengar_LuteroLetter_01_02");	//Here.
 	B_GiveInvItems(other,self,itwr_bengarorderletter,1);
 	B_UseFakeScroll();
-	AI_Output(self,other, " DIA_Bengar_LuteroLetter_01_03 " );	// Hmmm. Well, I think it will not be a problem for me to get it for him.
+	AI_Output(self,other, " DIA_Bengar_LuteroLetter_01_03 " );	// Hmmm. Well, I think it will not be a problem for me to get this for him.
 	AI_Output(self,other, " DIA_Bengar_LuteroLetter_01_04 " );	// Anything else?
-	AI_Output(other,self, " DIA_Bengar_LuteroLetter_01_05 " );	// He also asked me to pick up the last batch of goods.
+	AI_Output(other,self, " DIA_Bengar_LuteroLetter_01_05 " );	// He also asked me to pick up the latest batch of goods.
 	AI_Output(self,other, " DIA_Bengar_LuteroLetter_01_06 " );	// Oh yes, of course. I've already prepared everything - here, take this package...
 	B_GiveInvItems(self,other,itmi_bengarpacket,1);
 	AI_Output(self,other, " DIA_Bengar_LuteroLetter_01_07 " );	// ...and please don't lose it!
@@ -938,12 +938,12 @@ func int dia_bengar_psicamp_condition()
 func void day_bengar_psicamp_info()
 {
 	AI_Output(other,self, " DIA_Bengar_Psicamp_01_00 " );	// What is this camp next to your farm?
-	AI_Output(self,other, " DIA_Bengar_Psicamp_01_01 " );	// I don't know for sure, but its inhabitants seem to call their community some kind of Brotherhood!
+	AI_Output(self,other, " DIA_Bengar_Psicamp_01_01 " );	// I don't know for sure, but its inhabitant call their community some kind of Brotherhood!
 	AI_Output(other,self, " DIA_Bengar_Psicamp_01_02 " );	// Brotherhood? Interesting. And who are these people?
-	AI_Output(self,other, " DIA_Bengar_Psicamp_01_03 " );	// Pretty weird types actually! Almost all go bald-headed and constantly smoke a swamp.
-	AI_Output(self,other, " DIA_Bengar_Psicamp_01_04 " );	// To be honest, you look at one of these and somehow it even becomes uncomfortable.
-	AI_Output(self,other, " DIA_Bengar_Psicamp_01_05 " );	// Although, on the other hand, there are also few problems from them.
-	AI_Output(self,other, " DIA_Bengar_Psicamp_01_06 " );	// Their camp is always quite quiet. And for me, as you know, this is the most important thing.
-	AI_Output(self,other, " DIA_Bengar_Psicamp_01_07 " );	// So I don't really mind their presence here. Let them live - I do not mind.
+	AI_Output(self,other, " DIA_Bengar_Psicamp_01_03 " );	// Pretty weird types actually! Almost all go bald-headed and constantly smoke a type of swamp weed.
+	AI_Output(self,other, " DIA_Bengar_Psicamp_01_04 " );	// To be honest, they make me very uncomfortable.
+	AI_Output(self,other, " DIA_Bengar_Psicamp_01_05 " );	// Although, there are very few problems from them.
+	AI_Output(self,other, " DIA_Bengar_Psicamp_01_06 " );	// Their camp is always eerily quiet. And for me this is the most important thing.
+	AI_Output(self,other, " DIA_Bengar_Psicamp_01_07 " );	// So I don't really mind their presence here. Let them live - I do not mind. YET.
 	AI_Output(other,self, " DIA_Bengar_Psicamp_01_08 " );	// Got it.
 };
