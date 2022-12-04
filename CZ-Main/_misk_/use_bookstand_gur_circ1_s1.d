@@ -1,4 +1,5 @@
 
+
 func void use_bookstand_gur_circ1_s1()
 {
 	var C_Npc her;
@@ -72,7 +73,7 @@ func void use_bookstand_gur_circ1_s1()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_137 = TRUE;
+			BookBonus_137 = TRUE ;
 		};
 	};
 };
@@ -91,19 +92,19 @@ func void use_bookstand_gur_circ2_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"DRUHÝ KRUH");
+		Doc_PrintLine(nDocID, 0 , " SECOND CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Runy druhého kruhu a ingredience potřebné k jejich vytvoření:");
+		Doc_PrintLines(nDocID, 0 , " Runes of the second circle and ingredients needed to create them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Větrná pěst -");
+		Doc_PrintLine(nDocID, 0 , " - Wind Fist - " );
 		Doc_PrintLine(nDocID,0,"Uhlí");
-		Doc_PrintLine(nDocID,0,"Pryskyřice");
+		Doc_PrintLine(nDocID, 0 , " Resin " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Spletité kořeny -");
-		Doc_PrintLine(nDocID,0,"Pryskyřice");
-		Doc_PrintLine(nDocID,0,"Tráva z bažin");
+		Doc_PrintLine(nDocID, 0 , " - Tangled Roots - " );
+		Doc_PrintLine(nDocID, 0 , " Resin " );
+		Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
@@ -111,11 +112,11 @@ func void use_bookstand_gur_circ2_s1()
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Na vytvoření runy jsou potřeba všechny požadované ingredience.");
+		Doc_PrintLines(nDocID, 1 , " All the required ingredients are needed to create the rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Ten, kdo chce runu vytvořit, musí znát magickou formuli a mít runový kámen, stejně jako i svitek příslušného kouzla.");
+		Doc_PrintLines(nDocID, 1 , " The one who wants to create a rune must know the magic formula and have the rune stone, as well as the scroll of the corresponding spell. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Teprve pak může runu vytvořit na runovém stole.");
+		Doc_PrintLines(nDocID, 1 , " Only then can he create the rune on the rune table. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -132,7 +133,7 @@ func void use_bookstand_gur_circ2_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -151,7 +152,7 @@ func void use_bookstand_gur_circ2_s1()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_138 = TRUE;
+			BookBonus_138 = TRUE ;
 		};
 	};
 };
@@ -170,31 +171,31 @@ func void use_bookstand_gur_circ3_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"TŘETÍ KRUH");
+		Doc_PrintLine(nDocID, 0 , " THIRD CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Runy třetího kruhu a ingredience potřebné k jejich vytvoření:");
+		Doc_PrintLines(nDocID, 0 , " Runes of the third circle and ingredients needed to create them: " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"- Strach -");
-		Doc_PrintLine(nDocID,0,"Černá perla");
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Zapomnění -");
+		Doc_PrintLine(nDocID, 0 , " - Forgetting - " );
 		Doc_PrintLine(nDocID,0,"Akvamarín");
-		Doc_PrintLine(nDocID,0,"Křemen");
+		Doc_PrintLine(nDocID, 0 , " Quartz " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Tlaková vlna -");
-		Doc_PrintLine(nDocID,0,"Křídlo krvavé mouchy");
-		Doc_PrintLine(nDocID,0,"Tráva z bažin");
-		Doc_PrintLine(nDocID,0,"Černá perla");
+		Doc_PrintLine(nDocID, 0 , " - Pressure wave - " );
+		Doc_PrintLine(nDocID, 0 , " Bloodfly Wing " );
+		Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Na vytvoření runy jsou potřeba všechny požadované ingredience.");
+		Doc_PrintLines(nDocID, 1 , " All the required ingredients are needed to create the rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Ten, kdo chce runu vytvořit, musí znát magickou formuli a mít runový kámen, stejně jako i svitek příslušného kouzla.");
+		Doc_PrintLines(nDocID, 1 , " The one who wants to create a rune must know the magic formula and have the rune stone, as well as the scroll of the corresponding spell. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Teprve pak může runu vytvořit na runovém stole.");
+		Doc_PrintLines(nDocID, 1 , " Only then can he create the rune on the rune table. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -211,7 +212,7 @@ func void use_bookstand_gur_circ3_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -230,7 +231,7 @@ func void use_bookstand_gur_circ3_s1()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_139 = TRUE;
+			BookBonus_139 = TRUE ;
 		};
 	};
 };
@@ -249,42 +250,42 @@ func void use_bookstand_gur_circ4_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ČTVRTÝ KRUH");
+		Doc_PrintLine(nDocID, 0 , " FOURTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Runy čtvrtého kruhu a ingredience potřebné k jejich vytvoření:");
+		Doc_PrintLines(nDocID, 0 , " Runes of the fourth circle and ingredients needed to create them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Vyvolání bažinného golema -");
-		Doc_PrintLine(nDocID,0,"Srdce bažinného golema");
-		Doc_PrintLine(nDocID,0,"Tráva z bažin");
+		Doc_PrintLine(nDocID, 0 , " - Summon Swamp Golem - " );
+		Doc_PrintLine(nDocID, 0 , " Heart of the Swamp Golem " );
+		Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Jedovaté kousnutí -");
-		Doc_PrintLine(nDocID,0,"Kost z kostlivce");
-		Doc_PrintLine(nDocID,0,"Tráva z bažin");
-		Doc_PrintLine(nDocID,0,"Černá perla");
+		Doc_PrintLine(nDocID, 0 , " - Venomous Bite - " );
+		Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
+		Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
 		Doc_PrintLine(nDocID,0,"Jed");
-		Doc_PrintLine(nDocID,0,"Pryskyřice");
+		Doc_PrintLine(nDocID, 0 , " Resin " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 
 		if(LegoSpellElevate == TRUE)
 		{
-			Doc_PrintLine(nDocID,0,"- Elevace -");
-			Doc_PrintLine(nDocID,0,"Tráva z bažin");
+			Doc_PrintLine(nDocID, 0 , " - Elevation - " );
+			Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
 			Doc_PrintLine(nDocID,0,"Síra");
 			Doc_PrintLine(nDocID,0,"Uhlí");
-			Doc_PrintLine(nDocID,0,"Ledový křemen");
+			Doc_PrintLine(nDocID, 0 , " Iced Quartz " );
 		};
 
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Na vytvoření runy jsou potřeba všechny požadované ingredience.");
+		Doc_PrintLines(nDocID, 1 , " All the required ingredients are needed to create the rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Ten, kdo chce runu vytvořit, musí znát magickou formuli a mít runový kámen, stejně jako i svitek příslušného kouzla.");
+		Doc_PrintLines(nDocID, 1 , " The one who wants to create a rune must know the magic formula and have the rune stone, as well as the scroll of the corresponding spell. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Teprve pak může runu vytvořit na runovém stole.");
+		Doc_PrintLines(nDocID, 1 , " Only then can he create the rune on the rune table. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -301,7 +302,7 @@ func void use_bookstand_gur_circ4_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -320,7 +321,7 @@ func void use_bookstand_gur_circ4_s1()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_140 = TRUE;
+			BookBonus_140 = TRUE ;
 		};
 	};
 };
@@ -339,29 +340,29 @@ func void use_bookstand_gur_circ5_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"PÁTÝ KRUH");
+		Doc_PrintLine(nDocID, 0 , " FIFTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Runy pátého kruhu a ingredience potřebné k jejich vytvoření:");
+		Doc_PrintLines(nDocID, 0 , " Runes of the fifth circle and ingredients needed to create them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Tornádo -");
-		Doc_PrintLine(nDocID,0,"Křídlo krvavé mouchy");
-		Doc_PrintLine(nDocID,0,"Tráva z bažin");
-		Doc_PrintLine(nDocID,0,"Křemen");
+		Doc_PrintLine(nDocID, 0 , " - Tornado - " );
+		Doc_PrintLine(nDocID, 0 , " Bloodfly Wing " );
+		Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
+		Doc_PrintLine(nDocID, 0 , " Quartz " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Strašný zápach -");
-		Doc_PrintLine(nDocID,0,"Tráva z bažin");
+		Doc_PrintLine(nDocID, 0 , " - Terrible smell - " );
+		Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
 		Doc_PrintLine(nDocID,0,"Síra");
-		Doc_PrintLine(nDocID,0,"Černá perla");
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Na vytvoření runy jsou potřeba všechny požadované ingredience.");
+		Doc_PrintLines(nDocID, 1 , " All the required ingredients are needed to create the rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Ten, kdo chce runu vytvořit, musí znát magickou formuli a mít runový kámen, stejně jako i svitek příslušného kouzla.");
+		Doc_PrintLines(nDocID, 1 , " The one who wants to create a rune must know the magic formula and have the rune stone, as well as the scroll of the corresponding spell. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Teprve pak může runu vytvořit na runovém stole.");
+		Doc_PrintLines(nDocID, 1 , " Only then can he create the rune on the rune table. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -378,7 +379,7 @@ func void use_bookstand_gur_circ5_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -397,7 +398,7 @@ func void use_bookstand_gur_circ5_s1()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_141 = TRUE;
+			BookBonus_141 = TRUE ;
 		};
 	};
 };
@@ -416,31 +417,31 @@ func void use_bookstand_gur_circ6_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ŠESTÝ KRUH");
+		Doc_PrintLine(nDocID, 0 , " SIXTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Runy šestého kruhu a ingredience potřebné k jejich vytvoření:");
+		Doc_PrintLines(nDocID, 0 , " Runes of the sixth circle and ingredients needed to create them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Hněv elementů -");
-		Doc_PrintLine(nDocID,0,"Srdce kamenného golema");
-		Doc_PrintLine(nDocID,0,"Srdce ohnivého golema");
-		Doc_PrintLine(nDocID,0,"Srdce ledového golema");
-		Doc_PrintLine(nDocID,0,"Srdce bažinného golema");
+		Doc_PrintLine(nDocID, 0 , " - Wrath of the Elements - " );
+		Doc_PrintLine(nDocID, 0 , " Stone Golem Heart " );
+		Doc_PrintLine(nDocID, 0 , " Fire Golem Heart " );
+		Doc_PrintLine(nDocID, 0 , " Ice Golem Heart " );
+		Doc_PrintLine(nDocID, 0 , " Heart of the Swamp Golem " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Zemětřesení -");
-		Doc_PrintLine(nDocID,0,"Černá perla");
-		Doc_PrintLine(nDocID,0,"Srdce kamenného golema");
-		Doc_PrintLine(nDocID,0,"Tráva z bažin");
+		Doc_PrintLine(nDocID, 0 , " - Earthquake - " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
+		Doc_PrintLine(nDocID, 0 , " Stone Golem Heart " );
+		Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
 		Doc_PrintLine(nDocID,0,"Akvamarín");
-		Doc_PrintLine(nDocID,0,"Pryskyřice");
+		Doc_PrintLine(nDocID, 0 , " Resin " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Na vytvoření runy jsou potřeba všechny požadované ingredience.");
+		Doc_PrintLines(nDocID, 1 , " All the required ingredients are needed to create the rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Ten, kdo chce runu vytvořit, musí znát magickou formuli a mít runový kámen, stejně jako i svitek příslušného kouzla.");
+		Doc_PrintLines(nDocID, 1 , " The one who wants to create a rune must know the magic formula and have the rune stone, as well as the scroll of the corresponding spell. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Teprve pak může runu vytvořit na runovém stole.");
+		Doc_PrintLines(nDocID, 1 , " Only then can he create the rune on the rune table. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -458,7 +459,7 @@ func void use_bookstand_gur_circ6_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -477,7 +478,7 @@ func void use_bookstand_gur_circ6_s1()
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
 			AI_Print("Inteligence + 1");
-			BookBonus_142 = TRUE;
+			BookBonus_142 = TRUE ;
 		};
 	};
 };
