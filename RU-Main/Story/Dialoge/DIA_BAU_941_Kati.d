@@ -55,7 +55,7 @@ func void DIA_Kati_SLDNOCHDA_Info()
 	Akils_SLDStillthere = TRUE;
 	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
-	B_LogEntry(TOPIC_AkilsSLDStillthere, " Farmer Akils is threatened by mercenaries. " );
+	B_LogEntry(TOPIC_AkilsSLDStillthere, " Farmer Akil is threatened by mercenaries. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -84,7 +84,7 @@ func void DIA_Kati_HALLO_Info()
 	AI_Output(other,self, " DIA_Kati_HALLO_15_00 " );	// Are you all right?
 	if (Npc_IsDead(Akil))
 	{
-		AI_Output(self,other, " DIA_Kati_HALLO_16_01 " );	// My beloved husband is dead!...(sobs) Oh, Innos, why are you punishing me like that?!
+		AI_Output(self,other, " DIA_Kati_HALLO_16_01 " );	// My beloved husband is dead!...(sobs) Oh, Innos, why are you punishing me like this?!
 		Npc_ExchangeRoutine(self,"Start");
 		B_StartOtherRoutine(Randolph,"Start");
 		B_GivePlayerXP(XP_Akil_Tot);
@@ -118,7 +118,7 @@ func int DIA_Kati_ESSEN_Condition()
 func void DIA_Kati_ESSEN_Info()
 {
 	AI_Output(other,self, " DIA_Kati_ESSEN_15_00 " );	// Akil says you can feed me.
-	AI_Output(self,other, " DIA_Kati_ESSEN_16_01 " );	// Ever since the Barrier collapsed, times have fallen on us. Living here has become unsafe.
+	AI_Output(self,other, " DIA_Kati_ESSEN_16_01 " );	// Ever since the Barrier collapsed, hard times have fallen on us. Living here has become unsafe.
 	AI_Output(self,other, " DIA_Kati_ESSEN_16_02 " );	// Here, have a slice of bread, some milk and a bottle of water. I'm sorry, but that's all we can share.
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(other,ItFo_Bread,1);
@@ -259,7 +259,7 @@ func int DIA_Kati_PASS_Condition()
 func void DIA_Kati_PASS_Info()
 {
 	AI_Output(other,self, " DIA_Kati_PASS_15_00 " );	// What do you know about the Passage?
-	AI_Output(self,other, " DIA_Kati_PASS_16_01 " );	// I've never been there myself. But I know he's somewhere near Bengar's farm in the high pastures.
+	AI_Output(self,other, " DIA_Kati_PASS_16_01 " );	// I've never been there myself. But I know it is somewhere near Bengar's farm in the high pastures.
 };
 
 
@@ -285,7 +285,7 @@ func int DIA_Kati_PERMKAP1_Condition()
 func void DIA_Kati_PERMKAP1_Info()
 {
 	AI_Output(other,self, " DIA_Kati_PERMKAP1_15_00 " );	// Take care of your husband.
-	AI_Output(self,other, " DIA_Kati_PERMKAP1_16_01 " );	// I try my best.
+	AI_Output(self,other, " DIA_Kati_PERMKAP1_16_01 " );	// I'll do my best.
 	AI_StopProcessInfos(self);
 };
 
@@ -338,7 +338,7 @@ func void DIA_Kati_PERM_Info()
 {
 	AI_Output(other,self, " DIA_Kati_PERM_15_00 " );	// Are you all right?
 	AI_Output(self,other, " DIA_Kati_PERM_16_01 " );	// We'll manage. I just don't know how much longer we'll have to put up with these devils in black.
-	AI_Output(self,other, " DIA_Kati_PERM_16_02 " );	// I can't take this long. They snoop around the house and stick their nose everywhere.
+	AI_Output(self,other, " DIA_Kati_PERM_16_02 " );	// I can't take this anymore. They snoop around the house and something about them scares the animals.
 };
 
 
