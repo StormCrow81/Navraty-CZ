@@ -656,7 +656,7 @@ func int DIA_Sagitta_OBSESSION_Condition()
 func void DIA_Sagitta_OBSESSION_Info()
 {
 	AI_Output(other,self, " DIA_Sagitta_OBSESSION_15_00 " );	// I feel some kind of strong mental anxiety. I need help.
-	AI_Output(self,other, " DIA_Sagitta_OBSESSION_17_01 " );	// You are exhausted. You have fallen under the influence of the black gaze of the Seekers.
+	AI_Output(self,other, " DIA_Sagitta_OBSESSION_17_01 " );	// You are bewitched. You have fallen under the influence of the black gaze of the Seekers.
 	AI_Output(self,other, " DIA_Sagitta_OBSESSION_17_02 " );	// Go to Pyrokar, ArchMage of the monastery. My modest knowledge is not enough here.
 };
 
@@ -934,16 +934,16 @@ func void dia_arrow_receptfortyon_info()
 {
 	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_00 " );	// I have a question.
 	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_01 " );	// What do you want to know?
-	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_02 " );	// I heard that there is a potion that can affect a person's mind in some way.
-	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_03 " );	// You don't know anything about this?
-	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_04 " );	// I'm afraid I can't help you. I can't even imagine what kind of elixir it could be.
+	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_02 " );	// I heard that there is a potion that can open a person's mind. Make them... BETTER.
+	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_03 " );	// Know anything about this?
+	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_04 " );	// I'm afraid I can't help you. I can't even imagine what kind of elixir that could be.
 	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_05 " );	// But I can give you advice.
 	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_06 " );	// What's the advice?
-	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_07 " );	// From what it looks like, it's a very, VERY rare thing! One might even say mythical!
+	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_07 " );	// From what you describe, it's a very, VERY rare thing! One might even say mythical!
 	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_08 " );	// And all such items, one way or another, tend to be very well guarded and hidden from prying eyes.
-	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_09 " );	// Where are you going?
-	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_10 " );	// I'm leading to the fact that perhaps you will find the answer to your question where ordinary people cannot go.
-	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_11 " );	// And if there is such a place, then I would advise you to look for it there. I'm sure the Firebenders might have something like that.
+	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_09 " );	// Where are you going with this?
+	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_10 " );	// I'm saying that perhaps you will find the answer to your question where ordinary people cannot go.
+	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_11 " );	// And if there is such a place, then I would advise you to look for it there. I'm sure the Pyromancers might have knowledge of such places.
 	AI_Output(other,self, " DIA_Sagitta_ReceptForTyon_01_12 " );	// Thanks for the tip.
 	AI_Output(self,other, " DIA_Sagitta_ReceptForTyon_01_13 " );	// Always happy to help.
 };
@@ -971,25 +971,25 @@ func int dia_arrow_claw_condition()
 func void dia_sagitta_claw_info()
 {
 	AI_Output(other,self, " DIA_Sagitta_Claw_01_00 " );	// Do you know a hunter named Nyx?
-	AI_Output(self,other, " DIA_Sagitta_Claw_01_01 " );	// Yes, I know. He often comes to me when he hunts in these parts.
+	AI_Output(self,other, " DIA_Sagitta_Claw_01_01 " );	// Yes, I do. He often comes to me when he hunts in these parts.
 	AI_Output(other,self, " DIA_Arrow_Claw_01_02 " );	// Why?
 	AI_Output(self,other, " DIA_Sagitta_Claw_01_03 " );	// Usually he is interested in various tinctures prepared by me from medicinal herbs. Why are you asking?
 	AI_Output(other,self, " DIA_Sagitta_Claw_01_04 " );	// He had an accident.
 	AI_Output(self,other, " DIA_Sagitta_Claw_01_05 " );	// What happened?
-	AI_Output(other,self, " DIA_Sagitta_Claw_01_06 " );	// During the last hunt, his wolf named Fang was badly injured, and now he is in a very serious condition.
-	AI_Output(other,self, " DIA_Sagitta_Claw_01_07 " );	// Nyx tried to help him somehow, but nothing came of it.
+	AI_Output(other,self, " DIA_Sagitta_Claw_01_06 " );	// During the last hunt, his wolf, Fang, was badly injured, and is in a very serious condition.
+	AI_Output(other,self, " DIA_Sagitta_Claw_01_07 " );	// Nyx tried to help him, but nothing came of it.
 	AI_Output(other,self, " DIA_Sagitta_Claw_01_08 " );	// That's why he asked me to ask you for help. Could you heal Fang?
 	AI_Output(self,other, " DIA_Sagitta_Claw_01_09 " );	// He should have contacted me right away instead of doing something he doesn't understand much about.
 	AI_Output(other,self, " DIA_Sagitta_Claw_01_10 " );	// So will you help?
-	AI_Output(self,other, " DIA_Sagitta_Claw_01_11 " );	// Of course! I know how much Nyx values ​​the Fang, and I'm ready to help in any way I can.
-	AI_Output(self,other, " DIA_Sagitta_Claw_01_12 " );	// True, if you're saying that his wound is too severe... then it would probably require a very strong healing potion.
-	AI_Output(self,other, " DIA_Sagitta_Claw_01_13 " );	// And I, unfortunately, cannot promise that it will help.
+	AI_Output(self,other, " DIA_Sagitta_Claw_01_11 " );	// Of course! I know how much Nyx values that animal, and I'm ready to help in any way I can.
+	AI_Output(self,other, " DIA_Sagitta_Claw_01_12 " );	// However, if you're saying that his wound is very severe... then it would probably require a very strong healing potion.
+	AI_Output(self,other, " DIA_Sagitta_Claw_01_13 " );	// And I cannot promise that it will help.
 	AI_Output(other,self, " DIA_Sagitta_Claw_01_14 " );	// Can you give me this potion?
 	AI_Output(self,other, " DIA_Sagitta_Claw_01_15 " );	// I'm afraid not. But I can make it for you.
 	AI_Output(self,other, " DIA_Sagitta_Claw_01_16 " );	// However, for this, I need some rare ingredients.
 	AI_Output(other,self, " DIA_Sagitta_Claw_01_17 " );	// Which ones exactly?
-	AI_Output(self,other, " DIA_Sagitta_Claw_01_18 " );	// I need a couple of stalks of marsh grass, a medicinal root, a wild berry, and on top of all this - royal sorrel.
-	AI_Output(self,other, " DIA_Sagitta_Claw_01_19 " );	// Bring me these herbs and I'll brew you a potion for the Fang immediately.
+	AI_Output(self,other, " DIA_Sagitta_Claw_01_18 " );	// I need a couple of stalks of marsh grass, a medicinal root, a wild berry, and to top it off - royal sorrel.
+	AI_Output(self,other, " DIA_Sagitta_Claw_01_19 " );	// Bring me these herbs and I'll brew you a potion for Fang immediately.
 	AI_Output(other,self, " DIA_Sagitta_Claw_01_20 " );	// Good. I will try to get you everything you ask for.
 	; _ _ _ _ _ _
 };
@@ -1002,7 +1002,7 @@ instance DIA_SIGHT_CLAWDONE (C_Info) .
 	condition = dia_arrow_clawdone_condition;
 	information = dia_sagitta_clawdone_info;
 	permanent = FALSE;
-	description = " I got you some herbs. " ;
+	description = " I got you the herbs. " ;
 };
 
 
@@ -1017,9 +1017,9 @@ func int dia_arrow_clawdone_condition()
 func void dia_sagitta_clawdone_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self, " DIA_Sagitta_ClawDone_01_00 " );	// I got you herbs.
+	AI_Output(other,self, " DIA_Sagitta_ClawDone_01_00 " );	// I got you the herbs.
 	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_01 " );	// Well done! Give them here and I'll brew them into a healing potion for Fang.
-	AI_Output(other,self, " DIA_Sagitta_ClawDone_01_02 " );	// Here, take this.
+	AI_Output(other,self, " DIA_Sagitta_ClawDone_01_02 " );	// Here.
 	B_GiveInvItemsManyThings(self,other);
 	Npc_RemoveInvItems(other,ItPl_SwampHerb,2);
 	Npc_RemoveInvItems(other,ItPl_Health_Herb_03,1);
@@ -1031,22 +1031,22 @@ func void dia_sagitta_clawdone_info()
 	AI_AlignToWP(self);
 	AI_LookAtNpc(other,self);
 	AI_UseMob(self,"LAB",1);
-	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_04 " );	// ...(mumbles something to himself)
+	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_04 " );	// ...(mumbles something to herself)
 	AI_UseMob(self,"LAB",-1);
 	AI_GotoNpc(self,hero);
 	AI_TurnToNPC(self,other);
 	AI_LookAtNpc(self,other);
-	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_05 " );	// That's it - the potion is ready! Take him.
+	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_05 " );	// That's it - the potion is ready! Take it.
 	B_GiveInvItems(self,other,itpo_sagittaclawpotion,1);
 	AI_Output(other,self, " DIA_Sagitta_ClawDone_01_06 " );	// And what's next?
 	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_07 " );	// Now listen carefully and remember...
-	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_08 " );	// First you need to thoroughly wash the Fang's wound, and then treat it with this potion.
-	AI_Output(other,self, " DIA_Sagitta_ClawDone_01_09 " );	// And that's all?
-	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_10 " );	// Yes, everyone. But, as I said, you should not rely too much on the fact that this will help.
+	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_08 " );	// First you need to thoroughly wash the wound, and then treat it with this potion.
+	AI_Output(other,self, " DIA_Sagitta_ClawDone_01_09 " );	// That's all?
+	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_10 " );	// Yes. But, as I said, you should not rely too much on the fact that this will help.
 	AI_Output(other,self, " DIA_Sagitta_ClawDone_01_11 " );	// Everything is clear. Thank you.
 	AI_Output(self,other, " DIA_Sagitta_ClawDone_01_12 " );	// You're welcome.
 	SAGITTAHELPSCLAW = TRUE;
-	B_LogEntry( TOPIC_RECOVERDOG , " Sagitta has prepared a cure for Fang. Now you need to get back to Nyx's hunter camp as soon as possible. " );
+	B_LogEntry( TOPIC_RECOVERDOG , " Sagitta has prepared a cure for Fang. Now I need to get back to Nyx's hunter camp as soon as possible. " );
 };
 
 instance DIA_Sagitta_LOKPOTION (C_Info) .
@@ -1055,7 +1055,7 @@ instance DIA_Sagitta_LOKPOTION (C_Info) .
 	nr = 3;
 	condition = DIA_Sagitta_LOKIPOTION_Condition;
 	information = DIA_Sagitta_LOKIPOTION_Info;
-	description = " I'm looking for one rare plant. " ;
+	description = " I'm looking for one very rare plant. " ;
 };
 
 
@@ -1071,10 +1071,10 @@ func void DIA_Sagitta_LOKPOTION_Info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_Sagitta_LOKIPOTION_01_00 " );	// I'm looking for one rare plant - a cactus flower.
-	AI_Output(other,self, " DIA_Sagitta_LOKIPOTION_01_01 " );	// Do you know anything about him?
+	AI_Output(other,self, " DIA_Sagitta_LOKIPOTION_01_01 " );	// Do you know anything about it?
 	AI_Output(self,other, " DIA_Sagitta_LOKIPOTION_01_02 " );	// I'm afraid not.
 	AI_Output(self,other, " DIA_Sagitta_LOKIPOTION_01_03 " );	// To be honest, I don't even know what this plant is or what it looks like.
-	AI_Output(other, self, " DIA_Sagitta_LOKIPOTION_01_04 " );	// Understandably.
+	AI_Output(other, self, " DIA_Sagitta_LOKIPOTION_01_04 " );	// I see.
 };
 
 instance DIA_SAGITTA_PLACEBO (C_Info)
@@ -1099,7 +1099,7 @@ func void dia_arrow_placebo_info()
 {
 	AI_Output(other,self, " DIA_Sagitta_Placebo_01_01 " );	// Shepherd Pepe is seriously injured.
 	AI_Output(self,other, " DIA_Sagitta_Placebo_01_02 " );	// What happened?
-	AI_Output(other,self, " DIA_Sagitta_Placebo_01_03 " );	// One goblin hit him hard on the leg.
+	AI_Output(other,self, " DIA_Sagitta_Placebo_01_03 " );	// He took a blow to the leg from a Goblin.
 	AI_Output(other,self, " DIA_Sagitta_Placebo_01_04 " );	// The whole leg turned blue, and now the boy can't even stand properly.
 	AI_Output(other,self, " DIA_Sagitta_Placebo_01_05 " );	// And he also says that regular healing potions don't work for him.
 	AI_Output(self,other, " DIA_Sagitta_Placebo_01_06 " );	// An interesting case... (thoughtfully) Usually, with a serious bruise, it is enough to simply treat this place with an ordinary tincture of seraph.
