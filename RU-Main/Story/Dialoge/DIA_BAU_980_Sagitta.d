@@ -69,7 +69,7 @@ func int DIA_Sagitta_HALLOW_Condition()
 func void DIA_Sagitta_HALLO_Info()
 {
 	AI_Output(other,self, " DIA_Sagitta_HALLO_15_00 " );	// Are you all alone here?
-	AI_Output(self,other, " DIA_Sagitta_HALLO_17_01 " );	// Say what you want from me and leave. I'm busy.
+	AI_Output(self,other, " DIA_Sagitta_HALLO_17_01 " );	// What do you want? I'm busy.
 	Info_ClearChoices(DIA_Arrow_HELLO);
 	Info_AddChoice(DIA_ARROW_HELLO,Dialog_Back,DIA_ARROW_HELLO_end);
 	Info_AddChoice(DIA_Sagitta_HALLO, " Can you heal me? " ,DIA_Sagitta_HALLO_Heil);
@@ -79,25 +79,25 @@ func void DIA_Sagitta_HALLO_Info()
 
 func void DIA_Sagitta_HELLO_who()
 {
-	AI_Output(other,self,"DIA_Sagitta_HALLO_wer_15_00");	//Кто ты?
+	AI_Output(other,self,"DIA_Sagitta_HALLO_wer_15_00");	//Who are you?
 	AI_Output(self,other, " DIA_Sagitta_HALLO_wer_17_01 " );	// Have you never heard of me?
-	AI_Output(self,other, " DIA_Sagitta_HALLO_wer_17_02 " );	// They call me a healer witch. Also a shaman.
-	AI_Output(self,other, " DIA_Sagitta_HALLO_wer_17_03 " );	// But when they feel bad, they all suddenly remember the good old Sagitta and her healing herbs.
+	AI_Output(self,other, " DIA_Sagitta_HALLO_wer_17_02 " );	// They call me a witch, a shaman, a forest hag...
+	AI_Output(self,other, " DIA_Sagitta_HALLO_wer_17_03 " );	// But when they feel sick, they all suddenly remember good old Sagitta and her healing herbs.
 };
 
 func void DIA_Sagitta_HALLO_was()
 {
 	AI_Output(other,self, " DIA_Sagitta_HALLO_was_15_00 " );	// What are you doing here?
-	AI_Output(self,other, " DIA_Sagitta_HALLO_was_17_01 " );	// I've been living here for as long as I can remember! And I do herbs.
-	AI_Output(self,other, " DIA_Sagitta_HALLO_was_17_02 " );	// The forest is my friend. He gives me what I need.
+	AI_Output(self,other, " DIA_Sagitta_HALLO_was_17_01 " );	// I've been living here for as long as I can remember! I am an herbalist.
+	AI_Output(self,other, " DIA_Sagitta_HALLO_was_17_02 " );	// The forest is my friend. She cares for me and I for her.
 };
 
 func void DIA_Sagitta_HALLO_Heil()
 {
 	AI_Output(other,self, " DIA_Sagitta_HALLO_Heil_15_00 " );	// Can you heal me?
-	AI_Output(self,other, " DIA_Sagitta_HALLO_Heil_17_01 " );	// You came for this, didn't you? Let me know if there's anything wrong with you.
+	AI_Output(self,other, " DIA_Sagitta_HALLO_Heil_17_01 " );	// Is that why you are here? Tell me how I can help.
 	Log_CreateTopic(Topic_SoldierTrader,LOG_NOTE);
-	B_LogEntry(Topic_SoldierTrader, " Sagitta, who lives behind the Sekoba farm, sells various items. " );
+	B_LogEntry(Topic_SoldierTrader, " Sagitta, who lives behind Sekob's farm, sells various items. " );
 };
 
 func void DIA_Sagitta_HALLO_ende()
@@ -145,23 +145,23 @@ function void DIA_Sagitta_TeachAlchemyRequest_Info ()
 	};
 	Info_ClearChoices(DIA_Sagitta_TeachAlchemyRequest);
 	Info_AddChoice(DIA_Sagitta_TeachAlchemyRequest, " Sorry, but I'm not interested. " ,DIA_Sagitta_TeachAlchemyRequest_nein);
-	Info_AddChoice(DIA_Sagitta_TeachAlchemyRequest, " Didn't any of you have this? " ,DIA_Sagitta_TeachAlchemyRequest_wo);
-	Info_AddChoice(DIA_Sagitta_TeachAlchemyRequest, " Where did it matter? " ,DIA_Sagitta_TeachAlchemyRequest_was);
+	Info_AddChoice(DIA_Sagitta_TeachAlchemyRequest, " What is this ingredient? " ,DIA_Sagitta_TeachAlchemyRequest_wo);
+	Info_AddChoice(DIA_Sagitta_TeachAlchemyRequest, " Where can I find this ingredient? " ,DIA_Sagitta_TeachAlchemyRequest_was);
 };
 
 func void DIA_Sagitta_TeachAlchemyRequest_was()
 {
 	AI_Output(other,self, " DIA_Sagitta_TeachAlchemyRequest_was_15_00 " );	// What is this ingredient?
-	AI_Output(self,other, " DIA_Sagitta_TeachAlchemyRequest_was_17_01 " );	// This is a very rare herb called sun aloe. You will recognize it by its strong almond aroma.
+	AI_Output(self,other, " DIA_Sagitta_TeachAlchemyRequest_was_17_01 " );	// A very rare herb called sun aloe. You will recognize it by its strong almond aroma.
 };
 
 func void DIA_Sagitta_TeachAlchemyRequest_you()
 {
 	AI_Output(other,self, " DIA_Sagitta_TeachAlchemyRequest_wo_15_00 " );	// Where can I find this ingredient?
-	AI_Output(self,other, " DIA_Sagitta_TeachAlchemyRequest_wo_17_01 " );	// The grass I need grows only in places that have all the nutrients it needs to grow.
-	AI_Output(self,other, " DIA_Sagitta_TeachAlchemyRequest_wo_17_02 " );	// Usually found on black troll dung.
-	AI_Output(self,other, " DIA_Sagitta_TeachAlchemyRequest_wo_17_03 " );	// That's why it's so hard for me to get this herb, you know?
-	Info_AddChoice(DIA_Sagitta_TeachAlchemyRequest, " Let's see if I can find her somewhere. " ,DIA_Sagitta_TeachAlchemyRequest_wo_ja);
+	AI_Output(self,other, " DIA_Sagitta_TeachAlchemyRequest_wo_17_01 " );	// This plant only grows where it finds very specific nutrients.
+	AI_Output(self,other, " DIA_Sagitta_TeachAlchemyRequest_wo_17_02 " );	// For instance, black troll dung.
+	AI_Output(self,other, " DIA_Sagitta_TeachAlchemyRequest_wo_17_03 " );	// That's why it's so hard for me to get this herb, as I'm sure you can imagine.
+	Info_AddChoice(DIA_Sagitta_TeachAlchemyRequest, " Let's see if I can find it somewhere. " ,DIA_Sagitta_TeachAlchemyRequest_wo_ja);
 };
 
 func void DIA_Sagitta_TeachAlchemyRequest_generated()
@@ -172,7 +172,7 @@ func void DIA_Sagitta_TeachAlchemyRequest_generated()
 	MIS_Sagitta_Herb = LOG_Running;
 	Log_CreateTopic(TOPIC_SagittaHerb,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SagittaHerb,LOG_Running);
-	B_LogEntry(TOPIC_SagittaHerb, " Sagitta needs a very rare plant! It's a solar aloe that only grows on black troll dung. " );
+	B_LogEntry(TOPIC_SagittaHerb, " Sagitta needs a very rare plant! It's a Sun Aloe that only grows on black troll dung. " );
 };
 
 func void DIA_Sagitta_TeachAlchemyRequest_nein()
@@ -203,8 +203,8 @@ func int DIA_Arrow_Arrow_Herb_Condition()
 
 func void DIA_Sagitta_Sagitta_Herb_Info()
 {
-	AI_Output(other,self, " DIA_Sagitta_Sagitta_Herb_15_00 " );	// I found a sunny aloe.
-	AI_Output(self,other, " DIA_Sagitta_Sagitta_Herb_17_01 " );	// Thank you. Now you can ask me anything you want to know about making potions.
+	AI_Output(other,self, " DIA_Sagitta_Sagitta_Herb_15_00 " );	// I found a Sun Aloe.
+	AI_Output(self,other, " DIA_Sagitta_Sagitta_Herb_17_01 " );	// Wonderful! Now we can make a potions master out of you.
 	B_GiveInvItems(other,self,ItPl_Xagitta_Herb_MIS,1);
 	Npc_RemoveInvItems(self,ItPl_Xagitta_Herb_MIS,1);
 	Sagitta_TeachAlchemy = TRUE;
@@ -220,7 +220,7 @@ instance DIA_Continued_Teach ( C_Info ) .
 	condition = DIA_Sagitta_Teach_Condition;
 	information = DIA_Set_Teach_Info;
 	permanent = TRUE;
-	description = " What potions can you teach me how to brew? " ;
+	description = " What potions can you teach me to brew? " ;
 };
 
 
@@ -238,7 +238,7 @@ func void DIA_Sagitta_Teach_Info()
 {
 	var int talent;
 	talents = 0 ;
-	AI_Output(other,self, " DIA_Sagitta_Teach_15_00 " );	// What potions can you teach me how to brew?
+	AI_Output(other,self, " DIA_Sagitta_Teach_15_00 " );	// What potions can you teach me to brew?
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_01] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Health_02] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Health_03] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Perm_Mana] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Perm_DEX] == FALSE))
 	{
 		Info_ClearChoices(DIA_Continued_Teach);
@@ -266,7 +266,7 @@ func void DIA_Sagitta_Teach_Info()
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE))
 	{
-		Info_AddChoice(DIA_Sagitta_Teach,b_buildlearnstringforalchemy( " Эисир маны " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Mana_03)),DIA_Sagitta_Teach_Mana_03);
+		Info_AddChoice(DIA_Sagitta_Teach,b_buildlearnstringforalchemy( " Mana " ,B_GetLearnCostTalent(other, NPC_TALENT_ALCHEMY ,POTION_Mana_03)),DIA_Sagitta_Teach_Mana_03);
 		talents = talents +  1 ;
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Mana] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE))
@@ -396,10 +396,10 @@ func void dia_sagitta_aloe_info()
 	AI_Output(self,other, " DIA_Sagitta_Aloe_17_01 " );	// Oh, this is a very special drink. It makes your hide as tough as a troll's.
 	AI_Output(self,other, " DIA_Sagitta_Aloe_17_02 " );	// But I won't tell you the recipe.
 	AI_Output(other,self, " DIA_Sagitta_Aloe_15_03 " );	// Can you cook it for me?
-	AI_Output(self,other, " DIA_Sagitta_Aloe_17_04 " );	// From this plant? I am afraid no. I've already ordered a drink from it.
-	AI_Output(self,other, " DIA_Sagitta_Aloe_17_05 " );	// If you find this plant anywhere else, then bring it and I'll make you this drink.
-	AI_Output(self,other, " DIA_Sagitta_Aloe_17_06 " );	// Not free, of course.
-	AI_Output(other, self, " DIA_Sagitta_Aloe_15_07 " );	// Understandably.
+	AI_Output(self,other, " DIA_Sagitta_Aloe_17_04 " );	// From this plant? I am afraid no. I've already prepared a drink from it.
+	AI_Output(self,other, " DIA_Sagitta_Aloe_17_05 " );	// If you find this plant anywhere else, then bring it and I'll make you some.
+	AI_Output(self,other, " DIA_Sagitta_Aloe_17_06 " );	// Not for free, obviously.
+	AI_Output(other, self, " DIA_Sagitta_Aloe_15_07 " );	// Obviously...
 };
 
 
@@ -410,7 +410,7 @@ instance DIA_SIGHT_ALOEREADY ( C_Info ) .
 	condition = dia_sagitta_aloeready_condition;
 	information = dia_sagitta_aloeready_info;
 	permanent = TRUE;
-	description = " I have another sun scarlet with me! " ;
+	description = " I have another Sun Aloe with me! " ;
 };
 
 func int dia_arrow_aloeready_condition()
@@ -423,7 +423,7 @@ func int dia_arrow_aloeready_condition()
 
 func void dia_horizontal_aloneready_info()
 {
-	AI_Output(other,self, " DIA_Sagitta_AloeReady_01_00 " );	// I have another sunny scarlet with me!
+	AI_Output(other,self, " DIA_Sagitta_AloeReady_01_00 " );	// I have another Sun Aloe with me!
 	if ( SECONDALOE_SETTING  ==  FALSE )
 	{
 		AI_Output(self,other, " DIA_Sagitta_AloeReady_01_01 " );	// Amazing! How did you manage to get it?
@@ -444,19 +444,19 @@ func void dia_horizontal_aloneready_info()
 
 func void dia_sagitta_aloneready_no()
 {
-	AI_Output(other,self, " DIA_Sagitta_AloeReady_No_01_01 " );	// Sorry, but I can't afford that kind of pleasure right now.
-	AI_Output(self,other, " DIA_Sagitta_AloeReady_No_01_02 " );	// Well, that's a pity. Then come to me when you have money.
+	AI_Output(other,self, " DIA_Sagitta_AloeReady_No_01_01 " );	// Sorry, but I can't afford that kind of luxury right now.
+	AI_Output(self,other, " DIA_Sagitta_AloeReady_No_01_02 " );	// Well, that's a pity. Come back when you have the money.
 	AI_StopProcessInfos(self);
 };
 
 func void dia_sagitta_aloneready_ok()
 {
-	AI_Output(other, self, " DIA_Sagitta_AloeReady_Ok_01_00 " );	// By the hands!
+	AI_Output(other, self, " DIA_Sagitta_AloeReady_Ok_01_00 " );	// Brew away, dear lady!
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,1000))
 	{
-		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_01 " );	// Great. Then come tomorrow afternoon.
-		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_02 " );	// Your drink will be ready by then.
+		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_01 " );	// Great. Then come back tomorrow afternoon.
+		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_02 " );	// Your potion will be ready by then.
 		B_GiveInvItems(other,self,ItPl_Xagitta_Herb_MIS,1);
 		Npc_RemoveInvItems(self,ItPl_Xagitta_Herb_MIS,1);
 		SAGITTASECONDALOEDAY = Wld_GetDay();
@@ -465,9 +465,9 @@ func void dia_sagitta_aloneready_ok()
 	else
 	{
 		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_03 " );	// Well? And where is my money?
-		AI_Output(other,self, " DIA_Sagitta_AloeReady_Ok_01_04 " );	// I don't seem to have them.
-		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_05 " );	// Just don't try to fool me! Trust me, you won't get anything.
-		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_06 " );	// Get the money first, and then just come to me.
+		AI_Output(other,self, " DIA_Sagitta_AloeReady_Ok_01_04 " );	// I seem to be a little light right now...
+		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_05 " );	// Then why waste my time?
+		AI_Output(self,other, " DIA_Sagitta_AloeReady_Ok_01_06 " );	// No coin, no nature defying arcane elixir.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -496,7 +496,7 @@ func void dia_sagitta_aloneget_info()
 	where int daynow;
 
 	daynow = Wld_GetDay();
-	AI_Output(other,self, " DIA_Sagitta_AloeGet_01_00 " );	// How's my drink?
+	AI_Output(other,self, " DIA_Sagitta_AloeGet_01_00 " );	// How's my potion coming along?
 
 	if(SAGITTASECONDALOEDAY < daynow)
 	{
@@ -504,22 +504,22 @@ func void dia_sagitta_aloneget_info()
 		{
 			AI_Output(self,other, " DIA_Sagitta_AloeGet_01_01 " );	// Here, it's ready! You can safely drink it.
 			B_GiveInvItems(self,other,itpo_perm_def,1);
-			AI_Output(other, self, " DIA_Sagitta_AloeGet_01_02 " );	// Thank you
+			AI_Output(other, self, " DIA_Sagitta_AloeGet_01_02 " );	// Thank you.
 			SAGITTASECONDALOEDAY = FALSE;
 			SAGITTAONWORK = FALSE;
 			SagittaMakeOnce = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_Sagitta_AloeGet_01_03 " );	// Has it already been noon the next day?
+			AI_Output(self,other, " DIA_Sagitta_AloeGet_01_03 " );	// Has it been a day already?
 			AI_Output(other, self, " DIA_Sagitta_AloeGet_01_04 " );	// Ummm...
-			AI_Output(self,other, " DIA_Sagitta_AloeGet_01_05 " );	// That's it. You're just pulling on me.
+			AI_Output(self,other, " DIA_Sagitta_AloeGet_01_05 " );	// I suggest you invest in a pocket watch.
 			AI_StopProcessInfos(self);
 		};
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Sagitta_AloeGet_01_06 " );	// I told you to come tomorrow afternoon!
+		AI_Output(self,other, " DIA_Sagitta_AloeGet_01_06 " );	// I told you to come back tomorrow afternoon!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -552,7 +552,7 @@ func void DIA_Sagitta_HEAL_Info()
 	{
 		if(PRAYDAYSAGG != Wld_GetDay())
 		{
-			AI_Output(self,other, " DIA_Sagitta_HEAL_17_01 " );	// Let's see what you got there. Mmm. My ointment will instantly heal all your wounds.
+			AI_Output(self,other, " DIA_Sagitta_HEAL_17_01 " );	// Let's see what we have here. It's not so bad. This ointment will heal you.
 			hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
 			AI_Print(PRINT_FullyHealed);
 			PRAYDAYSAGG = Wld_GetDay();
@@ -560,12 +560,12 @@ func void DIA_Sagitta_HEAL_Info()
 		}
 		else if(PRAYDAYSAGG == Wld_GetDay())
 		{
-			AI_Output(self,other, " DIA_Sagitta_HEAL_17_03 " );	// I already treated you today. My ointment can only help once a day.
+			AI_Output(self,other, " DIA_Sagitta_HEAL_17_03 " );	// I already treated you today. My ointment can only be used once a day, or else it may kill you.
 		};
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Sagitta_HEAL_17_02 " );	// You don't need healing at the moment.
+		AI_Output(self,other, " DIA_Sagitta_HEAL_17_02 " );	// You don't need healing, silly boy.
 	};
 };
 
@@ -605,7 +605,7 @@ func void DIA_Sagitta_TRADE_Info()
 		CreateInvItems(self,itpo_anpois,3);
 	};
 
-	AI_Output(self,other, " DIA_Sagitta_TRADE_17_01 " );	// Выбирай
+	AI_Output(self,other, " DIA_Sagitta_TRADE_17_01 " );	// Take a look.
 	B_GiveTradeInv(self);
 };
 
@@ -655,9 +655,9 @@ func int DIA_Sagitta_OBSESSION_Condition()
 
 func void DIA_Sagitta_OBSESSION_Info()
 {
-	AI_Output(other,self, " DIA_Sagitta_OBSESSION_15_00 " );	// I feel some kind of strong internal anxiety. I need help.
-	AI_Output(self,other, " DIA_Sagitta_OBSESSION_17_01 " );	// I see you don't get enough sleep to recover. You have fallen under the influence of the black gaze of Seekers.
-	AI_Output(self,other, " DIA_Sagitta_OBSESSION_17_02 " );	// Go to Pirokar, High Mage of the monastery. My modest knowledge is not enough here.
+	AI_Output(other,self, " DIA_Sagitta_OBSESSION_15_00 " );	// I feel some kind of strong mental anxiety. I need help.
+	AI_Output(self,other, " DIA_Sagitta_OBSESSION_17_01 " );	// You are exhausted. You have fallen under the influence of the black gaze of the Seekers.
+	AI_Output(self,other, " DIA_Sagitta_OBSESSION_17_02 " );	// Go to Pyrokar, ArchMage of the monastery. My modest knowledge is not enough here.
 };
 
 
@@ -681,9 +681,9 @@ func int DIA_Sagitta_Thekla_Condition()
 
 func void DIA_Horizontal_Info()
 {
-	AI_Output(other,self, " DIA_Sagitta_Thekla_15_00 " );	// Thecla sent me to you for herbs.
-	AI_Output(self,other, " DIA_Sagitta_Thekla_17_01 " );	// Oh, yes. Actually, I was expecting it a few days ago.
-	AI_Output(self,other, " DIA_Sagitta_Thekla_17_02 " );	// Here, take the package. And be careful with him!
+	AI_Output(other,self, " DIA_Sagitta_Thekla_15_00 " );	// Thekla sent me to you for herbs.
+	AI_Output(self,other, " DIA_Sagitta_Thekla_17_01 " );	// I was expecting you.
+	AI_Output(self,other, " DIA_Sagitta_Thekla_17_02 " );	// Here, take the package. And be careful with it!
 	B_GivePlayerXP(XP_AmbientKap3);
 	B_GiveInvItems(self,other,ItMi_TheklasPackage, 1 );
 };
@@ -741,26 +741,26 @@ func void DIA_Sagitta_HEALRANDOLPH_Info()
 	AI_Output(other,self, " DIA_Sagitta_HEALRANDOPH_15_00 " );	// Randolph has a hangover.
 	if (DIA_Sagitta_HEALRANDOLPH_KnowsPrice ==  FALSE )
 	{
-		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_01 " );	// And when will this guy come to his senses?!
+		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_01 " );	// That bloody alcoholic?!
 		DIA_Sagitta_HEALRANDOLPH_KnowsPrice = TRUE ;
 	};
 	if (DIA_Sagitta_HEALRANDOLPH_GotOne ==  TRUE )
 	{
-		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_02 " );	// I've already given him medicine. You wouldn't contact him.
+		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_02 " );	// I've already given him medicine. Why are you here?
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_03 " );	// I'll give you medicine for him. It will get him back on his feet in a couple of days.
+		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_03 " );	// I'll give you some medicine for him. It will get him back on his feet shortly.
 	};
 	AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_04 " );	// But it will cost you three hundred gold.
 	if (DIA_Sagitta_HEALRANDOLPH_KnowsPrice ==  FALSE )
 	{
 		AI_Output(other,self, " DIA_Sagitta_HEALRANDOLPH_15_05 " );	// What?
-		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_06 " );	// The only thing you can get here for free is death, baby.
+		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_17_06 " );	// The only thing you can get for free is death, young man.
 	};
 	Info_ClearChoices(DIA_SAGITTA_HEALRANDOLPH);
-	Info_AddChoice(DIA_Sagitta_HEALRANDOLPH, " No! So much gold for such nonsense? " ,DIA_Sagitta_HEALRANDOLPH_no);
-	Info_AddChoice(DIA_Sagitta_HEALRANDOLPH, " Вот твой деньги. " ,DIA_Sagitta_HEALRANDOLPH_geld);
+	Info_AddChoice(DIA_Sagitta_HEALRANDOLPH, " So much gold for such a trifling thing? " ,DIA_Sagitta_HEALRANDOLPH_no);
+	Info_AddChoice(DIA_Sagitta_HEALRANDOLPH, " Here, take it. " ,DIA_Sagitta_HEALRANDOLPH_geld);
 };
 
 func void DIA_Sagitta_HEALRANDOLPH_geld()
@@ -776,15 +776,15 @@ func void DIA_Sagitta_HEALRANDOLPH_geld()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_geld_17_02 " );	// Until you have the full amount, I won't even talk about it.
+		AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_geld_17_02 " );	// Until you have the full amount, you are wasting my time.
 	};
 	Info_ClearChoices(DIA_SAGITTA_HEALRANDOLPH);
 };
 
 func void DIA_Sagitta_HEALRANDOLPH_no()
 {
-	AI_Output(other,self, " DIA_Sagitta_HEALRANDOPH_no_15_00 " );	// No. So much gold for such nonsense?!
-	AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_no_17_01 " );	// (laughs) He didn't give you any money? It looks like him!
+	AI_Output(other,self, " DIA_Sagitta_HEALRANDOPH_no_15_00 " );	// So much gold for such a trifling thing?
+	AI_Output(self,other, " DIA_Sagitta_HEALRANDOPH_no_17_01 " );	// He didn't give you the money? That's just like him!
 	Info_ClearChoices(DIA_SAGITTA_HEALRANDOLPH);
 };
 
