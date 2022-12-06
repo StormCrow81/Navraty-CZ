@@ -45,22 +45,22 @@ func void DIA_Grimbald_HALLO_Info()
 
 	if ((Npc_IsDead(Grimbald_Snapper1) ==  FALSE ) && (Npc_IsDead(Grimbald_Snapper2) ==  FALSE ) && (Npc_IsDead(Grimbald_Snapper3) ==  FALSE ))
 	{
-		AI_Output(self,other, " DIA_Grimbald_HALLO_07_02 " );	// No more. You've already arrived.
+		AI_Output(self,other, " DIA_Grimbald_HALLO_07_02 " );	// Not any more. You just arrived..
 		Info_ClearChoices(DIA_Grimbald_HALLO);
 		Info_AddChoice(DIA_Grimbald_HALLO, " I have things to do. " ,DIA_Grimbald_HALLO_nein);
 		Info_AddChoice(DIA_Grimbald_HALLO, " What are you up to? " ,DIA_Grimbald_HALLO_Was);
-		Info_AddChoice(DIA_Grimbald_HALLO, " Why me? " ,DIA_Grimbald_HALLO_ich);
+		Info_AddChoice(DIA_Grimbald_HALLO, " You need me for something? " ,DIA_Grimbald_HALLO_ich);
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Grimbald_HALLO_07_01 " );	// I'm hunting! I think it's obvious.
+		AI_Output(self,other, " DIA_Grimbald_HALLO_07_01 " );	// I'm hunting! Obviously.
 	};
 };
 
 func void DIA_Grimbald_HELLO_me()
 {
-	AI_Output(other,self, " DIA_Grimbald_HALLO_ich_15_00 " );	// Why me?!
-	AI_Output(self,other, " DIA_Grimbald_HALLO_ich_07_01 " );	// Looks like you're a strong person. I would not refuse your help.
+	AI_Output(other,self, " DIA_Grimbald_HALLO_ich_15_00 " );	// You need me for something?
+	AI_Output(self,other, " DIA_Grimbald_HALLO_ich_07_01 " );	// I need a strong arm to assist me here.
 	AI_Output(self,other, " DIA_Grimbald_HALLO_ich_07_02 " );	// All the other hunters have gone to the camp - so only you can help me.
 };
 
@@ -69,12 +69,12 @@ func void DIA_Grimbald_HELLO_What()
 	AI_Output(other,self, " DIA_Grimbald_HALLO_Was_15_00 " );	// What are you thinking?
 	AI_Output(self,other, " DIA_Grimbald_HALLO_Was_07_01 " );	// I want to hunt snappers over there, but I'm afraid I can't handle them on my own.
 	Info_AddChoice(DIA_Grimbald_HALLO, " You can't count on me. " ,DIA_Grimbald_HALLO_Was_neinnein);
-	Info_AddChoice(DIA_Grimbald_HALLO, " Okay, I'll help you! But you'll go ahead. " ,DIA_Grimbald_HALLO_Was_ja);
+	Info_AddChoice(DIA_Grimbald_HALLO, " Okay, I'll help you! Lead the way. " ,DIA_Grimbald_HALLO_Was_ja);
 };
 
 func void DIA_Grimbald_HELLO_What_nono()
 {
-	AI_Output(other,self, " DIA_Grimbald_HALLO_Was_neinnein_15_00 " );	// You can't count on me.
+	AI_Output(other,self, " DIA_Grimbald_HALLO_Was_neinnein_15_00 " );	// Snappers? Hells no.
 	AI_Output(self,other, " DIA_Grimbald_HALLO_Was_neinnein_07_01 " );	// Then get lost, coward!
 	Grimbald_PissOff = TRUE;
 	AI_StopProcessInfos(self);
@@ -82,9 +82,9 @@ func void DIA_Grimbald_HELLO_What_nono()
 
 func void DIA_Grimbald_HELLO_What_yes()
 {
-	AI_Output(other,self, " DIA_Grimbald_HALLO_Was_ja_15_00 " );	// Okay, I'll help you! But you will go ahead.
+	AI_Output(other,self, " DIA_Grimbald_HALLO_Was_ja_15_00 " );	// Okay, I'll help you! Lead the way.
 	AI_Output(self,other, " DIA_Grimbald_HALLO_Was_ja_07_01 " );	// Of course! Just don't get too close to the black troll. He'll tear you to pieces, you understand?
-	AI_Output(self,other, " DIA_Grimbald_HALLO_Was_ja_07_02 " );	// And I won't forgive you if you decide to run away.
+	AI_Output(self,other, " DIA_Grimbald_HALLO_Was_ja_07_02 " );	// And I'll hunt you down if you decide to run away.
 	GrimbaldTellBT = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Jagd");
@@ -93,7 +93,7 @@ func void DIA_Grimbald_HELLO_What_yes()
 func void DIA_Grimbald_HELLO_no()
 {
 	AI_Output(other,self, " DIA_Grimbald_HALLO_nein_15_00 " );	// I have things to do.
-	AI_Output(self,other, " DIA_Grimbald_HALLO_nein_07_01 " );	// Don't talk nonsense! What is so important that can wait for you in this wilderness?
+	AI_Output(self,other, " DIA_Grimbald_HALLO_nein_07_01 " );	// Oh excuse me! Your highness has important business in this wilderness?
 };
 
 instance DIA_Grimbald_TrollTell(C_Info)
@@ -122,7 +122,7 @@ func void DIA_Grimbald_TrollTell_Info()
 	AI_Output(self,other, " DIA_Grimbald_TrollTell_01_01 " );	// This beast has been here for a very long time. He took a fancy to that cave, and since then it has become his permanent lair.
 	AI_Output(other,self, " DIA_Grimbald_TrollTell_01_02 " );	// Does he always sit in it?
 	AI_Output(self,other, " DIA_Grimbald_TrollTell_01_03 " );	// I don't know, mate. Usually trolls live high in the mountains, and only occasionally descend into the valley.
-	AI_Output(self,other, " DIA_Grimbald_TrollTell_01_04 " );	// But this one seems to like it here. Therefore, he is unlikely to leave here.
+	AI_Output(self,other, " DIA_Grimbald_TrollTell_01_04 " );	// But this one seems to like it here. Therefore, he is unlikely to leave.
 	AI_Output(self,other, " DIA_Grimbald_TrollTell_01_05 " );	// Really, if I were you, I wouldn't check it out, mate.
 	AI_Output(self,other, " DIA_Grimbald_TrollTell_01_06 " );	// The black troll is capable of tearing a living person into many small pieces!
 	AI_Output(self,other, " DIA_Grimbald_TrollTell_01_07 " );	// And even very strong armor will hardly save you from its huge paws.
