@@ -41,11 +41,11 @@ func void DIA_Grom_HELLO_Info()
 	AI_Output(other,self, " DIA_Grom_HALLO_15_00 " );	// Is everything okay?
 	if(HEROISHUNTER == TRUE)
 	{
-		AI_Output(self,other, " DIA_Grom_HALLO_08_02 " );	// Seems okay, mate!
+		AI_Output(self,other, " DIA_Grom_HALLO_08_02 " );	// Fine, just fine!
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Grom_HALLO_08_01 " );	// Ah, stranger stranger... (dryly) I'm very busy. What do you want?
+		AI_Output(self,other, " DIA_Grom_HALLO_08_01 " );	// Ah, stranger, stranger... I'm very busy. What do you want?
 	};
 };
 
@@ -70,9 +70,9 @@ func int dia_grom_hello_whattoview_condition()
 
 func void dia_grom_hello_whattosee_info()
 {
-	AI_Output(other,self, " DIA_Grom_HALLO_Waszusehen_15_00 " );	// What interesting things can be seen here?
-	AI_Output(self,other, " DIA_Grom_HALLO_Waszusehen_08_01 " );	// Interesting is well said. If you go deep into the local forest, you will stumble upon very angry guys.
-	AI_Output(self,other, " DIA_Grom_HALLO_Waszusehen_08_02 " );	// They're about ten feet tall, hairy, and in a very bad mood. So don't go there if you don't think you're strong enough.
+	AI_Output(other,self, " DIA_Grom_HALLO_Waszusehen_15_00 " );	// What interesting things can be seen around here?
+	AI_Output(self,other, " DIA_Grom_HALLO_Waszusehen_08_01 " );	// Interesting is the right word. If you go deep enough into the local forest, you will stumble upon some very grumpy guys.
+	AI_Output(self,other, " DIA_Grom_HALLO_Waszusehen_08_02 " );	// They're about ten feet tall, hairy, and in a bad mood. So don't go there if you don't think you're strong enough.
 };
 
 
@@ -97,10 +97,10 @@ func int dia_grom_hallo_was_condition()
 func void dia_grom_hello_was_info()
 {
 	AI_Output(other,self, " DIA_Grom_HALLO_Was_15_00 " );	// What are you doing here?
-	AI_Output(self,other, " DIA_Grom_HALLO_Was_08_01 " );	// What do you think a hunter might be doing here? I want, of course!
-	AI_Output(self,other, " DIA_Grom_HALLO_Was_08_02 " );	// Falk ordered me a couple of mountain troll skins.
-	AI_Output(self,other, " DIA_Grom_HALLO_Was_08_03 " );	// So I'm hanging around here - waiting for the right moment to bang these creatures!
-	AI_Output(self,other, " DIA_Grom_HALLO_Was_08_04 " );	// If not for this order, I would have been sitting in the camp for a long time - eating delicious meat and drinking cold beer.
+	AI_Output(self,other, " DIA_Grom_HALLO_Was_08_01 " );	// What do you think a hunter might be doing here? Knitting?
+	AI_Output(self,other, " DIA_Grom_HALLO_Was_08_02 " );	// Falk ordered a couple of mountain troll skins.
+	AI_Output(self,other, " DIA_Grom_HALLO_Was_08_03 " );	// So I'm hanging around here - waiting for the right moment to end these smelly beasts!
+	AI_Output(self,other, " DIA_Grom_HALLO_Was_08_04 " );	// If not for this special order, I would have been sitting in the camp by now - eating delicious meat and drinking cold beer.
 	MIS_GROMTROLLS = LOG_Running;
 	Log_CreateTopic(TOPIC_GROMTROLLS,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GROMTROLLS,LOG_Running);
@@ -131,11 +131,11 @@ func void dia_grom_trollfur_info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self, " DIA_Grom_TrollFur_01_00 " );	// I have some troll skins for you.
-	AI_Output(self,other, " DIA_Grom_TrollFur_01_01 " );	// Man, where did you get them from? Are you looking for them? It's damn dangerous!
-	AI_Output(self,other, " DIA_Grom_TrollFur_01_03 " );	// Thank you. And then I thought I was stuck here forever. Give them here.
-	AI_Output(other,self, " DIA_Grom_TrollFur_01_04 " );	// Here, take this.
+	AI_Output(self,other, " DIA_Grom_TrollFur_01_01 " );	// What? where did you get them from? You went troll hunting? It's damn dangerous!
+	AI_Output(self,other, " DIA_Grom_TrollFur_01_03 " );	// Now I can get my ass out of here! Hand them over!
+	AI_Output(other,self, " DIA_Grom_TrollFur_01_04 " );	// Here you go.
 	B_GiveInvItems(other,self,ItAt_TrollFur,2);
-	AI_Output(self,other, " DIA_Grom_TrollFur_01_05 " );	// Great! I'll give you five hundred coins for them. This is much more than what the merchants in the city will offer you.
+	AI_Output(self,other, " DIA_Grom_TrollFur_01_05 " );	// Great! I'll give you five hundred coins for them. That's much more than what the merchants in the city will offer you.
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	AI_Output(self,other, " DIA_Grom_TrollFur_01_06 " );	// Well, it's time for me to get back to the camp. See you!
 	MIS_GROMTROLLS = LOG_SUCCESS;
@@ -168,8 +168,8 @@ func int DIA_Grom_AskTeacher_Condition()
 func void DIA_Grom_AskTeacher_Info()
 {
 	AI_Output(other,self, " DIA_Grom_AskTeacher_15_00 " );	// Can you teach me how to hunt?
-	AI_Output(self,other, " DIA_Grom_AskTeacher_08_01 " );	// Of course. But first bring me some decent food. I am starving.
-	AI_Output(self,other, " DIA_Grom_AskTeacher_08_02 " );	// I want a bottle of milk, a loaf of bread, and a fatty ham. And then I'll teach you everything I know.
+	AI_Output(self,other, " DIA_Grom_AskTeacher_08_01 " );	// Of course. But first bring me some decent food. I'm starving.
+	AI_Output(self,other, " DIA_Grom_AskTeacher_08_02 " );	// I want a bottle of milk, a loaf of bread, and a fatty ham. Then I'll teach you everything I know.
 	MIS_GROMASKTEACHER = LOG_Running;
 	Log_CreateTopic(TOPIC_GromAskTeacher,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GromAskTeacher,LOG_Running);
@@ -201,15 +201,15 @@ func void DIA_Grom_PayTeacher_Info()
 	AI_Output(other,self, " DIA_Grom_PayTeacher_15_00 " );	// Here's the food, just like you asked.
 	if(B_GiveInvItems(other,self,ItFo_Milk,1))
 	{
-		AI_Output(other,self,"DIA_Grom_PayTeacher_15_01");	//Молоко.
+		AI_Output(other,self,"DIA_Grom_PayTeacher_15_01");	//Milk.
 	};
 	if(B_GiveInvItems(other,self,ItFo_Bread,1))
 	{
-		AI_Output(other,self,"DIA_Grom_PayTeacher_15_02");	//Хлеб.
+		AI_Output(other,self,"DIA_Grom_PayTeacher_15_02");	//Bread.
 	};
 	if(B_GiveInvItems(other,self,ItFo_Bacon,1))
 	{
-		AI_Output(other,self,"DIA_Grom_PayTeacher_15_03");	//Окорок.
+		AI_Output(other,self,"DIA_Grom_PayTeacher_15_03");	//Ham.
 	};
 	AI_Output(self,other, " DIA_Grom_PayTeacher_08_01 " );	// Great, now what?
 	Grom_TeachAnimalTrophy = TRUE;
@@ -249,27 +249,27 @@ func void DIA_Grom_TEACHHUNTING_Info()
 
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 		{
-			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Сдирать шкуру",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Fur)),DIA_Grom_TEACHHUNTING_Fur);
+			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Skinning",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Fur)),DIA_Grom_TEACHHUNTING_Fur);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE)
 		{
-			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Вырывать клыки",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Teeth)),DIA_Grom_TEACHHUNTING_Teeth);
+			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Pulling teeth",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Teeth)),DIA_Grom_TEACHHUNTING_Teeth);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Heart] == FALSE)
 		{
-			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Вырезать сердце",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Heart)),DIA_Grom_TEACHHUNTING_Heart);
+			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Removing hearts",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Heart)),DIA_Grom_TEACHHUNTING_Heart);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] == FALSE)
 		{
-			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Удаление мандибул",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Mandibles)),DIA_Grom_TEACHHUNTING_Mandibles);
+			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Removing mandibles",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Mandibles)),DIA_Grom_TEACHHUNTING_Mandibles);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ShadowHorn] == FALSE)
 		{
-			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Отламывать рог мракориса",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_ShadowHorn)),DIA_Grom_TEACHHUNTING_ShadowHorn);
+			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt("Harvesting shadowbeast horns",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_ShadowHorn)),DIA_Grom_TEACHHUNTING_ShadowHorn);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] == FALSE)
 		{
-			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt( " Cut Firetongue " ,B_GetLearnCostTalent(other, NPC_TALENT_TAKEANIMALTROPHY ,TROPHY_FireTongue)),dia_grom_teachhunting_firetongue);
+			Info_AddChoice(DIA_Grom_TEACHHUNTING,b_buildlearnstringforsmithhunt( " Harvesting Fire lizard tongues " ,B_GetLearnCostTalent(other, NPC_TALENT_TAKEANIMALTROPHY ,TROPHY_FireTongue)),dia_grom_teachhunting_firetongue);
 		};
 	}
 	else
@@ -288,7 +288,7 @@ func void DIA_Grom_TEACHHUNTING_Fur()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Fur))
 	{
-		AI_Output(self,other, " DIA_Grom_TEACHHUNTING_Fur_08_00 " );	// Make an incision along the legs of the animal so you can skin it. Shoot it from back to front, not the other way around.
+		AI_Output(self,other, " DIA_Grom_TEACHHUNTING_Fur_08_00 " );	// Make an incision along the legs of the animal so you can skin it. Cut it from back to front, not the other way around.
 	};
 	Info_ClearChoices(DIA_Grom_TEACHHUNTING);
 };
@@ -315,7 +315,7 @@ func void DIA_Grom_TEACHHUNTING_Mandibles()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Mandibles))
 	{
-		AI_Output(self,other, " DIA_Grom_TEACHHUNTING_Mandibles_08_00 " );	// The mandibles of a creeper or field predator must be separated with a very strong metal lever. They sit very deep in the skull of these animals.
+		AI_Output(self,other, " DIA_Grom_TEACHHUNTING_Mandibles_08_00 " );	// The mandibles of a creeper or field predator must be separated with a very strong metal lever. They sit very deep in the skulls of these animals.
 	};
 	Info_ClearChoices(DIA_Grom_TEACHHUNTING);
 };
@@ -324,7 +324,7 @@ func void DIA_Grom_TEACHHUNTING_ShadowHorn()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_ShadowHorn))
 	{
-		AI_Output(self,other, " DIA_Grom_TEACHHUNTING_ShadowHorn_08_00 " );	// To separate the horn of the mracoris, press down on it with all your weight, while cutting the base with a sharp knife.
+		AI_Output(self,other, " DIA_Grom_TEACHHUNTING_ShadowHorn_08_00 " );	// To separate the horn of the shadowbeast, press down on it with all your weight, while cutting the base with a sharp knife.
 	};
 	Info_ClearChoices(DIA_Grom_TEACHHUNTING);
 };
@@ -396,21 +396,21 @@ func int dia_grom_respect_condition()
 func void dia_grom_respect_info()
 {
 	AI_Output(other,self, " DIA_Grom_Respect_01_01 " );	// I need your help.
-	AI_Output(self,other, " DIA_Grom_Respect_01_02 " );	// What's the point?
-	AI_Output(other,self, " DIA_Grom_Respect_01_03 " );	// I want to challenge Falk to a duel and I need to enlist the support of other hunters.
-	AI_Output(self,other, " DIA_Grom_Respect_01_04 " );	// To challenge Falk himself is a very brave act!
-	AI_Output(self,other, " DIA_Grom_Respect_01_05 " );	// He's the best hunter in this camp, and I don't think you have any chance of defeating him.
-	AI_Output(other,self, " DIA_Grom_Respect_01_06 " );	// I've been told this before, but I'm not going to give up on this idea.
-	AI_Output(self,other, " DIA_Grom_Respect_01_07 " );	// Hmmm...(thoughtfully) Well, if you're so confident in your abilities, then of course I could help you.
-	AI_Output(self,other, " DIA_Grom_Respect_01_08 " );	// But not just like that. In the end, everything in this life must be earned - and my support too.
-	AI_Output(other,self, " DIA_Grom_Respect_01_09 " );	// And what should I do?
-	AI_Output(self,other, " DIA_Grom_Respect_01_10 " );	// Just bring me some rare hunting trophy.
-	AI_Output(self,other, " DIA_Grom_Respect_01_11 " );	// If you're a good hunter, this should be easy for you.
+	AI_Output(self,other, " DIA_Grom_Respect_01_02 " );	// With what?
+	AI_Output(other,self, " DIA_Grom_Respect_01_03 " );	// I want to challenge Falk and I need to enlist the support of the other hunters.
+	AI_Output(self,other, " DIA_Grom_Respect_01_04 " );	// You wish to go agter Falk himself? You are either very brave or very stupid.
+	AI_Output(self,other, " DIA_Grom_Respect_01_05 " );	// He's the best hunter in this camp, and I don't think you have any chance of overthrowing him.
+	AI_Output(other,self, " DIA_Grom_Respect_01_06 " );	// So I've heard, but my mind is set on this.
+	AI_Output(self,other, " DIA_Grom_Respect_01_07 " );	// Hmmm... Well, if you're so confident in your abilities, then of course I could help you.
+	AI_Output(self,other, " DIA_Grom_Respect_01_08 " );	// But everything in this life must be earned - and my support is no different.
+	AI_Output(other,self, " DIA_Grom_Respect_01_09 " );	// What should I do?
+	AI_Output(self,other, " DIA_Grom_Respect_01_10 " );	// Just bring me a rare hunting trophy.
+	AI_Output(self,other, " DIA_Grom_Respect_01_11 " );	// If you're a skilled hunter, this should be easy for you.
 	AI_Output(other,self, " DIA_Grom_Respect_01_12 " );	// What kind of trophy do you want?
 	AI_Output(self,other, " DIA_Grom_Respect_01_13 " );	// I told you - rare! For example, a large crawler egg.
-	AI_Output(self,other, " DIA_Grom_Respect_01_14 " );	// You can't find this little thing with fire during the day, and the battle with crawlers is damn hard. Decent trophy!
-	AI_Output(other,self, " DIA_Grom_Respect_01_15 " );	// Okay, agreed.
-	B_LogEntry( TOPIC_HUNTERSWORK , " I will get Thunder's consent if I bring him a creeper egg. " );
+	AI_Output(self,other, " DIA_Grom_Respect_01_14 " );	// Finding one will take balls and cunning, as crawlers are extremely protective of their spawn. 
+	AI_Output(other,self, " DIA_Grom_Respect_01_15 " );	// Okay, I agree.
+	B_LogEntry( TOPIC_HUNTERSWORK , " I will earn Thunder's assistance if I bring him a crawler egg. " );
 };
 
 
@@ -421,7 +421,7 @@ instance DIA_GROM_RESPECTDONE(C_Info)
 	condition = dia_grom_respectdone_condition;
 	information = dia_grom_respectdone_info;
 	permanent = FALSE;
-	description = " I brought you a creeper egg. " ;
+	description = " I brought you a crawler egg. " ;
 };
 
 
@@ -438,13 +438,13 @@ func void dia_grom_respectdone_info()
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_Grom_RespectDone_01_00 " );	// I brought you a creeper's egg.
 	AI_Output(self,other, " DIA_Grom_RespectDone_01_01 " );	// And where is it?
-	AI_Output(other,self, " DIA_Grom_RespectDone_01_02 " );	// Here, take this.
+	AI_Output(other,self, " DIA_Grom_RespectDone_01_02 " );	// Here.
 	B_GiveInvItems(other,self,itat_crawlerqueen,1);
-	AI_Output(self,other, " DIA_Grom_RespectDone_01_03 " );	// Hmmm...(looking) It looks like it really is a big crawler egg.
-	AI_Output(self,other, " DIA_Grom_RespectDone_01_04 " );	// I honestly didn't think you'd be able to do that. You surprised me!
-	AI_Output(other,self, " DIA_Grom_RespectDone_01_05 " );	// So now I can count on your support?
+	AI_Output(self,other, " DIA_Grom_RespectDone_01_03 " );	// Hmmm... This is a beauty all right.
+	AI_Output(self,other, " DIA_Grom_RespectDone_01_04 " );	// I honestly didn't think you'd be able to do that. I underestimated you!
+	AI_Output(other,self, " DIA_Grom_RespectDone_01_05 " );	// So now can I count on your support?
 	AI_Output(self,other, " DIA_Grom_RespectDone_01_06 " );	// As agreed, mate. If Falk asks me about you, he will only hear good things.
 	GROM_RESPECT = TRUE;
-	B_LogEntry( TOPIC_HUNTERSWORK , " I brought Grom a crawler egg. Now Grom will support me in arguing with Falk. " );
+	B_LogEntry( TOPIC_HUNTERSWORK , " I brought Grom a crawler egg. Now Grom will support me in dealing with Falk. " );
 	HUNTCHALLENGECOUNT = HUNTCHALLENGECOUNT + 1;
 };
