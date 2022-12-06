@@ -1102,22 +1102,22 @@ func void dia_arrow_placebo_info()
 	AI_Output(other,self, " DIA_Sagitta_Placebo_01_03 " );	// He took a blow to the leg from a Goblin.
 	AI_Output(other,self, " DIA_Sagitta_Placebo_01_04 " );	// The whole leg turned blue, and now the boy can't even stand properly.
 	AI_Output(other,self, " DIA_Sagitta_Placebo_01_05 " );	// And he also says that regular healing potions don't work for him.
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_06 " );	// An interesting case... (thoughtfully) Usually, with a serious bruise, it is enough to simply treat this place with an ordinary tincture of seraph.
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_07 " );	// And a healing potion would definitely put him back on his feet.
-	AI_Output(other,self, " DIA_Sagitta_Placebo_01_08 " );	// And what should we do?
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_09 " );	// It seems to me that the problem is different.
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_10 " );	// And for this case, there is one very effective method of treatment.
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_06 " );	// An interesting case... (thoughtfully) Usually, with a serious bruise, it is enough to simply treat the area place with an ordinary tincture of seraph.
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_07 " );	// And a healing potion should have definitely put him back on his feet...
+	AI_Output(other,self, " DIA_Sagitta_Placebo_01_08 " );	// What should we do?
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_09 " );	// It seems to me that this problem is different.
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_10 " );	// For this case, there might be only one effective method of treatment.
 	AI_Output(other,self, " DIA_Sagitta_Placebo_01_11 " );	// And what is it?
 	AI_Output(self,other, " DIA_Sagitta_Placebo_01_12 " );	// If a patient is given an ordinary medicine, but at the same time convince him that it is, say, an 'elixir of life'...
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_13 " );	// ...then the patient will be able to heal as if he had actually taken this elixir.
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_14 " );	// And trust me, this really works.
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_13 " );	// ...then the patient will be able to heal as if he had actually taken something extraordinary.
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_14 " );	// Trust me, this really works.
 	AI_Output(self,other, " DIA_Sagitta_Placebo_01_15 " );	// I've done this trick a few times already and the results are always amazing!
-	AI_Output(other,self, " DIA_Sagitta_Placebo_01_16 " );	// An interesting way to treat. I think it's worth a try.
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_17 " );	// So so. Tell Pepe that I have prepared a special strong potion for him.
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_18 " );	// But actually give him a regular healing essence.
+	AI_Output(other,self, " DIA_Sagitta_Placebo_01_16 " );	// Interesting... I think it's worth a try.
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_17 " );	// So... Tell Pepe that I have prepared an especially strong potion for him.
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_18 " );	// But actually give him a regular healing potion.
 	AI_Output(self,other, " DIA_Sagitta_Placebo_01_19 " );	// Just don't admit that you gave him regular medicine when he gets better.
-	AI_Output(self,other, " DIA_Sagitta_Placebo_01_20 " );	// This might... Well, keep quiet.
-	B_LogEntry( TOPIC_LECHENIEPEPE , " Sagitta told me how to cure Pepe. You need to give him a regular potion and suggest that it is an elixir brewed especially for him. " );
+	AI_Output(self,other, " DIA_Sagitta_Placebo_01_20 " );	// This might... Well, let's leave it at that.
+	B_LogEntry( TOPIC_LECHENIEPEPE , " Sagitta told me how to cure Pepe. I need to give him a regular potion and suggest that it is an elixir brewed especially for him. " );
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Troll,"FP_ROAM_CASTLEMILL_TROLL_01");
 	Wld_InsertNpc(Shadowbeast,"FP_ROAM_NW_BIGFARMFORESTCAVE_04");
@@ -1146,23 +1146,23 @@ func int DIA_Seeker_Condition();
 
 func void DIA_Edge_Seekers_Info()
 {
-	AI_Output(other,self, " DIA_Sagitta_Seekers_01_00 " );	// You don't have a face. Something happened?
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_01 " );	// (alarmed) No, everything is fine...
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_02 " );	// I'm just a little scared by these people in black cassocks that recently appeared here.
+	AI_Output(other,self, " DIA_Sagitta_Seekers_01_00 " );	// You look like you've seen a ghost. Something happened?
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_01 " );	// No, everything is fine...
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_02 " );	// I'm just a little unsettled by some people in black robes that recently appeared here.
 	AI_Output(other,self, " DIA_Sagitta_Seekers_01_03 " );	// Do you mean seekers?
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_04 " );	// Yes, I guess... To be honest, I don't know their names.
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_05 " );	// But I feel uncomfortable when I see them. And I get severe headaches.
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_06 " );	// Strange, but this has never happened to me before.
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_04 " );	// Maybe... To be honest, I don't know who or what they are.
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_05 " );	// But I feel uncomfortable when I see them. And I get...headaches.
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_06 " );	// I NEVER get headaches.
 	AI_Output(self,other, " DIA_Sagitta_Seekers_01_07 " );	// And yesterday one of them was looking for something near my cave.
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_08 " );	// I hope he didn't notice that I was following him.
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_08 " );	// I hope he didn't notice that I was watching him.
 	AI_Output(other,self, " DIA_Sagitta_Seekers_01_09 " );	// You'd better stay away from these people.
-	AI_Output(other,self, " DIA_Sagitta_Seekers_01_10 " );	// And anyway, it would be better if you go to Onar's farm. Away from this place.
-	AI_Output(self,other,"DIA_Sagitta_Seekers_01_11");	//Что?!
+	AI_Output(other,self, " DIA_Sagitta_Seekers_01_10 " );	// It would be better if you go to Onar's farm. Away from this place.
+	AI_Output(self,other,"DIA_Sagitta_Seekers_01_11");	// What?!
 	AI_Output(other,self, " DIA_Sagitta_Seekers_01_12 " );	// At least you'll be safe there.
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_13 " );	// (decidedly) Sorry. But I can't get out of here! This is my home.
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_14 " );	// Besides, I'm used to the life of a hermit. And I don't like Onar's orders at all.
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_13 " );	// Sorry. But I can't leave here! This is my home.
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_14 " );	// Besides, I'm used to the life of a hermit. And I don't like Onar at all.
 	AI_Output(other,self, " DIA_Sagitta_Seekers_01_15 " );	// But you're taking a big risk by being here alone.
-	AI_Output(self,other, " DIA_Sagitta_Seekers_01_16 " );	// What to do. But I can't leave the cave unattended either.
+	AI_Output(self,other, " DIA_Sagitta_Seekers_01_16 " );	// I din't know what to do, but I can't leave the cave unattended either.
 	AI_Output(other,self, " DIA_Sagitta_Seekers_01_17 " );	// Okay, I'll think of something.
 	MIS_SagittaGuard = LOG_Running;
 	Log_CreateTopic(TOPIC_SagittaGuard,LOG_MISSION);
@@ -1192,7 +1192,7 @@ func void DIA_Sagitta_Seekers_Done_Info()
 	B_GivePlayerXP(300);
 	AI_Output(other,self, " DIA_Sagitta_Seekers_Done_01_00 " );	// Now you have guards.
 	AI_Output(other,self, " DIA_Sagitta_Seekers_Done_01_01 " );	// So you don't have to worry about those men in black anymore.
-	AI_Output(self,other, " DIA_Sagitta_Seekers_Done_01_02 " );	// (smiling) Thank you. Although, to be honest, I don't really trust these mercenaries.
+	AI_Output(self,other, " DIA_Sagitta_Seekers_Done_01_02 " );	// Thank you. Although, to be honest, I don't really trust mercenaries.
 	AI_Output(self,other, " DIA_Sagitta_Seekers_Done_01_03 " );	// But it's better that way than constantly shaking here alone with fear.
 	AI_Output(self,other, " DIA_Sagitta_Seekers_Done_01_04 " );	// Here, take these potions as my thanks.
 	B_GiveInvItems(self,other,ItPo_Health_02,2);
@@ -1209,7 +1209,7 @@ instance DIA_Sagitta_Werewolf ( C_Info ) .
 	condition = DIA_Sagitta_Werewolf_Condition;
 	information = DIA_Sagitta_Werewolf_Info;
 	permanent = FALSE;
-	description = " It is said that a huge Abyssal has appeared in these places. " ;
+	description = " It is said that a huge Shadowbeast has appeared in these places. " ;
 };
 
 func int DIA_Sagitta_Werewolf_Condition()
@@ -1223,44 +1223,44 @@ func int DIA_Sagitta_Werewolf_Condition()
 func void DIA_Sagitta_Werewolf_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_01_00 " );	// They say that a huge obscurantist has appeared in these places.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_01_01 " );	// True? And who said it?
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_01_00 " );	// They say that a huge Shadowbeast has appeared in these parts.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_01_01 " );	// Really? And who said that?
 	AI_Output(other,self, " DIA_Sagitta_Werewolf_01_02 " );	// Well, you know, rumors usually spread quickly.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_01_03 " );	// What do you care about him?
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_01_04 " );	// It's a long story. But to cut a long story short, that obscurantist... He's not exactly ordinary.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_01_05 " );	// (seriously) Yes, I know.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_01_03 " );	// Why do you care about it?
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_01_04 " );	// It's a long story. But to cut a long story short, that beast... It's not exactly ordinary.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_01_05 " );	// I see...
 	Info_ClearChoices(DIA_Click_Werewolf);
 	Info_AddChoice(DIA_Sagitta_Werewolf, " What?! " ,DIA_Sagitta_Werewolf_Know);
 };
 
 func void DIA_Sagitta_Werewolf_Know()
 {
-	AI_Output(other,self,"DIA_Sagitta_Werewolf_Know_01_00");	//Откуда?
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_01 " );	// He's right behind you now.
+	AI_Output(other,self,"DIA_Sagitta_Werewolf_Know_01_00");	//Where?
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_01 " );	// He's right behind you.
 	AI_TurnToNPC(other,Werewolf);
 	AI_ReadyMeleeWeapon(other);
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_02 " );	// And how to understand it?!
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_02 " );	// What do I do?!
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_03 " );	// Lower your weapon! He won't touch you.
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_04 " );	// Is he sure he doesn't bite?
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_05 " );	// No. This poor fellow is too scared to attack anyone.
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_04 " );	// Are you sure he doesn't bite?
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_05 " );	// No. The poor creature is too scared to attack anyone.
 	AI_RemoveWeapon(self);
 	AI_TurnToNPC(other,self);
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_06 " );	// Are you sure about this?! After all, it was he who attacked one of the peasants of Akil.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_07 " );	// No... That was a different beast. And this one wouldn't hurt a fly.
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_06 " );	// Are you sure about this?! After all, it was he who attacked one of Akil's workers.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_07 " );	// No... That was a different beast. This one wouldn't hurt a fly.
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_08 " );	// As I understand it, he used to be human. But it seems that someone's cruel joke turned him into a beast.
 	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_09 " );	// You're right. The alchemist Ignaz mixed up something in the magic formula of the transformation scroll.
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_10 " );	// And this obscurantist is his assistant, who was lucky enough to use that spell.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_11 " );	// (seriously) Now everything is clear to me. Well, at least the scroll's magic didn't kill him. And that's good...
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_10 " );	// And this Lycanthrope must be his assistant, who was unlucky enough to use that spell.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_11 " );	// Now everything is clear to me. Well, at least the scroll's magic didn't kill him. 
 	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_12 " );	// And what are you going to do with it now?
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_13 " );	// (thoughtfully) For now, he will stay with me.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_14 " );	// It won't change anything for friends, but it will keep unwanted guests away from my cave for a long time.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_13 " );	// For now, he will stay with me.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_14 " );	// At the very least it will keep unwanted guests away from my cave for a while.
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_15 " );	// But we still need to think about how to restore his human form.
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_16 " );	// And do you have any ideas about this?
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_17 " );	// Unfortunately, my strength and knowledge are not enough here. But, probably, magicians will be able to help us.
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_16 " );	// Any ideas?
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_17 " );	// Unfortunately, my powers and knowledge are not enough here. This will require a Mage.
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Know_01_18 " );	// Try talking to Vatras. I'm sure he will give us a solution to this problem.
 	AI_Output(other,self, " DIA_Sagitta_Werewolf_Know_01_19 " );	// Good. I'll talk to him.
 	SagittaWereWolf = TRUE;
-	B_LogEntry(TOPIC_WolfAndMan, "The Mrakoris I was looking for unexpectedly ended up in Sagitta's cave. According to her, he poses no threat to others. However, we should still look for a way to restore his human form. Sagitta advised me to talk to Vatras. " ) ;
+	B_LogEntry(TOPIC_WolfAndMan, "The Shadowbeast I was looking for unexpectedly ended up in Sagitta's cave. According to her, he poses no threat to others. However, we should still look for a way to restore his human form. Sagitta advised me to talk to Vatras. " ) ;
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Werewolf,"NW_SAGITTA_CAVE_IN_WEREWOLF");
 };
@@ -1286,8 +1286,8 @@ func int DIA_Sagitta_Werewolf_Killed_condition()
 func void DIA_Sagitta_Werewolf_Killed_Info()
 {
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Killed_01_00 " );	// Why did you kill him?! What did he do to you?
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Killed_01_01 " );	// I didn't think you were such a nasty bastard!
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Killed_01_02 " );	// Now get out of my cave!
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Killed_01_01 " );	// I didn't think you were such a cruel bastard!
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Killed_01_02 " );	// Get out of my cave!
 	SagittaPissOff = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -1339,11 +1339,11 @@ func void DIA_Sagitta_Werewolf_Safe_Info()
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_01_00 " );	// I've spoken to Vatras.
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_01_01 " );	// And what did he say?
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_01_02 " );	// He can only return human consciousness to the obscurantist. The rest is beyond even him.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_01_03 " );	// (sadly) Good. This will at least ease his suffering a little.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_01_04 " );	// Vatras told us how to do this?
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_01_05 " );	// Of course. He gave me a magic scroll. With his help, I will return the memory of the poor fellow.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_01_06 " );	// Then just do it. I hope everything works out for you.
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_01_02 " );	// He can only return human consciousness to the creature. The rest is beyond even him.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_01_03 " );	// Alright...This will at least ease his suffering a little.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_01_04 " );	// Vatras told you how to do this?
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_01_05 " );	// Of course. He gave me a magic scroll. Hopefully it will return the poor fellow's memory.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_01_06 " );	// Then do it, and pray it works.
 	AI_StopProcessInfos(self);
 };
 
@@ -1368,17 +1368,17 @@ func int DIA_Sagitta_Werewolf_Safe_Done_Condition()
 func void DIA_Sagitta_Werewolf_Safe_Done_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_Done_01_00 " );	// I used a scroll.
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_Done_01_00 " );	// I used the scroll.
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_01 " );	// Good. I already see results.
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_02 " );	// I think you should tell Ignaz about this as well.
 	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_03 " );	// He's probably still worried about what happened.
-	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_Done_01_04 " );	// And the mrakoris will stay here?
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_05 " );	// Well, where else. He definitely does not belong in the forest, and among people too.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_06 " );	// At least I'll have someone to chat with for long evenings.
-	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_07 " );	// I just don't really like people. But this one is a completely different matter.
-	AI_Output(other,self,"DIA_Sagitta_Werewolf_Safe_Done_01_08");	//Понимаю.
+	AI_Output(other,self, " DIA_Sagitta_Werewolf_Safe_Done_01_04 " );	// And the Shadowbeast will stay here?
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_05 " );	// Well, where else? He definitely does not belong in the forest, or among people.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_06 " );	// At least I'll have someone to chat with.
+	AI_Output(self,other, " DIA_Sagitta_Werewolf_Safe_Done_01_07 " );	// I don't like people, and he is no person, so I see no problem.
+	AI_Output(other,self,"DIA_Sagitta_Werewolf_Safe_Done_01_08");	//I understand.
 	SaggitaCanSave = TRUE;
-	B_LogEntry(TOPIC_WolfAndMan, " Sagitta advised me to tell Ignaz about everything. This news will somehow calm him down. " );
+	B_LogEntry(TOPIC_WolfAndMan, " Sagitta advised me to tell Ignaz about everything. This news will calm his nerves. Hopefully. " );
 };
 
 instance DIA_Style_ASKFORDT (C_Info) .
@@ -1403,30 +1403,30 @@ func void DIA_Sagitta_askfordt_info()
 {
 	B_GivePlayerXP(300);
 	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_00 " );	// I need a healer in my camp.
-	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_01 " );	// And you decided to look for it here?
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_02 " );	// I immediately thought of you! You're a healer, and you're good at alchemy.
-	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_03 " );	// And knowing full well that I don't really like the company of people and can't stand leaving my cave.
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_04 " );	// Yes, but times are turbulent. You could see for yourself.
+	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_01 " );	// And?
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_02 " );	// I immediately thought of you! You're a healer, you're good at alchemy.
+	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_03 " );	// You know full well that I don't like the company of people and can't stand leaving my cave.
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_04 " );	// Yes, but these are troubled times. You would see for yourself if you went outside occasionally.
 	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_05 " );	// What do you mean?
 	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_06 " );	// The appearance of that dark wanderer near your cave is an extremely bad sign.
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_07 " );	// Next time he might appear here not alone, but with his friends.
-	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_08 " );	// I'm sure that my security, which you took such good care of in your time, in case of any need to cope with uninvited guests.
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_07 " );	// The next time he appears here he might not be alone.
+	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_08 " );	// I'm sure that my security, which you so generously provided, can deal with any threats.
 	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_09 " );	// I wouldn't count on it.
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_10 " );	// Lee's guys are just simple mercenaries, and no one guarantees that they simply will not scatter at the first impending danger.
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_11 " );	// Especially when it comes to magic. And, mind you, - dark magic!
-	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_12 " );	// Can you protect me in case of emergency?
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_13 " );	// Of course. My camp is an almost impregnable fortress, and it is much better guarded.
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_10 " );	// Lee's guys are just simple mercenaries, and no one guarantees that they simply will not scatter at the first sign of real danger.
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_11 " );	// Especially when it comes to magic. Especially dark magic!
+	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_12 " );	// Can you protect me out there?
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_13 " );	// Of course. My camp is a fortress, and it is much better guarded.
 	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_14 " );	// Hmmm... And where is this camp of yours?
 	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_15 " );	// Not far from Onar's farm, on the site of an old watchtower.
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_16 " );	// It's well flanked by the farm itself and a guarded passageway to the paladin fort, making it an even safer place.
-	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_17 " );	// Okay, you almost convinced me! No matter how much I value my loneliness, I am not going to endanger my life yet.
-	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_18 " );	// Are there many people in the camp?
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_19 " );	// Don't worry, there's enough work for you. And, of course, she will be well paid.
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_16 " );	// It's well flanked by the farm itself and a guarded passageway to the paladin fort, making it even more secure.
+	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_17 " );	// Fine then. I value my solitude, but I value my life more.
+	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_18 " );	// Are there many people in your camp?
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_19 " );	// Don't worry, there's more than enough work for you. And, of course, you will be well paid.
 	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_20 " );	// Money doesn't interest me much. The only thing I'll need is some alchemy ingredients, which I'll probably have to buy now.
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_21 " );	// How much do they cost?
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_21 " );	// How much do you need?
 	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_22 " );	// Hmmm... I think forty gold a day is enough for me to fully provide myself with everything I need.
-	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_23 " );	// Okay, agreed. By the way, will your guards stay here?
-	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_24 " );	// Yes, let them guard my cave until I return. And it's time for me to get on my way.
+	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_23 " );	// Okay, agreed. What will we do with your guards?
+	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_24 " );	// Let them guard my cave until I return. I'll pack my things and head out soon.
 	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_25 " );	// See you at the camp then. By the way, the password to enter there is the phrase 'Dragon Treasures'.
 	AI_Output(other,self, " DIA_Sagitta_AskforDT_17_26 " );	// Just tell it to the guards at the entrance.
 	AI_Output(self,other, " DIA_Sagitta_AskforDT_17_27 " );	// I got it. See you.
