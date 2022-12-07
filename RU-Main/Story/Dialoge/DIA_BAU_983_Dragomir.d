@@ -47,14 +47,14 @@ func void DIA_Dragomir_Hello_Info()
 	if((Hlp_IsItem(itm,ITAR_Leather_L) == TRUE) || (HEROISHUNTER == TRUE))
 	{
 		AI_Output(self,other, " DIA_Dragomir_Hello_12_00 " );	// Traveling this far from home?
-		AI_Output(self,other, " DIA_Dragomir_Hello_12_01 " );	// You can't be careful here, especially when you're all alone.
+		AI_Output(self,other, " DIA_Dragomir_Hello_12_01 " );	// You have to be careful around here, especially when you're all alone.
 	}
 	else
 	{
 		AI_Output(self,other, " DIA_Dragomir_Hello_01_00 " );	// Who let YOU in?
 		AI_Output(self,other, " DIA_Dragomir_Hello_01_01 " );	// And what the hell are you doing here?
-		AI_Output(other,self, " DIA_Dragomir_Hello_01_02 " );	// Just came by to take a look.
-		AI_Output(self,other, " DIA_Dragomir_Hello_01_03 " );	// Very funny.
+		AI_Output(other,self, " DIA_Dragomir_Hello_01_02 " );	// Just having a look around.
+		AI_Output(self,other, " DIA_Dragomir_Hello_01_03 " );	// A jester, eh?
 	};
 };
 
@@ -81,15 +81,15 @@ func void DIA_Dragomir_OutHere_Info()
 	itm = Npc_GetEquippedArmor(other);
 	if((Hlp_IsItem(itm,ITAR_Leather_L) == TRUE) || (HEROISHUNTER == TRUE))
 	{
-		AI_Output(other,self,"DIA_Dragomir_OutHere_01_00");	//Кто ты?
-		AI_Output(self,other, " DIA_Dragomir_OutHere_01_01 " );	// I'm a hunter! (laughs) Is it imperceptible?
-		AI_Output(self,other, " DIA_Dragomir_OutHere_01_02 " );	// Well, here, as you can see, our camp is a great place for guys like us.
+		AI_Output(other,self,"DIA_Dragomir_OutHere_01_00");	//Who are you?
+		AI_Output(self,other, " DIA_Dragomir_OutHere_01_01 " );	// I'm a hunter! I thought that was rather obvious.
+		AI_Output(self,other, " DIA_Dragomir_OutHere_01_02 " );	// This is a hunter's camp my friend.
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Dragomir_OutHere_01_03");	//Кто ты?
-		AI_Output(self,other, " DIA_Dragomir_OutHere_01_04 " );	// Who do you think I look like? I don't think it's a clown. (irritated)
-		AI_Output(self,other, " DIA_Dragomir_OutHere_01_05 " );	// So stop asking your stupid questions and leave me alone.
+		AI_Output(other,self,"DIA_Dragomir_OutHere_01_03");	//Who are you?
+		AI_Output(self,other, " DIA_Dragomir_OutHere_01_04 " );	// Oh, I'm a clown pretending to be a hunter. (irritated)
+		AI_Output(self,other, " DIA_Dragomir_OutHere_01_05 " );	// Stop asking stupid questions and leave me alone.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -116,9 +116,9 @@ func int DIA_Dragomir_Settlers_Condition()
 
 func void DIA_Dragomir_Settlers_Info()
 {
-	AI_Output(other,self, " DIA_Dragomir_Settlers_01_00 " );	// And how do you be a hunter?
-	AI_Output(self,other, " DIA_Dragomir_Settlers_01_01 " );	// Quite tolerable, especially in the company of these guys, what do you see around you.
-	AI_Output(self,other, " DIA_Dragomir_Settlers_01_02 " );	// It's quiet and peaceful here.
+	AI_Output(other,self, " DIA_Dragomir_Settlers_01_00 " );	// Can I join your band of hunters?
+	AI_Output(self,other, " DIA_Dragomir_Settlers_01_01 " );	// Certainly my friend. We are a good bunch of fellows here.
+	AI_Output(self,other, " DIA_Dragomir_Settlers_01_02 " );	// It's quiet and peaceful as well.
 	DRAGOMIRCANGIVEQUEST = TRUE;
 };
 
@@ -146,12 +146,12 @@ func void DIA_Dragomir_Dangerous_Info()
 {
 	AI_Output(other,self, " DIA_Dragomir_Dangerous_15_00 " );	// Isn't it dangerous here?
 	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_01 " );	// Well... Not really, if you can stand up for yourself. My crossbow has already saved me many times.
-	AI_Output(other,self, " DIA_Dragomir_Dangerous_15_02 " );	// Hmm. He's not that big.
-	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_03 " );	// But deadly if you know how to handle it. Yes, I had a bigger crossbow. But unfortunately I lost it.
-	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_04 " );	// I wandered too far north, into the mountains. There is a large stone circle with a sacrificial altar.
+	AI_Output(other,self, " DIA_Dragomir_Dangerous_15_02 " );	// Hmm. It's not that big...
+	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_03 " );	// She's deadly if you know how to handle her. I had a bigger crossbow before, but unfortunately I lost it.
+	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_04 " );	// I wandered too far north, into the mountains. There is a large stone circle with a sacrificial altar there.
 	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_05 " );	// While I was out there hunting scavengers, those damned skeletons came running out of the woods and attacked me.
 	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_06 " );	// I had to run as fast as I could.
-	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_07 " );	// And as I ran, the crossbow slipped out of my hand. I think he's still lying there, by that strange circle to the north.
+	AI_Output(self,other, " DIA_Dragomir_Dangerous_12_07 " );	// And as I ran, the crossbow slipped out of my hand. I think she's still lying there, by that strange circle to the north.
 	MIS_DragomirsArmbrust = LOG_Running;
 	Log_CreateTopic(TOPIC_DragomirsArmbrust,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DragomirsArmbrust,LOG_Running);
@@ -183,16 +183,16 @@ func void DIA_Dragomir_Crossbow_Info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self, " DIA_Dragomir_Armbrust_15_00 " );	// Here, I found your crossbow.
 	B_GiveInvItems(other,self,ItRw_DragomirsArmbrust_MIS,1);
-	AI_Output(self,other, " DIA_Dragomir_Armbbrust_12_01 " );	// Exactly, that's my crossbow. Just don't tell me you went to that stone circle.
+	AI_Output(self,other, " DIA_Dragomir_Armbbrust_12_01 " );	// That's her alright! Don't tell me you went to that stone circle?
 	AI_Output(other,self, " DIA_Dragomir_Armbbrust_15_02 " );	// What's wrong with that?
 	AI_Output(self,other, " DIA_Dragomir_Armbrust_12_03 " );	// That was very reckless of you. But thanks anyway.
-	AI_Output(self,other, " DIA_Dragomir_Armbbrust_12_05 " );	// A hunter is not an example of wealth these days, and I don't even know how to thank you.
+	AI_Output(self,other, " DIA_Dragomir_Armbbrust_12_05 " );	// A hunter is not usually a paragon of wealth, and I don't even know how to thank you.
 	AI_Output(self,other, " DIA_Dragomir_Armbbrust_12_06 " );	// Although... here, take this old book.
 	B_GiveInvItems(self,other,ITWR_CBOW_T1,1);
-	AI_Output(self,other, " DIA_Dragomir_Armbbrust_12_07 " );	// I hope you learn something from it - I learned a lot.
+	AI_Output(self,other, " DIA_Dragomir_Armbbrust_12_07 " );	// I hope you learn something from it - I can't make heads or tales of big words.
 	MIS_DragomirsArmbrust = LOG_SUCCESS ;
 	Log_SetTopicStatus(TOPIC_DragomirsArmbrust,LOG_SUCCESS);
-	B_LogEntry(TOPIC_DragomirsArmbrust, " I returned Dragomir's crossbow he lost. " );
+	B_LogEntry(TOPIC_DragomirsArmbrust, " I returned Dragomir's lost crossbow. " );
 };
 
 var int Dragomir_TeachPlayer;
@@ -219,7 +219,7 @@ func int DIA_Dragomir_Learn_Condition()
 func void DIA_Dragomir_Learn_Info()
 {
 	AI_Output(other,self, " DIA_Dragomir_Learn_15_00 " );	// Can you teach me something?
-	AI_Output(self,other, " DIA_Dragomir_Learn_12_02 " );	// If you can pay. Like I said, I'm a bit on a tight budget right now.
+	AI_Output(self,other, " DIA_Dragomir_Learn_12_02 " );	// If you can pay. Gold is gold am I right?
 	AI_Output(other,self, " DIA_Dragomir_Learn_15_03 " );	// How much do you want?
 	B_Say_Gold(self,other,Dragomir_TeachingCost);
 	Log_CreateTopic(TOPIC_HUNTERTEACHERS,LOG_NOTE);
@@ -229,7 +229,7 @@ func void DIA_Dragomir_Learn_Info()
 
 	if(Npc_HasItems(other,ItMi_Gold) >= Dragomir_TeachingCost)
 	{
-		Info_AddChoice(DIA_Dragomir_Learn, " Come on ! Show me how to handle him. " ,DIA_Dragomir_Learn_Here);
+		Info_AddChoice(DIA_Dragomir_Learn, " Come on ! Show me how to handle it. " ,DIA_Dragomir_Learn_Here);
 	};
 };
 
@@ -405,36 +405,36 @@ func void dia_dragomir_respect_info()
 	AI_Output(other,self, " DIA_Dragomir_Respect_01_00 " );	// Will you vote for me?
 	AI_Output(self,other, " DIA_Dragomir_Respect_01_01 " );	// What's the reason?
 	AI_Output(other,self, " DIA_Dragomir_Respect_01_02 " );	// I want to challenge Falk to compete with him in the art of hunting.
-	AI_Output(self,other, " DIA_Dragomir_Respect_01_03 " );	// You? Falk? Do you believe that you can get the better of him in a case in which he is much more experienced than you?
-	AI_Output(other,self, " DIA_Dragomir_Respect_01_06 " );	// I'll try. So will you help me?
-	AI_Output(self,other, " DIA_Dragomir_Respect_01_07 " );	// Okay, I'll help - it's not difficult for me.
-	AI_Output(self,other, " DIA_Dragomir_Respect_01_08 " );	// But first, prove to me that you're really worth something in our cause.
-	AI_Output(self,other, " DIA_Dragomir_Respect_01_09 " );	// Otherwise, in words, we are all great hunters.
+	AI_Output(self,other, " DIA_Dragomir_Respect_01_03 " );	// You? against Falk? You do realise he knows his art better than most living men today?
+	AI_Output(other,self, " DIA_Dragomir_Respect_01_06 " );	// I still have to try. So will you help me?
+	AI_Output(self,other, " DIA_Dragomir_Respect_01_07 " );	// Okay, I'll help - I like your gumption.
+	AI_Output(self,other, " DIA_Dragomir_Respect_01_08 " );	// But first, prove to me that you're really worth something.
+	AI_Output(self,other, " DIA_Dragomir_Respect_01_09 " );	// It's easy to call yourself a great hunter.
 	AI_Output(other,self, " DIA_Dragomir_Respect_01_10 " );	// And what exactly do you want me to prove?
-	AI_Output(self,other, " DIA_Dragomir_Respect_01_11 " );	// Well, at least you're a good shooter.
+	AI_Output(self,other, " DIA_Dragomir_Respect_01_11 " );	// Prove to me that you can shoot.
 	AI_Output(self,other, " DIA_Dragomir_Respect_01_12 " );	// After all, without this skill, you are more likely to be easy prey for animals, and not a hunter.
-	AI_Output(self,other, " DIA_Dragomir_Respect_01_13 " );	// I'm not very good at archery, of course, but I can tell how good you are at crossbow shooting.
+	AI_Output(self,other, " DIA_Dragomir_Respect_01_13 " );	// I'm not very good at archery myself, but I'll be able to tell how good you are at crossbow shooting.
 	AI_Output(other,self, " DIA_Dragomir_Respect_01_14 " );	// And who should I shoot for you?
-	AI_Output(self,other, " DIA_Dragomir_Respect_01_15 " );	// Nobody! Just show me how well you treat him. This will be enough.
+	AI_Output(self,other, " DIA_Dragomir_Respect_01_15 " );	// Nobody! Just show me how well you handle your weapon. This will be enough.
 	AI_Output(other,self, " DIA_Dragomir_Respect_01_16 " );	// Good. Why not?
 	if(other.HitChance[NPC_TALENT_CROSSBOW] >= 55)
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other, " DIA_Dragomir_Respect_01_17 " );	// Hmmm... (respectfully) I see that's pretty good. You made an impression on me.
-		AI_Output(other,self, " DIA_Dragomir_Respect_01_18 " );	// Does this mean I can now count on your vote?
-		AI_Output(self,other, " DIA_Dragomir_Respect_01_19 " );	// Of course! Such a good shooter simply cannot be a bad hunter.
+		AI_Output(self,other, " DIA_Dragomir_Respect_01_17 " );	// Hmmm... You really are pretty damn good...
+		AI_Output(other,self, " DIA_Dragomir_Respect_01_18 " );	// Does this mean I can count on your vote?
+		AI_Output(self,other, " DIA_Dragomir_Respect_01_19 " );	// Of course! A marksman like you would make an amazing hunter.
 		AI_Output(self,other, " DIA_Dragomir_Respect_01_20 " );	// So I'm here for you.
 		AI_Output(other,self, " DIA_Dragomir_Respect_01_21 " );	// Thank you.
 		DRAGOMIR_RESPECT = TRUE;
-		B_LogEntry( TOPIC_HUNTERSWORK , " I was able to impress Dragomir with my crossbow skills, and now he will support me in an argument with Falk. " );
+		B_LogEntry( TOPIC_HUNTERSWORK , " I was able to impress Dragomir with my crossbow skills, and now he will support me in my dispute with Falk. " );
 		HUNTCHALLENGECOUNT = HUNTCHALLENGECOUNT + 1;
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Dragomir_Respect_01_22 " );	// Hmmm... I see that it doesn't matter at all.
-		AI_Output(self,other, " DIA_Dragomir_Respect_01_23 " );	// No, boy - you have nothing to do with such shooting on the hunt.
-		AI_Output(self,other, " DIA_Dragomir_Respect_01_24 " );	// So if you want to impress me and earn my respect, you better go train.
-		AI_Output(self,other, " DIA_Dragomir_Respect_01_25 " );	// We'll see.
+		AI_Output(self,other, " DIA_Dragomir_Respect_01_22 " );	// Hmmm... That was actually pretty sad to watch.
+		AI_Output(self,other, " DIA_Dragomir_Respect_01_23 " );	// No, boy - you have no business shooting one of those things.
+		AI_Output(self,other, " DIA_Dragomir_Respect_01_24 " );	// So if you want to impress me and earn my respect, you better go train, and train hard.
+		AI_Output(self,other, " DIA_Dragomir_Respect_01_25 " );	// Yes of course.
 	};
 };
 
@@ -465,20 +465,20 @@ func void dia_dragomir_respectdone_info()
 	if(other.HitChance[NPC_TALENT_CROSSBOW] >= 55)
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_03 " );	// Hmmm... (respectfully) Well, I see that it's pretty good. You made an impression on me.
-		AI_Output(other,self, " DIA_Dragomir_RespectDone_01_04 " );	// Does this mean I can now count on your vote?
-		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_05 " );	// Of course! Such a good shooter simply cannot be a bad hunter.
+		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_03 " );	// Hmmm... You really are pretty damn good...
+		AI_Output(other,self, " DIA_Dragomir_RespectDone_01_04 " );	// Does this mean I can count on your vote?
+		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_05 " );	// Of course! A marksman like you would make an amazing hunter.
 		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_06 " );	// So I'm here for you.
 		AI_Output(other,self, " DIA_Dragomir_RespectDone_01_07 " );	// Thank you.
 		DRAGOMIR_RESPECT = TRUE;
-		B_LogEntry( TOPIC_HUNTERSWORK , " I was able to impress Dragomir with my crossbow skills. And now he will support me in an argument with Falk. " );
+		B_LogEntry( TOPIC_HUNTERSWORK , " I was able to impress Dragomir with my crossbow skills. And now he will support me in my dispute with Falk. " );
 		HUNTCHALLENGECOUNT = HUNTCHALLENGECOUNT + 1;
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_08 " );	// Hmmm... Well, what did you want to surprise me with?
-		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_09 " );	// She's still no good.
-		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_10 " );	// If you want to impress me, you need to learn how to do it much better than now.
-		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_11 " );	// So go train.
+		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_08 " );	// Ha, that's IT??
+		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_09 " );	// You're still so terrible!
+		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_10 " );	// Either get better, or stop wasting my time.
+		AI_Output(self,other, " DIA_Dragomir_RespectDone_01_11 " );	// Off you go.
 	};
 };
