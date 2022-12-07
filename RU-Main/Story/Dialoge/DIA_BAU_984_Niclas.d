@@ -42,9 +42,9 @@ func int DIA_Niclas_Hello_Condition()
 
 func void DIA_Niclas_Hello_Info()
 {
-	AI_Output(self,other, " DIA_Niclas_Hello_03_03 " );	// Hey guy. Are you lost?
-	AI_Output(other,self, " DIA_Niclas_Hello_15_01 " );	// Where did you get this from?
-	AI_Output(self,other, " DIA_Niclas_Hello_03_02 " );	// How about what? There is nothing here. (laughs)
+	AI_Output(self,other, " DIA_Niclas_Hello_03_03 " );	// Hail friend. Are you lost?
+	AI_Output(other,self, " DIA_Niclas_Hello_15_01 " );	// Do I look lost?
+	AI_Output(self,other, " DIA_Niclas_Hello_03_02 " );	// There's nothing much around here, so I was just wondering. (laughs)
 };
 
 
@@ -113,13 +113,13 @@ func int DIA_Niclas_WhyHere_Condition()
 func void DIA_Niclas_WhyHere_Info()
 {
 	AI_Output(other,self, " DIA_Niclas_WhyHere_15_00 " );	// What are you doing here?
-	AI_Output(self,other, " DIA_Niclas_WhyHere_01_01 " );	// Like what? I want what else. In the camp, the boring stuff is creepy, but here it’s just a great place!
+	AI_Output(self,other, " DIA_Niclas_WhyHere_01_01 " );	// Being as solitary as possible. The hunting camp is fine of course, but nothing beats this!
 	if(HEROISHUNTER == FALSE)
 	{
 		AI_Output(self,other, " DIA_Niclas_WhyHere_01_02 " );	// By the way, have you been to our camp? If you want to become a real hunter, then you definitely need to go there.
 		AI_Output(other,self, " DIA_Niclas_WhyHere_01_03 " );	// Where is your camp?
-		AI_Output(self,other, " DIA_Niclas_WhyHere_01_04 " );	// In a small hollow, which is located on the road between Onar's farm and Bengar's. Don't worry, it's hard to miss.
-		AI_Output(self,other, " DIA_Niclas_WhyHere_01_05 " );	// If you accidentally wander there, then talk to Falk - he is our senior hunter.
+		AI_Output(self,other, " DIA_Niclas_WhyHere_01_04 " );	// In a small hollow, located on the road between Onar's farm and Bengar's. Don't worry, it's hard to miss.
+		AI_Output(self,other, " DIA_Niclas_WhyHere_01_05 " );	// If you find your way there, then talk to Falk - he is our de facto leader.
 	};
 };
 
@@ -144,9 +144,9 @@ func int DIA_Niclas_ShouldntWork_Condition()
 
 func void DIA_Niclas_ShouldntWork_Info()
 {
-	AI_Output(other,self, " DIA_Niclas_ShouldntWork_01_00 " );	// And how is the hunt?
+	AI_Output(other,self, " DIA_Niclas_ShouldntWork_01_00 " );	// And how is the sport out here?
 	AI_Output(self,other, " DIA_Niclas_ShouldntWork_01_01 " );	// Great. I'm telling you, this is a great hunting ground!
-	AI_Output(other,self, " DIA_Niclas_ShouldntWork_01_02 " );	// Who are you hunting?
+	AI_Output(other,self, " DIA_Niclas_ShouldntWork_01_02 " );	// What are you hunting?
 	AI_Output(self,other, " DIA_Niclas_ShouldntWork_01_03 " );	// Mostly scavengers - safe, and a lot of meat for the guys in the camp.
 	AI_Output(self,other, " DIA_Niclas_ShouldntWork_01_04 " );	// Plus, I'm never averse to practicing archery.
 };
@@ -173,7 +173,7 @@ func int DIA_Niclas_CanTeachMe_Condition()
 func void DIA_Niclas_CanTeachMe_Info()
 {
 	AI_Output(other,self, " DIA_Niclas_CanTeachMe_15_00 " );	// In that case, I'm sure you can teach me something.
-	AI_Output(self,other, " DIA_Niclas_CanTeachMe_03_01 " );	// Why not? I can show you how to hold a bow properly.
+	AI_Output(self,other, " DIA_Niclas_CanTeachMe_03_01 " );	// Why not? I can at least show you how to hold a bow properly.
 	if(HEROISHUNTER == FALSE)
 	{
 		Log_CreateTopic(TOPIC_Teacher,LOG_NOTE);
@@ -274,7 +274,7 @@ func void dia_niclas_makearrows_info()
 {
 	AI_Output(other,self, " DIA_Niclas_MakeArrows_01_00 " );	// Where do you get your arrows from?
 	AI_Output(self,other, " DIA_Niclas_MakeArrows_01_01 " );	// I make them myself. It is not as difficult as it seems at first glance.
-	AI_Output(other,self, " DIA_Niclas_MakeArrows_01_02 " );	// Maybe you can teach me how to make them too?
+	AI_Output(other,self, " DIA_Niclas_MakeArrows_01_02 " );	// Fletching... seems like a good skill to have?
 	AI_Output(self,other, " DIA_Niclas_MakeArrows_01_03 " );	// Of course. If you are interested, I will gladly share my knowledge with you.
 };
 
@@ -315,7 +315,7 @@ func void dia_niclas_makearrowsdo_MAKEARROWS()
 {
 	if(b_teachplayertalentmakearrows(self,other,NPC_TALENT_MAKEARROWS))
 	{
-		AI_Output(self,other, " Dia_Niclas_MakeArrowsDo_01_01 " );	// As you say. First you need a good saw.
+		AI_Output(self,other, " Dia_Niclas_MakeArrowsDo_01_01 " );	// As you wish. First you need a good saw.
 		AI_Output(self,other, " Dia_Niclas_MakeArrowsDo_01_02 " );	// Sawing the right log into pieces of the right size.
 		AI_Output(self,other, " Dia_Niclas_MakeArrowsDo_01_03 " );	// Then you carve them into wooden poles. After that, you need to cut steel tips from a piece of steel and connect to the shaft.
 		AI_Output(self,other, " Dia_Niclas_MakeArrowsDo_01_04 " );	// The same principle applies to crossbow bolts, they just require more steel to produce.
@@ -381,16 +381,16 @@ func int dia_niclas_respect_condition()
 func void dia_niclas_respect_info()
 {
 	AI_Output(other,self, " DIA_Niclas_Respect_01_00 " );	// I need your help.
-	AI_Output(self,other, " DIA_Niclas_Respect_01_01 " );	// And why did you suddenly need it?
+	AI_Output(self,other, " DIA_Niclas_Respect_01_01 " );	// Asking is free.
 	AI_Output(other,self, " DIA_Niclas_Respect_01_02 " );	// I want to compete with Falk for the title of the best hunter in the camp.
-	AI_Output(self,other, " DIA_Niclas_Respect_01_03 " );	// (thoughtfully) Why are you doing this, boy?
+	AI_Output(self,other, " DIA_Niclas_Respect_01_03 " );	// Why are you doing this, boy?
 	AI_Output(self,other, " DIA_Niclas_Respect_01_04 " );	// Falk is a very skilled hunter, and it's unlikely you'll be able to defeat him.
-	AI_Output(other,self, " DIA_Niclas_Respect_01_05 " );	// I'll try anyway.
+	AI_Output(other,self, " DIA_Niclas_Respect_01_05 " );	// I'm still going to try.
 	AI_Output(self,other, " DIA_Niclas_Respect_01_06 " );	// Okay, whatever you say. But first, do me one small favor.
 	AI_Output(self,other, " DIA_Niclas_Respect_01_08 " );	// My last hunt wasn't very successful...
 	AI_Output(self,other, " DIA_Niclas_Respect_01_09 " );	// I haven't been able to get most of the required amount of meat for the guys in the camp.
-	AI_Output(self,other, " DIA_Niclas_Respect_01_10 " );	// So if you can get me even a dozen fresh pieces, then consider my agreement in your pocket.
-	AI_Output(self,other, " DIA_Niclas_Respect_01_11 " );	// In addition, by doing so, you will also prove to me that you are a good hunter. Well, do you agree?
+	AI_Output(self,other, " DIA_Niclas_Respect_01_10 " );	// So if you can get me even a dozen fresh pieces, then consider my voice on your side.
+	AI_Output(self,other, " DIA_Niclas_Respect_01_11 " );	// In addition, this way you will also prove to me that you are a good hunter. Well, do you agree?
 	B_LogEntry( TOPIC_HUNTERSWORK , " Niklas will support me in arguing with Falk if I bring him a dozen pieces of fresh meat. " );
 };
 
@@ -421,7 +421,7 @@ func void dia_niclas_respectdone_info()
 	B_GiveInvItems(other,self,ItFoMuttonRaw,12);
 	AI_Output(self,other, " DIA_Niclas_RespectDone_01_01 " );	// Great, man! You seem to be a really good hunter.
 	AI_Output(other,self, " DIA_Niclas_RespectDone_01_02 " );	// How about your consent now?
-	AI_Output(self,other, " DIA_Niclas_RespectDone_01_03 " );	// Good. I will support you in your dispute with Falk, as promised.
+	AI_Output(self,other, " DIA_Niclas_RespectDone_01_03 " );	// Of course. I will support you in your dispute with Falk, as promised.
 	NICLAS_RESPECT = TRUE;
 	B_LogEntry( TOPIC_HUNTERSWORK , " I brought the meat to Niklas, and he did what he promised. " );
 	HUNTCHALLENGECOUNT = HUNTCHALLENGECOUNT + 1;
@@ -449,29 +449,29 @@ func void dia_niclas_recruitdt_info()
 {
 	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_00 " );	// How are you?
 	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_01 " );	// Not bad. Did I mention this is a great hunting ground?
-	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_02 " );	// Although, alas, lately it has become more and more dangerous here.
-	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_03 " );	// It's not the first time I've seen the undead in the old graveyard below, and the orcs roar constantly from the forest.
+	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_02 " );	// Unfortunately it is getting more dangerous by the day.
+	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_03 " );	// The restless dead prowl in the old graveyard below, and the orcs roar constantly from the forest.
 	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_04 " );	// And how did they get in here? Aren't paladins guarding the Passage?
 	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_05 " );	// Not anymore, I'm afraid. The paladins guarding the Passage are dead.
-	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_06 " );	// Damn. Yes, bad news. Perhaps I should return to camp.
-	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_07 " );	// Wait with the camp. I have an offer for you. Do you want to work for me?
-	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_08 " );	// On you? What do you suggest?
+	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_06 " );	// Damn, that is indeed troubling news. Perhaps I should return to camp.
+	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_07 " );	// Wait... I have an offer for you. Do you want to work for me?
+	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_08 " );	// For you? Doing what?
 	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_09 " );	// I now own an old tower next to Onar's farm where I'm trying to set up a sort of small camp.
-	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_10 " );	// But the camp needs food. I suggest you look into this matter.
-	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_11 " );	// You will live in the tower, hunt in the neighboring forest. All the trophies are yours, I only need meat from you.
+	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_10 " );	// But the camp needs food. We could use a man like you.
+	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_11 " );	// You will live in the tower, hunt in the neighboring forest. All the trophies are yours, I only need the meat from you.
 	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_12 " );	// Hmm... How much will you pay?
 	AI_Output(other,self, " Dia_Niclas_RecruitDT_15_13 " );	// Thirty gold per day.
 	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_14 " );	// Interesting. Ok, I agree. But with one condition. In the future, you will find me a partner.
 	AI_Output(self,other, " Dia_Niclas_RecruitDT_01_15 " );	// The forest near Onar's farm is not much safer than the Dark Forest. It's quite dangerous to go there alone.
 	Info_ClearChoices(dia_niclas_recruitdt);
-	Info_AddChoice(dia_niclas_recruitdt, " Yes. " ,dia_niclas_recruitdt_yes);
-	Info_AddChoice(dia_niclas_recruitdt, " I still need to think. " ,dia_niclas_recruitdt_no);
+	Info_AddChoice(dia_niclas_recruitdt, " Agreed. " ,dia_niclas_recruitdt_yes);
+	Info_AddChoice(dia_niclas_recruitdt, " I still need to think on it. " ,dia_niclas_recruitdt_no);
 };
 
 func void dia_niclas_recruitdt_yes()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self, " Dia_Niclas_RecruitDT_yes_15_00 " );	// Deal. And yes, the password to enter the tower is 'Dragon Treasures'.
+	AI_Output(other,self, " Dia_Niclas_RecruitDT_yes_15_00 " );	// Deal. The password to enter the tower is 'Dragon Treasures'.
 	AI_Output(self,other, " Dia_Niclas_RecruitDT_yes_01_00 " );	// Well, as agreed, from now on I will provide the camp with meat every day.
 	AI_Output(self,other, " Dia_Niclas_RecruitDT_yes_01_01 " );	// Now it's time to hit the road.
 	B_LogEntry( TOPIC_PPL_FOR_TOWER , " Niklas agreed to work for me. He will provide food for the camp, but it's better to find him a hunting partner. " );
@@ -487,8 +487,8 @@ func void dia_niclas_recruitdt_yes()
 
 func void day_niclas_recruitdt_no()
 {
-	AI_Output(other,self, " Dia_Niclas_RecruitDT_no_15_00 " );	// I need to think.
-	AI_Output(self,other, " Dia_Niclas_RecruitDT_no_01_01 " );	// Good. I'll stay here for a while if that.
+	AI_Output(other,self, " Dia_Niclas_RecruitDT_no_15_00 " );	// I still need to think on this.
+	AI_Output(self,other, " Dia_Niclas_RecruitDT_no_01_01 " );	// Good. I'll stay here for a while then.
 	AI_StopProcessInfos(self);
 };
 
@@ -550,8 +550,8 @@ func int dia_niclas_hiredassist_condition()
 func void dia_niclas_hiredassist_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self, " Dia_Niclas_HiredAssist_15_00 " );	// I found you a partner. This is hunter Talbin.
-	AI_Output(self,other, " Dia_Niclas_HiredAssist_01_01 " );	// I know him! He is not one of the bravest, but he shoots accurately.
+	AI_Output(other,self, " Dia_Niclas_HiredAssist_15_00 " );	// I found you a partner. This is the hunter Talbin.
+	AI_Output(self,other, " Dia_Niclas_HiredAssist_01_01 " );	// I know him! He is not one of the bravest, but he shoots well enough.
 };
 
 instance DIA_NICLAS_INTOWER(C_Info)
@@ -574,8 +574,8 @@ func int dia_niclas_intower_condition()
 
 func void dia_niclas_intower_info()
 {
-	AI_Output(other,self, " DIA_Niclas_InTower_15_00 " );	// How do you live here?
-	AI_Output(self,other, " DIA_Niclas_InTower_01_01 " );	// Not bad. It's good to have a roof over your head.
+	AI_Output(other,self, " DIA_Niclas_InTower_15_00 " );	// How do you like it here?
+	AI_Output(self,other, " DIA_Niclas_InTower_01_01 " );	// It's not bad. It's good to have a roof over your head.
 };
 
 instance DIA_NICLAS_INTOWER_ORCKAP(C_Info)
@@ -599,5 +599,5 @@ func int dia_niclas_intower_orckap_condition()
 func void dia_niclas_intower_orckap_info()
 {
 	AI_Output(other,self, " DIA_Niclas_InTower_OrcKap_15_00 " );	// How are you?
-	AI_Output(self,other, " DIA_Niclas_InTower_OrcKap_01_01 " );	// It's good that we managed to stock up on provisions in advance. Now hunting has become too dangerous.
+	AI_Output(self,other, " DIA_Niclas_InTower_OrcKap_01_01 " );	// It's good that we managed to stock up on provisions in advance. Hunting has become too dangerous lately.
 };
