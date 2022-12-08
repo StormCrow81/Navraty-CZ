@@ -44,7 +44,7 @@ func void DIA_Addon_Thorus_Hi_Info()
 {
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Hi_12_00 " );	// You know the rules. No one can get into the mine unless they have a red stone tile.
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Hi_15_01 " );	// It's not about the mine - I need to see Raven.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Hi_12_02 " );	// This doesn't change anything. Rules are rules, they apply to everyone. And even to you.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Hi_12_02 " );	// That doesn't change anything. Rules are rules, they apply to everyone. Especially to newcomers.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Hi_12_03 " );	// Come back. If you try to get to the top floor without permission, the guards will kill you. Those are the rules.
 	if ( ! Npc_IsDead(Esteban))
 	{
@@ -77,8 +77,8 @@ func int DIA_Addon_Thorus_Raven_Condition()
 func void DIA_Addon_Thorus_Raven_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raven_15_00 " );	// This is very important, I need to get to Raven...
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raven_12_01 " );	// True? Do you really think you can get through to him?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raven_12_02 " );	// His guards are firmly following orders to keep ANYONE out. You will die before you even see it.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raven_12_01 " );	// Truly? Do you really think you can get through to him?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raven_12_02 " );	// His guards are firmly following orders to keep anyone out. You will die before you even SMELL him.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raven_12_03 " );	// So you better get that idea out of your head.
 	Log_CreateTopic(TOPIC_Addon_RavenKDW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_RavenKDW,LOG_Running);
@@ -111,7 +111,7 @@ func void DIA_Addon_Thorus_Zeit_Info()
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_01 " );	// Were you one of the prisoners?! Perhaps you were one of my guards. And... that makes us friends now?
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_02 " );	// No, it doesn't.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_03 " );	// Maybe you're the one who destroyed the Barrier, or maybe you're the one who killed my buddies.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Zeit_12_04");	//И что?
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Zeit_12_04");	//Who fucking cares either way?
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Zeit_12_05 " );	// Those days are over.
 	if ( ! Npc_IsDead(Esteban))
 	{
@@ -129,7 +129,7 @@ instance DIA_Addon_BDT_10014_Thorus_GoodOldPerm(C_Info)
 	condition = DIA_Addon_Thorus_GoodOldPerm_Condition;
 	information = DIA_Addon_Thorus_GoodOldPerm_Info;
 	permanent = TRUE;
-	description = " Come on, let me in. For the good old days. " ;
+	description = " Come on, let me in. For old time's sake? " ;
 };
 
 
@@ -143,7 +143,7 @@ func int DIA_Addon_Thorus_GoodOldPerm_Condition()
 
 func void DIA_Addon_Thorus_GoodOldPerm_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Thorus_Add_15_00 " );	// All right, let me in. In the name of the good old days.
+	AI_Output(other,self, " DIA_Addon_Thorus_Add_15_00 " );	// Come on, let me in. For old time's sake?
 	if(Thorus_GoodOldPerm == FALSE)
 	{
 		AI_Output(self,other, " DIA_Addon_Thorus_Add_12_01 " );	// Let me explain something to you. Do you know why I'm still alive?
@@ -154,7 +154,7 @@ func void DIA_Addon_Thorus_GoodOldPerm_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Thorus_Add_12_05");	//(твердо) Нет!
+		AI_Output(self,other,"DIA_Addon_Thorus_Add_12_05");	//Hell no!
 	};
 };
 
@@ -189,7 +189,7 @@ func int DIA_Addon_Thorus_Stein_Condition()
 func void DIA_Addon_Thorus_Stein_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Stein_15_00 " );	// Here, I have a stone tile...
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Stein_12_01 " );	// This is the wrong stone. Only red stones are a pass.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Stein_12_01 " );	// Wron stone, jackass. Only red stones are a pass.
 };
 
 
@@ -214,9 +214,9 @@ func int DIA_Addon_Thorus_Rein_Condition()
 
 func void DIA_Addon_Thorus_Rein_Info()
 {
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Rein_15_00 " );	// Here, I have a red stone tablet...
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_01");	//Хорошо.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Rein_12_02 " );	// You killed Esteban - so YOU ​​will now do his job.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Rein_15_00 " );	// Here, I have a red stone...
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_01");	//Good.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Rein_12_02 " );	// You killed Esteban - so YOU will now take his place.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Rein_12_03 " );	// They're having trouble with the sliders in the shaft.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Rein_12_04 " );	// Three workers have already died. Your task is to find a replacement for them.
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Rein_15_05 " );	// And when will I finally be able to get into this damn mine?
@@ -278,8 +278,8 @@ func int DIA_Addon_Thorus_Armor_Condition()
 func void DIA_Addon_Thorus_Armor_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Armor_15_00 " );	// Hey, what's that armor you're wearing? Where can I get the same ones?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Armor_12_01 " );	// Nowhere. This armor is made especially for the guards of the Raven.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Armor_12_02 " );	// I guess there is no entrance exam for new people. But the final decision is not made by me, but by Raven.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Armor_12_01 " );	// Nowhere. This armor is made especially for Raven's guards.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Armor_12_02 " );	// There is no entrance exam for new people. But the final decision is not made by me, but by Raven.
 	THORUSACCEPTMEGUARD = LOG_Running;
 	Log_CreateTopic(TOPIC_THORUSGUARD,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_THORUSGUARD,LOG_Running);
@@ -309,12 +309,12 @@ func int DIA_Addon_Thorus_Prisoners_Condition()
 func void DIA_Addon_Thorus_Prisoners_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Gefangene_15_00 " );	// How are the prisoners?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_01 " );	// They did their job! As far as I know, they should be looking for gold now.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_01 " );	// Doing their job! As far as I know, they should be looking for gold as we speak.
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Gefangene_15_02 " );	// What if they run away?
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_03 " );	// Bloodwyn will send guards after them. But I highly doubt they are stupid enough to run.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_04 " );	// If only... (thoughtfully)
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_04 " );	// If only... 
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Gefangene_15_05 " );	// If only - what?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_06 " );	// ...someone won't beat them to this! But I don't know anyone who would be stupid enough for that. At least as long as Bloodwin is here!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Gefangene_12_06 " );	// ...someone won't beat them to it! But I don't know anyone who would be stupid enough for that. At least as long as Bloodwin is here!
 	B_Say(other,self,"$VERSTEHE");
 };
 
@@ -341,21 +341,21 @@ func int DIA_Addon_Thorus_Speech_Condition()
 func void DIA_Addon_Thorus_Speech_Info()
 {
 	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_00 " );	// What are you up to?
-	AI_Output(other,self,"DIA_Addon_Thorus_Speech_15_01");	//Что???
+	AI_Output(other,self,"DIA_Addon_Thorus_Speech_15_01");	//What?
 	if(RavenAway == FALSE)
 	{
 		AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_02 " );	// Now you've got Bloodwin out of the way too. I'm already wondering who will be next. Crow? Or maybe me?
-		AI_Output(other,self,"DIA_Addon_Thorus_Speech_15_03");	//Ты боишься?
-		AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_04 " );	// I'm not afraid of fights. But I'm afraid of what your actions might lead to.
+		AI_Output(other,self,"DIA_Addon_Thorus_Speech_15_03");	//Are you afraid?
+		AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_04 " );	// I'm not afraid of a fair fight. But I'm afraid of what your actions might lead to.
 	};
 	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_05 " );	// This camp is all we have left.
-	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_06 " );	// Maybe it didn't always work perfectly, but it works.
-	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_07 " );	// But with every person you kill, a piece of our society disappears.
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_06 " );	// Maybe it doesn't always work perfectly, but it works.
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_07 " );	// With every person you kill, a piece of our society disappears.
 	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_08 " );	// We are bandits. Thugs, criminals, exiles.
 	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_09 " );	// Wherever we go, we'll be hunted down, caught, and killed.
 	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_10 " );	// There's no better place for us than this, and there's no better time than now.
 	AI_Output(other,self, " DIA_Addon_Thorus_Speech_15_11 " );	// Where are you going?
-	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_12 " );	// These people need a leader. Who is capable of becoming one? Maybe you? You, the person who never stays in one place for long?
+	AI_Output(self,other, " DIA_Addon_Thorus_Speech_12_12 " );	// These people need a leader. Who is capable of being one? You, a restless wanderer who never stays in one place for long?
 };
 
 
@@ -383,10 +383,10 @@ func void DIA_Addon_Thorus_Answer_Info()
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Answer_15_00 " );	// Then why don't you become the head of the camp?
 	if(RavenAway == FALSE)
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Answer_12_01 " );	// Let's say, what about Raven?
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Answer_12_01 " );	// But what about Raven?
 		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Answer_15_02 " );	// Raven will soon have other things to worry about. I will take care of it.
 	};
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Answer_15_03 " );	// Oh, yes... And make sure the prisoners leave the camp quietly.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Answer_15_03 " );	// Oh, yes... And make sure the prisoners leave the camp in one piece.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Answer_12_04 " );	// Okay, I'll deal with the guards.
 	B_LogEntry(TOPIC_Addon_Sklaven, " Bloodwin is dead and Thorus will make sure the slaves can leave the camp. " );
 
@@ -408,7 +408,7 @@ instance DIA_Addon_Thorus_Raventot (C_Info)
 	condition = DIA_Addon_Thorus_Raventot_Condition;
 	information = DIA_Addon_Thorus_Raventot_Info;
 	permanent = FALSE;
-	description = " The raven is gone! " ;
+	description = " The Raven is gone! " ;
 };
 
 
@@ -422,13 +422,13 @@ func int DIA_Addon_Thorus_Raventot_Condition()
 
 func void DIA_Addon_Thorus_Raventot_Info()
 {
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raventot_15_98 " );	// The raven is gone!
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_99 " );	// (surprised) What do you mean by that? Although Beliar is with him! We would all be better off without him.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_02 " );	// Will you move on now?
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raventot_15_98 " );	// The Raven is gone!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_99 " );	// Praise the good gods! That servant of Beliar is no more!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_02 " );	// Will you be moving on now?
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raventot_15_97 " );	// You know me.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_04 " );	// (laughs) Yes, you are constantly moving somewhere. Happy journey!
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raventot_15_05 " );	// Who knows, maybe our paths will cross again.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_06 " );	// Who knows! You will have many gates and many crossings on your way. And on one of them you can meet me.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_04 " );	// (laughs) Yes, you really are a rolling stone. Happy journey!
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_Raventot_15_05 " );	// Maybe our paths will cross again.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_Raventot_12_06 " );	// Who knows! You will enter many gates and many crossings on your way. Perhaps I will be behind one.
 	THORUSACCEPTME = TRUE;
 };
 
@@ -506,39 +506,39 @@ func int dia_addon_thorus_orcinvasion_condition()
 
 func void dia_addon_thorus_orcinvasion_info()
 {
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_00 " );	// (surprised) You again! Sometimes it seems to me that there is no such place where you could not be met.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_00 " );	// You again! You truly are a portent of coming storms aren't you my friend?
 	if(ORCSHAMAN4ISDEAD == TRUE)
 	{
 		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_02 " );	// Torus, what are you doing here?! I thought the orcs killed everyone in the camp.
-		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_03 " );	// Me and a few other guys from the camp still managed to get out of that mess alive.
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_03 " );	// Me and a few other guys from the camp managed to get out of that mess alive.
 	}
 	else
 	{
 		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_05 " );	// Torus, what are you doing here?!
 		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_06 " );	// Don't you know? Our camp was attacked by orcs.
-		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_07 " );	// These green-skinned creatures attacked us so unexpectedly that we didn't even have time to prepare for defense!
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_07 " );	// Those green-skinned monsters attacked us so unexpectedly that we didn't even have time to prepare a defense!
 		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_08 " );	// But me and a few other guys from the camp still managed to get out of that mess alive.
 	};
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_10 " );	// If it wasn't for one kid named Tom, we'd all be finished. But he knew the secret path leading out of the camp - that's why we left from there.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_11 " );	// I still don't understand how we did it!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_10 " );	// If it wasn't for one kid named Tom, we'd all be finished. He knew the secret path leading out of the camp - that's why we made it out.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_11 " );	// I still don't understand how we survived!
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_13 " );	// Where's everyone else?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_14 " );	// There in the cave behind me. There is all that remains of our camp ... (with sadness)
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_15 " );	// Got it. And what are you going to do now?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_16 " );	// Now I don't even know. One thing I can say for sure: all the guys, just like me, are thinking of getting out of here as soon as possible.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_17 " );	// Sooner or later, the orcs will get here. And then surely no one will save us.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_14 " );	// There in the cave behind me. They are all that remains of our camp ...
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_15 " );	// I see. What are you going to do now?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_16 " );	// I don't know. One thing I can say for sure: we are all thinking of getting out of here as soon as possible.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_17 " );	// Sooner or later, the orcs will find us here. And then no one will be able to save us.
 	if(AWORCINVASIONSTOP == TRUE)
 	{
 		B_GivePlayerXP(150);
-		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_18 " );	// Orcs are no longer dangerous! Their leaders are dead, and most likely they will leave the valley soon.
-		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_19 " );	// This is good news. But it's pointless to return to the camp anyway. There are too few of us, and it is not a fact that the invasion will not happen again.
+		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_18 " );	// The orcs are no longer a threat! Their leaders are dead, and most likely they will leave the valley soon.
+		AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_19 " );	// This is good news. But it's pointless to return to the camp anyway. There are too few of us, and you can not guarentee that they won't retaliate, can you?
 	}
 	else
 	{
-		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_21 " );	// All possible.
+		AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_21 " );	// It's possible, yes.
 	};
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_22 " );	// And what are you going to do now?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_23 " );	// I don't know. I think to talk to the pirates. I heard sometimes they swim to another part of the island.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_24 " );	// As far as I remember, they still love gold. Maybe they'll agree to take us there.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_22 " );	// So what will you do?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_23 " );	// I don't know. Perhaps I should talk to the pirates. I heard sometimes they sail to other parts of the island.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_OrcInvasion_01_24 " );	// As far as I remember, they live for gold. Maybe they'll agree to take us away from here.
 	AI_StopProcessInfos(self);
 };
 
@@ -564,13 +564,13 @@ func int dia_addon_thorus_ravenguard_condition()
 
 func void dia_addon_thorus_ravenguard_info()
 {
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_02 " );	// Now that the Raven is gone, how about taking me into YOUR guard. Now you make a decision on this matter. Is not it?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_05 " );	// Oh boy. You won't leave, will you?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_06 " );	// Okay. Consider that you have passed your entrance exam. (laughs)
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_07 " );	// Here, take your armor. In general, you honestly deserve them.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_02 " );	// Now that the Raven is gone, how about accepting me into your guard?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_05 " );	// You just won't quit, will you?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_06 " );	// Okay. Congratulations on passing your entrance exam! Hahaha!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Thorus_RavenGuard_01_07 " );	// Here, take your armor. You truly deserve it.
 	AI_Print( " Received Guard Heavy Armor " );
 	CreateInvItems(other,ITAR_Thorus_Addon,1);
 	THORUSACCEPTMEGUARD = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_THORUSGUARD,LOG_SUCCESS);
-	B_LogEntry( TOPIC_THORUSGUARD , " In gratitude for being freed from the Raven, Thorus made me one of his lieutenants and gave me heavy guard armor. " );
+	B_LogEntry( TOPIC_THORUSGUARD , " In gratitude for being freed from the Raven, Thorus made me one of his lieutenants and gave me some heavy guard armor. " );
 };
