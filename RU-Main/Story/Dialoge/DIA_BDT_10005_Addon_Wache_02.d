@@ -77,7 +77,7 @@ func void DIA_Addon_Wache_02_Hi_Info()
 	AI_Output(other,self, " DIA_Addon_Wache_02_Hi_15_00 " );	// How are you?
 	AI_Output(self,other, " DIA_Addon_Wache_02_Hi_13_01 " );	// Wait a minute, don't we know each other?
 	B_UseFakeScroll();
-	AI_Output(self,other, " DIA_Addon_Wache_02_Hi_13_02 " );	// Hmmm...(assessing) No, you don't! Come on, don't linger.
+	AI_Output(self,other, " DIA_Addon_Wache_02_Hi_13_02 " );	// Umm...No, you don't! Come on, don't loiter.
 };
 
 
@@ -104,8 +104,8 @@ func int DIA_Addon_Wache_02_Attentat_Condition()
 func void DIA_Addon_Wache_02_Attentat_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Wache_02_Attentat_15_00 " );	// What do you know about the attack?
-	AI_Output(self,other, " DIA_Addon_Wache_02_Attentat_13_01 " );	// What do I know about him? (laughs) I broke this guy's legs.
-	AI_Output(self,other, " DIA_Addon_Wache_02_Attentat_13_02 " );	// (threateningly) And I'll do it to anyone who tries to attack Esteban...
+	AI_Output(self,other, " DIA_Addon_Wache_02_Attentat_13_01 " );	// What do I know about it? (laughs) I broke the guy's legs.
+	AI_Output(self,other, " DIA_Addon_Wache_02_Attentat_13_02 " );	// And I'll do even worse to anyone who tries to attack Esteban...
 };
 
 
@@ -132,9 +132,9 @@ func int DIA_Addon_Wache_02_perm_Condition()
 func void DIA_Addon_Wache_02_perm_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Wache_02_perm_15_00 " );	// How are you?
-	AI_Output(self,other, " DIA_Addon_Wache_02_perm_13_01 " );	// Quiet for now.
+	AI_Output(self,other, " DIA_Addon_Wache_02_perm_13_01 " );	// All is quiet for now.
 	if(MIS_Judas == LOG_Running)
 	{
-		AI_Output(self,other, " DIA_Addon_Wache_02_perm_13_02 " );	// You will find the traitor - we will take care of him...
+		AI_Output(self,other, " DIA_Addon_Wache_02_perm_13_02 " );	// You will find the traitor - and we will take care of him...
 	};
 };
