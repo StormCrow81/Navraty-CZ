@@ -79,10 +79,10 @@ func int DIA_Addon_10008_Bandit_Hi_Condition()
 func void DIA_Addon_10008_Bandit_Hi_Info()
 {
 	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_00 " );	// DO NOT wake him up!
-	AI_Output(other,self,"DIA_Addon_10008_Bandit_Hi_15_01");	//Что???
+	AI_Output(other,self,"DIA_Addon_10008_Bandit_Hi_15_01");	//What? Why?
 	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_02 " );	// If you don't want to create problems for yourself, don't mess with Skinner.
-	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_03 " );	// This guy is unpredictable. The last time a guy woke Skinner up, he killed him.
-	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_04 " );	// Let him sleep, for the greater good.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_03 " );	// The guy is unpredictable. The last time someone woke Skinner up, he killed him.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_Hi_01_04 " );	// Let him sleep, for Innos's sake.
 };
 
 
@@ -104,11 +104,11 @@ func int DIA_Addon_10008_Bandit_soup_Condition()
 
 func void DIA_Addon_10008_Bandit_soup_Info()
 {
-	AI_Output(other,self,"DIA_Addon_10008_Bandit_soup_15_00");	//Ты рудокоп?
-	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_01 " );	// Did you decide that in your pants? No, I wear them simply because they are comfortable.
-	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_02 " );	// All I do here is cook stew. Here, try it - it will give you strength.
+	AI_Output(other,self,"DIA_Addon_10008_Bandit_soup_15_00");	//Are you a miner?
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_01 " );	// Why, because of the pants? No, I wear them simply because they're comfortable.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_02 " );	// All I do here is cook stew. Here, try it - it will perk you up.
 	B_GiveInvItems(self,other,ItFo_Addon_Meatsoup,1);
-	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_03 " );	// It's very important to train your strength. There are so many dangers around.
+	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_03 " );	// It's very important to focus on your physical strength. There are so many dangers around.
 	AI_Output(self,other, " DIA_Addon_10008_Bandit_soup_01_04 " );	// If you want, I'm ready to help you become stronger.
 	Log_CreateTopic(Topic_Addon_BDT_Teacher,LOG_NOTE);
 	B_LogEntry(Topic_Addon_BDT_Teacher, "The thug at the bowler hat can help me get stronger. " );
