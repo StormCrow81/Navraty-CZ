@@ -1,3 +1,4 @@
+
 func void B_Dialoge_Ani(var C_Npc slf)
 {
 	var int zufall;
@@ -48,39 +49,39 @@ func void B_Dialoge_Ani(var C_Npc slf)
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_11",BS_STAND);
 	}
-	else if(zufall == 11)
+	else  if (random ==  11 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_12",BS_STAND);
 	}
-	else if(zufall == 12)
+	else  if (random ==  12 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_13",BS_STAND);
 	}
-	else if(zufall == 13)
+	else  if (random ==  13 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_14",BS_STAND);
 	}
-	else if(zufall == 14)
+	else  if (random ==  14 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_15",BS_STAND);
 	}
-	else if(zufall == 15)
+	else  if (random ==  15 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_16",BS_STAND);
 	}
-	else if(zufall == 16)
+	else  if (random ==  16 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_17",BS_STAND);
 	}
-	else if(zufall == 17)
+	else  if (random ==  17 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_18",BS_STAND);
 	}
-	else if(zufall == 18)
+	else  if (random ==  18 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_19",BS_STAND);
 	}
-	else if(zufall == 19)
+	else  if (random ==  19 )
 	{
 		AI_PlayAniBS(slf,"T_DIALOGGESTURE_20",BS_STAND);
 	};
@@ -90,89 +91,89 @@ func void B_Preach_Vatras(var int satz)
 {
 	B_Dialoge_Ani(self);
 
-	if(satz == 0)
+	if (set ==  0 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_00");	//Но свет был пыткой для Белиара. И все, что создал Иннос, было Белиаром уничтожено.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_00 " );	// But the light was torture for Beliar. And everything that Innos created was destroyed by Beliar.
 	};
-	if(satz == 1)
+	if (set ==  1 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_01");	//Но Аданос понял, что так не будет существовать ничего. Ни света и ни тьмы.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_01 " );	// But Adanos realized that nothing would exist like that. Neither light nor darkness.
 	};
-	if(satz == 2)
+	if (set ==  2 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_02");	//И он решил встать между двумя братьями, чтобы погасить этот конфликт. Но у него ничего не вышло.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_02 " );	// And he decided to stand between the two brothers in order to extinguish this conflict. But he didn't succeed.
 	};
-	if(satz == 3)
+	if (set ==  3 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_03");	//Но там, где стоял Аданос, находилось место, где ни у Инноса, ни у Белиара не было силы.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_03 " );	// But where Adanos stood, there was a place where neither Innos nor Beliar had power.
 	};
-	if(satz == 4)
+	if (set ==  4 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_04");	//В этом месте Порядок и Хаос были равны. И так было создано море.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_04 " );	// At this point Order and Chaos were equal. And so the sea was created.
 	};
-	if(satz == 5)
+	if (set ==  5 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_05");	//И это море освободило землю. И появились различные создания. Деревья и животные. Волки и овцы. И, наконец, появился человек.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_05 " );	// And this sea freed the land. And various creatures appeared. Trees and animals. Wolves and sheep. And finally, a man appeared.
 	};
-	if(satz == 6)
+	if (set ==  6 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_06");	//И Аданос был удовлетворен тем, что вышло. Он был доволен всеми существами в равной степени.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_06 " );	// And Adanos was satisfied with what came out. He was pleased with all beings equally.
 	};
-	if(satz == 7)
+	if (set ==  7 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_07");	//Но так велик был гнев Белиара, что он вышел на землю и выбрал зверя. И Белиар заговорил с ним. И это зверь стал его подданным.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_07 " );	// But so great was Beliar's anger that he went to the ground and chose the beast. And Beliar spoke to him. And this beast became his subject.
 	};
-	if(satz == 8)
+	if (set ==  8 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_08");	//И Белиар дал ему часть своей божественной силы, чтобы зверь уничтожил землю.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_08 " );	// And Beliar gave him some of his divine power to make the beast destroy the earth.
 	};
-	if(satz == 9)
+	if (set ==  9 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_09");	//Но Иннос видел, что сделал Белиар. И он тоже спустился на землю и выбрал человека. И Иннос заговорил с ним. И человек стал его подданным.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_09 " );	// But Innos saw what Beliar did. And he, too, went down to earth and chose a man. And Innos spoke to him. And the man became his subject.
 	};
-	if(satz == 10)
+	if (set ==  10 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_10");	//И Иннос дал ему часть своей божественной силы, чтобы тот мог противостоять деяниям Белиара.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_10 " );	// And Innos gave him a part of his divine power so that he could resist the deeds of Beliar.
 	};
-	if(satz == 11)
+	if (set ==  11 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_11");	//И Белиар заговорил еще с одним существом. Но Аданос послал прилив, и это существо было смыто с лица земли.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_11 " );	// And Beliar spoke to another creature. But Adanos sent a tide, and this being was washed away from the face of the earth.
 	};
-	if(satz == 12)
+	if (set ==  12 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_12");	//Но вместе с ним были смыты и деревья, и животные. И глубокая печаль охватила Аданоса.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_12 " );	// But trees and animals were washed away with it. And deep sadness seized Adanos.
 	};
-	if(satz == 13)
+	if (set ==  13 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_13");	//И заговорил Аданос со своими братьями: 'Никогда больше не должны вы ступать на мою землю. Она священна. Да будет так.'
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_13 " );	// And Adanos spoke to his brothers: 'Never again must you set foot on my land. She is sacred. May it be so.'
 	};
-	if(satz == 14)
+	if (set ==  14 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_14");	//Но человек и зверь начали войну на земле Аданоса. И гнев богов был с ними.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_14 " );	// But man and beast started a war in the land of Adanos. And the wrath of the gods was with them.
 	};
-	if(satz == 15)
+	if (set ==  15 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_15");	//И человек убил зверя и вошел в царство Белиара.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_15 " );	// And the man killed the beast and entered the realm of Beliar.
 	};
-	if(satz == 16)
+	if (set ==  16 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_16");	//Но Аданос увидел, что Порядок и Хаос теперь неравны, и предложил Инносу лишить человека божественной силы.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_16 " );	// But Adanos saw that Order and Chaos are now unequal, and invited Innos to deprive a person of divine power.
 	};
-	if(satz == 17)
+	if (set ==  17 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_17");	//И Иннос, рассудив мудро, сделал это.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_17 " );	// And Innos, having judged wisely, did this.
 	};
-	if(satz == 18)
+	if (set ==  18 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_18");	//Но Аданос боялся, что настанет день, когда зверь вернется на землю.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_18 " );	// But Adanos feared that the day would come when the beast would return to earth.
 	};
-	if(satz == 19)
+	if (set ==  19 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_19");	//И он попросил Инноса оставить часть своей силы в это мире, чтобы он мог вернуть ее человеку, если зверь вернется.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_19 " );	// And he asked Innos to leave some of his power in this world so that he could return it to man if the beast returns.
 	};
-	if(satz == 20)
+	if (set ==  20 )
 	{
-		AI_Output(self,self,"DIA_Vatras_PREACH_05_20");	//И Иннос, рассудив мудро, сделал это.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_20 " );	// And Innos, having judged wisely, did this.
 	};
 };
 
@@ -180,107 +181,107 @@ func void B_Preach_Marduk(var int satz)
 {
 	B_Dialoge_Ani(self);
 
-	if(satz == 0)
+	if (set ==  0 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_00");	//В давние времена, когда закончили бушевать войны первородных стихий, в этот мир явились посланники стихий, которых мы сейчас знаем как богов.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_00 " );	// In ancient times, when the wars of the primordial elements had finished raging, messengers of the elements, whom we now know as gods, appeared in this world.
 	};
-	if(satz == 1)
+	if (set ==  1 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_01");	//Так в этот мир пришли Иннос, бог света и огня, Аданос, владыка безмятежных вод и ветров, и повелитель тьмы и смерти, Белиар.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_01 " );	// So Innos, the god of light and fire, Adanos, the lord of serene waters and winds, and the lord of darkness and death, Beliar, came to this world.
 	};
-	if(satz == 2)
+	if (set ==  2 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_02");	//В ту эпоху, сам мир был более дик и пустынен, чем мы можем видеть это сейчас, и требовал обустройства.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_02 " );	// In that era, the world itself was more wild and deserted than we can see it now, and required arrangement.
 	};
-	if(satz == 3)
+	if (set ==  3 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_03");	//Иннос давал миру свет и тепло. Аданос, повелевая водой и ветрами, орошал земную твердь, делая ее плодородной. А Белиар, в свой черед, порождал тьму и прохлада ночи не позволяла лгню Инноса сжечь эту землю. 
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_03 " );	// Innos gave the world light and warmth. Adanos, commanding water and winds, irrigated the earth's firmament, making it fertile. And Beliar, in turn, gave birth to darkness and the coolness of the night did not allow the lies of Innos to burn this land.
 	};
-	if(satz == 4)
+	if (set ==  4 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_04");	//Так соблюдалось равновесие! Их общими усилиями зародилась в этом мире жизнь и начали появляться разные живые существа.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_04 " );	// That's how the balance was maintained! Through their joint efforts, life was born in this world and various living creatures began to appear.
 	};
-	if(satz == 5)
+	if (set ==  5 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_05");	//Одним из существ был человек, которого сам Иннос выбрал проводником своей воли и которому передал частицу своих знаний, научив закону и порядку.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_05 " );	// One of the creatures was a man whom Innos himself chose as the conductor of his will and to whom he transferred a particle of his knowledge, teaching law and order.
 	};
-	if(satz == 6)
+	if (set ==  6 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_06");	//Тогда люди начали почитать Инноса, как бога света и правосудия. Аданоса как покровителя морских вод и мореходов. А Белиара, как бога тьмы и войны.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_06 " );	// Then people began to revere Innos as the god of light and justice. Adanos as the patron of sea waters and sailors. And Beliar, as the god of darkness and war.
 	};
-	if(satz == 7)
+	if (set ==  7 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_07");	//Но людей манил дневной свет и тепло, а тьма ночи наоборот пугала их своими опасностями. Поэтому они страшились Белиара и втайне ненавидели его.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_07 " );	// But people were attracted by daylight and warmth, and the darkness of the night, on the contrary, frightened them with its dangers. Therefore, they feared Beliar and secretly hated him.
 	};
-	if(satz == 8)
+	if (set ==  8 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_08");	//В конце концов люди навлекли на себя его гнев и тот решил создать существ, которые покланялись бы только ему.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_08 " );	// In the end, people incurred his wrath and he decided to create creatures that would worship only him.
 	};
-	if(satz == 9)
+	if (set ==  9 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_09");	//Но все, что он создавал, принимало ужасные, немыслемые формы. Опасные твари начали нарушать спокойствие и нападать на людей. Иннос осудил это и Белиар преисполнился злости к брату.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_09 " );	// But everything he created took terrible, unthinkable forms. Dangerous creatures began to disturb the peace and attack people. Innos condemned this and Beliar was filled with anger towards his brother.
 	};
-	if(satz == 10)
+	if (set ==  10 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_10");	//Спустя время, между двумя богами началась война! Люди в ней приняли сторону Инноса, а существа, созданные темной магией, поддержали Белиара. Аданос же не принял ничей стороны. Он лишь смотрел на разрушения, устраиваемые его братьями, врачевал и думал о грядущем восстановлении страдающей в ходе войны земли. 
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_10 " );	// After a while, a war broke out between the two gods! The people in it took the side of Innos, and the creatures created by dark magic supported Beliar. Adanos did not take sides. He only looked at the destruction caused by his brothers, healed and thought about the future restoration of the land suffering during the war.
 	};
-	if(satz == 11)
+	if (set ==  11 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_11");	//Именно с тех пор, человек и зверь отчаяно бьются за своих божественных повелителей. Эта борьба увы не утихает с годами. Напротив, она уверено усиливается, ужесточается, заставляет ее участников с обеих сторон придумывать все более коварные уловки, которые могут помочь им одержать победу.  
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_11 " );	// Since then, man and beast have been fighting desperately for their divine masters. This struggle, alas, does not subside over the years. On the contrary, it steadily grows stronger, tougher, forcing its participants on both sides to come up with ever more insidious tricks that can help them win.  
 	};
-	if(satz == 12)
+	if (set ==  12 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_12");	//Мы, как служители Инноса, без тени сомнения признаем его верховенство среди всех божеств и готовы во славу его уничтожать белиаровых порождений.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_12 " );	// We, as servants of Innos, without a shadow of a doubt recognize his supremacy among all deities and are ready to destroy beliar creatures for his glory.
 	};
-	if(satz == 13)
+	if (set ==  13 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_13");	//Путь, озаряемый светом его, путь добра, благоденствия, правды, совести и справедливости есть истинно верный для нас курс. 
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_13 " );	// The path illuminated by its light, the path of goodness, prosperity, truth, conscience and justice is a truly true course for us.
 	};
-	if(satz == 14)
+	if (set ==  14 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_14");	//Никогда не сворачивайте с него, оставайтесь верными нашему владыке и святому огню.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_14 " );	// Never leave it, stay true to our master and the holy fire.
 	};
-	if(satz == 15)
+	if (set ==  15 )
 	{
-		AI_Output(self,self,"DIA_Marduk_PREACH_01_15");	//С нашей поддержкой именно победа Инноса станет венцом этого долгоиграющего противостояния.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_15 " );	// With our support, it is Innos' victory that will crown this long-term confrontation.
 	};
 };
 
 func void B_Preach_MageSpeech_Pyr(var int satz)
 {
-	if(satz == 2)
+	if (set ==  2 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_02");	//
 	};
-	if(satz == 4)
+	if (set ==  4 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_04");	//
 	};
-	if(satz == 6)
+	if (set ==  6 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_06");	//
 	};
-	if(satz == 8)
+	if (set ==  8 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_08");	//
 	};
-	if(satz == 10)
+	if (set ==  10 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_10");	//
 	};
-	if(satz == 12)
+	if (set ==  12 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_12");	//
 	};
-	if(satz == 14)
+	if (set ==  14 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_14");	//
 	};
-	if(satz == 16)
+	if (set ==  16 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_16");	//
 	};
-	if(satz == 18)
+	if (set ==  18 )
 	{
 		AI_Output(self,self,"DIA_Pyrokar_MageSpeech_18");	//
 	};
@@ -288,43 +289,43 @@ func void B_Preach_MageSpeech_Pyr(var int satz)
 
 func void B_Preach_MageSpeech_Xar(var int satz)
 {
-	if(satz == 1)
+	if (set ==  1 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_01");	//
 	};
-	if(satz == 3)
+	if (set ==  3 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_03");	//
 	};
-	if(satz == 5)
+	if (set ==  5 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_05");	//
 	};
-	if(satz == 7)
+	if (set ==  7 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_07");	//
 	};
-	if(satz == 9)
+	if (set ==  9 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_09");	//
 	};
-	if(satz == 11)
+	if (set ==  11 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_11");	//
 	};
-	if(satz == 13)
+	if (set ==  13 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_13");	//
 	};
-	if(satz == 15)
+	if (set ==  15 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_15");	//
 	};
-	if(satz == 17)
+	if (set ==  17 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_17");	//
 	};
-	if(satz == 19)
+	if (set ==  19 )
 	{
 		AI_Output(self,self,"DIA_Xardas_MageSpeech_19");	//
 	};
