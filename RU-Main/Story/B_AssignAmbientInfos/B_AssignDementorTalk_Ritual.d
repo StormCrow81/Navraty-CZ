@@ -1,10 +1,11 @@
 
+
 func void B_AssignDementorTalk_Ritual()
 {
-	var int randy;
-	var int randyspeech;
+	be int randy;
+	was int randyspeech;
 
-	randyspeech = Hlp_Random(2);
+	randyspeech = Hlp_Random( 2 );
 
 	if(randyspeech == FALSE)
 	{
@@ -21,7 +22,7 @@ func void B_AssignDementorTalk_Ritual()
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
 
-	if(Npc_HasItems(hero,ItAm_Prot_BlackEye_Mis) == FALSE)
+	if (Npc_HasItems(hero,ItAm_Prot_BlackEye_Mis) ==  FALSE )
 	{
 		AI_PlayAni(hero,"T_INSANE");
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] / 2;
@@ -29,33 +30,33 @@ func void B_AssignDementorTalk_Ritual()
 	};
 	if(MIS_SCKnowsInnosEyeIsBroken == FALSE)
 	{
-		AI_Output(self,other,"DIA_RitualDementor_19_00");	//Ты пришел слишком поздно.
-		AI_Output(self,other,"DIA_RitualDementor_19_01");	//Мы уничтожили Глаз Инноса, и теперь ему никогда не вернуть былую силу.
-		AI_Output(self,other,"DIA_RitualDementor_19_02");	//Теперь мы продемонстрируем всю тщетность твоих попыток бросить вызов Хозяину.
+		AI_Output(self,other, " DIA_RitualDementor_19_00 " );	// You came too late.
+		AI_Output(self,other, " DIA_RitualDementor_19_01 " );	// We destroyed the Eye of Innos, and now it will never return to its former power.
+		AI_Output(self,other, " DIA_RitualDementor_19_02 " );	// Now we will demonstrate the futility of your attempts to challenge the Master.
 		MIS_SCKnowsInnosEyeIsBroken = TRUE;
-		B_LogEntry(TOPIC_INNOSEYE,"Эти жуткие ребята действуют мне на нервы. Они испортили Глаз Инноса. И теперь я не знаю, как мне починить его.");
-		B_LogEntry_Quiet(TOPIC_TraitorPedro,"Я нашел Глаз Инноса. Но что-то нигде не видно Педро. Эти черные маги в сговоре с ним.");
+		B_LogEntry( TOPIC_INNOSEYE , " These creepy guys are getting on my nerves. They messed up the Eye of Innos. And now I don't know how to fix it. " );
+		B_LogEntry_Quiet(TOPIC_TraitorPedro, " I found the Eye of Innos. But Pedro is nowhere to be seen. These black magicians are in league with him. " );
 		B_GivePlayerXP(XP_SCKnowsInnosEyeIsBroken);
 	}
 	else
 	{
-		randy = Hlp_Random(4);
+		randy = Hlp_Random( 4 );
 
 		if(randy == 0)
 		{
-			AI_Output(self,other,"DIA_RitualDementor_19_03");	//Почувствуй нашу силу!
+			AI_Output(self,other, " DIA_RitualDementor_19_03 " );	// Feel our power!
 		};
 		if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_RitualDementor_19_04");	//За Хозяина!
+			AI_Output(self,other, " DIA_RitualDementor_19_04 " );	// For the Master!
 		};
 		if(randy == 2)
 		{
-			AI_Output(self,other,"DIA_RitualDementor_19_05");	//Тебе нигде не скрыться.
+			AI_Output(self,other, " DIA_RitualDementor_19_05 " );	// You can't hide anywhere.
 		};
 		if(randy == 3)
 		{
-			AI_Output(self,other,"DIA_RitualDementor_19_06");	//Мы убьем тебя.
+			AI_Output(self,other, " DIA_RitualDementor_19_06 " );	// We'll kill you.
 		};
 	};
 
@@ -78,5 +79,5 @@ func void B_AssignDementorTalk_Ritual_Exit()
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,30);
 	Snd_Play("MFX_FEAR_CAST");
-	self.aivar[AIV_EnemyOverride] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE ;
 };
