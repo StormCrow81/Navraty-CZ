@@ -25,7 +25,7 @@ func void DIA_Addon_BDT_10018_Torwache_EXIT_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10018_Torwache_EXIT_04_02");	//Отвали.
+		AI_Output(self,other,"DIA_Addon_BDT_10018_Torwache_EXIT_04_02");	//Back off.
 	};
 
 	AI_StopProcessInfos(self);
@@ -58,9 +58,9 @@ func void DIA_Addon_BDT_10018_Torwache_FirstWarn_Info()
 {
 	if(BDT_100018_Tells == FALSE)
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_FirstWarn_04_00 " );	// Hey, slow down! You won't get there, so back off!
+		AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_FirstWarn_04_00 " );	// Hey, slow down! You won't get in there, so back off!
 		AI_Output(other,self, " DIA_Addon_BDT_10018_Torwache_FirstWarn_15_01 " );	// Get out of the way - I need to talk to Raven.
-		AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_FirstWarn_04_02 " );	// Nobody should enter here. Direct order from the Raven!
+		AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_FirstWarn_04_02 " );	// Nobody may enter here. Direct order from the Raven!
 		BDT_100018_Tells = TRUE;
 		Log_CreateTopic(Topic_Addon_Tempel,LOG_MISSION);
 		Log_SetTopicStatus(Topic_Addon_Tempel,LOG_Running);
@@ -68,7 +68,7 @@ func void DIA_Addon_BDT_10018_Torwache_FirstWarn_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_FirstWarn_04_03 " );	// You again? You're starting to get me!
+		AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_FirstWarn_04_03 " );	// You again? You're starting to piss me off!
 	};
 
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,BDT_10018_Checkpoint);
@@ -129,7 +129,7 @@ func void DIA_Addon_BDT_10018_Torwache_Attack_Info()
 {
 	other.aivar[AIV_LastDistToWP] = 0;
 	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
-	AI_Output(self,other,"DIA_Addon_BDT_10018_Torwache_Attack_04_00");	//За Ворона!
+	AI_Output(self,other,"DIA_Addon_BDT_10018_Torwache_Attack_04_00");	//For the Raven!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
@@ -142,7 +142,7 @@ instance DIA_Addon_BDT_10018_Torwache_Hi(C_Info)
 	condition = DIA_Addon_10018_Torwache_Hi_Condition;
 	information = DIA_Addon_10018_Torwache_Hi_Info;
 	permanent = FALSE;
-	description = " This is damn important, I just have to get to it. " ;
+	description = " This is damn important, I have to get to him. " ;
 };
 
 
@@ -153,9 +153,9 @@ func int DIA_Addon_10018_Torwache_Hi_Condition()
 
 func void DIA_Addon_10018_Torwache_Hi_Info()
 {
-	AI_Output(other,self, " DIA_Addon_BDT_10018_Torwache_Hi_15_00 " );	// This is damn important, I just have to get to him.
-	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_Hi_04_01 " );	// No. It doesn't matter. Only Bloodwyn can be here.
-	B_LogEntry(Topic_Addon_Tempel, " Only Bloodwyn is allowed to enter the temple. Maybe I can get there through him. " );
+	AI_Output(other,self, " DIA_Addon_BDT_10018_Torwache_Hi_15_00 " );	// This is damn important, I have to get to him.
+	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_Hi_04_01 " );	// No. It doesn't matter. Only Bloodwyn may enter.
+	B_LogEntry(Topic_Addon_Tempel, " Only Bloodwyn is allowed to enter the temple. Maybe I can get in through him. " );
 };
 
 
@@ -166,7 +166,7 @@ instance DIA_Addon_BDT_10018_Torwache_Bloodwyn(C_Info)
 	condition = DIA_Addon_10018_Torwache_Bloodwyn_Condition;
 	information = DIA_Addon_10018_Torwache_Bloodwyn_Info;
 	permanent = FALSE;
-	description = " Bloodwin? Wasn't he dead? " ;
+	description = " Bloodwyn? Isn't he dead? " ;
 };
 
 
@@ -181,8 +181,8 @@ func int DIA_Addon_10018_Torwache_Bloodwyn_Condition()
 
 func void DIA_Addon_10018_Torwache_Bloodwyn_Info()
 {
-	AI_Output(other,self, " DIA_Addon_BDT_10018_Torwache_Bloodwyn_15_00 " );	// Bloodwin? And didn't he die?
-	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_Bloodwyn_04_01 " );	// He's stronger than ever. And if he finds out that someone is causing problems, he will mince you.
+	AI_Output(other,self, " DIA_Addon_BDT_10018_Torwache_Bloodwyn_15_00 " );	// Bloodwyn? Isn't he dead?
+	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_Bloodwyn_04_01 " );	// He's stronger than ever. And if he finds out that someone is causing problems, he will end you.
 };
 
 
@@ -220,7 +220,7 @@ instance DIA_Addon_BDT_10018_Towache_Drin (C_Info);
 	condition = DIA_Addon_10018_Torwache_Drin_Condition;
 	information = DIA_Addon_10018_Torwache_Drin_Info;
 	permanent = FALSE;
-	description = " Bloodwin is in there? Call him then. " ;
+	description = " Bloodwyn is in there? Call him then. " ;
 };
 
 
@@ -237,10 +237,10 @@ func void DIA_Addon_10018_Torwache_Drin_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10018_Torwache_Drin_15_00 " );	// Is Bloodwyn in there? Then call him.
 	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_Drin_04_01 " );	// Ha! Do you really think that I'll do it?
-	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_Drin_04_02 " );	// Maybe you're an important person in the camp now. But your power ends RIGHT HERE. Now understand?
+	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_Drin_04_02 " );	// Maybe you're an important person in the camp now, but your power ends RIGHT HERE. Understand?
 	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_Drin_04_03 " );	// So go work in the mine or do something else - but don't block the passage here!
 	MIS_BloodwynRaus = LOG_Running;
-	B_LogEntry(Topic_Addon_Tempel, " Bloodwin is in the temple. But that doesn't do me any good. Maybe I should visit the mine. " );
+	B_LogEntry(Topic_Addon_Tempel, " Bloodwyn is in the temple. But that doesn't do me any good. Maybe I should visit the mine. " );
 };
 
 
@@ -265,9 +265,9 @@ func int DIA_Addon_10018_Torwache_kopf_Condition()
 
 func void DIA_Addon_10018_Torwache_kopf_Info()
 {
-	AI_Output(other,self, " DIA_Addon_BDT_10018_Torwache_kopf_15_00 " );	// Here! Do you still want to stop me?!
-	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_kopf_04_01 " );	// What is this? Is that Bloodwin?...(vomits) Is that...
-	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_kopf_04_02 " );	// N-no! I mean...yeah, come on in.
+	AI_Output(other,self, " DIA_Addon_BDT_10018_Torwache_kopf_15_00 " );	// Check this out. Do you still want to stop me?!
+	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_kopf_04_01 " );	// What is this? Is that Bloodwyn?... Is that... his...
+	AI_Output(self,other, " DIA_Addon_BDT_10018_Torwache_kopf_04_02 " );	// N-no! I mean...yeah, of course, come on in.
 	MIS_BloodwynRaus = LOG_SUCCESS;
 	self.aivar[ AIV_PASSGATE ] = TRUE ;
 	self.aivar[ 93 ] = FALSE ;
