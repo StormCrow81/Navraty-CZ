@@ -1,17 +1,18 @@
 
+
 func void B_LastWarningVatras()
 {
-	AI_Output(self,other,"DIA_Addon_Vatras_LastWarning_ADD_05_00");	//Негодяй, что ты сделал?
-	AI_Output(self,other,"DIA_Addon_Vatras_LastWarning_ADD_05_01");	//Орден Воды много раз предупреждал тебя об опасности попасться в сети зла.
-	AI_Output(self,other,"DIA_Addon_Vatras_LastWarning_ADD_05_02");	//Тем не менее, я узнал, что ты ушел с пути всесохраняющего равновесия.
-	AI_Output(self,other,"DIA_Addon_Vatras_LastWarning_ADD_05_03");	//Ты убивал и грабил всех и вся. Ты виновен во многих преступлениях.
-	AI_Output(self,other,"DIA_Addon_Vatras_LastWarning_ADD_05_04");	//Множество невинных людей погибли от ТВОЕЙ руки.
-	AI_Output(self,other,"DIA_Addon_Vatras_LastWarning_ADD_05_05");	//Теперь ты - союзник сил тьмы.
+	AI_Output(self,other, " DIA_Addon_Vatras_LastWarning_ADD_05_00 " );	// Scoundrel, what have you done?
+	AI_Output(self,other, " DIA_Addon_Vatras_LastWarning_ADD_05_01 " );	// The Order of the Water has warned you many times about the danger of being caught in the net of evil.
+	AI_Output(self,other, " DIA_Addon_Vatras_LastWarning_ADD_05_02 " );	// However, I have learned that you have gone astray from the path of all-preserving balance.
+	AI_Output(self,other, " DIA_Addon_Vatras_LastWarning_ADD_05_03 " );	// You killed and robbed everyone and everything. You are guilty of many crimes.
+	AI_Output(self,other, " DIA_Addon_Vatras_LastWarning_ADD_05_04 " );	// Many innocent people died at YOUR hand.
+	AI_Output(self,other, " DIA_Addon_Vatras_LastWarning_ADD_05_05 " );	// Now you are an ally of the forces of darkness.
 };
 
 func void B_VatrasPissedOff()
 {
-	AI_Output(self,other,"DIA_Addon_Vatras_PissedOffPerm_Add_05_00");	//Отныне ты не можешь рассчитывать на нашу помощь.
+	AI_Output(self,other, " DIA_Addon_Vatras_PissedOffPerm_Add_05_00 " );	// From now on, you can't count on our help.
 	AI_Output(self,other,"DIA_Addon_Vatras_PissedOffPerm_Add_05_01");	//Убирайся!
 
 	if(Vatras_IsOnBoard == LOG_SUCCESS)
