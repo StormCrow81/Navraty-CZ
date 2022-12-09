@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_12_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_PAL_12_JOIN(C_Info)
 	condition = DIA_PAL_12_JOIN_Condition;
 	information = DIA_PAL_12_JOIN_Info;
 	permanent = TRUE;
-	description = "Я хочу стать паладином!";
+	description = " I want to become a paladin! " ;
 };
 
 
@@ -36,15 +37,15 @@ func int DIA_PAL_12_JOIN_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_PAL_12_JOIN_Info()
 {
-	AI_Output(other,self,"DIA_PAL_12_JOIN_15_00");	//Я хочу стать паладином!
-	AI_Output(self,other,"DIA_PAL_12_JOIN_12_01");	//Ты? Не смеши меня! Да ты даже не служишь в городской страже.
-	AI_Output(self,other,"DIA_PAL_12_JOIN_12_02");	//Если бы я не видел, что передо мной просто тупая деревенщина, я бы подумал, что ты издеваешься надо мной.
-	AI_Output(self,other,"DIA_PAL_12_JOIN_12_03");	//Только лучшие из лучших, самые преданные последователи короля и нашего Владыки Инноса могут быть приняты в паладины.
+	AI_Output(other, self, " DIA_PAL_12_JOIN_15_00 " );	// I want to become a paladin!
+	AI_Output(self,other, " DIA_PAL_12_JOIN_12_01 " );	// You? Do not make me laugh! You don't even serve in the city guard.
+	AI_Output(self,other, " DIA_PAL_12_JOIN_12_02 " );	// If I hadn't seen that in front of me was just a stupid hillbilly, I would have thought that you were mocking me.
+	AI_Output(self,other, " DIA_PAL_12_JOIN_12_03 " );	// Only the best of the best, the most devoted followers of the king and our Lord Innos, can be accepted as paladins.
 };
 
 
@@ -54,7 +55,7 @@ instance DIA_PAL_12_PEOPLE(C_Info)
 	condition = DIA_PAL_12_PEOPLE_Condition;
 	information = DIA_PAL_12_PEOPLE_Info;
 	permanent = TRUE;
-	description = "Кто командует здесь?";
+	description = " Who's in charge here? " ;
 };
 
 
@@ -64,14 +65,14 @@ func int DIA_PAL_12_PEOPLE_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_PAL_12_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_PAL_12_PEOPLE_15_00");	//Кто командует здесь?
-	AI_Output(self,other,"DIA_PAL_12_PEOPLE_12_01");	//Достопочтенный лорд Хаген. Но лорд Андрэ отвечает за все дела, касающиеся простого народа.
-	AI_Output(self,other,"DIA_PAL_12_PEOPLE_12_02");	//Ты найдешь его в казармах. Может, тебе повезет, и он уделит тебе несколько минут своего драгоценного времени.
+	AI_Output(other,self, " DIA_PAL_12_PEOPLE_15_00 " );	// Who's in charge here?
+	AI_Output(self,other, " DIA_PAL_12_PEOPLE_12_01 " );	// Honorable Lord Hagen. But Lord Andre is in charge of all matters concerning the common people.
+	AI_Output(self,other, " DIA_PAL_12_PEOPLE_12_02 " );	// You'll find him in the barracks. Maybe you will be lucky and he will give you a few minutes of his precious time.
 };
 
 
@@ -81,25 +82,25 @@ instance DIA_PAL_12_LOCATION(C_Info)
 	condition = DIA_PAL_12_LOCATION_Condition;
 	information = DIA_PAL_12_LOCATION_Info;
 	permanent = TRUE;
-	description = "Что вы, паладины, делаете здесь, в Хоринисе?";
+	description = " What are you paladins doing here in Khorinis? " ;
 };
 
 
 func int DIA_PAL_12_LOCATION_Condition()
 {
-	if(Kapitel == 1)
+	if (chapter ==  1 )
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_PAL_12_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_PAL_12_LOCATION_15_00");	//Что вы, паладины, делаете здесь, в Хоринисе?
-	AI_Output(self,other,"DIA_PAL_12_LOCATION_12_01");	//Люди, задающие такие вопросы, кончают свою жизнь на виселице еще до того, как узнают это.
-	AI_Output(self,other,"DIA_PAL_12_LOCATION_12_02");	//ЕДИНСТВЕННОЕ, что лорд Андрэ не может себе позволить, это допустить, чтобы информация о наших задачах попала в руки шпионов.
-	AI_Output(self,other,"DIA_PAL_12_LOCATION_12_03");	//Так что лучше следи за своими вопросами.
+	AI_Output(other,self, " DIA_PAL_12_LOCATION_15_00 " );	// What are you paladins doing here in Khorinis?
+	AI_Output(self,other, " DIA_PAL_12_LOCATION_12_01 " );	// People who ask such questions end their lives on the gallows before they know it.
+	AI_Output(self,other, " DIA_PAL_12_LOCATION_12_02 " );	// The ONLY thing Lord Andre can't afford is to allow information about our missions to fall into the hands of spies.
+	AI_Output(self,other, " DIA_PAL_12_LOCATION_12_03 " );	// So you better watch your questions.
 };
 
 
@@ -109,7 +110,7 @@ instance DIA_PAL_12_STANDARD(C_Info)
 	condition = DIA_PAL_12_STANDARD_Condition;
 	information = DIA_PAL_12_STANDARD_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -120,32 +121,32 @@ func int DIA_PAL_12_STANDARD_Condition()
 
 func void DIA_PAL_12_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_PAL_12_STANDARD_15_00");	//Как обстановка?
+	AI_Output(other,self, " DIA_PAL_12_STANDARD_15_00 " );	// How setting?
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 	{
-		if(Kapitel <= 4)
+		if (chapter <=  4 )
 		{
 			if(MIS_OLDWORLD == LOG_SUCCESS)
 			{
-				AI_Output(self,other,"DIA_PAL_12_STANDARD_12_01");	//Теперь, когда мы знаем, что имеем дело с драконами, наш командующий наверняка вскоре что-то предпримет.
+				AI_Output(self,other, " DIA_PAL_12_STANDARD_12_01 " );	// Now that we know we're dealing with dragons, our commander will probably do something soon.
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_PAL_12_STANDARD_12_02");	//У нас все еще нет никаких новостей от нашего отряда в Долине Рудников. Это тревожный знак.
+				AI_Output(self,other, " DIA_PAL_12_STANDARD_12_02 " );	// We still don't have any news from our squad in the Mine Valley. This is a warning sign.
 			};
 		};
-		if(Kapitel == 5)
+		if (chapter ==  5 )
 		{
-			AI_Output(self,other,"DIA_PAL_12_STANDARZ_12_03");	//Если бы не паладины, город давно бы уже пал под натиском орд нежити!
+			AI_Output(self,other, " DIA_PAL_12_STANDARZ_12_03 " );	// If not for the paladins, the city would have fallen under the onslaught of the undead hordes long ago!
 		};
-		if(Kapitel >= 6)
+		if (Chapter >=  6 )
 		{
-			AI_Output(self,other,"DIA_PAL_12_STANDARD_12_05");	//Ты еще спрашиваешь?! Парень, оглянись вокруг и ты все поймешь!
+			AI_Output(self,other, " DIA_PAL_12_STANDARD_12_05 " );	// Are you still asking?! Boy, look around and you'll understand!
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PAL_12_STANDARD_12_04");	//Ты что, действительно рассчитываешь, что я отвечу на этот вопрос, юноша?!
+		AI_Output(self,other, " DIA_PAL_12_STANDARD_12_04 " );	// Do you really expect me to answer this question, young man?!
 	};
 };
 
