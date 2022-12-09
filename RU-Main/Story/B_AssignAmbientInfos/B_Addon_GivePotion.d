@@ -1,34 +1,35 @@
+
 func int B_CountStealMoney(var C_Npc pStealedNpc)
 {
 	var int CsMoney;
 
 	if((pStealedNpc.guild == GIL_NONE) || (pStealedNpc.guild == GIL_OUT) || (pStealedNpc.guild == GIL_SEK) || (pStealedNpc.guild == GIL_NOV))
 	{
-		CsMoney = 5 + Hlp_Random(20);
+		CsMoney = 5  + Hlp_Random( 20 );
 	}
 	else if((pStealedNpc.guild == GIL_BAU) || (pStealedNpc.guild == GIL_VLK))
 	{
-		CsMoney = 10 + Hlp_Random(20);
+		CsMoney = 10  + Hlp_Random( 20 );
 	}	
 	else if((pStealedNpc.guild == GIL_SLD) || (pStealedNpc.guild == GIL_MIL) || (pStealedNpc.guild == GIL_PIR) || (pStealedNpc.guild == GIL_BDT))
 	{
-		CsMoney = 20 + Hlp_Random(20);
+		CsMoney = 20  + Hlp_Random( 20 );
 	}
 	else if((pStealedNpc.guild == GIL_DJG) || (pStealedNpc.guild == GIL_TPL))
 	{
-		CsMoney = 30 + Hlp_Random(20);
+		CsMoney = 30  + Hlp_Random( 20 );
 	}
 	else if(pStealedNpc.guild == GIL_PAL)
 	{
-		CsMoney = 50 + Hlp_Random(20);
+		CsMoney = 50  + Hlp_Random( 20 );
 	}
 	else if((pStealedNpc.guild == GIL_KDF) || (pStealedNpc.guild == GIL_KDW) || (pStealedNpc.guild == GIL_GUR))
 	{
-		CsMoney = 80 + Hlp_Random(20);
+		CsMoney = 80  + Hlp_Random( 20 );
 	}
 	else
 	{
-		CsMoney = 1 + Hlp_Random(5);
+		CsMoney = 1  + Hlp_Random( 5 );
 	};
 
 	return CsMoney;
@@ -40,7 +41,7 @@ instance DIA_Addon_GivePotion(C_Info)
 	condition = DIA_Addon_GivePotion_Condition;
 	information = DIA_Addon_GivePotion_Info;
 	permanent = TRUE;
-	description = "(дать лечебное зелье)";
+	description = " (give healing potion) " ;
 };
 
 func int DIA_Addon_GivePotion_Condition()
@@ -52,7 +53,7 @@ func int DIA_Addon_GivePotion_Condition()
 			return TRUE;
 		};
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_GivePotion_Info()
@@ -62,21 +63,21 @@ func void DIA_Addon_GivePotion_Info()
 
 	if(Npc_HasItems(other,ItPo_Health_03) >= 1)
 	{
-		Info_AddChoice(DIA_Addon_GivePotion,"...дать эликсир лечения.",DIA_Addon_GivePotion_ItPo_Health_03);
+		Info_AddChoice(DIA_Addon_GivePotion, " ...give healing elixir. " ,DIA_Addon_GivePotion_ItPo_Health_03);
 	};
 	if(Npc_HasItems(other,ItPo_Health_02) >= 1)
 	{
-		Info_AddChoice(DIA_Addon_GivePotion,"...дать экстракт лечения.",DIA_Addon_GivePotion_ItPo_Health_02);
+		Info_AddChoice(DIA_Addon_GivePotion, " ...give healing extract. " ,DIA_Addon_GivePotion_ItPo_Health_02);
 	};
 	if(Npc_HasItems(other,ItPo_Health_01) >= 1)
 	{
-		Info_AddChoice(DIA_Addon_GivePotion,"...дать эссенцию лечения.",DIA_Addon_GivePotion_ItPo_Health_01);
+		Info_AddChoice(DIA_Addon_GivePotion, " ...give healing essence. " ,DIA_Addon_GivePotion_ItPo_Health_01);
 	};
 };
 
 func void B_Addon_DrinkPotion()
 {
-	AI_Output(other,self,"DIA_Addon_Brandon_GivePotion_15_00");	//Вот, возьми это лечебное зелье.
+	AI_Output(other,self, " DIA_Addon_Brandon_GivePotion_15_00 " );	// Here, take this healing potion.
 	if(self.attribute[ATR_HITPOINTS] < self.attribute[ATR_HITPOINTS_MAX])
 	{
 		if(Npc_HasItems(self,ItPo_Health_03) > 0)
@@ -129,7 +130,7 @@ instance DIA_ADDON_GOWITHME(C_Info)
 	condition = dia_addon_gowithme_condition;
 	information = dia_addon_gowithme_info;
 	permanent = TRUE;
-	description = "Мы атакуем!";
+	description = " We're attacking! " ;
 };
 
 func int dia_addon_gowithme_condition()
@@ -149,11 +150,11 @@ func int dia_addon_gowithme_condition()
 
 func void dia_addon_gowithme_info()
 {
-	AI_Output(other,self,"DIA_Addon_GoWithMe_01_00");	//Мы атакуем!
-	AI_Output(self,other,"DIA_Addon_GoWithMe_01_01");	//Хорошо, как скажешь.
+	AI_Output(other,self, " DIA_Addon_GoWithMe_01_00 " );	// We attack!
+	AI_Output(self,other, " DIA_Addon_GoWithMe_01_01 " );	// Okay, whatever you say.
 	AI_StopProcessInfos(self);
-	self.aivar[97] = TRUE;
-	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	self.aivar[ 97 ] = TRUE ;
+	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	Npc_ExchangeRoutine(self,"Follow");
 };
 
@@ -168,14 +169,14 @@ instance DIA_Addon_Steal(C_Info)
 	condition = DIA_Addon_Steal_Condition;
 	information = DIA_Addon_Steal_Info;
 	permanent = TRUE;
-	description = "(Попытаться украсть кошелек)";
+	description = " (Try to steal the wallet) " ;
 };
 
 func int DIA_Addon_Steal_Condition()
 {
-	if((self.npcType == npctype_friend) || (self.flags == NPC_FLAG_XARADRIM) || (self.flags == NPC_FLAG_IMMORTAL) || (self.guild == GIL_KDM) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Crait)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8147_Dagrag)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8148_Gunnok)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8149_Turuk)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8150_UrTrok)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8151_Umrak)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8152_UrTak)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_2153_Fighter)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_2154_Fighter)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_2155_Fighter)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_2156_Fighter)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_2157_Fighter)) || (self.guild == GIL_DMT) || (self.aivar[90] == TRUE) || (self.aivar[AIV_MM_REAL_ID] == ID_SKELETON) || (other.aivar[AIV_MM_RestEnd] == TRUE))
+	guild == GIL_DMT) || (self.aivar[90] == TRUE) || (self.aivar[AIV_MM_REAL_ID] == ID_SKELETON) || (other.aivar[AIV_MM_RestEnd] == TRUE))
 	{
-		return FALSE;
+		return  FALSE ;
 	};
 	if((Npc_GetTalentSkill(hero,NPC_TALENT_PICKPOCKET) >= 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (bNewSteal[0] == FALSE))
 	{
@@ -235,7 +236,7 @@ func void DIA_Addon_Steal_DoIt()
 	var int sExp;
 	var int sChance;
 	var int sChanceProc;
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
