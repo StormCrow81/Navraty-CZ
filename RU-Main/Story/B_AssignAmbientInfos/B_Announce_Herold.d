@@ -1,7 +1,8 @@
 
+
 func void B_Announce_Herold()
 {
-	var int randy;
+	be int randy;
 
 	if(C_BodyStateContains(self,BS_SIT))
 	{
@@ -18,71 +19,71 @@ func void B_Announce_Herold()
 	if(PLAYER_MOBSI_PRODUCTION != MOBSI_Talk)
 	{
 		AI_UseItemToState(self,Fakescroll,1);
-		AI_Output(self,self,"DIA_Herold_Announce_04_00");	//Слушайте, жители Хориниса! По прямому указанию достопочтимого лорда Хагена, сегодня вступает в силу следующий декрет.
+		AI_Output(self,self, " DIA_Herold_Announce_04_00 " );	// Listen, people of Khorinis! By direct order of the Honorable Lord Hagen, the following decree comes into effect today.
 
-		if(Kapitel <= 2)
+		if (chapter <=  2 )
 		{
-			randy = Hlp_Random(5);
+			randy = Hlp_Random( 5 );
 
 			if(randy == 0)
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_01");	//Учитывая общую ситуацию, леса и пустоши около города следует избегать ради вашей собственной же безопасности.
-				AI_Output(self,self,"DIA_Herold_Announce_04_02");	//Кроме того, любые контакты с восставшими крестьянами в прилежащих землях строжайше запрещены.
+				AI_Output(self,self, " DIA_Herold_Announce_04_01 " );	// Considering the general situation, forests and wastelands near the city should be avoided for your own safety.
+				AI_Output(self,self, " DIA_Herold_Announce_04_02 " );	// In addition, any contact with the rebellious peasants in the surrounding lands is strictly prohibited.
 			}
 			else if(randy == 1)
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_03");	//С этого момента лорд Андрэ назначается главнокомандующим нашим ополчением.
-				AI_Output(self,self,"DIA_Herold_Announce_04_04");	//Все граждане этого города, имеющие военные навыки, обязаны вступить в королевское ополчение.
+				AI_Output(self,self, " DIA_Herold_Announce_04_03 " );	// From now on, Lord Andre is appointed commander-in-chief of our militia.
+				AI_Output(self,self, " DIA_Herold_Announce_04_04 " );	// All citizens of this city who have military skills are required to join the royal militia.
 			}
 			else if(randy == 2)
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_05");	//Меры безопасности по защите верхнего квартала будут еще усилены.
-				AI_Output(self,self,"DIA_Herold_Announce_04_06");	//Охране у ворот приказано применять закон самым строжайшим образом, чтобы предотвратить несанкционированный доступ к кварталу.
+				AI_Output(self,self, " DIA_Herold_Announce_04_05 " );	// Security measures to protect the upper quarter will be further strengthened.
+				AI_Output(self,self, " DIA_Herold_Announce_04_06 " );	// The guards at the gate are ordered to enforce the law to the strictest extent possible to prevent unauthorized access to the block.
 			}
 			else if(randy == 3)
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_07");	//Во всех городах и провинциях королевства объявляется военное положение.
-				AI_Output(self,self,"DIA_Herold_Announce_04_08");	//Все гражданские судьи должны сложить свои обязанности и передать их королевским паладинам.
-				AI_Output(self,self,"DIA_Herold_Announce_04_09");	//Высокочтимому лорду Андрэ приказано карать любое преступление или акт сопротивления королевской страже самым жестоким образом.
-				AI_Output(self,self,"DIA_Herold_Announce_04_10");	//Все жители Хориниса, виновные в преступлении, должны немедленно прибыть к лорду Андрэ.
+				AI_Output(self,self, " DIA_Herold_Announce_04_07 " );	// Martial law is declared in all cities and provinces of the kingdom.
+				AI_Output(self,self, " DIA_Herold_Announce_04_08 " );	// All civilian judges should lay down their duties and turn them over to royal paladins.
+				AI_Output(self,self, " DIA_Herold_Announce_04_09 " );	// Highly Honored Lord Andre is ordered to punish any crime or act of resistance to the royal guard in the most cruel manner.
+				AI_Output(self,self, " DIA_Herold_Announce_04_10 " );	// All residents of Khorinis guilty of a crime must immediately come to Lord Andre.
 			}
 			else
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_11");	//Учитывая опасность нападения на город орков, все жители города должны соответствующим образом подготовиться.
-				AI_Output(self,self,"DIA_Herold_Announce_04_12");	//Все должны немедленно приступить к обучению боевым навыкам и должным образом вооружиться.
+				AI_Output(self,self, " DIA_Herold_Announce_04_11 " );	// Considering the danger of an orc attack on the city, all the inhabitants of the city should prepare accordingly.
+				AI_Output(self,self, " DIA_Herold_Announce_04_12 " );	// Everyone should immediately start learning martial skills and arm themselves properly.
 			};
 		}
-		else if(Kapitel == 3)
+		else  if (chapter ==  3 )
 		{
 			if(MIS_RescueBennet != LOG_SUCCESS)
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_13");	//Кузнец-наемник Беннет, вероломно убивший паладина Лотара, объявляется проклятым от имени Инноса.
-				AI_Output(self,self,"DIA_Herold_Announce_04_14");	//Он приговорен к смерти через повешение. Приговор будет приведен в исполнение в ближайшие дни.
+				AI_Output(self,self, " DIA_Herold_Announce_04_13 " );	// The mercenary blacksmith Bennet, who treacherously killed the paladin Lothar, is declared cursed on behalf of Innos.
+				AI_Output(self,self, " DIA_Herold_Announce_04_14 " );	// He is sentenced to death by hanging. The sentence will be carried out in the coming days.
 			}
 			else
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_15");	//С кузнеца Беннета были сняты все обвинения вследствие его невиновности, которая была доказана советником лорда Хагена.
+				AI_Output(self,self, " DIA_Herold_Announce_04_15 " );	// Blacksmith Bennet was cleared of all charges due to his innocence, which was proven by Lord Hagen's advisor.
 			};
 		}
-		else if(Kapitel == 4)
+		else  if (chapter ==  4 )
 		{
-			AI_Output(self,self,"DIA_Herold_Announce_04_16");	//Слухи о появлении драконов в Долине Рудников Хориниса являются ложными.
-			AI_Output(self,self,"DIA_Herold_Announce_04_17");	//Эти слухи распространяются врагом с целью посеять страх и ужас в душах мужественных жителей Миртаны.
-			AI_Output(self,self,"DIA_Herold_Announce_04_18");	//Чтобы развеять эти нелепые слухи, в Долину Рудников был отправлен отряд бравых паладинов под командованием человека, хорошо знакомого с этой местностью.
+			AI_Output(self,self, " DIA_Herold_Announce_04_16 " );	// Rumors of dragons appearing in the Khorinis Mine Valley are false.
+			AI_Output(self,self, " DIA_Herold_Announce_04_17 " );	// These rumors are spread by the enemy in order to sow fear and horror in the souls of the courageous inhabitants of Myrtana.
+			AI_Output(self,self, " DIA_Herold_Announce_04_18 " );	// To dispel these ridiculous rumors, a band of brave paladins was sent to the Valley of Mines under the command of a man who is well acquainted with this area.
 		}
 		else
 		{
-			randy = Hlp_Random(2);
+			randy = Hlp_Random( 2 );
 	
 			if(randy == 0)
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_19");	//Драконы, угрожавшие спокойствию нашей земли, были уничтожены мужественным воином под командованием лорда Хагена.
-				AI_Output(self,self,"DIA_Herold_Announce_04_20");	//Скоро король Робар освободит наши земли от орков, и королевство опять станет цветущим и преуспевающим.
+				AI_Output(self,self, " DIA_Herold_Announce_04_19 " );	// The dragons that threatened the peace of our land were destroyed by a courageous warrior under the command of Lord Hagen.
+				AI_Output(self,self, " DIA_Herold_Announce_04_20 " );	// Soon King Rhobar will free our lands from the orcs, and the kingdom will once again become flourishing and prosperous.
 			}
 			else
 			{
-				AI_Output(self,self,"DIA_Herold_Announce_04_21");	//Лорд Андрэ назначается верховным командующим города Хориниса. Он вступает в эту должность немедленно.
-				AI_Output(self,self,"DIA_Herold_Announce_04_22");	//Лорд Хаген объявил, что лично направляется в Долину Рудников, чтобы обеспечить загрузку корабля магической рудой.
+				AI_Output(self,self, " DIA_Herold_Announce_04_21 " );	// Lord Andre is appointed supreme commander of the city of Khorinis. He takes up this position immediately.
+				AI_Output(self,self, " DIA_Herold_Announce_04_22 " );	// Lord Hagen announced that he was personally heading to the Valley of Mines to ensure that the ship was loaded with magic ore.
 			};
 		};
 
