@@ -1,5 +1,4 @@
 
-
 func void B_Video()
 {
 	AI_Output(self,other, " INTRO_Xardas_Speech_14_00 " );	// One prisoner changed the fate of hundreds.
@@ -64,9 +63,9 @@ func void B_Video()
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_14_02 " );	// (quoting) 'When the God of Darkness sends his minions to find...'
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_14_03 " );	// This is exactly what happened.
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_14_04 " );	// This search started a long time ago!
-	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_14_05");	//Во время поисков приспешники Белиара оскверняют древнейшие алтари богов.
-	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_14_06");	//Приспешники Белиара оскверняют древнейшие алтари богов.
-	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_14_07");	//Хранители этих священных реликвий пробудились. И их гнев сотрясает землю!
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_14_05 " );	// During the search, Beliar's minions desecrate the most ancient altars of the gods.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_14_06 " );	// Beliar's minions defile the ancient altars of the gods.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_14_07 " );	// Keepers of these sacred relics have awakened. And their anger shakes the earth!
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_14_08 " );	// Every strong mage on this island is capable of feeling their wrath.
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_14_09 " );	// And some of them have definitely begun to prepare for the threat.
 };
