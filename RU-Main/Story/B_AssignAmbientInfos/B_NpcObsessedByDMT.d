@@ -1,4 +1,5 @@
 
+
 var int NpcObsessedByDMT;
 var int NpcObsessedByDMT_Brutus;
 var int NpcObsessedByDMT_Engrom;
@@ -11,7 +12,7 @@ var int NpcObsessedByDMT_Randolph;
 
 func void B_DMTWurm()
 {
-	AI_Output(self,other,"DIA_NoName_ObsessedByDMT_19_00");	//Мы видим тебя, червь. Тебе не скрыться от нас.
+	AI_Output(self,other, " DIA_NoName_ObsessedByDMT_19_00 " );	// We see you, worm. You can't hide from us.
 };
 
 func void B_NpcClearObsessionByDMT(var C_Npc medium)
@@ -70,7 +71,7 @@ func void B_NpcObsessedByDMT(var C_Npc medium)
 		{
 			if(MIS_OCGateOpen == TRUE)
 			{
-				AI_Output(self,other,"DIA_Brutus_ObsessedByDMT_19_00");	//Открыв ворота, ты оказал большую услугу нашему Хозяину, жалкий смертный. Мы возведем часовню в его честь на твоей могиле.
+				AI_Output(self,other, " DIA_Brutus_ObsessedByDMT_19_00 " );	// By opening the gate, you have rendered a great service to our Master, miserable mortal. We will build a chapel in his honor on your grave.
 			}
 			else
 			{
@@ -80,27 +81,27 @@ func void B_NpcObsessedByDMT(var C_Npc medium)
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Engrom))
 		{
-			AI_Output(self,other,"DIA_Engrom_ObsessedByDMT_19_00");	//Поворачивай назад. Пока еще не слишком поздно.
+			AI_Output(self,other, " DIA_Engrom_ObsessedByDMT_19_00 " );	// Turn back. Before it's too late.
 			NpcObsessedByDMT_Engrom = TRUE;
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Vino))
 		{
-			AI_Output(self,other,"DIA_Vino_ObsessedByDMT_19_00");	//Скоро мы будем управлять всем. Ты и твоя жалкая магия не представляют опасности для нас.
+			AI_Output(self,other, " DIA_Vino_ObsessedByDMT_19_00 " );	// Soon we'll be running everything. You and your pathetic magic are no danger to us.
 			NpcObsessedByDMT_Vino = TRUE;
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Malak))
 		{
-			AI_Output(self,other,"DIA_Malak_ObsessedByDMT_19_00");	//Тебе не спасти эту душу, маг. Он никогда не станет прежним.
+			AI_Output(self,other, " DIA_Malak_ObsessedByDMT_19_00 " );	// You can't save this soul, mage. He will never be the same.
 			NpcObsessedByDMT_Malak = TRUE;
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Sekob))
 		{
-			AI_Output(self,other,"DIA_Sekob_ObsessedByDMT_19_00");	//Брось, маг. Тебе не суждено победить.
+			AI_Output(self,other, " DIA_Sekob_ObsessedByDMT_19_00 " );	// Come on, mage. You are not destined to win.
 			NpcObsessedByDMT_Sekob = TRUE;
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Randolph))
 		{
-			AI_Output(self,other,"DIA_Randolph_ObsessedByDMT_19_00");	//Не трать свои усилия на этого слабака. Мы поработим их всех.
+			AI_Output(self,other, " DIA_Randolph_ObsessedByDMT_19_00 " );	// Don't waste your efforts on this weakling. We will enslave them all.
 			NpcObsessedByDMT_Randolph = TRUE;
 		}
 		else
@@ -110,7 +111,7 @@ func void B_NpcObsessedByDMT(var C_Npc medium)
 			{
 				NpcObsessedByDMT_Bromor = TRUE;
 			};
-			if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Fernando))
+			if ( Help_GetInstanceID ( medium ) == Help_GetInstanceID ( Fernando ) )
 			{
 				NpcObsessedByDMT_Fernando = TRUE;
 			};
