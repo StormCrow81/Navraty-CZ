@@ -74,11 +74,11 @@ func int DIA_Addon_Juan_HI_Condition()
 
 func void DIA_Addon_Juan_HI_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Juan_HI_15_00");	//Как дела?
-	AI_Output(self,other, " DIA_Addon_Juan_HI_13_01 " );	// What do you need? If you have nothing to say to me, move on.
+	AI_Output(other,self,"DIA_Addon_Juan_HI_15_00");	//How are you?
+	AI_Output(self,other, " DIA_Addon_Juan_HI_13_01 " );	// What do you want? If you have nothing to say to me, piss off.
 	if ( ! Npc_IsDead(friend))
 	{
-		AI_Output(self,other, " DIA_Addon_Juan_HI_13_02 " );	// Otherwise my buddy will make mincemeat out of you. So what do you need?
+		AI_Output(self,other, " DIA_Addon_Juan_HI_13_02 " );	// Otherwise my buddy will make crawler bait out of you. So what do you want?
 		B_StartOtherRoutine(Freund,"STAND");
 	};
 };
@@ -106,12 +106,12 @@ func int DIA_Addon_Juan_Losung_Condition()
 
 func void DIA_Addon_Juan_Solution_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Juan_Losung_15_00 " );	// They say you have interesting things...
-	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_01 " );	// So what? Esteban wants to put on my shoes? I work all the time, I don't leave this miserable hole all day long...
-	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_02 " );	// ...and he just sends someone to pick up my stuff? I'm not a warehouse!
-	AI_Output(other,self, " DIA_Addon_Juan_Losung_15_03 " );	// So what? These are not my problems.
-	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_04 " );	// It's me who's causing you trouble. You want to deliver goods - great, pay for them!
-	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_05 " );	// Take the gold from Esteban or Raven, or I don't know where else. I do not care. If someone needs these goods, they will have to pay for them!
+	AI_Output(other,self, " DIA_Addon_Juan_Losung_15_00 " );	// They say you have interesting stock...
+	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_01 " );	// Yeah, so? Who does Esteban think he is, sending lackeys to me all day long?
+	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_02 " );	// I'm not a warehouse!
+	AI_Output(other,self, " DIA_Addon_Juan_Losung_15_03 " );	// Cry me a river.
+	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_04 " );	// You want goods - great, pay for them!
+	AI_Output(self,other, " DIA_Addon_Juan_Losung_13_05 " );	// Get Esteban or Raven or Beliar knows who else to pay for the shit you want to pick up, and maybe then we can do business!
 };
 
 
@@ -137,7 +137,7 @@ func int DIA_Addon_Juan_AufsMaul_Condition()
 func void DIA_Addon_Juan_AufsMaul_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Juan_AufsMaul_15_00 " );	// I didn't come from Esteban!
-	AI_Output(self,other, " DIA_Addon_Juan_AufsMaul_13_01 " );	// Yes? Well then... uh... Wait a second! Freeze! You have a midge on your shoulder.
+	AI_Output(self,other, " DIA_Addon_Juan_AufsMaul_13_01 " );	// Oh? Well then... uh... Wait a second! Freeze! You have a bee on your shoulder.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
