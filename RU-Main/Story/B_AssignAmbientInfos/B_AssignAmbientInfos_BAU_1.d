@@ -1,4 +1,5 @@
 
+
 instance DIA_BAU_1_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,25 +27,25 @@ instance DIA_BAU_1_JOIN(C_Info)
 	condition = DIA_BAU_1_JOIN_Condition;
 	information = DIA_BAU_1_JOIN_Info;
 	permanent = TRUE;
-	description = "Расскажи мне подробнее об этих наемниках.";
+	description = " Tell me more about these mercenaries. " ;
 };
 
 
 func int DIA_BAU_1_JOIN_Condition()
 {
-	if(Kapitel == 1)
+	if (chapter ==  1 )
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_BAU_1_JOIN_Info()
 {
-	AI_Output(other,self,"DIA_BAU_1_JOIN_15_00");	//Расскажи мне подробнее об этих наемниках.
-	AI_Output(self,other,"DIA_BAU_1_JOIN_01_01");	//Я могу только посоветовать держаться от них подальше.
-	AI_Output(self,other,"DIA_BAU_1_JOIN_01_02");	//Если одному из них не понравится твое лицо, он может не раздумывая заехать тебе по носу.
-	AI_Output(self,other,"DIA_BAU_1_JOIN_01_03");	//Конечно, после этого ты можешь пожаловаться Ли, но нос-то уже будет сломан.
+	AI_Output(other, self, " DIA_BAU_1_JOIN_15_00 " );	// Tell me more about these mercenaries.
+	AI_Output(self,other, " DIA_BAU_1_JOIN_01_01 " );	// I can only advise you to stay away from them.
+	AI_Output(self,other, " DIA_BAU_1_JOIN_01_02 " );	// If one of them doesn't like your face, they can punch you in the nose without hesitation.
+	AI_Output(self,other, " DIA_BAU_1_JOIN_01_03 " );	// Of course, after that you can complain to Lee, but the nose will already be broken.
 };
 
 
@@ -54,7 +55,7 @@ instance DIA_BAU_1_PEOPLE(C_Info)
 	condition = DIA_BAU_1_PEOPLE_Condition;
 	information = DIA_BAU_1_PEOPLE_Info;
 	permanent = TRUE;
-	description = "Кто заправляет здесь?";
+	description = " Who's in charge here? " ;
 };
 
 
@@ -65,10 +66,10 @@ func int DIA_BAU_1_PEOPLE_Condition()
 
 func void DIA_BAU_1_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_BAU_1_PEOPLE_15_00");	//Кто заправляет здесь?
-	AI_Output(self,other,"DIA_BAU_1_PEOPLE_01_01");	//Это ферма Онара. Здесь он принимает все решения.
-	AI_Output(self,other,"DIA_BAU_1_PEOPLE_01_02");	//Позволь мне дать тебе совет: не ввязывайся в драку с его наемниками. С этими парнями шутить не стоит.
-	AI_Output(self,other,"DIA_BAU_1_PEOPLE_01_03");	//Сильвио - это вообще отъявленный бандит. Но их предводитель, Ли, вполне нормальный парень.
+	AI_Output(other,self, " DIA_BAU_1_PEOPLE_15_00 " );	// Who's in charge here?
+	AI_Output(self,other, " DIA_BAU_1_PEOPLE_01_01 " );	// This is Onar's farm. Here he makes all the decisions.
+	AI_Output(self,other, " DIA_BAU_1_PEOPLE_01_02 " );	// Let me give you some advice: don't get into a fight with his mercenaries. These guys are not to be trifled with.
+	AI_Output(self,other, " DIA_BAU_1_PEOPLE_01_03 " );	// Silvio is generally a notorious bandit. But their leader, Lee, is a perfectly normal guy.
 };
 
 
@@ -78,7 +79,7 @@ instance DIA_BAU_1_LOCATION(C_Info)
 	condition = DIA_BAU_1_LOCATION_Condition;
 	information = DIA_BAU_1_LOCATION_Info;
 	permanent = TRUE;
-	description = "А что здесь есть интересного?";
+	description = " What's interesting here? " ;
 };
 
 
@@ -89,20 +90,20 @@ func int DIA_BAU_1_LOCATION_Condition()
 
 func void DIA_BAU_1_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_BAU_1_LOCATION_15_00");	//А что здесь есть интересного?
-	AI_Output(self,other,"DIA_BAU_1_LOCATION_01_01");	//Здесь только поля и фермы. И горстка наемников. Но почти все они находятся на востоке, на ферме Онара.
-	AI_Output(self,other,"DIA_BAU_1_LOCATION_01_02");	//К северу располагается ферма Секоба, но туда они заглядывают, только чтобы собрать ренту.
-	AI_Output(self,other,"DIA_BAU_1_LOCATION_01_03");	//На юге находится проход к ферме Бенгара.
+	AI_Output(other, self, " DIA_BAU_1_LOCATION_15_00 " );	// What's interesting here?
+	AI_Output(self,other, " DIA_BAU_1_LOCATION_01_01 " );	// There are only fields and farms here. And a handful of mercenaries. But almost all of them are in the east, on Onar's farm.
+	AI_Output(self,other, " DIA_BAU_1_LOCATION_01_02 " );	// Secoba's farm is to the north, but they only go there to collect rent.
+	AI_Output(self,other, " DIA_BAU_1_LOCATION_01_03 " );	// To the south is a passage to Bengar's farm.
 };
 
 
-instance DIA_BAU_1_STANDARD(C_Info)
+instances of DIA_BAU_1_STANDARD (C_Info)
 {
 	nr = 1;
 	condition = DIA_BAU_1_STANDARD_Condition;
 	information = DIA_BAU_1_STANDARD_Info;
 	permanent = TRUE;
-	description = "Что новенького?";
+	description = " What's new? " ;
 };
 
 
@@ -113,30 +114,30 @@ func int DIA_BAU_1_STANDARD_Condition()
 
 func void DIA_BAU_1_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_BAU_1_STANDARD_15_00");	//Что новенького?
-	if(Kapitel == 1)
+	AI_Output(other,self, " DIA_BAU_1_STANDARD_15_00 " );	// What's new?
+	if (chapter ==  1 )
 	{
-		AI_Output(self,other,"DIA_BAU_1_STANDARD_01_01");	//Онар нанял наемников, чтобы те защищали его от городского ополчения. Если бы не наемники, они отняли бы у нас все, до последней овцы!
+		AI_Output(self,other, " DIA_BAU_1_STANDARD_01_01 " );	// Onar hired mercenaries to protect him from the city's militia. If not for the mercenaries, they would have taken everything from us, to the last sheep!
 	};
-	if(Kapitel == 2)
+	if (chapter ==  2 )
 	{
-		AI_Output(self,other,"DIA_BAU_1_STANDARD_01_02");	//Немного. Как всегда, одни и те же проблемы. Ополчение, орки и полевые хищники.
+		AI_Output(self,other, " DIA_BAU_1_STANDARD_01_02 " );	// Not much. As always, the same problems. Militia, orcs and field predators.
 	};
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
-		AI_Output(self,other,"DIA_BAU_1_STANDARD_01_03");	//Странные дела творятся здесь. Несколько дней назад я видел фигуру в черном. Это был не человек.
+		AI_Output(self,other, " DIA_BAU_1_STANDARD_01_03 " );	// Strange things are happening here. A few days ago I saw a figure in black. It wasn't a person.
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
-		AI_Output(self,other,"DIA_BAU_1_STANDARD_01_04");	//Здесь все чаще и чаще появляются орки. Иногда мне кажется, что вместо каждого убитого орка появляются еще двое.
+		AI_Output(self,other, " DIA_BAU_1_STANDARD_01_04 " );	// More and more orcs appear here. Sometimes it seems to me that for every orc killed, two more appear.
 	};
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
-		AI_Output(self,other,"DIA_BAU_1_STANDARZ_01_05");	//Эта нежить меня сводит с ума! Если так пойдет и дальше, нам всем придется не сладко.
+		AI_Output(self,other, " DIA_BAU_1_STANDARZ_01_05 " );	// This undead is driving me crazy! If this continues, we will all have a hard time.
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
-		AI_Output(self,other,"DIA_BAU_1_STANDARD_01_06");	//Орки захватили Хоринис! Теперь нам всем в скором времени придет конец!
+		AI_Output(self,other, " DIA_BAU_1_STANDARD_01_06 " );	// Orcs have captured Khorinis! Now we all will soon come to an end!
 	};
 };
 
