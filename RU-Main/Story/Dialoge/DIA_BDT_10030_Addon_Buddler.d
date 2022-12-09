@@ -42,12 +42,12 @@ func void DIA_Addon_10030_Buddler_Hi_Info()
 	AI_Output(other,self, " DIA_Addon_BDT_10030_Buddler_Hi_15_00 " );	// Are you all right?
 	if (slave_escape ==  FALSE )
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10030_Buddler_Hi_08_01 " );	// Slaves move large blocks out of the way.
-		AI_Output(self,other, " DIA_Addon_BDT_10030_Buddler_Hi_08_02 " );	// (chuckles) And then we'll pick the golden apples.
+		AI_Output(self,other, " DIA_Addon_BDT_10030_Buddler_Hi_08_01 " );	// The slaves do all the heavy lifting.
+		AI_Output(self,other, " DIA_Addon_BDT_10030_Buddler_Hi_08_02 " );	// (chuckles) And then we gather up the spoils.
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10030_Buddler_Hi_08_03 " );	// Now we get sweet gold.
+		AI_Output(self,other, " DIA_Addon_BDT_10030_Buddler_Hi_08_03 " );	// Soon we'll all be rich.
 		AI_StopProcessInfos(self);
 	};
 };
