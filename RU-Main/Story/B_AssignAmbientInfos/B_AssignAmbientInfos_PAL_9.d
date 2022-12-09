@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_9_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_PAL_9_JOIN(C_Info)
 	condition = DIA_PAL_9_JOIN_Condition;
 	information = DIA_PAL_9_JOIN_Info;
 	permanent = TRUE;
-	description = "Как мне стать паладином?";
+	description = " How do I become a paladin? " ;
 };
 
 
@@ -36,14 +37,14 @@ func int DIA_PAL_9_JOIN_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_PAL_9_JOIN_Info()
 {
-	AI_Output(other,self,"DIA_PAL_9_JOIN_15_00");	//Как мне стать паладином?
-	AI_Output(self,other,"DIA_PAL_9_JOIN_09_01");	//Паладином может стать только тот, кто доказал свою приверженность служению Инносу или королю!
-	AI_Output(self,other,"DIA_PAL_9_JOIN_09_02");	//Скажем проще: паладинами могут стать только лучшие из лучших. Но тебе до этого еще далеко, мой мальчик!
+	AI_Output(other,self, " DIA_PAL_9_JOIN_15_00 " );	// How do I become a paladin?
+	AI_Output(self,other, " DIA_PAL_9_JOIN_09_01 " );	// Only those who have proven their commitment to the service of Innos or the king can become a paladin!
+	AI_Output(self,other, " DIA_PAL_9_JOIN_09_02 " );	// Put simply, only the best of the best can become paladins. But you still have a long way to go, my boy!
 };
 
 
@@ -53,7 +54,7 @@ instance DIA_PAL_9_PEOPLE(C_Info)
 	condition = DIA_PAL_9_PEOPLE_Condition;
 	information = DIA_PAL_9_PEOPLE_Info;
 	permanent = TRUE;
-	description = "Кто командует здесь?";
+	description = " Who's in charge here? " ;
 };
 
 
@@ -63,15 +64,15 @@ func int DIA_PAL_9_PEOPLE_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_PAL_9_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_PAL_9_PEOPLE_15_00");	//Кто командует здесь?
-	AI_Output(self,other,"DIA_PAL_9_PEOPLE_09_01");	//Лорд Хаген.
+	AI_Output(other,self, " DIA_PAL_9_PEOPLE_15_00 " );	// Who's in charge here?
+	AI_Output(self,other, " DIA_PAL_9_PEOPLE_09_01 " );	// Lord Hagen.
 	AI_Output(other,self,"DIA_PAL_9_PEOPLE_15_02");	//И?
-	AI_Output(self,other,"DIA_PAL_9_PEOPLE_09_03");	//И больше никто. Лорд Хаген - верховный командующий всего этого острова.
+	AI_Output(self,other, " DIA_PAL_9_PEOPLE_09_03 " );	// And no one else. Lord Hagen is the supreme commander of this entire island.
 };
 
 
@@ -81,23 +82,23 @@ instance DIA_PAL_9_LOCATION(C_Info)
 	condition = DIA_PAL_9_LOCATION_Condition;
 	information = DIA_PAL_9_LOCATION_Info;
 	permanent = TRUE;
-	description = "Зачем паладины прибыли в Хоринис?";
+	description = " Why did the paladins come to Khorinis? " ;
 };
 
 
 func int DIA_PAL_9_LOCATION_Condition()
 {
-	if(Kapitel == 1)
+	if (chapter ==  1 )
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_PAL_9_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_PAL_9_LOCATION_15_00");	//Зачем паладины прибыли в Хоринис?
-	AI_Output(self,other,"DIA_PAL_9_LOCATION_09_01");	//Это не твое дело, приятель! Тебе достаточно знать, что мы служим Инносу и королю!
+	AI_Output(other,self, " DIA_PAL_9_LOCATION_15_00 " );	// Why did the paladins come to Khorinis?
+	AI_Output(self,other, " DIA_PAL_9_LOCATION_09_01 " );	// It's none of your business, mate! It is enough for you to know that we serve Innos and the king!
 };
 
 
@@ -107,7 +108,7 @@ instance DIA_PAL_9_STANDARD(C_Info)
 	condition = DIA_PAL_9_STANDARD_Condition;
 	information = DIA_PAL_9_STANDARD_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -121,29 +122,29 @@ func void DIA_PAL_9_STANDARD_Info()
 	AI_Output(other,self,"DIA_PAL_9_STANDARD_15_00");	//Как дела?
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 	{
-		if(Kapitel <= 4)
+		if (chapter <=  4 )
 		{
 			if(MIS_OLDWORLD == LOG_SUCCESS)
 			{
-				AI_Output(self,other,"DIA_PAL_9_STANDARD_09_01");	//Теперь, когда мы знаем, что имеем дело с драконами, наш командующий наверняка скоро что-то предпримет.
+				AI_Output(self,other, " DIA_PAL_9_STANDARD_09_01 " );	// Now that we know we're dealing with dragons, our commander will probably do something soon.
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_PAL_9_STANDARD_09_02");	//Все еще нет никаких известий от нашего отряда в Долине Рудников. Это очень странно.
+				AI_Output(self,other, " DIA_PAL_9_STANDARD_09_02 " );	// Still no word from our squad in the Valley of Mines. It is very strange.
 			};
 		};
-		if(Kapitel == 5)
+		if (chapter ==  5 )
 		{
-			AI_Output(self,other,"DIA_PAL_9_STANDARZ_09_03");	//Угрозы драконов больше нет. Однако теперь откуда то взялась эта нежить!
+			AI_Output(self,other, " DIA_PAL_9_STANDARZ_09_03 " );	// The dragon threat is gone. However, now where did this undead come from!
 		};
-		if(Kapitel >= 6)
+		if (Chapter >=  6 )
 		{
-			AI_Output(self,other,"DIA_PAL_9_STANDARD_09_05");	//Мы просто так не сдадимся! Орки еще свое получат, будь уверен.
+			AI_Output(self,other, " DIA_PAL_9_STANDARD_09_05 " );	// We won't just give up! Orcs will get theirs, you can be sure.
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PAL_9_STANDARD_09_04");	//Если тебе больше нечего сказать, иди отсюда, болван!
+		AI_Output(self,other, " DIA_PAL_9_STANDARD_09_04 " );	// If you don't have anything else to say, get the fuck outta here!
 	};
 };
 
