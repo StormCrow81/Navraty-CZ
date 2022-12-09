@@ -39,14 +39,14 @@ func int DIA_Addon_10029_Buddler_Hi_Condition()
 
 func void DIA_Addon_10029_Buddler_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10029_Buddler_Hi_15_00");	//Как дела?
+	AI_Output(other,self,"DIA_Addon_BDT_10029_Buddler_Hi_15_00");	//How are you?
 	if (slave_escape ==  FALSE )
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10029_Buddler_Hi_06_01 " );	// As long as the slaves work, I won't lift a finger.
+		AI_Output(self,other, " DIA_Addon_BDT_10029_Buddler_Hi_06_01 " );	// As long as the slaves do all the work, I don't have to lift a finger.
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10029_Buddler_Hi_06_02 " );	// I need to dig a bit to get back into rhythm.
+		AI_Output(self,other, " DIA_Addon_BDT_10029_Buddler_Hi_06_02 " );	// I need to dig a bit to get back into the rhythm. I hate my life.
 		AI_StopProcessInfos(self);
 	};
 };
