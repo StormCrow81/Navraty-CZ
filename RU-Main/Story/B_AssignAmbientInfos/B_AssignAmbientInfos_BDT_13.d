@@ -1,4 +1,5 @@
 
+
 instance DIA_BDT_13_EXIT(C_Info)
 {
 	nr = 999;
@@ -36,27 +37,27 @@ func int DIA_BDT_13_STANDARD_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
-func void B_Verschwinde_Stimme13()
+func void B_disappear_voice13()
 {
-	AI_Output(self,other,"DIA_BDT_13_STANDARD_13_01");	//Проваливай!
+	AI_Output(self,other, " DIA_BDT_13_STANDARD_13_01 " );	// Get lost!
 };
 
 func void DIA_BDT_13_STANDARD_Info()
 {
-	var int randy;
+	be int randy;
 
 	if(CurrentLevel == PRIORATWORLD_ZEN)
 	{
-		randy = Hlp_Random(4);
+		randy = Hlp_Random( 4 );
 
 		if(PlayerIsAssNow == FALSE)
 		{
 			PlayerIsPrioratFakeTemp = TRUE;
-			AI_Output(self,other,"DIA_ASS_2_STANDARD_01_04");	//Эй! Да ты не из наших людей...
-			AI_Output(self,other,"DIA_ASS_2_STANDARD_01_05");	//Тревога, враг!
+			AI_Output(self,other, " DIA_ASS_2_STANDARD_01_04 " );	// Hey! You are not one of our people...
+			AI_Output(self,other, " DIA_ASS_2_STANDARD_01_05 " );	// Alarm, enemy!
 			AI_StopProcessInfos(self);
 			B_Attack(self,other,AR_KILL,1);
 		}
@@ -64,15 +65,15 @@ func void DIA_BDT_13_STANDARD_Info()
 		{
 			if(randy == 0)
 			{
-				AI_Output(self,other,"DIA_ASS_2_STANDARD_01_00");	//Лучше уходи! Иначе у обоих будут неприятности...
+				AI_Output(self,other, " DIA_ASS_2_STANDARD_01_00 " );	// Better go! Otherwise, both will be in trouble...
 			};	
 			if(randy == 1)
 			{
-				AI_Output(self,other,"DIA_ASS_2_STANDARD_01_01");	//Не мешай мне!
+				AI_Output(self,other, " DIA_ASS_2_STANDARD_01_01 " );	// Don't disturb me!
 			};
 			if(randy == 2)
 			{
-				AI_Output(self,other,"DIA_ASS_2_STANDARD_01_02");	//Уходи отсюда!
+				AI_Output(self,other, " DIA_ASS_2_STANDARD_01_02 " );	// Get out of here!
 			};
 			if(randy == 3)
 			{
@@ -84,19 +85,19 @@ func void DIA_BDT_13_STANDARD_Info()
 	}
 	else
 	{
-		randy = Hlp_Random(3);
+		randy = Hlp_Random( 3 );
 
 		if(randy == 0)
 		{
-			AI_Output(self,other,"DIA_BDT_13_STANDARD_13_00");	//Что уставился, как идиот?!
+			AI_Output(self,other, " DIA_BDT_13_STANDARD_13_00 " );	// What are you staring at like an idiot?!
 		};
 		if(randy == 1)
 		{
-			B_Verschwinde_Stimme13();
+			B_Disappear_Voice13();
 		};
 		if(randy == 2)
 		{
-			AI_Output(self,other,"DIA_BDT_13_STANDARD_13_02");	//Оставь меня в покое, придурок.
+			AI_Output(self,other, " DIA_BDT_13_STANDARD_13_02 " );	// Leave me alone, idiot.
 		};
 		
 		AI_StopProcessInfos(self);
