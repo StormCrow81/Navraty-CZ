@@ -215,16 +215,16 @@ func void DIA_Addon_Emilio_Senyan_Info()
 {
 	if(Senyan_Called == TRUE)
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Senyan_10_00 " );	// (inquisitively) Tell me WHY Senyan shouted, 'Look who's come'?
-		AI_Output(other,self, " DIA_Addon_BDT_10015_Emilio_Senyan_15_01 " );	// (dryly) Unpaid debts.
+		AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Senyan_10_00 " );	// Tell me, why did Senyan shout?
+		AI_Output(other,self, " DIA_Addon_BDT_10015_Emilio_Senyan_15_01 " );	// Unpaid debts.
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Senyan_10_02 " );	// You killed Senyan!
+		AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Senyan_10_02 " );	// You killed Senyan didn't you?
 	};
-	AI_Output(other,self, " DIA_Addon_BDT_10015_Emilio_Senyan_15_03 " );	// What? Any problems?
-	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Senyan_10_04 " );	// (quickly) No, buddy, I have no complaints about this.
-	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Senyan_10_05 " );	// Even vice versa. (fake) That bastard worked for Esteban.
+	AI_Output(other,self, " DIA_Addon_BDT_10015_Emilio_Senyan_15_03 " );	// You have a problem with that?
+	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Senyan_10_04 " );	// Nope, not a one.
+	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Senyan_10_05 " );	// He was Esteban's lackey. He got what was comin' to him.
 	Senyan_CONTRA = LOG_SUCCESS;
 	B_LogEntry(Topic_Addon_Esteban, " Emilio is not on Esteban's side. " );
 };
@@ -253,8 +253,8 @@ func int DIA_Addon_Emilio_Now_Condition()
 func void DIA_Addon_Emilio_Now_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Emilio_Jetzt_15_00 " );	// Why aren't you in the mine right now?
-	AI_Output(self,other, " DIA_Addon_Emilio_Jetzt_10_01 " );	// (slightly unsure) I was there long enough and worked hard until I was exhausted. Now I need to rest for a few days.
-	AI_Output(self,other, " DIA_Addon_Emilio_Jetzt_10_02 " );	// (sigh) Before I get the next redstone.
+	AI_Output(self,other, " DIA_Addon_Emilio_Jetzt_10_01 " );	// I was there long enough and worked hard until I was exhausted. Now I need to rest for a few days.
+	AI_Output(self,other, " DIA_Addon_Emilio_Jetzt_10_02 " );	// Before I get the next red stone.
 };
 
 
@@ -283,7 +283,7 @@ func void DIA_Addon_Emilio_VonEmilio_Info()
 	AI_Output(other,self, " DIA_Addon_Emilio_VonEmilio_15_00 " );	// Lennar told me about you...
 	AI_Output(self,other, " DIA_Addon_Emilio_VonEmilio_10_01 " );	// Lennar? This guy is an idiot. You probably noticed.
 	AI_Output(other,self, " DIA_Addon_Emilio_VonEmilio_15_02 " );	// He said you haven't been in the mine since the attack happened.
-	AI_Output(self,other, " DIA_Addon_Emilio_VonEmilio_10_03 " );	// (frightened) I... don't know anything!
+	AI_Output(self,other, " DIA_Addon_Emilio_VonEmilio_10_03 " );	// I... don't know anything about that!
 	if ( ! Npc_IsDead(Senyan))
 	{
 		AI_Output(self,other, " DIA_Addon_Emilio_VonEmilio_10_04 " );	// You work with Senyang!
@@ -321,9 +321,9 @@ func void DIA_Addon_Emilio_HilfMir_Info()
 	AI_Output(other,self, " DIA_Addon_Emilio_HilfMir_15_00 " );	// Help me figure out who orchestrated the attack!
 	AI_Output(self,other, " DIA_Addon_Emilio_HilfMir_10_01 " );	// No! I don't want to get involved!
 	AI_Output(other,self, " DIA_Addon_Emilio_HilfMir_15_02 " );	// Even if an idiot like Lennar notices that you're acting strange, it won't be long before Esteban notices.
-	AI_Output(self,other, " DIA_Addon_Emilio_HilfMir_10_03 " );	// (uncomfortably) I... damn! I will tell you one name. And nothing more.
-	AI_Output(other,self,"DIA_Addon_Emilio_HilfMir_15_04");	//Слушаю.
-	AI_Output(self,other, " DIA_Addon_Emilio_HilfMir_10_05 " );	// Huno... talk to Huno. He must know something about this case.
+	AI_Output(self,other, " DIA_Addon_Emilio_HilfMir_10_03 " );	// I... damn! I will tell you one name. And nothing more.
+	AI_Output(other,self,"DIA_Addon_Emilio_HilfMir_15_04");	//I'm listening.
+	AI_Output(self,other, " DIA_Addon_Emilio_HilfMir_10_05 " );	// Huno... talk to Huno. He might know something about all this.
 	Emilio_TellAll = TRUE;
 	B_LogEntry(Topic_Addon_Esteban, " Emilio finally gave a name: Huno. " );
 };
@@ -352,11 +352,11 @@ func int DIA_Addon_Emilio_GegenEsteban_Condition()
 func void DIA_Addon_Emilio_GegenEsteban_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Emilio_GegenEsteban_15_00 " );	// What do you have against Esteban?
-	AI_Output(self,other, " DIA_Addon_Emilio_GegenEsteban_10_01 " );	// All this pig thinks about is money.
+	AI_Output(self,other, " DIA_Addon_Emilio_GegenEsteban_10_01 " );	// All that pig thinks about is money.
 	AI_Output(self,other, " DIA_Addon_Emilio_GegenEsteban_10_02 " );	// Every few days one of us gets eaten by crawlers.
 	AI_Output(self,other, " DIA_Addon_Emilio_GegenEsteban_10_03 " );	// But Esteban doesn't even think about sending a few fighters into the mine.
-	AI_Output(self,other, " DIA_Addon_Emilio_GegenEsteban_10_04 " );	// And all why? Because these guys from the Raven's personal guard and Esteban are trembling in the knees afraid to talk to them.
-	AI_Output(self,other, " DIA_Addon_Emilio_GegenEsteban_10_05 " );	// It's easier for him to let us all die!
+	AI_Output(self,other, " DIA_Addon_Emilio_GegenEsteban_10_04 " );	// And why? Because Raven, his personal guard and Esteban couldn't fucking care less about us.
+	AI_Output(self,other, " DIA_Addon_Emilio_GegenEsteban_10_05 " );	// It's easier for them to let us all die!
 };
 
 
@@ -384,7 +384,7 @@ func void DIA_Addon_Emilio_Mine_Info()
 {
 	B_Say(other,self,"$MINE_ADDON_DESCRIPTION");
 	B_GiveInvItems(other,self,ItMi_Addon_Stone_01,1);
-	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Mine_10_00 " );	// So you're in charge now. Okay, then I went.
+	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Mine_10_00 " );	// So you're in charge now. That's good.
 	Player_SentBuddler = Player_SentBuddler + 1;
 	B_GivePlayerXP(XP_Addon_MINE);
 	AI_StopProcessInfos(self);
@@ -415,5 +415,5 @@ func int DIA_Addon_Emilio_Hacker_Condition()
 func void DIA_Addon_Emilio_Hacker_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10004_Emilio_Hacker_15_00 " );	// How are you?
-	AI_Output(self,other, " DIA_Addon_BDT_10004_Emilio_Hacker_10_01 " );	// I just fall off my feet.
+	AI_Output(self,other, " DIA_Addon_BDT_10004_Emilio_Hacker_10_01 " );	// My feet are killing me.
 };
