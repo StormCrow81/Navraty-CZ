@@ -39,11 +39,11 @@ func int DIA_Addon_10028_Buddler_Hi_Condition()
 
 func void DIA_Addon_10028_Buddler_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10028_Buddler_Hi_15_00");	//Как дела?
+	AI_Output(other,self,"DIA_Addon_BDT_10028_Buddler_Hi_15_00");	//How are you?
 	if (slave_escape ==  FALSE )
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10028_Buddler_Hi_12_01 " );	// I'm not going to go into the mine myself. We have enough slaves for this.
-		AI_Output(self,other, " DIA_Addon_BDT_10028_Buddler_Hi_12_02 " );	// Gold has never been so easy for us... (laughs)
+		AI_Output(self,other, " DIA_Addon_BDT_10028_Buddler_Hi_12_01 " );	// I'm not going to go into the mine myself. We have enough slaves for that.
+		AI_Output(self,other, " DIA_Addon_BDT_10028_Buddler_Hi_12_02 " );	// Getting the gold out has never been so easy! Hehehe...
 	}
 	else
 	{
