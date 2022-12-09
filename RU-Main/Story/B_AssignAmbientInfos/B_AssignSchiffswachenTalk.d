@@ -1,19 +1,20 @@
 
+
 func void B_AssignSchiffswachenGuard(var C_Npc Schiffswache)
 {
 	if((MIS_ShipIsFree == TRUE) || (MIS_SCvisitShip == LOG_Running))
 	{
 		if(Schiffswache.voice == 4)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_Ambient_04_00");	//Мы следим за тобой. Помни об этом.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_Ambient_04_00 " );	// We're watching you. Remember this.
 		};
 		if(Schiffswache.voice == 9)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_Ambient_09_01");	//Не создавай здесь проблем, хорошо?
+			AI_Output(self,other, " DIA_Pal_Schiffswache_Ambient_09_01 " );	// Don't make trouble here, okay?
 		};
 		if(Schiffswache.voice == 12)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_Ambient_12_02");	//И не надумай ничего красть, ясно?
+			AI_Output(self,other, " DIA_Pal_Schiffswache_Ambient_12_02 " );	// And don't think of stealing anything, okay?
 		};
 		AI_StopProcessInfos(Schiffswache);
 		Npc_SetRefuseTalk(Schiffswache,60);
@@ -27,7 +28,7 @@ func void B_AssignSchiffswachenGuard(var C_Npc Schiffswache)
 		Npc_SetRefuseTalk(Pal_227_Schiffswache,60);
 		Npc_SetRefuseTalk(Pal_228_Schiffswache,60);
 	}
-	else	if(Wld_IsTime(7,0,9,30) || Wld_IsTime(18,0,20,30))
+	else 	if (Wld_IsTime( 7 , 0 , 9 , 30 ) || Wld_IsTime( 18 , 0 , 20 , 30 ))
 	{
 		B_Say(self,other,"$NOTNOW");
 		AI_StopProcessInfos(self);
@@ -60,36 +61,36 @@ func void B_AssignSchiffswachenGuard(var C_Npc Schiffswache)
 	};
 };
 
-func void B_AssignSchiffswachenInfos(var C_Npc Schiffswache)
+func void B_AssignShip GuardInfo(var C_Npc Ship Guard)
 {
 	if(MIS_OCGateOpen == TRUE)
 	{
 		if(Schiffswache.voice == 4)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_AmbientKap5_04_00");	//Эти проклятые орки штурмуют замок Гаронда. Мы должны действовать немедленно.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_04_00 " );	// Those damned orcs are storming Castle Garonda. We must act immediately.
 		};
 		if(Schiffswache.voice == 9)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_AmbientKap5_09_01");	//Если бы нам удалось найти этого предателя, что открыл главные ворота замка, мы бы ему показали!
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_09_01 " );	// If we could find this traitor who opened the main gate of the castle, we would show him!
 		};
 		if(Schiffswache.voice == 12)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_AmbientKap5_12_02");	//Мы не можем ждать дольше. Нашим парням в Долине Рудников нужна помощь, чтобы справиться со следующей волной орков.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_12_02 " );	// We can't wait any longer. Our boys in the Vale of Mines need help to deal with the next wave of orcs.
 		};
 	}
 	else
 	{
 		if(Schiffswache.voice == 4)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_AmbientKap5_04_03");	//Лорд Хаген объявил всеобщую мобилизацию! Скоро мы выступаем в Долину Рудников.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_04_03 " );	// Lord Hagen has declared a general mobilization! Soon we will set out for the Valley of Mines.
 		};
 		if(Schiffswache.voice == 9)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_AmbientKap5_09_04");	//Оркам нужно преподнести урок.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_09_04 " );	// Orcs need to be taught a lesson.
 		};
 		if(Schiffswache.voice == 12)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_AmbientKap5_12_05");	//Я не могу дождаться, когда мы, наконец, покажем этим оркам. Ну ничего, скоро мы начнем теснить их.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_12_05 " );	// I can't wait to finally show these orcs. Well, nothing, we will soon begin to crowd them.
 		};
 	};
 	AI_StopProcessInfos(Schiffswache);
@@ -97,9 +98,9 @@ func void B_AssignSchiffswachenInfos(var C_Npc Schiffswache)
 
 func void B_AssignSchiffswachenTalk(var C_Npc Schiffswache)
 {
-	if(Kapitel >= 5)
+	if (Chapter >=  5 )
 	{
-		B_AssignSchiffswachenInfos(Schiffswache);
+		B_AssignShip GuardsInfo(Ship Guard);
 	}
 	else
 	{
@@ -117,6 +118,6 @@ func int B_AssignSchiffswachenInfoConditions(var C_Npc Schiffswache)
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
