@@ -1,4 +1,5 @@
 
+
 instance DIA_OUT_7_EXIT(C_Info)
 {
 	nr = 999;
@@ -36,24 +37,24 @@ func int DIA_OUT_7_STANDARD_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_OUT_7_STANDARD_Info()
 {
-	var int randy;
-	randy = Hlp_Random(3);
+	be int randy;
+	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other,"DIA_OUT_7_STANDARD_07_00");	//Последнее время жить здесь стало значительно опаснее. А полевые хищники так вообще житья не дают.
+		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_00 " );	// Living here has become much more dangerous lately. And field predators don’t give life like that at all.
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_OUT_7_STANDARD_07_01");	//Мы должны отдавать долю городу. Если мы не будем делать этого, у нас будут проблемы с паладинами.
+		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_01 " );	// We must give a share to the city. If we do not do this, we will have problems with the paladins.
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other,"DIA_OUT_7_STANDARD_07_02");	//Бунт Онара будет иметь серьезные последствия. Я лучше не буду принимать в нем участия.
+		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_02 " );	// Onar's rebellion will have serious consequences. I'd rather not take part in it.
 	};
 	AI_StopProcessInfos(self);
 };
