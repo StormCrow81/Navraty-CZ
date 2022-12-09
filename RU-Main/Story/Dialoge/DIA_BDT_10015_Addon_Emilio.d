@@ -75,7 +75,7 @@ func int DIA_Addon_Emilio_Hi_Condition()
 func void DIA_Addon_Emilio_Hi_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10015_Emilio_Hi_15_00 " );	// You look like a miner.
-	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Hi_10_01 " );	// I am the miner. The last time I was in the mine, I was tired as a dog.
+	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Hi_10_01 " );	// I am a miner. It's backbreaking work but its all I know.
 	if(SC_KnowsRavensGoldmine == FALSE)
 	{
 		B_LogEntry(TOPIC_Addon_RavenKDW,LogText_Addon_RavensGoldmine);
@@ -137,8 +137,8 @@ func int DIA_Addon_Emilio_Stein_Condition()
 
 func void DIA_Addon_Emilio_Stein_Info()
 {
-	AI_Output(other,self, " DIA_Addon_BDT_10015_Emilio_Stein_15_00 " );	// What is this redstone system?
-	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Stein_10_01 " );	// Torus and Esteban came up with this.
+	AI_Output(other,self, " DIA_Addon_BDT_10015_Emilio_Stein_15_00 " );	// What is this red stone system?
+	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Stein_10_01 " );	// Torus and Esteban came up with it.
 	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Stein_10_02 " );	// Torus takes care of the distribution of the gold, while Esteban organizes the workers for the mine.
 	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Stein_10_03 " );	// Of course he doesn't want to run to Torus every time someone goes into the mine.
 	AI_Output(self,other, " DIA_Addon_BDT_10015_Emilio_Stein_10_04 " );	// That's why he gives the workers one of these red stone tiles, and Thorus then knows exactly who to let in. It's like a pass.
@@ -180,12 +180,12 @@ func void DIA_Addon_Emilio_Attentat_Info()
 	AI_Output(other,self, " DIA_Addon_Emilio_Attentat_15_00 " );	// What do you know about the attack?
 	if(Emilio_Switch == 0)
 	{
-		AI_Output(self,other, " DIA_Addon_Emilio_Attentat_10_01 " );	// (scared) Hey buddy, I don't want to know about this!
+		AI_Output(self,other, " DIA_Addon_Emilio_Attentat_10_01 " );	// Hey man, I don't know nothin'!
 		Emilio_Switch = 1;
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_Emilio_Attentat_10_02 " );	// (scared) NOTHING AT ALL!
+		AI_Output(self,other, " DIA_Addon_Emilio_Attentat_10_02 " );	// NOTHIN' AT ALL!
 		Emilio_Switch = 0;
 	};
 };
