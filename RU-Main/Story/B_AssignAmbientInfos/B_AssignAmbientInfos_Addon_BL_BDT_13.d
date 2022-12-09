@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_BL_BDT_13_EXIT(C_Info)
 {
 	nr = 999;
@@ -16,7 +17,7 @@ func int DIA_Addon_BL_BDT_13_EXIT_Condition()
 
 func void DIA_Addon_BL_BDT_13_EXIT_Info()
 {
-	BDT_13_Nerver = 0;
+	BDT_13_Nerves = 0 ;
 	AI_StopProcessInfos(self);
 };
 
@@ -27,7 +28,7 @@ instance DIA_Addon_BL_BDT_13_Chef(C_Info)
 	condition = DIA_Addon_BL_BDT_13_Chef_Condition;
 	information = DIA_Addon_BL_BDT_13_Chef_Info;
 	permanent = TRUE;
-	description = "Кто здесь главный?";
+	description = " Who's in charge here? " ;
 };
 
 func int DIA_Addon_BL_BDT_13_Chef_Condition()
@@ -37,21 +38,21 @@ func int DIA_Addon_BL_BDT_13_Chef_Condition()
 
 func void DIA_Addon_BL_BDT_13_Chef_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BL_BDT_13_Chef_15_00");	//Кто здесь главный?
+	AI_Output(other,self, " DIA_Addon_BL_BDT_13_Chef_15_00 " );	// Who's in charge here?
 	if(RavenAway == TRUE)
 	{
-		if(Npc_IsDead(Thorus))
+		if (Npc_IsDead(Thorus))
 		{
-			AI_Output(self,other,"DIA_Addon_BL_BDT_13_Chef_13_01");	//(торжественно) Наш славный командир Торус. Он сделает нас всех богатыми!
+			AI_Output(self,other, " DIA_Addon_BL_BDT_13_Chef_13_01 " );	// Our glorious commander Thorus. He will make us all rich!
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_BL_BDT_13_Chef_13_02");	//Наш славный лидер... мм... даже не знаю...
+			AI_Output(self,other, " DIA_Addon_BL_BDT_13_Chef_13_02 " );	// Our glorious leader... uh... I don't even know...
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_Chef_13_03");	//(торжественно) Наш славный командир Ворон. Он сделает нас всех богатыми!
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_Chef_13_03 " );	// Our glorious Commander Raven. He will make us all rich!
 	};
 };
 
@@ -62,7 +63,7 @@ instance DIA_Addon_BL_BDT_13_Lager(C_Info)
 	condition = DIA_Addon_BL_BDT_13_Lager_Condition;
 	information = DIA_Addon_BL_BDT_13_Lager_Info;
 	permanent = TRUE;
-	description = "Что ты знаешь про лагерь?";
+	description = " What do you know about the camp? " ;
 };
 
 
@@ -73,9 +74,9 @@ func int DIA_Addon_BL_BDT_13_Lager_Condition()
 
 func void DIA_Addon_BL_BDT_13_Lager_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BL_BDT_13_Lager_15_00");	//Что ты знаешь про лагерь?
-	AI_Output(self,other,"DIA_Addon_BL_BDT_13_Lager_13_01");	//Поговори со Снафом, если тебе нужна информация. Этот жирный повар многое знает.
-	AI_Output(self,other,"DIA_Addon_BL_BDT_13_Lager_13_02");	//Если тебе надо будет что-нибудь купить, поговори с Фиском. У него есть всякие штуки...
+	AI_Output(other,self, " DIA_Addon_BL_BDT_13_Lager_15_00 " );	// What do you know about the camp?
+	AI_Output(self,other, " DIA_Addon_BL_BDT_13_Lager_13_01 " );	// Talk to Snaf if you need information. That fat bastard knows a lot.
+	AI_Output(self,other, " DIA_Addon_BL_BDT_13_Lager_13_02 " );	// If you need to buy something, talk to Fisk. He has all sorts of things...
 };
 
 
@@ -85,7 +86,7 @@ instance DIA_Addon_BL_BDT_13_News(C_Info)
 	condition = DIA_Addon_BL_BDT_13_News_Condition;
 	information = DIA_Addon_BL_BDT_13_News_Info;
 	permanent = TRUE;
-	description = "Какие новости?";
+	description = " What's new? " ;
 };
 
 
@@ -96,16 +97,16 @@ func int DIA_Addon_BL_BDT_13_News_Condition()
 
 func void DIA_Addon_BL_BDT_13_News_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BL_BDT_13_News_15_00");	//Какие новости?
+	AI_Output(other,self, " DIA_Addon_BL_BDT_13_News_15_00 " );	// What's the news?
 	if(RavenAway == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_News_13_01");	//Говорят, что Ворон куда то пропал! Теперь нам НИКОГДА не выбраться с этого острова.
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_News_13_01 " );	// They say that Raven up and disappeared! Now we will NEVER get off this island.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_News_13_02");	//Пираты подняли паруса и уплыли.
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_News_13_03");	//Теперь на берегу сидит лишь пара идиотов, и у них нет нормального корабля.
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_News_13_04");	//Сам Белиар не знает, как мы отсюда выберемся.
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_News_13_02 " );	// The pirates set sail and sailed away.
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_News_13_03 " );	// Now only a couple of idiots are sitting on the shore, without so much as a flimsy raft.
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_News_13_04 " );	// Beliar himself doesn't know how we'll get out of here.
 	};
 };
 
@@ -116,7 +117,7 @@ instance DIA_Addon_BL_BDT_13_Gold(C_Info)
 	condition = DIA_Addon_BL_BDT_13_Gold_Condition;
 	information = DIA_Addon_BL_BDT_13_Gold_Info;
 	permanent = TRUE;
-	description = "Как мне достать много золота и побыстрее?";
+	description = " How can I get a lot of gold and quickly? " ;
 };
 
 
@@ -126,29 +127,29 @@ func int DIA_Addon_BL_BDT_13_Gold_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Addon_BL_BDT_13_Gold_Info()
 {
-	BDT_13_Nerver = BDT_13_Nerver + 1;
-	AI_Output(other,self,"DIA_Addon_BL_BDT_13_Gold_15_00");	//Как мне достать много золота и побыстрее?
+	BDT_13_Nerves = BDT_13_Nerves +  1 ;
+	AI_Output(other,self, " DIA_Addon_BL_BDT_13_Gold_15_00 " );	// How can I get a lot of gold quickly?
 	if(BDT_13_Nerver <= 2)
 	{
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_Gold_13_01");	//Хороший вопрос. Разве мы все не за этим здесь?
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_Gold_13_02");	//Тебе нужно взять у Торуса красный камень, тогда ты сможешь войти в шахту.
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_Gold_13_01 " );	// Good question. Isn't that what we're all here for?
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_Gold_13_02 " );	// You need to take a red stone from Torus, then you can enter the mine.
 	}
 	else if(BDT_13_Kill == FALSE)
 	{
-		BDT_13_Nerver = 0;
+		BDT_13_Nerves = 0 ;
 		BDT_13_Kill = TRUE;
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_Gold_13_03");	//Эй, что ты вертишься вокруг меня? Пошел вон!
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_Gold_13_03 " );	// Hey, why are you hanging around me? Go away!
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		BDT_13_Nerver = 0;
-		AI_Output(self,other,"DIA_Addon_BL_BDT_13_Gold_13_04");	//Кончились игры и веселье!
+		BDT_13_Nerves = 0 ;
+		AI_Output(self,other, " DIA_Addon_BL_BDT_13_Gold_13_04 " );	// No more games!
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_NONE,1);
 	};
