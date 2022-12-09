@@ -40,10 +40,10 @@ func int DIA_Addon_10025_Wache_Hi_Condition()
 func void DIA_Addon_10025_Wache_Hi_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10025_Wache_Hi_15_00 " );	// How are you?
-	AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_01 " );	// I cook delicious stew for miners and guards.
+	AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_01 " );	// I cook for the miners and guards.
 	if (slave_escape ==  FALSE )
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_02 " );	// And slaves get next to nothing. Some stagnant water and old bread, nothing more.
-		AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_03 " );	// These city rats won't hurt much.
+		AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_02 " );	// The slaves get next to nothing. Some stagnant water and old bread, nothing more.
+		AI_Output(self,other, " DIA_Addon_BDT_10025_Wache_Hi_07_03 " );	// Rats don't deserve the good stuff anyway.
 	};
 };
