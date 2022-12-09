@@ -1,4 +1,5 @@
 
+
 instance DIA_OUT_13_EXIT(C_Info)
 {
 	nr = 999;
@@ -36,24 +37,24 @@ func int DIA_OUT_13_STANDARD_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_OUT_13_STANDARD_Info()
 {
-	var int randy;
-	randy = Hlp_Random(3);
+	be int randy;
+	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other,"DIA_OUT_1_STANDARD_13_00");	//Раньше нам удавалось не подпускать орков близко. Но последнее время их становится все больше и больше.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_13_00 " );	// We used to be able to keep the orcs away. But lately there have been more and more of them.
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_OUT_1_STANDARD_13_01");	//От ополчения тоже мало толку. Они приходят из города только, чтобы забрать наш урожай и скот.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_13_01 " );	// The militia is also of little use. They only come from the city to take our crops and livestock.
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other,"DIA_OUT_1_STANDARD_13_02");	//Онар, наверное, выжил из ума, раз решился на конфликт с городом как раз тогда, когда прибыли паладины.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_13_02 " );	// Onar must have lost his mind, since he decided to conflict with the city just when the paladins arrived.
 	};
 	AI_StopProcessInfos(self);
 };
