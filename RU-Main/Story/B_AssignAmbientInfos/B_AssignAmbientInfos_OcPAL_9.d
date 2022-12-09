@@ -1,4 +1,5 @@
 
+
 instance DIA_OCPAL_9_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,13 +27,13 @@ instance DIA_OCPAL_9_PEOPLE(C_Info)
 	condition = DIA_OCPAL_9_PEOPLE_Condition;
 	information = DIA_OCPAL_9_PEOPLE_Info;
 	permanent = TRUE;
-	description = "Кто командует здесь?";
+	description = " Who's in charge here? " ;
 };
 
 
 func int DIA_OCPAL_9_PEOPLE_Condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -40,8 +41,8 @@ func int DIA_OCPAL_9_PEOPLE_Condition()
 
 func void DIA_OCPAL_9_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_OCPAL_9_PEOPLE_15_00");	//Кто командует здесь?
-	AI_Output(self,other,"DIA_OCPAL_9_PEOPLE_09_01");	//Гаронд. Но его работе не позавидуешь.
+	AI_Output(other,self, " DIA_OCPAL_9_PEOPLE_15_00 " );	// Who's in charge here?
+	AI_Output(self,other, " DIA_OCPAL_9_PEOPLE_09_01 " );	// Garond. But you can't envy his work.
 };
 
 
@@ -51,13 +52,13 @@ instance DIA_OCPAL_9_LOCATION(C_Info)
 	condition = DIA_OCPAL_9_LOCATION_Condition;
 	information = DIA_OCPAL_9_LOCATION_Info;
 	permanent = TRUE;
-	description = "Что ты знаешь об этой долине?";
+	description = " What do you know about this valley? " ;
 };
 
 
 func int DIA_OCPAL_9_LOCATION_Condition()
 {
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -65,9 +66,9 @@ func int DIA_OCPAL_9_LOCATION_Condition()
 
 func void DIA_OCPAL_9_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_OCPAL_9_LOCATION_15_00");	//Что ты знаешь об этой долине?
-	AI_Output(self,other,"DIA_OCPAL_9_LOCATION_09_01");	//Ну, то что орки построили большую защитную стену. За этой стеной есть место, где они могут швартовать свои корабли.
-	AI_Output(self,other,"DIA_OCPAL_9_LOCATION_09_02");	//Надеюсь, что орки не подтянут основные силы слишком быстро. По мне, так и тех, что уже есть, хватает с избытком.
+	AI_Output(other,self, " DIA_OCPAL_9_LOCATION_15_00 " );	// What do you know about this valley?
+	AI_Output(self,other, " DIA_OCPAL_9_LOCATION_09_01 " );	// Well, that the orcs built a big defensive wall. Behind this wall there is a place where they can moor their ships.
+	AI_Output(self,other, " DIA_OCPAL_9_LOCATION_09_02 " );	// Hope the orcs don't bring up the main force too quickly. For me, those that already exist are more than enough.
 };
 
 
@@ -77,7 +78,7 @@ instance DIA_OCPAL_9_STANDARD(C_Info)
 	condition = DIA_OCPAL_9_STANDARD_Condition;
 	information = DIA_OCPAL_9_STANDARD_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -88,36 +89,36 @@ func int DIA_OCPAL_9_STANDARD_Condition()
 
 func void DIA_OCPAL_9_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_OCPAL_4_STANDARD_15_00");	//Как дела?
-	if(Kapitel <= 3)
+	AI_Output(other,self, " DIA_OCPAL_4_STANDARD_15_00 " );	// How are you?
+	if (chapter <=  3 )
 	{
-		AI_Output(self,other,"DIA_OCPAL_4_STANDARD_09_01");	//Драконы опять напали на нас! Но Иннос защитил нас в этом бою. Создания Белиара дорого заплатят за это!
+		AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_01 " );	// The dragons attacked us again! But Innos protected us in this battle. Beliar's creatures will pay dearly for this!
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		if(MIS_KilledDragons < 4)
 		{
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_09_02");	//Охотники на драконов! Нужно было послать нас, паладинов!
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_02 " );	// Dragon hunters! We should have sent us paladins!
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_09_03");	//Теперь, когда мы избавились от этих драконов, мы можем разобраться с орками!
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_03 " );	// Now that we've got rid of those dragons, we can deal with the orcs!
 		};
 	};
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		if(MIS_OCGateOpen == FALSE)
 		{
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_09_04");	//Нам нужно доставить руду на корабль и убираться с этой проклятой земли.
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_04 " );	// We need to get the ore to the ship and get out of this cursed land.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_09_05");	//Предательство! Ворота нельзя было открывать! Смерть предателям!
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_05 " );	// Betrayal! The gate could not be opened! Death to traitors!
 		};
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
-		AI_Output(self,other,"DIA_OCPAL_4_STANDARD_09_06");	//После того, как замок пал - надежды мало. Теперь только чудо нам сможет помочь!
+		AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_06 " );	// After the castle has fallen, there is little hope. Now only a miracle can help us!
 	};
 };
 
