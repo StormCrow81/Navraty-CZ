@@ -1,4 +1,5 @@
 
+
 instance DIA_DMT_1201_Dementor_EXIT(C_Info)
 {
 	npc = DMT_1201_Dementor;
