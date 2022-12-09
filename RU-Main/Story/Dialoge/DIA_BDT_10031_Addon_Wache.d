@@ -39,7 +39,7 @@ func int DIA_Addon_10031_Wache_Scatty_Condition()
 
 func void DIA_Addon_10031_Wache_Scatty_Info()
 {
-	AI_Output(self,other, " DIA_Addon_BDT_10031_Wache_Scatty_06_00 " );	// Hey, do you want to go to work? Then don't forget to stock up on Scutty.
+	AI_Output(self,other, " DIA_Addon_BDT_10031_Wache_Scatty_06_00 " );	// Hey, do you want to go to work? Then don't forget to stock up on supplies.
 	AI_Output(other,self, " DIA_Addon_BDT_10031_Wache_Scatty_15_01 " );	// What do I need?
 	AI_Output(self,other, " DIA_Addon_BDT_10031_Wache_Scatty_06_02 " );	// Well, at least a pickaxe. A little food doesn't hurt either.
 	AI_StopProcessInfos(self);
@@ -69,9 +69,9 @@ func void DIA_Addon_10031_Wache_Hi_Info()
 	AI_Output(other,self, " DIA_Addon_BDT_10031_Wache_Hi_15_00 " );	// Is everything okay?
 	if ((slave_escape ==  TRUE ) && (guard_joker ==  FALSE ))
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10031_Wache_Hi_06_01 " );	// Oh mate. The slaves seemed to be in a great hurry.
+		AI_Output(self,other, " DIA_Addon_BDT_10031_Wache_Hi_06_01 " );	// Oh man. The slaves suddenly found untapped reserves of energy I tell you!
 		AI_Output(self,other, " DIA_Addon_BDT_10031_Wache_Hi_06_02 " );	// When they heard they were free, they ran like rabbits!
 		Wache_Joker = TRUE;
 	};
-	AI_Output(self,other, " DIA_Addon_BDT_10031_Wache_Hi_06_03 " );	// Yes. So do not create problems for anyone, and everything will be fine with you.
+	AI_Output(self,other, " DIA_Addon_BDT_10031_Wache_Hi_06_03 " );	// Don't create problems for anyone, and everything will be fine.
 };
