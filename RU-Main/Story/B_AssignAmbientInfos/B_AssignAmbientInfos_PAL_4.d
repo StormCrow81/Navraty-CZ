@@ -1,4 +1,5 @@
 
+
 instance DIA_PAL_4_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_PAL_4_JOIN(C_Info)
 	condition = DIA_PAL_4_JOIN_Condition;
 	information = DIA_PAL_4_JOIN_Info;
 	permanent = TRUE;
-	description = "Как мне стать паладином?";
+	description = " How do I become a paladin? " ;
 };
 
 
@@ -40,10 +41,10 @@ func int DIA_PAL_4_JOIN_Condition()
 
 func void DIA_PAL_4_JOIN_Info()
 {
-	AI_Output(other,self,"DIA_PAL_4_JOIN_15_00");	//Как мне стать паладином?
-	AI_Output(self,other,"DIA_PAL_4_JOIN_04_01");	//Если у тебя действительно серьезные намерения, то сначала ты должен поступить в услужение паладинам.
-	AI_Output(self,other,"DIA_PAL_4_JOIN_04_02");	//Иди в казармы и поговори с лордом Андрэ. Попробуй вступить в ополчение.
-	AI_Output(self,other,"DIA_PAL_4_JOIN_04_03");	//Возможно, там у тебя появится шанс проявить себя.
+	AI_Output(other,self, " DIA_PAL_4_JOIN_15_00 " );	// How do I become a paladin?
+	AI_Output(self,other, " DIA_PAL_4_JOIN_04_01 " );	// If you're really serious, you should first enlist in the service of the paladins.
+	AI_Output(self,other, " DIA_PAL_4_JOIN_04_02 " );	// Go to the barracks and talk to Lord Andre. Try joining the militia.
+	AI_Output(self,other, " DIA_PAL_4_JOIN_04_03 " );	// Perhaps there you will have a chance to prove yourself.
 };
 
 
@@ -53,7 +54,7 @@ instance DIA_PAL_4_PEOPLE(C_Info)
 	condition = DIA_PAL_4_PEOPLE_Condition;
 	information = DIA_PAL_4_PEOPLE_Info;
 	permanent = TRUE;
-	description = "Кто командует здесь?";
+	description = " Who's in charge here? " ;
 };
 
 
@@ -67,9 +68,9 @@ func int DIA_PAL_4_PEOPLE_Condition()
 
 func void DIA_PAL_4_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_PAL_4_PEOPLE_15_00");	//Кто командует здесь?
-	AI_Output(self,other,"DIA_PAL_4_PEOPLE_04_01");	//Лорд Хаген - главнокомандующий всеми войсками на этом острове. Он занимает дом главы города, пока мы расквартированы здесь.
-	AI_Output(self,other,"DIA_PAL_4_PEOPLE_04_02");	//Но он очень занят. Если тебе что-то нужно, иди в казармы и поговори с лордом Андрэ.
+	AI_Output(other,self, " DIA_PAL_4_PEOPLE_15_00 " );	// Who's in charge here?
+	AI_Output(self,other, " DIA_PAL_4_PEOPLE_04_01 " );	// Lord Hagen is the commander-in-chief of all troops on this island. He occupies the mayor's house while we are billeted here.
+	AI_Output(self,other, " DIA_PAL_4_PEOPLE_04_02 " );	// But he's very busy. If you need anything, go to the barracks and talk to Lord Andre.
 };
 
 
@@ -79,13 +80,13 @@ instance DIA_PAL_4_LOCATION(C_Info)
 	condition = DIA_PAL_4_LOCATION_Condition;
 	information = DIA_PAL_4_LOCATION_Info;
 	permanent = TRUE;
-	description = "Что вы, паладины, делаете здесь, в Хоринисе?";
+	description = " What are you paladins doing here in Khorinis? " ;
 };
 
 
 func int DIA_PAL_4_LOCATION_Condition()
 {
-	if(Kapitel == 1)
+	if (chapter ==  1 )
 	{
 		return TRUE;
 	};
@@ -93,8 +94,8 @@ func int DIA_PAL_4_LOCATION_Condition()
 
 func void DIA_PAL_4_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_PAL_4_LOCATION_15_00");	//Что вы, паладины, делаете здесь, в Хоринисе?
-	AI_Output(self,other,"DIA_PAL_4_LOCATION_04_01");	//Я не уполномочен сообщать тебе это.
+	AI_Output(other,self, " DIA_PAL_4_LOCATION_15_00 " );	// What are you paladins doing here in Khorinis?
+	AI_Output(self,other, " DIA_PAL_4_LOCATION_04_01 " );	// I'm not authorized to tell you this.
 };
 
 
@@ -104,7 +105,7 @@ instance DIA_PAL_4_STANDARD(C_Info)
 	condition = DIA_PAL_4_STANDARD_Condition;
 	information = DIA_PAL_4_STANDARD_Info;
 	permanent = TRUE;
-	description = "Что новенького?";
+	description = " What's new? " ;
 };
 
 
@@ -115,32 +116,32 @@ func int DIA_PAL_4_STANDARD_Condition()
 
 func void DIA_PAL_4_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_PAL_4_STANDARD_15_00");	//Что новенького?
+	AI_Output(other,self, " DIA_PAL_4_STANDARD_15_00 " );	// What's new?
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 	{
-		if(Kapitel <= 4)
+		if (chapter <=  4 )
 		{
 			if(MIS_OLDWORLD == LOG_SUCCESS)
 			{
-				AI_Output(self,other,"DIA_PAL_4_STANDARD_04_01");	//Теперь, когда мы знаем, что имеем дело с драконами, наш командующий наверняка вскоре что-то предпримет.
+				AI_Output(self,other, " DIA_PAL_4_STANDARD_04_01 " );	// Now that we know we're dealing with dragons, our commander will probably do something soon.
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_PAL_4_STANDARD_04_02");	//У на все еще нет никаких новостей от нашего отряда в Долине Рудников. Это тревожный знак.
+				AI_Output(self,other, " DIA_PAL_4_STANDARD_04_02 " );	// We still don't have any news from our squad in the Mine Valley. This is a warning sign.
 			};
 		};
-		if(Kapitel == 5)
+		if (chapter ==  5 )
 		{
-			AI_Output(self,other,"DIA_PAL_4_STANDARD_04_03");	//О Хвала Инносу! Угрозы драконов больше нет. Теперь мы должны позаботиться только об орках, чтобы достать руду.
+			AI_Output(self,other, " DIA_PAL_4_STANDARD_04_03 " );	// O Praise to Innos! The dragon threat is no more. Now we only have to take care of the orcs to get the ore.
 		};
-		if(Kapitel >= 6)
+		if (Chapter >=  6 )
 		{
-			AI_Output(self,other,"DIA_PAL_4_STANDARD_04_05");	//Мы будем здесь стоять до последнего! Нам просто некуда больше отступать.
+			AI_Output(self,other, " DIA_PAL_4_STANDARD_04_05 " );	// We will stand here to the last! We just have nowhere else to go.
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PAL_4_STANDARD_04_04");	//У меня нет времени на обсуждение слухов, ходящих в городе.
+		AI_Output(self,other, " DIA_PAL_4_STANDARD_04_04 " );	// I don't have time to discuss the rumors going around the city.
 	};
 };
 
