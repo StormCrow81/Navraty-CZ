@@ -1,3 +1,4 @@
+
 instance DIA_AmbientDementorFriendly_EXIT(C_Info)
 {
 	nr = 999;
@@ -106,10 +107,10 @@ func int DIA_AmbientDementor_Condition()
 
 func void DIA_AmbientDementor_Info()
 {
-	var int randy;
-	var int randyspeech;
+	be int randy;
+	was int randyspeech;
 
-	randyspeech = Hlp_Random(2);
+	randyspeech = Hlp_Random( 2 );
 
 	if(randyspeech == FALSE)
 	{
@@ -125,9 +126,9 @@ func void DIA_AmbientDementor_Info()
 	//Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	randy = Hlp_Random(4);
+	randy = Hlp_Random( 4 );
 
-	if(Npc_HasItems(hero,ItAm_Prot_BlackEye_Mis) == FALSE)
+	if (Npc_HasItems(hero,ItAm_Prot_BlackEye_Mis) ==  FALSE )
 	{
 		AI_PlayAni(hero,"T_INSANE");
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] / 2;
@@ -135,32 +136,32 @@ func void DIA_AmbientDementor_Info()
 	};
 	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino1)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino2)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino3)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino4)))
 	{
-		AI_Output(self,other,"DIA_VinoDementor_19_00");	//Ты пришел расстроить наш ритуал? Его душа принадлежит нам. Тебе не спасти его, маг.
+		AI_Output(self,other, " DIA_VinoDementor_19_00 " );	// Have you come to disrupt our ritual? His soul belongs to us. You can't save him, mage.
 	}
 	else if(CurrentLevel == DRAGONISLAND_ZEN)
 	{
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DragonIsle_Keymaster))
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_01");	//(смеется) Ты пришел, чтобы бросить вызов мне и моей работе? Ты обречен на поражение.
-			AI_Output(self,other,"DIA_AmbientDementor_19_02");	//Никому еще не удавалось пройти мой склеп. Поворачивай назад. Тебе никогда не добраться до священных Чертогов Ирдората.
+			AI_Output(self,other, " DIA_AmbientDementor_19_01 " );	// (laughs) Have you come to challenge me and my work? You are doomed to fail.
+			AI_Output(self,other, " DIA_AmbientDementor_19_02 " );	// No one has yet managed to pass my crypt. Turn back. You will never reach the sacred Halls of Irdorath.
 		}
 		else
 		{
 			if(randy == 0)
 			{
-				AI_Output(self,other,"DIA_AmbientDementor_19_03");	//Ты уже зашел слишком далеко, презренный червь! Тебе никогда не добраться до внутреннего святилища.
+				AI_Output(self,other, " DIA_AmbientDementor_19_03 " );	// You've already gone too far, you despicable worm! You will never reach the inner sanctuary.
 			};
 			if(randy == 1)
 			{
-				AI_Output(self,other,"DIA_AmbientDementor_19_04");	//Стой, где стоишь! Ни шагу дальше.
+				AI_Output(self,other, " DIA_AmbientDementor_19_04 " );	// Stay where you are! Not one step further.
 			};
 			if(randy == 2)
 			{
-				AI_Output(self,other,"DIA_AmbientDementor_19_05");	//Да, тебе удалось добраться сюда, но мимо меня тебе не пройти!
+				AI_Output(self,other, " DIA_AmbientDementor_19_05 " );	// Yes, you managed to get here, but you can't get past me!
 			};
 			if(randy == 3)
 			{
-				AI_Output(self,other,"DIA_AmbientDementor_19_06");	//Ты пришел, чтоб бросить вызов Хозяину, но сначала тебе придется пройти мимо меня!
+				AI_Output(self,other, " DIA_AmbientDementor_19_06 " );	// You've come to challenge the Master, but first you'll have to get past me!
 			};
 		};
 	}
@@ -168,38 +169,38 @@ func void DIA_AmbientDementor_Info()
 	{
 		if(randy == 0)
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_07");	//Жалкий маг, тебе никогда не сравниться с силой Хозяина!
+			AI_Output(self,other, " DIA_AmbientDementor_19_07 " );	// Poor mage, you will never match the Master's strength!
 		};
 		if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_08");	//Ты выбрал путь магии, чтобы противостоять нам - умный ход! Но даже это тебе не поможет.
+			AI_Output(self,other, " DIA_AmbientDementor_19_08 " );	// You chose the path of magic to oppose us - smart move! But even that won't help you.
 		};
 		if(randy == 2)
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_09");	//Даже будучи магом, тебе не остановить нас!
+			AI_Output(self,other, " DIA_AmbientDementor_19_09 " );	// Even as a mage, you can't stop us!
 		};
 		if(randy == 3)
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_10");	//Мой Хозяин раздавит тебя! Твоя жалкая магия не спасет тебя.
+			AI_Output(self,other, " DIA_AmbientDementor_19_10 " );	// My Master will crush you! Your pathetic magic won't save you.
 		};
 	}
 	else
 	{
 		if(randy == 0)
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_11");	//Сдайся на нашу милость, пока еще можешь! Тебе отсюда не уйти.
+			AI_Output(self,other, " DIA_AmbientDementor_19_11 " );	// Surrender to our mercy while you still can! You can't leave here.
 		};
 		if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_12");	//Теперь ты познаешь силу Хозяина. Тебе не уйти от него!
+			AI_Output(self,other, " DIA_AmbientDementor_19_12 " );	// Now you will know the power of the Master. You can't get away from him!
 		};
 		if(randy == 2)
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_13");	//Хозяин хочет получить твою голову! Ничто не спасет тебя теперь.
+			AI_Output(self,other, " DIA_AmbientDementor_19_13 " );	// Master wants your head! Nothing will save you now.
 		};
 		if(randy == 3)
 		{
-			AI_Output(self,other,"DIA_AmbientDementor_19_14");	//Мы поймали тебя в ловушку, и теперь уничтожим тебя!
+			AI_Output(self,other, " DIA_AmbientDementor_19_14 " );	// We have trapped you, and now we will destroy you!
 		};
 	};
 
@@ -271,9 +272,9 @@ func int DIA_AmbientDead_Condition()
 
 func void DIA_AmbientDead_Info()
 {
-	var int randyspeech;
+	was int randyspeech;
 
-	randyspeech = Hlp_Random(2);
+	randyspeech = Hlp_Random( 2 );
 
 	if(randyspeech == FALSE)
 	{
