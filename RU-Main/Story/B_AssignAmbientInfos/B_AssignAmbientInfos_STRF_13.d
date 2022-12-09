@@ -1,4 +1,5 @@
 
+
 instance DIA_STRF_13_EXIT(C_Info)
 {
 	nr = 999;
@@ -36,24 +37,24 @@ func int DIA_STRF_13_STANDARD_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_STRF_13_STANDARD_Info()
 {
-	var int randy;
-	randy = Hlp_Random(3);
+	be int randy;
+	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other,"DIA_STRF_13_STANDARD_13_00");	//Оставь меня в покое!
+		AI_Output(self,other, " DIA_STRF_13_STANDARD_13_00 " );	// Leave me alone!
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_STRF_13_STANDARD_13_01");	//Что тебе нужно от меня? Оставь меня в покое!
+		AI_Output(self,other, " DIA_STRF_13_STANDARD_13_01 " );	// What do you want from me? Leave me alone!
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other,"DIA_STRF_13_STANDARD_13_02");	//Мы все умрем здесь!
+		AI_Output(self,other, " DIA_STRF_13_STANDARD_13_02 " );	// We're all going to die here!
 	};
 	AI_StopProcessInfos(self);
 };
