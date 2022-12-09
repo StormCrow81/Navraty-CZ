@@ -1,4 +1,5 @@
 
+
 instance DIA_Dragon_Ice_Exit(C_Info)
 {
 	nr = 999;
@@ -15,14 +16,14 @@ func int DIA_Dragon_Ice_Exit_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Dragon_Ice_Exit_Info()
 {
 	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
 	CreateInvItems(other,ItMi_InnosEye_Discharged_Mis,1);
-	AI_Output(self,other,"DIA_Dragon_Ice_Exit_20_00");	//Сила Глаза угасла, и твое время вышло.
+	AI_Output(self,other, " DIA_Dragon_Ice_Exit_20_00 " );	// The power of the Eye has faded, and your time is up.
 	AI_StopProcessInfos(self);
 	DragonTalk_Exit_Free = FALSE;
 	self.flags = 0;
@@ -51,22 +52,22 @@ func int DIA_Dragon_Ice_Hello_Condition()
 {
 	if(Npc_HasItems(other,ItMi_InnosEye_MIS) >= 1)
 	{
-		return 1;
+		return  1 ;
 	};
 	return 0;
 };
 
 func void DIA_Dragon_Ice_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Dragon_Ice_Hello_20_00");	//Зачем ты потревожил мой сон? Мне что, закопаться еще глубже, чтобы вы, надоедливые мухи, наконец, оставили меня в покое?
+	AI_Output(self,other, " DIA_Dragon_Ice_Hello_20_00 " );	// Why did you disturb my sleep? Should I dig even deeper so that you pesky flies will finally leave me alone?
 	if(MIS_KilledDragons == 0)
 	{
-		AI_Output(other,self,"DIA_Dragon_Ice_Hello_15_01");	//Говорящий дракон. Спасибо Глазу Инноса.
+		AI_Output(other,self, " DIA_Dragon_Ice_Hello_15_01 " );	// Talking dragon. Thank you Eye of Innos.
 	};
-	AI_Output(self,other,"DIA_Dragon_Ice_Hello_20_02");	//Вы, люди, забавные существа. Даже если вас всех сдуют ледяные ветра смерти, всегда найдется хотя бы один, кто поднимется из пепла, думая, что ему судьбой предназначено стать героем.
-	AI_Output(self,other,"DIA_Dragon_Ice_Hello_20_03");	//Но скоро все будет кончено. Я лично позабочусь, чтобы никто из вас больше не поднялся.
-	AI_Output(other,self,"DIA_Dragon_Ice_Hello_15_04");	//Молчать! Силой священного Глаза, что дарована мне свыше, я приказываю тебе отвечать на мои вопросы.
-	AI_Output(self,other,"DIA_Dragon_Ice_Hello_20_05");	//Ха-ха-ха. Тогда спрашивай. Но твои знания не помогут тебе.
+	AI_Output(self,other, " DIA_Dragon_Ice_Hello_20_02 " );	// You humans are funny creatures. Even if you are all blown away by the icy winds of death, there will always be at least one who rises from the ashes, thinking that he is destined to become a hero.
+	AI_Output(self,other, " DIA_Dragon_Ice_Hello_20_03 " );	// But soon it will all be over. I will personally see to it that none of you rise again.
+	AI_Output(other,self, " DIA_Dragon_Ice_Hello_15_04 " );	// Silence! By the power of the sacred Eye that is bestowed upon me from above, I command you to answer my questions.
+	AI_Output(self,other, " DIA_Dragon_Ice_Hello_20_05 " );	// Ha-ha-ha. Then ask. But your knowledge will not help you.
 };
 
 
@@ -75,7 +76,7 @@ instance DIA_Dragon_Ice_WERBISTDU(C_Info)
 	nr = 5;
 	condition = DIA_Dragon_Ice_WERBISTDU_Condition;
 	information = DIA_Dragon_Ice_WERBISTDU_Info;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -85,13 +86,13 @@ func int DIA_Dragon_Ice_WERBISTDU_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Dragon_Ice_WERBISTDU_Info()
 {
 	AI_Output(other,self,"DIA_Dragon_Ice_WERBISTDU_15_00");	//Кто ты?
-	AI_Output(self,other,"DIA_Dragon_Ice_WERBISTDU_20_01");	//Я - Финкрег, повелитель льда и снега, Страж Конгресса и твоя неминуемая смерть!
+	AI_Output(self,other, " DIA_Dragon_Ice_WERBISTDU_20_01 " );	// I am Finkreg, lord of ice and snow, Sentinel of Congress and your imminent death!
 };
 
 func void B_AssignDragonTalk_Ice(var C_Npc slf)
