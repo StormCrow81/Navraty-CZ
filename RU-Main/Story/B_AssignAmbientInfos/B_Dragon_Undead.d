@@ -1,3 +1,4 @@
+
 instance DIA_Dragon_Undead_Hello(C_Info)
 {
 	npc = Dragon_Undead;
@@ -17,27 +18,27 @@ func int DIA_Dragon_Undead_Hello_Condition()
 
 func void DIA_Dragon_Undead_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_20_00");	//Тебе все-таки удалось найти меня! Я долго ждал твоего прихода.
-	AI_Output(other,self,"DIA_Dragon_Undead_Hello_15_01");	//Да ладно! Не ври, что ты все это планировал.
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_20_02");	//Что ты знаешь о моих намерениях?
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_20_03");	//Разве я не послал к тебе своих слуг, чтобы навести тебя на мой след?
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_20_04");	//Разве я не оставлял знаки о моем присутствии, столь явные, что ты не мог не заметить их?
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_00 " );	// You still managed to find me! I've been waiting for your arrival for a long time.
+	AI_Output(other,self, " DIA_Dragon_Undead_Hello_15_01 " );	// Come on! Don't lie that you planned it all.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_02 " );	// What do you know about my intentions?
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_03 " );	// Haven't I sent my servants to you to put you on my trail?
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_04 " );	// Didn't I leave signs of my presence so obvious that you couldn't help noticing them?
 
 	if((hero.guild == GIL_DJG) && (DragonEggCounter >= 7))
 	{
-		AI_Output(self,other,"DIA_Dragon_Undead_Hello_20_05");	//А разве драконьи яйца, из которых сделаны твои доспехи, не помогли тебе добраться до меня?
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_05 " );	// Didn't the dragon eggs your armor is made of help you get to me?
 	};
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Dragon_Undead_Hello_20_06");	//Разве обращенные паладины были недостаточной причиной для тебя, чтобы искать силу, управляющую ими?
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_06 " );	// Were converted paladins not enough reason for you to seek the power to control them?
 	};
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Dragon_Undead_Hello_20_07");	//Разве одержимые из твоего племени были недостаточной причиной для тебя, чтобы искать силу, управляющую ими?
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_07 " );	// Were the Possessed of your tribe not enough reason for you to seek the power to control them?
 	};
 
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_20_08");	//Хочешь ты того или нет, у тебя не получиться обмануть самого себя.
-	B_LogEntry(TOPIC_HallenVonIrdorath,"Мой главный враг - дракон-нежить, который является избранным самого Белиара! Я должен убить его, чтобы покинуть этот проклятый остров.");
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_08 " );	// Whether you like it or not, you can't fool yourself.
+	B_LogEntry(TOPIC_HallenVonIrdorath, " My main enemy is the undead dragon, who is the chosen one of Beliar himself! I must kill him to leave this cursed island. " );
 
 	if(ItarIsDead == FALSE)
 	{
@@ -66,55 +67,55 @@ func void DIA_Dragon_Undead_Hello_Info()
 
 	Info_ClearChoices(DIA_Dragon_Undead_Hello);
 	Info_AddChoice(DIA_Dragon_Undead_Hello,Dialog_Ende,DIA_Dragon_Undead_Hello_attack);
-	Info_AddChoice(DIA_Dragon_Undead_Hello,"По какому приказу ты ведешь своих подчиненных на войну против людей?",DIA_Dragon_Undead_Hello_Auftraggeber);
-	Info_AddChoice(DIA_Dragon_Undead_Hello,"Почему ты здесь? ",DIA_Dragon_Undead_Hello_warum);
-	Info_AddChoice(DIA_Dragon_Undead_Hello,"Кто ты такой? ",DIA_Dragon_Undead_Hello_wer);
+	Info_AddChoice(DIA_Dragon_Undead_Hello, " By what order do you lead your subordinates to war against humans? " ,DIA_Dragon_Undead_Hello_Auftraggeber);
+	Info_AddChoice(DIA_Dragon_Undead_Hello, " Why are you here? " ,DIA_Dragon_Undead_Hello_warum);
+	Info_AddChoice(DIA_Dragon_Undead_Hello, " Who are you? " ,DIA_Dragon_Undead_Hello_wer);
 };
 
 func void DIA_Dragon_Undead_Hello_wer()
 {
 	AI_Output(other,self,"DIA_Dragon_Undead_Hello_wer_15_00");	//Кто ты?
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_01");	//Ты еще не устал задавать этот вопрос? Поищи внутри себя, глупец. Ты поймешь, кто я.
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_03");	//Моим создателем мне дана божественная сила. Также как ты владеешь силой, данной тебе твоим богом.
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_04");	//Моя судьба - уничтожение этого мира.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_01 " );	// Are you tired of asking this question yet? Look inside yourself, fool. You will understand who I am.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_03 " );	// I was given divine power by my creator. Just like you own the power given to you by your god.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_04 " );	// My destiny is the destruction of this world.
 
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_05");	//Так же, как твоя судьба определяется прямотой и добродетелями паладина.
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_05 " );	// Just as your destiny is determined by the integrity and virtue of a paladin.
 	};
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_06");	//Так же, как твоя рука несет смерть определенным созданиям, охотник на драконов.
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_06 " );	// Just as your hand brings death to certain creatures, dragon hunter.
 	};
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_07");	//Так же, как твоя судьба - проповедовать веру в Инноса, Маг Огня.
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_07 " );	// Just like your destiny is to preach faith in Innos, Mage of Fire.
 	};
 
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_08");	//Разве ты не ощущаешь связь, которая соединяет нас? Да. Ты знаешь кто я.
-	AI_Output(other,self,"DIA_Dragon_Undead_Hello_wer_15_09");	//Нет. Этого не может быть. Ксардас всегда говорил...
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_10");	//Ксардас слаб, и не представляет угрозы для меня! Ты один достоин противостоять мне.
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_wer_20_11");	//Так предопределено. Пришло время принять свою судьбу.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_08 " );	// Can't you feel the connection that connects us? Yes. You know who I am.
+	AI_Output(other,self, " DIA_Dragon_Undead_Hello_wer_15_09 " );	// No. This cannot be. Xardas always said...
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_10 " );	// Xardas is weak, and poses no threat to me! You alone are worthy to resist me.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_11 " );	// It's meant to be. It's time to accept your fate.
 };
 
-func void DIA_Dragon_Undead_Hello_warum()
+func void DIA_Dragon_Undead_Hello_why()
 {
-	AI_Output(other,self,"DIA_Dragon_Undead_Hello_warum_15_00");	//Зачем ты здесь?
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_warum_20_01");	//Божественность, дарованная мне, вдохновляет меня погрузить этот мир в море жестокости.
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_warum_20_02");	//Только когда последний оплот праведности падет, смогу я, наконец, найти покой.
+	AI_Output(other,self, " DIA_Dragon_Undead_Hello_warum_15_00 " );	// Why are you here?
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_warum_20_01 " );	// The divinity bestowed on me inspires me to plunge this world into a sea of ​​cruelty.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_warum_20_02 " );	// Only when the last stronghold of righteousness falls can I finally find peace.
 };
 
-func void DIA_Dragon_Undead_Hello_Auftraggeber()
+func void DIA_Dragon_Undead_Hello_Client()
 {
-	AI_Output(other,self,"DIA_Dragon_Undead_Hello_Auftraggeber_15_00");	//По чьему повелению ты ведешь своих прихвостней на войну против человечества?
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_Auftraggeber_20_01");	//Мой хозяин - Владыка Ночи. Ты знаешь его. Ты можешь слышать его зов.
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_Auftraggeber_20_03");	//Мои армии поднимутся из-под земли с его именем на устах и накроют этот мир покровом тьмы.
+	AI_Output(other,self, " DIA_Dragon_Undead_Hello_Auftraggeber_15_00 " );	// By whose command are you leading your henchmen to war against humanity?
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_Auftraggeber_20_01 " );	// My master is the Lord of the Night. Do you know him. You can hear him calling.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_Auftraggeber_20_03 " );	// My armies will rise from the ground with his name on their lips and cover this world with a cloak of darkness.
 };
 
 func void DIA_Dragon_Undead_Hello_attack()
 {
 	AI_PlayAni(self,"T_WARN");
-	AI_Output(self,other,"DIA_Dragon_Undead_Hello_attack_20_02");	//Твои кости помогут мне выпустить ветра смерти в этот мир!
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_attack_20_02 " );	// Your bones will help me release the winds of death into this world!
 
 	if(ItarIsDead == FALSE)
 	{
@@ -135,7 +136,7 @@ func void DIA_Dragon_Undead_Hello_attack()
 		Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_LIGHTSTAR_RED",self,self,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
-		AI_Output(self,other,"DIA_Dragon_Undead_Hello_attack_20_01");	//Ты еще не готов победить меня! Какое-то мгновение отделяет меня от достижения моей цели.
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_attack_20_01 " );	// You're not ready to defeat me yet! A moment separates me from achieving my goal.
 	};
 
 	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
