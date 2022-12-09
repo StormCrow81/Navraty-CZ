@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_TAL_BDT_13_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_Addon_TAL_BDT_13_Hi(C_Info)
 	condition = DIA_Addon_TAL_BDT_13_Hi_Condition;
 	information = DIA_Addon_TAL_BDT_13_Hi_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -37,9 +38,9 @@ func int DIA_Addon_TAL_BDT_13_Hi_Condition()
 
 func void DIA_Addon_TAL_BDT_13_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_TAL_BDT_13_Hi_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_13_Hi_13_01");	//Или тебя съест монстр... или тебя съест монстр...
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_13_Hi_13_02");	//Это болото станет нам могилой...
+	AI_Output(other,self,"DIA_Addon_TAL_BDT_13_Hi_15_00");	//How are you?
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_13_Hi_13_01 " );	// Either the monsters will eat you... or the monsters will eat you...
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_13_Hi_13_02 " );	// This swamp will become our grave...
 };
 
 
@@ -49,7 +50,7 @@ instance DIA_Addon_TAL_BDT_13_Tal(C_Info)
 	condition = DIA_Addon_TAL_BDT_13_Tal_Condition;
 	information = DIA_Addon_TAL_BDT_13_Tal_Info;
 	permanent = TRUE;
-	description = "Что ты знаешь про эту долину?";
+	description = " What do you know about this valley? " ;
 };
 
 
@@ -60,9 +61,9 @@ func int DIA_Addon_TAL_BDT_13_Tal_Condition()
 
 func void DIA_Addon_TAL_BDT_13_Tal_Info()
 {
-	AI_Output(other,self,"DIA_Addon_TAL_BDT_13_Tal_15_00");	//Что ты знаешь про эту долину?
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_13_Tal_13_01");	//Здесь множество вещей, оставшихся с древних времен. Ворон велел нам собирать их все.
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_13_Tal_13_02");	//Не знаю, зачем они ему нужны, но ни один нормальный человек не будет рисковать собственной жизнью за несколько старых камней...
+	AI_Output(other,self, " DIA_Addon_TAL_BDT_13_Tal_15_00 " );	// What do you know about this valley?
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_13_Tal_13_01 " );	// There are many things left from ancient times. Raven told us to collect them all.
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_13_Tal_13_02 " );	// I don't know why he needs them, but no sane person would risk their own lives for a few old stones...
 };
 
 
@@ -72,7 +73,7 @@ instance DIA_Addon_TAL_BDT_13_News(C_Info)
 	condition = DIA_Addon_TAL_BDT_13_News_Condition;
 	information = DIA_Addon_TAL_BDT_13_News_Info;
 	permanent = TRUE;
-	description = "Есть какие-нибудь новости?";
+	description = " Any news? " ;
 };
 
 
@@ -83,21 +84,21 @@ func int DIA_Addon_TAL_BDT_13_News_Condition()
 
 func void DIA_Addon_TAL_BDT_13_News_Info()
 {
-	AI_Output(other,self,"DIA_Addon_TAL_BDT_13_News_15_00");	//Есть какие-нибудь новости?
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_13_News_13_01");	//Мы действительно довели этих пиратов.
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_13_News_13_02");	//Они привозили нам пленников, но ни разу не получили и монеты. Ничего удивительного, что они разозлились.
-	if(BDT_13_einmal == FALSE)
+	AI_Output(other,self, " DIA_Addon_TAL_BDT_13_News_15_00 " );	// Any news?
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_13_News_13_01 " );	// We really finished off those pirates.
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_13_News_13_02 " );	// They brought us captives, but they never received any coins either. No wonder they got angry.
+	if (BDT_13_once ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Addon_TAL_BDT_13_News_13_03");	//Но что они могут сделать? Напасть на лагерь? (смеется) ХА-ХА.
-		BDT_13_einmal = TRUE;
+		AI_Output(self,other, " DIA_Addon_TAL_BDT_13_News_13_03 " );	// But what can they do? Attack the camp? HAHA.
+		BDT_13_once = TRUE ;
 	};
 };
 
 func void B_AssignAmbientInfos_Addon_TAL_BDT_13(var C_Npc slf)
 {
 	DIA_Addon_TAL_BDT_13_EXIT.npc = Hlp_GetInstanceID(slf);
-	DIA_Addon_TAL_BDT_13_Hi.npc = Hlp_GetInstanceID(slf);
-	DIA_Addon_TAL_BDT_13_Tal.npc = Hlp_GetInstanceID(slf);
+	DIA_Addon_NUMBER_BDT_13_Hi.npc = Hlp_GetInstanceID(slf);
+	DIA_Addon_NUMBER_BDT_13_NUMBER.npc = Hlp_GetInstanceID(slf);
 	DIA_Addon_TAL_BDT_13_News.npc = Hlp_GetInstanceID(slf);
 };
 
