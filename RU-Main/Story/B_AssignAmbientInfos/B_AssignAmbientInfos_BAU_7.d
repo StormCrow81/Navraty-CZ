@@ -1,4 +1,5 @@
 
+
 instance DIA_BAU_7_EXIT(C_Info)
 {
 	nr = 999;
@@ -19,13 +20,13 @@ func void DIA_BAU_7_EXIT_Info()
 	AI_StopProcessInfos(self);
 };
 
-instance DIA_BAU_7_STANDARD(C_Info)
+instances of DIA_BAU_7_STANDARD (C_Info)
 {
 	nr = 1;
 	condition = DIA_BAU_7_STANDARD_Condition;
 	information = DIA_BAU_7_STANDARD_Info;
 	permanent = TRUE;
-	description = "Что новенького?";
+	description = " What's new? " ;
 };
 
 
@@ -36,30 +37,30 @@ func int DIA_BAU_7_STANDARD_Condition()
 
 func void DIA_BAU_7_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_BAU_7_STANDARD_15_00");	//Что новенького?
-	if(Kapitel == 1)
+	AI_Output(other,self, " DIA_BAU_7_STANDARD_15_00 " );	// What's new?
+	if (chapter ==  1 )
 	{
-		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_01");	//Мы объявили независимость - мы больше не платим налоги городу. Король все равно ничего не делает для нас. С нас хватит!
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_01 " );	// We declared independence - we no longer pay taxes to the city. The king does nothing for us anyway. We've had enough!
 	};
-	if(Kapitel == 2)
+	if (chapter ==  2 )
 	{
-		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_02");	//Сейчас мне нечего рассказать тебе.
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_02 " );	// I have nothing to tell you now.
 	};
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
-		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_03");	//Все только и говорят о драконах! Король всегда найдет способ выжать побольше денег из простых людей.
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_03 " );	// Everyone is talking about dragons! The king will always find a way to squeeze more money out of the common people.
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
-		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_04");	//Будь осторожен: последнее время через проход толпами валят темные личности и различные дикие животные.
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_04 " );	// Be careful: lately dark personalities and various wild animals have been pouring through the passage in droves.
 	};
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
-		AI_Output(self,other,"DIA_BAU_7_STANDARZ_07_05");	//Тут только все и говорят о вторжении мертвяков. Чер побери, откуда они все взялись?!
+		AI_Output(self,other, " DIA_BAU_7_STANDARZ_07_05 " );	// This is where everyone talks about the ghoul invasion. Damn it, where did they all come from?!
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
-		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_06");	//Кажется, что мы скоро все умрем. Орки никого не пощадят!
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_06 " );	// It looks like we're all going to die soon. Orcs will spare no one!
 	};
 };
 
