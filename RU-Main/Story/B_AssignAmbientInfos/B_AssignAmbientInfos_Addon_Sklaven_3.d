@@ -1,5 +1,6 @@
 
-instance DIA_Skalven_3_EXIT(C_Info)
+
+instance DIA_Skalven_3_EXIT (C_Info)
 {
 	nr = 999;
 	condition = DIA_Skalven_3_EXIT_Condition;
@@ -20,7 +21,7 @@ func void DIA_Skalven_3_EXIT_Info()
 };
 
 
-instance DIA_Skalven_3_STANDARD(C_Info)
+instance DIA_Skalven_3_STANDARD (C_Info)
 {
 	nr = 2;
 	condition = DIA_Skalven_3_STANDARD_Condition;
@@ -36,24 +37,24 @@ func int DIA_Skalven_3_STANDARD_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Skalven_3_STANDARD_Info()
 {
-	var int randy;
-	randy = Hlp_Random(3);
+	be int randy;
+	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other,"DIA_Addon_Sklaven_3_STANDARD_03_00");	//(испуганно) Что ты хочешь от меня? Уйди прочь!
+		AI_Output(self,other, " DIA_Addon_Sklaven_3_STANDARD_03_00 " );	// What do you want from me? Go away!
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_Addon_Sklaven_3_STANDARD_03_01");	//(нервно) Я ничего не делал! Оставь меня.
+		AI_Output(self,other, " DIA_Addon_Sklaven_3_STANDARD_03_01 " );	// I didn't do anything! Leave me be!
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other,"DIA_Addon_Sklaven_3_STANDARD_03_02");	//(испуганно) Пожалуйста, не трогай меня!
+		AI_Output(self,other, " DIA_Addon_Sklaven_3_STANDARD_03_02 " );	// Please don't hurt me!
 	};
 	AI_StopProcessInfos(self);
 };
