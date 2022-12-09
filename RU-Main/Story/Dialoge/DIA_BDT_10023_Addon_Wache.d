@@ -42,16 +42,16 @@ func int DIA_Addon_10023_Wache_Hi_Condition()
 
 func void DIA_Addon_10023_Wache_Hi_Info()
 {
-	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_00 " );	// Hey, where are you going? Do you want to get into that passage?
-	AI_Output(other,self, " DIA_Addon_10023_Wache_Hi_15_01 " );	// Well, yes, why not?
-	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_02 " );	// There's also a group of slaves. I don't mind if you go there, but don't beat them to the point where they can't work.
-	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_03 " );	// After all, we don't want them to just sit there. They have to mine gold.
-	AI_Output(other,self, " DIA_Addon_10023_Wache_Hi_15_04 " );	// Clear. And who ordered it?
-	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_05 " );	// This is a direct order from Bloodwin.
-	AI_Output(other,self, " DIA_Addon_10023_Wache_Hi_15_06 " );	// I thought Raven was in charge here.
-	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_07 " );	// True - but he doesn't need the slaves anymore, he gave them to Bloodwin.
+	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_00 " );	// Hey, where are you going? Do you want to get into the passage?
+	AI_Output(other,self, " DIA_Addon_10023_Wache_Hi_15_01 " );	// Maybe. You got a problem with that?
+	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_02 " );	// I don't mind if you go in there, but don't hurt the slaves to the point where they can't work.
+	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_03 " );	// After all, we can't have them lying about. They have to mine gold. Clear?
+	AI_Output(other,self, " DIA_Addon_10023_Wache_Hi_15_04 " );	// Clear. Who ordered this?
+	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_05 " );	// This is a direct order from Bloodwyn.
+	AI_Output(other,self, " DIA_Addon_10023_Wache_Hi_15_06 " );	// I thought Raven was in charge around here.
+	AI_Output(self,other, " DIA_Addon_10023_Wache_Hi_11_07 " );	// He is - but he doesn't need the slaves anymore, he gave them to Bloodwyn.
 	Pardos.attribute[ATR_HITPOINTS] = 70;
-	B_LogEntry(TOPIC_Addon_Sklaven, " Raven doesn't need any more slaves. They belong to Bloodwin now. " );
+	B_LogEntry(TOPIC_Addon_Sklaven, " Raven doesn't need any more slaves. They belong to Bloodwyn now. " );
 };
 
 
@@ -77,17 +77,17 @@ func int DIA_Addon_10023_Wache_go_Condition()
 
 func void DIA_Addon_10023_Wache_go_Info()
 {
-	AI_Output(other,self, " DIA_Addon_10023_Wache_go_15_00 " );	// Let them go!
+	AI_Output(other,self, " DIA_Addon_10023_Wache_go_15_00 " );	// Let the slaves go!
 
 	if(PrisonGuard_Rules == FALSE)
 	{
-		AI_Output(self,other, " DIA_Addon_10023_Wache_go_11_01 " );	// Listen. Bloodwin is in command here. The slaves belong to him, so only he has the right to let them go.
-		AI_Output(self,other, " DIA_Addon_10023_Wache_go_11_02 " );	// Well, Torus also has a chance to put in a good word. And you?
+		AI_Output(self,other, " DIA_Addon_10023_Wache_go_11_01 " );	// Bloodwyn is in command here. The slaves belong to him, they live or die at his command.
+		AI_Output(self,other, " DIA_Addon_10023_Wache_go_11_02 " );	// Well, Thorus also has a say over them, actually.
 		PrisonGuard_Rules = TRUE;
-		B_LogEntry(TOPIC_Addon_Sklaven, " Only Bladwin and Thorus have the right to free slaves. " );
+		B_LogEntry(TOPIC_Addon_Sklaven, " Only Bloodwyn and Thorus have the right to free slaves. " );
 	};
 
-	AI_Output(self,other, " DIA_Addon_10023_Wache_go_11_03 " );	// Do you have any right to this?
+	AI_Output(self,other, " DIA_Addon_10023_Wache_go_11_03 " );	// Do you have any say in this?
 	Info_ClearChoices(DIA_Addon_10023_Wache_go);
 	Info_AddChoice(DIA_Addon_10023_Wache_go,Dialog_Back,DIA_Addon_10023_Wache_go_BACK);
 
@@ -97,11 +97,11 @@ func void DIA_Addon_10023_Wache_go_Info()
 	}
 	else if(Npc_IsDead(Bloodwyn) && (Npc_HasItems(other,ItMi_Addon_Bloodwyn_Kopf) >= 1))
 	{
-		Info_AddChoice(DIA_Addon_10023_Wache_go, " (show Bloodwin's head) " ,DIA_Addon_10023_Wache_go_Blood);
+		Info_AddChoice(DIA_Addon_10023_Wache_go, " (show Bloodwyn's head) " ,DIA_Addon_10023_Wache_go_Blood);
 	}
 	else
 	{
-		Info_AddChoice(DIA_Addon_10023_Wache_go, " I decide WHO goes to the mine! " ,DIA_Addon_10023_Wache_go_WER);
+		Info_AddChoice(DIA_Addon_10023_Wache_go, " I decide who goes to the mine from now on! " ,DIA_Addon_10023_Wache_go_WER);
 	};
 };
 
@@ -112,8 +112,8 @@ func void DIA_Addon_10023_Wache_go_BACK()
 
 func void DIA_Addon_10023_Wache_go_WER()
 {
-	AI_Output(other,self, " DIA_Addon_10023_Wache_go_WER_15_00 " );	// I decide WHO goes to the mine!
-	AI_Output(self,other, " DIA_Addon_10023_Wache_go_WER_11_01 " );	// You're doing Esteban's work. So you have NO right to interfere. Free!
+	AI_Output(other,self, " DIA_Addon_10023_Wache_go_WER_15_00 " );	// I decide who goes to the mine from now on!
+	AI_Output(self,other, " DIA_Addon_10023_Wache_go_WER_11_01 " );	// You're just another lackey for Esteban! 
 	Info_ClearChoices(DIA_Addon_10023_Wache_go);
 };
 
@@ -121,10 +121,10 @@ var int guard_once;
 
 func void DIA_Addon_10023_Wache_go_Blood()
 {
-	AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_00 " );	// Here. It's enough?
-	AI_Output(self,other, " DIA_Addon_10023_Wache_go_Blood_11_01 " );	// Take away! I don't even want to see it.
-	AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_02 " );	// You'd better release the slaves NOW.
-	AI_Output(self,other, " DIA_Addon_10023_Wache_go_Blood_11_03 " );	// Wait a minute. Bloodwin isn't the only one who decides here. Until I have an order from Torus, I will not let anyone go.
+	AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_00 " );	// Here. Enough for you?
+	AI_Output(self,other, " DIA_Addon_10023_Wache_go_Blood_11_01 " );	// Take it away! I'm gonna puke.
+	AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_02 " );	// You'd better release the slaves, get me?
+	AI_Output(self,other, " DIA_Addon_10023_Wache_go_Blood_11_03 " );	// Wait a minute. Bloodwyn wasn't the only one who decides here. Until I have an order from Thorus, I will not let anyone go.
 
 	if(Npc_KnowsInfo(other,DIA_Addon_Thorus_Answer))
 	{
@@ -136,14 +136,14 @@ func void DIA_Addon_10023_Wache_go_Blood()
 		if (guard_once ==  FALSE )
 		{
 			AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_04 " );	// But you just said that the slaves belong to Bloodwyn.
-			AI_Output(self,other, " DIA_Addon_10023_Wache_go_Blood_11_05 " );	// Yes, but I also said that I won't let anyone go without orders from Torus.
-			AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_06 " );	// Are you the kind of guy who can't even urinate without being ordered to?
+			AI_Output(self,other, " DIA_Addon_10023_Wache_go_Blood_11_05 " );	// Yes, but I also said that I won't let anyone go without orders from Thorus.
+			AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_06 " );	// Are you the kind of guy who can't even take a piss without being ordered to?
 			guard_once = TRUE ;
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_Addon_10023_Wache_go_Blood_11_07 " );	// I told you...
-			AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_08 " );	// ...that's enough, then I know.
+			AI_Output(self,other, " DIA_Addon_10023_Wache_go_Blood_11_07 " );	// I already told you...
+			AI_Output(other,self, " DIA_Addon_10023_Wache_go_Blood_15_08 " );	// ...FINE, I heard you.
 		};
 
 		Info_ClearChoices(DIA_Addon_10023_Wache_go);
@@ -152,10 +152,10 @@ func void DIA_Addon_10023_Wache_go_Blood()
 
 func void DIA_Addon_10023_Wache_go_Thorus()
 {
-	AI_Output(other,self, " DIA_Addon_10023_Wache_go_Thorus_15_00 " );	// I've spoken to Torus. He ordered the release of the slaves.
-	AI_Output(self,other, " DIA_Addon_10023_Wache_go_Thorus_11_01 " );	// Well, if Thorus ordered. But I ask myself why he would need it.
-	AI_Output(other,self, " DIA_Addon_10023_Wache_go_Thorus_15_02 " );	// ...you don't seem to get paid to ask questions.
-	AI_Output(self,other, " DIA_Addon_10023_Wache_go_Thorus_11_03 " );	// Okay, okay. I am now, as you know, not needed here, so I'll go eat a piece of meat.
+	AI_Output(other,self, " DIA_Addon_10023_Wache_go_Thorus_15_00 " );	// I've spoken to Thorus. He ordered the release of the slaves.
+	AI_Output(self,other, " DIA_Addon_10023_Wache_go_Thorus_11_01 " );	// Well, if Thorus says so. Why would he want this though?
+	AI_Output(other,self, " DIA_Addon_10023_Wache_go_Thorus_15_02 " );	// ...you don't get paid to ask questions do you?
+	AI_Output(self,other, " DIA_Addon_10023_Wache_go_Thorus_11_03 " );	// I guess not. I'm gonna go get some food. This place can rot for all I care
 	Ready_Togo = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"SOUP");
