@@ -75,8 +75,8 @@ func int DIA_Addon_Garaz_Probleme_Condition()
 func void DIA_Addon_Garaz_Probleme_Info()
 {
 	AI_Output(self,other, " DIA_Addon_Garaz_Probleme_08_00 " );	// Wait a minute.
-	AI_Output(other,self, " DIA_Addon_Garaz_Probleme_15_01 " );	// Are there any problems?
-	AI_Output(self,other, " DIA_Addon_Garaz_Probleme_08_02 " );	// Crawlers! Lots of crawlers. We ran into their nest!
+	AI_Output(other,self, " DIA_Addon_Garaz_Probleme_15_01 " );	// Problems?
+	AI_Output(self,other, " DIA_Addon_Garaz_Probleme_08_02 " );	// Crawlers! Lots of crawlers. We tunneled into a fucking nest!
 };
 
 
@@ -102,12 +102,12 @@ func int DIA_Addon_Garaz_Hi_Condition()
 func void DIA_Addon_Garaz_Hi_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Garaz_Hi_15_00 " );	// Why can't we attack them?
-	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_01 " );	// I asked about this too. But the guards have 'more important things to do'.
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_01 " );	// I asked about that too. But the guards have 'more important things to do'.
 	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_02 " );	// Bloodwyn assigned me to deal with this problem.
 	AI_Output(other,self, " DIA_Addon_Garaz_Hi_15_03 " );	// I assume you're not going to fight them.
-	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_04 " );	// Why? So we can get to the gold in the cave?
-	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_05 " );	// Bloodwyn will take most of it anyway. And I don't want to risk my own head for my tiny share.
-	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_06 " );	// If YOU want to fight the crawlers, don't even think I'll stop you. Just don't lure them out here, okay?
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_04 " );	// You assume right. Why should I die for other's gold?
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_05 " );	// Bloodwyn will take most of it anyway. I don't want to risk my own head for my tiny share.
+	AI_Output(self,other, " DIA_Addon_Garaz_Hi_08_06 " );	// If YOU want to fight the crawlers, don't think I'll stop you. Just don't lure them out here, okay?
 };
 
 
@@ -118,7 +118,7 @@ instances of DIA_Addon_Garaz_Bloodwyn (C_Info)
 	condition = DIA_Addon_Garaz_Bloodwyn_Condition;
 	information = DIA_Addon_Garaz_Bloodwyn_Info;
 	permanent = FALSE;
-	description = " Can you tell me something about Bloodwin? " ;
+	description = " Can you tell me something about Bloodwyn? " ;
 };
 
 
@@ -132,14 +132,14 @@ func int DIA_Addon_Garaz_Bloodwyn_Condition()
 
 func void DIA_Addon_Garaz_Bloodwyn_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Garaz_Bloodwyn_15_00 " );	// Can you tell me something about Bloodwin?
+	AI_Output(other,self, " DIA_Addon_Garaz_Bloodwyn_15_00 " );	// Can you tell me something about Bloodwyn?
 	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_01 " );	// I can. He's a gold-hungry bastard. He checks every vein and every nugget.
-	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_02 " );	// He can't stop his lust for gold. And he doesn't care about us.
+	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_02 " );	// He can't control his lust for gold. And he doesn't give a shit about us.
 	AI_Output(other,self, " DIA_Addon_Garaz_Bloodwyn_15_03 " );	// What else?
-	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_04 " );	// He thinks he's the best and can't stand it if anyone else has more money than him. Please, I won't get in his way.
-	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_05 " );	// Just don't stand in his way or provoke him if you don't want him to go berserk and out of control...
+	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_04 " );	// He thinks he's the main man and can't stand it if anyone else has more money than him.
+	AI_Output(self,other, " DIA_Addon_Garaz_Bloodwyn_08_05 " );	// Don't mess with him tho. The man is a berserker, a mindless beast when angered...
 	B_LogEntry(Topic_Addon_Tempel, " If Bloodwin finds out that a new gold vein has been discovered in the mine, he will surely leave the temple. " );
-	B_LogEntry(Topic_Addon_Tempel, " When Bloodwin gets angry, he loses control of himself. It might help me. " );
+	B_LogEntry(Topic_Addon_Tempel, " When Bloodwyn gets angry, he loses control of himself. That might help me. " );
 };
 
 
@@ -150,7 +150,7 @@ instance DIA_Addon_Garaz_Sieg (C_Info)
 	condition = DIA_Addon_Garaz_Sieg_Condition;
 	information = DIA_Addon_Garaz_Sieg_Info;
 	permanent = FALSE;
-	description = " Crawlers are done with! " ;
+	description = " The Crawlers are done with! " ;
 };
 
 
@@ -164,9 +164,9 @@ func int DIA_Addon_Garaz_Sieg_Condition()
 
 func void DIA_Addon_Garaz_Sieg_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Garaz_Sieg_15_00 " );	// Well, done. Done with crawlers!
+	AI_Output(other,self, " DIA_Addon_Garaz_Sieg_15_00 " );	// The crawlers are history.
 	AI_Output(self,other, " DIA_Addon_Garaz_Sieg_08_01 " );	// Bloodwyn is on his way here. Is that what you wanted?
-	AI_Output(self,other, " DIA_Addon_Garaz_Sieg_08_02 " );	// I mean you killed the crawlers to get Bloodwyn to come here, right? Then whatever you plan, do it NOW.
+	AI_Output(self,other, " DIA_Addon_Garaz_Sieg_08_02 " );	// I mean you killed the crawlers to get Bloodwyn to come here, right? Then whatever you're planning, do it NOW.
 	B_StartOtherRoutine(Bloodwyn,"GOLD");
 };
 
@@ -192,7 +192,7 @@ func int DIA_Addon_Garaz_Blood_Condition()
 
 func void DIA_Addon_Garaz_Blood_Info()
 {
-	AI_Output(self,other, " DIA_Addon_Garaz_Blood_08_00 " );	// You showed this bum! Great job.
+	AI_Output(self,other, " DIA_Addon_Garaz_Blood_08_00 " );	// You showed that bum! Great job.
 	AI_Output(self,other, " DIA_Addon_Garaz_Blood_08_01 " );	// I'll go check out the cave.
 	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
@@ -222,6 +222,6 @@ func int DIA_Addon_Garaz_Gold_Condition()
 
 func void DIA_Addon_Garaz_Gold_Info()
 {
-	AI_Output(self,other, " DIA_Addon_Garaz_Gold_08_00 " );	// Wow, mate! There is obviously a lot of gold here!
+	AI_Output(self,other, " DIA_Addon_Garaz_Gold_08_00 " );	// Wow, mate! There is obviously a motherlode of gold here!
 	AI_Output(self,other, " DIA_Addon_Garaz_Gold_08_01 " );	// To get to these nuggets, we'll need a ladder.
 };
