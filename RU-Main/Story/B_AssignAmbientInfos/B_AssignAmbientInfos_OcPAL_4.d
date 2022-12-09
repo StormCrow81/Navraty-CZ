@@ -1,4 +1,5 @@
 
+
 instance DIA_OCPAL_4_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_OCPAL_4_PEOPLE(C_Info)
 	condition = DIA_OCPAL_4_PEOPLE_Condition;
 	information = DIA_OCPAL_4_PEOPLE_Info;
 	permanent = TRUE;
-	description = "Кто командует здесь?";
+	description = " Who's in charge here? " ;
 };
 
 
@@ -37,8 +38,8 @@ func int DIA_OCPAL_4_PEOPLE_Condition()
 
 func void DIA_OCPAL_4_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_OCPAL_4_PEOPLE_15_00");	//Кто командует здесь?
-	AI_Output(self,other,"DIA_OCPAL_4_PEOPLE_04_01");	//Командующий Гаронд. Ты найдешь его в самом большом здании замка.
+	AI_Output(other, self, " DIA_OCPAL_4_PEOPLE_15_00 " );	// Who's in charge here?
+	AI_Output(self,other, " DIA_OCPAL_4_PEOPLE_04_01 " );	// Commander Garond. You will find him in the biggest building of the castle.
 };
 
 
@@ -48,7 +49,7 @@ instance DIA_OCPAL_4_LOCATION(C_Info)
 	condition = DIA_OCPAL_4_LOCATION_Condition;
 	information = DIA_OCPAL_4_LOCATION_Info;
 	permanent = TRUE;
-	description = "Что ты можешь рассказать мне о Долине Рудников?";
+	description = " What can you tell me about the Valley of Mines? " ;
 };
 
 
@@ -59,9 +60,9 @@ func int DIA_OCPAL_4_LOCATION_Condition()
 
 func void DIA_OCPAL_4_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_OCPAL_4_LOCATION_15_00");	//Что ты можешь рассказать мне о Долине Рудников?
-	AI_Output(self,other,"DIA_OCPAL_4_LOCATION_04_01");	//Насколько я знаю, здесь есть несколько шахт, если они еще не захвачены орками.
-	AI_Output(self,other,"DIA_OCPAL_4_LOCATION_04_02");	//Старатели, работающие в шахтах, - это в основном каторжники, но среди них также есть несколько паладинов.
+	AI_Output(other,self, " DIA_OCPAL_4_LOCATION_15_00 " );	// What can you tell me about the Valley of Mines?
+	AI_Output(self,other, " DIA_OCPAL_4_LOCATION_04_01 " );	// As far as I know, there are several mines here, if they are not already captured by the orcs.
+	AI_Output(self,other, " DIA_OCPAL_4_LOCATION_04_02 " );	// Miners who work in the mines are mostly convicts, but there are also a few paladins among them.
 };
 
 
@@ -71,7 +72,7 @@ instance DIA_OCPAL_4_STANDARD(C_Info)
 	condition = DIA_OCPAL_4_STANDARD_Condition;
 	information = DIA_OCPAL_4_STANDARD_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -82,45 +83,45 @@ func int DIA_OCPAL_4_STANDARD_Condition()
 
 func void DIA_OCPAL_4_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_OCPAL_4_STANDARD_15_00");	//Как дела?
-	if(Kapitel <= 3)
+	AI_Output(other,self, " DIA_OCPAL_4_STANDARD_15_00 " );	// How are you?
+	if (chapter <=  3 )
 	{
-		AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_01");	//Орки окружили нас! Но мы будем обороняться до последнего человека! И Иннос поможет нам против драконов!
+		AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_01 " );	// Orcs have surrounded us! But we will defend ourselves to the last man! And Innos will help us against the dragons!
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
 		if(MIS_KilledDragons < 4)
 		{
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_02");	//Я думаю, атака орков не заставит себя долго ждать. И где же это чертово подкрепление?
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_02 " );	// I think the orc attack won't be long in coming. Where are the damn reinforcements?
 			if(other.guild == GIL_DJG)
 			{
-				AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_03");	//Надеюсь, что ты не думаешь всерьез, что у вас, охотники на драконов, действительно есть шанс против ВСЕХ драконов?
+				AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_03 " );	// I hope you don't seriously think that you dragon hunters really have a chance against ALL dragons?
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_04");	//Эти так называемые охотники на драконов мало на что способны!
+				AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_04 " );	// These so-called dragon hunters can't do much!
 			};
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_05");	//Слава Инносу! Эти проклятые твари были уничтожены!
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_05 " );	// Glory to Innos! Those damned creatures have been destroyed!
 		};
 	};
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
 		if(MIS_OCGateOpen == FALSE)
 		{
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_06");	//Гибель драконов, похоже, не произвела особого впечатления на орков. И почему, во имя Инноса, они не уходят? Это какая-то дьявольщина!
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_06 " );	// The death of the dragons didn't seem to make much of an impression on the orcs. And why, in the name of Innos, do they not leave? This is some kind of devilry!
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_07");	//Эти чертовы ворота заклинило. Орки рвутся в замок, и ничто не остановит их.
-			AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_08");	//Кто-то должен сообщить лорду Хагену. Он нужен ЗДЕСЬ и сейчас.
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_07 " );	// Those damn gates are jammed. Orcs are rushing into the castle, and nothing will stop them.
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_08 " );	// Someone needs to inform Lord Hagen. He is needed HERE and now.
 		};
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
-		AI_Output(self,other,"DIA_OCPAL_4_STANDARD_04_09");	//Крепость взята орками! Мало кто остался в живых.
+		AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_09 " );	// The fortress is taken by the orcs! Few survived.
 	};
 };
 
