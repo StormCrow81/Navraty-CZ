@@ -1,4 +1,5 @@
 
+
 instance DIA_ToughGuy_NEWS(C_Info)
 {
 	nr = 1;
@@ -37,10 +38,10 @@ func void DIA_ToughGuy_NEWS_Info()
 	{
 		B_Say(self,other,"$TOUGHGUY_PLAYERATTACK");
 	};
-	self.aivar[AIV_LastFightComment] = TRUE;
+	self.aivar[AIV_LastFightComment] = TRUE ;
 	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Skinner)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_498_Ignaz)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4303_Addon_Erol)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NONE_100_Xardas)))
 	{
-		AI_Output(self,other,"DIA_Addon_Skinner_ToughguyNews_08_00");	//...но я не хочу говорить с тобой...
+		AI_Output(self,other, " DIA_Addon_Skinner_ToughguyNews_08_00 " );	// ...but I don't want to talk to you...
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_NONE,1);
 	};
