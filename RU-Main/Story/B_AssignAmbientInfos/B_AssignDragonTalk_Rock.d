@@ -1,4 +1,5 @@
 
+
 instance DIA_Dragon_Rock_Exit(C_Info)
 {
 	nr = 999;
@@ -15,14 +16,14 @@ func int DIA_Dragon_Rock_Exit_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Dragon_Rock_Exit_Info()
 {
 	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
 	CreateInvItems(other,ItMi_InnosEye_Discharged_Mis,1);
-	AI_Output(self,other,"DIA_Dragon_Rock_Exit_20_00");	//Но хватит болтать! Твоя временная сила иссякла. Глаз потерял свою силу. Приготовься умереть...
+	AI_Output(self,other, " DIA_Dragon_Rock_Exit_20_00 " );	// But stop talking! Your temporary power has run out. The eye has lost its power. Prepare to die...
 	AI_StopProcessInfos(self);
 	DragonTalk_Exit_Free = FALSE;
 	self.flags = 0;
@@ -51,14 +52,14 @@ func int DIA_Dragon_Rock_Hello_Condition()
 func void DIA_Dragon_Rock_Hello_Info()
 {
 	Wld_SendTrigger("STONEDRAGON_GATE");
-	AI_Output(self,other,"DIA_Dragon_Rock_Hello_20_00");	//Еще один самонадеянный человечишка осмелился взобраться на мою скалу. Вы, люди, такие жалкие. Такие мужественные и такие слабые.
+	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_00 " );	// Another arrogant human dared to climb my rock. You people are so pathetic. So brave and so weak.
 	if(MIS_KilledDragons == 0)
 	{
-		AI_Output(other,self,"DIA_Dragon_Rock_Hello_15_01");	//Смотри-ка, действительно разговаривает.
+		AI_Output(other,self, " DIA_Dragon_Rock_Hello_15_01 " );	// Look, he's really talking.
 	};
-	AI_Output(self,other,"DIA_Dragon_Rock_Hello_20_02");	//Я вырву твои внутренности и скормлю их крысам.
-	AI_Output(other,self,"DIA_Dragon_Rock_Add_15_00");	//Не так быстро. Со мной Глаз Инноса. Ты будешь повиноваться мне и отвечать на мои вопросы.
-	AI_Output(self,other,"DIA_Dragon_Rock_Hello_20_04");	//(ревет) Ах-х. Задавай свои вопросы.
+	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_02 " );	// I'll rip out your insides and feed them to the rats.
+	AI_Output(other,self, " DIA_Dragon_Rock_Add_15_00 " );	// Not so fast. I have the Eye of Innos with me. You will obey me and answer my questions.
+	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_04 " );	// (roar) Ahh. Ask your questions.
 };
 
 
@@ -67,7 +68,7 @@ instance DIA_Dragon_Rock_WERBISTDU(C_Info)
 	nr = 6;
 	condition = DIA_Dragon_Rock_WERBISTDU_Condition;
 	information = DIA_Dragon_Rock_WERBISTDU_Info;
-	description = "Кто ты?";
+	description = " Who are you? " ;
 };
 
 
@@ -77,13 +78,13 @@ func int DIA_Dragon_Rock_WERBISTDU_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Dragon_Rock_WERBISTDU_Info()
 {
 	AI_Output(other,self,"DIA_Dragon_Rock_WERBISTDU_15_00");	//Кто ты?
-	AI_Output(self,other,"DIA_Dragon_Rock_WERBISTDU_20_01");	//Меня зовут Педракан, и я медленно-медленно буду снимать с тебя шкуру, когда доберусь до тебя.
+	AI_Output(self,other, " DIA_Dragon_Rock_WERBISTDU_20_01 " );	// My name is Pedrakan, and I'll slowly, slowly, skin you when I get to you.
 };
 
 
@@ -92,7 +93,7 @@ instance DIA_Dragon_Rock_HIERARCHIE(C_Info)
 	nr = 7;
 	condition = DIA_Dragon_Rock_HIERARCHIE_Condition;
 	information = DIA_Dragon_Rock_HIERARCHIE_Info;
-	description = "Кто самый сильный из вас, драконов?";
+	description = " Who is the strongest among you dragons? " ;
 };
 
 
@@ -102,17 +103,17 @@ func int DIA_Dragon_Rock_HIERARCHIE_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_Dragon_Rock_HIERARCHIE_Info()
 {
-	AI_Output(other,self,"DIA_Dragon_Rock_HIERARCHIE_15_00");	//Кто самый сильный из вас, драконов?
-	AI_Output(self,other,"DIA_Dragon_Rock_HIERARCHIE_20_01");	//Мы черпаем нашу силу из стихий этого мира. Иерархия очевидна и проста.
-	AI_Output(self,other,"DIA_Dragon_Rock_HIERARCHIE_20_02");	//Земля, покрытая мягкой почвой, дарует жизнь всем созданиям, живущим под солнцем. Но она может раскрыться и поглотить тебя целиком, если ты подойдешь слишком близко.
-	AI_Output(self,other,"DIA_Dragon_Rock_HIERARCHIE_20_03");	//Скала, которая скорее расколется, нежели поддастся, гордо возвышается над всем и похоронит беспечных под собой. А еще она дает лучшую защиту от прилива.
-	AI_Output(self,other,"DIA_Dragon_Rock_HIERARCHIE_20_04");	//Искры жизни живут в глубоких огнях этого мира. А еще огонь обжигает все своим дыханием, не оставляя за собой ничего, кроме пепла.
-	AI_Output(self,other,"DIA_Dragon_Rock_HIERARCHIE_20_05");	//Все эти стихии сохраняют и уничтожают. Но только в воде, которая стала твердой как скала, все превращается в вечную колонну из соли, где жизнь едва ли возможна.
+	AI_Output(other,self, " DIA_Dragon_Rock_HIERARCHIE_15_00 " );	// Who is the strongest of you dragons?
+	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_01 " );	// We draw our strength from the elements of this world. The hierarchy is clear and simple.
+	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_02 " );	// The earth covered with soft soil gives life to all creatures that live under the sun. But it can open up and swallow you whole if you get too close.
+	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_03 " );	// The rock, which would rather split than give in, proudly rises above all and buries the careless under it. It also provides better protection against the tide.
+	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_04 " );	// The sparks of life live in the deep fires of this world. And the fire burns everything with its breath, leaving behind nothing but ashes.
+	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_05 " );	// All these elements are preserved and destroyed. But only in the water, which has become hard as a rock, everything turns into an eternal column of salt, where life is hardly possible.
 };
 
 func void B_AssignDragonTalk_Rock(var C_Npc slf)
