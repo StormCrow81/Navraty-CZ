@@ -1,4 +1,5 @@
 
+
 instance DIA_STRF_1_EXIT(C_Info)
 {
 	nr = 999;
@@ -36,24 +37,24 @@ func int DIA_STRF_1_STANDARD_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_STRF_1_STANDARD_Info()
 {
-	var int randy;
-	randy = Hlp_Random(3);
+	be int randy;
+	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other,"DIA_STRF_1_STANDARD_01_00");	//Если бы мне удалось вырваться отсюда, когда у меня был шанс, мне бы сейчас не пришлось гнуть спину на эту свинью!
+		AI_Output(self,other, " DIA_STRF_1_STANDARD_01_00 " );	// If I'd managed to get out of here when I had the chance, I wouldn't have to turn my back on that pig right now!
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_STRF_1_STANDARD_01_01");	//Это все из-за этой руды. Всегда все одно и то же. Всем позарез нужна эта проклятая руда.
+		AI_Output(self,other, " DIA_STRF_1_STANDARD_01_01 " );	// It's all because of this ore. Everything is always the same. Everyone desperately needs this damned ore.
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other,"DIA_STRF_1_STANDARD_01_02");	//Если бы ты попробовал это дерьмо, которым нас снабжают, ты бы тоже стал подумывать о бунте!
+		AI_Output(self,other, " DIA_STRF_1_STANDARD_01_02 " );	// If you tried this crap they supply us with, you'd think about rebellion too!
 	};
 	AI_StopProcessInfos(self);
 };
