@@ -1,4 +1,5 @@
 
+
 instance DIA_OUT_1_EXIT(C_Info)
 {
 	nr = 999;
@@ -36,24 +37,24 @@ func int DIA_OUT_1_STANDARD_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_OUT_1_STANDARD_Info()
 {
-	var int randy;
-	randy = Hlp_Random(3);
+	be int randy;
+	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other,"DIA_OUT_1_STANDARD_01_00");	//С тех пор, как барьер вокруг исправительной колонии исчез, мы испытываем постоянные проблемы с бандитами.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_00 " );	// Ever since the barrier around the penal colony was gone, we've been in constant trouble with bandits.
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_OUT_1_STANDARD_01_01");	//На ополчение нельзя положиться. Мы должны защищать себя сами.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_01 " );	// You can't rely on the militia. We must protect ourselves.
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other,"DIA_OUT_1_STANDARD_01_02");	//Я никому не позволю помыкать собой. Ни королю, ни этому жирному Онару. Я сражаюсь только за себя.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_02 " );	// I won't let anyone push me around. Neither the king, nor this fat Onar. I only fight for myself.
 	};
 	AI_StopProcessInfos(self);
 };
