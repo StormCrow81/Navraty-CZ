@@ -44,13 +44,13 @@ func void DIA_Addon_10026_Wache_Hi_Info()
 	{
 		CreateInvItems(self,ItFo_Bacon,1);
 		AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Hi_13_01 " );	// Too bad we have so few slaves. We should get new ones.
-		AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Hi_13_02 " );	// These guys are done. Perhaps because they hardly ate anything. (laughs)
+		AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Hi_13_02 " );	// This batch is done for. Perhaps because they hardly ate anything. Haha!
 		B_UseItem(self,ItFo_Bacon);
 		AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Hi_13_03 " );	// But I'd rather send the miners off to work than give those dogs a piece of meat.
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Hi_13_04 " );	// The slaves are gone, too bad. Well, then we'll have to drive the miners there again.
+		AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Hi_13_04 " );	// The slaves are gone, too bad. I guess we'll have to pay real miners again.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -75,6 +75,6 @@ func int DIA_Addon_10026_Wache_Gruft_Condition()
 func void DIA_Addon_10026_Guard_Crypt_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10026_Wache_Gruft_15_00 " );	// Do you know anything about the tomb?
-	AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Gruft_13_01 " );	// Yes. She's at the end of this passage.
-	AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Gruft_13_02 " );	// (calmly) Just follow the corpses and you'll find her.
+	AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Gruft_13_01 " );	// Yes. It's at the end of this passage.
+	AI_Output(self,other, " DIA_Addon_BDT_10026_Wache_Gruft_13_02 " );	// Just follow the corpses and you'll find it.
 };
