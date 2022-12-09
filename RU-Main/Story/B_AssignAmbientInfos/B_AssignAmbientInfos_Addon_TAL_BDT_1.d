@@ -1,4 +1,5 @@
 
+
 instance DIA_Addon_TAL_BDT_1_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_Addon_TAL_BDT_1_Hi(C_Info)
 	condition = DIA_Addon_TAL_BDT_1_Hi_Condition;
 	information = DIA_Addon_TAL_BDT_1_Hi_Info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -37,15 +38,15 @@ func int DIA_Addon_TAL_BDT_1_Hi_Condition()
 
 func void DIA_Addon_TAL_BDT_1_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_TAL_BDT_1_Hi_15_00");	//Как дела?
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_1_Hi_01_01");	//Я жду, пока они им не понадобится кто-нибудь новый и не придет моя очередь.
-	if(!Npc_IsDead(Franco))
+	AI_Output(other,self,"DIA_Addon_TAL_BDT_1_Hi_15_00");	//How are you?
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Hi_01_01 " );	// I wait until they need someone new and it's my turn.
+	if ( ! Npc_IsDead(Franco))
 	{
-		AI_Output(self,other,"DIA_Addon_TAL_BDT_1_Hi_01_02");	//Из всех людей, кто снаружи, только Франко мог войти сюда.
+		AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Hi_01_02 " );	// Of all the people outside, only Franco could enter here.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_TAL_BDT_1_Hi_01_03");	//А теперь Франко мертв, и, может быть, у меня появится шанс.
+		AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Hi_01_03 " );	// And now Franco is dead, and maybe I'll have a chance.
 	};
 };
 
@@ -56,7 +57,7 @@ instance DIA_Addon_TAL_BDT_1_Lager(C_Info)
 	condition = DIA_Addon_TAL_BDT_1_Lager_Condition;
 	information = DIA_Addon_TAL_BDT_1_Lager_Info;
 	permanent = TRUE;
-	description = "Можешь рассказать мне что-нибудь о лагере.";
+	description = " Can you tell me something about the camp. " ;
 };
 
 
@@ -67,9 +68,9 @@ func int DIA_Addon_TAL_BDT_1_Lager_Condition()
 
 func void DIA_Addon_TAL_BDT_1_Lager_Info()
 {
-	AI_Output(other,self,"DIA_Addon_TAL_BDT_1_Lager_15_00");	//Можешь рассказать мне что-нибудь о лагере.
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_1_Lager_01_01");	//Смотри, с кем связываешься! Если ты начнешь драться без причины, они все очень быстро набросятся на тебя!
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_1_Lager_01_02");	//Большинство из них чересчур пекутся о своем золоте и некоторые внимательно следят за другими.
+	AI_Output(other,self, " DIA_Addon_TAL_BDT_1_Lager_15_00 " );	// Can you tell me something about the camp?
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Lager_01_01 " );	// Watch who you mess with! If you start fighting for no reason, they will all turn on you!
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Lager_01_02 " );	// Most of them care too much about their gold, and some keep a close eye on others.
 };
 
 
@@ -79,7 +80,7 @@ instance DIA_Addon_TAL_BDT_1_Raven(C_Info)
 	condition = DIA_Addon_TAL_BDT_1_Raven_Condition;
 	information = DIA_Addon_TAL_BDT_1_Raven_Info;
 	permanent = TRUE;
-	description = "Что тебе известно про Ворона?";
+	description = " What do you know about Raven? " ;
 };
 
 
@@ -90,16 +91,16 @@ func int DIA_Addon_TAL_BDT_1_Raven_Condition()
 
 func void DIA_Addon_TAL_BDT_1_Raven_Info()
 {
-	AI_Output(other,self,"DIA_Addon_TAL_BDT_1_Raven_15_00");	//Что тебе известно про Ворона?
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_1_Raven_01_01");	//Этот человек первым оказался здесь со своими ребятами.
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_1_Raven_01_02");	//Он - командир лагеря. Я тебе советую не крутиться вокруг него.
-	AI_Output(self,other,"DIA_Addon_TAL_BDT_1_Raven_01_03");	//Однажды им потребовались пять новых бойцов, потому что он сорвал свою злость на своих же людях.
+	AI_Output(other,self, " DIA_Addon_TAL_BDT_1_Raven_15_00 " );	// What do you know about Raven?
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Raven_01_01 " );	// H was the first to be here with his guys.
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Raven_01_02 " );	// He's the camp commander. I advise you not to mess with him.
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Raven_01_03 " );	// Once they needed five new fighters because he took his anger out on his own people.
 };
 
 func void B_AssignAmbientInfos_Addon_TAL_BDT_1(var C_Npc slf)
 {
 	DIA_Addon_TAL_BDT_1_EXIT.npc = Hlp_GetInstanceID(slf);
-	DIA_Addon_TAL_BDT_1_Hi.npc = Hlp_GetInstanceID(slf);
+	DIA_Addon_NUMBER_BDT_1_Hi.npc = Help_GetInstanceID(slf);
 	DIA_Addon_TAL_BDT_1_Lager.npc = Hlp_GetInstanceID(slf);
 	DIA_Addon_TAL_BDT_1_Raven.npc = Hlp_GetInstanceID(slf);
 };
