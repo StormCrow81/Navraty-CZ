@@ -1,4 +1,5 @@
 
+
 instance DIA_Urshak_EXIT(C_Info)
 {
 	npc = NONE_110_Urshak;
@@ -21,7 +22,7 @@ func void DIA_Urshak_EXIT_Info()
 };
 
 
-instance DIA_Urshak_HALLO(C_Info)
+instances DIA_Urshak_HALLO (C_Info)
 {
 	npc = NONE_110_Urshak;
 	nr = 5;
@@ -41,36 +42,36 @@ func int DIA_Urshak_HALLO_Condition()
 
 func void DIA_Urshak_HALLO_Info()
 {
-	AI_Output(self,other,"DIA_Urshak_HALLO_18_00");	//(агрессивно) КРОТОК ДЖАБАРТ!!!
-	AI_Output(self,other,"DIA_Urshak_HALLO_18_01");	//Стой! Моя знать тебя. Ты друг человек с мягким голосом.
-	AI_Output(self,other,"DIA_Urshak_HALLO_18_02");	//Друг убивать злого демона КРУШАКА.
+	AI_Output(self,other, " DIA_Urshak_HALLO_18_00 " );	// (aggressively) MEET JABART!!!
+	AI_Output(self,other, " DIA_Urshak_HALLO_18_01 " );	// Stop! My know you. You are a friend with a soft voice.
+	AI_Output(self,other, " DIA_Urshak_HALLO_18_02 " );	// Friend to kill the evil demon KRUSHAK.
 	B_GivePlayerXP(XP_UrshakFound);
 	Log_CreateTopic(TOPIC_Urshak,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Urshak,LOG_Running);
-	B_LogEntry(TOPIC_Urshak,"Я нашел своего старого друга-орка - Ур-Шака.");
+	B_LogEntry(TOPIC_Urshak, " I found my old orc friend Ur-Shak. " );
 	Info_ClearChoices(DIA_Urshak_HALLO);
-	Info_AddChoice(DIA_Urshak_HALLO,"Что ты делаешь здесь?",DIA_Urshak_HALLO_freund);
-	Info_AddChoice(DIA_Urshak_HALLO,"Говорящий орк?",DIA_Urshak_HALLO_wer);
+	Info_AddChoice(DIA_Urshak_HALLO, " What are you doing here? " ,DIA_Urshak_HALLO_freund);
+	Info_AddChoice(DIA_Urshak_HALLO, " Orc talking? " ,DIA_Urshak_HALLO_wer);
 };
 
-func void DIA_Urshak_HALLO_wer()
+func void DIA_Urshak_HELLO_who()
 {
-	AI_Output(other,self,"DIA_Urshak_HALLO_wer_15_00");	//Говорящий орк?!
-	AI_Output(self,other,"DIA_Urshak_HALLO_wer_18_01");	//Ты забывать Ур-Шак?!...(печально) Ты расстраивать меня.
-	AI_Output(self,other,"DIA_Urshak_HALLO_wer_18_02");	//Ур-Шак помогать другу много дней раньше получить УЛУ-МУЛУ! Для ходить в моя деревня. Орки уважать друг друга и друг не умирать от руки орков!
-	AI_Output(self,other,"DIA_Urshak_HALLO_wer_18_03");	//Друг потом ходить в храм орков и изгонять злого демона. Много дней раньше! Твоя не помнить?
+	AI_Output(other,self, " DIA_Urshak_HALLO_wer_15_00 " );	// Talking Orc?!
+	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_01 " );	// You forget Ur-Shak?!...(sadly) You upset me.
+	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_02 " );	// Ur-Shak help a friend get ULU-MULU many days early! For walking in my village. Orcs respect each other and each does not die at the hands of orcs!
+	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_03 " );	// Friend then go to the orc temple and exorcise the evil demon. Many days before! Don't you remember?
 	URSHAKBONUSGOTIKA = TRUE;
 };
 
-func void DIA_Urshak_HALLO_freund()
+func void DIA_Urshak_HELLO_friend()
 {
-	if(URSHAKBONUSGOTIKA == FALSE)
+	if ( URSHAKBONUSGOTIKA  ==  FALSE )
 	{
 		URSHAKBONUSGOTIKA = TRUE;
 		B_GivePlayerXP(50);
 	};
-	AI_Output(other,self,"DIA_Urshak_HALLO_freund_15_00");	//Ты выбрал не лучшее время, чтобы встать у меня на пути. Я чуть не убил тебя! Что ты делаешь здесь?
-	AI_Output(self,other,"DIA_Urshak_HALLO_freund_18_01");	//Ур-Шак смотреть на землю и  видеть, что стало с землей и мой народ.
+	AI_Output(other,self, " DIA_Urshak_HALLO_freund_15_00 " );	// You picked the wrong time to get in my way. I almost killed you! What are you doing here?
+	AI_Output(self,other, " DIA_Urshak_HALLO_freund_18_01 " );	// Ur-Shak look at the earth and see what has become of the earth and my people.
 	Info_ClearChoices(DIA_Urshak_HALLO);
 };
 
@@ -80,7 +81,7 @@ instance DIA_URSHAK_TARROKWOUND(C_Info)
 	nr = 6;
 	condition = dia_urshak_tarrokwound_condition;
 	information = dia_urshak_tarrokwound_info;
-	description = "Мне нужна твоя помощь.";
+	description = " I need your help. " ;
 };
 
 func int dia_urshak_tarrokwound_condition()
@@ -93,19 +94,19 @@ func int dia_urshak_tarrokwound_condition()
 
 func void dia_urshak_tarrokwound_info()
 {
-	AI_Output(other,self,"DIA_Urshak_TarrokWound_18_01");	//Мне нужна твоя помощь.
-	AI_Output(self,other,"DIA_Urshak_TarrokWound_18_02");	//Друг приходить всегда. Ур-Шак помогать друг.
-	AI_Output(other,self,"DIA_Urshak_TarrokWound_18_03");	//Я встретил твоего друга, Таррока. К несчастью, на него напало несколько скелетов и он был сильно ранен.
-	AI_Output(other,self,"DIA_Urshak_TarrokWound_18_04");	//Теперь, чтобы он не умер ему нужно лечебное орочье зелье. Ты можешь мне саказать, где его достать?
-	AI_Output(self,other,"DIA_Urshak_TarrokWound_18_05");	//Друг Ур-Шака ранен!!! Плохо... Друг правильно делать, что приходить к Ур-Шак.
-	AI_Output(self,other,"DIA_Urshak_TarrokWound_18_06");	//Другу не надо искать зелье. Ур-Шак даст его. Друг отнесет его Тарроку и он быть здоровый.
-	AI_Output(self,other,"DIA_Urshak_TarrokWound_18_07");	//Вот...Друг получать зелье. Теперь спешить.
+	AI_Output(other,self, " DIA_Urshak_TarrokWound_18_01 " );	// I need your help.
+	AI_Output(self,other, " DIA_Urshak_TarrokWound_18_02 " );	// A friend always comes. Ur-Shak help a friend.
+	AI_Output(other,self, " DIA_Urshak_TarrokWound_18_03 " );	// I met your friend, Tarrok. Unfortunately, several skeletons attacked him and he was badly injured.
+	AI_Output(other,self, " DIA_Urshak_TarrokWound_18_04 " );	// Now he needs an orc healing potion to keep him alive. Can you tell me where to get it?
+	AI_Output(self,other, " DIA_Urshak_TarrokWound_18_05 " );	// Ur-Shak's friend is injured!!! Bad... Friend do the right thing to come to Ur-Shak.
+	AI_Output(self,other, " DIA_Urshak_TarrokWound_18_06 " );	// Friend doesn't have to look for the potion. Ur-Shak will give it. A friend will take him to Tarrok and he will be healthy.
+	AI_Output(self,other, " DIA_Urshak_TarrokWound_18_07 " );	// Here... A friend is getting a potion. Now hurry.
 	B_GiveInvItems(self,other,itpo_xorcpotion,1);
-	B_LogEntry(TOPIC_TARROKWOUND,"Ур-Шак дал мне орочье зелье...Теперь я должен отдать его Тарроку. Надеюсь, это ему поможет.");
+	B_LogEntry( TOPIC_TARROKWOUND , " Ur-Shak gave me an Orc potion...Now I must give it to Tarrok. I hope this helps him. " );
 };
 
 
-instance DIA_URSHAK_HASULUMULU(C_Info)
+instance DIA_URSHAK_HASULUMULU (C_Info) .
 {
 	npc = NONE_110_Urshak;
 	nr = 6;
@@ -118,7 +119,7 @@ instance DIA_URSHAK_HASULUMULU(C_Info)
 
 func int dia_urshak_hasulumulu_condition()
 {
-	if((FINDULUMULU == TRUE) && (URSHAKKNOWULUMULU == FALSE) && (URSHAK_SUCKED == FALSE) && (Npc_HasItems(other,itmw_2h_orcprestige) >= 1))
+	if (( FINDPRESS ==  TRUE  ) && ( URSHAKK_SUCKED ==  FALSE  ) && ( Npc_HasItems ( other,itmw_2h_orcprestige) > = 1 ) ) ;   
 	{
 		return TRUE;
 	};
@@ -127,61 +128,61 @@ func int dia_urshak_hasulumulu_condition()
 func void dia_urshak_hasulumulu_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other,"DIA_Urshak_HasUlumulu_18_01");	//Друг найти Улу-Мулу!!!(восхищенно)...Какой хороший!
+	AI_Output(self,other, " DIA_Urshak_HasUlumulu_18_01 " );	// Friend find Ulu-Mulu!!!(admiringly)...What a good one!
 	URSHAKKNOWULUMULU = TRUE;
 };
 
 
-instance DIA_Urshak_WASMACHENORKS(C_Info)
+instance DIA_Urshak_WASHENORKS (C_Info)
 {
 	npc = NONE_110_Urshak;
 	nr = 6;
 	condition = DIA_Urshak_WASMACHENORKS_Condition;
-	information = DIA_Urshak_WASMACHENORKS_Info;
-	description = "Почему орки нападают на людей?";
+	information = DIA_Urshak_WASHENORKS_Info;
+	description = " Why are orcs attacking humans? " ;
 };
 
 
-func int DIA_Urshak_WASMACHENORKS_Condition()
+func int DIA_Urshak_WASHENORKS_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Urshak_HALLO) && (URSHAK_SUCKED == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Urshak_HELLO ) && ( URSHAK_SUCKED  ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Urshak_WASMACHENORKS_Info()
+func void DIA_Urshak_WASHENORKS_Info()
 {
-	AI_Output(other,self,"DIA_Urshak_WASMACHENORKS_15_00");	//Почему орки нападают на людей?
-	AI_Output(self,other,"DIA_Urshak_WASMACHENORKS_18_01");	//Ур-Шак всегда говорить народ орков, что люди не зло и с ними надо дружить.
-	AI_Output(self,other,"DIA_Urshak_WASMACHENORKS_18_02");	//Но шаман не слушать Ур-Шак. Ур-Шак в немилость у свой народ.
-	AI_Output(self,other,"DIA_Urshak_WASMACHENORKS_18_03");	//Поэтому Ур-Шак не знать точно о большой план войны против людей.
-	B_LogEntry(TOPIC_Urshak,"Он все еще никак не может заставить свой народ выслушать его. Он все еще изгнанник.");
+	AI_Output(other,self, " DIA_Urshak_WASMACHENORKS_15_00 " );	// Why do orcs attack humans?
+	AI_Output(self,other, " DIA_Urshak_WASMACHENORKS_18_01 " );	// Ur-Shak always tells the orc people that humans are not evil and should be friends with them.
+	AI_Output(self,other, " DIA_Urshak_WASMACHENORKS_18_02 " );	// But the shaman doesn't listen to Ur-Shak. Ur-Shak is out of favor with his people.
+	AI_Output(self,other, " DIA_Urshak_WASMACHENORKS_18_03 " );	// Therefore, Ur-Shak does not know exactly about the grand war plan against humans.
+	B_LogEntry(TOPIC_Urshak, " He still can't get his people to listen to him. He's still an exile. " );
 };
 
 
-instance DIA_Urshak_SOVIELE(C_Info)
+instance DIA_Urshak_SOMANY (C_Info)
 {
 	npc = NONE_110_Urshak;
 	nr = 7;
-	condition = DIA_Urshak_SOVIELE_Condition;
-	information = DIA_Urshak_SOVIELE_Info;
-	description = "Почему вас здесь так много?";
+	condition = DIA_Urshak_SOMANY_Condition;
+	information = DIA_Urshak_SOMANY_Info;
+	description = " Why are there so many of you here? " ;
 };
 
 
-func int DIA_Urshak_SOVIELE_Condition()
+func int DIA_Urshak_SOMANY_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Urshak_HALLO) && (URSHAK_SUCKED == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Urshak_HELLO ) && ( URSHAK_SUCKED  ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Urshak_SOVIELE_Info()
+func void DIA_Urshak_SOMANY_Info()
 {
-	AI_Output(other,self,"DIA_Urshak_SOVIELE_15_00");	//Почему вас здесь так много?
-	AI_Output(self,other,"DIA_Urshak_SOVIELE_18_01");	//Орки приходить с гор, но другие приплывать на кораблях и делать большой забор.
+	AI_Output(other,self, " DIA_Urshak_SOVIELE_15_00 " );	// Why are there so many of you here?
+	AI_Output(self,other, " DIA_Urshak_SOVIELE_18_01 " );	// Orcs come from the mountains, but others come in ships and make a big fence.
 };
 
 
@@ -191,13 +192,13 @@ instance DIA_Urshak_ZAUN(C_Info)
 	nr = 8;
 	condition = DIA_Urshak_ZAUN_Condition;
 	information = DIA_Urshak_ZAUN_Info;
-	description = "Что скрывается за этим частоколом орков на востоке?";
+	description = " What's behind that orc palisade to the east? " ;
 };
 
 
 func int DIA_Urshak_ZAUN_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Urshak_HALLO) && (URSHAK_SUCKED == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Urshak_HELLO ) && ( URSHAK_SUCKED  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -205,13 +206,13 @@ func int DIA_Urshak_ZAUN_Condition()
 
 func void DIA_Urshak_ZAUN_Info()
 {
-	AI_Output(other,self,"DIA_Urshak_ZAUN_15_00");	//Что скрывается за этим частоколом орков на востоке?
-	AI_Output(self,other,"DIA_Urshak_ZAUN_18_01");	//Орки всегда делать большой забор и готовить лагерь к война.
-	AI_Output(self,other,"DIA_Urshak_ZAUN_18_02");	//Забор хорошо для война. Скрывать сила армия и защищать орков.
-	AI_Output(self,other,"DIA_Urshak_ZAUN_18_03");	//Но Ур-Шак слышать странные новости, однако.
-	AI_Output(self,other,"DIA_Urshak_ZAUN_18_04");	//Орки говорить - чужая магия придти за ограда. Непонятная магия!
-	AI_Output(self,other,"DIA_Urshak_ZAUN_18_05");	//Орки испугаться! Шаманы испугаться! Орки больше не ходить за ограда.
-	AI_Output(self,other,"DIA_Urshak_ZAUN_18_06");	//Ур-Шак не видеть такого раньше.
+	AI_Output(other,self, " DIA_Urshak_ZAUN_15_00 " );	// What's behind that orc palisade to the east?
+	AI_Output(self,other, " DIA_Urshak_ZAUN_18_01 " );	// Orcs always make a big fence and prepare the camp for war.
+	AI_Output(self,other, " DIA_Urshak_ZAUN_18_02 " );	// Fence is good for war. Hide the strength of the army and protect the orcs.
+	AI_Output(self,other, " DIA_Urshak_ZAUN_18_03 " );	// But Ur-Shak hear strange news, though.
+	AI_Output(self,other, " DIA_Urshak_ZAUN_18_04 " );	// Orcs speak - someone else's magic to come over the fence. Weird Magic!
+	AI_Output(self,other, " DIA_Urshak_ZAUN_18_05 " );	// Orcs get scared! Shamans get scared! Orcs no longer walk behind the fence.
+	AI_Output(self,other, " DIA_Urshak_ZAUN_18_06 " );	// Ur-Shak hasn't seen this before.
 };
 
 
@@ -221,13 +222,13 @@ instance DIA_Urshak_WASHASTDUVOR(C_Info)
 	nr = 9;
 	condition = DIA_Urshak_WASHASTDUVOR_Condition;
 	information = DIA_Urshak_WASHASTDUVOR_Info;
-	description = "Что ты планируешь делать дальше?";
+	description = " What are you planning to do next? " ;
 };
 
 
 func int DIA_Urshak_WASHASTDUVOR_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Urshak_HALLO) && (URSHAK_SUCKED == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Urshak_HELLO ) && ( URSHAK_SUCKED  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -235,32 +236,32 @@ func int DIA_Urshak_WASHASTDUVOR_Condition()
 
 func void DIA_Urshak_WASHASTDUVOR_Info()
 {
-	AI_Output(other,self,"DIA_Urshak_WASHASTDUVOR_15_00");	//Что вы планируете делать дальше?
-	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_18_01");	//Ур-Шак ждать, пока разведчики орков приводить Ур-Шак к Хош-Пак.
-	AI_Output(other,self,"DIA_Urshak_WASHASTDUVOR_15_02");	//Кто такой Хош-Пак?
-	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_18_03");	//Очень большой шаман. Иметь большое влияние на воинов и делать большие планы для орков.
-	B_LogEntry(TOPIC_Urshak,"Ур-Шак хочет встретиться с шаманом орков Хош-Паком и убедить его принять Ур-Шака назад в совет шаманов.");
+	AI_Output(other,self, " DIA_Urshak_WASHASTDUVOR_15_00 " );	// What are you planning to do next?
+	AI_Output(self,other, " DIA_Urshak_WASHASTDUVOR_18_01 " );	// Ur-Shak wait while the orc scouts lead Ur-Shak to Hosh-Pak.
+	AI_Output(other,self, " DIA_Urshak_WASHASTDUVOR_15_02 " );	// Who is Hosh-Pak?
+	AI_Output(self,other, " DIA_Urshak_WASHASTDUVOR_18_03 " );	// Very large shaman. Have great influence on the warriors and make big plans for the orcs.
+	B_LogEntry(TOPIC_Urshak, " Ur-Shak wants to meet with Orc shaman Hosh-Pak and convince him to accept Ur-Shak back to the council of shamans. " );
 	Info_ClearChoices(DIA_Urshak_WASHASTDUVOR);
-	Info_AddChoice(DIA_Urshak_WASHASTDUVOR,Dialog_Back,DIA_Urshak_WASHASTDUVOR_weiter);
-	Info_AddChoice(DIA_Urshak_WASHASTDUVOR,"Где я могу найти этого Хош-Пака?",DIA_Urshak_WASHASTDUVOR_);
-	Info_AddChoice(DIA_Urshak_WASHASTDUVOR,"Почему ты тогда не пойдешь к нему?",DIA_Urshak_WASHASTDUVOR_hoshpak);
+	Info_AddChoice(DIA_Urshak_WASHASTDUVOR,Dialog_Back,DIA_Urshak_WASHASTDUVOR_next);
+	Info_AddChoice(DIA_Urshak_WASHASTDUVOR, " Where can I find this Hosh Pack? " ,DIA_Urshak_WASHASTDUVOR_);
+	Info_AddChoice(DIA_Urshak_WASHASTDUVOR, " Why don't you go to him then? " ,DIA_Urshak_WASHASTDUVOR_hoshpak);
 };
 
 func void DIA_Urshak_WASHASTDUVOR_hoshpak()
 {
-	AI_Output(other,self,"DIA_Urshak_WASHASTDUVOR_hoshpak_15_00");	//Почему ты тогда не пойдешь к нему?
-	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_hoshpak_18_01");	//Ур-Шак пытаться и пытаться получить опять честь и старое место в совет шаманов.
-	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_hoshpak_18_02");	//Но пока Хош-Пак не слушать Ур-Шак. Орки убивать Ур-Шак если видеть его без разведчиков. Ур-Шак должен говорить с Хош-Пак.
-	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_hoshpak_18_03");	//Может быть, это удаваться сегодня.
+	AI_Output(other,self, " DIA_Urshak_WASHASTDUVOR_hoshpak_15_00 " );	// Why don't you go to him then?
+	AI_Output(self,other, " DIA_Urshak_WASHASTDUVOR_hoshpak_18_01 " );	// Ur-Shak try and try to get back the honor and the old place in the council of shamans.
+	AI_Output(self,other, " DIA_Urshak_WASHASTDUVOR_hoshpak_18_02 " );	// But don't listen to Ur-Shak yet Hosh-Pak. Orcs kill Ur-Shak if you see him without scouts. Ur-Shak must speak with Hosh-Pak.
+	AI_Output(self,other, " DIA_Urshak_WASHASTDUVOR_hoshpak_18_03 " );	// Maybe it works out today.
 };
 
 func void DIA_Urshak_WASHASTDUVOR_()
 {
-	AI_Output(other,self,"DIA_Urshak_WASHASTDUVOR_Urshak_15_00");	//Где я могу найти этого Хош-Пака?
-	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_Urshak_18_01");	//Он там где может наблюдать за воины орков у крепости у большой вулкан, чтобы Хош-Пак мочь контролировать воины.
+	AI_Output(other,self, " DIA_Urshak_WASHASTDUVOR_Urshak_15_00 " );	// Where can I find this Hosh Pack?
+	AI_Output(self,other, " DIA_Urshak_WASHASTDUVOR_Urshak_18_01 " );	// He is where he can watch the orc warriors at the fortress near the big volcano, so that Hosh-Pak can control the warriors.
 };
 
-func void DIA_Urshak_WASHASTDUVOR_weiter()
+func void DIA_Urshak_WASHASTDUVOR_next()
 {
 	Info_ClearChoices(DIA_Urshak_WASHASTDUVOR);
 };
@@ -272,7 +273,7 @@ instance DIA_URSHAK_TEMPLEDOOR(C_Info)
 	nr = 9;
 	condition = dia_urshak_templedoor_condition;
 	information = dia_urshak_templedoor_info;
-	description = "Что случилось в подземном Храме?";
+	description = " What happened in the underground Temple? " ;
 };
 
 
@@ -286,40 +287,40 @@ func int dia_urshak_templedoor_condition()
 
 func void dia_urshak_templedoor_info()
 {
-	AI_Output(other,self,"DIA_Urshak_TempleDoor_15_00");	//Ты знаешь, что случилось в Храме Спящего?
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_01");	//Сначала орки откапать Храм после ухода злой Крушак.
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_02");	//Орки плясать и радоваться, что Храм цел. Шаманы заклинать Храм духом орков.
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_03");	//Но потом приходить снова злой демон. Стал убивать и заколдовывать братьев. Орки испугаться и уйти из Храм.
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_04");	//Братья закрыть вход и наложить сильное заклятие. Друг не подходить близко, а то друг умереть быстро.
-	AI_Output(other,self,"DIA_Urshak_TempleDoor_15_03");	//Как же тогда туда попасть?
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_06");	//Друг хочет ходить в Храм?! Друг не боится зло?!!!
-	AI_Output(other,self,"DIA_Urshak_TempleDoor_15_05");	//Мне нужно попасть в подземный храм! Ты можешь провести меня туда?
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_08");	//Братья Ур-Шак закрыть Храм в земле очень хорошо. Братья уносить ключ в свой город и прятать его там.
-	AI_Output(other,self,"DIA_Urshak_TempleDoor_15_06");	//Город? Ты хочешь сказать город, где живут орки?!
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_10");	//Подземный город, где жить браты Ур-Шак. Они очень много!
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_11");	//Ур-Шак помнить, у друг быть Улу-Мулу. Друг одеть Улу-Мулу и не умереть.
-	AI_Output(other,self,"DIA_Urshak_TempleDoor_01_12");	//Боюсь, я его потерял. Ты знаешь, где мне достать еще одно Улу-Мулу?
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_13");	//Только воины делать Улу-Мулу. Ур-Шак не быть воином. Быть шаманом. Но Ур-Шак может говорить, где найти Улу-Мулу.
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_14");	//Чужак опять ходить к друг Ур-Шак. Его звать Таррок. Друг должен помнить его.
-	AI_Output(other,self,"DIA_Urshak_TempleDoor_01_15");	//Где искать твоего друга?
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_16");	//Друг идти на север, к болоту, и искать там рядом с башней. Ур-Шак думать, друг найдет его там.
-	AI_Output(other,self,"DIA_Urshak_TempleDoor_01_17");	//А где мне искать город?
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_18");	//Дом Ур-Шак быть недалеко от бывшая шахта людей.
-	AI_Output(self,other,"DIA_Urshak_TempleDoor_01_19");	//Друг не забыть нести Улу-Мулу в руке, когда идти.
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_15_00 " );	// Do you know what happened in the Temple of the Sleeper?
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_01 " );	// First, the orcs dig up the Temple after the departure of the evil Krushak.
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_02 " );	// Orcs dance and rejoice that the Temple is intact. Shamans conjure the Temple with the spirit of orcs.
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_03 " );	// But then the evil demon comes again. He began to kill and bewitch the brothers. Orcs get scared and leave the Temple.
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_04 " );	// Brothers close the entrance and cast a strong spell. A friend does not come close, otherwise a friend will die quickly.
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_15_03 " );	// How do you get there then?
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_06 " );	// A friend wants to go to the Temple?! A friend is not afraid of evil?!
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_15_05 " );	// I need to get to the underground temple! Can you take me there?
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_08 " );	// The brothers of Ur-Shak close the Temple in the ground very well. The brothers take the key to their city and hide it there.
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_15_06 " );	// City? You mean the city where orcs live?!
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_10 " );	// The underground city where the Ur-Shak brothers live. They are very much!
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_11 " );	// Ur-Shak remember, have a friend to be Ulu-Mulu. A friend to dress Ulu-Mulu and not die.
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_12 " );	// I'm afraid I lost it. Do you know where I can get another Ulu-Mulu?
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_13 " );	// Only warriors do Ulu-Mulu. Ur-Shak is not to be a warrior. Be a shaman. But Ur-Shak can tell where to find Ulu-Mulu.
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_14 " );	// Stranger again to go to friend Ur-Shak. His name is Tarrok. A friend must remember him.
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_15 " );	// Where to find your friend?
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_16 " );	// Friend go north to the swamp, and look there near the tower. Ur-Shak think a friend will find him there.
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_17 " );	// Where can I find the city?
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_18 " );	// Ur-Shak's house to be near the former human mine.
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_19 " );	// Friend don't forget to carry Ulu-Mulu in hand when going.
 
 	if(ORCPROMISEMAKE == FALSE)
 	{
-		AI_Output(self,other,"DIA_Urshak_TempleDoor_01_20");	//Еще Ур-Шак хотеть попросить друг - если друг приходить в город братьев, может друг просить их разрешить Ур-Шаку вернуться?
-		AI_Output(other,self,"DIA_Urshak_TempleDoor_01_21");	//Постараюсь! Если конечно они вообще станут со мной говорить.
+		AI_Output(self,other, " DIA_Urshak_TempleDoor_01_20 " );	// Still Ur-Shak want to ask a friend - if a friend comes to the city of brothers, can a friend ask them to allow Ur-Shak to return?
+		AI_Output(other,self, " DIA_Urshak_TempleDoor_01_21 " );	// I'll try! Unless, of course, they even talk to me.
 	};
 
-	AI_Output(other,self,"DIA_Urshak_TempleDoor_01_22");	//Спасибо за помощь, Ур-Шак.
-	B_LogEntry(TOPIC_ORCTEMPLE,"Ур-Шак рассказал мне, что единственный способ попасть в Храм Спящего - это достать ключ орков, с помощью которого они наложили заклятье на решетку у входа. Для этого, мне придется отправиться в город орков и попробывать их уговорить, отдать мне этот артефакт.");
-	B_LogEntry_Quiet(TOPIC_ORCTEMPLE,"Чтобы моя прогулка среди толп орков была более-менее приятной, мне надо иметь с собой Улу-Мулу - знак дружбы и силы орков. С ним, орки не тронут меня. Ур-Шак не может сделать мне этот орочий талисман, но он сказал, кто бы мог мне помочь. Он назвал имя Таррок. Возможно этот орк согласится сделать для меня этот Улу-Мулу. По словам Ур-Шака, его я смогу найти рядом с болотом, около небольшой башни.");
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_22 " );	// Thanks for your help, Ur-Shak.
+	B_LogEntry( TOPIC_ORCTEMPLE , " Ur-Shak told me that the only way to get into the Temple of the Sleeper is to get the orc key, with which they cast a spell on the grate at the entrance. To do this, I will have to go to the orc city and try to persuade them, give me this artifact. " );
+	B_LogEntry_Quiet( TOPIC_ORCTEMPLE , " To make my walk among the crowds of orcs more or less pleasant, I need to have Ulu-Mulu with me - a sign of friendship and strength of the orcs. With it, the orcs will not touch me. Ur-Shak cannot make me this orc talisman , but he said who could help me. He named the name Tarrok. Perhaps this orc will agree to make this Ulu-Mulu for me. According to Ur-Shak, I can find him next to the swamp, near a small tower. " ) ;
 
 	if(ORCPROMISEMAKE == FALSE)
 	{
-		B_LogEntry_Quiet(TOPIC_Urshak,"Ур-Шак попросил меня замолвить за него словечко перед своими братьями, если конечно предоставится такой случай. Что не сделаешь ради старого доброго друга.");
+		B_LogEntry_Quiet(TOPIC_Urshak, " Ur-Shak asked me to put in a good word for him with his brothers, if the opportunity presented itself. What would you do for a good old friend. " );
 	};
 
 	BUMSHAKINSERTED = TRUE;
@@ -336,12 +337,12 @@ instance DIA_Urshak_HOSHPAKDEAD(C_Info)
 	nr = 9;
 	condition = DIA_Urshak_HOSHPAKDEAD_Condition;
 	information = DIA_Urshak_HOSHPAKDEAD_Info;
-	description = "Хош-Пак мертв.";
+	description = " Hosh Pak is dead. " ;
 };
 
 func int DIA_Urshak_HOSHPAKDEAD_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Urshak_WASHASTDUVOR) && Npc_IsDead(Hosh_Pak) && (URSHAK_SUCKED == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Urshak_WASHASTDUVOR ) && Npc_IsDead ( Hosh_Pak ) & & ( URSHAK_SUCKED  ==  FALSE ))
 	{
 		return TRUE;
 	};
@@ -349,14 +350,14 @@ func int DIA_Urshak_HOSHPAKDEAD_Condition()
 
 func void DIA_Urshak_HOSHPAKDEAD_Info()
 {
-	AI_Output(other,self,"DIA_Urshak_HOSHPAKDEAD_15_00");	//Хош-Пак мертв.
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_01");	//Хош-Пак мертв?! РУШТАСОК!
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_02");	//Мое сердце большая печаль. Ур-Шак никогда не забывать великий орк делать Ур-Шак шаман.
-	AI_Output(other,self,"DIA_Urshak_HOSHPAKDEAD_15_03");	//Я понимаю. Хош-Пак был твоим учителем.
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_04");	//Ур-Шак теперь должен носить ношу горя, должен дать Хош-Пак последний обряд. Ур-Шак надо идти.
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_05");	//Друг лучше уходить проход. Слишком опасно здесь.
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_06");	//Ур-Шак печалиться если человек тоже умирать.
-	B_LogEntry(TOPIC_Urshak,"Хош-Пак мертв. Мой друг орк направляется в палатку Хош-Пака. Он скорбит по своему наставнику. Я должен отпустить его.");
+	AI_Output(other,self, " DIA_Urshak_HOSHPAKDEAD_15_00 " );	// Hosh-Pak is dead.
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKDEAD_18_01 " );	// Hosh-Pak is dead?! RUSHTASOK!
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKDEAD_18_02 " );	// My heart is a great sadness. Ur-Shak never forget the great orc to do Ur-Shak shaman.
+	AI_Output(other,self, " DIA_Urshak_HOSHPAKDEAD_15_03 " );	// I understand. Hosh-Pak was your teacher.
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKDEAD_18_04 " );	// Ur-Shak must now bear the burden of grief, must give Hosh-Pak the last rites. Ur-Shak must go.
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKDEAD_18_05 " );	// Friend better walk away pass. It's too dangerous here.
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKDEAD_18_06 " );	// Ur-Shak is sad if a person also dies.
+	B_LogEntry(TOPIC_Urshak, " Hosh-Pak is dead. My orc friend is heading to Hosh-Pak's tent. He is grieving for his mentor. I must let him go. " );
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,20);
 	Npc_ExchangeRoutine(self,"Start");
@@ -364,7 +365,7 @@ func void DIA_Urshak_HOSHPAKDEAD_Info()
 	Wld_InsertNpc(OrcWarrior_Rest,"FP_CAMPFIRE_HOSHPAK_02");
 };
 
-instance DIA_Urshak_HOSHPAKRACHE(C_Info)
+instance DIA_Urshak_HOSHPAKRACHE (C_Info)
 {
 	npc = NONE_110_Urshak;
 	condition = DIA_Urshak_HOSHPAKRACHE_Condition;
@@ -383,18 +384,18 @@ func int DIA_Urshak_HOSHPAKRACHE_Condition()
 
 func void DIA_Urshak_HOSHPAKRACHE_Info()
 {
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKRACHE_18_00");	//Хоток! Я узнавать, что ты быть здесь, когда Хош-Пак убивать. Твоя делать большая ошибка, чужак.
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKRACHE_18_04");	//Ур-Шак видеть большая ошибка доверять злой человек. Ур-Шак сожалеть звать человек другом и помогать ему не быть убит.
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKRACHE_18_05");	//Чужак теперь покидать долина и идти в Проход. Ур-Шак не будет убивать чужак сейчас. Честь шаман говорит Ур-Шак не убивать.
-	AI_Output(self,other,"DIA_Urshak_HOSHPAKRACHE_18_06");	//В следующий раз мы встречаться - мы враги! Твои лучше уходить сейчас.
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKRACHE_18_00 " );	// Hotok! I find out that you'll be here when Hosh-Pak kill. Your making a big mistake, stranger.
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKRACHE_18_04 " );	// Ur-Shak see a big mistake to trust an evil person. Ur-Shak regret calling a person a friend and helping him not to be killed.
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKRACHE_18_05 " );	// The stranger will now leave the valley and go to the Passage. Ur-Shak won't kill intruders now. The honor shaman tells Ur-Shak not to kill.
+	AI_Output(self,other, " DIA_Urshak_HOSHPAKRACHE_18_06 " );	// Next time we meet, we're enemies! Your better off now.
 	AI_StopProcessInfos(self);
 	URSHAK_SUCKED = TRUE;
-	B_LogEntry(TOPIC_Urshak,"Теперь Ур-Шак на враждебной стороне и немного раздражен из-за того, что я прикончил его учителя. Может, что-нибудь заставит его забыть об этом инциденте.");
+	B_LogEntry(TOPIC_Urshak, " Now Ur-Shak is on the hostile side and a little annoyed that I killed his master. Maybe something will make him forget about this incident." ) ;
 	Npc_ExchangeRoutine(self,"PreStart");
 };
 
 
-instance DIA_Urshak_KEINEWAHL(C_Info)
+instances DIA_Urshak_KEINEWAHL (C_Info)
 {
 	npc = NONE_110_Urshak;
 	condition = DIA_Urshak_KEINEWAHL_Condition;
@@ -412,9 +413,9 @@ func int DIA_Urshak_KEINEWAHL_Condition()
 	};
 };
 
-func void DIA_Urshak_KEINEWAHL_Info()
+func void DIA_Urshak_NO CHOICE_Info()
 {
-	AI_Output(self,other,"DIA_Urshak_KEINEWAHL_18_00");	//Твоя уходить. Моя больше не говорить с чужак.
+	AI_Output(self,other, " DIA_Urshak_KEINEWAHL_18_00 " );	// Yours to leave. Mine no longer speak to strangers.
 	AI_StopProcessInfos(self);
 	URSHAK_SUCKED = TRUE;
 };
@@ -439,16 +440,16 @@ func int dia_urshak_forgiveme_condition()
 
 func void dia_urshak_forgiveme_info()
 {
-	AI_Output(self,other,"DIA_Urshak_ForgiveMe_01_00");	//Что человек делать? Зачем пытаться колдовать Ур-Шак?...
-	AI_Output(other,self,"DIA_Urshak_ForgiveMe_01_01");	//Ты снова заговорил со мной!...
-	AI_Output(self,other,"DIA_Urshak_ForgiveMe_01_02");	//Человек говорить странные слова...Ур-Шак не понимать.
-	AI_Output(self,other,"DIA_Urshak_ForgiveMe_01_03");	//Ур-Шак помнить человек быть друг. Почему Ур-Шак не мочь разговаривать с человек?!...(непонимающе)
-	AI_Output(other,self,"DIA_Urshak_ForgiveMe_01_04");	//А разве ты на меня больше не злишься?
-	AI_Output(self,other,"DIA_Urshak_ForgiveMe_01_05");	//Почему Ур-Шак должен злиться на человек!...(непонимающе)
-	AI_Output(other,self,"DIA_Urshak_ForgiveMe_01_06");	//Все понятно...Хмм...Да, что-то я несу просто полный бред. Сам не знаю, что со мной. Забудь об этом!
-	AI_Output(self,other,"DIA_Urshak_ForgiveMe_01_07");	//Ур-Шак думать, друг быть очень странный сегодня. Может друг колдовать злой демон или друг болеть?
-	AI_Output(other,self,"DIA_Urshak_ForgiveMe_01_08");	//Да нет, все в порядке, дружище. Просто - забудь об этом.
-	B_LogEntry(TOPIC_Urshak,"По видимому, моя идея попробывать наложить на Ур-Шака магическое заклинание забывания сработала! Ур-Шак забыл про тот неприятный случай с его учителем. Теперь мы снова друзья.");
+	AI_Output(self,other, " DIA_Urshak_ForgiveMe_01_00 " );	// What's a person to do? Why try to cast Ur-Shak?...
+	AI_Output(other,self, " DIA_Urshak_ForgiveMe_01_01 " );	// You spoke to me again!...
+	AI_Output(self,other, " DIA_Urshak_ForgiveMe_01_02 " );	// Man speak strange words...Ur-Shak does not understand.
+	AI_Output(self,other, " DIA_Urshak_ForgiveMe_01_03 " );	// Ur-Shak remember a person to be a friend. Why can't Ur-Shak talk to a human?!...(uncomprehending)
+	AI_Output(other,self, " DIA_Urshak_ForgiveMe_01_04 " );	// Aren't you mad at me anymore?
+	AI_Output(self,other, " DIA_Urshak_ForgiveMe_01_05 " );	// Why should Ur-Shak be mad at a human!...(uncomprehending)
+	AI_Output(other,self, " DIA_Urshak_ForgiveMe_01_06 " );	// Everything is clear... Hmm... Yes, something I'm talking about is just complete nonsense. I don't know what's wrong with me. Forget it!
+	AI_Output(self,other, " DIA_Urshak_ForgiveMe_01_07 " );	// Ur-Shak think friend be very strange today. Can a friend conjure an evil demon or a friend get sick?
+	AI_Output(other,self, " DIA_Urshak_ForgiveMe_01_08 " );	// No, it's all right, buddy. Just - forget about it.
+	B_LogEntry(TOPIC_Urshak, " Apparently my idea of ​​trying to cast a forgetting magic spell on Ur-Shak worked! Ur-Shak forgot about that unfortunate incident with his teacher. Now we're friends again. " );
 	B_GivePlayerXP(500);
 	URSHAKENDANGRY = TRUE;
 };
@@ -460,7 +461,7 @@ instance DIA_URSHAK_ORCTEMPLEFIXED(C_Info)
 	condition = dia_urshak_orctemplefixed_condition;
 	information = dia_urshak_orctemplefixed_info;
 	permanent = FALSE;
-	description = "Я покончил со злом в Храме Спящего.";
+	description = " I have done away with evil in the Temple of the Sleeper. " ;
 };
 
 
@@ -474,10 +475,10 @@ func int dia_urshak_orctemplefixed_condition()
 
 func void dia_urshak_orctemplefixed_info()
 {
-	AI_Output(other,self,"DIA_Urshak_OrctempleFixed_15_00");	//Я покончил со злом в Храме Спящего.
-	AI_Output(self,other,"DIA_Urshak_OrctempleFixed_18_01");	//(пораженно) ХРОТОК ЯБАРТ!!! Как друг-человек сумел это?
-	AI_Output(other,self,"DIA_Urshak_OrctempleFixed_15_02");	//Это было непросто.
-	AI_Output(self,other,"DIA_Urshak_OrctempleFixed_18_03");	//Ур-Шак очень уважать друг-человек. Очень, очень уважать.
+	AI_Output(other,self, " DIA_Urshak_OrctempleFixed_15_00 " );	// I have done away with evil in the Temple of the Sleeper.
+	AI_Output(self,other, " DIA_Urshak_OrctempleFixed_18_01 " );	// (amazed) HROTOK YABART!!! How did the human friend manage to do this?
+	AI_Output(other,self, " DIA_Urshak_OrctempleFixed_15_02 " );	// It wasn't easy.
+	AI_Output(self,other, " DIA_Urshak_OrctempleFixed_18_03 " );	// Ur-Shak is very respectful of a human friend. Very, very respect.
 	B_GivePlayerXP(300);
 };
 
@@ -489,7 +490,7 @@ instance DIA_URSHAK_BECOMESHAMAN(C_Info)
 	condition = dia_urshak_becomeshaman_condition;
 	information = dia_urshak_becomeshaman_info;
 	permanent = FALSE;
-	description = "По поводу твоей просьбы.";
+	description = " About your request. " ;
 };
 
 func int dia_urshak_becomeshaman_condition()
@@ -503,21 +504,21 @@ func int dia_urshak_becomeshaman_condition()
 func void dia_urshak_becomeshaman_info()
 {
 	B_GivePlayerXP(XP_UrshakBecomesShaman);
-	AI_Output(other,self,"DIA_Urshak_BecomeShaman_01_00");	//По поводу твоей просьбы.
-	AI_Output(other,self,"DIA_Urshak_BecomeShaman_01_01");	//Я замолвил за тебя словечко перед вождем орков.
-	AI_Output(self,other,"DIA_Urshak_BecomeShaman_01_02");	//И что сказать вождь?
-	AI_Output(other,self,"DIA_Urshak_BecomeShaman_01_03");	//Теперь ты можешь вернуться к братьям!
-	AI_Output(self,other,"DIA_Urshak_BecomeShaman_01_04");	//ХРОТОК ЯБАРТ!!!...(пораженно) Как друг-человек сумел это?
-	AI_Output(other,self,"DIA_Urshak_BecomeShaman_01_05");	//Я оказал вождю одну неоцинимую услугу - взамен вождь согласился выполнить и мою просьбу.
-	AI_Output(self,other,"DIA_Urshak_BecomeShaman_01_06");	//Ур-Шак очень сильно радоваться! Ур-Шак говорить друг-человек большое спасибо!
-	AI_Output(other,self,"DIA_Urshak_BecomeShaman_01_07");	//Да, ладно. Это было не так уж сложно.
-	AI_Output(self,other,"DIA_Urshak_BecomeShaman_01_08");	//Ур-Шак никогда не забыть друг-человек и что сделать он для Ур-Шак!
-	AI_Output(other,self,"DIA_Urshak_BecomeShaman_01_09");	//Теперь мне пора.
-	AI_Output(self,other,"DIA_Urshak_BecomeShaman_01_10");	//Хорошо, друг идти. Ур-Шак готовиться к возвращению домой - к братьям.
+	AI_Output(other,self, " DIA_Urshak_BecomeShaman_01_00 " );	// Regarding your request.
+	AI_Output(other,self, " DIA_Urshak_BecomeShaman_01_01 " );	// I put in a good word for you with the orc chieftain.
+	AI_Output(self,other, " DIA_Urshak_BecomeShaman_01_02 " );	// And what to say the leader?
+	AI_Output(other,self, " DIA_Urshak_BecomeShaman_01_03 " );	// Now you can return to your brothers!
+	AI_Output(self,other, " DIA_Urshak_BecomeShaman_01_04 " );	// HROTOK YABART!!!...(amazed) How did a human friend manage to do that?
+	AI_Output(other,self, " DIA_Urshak_BecomeShaman_01_05 " );	// I rendered the leader one invaluable service - in return, the leader agreed to fulfill my request.
+	AI_Output(self,other, " DIA_Urshak_BecomeShaman_01_06 " );	// Ur-Shak is very happy! Ur-Shak to say friend-man thank you very much!
+	AI_Output(other,self, " DIA_Urshak_BecomeShaman_01_07 " );	// Yes, okay. It wasn't that hard.
+	AI_Output(self,other, " DIA_Urshak_BecomeShaman_01_08 " );	// Ur-Shak will never forget a human friend and what to do he for Ur-Shak!
+	AI_Output(other,self, " DIA_Urshak_BecomeShaman_01_09 " );	// Now I have to go.
+	AI_Output(self,other, " DIA_Urshak_BecomeShaman_01_10 " );	// Okay, friend go. Ur-Shak prepare to return home - to the brothers.
 	URSHAKBECOMESHAMAN = TRUE;
 	MIS_UrshakShaman = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Urshak,LOG_SUCCESS);
-	B_LogEntry(TOPIC_Urshak,"Теперь Ур-Шак снова принадлежит к кругу шаманов.");
+	B_LogEntry(TOPIC_Urshak, " Now Ur-Shak belongs to the circle of shamans again. " );
 };
 
 
@@ -528,13 +529,13 @@ instance DIA_URSHAK_ORCORDER(C_Info)
 	condition = dia_urshak_orcorder_condition;
 	information = dia_urshak_orcorder_info;
 	permanent = FALSE;
-	description = "Ты можешь мне помочь в одном деле?";
+	description = " Can you help me with one thing? " ;
 };
 
 
 func int dia_urshak_orcorder_condition()
 {
-	if((MIS_ORCORDER == LOG_Running) && (Npc_HasItems(hero,itwr_orcsorder) >= 1) && (PlayerKnowsOrcLanguage == FALSE) && (KNOWSTARANBUILD == FALSE))
+	if (( MY_ORCORDER  == LOG_Running ) && ( Npc_HasItems ( hero , itwr_orcsorder ) >=  1 ) && ( PlayerKnowsOrcLanguage ==  FALSE ) && ( KNOWSTARANBUILD  ==  FALSE ));
 	{
 		return TRUE;
 	};
@@ -543,43 +544,43 @@ func int dia_urshak_orcorder_condition()
 func void dia_urshak_orcorder_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_00");	//Ты можешь мне помочь в одном деле?
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_01");	//Ур-Шак всегда готов помочь человек. Что Ур-Шак может сделать для друг?!
-	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_02");	//У меня есть вот это письмо - оно написано на языке орков.
-	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_03");	//Ты мог бы мне его прочитать?!
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_04");	//Хорошо! Друг давать письмо Ур-Шак - он читать и человек слушать.
-	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_05");	//Вот, держи.
+	AI_Output(other,self, " DIA_Urshak_OrcOrder_01_00 " );	// Can you help me with one thing?
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_01 " );	// Ur-Shak is always ready to help people. What can Ur-Shak do for a friend?!
+	AI_Output(other,self, " DIA_Urshak_OrcOrder_01_02 " );	// I have this letter - it is written in the orc language.
+	AI_Output(other,self, " DIA_Urshak_OrcOrder_01_03 " );	// Could you read it to me?!
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_04 " );	// Good! A friend to give a letter to Ur-Shak - he is to read and a man to listen.
+	AI_Output(other,self, " DIA_Urshak_OrcOrder_01_05 " );	// Here, take this.
 	B_GiveInvItems(other,self,itwr_orcsorder,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_06");	//...(смотрит на письмо) Здесь писать о большие планы орков на войну с человек.
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_07");	//ХРОТОК ЯБАРТ!!! Откуда у человек это письмо?!...(удивленно)
-	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_08");	//Случайно нашел! Лучше не останавливайся - читай все, что там написано.
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_06 " );	// ...(looks at the letter) Here to write about the orcs' big plans for war with humans.
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_07 " );	// HROTOK YABART!!! Where did the person get this letter?!...(surprised)
+	AI_Output(other,self, " DIA_Urshak_OrcOrder_01_08 " );	// Accidentally found! Better not stop - read everything that is written there.
 	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_09");	//Хммм...(смотрит на письмо)
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_10");	//Орки писать, что скоро прибывать сюда много сильных воинов и сражаться против людей.
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_11");	//Но братья сначала должны захватить большая крепость людей.
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_12");	//Без крепость орки не пойдут дальше воевать - нельзя идти сражаться, если сзади враги!
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_10 " );	// Orcs write that many strong warriors will soon arrive here and fight against people.
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_11 " );	// But the brothers must first capture the great human fortress.
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_12 " );	// Without a fortress, the orcs will not go further to fight - you can't go to fight if there are enemies behind!
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_13");	//Нужен большой таран, чтобы сломать стену и ворота!
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_14");	//Поэтому братья прислать отряд рабов, чтобы делать таран. Они идти скоро в большой лагерь орков.
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_13 " );	// Need a big battering ram to break down the wall and the gate!
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_14 " );	// Therefore, the brothers send a detachment of slaves to make a ram. They go soon to the big orc camp.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_15");	//Это все, что здесь писать...
-	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_16");	//Понятно. Так значит, орки хотят построить новый таран, чтобы штурмовать замок?!
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_17");	//Ур-Шак думать так.
-	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_18");	//Ладно! Спасибо за помощь.
-	B_LogEntry(TOPIC_ORCORDER,"Ур-Шак помог мне прочитать письмо. В нем говорится, что орки прислали отряд рабов, чтобы сделать новый таран для штурма замка. Судя по всему, этот отряд должен скоро прибыть в их лагерь у крепости. Теперь надо как можно скорее сообщить об этом Альберту.");
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_15 " );	// That's all there is to write...
+	AI_Output(other,self, " DIA_Urshak_OrcOrder_01_16 " );	// Got it. So the orcs want to build a new battering ram to storm the castle?!
+	AI_Output(self,other, " DIA_Urshak_OrcOrder_01_17 " );	// Ur-Shak think so.
+	AI_Output(other,self, " DIA_Urshak_OrcOrder_01_18 " );	// Okay! Thanks for the help.
+	B_LogEntry( TOPIC_ORCORDER , " Ur-Shak helped me read the letter. It says that the orcs have sent a squad of slaves to make a new battering ram to storm the castle. Apparently, this squad should soon arrive at their camp near the fortress. Now we need to report this to Albert as soon as possible. " );
 	KNOWSTARANBUILD = TRUE;
 };
 
 
-instance DIA_URSHAK_WAKONTEST(C_Info)
+instance DIA_URSHAK_WAKONTEST (C_Info)
 {
 	npc = NONE_110_Urshak;
 	nr = 6;
 	condition = dia_urshak_wakontest_condition;
 	information = dia_urshak_wakontest_info;
 	permanent = FALSE;
-	description = "Мне нужен твой совет, Ур-Шак.";
+	description = " I need your advice, Ur-Shak. " ;
 };
 
 
@@ -594,21 +595,21 @@ func int dia_urshak_wakontest_condition()
 func void dia_urshak_wakontest_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Urshak_WakonTest_01_00");	//Мне нужен твой совет, Ур-Шак.
-	AI_Output(self,other,"DIA_Urshak_WakonTest_01_01");	//Ур-Шак слушайть друга. Что друг хочет спросить?
-	AI_Output(other,self,"DIA_Urshak_WakonTest_01_02");	//Расскажи мне, что ты знаешь о Духе Воды?
-	AI_Output(self,other,"DIA_Urshak_WakonTest_01_03");	//Духе Воды?! Хммм...(задумчиво) Боюсь, что Ур-шак мало знать об этом. Мало слышать о нем!
-	AI_Output(self,other,"DIA_Urshak_WakonTest_01_04");	//Однако Ур-Шак думать, что знать - кто из братьев возможно сможет помочь человек.
-	AI_Output(other,self,"DIA_Urshak_WakonTest_01_05");	//И кто же это?!
-	AI_Output(self,other,"DIA_Urshak_WakonTest_01_06");	//Друг надо идти в горы к оркам! Там искать клан Большого Камня - быть большой лагерь и жить много орков.
-	AI_Output(self,other,"DIA_Urshak_WakonTest_01_07");	//Человек должен спрашивать там. Может кто-то поможет друг!
-	AI_Output(other,self,"DIA_Urshak_WakonTest_01_08");	//Но как мне туда добраться?!
-	AI_Output(self,other,"DIA_Urshak_WakonTest_01_09");	//Человек искать дорога в горы рядом со старым городом братьев, где раньше быть храм Крушак!
-	AI_Output(self,other,"DIA_Urshak_WakonTest_01_10");	//Друг идти высоко в горы, искать и находить большой лагерь.
-	AI_Output(other,self,"DIA_Urshak_WakonTest_01_11");	//Ладно, спасибо за помощь!
-	AI_Output(self,other,"DIA_Urshak_WakonTest_01_12");	//Ур-Шак всегда рад помочь друг человек.
+	AI_Output(other,self, " DIA_Urshak_WakonTest_01_00 " );	// I need your advice, Ur-Shak.
+	AI_Output(self,other, " DIA_Urshak_WakonTest_01_01 " );	// Ur-Shak listen to a friend. What does the friend want to ask?
+	AI_Output(other,self, " DIA_Urshak_WakonTest_01_02 " );	// Tell me what you know about the Water Spirit?
+	AI_Output(self,other, " DIA_Urshak_WakonTest_01_03 " );	// Spirit of Water?! Hmmm... (thoughtfully) I'm afraid Ur-shak doesn't know much about this. Not enough to hear about it!
+	AI_Output(self,other, " DIA_Urshak_WakonTest_01_04 " );	// However, Ur-Shak think that to know which of the brothers might be able to help a person.
+	AI_Output(other,self, " DIA_Urshak_WakonTest_01_05 " );	// And who is this?!
+	AI_Output(self,other, " DIA_Urshak_WakonTest_01_06 " );	// A friend must go to the mountains to the orcs! Look for the Big Stone clan there - be a big camp and live a lot of orcs.
+	AI_Output(self,other, " DIA_Urshak_WakonTest_01_07 " );	// The person should ask there. Can someone help a friend!
+	AI_Output(other,self, " DIA_Urshak_WakonTest_01_08 " );	// But how do I get there?!
+	AI_Output(self,other, " DIA_Urshak_WakonTest_01_09 " );	// A man is looking for a road to the mountains next to the old town of the brothers, where the Krushak temple used to be!
+	AI_Output(self,other, " DIA_Urshak_WakonTest_01_10 " );	// Friend go high into the mountains, search and find a big camp.
+	AI_Output(other,self, " DIA_Urshak_WakonTest_01_11 " );	// Okay, thanks for the help!
+	AI_Output(self,other, " DIA_Urshak_WakonTest_01_12 " );	// Ur-Shak is always happy to help a human friend.
 	URSHAKTELLWATERSOUL = TRUE;
-	B_LogEntry(TOPIC_WAKONTEST,"К большому моему сожалению, Ур-Шак ничего не знает о Духе Воды. Но он посоветовал мне отравиться высоко в горы за Храм Спящего, где находится большой лагерь клана Большого Камня. Возможно там я смогу узнать больше по интересующей меня теме.");
+	B_LogEntry( TOPIC_WAKONTEST , " Much to my regret, Ur-Shak doesn't know anything about the Spirit of Water. But he advised me to travel high into the mountains behind the Temple of the Sleeper, where the Big Stone clan's large camp is located. Perhaps there I can learn more about the topic that interests me . " );
 };
 
 
@@ -617,7 +618,7 @@ instance DIA_URSHAK_MEETINCASTLE(C_Info)
 	npc = NONE_110_Urshak;
 	nr = 1;
 	condition = dia_urshak_meetincastle_condition;
-	information = dia_urshak_meetincastle_info;
+	information = dia_urshak_meetingcastle_info;
 	permanent = FALSE;
 	important = TRUE;
 };
@@ -633,13 +634,13 @@ func int dia_urshak_meetincastle_condition()
 
 func void dia_urshak_meetincastle_info()
 {
-	AI_Output(self,other,"DIA_Urshak_MeetInCastle_01_00");	//Ур-Шак видеть друг-человек прийти в замок! Зачем он это делать?!
-	AI_Output(other,self,"DIA_Urshak_MeetInCastle_01_01");	//Значит, ты тоже здесь. Не ожидал тебя тут встретить!
-	AI_Output(self,other,"DIA_Urshak_MeetInCastle_01_02");	//Почему человек так удивляться?!...(непонимающе)
-	AI_Output(self,other,"DIA_Urshak_MeetInCastle_01_03");	//Ур-Шак быть теперь шаман, вернуться к братьям и идти воевать вместе с ними.
-	AI_Output(self,other,"DIA_Urshak_MeetInCastle_01_04");	//Однако друг знать, что Ур-Шак никогда не хотеть этого. Всегда говорить братьям не убивать человек!
-	AI_Output(self,other,"DIA_Urshak_MeetInCastle_01_05");	//Но орки опять не слушать Ур-Шак! Поэтому Ур-Шак бояться, что снова заставить братья гневаться.
-	AI_Output(other,self,"DIA_Urshak_MeetInCastle_01_06");	//Ладно! Я тебя не виню.
+	AI_Output(self,other, " DIA_Urshak_MeetInCastle_01_00 " );	// Ur-Shak see a human friend come to the castle! Why would he do this?!
+	AI_Output(other,self, " DIA_Urshak_MeetInCastle_01_01 " );	// So you're here too. Didn't expect to meet you here!
+	AI_Output(self,other, " DIA_Urshak_MeetInCastle_01_02 " );	// Why is a person so surprised?!...(uncomprehending)
+	AI_Output(self,other, " DIA_Urshak_MeetInCastle_01_03 " );	// Ur-Shak is now a shaman, return to the brothers and go to fight with them.
+	AI_Output(self,other, " DIA_Urshak_MeetInCastle_01_04 " );	// However, friend know that Ur-Shak will never want this. Always tell brothers not to kill people!
+	AI_Output(self,other, " DIA_Urshak_MeetInCastle_01_05 " );	// But the orcs won't listen to Ur-Shak again! Therefore, Ur-Shak is afraid to make the brothers angry again.
+	AI_Output(other,self, " DIA_Urshak_MeetInCastle_01_06 " );	// Okay! I don't blame you.
 	MEETURSHAKALREADY = TRUE;
 };
 
@@ -651,13 +652,13 @@ instance DIA_URSHAK_ORCSAVEPEOPLE(C_Info)
 	condition = dia_urshak_orcsavepeople_condition;
 	information = dia_urshak_orcsavepeople_info;
 	permanent = FALSE;
-	description = "Почему орки не убили паладинов?";
+	description = " Why didn't the orcs kill the paladins? " ;
 };
 
 
 func int dia_urshak_orcsavepeople_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_urshak_meetincastle) && (MIS_ORсGREATWAR == LOG_Running) && (URSHAKBECOMESHAMAN == TRUE) && (KNOWABOUTGAROND == TRUE))
+	if ( Npc_KnowsInfo ( hero , dia_urshak_meetingcastle ) && ( MIS_OR с GREATWAR  == LOG_Running ) && ( URSHAKBECOMESHAMAN  ==  TRUE ) && ( KNOWABOUTGAROND  ==  TRUE ))
 	{
 		return TRUE;
 	};
@@ -666,21 +667,21 @@ func int dia_urshak_orcsavepeople_condition()
 func void dia_urshak_orcsavepeople_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Urshak_OrcSavePeople_01_01");	//Почему орки не убили всех паладинов?
-	AI_Output(self,other,"DIA_Urshak_OrcSavePeople_01_02");	//Это друг говорить Ур-Шак спасибо. Ур-Шак спасать люди!
-	AI_Output(self,other,"DIA_Urshak_OrcSavePeople_01_03");	//Он говорить братьям не трогать человек - говорить, что они могут быть полезный.
-	AI_Output(self,other,"DIA_Urshak_OrcSavePeople_01_04");	//Потому что быть не простой люди, быть паладин! Быть сильный воин.
-	AI_Output(other,self,"DIA_Urshak_OrcSavePeople_01_05");	//Но почему они в этот раз тебя послушали?
-	AI_Output(self,other,"DIA_Urshak_OrcSavePeople_01_06");	//Ур-Шак быть шаман и говорить с духами. Духи говорить Ур-Шак, что нельзя убивать эти люди.
-	AI_Output(self,other,"DIA_Urshak_OrcSavePeople_01_07");	//Он говорить об этом вождь. Тот слушать и решать, что Ур-Шак быть прав!
-	AI_Output(other,self,"DIA_Urshak_OrcSavePeople_01_08");	//Мда...интересно! Не думал, что такое возможно.
-	AI_Output(self,other,"DIA_Urshak_OrcSavePeople_01_09");	//Друг не верить мне?...(удивленно) Почему?!
-	AI_Output(other,self,"DIA_Urshak_OrcSavePeople_01_10");	//Нет, я тебе верю. И хочу сказать тебе огромное спасибо за твою помощь!
-	AI_Output(self,other,"DIA_Urshak_OrcSavePeople_01_11");	//ХАТ ТАР!!!...(довольно) Ур-Шак говорить друг - пожалуйста.
+	AI_Output(other,self, " DIA_Urshak_OrcSavePeople_01_01 " );	// Why didn't the orcs kill all the paladins?
+	AI_Output(self,other, " DIA_Urshak_OrcSavePeople_01_02 " );	// It's a friend saying Ur-Shak thanks. Ur-Shak save people!
+	AI_Output(self,other, " DIA_Urshak_OrcSavePeople_01_03 " );	// He tells the brothers not to touch the people - to say that they can be useful.
+	AI_Output(self,other, " DIA_Urshak_OrcSavePeople_01_04 " );	// Because to be not simple people, to be a paladin! Be a strong warrior.
+	AI_Output(other,self, " DIA_Urshak_OrcSavePeople_01_05 " );	// But why did they listen to you this time?
+	AI_Output(self,other, " DIA_Urshak_OrcSavePeople_01_06 " );	// Ur-Shak be a shaman and speak with the spirits. The spirits tell Ur-Shak that these people should not be killed.
+	AI_Output(self,other, " DIA_Urshak_OrcSavePeople_01_07 " );	// He talk about it leader. The one to listen and decide that Ur-Shak be right!
+	AI_Output(other,self, " DIA_Urshak_OrcSavePeople_01_08 " );	// Hmm...interesting! Didn't think it was possible.
+	AI_Output(self,other, " DIA_Urshak_OrcSavePeople_01_09 " );	// Friend doesn't believe me?...(surprised) Why?!
+	AI_Output(other,self, " DIA_Urshak_OrcSavePeople_01_10 " );	// No, I believe you. And I want to thank you so much for your help!
+	AI_Output(self,other, " DIA_Urshak_OrcSavePeople_01_11 " );	// HAT TAR!!!...(pretty) Ur-Shak say friend - please.
 	URSHAKTELLPALADIN = TRUE;
 	if(MIS_NEWSSURVIVERS == LOG_Running)
 	{
-		B_LogEntry(TOPIC_NEWSSURVIVERS,"Теперь все ясно! Паладины обязаны жизнью моему другу Ур-Шаку. Будучи в статусе шамана, он смог повлиять на решение военачальников орков, чтобы те не стали убивать пленников. Иногда я крайне рад тому обстоятельству, что когда-то сам спас жизнь этому орку!");
+		B_LogEntry( TOPIC_NEWSSURVIVERS , " It's all clear now! Paladins owe their lives to my friend Ur-Shak. Being in the status of a shaman, he was able to influence the decision of orc warlords so that they would not begin to kill captives. Sometimes I am extremely glad that I once saved that orc's life! " );
 	};
 };
 
@@ -692,13 +693,13 @@ instance DIA_URSHAK_HELPSAVEPEOPLE(C_Info)
 	condition = dia_urshak_helpsavepeople_condition;
 	information = dia_urshak_helpsavepeople_info;
 	permanent = FALSE;
-	description = "Ты можешь мне помочь освободить паладинов?";
+	description = " Can you help me free the paladins? " ;
 };
 
 
 func int dia_urshak_helpsavepeople_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_urshak_meetincastle) && (MIS_ORсGREATWAR == LOG_Running) && (URSHAKBECOMESHAMAN == TRUE) && (KNOWABOUTGAROND == TRUE) && (CASTLEISFREE == FALSE) && (PALADINCASTELFREE == FALSE) && (BOGNARTALK == FALSE) && (MIS_STURMCASTLE == FALSE) && (ORCLEADERISDEAD == FALSE))
+	if (Npc_KnowsInfo(hero,dia_urshak_meetincastle) && ( MIS_OR с GREATWAR  == LOG_Running) && ( URSHAKBECOMESHAMAN  ==  TRUE ) && ( KNOWABOUTGAROND  ==  TRUE ) && ( CASTLEISFREE  ==  FALSE ) && ( PALADINCASTELFREE  ==  FALSE ) && ( AL= .BOGNART  );  FALSE ) && ( MY_STURMCASTLE  ==  FALSE ) && (ORCLEADERISDEAD == FALSE))
 	{
 		return TRUE;
 	};
@@ -706,40 +707,40 @@ func int dia_urshak_helpsavepeople_condition()
 
 func void dia_urshak_helpsavepeople_info()
 {
-	AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_01");	//Ты можешь мне помочь освободить паладинов?
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_02");	//Хммм...(задумчиво) Ур-Шак бояться, что не знать - как он может это сделать.
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_03");	//Если Ур-Шак говорить братьям отпускать люди, то они убивать Ур-Шак! Ур-Шак становиться мертвый.
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_04");	//Ур-Шак не хотеть гневить братья, не хотеть становиться мертвый.
-	AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_05");	//Я тебя понимаю! Ладно, значит придется самому об этом подумать.
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_06");	//Однако друг не спешить...(задумчиво) Может быть Ур-Шак все-таки знать, как человек может освободить люди.
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_07");	//Но человек должен делать все сам. Ур-Шак не помогать человек!
-	AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_08");	//Так у тебя появилась идея? И какая же?!
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_09");	//Человек должен идти и говорить с Хаг-Тар! Думать, он может отпускать люди.
+	AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_01 " );	// Can you help me free the paladins?
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_02 " );	// Hmmm...(thoughtfully) Ur-Shak is afraid not to know how he can do it.
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_03 " );	// If Ur-Shak tells brothers to let people go, then they will kill Ur-Shak! Ur-Shak becomes dead.
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_04 " );	// Ur-Shak does not want to anger the brothers, does not want to become dead.
+	AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_05 " );	// I understand you! Okay, so you'll have to think about it yourself.
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_06 " );	// However, friend, take your time...(thoughtfully) Maybe Ur-Shak still knows how a person can free people.
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_07 " );	// But a person must do everything himself. Ur-Shak don't help the man!
+	AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_08 " );	// So you got the idea? And what is it?!
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_09 " );	// A man must go and speak with Hag-Tar! Think he can let people go.
 	if(Npc_KnowsInfo(other,dia_orc_8566_urhan_hello))
 	{
-		AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_10");	//Ах да! Я уже встречался с ним. И что мне ему сказать?!
+		AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_10 " );	// Oh yeah! I've already met him. And what should I tell him?
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_11");	//Кто такой Хаг-Тар?!
-		AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_12");	//Быть главный воин здесь! Говорить всем братьям, что делать.
-		AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_13");	//И что мне ему сказать?!
+		AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_11 " );	// Who is Hag-Tar?!
+		AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_12 " );	// Be the main warrior here! Tell all brothers what to do.
+		AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_13 " );	// And what should I tell him?!
 	};
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_14");	//То, что хотеть услышать Хаг-Тар! Ур-Шак думать, что знать это.
-	AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_15");	//Может быть тогда мне расскажешь об этом?!
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_16");	//Хорошо! Ур-Шак когда-то слышать, как Хаг-Тар говорить о том - что всегда хотеть быть вождь братьев.
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_17");	//Однако у братьев уже быть вождь - звать Ур-Тралл, быть великий воин!
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_18");	//Поэтому Хаг-Тар злиться и хотеть его смерть. Если Ур-Тралл умереть - Хаг-Тар сам становиться вождь!
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_19");	//Но Хаг-Тар всегда бояться сражаться с Ур-Тралл, поскольку он быть самый сильный воин - сильнее всех братьев, сильнее Хаг-Тар!
-	AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_20");	//Так ты хочешь, чтобы я предложил Хаг-Тару убить вашего вождя?!
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_21");	//Быть так! Ур-Шак думать, что за это Хаг-Тар может освободить люди.
-	AI_Output(self,other,"DIA_Urshak_HelpSavePeople_01_22");	//Но человек решать сам! Ур-Шак только говорить друг, а друг думать.
-	AI_Output(other,self,"DIA_Urshak_HelpSavePeople_01_23");	//Понятно. Ладно, я подумаю над этим!
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_14 " );	// What you want to hear Hag-Tar! Ur-Shak think to know it.
+	AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_15 " );	// Maybe then you can tell me about it?!
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_16 " );	// Good! Ur-Shak used to hear how Hag-Tar talk about - that always want to be the leader of the brothers.
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_17 " );	// However, the brothers already have a leader - call Ur-Thrall, be a great warrior!
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_18 " );	// Therefore, Hag-Tar is angry and wants his death. If Ur-Thrall dies - Hag-Thar himself becomes a leader!
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_19 " );	// But Hag-Tar is always afraid to fight Ur-Thrall, because he is the strongest warrior - stronger than all brothers, stronger than Hag-Tar!
+	AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_20 " );	// So you want me to suggest that Hag-Tar kill your leader?!
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_21 " );	// Be like this! Ur-Shak think that for this Hag-Tar can free the people.
+	AI_Output(self,other, " DIA_Urshak_HelpSavePeople_01_22 " );	// But the person decides for himself! Ur-Shak only speak a friend, and a friend think.
+	AI_Output(other,self, " DIA_Urshak_HelpSavePeople_01_23 " );	// Got it. Okay, I'll think about it!
 	URSHAKTELLSSECRET = TRUE;
 
 	if(MIS_NEWSSURVIVERS == LOG_Running)
 	{
-		B_LogEntry(TOPIC_NEWSSURVIVERS,"Ур-Шак рассказал мне одну очень интересную вещь. Хаг-Тар - главный военачальник в крепости, всегда хотел стать вождем орков. Но у тех уже есть вождь - Ур-Тралл и пока он жив, Хаг-Тару никогда не осуществить им задуманное. Думаю, что возможно Хаг-Тара заинтересует моя помощь в этом деле и впоследствии он согласиться отпустить пленных паладинов.");
+		B_LogEntry( TOPIC_NEWSSURVIVERS , " Ur-Shak told me something very interesting. Hag-Thar is the chief commander of the fortress, always wanted to become the leader of the orcs. But they already have a leader - Ur-Thrall and as long as he lives, Hag-Thar will never to carry out his plan. I think that perhaps Hag-Tar will be interested in my help in this matter and subsequently he will agree to release the captive paladins. " );
 	};
 };
 
@@ -749,7 +750,7 @@ instance DIA_Urshak_OrcLanguage(C_Info)
 	condition = DIA_Urshak_OrcLanguage_condition;
 	information = DIA_Urshak_OrcLanguage_info;
 	permanent = FALSE;
-	description = "Ты можешь научить меня языку орков?";
+	description = " Can you teach me the orc language? " ;
 };
 
 func int DIA_Urshak_OrcLanguage_condition()
@@ -762,11 +763,11 @@ func int DIA_Urshak_OrcLanguage_condition()
 
 func void DIA_Urshak_OrcLanguage_info()
 {
-	AI_Output(other,self,"DIA_Urshak_OrcLanguage_01_01");	//Ты можешь научить меня языку орков?
-	AI_Output(self,other,"DIA_Urshak_OrcLanguage_01_02");	//Хммм...(с интересом) А зачем человек хотеть знать наш язык?
-	AI_Output(other,self,"DIA_Urshak_OrcLanguage_01_03");	//Мне надо поговорить с одним орком, но я не понимаю, что он мне говорит!
-	AI_Output(self,other,"DIA_Urshak_OrcLanguage_01_04");	//Ур-Шак понимать человек...(одобрительно) Быть так! Он научить человека языку братов.
-	AI_Output(self,other,"DIA_Urshak_OrcLanguage_01_05");	//Если конечно у того хватить опыта.
+	AI_Output(other,self, " DIA_Urshak_OrcLanguage_01_01 " );	// Can you teach me the orc language?
+	AI_Output(self,other, " DIA_Urshak_OrcLanguage_01_02 " );	// Hmmm... (with interest) Why would a person want to know our language?
+	AI_Output(other,self, " DIA_Urshak_OrcLanguage_01_03 " );	// I need to talk to an orc, but I don't understand what he's telling me!
+	AI_Output(self,other, " DIA_Urshak_OrcLanguage_01_04 " );	// Ur-Shak to understand a person... (approvingly) Be so! He will teach a man the language of the brothers.
+	AI_Output(self,other, " DIA_Urshak_OrcLanguage_01_05 " );	// Unless, of course, that person has enough experience.
 };
 
 instance DIA_Urshak_OrcLanguageTeach(C_Info)
@@ -775,7 +776,7 @@ instance DIA_Urshak_OrcLanguageTeach(C_Info)
 	condition = DIA_Urshak_OrcLanguageTeach_condition;
 	information = DIA_Urshak_OrcLanguageTeach_info;
 	permanent = TRUE;
-	description = "Научи меня языку орков. (Очки обучения: 10)";
+	description = " Teach me the orcish language. (Learning points: 10) " ;
 };
 
 func int DIA_Urshak_OrcLanguageTeach_condition()
@@ -788,28 +789,28 @@ func int DIA_Urshak_OrcLanguageTeach_condition()
 
 func void DIA_Urshak_OrcLanguageTeach_info()
 {
-	AI_Output(other,self,"DIA_Urshak_OrcLanguageTeach_01_01");	//Научи меня языку орков.
+	AI_Output(other,self, " DIA_Urshak_OrcLanguageTeach_01_01 " );	// Teach me the language of orcs.
 
 	if(other.lp >= 10)
 	{
 		other.lp = other.lp - 10;
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_02");	//Хорошо...(серьезно) Тогда человек слушать и запоминать, что сказать ему Ур-Шак.
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_07");	//Язык орков быть не похожий на язык друг человек. 
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_08");	//Он быть намного древней и красивее.
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_09");	//В нем быть много короткий слово, мало длинный слово.
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_10");	//Каждый слово означать что-то свое! Когда говорить много слово, то братам становиться понятна общая картина сказаного.
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_04");	//Это все, что тебе следует знать о языке орков!
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_05");	//Теперь, ты сможешь читать наши письмена и понимать нашу речь.
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_02 " );	// Okay...(seriously) Then the man listen and memorize what Ur-Shak tell him.
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_07 " );	// The language of the orcs is not like the language of a friend of man.
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_08 " );	// It will be much more ancient and more beautiful.
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_09 " );	// It has many short words, few long words.
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_10 " );	// Each word means something different! When you say a lot of words, the brothers understand the overall picture of what was said.
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_04 " );	// That's all you need to know about the orc language!
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_05 " );	// Now, you can read our letters and understand our speech.
 		AI_Output(other,self,"DIA_Urshak_OrcLanguageTeach_01_06");	//Отлично!
 		PlayerKnowsOrcLanguage = TRUE;
-		AI_Print("Изучен язык орков...");
+		AI_Print( " Orc language learned... " );
 		Snd_Play("LevelUP");
 		Log_CreateTopic(TOPIC_Language,LOG_NOTE);
-		B_LogEntry(TOPIC_Language,"Теперь я знаю язык орков.");
+		B_LogEntry(TOPIC_Language, " Now I know the orc language. " );
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_07");	//Для этого у тебя не хватать опыта, человек!
-		AI_Output(self,other,"DIA_Urshak_OrcLanguageTeach_01_08");	//Приходи позже, когда его наберешься.
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_07 " );	// You don't have the experience for that, human!
+		AI_Output(self,other, " DIA_Urshak_OrcLanguageTeach_01_08 " );	// Come back later when you've got it.
 	};
 };
