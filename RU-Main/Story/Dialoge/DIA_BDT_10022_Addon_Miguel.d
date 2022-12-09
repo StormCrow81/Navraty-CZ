@@ -116,7 +116,7 @@ func void DIA_Addon_Miguel_Hi_Info()
 	};
 	AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_04 " );	// Most of them can be used.
 	AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_05 " );	// Many plants have medicinal properties, and swamp grass makes excellent shoals.
-	AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_06 " );	// Before I got behind the Barrier, I worked as an alchemist.
+	AI_Output(self,other, " DIA_Addon_Miguel_Hi_11_06 " );	// Before I went behind the Barrier, I worked as an alchemist.
 };
 
 
@@ -127,7 +127,7 @@ instance DIA_Addon_Miguel_Story(C_Info)
 	condition = DIA_Addon_Miguel_Story_Condition;
 	information = DIA_Addon_Miguel_Story_Info;
 	permanent = FALSE;
-	description = " Why are you behind the Barrier? " ;
+	description = " Why were you behind the Barrier? " ;
 };
 
 
@@ -142,11 +142,11 @@ func int DIA_Addon_Miguel_Story_Condition()
 
 func void DIA_Addon_Miguel_Story_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Miguel_Story_15_00 " );	// And why did you end up behind the Barrier?
-	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_01 " );	// I've been working on mind-affecting potions a lot.
-	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_02 " );	// One evening my boss Ignaz drank the result of my 'experiment' instead of his wine.
+	AI_Output(other,self, " DIA_Addon_Miguel_Story_15_00 " );	// Why did you end up behind the Barrier?
+	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_01 " );	// I'd been working on mind-affecting potions for a long time.
+	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_02 " );	// One evening my boss Ignaz drank the result of one of my recent 'experiments' instead of his wine.
 	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_03 " );	// This made him... uh... unpredictable for a while, and he's been a little out of sorts ever since.
-	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_04 " );	// (fakely) For this, the magicians threw me over the Barrier. 'Research on forbidden knowledge,' is what they called it.
+	AI_Output(self,other, " DIA_Addon_Miguel_Story_11_04 " );	// For this, the magicians threw me through the Barrier. 'Dangerous Research,' is what they called it.
 };
 
 
@@ -172,8 +172,8 @@ func int DIA_Addon_Miguel_Lager_Condition()
 func void DIA_Addon_Miguel_Lager_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Miguel_Lager_15_00 " );	// Tell me about the camp.
-	AI_Output(self,other, " DIA_Addon_Miguel_Lager_11_01 " );	// I don't know much. I myself have never been there.
-	AI_Output(self,other, " DIA_Addon_Miguel_Lager_11_02 " );	// Only Crow's people have been there since the beginning. Everyone else, those who came later like me, have to wait until they need new people.
+	AI_Output(self,other, " DIA_Addon_Miguel_Lager_11_01 " );	// I don't know much. I've never been there.
+	AI_Output(self,other, " DIA_Addon_Miguel_Lager_11_02 " );	// Only Crow's people have been there since the beginning. Everyone else, those who came later like me, have to wait until they need replacements.
 };
 
 
@@ -200,9 +200,9 @@ func int DIA_Addon_Miguel_WhereFrom_Condition()
 func void DIA_Addon_Miguel_WhereFrom_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Miguel_WhereFrom_15_00 " );	// Where did you come from?
-	AI_Output(self,other, " DIA_Addon_Miguel_WhereFrom_11_01 " );	// Well, from the same place as you, I think. With pirates. Through the sea.
-	AI_Output(self,other, " DIA_Addon_Miguel_WhereFrom_11_02 " );	// We're on an island. There is no other connection to the mainland.
-	AI_Output(other,self, " DIA_Addon_Miguel_WhereFrom_15_03 " );	// (thoughtfully) Right.
+	AI_Output(self,other, " DIA_Addon_Miguel_WhereFrom_11_01 " );	// Well, from the same place as you, I think. With the pirates. Over the sea.
+	AI_Output(self,other, " DIA_Addon_Miguel_WhereFrom_11_02 " );	// We're on an island right? There is no other connection to the mainland.
+	AI_Output(other,self, " DIA_Addon_Miguel_WhereFrom_15_03 " );	// Right.
 };
 
 
@@ -229,10 +229,10 @@ func int DIA_Addon_Miguel_Requested_Condition()
 func void DIA_Addon_Miguel_Angefordert_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Miguel_Angefordert_15_00 " );	// When do they need new people?
-	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_01 " );	// Well, when they lose someone.
-	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_02 " );	// If a miner eats a crawler, the lost worker is replaced with one of us.
-	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_03 " );	// Sometimes they kill each other themselves. But lately it's been easier.
-	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_04 " );	// Raven has somehow established control over the mine so that everyone can't get in at once.
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_01 " );	// When someone croaks and has to be replaced, mostly.
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_02 " );	// If a crawler eats a miner, the lost worker is replaced with one of us.
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_03 " );	// Sometimes they kill each other too, but lately it's been easier.
+	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_04 " );	// Raven has established control over the mine so that everyone can't get in at once.
 	AI_Output(self,other, " DIA_Addon_Miguel_Angefordert_11_05 " );	// But I don't know what exactly he did. I have never been inside.
 };
 
@@ -260,11 +260,11 @@ func int DIA_Addon_Miguel_Fortuno_Condition()
 func void DIA_Addon_Miguel_Fortuno_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_00 " );	// Fortuno is not all right in the head! He could drink the potion and regain his memory.
-	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_01 " );	// Fortuno? It's the Crow's servant, right?
-	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_02 " );	// He was. Now he's just a jerk. And this is Raven's fault.
-	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_03 " );	// Crow? Hmm, so far I've thought better of him. Mm, okay. But here in the swamp, I can't brew the potion.
-	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_04 " );	// I can brew a potion. There is an alchemist's table in the camp. I only need a prescription.
-	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_05 " );	// Be careful with this recipe. This potion can be dangerous.
+	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_01 " );	// Fortuno? Crow's servant?
+	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_02 " );	// He was. Now he's just another unstable headcase.
+	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_03 " );	// Mm, okay. But here in the swamp, I can't brew the potion, no Alchemist's table.
+	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_04 " );	// There is one in the camp. I can do it if you show me how.
+	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_05 " );	// Alright, but be careful with this recipe. This potion can be dangerous.
 	B_GiveInvItems(self,other,ITWr_Addon_MCELIXIER_01,1);
 	AI_Output(self,other, " DIA_Addon_Miguel_Fortuno_11_06 " );	// If you brew it the wrong way, or use the wrong ingredient, it can be deadly.
 	AI_Output(other,self, " DIA_Addon_Miguel_Fortuno_15_07 " );	// I'll be careful.
@@ -298,7 +298,7 @@ func void DIA_Addon_Miguel_BRAU_Info()
 	AI_Output(self,other, " DIA_Addon_Miguel_BRAU_11_01 " );	// I don't have time. I need to earn gold. And while I can't get to the camp, I live by selling plants.
 	AI_Output(self,other, " DIA_Addon_Miguel_BRAU_11_02 " );	// But if you need potions, I still have a few.
 	Log_CreateTopic(Topic_Addon_BDT_Trader,LOG_NOTE);
-	B_LogEntry(Topic_Addon_BDT_Trader, " I can buy drinks and plants from Miguel. " );
+	B_LogEntry(Topic_Addon_BDT_Trader, " I can buy potions and plants from Miguel. " );
 };
 
 
@@ -323,9 +323,9 @@ func int dia_addon_miguel_dragons_condition()
 func void dia_addon_miguel_dragons_info()
 {
 	AI_Output(other,self, " DIA_Addon_Miguel_Dragons_15_00 " );	// How are you?
-	AI_Output(self,other, " DIA_Addon_Miguel_Dragons_10_01 " );	// Everything is quiet here. And you haven't been seen for a long time.
-	AI_Output(other,self, " DIA_Addon_Miguel_Dragons_15_02 " );	// Yes, all things, things - in general, you understand.
-	AI_Output(self,other, " DIA_Addon_Miguel_Dragons_10_07 " );	// Got it. By the way, I recently found one rare plant here. Perhaps it will interest you.
+	AI_Output(self,other, " DIA_Addon_Miguel_Dragons_10_01 " );	// Everything is quiet here. You haven't been around for a long time?
+	AI_Output(other,self, " DIA_Addon_Miguel_Dragons_15_02 " );	// I've been... busy. You understand.
+	AI_Output(self,other, " DIA_Addon_Miguel_Dragons_10_07 " );	// Sure, sure. By the way, I recently found a very rare plant a ways from here. Perhaps it will interest you.
 	CreateInvItems(self,ItPl_Perm_Herb,1);
 };
 
