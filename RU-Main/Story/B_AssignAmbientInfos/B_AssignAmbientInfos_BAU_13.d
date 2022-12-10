@@ -43,8 +43,8 @@ func int DIA_BAU_13_JOIN_Condition()
 func void DIA_BAU_13_JOIN_Info()
 {
 	AI_Output(other,self, " DIA_BAU_13_JOIN_15_00 " );	// Tell me more about these mercenaries!
-	AI_Output(self,other, " DIA_BAU_13_JOIN_13_01 " );	// If you have any problems with them, go to Lee. We farmers do this all the time. He keeps his people in a tight grip.
-	AI_Output(self,other, " DIA_BAU_13_JOIN_13_02 " );	// If any of them misbehave, they risk getting into trouble.
+	AI_Output(self,other, " DIA_BAU_13_JOIN_13_01 " );	// If you have any problems with them, go to Lee. We farmers do this all the time. He keeps his people on a tight leash.
+	AI_Output(self,other, " DIA_BAU_13_JOIN_13_02 " );	// If any of them misbehave too badly, they risk getting into trouble.
 };
 
 
@@ -77,7 +77,7 @@ instance DIA_BAU_13_LOCATION(C_Info)
 	condition = DIA_BAU_13_LOCATION_Condition;
 	information = DIA_BAU_13_LOCATION_Info;
 	permanent = TRUE;
-	description = " What can you say about this area? " ;
+	description = " What can you tell me about this area? " ;
 };
 
 
@@ -88,7 +88,7 @@ func int DIA_BAU_13_LOCATION_Condition()
 
 func void DIA_BAU_13_LOCATION_Info()
 {
-	AI_Output(other,self, " DIA_BAU_13_LOCATION_15_00 " );	// What can you say about this area?
+	AI_Output(other,self, " DIA_BAU_13_LOCATION_15_00 " );	// What can you tell me about this area?
 	AI_Output(self,other, " DIA_BAU_13_LOCATION_13_01 " );	// There are three farms here. Onar's farm to the east and Sekoba's to the north at the end of the valley.
 	AI_Output(self,other, " DIA_BAU_13_LOCATION_13_02 " );	// In the southwest there is a passage to a high plateau. Bengar's farm is located there.
 };
@@ -114,7 +114,7 @@ func void DIA_BAU_13_STANDARD_Info()
 	AI_Output(other,self, " DIA_BAU_13_STANDARD_15_00 " );	// What's new?
 	if (chapter ==  1 )
 	{
-		AI_Output(self,other, " DIA_BAU_13_STANDARD_13_01 " );	// Troops from the city no longer take our crops and livestock! They didn't want to play this game when we started defending!
+		AI_Output(self,other, " DIA_BAU_13_STANDARD_13_01 " );	// Troops from the city no longer take our crops and livestock! They didn't want to play that game anymore when we started defending ourselves.
 	};
 	if (chapter ==  2 )
 	{
@@ -126,7 +126,7 @@ func void DIA_BAU_13_STANDARD_Info()
 	};
 	if (chapter ==  4 )
 	{
-		AI_Output(self,other, " DIA_BAU_13_STANDARD_13_04 " );	// They even say that the bandits from the mountains went to the Valley of Mines. Well, it's too dangerous for me.
+		AI_Output(self,other, " DIA_BAU_13_STANDARD_13_04 " );	// They say that the bandits from the mountains went to the Valley of Mines. No idea why.
 	};
 	if (chapter ==  5 )
 	{
