@@ -40,7 +40,7 @@ func int DIA_Liesel_Hallo_Condition()
 
 func void DIA_Liesel_Hello_Info()
 {
-	AI_Output(other,self, " DIA_Liesel_Hallo_15_00 " );	// Hello... (clears throat) sheep.
+	AI_Output(other,self, " DIA_Liesel_Hallo_15_00 " );	// Hello... sheep.
 	B_LieselMaeh();
 };
 
