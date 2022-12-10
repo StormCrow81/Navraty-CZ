@@ -46,11 +46,11 @@ func void DIA_MIL_7_JOIN_Info()
 	if(Player_IsApprentice == APP_NONE)
 	{
 		AI_Output(self,other, " DIA_MIL_7_JOIN_07_01 " );	// You're not even a citizen of Khorinis! What makes you think that Lord Andre will take you?
-		AI_Output(self,other, " DIA_MIL_7_JOIN_07_02 " );	// So everyone could step in, get weapons and armor for free, and then disappear with them!
+		AI_Output(self,other, " DIA_MIL_7_JOIN_07_02 " );	// Otherwise everyone could walk in, get weapons and armor for free, and then disappear with them!
 		if(C_NpcIsInQuarter(self) != Q_KASERNE)
 		{
 			AI_Output(other,self, " DIA_MIL_7_JOIN_15_03 " );	// But I'm serious!
-			AI_Output(self,other, " DIA_MIL_7_JOIN_07_04 " );	// Don't explain it to me, try explaining it to Lord Andre. You will find him in the barracks.
+			AI_Output(self,other, " DIA_MIL_7_JOIN_07_04 " );	// Don't explain it to me, explain it to Lord Andre. You will find him in the barracks.
 		};
 	}
 	else
@@ -66,7 +66,7 @@ instance DIA_MIL_7_PEOPLE(C_Info)
 	condition = DIA_MIL_7_PEOPLE_Condition;
 	information = DIA_MIL_7_PEOPLE_Info;
 	permanent = TRUE;
-	description = " What do you know about paladins? " ;
+	description = " What do you know about the paladins? " ;
 };
 
 
@@ -81,10 +81,10 @@ func int DIA_MIL_7_PEOPLE_Condition()
 
 func void DIA_MIL_7_PEOPLE_Info()
 {
-	AI_Output(other,self, " DIA_MIL_7_PEOPLE_15_00 " );	// What do you know about paladins?
+	AI_Output(other,self, " DIA_MIL_7_PEOPLE_15_00 " );	// What do you know about the paladins?
 	AI_Output(self,other, " DIA_MIL_7_PEOPLE_07_01 " );	// Not much. No one really knows why they are here. Even those who are part of the city guard.
 	AI_Output(self,other, " DIA_MIL_7_PEOPLE_07_02 " );	// They took all the power in the city into their own hands. They expelled the head of the city from the meeting room and the judge from his chamber.
-	AI_Output(self,other, " DIA_MIL_7_PEOPLE_07_03 " );	// If you're interested in my opinion - that's even good. Those pompous asses should have been taught a lesson.
+	AI_Output(self,other, " DIA_MIL_7_PEOPLE_07_03 " );	// If you're interested in my opinion - all this is a good thing. Those pompous asses needed to be taught a lesson.
 };
 
 
@@ -106,10 +106,10 @@ func int DIA_MIL_7_LOCATION_Condition()
 func void DIA_MIL_7_LOCATION_Info()
 {
 	AI_Output(other,self, " DIA_MIL_7_LOCATION_15_00 " );	// What can I do in the city?
-	AI_Output(self,other, " DIA_MIL_7_LOCATION_07_01 " );	// If you don't want to end up in a gutter in a port, find a permanent job. Ask in the lower part of the city - you might be lucky.
-	AI_Output(self,other, " DIA_MIL_7_LOCATION_07_02 " );	// If you plan to stay in the city for a long time, you should consider joining the militia, or at least train in martial arts.
+	AI_Output(self,other, " DIA_MIL_7_LOCATION_07_01 " );	// If you don't want to end up in a gutter in the port, find a permanent job. Ask in the lower part of the city - you might get lucky.
+	AI_Output(self,other, " DIA_MIL_7_LOCATION_07_02 " );	// If you plan to stay in the city for a long time, you should consider joining the militia, or at least train as a fighter.
 	AI_Output(self,other, " DIA_MIL_7_LOCATION_07_03 " );	// Combat instructors in the barracks also train civilians.
-	AI_Output(self,other, " DIA_MIL_7_LOCATION_07_04 " );	// Orcs will come soon, and then you will be glad every hour spent on the parade ground.
+	AI_Output(self,other, " DIA_MIL_7_LOCATION_07_04 " );	// Orcs will come soon, and then you will be glad for every hour spent on the parade ground.
 };
 
 
@@ -137,7 +137,7 @@ func void DIA_MIL_7_STANDARD_Info()
 		randy = Hlp_Random( 2 );
 		if(randy == 0)
 		{
-			AI_Output(self,other, " DIA_Addon_MIL_7_STANDARD_07_00 " );	// Citizens disappear one by one. So far, we haven't been able to figure out what's wrong. Maybe the orcs are to blame?
+			AI_Output(self,other, " DIA_Addon_MIL_7_STANDARD_07_00 " );	// Citizens are disappearing one by one. So far, we haven't been able to figure out what's happening. Maybe the orcs are to blame?
 			if(SC_HearedAboutMissingPeople == FALSE)
 			{
 				Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
@@ -148,22 +148,22 @@ func void DIA_MIL_7_STANDARD_Info()
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_MIL_7_STANDARD_07_01 " );	// The farmers are said to have rebelled. We just didn't have enough of that. Just in the midst of the war with the orcs!
+			AI_Output(self,other, " DIA_MIL_7_STANDARD_07_01 " );	// The farmers are said to have rebelled, the orcs are on the verge of attacking... Don't we have enough problems?!
 		};
 	};
 	if (chapter ==  2 )
 	{
-		AI_Output(self,other, " DIA_MIL_7_STANDARD_07_02 " );	// The paladins must put down the farmers' rebellion. Anyone who breaks the law must be punished. Especially now that the war is on.
+		AI_Output(self,other, " DIA_MIL_7_STANDARD_07_02 " );	// The paladins must put down the farmers' rebellion. Anyone who breaks the law must be punished. Especially now that there's a war on.
 	};
 	if (chapter ==  3 )
 	{
 		if(MIS_RescueBennet == LOG_SUCCESS)
 		{
-			AI_Output(self,other, " DIA_MIL_7_STANDARD_07_03 " );	// The mercenary who was accused of killing Lothar turned out to be innocent. Someone was able to prove that he was slandered.
+			AI_Output(self,other, " DIA_MIL_7_STANDARD_07_03 " );	// The mercenary who was accused of killing Lothar turned out to be innocent. Someone was able to prove that he was framed.
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_MIL_7_STANDARD_07_04 " );	// One of Onar's mercenaries killed the noble paladin Lothar. But this bastard managed to be grabbed and thrown into jail.
+			AI_Output(self,other, " DIA_MIL_7_STANDARD_07_04 " );	// One of Onar's mercenaries killed the noble paladin Lothar. The bastard was grabbed and thrown into jail.
 		};
 	};
 	if (chapter ==  4 )
@@ -172,7 +172,7 @@ func void DIA_MIL_7_STANDARD_Info()
 	};
 	if (chapter ==  5 )
 	{
-		AI_Output(self,other, " DIA_MIL_7_STANDARZ_07_06 " );	// Every day the undead attack the city. Why are we all so guilty before Innos?!
+		AI_Output(self,other, " DIA_MIL_7_STANDARZ_07_06 " );	// Every day the undead attack the city. Why are we all so guilty before the sight of Innos?!
 	};
 	if (Chapter >=  6 )
 	{
