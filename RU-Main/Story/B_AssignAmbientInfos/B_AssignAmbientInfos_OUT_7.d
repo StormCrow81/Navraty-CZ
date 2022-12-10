@@ -46,15 +46,15 @@ func void DIA_OUT_7_STANDARD_Info()
 	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_00 " );	// Living here has become much more dangerous lately. And field predators don’t give life like that at all.
+		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_00 " );	// Living here has become much more dangerous lately. The numerous field predators make things difficult as it is.
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_01 " );	// We must give a share to the city. If we do not do this, we will have problems with the paladins.
+		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_01 " );	// We must give a share to the city. If we don't, we will have problems with the paladins.
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_02 " );	// Onar's rebellion will have serious consequences. I'd rather not take part in it.
+		AI_Output(self,other, " DIA_OUT_7_STANDARD_07_02 " );	// Onar's rebellion will have serious consequences. I'd rather not be part of it.
 	};
 	AI_StopProcessInfos(self);
 };
