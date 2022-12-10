@@ -150,7 +150,7 @@ func int dia_addon_gowithme_condition()
 
 func void dia_addon_gowithme_info()
 {
-	AI_Output(other,self, " DIA_Addon_GoWithMe_01_00 " );	// We attack!
+	AI_Output(other,self, " DIA_Addon_GoWithMe_01_00 " );	// We attack right now!
 	AI_Output(self,other, " DIA_Addon_GoWithMe_01_01 " );	// Okay, whatever you say.
 	AI_StopProcessInfos(self);
 	self.aivar[ 97 ] = TRUE ;
