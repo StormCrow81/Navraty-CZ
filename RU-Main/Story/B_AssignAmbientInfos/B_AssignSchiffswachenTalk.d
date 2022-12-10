@@ -14,7 +14,7 @@ func void B_AssignSchiffswachenGuard(var C_Npc Schiffswache)
 		};
 		if(Schiffswache.voice == 12)
 		{
-			AI_Output(self,other, " DIA_Pal_Schiffswache_Ambient_12_02 " );	// And don't think of stealing anything, okay?
+			AI_Output(self,other, " DIA_Pal_Schiffswache_Ambient_12_02 " );	// And don't even think of stealing anything.
 		};
 		AI_StopProcessInfos(Schiffswache);
 		Npc_SetRefuseTalk(Schiffswache,60);
@@ -71,11 +71,11 @@ func void B_AssignShip GuardInfo(var C_Npc Ship Guard)
 		};
 		if(Schiffswache.voice == 9)
 		{
-			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_09_01 " );	// If we could find this traitor who opened the main gate of the castle, we would show him!
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_09_01 " );	// If only we could find this traitor who opened the main gate of the castle!
 		};
 		if(Schiffswache.voice == 12)
 		{
-			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_12_02 " );	// We can't wait any longer. Our boys in the Vale of Mines need help to deal with the next wave of orcs.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_12_02 " );	// We can't wait any longer. Our boys in the Valley of Mines need help to deal with the next wave of orcs.
 		};
 	}
 	else
@@ -86,11 +86,11 @@ func void B_AssignShip GuardInfo(var C_Npc Ship Guard)
 		};
 		if(Schiffswache.voice == 9)
 		{
-			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_09_04 " );	// Orcs need to be taught a lesson.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_09_04 " );	// The orcs need to be taught a lesson.
 		};
 		if(Schiffswache.voice == 12)
 		{
-			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_12_05 " );	// I can't wait to finally show these orcs. Well, nothing, we will soon begin to crowd them.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_AmbientKap5_12_05 " );	// I can't wait to finally show these orcs the strength of men!
 		};
 	};
 	AI_StopProcessInfos(Schiffswache);
