@@ -2,6 +2,6 @@
 
 func void B_Bartok_ShitAnOrc()
 {
-	AI_Output(self,other, " DIA_Bartok_Angekommen_04_02 " );	// (to himself) Orc right at the gates of the city - Damn...
+	AI_Output(self,other, " DIA_Bartok_Angekommen_04_02 " );	// An orc right at the gates of the city - Damn...
 };
 
