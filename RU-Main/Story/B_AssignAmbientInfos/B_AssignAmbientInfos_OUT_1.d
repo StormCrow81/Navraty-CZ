@@ -46,15 +46,15 @@ func void DIA_OUT_1_STANDARD_Info()
 	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_00 " );	// Ever since the barrier around the penal colony was gone, we've been in constant trouble with bandits.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_00 " );	// Ever since the barrier around the penal colony dissapeared, we've been in constant trouble with bandits.
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_01 " );	// You can't rely on the militia. We must protect ourselves.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_01 " );	// We can't rely on the militia. We must protect ourselves.
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_02 " );	// I won't let anyone push me around. Neither the king, nor this fat Onar. I only fight for myself.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_01_02 " );	// I won't let anyone push me around. Neither the king, nor this fat bastard Onar. I will defend myself.
 	};
 	AI_StopProcessInfos(self);
 };
