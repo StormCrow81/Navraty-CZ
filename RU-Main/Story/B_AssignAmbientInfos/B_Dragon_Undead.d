@@ -18,9 +18,9 @@ func int DIA_Dragon_Undead_Hello_Condition()
 
 func void DIA_Dragon_Undead_Hello_Info()
 {
-	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_00 " );	// You still managed to find me! I've been waiting for your arrival for a long time.
-	AI_Output(other,self, " DIA_Dragon_Undead_Hello_15_01 " );	// Come on! Don't lie that you planned it all.
-	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_02 " );	// What do you know about my intentions?
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_00 " );	// You finally managed to find me! I've been waiting for your arrival for a long time.
+	AI_Output(other,self, " DIA_Dragon_Undead_Hello_15_01 " );	// Are you saying you planned this?
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_02 " );	// What do you know of my intentions?
 	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_03 " );	// Haven't I sent my servants to you to put you on my trail?
 	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_04 " );	// Didn't I leave signs of my presence so obvious that you couldn't help noticing them?
 
@@ -37,7 +37,7 @@ func void DIA_Dragon_Undead_Hello_Info()
 		AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_07 " );	// Were the Possessed of your tribe not enough reason for you to seek the power to control them?
 	};
 
-	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_08 " );	// Whether you like it or not, you can't fool yourself.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_20_08 " );	// Whether you like it or not, you cannot lie to yourself.
 	B_LogEntry(TOPIC_HallenVonIrdorath, " My main enemy is the undead dragon, who is the chosen one of Beliar himself! I must kill him to leave this cursed island. " );
 
 	if(ItarIsDead == FALSE)
@@ -74,7 +74,7 @@ func void DIA_Dragon_Undead_Hello_Info()
 
 func void DIA_Dragon_Undead_Hello_wer()
 {
-	AI_Output(other,self,"DIA_Dragon_Undead_Hello_wer_15_00");	//Кто ты?
+	AI_Output(other,self,"DIA_Dragon_Undead_Hello_wer_15_00");	//Who are you?
 	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_01 " );	// Are you tired of asking this question yet? Look inside yourself, fool. You will understand who I am.
 	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_03 " );	// I was given divine power by my creator. Just like you own the power given to you by your god.
 	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_04 " );	// My destiny is the destruction of this world.
@@ -85,30 +85,30 @@ func void DIA_Dragon_Undead_Hello_wer()
 	};
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_06 " );	// Just as your hand brings death to certain creatures, dragon hunter.
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_06 " );	// Just as your hand brings death to creatures so much better than you, dragon hunter.
 	};
 	if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_07 " );	// Just like your destiny is to preach faith in Innos, Mage of Fire.
+		AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_07 " );	// Just as your destiny is to preach faith in Innos, Mage of Fire.
 	};
 
 	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_08 " );	// Can't you feel the connection that connects us? Yes. You know who I am.
 	AI_Output(other,self, " DIA_Dragon_Undead_Hello_wer_15_09 " );	// No. This cannot be. Xardas always said...
-	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_10 " );	// Xardas is weak, and poses no threat to me! You alone are worthy to resist me.
-	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_11 " );	// It's meant to be. It's time to accept your fate.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_10 " );	// Xardas is weak, and poses no threat to me. You alone are worthy to resist me.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_wer_20_11 " );	// It is meant to be. It is time to accept your fate.
 };
 
 func void DIA_Dragon_Undead_Hello_why()
 {
 	AI_Output(other,self, " DIA_Dragon_Undead_Hello_warum_15_00 " );	// Why are you here?
-	AI_Output(self,other, " DIA_Dragon_Undead_Hello_warum_20_01 " );	// The divinity bestowed on me inspires me to plunge this world into a sea of ​​cruelty.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_warum_20_01 " );	// The divinity bestowed on me inspires me to plunge this world into a sea of blood.
 	AI_Output(self,other, " DIA_Dragon_Undead_Hello_warum_20_02 " );	// Only when the last stronghold of righteousness falls can I finally find peace.
 };
 
 func void DIA_Dragon_Undead_Hello_Client()
 {
 	AI_Output(other,self, " DIA_Dragon_Undead_Hello_Auftraggeber_15_00 " );	// By whose command are you leading your henchmen to war against humanity?
-	AI_Output(self,other, " DIA_Dragon_Undead_Hello_Auftraggeber_20_01 " );	// My master is the Lord of the Night. Do you know him. You can hear him calling.
+	AI_Output(self,other, " DIA_Dragon_Undead_Hello_Auftraggeber_20_01 " );	// My master is the Lord of the Night. You know him. You can hear him calling you from the dark.
 	AI_Output(self,other, " DIA_Dragon_Undead_Hello_Auftraggeber_20_03 " );	// My armies will rise from the ground with his name on their lips and cover this world with a cloak of darkness.
 };
 
