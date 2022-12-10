@@ -61,7 +61,7 @@ func int DIA_OCPAL_4_LOCATION_Condition()
 func void DIA_OCPAL_4_LOCATION_Info()
 {
 	AI_Output(other,self, " DIA_OCPAL_4_LOCATION_15_00 " );	// What can you tell me about the Valley of Mines?
-	AI_Output(self,other, " DIA_OCPAL_4_LOCATION_04_01 " );	// As far as I know, there are several mines here, if they are not already captured by the orcs.
+	AI_Output(self,other, " DIA_OCPAL_4_LOCATION_04_01 " );	// There are several mines there, if they are not already captured by the orcs.
 	AI_Output(self,other, " DIA_OCPAL_4_LOCATION_04_02 " );	// Miners who work in the mines are mostly convicts, but there are also a few paladins among them.
 };
 
@@ -95,11 +95,11 @@ func void DIA_OCPAL_4_STANDARD_Info()
 			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_02 " );	// I think the orc attack won't be long in coming. Where are the damn reinforcements?
 			if(other.guild == GIL_DJG)
 			{
-				AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_03 " );	// I hope you don't seriously think that you dragon hunters really have a chance against ALL dragons?
+				AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_03 " );	// I hope you don't seriously think that you dragon hunters really have a chance against them all?
 			}
 			else
 			{
-				AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_04 " );	// These so-called dragon hunters can't do much!
+				AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_04 " );	// These so-called dragon hunters are just men!
 			};
 		}
 		else
@@ -115,13 +115,13 @@ func void DIA_OCPAL_4_STANDARD_Info()
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_07 " );	// Those damn gates are jammed. Orcs are rushing into the castle, and nothing will stop them.
-			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_08 " );	// Someone needs to inform Lord Hagen. He is needed HERE and now.
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_07 " );	// The damn gates are jammed. Orcs are rushing into the castle, and nothing will stop them.
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_08 " );	// Someone needs to inform Lord Hagen. He is needed here, now more than ever.
 		};
 	};
 	if (Chapter >=  6 )
 	{
-		AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_09 " );	// The fortress is taken by the orcs! Few survived.
+		AI_Output(self,other, " DIA_OCPAL_4_STANDARD_04_09 " );	// The fortress was taken by the orcs! Very few survived.
 	};
 };
 
