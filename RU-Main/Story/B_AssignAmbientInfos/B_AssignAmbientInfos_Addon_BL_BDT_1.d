@@ -50,7 +50,7 @@ func void DIA_Addon_BL_BDT_1_Chef_Info()
 	else
 	{
 		AI_Output(self,other, " DIA_Addon_BL_BDT_1_Chef_01_03 " );	// Raven is now our commander. He brought us here and built a camp.
-		AI_Output(self,other, " DIA_Addon_BL_BDT_1_Chef_01_04 " );	// He controls the mine, without him everyone would have killed each other for gold a long time ago.
+		AI_Output(self,other, " DIA_Addon_BL_BDT_1_Chef_01_04 " );	// He controls the mine, without him everyone would have killed each other for gold scraps a long time ago.
 	};
 };
 
@@ -77,8 +77,8 @@ func int DIA_Addon_BL_BDT_1_Lager_Condition()
 func void DIA_Addon_BL_BDT_1_Lager_Info()
 {
 	AI_Output(other,self, " DIA_Addon_BL_BDT_1_Lager_15_00 " );	// What do you know about the camp?
-	AI_Output(self,other, " DIA_Addon_BL_BDT_1_Lager_01_01 " );	// After the gold mine became known, those vagrants must have been eating each other.
-	AI_Output(self,other, " DIA_Addon_BL_BDT_1_Lager_01_02 " );	// The Raven killed the worst of them and threw the rest out of the mine.
+	AI_Output(self,other, " DIA_Addon_BL_BDT_1_Lager_01_01 " );	// After the gold mine became known, the vagrants destroyed each other for it.
+	AI_Output(self,other, " DIA_Addon_BL_BDT_1_Lager_01_02 " );	// Then Raven killed the worst of them and threw the rest out of the mine.
 	AI_Output(self,other, " DIA_Addon_BL_BDT_1_Lager_01_03 " );	// Since then no one is allowed in the top. He even brought in prisoners to work in the mine.
 	if(SC_KnowsRavensGoldmine == FALSE)
 	{
