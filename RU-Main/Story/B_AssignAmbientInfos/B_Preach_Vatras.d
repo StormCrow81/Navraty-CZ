@@ -97,7 +97,7 @@ func void B_Preach_Vatras(var int satz)
 	};
 	if (set ==  1 )
 	{
-		AI_Output(self,self, " DIA_Vatras_PREACH_05_01 " );	// But Adanos realized that nothing would exist like that. Neither light nor darkness.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_01 " );	// But Adanos realized that nothing would exist if this continued. Neither light nor darkness.
 	};
 	if (set ==  2 )
 	{
@@ -113,11 +113,11 @@ func void B_Preach_Vatras(var int satz)
 	};
 	if (set ==  5 )
 	{
-		AI_Output(self,self, " DIA_Vatras_PREACH_05_05 " );	// And this sea freed the land. And various creatures appeared. Trees and animals. Wolves and sheep. And finally, a man appeared.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_05 " );	// And this sea freed the land. And various creatures appeared. Trees and animals. Wolves and sheep. And finally, man appeared.
 	};
 	if (set ==  6 )
 	{
-		AI_Output(self,self, " DIA_Vatras_PREACH_05_06 " );	// And Adanos was satisfied with what came out. He was pleased with all beings equally.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_06 " );	// And Adanos was satisfied with what was created. He was pleased with all beings equally.
 	};
 	if (set ==  7 )
 	{
@@ -157,7 +157,7 @@ func void B_Preach_Vatras(var int satz)
 	};
 	if (set ==  16 )
 	{
-		AI_Output(self,self, " DIA_Vatras_PREACH_05_16 " );	// But Adanos saw that Order and Chaos are now unequal, and invited Innos to deprive a person of divine power.
+		AI_Output(self,self, " DIA_Vatras_PREACH_05_16 " );	// But Adanos saw that Order and Chaos are now unequal, and invited Innos to deprive the man of divine power.
 	};
 	if (set ==  17 )
 	{
@@ -195,7 +195,7 @@ func void B_Preach_Marduk(var int satz)
 	};
 	if (set ==  3 )
 	{
-		AI_Output(self,self, " DIA_Marduk_PREACH_01_03 " );	// Innos gave the world light and warmth. Adanos, commanding water and winds, irrigated the earth's firmament, making it fertile. And Beliar, in turn, gave birth to darkness and the coolness of the night did not allow the lies of Innos to burn this land.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_03 " );	// Innos gave the world light and warmth. Adanos, commanding water and winds, irrigated the earth's firmament, making it fertile. And Beliar, in turn, gave birth to darkness and the coolness of the night, and did not allow the lies of Innos to burn the land.
 	};
 	if (set ==  4 )
 	{
@@ -227,15 +227,15 @@ func void B_Preach_Marduk(var int satz)
 	};
 	if (set ==  11 )
 	{
-		AI_Output(self,self, " DIA_Marduk_PREACH_01_11 " );	// Since then, man and beast have been fighting desperately for their divine masters. This struggle, alas, does not subside over the years. On the contrary, it steadily grows stronger, tougher, forcing its participants on both sides to come up with ever more insidious tricks that can help them win.  
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_11 " );	// Since then, man and beast have been fighting desperately for their divine masters. This struggle, alas, did not subside over the years. On the contrary, it steadily grows stronger, tougher, forcing its participants on both sides to come up with ever more insidious tricks that can help them win.  
 	};
 	if (set ==  12 )
 	{
-		AI_Output(self,self, " DIA_Marduk_PREACH_01_12 " );	// We, as servants of Innos, without a shadow of a doubt recognize his supremacy among all deities and are ready to destroy beliar creatures for his glory.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_12 " );	// We, as servants of Innos, without a shadow of a doubt recognize his supremacy among all deities and lesser spirits and are ready to destroy Beliar's creatures for his glory.
 	};
 	if (set ==  13 )
 	{
-		AI_Output(self,self, " DIA_Marduk_PREACH_01_13 " );	// The path illuminated by its light, the path of goodness, prosperity, truth, conscience and justice is a truly true course for us.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_13 " );	// The path illuminated by its light, the path of goodness, prosperity, truth, conscience and justice is a true course for us.
 	};
 	if (set ==  14 )
 	{
@@ -243,7 +243,7 @@ func void B_Preach_Marduk(var int satz)
 	};
 	if (set ==  15 )
 	{
-		AI_Output(self,self, " DIA_Marduk_PREACH_01_15 " );	// With our support, it is Innos' victory that will crown this long-term confrontation.
+		AI_Output(self,self, " DIA_Marduk_PREACH_01_15 " );	// With our support, it is Innos' victory that will seal this long festering wound.
 	};
 };
 
