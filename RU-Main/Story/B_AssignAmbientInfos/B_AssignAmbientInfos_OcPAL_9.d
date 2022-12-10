@@ -42,7 +42,7 @@ func int DIA_OCPAL_9_PEOPLE_Condition()
 func void DIA_OCPAL_9_PEOPLE_Info()
 {
 	AI_Output(other,self, " DIA_OCPAL_9_PEOPLE_15_00 " );	// Who's in charge here?
-	AI_Output(self,other, " DIA_OCPAL_9_PEOPLE_09_01 " );	// Garond. But you can't envy his work.
+	AI_Output(self,other, " DIA_OCPAL_9_PEOPLE_09_01 " );	// Garond. But I don't envy the man.
 };
 
 
@@ -68,7 +68,7 @@ func void DIA_OCPAL_9_LOCATION_Info()
 {
 	AI_Output(other,self, " DIA_OCPAL_9_LOCATION_15_00 " );	// What do you know about this valley?
 	AI_Output(self,other, " DIA_OCPAL_9_LOCATION_09_01 " );	// Well, that the orcs built a big defensive wall. Behind this wall there is a place where they can moor their ships.
-	AI_Output(self,other, " DIA_OCPAL_9_LOCATION_09_02 " );	// Hope the orcs don't bring up the main force too quickly. For me, those that already exist are more than enough.
+	AI_Output(self,other, " DIA_OCPAL_9_LOCATION_09_02 " );	// I hope the orcs don't bring up their main force too quickly. For me, those that are already here are more than enough.
 };
 
 
@@ -98,11 +98,11 @@ func void DIA_OCPAL_9_STANDARD_Info()
 	{
 		if(MIS_KilledDragons < 4)
 		{
-			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_02 " );	// Dragon hunters! We should have sent us paladins!
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_02 " );	// Dragon hunters! They should have sent us paladins!
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_03 " );	// Now that we've got rid of those dragons, we can deal with the orcs!
+			AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_03 " );	// Now that we've got rid of the dragons, we can deal with the orcs!
 		};
 	};
 	if (chapter ==  5 )
@@ -118,7 +118,7 @@ func void DIA_OCPAL_9_STANDARD_Info()
 	};
 	if (Chapter >=  6 )
 	{
-		AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_06 " );	// After the castle has fallen, there is little hope. Now only a miracle can help us!
+		AI_Output(self,other, " DIA_OCPAL_4_STANDARD_09_06 " );	// After the castle fell, there is little hope left. Now only a miracle can save us!
 	};
 };
 
