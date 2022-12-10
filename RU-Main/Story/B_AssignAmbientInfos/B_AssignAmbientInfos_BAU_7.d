@@ -44,23 +44,23 @@ func void DIA_BAU_7_STANDARD_Info()
 	};
 	if (chapter ==  2 )
 	{
-		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_02 " );	// I have nothing to tell you now.
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_02 " );	// I have nothing new to tell you now.
 	};
 	if (chapter ==  3 )
 	{
-		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_03 " );	// Everyone is talking about dragons! The king will always find a way to squeeze more money out of the common people.
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_03 " );	// Everyone is talking about dragons! The king will always find a way to squeeze more money out of the common people, even in times like this.
 	};
 	if (chapter ==  4 )
 	{
-		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_04 " );	// Be careful: lately dark personalities and various wild animals have been pouring through the passage in droves.
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_04 " );	// Be careful: lately dark personages and various wild beasts have been pouring through the passage in droves.
 	};
 	if (chapter ==  5 )
 	{
-		AI_Output(self,other, " DIA_BAU_7_STANDARZ_07_05 " );	// This is where everyone talks about the ghoul invasion. Damn it, where did they all come from?!
+		AI_Output(self,other, " DIA_BAU_7_STANDARZ_07_05 " );	// Everyone is talking about the undead plague. Damn it, where did they all come from?!
 	};
 	if (Chapter >=  6 )
 	{
-		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_06 " );	// It looks like we're all going to die soon. Orcs will spare no one!
+		AI_Output(self,other, " DIA_BAU_7_STANDARD_07_06 " );	// It looks like we're all going to die soon. The orcs will spare no human!
 	};
 };
 
