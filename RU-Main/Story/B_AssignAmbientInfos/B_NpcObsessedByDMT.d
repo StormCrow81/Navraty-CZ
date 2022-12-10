@@ -71,7 +71,7 @@ func void B_NpcObsessedByDMT(var C_Npc medium)
 		{
 			if(MIS_OCGateOpen == TRUE)
 			{
-				AI_Output(self,other, " DIA_Brutus_ObsessedByDMT_19_00 " );	// By opening the gate, you have rendered a great service to our Master, miserable mortal. We will build a chapel in his honor on your grave.
+				AI_Output(self,other, " DIA_Brutus_ObsessedByDMT_19_00 " );	// By opening the gate, you have rendered a great service to our Master. We will build a chapel in his honor on your grave.
 			}
 			else
 			{
@@ -86,17 +86,17 @@ func void B_NpcObsessedByDMT(var C_Npc medium)
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Vino))
 		{
-			AI_Output(self,other, " DIA_Vino_ObsessedByDMT_19_00 " );	// Soon we'll be running everything. You and your pathetic magic are no danger to us.
+			AI_Output(self,other, " DIA_Vino_ObsessedByDMT_19_00 " );	// Soon we'll be running everything. You and your pathetic magics are no danger to us.
 			NpcObsessedByDMT_Vino = TRUE;
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Malak))
 		{
-			AI_Output(self,other, " DIA_Malak_ObsessedByDMT_19_00 " );	// You can't save this soul, mage. He will never be the same.
+			AI_Output(self,other, " DIA_Malak_ObsessedByDMT_19_00 " );	// You cannot save this soul, mage. He will never be the same.
 			NpcObsessedByDMT_Malak = TRUE;
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Sekob))
 		{
-			AI_Output(self,other, " DIA_Sekob_ObsessedByDMT_19_00 " );	// Come on, mage. You are not destined to win.
+			AI_Output(self,other, " DIA_Sekob_ObsessedByDMT_19_00 " );	// Face it, Wizard. You are not destined to win.
 			NpcObsessedByDMT_Sekob = TRUE;
 		}
 		else if(Hlp_GetInstanceID(medium) == Hlp_GetInstanceID(Randolph))
