@@ -23,7 +23,7 @@ func void DIA_Dragon_Rock_Exit_Info()
 {
 	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
 	CreateInvItems(other,ItMi_InnosEye_Discharged_Mis,1);
-	AI_Output(self,other, " DIA_Dragon_Rock_Exit_20_00 " );	// But stop talking! Your temporary power has run out. The eye has lost its power. Prepare to die...
+	AI_Output(self,other, " DIA_Dragon_Rock_Exit_20_00 " );	// Your temporary power has run out. The eye has lost its power. Prepare to die...
 	AI_StopProcessInfos(self);
 	DragonTalk_Exit_Free = FALSE;
 	self.flags = 0;
@@ -52,14 +52,14 @@ func int DIA_Dragon_Rock_Hello_Condition()
 func void DIA_Dragon_Rock_Hello_Info()
 {
 	Wld_SendTrigger("STONEDRAGON_GATE");
-	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_00 " );	// Another arrogant human dared to climb my rock. You people are so pathetic. So brave and so weak.
+	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_00 " );	// Another arrogant human dared to climb my rock. You people are so pathetic. So brave yet so weak.
 	if(MIS_KilledDragons == 0)
 	{
-		AI_Output(other,self, " DIA_Dragon_Rock_Hello_15_01 " );	// Look, he's really talking.
+		AI_Output(other,self, " DIA_Dragon_Rock_Hello_15_01 " );	// Oh look, a talking lizard. How droll.
 	};
-	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_02 " );	// I'll rip out your insides and feed them to the rats.
+	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_02 " );	// I'll rip out your insides and feed them to the rats, worm.
 	AI_Output(other,self, " DIA_Dragon_Rock_Add_15_00 " );	// Not so fast. I have the Eye of Innos with me. You will obey me and answer my questions.
-	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_04 " );	// (roar) Ahh. Ask your questions.
+	AI_Output(self,other, " DIA_Dragon_Rock_Hello_20_04 " );	// Ahh. Ask your questions then.
 };
 
 
@@ -83,8 +83,8 @@ func int DIA_Dragon_Rock_WERBISTDU_Condition()
 
 func void DIA_Dragon_Rock_WERBISTDU_Info()
 {
-	AI_Output(other,self,"DIA_Dragon_Rock_WERBISTDU_15_00");	//Кто ты?
-	AI_Output(self,other, " DIA_Dragon_Rock_WERBISTDU_20_01 " );	// My name is Pedrakan, and I'll slowly, slowly, skin you when I get to you.
+	AI_Output(other,self,"DIA_Dragon_Rock_WERBISTDU_15_00");	//Who are you?
+	AI_Output(self,other, " DIA_Dragon_Rock_WERBISTDU_20_01 " );	// My name is Pedrakan, and I will slowly, slowly, flay the skin from your bones when I get to you.
 };
 
 
@@ -111,9 +111,9 @@ func void DIA_Dragon_Rock_HIERARCHIE_Info()
 	AI_Output(other,self, " DIA_Dragon_Rock_HIERARCHIE_15_00 " );	// Who is the strongest of you dragons?
 	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_01 " );	// We draw our strength from the elements of this world. The hierarchy is clear and simple.
 	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_02 " );	// The earth covered with soft soil gives life to all creatures that live under the sun. But it can open up and swallow you whole if you get too close.
-	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_03 " );	// The rock, which would rather split than give in, proudly rises above all and buries the careless under it. It also provides better protection against the tide.
+	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_03 " );	// The rock, which would rather split than give in, proudly rises above all and buries the careless under it. It also provides protection against the tide.
 	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_04 " );	// The sparks of life live in the deep fires of this world. And the fire burns everything with its breath, leaving behind nothing but ashes.
-	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_05 " );	// All these elements are preserved and destroyed. But only in the water, which has become hard as a rock, everything turns into an eternal column of salt, where life is hardly possible.
+	AI_Output(self,other, " DIA_Dragon_Rock_HIERARCHIE_20_05 " );	// All these elements are preserved and destroyed in an eternal dance. But only in the water, which wears everything down in time, is an end to the dance.
 };
 
 func void B_AssignDragonTalk_Rock(var C_Npc slf)
