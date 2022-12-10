@@ -46,7 +46,7 @@ func void DIA_OUT_13_STANDARD_Info()
 	randy = Hlp_Random( 3 );
 	if(randy == 0)
 	{
-		AI_Output(self,other, " DIA_OUT_1_STANDARD_13_00 " );	// We used to be able to keep the orcs away. But lately there have been more and more of them.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_13_00 " );	// We used to be able to keep the orcs at bay. But lately there have been more and more of them.
 	};
 	if(randy == 1)
 	{
@@ -54,7 +54,7 @@ func void DIA_OUT_13_STANDARD_Info()
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other, " DIA_OUT_1_STANDARD_13_02 " );	// Onar must have lost his mind, since he decided to conflict with the city just when the paladins arrived.
+		AI_Output(self,other, " DIA_OUT_1_STANDARD_13_02 " );	// Onar must have lost his mind, since he decided to antagonise the city just when the paladins arrived.
 	};
 	AI_StopProcessInfos(self);
 };
