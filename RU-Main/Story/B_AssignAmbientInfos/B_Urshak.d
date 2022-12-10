@@ -42,8 +42,8 @@ func int DIA_Urshak_HALLO_Condition()
 
 func void DIA_Urshak_HALLO_Info()
 {
-	AI_Output(self,other, " DIA_Urshak_HALLO_18_00 " );	// (aggressively) MEET JABART!!!
-	AI_Output(self,other, " DIA_Urshak_HALLO_18_01 " );	// Stop! My know you. You are a friend with a soft voice.
+	AI_Output(self,other, " DIA_Urshak_HALLO_18_00 " );	// MEET JABART!!!
+	AI_Output(self,other, " DIA_Urshak_HALLO_18_01 " );	// Stop! Me know you. You are friend with a soft voice.
 	AI_Output(self,other, " DIA_Urshak_HALLO_18_02 " );	// Friend to kill the evil demon KRUSHAK.
 	B_GivePlayerXP(XP_UrshakFound);
 	Log_CreateTopic(TOPIC_Urshak,LOG_MISSION);
@@ -56,10 +56,10 @@ func void DIA_Urshak_HALLO_Info()
 
 func void DIA_Urshak_HELLO_who()
 {
-	AI_Output(other,self, " DIA_Urshak_HALLO_wer_15_00 " );	// Talking Orc?!
-	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_01 " );	// You forget Ur-Shak?!...(sadly) You upset me.
-	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_02 " );	// Ur-Shak help a friend get ULU-MULU many days early! For walking in my village. Orcs respect each other and each does not die at the hands of orcs!
-	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_03 " );	// Friend then go to the orc temple and exorcise the evil demon. Many days before! Don't you remember?
+	AI_Output(other,self, " DIA_Urshak_HALLO_wer_15_00 " );	// A talking Orc?!
+	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_01 " );	// You forget Ur-Shak?!... You upset me.
+	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_02 " );	// Ur-Shak help friend get ULU-MULU many days before! For walking in my village. Orcs respect each other and each does not die at the hands of orcs!
+	AI_Output(self,other, " DIA_Urshak_HALLO_wer_18_03 " );	// Friend then goes to the orc temple and exorcise the evil demon. Many days before! Don't you remember?
 	URSHAKBONUSGOTIKA = TRUE;
 };
 
@@ -128,7 +128,7 @@ func int dia_urshak_hasulumulu_condition()
 func void dia_urshak_hasulumulu_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(self,other, " DIA_Urshak_HasUlumulu_18_01 " );	// Friend find Ulu-Mulu!!!(admiringly)...What a good one!
+	AI_Output(self,other, " DIA_Urshak_HasUlumulu_18_01 " );	// Friend find Ulu-Mulu!!! Friend is strong!
 	URSHAKKNOWULUMULU = TRUE;
 };
 
@@ -153,7 +153,7 @@ func int DIA_Urshak_WASHENORKS_Condition()
 
 func void DIA_Urshak_WASHENORKS_Info()
 {
-	AI_Output(other,self, " DIA_Urshak_WASMACHENORKS_15_00 " );	// Why do orcs attack humans?
+	AI_Output(other,self, " DIA_Urshak_WASMACHENORKS_15_00 " );	// Why do the orcs attack humans?
 	AI_Output(self,other, " DIA_Urshak_WASMACHENORKS_18_01 " );	// Ur-Shak always tells the orc people that humans are not evil and should be friends with them.
 	AI_Output(self,other, " DIA_Urshak_WASMACHENORKS_18_02 " );	// But the shaman doesn't listen to Ur-Shak. Ur-Shak is out of favor with his people.
 	AI_Output(self,other, " DIA_Urshak_WASMACHENORKS_18_03 " );	// Therefore, Ur-Shak does not know exactly about the grand war plan against humans.
@@ -243,7 +243,7 @@ func void DIA_Urshak_WASHASTDUVOR_Info()
 	B_LogEntry(TOPIC_Urshak, " Ur-Shak wants to meet with Orc shaman Hosh-Pak and convince him to accept Ur-Shak back to the council of shamans. " );
 	Info_ClearChoices(DIA_Urshak_WASHASTDUVOR);
 	Info_AddChoice(DIA_Urshak_WASHASTDUVOR,Dialog_Back,DIA_Urshak_WASHASTDUVOR_next);
-	Info_AddChoice(DIA_Urshak_WASHASTDUVOR, " Where can I find this Hosh Pack? " ,DIA_Urshak_WASHASTDUVOR_);
+	Info_AddChoice(DIA_Urshak_WASHASTDUVOR, " Where can I find this Hosh-Pak? " ,DIA_Urshak_WASHASTDUVOR_);
 	Info_AddChoice(DIA_Urshak_WASHASTDUVOR, " Why don't you go to him then? " ,DIA_Urshak_WASHASTDUVOR_hoshpak);
 };
 
@@ -257,7 +257,7 @@ func void DIA_Urshak_WASHASTDUVOR_hoshpak()
 
 func void DIA_Urshak_WASHASTDUVOR_()
 {
-	AI_Output(other,self, " DIA_Urshak_WASHASTDUVOR_Urshak_15_00 " );	// Where can I find this Hosh Pack?
+	AI_Output(other,self, " DIA_Urshak_WASHASTDUVOR_Urshak_15_00 " );	// Where can I find this Hosh-Pak?
 	AI_Output(self,other, " DIA_Urshak_WASHASTDUVOR_Urshak_18_01 " );	// He is where he can watch the orc warriors at the fortress near the big volcano, so that Hosh-Pak can control the warriors.
 };
 
@@ -302,8 +302,8 @@ func void dia_urshak_templedoor_info()
 	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_12 " );	// I'm afraid I lost it. Do you know where I can get another Ulu-Mulu?
 	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_13 " );	// Only warriors do Ulu-Mulu. Ur-Shak is not to be a warrior. Be a shaman. But Ur-Shak can tell where to find Ulu-Mulu.
 	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_14 " );	// Stranger again to go to friend Ur-Shak. His name is Tarrok. A friend must remember him.
-	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_15 " );	// Where to find your friend?
-	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_16 " );	// Friend go north to the swamp, and look there near the tower. Ur-Shak think a friend will find him there.
+	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_15 " );	// Where can I find your friend?
+	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_16 " );	// Friend go north to the swamp, and look there near the tower. Ur-Shak think friend will find him there.
 	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_17 " );	// Where can I find the city?
 	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_18 " );	// Ur-Shak's house to be near the former human mine.
 	AI_Output(self,other, " DIA_Urshak_TempleDoor_01_19 " );	// Friend don't forget to carry Ulu-Mulu in hand when going.
@@ -311,12 +311,12 @@ func void dia_urshak_templedoor_info()
 	if(ORCPROMISEMAKE == FALSE)
 	{
 		AI_Output(self,other, " DIA_Urshak_TempleDoor_01_20 " );	// Still Ur-Shak want to ask a friend - if a friend comes to the city of brothers, can a friend ask them to allow Ur-Shak to return?
-		AI_Output(other,self, " DIA_Urshak_TempleDoor_01_21 " );	// I'll try! Unless, of course, they even talk to me.
+		AI_Output(other,self, " DIA_Urshak_TempleDoor_01_21 " );	// I'll try! That is, of course, if they even talk to me.
 	};
 
 	AI_Output(other,self, " DIA_Urshak_TempleDoor_01_22 " );	// Thanks for your help, Ur-Shak.
-	B_LogEntry( TOPIC_ORCTEMPLE , " Ur-Shak told me that the only way to get into the Temple of the Sleeper is to get the orc key, with which they cast a spell on the grate at the entrance. To do this, I will have to go to the orc city and try to persuade them, give me this artifact. " );
-	B_LogEntry_Quiet( TOPIC_ORCTEMPLE , " To make my walk among the crowds of orcs more or less pleasant, I need to have Ulu-Mulu with me - a sign of friendship and strength of the orcs. With it, the orcs will not touch me. Ur-Shak cannot make me this orc talisman , but he said who could help me. He named the name Tarrok. Perhaps this orc will agree to make this Ulu-Mulu for me. According to Ur-Shak, I can find him next to the swamp, near a small tower. " ) ;
+	B_LogEntry( TOPIC_ORCTEMPLE , " Ur-Shak told me that the only way to get into the Temple of the Sleeper is to get the orc key, with which they cast a spell on the grate at the entrance. To do this, I will have to go to the orc city and try to persuade them to give me this artifact. " );
+	B_LogEntry_Quiet( TOPIC_ORCTEMPLE , " To make my walk among the crowds of orcs more or less pleasant, I need to have Ulu-Mulu with me - a sign of friendship and strength of the orcs. With it, the orcs will not touch me. Ur-Shak cannot make me this orc talisman , but he said who could help me. He mentioned "Tarrok". Perhaps this orc will agree to make this Ulu-Mulu for me. According to Ur-Shak, I can find him next to the swamp, near a small tower. " ) ;
 
 	if(ORCPROMISEMAKE == FALSE)
 	{
