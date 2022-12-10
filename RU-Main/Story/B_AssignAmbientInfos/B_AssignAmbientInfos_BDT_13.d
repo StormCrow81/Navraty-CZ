@@ -65,7 +65,7 @@ func void DIA_BDT_13_STANDARD_Info()
 		{
 			if(randy == 0)
 			{
-				AI_Output(self,other, " DIA_ASS_2_STANDARD_01_00 " );	// Better go! Otherwise, both will be in trouble...
+				AI_Output(self,other, " DIA_ASS_2_STANDARD_01_00 " );	// Better go! Otherwise, we'll both be in trouble...
 			};	
 			if(randy == 1)
 			{
@@ -77,7 +77,7 @@ func void DIA_BDT_13_STANDARD_Info()
 			};
 			if(randy == 3)
 			{
-				AI_Output(self,other,"DIA_ASS_2_STANDARD_01_03");	//Не сейчас!
+				AI_Output(self,other,"DIA_ASS_2_STANDARD_01_03");	//Not now!
 			};
 		
 			AI_StopProcessInfos(self);
