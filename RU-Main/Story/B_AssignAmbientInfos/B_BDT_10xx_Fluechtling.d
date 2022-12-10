@@ -67,21 +67,21 @@ func void DIA_BDT_1031_Fluechtling_Tip1_Info()
 func void DIA_BDT_1031_Fluechtling_Tip1_Morgahard()
 {
 	AI_Output(other,self, " DIA_BDT_1031_Fluechtling_Tip1_Morgahard_15_00 " );	// Where is Morgahard, your leader?
-	AI_Output(self,other, " DIA_BDT_1031_Fluechtling_Tip1_Morgahard_07_01 " );	// We split up so we don't get caught too soon. I have no idea where the others are now.
+	AI_Output(self,other, " DIA_BDT_1031_Fluechtling_Tip1_Morgahard_07_01 " );	// We split up so we won't get caught. I have no idea where the others are now.
 	Info_AddChoice(DIA_BDT_1031_Fluechtling_Tip1, " Sorry. Then I might have to take you to the judge. " ,DIA_BDT_1031_Fluechtling_Tip1_Morgahard_drohen);
 };
 
 func void DIA_BDT_1031_Fluechtling_Tip1_Morgahard_drohen()
 {
-	AI_Output(other,self, " DIA_BDT_1031_Fluechtling_Tip1_Morgahard_drohen_15_00 " );	// Sorry. Then maybe I'll have to take you to the judge.
-	AI_Output(self,other, " DIA_BDT_1031_Fluechtling_Tip1_Morgahard_drohen_07_01 " );	// Okay, okay. I think some of us headed to the tavern. But you didn't hear that from me, okay?
+	AI_Output(other,self, " DIA_BDT_1031_Fluechtling_Tip1_Morgahard_drohen_15_00 " );	// Maybe I'll have to take you to the judge then.
+	AI_Output(self,other, " DIA_BDT_1031_Fluechtling_Tip1_Morgahard_drohen_07_01 " );	// Okay, okay. I think some of them headed to the tavern. But you didn't hear that from me, okay?
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_BDT_1031_Fluechtling_Tip1_Knast()
 {
 	AI_Output(other,self, " DIA_BDT_1031_Fluechtling_Tip1_Knast_15_00 " );	// I've come to arrest you.
-	AI_Output(self,other, " DIA_BDT_1031_Fluechtling_Tip1_Knast_07_01 " );	// Only over my dead body.
+	AI_Output(self,other, " DIA_BDT_1031_Fluechtling_Tip1_Knast_07_01 " );	// Over my dead body.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
@@ -89,7 +89,7 @@ func void DIA_BDT_1031_Fluechtling_Tip1_Knast()
 func void DIA_BDT_1031_Fluechtling_Tip1_frei()
 {
 	AI_Output(other,self, " DIA_BDT_1031_Fluechtling_Tip1_frei_15_00 " );	// I'm not going to kill you.
-	AI_Output(self,other, " DIA_BDT_1031_Fluechtling_Tip1_frei_07_01 " );	// If the judge sent you, tell him to get off us.
+	AI_Output(self,other, " DIA_BDT_1031_Fluechtling_Tip1_frei_07_01 " );	// If the judge sent you, tell him to fuck off.
 	Info_AddChoice(DIA_BDT_1031_Fluechtling_Tip1, " So what crime are you accused of? " ,DIA_BDT_1031_Fluechtling_Tip1_frei_verbrechen);
 };
 
@@ -216,7 +216,7 @@ func int DIA_BDT_1033_Fluechtling_Tip2_Condition()
 
 func void DIA_BDT_1033_Fluechtling_Tip2_Info()
 {
-	AI_Output(self,other, " DIA_BDT_1033_Fluechtling_Tip2_07_00 " );	// (frightened) What do you want from me?
+	AI_Output(self,other, " DIA_BDT_1033_Fluechtling_Tip2_07_00 " );	// What do you want from me?
 	B_GivePlayerXP(XP_AmbientKap3);
 	if(SCFoundMorgahard == FALSE)
 	{
@@ -230,14 +230,14 @@ func void DIA_BDT_1033_Fluechtling_Tip2_Info()
 func void DIA_BDT_1033_Fluechtling_Tip2_Morgahard()
 {
 	AI_Output(other,self, " DIA_BDT_1033_Fluechtling_Tip2_Morgahard_15_00 " );	// Where is Morgahard, your leader?
-	AI_Output(self,other, " DIA_BDT_1033_Fluechtling_Tip2_Morgahard_07_01 " );	// (scared) I don't want trouble. Go to Onar. He wanted to hide among the mercenaries. And leave me alone.
+	AI_Output(self,other, " DIA_BDT_1033_Fluechtling_Tip2_Morgahard_07_01 " );	// I don't want trouble. Go to Onar. He wanted to hide among the mercenaries. Just leave me alone.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_BDT_1033_Fluechtling_Tip2_Knast()
 {
 	AI_Output(other,self, " DIA_BDT_1033_Fluechtling_Tip2_Knast_15_00 " );	// The judge sent me to bring you back.
-	AI_Output(self,other, " DIA_BDT_1033_Fluechtling_Tip2_Knast_07_01 " );	// (yells) NO!
+	AI_Output(self,other, " DIA_BDT_1033_Fluechtling_Tip2_Knast_07_01 " );	// NEVER!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
@@ -252,7 +252,7 @@ func void DIA_BDT_1033_Fluechtling_Tip2_frei()
 func void DIA_BDT_1033_Refugee_Tip2_free_crime()
 {
 	AI_Output(other,self, " DIA_BDT_1033_Fluechtling_Tip2_frei_verbrechen_15_00 " );	// You're scared to death, aren't you?
-	AI_Output(self,other, " DIA_BDT_1033_Fluechtling_Tip2_frei_verbrechen_07_01 " );	// It's easy for you to talk. There is no gallows waiting for you if you are caught.
+	AI_Output(self,other, " DIA_BDT_1033_Fluechtling_Tip2_frei_verbrechen_07_01 " );	// It's easy for you to talk. There are no gallows waiting for you.
 };
 
 
