@@ -22,7 +22,7 @@ func void DIA_Dragon_Swamp_Exit_Info()
 {
 	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
 	CreateInvItems(other,ItMi_InnosEye_Discharged_Mis,1);
-	AI_Output(self,other, " DIA_Dragon_Swamp_Exit_20_00 " );	// The power of the Eye has run out. Your life will end here, man.
+	AI_Output(self,other, " DIA_Dragon_Swamp_Exit_20_00 " );	// The power of the Eye has faded. Your life will end here, mortal.
 	SwampDragon = Hlp_GetNpc(Dragon_Swamp);
 	SwampDragon.flags = 0;
 	AI_StopProcessInfos(self);
@@ -80,12 +80,12 @@ func void DIA_Dragon_Swamp_Hello_Info()
 	{
 		AI_Output(other,self, " DIA_Dragon_Swamp_Hello_15_01 " );	// Ah. Innos' eye appears to be working.
 	};
-	AI_Output(self,other, " DIA_Dragon_Swamp_Hello_20_02 " );	// Many of you have come here. I swept them all.
-	AI_Output(other,self, " DIA_Dragon_Swamp_Hello_15_03 " );	// Stop talking. Your big words don't frighten me, you stinking creature of the swamp.
+	AI_Output(self,other, " DIA_Dragon_Swamp_Hello_20_02 " );	// Many of your kind have come here. I ended them all.
+	AI_Output(other,self, " DIA_Dragon_Swamp_Hello_15_03 " );	// Stop talking. Your big words don't frighten me, stinking creature of the swamp.
 	AI_Output(other,self, " DIA_Dragon_Swamp_Hello_15_04 " );	// Tell me what I want to know, or I'll drown you in your own blood.
 	AI_Output(self,other, " DIA_Dragon_Swamp_Hello_20_05 " );	// Ha-ha-ha. You dare to threaten me, pathetic worm? Give me one reason why I shouldn't tear you to shreds right now.
 	AI_Output(other,self, " DIA_Dragon_Swamp_Hello_15_06 " );	// I am the messenger of Innos, and his Eye is with me. You have no choice. You must submit to my will or you will be destroyed.
-	AI_Output(self,other, " DIA_Dragon_Swamp_Hello_20_07 " );	// (roar) Ahh. Say what you need from me.
+	AI_Output(self,other, " DIA_Dragon_Swamp_Hello_20_07 " );	// Ah... What do you want from me, O servant of fire?
 };
 
 
@@ -109,8 +109,8 @@ func int DIA_Dragon_Swamp_WERBISTDU_Condition()
 
 func void DIA_Dragon_Swamp_WERBISTDU_Info()
 {
-	AI_Output(other,self,"DIA_Dragon_Swamp_WERBISTDU_15_00");	//Кто ты?
-	AI_Output(self,other, " DIA_Dragon_Swamp_WERBISTDU_20_01 " );	// My name is Pandrodor. And it's best for you to quickly crawl back under the stone from which you crawled out.
+	AI_Output(other,self,"DIA_Dragon_Swamp_WERBISTDU_15_00");	//Who are you?
+	AI_Output(self,other, " DIA_Dragon_Swamp_WERBISTDU_20_01 " );	// My name is Pandrodor. It would be best for you to crawl back from whence you came.
 };
 
 
@@ -134,10 +134,10 @@ func int DIA_Dragon_Swamp_WOSINDDIEANDEREN_Condition()
 
 func void DIA_Dragon_Swamp_WOSINDDIEANDEREN_Info()
 {
-	AI_Output(other,self, " DIA_Dragon_Swamp_WOSINDDIEANDEREN_15_00 " );	// Where can I find the rest of you disgusting creatures?
+	AI_Output(other,self, " DIA_Dragon_Swamp_WOSINDDIEANDEREN_15_00 " );	// Where can I find the rest of your disgusting kind?
 	AI_Output(self,other, " DIA_Dragon_Swamp_WOSINDDIEANDEREN_20_01 " );	// The elements that make up everything maintain the integrity of this world.
 	AI_Output(self,other, " DIA_Dragon_Swamp_WOSINDDIEANDEREN_20_02 " );	// Each of them is responsible for its own part of the world.
-	AI_Output(self,other, " DIA_Dragon_Swamp_WOSINDDIEANDEREN_20_03 " );	// Look for the elements and you'll find the rest.
+	AI_Output(self,other, " DIA_Dragon_Swamp_WOSINDDIEANDEREN_20_03 " );	// Look for places where the elements hold sway and you will find the rest.
 };
 
 func void B_AssignDragonTalk_Swamp(var C_Npc slf)
