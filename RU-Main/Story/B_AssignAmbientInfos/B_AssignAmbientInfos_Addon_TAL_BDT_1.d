@@ -92,7 +92,7 @@ func int DIA_Addon_TAL_BDT_1_Raven_Condition()
 func void DIA_Addon_TAL_BDT_1_Raven_Info()
 {
 	AI_Output(other,self, " DIA_Addon_TAL_BDT_1_Raven_15_00 " );	// What do you know about Raven?
-	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Raven_01_01 " );	// H was the first to be here with his guys.
+	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Raven_01_01 " );	// He was the first to be here with his guys.
 	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Raven_01_02 " );	// He's the camp commander. I advise you not to mess with him.
 	AI_Output(self,other, " DIA_Addon_TAL_BDT_1_Raven_01_03 " );	// Once they needed five new fighters because he took his anger out on his own people.
 };
