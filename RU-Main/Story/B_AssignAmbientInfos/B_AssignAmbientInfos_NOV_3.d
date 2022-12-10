@@ -50,14 +50,14 @@ func void DIA_NOV_3_Fegen_Info()
 	{
 		if((NOV_Helfer < 1) && (Feger1_Permanent == FALSE))
 		{
-			AI_Output(self,other, " DIA_NOV_3_Fegen_03_01 " );	// Nobody wants to help you, right? Okay, I'll help you, but you just have to find someone else to match me.
+			AI_Output(self,other, " DIA_NOV_3_Fegen_03_01 " );	// Nobody wants to help you, right? Okay, I'll help you, but you just have to find someone to replace me.
 			B_LogEntry(Topic_ParlanFegen, " The acolyte who sweeps the cellar will help me if I can find another acolyte to help sweep the rooms. " );
 		}
 		else  if ((NOV_Helfer >=  1 ) && (Feger1_Permanent ==  FALSE ))
 		{
 			AI_Output(self,other, " DIA_NOV_3_Fegen_03_02 " );	// Am I the only one willing to help you?
 			AI_Output(other,self, " DIA_NOV_3_Fegen_15_03 " );	// No, I already found a helper.
-			AI_Output(self,other, " DIA_NOV_3_Fegen_03_04 " );	// Then, get down to business!
+			AI_Output(self,other, " DIA_NOV_3_Fegen_03_04 " );	// Then, let's get down to business!
 			NOV_Helpers = NOV_Helpers +  1 ;
 			Feger1_Permanent = TRUE;
 			B_GivePlayerXP(XP_Feger);
@@ -74,7 +74,7 @@ func void DIA_NOV_3_Fegen_Info()
 	{
 		if(Feger2_Permanent == FALSE)
 		{
-			AI_Output(self,other, " DIA_NOV_3_Fegen_03_08 " );	// Sure, I'll help. We, the novices, must support each other. Today you are for me, tomorrow I am for you.
+			AI_Output(self,other, " DIA_NOV_3_Fegen_03_08 " );	// Sure, I'll help. We novices must support each other. Today you help me, tomorrow I help you.
 			AI_Output(self,other, " DIA_NOV_3_Fegen_03_09 " );	// I only ask for fifty gold coins, I need to pay them to Parlan.
 			B_LogEntry(Topic_ParlanFegen, " The novice at the church will help me if I give him fifty gold pieces. " );
 			Info_ClearChoices(DIA_NOV_3_Fegen);
@@ -140,7 +140,7 @@ func void DIA_NOV_3_Wurst_Info()
 	var string NovizeText;
 	var string NoviceLeft;
 	AI_Output(other,self, " DIA_NOV_3_Wurst_15_00 " );	// Would you like some sausage?
-	AI_Output(self,other, " DIA_NOV_3_Wurst_03_01 " );	// Of course, give it here. Who would refuse such a sausage.
+	AI_Output(self,other, " DIA_NOV_3_Wurst_03_01 " );	// Of course, give it here. Who would refuse a free snack?
 	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
 	Sausage_Given = Sausage_Given +  1 ;
 	CreateInvItems(self,ItFo_Sausage,1);
@@ -170,7 +170,7 @@ func int DIA_NOV_3_JOIN_Condition()
 func void DIA_NOV_3_JOIN_Info()
 {
 	AI_Output(other,self, " DIA_NOV_3_JOIN_15_00 " );	// I want to become a mage!
-	AI_Output(self,other, " DIA_NOV_3_JOIN_03_01 " );	// This is what all acolytes want. But only a few of them become the Chosen Ones and get a chance to be accepted into the Circle of Fire.
+	AI_Output(self,other, " DIA_NOV_3_JOIN_03_01 " );	// This is what all acolytes want. But only a few of them become Chosen and get a chance to be accepted into the Circle of Fire.
 	AI_Output(self,other, " DIA_NOV_3_JOIN_03_02 " );	// Becoming a Circle of Fire mage is the highest honor and must be earned.
 	AI_Output(self,other, " DIA_NOV_3_JOIN_03_03 " );	// You must work hard, and then perhaps you will have a chance.
 };
@@ -195,7 +195,7 @@ func void DIA_NOV_3_PEOPLE_Info()
 {
 	AI_Output(other,self, " DIA_NOV_3_PEOPLE_15_00 " );	// Who heads this monastery?
 	AI_Output(self,other, " DIA_NOV_3_PEOPLE_03_01 " );	// We acolytes serve the mages of the Circle of Fire. They, in turn, are led by the Supreme Council, consisting of the three most influential mages.
-	AI_Output(self,other, " DIA_NOV_3_PEOPLE_03_02 " );	// But Parlan is responsible for all the affairs of the novices. He can always be found in the yard, he watches the work of novices.
+	AI_Output(self,other, " DIA_NOV_3_PEOPLE_03_02 " );	// But Parlan is responsible for all the affairs of the novices. He can always be found in the yard, he watches the novices work.
 };
 
 
@@ -219,7 +219,7 @@ func void DIA_NOV_3_LOCATION_Info()
 	AI_Output(other,self, " DIA_NOV_3_LOCATION_15_00 " );	// What can you tell me about this monastery?
 	AI_Output(self,other, " DIA_NOV_3_LOCATION_03_01 " );	// We earn our daily bread with our own labor. We raise sheep and make wine.
 	AI_Output(self,other, " DIA_NOV_3_LOCATION_03_02 " );	// There is a library here, but only mages and selected acolytes are allowed to enter.
-	AI_Output(self,other, " DIA_NOV_3_LOCATION_03_03 " );	// We, the rest of the acolytes, make sure that the mages of the Circle of Fire do not need anything.
+	AI_Output(self,other, " DIA_NOV_3_LOCATION_03_03 " );	// We, the acolytes, make sure that the Mages have everything they need.
 };
 
 
@@ -245,21 +245,21 @@ func void DIA_NOV_3_STANDARD_Info()
 	{
 		if(hero.guild == GIL_KDF)
 		{
-			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_01 " );	// And you still ask! Yes, all the novices only talk about you.
+			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_01 " );	// You are all the acolytes ever talk about.
 			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_02 " );	// It's very rare for a green rookie like you to be elected to the Circle of Fire.
 		}
 		else
 		{
 			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_03 " );	// Elections will be held again soon. One of the acolytes will soon be accepted into the Circle of Fire.
-			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_04 " );	// He'll start doing tests soon.
+			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_04 " );	// He'll start his trials then.
 		};
 	};
 	if ((chapter ==  2 ) || (chapter ==  3 ))
 	{
 		if((Pedro_Traitor == TRUE) && (MIS_NovizenChase != LOG_SUCCESS))
 		{
-			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_05 " );	// Our Order has been touched by Beliar's dirty paw! Evil must be very strong if it could find allies here.
-			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_06 " );	// Pedro lived in this monastery for many years. I think he spent too much time behind the walls of the monastery. This weakened his faith and made him vulnerable to Beliar's temptations.
+			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_05 " );	// Our Order has been touched by Beliar's foul influence! The Evil must be very strong if it could find allies here.
+			AI_Output(self,other, " DIA_NOV_3_STANDARD_03_06 " );	// Pedro lived in this monastery for many years although he spent too much time behind the walls of the monastery. This weakened his faith and made him vulnerable to Beliar's temptations.
 		}
 		else  if (MIS_NoviceChase ==  LOG_SUCCESS )
 		{
@@ -285,7 +285,7 @@ func void DIA_NOV_3_STANDARD_Info()
 	};
 	if (Chapter >=  6 )
 	{
-		AI_Output(self,other, " DIA_NOV_3_STANDARD_03_13 " );	// Don't you know yourself?! Orcs, orcs, orcs - that's the only news lately. And there are more of them every day!
+		AI_Output(self,other, " DIA_NOV_3_STANDARD_03_13 " );	// Where have you been?! Orcs, orcs, orcs - that's the only news lately. And there are more of them every day!
 	};
 };
 
