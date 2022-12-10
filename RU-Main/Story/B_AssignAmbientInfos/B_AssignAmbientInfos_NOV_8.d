@@ -50,8 +50,8 @@ func void DIA_NOV_8_Fegen_Info()
 	{
 		if(Feger3_Permanent == FALSE)
 		{
-			AI_Output(self,other, " DIA_NOV_8_Fegen_08_01 " );	// Oh boy. You just got here and you're already making others do their jobs?
-			AI_Output(self,other, " DIA_NOV_8_Fegen_08_02 " );	// Don't be upset, I had the same problems when I came here. Therefore, I will help you. It would be funny if we didn't do it.
+			AI_Output(self,other, " DIA_NOV_8_Fegen_08_01 " );	// Oh boy. You just got here and you're already making others do your jobs?
+			AI_Output(self,other, " DIA_NOV_8_Fegen_08_02 " );	// Don't be upset, I had the same problems when I came here. I'll help you.
 			NOV_Helpers = NOV_Helpers +  1 ;
 			Feger3_Permanent = TRUE;
 			B_GivePlayerXP(XP_Feger);
@@ -61,12 +61,12 @@ func void DIA_NOV_8_Fegen_Info()
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_NOV_8_Fegen_08_03 " );	// Brother, I understand your condition. And I already told you that I would help you. This is exactly what I do.
+			AI_Output(self,other, " DIA_NOV_8_Fegen_08_03 " );	// Brother, I understand your problem, and I already told you that I would help you didn't I?
 		};
 	};
 	if(Hlp_GetInstanceID(Feger3) == Hlp_GetInstanceID(self) == FALSE)
 	{
-		AI_Output(self,other, " DIA_NOV_8_Fegen_08_04 " );	// Hey, I wouldn't mind, but I'm really busy.
+		AI_Output(self,other, " DIA_NOV_8_Fegen_08_04 " );	// Hey, I wouldn't mind helping but I'm really busy.
 	};
 };
 
@@ -95,7 +95,7 @@ func void DIA_NOV_8_Wurst_Info()
 	var string NovizeText;
 	var string NoviceLeft;
 	AI_Output(other,self, " DIA_NOV_8_Wurst_15_00 " );	// How about a delicious lamb sausage?
-	AI_Output(self,other, " DIA_NOV_8_Wurst_08_01 " );	// Do not hope, I will not refuse. Thanks - this is exactly what I needed.
+	AI_Output(self,other, " DIA_NOV_8_Wurst_08_01 " );	// I will not refuse. Thanks - this is exactly what I needed.
 	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
 	Sausage_Given = Sausage_Given +  1 ;
 	CreateInvItems(self,ItFo_Sausage,1);
@@ -125,8 +125,8 @@ func int DIA_NOV_8_JOIN_Condition()
 func void DIA_NOV_8_JOIN_Info()
 {
 	AI_Output(other,self, " DIA_NOV_8_JOIN_15_00 " );	// How do I become a mage?
-	AI_Output(self,other, " DIA_NOV_8_JOIN_08_01 " );	// You will become the Chosen One of Innos only when the higher firebenders allow it.
-	AI_Output(self,other, " DIA_NOV_8_JOIN_08_02 " );	// Acolytes are forbidden from learning runic magic, and old scriptures can only be read with the permission of mages.
+	AI_Output(self,other, " DIA_NOV_8_JOIN_08_01 " );	// You will become the Chosen One of Innos only when the high pyromancers allow it.
+	AI_Output(self,other, " DIA_NOV_8_JOIN_08_02 " );	// Acolytes are forbidden from learning runic magic, and old scriptures can only be read with the permission of the mages.
 };
 
 
@@ -148,8 +148,8 @@ func int DIA_NOV_8_PEOPLE_Condition()
 func void DIA_NOV_8_PEOPLE_Info()
 {
 	AI_Output(other,self, " DIA_NOV_8_PEOPLE_15_00 " );	// Who runs the monastery?
-	AI_Output(self,other, " DIA_NOV_8_PEOPLE_08_01 " );	// Supreme Council. It consists of the three most powerful mages of our order. During the day they are in the church.
-	AI_Output(self,other, " DIA_NOV_8_PEOPLE_08_02 " );	// Chosen of Innos - all mages. Innos gave them this gift so that they could carry out his will on earth.
+	AI_Output(self,other, " DIA_NOV_8_PEOPLE_08_01 " );	// The Supreme Council. It consists of the three most powerful Wizards of our order. During the day they are in the church.
+	AI_Output(self,other, " DIA_NOV_8_PEOPLE_08_02 " );	// The Chosen of Innos - Mages, all. Innos gave them the gify of magic so that they could carry out his will on earth.
 };
 
 
@@ -199,7 +199,7 @@ func void DIA_NOV_8_STANDARD_Info()
 		if(other.guild == GIL_KDF)
 		{
 			AI_Output(self,other, " DIA_NOV_8_STANDARD_08_01 " );	// You can say that. For more than a hundred years, no acolyte has entered the Circle of Fire so quickly.
-			AI_Output(self,other, " DIA_NOV_8_STANDARD_08_02 " );	// I hope that someday I too will be honored with this honor. I am willing to work hard for this.
+			AI_Output(self,other, " DIA_NOV_8_STANDARD_08_02 " );	// I hope that someday I too will be rewarded with this honor. I am willing to work hard to make it happen.
 		}
 		else
 		{
@@ -211,20 +211,20 @@ func void DIA_NOV_8_STANDARD_Info()
 		if((Pedro_Traitor == TRUE) && (MIS_NovizenChase != LOG_SUCCESS))
 		{
 			AI_Output(self,other, " DIA_NOV_3_STANDARD_08_04 " );	// I still can't believe it. One of us betrayed the monastery and stole the Eye of Innos.
-			AI_Output(self,other, " DIA_NOV_3_STANDARD_08_05 " );	// The well-being of the brotherhood depends on our work, but we are still too weak. That's why Beliar managed to win over one of us to his side.
+			AI_Output(self,other, " DIA_NOV_3_STANDARD_08_05 " );	// The well-being of the brotherhood depends on our strength of will, but we are still too weak. That's why Beliar managed to win over one of us to his side.
 		}
 		else  if (MIS_NoviceChase ==  LOG_SUCCESS )
 		{
 			AI_Output(self,other, " DIA_NOV_3_STANDARD_08_06 " );	// Thank Innos, we were able to wrest the Eye from the clutches of the enemy.
-			AI_Output(self,other, " DIA_NOV_3_STANDARD_08_07 " );	// Your courage can serve as an example to many desperate souls and help them survive in these dark times.
+			AI_Output(self,other, " DIA_NOV_3_STANDARD_08_07 " );	// Your courage will serve as an example to many desperate souls and help them survive in these dark times.
 		}
 		else if(MIS_OLDWORLD == LOG_SUCCESS)
 		{
-			AI_Output(self,other, " DIA_NOV_8_STANDARD_08_08 " );	// I've heard about dragons and the army of Evil. May Innos be with us!
+			AI_Output(self,other, " DIA_NOV_8_STANDARD_08_08 " );	// I've heard about the dragons and the coming army of Evil. May Innos be with us!
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_NOV_8_STANDARD_08_09 " );	// The High Council is very concerned about the situation our paladins are in. For a long time there has been no news from the Valley of Mines.
+			AI_Output(self,other, " DIA_NOV_8_STANDARD_08_09 " );	// The High Council is very concerned about the situation with our paladins. There has been no news from the Valley of Mines.
 		};
 	};
 	if (chapter ==  4 )
@@ -234,11 +234,11 @@ func void DIA_NOV_8_STANDARD_Info()
 	if (chapter ==  5 )
 	{
 		AI_Output(self,other, " DIA_NOV_8_STANDARD_08_11 " );	// Yes. We have defeated the dragons! Innos showed us that we should never lose hope.
-		AI_Output(self,other, " DIA_NOV_8_STANDARD_08_12 " );	// Still, there are too many shadows and we need to light a lot of fires to drive them away.
+		AI_Output(self,other, " DIA_NOV_8_STANDARD_08_12 " );	// Still, there are too many shadows and we will need to light a lot of fires to drive them away.
 	};
 	if (Chapter >=  6 )
 	{
-		AI_Output(self,other, " DIA_NOV_8_STANDARD_08_13 " );	// If it weren't for the Firebenders and the high walls of our monastery, the cities would have befallen us!
+		AI_Output(self,other, " DIA_NOV_8_STANDARD_08_13 " );	// If it weren't for the Pyromancers and the high walls of our monastery, we would have fallen by now!
 		AI_Output(self,other, " DIA_NOV_8_STANDARD_08_14 " );	// But who knows how much longer we can hold out.
 	};
 };
