@@ -65,7 +65,7 @@ func int DIA_BAU_16_PEOPLE_Condition()
 func void DIA_BAU_16_PEOPLE_Info()
 {
 	AI_Output(other,self, " DIA_BAU_16_PEOPLE_15_00 " );	// Who's in charge here?
-	AI_Output(self,other, " DIA_BAU_16_PEOPLE_16_01 " );	// Mercenaries, of course.
+	AI_Output(self,other, " DIA_BAU_16_PEOPLE_16_01 " );	// The mercenaries, of course.
 	AI_Output(self,other, " DIA_BAU_16_PEOPLE_16_02 " );	// Onar pays them, but most of the time they do whatever they want.
 };
 
@@ -87,7 +87,7 @@ func int DIA_BAU_16_LOCATION_Condition()
 
 func void DIA_BAU_16_LOCATION_Info()
 {
-	AI_Output(other,self, " DIA_BAU_16_LOCATION_15_00 " );	// What can you tell interesting about this area?
+	AI_Output(other,self, " DIA_BAU_16_LOCATION_15_00 " );	// What can you tell me about this area?
 	AI_Output(self,other, " DIA_BAU_16_LOCATION_16_01 " );	// There are three farms here. Onar's farm is to the east, and Sekoba's is to the north of the valley.
 	AI_Output(self,other, " DIA_BAU_16_LOCATION_16_02 " );	// From here, a stone staircase leads to the mountains in the southwest. Bengar's farm is located there.
 };
@@ -113,7 +113,7 @@ func void DIA_BAU_16_STANDARD_Info()
 	AI_Output(other,self, " DIA_BAU_16_STANDARD_15_00 " );	// What's new?
 	if (chapter ==  1 )
 	{
-		AI_Output(self,other, " DIA_BAU_16_STANDARD_16_01 " );	// Soldiers from the city no longer take our livestock and crops! We don't play these games anymore. Now we are able to protect ourselves!
+		AI_Output(self,other, " DIA_BAU_16_STANDARD_16_01 " );	// Soldiers from the city no longer take our livestock and crops! We don't play those games anymore. Now we are able to protect ourselves!
 	};
 	if (chapter ==  2 )
 	{
@@ -129,11 +129,11 @@ func void DIA_BAU_16_STANDARD_Info()
 	};
 	if (chapter ==  5 )
 	{
-		AI_Output(self,other, " DIA_BAU_16_STANDARZ_16_05 " );	// The undead have taken over all of Khorinis! Now even a step is dangerous to step outside the farm.
+		AI_Output(self,other, " DIA_BAU_16_STANDARZ_16_05 " );	// The undead have taken over all of Khorinis! Stepping outside the farm is suicide. I don't want to be a zombie...
 	};
 	if (Chapter >=  6 )
 	{
-		AI_Output(self,other, " DIA_BAU_16_STANDARD_16_06 " );	// Paladins didn't stand a chance. The orcs crushed their defenses in a matter of minutes. What will happen to us?!
+		AI_Output(self,other, " DIA_BAU_16_STANDARD_16_06 " );	// The Paladins never stood a chance. The orcs crushed their defenses in a matter of minutes. What will happen to us now?
 	};
 };
 
