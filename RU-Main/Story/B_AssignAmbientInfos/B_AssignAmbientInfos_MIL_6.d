@@ -74,7 +74,7 @@ func void DIA_Addon_MIL_6_MissingPeople_Info()
 {
 	AI_Output(other,self, " DIA_Addon_MIL_6_MissingPeople_15_00 " );	// I heard that several townspeople disappeared.
 	AI_Output(self,other, " DIA_Addon_MIL_6_MissingPeople_06_01 " );	// And I recently heard rumors about people disappearing.
-	AI_Output(self,other, " DIA_Addon_MIL_6_MissingPeople_06_02 " );	// I can't even imagine how this can be explained.
+	AI_Output(self,other, " DIA_Addon_MIL_6_MissingPeople_06_02 " );	// I can't even imagine what's happening to those people.
 	AI_Output(self,other, " DIA_Addon_MIL_6_MissingPeople_06_03 " );	// And there's nothing we can do but keep our eyes open and do our duty as guards.
 };
 
@@ -152,26 +152,26 @@ func void DIA_MIL_6_STANDARD_Info()
 	AI_Output(other,self, " DIA_MIL_6_STANDARD_15_00 " );	// What's new?
 	if (chapter ==  1 )
 	{
-		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_01 " );	// Recently, the city is just flooded with all sorts of rabble.
-		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_02 " );	// Theft has become unbearable. Lord Andre suspects that this is the work of the gang.
+		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_01 " );	// Lately, the city is just being flooded with all sorts of rabble.
+		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_02 " );	// Theft has become unbearable. Lord Andre suspects that this is the work of a gang of ruffians.
 		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_03 " );	// Not so long ago, we turned the entire port block upside down, but found nothing.
 	};
 	if (chapter ==  2 )
 	{
-		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_04 " );	// Looks like we've got the bandit issue under control. Raids happen less and less.
+		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_04 " );	// Looks like we've got the bandit issue under control. Raids happen less and less now.
 	};
 	if (chapter ==  3 )
 	{
-		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_05 " );	// The situation in the city is getting worse and worse. And all because of this rabble that flooded the city. Last night I followed a man in a black cassock upstairs.
-		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_06 " );	// I'm sure he's up to something bad. But when I approached him at the town hall, he simply disappeared. A very suspicious person...
+		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_05 " );	// The situation in the city is getting worse and worse, all because of this rabble that flooded the city. Last night I followed a man in a black robe upstairs.
+		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_06 " );	// I was sure he was up to something bad. But when I approached him at the town hall, he simply disappeared. It's all very suspicious...
 	};
 	if (chapter ==  4 )
 	{
-		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_07 " );	// Lord Hagen is said to have hired mercenaries to fight the dragons. I don't care, although I myself would not mind fighting a dragon.
+		AI_Output(self,other, " DIA_MIL_6_STANDARD_06_07 " );	// Lord Hagen is said to have hired mercenaries to fight the dragons. I don't care, although I myself would never dare fighting a dragon.
 	};
 	if (chapter ==  5 )
 	{
-		AI_Output(self,other, " DIA_MIL_6_STANDARZ_06_08 " );	// The city is being besieged by the undead! We are all having a hard time.
+		AI_Output(self,other, " DIA_MIL_6_STANDARZ_06_08 " );	// The city is being besieged by the undead! We don't know how long we will be able to hold them off.
 	};
 	if (Chapter >=  6 )
 	{
