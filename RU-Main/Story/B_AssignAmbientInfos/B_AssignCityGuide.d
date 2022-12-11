@@ -1,36 +1,37 @@
 
+
 func void B_AddCityGuideChoices()
 {
 	Info_ClearChoices(dia_cityguide);
 	if(!C_IsQuarterNearest(self,Q_UNTERSTADT))
 	{
-		Info_AddChoice(dia_cityguide,"В нижнюю часть города.",dia_cityguide_unterstadt);
+		Info_AddChoice(dia_cityguide, " Downtown. " ,dia_cityguide_unterstadt);
 	};
 	if(!C_IsQuarterNearest(self,Q_OBERSTADT))
 	{
-		Info_AddChoice(dia_cityguide,"В верхний квартал.",dia_cityguide_oberstadt);
+		Info_AddChoice(dia_cityguide, " To the upper quarter. " ,dia_cityguide_oberstadt);
 	};
 	if(!C_IsQuarterNearest(self,Q_TEMPEL))
 	{
-		Info_AddChoice(dia_cityguide,"К храму Аданоса.",dia_cityguide_tempel);
+		Info_AddChoice(dia_cityguide, " To the temple of Adanos. " ,dia_cityguide_tempel);
 	};
 	if(!C_IsQuarterNearest(self,Q_MARKT))
 	{
-		Info_AddChoice(dia_cityguide,"На рыночную площадь.",dia_cityguide_markt);
+		Info_AddChoice(dia_cityguide, " To the marketplace. " ,dia_cityguide_markt);
 	};
 	if(!C_IsQuarterNearest(self,Q_GALGEN))
 	{
-		Info_AddChoice(dia_cityguide,"На площадь правосудия.",dia_cityguide_galgen);
+		Info_AddChoice(dia_cityguide, " To Justice Square. " ,dia_cityguide_galgen);
 	};
 	if(!C_IsQuarterNearest(self,Q_KASERNE))
 	{
-		Info_AddChoice(dia_cityguide,"К казармам.",dia_cityguide_kaserne);
+		Info_AddChoice(dia_cityguide, " To the barracks. " ,dia_cityguide_kaserne);
 	};
-	if(!C_IsQuarterNearest(self,Q_HAFEN))
+	if ( ! C_IsQuarterNearest(self, Q_HAFEN ))
 	{
-		Info_AddChoice(dia_cityguide,"В портовый квартал.",dia_cityguide_hafen);
+		Info_AddChoice(dia_cityguide, " To the waterfront. " ,dia_cityguide_hafen);
 	};
-	Info_AddChoice(dia_cityguide,"Спасибо! Именно это я и хотел узнать.",dia_cityguide_back);
+	Info_AddChoice(dia_cityguide, " Thanks! That's exactly what I wanted to know. " ,dia_cityguide_back);
 };
 
 
@@ -40,7 +41,7 @@ instance DIA_CITYGUIDE(C_Info)
 	condition = DIA_CITYGUIDE_Condition;
 	information = DIA_CITYGUIDE_Info;
 	permanent = TRUE;
-	description = "Что ты можешь рассказать мне об этом квартале?";
+	description = " What can you tell me about this quarter? " ;
 };
 
 
@@ -51,7 +52,7 @@ func int DIA_CITYGUIDE_Condition()
 
 func void DIA_CITYGUIDE_Info()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_15_00");	//Что ты можешь рассказать мне об этом квартале?
+	AI_Output(other,self, " DIA_CITYGUIDE_15_00 " );	// What can you tell me about this quarter?
 	if(C_NpcIsInQuarter(self) == Q_UNTERSTADT)
 	{
 		B_Say(self,other,"$UNTERSTADT");
@@ -86,13 +87,13 @@ func void DIA_CITYGUIDE_Info()
 
 func void dia_cityguide_back()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_BACK_15_00");	//Спасибо. Именно это я и хотел узнать!
+	AI_Output(other,self, " DIA_CITYGUIDE_BACK_15_00 " );	// Thank you. That's exactly what I wanted to know!
 	Info_ClearChoices(dia_cityguide);
 };
 
-func void dia_cityguide_unterstadt()
+func void dia_cityguide_lowertown()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_UNTERSTADT_15_00");	//Как мне попасть в нижнюю часть города?
+	AI_Output(other,self, " DIA_CITYGUIDE_UNTERSTADT_15_00 " );	// How do I get to the lower part of the city?
 	if(C_NpcIsInQuarter(self) == Q_OBERSTADT)
 	{
 		B_Say(self,other,"$OBERSTADT_2_UNTERSTADT");
@@ -126,7 +127,7 @@ func void dia_cityguide_unterstadt()
 
 func void dia_cityguide_oberstadt()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_OBERSTADT_15_00");	//Как мне попасть в верхний квартал?
+	AI_Output(other,self, " DIA_CITYGUIDE_OBERSTADT_15_00 " );	// How do I get to the upper quarter?
 	if(C_NpcIsInQuarter(self) == Q_UNTERSTADT)
 	{
 		B_Say(self,other,"$UNTERSTADT_2_OBERSTADT");
@@ -163,9 +164,9 @@ func void dia_cityguide_oberstadt()
 	B_AddCityGuideChoices();
 };
 
-func void dia_cityguide_tempel()
+func void dia_cityguide_paste()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_TEMPEL_15_00");	//Я ищу храм.
+	AI_Output(other,self, " DIA_CITYGUIDE_TEMPEL_15_00 " );	// I'm looking for a temple.
 	if(C_NpcIsInQuarter(self) == Q_UNTERSTADT)
 	{
 		B_Say(self,other,"$UNTERSTADT_2_TEMPEL");
@@ -198,7 +199,7 @@ func void dia_cityguide_tempel()
 
 func void dia_cityguide_markt()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_MARKT_15_00");	//Где находится рыночная площадь?
+	AI_Output(other,self, " DIA_CITYGUIDE_MARKT_15_00 " );	// Where is the market place?
 	if(C_NpcIsInQuarter(self) == Q_UNTERSTADT)
 	{
 		B_Say(self,other,"$UNTERSTADT_2_TEMPEL");
@@ -231,9 +232,9 @@ func void dia_cityguide_markt()
 	B_AddCityGuideChoices();
 };
 
-func void dia_cityguide_galgen()
+func void dia_cityguide_gallows()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_GALGEN_15_00");	//Как мне попасть на площадь Правосудия?
+	AI_Output(other,self, " DIA_CITYGUIDE_GALGEN_15_00 " );	// How do I get to Justice Square?
 	if(C_NpcIsInQuarter(self) == Q_UNTERSTADT)
 	{
 		B_Say(self,other,"$UNTERSTADT_2_TEMPEL");
@@ -266,9 +267,9 @@ func void dia_cityguide_galgen()
 	B_AddCityGuideChoices();
 };
 
-func void dia_cityguide_kaserne()
+func void dia_cityguide_barracks()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_KASERNE_15_00");	//Где находятся казармы?
+	AI_Output(other,self, " DIA_CITYGUIDE_KASERNE_15_00 " );	// Where are the barracks located?
 	if(C_NpcIsInQuarter(self) == Q_UNTERSTADT)
 	{
 		B_Say(self,other,"$UNTERSTADT_2_TEMPEL");
@@ -307,7 +308,7 @@ func void dia_cityguide_kaserne()
 
 func void dia_cityguide_hafen()
 {
-	AI_Output(other,self,"DIA_CITYGUIDE_HAFEN_15_00");	//Где находится портовый квартал?
+	AI_Output(other,self, " DIA_CITYGUIDE_HAFEN_15_00 " );	// Where is the harbor area located?
 	if(C_NpcIsInQuarter(self) == Q_UNTERSTADT)
 	{
 		B_Say(self,other,"$UNTERSTADT_2_HAFEN");
