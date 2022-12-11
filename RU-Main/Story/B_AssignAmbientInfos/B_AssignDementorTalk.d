@@ -169,34 +169,34 @@ func void DIA_AmbientDementor_Info()
 	{
 		if(randy == 0)
 		{
-			AI_Output(self,other, " DIA_AmbientDementor_19_07 " );	// Poor mage, you will never match the Master's strength!
+			AI_Output(self,other, " DIA_AmbientDementor_19_07 " );	// Poor pathetic mageling, you will never match the Master's strength!
 		};
 		if(randy == 1)
 		{
-			AI_Output(self,other, " DIA_AmbientDementor_19_08 " );	// You chose the path of magic to oppose us - smart move! But even that won't help you.
+			AI_Output(self,other, " DIA_AmbientDementor_19_08 " );	// You chose the path of magic to oppose us - a smart move! But even that won't help you.
 		};
 		if(randy == 2)
 		{
-			AI_Output(self,other, " DIA_AmbientDementor_19_09 " );	// Even as a mage, you can't stop us!
+			AI_Output(self,other, " DIA_AmbientDementor_19_09 " );	// Even a wizard of your power cannot stop us!
 		};
 		if(randy == 3)
 		{
-			AI_Output(self,other, " DIA_AmbientDementor_19_10 " );	// My Master will crush you! Your pathetic magic won't save you.
+			AI_Output(self,other, " DIA_AmbientDementor_19_10 " );	// My Master will crush you! Your pathetic magics won't save you.
 		};
 	}
 	else
 	{
 		if(randy == 0)
 		{
-			AI_Output(self,other, " DIA_AmbientDementor_19_11 " );	// Surrender to our mercy while you still can! You can't leave here.
+			AI_Output(self,other, " DIA_AmbientDementor_19_11 " );	// Surrender to our mercy while you still can! You shall not leave here.
 		};
 		if(randy == 1)
 		{
-			AI_Output(self,other, " DIA_AmbientDementor_19_12 " );	// Now you will know the power of the Master. You can't get away from him!
+			AI_Output(self,other, " DIA_AmbientDementor_19_12 " );	// Now you will know the power of the Master. The only escape is death!
 		};
 		if(randy == 2)
 		{
-			AI_Output(self,other, " DIA_AmbientDementor_19_13 " );	// Master wants your head! Nothing will save you now.
+			AI_Output(self,other, " DIA_AmbientDementor_19_13 " );	// The Master wants your head! Nothing will save you now.
 		};
 		if(randy == 3)
 		{
