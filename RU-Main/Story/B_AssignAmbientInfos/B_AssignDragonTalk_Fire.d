@@ -65,12 +65,12 @@ func void DIA_Dragon_Fire_Hello_Info()
 	{
 		AI_Output(other,self, " DIA_Dragon_Fire_Hello_15_01 " );	// You're pretty clear for such a bulky monster.
 	};
-	AI_Output(other,self, " DIA_Dragon_Fire_Hello_15_02 " );	// I didn't come to see you. I'm afraid my goals are somewhat more radical.
+	AI_Output(other,self, " DIA_Dragon_Fire_Hello_15_02 " );	// I didn't come to see you. I'm afraid my goals are somewhat more violent.
 	AI_Output(self,other, " DIA_Dragon_Fire_Hello_20_03 " );	// Are you saying you're ready to challenge me to a fight?
-	AI_Output(self,other, " DIA_Dragon_Fire_Hello_20_04 " );	// Ha-ha-ha! I'll break your flimsy neck.
+	AI_Output(self,other, " DIA_Dragon_Fire_Hello_20_04 " );	// Ha-ha-ha! I will chew on you for days.
 	AI_PlayAni(hero,"T_INNOSEYE");
-	AI_Output(other,self, " DIA_Dragon_Fire_Hello_15_05 " );	// Not so fast, mate. The Eye of Innos is with me! You cannot resist my will. Answer my questions, otherwise unbearable agony awaits you.
-	AI_Output(self,other, " DIA_Dragon_Fire_Hello_20_06 " );	// Ahhh...(roaring) Then ask your stupid questions while you still can. Your strength will not last long.
+	AI_Output(other,self, " DIA_Dragon_Fire_Hello_15_05 " );	// Not so fast, creature. The Eye of Innos is with me! You cannot resist my will. Answer my questions, or face the wrath of Innos.
+	AI_Output(self,other, " DIA_Dragon_Fire_Hello_20_06 " );	// Ahhh... Then ask your little questions while you still can. Your strength will not last long.
 };
 
 
@@ -94,9 +94,9 @@ func int DIA_Dragon_Fire_WerBistDu_Condition()
 
 func void DIA_Dragon_Fire_WerBistDu_Info()
 {
-	AI_Output(other,self,"DIA_Dragon_Fire_WerBistDu_15_00");	//Кто ты?
-	AI_Output(self,other, " DIA_Dragon_Fire_WerBistDu_20_01 " );	// My name is Feomatar, and that's all you'll know about me.
-	AI_Output(self,other, " DIA_Dragon_Fire_WerBistDu_20_02 " );	// When the spell of the Eye releases me, you will burn in the fire.
+	AI_Output(other,self,"DIA_Dragon_Fire_WerBistDu_15_00");	//Who are you?
+	AI_Output(self,other, " DIA_Dragon_Fire_WerBistDu_20_01 " );	// My name is Feomatar, but that's all you need to know about me.
+	AI_Output(self,other, " DIA_Dragon_Fire_WerBistDu_20_02 " );	// When the Eye releases me, you will burn.
 };
 
 
@@ -120,9 +120,9 @@ func int DIA_Dragon_Fire_HORT_Condition()
 
 func void DIA_Dragon_Fire_HORT_Info()
 {
-	AI_Output(other,self, " DIA_Dragon_Fire_HORT_15_00 " );	// Each dragon has a treasury where he keeps his treasures. Where is your treasure?
+	AI_Output(other,self, " DIA_Dragon_Fire_HORT_15_00 " );	// Each dragon has a hoard where he keeps his treasures. Where is yours?
 	AI_Output(self,other, " DIA_Dragon_Fire_HORT_20_01 " );	// In a place that will be inaccessible to you when I am free from the bonds of the Eye.
-	AI_Output(self,other, " DIA_Dragon_Fire_HORT_20_02 " );	// I keep my treasures high up in these hot cliffs, where it's almost impossible for a wingless creature like you to reach.
+	AI_Output(self,other, " DIA_Dragon_Fire_HORT_20_02 " );	// I keep my treasures high up in these cliffs, where a wingless maggott like you will never reach.
 };
 
 func void B_AssignDragonTalk_Fire(var C_Npc slf)
