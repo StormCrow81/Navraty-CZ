@@ -81,7 +81,7 @@ func void DIA_SLD_6_PEOPLE_Info()
 {
 	AI_Output(other,self, " DIA_SLD_6_PEOPLE_15_00 " );	// Who's in charge here?
 	AI_Output(self,other, " DIA_SLD_6_PEOPLE_06_01 " );	// This farm belongs to Onar, if that's what you mean. But Lee is in charge.
-	AI_Output(self,other, " DIA_SLD_6_PEOPLE_06_02 " );	// He was a general in the royal army. But he is no longer on friendly terms with the king. (laughs)
+	AI_Output(self,other, " DIA_SLD_6_PEOPLE_06_02 " );	// He was a general in the royal army. But he is no longer on friendly terms with the king though, hehehehe!
 	AI_Output(self,other, " DIA_SLD_6_PEOPLE_06_03 " );	// Remember his name. If you have any problems here, he is probably the only one who can solve them. Everyone else will just skin you.
 };
 
@@ -130,7 +130,7 @@ func int DIA_SLD_6_STANDARD_Condition()
 
 func void DIA_SLD_6_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_SLD_6_STANDARD_15_00");	//В чем дело?
+	AI_Output(other,self,"DIA_SLD_6_STANDARD_15_00");	//What's the matter?
 	if (chapter <=  2 )
 	{
 		if (EnterOW_Chapter2 ==  FALSE )
@@ -147,7 +147,7 @@ func void DIA_SLD_6_STANDARD_Info()
 		else if(other.guild == GIL_SLD)
 		{
 			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_03 " );	// When I heard about dragons, I didn't even believe it at first.
-			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_04 " );	// The dragon is the real enemy. It's not like some kind of sheep or half-asleep militia.
+			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_04 " );	// A dragon is the real threat. The kind of horror that ruins men or makes legends of them.
 		}
 		else
 		{
@@ -163,7 +163,7 @@ func void DIA_SLD_6_STANDARD_Info()
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_08 " );	// If Bennett is not released from prison, we ourselves will go there and free him.
+			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_08 " );	// If Bennett is not released from prison, we will go there and free him personally.
 		};
 	};
 	if (chapter ==  4 )
@@ -175,19 +175,19 @@ func void DIA_SLD_6_STANDARD_Info()
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_11 " );	// You must go to the Valley of Mines. I heard those poor fellows out there need help.
+			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_11 " );	// You must go to the Valley of Mines. I heard the poor unfortunate fools need help out there.
 		};
 	};
 	if (chapter ==  5 )
 	{
 		if(hero.guild == GIL_DJG)
 		{
-			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_12 " );	// When you showed up here, I immediately knew that you would turn everything upside down here.
-			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_13 " );	// But dragons? It is something! Now hardly anyone will dare to contact you.
+			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_12 " );	// When you showed up here, I immediately knew that you would turn everything upside down.
+			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_13 " );	// But dragons? That is something else entirely isn't it?
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_14 " );	// I'm amazed. You are not on our side, but defeating the dragons is a great feat.
+			AI_Output(self,other, " DIA_SLD_6_STANDARD_06_14 " );	// I'm amazed. You are not on our side, but defeating the dragons is a tremendous feat, worthy of song...
 		};
 	};
 	if (Chapter >=  6 )
