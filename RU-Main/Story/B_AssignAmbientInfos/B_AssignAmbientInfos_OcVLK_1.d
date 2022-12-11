@@ -43,7 +43,7 @@ func int DIA_OCVLK_1_PEOPLE_Condition()
 func void DIA_OCVLK_1_PEOPLE_Info()
 {
 	AI_Output(other,self, " DIA_OCVLK_1_PEOPLE_15_00 " );	// Who's in charge here?
-	AI_Output(self,other, " DIA_OCVLK_1_PEOPLE_01_01 " );	// Commander Garond. But since the situation worsened, he did not leave the throne room. I'm afraid this won't end well.
+	AI_Output(self,other, " DIA_OCVLK_1_PEOPLE_01_01 " );	// Commander Garond. But since the situation worsened, he does not leave the throne room. I'm afraid this won't end well.
 };
 
 
@@ -94,7 +94,7 @@ func void DIA_OCVLK_1_STANDARD_Info()
 	AI_Output(other,self, " DIA_OCVLK_1_STANDARD_15_00 " );	// How are you?
 	if (chapter <=  3 )
 	{
-		AI_Output(self,other, " DIA_OCVLK_1_STANDARD_01_01 " );	// Orcs cornered us like they wanted! None of us can survive without reinforcements! I'm surprised the dragons haven't finished us off yet.
+		AI_Output(self,other, " DIA_OCVLK_1_STANDARD_01_01 " );	// Orcs cornered us like cattle! None of us can survive without reinforcements! I'm surprised the dragons haven't finished us off yet.
 	};
 	if (chapter ==  4 )
 	{
@@ -115,7 +115,7 @@ func void DIA_OCVLK_1_STANDARD_Info()
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_OCVLK_1_STANDARD_01_05 " );	// Those idiotic crates they hastily piled in front of the entrance won't be able to stop the orcs!
+			AI_Output(self,other, " DIA_OCVLK_1_STANDARD_01_05 " );	// Those flimsy crates they so hastily piled in front of the entrance won't be able to stop the orcs!
 		};
 	};
 	if (Chapter >=  6 )
