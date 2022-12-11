@@ -90,9 +90,9 @@ func int DIA_VLK_8_LOCATION_Condition()
 func void DIA_VLK_8_LOCATION_Info()
 {
 	AI_Output(other,self, " DIA_VLK_8_LOCATION_15_00 " );	// What interesting things can be seen here?
-	AI_Output(self,other, " DIA_VLK_8_LOCATION_08_01 " );	// The large ship that the paladins used to sail to the harbor. This is a huge ship! You definitely need to take a look at it.
-	AI_Output(self,other, " DIA_VLK_8_LOCATION_08_02 " );	// But I doubt they'll let you on board. Paladins guard this ship better than royal diamonds.
-	AI_Output(self,other, " DIA_VLK_8_LOCATION_08_03 " );	// Which is not surprising. This is the only sea vessel for many miles around.
+	AI_Output(self,other, " DIA_VLK_8_LOCATION_08_01 " );	// The large ship that the paladins used to sail to the harbor. It is a titan! You definitely need to take a look at it.
+	AI_Output(self,other, " DIA_VLK_8_LOCATION_08_02 " );	// But I doubt they'll let you on board. The Paladins guard that ship better than royal diamonds.
+	AI_Output(self,other, " DIA_VLK_8_LOCATION_08_03 " );	// Which is not surprising. It's the only sea vessel for many miles around.
 };
 
 
@@ -117,8 +117,8 @@ func void DIA_VLK_8_STANDARD_Info()
 	if (chapter ==  1 )
 	{
 		AI_Output(self,other, " DIA_Addon_VLK_8_STANDARD_08_00 " );	// Everyone is worried.
-		AI_Output(self,other, " DIA_Addon_VLK_8_STANDARD_08_01 " );	// It was not enough that the paladins settled here like at home, now people are constantly disappearing in the most strange way.
-		AI_Output(self,other, " DIA_Addon_VLK_8_STANDARD_08_02 " );	// Time for the militia to finally do something about this.
+		AI_Output(self,other, " DIA_Addon_VLK_8_STANDARD_08_01 " );	// It was not enough that the paladins have basically taken over, now people are constantly disappearing in the strangest ways.
+		AI_Output(self,other, " DIA_Addon_VLK_8_STANDARD_08_02 " );	// The Militia must do something!
 		if(SC_HearedAboutMissingPeople == FALSE)
 		{
 			Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
@@ -129,7 +129,7 @@ func void DIA_VLK_8_STANDARD_Info()
 	};
 	if (chapter ==  2 )
 	{
-		AI_Output(self,other, " DIA_VLK_8_STANDARD_08_01 " );	// Everyone is waiting for the paladins to announce why they're here. I believe it's because of the orcs. They will surely attack us soon!
+		AI_Output(self,other, " DIA_VLK_8_STANDARD_08_01 " );	// Everyone is waiting for the paladins to announce why they're here. I believe it's because of the orcs. An attack must be imminent!
 		AI_Output(self,other, " DIA_VLK_8_STANDARD_08_02 " );	// Paladins may be blessed by Innos, but when the orc hordes show up here, I think we'll all be in trouble.
 	};
 	if (chapter ==  3 )
@@ -144,11 +144,11 @@ func void DIA_VLK_8_STANDARD_Info()
 	};
 	if (chapter ==  5 )
 	{
-		AI_Output(self,other, " DIA_VLK_8_STANDARD_08_07 " );	// People talk that the dragons have been defeated. Is it true?
+		AI_Output(self,other, " DIA_VLK_8_STANDARD_08_07 " );	// People whisper amongst each other that the dragons have been defeated. Is it true?
 	};
 	if (Chapter >=  6 )
 	{
-		AI_Output(self,other, " DIA_VLK_8_STANDARD_08_08 " );	// Better don't ask!
+		AI_Output(self,other, " DIA_VLK_8_STANDARD_08_08 " );	// It's better not to ask!
 	};
 };
 
