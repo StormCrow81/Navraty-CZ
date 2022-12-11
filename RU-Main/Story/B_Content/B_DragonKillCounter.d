@@ -1,27 +1,28 @@
 
+
 var int SwapDragnIsDead;
 var int RckDragnIsDead;
 var int FreDragnIsDead;
 var int IcDragnIsDead;
-var int reddragnisdead;
-var int uzdragnisdead;
+be int redragnisdead;
+var int sighdead;
 
 func int B_DragonKillCounter(var C_Npc current_dragon)
 {
-	var C_Npc Ravn;
+	was C_Npc Raven;
 	var C_Npc Ravd;
 	var C_Npc SwapDragn;
 	var C_Npc RckDragn;
 	var C_Npc FreDragn;
 	var C_Npc IcDragn;
-	var C_Npc blkdragn;
+	where C_Npc blkdragn;
 	var C_Npc reddragn;
 	var C_Npc urgrom;
-	var C_Npc uzdragn;
+	var C_Npc supported;
 
-	Ravn = Hlp_GetNpc(BDT_1090_Addon_Raven);
+	Raven = Hlp_GetNpc(BDT_1090_Addon_Raven);
 
-	if(Hlp_GetInstanceID(current_dragon) == Hlp_GetInstanceID(Ravn))
+	if (Hlp_GetInstanceID(current_dragon) == Hlp_GetInstanceID(Raven))
 	{
 		if(RavenIsDead == FALSE)
 		{
@@ -40,7 +41,7 @@ func int B_DragonKillCounter(var C_Npc current_dragon)
 		{
 			PlayVideoEx("EXTRO_RAVEN.BIK",TRUE,FALSE);
 			RavenIsDead = TRUE;
-			B_LogEntry_Quiet(TOPIC_AdanosCrone,"Я смог одолеть великое зло, находящееся в храме! Кажется, что и сам Ворон тоже сгинул вместе с ним в объятья самого Белиара. Пора возвращаться к Сатурасу и рассказать ему обо всем.");
+			B_LogEntry_Quiet(TOPIC_AdanosCrone, " I was able to defeat the great evil in the temple! It seems that the Raven himself also perished with him in the arms of Beliar himself. It's time to return to Saturas and tell him about everything." ) ;
 			Wld_SendTrigger("EVT_TELEPORT_TO_RESTART");
 			Wld_SendTrigger("EVT_RAVENTEMPLEDOOR_MAIN_01");
 		};
@@ -88,10 +89,10 @@ func int B_DragonKillCounter(var C_Npc current_dragon)
 		if((Hlp_GetInstanceID(current_dragon) == Hlp_GetInstanceID(blkdragn)) && (BLKDRAGNISDEAD == FALSE))
 		{
 			BLKDRAGNISDEAD = TRUE;
-			B_LogEntry(TOPIC_URNAZULRAGE,"Некогда могущественный черный дракон Азгалор мертв! Теперь мне осталось отнести его сердце Ур-Траллу в качестве доказательства.");
+			B_LogEntry( TOPIC_URNAZULRAGE , " The once mighty black dragon Azgalor is dead! Now I have to take his heart to Ur-Thrall as proof. " );
 			B_RemoveNpc(orc_8563_urgrom);
 			Wld_InsertNpc(orc_8565_urgrom,"FP_STAND_URGROM");
-			Wld_SetTime(6,0);
+			Wld_SetTime( 6 , 0 );
 		};
 	};
 	if(MIS_KilledDragons == 4)
