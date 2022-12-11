@@ -44,7 +44,7 @@ func void DIA_PAL_12_JOIN_Info()
 {
 	AI_Output(other, self, " DIA_PAL_12_JOIN_15_00 " );	// I want to become a paladin!
 	AI_Output(self,other, " DIA_PAL_12_JOIN_12_01 " );	// You? Do not make me laugh! You don't even serve in the city guard.
-	AI_Output(self,other, " DIA_PAL_12_JOIN_12_02 " );	// If I hadn't seen that in front of me was just a stupid hillbilly, I would have thought that you were mocking me.
+	AI_Output(self,other, " DIA_PAL_12_JOIN_12_02 " );	// If you weren't such a stupid hillbilly, I would have thought that you were mocking me. But that's beyond you, isn't it farm boy?
 	AI_Output(self,other, " DIA_PAL_12_JOIN_12_03 " );	// Only the best of the best, the most devoted followers of the king and our Lord Innos, can be accepted as paladins.
 };
 
@@ -71,7 +71,7 @@ func int DIA_PAL_12_PEOPLE_Condition()
 func void DIA_PAL_12_PEOPLE_Info()
 {
 	AI_Output(other,self, " DIA_PAL_12_PEOPLE_15_00 " );	// Who's in charge here?
-	AI_Output(self,other, " DIA_PAL_12_PEOPLE_12_01 " );	// Honorable Lord Hagen. But Lord Andre is in charge of all matters concerning the common people.
+	AI_Output(self,other, " DIA_PAL_12_PEOPLE_12_01 " );	// The Honorable Lord Hagen. But Lord Andre is in charge of all matters concerning the common people.
 	AI_Output(self,other, " DIA_PAL_12_PEOPLE_12_02 " );	// You'll find him in the barracks. Maybe you will be lucky and he will give you a few minutes of his precious time.
 };
 
@@ -98,9 +98,9 @@ func int DIA_PAL_12_LOCATION_Condition()
 func void DIA_PAL_12_LOCATION_Info()
 {
 	AI_Output(other,self, " DIA_PAL_12_LOCATION_15_00 " );	// What are you paladins doing here in Khorinis?
-	AI_Output(self,other, " DIA_PAL_12_LOCATION_12_01 " );	// People who ask such questions end their lives on the gallows before they know it.
+	AI_Output(self,other, " DIA_PAL_12_LOCATION_12_01 " );	// People who ask such questions tend to dance the hangmans jig before they know it.
 	AI_Output(self,other, " DIA_PAL_12_LOCATION_12_02 " );	// The ONLY thing Lord Andre can't afford is to allow information about our missions to fall into the hands of spies.
-	AI_Output(self,other, " DIA_PAL_12_LOCATION_12_03 " );	// So you better watch your questions.
+	AI_Output(self,other, " DIA_PAL_12_LOCATION_12_03 " );	// So you better watch your mouth.
 };
 
 
@@ -121,7 +121,7 @@ func int DIA_PAL_12_STANDARD_Condition()
 
 func void DIA_PAL_12_STANDARD_Info()
 {
-	AI_Output(other,self, " DIA_PAL_12_STANDARD_15_00 " );	// How setting?
+	AI_Output(other,self, " DIA_PAL_12_STANDARD_15_00 " );	// How's it going?
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 	{
 		if (chapter <=  4 )
@@ -132,7 +132,7 @@ func void DIA_PAL_12_STANDARD_Info()
 			}
 			else
 			{
-				AI_Output(self,other, " DIA_PAL_12_STANDARD_12_02 " );	// We still don't have any news from our squad in the Mine Valley. This is a warning sign.
+				AI_Output(self,other, " DIA_PAL_12_STANDARD_12_02 " );	// We still don't have any news from our squad in the Mine Valley. It is worrying.
 			};
 		};
 		if (chapter ==  5 )
@@ -146,7 +146,7 @@ func void DIA_PAL_12_STANDARD_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_PAL_12_STANDARD_12_04 " );	// Do you really expect me to answer this question, young man?!
+		AI_Output(self,other, " DIA_PAL_12_STANDARD_12_04 " );	// Do you really expect me to answer that question, young man?!
 	};
 };
 
