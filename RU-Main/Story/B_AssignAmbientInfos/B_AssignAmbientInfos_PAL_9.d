@@ -44,7 +44,7 @@ func void DIA_PAL_9_JOIN_Info()
 {
 	AI_Output(other,self, " DIA_PAL_9_JOIN_15_00 " );	// How do I become a paladin?
 	AI_Output(self,other, " DIA_PAL_9_JOIN_09_01 " );	// Only those who have proven their commitment to the service of Innos or the king can become a paladin!
-	AI_Output(self,other, " DIA_PAL_9_JOIN_09_02 " );	// Put simply, only the best of the best can become paladins. But you still have a long way to go, my boy!
+	AI_Output(self,other, " DIA_PAL_9_JOIN_09_02 " );	// Put simply, only the best of the best can become paladins. You still have a long way to go, my boy!
 };
 
 
@@ -72,7 +72,7 @@ func void DIA_PAL_9_PEOPLE_Info()
 	AI_Output(other,self, " DIA_PAL_9_PEOPLE_15_00 " );	// Who's in charge here?
 	AI_Output(self,other, " DIA_PAL_9_PEOPLE_09_01 " );	// Lord Hagen.
 	AI_Output(other,self,"DIA_PAL_9_PEOPLE_15_02");	//И?
-	AI_Output(self,other, " DIA_PAL_9_PEOPLE_09_03 " );	// And no one else. Lord Hagen is the supreme commander of this entire island.
+	AI_Output(self,other, " DIA_PAL_9_PEOPLE_09_03 " );	// He is the supreme commander of this entire island.
 };
 
 
@@ -98,7 +98,7 @@ func int DIA_PAL_9_LOCATION_Condition()
 func void DIA_PAL_9_LOCATION_Info()
 {
 	AI_Output(other,self, " DIA_PAL_9_LOCATION_15_00 " );	// Why did the paladins come to Khorinis?
-	AI_Output(self,other, " DIA_PAL_9_LOCATION_09_01 " );	// It's none of your business, mate! It is enough for you to know that we serve Innos and the king!
+	AI_Output(self,other, " DIA_PAL_9_LOCATION_09_01 " );	// It's none of your business, mate! It is enough for you to know that we serve Innos and the king, unquestioningly!
 };
 
 
@@ -119,7 +119,7 @@ func int DIA_PAL_9_STANDARD_Condition()
 
 func void DIA_PAL_9_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_PAL_9_STANDARD_15_00");	//Как дела?
+	AI_Output(other,self,"DIA_PAL_9_STANDARD_15_00");	//How are you?
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 	{
 		if (chapter <=  4 )
@@ -130,16 +130,16 @@ func void DIA_PAL_9_STANDARD_Info()
 			}
 			else
 			{
-				AI_Output(self,other, " DIA_PAL_9_STANDARD_09_02 " );	// Still no word from our squad in the Valley of Mines. It is very strange.
+				AI_Output(self,other, " DIA_PAL_9_STANDARD_09_02 " );	// Still no word from our squad in the Valley of Mines. It is... concerning.
 			};
 		};
 		if (chapter ==  5 )
 		{
-			AI_Output(self,other, " DIA_PAL_9_STANDARZ_09_03 " );	// The dragon threat is gone. However, now where did this undead come from!
+			AI_Output(self,other, " DIA_PAL_9_STANDARZ_09_03 " );	// The dragon threat is gone, only to be replaced by a plague of the undead!
 		};
 		if (Chapter >=  6 )
 		{
-			AI_Output(self,other, " DIA_PAL_9_STANDARD_09_05 " );	// We won't just give up! Orcs will get theirs, you can be sure.
+			AI_Output(self,other, " DIA_PAL_9_STANDARD_09_05 " );	// We won't just give up! The orcs will get theirs, you can be sure.
 		};
 	}
 	else
