@@ -1,4 +1,5 @@
 
+
 instance DIA_VLK_16_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_VLK_16_JOIN(C_Info)
 	condition = DIA_VLK_16_JOIN_Condition;
 	information = DIA_VLK_16_JOIN_Info;
 	permanent = TRUE;
-	description = "Я хочу стать гражданином этого города!";
+	description = " I want to become a citizen of this city! " ;
 };
 
 
@@ -36,14 +37,14 @@ func int DIA_VLK_16_JOIN_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_VLK_16_JOIN_Info()
 {
-	AI_Output(other,self,"DIA_VLK_16_JOIN_15_00");	//Я хочу стать гражданином этого города!
-	AI_Output(self,other,"DIA_VLK_16_JOIN_16_01");	//Ты поможешь нам защититься от орков?
-	AI_Output(self,other,"DIA_VLK_16_JOIN_16_02");	//Если ты гражданин Хориниса, ты можешь поступить в ополчение - поговори с кем-нибудь из городской стражи.
+	AI_Output(other,self, " DIA_VLK_16_JOIN_15_00 " );	// I want to become a citizen of this city!
+	AI_Output(self,other, " DIA_VLK_16_JOIN_16_01 " );	// Will you help us defend against the orcs?
+	AI_Output(self,other, " DIA_VLK_16_JOIN_16_02 " );	// If you are a citizen of Khorinis, you can join the militia - talk to one of the city guards.
 };
 
 
@@ -53,7 +54,7 @@ instance DIA_VLK_16_PEOPLE(C_Info)
 	condition = DIA_VLK_16_PEOPLE_Condition;
 	information = DIA_VLK_16_PEOPLE_Info;
 	permanent = TRUE;
-	description = "Кто здесь самые влиятельные люди?";
+	description = " Who are the most powerful people here? " ;
 };
 
 
@@ -64,8 +65,8 @@ func int DIA_VLK_16_PEOPLE_Condition()
 
 func void DIA_VLK_16_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_VLK_16_PEOPLE_15_00");	//Кто здесь самые влиятельные люди?
-	AI_Output(self,other,"DIA_VLK_16_PEOPLE_16_01");	//Паладины, которые живут в верхнем квартале.
+	AI_Output(other,self, " DIA_VLK_16_PEOPLE_15_00 " );	// Who are the most powerful people here?
+	AI_Output(self,other, " DIA_VLK_16_PEOPLE_16_01 " );	// The Paladins who live in the upper quarter.
 };
 
 
@@ -75,7 +76,7 @@ instance DIA_VLK_16_LOCATION(C_Info)
 	condition = DIA_VLK_16_LOCATION_Condition;
 	information = DIA_VLK_16_LOCATION_Info;
 	permanent = TRUE;
-	description = "Что здесь интересного?";
+	description = " What's interesting here? " ;
 };
 
 
@@ -86,8 +87,8 @@ func int DIA_VLK_16_LOCATION_Condition()
 
 func void DIA_VLK_16_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_VLK_16_LOCATION_15_00");	//Что интересного можно найти здесь?
-	AI_Output(self,other,"DIA_VLK_16_LOCATION_16_01");	//На рынке ты можешь купить практически любые товары.
+	AI_Output(other,self, " DIA_VLK_16_LOCATION_15_00 " );	// What interesting things can be found here?
+	AI_Output(self,other, " DIA_VLK_16_LOCATION_16_01 " );	// In the market, you can buy almost anything.
 };
 
 
@@ -97,7 +98,7 @@ instance DIA_VLK_16_STANDARD(C_Info)
 	condition = DIA_VLK_16_STANDARD_Condition;
 	information = DIA_VLK_16_STANDARD_Info;
 	permanent = TRUE;
-	description = "Что новенького?";
+	description = " What's new? " ;
 };
 
 
@@ -108,11 +109,11 @@ func int DIA_VLK_16_STANDARD_Condition()
 
 func void DIA_VLK_16_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_VLK_16_STANDARD_15_00");	//Что новенького?
-	if(Kapitel == 1)
+	AI_Output(other, self, " DIA_VLK_16_STANDARD_15_00 " );	// What's new?
+	if (chapter ==  1 )
 	{
-		AI_Output(self,other,"DIA_Addon_VLK_16_STANDARD_16_00");	//Надеюсь, ополчение выяснит, наконец, куда девается население Хориниса.
-		AI_Output(self,other,"DIA_Addon_VLK_16_STANDARD_16_01");	//Начинаешь бояться за свою жизнь, когда слышишь, сколько человек пропало.
+		AI_Output(self,other, " DIA_Addon_VLK_16_STANDARD_16_00 " );	// I hope the militia will finally find out where the people of Khorinis are dissapearing to.
+		AI_Output(self,other, " DIA_Addon_VLK_16_STANDARD_16_01 " );	// You start to fear for your life when you hear how many people are going missing.
 		if(SC_HearedAboutMissingPeople == FALSE)
 		{
 			Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
@@ -121,34 +122,34 @@ func void DIA_VLK_16_STANDARD_Info()
 		};
 		SC_HearedAboutMissingPeople = TRUE;
 	};
-	if(Kapitel == 2)
+	if (chapter ==  2 )
 	{
-		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_01");	//Ты разве не слышал? Орки уже около города! Остается надеяться, что у паладинов достаточно людей.
-		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_02");	//Интересно, почему фермеры больше не приходят на рынок?
+		AI_Output(self,other, " DIA_VLK_16_STANDARD_16_01 " );	// Haven't you heard? Orcs are already near the city! Let's just hope the paladins have enough men.
+		AI_Output(self,other, " DIA_VLK_16_STANDARD_16_02 " );	// I wonder why farmers don't come to the market anymore?
 	};
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		if(MIS_RescueBennet == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_VLK_16_STANDARD_16_03");	//Наемник, который, как все думали, убил Лотара, оказался невиновным. Нашли доказательства, что его оклеветали. Я слышала об этом на рынке.
+			AI_Output(self,other, " DIA_VLK_16_STANDARD_16_03 " );	// The mercenary who everyone thought killed Lothar turned out to be innocent. Found evidence that he was slandered. I heard about it in the market.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_VLK_16_STANDARD_16_04");	//Это возмутительно. Наемники Онара убили уважаемого паладина Лотара прямо у всех на глазах.
-			AI_Output(self,other,"DIA_VLK_16_STANDARD_16_05");	//Но Иннос обязательно накажет их за их грехи. Никому не позволено поднимать руку на солдата нашего Владыки.
+			AI_Output(self,other, " DIA_VLK_16_STANDARD_16_04 " );	// This is outrageous. Onar's mercenaries killed the respected paladin Lothar in broad daylight.
+			AI_Output(self,other, " DIA_VLK_16_STANDARD_16_05 " );	// But Innos will surely punish them for their sins. No one is allowed to raise a hand against a soldier of our Lord.
 		};
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
-		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_06");	//Я слышала, что эти преступники бегут с фермы Онара. Говорят, они боятся возмездия паладинов лорда Хагена, и бегут от них назад, в Долину Рудников.
+		AI_Output(self,other, " DIA_VLK_16_STANDARD_16_06 " );	// I heard that those criminals are fleeing from Onar's farm. They are said to fear the retribution of Lord Hagen's paladins, and are fleeing back to the Valley of the Mines.
 	};
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
-		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_07");	//Я слышала, что паладинам удалось уничтожить всех этих ужасных драконов из Долины Рудников!
+		AI_Output(self,other, " DIA_VLK_16_STANDARD_16_07 " );	// I heard that the paladins managed to destroy all thr terrible dragons from the Valley of Mines!
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
-		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_08");	//Орки вторглись в Хоринис и заняли город. Теперь это только дело времени, когда они прикончат нас всех!
+		AI_Output(self,other, " DIA_VLK_16_STANDARD_16_08 " );	// Orcs have invaded Khorinis and occupied the city. Now it's only a matter of time before they finish us all!
 	};
 };
 
