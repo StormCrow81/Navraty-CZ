@@ -69,7 +69,7 @@ func int DIA_PAL_4_PEOPLE_Condition()
 func void DIA_PAL_4_PEOPLE_Info()
 {
 	AI_Output(other,self, " DIA_PAL_4_PEOPLE_15_00 " );	// Who's in charge here?
-	AI_Output(self,other, " DIA_PAL_4_PEOPLE_04_01 " );	// Lord Hagen is the commander-in-chief of all troops on this island. He occupies the mayor's house while we are billeted here.
+	AI_Output(self,other, " DIA_PAL_4_PEOPLE_04_01 " );	// Lord Hagen is the commander-in-chief of all troops on this island. He occupies the mayor's house while we are stationed here.
 	AI_Output(self,other, " DIA_PAL_4_PEOPLE_04_02 " );	// But he's very busy. If you need anything, go to the barracks and talk to Lord Andre.
 };
 
@@ -95,7 +95,7 @@ func int DIA_PAL_4_LOCATION_Condition()
 func void DIA_PAL_4_LOCATION_Info()
 {
 	AI_Output(other,self, " DIA_PAL_4_LOCATION_15_00 " );	// What are you paladins doing here in Khorinis?
-	AI_Output(self,other, " DIA_PAL_4_LOCATION_04_01 " );	// I'm not authorized to tell you this.
+	AI_Output(self,other, " DIA_PAL_4_LOCATION_04_01 " );	// That's need-to-know, and you do not.
 };
 
 
@@ -127,21 +127,21 @@ func void DIA_PAL_4_STANDARD_Info()
 			}
 			else
 			{
-				AI_Output(self,other, " DIA_PAL_4_STANDARD_04_02 " );	// We still don't have any news from our squad in the Mine Valley. This is a warning sign.
+				AI_Output(self,other, " DIA_PAL_4_STANDARD_04_02 " );	// We still don't have any news from our squad in the Mine Valley. This is very troubling.
 			};
 		};
 		if (chapter ==  5 )
 		{
-			AI_Output(self,other, " DIA_PAL_4_STANDARD_04_03 " );	// O Praise to Innos! The dragon threat is no more. Now we only have to take care of the orcs to get the ore.
+			AI_Output(self,other, " DIA_PAL_4_STANDARD_04_03 " );	// O Praise to Innos! The dragon threat is no more. Now we only have to take care of the orcs to get to the ore.
 		};
 		if (Chapter >=  6 )
 		{
-			AI_Output(self,other, " DIA_PAL_4_STANDARD_04_05 " );	// We will stand here to the last! We just have nowhere else to go.
+			AI_Output(self,other, " DIA_PAL_4_STANDARD_04_05 " );	// We will stand here to the last! We have nowhere else to go anyway.
 		};
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_PAL_4_STANDARD_04_04 " );	// I don't have time to discuss the rumors going around the city.
+		AI_Output(self,other, " DIA_PAL_4_STANDARD_04_04 " );	// I don't have time to discuss the rumors flying around the city.
 	};
 };
 
