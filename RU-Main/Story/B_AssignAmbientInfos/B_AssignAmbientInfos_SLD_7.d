@@ -53,7 +53,7 @@ func void DIA_SLD_7_JOIN_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_SLD_7_JOIN_07_03 " );	// You? First pass the test of Torlof, and then we'll see!
+		AI_Output(self,other, " DIA_SLD_7_JOIN_07_03 " );	// You? First pass Torlof's test, and then we'll see!
 	};
 };
 
@@ -76,10 +76,10 @@ func int DIA_SLD_7_PEOPLE_Condition()
 func void DIA_SLD_7_PEOPLE_Info()
 {
 	AI_Output(other, self, " DIA_SLD_7_PEOPLE_15_00 " );	// Who's in charge here?
-	AI_Output(self,other, " DIA_SLD_7_PEOPLE_07_01 " );	// We're in command of Lee. Torlof is his right hand. Most of the guys obey him since the days of the colony.
+	AI_Output(self,other, " DIA_SLD_7_PEOPLE_07_01 " );	// We're under the command of Lee. Torlof is his right hand. Most of the guys obey him since the days of the colony.
 	AI_Output(self,other, " DIA_SLD_7_PEOPLE_07_02 " );	// And then there's Silvio. He came down from the mountains with his people quite recently.
-	AI_Output(self,other, " DIA_SLD_7_PEOPLE_07_03 " );	// His people make up a very small part of the mercenaries, but the problems from them are through the roof. These guys live by their own laws.
-	AI_Output(self,other, " DIA_SLD_7_PEOPLE_07_04 " );	// And this Silvio is a son of a bitch, so be careful if you cross paths with him.
+	AI_Output(self,other, " DIA_SLD_7_PEOPLE_07_03 " );	// His people make up a very small part of the mercenaries, but the problems coming from them are through the roof. Those guys live by their own laws.
+	AI_Output(self,other, " DIA_SLD_7_PEOPLE_07_04 " );	// And that Silvio is a son of a bitch, so be careful if you cross paths with him.
 };
 
 
@@ -137,17 +137,17 @@ func void DIA_SLD_7_STANDARD_Info()
 			}
 			else
 			{
-				AI_Output(self,other, " DIA_SLD_7_STANDARD_07_02 " );	// Nothing here. Better ask in the city. I think they are suffering from food shortages. (laughs)
+				AI_Output(self,other, " DIA_SLD_7_STANDARD_07_02 " );	// Nothing happening here. Better ask in the city. I think they are suffering from food shortages. Haha!
 			};
 		}
 		else if(other.guild == GIL_SLD)
 		{
-			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_03 " );	// Dragons in the Valley of Mines! I would not want to be in the place of the paladins now.
+			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_03 " );	// Dragons in the Valley of Mines! I would not want to be in the paladin's greaves right now.
 			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_04 " );	// I think the king will give Lord Hagen a good kick in the ass when he comes back empty-handed because of the dragons.
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_05 " );	// Can't you paladins handle dragons? That would be a job for real men.
+			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_05 " );	// Can't you paladins handle dragons? Or is that a job for real men?
 		};
 	};
 	if (chapter ==  3 )
@@ -156,8 +156,8 @@ func void DIA_SLD_7_STANDARD_Info()
 		{
 			if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 			{
-				AI_Output(self,other, " DIA_SLD_7_STANDARD_07_06 " );	// The problem with Bennet was solved thanks to you. Silvio is furious. He would have preferred to take the city by storm and blow everything to pieces there.
-				AI_Output(self,other, " DIA_SLD_7_STANDARD_07_07 " );	// He keeps blaming Lee for being indecisive, and Bennet was giving him such a great chance...
+				AI_Output(self,other, " DIA_SLD_7_STANDARD_07_06 " );	// The problem with Bennet was solved thanks to you. Silvio is furious. He would have preferred to take the city by storm and blow everything to pieces.
+				AI_Output(self,other, " DIA_SLD_7_STANDARD_07_07 " );	// He keeps blaming Lee for being indecisive, and Bennet was giving him such a great opportunity...
 			}
 			else
 			{
@@ -166,18 +166,18 @@ func void DIA_SLD_7_STANDARD_Info()
 		}
 		else if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 		{
-			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_09 " );	// I really don't like this case with Bennett. Perhaps we should still listen to Silvio and take the city by storm.
+			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_09 " );	// I really don't like this situation with Bennett. Perhaps we should still listen to Silvio and take the city by storm.
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_10 " );	// What are you going to do with Bennett? Oh, okay, I don’t even want to know, you will soon understand what this will lead to.
+			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_10 " );	// What are you going to do with Bennett? On second thought,I don’t even want to know. You will soon realise what this will lead to.
 		};
 	};
 	if (chapter ==  4 )
 	{
 		if(hero.guild == GIL_DJG)
 		{
-			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_11 " );	// I thought you went to the Valley too. with Silvio.
+			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_11 " );	// I thought you went to the Valley with Silvio.
 			AI_Output(self,other, " DIA_SLD_7_STANDARD_07_12 " );	// None of us will mind if Silvio stays in the valley forever!
 		}
 		else
@@ -188,11 +188,11 @@ func void DIA_SLD_7_STANDARD_Info()
 	};
 	if (chapter ==  5 )
 	{
-		AI_Output(self,other, " DIA_SLD_7_STANDARD_07_15 " );	// Boy, I can't take this anymore. Sheep, wise men and trees. I want to finally disappear.
+		AI_Output(self,other, " DIA_SLD_7_STANDARD_07_15 " );	// I can't take this anymore. Sheep, "wise" men and trees. I wish I could just disappear.
 	};
 	if (Chapter >=  6 )
 	{
-		AI_Output(self,other, " DIA_SLD_7_STANDARD_07_16 " );	// Soon the orcs will go on the offensive again. And when will it all end!
+		AI_Output(self,other, " DIA_SLD_7_STANDARD_07_16 " );	// Soon the orcs will go on the offensive, and the end will come for us all!
 	};
 };
 
