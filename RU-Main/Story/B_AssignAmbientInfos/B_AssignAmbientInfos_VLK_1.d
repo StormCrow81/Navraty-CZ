@@ -1,4 +1,5 @@
 
+
 instance DIA_VLK_1_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_VLK_1_JOIN(C_Info)
 	condition = DIA_VLK_1_JOIN_Condition;
 	information = DIA_VLK_1_JOIN_Info;
 	permanent = TRUE;
-	description = "Как мне стать гражданином этого города?";
+	description = " How can I become a citizen of this city? " ;
 };
 
 
@@ -36,13 +37,13 @@ func int DIA_VLK_1_JOIN_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_VLK_1_JOIN_Info()
 {
-	AI_Output(other,self,"DIA_VLK_1_JOIN_15_00");	//Как мне стать гражданином этого города?
-	AI_Output(self,other,"DIA_VLK_1_JOIN_01_01");	//Найди себе приличную работу! Все, у кого есть занятие в Хоринисе, считаются гражданами города.
+	AI_Output(other, self, " DIA_VLK_1_JOIN_15_00 " );	// How do I become a citizen of this city?
+	AI_Output(self,other, " DIA_VLK_1_JOIN_01_01 " );	// Get yourself a decent job! All who have an occupation in Khorinis are considered citizens of the city.
 };
 
 
@@ -52,7 +53,7 @@ instance DIA_VLK_1_PEOPLE(C_Info)
 	condition = DIA_VLK_1_PEOPLE_Condition;
 	information = DIA_VLK_1_PEOPLE_Info;
 	permanent = TRUE;
-	description = "А кто здесь самые влиятельные горожане?";
+	description = " Who are the most influential citizens here? " ;
 };
 
 
@@ -63,11 +64,11 @@ func int DIA_VLK_1_PEOPLE_Condition()
 
 func void DIA_VLK_1_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_VLK_1_PEOPLE_15_00");	//А кто здесь самые влиятельные горожане?
-	AI_Output(self,other,"DIA_VLK_1_PEOPLE_01_01");	//До последнего времени ими были глава города и судья. Но затем пришли паладины и захватили всю власть в городе.
-	AI_Output(self,other,"DIA_VLK_1_PEOPLE_01_02");	//Их возглавляет лорд Хаген! Он теперь новый глава, не больше и не меньше.
-	AI_Output(self,other,"DIA_VLK_1_PEOPLE_01_03");	//Лорд Андрэ - его правая рука. Он возглавляет городскую стражу, а также действует в качестве судьи.
-	AI_Output(self,other,"DIA_VLK_1_PEOPLE_01_04");	//Если против кого-то выдвинуто обвинение, этот человек должен предстать перед лордом Андрэ.
+	AI_Output(other,self, " DIA_VLK_1_PEOPLE_15_00 " );	// And who are the most influential citizens here?
+	AI_Output(self,other, " DIA_VLK_1_PEOPLE_01_01 " );	// Until recently, they were the head of the city and the judge. But then the paladins came and seized all power in the city.
+	AI_Output(self,other, " DIA_VLK_1_PEOPLE_01_02 " );	// They are led by Lord Hagen! He is now the new head, no more and no less.
+	AI_Output(self,other, " DIA_VLK_1_PEOPLE_01_03 " );	// Lord Andre is his right hand. He leads the city guard and also acts as a judge.
+	AI_Output(self,other, " DIA_VLK_1_PEOPLE_01_04 " );	// If an accusation is made against someone, that person must be brought before Lord Andre.
 };
 
 
@@ -77,7 +78,7 @@ instance DIA_VLK_1_LOCATION(C_Info)
 	condition = DIA_VLK_1_LOCATION_Condition;
 	information = DIA_VLK_1_LOCATION_Info;
 	permanent = TRUE;
-	description = "Что интересного есть в городе?";
+	description = " What's interesting in the city? " ;
 };
 
 
@@ -88,10 +89,10 @@ func int DIA_VLK_1_LOCATION_Condition()
 
 func void DIA_VLK_1_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_VLK_1_LOCATION_15_00");	//Что интересного есть в городе?
-	AI_Output(self,other,"DIA_VLK_1_LOCATION_01_01");	//Здесь ты можешь купить почти все, что только можно представить. Либо у торговца на рынке, либо в нижней части города.
-	AI_Output(self,other,"DIA_VLK_1_LOCATION_01_02");	//Но почти все, что стоит покупать, стоит недешево.
-	AI_Output(self,other,"DIA_VLK_1_LOCATION_01_03");	//Если у тебя недостаточно денег, тогда, возможно, ростовщик Лемар сможет помочь тебе. Его дом находится в самом начале портового квартала, если идти из нижней части города.
+	AI_Output(other,self, " DIA_VLK_1_LOCATION_15_00 " );	// What is interesting in the city?
+	AI_Output(self,other, " DIA_VLK_1_LOCATION_01_01 " );	// Here you can buy almost anything you can imagine. Either at the merchant in the market, or in the lower part of the city.
+	AI_Output(self,other, " DIA_VLK_1_LOCATION_01_02 " );	// But almost everything worth buying is expensive.
+	AI_Output(self,other, " DIA_VLK_1_LOCATION_01_03 " );	// If you don't have enough money, then perhaps the loan shark Lemar can help you. His house is located at the very beginning of the port quarter, if you go from the bottom of the city.
 };
 
 
@@ -101,7 +102,7 @@ instance DIA_VLK_1_STANDARD(C_Info)
 	condition = DIA_VLK_1_STANDARD_Condition;
 	information = DIA_VLK_1_STANDARD_Info;
 	permanent = TRUE;
-	description = "Что новенького?";
+	description = " What's new? " ;
 };
 
 
@@ -112,30 +113,30 @@ func int DIA_VLK_1_STANDARD_Condition()
 
 func void DIA_VLK_1_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_VLK_1_STANDARD_15_00");	//Что новенького?
-	if(Kapitel == 1)
+	AI_Output(other,self, " DIA_VLK_1_STANDARD_15_00 " );	// What's new?
+	if (chapter ==  1 )
 	{
-		AI_Output(self,other,"DIA_VLK_1_STANDARD_01_01");	//С тех пор как Барьер рухнул, открытая торговля с крупным землевладельцем неожиданно прекратилась. Кто знает, что он замышляет. Все это дурно пахнет.
+		AI_Output(self,other, " DIA_VLK_1_STANDARD_01_01 " );	// Since the Barrier collapsed, open trade with a large landowner has suddenly ceased. Who knows what he's up to. All this smells bad.
 	};
-	if(Kapitel == 2)
+	if (chapter ==  2 )
 	{
-		AI_Output(self,other,"DIA_VLK_1_STANDARD_01_02");	//Онар зашел слишком далеко. Он все еще не поставляет продовольствие в город. Если ополчение не вмешается, другие фермеры скоро тоже будут делать все, что захотят.
+		AI_Output(self,other, " DIA_VLK_1_STANDARD_01_02 " );	// Onar has gone too far. He is still not supplying food to the city. If the militia doesn't intervene, the other farmers will soon do whatever they want to as well.
 	};
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
-		AI_Output(self,other,"DIA_VLK_1_STANDARD_01_03");	//Я слышал, что бандиты объединились с магами. Грозные черные маги в черных рясах. Могу поклясться, что прошлой ночью я видел одного из них в городе.
+		AI_Output(self,other, " DIA_VLK_1_STANDARD_01_03 " );	// I heard the bandits teamed up with mages. Terrible black magicians in black robes. I could swear I saw one of them in town last night.
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
-		AI_Output(self,other,"DIA_VLK_1_STANDARD_01_04");	//Я слышал, что некоторые из наемников Онара отправились охотиться на драконов. Ну, по крайней мере, они занялись хоть чем-то полезным!
+		AI_Output(self,other, " DIA_VLK_1_STANDARD_01_04 " );	// I heard that some of Onar's mercenaries went to hunt dragons. Well, at least they did something useful for once!
 	};
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
-		AI_Output(self,other,"DIA_VLK_1_STANDARD_01_05");	//Говорят, что драконы уничтожены! Лорд Хаген собирает своих людей, чтобы изгнать последних тварей из Долины Рудников.
+		AI_Output(self,other, " DIA_VLK_1_STANDARD_01_05 " );	// The dragons are said to have been destroyed! Lord Hagen gathers his people to expel the last creatures from the Valley of Mines.
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
-		AI_Output(self,other,"DIA_VLK_1_STANDARD_01_06");	//Кроме того, что Хоринис заняли орки - ничего!
+		AI_Output(self,other, " DIA_VLK_1_STANDARD_01_06 " );	// Except that Khorinis was occupied by orcs - nothing much!
 	};
 };
 
