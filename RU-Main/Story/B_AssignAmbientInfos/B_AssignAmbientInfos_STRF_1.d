@@ -50,11 +50,11 @@ func void DIA_STRF_1_STANDARD_Info()
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other, " DIA_STRF_1_STANDARD_01_01 " );	// It's all because of this ore. Everything is always the same. Everyone desperately needs this damned ore.
+		AI_Output(self,other, " DIA_STRF_1_STANDARD_01_01 " );	// It's all because of the ore. Everything is always the same. Everyone desperately needs the damned ore.
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other, " DIA_STRF_1_STANDARD_01_02 " );	// If you tried this crap they supply us with, you'd think about rebellion too!
+		AI_Output(self,other, " DIA_STRF_1_STANDARD_01_02 " );	// If you tried this crap they ply us with, you'd think about rebellion too!
 	};
 	AI_StopProcessInfos(self);
 };
