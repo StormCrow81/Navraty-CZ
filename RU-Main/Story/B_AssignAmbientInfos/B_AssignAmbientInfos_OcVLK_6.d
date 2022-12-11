@@ -72,8 +72,8 @@ func void DIA_OCVLK_6_LOCATION_Info()
 	AI_Output(other,self, " DIA_OCVLK_6_LOCATION_15_00 " );	// What can you tell me about the situation in the Valley of Mines?
 	AI_Output(self,other, " DIA_OCVLK_6_LOCATION_06_01 " );	// I'm worried about the orcs' defensive wall. I don't even want to know what the orcs are hiding behind it.
 	AI_Output(self,other, " DIA_OCVLK_6_LOCATION_06_02 " );	// At first there were few of them - they were building this wall. And then, one night, they brought in the siege engines.
-	AI_Output(self,other, " DIA_OCVLK_6_LOCATION_06_03 " );	// We were lucky, and we were able to repel this attack.
-	AI_Output(self,other, " DIA_OCVLK_6_LOCATION_06_04 " );	// Behind the wall lies the sea. If more ork ships arrive, we won't stand a chance.
+	AI_Output(self,other, " DIA_OCVLK_6_LOCATION_06_03 " );	// We got lucky, and were able to repel this attack.
+	AI_Output(self,other, " DIA_OCVLK_6_LOCATION_06_04 " );	// But behind the wall lies the sea. If more orc ships arrive, we won't stand a chance.
 };
 
 
@@ -97,8 +97,8 @@ func void DIA_OCVLK_6_STANDARD_Info()
 	AI_Output(other,self, " DIA_OCVLK_6_STANDARD_15_00 " );	// How are you?
 	if (chapter <=  3 )
 	{
-		AI_Output(self,other, " DIA_OCVLK_6_STANDARD_06_01 " );	// They said: 'Join the army and you won't have any worries'. And that's how it all turned out.
-		AI_Output(self,other, " DIA_OCVLK_6_STANDARD_06_02 " );	// Now, under pain of death, it is forbidden to even approach food supplies. Garond seems to be afraid that we will pack our bags and get out of here. (bitter smile)
+		AI_Output(self,other, " DIA_OCVLK_6_STANDARD_06_01 " );	// They said: 'Join the army and leave your worries behind'. What a joke.
+		AI_Output(self,other, " DIA_OCVLK_6_STANDARD_06_02 " );	// Now, under pain of death, it is forbidden to even approach the food supplies. Garond seems to be afraid that we will pack our bags and get out of here.
 		AI_Output(self,other, " DIA_OCVLK_6_STANDARD_06_03 " );	// We're all going to starve here if those damn dragons don't kill us first!
 	};
 	if (chapter ==  4 )
