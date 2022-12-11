@@ -59,10 +59,10 @@ func int DIA_Dragon_Ice_Hello_Condition()
 
 func void DIA_Dragon_Ice_Hello_Info()
 {
-	AI_Output(self,other, " DIA_Dragon_Ice_Hello_20_00 " );	// Why did you disturb my sleep? Should I dig even deeper so that you pesky flies will finally leave me alone?
+	AI_Output(self,other, " DIA_Dragon_Ice_Hello_20_00 " );	// Why did you disturb my sleep? Should I dig even deeper into the earth so that you pesky flies will finally leave me alone?
 	if(MIS_KilledDragons == 0)
 	{
-		AI_Output(other,self, " DIA_Dragon_Ice_Hello_15_01 " );	// Talking dragon. Thank you Eye of Innos.
+		AI_Output(other,self, " DIA_Dragon_Ice_Hello_15_01 " );	// A talking dragon. Fantastic...
 	};
 	AI_Output(self,other, " DIA_Dragon_Ice_Hello_20_02 " );	// You humans are funny creatures. Even if you are all blown away by the icy winds of death, there will always be at least one who rises from the ashes, thinking that he is destined to become a hero.
 	AI_Output(self,other, " DIA_Dragon_Ice_Hello_20_03 " );	// But soon it will all be over. I will personally see to it that none of you rise again.
@@ -91,8 +91,8 @@ func int DIA_Dragon_Ice_WERBISTDU_Condition()
 
 func void DIA_Dragon_Ice_WERBISTDU_Info()
 {
-	AI_Output(other,self,"DIA_Dragon_Ice_WERBISTDU_15_00");	//Кто ты?
-	AI_Output(self,other, " DIA_Dragon_Ice_WERBISTDU_20_01 " );	// I am Finkreg, lord of ice and snow, Sentinel of Congress and your imminent death!
+	AI_Output(other,self,"DIA_Dragon_Ice_WERBISTDU_15_00");	//Who are you?
+	AI_Output(self,other, " DIA_Dragon_Ice_WERBISTDU_20_01 " );	// I am Finkreg, lord of ice and snow, Sentinel of the great hosts and your imminent death!
 };
 
 func void B_AssignDragonTalk_Ice(var C_Npc slf)
