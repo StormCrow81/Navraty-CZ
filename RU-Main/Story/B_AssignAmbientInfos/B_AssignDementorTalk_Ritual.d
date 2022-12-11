@@ -30,12 +30,12 @@ func void B_AssignDementorTalk_Ritual()
 	};
 	if(MIS_SCKnowsInnosEyeIsBroken == FALSE)
 	{
-		AI_Output(self,other, " DIA_RitualDementor_19_00 " );	// You came too late.
-		AI_Output(self,other, " DIA_RitualDementor_19_01 " );	// We destroyed the Eye of Innos, and now it will never return to its former power.
+		AI_Output(self,other, " DIA_RitualDementor_19_00 " );	// You are too late.
+		AI_Output(self,other, " DIA_RitualDementor_19_01 " );	// We have destroyed the Eye of Innos, it will never return to its former power.
 		AI_Output(self,other, " DIA_RitualDementor_19_02 " );	// Now we will demonstrate the futility of your attempts to challenge the Master.
 		MIS_SCKnowsInnosEyeIsBroken = TRUE;
-		B_LogEntry( TOPIC_INNOSEYE , " These creepy guys are getting on my nerves. They messed up the Eye of Innos. And now I don't know how to fix it. " );
-		B_LogEntry_Quiet(TOPIC_TraitorPedro, " I found the Eye of Innos. But Pedro is nowhere to be seen. These black magicians are in league with him. " );
+		B_LogEntry( TOPIC_INNOSEYE , " These dark magicians are getting on my nerves. They destroyed the Eye of Innos, and I don't know if it can be restored. " );
+		B_LogEntry_Quiet(TOPIC_TraitorPedro, " I found the Eye of Innos, but Pedro is nowhere to be seen. The black magicians are seemingly in league with him. " );
 		B_GivePlayerXP(XP_SCKnowsInnosEyeIsBroken);
 	}
 	else
@@ -52,11 +52,11 @@ func void B_AssignDementorTalk_Ritual()
 		};
 		if(randy == 2)
 		{
-			AI_Output(self,other, " DIA_RitualDementor_19_05 " );	// You can't hide anywhere.
+			AI_Output(self,other, " DIA_RitualDementor_19_05 " );	// You can't hide, fool.
 		};
 		if(randy == 3)
 		{
-			AI_Output(self,other, " DIA_RitualDementor_19_06 " );	// We'll kill you.
+			AI_Output(self,other, " DIA_RitualDementor_19_06 " );	// We shall flay the flesh from your bones!
 		};
 	};
 
