@@ -1,4 +1,5 @@
 
+
 instance DIA_VLK_6_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance DIA_VLK_6_JOIN(C_Info)
 	condition = DIA_VLK_6_JOIN_Condition;
 	information = DIA_VLK_6_JOIN_Info;
 	permanent = TRUE;
-	description = "Как мне стать гражданином этого города?";
+	description = " How can I become a citizen of this city? " ;
 };
 
 
@@ -36,15 +37,15 @@ func int DIA_VLK_6_JOIN_Condition()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void DIA_VLK_6_JOIN_Info()
 {
-	AI_Output(other,self,"DIA_VLK_6_JOIN_15_00");	//Как мне стать гражданином этого города?
-	AI_Output(self,other,"DIA_VLK_6_JOIN_06_01");	//Ты хочешь осесть здесь? Сейчас? Когда все указывает на приближение конца света?
-	AI_Output(other,self,"DIA_VLK_6_JOIN_15_02");	//Я не планировал оставаться здесь навечно.
-	AI_Output(self,other,"DIA_VLK_6_JOIN_06_03");	//Хочешь совет? Тебе нужно бежать отсюда, и чем дальше, тем лучше. Но, впрочем, если ты настаиваешь, то можешь поговорить с кем-нибудь из влиятельных горожан.
+	AI_Output(other, self, " DIA_VLK_6_JOIN_15_00 " );	// How do I become a citizen of this city?
+	AI_Output(self,other, " DIA_VLK_6_JOIN_06_01 " );	// Do you want to settle down here? Now? When everything is pointing to the end of the world?
+	AI_Output(other, self, " DIA_VLK_6_JOIN_15_02 " );	// It would only be a temporary stay.
+	AI_Output(self,other, " DIA_VLK_6_JOIN_06_03 " );	// Want some advice? You need to get out of here, and the farther the better. However, if you insist, you can talk to one of the influential citizens.
 };
 
 
@@ -54,7 +55,7 @@ instance DIA_VLK_6_PEOPLE(C_Info)
 	condition = DIA_VLK_6_PEOPLE_Condition;
 	information = DIA_VLK_6_PEOPLE_Info;
 	permanent = TRUE;
-	description = "А где мне найти влиятельных граждан Хориниса?";
+	description = " Where can I find influential citizens of Khorinis? " ;
 };
 
 
@@ -65,9 +66,9 @@ func int DIA_VLK_6_PEOPLE_Condition()
 
 func void DIA_VLK_6_PEOPLE_Info()
 {
-	AI_Output(other,self,"DIA_VLK_6_PEOPLE_15_00");	//А где мне найти влиятельных граждан Хориниса?
-	AI_Output(self,other,"DIA_VLK_6_PEOPLE_06_01");	//Попробуй обратиться к кузнецу или плотнику в нижней части города. Там же ты найдешь и других уважаемых мастеров.
-	AI_Output(self,other,"DIA_VLK_6_PEOPLE_06_02");	//К их словам здесь прислушиваются даже паладины и городская стража.
+	AI_Output(other,self, " DIA_VLK_6_PEOPLE_15_00 " );	// And where can I find influential citizens of Khorinis?
+	AI_Output(self,other, " DIA_VLK_6_PEOPLE_06_01 " );	// Try going to the blacksmith or carpenter in the lower part of town. You will also find other respected masters there.
+	AI_Output(self,other, " DIA_VLK_6_PEOPLE_06_02 " );	// Even paladins and city guards listen to their counsel.
 };
 
 
@@ -77,7 +78,7 @@ instance DIA_VLK_6_LOCATION(C_Info)
 	condition = DIA_VLK_6_LOCATION_Condition;
 	information = DIA_VLK_6_LOCATION_Info;
 	permanent = TRUE;
-	description = "Как мне научиться ориентироваться в городе?";
+	description = " How can I learn to navigate the city? " ;
 };
 
 
@@ -88,10 +89,10 @@ func int DIA_VLK_6_LOCATION_Condition()
 
 func void DIA_VLK_6_LOCATION_Info()
 {
-	AI_Output(other,self,"DIA_VLK_6_LOCATION_15_00");	//Как мне научиться ориентироваться в городе?
-	AI_Output(self,other,"DIA_VLK_6_LOCATION_06_01");	//Тебе кажется, что здесь не так-то просто найти дорогу? Даже указатели не всегда помогают?
-	AI_Output(self,other,"DIA_VLK_6_LOCATION_06_02");	//Если у тебя все так плохо с ориентированием, тебе лучше спуститься в гавань и поискать дом картографа.
-	AI_Output(self,other,"DIA_VLK_6_LOCATION_06_03");	//Он находится рядом с кабаком у причала. У Ибрагима наверняка найдется карта города для тебя.
+	AI_Output(other,self, " DIA_VLK_6_LOCATION_15_00 " );	// How can I learn to navigate the city?
+	AI_Output(self,other, " DIA_VLK_6_LOCATION_06_01 " );	// Having trouble navigating the big city eh?
+	AI_Output(self,other, " DIA_VLK_6_LOCATION_06_02 " );	// There are signposts around, but maybe you better go down to the harbor and look for the cartographer's house.
+	AI_Output(self,other, " DIA_VLK_6_LOCATION_06_03 " );	// It is located next to the tavern at the pier. Ibrahim will surely have a map of the city for you.
 };
 
 
@@ -101,7 +102,7 @@ instance DIA_VLK_6_STANDARD(C_Info)
 	condition = DIA_VLK_6_STANDARD_Condition;
 	information = DIA_VLK_6_STANDARD_Info;
 	permanent = TRUE;
-	description = "Что новенького?";
+	description = " What's new? " ;
 };
 
 
@@ -112,37 +113,37 @@ func int DIA_VLK_6_STANDARD_Condition()
 
 func void DIA_VLK_6_STANDARD_Info()
 {
-	AI_Output(other,self,"DIA_VLK_6_STANDARD_15_00");	//Что новенького?
-	if(Kapitel == 1)
+	AI_Output(other,self, " DIA_VLK_6_STANDARD_15_00 " );	// What's new?
+	if (chapter ==  1 )
 	{
-		AI_Output(self,other,"DIA_VLK_6_STANDARD_06_01");	//С тех пор, как рухнул Барьер, город заполонили бандиты. Но паладины сидят сложа руки. Что они вообще тогда здесь делают, черт возьми?
+		AI_Output(self,other, " DIA_VLK_6_STANDARD_06_01 " );	// Ever since the Barrier collapsed, the city has been filled with bandits. But the paladins are sitting on their hands. What the hell are they doing here then?
 	};
-	if(Kapitel == 2)
+	if (chapter ==  2 )
 	{
-		AI_Output(self,other,"DIA_VLK_6_STANDARD_06_02");	//Последнее время проблема с бандитами не стоит так остро. Похоже, кто-то, наконец, взялся за них.
+		AI_Output(self,other, " DIA_VLK_6_STANDARD_06_02 " );	// Lately, the problems with the bandits have abated a bit. Looks like someone finally took them on.
 	};
-	if(Kapitel == 3)
+	if (chapter ==  3 )
 	{
 		if(MIS_RescueBennet == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_VLK_6_STANDARD_06_03");	//Они отпустили этого грязного наемника, убившего паладина. По-моему, лучше его было все же повесить.
+			AI_Output(self,other, " DIA_VLK_6_STANDARD_06_03 " );	// They let that filthy mercenary who killed the paladin go free. I think it would have been better to hang him.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_VLK_6_STANDARD_06_04");	//Говорят, что один из наемников Онара убил паладина. Убийцу поймали и бросили за решетку. Скоро его повесят.
+			AI_Output(self,other, " DIA_VLK_6_STANDARD_06_04 " );	// It is said that one of Onar's mercenaries killed a paladin. The killer was caught and thrown behind bars. He will be hanged soon.
 		};
 	};
-	if(Kapitel == 4)
+	if (chapter ==  4 )
 	{
-		AI_Output(self,other,"DIA_VLK_6_STANDARD_06_05");	//Интересно, есть хоть доля правды в этих рассказах о драконах...
+		AI_Output(self,other, " DIA_VLK_6_STANDARD_06_05 " );	// I wonder if there's any truth to these dragon stories...
 	};
-	if(Kapitel == 5)
+	if (chapter ==  5 )
 	{
-		AI_Output(self,other,"DIA_VLK_6_STANDARD_06_06");	//Говорят, что лорд Хаген собирает своих людей, чтобы освободить Долину Рудников. Наконец-то паладины зашевелились!
+		AI_Output(self,other, " DIA_VLK_6_STANDARD_06_06 " );	// Lord Hagen is said to be gathering his people to liberate the Vale of Mines. Finally, the paladins are moving!
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
-		AI_Output(self,other,"DIA_VLK_6_STANDARD_06_07");	//Лорд Хаген отступил со своими людьми в форт. Думаю, скоро паладины пойдут в контрнаступление.
+		AI_Output(self,other, " DIA_VLK_6_STANDARD_06_07 " );	// Lord Hagen retreated with his men to the fort. I reckon the paladins will go on the counteroffensive soon.
 	};
 };
 
