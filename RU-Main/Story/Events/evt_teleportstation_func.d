@@ -1,4 +1,5 @@
 
+
 func void evt_teleportstation_func()
 {
 	Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
@@ -14,7 +15,7 @@ func void evt_teleportstation_func()
 			{
 				Log_CreateTopic(TOPIC_Addon_TeleportsNW,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Addon_TeleportsNW,LOG_Running);
-				B_LogEntry(TOPIC_Addon_TeleportsNW,"Телепортер в пещере восточнее города ведет к таверне 'У мертвой гарпии'");
+				B_LogEntry(TOPIC_Addon_TeleportsNW, " Teleporter in the cave east of the city leads to the tavern 'At the dead harpy' " );
 			};
 			SCUsed_NW_TELEPORTSTATION_CITY = TRUE;
 		}
@@ -25,7 +26,7 @@ func void evt_teleportstation_func()
 			{
 				Log_CreateTopic(TOPIC_Addon_TeleportsNW,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Addon_TeleportsNW,LOG_Running);
-				B_LogEntry(TOPIC_Addon_TeleportsNW,"Телепортер около таверны 'У мертвой гарпии' ведет к порталу древних развалин.");
+				B_LogEntry(TOPIC_Addon_TeleportsNW, "The teleporter near the Dead Harpy Tavern leads to the portal of the ancient ruins. " );
 			};
 			SCUsed_NW_TELEPORTSTATION_TAVERNE = TRUE;
 		}
@@ -36,7 +37,7 @@ func void evt_teleportstation_func()
 			{
 				Log_CreateTopic(TOPIC_Addon_TeleportsNW,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Addon_TeleportsNW,LOG_Running);
-				B_LogEntry(TOPIC_Addon_TeleportsNW,"Телепортер у портала рядом с древними развалинами ведет к пещере восточнее города.");
+				B_LogEntry(TOPIC_Addon_TeleportsNW, "The teleporter at the portal next to the ancient ruins leads to a cave east of the city. " );
 			};
 			SCUsed_NW_TELEPORTSTATION_MAYA = TRUE;
 		}
@@ -50,7 +51,7 @@ func void evt_teleportstation_func()
 			B_GivePlayerXP(XP_Addon_AllNWTeleporststones);
 		};
 	}
-	else if(CurrentLevel == ADDONWORLD_ZEN)
+	else  if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
 		if(Hlp_StrCmp(Npc_GetNearestWP(hero),"ADW_ENTRANCE_TELEPORT_NORTH_WP"))
 		{
@@ -59,7 +60,7 @@ func void evt_teleportstation_func()
 			{
 				Log_CreateTopic(TOPIC_Addon_TeleportsADW,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Addon_TeleportsADW,LOG_Running);
-				B_LogEntry(TOPIC_Addon_TeleportsADW,"Около портала, который ведет в Хоринис, я проактивировал один телепортер.");
+				B_LogEntry(TOPIC_Addon_TeleportsADW, " Near the portal that leads to Khorinis, I activated one teleporter. " );
 				B_GivePlayerXP(XP_Ambient);
 			};
 			SCUsed_ADW_TELEPORTSTATION_PORTALTEMPEL = TRUE;
@@ -71,7 +72,7 @@ func void evt_teleportstation_func()
 			{
 				Log_CreateTopic(TOPIC_Addon_TeleportsADW,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Addon_TeleportsADW,LOG_Running);
-				B_LogEntry(TOPIC_Addon_TeleportsADW,"Я смог проактивировать телепортер в верхней части лагеря бандитов.");
+				B_LogEntry(TOPIC_Addon_TeleportsADW, " I was able to activate the teleporter at the top of the bandit camp. " );
 				B_GivePlayerXP(XP_Ambient);
 			};
 			SCUsed_ADW_TELEPORTSTATION_ADANOSTEMPEL = TRUE;
@@ -83,7 +84,7 @@ func void evt_teleportstation_func()
 			{
 				Log_CreateTopic(TOPIC_Addon_TeleportsADW,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Addon_TeleportsADW,LOG_Running);
-				B_LogEntry(TOPIC_Addon_TeleportsADW,"Я смог проактивировать телепортер на болоте южнее лагеря бандитов.");
+				B_LogEntry(TOPIC_Addon_TeleportsADW, " I was able to activate the teleporter in the swamp south of the bandit camp. " );
 				B_GivePlayerXP(XP_Ambient);
 			};
 			SCUsed_ADW_TELEPORTSTATION_SOUTHEAST = TRUE;
@@ -95,7 +96,7 @@ func void evt_teleportstation_func()
 			{
 				Log_CreateTopic(TOPIC_Addon_TeleportsADW,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Addon_TeleportsADW,LOG_Running);
-				B_LogEntry(TOPIC_Addon_TeleportsADW,"Я нашел телепортер на юго-западе.");
+				B_LogEntry(TOPIC_Addon_TeleportsADW, " I found a teleporter in the southwest. " );
 				B_GivePlayerXP(XP_Ambient);
 			};
 			SCUsed_ADW_TELEPORTSTATION_SOUTHWEST = TRUE;
@@ -107,7 +108,7 @@ func void evt_teleportstation_func()
 			{
 				Log_CreateTopic(TOPIC_Addon_TeleportsADW,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_Addon_TeleportsADW,LOG_Running);
-				B_LogEntry(TOPIC_Addon_TeleportsADW,"Один телепортер находится в пещере в каньоне. Я его проактивировал.");
+				B_LogEntry(TOPIC_Addon_TeleportsADW, " There is one teleporter in a cave in the canyon. I activated it. " );
 				B_GivePlayerXP(XP_Ambient);
 			};
 			if((MIS_KrokoJagd == LOG_SUCCESS) && (SCUsed_ADW_TELEPORTSTATION_PIRATES_JACKSMONSTER == FALSE))
@@ -152,7 +153,7 @@ func void adw_portaltempel_focus_func()
 	};
 	if((ADW_PORTALTEMPEL_FOCUS_FUNC_OneTime == FALSE) && (Npc_GetDistToWP(hero,"ADW_PORTALTEMPEL_TELEPORTSTATION") < 3000))
 	{
-		if((Npc_IsDead(Stoneguardian_NailedPortalADW1) == FALSE) && (Stoneguardian_NailedPortalADW1.aivar[AIV_EnemyOverride] == TRUE))
+		if ((Npc_IsDead(Stoneguardian_NailedPortalADW1) ==  FALSE ) && (Stoneguardian_NailedPortalADW1.aivar[AIV_EnemyOverride] ==  TRUE )) ;
 		{
 			Snd_Play("THRILLJINGLE_02");
 		};
@@ -171,13 +172,13 @@ func void adw_golddragon_focus_func()
 		Npc_RemoveInvItems(hero,ITMI_DRAGONGOLDFOCUS,1);
 		Snd_Play("MFX_TELEKINESIS_STARTINVEST");
 		adw_golddragon_focus_func_onetime = TRUE;
-		ADW_GOLDDRAGON_ENTER = TRUE;
+		ADW_GOLDDRAGON_ENTER = TRUE ;
 	};
 };
 
 func void evt_teleportstation_golddragon_in_func()
 {
-	if(ADW_GOLDDRAGON_ENTER == TRUE)
+	if ( ADW_GOLDDRAGON_ENTER  ==  TRUE )
 	{
 		Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 		Snd_Play("MFX_TELEPORT_CAST");
@@ -188,7 +189,7 @@ func void evt_teleportstation_golddragon_in_func()
 
 func void evt_teleportstation_golddragon_out_func()
 {
-	if(ADW_GOLDDRAGON_ENTER == TRUE)
+	if ( ADW_GOLDDRAGON_ENTER  ==  TRUE )
 	{
 		Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 		Snd_Play("MFX_TELEPORT_CAST");
@@ -199,11 +200,11 @@ func void evt_teleportstation_golddragon_out_func()
 			SATURASKNOWSASHTAR = FALSE;
 			Npc_ExchangeRoutine(KDW_14000_Addon_Saturas_ADW,"GoldDragon");
 		};
-		if((TASKFINDSPHERE == TRUE) && (Npc_HasItems(hero,itmi_fireshpere) >= 1) && (Npc_HasItems(hero,itmi_watershpere) >= 1) && (Npc_HasItems(hero,itmi_stoneshpere) >= 1) && (Npc_HasItems(hero,itmi_darkshpere) >= 1) && (SATURASAWAYASHTAR == FALSE))
+		if (( TASKFINDSPHERE  ==  TRUE ) && (Npc_HasItems(hero,itmi_fireshpere) >=  1 ) && (Npc_HasItems(hero,itmi_watershpere) >=  1 ) && (Npc_HasItems(hero,itmi_stoneshpere) >= 1 ) && ( Npc_HasItems(hero,itmi_stoneshpere) >=  1 ) itmi_darkshpere) >= 1 ) && ( SATURASAWAYASHTAR == FALSE ))   
 		{
 			SATURASAWAYASHTAR = TRUE;
 
-			if(Kapitel >= 4)
+			if (Chapter >=  4 )
 			{
 				Npc_ExchangeRoutine(KDW_14000_Addon_Saturas_ADW,"OrcInvasion");
 			}
