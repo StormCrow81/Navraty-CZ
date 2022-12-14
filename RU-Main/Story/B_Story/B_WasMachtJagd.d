@@ -762,5 +762,5 @@ func void DIA_Addon_Gaan_WhatHappen_Info()
 	AI_Output(self,other,"DIA_Addon_Gaan_WhatHappen_01_05");	//А после того, как паладины пали замертво, все они направились по направлению в город.
 	AI_Output(other,self,"DIA_Addon_Gaan_WhatHappen_01_06");	//Сколько их было?!
 	AI_Output(self,other,"DIA_Addon_Gaan_WhatHappen_01_07");	//Около десятка! Но точно сказать не могу.
-	AI_Output(other,self,"DIA_Addon_Gaan_WhatHappen_01_08");	//Ясно.
+	AI_Output(other,self,"DIA_Addon_Gaan_WhatHappen_01_08");	//Obviously.
 };
