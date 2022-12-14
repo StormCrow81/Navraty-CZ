@@ -1,17 +1,18 @@
 
+
 func int b_assignetluconditions(var C_Npc wache)
 {
 	if((PALADINATTACK == FALSE) && (Npc_RefuseTalk(self) == FALSE) && (other.guild < GIL_SEPERATOR_HUM) && (PLAYERISTRANSFER == TRUE))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void b_assignetlutalk(var C_Npc wache)
 {
-	var int randy;
-	randy = Hlp_Random(125);
+	be int randy;
+	randy = Hlp_Random( 125 );
 
 	if(randy > ATR_INTELLECT)
 	{
@@ -22,39 +23,39 @@ func void b_assignetlutalk(var C_Npc wache)
 		}
 		else if(PALADINWARNING > 3)
 		{
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_00");	//Салентин!...(угрожающе) Если ты немедленно не уберешься отсюда, то нам придется убить тебя.
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_01");	//Не заставляй нас делать этого!
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_00 " );	// Salentin!... If you don't get out of here immediately, we'll have to kill you.
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_01 " );	// Don't make us hurt you!
 			PALADINWARNING = PALADINWARNING + 1;
 		}
 		else if(PALADINWARNING > 2)
 		{
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_02");	//Что тебе тут нужно, Салентин?!...(грозно) Ты же знаешь - тебе здесь нельзя долго находиться.
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_03");	//Так что, лучше не испытвай наше терпение и немедленно уходи из лагеря.
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_02 " );	// What do you want here, Salentin?!... You know you can't stay here for long.
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_03 " );	// So, don't try our patience. Leave the camp immediately.
 			PALADINWARNING = PALADINWARNING + 1;
 		}
 		else if(PALADINWARNING > 1)
 		{
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_04");	//Хватит тут ошиваться, Салентин!...(сердито)
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_05");	//Лучше возвращайся к себе в хибару и перестань докучать парням.
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_04 " );	// Stop hanging around here, Salentin!
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_05 " );	// Better get back to your shack and stop pestering the guys.
 			PALADINWARNING = PALADINWARNING + 1;
 		}
 		else if(PALADINWARNING > 0)
 		{
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_06");	//Салентин, что ты тут ищещь?...(серьезно)
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_07");	//На твоем месте, я бы лучше пошел и наловил нам побольше рыбы, чем шляться без дела!
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_06 " );	// Salentin, what are you looking for here?
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_07 " );	// Make yourself useful and go catch some fish!
 			PALADINWARNING = PALADINWARNING + 1;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_08");	//Салентин, ты опять принес нам рыбу?...(спокойно) Если так, тогда отдай ее нашему повару.
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_09");	//Но мой тебе совет - не задерживайся в лагере. Ты же знаешь наши правила!
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_08 " );	// Salentin, did you bring us fish again? If so, then give it to our cook.
+			AI_Output(self,other, " DIA_SIPAL_WARNING_01_09 " );	// Don't think you suddenly have the right to hang around here. You know our rules!
 			PALADINWARNING = PALADINWARNING + 1;
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_SIPAL_WARNING_01_10");	//Салентин, чего тебе тут нужно, а?!
-		AI_Output(self,other,"DIA_SIPAL_WARNING_01_11");	//Лучше возвращайся к себе в хибару! Здесь не самое лучше место для прогулок.
+		AI_Output(self,other, " DIA_SIPAL_WARNING_01_10 " );	// Salentin, what do you want here, huh?!
+		AI_Output(self,other, " DIA_SIPAL_WARNING_01_11 " );	// Better get back to your shack! It's dangerous out here.
 	};
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(pal_6050_ritter,45);
