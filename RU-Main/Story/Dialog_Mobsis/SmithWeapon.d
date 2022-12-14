@@ -1,3 +1,4 @@
+
 var int CountSmithOverallBonus;
 var int CountSmithOverallBonusDay;
 var int OverallBonusSmith;
@@ -74,21 +75,21 @@ func int B_CheckSmithSkill(var int skill)
 	}
 	else
 	{
-		concatText = ConcatStrings("Необходим навык ковки не менее ",IntToString(Skill));
+		concatText = ConcatStrings( " Requires a forging skill of at least " ,IntToString(Skill));
 		AI_PrintClr(concatText,177,58,17);
 		B_Say(self,self,"$NOLEARNNOPOINTS");
-		return FALSE;
+		return  FALSE ;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
-var int Erzwaffen;
-var int Rapierwaffen;
-var int Normalwaffen;
-var int armorwaffen;
-var int ARBALETWAFFEN;
-var int Orcwaffen;
+was int Erzwaffen;
+var int rapier weapons;
+var int normal weapons;
+was int armorwaffen;
+was int  ARBALET WAFFE ;
+var int orc weapons;
 var int armor_sm;
 var int armor_ran;
 var int armor_tpl_s;
@@ -127,12 +128,12 @@ func void PC_SmithWeapon_End_Info()
 {
 	CreateInvItems(self,ItMiSwordraw,1);
 	b_endproductiondialog();
-	Erzwaffen = FALSE;
-	Normalwaffen = FALSE;
-	ARMORWAFFEN = FALSE;
-	ARBALETWAFFEN = FALSE;
-	Rapierwaffen = FALSE;
-	Orcwaffen = FALSE;
+	Ore Weapons = FALSE ;
+	normal weapons = FALSE ;
+	ARMOR WEAPONS = FALSE ;
+	ARBALET WEAPONS = FALSE ;
+	Rapier weapons = FALSE ;
+	Orc Weapons = FALSE ;
 };
 
 instance PC_Common(C_Info)
@@ -141,12 +142,12 @@ instance PC_Common(C_Info)
 	condition = PC_Common_Condition;
 	information = PC_Common_Info;
 	permanent = TRUE;
-	description = "Ковать оружие из стали";
+	description = " Forge weapons from steel " ;
 };
 
 func int PC_Common_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) ; )
 	{
 		return TRUE;
 	};
@@ -164,12 +165,12 @@ instance PC_OrcWeapon(C_Info)
 	condition = PC_OrcWeapon_Condition;
 	information = PC_OrcWeapon_Info;
 	permanent = TRUE;
-	description = "Ковать оружие орков";
+	description = " Forge Orc weapons " ;
 };
 
 func int PC_OrcWeapon_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) ; )
 	{
 		return TRUE;
 	};
@@ -187,12 +188,12 @@ instance PC_Rapier(C_Info)
 	condition = PC_Rapier_Condition;
 	information = PC_Rapier_Info;
 	permanent = TRUE;
-	description = "Ковать шпаги и рапиры";
+	description = " Forge swords and rapiers " ;
 };
 
 func int PC_Rapier_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) ; )
 	{
 		return TRUE;
 	};
@@ -200,7 +201,7 @@ func int PC_Rapier_Condition()
 
 func void PC_Rapier_Info()
 {
-	Rapierwaffen = TRUE;
+	Rapier weapons = TRUE ;
 };
 
 instance PC_Ore(C_Info)
@@ -209,13 +210,13 @@ instance PC_Ore(C_Info)
 	condition = PC_Ore_Condition;
 	information = PC_Ore_Info;
 	permanent = TRUE;
-	description = "Ковать оружие из магической руды";
+	description = " Forge weapons from magic ore " ;
 };
 
 
 func int PC_Ore_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) ; )
 	{
 		return TRUE;
 	};
@@ -233,12 +234,12 @@ instance PC_ARMOR(C_Info)
 	condition = pc_armor_condition;
 	information = pc_armor_info;
 	permanent = TRUE;
-	description = "Ковать доспехи";
+	description = " Forge armor " ;
 };
 
 func int pc_armor_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) ; )
 	{
 		return TRUE;
 	};
@@ -256,12 +257,12 @@ instance PC_ARBALET(C_Info)
 	condition = pc_arbalet_condition;
 	information = pc_arbalet_info;
 	permanent = TRUE;
-	description = "Ковать наконечники или отмычки";
+	description = " Forge spearheads or lockpicks " ;
 };
 
 func int pc_arbalet_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) ; )
 	{
 		return TRUE;
 	};
@@ -269,7 +270,7 @@ func int pc_arbalet_condition()
 
 func void pc_arbalet_info()
 {
-	ARBALETWAFFEN = TRUE;
+	ARBALET WEAPONS = TRUE ;
 };
 
 instance PC_CommonBACK(C_Info)
@@ -284,7 +285,7 @@ instance PC_CommonBACK(C_Info)
 
 func int PC_CommonBACK_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == TRUE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  TRUE ) && (OrcWeapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && ( Erzwaffen ==  FALSE ) && ( ARMORWAFFE  ==  FALSE ) && ( ARBALETWAFFE  ==  FALSE ) && )
 	{
 		return TRUE;
 	};
@@ -292,7 +293,7 @@ func int PC_CommonBACK_Condition()
 
 func void PC_CommonBACK_Info()
 {
-	Normalwaffen = FALSE;
+	normal weapons = FALSE ;
 };
 
 instance PC_OrcWeaponBACK(C_Info)
@@ -307,7 +308,7 @@ instance PC_OrcWeaponBACK(C_Info)
 
 func int PC_OrcWeaponBACK_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == TRUE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  TRUE ) && (RapierWeapon ==  FALSE ) && ( Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE )
 	{
 		return TRUE;
 	};
@@ -315,7 +316,7 @@ func int PC_OrcWeaponBACK_Condition()
 
 func void PC_OrcWeaponBACK_Info()
 {
-	Orcwaffen = FALSE;
+	Orc Weapons = FALSE ;
 };
 
 
@@ -331,7 +332,7 @@ instance PC_RapierBACK(C_Info)
 
 func int PC_RapierBACK_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == TRUE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  TRUE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) ; )
 	{
 		return TRUE;
 	};
@@ -339,7 +340,7 @@ func int PC_RapierBACK_Condition()
 
 func void PC_RapierBACK_Info()
 {
-	Rapierwaffen = FALSE;
+	Rapier weapons = FALSE ;
 };
 
 instance PC_OreBACK(C_Info)
@@ -355,7 +356,7 @@ instance PC_OreBACK(C_Info)
 
 func int PC_OreBACK_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == TRUE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (RapierWeapon ==  FALSE ) && (Erzwaffen ==  TRUE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) . )
 	{
 		return TRUE;
 	};
@@ -363,7 +364,7 @@ func int PC_OreBACK_Condition()
 
 func void PC_OreBACK_Info()
 {
-	Erzwaffen = FALSE;
+	Ore Weapons = FALSE ;
 };
 
 
@@ -380,7 +381,7 @@ instance PC_ARMORBACK(C_Info)
 
 func int pc_armorback_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == TRUE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  TRUE ) && ( ARBALETWAFFEN  ==  FALSE ) . )
 	{
 		return TRUE;
 	};
@@ -388,7 +389,7 @@ func int pc_armorback_condition()
 
 func void pc_armorback_info()
 {
-	ARMORWAFFEN = FALSE;
+	ARMOR WEAPONS = FALSE ;
 };
 
 instance PC_ARBALETBACK(C_Info)
@@ -404,7 +405,7 @@ instance PC_ARBALETBACK(C_Info)
 
 func int pc_arbaletback_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == TRUE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  TRUE ) . )
 	{
 		return TRUE;
 	};
@@ -412,10 +413,10 @@ func int pc_arbaletback_condition()
 
 func void pc_arbaletback_info()
 {
-	ARBALETWAFFEN = FALSE;
+	ARBALET WEAPONS = FALSE ;
 };
 
-//---------------------------------------обычное оружие--------------------------------------------
+// --------------------------------- conventional weapons------- -------------------------------------
 
 instance PC_ItMw_1H_Common(C_Info)
 {
@@ -451,7 +452,7 @@ func void PC_ItMw_1H_Common_Info()
 	else
 	{
 		b_endproductiondialog();
-		Normalwaffen = FALSE;
+		normal weapons = FALSE ;
 	};
 };
 
@@ -477,7 +478,7 @@ func void PC_WEAPON_1H_Harad_01_Info()
 {
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMw_Schwert1,1);
+	CreateInvItems(hero,ItMw_Schwert1, 1 );
 	//Print(PRINT_SmithSuccess);
 	B_RaisekSmithSkill(1);
 	AI_PrintClr(PRINT_SmithSuccess,83,152,48);
@@ -490,7 +491,7 @@ func void PC_WEAPON_1H_Harad_01_Info()
 	else
 	{
 		b_endproductiondialog();
-		Normalwaffen = FALSE;
+		normal weapons = FALSE ;
 	};
 };
 
@@ -516,7 +517,7 @@ func void PC_WEAPON_1H_Harad_02_Info()
 {
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMw_Schwert4,1);
+	CreateInvItems(hero,ItMw_Schwert4, 1 );
 	//Print(PRINT_SmithSuccess);
 	B_RaisekSmithSkill(2);
 	AI_PrintClr(PRINT_SmithSuccess,83,152,48);
@@ -529,7 +530,7 @@ func void PC_WEAPON_1H_Harad_02_Info()
 	else
 	{
 		b_endproductiondialog();
-		Normalwaffen = FALSE;
+		normal weapons = FALSE ;
 	};
 };
 
@@ -570,7 +571,7 @@ func void PC_WEAPON_1H_Harad_03_Info()
 		else
 		{
 			b_endproductiondialog();
-			Normalwaffen = FALSE;
+			normal weapons = FALSE ;
 		};
 	};
 };
@@ -611,12 +612,12 @@ func void PC_WEAPON_1H_Harad_04_Info()
 		else
 		{
 			b_endproductiondialog();
-			Normalwaffen = FALSE;
+			normal weapons = FALSE ;
 		};
 	};
 };
 
-//-----------------------рудное оружие-----------------------------------------------------------
+// -----------------------ore weapons----------------------- ------------------------------------
 
 instance PC_ItMw_1H_Special_01(C_Info)
 {
@@ -624,7 +625,7 @@ instance PC_ItMw_1H_Special_01(C_Info)
 	condition = PC_ItMw_1H_Special_01_Condition;
 	information = PC_ItMw_1H_Special_01_Info;
 	permanent = TRUE;
-	description = "Рудный меч";
+	description = " Ore Sword " ;
 };
 
 func int PC_ItMw_1H_Special_01_Condition()
@@ -652,8 +653,8 @@ func void PC_ItMw_1H_Special_01_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -666,7 +667,7 @@ instance PC_ItMw_2H_Special_01(C_Info)
 	condition = PC_ItMw_2H_Special_01_Condition;
 	information = PC_ItMw_2H_Special_01_Info;
 	permanent = TRUE;
-	description = "Двуручный рудный меч";
+	description = " Two-Handed Ore Sword " ;
 };
 
 
@@ -695,8 +696,8 @@ func void PC_ItMw_2H_Special_01_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -709,7 +710,7 @@ instance PC_ItMw_1H_Special_02(C_Info)
 	condition = PC_ItMw_1H_Special_02_Condition;
 	information = PC_ItMw_1H_Special_02_Info;
 	permanent = TRUE;
-	description = "Полуторный рудный меч";
+	description = " Bastard Ore Sword " ;
 };
 
 
@@ -738,8 +739,8 @@ func void PC_ItMw_1H_Special_02_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -752,7 +753,7 @@ instance PC_ItMw_2H_Special_02(C_Info)
 	condition = PC_ItMw_2H_Special_02_Condition;
 	information = PC_ItMw_2H_Special_02_Info;
 	permanent = TRUE;
-	description = "Тяжелый двуручный рудный меч";
+	description = " Heavy two-handed ore sword " ;
 };
 
 
@@ -781,8 +782,8 @@ func void PC_ItMw_2H_Special_02_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -795,7 +796,7 @@ instance PC_ItMw_1H_Special_03(C_Info)
 	condition = PC_ItMw_1H_Special_03_Condition;
 	information = PC_ItMw_1H_Special_03_Info;
 	permanent = TRUE;
-	description = "Рудный боевой клинок";
+	description = " Ore Warblade " ;
 };
 
 
@@ -824,8 +825,8 @@ func void PC_ItMw_1H_Special_03_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -838,7 +839,7 @@ instance PC_ItMw_2H_Special_03(C_Info)
 	condition = PC_ItMw_2H_Special_03_Condition;
 	information = PC_ItMw_2H_Special_03_Info;
 	permanent = TRUE;
-	description = "Двуручный рудный боевой клинок";
+	description = " Two-Handed Ore Warblade " ;
 };
 
 func int PC_ItMw_2H_Special_03_Condition()
@@ -866,8 +867,8 @@ func void PC_ItMw_2H_Special_03_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -880,7 +881,7 @@ instance PC_ItMw_1H_Special_04(C_Info)
 	condition = PC_ItMw_1H_Special_04_Condition;
 	information = PC_ItMw_1H_Special_04_Info;
 	permanent = TRUE;
-	description = "'Убийца драконов' (одноручный меч)";
+	description = " 'Dragon Slayer' (one-handed sword) " ;
 };
 
 func int PC_ItMw_1H_Special_04_Condition()
@@ -909,8 +910,8 @@ func void PC_ItMw_1H_Special_04_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -923,7 +924,7 @@ instance PC_ItMw_2H_Special_04(C_Info)
 	condition = PC_ItMw_2H_Special_04_Condition;
 	information = PC_ItMw_2H_Special_04_Info;
 	permanent = TRUE;
-	description = "'Убийца драконов' (двуручный меч)";
+	description = " 'Dragon Slayer' (two-handed sword) " ;
 };
 
 func int PC_ItMw_2H_Special_04_Condition()
@@ -952,14 +953,14 @@ func void PC_ItMw_2H_Special_04_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
 };
 
-//------------------перековка доспехов------------------------------------------------------
+// ------------------reforging armor---------------------- --------------------------
 
 
 instance PC_ARMOR_MAKEARMOR_ITAR_MIL_L_V1(C_Info)
@@ -968,7 +969,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_MIL_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_mil_l_v1_condition;
 	information = pc_armor_makearmor_itar_mil_l_v1_info;
 	permanent = TRUE;
-	description = "Перековать доспехи ополчения";
+	description = " Reforge militia armor " ;
 };
 
 func int pc_armor_makearmor_itar_mil_l_v1_condition()
@@ -1019,15 +1020,15 @@ func void pc_armor_makearmor_itar_mil_l_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(1);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1039,7 +1040,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_MIL_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_mil_m_v1_condition;
 	information = pc_armor_makearmor_itar_mil_m_v1_info;
 	permanent = TRUE;
-	description = "Перековать тяжелые доспехи ополчения";
+	description = " Reforge Heavy Militia Armor " ;
 };
 
 func int pc_armor_makearmor_itar_mil_m_v1_condition()
@@ -1090,15 +1091,15 @@ func void pc_armor_makearmor_itar_mil_m_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(2);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1110,7 +1111,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_PAL_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_pal_m_v1_condition;
 	information = pc_armor_makearmor_itar_pal_m_v1_info;
 	permanent = TRUE;
-	description = "Перековать доспехи рыцаря";
+	description = " Reforge Knight Armor " ;
 };
 
 func int pc_armor_makearmor_itar_pal_m_v1_condition()
@@ -1161,15 +1162,15 @@ func void pc_armor_makearmor_itar_pal_m_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(4);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}	
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1181,7 +1182,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_PAL_H_V1(C_Info)
 	condition = pc_armor_makearmor_itar_pal_h_v1_condition;
 	information = pc_armor_makearmor_itar_pal_h_v1_info;
 	permanent = TRUE;
-	description = "Перековать доспехи паладина";
+	description = " Reforge Paladin Armor " ;
 };
 
 func int pc_armor_makearmor_itar_pal_h_v1_condition()
@@ -1232,15 +1233,15 @@ func void pc_armor_makearmor_itar_pal_h_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(5);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1253,7 +1254,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SLD_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_sld_l_v1_condition;
 	information = pc_armor_makearmor_itar_sld_l_v1_info;
 	permanent = TRUE;
-	description = "Перековать легкие доспехи наемника";
+	description = " Reforge Mercenary Light Armor " ;
 };
 
 func int pc_armor_makearmor_itar_sld_l_v1_condition()
@@ -1304,15 +1305,15 @@ func void pc_armor_makearmor_itar_sld_l_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(1);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1324,7 +1325,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SLD_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_sld_m_v1_condition;
 	information = pc_armor_makearmor_itar_sld_m_v1_info;
 	permanent = TRUE;
-	description = "Перековать доспехи наемника";
+	description = " Reforge Mercenary Armor " ;
 };
 
 func int pc_armor_makearmor_itar_sld_m_v1_condition()
@@ -1375,15 +1376,15 @@ func void pc_armor_makearmor_itar_sld_m_v1_info()
 			};
 	
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(2);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1396,7 +1397,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SLD_H_V1(C_Info)
 	condition = pc_armor_makearmor_itar_sld_h_v1_condition;
 	information = pc_armor_makearmor_itar_sld_h_v1_info;
 	permanent = TRUE;
-	description = "Перековать тяжелые доспехи наемника";
+	description = " Reforge Mercenary Heavy Armor " ;
 };
 
 
@@ -1448,15 +1449,15 @@ func void pc_armor_makearmor_itar_sld_h_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(3);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}	
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1469,12 +1470,12 @@ instance PC_ARMOR_MAKEARMOR_ITAR_DJG_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_djg_l_v1_condition;
 	information = pc_armor_makearmor_itar_djg_l_v1_info;
 	permanent = TRUE;
-	description = "Перековать легкие доспехи драконоборца";
+	description = " Reforge Light Dragonslayer Armor " ;
 };
 
 func int pc_armor_makearmor_itar_djg_l_v1_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[20] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_djg_l) > 0) || (Npc_HasItems(self,itar_djg_l_v1) > 0) || (Npc_HasItems(self,itar_djg_l_v2) > 0) || (Npc_HasItems(self,itar_djg_l_v3) > 0) || (Npc_HasItems(self,itar_djg_l_v4) > 0)))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && ( PLAYER_TALENT_SMITH [ 20 ] ==  TRUE ) && ( ARMORWAFFEN  ==  TRUE ) && ((Npc_HasItems(self,itar_djg_l) >  0 ) || (Npc_HasItems(self,itar_djg_l) >  0 ) || | (Npc_HasItems(self,itar_djg_l_v2) >  0 ) || (Npc_HasItems(self,itar_djg_l_v3) >  0 ) || (Npc_HasItems(self,itar_djg_l_v4)> 0)))
 	{
 		return TRUE;
 	};
@@ -1520,15 +1521,15 @@ func void pc_armor_makearmor_itar_djg_l_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(4);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1541,7 +1542,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_DJG_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_djg_m_v1_condition;
 	information = pc_armor_makearmor_itar_djg_m_v1_info;
 	permanent = TRUE;
-	description = "Перековать доспехи драконоборца";
+	description = " Reforge Dragonslayer Armor " ;
 };
 
 
@@ -1593,15 +1594,15 @@ func void pc_armor_makearmor_itar_djg_m_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(5);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1614,7 +1615,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_DJG_H_V1(C_Info)
 	condition = pc_armor_makearmor_itar_djg_h_v1_condition;
 	information = pc_armor_makearmor_itar_djg_h_v1_info;
 	permanent = TRUE;
-	description = "Перековать тяжелые доспехи драконоборца";
+	description = " Reforge Heavy Dragonslayer Armor " ;
 };
 
 
@@ -1666,15 +1667,15 @@ func void pc_armor_makearmor_itar_djg_h_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(6);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1686,7 +1687,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_GRD_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_grd_l_v1_condition;
 	information = pc_armor_makearmor_itar_grd_l_v1_info;
 	permanent = TRUE;
-	description = "Перековать легкие доспехи стражника";
+	description = " Reforge Light Guard Armor " ;
 };
 
 
@@ -1708,15 +1709,15 @@ func void pc_armor_makearmor_itar_grd_l_v1_info()
 			Npc_RemoveInvItems(self,itar_grd_l,1);
 			Npc_RemoveInvItems(self,ItMi_IronStuck,1);
 			CreateInvItems(self,itar_grd_l_v1,1);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(1);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1729,7 +1730,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_BLOODWYN_ADDON_V1(C_Info)
 	condition = pc_armor_makearmor_itar_bloodwyn_addon_v1_condition;
 	information = pc_armor_makearmor_itar_bloodwyn_addon_v1_info;
 	permanent = TRUE;
-	description = "Перековать доспехи стражника";
+	description = " Reforge Guard Armor " ;
 };
 
 
@@ -1751,15 +1752,15 @@ func void pc_armor_makearmor_itar_bloodwyn_addon_v1_info()
 			Npc_RemoveInvItems(self,ITAR_Bloodwyn_Addon,1);
 			Npc_RemoveInvItems(self,ItMi_IronStuck,2);
 			CreateInvItems(self,itar_bloodwyn_addon_v1,1);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(2);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1772,7 +1773,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_THORUS_ADDON_V1(C_Info)
 	condition = pc_armor_makearmor_itar_thorus_addon_v1_condition;
 	information = pc_armor_makearmor_itar_thorus_addon_v1_info;
 	permanent = TRUE;
-	description = "Перековать тяжелые доспехи стражника";
+	description = " Reforge heavy guard armor " ;
 };
 
 
@@ -1794,15 +1795,15 @@ func void pc_armor_makearmor_itar_thorus_addon_v1_info()
 			Npc_RemoveInvItems(self,ITAR_Thorus_Addon,1);
 			Npc_RemoveInvItems(self,ItMi_IronStuck,3);
 			CreateInvItems(self,itar_thorus_addon_v1,1);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(3);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1815,7 +1816,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SEKBED_V1(C_Info)
 	condition = pc_armor_makearmor_itar_sekbed_v1_condition;
 	information = pc_armor_makearmor_itar_sekbed_v1_info;
 	permanent = TRUE;
-	description = "Улучшить набедренную повязку Братства Спящего";
+	description = " Upgrade Brotherhood of the Sleeper Loincloth " ;
 };
 
 func int pc_armor_makearmor_itar_sekbed_v1_condition()
@@ -1834,15 +1835,15 @@ func void pc_armor_makearmor_itar_sekbed_v1_info()
 		Npc_RemoveInvItems(self,itar_sekbed,1);
 		Npc_RemoveInvItems(self,itat_LurkerSkin,1);
 		CreateInvItems(self,itar_sekbed_v1,1);
-		//Print("Вы успешно перековали доспех!");
+		// Print("You have successfully reforged the armor!");
 		B_RaisekSmithSkill(1);
-		AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+		AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print("У меня нет нужных ингредиентов!");
-		AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+		// Print("I don't have the right ingredients!");
+		AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -1854,7 +1855,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_TPL_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_tpl_l_v1_condition;
 	information = pc_armor_makearmor_itar_tpl_l_v1_info;
 	permanent = TRUE;
-	description = "Перековать легкие доспехи Стража Братства";
+	description = " Reforge Light Armor of the Brotherhood Guard " ;
 };
 
 func int pc_armor_makearmor_itar_tpl_l_v1_condition()
@@ -1905,15 +1906,15 @@ func void pc_armor_makearmor_itar_tpl_l_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(1);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1926,7 +1927,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_TPL_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_tpl_m_v1_condition;
 	information = pc_armor_makearmor_itar_tpl_m_v1_info;
 	permanent = TRUE;
-	description = "Перековать доспехи Стража Братства";
+	description = " Reforge Brotherhood Guard Armor " ;
 };
 
 
@@ -1978,15 +1979,15 @@ func void pc_armor_makearmor_itar_tpl_m_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(2);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -1999,7 +2000,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_TPL_S_V1(C_Info)
 	condition = pc_armor_makearmor_itar_tpl_s_v1_condition;
 	information = pc_armor_makearmor_itar_tpl_s_v1_info;
 	permanent = TRUE;
-	description = "Перековать тяжелые доспехи Стража Братства";
+	description = " Reforge Heavy Armor of the Brotherhood Guard " ;
 };
 
 
@@ -2051,15 +2052,15 @@ func void pc_armor_makearmor_itar_tpl_s_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(3);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2072,7 +2073,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_RANGER_ADDON_V1(C_Info)
 	condition = pc_armor_makearmor_itar_ranger_addon_v1_condition;
 	information = pc_armor_makearmor_itar_ranger_addon_v1_info;
 	permanent = TRUE;
-	description = "Перековать кольчугу 'Кольца Воды'";
+	description = " Reforge 'Ring of Water' mail " ;
 };
 
 
@@ -2124,15 +2125,15 @@ func void pc_armor_makearmor_itar_ranger_addon_v1_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно перековали доспех!");
+			// Print("You have successfully reforged the armor!");
 			B_RaisekSmithSkill(1);
-			AI_PrintClr("Вы успешно перековали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully reforged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2145,7 +2146,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_OREARMOR(C_Info)
 	condition = pc_armor_makearmor_itar_orearmor_condition;
 	information = pc_armor_makearmor_itar_orearmor_info;
 	permanent = TRUE;
-	description = "Выковать рудные доспехи Света";
+	description = " Forge Ore Light Armor " ;
 };
 
 func int pc_armor_makearmor_itar_orearmor_condition()
@@ -2160,11 +2161,11 @@ func void pc_armor_makearmor_itar_orearmor_info()
 {
 	if(B_CheckSmithSkill(100))
 	{
-		if((Npc_HasItems(hero,ItMi_OreStuck) >= 10) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 2) && (Npc_HasItems(hero,ItMi_Sulfur) >= 10) && (Npc_HasItems(hero,ItMi_Pitch) >= 5) && (Npc_HasItems(hero,ItMi_Quartz) >= 5) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1) && (Npc_HasItems(hero,ItMi_Adamant) >= 1))
+		if ((Npc_HasItems(hero,ItMi_OreStuck) >=  10 ) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >=  2 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  10 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  5 ) && (Npc_HasItems(hero,ItMi_Quartz) >=  5 ) && (Npc_HasItems(hero,ItMi_Aquamarine) >=  1 ) && (Npc_HasItems(hero,ItMi_Adamant) >=  1 ))
 		{
 			//B_GivePlayerXP(XP_HandMade);
 			Npc_RemoveInvItems(self,ItMi_OreStuck,10);
-			Npc_RemoveInvItems(self,ItMi_Zeitspalt_Addon,2);
+			Npc_RemoveInvItems(self,ItMi_Zeitspalt_Addon, 2 );
 			Npc_RemoveInvItems(self,ItMi_Sulfur,10);
 			Npc_RemoveInvItems(self,ItMi_Pitch,5);
 			Npc_RemoveInvItems(self,ItMi_Quartz,5);
@@ -2172,15 +2173,15 @@ func void pc_armor_makearmor_itar_orearmor_info()
 			Npc_RemoveInvItems(self,ItMi_Adamant,1);
 			CreateInvItems(self,itar_orearmor,1);
 			LIGHTARMORMADE = TRUE;
-			//Print("Вы успешно выковали доспех!");
+			// Print("You have successfully forged the armor!");
 			B_RaisekSmithSkill(6);
-			AI_PrintClr("Вы успешно выковали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully forged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2193,7 +2194,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_RAVEN_ADDON(C_Info)
 	condition = pc_armor_makearmor_itar_raven_addon_condition;
 	information = pc_armor_makearmor_itar_raven_addon_info;
 	permanent = TRUE;
-	description = "Выковать рудные доспехи Тьмы";
+	description = " Forge Dark Ore Armor " ;
 };
 
 
@@ -2209,11 +2210,11 @@ func void pc_armor_makearmor_itar_raven_addon_info()
 {
 	if(B_CheckSmithSkill(100))
 	{
-		if((Npc_HasItems(hero,ItMi_OreStuck) >= 10) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 2) && (Npc_HasItems(hero,ItMi_Sulfur) >= 10) && (Npc_HasItems(hero,ItMi_Pitch) >= 5) && (Npc_HasItems(hero,ItMi_Coal) >= 5) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItMi_Adamant) >= 1))
+		if ((Npc_HasItems(hero,ItMi_OreStuck) >=  10 ) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >=  2 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  10 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  5 ) && (Npc_HasItems(hero,ItMi_Coal) >=  5 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItMi_Adamant) >=  1 ))
 		{
 			//B_GivePlayerXP(XP_HandMade);
 			Npc_RemoveInvItems(self,ItMi_OreStuck,10);
-			Npc_RemoveInvItems(self,ItMi_Zeitspalt_Addon,2);
+			Npc_RemoveInvItems(self,ItMi_Zeitspalt_Addon, 2 );
 			Npc_RemoveInvItems(self,ItMi_Sulfur,10);
 			Npc_RemoveInvItems(self,ItMi_Pitch,5);
 			Npc_RemoveInvItems(self,ItMi_Coal,5);
@@ -2221,15 +2222,15 @@ func void pc_armor_makearmor_itar_raven_addon_info()
 			Npc_RemoveInvItems(self,ItMi_Adamant,1);
 			CreateInvItems(self,ITAR_Raven_Addon,1);
 			DARKARMORMADE = TRUE;
-			//Print("Вы успешно выковали доспех!");
+			// Print("You have successfully forged the armor!");
 			B_RaisekSmithSkill(6);
-			AI_PrintClr("Вы успешно выковали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully forged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2241,14 +2242,14 @@ func void smithweapon_s1()
 	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_SmithWeapon;
 		AI_ProcessInfos(her);
 	};
@@ -2265,7 +2266,7 @@ instance PC_ARMOR_MAKEARMOR_CRAWLER_NEW(C_Info)
 	condition = pc_armor_makearmor_crawler_new_condition;
 	information = pc_armor_makearmor_crawler_new_info;
 	permanent = TRUE;
-	description = "Ковать доспехи из панцирей ползунов";
+	description = " Forge armor from crawler shells " ;
 };
 
 func int pc_armor_makearmor_crawler_new_condition()
@@ -2287,15 +2288,15 @@ func void pc_armor_makearmor_crawler_new_info()
 			Npc_RemoveInvItems(self,ItMi_Pitch,1);
 			Npc_RemoveInvItems(self,ItAt_CrawlerPlate,10);
 			CreateInvItems(self,ITAR_DJG_Crawler,1);
-			//Print("Вы успешно выковали доспех!");
+			// Print("You have successfully forged the armor!");
 			B_RaisekSmithSkill(2);
-			AI_PrintClr("Вы успешно выковали доспех!",83,152,48);
+			AI_PrintClr( " You have successfully forged the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 		};
 	};
 };
@@ -2307,7 +2308,7 @@ instance PC_ITMW_ORESWORD(C_Info)
 	condition = pc_itmw_oresword_condition;
 	information = pc_itmw_oresword_info;
 	permanent = TRUE;
-	description = "Ковать рудный клинок паладинов";
+	description = " Forge Paladin Ore Blade " ;
 };
 
 func int pc_itmw_oresword_condition()
@@ -2334,8 +2335,8 @@ func void pc_itmw_oresword_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2348,7 +2349,7 @@ instance PC_ITMW_1H_BLESSEDBLACK(C_Info)
 	condition = pc_itmw_1h_blessedblack_condition;
 	information = pc_itmw_1h_blessedblack_info;
 	permanent = TRUE;
-	description = "Ковать одноручный клинок из черной руды";
+	description = " Forge a black ore one-handed blade " ;
 };
 
 func int pc_itmw_1h_blessedblack_condition()
@@ -2363,10 +2364,10 @@ func void pc_itmw_1h_blessedblack_info()
 {
 	if(B_CheckSmithSkill(60))
 	{
-		if(Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 5)
+		if (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >=  5 )
 		{
 			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon,5);
+			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon, 5 );
 
 			if(hero.attribute[ATR_STRENGTH] >= hero.attribute[ATR_DEXTERITY])
 			{
@@ -2384,8 +2385,8 @@ func void pc_itmw_1h_blessedblack_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2398,7 +2399,7 @@ instance PC_ITMW_2H_BLESSEDBLACK(C_Info)
 	condition = pc_itmw_2h_blessedblack_condition;
 	information = pc_itmw_2h_blessedblack_info;
 	permanent = TRUE;
-	description = "Ковать двуручный клинок из черной руды";
+	description = " Forge a Black Ore Two-Handed Blade " ;
 };
 
 func int pc_itmw_2h_blessedblack_condition()
@@ -2413,10 +2414,10 @@ func void pc_itmw_2h_blessedblack_info()
 {
 	if(B_CheckSmithSkill(60))
 	{
-		if(Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 10)
+		if (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >=  10 )
 		{
 			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon,10);
+			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon, 10 );
 			CreateInvItems(hero,itmw_2h_simpleblack,1);
 			//Print(PRINT_SmithSuccess);
 			B_RaisekSmithSkill(2);
@@ -2425,8 +2426,8 @@ func void pc_itmw_2h_blessedblack_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2439,7 +2440,7 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SMITH_NOV(C_Info)
 	condition = pc_armor_makearmor_itar_smith_nov_condition;
 	information = pc_armor_makearmor_itar_smith_nov_info;
 	permanent = TRUE;
-	description = "Улучшить одежду кузнеца (Требуется: 1 железный слиток)";
+	description = " Upgrade a blacksmith's outfit (Requires: 1 iron ingot) " ;
 };
 
 func int pc_armor_makearmor_itar_smith_nov_condition()
@@ -2490,21 +2491,21 @@ func void pc_armor_makearmor_itar_smith_nov_info()
 			};
 
 			//B_GivePlayerXP(XP_HandMade);
-			//Print("Вы успешно улучшили доспех!");
+			// Print("You have successfully upgraded the armor!");
 			B_RaisekSmithSkill(1);
-			AI_PrintClr("Вы успешно улучшили доспех!",83,152,48);
+			AI_PrintClr( " You have successfully upgraded the armor! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 		}
 		else
 		{
-			//Print("У меня нет нужных ингредиентов!");
-			AI_PrintClr("У меня нет нужных ингредиентов!",177,58,17);
+			// Print("I don't have the right ingredients!");
+			AI_PrintClr( " I don't have the right ingredients! " , 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
 };
 
-//-----------------------------------шпаги ловкача-----------------------------------
+// -------------------- -----------------------
 
 instance PC_ItMw_ChiefRapier_01(C_Info)
 {
@@ -2512,7 +2513,7 @@ instance PC_ItMw_ChiefRapier_01(C_Info)
 	condition = PC_ItMw_ChiefRapier_01_Condition;
 	information = PC_ItMw_ChiefRapier_01_Info;
 	permanent = TRUE;
-	description = "Ковать шпагу вора";
+	description = " Forge a thief's sword " ;
 };
 
 func int PC_ItMw_ChiefRapier_01_Condition()
@@ -2545,13 +2546,13 @@ func void PC_ItMw_ChiefRapier_01_Info()
 			else
 			{
 				b_endproductiondialog();
-				Rapierwaffen = FALSE;
+				Rapier weapons = FALSE ;
 			};
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2564,7 +2565,7 @@ instance PC_ItMw_ChiefRapier_02(C_Info)
 	condition = PC_ItMw_ChiefRapier_02_Condition;
 	information = PC_ItMw_ChiefRapier_02_Info;
 	permanent = TRUE;
-	description = "Ковать рапиру вора";
+	description = " Forge a thief's rapier " ;
 };
 
 
@@ -2599,13 +2600,13 @@ func void PC_ItMw_ChiefRapier_02_Info()
 			else
 			{
 				b_endproductiondialog();
-				Rapierwaffen = FALSE;
+				Rapier weapons = FALSE ;
 			};
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2618,7 +2619,7 @@ instance PC_ItMw_ChiefRapier_03(C_Info)
 	condition = PC_ItMw_ChiefRapier_03_Condition;
 	information = PC_ItMw_ChiefRapier_03_Info;
 	permanent = TRUE;
-	description = "Ковать шпагу мастера";
+	description = " Forge a master sword " ;
 };
 
 func int PC_ItMw_ChiefRapier_03_Condition()
@@ -2633,7 +2634,7 @@ func void PC_ItMw_ChiefRapier_03_Info()
 {
 	if(B_CheckSmithSkill(15))
 	{
-		if((Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
+		if ((Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ))
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
@@ -2652,13 +2653,13 @@ func void PC_ItMw_ChiefRapier_03_Info()
 			else
 			{
 				b_endproductiondialog();
-				Rapierwaffen = FALSE;
+				Rapier weapons = FALSE ;
 			};
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2671,7 +2672,7 @@ instance PC_ItMw_ChiefRapier_04(C_Info)
 	condition = PC_ItMw_ChiefRapier_04_Condition;
 	information = PC_ItMw_ChiefRapier_04_Info;
 	permanent = TRUE;
-	description = "Ковать шпагу 'Тихая смерть'";
+	description = " Forge the sword 'Silent Death' " ;
 };
 
 
@@ -2687,7 +2688,7 @@ func void PC_ItMw_ChiefRapier_04_Info()
 {
 	if(B_CheckSmithSkill(25))
 	{
-		if(Npc_HasItems(hero,ItMi_DarkPearl) >= 2)
+		if (Npc_HasItems(hero,ItMi_DarkPearl) >=  2 )
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
@@ -2705,13 +2706,13 @@ func void PC_ItMw_ChiefRapier_04_Info()
 			else
 			{
 				b_endproductiondialog();
-				Rapierwaffen = FALSE;
+				Rapier weapons = FALSE ;
 			};
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2724,7 +2725,7 @@ instance PC_ItMw_ChiefRapier_05(C_Info)
 	condition = PC_ItMw_ChiefRapier_05_Condition;
 	information = PC_ItMw_ChiefRapier_05_Info;
 	permanent = TRUE;
-	description = "Ковать шпагу 'Пронзающая сталь'";
+	description = " Forge the sword 'Piercing Steel' " ;
 };
 
 
@@ -2740,7 +2741,7 @@ func void PC_ItMw_ChiefRapier_05_Info()
 {
 	if(B_CheckSmithSkill(40))
 	{
-		if((Npc_HasItems(hero,ItMi_DarkPearl) >= 2) && (Npc_HasItems(hero,ItMi_OreStuck) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 10))
+		if ((Npc_HasItems(hero,ItMi_DarkPearl) >=  2 ) && (Npc_HasItems(hero,ItMi_OreStuck) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  10 ))
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
@@ -2760,13 +2761,13 @@ func void PC_ItMw_ChiefRapier_05_Info()
 			else
 			{
 				b_endproductiondialog();
-				Rapierwaffen = FALSE;
+				Rapier weapons = FALSE ;
 			};
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2779,7 +2780,7 @@ instance PC_ItMw_ChiefRapier_06(C_Info)
 	condition = PC_ItMw_ChiefRapier_06_Condition;
 	information = PC_ItMw_ChiefRapier_06_Info;
 	permanent = TRUE;
-	description = "Ковать шпагу 'Жало Скорпиона'";
+	description = " Forge the sword 'Scorpion's Sting' " ;
 };
 
 
@@ -2816,13 +2817,13 @@ func void PC_ItMw_ChiefRapier_06_Info()
 			else
 			{
 				b_endproductiondialog();
-				Rapierwaffen = FALSE;
+				Rapier weapons = FALSE ;
 			};
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2834,7 +2835,7 @@ instance PC_ItMw_ChiefRapier_07(C_Info)
 	condition = PC_ItMw_ChiefRapier_07_Condition;
 	information = PC_ItMw_ChiefRapier_07_Info;
 	permanent = TRUE;
-	description = "Ковать шпагу 'Крик в ночи'";
+	description = " Forge the sword 'Scream in the Night' " ;
 };
 
 func int PC_ItMw_ChiefRapier_07_Condition()
@@ -2849,7 +2850,7 @@ func void PC_ItMw_ChiefRapier_07_Info()
 {
 	if(B_CheckSmithSkill(70))
 	{
-		if((Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ITMI_ZOMBIECORPSE) >= 1) && (Npc_HasItems(hero,ITMI_PLAZMA) >= 3) && (Npc_HasItems(hero,ItMi_Coal) >= 5) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 5))
+		if ((Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero, ITMI_ZOMBIECORPSE ) >=  1 ) && (Npc_HasItems(hero, ITMI_PLAZMA ) >=  3 ) && (Npc_HasItems(hero,ItMi_Coal) >=  5 ) && (Npc_HasItems(hero,ItMi_Rockcrystal) >=  5 ))
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
@@ -2871,13 +2872,13 @@ func void PC_ItMw_ChiefRapier_07_Info()
 			else
 			{
 				b_endproductiondialog();
-				Rapierwaffen = FALSE;
+				Rapier weapons = FALSE ;
 			};
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -2889,7 +2890,7 @@ instance PC_ItMw_ChiefRapier_08(C_Info)
 	condition = PC_ItMw_ChiefRapier_08_Condition;
 	information = PC_ItMw_ChiefRapier_08_Info;
 	permanent = TRUE;
-	description = "Ковать шпагу 'Золотая игла'";
+	description = " Forge the sword 'Golden Needle' " ;
 };
 
 func int PC_ItMw_ChiefRapier_08_Condition()
@@ -2904,12 +2905,12 @@ func void PC_ItMw_ChiefRapier_08_Info()
 {
 	if(B_CheckSmithSkill(90))
 	{
-		if((Npc_HasItems(hero,ItMi_OreStuck) >= 5) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 4) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 1) && (Npc_HasItems(hero,ItMi_StuckGold) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 8) && (Npc_HasItems(hero,ItMi_Quartz) >= 3))
+		if ((Npc_HasItems(hero,ItMi_OreStuck) >=  5 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  4 ) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >=  1 ) && (Npc_HasItems(hero,ItMi_StuckGold) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  8 ) && (Npc_HasItems(hero,ItMi_Quartz) >=  3 ))
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
 			Npc_RemoveInvItems(hero,ItMi_OreStuck,5);
-			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon,1);
+			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon, 1 );
 			Npc_RemoveInvItems(hero,ItMi_StuckGold,1);
 			Npc_RemoveInvItems(hero,ItMi_Sulfur,8);
 			Npc_RemoveInvItems(hero,ItMi_Quartz,3);
@@ -2923,14 +2924,14 @@ func void PC_ItMw_ChiefRapier_08_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
 };
 
-//------------------наконечники------------------------------------
+// ------------------tips----------------------- -------
 
 instance PC_ItMi_ArrowTip(C_Info)
 {
@@ -2938,7 +2939,7 @@ instance PC_ItMi_ArrowTip(C_Info)
 	condition = PC_ItMi_ArrowTip_Condition;
 	information = PC_ItMi_ArrowTip_Info;
 	permanent = TRUE;
-	description = "Ковать наконечники для стрел (50 шт.)";
+	description = " Forge arrowheads x50 " ;
 };
 
 func int PC_ItMi_ArrowTip_Condition()
@@ -2954,7 +2955,7 @@ func void PC_ItMi_ArrowTip_Info()
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
 	CreateInvItems(hero,ItMi_ArrowTip,50);
-	AI_PrintClr("Изготовлены наконечники для стрел...",83,152,48);
+	AI_PrintClr( " Arrowheads made... " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_RaisekSmithSkillNoStr(0);
 
@@ -2965,7 +2966,7 @@ func void PC_ItMi_ArrowTip_Info()
 	else
 	{
 		b_endproductiondialog();
-		ARBALETWAFFEN = FALSE;
+		ARBALET WEAPONS = FALSE ;
 	};
 };
 
@@ -2975,7 +2976,7 @@ instance PC_ItMi_KerArrowTip(C_Info)
 	condition = PC_ItMi_KerArrowTip_Condition;
 	information = PC_ItMi_KerArrowTip_Info;
 	permanent = TRUE;
-	description = "Ковать рудные наконечники для стрел (50 шт.)";
+	description = " Forge Ore Arrowheads x50 " ;
 };
 
 func int PC_ItMi_KerArrowTip_Condition()
@@ -2992,7 +2993,7 @@ func void PC_ItMi_KerArrowTip_Info()
 	//B_GivePlayerXP(XP_HandMade);
 	CreateInvItems(hero,ItMi_KerArrowTip,50);
 	Npc_RemoveInvItems(hero,ItMi_OreStuck,1);
-	AI_PrintClr("Изготовлены рудные наконечники для стрел...",83,152,48);
+	AI_PrintClr( " Produced ore arrowheads... " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_RaisekSmithSkillNoStr(1);
 
@@ -3003,7 +3004,7 @@ func void PC_ItMi_KerArrowTip_Info()
 	else
 	{
 		b_endproductiondialog();
-		ARBALETWAFFEN = FALSE;
+		ARBALET WEAPONS = FALSE ;
 	};
 };
 
@@ -3013,7 +3014,7 @@ instance PC_ItMi_BoltTip(C_Info)
 	condition = PC_ItMi_BoltTip_Condition;
 	information = PC_ItMi_BoltTip_Info;
 	permanent = TRUE;
-	description = "Ковать наконечники для болтов (50 шт.)";
+	description = " Forge bolt heads x50 " ;
 };
 
 func int PC_ItMi_BoltTip_Condition()
@@ -3029,7 +3030,7 @@ func void PC_ItMi_BoltTip_Info()
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
 	CreateInvItems(hero,ItMi_BoltTip,50);
-	AI_PrintClr("Изготовлены наконечники для болтов...",83,152,48);
+	AI_PrintClr( " Produced bolt heads... " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_RaisekSmithSkillNoStr(0);
 
@@ -3040,7 +3041,7 @@ func void PC_ItMi_BoltTip_Info()
 	else
 	{
 		b_endproductiondialog();
-		ARBALETWAFFEN = FALSE;
+		ARBALET WEAPONS = FALSE ;
 	};
 };
 
@@ -3050,12 +3051,12 @@ instance PC_Common_Blade(C_Info)
 	condition = PC_Common_Blade_Condition;
 	information = PC_Common_Blade_Info;
 	permanent = TRUE;
-	description = "Выковать клинок";
+	description = " Forge a blade " ;
 };
 
 func int PC_Common_Blade_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon ==  FALSE ) && (Erzwaffen ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) && ( ARBALETWAFFEN  ==  FALSE ) ; )
 	{
 		return TRUE;
 	};
@@ -3066,7 +3067,7 @@ func void PC_Common_Blade_Info()
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
 	CreateInvItems(hero,ItMiSwordbladehot,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_RaisekSmithSkill(1);
 
@@ -3086,7 +3087,7 @@ instance PC_ItKE_lockpick(C_Info)
 	condition = PC_ItKE_lockpick_Condition;
 	information = PC_ItKE_lockpick_Info;
 	permanent = TRUE;
-	description = "Ковать стальные отмычки";
+	description = " Forge steel picks " ;
 };
 
 func int PC_ItKE_lockpick_Condition()
@@ -3102,7 +3103,7 @@ func void PC_ItKE_lockpick_Info()
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
 	CreateInvItems(hero,ItKE_lockpick,10);
-	AI_PrintClr("Изготовлены стальные отмычки!",83,152,48);
+	AI_PrintClr( " Steel picks made! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_RaisekSmithSkillNoStr(0);
 
@@ -3113,7 +3114,7 @@ func void PC_ItKE_lockpick_Info()
 	else
 	{
 		b_endproductiondialog();
-		ARBALETWAFFEN = FALSE;
+		ARBALET WEAPONS = FALSE ;
 	};
 };
 
@@ -3123,12 +3124,12 @@ instance PC_DragonStaff(C_Info)
 	condition = PC_DragonStaff_Condition;
 	information = PC_DragonStaff_Info;
 	permanent = TRUE;
-	description = "Сковать 'Жезл драконов'";
+	description = " Craft 'Wand of Dragons' " ;
 };
 
 func int PC_DragonStaff_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (MIS_MonasterySecret == LOG_SUCCESS) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE) && (Npc_HasItems(self,ItMi_DragonStaffPiece_01) >= 1) && (Npc_HasItems(self,ItMi_DragonStaffPiece_02) >= 1) && (Npc_HasItems(self,ItMi_DragonStaffPiece_03) >= 1) && (Npc_HasItems(self,ItMi_DragonStaffPiece_04) >= 1) && (Npc_HasItems(self,ItAt_XragonSkull) >= 4) && (Npc_HasItems(self,ItMi_DragonStaffPiece_Eye) >= 1))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_SmithWeapon) && (MIS_MonasterySecret ==  LOG_SUCCESS ) && (NormalWeapon ==  FALSE ) && (Orcweapon ==  FALSE ) && (Rapier Weapon == FALSE ) && (Experimental Weapon ==  FALSE ) && ( ARMORWAFFEN ==  FALSE ) && ( ARMORWAFFEN  ==  FALSE ) ; && ( TREE  ==  FALSE ) && ( Npc_HasItems ( self , );ItMi_DragonStaffPiece_01) >=  1 ) && (Npc_HasItems(self,ItMi_DragonStaffPiece_02) >=  1 ) && (Npc_HasItems(self,ItMi_DragonStaffPiece_03) >=  1 ) && (Npc_HasItems(self,ItMi_DragonStaffPiece_04) >= 1 ) && ( Npc_HasItems(self,ItMi_DragonStaff_04) > = 1 )  4 ) && (Npc_HasItems(self,ItMi_DragonStaffPiece_Eye) >= 1 ))  
 	{
 		return TRUE;
 	};
@@ -3151,7 +3152,7 @@ func void PC_DragonStaff_Info()
 };
 
 
-//---------------оружие орков-----------------------------
+// ---------------Orc weapons-----------------------
 
 instance PC_ORCWEAPON_LINE_STR_01(C_Info)
 {
@@ -3159,7 +3160,7 @@ instance PC_ORCWEAPON_LINE_STR_01(C_Info)
 	condition = PC_ORCWEAPON_LINE_STR_01_Condition;
 	information = PC_ORCWEAPON_LINE_STR_01_Info;
 	permanent = TRUE;
-	description = "Ковать рудный орочий топор";
+	description = " Forge an Ore Orc Axe " ;
 };
 
 func int PC_ORCWEAPON_LINE_STR_01_Condition()
@@ -3174,7 +3175,7 @@ func void PC_ORCWEAPON_LINE_STR_01_Info()
 {
 	if(B_CheckSmithSkill(30))
 	{
-		if((Npc_HasItems(hero,ItMi_Nugget) >= 10) && (Npc_HasItems(hero,ItMi_SNugget) >= 2) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
+		if ((Npc_HasItems(hero, It'sMy_Nugget) >=  10 ) && (Npc_HasItems(hero, It'sMy_SNugget) >=  2 ) && (Npc_HasItems(hero, It'sMy_Pitch) >=  1 ) && (Npc_HasItems(hero, It'sMy_Sulfur) >=  1 )) ;
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
@@ -3190,8 +3191,8 @@ func void PC_ORCWEAPON_LINE_STR_01_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3203,7 +3204,7 @@ instance PC_ORCWEAPON_LINE_STR_02(C_Info)
 	condition = PC_ORCWEAPON_LINE_STR_02_Condition;
 	information = PC_ORCWEAPON_LINE_STR_02_Info;
 	permanent = TRUE;
-	description = "Ковать рудный меч воина";
+	description = " Forge a warrior's ore sword " ;
 };
 
 func int PC_ORCWEAPON_LINE_STR_02_Condition()
@@ -3235,8 +3236,8 @@ func void PC_ORCWEAPON_LINE_STR_02_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3248,7 +3249,7 @@ instance PC_ORCWEAPON_LINE_STR_03(C_Info)
 	condition = PC_ORCWEAPON_LINE_STR_03_Condition;
 	information = PC_ORCWEAPON_LINE_STR_03_Info;
 	permanent = TRUE;
-	description = "Ковать рудный боевой топор";
+	description = " Forge an ore battleaxe " ;
 };
 
 func int PC_ORCWEAPON_LINE_STR_03_Condition()
@@ -3280,8 +3281,8 @@ func void PC_ORCWEAPON_LINE_STR_03_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3293,7 +3294,7 @@ instance PC_ORCWEAPON_LINE_HP_01(C_Info)
 	condition = PC_ORCWEAPON_LINE_HP_01_Condition;
 	information = PC_ORCWEAPON_LINE_HP_01_Info;
 	permanent = TRUE;
-	description = "Ковать рудный орочий колун";
+	description = " Forge an Ore Orc Cleaver " ;
 };
 
 func int PC_ORCWEAPON_LINE_HP_01_Condition()
@@ -3308,7 +3309,7 @@ func void PC_ORCWEAPON_LINE_HP_01_Info()
 {
 	if(B_CheckSmithSkill(20))
 	{
-		if((Npc_HasItems(hero,ItMi_Nugget) >= 5) && (Npc_HasItems(hero,ItMi_SNugget) >= 10) && (Npc_HasItems(hero,ItMi_Coal) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
+		if ((Npc_HasItems(hero, It'sMy_Nugget) >=  5 ) && (Npc_HasItems(hero, It'sMy_SNugget) >=  10 ) && (Npc_HasItems(hero, It'sMy_Coal) >=  1 ) && (Npc_HasItems(hero, It'sMy_Sulfur) >=  1 )) ;
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
@@ -3324,8 +3325,8 @@ func void PC_ORCWEAPON_LINE_HP_01_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3337,7 +3338,7 @@ instance PC_ORCWEAPON_LINE_HP_02(C_Info)
 	condition = PC_ORCWEAPON_LINE_HP_02_Condition;
 	information = PC_ORCWEAPON_LINE_HP_02_Info;
 	permanent = TRUE;
-	description = "Ковать рудный меч старейшины";
+	description = " Forge Elder's Ore Sword " ;
 };
 
 func int PC_ORCWEAPON_LINE_HP_02_Condition()
@@ -3352,7 +3353,7 @@ func void PC_ORCWEAPON_LINE_HP_02_Info()
 {
 	if(B_CheckSmithSkill(40))
 	{
-		if((Npc_HasItems(hero,ItMi_Nugget) >= 10) && (Npc_HasItems(hero,ItMi_SNugget) >= 10) && (Npc_HasItems(hero,ITMI_QUICKSILVER) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
+		if ((Npc_HasItems(hero,ItMy_Nugget) >=  10 ) && (Npc_HasItems(hero,ItMy_SNugget) >=  10 ) && (Npc_HasItems(hero, ITMI_QUICKSILVER ) >=  1 ) && (Npc_HasItems(hero,ItMy_Sulfur) >=  1 )) ;
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
@@ -3368,8 +3369,8 @@ func void PC_ORCWEAPON_LINE_HP_02_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3381,7 +3382,7 @@ instance PC_ORCWEAPON_LINE_HP_03(C_Info)
 	condition = PC_ORCWEAPON_LINE_HP_03_Condition;
 	information = PC_ORCWEAPON_LINE_HP_03_Info;
 	permanent = TRUE;
-	description = "Ковать рудную штурмовую секиру";
+	description = " Forge an ore assault ax " ;
 };
 
 func int PC_ORCWEAPON_LINE_HP_03_Condition()
@@ -3412,8 +3413,8 @@ func void PC_ORCWEAPON_LINE_HP_03_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3425,7 +3426,7 @@ instance PC_ORCWEAPON_LINE_PRIME(C_Info)
 	condition = PC_ORCWEAPON_LINE_PRIME_Condition;
 	information = PC_ORCWEAPON_LINE_PRIME_Info;
 	permanent = TRUE;
-	description = "Ковать рудную клеймору вождя";
+	description = " Forge Warchief's Ore Claymore " ;
 };
 
 func int PC_ORCWEAPON_LINE_PRIME_Condition()
@@ -3440,12 +3441,12 @@ func void PC_ORCWEAPON_LINE_PRIME_Info()
 {
 	if(B_CheckSmithSkill(90))
 	{
-		if((Npc_HasItems(hero,ItMi_Nugget) >= 50) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 2) && (Npc_HasItems(hero,ITMI_QUICKSILVER) >= 1) && (Npc_HasItems(hero,ItMi_Emerald) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 10) && (Npc_HasItems(hero,ItMi_Pitch) >= 2))
+		if ((Npc_HasItems(hero,ItMi_Nugget) >=  50 ) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >=  2 ) && (Npc_HasItems(hero, ITMI_QUICKSILVER ) >=  1 ) && (Npc_HasItems(hero,ItMi_Emerald) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  10 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  2 ))
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
 			Npc_RemoveInvItems(hero,ItMi_Nugget,50);
-			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon,2);
+			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon, 2 );
 			Npc_RemoveInvItems(hero,ItMi_Sulfur,10);
 			Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
 			Npc_RemoveInvItems(hero,ItMi_Pitch,2);
@@ -3459,14 +3460,14 @@ func void PC_ORCWEAPON_LINE_PRIME_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
 };
 
-//---------------лунные клинки-----------------------------
+// ---------------lunar blades-----------------------
 
 var int MOONSWORDDONE_LEFT;
 var int MOONSWORDDONE_RIGHT;
@@ -3477,7 +3478,7 @@ instance PC_ITMW_1H_MOONBLADE_LEFT(C_Info)
 	condition = PC_ITMW_1H_MOONBLADE_LEFT_Condition;
 	information = PC_ITMW_1H_MOONBLADE_LEFT_Info;
 	permanent = TRUE;
-	description = "Ковать лунный клинок (левая рука)";
+	description = " Forge the Moonblade (Left Hand) " ;
 };
 
 func int PC_ITMW_1H_MOONBLADE_LEFT_Condition()
@@ -3510,7 +3511,7 @@ func void PC_ITMW_1H_MOONBLADE_LEFT_Info()
 			{
 				MIS_MoonBlades = LOG_Success;
 				Log_SetTopicStatus(TOPIC_MoonBlades,LOG_Success);
-				B_LogEntry(TOPIC_MoonBlades,"Я создал это легендарное оружие!");
+				B_LogEntry(TOPIC_MoonBlades, " I created this legendary weapon! " );
 			};
 
 			//Print(PRINT_SmithSuccess);
@@ -3520,8 +3521,8 @@ func void PC_ITMW_1H_MOONBLADE_LEFT_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3534,7 +3535,7 @@ instance PC_ITMW_1H_MOONBLADE_RIGHT(C_Info)
 	condition = PC_ITMW_1H_MOONBLADE_RIGHT_Condition;
 	information = PC_ITMW_1H_MOONBLADE_RIGHT_Info;
 	permanent = TRUE;
-	description = "Ковать лунный клинок (правая рука)";
+	description = " Forge the Moonblade (Right Hand) " ;
 };
 
 
@@ -3568,7 +3569,7 @@ func void PC_ITMW_1H_MOONBLADE_RIGHT_Info()
 			{
 				MIS_MoonBlades = LOG_Success;
 				Log_SetTopicStatus(TOPIC_MoonBlades,LOG_Success);
-				B_LogEntry(TOPIC_MoonBlades,"Я создал это легендарное оружие!");
+				B_LogEntry(TOPIC_MoonBlades, " I created this legendary weapon! " );
 			};
 
 			//Print(PRINT_SmithSuccess);
@@ -3578,8 +3579,8 @@ func void PC_ITMW_1H_MOONBLADE_RIGHT_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3591,7 +3592,7 @@ instance PC_ITMW_1H_SIGIL(C_Info)
 	condition = PC_ITMW_1H_SIGIL_Condition;
 	information = PC_ITMW_1H_SIGIL_Info;
 	permanent = TRUE;
-	description = "Ковать 'Рунный сигиль' (одноручный)";
+	description = " Forge 'Rune Sigil' (one-handed) " ;
 };
 
 func int PC_ITMW_1H_SIGIL_Condition()
@@ -3606,13 +3607,13 @@ func void PC_ITMW_1H_SIGIL_Info()
 {
 	if(B_CheckSmithSkill(100))
 	{
-		if((Npc_HasItems(hero,ITMI_QUICKSILVER) >= 2) && (Npc_HasItems(hero,ItSc_HarmUndead) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 4) && (Npc_HasItems(hero,ItMi_StoneGuardianPiece) >= 10) && (Npc_HasItems(hero,ItMi_IronStuck) >= 3) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 2) && (Npc_HasItems(hero,ItMi_MoonStone) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 2) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 4))
+		if((Npc_HasItems(hero,ITMI_QUICKSILVER) >= 2) && (Npc_HasItems(hero,ItSc_HarmUndead) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 4) && (Npc_HasItems(hero,ItMi_StoneGuardianPiece) >= 10) && (Npc_HasItems(hero,ItMi_IronStuck) >= 3) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 2) && (Npc_HasItems(hero,ItMi_MoonStone) >= 1) &&(Npc_HasItems(hero,ItMi_DarkPearl) >=  2 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  4 ))
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
 			Npc_RemoveInvItems(hero,ITMI_QUICKSILVER,2);
 			Npc_RemoveInvItems(hero,ItMi_IronStuck,3);
-			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon,2);
+			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon, 2 );
 			Npc_RemoveInvItems(hero,ItMi_MoonStone,1);
 			Npc_RemoveInvItems(hero,ItMi_DarkPearl,2);
 			Npc_RemoveInvItems(hero,ItMi_Pitch,1);
@@ -3628,8 +3629,8 @@ func void PC_ITMW_1H_SIGIL_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3641,7 +3642,7 @@ instance PC_ITMW_2H_SIGIL(C_Info)
 	condition = PC_ITMW_2H_SIGIL_Condition;
 	information = PC_ITMW_2H_SIGIL_Info;
 	permanent = TRUE;
-	description = "Ковать 'Рунный сигиль' (двуручный)";
+	description = " Forge 'Rune Sigil' (two-handed) " ;
 };
 
 func int PC_ITMW_2H_SIGIL_Condition()
@@ -3656,13 +3657,13 @@ func void PC_ITMW_2H_SIGIL_Info()
 {
 	if(B_CheckSmithSkill(100))
 	{
-		if((Npc_HasItems(hero,ITMI_QUICKSILVER) >= 2) && (Npc_HasItems(hero,ItSc_HarmUndead) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 4) && (Npc_HasItems(hero,ItMi_StoneGuardianPiece) >= 10) && (Npc_HasItems(hero,ItMi_IronStuck) >= 3) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 2) && (Npc_HasItems(hero,ItMi_MoonStone) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 2) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 4))
+		if((Npc_HasItems(hero,ITMI_QUICKSILVER) >= 2) && (Npc_HasItems(hero,ItSc_HarmUndead) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 4) && (Npc_HasItems(hero,ItMi_StoneGuardianPiece) >= 10) && (Npc_HasItems(hero,ItMi_IronStuck) >= 3) && (Npc_HasItems(hero,ItMi_Zeitspalt_Addon) >= 2) && (Npc_HasItems(hero,ItMi_MoonStone) >= 1) &&(Npc_HasItems(hero,ItMi_DarkPearl) >=  2 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  4 ))
 		{
 			AI_Wait(self,1);
 			//B_GivePlayerXP(XP_HandMade);
 			Npc_RemoveInvItems(hero,ITMI_QUICKSILVER,2);
 			Npc_RemoveInvItems(hero,ItMi_IronStuck,3);
-			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon,2);
+			Npc_RemoveInvItems(hero,ItMi_Zeitspalt_Addon, 2 );
 			Npc_RemoveInvItems(hero,ItMi_MoonStone,1);
 			Npc_RemoveInvItems(hero,ItMi_DarkPearl,2);
 			Npc_RemoveInvItems(hero,ItMi_Pitch,1);
@@ -3678,8 +3679,8 @@ func void PC_ITMW_2H_SIGIL_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 	};
@@ -3687,5 +3688,5 @@ func void PC_ITMW_2H_SIGIL_Info()
 
 func int CANSORTIR()
 {
-	return FALSE;
+	return  FALSE ;
 };
