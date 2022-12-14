@@ -1,4 +1,5 @@
 
+
 func void b_checkpftinpresence(var int level)
 {
 	if(level != CurrentLevel)
@@ -53,17 +54,17 @@ func int DIA_OWPAL_4_STANDARD_Condition()
 
 func void DIA_OWPAL_4_STANDARD_Info()
 {
-	var int randy;
-	randy = Hlp_Random(4);
+	be int randy;
+	randy = Hlp_Random( 4 );
 	if(self.level <= 30)
 	{
 		if(randy == 0)
 		{
-			AI_Output(self,other,"DIA_OWPAL_4_STANDARD_04_03");	//Присутствие Инноса придает нам сил!
+			AI_Output(self,other, " DIA_OWPAL_4_STANDARD_04_03 " );	// Innos' presence gives us strength!
 		};
 		if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_OWPAL_4_STANDARD_04_04");	//Будем держаться пока сможем!
+			AI_Output(self,other, " DIA_OWPAL_4_STANDARD_04_04 " );	// Let's hang on as long as we can!
 		};
 		if(randy == 3)
 		{
@@ -74,15 +75,15 @@ func void DIA_OWPAL_4_STANDARD_Info()
 	{
 		if(randy == 0)
 		{
-			AI_Output(self,other,"DIA_OWPAL_4_STANDARD_04_00");	//Иннос это моя честь, а моя честь, это моя жизнь.
+			AI_Output(self,other, " DIA_OWPAL_4_STANDARD_04_00 " );	// Innos is my honor, and my honor is my life.
 		};
 		if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_OWPAL_4_STANDARD_04_01");	//Мы будем выжидать здесь столько, сколько нам укажет Иннос.
+			AI_Output(self,other, " DIA_OWPAL_4_STANDARD_04_01 " );	// We'll wait here for as long as Innos tells us.
 		};
 		if(randy == 2)
 		{
-			AI_Output(self,other,"DIA_OWPAL_4_STANDARD_04_02");	//С Помощью Инноса мы отбросим отсюда этих ужасных существ.
+			AI_Output(self,other, " DIA_OWPAL_4_STANDARD_04_02 " );	// With the help of Innos, we will drive these terrible creatures out of here.
 		};
 		if(randy == 3)
 		{
@@ -90,7 +91,7 @@ func void DIA_OWPAL_4_STANDARD_Info()
 		};
 	};
 	b_checkpftinpresence(PALADINFORT_ZEN);
-	if((CHECKPFT == TRUE) && (MIS_RAYNEHELP == LOG_Running) && (self.aivar[91] == FALSE))
+	if (( CHECKPFT  ==  TRUE ) && ( MY_RAINHELP  == LOG_Running ) && ( self . aivar [ 91 ] ==  FALSE )) ;
 	{
 	}
 	else
@@ -106,14 +107,14 @@ instance DIA_OWPAL_4_STANDARD_RAYNE(C_Info)
 	condition = dia_owpal_4_standard_rayne_condition;
 	information = dia_owpal_4_standard_rayne_info;
 	permanent = TRUE;
-	description = "Паладину Рэйну нужна помощь на складе.";
+	description = " Paladin Rayne needs help at the warehouse. " ;
 };
 
 
 func int dia_owpal_4_standard_rayne_condition()
 {
 	b_checkpftinpresence(PALADINFORT_ZEN);
-	if((CHECKPFT == TRUE) && (self.aivar[91] == FALSE) && (MIS_RAYNEHELP == LOG_Running))
+	if (( CHECKPFT  ==  TRUE ) && ( self . aivar[ 91 ] ==  FALSE ) && ( MY_RAYNEHELP  == LOG_Running )) ;
 	{
 		return TRUE;
 	};
@@ -121,37 +122,37 @@ func int dia_owpal_4_standard_rayne_condition()
 
 func void dia_owpal_4_standard_rayne_info()
 {
-	var int randy;
-	randy = Hlp_Random(4);
-	AI_Output(other,self,"DIA_OWPAL_4_STANDARD_RAYNE_01_01");	//Паладину Рэйну нужна помощь на складе.
-	AI_Output(other,self,"DIA_OWPAL_4_STANDARD_RAYNE_01_02");	//Ты можешь помочь ему?
+	be int randy;
+	randy = Hlp_Random( 4 );
+	AI_Output(other,self, " DIA_OWPAL_4_STANDARD_RAYNE_01_01 " );	// Paladin Rayne needs help at the warehouse.
+	AI_Output(other,self, " DIA_OWPAL_4_STANDARD_RAYNE_01_02 " );	// Can you help him?
 	if(randy == 0)
 	{
-		AI_Output(self,other,"DIA_OWPAL_4_STANDARD_RAYNE_01_03");	//Извини, приятель - но у меня совершенно нет на это времени!
-		AI_Output(self,other,"DIA_OWPAL_4_STANDARD_RAYNE_01_04");	//Попробуй поговорить с другими паладинами, может кто-то и согласится помочь ему.
+		AI_Output(self,other, " DIA_OWPAL_4_STANDARD_RAYNE_01_03 " );	// Sorry mate - but I don't have time for this at all!
+		AI_Output(self,other, " DIA_OWPAL_4_STANDARD_RAYNE_01_04 " );	// Try to talk to other paladins, maybe someone will agree to help him.
 	};
 	if(randy == 1)
 	{
-		AI_Output(self,other,"DIA_OWPAL_4_STANDARD_RAYNE_01_05");	//Нет, парень - такая работенка не для меня!
-		AI_Output(self,other,"DIA_OWPAL_4_STANDARD_RAYNE_01_06");	//Так что, поищи кого-нибудь другого.
+		AI_Output(self,other, " DIA_OWPAL_4_STANDARD_RAYNE_01_05 " );	// Sorry, kid - Not me.
+		AI_Output(self,other, " DIA_OWPAL_4_STANDARD_RAYNE_01_06 " );	// Look for someone else.
 	};
 	if(randy == 2)
 	{
-		AI_Output(self,other,"DIA_OWPAL_4_STANDARD_RAYNE_01_07");	//Мне что, заняться больше нечем, как только копаться в этих ящиках!
-		AI_Output(self,other,"DIA_OWPAL_4_STANDARD_RAYNE_01_08");	//Нет уж, пусть этим занимается кто-то другой.
+		AI_Output(self,other, " DIA_OWPAL_4_STANDARD_RAYNE_01_07 " );	// I don't have anything better to do than dig through these crates?
+		AI_Output(self,other, " DIA_OWPAL_4_STANDARD_RAYNE_01_08 " );	// No, let someone else do it.
 	};
 	if(randy == 3)
 	{
-		AI_Output(self,other,"DIA_OWPAL_4_STANDARD_RAYNE_01_09");	//Не думаю. что я смогу помочь ему - я мало в этом что понимаю.
-		AI_Output(self,other,"DIA_OWPAL_4_STANDARD_RAYNE_01_10");	//Думаю, тебе стоит спросить у других паладинов об этом.
+		AI_Output(self,other, " DIA_OWPAL_4_STANDARD_RAYNE_01_09 " );	// I'd... rather not.
+		AI_Output(self,other, " DIA_OWPAL_4_STANDARD_RAYNE_01_10 " );	// I think you should ask another paladin.
 	};
 	HELPCOUNTRAYNE = HELPCOUNTRAYNE + 1;
-	if((HELPCOUNTRAYNE > 10) && (MAYTALKVARUSRAYNE == FALSE) && (MIS_RAYNEHELP == LOG_Running))
+	if (( HELPCOUNTRAYNE  >  10 ) && ( MAYTALKVARUSRAYNE  ==  FALSE ) && ( MY_RAYNEHELP  == LOG_Running ))
 	{
-		MAYTALKVARUSRAYNE = TRUE;
-		B_LogEntry(TOPIC_RAYNEHELP,"Кажется, что я просто попусту трачу свое время - никто из паладинов не хочет помогать Рэйну. Может мне стоит предпринять более координальные действия...");
+		MAYTALKVARUSRAYNE = TRUE ;
+		B_LogEntry( TOPIC_RAYNEHELP , " I feel like I'm just wasting my time - none of the paladins want to help Rayne. Maybe I should take more coordinative action... " );
 	};
-	self.aivar[91] = TRUE;
+	self.aivar[ 91 ] = TRUE ;
 	AI_StopProcessInfos(self);
 };
 
