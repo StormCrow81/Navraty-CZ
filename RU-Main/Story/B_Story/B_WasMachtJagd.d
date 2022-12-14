@@ -1,281 +1,282 @@
 
+
 var int GaanTeachFinish;
 
-func void B_WasMachtJagd()
+func void B_WhatMachtHunt()
 {
-	AI_Output(other,self,"DIA_Gaan_JAGD_15_00");	//Как охота?
+	AI_Output(other, self, " DIA_Gaan_JAGD_15_00 " );	// How's the hunting?
 };
 
 
-instance DIA_Gaan_EXIT(C_Info)
+instance DIA_Go_EXIT (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 999;
 	condition = DIA_Gaan_EXIT_Condition;
-	information = DIA_Gaan_EXIT_Info;
+	information = DIA_Go_EXIT_Info;
 	permanent = TRUE;
 	description = Dialog_Ende;
 };
 
 
-var int DIA_Gaan_EXIT_oneTime;
+var int DIA_Go_EXIT_oneTime;
 
 func int DIA_Gaan_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void DIA_Gaan_EXIT_Info()
+func void SLIDE_GO_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 
-	if(DIA_Gaan_EXIT_oneTime == FALSE)
+	if ( DIA_Can_EXIT_oneTime ==  FALSE )
 	{
 		Npc_ExchangeRoutine(self,"Start");
 		DIA_Gaan_EXIT_oneTime = TRUE;
 	};
 };
 
-instance DIA_Gaan_WASMACHSTDU(C_Info)
+instance DIA_Go_WASMACHSTDU (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 4;
-	condition = DIA_Gaan_WASMACHSTDU_Condition;
-	information = DIA_Gaan_WASMACHSTDU_Info;
-	description = "Кто ты?";
+	condition = DIA_Go_WASMACHSTDU_Condition;
+	information = DIA_Go_WASMACHSTDU_Info;
+	description = " Who are you? " ;
 };
 
 
-func int DIA_Gaan_WASMACHSTDU_Condition()
+func int DIA_Go_WASMACHSTDU_Condition()
 {
 	return TRUE;
 };
 
-func void DIA_Gaan_WASMACHSTDU_Info()
+func void SLIDE_Go_WASMACHSTDU_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_WASMACHSTDU_15_00");	//Кто ты?
-	AI_Output(self,other,"DIA_Gaan_WASMACHSTDU_03_01");	//Меня зовут Гаан. Я охотник и работаю на Бенгара - фермера, владеющего этими высокогорными пастбищами.
-	AI_Output(self,other,"DIA_Gaan_WASMACHSTDU_03_02");	//Я провожу большую часть времени на природе, греясь на солнце.
+	AI_Output(other,self, " DIA_Go_WASMACHSTDU_15_00 " );	// Who are you?
+	AI_Output(self,other, " DIA_Gaan_WASMACHSTDU_03_01 " );	// My name is Gahan. I am a hunter and work for Bengar, the farmer who owns these high mountain pastures.
+	AI_Output(self,other, " DIA_Gaan_WASMACHSTDU_03_02 " );	// I spend most of my time in the great outdoors, earning coin from the land.
 	if(HEROISHUNTER == TRUE)
 	{
-		AI_Output(other,self,"DIA_Gaan_WASMACHSTDU_01_00");	//А мне казалось, что все парни из лагеря - вольные охотники?!
-		AI_Output(self,other,"DIA_Gaan_WASMACHSTDU_01_01");	//Конечно!...(смеется) Но от лишних золотых монет я тоже не собираюсь отказываться.
-		AI_Output(self,other,"DIA_Gaan_WASMACHSTDU_01_02");	//Да и работа у меня не особо пыльная.
-		AI_Output(other,self,"DIA_Gaan_WASMACHSTDU_01_03");	//Понятно.
+		AI_Output(other,self, " DIA_Gaan_WASMACHSTDU_01_00 " );	// I thought all the guys from the camp were free hunters?!
+		AI_Output(self,other, " DIA_Gaan_WASMACHSTDU_01_01 " );	// Of course!... But I'm not going to refuse extra gold either.
+		AI_Output(self,other, " DIA_Gaan_WASMACHSTDU_01_02 " );	// Besides, my work isn't particularly hard.
+		AI_Output(other,self, " DIA_Gaan_WASMACHSTDU_01_03 " );	// Got it.
 	};
 };
 
 
-instance DIA_Gaan_HALLO(C_Info)
+instance DIA_Go_HELLO (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 3;
-	condition = DIA_Gaan_HALLO_Condition;
-	information = DIA_Gaan_HALLO_Info;
-	description = "У тебя здесь просторно.";
+	condition = DIA_Go_HELLO_Condition;
+	information = DIA_Go_HELLO_Info;
+	description = " You have plenty of room here. " ;
 };
 
 
-func int DIA_Gaan_HALLO_Condition()
+func int DIA_Go_HELLO_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
+	if (Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_HALLO_Info()
+func void SLIDE_Go_HELLO_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_HALLO_15_00");	//У тебя здесь просторно.
-	AI_Output(self,other,"DIA_Gaan_HALLO_03_01");	//Да, мне здесь нравится. Но если ты пойдешь вон по тому Проходу, ты можешь переменить свое мнение.
-	AI_Output(self,other,"DIA_Gaan_HALLO_03_02");	//Если этот клочок земли произвел впечатление на тебя, значит, ты еще не видел Долины Рудников!
+	AI_Output(other,self, " DIA_Gaan_HALLO_15_00 " );	// You have plenty of room here.
+	AI_Output(self,other, " DIA_Gaan_HALLO_03_01 " );	// Yes, I like it here. But if you go down that Passage yonder, you might change your mind.
+	AI_Output(self,other, " DIA_Gaan_HALLO_03_02 " );	// If this piece of land impressed you, then you haven't seen the Valley of Mines yet!
 };
 
 
-instance DIA_Gaan_WALD(C_Info)
+instance DIA_Go_WALD (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 5;
 	condition = DIA_Gaan_WALD_Condition;
-	information = DIA_Gaan_WALD_Info;
-	description = "Что мне нужно знать о Долине Рудников?";
+	information = DIA_Go_WALD_Info;
+	description = " What do I need to know about Mining Valley? " ;
 };
 
 
 func int DIA_Gaan_WALD_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_HALLO))
+	if ( Npc_KnowsInfo ( other , DIA_Gaan_HELLO ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_WALD_Info()
+func void SLIDE_Go_WALD_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_WALD_15_00");	//Что мне нужно знать о Долине Рудников?
-	AI_Output(self,other,"DIA_Gaan_WALD_03_01");	//Понятия не имею. Я видел эту долину только мельком. По мне, там слишком опасно!
-	AI_Output(self,other,"DIA_Gaan_WALD_03_02");	//Лучше всего, если ты пойдешь туда по Проходу. Держись протоптанной дороги!
-	AI_Output(self,other,"DIA_Gaan_WALD_03_03");	//Ты можешь пойти либо через большое ущелье, либо по дороге через каменный мост. Первый путь корче и безопасней...
-	AI_Output(self,other,"DIA_Gaan_WALD_03_04");	//Теперь, когда орки роются повсюду, нужно быть очень осторожным.
-	AI_Output(self,other,"DIA_Gaan_WALD_03_05");	//Мне совсем не хочется тащить тебя к ведьме-целительнице.
+	AI_Output(other,self, " DIA_Gaan_WALD_15_00 " );	// What do I need to know about Mining Valley?
+	AI_Output(self,other, " DIA_Gaan_WALD_03_01 " );	// I have no idea. I have only glimpsed the place from afar. It's too dangerous for me!
+	AI_Output(self,other, " DIA_Gaan_WALD_03_02 " );	// It's best that if you go there,  stay on the beaten track!
+	AI_Output(self,other, " DIA_Gaan_WALD_03_03 " );	// You can either go through the big gorge or follow the road over the stone bridge. The first way is shorter and safer...
+	AI_Output(self,other, " DIA_Gaan_WALD_03_04 " );	// Now that the orcs are burrowing everywhere, we need to be very careful.
+	AI_Output(self,other, " DIA_Gaan_WALD_03_05 " );	// I don't feel like dragging you to the healing witch.
 };
 
 
-instance DIA_Gaan_SAGITTA(C_Info)
+instance DIA_Gan_SIGHT (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 7;
 	condition = DIA_Gaan_SAGITTA_Condition;
-	information = DIA_Gaan_SAGITTA_Info;
-	description = "Ведьме-целительнице?";
+	information = DIA_Gan_SIGN_Info;
+	description = " Witch Healer? " ;
 };
 
 
 func int DIA_Gaan_SAGITTA_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_WALD))
+	if ( Npc_KnowsInfo ( other , DIA_Gaan_WALD ) )
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_SAGITTA_Info()
+func void DIA_Gan_SET_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_SAGITTA_15_00");	//Ведьме-целительнице?
-	AI_Output(self,other,"DIA_Gaan_SAGITTA_03_01");	//Ее зовут Сагитта. Она лечит фермеров и других людей, живущих вне города.
-	AI_Output(self,other,"DIA_Gaan_SAGITTA_03_02");	//Очень загадочная женщина...
-	AI_Output(self,other,"DIA_Gaan_SAGITTA_03_03");	//Никому не нравится ходить к ней, и все обожают распускать о ней сплетни.
-	AI_Output(self,other,"DIA_Gaan_SAGITTA_03_04");	//Но, если ты заболеешь, ты нигде не найдешь лучшей помощи, чем у Сагитты. На ее кухне, полной целебных трав...
-	AI_Output(self,other,"DIA_Gaan_SAGITTA_03_05");	//Ты найдешь ее в лесу, за фермой Секоба.
+	AI_Output(other,self, " DIA_Gaan_SAGITTA_15_00 " );	// Witch?
+	AI_Output(self,other, " DIA_Gaan_SAGITTA_03_01 " );	// Her name is Sagitta. She heals farmers and other people living outside the city.
+	AI_Output(self,other, " DIA_Gaan_SAGITTA_03_02 " );	// A very mysterious woman...
+	AI_Output(self,other, " DIA_Gaan_SAGITTA_03_03 " );	// Nobody likes going to her, and everyone loves to gossip about her.
+	AI_Output(self,other, " DIA_Gaan_SAGITTA_03_04 " );	// But if you get sick, you will not find better help anywhere than Sagitta. In her kitchen full of medicinal herbs...
+	AI_Output(self,other, " DIA_Gaan_SAGITTA_03_05 " );	// You'll find her in the forest, behind the Sekoba farm.
 };
 
 
-instance DIA_Gaan_JAGD(C_Info)
+instance DIA_Go_JAGD (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 80;
 	condition = DIA_Gaan_JAGD_Condition;
-	information = DIA_Gaan_JAGD_Info;
+	information = DIA_Go_JAGD_Info;
 	permanent = FALSE;
-	description = "Как охота?";
+	description = " How are you hunting? " ;
 };
 
 
-func int DIA_Gaan_JAGD_Condition()
+func int DIA_Go_JAGD_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
+	if (Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_JAGD_Info()
+func void SLIDE_Go_JAGD_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_JAGD_15_00");	//Как охота?
-	AI_Output(self,other,"DIA_Gaan_JAGD_03_01");	//Последнее животное, которое мне удалось убить, была - большая крыса. Дела идут совсем плохо.
+	AI_Output(other, self, " DIA_Gaan_JAGD_15_00 " );	// How's the hunting?
+	AI_Output(self,other, " DIA_Gaan_JAGD_03_01 " );	// The last animal I managed to kill was a big rat. Things are really bad lately.
 
-	if(Npc_IsDead(Gaans_Snapper) == FALSE)
+	if (Npc_IsDead(Gaans_Snapper) ==  FALSE )
 	{
-		AI_Output(self,other,"DIA_Gaan_JAGD_03_02");	//Вот уже несколько дней какой-то фыркающий зверь бродит здесь.
-		AI_Output(self,other,"DIA_Gaan_JAGD_03_03");	//Он не только убивает все, кто движется - он мешает моей работе!
-		MIS_Gaan_Snapper = LOG_Running;
+		AI_Output(self,other, " DIA_Gaan_JAGD_03_02 " );	// Some sort of snorting beast has been roaming around here for days now.
+		AI_Output(self,other, " DIA_Gaan_JAGD_03_03 " );	// It not only kills everything that moves - it interferes with my work!
+		MIS_Go_Snapper = LOG_Running;
 		Log_CreateTopic(TOPIC_GaanSchnaubi,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_GaanSchnaubi,LOG_Running);
-		B_LogEntry(TOPIC_GaanSchnaubi,"Сопящее создание бродит в охотничих угодьях Гаана и мешает ему охотиться. Если я убью эту тварь, то Гаан вернется к охоте.");
+		B_LogEntry(TOPIC_GaanSchnaubi, " A snorting creature roams Gaan's hunting grounds and prevents him from hunting. If I kill this creature, Gaan might be thankful. " );
 	};
 };
 
 
-instance DIA_Gaan_MONSTER(C_Info)
+instance DIA_Go_MONSTER (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 8;
 	condition = DIA_Gaan_MONSTER_Condition;
-	information = DIA_Gaan_MONSTER_Info;
-	description = "А как выглядит этот 'опасный зверь'?";
+	information = DIA_Go_MONSTER_Info;
+	description = " What does this 'dangerous beast' look like? " ;
 };
 
 
-func int DIA_Gaan_MONSTER_Condition()
+func int DIA_Go_MONSTER_Condition()
 {
-	if((MIS_Gaan_Snapper == LOG_Running) && (Npc_IsDead(Gaans_Snapper) == FALSE))
+	if ((MIS_Go_Snapper == LOG_Running) && (Npc_IsDead(Go_Snapper) ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_MONSTER_Info()
+func void SLIDE_Go_SAMPLE_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_MONSTER_15_00");	//А как выглядит этот 'опасный зверь'?
-	AI_Output(self,other,"DIA_Gaan_MONSTER_03_01");	//Я...(растерянно) Точно не знаю! Я только слышал фырканье и скрежет его когтей. Но видел, что он может сделать!
-	AI_Output(self,other,"DIA_Gaan_MONSTER_03_02");	//Даже волки боятся его! Этот зверь как-то оторвал одному волку голову...
+	AI_Output(other,self, " DIA_Gaan_MONSTER_15_00 " );	// And what does this 'dangerous beast' look like?
+	AI_Output(self,other, " DIA_Gaan_MONSTER_03_01 " );	// I... I don't know for sure! I could only hear the snorting and grinding of its claws. But I saw what it could do!
+	AI_Output(self,other, " DIA_Gaan_MONSTER_03_02 " );	// Even the wolves are afraid of it! This thing rips them apart in seconds...
 };
 
 
-instance DIA_Gaan_WOHERMONSTER(C_Info)
+instance DIA_Go_WOHERMONSTER (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 10;
-	condition = DIA_Gaan_WOHERMONSTER_Condition;
-	information = DIA_Gaan_WOHERMONSTER_Info;
-	description = "Откуда пришел этот коварный зверь?";
+	condition = DIA_Go_WOHERMONSTER_Condition;
+	information = DIA_Go_WOHERMONSTER_Info;
+	description = " Where did this cunning beast come from? " ;
 };
 
 
-func int DIA_Gaan_WOHERMONSTER_Condition()
+func int DIA_Go_WOHERMONSTER_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_MONSTER) && (Npc_IsDead(Gaans_Snapper) == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Gaan_MONSTER ) && ( Npc_IsDead ( Gaan_Snapper ) ==  FALSE )) .
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_WOHERMONSTER_Info()
+func void SLIDE_Go_WOHERMONSTER_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_WOHERMONSTER_15_00");	//Откуда пришел этот коварный зверь?
-	AI_Output(self,other,"DIA_Gaan_WOHERMONSTER_03_01");	//Откуда-то издалека! Может быть, из Долины Рудников. Но я не знаю этого точно.
-	AI_Output(self,other,"DIA_Gaan_WOHERMONSTER_03_02");	//Я никогда не был в Долине Рудников.
+	AI_Output(other,self, " DIA_Gaan_WOHERMONSTER_15_00 " );	// Where did this beast come from?
+	AI_Output(self,other, " DIA_Gaan_WOHERMONSTER_03_01 " );	// Maybe from the Valley of Mines. But I don't know for sure.
+	AI_Output(self,other, " DIA_Gaan_WOHERMONSTER_03_02 " );	// I've never been there myself.
 };
 
 
-instance DIA_Gaan_WASZAHLSTDU(C_Info)
+instance DIA_Go_WASZAHLSTDU (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 9;
 	condition = DIA_Gaan_WASZAHLSTDU_Condition;
 	information = DIA_Gaan_WASZAHLSTDU_Info;
-	description = "Сколько ты заплатишь, если я убью этого зверя для тебя?";
+	description = " How much will you pay if I kill this beast for you? " ;
 };
 
 
-func int DIA_Gaan_WASZAHLSTDU_Condition()
+func int DIA_Go_WASZAHLSTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_WOHERMONSTER) && (Npc_IsDead(Gaans_Snapper) == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Gaan_WOHERMONSTER ) && ( Npc_IsDead ( Gaans_Snapper ) ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_WASZAHLSTDU_Info()
+func void SLIDE_Go_WASZAHLSTDU_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_WASZAHLSTDU_15_00");	//Сколько ты заплатишь, если я убью этого зверя для тебя?
-	AI_Output(self,other,"DIA_Gaan_WASZAHLSTDU_03_01");	//Я бы отдал тому, кто убьет этого зверя все, что у меня есть.
+	AI_Output(other,self, " DIA_Gaan_WASZAHLSTDU_15_00 " );	// How much will you pay if I kill this beast for you?
+	AI_Output(self,other, " DIA_Gaan_WASZAHLSTDU_03_01 " );	// I would give whoever kills this beast everything I have.
 	B_Say_Gold(self,other,30);
-	MIS_Gaan_Deal = LOG_Running;
+	MIS_Go_Deal = LOG_Running;
 };
 
 
-instance DIA_Gaan_MONSTERTOT(C_Info)
+instance DIA_Go_MONSTERTOT (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 11;
 	condition = DIA_Gaan_MONSTERTOT_Condition;
-	information = DIA_Gaan_MONSTERTOT_Info;
+	information = DIA_Go_MONSTERTOT_Info;
 	important = TRUE;
 };
 
 
-func int DIA_Gaan_MONSTERTOT_Condition()
+func int SLIDE_Go_MONSTERTOT_Condition()
 {
 	if((Npc_IsDead(Gaans_Snapper) == TRUE) && (RangerMeetingRunning != LOG_Running))
 	{
@@ -283,74 +284,74 @@ func int DIA_Gaan_MONSTERTOT_Condition()
 	};
 };
 
-func void DIA_Gaan_MONSTERTOT_Info()
+func void SLIDE_Go_MONSTERTOT_Info()
 {
-	AI_Output(self,other,"DIA_Gaan_MONSTERTOT_03_00");	//Этот ужасный зверь мертв, я полагаю?
-	AI_Output(self,other,"DIA_Gaan_MONSTERTOT_03_01");	//Теперь я опять могу охотиться спокойно.
-	if(MIS_Gaan_Deal == LOG_Running)
+	AI_Output(self,other, " DIA_Gaan_MONSTERTOT_03_00 " );	// That monster is dead, I presume?
+	AI_Output(self,other, " DIA_Gaan_MONSTERTOT_03_01 " );	// Now I can hunt safely again.
+	if (MIS_Go_Deal == LOG_Running)
 	{
 		B_GivePlayerXP(XP_Gaan_WaldSnapper);
-		AI_Output(self,other,"DIA_Gaan_MONSTERTOT_03_02");	//Вот деньги, что я обещал.
+		AI_Output(self,other, " DIA_Gaan_MONSTERTOT_03_02 " );	// Here's the money I promised.
 		CreateInvItems(self,ItMi_Gold,30);
 		B_GiveInvItems(self,other,ItMi_Gold,30);
 	};
-	MIS_Gaan_Snapper = LOG_SUCCESS;
+	MIS_Go_Snapper = LOG_SUCCESS ;
 	Log_SetTopicStatus(TOPIC_GaanSchnaubi,LOG_SUCCESS);
 };
 
 
-instance DIA_GAAN_WHATSNEW(C_Info)
+instance SLIDE_GO_WHATSNEW (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 11;
 	condition = dia_gaan_whatsnew_condition;
-	information = dia_gaan_whatsnew_info;
+	information = slide_go_whatsnew_info;
 	permanent = TRUE;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
 func int dia_gaan_whatsnew_condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_JAGD) && (RangerMeetingRunning != LOG_Running))
+	if ( Npc_KnowsInfo ( other , DIA_Gaan_JAGD ) && ( RangerMeetingRunning != LOG_Running ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_whatsnew_info()
+func void slide_go_whatsnew_info()
 {
-	AI_Output(other,self,"DIA_Gaan_WhatsNew_01_00");	//Как дела?
+	AI_Output(other,self,"DIA_Gaan_WhatsNew_01_00");	//What's new?
 
-	if(MIS_Gaan_Snapper == LOG_Running)
+	if (MIS_Go_Snapper == LOG_Running)
 	{
-		if(Kapitel >= 3)
+		if (Chapter >=  3 )
 		{
-			AI_Output(self,other,"DIA_Gaan_JAGD_03_04");	//Дела идут все хуже и хуже. А тем временем, через проход толпами валят эти фыркающие твари.
+			AI_Output(self,other, " DIA_Gaan_JAGD_03_04 " );	// Things are getting worse and worse. In the meantime, more of these creatures are pouring through the passage in droves.
 		};
 
-		AI_Output(self,other,"DIA_Gaan_JAGD_03_05");	//Охотится становиться все сложнее и сложнее...
+		AI_Output(self,other, " DIA_Gaan_JAGD_03_05 " );	// The hunt is getting harder and harder...
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gaan_JAGD_03_06");	//Мне не на что жаловаться.
+		AI_Output(self,other, " DIA_Gaan_JAGD_03_06 " );	// I have nothing to complain about right now.
 	};
 };
 
 
-instance DIA_Addon_Gaan_Ranger(C_Info)
+instances of DIA_Addon_Gaan_Ranger (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 2;
 	condition = DIA_Addon_Gaan_Ranger_Condition;
-	information = DIA_Addon_Gaan_Ranger_Info;
-	description = "Почему у тебя такой подозрительный взгляд?";
+	information = DIA_Addon_Go_Ranger_Info;
+	description = " Why are you looking so suspicious? " ;
 };
 
 
 func int DIA_Addon_Gaan_Ranger_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU) && (SCIsWearingRangerRing == TRUE) && (RangerMeetingRunning == 0))
+	if ( Npc_KnowsInfo ( other , DIA_Gaan_WASMACHSTDU ) && ( SCIsWearingRangerRing ==  TRUE ) && ( RangerMeetingRunning ==  0 )) ;
 	{
 		return TRUE;
 	};
@@ -358,20 +359,20 @@ func int DIA_Addon_Gaan_Ranger_Condition()
 
 func void DIA_Addon_Gaan_Ranger_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Gaan_Ranger_15_00");	//Почему у тебя такой подозрительный взгляд?
-	AI_Output(self,other,"DIA_Addon_Gaan_Ranger_03_01");	//Ты носишь наше аквамариновое кольцо.
-	AI_Output(other,self,"DIA_Addon_Gaan_Ranger_15_02");	//Ты принадлежишь к "Кольцу воды"?
-	AI_Output(self,other,"DIA_Addon_Gaan_Ranger_03_03");	//Именно так! Приятно видеть в наших рядах нового человека.
+	AI_Output(other,self, " DIA_Addon_Gaan_Ranger_15_00 " );	// Why are you looking at me that way?
+	AI_Output(self,other, " DIA_Addon_Gaan_Ranger_03_01 " );	// You're wearing our aquamarine ring.
+	AI_Output(other,self, " DIA_Addon_Gaan_Ranger_15_02 " );	// Do you belong to the Water Ring?
+	AI_Output(self,other, " DIA_Addon_Gaan_Ranger_03_03 " );	// That's right! Nice to see a new person in our ranks.
 	B_GivePlayerXP(XP_Ambient);
 };
 
 
 instance DIA_Addon_Gaan_MeetingIsRunning(C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 1;
 	condition = DIA_Addon_Gaan_MeetingIsRunning_Condition;
-	information = DIA_Addon_Gaan_MeetingIsRunning_Info;
+	information = DIA_Addon_Go_MeetingIsRunning_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
@@ -392,30 +393,30 @@ func void DIA_Addon_Gaan_MeetingIsRunning_Info()
 {
 	if(DIA_Addon_Gaan_MeetingIsRunning_One_time == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Gaan_MeetingIsRunning_03_00");	//Приятно видеть среди нас новое лицо. Добро пожаловать в "Кольцо воды"!
+		AI_Output(self,other, " DIA_Addon_Gaan_MeetingIsRunning_03_00 " );	// Nice to see a new face among us. Welcome to the Water Ring!
 		DIA_Addon_Gaan_MeetingIsRunning_One_time = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Gaan_MeetingIsRunning_03_01");	//Тебя хочет видеть Ватрас, отправляйся к нему!
+		AI_Output(self,other, " DIA_Addon_Gaan_MeetingIsRunning_03_01 " );	// Vatras wants to see you, go to him!
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_Addon_Gaan_AufgabeBeimRing(C_Info)
+instance DIA_Addon_Gaan_AufgabeBeimRing (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 2;
 	condition = DIA_Addon_Gaan_AufgabeBeimRing_Condition;
 	information = DIA_Addon_Gaan_AufgabeBeimRing_Info;
-	description = "В чем заключаются твои обязанности в этом обществе?";
+	description = " What are your responsibilities in this society? " ;
 };
 
 
 func int DIA_Addon_Gaan_AufgabeBeimRing_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Addon_Gaan_Ranger) || (RangerMeetingRunning != 0)) && (Kapitel < 3))
+	if ((Npc_KnowsInfo(other,DIA_Addon_Gaan_Ranger) || (RangerMeetingRunning !=  0 )) && (Chapter <  3 )) ;
 	{
 		return TRUE;
 	};
@@ -423,89 +424,89 @@ func int DIA_Addon_Gaan_AufgabeBeimRing_Condition()
 
 func void DIA_Addon_Gaan_AufgabeBeimRing_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Gaan_AufgabeBeimRing_15_00");	//В чем заключаются твои обязанности в этом обществе?
-	AI_Output(self,other,"DIA_Addon_Gaan_AufgabeBeimRing_03_01");	//Я наблюдаю за проходом. И сообщаю, кто приходит и кто уходит.
-	AI_Output(self,other,"DIA_Addon_Gaan_AufgabeBeimRing_03_02");	//Впрочем, с тех пор как паладины приказали закрыть ворота прохода, людей здесь немного.
+	AI_Output(other,self, " DIA_Addon_Gaan_AufgabeBeimRing_15_00 " );	// What are your duties here?
+	AI_Output(self,other, " DIA_Addon_Gaan_AufgabeBeimRing_03_01 " );	// I'm watching the passage. Checking who comes and who goes.
+	AI_Output(self,other, " DIA_Addon_Gaan_AufgabeBeimRing_03_02 " );	// However, since the paladins ordered to close the gates of the passage, there are not too many people here.
 };
 
 
-instance DIA_Addon_Gaan_MissingPeople(C_Info)
+instance DIA_Addon_Go_MissingPeople (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 2;
 	condition = DIA_Addon_Gaan_MissingPeople_Condition;
-	information = DIA_Addon_Gaan_MissingPeople_Info;
-	description = "Ты слышал о пропавших людях?";
+	information = DIA_Addon_Go_MissingPeople_Info;
+	description = " Have you heard about missing people? " ;
 };
 
 
 func int DIA_Addon_Gaan_MissingPeople_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Addon_Gaan_AufgabeBeimRing) && (SC_HearedAboutMissingPeople == TRUE) && (MissingPeopleReturnedHome == TRUE))
+	if ( Npc_KnowsInfo ( other , DIA_Addon_Gaan_AufgabeBeimRing ) && ( SC_HearedAboutMissingPeople ==  TRUE ) && ( MissingPeopleReturnedHome ==  TRUE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Addon_Gaan_MissingPeople_Info()
+func void DIA_Addon_Go_MissingPeople_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Gaan_MissingPeople_15_00");	//Ты слышал о пропавших людях?
-	AI_Output(self,other,"DIA_Addon_Gaan_MissingPeople_03_01");	//Конечно, слышал. Именно поэтому нам всегда надо быть осторожнее.
-	AI_Output(self,other,"DIA_Addon_Gaan_MissingPeople_03_02");	//Но я не знаю ничего такого, что могло бы тебе помочь.
+	AI_Output(other,self, " DIA_Addon_Gaan_MissingPeople_15_00 " );	// Have you heard about the missing people?
+	AI_Output(self,other, " DIA_Addon_Gaan_MissingPeople_03_01 " );	// Of course. That is why we always have to be careful.
+	AI_Output(self,other, " DIA_Addon_Gaan_MissingPeople_03_02 " );	// But I don't know of anything that could help you.
 };
 
 
-instance DIA_Gaan_AskTeacher(C_Info)
+instance DIA_Go_AskTeacher (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 10;
 	condition = DIA_Gaan_AskTeacher_Condition;
-	information = DIA_Gaan_AskTeacher_Info;
-	description = "Ты можешь научить меня охотиться?";
+	information = DIA_Go_AskTeacher_Info;
+	description = " Can you teach me how to hunt? " ;
 };
 
 
 func int DIA_Gaan_AskTeacher_Condition()
 {
-	if((HEROISHUNTER == TRUE) && Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
+	if (( HEROISHUNTER  ==  TRUE ) && Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_AskTeacher_Info()
+func void SLIDE_Go_AskTeacher_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_AskTeacher_15_00");	//Ты можешь научить меня охотиться?
+	AI_Output(other,self, " DIA_Gaan_AskTeacher_15_00 " );	// Can you teach me how to hunt?
 
 	if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == TRUE) && (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == TRUE) && (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == TRUE) && (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == TRUE) && (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == TRUE))
 	{
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_03_02");	//Я не могу научить тебя ничему, что ты еще не знаешь. Извини!
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_03_02 " );	// I can't teach you anything you don't already know. Sorry!
 		GaanTeachFinish = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gaan_AskTeacher_03_01");	//Нет проблем! За сто золотых монет я могу показать тебе, как выпотрошить животных, которых ты убьешь.
-		AI_Output(self,other,"DIA_Gaan_AskTeacher_03_02");	//Шкуры и другие трофеи можно выгодно продать на рынке.
+		AI_Output(self,other, " DIA_Gaan_AskTeacher_03_01 " );	// No problem! For a hundred gold coins, I can show you how to disembowel the animals you kill.
+		AI_Output(self,other, " DIA_Gaan_AskTeacher_03_02 " );	// Skins and other trophies can be sold at the market for a profit.
 		Log_CreateTopic(TOPIC_HUNTERTEACHERS,LOG_NOTE);
-		B_LogEntry(TOPIC_HUNTERTEACHERS,"Гаан может научить меня разделывать добычу.");
+		B_LogEntry( TOPIC_HUNTERTEACHERS , " Gahan can teach me how to butcher loot. " );
 	};
 };
 
-instance DIA_Gaan_PayTeacher(C_Info)
+instance DIA_Go_PayTeacher (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 11;
 	condition = DIA_Gaan_PayTeacher_Condition;
-	information = DIA_Gaan_PayTeacher_Info;
+	information = DIA_Go_PayTeacher_Info;
 	permanent = TRUE;
-	description = "Вот! Сто золотых за твой опыт по разделыванию животных.";
+	description = " Here! One hundred gold pieces for your experience in butchering animals. " ;
 };
 
 var int DIA_Gaan_PayTeacher_noPerm;
 
 func int DIA_Gaan_PayTeacher_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Gaan_AskTeacher) && (DIA_Gaan_PayTeacher_noPerm == FALSE))
+	if ( Npc_KnowsInfo ( other , DIA_Gaan_AskTeacher ) && ( DIA_Gaan_ PayTeacher_noPerm ==  FALSE ))
 	{
 		if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == FALSE))
 		{
@@ -514,73 +515,73 @@ func int DIA_Gaan_PayTeacher_Condition()
 	};
 };
 
-func void DIA_Gaan_PayTeacher_Info()
+func void SLIDE_Go_PayTeacher_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_PayTeacher_15_00");	//Вот! Сто золотых за твой опыт по разделыванию животных.
+	AI_Output(other,self, " DIA_Gaan_PayTeacher_15_00 " );	// Here! One hundred gold for your experience in butchering animals.
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
-		AI_Output(self,other,"DIA_Gaan_PayTeacher_03_01");	//Спасибо. Теперь говори, что ты хочешь.
-		Gaan_TeachPlayer = TRUE;
-		DIA_Gaan_PayTeacher_noPerm = TRUE;
+		AI_Output(self,other, " DIA_Gaan_PayTeacher_03_01 " );	// Thank you. What do you want to learn?
+		Go_TeachPlayer = TRUE ;
+		DIA_No_PayTeacher_noPerm = TRUE ;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gaan_PayTeacher_03_02");	//Обратись ко мне позже, когда у тебя будут деньги.
+		AI_Output(self,other, " DIA_Gaan_PayTeacher_03_02 " );	// Contact me later when you have the money.
 	};
 };
 
 
-instance DIA_Gaan_TEACHHUNTING(C_Info)
+instance DIA_Go_TEACHHUNTING (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 12;
 	condition = DIA_Gaan_TEACHHUNTING_Condition;
-	information = DIA_Gaan_TEACHHUNTING_Info;
+	information = DIA_Go_TEACHHUNTING_Info;
 	permanent = TRUE;
-	description = "Чему ты можешь обучить меня?";
+	description = " What can you teach me? " ;
 };
 
 func int DIA_Gaan_TEACHHUNTING_Condition()
 {
-	if((Gaan_TeachPlayer == TRUE) && (GaanTeachFinish == FALSE))
+	if ((Go_TeachPlayer ==  TRUE ) && (GoTeachFinish ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Gaan_TEACHHUNTING_Info()
+func void SLIDE_Go_TEACHHUNTING_Info()
 {
-	AI_Output(other,self,"DIA_Gaan_TEACHHUNTING_15_00");	//Чему ты можешь обучить меня?
+	AI_Output(other,self, " DIA_Gaan_TEACHHUNTING_15_00 " );	// What can you teach me?
 
 	if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE))
 	{
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_03_01");	//Это зависит от того, что ты уже знаешь.
-		Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_03_01 " );	// It depends on what you already know.
+		Info_AddChoice(SLIDE_GO_TEACHHUNTING,Dialog_Back,SLIDE_GO_TEACHHUNTING_BACK);
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE)
 		{
-			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt("Вырывать клыки",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Teeth)),DIA_Gaan_TEACHHUNTING_Teeth);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt("Pulling of Fangs",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Teeth)),DIA_Gaan_TEACHHUNTING_Teeth);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == FALSE)
 		{
-			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt("Ломать когти",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Claws)),DIA_Gaan_TEACHHUNTING_Claws);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt("Removal of Claws",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Claws)),DIA_Gaan_TEACHHUNTING_Claws);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 		{
-			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt("Сдирать шкуру",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Fur)),DIA_Gaan_TEACHHUNTING_Fur);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt("Skinning",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Fur)),DIA_Gaan_TEACHHUNTING_Fur);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE)
 		{
-			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt("Вырезать жало кровяного шершня",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_BFSting)),DIA_Gaan_TEACHHUNTING_BFSting);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt( " Cut off Blood Hornet Stinger " ,B_GetLearnCostTalent(other, NPC_TALENT_TAKEANIMALTROPHY ,TROPHY_BFSting)),DIA_Gaan_TEACHHUNTING_BFSting);
 		};
 		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == FALSE)
 		{
-			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt("Отрезать крылья кровяного шершня",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_BFWing)),DIA_Gaan_TEACHHUNTING_BFWing);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,b_buildlearnstringforsmithhunt( " Cut off Blood Hornet Wings " ,B_GetLearnCostTalent(other, NPC_TALENT_TAKEANIMALTROPHY ,TROPHY_BFWing)),DIA_Gaan_TEACHHUNTING_BFWing);
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_03_02");	//Я не могу научить тебя ничему, что ты еще не знаешь. Извини!
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_03_02 " );	// I can't teach you anything you don't already know. Sorry!
 		GaanTeachFinish = TRUE;
 	};
 };
@@ -594,64 +595,64 @@ func void DIA_Gaan_TEACHHUNTING_Claws()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Claws))
 	{
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Claws_03_00");	//Звери не любят расставаться со своими когтями. Ножом нужно работать очень точно.
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Claws_03_01");	//Твои руки должны быть слегка скрещены. Затем нужно отрубить когти сильным ударом.
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Claws_03_02");	//Торговцы всегда готовы выложить кругленькую сумму за когти.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_Claws_03_00 " );	// Beasts don't like to part with their claws. The knife needs to be very precise.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_Claws_03_01 " );	// Your arms should be slightly crossed. Then you need to cut off the claws with a strong blow.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_Claws_03_02 " );	// Merchants are always ready to shell out a tidy sum for claws.
 	};
 	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
-	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
+	Info_AddChoice(SLIDE_GO_TEACHHUNTING,Dialog_Back,SLIDE_GO_TEACHHUNTING_BACK);
 };
 
 func void DIA_Gaan_TEACHHUNTING_Teeth()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Teeth))
 	{
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Teeth_03_00");	//Легче всего вырезать зубы животного. Просто проведи своим ножом вокруг зубов во рту животного.
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Teeth_03_01");	//Затем нужно отделить их от черепа точным ударом.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_Teeth_03_00 " );	// The easiest way is to cut out the animal's teeth. Just run your knife around the gums in the animal's mouth.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_Teeth_03_01 " );	// Then you need to separate them from the skull with a precise blow.
 	};
 	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
-	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
+	Info_AddChoice(SLIDE_GO_TEACHHUNTING,Dialog_Back,SLIDE_GO_TEACHHUNTING_BACK);
 };
 
-func void DIA_Gaan_TEACHHUNTING_Fur()
+func void SLIDE_Go_TEACHHUNTING_Fur()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Fur))
 	{
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Fur_03_00");	//Лучше снимать шкуру, сделав глубокий разрез в районе задних ног.
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Fur_03_01");	//После этого ты легко можешь снять шкуру, стягивая ее с животного.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_Fur_03_00 " );	// It is best to skin by making a deep incision in the hind legs.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_Fur_03_01 " );	// After that, you can easily remove the skin by pulling it off the animal.
 	};
 	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
-	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
+	Info_AddChoice(SLIDE_GO_TEACHHUNTING,Dialog_Back,SLIDE_GO_TEACHHUNTING_BACK);
 };
 
-func void DIA_Gaan_TEACHHUNTING_BFSting()
+func void SLIDE_GO_TEACHHUNTING_BFSting()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFSting))
 	{
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_BFSting_03_00");	//У этих мух есть мягкое место на спине.
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_BFSting_03_01");	//Если нажать там, жало выдвинется очень далеко. И ты сможешь вырезать его при помощи ножа.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_BFSting_03_00 " );	// These flies have a soft spot on their backs.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_BFSting_03_01 " );	// If you click there, the stinger will extend very far. And you can cut it off with a knife.
 	};
 	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
-	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
+	Info_AddChoice(SLIDE_GO_TEACHHUNTING,Dialog_Back,SLIDE_GO_TEACHHUNTING_BACK);
 };
 
-func void DIA_Gaan_TEACHHUNTING_BFWing()
+func void SLIDE_GO_TEACHHUNTING_BFWing()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFWing))
 	{
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_BFWing_03_00");	//Лучше всего отделить крылья кровавой мухи, отрубив их ударом острого ножа как можно ближе к телу.
-		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_BFWing_03_01");	//Нужно быть очень аккуратным, чтобы не повредить нежную ткань крыльев. Они не будут ничего стоить, если ты повредишь их.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_BFWing_03_00 " );	// It's best to separate the bloodfly's wings by slicing them off with a sharp knife as close to the body as possible.
+		AI_Output(self,other, " DIA_Gaan_TEACHHUNTING_BFWing_03_01 " );	// Be very careful not to damage the delicate tissue of the wings. They won't be worth anything if you damage them.
 	};
 	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
-	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
+	Info_AddChoice(SLIDE_GO_TEACHHUNTING,Dialog_Back,SLIDE_GO_TEACHHUNTING_BACK);
 };
 
-instance DIA_Gaan_PICKPOCKET(C_Info)
+instance DIA_Go_PICKPOCKET (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 900;
 	condition = DIA_Gaan_PICKPOCKET_Condition;
-	information = DIA_Gaan_PICKPOCKET_Info;
+	information = DIA_Go_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = PICKPOCKET_COMM;
 };
@@ -659,19 +660,19 @@ instance DIA_Gaan_PICKPOCKET(C_Info)
 
 func int DIA_Gaan_PICKPOCKET_Condition()
 {
-	return C_Beklauen(23,35);
+	return  C_Robbery ( 23 , 35 );
 };
 
-func void DIA_Gaan_PICKPOCKET_Info()
+func void SLIDE_Go_PICKPOCKET_Info()
 {
 	Info_ClearChoices(DIA_Gaan_PICKPOCKET);
 	Info_AddChoice(DIA_Gaan_PICKPOCKET,Dialog_Back,DIA_Gaan_PICKPOCKET_BACK);
-	Info_AddChoice(DIA_Gaan_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Gaan_PICKPOCKET_DoIt);
+	Info_AddChoice(SLIDE_Go_PICKPOCKET, DIALOG_PICKPOCKET ,SLIDE_Go_PICKPOCKET_DoIt);
 };
 
-func void DIA_Gaan_PICKPOCKET_DoIt()
+func void SLIDE_GO_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
+	B_Robbery();
 	Info_ClearChoices(DIA_Gaan_PICKPOCKET);
 };
 
@@ -681,86 +682,86 @@ func void DIA_Gaan_PICKPOCKET_BACK()
 };
 
 
-instance DIA_GAAN_RESPECT(C_Info)
+instance SLIDE_GO_RESPECT (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 1;
 	condition = dia_gaan_respect_condition;
-	information = dia_gaan_respect_info;
+	information = slide_go_respect_info;
 	permanent = TRUE;
-	description = "Я хочу бросить Фальку вызов.";
+	description = " I want to challenge Falk. " ;
 };
 
 
 func int dia_gaan_respect_condition()
 {
-	if((CANHUNTERCHALLANGE == TRUE) && (MIS_HUNTERCHALLANGE == FALSE) && (GAAN_RESPECT == FALSE) && Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
+	if (( CANHUNTERCHALLANGE  ==  TRUE ) && ( MIS_HUNTERCHALLANGE  ==  FALSE ) && ( GAAN_RESPECT  ==  FALSE ) && Npc_KnowsInfo(other,DIA_GAAN_WASMACHSTDU));
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_respect_info()
+func void slide_go_respect_info()
 {
-	AI_Output(other,self,"DIA_Gaan_Respect_01_00");	//Я хочу бросить Фальку вызов.
-	AI_Output(self,other,"DIA_Gaan_Respect_01_01");	//А что ты хочешь от меня?
-	AI_Output(other,self,"DIA_Gaan_Respect_01_02");	//Мне нужно заручиться поддержкой большинства охотников, поэтому я и обратился к тебе.
-	AI_Output(other,self,"DIA_Gaan_Respect_01_03");	//Что ты скажешь насчет моей просьбы?
-	AI_Output(self,other,"DIA_Gaan_Respect_01_04");	//Ты хочешь получить мой голос?
+	AI_Output(other,self, " DIA_Gaan_Respect_01_00 " );	// I want to challenge Falk.
+	AI_Output(self,other, " DIA_Gaan_Respect_01_01 " );	// What do you want from me?
+	AI_Output(other,self, " DIA_Gaan_Respect_01_02 " );	// I need to get the support of the majority of hunters, which is why I turned to you.
+	AI_Output(other,self, " DIA_Gaan_Respect_01_03 " );	// What do you say about my request?
+	AI_Output(self,other, " DIA_Gaan_Respect_01_04 " );	// Do you want my vote?
 
-	if(MIS_Gaan_Snapper == LOG_SUCCESS)
+	if (MIS_Go_Snapper ==  LOG_SUCCESS )
 	{
-		Info_ClearChoices(dia_gaan_respect);
-		Info_AddChoice(dia_gaan_respect,"Да!",dia_gaan_respect_yes);
+		Info_ClearChoices(slide_go_respect);
+		Info_AddChoice(slide_go_respect, " Да! " ,slide_go_respect_yes);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Gaan_Respect_01_05");	//Ты мне еще ничем не помог. Не вижу причин помогать тебе.
-		AI_Output(other,self,"DIA_Gaan_Respect_01_06");	//Хорошо!
+		AI_Output(self,other, " DIA_Gaan_Respect_01_05 " );	// You haven't helped me yet. I see no reason to help you.
+		AI_Output(other,self,"DIA_Gaan_Respect_01_06");	//Fine!
 	};
 };
 
-func void dia_gaan_respect_yes()
+func void slide_go_respect_yes()
 {
-	AI_Output(other,self,"DIA_Gaan_Respect_Yes_01_00");	//Да!
-	AI_Output(self,other,"DIA_Gaan_Respect_Yes_01_01");	//Хм...(задумчиво) Ну что же! Ты убил фыркающую тварь.
+	AI_Output(other,self,"DIA_Gaan_Respect_Yes_01_00");	//Yes!
+	AI_Output(self,other, " DIA_Gaan_Respect_Yes_01_01 " );	// Hmm...(thoughtfully) Well then! You killed the snorting thing.
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Gaan_Respect_Yes_01_02");	//Ты, действительно, хороший охотник.
-	AI_Output(self,other,"DIA_Gaan_Respect_Yes_01_03");	//Если Фальк спросит меня, то я проголосую за тебя.
-	Info_ClearChoices(dia_gaan_respect);
+	AI_Output(self,other, " DIA_Gaan_Respect_Yes_01_02 " );	// You really are a good hunter.
+	AI_Output(self,other, " DIA_Gaan_Respect_Yes_01_03 " );	// If Falk asks me, I'll vote for you.
+	Info_ClearChoices(slide_go_respect);
 	AI_StopProcessInfos(self);
-	GAAN_RESPECT = TRUE;
+	GO_RESPECT = TRUE ;
 	HUNTCHALLENGECOUNT = HUNTCHALLENGECOUNT + 1;
-	B_LogEntry(TOPIC_HUNTERSWORK,"Охотник Гаан проголосует за меня если я захочу вызвать Фалька на охотничий поединок");
+	B_LogEntry( TOPIC_HUNTERSWORK , " Hunter Gahan will vote for me if I want to challenge Falk to a hunting match " );
 };
 
-instance DIA_Addon_Gaan_WhatHappen(C_Info)
+instance DIA_Addon_Gaan_WhatHappen (C_Info)
 {
-	npc = BAU_961_Gaan;
+	npc = BAU_961_Go;
 	nr = 1;
 	condition = DIA_Addon_Gaan_WhatHappen_Condition;
 	information = DIA_Addon_Gaan_WhatHappen_Info;
-	description = "Что здесь произошло?";
+	description = " What happened here? " ;
 };
 
 func int DIA_Addon_Gaan_WhatHappen_Condition()
 {
-	if((Kapitel >= 3) && (MIS_SCKnowsInnosEyeIsBroken == FALSE))
+	if ((Chapter >=  3 ) && (MIS_SCKnowsInnosEyeIsBroken ==  FALSE ))
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_Addon_Gaan_WhatHappen_Info()
+func void DIA_Addon_Go_WhatHappen_Info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Addon_Gaan_WhatHappen_01_00");	//Что здесь произошло?
-	AI_Output(self,other,"DIA_Addon_Gaan_WhatHappen_01_01");	//Жуткие вещи, приятель...(нервно) Я до сих не могу придти в себя.
-	AI_Output(other,self,"DIA_Addon_Gaan_WhatHappen_01_02");	//Лучше возьми себя в руки и расскажи мне обо всем.
-	AI_Output(self,other,"DIA_Addon_Gaan_WhatHappen_01_03");	//В общем...(вздыхая) На паладинов, что охраняли проход в Долину Рудников, напали какие то маги в черных одеждах.
-	AI_Output(self,other,"DIA_Addon_Gaan_WhatHappen_01_04");	//Паладины храбро сражались, но этих магов было слишком много! 
-	AI_Output(self,other,"DIA_Addon_Gaan_WhatHappen_01_05");	//А после того, как паладины пали замертво, все они направились по направлению в город.
-	AI_Output(other,self,"DIA_Addon_Gaan_WhatHappen_01_06");	//Сколько их было?!
-	AI_Output(self,other,"DIA_Addon_Gaan_WhatHappen_01_07");	//Около десятка! Но точно сказать не могу.
-	AI_Output(other,self,"DIA_Addon_Gaan_WhatHappen_01_08");	//Obviously.
+	AI_Output(other,self, " DIA_Addon_Gaan_WhatHappen_01_00 " );	// What happened here?
+	AI_Output(self,other, " DIA_Addon_Gaan_WhatHappen_01_01 " );	// Creepy stuff, mate... I still can't get over it.
+	AI_Output(other,self, " DIA_Addon_Gaan_WhatHappen_01_02 " );	// Better pull yourself together and tell me everything.
+	AI_Output(self,other, " DIA_Addon_Gaan_WhatHappen_01_03 " );	// The paladins guarding the passage to the Valley of Mines were attacked by mages in black robes.
+	AI_Output(self,other, " DIA_Addon_Gaan_WhatHappen_01_04 " );	// The paladins fought bravely, but they were overwhelmed!
+	AI_Output(self,other, " DIA_Addon_Gaan_WhatHappen_01_05 " );	// And after the paladins fell, they all headed towards the city.
+	AI_Output(other,self, " DIA_Addon_Gaan_WhatHappen_01_06 " );	// How many were there?!
+	AI_Output(self,other, " DIA_Addon_Gaan_WhatHappen_01_07 " );	// About a dozen! But I can't say for sure.
+	AI_Output(other,self,"DIA_Addon_Gaan_WhatHappen_01_08");	//I see.
 };
