@@ -1,94 +1,95 @@
 
+
 func void b_preach_parvez(var int satz)
 {
-	if(satz == 0)
+	if (set ==  0 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_00");	//Давным давно появился Спящий, и послал он роду человеческому видение.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_00 " );	// A long time ago, the Sleeper appeared, and he sent a vision to the human race.
 	};
-	if(satz == 1)
+	if (set ==  1 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_01");	//Но люди не смогли увидеть его, ибо ослепляла их жадность.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_01 " );	// But the people could not see him, because their greed blinded them.
 	};
-	if(satz == 2)
+	if (set ==  2 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_02");	//Лишь Ю`Берион и с ним несколько избранных отделились от слепой толпы и основали Братство.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_02 " );	// Only Yu'Berion and with him a select few broke away from the blind mob and founded the Brotherhood.
 	};
-	if(satz == 3)
+	if (set ==  3 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_03");	//Спящий привел Ю`Бериона и его верных учеников в это место, где они основали храм.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_03 " );	// The sleeper led Yu'Berion and his faithful disciples to this place, where they founded a temple.
 	};
-	if(satz == 4)
+	if (set ==  4 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_04");	//Они трудились, не покладая рук, - день за днем, неделя за неделей, месяц за месяцем. Лагерь рос. Все больше и больше людей присоединялось к нему, следуя зову Спящего.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_04 " );	// They worked tirelessly, day after day, week after week, month after month. The camp grew. More and more people joined him, following the call of the Sleeper.
 	};
-	if(satz == 5)
+	if (set ==  5 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_05");	//Вместе они пытались говорить со Спящим на спиритическом уровне.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_05 " );	// Together they tried to speak to the Sleeper on a spiritual level.
 	};
-	if(satz == 6)
+	if (set ==  6 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_06");	//Видения прояснялись, но спиритической силы Братства было недостаточно для того, чтобы призвать Спящего.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_06 " );	// The visions cleared up, but the Spiritual power of the Brotherhood was not enough to summon the Sleeper.
 	};
-	if(satz == 7)
+	if (set ==  7 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_07");	//Решение нашел один из Гуру, алхимик. Они приготовил эликсир из слюны ползунов. Братья выпили его перед молитвой, и впервые их силы объединились.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_07 " );	// The solution was found by one of the Gurus, an alchemist. They prepared an elixir from the saliva of crawlers. The brothers drank it before prayer, and for the first time their forces united.
 	};
-	if(satz == 8)
+	if (set ==  8 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_08");	//В то самое время по другим Лагерям разошлись послушники - нести людям слово Спящего и обращать язычников в истинную веру.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_08 " );	// At that very time, novices dispersed to other Camps - to carry the word of the Sleeper to people and convert the pagans to the true faith.
 	};
-	if(satz == 9)
+	if (set ==  9 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_09");	//Вера людей росла, распространялась и крепла.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_09 " );	// The faith of the people grew, spread and grew stronger.
 	};
-	if(satz == 10)
+	if (set ==  10 )
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_10");	//Много воды утекло со времен основания Лагеря. Многое изменилось.
+		AI_Output(self,self, " DIA_Parvez_PREACH_05_10 " );	// A lot of water has flowed under the bridge since the founding of the Camp. A lot has changed.
 	};
 };
 
 
 func void b_preach_haniar(var int satz)
 {
-	if(satz == 0)
+	if (set ==  0 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_00");	//Когда вы сражаетесь - сражайтесь, чтобы победить. Сражайтесь, чтобы убить!
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_00 " );	// When you fight, fight to win. Fight to kill!
 	};
-	if(satz == 1)
+	if (set ==  1 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_01");	//Вы не просто исполняете приказы - вы выполняете волю Белиара!
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_01 " );	// You're not just following orders - you're following Beliar's will!
 	};
-	if(satz == 2)
+	if (set ==  2 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_02");	//И каждый раз, когда вы убиваете врага Белиара, его власть растет.
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_02 " );	// And every time you kill an enemy of Beliar, his power grows.
 	};
-	if(satz == 3)
+	if (set ==  3 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_03");	//Вы приводите в исполнение его приговор! Вы несете его врагам смерть!
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_03 " );	// You carry out his sentence! You bring death to his enemies!
 	};
-	if(satz == 4)
+	if (set ==  4 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_04");	//Я могу показать вам, как одолеть врага. Но силу для этого вам даст Белиар.
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_04 " );	// I can show you how to defeat the enemy. But Beliar will give you the strength for this.
 	};
-	if(satz == 5)
+	if (set ==  5 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_05");	//Как гнев Белиара, должны поражать вы своих врагов.
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_05 " );	// Like the wrath of Beliar, you must strike your enemies.
 	};
-	if(satz == 6)
+	if (set ==  6 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_06");	//Я могу научить вас стражаться, а побеждать вас научит Белиар!
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_06 " );	// I can teach you how to fight, and Beliar will teach you how to win!
 	};
-	if(satz == 7)
+	if (set ==  7 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_07");	//Только Белиар может разбудить в вас бурю, которую никто и ничто не сможет остановить.
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_07 " );	// Only Beliar can awaken a storm in you that no one and nothing can stop.
 	};
-	if(satz == 8)
+	if (set ==  8 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_08");	//После каждого сражения, выиграного во имя Белиара, он будет награждать вас силой.
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_08 " );	// After every battle won in Beliar's name, he will reward you with power.
 	};
-	if(satz == 9)
+	if (set ==  9 )
 	{
-		AI_Output(self,self,"DIA_Haniar_PREACH_05_09");	//Потому что вы являетесь его избранным орудием. Побеждаете вы - побеждает он!
+		AI_Output(self,self, " DIA_Haniar_PREACH_05_09 " );	// Because you are his weapon of choice. You win - he wins!
 	};
 };
 
@@ -96,166 +97,166 @@ func void b_preach_orc(var int satz)
 {
 	if(PlayerKnowsOrcLanguage == TRUE)
 	{
-		if(satz == 0)
+		if (set ==  0 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_01");	//
 		};
-		if(satz == 1)
+		if (set ==  1 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_03");	//
 		};
-		if(satz == 2)
+		if (set ==  2 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_05");	//
 		};
-		if(satz == 3)
+		if (set ==  3 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_07");	//
 		};
-		if(satz == 4)
+		if (set ==  4 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_09");	//
 		};
-		if(satz == 5)
+		if (set ==  5 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_11");	//
 		};
-		if(satz == 6)
+		if (set ==  6 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_13");	//
 		};
-		if(satz == 7)
+		if (set ==  7 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_15");	//
 		};
-		if(satz == 8)
+		if (set ==  8 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_17");	//
 		};
-		if(satz == 9)
+		if (set ==  9 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_19");	//
 		};
-		if(satz == 10)
+		if (set ==  10 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_21");	//
 		};
-		if(satz == 11)
+		if (set ==  11 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_23");	//
 		};
-		if(satz == 12)
+		if (set ==  12 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_25");	//
 		};
-		if(satz == 13)
+		if (set ==  13 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_27");	//
 		};
-		if(satz == 14)
+		if (set ==  14 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_29");	//
 		};
-		if(satz == 15)
+		if (set ==  15 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_31");	//
 		};
-		if(satz == 16)
+		if (set ==  16 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_33");	//
 		};
-		if(satz == 17)
+		if (set ==  17 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_35");	//
 		};
-		if(satz == 18)
+		if (set ==  18 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_37");	//
 		};
-		if(satz == 19)
+		if (set ==  19 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_39");	//
 		};
 	}
 	else
 	{
-		if(satz == 0)
+		if (set ==  0 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_02");	//
 		};
-		if(satz == 1)
+		if (set ==  1 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_04");	//
 		};
-		if(satz == 2)
+		if (set ==  2 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_06");	//
 		};
-		if(satz == 3)
+		if (set ==  3 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_08");	//
 		};
-		if(satz == 4)
+		if (set ==  4 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_10");	//
 		};
-		if(satz == 5)
+		if (set ==  5 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_12");	//
 		};
-		if(satz == 6)
+		if (set ==  6 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_14");	//
 		};
-		if(satz == 7)
+		if (set ==  7 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_16");	//
 		};
-		if(satz == 8)
+		if (set ==  8 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_18");	//
 		};
-		if(satz == 9)
+		if (set ==  9 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_20");	//
 		};
-		if(satz == 10)
+		if (set ==  10 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_22");	//
 		};
-		if(satz == 11)
+		if (set ==  11 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_24");	//
 		};
-		if(satz == 12)
+		if (set ==  12 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_26");	//
 		};
-		if(satz == 13)
+		if (set ==  13 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_28");	//
 		};
-		if(satz == 14)
+		if (set ==  14 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_30");	//
 		};
-		if(satz == 15)
+		if (set ==  15 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_32");	//
 		};
-		if(satz == 16)
+		if (set ==  16 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_34");	//
 		};
-		if(satz == 17)
+		if (set ==  17 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_36");	//
 		};
-		if(satz == 18)
+		if (set ==  18 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_38");	//
 		};
-		if(satz == 19)
+		if (set ==  19 )
 		{
 			AI_Output(self,self,"DIA_ORC_PREACH_01_40");	//
 		};
