@@ -1,3 +1,4 @@
+
 var int Trinkfass_UnCan;
 var int Trinkfass_RestoreCount;
 var int Trinkfass_RestoreDay;
@@ -42,8 +43,8 @@ FUNC VOID Trinkfass_S1()
 					RestoreMana_Proc = (hero.attribute[ATR_HITPOINTS_MAX] * 5) / 100;
 				};
 
-				Trinkfass_HolyRestoreDay = Wld_GetDay();
-				AI_Print("Вы ощущаете прилив бодрости!");
+				Drinking barrel_HolyRestoreDay = Wld_GetDay();
+				AI_Print( " You feel energized! " );
 			};
 		};
 
@@ -69,7 +70,7 @@ FUNC INT PC_Trinkfass_End_Condition()
 	};
 };
 
-FUNC VOID PC_TRINKFASS_End_Info()
+FUNC  VOID PC_TRINKFASS_End_Info()
 {
 	B_ENDPRODUCTIONDIALOG();
 };
@@ -81,7 +82,7 @@ INSTANCE TRINKFASS_HolyNWasser(C_Info)
 	condition = TRINKFASS_HolyNWasser_Condition;
 	information = TRINKFASS_HolyNWasser_Info;
 	permanent = TRUE;
-	description = "Набрать святой воды."; 
+	description = " Collect holy water. " ;
 };
 
 FUNC INT TRINKFASS_HolyNWasser_Condition()
@@ -92,7 +93,7 @@ FUNC INT TRINKFASS_HolyNWasser_Condition()
 	};
 };
 
-FUNC VOID TRINKFASS_HolyNWasser_Info()
+FUNC  VOID DRINKING BARREL_HolyNWater_Info()
 {
 	var int DayNow;
 
@@ -195,12 +196,12 @@ INSTANCE TRINKFASS_NWasser(C_Info)
 	npc = PC_Hero;
 	nr = 555;
 	condition = TRINKFASS_NWasser_Condition;
-	information = TRINKFASS_NWasser_Info;
+	information = TRINKFASS_NWater_Info;
 	permanent = TRUE;
-	description = "Попить воды."; 
+	description = " Drink some water. " ;
 };
 
-FUNC INT TRINKFASS_NWasser_Condition()
+FUNC  INT DRINKING BARREL_NWater_Condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_TRINKFASS) && (Npc_GetDistToWP(hero,"NW_MONASTERY_KUPEL_01") > 500) && (Npc_GetDistToWP(hero,"NW_MONASTERY_KUPEL_02") > 500) && (Npc_GetDistToWP(hero,"NW_MONASTERY_KUPEL_03") > 500) && (Npc_GetDistToWP(hero,"NW_MONASTERY_KUPEL_04") > 500))
 	{	
@@ -208,7 +209,7 @@ FUNC INT TRINKFASS_NWasser_Condition()
 	};
 };
 
-FUNC VOID TRINKFASS_NWasser_Info()
+FUNC  VOID DRINKING BAG_NWater_Info()
 {
 	if(Hero_Thirst < 5)
 	{
@@ -237,7 +238,7 @@ FUNC VOID TRINKFASS_NWasser_Info()
 	}
 	else
 	{
-		AI_Print("Вы не хотите пить!");
+		AI_Print( " You're not thirsty! " );
 		B_Say(hero,hero,"$Aargh_3");
 		AI_PlayAni(hero,"T_TRINKFASS_SEP");
 		Hero_Thirst = 5;
@@ -263,7 +264,7 @@ FUNC VOID WELL_S1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_WELL;
 		Ai_ProcessInfos(her);
 	};
@@ -299,7 +300,7 @@ INSTANCE PC_WELL_NWasser(C_Info)
 	condition = PC_WELL_NWasser_Condition;
 	information = PC_WELL_NWasser_Info;
 	permanent = TRUE;
-	description = "Набрать воды."; 
+	description = " Get some water. " ;
 };
 
 FUNC INT PC_WELL_NWasser_Condition()
@@ -324,7 +325,7 @@ FUNC VOID PC_WELL_NWasser_Info()
 	else
 	{
 		Print(PRINT_WaterSuck);
-		AI_PlayAni(self,"T_DONTKNOW");
+		AI_PlayAni(self, " T_DONTKNOW " );
 		B_Say_Overlay(self,self,"$MISSINGITEM");
 	};
 };
@@ -336,7 +337,7 @@ INSTANCE PC_WELL_NWasserMany(C_Info)
 	condition = PC_WELL_NWasserMany_Condition;
 	information = PC_WELL_NWasserMany_Info;
 	permanent = TRUE;
-	description = "Набрать много воды (Требуется: 5 пустых бутылок)"; 
+	description = " Get plenty of water (Requires: 5 empty bottles) " ;
 };
 
 FUNC INT PC_WELL_NWasserMany_Condition()
@@ -361,7 +362,7 @@ FUNC VOID PC_WELL_NWasserMany_Info()
 	else
 	{
 		Print(PRINT_WaterSuck);
-		AI_PlayAni(self,"T_DONTKNOW");
+		AI_PlayAni(self, " T_DONTKNOW " );
 		B_Say_Overlay(self,self,"$MISSINGITEM");
 	};
 };
@@ -373,7 +374,7 @@ INSTANCE PC_WELL_DrainHolyChan_01(C_Info)
 	condition = PC_WELL_DrainHolyChan_01_Condition;
 	information = PC_WELL_DrainHolyChan_01_Info;
 	permanent = TRUE;
-	description = "Наполнить священный сосуд."; 
+	description = " Fill the sacred vessel. " ;
 };
 
 FUNC INT PC_WELL_DrainHolyChan_01_Condition()
@@ -383,7 +384,7 @@ FUNC INT PC_WELL_DrainHolyChan_01_Condition()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_WELL_DrainHolyChan_01_Info()
@@ -401,7 +402,7 @@ FUNC VOID PC_WELL_DrainHolyChan_01_Info()
 		Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 		HolyChanDone = TRUE;
 		AI_Print(PRINT_TEMPLETASK_01_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Я наполнил все священные чаны водой! Кажется, это и подразумевалось в древнем писании...");
+		B_LogEntry(TOPIC_AdanosCrone, " I've filled all the sacred vats with water! This seems to be what the ancient scripture meant... " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -414,7 +415,7 @@ INSTANCE PC_WELL_DrainHolyChan_02(C_Info)
 	condition = PC_WELL_DrainHolyChan_02_Condition;
 	information = PC_WELL_DrainHolyChan_02_Info;
 	permanent = TRUE;
-	description = "Наполнить священный сосуд."; 
+	description = " Fill the sacred vessel. " ;
 };
 
 FUNC INT PC_WELL_DrainHolyChan_02_Condition()
@@ -424,7 +425,7 @@ FUNC INT PC_WELL_DrainHolyChan_02_Condition()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_WELL_DrainHolyChan_02_Info()
@@ -442,7 +443,7 @@ FUNC VOID PC_WELL_DrainHolyChan_02_Info()
 		Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 		HolyChanDone = TRUE;
 		AI_Print(PRINT_TEMPLETASK_01_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Я наполнил все священные чаны водой! Кажется, это и подразумевалось в древнем писании...");
+		B_LogEntry(TOPIC_AdanosCrone, " I've filled all the sacred vats with water! This seems to be what the ancient scripture meant... " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -455,7 +456,7 @@ INSTANCE PC_WELL_DrainHolyChan_03(C_Info)
 	condition = PC_WELL_DrainHolyChan_03_Condition;
 	information = PC_WELL_DrainHolyChan_03_Info;
 	permanent = TRUE;
-	description = "Наполнить священный сосуд."; 
+	description = " Fill the sacred vessel. " ;
 };
 
 FUNC INT PC_WELL_DrainHolyChan_03_Condition()
@@ -465,7 +466,7 @@ FUNC INT PC_WELL_DrainHolyChan_03_Condition()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_WELL_DrainHolyChan_03_Info()
@@ -483,7 +484,7 @@ FUNC VOID PC_WELL_DrainHolyChan_03_Info()
 		Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 		HolyChanDone = TRUE;
 		AI_Print(PRINT_TEMPLETASK_01_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Я наполнил все священные чаны водой! Кажется, это и подразумевалось в древнем писании...");
+		B_LogEntry(TOPIC_AdanosCrone, " I've filled all the sacred vats with water! This seems to be what the ancient scripture meant... " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -496,7 +497,7 @@ INSTANCE PC_WELL_DrainHolyChan_04(C_Info)
 	condition = PC_WELL_DrainHolyChan_04_Condition;
 	information = PC_WELL_DrainHolyChan_04_Info;
 	permanent = TRUE;
-	description = "Наполнить священный сосуд."; 
+	description = " Fill the sacred vessel. " ;
 };
 
 FUNC INT PC_WELL_DrainHolyChan_04_Condition()
@@ -506,7 +507,7 @@ FUNC INT PC_WELL_DrainHolyChan_04_Condition()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_WELL_DrainHolyChan_04_Info()
@@ -524,7 +525,7 @@ FUNC VOID PC_WELL_DrainHolyChan_04_Info()
 		Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 		HolyChanDone = TRUE;
 		AI_Print(PRINT_TEMPLETASK_01_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Я наполнил все священные чаны водой! Кажется, это и подразумевалось в древнем писании...");
+		B_LogEntry(TOPIC_AdanosCrone, " I've filled all the sacred vats with water! This seems to be what the ancient scripture meant... " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -537,17 +538,17 @@ INSTANCE PC_WELL_DragonEgg(C_Info)
 	condition = PC_WELL_DragonEgg_Condition;
 	information = PC_WELL_DragonEgg_Info;
 	permanent = TRUE;
-	description = "Положить драконье яйцо."; 
+	description = " Place dragon egg. " ;
 };
 
 FUNC INT PC_WELL_DragonEgg_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_WELL) && (TaskHram_02 == TRUE) && (Npc_HasItems(hero,ItAt_DragonEgg_MIS) >= 1) && (Npc_GetDistToWP(hero,"AV_DRAGONEGG") < 1000) && (DragEggPray == FALSE)) 
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_WELL ) && (TaskHram_02 ==  TRUE ) && (Npc_HasItems(hero,ItAt_DragonEgg_MIS) >=  1 ) && (Npc_GetDistToWP(hero, " AV_DRAGONEGG " ) <  1000 ) && (DragEggPray )) ==  FALSE ;
 	{	
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_WELL_DragonEgg_Info()
@@ -558,11 +559,11 @@ FUNC VOID PC_WELL_DragonEgg_Info()
 	Wld_SendTrigger("EVT_DRAGONEGG");
 	Npc_RemoveInvItems(hero,ItAt_DragonEgg_MIS,1);
 	AI_Print(PRINT_TEMPLETASK_02_DONE);
-	B_LogEntry(TOPIC_AdanosCrone,"Я принес Аданосу в дар яйцо могущественного дракона...Судя по всему, ему понравился этот подарок!");
+	B_LogEntry(TOPIC_AdanosCrone, " I gave Adanos a gift of a mighty dragon's egg... He seems to like it! " );
 	B_ENDPRODUCTIONDIALOG();
 };
 
-FUNC VOID STEINDESWISSENS_S1()
+FUNC  VOID  STEINDESWISSENS_S1 ()
 {
 	var C_NPC her; 	
 	her = Hlp_GetNpc(PC_Hero); 
@@ -574,7 +575,7 @@ FUNC VOID STEINDESWISSENS_S1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_STEINDESWISSENS;
 		Ai_ProcessInfos(her);
 	};
@@ -585,7 +586,7 @@ INSTANCE PC_STEINDESWISSENS_End(C_Info)
 	npc = PC_Hero;
 	nr = 999;
 	condition =  PC_STEINDESWISSENS_End_Condition;
-	information =  PC_STEINDESWISSENS_End_Info;
+	information = PC_STEINDESWISSENS_End_Info;
 	permanent = TRUE;
 	description = DIALOG_ENDE_WORK; 
 };
@@ -598,7 +599,7 @@ FUNC INT  PC_STEINDESWISSENS_End_Condition()
 	};
 };
 
-FUNC VOID PC_STEINDESWISSENS_End_Info()
+FUNC  VOID PC_STEINDESWISSENS_End_Info()
 {
 	B_ENDPRODUCTIONDIALOG();
 };
@@ -617,7 +618,7 @@ FUNC VOID firecamp_S1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_FIRECAMP;
 		AI_PlayAniBS(hero,"T_STAND_2_SIT",BS_SIT);
 		Ai_ProcessInfos(her);
@@ -656,7 +657,7 @@ INSTANCE PC_Firecamp_Wait(C_Info)
 	condition = PC_Firecamp_Wait_Condition;
 	information = PC_Firecamp_Wait_Info;
 	permanent = TRUE;
-	description = "Ждать до утра."; 
+	description = " Wait till morning. " ;
 };
 
 FUNC INT PC_Firecamp_Wait_Condition()
@@ -670,7 +671,7 @@ FUNC INT PC_Firecamp_Wait_Condition()
 FUNC VOID PC_Firecamp_Wait_Info()
 {
 	PlayVideo("RET2_BlackScreen.bik");
-	Wld_SetTime(7,0);
+	Wld_SetTime( 7 , 0 );
 	AI_Wait(hero,2);
 	B_ENDPRODUCTIONDIALOG ();
 	WaitMasDone = TRUE;
@@ -684,7 +685,7 @@ instance PC_Firecamp_CampfireRest(C_Info)
 	condition = PC_Firecamp_CampfireRest_Condition;
 	information = PC_Firecamp_CampfireRest_Info;
 	permanent = TRUE;
-	description = "Отдохнуть...";
+	description = " Rest... " ;
 };
 
 func int PC_Firecamp_CampfireRest_Condition()
@@ -766,10 +767,10 @@ func void PC_Firecamp_CampfireRest_1H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 1;
+	RestPool = RestPool -  1 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 1;
+	bHour +=  1 ;
 	Wld_SetTime(bHour,bMinute);
 	MasCampfireRest = FALSE;
 };
@@ -811,7 +812,7 @@ func void PC_Firecamp_CampfireRest_2H_info()
 		}		
 		else
 		{
-			Hero_Hunger = FALSE;
+			Hero_Hunger = FALSE ;
 		};	
 		if(Hero_Thirst > 1)
 		{
@@ -832,10 +833,10 @@ func void PC_Firecamp_CampfireRest_2H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 2;
+	RestPool = RestPool -  2 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 2;
+	bHour +=  2 ;
 	Wld_SetTime(bHour,bMinute);
 	MasCampfireRest = FALSE;
 };
@@ -877,7 +878,7 @@ func void PC_Firecamp_CampfireRest_3H_info()
 		}		
 		else
 		{
-			Hero_Hunger = FALSE;
+			Hero_Hunger = FALSE ;
 		};	
 		if(Hero_Thirst > 2)
 		{
@@ -898,10 +899,10 @@ func void PC_Firecamp_CampfireRest_3H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 3;
+	RestPool = RestPool -  3 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 3;
+	bHour +=  3 ;
 	Wld_SetTime(bHour,bMinute);
 	MasCampfireRest = FALSE;
 };
@@ -913,7 +914,7 @@ instance PC_Firecamp_MEATFIRE(C_Info)
 	condition = PC_Firecamp_MEATFIRE_condition;
 	information = PC_Firecamp_MEATFIRE_info;
 	permanent = TRUE;
-	description = "Жарить мясо...";
+	description = " Fry meat... " ;
 };
 
 func int PC_Firecamp_MEATFIRE_condition()
@@ -936,7 +937,7 @@ instance PC_Firecamp_FLEISCHBRATEN(C_Info)
 	condition = PC_Firecamp_fleischbraten_condition;
 	information = PC_Firecamp_fleischbraten_info;
 	permanent = TRUE;
-	description = "...пожарить кусок мяса";
+	description = " ...fry a piece of meat " ;
 };
 
 func int PC_Firecamp_fleischbraten_condition()
@@ -964,7 +965,7 @@ instance PC_Firecamp_FLEISCHBRATEN_10X(C_Info)
 	condition = PC_Firecamp_fleischbraten10x_condition;
 	information = PC_Firecamp_fleischbraten10x_info;
 	permanent = TRUE;
-	description = "...пожарить 10 кусков мяса";
+	description = " ...fry 10 pieces of meat " ;
 };
 
 func int PC_Firecamp_fleischbraten10x_condition()
@@ -992,7 +993,7 @@ instance PC_Firecamp_FLEISCHBRATEN_50X(C_Info)
 	condition = PC_Firecamp_fleischbraten50x_condition;
 	information = PC_Firecamp_fleischbraten50x_info;
 	permanent = TRUE;
-	description = "...пожарить 50 кусков мяса";
+	description = " ...fry 50 pieces of meat " ;
 };
 
 func int PC_Firecamp_fleischbraten50x_condition()
@@ -1048,7 +1049,7 @@ FUNC VOID PYRAMID_WRITE_S1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_PYRAMID_WRITE;
 		Ai_ProcessInfos(her);
 	};
@@ -1089,7 +1090,7 @@ INSTANCE PC_PYRAMID_WRITE_WatchPass(C_Info)
 	condition = PC_PYRAMID_WRITE_WatchPass_Condition;
 	information = PC_PYRAMID_WRITE_WatchPass_Info;
 	permanent = TRUE;
-	description = "Осмотреть скрижаль..."; 
+	description = " Examine the tablet... " ;
 };
 
 FUNC INT PC_PYRAMID_WRITE_WatchPass_Condition()
@@ -1104,7 +1105,7 @@ FUNC VOID PC_PYRAMID_WRITE_WatchPass_Info()
 {
 	KnowMissAncientText = TRUE;
 	AI_Print(PRINT_MISSPARTANCIENTTEXT);
-	B_LogEntry(TOPIC_AdanosCrone,"Я нашел странный очень алтарь древних. Кажется в разбитой срижальной доске не хватает нескольких кусков. Думаю, что мне стоит поискать их. Вот только где?!");
+	B_LogEntry(TOPIC_AdanosCrone, " I found a very strange altar of the ancients. It looks like a few pieces are missing from the broken slate board. I think I should look for them. But where?! " );
 };
 
 
@@ -1115,12 +1116,12 @@ INSTANCE PC_PYRAMID_WRITE_LostPiesis_01(C_Info)
 	condition = PC_PYRAMID_WRITE_LostPiesis_01_Condition;
 	information = PC_PYRAMID_WRITE_LostPiesis_01_Info;
 	permanent = TRUE;
-	description = "Вставить левый кусок скрижали."; 
+	description = " Insert the left piece of the tablet. " ;
 };
 
 FUNC INT PC_PYRAMID_WRITE_LostPiesis_01_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PYRAMID_WRITE) && (KnowMissAncientText == TRUE) && (Npc_HasItems(hero,ItMi_DuneAdanos) >= 1) && (CanReadGreatBook_01 == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_PYRAMID_WRITE ) && ( KnowMissAncientText ==  TRUE ) && ( Npc_HasItems ( hero , ItI_DuneAdanos ) >=  1 ) && ( CanReadGreatBook_01 ==  FALSE )) ;
 	{	
 		return TRUE;
 	};
@@ -1136,7 +1137,7 @@ FUNC VOID PC_PYRAMID_WRITE_LostPiesis_01_Info()
 	{
 		Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
 		CanReadGreatBook = TRUE;
-		B_LogEntry(TOPIC_AdanosCrone,"Я полностью собрал скрижальную доску у алтаря! Теперь можно будет взглянуть на картинку целиком...");
+		B_LogEntry(TOPIC_AdanosCrone, " I've completed the tablet at the altar! Now you can look at the whole picture... " );
 	};
 };
 
@@ -1147,12 +1148,12 @@ INSTANCE PC_PYRAMID_WRITE_LostPiesis_02(C_Info)
 	condition = PC_PYRAMID_WRITE_LostPiesis_02_Condition;
 	information = PC_PYRAMID_WRITE_LostPiesis_02_Info;
 	permanent = TRUE;
-	description = "Вставить правый кусок скрижали."; 
+	description = " Insert right tablet piece. " ;
 };
 
 FUNC INT PC_PYRAMID_WRITE_LostPiesis_02_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PYRAMID_WRITE) && (KnowMissAncientText == TRUE) && (Npc_HasItems(hero,ItMi_GuneAdanos_02) >= 1) && (CanReadGreatBook_02 == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_PYRAMID_WRITE ) && ( KnowMissAncientText ==  TRUE ) && ( Npc_HasItems ( hero , ItMi_GuneAdanos_02 ) >=  1 ) && ( CanReadGreatBook_02 ==  FALSE )) ;
 	{	
 		return TRUE;
 	};
@@ -1168,7 +1169,7 @@ FUNC VOID PC_PYRAMID_WRITE_LostPiesis_02_Info()
 	{
 		Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
 		CanReadGreatBook = TRUE;
-		B_LogEntry(TOPIC_AdanosCrone,"Я полностью собрал скрижальную доску у алтаря! Теперь можно будет взглянуть на картинку целиком...");
+		B_LogEntry(TOPIC_AdanosCrone, " I've completed the tablet at the altar! Now you can look at the whole picture... " );
 	};
 };
 
@@ -1179,7 +1180,7 @@ INSTANCE PC_PYRAMID_WRITE_GetPassword(C_Info)
 	condition = PC_PYRAMID_WRITE_GetPassword_Condition;
 	information = PC_PYRAMID_WRITE_GetPassword_Info;
 	permanent = TRUE;
-	description = "Забрать собранную магическую скрижаль."; 
+	description = " Retrieve the collected magic tablet. " ;
 };
 
 FUNC INT PC_PYRAMID_WRITE_GetPassword_Condition()
@@ -1210,7 +1211,7 @@ FUNC VOID PYRAMID_PASSWORD_S1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_PYRAMID_PASSWORD;
 		Ai_ProcessInfos(her);
 	};
@@ -1246,7 +1247,7 @@ INSTANCE PC_PYRAMID_PASSWORD_OpenPyramid(C_Info)
 	condition = PC_PYRAMID_PASSWORD_OpenPyramid_Condition;
 	information = PC_PYRAMID_PASSWORD_OpenPyramid_Info;
 	permanent = TRUE;
-	description = "Нажать на каменные символы..."; 
+	description = " Click on the stone symbols... " ;
 };
 
 FUNC INT PC_PYRAMID_PASSWORD_OpenPyramid_Condition()
@@ -1271,7 +1272,7 @@ FUNC VOID PC_PYRAMID_PASSWORD_OpenPyramid_Info()
 		Wld_SendTrigger("EVT_PASSWORD_PLATE");
 		EnterBigPyramid = TRUE;
 		B_ENDPRODUCTIONDIALOG();
-		B_LogEntry(TOPIC_AdanosCrone,"Проход в огромную пирамиду открылся! Думаю, что стоит тщательно обследовать ее...");
+		B_LogEntry(TOPIC_AdanosCrone, " The passage to the huge pyramid has opened! I think it's worth exploring it carefully... " );
 	}
 	else
 	{
@@ -1282,7 +1283,7 @@ FUNC VOID PC_PYRAMID_PASSWORD_OpenPyramid_Info()
 
 var int EnterTearsTemple;
 var int ADANOSBRIDGEIS;
-var int RAVENDOORISOPEN_AV;
+var int  RAVENDOORISOPEN_AV ;
 
 
 FUNC VOID ADANOSBRIDGE_S1()
@@ -1297,7 +1298,7 @@ FUNC VOID ADANOSBRIDGE_S1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_ADANOSBRIDGE;
 		Ai_ProcessInfos(her);
 	};
@@ -1333,7 +1334,7 @@ INSTANCE PC_ADANOSBRIDGE_Bridge(C_Info)
 	condition = PC_ADANOSBRIDGE_Bridge_Condition;
 	information = PC_ADANOSBRIDGE_Bridge_Info;
 	permanent = TRUE;
-	description = "Молиться Аданосу..."; 
+	description = " Pray to Adanos... " ;
 };
 
 FUNC INT PC_ADANOSBRIDGE_Bridge_Condition()
@@ -1357,7 +1358,7 @@ FUNC VOID PC_ADANOSBRIDGE_Bridge_Info()
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 		Wld_SendTrigger("EVT_TEMPLEPATH_01");
 		ADANOSBRIDGEIS = TRUE;
-		B_LogEntry(TOPIC_AdanosCrone,"Аданос услышал мою мольбу! Кажется впереди засверкал магический мост, по которому можно перейти на другую сторону...");
+		B_LogEntry(TOPIC_AdanosCrone, " Adanos has heard my plea! It seems that a magical bridge has sparkled ahead, through which you can cross to the other side... " );
 	}
 	else
 	{
@@ -1367,7 +1368,7 @@ FUNC VOID PC_ADANOSBRIDGE_Bridge_Info()
 	B_ENDPRODUCTIONDIALOG();
 };
 
-FUNC VOID ADANOSSCIP_S1()
+FUNC  VOID  ADANOSSCIP_S1 ()
 {
 	var C_NPC her; 	
 	her = Hlp_GetNpc(PC_Hero); 
@@ -1379,7 +1380,7 @@ FUNC VOID ADANOSSCIP_S1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_ADANOSSCIP;
 		Ai_ProcessInfos(her);
 	};
@@ -1415,12 +1416,12 @@ INSTANCE PC_ADANOSSCIP_Raven(C_Info)
 	condition = PC_ADANOSSCIP_Raven_Condition;
 	information = PC_ADANOSSCIP_Raven_Info;
 	permanent = TRUE;
-	description = "Возложить скипетр Аданоса..."; 
+	description = " Lay down the scepter of Adanos... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_Raven_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (Npc_GetDistToWP(hero,"AV_SCIPPLACE") < 1000) && (Npc_HasItems(hero,ItRi_AdanosGoldSkipetr) >= 1) && (RAVENDOORISOPEN_AV == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && ( Npc_GetDistToWP ( hero , " AV_SCIPPLACE " ) <  1000 ) && ( Npc_HasItems ( hero , ItRi_AdanosGoldSkipetr ) >=  1 ) && ( RAVENDOORISOPEN_AV  ==  FALSE )) ;
 	{	
 		return TRUE;
 	};
@@ -1435,8 +1436,8 @@ FUNC VOID PC_ADANOSSCIP_Raven_Info()
 	Npc_RemoveInvItems(hero,ItRi_AdanosGoldSkipetr,1);
 	Wld_SendTrigger("EVT_INPLACE_SKIPETR");
 	Wld_SendTrigger("EVT_RAVENTEMPLEDOOR_MAIN_01");
-	Wld_SendTrigger("CAM_RAVENTEMPLEDOOR_MAIN_01");
-	RAVENDOORISOPEN_AV = TRUE;
+	Wld_SendTrigger( " CAM_RAVENTEMPLEDOOR_MAIN_01 " );
+	RAVENDOORISOPEN_AV = TRUE ;
 	B_ENDPRODUCTIONDIALOG();
 };
 
@@ -1447,12 +1448,12 @@ INSTANCE PC_ADANOSSCIP_OpenTearsTemple(C_Info)
 	condition = PC_ADANOSSCIP_OpenTearsTemple_Condition;
 	information = PC_ADANOSSCIP_OpenTearsTemple_Info;
 	permanent = TRUE;
-	description = "Использовать 'Камень Слез'..."; 
+	description = " Use 'Stone of Tears'... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_OpenTearsTemple_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (Npc_GetDistToWP(hero,"AV_TEMPLEOFTEARS") < 1000) && (Npc_HasItems(hero,ItMi_TearsRune) >= 1) && (EnterTearsTemple == FALSE))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && ( Npc_GetDistToWP ( hero , " AV_TEMPLEOFTEARS " ) <  1000 ) && ( Npc_HasItems ( hero , ItMy_TearsRune ) >=  1 ) && ( EnterTearsTemple ==  FALSE )) ;
 	{	
 		return TRUE;
 	};
@@ -1476,12 +1477,12 @@ INSTANCE PC_ADANOSSCIP_TempleTask_01(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_01_Condition;
 	information = PC_ADANOSSCIP_TempleTask_01_Info;
 	permanent = TRUE;
-	description = "Изучить древние надписи..."; 
+	description = " Study ancient inscriptions... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_01_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_01 == FALSE) && (Npc_GetDistToWP(hero,"AV_TEMPLETASK_01") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && ( TaskHram_01 ==  FALSE ) && ( Npc_GetDistToWP ( hero , " AV_TEMPLETASK_01 " ) <  500 )) ;
 	{	
 		return TRUE;
 	};
@@ -1493,13 +1494,13 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_01_Info()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_114 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_114 = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 
@@ -1507,7 +1508,7 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_01_Info()
 	B_Say(hero,hero,"$HOWINTEREST");
 	Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 	AI_Print(PRINT_TEMPLETASK_01);
-	B_LogEntry(TOPIC_AdanosCrone,"Здесь написано следующее - '...СОСУДЫ ВНОВЬ НАПОЛНЯТСЯ БОЖЕСТВЕННОЙ ВЛАГОЙ...'. И что бы это значило? Все что я понял, так это то, что мне нужно наполнить водой какие-то емкости...но вот какие? И где здесь взять воду?");
+	B_LogEntry(TOPIC_AdanosCrone, " The following is written here - '...VESSELS WILL BE FILLED WITH DIVINE MOISTURE AGAIN...'. And what would that mean? All I understood is that I need to fill some containers with water... but what are these? And where can I get water here? " );
 	TaskHram_01 = TRUE;
 	AI_Wait(hero,5);
 	B_ENDPRODUCTIONDIALOG();
@@ -1520,12 +1521,12 @@ INSTANCE PC_ADANOSSCIP_TempleTask_02(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_02_Condition;
 	information = PC_ADANOSSCIP_TempleTask_02_Info;
 	permanent = TRUE;
-	description = "Изучить древние надписи..."; 
+	description = " Study ancient inscriptions... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_02_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_02 == FALSE) && (Npc_GetDistToWP(hero,"AV_TEMPLETASK_02") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && ( TaskHram_02 ==  FALSE ) && ( Npc_GetDistToWP ( hero , " AV_TEMPLETASK_02 " ) <  500 )) ;
 	{	
 		return TRUE;
 	};
@@ -1537,13 +1538,13 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_02_Info()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_115 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_115 = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 
@@ -1551,7 +1552,7 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_02_Info()
 	B_Say(hero,hero,"$HOWINTEREST");
 	Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 	AI_Print(PRINT_TEMPLETASK_02);
-	B_LogEntry(TOPIC_AdanosCrone,"Здесь написано следующее - '...МОГУЩЕСТВЕННОЕ СОЗДАНИЕ БУДЕТ ДАРОВАНО ПОВЕЛИТЕЛЮ...'. Очень интересно, но абсолютно непонятно! О каком могуществнном создании идет речь, и кому я должен преподнести его? Загадки, загадки, загадки...");
+	B_LogEntry(TOPIC_AdanosCrone, " The following is written here - '...THE POWERFUL CREATION WILL BE GRANTED TO THE LORD...'. Very interesting, but absolutely incomprehensible! What kind of powerful creature are we talking about, and to whom should I present it? Riddles, riddles, riddles. .. " );
 	TaskHram_02 = TRUE;
 	AI_Wait(hero,5);
 	B_ENDPRODUCTIONDIALOG();
@@ -1564,12 +1565,12 @@ INSTANCE PC_ADANOSSCIP_TempleTask_03(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_03_Condition;
 	information = PC_ADANOSSCIP_TempleTask_03_Info;
 	permanent = TRUE;
-	description = "Изучить древние надписи..."; 
+	description = " Study ancient inscriptions... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_03_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_03 == FALSE) && (Npc_GetDistToWP(hero,"AV_TEMPLETASK_03") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && ( TaskHram_03 ==  FALSE ) && ( Npc_GetDistToWP ( hero , " AV_TEMPLETASK_03 " ) <  500 )) ;
 	{	
 		return TRUE;
 	};
@@ -1581,13 +1582,13 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_03_Info()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_116 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_116 = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 
@@ -1596,21 +1597,21 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_03_Info()
 	Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 	AI_Print(PRINT_TEMPLETASK_03);
 	TaskHram_03 = TRUE;
-	B_LogEntry(TOPIC_AdanosCrone,"Здесь написано следующее - '...СУЩЕСТВО, ПОРОЖДЕННОЕ МАГИЕЙ БРАТА МОЕГО, БУДЕТ УНИЧТОЖЕНО, В ЧАС КОГДА СЛАБО ОНО И ЛИШЕНО ПОДДЕРЖКИ СВОЕГО ПОВЕЛИТЕЛЯ...'. Судя по всему, необходимо кого-то убить! Того, кто был порожден скорей всего либо Инносом, либо Белиаром. Придется поискать здесь нечто похожее не творение богов. И судя по всему, убить его будет можно лишь только в определенное время!");
+	B_LogEntry(TOPIC_AdanosCrone, " It says the following - '...THE BEING BORN BY THE MAGIC OF MY BROTHER WILL BE DESTROYED AT THE HOUR THAT IT IS WEAK AND WITHOUT THE SUPPORT OF ITS LORD...'. Apparently, it is necessary to kill someone! who was most likely spawned either by Innos or Beliar. We'll have to look here for something similar, not the creation of the gods. And apparently, it will be possible to kill him only at a certain time! " );
 	AI_Wait(hero,5);
 	B_ENDPRODUCTIONDIALOG();
-	Wld_InsertNpc(FIREGOLEM_UNIQ,"MAGOLEMUS");
+	Wld_InsertNpc( FIREGOLEM_UNIQ , " MAGOLEMUS " );
 
 	if(Wld_IsTime(4,0,22,0) == TRUE)
 	{
-		Wld_SendTrigger("EVT_MAGOLEMUS_AOE");
+		Wld_SendTrigger( " EVT_MAGOLEMUS_AOE " );
 		AOE_IsDown = FALSE;
 		AOE_IsUp = TRUE;
 	}
 	else
 	{
 		AOE_IsDown = TRUE;
-		AOE_IsUp = FALSE;
+		AOE_IsUp = FALSE ;
 	};
 };
 
@@ -1621,12 +1622,12 @@ INSTANCE PC_ADANOSSCIP_TempleTask_04(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_04_Condition;
 	information = PC_ADANOSSCIP_TempleTask_04_Info;
 	permanent = TRUE;
-	description = "Изучить древние надписи..."; 
+	description = " Study ancient inscriptions... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_04_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_04 == FALSE) && (Npc_GetDistToWP(hero,"AV_TEMPLETASK_04") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && ( TaskHram_04 ==  FALSE ) && ( Npc_GetDistToWP ( hero , " AV_TEMPLETASK_04 " ) <  500 )) ;
 	{	
 		return TRUE;
 	};
@@ -1638,13 +1639,13 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_04_Info()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_117 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_117 = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 
@@ -1652,7 +1653,7 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_04_Info()
 	B_Say(hero,hero,"$HOWINTEREST");
 	Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 	AI_Print(PRINT_TEMPLETASK_04);
-	B_LogEntry(TOPIC_AdanosCrone,"Здесь написано следующее - '...АЛТАРИ ДРЕВНИХ ОБРЕТУТ СВОЕ БЫЛОЕ ВЕЛИЧИЕ...'. Кажется, я уже видел здесь что-то наподобия алтарей. Но непонятно, что с ними делать! Может быть Маги Воды подскажут мне ответ на этот вопрос.");
+	B_LogEntry(TOPIC_AdanosCrone, " The following is written here - '...THE ANCIENT ALTARS WILL RETURN TO THEIR OLD GREAT...'. I think I've already seen something like altars here. But it's not clear what to do with them! Maybe the Water Mages will tell me the answer to this question. " );
 	TaskHram_04 = TRUE;
 	AI_Wait(hero,5);
 	B_ENDPRODUCTIONDIALOG();
@@ -1672,17 +1673,17 @@ INSTANCE PC_ADANOSSCIP_ANCIENTALTAR_01(C_Info)
 	condition = PC_ADANOSSCIP_ANCIENTALTAR_01_Condition;
 	information = PC_ADANOSSCIP_ANCIENTALTAR_01_Info;
 	permanent = TRUE;
-	description = "Вставить магический юнитор..."; 
+	description = " Insert magic unit... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_ANCIENTALTAR_01_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_04 == TRUE) && (ANCIENTALTAR01IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1) && (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_01") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && (TaskHram_04 ==  TRUE ) && (ANCIENTALTAR01IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMi_MagicCrystal) >=  1 ) && (Npc_GetDistToWP(hero, " AV_010 " )) < ANCIENTALTAR_5  ;
 	{	
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_01_Info()
@@ -1701,7 +1702,7 @@ FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_01_Info()
 	{
 		ANCIENTALTARSIsAwake = TRUE;
 		AI_Print(PRINT_TEMPLETASK_04_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Все алтари древних вновь наполнены магией. Это ли имелось в виду в древних писаниях?!");
+		B_LogEntry(TOPIC_AdanosCrone, " All the altars of the ancients are filled with magic again. Is this what the ancient scriptures meant?! " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -1715,17 +1716,17 @@ INSTANCE PC_ADANOSSCIP_ANCIENTALTAR_02(C_Info)
 	condition = PC_ADANOSSCIP_ANCIENTALTAR_02_Condition;
 	information = PC_ADANOSSCIP_ANCIENTALTAR_02_Info;
 	permanent = TRUE;
-	description = "Вставить магический юнитор..."; 
+	description = " Insert magic unit... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_ANCIENTALTAR_02_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_04 == TRUE) && (ANCIENTALTAR02IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1) && (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_02") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && (TaskHram_04 ==  TRUE ) && (ANCIENTALTAR02IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMi_MagicCrystal) >=  1 ) && (Npc_GetDistToWP(hero, " AV_020 " )) < ANCIENTALTAR_5  ;
 	{	
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_02_Info()
@@ -1744,7 +1745,7 @@ FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_02_Info()
 	{
 		ANCIENTALTARSIsAwake = TRUE;
 		AI_Print(PRINT_TEMPLETASK_04_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Все алтари древних вновь наполнены магией. Это ли имелось в виду в древних писаниях?!");
+		B_LogEntry(TOPIC_AdanosCrone, " All the altars of the ancients are filled with magic again. Is this what the ancient scriptures meant?! " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -1757,17 +1758,17 @@ INSTANCE PC_ADANOSSCIP_ANCIENTALTAR_03(C_Info)
 	condition = PC_ADANOSSCIP_ANCIENTALTAR_03_Condition;
 	information = PC_ADANOSSCIP_ANCIENTALTAR_03_Info;
 	permanent = TRUE;
-	description = "Вставить магический юнитор..."; 
+	description = " Insert magic unit... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_ANCIENTALTAR_03_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_04 == TRUE) && (ANCIENTALTAR03IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1) && (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_03") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && (TaskHram_04 ==  TRUE ) && (ANCIENTALTAR03IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMi_MagicCrystal) >=  1 ) && (Npc_GetDistToWP(hero, " AV_030 " ) ) < 5  .
 	{	
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_03_Info()
@@ -1786,7 +1787,7 @@ FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_03_Info()
 	{
 		ANCIENTALTARSIsAwake = TRUE;
 		AI_Print(PRINT_TEMPLETASK_04_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Все алтари древних вновь наполнены магией. Это ли имелось в виду в древних писаниях?!");
+		B_LogEntry(TOPIC_AdanosCrone, " All the altars of the ancients are filled with magic again. Is this what the ancient scriptures meant?! " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -1799,17 +1800,17 @@ INSTANCE PC_ADANOSSCIP_ANCIENTALTAR_04(C_Info)
 	condition = PC_ADANOSSCIP_ANCIENTALTAR_04_Condition;
 	information = PC_ADANOSSCIP_ANCIENTALTAR_04_Info;
 	permanent = TRUE;
-	description = "Вставить магический юнитор..."; 
+	description = " Insert magic unit... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_ANCIENTALTAR_04_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_04 == TRUE) && (ANCIENTALTAR04IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1) && (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_04") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && (TaskHram_04 ==  TRUE ) && (ANCIENTALTAR04IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMi_MagicCrystal) >=  1 ) && (Npc_GetDistToWP(hero, " AV_00 " )) < 5  .
 	{	
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_04_Info()
@@ -1828,7 +1829,7 @@ FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_04_Info()
 	{
 		ANCIENTALTARSIsAwake = TRUE;
 		AI_Print(PRINT_TEMPLETASK_04_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Все алтари древних вновь наполнены магией. Это ли имелось в виду в древних писаниях?!");
+		B_LogEntry(TOPIC_AdanosCrone, " All the altars of the ancients are filled with magic again. Is this what the ancient scriptures meant?! " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -1841,17 +1842,17 @@ INSTANCE PC_ADANOSSCIP_ANCIENTALTAR_05(C_Info)
 	condition = PC_ADANOSSCIP_ANCIENTALTAR_05_Condition;
 	information = PC_ADANOSSCIP_ANCIENTALTAR_05_Info;
 	permanent = TRUE;
-	description = "Вставить магический юнитор..."; 
+	description = " Insert magic unit... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_ANCIENTALTAR_05_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TaskHram_04 == TRUE) && (ANCIENTALTAR05IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1) && (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_05") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && (TaskHram_04 ==  TRUE ) && (ANCIENTALTAR05IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMi_MagicCrystal) >=  1 ) && (Npc_GetDistToWP(hero, " AV_05 " ) ) <  ANCIENTALTAR_5 ;
 	{	
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_05_Info()
@@ -1870,7 +1871,7 @@ FUNC VOID PC_ADANOSSCIP_ANCIENTALTAR_05_Info()
 	{
 		ANCIENTALTARSIsAwake = TRUE;
 		AI_Print(PRINT_TEMPLETASK_04_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"Все алтари древних вновь наполнены магией. Это ли имелось в виду в древних писаниях?!");
+		B_LogEntry(TOPIC_AdanosCrone, " All the altars of the ancients are filled with magic again. Is this what the ancient scriptures meant?! " );
 	};
 
 	B_ENDPRODUCTIONDIALOG();
@@ -1886,7 +1887,7 @@ INSTANCE PC_ADANOSSCIP_GONG(C_Info)
 	condition = PC_ADANOSSCIP_GONG_Condition;
 	information = PC_ADANOSSCIP_GONG_Info;
 	permanent = TRUE;
-	description = "Ударить в гонг..."; 
+	description = " Strike the gong... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_GONG_Condition()
@@ -1915,12 +1916,12 @@ FUNC VOID PC_ADANOSSCIP_GONG_Info()
 	}
 	else
 	{
-		if(MineKingArrive == FALSE)
+		if (MineKingArrive ==  FALSE )
 		{
 			Snd_Play("INST_CONGA01");
 			AI_Print(PRINT_GONG_03);
 			Gong_Count = FALSE;
-			MineKingArrive = TRUE;
+			MineKingArrive = TRUE ;
 			B_ENDPRODUCTIONDIALOG();
 		}
 		else
@@ -1937,7 +1938,7 @@ INSTANCE PC_ADANOSSCIP_TempleTask_Final(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_Final_Condition;
 	information = PC_ADANOSSCIP_TempleTask_Final_Info;
 	permanent = TRUE;
-	description = "Изучить древние надписи..."; 
+	description = " Study ancient inscriptions... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_Final_Condition()
@@ -1951,8 +1952,8 @@ FUNC INT PC_ADANOSSCIP_TempleTask_Final_Condition()
 FUNC VOID PC_ADANOSSCIP_TempleTask_Final_Info()
 {
 	AI_Print(PRINT_TEMPLETASK_FINAL);
-	LastAdanosTask = TRUE;
-	B_LogEntry(TOPIC_AdanosCrone,"Здесь написано следующее - '...ВЕЛИКОЕ ДРЕВО ЖИЗНИ ВНОВЬ РАСЦВЕТЕТ...'. И сколько же мне еще предстоит этих загадок?! Надо поговорить с Сатурасом, ибо тут я точно не обойдусь без его совета.");
+	LastAdanosTask = TRUE ;
+	B_LogEntry(TOPIC_AdanosCrone, " The following is written here - '...THE GREAT TREE OF LIFE WILL BLOOM AGAIN...'. And how many more of these puzzles do I have?! I need to talk to Saturas, because here I will definitely not do without his advice. " ) ;
 	AI_Wait(hero,5);
 	B_Say(hero,hero,"$HOWINTEREST");
 	B_ENDPRODUCTIONDIALOG();
@@ -1965,12 +1966,12 @@ INSTANCE PC_ADANOSSCIP_TempleTask_Tree(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_Tree_Condition;
 	information = PC_ADANOSSCIP_TempleTask_Tree_Info;
 	permanent = TRUE;
-	description = "Использовать 'Корень Жизни'..."; 
+	description = " Use 'Root of Life'... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_Tree_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (TreeIsUp == FALSE) && (Npc_HasItems(hero,ItPl_MagicRoot) >= 1) && (LastAdanosTask == TRUE) && (Npc_GetDistToWP(hero,"AV_ADANOSTREE_RITUAL") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && (TreeIsUp ==  FALSE ) && (Npc_HasItems(hero,ItPl_MagicRoot) >=  1 ) && (LastAdanosTask ==  TRUE ) && (Npc_GetDistToWP(hero, " AV_ADANOSTREE_RITUAL " )) < 5  ;
 	{	
 		return TRUE;
 	};
@@ -1988,7 +1989,7 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_Tree_Info()
 		Snd_Play("OPEN_PORTAL");
 		Wld_SendTrigger("EVT_MAGICROOT");
 		AI_Print(PRINT_TEMPLETASK_FINAL_DONE);
-		B_LogEntry(TOPIC_AdanosCrone,"На великом древе вновь распустились листья, а вокруг него зазеленела трава. Меня охватывает такое чувство, как будто жизнь вновь возвращается в это гиблое место!");
+		B_LogEntry(TOPIC_AdanosCrone, " The great tree's leaves have blossomed again, and the grass around it has turned green. I feel like life is returning to this dead place again! " );
 		TreeIsUp = TRUE;
 		Npc_RemoveInvItems(hero,ItPl_MagicRoot,1);
 		B_ENDPRODUCTIONDIALOG();
@@ -2010,7 +2011,7 @@ INSTANCE PC_ADANOSSCIP_TempleTask_Final_Done(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_Final_Done_Condition;
 	information = PC_ADANOSSCIP_TempleTask_Final_Done_Info;
 	permanent = TRUE;
-	description = "Прикоснуться к основанию скрижали..."; 
+	description = " Touch the base of the tablet... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_Final_Done_Condition()
@@ -2024,8 +2025,8 @@ FUNC INT PC_ADANOSSCIP_TempleTask_Final_Done_Condition()
 FUNC VOID PC_ADANOSSCIP_TempleTask_Final_Done_Info()
 {
 	Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
-	LastAdanosTaskDone = TRUE;
-	B_LogEntry(TOPIC_AdanosCrone,"Взади меня вспыхнули две яркие вспышки! Чтобы это могло бы быть?");
+	LastAdanosTaskDone = TRUE ;
+	B_LogEntry(TOPIC_AdanosCrone, " There are two bright flashes behind me! What could it be? " );
 	B_ENDPRODUCTIONDIALOG();
 	Wld_SendTrigger("EVT_TELEPORT_UPHRAM_01");
 	Wld_SendTrigger("EVT_TELEPORT_UPHRAM_02");
@@ -2038,7 +2039,7 @@ INSTANCE PC_ADANOSSCIP_TempleTask_Quest(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_Quest_Condition;
 	information = PC_ADANOSSCIP_TempleTask_Quest_Info;
 	permanent = TRUE;
-	description = "Пройти ритуал очищения..."; 
+	description = " Complete a cleansing ritual... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_Quest_Condition()
@@ -2054,7 +2055,7 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_Quest_Info()
 	var int karma_innos;
 
 	B_GivePlayerXP(500);
-	B_LogEntry(TOPIC_AdanosCrone,"Я прошел очищение Аданоса! Интересно, что теперь?");
+	B_LogEntry(TOPIC_AdanosCrone, " I passed the Adanos cleanse! I wonder what now? " );
 	B_ENDPRODUCTIONDIALOG();
 	Wld_SendTrigger("EVT_TELEPORT_UPHRAM_DOWN");
 	Snd_Play("OPEN_PORTAL");
@@ -2089,12 +2090,12 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_Quest_Info()
 	{
 		Wld_InsertItem(ITPO_PERM_MANA,"FP_ITEM_ADANOS_GIFT_03");
 	}
-	else if(hero.guild == GIL_GUR)
+	else  if (hero.guild ==  GIL_GUR )
 	{
 		Wld_InsertItem(ITPO_PERM_MANA,"FP_ITEM_ADANOS_GIFT_01");
 		Wld_InsertItem(ItPo_Perm_Health,"FP_ITEM_ADANOS_GIFT_02");
 	}
-	else if(hero.guild == GIL_KDM)
+	else  if (hero.guild ==  GIL_KDM )
 	{
 		Wld_InsertItem(ItPo_Perm_Health,"FP_ITEM_ADANOS_GIFT_03");
 	}
@@ -2129,7 +2130,7 @@ INSTANCE PC_ADANOSSCIP_TempleTask_Power(C_Info)
 	condition = PC_ADANOSSCIP_TempleTask_Power_Condition;
 	information = PC_ADANOSSCIP_TempleTask_Power_Info;
 	permanent = TRUE;
-	description = "Просить даровать силу и могущество"; 
+	description = " Ask to grant strength and power " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTask_Power_Condition()
@@ -2151,13 +2152,13 @@ FUNC VOID PC_ADANOSSCIP_TempleTask_Power_Info()
 	Wld_PlayEffect("SPELLFX_HEALSHRINE",hero,hero,0,0,0,FALSE);
 	AI_Print(PRINT_ADANOSGIVEPOWER);
 	ADANOSGIVEPOWER = TRUE;
-	B_LogEntry(TOPIC_GUARDIANS,"Я получил поддержку Аданоса.");
+	B_LogEntry( TOPIC_GUARDIANS , " I received Adanos' support. " );
 	AI_Wait(hero,3);
 
 	if((INNOSGIVEPOWER == TRUE) && (BELIARGIVEPOWER == TRUE) && (ADANOSGIVEPOWER == TRUE))
 	{
 		NETBEKLEADME_STEP1DONE = TRUE;
-		Log_AddEntry(TOPIC_GUARDIANS,"Теперь я заручился поддержкой всех трех божеств, став их Избранным!");
+		Log_AddEntry( TOPIC_GUARDIANS , " I have now enlisted the support of all three deities by becoming their Chosen One! " );
 		CreateInvItems(hero,ItAr_GodArmor,1);
 		AI_PlayAni(hero,"T_MAGRUN_2_HEASHOOT");
 		Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
@@ -2176,12 +2177,12 @@ INSTANCE PC_ADANOSSCIP_CurseAncient(C_Info)
 	condition = PC_ADANOSSCIP_CurseAncient_Condition;
 	information = PC_ADANOSSCIP_CurseAncient_Info;
 	permanent = TRUE;
-	description = "Молиться о снятии проклятья Зодчих..."; 
+	description = " Pray for the Builders' curse to be lifted... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_CurseAncient_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_ADANOSSCIP) && (CurseAncientRemove == FALSE) && (MIS_CurseAncient == LOG_Running) && (Npc_GetDistToWP(hero,"AV_UPPYRAMIDE_QUEST") < 500))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_ADANOSSCIP ) && ( AncientCurseRemove ==  FALSE ) && ( MY_AncientCourse == LOG_Running ) && ( Npc_GetDistToWP ( hero , " AV_UPPYRAMIDE_QUEST " ) <  500 )) ;
 	{	
 		return TRUE;
 	};
@@ -2199,7 +2200,7 @@ FUNC VOID PC_ADANOSSCIP_CurseAncient_Info()
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 		Snd_Play("OPEN_PORTAL");
 		AI_Print(PRINT_CurseAncient_Remove);
-		B_LogEntry(TOPIC_CurseAncient,"Аданос услышал мои молитвы и снял проклятье Зодчих. Теперь мне надо сообщить об этом Радемесу!");
+		B_LogEntry(TOPIC_CurseAncient, " Adanos heard my prayers and lifted the curse of the Builders. Now I have to report this to Rademes! " );
 		CurseAncientRemove = TRUE;
 		B_ENDPRODUCTIONDIALOG();
 	}
@@ -2218,7 +2219,7 @@ INSTANCE PC_ADANOSSCIP_RiordanBack(C_Info)
 	condition = PC_ADANOSSCIP_RiordanBack_Condition;
 	information = PC_ADANOSSCIP_RiordanBack_Info;
 	permanent = TRUE;
-	description = "Молиться о душе Риордиана..."; 
+	description = " Pray for the soul of Riordian... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_RiordanBack_Condition()
@@ -2249,7 +2250,7 @@ INSTANCE PC_ADANOSSCIP_TempleTears_Key(C_Info)
 	condition = PC_ADANOSSCIP_TempleTears_Key_Condition;
 	information = PC_ADANOSSCIP_TempleTears_Key_Info;
 	permanent = TRUE;
-	description = "Дотронуться до алтаря..."; 
+	description = " Touch the altar... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_TempleTears_Key_Condition()
@@ -2268,7 +2269,7 @@ FUNC VOID PC_ADANOSSCIP_TempleTears_Key_Info()
 	B_ENDPRODUCTIONDIALOG();
 	Wld_SendTrigger("CAM_LASTSTANDDOOR");
 	Wld_SendTrigger("EVT_LASTSTANDDOOR");
-	Wld_SendTrigger("TT_MAINGATE_PREROOM");
+	Wld_SendTrigger( " TT_MAINGATE_PREROOM " );
 };
 
 INSTANCE PC_ADANOSSCIP_OrcAltar_01(C_Info)
@@ -2278,7 +2279,7 @@ INSTANCE PC_ADANOSSCIP_OrcAltar_01(C_Info)
 	condition = PC_ADANOSSCIP_OrcAltar_01_Condition;
 	information = PC_ADANOSSCIP_OrcAltar_01_Info;
 	permanent = TRUE;
-	description = "Помолиться духам предков..."; 
+	description = " Pray to the spirits of the ancestors... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_OrcAltar_01_Condition()
@@ -2306,7 +2307,7 @@ INSTANCE PC_ADANOSSCIP_OrcAltar_02(C_Info)
 	condition = PC_ADANOSSCIP_OrcAltar_02_Condition;
 	information = PC_ADANOSSCIP_OrcAltar_02_Info;
 	permanent = TRUE;
-	description = "Помолиться духам предков..."; 
+	description = " Pray to the spirits of the ancestors... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_OrcAltar_02_Condition()
@@ -2334,7 +2335,7 @@ INSTANCE PC_ADANOSSCIP_OrcAltar_03(C_Info)
 	condition = PC_ADANOSSCIP_OrcAltar_03_Condition;
 	information = PC_ADANOSSCIP_OrcAltar_03_Info;
 	permanent = TRUE;
-	description = "Помолиться духам предков..."; 
+	description = " Pray to the spirits of the ancestors... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_OrcAltar_03_Condition()
@@ -2362,7 +2363,7 @@ INSTANCE PC_ADANOSSCIP_OrcAltar_04(C_Info)
 	condition = PC_ADANOSSCIP_OrcAltar_04_Condition;
 	information = PC_ADANOSSCIP_OrcAltar_04_Info;
 	permanent = TRUE;
-	description = "Помолиться духам предков..."; 
+	description = " Pray to the spirits of the ancestors... " ;
 };
 
 FUNC INT PC_ADANOSSCIP_OrcAltar_04_Condition()
