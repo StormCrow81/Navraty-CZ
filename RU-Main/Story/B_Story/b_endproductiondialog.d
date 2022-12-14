@@ -1,4 +1,5 @@
 
+
 func void b_endproductiondialog()
 {
 	var string concatText;
@@ -245,7 +246,7 @@ func void b_endproductiondialog()
 			Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_FEAR_CAST");
 			Wld_PlayEffect("VOB_MAGICBURN",hero,hero,0,0,0,FALSE);
-			concatText = "Сила кольца Хранителей защитила вас от гнева Темного Бога!";
+			concatText = " The power of the Ring of Guardians has protected you from the wrath of the Dark God! " ;
 			AI_Print(concatText);
 			AI_PlayAni(hero,"T_MAGRUN_2_HEASHOOT");
 			Wld_PlayEffect("spellFX_LIGHTSTAR_RED",hero,hero,0,0,0,FALSE);
@@ -259,11 +260,11 @@ func void b_endproductiondialog()
 			MIS_BELIARCURSE = LOG_Running;
 			Log_CreateTopic(TOPIC_BELIARCURSE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BELIARCURSE,LOG_Running);
-			B_LogEntry(TOPIC_BELIARCURSE,"Я оказался беззащитным перед могуществом Темного Бога и за свою дерзость был проклят им! Мне неизвестно, как это повлияет на мою судьбу в будущем, но уверен - что следует как можно скорее найти способ избавится от этого 'дара'.");
+			B_LogEntry( TOPIC_BELIARCURSE , " I found myself defenseless against the power of the Dark God and was cursed by it for my insolence! I do not know how this will affect my fate in the future, but I am sure that a way should be found as soon as possible to get rid of this 'gift'. " );
 			Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 			Snd_Play("DEM_Warn");
 			Wld_PlayEffect("VOB_MAGICBURN",hero,hero,0,0,0,FALSE);
-			concatText = "Темный Бог проклял вас!";
+			concatText = " The Dark God has cursed you! " ;
 			AI_Print(concatText);
 			Snd_Play("MFX_FEAR_CAST");
 			AI_PlayAni(hero,"T_STAND_2_WOUNDED");
@@ -291,7 +292,7 @@ func void b_endproductiondialog()
 		};
 
 		Snd_Play("AMBIENTSCREAM_1");
-		TrapPirUp = FALSE;
+		TrapPirUp = FALSE ;
 	};
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PrayShrine) && (EQUIPBLESSEDARMOR_M2 == TRUE) && (DOFISTPAL_M == FALSE))
 	{
