@@ -1,3 +1,4 @@
+
 var int AshtarBookBonus_01;
 var int AshtarBookBonus_02;
 var int AshtarBookBonus_03;
@@ -20,32 +21,32 @@ func void Use_Bookstand_Addon_BL_S1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"Шахта");
+		Doc_PrintLine(nDocID, 0 , " Mine " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Кримсон: 79 слитков золота получил и расплавил");
+		Doc_PrintLines(nDocID, 0 , " Crimson: 79 bars of gold received and melted " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Скатти: получил товаров на 250 золота");
+		Doc_PrintLines(nDocID, 0 , " Scutty: got 250 gold worth of goods " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Гарац: получил 6 слитков");
+		Doc_PrintLines(nDocID, 0 , " Garats: got 6 ingots " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Все охранники: получили 9 слитков");
+		Doc_PrintLines(nDocID, 0 , " All guards: got 9 ingots " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLines(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
-		Doc_PrintLine(nDocID,1,"Лагерь:");
+		Doc_PrintLine(nDocID, 1 , " Camp: " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Гвардия Ворона: 25 золотых");
+		Doc_PrintLines(nDocID, 1 , " Raven Guard: 25 gold " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Финн: 60 золотых");
-		Doc_PrintLines(nDocID,1,"Леннар: 40 золотых");
-		Doc_PrintLines(nDocID,1,"Эмилио: 50 золотых");
+		Doc_PrintLines(nDocID, 1 , " Finn: 60 gold " );
+		Doc_PrintLines(nDocID, 1 , " Lennar: 40 gold " );
+		Doc_PrintLines(nDocID, 1 , " Emilio: 50 gold " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Другие: 20 золотых");
+		Doc_PrintLines(nDocID, 1 , " Others: 20 gold " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Хуно, Фиск, Снаф: по цене товаров");
+		Doc_PrintLines(nDocID, 1 , " Huno, Fisk, Snaf: at the price of goods " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Охотники: Должен предводитель позаботиться! Франко получил 7 слитков.");
+		Doc_PrintLines(nDocID, 1 , " Hunters: The leader should take care! Franco got 7 ingots. " );
 		Doc_Show(nDocID);
 	};
 };
@@ -69,11 +70,11 @@ func void use_bookstandfirecavetest_s1()
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Ты, кто осмелился бросить вызов Огню - знай, что тебя ждет впереди трудное испытание.");
+		Doc_PrintLines(nDocID, 0 , " You who dare to challenge the Fire - know that a difficult test lies ahead of you. " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"И только тот, кто сможет одолеть Истинного Духа Огня - пройдет его!");
+		Doc_PrintLines(nDocID, 0 , " And only those who can defeat the True Spirit of Fire will pass it! " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
@@ -96,13 +97,13 @@ func void use_bookstandfirecavetest_s1()
 		{
 			B_GivePlayerXP(100);
 			READFIRECAVE = TRUE;
-			B_LogEntry(TOPIC_KELIOSTEST,"Судя по всему, чтобы пройти свое испытание - я должен буду отыскать истинного Духа Огня и одолеть его!");
+			B_LogEntry( TOPIC_KELIOSTEST , " It seems that in order to pass my test, I will have to find the true Spirit of Fire and defeat him! " );
 			B_Say(self,self,"$HOWINTEREST");
 			RankPoints = RankPoints + 1;
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -120,8 +121,8 @@ func void use_bookstandfirecavetest_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_108 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_108 = TRUE ;
 		};
 	};
 };
@@ -145,11 +146,11 @@ func void USE_BOOKIMARAH_s1()
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Тот, кто ищет знания, всегда их находит. Другой вопрос, какова цена этих знаний...");
+		Doc_PrintLines(nDocID, 0 , " He who seeks knowledge always finds it. Another question is what is the price of this knowledge... " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Теперь, я только задаюсь одним вопросом - какова же будет моя цена?");
+		Doc_PrintLines(nDocID, 0 , " Now, I'm just wondering what my price will be? " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
@@ -178,7 +179,7 @@ func void USE_BOOKIMARAH_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -196,8 +197,8 @@ func void USE_BOOKIMARAH_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_157 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_157 = TRUE ;
 		};
 	};
 };
@@ -216,7 +217,7 @@ func int C_CanReadBookStand()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func void Use_BookstandMaya()
@@ -225,54 +226,54 @@ func void Use_BookstandMaya()
 	{
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"... Потому что только ХРАНИТЕЛИ ДУХОВ могли вызывать мертвых");
+		Doc_PrintLines(StPl_nDocID, 0 , " ... Because only SPIRIT KEEPERS could call the dead " );
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"... Боль от их отсутствия сидит глубоко. Без совета предков мы предоставлены произволу нашего народа.");
+		Doc_PrintLines(StPl_nDocID, 0 , " ... The pain of their absence sits deep. Without the advice of our ancestors, we are left to the will of our people. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"ЦЕЛИТЕЛИ были посланы, чтобы закрыть портал и уничтожить ключ. Только Аданос знает, что с ними случилось и достигли ли они своей цели.");
+		Doc_PrintLines(StPl_nDocID, 0 , " HEALERS have been sent to close the portal and destroy the key. Only Adanos knows what happened to them and if they achieved their goal. " );
 		Doc_SetMargins(StPl_nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(StPl_nDocID,1,"");
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"ВОИНЫ уничтожены гневом Аданоса. Сердце старого воителя разбито.");
+		Doc_PrintLines(StPl_nDocID, 1 , " WARRIORS are destroyed by the wrath of Adanos. The old warrior's heart is broken. " );
 		Doc_PrintLine(StPl_nDocID,1,"");
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Только оставшиеся ЖРЕЦЫ не теряют надежды и молятся непрестанно о восстановлении нашего когда-то столь великолепного города.");
+		Doc_PrintLines(StPl_nDocID, 1 , " Only the remaining PRIESTS remain hopeful and pray unceasingly for the restoration of our once glorious city. " );
 		Doc_PrintLine(StPl_nDocID,1,"");
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Но мы, УЧЕНЫЕ, знаем горькую правду. ЯРКЕНДАР пал и его засыплет песок времени.");
+		Doc_PrintLines(StPl_nDocID, 1 , " But we SCIENTISTS know the bitter truth. YARKENDAR has fallen and the sands of time will cover it. " );
 		Doc_PrintLines(StPl_nDocID,1,"");
 
 		if((BookBonus_109 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_109 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_109 = TRUE ;
 		};
 	}
 	else if(BookstandMayaArt == 2)
 	{
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"РАДЕМЕС был навсегда заключен в храм, но мощь меча не была сломлена.");
+		Doc_PrintLines(StPl_nDocID, 0 , " RADEMES was forever imprisoned in the temple, but the power of the sword was not broken. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Его влияние стало уже слишком большим. Убийство на улицах не могло прекратиться.");
+		Doc_PrintLines(StPl_nDocID, 0 , " His influence was already too great. The killing in the streets couldn't stop. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Гнев АДАНОСА покончил со всем. Море поднялось над ЯРКЕНДАРОМ и поглотило его.");
+		Doc_PrintLines(StPl_nDocID, 0 , " The wrath of ADANOS ended everything. The sea rose over JARKENDAR and swallowed him. " );
 		Doc_SetMargins(StPl_nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(StPl_nDocID,1,"");
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Только высоко расположенные храмы и строения остались почти неповрежденными.");
+		Doc_PrintLines(StPl_nDocID, 1 , " Only the high-lying temples and buildings remained largely intact. " );
 		Doc_PrintLine(StPl_nDocID,1,"");
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Те немногие, которые пережили катастрофу, не имели больше сил, чтобы снова отстроить город.");
+		Doc_PrintLines(StPl_nDocID, 1 , " The few who survived the disaster no longer had the strength to rebuild the city. " );
 		Doc_PrintLine(StPl_nDocID,1,"");
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Так свершилась судьба ЯРКЕНДАРА.");
+		Doc_PrintLines(StPl_nDocID, 1 , " So the fate of YARKENDAR happened. " );
 		if(SC_Knows_WeaponInAdanosTempel == FALSE)
 		{
 			SC_Knows_WeaponInAdanosTempel = TRUE;
@@ -281,82 +282,82 @@ func void Use_BookstandMaya()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_110 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_110 = TRUE ;
 		};
 	}
 	else if(BookstandMayaArt == 3)
 	{
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Возраст Куарходрона сделал для него невозможным вести войска. И тогда ЖРЕЦЫ настояли на своем праве отдавать ему приказы.");
+		Doc_PrintLines(StPl_nDocID, 0 , " Quarchodron's age made it impossible for him to lead troops. And then the PRIESTS insisted on their right to give him orders. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Они указали ему, оставить свой пост и передать меч своему преемнику.");
+		Doc_PrintLines(StPl_nDocID, 0 , " They told him to leave his post and hand over the sword to his successor. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Совет Пяти должен был определить его преемника. Но каста ВОИНОВ отказала Совету в его выборе.");
+		Doc_PrintLines(StPl_nDocID, 0 , " The Council of Five should have chosen his successor. But the Warrior caste denied the Council his choice. " );
 		Doc_SetMargins(StPl_nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Воины не хотели больше подчиняться Совету и выбрали его сына РАДЕМЕСА предводителем.");
+		Doc_PrintLines(StPl_nDocID, 1 , " The warriors no longer wanted to obey the Council and chose his son RADEMES as leader. " );
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Гордость и вера Куарходрона в свою плоть и кровь убедили его подчиниться.");
+		Doc_PrintLines(StPl_nDocID, 1 , " Quarhodron's pride and faith in his own flesh and blood convinced him to submit. " );
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Он передал меч своему сыну в надежде, что тот будет его вести такой же сильной рукой, как и он когда-то.");
+		Doc_PrintLines(StPl_nDocID, 1 , " He gave the sword to his son in the hope that he would lead him with the same strong hand as he once did. " );
 
 		if((BookBonus_111 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_111 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_111 = TRUE ;
 		};
 	}
 	else if(BookstandMayaArt == 4)
 	{
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"РАДЕМЕС был слаб. Воля меча покорила его и сделала его своим инструментом.");
+		Doc_PrintLines(StPl_nDocID, 0 , " RADEMES was weak. The will of the sword conquered him and made him his tool. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Горе и страдания, которые он в своем ослеплении нанес народу, не смогли бы вылечить даже целители.");
+		Doc_PrintLines(StPl_nDocID, 0 , " The grief and suffering that he inflicted on the people in his blindness could not be cured even by healers. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Меч быстро разобрался, что народ слишком слаб, чтобы пресечь его планы.");
+		Doc_PrintLines(StPl_nDocID, 0 , " The sword quickly figured out that the people were too weak to stop his plans. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Только власть наших предков могла быть для него опасной.");
+		Doc_PrintLines(StPl_nDocID, 0 , " Only the power of our ancestors could be dangerous for him. " );
 		Doc_PrintLine(StPl_nDocID,0,"");
 		Doc_SetMargins(StPl_nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"И он приказал РАДЕМЕСУ изгнать или уничтожить всех Хранителей Духов, и так погибла надежда на наше избавление от этой напасти.");
+		Doc_PrintLines(StPl_nDocID, 1 , " And he ordered RADEMES to drive out or destroy all Spirit Keepers, and so the hope of our deliverance from this scourge perished. " );
 		Doc_PrintLine(StPl_nDocID,1,"");
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"И так не осталось ни единого Хранителя Духов к тому моменту, как четыре лишенных власти предводителя нашего народа пришли к горькому решению сдать ЯРКЕНДАР.");
+		Doc_PrintLines(StPl_nDocID, 1 , " And so there was not a single Guardian of Spirits left by the time the four disempowered leaders of our people came to the bitter decision to surrender JARKENDAR. " );
 		Doc_PrintLine(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Война гремела на улицах, и целители собрались в путь, чтобы навсегда закрыть доступ в нашу долину.");
+		Doc_PrintLines(StPl_nDocID, 1 , " War raged in the streets, and healers were on their way to permanently close access to our valley. " );
 
 		if((BookBonus_112 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_112 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_112 = TRUE ;
 		};
 	}
 	else if(BookstandMayaArt == 5)
 	{
 		Doc_PrintLines(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"КУАРХОДРОН, верховный жрец ХАРДИМОН и Я собрались в этих стенах на совет, как победить РАДЕМЕСА и меч.");
+		Doc_PrintLines(StPl_nDocID, 0 , " QUARHODRON, High Priest HARDIMON and I have gathered within these walls for advice on how to defeat RADEMES and the sword. " );
 		Doc_PrintLines(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"КУАРХОДРОН и ХАРДИМОН хотели победить РАДЕМЕСА объединенными силами в открытом бою. Но я слишком хорошо знал силу меча, чтобы в это поверить.");
+		Doc_PrintLines(StPl_nDocID, 0 , " QUARHODRON and HARDIMON wanted to defeat RADEMES with their combined forces in open combat. But I knew the power of the sword too well to believe it. " );
 		Doc_PrintLines(StPl_nDocID,0,"");
-		Doc_PrintLines(StPl_nDocID,0,"Поэтому я воспользовался моим правом, наложить вето на их решение. Вместо этого я решил побороть РАДЕМЕСа коварством.");
+		Doc_PrintLines(StPl_nDocID, 0 , " So I exercised my right to veto their decision. Instead, I decided to defeat RADEMES with cunning. " );
 		Doc_SetMargins(StPl_nDocID,-1,30,20,275,20,1);
 		Doc_PrintLines(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"КУАРХОДРОН последовал решению совета. Он отправился в храм Аданоса и послал за своим сыном.");
+		Doc_PrintLines(StPl_nDocID, 1 , " QUARHODRON followed the decision of the council. He went to the Temple of Adanos and sent for his son. " );
 		Doc_PrintLines(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Ненависть его сына приняла такие размеры, что РАДЕМЕС диким штурмом взял храм, чтобы разобраться с отцом.");
+		Doc_PrintLines(StPl_nDocID, 1 , " His son's hatred grew to such an extent that RADEMES took the temple wildly to deal with his father. " );
 		Doc_PrintLines(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"Он понял наши планы только тогда, когда было слишком поздно.");
+		Doc_PrintLines(StPl_nDocID, 1 , " He only realized our plans when it was too late. " );
 		Doc_PrintLines(StPl_nDocID,1,"");
-		Doc_PrintLines(StPl_nDocID,1,"КУАРХОДРОН закрыл святые камеры храма за собой и РАДЕМЕС был заключен навсегда.");
+		Doc_PrintLines(StPl_nDocID, 1 , " QUARHODRON closed the holy chambers of the temple behind him and RADEMES was imprisoned forever. " );
 		Doc_PrintLines(StPl_nDocID,1,"");
 		Doc_PrintLines(StPl_nDocID,1,"");
 
@@ -364,8 +365,8 @@ func void Use_BookstandMaya()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_113 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_113 = TRUE ;
 		};
 	};
 };
@@ -418,13 +419,13 @@ func void Use_BookstandMayaHierchary_01_S1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 
 		if(rnd <= 30)
 		{
@@ -456,13 +457,13 @@ func void Use_BookstandMayaHierchary_02_S1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -493,13 +494,13 @@ func void Use_BookstandMayaHierchary_03_S1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -530,13 +531,13 @@ func void Use_BookstandMayaHierchary_04_S1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -567,13 +568,13 @@ func void Use_BookstandMayaHierchary_05_S1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -620,13 +621,13 @@ func void Use_BookstandAshtar_01_S1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Риторика + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rhetoric + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 
 				if(rnd <= 30)
 				{
@@ -645,7 +646,7 @@ func void Use_BookstandAshtar_01_S1()
 			{
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-				AI_Print("Интеллект + 1");
+				AI_Print( " Intelligence + 1 " );
 				AshtarBookBonus_01 = TRUE;
 			};
 
@@ -658,14 +659,14 @@ func void Use_BookstandAshtar_01_S1()
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"...и сказал, Аданос - живите и плодитесь, дети мои! Все блага этого мира дарую я вам, а с ними божественную силу моей стихии.");
+			Doc_PrintLines(nDocID, 0 , " ...and said, Adanos - live and be fruitful, my children! I will give you all the blessings of this world, and with them the divine power of my element. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"...и открылась тайна магии Аданоса человеку, дабы он мог управлять ей и стоять на страже равновесия в этом мире.");
+			Doc_PrintLines(nDocID, 1 , " ...and the secret of the magic of Adanos was revealed to man, so that he could control it and guard the balance in this world. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
@@ -704,13 +705,13 @@ func void Use_BookstandAshtar_02_S1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Риторика + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rhetoric + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 
 				if(rnd <= 30)
 				{
@@ -729,7 +730,7 @@ func void Use_BookstandAshtar_02_S1()
 			{
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-				AI_Print("Интеллект + 1");
+				AI_Print( " Intelligence + 1 " );
 				AshtarBookBonus_02 = TRUE;
 			};
 
@@ -742,14 +743,14 @@ func void Use_BookstandAshtar_02_S1()
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"...и был тот, кто выделялся силой своей и отвагой, среди прочих. И сделал его Аданос своим изранником, дабы тот мог разить врагов его.");
+			Doc_PrintLines(nDocID, 0 , " ...and there was one who stood out for his strength and courage, among others. And Adanos made him his wounder, so that he could strike his enemies. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"...и стал он великим воином и прославляли его многие века по деяниям его во славу Аданоса.");
+			Doc_PrintLines(nDocID, 1 , " ...and he became a great warrior and glorified him for many centuries according to his deeds for the glory of Adanos. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
@@ -788,13 +789,13 @@ func void Use_BookstandAshtar_03_S1()
 
 				if(RhetorikSkillValue[1] < 100)
 				{
-					RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-					AI_Print("Риторика + 1");
+					RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+					AI_Print( " Rhetoric + 1 " );
 				};
 			}
 			else
 			{
-				rnd = Hlp_Random(100);
+				rnd = Hlp_Random( 100 );
 
 				if(rnd <= 30)
 				{
@@ -813,7 +814,7 @@ func void Use_BookstandAshtar_03_S1()
 			{
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-				AI_Print("Интеллект + 1");
+				AI_Print( " Intelligence + 1 " );
 				AshtarBookBonus_03 = TRUE;
 			};
 
@@ -826,14 +827,14 @@ func void Use_BookstandAshtar_03_S1()
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"...и был он тени схож и никто не мог найти его, если тот сам бы этого не захотел. И появлялся только тогда, когда сам Аданос воззывал к нему.");
+			Doc_PrintLines(nDocID, 0 , " ...and he was like a shadow and no one could find him if he didn't want to. And he appeared only when Adanos himself called to him. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"...и подносил он дары на алтарь Аданоса, добытые на охоте, дабы не оскудела паства. Аданос принимал дары и одаривал дарующего своей благодатью.");
+			Doc_PrintLines(nDocID, 1 , " ...and he brought gifts to the altar of Adanos, obtained during the hunt, so that the flock would not become impoverished. Adanos accepted gifts and bestowed his grace on the giver. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
@@ -848,7 +849,7 @@ func int CHELDRAKBOOK_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void Use_BookstandChelDrak_01_S1()
@@ -878,7 +879,7 @@ func void Use_BookstandChelDrak_01_S1()
 			{
 				if(StartLvStoryFR == FALSE)
 				{
-					B_LogEntry_Quiet(TOPIC_Miss_Brother,"В древних аналоях, окружавшие вход в храм, я обнаружил странные записи. Возможно они как-то помогут мне понять правильную последовательность.");
+					B_LogEntry_Quiet(TOPIC_Miss_Brother, " In the ancient lecterns surrounding the entrance to the temple, I found strange entries. Perhaps they will somehow help me understand the correct sequence. " );
 					StartLvStoryFR = TRUE;
 				};
 
@@ -893,13 +894,13 @@ func void Use_BookstandChelDrak_01_S1()
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Зайти в сей храм достойный сможет, ему подсказкой стих здесЬ сложен, бежать не нужно, не спеши, ищи намеки для души.");
+			Doc_PrintLines(nDocID, 0 , "The worthy can enter this temple, the verse here is difficult for him to prompt, there is no need to run, do not rush, look for hints for the soul. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Лишь так поймешь лишь так постигнешь, единый спрятанный проход, когда мою решишь загадку, сокровище найдешь - вперед.");
+			Doc_PrintLines(nDocID, 1 , " Only in this way you will understand only in this way you will comprehend, a single hidden passage, when you solve my riddle, you will find a treasure - go ahead. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
@@ -934,12 +935,12 @@ func void Use_BookstandChelDrak_02_S1()
 			{
 				if(StartLvStoryFR == FALSE)
 				{
-					B_LogEntry_Quiet(TOPIC_Miss_Brother,"В древних аналоях, окружавшие вход в храм, я обнаружил странные записи. Возможно они как-то помогут мне понять правильную последовательность.");
+					B_LogEntry_Quiet(TOPIC_Miss_Brother, " In the ancient lecterns surrounding the entrance to the temple, I found strange entries. Perhaps they will somehow help me understand the correct sequence. " );
 					StartLvStoryFR = TRUE;
 				};
 
-				B_LogEntry(TOPIC_Miss_Brother,"Первая надпись гласит - ...'Между светом и теплом, между местью и добром, третий брат водою правит, всяк его за это славит.'...");
-				B_LogEntry_Quiet(TOPIC_Miss_Brother,"Вторая надпись гласит - ...'Белой стужи здесь граница, свет поставил ей черту, путь пройдут, не морща лица, те, в ком жизни на версту.'...");
+				B_LogEntry(TOPIC_Miss_Brother, " The first inscription reads - ...'Between light and warmth, between revenge and good, the third brother rules the water, everyone praises him for it.'... " );
+				B_LogEntry_Quiet(TOPIC_Miss_Brother, " The second inscription reads - ...'White cold is the border here, the light has put a line on it, the path will pass without wrinkling their faces, those in whom life is a mile away.'... " );
 				LV_Story_02 = TRUE;
 			};
 
@@ -951,13 +952,13 @@ func void Use_BookstandChelDrak_02_S1()
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Между светом и теплом, между местью и добром, третий брат водою правит, всяк его за это славит.");
+			Doc_PrintLines(nDocID, 0 , " Between light and warmth, between revenge and goodness, the third brother rules the water, everyone praises him for it. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Белой стужи здесь граница, свет поставил ей черту, путь пройдут, не морща лица, те, в ком жизни на версту.");
+			Doc_PrintLines(nDocID, 1 , " White cold is the border here, the light put a line on it, the path will pass without wrinkling their faces, those in whom life is a mile away. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
@@ -992,12 +993,12 @@ func void Use_BookstandChelDrak_03_S1()
 			{
 				if(StartLvStoryFR == FALSE)
 				{
-					B_LogEntry_Quiet(TOPIC_Miss_Brother,"В древних аналоях, окружавшие вход в храм, я обнаружил странные записи. Возможно они как-то помогут мне понять правильную последовательность.");
+					B_LogEntry_Quiet(TOPIC_Miss_Brother, " In the ancient lecterns surrounding the entrance to the temple, I found strange entries. Perhaps they will somehow help me understand the correct sequence. " );
 					StartLvStoryFR = TRUE;
 				};
 
-				B_LogEntry(TOPIC_Miss_Brother,"Третья надпись гласит - ...'Между жаром и полночью, третий путь запрятан прочно, чтоб через него пройти, разыщи ключи в ночи.'...");
-				B_LogEntry_Quiet(TOPIC_Miss_Brother,"Четвертая надпись гласит - ...'Где солнце в небо рвется, нет места страшной тени, иди смелей, не бойся, там преклонить колени.'...");
+				B_LogEntry(TOPIC_Miss_Brother, " The third inscription reads - ...'Between the heat and midnight, the third path is hidden firmly, to pass through, look for the keys in the night.'... " );
+				B_LogEntry_Quiet(TOPIC_Miss_Brother, " The fourth inscription reads - ...'Where the sun breaks into the sky, there is no place for a terrible shadow, go bold, do not be afraid, kneel there.'... " );
 				LV_Story_03 = TRUE;
 			};
 
@@ -1009,13 +1010,13 @@ func void Use_BookstandChelDrak_03_S1()
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Между жаром и полночью, третий путь запрятан прочно, чтоб через него пройти, разыщи ключи в ночи.");
+			Doc_PrintLines(nDocID, 0 , " Between the heat and midnight, the third path is firmly hidden to pass through, find the keys in the night. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Где солнце в небо рвется, нет места страшной тени, иди смелей, не бойся, там преклонить колени.");
+			Doc_PrintLines(nDocID, 1 , " Where the sun breaks into the sky, there is no place for a terrible shadow, go bold, do not be afraid, kneel there. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
@@ -1050,12 +1051,12 @@ func void Use_BookstandChelDrak_04_S1()
 			{
 				if(StartLvStoryFR == FALSE)
 				{
-					B_LogEntry_Quiet(TOPIC_Miss_Brother,"В древних аналоях, окружавшие вход в храм, я обнаружил странные записи. Возможно они как-то помогут мне понять правильную последовательность.");
+					B_LogEntry_Quiet(TOPIC_Miss_Brother, " In the ancient lecterns surrounding the entrance to the temple, I found strange entries. Perhaps they will somehow help me understand the correct sequence. " );
 					StartLvStoryFR = TRUE;
 				};
 
-				B_LogEntry(TOPIC_Miss_Brother,"Пятая надпись гласит - ...'Где снег укрыл поля и горы, где все белым-бело у моря, где хлад сковал сердца людей, веками бьет скалу злодей.'...");
-				B_LogEntry_Quiet(TOPIC_Miss_Brother,"Шестая надпись гласит - ...'Сей день уходит на покой, но он, не ты - вперед, герой, где солнце прячется в ночи, ищи, ищи, ищи ключи.'...");
+				B_LogEntry(TOPIC_Miss_Brother, " The fifth inscription reads - ...'Where the snow covered the fields and mountains, where everything is white-white by the sea, where the cold has bound the hearts of people, the villain has been beating the rock for centuries.'... " );
+				B_LogEntry_Quiet(TOPIC_Miss_Brother, " The sixth inscription reads - ...'This day is going to rest, but he, not you - go ahead, hero, where the sun hides in the night, search, search, search for the keys.'... " );
 				LV_Story_04 = TRUE;
 			};
 
@@ -1067,13 +1068,13 @@ func void Use_BookstandChelDrak_04_S1()
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Где снег укрыл поля и горы, где все белым-бело у моря, где хлад сковал сердца людей, веками бьет скалу злодей.");
+			Doc_PrintLines(nDocID, 0 , " Where the snow covered the fields and mountains, where everything is white-white by the sea, where the cold has bound the hearts of people, the villain has been beating the rock for centuries. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Сей день уходит на покой, но он, не ты - вперед, герой, где солнце прячется в ночи, ищи, ищи, ищи ключи.");
+			Doc_PrintLines(nDocID, 1 , " This day is going to rest, but he, not you - go ahead, hero, where the sun hides in the night, look, look, look for the keys. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
@@ -1108,12 +1109,12 @@ func void Use_BookstandChelDrak_05_S1()
 			{
 				if(StartLvStoryFR == FALSE)
 				{
-					B_LogEntry_Quiet(TOPIC_Miss_Brother,"В древних аналоях, окружавшие вход в храм, я обнаружил странные записи. Возможно они как-то помогут мне понять правильную последовательность.");
+					B_LogEntry_Quiet(TOPIC_Miss_Brother, " In the ancient lecterns surrounding the entrance to the temple, I found strange entries. Perhaps they will somehow help me understand the correct sequence. " );
 					StartLvStoryFR = TRUE;
 				};
 
-				B_LogEntry(TOPIC_Miss_Brother,"Седьмая надпись гласит - ...'Тьма стремится в холода, черный снег летит над миром, восстают нежизни силы, но тебе идти туда.'...");
-				B_LogEntry_Quiet(TOPIC_Miss_Brother,"Возьмая надпись гласит - ...'Где жар пылает, будь готов, сразиться с огненным врагом, воды запас неси с собой, и стойким к жару стань, герой.'...");
+				B_LogEntry(TOPIC_Miss_Brother, " The seventh inscription reads - ...'Darkness seeks in the cold, black snow flies over the world, unlife forces rise, but you go there.'... " );
+				B_LogEntry_Quiet(TOPIC_Miss_Brother, " Taking the inscription reads - ...'Where the heat burns, be ready to fight the fiery enemy, carry a supply of water with you, and become resistant to the heat, hero.'... " );
 				LV_Story_05 = TRUE;
 			};
 
@@ -1125,13 +1126,13 @@ func void Use_BookstandChelDrak_05_S1()
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Тьма стремится в холода, черный снег летит над миром, восстают нежизни силы, но тебе идти туда.");
+			Doc_PrintLines(nDocID, 0 , " Darkness seeks in the cold, black snow flies over the world, unlife forces rise, but you go there. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Где жар пылает, будь готов, сразиться с огненным врагом, воды запас неси с собой, и стойким к жару стань, герой.");
+			Doc_PrintLines(nDocID, 1 , " Where the heat burns, be ready to fight the fiery enemy, carry a supply of water with you, and become resistant to heat, hero. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
@@ -1166,7 +1167,7 @@ func void Use_BookstandChelDrak_06_S1()
 			{
 				if(StartLvStoryFR == FALSE)
 				{
-					B_LogEntry_Quiet(TOPIC_Miss_Brother,"В древних аналоях, окружавшие вход в храм, я обнаружил странные записи. Возможно они как-то помогут мне понять правильную последовательность.");
+					B_LogEntry_Quiet(TOPIC_Miss_Brother, " In the ancient lecterns surrounding the entrance to the temple, I found strange entries. Perhaps they will somehow help me understand the correct sequence. " );
 					StartLvStoryFR = TRUE;
 				};
 
@@ -1181,13 +1182,13 @@ func void Use_BookstandChelDrak_06_S1()
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"И пусть не найден был ответ, тот путь тут тебе укажет свет. Свет смерти, ныне – мертвый свет, а с ним и жреческий завет.");
+			Doc_PrintLines(nDocID, 0 , " And even though the answer was not found, the light will show you the way here. The light of death, now is the dead light, and with it the priestly covenant. " );
 			Doc_PrintLine(nDocID,0,"");
 			Doc_PrintLine(nDocID,0,"");
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Взгляни сюда, узнай ответ. Таков тебе мой друг совет. И дверь откроет в этот раз, язык, что был когда-то наш.");
+			Doc_PrintLines(nDocID, 1 , " Look here, find out the answer. This is my friend's advice. And the door will open this time, the language that was once ours. " );
 			Doc_PrintLine(nDocID,1,"");
 			Doc_PrintLine(nDocID,1,"");
 			Doc_Show(nDocID);
