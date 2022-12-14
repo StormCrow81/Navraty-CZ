@@ -1,4 +1,5 @@
 
+
 func void b_removeorc()
 {
 	B_RemoveNpc(orc_8563_urgrom);
@@ -141,17 +142,17 @@ func int dia_orc_8565_urgrom_azgolor_dead_condition()
 
 func void dia_orc_8565_urgrom_azgolor_dead_info()
 {
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_01");	//Демон мертв!!! Человек убить демон!!!
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_02");	//Чувствовать, чувствовать - проклятье исчезать....дух Ур-Грома снова принадлежать ему...
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_03");	//Ур-Гром больше не призрак. Ур-Гром живой! И братья тоже! Злой демон не будет больше колдовать и убивать братьев...
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_04");	//Теперь эта долина свободна от темных чар зла, как и все вы.
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_05");	//Ур-Гром говорить человек большой спасибо! Ур-Гром уважать человек и считать его другом!
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_06");	//Кажется дружба с орками входит у меня в привычку...(смеюсь)
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_07");	//Ладно, мне пора. Я прередам Ур-Траллу ту новость, что Долина больше не является источником зла.
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_08");	//И естественно, что его брат жив!
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_09");	//Добрый путь человек! Ур-Гром будет всегда помнить великий герой!
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Dead_01_10");	//Ур-Гром идти домой. Человек всегда найти Ур-Гром в лагере.
-	CURSEISEND = TRUE;
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_01 " );	// The demon is dead!!! Man kill demon!!!
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_02 " );	// To feel, to feel is a curse to disappear.... the spirit of Ur-Grom belongs to him again...
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_03 " );	// Ur-Thunder is no longer a ghost. Ur-Grom is alive! And brothers too! The evil demon will no longer cast spells and kill brothers...
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_04 " );	// Now this valley is free from the dark spells of evil, like all of you.
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_05 " );	// Ur-Thunder say man thank you very much! Ur-Grom respect the man and consider him a friend!
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_06 " );	// I seem to be making friends with orcs... (laughs)
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_07 " );	// Okay, I've got to go. I will pass on the news to Ur-Thrall that the Vale is no longer the source of evil.
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_08 " );	// And of course, his brother is alive!
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_09 " );	// Hello man! Ur-Thunder will always remember the great hero!
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Dead_01_10 " );	// Ur-Thunder go home. Man always find Ur-Thunder in the camp.
+	CURSE ISEND = TRUE ;
 	AI_StopProcessInfos(self);
 	b_removeorc();
 	b_placeorc();
@@ -165,7 +166,7 @@ instance DIA_ORC_8565_URGROM_AZGOLOR_HUMAN(C_Info)
 	information = dia_orc_8565_urgrom_azgolor_human_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Еще одно дело...";
+	description = " One more thing... " ;
 };
 
 func int dia_orc_8565_urgrom_azgolor_human_condition()
@@ -178,19 +179,19 @@ func int dia_orc_8565_urgrom_azgolor_human_condition()
 
 func void dia_orc_8565_urgrom_azgolor_human_info()
 {
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_01");	//Еще одно дело, Ур-Гром.
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_02");	//Ур-Гром слушать человек. Что человек хотеть?
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_03");	//Кроме вас, в этой долине остался небольшой лагерь людей - их там совсем немного.
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_04");	//Я бы хотел, взять с тебя слово, Ур-Гром, что орки не будут нападать на них.
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_05");	//Ты можешь мне дать такое обещание?
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_06");	//Человек друг Ур-Грома, человек великий воин - Ур-Гром уважать человек и быть должен ему жизнь!
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_07");	//Ур-Гром может дать такое слово человек, если люди не станут убивать братьев.
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_08");	//Ну до этого навряд ли дойдет. Они, также как и вы, устали от постоянных кровопролитных сражений.
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_09");	//Они хотят просто мирно тут сосуществовать.
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_10");	//Ур-Гром верить человек и дать слово, что братья не будут убивать другие люди.
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_11");	//Отлично Ур-Гром! Я знал, что не ошибся в тебе.
-	AI_Output(other,self,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_12");	//Теперь, все мои дела тут откончены. Еще свидимся может быть!
-	AI_Output(self,other,"DIA_Orc_8565_UrGrom_Azgolor_Human_01_13");	//Ур-Гром говорить человек пока и желать удача.
-	B_LogEntry(TOPIC_HUMANINVALLEY,"Я поговорил с Ур-Громом. Он согласился не убивать людей в Долине Теней! Теперь мне нужно сообщить об этом Эльваису");
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_01 " );	// One more thing, Ur-Thunder.
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_02 " );	// Ur-Thunder listen man. What does a person want?
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_03 " );	// In addition to you, there is a small camp of people left in this valley - there are very few of them.
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_04 " );	// I would like to take your word, Ur-Grom, that the orcs will not attack them.
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_05 " );	// Can you make me such a promise?
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_06 " );	// Man is a friend of Ur-Grom, man is a great warrior - Ur-Grom respect man and owe him life!
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_07 " );	// Ur-Grom can give such a word a man, if people do not begin to kill brothers.
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_08 " );	// Well, it's unlikely to come to that. They, just like you, are tired of constant bloody battles.
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_09 " );	// They just want to coexist peacefully here.
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_10 " );	// Ur-Thunder believe the people and give their word that the brothers will not kill other people.
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_11 " );	// Excellent Ur-Thunder! I knew I wasn't wrong about you.
+	AI_Output(other,self, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_12 " );	// Now, all my business here is done. Maybe we'll meet again!
+	AI_Output(self,other, " DIA_Orc_8565_UrGrom_Azgolor_Human_01_13 " );	// Ur-Thunder talk man goodbye and wish good luck.
+	B_LogEntry( TOPIC_HUMANINVALLEY , " I've spoken to Ur-Grom. He's agreed not to kill humans in the Valley of Shadows! Now I need to report this to Elvais " );
 	SAVEHUMAN = TRUE;
 };
