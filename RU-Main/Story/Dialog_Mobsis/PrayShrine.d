@@ -1,4 +1,5 @@
 
+
 var int prayday_ch1;
 var int prayday_ch2;
 var int prayday_ch3;
@@ -19,7 +20,7 @@ var int ShrineIsObsessed_NW_TROLLAREA_PATH_37;
 var int ShrineIsObsessed_NW_FARM1_CONNECT_XARDAS;
 var int ShrineIsObsessed_NW_TROLLAREA_PATH_66;
 var int ShrineIsObsessed_NW_TROLLAREA_PATH_04;
-var int ShrineIsObsessed_SAGITTA;
+var int ShrineIsObsessed_arrow;
 var int ShrineIsObsessed_NW_BIGMILL_MALAKSVERSTECK_02;
 var int ShrineIsObsessed_NW_FARM3_BIGWOOD_02;
 var int change_lev;
@@ -61,11 +62,11 @@ func void C_IsShrineObsessed(var C_Npc slf)
 				ShrineIsObsessed = FALSE;
 			};
 		}
-		else if((Npc_GetDistToWP(hero,"SAGITTA") < 2000) && (ShrineIsObsessed_SAGITTA == TRUE))
+		else  if ((Npc_GetDistToWP(hero, " ARROW " ) <  2000 ) && (ShrineIsObsessed_ARROW ==  TRUE ))
 		{
 			if(SHRINEHEALING == TRUE)
 			{
-				ShrineIsObsessed_SAGITTA = FALSE;
+				ShrineIsObsessed_SAGITTA = FALSE ;
 				ShrineIsObsessed = FALSE;
 			};
 		}
@@ -100,7 +101,7 @@ instance PC_PrayShrine_HEALSHRINE(C_Info)
 	condition = PC_PrayShrine_HEALSHRINE_Condition;
 	information = PC_PrayShrine_HEALSHRINE_Info;
 	permanent = TRUE;
-	description = "Освятить статую Инноса";
+	description = " Consecrate the statue of Innos " ;
 };
 
 
@@ -158,7 +159,7 @@ func void PrayShrine_S1()
 			//Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 		};
 		B_Say(self,self,"$HELLO_INNOS");
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_PrayShrine;
 		AI_ProcessInfos(her);
 	};
@@ -194,7 +195,7 @@ instance PC_PrayShrine_Paladine(C_Info)
 	condition = PC_PrayShrine_Paladine_Condition;
 	information = PC_PrayShrine_Paladine_Info;
 	permanent = FALSE;
-	description = "Помолиться за паладинов";
+	description = " Pray for paladins " ;
 };
 
 
@@ -223,7 +224,7 @@ instance PC_PrayShrine_Pray(C_Info)
 	condition = PC_PrayShrine_Pray_Condition;
 	information = PC_PrayShrine_Pray_Info;
 	permanent = TRUE;
-	description = "Молиться";
+	description = " Pray " ;
 };
 
 func int PC_PrayShrine_Pray_Condition()
@@ -288,7 +289,7 @@ instance PC_PrayShrine_Sacred(C_Info)
 	condition = PC_PrayShrine_Sacred_Condition;
 	information = PC_PrayShrine_Sacred_Info;
 	permanent = TRUE;
-	description = "Пожертвовать золото";
+	description = " Donate gold " ;
 };
 
 func int PC_PrayShrine_Sacred_Condition()
@@ -308,41 +309,41 @@ func void PC_PrayShrine_Sacred_Info()
 	{
 		if(Npc_HasItems(hero,ItMi_Gold) >= 100)
 		{
-			Info_AddChoice(PC_PrayShrine_Sacred,"...100 золотых монет (+ 2 к карме Инноса)",PC_PrayShrine_Sacred_SmallPay);
+			Info_AddChoice(PC_PrayShrine_Sacred, " ...100 gold coins (+ 2 to Innos' karma) " ,PC_PrayShrine_Sacred_SmallPay);
 		};
 		if(Npc_HasItems(hero,ItMi_Gold) >= 500)
 		{
-			Info_AddChoice(PC_PrayShrine_Sacred,"...500 золотых монет (+ 10 к карме Инноса)",PC_PrayShrine_Sacred_MediumPay);
+			Info_AddChoice(PC_PrayShrine_Sacred, " ...500 gold coins (+10 to Innos' karma) " ,PC_PrayShrine_Sacred_MediumPay);
 		};
 		if(Npc_HasItems(hero,ItMi_Gold) >= 1000)
 		{
-			Info_AddChoice(PC_PrayShrine_Sacred,"...1000 золотых монет (+ 20 к карме Инноса)",PC_PrayShrine_Sacred_BigPay);
+			Info_AddChoice(PC_PrayShrine_Sacred, " ...1000 gold coins (+20 to Innos' karma) " ,PC_PrayShrine_Sacred_BigPay);
 		};
 	}
-	else if(hero.guild == GIL_KDM)
+	else  if (hero.guild ==  GIL_KDM )
 	{	
 		if(Npc_HasItems(hero,ItMi_Gold) >= 500)
 		{
-			Info_AddChoice(PC_PrayShrine_Sacred,"...500 золотых монет (+ 1 к карме Инноса)",PC_PrayShrine_Sacred_MediumPay);
+			Info_AddChoice(PC_PrayShrine_Sacred, " ...500 gold coins (+ 1 to Innos' karma) " ,PC_PrayShrine_Sacred_MediumPay);
 		};
 		if(Npc_HasItems(hero,ItMi_Gold) >= 1000)
 		{
-			Info_AddChoice(PC_PrayShrine_Sacred,"...1000 золотых монет (+ 5 к карме Инноса, - 5 к карме Белиара)",PC_PrayShrine_Sacred_BigPay);
+			Info_AddChoice(PC_PrayShrine_Sacred, " ...1000 gold coins (+ 5 to Innos' karma, - 5 to Beliar's karma) " ,PC_PrayShrine_Sacred_BigPay);
 		};
 	}
 	else
 	{
 		if(Npc_HasItems(hero,ItMi_Gold) >= 100)
 		{
-			Info_AddChoice(PC_PrayShrine_Sacred,"...100 золотых монет (+ 1 к карме Инноса)",PC_PrayShrine_Sacred_SmallPay);
+			Info_AddChoice(PC_PrayShrine_Sacred, " ...100 gold coins (+ 1 to Innos' karma) " ,PC_PrayShrine_Sacred_SmallPay);
 		};
 		if(Npc_HasItems(hero,ItMi_Gold) >= 500)
 		{
-			Info_AddChoice(PC_PrayShrine_Sacred,"...500 золотых монет (+ 5 к карме Инноса)",PC_PrayShrine_Sacred_MediumPay);
+			Info_AddChoice(PC_PrayShrine_Sacred, " ...500 gold coins (+5 to Innos' karma) " ,PC_PrayShrine_Sacred_MediumPay);
 		};
 		if(Npc_HasItems(hero,ItMi_Gold) >= 1000)
 		{
-			Info_AddChoice(PC_PrayShrine_Sacred,"...1000 золотых монет (+ 10 к карме Инноса)",PC_PrayShrine_Sacred_BigPay);
+			Info_AddChoice(PC_PrayShrine_Sacred, " ...1000 gold coins (+10 to Innos' karma) " ,PC_PrayShrine_Sacred_BigPay);
 		};
 	};
 };
@@ -450,12 +451,12 @@ instance PC_PrayShrine_RaiseAttribute(C_Info)
 	condition = PC_PrayShrine_RaiseAttribute_Condition;
 	information = PC_PrayShrine_RaiseAttribute_Info;
 	permanent = TRUE;
-	description = "Дары Инноса";
+	description = " Dary Innosa " ;
 };
 
 func int PC_PrayShrine_RaiseAttribute_Condition()
 {
-	var int IsKarma;
+	be int IsKarma;
 
 	IsKarma = INNOSPRAYCOUNT - INNOSCRIMECOUNT;
 
@@ -482,20 +483,20 @@ func void PC_PrayShrine_RaiseAttribute_Info()
 	{
 		Info_ClearChoices(PC_PrayShrine_RaiseAttribute);
 		Info_AddChoice(PC_PrayShrine_RaiseAttribute,Dialog_Back,PC_PrayShrine_RaiseAttribute_Back);
-		Info_AddChoice(PC_PrayShrine_RaiseAttribute,"Даруй мне силу (Сила: + 10, Требуется кармы: 100)",PC_PrayShrine_RaiseAttribute_STR);
-		Info_AddChoice(PC_PrayShrine_RaiseAttribute,"Даруй мне ловкость (Ловкость: + 5, Требуется кармы: 100)",PC_PrayShrine_RaiseAttribute_DEX);
-		Info_AddChoice(PC_PrayShrine_RaiseAttribute,"Даруй мне магическую силу (Мана: + 20, Требуется кармы: 100)",PC_PrayShrine_RaiseAttribute_MANA);
-		Info_AddChoice(PC_PrayShrine_RaiseAttribute,"Даруй мне жизненную силу (Здоровье: + 30, Требуется кармы: 100)",PC_PrayShrine_RaiseAttribute_HP);
-		Info_AddChoice(PC_PrayShrine_RaiseAttribute,"Даруй мне мудрость (Интеллект: + 5, Требуется кармы: 50)",PC_PrayShrine_RaiseAttribute_INT);
+		Info_AddChoice(PC_PrayShrine_RaiseAttribute, " Grant me strength (Strength: +10, Karma Required: 100) " ,PC_PrayShrine_RaiseAttribute_STR);
+		Info_AddChoice(PC_PrayShrine_RaiseAttribute, " Grant Me Agility (Agility: +5, Requires Karma: 100) " ,PC_PrayShrine_RaiseAttribute_DEX);
+		Info_AddChoice(PC_PrayShrine_RaiseAttribute, " Grant me magical power (Mana: +20, Requires Karma: 100) " ,PC_PrayShrine_RaiseAttribute_MANA);
+		Info_AddChoice(PC_PrayShrine_RaiseAttribute, " Grant me life force (Health: +30, Requires Karma: 100) " ,PC_PrayShrine_RaiseAttribute_HP);
+		Info_AddChoice(PC_PrayShrine_RaiseAttribute, " Grant Me Wisdom (Int: +5, Requires Karma: 50) " ,PC_PrayShrine_RaiseAttribute_INT);
 
 		if(ATR_STAMINA_MAX[0] <= 90)
 		{
-			Info_AddChoice(PC_PrayShrine_RaiseAttribute,"Даруй мне выносливость (Выносливость: + 10, Требуется кармы: 50)",PC_PrayShrine_RaiseAttribute_STM);
+			Info_AddChoice(PC_PrayShrine_RaiseAttribute, " Grant Me Stamina (Stamina: +10, Karma Required: 50) " ,PC_PrayShrine_RaiseAttribute_STM);
 		};
 	}
 	else
 	{
-		AI_PrintClr("Вы пока не готовы к этому...",177,58,17);
+		AI_PrintClr( " You're not ready for this yet... " , 177 , 58 , 17 );
 		B_Say(self,self,"$DONTREADYFORTHIS");
 	};
 };
@@ -513,7 +514,7 @@ func void PC_PrayShrine_RaiseAttribute_STR()
 		Wld_PlayEffect("spellFX_Innoseye",hero,hero,0,0,0,FALSE);
 		INNOSPRAYCOUNT = INNOSPRAYCOUNT - 100;
 		B_BlessAttribute(hero,ATR_STRENGTH,10);
-		MaxUpGod += 1;
+		MaxUpGod +=  1 ;
 	}
 	else
 	{
@@ -531,7 +532,7 @@ func void PC_PrayShrine_RaiseAttribute_DEX()
 		Wld_PlayEffect("spellFX_Innoseye",hero,hero,0,0,0,FALSE);
 		INNOSPRAYCOUNT = INNOSPRAYCOUNT - 100;
 		B_BlessAttribute(hero,ATR_DEXTERITY,5);
-		MaxUpGod += 1;
+		MaxUpGod +=  1 ;
 	}
 	else
 	{
@@ -549,7 +550,7 @@ func void PC_PrayShrine_RaiseAttribute_MANA()
 		Wld_PlayEffect("spellFX_Innoseye",hero,hero,0,0,0,FALSE);
 		INNOSPRAYCOUNT = INNOSPRAYCOUNT - 100;
 		B_BlessAttribute(hero,ATR_MANA_MAX,20);
-		MaxUpGod += 1;
+		MaxUpGod +=  1 ;
 	}
 	else
 	{
@@ -567,7 +568,7 @@ func void PC_PrayShrine_RaiseAttribute_HP()
 		Wld_PlayEffect("spellFX_Innoseye",hero,hero,0,0,0,FALSE);
 		INNOSPRAYCOUNT = INNOSPRAYCOUNT - 100;
 		B_BlessAttribute(hero,ATR_HITPOINTS_MAX,30);
-		MaxUpGod += 1;
+		MaxUpGod +=  1 ;
 	}
 	else
 	{
@@ -586,8 +587,8 @@ func void PC_PrayShrine_RaiseAttribute_INT()
 		INNOSPRAYCOUNT = INNOSPRAYCOUNT - 50;
 		ATR_INTELLECT += 5;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 5");
-		MaxUpGod += 1;
+		AI_Print( " Intelligence + 5 " );
+		MaxUpGod +=  1 ;
 	}
 	else
 	{
@@ -617,8 +618,8 @@ func void PC_PrayShrine_RaiseAttribute_STM()
 		};
 
 		Npc_SetTalentSkill(hero,NPC_TALENT_STAMINA,ATR_STAMINA_MAX[0]);
-		AI_Print("Выносливость + 10");
-		MaxUpGod += 1;
+		AI_Print( " Endurance + 10 " );
+		MaxUpGod +=  1 ;
 	}
 	else
 	{
@@ -752,7 +753,7 @@ instance PC_PRAYSHRINE_BLESSARMOR(C_Info)
 	condition = pc_prayshrine_blessarmor_condition;
 	information = pc_prayshrine_blessarmor_info;
 	permanent = TRUE;
-	description = "Освятить доспех";
+	description = " Sanctify Armor " ;
 };
 
 func int pc_prayshrine_blessarmor_condition()
@@ -772,7 +773,7 @@ func void pc_prayshrine_blessarmor_info()
 	{
 		if(Npc_GetInvItem(other,itar_pal_m_v2))
 		{
-			AI_Print("У вас уже есть освященные рудные доспехи рыцаря!");
+			AI_Print( " You already have a consecrated knight's ore armor! " );
 		}
 		else
 		{
@@ -782,7 +783,7 @@ func void pc_prayshrine_blessarmor_info()
 			{
 				MIS_GOLDUPGRADE_PAL_M = 1000;
 			};
-			MIS_GOLDUPGRADE_PAL_M_TEXT = ConcatStrings("Освятить рудные доспехи рыцаря (Цена: ",IntToString(MIS_GOLDUPGRADE_PAL_M));
+			MIS_GOLDUPGRADE_PAL_M_TEXT = ConcatStrings( " Consecrate Knight's Ore Armor (Cost: " ,IntToString( MIS_GOLDUPGRADE_PAL_M ));
 			MIS_GOLDUPGRADE_PAL_M_TEXT = ConcatStrings(MIS_GOLDUPGRADE_PAL_M_TEXT," монет)");
 			Info_AddChoice(pc_prayshrine_blessarmor,MIS_GOLDUPGRADE_PAL_M_TEXT,pc_prayshrine_blessarmor_pal_m);
 		};
@@ -791,7 +792,7 @@ func void pc_prayshrine_blessarmor_info()
 	{
 		if(Npc_GetInvItem(other,itar_pal_h_v2))
 		{
-			AI_Print("У вас уже есть освященные рудные доспехи паладина!");
+			AI_Print( " You already have a consecrated ore paladin armor! " );
 		}
 		else
 		{
@@ -800,7 +801,7 @@ func void pc_prayshrine_blessarmor_info()
 			{
 				MIS_GOLDUPGRADE_PAL_H = 2000;
 			};
-			MIS_GOLDUPGRADE_PAL_H_TEXT = ConcatStrings("Освятить доспехи рудные паладина (Цена: ",IntToString(MIS_GOLDUPGRADE_PAL_H));
+			MIS_GOLDUPGRADE_PAL_H_TEXT = ConcatStrings( " Consecrate Paladin Ore Armor (Cost: " ,IntToString( MIS_GOLDUPGRADE_PAL_H ));
 			MIS_GOLDUPGRADE_PAL_H_TEXT = ConcatStrings(MIS_GOLDUPGRADE_PAL_H_TEXT," монет)");
 			Info_AddChoice(pc_prayshrine_blessarmor,MIS_GOLDUPGRADE_PAL_H_TEXT,pc_prayshrine_blessarmor_pal_h);
 		};
@@ -835,12 +836,12 @@ func void pc_prayshrine_blessarmor_pal_m()
 			Npc_RemoveInvItems(hero,ItMi_Gold,MIS_GOLDUPGRADE_PAL_M);
 			CreateInvItems(hero,itar_pal_m_v2,1);
 			AI_Wait(hero,15);
-			//AI_Print(PRINT_BLESSARMOROK);
+			// AI_Print(PRINT_BLESSARMOROK);
 			AI_PrintClr(PRINT_BLESSARMOROK,83,152,48);
 			AI_EquipArmor(hero,itar_pal_m_v2);
 			Npc_RemoveInvItems(hero,itar_pal_m_v15,Npc_HasItems(hero,itar_pal_m_v15));
 			EQUIPBLESSEDARMOR_M2 = TRUE;
-			B_LogEntry(TOPIC_MAGICINNOSARMOR,"Я провел ритуал освящения рудных доспехов рыцаря! Иннос услышал мою молитву и принял мое подношение.");
+			B_LogEntry( TOPIC_MAGICINNOSARMOR , " I performed the ritual of consecrating the knight's ore armor! Innos heard my prayer and accepted my offering. " );
 			Log_SetTopicStatus(TOPIC_MAGICINNOSARMOR,LOG_SUCCESS);
 		}
 		else
@@ -887,7 +888,7 @@ func void pc_prayshrine_blessarmor_pal_h()
 			AI_EquipArmor(hero,itar_pal_h_v2);
 			Npc_RemoveInvItems(hero,itar_pal_h_v15,Npc_HasItems(hero,itar_pal_h_v15));
 			EQUIPBLESSEDARMOR_H2 = TRUE;
-			B_LogEntry(TOPIC_MAGICINNOSARMOR,"Я провел ритуал освящения рудных доспехов паладина! Иннос услышал мою молитву и принял мое подношение.");
+			B_LogEntry( TOPIC_MAGICINNOSARMOR , " I performed the ritual of consecrating the paladin's ore armor! Innos heard my prayer and accepted my offering. " );
 			Log_SetTopicStatus(TOPIC_MAGICINNOSARMOR,LOG_SUCCESS);
 		}
 		else
@@ -914,7 +915,7 @@ instance PC_PRAYSHRINE_PRAYFORGOMEZ(C_Info)
 	condition = pc_prayshrine_prayforgomez_condition;
 	information = pc_prayshrine_prayforgomez_info;
 	permanent = TRUE;
-	description = "Помолиться за душу Гомеза";
+	description = " Pray for Gomez's soul " ;
 };
 
 func int pc_prayshrine_prayforgomez_condition()
@@ -930,53 +931,53 @@ func void pc_prayshrine_prayforgomez_info()
 {
 	var string concatText;
 
- 	if(InnosBonus == FALSE)
+ 	if ( InnosBonus ==  FALSE )
 	{
 		if(INNOSCRIMECOUNT > INNOSPRAYCOUNT)
 		{
 			Snd_Play("SFX_HealObsession");
 			AI_Wait(hero,3);
-			concatText = "Помолись лучше за свою душу, грешник!";
+			concatText = " Pray for your soul, sinner! " ;
 			AI_Print(concatText);
 		}
 		else
 		{
 			RankPoints = RankPoints + 1;
-			concatText = "Иннос дарует прощение душе Гомеза!";
+			concatText = " Innos pardons the soul of Gomez! " ;
 			Snd_Play("SFX_HealObsession");
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",self,self,0,0,0,FALSE);
 			AI_Print(concatText);
 			RESCUEGOMEZPRAYINNOS = TRUE;
-			B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от Инноса.");
+			B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from Innos. " );
 	
 			if((RESCUEGOMEZPRAYINNOS == TRUE) && (RESCUEGOMEZPRAYBELIAR == TRUE) && (RESCUEGOMEZPRAYADANOS == TRUE))
 			{
 				RESCUEGOMEZSTEPONEDONE = TRUE;
 				RESCUEGOMEZSTEPTWO = TRUE;
-				Log_AddEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от всех богов! Теперь необходимо отправляться в Старую Шахту.");
+				Log_AddEntry( TOPIC_RESCUEGOMEZ , " I have received forgiveness for Gomez's soul from all the gods! Now I must go to the Old Mine. " );
 			};
 		};
 	}
 	else
 	{
 		RankPoints = RankPoints + 1;
-		concatText = "Иннос дарует прощение душе Гомеза!";
+		concatText = " Innos pardons the soul of Gomez! " ;
 		Snd_Play("SFX_HealObsession");
 		Wld_PlayEffect("spellFX_INCOVATION_WHITE",self,self,0,0,0,FALSE);
 		AI_Print(concatText);
 		RESCUEGOMEZPRAYINNOS = TRUE;
-		B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от Инноса.");
+		B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from Innos. " );
 	
 		if((RESCUEGOMEZPRAYINNOS == TRUE) && (RESCUEGOMEZPRAYBELIAR == TRUE) && (RESCUEGOMEZPRAYADANOS == TRUE))
 		{
 			RESCUEGOMEZSTEPONEDONE = TRUE;
 			RESCUEGOMEZSTEPTWO = TRUE;
-			Log_AddEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от всех богов! Теперь необходимо отправляться в Старую Шахту.");
+			Log_AddEntry( TOPIC_RESCUEGOMEZ , " I have received forgiveness for Gomez's soul from all the gods! Now I must go to the Old Mine. " );
 		};
 	};
 };
 
-var int INNOSSAYHISWILL;
+var int  INNOSSAYHISWILL ;
 
 instance PC_PRAYSHRINE_PRAYFORPOWER(C_Info)
 {
@@ -985,7 +986,7 @@ instance PC_PRAYSHRINE_PRAYFORPOWER(C_Info)
 	condition = pc_prayshrine_prayforpower_condition;
 	information = pc_prayshrine_prayforpower_info;
 	permanent = TRUE;
-	description = "Просить даровать силу и могущество";
+	description = " Ask to grant strength and power " ;
 };
 
 func int pc_prayshrine_prayforpower_condition()
@@ -1022,13 +1023,13 @@ func void pc_prayshrine_prayforpower_info()
 			INNOSGIVEPOWER = TRUE;
 			MIS_INNOSWILL = LOG_Success;
 			Log_SetTopicStatus(TOPIC_INNOSWILL,LOG_Success);
-			B_LogEntry(TOPIC_GUARDIANS,"Я получил поддержку Инноса.");
+			B_LogEntry( TOPIC_GUARDIANS , " I got Innos' support. " );
 			AI_Wait(hero,1);
 
 			if((INNOSGIVEPOWER == TRUE) && (BELIARGIVEPOWER == TRUE) && (ADANOSGIVEPOWER == TRUE))
 			{
 				NETBEKLEADME_STEP1DONE = TRUE;
-				Log_AddEntry(TOPIC_GUARDIANS,"Теперь я заручился поддержкой всех трех божеств, став их Избранным!");
+				Log_AddEntry( TOPIC_GUARDIANS , " I have now enlisted the support of all three deities by becoming their Chosen One! " );
 				CreateInvItems(hero,ItAr_GodArmor,1);
 				AI_PlayAni(hero,"T_MAGRUN_2_HEASHOOT");
 				Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
@@ -1049,11 +1050,11 @@ func void pc_prayshrine_prayforpower_info()
 		B_Say(self,self,"$INNOSGIVEPOWERWILL");
 		Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
-		INNOSSAYHISWILL = TRUE;
+		ENJOYINGHISWILL = TRUE ;
 		MIS_INNOSWILL = LOG_Running;
 		Log_CreateTopic(TOPIC_INNOSWILL,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_INNOSWILL,LOG_Running);
-		B_LogEntry(TOPIC_INNOSWILL,"Иннос хочет, чтобы я убил слугу Белиара! Хммм...а разве я еще не всех отправил на тот свет?!");
+		B_LogEntry( TOPIC_INNOSWILL , " Innos wants me to kill Beliar's servant! Hmmm...haven't I sent them all to hell yet?! " );
 		AI_Wait(hero,1);
 	};
 
@@ -1067,13 +1068,13 @@ instance PC_PRAYSHRINE_BELIARCURSE(C_Info)
 	condition = pc_prayshrine_beliarcurse_condition;
 	information = pc_prayshrine_beliarcurse_info;
 	permanent = TRUE;
-	description = "Просить снять проклятье Белиара";
+	description = " Ask to remove Beliar's curse " ;
 };
 
 func int pc_prayshrine_beliarcurse_condition()
 {
 	b_checkshvinpresence(SHVALLEY_ZEN);
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PrayShrine) && (ShrineIsObsessed == FALSE) && (CHECKSHV == FALSE) && (PYRIKARSENDALTAR == TRUE) && (MIS_BELIARCURSE == LOG_Running) && (BELIARCURSEYOU == TRUE))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_PrayShrine ) && ( ShrineIsObsessed ==  FALSE ) && ( CHECKSHV  ==  FALSE ) && ( PYRIKARSENDALTAR  ==  TRUE ) && ( MIS_BELIARCURSE  == LOG_Running ) && ( BELIARCURSEYOU  ==  TRUE )) ;
 	{
 		return TRUE;
 	};
@@ -1081,11 +1082,11 @@ func int pc_prayshrine_beliarcurse_condition()
 
 func void pc_prayshrine_beliarcurse_info()
 {
-	var int karmainnos;
-	karmainnos = INNOSPRAYCOUNT - INNOSCRIMECOUNT;
-	AI_Print("Иннос, спаси меня и помоги снять проклятье Белиара!...");
+	var int carminous;
+	karmainnos = INNOSPRAYCOUNT  -  INNOSCRIMECOUNT ;
+	AI_Print( " Innos, save me and help lift Beliar's curse!... " );
 
-	if(karmainnos >= 25)
+	if (carmainnos >=  25 )
 	{
 		AI_Wait(hero,5);
 		b_giveplayerxpquiet(100);
@@ -1097,7 +1098,7 @@ func void pc_prayshrine_beliarcurse_info()
 		BELIARCURSEYOU = FALSE;
 		MIS_BELIARCURSE = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_BELIARCURSE,LOG_SUCCESS);
-		B_LogEntry(TOPIC_BELIARCURSE,"Кажется Иннос услышал мои мольбы о помощи и снял с меня проклятье, которое наложил на меня Белиар!");
+		B_LogEntry( TOPIC_BELIARCURSE , " Innos seems to have heard my pleas for help and lifted the curse that Beliar placed on me! " );
 	}
 	else
 	{
@@ -1114,12 +1115,12 @@ instance PC_PRAYIDOL_PRAY_ROBA2(C_Info)
 	condition = pc_pray_roba2_condition;
 	information = pc_pray_roba2_info;
 	permanent = TRUE;
-	description = "Освятить робу высшего мага Огня";
+	description = " Sanctify High Firemage 's Robe " ;
 };
 
 func int pc_pray_roba2_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PrayShrine) && (ShrineIsObsessed == FALSE) && (hero.guild == GIL_KDF) && (HEROKNOWS_BLESSED_ROBS == TRUE) && (CHECKSHV == FALSE) && (Npc_HasItems(hero,ItMi_HolyWater) >= 35) && (Npc_HasItems(hero,ItAr_KDF_H)))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_PrayShrine) && (ShrineIsObsessed ==  FALSE ) && (hero.guild ==  GIL_KDF ) && ( HEROKNOWS_BLESSED_ROBS  ==  TRUE ) && ( CHECKSHV  ==  FALSE ) && (Npc_HasItems(hero,ItMi_HolyWater )) > =  . && (Npc_HasItems(hero,ItAr_KDF_H)))
 	{
 		return TRUE;
 	};
@@ -1135,11 +1136,11 @@ func int give_roba_innos_1()
 	CreateInvItems(hero,itar_kdf_h_blessed,1);
 	AI_EquipArmor(hero,itar_kdf_h_blessed);
 	Npc_RemoveInvItems(hero,ItAr_KDF_H,1);
-	AI_Print("Иннос освятил вашу робу...");
+	AI_Print( " Innos has blessed your robe... " );
 	Wld_PlayEffect("SPELLFX_INCOVATION_FIRE",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
-	return 1;
+	return  1 ;
 };
 
 func void pc_pray_roba2_info()
@@ -1150,6 +1151,6 @@ func void pc_pray_roba2_info()
 	}
 	else
 	{
-		AI_Print("Похоже Иннос недостаточно ко мне благосклонен для этого...");
+		AI_Print( " Looks like Innos isn't good enough for me for this... " );
 	};
 };
