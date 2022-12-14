@@ -1,3 +1,4 @@
+
 func void b_checkadwinpresence(var int level)
 {
 	if(level != CurrentLevel)
@@ -285,15 +286,15 @@ func void UseEinhandBuch()
 	var int nDocID;
 	var int rnd;
 
-	if(Lerne_Einhand == FALSE)
+	if (Learn_one-hand ==  FALSE )
 	{
 		DoLearn1H = TRUE;
-		Lerne_Einhand = TRUE;
+		learn_one-hand = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		Snd_Play("Levelup");
@@ -301,7 +302,7 @@ func void UseEinhandBuch()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -319,8 +320,8 @@ func void UseEinhandBuch()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_34 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_34 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -330,16 +331,16 @@ func void UseEinhandBuch()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,0,Font_Book_New);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Оборона южных земель ");
+	Doc_PrintLines(nDocID, 0 , " Defense of the southern lands " );
 	Doc_SetFont(nDocID,0,Font_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Воины северной части страны, сталкиваясь с южными противниками, ведут борьбу с проворством южан, а не с их силой. В горячем климате бойцы предпочитают легкое вооружение, которое обеспечивает большую подвижность. Из-за этого разработан особый стиль сражения, который значительно отличается от используемого на севере.");
+	Doc_PrintLines(nDocID, 0 , " Warriors in the northern part of the country, when facing southern opponents, fight against the agility of the southerners, not their strength. In hot climates, fighters prefer light weapons that provide greater mobility. Because of this, a special style of battle has been developed , which differs significantly from that used in the north. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_SetFont(nDocID,1,Font_Book_New);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_SetFont(nDocID,1,Font_Book_New_Small);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Хорошо известный маневр южных воинов - блок одной рукой с отступом назад. Благодаря отступу удается снизить силу нападения противника и, таким образом, завладеть преимущественной позицией, которую удобно использовать для контратаки.");
+	Doc_PrintLines(nDocID, 1 , " A well-known southern warrior maneuver is a one-handed block with a step back. Thanks to the step back, it is possible to reduce the strength of the enemy's attack and, thus, seize an advantageous position that is convenient to use for a counterattack. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_Show(nDocID);
 };
@@ -347,14 +348,14 @@ func void UseEinhandBuch()
 
 instance ItWr_ZweihandBuch(C_Item)
 {
-	name = "Двойной блок";
+	name = " double block " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Rich_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Двойной блок";
+	description = " Double Block " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = UseZweihandBuch;
@@ -366,15 +367,15 @@ func void UseZweihandBuch()
 	var int nDocID;
 	var int rnd;
 
-	if(Lerne_Zweihand == FALSE)
+	if (Learn_two-hands ==  FALSE )
 	{
 		DoLearn2H = TRUE;
-		Lerne_Zweihand = TRUE;
+		Learn_two-hand = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		Snd_Play("Levelup");
@@ -382,7 +383,7 @@ func void UseZweihandBuch()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -400,8 +401,8 @@ func void UseZweihandBuch()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_35 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_35 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -411,11 +412,11 @@ func void UseZweihandBuch()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,0,Font_Book_New);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Двойной блок");
+	Doc_PrintLines(nDocID, 0 , " Double block " );
 	Doc_SetFont(nDocID,0,Font_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Блокировка клинка противника с помощью двуручного оружия используется только при достаточной силе, чтобы остановить атаку и вынудить противника прервать начатую комбинацию.");
+	Doc_PrintLines(nDocID, 0 , " Blocking an opponent's blade with a two-handed weapon is only used when strong enough to stop the attack and force the opponent to break the combo. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_SetFont(nDocID,1,Font_Book_New);
 	Doc_PrintLine(nDocID,1,"");
@@ -423,14 +424,14 @@ func void UseZweihandBuch()
 	Doc_SetFont(nDocID,1,Font_Book_New_Small);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Затем, в большинстве случаев, последующая остановка противника используется, чтобы перенять инициативу нападения и полностью повергнуть замешкавшегося противника.");
+	Doc_PrintLines(nDocID, 1 , " Then, in most cases, the enemy's subsequent stop is used to take over the attack and completely bring down the lingering enemy. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_OREBARONARMORLETTER(C_Item)
 {
-	name = "Записка";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -438,7 +439,7 @@ instance ITWR_OREBARONARMORLETTER(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_orebaronarmorletter;
 	scemeName = "MAP";
-	description = "Записка";
+	description = " Zapiska " ;
 	inv_animate = 1;
 };
 
@@ -453,7 +454,7 @@ func void use_orebaronarmorletter()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Удостоверяю, что эти доспехи отданы в починку. Разрешаю выносить их за пределы замка.");
+	Doc_PrintLines(nDocID, 0 , " I certify that this armor has been repaired. I give permission to take it out of the castle. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"				Гомез");
@@ -463,16 +464,16 @@ func void use_orebaronarmorletter()
 
 instance TAGEBUCHOT(C_Item)
 {
-	name = "Дневник";
+	name = " Diary " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Poor_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Дневник";
-	text[0] = "Старая потрепанная книга.";
-	text[1] = "В ней не хватает страниц.";
+	description = " Diary " ;
+	text[ 0 ] = " An old tattered book. " ;
+	text[ 1 ] = " It's missing pages. " ;
 	on_state[0] = usetagebuchot;
 	inv_animate = 1;
 };
@@ -489,30 +490,30 @@ func void usetagebuchot()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_PrintLine(nDocID,0,"День 23.");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
-	Doc_PrintLines(nDocID,0,"Я потерял счет времени.");
-	Doc_PrintLines(nDocID,0,"Думаю, прошло уже двадцать три дня, с тех пор как нас захватили орки и заставили работать.");
-	Doc_PrintLines(nDocID,0,"Работа очень тяжелая, а эти твари не знают пощады. Кто оказался слаб, уже давно лежит в могиле!");
-	Doc_PrintLines(nDocID,0,"Я сбегу отсюда, им меня не остановить!");
+	Doc_PrintLines(nDocID, 0 , " I've lost track of time. " );
+	Doc_PrintLines(nDocID, 0 , " I think it's been twenty-three days since we were captured by orcs and forced to work. " );
+	Doc_PrintLines(nDocID, 0 , " The work is very hard, and these creatures do not know mercy. Those who are weak, have long been in the grave! " );
+	Doc_PrintLines(nDocID, 0 , " I'll run away from here, they can't stop me! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,-1,FONT_Book_New);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_PrintLine(nDocID,0,"День 28.");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
-	Doc_PrintLines(nDocID,0,"Мы должны продолжить копать пещеру вглубь горы.");
-	Doc_PrintLines(nDocID,0,"Мы уже выкопали огромную пещеру, но я до сих пор не знаю, зачем все это нужно.");
+	Doc_PrintLines(nDocID, 0 , " We should continue to dig deeper into the mountain. " );
+	Doc_PrintLines(nDocID, 0 , " We've already dug a huge cave, but I still don't know what all this is for. " );
 	Doc_SetFont(nDocID,-1,FONT_Book_New);
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"День 67.");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
-	Doc_PrintLines(nDocID,1,"Кто-то рассказал мне, что у этих орков-шаманов больше нет сердец, но как же они тогда живут?");
-	Doc_PrintLines(nDocID,1,"Еще я видел меч, которого так боятся шаманы. Как бы мне хотелось проткнуть их всех этим мечом.");
+	Doc_PrintLines(nDocID, 1 , " Someone told me these orc shamans don't have hearts anymore, but how do they live then? " );
+	Doc_PrintLines(nDocID, 1 , " I also saw the sword that shamans are so afraid of. How I wish I could pierce them all with this sword. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_SetFont(nDocID,-1,FONT_Book_New);
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"День 78.");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
-	Doc_PrintLines(nDocID,1,"Меч лежит в одном из залов в передней части храма. Его охраняет один из шаманов.");
-	Doc_PrintLines(nDocID,1,"Я сбегу отсюда. Этот дневник собираюсь оставить здесь. Может быть, он кому-нибудь пригодится.");
+	Doc_PrintLines(nDocID, 1 , " The sword lies in one of the halls in front of the temple. It is guarded by one of the shamans. " );
+	Doc_PrintLines(nDocID, 1 , " I'll get out of here. I'm going to leave this diary here. Maybe it will be useful to someone. " );
 	Doc_Show(nDocID);
 };
 
@@ -537,15 +538,15 @@ instance ITWR_BLOODFLY_01(C_Item)
 func void useitwr_bloodfly_01()
 {
 	var int nDocID;
-	var int kosten;
+	var int cost;
 	var int rnd;
 
 	if(READ_BLOODFLY == FALSE)
 	{
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		READ_BLOODFLY = TRUE;
@@ -553,14 +554,14 @@ func void useitwr_bloodfly_01()
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE)
 	{
 		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] = TRUE;
-		AI_Print("Изучен навык разделки добычи - 'Вырезать жало'");
-		B_LogEntry(TOPIC_TalentAnimalTrophy,"...вырезать жало у кровяных шершней.");
+		AI_Print( " Learned the skill of cutting prey - 'Cut the sting' " );
+		B_LogEntry(TOPIC_TalentAnimalTrophy, " ...cut the stingers off the blood hornets. " );
 		Npc_SetTalentSkill(self,NPC_TALENT_TAKEANIMALTROPHY,1);
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -578,8 +579,8 @@ func void useitwr_bloodfly_01()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_36 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_36 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -592,16 +593,16 @@ func void useitwr_bloodfly_01()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
-	Doc_PrintLine(nDocID,0,"О шершнях.");
+	Doc_PrintLine(nDocID, 0 , " Oh hornets. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Но там, где земля затоплена водой, а воздух тяжел, обитают огромные шершни, привлекаемые запахом живого тела. Они убивают свою жертву ядом и выпивают ее кровь.");
+	Doc_PrintLines(nDocID, 0 , " But where the earth is flooded with water and the air is heavy, huge hornets live, attracted by the smell of a living body. They kill their prey with poison and drink its blood. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Вынуть жало из тела шершня довольно сложно, но у хорошего охотника это должно получиться. Нужно сделать глубокий надрез, чтобы ножом отделить его от окружающих тканей, и осторожно вынуть. Применять его можно после того, как стечет кровь.");
+	Doc_PrintLines(nDocID, 1 , " Removing the sting from the hornet's body is quite difficult, but a good hunter should be able to do it. You need to make a deep incision to separate it from the surrounding tissues with a knife, and carefully remove it. You can use it after the blood has drained. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_Show(nDocID);
@@ -610,17 +611,17 @@ func void useitwr_bloodfly_01()
 
 instance ASTRONOMIE(C_Item)
 {
-	name = "Древняя астрономия";
+	name = " Ancient Astronomy " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Rich_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Древняя астрономия";
+	description = " Ancient astronomy " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = useastronomie_s1;
+	on_state[ 0 ] = useastronomie_s1;
 	inv_animate = 1;
 };
 
@@ -639,13 +640,13 @@ func void useastronomie_s1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -663,8 +664,8 @@ func void useastronomie_s1()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_37 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_37 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -674,28 +675,28 @@ func void useastronomie_s1()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"В центре всего находится Морград и его четыре элемента: Тьма, Камень, Вода и Огонь. Небесная сфера укрывает весь мир.");
+	Doc_PrintLines(nDocID, 0 , " In the center of everything is Morgrad and its four elements: Darkness, Stone, Water and Fire. The celestial sphere covers the whole world. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"В иерархии творений человек занимает место преемника. Душа связывает его с высшим бытием, божественным духом, а преходящее тело состоит из материи Морграда. В нем отражена картина целого мира.");
+	Doc_PrintLines(nDocID, 0 , " In the hierarchy of creations, a person takes the place of a successor. The soul connects him with the higher being, the divine spirit, and the transient body consists of the matter of Morgrad. It reflects the picture of the whole world. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"После битвы богов Тьма отделена от Морграда. Обитель смерти и ее покровитель Белиар скрывают в недрах невыразимой тьмы то, что противно живому.");
+	Doc_PrintLines(nDocID, 1 , " After the battle of the gods, Darkness is separated from Morgrad. The abode of death and its patron Beliar hide in the depths of inexpressible darkness that which is disgusting to the living. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"По воле Белиара Тьма исторгает в Морград своих проводников. За сохранением жизни и баланса в мире смотрит Аданос. Воля Инноса дарует миру свет и тепло.");
+	Doc_PrintLines(nDocID, 1 , " At the behest of Beliar, Darkness casts its guides into Morgrad. Adanos watches over the preservation of life and balance in the world. The will of Innos bestows light and warmth on the world. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_DEMONLANG(C_Item)
 {
-	name = "Язык Демонов";
+	name = " Demon Language " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Uniq_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Язык Демонов";
+	description = " Demon Language " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_demonlang_s1;
@@ -708,11 +709,11 @@ func void use_demonlang_s1()
 	var int nDocID;
 	var int rnd;
 
-	if((KNOWDEMENTORLANGUAGE == FALSE) && (hero.lp >= 10))
+	if (( KNOWDEMENTORLANGUAGE  ==  FALSE ) && (hero.lp >=  10 )) ;
 	{
 		Log_CreateTopic(TOPIC_Language,LOG_NOTE);
 		PLAYER_TALENT_FOREIGNLANGUAGE[3] = TRUE;
-		AI_Print("Изучен древний язык демонов...");
+		AI_Print( " Learned ancient demon language... " );
 		B_LogEntry(TOPIC_Language,LOGTEXT_ADDON_LANGUAGE_4);
 		Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
@@ -721,8 +722,8 @@ func void use_demonlang_s1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		hero.lp = hero.lp - 10;
@@ -738,7 +739,7 @@ func void use_demonlang_s1()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -758,8 +759,8 @@ func void use_demonlang_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_38 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_38 = TRUE ;
 		};
 
 		nDocID = Doc_Create();
@@ -769,14 +770,14 @@ func void use_demonlang_s1()
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
 		Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"То, что зовется Языком Демонов - не является таковым на самом деле. Знающий его способен понимать и разговаривать с высшими представителями этого вида.");
+		Doc_PrintLines(nDocID, 0 , " What is called the Demon Language is not really such. Those who know it are able to understand and speak with the highest representatives of this species. " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Но истинная его ценность в том, что самые сокровенные тайны, уходящие корнями во времена создания мира, написаны исключительно на этом языке. Каждый из подобных текстов - настоящее сокровище, если понять его смысл.");
+		Doc_PrintLines(nDocID, 0 , " But its true value is that the deepest mysteries, dating back to the creation of the world, are written exclusively in this language. Each of these texts is a real treasure, if you understand its meaning. " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Кроме того, это язык Темного Бога. Все существа, сотворенные Белиаром и подвластные ему, способны понимать древнюю речь.");
+		Doc_PrintLines(nDocID, 1 , " In addition, this is the language of the Dark God. All creatures created by Beliar and subject to him are able to understand ancient speech. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Так как он обращается к сильнейшим подданным и несет свою божественную волю в их сознание, его и называют Языком Демонов.");
+		Doc_PrintLines(nDocID, 1 , " Because it speaks to the strongest subjects and carries its divine will into their minds, it is called the Demon Tongue. " );
 		Doc_Show(nDocID);
 	};
 };
@@ -785,20 +786,20 @@ var int god1_once;
 var int god2_once;
 var int god3_once;
 
-instance LEHREN_DER_GOETTER1(C_Item)
+instance TEACHING_DER_GOETTER1 (C_Item)
 {
-	name = "Учение богов - Том 1";
+	name = " Teachings of the Gods - Volume 1 " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Rich_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Учение богов";
+	description = " Teachings of the gods " ;
 	text[0] = "Том 1";
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = uselehren_der_goetter1_s1;
+	on_state[ 0 ] = uselehren_der_goetter1_s1;
 	inv_animate = 1;
 };
 
@@ -814,8 +815,8 @@ func void uselehren_der_goetter1_s1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
@@ -830,7 +831,7 @@ func void uselehren_der_goetter1_s1()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -848,8 +849,8 @@ func void uselehren_der_goetter1_s1()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_39 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_39 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -859,32 +860,32 @@ func void uselehren_der_goetter1_s1()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Услышь слова богов, ибо на то их воля, чтобы слова были услышаны. Следуй учению богов, ибо на то их воля, чтобы учению следовали. Слушай жрецов, ибо они были избраны.");
+	Doc_PrintLines(nDocID, 0 , " Hear the words of the gods, for it is their will that the words be heard. Follow the teachings of the gods, for it is their will that the teachings be followed. Listen to the priests, for they have been chosen. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Слова Инноса: Не сомневайся в словах жрецов, даже если не можешь понять их смысла, это станет свидетельством истины и мудрости. Я восходящее солнце, свет и жизнь. Идти против солнца, значит идти против меня. Делающие так навлекают на себя проклятие.");
+	Doc_PrintLines(nDocID, 0 , " Words of Innos: Do not doubt the words of the priests, even if you cannot understand their meaning, this will become evidence of truth and wisdom. I am the rising sun, light and life. To go against the sun means to go against me. Those who do so bring upon themselves a curse. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Слова Аданоса: Работай и живи, ибо день создан для того, чтобы человек работал. Учись и ищи знаний, чтобы передать их другим, ибо такова природа человека. Ленивые и праздные навлекают на себя проклятие.");
+	Doc_PrintLines(nDocID, 1 , " Words of Adanos: Work and live, for the day was created for man to work. Learn and seek knowledge to pass on to others, for such is the nature of man. The lazy and idle bring upon themselves a curse. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Слова Белиара: Тот, кто действует против законов справедливости и воли богов, будет наказан мной. Его тело познает боль, страдание и смерть, а дух навечно останется в царстве теней.");
+	Doc_PrintLines(nDocID, 1 , " Words of Beliar: Those who act against the laws of justice and the will of the gods will be punished by me. His body will know pain, suffering and death, and the spirit will remain forever in the realm of shadows. " );
 	Doc_Show(nDocID);
 };
 
 
-instance LEHREN_DER_GOETTER2(C_Item)
+instance TEACHING_DER_GOETTER2 (C_Item)
 {
-	name = "Учение богов - Том 2";
+	name = " Teachings of the Gods - Volume 2 " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Rich_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Учение богов";
+	description = " Teachings of the gods " ;
 	text[0] = "Том 2";
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = uselehren_der_goetter2_s1;
+	on_state[ 0 ] = uselehren_der_goetter2_s1;
 	inv_animate = 1;
 };
 
@@ -900,8 +901,8 @@ func void uselehren_der_goetter2_s1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(100);
@@ -916,7 +917,7 @@ func void uselehren_der_goetter2_s1()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -934,8 +935,8 @@ func void uselehren_der_goetter2_s1()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_40 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_40 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -945,24 +946,24 @@ func void uselehren_der_goetter2_s1()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Не было ни дня, ни ночи, и ничто живое не обременяло собой мир. Но вот миру явился Иннос, и его свет осветил все. Иннос даровал миру жизнь. Но ничто живое не могло жить в свете Инноса, и тогда он создал солнце. Но его свет был все еще слишком силен. Тогда Иннос отделил часть себя и создал Белиара. Белиар принес миру ночь. И тогда в мир пришли люди. Иннос отделил от себя другую часть и создал Аданоса. Аданос даровал людям множество желаний, знания, любознательность и смелость. И был Иннос доволен своими созданиями.");
+	Doc_PrintLines(nDocID, 0 , " There was neither day nor night, and nothing living burdened the world. But then Innos appeared to the world, and his light illuminated everything. Innos gave life to the world. But nothing living could live in the light of Innos, and then he created the sun. But his light was still too strong. Then Innos separated a part of himself and created Beliar. Beliar brought the world night. And then people came into the world. Innos separated another part from himself and created Adanos. Adanos gave people many desires, knowledge, curiosity and courage. And Innos was pleased with his creations. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"И он решил передать людей под покровительство Аданоса и почил от дел своих. Белиар же рассердился на людей, ибо они не захотели видеть его своим покровителем и отдыхали ночью, когда приходило его время. И тогда он сотворил себе человека, чтобы он поклонялся только ему одному. Но человек этот ничем не отличался от других людей. Гневом наполнилось сердце Белиара, и он убил созданного им человека и так сказал: 'Они не поклоняются мне, так пусть же мысли обо мне внушают им ужас'. И он создал смерть и взял у людей их жизни.");
+	Doc_PrintLines(nDocID, 1 , " And he decided to transfer people under the protection of Adanos and rested from his deeds. Beliar was angry with people, because they did not want to see him as their patron and rested at night when his time came. And then he created a man for himself But this man was no different from other people. Anger filled the heart of Beliar, and he killed the man he created and so said: "They do not worship me, so let the thought of me fill them with horror." And he created death and took from people their lives. " );
 	Doc_Show(nDocID);
 };
 
 
-instance LEHREN_DER_GOETTER3(C_Item)
+instance TEACHING_DER_GOETTER3 (C_Item)
 {
-	name = "Учение богов - Том 3";
+	name = " Teachings of the Gods - Volume 3 " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Rich_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Учение богов";
+	description = " Teachings of the gods " ;
 	text[0] = "Том 3";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -982,8 +983,8 @@ func void uselehren_der_goetter3_s1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(100);
@@ -998,7 +999,7 @@ func void uselehren_der_goetter3_s1()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -1016,8 +1017,8 @@ func void uselehren_der_goetter3_s1()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_41 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_41 = TRUE ;
 	};
 	nDocID = Doc_Create();
 	Doc_SetPages(nDocID,2);
@@ -1026,42 +1027,42 @@ func void uselehren_der_goetter3_s1()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Иннос дал людям способность слышать его и разговаривать с ним. Некоторым из них он даровал способность творить великие чудеса. Он назвал ее магией. С ее помощью люди могли изменять мир по своему желанию, и изначально это желание было ничем не ограничено. Так люди получили доступ к божественным силам созидания. Но все они были равны между собой, и им это было не по нраву. И тогда взял он силу тех, кто был недоволен. Те немногие, кто был благодарен за магический дар, ставили Инноса выше остальных богов.");
+	Doc_PrintLines(nDocID, 0 , " Innos gave people the ability to hear him and talk to him. Some of them he gave the ability to perform great miracles. He called it magic. With its help, people could change the world at will, and initially this desire was nothing unlimited. So people got access to the divine powers of creation. But they were all equal among themselves, and they did not like it. And then he took the power of those who were dissatisfied. Those few who were grateful for the magical gift, put Innos is higher than the other gods. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Этих людей уважали и боялись, и называли жрецами. Но даже многие из них были недовольны способностями самых сильных. И тогда они воззвали к Аданосу, и он позволил им забыть о своих способностях. Группа жрецов распалась, и начались бесчисленные войны. Воспоминания о могуществе богов стали не более чем мифом. Так разделились жрецы. Тех, кто последовал за Аданосом, назвали магами Воды, а избранники Инноса назывались магами Огня.");
+	Doc_PrintLines(nDocID, 1 , " These people were respected and feared and were called priests. But even many of them were dissatisfied with the abilities of the strongest. And then they called on Adanos, and he let them forget about their abilities. The group of priests broke up, and the countless wars. Memories of the power of the gods became nothing more than a myth. So the priests divided. Those who followed Adanos were called the magicians of Water, and the chosen ones of Innos were called fire magicians. " );
 	Doc_Show(nDocID);
 };
 
 
 var int magicore_once;
 
-instance DAS_MAGISCHE_ERZ(C_Item)
+instance THE_MAGIC_ORE (C_Item)
 {
-	name = "Магическая руда";
+	name = " Magic Ore " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Poor_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Магия руды";
+	description = " Magic ore " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = usedas_magische_erz_s1;
+	on_state[ 0 ] = usedas_magic_ore_s1;
 	inv_animate = 1;
 };
 
 
-func void usedas_magische_erz_s1()
+func void usedas_magic_ore_s1()
 {
 	var int nDocID;
 	var int rnd;
 
-	if(READ_MAGISCHE_ERZ == FALSE)
+	if ( READ_MAGIC_ORE  ==  FALSE )
 	{
 		HERO_HACKCHANCEORE = HERO_HACKCHANCEORE + 5;
-		READ_MAGISCHE_ERZ = TRUE;
+		READ_MAGICAL_ERZ = TRUE ;
 	};
 	if((MAGICORE_ONCE == FALSE) && (KNOWHOWPICKORE == FALSE))
 	{
@@ -1095,18 +1096,18 @@ func void usedas_magische_erz_s1()
 
 		if(ORE_TOPIC_EXIST == TRUE)
 		{
-			B_LogEntry(TOPIC_MAGICORE,"Теперь я умею добывать магическую руду из породы.");
+			B_LogEntry( TOPIC_MAGICORE , " Now I can mine magic ore from rock. " );
 		}
 		else
 		{
 			Log_CreateTopic(TOPIC_MAGICORE,LOG_NOTE);
-			B_LogEntry(TOPIC_MAGICORE,"Теперь я умею добывать магическую руду из породы.");
+			B_LogEntry( TOPIC_MAGICORE , " Now I can mine magic ore from rock. " );
 			ORE_TOPIC_EXIST = TRUE;
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -1127,27 +1128,27 @@ func void usedas_magische_erz_s1()
 	Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
-	Doc_PrintLine(nDocID,0,"Магия руды");
+	Doc_PrintLine(nDocID, 0 , " Magic ore " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Лучшую руду для мечей, без сомнения, можно найти в шахтах Хориниса. Это самая чистая руда в мире. Она содержит магическую энергию, обладает непревзойденной прочностью и в то же время легка в обработке. Из этой руды, добываемой в темных глубинах шахт Хориниса, куется лучшее оружие, с которым не сравнится ни один клинок, выкованный из обычной стали.");
+	Doc_PrintLines(nDocID, 0 , " The best ore for swords is without a doubt found in the mines of Khorinis. It is the purest ore in the world. It contains magical energy, has unsurpassed durability, and at the same time is easy to process. From this ore, mined in the dark depths of the mines of Khorinis, the best weapons are being forged, with which no blade forged from ordinary steel can be compared. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Нет такого щита или доспеха, который смог бы устоять перед ним. Короли и герои древних времен носили оружие из лучшей стали Хориниса, и во всей Миртане оно ценилось очень высоко. Но магическая руда стоит очень дорого. Очень много сил уходит на ее добычу. Кажется, будто руда сама не желает покидать недра земли.");
+	Doc_PrintLines(nDocID, 1 , " There is no shield or armor that can withstand it. The kings and heroes of ancient times carried weapons made of the best steel of Khorinis, and they were highly valued throughout Myrtana. But magic ore is very expensive. A lot strength is spent on its extraction. It seems as if the ore itself does not want to leave the bowels of the earth. " );
 	Doc_Show(nDocID);
 };
 
 instance ItWr_GoldMake(C_Item)
 {
-	name = "Плавка золота";
+	name = " Smelting Gold " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 500;
 	visual = "ItWr_Book_Poor_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Плавка золота";
+	description = " Smelting Gold " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_GoldMake;
@@ -1162,14 +1163,14 @@ func void Use_ItWr_GoldMake()
 	if(KNOWHOWTOOREFUSGOLD == FALSE)
 	{
 		KNOWHOWTOOREFUSGOLD = TRUE;
-		AI_Print("Изучено: плавка золота");
+		AI_Print( " Learned : gold smelting " );
 		Snd_Play("Levelup");
 		B_Say(self,self,"$HOWINTEREST");
-		B_LogEntry(TOPIC_STEELDRAW,"Теперь я умею переплавлять золото в слитки. Для его получения необходимо двадцать пять золотых самородков.");
+		B_LogEntry( TOPIC_STEELDRAW , " Now I can smelt gold into bars. Twenty-five gold nuggets are required to get it. " );
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -1190,33 +1191,33 @@ func void Use_ItWr_GoldMake()
 	Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
-	Doc_PrintLine(nDocID,0,"Плавка золота");
+	Doc_PrintLine(nDocID, 0 , " Gold smelting " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Для получения одного слитка необходимо примерно четверть сотни золотых самородков. Золото кладется в горн, доводится до нужной температуры и сливается в форму через сито.");
+	Doc_PrintLines(nDocID, 0 , " It takes about a quarter of a hundred gold nuggets to produce one ingot. Gold is placed in a forge, brought to the desired temperature and poured into a mold through a sieve. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_Show(nDocID);
 };
 
-var int varant1_once;
-var int varant2_once;
+var int warrant1_once;
+var int warrant2_once;
 
-instance SCHLACHT_UM_VARANT1(C_Item)
+instance BATTLE_UM_VARANT1 (C_Item)
 {
-	name = "Битва при Варанте";
+	name = " Battle of Varant " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Rich_05.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Битва при Варанте";
+	description = " Battle of Varant " ;
 	text[0] = "Том 1";
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = useschlacht_um_varant1_s1;
+	on_state[ 0 ] = useschlacht_um_varant1_s1;
 	inv_animate = 1;
 };
 
@@ -1226,14 +1227,14 @@ func void useschlacht_um_varant1_s1()
 	var int nDocID;
 	var int rnd;
 
-	if(VARANT1_ONCE == FALSE)
+	if ( VARANT1_ONCE  ==  FALSE )
 	{
-		VARANT1_ONCE = TRUE;
+		VARANT1_ONCE = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(500);
@@ -1248,7 +1249,7 @@ func void useschlacht_um_varant1_s1()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -1266,8 +1267,8 @@ func void useschlacht_um_varant1_s1()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_43 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_43 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -1277,30 +1278,30 @@ func void useschlacht_um_varant1_s1()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"... но король Робар решил напасть первым. Он собрал свои войска и все силы направил на ослабленный левый фланг вражеской армии. Он решил не тратить время и стрелы, и мечи его войска с легкостью расправились с врагами. Он направил своих солдат дальше, к границам Варанта. Он знал, что для победы в этой битве нужно разделить вражеское войско и сделать так, чтобы силы Геллона и Люккора не смогли...");
+	Doc_PrintLines(nDocID, 0 , " ... but King Rhobar decided to attack first. He gathered his troops and sent all his forces to the weakened left flank of the enemy army. He decided not to waste time and arrows, and the swords of his troops easily dealt with the enemies. He sent his soldiers further, to the borders of Varant.He knew that in order to win this battle, it was necessary to divide the enemy army and make sure that the forces of Hellon and Lukkor could not ... " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"... объединились и нанесли ему сокрушительный удар. Ему немедленно нужно было вызывать подкрепление, иначе победа досталась бы врагу...");
+	Doc_PrintLines(nDocID, 1 , " ... teamed up and dealt him a crushing blow. He needed to call for reinforcements immediately, otherwise the victory would have gone to the enemy... " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"...Геллон был убит, его армия разбита, его солдаты бежали с поля боя. Но Робар не хотел дать побежденным ни единого шанса собраться вместе и приказал уничтожить всех, кто остался в живых.");
+	Doc_PrintLines(nDocID, 1 , " ...Gellon was killed, his army was defeated, his soldiers fled from the battlefield. But Rhobar did not want to give the defeated a single chance to gather together and ordered to destroy all who remained alive. " );
 	Doc_Show(nDocID);
 };
 
 
-instance SCHLACHT_UM_VARANT2(C_Item)
+instance BATTLE_UM_VARANT2 (C_Item)
 {
-	name = "Битва при Варанте";
+	name = " Battle of Varant " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Rich_05.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Битва при Варанте";
+	description = " Battle of Varant " ;
 	text[0] = "Том 2";
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = useschlacht_um_varant2_s1;
+	on_state[ 0 ] = useschlacht_um_varant2_s1;
 	inv_animate = 1;
 };
 
@@ -1310,14 +1311,14 @@ func void useschlacht_um_varant2_s1()
 	var int nDocID;
 	var int rnd;
 
-	if(VARANT2_ONCE == FALSE)
+	if ( VARANT2_ONCE  ==  FALSE )
 	{
-		VARANT2_ONCE = TRUE;
+		VARANT2_ONCE = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
@@ -1332,7 +1333,7 @@ func void useschlacht_um_varant2_s1()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -1350,8 +1351,8 @@ func void useschlacht_um_varant2_s1()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_44 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_44 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -1361,17 +1362,17 @@ func void useschlacht_um_varant2_s1()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Исход войны был известен. Варант, захваченный иноземцами, был полностью разграблен. Король Робар решил не оставаться на полях Варанта, а приказал своим генералам самим расправиться с оставшимися врагами. В разгромленном государстве остались еще войска, которыми руководил Люккор, самый способный военачальник Варанта. Он провел множество блестящих сражений.");
+	Doc_PrintLines(nDocID, 0 , " The outcome of the war was known. Varant, captured by foreigners, was completely plundered. King Rhobar decided not to stay on the fields of Varant, but ordered his generals to deal with the remaining enemies themselves. There were still troops in the defeated state, led by Lukkor , the most capable commander of Varant. He fought many brilliant battles. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Но теперь его войско попало в засаду. Вражеские солдаты готовились к наступлению. Ли, один из лучших генералов Миртаны, загнал его в ловушку. Тяжелая конница Варанта не могла сражаться на заболоченной местности. Вся долина была окружена солдатами генерала Ли, которые нападали на врагов и убивали их одного за другим. Отчаянные попытки выбраться из ловушки не имели успеха. Он был побежден.");
+	Doc_PrintLines(nDocID, 1 , " But now his army was ambushed. The enemy soldiers were preparing to attack. Li, one of Myrtana's best generals, had him trapped. Varant's heavy cavalry could not fight in the wetlands. The entire valley was surrounded by the general's soldiers Lee, who attacked the enemies and killed them one by one. Desperate attempts to get out of the trap were unsuccessful. He was defeated. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_SOULRIVER(C_Item)
 {
-	name = "Жертвенные души";
+	name = " Sacrificial Souls " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -1393,22 +1394,22 @@ func void use_soulriver_open()
 
 	if(READ_SOULRIVER == FALSE)
 	{
-		B_LogEntry(TOPIC_MORIUSTEST,"Я прочитал книгу, о которой говорил Мориус. В ней говорится как сделать вытяжку из души. После приготовления этой вытяжки, ей надо окропить один из алтарей божества, которому я хочу принести жертву.");
-		B_LogEntry_Quiet(TOPIC_MORIUSTEST,"Чтобы приготовить вытяжку душ мне нужна сфера, хранящая душу существа, сера, аквамарин, черная жемчужина, эссенция маны и побег болотной травы. Далее необходимо смешать все ингредиенты на алхимическом столе, после чего нагреть в лабораторной колбе и перегнать в отдельный сосуд вытяжку полученного мной раствора.");
+		B_LogEntry( TOPIC_MORIUSTEST , " I read the book that Morius was talking about. It tells how to extract from the soul. After preparing this extract, it should be sprinkled on one of the altars of the deity to whom I want to sacrifice. " );
+		B_LogEntry_Quiet( TOPIC_MORIUSTEST , " To make a soul extract, I need an orb that stores the creature's soul, sulfur, aquamarine, black pearl, mana essence and swamp grass shoot. Next, you need to mix all the ingredients on the alchemy table, then heat it in a laboratory flask and distill it in a separate vessel extract of the solution I received. " );
 		READ_SOULRIVER = TRUE;
 		SOULRIVER = TRUE;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -1426,8 +1427,8 @@ func void use_soulriver_open()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_45 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_45 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -1437,20 +1438,20 @@ func void use_soulriver_open()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Издревна, душа любого создания этого мира считалась одним из самых ценных подношений богам. Тем, кто приподносил его, боги обычно являли свою божественную милость и покровительсво.");
+	Doc_PrintLines(nDocID, 0 , " Since ancient times, the soul of any creature of this world was considered one of the most valuable offerings to the gods. Those who offered it, the gods usually showed their divine mercy and protection. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Иногда даже самые серьезные пригрешения прощались, если вероотсупник приносил в жертву такой дар. Кроме этого, необходимо было обладать знаниями, позволяющими извлечь душу существа, не повредив ее божественную сущность и структуру.");
+	Doc_PrintLines(nDocID, 0 , " Sometimes even the most serious sins were forgiven if the apostate sacrificed such a gift. In addition, it was necessary to have the knowledge to extract the soul of a creature without damaging its divine essence and structure. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Чтобы совершить данное приношение - необходимо приготовить вытяжку из души того создания, которое послужит в качестве жертвы. Потом, необходимо было произнести молитву божеству и окропить его священный алтарь.");
+	Doc_PrintLines(nDocID, 1 , " To make this offering, it is necessary to prepare an extract from the soul of the creature that will serve as a sacrifice. Then, it was necessary to say a prayer to the deity and sprinkle his sacred altar. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Для приготовления вытяжки необходимы следующие ингредиенты: сфера, хранящая душу существа, аквамарин, сера, черная жемчужина, эссенция маны и побег болотной травы, в качестве реагента.");
+	Doc_PrintLines(nDocID, 1 , " To prepare an extract, the following ingredients are needed: an orb that stores the creature's soul, aquamarine, sulfur, black pearl, mana essence and swamp grass shoot as a reagent. " );
 	Doc_Show(nDocID);
 };
 
 instance ItWr_Azgolor(C_Item)
 {
-	name = "Старая книга";
+	name = "The Old Book " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1458,7 +1459,7 @@ instance ItWr_Azgolor(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = "";
-	text[4] = "На книге начертаны странные символы, похожие на заклинания.";
+	text[ 4 ] = " The book has strange symbols that look like spells. " ;
 	on_state[0] = Use_Azgolorbook_Open;
 	inv_animate = 1;
 };
@@ -1475,8 +1476,8 @@ func void Use_Azgolorbook_Open()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 	};
@@ -1488,15 +1489,15 @@ func void Use_Azgolorbook_Open()
 		{
 			if(READ_AZGOLOR == FALSE)
 			{
-				B_LogEntry(TOPIC_URNAZULRAGE,"В подземном храме я нашел странную книгу. Судя по всему текст книги написан на языке демонов  - ...(уроки хранителей не прошли для меня даром). В ней говориться, как использовать древний артефакт под названием Око Гнева для вызова в этот мир могущественного черного дракона, Азгалора - повелителя демонов. Судя по всему, прежде всего необходимо пробудить само Око от сна. Сделать это просто - на алхимическом столе необходимо выбрать эссенцию из крови орка и демона, добавив пять кусков серы, а после полученным раствором окропить сам артефакт. После пробуждения, следует провести священный ритуал и с помощью Слов Силы и власти артефакта, создание тьмы явится на зов заклинателя.");
+				B_LogEntry(TOPIC_URNAZULRAGE,"I found a strange book in an underground temple. Apparently the text of the book is written in the language of demons - ...(the lessons of the guardians were not in vain for me). It tells how to use an ancient artifact called the Eye of Wrath to summon to this world of the powerful black dragon, Azgalor - the lord of demons. Apparently, first of all, it is necessary to awaken the Eye itself from sleep. To do this is simple - on the alchemy table, you need to select the essence from the blood of an orc and a demon, adding five lumps of sulfur, and after the resulting solution sprinkle the artifact itself.After awakening, a sacred ritual should be performed and with the help of the Words of Power and the power of the artifact, the creation of darkness will come to the call of the caster.");
 				READ_AZGOLOR = TRUE;
 			};
 			if((BookBonus_46 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 			{	
 				ATR_INTELLECT += 1;
 				Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-				AI_Print("Интеллект + 1");
-				BookBonus_46 = TRUE;
+				AI_Print( " Intelligence + 1 " );
+				BookBonus_46 = TRUE ;
 			};
 
 			nDocID = Doc_Create();
@@ -1506,14 +1507,14 @@ func void Use_Azgolorbook_Open()
 			Doc_SetMargins(nDocID,0,275,20,30,20,1);
 			Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Око Гнева - мощный артефакт древности, с помощью которого можно призвать в этот мир зловещее создание тьмы - могущественного черного дракона, Азгалора, повелителя демонов.");
+			Doc_PrintLines(nDocID, 0 , "The Eye of Wrath is a powerful ancient artifact that can be used to summon a sinister creature of darkness into this world - a powerful black dragon, Azgalor, the demon lord. " );
 			Doc_PrintLine(nDocID,0,"");
-			Doc_PrintLines(nDocID,0,"Если кто-то вознамерится осуществить это, ему необходимо прежде всего пробудить само Око, наполнив его демонической силой, зову которой не способно противостоять ни одно создание тьмы. ");
+			Doc_PrintLines(nDocID, 0 , " If someone intends to do this, he must first awaken the Eye itself, filling it with demonic power, the call of which no creature of darkness can withstand. " );
 			Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"Для того, чтобы вернуть магическую силу артефакту, необходимо выбрать эссенцию из крови орка и демона, добавив в него пять кусков серы, а после окропить получившимся раствором само Око Гнева.");
+			Doc_PrintLines(nDocID, 1 , " In order to restore magical power to an artifact, you need to select an essence from the blood of an orc and a demon, adding five lumps of sulfur to it, and then sprinkle the Eye of Wrath itself with the resulting solution. " );
 			Doc_PrintLine(nDocID,1,"");
-			Doc_PrintLines(nDocID,1,"После пробуждения Ока Гнева, надлежит произвести священный ритуал и призвать Великую Тень в этот мир, с помощью Слов Силы и власти артефакта.");
+			Doc_PrintLines(nDocID, 1 , " After awakening the Eye of Wrath, it is necessary to perform a sacred ritual and summon the Great Shadow to this world, using the Words of Power and the power of the artifact. " );
 			Doc_Show(nDocID);
 		}
 		else
@@ -1524,7 +1525,7 @@ func void Use_Azgolorbook_Open()
 			Doc_SetPage(nDocID,1,"Book_Dementor_R.tga",0);
 			Doc_Show(nDocID);
 			B_Say(self,self,"$CANTREADTHIS");
-			B_LogEntry(TOPIC_URNAZULRAGE,"В подземном храме я нашел странную книгу, написаную на непонятном мне языке. Придется мне поискать того, кто сможет ее прочесть.");
+			B_LogEntry( TOPIC_URNAZULRAGE , " I found a strange book in an underground temple, written in a language I don't understand. I'll have to look for someone who can read it. " );
 		};
 	};
 };
@@ -1532,7 +1533,7 @@ func void Use_Azgolorbook_Open()
 
 instance ITWR_INNOSPRAY(C_Item)
 {
-	name = "Молитвеник Избранного";
+	name = " Prayer Book of the Chosen One " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -1553,13 +1554,13 @@ func void use_innospray_open()
 
 	if(MARDUK_BOOKREAD == FALSE)
 	{
-		B_LogEntry(TOPIC_MAGICINNOSARMOR,"Теперь я знаю молитву Избранного для ритуала освещения рудных доспехов паладина или рыцаря.");
+		B_LogEntry( TOPIC_MAGICINNOSARMOR , " I now know the Chosen One's prayer for the paladin or knight's ore armor ritual. " );
 		MARDUK_BOOKREAD = TRUE;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
@@ -1568,8 +1569,8 @@ func void use_innospray_open()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_47 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_47 = TRUE ;
 	};
 	nDocID = Doc_Create();
 	Doc_SetPages(nDocID,2);
@@ -1583,19 +1584,19 @@ func void use_innospray_open()
 	Doc_PrintLines(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLine(nDocID,1,"Молитва Избанного");
+	Doc_PrintLine(nDocID, 1 , " Prayer of the Chosen One " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"О могущественный господин мой, Иннос,");
-	Doc_PrintLines(nDocID,1,"дай свое благославление избранному твоему,");
-	Doc_PrintLines(nDocID,1,"надели его силой твоей и мудростью,");
-	Doc_PrintLines(nDocID,1,"дабы смог он противостоять темному злу!");
+	Doc_PrintLines(nDocID, 1 , " O mighty lord, Innos, " );
+	Doc_PrintLines(nDocID, 1 , " give your blessing to your chosen one, " );
+	Doc_PrintLines(nDocID, 1 , " entrust him with your strength and wisdom, " );
+	Doc_PrintLines(nDocID, 1 , " so that he can resist the dark evil! " );
 	Doc_Show(nDocID);
 };
 
 
-instance ITWR_HAGENORDERFORT(C_Item)
+instance ITWR_HAGENORDERFORT (C_Item)
 {
-	name = "Приказ Лорда Хагена";
+	name = " Order of Lord Hagen " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1619,14 +1620,14 @@ func void use_itwr_hagenorderfort()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"         Распоряжение");
+	Doc_PrintLines(nDocID, 0 , "          Order " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Этот документ дает его владельцу безпрепятственный и неограниченный по времени проход в форт Азган.");
+	Doc_PrintLines(nDocID, 0 , " This document gives its owner unhindered and unlimited access to Fort Azgan. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"           Лорд Хаген");
+	Doc_PrintLine(nDocID, 0 , "            Lord Hagen " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -1638,7 +1639,7 @@ func void use_itwr_hagenorderfort()
 
 instance itwr_pyrorderfort(C_Item)
 {
-	name = "Пропуск Пирокара";
+	name = " Pyrocar Pass " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1661,14 +1662,14 @@ func void use_itwr_pyrorderfort()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"         Распоряжение");
+	Doc_PrintLines(nDocID, 0 , "          Order " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Этот документ дает его владельцу безпрепятственный и неограниченный по времени проход в форт Азган.");
+	Doc_PrintLines(nDocID, 0 , " This document gives its owner unhindered and unlimited access to Fort Azgan. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Верховный маг Огня, Пирокар");
+	Doc_PrintLines(nDocID, 0 , " Archmage of Fire, Pyrokar " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -1680,7 +1681,7 @@ func void use_itwr_pyrorderfort()
 
 instance ITWR_WATERMAGELETTER(C_Item)
 {
-	name = "Послание Магов Воды";
+	name = " Message from the Water Mages " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1689,7 +1690,7 @@ instance ITWR_WATERMAGELETTER(C_Item)
 	on_state[0] = use_itwr_watermageletter;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[2] = "Письмо Сатураса к Лорду Хагену.";
+	text[ 2 ] = " Letter to Saturasa k Lordu Hagenu. " ;
 	inv_animate = 1;
 };
 
@@ -1704,11 +1705,11 @@ func void use_itwr_watermageletter()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Уважаемый Лорд Хаген!");
+	Doc_PrintLine(nDocID, 0 , " Dear Lord Hagen! " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Прошу Вас распорядится обеспечить защиту магического портала, каковой мы обнаружили при исследовании древних развалин пирамид на сереве Хориниса. Дабы избежать различного рода неприятностей. Думаю, вы понимаете, что я имею в виду.");
+	Doc_PrintLines(nDocID, 0 , " I ask you to order to protect the magical portal, which we discovered while exploring the ancient ruins of the pyramids on the Sereb Khorinis. In order to avoid various kinds of trouble. I think you understand what I mean. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"		Сатурас, глава Магов Воды");
+	Doc_PrintLine(nDocID, 0 , " 		Saturas, head of the Water Mages " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
@@ -1717,14 +1718,14 @@ func void use_itwr_watermageletter()
 
 instance ITWR_TYONRECEPT(C_Item)
 {
-	name = "Рецепт";
+	name = " Recipe " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Scrl_RezO.3DS";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Рецепт эликсира трансформации сознания";
+	description = " Recipe for the Mind Transformation Elixir " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_tyonrecept;
@@ -1748,18 +1749,18 @@ func void use_itwr_tyonrecept()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Состав ингредиентов для изготовления эликсира:");
+	Doc_PrintLines(nDocID, 0 , " Ingredients for making the elixir: " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Кость скелета");
-	Doc_PrintLine(nDocID,0,"Аквамарин");
-	Doc_PrintLine(nDocID,0,"Черный жемчуг");
-	Doc_PrintLine(nDocID,0,"Огненный язык");
-	Doc_PrintLine(nDocID,0,"Болотник");
-	Doc_PrintLine(nDocID,0,"Огненный корень");
-	Doc_PrintLine(nDocID,0,"Мандибула ползуна");
-	Doc_PrintLine(nDocID,0,"Сердце каменного голема");
-	Doc_PrintLine(nDocID,0,"Яйцо ползуна");
-	Doc_PrintLine(nDocID,0,"Царский щавель");
+	Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
+	Doc_PrintLine(nDocID, 0 , " Aquamarine " );
+	Doc_PrintLine(nDocID, 0 , " Black Pearl " );
+	Doc_PrintLine(nDocID, 0 , " Fiery tongue " );
+	Doc_PrintLine(nDocID, 0 , " Swamp " );
+	Doc_PrintLine(nDocID, 0 , " Fireroot " );
+	Doc_PrintLine(nDocID, 0 , " Crawler Mandible " );
+	Doc_PrintLine(nDocID, 0 , " Stone Golem Heart " );
+	Doc_PrintLine(nDocID, 0 , " Crawler Egg " );
+	Doc_PrintLine(nDocID, 0 , " Royal sorrel " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -1770,7 +1771,7 @@ func void use_itwr_tyonrecept()
 
 instance ITWR_TYONLIST(C_Item)
 {
-	name = "Список Идола Тиона";
+	name = " Idol of Tion List " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1778,7 +1779,7 @@ instance ITWR_TYONLIST(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_itwr_tyonlist;
 	scemeName = "MAP";
-	description = "Список Идола Тиона";
+	description = " Idol of Tion List " ;
 	inv_animate = 1;
 };
 
@@ -1793,13 +1794,13 @@ func void use_itwr_tyonlist()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Список ингредиентов:");
+	Doc_PrintLine(nDocID, 0 , " List of ingredients: " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Яйцо ползуна");
-	Doc_PrintLine(nDocID,0,"Сердце каменного голема");
-	Doc_PrintLine(nDocID,0,"Царский щавель");
-	Doc_PrintLine(nDocID,0,"Огненный язык");
+	Doc_PrintLine(nDocID, 0 , " Crawler Egg " );
+	Doc_PrintLine(nDocID, 0 , " Stone Golem Heart " );
+	Doc_PrintLine(nDocID, 0 , " Royal sorrel " );
+	Doc_PrintLine(nDocID, 0 , " Fiery tongue " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -1813,14 +1814,14 @@ func void use_itwr_tyonlist()
 
 instance ITWR_FIRELIGHT(C_Item)
 {
-	name = "Магическая формула заклинания 'Покров огня'";
+	name = " Magic formula for Shroud of Fire " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Содержит структуру заклинания";
+	text[ 2 ] = " Contains the structure of the spell " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1828,14 +1829,14 @@ instance ITWR_FIRELIGHT(C_Item)
 
 instance itwr_FireMeteor(C_Item)
 {
-	name = "Магическая формула заклинания 'Метеорит'";
+	name = " Magic formula of the spell 'Meteorite' " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 3000;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Содержит структуру заклинания";
+	text[ 2 ] = " Contains the structure of the spell " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1843,14 +1844,14 @@ instance itwr_FireMeteor(C_Item)
 
 instance ITWR_TELEKINESIS(C_Item)
 {
-	name = "Магическая формула заклинания 'Поглощение духа'";
+	name = " Magic formula for the spell 'Spirit Absorption' " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 500;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Содержит структуру заклинания";
+	text[ 2 ] = " Contains the structure of the spell " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1858,14 +1859,14 @@ instance ITWR_TELEKINESIS(C_Item)
 
 instance ITWR_CONTROL(C_Item)
 {
-	name = "Магическая формула заклинания 'Гипноз'";
+	name = " Magic formula of the spell 'Hypnosis' " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1500;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Содержит структуру заклинания";
+	text[ 2 ] = " Contains the structure of the spell " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1873,14 +1874,14 @@ instance ITWR_CONTROL(C_Item)
 
 instance ItWr_GuruWrath(C_Item)
 {
-	name = "Магическая формула заклинания 'Гнев стихий'";
+	name = " Magic formula for 'Elemental Wrath' " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 3500;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Содержит структуру заклинания";
+	text[ 2 ] = " Contains the structure of the spell " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -1888,7 +1889,7 @@ instance ItWr_GuruWrath(C_Item)
 
 instance ITWR_KALOMSRECIPE(C_Item)
 {
-	name = "Рецепт Кор Галома";
+	name = " Cor Galom Recipe " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
@@ -1896,7 +1897,7 @@ instance ITWR_KALOMSRECIPE(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[0] = "Рецепт обработки болотника";
+	text[ 0 ] = " Swamp Bog Processing Recipe " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_kalomsrecipe;
@@ -1914,9 +1915,9 @@ func void use_itwr_kalomsrecipe()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Рецепт обработки болотника.");
+	Doc_PrintLine(nDocID, 0 , " Recipe for processing a bog. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Для изготовления лучших сортов болотник необходимо перетолочь с луговым горцом и тщательно просушить. А также потребуется большее количество самого болотника! Это создаст правильную концетрацию магической эссенции.");
+	Doc_PrintLines(nDocID, 0 , " To make the best varieties of bogweed, you need to grind it with meadow knotweed and dry it thoroughly. And you will also need more of the bogweed itself! This will create the correct concentration of magical essence. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"                - Галом");
 	Doc_Show(nDocID);
@@ -1927,12 +1928,12 @@ func void use_itwr_kalomsrecipe()
 		KNOW_JOINTRECIPE = TRUE;
 		B_Say(self,self,"$HOWINTEREST");
 		Log_CreateTopic(TOPIC_TalentHerb,LOG_NOTE);
-		B_LogEntry(TOPIC_TalentHerb,"Для изготовления 'Северного Темного' необходимо четыре стебля болотника и луговой горец.");
-		B_LogEntry_Quiet(TOPIC_TalentHerb,"Для изготовления 'Зова мечты' необходимо восемь стеблей болотника и луговой горец.");
+		B_LogEntry(TOPIC_TalentHerb, " 'Northern Dark' requires four bog stalks and meadow knotweed to make. " );
+		B_LogEntry_Quiet(TOPIC_TalentHerb, " Eight Bogweed and Meadowweed are required to make 'Dream Call'. " );
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -1950,15 +1951,15 @@ func void use_itwr_kalomsrecipe()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_48 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_48 = TRUE ;
 	};
 };
 
 
 instance ITWR_FERNANDOLETTER(C_Item)
 {
-	name = "Рекомендательное письмо Фернандо";
+	name = " Letter of recommendation from Fernando " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1966,14 +1967,14 @@ instance ITWR_FERNANDOLETTER(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Рекомендательное письмо для Лариуса.";
-	text[3] = "В нем упоминаются положительные качества Галлахада.";
+	text[ 2 ] = " Recommendation letter for Larius. " ;
+	text[ 3 ] = " It mentions the positive qualities of Gallahad. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_LUTEROLETTER(C_Item)
 {
-	name = "Рекомендательное письмо Лютеро";
+	name = " Luthero ' s letter of recommendation " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1981,14 +1982,14 @@ instance ITWR_LUTEROLETTER(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Рекомендательное письмо для Лариуса.";
-	text[3] = "В нем упоминаются положительные качества Галлахада.";
+	text[ 2 ] = " Recommendation letter for Larius. " ;
+	text[ 3 ] = " It mentions the positive qualities of Gallahad. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_GERBRANTLETTER(C_Item)
 {
-	name = "Рекомендательное письмо Гербрандта";
+	name = " Gerbrandt ' s letter of recommendation " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -1996,14 +1997,14 @@ instance ITWR_GERBRANTLETTER(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Рекомендательное письмо для Лариуса.";
-	text[3] = "В нем упоминаются положительные качества Галлахада.";
+	text[ 2 ] = " Recommendation letter for Larius. " ;
+	text[ 3 ] = " It mentions the positive qualities of Gallahad. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_SALANDRILLETTER(C_Item)
 {
-	name = "Рекомендательное письмо Саландрила";
+	name = " Letter of recommendation from Salandril " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -2011,14 +2012,14 @@ instance ITWR_SALANDRILLETTER(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Рекомендательное письмо для Лариуса.";
-	text[3] = "В нем упоминаются положительные качества Галлахада.";
+	text[ 2 ] = " Recommendation letter for Larius. " ;
+	text[ 3 ] = " It mentions the positive qualities of Gallahad. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_VALENTINOLETTER(C_Item)
 {
-	name = "Рекомендательное письмо Валентино";
+	name = " Valentino ' s letter of recommendation " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -2026,28 +2027,28 @@ instance ITWR_VALENTINOLETTER(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Рекомендательное письмо для Лариуса.";
-	text[3] = "В нем упоминаются положительные качества Галлахада.";
+	text[ 2 ] = " Recommendation letter for Larius. " ;
+	text[ 3 ] = " It mentions the positive qualities of Gallahad. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_TALIASANRECOMENDEDLETTERS(C_Item)
 {
-	name = "Связка бумаг";
+	name = " Bunch of papers " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Связка рекомендательных писем для Лариуса.";
-	text[3] = "В них упоминаются положительные качества Галлахада.";
+	text[ 2 ] = " A bunch of reference letters for Larius. " ;
+	text[ 3 ] = " They mention Gallahad's good qualities. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_ZURISDOCS(C_Item)
 {
-	name = "Пачка документов";
+	name = " Stack of documents " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -2055,15 +2056,15 @@ instance ITWR_ZURISDOCS(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Документы, подтверждающие права собственности";
-	text[3] = "на торговое место Джоры. Имя собственика не вписано.";
-	text[4] = "На документах стоит подпись Зуриса.";
+	text[ 2 ] = " Proof of ownership " ;
+	text[ 3 ] = " to Jora's trading place. Owner's name is missing. " ;
+	text[ 4 ] = " The documents are signed by Zuris. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_MANIAC(C_Item)
 {
-	name = "Симптомы мании";
+	name = " Symptoms of Mania " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 2500;
@@ -2071,7 +2072,7 @@ instance ITWR_MANIAC(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	on_state[0] = use_itwr_maniac;
-	description = "Симптомы мании";
+	description = " Symptoms of mania " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;
@@ -2090,8 +2091,8 @@ func void use_itwr_maniac()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		Snd_Play("Levelup");
@@ -2099,7 +2100,7 @@ func void use_itwr_maniac()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2117,8 +2118,8 @@ func void use_itwr_maniac()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_49 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_49 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -2127,15 +2128,15 @@ func void use_itwr_maniac()
 	Doc_SetPage(nDocID,1,"Book_Red_R.tga",0);
 	Doc_SetFont(nDocID,0,FONT_Book_New);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
-	Doc_PrintLine(nDocID,0,"Остовы мании");
+	Doc_PrintLine(nDocID, 0 , " Mania Skeletons " );
 	Doc_PrintLine(nDocID,0,"---------------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
-	Doc_PrintLines(nDocID,0,"За время путешествия я чаще всего встречал это заболевание среди сектантов. В таких сообществах болезнь трудно распознать, и она распространяется значительно быстрее. Странное поведение сектантов рассматривается как дар свыше.");
+	Doc_PrintLines(nDocID, 0 , " During my travels, I most often encountered this disease among cultists. In such communities, the disease is difficult to recognize, and it spreads much faster. Strange behavior of cultists is considered a gift from above. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
-	Doc_PrintLines(nDocID,1,"Об этом не стоит даже упоминать. Я должен был смириться с тем, что людей, которые ведут себя ненормально, принимают за избранников богов. Самый интересный случай заболевания я наблюдал у одного сумасшедшего, который все время повторял одно и то же: 'Спящий проснется'.");
+	Doc_PrintLines(nDocID, 1 , " It's not even worth mentioning. I had to put up with the fact that people who behave abnormally are mistaken for the chosen ones of the gods. The most interesting case of the disease I observed was in a madman who kept repeating the same thing and the same: 'The sleeper will wake up'. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
@@ -2144,7 +2145,7 @@ func void use_itwr_maniac()
 
 instance ITWR_RHETORIKBOOK(C_Item)
 {
-	name = "Основы риторики";
+	name = " Fundamentals of Rhetoric " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -2152,7 +2153,7 @@ instance ITWR_RHETORIKBOOK(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	on_state[0] = use_itwr_rhetorikbook;
-	description = "Учебник риторики";
+	description = " Rhetoric Tutorial " ;
 	inv_animate = 1;
 };
 
@@ -2167,8 +2168,8 @@ func void use_itwr_rhetorikbook()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 2;
-			AI_Print("Риторика + 2");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  2 ;
+			AI_Print( " Rhetoric + 2 " );
 		};
 
 		B_GivePlayerXP(50);
@@ -2177,7 +2178,7 @@ func void use_itwr_rhetorikbook()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2195,8 +2196,8 @@ func void use_itwr_rhetorikbook()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_50 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_50 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -2205,35 +2206,35 @@ func void use_itwr_rhetorikbook()
 	Doc_SetPage(nDocID,1,"BOOK_Red_R.tga",0);
 	Doc_SetFont(nDocID,0,FONT_Book_New);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
-	Doc_PrintLine(nDocID,0,"Риторика");
+	Doc_PrintLine(nDocID, 0 , " Rhetoric " );
 	Doc_PrintLine(nDocID,0,"---------------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"1. Говори понятно. Упрощай сложные предложения!");
+	Doc_PrintLines(nDocID, 0 , " 1. Speak clearly. Simplify complex sentences! " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"2. Следи за языком своего тела. Мимика и жесты должны отвечать");
+	Doc_PrintLines(nDocID, 0 , " 2. Watch your body language. Facial expressions and gestures should respond to " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
-	Doc_PrintLine(nDocID,1,"тому, что ты говоришь.");
+	Doc_PrintLine(nDocID, 1 , " what you say. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"3. Следи за реакцией собеседника. Исходя из этого, можно предугадывать его мысли и ожидания.");
+	Doc_PrintLines(nDocID, 1 , " 3. Watch the interlocutor's reaction. Based on this, you can predict his thoughts and expectations. " );
 	Doc_PrintLines(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"4. Ты должен тщательно обдумывать свои аргументы и говорить только по существу.");
+	Doc_PrintLines(nDocID, 1 , " 4. You must carefully consider your arguments and speak only to the point. " );
 	Doc_PrintLines(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"5. Добрый конец всему делу венец. Впечатление от твоей речи зависит от того, как ты ее закончишь.");
+	Doc_PrintLines(nDocID, 1 , " 5. A good end to the whole thing. The impression of your speech depends on how you finish it. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_Show(nDocID);
 };
 
 
-instance ITWR_GERBRANDSECLET(C_Item)
+instance ITWR_GERBRANDSECLET (C_Item)
 {
-	name = "Запечатанное письмо Гербрандта";
+	name = " Gerbrandt 's Sealed Letter " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -2242,7 +2243,7 @@ instance ITWR_GERBRANDSECLET(C_Item)
 	on_state[0] = use_itwr_gerbrandseclet;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[2] = "Письмо Гербрандта для человека в таверне.";
+	text[ 2 ] = " Gerbrandt's letter to the man in the tavern. " ;
 	inv_animate = 1;
 };
 
@@ -2250,7 +2251,7 @@ instance ITWR_GERBRANDSECLET(C_Item)
 func void use_itwr_gerbrandseclet()
 {
 	var int nDocID;
-	CreateInvItems(self,itwr_gerbrandseclet_open,1);
+	CreateInvItems(self,itwr_gerbrandseclet_open, 1 );
 	nDocID = Doc_Create();
 	Doc_SetPages(nDocID,1);
 	Doc_SetPage(nDocID,0,"letters.TGA",0);
@@ -2258,10 +2259,10 @@ func void use_itwr_gerbrandseclet()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Помогите мне уладить мои проблемы с человеком по имени Вамбо. Вы знаете, что делать.");
+	Doc_PrintLines(nDocID, 0 , " Help me fix my problems with a man named Wambo. You know what to do. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"P.S. К письму прилагается кошелек, в котором находится оплата за ваши услуги.");
+	Doc_PrintLines(nDocID, 0 , " PS A purse containing payment for your services is attached to the letter. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -2274,18 +2275,18 @@ func void use_itwr_gerbrandseclet()
 };
 
 
-instance ITWR_GERBRANDSECLET_OPEN(C_Item)
+instance ITWR_GERBRANDSECLET_OPEN (C_Item)
 {
-	name = "Письмо Гербрандта";
+	name = " Gerbrandt 's letter " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_itwr_gerbrandseclet_open;
+	on_state[ 0 ] = use_itwr_gerbrandseclet_open;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Письмо Гербрандта для человека в таверне.";
+	text[ 2 ] = " Gerbrandt's letter to the man in the tavern. " ;
 	inv_animate = 1;
 };
 
@@ -2300,10 +2301,10 @@ func void use_itwr_gerbrandseclet_open()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Помогите мне уладить мои проблемы с человеком по имени Вамбо. Вы знаете, что делать.");
+	Doc_PrintLines(nDocID, 0 , " Help me fix my problems with a man named Wambo. You know what to do. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"P.S. К письму прилагается кошелек, в котором находится оплата за ваши услуги.");
+	Doc_PrintLines(nDocID, 0 , " PS A purse containing payment for your services is attached to the letter. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -2317,14 +2318,14 @@ func void use_itwr_gerbrandseclet_open()
 
 instance ITWR_HROMANIN_1(C_Item)
 {
-	name = "Старая книга";
+	name = "The Old Book " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItWr_Book_Rich_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Хроманин, часть I";
+	description = " Chromanin Part I " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_hromanin_1;
@@ -2346,14 +2347,14 @@ func void use_itwr_hromanin_1()
 	Doc_PrintLine(nDocID,0,"-----------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Тот, кто готов отказаться от всех земных страстей и следовать тропами правды, должен узнать, где сокрыт источник моей силы. Найдя его, он будет способен разрушить все, что соединяет его с этим миром, и покажет, что он готов принять знания Хроманина.");
+	Doc_PrintLines(nDocID, 0 , " He who is ready to give up all earthly passions and follow the paths of truth must find out where the source of my power is hidden. Finding it, he will be able to destroy everything that connects him to this world, and show that he is ready to accept Chromanin's knowledge. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Под сенью старых темных скал дробили камни ради злата. На склеп наткнулись и расплата...пришла. То страшный час настал!");
+	Doc_PrintLines(nDocID, 1 , " Under the shadow of the old dark rocks, stones were crushed for the sake of gold. They stumbled upon the crypt and retribution ... came. That terrible hour has come! " );
 	Doc_Show(nDocID);
 
 	if(READ_HROMANIN_01 == FALSE)
@@ -2362,8 +2363,8 @@ func void use_itwr_hromanin_1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 	if(CHAPTER1 == FALSE)
@@ -2372,7 +2373,7 @@ func void use_itwr_hromanin_1()
 		Snd_Play("FoundRiddler");
 		Log_CreateTopic(TOPIC_HROMANINQUEST,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_HROMANINQUEST,LOG_Running);
-		B_LogEntry(TOPIC_HROMANINQUEST,"Я нашел очень странную книгу - Хроманин! Похоже, что ее автор пишет сплошными загадками...'Под сенью старых темных скал дробили камни ради злата. На склеп наткнулись и расплата...пришла. То страшный час настал!' Хм! Пока я ничего не понимаю, но, возможно, просто еще время не пришло.");
+		B_LogEntry( TOPIC_HROMANINQUEST , " I found a very strange book - Chromanin! It seems that its author writes in complete riddles...'Under the shadow of old dark rocks, stones were crushed for gold. They stumbled upon the crypt and retribution...came. That terrible hour has come! ' Hmm! I don't understand anything yet, but maybe it's just not time yet. " );
 		CHAPTER1 = TRUE;
 		B_Say(self,self,"$HOWINTEREST");
 
@@ -2387,7 +2388,7 @@ func void use_itwr_hromanin_1()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2405,22 +2406,22 @@ func void use_itwr_hromanin_1()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_51 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_51 = TRUE ;
 	};
 };
 
 
 instance ITWR_HROMANIN_2(C_Item)
 {
-	name = "Старая книга";
+	name = "The Old Book " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItWr_Book_Rich_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Хроманин, часть II";
+	description = " Chromanin Part II " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_hromanin_2;
@@ -2443,14 +2444,14 @@ func void use_itwr_hromanin_2()
 	Doc_PrintLine(nDocID,0,"-----------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"В приносимых ветрами видениях Хроманина открывалось передо мной будущее. За веру в него я готов был отдать все, но и этого было бы мало. Они потрясли меня до глубины души.");
+	Doc_PrintLines(nDocID, 0 , " Chromanin's wind-blown visions revealed the future before me. I was ready to give everything for believing in him, but even that wouldn't be enough. They shook me to the core. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Кто мертвых потревожил в покое темных скал. Сам жизнь давно оставил и мертвой плотью стал. Наполнена пещера та болью, злом и страхом. И озеро подземное покрыто древним мраком.");
+	Doc_PrintLines(nDocID, 1 , " Who disturbed the dead in peace of the dark rocks. Life itself long ago left and became dead flesh. That cave is filled with pain, evil and fear. And the underground lake is covered with ancient darkness. " );
 	Doc_Show(nDocID);
 
 	if(READ_HROMANIN_02 == FALSE)
@@ -2459,15 +2460,15 @@ func void use_itwr_hromanin_2()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 	if(CHAPTER2 == FALSE)
 	{
 		B_GivePlayerXP(100);
 		Snd_Play("FoundRiddler");
-		B_LogEntry(TOPIC_HROMANINQUEST,"Я нашел вторую книгу под названием Хроманин. И снова одни загадки...'Кто мертвых потревожил в покое темных скал. Сам жизнь давно оставил и мертвой плотью стал.  Наполнена пещера та болью, злом и страхом. И озеро подземное покрыто древним мраком.'");
+		B_LogEntry( TOPIC_HROMANINQUEST , " I found a second book called Chromanin. And again, only riddles... 'Who disturbed the dead in peace of dark rocks. Life itself left long ago and became dead flesh. That cave is filled with pain, evil and fear. And the underground lake covered with ancient darkness.' " );
 		CHAPTER2 = TRUE;
 		B_Say(self,self,"$HOWINTEREST");
 
@@ -2482,7 +2483,7 @@ func void use_itwr_hromanin_2()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2500,22 +2501,22 @@ func void use_itwr_hromanin_2()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_52 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_52 = TRUE ;
 	};
 };
 
 
 instance ITWR_HROMANIN_3(C_Item)
 {
-	name = "Старая книга";
+	name = "The Old Book " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItWr_Book_Rich_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Хроманин, часть III";
+	description = " Chromanin Part III " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_hromanin_3;
@@ -2538,14 +2539,14 @@ func void use_itwr_hromanin_3()
 	Doc_PrintLine(nDocID,0,"-----------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"О, боги древних времен! Возможно ли, чтобы такой человек, как я, недостойный, получил эту силу. Как велик страх потерять все, выказав малейшее слово сомнения.");
+	Doc_PrintLines(nDocID, 0 , " Oh gods of ancient times! Is it possible for a man like me, unworthy, to have this power. How great is the fear of losing everything by uttering the slightest word of doubt. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Руда и кровь, тоска и пот...настигнет там грехов расплата. Застит глазницы власть и злато - проклятье душ на всех падет!");
+	Doc_PrintLines(nDocID, 1 , " Ore and blood, melancholy and sweat...retribution will overtake sins there. Power and gold will cover the eye sockets - the curse of souls will fall on everyone! " );
 	Doc_Show(nDocID);
 
 	if(READ_HROMANIN_03 == FALSE)
@@ -2554,15 +2555,15 @@ func void use_itwr_hromanin_3()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 	if(CHAPTER3 == FALSE)
 	{
 		B_GivePlayerXP(250);
 		Snd_Play("FoundRiddler");
-		B_LogEntry(TOPIC_HROMANINQUEST,"Нашел я третью книгу. Похоже, я начинаю понимать, в чем тут дело! ...'Руда и кровь, тоска и пот...настигнет там грехов расплата. Застит глазницы власть и злато - проклятье душ на всех падет!'");
+		B_LogEntry( TOPIC_HROMANINQUEST , " I found the third book. It looks like I'm starting to understand what's the matter! ...'Ore and blood, melancholy and sweat... there will be retribution for sins. Power and gold will blind the eye sockets - the curse of souls on all fall!' " );
 		CHAPTER3 = TRUE;
 		B_Say(self,self,"$HOWINTEREST");
 
@@ -2579,7 +2580,7 @@ func void use_itwr_hromanin_3()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2597,22 +2598,22 @@ func void use_itwr_hromanin_3()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_53 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_53 = TRUE ;
 	};
 };
 
 
 instance ITWR_HROMANIN_4(C_Item)
 {
-	name = "Старая книга";
+	name = "The Old Book " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItWr_Book_Rich_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Хроманин, часть IV";
+	description = " Chromanin, Part IV " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_hromanin_4;
@@ -2635,14 +2636,14 @@ func void use_itwr_hromanin_4()
 	Doc_PrintLine(nDocID,0,"-----------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Я даже не смею надеяться когда-нибудь самому пережить Хроманин. Прошли дни растрат и пустых слов. Теперь будет так просто достичь исполнения, и очень скоро я это сделаю.");
+	Doc_PrintLines(nDocID, 0 , " I don't even dare to hope to ever experience Chromanin myself. Gone are the days of wasting and empty words. Now it will be so easy to achieve fulfillment, and very soon I will. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Вода и камень, жизнь и смерть! Погаснет свет в глубинах тех. Приди туда, где ты бывал, покрыв себя рудой из скал!");
+	Doc_PrintLines(nDocID, 1 , " Water and stone, life and death! The light will go out in the depths of those. Come to where you have been, covering yourself with ore from the rocks! " );
 	Doc_Show(nDocID);
 
 	if(READ_HROMANIN_04 == FALSE)
@@ -2651,15 +2652,15 @@ func void use_itwr_hromanin_4()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 	if(CHAPTER4 == FALSE)
 	{
 		B_GivePlayerXP(500);
 		Snd_Play("FoundRiddler");
-		B_LogEntry(TOPIC_HROMANINQUEST,"Книга номер четыре. Уж не пытается ли этот парень просто заморочить мне голову?! ...'Вода и камень, жизнь и смерть! Погаснет свет в глубинах тех. Приди туда, где ты бывал, покрыв себя рудой из скал!'");
+		B_LogEntry( TOPIC_HROMANINQUEST , " Book number four. Is this guy just trying to fool my head?! ...'Water and stone, life and death! rocks!' " );
 		CHAPTER4 = TRUE;
 		B_Say(self,self,"$HOWINTEREST");
 
@@ -2678,7 +2679,7 @@ func void use_itwr_hromanin_4()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2696,22 +2697,22 @@ func void use_itwr_hromanin_4()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_54 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_54 = TRUE ;
 	};
 };
 
 
 instance ITWR_HROMANIN_5(C_Item)
 {
-	name = "Старая книга";
+	name = "The Old Book " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItWr_Book_Rich_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Хроманин, часть V";
+	description = " Chromanin Part V " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_hromanin_5;
@@ -2735,14 +2736,14 @@ func void use_itwr_hromanin_5()
 	Doc_PrintLine(nDocID,0,"-----------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Но я не буду вставать на этот путь один. Я должен буду разделить силу, сокрытую во мне, с достойным, который найдет меня. Надеюсь, мое ожидание не затянется надолго...");
+	Doc_PrintLines(nDocID, 0 , " But I will not embark on this path alone. I will have to share the power hidden in me with a worthy one who will find me. I hope my wait will not drag on for a long time... " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Века стоял оплот молчанья, грозя врагам камнями стен. Остались там лишь пыль и тлен, да гарпий злобные стенанья.");
+	Doc_PrintLines(nDocID, 1 , " For centuries there was a stronghold of silence, threatening the enemies with stones of the walls. Only dust and decay remained there, and the harpies' angry moaning. " );
 	Doc_Show(nDocID);
 
 	if(READ_HROMANIN_05 == FALSE)
@@ -2751,14 +2752,14 @@ func void use_itwr_hromanin_5()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 	if(CHAPTER5 == FALSE)
 	{
 		B_GivePlayerXP(750);
-		B_LogEntry(TOPIC_HROMANINQUEST,"Может, это последняя?! Мне уже не терпится узнать, что это все значит. 'Века стоял оплот молчанья, грозя врагам камнями стен. Остались там лишь пыль и тлен, да гарпий злобные стенанья.'");
+		B_LogEntry( TOPIC_HROMANINQUEST , " Maybe this is the last?! I can't wait to find out what it all means. 'For centuries there was a bastion of silence, threatening enemies with walls. Only dust and decay remained there, and angry moans of harpies.' " );
 		Snd_Play("FoundRiddler");
 		CHAPTER5 = TRUE;
 		B_Say(self,self,"$HOWINTEREST");
@@ -2777,7 +2778,7 @@ func void use_itwr_hromanin_5()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2795,21 +2796,21 @@ func void use_itwr_hromanin_5()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_55 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_55 = TRUE ;
 	};
 };
 
 instance ITWR_HROMANIN_6(C_Item)
 {
-	name = "Старая книга";
+	name = "The Old Book " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItWr_Book_Rich_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAPSEALED";
-	description = "Хроманин, часть VI";
+	description = " Chromanin Part VI " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_hromanin_6;
@@ -2832,14 +2833,14 @@ func void use_itwr_hromanin_6()
 	Doc_PrintLine(nDocID,0,"-----------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Смерть - это только начало...");
+	Doc_PrintLines(nDocID, 0 , " Death is just the beginning... " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Искусный предсказатель наметил путь игрушке! Он ждет глупца в ловушке. Вернись в нее, скорей...");
+	Doc_PrintLines(nDocID, 1 , " A skillful soothsayer has charted the path for the toy! He is waiting for the fool in the trap. Get back into it, quickly... " );
 	Doc_Show(nDocID);
 
 	if(READ_HROMANIN_06 == FALSE)
@@ -2848,15 +2849,15 @@ func void use_itwr_hromanin_6()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	};
 	if(CHAPTER6 == FALSE)
 	{
 		B_GivePlayerXP(1000);
 		Snd_Play("FoundRiddler");
-		B_LogEntry(TOPIC_HROMANINQUEST,"Чувствую, разгадка уже близка...'Исскустный предсказатель наметил путь игрушке! Он ждет глупца в ловушке. Вернись в нее, скорей...'");
+		B_LogEntry( TOPIC_HROMANINQUEST , " I have a feeling the answer is close...'The artificer has charted the path for the toy! He's waiting for the fool in the trap. Get back into it, quickly...' " );
 		CHAPTER6 = TRUE;
 		B_Say(self,self,"$HOWINTEREST");
 
@@ -2874,7 +2875,7 @@ func void use_itwr_hromanin_6()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -2892,14 +2893,14 @@ func void use_itwr_hromanin_6()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_56 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_56 = TRUE ;
 	};
 };
 
 instance ITWR_HROMANIN(C_Item)
 {
-	name = "Старая книга";
+	name = "The Old Book " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
@@ -2929,14 +2930,14 @@ func void use_ITWR_HROMANIN()
 	Doc_PrintLine(nDocID,0,"-----------");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Смерть - это только начало...");
+	Doc_PrintLines(nDocID, 0 , " Death is just the beginning... " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Так сущность или же душа? Ведь чья-то жизнь, то чья-то пища. Поглотишь душ ты больше тыщи и вечность станет хороша!");
+	Doc_PrintLines(nDocID, 1 , " So, the essence or the soul? After all, someone's life, then someone's food. You will absorb more than a thousand souls and eternity will become good! " );
 	Doc_Show(nDocID);
 
 	if(READ_HROMANIN_ALL == FALSE)
@@ -2946,13 +2947,13 @@ func void use_ITWR_HROMANIN()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 
 		if(rnd <= 30)
 		{
@@ -2971,14 +2972,14 @@ func void use_ITWR_HROMANIN()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_57 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_57 = TRUE ;
 	};
 };
 
 instance ITWR_NIGELLETTER(C_Item)
 {
-	name = "Рекомендательное письмо Найджела";
+	name = " Nigel ' s letter of recommendation " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -2986,15 +2987,15 @@ instance ITWR_NIGELLETTER(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Рекомендательное письмо для торговца Лютеро.";
-	text[3] = "В нем упоминаются мои положительные качества и";
-	text[4] = "Найджел просит Лютеро принять меня в Гильдию Торговцев.";
+	text[ 2 ] = " Recommendation letter for a Luthero merchant. " ;
+	text[ 3 ] = " It mentions my good qualities and " ;
+	text[ 4 ] = " Nigel asks Luthero to accept me into the Traders Guild. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_EROLLETTER(C_Item)
 {
-	name = "Рекомендательное письмо Эрола";
+	name = " Erol ' s letter of recommendation " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -3002,15 +3003,15 @@ instance ITWR_EROLLETTER(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Рекомендательное письмо для торговца Лютеро.";
-	text[3] = "В нем упоминаются мои положительные качества и";
-	text[4] = "Эрол просит Лютеро принять меня в Гильдию Торговцев.";
+	text[ 2 ] = " Recommendation letter for a Luthero merchant. " ;
+	text[ 3 ] = " It mentions my good qualities and " ;
+	text[ 4 ] = " Erol asks Luthero to accept me into the Traders Guild. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_BENGARORDERLETTER(C_Item)
 {
-	name = "Список товаров от Лютеро";
+	name = " List of products from Luthero " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -3018,15 +3019,15 @@ instance ITWR_BENGARORDERLETTER(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Письмо адресовано Бенгару от торговца Лютеро.";
-	text[3] = "В нем указан список необходимых товаров";
-	text[4] = "для следующей партии.";
+	text[ 2 ] = " Letter addressed to Bengar from merchant Luthero. " ;
+	text[ 3 ] = " It contains a list of required goods " ;
+	text[ 4 ] = " for the next batch. " ;
 	inv_animate = 1;
 };
 
 instance ITWR_GOMEZMAGICWORDS(C_Item)
 {
-	name = "Записка Гомеза";
+	name = " Note Gomez " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -3035,8 +3036,8 @@ instance ITWR_GOMEZMAGICWORDS(C_Item)
 	on_state[0] = use_itwr_gomezmagicwords;
 	scemeName = "MAP";
 	description = name;
-	text[3] = "В ней записаны магические слова для вызова";
-	text[4] = "душ магов Огня, умерших от руки Гомеза.";
+	text[ 3 ] = " It contains magic words to call " ;
+	text[ 4 ] = "The souls of the Firebenders who died at the hands of Gomez. " ;
 	inv_animate = 1;
 };
 
@@ -3049,17 +3050,17 @@ func void use_itwr_gomezmagicwords()
 		Snd_Play("MFX_SPAWN_CAST");
 		Wld_PlayEffect("spellFX_INCOVATION_RED",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
-		Wld_InsertNpc(none_105_corristo,"OC_CORRISTO");
+		Wld_InsertNpc(none_105_correct, " OC_CORRIST " );
 		Wld_InsertNpc(none_106_rodriguez,"OC_RODRIGUEZ");
 		Wld_InsertNpc(none_107_damarok,"OC_DAMAROK");
 		Wld_InsertNpc(none_108_drago,"OC_DRAGO");
 		Wld_InsertNpc(none_109_torrez,"OC_TORREZ");
 		FIREMAGECOMES = TRUE;
-		B_LogEntry(TOPIC_RESCUEGOMEZ,"Я вызвал души Корристо и магов Огня, которых убил Гомез. Теперь мне нужно поговорить с ними.");
+		B_LogEntry( TOPIC_RESCUEGOMEZ , " I summoned the souls of Corristo and the Firebenders that Gomez killed. Now I need to talk to them. " );
 	}
 	else
 	{
-		AI_Print("Ничего не произошло...");
+		AI_Print( " Nothing happened... " );
 		Snd_Play("MFX_MASSDEATH_CAST");
 	};
 	nDocID = Doc_Create();
@@ -3069,7 +3070,7 @@ func void use_itwr_gomezmagicwords()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"ФАР АКТУС БЕК НОР КАР...");
+	Doc_PrintLines(nDocID, 0 , " FAR ACTUS BEK NOR CAR... " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -3085,24 +3086,24 @@ func void use_itwr_gomezmagicwords()
 	Doc_Show(nDocID);
 };
 
-instance ITWR_KAMPFKUNST(C_Item)
+instance ITWR_MARTIAL ARTS (C_Item)
 {
-	name = "Мастер меча";
+	name = " Master Mecha " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Rich_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Мастер меча";
+	description = " Master Mecha " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = use_itwr_kampfkunst;
+	on_state[ 0 ] = use_itwr_martial arts;
 	inv_animate = 1;
 };
 
 
-func void use_itwr_kampfkunst()
+func void use_itwr_martial arts()
 {
 	var int nDocID;
 	var int rnd;
@@ -3116,8 +3117,8 @@ func void use_itwr_kampfkunst()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		Snd_Play("Levelup");
@@ -3125,7 +3126,7 @@ func void use_itwr_kampfkunst()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3143,8 +3144,8 @@ func void use_itwr_kampfkunst()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_58 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_58 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3156,32 +3157,32 @@ func void use_itwr_kampfkunst()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"На протяжении двух тысяч лет учение этого мастера определяло направление развития искусство боя.");
+	Doc_PrintLines(nDocID, 0 , " For two thousand years, this master's teachings have guided the development of the art of combat. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Ловкость, хладнокровие, скорость, наблюдательность и быстрота реакции являются теми качествами, которые надо тренировать. Если боец желает достичь вершин мастерства, движения его должны стать хорошо скоординированными и четко выверенными.");
+	Doc_PrintLines(nDocID, 0 , " Agility, composure, speed, observation and quick reaction are the qualities that need to be trained. If a fighter wants to reach the heights of mastery, his movements must become well coordinated and well-calibrated. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Суть учения мастера о единении духа и тела прошла через века.");
+	Doc_PrintLines(nDocID, 1 , " The essence of the master's teaching about the unity of spirit and body has passed through centuries. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Достигнутое им совершенство оставило неизгладимый след. Сменялись эпохи и менялся мир, но учение о гармонии внутренних сил и движений тела по-прежнему живо.");
+	Doc_PrintLines(nDocID, 1 , " The perfection he achieved left an indelible mark. Epochs changed and the world changed, but the doctrine of the harmony of internal forces and body movements is still alive. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_ELEMENTAREARCANEI(C_Item)
 {
-	name = "Магические знания";
+	name = " Magic knowledge " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Rich_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Магические знания";
+	description = " Magic knowledge " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_elementarearcanei;
@@ -3203,8 +3204,8 @@ func void use_itwr_elementarearcanei()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		Snd_Play("Levelup");
@@ -3212,7 +3213,7 @@ func void use_itwr_elementarearcanei()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3230,8 +3231,8 @@ func void use_itwr_elementarearcanei()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_59 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_59 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3242,55 +3243,55 @@ func void use_itwr_elementarearcanei()
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Магические знания");
+	Doc_PrintLine(nDocID, 0 , " Magic knowledge " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Классификация магии в соответствии с земными представлениями.");
+	Doc_PrintLines(nDocID, 0 , " Classification of magic according to earthly notions. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Долгие годы исследований магии и ее места в мире дали свои плоды. Уже можно сказать, что магия является абсолютным элементом мира. Она может воздействовать на другие элементы, изменяя их природу.");
+	Doc_PrintLines(nDocID, 0 , " Long years of research into magic and its place in the world have borne fruit. We can already say that magic is an absolute element of the world. It can affect other elements, changing their nature. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Соединение элемента и магии дает элемент в самой чистой его форме, но в природе такое соединение встречается очень редко. Способность мага создавать из ничего вещи материального мира является доказательством того, что магическая сила вызывает к жизни чистые и высшие элементы, которые только могут существовать в природе.");
+	Doc_PrintLines(nDocID, 1 , " The combination of an element and magic produces an element in its purest form, but in nature such a combination is very rare. The magician's ability to create things of the material world from nothing is proof that magical power brings pure and higher elements to life , which can only exist in nature. " );
 	Doc_Show(nDocID);
 };
 
-instance ITWR_JAGD_UND_BEUTE(C_Item)
+instance ITWR_HUNTING_AND_POOT (C_Item)
 {
-	name = "Охотник и жертва";
+	name = " Hunter and Prey " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Poor_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Охотник и жертва";
+	description = " Hunter and Prey " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = use_itwr_jagd_und_beute;
+	on_state[ 0 ] = use_itwr_hunt_and_prey;
 	inv_animate = 1;
 };
 
-func void use_itwr_jagd_und_beute()
+func void use_itwr_hunt_and_prey()
 {
 	var int nDocID;
 	var int rnd;
 
-	if(JAGD_UND_BEUTE_ONCE == FALSE)
+	if ( HUNTING_UND_BEUTE_ONCE  ==  FALSE )
 	{
 		B_GivePlayerXP(500);
 		DoLearnBow = TRUE;
-		JAGD_UND_BEUTE_ONCE = TRUE;
+		HUNTING_AND_BEUTE_ONCE = TRUE ;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		Snd_Play("Levelup");
@@ -3298,7 +3299,7 @@ func void use_itwr_jagd_und_beute()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3316,8 +3317,8 @@ func void use_itwr_jagd_und_beute()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_60 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_60 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3327,23 +3328,23 @@ func void use_itwr_jagd_und_beute()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Его книги пережили многие эпохи, а его советы используют учителя, чтобы обучать людей искусству охоты. Великие битвы севера не прошли даром. Сейчас любой живущий в лесах человек может хорошо обращаться с луком. Но это еще не говорит о том, что они умеют охотиться. Существует несколько правил, которые предполагают больше, чем простое обращение с оружием! Дикая природа таинственна и непредсказуема.");
+	Doc_PrintLines(nDocID, 0 , " His books have survived many ages, and his advice is used by teachers to teach people the art of hunting. The great battles of the north were not in vain. Now anyone living in the forests can handle a bow well. But this does not mean that they know how to hunt. There are several rules that involve more than just handling weapons! Wildlife is mysterious and unpredictable. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Искусство охоты с луком является не только частью древней традиции, но и самым быстрым способом охоты. За долгие годы техника стрельбы не претерпела особых изменений, и, возможно, она не изменится и в будущем. Какие обстоятельства определяют ход охоты с луком? Умение распознать эти закономерности и является решающим на пути постижения охотничьего искусства.");
+	Doc_PrintLines(nDocID, 1 , "The art of bow hunting is not only part of an ancient tradition, but also the fastest way to hunt. Shooting techniques have not changed much over the years, and it may not change in the future. What circumstances determine the course bow hunting? The ability to recognize these patterns is decisive on the path to comprehending the art of hunting. " );
 	Doc_Show(nDocID);
 };
 
-instance MYRTANAS_LYRIK(C_Item)
+instance MYRTANAS_LYRIK (C_Item)
 {
-	name = "Лирика Миртаны";
+	name = " Lyrica Mirtany " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 100;
 	visual = "ItWr_Book_Poor_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Лирика Миртаны";
+	description = " Lyrica Mirtany " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = usemyrtanas_lyrik;
@@ -3361,8 +3362,8 @@ func void usemyrtanas_lyrik()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(10);
@@ -3370,7 +3371,7 @@ func void usemyrtanas_lyrik()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3388,8 +3389,8 @@ func void usemyrtanas_lyrik()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_61 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_61 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3402,9 +3403,9 @@ func void usemyrtanas_lyrik()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Песнь");
+	Doc_PrintLine(nDocID, 0 , " Song " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"покаяния");
+	Doc_PrintLine(nDocID, 0 , " repentance " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -3418,43 +3419,43 @@ func void usemyrtanas_lyrik()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Погибло все, но солнце неустанно");
+	Doc_PrintLines(nDocID, 1 , " Everything died, but the sun is relentless " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"По-прежнему вершит годов круговорот.");
+	Doc_PrintLines(nDocID, 1 , " Still circling the years. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"И память о былом тревожит разум,");
+	Doc_PrintLines(nDocID, 1 , " And the memory of the past disturbs the mind, " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"О прежней жизни чистой вопиет.");
+	Doc_PrintLines(nDocID, 1 , " Cries out about the former clean life. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"И братства дух, забытый нами, ждет");
+	Doc_PrintLines(nDocID, 1 , " And the spirit of brotherhood, forgotten by us, awaits " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Бесплодно исполнения обетов данных,");
+	Doc_PrintLines(nDocID, 1 , " Fruitless fulfillment of vow data, " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Отвергнутых во имя низких целей,");
+	Doc_PrintLines(nDocID, 1 , " Forsaken in the name of low goals, " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Что никогда не ведали законов чести.");
+	Doc_PrintLines(nDocID, 1 , " That never knew the laws of honor. " );
 	Doc_PrintLines(nDocID,1,"");
 	Doc_Show(nDocID);
 };
 
 
-instance WAHRE_MACHT(C_Item)
+instance TRUE_POWER (C_Item)
 {
-	name = "Истинная сила";
+	name = " True Power " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 3000;
 	visual = "ItWr_Book_Rich_05.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Истинная сила";
+	description = " True Power " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = usewahre_macht;
+	on_state[ 0 ] = usetrue_power;
 	inv_animate = 1;
 };
 
-func void usewahre_macht()
+func void usetrue_power()
 {
 	var int nDocID;
 	var int rnd;
@@ -3465,8 +3466,8 @@ func void usewahre_macht()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(300);
@@ -3474,7 +3475,7 @@ func void usewahre_macht()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3492,8 +3493,8 @@ func void usewahre_macht()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_62 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_62 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3503,15 +3504,15 @@ func void usewahre_macht()
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Истинная сила");
+	Doc_PrintLine(nDocID, 0 , " True power " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Святой долг посвященного");
+	Doc_PrintLines(nDocID, 0 , " Initiate's holy duty " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Только одно отличает мага от обычного человека. Обладая возможностью влиять на божественную силу, он является существом, для которого не действуют границы и законы мира смертных.");
+	Doc_PrintLines(nDocID, 0 , " Only one thing distinguishes a magician from an ordinary person. Possessing the ability to influence divine power, he is a creature for whom the borders and laws of the mortal world do not apply. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
@@ -3519,29 +3520,29 @@ func void usewahre_macht()
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Если маг смог достичь уровня, на котором у него получилось выйти за границы своего существования, он поднимается над законами мира смертных. Он может пересекать границы времени и пространства, даже конец всему существующему в мире - смерть не сможет встать у него на пути.");
+	Doc_PrintLines(nDocID, 1 , " If a magician can reach a level where he manages to go beyond the boundaries of his existence, he rises above the laws of the mortal world. He can cross the boundaries of time and space, even the end of everything that exists in the world - death will not be able to rise in his way. " );
 	Doc_Show(nDocID);
 };
 
 
-instance MACHTVOLLE_KUNST(C_Item)
+instance POWERFUL_ART (C_Item)
 {
-	name = "Могущественное искусство";
+	name = " Mighty Art " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 500;
 	visual = "ItWr_Book_Rich_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Могущественное искусство";
+	description = " Mighty Art " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = usemachtvolle_kunst;
+	on_state[ 0 ] = usepowerful_art;
 	inv_animate = 1;
 };
 
 
-func void usemachtvolle_kunst()
+func void usepowerful_art()
 {
 	var int nDocID;
 	var int rnd;
@@ -3552,8 +3553,8 @@ func void usemachtvolle_kunst()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(50);
@@ -3561,7 +3562,7 @@ func void usemachtvolle_kunst()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3579,8 +3580,8 @@ func void usemachtvolle_kunst()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_63 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_63 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3590,34 +3591,34 @@ func void usemachtvolle_kunst()
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Могущественное искусство");
+	Doc_PrintLine(nDocID, 0 , " Mighty Art " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Труд для посвященных в искусство Аркан.");
+	Doc_PrintLines(nDocID, 0 , " A work for those initiated into the art of Arcana. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"В процессе постижения тайн магии увеличивается способность мага собирать энергию. Сначала она течет к нему как лесной ручеек. В это время о ней нужно заботиться, иначе она может иссякнуть. Но потом этот ручеек наполняется и превращается в полноводную реку.");
+	Doc_PrintLines(nDocID, 0 , " In the process of comprehending the secrets of magic, the magician's ability to collect energy increases. At first, it flows to him like a forest stream. At this time, you need to take care of it, otherwise it may dry up. But then this stream fills up and turns into a full-flowing river . " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Он растет и растет, становится сильнее с каждым днем. В его дальнейшем могуществе не будет и намека на прежнюю слабость. Достижение максимальной силы - священный долг каждого мага, ибо она была дарована богами и являет собой самый ценный дар, который когда-либо получали смертные.");
+	Doc_PrintLines(nDocID, 1 , " He grows and grows, becomes stronger every day. In his future power there will be no hint of his former weakness. Achieving maximum power is the sacred duty of every magician, for it was bestowed by the gods and is the most valuable gift that mortals have ever received. " );
 	Doc_Show(nDocID);
 };
 
 
 instance GOETTERGABE(C_Item)
 {
-	name = "Дар богов";
+	name = " In God " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 400;
 	visual = "ItWr_Book_Poor_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Дар богов";
+	description = " In God " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = usegoettergabe;
@@ -3636,8 +3637,8 @@ func void usegoettergabe()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(40);
@@ -3645,7 +3646,7 @@ func void usegoettergabe()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3663,8 +3664,8 @@ func void usegoettergabe()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_64 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_64 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3677,39 +3678,39 @@ func void usegoettergabe()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_PrintLine(nDocID,0," ");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
-	Doc_PrintLine(nDocID,0,"Дар Богов");
+	Doc_PrintLine(nDocID, 0 , " Dar Bogov " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Человек на протяжении многих веков пытается понять природу и истоки магии. Но где же начинать поиски? Как вообще описать, что такое магия? Это самая противоречивая сущность во вселенной. Она может убивать и исцелять, создавать и уничтожать.");
+	Doc_PrintLines(nDocID, 0 , " Man has been trying to understand the nature and origins of magic for many centuries. But where to start looking? How to describe what magic is in general? This is the most controversial entity in the universe. It can kill and heal, create and destroy. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Как она выглядит? Где человек может отыскать ее, невидимую, но удивительно могущественную? Магия - это магия. Это самый удивительный дар богов тем, кто может его использовать. Целительная сила, которую могут контролировать лишь единицы.");
+	Doc_PrintLines(nDocID, 1 , " What does it look like? Where can one find it, invisible yet surprisingly powerful? Magic is magic. It is the most amazing gift of the gods to those who can use it. A healing power that only a few can control. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLine(nDocID,1,"Бартос Ларанский");
+	Doc_PrintLine(nDocID, 1 , " Bartos Laransky " );
 	Doc_Show(nDocID);
 };
 
 
-instance GEHEIMNISSE_DER_ZAUBEREI(C_Item)
+instance SECRETS_OF_MAGIC (C_Item)
 {
-	name = "Тайны колдовства";
+	name = " Secrets of Witchcraft " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Poor_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Тайны колдовства";
+	description = " Secrets of sorcery " ;
 	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = usegeheimnisse_der_zauberei;
+	on_state[ 0 ] = usesecrets_of_magic;
 	inv_animate = 1;
 };
 
 
-func void usegeheimnisse_der_zauberei()
+func void usesecrets_of_magic()
 {
 	var int nDocID;
 	var int rnd;
@@ -3720,8 +3721,8 @@ func void usegeheimnisse_der_zauberei()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(100);
@@ -3729,7 +3730,7 @@ func void usegeheimnisse_der_zauberei()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3747,8 +3748,8 @@ func void usegeheimnisse_der_zauberei()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_65 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_65 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3759,32 +3760,32 @@ func void usegeheimnisse_der_zauberei()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Тайны колдовства");
+	Doc_PrintLine(nDocID, 0 , " Secrets of Witchcraft " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Сам маг является служителем магической силы, а не ее повелителем. Он обладает способностью влиять на мир магической энергии и проводить ее через себя. Адепт, посвященный в высокое искусство магии, должен уметь укрощать свой дух, чтобы добиться этого.");
+	Doc_PrintLines(nDocID, 0 , " The magician himself is a servant of magical power, not its master. He has the ability to influence the world of magical energy and conduct it through himself. An adept initiated into the high art of magic must be able to tame his spirit in order to achieve this . " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Сила его духа помогает собирать магические арканы, формировать, связывать и вносить в наш вещественный мир. В момент наивысшей концентрации магу удается перенести свой дух из нашего мира в иные миры, откуда к нему приходит сила. Он является лишь ее проводником.");
+	Doc_PrintLines(nDocID, 1 , " The strength of his spirit helps to collect magic arcana, form, bind and bring into our material world. At the moment of the highest concentration, the magician manages to transfer his spirit from our world to other worlds, from where strength comes to him. He is only her guide. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLine(nDocID,1,"Бартос фон Ларан");
+	Doc_PrintLine(nDocID, 1 , " Bartos Von Laurent " );
 	Doc_Show(nDocID);
 };
 
 
-instance ITWR_UMSONST_01(C_Item)
+instance ITWR_UMSONST_01 (C_Item)
 {
-	name = "Напрасный путь";
+	name = " In vain way " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1500;
 	visual = "ItWr_Book_Rich_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Напрасный путь";
+	description = " In vain way " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = useumsonst_01;
@@ -3803,8 +3804,8 @@ func void useumsonst_01()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(150);
@@ -3812,7 +3813,7 @@ func void useumsonst_01()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3830,8 +3831,8 @@ func void useumsonst_01()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_66 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_66 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3841,29 +3842,29 @@ func void useumsonst_01()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Напрасный путь");
+	Doc_PrintLines(nDocID, 0 , " In vain " );
 	Doc_PrintLine(nDocID,0,"--------------------");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Это награда всем, кто думает, что в любом месте можно найти что-то стоящее. Теперь возрадуйтесь, ибо это так и есть...");
+	Doc_PrintLines(nDocID, 0 , " This is a reward for anyone who thinks there's something of value anywhere. Now rejoice, because that's what it is... " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLines(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1," нет одной страницы ");
+	Doc_PrintLines(nDocID, 1 , " one page missing " );
 	Doc_Show(nDocID);
 };
 
-instance REZEPTUREN(C_Item)
+instance RECIPES (C_Item)
 {
-	name = "Рецепты";
+	name = " Recipes " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 2500;
 	visual = "ItWr_Book_Poor_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Рецепты вин - том I";
+	description = " Wine Recipes - Volume I " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = userezepturen;
@@ -3881,19 +3882,19 @@ func void userezepturen()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(25);
 		Log_CreateTopic(TOPIC_SPECIALWINES,LOG_NOTE);
-		AI_Print("Изучен алхимический рецепт - 'Бальзам провидения'");
-		B_LogEntry(TOPIC_SPECIALWINES,"Для того, чтобы сделать 'Бальзам провидения' нужны следующие ингредиенты: 2 грозди винограда, 2 стебля болотника, огненный язык и бутылка рома.");
+		AI_Print( " Alchemy recipe learned - 'Balm of Providence' " );
+		B_LogEntry( TOPIC_SPECIALWINES , " To make 'Balm of Providence' you need the following ingredients: 2 bunches of grapes, 2 bog stalks, fire tongue and a bottle of rum. " );
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3911,8 +3912,8 @@ func void userezepturen()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_67 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_67 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -3922,29 +3923,29 @@ func void userezepturen()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Бальзам провидения:");
+	Doc_PrintLines(nDocID, 0 , " Salve of Providence: " );
 	Doc_PrintLine(nDocID,0,"----------------");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Поэтому в его глаза попала желчь. Это вещество горькое на вкус. Если она попадает в глаза, человек начинает видеть горечь мира, так растет его мудрость. Он становится провидцем! Горечь и мудрость зависимы друг от друга.");
+	Doc_PrintLines(nDocID, 0 , " Therefore, bile got into his eyes. This substance tastes bitter. If it gets into his eyes, a person begins to see the bitterness of the world, so his wisdom grows. He becomes a seer! Bitterness and wisdom are dependent on each other. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLines(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Слезы, страдания и разочарования тоже несут горечь, а мудрость утешает человека, хранящего душевную боль. Горечь и мудрость противоположны. Где есть горечь, там нет мудрости, где есть мудрость - нет горечи.");
+	Doc_PrintLines(nDocID, 1 , " Tears, suffering and disappointment also bring bitterness, and wisdom comforts a person who keeps a heartache. Bitterness and wisdom are opposites. Where there is bitterness, there is no wisdom; where there is wisdom, there is no bitterness. " );
 	Doc_Show(nDocID);
 };
 
 
 instance REZEPTUREN2(C_Item)
 {
-	name = "Рецепты вин";
+	name = " Wine Recipes " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 2000;
 	visual = "ItWr_Book_Poor_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Рецепты вин - том II";
+	description = " Wine Recipes - Volume II " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = userezepturen2;
@@ -3963,19 +3964,19 @@ func void userezepturen2()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(25);
 		Log_CreateTopic(TOPIC_SPECIALWINES,LOG_NOTE);
-		AI_Print("Изучен алхимический рецепт - 'Вино забвения'");
-		B_LogEntry(TOPIC_SPECIALWINES,"Для того, чтобы сделать 'Вино забвения' нужны следующие ингредиенты: 4 грозди винограда, 2 сердца демона и 3 стебля лугового горца.");
+		AI_Print( " Alchemy recipe learned - 'Wine of Oblivion' " );
+		B_LogEntry( TOPIC_SPECIALWINES , " To make 'Wine of Forgetfulness' you need the following ingredients: 4 bunches of grapes, 2 demon hearts, and 3 meadowweed stalks. " );
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -3993,8 +3994,8 @@ func void userezepturen2()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_68 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_68 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -4004,23 +4005,23 @@ func void userezepturen2()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Вино забвения");
+	Doc_PrintLines(nDocID, 0 , " Wine of oblivion " );
 	Doc_PrintLine(nDocID,0,"--------------------");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Высоко в горах Архолоса растет лучший виноград, идущий на изготовление этого вина. Довести это вино до совершенства, дать ему созреть - это целое искусство. Основная тайна вина: оно всегда должно оставаться неподвижным. При приготовлении вина виноградные кисти перекладываются особой травой - зиосом.");
+	Doc_PrintLines(nDocID, 0 , " High in the mountains of Arholos grows the best grapes used to make this wine. Bringing this wine to perfection, letting it ripen is an art. The main secret of wine: it must always remain still. When making wine, grape brushes are shifted with a special grass - zios. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLines(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Они видели, как Магистр превращает чистейшую родниковую воду в вино, и были поражены. Они преклонялись перед ним и хвалили его дар. В наказание за лень Магистр заточил своих учеников в бутылки, а сам исчез в огненном столбе.");
+	Doc_PrintLines(nDocID, 1 , " They saw how the Magister turns the purest spring water into wine, and were amazed. They bowed before him and praised his gift. As a punishment for laziness, the Magister imprisoned his students in bottles, and he himself disappeared into a pillar of fire. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_VARUSCONTENT(C_Item)
 {
-	name = "Список Варуса";
+	name = " Varus List " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	visual = "ItWr_Scroll_01.3ds";
@@ -4028,8 +4029,8 @@ instance ITWR_VARUSCONTENT(C_Item)
 	scemeName = "MAP";
 	on_state[0] = use_itwr_varuscontent;
 	description = name;
-	text[2] = "Список провианта, необходимого для";
-	text[3] = "паладинов Лорда Варуса.";
+	text[ 2 ] = " List of supplies needed for " ;
+	text[ 3 ] = " Paladins of Lord Varus. " ;
 	inv_animate = 1;
 };
 
@@ -4044,19 +4045,19 @@ func void use_itwr_varuscontent()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Список");
+	Doc_PrintLine(nDocID, 0 , " List " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"50 бочек солонины");
-	Doc_PrintLine(nDocID,0,"15 - 20 бочек питьевой воды");
-	Doc_PrintLine(nDocID,0,"5 бочек пива");
-	Doc_PrintLine(nDocID,0,"20 мешков хлебной муки");
-	Doc_PrintLine(nDocID,0,"3 ящика сыра");
-	Doc_PrintLine(nDocID,0,"1 бочку вина");
+	Doc_PrintLines(nDocID, 0 , " 50 barrels of corned beef " );
+	Doc_PrintLine(nDocID, 0 , " 15 - 20 barrels of drinking water " );
+	Doc_PrintLine(nDocID, 0 , " 5 barrels of beer " );
+	Doc_PrintLine(nDocID, 0 , " 20 bags of bread flour " );
+	Doc_PrintLine(nDocID, 0 , " 3 boxes of cheese " );
+	Doc_PrintLine(nDocID, 0 , " 1 barrel of wine " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Остальное, на ваше усмотрение Хаген.");
+	Doc_PrintLines(nDocID, 0 , " The rest is up to you Hagen. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"                  Лорд Варус");
+	Doc_PrintLines(nDocID, 0 , "                   Lord Varus " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
 	Doc_Show(nDocID);
@@ -4065,7 +4066,7 @@ func void use_itwr_varuscontent()
 
 instance ITWR_HAGENCONTENT(C_Item)
 {
-	name = "Список Лорда Хагена";
+	name = " Lord Hagen 's List " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	visual = "ItWr_Scroll_01.3ds";
@@ -4073,7 +4074,7 @@ instance ITWR_HAGENCONTENT(C_Item)
 	scemeName = "MAP";
 	on_state[0] = use_itwr_hagencontent;
 	description = name;
-	text[2] = "Список провианта, необходимого для паладинов.";
+	text[ 2 ] = " List of supplies required for paladins. " ;
 	inv_animate = 1;
 };
 
@@ -4088,18 +4089,18 @@ func void use_itwr_hagencontent()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Список");
+	Doc_PrintLine(nDocID, 0 , " List " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"75 бочек солонины");
-	Doc_PrintLine(nDocID,0,"25 - 30 бочек питьевой воды");
-	Doc_PrintLine(nDocID,0,"10 бочек пива");
-	Doc_PrintLine(nDocID,0,"35 мешков хлебной муки");
-	Doc_PrintLine(nDocID,0,"8 ящиков сыра");
-	Doc_PrintLine(nDocID,0,"4 бочки вина");
-	Doc_PrintLine(nDocID,0,"250 яблок");
+	Doc_PrintLines(nDocID, 0 , " 75 barrels of corned beef " );
+	Doc_PrintLine(nDocID, 0 , " 25 - 30 barrels of drinking water " );
+	Doc_PrintLine(nDocID, 0 , " 10 barrels of beer " );
+	Doc_PrintLine(nDocID, 0 , " 35 bags of bread flour " );
+	Doc_PrintLine(nDocID, 0 , " 8 boxes of cheese " );
+	Doc_PrintLine(nDocID, 0 , " 4 barrels of wine " );
+	Doc_PrintLine(nDocID, 0 , " 250 apples " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"		С уважением, Лорд Хаген.");
+	Doc_PrintLine(nDocID, 0 , " 		Sincerely, Lord Hagen. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
 	Doc_Show(nDocID);
@@ -4107,7 +4108,7 @@ func void use_itwr_hagencontent()
 
 instance ItWr_VatrasTransferMagic(C_Item)
 {
-	name = "Свиток";
+	name = " Scroll " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4115,8 +4116,8 @@ instance ItWr_VatrasTransferMagic(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_ItWr_VatrasTransferMagic;
 	scemeName = "MAPSEALED";
-	description = "Магический свиток Ватраса";
-	text[4] = "Возвращает человеческое сознание...";
+	description = " Vatras Magic Scroll " ;
+	text[ 4 ] = " Returns human consciousness... " ;
 	inv_animate = 1;
 };
 
@@ -4144,7 +4145,7 @@ func void Use_ItWr_VatrasTransferMagic()
 
 instance ITWR_XARDASGOBLINSCROLL(C_Item)
 {
-	name = "Свиток изгнания";
+	name = " Scroll of Banishment " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4153,8 +4154,8 @@ instance ITWR_XARDASGOBLINSCROLL(C_Item)
 	on_state[0] = use_itwr_xardasgoblinscroll;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[3] = "Изгоняет призванных существ";
-	text[4] = "Использовать можно только один раз...";
+	text[ 3 ] = " Turns out summoned creatures " ;
+	text[ 4 ] = " Can only be used once... " ;
 	inv_animate = 1;
 };
 
@@ -4174,7 +4175,7 @@ func void use_itwr_xardasgoblinscroll()
 		CreateInvItems(hero,itke_xardasgoblinkey,1);
 		MIS_GOBLINAWAY = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_GOBLINAWAY,LOG_SUCCESS);
-		B_LogEntry(TOPIC_GOBLINAWAY,"С помощью свитка я изгнал это странное существо из мира живых.");
+		B_LogEntry( TOPIC_GOBLINAWAY , " I used the scroll to banish this strange creature from the world of the living. " );
 	};
 	nDocID = Doc_Create();
 	Doc_SetPages(nDocID,1);
@@ -4187,46 +4188,46 @@ func void use_itwr_xardasgoblinscroll()
 
 instance ITWR_XARDASDOCS_1(C_Item)
 {
-	name = "Рукописи Ксардаса, часть I";
+	name = " The Manuscripts of Xardas, Part I " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Толстая пачка исписанной бумаги...";
+	text[ 2 ] = " A thick stack of scribbled paper... " ;
 	inv_animate = 1;
 };
 
 instance ITWR_XARDASDOCS_2(C_Item)
 {
-	name = "Рукописи Ксардаса, часть II";
+	name = " The Manuscripts of Xardas, Part II " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Толстая пачка исписанной бумаги...";
+	text[ 2 ] = " A thick stack of scribbled paper... " ;
 	inv_animate = 1;
 };
 
 instance ITWR_XARDASDOCS_3(C_Item)
 {
-	name = "Рукописи Ксардаса, часть II - подлинник";
+	name = " The Manuscripts of Xardas, Part II - Original " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scroll_02_Sky.3DS";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Толстая пачка исписанной бумаги...";
+	text[ 2 ] = " A thick stack of scribbled paper... " ;
 	inv_animate = 1;
 };
 
 instance ITWR_LOSTISLANDMAP(C_Item)
 {
-	name = "Каменная плитка";
+	name = " Stone tiles " ;
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 1;
@@ -4235,12 +4236,12 @@ instance ITWR_LOSTISLANDMAP(C_Item)
 	on_state[0] = use_itwr_lostislandmap;
 	scemeName = "MAP";
 	inv_rotx = -90;
-	inv_roty = 0;
-	inv_rotz = 0;
+	inv_roty = 0 ;
+	inv_snot = 0 ;
 	wear = WEAR_EFFECT;
 	description = name;
-	text[2] = "На лицевой стороне плитки изображен странный рисунок,";
-	text[3] = "а обратной выбито несколько загадочных символов.";
+	text[ 2 ] = " There is a strange pattern on the front of the tile, " ;
+	text[ 3 ] = " and the reverse is embossed with some cryptic characters. " ;
 	inv_animate = 1;
 };
 
@@ -4259,7 +4260,7 @@ func void use_itwr_lostislandmap()
 
 instance ITWR_LETTERFALK(C_Item)
 {
-	name = "Письмо Фалька";
+	name = " Falko 's letter " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4268,7 +4269,7 @@ instance ITWR_LETTERFALK(C_Item)
 	on_state[0] = use_itwr_letterfalk;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[2] = "Письмо Фалька к торговцу Босперу.";
+	text[ 2 ] = " Falk's letter to the merchant Bosper. " ;
 	inv_animate = 1;
 };
 
@@ -4280,7 +4281,7 @@ func void use_itwr_letterfalk()
 	{
 		CreateInvItems(hero,itwr_letterfalk_open,1);
 		FALKLETTEROPENED = TRUE;
-		B_LogEntry(TOPIC_LETTERFALK,"Я вскрыл запечатанное письмо Фалька. В нем он просит Боспера обеспечить его людей стрелами в количестве не менее сотни штук. Может быть, предложить Фальку достать эти стрелы самому или все таки доставить это письмо по адресату?");
+		B_LogEntry( TOPIC_LETTERFALK , " I opened Falk's sealed letter. In it, he asks Bosper to provide his people with at least a hundred arrows. Maybe offer Falk to get these arrows himself or still deliver this letter to the addressee? " );
 		B_Say(self,self,"$HOWINTEREST");
 	};
 	nDocID = Doc_Create();
@@ -4289,9 +4290,9 @@ func void use_itwr_letterfalk()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Мой дорогой друг.");
+	Doc_PrintLine(nDocID, 0 , " My dear friend. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"У меня заканчиваются мои клейменные стрелы, а прислать к тебе кого-нибудь из своих людей - у меня сейчас нет никакой возможности. А посему, очень тебя прошу передать с подателем сего письма для меня не менее сотни стрел!");
+	Doc_PrintLines(nDocID, 0 , " I'm running out of my branded arrows, and now I have no way to send one of my people to you. And therefore, I beg you to give me at least a hundred arrows with the bearer of this letter! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Фальк");
@@ -4305,7 +4306,7 @@ func void use_itwr_letterfalk()
 
 instance ITWR_LETTERFALK_OPEN(C_Item)
 {
-	name = "Письмо Фалька";
+	name = " Falko 's letter " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4314,7 +4315,7 @@ instance ITWR_LETTERFALK_OPEN(C_Item)
 	on_state[0] = use_itwr_letterfalk_open;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Вскрытое письмо Фалька к торговцу Босперу.";
+	text[ 2 ] = " Falk's opened letter to the merchant Bosper. " ;
 	inv_animate = 1;
 };
 
@@ -4328,9 +4329,9 @@ func void use_itwr_letterfalk_open()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Мой дорогой друг.");
+	Doc_PrintLine(nDocID, 0 , " My dear friend. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"У меня заканчиваются мои клейменные стрелы, а прислать к тебе кого-нибудь из своих людей - у меня сейчас нет никакой возможности. А посему, очень тебя прошу передать с подателем сего письма для меня не менее сотни стрел!");
+	Doc_PrintLines(nDocID, 0 , " I'm running out of my branded arrows, and now I have no way to send one of my people to you. And therefore, I beg you to give me at least a hundred arrows with the bearer of this letter! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Фальк");
@@ -4344,7 +4345,7 @@ func void use_itwr_letterfalk_open()
 
 instance ITWR_FALKGRANDFATHER_01(C_Item)
 {
-	name = "Записка";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4353,7 +4354,7 @@ instance ITWR_FALKGRANDFATHER_01(C_Item)
 	on_state[0] = use_itwr_falkgrandfather_01;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Старый клочок бумаги с записями...";
+	text[ 2 ] = " An old piece of paper with notes... " ;
 	inv_animate = 1;
 };
 
@@ -4370,7 +4371,7 @@ func void use_itwr_falkgrandfather_01()
 			MIS_FALKGRANDFATHERSEEK = LOG_Running;
 			Log_CreateTopic(TOPIC_FALKGRANDFATHERSEEK,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_FALKGRANDFATHERSEEK,LOG_Running);
-			B_LogEntry(TOPIC_FALKGRANDFATHERSEEK,"В старых развалинах, что расположены на севере острова, я нашел одного странного рода клочок бумаги с записями. На вид, они очень напоминают страницы из дневника одного из охотников по имени Бен. Кажется, это имя я слышал от Фалька в лагере охотников. Может быть стоит показать ему эту вещицу?...");
+			B_LogEntry( TOPIC_FALKGRANDFATHERSEEK , " In the old ruins in the north of the island, I found a strange piece of paper with entries. They look very much like pages from the diary of one of the hunters named Ben. I think this name I heard from Falk in hunter camp. Maybe it's worth showing him this little thing?... " );
 			B_Say(self,self,"$HOWINTEREST");
 		};
 	};
@@ -4381,7 +4382,7 @@ func void use_itwr_falkgrandfather_01()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Сегодня, во время охоты я подстрелил одного очень странного на вид зверя. Даже и не припоминаю, чтобы я когда-нибудь встречал нечто подобное в этих краях. Интересно, откуда он тут взялся?! Может быть...(неразборчивый текст)... Что же, попробую это выяснить.");
+	Doc_PrintLines(nDocID, 0 , " While hunting today, I shot a very strange-looking animal. I don't even remember that I've ever seen something like this in these parts. I wonder where it came from?! Maybe.. .(illegible text)... Well, I'll try to find out. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"				Бен ...");
 	Doc_PrintLine(nDocID,0,"");
@@ -4394,7 +4395,7 @@ func void use_itwr_falkgrandfather_01()
 
 instance ITWR_GALKGRANDFATHER_02(C_Item)
 {
-	name = "Записка";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4403,7 +4404,7 @@ instance ITWR_GALKGRANDFATHER_02(C_Item)
 	on_state[0] = use_itwr_falkgrandfather_02;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Старый клочок бумаги с записями...";
+	text[ 2 ] = " An old piece of paper with notes... " ;
 	inv_animate = 1;
 };
 
@@ -4411,12 +4412,12 @@ instance ITWR_GALKGRANDFATHER_02(C_Item)
 func void use_itwr_falkgrandfather_02()
 {
 	var int nDocID;
-	b_checkadwinpresence(ADDONWORLD_ZEN);
+	b_checkadwinpresence( ADDONWORLD_ZEN );
 	if((MIS_FALKGRANDFATHERSEEK == LOG_Running) && (FINDFALKGRANDFATHERSEEK_02 == FALSE) && (CHECKADW == TRUE))
 	{
 		B_GivePlayerXP(100);
 		FINDFALKGRANDFATHERSEEK_02 = TRUE;
-		B_LogEntry(TOPIC_FALKGRANDFATHERSEEK,"В пещере, недалеко от лагеря пиратов, я обнаружил еще одну записку, оставленную Беном. Судя по его записям, он собирался основательно обследовать эту часть острова.");
+		B_LogEntry( TOPIC_FALKGRANDFATHERSEEK , " In a cave near the pirate camp, I found another note left by Ben. Judging by his notes, he was going to thoroughly explore this part of the island. " );
 		Wld_InsertItem(itmi_falkgrandfatheritem_03,"FP_AW_ITEM_FALKGFWROTE_02");
 		B_Say(self,self,"$HOWINTEREST");
 	};
@@ -4427,7 +4428,7 @@ func void use_itwr_falkgrandfather_02()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Даже не отходя далеко от пещеры, в которой мне пришлось на время обосноваться, я повстречал просто огромное множество редких животных. Недалеко отсюда...(неразборчивый текст)...Все это просто удивительно! Завтра же, я отправляюсь в глубь этих территорий.");
+	Doc_PrintLines(nDocID, 0 , " Even without going far from the cave in which I had to settle for a while, I met just a huge number of rare animals. Not far from here ... (illegible text) ... All this is simply amazing! Tomorrow, I'm going deep into these territories. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"				Бен ...");
 	Doc_PrintLine(nDocID,0,"");
@@ -4440,7 +4441,7 @@ func void use_itwr_falkgrandfather_02()
 
 instance ITWR_HALKGRANDFATHER_03(C_Item)
 {
-	name = "Записка";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4449,7 +4450,7 @@ instance ITWR_HALKGRANDFATHER_03(C_Item)
 	on_state[0] = use_itwr_falkgrandfather_03;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Старый клочок бумаги с записями...";
+	text[ 2 ] = " An old piece of paper with notes... " ;
 	inv_animate = 1;
 };
 
@@ -4457,12 +4458,12 @@ instance ITWR_HALKGRANDFATHER_03(C_Item)
 func void use_itwr_falkgrandfather_03()
 {
 	var int nDocID;
-	b_checkadwinpresence(ADDONWORLD_ZEN);
+	b_checkadwinpresence( ADDONWORLD_ZEN );
 	if((MIS_FALKGRANDFATHERSEEK == LOG_Running) && (FINDFALKGRANDFATHERSEEK_03 == FALSE) && (CHECKADW == TRUE))
 	{
 		B_GivePlayerXP(50);
 		FINDFALKGRANDFATHERSEEK_03 = TRUE;
-		B_LogEntry(TOPIC_FALKGRANDFATHERSEEK,"Кажется Бену все больше и больше нравится эта долина. Судя по записям, теперь он кажется собрался обследовать каньон.");
+		B_LogEntry( TOPIC_FALKGRANDFATHERSEEK , " Ben seems to be liking this valley more and more. Based on the logs, he looks like he's about to explore the canyon now. " );
 		Wld_InsertItem(itmi_falkgrandfatheritem_04,"FP_AW_ITEM_FALKGFWROTE_03");
 		B_Say(self,self,"$HOWINTEREST");
 	};
@@ -4473,7 +4474,7 @@ func void use_itwr_falkgrandfather_03()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Тут прекрасные охотничьи угодья! Все местность вокруг кишит разнообразными загадочными созданиями, хотя и чрезвычайно опасными. Но мне здесь все равно нравится. Через несколько дней я планирую отправиться в каньон, что расположен к западу от этого места. Возможно, там мне встретиться еще что-нибудь интересное.");
+	Doc_PrintLines(nDocID, 0 , " This is a beautiful hunting ground! The whole area is full of all sorts of mysterious creatures, albeit extremely dangerous. But I still like it here. In a few days, I plan to go to the canyon, which is located west of this place. Maybe , there I will meet something else interesting. " );
 	Doc_PrintLines(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"				Бен ...");
 	Doc_PrintLine(nDocID,0,"");
@@ -4486,7 +4487,7 @@ func void use_itwr_falkgrandfather_03()
 
 instance ITWR_JALKGRANDFATHER_04(C_Item)
 {
-	name = "Записка";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4495,7 +4496,7 @@ instance ITWR_JALKGRANDFATHER_04(C_Item)
 	on_state[0] = use_itwr_falkgrandfather_04;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Старый клочок бумаги с записями...";
+	text[ 2 ] = " An old piece of paper with notes... " ;
 	inv_animate = 1;
 };
 
@@ -4503,13 +4504,13 @@ instance ITWR_JALKGRANDFATHER_04(C_Item)
 func void use_itwr_falkgrandfather_04()
 {
 	var int nDocID;
-	b_checkadwinpresence(ADDONWORLD_ZEN);
+	b_checkadwinpresence( ADDONWORLD_ZEN );
 	if((MIS_FALKGRANDFATHERSEEK == LOG_Running) && (FINDFALKGRANDFATHERSEEK_04 == FALSE) && (CHECKADW == TRUE))
 	{
 		B_GivePlayerXP(100);
 		FINDFALKGRANDFATHERSEEK_04 = TRUE;
-		B_LogEntry(TOPIC_FALKGRANDFATHERSEEK,"Похоже Бену не слишком приглянулся каньон. Он написал, что тут слишком много опасных тварей, а посему старик решил побыстрее убраться из этого места. Судя по всему, направил свои стопы по направлению к огромной пещере, расположенной в этом каньоне.");
-		Wld_InsertItem(itwr_Kalkgrandfather_final,"FP_AW_ITEM_FALKGFWROTE_04");
+		B_LogEntry( TOPIC_FALKGRANDFATHERSEEK , " Ben didn't seem to like the canyon too much. He wrote that there were too many dangerous creatures, and therefore the old man decided to quickly get out of this place. Apparently, he directed his feet towards a huge cave located in this canyon. " );
+		Wld_InsertItem(itwr_CalcAncestor_final, " FP_AW_ITEM_FALKGFWROTE_04 " );
 		B_Say(self,self,"$HOWINTEREST");
 	};
 	nDocID = Doc_Create();
@@ -4519,7 +4520,7 @@ func void use_itwr_falkgrandfather_04()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Каньон оказался довольно опасным местом! Вся округа просто кишит различными хищными тварями. Так что, думаю не стоит тут слишком сильно задерживаться. Сегодня я отыскал в горах вход в большую пещеру. Надо будет ее тщательно обследовать - возможно мне удасться найти там что-нибудь интересное...");
+	Doc_PrintLines(nDocID, 0 , " The canyon turned out to be quite a dangerous place! The whole district is simply teeming with various predatory creatures. So, I think we shouldn't linger too much here. Today I found the entrance to a large cave in the mountains. I will have to carefully examine it - maybe I be able to find something interesting there ... " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"				Бен ...");
 	Doc_PrintLine(nDocID,0,"");
@@ -4530,9 +4531,9 @@ func void use_itwr_falkgrandfather_04()
 };
 
 
-instance ITWR_KALKGRANDFATHER_FINAL(C_Item)
+instance ITWR_KALKGRANDFATHER_FINAL (C_Item)
 {
-	name = "Записка";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4541,7 +4542,7 @@ instance ITWR_KALKGRANDFATHER_FINAL(C_Item)
 	on_state[0] = use_itwr_falkgrandfather_final;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Старый клочок бумаги с записями...";
+	text[ 2 ] = " An old piece of paper with notes... " ;
 	inv_animate = 1;
 };
 
@@ -4549,12 +4550,12 @@ instance ITWR_KALKGRANDFATHER_FINAL(C_Item)
 func void use_itwr_falkgrandfather_final()
 {
 	var int nDocID;
-	b_checkadwinpresence(ADDONWORLD_ZEN);
+	b_checkadwinpresence( ADDONWORLD_ZEN );
 	if((MIS_FALKGRANDFATHERSEEK == LOG_Running) && (FINDFALKGRANDFATHERSEEK_FINAL == FALSE) && (CHECKADW == TRUE))
 	{
 		B_GivePlayerXP(150);
 		FINDFALKGRANDFATHERSEEK_FINAL = TRUE;
-		B_LogEntry(TOPIC_FALKGRANDFATHERSEEK,"Теперь, судя по записям, этот искатель приключений столкнулся на болотах с одним странным существом, с виду напоминающего ползуна. Естественно, опытный охотник решил не упускать свой шанс поохотиться на этого зверя и отправился за ним вглубь болота.");
+		B_LogEntry( TOPIC_FALKGRANDFATHERSEEK , " Now, judging by the logs, this adventurer encountered a strange creature in the swamps that looked like a crawler. Naturally, an experienced hunter decided not to miss his chance to hunt this beast and went deep into the swamp after him. " );
 		Wld_InsertItem(itwr_Lalkgrandfather_finalext,"FP_AW_ITEM_FALKGFWROTE_05");
 		B_Say(self,self,"$HOWINTEREST");
 	};
@@ -4565,7 +4566,7 @@ func void use_itwr_falkgrandfather_final()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Вчера недалеко от места моей стоянки, я наткнулся на очень странное существо. По своему виду оно немного напоминало ползуна, только ...(неразборчивый текст)...Завтра я вновь отправлюсь в глубь этого болота. Возможно, мне все-таки удасться выследить эту тварь и прикончить ее.");
+	Doc_PrintLines(nDocID, 0 , " Yesterday, not far from my campsite, I stumbled upon a very strange creature. It looked a bit like a crawler, only ... (illegible text) ... Tomorrow I will again go into the depths of this swamp. Maybe , I still manage to track down this creature and finish it off. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"                  Бен ...");
 	Doc_PrintLine(nDocID,0,"");
@@ -4578,7 +4579,7 @@ func void use_itwr_falkgrandfather_final()
 
 instance ITWR_LALKGRANDFATHER_FINALEXT(C_Item)
 {
-	name = "Записка";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4587,7 +4588,7 @@ instance ITWR_LALKGRANDFATHER_FINALEXT(C_Item)
 	on_state[0] = use_itwr_falkgrandfather_finalext;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Старый клочок бумаги с записями...";
+	text[ 2 ] = " An old piece of paper with notes... " ;
 	inv_animate = 1;
 };
 
@@ -4595,12 +4596,12 @@ instance ITWR_LALKGRANDFATHER_FINALEXT(C_Item)
 func void use_itwr_falkgrandfather_finalext()
 {
 	var int nDocID;
-	b_checkadwinpresence(ADDONWORLD_ZEN);
+	b_checkadwinpresence( ADDONWORLD_ZEN );
 	if((MIS_FALKGRANDFATHERSEEK == LOG_Running) && (FINDFALKGRANDFATHERSEEK_FINALEXT == FALSE) && (CHECKADW == TRUE))
 	{
 		B_GivePlayerXP(200);
 		FINDFALKGRANDFATHERSEEK_FINALEXT = TRUE;
-		B_LogEntry(TOPIC_FALKGRANDFATHERSEEK,"Кажется охота на этого странного зверя не слишком пока удается Бену. Он пишет, что никак не может подстрелить эту тварь, поскольку она постоянно ускользает от него...");
+		; _ _ _ _ _ _
 		Wld_InsertNpc(blattcrawlerex,"ADW_SWAMP_TO_BIGSEA_01");
 		B_Say(self,self,"$HOWINTEREST");
 	};
@@ -4611,7 +4612,7 @@ func void use_itwr_falkgrandfather_finalext()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Я никак не могу выбрать удобного момента, чтобы подстрелить эту тварь...(неразборчивый текст)...Она слишком хитра и постоянно ускользает от меня. Но завтра у меня это обязательно получится!");
+	Doc_PrintLines(nDocID, 0 , " I can't find a good time to shoot this creature...(illegible text)...It's too cunning and constantly eludes me. But tomorrow I will definitely succeed! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"                  Бен ...");
 	Doc_PrintLine(nDocID,0,"");
@@ -4633,7 +4634,7 @@ instance ITWR_ORCSORDER(C_Item)
 	on_state[0] = use_itwr_orcsorder;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Клочок бумаги с непонятными символами...";
+	text[ 2 ] = " A piece of paper with strange symbols... " ;
 	inv_animate = 1;
 };
 
@@ -4652,7 +4653,7 @@ func void use_itwr_orcsorder()
 	{
 	 	if((PlayerKnowsOrcLanguage == TRUE) && (KNOWSTARANBUILD == FALSE))
 		{
-			B_LogEntry(TOPIC_ORCORDER,"У капитана дракара я нашел письмо. В нем говорится, что орки прислали отряд рабов, чтобы сделать новый таран для штурма замка. Судя по всему, этот отряд должен скоро прибыть в их лагерь у крепости. Надо как можно скорее сообщить об этом Альберту.");
+			B_LogEntry( TOPIC_ORCORDER , " I found a letter from the captain of the drakar. It says that the orcs sent a squad of slaves to make a new ram to storm the castle. Apparently, this squad should soon arrive at their camp near the fortress. We need to report as soon as possible about this to Albert. " );
 			KNOWSTARANBUILD = TRUE;
 		};
 	};
@@ -4661,7 +4662,7 @@ func void use_itwr_orcsorder()
 
 instance ITWR_ANCIENT(C_Item)
 {
-	name = "Тайны древних";
+	name = " Secrets of the Ancients " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4670,8 +4671,8 @@ instance ITWR_ANCIENT(C_Item)
 	on_state[0] = use_itwr_ancient;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Книга излучает магическое сияние...";
-	text[3] = "На переплете книги засохшие капли крови.";
+	text[ 2 ] = " The book emits a magical glow... " ;
+	text[ 3 ] = " There are dried blood on the cover of the book. " ;
 	inv_animate = 1;
 };
 
@@ -4703,8 +4704,8 @@ func void use_itwr_ancient()
 
 			if(RhetorikSkillValue[1] < 100)
 			{
-				RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-				AI_Print("Риторика + 1");
+				RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+				AI_Print( " Rhetoric + 1 " );
 			};
 
 			B_Say(self,self,"$HOWINTEREST");
@@ -4713,8 +4714,8 @@ func void use_itwr_ancient()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_69 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_69 = TRUE ;
 		};
 	};
 };
@@ -4722,7 +4723,7 @@ func void use_itwr_ancient()
 
 instance ITWR_NECRONOMICON(C_Item)
 {
-	name = "Некрономикон";
+	name = " Necronomicon " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4731,7 +4732,7 @@ instance ITWR_NECRONOMICON(C_Item)
 	on_state[0] = use_itwr_necronomicon;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Книга излучает темную ауру...";
+	text[ 2 ] = " The book emits a dark aura... " ;
 	inv_animate = 1;
 };
 
@@ -4756,12 +4757,12 @@ func void use_itwr_necronomicon()
 			B_Say(self,self,"$HOWINTEREST");
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
+			AI_Print( " Intelligence + 1 " );
 		};
 	}
 	else
 	{
-		AI_Print("Магия книги не дает вам возможности ее открыть...");
+		AI_Print( " The book's magic prevents you from opening it... " );
 		Snd_Play("MFX_MASSDEATH_CAST");
 		if(NECRONOMICONBONUSTRY == FALSE)
 		{
@@ -4772,7 +4773,7 @@ func void use_itwr_necronomicon()
 
 instance ITWR_XARDASPAINT(C_Item)
 {
-	name = "Портрет мага Огня";
+	name = " Fire Mage Portrait " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4780,9 +4781,9 @@ instance ITWR_XARDASPAINT(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = use_itwr_xardaspaint;
 	scemeName = "MAP";
-	description = "Портрет мага Огня";
-	text[2] = "Маг изображенный на этом рисунке";
-	text[3] = "кого-то очень сильно напоминает...";
+	description = " Portrait of a Fire Mage " ;
+	text[ 2 ] = "The magician shown in this picture " ;
+	text[ 3 ] = " reminds me of someone... " ;
 	inv_animate = 1;
 };
 
@@ -4799,7 +4800,7 @@ func void use_itwr_xardaspaint()
 
 instance ITWR_ORTEGOLETTER(C_Item)
 {
-	name = "Записка Ортего";
+	name = " Note Ortego " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4808,7 +4809,7 @@ instance ITWR_ORTEGOLETTER(C_Item)
 	on_state[0] = use_itwr_ortegoletter;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Немного помятый клочок бумаги с записями...";
+	text[ 2 ] = " Slightly wrinkled piece of paper with notes... " ;
 	inv_animate = 1;
 };
 
@@ -4817,11 +4818,11 @@ func void use_itwr_ortegoletter()
 {
 	var int nDocID;
 
-	if((MIS_KILLIGNAZ == LOG_Running) && (READORTEGO == FALSE))
+	if (( MY_KILLIGNAZ  == LOG_Running) && ( READOR  ==  FALSE ))
 	{
 		B_GivePlayerXP(50);
-		READORTEGO = TRUE;
-		B_LogEntry(TOPIC_KILLIGNAZ,"В одной из пещер Хориниса я встретил одного парня по имени Ортего. Судя по всему, он явно кого-то ждал в этом месте и мое внезапное появление сыграло с ним довольно злую шутку - он попросту принял меня за другого. В дальнейшем, из нашего с ним разговора я понял, что Ортего - убийца и ждет здесь своего вознаграждения за какое-то только что провернутое им грязное дельце. Естественно в конце концов он все-таки понял, что я не тот кто ему нужен и конечно же попытался просто убить меня. Ему это не удалось... Уже обыскивая его труп, я нашел при нем письмо, в котором некто просит убить того самого Игнаца, алхимика из города. Думаю, это и было то дельце, за которое Ортега ждал своего золота. Теперь все стало ясно - алхимимк Константино действительно невиновен в смерти Игнаца! Однако остается все-таки понять, кто именно нанял Ортегу. Возможно мне стоит подождать здесь, чтобы это выяснить.");
+		READORTEGO = TRUE ;
+		who exactly hired Ortega. Maybe I should wait here to find out.");
 		B_StartOtherRoutine(KDF_503_Karras,"MeetKiller");
 		AI_Teleport(KDF_503_Karras,"NW_CITY_SMFOREST_04");
 		B_Say(self,self,"$HOWINTEREST");
@@ -4833,7 +4834,7 @@ func void use_itwr_ortegoletter()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Имя нужного тебе человека - Игнац, он алхимик. Его лачугу ты найдешь в портовом районе Хориниса. Постарайся все сделать без особой шумихи. Потом отправляйся в пещеру, та что рядом с восточными воротами города. Там ты получишь причитающееся тебе за эту работу золото.");
+	Doc_PrintLines(nDocID, 0 , " The name of the person you need is Ignaz, he is an alchemist. You will find his shack in the port area of ​​Khorinis. Try to do everything without much fuss. Then go to the cave, the one next to the eastern gate of the city. There you will receive your due you for this work gold. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -4848,7 +4849,7 @@ func void use_itwr_ortegoletter()
 
 instance ITWR_DJG_ARMOR(C_Item)
 {
-	name = "Чертежи выкроек";
+	name = " Pattern drawings " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4857,7 +4858,7 @@ instance ITWR_DJG_ARMOR(C_Item)
 	on_state[0] = use_itwr_djg_armor;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Чертежи выкроек доспехов из панцирей ползунов";
+	text[ 2 ] = " Crawler shell armor pattern drawings " ;
 	inv_animate = 1;
 };
 
@@ -4869,16 +4870,16 @@ func void use_itwr_djg_armor()
 		B_GivePlayerXP(100);
 		KNOWMAKECRAWLERARMOR = TRUE;
 		Log_CreateTopic(TOPIC_ARMORTEACHER,LOG_NOTE);
-		B_LogEntry(TOPIC_ARMORTEACHER,"Для того, чтобы выковать доспехи из панцирей ползунов мне необходим один железный слиток, кусок смолы и десять панцирей ползунов.");
-		Log_AddEntry(TOPIC_HUNTERSARMOR,"Я отыскал сундук Волка! Как он и говорил, в нем я нашел чертежи выкроек доспехов из панцирей ползунов. Теперь пора приниматься за работу!");
+		B_LogEntry( TOPIC_ARMORTEACHER , " In order to forge armor from crawler shells, I need one iron ingot, a piece of resin and ten crawler shells. " );
+		Log_AddEntry( TOPIC_HUNTERSARMOR , " I've found the Wolf's chest! As he said, in it I found the blueprints for patterns of armor from the shells of crawlers. Now it's time to get to work! " );
 		B_Say(self,self,"$HOWINTEREST");
 	};
 	if((BookBonus_70 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_70 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_70 = TRUE ;
 	};
 	nDocID = Doc_Create();
 	Doc_SetPages(nDocID,1);
@@ -4889,7 +4890,7 @@ func void use_itwr_djg_armor()
 
 instance ITWR_LETTERORESWORD(C_Item)
 {
-	name = "Записка Хагена";
+	name = " Note Hagena " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4898,7 +4899,7 @@ instance ITWR_LETTERORESWORD(C_Item)
 	on_state[0] = use_itwr_letteroresword;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Здесь записаны инструкции по ковке рудных клинков...";
+	text[ 2 ] = " Instructions for forging ore blades are written here... " ;
 	inv_animate = 1;
 };
 
@@ -4911,15 +4912,15 @@ func void use_itwr_letteroresword()
 	{
 		KNOWNORESWORD = TRUE;
 		Log_CreateTopic(TOPIC_TalentSmith,LOG_NOTE);
-		B_LogEntry(TOPIC_TalentSmith,"Для того, чтобы выковать рудный клинок необходим один слиток магической руды.");
+		B_LogEntry(TOPIC_TalentSmith, " It takes one magic ore ingot to forge an ore blade. " );
 		B_Say(self,self,"$SMITHBOOK");
 	};
 	if((BookBonus_71 == FALSE) && ((self.guild == GIL_KDF) || (self.guild == GIL_KDW) || (self.guild == GIL_KDM) || (self.guild == GIL_GUR) || (self.guild == GIL_NDM) || (self.guild == GIL_NDW) || (self.guild == GIL_NOV)))
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_71 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_71 = TRUE ;
 	};
 	nDocID = Doc_Create();
 	Doc_SetPages(nDocID,1);
@@ -4927,7 +4928,7 @@ func void use_itwr_letteroresword()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Процесс создания рудного клинка весьма достаточно прост. Для этого необходимо взять один слиток магической руды и нагреть его в точности до определенной температуры. После придать ему форму клинка, а затем очень резко охладить! Прочность этого оружия не будет знать себе равных.");
+	Doc_PrintLines(nDocID, 0 , " The process of creating an ore blade is quite simple. To do this, you need to take one ingot of magical ore and heat it to exactly a certain temperature. After shaping it into a blade shape, and then cool it very sharply! The durability of this weapon will not know unparalleled. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -4942,7 +4943,7 @@ func void use_itwr_letteroresword()
 
 instance ITWR_TRANSFERENERGY(C_Item)
 {
-	name = "Перенос энергии";
+	name = " Energy Transfer " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -4951,7 +4952,7 @@ instance ITWR_TRANSFERENERGY(C_Item)
 	on_state[0] = use_itwr_transferenergy;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[2] = "Этот свиток содержит в себе заклинание переноса энергии.";
+	text[ 2 ] = " This scroll contains an energy transfer spell. " ;
 	inv_animate = 1;
 };
 
@@ -4959,7 +4960,7 @@ func void use_itwr_transferenergy()
 {
 	if((NETBEKLEADME_STEP2 == TRUE) && (NETBEKLEADME_STEP2DONE == FALSE) && (HOWCANMAKEBLACKSWORD == TRUE))
 	{
-		if((Npc_HasItems(hero,ItMi_Avatar_Dark) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Fire) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Water) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Stone) >= 1) && ((SIMPLEBLACK_1H_ONME == TRUE) || (SIMPLEBLACK_2H_ONME == TRUE)))
+		if ((Npc_HasItems(hero,ItMi_Avatar_Dark) >=  1 ) && (Npc_HasItems(hero,ItMi_Avatar_Fire) >=  1 ) && (Npc_HasItems(hero,ItMi_Avatar_Water) >=  1 ) && (Npc_HasItems(hero,ItMi_Avatar_Stone) >=  1 ) && (( SIMPLEBLACK_1H_ONME  ==  TRUE ) || ( SIMPLEBLACK_2H_ONME  ==  TRUE )))
 		{
 			B_GivePlayerXP(1500);
 			AI_UnequipWeapons(hero);
@@ -4996,18 +4997,18 @@ func void use_itwr_transferenergy()
 			Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 			NETBEKLEADME_STEP2DONE = TRUE;
 			AI_Print(PRINT_MAKESUPERSWORD);
-			B_LogEntry(TOPIC_GUARDIANS,"Я создал меч, сила которого способна уничтожить Хранителей. Теперь, думаю пришло время нанести визит и им!");
+			B_LogEntry( TOPIC_GUARDIANS , " I have created a sword with the power to destroy the Guardians. Now I think it's time to pay them a visit! " );
 		}
 		else
 		{
-			AI_Print("Ничего не произошло...");
+			AI_Print( " Nothing happened... " );
 			Snd_Play("MFX_MASSDEATH_CAST");
 			CreateInvItems(self,itwr_transferenergy,1);
 		};
 	}
 	else
 	{
-		AI_Print("Ничего не произошло...");
+		AI_Print( " Nothing happened... " );
 		Snd_Play("MFX_MASSDEATH_CAST");
 		CreateInvItems(self,itwr_transferenergy,1);
 	};
@@ -5015,16 +5016,16 @@ func void use_itwr_transferenergy()
 
 instance ITWR_DRAGONTALE(C_Item)
 {
-	name = "Пасть дракона - Том I";
+	name = " Dragon's Mouth - Volume I " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Rich_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Пасть дракона";
+	description = " Dragon's mouth " ;
 	text[0] = "Том I";
-	text[4] = "Древний фолиант окутан ярким пламенем...";
+	text[ 4 ] = " An ancient tome is shrouded in bright flames... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_dragontale;
@@ -5043,19 +5044,19 @@ func void use_itwr_dragontale()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(500);
 		hero.lp = hero.lp + 2;
-		AI_Print("Очки обучения + 2");
+		AI_Print( " Learning points + 2 " );
 		Snd_Play("LevelUp");
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5073,8 +5074,8 @@ func void use_itwr_dragontale()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_72 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_72 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5084,30 +5085,30 @@ func void use_itwr_dragontale()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Иcпокон веков драконы считались самыми опасными созданиями богов на земле. Достаточно одного единственного взгляда, чтобы понять насколько сильны и могущественны эти существа!");
+	Doc_PrintLines(nDocID, 0 , " For centuries, dragons have been considered the most dangerous creatures of the gods on earth. A single glance is enough to understand how strong and powerful these creatures are! " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Обычно они обитают высоко в горах, куда вряд ли когда-либо ступала нога человека, или в глубоких темных подземельях, поскольку драконы прекрасно видят и ориентируются в темноте.");
+	Doc_PrintLines(nDocID, 0 , " They usually live high in the mountains, where hardly a human foot has ever set foot, or in deep dark dungeons, since dragons can see and navigate in the dark. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Только безумец осмелится встать на пути дракона - его пламя способно за мгновения превратить в золу и пепел самый твердый камень ... От человека же, оно не оставит даже воспоминаний!");
+	Doc_PrintLines(nDocID, 1 , " Only a madman dares to stand in the way of a dragon - its flames can turn the hardest stone into ash and ashes in an instant... From a human, it won't even leave memories! " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Однако если ты все-таки вознамерился сразить это могущественное создание - то знай, что и у драконов есть свои слабые места.");
+	Doc_PrintLines(nDocID, 1 , " However, if you still set out to slay this powerful creature, then know that dragons have their weak points. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_DRAGONTALE_2(C_Item)
 {
-	name = "Пасть дракона - Том II";
+	name = " Dragon's Mouth - Volume II " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
 	visual = "ItWr_Book_Rich_02.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Пасть дракона";
+	description = " Dragon's mouth " ;
 	text[0] = "Том II";
-	text[4] = "Древний фолиант окутан ярким пламенем...";
+	text[ 4 ] = " An ancient tome is shrouded in bright flames... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_dragontale_2;
@@ -5126,19 +5127,19 @@ func void use_itwr_dragontale_2()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(500);
 		hero.lp = hero.lp + 2;
-		AI_Print("Очки обучения + 2");
+		AI_Print( " Learning points + 2 " );
 		Snd_Play("LevelUp");
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5156,8 +5157,8 @@ func void use_itwr_dragontale_2()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_73 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_73 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5167,21 +5168,21 @@ func void use_itwr_dragontale_2()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Драконы практически неуязвимы! Крепкую чешую, покрывающую их тело с головы до хвоста, не способен пробить даже самый острый меч. А пущеная стрела и вовсе не способна причинить вред этому древнейшему из созданий.");
+	Doc_PrintLines(nDocID, 0 , " Dragons are practically invulnerable! The strong scales that cover their body from head to tail cannot be pierced even by the sharpest sword. And a fired arrow is not at all capable of harming this ancient creature. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Однако это не означает, что дракона нельзя убить. Их слабое место - это брюшная полость, которая не прикрыта крепкой наружной чешуей. Именно туда и следует наносить смертельные удары. Правда для это придется подойти к дракону вплотную, что не очень то просто сделать.");
+	Doc_PrintLines(nDocID, 0 , " However, this does not mean that the dragon cannot be killed. Their weak point is the abdominal cavity, which is not covered by strong outer scales. not very easy to do. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Кроме того, многое зависит и от места обитания дракона! Некоторые из них, в силу своих врожденных качеств, крайне восприимчивы к повреждениям от различных состояний стихий и магии.");
+	Doc_PrintLines(nDocID, 1 , " In addition, a lot depends on the dragon's habitat! Some of them, due to their innate qualities, are extremely susceptible to damage from various states of the elements and magic. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Например, ледяные драконы Нордмара крайне чувствительны к огню, а огненные драконы Варанта - наоборот, к холоду и морозу.");
+	Doc_PrintLines(nDocID, 1 , " For example, the ice dragons of Nordmar are extremely sensitive to fire, while the fire dragons of Varant are extremely sensitive to cold and frost. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_DEMONTALE(C_Item)
 {
-	name = "Тени в ночи";
+	name = " Shadows in the night " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 2000;
@@ -5189,7 +5190,7 @@ instance ITWR_DEMONTALE(C_Item)
 	material = MAT_LEATHER;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "На книге выцарапано изображение демона...";
+	text[ 4 ] = " The image of a demon is scratched into the book... " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_itwr_demontale;
@@ -5202,25 +5203,25 @@ func void use_itwr_demontale()
 	var int nDocID;
 	var int rnd;
 
-	if(DEMONTALE == FALSE)
+	if ( DEMONTALE  ==  FALSE )
 	{
 		DEMONTALE = TRUE;
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(200);
 		hero.lp = hero.lp + 2;
-		AI_Print("Очки обучения + 2");
+		AI_Print( " Learning points + 2 " );
 		Snd_Play("LevelUp");
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5238,8 +5239,8 @@ func void use_itwr_demontale()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_74 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_74 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5249,20 +5250,20 @@ func void use_itwr_demontale()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Самые кровожданые и ужасные твари, когда либо созданные Белиаром, богом Тьмы - это демоны! Они слепо следуют воле своего господина, сея вокруг себя смерть и ужас.");
+	Doc_PrintLines(nDocID, 0 , " The most bloodthirsty and terrible creatures ever created by Beliar, the god of Darkness, are demons! They blindly follow the will of their master, sowing death and horror around them. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Демоны обладают огромной силой и могуществом, а их лютая ненависть ко всему живому делает их еще куда более сильными, чем обычно.");
+	Doc_PrintLines(nDocID, 0 , " Demons have great strength and power, and their fierce hatred of all living things makes them even more powerful than usual. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"К тому же они не восприимчивы ни к огню, ни к почти любому виду оружия. И только лишь очень сильная магия способна заставить отступить эти создания тьмы.");
+	Doc_PrintLines(nDocID, 1 , " In addition, they are not susceptible to fire or almost any kind of weapon. And only very strong magic can make these creatures of darkness retreat. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"И горе тому, кто по глупости угодит в лапы демона! Ужасные мучения и страшная смерть ждут его...");
+	Doc_PrintLines(nDocID, 1 , " And woe to those who foolishly fall into the clutches of a demon! Terrible torment and terrible death await him... " );
 	Doc_Show(nDocID);
 };
 
 instance ITWR_DRAGSTONE(C_Item)
 {
-	name = "Драгоценные камни";
+	name = " Gems " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1500;
@@ -5288,15 +5289,15 @@ func void use_ITWR_DRAGSTONE()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5314,8 +5315,8 @@ func void use_ITWR_DRAGSTONE()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_75 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_75 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5325,20 +5326,20 @@ func void use_ITWR_DRAGSTONE()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Многие драгоценные камни таят в себе определенные магические свойства. Правда, известны лишь только некоторые из них.");
+	Doc_PrintLines(nDocID, 0 , " Many gems contain certain magical properties. True, only a few of them are known. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Например, рубин наделяет своего владельца силой, а изумруд ловкостью.");
+	Doc_PrintLines(nDocID, 0 , " For example, a ruby ​​gives its owner strength, and an emerald gives dexterity. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Прежде чем использовать камень, его должным образом следует обработать на ювелирном столе. И только после этого его можно уже будет использовать.");
+	Doc_PrintLines(nDocID, 1 , " Before a stone can be used, it must be properly processed on the jewelry table. And only after that it can already be used. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"О способе обработки драгоценных камней известно лишь избранным мастерам-ювелирам.");
+	Doc_PrintLines(nDocID, 1 , " Only a select few master jewelers know about the method of processing precious stones. " );
 	Doc_Show(nDocID);
 };
 
 instance ITWR_SKELETONTALE(C_Item)
 {
-	name = "Зов мрака";
+	name = " Call the Darkness " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1500;
@@ -5365,15 +5366,15 @@ func void use_itwr_skeletontale()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5391,8 +5392,8 @@ func void use_itwr_skeletontale()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_76 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_76 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5402,29 +5403,29 @@ func void use_itwr_skeletontale()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Неупокоеные останки умерших и их души, восставшие по воле и зову Темного Бога, дабы служить ему и идти в бой за него.");
+	Doc_PrintLines(nDocID, 0 , " The restless remains of the dead and their souls, risen by the will and call of the Dark God, in order to serve him and go into battle for him. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Бессчисленные легионы воинов тьмы ждут того часа, когда повелитель поведет их на последнюю битву против Инноса. И никто не в силах остановить их!");
+	Doc_PrintLines(nDocID, 0 , " Countless legions of warriors of darkness are waiting for the hour when the master will lead them to the final battle against Innos. And no one can stop them! " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Они не знают ни покоя, ни усталости, ни жалости, ни сострадания! И все те, кто отвергнет повелителя и не наречет его своим богом - будут уничтожены.");
+	Doc_PrintLines(nDocID, 1 , " They know no peace, no fatigue, no pity, no compassion! And all those who reject the ruler and call him their god will be destroyed. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"И только лишь священный огонь Инноса сможет противостоять им...");
+	Doc_PrintLines(nDocID, 1 , " And only the sacred fire of Innos can resist them... " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_GOLEMBOOK1(C_Item)
 {
-	name = "Арканум Голум - Том I";
+	name = " Arcanum Golum - Volume I " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Rich_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	on_state[0] = usegolembook1;
-	description = "Арканум Голум";
+	on_state[ 0 ] = userbook1 ;
+	description = " Arcanum Golum " ;
 	text[0] = "Том I";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -5444,15 +5445,15 @@ func void usegolembook1()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5470,8 +5471,8 @@ func void usegolembook1()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_77 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_77 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5480,35 +5481,35 @@ func void usegolembook1()
 	Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
-	Doc_PrintLine(nDocID,0,"Арканум Голум - Том I");
+	Doc_PrintLine(nDocID, 0 , " Arcanum Golum - Volume I " );
 	Doc_PrintLine(nDocID,0,"======================");
 	Doc_PrintLines(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Каменный голем");
+	Doc_PrintLine(nDocID, 0 , " Stone Golem " );
 	Doc_PrintLine(nDocID,0,"---------");
-	Doc_PrintLines(nDocID,0,"Эти каменные колоссы практически неуязвимы. Мечи, топоры и луки не причиняют им ровным счетом никакого вреда.");
-	Doc_PrintLines(nDocID,0,"Единственным зарегистрированным случаем победы человека над големом является доклад наемника. Он рассказал, что от удара молота в големе появилась трещина. От последовавших затем ударов она стала расширяться, пока голем попросту не развалился на части.");
+	Doc_PrintLines(nDocID, 0 , " These stone colossi are virtually invulnerable. Swords, axes, and bows do absolutely no harm to them. " );
+	Doc_PrintLines(nDocID, 0 , " The only recorded instance of a human defeating a golem is a report by a mercenary. He said that a crack appeared in the golem from a hammer blow. From the ensuing blows, it began to expand until the golem simply fell apart. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLine(nDocID,1,"Болотный голем");
+	Doc_PrintLine(nDocID, 1 , " Swamp Golem " );
 	Doc_PrintLine(nDocID,1,"------------");
-	Doc_PrintLines(nDocID,1,"Только тот, кто сам хоть раз сталкивался с этими созданиями, берущими свое начало от первородных элементов земли, поистине понимает глубину уважения, которым проникается столкнувшийся с ними путешественник.");
+	Doc_PrintLines(nDocID, 1 , " Only those who have ever encountered these creatures, which originate from the primordial elements of the earth, truly understand the depth of respect that the traveler who encounters them imbued with. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Насколько известно - болотный голем крайне невосприимчив к магии и огню. Однако с легкостью разрубается на части острым, как бритва, мечом.");
+	Doc_PrintLines(nDocID, 1 , " As far as we know, the swamp golem is extremely immune to magic and fire. However, it can be easily cut into pieces with a razor-sharp sword. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ITWR_GOLEMBOOK2(C_Item)
 {
-	name = "Арканум Голум - Том II";
+	name = " Arcanum Golum - Volume II " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Rich_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	on_state[0] = usegolembook2;
-	description = "Арканум Голум";
+	on_state[ 0 ] = usebook2 ;
+	description = " Arcanum Golum " ;
 	text[0] = "Том II";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -5528,15 +5529,15 @@ func void usegolembook2()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5554,8 +5555,8 @@ func void usegolembook2()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_78 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_78 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5564,34 +5565,34 @@ func void usegolembook2()
 	Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
-	Doc_PrintLine(nDocID,0,"АРКАНУМ ГОЛУМ - Том II");
+	Doc_PrintLine(nDocID, 0 , " ARCANUM GOLUM - Volume II " );
 	Doc_PrintLine(nDocID,0,"======================");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Ледяной голем");
+	Doc_PrintLine(nDocID, 0 , " Ice Golem " );
 	Doc_PrintLine(nDocID,0,"---------");
-	Doc_PrintLines(nDocID,0,"Ледяные големы чем-то сродни каменным, только тела их, похоже, состоят из воды. Все известное человеку оружие просто скользит по шкуре этих созданий.");
-	Doc_PrintLines(nDocID,0,"Путешественники должны также знать и постоянно помнить о ледяном дыхании големов, потому как забывчивые рискуют превратиться в сосульку.");
+	Doc_PrintLines(nDocID, 0 , " Ice golems are akin to stone golems, only their bodies seem to be made of water. All weapons known to man simply slide on the skin of these creatures. " );
+	Doc_PrintLines(nDocID, 0 , " Travelers should also be aware of and constantly aware of golems' icy breath, as forgetful ones risk becoming icicles. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
-	Doc_PrintLines(nDocID,1,"Один из магов Огня как-то рассказывал о встрече с ледяным големом. Используя свою магические руны, он без особых проблем одолел это существо.");
+	Doc_PrintLines(nDocID, 1 , " One of the Firebenders once talked about meeting an ice golem. Using his magic runes, he defeated this creature without any problems. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLine(nDocID,1,"Огненный голем");
+	Doc_PrintLine(nDocID, 1 , " Fire Golem " );
 	Doc_PrintLine(nDocID,1,"------------");
-	Doc_PrintLines(nDocID,1,"Согласно рассказам, эти создания способны превратить человека в пылающий факел одним лишь своим прикосновением.");
-	Doc_PrintLines(nDocID,1,"Один из случаев столкновения с таким големом показал, что заклинания молний и льда способны причинить вред огненному голему.");
+	Doc_PrintLines(nDocID, 1 , " According to the stories, these creatures can turn a person into a flaming torch with just their touch. " );
+	Doc_PrintLines(nDocID, 1 , " One encounter with such a golem showed that lightning and ice spells could harm the fire golem. " );
 	Doc_Show(nDocID);
 };
 
 
 instance ELEMENTARE_ARCANEI(C_Item)
 {
-	name = "Основы Магии";
+	name = " Fundamentals of Magic " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
 	visual = "ItWr_Book_Rich_01.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Основы Магии";
+	description = " Basics of Magic " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_elementare_arcanei;
@@ -5611,15 +5612,15 @@ func void use_elementare_arcanei()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5637,8 +5638,8 @@ func void use_elementare_arcanei()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_79 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_79 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5649,27 +5650,27 @@ func void use_elementare_arcanei()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Основы Магии");
+	Doc_PrintLine(nDocID, 0 , " Basics of Magic " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Место магии в миропорядке");
+	Doc_PrintLines(nDocID, 0 , " Place of magic in the world order " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Чтобы выяснить место магии и ее связь с основными элементами, было проведено много исследований. Все они сходятся в одном: магия стоит выше всех элементов. Она может трансформировать их, изменять форму, то есть повелевать ими.");
+	Doc_PrintLines(nDocID, 0 , " A lot of research has been done to find out the place of magic and its relationship with the basic elements. They all agree on one thing: magic is above all elements. It can transform them, change shape, that is, command them. " ) ;
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Каждый элемент, если рассматривать его в первородной форме, имеет связь с магией. Подобные связи можно проследить лишь в некоторых местах, и эти места разыскивают многие. Способность мага создавать или призывать элементы, казалось бы, из пустоты, еще раз доказывает, что магия является самой могущественной силой во вселенной.");
+	Doc_PrintLines(nDocID, 1 , " Each element, when viewed in its original form, has a connection with magic. Such connections can only be traced in some places, and many are looking for these places. The ability of a magician to create or summon elements, seemingly from the void, once again proves that magic is the most powerful force in the universe. " );
 	Doc_Show(nDocID);
 };
 
 instance ITWR_1TESTFONT(C_Item)
 {
-	name = "Письмо тест шрифта";
+	name = " Letter font test " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5678,7 +5679,7 @@ instance ITWR_1TESTFONT(C_Item)
 	on_state[0] = use_1TESTFONT;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Письмо Гербрандта для человека в таверне.";
+	text[ 2 ] = " Gerbrandt's letter to the man in the tavern. " ;
 	inv_animate = 1;
 };
 
@@ -5693,11 +5694,11 @@ func void use_1TESTFONT()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Помогите мне уладить мои проблемы с человеком по имени Вамбо. Вы знаете, что делать.");
+	Doc_PrintLines(nDocID, 0 , " Help me fix my problems with a man named Wambo. You know what to do. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"P.S. К письму прилагается кошелек, в котором находится оплата за ваши услуги.");
+	Doc_PrintLines(nDocID, 0 , " PS A purse containing payment for your services is attached to the letter. " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -5711,14 +5712,14 @@ func void use_1TESTFONT()
 
 instance ITWR_2TESTFONT(C_Item)
 {
-	name = "Книга тест шрифта";
+	name = " Book test font " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 50;
 	visual = "ItWr_Book_02_03.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Хроманин, часть I";
+	description = " Chromanin Part I " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = use_2TESTFONT;
@@ -5740,7 +5741,7 @@ func void use_2TESTFONT()
 	Doc_PrintLine(nDocID,0,"-----------");
 	Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Тот, кто готов отказаться от всех земных страстей и следовать тропами правды, должен узнать, где сокрыт источник моей силы. Найдя его, он будет способен разрушить все, что соединяет его с этим миром, и покажет, что он готов принять знания Хроманина.");
+	Doc_PrintLines(nDocID, 0 , " He who is ready to give up all earthly passions and follow the paths of truth must find out where the source of my power is hidden. Finding it, he will be able to destroy everything that connects him to this world, and show that he is ready to accept Chromanin's knowledge. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
@@ -5751,13 +5752,13 @@ func void use_2TESTFONT()
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Мудрый пересматривает свои прошлые дела, прежде чем начать что-то новое.");
+	Doc_PrintLines(nDocID, 1 , " A wise man revisits his past deeds before starting something new. " );
 	Doc_Show(nDocID);
 };
 
 instance ItWr_MonasterySecret(C_Item)
 {
-	name = "Призрачное пламя";
+	name = " Ghostfire " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1500;
@@ -5783,19 +5784,19 @@ func void Use_ItWr_MonasterySecret()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		MIS_MonasterySecret = LOG_Running;
 		Log_CreateTopic(TOPIC_MonasterySecret,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_MonasterySecret,LOG_Running);
-		B_LogEntry(TOPIC_MonasterySecret,"Существует много легенд и одна из них об одном артефакте, способном вызывать в помощь магу никого иного, а самого настоящего дракона! Никто не знает, правда это или нет, но история упоминает об одном маге-алхимике, которому все таки удалось создать подобный предмет. Если прочитавший эту книгу задумал найти этот артефакт, то по слухам свои поиски стоит начать в месте называемом Амон Шен...Что бы это значило?");
+		B_LogEntry(TOPIC_MonasterySecret, " There are many legends, and one of them is about one artifact that can summon anyone other than the real dragon to help the magician! Nobody knows if this is true or not, but the story mentions one alchemist magician, who still managed to create a similar item.If the reader of this book decided to find this artifact, then according to rumors, their search should begin in a place called Amon Shen... What would that mean? " );
 		B_Say(self,self,"$HOWINTEREST");
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -5813,8 +5814,8 @@ func void Use_ItWr_MonasterySecret()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_80 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_80 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -5824,20 +5825,20 @@ func void Use_ItWr_MonasterySecret()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Существует много легенд и одна из них об одном артефакте, способном вызывать в помощь магу никого иного, а самого настоящего дракона!");
+	Doc_PrintLines(nDocID, 0 , " There are many legends, and one of them is about one artifact that can summon anyone other than the real dragon to help the mage! " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Никто не знает, правда это или нет, но история упоминает об одном маге-алхимике, которому все таки удалось создать подобный предмет.");
+	Doc_PrintLines(nDocID, 0 , " No one knows if this is true or not, but history mentions one alchemist magician who did manage to create such an item. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Вызванное существо не столь могущественно, как создания Белиара, однако его мощь способна сокрушить целые армии.");
+	Doc_PrintLines(nDocID, 1 , " The summoned creature is not as powerful as Beliar's creatures, but its power can crush entire armies. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Если прочитавший эту книгу задумал найти этот артефакт, то по слухам свои поиски стоит начать в месте называемом Амон Шен...");
+	Doc_PrintLines(nDocID, 1 , " If anyone who reads this book wants to find this artifact, then rumor has it that they should start their search at a place called Amon Shen... " );
 	Doc_Show(nDocID);
 };
 
 instance ITWr_MonasterySecretLeadOW(C_Item)
 {
-	name = "Записка";
+	name = " Note " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5846,7 +5847,7 @@ instance ITWr_MonasterySecretLeadOW(C_Item)
 	on_state[0] = use_ITWr_MonasterySecretLeadOW;
 	scemeName = "MAP";
 	description = name;
-	text[2] = "Старый клочок бумаги с непонятными записями...";
+	text[ 2 ] = " An old piece of paper with incomprehensible entries... " ;
 	inv_animate = 1;
 };
 
@@ -5858,7 +5859,7 @@ func void use_ITWr_MonasterySecretLeadOW()
 	{
 		B_GivePlayerXP(100);
 		MonasterySecretLeadOW = TRUE;
-		B_LogEntry(TOPIC_MonasterySecret,"Все, что я смог разобрать в найденом мною письме, это имя - Креол.");
+		B_LogEntry(TOPIC_MonasterySecret, " All I could make out in the letter I found was the Creole name. " );
 		B_Say(self,self,"$HOWINTEREST");
 	};
 	nDocID = Doc_Create();
@@ -5868,7 +5869,7 @@ func void use_ITWr_MonasterySecretLeadOW()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"...(неразборчивый текст)...Креол...(неразборчивый текст)...");
+	Doc_PrintLines(nDocID, 0 , " ...(illegible text)...Creole...(illegible text)... " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -5889,7 +5890,7 @@ instance ItWr_Osair_Read(C_Item)
 	on_state[0] = Use_ItWr_Osair_Read;
 	scemeName = "MAPSEALED";
 	description = name;
-	text[2] = "Вскрытое письмо Осаира к Нрозасу...";
+	text[ 2 ] = " Osair's opened letter to Nrozas... " ;
 	inv_animate = 1;
 };
 
@@ -5902,7 +5903,7 @@ func void Use_ItWr_Osair_Read()
 		MIS_OsairDemand = LOG_Running;
 		Log_CreateTopic(TOPIC_OsairDemand,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_OsairDemand,LOG_Running);
-		B_LogEntry(TOPIC_OsairDemand,"Как интересно! За просьбу Нрозаса, Осаир хочет получить от него шкуру черного пещерного тролля. Если я достану для него этот трофей, это может сыграть мне на руку.");
+		B_LogEntry(TOPIC_OsairDemand, " How interesting! At Nrozas' request, Osair wants a black cave troll skin from him. If I get this trophy for him, it might work in my favor. " );
 		B_Say(self,self,"$HOWINTEREST");
 		Wld_InsertNpc(TROLL_BLACK_AGE_PW,"PW_CAVEBLACKTROLL");
 	};
@@ -5913,9 +5914,9 @@ func void Use_ItWr_Osair_Read()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"Мой дорогой Нрозас!");
+	Doc_PrintLine(nDocID, 0 , " My dear Nrozas! " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Я согласен присылать тебе более крепкий человеческий материал, если только мы вернемся с тобой к вопросу о той редкой шкуре черного пещерного тролля, что я давно у тебя прошу. Подумай над этим!");
+	Doc_PrintLines(nDocID, 0 , " I agree to send you stronger human material, if only we will return with you to the issue of that rare black cave troll skin that I have been asking you for a long time. Think about it! " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"Осаир");
@@ -5928,7 +5929,7 @@ func void Use_ItWr_Osair_Read()
 
 instance ItWr_ConstRecept(C_Item)
 {
-	name = "Алхимический рецепт";
+	name = " Alchemy Recipe " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1000;
@@ -5951,14 +5952,14 @@ func void Use_ItWr_ConstRecept()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Состав ингредиентов для изготовления эликсира:");
-	Doc_PrintLine(nDocID,0,"Аквамарин");
-	Doc_PrintLine(nDocID,0,"Серебряное кольцо");
+	Doc_PrintLines(nDocID, 0 , " Ingredients for making the elixir: " );
+	Doc_PrintLine(nDocID, 0 , " Aquamarine " );
+	Doc_PrintLine(nDocID, 0 , " Silver Ring " );
 	Doc_PrintLine(nDocID,0,"Вода");
-	Doc_PrintLine(nDocID,0,"Кость скелета");
-	Doc_PrintLine(nDocID,0,"Болотная трава");
+	Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
+	Doc_PrintLine(nDocID, 0 , " Swamp Grass " );
 	Doc_PrintLine(nDocID,0,"Сыр");
-	Doc_PrintLine(nDocID,0,"Темный гриб");
+	Doc_PrintLine(nDocID, 0 , " Dark Mushroom " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -5970,7 +5971,7 @@ func void Use_ItWr_ConstRecept()
 
 instance ItWr_Fingersliste(C_Item)
 {
-	name = "Чертеж";
+	name = " Drawing " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -5979,7 +5980,7 @@ instance ItWr_Fingersliste(C_Item)
 	on_state[0] = Use_ItWr_Fingersliste;
 	scemeName = "MAP";
 	description = "Список";
-	text[4] = "Инструкция по изготовлению шпаги 'Золотая игла'...";
+	text[ 4 ] = " Instructions for making the sword 'Golden Needle'... " ;
 	inv_animate = 1;
 };
 
@@ -5991,19 +5992,19 @@ func void Use_ItWr_Fingersliste()
 	if(Lovkach_W8 == FALSE)
 	{
 		B_GivePlayerXP(300);
-		AI_Print("Изучен рецепт ковки - 'Золотая игла'");
-		B_LogEntry(TOPIC_TalentSmith,"Теперь, я смогу сделать шпагу 'Золотая игла'. Для этого мне необходимо иметь пять слитков магической руды, кусок черной руды, золотой слиток, восемь кусков серы, три куска ледяного кварца, четыре раствора смолы и черный жемчуг.");
+		AI_Print( " Forging recipe learned - 'Golden Needle' " );
+		B_LogEntry(TOPIC_TalentSmith, " Now, I can make the Golden Needle sword. To do this, I need to have five magic ore ingots, a piece of black ore, a gold ingot, eight lumps of sulfur, three pieces of ice quartz, four resin solutions and a black pearl. " );
 		Npc_SetTalentSkill(other,NPC_TALENT_SMITH,1);
 		Snd_Play("LevelUP");
 		Lovkach_W8 = TRUE;
 		B_Say(self,self,"$HOWINTEREST");
 		MIS_TellAboutFingers = LOG_Success;
 		Log_SetTopicStatus(TOPIC_TellAboutFingers,LOG_Success);
-		B_LogEntry(TOPIC_TellAboutFingers,"Рецепт изготовления шпаги 'Золотая игла' у меня.");
+		B_LogEntry(TOPIC_TellAboutFingers, " I have the Golden Needle sword recipe. " );
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -6021,8 +6022,8 @@ func void Use_ItWr_Fingersliste()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_81 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_81 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -6031,15 +6032,15 @@ func void Use_ItWr_Fingersliste()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"'Золотая игла'...компоненты:");
+	Doc_PrintLine(nDocID, 0 , " 'Golden Needle'...component: " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"...- пять слитков магической руды");
-	Doc_PrintLine(nDocID,0,"- кусок черной руды");
-	Doc_PrintLine(nDocID,0,"- золотой слиток");
-	Doc_PrintLine(nDocID,0,"- восемь кусков серы");
-	Doc_PrintLine(nDocID,0,"- три куска ледяного кварца ");
-	Doc_PrintLine(nDocID,0,"- четыре раствора смолы");
-	Doc_PrintLine(nDocID,0,"- черный жемчуг...");
+	Doc_PrintLine(nDocID, 0 , " ...- five ingots of magic ore " );
+	Doc_PrintLine(nDocID, 0 , " - a piece of black ore " );
+	Doc_PrintLine(nDocID, 0 , " - gold bar " );
+	Doc_PrintLine(nDocID, 0 , " - eight lumps of sulfur " );
+	Doc_PrintLine(nDocID, 0 , " - three pieces of ice quartz " );
+	Doc_PrintLine(nDocID, 0 , " - four resin solutions " );
+	Doc_PrintLine(nDocID, 0 , " - black pearl... " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
@@ -6048,7 +6049,7 @@ func void Use_ItWr_Fingersliste()
 
 instance ItWr_VatrasDiary(C_Item)
 {
-	name = "Дневник Ватраса";
+	name = " Vatrasa Diary " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
@@ -6075,7 +6076,7 @@ func void Use_ItWr_VatrasDiary()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -6093,8 +6094,8 @@ func void Use_ItWr_VatrasDiary()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_82 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_82 = TRUE ;
 	};
 	if((PLAYER_TALENT_RUNES[SPL_Zap] == FALSE) && ((hero.guild == GIL_NOV) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_KDF) || (hero.guild == GIL_GUR)))
 	{
@@ -6103,8 +6104,8 @@ func void Use_ItWr_VatrasDiary()
 		PLAYER_TALENT_RUNES_24 = TRUE;
 		Snd_Play("Levelup");
 		Log_CreateTopic(TOPIC_TalentRunes,LOG_NOTE);
-		AI_Print("Обучен изготовлению руны - 'Молния'");
-		B_LogEntry(TOPIC_TalentRunes,"Составляющие для руны 'Молния': горный хрусталь.");
+		AI_Print( " Learned how to make a rune - 'Lightning' " );
+		B_LogEntry(TOPIC_TalentRunes, " Components for the 'Lightning' rune: rhinestone. " );
 	};
 
 	nDocID = Doc_Create();
@@ -6114,16 +6115,16 @@ func void Use_ItWr_VatrasDiary()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Формула изготовления руны 'Молния'");
+	Doc_PrintLines(nDocID, 0 , " Formula for crafting 'Lightning' rune " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Эта руна является собой начало магии первого круга магии Воды. Для ее изготовления необходимы прежде всего рунный камень, горный хрусталь и свиток заклинания с надлежащей формулой. Особое внимание следует обратить на качество используемых состовялющих, иначе руна не даст нужного эффекта.");
+	Doc_PrintLines(nDocID, 1 , " This rune is the beginning of the magic of the first circle of Water magic. To make it, you first need a runestone, rock crystal and a spell scroll with the proper formula. Particular attention should be paid to the quality of the ingredients used, otherwise the rune will not give the desired effect. " );
 	Doc_PrintLine(nDocID,1,"");
 	Doc_Show(nDocID);
 };
 
-//-------------------------рыбалка-----------------------
+// ------------------------fishing---------------------- -
 
 instance PC_ANGEL_END(C_Info)
 {
@@ -6132,7 +6133,7 @@ instance PC_ANGEL_END(C_Info)
 	condition = PC_ANGEL_end_condition;
 	information = PC_ANGEL_end_info;
 	permanent = TRUE;
-	description = "(...закрыть)";
+	description = " (...close) " ;
 };
 
 func int PC_ANGEL_end_condition()
@@ -6146,10 +6147,10 @@ func int PC_ANGEL_end_condition()
 func void PC_ANGEL_end_info()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	Ext_RemoveFromSlot(hero,"BIP01 R HAND");
 	Npc_RemoveInvItems(hero,ItSe_FAngel,Npc_HasItems(hero,ItSe_FAngel));
-	AngelIsOn = FALSE;
+	AngelIsOn = FALSE ;
 };
 
 instance PC_ANGEL_CATCH(C_Info)
@@ -6159,7 +6160,7 @@ instance PC_ANGEL_CATCH(C_Info)
 	condition = PC_ANGEL_CATCH_condition;
 	information = PC_ANGEL_CATCH_info;
 	permanent = TRUE;
-	description = "Ловить рыбу.";
+	description = " Catch fish. " ;
 };
 
 func int PC_ANGEL_CATCH_condition()
@@ -6176,17 +6177,17 @@ func void PC_ANGEL_CATCH_info()
 	{
 		CountFish += 1;
 
-	 	if(Wld_IsTime(4,0,8,0) || Wld_IsTime(19,0,21,0) || (Wld_IsRaining() == TRUE))
+	 	if (Wld_IsTime( 4 , 0 , 8 , 0 ) || Wld_IsTime( 19 , 0 , 21 , 0 ) || (Wld_IsRaining() ==  TRUE ))
 		{
 			if(Hlp_Random(100) >= 40)
 			{
 				CreateInvItems(hero,ItFo_Fish,1);
-				AI_PrintClr("Вы поймали рыбу!",83,152,48);
+				AI_PrintClr( " You caught a fish! " , 83 , 152 , 48 );
 				B_Say(hero,hero,"$ITEMREADY");
 			}
 			else
 			{
-				AI_PrintClr("Вы ничего не поймали...",177,58,17);
+				AI_PrintClr( " You didn't catch anything... " , 177 , 58 , 17 );
 				B_Say(hero,hero,"$NOTHINGTOGET02");
 			};
 		}
@@ -6195,12 +6196,12 @@ func void PC_ANGEL_CATCH_info()
 			if(Hlp_Random(100) >= 80)
 			{
 				CreateInvItems(hero,ItFo_Fish,1);
-				AI_PrintClr("Вы поймали рыбу!",83,152,48);
+				AI_PrintClr( " You caught a fish! " , 83 , 152 , 48 );
 				B_Say(hero,hero,"$ITEMREADY");
 			}
 			else
 			{
-				AI_PrintClr("Вы ничего не поймали...",177,58,17);
+				AI_PrintClr( " You didn't catch anything... " , 177 , 58 , 17 );
 				B_Say(hero,hero,"$NOTHINGTOGET02");
 			};
 		};
@@ -6213,14 +6214,14 @@ func void PC_ANGEL_CATCH_info()
 	else
 	{
 		CountFish = FALSE;
-		AI_Print("Хватит на сегодня...");
+		AI_Print( " Enough for today... " );
 		B_Say(hero,hero,"$IDLE_SPECIAL");
 	};
 };
 
 instance ItWr_HagenLoanDocs(C_Item)
 {
-	name = "Королевское свидетельство";
+	name = " Royal Certificate " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6229,7 +6230,7 @@ instance ItWr_HagenLoanDocs(C_Item)
 	on_state[0] = Use_ItWr_HagenLoanDocs;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Свидетельство о правах на земельный участок...";
+	text[ 4 ] = " Certificate of rights to land... " ;
 	inv_animate = 1;
 };
 
@@ -6243,12 +6244,12 @@ func void Use_ItWr_HagenLoanDocs()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"         Свидетельство");
+	Doc_PrintLines(nDocID, 0 , "          Certificate " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Этот документ предоставляет право на владение земельным участком рядом со старой башней Атрос и прилегающей к ней рудной шахтой.");
+	Doc_PrintLines(nDocID, 0 , " This document grants ownership of the land next to the old Atros Tower and adjacent ore mine. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"           Лорд Хаген");
+	Doc_PrintLine(nDocID, 0 , "            Lord Hagen " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -6267,7 +6268,7 @@ var int CheckWantedPosterSkiron;
 
 instance ItWr_DexterWantedPoster(C_Item)
 {
-	name = "Объявление о розыске";
+	name = " Wanted Announcement " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6276,7 +6277,7 @@ instance ItWr_DexterWantedPoster(C_Item)
 	on_state[0] = Use_ItWr_DexterWantedPoster;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Объявление о розыске разбойника - Декстер";
+	text[ 4 ] = " Wanted Outlaw - Dexter " ;
 	inv_animate = 1;
 };
 
@@ -6291,12 +6292,12 @@ func void Use_ItWr_DexterWantedPoster()
 			MIS_DeadOrAlive = LOG_Running;
 			Log_CreateTopic(TOPIC_DeadOrAlive,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_DeadOrAlive,LOG_Running);
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник по имени Декстер. Награда за живого или за мертвого - 2500 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for a bandit named Dexter. The bounty for dead or alive is 2500 gold coins. " );
 			CheckWantedPosterDexter = TRUE;
 		}
 		else if(MIS_DeadOrAlive == LOG_Running)
 		{
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник по имени Декстер. Награда за живого или за мертвого - 2500 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for a bandit named Dexter. The bounty for dead or alive is 2500 gold coins. " );
 			CheckWantedPosterDexter = TRUE;
 		};
 	};
@@ -6307,12 +6308,12 @@ func void Use_ItWr_DexterWantedPoster()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"    Объявление о розыске");
+	Doc_PrintLines(nDocID, 0 , "     Wanted Announcement " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Властями Хориниса разыскивается разбойник по имени Декстер. Награда за живого или за мертвого - 2500 золотых монет.");
+	Doc_PrintLines(nDocID, 0 , " The authorities of Khorinis are looking for a bandit named Dexter. The bounty for dead or alive is 2500 gold coins. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"           Лорд Андре");
+	Doc_PrintLine(nDocID, 0 , "            Lord Andre " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -6324,7 +6325,7 @@ func void Use_ItWr_DexterWantedPoster()
 
 instance ItWr_NestorWantedPoster(C_Item)
 {
-	name = "Объявление о розыске";
+	name = " Wanted Announcement " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6333,7 +6334,7 @@ instance ItWr_NestorWantedPoster(C_Item)
 	on_state[0] = Use_ItWr_NestorWantedPoster;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Объявление о розыске разбойника - Нестор 'Ганибал'";
+	text[ 4 ] = " Wanted Bandit - Nestor 'Hanibal' " ;
 	inv_animate = 1;
 };
 
@@ -6348,12 +6349,12 @@ func void Use_ItWr_NestorWantedPoster()
 			MIS_DeadOrAlive = LOG_Running;
 			Log_CreateTopic(TOPIC_DeadOrAlive,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_DeadOrAlive,LOG_Running);
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Нестор, по прозвищу 'Ганибал'. Награда за живого или за мертвого - 2000 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the robber Nestor, nicknamed 'Hanibal'. The reward for living or dead is 2000 gold coins. " );
 			CheckWantedPosterNestor = TRUE;
 		}
 		else if(MIS_DeadOrAlive == LOG_Running)
 		{
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Нестор, по прозвищу 'Ганибал'. Награда за живого или за мертвого - 2000 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the robber Nestor, nicknamed 'Hanibal'. The reward for living or dead is 2000 gold coins. " );
 			CheckWantedPosterNestor = TRUE;
 		};
 	};
@@ -6364,12 +6365,12 @@ func void Use_ItWr_NestorWantedPoster()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"    Объявление о розыске");
+	Doc_PrintLines(nDocID, 0 , "     Wanted Announcement " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Властями Хориниса разыскивается разбойник Нестор, по прозвищу 'Ганибал'. Награда за живого или за мертвого - 2000 золотых монет.");
+	Doc_PrintLines(nDocID, 0 , " The authorities of Khorinis are looking for the robber Nestor, nicknamed 'Hanibal'. The reward for living or dead is 2000 gold coins. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"           Лорд Андре");
+	Doc_PrintLine(nDocID, 0 , "            Lord Andre " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -6381,7 +6382,7 @@ func void Use_ItWr_NestorWantedPoster()
 
 instance ItWr_KriksWantedPoster(C_Item)
 {
-	name = "Объявление о розыске";
+	name = " Wanted Announcement " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6390,7 +6391,7 @@ instance ItWr_KriksWantedPoster(C_Item)
 	on_state[0] = Use_ItWr_KriksWantedPoster;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Объявление о розыске разбойника - Крикс 'Бритва'";
+	text[ 4 ] = " Wanted Bandit Crixus 'Razor' " ;
 	inv_animate = 1;
 };
 
@@ -6405,12 +6406,12 @@ func void Use_ItWr_KriksWantedPoster()
 			MIS_DeadOrAlive = LOG_Running;
 			Log_CreateTopic(TOPIC_DeadOrAlive,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_DeadOrAlive,LOG_Running);
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Крикс, по прозвищу 'Бритва'. Награда за живого или за мертвого - 1500 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the bandit Crixus, nicknamed 'The Razor'. The reward for living or dead is 1500 gold coins. " );
 			CheckWantedPosterKriks = TRUE;
 		}
 		else if(MIS_DeadOrAlive == LOG_Running)
 		{
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Крикс, по прозвищу 'Бритва'. Награда за живого или за мертвого - 1500 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the bandit Crixus, nicknamed 'The Razor'. The reward for living or dead is 1500 gold coins. " );
 			CheckWantedPosterKriks = TRUE;
 		};
 	};
@@ -6421,12 +6422,12 @@ func void Use_ItWr_KriksWantedPoster()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"    Объявление о розыске");
+	Doc_PrintLines(nDocID, 0 , "     Wanted Announcement " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Властями Хориниса разыскивается разбойник Крикс, по прозвищу 'Бритва'. Награда за живого или за мертвого - 1500 золотых монет.");
+	Doc_PrintLines(nDocID, 0 , " The authorities of Khorinis are looking for the bandit Crixus, nicknamed 'The Razor'. The bounty for dead or alive is 1500 gold coins. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"           Лорд Андре");
+	Doc_PrintLine(nDocID, 0 , "            Lord Andre " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -6438,7 +6439,7 @@ func void Use_ItWr_KriksWantedPoster()
 
 instance ItWr_BartWantedPoster(C_Item)
 {
-	name = "Объявление о розыске";
+	name = " Wanted Announcement " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6447,7 +6448,7 @@ instance ItWr_BartWantedPoster(C_Item)
 	on_state[0] = Use_ItWr_BartWantedPoster;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Объявление о розыске разбойника - Барт 'Коротышка'";
+	text[ 4 ] = " Wanted Bandit - Bart 'Shorty' " ;
 	inv_animate = 1;
 };
 
@@ -6462,12 +6463,12 @@ func void Use_ItWr_BartWantedPoster()
 			MIS_DeadOrAlive = LOG_Running;
 			Log_CreateTopic(TOPIC_DeadOrAlive,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_DeadOrAlive,LOG_Running);
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Барт, по прозвищу 'Коротышка'. Награда за живого или за мертвого - 1250 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the robber Bart, nicknamed 'Shorty'. The reward for living or dead is 1250 gold coins. " );
 			CheckWantedPosterBart = TRUE;
 		}
 		else if(MIS_DeadOrAlive == LOG_Running)
 		{
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Барт, по прозвищу 'Коротышка'. Награда за живого или за мертвого - 1250 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the robber Bart, nicknamed 'Shorty'. The reward for living or dead is 1250 gold coins. " );
 			CheckWantedPosterBart = TRUE;
 		};
 	};
@@ -6478,12 +6479,12 @@ func void Use_ItWr_BartWantedPoster()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"    Объявление о розыске");
+	Doc_PrintLines(nDocID, 0 , "     Wanted Announcement " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Властями Хориниса разыскивается разбойник Барт, по прозвищу 'Коротышка'. Награда за живого или за мертвого - 1250 золотых монет.");
+	Doc_PrintLines(nDocID, 0 , " The authorities of Khorinis are looking for the robber Bart, nicknamed 'Shorty'. The reward for dead or alive is 1250 gold coins. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"           Лорд Андре");
+	Doc_PrintLine(nDocID, 0 , "            Lord Andre " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -6495,7 +6496,7 @@ func void Use_ItWr_BartWantedPoster()
 
 instance ItWr_SkironWantedPoster(C_Item)
 {
-	name = "Объявление о розыске";
+	name = " Wanted Announcement " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6504,7 +6505,7 @@ instance ItWr_SkironWantedPoster(C_Item)
 	on_state[0] = Use_ItWr_SkironWantedPoster;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Объявление о розыске разбойника - Скирон 'Мясник'";
+	text[ 4 ] = " Wanted Bandit - Skiron 'The Butcher' " ;
 	inv_animate = 1;
 };
 
@@ -6519,12 +6520,12 @@ func void Use_ItWr_SkironWantedPoster()
 			MIS_DeadOrAlive = LOG_Running;
 			Log_CreateTopic(TOPIC_DeadOrAlive,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_DeadOrAlive,LOG_Running);
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Скирон, по прозвищу 'Мясник'. Награда за живого или за мертвого - 1000 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the bandit Skiron, nicknamed 'The Butcher'. The reward for living or dead is 1000 gold coins. " );
 			CheckWantedPosterSkiron = TRUE;
 		}
 		else if(MIS_DeadOrAlive == LOG_Running)
 		{
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Скирон, по прозвищу 'Мясник'. Награда за живого или за мертвого - 1000 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the bandit Skiron, nicknamed 'The Butcher'. The reward for living or dead is 1000 gold coins. " );
 			CheckWantedPosterSkiron = TRUE;
 		};
 	};
@@ -6535,12 +6536,12 @@ func void Use_ItWr_SkironWantedPoster()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"    Объявление о розыске");
+	Doc_PrintLines(nDocID, 0 , "     Wanted Announcement " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Властями Хориниса разыскивается разбойник Скирон, по прозвищу 'Мясник'. Награда за живого или за мертвого - 1000 золотых монет.");
+	Doc_PrintLines(nDocID, 0 , " The authorities of Khorinis are looking for the bandit Skiron, nicknamed 'The Butcher'. The reward for living or dead is 1000 gold coins. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"           Лорд Андре");
+	Doc_PrintLine(nDocID, 0 , "            Lord Andre " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -6552,7 +6553,7 @@ func void Use_ItWr_SkironWantedPoster()
 
 instance ItWr_RocksWantedPoster(C_Item)
 {
-	name = "Объявление о розыске";
+	name = " Wanted Announcement " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6561,7 +6562,7 @@ instance ItWr_RocksWantedPoster(C_Item)
 	on_state[0] = Use_ItWr_RocksWantedPoster;
 	scemeName = "MAP";
 	description = name;
-	text[4] = "Объявление о розыске разбойника - Рокс 'Шустрый'";
+	text[ 4 ] = " Wanted Bandit - Rocks 'Nimble' " ;
 	inv_animate = 1;
 };
 
@@ -6576,12 +6577,12 @@ func void Use_ItWr_RocksWantedPoster()
 			MIS_DeadOrAlive = LOG_Running;
 			Log_CreateTopic(TOPIC_DeadOrAlive,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_DeadOrAlive,LOG_Running);
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Рокс, по прозвищу 'Шустрый'. Награда за живого или за мертвого - 750 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the robber Rox, nicknamed 'Nimble'. The reward for living or dead is 750 gold coins. " );
 			CheckWantedPosterRocks = TRUE;
 		}
 		else if(MIS_DeadOrAlive == LOG_Running)
 		{
-			B_LogEntry(TOPIC_DeadOrAlive,"Властями Хориниса разыскивается разбойник Рокс, по прозвищу 'Шустрый'. Награда за живого или за мертвого - 750 золотых монет.");
+			B_LogEntry(TOPIC_DeadOrAlive, " The authorities of Khorinis are looking for the robber Rox, nicknamed 'Nimble'. The reward for living or dead is 750 gold coins. " );
 			CheckWantedPosterRocks = TRUE;
 		};
 	};
@@ -6592,12 +6593,12 @@ func void Use_ItWr_RocksWantedPoster()
 	Doc_SetFont(nDocID,-1,FONT_Book_Letter);
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"    Объявление о розыске");
+	Doc_PrintLines(nDocID, 0 , "     Wanted Announcement " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"Властями Хориниса разыскивается разбойник Рокс, по прозвищу 'Шустрый'. Награда за живого или за мертвого - 750 золотых монет.");
+	Doc_PrintLines(nDocID, 0 , " The authorities of Khorinis are looking for the bandit Rox, nicknamed 'Nimble'. The reward for dead or alive is 750 gold coins. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLine(nDocID,0,"           Лорд Андре");
+	Doc_PrintLine(nDocID, 0 , "            Lord Andre " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
@@ -6609,14 +6610,14 @@ func void Use_ItWr_RocksWantedPoster()
 
 instance ItWr_StonePower(C_Item)
 {
-	name = "Белая скала";
+	name = " White Rock " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 10;
 	visual = "ItMi_StonePlate_Read_06.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Белая скала";
+	description = " White Rock " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_StonePower;
@@ -6630,7 +6631,7 @@ func void Use_ItWr_StonePower()
 
 	if((MIS_SwampSecret == LOG_Running) && (StonePower == FALSE))
 	{
-		B_LogEntry(TOPIC_SwampSecret,"Судя по всему, магическая сущность болотной травы действительно порождена магией земли и скалы. Думаю Сатурасу будет интересно взглянуть на эту древнюю скрижаль.");
+		B_LogEntry(TOPIC_SwampSecret, " Apparently, the magical essence of the swamp grass is indeed generated by the magic of earth and rock. I think Saturas will be interested in looking at this ancient tablet. " );
 		StonePower = TRUE;
 	};
 	if(StonePowerRead == FALSE)
@@ -6640,13 +6641,13 @@ func void Use_ItWr_StonePower()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -6664,8 +6665,8 @@ func void Use_ItWr_StonePower()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_158 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_158 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -6675,27 +6676,27 @@ func void Use_ItWr_StonePower()
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"И породила белая скала семя жизни и впитало это семя мощь скалы. Семя это дало росток, но был этот росток мягким, сила скалы же наделила его магией.");
+	Doc_PrintLines(nDocID, 0 , " And the white rock gave birth to the seed of life and absorbed this seed with the power of the rock. This seed gave rise to a sprout, but this sprout was soft, the power of the rock endowed it with magic. " );
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Росток, наделенный магией скалы, разделил ее поровну между своими семенами и ветер разнес их в далекие уголки мира.");
+	Doc_PrintLines(nDocID, 0 , " A sprout , endowed with the magic of the rock, divided it equally between its seeds and the wind carried them to the far corners of the world. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Те, в свою очередь, отдали магию своим семенам и так стало на земле расти бессчетное множество ростков.");
+	Doc_PrintLines(nDocID, 1 , " Those, in turn, gave magic to their seeds, and so countless sprouts began to grow on the ground. " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"В каждом из них сила белой скалы была меньше в бессчетное количество раз.");
+	Doc_PrintLines(nDocID, 1 , " In each of them, the power of the white rock was reduced by an uncountable number of times. " );
 	Doc_Show(nDocID);
 };
 
 instance ItWr_HighRunes(C_Item)
 {
-	name = "Высшие руны";
+	name = " Higher Runes " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 10;
 	visual = "ItWr_Book_Poor_04.3ds";
 	material = MAT_LEATHER;
 	scemeName = "MAP";
-	description = "Высшие руны";
+	description = " High Runes " ;
 	text[5] = NAME_Value;
 	count[5] = value;
 	on_state[0] = Use_ItWr_HighRunes;
@@ -6713,8 +6714,8 @@ func void Use_ItWr_HighRunes()
 
 		if(RhetorikSkillValue[1] < 100)
 		{
-			RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-			AI_Print("Риторика + 1");
+			RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+			AI_Print( " Rhetoric + 1 " );
 		};
 
 		B_GivePlayerXP(50);
@@ -6722,7 +6723,7 @@ func void Use_ItWr_HighRunes()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -6740,8 +6741,8 @@ func void Use_ItWr_HighRunes()
 	{
 		ATR_INTELLECT += 1;
 		Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-		AI_Print("Интеллект + 1");
-		BookBonus_159 = TRUE;
+		AI_Print( " Intelligence + 1 " );
+		BookBonus_159 = TRUE ;
 	};
 
 	nDocID = Doc_Create();
@@ -6749,24 +6750,24 @@ func void Use_ItWr_HighRunes()
 	Doc_SetPage(nDocID,0,"Book_Brown_L.tga",0);
 	Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
-	Doc_PrintLine(nDocID,0,"Высшие руны");
+	Doc_PrintLine(nDocID, 0 , " Higher Runes " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetMargins(nDocID,0,275,20,30,20,1);
 	Doc_PrintLine(nDocID,0," ");
 	Doc_SetFont(nDocID,-1,FONT_Book_New_Small);
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Для создания магических рун порой используются разные виды рунических камней. Все зависит от того, насколько могущественную руну необходимо изготовить.");
+	Doc_PrintLines(nDocID, 0 , " To create magical runes, different types of runestones are sometimes used. It all depends on how powerful the rune needs to be made. " );
 	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLines(nDocID,1,"Для заклинаний первого и второго круга магии используют обычные рунические камни, для третьего и четвертого круга - старшие руны, а для создания самых сложных рун пятого и шестого кругов - высшие!");
+	Doc_PrintLines(nDocID, 1 , " For spells of the first and second circles of magic, ordinary runestones are used, for the third and fourth circles - senior runes, and for creating the most difficult runes of the fifth and sixth circles - supreme ones! " );
 	Doc_PrintLine(nDocID,1,"");
-	Doc_PrintLine(nDocID,1,"Ксардас");
+	Doc_PrintLine(nDocID, 1 , " Xardas " );
 	Doc_Show(nDocID);
 };
 
 instance ItWr_DragonHigh(C_Item)
 {
-	name = "Сила руды";
+	name = " Ore Power " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
@@ -6796,10 +6797,10 @@ func void Use_ItWr_DragonHigh()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_SetFont(nDocID,0,FONT_Book_Letter);
-	Doc_PrintLines(nDocID,0,"...я полагаю, что магическая руда - это ключ к победе! Возможно, если удасться покрыть ей свои доспехи, то они станут намного прочней. Однако не многие способны сделать такое...");
+	Doc_PrintLines(nDocID, 0 , " ...I believe that magic ore is the key to victory! Maybe if you manage to coat your armor with it, they will become much stronger. However, not many people are able to do this... " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Грах, драконоборец");
+	Doc_PrintLines(nDocID, 0 , " Pea, Dragon Slayer " );
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
