@@ -1,4 +1,5 @@
 
+
 var int B_RAVENSESCAPEINTOTEMPELAVI_OneTime;
 
 func void b_ravensescapeintotempelavi()
@@ -9,7 +10,7 @@ func void b_ravensescapeintotempelavi()
 		RavenIsInTempel = TRUE;
 		Log_CreateTopic(TOPIC_Addon_RavenKDW,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_Addon_RavenKDW,LOG_Running);
-		B_LogEntry(TOPIC_Addon_RavenKDW,"Я проник в покои Ворона. Я как раз смог увидеть, как он исчез за закрытой дверью. Я не смог за ним последовать. Я думаю, эта дверь ведет в храм Аданоса. Я должен сообщить об этом Сатурасу.");
+		B_LogEntry(TOPIC_Addon_RavenKDW, " I entered the Raven's quarters. I was just able to see him disappear behind a closed door. I couldn't follow him. I think this door leads to the Temple of Adanos. I should report this to Saturas. " ) ;
 		B_RAVENSESCAPEINTOTEMPELAVI_OneTime = TRUE;
 	};
 };
