@@ -1,19 +1,20 @@
 
+
 func void b_assignfortwatchguard(var C_Npc watchguardfort)
 {
 	if(GRANTTOFORT == TRUE)
 	{
 		if(watchguardfort.voice == 4)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_Ambient_04_00");	//Мы следим за тобой. Помни об этом.
+			AI_Output(self,other, " DIA_Pal_Schiffswache_Ambient_04_00 " );	// We're watching you. Remember that.
 		};
 		if(watchguardfort.voice == 9)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_Ambient_09_01");	//Не создавай здесь проблем, хорошо?
+			AI_Output(self,other, " DIA_Pal_Schiffswache_Ambient_09_01 " );	// Don't make trouble here, okay?
 		};
 		if(watchguardfort.voice == 12)
 		{
-			AI_Output(self,other,"DIA_Pal_Schiffswache_Ambient_12_02");	//И не надумай ничего красть, ясно?
+			AI_Output(self,other, " DIA_Pal_Schiffswache_Ambient_12_02 " );	// And don't even think of stealing anything
 		};
 
 		AI_StopProcessInfos(watchguardfort);
@@ -53,7 +54,7 @@ func void b_assignfortwatchguardtalk(var C_Npc watchguardfort)
 
 func int b_assignfortwatchguardinfoconditions(var C_Npc watchguardfort)
 {
-	if((Npc_RefuseTalk(self) == FALSE) && (VarusMeet == FALSE))
+	if (( Npc_RefuseTalk ( self ) ==  FALSE ) && ( VarusMeet ==  FALSE ))
 	{
 		return TRUE;
 	}
@@ -62,6 +63,6 @@ func int b_assignfortwatchguardinfoconditions(var C_Npc watchguardfort)
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
