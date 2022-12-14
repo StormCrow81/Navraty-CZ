@@ -1,4 +1,5 @@
 
+
 func void Bookstand_Milten_03_S1()
 {
 	var C_Npc her;
@@ -14,22 +15,22 @@ func void Bookstand_Milten_03_S1()
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Слишком поздно.");
-		Doc_PrintLines(nDocID,0,"С крушением старой шахты настроение рудного барона также сильно ухудшилось. ");
-		Doc_PrintLines(nDocID,0,"Гомез словно бочка с порохом, которая стояла незадолго до взрыва.   ");
+		Doc_PrintLines(nDocID, 0 , " Too late. " );
+		Doc_PrintLines(nDocID, 0 , " With the collapse of the old mine, the mood of the ore baron also deteriorated greatly. " );
+		Doc_PrintLines(nDocID, 0 , " Gomez is like a barrel of gunpowder that was just before the explosion.    " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Корристо");
+		Doc_PrintLine(nDocID, 0 , " Corristo " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Он думает, что этот новый парень виноват в крушении рудника. Этот человек действительно необычен. Но ему лучше больше не попадаться на глаза. ");
+		Doc_PrintLines(nDocID, 0 , " He thinks this new guy is responsible for the mine crash. This person is really unusual. But he'd better stay out of sight. " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Корристо");
+		Doc_PrintLine(nDocID, 0 , " Corristo " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Гомез очень гневный и я хочу узнать, что он спланировал. Мы обязательно должны уведомить мага воды, пока еще не слишком поздно. ");
+		Doc_PrintLines(nDocID, 1 , " Gomez is very angry and I want to know what he's up to. We definitely need to notify the waterbender before it's too late. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLine(nDocID,1,"Корристо");
+		Doc_PrintLine(nDocID, 1 , " Corristo " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Может быть у нас получится предотвратить катастрофу. Страшно подумать, что случилось бы, если он пойдет на свободную шахту. ");
+		Doc_PrintLines(nDocID, 1 , " Maybe we can avert disaster. It's scary to think what would happen if he went to a free mine. " );
 		Doc_Show(nDocID);
 	};
 };
@@ -49,20 +50,20 @@ func void Bookstand_Milten_02_S1()
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Возможность позволила мне немного здесь обустроиться. Кто бы мог подумать, что я когда-нибудь стану единственным магом в лагере?");
-		Doc_PrintLines(nDocID,0,"Ну, вообще-то мне нечего радоваться, что я вновь здесь оказался. Мне следовало бы отсюда поскорее смыться.");
-		Doc_PrintLines(nDocID,0,"Эта экспедиция просто неудачна.");
+		Doc_PrintLines(nDocID, 0 , " Opportunity allowed me to settle down here a bit. Who would have thought that I would ever be the only mage in the camp? " );
+		Doc_PrintLines(nDocID, 0 , " Well, I'm not really happy to be here again. I should get out of here as soon as possible. " );
+		Doc_PrintLines(nDocID, 0 , " This expedition just failed. " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLines(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Рудокопы ушли вчера. Они взяли с собой Диего - и я не удивлюсь, если он сбежит. ");
-		Doc_PrintLines(nDocID,1,"Диего даже не взял с собой кирку. ");
-		Doc_PrintLines(nDocID,1,"Ну, это время я использую, чтобы усовершенствовать свое искусство алхимии. ");
+		Doc_PrintLines(nDocID, 1 , "The miners left yesterday. They took Diego with them - and I wouldn't be surprised if he runs away. " );
+		Doc_PrintLines(nDocID, 1 , " Diego didn't even bring his pickaxe. " );
+		Doc_PrintLines(nDocID, 1 , " Well, I'm using this time to perfect my art of alchemy. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLine(nDocID,1,"Милтен");
+		Doc_PrintLine(nDocID, 1 , " Milten " );
 		Doc_Show(nDocID);
 	};
 };
@@ -70,7 +71,7 @@ func void Bookstand_Milten_02_S1()
 func void Bookstand_Milten_01_S1()
 {
 	var C_Npc her;
-	var int Document;
+	var int  Document ;
 	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
@@ -98,32 +99,32 @@ func void Bookstand_Engor_01_S1()
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"То, что у вас найдено - никуда не годный материал, а именно:");
+		Doc_PrintLines(nDocID, 0 , " What you have found is worthless material, namely: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"3 ящика старых материалов ");
+		Doc_PrintLines(nDocID, 0 , " 3 crates of old stuff " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"8 ящиков ржавых железных материалов ");
+		Doc_PrintLines(nDocID, 0 , " 8 crates of rusty iron materials " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"4 ящика сломанного снаряжения ");
+		Doc_PrintLines(nDocID, 0 , " 4 crates of broken equipment " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"5 ящиков кожи и мехов (уже воняют!) ");
+		Doc_PrintLines(nDocID, 0 , " 5 cases of leather and furs (they stink!) " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"2 ящика кирок ");
+		Doc_PrintLines(nDocID, 1 , " 2 boxes of picks " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"3 ящика инструментов ");
+		Doc_PrintLines(nDocID, 1 , " 3 toolboxes " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"16 ящиков глыб горных пород (нет руды) ");
+		Doc_PrintLines(nDocID, 1 , " 16 crates of rocks (no ore) " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"1 ящик с ржавыми ножами ");
+		Doc_PrintLines(nDocID, 1 , " 1 chest of rusty knives " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"4 ящика битой посуды ");
+		Doc_PrintLines(nDocID, 1 , " 4 crates of broken crockery " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"56 бочек воды ");
+		Doc_PrintLines(nDocID, 1 , " 56 barrels of water " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"1 ящик болотных...- (все что было, все испорчено). ");
+		Doc_PrintLines(nDocID, 1 , " 1 box of swamps...- (everything that was, everything is spoiled). " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"Энгор");
 		Doc_Show(nDocID);
@@ -140,7 +141,7 @@ func void Bookstand_Avabul_s1()
 
 	if((PashalQuestPentaStep == TRUE) && (summonavabul_once == FALSE))
 	{
-		B_LogEntry(TOPIC_PashalQuest,"В глухом склепе я нашел старые записи неизвестного мне некроманта, касательно интересующего меня артефакта. Согласно этим записям, только один из слуг Белиара способен раскрыть мне его тайну! Вызвать его можно проведя ритуал, но для этого мне потребуется череп какого-нибудь очень могущественного демона.");
+		B_LogEntry(TOPIC_PashalQuest, " In a remote crypt, I found old records of a necromancer unknown to me, regarding an artifact of interest to me. According to these records, only one of Beliar's servants is able to reveal his secret to me! You can summon him by performing a ritual, but for this I need a skull of some some very powerful demon. " );
 		summonavabul_once = TRUE;
 	};
 	if(BookstandAvabul == FALSE)
@@ -153,7 +154,7 @@ func void Bookstand_Avabul_s1()
 	}
 	else
 	{
-		rnd = Hlp_Random(100);
+		rnd = Hlp_Random( 100 );
 		if(rnd <= 30)
 		{
 			B_Say(self,self,"$NOTHINGNEW");
@@ -177,12 +178,12 @@ func void Bookstand_Avabul_s1()
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Теперь моя единственная надежда отыскать этот артефакт зависит от предстоящего ритуала...");
-		Doc_PrintLines(nDocID,0,"Надеюсь, я смогу призвать в этот мир одного из слуг Белиара, который поможет мне ответить на мои вопросы.");
+		Doc_PrintLines(nDocID, 0 , " Now my only hope of finding this artifact depends on the upcoming ritual... " );
+		Doc_PrintLines(nDocID, 0 , " I hope I can summon one of Beliar's servants to this world to help me answer my questions. " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для ритуала мне потребуется череп могущественного демона, который я возложу на алтарь демонов. Без этого все будет напрасно!");
+		Doc_PrintLines(nDocID, 1 , " For the ritual, I will need the skull of a powerful demon, which I will place on the altar of demons. Without this, everything will be in vain! " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_Show(nDocID);
