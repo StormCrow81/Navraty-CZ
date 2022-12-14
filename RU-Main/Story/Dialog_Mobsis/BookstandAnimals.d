@@ -1,4 +1,5 @@
 
+
 var int Animals_1_permanent;
 var int Animals_2_permanent;
 var int Animals_3_permanent;
@@ -17,25 +18,25 @@ func void Use_BookstandAnimals1_S1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"Охота и добыча");
+		Doc_PrintLine(nDocID, 0 , " Hunting and Prey " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Каждое животное и существо обладает трофеями, которые увеличивают славу и богатство опытного охотника.");
+		Doc_PrintLines(nDocID, 0 , " Every animal and creature has a trophy that increases the fame and fortune of a skilled hunter. " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Опытный охотник знает о трофеях своей добычи и знает различные способы, как их получить. ");
+		Doc_PrintLines(nDocID, 0 , " An experienced hunter knows about the trophies of his prey and knows the various ways to get them. " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Вырывать зубы ");
-		Doc_PrintLines(nDocID,0,"Зубы - оружие многих животных и существ. Кто знает об этом, тот при поимке волков, глорхов, мракорисов, болотожоров и троллей получит свой трофей.");
+		Doc_PrintLine(nDocID, 0 , " Pull teeth " );
+		Doc_PrintLines(nDocID, 0 , " Teeth are the weapons of many animals and creatures. Whoever knows about this, he will receive his trophy when catching wolves, glorchs, obscurants, swamps and trolls. " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLine(nDocID,1,"Снимать шкуры");
-		Doc_PrintLines(nDocID,1,"Каждый опытный охотник должен уметь снимать шкуру у многих животных. Овцы, волки, мракорисы и многие другие.");
-		Doc_PrintLines(nDocID,1,"Охотник, который обладает этим талантом, также может снимать кожу с болотожоров и шныгов.");
+		Doc_PrintLine(nDocID, 1 , " Skinning " );
+		Doc_PrintLines(nDocID, 1 , " Every experienced hunter should be able to skin many animals. Sheep, wolves, gloomers and many more. " );
+		Doc_PrintLines(nDocID, 1 , " A hunter who has this talent can also skin Bog Eaters and Shnugs. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLine(nDocID,1,"Ломать когти");
-		Doc_PrintLines(nDocID,1,"Искусство ломать когти - это добыча с ящериц всех видов, глорхов, шныгов и мракорисов их когтей.  ");
+		Doc_PrintLine(nDocID, 1 , " Break claws " );
+		Doc_PrintLines(nDocID, 1 , " The art of breaking claws is prey from lizards of all kinds, glorchs, sniffs and obscurantists of their claws.   " );
 		Doc_Show(nDocID);
 		if(Animals_1_permanent == FALSE)
 		{
@@ -46,13 +47,13 @@ func void Use_BookstandAnimals1_S1()
 
 			if(RhetorikSkillValue[1] < 100)
 			{
-				RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-				AI_Print("Риторика + 1");
+				RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+				AI_Print( " Rhetoric + 1 " );
 			};
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -70,8 +71,8 @@ func void Use_BookstandAnimals1_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_90 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_90 = TRUE ;
 		};
 	};
 };
@@ -90,23 +91,23 @@ func void Use_BookstandAnimals2_S1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"Охота и добыча");
+		Doc_PrintLine(nDocID, 0 , " Hunting and Prey " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Каждое животное и существо обладает трофеями, которые увеличивают славу и богатство опытного охотника.");
+		Doc_PrintLines(nDocID, 0 , " Every animal and creature has a trophy that increases the fame and fortune of a skilled hunter. " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Кровяной шершень");
+		Doc_PrintLine(nDocID, 0 , " Blood Hornet " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Чтобы завладеть трофеями этого летающего дьявола, необходимо два особых умения. ");
-		Doc_PrintLines(nDocID,0,"Первое - это умение отделить крылья, а второе - извлечь жало. ");
-		Doc_PrintLines(nDocID,0,"Опытный охотник должен овладеть обоими умениями, чтобы получить оба трофея.");
+		Doc_PrintLines(nDocID, 0 , " It takes two special skills to get hold of this flying devil's trophies. " );
+		Doc_PrintLines(nDocID, 0 , " The first is the ability to separate the wings, and the second is to extract the stinger. " );
+		Doc_PrintLines(nDocID, 0 , " An experienced hunter must master both skills to get both trophies. " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Оружие полевых жуков и ползунов - это их мандибулы. Прежде всего мандибулы ползунов");
-		Doc_PrintLines(nDocID,1,"считаются особо стоящими, так как они содержат сок, который восстанавливает магическую энергию.");
-		Doc_PrintLines(nDocID,1,"Но необходимо применять его с умом, так как со временем человеческое тело перестает реагировать на него.");
-		Doc_PrintLines(nDocID,1,"Также важными являются панцири ползунов из которых можно делать хорошие доспехи. ");
+		Doc_PrintLines(nDocID, 1 , " The weapons of field beetles and creepers are their mandibles. First of all, the mandibles of creepers " );
+		Doc_PrintLines(nDocID, 1 , " are considered special because they contain juice that restores magical energy. " );
+		Doc_PrintLines(nDocID, 1 , " But you need to use it wisely, because over time the human body stops responding to it. " );
+		Doc_PrintLines(nDocID, 1 , " Also important are the shells of the crawlers, which can be used to make good armor. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLines(nDocID,1,"");
 		Doc_Show(nDocID);
@@ -119,13 +120,13 @@ func void Use_BookstandAnimals2_S1()
 
 			if(RhetorikSkillValue[1] < 100)
 			{
-				RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-				AI_Print("Риторика + 1");
+				RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+				AI_Print( " Rhetoric + 1 " );
 			};
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -143,8 +144,8 @@ func void Use_BookstandAnimals2_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_91 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_91 = TRUE ;
 		};
 	};
 };
@@ -163,22 +164,22 @@ func void Use_BookstandAnimals3_S1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"Охота и добыча");
+		Doc_PrintLine(nDocID, 0 , " Hunting and Prey " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Каждое животное и существо обладает трофеями, которые увеличивают славу и богатство опытного охотника.");
+		Doc_PrintLines(nDocID, 0 , " Every animal and creature has a trophy that increases the fame and fortune of a skilled hunter. " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Огненная ящерица ");
-		Doc_PrintLines(nDocID,0,"Эти редкие существа принадлежат к виду ящериц, которые могут извергать огонь. Каждый, кто подойдет к нему близко - будет сожжен. ");
-		Doc_PrintLines(nDocID,0,"Только с защитой от огня можно выстоять в борьбе с этим существом и вырвать у него драгоценный язык.");
+		Doc_PrintLine(nDocID, 0 , " Fire Lizard " );
+		Doc_PrintLines(nDocID, 0 , " These rare creatures belong to a lizard species that can spew fire. Anyone who comes close to it will be burned. " );
+		Doc_PrintLines(nDocID, 0 , " Only with protection from fire can one survive the fight against this creature and rip out its precious tongue. " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLine(nDocID,1,"Мракорис");
+		Doc_PrintLine(nDocID, 1 , " Mrakoris " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Мракорис - это древний одиночный вид, который живет исключительно в лесах. ");
-		Doc_PrintLines(nDocID,1,"Днем мракорис по большей мере отдыхает, и поэтому не опасен. Но ночью он выходит на охоту и представляет огромную угрозу.");
-		Doc_PrintLines(nDocID,1,"Голова мракориса увенчана рогом, который является ценным трофеем для охотника. Охотник должен овладеть умением - правильно отламывать рог,");
-		Doc_PrintLines(nDocID,1,"чтобы заполучить этот трофей.");
+		Doc_PrintLines(nDocID, 1 , " Mrakoris is an ancient solitary species that lives exclusively in forests. " );
+		Doc_PrintLines(nDocID, 1 , " During the day, the gloomer mostly rests, and therefore is not dangerous. But at night it comes out to hunt and poses a huge threat. " );
+		Doc_PrintLines(nDocID, 1 , " The head of the mrakoris is crowned with a horn, which is a valuable trophy for a hunter. The hunter must master the skill - to break off the horn correctly, " );
+		Doc_PrintLines(nDocID, 1 , " to get this trophy. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_Show(nDocID);
@@ -191,13 +192,13 @@ func void Use_BookstandAnimals3_S1()
 
 			if(RhetorikSkillValue[1] < 100)
 			{
-				RhetorikSkillValue[1] = RhetorikSkillValue[1] + 1;
-				AI_Print("Риторика + 1");
+				RhetoricSkillValue[ 1 ] = RhetoricSkillValue[ 1 ] +  1 ;
+				AI_Print( " Rhetoric + 1 " );
 			};
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -215,8 +216,8 @@ func void Use_BookstandAnimals3_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_92 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_92 = TRUE ;
 		};
 	};
 };
