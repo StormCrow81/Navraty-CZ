@@ -1,4 +1,5 @@
 
+
 func void use_bookstand_dmt_circ1_s1()
 {
 	var C_Npc her;
@@ -13,23 +14,23 @@ func void use_bookstand_dmt_circ1_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ПЕРВЫЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " FIRST CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны первого Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the first Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Стрела мрака -");
-		Doc_PrintLine(nDocID,0,"Черный жемчуг");
-		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Призыв скелета -");
-		Doc_PrintLine(nDocID,0,"Кость скелета");
+		Doc_PrintLine(nDocID, 0 , " - Arrow of Darkness - " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Одержимость -");
-		Doc_PrintLine(nDocID,0,"Кость скелета");
-		Doc_PrintLine(nDocID,0,"Эктоплазма");
+		Doc_PrintLine(nDocID, 0 , " - Summon skeleton - " );
+		Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
+		Doc_PrintLine(nDocID,0,"");
+		Doc_PrintLine(nDocID,0,"");
+		Doc_PrintLine(nDocID, 0 , " - Possession - " );
+		Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
+		Doc_PrintLine(nDocID, 0 , " Ectoplasm " );
 		Doc_PrintLine(nDocID,0,"Сера");
-		Doc_PrintLine(nDocID,0,"Смола");
+		Doc_PrintLine(nDocID, 0 , " Resin " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
@@ -37,11 +38,11 @@ func void use_bookstand_dmt_circ1_s1()
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -58,7 +59,7 @@ func void use_bookstand_dmt_circ1_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -76,8 +77,8 @@ func void use_bookstand_dmt_circ1_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_131 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_131 = TRUE ;
 		};
 	};
 };
@@ -96,32 +97,32 @@ func void use_bookstand_dmt_circ2_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ВТОРОЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " SECOND CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны второго Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the second Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Раздирание души -");
+		Doc_PrintLine(nDocID, 0 , " - Tearing Souls - " );
 		Doc_PrintLine(nDocID,0,"Сера");
-		Doc_PrintLine(nDocID,0,"Смола");
+		Doc_PrintLine(nDocID, 0 , " Resin " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Призыв зомби -");
-		Doc_PrintLine(nDocID,0,"Уголь");
-		Doc_PrintLine(nDocID,0,"Мертвая плоть");
+		Doc_PrintLine(nDocID, 0 , " - Summon zombies - " );
+		Doc_PrintLine(nDocID, 0 , " Coal " );
+		Doc_PrintLine(nDocID, 0 , " Dead flesh " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Истощение -");
-		Doc_PrintLine(nDocID,0,"Кость скелета");
+		Doc_PrintLine(nDocID, 0 , " - Exhaustion - " );
+		Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
 		Doc_PrintLine(nDocID,0,"Сера");
-		Doc_PrintLine(nDocID,0,"Горный хрусталь");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
+		Doc_PrintLine(nDocID, 0 , " Rhinestone " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -138,7 +139,7 @@ func void use_bookstand_dmt_circ2_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -156,8 +157,8 @@ func void use_bookstand_dmt_circ2_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_132 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_132 = TRUE ;
 		};
 	};
 };
@@ -176,37 +177,37 @@ func void use_bookstand_dmt_circ3_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ТРЕТИЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " THIRD CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны третьего Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the third Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Копье тьмы -");
-		Doc_PrintLine(nDocID,0,"Черный жемчуг");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
-		Doc_PrintLine(nDocID,0,"Горный хрусталь");
+		Doc_PrintLine(nDocID, 0 , " - Spear of Darkness - " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
+		Doc_PrintLine(nDocID, 0 , " Rhinestone " );
 		Doc_PrintLine(nDocID,0,"Сера");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"- Рой -");
-		Doc_PrintLine(nDocID,0,"Аквамарин");
-		Doc_PrintLine(nDocID,0,"Болотник");
-		Doc_PrintLine(nDocID,0,"Смола");
+		Doc_PrintLine(nDocID, 0 , " Aquamarine " );
+		Doc_PrintLine(nDocID, 0 , " Swamp " );
+		Doc_PrintLine(nDocID, 0 , " Resin " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Призыв скелета воина -");
-		Doc_PrintLine(nDocID,0,"Кость скелета");
-		Doc_PrintLine(nDocID,0,"Черный жемчуг");
+		Doc_PrintLine(nDocID, 0 , " - Summon warrior skeleton - " );
+		Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -224,7 +225,7 @@ func void use_bookstand_dmt_circ3_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -242,8 +243,8 @@ func void use_bookstand_dmt_circ3_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_133 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_133 = TRUE ;
 		};
 	};
 };
@@ -262,31 +263,31 @@ func void use_bookstand_dmt_circ4_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ЧЕТВЕРТЫЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " FOURTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны четвертого Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the fourth Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Призыв демона -");
-		Doc_PrintLine(nDocID,0,"Сердце демона");
-		Doc_PrintLine(nDocID,0,"Сера х2");
-		Doc_PrintLine(nDocID,0,"Смола х3");
-		Doc_PrintLine(nDocID,0,"Уголь");
-		Doc_PrintLine(nDocID,0,"Черный жемчуг х3");
-		Doc_PrintLine(nDocID,0,"Высший рунный камень");
+		Doc_PrintLine(nDocID, 0 , " - Summon demon - " );
+		Doc_PrintLine(nDocID, 0 , " Demon Heart " );
+		Doc_PrintLine(nDocID, 0 , " Sera x2 " );
+		Doc_PrintLine(nDocID, 0 , " Resin x3 " );
+		Doc_PrintLine(nDocID, 0 , " Coal " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl x3 " );
+		Doc_PrintLine(nDocID, 0 , " Ultimate Runestone " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Шар смерти -");
-		Doc_PrintLine(nDocID,0,"Огненный язык");
+		Doc_PrintLine(nDocID, 0 , " - Death Ball - " );
+		Doc_PrintLine(nDocID, 0 , " Fiery tongue " );
 		Doc_PrintLine(nDocID,0,"Сера");
-		Doc_PrintLine(nDocID,0,"Смола");
+		Doc_PrintLine(nDocID, 0 , " Resin " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -303,7 +304,7 @@ func void use_bookstand_dmt_circ4_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -321,8 +322,8 @@ func void use_bookstand_dmt_circ4_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_134 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_134 = TRUE ;
 		};
 	};
 };
@@ -341,26 +342,26 @@ func void use_bookstand_dmt_circ5_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ПЯТЫЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " FIFTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны пятого Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the fifth Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Армия тьмы -");
-		Doc_PrintLine(nDocID,0,"Кость скелета");
-		Doc_PrintLine(nDocID,0,"Черный жемчуг");
-		Doc_PrintLine(nDocID,0,"Сердце каменного голема");
-		Doc_PrintLine(nDocID,0,"Сердце демона");
+		Doc_PrintLine(nDocID, 0 , " - Army of Darkness - " );
+		Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
+		Doc_PrintLine(nDocID, 0 , " Stone Golem Heart " );
+		Doc_PrintLine(nDocID, 0 , " Demon Heart " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -377,7 +378,7 @@ func void use_bookstand_dmt_circ5_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -395,8 +396,8 @@ func void use_bookstand_dmt_circ5_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_135 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_135 = TRUE ;
 		};
 	};
 };
@@ -415,32 +416,32 @@ func void use_bookstand_dmt_circ6_s1()
 		Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ШЕСТОЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " SIXTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны шестого Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the sixth Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Черный туман -");
-		Doc_PrintLine(nDocID,0,"Кость скелета");
-		Doc_PrintLine(nDocID,0,"Черный жемчуг");
-		Doc_PrintLine(nDocID,0,"Эктоплазма");
+		Doc_PrintLine(nDocID, 0 , " - Black Fog - " );
+		Doc_PrintLine(nDocID, 0 , " Skeleton bone " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
+		Doc_PrintLine(nDocID, 0 , " Ectoplasm " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Крик мертвых -");
-		Doc_PrintLine(nDocID,0,"Черный жемчуг");
-		Doc_PrintLine(nDocID,0,"Сердце демона");
-		Doc_PrintLine(nDocID,0,"Череп");
-		Doc_PrintLine(nDocID,0,"Смола");
+		Doc_PrintLine(nDocID, 0 , " - Cry of the Dead - " );
+		Doc_PrintLine(nDocID, 0 , " Black Pearl " );
+		Doc_PrintLine(nDocID, 0 , " Demon Heart " );
+		Doc_PrintLine(nDocID, 0 , " Skull " );
+		Doc_PrintLine(nDocID, 0 , " Resin " );
 		Doc_PrintLine(nDocID,0,"Сера");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -457,7 +458,7 @@ func void use_bookstand_dmt_circ6_s1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -475,8 +476,8 @@ func void use_bookstand_dmt_circ6_s1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_136 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_136 = TRUE ;
 		};
 	};
 };
