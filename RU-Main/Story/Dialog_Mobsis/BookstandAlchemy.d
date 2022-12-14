@@ -1,4 +1,5 @@
 
+
 var int ALchemy_1_permanent;
 var int ALchemy_2_permanent;
 var int ALchemy_3_permanent;
@@ -19,29 +20,29 @@ func void Use_BookstandALCHEMY1_S1()
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Напитки магической энергии ");
-		Doc_PrintLine(nDocID,0,"и их ингредиенты ");
+		Doc_PrintLine(nDocID, 0 , " Drinks of magical energy " );
+		Doc_PrintLine(nDocID, 0 , " and their ingredients " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Эссенция маны ");
-		Doc_PrintLine(nDocID,0,"2 огненные крапивы ");
+		Doc_PrintLine(nDocID, 0 , " Mana Essence " );
+		Doc_PrintLine(nDocID, 0 , " 2 fire nettles " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Экстракт маны ");
-		Doc_PrintLine(nDocID,0,"2 огненные травы ");
+		Doc_PrintLine(nDocID, 0 , " Mana Extract " );
+		Doc_PrintLine(nDocID, 0 , " 2 fire herbs " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Эликсир маны ");
-		Doc_PrintLine(nDocID,0,"2 огненных корня ");
+		Doc_PrintLine(nDocID, 0 , " Elixir of Mana " );
+		Doc_PrintLine(nDocID, 0 , " 2 fire roots " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Любая работа на алхимическом столе требует применения специальной лабораторной колбы в которой и изготавливают напиток.");
+		Doc_PrintLines(nDocID, 0 , " Any work on the alchemy table requires the use of a special laboratory flask in which the drink is made. " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для приготовления напитков маны также используются: ");
-		Doc_PrintLine(nDocID,1,"Луговой горец");
-		Doc_PrintLine(nDocID,1,"Серафис");
+		Doc_PrintLines(nDocID, 1 , " Also used to make mana drinks: " );
+		Doc_PrintLine(nDocID, 1 , " Meadow Mountaineer " );
+		Doc_PrintLine(nDocID, 1 , " Seraphis " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для приготовления напитков магической энергии перманентного действия  необходим царский щавель.");
+		Doc_PrintLines(nDocID, 1 , " Requires royal sorrel to make drinks of permanent magical energy. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_Show(nDocID);
 
@@ -59,7 +60,7 @@ func void Use_BookstandALCHEMY1_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -77,8 +78,8 @@ func void Use_BookstandALCHEMY1_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_87 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_87 = TRUE ;
 		};
 	};
 };
@@ -99,29 +100,29 @@ func void Use_BookstandALCHEMY2_S1()
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Напитки лечебной энергии ");
-		Doc_PrintLine(nDocID,0,"и их ингредиенты ");
+		Doc_PrintLine(nDocID, 0 , " Healing Energy Drinks " );
+		Doc_PrintLine(nDocID, 0 , " and their ingredients " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Лечебная эссенция ");
-		Doc_PrintLine(nDocID,0,"2 лечебных растения ");
+		Doc_PrintLine(nDocID, 0 , " Healing Essence " );
+		Doc_PrintLine(nDocID, 0 , " 2 medicinal plants " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Лечебный экстракт ");
-		Doc_PrintLine(nDocID,0,"2 лечебные травы");
+		Doc_PrintLine(nDocID, 0 , " Medicinal extract " );
+		Doc_PrintLine(nDocID, 0 , " 2 medicinal herbs " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Лечебный эликсир");
-		Doc_PrintLine(nDocID,0,"2 лечебных корня ");
+		Doc_PrintLine(nDocID, 0 , " Healing Elixir " );
+		Doc_PrintLine(nDocID, 0 , " 2 medicinal roots " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Любая работа на алхимическом столе требует применения специальной лабораторной колбы в которой и изготавливают напиток.");
+		Doc_PrintLines(nDocID, 0 , " Any work on the alchemy table requires the use of a special laboratory flask in which the drink is made. " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для приготовления любых лечебных напитков также используются: ");
-		Doc_PrintLine(nDocID,1,"Луговой горец");
-		Doc_PrintLine(nDocID,1,"Серафис");
+		Doc_PrintLines(nDocID, 1 , " For the preparation of any medicinal drinks, the following are also used: " );
+		Doc_PrintLine(nDocID, 1 , " Meadow Mountaineer " );
+		Doc_PrintLine(nDocID, 1 , " Seraphis " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для приготовления напитков жизненной энергии перманентного действия необходим царский щавель.");
+		Doc_PrintLines(nDocID, 1 , " Royal sorrel is needed to make permanent life energy drinks. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_Show(nDocID);
 
@@ -139,7 +140,7 @@ func void Use_BookstandALCHEMY2_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -157,8 +158,8 @@ func void Use_BookstandALCHEMY2_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_88 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_88 = TRUE ;
 		};
 	};
 };
@@ -178,30 +179,30 @@ func void Use_BookstandALCHEMY3_S1()
 		Doc_SetFont(nDocID,-1,Font_Book_New_Small);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Напитки постоянных изменений");
-		Doc_PrintLine(nDocID,0,"и их ингредиенты ");
+		Doc_PrintLines(nDocID, 0 , " Drinks of constant change " );
+		Doc_PrintLine(nDocID, 0 , " and their ingredients " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Эликсир ловкости");
-		Doc_PrintLines(nDocID,0,"Ягода гоблина и царский щавель");
+		Doc_PrintLine(nDocID, 0 , " Elixir of Agility " );
+		Doc_PrintLines(nDocID, 0 , " Goblin Berry and Royal Sorrel " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Напиток ускорения");
-		Doc_PrintLines(nDocID,0,"Трава глорха и луговой горец");
+		Doc_PrintLine(nDocID, 0 , " Boost Drink " );
+		Doc_PrintLines(nDocID, 0 , " Glorcha Grass and Knotweed " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Напиток двойного ускорения ");
-		Doc_PrintLines(nDocID,0,"Перегонка напитка ускорения с еще одной травой глорха");
+		Doc_PrintLine(nDocID, 0 , " Double Boost Drink " );
+		Doc_PrintLines(nDocID, 0 , " Distilling a speed drink with another glorcha herb " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"Эликсир силы ");
-		Doc_PrintLines(nDocID,0,"Драконий корень и царский щавель");
+		Doc_PrintLine(nDocID, 0 , " Elixir of Power " );
+		Doc_PrintLines(nDocID, 0 , " Dragonroot and Royal Sorrel " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Эликсир жизни ");
-		Doc_PrintLines(nDocID,0,"Три лечебных корня и луговой горец");
+		Doc_PrintLines(nDocID, 0 , " Elixir of life " );
+		Doc_PrintLines(nDocID, 0 , " Three medicinal roots and meadow mountain grass " );
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Эликсир духа");
-		Doc_PrintLines(nDocID,1,"Огненный корень и царский щавель");
+		Doc_PrintLines(nDocID, 1 , " Spirit Elixir " );
+		Doc_PrintLines(nDocID, 1 , " Fireroot and Royal Sorrel " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Приготовление этих рецептов - наивысшее искусство алхимии!");
+		Doc_PrintLines(nDocID, 1 , " Preparing these recipes is the ultimate art of alchemy! " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_Show(nDocID);
@@ -220,7 +221,7 @@ func void Use_BookstandALCHEMY3_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -238,8 +239,8 @@ func void Use_BookstandALCHEMY3_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_89 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_89 = TRUE ;
 		};
 	};
 };
