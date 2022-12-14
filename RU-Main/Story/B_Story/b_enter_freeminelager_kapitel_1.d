@@ -1,4 +1,5 @@
 
+
 func void b_enter_freeminelager_kapitel_1()
 {
 };
@@ -64,9 +65,9 @@ var int enterfreeminelager_kapitel4;
 
 func void b_enter_freeminelager_kapitel_4()
 {
-	if(ENTERFREEMINELAGER_KAPITEL4 == FALSE)
+	if ( ENTERFREEMINELAGER_KAPITEL4  ==  FALSE )
 	{
-		ENTERFREEMINELAGER_KAPITEL4 = TRUE;
+		ENTERFREEMINELAGER_KAPITEL4 = TRUE ;
 	};
 };
 
@@ -75,58 +76,58 @@ var int enterfreeminelager_kapitel5;
 
 func void b_enter_freeminelager_kapitel_5()
 {
-	if(ENTERFREEMINELAGER_KAPITEL5 == FALSE)
+	if ( ENTERFREEMINELAGER_KAPITEL5  ==  FALSE )
 	{
-		ENTERFREEMINELAGER_KAPITEL5 = TRUE;
+		ENTERFREEMINELAGER_KAPITEL5 = TRUE ;
 	};
 };
 
 
-var int enterfreeminelager_kapitel6;
+var int enterfreeminelager_chapter6;
 
 func void b_enter_freeminelager_kapitel_6()
 {
-	if(ENTERFREEMINELAGER_KAPITEL6 == FALSE)
+	if ( ENTERFREEMINELAGER_KAPITEL6  ==  FALSE )
 	{
-		ENTERFREEMINELAGER_KAPITEL6 = TRUE;
+		ENTERFREEMINELAGER_KAPITEL6 = TRUE ;
 	};
 };
 
 func void b_enter_freeminelager()
 {
 	B_InitNpcGlobals();
-	if(Kapitel >= 1)
+	if (Chapter >=  1 )
 	{
 		b_enter_freeminelager_kapitel_1();
 	};
-	if(Kapitel >= 2)
+	if (Chapter >=  2 )
 	{
 		b_enter_freeminelager_kapitel_2();
 	};
-	if(Kapitel >= 3)
+	if (Chapter >=  3 )
 	{
 		b_enter_freeminelager_kapitel_3();
 	};
-	if(Kapitel >= 4)
+	if (Chapter >=  4 )
 	{
 		b_enter_freeminelager_kapitel_4();
 	};
-	if(Kapitel >= 5)
+	if (Chapter >=  5 )
 	{
 		b_enter_freeminelager_kapitel_5();
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		b_enter_freeminelager_kapitel_6();
 	};
 	if((MIS_ScoutNewMine == LOG_Running) && (ScoutFreeLager == FALSE))
 	{
 		ScoutFreeLager = TRUE;
-		B_LogEntry(TOPIC_ScoutNewMine,"Перевал, ведущий к Новой Шахте, полностью контролируется орками. Надо узнать, что происходит в самой шахте. Но навряд ли орки просто так меня пустят туда.");
+		B_LogEntry(TOPIC_ScoutNewMine, " The pass leading to the New Mine is completely controlled by the orcs. I need to find out what's going on in the mine itself. But it's unlikely that the orcs will just let me in there. " );
 	};
 
-	HelmIsUpTemp = FALSE;
-	CraitIsUp = FALSE;
+	HelmIsUpTemp = FALSE ;
+	CraitIsUp = FALSE ;
 	CraitCanUp = FALSE;
 	CurrentLevel = FREEMINELAGER_ZEN;
 	B_InitNpcGlobals();
