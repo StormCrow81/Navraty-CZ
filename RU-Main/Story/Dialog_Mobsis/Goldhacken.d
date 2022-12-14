@@ -1,5 +1,6 @@
 
-func int B_GoldMob_Bestimmung()
+
+func int B_GoldMob_Determination()
 {
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),"ADW_MINE_PICK_01") && (GoldMob_01_AmounT_MAX > GoldMob_01_Amount))
 	{
@@ -241,7 +242,7 @@ func int B_GoldMob_Bestimmung()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 var int WarnPerOnceGold;
@@ -262,7 +263,7 @@ func void Goldhacken_S1()
 			};
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		WarnPerOnceGold = FALSE;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_GOLDHACKEN;
 		AI_ProcessInfos(her);
@@ -300,7 +301,7 @@ instance PC_Goldhacken_Addon_Hour(C_Info)
 	condition = PC_Goldhacken_Addon_Hour_Condition;
 	information = PC_Goldhacken_Addon_Hour_Info;
 	permanent = TRUE;
-	description = "Добывать золото.";
+	description = " Mine gold. " ;
 };
 
 func int PC_Goldhacken_Addon_Hour_Condition()
@@ -337,7 +338,7 @@ func void PC_Goldhacken_Addon_Hour_Info()
 	if((SBMODE == TRUE) && (Hero_Fatigue == FALSE))
 	{
 		B_Say(hero,hero,"$NEEDSLEEP");
-		AI_PrintClr("Вы утомлены! Пора отдохнуть...",177,58,17);
+		AI_PrintClr( " You are tired! Time to rest... " , 177 , 58 , 17 );
 		B_Say(self,self,"$TOOHARD");
 	}
 	else if(ATR_STAMINA[0] >= staminaforpickgold)
@@ -383,7 +384,7 @@ func void PC_Goldhacken_Addon_Hour_Info()
 					if(WarnPerOnceGold == FALSE)
 					{
 						B_Say(hero,hero,"$NEEDSLEEP");
-						AI_PrintClr("Вы утомлены! Пора отдохнуть...",177,58,17);
+						AI_PrintClr( " You are tired! Time to rest... " , 177 , 58 , 17 );
 						WarnPerOnceGold = TRUE;
 					};
 				};
@@ -392,7 +393,7 @@ func void PC_Goldhacken_Addon_Hour_Info()
 
 		CurrentChance = Hlp_Random(50);
 
-		if(B_GoldMob_Bestimmung() == TRUE)
+		if (B_GoldMob_Determination() ==  TRUE )
 		{
 			Snd_Play("ORE_HACK");
 
@@ -418,26 +419,26 @@ func void PC_Goldhacken_Addon_Hour_Info()
 				{
 					MultiNugget = 1;
 				};
-				goldpick = Hlp_Random(3);
+				goldpick = Hlp_Random( 3 );
 				sumgoldpick = goldpick * MultiNugget;
 
 				if(sumgoldpick > 0)
 				{
 					if(sumgoldpick == 1)
 					{
-						textgold = " золотой самородок.";
+						textgold = " gold nugget. " ;
 					}
 					else if((sumgoldpick > 1) && (sumgoldpick < 5))
 					{
-						textgold = " золотых самородка.";
+						textgold = " gold nuggets. " ;
 					}
 					else if(sumgoldpick >= 5)
 					{
-						textgold = " золотых самородков.";
+						textgold = " gold nuggets. " ;
 					};
 
 					CreateInvItems(hero,ItMi_Addon_GoldNugget,sumgoldpick);
-					concatText = "Вы добыли ";
+					concatText = " You got " ;
 					concatText = ConcatStrings(concatText,IntToString(sumgoldpick));
 					concatText = ConcatStrings(concatText,textgold);
 					concatText = ConcatStrings(concatText," (Всего: ");
@@ -447,27 +448,27 @@ func void PC_Goldhacken_Addon_Hour_Info()
 				}
 				else
 				{
-					AI_PrintClr("Золотая крошка разлетелась во все стороны...",245,247,225);
+					AI_PrintClr( " Gold crumbs scattered in all directions... " , 245 , 247 , 225 );
 					Truemmer_Count = Truemmer_Count + 1;
 				};
 			}
 			else
 			{
-				goldpick = Hlp_Random(3);
+				goldpick = Hlp_Random( 3 );
 
 				if(goldpick > 0)
 				{
 					if(goldpick == 1)
 					{
-						textgold = " золотой самородок.";
+						textgold = " gold nugget. " ;
 					}
 					else if((goldpick > 1) && (goldpick < 4))
 					{
-						textgold = " золотых самородка.";
+						textgold = " gold nuggets. " ;
 					};
 
 					CreateInvItems(hero,ItMi_Addon_GoldNugget,goldpick);
-					concatText = "Вы добыли ";
+					concatText = " You got " ;
 					concatText = ConcatStrings(concatText,IntToString(goldpick));
 					concatText = ConcatStrings(concatText,textgold);
 					concatText = ConcatStrings(concatText," (Всего: ");
@@ -477,14 +478,14 @@ func void PC_Goldhacken_Addon_Hour_Info()
 				}
 				else
 				{
-					AI_PrintClr("Золотая крошка разлетелась во все стороны...",245,247,225);
+					AI_PrintClr( " Gold crumbs scattered in all directions... " , 245 , 247 , 225 );
 					Truemmer_Count = Truemmer_Count + 1;
 				};
 			};
 		}
 		else
 		{
-			AI_PrintClr("Здесь больше нечего взять!",177,58,17);
+			AI_PrintClr( " There is nothing else to take here! " , 177 , 58 , 17 );
 		};
 	}
 	else
@@ -502,7 +503,7 @@ instance PC_Goldhacken_Addon_TSchlag(C_Info)
 	condition = PC_Goldhacken_Addon_TSchlag_Condition;
 	information = PC_Goldhacken_Addon_TSchlag_Info;
 	permanent = TRUE;
-	description = "Добывать золото. (применить осколочный удар)";
+	description = " Mine gold. (apply splinter strike) " ;
 };
 
 
@@ -543,9 +544,9 @@ func void PC_Goldhacken_Addon_TSchlag_Info()
 		if(Hero_HackChance >= 85)
 		{
 			CreateInvItems(hero,ItMi_Addon_GoldNugget,15);
-			concatText = "Вы добыли ";
+			concatText = " You got " ;
 			concatText = ConcatStrings(concatText,IntToString(15));
-			concatText = ConcatStrings(concatText,"золотых самородков");
+			concatText = ConcatStrings(concatText, " gold nuggets " );
 			concatText = ConcatStrings(concatText," (Всего: ");
 			concatText = ConcatStrings(concatText,IntToString(Npc_HasItems(hero,ItMi_Addon_GoldNugget)));
 			concatText = ConcatStrings(concatText,")");
@@ -554,9 +555,9 @@ func void PC_Goldhacken_Addon_TSchlag_Info()
 		else if(Hero_HackChance >= 60)
 		{
 			CreateInvItems(hero,ItMi_Addon_GoldNugget,10);
-			concatText = "Вы добыли ";
+			concatText = " You got " ;
 			concatText = ConcatStrings(concatText,IntToString(10));
-			concatText = ConcatStrings(concatText,"золотых самородков");
+			concatText = ConcatStrings(concatText, " gold nuggets " );
 			concatText = ConcatStrings(concatText," (Всего: ");
 			concatText = ConcatStrings(concatText,IntToString(Npc_HasItems(hero,ItMi_Addon_GoldNugget)));
 			concatText = ConcatStrings(concatText,")");
@@ -565,9 +566,9 @@ func void PC_Goldhacken_Addon_TSchlag_Info()
 		else if(Hero_HackChance >= 30)
 		{
 			CreateInvItems(hero,ItMi_Addon_GoldNugget,5);
-			concatText = "Вы добыли ";
+			concatText = " You got " ;
 			concatText = ConcatStrings(concatText,IntToString(5));
-			concatText = ConcatStrings(concatText,"золотых самородков");
+			concatText = ConcatStrings(concatText, " gold nuggets " );
 			concatText = ConcatStrings(concatText," (Всего: ");
 			concatText = ConcatStrings(concatText,IntToString(Npc_HasItems(hero,ItMi_Addon_GoldNugget)));
 			concatText = ConcatStrings(concatText,")");
@@ -575,7 +576,7 @@ func void PC_Goldhacken_Addon_TSchlag_Info()
 		}
 		else
 		{
-			AI_PrintClr("Золотая крошка разлетелась во все стороны...",245,247,225);
+			AI_PrintClr( " Gold crumbs scattered in all directions... " , 245 , 247 , 225 );
 		};
 
 		Truemmer_Count = 0;
@@ -599,7 +600,7 @@ instance PC_Goldhacken_Osair(C_Info)
 	condition = PC_Goldhacken_Osair_Condition;
 	information = PC_Goldhacken_Osair_Info;
 	permanent = TRUE;
-	description = "Отколоть кусок породы.";
+	description = " Chop off a piece of rock. " ;
 };
 
 func int PC_Goldhacken_Osair_Condition()
@@ -614,9 +615,9 @@ func void PC_Goldhacken_Osair_Info()
 {
 	GoldOre_Exp = TRUE;
 	CreateInvItems(hero,ItMi_Osair_GoldNugget,1);
-	AI_PrintClr("Вы откололи большой кусок золотой руды!",83,152,48);
+	AI_PrintClr( " You chipped off a big chunk of gold ore! " , 83 , 152 , 48 );
 	Snd_Play("ORE_HACK");
-	B_LogEntry(TOPIC_PW_GOLDSHAHT,"Теперь у меня есть образец золотой породы из подгорной шахты! Пора возвращаться к Осаиру.");
+	B_LogEntry( TOPIC_PW_GOLDSHAHT , " Now I have a sample of gold rock from the foothill mine! Time to get back to Osair. " );
 };
 
 var int AllCrystal;
@@ -628,7 +629,7 @@ instance PC_Goldhacken_Crystall(C_Info)
 	condition = PC_Goldhacken_Crystall_Condition;
 	information = PC_Goldhacken_Crystall_Info;
 	permanent = TRUE;
-	description = "Отколоть кусок кристалла.";
+	description = " Chop off a piece of crystal. " ;
 };
 
 func int PC_Goldhacken_Crystall_Condition()
@@ -658,7 +659,7 @@ func void PC_Goldhacken_Crystall_Info()
 				ATR_STAMINA[0] = 0;
 			};
 
-			AI_PrintClr("Вы добыли кристалл...",83,152,48);
+			AI_PrintClr( " You got the crystal... " , 83 , 152 , 48 );
 			CreateInvItems(hero,ItMi_UnSharp_MagicCrystal,1);
 			AllCrystal = AllCrystal + 1;
 		}
@@ -670,7 +671,7 @@ func void PC_Goldhacken_Crystall_Info()
 	}
 	else
 	{
-		AI_PrintClr("Здесь больше нечего взять!",177,58,17);
+		AI_PrintClr( " There is nothing else to take here! " , 177 , 58 , 17 );
 		B_Say(self,self,"$NOTHINGTOGET03");
 		Truemmer_Count = 0;
 		b_endproductiondialog();
